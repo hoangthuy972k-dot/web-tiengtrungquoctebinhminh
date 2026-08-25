@@ -339,9 +339,12 @@
             '<h4>Bài tập theo cấp độ</h4>' +
             '<div class="tiered-exercises" id="tiered-' + navId + '"></div>' +
           '</div>' +
-          '<button class="btn btn-primary lesson-practice-btn" type="button" data-lesson-id="' + lesson.id + '">' +
-            'Luyện tập nhanh (trắc nghiệm ngẫu nhiên)' +
-          '</button>' +
+          '<div class="lesson-cta-row">' +
+            '<button class="btn btn-primary lesson-practice-btn" type="button" data-lesson-id="' + lesson.id + '">' +
+              'Luyện tập nhanh (trắc nghiệm ngẫu nhiên)' +
+            '</button>' +
+            (lesson.fullPageUrl ? '<a class="btn btn-outline" href="' + lesson.fullPageUrl + '" target="_blank" rel="noopener">Xem trang bài học đầy đủ ↗</a>' : '') +
+          '</div>' +
         '</div>';
 
       wrap.appendChild(item);

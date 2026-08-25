@@ -174,6 +174,7 @@ const APP_DATA = {
         title: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ',
         titleHanzi: '我每天六点起床',
         titlePinyin: 'Wǒ měitiān liù diǎn qǐchuáng',
+        fullPageUrl: '/lessons/bai-2.html',
 
         dialogues: [
           {

@@ -1092,8 +1092,14 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   display: block;
 }
 
-.lesson-practice-btn {
-  align-self: flex-start;
+.lesson-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.lesson-cta-row .btn-outline {
+  text-decoration: none;
 }
 
 /* Dialogue comprehension exercise */

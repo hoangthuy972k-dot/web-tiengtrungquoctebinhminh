@@ -205,7 +205,9 @@
             '</div>' +
           '</div>';
         }).join('');
-        return '<div class="dialogue-block"><h5>' + d.place + '</h5>' + linesHtml + '</div>';
+        return '<div class="dialogue-block"><h5>' + d.place + '</h5>' +
+          (d.scene ? '<p class="dialogue-scene">' + d.scene + '</p>' : '') +
+          linesHtml + '</div>';
       }).join('');
 
       var grammarHtml = lesson.grammar.map(function (g) {
@@ -227,15 +229,29 @@
         return '<li><strong class="hanzi">' + g.term + '</strong>' + formulaHtml + '<p class="grammar-note">' + g.note + '</p>' + examplesHtml + '</li>';
       }).join('');
 
-      var vocabHtml = lesson.vocab.map(function (w) {
-        return '<div class="lesson-vocab-chip">' +
-          '<span class="pos">' + (w.pos || '') + '</span>' +
-          '<span class="hanzi">' + w.hanzi + '</span>' +
-          '<span class="pinyin">' + w.pinyin + '</span>' +
-          '<span class="meaning">' + w.meaning + '</span>' +
-        '</div>';
+      var vocabRowsHtml = lesson.vocab.map(function (w) {
+        return '<tr>' +
+          '<td class="hanzi">' + w.hanzi + '</td>' +
+          '<td>' + w.pinyin + '</td>' +
+          '<td>' + (w.pos || '') + '</td>' +
+          '<td>' + w.meaning + '</td>' +
+        '</tr>';
       }).join('');
+      var vocabHtml = '<div class="table-scroll"><table class="vocab-table">' +
+        '<thead><tr><th>Chữ Hán</th><th>Phiên âm</th><th>Từ loại</th><th>Nghĩa tiếng Việt</th></tr></thead>' +
+        '<tbody>' + vocabRowsHtml + '</tbody></table></div>';
 
+      var mistakesHtml = '';
+      if (lesson.commonMistakes && lesson.commonMistakes.length) {
+        mistakesHtml = '<div class="lesson-block-full mistakes-block">' +
+          '<h4>⚠ Lỗi thường gặp của học sinh Việt</h4>' +
+          '<ul class="mistakes-list">' + lesson.commonMistakes.map(function (m) {
+            return '<li><span class="wrong">✗ ' + m.wrong + '</span><span class="right">✓ ' + m.right + '</span><p>' + m.note + '</p></li>';
+          }).join('') + '</ul>' +
+        '</div>';
+      }
+
+      var navId = lesson.id;
       item.innerHTML =
         '<summary class="lesson-summary">' +
           '<span class="lesson-num">' + lesson.number + '</span>' +
@@ -246,23 +262,437 @@
           '<svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>' +
         '</summary>' +
         '<div class="lesson-body lesson-body-full">' +
-          (dialoguesHtml ? '<div class="lesson-block-full"><h4>Bài khóa</h4><div class="dialogue-grid">' + dialoguesHtml + '</div></div>' : '') +
-          '<div class="lesson-body-cols">' +
-            '<div><h4>Ngữ pháp trọng tâm</h4><ul class="lesson-grammar-list">' + grammarHtml + '</ul></div>' +
-            '<div><h4>Từ vựng cần nhớ (' + lesson.vocab.length + ')</h4><div class="lesson-vocab-grid">' + vocabHtml + '</div></div>' +
+          '<nav class="lesson-quicknav">' +
+            '<a href="#' + navId + '-baikhoa">📖 Bài khoá</a>' +
+            '<a href="#' + navId + '-tumoi">🀄 Từ mới</a>' +
+            '<a href="#' + navId + '-nguphap">✏️ Ngữ pháp</a>' +
+            '<a href="#' + navId + '-baitap">🎯 Bài tập</a>' +
+          '</nav>' +
+          (dialoguesHtml ? '<div class="lesson-block-full" id="' + navId + '-baikhoa"><h4>Bài khoá</h4><div class="dialogue-grid">' + dialoguesHtml + '</div></div>' : '') +
+          '<div class="lesson-block-full" id="' + navId + '-tumoi"><h4>Từ mới (' + lesson.vocab.length + ' từ)</h4>' + vocabHtml + '</div>' +
+          '<div class="lesson-block-full" id="' + navId + '-nguphap"><h4>Ngữ pháp trọng tâm</h4><ul class="lesson-grammar-list">' + grammarHtml + '</ul></div>' +
+          mistakesHtml +
+          '<div class="lesson-block-full" id="' + navId + '-baitap">' +
+            '<h4>Bài tập theo cấp độ</h4>' +
+            '<div class="tiered-exercises" id="tiered-' + navId + '"></div>' +
           '</div>' +
           '<button class="btn btn-primary lesson-practice-btn" type="button" data-lesson-id="' + lesson.id + '">' +
-            'Luyện tập bài ' + lesson.number +
+            'Luyện tập nhanh (trắc nghiệm ngẫu nhiên)' +
           '</button>' +
         '</div>';
 
       wrap.appendChild(item);
+      renderTieredExercises($('#tiered-' + navId, item), lesson);
     });
 
     wrap.addEventListener('click', function (e) {
+      var link = e.target.closest ? e.target.closest('.lesson-quicknav a') : null;
+      if (link) {
+        e.preventDefault();
+        var target = document.getElementById(link.getAttribute('href').slice(1));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
       var btn = e.target.closest ? e.target.closest('.lesson-practice-btn') : null;
       if (!btn) return;
       startLessonPractice(btn.getAttribute('data-lesson-id'));
+    });
+  }
+
+  /* ---------------- Tiered lesson exercises (Cấp 1/2/3, batch "Kiểm tra") ---------------- */
+
+  function buildQuizActions(onCheck, onReset) {
+    var bar = document.createElement('div');
+    bar.className = 'quiz-actions';
+
+    var checkBtn = document.createElement('button');
+    checkBtn.type = 'button';
+    checkBtn.className = 'btn btn-primary btn-sm';
+    checkBtn.textContent = 'Kiểm tra';
+
+    var retryBtn = document.createElement('button');
+    retryBtn.type = 'button';
+    retryBtn.className = 'btn btn-outline btn-sm';
+    retryBtn.textContent = 'Làm lại';
+
+    var scoreSpan = document.createElement('span');
+    scoreSpan.className = 'quiz-score';
+
+    checkBtn.addEventListener('click', function () {
+      var result = onCheck();
+      scoreSpan.textContent = 'Đúng ' + result.correct + '/' + result.total + ' câu';
+      scoreSpan.className = 'quiz-score is-visible ' +
+        (result.correct === result.total ? 'is-good' : result.correct === 0 ? 'is-bad' : 'is-mid');
+    });
+    retryBtn.addEventListener('click', function () {
+      onReset();
+      scoreSpan.textContent = '';
+      scoreSpan.className = 'quiz-score';
+    });
+
+    bar.appendChild(checkBtn);
+    bar.appendChild(retryBtn);
+    bar.appendChild(scoreSpan);
+    return bar;
+  }
+
+  function renderMatchSelectBlock(block) {
+    var wrap = document.createElement('div');
+    wrap.className = 'exercise-block';
+    wrap.innerHTML = '<h5>' + block.title + '</h5>';
+
+    var body = document.createElement('div');
+    body.className = 'match-rows';
+    var selects = [];
+
+    block.items.forEach(function (item, i) {
+      var row = document.createElement('div');
+      row.className = 'match-row';
+
+      var promptEl = document.createElement('div');
+      promptEl.className = 'match-prompt';
+      promptEl.innerHTML = '<span class="hanzi">' + (i + 1) + '. ' + item.hanzi + '</span><span class="pinyin">' + item.pinyin + '</span>';
+
+      var select = document.createElement('select');
+      select.className = 'match-select';
+      var blankOpt = document.createElement('option');
+      blankOpt.textContent = '— chọn —';
+      blankOpt.value = '';
+      select.appendChild(blankOpt);
+      item.options.forEach(function (opt) {
+        var o = document.createElement('option');
+        o.textContent = opt;
+        o.value = opt;
+        select.appendChild(o);
+      });
+
+      row.appendChild(promptEl);
+      row.appendChild(select);
+      body.appendChild(row);
+      selects.push({ select: select, answer: item.answer, row: row });
+    });
+
+    wrap.appendChild(body);
+    var actions = buildQuizActions(function () {
+      var correct = 0;
+      selects.forEach(function (s) {
+        var ok = s.select.value === s.answer;
+        s.row.classList.remove('is-correct', 'is-wrong');
+        if (s.select.value) s.row.classList.add(ok ? 'is-correct' : 'is-wrong');
+        if (ok) correct++;
+      });
+      return { correct: correct, total: selects.length };
+    }, function () {
+      selects.forEach(function (s) {
+        s.select.value = '';
+        s.row.classList.remove('is-correct', 'is-wrong');
+      });
+    });
+    wrap.appendChild(actions);
+    return wrap;
+  }
+
+  function renderChoose2Block(block) {
+    var wrap = document.createElement('div');
+    wrap.className = 'exercise-block';
+    wrap.innerHTML = '<h5>' + block.title + '</h5>';
+
+    var body = document.createElement('div');
+    body.className = 'choose2-rows';
+    var rows = [];
+
+    block.items.forEach(function (item, i) {
+      var row = document.createElement('div');
+      row.className = 'choose2-row';
+
+      var sentEl = document.createElement('p');
+      sentEl.className = 'choose2-sentence hanzi';
+      sentEl.textContent = (i + 1) + '. ' + item.sentence;
+
+      var btnWrap = document.createElement('div');
+      btnWrap.className = 'choose2-btns';
+      var btns = item.choices.map(function (choice) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'choose2-btn hanzi';
+        b.textContent = choice;
+        b.addEventListener('click', function () {
+          btns.forEach(function (bb) { bb.classList.remove('is-picked'); });
+          b.classList.add('is-picked');
+          btnWrap.dataset.selected = choice;
+        });
+        btnWrap.appendChild(b);
+        return b;
+      });
+
+      row.appendChild(sentEl);
+      row.appendChild(btnWrap);
+      body.appendChild(row);
+      rows.push({ item: item, btnWrap: btnWrap, btns: btns, row: row });
+    });
+
+    wrap.appendChild(body);
+    var actions = buildQuizActions(function () {
+      var correct = 0;
+      rows.forEach(function (r) {
+        var sel = r.btnWrap.dataset.selected;
+        var ok = sel === r.item.answer;
+        r.row.classList.remove('is-correct', 'is-wrong');
+        if (sel) r.row.classList.add(ok ? 'is-correct' : 'is-wrong');
+        if (ok) correct++;
+      });
+      return { correct: correct, total: rows.length };
+    }, function () {
+      rows.forEach(function (r) {
+        r.btns.forEach(function (b) { b.classList.remove('is-picked'); });
+        r.row.classList.remove('is-correct', 'is-wrong');
+        delete r.btnWrap.dataset.selected;
+      });
+    });
+    wrap.appendChild(actions);
+    return wrap;
+  }
+
+  function renderWordOrderBlock(block) {
+    var wrap = document.createElement('div');
+    wrap.className = 'exercise-block';
+    wrap.innerHTML = '<h5>' + block.title + '</h5>';
+
+    var body = document.createElement('div');
+    body.className = 'word-order-rows';
+    var rows = [];
+
+    block.items.forEach(function (item, i) {
+      var row = document.createElement('div');
+      row.className = 'word-order-row';
+
+      var label = document.createElement('p');
+      label.className = 'word-order-label';
+      label.textContent = (i + 1) + '. "' + item.translation + '"';
+
+      var answerZone = document.createElement('div');
+      answerZone.className = 'sentence-build-answer';
+      var tokenZone = document.createElement('div');
+      tokenZone.className = 'sentence-build-tokens';
+
+      var shuffled = shuffle(item.tokens);
+      var picked = [];
+
+      function renderTokens() {
+        tokenZone.innerHTML = '';
+        shuffled.forEach(function (token, idx) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'token-btn hanzi';
+          btn.textContent = token;
+          var used = picked.indexOf(idx) !== -1;
+          btn.disabled = used;
+          if (used) btn.classList.add('is-picked');
+          btn.addEventListener('click', function () {
+            picked.push(idx);
+            renderTokens();
+            renderAnswer();
+          });
+          tokenZone.appendChild(btn);
+        });
+      }
+      function renderAnswer() {
+        answerZone.innerHTML = '';
+        picked.forEach(function (idx, pos) {
+          var chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'token-btn hanzi is-picked';
+          chip.textContent = shuffled[idx];
+          chip.addEventListener('click', function () {
+            picked.splice(pos, 1);
+            renderTokens();
+            renderAnswer();
+          });
+          answerZone.appendChild(chip);
+        });
+      }
+      renderTokens();
+      renderAnswer();
+
+      row.appendChild(label);
+      row.appendChild(answerZone);
+      row.appendChild(tokenZone);
+      body.appendChild(row);
+      rows.push({
+        item: item,
+        row: row,
+        getPicked: function () { return picked.map(function (idx) { return shuffled[idx]; }); },
+        reset: function () { picked = []; renderTokens(); renderAnswer(); }
+      });
+    });
+
+    wrap.appendChild(body);
+    var actions = buildQuizActions(function () {
+      var correct = 0;
+      rows.forEach(function (r) {
+        var built = r.getPicked();
+        var ok = built.length === r.item.tokens.length && built.every(function (t, i) { return t === r.item.tokens[i]; });
+        r.row.classList.remove('is-correct', 'is-wrong');
+        r.row.classList.add(ok ? 'is-correct' : 'is-wrong');
+        if (ok) correct++;
+      });
+      return { correct: correct, total: rows.length };
+    }, function () {
+      rows.forEach(function (r) {
+        r.reset();
+        r.row.classList.remove('is-correct', 'is-wrong');
+      });
+    });
+    wrap.appendChild(actions);
+    return wrap;
+  }
+
+  function renderLineOrderBlock(block) {
+    var wrap = document.createElement('div');
+    wrap.className = 'exercise-block';
+    wrap.innerHTML = '<h5>' + block.title + '</h5>' + (block.hint ? '<p class="line-order-hint">' + block.hint + '</p>' : '');
+
+    var answerZone = document.createElement('div');
+    answerZone.className = 'line-order-answer';
+    var tokenZone = document.createElement('div');
+    tokenZone.className = 'line-order-tokens';
+
+    var shuffled = shuffle(block.lines);
+    var picked = [];
+
+    function renderTokens() {
+      tokenZone.innerHTML = '';
+      shuffled.forEach(function (line, idx) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'line-token';
+        btn.innerHTML = '<span class="hanzi">' + line.hanzi + '</span><span class="vi">' + line.vi + '</span>';
+        var used = picked.indexOf(idx) !== -1;
+        btn.disabled = used;
+        if (used) btn.classList.add('is-picked');
+        btn.addEventListener('click', function () {
+          picked.push(idx);
+          renderTokens();
+          renderAnswer();
+        });
+        tokenZone.appendChild(btn);
+      });
+    }
+    function renderAnswer() {
+      answerZone.innerHTML = '';
+      picked.forEach(function (idx, pos) {
+        var chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'line-token is-picked';
+        chip.innerHTML = '<span class="line-order-num">' + (pos + 1) + '</span><span class="hanzi">' + shuffled[idx].hanzi + '</span>';
+        chip.addEventListener('click', function () {
+          picked.splice(pos, 1);
+          renderTokens();
+          renderAnswer();
+        });
+        answerZone.appendChild(chip);
+      });
+    }
+    renderTokens();
+    renderAnswer();
+
+    wrap.appendChild(answerZone);
+    wrap.appendChild(tokenZone);
+
+    var actions = buildQuizActions(function () {
+      var built = picked.map(function (idx) { return shuffled[idx]; });
+      var ok = built.length === block.lines.length && built.every(function (l, i) { return l === block.lines[i]; });
+      answerZone.classList.remove('is-correct', 'is-wrong');
+      answerZone.classList.add(ok ? 'is-correct' : 'is-wrong');
+      return { correct: ok ? 1 : 0, total: 1 };
+    }, function () {
+      picked = [];
+      renderTokens();
+      renderAnswer();
+      answerZone.classList.remove('is-correct', 'is-wrong');
+    });
+    wrap.appendChild(actions);
+    return wrap;
+  }
+
+  function renderFreePracticeBlock(block) {
+    var wrap = document.createElement('div');
+    wrap.className = 'exercise-block free-practice-block';
+    wrap.innerHTML = '<h5>' + block.title + '</h5>';
+
+    var body = document.createElement('div');
+    body.className = 'free-practice-rows';
+
+    block.items.forEach(function (item, i) {
+      var row = document.createElement('div');
+      row.className = 'free-practice-row';
+
+      var prompt = document.createElement('p');
+      prompt.className = 'free-practice-prompt';
+      prompt.textContent = (i + 1) + '. ' + item.prompt;
+
+      var toggleBtn = document.createElement('button');
+      toggleBtn.type = 'button';
+      toggleBtn.className = 'btn btn-ghost btn-sm free-practice-toggle';
+      toggleBtn.textContent = 'Xem câu mẫu tham khảo';
+
+      var answer = document.createElement('p');
+      answer.className = 'free-practice-answer hanzi';
+      answer.hidden = true;
+      answer.textContent = item.sampleAnswer;
+
+      toggleBtn.addEventListener('click', function () {
+        answer.hidden = !answer.hidden;
+        toggleBtn.textContent = answer.hidden ? 'Xem câu mẫu tham khảo' : 'Ẩn câu mẫu';
+      });
+
+      row.appendChild(prompt);
+      row.appendChild(toggleBtn);
+      row.appendChild(answer);
+      body.appendChild(row);
+    });
+
+    wrap.appendChild(body);
+    return wrap;
+  }
+
+  function renderExerciseBlock(block) {
+    if (block.type === 'match-select') return renderMatchSelectBlock(block);
+    if (block.type === 'choose-2') return renderChoose2Block(block);
+    if (block.type === 'word-order') return renderWordOrderBlock(block);
+    if (block.type === 'line-order') return renderLineOrderBlock(block);
+    if (block.type === 'free-practice') return renderFreePracticeBlock(block);
+    return null;
+  }
+
+  function renderTieredExercises(container, lesson) {
+    if (!container || !lesson.tieredExercises) return;
+    container.innerHTML = '';
+
+    var tierOrder = [];
+    var tierBlocks = {};
+    lesson.tieredExercises.forEach(function (block) {
+      if (!tierBlocks[block.tier]) {
+        tierBlocks[block.tier] = [];
+        tierOrder.push(block.tier);
+      }
+      tierBlocks[block.tier].push(block);
+    });
+
+    tierOrder.forEach(function (tierNum) {
+      var tierWrap = document.createElement('div');
+      tierWrap.className = 'tier-group';
+      var heading = document.createElement('div');
+      heading.className = 'tier-heading';
+      heading.innerHTML = '<span class="tier-badge">Cấp ' + tierNum + '</span>';
+      tierWrap.appendChild(heading);
+
+      tierBlocks[tierNum].forEach(function (block) {
+        var blockEl = renderExerciseBlock(block);
+        if (blockEl) tierWrap.appendChild(blockEl);
+      });
+
+      container.appendChild(tierWrap);
     });
   }
 

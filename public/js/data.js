@@ -179,6 +179,7 @@ const APP_DATA = {
           {
             id: 'd1',
             place: '在运动场 (Trên sân vận động)',
+            scene: 'Trên sân vận động, A hỏi B về thói quen tập thể dục buổi sáng.',
             lines: [
               { speaker: 'A', hanzi: '你很少生病，是不是喜欢运动？', pinyin: 'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?', vi: 'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?' },
               { speaker: 'B', hanzi: '是啊，我每天早上都要出去跑步。', pinyin: 'Shì a, wǒ měitiān zǎoshang dōu yào chūqu pǎobù.', vi: 'Đúng vậy, mỗi sáng tôi đều phải ra ngoài chạy bộ.' },
@@ -189,6 +190,7 @@ const APP_DATA = {
           {
             id: 'd2',
             place: '在医院 (Trong bệnh viện)',
+            scene: 'Trong bệnh viện, A hỏi thăm sức khỏe của B sau khi ốm.',
             lines: [
               { speaker: 'A', hanzi: '吃药了吗？现在身体怎么样？', pinyin: 'Chī yào le ma? Xiànzài shēntǐ zěnmeyàng?', vi: 'Bạn uống thuốc chưa? Bây giờ sức khỏe thế nào rồi?' },
               { speaker: 'B', hanzi: '吃了。现在好多了。', pinyin: 'Chī le. Xiànzài hǎo duō le.', vi: 'Uống rồi. Bây giờ tốt hơn nhiều rồi.' },
@@ -199,6 +201,7 @@ const APP_DATA = {
           {
             id: 'd3',
             place: '在操场 (Trên sân tập)',
+            scene: 'Trên sân tập, A hỏi B về tuổi và chiều cao của David.',
             lines: [
               { speaker: 'A', hanzi: '大卫今年多大？', pinyin: 'Dàwèi jīnnián duō dà?', vi: 'David năm nay bao nhiêu tuổi?' },
               { speaker: 'B', hanzi: '20多岁。', pinyin: 'Èrshí duō suì.', vi: 'Hơn 20 tuổi.' },
@@ -211,6 +214,7 @@ const APP_DATA = {
           {
             id: 'd4',
             place: '在房间 (Trong phòng)',
+            scene: 'Trong phòng, A và B nói về lịch làm việc bận rộn của thầy Trương.',
             lines: [
               { speaker: 'A', hanzi: '张老师星期六也不休息啊。', pinyin: 'Zhāng lǎoshī xīngqīliù yě bù xiūxi a.', vi: 'Thầy Trương thứ Bảy cũng không nghỉ ngơi à.' },
               { speaker: 'B', hanzi: '是啊，他这几天很忙，没有时间休息。', pinyin: 'Shì a, tā zhè jǐ tiān hěn máng, méiyǒu shíjiān xiūxi.', vi: 'Đúng vậy, mấy ngày nay thầy ấy rất bận, không có thời gian nghỉ ngơi.' },
@@ -291,6 +295,73 @@ const APP_DATA = {
           { id: 'l2-qa2', dialogueId: 'd2', question: 'Theo lời bác sĩ, khi nào B có thể xuất viện?', options: ['Ngày mai', 'Tuần sau', 'Tháng sau', 'Hôm nay'], answer: 'Tuần sau' },
           { id: 'l2-qa3', dialogueId: 'd3', question: 'David cao khoảng bao nhiêu?', options: ['Hơn 1m7', 'Hơn 1m8', 'Đúng 1m8', 'Hơn 1m9'], answer: 'Hơn 1m8' },
           { id: 'l2-qa4', dialogueId: 'd4', question: 'Vì sao thầy Trương rất mệt mỗi khi về nhà?', options: ['Vì thầy bị bệnh', 'Vì thầy bận, không có thời gian nghỉ ngơi', 'Vì thầy phải đi xa', 'Vì thầy dậy sớm'], answer: 'Vì thầy bận, không có thời gian nghỉ ngơi' }
+        ],
+
+        commonMistakes: [
+          { wrong: '我都每天六点起床。', right: '我每天都六点起床。', note: '都 phải đứng sau cụm 每 + danh từ, không đứng trước.' },
+          { wrong: '你几岁？(hỏi người lớn)', right: '你多大？', note: '几岁 thường dùng hỏi tuổi trẻ em (số nhỏ); hỏi người lớn nên dùng 多大.' },
+          { wrong: '是不是你喜欢运动吗？', right: '你是不是喜欢运动？ / 你喜欢运动吗？', note: 'Không dùng đồng thời cả 是不是 và 吗 trong cùng một câu hỏi — chỉ chọn một.' }
+        ],
+
+        tieredExercises: [
+          {
+            tier: 1,
+            title: 'Nối câu hỏi với mục đích hỏi',
+            type: 'match-select',
+            id: 'l2-t1a',
+            items: [
+              { id: 'l2-t1a-1', hanzi: '你每天几点起床？', pinyin: 'Nǐ měitiān jǐ diǎn qǐchuáng?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi thăm giờ giấc sinh hoạt' },
+              { id: 'l2-t1a-2', hanzi: '现在身体怎么样？', pinyin: 'Xiànzài shēntǐ zěnmeyàng?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi thăm sức khỏe' },
+              { id: 'l2-t1a-3', hanzi: '你多大？', pinyin: 'Nǐ duō dà?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi tuổi tác' },
+              { id: 'l2-t1a-4', hanzi: '他多高？', pinyin: 'Tā duō gāo?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi chiều cao' }
+            ]
+          },
+          {
+            tier: 1,
+            title: 'Chọn từ đúng',
+            type: 'choose-2',
+            id: 'l2-t1b',
+            items: [
+              { id: 'l2-t1b-1', sentence: '你很少生病，＿＿喜欢运动？', choices: ['是不是', '吗'], answer: '是不是' },
+              { id: 'l2-t1b-2', sentence: '我＿＿天早上都要出去跑步。', choices: ['每', '都'], answer: '每' },
+              { id: 'l2-t1b-3', sentence: '你＿＿大？', choices: ['多', '几'], answer: '多' },
+              { id: 'l2-t1b-4', sentence: '他这几天很忙，没有时间＿＿。', choices: ['休息', '起床'], answer: '休息' }
+            ]
+          },
+          {
+            tier: 2,
+            title: 'Sắp xếp từ thành câu',
+            type: 'word-order',
+            id: 'l2-t2a',
+            items: [
+              { id: 'l2-t2a-1', tokens: ['我', '每天', '六点', '起床'], translation: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ.' },
+              { id: 'l2-t2a-2', tokens: ['他', '这几天', '很忙'], translation: 'Mấy ngày nay anh ấy rất bận.' }
+            ]
+          },
+          {
+            tier: 2,
+            title: 'Sắp xếp câu thành đoạn hội thoại',
+            type: 'line-order',
+            id: 'l2-t2b',
+            hint: 'Gợi ý: Hỏi thăm sức khỏe → trả lời → hỏi khi nào xuất viện → trả lời',
+            lines: [
+              { hanzi: '吃药了吗？现在身体怎么样？', vi: 'Bạn uống thuốc chưa? Bây giờ sức khỏe thế nào rồi?' },
+              { hanzi: '吃了。现在好多了。', vi: 'Uống rồi. Bây giờ tốt hơn nhiều rồi.' },
+              { hanzi: '什么时候能出院？', vi: 'Khi nào thì có thể xuất viện?' },
+              { hanzi: '医生说下个星期。', vi: 'Bác sĩ nói là tuần sau.' }
+            ]
+          },
+          {
+            tier: 3,
+            title: 'Luyện nói / viết tự do',
+            type: 'free-practice',
+            id: 'l2-t3',
+            items: [
+              { id: 'l2-t3-1', prompt: 'Bạn gặp lại bạn học lâu ngày không gặp, hãy hỏi thăm xem dạo này bạn ấy có bận không.', sampleAnswer: '你最近忙不忙？' },
+              { id: 'l2-t3-2', prompt: 'Có người hỏi bạn cao bao nhiêu, hãy trả lời bằng tiếng Trung (ví dụ bạn cao 1m7).', sampleAnswer: '我一米七。' },
+              { id: 'l2-t3-3', prompt: 'Bạn của bạn vừa xuất viện, hãy hỏi thăm sức khỏe của bạn ấy.', sampleAnswer: '你现在身体怎么样？' }
+            ]
+          }
         ]
       }
     ]

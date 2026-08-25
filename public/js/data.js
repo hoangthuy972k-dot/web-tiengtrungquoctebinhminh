@@ -306,60 +306,71 @@ const APP_DATA = {
         tieredExercises: [
           {
             tier: 1,
-            title: 'Nối câu hỏi với mục đích hỏi',
-            type: 'match-select',
+            title: 'Nghe và chọn câu trả lời đúng',
+            type: 'listening-mcq',
             id: 'l2-t1a',
             items: [
-              { id: 'l2-t1a-1', hanzi: '你每天几点起床？', pinyin: 'Nǐ měitiān jǐ diǎn qǐchuáng?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi thăm giờ giấc sinh hoạt' },
-              { id: 'l2-t1a-2', hanzi: '现在身体怎么样？', pinyin: 'Xiànzài shēntǐ zěnmeyàng?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi thăm sức khỏe' },
-              { id: 'l2-t1a-3', hanzi: '你多大？', pinyin: 'Nǐ duō dà?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi tuổi tác' },
-              { id: 'l2-t1a-4', hanzi: '他多高？', pinyin: 'Tā duō gāo?', options: ['Hỏi thăm giờ giấc sinh hoạt', 'Hỏi thăm sức khỏe', 'Hỏi tuổi tác', 'Hỏi chiều cao'], answer: 'Hỏi chiều cao' }
+              { id: 'l2-t1a-1', audioText: '你每天几点起床？', options: ['我每天6点起床。', '医生说下个星期。', '他是我同学。', '一米八几。'], answer: '我每天6点起床。' },
+              { id: 'l2-t1a-2', audioText: '现在身体怎么样？', options: ['现在好多了。', '我每天六点起床。', '他每天回来都很累。', '20多岁。'], answer: '现在好多了。' },
+              { id: 'l2-t1a-3', audioText: '大卫今年多大？', options: ['20多岁。', '一米八几。', '医生说下个星期。', '是啊，我每天早上都要出去跑步。'], answer: '20多岁。' },
+              { id: 'l2-t1a-4', audioText: '他多高？', options: ['一米八几。', '20多岁。', '现在好多了。', '他是我同学。'], answer: '一米八几。' }
             ]
           },
           {
             tier: 1,
-            title: 'Chọn từ đúng',
-            type: 'choose-2',
+            title: 'Nghe và điền từ còn thiếu',
+            type: 'listening-fill',
             id: 'l2-t1b',
             items: [
-              { id: 'l2-t1b-1', sentence: '你很少生病，＿＿喜欢运动？', choices: ['是不是', '吗'], answer: '是不是' },
-              { id: 'l2-t1b-2', sentence: '我＿＿天早上都要出去跑步。', choices: ['每', '都'], answer: '每' },
-              { id: 'l2-t1b-3', sentence: '你＿＿大？', choices: ['多', '几'], answer: '多' },
-              { id: 'l2-t1b-4', sentence: '他这几天很忙，没有时间＿＿。', choices: ['休息', '起床'], answer: '休息' }
+              { id: 'l2-t1b-1', audioText: '你很少生病，是不是喜欢运动？', display: '你很少生病，＿＿喜欢运动？', choices: ['是不是', '吗'], answer: '是不是' },
+              { id: 'l2-t1b-2', audioText: '我每天早上都要出去跑步。', display: '我每天＿＿都要出去跑步。', choices: ['早上', '晚上'], answer: '早上' },
+              { id: 'l2-t1b-3', audioText: '他这几天很忙，没有时间休息。', display: '他这几天很忙，没有时间＿＿。', choices: ['休息', '起床'], answer: '休息' },
+              { id: 'l2-t1b-4', audioText: '医生说下个星期。', display: '医生说＿＿星期。', choices: ['下个', '这个'], answer: '下个' }
             ]
           },
           {
             tier: 2,
-            title: 'Sắp xếp từ thành câu',
+            title: 'Nghe và sắp xếp thành câu đúng',
             type: 'word-order',
             id: 'l2-t2a',
             items: [
-              { id: 'l2-t2a-1', tokens: ['我', '每天', '六点', '起床'], translation: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ.' },
-              { id: 'l2-t2a-2', tokens: ['他', '这几天', '很忙'], translation: 'Mấy ngày nay anh ấy rất bận.' }
+              { id: 'l2-t2a-1', tokens: ['我', '每天', '六点', '起床'], audioText: '我每天六点起床。' },
+              { id: 'l2-t2a-2', tokens: ['他', '这几天', '很忙'], audioText: '他这几天很忙。' }
             ]
           },
           {
             tier: 2,
-            title: 'Sắp xếp câu thành đoạn hội thoại',
+            title: 'Nghe và sắp xếp đoạn hội thoại',
             type: 'line-order',
             id: 'l2-t2b',
-            hint: 'Gợi ý: Hỏi thăm sức khỏe → trả lời → hỏi khi nào xuất viện → trả lời',
+            hint: 'Nhấn 🔊 để nghe từng câu, sau đó sắp xếp theo đúng trình tự hội thoại.',
             lines: [
-              { hanzi: '吃药了吗？现在身体怎么样？', vi: 'Bạn uống thuốc chưa? Bây giờ sức khỏe thế nào rồi?' },
-              { hanzi: '吃了。现在好多了。', vi: 'Uống rồi. Bây giờ tốt hơn nhiều rồi.' },
-              { hanzi: '什么时候能出院？', vi: 'Khi nào thì có thể xuất viện?' },
-              { hanzi: '医生说下个星期。', vi: 'Bác sĩ nói là tuần sau.' }
+              { hanzi: '吃药了吗？现在身体怎么样？' },
+              { hanzi: '吃了。现在好多了。' },
+              { hanzi: '什么时候能出院？' },
+              { hanzi: '医生说下个星期。' }
             ]
           },
           {
             tier: 3,
-            title: 'Luyện nói / viết tự do',
-            type: 'free-practice',
-            id: 'l2-t3',
+            title: 'Nghe và nhắc lại (luyện phát âm)',
+            type: 'shadowing',
+            id: 'l2-t3a',
             items: [
-              { id: 'l2-t3-1', prompt: 'Bạn gặp lại bạn học lâu ngày không gặp, hãy hỏi thăm xem dạo này bạn ấy có bận không.', sampleAnswer: '你最近忙不忙？' },
-              { id: 'l2-t3-2', prompt: 'Có người hỏi bạn cao bao nhiêu, hãy trả lời bằng tiếng Trung (ví dụ bạn cao 1m7).', sampleAnswer: '我一米七。' },
-              { id: 'l2-t3-3', prompt: 'Bạn của bạn vừa xuất viện, hãy hỏi thăm sức khỏe của bạn ấy.', sampleAnswer: '你现在身体怎么样？' }
+              { id: 'l2-t3a-1', text: '我每天六点起床。' },
+              { id: 'l2-t3a-2', text: '现在好多了。' },
+              { id: 'l2-t3a-3', text: '他这几天很忙。' }
+            ]
+          },
+          {
+            tier: 3,
+            title: 'Nghe câu hỏi và trả lời bằng giọng nói',
+            type: 'qa-speaking',
+            id: 'l2-t3b',
+            items: [
+              { id: 'l2-t3b-1', questionText: '你每天几点起床？', keywords: ['起床', '点'], sampleAnswer: '我每天七点起床。' },
+              { id: 'l2-t3b-2', questionText: '你多大？', keywords: ['岁'], sampleAnswer: '我十八岁。' },
+              { id: 'l2-t3b-3', questionText: '你身体怎么样？', keywords: ['身体', '好'], sampleAnswer: '我身体很好，谢谢。' }
             ]
           }
         ]

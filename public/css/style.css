@@ -337,6 +337,38 @@ button {
   margin-left: 0;
 }
 
+.pinyin-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-white);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--color-gray-700);
+  cursor: pointer;
+}
+
+.pinyin-toggle .hanzi {
+  color: var(--color-red-600);
+  font-size: 0.95rem;
+}
+
+.pinyin-toggle[aria-pressed="false"] {
+  background: var(--color-gray-100);
+  color: var(--color-gray-500);
+}
+
+/* Global pinyin visibility toggle */
+body.pinyin-hidden .pinyin,
+body.pinyin-hidden .pinyin-big,
+body.pinyin-hidden .vocab-table td.pinyin-cell {
+  display: none !important;
+}
+
 .user-chip {
   display: flex;
   align-items: center;
@@ -1485,7 +1517,7 @@ button {
 
 .line-token {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-2);
   text-align: left;
   border: 2px solid var(--color-gray-200);
@@ -1496,9 +1528,10 @@ button {
   width: 100%;
 }
 
-.line-token:disabled {
+.line-token.is-disabled {
   opacity: 0.35;
   cursor: default;
+  pointer-events: none;
 }
 
 .line-token.is-picked {
@@ -1509,12 +1542,7 @@ button {
 .line-token .hanzi {
   font-weight: 700;
   font-size: 0.92rem;
-}
-
-.line-token .vi {
-  font-size: 0.75rem;
-  color: var(--color-gray-600);
-  font-style: italic;
+  flex: 1;
 }
 
 .line-order-num {
@@ -1531,25 +1559,6 @@ button {
   justify-content: center;
 }
 
-/* free practice */
-.free-practice-rows {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-.free-practice-row {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-sm);
-  padding: var(--space-3);
-}
-
-.free-practice-prompt {
-  margin: 0 0 var(--space-3);
-  font-size: 0.88rem;
-}
-
 .free-practice-answer {
   margin: var(--space-3) 0 0;
   padding: var(--space-2) var(--space-3);
@@ -1557,6 +1566,180 @@ button {
   border-radius: var(--radius-sm);
   font-weight: 700;
   color: #8a5a00;
+}
+
+/* ---------- Audio playback (speak buttons) ---------- */
+.speak-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.speak-btn:hover {
+  background: var(--color-red-600);
+  color: var(--color-white);
+}
+
+.speak-btn-inline {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* ---------- Listening exercises ---------- */
+.listening-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.listening-row {
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+
+.listening-row.is-correct {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.listening-row.is-wrong {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+.listening-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.listening-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listening-options {
+  margin-bottom: 0;
+}
+
+.listening-options .option-btn {
+  min-height: 44px;
+  font-size: 0.9rem;
+}
+
+.listening-options .option-btn.is-picked {
+  border-color: var(--color-red-600);
+  background: var(--color-red-50);
+}
+
+/* ---------- Speaking exercises ---------- */
+.speech-support-note {
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+  background: var(--color-gray-100);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.shadow-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.shadow-row {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+
+.shadow-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.shadow-text {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.shadow-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.record-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-red-500);
+  background: var(--color-white);
+  color: var(--color-red-600);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.record-btn:hover {
+  background: var(--color-red-50);
+}
+
+.record-btn.is-recording {
+  background: var(--color-red-600);
+  color: var(--color-white);
+  animation: pulse-record 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-record {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(216, 32, 46, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(216, 32, 46, 0); }
+}
+
+.shadow-result {
+  margin: var(--space-3) 0 0;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
+
+.shadow-result.is-good {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.shadow-result.is-mid {
+  color: #8a5a00;
+  font-weight: 700;
 }
 
 /* ---------- Practice ---------- */

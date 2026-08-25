@@ -6,7 +6,8 @@
     learned: 'hyv_learned_words',
     streak: 'hyv_streak',
     sessions: 'hyv_sessions',
-    accuracy: 'hyv_accuracy'
+    accuracy: 'hyv_accuracy',
+    pinyinHidden: 'hyv_pinyin_hidden'
   };
 
   var QUESTIONS_PER_SESSION = 8;
@@ -79,6 +80,68 @@
     toastTimer = setTimeout(function () {
       toast.classList.remove('is-visible');
     }, 2600);
+  }
+
+  /* ---------------- Speech: text-to-speech playback + speech recognition ---------------- */
+  /*
+   * Audio is generated on-device via the browser's Web Speech API (no audio
+   * files to host). Playback quality depends on the zh-CN voice installed on
+   * the visitor's OS/browser. Recognition (for speaking exercises) uses
+   * webkitSpeechRecognition where available and degrades to a self-check
+   * flow ("Tôi đã luyện xong") when the browser doesn't support it.
+   */
+
+  var zhVoice = null;
+  function pickZhVoice() {
+    if (!window.speechSynthesis) return null;
+    var voices = window.speechSynthesis.getVoices();
+    return voices.filter(function (v) { return /^zh/i.test(v.lang); })[0] || null;
+  }
+  if (window.speechSynthesis) {
+    zhVoice = pickZhVoice();
+    window.speechSynthesis.onvoiceschanged = function () { zhVoice = pickZhVoice(); };
+  }
+
+  function speakText(text) {
+    if (!window.speechSynthesis) {
+      showToast('Trình duyệt của bạn chưa hỗ trợ phát âm.');
+      return;
+    }
+    window.speechSynthesis.cancel();
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'zh-CN';
+    utter.rate = 0.9;
+    if (zhVoice) utter.voice = zhVoice;
+    window.speechSynthesis.speak(utter);
+  }
+
+  function makeSpeakButton(text, label) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'speak-btn';
+    btn.setAttribute('aria-label', label || 'Nghe phát âm');
+    btn.innerHTML = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>';
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      speakText(text);
+    });
+    return btn;
+  }
+
+  var SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+
+  function createRecognizer(onResult, onError) {
+    if (!SpeechRecognitionCtor) return null;
+    var rec = new SpeechRecognitionCtor();
+    rec.lang = 'zh-CN';
+    rec.interimResults = false;
+    rec.maxAlternatives = 1;
+    rec.onresult = function (e) {
+      var transcript = e.results[0][0].transcript;
+      onResult(transcript);
+    };
+    rec.onerror = function (e) { if (onError) onError(e.error); };
+    return rec;
   }
 
   /* ---------------- Header / nav ---------------- */
@@ -199,7 +262,7 @@
           return '<div class="dialogue-line is-' + line.speaker.toLowerCase() + '">' +
             '<span class="dialogue-speaker">' + line.speaker + '</span>' +
             '<div class="dialogue-bubble">' +
-              '<p class="hanzi">' + line.hanzi + '</p>' +
+              '<p class="hanzi">' + line.hanzi + ' <button type="button" class="speak-btn speak-btn-inline" data-speak="' + line.hanzi + '" aria-label="Nghe câu này"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></p>' +
               '<p class="pinyin">' + line.pinyin + '</p>' +
               '<p class="vi">' + line.vi + '</p>' +
             '</div>' +
@@ -231,8 +294,8 @@
 
       var vocabRowsHtml = lesson.vocab.map(function (w) {
         return '<tr>' +
-          '<td class="hanzi">' + w.hanzi + '</td>' +
-          '<td>' + w.pinyin + '</td>' +
+          '<td class="hanzi">' + w.hanzi + ' <button type="button" class="speak-btn speak-btn-inline" data-speak="' + w.hanzi + '" aria-label="Nghe phát âm ' + w.hanzi + '"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td>' +
+          '<td class="pinyin-cell">' + w.pinyin + '</td>' +
           '<td>' + (w.pos || '') + '</td>' +
           '<td>' + w.meaning + '</td>' +
         '</tr>';
@@ -293,6 +356,12 @@
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
       }
+      var speakBtn = e.target.closest ? e.target.closest('.speak-btn[data-speak]') : null;
+      if (speakBtn) {
+        e.preventDefault();
+        speakText(speakBtn.getAttribute('data-speak'));
+        return;
+      }
       var btn = e.target.closest ? e.target.closest('.lesson-practice-btn') : null;
       if (!btn) return;
       startLessonPractice(btn.getAttribute('data-lesson-id'));
@@ -336,63 +405,70 @@
     return bar;
   }
 
-  function renderMatchSelectBlock(block) {
+  function renderListeningMcqBlock(block) {
     var wrap = document.createElement('div');
     wrap.className = 'exercise-block';
     wrap.innerHTML = '<h5>' + block.title + '</h5>';
 
     var body = document.createElement('div');
-    body.className = 'match-rows';
-    var selects = [];
+    body.className = 'listening-rows';
+    var rows = [];
 
     block.items.forEach(function (item, i) {
       var row = document.createElement('div');
-      row.className = 'match-row';
+      row.className = 'listening-row';
 
-      var promptEl = document.createElement('div');
-      promptEl.className = 'match-prompt';
-      promptEl.innerHTML = '<span class="hanzi">' + (i + 1) + '. ' + item.hanzi + '</span><span class="pinyin">' + item.pinyin + '</span>';
+      var head = document.createElement('div');
+      head.className = 'listening-head';
+      head.innerHTML = '<span class="listening-num">' + (i + 1) + '</span>';
+      head.appendChild(makeSpeakButton(item.audioText, 'Nghe câu hỏi ' + (i + 1)));
 
-      var select = document.createElement('select');
-      select.className = 'match-select';
-      var blankOpt = document.createElement('option');
-      blankOpt.textContent = '— chọn —';
-      blankOpt.value = '';
-      select.appendChild(blankOpt);
-      item.options.forEach(function (opt) {
-        var o = document.createElement('option');
-        o.textContent = opt;
-        o.value = opt;
-        select.appendChild(o);
+      var optWrap = document.createElement('div');
+      optWrap.className = 'options-grid listening-options';
+      var opts = shuffle(item.options);
+      var btns = opts.map(function (opt) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'option-btn hanzi';
+        b.textContent = opt;
+        b.addEventListener('click', function () {
+          btns.forEach(function (bb) { bb.classList.remove('is-picked'); });
+          b.classList.add('is-picked');
+          optWrap.dataset.selected = opt;
+        });
+        optWrap.appendChild(b);
+        return b;
       });
 
-      row.appendChild(promptEl);
-      row.appendChild(select);
+      row.appendChild(head);
+      row.appendChild(optWrap);
       body.appendChild(row);
-      selects.push({ select: select, answer: item.answer, row: row });
+      rows.push({ item: item, optWrap: optWrap, btns: btns, row: row });
     });
 
     wrap.appendChild(body);
     var actions = buildQuizActions(function () {
       var correct = 0;
-      selects.forEach(function (s) {
-        var ok = s.select.value === s.answer;
-        s.row.classList.remove('is-correct', 'is-wrong');
-        if (s.select.value) s.row.classList.add(ok ? 'is-correct' : 'is-wrong');
+      rows.forEach(function (r) {
+        var sel = r.optWrap.dataset.selected;
+        var ok = sel === r.item.answer;
+        r.row.classList.remove('is-correct', 'is-wrong');
+        if (sel) r.row.classList.add(ok ? 'is-correct' : 'is-wrong');
         if (ok) correct++;
       });
-      return { correct: correct, total: selects.length };
+      return { correct: correct, total: rows.length };
     }, function () {
-      selects.forEach(function (s) {
-        s.select.value = '';
-        s.row.classList.remove('is-correct', 'is-wrong');
+      rows.forEach(function (r) {
+        r.btns.forEach(function (b) { b.classList.remove('is-picked'); });
+        r.row.classList.remove('is-correct', 'is-wrong');
+        delete r.optWrap.dataset.selected;
       });
     });
     wrap.appendChild(actions);
     return wrap;
   }
 
-  function renderChoose2Block(block) {
+  function renderListeningFillBlock(block) {
     var wrap = document.createElement('div');
     wrap.className = 'exercise-block';
     wrap.innerHTML = '<h5>' + block.title + '</h5>';
@@ -407,7 +483,8 @@
 
       var sentEl = document.createElement('p');
       sentEl.className = 'choose2-sentence hanzi';
-      sentEl.textContent = (i + 1) + '. ' + item.sentence;
+      sentEl.textContent = (i + 1) + '. ' + item.display;
+      sentEl.prepend(makeSpeakButton(item.audioText, 'Nghe câu đầy đủ'));
 
       var btnWrap = document.createElement('div');
       btnWrap.className = 'choose2-btns';
@@ -468,7 +545,8 @@
 
       var label = document.createElement('p');
       label.className = 'word-order-label';
-      label.textContent = (i + 1) + '. "' + item.translation + '"';
+      label.innerHTML = '<span>' + (i + 1) + '. Nghe và sắp xếp:</span>';
+      label.appendChild(makeSpeakButton(item.audioText, 'Nghe câu ' + (i + 1)));
 
       var answerZone = document.createElement('div');
       answerZone.className = 'sentence-build-answer';
@@ -563,32 +641,46 @@
     function renderTokens() {
       tokenZone.innerHTML = '';
       shuffled.forEach(function (line, idx) {
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'line-token';
-        btn.innerHTML = '<span class="hanzi">' + line.hanzi + '</span><span class="vi">' + line.vi + '</span>';
         var used = picked.indexOf(idx) !== -1;
-        btn.disabled = used;
-        if (used) btn.classList.add('is-picked');
-        btn.addEventListener('click', function () {
-          picked.push(idx);
-          renderTokens();
-          renderAnswer();
-        });
-        tokenZone.appendChild(btn);
+        var item = document.createElement('div');
+        item.className = 'line-token' + (used ? ' is-picked is-disabled' : '');
+        item.setAttribute('role', 'button');
+        item.setAttribute('tabindex', used ? '-1' : '0');
+        var hanziSpan = document.createElement('span');
+        hanziSpan.className = 'hanzi';
+        hanziSpan.textContent = line.hanzi;
+        item.appendChild(hanziSpan);
+        item.appendChild(makeSpeakButton(line.hanzi, 'Nghe câu này'));
+        if (!used) {
+          var pick = function () { picked.push(idx); renderTokens(); renderAnswer(); };
+          item.addEventListener('click', pick);
+          item.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
+          });
+        }
+        tokenZone.appendChild(item);
       });
     }
     function renderAnswer() {
       answerZone.innerHTML = '';
       picked.forEach(function (idx, pos) {
-        var chip = document.createElement('button');
-        chip.type = 'button';
+        var chip = document.createElement('div');
         chip.className = 'line-token is-picked';
-        chip.innerHTML = '<span class="line-order-num">' + (pos + 1) + '</span><span class="hanzi">' + shuffled[idx].hanzi + '</span>';
-        chip.addEventListener('click', function () {
-          picked.splice(pos, 1);
-          renderTokens();
-          renderAnswer();
+        chip.setAttribute('role', 'button');
+        chip.setAttribute('tabindex', '0');
+        var numSpan = document.createElement('span');
+        numSpan.className = 'line-order-num';
+        numSpan.textContent = pos + 1;
+        var hanziSpan = document.createElement('span');
+        hanziSpan.className = 'hanzi';
+        hanziSpan.textContent = shuffled[idx].hanzi;
+        chip.appendChild(numSpan);
+        chip.appendChild(hanziSpan);
+        chip.appendChild(makeSpeakButton(shuffled[idx].hanzi, 'Nghe câu này'));
+        var remove = function () { picked.splice(pos, 1); renderTokens(); renderAnswer(); };
+        chip.addEventListener('click', remove);
+        chip.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); remove(); }
         });
         answerZone.appendChild(chip);
       });
@@ -615,40 +707,176 @@
     return wrap;
   }
 
-  function renderFreePracticeBlock(block) {
+  function speechUnsupportedNote(text) {
+    var note = document.createElement('p');
+    note.className = 'speech-support-note';
+    note.textContent = text;
+    return note;
+  }
+
+  function normalizeZh(s) {
+    return (s || '').replace(/[，。！？、,.!?\s]/g, '');
+  }
+
+  function renderShadowingBlock(block) {
     var wrap = document.createElement('div');
-    wrap.className = 'exercise-block free-practice-block';
+    wrap.className = 'exercise-block';
     wrap.innerHTML = '<h5>' + block.title + '</h5>';
+    if (!SpeechRecognitionCtor) {
+      wrap.appendChild(speechUnsupportedNote('Trình duyệt chưa hỗ trợ ghi âm nhận diện — hãy nghe mẫu, tự luyện nói rồi đánh dấu khi xong.'));
+    }
 
     var body = document.createElement('div');
-    body.className = 'free-practice-rows';
+    body.className = 'shadow-rows';
 
     block.items.forEach(function (item, i) {
       var row = document.createElement('div');
-      row.className = 'free-practice-row';
+      row.className = 'shadow-row';
 
-      var prompt = document.createElement('p');
-      prompt.className = 'free-practice-prompt';
-      prompt.textContent = (i + 1) + '. ' + item.prompt;
+      var head = document.createElement('div');
+      head.className = 'shadow-head';
+      var numSpan = document.createElement('span');
+      numSpan.className = 'listening-num';
+      numSpan.textContent = i + 1;
+      var textSpan = document.createElement('span');
+      textSpan.className = 'hanzi shadow-text';
+      textSpan.textContent = item.text;
+      head.appendChild(numSpan);
+      head.appendChild(textSpan);
+      head.appendChild(makeSpeakButton(item.text, 'Nghe mẫu'));
+      row.appendChild(head);
 
-      var toggleBtn = document.createElement('button');
-      toggleBtn.type = 'button';
-      toggleBtn.className = 'btn btn-ghost btn-sm free-practice-toggle';
-      toggleBtn.textContent = 'Xem câu mẫu tham khảo';
+      var resultEl = document.createElement('p');
+      resultEl.className = 'shadow-result';
 
-      var answer = document.createElement('p');
-      answer.className = 'free-practice-answer hanzi';
-      answer.hidden = true;
-      answer.textContent = item.sampleAnswer;
+      if (SpeechRecognitionCtor) {
+        var recBtn = document.createElement('button');
+        recBtn.type = 'button';
+        recBtn.className = 'record-btn';
+        recBtn.textContent = '🎤 Ghi âm luyện nói';
+        recBtn.addEventListener('click', function () {
+          if (recBtn.classList.contains('is-recording')) return;
+          recBtn.classList.add('is-recording');
+          recBtn.textContent = '🎙️ Đang nghe...';
+          resultEl.textContent = '';
+          resultEl.className = 'shadow-result';
+          var recognizer = createRecognizer(function (transcript) {
+            recBtn.classList.remove('is-recording');
+            recBtn.textContent = '🎤 Ghi âm luyện nói';
+            var a = normalizeZh(transcript);
+            var b = normalizeZh(item.text);
+            var ok = a.indexOf(b) !== -1 || b.indexOf(a) !== -1;
+            resultEl.textContent = 'Bạn nói: "' + transcript + '"';
+            resultEl.className = 'shadow-result ' + (ok ? 'is-good' : 'is-mid');
+          }, function () {
+            recBtn.classList.remove('is-recording');
+            recBtn.textContent = '🎤 Ghi âm luyện nói';
+            resultEl.textContent = 'Không nhận diện được giọng nói, hãy thử lại.';
+            resultEl.className = 'shadow-result is-mid';
+          });
+          recognizer.start();
+        });
+        row.appendChild(recBtn);
+      } else {
+        var doneBtn = document.createElement('button');
+        doneBtn.type = 'button';
+        doneBtn.className = 'btn btn-outline btn-sm';
+        doneBtn.textContent = 'Tôi đã luyện xong';
+        doneBtn.addEventListener('click', function () {
+          doneBtn.classList.toggle('is-done');
+          doneBtn.textContent = doneBtn.classList.contains('is-done') ? '✓ Đã luyện' : 'Tôi đã luyện xong';
+        });
+        row.appendChild(doneBtn);
+      }
 
-      toggleBtn.addEventListener('click', function () {
-        answer.hidden = !answer.hidden;
-        toggleBtn.textContent = answer.hidden ? 'Xem câu mẫu tham khảo' : 'Ẩn câu mẫu';
+      row.appendChild(resultEl);
+      body.appendChild(row);
+    });
+
+    wrap.appendChild(body);
+    return wrap;
+  }
+
+  function renderQASpeakingBlock(block) {
+    var wrap = document.createElement('div');
+    wrap.className = 'exercise-block';
+    wrap.innerHTML = '<h5>' + block.title + '</h5>';
+    if (!SpeechRecognitionCtor) {
+      wrap.appendChild(speechUnsupportedNote('Trình duyệt chưa hỗ trợ ghi âm nhận diện — hãy nghe câu hỏi, tự trả lời rồi xem câu mẫu để đối chiếu.'));
+    }
+
+    var body = document.createElement('div');
+    body.className = 'shadow-rows';
+
+    block.items.forEach(function (item, i) {
+      var row = document.createElement('div');
+      row.className = 'shadow-row';
+
+      var head = document.createElement('div');
+      head.className = 'shadow-head';
+      var numSpan = document.createElement('span');
+      numSpan.className = 'listening-num';
+      numSpan.textContent = i + 1;
+      var textSpan = document.createElement('span');
+      textSpan.className = 'hanzi shadow-text';
+      textSpan.textContent = item.questionText;
+      head.appendChild(numSpan);
+      head.appendChild(textSpan);
+      head.appendChild(makeSpeakButton(item.questionText, 'Nghe câu hỏi'));
+      row.appendChild(head);
+
+      var resultEl = document.createElement('p');
+      resultEl.className = 'shadow-result';
+
+      var actionsRow = document.createElement('div');
+      actionsRow.className = 'shadow-actions';
+
+      if (SpeechRecognitionCtor) {
+        var recBtn = document.createElement('button');
+        recBtn.type = 'button';
+        recBtn.className = 'record-btn';
+        recBtn.textContent = '🎤 Trả lời';
+        recBtn.addEventListener('click', function () {
+          if (recBtn.classList.contains('is-recording')) return;
+          recBtn.classList.add('is-recording');
+          recBtn.textContent = '🎙️ Đang nghe...';
+          resultEl.textContent = '';
+          resultEl.className = 'shadow-result';
+          var recognizer = createRecognizer(function (transcript) {
+            recBtn.classList.remove('is-recording');
+            recBtn.textContent = '🎤 Trả lời';
+            var ok = item.keywords.some(function (kw) { return transcript.indexOf(kw) !== -1; });
+            resultEl.textContent = 'Bạn trả lời: "' + transcript + '"';
+            resultEl.className = 'shadow-result ' + (ok ? 'is-good' : 'is-mid');
+          }, function () {
+            recBtn.classList.remove('is-recording');
+            recBtn.textContent = '🎤 Trả lời';
+            resultEl.textContent = 'Không nhận diện được, hãy thử lại.';
+            resultEl.className = 'shadow-result is-mid';
+          });
+          recognizer.start();
+        });
+        actionsRow.appendChild(recBtn);
+      }
+
+      var sampleEl = document.createElement('p');
+      sampleEl.className = 'free-practice-answer hanzi';
+      sampleEl.hidden = true;
+      sampleEl.textContent = item.sampleAnswer;
+
+      var sampleBtn = document.createElement('button');
+      sampleBtn.type = 'button';
+      sampleBtn.className = 'btn btn-ghost btn-sm';
+      sampleBtn.textContent = 'Xem câu trả lời mẫu';
+      sampleBtn.addEventListener('click', function () {
+        sampleEl.hidden = !sampleEl.hidden;
+        sampleBtn.textContent = sampleEl.hidden ? 'Xem câu trả lời mẫu' : 'Ẩn câu mẫu';
       });
+      actionsRow.appendChild(sampleBtn);
 
-      row.appendChild(prompt);
-      row.appendChild(toggleBtn);
-      row.appendChild(answer);
+      row.appendChild(actionsRow);
+      row.appendChild(resultEl);
+      row.appendChild(sampleEl);
       body.appendChild(row);
     });
 
@@ -657,11 +885,12 @@
   }
 
   function renderExerciseBlock(block) {
-    if (block.type === 'match-select') return renderMatchSelectBlock(block);
-    if (block.type === 'choose-2') return renderChoose2Block(block);
+    if (block.type === 'listening-mcq') return renderListeningMcqBlock(block);
+    if (block.type === 'listening-fill') return renderListeningFillBlock(block);
     if (block.type === 'word-order') return renderWordOrderBlock(block);
     if (block.type === 'line-order') return renderLineOrderBlock(block);
-    if (block.type === 'free-practice') return renderFreePracticeBlock(block);
+    if (block.type === 'shadowing') return renderShadowingBlock(block);
+    if (block.type === 'qa-speaking') return renderQASpeakingBlock(block);
     return null;
   }
 
@@ -1334,11 +1563,29 @@
 
   /* ---------------- Init ---------------- */
 
+  function initPinyinToggle() {
+    var btn = $('#pinyinToggle');
+    if (!btn) return;
+    function apply(hidden) {
+      document.body.classList.toggle('pinyin-hidden', hidden);
+      btn.setAttribute('aria-pressed', String(!hidden));
+      btn.lastChild.textContent = hidden ? ' Ẩn' : ' Hiện';
+    }
+    var hidden = readJSON(STORAGE_KEYS.pinyinHidden, false);
+    apply(hidden);
+    btn.addEventListener('click', function () {
+      hidden = !hidden;
+      writeJSON(STORAGE_KEYS.pinyinHidden, hidden);
+      apply(hidden);
+    });
+  }
+
   function init() {
     $('#footerYear').textContent = new Date().getFullYear();
 
     initNav();
     initSearch();
+    initPinyinToggle();
     renderLevelCards();
     renderLessonList();
     initLessonBanner();

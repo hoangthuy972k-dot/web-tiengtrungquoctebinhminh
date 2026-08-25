@@ -1,0 +1,19 @@
+{
+  "name": "chinese-learning-website",
+  "version": "1.0.0",
+  "description": "Website hoc tieng Trung - HSK 1-4 va YCT, tu vung, bai tap trac nghiem, dashboard tien do hoc tap",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0"
+  },
+  "license": "MIT"
+}

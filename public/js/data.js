@@ -231,6 +231,42 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/bai-6.html'
+      },
+      {
+        id: 'hsk2-l7',
+        number: 7,
+        title: 'Nhà bạn cách công ty có xa không?',
+        titleHanzi: '你家离公司远吗？',
+        titlePinyin: 'Nǐ jiā lí gōngsī yuǎn ma?',
+        topic: 'Khoảng cách & Phương tiện đi lại',
+        vocabCount: 13,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/bai-7.html'
+      },
+      {
+        id: 'hsk2-l8',
+        number: 8,
+        title: 'Để tôi suy nghĩ rồi nói cho bạn biết',
+        titleHanzi: '让我想想再告诉你',
+        titlePinyin: 'Ràng wǒ xiǎngxiang zài gàosu nǐ',
+        topic: 'Nhờ vả, Dịch vụ & Mua sắm',
+        vocabCount: 9,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/bai-8.html'
+      },
+      {
+        id: 'hsk2-l9',
+        number: 9,
+        title: 'Đề nhiều quá, tôi chưa làm xong',
+        titleHanzi: '题太多，我没做完',
+        titlePinyin: 'Tí tài duō, wǒ méi zuò wán',
+        topic: 'Điện thoại, Học tập & Công việc mới',
+        vocabCount: 11,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-9.html'
       }
     ]
   }

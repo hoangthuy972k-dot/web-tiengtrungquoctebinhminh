@@ -375,6 +375,123 @@ const APP_DATA = {
             ]
           }
         ]
+      },
+      {
+        id: 'hsk2-l3',
+        number: 3,
+        title: 'Cái màu đỏ ở bên trái là của tôi',
+        titleHanzi: '左边那个红色的是我的',
+        titlePinyin: 'Zuǒbiān nàge hóngsè de shì wǒ de',
+        fullPageUrl: '/lessons/bai-3.html',
+
+        dialogues: [
+          {
+            id: 'd1',
+            place: '在房间 (Trong phòng)',
+            scene: 'Trong phòng, A hỏi B về chiếc đồng hồ đeo tay và giá tiền.',
+            lines: [
+              { speaker: 'A', hanzi: '这块手表是你的吗？', pinyin: 'Zhè kuài shǒubiǎo shì nǐ de ma?', vi: 'Chiếc đồng hồ đeo tay này có phải của bạn không?' },
+              { speaker: 'B', hanzi: '不是我的，是我爸爸的。', pinyin: 'Bú shì wǒ de, shì wǒ bàba de.', vi: 'Không phải của tôi, là của bố tôi đấy.' },
+              { speaker: 'A', hanzi: '多少钱买的？', pinyin: 'Duōshao qián mǎi de?', vi: 'Mua hết bao nhiêu tiền thế?' },
+              { speaker: 'B', hanzi: '3000多块。', pinyin: 'Sānqiān duō kuài.', vi: 'Hơn 3000 tệ.' }
+            ]
+          },
+          {
+            id: 'd2',
+            place: '在家里 (Ở nhà)',
+            scene: 'Ở nhà, A và B đoán xem ai vừa đến: người đưa báo hay người giao sữa.',
+            lines: [
+              { speaker: 'A', hanzi: '这是今天早上的报纸吗？', pinyin: 'Zhè shì jīntiān zǎoshang de bàozhǐ ma?', vi: 'Đây là tờ báo sáng nay phải không?' },
+              { speaker: 'B', hanzi: '不是，是昨天的。', pinyin: 'Bú shì, shì zuótiān de.', vi: 'Không phải, là báo ngày hôm qua.' },
+              { speaker: 'A', hanzi: '你听，是不是送报纸的来了？', pinyin: 'Nǐ tīng, shìbushì sòng bàozhǐ de lái le?', vi: 'Bạn nghe xem, có phải người đưa báo đến rồi không?' },
+              { speaker: 'B', hanzi: '我看一下。不是，是送牛奶的。', pinyin: 'Wǒ kàn yíxià. Bú shì, shì sòng niúnǎi de.', vi: 'Để tôi xem một chút. Không phải, là người giao sữa.' }
+            ]
+          },
+          {
+            id: 'd3',
+            place: '在家里 (Ở nhà)',
+            scene: 'Ở nhà, A hỏi thăm về các phòng và B giới thiệu phòng của từng người trong gia đình.',
+            lines: [
+              { speaker: 'A', hanzi: '这是谁的房间？', pinyin: 'Zhè shì shéi de fángjiān?', vi: 'Đây là phòng của ai vậy?' },
+              { speaker: 'B', hanzi: '这是我和我丈夫的。旁边那个小的房间是我女儿的。', pinyin: 'Zhè shì wǒ hé wǒ zhàngfu de. Pángbiān nàge xiǎo de fángjiān shì wǒ nǚ\'ér de.', vi: 'Đây là phòng của tôi và chồng tôi. Căn phòng nhỏ bên cạnh là của con gái tôi.' },
+              { speaker: 'A', hanzi: '你女儿的房间真漂亮，都是粉色的。', pinyin: 'Nǐ nǚ\'ér de fángjiān zhēn piàoliang, dōu shì fěnsè de.', vi: 'Phòng con gái bạn đẹp thật đấy, toàn là màu hồng thôi.' },
+              { speaker: 'B', hanzi: '是啊，粉色是我女儿最喜欢的颜色。', pinyin: 'Shì a, fěnsè shì wǒ nǚ\'ér zuì xǐhuan de yánsè.', vi: 'Đúng vậy, màu hồng là màu sắc con gái tôi thích nhất.' }
+            ]
+          }
+        ],
+
+        vocab: [
+          { id: 'l3-1', hanzi: '块', pinyin: 'kuài', pos: 'Lượng từ', meaning: 'đồng (tiền); miếng', example: '这块手表花了三千多块。' },
+          { id: 'l3-2', hanzi: '手表', pinyin: 'shǒubiǎo', pos: 'Danh từ', meaning: 'đồng hồ đeo tay', example: '这块手表是你的吗？' },
+          { id: 'l3-3', hanzi: '钱', pinyin: 'qián', pos: 'Danh từ', meaning: 'tiền', example: '多少钱买的？' },
+          { id: 'l3-4', hanzi: '买', pinyin: 'mǎi', pos: 'Động từ', meaning: 'mua', example: '我想买一块新手表。' },
+          { id: 'l3-5', hanzi: '报纸', pinyin: 'bàozhǐ', pos: 'Danh từ', meaning: 'báo, tờ báo', example: '这是今天早上的报纸吗？' },
+          { id: 'l3-6', hanzi: '昨天', pinyin: 'zuótiān', pos: 'Danh từ', meaning: 'hôm qua', example: '不是，是昨天的。' },
+          { id: 'l3-7', hanzi: '送', pinyin: 'sòng', pos: 'Động từ', meaning: 'đưa, giao, tặng', example: '是不是送报纸的来了？' },
+          { id: 'l3-8', hanzi: '牛奶', pinyin: 'niúnǎi', pos: 'Danh từ', meaning: 'sữa (bò)', example: '不是，是送牛奶的。' },
+          { id: 'l3-9', hanzi: '谁', pinyin: 'shéi', pos: 'Đại từ', meaning: 'ai', example: '这是谁的房间？' },
+          { id: 'l3-10', hanzi: '房间', pinyin: 'fángjiān', pos: 'Danh từ', meaning: 'phòng', example: '这是谁的房间？' },
+          { id: 'l3-11', hanzi: '丈夫', pinyin: 'zhàngfu', pos: 'Danh từ', meaning: 'chồng', example: '这是我和我丈夫的。' },
+          { id: 'l3-12', hanzi: '旁边', pinyin: 'pángbiān', pos: 'Danh từ', meaning: 'bên cạnh', example: '旁边那个小的房间是我女儿的。' },
+          { id: 'l3-13', hanzi: '女儿', pinyin: 'nǚ\'ér', pos: 'Danh từ', meaning: 'con gái', example: '粉色是我女儿最喜欢的颜色。' },
+          { id: 'l3-14', hanzi: '漂亮', pinyin: 'piàoliang', pos: 'Tính từ', meaning: 'đẹp', example: '你女儿的房间真漂亮。' },
+          { id: 'l3-15', hanzi: '颜色', pinyin: 'yánsè', pos: 'Danh từ', meaning: 'màu sắc', example: '粉色是我女儿最喜欢的颜色。' }
+        ],
+
+        grammar: [
+          {
+            term: 'Cụm từ danh hoá với 「的」',
+            note: 'Khi trung tâm ngữ (danh từ) đã rõ trong ngữ cảnh, có thể lược bỏ và chỉ giữ lại Tính từ/Đại từ chỉ định + 的.',
+            formula: '(Tính từ / Đại từ chỉ định) + 的 = "cái..."',
+            examples: [
+              { hanzi: '左边那个红色的是我的。', pinyin: 'Zuǒbiān nàge hóngsè de shì wǒ de.', vi: 'Cái màu đỏ ở bên trái là của tôi.' },
+              { hanzi: '这是谁的？', pinyin: 'Zhè shì shéi de?', vi: 'Đây là của ai?' },
+              { hanzi: '旁边那个小的是我女儿的。', pinyin: 'Pángbiān nàge xiǎo de shì wǒ nǚ\'ér de.', vi: 'Cái nhỏ bên cạnh là của con gái tôi.' }
+            ]
+          },
+          {
+            term: '「一下」sau động từ',
+            note: 'Đặt ngay sau động từ để làm giảm nhẹ mức độ/thời lượng của hành động — dịch "một chút, thử xem".',
+            formula: 'Động từ + 一下',
+            examples: [
+              { hanzi: '我看一下。', pinyin: 'Wǒ kàn yíxià.', vi: 'Để tôi xem một chút.' },
+              { hanzi: '你听一下。', pinyin: 'Nǐ tīng yíxià.', vi: 'Bạn nghe thử xem.' },
+              { hanzi: '我们休息一下吧。', pinyin: 'Wǒmen xiūxi yíxià ba.', vi: 'Chúng ta nghỉ một chút đi.' }
+            ]
+          },
+          {
+            term: '「真」+ Tính từ',
+            note: 'Phó từ ngữ khí đặt trước tính từ, nhấn mạnh cảm xúc/đánh giá thật sự của người nói.',
+            formula: 'Chủ ngữ + 真 + Tính từ',
+            examples: [
+              { hanzi: '你女儿的房间真漂亮。', pinyin: 'Nǐ nǚ\'ér de fángjiān zhēn piàoliang.', vi: 'Phòng con gái bạn thật đẹp.' },
+              { hanzi: '这个颜色真好看。', pinyin: 'Zhège yánsè zhēn hǎokàn.', vi: 'Màu này thật đẹp.' },
+              { hanzi: '今天天气真好。', pinyin: 'Jīntiān tiānqì zhēn hǎo.', vi: 'Hôm nay thời tiết thật đẹp.' }
+            ]
+          }
+        ],
+
+        fillBlank: [
+          { id: 'l3-fb1', sentence: '这块手表不是我的，是我爸爸___。', answer: '的', options: ['的', '了', '吗', '呢'] },
+          { id: 'l3-fb2', sentence: '多少___买的？', answer: '钱', options: ['钱', '块', '个', '元'] },
+          { id: 'l3-fb3', sentence: '你听，是不是___报纸的来了？', answer: '送', options: ['送', '买', '看', '听'] },
+          { id: 'l3-fb4', sentence: '我看___。不是，是送牛奶的。', answer: '一下', options: ['一下', '一点儿', '有点儿', '真'] },
+          { id: 'l3-fb5', sentence: '你女儿的房间___漂亮！', answer: '真', options: ['真', '很', '太', '都'] }
+        ],
+
+        sentenceBuild: [
+          { id: 'l3-sb1', tokens: ['这', '块', '手表', '是', '谁', '的', '？'], translation: 'Chiếc đồng hồ này là của ai?' },
+          { id: 'l3-sb2', tokens: ['我', '看', '一下', '。'], translation: 'Để tôi xem một chút.' },
+          { id: 'l3-sb3', tokens: ['你', '女儿', '的', '房间', '真', '漂亮', '。'], translation: 'Phòng con gái bạn thật đẹp.' },
+          { id: 'l3-sb4', tokens: ['粉色', '是', '我', '女儿', '最', '喜欢', '的', '颜色', '。'], translation: 'Màu hồng là màu con gái tôi thích nhất.' }
+        ],
+
+        dialogueQA: [
+          { id: 'l3-qa1', dialogueId: 'd1', question: 'Chiếc đồng hồ trong hội thoại "Trong phòng" mua hết bao nhiêu tiền?', options: ['Hơn 2000 tệ', 'Hơn 3000 tệ', 'Đúng 3000 tệ', 'Hơn 4000 tệ'], answer: 'Hơn 3000 tệ' },
+          { id: 'l3-qa2', dialogueId: 'd2', question: 'Tờ báo mà A hỏi là báo của ngày nào?', options: ['Hôm nay', 'Hôm qua', 'Ngày mai', 'Tuần trước'], answer: 'Hôm qua' },
+          { id: 'l3-qa3', dialogueId: 'd2', question: 'Cuối cùng ai đã đến?', options: ['Người đưa báo', 'Người giao sữa', 'Bố', 'Hàng xóm'], answer: 'Người giao sữa' },
+          { id: 'l3-qa4', dialogueId: 'd3', question: 'Màu con gái của B thích nhất là màu gì?', options: ['Màu đỏ', 'Màu xanh', 'Màu hồng', 'Màu vàng'], answer: 'Màu hồng' }
+        ]
       }
     ]
   }

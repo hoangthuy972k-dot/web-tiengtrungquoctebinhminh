@@ -195,6 +195,42 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/bai-3.html'
+      },
+      {
+        id: 'hsk2-l4',
+        number: 4,
+        title: 'Công việc này là do anh ấy giới thiệu cho tôi',
+        titleHanzi: '这个工作是他帮我介绍的',
+        titlePinyin: 'Zhège gōngzuò shì tā bāng wǒ jièshào de',
+        topic: 'Công việc & Sở thích cá nhân',
+        vocabCount: 13,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-4.html'
+      },
+      {
+        id: 'hsk2-l5',
+        number: 5,
+        title: 'Mua chiếc áo này đi',
+        titleHanzi: '就买这件吧',
+        titlePinyin: 'Jiù mǎi zhè jiàn ba',
+        topic: 'Mua sắm & Đời sống hàng ngày',
+        vocabCount: 13,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-5.html'
+      },
+      {
+        id: 'hsk2-l6',
+        number: 6,
+        title: 'Sao bạn không ăn nữa?',
+        titleHanzi: '你怎么不吃了？',
+        titlePinyin: 'Nǐ zěnme bù chī le?',
+        topic: 'Ăn uống, Thể thao & Lý do',
+        vocabCount: 13,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-6.html'
       }
     ]
   }

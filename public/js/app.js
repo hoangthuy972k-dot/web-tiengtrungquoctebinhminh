@@ -15,7 +15,6 @@
   var state = {
     practiceLevel: 'hsk1',
     mode: 'mcq-meaning',
-    activeLesson: null,
     session: null
   };
 
@@ -80,68 +79,6 @@
     toastTimer = setTimeout(function () {
       toast.classList.remove('is-visible');
     }, 2600);
-  }
-
-  /* ---------------- Speech: text-to-speech playback + speech recognition ---------------- */
-  /*
-   * Audio is generated on-device via the browser's Web Speech API (no audio
-   * files to host). Playback quality depends on the zh-CN voice installed on
-   * the visitor's OS/browser. Recognition (for speaking exercises) uses
-   * webkitSpeechRecognition where available and degrades to a self-check
-   * flow ("Tôi đã luyện xong") when the browser doesn't support it.
-   */
-
-  var zhVoice = null;
-  function pickZhVoice() {
-    if (!window.speechSynthesis) return null;
-    var voices = window.speechSynthesis.getVoices();
-    return voices.filter(function (v) { return /^zh/i.test(v.lang); })[0] || null;
-  }
-  if (window.speechSynthesis) {
-    zhVoice = pickZhVoice();
-    window.speechSynthesis.onvoiceschanged = function () { zhVoice = pickZhVoice(); };
-  }
-
-  function speakText(text) {
-    if (!window.speechSynthesis) {
-      showToast('Trình duyệt của bạn chưa hỗ trợ phát âm.');
-      return;
-    }
-    window.speechSynthesis.cancel();
-    var utter = new SpeechSynthesisUtterance(text);
-    utter.lang = 'zh-CN';
-    utter.rate = 0.9;
-    if (zhVoice) utter.voice = zhVoice;
-    window.speechSynthesis.speak(utter);
-  }
-
-  function makeSpeakButton(text, label) {
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'speak-btn';
-    btn.setAttribute('aria-label', label || 'Nghe phát âm');
-    btn.innerHTML = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>';
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      speakText(text);
-    });
-    return btn;
-  }
-
-  var SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition || null;
-
-  function createRecognizer(onResult, onError) {
-    if (!SpeechRecognitionCtor) return null;
-    var rec = new SpeechRecognitionCtor();
-    rec.lang = 'zh-CN';
-    rec.interimResults = false;
-    rec.maxAlternatives = 1;
-    rec.onresult = function (e) {
-      var transcript = e.results[0][0].transcript;
-      onResult(transcript);
-    };
-    rec.onerror = function (e) { if (onError) onError(e.error); };
-    return rec;
   }
 
   /* ---------------- Header / nav ---------------- */
@@ -239,12 +176,7 @@
     });
   }
 
-  /* ---------------- HSK2 lesson syllabus ---------------- */
-
-  function getLessonById(lessonId) {
-    var lessons = (APP_DATA.lessons && APP_DATA.lessons.hsk2) || [];
-    return lessons.filter(function (l) { return l.id === lessonId; })[0] || null;
-  }
+  /* ---------------- HSK2 lesson list (links out to standalone lesson pages) ---------------- */
 
   function renderLessonList() {
     var wrap = $('#lessonList');
@@ -252,714 +184,26 @@
     var lessons = (APP_DATA.lessons && APP_DATA.lessons.hsk2) || [];
     wrap.innerHTML = '';
 
-    lessons.forEach(function (lesson, idx) {
-      var item = document.createElement('details');
-      item.className = 'lesson-item';
-      if (idx === 0) item.open = true;
+    lessons.forEach(function (lesson) {
+      var card = document.createElement('a');
+      card.className = 'lesson-card-link';
+      card.href = lesson.fullPageUrl;
 
-      var dialoguesHtml = (lesson.dialogues || []).map(function (d) {
-        var linesHtml = d.lines.map(function (line) {
-          return '<div class="dialogue-line is-' + line.speaker.toLowerCase() + '">' +
-            '<span class="dialogue-speaker">' + line.speaker + '</span>' +
-            '<div class="dialogue-bubble">' +
-              '<p class="hanzi">' + line.hanzi + ' <button type="button" class="speak-btn speak-btn-inline" data-speak="' + line.hanzi + '" aria-label="Nghe câu này"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></p>' +
-              '<p class="pinyin">' + line.pinyin + '</p>' +
-              '<p class="vi">' + line.vi + '</p>' +
-            '</div>' +
-          '</div>';
-        }).join('');
-        return '<div class="dialogue-block"><h5>' + d.place + '</h5>' +
-          (d.scene ? '<p class="dialogue-scene">' + d.scene + '</p>' : '') +
-          linesHtml + '</div>';
-      }).join('');
-
-      var grammarHtml = lesson.grammar.map(function (g) {
-        var formulaHtml = g.formula ? '<code class="grammar-formula">' + g.formula + '</code>' : '';
-        var examplesHtml = '';
-        if (g.examples) {
-          examplesHtml = '<ul class="grammar-examples">' + g.examples.map(function (ex) {
-            return '<li><span class="hanzi">' + ex.hanzi + '</span><span class="pinyin">' + ex.pinyin + '</span><span class="vi">' + ex.vi + '</span></li>';
-          }).join('') + '</ul>';
-        } else if (g.qaExamples) {
-          examplesHtml = '<ul class="grammar-examples grammar-qa">' + g.qaExamples.map(function (ex) {
-            return '<li>' +
-              '<span class="hanzi">' + ex.q.hanzi + ' – ' + ex.a.hanzi + '</span>' +
-              '<span class="pinyin">' + ex.q.pinyin + ' – ' + ex.a.pinyin + '</span>' +
-              '<span class="vi">' + ex.vi + '</span>' +
-            '</li>';
-          }).join('') + '</ul>';
-        }
-        return '<li><strong class="hanzi">' + g.term + '</strong>' + formulaHtml + '<p class="grammar-note">' + g.note + '</p>' + examplesHtml + '</li>';
-      }).join('');
-
-      var vocabRowsHtml = lesson.vocab.map(function (w) {
-        return '<tr>' +
-          '<td class="hanzi">' + w.hanzi + ' <button type="button" class="speak-btn speak-btn-inline" data-speak="' + w.hanzi + '" aria-label="Nghe phát âm ' + w.hanzi + '"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td>' +
-          '<td class="pinyin-cell">' + w.pinyin + '</td>' +
-          '<td>' + (w.pos || '') + '</td>' +
-          '<td>' + w.meaning + '</td>' +
-        '</tr>';
-      }).join('');
-      var vocabHtml = '<div class="table-scroll"><table class="vocab-table">' +
-        '<thead><tr><th>Chữ Hán</th><th>Phiên âm</th><th>Từ loại</th><th>Nghĩa tiếng Việt</th></tr></thead>' +
-        '<tbody>' + vocabRowsHtml + '</tbody></table></div>';
-
-      var mistakesHtml = '';
-      if (lesson.commonMistakes && lesson.commonMistakes.length) {
-        mistakesHtml = '<div class="lesson-block-full mistakes-block">' +
-          '<h4>⚠ Lỗi thường gặp của học sinh Việt</h4>' +
-          '<ul class="mistakes-list">' + lesson.commonMistakes.map(function (m) {
-            return '<li><span class="wrong">✗ ' + m.wrong + '</span><span class="right">✓ ' + m.right + '</span><p>' + m.note + '</p></li>';
-          }).join('') + '</ul>' +
-        '</div>';
-      }
-
-      var navId = lesson.id;
-      item.innerHTML =
-        '<summary class="lesson-summary">' +
-          '<span class="lesson-num">' + lesson.number + '</span>' +
-          '<div>' +
-            '<h3>' + lesson.title + '</h3>' +
-            (lesson.titleHanzi ? '<span class="lesson-title-hanzi hanzi">' + lesson.titleHanzi + ' · ' + lesson.titlePinyin + '</span>' : '') +
+      card.innerHTML =
+        '<span class="lesson-card-num">' + lesson.number + '</span>' +
+        '<div class="lesson-card-body">' +
+          '<h3>' + lesson.title + '</h3>' +
+          (lesson.titleHanzi ? '<span class="lesson-card-hanzi hanzi">' + lesson.titleHanzi + ' · ' + lesson.titlePinyin + '</span>' : '') +
+          (lesson.topic ? '<p class="lesson-card-topic">' + lesson.topic + '</p>' : '') +
+          '<div class="lesson-card-stats">' +
+            (lesson.vocabCount ? '<span>📚 ' + lesson.vocabCount + ' từ mới</span>' : '') +
+            (lesson.dialogueCount ? '<span>💬 ' + lesson.dialogueCount + ' hội thoại</span>' : '') +
+            (lesson.grammarCount ? '<span>📐 ' + lesson.grammarCount + ' điểm ngữ pháp</span>' : '') +
           '</div>' +
-          '<svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>' +
-        '</summary>' +
-        '<div class="lesson-body lesson-body-full">' +
-          '<nav class="lesson-quicknav">' +
-            '<a href="#' + navId + '-baikhoa">📖 Bài khoá</a>' +
-            '<a href="#' + navId + '-tumoi">🀄 Từ mới</a>' +
-            '<a href="#' + navId + '-nguphap">✏️ Ngữ pháp</a>' +
-            '<a href="#' + navId + '-baitap">🎯 Bài tập</a>' +
-          '</nav>' +
-          (dialoguesHtml ? '<div class="lesson-block-full" id="' + navId + '-baikhoa"><h4>Bài khoá</h4><div class="dialogue-grid">' + dialoguesHtml + '</div></div>' : '') +
-          '<div class="lesson-block-full" id="' + navId + '-tumoi"><h4>Từ mới (' + lesson.vocab.length + ' từ)</h4>' + vocabHtml + '</div>' +
-          '<div class="lesson-block-full" id="' + navId + '-nguphap"><h4>Ngữ pháp trọng tâm</h4><ul class="lesson-grammar-list">' + grammarHtml + '</ul></div>' +
-          mistakesHtml +
-          '<div class="lesson-block-full" id="' + navId + '-baitap">' +
-            '<h4>Bài tập theo cấp độ</h4>' +
-            '<div class="tiered-exercises" id="tiered-' + navId + '"></div>' +
-          '</div>' +
-          '<div class="lesson-cta-row">' +
-            '<button class="btn btn-primary lesson-practice-btn" type="button" data-lesson-id="' + lesson.id + '">' +
-              'Luyện tập nhanh (trắc nghiệm ngẫu nhiên)' +
-            '</button>' +
-            (lesson.fullPageUrl ? '<a class="btn btn-outline" href="' + lesson.fullPageUrl + '" target="_blank" rel="noopener">Xem trang bài học đầy đủ ↗</a>' : '') +
-          '</div>' +
-        '</div>';
+        '</div>' +
+        '<svg class="icon lesson-card-arrow" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
 
-      wrap.appendChild(item);
-      renderTieredExercises($('#tiered-' + navId, item), lesson);
-    });
-
-    wrap.addEventListener('click', function (e) {
-      var link = e.target.closest ? e.target.closest('.lesson-quicknav a') : null;
-      if (link) {
-        e.preventDefault();
-        var target = document.getElementById(link.getAttribute('href').slice(1));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-      var speakBtn = e.target.closest ? e.target.closest('.speak-btn[data-speak]') : null;
-      if (speakBtn) {
-        e.preventDefault();
-        speakText(speakBtn.getAttribute('data-speak'));
-        return;
-      }
-      var btn = e.target.closest ? e.target.closest('.lesson-practice-btn') : null;
-      if (!btn) return;
-      startLessonPractice(btn.getAttribute('data-lesson-id'));
-    });
-  }
-
-  /* ---------------- Tiered lesson exercises (Cấp 1/2/3, batch "Kiểm tra") ---------------- */
-
-  function buildQuizActions(onCheck, onReset) {
-    var bar = document.createElement('div');
-    bar.className = 'quiz-actions';
-
-    var checkBtn = document.createElement('button');
-    checkBtn.type = 'button';
-    checkBtn.className = 'btn btn-primary btn-sm';
-    checkBtn.textContent = 'Kiểm tra';
-
-    var retryBtn = document.createElement('button');
-    retryBtn.type = 'button';
-    retryBtn.className = 'btn btn-outline btn-sm';
-    retryBtn.textContent = 'Làm lại';
-
-    var scoreSpan = document.createElement('span');
-    scoreSpan.className = 'quiz-score';
-
-    checkBtn.addEventListener('click', function () {
-      var result = onCheck();
-      scoreSpan.textContent = 'Đúng ' + result.correct + '/' + result.total + ' câu';
-      scoreSpan.className = 'quiz-score is-visible ' +
-        (result.correct === result.total ? 'is-good' : result.correct === 0 ? 'is-bad' : 'is-mid');
-    });
-    retryBtn.addEventListener('click', function () {
-      onReset();
-      scoreSpan.textContent = '';
-      scoreSpan.className = 'quiz-score';
-    });
-
-    bar.appendChild(checkBtn);
-    bar.appendChild(retryBtn);
-    bar.appendChild(scoreSpan);
-    return bar;
-  }
-
-  function renderListeningMcqBlock(block) {
-    var wrap = document.createElement('div');
-    wrap.className = 'exercise-block';
-    wrap.innerHTML = '<h5>' + block.title + '</h5>';
-
-    var body = document.createElement('div');
-    body.className = 'listening-rows';
-    var rows = [];
-
-    block.items.forEach(function (item, i) {
-      var row = document.createElement('div');
-      row.className = 'listening-row';
-
-      var head = document.createElement('div');
-      head.className = 'listening-head';
-      head.innerHTML = '<span class="listening-num">' + (i + 1) + '</span>';
-      head.appendChild(makeSpeakButton(item.audioText, 'Nghe câu hỏi ' + (i + 1)));
-
-      var optWrap = document.createElement('div');
-      optWrap.className = 'options-grid listening-options';
-      var opts = shuffle(item.options);
-      var btns = opts.map(function (opt) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'option-btn hanzi';
-        b.textContent = opt;
-        b.addEventListener('click', function () {
-          btns.forEach(function (bb) { bb.classList.remove('is-picked'); });
-          b.classList.add('is-picked');
-          optWrap.dataset.selected = opt;
-        });
-        optWrap.appendChild(b);
-        return b;
-      });
-
-      row.appendChild(head);
-      row.appendChild(optWrap);
-      body.appendChild(row);
-      rows.push({ item: item, optWrap: optWrap, btns: btns, row: row });
-    });
-
-    wrap.appendChild(body);
-    var actions = buildQuizActions(function () {
-      var correct = 0;
-      rows.forEach(function (r) {
-        var sel = r.optWrap.dataset.selected;
-        var ok = sel === r.item.answer;
-        r.row.classList.remove('is-correct', 'is-wrong');
-        if (sel) r.row.classList.add(ok ? 'is-correct' : 'is-wrong');
-        if (ok) correct++;
-      });
-      return { correct: correct, total: rows.length };
-    }, function () {
-      rows.forEach(function (r) {
-        r.btns.forEach(function (b) { b.classList.remove('is-picked'); });
-        r.row.classList.remove('is-correct', 'is-wrong');
-        delete r.optWrap.dataset.selected;
-      });
-    });
-    wrap.appendChild(actions);
-    return wrap;
-  }
-
-  function renderListeningFillBlock(block) {
-    var wrap = document.createElement('div');
-    wrap.className = 'exercise-block';
-    wrap.innerHTML = '<h5>' + block.title + '</h5>';
-
-    var body = document.createElement('div');
-    body.className = 'choose2-rows';
-    var rows = [];
-
-    block.items.forEach(function (item, i) {
-      var row = document.createElement('div');
-      row.className = 'choose2-row';
-
-      var sentEl = document.createElement('p');
-      sentEl.className = 'choose2-sentence hanzi';
-      sentEl.textContent = (i + 1) + '. ' + item.display;
-      sentEl.prepend(makeSpeakButton(item.audioText, 'Nghe câu đầy đủ'));
-
-      var btnWrap = document.createElement('div');
-      btnWrap.className = 'choose2-btns';
-      var btns = item.choices.map(function (choice) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.className = 'choose2-btn hanzi';
-        b.textContent = choice;
-        b.addEventListener('click', function () {
-          btns.forEach(function (bb) { bb.classList.remove('is-picked'); });
-          b.classList.add('is-picked');
-          btnWrap.dataset.selected = choice;
-        });
-        btnWrap.appendChild(b);
-        return b;
-      });
-
-      row.appendChild(sentEl);
-      row.appendChild(btnWrap);
-      body.appendChild(row);
-      rows.push({ item: item, btnWrap: btnWrap, btns: btns, row: row });
-    });
-
-    wrap.appendChild(body);
-    var actions = buildQuizActions(function () {
-      var correct = 0;
-      rows.forEach(function (r) {
-        var sel = r.btnWrap.dataset.selected;
-        var ok = sel === r.item.answer;
-        r.row.classList.remove('is-correct', 'is-wrong');
-        if (sel) r.row.classList.add(ok ? 'is-correct' : 'is-wrong');
-        if (ok) correct++;
-      });
-      return { correct: correct, total: rows.length };
-    }, function () {
-      rows.forEach(function (r) {
-        r.btns.forEach(function (b) { b.classList.remove('is-picked'); });
-        r.row.classList.remove('is-correct', 'is-wrong');
-        delete r.btnWrap.dataset.selected;
-      });
-    });
-    wrap.appendChild(actions);
-    return wrap;
-  }
-
-  function renderWordOrderBlock(block) {
-    var wrap = document.createElement('div');
-    wrap.className = 'exercise-block';
-    wrap.innerHTML = '<h5>' + block.title + '</h5>';
-
-    var body = document.createElement('div');
-    body.className = 'word-order-rows';
-    var rows = [];
-
-    block.items.forEach(function (item, i) {
-      var row = document.createElement('div');
-      row.className = 'word-order-row';
-
-      var label = document.createElement('p');
-      label.className = 'word-order-label';
-      label.innerHTML = '<span>' + (i + 1) + '. Nghe và sắp xếp:</span>';
-      label.appendChild(makeSpeakButton(item.audioText, 'Nghe câu ' + (i + 1)));
-
-      var answerZone = document.createElement('div');
-      answerZone.className = 'sentence-build-answer';
-      var tokenZone = document.createElement('div');
-      tokenZone.className = 'sentence-build-tokens';
-
-      var shuffled = shuffle(item.tokens);
-      var picked = [];
-
-      function renderTokens() {
-        tokenZone.innerHTML = '';
-        shuffled.forEach(function (token, idx) {
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'token-btn hanzi';
-          btn.textContent = token;
-          var used = picked.indexOf(idx) !== -1;
-          btn.disabled = used;
-          if (used) btn.classList.add('is-picked');
-          btn.addEventListener('click', function () {
-            picked.push(idx);
-            renderTokens();
-            renderAnswer();
-          });
-          tokenZone.appendChild(btn);
-        });
-      }
-      function renderAnswer() {
-        answerZone.innerHTML = '';
-        picked.forEach(function (idx, pos) {
-          var chip = document.createElement('button');
-          chip.type = 'button';
-          chip.className = 'token-btn hanzi is-picked';
-          chip.textContent = shuffled[idx];
-          chip.addEventListener('click', function () {
-            picked.splice(pos, 1);
-            renderTokens();
-            renderAnswer();
-          });
-          answerZone.appendChild(chip);
-        });
-      }
-      renderTokens();
-      renderAnswer();
-
-      row.appendChild(label);
-      row.appendChild(answerZone);
-      row.appendChild(tokenZone);
-      body.appendChild(row);
-      rows.push({
-        item: item,
-        row: row,
-        getPicked: function () { return picked.map(function (idx) { return shuffled[idx]; }); },
-        reset: function () { picked = []; renderTokens(); renderAnswer(); }
-      });
-    });
-
-    wrap.appendChild(body);
-    var actions = buildQuizActions(function () {
-      var correct = 0;
-      rows.forEach(function (r) {
-        var built = r.getPicked();
-        var ok = built.length === r.item.tokens.length && built.every(function (t, i) { return t === r.item.tokens[i]; });
-        r.row.classList.remove('is-correct', 'is-wrong');
-        r.row.classList.add(ok ? 'is-correct' : 'is-wrong');
-        if (ok) correct++;
-      });
-      return { correct: correct, total: rows.length };
-    }, function () {
-      rows.forEach(function (r) {
-        r.reset();
-        r.row.classList.remove('is-correct', 'is-wrong');
-      });
-    });
-    wrap.appendChild(actions);
-    return wrap;
-  }
-
-  function renderLineOrderBlock(block) {
-    var wrap = document.createElement('div');
-    wrap.className = 'exercise-block';
-    wrap.innerHTML = '<h5>' + block.title + '</h5>' + (block.hint ? '<p class="line-order-hint">' + block.hint + '</p>' : '');
-
-    var answerZone = document.createElement('div');
-    answerZone.className = 'line-order-answer';
-    var tokenZone = document.createElement('div');
-    tokenZone.className = 'line-order-tokens';
-
-    var shuffled = shuffle(block.lines);
-    var picked = [];
-
-    function renderTokens() {
-      tokenZone.innerHTML = '';
-      shuffled.forEach(function (line, idx) {
-        var used = picked.indexOf(idx) !== -1;
-        var item = document.createElement('div');
-        item.className = 'line-token' + (used ? ' is-picked is-disabled' : '');
-        item.setAttribute('role', 'button');
-        item.setAttribute('tabindex', used ? '-1' : '0');
-        var hanziSpan = document.createElement('span');
-        hanziSpan.className = 'hanzi';
-        hanziSpan.textContent = line.hanzi;
-        item.appendChild(hanziSpan);
-        item.appendChild(makeSpeakButton(line.hanzi, 'Nghe câu này'));
-        if (!used) {
-          var pick = function () { picked.push(idx); renderTokens(); renderAnswer(); };
-          item.addEventListener('click', pick);
-          item.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
-          });
-        }
-        tokenZone.appendChild(item);
-      });
-    }
-    function renderAnswer() {
-      answerZone.innerHTML = '';
-      picked.forEach(function (idx, pos) {
-        var chip = document.createElement('div');
-        chip.className = 'line-token is-picked';
-        chip.setAttribute('role', 'button');
-        chip.setAttribute('tabindex', '0');
-        var numSpan = document.createElement('span');
-        numSpan.className = 'line-order-num';
-        numSpan.textContent = pos + 1;
-        var hanziSpan = document.createElement('span');
-        hanziSpan.className = 'hanzi';
-        hanziSpan.textContent = shuffled[idx].hanzi;
-        chip.appendChild(numSpan);
-        chip.appendChild(hanziSpan);
-        chip.appendChild(makeSpeakButton(shuffled[idx].hanzi, 'Nghe câu này'));
-        var remove = function () { picked.splice(pos, 1); renderTokens(); renderAnswer(); };
-        chip.addEventListener('click', remove);
-        chip.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); remove(); }
-        });
-        answerZone.appendChild(chip);
-      });
-    }
-    renderTokens();
-    renderAnswer();
-
-    wrap.appendChild(answerZone);
-    wrap.appendChild(tokenZone);
-
-    var actions = buildQuizActions(function () {
-      var built = picked.map(function (idx) { return shuffled[idx]; });
-      var ok = built.length === block.lines.length && built.every(function (l, i) { return l === block.lines[i]; });
-      answerZone.classList.remove('is-correct', 'is-wrong');
-      answerZone.classList.add(ok ? 'is-correct' : 'is-wrong');
-      return { correct: ok ? 1 : 0, total: 1 };
-    }, function () {
-      picked = [];
-      renderTokens();
-      renderAnswer();
-      answerZone.classList.remove('is-correct', 'is-wrong');
-    });
-    wrap.appendChild(actions);
-    return wrap;
-  }
-
-  function speechUnsupportedNote(text) {
-    var note = document.createElement('p');
-    note.className = 'speech-support-note';
-    note.textContent = text;
-    return note;
-  }
-
-  function normalizeZh(s) {
-    return (s || '').replace(/[，。！？、,.!?\s]/g, '');
-  }
-
-  function renderShadowingBlock(block) {
-    var wrap = document.createElement('div');
-    wrap.className = 'exercise-block';
-    wrap.innerHTML = '<h5>' + block.title + '</h5>';
-    if (!SpeechRecognitionCtor) {
-      wrap.appendChild(speechUnsupportedNote('Trình duyệt chưa hỗ trợ ghi âm nhận diện — hãy nghe mẫu, tự luyện nói rồi đánh dấu khi xong.'));
-    }
-
-    var body = document.createElement('div');
-    body.className = 'shadow-rows';
-
-    block.items.forEach(function (item, i) {
-      var row = document.createElement('div');
-      row.className = 'shadow-row';
-
-      var head = document.createElement('div');
-      head.className = 'shadow-head';
-      var numSpan = document.createElement('span');
-      numSpan.className = 'listening-num';
-      numSpan.textContent = i + 1;
-      var textSpan = document.createElement('span');
-      textSpan.className = 'hanzi shadow-text';
-      textSpan.textContent = item.text;
-      head.appendChild(numSpan);
-      head.appendChild(textSpan);
-      head.appendChild(makeSpeakButton(item.text, 'Nghe mẫu'));
-      row.appendChild(head);
-
-      var resultEl = document.createElement('p');
-      resultEl.className = 'shadow-result';
-
-      if (SpeechRecognitionCtor) {
-        var recBtn = document.createElement('button');
-        recBtn.type = 'button';
-        recBtn.className = 'record-btn';
-        recBtn.textContent = '🎤 Ghi âm luyện nói';
-        recBtn.addEventListener('click', function () {
-          if (recBtn.classList.contains('is-recording')) return;
-          recBtn.classList.add('is-recording');
-          recBtn.textContent = '🎙️ Đang nghe...';
-          resultEl.textContent = '';
-          resultEl.className = 'shadow-result';
-          var recognizer = createRecognizer(function (transcript) {
-            recBtn.classList.remove('is-recording');
-            recBtn.textContent = '🎤 Ghi âm luyện nói';
-            var a = normalizeZh(transcript);
-            var b = normalizeZh(item.text);
-            var ok = a.indexOf(b) !== -1 || b.indexOf(a) !== -1;
-            resultEl.textContent = 'Bạn nói: "' + transcript + '"';
-            resultEl.className = 'shadow-result ' + (ok ? 'is-good' : 'is-mid');
-          }, function () {
-            recBtn.classList.remove('is-recording');
-            recBtn.textContent = '🎤 Ghi âm luyện nói';
-            resultEl.textContent = 'Không nhận diện được giọng nói, hãy thử lại.';
-            resultEl.className = 'shadow-result is-mid';
-          });
-          recognizer.start();
-        });
-        row.appendChild(recBtn);
-      } else {
-        var doneBtn = document.createElement('button');
-        doneBtn.type = 'button';
-        doneBtn.className = 'btn btn-outline btn-sm';
-        doneBtn.textContent = 'Tôi đã luyện xong';
-        doneBtn.addEventListener('click', function () {
-          doneBtn.classList.toggle('is-done');
-          doneBtn.textContent = doneBtn.classList.contains('is-done') ? '✓ Đã luyện' : 'Tôi đã luyện xong';
-        });
-        row.appendChild(doneBtn);
-      }
-
-      row.appendChild(resultEl);
-      body.appendChild(row);
-    });
-
-    wrap.appendChild(body);
-    return wrap;
-  }
-
-  function renderQASpeakingBlock(block) {
-    var wrap = document.createElement('div');
-    wrap.className = 'exercise-block';
-    wrap.innerHTML = '<h5>' + block.title + '</h5>';
-    if (!SpeechRecognitionCtor) {
-      wrap.appendChild(speechUnsupportedNote('Trình duyệt chưa hỗ trợ ghi âm nhận diện — hãy nghe câu hỏi, tự trả lời rồi xem câu mẫu để đối chiếu.'));
-    }
-
-    var body = document.createElement('div');
-    body.className = 'shadow-rows';
-
-    block.items.forEach(function (item, i) {
-      var row = document.createElement('div');
-      row.className = 'shadow-row';
-
-      var head = document.createElement('div');
-      head.className = 'shadow-head';
-      var numSpan = document.createElement('span');
-      numSpan.className = 'listening-num';
-      numSpan.textContent = i + 1;
-      var textSpan = document.createElement('span');
-      textSpan.className = 'hanzi shadow-text';
-      textSpan.textContent = item.questionText;
-      head.appendChild(numSpan);
-      head.appendChild(textSpan);
-      head.appendChild(makeSpeakButton(item.questionText, 'Nghe câu hỏi'));
-      row.appendChild(head);
-
-      var resultEl = document.createElement('p');
-      resultEl.className = 'shadow-result';
-
-      var actionsRow = document.createElement('div');
-      actionsRow.className = 'shadow-actions';
-
-      if (SpeechRecognitionCtor) {
-        var recBtn = document.createElement('button');
-        recBtn.type = 'button';
-        recBtn.className = 'record-btn';
-        recBtn.textContent = '🎤 Trả lời';
-        recBtn.addEventListener('click', function () {
-          if (recBtn.classList.contains('is-recording')) return;
-          recBtn.classList.add('is-recording');
-          recBtn.textContent = '🎙️ Đang nghe...';
-          resultEl.textContent = '';
-          resultEl.className = 'shadow-result';
-          var recognizer = createRecognizer(function (transcript) {
-            recBtn.classList.remove('is-recording');
-            recBtn.textContent = '🎤 Trả lời';
-            var ok = item.keywords.some(function (kw) { return transcript.indexOf(kw) !== -1; });
-            resultEl.textContent = 'Bạn trả lời: "' + transcript + '"';
-            resultEl.className = 'shadow-result ' + (ok ? 'is-good' : 'is-mid');
-          }, function () {
-            recBtn.classList.remove('is-recording');
-            recBtn.textContent = '🎤 Trả lời';
-            resultEl.textContent = 'Không nhận diện được, hãy thử lại.';
-            resultEl.className = 'shadow-result is-mid';
-          });
-          recognizer.start();
-        });
-        actionsRow.appendChild(recBtn);
-      }
-
-      var sampleEl = document.createElement('p');
-      sampleEl.className = 'free-practice-answer hanzi';
-      sampleEl.hidden = true;
-      sampleEl.textContent = item.sampleAnswer;
-
-      var sampleBtn = document.createElement('button');
-      sampleBtn.type = 'button';
-      sampleBtn.className = 'btn btn-ghost btn-sm';
-      sampleBtn.textContent = 'Xem câu trả lời mẫu';
-      sampleBtn.addEventListener('click', function () {
-        sampleEl.hidden = !sampleEl.hidden;
-        sampleBtn.textContent = sampleEl.hidden ? 'Xem câu trả lời mẫu' : 'Ẩn câu mẫu';
-      });
-      actionsRow.appendChild(sampleBtn);
-
-      row.appendChild(actionsRow);
-      row.appendChild(resultEl);
-      row.appendChild(sampleEl);
-      body.appendChild(row);
-    });
-
-    wrap.appendChild(body);
-    return wrap;
-  }
-
-  function renderExerciseBlock(block) {
-    if (block.type === 'listening-mcq') return renderListeningMcqBlock(block);
-    if (block.type === 'listening-fill') return renderListeningFillBlock(block);
-    if (block.type === 'word-order') return renderWordOrderBlock(block);
-    if (block.type === 'line-order') return renderLineOrderBlock(block);
-    if (block.type === 'shadowing') return renderShadowingBlock(block);
-    if (block.type === 'qa-speaking') return renderQASpeakingBlock(block);
-    return null;
-  }
-
-  function renderTieredExercises(container, lesson) {
-    if (!container || !lesson.tieredExercises) return;
-    container.innerHTML = '';
-
-    var tierOrder = [];
-    var tierBlocks = {};
-    lesson.tieredExercises.forEach(function (block) {
-      if (!tierBlocks[block.tier]) {
-        tierBlocks[block.tier] = [];
-        tierOrder.push(block.tier);
-      }
-      tierBlocks[block.tier].push(block);
-    });
-
-    tierOrder.forEach(function (tierNum) {
-      var tierWrap = document.createElement('div');
-      tierWrap.className = 'tier-group';
-      var heading = document.createElement('div');
-      heading.className = 'tier-heading';
-      heading.innerHTML = '<span class="tier-badge">Cấp ' + tierNum + '</span>';
-      tierWrap.appendChild(heading);
-
-      tierBlocks[tierNum].forEach(function (block) {
-        var blockEl = renderExerciseBlock(block);
-        if (blockEl) tierWrap.appendChild(blockEl);
-      });
-
-      container.appendChild(tierWrap);
-    });
-  }
-
-  function startLessonPractice(lessonId) {
-    var lesson = getLessonById(lessonId);
-    if (!lesson) return;
-    state.practiceLevel = 'hsk2';
-    state.activeLesson = lessonId;
-    $all('.level-pill').forEach(function (pill) {
-      pill.classList.toggle('is-active', pill.getAttribute('data-level') === 'hsk2');
-    });
-    updateLessonBanner();
-    document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
-    startSession();
-  }
-
-  function updateLessonBanner() {
-    var banner = $('#lessonBanner');
-    if (!banner) return;
-    var lesson = state.activeLesson ? getLessonById(state.activeLesson) : null;
-    if (lesson) {
-      banner.hidden = false;
-      $('#lessonBannerText').textContent = 'Đang luyện theo Bài ' + lesson.number + ' – ' + lesson.title;
-    } else {
-      banner.hidden = true;
-    }
-  }
-
-  function initLessonBanner() {
-    var clearBtn = $('#lessonBannerClear');
-    if (!clearBtn) return;
-    clearBtn.addEventListener('click', function () {
-      state.activeLesson = null;
-      updateLessonBanner();
-      startSession();
+      wrap.appendChild(card);
     });
   }
 
@@ -1000,8 +244,6 @@
 
   function setPracticeLevel(levelId) {
     state.practiceLevel = levelId;
-    state.activeLesson = null;
-    updateLessonBanner();
     $all('.level-pill').forEach(function (pill) {
       pill.classList.toggle('is-active', pill.getAttribute('data-level') === levelId);
     });
@@ -1066,44 +308,24 @@
     });
   }
 
-  function buildDialogueQAQuestions(lesson) {
-    if (!lesson || !lesson.dialogueQA) return [];
-    var pool = lesson.dialogueQA;
-    var picks = sample(pool, Math.min(QUESTIONS_PER_SESSION, pool.length));
-    return picks.map(function (item) {
-      var dialogue = (lesson.dialogues || []).filter(function (d) { return d.id === item.dialogueId; })[0];
-      return {
-        type: 'dialogue-qa',
-        id: item.id,
-        dialogue: dialogue,
-        question: item.question,
-        options: shuffle(item.options),
-        answer: item.answer
-      };
-    });
-  }
-
   function buildSession() {
     var level = state.practiceLevel;
     var mode = state.mode;
-    var lesson = state.activeLesson ? getLessonById(state.activeLesson) : null;
 
-    var vocabPool = lesson ? lesson.vocab : APP_DATA.vocab[level];
-    var fillBlankPool = lesson ? lesson.fillBlank : (APP_DATA.fillBlank[level] || []);
-    var sentencePool = lesson ? lesson.sentenceBuild : (APP_DATA.sentenceBuild[level] || []);
+    var vocabPool = APP_DATA.vocab[level];
+    var fillBlankPool = APP_DATA.fillBlank[level] || [];
+    var sentencePool = APP_DATA.sentenceBuild[level] || [];
 
     var questions;
     if (mode === 'mcq-meaning') questions = buildMcqQuestions(vocabPool, 'meaning');
     else if (mode === 'mcq-pinyin') questions = buildMcqQuestions(vocabPool, 'pinyin');
     else if (mode === 'mcq-hanzi') questions = buildMcqQuestions(vocabPool, 'hanzi');
     else if (mode === 'fill-blank') questions = buildFillBlankQuestions(fillBlankPool);
-    else if (mode === 'dialogue-qa') questions = buildDialogueQAQuestions(lesson);
     else questions = buildSentenceQuestions(sentencePool);
 
     return {
       level: level,
       mode: mode,
-      lessonId: state.activeLesson,
       questions: questions,
       index: 0,
       score: 0,
@@ -1169,8 +391,6 @@
       renderFillBlank(body, q);
     } else if (q.type === 'sentence-build') {
       renderSentenceBuild(body, q);
-    } else if (q.type === 'dialogue-qa') {
-      renderDialogueQA(body, q);
     }
   }
 
@@ -1179,8 +399,7 @@
     'mcq-pinyin': 'Trắc nghiệm • Chọn Pinyin đúng',
     'mcq-hanzi': 'Trắc nghiệm • Chọn Hán tự đúng',
     'fill-blank': 'Điền từ vào chỗ trống',
-    'sentence-build': 'Ghép câu đúng thứ tự',
-    'dialogue-qa': 'Đọc hiểu hội thoại'
+    'sentence-build': 'Ghép câu đúng thứ tự'
   };
 
   function renderMcq(body, q) {
@@ -1224,36 +443,6 @@
     body.innerHTML =
       '<span class="exercise-mode-label">' + MODE_LABEL['fill-blank'] + '</span>' +
       '<div class="exercise-prompt"><div class="question-text hanzi">' + q.sentence + '</div></div>' +
-      '<div class="options-grid" id="optionsGrid"></div>';
-
-    var grid = $('#optionsGrid', body);
-    q.options.forEach(function (opt) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'option-btn';
-      btn.textContent = opt;
-      btn.addEventListener('click', function () {
-        handleAnswer(opt === q.answer, {});
-        markOptionButtons(grid, opt, q.answer);
-      });
-      grid.appendChild(btn);
-    });
-  }
-
-  function renderDialogueQA(body, q) {
-    var dialogueHtml = '';
-    if (q.dialogue) {
-      dialogueHtml = '<div class="qa-dialogue"><h5>' + q.dialogue.place + '</h5>' +
-        q.dialogue.lines.map(function (line) {
-          return '<p><strong>' + line.speaker + ':</strong> <span class="hanzi">' + line.hanzi + '</span> <span class="qa-vi">(' + line.vi + ')</span></p>';
-        }).join('') +
-      '</div>';
-    }
-
-    body.innerHTML =
-      '<span class="exercise-mode-label">' + MODE_LABEL['dialogue-qa'] + '</span>' +
-      dialogueHtml +
-      '<div class="exercise-prompt"><div class="question-text">' + q.question + '</div></div>' +
       '<div class="options-grid" id="optionsGrid"></div>';
 
     var grid = $('#optionsGrid', body);
@@ -1591,7 +780,6 @@
     initPinyinToggle();
     renderLevelCards();
     renderLessonList();
-    initLessonBanner();
     renderHeroWord();
     renderPracticeLevelPills();
     initModeTabs();

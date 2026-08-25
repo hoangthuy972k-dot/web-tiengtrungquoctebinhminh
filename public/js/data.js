@@ -166,6 +166,10 @@ const APP_DATA = {
    * tu vung co tu loai, ngu phap chi tiet, va 4 dang bai tap). Cac bai khac se duoc
    * bo sung sau khi ban duyet noi dung nay.
    */
+  /**
+   * Danh sach bai hoc HSK2 - moi bai la mot trang doc lap day du
+   * (public/lessons/bai-N.html), thẻ ở đây chỉ hiển thị tóm tắt và dẫn thẳng tới đó.
+   */
   lessons: {
     hsk2: [
       {
@@ -174,207 +178,11 @@ const APP_DATA = {
         title: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ',
         titleHanzi: '我每天六点起床',
         titlePinyin: 'Wǒ měitiān liù diǎn qǐchuáng',
-        fullPageUrl: '/lessons/bai-2.html',
-
-        dialogues: [
-          {
-            id: 'd1',
-            place: '在运动场 (Trên sân vận động)',
-            scene: 'Trên sân vận động, A hỏi B về thói quen tập thể dục buổi sáng.',
-            lines: [
-              { speaker: 'A', hanzi: '你很少生病，是不是喜欢运动？', pinyin: 'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?', vi: 'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?' },
-              { speaker: 'B', hanzi: '是啊，我每天早上都要出去跑步。', pinyin: 'Shì a, wǒ měitiān zǎoshang dōu yào chūqu pǎobù.', vi: 'Đúng vậy, mỗi sáng tôi đều phải ra ngoài chạy bộ.' },
-              { speaker: 'A', hanzi: '你每天几点起床？', pinyin: 'Nǐ měitiān jǐ diǎn qǐchuáng?', vi: 'Mỗi ngày bạn thức dậy lúc mấy giờ?' },
-              { speaker: 'B', hanzi: '我每天6点起床。', pinyin: 'Wǒ měitiān liù diǎn qǐchuáng.', vi: 'Mỗi ngày tôi thức dậy lúc 6 giờ.' }
-            ]
-          },
-          {
-            id: 'd2',
-            place: '在医院 (Trong bệnh viện)',
-            scene: 'Trong bệnh viện, A hỏi thăm sức khỏe của B sau khi ốm.',
-            lines: [
-              { speaker: 'A', hanzi: '吃药了吗？现在身体怎么样？', pinyin: 'Chī yào le ma? Xiànzài shēntǐ zěnmeyàng?', vi: 'Bạn uống thuốc chưa? Bây giờ sức khỏe thế nào rồi?' },
-              { speaker: 'B', hanzi: '吃了。现在好多了。', pinyin: 'Chī le. Xiànzài hǎo duō le.', vi: 'Uống rồi. Bây giờ tốt hơn nhiều rồi.' },
-              { speaker: 'A', hanzi: '什么时候能出院？', pinyin: 'Shénme shíhou néng chūyuàn?', vi: 'Khi nào thì có thể xuất viện?' },
-              { speaker: 'B', hanzi: '医生说下个星期。', pinyin: 'Yīshēng shuō xià ge xīngqī.', vi: 'Bác sĩ nói là tuần sau.' }
-            ]
-          },
-          {
-            id: 'd3',
-            place: '在操场 (Trên sân tập)',
-            scene: 'Trên sân tập, A hỏi B về tuổi và chiều cao của David.',
-            lines: [
-              { speaker: 'A', hanzi: '大卫今年多大？', pinyin: 'Dàwèi jīnnián duō dà?', vi: 'David năm nay bao nhiêu tuổi?' },
-              { speaker: 'B', hanzi: '20多岁。', pinyin: 'Èrshí duō suì.', vi: 'Hơn 20 tuổi.' },
-              { speaker: 'A', hanzi: '他多高？', pinyin: 'Tā duō gāo?', vi: 'Anh ấy cao bao nhiêu?' },
-              { speaker: 'B', hanzi: '一米8几。', pinyin: 'Yī mǐ bā jǐ.', vi: 'Hơn 1 mét 8.' },
-              { speaker: 'A', hanzi: '你怎么知道这么多呀？', pinyin: 'Nǐ zěnme zhīdào zhème duō ya?', vi: 'Sao bạn lại biết nhiều chuyện về anh ấy thế?' },
-              { speaker: 'B', hanzi: '他是我同学。', pinyin: 'Tā shì wǒ tóngxué.', vi: 'Anh ấy là bạn học của tôi.' }
-            ]
-          },
-          {
-            id: 'd4',
-            place: '在房间 (Trong phòng)',
-            scene: 'Trong phòng, A và B nói về lịch làm việc bận rộn của thầy Trương.',
-            lines: [
-              { speaker: 'A', hanzi: '张老师星期六也不休息啊。', pinyin: 'Zhāng lǎoshī xīngqīliù yě bù xiūxi a.', vi: 'Thầy Trương thứ Bảy cũng không nghỉ ngơi à.' },
-              { speaker: 'B', hanzi: '是啊，他这几天很忙，没有时间休息。', pinyin: 'Shì a, tā zhè jǐ tiān hěn máng, méiyǒu shíjiān xiūxi.', vi: 'Đúng vậy, mấy ngày nay thầy ấy rất bận, không có thời gian nghỉ ngơi.' },
-              { speaker: 'A', hanzi: '那会很累吧。', pinyin: 'Nà huì hěn lèi ba.', vi: 'Như thế thì mệt lắm nhỉ.' },
-              { speaker: 'B', hanzi: '他每天回来都很累。', pinyin: 'Tā měitiān huílái dōu hěn lèi.', vi: 'Mỗi ngày thầy ấy về nhà đều rất mệt.' }
-            ]
-          }
-        ],
-
-        vocab: [
-          { id: 'l2-1', hanzi: '生病', pinyin: 'shēngbìng', pos: 'Động từ', meaning: 'bị bệnh, sinh bệnh', example: '他生病了，今天没有去上班。' },
-          { id: 'l2-2', hanzi: '每', pinyin: 'měi', pos: 'Đại từ', meaning: 'mỗi', example: '我每天都学习中文。' },
-          { id: 'l2-3', hanzi: '早上', pinyin: 'zǎoshang', pos: 'Danh từ', meaning: 'buổi sáng', example: '早上的天气很冷。' },
-          { id: 'l2-4', hanzi: '跑步', pinyin: 'pǎobù', pos: 'Động từ', meaning: 'chạy bộ', example: '我常常去公园跑步。' },
-          { id: 'l2-5', hanzi: '起床', pinyin: 'qǐchuáng', pos: 'Động từ', meaning: 'thức dậy', example: '你每天几点起床？' },
-          { id: 'l2-6', hanzi: '药', pinyin: 'yào', pos: 'Danh từ', meaning: 'thuốc', example: '吃药以后要喝水。' },
-          { id: 'l2-7', hanzi: '身体', pinyin: 'shēntǐ', pos: 'Danh từ', meaning: 'cơ thể, sức khỏe', example: '爸爸的身体很好。' },
-          { id: 'l2-8', hanzi: '出院', pinyin: 'chūyuàn', pos: 'Động từ', meaning: 'xuất viện', example: '他明天就可以出院了。' },
-          { id: 'l2-9', hanzi: '高', pinyin: 'gāo', pos: 'Tính từ', meaning: 'cao', example: '他比我高一点儿。' },
-          { id: 'l2-10', hanzi: '米', pinyin: 'mǐ', pos: 'Lượng từ', meaning: 'mét', example: '他高一米八。' },
-          { id: 'l2-11', hanzi: '知道', pinyin: 'zhīdào', pos: 'Động từ', meaning: 'biết', example: '我知道这件事。' },
-          { id: 'l2-12', hanzi: '休息', pinyin: 'xiūxi', pos: 'Động từ', meaning: 'nghỉ ngơi', example: '累了就休息一下吧。' },
-          { id: 'l2-13', hanzi: '忙', pinyin: 'máng', pos: 'Tính từ', meaning: 'bận', example: '老师最近很忙。' },
-          { id: 'l2-14', hanzi: '时间', pinyin: 'shíjiān', pos: 'Danh từ', meaning: 'thời gian', example: '我没有时间去玩。' },
-          { id: 'l2-15', hanzi: '累', pinyin: 'lèi', pos: 'Tính từ', meaning: 'mệt', example: '工作一天，我很累。' }
-        ],
-
-        grammar: [
-          {
-            term: '是不是（Có phải... không?）',
-            note: 'Dùng khi người nói đã có phỏng đoán khá chắc chắn về một sự việc, muốn hỏi lại để xác nhận. 是不是 có thể đứng đầu câu, giữa câu (trước vị ngữ) hoặc cuối câu.',
-            formula: null,
-            examples: [
-              { hanzi: '你很少生病，是不是喜欢运动？', pinyin: 'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?', vi: 'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?' },
-              { hanzi: '是不是明天爸爸休息？', pinyin: 'Shìbushì míngtiān bàba xiūxi?', vi: 'Có phải ngày mai bố được nghỉ không?' },
-              { hanzi: '我们星期一去北京，是不是？', pinyin: 'Wǒmen xīngqīyī qù Běijīng, shìbushì?', vi: 'Chúng ta thứ Hai đi Bắc Kinh, đúng không?' }
-            ]
-          },
-          {
-            term: '每（Mỗi）',
-            note: '每 đặt trước lượng từ + danh từ để chỉ một cá thể/nhóm bất kỳ trong tổng thể, không loại trừ ai. Thường kết hợp với phó từ 都 phía sau để nhấn mạnh "mỗi... đều...".',
-            formula: '每 + Lượng từ + Danh từ + 都 + Động từ / Tính từ',
-            examples: [
-              { hanzi: '我每天六点起床。', pinyin: 'Wǒ měitiān liù diǎn qǐchuáng.', vi: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ.' },
-              { hanzi: '山姆每年都去中国旅游。', pinyin: 'Shānmǔ měinián dōu qù Zhōngguó lǚyóu.', vi: 'Sam mỗi năm đều đi Trung Quốc du lịch.' },
-              { hanzi: '你每个星期六都工作吗？', pinyin: 'Nǐ měige xīngqīliù dōu gōngzuò ma?', vi: 'Mỗi thứ Bảy bạn đều phải làm việc à?' }
-            ]
-          },
-          {
-            term: '多 + Tính từ（Bao nhiêu? / Như thế nào?）',
-            note: 'Đại từ nghi vấn 多 đứng trước một tính từ (高, 大...) để hỏi về mức độ: chiều cao, tuổi tác... Khi trả lời phải nêu con số cụ thể.',
-            formula: 'Chủ ngữ + 多 + Tính từ？',
-            qaExamples: [
-              { q: { hanzi: '你多大？', pinyin: 'Nǐ duō dà?' }, a: { hanzi: '我16岁。', pinyin: 'Wǒ shíliù suì.' }, vi: 'Bạn bao nhiêu tuổi? – Tôi 16 tuổi.' },
-              { q: { hanzi: '大卫多高？', pinyin: 'Dàwèi duō gāo?' }, a: { hanzi: '一米八。', pinyin: 'Yī mǐ bā.' }, vi: 'David cao bao nhiêu? – Cậu ấy cao 1m8.' },
-              { q: { hanzi: '他多高？', pinyin: 'Tā duō gāo?' }, a: { hanzi: '一米八几。', pinyin: 'Yī mǐ bā jǐ.' }, vi: 'Anh ấy cao thế nào? – Cao hơn 1 mét 8 một chút.' }
-            ]
-          }
-        ],
-
-        fillBlank: [
-          { id: 'l2-fb1', sentence: '你很少生病，___ 喜欢运动？', answer: '是不是', options: ['是不是', '每', '多', '都'] },
-          { id: 'l2-fb2', sentence: '我 ___ 天早上都要出去跑步。', answer: '每', options: ['每', '是', '多', '都'] },
-          { id: 'l2-fb3', sentence: '你 ___ 大？', answer: '多', options: ['多', '每', '是', '几'] },
-          { id: 'l2-fb4', sentence: '他这几天很忙，没有 ___ 休息。', answer: '时间', options: ['时间', '身体', '起床', '知道'] },
-          { id: 'l2-fb5', sentence: '工作一天，我很 ___。', answer: '累', options: ['累', '忙', '高', '早上'] }
-        ],
-
-        sentenceBuild: [
-          { id: 'l2-sb1', tokens: ['我', '每天', '六点', '起床'], translation: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ.' },
-          { id: 'l2-sb2', tokens: ['我', '每天', '早上', '都要', '出去', '跑步'], translation: 'Mỗi sáng tôi đều phải ra ngoài chạy bộ.' },
-          { id: 'l2-sb3', tokens: ['他', '这几天', '很忙'], translation: 'Mấy ngày nay anh ấy rất bận.' },
-          { id: 'l2-sb4', tokens: ['你', '每天', '几点', '起床'], translation: 'Mỗi ngày bạn thức dậy lúc mấy giờ?' }
-        ],
-
-        dialogueQA: [
-          { id: 'l2-qa1', dialogueId: 'd1', question: 'Trong hội thoại "Trên sân vận động", B thức dậy lúc mấy giờ mỗi ngày?', options: ['5 giờ', '6 giờ', '7 giờ', '8 giờ'], answer: '6 giờ' },
-          { id: 'l2-qa2', dialogueId: 'd2', question: 'Theo lời bác sĩ, khi nào B có thể xuất viện?', options: ['Ngày mai', 'Tuần sau', 'Tháng sau', 'Hôm nay'], answer: 'Tuần sau' },
-          { id: 'l2-qa3', dialogueId: 'd3', question: 'David cao khoảng bao nhiêu?', options: ['Hơn 1m7', 'Hơn 1m8', 'Đúng 1m8', 'Hơn 1m9'], answer: 'Hơn 1m8' },
-          { id: 'l2-qa4', dialogueId: 'd4', question: 'Vì sao thầy Trương rất mệt mỗi khi về nhà?', options: ['Vì thầy bị bệnh', 'Vì thầy bận, không có thời gian nghỉ ngơi', 'Vì thầy phải đi xa', 'Vì thầy dậy sớm'], answer: 'Vì thầy bận, không có thời gian nghỉ ngơi' }
-        ],
-
-        commonMistakes: [
-          { wrong: '我都每天六点起床。', right: '我每天都六点起床。', note: '都 phải đứng sau cụm 每 + danh từ, không đứng trước.' },
-          { wrong: '你几岁？(hỏi người lớn)', right: '你多大？', note: '几岁 thường dùng hỏi tuổi trẻ em (số nhỏ); hỏi người lớn nên dùng 多大.' },
-          { wrong: '是不是你喜欢运动吗？', right: '你是不是喜欢运动？ / 你喜欢运动吗？', note: 'Không dùng đồng thời cả 是不是 và 吗 trong cùng một câu hỏi — chỉ chọn một.' }
-        ],
-
-        tieredExercises: [
-          {
-            tier: 1,
-            title: 'Nghe và chọn câu trả lời đúng',
-            type: 'listening-mcq',
-            id: 'l2-t1a',
-            items: [
-              { id: 'l2-t1a-1', audioText: '你每天几点起床？', options: ['我每天6点起床。', '医生说下个星期。', '他是我同学。', '一米八几。'], answer: '我每天6点起床。' },
-              { id: 'l2-t1a-2', audioText: '现在身体怎么样？', options: ['现在好多了。', '我每天六点起床。', '他每天回来都很累。', '20多岁。'], answer: '现在好多了。' },
-              { id: 'l2-t1a-3', audioText: '大卫今年多大？', options: ['20多岁。', '一米八几。', '医生说下个星期。', '是啊，我每天早上都要出去跑步。'], answer: '20多岁。' },
-              { id: 'l2-t1a-4', audioText: '他多高？', options: ['一米八几。', '20多岁。', '现在好多了。', '他是我同学。'], answer: '一米八几。' }
-            ]
-          },
-          {
-            tier: 1,
-            title: 'Nghe và điền từ còn thiếu',
-            type: 'listening-fill',
-            id: 'l2-t1b',
-            items: [
-              { id: 'l2-t1b-1', audioText: '你很少生病，是不是喜欢运动？', display: '你很少生病，＿＿喜欢运动？', choices: ['是不是', '吗'], answer: '是不是' },
-              { id: 'l2-t1b-2', audioText: '我每天早上都要出去跑步。', display: '我每天＿＿都要出去跑步。', choices: ['早上', '晚上'], answer: '早上' },
-              { id: 'l2-t1b-3', audioText: '他这几天很忙，没有时间休息。', display: '他这几天很忙，没有时间＿＿。', choices: ['休息', '起床'], answer: '休息' },
-              { id: 'l2-t1b-4', audioText: '医生说下个星期。', display: '医生说＿＿星期。', choices: ['下个', '这个'], answer: '下个' }
-            ]
-          },
-          {
-            tier: 2,
-            title: 'Nghe và sắp xếp thành câu đúng',
-            type: 'word-order',
-            id: 'l2-t2a',
-            items: [
-              { id: 'l2-t2a-1', tokens: ['我', '每天', '六点', '起床'], audioText: '我每天六点起床。' },
-              { id: 'l2-t2a-2', tokens: ['他', '这几天', '很忙'], audioText: '他这几天很忙。' }
-            ]
-          },
-          {
-            tier: 2,
-            title: 'Nghe và sắp xếp đoạn hội thoại',
-            type: 'line-order',
-            id: 'l2-t2b',
-            hint: 'Nhấn 🔊 để nghe từng câu, sau đó sắp xếp theo đúng trình tự hội thoại.',
-            lines: [
-              { hanzi: '吃药了吗？现在身体怎么样？' },
-              { hanzi: '吃了。现在好多了。' },
-              { hanzi: '什么时候能出院？' },
-              { hanzi: '医生说下个星期。' }
-            ]
-          },
-          {
-            tier: 3,
-            title: 'Nghe và nhắc lại (luyện phát âm)',
-            type: 'shadowing',
-            id: 'l2-t3a',
-            items: [
-              { id: 'l2-t3a-1', text: '我每天六点起床。' },
-              { id: 'l2-t3a-2', text: '现在好多了。' },
-              { id: 'l2-t3a-3', text: '他这几天很忙。' }
-            ]
-          },
-          {
-            tier: 3,
-            title: 'Nghe câu hỏi và trả lời bằng giọng nói',
-            type: 'qa-speaking',
-            id: 'l2-t3b',
-            items: [
-              { id: 'l2-t3b-1', questionText: '你每天几点起床？', keywords: ['起床', '点'], sampleAnswer: '我每天七点起床。' },
-              { id: 'l2-t3b-2', questionText: '你多大？', keywords: ['岁'], sampleAnswer: '我十八岁。' },
-              { id: 'l2-t3b-3', questionText: '你身体怎么样？', keywords: ['身体', '好'], sampleAnswer: '我身体很好，谢谢。' }
-            ]
-          }
-        ]
+        topic: 'Sinh hoạt hàng ngày & Sức khỏe',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-2.html'
       },
       {
         id: 'hsk2-l3',
@@ -382,116 +190,11 @@ const APP_DATA = {
         title: 'Cái màu đỏ ở bên trái là của tôi',
         titleHanzi: '左边那个红色的是我的',
         titlePinyin: 'Zuǒbiān nàge hóngsè de shì wǒ de',
-        fullPageUrl: '/lessons/bai-3.html',
-
-        dialogues: [
-          {
-            id: 'd1',
-            place: '在房间 (Trong phòng)',
-            scene: 'Trong phòng, A hỏi B về chiếc đồng hồ đeo tay và giá tiền.',
-            lines: [
-              { speaker: 'A', hanzi: '这块手表是你的吗？', pinyin: 'Zhè kuài shǒubiǎo shì nǐ de ma?', vi: 'Chiếc đồng hồ đeo tay này có phải của bạn không?' },
-              { speaker: 'B', hanzi: '不是我的，是我爸爸的。', pinyin: 'Bú shì wǒ de, shì wǒ bàba de.', vi: 'Không phải của tôi, là của bố tôi đấy.' },
-              { speaker: 'A', hanzi: '多少钱买的？', pinyin: 'Duōshao qián mǎi de?', vi: 'Mua hết bao nhiêu tiền thế?' },
-              { speaker: 'B', hanzi: '3000多块。', pinyin: 'Sānqiān duō kuài.', vi: 'Hơn 3000 tệ.' }
-            ]
-          },
-          {
-            id: 'd2',
-            place: '在家里 (Ở nhà)',
-            scene: 'Ở nhà, A và B đoán xem ai vừa đến: người đưa báo hay người giao sữa.',
-            lines: [
-              { speaker: 'A', hanzi: '这是今天早上的报纸吗？', pinyin: 'Zhè shì jīntiān zǎoshang de bàozhǐ ma?', vi: 'Đây là tờ báo sáng nay phải không?' },
-              { speaker: 'B', hanzi: '不是，是昨天的。', pinyin: 'Bú shì, shì zuótiān de.', vi: 'Không phải, là báo ngày hôm qua.' },
-              { speaker: 'A', hanzi: '你听，是不是送报纸的来了？', pinyin: 'Nǐ tīng, shìbushì sòng bàozhǐ de lái le?', vi: 'Bạn nghe xem, có phải người đưa báo đến rồi không?' },
-              { speaker: 'B', hanzi: '我看一下。不是，是送牛奶的。', pinyin: 'Wǒ kàn yíxià. Bú shì, shì sòng niúnǎi de.', vi: 'Để tôi xem một chút. Không phải, là người giao sữa.' }
-            ]
-          },
-          {
-            id: 'd3',
-            place: '在家里 (Ở nhà)',
-            scene: 'Ở nhà, A hỏi thăm về các phòng và B giới thiệu phòng của từng người trong gia đình.',
-            lines: [
-              { speaker: 'A', hanzi: '这是谁的房间？', pinyin: 'Zhè shì shéi de fángjiān?', vi: 'Đây là phòng của ai vậy?' },
-              { speaker: 'B', hanzi: '这是我和我丈夫的。旁边那个小的房间是我女儿的。', pinyin: 'Zhè shì wǒ hé wǒ zhàngfu de. Pángbiān nàge xiǎo de fángjiān shì wǒ nǚ\'ér de.', vi: 'Đây là phòng của tôi và chồng tôi. Căn phòng nhỏ bên cạnh là của con gái tôi.' },
-              { speaker: 'A', hanzi: '你女儿的房间真漂亮，都是粉色的。', pinyin: 'Nǐ nǚ\'ér de fángjiān zhēn piàoliang, dōu shì fěnsè de.', vi: 'Phòng con gái bạn đẹp thật đấy, toàn là màu hồng thôi.' },
-              { speaker: 'B', hanzi: '是啊，粉色是我女儿最喜欢的颜色。', pinyin: 'Shì a, fěnsè shì wǒ nǚ\'ér zuì xǐhuan de yánsè.', vi: 'Đúng vậy, màu hồng là màu sắc con gái tôi thích nhất.' }
-            ]
-          }
-        ],
-
-        vocab: [
-          { id: 'l3-1', hanzi: '块', pinyin: 'kuài', pos: 'Lượng từ', meaning: 'đồng (tiền); miếng', example: '这块手表花了三千多块。' },
-          { id: 'l3-2', hanzi: '手表', pinyin: 'shǒubiǎo', pos: 'Danh từ', meaning: 'đồng hồ đeo tay', example: '这块手表是你的吗？' },
-          { id: 'l3-3', hanzi: '钱', pinyin: 'qián', pos: 'Danh từ', meaning: 'tiền', example: '多少钱买的？' },
-          { id: 'l3-4', hanzi: '买', pinyin: 'mǎi', pos: 'Động từ', meaning: 'mua', example: '我想买一块新手表。' },
-          { id: 'l3-5', hanzi: '报纸', pinyin: 'bàozhǐ', pos: 'Danh từ', meaning: 'báo, tờ báo', example: '这是今天早上的报纸吗？' },
-          { id: 'l3-6', hanzi: '昨天', pinyin: 'zuótiān', pos: 'Danh từ', meaning: 'hôm qua', example: '不是，是昨天的。' },
-          { id: 'l3-7', hanzi: '送', pinyin: 'sòng', pos: 'Động từ', meaning: 'đưa, giao, tặng', example: '是不是送报纸的来了？' },
-          { id: 'l3-8', hanzi: '牛奶', pinyin: 'niúnǎi', pos: 'Danh từ', meaning: 'sữa (bò)', example: '不是，是送牛奶的。' },
-          { id: 'l3-9', hanzi: '谁', pinyin: 'shéi', pos: 'Đại từ', meaning: 'ai', example: '这是谁的房间？' },
-          { id: 'l3-10', hanzi: '房间', pinyin: 'fángjiān', pos: 'Danh từ', meaning: 'phòng', example: '这是谁的房间？' },
-          { id: 'l3-11', hanzi: '丈夫', pinyin: 'zhàngfu', pos: 'Danh từ', meaning: 'chồng', example: '这是我和我丈夫的。' },
-          { id: 'l3-12', hanzi: '旁边', pinyin: 'pángbiān', pos: 'Danh từ', meaning: 'bên cạnh', example: '旁边那个小的房间是我女儿的。' },
-          { id: 'l3-13', hanzi: '女儿', pinyin: 'nǚ\'ér', pos: 'Danh từ', meaning: 'con gái', example: '粉色是我女儿最喜欢的颜色。' },
-          { id: 'l3-14', hanzi: '漂亮', pinyin: 'piàoliang', pos: 'Tính từ', meaning: 'đẹp', example: '你女儿的房间真漂亮。' },
-          { id: 'l3-15', hanzi: '颜色', pinyin: 'yánsè', pos: 'Danh từ', meaning: 'màu sắc', example: '粉色是我女儿最喜欢的颜色。' }
-        ],
-
-        grammar: [
-          {
-            term: 'Cụm từ danh hoá với 「的」',
-            note: 'Khi trung tâm ngữ (danh từ) đã rõ trong ngữ cảnh, có thể lược bỏ và chỉ giữ lại Tính từ/Đại từ chỉ định + 的.',
-            formula: '(Tính từ / Đại từ chỉ định) + 的 = "cái..."',
-            examples: [
-              { hanzi: '左边那个红色的是我的。', pinyin: 'Zuǒbiān nàge hóngsè de shì wǒ de.', vi: 'Cái màu đỏ ở bên trái là của tôi.' },
-              { hanzi: '这是谁的？', pinyin: 'Zhè shì shéi de?', vi: 'Đây là của ai?' },
-              { hanzi: '旁边那个小的是我女儿的。', pinyin: 'Pángbiān nàge xiǎo de shì wǒ nǚ\'ér de.', vi: 'Cái nhỏ bên cạnh là của con gái tôi.' }
-            ]
-          },
-          {
-            term: '「一下」sau động từ',
-            note: 'Đặt ngay sau động từ để làm giảm nhẹ mức độ/thời lượng của hành động — dịch "một chút, thử xem".',
-            formula: 'Động từ + 一下',
-            examples: [
-              { hanzi: '我看一下。', pinyin: 'Wǒ kàn yíxià.', vi: 'Để tôi xem một chút.' },
-              { hanzi: '你听一下。', pinyin: 'Nǐ tīng yíxià.', vi: 'Bạn nghe thử xem.' },
-              { hanzi: '我们休息一下吧。', pinyin: 'Wǒmen xiūxi yíxià ba.', vi: 'Chúng ta nghỉ một chút đi.' }
-            ]
-          },
-          {
-            term: '「真」+ Tính từ',
-            note: 'Phó từ ngữ khí đặt trước tính từ, nhấn mạnh cảm xúc/đánh giá thật sự của người nói.',
-            formula: 'Chủ ngữ + 真 + Tính từ',
-            examples: [
-              { hanzi: '你女儿的房间真漂亮。', pinyin: 'Nǐ nǚ\'ér de fángjiān zhēn piàoliang.', vi: 'Phòng con gái bạn thật đẹp.' },
-              { hanzi: '这个颜色真好看。', pinyin: 'Zhège yánsè zhēn hǎokàn.', vi: 'Màu này thật đẹp.' },
-              { hanzi: '今天天气真好。', pinyin: 'Jīntiān tiānqì zhēn hǎo.', vi: 'Hôm nay thời tiết thật đẹp.' }
-            ]
-          }
-        ],
-
-        fillBlank: [
-          { id: 'l3-fb1', sentence: '这块手表不是我的，是我爸爸___。', answer: '的', options: ['的', '了', '吗', '呢'] },
-          { id: 'l3-fb2', sentence: '多少___买的？', answer: '钱', options: ['钱', '块', '个', '元'] },
-          { id: 'l3-fb3', sentence: '你听，是不是___报纸的来了？', answer: '送', options: ['送', '买', '看', '听'] },
-          { id: 'l3-fb4', sentence: '我看___。不是，是送牛奶的。', answer: '一下', options: ['一下', '一点儿', '有点儿', '真'] },
-          { id: 'l3-fb5', sentence: '你女儿的房间___漂亮！', answer: '真', options: ['真', '很', '太', '都'] }
-        ],
-
-        sentenceBuild: [
-          { id: 'l3-sb1', tokens: ['这', '块', '手表', '是', '谁', '的', '？'], translation: 'Chiếc đồng hồ này là của ai?' },
-          { id: 'l3-sb2', tokens: ['我', '看', '一下', '。'], translation: 'Để tôi xem một chút.' },
-          { id: 'l3-sb3', tokens: ['你', '女儿', '的', '房间', '真', '漂亮', '。'], translation: 'Phòng con gái bạn thật đẹp.' },
-          { id: 'l3-sb4', tokens: ['粉色', '是', '我', '女儿', '最', '喜欢', '的', '颜色', '。'], translation: 'Màu hồng là màu con gái tôi thích nhất.' }
-        ],
-
-        dialogueQA: [
-          { id: 'l3-qa1', dialogueId: 'd1', question: 'Chiếc đồng hồ trong hội thoại "Trong phòng" mua hết bao nhiêu tiền?', options: ['Hơn 2000 tệ', 'Hơn 3000 tệ', 'Đúng 3000 tệ', 'Hơn 4000 tệ'], answer: 'Hơn 3000 tệ' },
-          { id: 'l3-qa2', dialogueId: 'd2', question: 'Tờ báo mà A hỏi là báo của ngày nào?', options: ['Hôm nay', 'Hôm qua', 'Ngày mai', 'Tuần trước'], answer: 'Hôm qua' },
-          { id: 'l3-qa3', dialogueId: 'd2', question: 'Cuối cùng ai đã đến?', options: ['Người đưa báo', 'Người giao sữa', 'Bố', 'Hàng xóm'], answer: 'Người giao sữa' },
-          { id: 'l3-qa4', dialogueId: 'd3', question: 'Màu con gái của B thích nhất là màu gì?', options: ['Màu đỏ', 'Màu xanh', 'Màu hồng', 'Màu vàng'], answer: 'Màu hồng' }
-        ]
+        topic: 'Đồ vật & Phòng ốc trong nhà',
+        vocabCount: 15,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-3.html'
       }
     ]
   }

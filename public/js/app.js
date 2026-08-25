@@ -14,6 +14,7 @@
   var state = {
     practiceLevel: 'hsk1',
     mode: 'mcq-meaning',
+    activeLesson: null,
     session: null
   };
 
@@ -175,6 +176,95 @@
     });
   }
 
+  /* ---------------- HSK2 lesson syllabus ---------------- */
+
+  function getLessonById(lessonId) {
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons.hsk2) || [];
+    return lessons.filter(function (l) { return l.id === lessonId; })[0] || null;
+  }
+
+  function renderLessonList() {
+    var wrap = $('#lessonList');
+    if (!wrap) return;
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons.hsk2) || [];
+    wrap.innerHTML = '';
+
+    lessons.forEach(function (lesson) {
+      var item = document.createElement('details');
+      item.className = 'lesson-item';
+
+      var grammarHtml = lesson.grammar.map(function (g) {
+        return '<li><strong class="hanzi">' + g.term + '</strong><br>' + g.note + '</li>';
+      }).join('');
+
+      var vocabHtml = lesson.vocab.map(function (w) {
+        return '<div class="lesson-vocab-chip">' +
+          '<span class="hanzi">' + w.hanzi + '</span>' +
+          '<span class="pinyin">' + w.pinyin + '</span>' +
+          '<span class="meaning">' + w.meaning + '</span>' +
+        '</div>';
+      }).join('');
+
+      item.innerHTML =
+        '<summary class="lesson-summary">' +
+          '<span class="lesson-num">' + lesson.number + '</span>' +
+          '<h3>' + lesson.title + '</h3>' +
+          '<svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>' +
+        '</summary>' +
+        '<div class="lesson-body">' +
+          '<div><h4>Ngữ pháp trọng tâm</h4><ul class="lesson-grammar-list">' + grammarHtml + '</ul></div>' +
+          '<div><h4>Từ vựng cần nhớ</h4><div class="lesson-vocab-grid">' + vocabHtml +
+            '<button class="btn btn-primary lesson-practice-btn" type="button" data-lesson-id="' + lesson.id + '">' +
+              'Luyện tập bài ' + lesson.number +
+            '</button>' +
+          '</div></div>' +
+        '</div>';
+
+      wrap.appendChild(item);
+    });
+
+    wrap.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('.lesson-practice-btn') : null;
+      if (!btn) return;
+      startLessonPractice(btn.getAttribute('data-lesson-id'));
+    });
+  }
+
+  function startLessonPractice(lessonId) {
+    var lesson = getLessonById(lessonId);
+    if (!lesson) return;
+    state.practiceLevel = 'hsk2';
+    state.activeLesson = lessonId;
+    $all('.level-pill').forEach(function (pill) {
+      pill.classList.toggle('is-active', pill.getAttribute('data-level') === 'hsk2');
+    });
+    updateLessonBanner();
+    document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
+    startSession();
+  }
+
+  function updateLessonBanner() {
+    var banner = $('#lessonBanner');
+    if (!banner) return;
+    var lesson = state.activeLesson ? getLessonById(state.activeLesson) : null;
+    if (lesson) {
+      banner.hidden = false;
+      $('#lessonBannerText').textContent = 'Đang luyện theo Bài ' + lesson.number + ' – ' + lesson.title;
+    } else {
+      banner.hidden = true;
+    }
+  }
+
+  function initLessonBanner() {
+    var clearBtn = $('#lessonBannerClear');
+    if (!clearBtn) return;
+    clearBtn.addEventListener('click', function () {
+      state.activeLesson = null;
+      updateLessonBanner();
+      startSession();
+    });
+  }
+
   /* ---------------- Hero word of the day ---------------- */
 
   function allVocab() {
@@ -212,6 +302,8 @@
 
   function setPracticeLevel(levelId) {
     state.practiceLevel = levelId;
+    state.activeLesson = null;
+    updateLessonBanner();
     $all('.level-pill').forEach(function (pill) {
       pill.classList.toggle('is-active', pill.getAttribute('data-level') === levelId);
     });
@@ -235,8 +327,7 @@
 
   /* ---------------- Exercise generation ---------------- */
 
-  function buildMcqQuestions(level, field) {
-    var pool = APP_DATA.vocab[level];
+  function buildMcqQuestions(pool, field) {
     var picks = sample(pool, Math.min(QUESTIONS_PER_SESSION, pool.length));
     return picks.map(function (word) {
       var distractors = sample(pool.filter(function (w) { return w.id !== word.id; }), 3).map(function (w) { return w[field]; });
@@ -251,8 +342,7 @@
     });
   }
 
-  function buildFillBlankQuestions(level) {
-    var pool = APP_DATA.fillBlank[level] || [];
+  function buildFillBlankQuestions(pool) {
     var picks = sample(pool, Math.min(QUESTIONS_PER_SESSION, pool.length));
     return picks.map(function (item) {
       return {
@@ -265,8 +355,7 @@
     });
   }
 
-  function buildSentenceQuestions(level) {
-    var pool = APP_DATA.sentenceBuild[level] || [];
+  function buildSentenceQuestions(pool) {
     var picks = sample(pool, Math.min(QUESTIONS_PER_SESSION, pool.length));
     return picks.map(function (item) {
       return {
@@ -282,16 +371,23 @@
   function buildSession() {
     var level = state.practiceLevel;
     var mode = state.mode;
+    var lesson = state.activeLesson ? getLessonById(state.activeLesson) : null;
+
+    var vocabPool = lesson ? lesson.vocab : APP_DATA.vocab[level];
+    var fillBlankPool = lesson ? lesson.fillBlank : (APP_DATA.fillBlank[level] || []);
+    var sentencePool = lesson ? lesson.sentenceBuild : (APP_DATA.sentenceBuild[level] || []);
+
     var questions;
-    if (mode === 'mcq-meaning') questions = buildMcqQuestions(level, 'meaning');
-    else if (mode === 'mcq-pinyin') questions = buildMcqQuestions(level, 'pinyin');
-    else if (mode === 'mcq-hanzi') questions = buildMcqQuestions(level, 'hanzi');
-    else if (mode === 'fill-blank') questions = buildFillBlankQuestions(level);
-    else questions = buildSentenceQuestions(level);
+    if (mode === 'mcq-meaning') questions = buildMcqQuestions(vocabPool, 'meaning');
+    else if (mode === 'mcq-pinyin') questions = buildMcqQuestions(vocabPool, 'pinyin');
+    else if (mode === 'mcq-hanzi') questions = buildMcqQuestions(vocabPool, 'hanzi');
+    else if (mode === 'fill-blank') questions = buildFillBlankQuestions(fillBlankPool);
+    else questions = buildSentenceQuestions(sentencePool);
 
     return {
       level: level,
       mode: mode,
+      lessonId: state.activeLesson,
       questions: questions,
       index: 0,
       score: 0,
@@ -721,6 +817,8 @@
     initNav();
     initSearch();
     renderLevelCards();
+    renderLessonList();
+    initLessonBanner();
     renderHeroWord();
     renderPracticeLevelPills();
     initModeTabs();

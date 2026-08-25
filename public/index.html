@@ -29,6 +29,7 @@
 
     <nav class="main-nav" aria-label="Điều hướng chính">
       <a href="#levels">Hệ thống kiến thức</a>
+      <a href="#hsk2-lessons">Lộ trình HSK2</a>
       <a href="#practice">Bài tập</a>
       <a href="#dashboard">Tiến độ</a>
       <a href="#footer">Liên hệ</a>
@@ -54,6 +55,7 @@
       <input type="search" id="lessonSearchMobile" placeholder="Tìm bài học, từ vựng..." autocomplete="off" />
     </form>
     <a href="#levels">Hệ thống kiến thức</a>
+    <a href="#hsk2-lessons">Lộ trình HSK2</a>
     <a href="#practice">Bài tập thực hành</a>
     <a href="#dashboard">Tiến độ học tập</a>
     <a href="#footer">Liên hệ</a>
@@ -114,6 +116,20 @@
     </div>
   </section>
 
+  <!-- HSK2 LESSON SYLLABUS -->
+  <section class="section section-alt" id="hsk2-lessons">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="section-eyebrow">Lộ trình bài học</p>
+          <h2>Chương trình HSK 2 theo từng bài</h2>
+          <p>11 bài học bám sát giáo trình Chuẩn HSK 2, mỗi bài gồm trọng tâm ngữ pháp, từ vựng cần nhớ và bài luyện tập riêng cho bài đó.</p>
+        </div>
+      </div>
+      <div class="lesson-list" id="lessonList"></div>
+    </div>
+  </section>
+
   <!-- PRACTICE -->
   <section class="section section-alt" id="practice">
     <div class="container">
@@ -137,6 +153,10 @@
 
       <div class="practice-panel is-active" id="exercisePanel">
         <div class="exercise-card">
+          <div class="lesson-banner" id="lessonBanner" hidden>
+            <span id="lessonBannerText"></span>
+            <button type="button" id="lessonBannerClear">Luyện toàn cấp độ</button>
+          </div>
           <div class="exercise-progress">
             <span id="exerciseCounter">Câu 1 / 8</span>
             <span class="score">Điểm: <span id="exerciseScore">0</span></span>

@@ -54,6 +54,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -334,7 +338,7 @@ button {
 }
 
 .user-chip {
-  display: none;
+  display: flex;
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
@@ -735,6 +739,177 @@ button {
   color: var(--color-red-600);
   font-weight: 700;
   font-size: 0.88rem;
+}
+
+/* ---------- Lesson syllabus ---------- */
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lesson-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.lesson-item[open] {
+  border-color: var(--color-red-500);
+  box-shadow: var(--shadow-sm);
+}
+
+.lesson-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  cursor: pointer;
+  list-style: none;
+  min-height: 44px;
+}
+
+.lesson-summary::-webkit-details-marker {
+  display: none;
+}
+
+.lesson-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lesson-summary h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.lesson-summary .chevron {
+  transition: transform 0.2s var(--ease-standard);
+  color: var(--color-gray-400);
+  flex-shrink: 0;
+}
+
+.lesson-item[open] .lesson-summary .chevron {
+  transform: rotate(180deg);
+  color: var(--color-red-600);
+}
+
+.lesson-body {
+  padding: 0 var(--space-5) var(--space-5);
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 700px) {
+  .lesson-body {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lesson-body h4 {
+  margin: 0 0 var(--space-3);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-gray-600);
+}
+
+.lesson-grammar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lesson-grammar-list li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.lesson-grammar-list strong {
+  color: var(--color-red-600);
+  font-family: var(--font-hanzi);
+}
+
+.lesson-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-2);
+  align-content: start;
+}
+
+.lesson-vocab-chip {
+  background: var(--color-gray-100);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
+
+.lesson-vocab-chip .hanzi {
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: block;
+}
+
+.lesson-vocab-chip .pinyin {
+  font-size: 0.72rem;
+  color: var(--color-gray-600);
+  display: block;
+}
+
+.lesson-vocab-chip .meaning {
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: block;
+}
+
+.lesson-practice-btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+.lesson-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  background: var(--color-red-50);
+  color: var(--color-red-700);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.lesson-banner button {
+  border: none;
+  background: var(--color-white);
+  color: var(--color-red-600);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  min-height: 32px;
+  flex-shrink: 0;
+}
+
+.lesson-banner button:hover {
+  background: var(--color-red-600);
+  color: var(--color-white);
 }
 
 /* ---------- Practice ---------- */

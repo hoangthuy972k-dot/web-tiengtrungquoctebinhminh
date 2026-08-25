@@ -189,16 +189,47 @@
     var lessons = (APP_DATA.lessons && APP_DATA.lessons.hsk2) || [];
     wrap.innerHTML = '';
 
-    lessons.forEach(function (lesson) {
+    lessons.forEach(function (lesson, idx) {
       var item = document.createElement('details');
       item.className = 'lesson-item';
+      if (idx === 0) item.open = true;
+
+      var dialoguesHtml = (lesson.dialogues || []).map(function (d) {
+        var linesHtml = d.lines.map(function (line) {
+          return '<div class="dialogue-line is-' + line.speaker.toLowerCase() + '">' +
+            '<span class="dialogue-speaker">' + line.speaker + '</span>' +
+            '<div class="dialogue-bubble">' +
+              '<p class="hanzi">' + line.hanzi + '</p>' +
+              '<p class="pinyin">' + line.pinyin + '</p>' +
+              '<p class="vi">' + line.vi + '</p>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+        return '<div class="dialogue-block"><h5>' + d.place + '</h5>' + linesHtml + '</div>';
+      }).join('');
 
       var grammarHtml = lesson.grammar.map(function (g) {
-        return '<li><strong class="hanzi">' + g.term + '</strong><br>' + g.note + '</li>';
+        var formulaHtml = g.formula ? '<code class="grammar-formula">' + g.formula + '</code>' : '';
+        var examplesHtml = '';
+        if (g.examples) {
+          examplesHtml = '<ul class="grammar-examples">' + g.examples.map(function (ex) {
+            return '<li><span class="hanzi">' + ex.hanzi + '</span><span class="pinyin">' + ex.pinyin + '</span><span class="vi">' + ex.vi + '</span></li>';
+          }).join('') + '</ul>';
+        } else if (g.qaExamples) {
+          examplesHtml = '<ul class="grammar-examples grammar-qa">' + g.qaExamples.map(function (ex) {
+            return '<li>' +
+              '<span class="hanzi">' + ex.q.hanzi + ' – ' + ex.a.hanzi + '</span>' +
+              '<span class="pinyin">' + ex.q.pinyin + ' – ' + ex.a.pinyin + '</span>' +
+              '<span class="vi">' + ex.vi + '</span>' +
+            '</li>';
+          }).join('') + '</ul>';
+        }
+        return '<li><strong class="hanzi">' + g.term + '</strong>' + formulaHtml + '<p class="grammar-note">' + g.note + '</p>' + examplesHtml + '</li>';
       }).join('');
 
       var vocabHtml = lesson.vocab.map(function (w) {
         return '<div class="lesson-vocab-chip">' +
+          '<span class="pos">' + (w.pos || '') + '</span>' +
           '<span class="hanzi">' + w.hanzi + '</span>' +
           '<span class="pinyin">' + w.pinyin + '</span>' +
           '<span class="meaning">' + w.meaning + '</span>' +
@@ -208,16 +239,21 @@
       item.innerHTML =
         '<summary class="lesson-summary">' +
           '<span class="lesson-num">' + lesson.number + '</span>' +
-          '<h3>' + lesson.title + '</h3>' +
+          '<div>' +
+            '<h3>' + lesson.title + '</h3>' +
+            (lesson.titleHanzi ? '<span class="lesson-title-hanzi hanzi">' + lesson.titleHanzi + ' · ' + lesson.titlePinyin + '</span>' : '') +
+          '</div>' +
           '<svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><polyline points="6 9 12 15 18 9"/></svg>' +
         '</summary>' +
-        '<div class="lesson-body">' +
-          '<div><h4>Ngữ pháp trọng tâm</h4><ul class="lesson-grammar-list">' + grammarHtml + '</ul></div>' +
-          '<div><h4>Từ vựng cần nhớ</h4><div class="lesson-vocab-grid">' + vocabHtml +
-            '<button class="btn btn-primary lesson-practice-btn" type="button" data-lesson-id="' + lesson.id + '">' +
-              'Luyện tập bài ' + lesson.number +
-            '</button>' +
-          '</div></div>' +
+        '<div class="lesson-body lesson-body-full">' +
+          (dialoguesHtml ? '<div class="lesson-block-full"><h4>Bài khóa</h4><div class="dialogue-grid">' + dialoguesHtml + '</div></div>' : '') +
+          '<div class="lesson-body-cols">' +
+            '<div><h4>Ngữ pháp trọng tâm</h4><ul class="lesson-grammar-list">' + grammarHtml + '</ul></div>' +
+            '<div><h4>Từ vựng cần nhớ (' + lesson.vocab.length + ')</h4><div class="lesson-vocab-grid">' + vocabHtml + '</div></div>' +
+          '</div>' +
+          '<button class="btn btn-primary lesson-practice-btn" type="button" data-lesson-id="' + lesson.id + '">' +
+            'Luyện tập bài ' + lesson.number +
+          '</button>' +
         '</div>';
 
       wrap.appendChild(item);
@@ -368,6 +404,23 @@
     });
   }
 
+  function buildDialogueQAQuestions(lesson) {
+    if (!lesson || !lesson.dialogueQA) return [];
+    var pool = lesson.dialogueQA;
+    var picks = sample(pool, Math.min(QUESTIONS_PER_SESSION, pool.length));
+    return picks.map(function (item) {
+      var dialogue = (lesson.dialogues || []).filter(function (d) { return d.id === item.dialogueId; })[0];
+      return {
+        type: 'dialogue-qa',
+        id: item.id,
+        dialogue: dialogue,
+        question: item.question,
+        options: shuffle(item.options),
+        answer: item.answer
+      };
+    });
+  }
+
   function buildSession() {
     var level = state.practiceLevel;
     var mode = state.mode;
@@ -382,6 +435,7 @@
     else if (mode === 'mcq-pinyin') questions = buildMcqQuestions(vocabPool, 'pinyin');
     else if (mode === 'mcq-hanzi') questions = buildMcqQuestions(vocabPool, 'hanzi');
     else if (mode === 'fill-blank') questions = buildFillBlankQuestions(fillBlankPool);
+    else if (mode === 'dialogue-qa') questions = buildDialogueQAQuestions(lesson);
     else questions = buildSentenceQuestions(sentencePool);
 
     return {
@@ -407,7 +461,13 @@
 
   function updateProgressBar() {
     var s = state.session;
-    var total = s.questions.length || 1;
+    if (!s.questions.length) {
+      $('#exerciseCounter').textContent = 'Không có câu hỏi';
+      $('#exerciseScore').textContent = s.score;
+      $('#exerciseProgressFill').style.width = '0%';
+      return;
+    }
+    var total = s.questions.length;
     var current = Math.min(s.index + 1, total);
     $('#exerciseCounter').textContent = 'Câu ' + current + ' / ' + total;
     $('#exerciseScore').textContent = s.score;
@@ -447,6 +507,8 @@
       renderFillBlank(body, q);
     } else if (q.type === 'sentence-build') {
       renderSentenceBuild(body, q);
+    } else if (q.type === 'dialogue-qa') {
+      renderDialogueQA(body, q);
     }
   }
 
@@ -455,7 +517,8 @@
     'mcq-pinyin': 'Trắc nghiệm • Chọn Pinyin đúng',
     'mcq-hanzi': 'Trắc nghiệm • Chọn Hán tự đúng',
     'fill-blank': 'Điền từ vào chỗ trống',
-    'sentence-build': 'Ghép câu đúng thứ tự'
+    'sentence-build': 'Ghép câu đúng thứ tự',
+    'dialogue-qa': 'Đọc hiểu hội thoại'
   };
 
   function renderMcq(body, q) {
@@ -499,6 +562,36 @@
     body.innerHTML =
       '<span class="exercise-mode-label">' + MODE_LABEL['fill-blank'] + '</span>' +
       '<div class="exercise-prompt"><div class="question-text hanzi">' + q.sentence + '</div></div>' +
+      '<div class="options-grid" id="optionsGrid"></div>';
+
+    var grid = $('#optionsGrid', body);
+    q.options.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'option-btn';
+      btn.textContent = opt;
+      btn.addEventListener('click', function () {
+        handleAnswer(opt === q.answer, {});
+        markOptionButtons(grid, opt, q.answer);
+      });
+      grid.appendChild(btn);
+    });
+  }
+
+  function renderDialogueQA(body, q) {
+    var dialogueHtml = '';
+    if (q.dialogue) {
+      dialogueHtml = '<div class="qa-dialogue"><h5>' + q.dialogue.place + '</h5>' +
+        q.dialogue.lines.map(function (line) {
+          return '<p><strong>' + line.speaker + ':</strong> <span class="hanzi">' + line.hanzi + '</span> <span class="qa-vi">(' + line.vi + ')</span></p>';
+        }).join('') +
+      '</div>';
+    }
+
+    body.innerHTML =
+      '<span class="exercise-mode-label">' + MODE_LABEL['dialogue-qa'] + '</span>' +
+      dialogueHtml +
+      '<div class="exercise-prompt"><div class="question-text">' + q.question + '</div></div>' +
       '<div class="options-grid" id="optionsGrid"></div>';
 
     var grid = $('#optionsGrid', body);

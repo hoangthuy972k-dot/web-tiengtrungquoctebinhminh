@@ -162,272 +162,135 @@ const APP_DATA = {
   },
 
   /**
-   * Lo trinh bai hoc HSK2, bam sat cau truc 11 bai hoc (chu de + ngu phap trong tam).
-   * Tu vung / cau vi du / bai tap la noi dung bien soan rieng, khong sao chep nguyen van giao trinh.
+   * Lo trinh bai hoc HSK2 - hien tai dang thu nghiem voi Bai 2 (ban day du: hoi thoai,
+   * tu vung co tu loai, ngu phap chi tiet, va 4 dang bai tap). Cac bai khac se duoc
+   * bo sung sau khi ban duyet noi dung nay.
    */
   lessons: {
     hsk2: [
       {
-        id: 'hsk2-l1',
-        number: 1,
-        title: 'Dự định đi chơi, mốc thời gian',
-        grammar: [
-          { term: '要 (yào)', note: 'Trợ động từ diễn tả ý định, dự định sắp làm gì. VD: 我要去北京。' },
-          { term: '最 (zuì)', note: 'Phó từ chỉ mức độ cao nhất, đứng trước tính từ/động từ.' },
-          { term: '几 / 多 + tính từ', note: 'Dùng hỏi số lượng hoặc mức độ ước chừng, ví dụ 几个, 多大.' }
-        ],
-        vocab: [
-          { id: 'l1-1', hanzi: '打算', pinyin: 'dǎ suàn', meaning: 'dự định' },
-          { id: 'l1-2', hanzi: '最好', pinyin: 'zuì hǎo', meaning: 'tốt nhất' },
-          { id: 'l1-3', hanzi: '出发', pinyin: 'chū fā', meaning: 'xuất phát' },
-          { id: 'l1-4', hanzi: '一定', pinyin: 'yí dìng', meaning: 'nhất định' },
-          { id: 'l1-5', hanzi: '天气', pinyin: 'tiān qì', meaning: 'thời tiết' },
-          { id: 'l1-6', hanzi: '计划', pinyin: 'jì huà', meaning: 'kế hoạch' }
-        ],
-        fillBlank: [
-          { id: 'l1-fb1', sentence: '我 ___ 九月去北京旅游。', answer: '打算', options: ['打算', '已经', '觉得', '希望'] }
-        ],
-        sentenceBuild: [
-          { id: 'l1-sb1', tokens: ['我', '打算', '六月', '出发'], translation: 'Tôi dự định xuất phát vào tháng sáu.' }
-        ]
-      },
-      {
         id: 'hsk2-l2',
         number: 2,
-        title: 'Giờ giấc sinh hoạt hàng ngày',
-        grammar: [
-          { term: '是不是', note: 'Chèn vào giữa câu để hỏi xác nhận, tương đương "có phải... không".' },
-          { term: '每', note: 'Đại từ chỉ "mỗi", luôn đi cùng danh từ hoặc lượng từ, ví dụ 每天, 每个人.' },
-          { term: '多 + tính từ', note: 'Cấu trúc hỏi mức độ, ví dụ 多大, 多高.' }
+        title: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ',
+        titleHanzi: '我每天六点起床',
+        titlePinyin: 'Wǒ měitiān liù diǎn qǐchuáng',
+
+        dialogues: [
+          {
+            id: 'd1',
+            place: '在运动场 (Trên sân vận động)',
+            lines: [
+              { speaker: 'A', hanzi: '你很少生病，是不是喜欢运动？', pinyin: 'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?', vi: 'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?' },
+              { speaker: 'B', hanzi: '是啊，我每天早上都要出去跑步。', pinyin: 'Shì a, wǒ měitiān zǎoshang dōu yào chūqu pǎobù.', vi: 'Đúng vậy, mỗi sáng tôi đều phải ra ngoài chạy bộ.' },
+              { speaker: 'A', hanzi: '你每天几点起床？', pinyin: 'Nǐ měitiān jǐ diǎn qǐchuáng?', vi: 'Mỗi ngày bạn thức dậy lúc mấy giờ?' },
+              { speaker: 'B', hanzi: '我每天6点起床。', pinyin: 'Wǒ měitiān liù diǎn qǐchuáng.', vi: 'Mỗi ngày tôi thức dậy lúc 6 giờ.' }
+            ]
+          },
+          {
+            id: 'd2',
+            place: '在医院 (Trong bệnh viện)',
+            lines: [
+              { speaker: 'A', hanzi: '吃药了吗？现在身体怎么样？', pinyin: 'Chī yào le ma? Xiànzài shēntǐ zěnmeyàng?', vi: 'Bạn uống thuốc chưa? Bây giờ sức khỏe thế nào rồi?' },
+              { speaker: 'B', hanzi: '吃了。现在好多了。', pinyin: 'Chī le. Xiànzài hǎo duō le.', vi: 'Uống rồi. Bây giờ tốt hơn nhiều rồi.' },
+              { speaker: 'A', hanzi: '什么时候能出院？', pinyin: 'Shénme shíhou néng chūyuàn?', vi: 'Khi nào thì có thể xuất viện?' },
+              { speaker: 'B', hanzi: '医生说下个星期。', pinyin: 'Yīshēng shuō xià ge xīngqī.', vi: 'Bác sĩ nói là tuần sau.' }
+            ]
+          },
+          {
+            id: 'd3',
+            place: '在操场 (Trên sân tập)',
+            lines: [
+              { speaker: 'A', hanzi: '大卫今年多大？', pinyin: 'Dàwèi jīnnián duō dà?', vi: 'David năm nay bao nhiêu tuổi?' },
+              { speaker: 'B', hanzi: '20多岁。', pinyin: 'Èrshí duō suì.', vi: 'Hơn 20 tuổi.' },
+              { speaker: 'A', hanzi: '他多高？', pinyin: 'Tā duō gāo?', vi: 'Anh ấy cao bao nhiêu?' },
+              { speaker: 'B', hanzi: '一米8几。', pinyin: 'Yī mǐ bā jǐ.', vi: 'Hơn 1 mét 8.' },
+              { speaker: 'A', hanzi: '你怎么知道这么多呀？', pinyin: 'Nǐ zěnme zhīdào zhème duō ya?', vi: 'Sao bạn lại biết nhiều chuyện về anh ấy thế?' },
+              { speaker: 'B', hanzi: '他是我同学。', pinyin: 'Tā shì wǒ tóngxué.', vi: 'Anh ấy là bạn học của tôi.' }
+            ]
+          },
+          {
+            id: 'd4',
+            place: '在房间 (Trong phòng)',
+            lines: [
+              { speaker: 'A', hanzi: '张老师星期六也不休息啊。', pinyin: 'Zhāng lǎoshī xīngqīliù yě bù xiūxi a.', vi: 'Thầy Trương thứ Bảy cũng không nghỉ ngơi à.' },
+              { speaker: 'B', hanzi: '是啊，他这几天很忙，没有时间休息。', pinyin: 'Shì a, tā zhè jǐ tiān hěn máng, méiyǒu shíjiān xiūxi.', vi: 'Đúng vậy, mấy ngày nay thầy ấy rất bận, không có thời gian nghỉ ngơi.' },
+              { speaker: 'A', hanzi: '那会很累吧。', pinyin: 'Nà huì hěn lèi ba.', vi: 'Như thế thì mệt lắm nhỉ.' },
+              { speaker: 'B', hanzi: '他每天回来都很累。', pinyin: 'Tā měitiān huílái dōu hěn lèi.', vi: 'Mỗi ngày thầy ấy về nhà đều rất mệt.' }
+            ]
+          }
         ],
+
         vocab: [
-          { id: 'l2-1', hanzi: '起床', pinyin: 'qǐ chuáng', meaning: 'thức dậy' },
-          { id: 'l2-2', hanzi: '每天', pinyin: 'měi tiān', meaning: 'mỗi ngày' },
-          { id: 'l2-3', hanzi: '睡觉', pinyin: 'shuì jiào', meaning: 'ngủ' },
-          { id: 'l2-4', hanzi: '上班', pinyin: 'shàng bān', meaning: 'đi làm' },
-          { id: 'l2-5', hanzi: '早上', pinyin: 'zǎo shang', meaning: 'buổi sáng' },
-          { id: 'l2-6', hanzi: '晚上', pinyin: 'wǎn shang', meaning: 'buổi tối' }
+          { id: 'l2-1', hanzi: '生病', pinyin: 'shēngbìng', pos: 'Động từ', meaning: 'bị bệnh, sinh bệnh', example: '他生病了，今天没有去上班。' },
+          { id: 'l2-2', hanzi: '每', pinyin: 'měi', pos: 'Đại từ', meaning: 'mỗi', example: '我每天都学习中文。' },
+          { id: 'l2-3', hanzi: '早上', pinyin: 'zǎoshang', pos: 'Danh từ', meaning: 'buổi sáng', example: '早上的天气很冷。' },
+          { id: 'l2-4', hanzi: '跑步', pinyin: 'pǎobù', pos: 'Động từ', meaning: 'chạy bộ', example: '我常常去公园跑步。' },
+          { id: 'l2-5', hanzi: '起床', pinyin: 'qǐchuáng', pos: 'Động từ', meaning: 'thức dậy', example: '你每天几点起床？' },
+          { id: 'l2-6', hanzi: '药', pinyin: 'yào', pos: 'Danh từ', meaning: 'thuốc', example: '吃药以后要喝水。' },
+          { id: 'l2-7', hanzi: '身体', pinyin: 'shēntǐ', pos: 'Danh từ', meaning: 'cơ thể, sức khỏe', example: '爸爸的身体很好。' },
+          { id: 'l2-8', hanzi: '出院', pinyin: 'chūyuàn', pos: 'Động từ', meaning: 'xuất viện', example: '他明天就可以出院了。' },
+          { id: 'l2-9', hanzi: '高', pinyin: 'gāo', pos: 'Tính từ', meaning: 'cao', example: '他比我高一点儿。' },
+          { id: 'l2-10', hanzi: '米', pinyin: 'mǐ', pos: 'Lượng từ', meaning: 'mét', example: '他高一米八。' },
+          { id: 'l2-11', hanzi: '知道', pinyin: 'zhīdào', pos: 'Động từ', meaning: 'biết', example: '我知道这件事。' },
+          { id: 'l2-12', hanzi: '休息', pinyin: 'xiūxi', pos: 'Động từ', meaning: 'nghỉ ngơi', example: '累了就休息一下吧。' },
+          { id: 'l2-13', hanzi: '忙', pinyin: 'máng', pos: 'Tính từ', meaning: 'bận', example: '老师最近很忙。' },
+          { id: 'l2-14', hanzi: '时间', pinyin: 'shíjiān', pos: 'Danh từ', meaning: 'thời gian', example: '我没有时间去玩。' },
+          { id: 'l2-15', hanzi: '累', pinyin: 'lèi', pos: 'Tính từ', meaning: 'mệt', example: '工作一天，我很累。' }
         ],
-        fillBlank: [
-          { id: 'l2-fb1', sentence: '你 ___ 六点起床？', answer: '是不是', options: ['是不是', '因为', '已经', '一定'] }
-        ],
-        sentenceBuild: [
-          { id: 'l2-sb1', tokens: ['我', '每天', '七点', '起床'], translation: 'Mỗi ngày tôi thức dậy lúc bảy giờ.' }
-        ]
-      },
-      {
-        id: 'hsk2-l3',
-        number: 3,
-        title: 'Miêu tả đồ vật, màu sắc',
+
         grammar: [
-          { term: 'Cụm từ có 的', note: 'Tạo danh ngữ mô tả đặc điểm sự vật, ví dụ 红色的(那个).' },
-          { term: '一下', note: 'Đặt sau động từ để giảm nhẹ hành động, mang nghĩa "thử một chút".' },
-          { term: '真', note: 'Phó từ ngữ khí nhấn mạnh cảm xúc thật sự, đứng trước tính từ.' }
+          {
+            term: '是不是（Có phải... không?）',
+            note: 'Dùng khi người nói đã có phỏng đoán khá chắc chắn về một sự việc, muốn hỏi lại để xác nhận. 是不是 có thể đứng đầu câu, giữa câu (trước vị ngữ) hoặc cuối câu.',
+            formula: null,
+            examples: [
+              { hanzi: '你很少生病，是不是喜欢运动？', pinyin: 'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?', vi: 'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?' },
+              { hanzi: '是不是明天爸爸休息？', pinyin: 'Shìbushì míngtiān bàba xiūxi?', vi: 'Có phải ngày mai bố được nghỉ không?' },
+              { hanzi: '我们星期一去北京，是不是？', pinyin: 'Wǒmen xīngqīyī qù Běijīng, shìbushì?', vi: 'Chúng ta thứ Hai đi Bắc Kinh, đúng không?' }
+            ]
+          },
+          {
+            term: '每（Mỗi）',
+            note: '每 đặt trước lượng từ + danh từ để chỉ một cá thể/nhóm bất kỳ trong tổng thể, không loại trừ ai. Thường kết hợp với phó từ 都 phía sau để nhấn mạnh "mỗi... đều...".',
+            formula: '每 + Lượng từ + Danh từ + 都 + Động từ / Tính từ',
+            examples: [
+              { hanzi: '我每天六点起床。', pinyin: 'Wǒ měitiān liù diǎn qǐchuáng.', vi: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ.' },
+              { hanzi: '山姆每年都去中国旅游。', pinyin: 'Shānmǔ měinián dōu qù Zhōngguó lǚyóu.', vi: 'Sam mỗi năm đều đi Trung Quốc du lịch.' },
+              { hanzi: '你每个星期六都工作吗？', pinyin: 'Nǐ měige xīngqīliù dōu gōngzuò ma?', vi: 'Mỗi thứ Bảy bạn đều phải làm việc à?' }
+            ]
+          },
+          {
+            term: '多 + Tính từ（Bao nhiêu? / Như thế nào?）',
+            note: 'Đại từ nghi vấn 多 đứng trước một tính từ (高, 大...) để hỏi về mức độ: chiều cao, tuổi tác... Khi trả lời phải nêu con số cụ thể.',
+            formula: 'Chủ ngữ + 多 + Tính từ？',
+            qaExamples: [
+              { q: { hanzi: '你多大？', pinyin: 'Nǐ duō dà?' }, a: { hanzi: '我16岁。', pinyin: 'Wǒ shíliù suì.' }, vi: 'Bạn bao nhiêu tuổi? – Tôi 16 tuổi.' },
+              { q: { hanzi: '大卫多高？', pinyin: 'Dàwèi duō gāo?' }, a: { hanzi: '一米八。', pinyin: 'Yī mǐ bā.' }, vi: 'David cao bao nhiêu? – Cậu ấy cao 1m8.' },
+              { q: { hanzi: '他多高？', pinyin: 'Tā duō gāo?' }, a: { hanzi: '一米八几。', pinyin: 'Yī mǐ bā jǐ.' }, vi: 'Anh ấy cao thế nào? – Cao hơn 1 mét 8 một chút.' }
+            ]
+          }
         ],
-        vocab: [
-          { id: 'l3-1', hanzi: '颜色', pinyin: 'yán sè', meaning: 'màu sắc' },
-          { id: 'l3-2', hanzi: '左边', pinyin: 'zuǒ biān', meaning: 'bên trái' },
-          { id: 'l3-3', hanzi: '右边', pinyin: 'yòu biān', meaning: 'bên phải' },
-          { id: 'l3-4', hanzi: '杯子', pinyin: 'bēi zi', meaning: 'cái cốc' },
-          { id: 'l3-5', hanzi: '真', pinyin: 'zhēn', meaning: 'thật là' },
-          { id: 'l3-6', hanzi: '好看', pinyin: 'hǎo kàn', meaning: 'đẹp' }
-        ],
+
         fillBlank: [
-          { id: 'l3-fb1', sentence: '这个颜色 ___ 好看。', answer: '真', options: ['真', '一下', '就', '别'] }
+          { id: 'l2-fb1', sentence: '你很少生病，___ 喜欢运动？', answer: '是不是', options: ['是不是', '每', '多', '都'] },
+          { id: 'l2-fb2', sentence: '我 ___ 天早上都要出去跑步。', answer: '每', options: ['每', '是', '多', '都'] },
+          { id: 'l2-fb3', sentence: '你 ___ 大？', answer: '多', options: ['多', '每', '是', '几'] },
+          { id: 'l2-fb4', sentence: '他这几天很忙，没有 ___ 休息。', answer: '时间', options: ['时间', '身体', '起床', '知道'] },
+          { id: 'l2-fb5', sentence: '工作一天，我很 ___。', answer: '累', options: ['累', '忙', '高', '早上'] }
         ],
+
         sentenceBuild: [
-          { id: 'l3-sb1', tokens: ['这个', '颜色', '真', '好看'], translation: 'Màu này thật đẹp.' }
-        ]
-      },
-      {
-        id: 'hsk2-l4',
-        number: 4,
-        title: 'Công việc và nhờ giúp đỡ',
-        grammar: [
-          { term: '是...的', note: 'Nhấn mạnh thời gian, địa điểm hoặc cách thức của việc đã xảy ra.' },
-          { term: '...的时候', note: 'Chỉ thời điểm xảy ra hành động, tương đương "khi...".' },
-          { term: '已经', note: 'Phó từ chỉ hành động đã hoàn thành, thường đi cùng 了.' }
+          { id: 'l2-sb1', tokens: ['我', '每天', '六点', '起床'], translation: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ.' },
+          { id: 'l2-sb2', tokens: ['我', '每天', '早上', '都要', '出去', '跑步'], translation: 'Mỗi sáng tôi đều phải ra ngoài chạy bộ.' },
+          { id: 'l2-sb3', tokens: ['他', '这几天', '很忙'], translation: 'Mấy ngày nay anh ấy rất bận.' },
+          { id: 'l2-sb4', tokens: ['你', '每天', '几点', '起床'], translation: 'Mỗi ngày bạn thức dậy lúc mấy giờ?' }
         ],
-        vocab: [
-          { id: 'l4-1', hanzi: '介绍', pinyin: 'jiè shào', meaning: 'giới thiệu' },
-          { id: 'l4-2', hanzi: '帮忙', pinyin: 'bāng máng', meaning: 'giúp đỡ' },
-          { id: 'l4-3', hanzi: '工作', pinyin: 'gōng zuò', meaning: 'công việc' },
-          { id: 'l4-4', hanzi: '面试', pinyin: 'miàn shì', meaning: 'phỏng vấn' },
-          { id: 'l4-5', hanzi: '顺利', pinyin: 'shùn lì', meaning: 'thuận lợi' },
-          { id: 'l4-6', hanzi: '已经', pinyin: 'yǐ jīng', meaning: 'đã' }
-        ],
-        fillBlank: [
-          { id: 'l4-fb1', sentence: '这份工作 ___ 他帮我介绍的。', answer: '是', options: ['是', '在', '从', '对'] }
-        ],
-        sentenceBuild: [
-          { id: 'l4-sb1', tokens: ['面试', '已经', '结束', '了'], translation: 'Buổi phỏng vấn đã kết thúc rồi.' }
-        ]
-      },
-      {
-        id: 'hsk2-l5',
-        number: 5,
-        title: 'Mua sắm, chọn đồ',
-        grammar: [
-          { term: '就', note: 'Phó từ nhấn mạnh tính khẳng định, dứt khoát của quyết định.' },
-          { term: '还', note: 'Ngữ khí phó từ mang sắc thái "vẫn, vẫn còn" trong câu trần thuật.' },
-          { term: '有点儿', note: 'Phó từ chỉ mức độ nhẹ, thường mang nghĩa tiêu cực, đứng trước tính từ.' }
-        ],
-        vocab: [
-          { id: 'l5-1', hanzi: '衣服', pinyin: 'yī fu', meaning: 'quần áo' },
-          { id: 'l5-2', hanzi: '试穿', pinyin: 'shì chuān', meaning: 'mặc thử' },
-          { id: 'l5-3', hanzi: '价钱', pinyin: 'jià qián', meaning: 'giá cả' },
-          { id: 'l5-4', hanzi: '便宜', pinyin: 'pián yi', meaning: 'rẻ' },
-          { id: 'l5-5', hanzi: '有点儿', pinyin: 'yǒu diǎnr', meaning: 'hơi' },
-          { id: 'l5-6', hanzi: '就', pinyin: 'jiù', meaning: 'thì, liền' }
-        ],
-        fillBlank: [
-          { id: 'l5-fb1', sentence: '这件衣服 ___ 贵。', answer: '有点儿', options: ['有点儿', '最', '再', '别'] }
-        ],
-        sentenceBuild: [
-          { id: 'l5-sb1', tokens: ['我', '就', '买', '这件'], translation: 'Tôi mua chiếc này luôn.' }
-        ]
-      },
-      {
-        id: 'hsk2-l6',
-        number: 6,
-        title: 'Hỏi lý do, chuyện ăn uống',
-        grammar: [
-          { term: '怎么', note: 'Đại từ nghi vấn dùng hỏi nguyên nhân hoặc cách thức.' },
-          { term: 'Lặp lượng từ', note: 'Lặp lại lượng từ để diễn đạt nghĩa "mỗi, từng cái một".' },
-          { term: '因为...所以...', note: 'Cặp liên từ nêu nguyên nhân - kết quả.' }
-        ],
-        vocab: [
-          { id: 'l6-1', hanzi: '面条', pinyin: 'miàn tiáo', meaning: 'mì sợi' },
-          { id: 'l6-2', hanzi: '羊肉', pinyin: 'yáng ròu', meaning: 'thịt cừu' },
-          { id: 'l6-3', hanzi: '好吃', pinyin: 'hǎo chī', meaning: 'ngon' },
-          { id: 'l6-4', hanzi: '骑自行车', pinyin: 'qí zì xíng chē', meaning: 'đi xe đạp' },
-          { id: 'l6-5', hanzi: '因为', pinyin: 'yīn wèi', meaning: 'bởi vì' },
-          { id: 'l6-6', hanzi: '所以', pinyin: 'suǒ yǐ', meaning: 'cho nên' }
-        ],
-        fillBlank: [
-          { id: 'l6-fb1', sentence: '我 ___ 生病了，所以没去上班。', answer: '因为', options: ['因为', '所以', '怎么', '从'] }
-        ],
-        sentenceBuild: [
-          { id: 'l6-sb1', tokens: ['羊肉', '面条', '很', '好吃'], translation: 'Mì thịt cừu rất ngon.' }
-        ]
-      },
-      {
-        id: 'hsk2-l7',
-        number: 7,
-        title: 'Khoảng cách và phương tiện đi lại',
-        grammar: [
-          { term: '还 (2)', note: 'Mang nghĩa "vẫn còn", biểu thị trạng thái tiếp diễn.' },
-          { term: '离', note: 'Giới từ chỉ khoảng cách giữa hai địa điểm, ví dụ 离公司远吗？' },
-          { term: '呢', note: 'Trợ từ ngữ khí dùng ở cuối câu hỏi rút gọn hoặc duy trì trạng thái.' }
-        ],
-        vocab: [
-          { id: 'l7-1', hanzi: '公司', pinyin: 'gōng sī', meaning: 'công ty' },
-          { id: 'l7-2', hanzi: '公共汽车', pinyin: 'gōng gòng qì chē', meaning: 'xe buýt' },
-          { id: 'l7-3', hanzi: '机场', pinyin: 'jī chǎng', meaning: 'sân bay' },
-          { id: 'l7-4', hanzi: '走路', pinyin: 'zǒu lù', meaning: 'đi bộ' },
-          { id: 'l7-5', hanzi: '离', pinyin: 'lí', meaning: 'cách' },
-          { id: 'l7-6', hanzi: '近', pinyin: 'jìn', meaning: 'gần' }
-        ],
-        fillBlank: [
-          { id: 'l7-fb1', sentence: '你家 ___ 公司远吗？', answer: '离', options: ['离', '从', '对', '比'] }
-        ],
-        sentenceBuild: [
-          { id: 'l7-sb1', tokens: ['我', '走路', '去', '公司'], translation: 'Tôi đi bộ đến công ty.' }
-        ]
-      },
-      {
-        id: 'hsk2-l8',
-        number: 8,
-        title: 'Nhờ vả và hẹn việc',
-        grammar: [
-          { term: '...，好吗？', note: 'Cấu trúc hỏi ý kiến, đề nghị ở cuối câu.' },
-          { term: '再', note: 'Phó từ chỉ hành động sẽ lặp lại trong tương lai.' },
-          { term: 'Câu kiêm ngữ', note: 'Một từ vừa làm tân ngữ của động từ trước, vừa làm chủ ngữ của động từ sau (như 让, 请).' }
-        ],
-        vocab: [
-          { id: 'l8-1', hanzi: '服务员', pinyin: 'fú wù yuán', meaning: 'nhân viên phục vụ' },
-          { id: 'l8-2', hanzi: '再', pinyin: 'zài', meaning: 'lại, thêm nữa' },
-          { id: 'l8-3', hanzi: '告诉', pinyin: 'gào su', meaning: 'nói cho biết' },
-          { id: 'l8-4', hanzi: '事情', pinyin: 'shì qing', meaning: 'việc, chuyện' },
-          { id: 'l8-5', hanzi: '等', pinyin: 'děng', meaning: 'đợi' },
-          { id: 'l8-6', hanzi: '找', pinyin: 'zhǎo', meaning: 'tìm' }
-        ],
-        fillBlank: [
-          { id: 'l8-fb1', sentence: '服务员，___ 给我一杯水，好吗？', answer: '再', options: ['再', '别', '就', '已经'] }
-        ],
-        sentenceBuild: [
-          { id: 'l8-sb1', tokens: ['等', '一下', '服务员', '就', '来'], translation: 'Đợi một chút, nhân viên phục vụ sẽ đến ngay.' }
-        ]
-      },
-      {
-        id: 'hsk2-l9',
-        number: 9,
-        title: 'Kết quả và thứ tự công việc',
-        grammar: [
-          { term: 'Bổ ngữ kết quả', note: 'Đứng sau động từ để chỉ kết quả của hành động, ví dụ 做完, 听懂.' },
-          { term: '从', note: 'Giới từ chỉ điểm bắt đầu về thời gian hoặc không gian.' },
-          { term: '第~', note: 'Tiền tố tạo số thứ tự, ví dụ 第一, 第二.' }
-        ],
-        vocab: [
-          { id: 'l9-1', hanzi: '问题', pinyin: 'wèn tí', meaning: 'câu hỏi, vấn đề' },
-          { id: 'l9-2', hanzi: '完', pinyin: 'wán', meaning: 'xong' },
-          { id: 'l9-3', hanzi: '希望', pinyin: 'xī wàng', meaning: 'hy vọng' },
-          { id: 'l9-4', hanzi: '从', pinyin: 'cóng', meaning: 'từ' },
-          { id: 'l9-5', hanzi: '第一', pinyin: 'dì yī', meaning: 'thứ nhất' },
-          { id: 'l9-6', hanzi: '懂', pinyin: 'dǒng', meaning: 'hiểu' }
-        ],
-        fillBlank: [
-          { id: 'l9-fb1', sentence: '你的问题我还没做 ___。', answer: '完', options: ['完', '懂', '从', '第'] }
-        ],
-        sentenceBuild: [
-          { id: 'l9-sb1', tokens: ['我', '已经', '做', '完', '作业'], translation: 'Tôi đã làm xong bài tập rồi.' }
-        ]
-      },
-      {
-        id: 'hsk2-l10',
-        number: 10,
-        title: 'Đồ thất lạc, câu cầu khiến',
-        grammar: [
-          { term: '不要...了 / 别...了', note: 'Cấu trúc câu cầu khiến mang nghĩa "đừng làm... nữa".' },
-          { term: '对', note: 'Giới từ chỉ đối tượng chịu tác động, tương đương "đối với".' }
-        ],
-        vocab: [
-          { id: 'l10-1', hanzi: '手机', pinyin: 'shǒu jī', meaning: 'điện thoại di động' },
-          { id: 'l10-2', hanzi: '别', pinyin: 'bié', meaning: 'đừng' },
-          { id: 'l10-3', hanzi: '帮助', pinyin: 'bāng zhù', meaning: 'giúp đỡ' },
-          { id: 'l10-4', hanzi: '桌子', pinyin: 'zhuō zi', meaning: 'cái bàn' },
-          { id: 'l10-5', hanzi: '对', pinyin: 'duì', meaning: 'đối với' },
-          { id: 'l10-6', hanzi: '正在', pinyin: 'zhèng zài', meaning: 'đang' }
-        ],
-        fillBlank: [
-          { id: 'l10-fb1', sentence: '别找 ___，手机在桌子上呢。', answer: '了', options: ['了', '呢', '吗', '过'] }
-        ],
-        sentenceBuild: [
-          { id: 'l10-sb1', tokens: ['手机', '在', '桌子', '上'], translation: 'Điện thoại ở trên bàn.' }
-        ]
-      },
-      {
-        id: 'hsk2-l11',
-        number: 11,
-        title: 'So sánh tuổi tác, khả năng',
-        grammar: [
-          { term: 'Động từ làm định ngữ', note: 'Dùng cụm động từ để bổ nghĩa cho danh từ đứng sau, kèm 的.' },
-          { term: '比 (câu chữ 比)', note: 'Cấu trúc so sánh hơn kém giữa hai đối tượng, ví dụ A 比 B 大。' },
-          { term: '可能', note: 'Trợ động từ / phó từ chỉ khả năng có thể xảy ra.' }
-        ],
-        vocab: [
-          { id: 'l11-1', hanzi: '唱歌', pinyin: 'chàng gē', meaning: 'hát' },
-          { id: 'l11-2', hanzi: '跳舞', pinyin: 'tiào wǔ', meaning: 'nhảy múa' },
-          { id: 'l11-3', hanzi: '比', pinyin: 'bǐ', meaning: 'so với' },
-          { id: 'l11-4', hanzi: '岁', pinyin: 'suì', meaning: 'tuổi' },
-          { id: 'l11-5', hanzi: '可能', pinyin: 'kě néng', meaning: 'có thể' },
-          { id: 'l11-6', hanzi: '姓', pinyin: 'xìng', meaning: 'họ (tên)' }
-        ],
-        fillBlank: [
-          { id: 'l11-fb1', sentence: '他 ___ 我大三岁。', answer: '比', options: ['比', '从', '对', '跟'] }
-        ],
-        sentenceBuild: [
-          { id: 'l11-sb1', tokens: ['妹妹', '比', '我', '小'], translation: 'Em gái nhỏ tuổi hơn tôi.' }
+
+        dialogueQA: [
+          { id: 'l2-qa1', dialogueId: 'd1', question: 'Trong hội thoại "Trên sân vận động", B thức dậy lúc mấy giờ mỗi ngày?', options: ['5 giờ', '6 giờ', '7 giờ', '8 giờ'], answer: '6 giờ' },
+          { id: 'l2-qa2', dialogueId: 'd2', question: 'Theo lời bác sĩ, khi nào B có thể xuất viện?', options: ['Ngày mai', 'Tuần sau', 'Tháng sau', 'Hôm nay'], answer: 'Tuần sau' },
+          { id: 'l2-qa3', dialogueId: 'd3', question: 'David cao khoảng bao nhiêu?', options: ['Hơn 1m7', 'Hơn 1m8', 'Đúng 1m8', 'Hơn 1m9'], answer: 'Hơn 1m8' },
+          { id: 'l2-qa4', dialogueId: 'd4', question: 'Vì sao thầy Trương rất mệt mỗi khi về nhà?', options: ['Vì thầy bị bệnh', 'Vì thầy bận, không có thời gian nghỉ ngơi', 'Vì thầy phải đi xa', 'Vì thầy dậy sớm'], answer: 'Vì thầy bận, không có thời gian nghỉ ngơi' }
         ]
       }
     ]

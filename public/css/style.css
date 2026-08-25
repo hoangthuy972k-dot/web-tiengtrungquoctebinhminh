@@ -807,14 +807,20 @@ button {
 
 .lesson-body {
   padding: 0 var(--space-5) var(--space-5);
-  display: grid;
-  gap: var(--space-5);
 }
 
-@media (min-width: 700px) {
-  .lesson-body {
-    grid-template-columns: 1fr 1fr;
-  }
+.lesson-body-full {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.lesson-title-hanzi {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  margin-top: 2px;
 }
 
 .lesson-body h4 {
@@ -825,28 +831,196 @@ button {
   color: var(--color-gray-600);
 }
 
+.lesson-body-cols {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 700px) {
+  .lesson-body-cols {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+/* Dialogues */
+.dialogue-grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 900px) {
+  .dialogue-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dialogue-block {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.dialogue-block h5 {
+  margin: 0 0 var(--space-3);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-red-600);
+}
+
+.dialogue-line {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.dialogue-line:last-child {
+  margin-bottom: 0;
+}
+
+.dialogue-line.is-b {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.dialogue-speaker {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dialogue-line.is-a .dialogue-speaker {
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+}
+
+.dialogue-line.is-b .dialogue-speaker {
+  background: var(--color-gold-50);
+  color: #8a5a00;
+}
+
+.dialogue-bubble {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  max-width: 85%;
+}
+
+.dialogue-line.is-b .dialogue-bubble {
+  margin-left: auto;
+}
+
+.dialogue-bubble .hanzi {
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.dialogue-bubble .pinyin {
+  font-size: 0.75rem;
+  color: var(--color-gray-600);
+  margin: 2px 0 0;
+}
+
+.dialogue-bubble .vi {
+  font-size: 0.78rem;
+  color: var(--color-gray-700);
+  margin: 2px 0 0;
+  font-style: italic;
+}
+
+/* Grammar */
 .lesson-grammar-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 .lesson-grammar-list li {
   font-size: 0.88rem;
   line-height: 1.55;
+  border-left: 3px solid var(--color-red-100, var(--color-red-50));
+  padding-left: var(--space-3);
 }
 
 .lesson-grammar-list strong {
   color: var(--color-red-600);
   font-family: var(--font-hanzi);
+  display: block;
+  margin-bottom: var(--space-1);
 }
 
+.grammar-formula {
+  display: inline-block;
+  background: var(--color-gold-50);
+  color: #8a5a00;
+  font-family: var(--font-hanzi);
+  font-size: 0.8rem;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+}
+
+.grammar-note {
+  margin: 0 0 var(--space-2);
+  color: var(--color-gray-700);
+}
+
+.grammar-examples {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.grammar-examples li {
+  border-left: none;
+  padding-left: 0;
+  background: var(--color-gray-50);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+}
+
+.grammar-examples .hanzi {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-gray-900);
+}
+
+.grammar-examples .pinyin {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-gray-600);
+  margin-top: 2px;
+}
+
+.grammar-examples .vi {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-gray-700);
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* Vocab */
 .lesson-vocab-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: var(--space-2);
   align-content: start;
 }
@@ -855,6 +1029,17 @@ button {
   background: var(--color-gray-100);
   border-radius: var(--radius-sm);
   padding: var(--space-2) var(--space-3);
+  position: relative;
+}
+
+.lesson-vocab-chip .pos {
+  display: block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-red-600);
+  font-weight: 700;
+  margin-bottom: 2px;
 }
 
 .lesson-vocab-chip .hanzi {
@@ -876,8 +1061,34 @@ button {
 }
 
 .lesson-practice-btn {
-  grid-column: 1 / -1;
-  justify-self: start;
+  align-self: flex-start;
+}
+
+/* Dialogue comprehension exercise */
+.qa-dialogue {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  text-align: left;
+}
+
+.qa-dialogue h5 {
+  margin: 0 0 var(--space-2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-red-600);
+}
+
+.qa-dialogue p {
+  margin: 0 0 var(--space-1);
+  font-size: 0.85rem;
+}
+
+.qa-dialogue .qa-vi {
+  color: var(--color-gray-600);
+  font-style: italic;
 }
 
 .lesson-banner {

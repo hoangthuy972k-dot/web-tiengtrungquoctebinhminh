@@ -267,6 +267,78 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/bai-9.html'
+      },
+      {
+        id: 'hsk2-l10',
+        number: 10,
+        title: 'Đừng tìm nữa, điện thoại ở trên bàn kìa',
+        titleHanzi: '别找了，手机在桌子上呢',
+        titlePinyin: 'Bié zhǎo le, shǒujī zài zhuōzi shang ne',
+        topic: 'Sinh hoạt gia đình & Lời khuyên',
+        vocabCount: 9,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/bai-10.html'
+      },
+      {
+        id: 'hsk2-l11',
+        number: 11,
+        title: 'Anh ấy lớn hơn tôi ba tuổi',
+        titleHanzi: '他比我大三岁',
+        titlePinyin: 'Tā bǐ wǒ dà sān suì',
+        topic: 'So sánh & Người quen',
+        vocabCount: 11,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-11.html'
+      },
+      {
+        id: 'hsk2-l12',
+        number: 12,
+        title: 'Bạn mặc ít quá',
+        titleHanzi: '你穿得太少了',
+        titlePinyin: 'Nǐ chuān de tài shǎo le',
+        topic: 'Sinh hoạt, Thời tiết & Gia đình',
+        vocabCount: 9,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/bai-12.html'
+      },
+      {
+        id: 'hsk2-l13',
+        number: 13,
+        title: 'Cửa đang mở đấy',
+        titleHanzi: '门开着呢',
+        titlePinyin: 'Mén kāizhe ne',
+        topic: 'Miêu tả trạng thái & Hỏi đường',
+        vocabCount: 11,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-13.html'
+      },
+      {
+        id: 'hsk2-l14',
+        number: 14,
+        title: 'Bạn đã từng xem bộ phim đó chưa?',
+        titleHanzi: '你看过那个电影吗？',
+        titlePinyin: 'Nǐ kànguo nàge diànyǐng ma?',
+        topic: 'Kinh nghiệm, Sở thích & Thời tiết',
+        vocabCount: 8,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-14.html'
+      },
+      {
+        id: 'hsk2-l15',
+        number: 15,
+        title: 'Năm mới sắp đến rồi',
+        titleHanzi: '新年就要到了',
+        titlePinyin: 'Xīnnián jiùyào dào le',
+        topic: 'Năm mới, Thời tiết & Gia đình',
+        vocabCount: 8,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/bai-15.html'
       }
     ]
   }

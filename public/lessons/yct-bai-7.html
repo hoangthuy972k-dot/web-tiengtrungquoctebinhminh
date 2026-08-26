@@ -3,212 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YCT · Bài 7 · 这是猫</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/lesson-template.css">
+<title>YCT 1 · Bài 7 · 这是猫 | HanYu Vui</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@500;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/yct-template.css">
 </head>
-<body>
+<body class="yct-body">
+<div class="yct-wrap">
 
-<header class="site-header">
-  <a class="back-link" href="/">← Về trang chủ HanYu Vui</a>
-  <div class="header-badge">YCT · Bài 7</div>
-  <div class="header-zh">这是猫</div>
-  <div class="header-py">Zhè shì māo</div>
-  <div class="header-vn">Đây là con mèo</div>
-  <div class="header-meta">
-    <span class="h-chip">🐾 Chủ đề: Động vật &amp; Chỉ định gần/xa</span>
-    <span class="h-chip">📚 9 từ mới</span>
-    <span class="h-chip">💬 3 hội thoại</span>
-    <span class="h-chip">📐 1 điểm ngữ pháp</span>
-  </div>
-</header>
-
-<nav class="tab-nav">
-  <button class="tab-btn active" data-action="show-tab" data-tab="warmup">🎯 Khởi động</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="vocab">📚 Từ mới</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="dialog">💬 Hội thoại</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="fill">✏️ Điền từ</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="sort">🧩 Sắp xếp</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="match">🔗 Nối câu</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="mc">🎯 Trắc nghiệm</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="speak">🗣️ Luyện nói</button>
-</nav>
-
-<div class="main">
-
-<div id="warmup" class="section active">
-  <div class="sec-head">
-    <div class="sec-title">🎯 Khởi động <span class="sec-badge">热身</span></div>
-    <div class="sec-sub">Bấm 1 hình ảnh, rồi bấm chữ Hán tương ứng bên dưới để ghép đúng nhé!</div>
-  </div>
-  <div class="warmup-grid" id="wu-grid"></div>
-  <div style="margin-bottom:16px;font-weight:600;color:var(--mid);font-size:0.9rem;">Các từ để nối:</div>
-  <div class="wu-options" id="wu-opts"></div>
-  <div style="min-height:24px;font-size:0.9rem;" id="wu-fb"></div>
-  <div class="wu-score" id="wu-score">
-    <div><div style="font-size:0.78rem;color:var(--mid)">Kết quả</div><div class="score-n" id="wu-score-n"></div></div>
-    <div class="score-m" id="wu-score-m"></div>
-  </div>
-</div>
-
-<div id="vocab" class="section">
-  <div class="sec-head">
-    <div class="sec-title">📚 Từ mới <span class="sec-badge">9 từ</span></div>
-    <div class="sec-sub">👆 Bấm thẻ để xem nghĩa, ví dụ &amp; phân tích Hán tự · Bấm nút <b>▶ Xem thứ tự nét</b> để xem hoạt hình viết chữ &amp; bộ thủ được tô màu</div>
-  </div>
-  <div class="lesson-tabs">
-    <button class="lesson-tab active" data-action="filter-vocab" data-lesson="0">Tất cả (9)</button>
-    <button class="lesson-tab" data-action="filter-vocab" data-lesson="1">📖 Chỉ định gần/xa (1–5)</button>
-    <button class="lesson-tab" data-action="filter-vocab" data-lesson="2">📖 Động vật (6–9)</button>
-  </div>
-  <div class="flip-tip">👆 Bấm thẻ để lật xem nghĩa &amp; ví dụ</div>
-  <div class="vocab-grid" id="vocab-grid"></div>
-</div>
-
-<div id="flash" class="section">
-  <div class="sec-head">
-    <div class="sec-title">🃏 Thẻ nhớ nhanh</div>
-    <div class="sec-sub">Đoán nghĩa trước, rồi bấm lật thẻ kiểm tra nhé!</div>
-  </div>
-  <div class="flash-nav">
-    <button class="flash-btn" data-action="flash-prev">←</button>
-    <span class="flash-ctr" id="flash-ctr">1 / 9</span>
-    <button class="flash-btn" data-action="flash-next">→</button>
-  </div>
-  <div class="flash-wrap">
-    <div class="flash-outer" id="flash-card" data-action="flash-flip">
-      <div class="flash-face f-front">
-        <div class="f-emoji" id="ff-em"></div>
-        <div class="f-zh" id="ff-zh"></div>
-        <div class="f-py" id="ff-py"></div>
-        <div class="f-hint">Bấm để xem nghĩa</div>
-      </div>
-      <div class="flash-face f-back">
-        <div class="f-vn" id="fb-vn"></div>
-        <div class="f-py" id="fb-py" style="color:var(--teal)"></div>
-        <div class="f-ex" id="fb-ex"></div>
-      </div>
+  <header class="yk-header">
+    <div class="yk-header-top">
+      <span class="yk-brand-badge">🌟 HanYu Vui 🌟</span>
+      <button type="button" class="yk-slide-btn" id="yk-slide-btn">🖥️ Trình chiếu</button>
     </div>
-  </div>
-  <div style="text-align:center;margin-top:14px;">
-    <button class="btn-s" data-action="flash-shuffle">🔀 Xáo trộn</button>
-  </div>
-</div>
+    <div class="yk-title">YCT 1 - Bài 7</div>
+    <span class="yk-subtitle">🎉 Chào mừng bé ơi! 🎉</span>
+  </header>
 
-<div id="grammar" class="section">
-  <div class="sec-head">
-    <div class="sec-title">📐 Ngữ pháp <span class="sec-badge">1 điểm</span></div>
-    <div class="sec-sub">Điểm ngữ pháp quan trọng của bài</div>
+  <nav class="yk-topnav">
+    <a href="/lessons/yct-hub.html" class="yk-navbtn is-home">🏠 Trang chủ</a>
+    <a href="/lessons/yct-bai-1.html" class="yk-navbtn">📖 Bài 1</a>
+    <a href="/lessons/yct-bai-2.html" class="yk-navbtn">📖 Bài 2</a>
+    <a href="/lessons/yct-bai-3.html" class="yk-navbtn">📖 Bài 3</a>
+    <a href="/lessons/yct-bai-4.html" class="yk-navbtn">📖 Bài 4</a>
+    <a href="/lessons/yct-bai-5.html" class="yk-navbtn">📖 Bài 5</a>
+    <a href="/lessons/yct-bai-6.html" class="yk-navbtn">📖 Bài 6</a>
+    <a href="/lessons/yct-bai-7.html" class="yk-navbtn is-active">📖 Bài 7</a>
+    <a href="/lessons/yct-bai-8.html" class="yk-navbtn">📖 Bài 8</a>
+    <a href="/lessons/yct-bai-9.html" class="yk-navbtn">📖 Bài 9</a>
+    <a href="/lessons/yct-bai-10.html" class="yk-navbtn">📖 Bài 10</a>
+    <a href="/lessons/yct-bai-11.html" class="yk-navbtn">📖 Bài 11</a>
+  </nav>
+
+  <div class="yk-tabbar">
+    <button type="button" class="yk-tab is-active" data-tab="tuvung">📖 Từ vựng</button>
+    <button type="button" class="yk-tab" data-tab="vietchu">🔤 Viết chữ</button>
+    <button type="button" class="yk-tab" data-tab="flashcard">🃏 Flashcard</button>
+    <button type="button" class="yk-tab" data-tab="noitu">🔗 Nối từ</button>
+    <button type="button" class="yk-tab" data-tab="ghepcap">🧠 Ghép cặp</button>
+    <button type="button" class="yk-tab" data-tab="dich">✍️ Dịch</button>
+    <button type="button" class="yk-tab" data-tab="nghe">🎧 Nghe</button>
+    <button type="button" class="yk-tab" data-tab="luyentap">📝 Luyện tập</button>
+    <button type="button" class="yk-tab" data-tab="diem">📊 Điểm</button>
   </div>
 
-  <div class="grammar-card">
-    <div class="g-title"><span class="g-num">1</span>Chỉ định gần/xa: 「这/那」và「这儿/那儿 + 有」</div>
-    <div class="g-sub">这 chỉ vật GẦN người nói; 那 chỉ vật XA người nói. 这儿/那儿 dùng để nói "có gì ở đâu".</div>
-    <div class="g-rule">
-      <strong style="color:var(--sky-d)">这</strong> / <strong style="color:var(--sky-d)">那</strong> + 是 + N &nbsp;·&nbsp; <strong style="color:var(--sky-d)">这儿</strong> / <strong style="color:var(--sky-d)">那儿</strong> + 有 + N
-    </div>
-    <table class="g-table">
-      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
-      <tbody>
-        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">这是猫，那是狗。</td><td style="color:var(--soft);font-size:0.82rem">Zhè shì māo, nà shì gǒu.</td><td style="color:var(--mid);font-size:0.85rem">Đây là con mèo, đó là con chó.</td></tr>
-        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">这儿有鱼，那儿有鸟。</td><td style="color:var(--soft);font-size:0.82rem">Zhèr yǒu yú, nàr yǒu niǎo.</td><td style="color:var(--mid);font-size:0.85rem">Ở đây có cá, ở đó có chim.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<div id="dialog" class="section">
-  <div class="sec-head">
-    <div class="sec-title">💬 Hội thoại <span class="sec-badge">3 đoạn</span></div>
-    <div class="sec-sub">Ba tình huống hội thoại trong bài học</div>
-  </div>
-  <div class="dlg-tabs">
-    <button class="dlg-tb active" data-action="show-dlg" data-idx="0">1 · Nhìn con mèo</button>
-    <button class="dlg-tb" data-action="show-dlg" data-idx="1">2 · Con chó ở đằng kia</button>
-    <button class="dlg-tb" data-action="show-dlg" data-idx="2">3 · Cá ở đây, chim ở đó</button>
-  </div>
-  <div id="dlg-wrap"></div>
-</div>
-
-<div id="fill" class="section">
-  <div class="sec-head">
-    <div class="sec-title">✏️ Điền vào chỗ trống</div>
-    <div class="sec-sub">Đọc tình huống rồi điền từ thích hợp để hoàn thành câu nhé!</div>
-  </div>
-  <div class="prog-bar"><div class="prog-fill" id="fill-prog" style="width:0%"></div></div>
-  <div id="fill-list"></div>
-  <div class="btn-row">
-    <button class="btn-p" data-action="check-fill">Kiểm tra đáp án</button>
-    <button class="btn-s" data-action="reset-fill">Làm lại</button>
-  </div>
-  <div class="score-box" id="fill-score">
-    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="fill-sn"></div></div>
-    <div class="score-m" id="fill-sm"></div>
-  </div>
-</div>
-
-<div id="sort" class="section">
-  <div class="sec-head">
-    <div class="sec-title">🧩 Sắp xếp thành câu</div>
-    <div class="sec-sub">Nhấn 🔊 để nghe câu, rồi bấm các từ theo đúng thứ tự — <strong style="color:var(--warm)">nhớ đặt cả dấu câu</strong> vào cuối · Bấm từ đã đặt để xóa</div>
-  </div>
-  <div id="sort-list"></div>
-  <div class="btn-row">
-    <button class="btn-p" data-action="check-sort">Kiểm tra</button>
-    <button class="btn-s" data-action="reset-sort">Làm lại</button>
-  </div>
-  <div class="score-box" id="sort-score">
-    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="sort-sn"></div></div>
-    <div class="score-m" id="sort-sm"></div>
-  </div>
-</div>
-
-<div id="match" class="section">
-  <div class="sec-head">
-    <div class="sec-title">🔗 Nối câu</div>
-    <div class="sec-sub">Bấm 1 ô <strong style="color:var(--sky)">câu hỏi</strong> bên trái → bấm ô <strong style="color:var(--teal)">câu trả lời</strong> bên phải để ghép đúng</div>
-  </div>
-  <div class="m-fb" id="m-fb"></div>
-  <div class="match-grid">
-    <div><div class="mcol-title">Câu hỏi</div><div id="m-left"></div></div>
-    <div><div class="mcol-title">Câu trả lời</div><div id="m-right"></div></div>
-  </div>
-  <div class="btn-row"><button class="btn-s" data-action="reset-match">Làm lại</button></div>
-</div>
-
-<div id="mc" class="section">
-  <div class="sec-head">
-    <div class="sec-title">🎯 Trắc nghiệm</div>
-    <div class="sec-sub">Chọn đáp án đúng nhất — kết quả hiện ngay</div>
-  </div>
-  <div class="prog-bar"><div class="prog-fill" id="mc-prog" style="width:0%"></div></div>
-  <div id="mc-list"></div>
-  <div class="score-box" id="mc-score">
-    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="mc-sn"></div></div>
-    <div class="score-m" id="mc-sm"></div>
-  </div>
-</div>
-
-<div id="speak" class="section">
-  <div class="sec-head">
-    <div class="sec-title">🗣️ Luyện nói theo 3 tầng</div>
-    <div class="sec-sub">Luyện theo thứ tự: <strong style="color:var(--sky)">Tầng 1 mô phỏng</strong> → <strong style="color:var(--gold)">Tầng 2 có hướng dẫn</strong> → <strong style="color:var(--teal)">Tầng 3 nói tự do</strong>.</div>
-  </div>
-  <div class="speak-tabs">
-    <button class="speak-tb active" data-action="show-speak" data-tier="1">① Mô phỏng</button>
-    <button class="speak-tb" data-action="show-speak" data-tier="2">② Có hướng dẫn</button>
-    <button class="speak-tb" data-action="show-speak" data-tier="3">③ Nói tự do</button>
-  </div>
-  <div id="speak-wrap"></div>
-</div>
+  <div class="yk-panel" id="yk-panel-tuvung"></div>
+  <div class="yk-panel" id="yk-panel-vietchu" style="display:none"></div>
+  <div class="yk-panel" id="yk-panel-flashcard" style="display:none"></div>
+  <div class="yk-panel" id="yk-panel-noitu" style="display:none"></div>
+  <div class="yk-panel" id="yk-panel-ghepcap" style="display:none"></div>
+  <div class="yk-panel" id="yk-panel-dich" style="display:none"></div>
+  <div class="yk-panel" id="yk-panel-nghe" style="display:none"></div>
+  <div class="yk-panel" id="yk-panel-luyentap" style="display:none"></div>
+  <div class="yk-panel" id="yk-panel-diem" style="display:none"></div>
 
 </div>
 
 <script src="/js/vendor/hanzi-writer.min.js"></script>
 <script src="/js/yct-bai-7-strokes.js"></script>
 <script src="/js/yct-bai-7-data.js"></script>
-<script src="/js/lesson-engine.js"></script>
+<script src="/js/yct-engine.js"></script>
 </body>
 </html>

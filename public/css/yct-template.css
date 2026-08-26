@@ -216,6 +216,13 @@ body.yct-body {
   align-items: center;
   justify-content: center;
 }
+.yk-writer-quizfb {
+  min-height: 24px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--yk-pink-dark);
+  margin-bottom: 12px;
+}
 .yk-writer-info {
   background: var(--yk-pink-pale);
   border-radius: 14px;

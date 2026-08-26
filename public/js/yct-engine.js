@@ -89,6 +89,7 @@
         '<div class="yk-writer-py" id="yw-py"></div>' +
         '<div class="yk-writer-vn" id="yw-vn"></div>' +
         '<div class="yk-writer-box" id="yw-box"></div>' +
+        '<div class="yk-writer-quizfb" id="yw-quizfb"></div>' +
         '<div class="yk-writer-info" id="yw-info"></div>' +
         '<div class="yk-writer-nav">' +
           '<button type="button" class="yk-btn yk-btn-outline" id="yw-prev">← Trở lại</button>' +
@@ -99,7 +100,12 @@
       '</div>';
     document.getElementById('yw-prev').addEventListener('click', function () { moveWriter(-1); });
     document.getElementById('yw-next').addEventListener('click', function () { moveWriter(1); });
-    document.getElementById('yw-play').addEventListener('click', function () { if (hzWriter) hzWriter.animateCharacter(); });
+    document.getElementById('yw-play').addEventListener('click', function () {
+      if (!hzWriter) return;
+      try { hzWriter.cancelQuiz(); } catch (e) {}
+      document.getElementById('yw-quizfb').textContent = '';
+      hzWriter.animateCharacter();
+    });
     document.getElementById('yw-quiz').addEventListener('click', quizWriterChar);
     writerIdx = 0;
     paintWriter();
@@ -123,6 +129,7 @@
     document.getElementById('yw-hanzi').textContent = h.c;
     document.getElementById('yw-py').textContent = h.p;
     document.getElementById('yw-vn').textContent = h.mean;
+    document.getElementById('yw-quizfb').textContent = '';
     document.getElementById('yw-info').innerHTML =
       '<div><b>Bộ thủ &amp; cấu trúc:</b> ' + h.rad + '</div>' +
       '<div><b>Cách nhớ:</b> ' + h.tip + '</div>' +
@@ -143,12 +150,19 @@
     }
   }
   function quizWriterChar() {
-    var chars = writerChars();
-    var h = chars[writerIdx];
-    var guess = window.prompt('Chữ này nghĩa là gì? (' + h.p + ')');
-    if (guess === null) return;
-    var ok = guess.trim().toLowerCase() === h.mean.toLowerCase();
-    window.alert(ok ? '🎉 Chính xác!' : 'Chưa đúng — nghĩa là: ' + h.mean);
+    var fb = document.getElementById('yw-quizfb');
+    if (!hzWriter) {
+      if (fb) fb.textContent = 'Chữ này chưa có dữ liệu để luyện viết.';
+      return;
+    }
+    if (fb) fb.textContent = '✏️ Con hãy vẽ từng nét vào ô trên nhé!';
+    hzWriter.quiz({
+      onMistake: function () { if (fb) fb.textContent = '❌ Chưa đúng nét, thử lại nhé!'; },
+      onCorrectStroke: function () { if (fb) fb.textContent = '✅ Đúng rồi! Vẽ tiếp nét sau...'; },
+      onComplete: function (summary) {
+        if (fb) fb.textContent = '🎉 Con đã viết xong! (Sai ' + summary.totalMistakes + ' lần)';
+      }
+    });
   }
 
   /* ---------------- Flashcard ---------------- */
@@ -185,9 +199,9 @@
     document.getElementById('yf-ctr').textContent = (flashIdx + 1) + ' / ' + flashOrder.length;
     var card = document.getElementById('yf-card');
     if (!flashFlipped) {
-      card.innerHTML = '<div class="yk-fc-hanzi">' + v.zh + '</div><div class="yk-fc-py">' + v.py + '</div><div class="yk-fc-hint">Bấm để xem nghĩa</div>';
+      card.innerHTML = '<div class="yk-fc-hanzi">' + v.zh + '</div><div class="yk-fc-hint">Bấm để xem nghĩa</div>';
     } else {
-      card.innerHTML = '<div class="yk-fc-hanzi" style="font-size:1.6rem">' + v.vn + '</div><div class="yk-fc-py">' + v.py + '</div>';
+      card.innerHTML = '<div class="yk-fc-hanzi" style="font-size:1.6rem">' + v.vn + '</div>';
     }
   }
 

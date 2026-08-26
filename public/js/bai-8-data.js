@@ -161,88 +161,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — trộn từ Bài 4 (开始), Bài 7 (到)
-const fillData = [
-  {pre:'我们下午去看电影',blank:'好吗',post:'？',hint:'(được không?)',ans:'好吗',exp:'...，好吗？dùng hỏi ý kiến một cách lịch sự'},
-  {pre:'今天下午没有时间，明天下午',blank:'再',post:'去吧。',hint:'(rồi mới, hẵng)',ans:'再',exp:'再 chỉ hành động sẽ làm sau, ở tương lai'},
-  {pre:'让我想想',blank:'再',post:'告诉你。',hint:'(rồi mới)',ans:'再',exp:'再 = sau đó mới (làm việc tiếp theo)'},
-  {pre:'老师',blank:'让',post:'我给大卫打个电话。',hint:'(bảo, để)',ans:'让',exp:'让 mở đầu câu kiêm ngữ: A让B làm C'},
-  {pre:'你',blank:'等',post:'我一下，好吗？',hint:'(chờ, đợi)',ans:'等',exp:'等 = chờ, đợi'},
-  {pre:'那件黑的有点儿',blank:'贵',post:'。',hint:'(đắt)',ans:'贵',exp:'贵 = đắt'},
-  {pre:'服务员，我房间的门打不',blank:'开',post:'了。',hint:'(mở — ôn từ Bài 4)',ans:'开',exp:'开 = mở (đã học trong 开始 ở Bài 4)'},
-  {pre:'我姐姐已经',blank:'找',post:'到工作了。',hint:'(tìm — ghép với 到 đã học ở Bài 7)',ans:'找',exp:'找到 = tìm được (到 làm bổ ngữ, đã học ở Bài 7)'},
-];
-
-// Sắp xếp — khác câu Điền từ/Trắc nghiệm, ôn từ Bài 3/6
-const sortData = [
-  {words:['让','我','想想','再','告诉','你','。'],ans:'让我想想再告诉你。',audio:'让我想想再告诉你。'},
-  {words:['你','等等','我','好吗','？'],ans:'你等等我好吗？',audio:'你等等我好吗？'},
-  {words:['服务员','，','我','房间','的','门','打','不','开','了','。'],ans:'服务员，我房间的门打不开了。',audio:'服务员，我房间的门打不开了。'},
-  {words:['你','看看','这','几','件','衣服','怎么样','？'],ans:'你看看这几件衣服怎么样？',audio:'你看看这几件衣服怎么样？'},
-  {words:['我','姐姐','找到','一','个','新','工作','，','非常','忙','。'],ans:'我姐姐找到一个新工作，非常忙。',audio:'我姐姐找到一个新工作，非常忙。'},
-  {words:['这','块','手表','的','颜色','很','白','。'],ans:'这块手表的颜色很白。',audio:'这块手表的颜色很白。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'我们下午去看电影好吗？',right:'今天下午没有时间，明天再去吧。'},
-  {left:'你想看什么电影？',right:'让我想想再告诉你。'},
-  {left:'你等等我好吗？',right:'老师让我给大卫打个电话。'},
-  {left:'大卫有什么事情吗？',right:'大卫病了，我想去看看。'},
-  {left:'服务员，我房间的门打不开了。',right:'好的，我叫人去看看。'},
-  {left:'这件红的呢？',right:'让我再看看。'},
+  {left:'打',right:'电话'},
+  {left:'找',right:'时间'},
+  {left:'等',right:'一下'},
+  {left:'有点儿',right:'贵'},
+  {left:'什么',right:'事情'},
+  {left:'再',right:'看看'},
 ];
 
-// Trắc nghiệm — không audio; trộn từ Bài 2/4/5/6/7
-const mcData = [
-  {q:'我们下午去看电影，＿＿？',opts:['好吗','好不好吗','是不是','可以不可以'],ans:0},
-  {q:'今天没有时间，明天＿＿去吧。',opts:['再','就','还','才'],ans:0},
-  {q:'老师＿＿我给大卫打电话。',opts:['让','告诉','找','等'],ans:0},
-  {q:'你＿＿我一下，好吗？',opts:['等','让','告诉','找'],ans:0},
-  {q:'那件黑的有点儿＿＿，这件白的不错。',opts:['贵','慢','远','忙'],ans:0},
-  {q:'服务员，我房间的门打不＿＿了。',opts:['开','到','懂','完'],ans:0},
-  {q:'我姐姐每天坐公共汽车上班，路上要一个多＿＿。',opts:['小时','公斤','颜色','意思'],ans:0},
-  {q:'这件衣服的颜色还＿＿，就买这件吧。',opts:['可以','贵','白','黑'],ans:0},
-  {q:'我已经准备好了，我们＿＿走吧。',opts:['就','再','还','让'],ans:0},
-  {q:'因为门打不开，＿＿我叫服务员来看看。',opts:['所以','因为','再','就'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: gọi lễ tân sửa phòng, mua áo hỏi màu.
+// Ôn lại 有点儿 (Bài 5), 颜色/觉得 (Bài 1, 3).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'服务员，我房间的网不太好，可以让人来看看吗？',
+   questions:[
+     {q:'他遇到了什么事情？',opts:['房间的网不好','门打不开','没有热水','东西丢了'],ans:0},
+     {q:'他想让服务员做什么？',opts:['让人来看看','换房间','退房','不知道'],ans:0},
+   ]},
+  {audio:'这件白的有点儿贵，那件黑的颜色还不错，你觉得怎么样？',
+   questions:[
+     {q:'白的怎么样？',opts:['有点儿贵','很便宜','很漂亮','不知道'],ans:0},
+     {q:'黑的颜色怎么样？',opts:['还不错','不好看','太黑了','没有黑的'],ans:0},
+   ]},
+  {audio:'你等我一下，我找找钥匙，找到了再告诉你。',
+   questions:[
+     {q:'他在找什么？',opts:['钥匙','衣服','手表','报纸'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: gọi lễ tân sửa điều hoà, mua áo
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'服务员，我房间的空调坏了，可以',blank:'让',post:'人来看看吗？',hint:'(để, bảo — câu kiêm ngữ)',ans:'让',exp:'让 + Người + Động từ = bảo/để ai đó làm gì.'},
+  {pre:'好的，我先',blank:'找',post:'找是什么事情。',hint:'(tìm)',ans:'找'},
+  {pre:'谢谢，那我先',blank:'等',post:'一下。',hint:'(đợi)',ans:'等'},
+  {pre:'找到问题以后我',blank:'再',post:'告诉您。',hint:'(rồi mới, lại)',ans:'再',exp:'再 chỉ hành động xảy ra SAU một hành động khác, không dùng cho việc đã xảy ra rồi (đó là 又).'},
+  {pre:'这件白的有点儿',blank:'贵',post:'。',hint:'(đắt)',ans:'贵'},
+  {pre:'那件',blank:'黑',post:'的颜色还不错。',hint:'(đen)',ans:'黑'},
+  {pre:'您有什么',blank:'事情',post:'吗？',hint:'(chuyện, việc)',ans:'事情'},
+  {pre:'我想',blank:'告诉',post:'您一个好消息。',hint:'(nói cho biết)',ans:'告诉'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['可以','让','人','来','看看','吗','？'],ans:'可以让人来看看吗？',audio:'可以让人来看看吗？'},
+  {words:['我','先','找找','是','什么','事情','。'],ans:'我先找找是什么事情。',audio:'我先找找是什么事情。'},
+  {words:['你','等','我','一下','。'],ans:'你等我一下。',audio:'你等我一下。'},
+  {words:['找到','问题','以后','我','再','告诉','你','。'],ans:'找到问题以后我再告诉你。',audio:'找到问题以后我再告诉你。'},
+  {words:['这件','白','的','有点儿','贵','。'],ans:'这件白的有点儿贵。',audio:'这件白的有点儿贵。'},
+  {words:['那件','黑','的','颜色','还','不错','。'],ans:'那件黑的颜色还不错。',audio:'那件黑的颜色还不错。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'让人可以来看看吗？',
+   opts:['可以让人来看看吗？','让可以人来看看吗？','人可以让来看看吗？','可以人让来看看吗？'],ans:0,
+   exp:'可以 (trợ động từ) đứng TRƯỚC 让, còn 让 + Người + Động từ tạo thành câu kiêm ngữ.'},
+  {wrong:'我告诉再你。',
+   opts:['我再告诉你。','我告诉再你。','再我告诉你。','我告诉你再。'],ans:0,
+   exp:'再 (lại, rồi mới) đứng TRƯỚC động từ chính, không đặt giữa động từ và tân ngữ.'},
+  {wrong:'你我等一下好吗？',
+   opts:['你等我一下，好吗？','我你等一下，好吗？','等你我一下，好吗？','你等一下我，好吗？'],ans:0,
+   exp:'Trật tự câu kiêm ngữ: Chủ ngữ + 等 + Tân ngữ (người) + 一下.'},
+  {wrong:'我们去看电影好吗下午？',
+   opts:['我们下午去看电影，好吗？','我们去看电影下午，好吗？','下午好吗我们去看电影？','我们下午好吗去看电影？'],ans:0,
+   exp:'……好吗？ luôn đặt ở CUỐI CÂU để hỏi ý kiến, không chen vào giữa câu.'},
+  {wrong:'我们运动吧。(muốn nói "vận động chút cho nhẹ nhàng")',
+   opts:['我们运动运动吧。','我们运动运吧。','我们运运动吧。','我们动运动吧。'],ans:0,
+   exp:'Lặp lại động từ 2 âm tiết theo dạng AB→ABAB (运动运动) để diễn tả hành động NHẸ NHÀNG, thử làm một chút.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'我们下午去看电影好吗？',py:'Wǒmen xiàwǔ qù kàn diànyǐng hǎoma?',vn:'Chiều nay chúng ta đi xem phim được không?'},
-      {zh:'让我想想再告诉你。',py:'Ràng wǒ xiǎngxiang zài gàosu nǐ.',vn:'Để tôi suy nghĩ rồi nói cho bạn biết sau.'},
-      {zh:'老师让我给大卫打个电话。',py:'Lǎoshī ràng wǒ gěi Dàwèi dǎ ge diànhuà.',vn:'Thầy giáo bảo tôi gọi điện cho David.'},
-      {zh:'服务员，我房间的门打不开了。',py:'Fúwùyuán, wǒ fángjiān de mén dǎ bù kāi le.',vn:'Lễ tân ơi, cửa phòng tôi không mở được rồi.'},
+      {zh:'可以让人来看看吗？',py:'Kěyǐ ràng rén lái kànkan ma?',vn:'Có thể để người tới xem giúp được không?'},
+      {zh:'你等我一下，我找找钥匙。',py:'Nǐ děng wǒ yíxià, wǒ zhǎozhao yàoshi.',vn:'Bạn đợi tôi một chút, tôi tìm chìa khóa đã.'},
+      {zh:'找到了再告诉你。',py:'Zhǎodàole zài gàosu nǐ.',vn:'Tìm thấy rồi tôi sẽ báo bạn sau.'},
+      {zh:'这件白的有点儿贵，那件黑的还不错。',py:'Zhè jiàn bái de yǒudiǎnr guì, nà jiàn hēi de hái búcuò.',vn:'Chiếc trắng này hơi đắt, chiếc đen kia thì tạm ổn.'},
+      {zh:'我们出去运动运动吧。',py:'Wǒmen chūqu yùndòng yùndòng ba.',vn:'Chúng ta ra ngoài vận động chút đi.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我们下午去＿＿好吗？',frame_py:'Wǒmen xiàwǔ qù ___ hǎoma?',vn:'Chiều nay chúng ta đi ＿＿ được không?',options:['看电影','游泳','打篮球'],samples:['我们下午去看电影好吗？','我们下午去游泳好吗？','我们下午去打篮球好吗？']},
-      {frame:'让我＿＿再告诉你。',frame_py:'Ràng wǒ ___ zài gàosu nǐ.',vn:'Để tôi ＿＿ rồi nói cho bạn biết sau.',options:['想想','问问','看看'],samples:['让我想想再告诉你。','让我问问再告诉你。','让我看看再告诉你。']},
-      {frame:'那件＿＿的有点儿贵。',frame_py:'Nà jiàn ___ de yǒudiǎnr guì.',vn:'Chiếc màu ＿＿ kia hơi đắt.',options:['黑','白','红'],samples:['那件黑的有点儿贵。','那件白的有点儿贵。','那件红的有点儿贵。']},
-      {frame:'你＿＿我一下，好吗？',frame_py:'Nǐ ___ wǒ yíxià, hǎoma?',vn:'Bạn ＿＿ tôi một chút được không?',options:['等','帮','问'],samples:['你等我一下，好吗？','你帮我一下，好吗？','你问我一下，好吗？']},
+      {frame:'可以让人来＿＿吗？',frame_py:'Kěyǐ ràng rén lái ___ ma?',vn:'Có thể để người đến ＿＿ được không?',options:['看看','听听','想想'],samples:['可以让人来看看吗？','可以让人来听听吗？','可以让人来想想吗？']},
+      {frame:'这件＿＿的有点儿贵。',frame_py:'Zhè jiàn ___ de yǒudiǎnr guì.',vn:'Chiếc màu ＿＿ này hơi đắt.',options:['白','黑','红'],samples:['这件白的有点儿贵。','这件黑的有点儿贵。','这件红的有点儿贵。']},
+      {frame:'我们明天＿＿去吧。',frame_py:'Wǒmen míngtiān ___ qù ba.',vn:'Ngày mai chúng ta ＿＿ đi vậy.',options:['再','就'],samples:['我们明天再去吧。','我们明天就去吧。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🎬 Tình huống 1 — Rủ bạn đi xem phim',
-       guide:'Bạn rủ bạn mình đi xem phim, hỏi ý kiến lịch sự và hỏi xem bạn ấy muốn xem phim gì.',
-       structure:['我们＿＿去看电影，好吗？','你想看什么＿＿？'],
-       sample:'我们下午去看电影，好吗？你想看什么电影？',
-       sample_vn:'Chiều nay chúng ta đi xem phim được không? Bạn muốn xem phim gì?'},
-      {role:'🛎️ Tình huống 2 — Báo sự cố với lễ tân',
-       guide:'Bạn báo cho lễ tân khách sạn biết cửa phòng bị hỏng và cho biết số phòng.',
-       structure:['服务员，我房间的＿＿打不开了。','我住＿＿号房间。'],
-       sample:'服务员，我房间的门打不开了。我住317号房间。',
-       sample_vn:'Lễ tân ơi, cửa phòng tôi không mở được rồi. Tôi ở phòng 317.'},
-      {role:'👗 Tình huống 3 — Nhờ bạn xem quần áo giúp',
-       guide:'Bạn nhờ bạn mình xem giúp vài chiếc áo và nhận xét về màu sắc, giá cả.',
-       structure:['你看看这几件衣服＿＿？','这件＿＿的有点儿贵。'],
-       sample:'你看看这几件衣服怎么样？这件黑的有点儿贵。',
-       sample_vn:'Bạn xem giúp tôi mấy chiếc áo này thế nào? Chiếc màu đen này hơi đắt.'},
+      {role:'🏨 Tình huống 1 — Nhờ lễ tân khách sạn sửa đồ trong phòng',
+       guide:'Điều hòa trong phòng bạn bị hỏng, bạn gọi lễ tân nhờ giúp.',
+       structure:['服务员，我房间的空调坏了，可以让人来看看吗？','好的，我先找找是什么事情。'],
+       sample:'服务员，我房间的空调坏了，可以让人来看看吗？好的，我先找找是什么事情。',
+       sample_vn:'Lễ tân ơi, điều hòa phòng tôi hỏng rồi, có thể để người đến xem giúp không? Dạ vâng, để em kiểm tra xem là chuyện gì trước đã.',
+       note:'让 + Người + Động từ dùng khi nhờ/bảo ai đó làm việc gì thay mình.'},
+      {role:'⏳ Tình huống 2 — Nhờ bạn đợi vì đang tìm đồ',
+       guide:'Bạn đang tìm chìa khóa/đồ vật gì đó, nhờ người khác đợi mình một chút.',
+       structure:['你等我一下，我找找钥匙。','找到了再告诉你。'],
+       sample:'你等我一下，我找找钥匙。找到了再告诉你。',
+       sample_vn:'Bạn đợi tôi một chút, tôi tìm chìa khóa đã. Tìm thấy rồi tôi sẽ báo bạn.',
+       note:'再 dùng để nói một hành động sẽ xảy ra SAU một hành động khác — khác với 就 (xảy ra ngay, ôn Bài 7).'},
+      {role:'🛍️ Tình huống 3 — So sánh hai món đồ khi mua sắm',
+       guide:'Bạn nhờ bạn mình xem hai chiếc áo khác màu và nhận xét về giá cả, màu sắc.',
+       structure:['你看看这两件衣服，白的怎么样？','白的有点儿贵，黑的颜色还不错。'],
+       sample:'你看看这两件衣服，白的怎么样？白的有点儿贵，黑的颜色还不错。',
+       sample_vn:'Bạn xem giúp hai chiếc áo này, chiếc trắng thế nào? Chiếc trắng hơi đắt, chiếc đen thì màu tạm ổn.',
+       note:'有点儿 (ôn Bài 5) chỉ dùng cho nhận xét mang tính KHÔNG MONG MUỐN như "hơi đắt".'},
     ],
   },
 };

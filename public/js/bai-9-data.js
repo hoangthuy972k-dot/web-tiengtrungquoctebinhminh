@@ -189,88 +189,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — có trộn từ vựng Bài 7 (到) để ôn tập bổ ngữ kết quả
-const fillData = [
-  {pre:'你打',blank:'错',post:'了。',hint:'(sai, nhầm)',ans:'错',exp:'错 làm bổ ngữ kết quả: 打错 = gọi nhầm'},
-  {pre:'您',blank:'从',post:'几岁开始学习跳舞？',hint:'(từ — mốc thời gian)',ans:'从',exp:'从 + mốc thời gian/địa điểm = TỪ...'},
-  {pre:'这是他的',blank:'第一',post:'个工作。',hint:'(đầu tiên, thứ nhất)',ans:'第一',exp:'第 + số = biểu thị thứ tự'},
-  {pre:'你都听',blank:'懂',post:'了吗？',hint:'(hiểu — bổ ngữ kết quả)',ans:'懂',exp:'听 + 懂 = nghe HIỂU'},
-  {pre:'题太多，我没做',blank:'完',post:'。',hint:'(xong)',ans:'完',exp:'做 + 完 = làm XONG'},
-  {pre:'大卫找',blank:'到',post:'工作了。',hint:'(đạt được — ôn bổ ngữ kết quả Bài 7)',ans:'到',exp:'找 + 到 = tìm ĐƯỢC, đạt kết quả'},
-  {pre:'我希望他能',blank:'喜欢',post:'这份工作。',hint:'(thích — ôn từ đã học)',ans:'喜欢',exp:'希望 + Chủ ngữ + Động từ = hy vọng ai đó làm gì'},
-  {pre:'非常',blank:'欢迎',post:'你！',hint:'(hoan nghênh)',ans:'欢迎',exp:'欢迎 = chào mừng, hoan nghênh'},
-];
-
-// Sắp xếp — câu khác Điền từ/Trắc nghiệm
-const sortData = [
-  {words:['大卫','找到','工作','了','。'],ans:'大卫找到工作了。',audio:'大卫找到工作了。'},
-  {words:['我','希望','他','能','喜欢','。'],ans:'我希望他能喜欢。',audio:'我希望他能喜欢。'},
-  {words:['你','都','做','完','了','没有','？'],ans:'你都做完了没有？',audio:'你都做完了没有？'},
-  {words:['从','下个','星期一','开始','。'],ans:'从下个星期一开始。',audio:'从下个星期一开始。'},
-  {words:['这','是','他','的','第一','个','工作','。'],ans:'这是他的第一个工作。',audio:'这是他的第一个工作。'},
-  {words:['我们','这儿','没有','叫','张欢','的','。'],ans:'我们这儿没有叫张欢的。',audio:'我们这儿没有叫张欢的。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'你好，请问张欢在吗？',right:'你打错了。'},
-  {left:'您从几岁开始学习跳舞？',right:'我第一次跳舞是七岁的时候。'},
-  {left:'你知道吗？大卫找到工作了。',right:'太好了！'},
-  {left:'他从什么时候开始上班？',right:'从下个星期一开始。'},
-  {left:'昨天的考试怎么样？',right:'题太多，我没做完。'},
-  {left:'你都听懂了吗？',right:'听懂了。'},
+  {left:'打',right:'错'},
+  {left:'从',right:'开始'},
+  {left:'第一',right:'次'},
+  {left:'希望',right:'喜欢'},
+  {left:'听',right:'懂'},
+  {left:'做',right:'完'},
 ];
 
-// Trắc nghiệm — không audio; có câu ôn từ Bài 4 (已经)/Bài 7 (到)
-const mcData = [
-  {q:'你打＿＿了。',opts:['错','对','懂','完'],ans:0},
-  {q:'您＿＿几岁开始学习跳舞？',opts:['从','离','对','给'],ans:0},
-  {q:'这是他的＿＿一个工作。',opts:['第','两','已经','非常'],ans:0},
-  {q:'你都听＿＿了吗？',opts:['懂','完','错','到'],ans:0},
-  {q:'题太多，我没做＿＿。',opts:['完','懂','错','到'],ans:0},
-  {q:'大卫找＿＿工作了。',opts:['到','完','懂','错'],ans:0},
-  {q:'我希望他能喜欢这个＿＿。',opts:['工作','问题','题','颜色'],ans:0},
-  {q:'非常＿＿你！',opts:['欢迎','希望','准备','已经'],ans:0},
-  {q:'他＿＿开始上班？',opts:['从什么时候','从哪儿','离哪儿','离多远'],ans:0},
-  {q:'你有什么＿＿吗？',opts:['问题','题','答案','意思'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: ngày đầu đi làm, kiểm tra hiểu bài.
+// Ôn lại 已经 (Bài 4).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'今天是我第一天上班，同事们都非常欢迎我，我希望在这儿工作得很好。',
+   questions:[
+     {q:'今天是他第几天上班？',opts:['第一天','第二天','最后一天','不知道'],ans:0},
+     {q:'同事们对他怎么样？',opts:['非常欢迎','不喜欢','不知道','很忙'],ans:0},
+   ]},
+  {audio:'老师说的话我都听懂了，可是题太多，我没做完。',
+   questions:[
+     {q:'他听懂了吗？',opts:['听懂了','没听懂','一点儿都不懂','不知道'],ans:0},
+     {q:'他做完题了吗？',opts:['没做完','做完了','不知道','没有做'],ans:0},
+   ]},
+  {audio:'他从去年开始学习中文，现在已经懂一点儿了。',
+   questions:[
+     {q:'他从什么时候开始学习中文？',opts:['去年','今年','明年','不知道'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ngày đầu tiên đi làm
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你好，欢迎你来上班！这是你',blank:'第一',post:'次来吧？',hint:'(đầu tiên, thứ nhất)',ans:'第一'},
+  {pre:'是的，谢谢，我',blank:'希望',post:'能在这儿工作得很好。',hint:'(hy vọng)',ans:'希望'},
+  {pre:'你',blank:'从',post:'什么时候开始学习中文的？',hint:'(từ)',ans:'从'},
+  {pre:'我从去年开始学的，现在',blank:'已经',post:'懂一点儿了。',hint:'(đã — ôn Bài 4)',ans:'已经'},
+  {pre:'老师说的话你都听',blank:'懂',post:'了吗？',hint:'(hiểu — bổ ngữ kết quả)',ans:'懂',exp:'听懂 = nghe HIỂU (bổ ngữ kết quả chỉ kết quả của hành động nghe).'},
+  {pre:'',blank:'懂',post:'了，可是题太多。',hint:'(hiểu)',ans:'懂'},
+  {pre:'我没做',blank:'完',post:'。',hint:'(xong — bổ ngữ kết quả)',ans:'完',exp:'做完 = làm XONG.'},
+  {pre:'对不起，你打',blank:'错',post:'电话了。',hint:'(nhầm — bổ ngữ kết quả)',ans:'错'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['这','是','你','第一','次','来','吧','？'],ans:'这是你第一次来吧？',audio:'这是你第一次来吧？'},
+  {words:['我','希望','能','在','这儿','工作','得','很','好','。'],ans:'我希望能在这儿工作得很好。',audio:'我希望能在这儿工作得很好。'},
+  {words:['你','从','什么','时候','开始','学习','中文','的','？'],ans:'你从什么时候开始学习中文的？',audio:'你从什么时候开始学习中文的？'},
+  {words:['我','从','去年','开始','学','的','。'],ans:'我从去年开始学的。',audio:'我从去年开始学的。'},
+  {words:['老师','说','的','话','我','都','听','懂','了','。'],ans:'老师说的话我都听懂了。',audio:'老师说的话我都听懂了。'},
+  {words:['题','太','多','，','我','没','做','完','。'],ans:'题太多，我没做完。',audio:'题太多，我没做完。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'什么时候你从开始学习中文？',
+   opts:['你从什么时候开始学习中文？','你什么时候从开始学习中文？','从你什么时候开始学习中文？','你从开始什么时候学习中文？'],ans:0,
+   exp:'从 đứng NGAY TRƯỚC mốc thời gian: 从 + 什么时候/去年/七岁.'},
+  {wrong:'这是一第次来吧？',
+   opts:['这是第一次来吧？','这是一第次来吧？','这是次第一来吧？','第这是一次来吧？'],ans:0,
+   exp:'第 đứng TRƯỚC số đếm để tạo số thứ tự: 第一, 第二, không đặt sau.'},
+  {wrong:'我听这个话不。',
+   opts:['我听不懂这句话。','我听这句话不懂。','我不听懂这句话。','我听懂不这句话。'],ans:0,
+   exp:'Phủ định của bổ ngữ kết quả: Động từ + 不 + Bổ ngữ (听不懂), không dùng 不 + Động từ.'},
+  {wrong:'我做题完了。',
+   opts:['我做完题了。','我做题完了。','我完做题了。','做我完题了。'],ans:0,
+   exp:'Bổ ngữ kết quả (完) phải đứng NGAY SAU động từ (做完), rồi mới đến tân ngữ (题).'},
+  {wrong:'你打了错电话。',
+   opts:['你打错电话了。','你打了错电话。','你错打电话了。','你打电话错了。'],ans:0,
+   exp:'打错 (bổ ngữ kết quả) là một khối không tách rời, 了 đặt SAU cả cụm 打错 + tân ngữ.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'你好，请问张欢在吗？',py:'Nǐ hǎo, qǐngwèn Zhāng Huān zài ma?',vn:'Xin chào, cho hỏi có Trương Hoan ở đó không ạ?'},
-      {zh:'您从几岁开始学习跳舞？',py:'Nín cóng jǐ suì kāishǐ xuéxí tiàowǔ?',vn:'Cô bắt đầu học múa từ năm mấy tuổi vậy ạ?'},
-      {zh:'大卫找到工作了。',py:'Dàwèi zhǎodào gōngzuò le.',vn:'David tìm được việc làm rồi.'},
+      {zh:'这是你第一次来吧？',py:'Zhè shì nǐ dì yī cì lái ba?',vn:'Đây là lần đầu tiên bạn đến phải không?'},
+      {zh:'我希望能在这儿工作得很好。',py:'Wǒ xīwàng néng zài zhèr gōngzuò de hěn hǎo.',vn:'Tôi hy vọng có thể làm việc tốt ở đây.'},
+      {zh:'你从什么时候开始学习中文的？',py:'Nǐ cóng shénme shíhou kāishǐ xuéxí Zhōngwén de?',vn:'Bạn bắt đầu học tiếng Trung từ khi nào?'},
+      {zh:'老师说的话我都听懂了。',py:'Lǎoshī shuō de huà wǒ dōu tīng dǒng le.',vn:'Lời thầy nói tôi đều nghe hiểu hết.'},
       {zh:'题太多，我没做完。',py:'Tí tài duō, wǒ méi zuò wán.',vn:'Đề nhiều quá, tôi làm chưa xong.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我＿＿岁的时候开始跳舞。',frame_py:'Wǒ ___ suì de shíhou kāishǐ tiàowǔ.',vn:'Tôi lúc ＿＿ tuổi bắt đầu múa.',options:['五','七','十'],samples:['我五岁的时候开始跳舞。','我七岁的时候开始跳舞。','我十岁的时候开始跳舞。']},
-      {frame:'这是我的第＿＿个工作。',frame_py:'Zhè shì wǒ de dì ___ ge gōngzuò.',vn:'Đây là công việc thứ ＿＿ của tôi.',options:['一','二','三'],samples:['这是我的第一个工作。','这是我的第二个工作。','这是我的第三个工作。']},
-      {frame:'我没有听＿＿。',frame_py:'Wǒ méiyǒu tīng ___.',vn:'Tôi không nghe ＿＿.',options:['懂','完','清楚'],samples:['我没有听懂。','我没有听完。','我没有听清楚。']},
-      {frame:'从＿＿开始上班。',frame_py:'Cóng ___ kāishǐ shàngbān.',vn:'Bắt đầu đi làm từ ＿＿.',options:['明天','下个星期','下个月'],samples:['从明天开始上班。','从下个星期开始上班。','从下个月开始上班。']},
+      {frame:'我从＿＿开始学习中文。',frame_py:'Wǒ cóng ___ kāishǐ xuéxí Zhōngwén.',vn:'Tôi bắt đầu học tiếng Trung từ ＿＿.',options:['去年','今年','小时候'],samples:['我从去年开始学习中文。','我从今年开始学习中文。','我从小时候开始学习中文。']},
+      {frame:'这是我第＿＿次来这儿。',frame_py:'Zhè shì wǒ dì ___ cì lái zhèr.',vn:'Đây là lần thứ ＿＿ tôi đến đây.',options:['一','二','三'],samples:['这是我第一次来这儿。','这是我第二次来这儿。','这是我第三次来这儿。']},
+      {frame:'老师说的话我都听＿＿了。',frame_py:'Lǎoshī shuō de huà wǒ dōu tīng ___ le.',vn:'Lời thầy nói tôi đều nghe ＿＿ rồi.',options:['懂','不懂'],samples:['老师说的话我都听懂了。','老师说的话我都听不懂了。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'📞 Tình huống 1 — Gọi nhầm số điện thoại',
-       guide:'Bạn gọi điện tìm một người nhưng gọi nhầm số, hãy hỏi rồi xin lỗi.',
-       structure:['请问＿＿在吗？','对不起，我打＿＿了。'],
-       sample:'请问张欢在吗？对不起，我打错了。',
-       sample_vn:'Cho hỏi có Trương Hoan ở đó không? Xin lỗi, tôi gọi nhầm số rồi.'},
-      {role:'💃 Tình huống 2 — Hỏi về sở thích từ nhỏ',
-       guide:'Bạn hỏi ai đó bắt đầu học một môn năng khiếu (múa, hát...) từ khi nào.',
-       structure:['你从几岁开始＿＿？','我第一次＿＿是＿＿岁的时候。'],
-       sample:'你从几岁开始跳舞？我第一次跳舞是七岁的时候。',
-       sample_vn:'Bạn bắt đầu múa từ mấy tuổi? Lần đầu tiên tôi múa là lúc 7 tuổi.'},
-      {role:'💼 Tình huống 3 — Chúc mừng bạn có việc mới',
-       guide:'Bạn nghe tin bạn mình tìm được việc, hãy chúc mừng và hỏi khi nào bắt đầu đi làm.',
-       structure:['你知道吗？＿＿找到工作了！','他从什么时候开始＿＿？'],
-       sample:'你知道吗？大卫找到工作了！他从什么时候开始上班？',
-       sample_vn:'Bạn biết tin gì chưa? David tìm được việc rồi! Cậu ấy bắt đầu đi làm từ khi nào thế?'},
+      {role:'💼 Tình huống 1 — Ngày đầu tiên đi làm',
+       guide:'Hôm nay là ngày đầu tiên bạn đi làm, đồng nghiệp chào đón bạn.',
+       structure:['欢迎你来上班！这是你第一次来吧？','是的，我希望能在这儿工作得很好。'],
+       sample:'欢迎你来上班！这是你第一次来吧？是的，我希望能在这儿工作得很好。',
+       sample_vn:'Chào mừng bạn đến làm việc! Đây là lần đầu tiên bạn đến phải không? Vâng, tôi hy vọng có thể làm việc tốt ở đây.',
+       note:'第 + Số đếm tạo THỨ TỰ (第一, 第二...); 次 là lượng từ đếm số LẦN.'},
+      {role:'📚 Tình huống 2 — Hỏi bạn bắt đầu học một thứ gì đó từ khi nào',
+       guide:'Bạn hỏi bạn mình bắt đầu học tiếng Trung (hoặc một kỹ năng khác) từ khi nào.',
+       structure:['你从什么时候开始学习中文的？','我从＿＿开始学的。'],
+       sample:'你从什么时候开始学习中文的？我从去年开始学的。',
+       sample_vn:'Bạn bắt đầu học tiếng Trung từ khi nào? Tôi bắt đầu học từ năm ngoái.',
+       note:'从 luôn đi cùng một MỐC thời gian/địa điểm cụ thể, không dùng đứng một mình.'},
+      {role:'📝 Tình huống 3 — Trả lời có hiểu bài và làm xong bài tập không',
+       guide:'Bạn trả lời thầy cô xem mình có hiểu bài giảng và đã làm xong bài tập chưa.',
+       structure:['你都听懂了吗？','听懂了，可是题太多，我没做完。'],
+       sample:'你都听懂了吗？听懂了，可是题太多，我没做完。',
+       sample_vn:'Bạn nghe hiểu hết chưa? Hiểu rồi, nhưng đề nhiều quá, tôi làm chưa xong.',
+       note:'懂/完/错 là các bổ ngữ kết quả thường gặp, đứng NGAY SAU động từ chính để chỉ KẾT QUẢ của hành động.'},
     ],
   },
 };

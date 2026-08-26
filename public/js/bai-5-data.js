@@ -224,88 +224,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — trộn từ vựng Bài 2/3/4 (累/身体/已经) để ôn tích lũy
-const fillData = [
-  {pre:'我不想去外面吃，我想在家',blank:'吃',post:'。',hint:'(ăn)',ans:'吃',exp:'吃 = ăn'},
-  {pre:'那你',blank:'准备',post:'做什么呢？',hint:'(chuẩn bị)',ans:'准备',exp:'准备 = chuẩn bị, định'},
-  {pre:'颜色还可以，',blank:'就是',post:'有点儿大。',hint:'(chỉ có điều)',ans:'就是',exp:'就是 dùng nêu điểm ngoại lệ/hạn chế nhỏ'},
-  {pre:'这两天',blank:'有点儿',post:'累，不去打球了。',hint:'(hơi — ôn từ Bài 2/3)',ans:'有点儿',exp:'有点儿 + tính từ = hơi..., thường mang sắc thái tiêu cực'},
-  {pre:'我觉得听和说',blank:'还',post:'可以。',hint:'(cũng, tạm)',ans:'还',exp:'还 + tính từ tích cực = tạm được, cũng ổn'},
-  {pre:'我已经喝两杯',blank:'了',post:'。',hint:'(trợ từ hoàn thành)',ans:'了',exp:'了 báo hiệu hành động đã xảy ra/hoàn thành'},
-  {pre:'咖啡喝多了对身体',blank:'不好',post:'。',hint:'(không tốt)',ans:'不好',exp:'对 + đối tượng + 不好/好 = không tốt/tốt cho...'},
-  {pre:'我每天六点起床，身体一直',blank:'不错',post:'。',hint:'(khá tốt — ôn ngữ cảnh Bài 2)',ans:'不错',exp:'不错 = không tồi, khá tốt'},
-];
-
-// Sắp xếp — khác câu Điền từ/Trắc nghiệm, có câu ôn từ Bài 3 (漂亮/颜色)
-const sortData = [
-  {words:['就','做','你','爱','吃','的','鱼','吧','。'],ans:'就做你爱吃的鱼吧。',audio:'就做你爱吃的鱼吧。'},
-  {words:['这','件','不错','，','就','买','这','件','吧','。'],ans:'这件不错，就买这件吧。',audio:'这件不错，就买这件吧。'},
-  {words:['以后','我','少','喝','一点儿','。'],ans:'以后我少喝一点儿。',audio:'以后我少喝一点儿。'},
-  {words:['这','件','衣服','的','颜色','很','漂亮','。'],ans:'这件衣服的颜色很漂亮。',audio:'这件衣服的颜色很漂亮。'},
-  {words:['运动','对','身体','很','好','。'],ans:'运动对身体很好。',audio:'运动对身体很好。'},
-  {words:['很多','字','我','都','不','知道','意思','。'],ans:'很多字我都不知道意思。',audio:'很多字我都不知道意思。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'晚上我们去饭馆吃饭怎么样？',right:'我想在家吃。'},
-  {left:'那你准备做什么呢？',right:'就做你爱吃的鱼吧。'},
-  {left:'这件小的怎么样？',right:'这件不错，就买这件吧。'},
-  {left:'今天去不去打球？',right:'这两天有点儿累，不去了。'},
-  {left:'休息一下吧，喝咖啡吗？',right:'不喝了，我已经喝两杯了。'},
-  {left:'咖啡喝多了对身体不好，',right:'以后我少喝一点儿。'},
+  {left:'准备',right:'考试'},
+  {left:'有点儿',right:'累'},
+  {left:'喝',right:'咖啡'},
+  {left:'一件',right:'衣服'},
+  {left:'对',right:'身体'},
+  {left:'什么',right:'意思'},
 ];
 
-// Trắc nghiệm — không audio; có câu ôn từ Bài 2/3/4
-const mcData = [
-  {q:'我不想去外面吃，我想＿＿家吃。',opts:['在','是','给','对'],ans:0},
-  {q:'那你＿＿做什么呢？',opts:['准备','已经','非常','两'],ans:0},
-  {q:'颜色还可以，＿＿是有点儿大。',opts:['就','还','对','以后'],ans:0},
-  {q:'这两天＿＿累，不去打球了。',opts:['有点儿','非常','已经','就'],ans:0},
-  {q:'我觉得听和说＿＿可以。',opts:['还','就','对','以后'],ans:0},
-  {q:'这件不错，＿＿买这件吧。',opts:['就','还','对','已经'],ans:0},
-  {q:'咖啡喝多了＿＿身体不好。',opts:['对','就','还','以后'],ans:0},
-  {q:'＿＿我少喝一点儿咖啡。',opts:['以后','已经','非常','两'],ans:0},
-  {q:'我每天六点起床，身体一直＿＿。',opts:['不错','外面','考试','意思'],ans:0},
-  {q:'这个工作是他帮我介绍的，我＿＿高兴。',opts:['非常','还','就','以后'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: chuẩn bị thi, mua áo, hẹn uống cà phê.
+// Ôn lại 颜色/觉得 (Bài 1, 3).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'我在准备明天的考试，还没有准备好，有点儿累。',
+   questions:[
+     {q:'他在准备什么？',opts:['考试','工作','生日','旅游'],ans:0},
+     {q:'他现在觉得怎么样？',opts:['有点儿累','很高兴','非常忙','身体不好'],ans:0},
+   ]},
+  {audio:'这件衣服颜色还可以，就是有点儿大，你觉得怎么样？',
+   questions:[
+     {q:'这件衣服怎么样？',opts:['颜色还可以，但是有点儿大','颜色不好看','太贵了','太小了'],ans:0},
+   ]},
+  {audio:'考试以后，我们一起去喝咖啡吧，我请客。',
+   questions:[
+     {q:'考试以后要做什么？',opts:['一起去喝咖啡','回家休息','去买衣服','去踢足球'],ans:0},
+     {q:'谁请客？',opts:['我','朋友','老师','大家一起'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chuẩn bị thi & mua áo mới
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你准备好了吗？还没',blank:'准备',post:'好呢，我有点儿累。',hint:'(chuẩn bị)',ans:'准备'},
+  {pre:'你觉得这件衣服',blank:'可以',post:'吗？',hint:'(được, có thể)',ans:'可以'},
+  {pre:'颜色',blank:'还',post:'可以，就是有点儿大。',hint:'(tạm, cũng)',ans:'还',exp:'还可以 = tạm được, không hẳn tốt cũng không tệ.'},
+  {pre:'那你',blank:'就',post:'买那件小的吧。',hint:'(vậy thì)',ans:'就',exp:'就 dùng để chỉ một kết luận/quyết định logic tiếp theo.'},
+  {pre:'好，',blank:'就',post:'买这件。',hint:'(luôn, thì)',ans:'就'},
+  {pre:'考试',blank:'以后',post:'，我们去喝咖啡吧。',hint:'(sau khi, sau này)',ans:'以后'},
+  {pre:'',blank:'对',post:'啊，我请客！',hint:'(đúng vậy)',ans:'对'},
+  {pre:'这个字是什么',blank:'意思',post:'？',hint:'(ý nghĩa)',ans:'意思'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['我','在','准备','明天','的','考试','。'],ans:'我在准备明天的考试。',audio:'我在准备明天的考试。'},
+  {words:['这件','衣服','颜色','还','可以','。'],ans:'这件衣服颜色还可以。',audio:'这件衣服颜色还可以。'},
+  {words:['我','有点儿','累','。'],ans:'我有点儿累。',audio:'我有点儿累。'},
+  {words:['那','就','买','这件','小','的','吧','。'],ans:'那就买这件小的吧。',audio:'那就买这件小的吧。'},
+  {words:['考试','以后','我们','去','喝','咖啡','。'],ans:'考试以后我们去喝咖啡。',audio:'考试以后我们去喝咖啡。'},
+  {words:['这个','字','是','什么','意思','？'],ans:'这个字是什么意思？',audio:'这个字是什么意思？'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'我累有点儿。',
+   opts:['我有点儿累。','我点儿有累。','有点儿我累。','我累点儿有。'],ans:0,
+   exp:'有点儿 đứng NGAY TRƯỚC tính từ/động từ mang nghĩa tiêu cực nhẹ, không đặt sau như "một chút" trong tiếng Việt.'},
+  {wrong:'颜色可以还。',
+   opts:['颜色还可以。','可以颜色还。','还可以颜色。','颜色可以还了。'],ans:0,
+   exp:'还可以 là cụm cố định "tạm được", 还 luôn đứng TRƯỚC 可以.'},
+  {wrong:'买就这件吧。',
+   opts:['就买这件吧。','买这件就吧。','这件就买吧。','买这就件吧。'],ans:0,
+   exp:'就 (khi mang nghĩa quyết định) đứng TRƯỚC động từ chính, không đặt sau như "thì" trong tiếng Việt.'},
+  {wrong:'以后考试，我们去喝咖啡。',
+   opts:['考试以后，我们去喝咖啡。','以后考试，我们去喝咖啡。','我们以后考试去喝咖啡。','考试我们以后去喝咖啡。'],ans:0,
+   exp:'以后 đứng SAU sự việc mốc thời gian: 考试以后 = sau khi thi, không đặt trước.'},
+  {wrong:'这个字什么是意思？',
+   opts:['这个字是什么意思？','这个字什么是意思？','什么字这个是意思？','这个是字什么意思？'],ans:0,
+   exp:'什么意思 là cụm cố định, không tách rời: Chủ ngữ + 是 + 什么意思？'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'就做你爱吃的鱼吧。',py:'Jiù zuò nǐ ài chī de yú ba.',vn:'Vậy thì làm món cá anh thích ăn nhất đi.'},
-      {zh:'颜色还可以，就是有点儿大。',py:'Yánsè hái kěyǐ, jiùshì yǒudiǎnr dà.',vn:'Màu sắc cũng được, chỉ có điều hơi rộng một chút.'},
-      {zh:'这两天有点儿累，不去打球了。',py:'Zhè liǎng tiān yǒudiǎnr lèi, bú qù dǎqiú le.',vn:'Hai ngày nay tôi hơi mệt, không đi chơi bóng nữa.'},
-      {zh:'以后我少喝一点儿。',py:'Yǐhòu wǒ shǎo hē yìdiǎnr.',vn:'Sau này tôi sẽ uống ít lại.'},
+      {zh:'我在准备明天的考试。',py:'Wǒ zài zhǔnbèi míngtiān de kǎoshì.',vn:'Tôi đang chuẩn bị cho kỳ thi ngày mai.'},
+      {zh:'这件衣服颜色还可以，就是有点儿大。',py:'Zhè jiàn yīfu yánsè hái kěyǐ, jiùshì yǒudiǎnr dà.',vn:'Chiếc áo này màu tạm được, chỉ có điều hơi rộng.'},
+      {zh:'我这两天有点儿累。',py:'Wǒ zhè liǎng tiān yǒudiǎnr lèi.',vn:'Mấy hôm nay tôi hơi mệt.'},
+      {zh:'那就买这件小的吧。',py:'Nà jiù mǎi zhè jiàn xiǎo de ba.',vn:'Vậy thì mua chiếc nhỏ này đi.'},
+      {zh:'考试以后，我们去喝咖啡吧。',py:'Kǎoshì yǐhòu, wǒmen qù hē kāfēi ba.',vn:'Sau khi thi xong, chúng ta đi uống cà phê nhé.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'就做你爱吃的＿＿吧。',frame_py:'Jiù zuò nǐ ài chī de ___ ba.',vn:'Vậy thì làm món ＿＿ anh thích ăn đi.',options:['鱼','面条','羊肉'],samples:['就做你爱吃的鱼吧。','就做你爱吃的面条吧。','就做你爱吃的羊肉吧。']},
-      {frame:'这两天有点儿＿＿。',frame_py:'Zhè liǎng tiān yǒudiǎnr ___.',vn:'Hai ngày nay tôi hơi ＿＿.',options:['累','忙','冷'],samples:['这两天有点儿累。','这两天有点儿忙。','这两天有点儿冷。']},
-      {frame:'＿＿我少喝一点儿咖啡。',frame_py:'___ wǒ shǎo hē yìdiǎnr kāfēi.',vn:'＿＿ tôi sẽ uống ít cà phê lại.',options:['以后','明天','这个星期'],samples:['以后我少喝一点儿咖啡。','明天我少喝一点儿咖啡。','这个星期我少喝一点儿咖啡。']},
-      {frame:'这件＿＿不错，就买这件吧。',frame_py:'Zhè jiàn ___ búcuò, jiù mǎi zhè jiàn ba.',vn:'Chiếc ＿＿ này đẹp đấy, mua chiếc này đi.',options:['衣服','手表','裤子'],samples:['这件衣服不错，就买这件吧。','这件手表不错，就买这件吧。','这件裤子不错，就买这件吧。']},
+      {frame:'我在准备＿＿。',frame_py:'Wǒ zài zhǔnbèi ___.',vn:'Tôi đang chuẩn bị cho ＿＿.',options:['考试','工作','生日'],samples:['我在准备考试。','我在准备工作。','我在准备生日。']},
+      {frame:'颜色还＿＿。',frame_py:'Yánsè hái ___.',vn:'Màu sắc ＿＿ tạm được.',options:['可以','不错','漂亮'],samples:['颜色还可以。','颜色还不错。','颜色还漂亮。']},
+      {frame:'＿＿以后，我们去喝咖啡。',frame_py:'___ yǐhòu, wǒmen qù hē kāfēi.',vn:'Sau ＿＿, chúng ta đi uống cà phê.',options:['考试','工作','运动'],samples:['考试以后，我们去喝咖啡。','工作以后，我们去喝咖啡。','运动以后，我们去喝咖啡。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🍽️ Tình huống 1 — Bàn chuyện ăn tối',
-       guide:'Bạn và người thân bàn xem tối nay ăn gì, ăn ở nhà hay ra ngoài.',
-       structure:['你准备做＿＿？','就做你爱吃的＿＿吧。'],
-       sample:'你准备做什么？就做你爱吃的鱼吧。',
-       sample_vn:'Bạn định nấu món gì? Vậy làm món cá bạn thích ăn đi.'},
-      {role:'👗 Tình huống 2 — Đi mua sắm quần áo',
-       guide:'Bạn nhờ bạn mình xem giúp một chiếc áo thế nào, rồi quyết định mua.',
-       structure:['帮我看一下这件＿＿怎么样？','这件不错，就买＿＿吧。'],
-       sample:'帮我看一下这件衣服怎么样？这件不错，就买这件吧。',
-       sample_vn:'Xem giúp tôi chiếc áo này thế nào? Chiếc này đẹp đấy, mua chiếc này đi.'},
-      {role:'☕ Tình huống 3 — Khuyên bạn uống cà phê vừa phải',
-       guide:'Bạn khuyên đồng nghiệp uống cà phê ít lại vì không tốt cho sức khỏe.',
-       structure:['咖啡喝多了对身体＿＿。','以后你要少喝＿＿。'],
-       sample:'咖啡喝多了对身体不好。以后你要少喝一点儿。',
-       sample_vn:'Uống nhiều cà phê không tốt cho sức khỏe. Sau này bạn nên uống ít lại.'},
+      {role:'👕 Tình huống 1 — Nhận xét về món đồ mới mua',
+       guide:'Bạn nhờ bạn mình xem một chiếc áo mới và nhận xét về nó.',
+       structure:['你觉得这件衣服怎么样？','颜色还可以，就是有点儿大。'],
+       sample:'你觉得这件衣服怎么样？颜色还可以，就是有点儿大。',
+       sample_vn:'Bạn thấy chiếc áo này thế nào? Màu tạm được, chỉ có điều hơi rộng.',
+       note:'还 + Tính từ (还可以/还不错) dùng để đánh giá ở mức TRUNG BÌNH, không quá khen cũng không chê.'},
+      {role:'📖 Tình huống 2 — Nói về việc chuẩn bị thi cử',
+       guide:'Bạn nói cho bạn bè biết bạn đang chuẩn bị thi và cảm thấy hơi mệt.',
+       structure:['我在准备明天的考试，有点儿累。'],
+       sample:'我在准备明天的考试，有点儿累。',
+       sample_vn:'Tôi đang chuẩn bị cho kỳ thi ngày mai, hơi mệt một chút.',
+       note:'有点儿 chỉ dùng với tính từ/tình trạng KHÔNG MONG MUỐN (mệt, đắt, khó...), không dùng với tính từ tích cực.'},
+      {role:'☕ Tình huống 3 — Hẹn bạn đi uống cà phê sau khi thi',
+       guide:'Bạn rủ bạn mình đi uống cà phê sau khi thi xong.',
+       structure:['考试以后，我们去喝咖啡吧？','好啊，就这么定了！'],
+       sample:'考试以后，我们去喝咖啡吧？好啊，就这么定了！',
+       sample_vn:'Sau khi thi xong, chúng ta đi uống cà phê nhé? Được đó, quyết định vậy nhé!',
+       note:'就 dùng để chốt một quyết định: 就这么定了 = quyết định như vậy đi.'},
     ],
   },
 };

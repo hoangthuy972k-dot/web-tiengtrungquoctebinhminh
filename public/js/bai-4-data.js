@@ -221,88 +221,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — có trộn từ vựng Bài 2 (起床/身体) và Bài 3 (买/送) để ôn tập tích lũy
-const fillData = [
-  {pre:'这本书是我',blank:'写',post:'的。',hint:'(viết)',ans:'写',exp:'是...的 nhấn mạnh chủ thể thực hiện hành động đã xảy ra'},
-  {pre:'电话是谁打',blank:'的',post:'？',hint:'(trợ từ trong 是...的)',ans:'的',exp:'是...的 dùng hỏi/nhấn mạnh CHỦ THỂ của hành động đã qua'},
-  {pre:'我11岁',blank:'的时候',post:'开始踢足球。',hint:'(khi..., lúc...)',ans:'的时候',exp:'…的时候 chỉ mốc thời gian xảy ra sự việc'},
-  {pre:'已经两年',blank:'多',post:'了。',hint:'(hơn — số ước lượng)',ans:'多',exp:'Số + 多 + đơn vị = hơn... (ước lượng)'},
-  {pre:'这个工作是他',blank:'帮',post:'我介绍的。',hint:'(giúp)',ans:'帮',exp:'帮 + người + động từ = giúp ai làm gì'},
-  {pre:'这块手表不是我买的，是朋友',blank:'送',post:'我的。',hint:'(tặng — ôn từ Bài 3)',ans:'送',exp:'送 = tặng, đưa, giao (đã học ở Bài 3)'},
-  {pre:'我每天六点起床，现在身体',blank:'非常',post:'好。',hint:'(vô cùng — ôn ngữ cảnh Bài 2)',ans:'非常',exp:'非常 = vô cùng, cực kỳ, nhấn mạnh mức độ cao'},
-  {pre:'电影',blank:'已经',post:'开始了。',hint:'(đã)',ans:'已经',exp:'已经 + Động từ + 了 = đã... rồi'},
-];
-
-// Sắp xếp — câu khác Điền từ/Trắc nghiệm, có câu ôn từ vựng Bài 2/3
-const sortData = [
-  {words:['这','是','送','给','你','的','。'],ans:'这是送给你的。',audio:'这是送给你的。'},
-  {words:['电话','是','儿子','接','的','。'],ans:'电话是儿子接的。',audio:'电话是儿子接的。'},
-  {words:['已经','踢','了','十','年','了','。'],ans:'已经踢了十年了。',audio:'已经踢了十年了。'},
-  {words:['这','件','手表','是','谁','送','的','？'],ans:'这件手表是谁送的？',audio:'这件手表是谁送的？'},
-  {words:['我','每天','都','很','忙','。'],ans:'我每天都很忙。',audio:'我每天都很忙。'},
-  {words:['这','个','工作','是','他','介绍','的','。'],ans:'这个工作是他介绍的。',audio:'这个工作是他介绍的。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'生日快乐！',right:'这是送给你的。'},
-  {left:'电话是谁打的？',right:'是儿子接的。'},
-  {left:'你是什么时候开始踢足球的？',right:'我11岁的时候开始的。'},
-  {left:'你在这里工作多长时间了？',right:'已经两年多了。'},
-  {left:'你认识谢先生吗？',right:'认识，我们是大学同学。'},
-  {left:'这个工作是谁介绍的？',right:'是他帮我介绍的。'},
+  {left:'生日',right:'快乐'},
+  {left:'已经',right:'开始'},
+  {left:'帮',right:'介绍'},
+  {left:'非常',right:'喜欢'},
+  {left:'接',right:'电话'},
+  {left:'长',right:'时间'},
 ];
 
-// Trắc nghiệm — không audio; có câu dùng từ Bài 2 (身体/累) & Bài 3 (买/颜色) để đa dạng hoá
-const mcData = [
-  {q:'这本书是我写＿＿。',opts:['的','了','吗','呢'],ans:0},
-  {q:'电话＿＿谁打的？',opts:['是','有','在','给'],ans:0},
-  {q:'我11岁＿＿开始踢足球。',opts:['的时候','的时间','时候的','以后'],ans:0},
-  {q:'已经两年＿＿了。',opts:['多','太','很','都'],ans:0},
-  {q:'这个工作是他＿＿我介绍的。',opts:['帮','给','对','送'],ans:0},
-  {q:'这块手表不是我买的，是朋友＿＿我的。',opts:['送','接','问','开始'],ans:0},
-  {q:'电影＿＿开始了。',opts:['已经','非常','两','长'],ans:0},
-  {q:'你在这里工作多＿＿时间了？',opts:['长','非常','已经','两'],ans:0},
-  {q:'我每天都很忙，身体也有点儿＿＿。',opts:['累','漂亮','便宜','安静'],ans:0},
-  {q:'谢谢你＿＿了我这么多。',opts:['帮','接','问','开始'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: phỏng vấn hỏi kinh nghiệm làm việc/sở thích.
+// Ôn lại 几/觉得 (Bài 1).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'他是去年开始工作的，已经工作一年多了。',
+   questions:[
+     {q:'他是什么时候开始工作的？',opts:['去年','今年','明年','不知道'],ans:0},
+     {q:'他工作多长时间了？',opts:['一年多','两年多','半年','不知道'],ans:0},
+   ]},
+  {audio:'小时候我非常喜欢踢足球，是8岁的时候开始踢的，现在已经踢了十几年了。',
+   questions:[
+     {q:'他是几岁开始踢足球的？',opts:['8岁','10岁','18岁','不知道'],ans:0},
+     {q:'他踢足球踢了多长时间？',opts:['十几年','一年','两年','不知道'],ans:0},
+   ]},
+  {audio:'这个工作是我朋友帮我介绍的，我觉得这份工作非常好。',
+   questions:[
+     {q:'这个工作是谁帮忙介绍的？',opts:['朋友','家人','老师','自己找的'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chúc mừng sinh nhật + hỏi thăm công việc
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'生日',blank:'快乐',post:'！',hint:'(vui vẻ)',ans:'快乐'},
+  {pre:'谢谢，这是你送',blank:'给',post:'我的礼物吗？',hint:'(cho, tặng)',ans:'给'},
+  {pre:'对，是我',blank:'昨天',post:'买的。',hint:'(hôm qua — ôn Bài 3)',ans:'昨天'},
+  {pre:'你',blank:'非常',post:'喜欢踢足球，是不是？',hint:'(vô cùng, cực kỳ)',ans:'非常'},
+  {pre:'对，我是8岁',blank:'的时候',post:'开始踢足球的。',hint:'(khi, lúc)',ans:'的时候',exp:'……的时候 chỉ thời điểm một việc xảy ra.'},
+  {pre:'你',blank:'已经',post:'踢了多长时间了？',hint:'(đã)',ans:'已经'},
+  {pre:'',blank:'已经',post:'两年多了。',hint:'(đã)',ans:'已经'},
+  {pre:'这份工作是谁',blank:'帮',post:'你介绍的？',hint:'(giúp)',ans:'帮'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['这','是','我','昨天','买','的','。'],ans:'这是我昨天买的。',audio:'这是我昨天买的。'},
+  {words:['我','是','8','岁','的','时候','开始','踢','足球','的','。'],ans:'我是8岁的时候开始踢足球的。',audio:'我是8岁的时候开始踢足球的。'},
+  {words:['我','已经','工作','两','年','多','了','。'],ans:'我已经工作两年多了。',audio:'我已经工作两年多了。'},
+  {words:['这份','工作','是','朋友','帮','我','介绍','的','。'],ans:'这份工作是朋友帮我介绍的。',audio:'这份工作是朋友帮我介绍的。'},
+  {words:['你','是','什么','时候','开始','工作','的','？'],ans:'你是什么时候开始工作的？',audio:'你是什么时候开始工作的？'},
+  {words:['生日','快乐','，','这','是','送','给','你','的','礼物','。'],ans:'生日快乐，这是送给你的礼物。',audio:'生日快乐，这是送给你的礼物。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'我买是这个的。',
+   opts:['这是我买的。','我是买这个的。','是我这个买的。','我这个是买的。'],ans:0,
+   exp:'是……的 dùng để nhấn mạnh CÁCH/THỜI GIAN/NGƯỜI thực hiện hành động đã xảy ra; 是 đặt đầu, 的 đặt cuối câu.'},
+  {wrong:'我8岁开始的时候踢足球。',
+   opts:['我8岁的时候开始踢足球。','我8岁开始踢的时候足球。','我的时候8岁开始踢足球。','我8岁开始踢足球的时候。'],ans:0,
+   exp:'……的时候 đặt NGAY SAU mốc thời gian/sự việc, TRƯỚC hành động chính.'},
+  {wrong:'我工作已经两年了已经。',
+   opts:['我已经工作两年了。','我工作已经两年已经了。','已经我工作两年了已经。','我已经两年工作了已经。'],ans:0,
+   exp:'已经……了 chỉ dùng MỘT LẦN trong câu, không lặp lại 已经.'},
+  {wrong:'这个工作朋友帮我介绍是的。',
+   opts:['这个工作是朋友帮我介绍的。','这个工作朋友是帮我介绍的。','是这个工作朋友帮我介绍的。','这个工作朋友帮我是介绍的。'],ans:0,
+   exp:'是 phải đứng NGAY SAU chủ ngữ (工作), 的 đứng CUỐI câu.'},
+  {wrong:'快乐生日！',
+   opts:['生日快乐！','快乐的生日！','生日的快乐！','快乐生日的！'],ans:0,
+   exp:'"生日快乐" là cụm cố định, không đảo ngược như "vui sinh nhật" trong tiếng Việt.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'生日快乐！这是送给你的。',py:'Shēngrì kuàilè! Zhè shì sòng gěi nǐ de.',vn:'Sinh nhật vui vẻ! Đây là quà tặng bạn.'},
-      {zh:'电话是谁打的？',py:'Diànhuà shì shéi dǎ de?',vn:'Điện thoại là do ai gọi thế?'},
-      {zh:'我11岁的时候开始踢足球。',py:'Wǒ shíyī suì de shíhou kāishǐ tī zúqiú.',vn:'Tôi bắt đầu đá bóng từ lúc 11 tuổi.'},
-      {zh:'这个工作是他帮我介绍的。',py:'Zhège gōngzuò shì tā bāng wǒ jièshào de.',vn:'Công việc này là do anh ấy giới thiệu cho tôi.'},
+      {zh:'生日快乐！这是送给你的礼物。',py:'Shēngrì kuàilè! Zhè shì sòng gěi nǐ de lǐwù.',vn:'Sinh nhật vui vẻ! Đây là quà tặng bạn.'},
+      {zh:'这是我昨天买的。',py:'Zhè shì wǒ zuótiān mǎi de.',vn:'Đây là cái tôi mua hôm qua.'},
+      {zh:'我是8岁的时候开始踢足球的。',py:'Wǒ shì bā suì de shíhou kāishǐ tī zúqiú de.',vn:'Tôi bắt đầu đá bóng từ lúc 8 tuổi.'},
+      {zh:'我已经工作两年多了。',py:'Wǒ yǐjīng gōngzuò liǎng nián duō le.',vn:'Tôi đã đi làm hơn hai năm rồi.'},
+      {zh:'这份工作是朋友帮我介绍的。',py:'Zhè fèn gōngzuò shì péngyou bāng wǒ jièshào de.',vn:'Công việc này là do bạn tôi giới thiệu.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'这是＿＿送给你的。',frame_py:'Zhè shì ___ sòng gěi nǐ de.',vn:'Đây là ＿＿ tặng bạn.',options:['我','他','妈妈'],samples:['这是我送给你的。','这是他送给你的。','这是妈妈送给你的。']},
-      {frame:'我＿＿岁的时候开始踢足球。',frame_py:'Wǒ ___ suì de shíhou kāishǐ tī zúqiú.',vn:'Tôi lúc ＿＿ tuổi bắt đầu đá bóng.',options:['十','十一','十二'],samples:['我十岁的时候开始踢足球。','我十一岁的时候开始踢足球。','我十二岁的时候开始踢足球。']},
-      {frame:'已经＿＿多了。',frame_py:'Yǐjīng ___ duō le.',vn:'Đã ＿＿ hơn rồi.',options:['两年','三个月','一个星期'],samples:['已经两年多了。','已经三个月多了。','已经一个星期多了。']},
-      {frame:'这个工作是＿＿帮我介绍的。',frame_py:'Zhège gōngzuò shì ___ bāng wǒ jièshào de.',vn:'Công việc này là ＿＿ giới thiệu cho tôi.',options:['朋友','谢先生','同学'],samples:['这个工作是朋友帮我介绍的。','这个工作是谢先生帮我介绍的。','这个工作是同学帮我介绍的。']},
+      {frame:'这是我＿＿买的。',frame_py:'Zhè shì wǒ ___ mǎi de.',vn:'Đây là cái tôi mua ＿＿.',options:['昨天','今天'],samples:['这是我昨天买的。','这是我今天买的。']},
+      {frame:'我是＿＿岁的时候开始踢足球的。',frame_py:'Wǒ shì ___ suì de shíhou kāishǐ tī zúqiú de.',vn:'Tôi bắt đầu đá bóng từ lúc ＿＿ tuổi.',options:['8','10','12'],samples:['我是8岁的时候开始踢足球的。','我是10岁的时候开始踢足球的。','我是12岁的时候开始踢足球的。']},
+      {frame:'我已经＿＿两年多了。',frame_py:'Wǒ yǐjīng ___ liǎng nián duō le.',vn:'Tôi đã ＿＿ hơn hai năm rồi.',options:['工作','踢足球','学习'],samples:['我已经工作两年多了。','我已经踢足球两年多了。','我已经学习两年多了。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🎁 Tình huống 1 — Tặng quà sinh nhật',
-       guide:'Bạn tặng quà sinh nhật cho bạn mình, nói đây là quà gì và do ai làm/mua.',
-       structure:['生日快乐！这是＿＿。','这是我＿＿的。'],
-       sample:'生日快乐！这是一本书。这是我写的。',
-       sample_vn:'Sinh nhật vui vẻ! Đây là một quyển sách. Đây là do tôi viết.'},
-      {role:'⚽ Tình huống 2 — Kể về sở thích thể thao',
-       guide:'Bạn kể cho bạn nghe mình thích môn thể thao gì và bắt đầu chơi từ khi nào.',
-       structure:['我非常喜欢＿＿。','我＿＿岁的时候开始的。'],
-       sample:'我非常喜欢踢足球。我十岁的时候开始的。',
-       sample_vn:'Tôi cực kỳ thích đá bóng. Tôi bắt đầu từ lúc 10 tuổi.'},
-      {role:'💼 Tình huống 3 — Hỏi về công việc và người quen',
-       guide:'Bạn hỏi đồng nghiệp mới làm việc ở đây bao lâu rồi, và công việc do ai giới thiệu.',
-       structure:['你在这里工作多＿＿时间了？','这个工作是谁＿＿你介绍的？'],
-       sample:'你在这里工作多长时间了？这个工作是谁帮你介绍的？',
-       sample_vn:'Bạn làm việc ở đây được bao lâu rồi? Công việc này là ai giới thiệu cho bạn?'},
+      {role:'🎂 Tình huống 1 — Chúc mừng sinh nhật bạn',
+       guide:'Bạn tặng quà và chúc mừng sinh nhật một người bạn.',
+       structure:['生日快乐！这是送给你的礼物。','谢谢你！'],
+       sample:'生日快乐！这是送给你的礼物。谢谢你！',
+       sample_vn:'Sinh nhật vui vẻ! Đây là quà tặng bạn. Cảm ơn bạn!',
+       note:'给 sau 送 để chỉ người NHẬN quà: 送给你 = tặng cho bạn.'},
+      {role:'💬 Tình huống 2 — Hỏi bạn bắt đầu một sở thích từ khi nào',
+       guide:'Bạn hỏi bạn mình bắt đầu chơi một môn thể thao/sở thích từ khi nào, và đã làm bao lâu rồi.',
+       structure:['你是什么时候开始＿＿的？','我是＿＿岁的时候开始的，已经＿＿年了。'],
+       sample:'你是什么时候开始踢足球的？我是8岁的时候开始的，已经十年了。',
+       sample_vn:'Bạn bắt đầu đá bóng từ khi nào? Tôi bắt đầu từ lúc 8 tuổi, đã mười năm rồi.',
+       note:'是……的 dùng khi hỏi/nói rõ THỜI ĐIỂM một việc ĐÃ xảy ra, không dùng cho việc chưa xảy ra.'},
+      {role:'🙏 Tình huống 3 — Cảm ơn người đã giúp giới thiệu việc làm',
+       guide:'Bạn cảm ơn một người bạn đã giúp giới thiệu cho mình công việc hiện tại.',
+       structure:['这份工作是你帮我介绍的，非常谢谢你！','不客气。'],
+       sample:'这份工作是你帮我介绍的，非常谢谢你！不客气。',
+       sample_vn:'Công việc này là do bạn giúp tôi giới thiệu, cảm ơn bạn nhiều lắm! Không có gì.',
+       note:'非常 nhấn mạnh cảm xúc mạnh hơn 很 — 非常谢谢你 = cảm ơn bạn rất nhiều.'},
     ],
   },
 };

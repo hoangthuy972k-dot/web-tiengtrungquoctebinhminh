@@ -35,6 +35,7 @@ function miniSpeakBtn(text){return '<button type="button" class="speak-mini" dat
 // REAL AUDIO (bản ghi âm gốc từ giáo trình HSK标准教程 2)
 // ══════════════════════════════════════════
 const LESSON_NUM=(function(){var m=location.pathname.match(/bai-(\d+)/);return m?parseInt(m[1],10):null;})();
+const AUDIO_BASE=(function(){var m=location.pathname.match(/(hsk1-)?bai-(\d+)/);if(!m)return null;return m[1]?'/audio/hsk1-bai-'+m[2]:'/audio/bai-'+m[2];})();
 function audioLoadError(el){el.outerHTML='<span class="audio-missing">⚠️ Chưa có file audio gốc cho phần này.</span>';}
 
 // ══════════════════════════════════════════
@@ -121,11 +122,11 @@ function selectWuOpt(letter){
 const posStyle={'Danh từ':'background:#dbeafe;color:#1d4ed8','Động từ':'background:#dcfce7;color:#16a34a','Tính từ':'background:#fef9c3;color:#b45309','Đại từ':'background:#fce7f3;color:#be185d','Lượng từ':'background:#f0fdf4;color:#15803d'};
 function buildVocab(){
   const g=document.getElementById('vocab-grid');
-  if(LESSON_NUM && !document.getElementById('vocab-audio-box')){
+  if(AUDIO_BASE && !document.getElementById('vocab-audio-box')){
     g.insertAdjacentHTML('beforebegin',
       '<div class="audio-box real-box" id="vocab-audio-box">'+
       '<span class="a-label"><span class="a-ico">🎙️</span> Audio gốc giáo trình · Từ mới</span>'+
-      '<audio class="real-audio" controls preload="none" src="/audio/bai-'+LESSON_NUM+'/vocab.mp3" onerror="audioLoadError(this)"></audio>'+
+      '<audio class="real-audio" controls preload="none" src="'+AUDIO_BASE+'/vocab.mp3" onerror="audioLoadError(this)"></audio>'+
       '<div class="audio-hint">Nghe cách đọc từ mới và câu ví dụ, đúng theo bản ghi âm gốc của giáo trình.</div>'+
       '</div>');
   }
@@ -247,9 +248,9 @@ function buildDialogs(){
     div.className='dlg-card'+(di===0?' active':'');
     div.id='dlg'+di;
     let h='<div class="dlg-scene">🎭 '+d.scene+'</div>'+
-      (LESSON_NUM?('<div class="audio-box real-box">'+
+      (AUDIO_BASE?('<div class="audio-box real-box">'+
       '<span class="a-label"><span class="a-ico">🎙️</span> Audio gốc giáo trình</span>'+
-      '<audio class="real-audio" controls preload="none" src="/audio/bai-'+LESSON_NUM+'/dlg-'+(di+1)+'.mp3" onerror="audioLoadError(this)"></audio>'+
+      '<audio class="real-audio" controls preload="none" src="'+AUDIO_BASE+'/dlg-'+(di+1)+'.mp3" onerror="audioLoadError(this)"></audio>'+
       '<div class="audio-hint">Nghe từng câu, lặp lại theo (shadowing) — nghe 2 lượt trước khi luyện nói.</div>'+
       '</div>'):'');
     d.lines.forEach(function(l){
@@ -265,12 +266,27 @@ function buildDialogs(){
     div.innerHTML=h;
     w.appendChild(div);
   });
-  if(LESSON_NUM===3 && !document.getElementById('dlg-extra-audio')){
-    w.insertAdjacentHTML('afterend',
-      '<div class="audio-box real-box" id="dlg-extra-audio">'+
-      '<span class="a-label"><span class="a-ico">🎧</span> Đoạn nghe bổ sung (giáo trình gốc)</span>'+
-      '<audio class="real-audio" controls preload="none" src="/audio/bai-3/extra-1.mp3" onerror="audioLoadError(this)"></audio>'+
-      '</div>');
+  if(AUDIO_BASE && !document.getElementById('dlg-extra-wrap')){
+    let extraWrap=null,idx=1;
+    (function tryNext(){
+      if(idx>20) return;
+      fetch(AUDIO_BASE+'/extra-'+idx+'.mp3',{method:'HEAD'}).then(function(r){
+        const ct=r&&r.headers.get('content-type')||'';
+        if(r&&r.ok&&/audio/i.test(ct)){
+          if(!extraWrap){
+            w.insertAdjacentHTML('afterend','<div id="dlg-extra-wrap"></div>');
+            extraWrap=document.getElementById('dlg-extra-wrap');
+          }
+          extraWrap.insertAdjacentHTML('beforeend',
+            '<div class="audio-box real-box">'+
+            '<span class="a-label"><span class="a-ico">🎧</span> Đoạn nghe bổ sung '+idx+' (giáo trình gốc)</span>'+
+            '<audio class="real-audio" controls preload="none" src="'+AUDIO_BASE+'/extra-'+idx+'.mp3"></audio>'+
+            '</div>');
+          idx++;
+          tryNext();
+        }
+      }).catch(function(){});
+    })();
   }
 }
 function showDlg(i,btn){

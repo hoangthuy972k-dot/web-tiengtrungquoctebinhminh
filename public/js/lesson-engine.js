@@ -116,11 +116,16 @@ function buildVocab(){
     const exs=(v.exList||[{zh:v.ex_zh,py:v.ex_py,vn:v.ex_vn}]).map(function(e){
       return '<div class="vc-ex-item"><div class="vc-ex-zh">'+e.zh+'</div><div class="vc-ex-py">'+e.py+'</div><div class="vc-ex-vn">'+e.vn+'</div></div>';
     }).join('');
-    const hzs=(v.hanzi||[]).map(function(h){
-      return '<div class="hz-item"><div class="hz-big">'+h.c+'<span class="hz-big-py">'+h.p+'</span></div>'+
+    const hzs=(v.hanzi||[]).map(function(h,hi){
+      const hasWriter=(typeof STROKE_DATA!=='undefined')&&!!STROKE_DATA[h.c]&&(typeof HanziWriter!=='undefined');
+      return '<div class="hz-item"><div class="hz-writer-wrap">'+
+        '<div class="hz-writer-box" id="hzw'+vi+'_'+hi+'"><span class="hz-fallback">'+h.c+'</span></div>'+
+        '<div class="hz-writer-under"><span class="hzw-py">'+h.p+'</span>'+
+        (hasWriter?'<button type="button" class="hz-replay-btn" data-action="hz-replay" data-vi="'+vi+'" data-hi="'+hi+'">▶ Xem thứ tự nét</button>':'')+
+        '</div></div>'+
         '<div class="hz-info">'+
         '<div class="hz-row"><span class="hz-k">Loại:</span> '+h.type+' <span class="hz-strokes">'+h.st+' nét</span></div>'+
-        '<div class="hz-row"><span class="hz-k">Bộ thủ:</span> <span class="hz-rad">'+h.rad+'</span></div>'+
+        '<div class="hz-row"><span class="hz-k">Bộ thủ:</span> '+(hasWriter?'<span class="hz-rad-dot"></span> ':'')+'<span class="hz-rad">'+h.rad+'</span></div>'+
         '<div class="hz-row"><span class="hz-k">Nghĩa:</span> '+h.mean+'</div>'+
         '<div class="hz-row"><span class="hz-k">Bút thuận:</span> '+h.ord+'</div>'+
         '<div class="hz-row"><span class="hz-k">Dễ nhầm:</span> '+h.cf+'</div>'+
@@ -146,6 +151,38 @@ function toggleHz(btn,vi){
   const open=!p.classList.contains('open');
   p.classList.toggle('open',open);
   btn.textContent=open?'🀄 Ẩn Hán tự':'🀄 Xem Hán tự ('+vocabData[vi].hanzi.length+' chữ)';
+  if(open) ensureHzWriters(vi);
+}
+// ══════════════════════════════════════════
+// STROKE ORDER WRITER (HanziWriter, tuỳ chọn — chỉ hoạt động khi
+// trang có nạp /js/vendor/hanzi-writer.min.js + STROKE_DATA riêng của bài)
+// ══════════════════════════════════════════
+const hzWriters={};
+function ensureHzWriters(vi){
+  if(typeof HanziWriter==='undefined'||typeof STROKE_DATA==='undefined') return;
+  (vocabData[vi].hanzi||[]).forEach(function(h,hi){
+    const key=vi+'_'+hi;
+    if(hzWriters[key]) return;
+    const charData=STROKE_DATA[h.c];
+    if(!charData) return;
+    const target=document.getElementById('hzw'+key);
+    if(!target) return;
+    target.innerHTML='';
+    hzWriters[key]=HanziWriter.create(target,h.c,{
+      width:118,height:118,padding:6,
+      showOutline:true,
+      strokeAnimationSpeed:1,
+      delayBetweenStrokes:280,
+      strokeColor:'#201e1c',
+      radicalColor:'#d8202e',
+      outlineColor:'#dde3ea',
+      charDataLoader:function(){return charData;}
+    });
+  });
+}
+function hzReplay(vi,hi){
+  const w=hzWriters[vi+'_'+hi];
+  if(w) w.animateCharacter();
 }
 function buildVocabAudio(lesson){
   const box=document.getElementById('vocab-audio');
@@ -456,7 +493,9 @@ function buildSpeaking(tier){
         '<div style="font-size:0.78rem;color:var(--soft);margin-bottom:6px;">Gợi ý cấu trúc để bám theo:</div>'+
         '<div class="task-struct">'+chips+'</div>'+
         '<button class="show-ans-btn" data-action="toggle-show" data-target="ts'+i+'">Xem đoạn nói mẫu ▾</button>'+
-        '<div class="task-sample" id="ts'+i+'"><div class="ts-zh">'+t.sample+' '+miniSpeakBtn(t.sample)+'</div><div class="ts-vn">'+t.sample_vn+'</div></div></div>';
+        '<div class="task-sample" id="ts'+i+'"><div class="ts-zh">'+t.sample+' '+miniSpeakBtn(t.sample)+'</div><div class="ts-vn">'+t.sample_vn+'</div></div>'+
+        (t.note?'<div class="task-note"><b>💡 Lưu ý thực tế:</b> '+t.note+'</div>':'')+
+        '</div>';
     }).join('');
     w.innerHTML='<div class="tier-intro"><b>Tầng 3 · Nói tự do:</b> '+d.intro+'</div><div class="speak-grid">'+tasks+'</div>';
   }
@@ -485,6 +524,7 @@ document.addEventListener('click', function(e){
   if(action==='reset-sort'){ resetSort(); return; }
   if(action==='reset-match'){ resetMatch(); return; }
   if(action==='toggle-hz'){ e.stopPropagation(); toggleHz(el, parseInt(el.dataset.vi,10)); return; }
+  if(action==='hz-replay'){ e.stopPropagation(); hzReplay(parseInt(el.dataset.vi,10), parseInt(el.dataset.hi,10)); return; }
   if(action==='place-word'){ placeW(parseInt(el.dataset.si,10), parseInt(el.dataset.wi,10), el.dataset.word); return; }
   if(action==='check-mc'){ checkMC(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='toggle-show'){ document.getElementById(el.dataset.target).classList.toggle('show'); return; }

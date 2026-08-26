@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK1 · Bài 5 · 她女儿今年二十岁。</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/lesson-template.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="back-link" href="/">← Về trang chủ HanYu Vui</a>
+  <div class="header-badge">HSK1 · Bài 5</div>
+  <div class="header-zh">她女儿今年二十岁。</div>
+  <div class="header-py">Tā nǚ'ér jīnnián èrshí suì.</div>
+  <div class="header-vn">Con gái của cô ấy năm nay 20 tuổi.</div>
+  <div class="header-meta">
+    <span class="h-chip">👨‍👩‍👧 Chủ đề: Gia đình &amp; Tuổi tác</span>
+    <span class="h-chip">📚 10 từ mới</span>
+    <span class="h-chip">💬 3 hội thoại</span>
+    <span class="h-chip">📐 4 điểm ngữ pháp</span>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-action="show-tab" data-tab="warmup">🎯 Khởi động</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="vocab">📚 Từ mới</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="dialog">💬 Hội thoại</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="fill">✏️ Điền từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="sort">🧩 Sắp xếp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="match">🔗 Nối câu</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="mc">🎯 Trắc nghiệm</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="speak">🗣️ Luyện nói</button>
+</nav>
+
+<div class="main">
+
+<div id="warmup" class="section active">
+  <div class="sec-head">
+    <div class="sec-title">🎯 Khởi động <span class="sec-badge">热身</span></div>
+    <div class="sec-sub">Bấm 1 hình ảnh, rồi bấm chữ Hán tương ứng bên dưới để ghép đúng</div>
+  </div>
+  <div class="warmup-grid" id="wu-grid"></div>
+  <div style="margin-bottom:16px;font-weight:600;color:var(--mid);font-size:0.9rem;">Các từ để nối:</div>
+  <div class="wu-options" id="wu-opts"></div>
+  <div style="min-height:24px;font-size:0.9rem;" id="wu-fb"></div>
+  <div class="wu-score" id="wu-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Kết quả</div><div class="score-n" id="wu-score-n"></div></div>
+    <div class="score-m" id="wu-score-m"></div>
+  </div>
+</div>
+
+<div id="vocab" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📚 Từ mới <span class="sec-badge">10 từ</span></div>
+    <div class="sec-sub">👆 Bấm thẻ để xem nghĩa, ví dụ mở rộng &amp; phân tích Hán tự · Bấm nút <b>▶ Xem thứ tự nét</b> để xem hoạt hình viết chữ &amp; bộ thủ được tô màu</div>
+  </div>
+  <div class="lesson-tabs">
+    <button class="lesson-tab active" data-action="filter-vocab" data-lesson="0">Tất cả (10)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="1">📖 Gia đình (1–4)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="2">📖 Tuổi tác (5–10)</button>
+  </div>
+  <div class="flip-tip">👆 Bấm thẻ để lật xem nghĩa &amp; ví dụ</div>
+  <div class="vocab-audio" id="vocab-audio"></div>
+  <div class="vocab-grid" id="vocab-grid"></div>
+</div>
+
+<div id="flash" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🃏 Thẻ nhớ nhanh</div>
+    <div class="sec-sub">Đoán nghĩa trước, rồi bấm lật thẻ kiểm tra</div>
+  </div>
+  <div class="flash-nav">
+    <button class="flash-btn" data-action="flash-prev">←</button>
+    <span class="flash-ctr" id="flash-ctr">1 / 10</span>
+    <button class="flash-btn" data-action="flash-next">→</button>
+  </div>
+  <div class="flash-wrap">
+    <div class="flash-outer" id="flash-card" data-action="flash-flip">
+      <div class="flash-face f-front">
+        <div class="f-emoji" id="ff-em"></div>
+        <div class="f-zh" id="ff-zh"></div>
+        <div class="f-py" id="ff-py"></div>
+        <div class="f-hint">Bấm để xem nghĩa</div>
+      </div>
+      <div class="flash-face f-back">
+        <div class="f-vn" id="fb-vn"></div>
+        <div class="f-py" id="fb-py" style="color:var(--teal)"></div>
+        <div class="f-ex" id="fb-ex"></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:14px;">
+    <button class="btn-s" data-action="flash-shuffle">🔀 Xáo trộn</button>
+  </div>
+</div>
+
+<div id="grammar" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📐 Ngữ pháp <span class="sec-badge">4 điểm</span></div>
+    <div class="sec-sub">Bốn điểm ngữ pháp quan trọng của bài</div>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">1</span>Đại từ nghi vấn 「几」 (Mấy)</div>
+    <div class="g-sub">Dùng để hỏi số lượng dưới 10.</div>
+    <div class="g-rule">
+      <strong style="color:var(--sky-d)">几</strong> + Lượng từ + Danh từ
+    </div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">你女儿几岁了？</td><td style="color:var(--soft);font-size:0.82rem">Nǐ nǚ'ér jǐ suì le?</td><td style="color:var(--mid);font-size:0.85rem">Con gái bạn mấy tuổi rồi?</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">2</span>Các số dưới 100</div>
+    <div class="g-sub">Đọc ghép hàng chục và hàng đơn vị cơ bản.</div>
+    <div class="g-rule">
+      Hàng chục + Hàng đơn vị (Ví dụ: <strong style="color:var(--sky-d)">88</strong> → bāshíbā)
+    </div>
+    <table class="g-table">
+      <thead><tr><th>Số</th><th>Phiên âm</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">50 / 88</td><td style="color:var(--soft);font-size:0.82rem">wǔshí / bāshíbā</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">3</span>Trợ từ ngữ khí 「了」 biểu thị sự thay đổi</div>
+    <div class="g-sub">Đứng cuối câu để chỉ tình huống mới đã xuất hiện.</div>
+    <div class="g-rule">
+      Câu + <strong style="color:var(--sky-d)">了</strong> (biểu thị vừa thay đổi / vừa xảy ra)
+    </div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">李老师今年50岁了。</td><td style="color:var(--soft);font-size:0.82rem">Lǐ lǎoshī jīnnián wǔshí suì le.</td><td style="color:var(--mid);font-size:0.85rem">Cô Lý năm nay 50 tuổi rồi.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">4</span>Hỏi tuổi tác bằng cấu trúc 「多 + 大」</div>
+    <div class="g-sub">Dùng để hỏi tuổi người lớn (không giới hạn ở số nhỏ như 几).</div>
+    <div class="g-rule">
+      Chủ ngữ + <strong style="color:var(--sky-d)">多大</strong> + 了？
+    </div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">你女儿今年多大了？</td><td style="color:var(--soft);font-size:0.82rem">Nǐ nǚ'ér jīnnián duō dà le?</td><td style="color:var(--mid);font-size:0.85rem">Con gái bạn năm nay bao nhiêu tuổi?</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="dialog" class="section">
+  <div class="sec-head">
+    <div class="sec-title">💬 Hội thoại <span class="sec-badge">3 đoạn</span></div>
+    <div class="sec-sub">Ba tình huống hội thoại trong bài học</div>
+  </div>
+  <div class="dlg-tabs">
+    <button class="dlg-tb active" data-action="show-dlg" data-idx="0">1 · Số người trong nhà</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="1">2 · Tuổi của con</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="2">3 · Tuổi người lớn</button>
+  </div>
+  <div id="dlg-wrap"></div>
+</div>
+
+<div id="fill" class="section">
+  <div class="sec-head">
+    <div class="sec-title">✏️ Điền vào chỗ trống</div>
+    <div class="sec-sub">Đọc tình huống rồi điền từ/cụm từ thích hợp để hoàn thành câu</div>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="fill-prog" style="width:0%"></div></div>
+  <div id="fill-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-fill">Kiểm tra đáp án</button>
+    <button class="btn-s" data-action="reset-fill">Làm lại</button>
+  </div>
+  <div class="score-box" id="fill-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="fill-sn"></div></div>
+    <div class="score-m" id="fill-sm"></div>
+  </div>
+</div>
+
+<div id="sort" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🧩 Sắp xếp thành câu</div>
+    <div class="sec-sub">Nhấn 🔊 để nghe câu, rồi bấm các từ theo đúng thứ tự — <strong style="color:var(--warm)">nhớ đặt cả dấu câu</strong> vào cuối · Bấm từ đã đặt để xóa</div>
+  </div>
+  <div id="sort-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-sort">Kiểm tra</button>
+    <button class="btn-s" data-action="reset-sort">Làm lại</button>
+  </div>
+  <div class="score-box" id="sort-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="sort-sn"></div></div>
+    <div class="score-m" id="sort-sm"></div>
+  </div>
+</div>
+
+<div id="match" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🔗 Nối câu</div>
+    <div class="sec-sub">Bấm 1 ô <strong style="color:var(--sky)">câu hỏi</strong> bên trái → bấm ô <strong style="color:var(--teal)">câu trả lời</strong> bên phải để ghép đúng</div>
+  </div>
+  <div class="m-fb" id="m-fb"></div>
+  <div class="match-grid">
+    <div><div class="mcol-title">Câu hỏi</div><div id="m-left"></div></div>
+    <div><div class="mcol-title">Câu trả lời</div><div id="m-right"></div></div>
+  </div>
+  <div class="btn-row"><button class="btn-s" data-action="reset-match">Làm lại</button></div>
+</div>
+
+<div id="mc" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🎯 Trắc nghiệm</div>
+    <div class="sec-sub">Chọn đáp án đúng nhất — kết quả hiện ngay</div>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="mc-prog" style="width:0%"></div></div>
+  <div id="mc-list"></div>
+  <div class="score-box" id="mc-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="mc-sn"></div></div>
+    <div class="score-m" id="mc-sm"></div>
+  </div>
+</div>
+
+<div id="speak" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🗣️ Luyện nói theo 3 tầng</div>
+    <div class="sec-sub">Luyện theo thứ tự: <strong style="color:var(--sky)">Tầng 1 mô phỏng</strong> → <strong style="color:var(--gold)">Tầng 2 có hướng dẫn</strong> → <strong style="color:var(--teal)">Tầng 3 nói tự do</strong>.</div>
+  </div>
+  <div class="speak-tabs">
+    <button class="speak-tb active" data-action="show-speak" data-tier="1">① Mô phỏng</button>
+    <button class="speak-tb" data-action="show-speak" data-tier="2">② Có hướng dẫn</button>
+    <button class="speak-tb" data-action="show-speak" data-tier="3">③ Nói tự do</button>
+  </div>
+  <div id="speak-wrap"></div>
+</div>
+
+</div>
+
+<script src="/js/vendor/hanzi-writer.min.js"></script>
+<script src="/js/hsk1-bai-5-strokes.js"></script>
+<script src="/js/hsk1-bai-5-data.js"></script>
+<script src="/js/lesson-engine.js"></script>
+</body>
+</html>

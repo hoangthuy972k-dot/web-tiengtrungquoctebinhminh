@@ -71,4 +71,21 @@ const mcData = [
   {q:'"现在八点十分" nghĩa là gì?',opts:['bây giờ là 8 giờ 10 phút','bây giờ là 10 giờ 8 phút','bây giờ là 8 giờ','bây giờ là 10 giờ'],ans:0},
   {q:'Câu nào ĐÚNG khi nói "Tốt quá!"?',opts:['太好了！','好太了！','了太好！','太了好！'],ans:0},
   {q:'Khi chia tay hẹn gặp lại vào ngày mai, con nói gì?',opts:['明天见！','你好！','谢谢你！','我去学校。'],ans:0},
+  {q:'"了" trong "太好了" dùng để làm gì?',opts:['trợ từ nhấn mạnh','phủ định','nghi vấn','sở hữu'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Chào buổi sáng!"?',opts:['早上好！','好早上！','早好上！','上好早！'],ans:0},
+  {q:'"点" và "分" khác nhau ở đâu?',opts:['点 chỉ giờ, 分 chỉ phút','cả hai đều chỉ giờ','cả hai đều chỉ phút','không khác nhau'],ans:0},
+  {q:'Muốn nói "Bây giờ là 7 giờ", con nói gì?',opts:['现在七点。','现在点七。','七点现在。','点七现在。'],ans:0},
+  {q:'"早上" nghĩa gốc của chữ 早 là gì?',opts:['sớm','muộn','trưa','tối'],ans:0},
+];
+
+// Điền từ — tình huống giờ giấc
+const fillData = [
+  {pre:'Con hỏi giờ hiện tại: “',blank:'现在',post:'几点？”',hint:'(bây giờ)',ans:'现在'},
+  {pre:'Con trả lời bây giờ 8 giờ: “现在八',blank:'点',post:'。”',hint:'(giờ — lượng từ)',ans:'点'},
+  {pre:'Con nói rõ thêm phút: “现在八点十',blank:'分',post:'。”',hint:'(phút)',ans:'分'},
+  {pre:'Con khen tình huống tốt đẹp: “太好',blank:'了',post:'！”',hint:'(trợ từ nhấn mạnh)',ans:'了'},
+  {pre:'Con thấy còn sớm quá: “',blank:'太',post:'早了！”',hint:'(quá, rất)',ans:'太'},
+  {pre:'Con chào buổi sáng: “',blank:'早上',post:'好！”',hint:'(buổi sáng)',ans:'早上'},
+  {pre:'Con hẹn gặp lại vào ngày mai: “明天',blank:'见',post:'！”',hint:'(gặp)',ans:'见'},
+  {pre:'Con nói mình đi học lúc 8 giờ: “现在八点，我去',blank:'学校',post:'。”',hint:'(trường học)',ans:'学校'},
 ];

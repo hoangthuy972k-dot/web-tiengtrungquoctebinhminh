@@ -84,4 +84,21 @@ const mcData = [
   {q:'"这儿" dùng để chỉ đâu?',opts:['nơi GẦN người nói (ở đây)','nơi XA người nói (ở đó)','một loài vật','một con số'],ans:0},
   {q:'Câu nào ĐÚNG khi nói "Đó là con chó."?',opts:['那是狗。','这是狗。','狗是那。','是那狗。'],ans:0},
   {q:'"那儿" dùng để chỉ đâu?',opts:['nơi XA người nói (ở đó)','nơi GẦN người nói (ở đây)','một con vật','một màu sắc'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Ở đây có cá."?',opts:['这儿有鱼。','鱼有这儿。','有这儿鱼。','这儿鱼有。'],ans:0},
+  {q:'Câu nào ĐÚNG khi khen "Con mèo nhỏ thật!"?',opts:['猫真小！','真猫小！','小猫真！','猫小真！'],ans:0},
+  {q:'"这" và "那" khác nhau ở đâu?',opts:['这 chỉ vật gần, 那 chỉ vật xa','cả hai đều chỉ vật gần','cả hai đều chỉ vật xa','không khác nhau'],ans:0},
+  {q:'Muốn hỏi "Đó có phải con chó không?", con nói gì?',opts:['那是狗吗？','那是狗。','这是狗吗？','狗是那吗？'],ans:0},
+  {q:'"看" dùng trong câu nào?',opts:['你看，这是猫。','你猫，这是看。','看你这是猫。','这看你是猫。'],ans:0},
+];
+
+// Điền từ — tình huống về vật gần/xa và động vật
+const fillData = [
+  {pre:'Con muốn bạn nhìn con mèo của mình: “你',blank:'看',post:'，这是猫。”',hint:'(nhìn, xem)',ans:'看'},
+  {pre:'Con chỉ vào con mèo ở NGAY gần mình: “',blank:'这',post:'是猫。”',hint:'(này, đây — vật gần)',ans:'这'},
+  {pre:'Con chỉ vào con chó ở đằng XA: “',blank:'那',post:'是狗。”',hint:'(đó, kia — vật xa)',ans:'那'},
+  {pre:'Con nói nơi mình đang đứng có cá: “',blank:'这儿',post:'有鱼。”',hint:'(ở đây)',ans:'这儿'},
+  {pre:'Con hỏi bạn nơi xa có chim không: “',blank:'那儿',post:'有鸟吗？”',hint:'(ở đó, ở kia)',ans:'那儿'},
+  {pre:'Con khen con mèo: “猫真',blank:'小',post:'！”',hint:'(nhỏ, bé)',ans:'小'},
+  {pre:'Con khen con chó: “狗真',blank:'大',post:'！”',hint:'(to, lớn)',ans:'大'},
+  {pre:'Con xác nhận đó là con chó của mình: “那是我',blank:'的',post:'狗。”',hint:'(trợ từ sở hữu)',ans:'的'},
 ];

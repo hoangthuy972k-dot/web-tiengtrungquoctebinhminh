@@ -103,4 +103,21 @@ const mcData = [
   {q:'"爱" (trong 我爱吃...) nghĩa là gì?',opts:['yêu, rất thích','ghét','sợ','buồn'],ans:0},
   {q:'"蛋糕" nghĩa là gì?',opts:['bánh kem','cơm','mì','táo'],ans:0},
   {q:'Câu nào ĐÚNG khi nói "Mình rất thích ăn bánh kem."?',opts:['我爱吃蛋糕。','我蛋糕爱吃。','爱我吃蛋糕。','我吃爱蛋糕。'],ans:0},
+  {q:'"吃" và "喝" khác nhau ở đâu?',opts:['吃 dùng cho đồ ăn, 喝 dùng cho đồ uống','cả hai đều dùng cho đồ ăn','cả hai đều dùng cho đồ uống','không khác nhau'],ans:0},
+  {q:'Câu nào ĐÚNG khi hỏi "Bạn ăn cơm không?"?',opts:['你吃米饭吗？','你米饭吃吗？','吃你米饭吗？','米饭你吃吗？'],ans:0},
+  {q:'Muốn nói "Mình cũng uống nước", con nói gì?',opts:['我也喝水。','我喝也水。','也我喝水。','我水也喝。'],ans:0},
+  {q:'"爱" trong "我爱吃蛋糕" mang sắc thái thế nào so với "喜欢"?',opts:['mạnh hơn, RẤT thích','yếu hơn, ít thích','giống hệt nhau','trái nghĩa nhau'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Mình uống sữa"?',opts:['我喝牛奶。','我牛奶喝。','喝我牛奶。','牛奶我喝。'],ans:0},
+];
+
+// Điền từ — tình huống ăn uống
+const fillData = [
+  {pre:'Con hỏi bạn có ăn cơm không: “你',blank:'吃',post:'米饭吗？”',hint:'(ăn)',ans:'吃'},
+  {pre:'Con nói mình cũng ăn mì: “我也',blank:'吃',post:'面条。”',hint:'(ăn)',ans:'吃'},
+  {pre:'Con hỏi bạn có uống sữa không: “你',blank:'喝',post:'牛奶吗？”',hint:'(uống)',ans:'喝'},
+  {pre:'Con nói mình cũng uống nước: “我也',blank:'喝',post:'水。”',hint:'(uống)',ans:'喝'},
+  {pre:'Con nói hôm nay là sinh nhật mình: “今天是我的',blank:'生日',post:'！”',hint:'(sinh nhật)',ans:'生日'},
+  {pre:'Con nói mình rất thích ăn bánh kem: “我',blank:'爱',post:'吃蛋糕！”',hint:'(yêu, rất thích)',ans:'爱'},
+  {pre:'Con nói cũng rất thích ăn táo: “我也爱吃',blank:'苹果',post:'。”',hint:'(táo)',ans:'苹果'},
+  {pre:'Con nói mình uống sữa: “我喝',blank:'牛奶',post:'。”',hint:'(sữa)',ans:'牛奶'},
 ];

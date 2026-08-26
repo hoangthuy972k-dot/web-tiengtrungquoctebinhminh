@@ -112,4 +112,21 @@ const mcData = [
   {q:'"真" trong "个子真高" dùng để làm gì?',opts:['nhấn mạnh mức độ (thật là)','phủ định','nghi vấn','so sánh'],ans:0},
   {q:'"的" dùng để làm gì?',opts:['biểu thị sở hữu (của)','phủ định','nghi vấn','liệt kê'],ans:0},
   {q:'"个子" nghĩa là gì?',opts:['vóc dáng, chiều cao','khuôn mặt','màu tóc','cân nặng'],ans:0},
+  {q:'"长" nghĩa là gì?',opts:['dài','ngắn','to','nhỏ'],ans:0},
+  {q:'"大" (chỉ kích thước) nghĩa là gì?',opts:['to, lớn','nhỏ, bé','dài','cao'],ans:0},
+  {q:'Câu nào ĐÚNG khi khen vóc dáng bạn cao?',opts:['你的个子真高！','你个子的真高！','真你的个子高！','高你的个子真！'],ans:0},
+  {q:'"高" nghĩa là gì?',opts:['cao','thấp','to','nhỏ'],ans:0},
+  {q:'Muốn nói "Tóc em gái mình không dài", con nói gì?',opts:['妹妹的头发不长。','妹妹不头发长。','头发妹妹不长。','妹妹的长头发不。'],ans:0},
+];
+
+// Điền từ — tình huống miêu tả ngoại hình
+const fillData = [
+  {pre:'Con miêu tả tóc em gái không dài: “妹妹的',blank:'头发',post:'不长。”',hint:'(tóc)',ans:'头发'},
+  {pre:'Con miêu tả mắt em gái nhỏ: “妹妹的眼睛很',blank:'小',post:'。”',hint:'(nhỏ, bé)',ans:'小'},
+  {pre:'Con hỏi tai bạn to không: “你的耳朵',blank:'大',post:'吗？”',hint:'(to, lớn)',ans:'大'},
+  {pre:'Con khen vóc dáng bạn cao: “你的',blank:'个子',post:'真高！”',hint:'(vóc dáng)',ans:'个子'},
+  {pre:'Con trêu vui mũi bạn: “你的鼻子真',blank:'长',post:'！”',hint:'(dài)',ans:'长'},
+  {pre:'Con nói tay mình không to: “我的',blank:'手',post:'不大。”',hint:'(tay)',ans:'手'},
+  {pre:'Con chỉ sở hữu: “妹妹',blank:'的',post:'眼睛很小。”',hint:'(của — trợ từ sở hữu)',ans:'的'},
+  {pre:'Con hỏi tóc bạn dài không: “你',blank:'的',post:'头发长吗？”',hint:'(của — trợ từ sở hữu)',ans:'的'},
 ];

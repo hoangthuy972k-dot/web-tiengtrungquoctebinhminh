@@ -74,4 +74,21 @@ const mcData = [
   {q:'"谢谢" nghĩa là gì?',opts:['cảm ơn','xin lỗi','tạm biệt','xin chào'],ans:0},
   {q:'Câu nào ĐÚNG khi nói "Mình đi trường học."?',opts:['我去学校。','我学校去。','去我学校。','学校我去。'],ans:0},
   {q:'Khi ai đó cảm ơn mình, con có thể đáp lại bằng gì?',opts:['不谢。','谢谢。','再见。','你好。'],ans:0},
+  {q:'Câu nào ĐÚNG khi hỏi "Các bạn đang ở trường à?"?',opts:['你们在学校吗？','你们学校在吗？','在你们学校吗？','学校你们在吗？'],ans:0},
+  {q:'"你们" và "我们" khác nhau ở đâu?',opts:['你们 chỉ các bạn, 我们 chỉ chúng mình','cả hai đều chỉ chúng mình','cả hai đều chỉ các bạn','không khác nhau'],ans:0},
+  {q:'Muốn nói "Mình đi cửa hàng", con nói gì?',opts:['我去商店。','我商店去。','去我商店。','商店我去。'],ans:0},
+  {q:'"们" dùng để làm gì?',opts:['biến đại từ thành số nhiều','phủ định','nghi vấn','sở hữu'],ans:0},
+  {q:'Câu nào ĐÚNG khi hỏi "Bạn đi đâu?"?',opts:['你去哪儿？','你哪儿去？','哪儿你去？','去你哪儿？'],ans:0},
+];
+
+// Điền từ — tình huống địa điểm và xã giao
+const fillData = [
+  {pre:'Con hỏi bạn đi đâu: “你去',blank:'哪儿',post:'？”',hint:'(ở đâu)',ans:'哪儿'},
+  {pre:'Con trả lời mình đi trường học: “我去',blank:'学校',post:'。”',hint:'(trường học)',ans:'学校'},
+  {pre:'Con nói mình đang ở trường: “我',blank:'在',post:'学校。”',hint:'(ở, tại)',ans:'在'},
+  {pre:'Con hỏi các bạn có đang ở trường không: “',blank:'你们',post:'在学校吗？”',hint:'(các bạn — số nhiều)',ans:'你们'},
+  {pre:'Con trả lời chúng mình đang ở trường: “',blank:'我们',post:'在学校。”',hint:'(chúng mình)',ans:'我们'},
+  {pre:'Con nói mình đi cửa hàng: “我去',blank:'商店',post:'。”',hint:'(cửa hàng)',ans:'商店'},
+  {pre:'Con cảm ơn bạn: “',blank:'谢谢',post:'你！”',hint:'(cảm ơn)',ans:'谢谢'},
+  {pre:'Con đáp lại khi được cảm ơn: “不',blank:'谢',post:'。”',hint:'(cảm ơn — trong câu đáp)',ans:'谢'},
 ];

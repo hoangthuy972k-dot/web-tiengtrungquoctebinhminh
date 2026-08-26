@@ -84,4 +84,21 @@ const mcData = [
   {q:'Câu nào ĐÚNG khi hỏi sinh nhật bạn?',opts:['你的生日是几月几号？','你生日的是几月几号？','几月几号是你？','你是几月几号生日？'],ans:0},
   {q:'"五月一号" nghĩa là gì?',opts:['ngày 1 tháng 5','ngày 5 tháng 1','tháng 5','ngày 1'],ans:0},
   {q:'Câu nào ĐÚNG khi nói "Mình cũng thích chó."?',opts:['我也喜欢狗。','我喜欢也狗。','也我喜欢狗。','我狗也喜欢。'],ans:0},
+  {q:'Câu nào ĐÚNG khi hỏi "Hôm nay là ngày mấy?"?',opts:['今天是几号？','今天几是号？','几号今天是？','是今天几号？'],ans:0},
+  {q:'"今天" và "明天" khác nhau ở đâu?',opts:['今天 là hôm nay, 明天 là ngày mai','cả hai đều là hôm nay','cả hai đều là ngày mai','không khác nhau'],ans:0},
+  {q:'Muốn nói "Ở đây có cá" con cần từ nào để chỉ ngày, tháng?',opts:['月, 号','喜欢, 星期','明天, 今天','生日, 星期'],ans:0},
+  {q:'"星期" thường đi cùng số từ để chỉ điều gì?',opts:['thứ trong tuần','tháng trong năm','giờ trong ngày','ngày trong tháng'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Mình thích mèo."?',opts:['我喜欢猫。','我猫喜欢。','喜欢我猫。','猫我喜欢。'],ans:0},
+];
+
+// Điền từ — tình huống ngày tháng và sở thích
+const fillData = [
+  {pre:'Con hỏi sinh nhật bạn: “你的',blank:'生日',post:'是几月几号？”',hint:'(sinh nhật)',ans:'生日'},
+  {pre:'Con nói sinh nhật mình vào tháng 5: “我的生日是五',blank:'月',post:'一号。”',hint:'(tháng)',ans:'月'},
+  {pre:'Con nói rõ ngày: “我的生日是五月一',blank:'号',post:'。”',hint:'(ngày, số ngày trong tháng)',ans:'号'},
+  {pre:'Con hỏi hôm nay là ngày mấy: “',blank:'今天',post:'是几号？”',hint:'(hôm nay)',ans:'今天'},
+  {pre:'Con hỏi ngày mai có phải sinh nhật bạn không: “',blank:'明天',post:'是你的生日吗？”',hint:'(ngày mai)',ans:'明天'},
+  {pre:'Con hỏi bạn có thích mèo không: “你',blank:'喜欢',post:'猫吗？”',hint:'(thích)',ans:'喜欢'},
+  {pre:'Con nói mình cũng thích chó: “我也喜欢',blank:'狗',post:'。”',hint:'(con chó)',ans:'狗'},
+  {pre:'Con nói hôm nay là ngày 3: “今天是三',blank:'号',post:'。”',hint:'(ngày)',ans:'号'},
 ];

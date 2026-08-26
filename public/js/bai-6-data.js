@@ -230,88 +230,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — trộn từ vựng Bài 2/3/4/5 (身体/漂亮/已经/还) để ôn tích lũy
-const fillData = [
-  {pre:'你',blank:'怎么',post:'知道他来了？',hint:'(sao, tại sao)',ans:'怎么',exp:'怎么 + Động từ hỏi nguyên nhân, thường mang sắc thái ngạc nhiên'},
-  {pre:'今天的羊肉很好吃，你',blank:'怎么',post:'不吃了？',hint:'(sao lại — hỏi nguyên nhân)',ans:'怎么',exp:'怎么 dùng hỏi lý do một hiện trạng bất ngờ'},
-  {pre:'这个星期',blank:'天天',post:'都吃羊肉。',hint:'(ngày nào cũng — lặp lượng từ)',ans:'天天',exp:'Lặp lượng từ (AA) = mỗi, mọi; thường đi cùng 都'},
-  {pre:'',blank:'因为',post:'昨天下雨，所以我们都没去。',hint:'(bởi vì)',ans:'因为',exp:'因为...，所以... nêu quan hệ nguyên nhân - kết quả'},
-  {pre:'因为昨天下雨，',blank:'所以',post:'我们都没去。',hint:'(cho nên)',ans:'所以',exp:'所以 mở đầu vế kết quả trong cặp liên từ 因为...所以...'},
-  {pre:'你',blank:'经常',post:'游泳吗？',hint:'(thường xuyên)',ans:'经常',exp:'经常 = thường xuyên, đứng trước động từ'},
-  {pre:'不是，听说',blank:'是',post:'去看他姐姐。',hint:'(là — khẳng định)',ans:'是',exp:'听说是... = nghe nói là...'},
-  {pre:'我这几天身体',blank:'还',post:'可以，不用担心。',hint:'(tạm, cũng — ôn từ Bài 5)',ans:'还',exp:'还 + tính từ tích cực = tạm được, cũng ổn (đã học ở Bài 5)'},
-];
-
-// Sắp xếp — khác câu Điền từ/Trắc nghiệm, có câu ôn từ Bài 3/4 (漂亮/已经)
-const sortData = [
-  {words:['我','在','门外','看见','他','的','自行车','了','。'],ans:'我在门外看见他的自行车了。',audio:'我在门外看见他的自行车了。'},
-  {words:['来','一点儿','面条','吧','。'],ans:'来一点儿面条吧。',audio:'来一点儿面条吧。'},
-  {words:['我','现在','70','公斤','了','。'],ans:'我现在70公斤了。',audio:'我现在70公斤了。'},
-  {words:['他','去','北京','看','他','姐姐','了','。'],ans:'他去北京看他姐姐了。',audio:'他去北京看他姐姐了。'},
-  {words:['你','女儿','的','房间','真','漂亮','。'],ans:'你女儿的房间真漂亮。',audio:'你女儿的房间真漂亮。'},
-  {words:['这个','工作','已经','介绍','完','了','。'],ans:'这个工作已经介绍完了。',audio:'这个工作已经介绍完了。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'你怎么知道他来了？',right:'我在门外看见他的自行车了。'},
-  {left:'今天的羊肉很好吃，你怎么不吃了？',right:'不想吃了，来一点儿面条吧。'},
-  {left:'昨天你们怎么都没去打篮球？',right:'因为下雨，所以我们都没去。'},
-  {left:'你经常游泳吗？',right:'这个月我天天游泳。'},
-  {left:'去北京了？是去旅游吗？',right:'不是，是去看他姐姐。'},
-  {left:'这两天怎么没看见小张？',right:'他去北京了。'},
+  {left:'好吃',right:'面条'},
+  {left:'打',right:'篮球'},
+  {left:'经常',right:'游泳'},
+  {left:'因为',right:'所以'},
+  {left:'骑',right:'自行车'},
+  {left:'门',right:'外'},
 ];
 
-// Trắc nghiệm — không audio; có câu ôn từ Bài 2/3/4/5
-const mcData = [
-  {q:'你＿＿知道他来了？',opts:['怎么','因为','所以','经常'],ans:0},
-  {q:'这个星期＿＿都吃羊肉。',opts:['天天','已经','非常','还'],ans:0},
-  {q:'＿＿昨天下雨，所以我们都没去。',opts:['因为','所以','怎么','就'],ans:0},
-  {q:'因为下雨，＿＿我们都没去打篮球。',opts:['所以','因为','就','还'],ans:0},
-  {q:'你＿＿游泳吗？',opts:['经常','因为','所以','公斤'],ans:0},
-  {q:'不是，听说是去看他＿＿。',opts:['姐姐','自行车','面条','公斤'],ans:0},
-  {q:'我现在70＿＿了。',opts:['公斤','件','块','岁'],ans:0},
-  {q:'我这几天身体＿＿可以，不用担心。',opts:['还','就','非常','已经'],ans:0},
-  {q:'你女儿的房间真＿＿。',opts:['漂亮','好吃','经常','公斤'],ans:0},
-  {q:'这个工作＿＿介绍完了。',opts:['已经','因为','所以','怎么'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: hỏi lý do vắng mặt, gọi món khác ở quán ăn.
+// Ôn lại 生病/休息 (Bài 2), 觉得/运动 (Bài 1), 对 (Bài 5).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'小李这几天怎么没来上课？因为他生病了，所以在家休息。',
+   questions:[
+     {q:'小李为什么没来上课？',opts:['因为他生病了','因为他去旅游了','因为他很忙','不知道'],ans:0},
+     {q:'他现在在做什么？',opts:['在家休息','在打篮球','在游泳','在吃面条'],ans:0},
+   ]},
+  {audio:'这个饭馆的面条很好吃，可是我今天不想吃面条，想吃点儿别的。',
+   questions:[
+     {q:'这个饭馆的面条怎么样？',opts:['很好吃','不好吃','很贵','没有面条'],ans:0},
+     {q:'他今天想吃什么？',opts:['别的','面条','羊肉','什么都不想吃'],ans:0},
+   ]},
+  {audio:'他经常打篮球，也经常游泳，因为他觉得运动对身体很好。',
+   questions:[
+     {q:'他为什么经常运动？',opts:['因为运动对身体很好','因为很忙','因为要减肥','不知道'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi lý do vắng tập, gọi món khác
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你',blank:'怎么',post:'没去打篮球？',hint:'(sao, tại sao)',ans:'怎么',exp:'怎么 đứng sau chủ ngữ, trước động từ, dùng hỏi lý do.'},
+  {pre:'',blank:'因为',post:'昨天下雨，',hint:'(vì)',ans:'因为'},
+  {pre:'',blank:'所以',post:'我没去。',hint:'(nên, cho nên)',ans:'所以',exp:'因为……，所以…… luôn đi thành cặp, không đảo ngược.'},
+  {pre:'你',blank:'经常',post:'游泳吗？',hint:'(thường xuyên)',ans:'经常'},
+  {pre:'这个饭馆的面条很',blank:'好吃',post:'。',hint:'(ngon)',ans:'好吃'},
+  {pre:'你',blank:'怎么',post:'不吃羊肉了？',hint:'(sao — ôn lại)',ans:'怎么'},
+  {pre:'我这个星期天天都吃羊肉，',blank:'所以',post:'不想吃了。',hint:'(nên)',ans:'所以'},
+  {pre:'我姐姐',blank:'经常',post:'骑自行车上班。',hint:'(thường xuyên)',ans:'经常'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['你','怎么','没','去','打篮球','？'],ans:'你怎么没去打篮球？',audio:'你怎么没去打篮球？'},
+  {words:['因为','昨天','下雨','，','所以','我','没','去','。'],ans:'因为昨天下雨，所以我没去。',audio:'因为昨天下雨，所以我没去。'},
+  {words:['你','经常','游泳','吗','？'],ans:'你经常游泳吗？',audio:'你经常游泳吗？'},
+  {words:['这个','饭馆','的','面条','很','好吃','。'],ans:'这个饭馆的面条很好吃。',audio:'这个饭馆的面条很好吃。'},
+  {words:['我','姐姐','经常','骑','自行车','上班','。'],ans:'我姐姐经常骑自行车上班。',audio:'我姐姐经常骑自行车上班。'},
+  {words:['我','天天','都','吃','羊肉','，','不想','吃','了','。'],ans:'我天天都吃羊肉，不想吃了。',audio:'我天天都吃羊肉，不想吃了。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'没去打篮球你怎么？',
+   opts:['你怎么没去打篮球？','怎么你没去打篮球？','你没去怎么打篮球？','你没打篮球怎么去？'],ans:0,
+   exp:'怎么 đứng SAU chủ ngữ, TRƯỚC động từ, dùng để hỏi lý do (= tại sao).'},
+  {wrong:'昨天下雨，我没去所以因为。',
+   opts:['因为昨天下雨，所以我没去。','所以昨天下雨，因为我没去。','昨天下雨因为，所以我没去。','因为昨天下雨我没去所以。'],ans:0,
+   exp:'因为 đứng đầu vế NGUYÊN NHÂN, 所以 đứng đầu vế KẾT QUẢ — không đảo ngược vị trí hai từ này.'},
+  {wrong:'我游泳经常。',
+   opts:['我经常游泳。','经常我游泳。','我游泳常经。','游泳经常我。'],ans:0,
+   exp:'经常 (phó từ tần suất) đứng TRƯỚC động từ, không đặt sau như tiếng Việt "tôi bơi thường xuyên".'},
+  {wrong:'我每天天都吃羊肉。',
+   opts:['我天天都吃羊肉。','我每天天都吃羊肉。','我天每天都吃羊肉。','我都天天吃羊肉每。'],ans:0,
+   exp:'天天 (lặp lại danh từ thời gian) đã mang nghĩa "mỗi ngày", KHÔNG cần thêm 每 phía trước nữa.'},
+  {wrong:'你怎么样没去打篮球？',
+   opts:['你怎么没去打篮球？','你怎么样没去打篮球？','你没去怎么样打篮球？','你没怎么样去打篮球？'],ans:0,
+   exp:'怎么 hỏi LÝ DO (tại sao), còn 怎么样 hỏi Ý KIẾN/TÌNH TRẠNG (thế nào) — hai từ khác nghĩa, học sinh Việt hay nhầm lẫn.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'你怎么知道他来了？',py:'Nǐ zěnme zhīdào tā lái le?',vn:'Sao bạn biết cậu ấy đến rồi?'},
-      {zh:'今天的羊肉很好吃，你怎么不吃了？',py:'Jīntiān de yángròu hěn hǎochī, nǐ zěnme bù chī le?',vn:'Thịt dê hôm nay ngon thế, sao bạn không ăn nữa?'},
-      {zh:'因为昨天下雨，所以我们都没去。',py:'Yīnwèi zuótiān xià yǔ, suǒyǐ wǒmen dōu méi qù.',vn:'Vì hôm qua trời mưa nên chúng tôi đều không đi.'},
-      {zh:'你经常游泳吗？',py:'Nǐ jīngcháng yóuyǒng ma?',vn:'Bạn có thường xuyên đi bơi không?'},
+      {zh:'你怎么没去打篮球？',py:'Nǐ zěnme méi qù dǎ lánqiú?',vn:'Sao bạn không đi chơi bóng rổ vậy?'},
+      {zh:'因为昨天下雨，所以我没去游泳。',py:'Yīnwèi zuótiān xià yǔ, suǒyǐ wǒ méi qù yóuyǒng.',vn:'Vì hôm qua trời mưa nên tôi không đi bơi.'},
+      {zh:'这个饭馆的面条很好吃。',py:'Zhège fànguǎn de miàntiáo hěn hǎochī.',vn:'Mì của quán này rất ngon.'},
+      {zh:'我姐姐经常骑自行车上班。',py:'Wǒ jiějie jīngcháng qí zìxíngchē shàngbān.',vn:'Chị tôi thường xuyên đi xe đạp đi làm.'},
+      {zh:'你经常运动吗？',py:'Nǐ jīngcháng yùndòng ma?',vn:'Bạn có thường xuyên vận động không?'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'你怎么不＿＿了？',frame_py:'Nǐ zěnme bù ___ le?',vn:'Sao bạn không ＿＿ nữa?',options:['吃','去','喝'],samples:['你怎么不吃了？','你怎么不去了？','你怎么不喝了？']},
-      {frame:'因为＿＿，所以我们都没去。',frame_py:'Yīnwèi ___, suǒyǐ wǒmen dōu méi qù.',vn:'Vì ＿＿ nên chúng tôi đều không đi.',options:['下雨','很忙','生病'],samples:['因为下雨，所以我们都没去。','因为很忙，所以我们都没去。','因为生病，所以我们都没去。']},
-      {frame:'你经常＿＿吗？',frame_py:'Nǐ jīngcháng ___ ma?',vn:'Bạn có thường xuyên ＿＿ không?',options:['游泳','打篮球','运动'],samples:['你经常游泳吗？','你经常打篮球吗？','你经常运动吗？']},
-      {frame:'我现在＿＿公斤了。',frame_py:'Wǒ xiànzài ___ gōngjīn le.',vn:'Bây giờ tôi ＿＿ ki-lô-gam rồi.',options:['六十','七十','五十五'],samples:['我现在六十公斤了。','我现在七十公斤了。','我现在五十五公斤了。']},
+      {frame:'你怎么没去＿＿？',frame_py:'Nǐ zěnme méi qù ___?',vn:'Sao bạn không đi ＿＿?',options:['打篮球','游泳','上班'],samples:['你怎么没去打篮球？','你怎么没去游泳？','你怎么没去上班？']},
+      {frame:'因为下雨，所以我没去＿＿。',frame_py:'Yīnwèi xià yǔ, suǒyǐ wǒ méi qù ___.',vn:'Vì trời mưa nên tôi không đi ＿＿.',options:['打篮球','游泳','买东西'],samples:['因为下雨，所以我没去打篮球。','因为下雨，所以我没去游泳。','因为下雨，所以我没去买东西。']},
+      {frame:'我姐姐经常＿＿。',frame_py:'Wǒ jiějie jīngcháng ___.',vn:'Chị tôi thường xuyên ＿＿.',options:['游泳','打篮球','骑自行车'],samples:['我姐姐经常游泳。','我姐姐经常打篮球。','我姐姐经常骑自行车。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🚲 Tình huống 1 — Đoán xem ai đã đến',
-       guide:'Bạn nhìn thấy dấu hiệu (xe đạp, đồ vật) và đoán xem người quen đã đến trường/nhà chưa.',
-       structure:['你怎么知道他＿＿？','我在门外看见他的＿＿了。'],
-       sample:'你怎么知道他来了？我在门外看见他的自行车了。',
-       sample_vn:'Sao bạn biết cậu ấy đến rồi? Tôi nhìn thấy xe đạp của cậu ấy ở ngoài cửa.'},
-      {role:'🌧️ Tình huống 2 — Giải thích lý do không đi chơi thể thao',
-       guide:'Bạn giải thích vì sao hôm qua không đi chơi bóng rổ được, và đã làm gì thay thế.',
-       structure:['因为＿＿，所以我们都没去。','我去＿＿了。'],
-       sample:'因为昨天下雨，所以我们都没去。我去游泳了。',
-       sample_vn:'Vì hôm qua trời mưa nên chúng tôi đều không đi. Tôi thì đi bơi rồi.'},
-      {role:'✈️ Tình huống 3 — Hỏi thăm người vắng mặt',
-       guide:'Bạn hỏi đồng nghiệp vì sao mấy hôm nay không thấy một người bạn, và người đó đi đâu.',
-       structure:['这两天怎么没看见＿＿？','听说是去看他＿＿。'],
-       sample:'这两天怎么没看见小张？听说是去看他姐姐。',
-       sample_vn:'Hai ngày nay sao không thấy Tiểu Trương nhỉ? Nghe nói là đi thăm chị gái cậu ấy.'},
+      {role:'🏀 Tình huống 1 — Hỏi lý do bạn không đi tập thể thao',
+       guide:'Bạn hỏi vì sao hôm qua bạn mình không đi chơi bóng rổ như hẹn.',
+       structure:['你怎么没去打篮球？','因为……，所以我没去。'],
+       sample:'你怎么没去打篮球？因为昨天下雨，所以我没去。',
+       sample_vn:'Sao bạn không đi chơi bóng rổ vậy? Vì hôm qua trời mưa nên tôi không đi.',
+       note:'怎么 ở đây mang nghĩa hỏi LÝ DO, gần giống 为什么 (đã học ở Bài 1) nhưng ngữ khí thân mật, ngạc nhiên hơn.'},
+      {role:'🍜 Tình huống 2 — Gọi món ở quán ăn',
+       guide:'Bạn đang ăn ở quán, muốn đổi món khác vì ăn một món quá nhiều lần rồi.',
+       structure:['这个星期天天都吃羊肉，不想吃了。','来一点儿面条吧。'],
+       sample:'这个星期天天都吃羊肉，不想吃了。来一点儿面条吧。',
+       sample_vn:'Tuần này ngày nào cũng ăn thịt dê rồi, không muốn ăn nữa. Cho một ít mì đi.',
+       note:'天天 (lặp lại danh từ thời gian) = mỗi ngày đều..., nhấn mạnh tính lặp lại nhiều hơn 每天.'},
+      {role:'🏊 Tình huống 3 — Giới thiệu thói quen thể thao của người thân',
+       guide:'Bạn kể cho bạn bè nghe về thói quen vận động của một người thân trong gia đình.',
+       structure:['我姐姐经常＿＿，也经常＿＿。','她觉得运动对身体很好。'],
+       sample:'我姐姐经常游泳，也经常打篮球。她觉得运动对身体很好。',
+       sample_vn:'Chị tôi thường xuyên bơi, cũng thường xuyên chơi bóng rổ. Chị ấy thấy vận động rất tốt cho sức khỏe.',
+       note:'对……好/不好 (ôn Bài 5) dùng để nói điều gì đó có lợi hay có hại cho một đối tượng.'},
     ],
   },
 };

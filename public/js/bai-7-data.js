@@ -215,88 +215,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — trộn từ Bài 2 (小时/忙), Bài 5 (准备)
-const fillData = [
-  {pre:'已经九点多了，他怎么',blank:'还',post:'在学习？',hint:'(vẫn, còn)',ans:'还',exp:'还 biểu thị hành động vẫn đang tiếp diễn'},
-  {pre:'你现在在哪儿',blank:'呢',post:'？',hint:'(trợ từ hỏi tiếp diễn)',ans:'呢',exp:'呢 dùng ở câu hỏi về trạng thái đang diễn ra'},
-  {pre:'20分钟',blank:'就',post:'到。',hint:'(liền, ngay)',ans:'就',exp:'就 diễn tả hành động xảy ra nhanh, sớm'},
-  {pre:'你家',blank:'离',post:'公司远吗？',hint:'(cách)',ans:'离',exp:'A + 离 + B = khoảng cách giữa A và B'},
-  {pre:'坐公共汽车太慢了，你怎么不',blank:'开',post:'车？',hint:'(lái)',ans:'开',exp:'开车 = lái xe'},
-  {pre:'走几分钟就',blank:'到',post:'了。',hint:'(đến, tới)',ans:'到',exp:'到 = đến, tới nơi'},
-  {pre:'我每天坐公共汽车上班，要一个多',blank:'小时',post:'。',hint:'(tiếng đồng hồ)',ans:'小时',exp:'小时 = đơn vị đo thời gian, tiếng đồng hồ'},
-  {pre:'我已经',blank:'准备',post:'好了，可以出发了。',hint:'(chuẩn bị — ôn từ Bài 5)',ans:'准备',exp:'准备 = chuẩn bị (đã học ở Bài 5)'},
-];
-
-// Sắp xếp — khác câu Điền từ/Trắc nghiệm, ôn từ Bài 3/4/6
-const sortData = [
-  {words:['我','在','去','机场','的','路上','。'],ans:'我在去机场的路上。',audio:'我在去机场的路上。'},
-  {words:['走','几','分钟','就','到','了','。'],ans:'走几分钟就到了。',audio:'走几分钟就到了。'},
-  {words:['他','还','在','教室','学习','。'],ans:'他还在教室学习。',audio:'他还在教室学习。'},
-  {words:['我','每天','坐','公共汽车','上班','，','非常','忙','。'],ans:'我每天坐公共汽车上班，非常忙。',audio:'我每天坐公共汽车上班，非常忙。'},
-  {words:['我','姐姐','的','手表','是','送','的','。'],ans:'我姐姐的手表是送的。',audio:'我姐姐的手表是送的。'},
-  {words:['公司','离','我','家','不','远','。'],ans:'公司离我家不远。',audio:'公司离我家不远。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'大卫回来了吗？',right:'没有，他还在教室学习呢。'},
-  {left:'你现在在哪儿呢？',right:'在去机场的路上。'},
-  {left:'你家离公司远吗？',right:'很远，坐公共汽车要一个多小时。'},
-  {left:'坐公共汽车太慢了，你怎么不开车？',right:'开车也不快，路上车太多了。'},
-  {left:'今天离我的生日还有多久？',right:'还有一个多星期呢。'},
-  {left:'走几分钟就到了吗？',right:'对，离这儿不远。'},
+  {left:'坐',right:'公共汽车'},
+  {left:'离',right:'远'},
+  {left:'走',right:'路'},
+  {left:'过',right:'生日'},
+  {left:'开',right:'车'},
+  {left:'一个',right:'小时'},
 ];
 
-// Trắc nghiệm — không audio; trộn từ Bài 2/3/4/5/6
-const mcData = [
-  {q:'已经九点多了，他怎么＿＿在学习？',opts:['还','就','才','再'],ans:0},
-  {q:'你现在在哪儿＿＿？',opts:['呢','吗','了','吧'],ans:0},
-  {q:'20分钟＿＿到。',opts:['就','还','才','再'],ans:0},
-  {q:'你家＿＿公司远吗？',opts:['离','从','到','对'],ans:0},
-  {q:'坐公共汽车太慢了，你怎么不开＿＿？',opts:['车','门','机场','路'],ans:0},
-  {q:'我姐姐每天很＿＿，没有时间休息。',opts:['忙','慢','远','贵'],ans:0},
-  {q:'这块手表不是我买的，是朋友＿＿的。',opts:['送','过','走','到'],ans:0},
-  {q:'我已经＿＿好了，可以出发了。',opts:['准备','考试','咖啡','意思'],ans:0},
-  {q:'因为下雨，＿＿我们没去游泳。',opts:['所以','因为','还','就'],ans:0},
-  {q:'走几分钟就＿＿了。',opts:['到','走','过','离'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: hỏi đường đến siêu thị/bệnh viện.
+// Ôn lại 因为 (Bài 6), 生日 (Bài 4).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'医院离我家不远，走十分钟就到了。',
+   questions:[
+     {q:'医院离他家远不远？',opts:['不远','很远','不知道','很远很远'],ans:0},
+     {q:'走路要多长时间？',opts:['十分钟','一个小时','半个小时','不知道'],ans:0},
+   ]},
+  {audio:'超市离公司很远，坐公共汽车要一个多小时，开车也不快，因为路上车太多。',
+   questions:[
+     {q:'超市离公司远吗？',opts:['很远','不远','不知道','一点儿都不远'],ans:0},
+     {q:'坐公共汽车要多长时间？',opts:['一个多小时','十分钟','半个小时','不知道'],ans:0},
+   ]},
+  {audio:'还有一个星期就是我的生日了，我们下个星期一起过吧。',
+   questions:[
+     {q:'还有多长时间是他的生日？',opts:['一个星期','一天','一个月','不知道'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi đường đến siêu thị
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'超市',blank:'离',post:'这儿远吗？',hint:'(cách)',ans:'离'},
+  {pre:'不远，走几分钟',blank:'就',post:'到了。',hint:'(là, liền)',ans:'就',exp:'就 ở đây nhấn mạnh khoảng cách/thời gian NGẮN.'},
+  {pre:'你',blank:'还',post:'在超市吗？',hint:'(vẫn, còn)',ans:'还'},
+  {pre:'对，我还在这儿买东西',blank:'呢',post:'。',hint:'(trợ từ ngữ khí — nhấn mạnh)',ans:'呢'},
+  {pre:'坐公共汽车要一个多',blank:'小时',post:'。',hint:'(tiếng đồng hồ)',ans:'小时'},
+  {pre:'坐公共汽车太',blank:'慢',post:'了。',hint:'(chậm)',ans:'慢'},
+  {pre:'还有一个星期',blank:'就',post:'是我的生日了。',hint:'(là — nhấn mạnh sắp đến)',ans:'就'},
+  {pre:'我们下个星期一起',blank:'过',post:'吧。',hint:'(tổ chức, đón — sinh nhật/lễ)',ans:'过'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['超市','离','这儿','远','吗','？'],ans:'超市离这儿远吗？',audio:'超市离这儿远吗？'},
+  {words:['走','几','分钟','就','到','了','。'],ans:'走几分钟就到了。',audio:'走几分钟就到了。'},
+  {words:['坐','公共汽车','要','一','个','多','小时','。'],ans:'坐公共汽车要一个多小时。',audio:'坐公共汽车要一个多小时。'},
+  {words:['坐','公共汽车','太','慢','了','。'],ans:'坐公共汽车太慢了。',audio:'坐公共汽车太慢了。'},
+  {words:['还','有','一','个','星期','就','是','我','的','生日','了','。'],ans:'还有一个星期就是我的生日了。',audio:'还有一个星期就是我的生日了。'},
+  {words:['我们','下','个','星期','一起','过','吧','。'],ans:'我们下个星期一起过吧。',audio:'我们下个星期一起过吧。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'超市远这儿离吗？',
+   opts:['超市离这儿远吗？','超市这儿离远吗？','离超市这儿远吗？','这儿超市离远吗？'],ans:0,
+   exp:'离 đứng giữa hai ĐỊA ĐIỂM: A + 离 + B + xa/gần.'},
+  {wrong:'到就几分钟走了。',
+   opts:['走几分钟就到了。','就走几分钟到了。','到走几分钟就了。','几分钟走就到了。'],ans:0,
+   exp:'就 đứng NGAY TRƯỚC động từ 到 để nhấn mạnh việc xảy ra nhanh/sớm.'},
+  {wrong:'你在超市还吗？',
+   opts:['你还在超市吗？','你在还超市吗？','还你在超市吗？','你在超市还了吗？'],ans:0,
+   exp:'还 (vẫn, còn) đứng TRƯỚC động từ 在, không đặt cuối câu như "còn" trong tiếng Việt.'},
+  {wrong:'我在这儿买东西还呢。',
+   opts:['我还在这儿买东西呢。','我在这儿还买东西呢。','我在这儿买东西呢还。','还我在这儿买东西呢。'],ans:0,
+   exp:'还 đứng TRƯỚC động từ chính (在), 呢 luôn đứng CUỐI câu.'},
+  {wrong:'公共汽车坐太慢了。',
+   opts:['坐公共汽车太慢了。','公共汽车坐太慢了。','太坐公共汽车慢了。','坐太公共汽车慢了。'],ans:0,
+   exp:'坐 (động từ) phải đứng TRƯỚC phương tiện: 坐 + 公共汽车/飞机/车.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'你家离公司远吗？',py:'Nǐ jiā lí gōngsī yuǎn ma?',vn:'Nhà bạn cách công ty có xa không?'},
-      {zh:'坐公共汽车要一个多小时呢。',py:'Zuò gōnggòng qìchē yào yí ge duō xiǎoshí ne.',vn:'Đi xe buýt mất hơn một tiếng đồng hồ cơ đấy.'},
-      {zh:'你现在在哪儿呢？',py:'Nǐ xiànzài zài nǎr ne?',vn:'Bây giờ bạn đang ở đâu thế?'},
-      {zh:'走几分钟就到了。',py:'Zǒu jǐ fēnzhōng jiù dào le.',vn:'Đi bộ vài phút là tới rồi.'},
+      {zh:'超市离这儿远吗？',py:'Chāoshì lí zhèr yuǎn ma?',vn:'Siêu thị cách đây có xa không?'},
+      {zh:'走几分钟就到了。',py:'Zǒu jǐ fēnzhōng jiù dào le.',vn:'Đi bộ vài phút là tới ngay.'},
+      {zh:'坐公共汽车太慢了。',py:'Zuò gōnggòng qìchē tài màn le.',vn:'Đi xe buýt chậm quá.'},
+      {zh:'你还在超市吗？我还在这儿买东西呢。',py:'Nǐ hái zài chāoshì ma? Wǒ hái zài zhèr mǎi dōngxi ne.',vn:'Bạn vẫn còn ở siêu thị à? Tôi vẫn đang mua đồ ở đây đấy.'},
+      {zh:'还有一个星期就是我的生日了。',py:'Hái yǒu yí ge xīngqī jiù shì wǒ de shēngrì le.',vn:'Còn một tuần nữa là đến sinh nhật tôi rồi.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'你家离＿＿远吗？',frame_py:'Nǐ jiā lí ___ yuǎn ma?',vn:'Nhà bạn cách ＿＿ có xa không?',options:['公司','学校','机场'],samples:['你家离公司远吗？','你家离学校远吗？','你家离机场远吗？']},
-      {frame:'坐＿＿要一个多小时。',frame_py:'Zuò ___ yào yí ge duō xiǎoshí.',vn:'Đi ＿＿ mất hơn một tiếng.',options:['公共汽车','飞机','车'],samples:['坐公共汽车要一个多小时。','坐飞机要一个多小时。','坐车要一个多小时。']},
-      {frame:'＿＿分钟就到了。',frame_py:'___ fēnzhōng jiù dào le.',vn:'＿＿ phút nữa là tới rồi.',options:['十','二十','五'],samples:['十分钟就到了。','二十分钟就到了。','五分钟就到了。']},
-      {frame:'他还在＿＿学习呢。',frame_py:'Tā hái zài ___ xuéxí ne.',vn:'Cậu ấy vẫn còn đang học ở ＿＿ kìa.',options:['教室','家里','图书馆'],samples:['他还在教室学习呢。','他还在家里学习呢。','他还在图书馆学习呢。']},
+      {frame:'＿＿离这儿远吗？',frame_py:'___ lí zhèr yuǎn ma?',vn:'＿＿ cách đây có xa không?',options:['超市','医院','机场'],samples:['超市离这儿远吗？','医院离这儿远吗？','机场离这儿远吗？']},
+      {frame:'坐＿＿要一个多小时。',frame_py:'Zuò ___ yào yí ge duō xiǎoshí.',vn:'Đi ＿＿ mất hơn một tiếng.',options:['公共汽车','出租车','飞机'],samples:['坐公共汽车要一个多小时。','坐出租车要一个多小时。','坐飞机要一个多小时。']},
+      {frame:'我们下个星期一起＿＿吧。',frame_py:'Wǒmen xià ge xīngqī yìqǐ ___ ba.',vn:'Tuần sau chúng ta cùng nhau ＿＿ đi.',options:['过生日','去旅游','踢足球'],samples:['我们下个星期一起过生日吧。','我们下个星期一起去旅游吧。','我们下个星期一起踢足球吧。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🏢 Tình huống 1 — Hỏi thăm khoảng cách nhà và công ty',
-       guide:'Bạn hỏi đồng nghiệp nhà cách công ty có xa không và đi lại bằng gì.',
-       structure:['你家离＿＿远吗？','坐＿＿要多长时间？'],
-       sample:'你家离公司远吗？坐公共汽车要多长时间？',
-       sample_vn:'Nhà bạn cách công ty có xa không? Đi xe buýt mất bao lâu?'},
-      {role:'✈️ Tình huống 2 — Hẹn gặp ở sân bay',
-       guide:'Bạn gọi điện hỏi bạn mình đang ở đâu và còn bao lâu nữa thì đến sân bay.',
-       structure:['你现在在哪儿＿＿？','你还有多长时间能到＿＿？'],
-       sample:'你现在在哪儿呢？你还有多长时间能到机场？',
-       sample_vn:'Bây giờ bạn đang ở đâu thế? Bạn còn bao lâu nữa thì đến sân bay?'},
-      {role:'🎂 Tình huống 3 — Rủ bạn đi ăn mừng sinh nhật',
-       guide:'Bạn rủ bạn mình đi ăn tối để mừng sinh nhật, và nói địa điểm gần đây.',
-       structure:['今天晚上我们一起吃饭吧，给你过＿＿。','离这儿不远有一个＿＿。'],
-       sample:'今天晚上我们一起吃饭吧，给你过生日。离这儿不远有一个中国饭馆。',
-       sample_vn:'Tối nay chúng ta cùng đi ăn cơm đi, để chúc mừng sinh nhật bạn. Cách đây không xa có một nhà hàng Trung Quốc.'},
+      {role:'🗺️ Tình huống 1 — Hỏi đường đến siêu thị',
+       guide:'Bạn hỏi một người bạn xem siêu thị có xa không, và nên đi bằng cách nào.',
+       structure:['超市离这儿远吗？','不远，走几分钟就到了。'],
+       sample:'超市离这儿远吗？不远，走几分钟就到了。',
+       sample_vn:'Siêu thị cách đây có xa không? Không xa, đi bộ vài phút là tới.',
+       note:'离 dùng để nói khoảng cách giữa HAI địa điểm, không phải "từ" như 从.'},
+      {role:'📱 Tình huống 2 — Nói bạn vẫn đang làm gì đó',
+       guide:'Bạn gọi điện báo cho người thân biết mình vẫn đang ở đâu, chưa về.',
+       structure:['你还在哪儿呢？','我还在＿＿买东西呢。'],
+       sample:'你还在哪儿呢？我还在超市买东西呢。',
+       sample_vn:'Bạn vẫn còn ở đâu vậy? Tôi vẫn đang ở siêu thị mua đồ đấy.',
+       note:'呢 ở cuối câu trần thuật mang nghĩa nhấn mạnh, giống như "đấy/cơ" trong tiếng Việt.'},
+      {role:'🎂 Tình huống 3 — Đề nghị tổ chức sinh nhật sớm hơn',
+       guide:'Sinh nhật bạn còn vài ngày nữa mới tới, nhưng bạn muốn tổ chức sớm vì tuần sau bận.',
+       structure:['还有一个星期就是我的生日了。','下个星期我要去北京，今天过吧！'],
+       sample:'还有一个星期就是我的生日了。下个星期我要去北京，今天过吧！',
+       sample_vn:'Còn một tuần nữa là sinh nhật tôi. Tuần sau tôi phải đi Bắc Kinh rồi, hôm nay tổ chức luôn đi!',
+       note:'还有……就……了 dùng để nói "còn bao lâu nữa thì" một sự việc sẽ xảy ra.'},
     ],
   },
 };

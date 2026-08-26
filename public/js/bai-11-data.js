@@ -195,88 +195,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — cả 2 điểm ngữ pháp (định ngữ động từ + 比), có ôn 就(Bài 5) và 可能
-const fillData = [
-  {pre:'昨天和你一起唱歌的人是',blank:'谁',post:'？',hint:'(ai)',ans:'谁'},
-  {pre:'是不是',blank:'男',post:'朋友？',hint:'(nam, con trai)',ans:'男'},
-  {pre:'左边这个看报纸的',blank:'女',post:'孩子是你姐姐吗？',hint:'(nữ, con gái)',ans:'女'},
-  {pre:'',blank:'右',post:'边写字的那个人是我哥哥。',hint:'(bên phải)',ans:'右'},
-  {pre:'他',blank:'比',post:'我大三岁。',hint:'(so với)',ans:'比',exp:'A + 比 + B + Tính từ = A hơn B về mức độ nào đó'},
-  {pre:'苹果也比昨天',blank:'便宜',post:'一些。',hint:'(rẻ)',ans:'便宜'},
-  {pre:'前面说话的那个人',blank:'就',post:'是我的汉语老师。',hint:'(chính là — ôn từ Bài 5)',ans:'就',exp:'就 nhấn mạnh tính khẳng định'},
-  {pre:'你',blank:'可能',post:'不认识他。',hint:'(có thể, có lẽ)',ans:'可能'},
-];
-
-// Sắp xếp — khác Điền từ, có câu ôn 姓/去年
-const sortData = [
-  {words:['一','个','朋友','，','我','同学','介绍','的','。'],ans:'一个朋友，我同学介绍的。',audio:'一个朋友，我同学介绍的。'},
-  {words:['他','比','我','大','三','岁','。'],ans:'他比我大三岁。',audio:'他比我大三岁。'},
-  {words:['你','可能','不','认识','他','。'],ans:'你可能不认识他。',audio:'你可能不认识他。'},
-  {words:['他','姓','王','，','28','岁','。'],ans:'他姓王，28岁。',audio:'他姓王，28岁。'},
-  {words:['他','比','我们','老师','小','两','岁','。'],ans:'他比我们老师小两岁。',audio:'他比我们老师小两岁。'},
-  {words:['他','是','去年','来','的','。'],ans:'他是去年来的。',audio:'他是去年来的。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'昨天和你一起唱歌的人是谁？',right:'一个朋友。'},
-  {left:'左边这个看报纸的女孩子是你姐姐吗？',right:'右边写字的那个人是我哥哥。'},
-  {left:'你哥哥多大？',right:'25岁，他比我大三岁。'},
-  {left:'今天的西瓜怎么卖？',right:'三块五一斤，比昨天便宜。'},
-  {left:'是新来的汉语老师吗？',right:'是去年来的，他姓王。'},
-  {left:'前面说话的那个人是谁？',right:'就是我的汉语老师。'},
+  {left:'唱',right:'歌'},
+  {left:'说',right:'话'},
+  {left:'去',right:'年'},
+  {left:'贵',right:'姓'},
+  {left:'比',right:'较'},
+  {left:'女',right:'孩子'},
 ];
 
-// Trắc nghiệm — không audio; trộn từ Bài 3/9/10 làm phương án nhiễu
-const mcData = [
-  {q:'昨天和你一起＿＿的人是谁？',opts:['唱歌','跳舞','说话','休息'],ans:0},
-  {q:'是不是＿＿朋友？',opts:['男','女','好','小'],ans:0},
-  {q:'＿＿边写字的那个人是我哥哥。',opts:['右','左','旁','外'],ans:0},
-  {q:'他＿＿我大三岁。',opts:['比','从','对','离'],ans:0},
-  {q:'西瓜比昨天＿＿。',opts:['便宜','贵','近','远'],ans:0},
-  {q:'前面＿＿话的那个人是老师。',opts:['说','告诉','问','叫'],ans:0},
-  {q:'你＿＿不认识他。',opts:['可能','已经','正在','非常'],ans:0},
-  {q:'他是＿＿来的。',opts:['去年','昨天','以后','晚上'],ans:0},
-  {q:'他＿＿王。',opts:['姓','叫','是','有'],ans:0},
-  {q:'那个＿＿很可爱。',opts:['孩子','哥哥','朋友','同学'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: giờ ăn trưa ở công ty, bàn về đồng nghiệp mới.
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'公司新来的男同事姓王，是去年来的，他比我大两岁。',
+   questions:[
+     {q:'新同事姓什么？',opts:['王','李','张','陈'],ans:0},
+     {q:'他是什么时候来公司的？',opts:['去年','今年','上个月','不知道'],ans:0},
+   ]},
+  {audio:'前面说话的那个女孩子可能是新来的实习生，她唱歌唱得很好。',
+   questions:[
+     {q:'前面说话的人可能是谁？',opts:['新来的实习生','老板','客人','老师'],ans:0},
+     {q:'她什么做得很好？',opts:['唱歌','说话','工作','游泳'],ans:0},
+   ]},
+  {audio:'今天食堂的菜比昨天便宜一些，大家都说要多吃点儿。',
+   questions:[
+     {q:'今天食堂的菜怎么样？',opts:['比昨天便宜','比昨天贵','跟昨天一样','不知道'],ans:0},
+     {q:'大家怎么说？',opts:['多吃点儿','少吃点儿','别吃了','不知道'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: giờ ăn trưa, bàn về đồng nghiệp mới & giá cơm
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'前面吃饭的那个男孩子是谁？他看起来',blank:'比',post:'我们都年轻。',hint:'(so với)',ans:'比',exp:'A + 比 + B + Tính từ = A hơn B.'},
+  {pre:'他',blank:'姓',post:'王，是新来的同事。',hint:'(họ)',ans:'姓'},
+  {pre:'他是',blank:'去年',post:'来公司的，工作已经一年了。',hint:'(năm ngoái)',ans:'去年'},
+  {pre:'坐在他',blank:'右边',post:'说话的那个女孩子是谁？',hint:'(bên phải)',ans:'右边'},
+  {pre:'那',blank:'可能',post:'是新来的实习生。',hint:'(có thể, có lẽ)',ans:'可能'},
+  {pre:'今天食堂的菜比昨天',blank:'便宜',post:'一些，我们多吃点儿吧。',hint:'(rẻ)',ans:'便宜'},
+  {pre:'她刚才一直在',blank:'说话',post:'，好像很开心。',hint:'(nói chuyện)',ans:'说话'},
+  {pre:'周五公司聚会大家一起去',blank:'唱歌',post:'吧！',hint:'(hát)',ans:'唱歌'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['那个','男孩子','看起来','比','我们','年轻','。'],ans:'那个男孩子看起来比我们年轻。',audio:'那个男孩子看起来比我们年轻。'},
+  {words:['他','是','去年','来','公司','的','。'],ans:'他是去年来公司的。',audio:'他是去年来公司的。'},
+  {words:['前面','说话','的','那个','人','可能','是','新','同事','。'],ans:'前面说话的那个人可能是新同事。',audio:'前面说话的那个人可能是新同事。'},
+  {words:['食堂','的','菜','比','昨天','便宜','。'],ans:'食堂的菜比昨天便宜。',audio:'食堂的菜比昨天便宜。'},
+  {words:['她','姓','王','，','是','新','来','的','实习生','。'],ans:'她姓王，是新来的实习生。',audio:'她姓王，是新来的实习生。'},
+  {words:['我们','周末','一起','去','唱歌','吧','。'],ans:'我们周末一起去唱歌吧。',audio:'我们周末一起去唱歌吧。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'前面的说话那个人是谁？',
+   opts:['前面说话的那个人是谁？','前面的说话那个人是谁？','说话前面的那个人是谁？','前面那个说话是的人谁？'],ans:0,
+   exp:'Cụm động từ (说话) làm định ngữ phải đứng NGAY TRƯỚC 的, rồi mới đến danh từ: [Cụm động từ] + 的 + Danh từ.'},
+  {wrong:'我比他大三岁比。',
+   opts:['我比他大三岁。','我比他大三岁比。','我大比他三岁。','比我他大三岁。'],ans:0,
+   exp:'比 chỉ xuất hiện MỘT LẦN, ngay sau chủ ngữ A và trước đối tượng so sánh B: A + 比 + B + Tính từ.'},
+  {wrong:'他大比我三岁。',
+   opts:['他比我大三岁。','他大比我三岁。','他比大我三岁。','大他比我三岁。'],ans:0,
+   exp:'比 + B phải đứng TRƯỚC tính từ (大/小/便宜...), không đặt tính từ lên trước 比.'},
+  {wrong:'他认识可能你。',
+   opts:['他可能认识你。','他认识可能你。','可能他认识不你。','他不可能认识可能你。'],ans:0,
+   exp:'可能 (có thể, có lẽ) đứng TRƯỚC động từ, không đặt sau động từ như tiếng Việt "quen có thể".'},
+  {wrong:'便宜比昨天食堂的菜。',
+   opts:['食堂的菜比昨天便宜。','便宜比昨天食堂的菜。','食堂的菜昨天比便宜。','比食堂的菜昨天便宜。'],ans:0,
+   exp:'Trật tự câu 比 chuẩn: Chủ ngữ (食堂的菜) + 比 + Đối tượng so sánh (昨天) + Tính từ (便宜), không đảo lên đầu câu.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'昨天和你一起唱歌的人是谁？',py:'Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',vn:'Người hôm qua cùng hát với bạn là ai?'},
-      {zh:'他比我大三岁。',py:'Tā bǐ wǒ dà sān suì.',vn:'Anh ấy lớn hơn tôi 3 tuổi.'},
-      {zh:'西瓜比昨天便宜。',py:'Xīguā bǐ zuótiān piányi.',vn:'Dưa hấu rẻ hơn hôm qua.'},
-      {zh:'你可能不认识他。',py:'Nǐ kěnéng bú rènshi tā.',vn:'Có thể bạn không quen thầy ấy đâu.'},
+      {zh:'他看起来比我们都年轻。',py:'Tā kànqǐlai bǐ wǒmen dōu niánqīng.',vn:'Anh ấy trông trẻ hơn tất cả chúng ta.'},
+      {zh:'他是去年来公司的。',py:'Tā shì qùnián lái gōngsī de.',vn:'Anh ấy đến công ty từ năm ngoái.'},
+      {zh:'前面说话的那个人可能是新同事。',py:'Qiánmiàn shuōhuà de nàge rén kěnéng shì xīn tóngshì.',vn:'Người nói chuyện phía trước có thể là đồng nghiệp mới.'},
+      {zh:'食堂的菜比昨天便宜一些。',py:'Shítáng de cài bǐ zuótiān piányi yìxiē.',vn:'Món ăn ở căng tin rẻ hơn hôm qua một chút.'},
+      {zh:'我们周末一起去唱歌吧。',py:'Wǒmen zhōumò yìqǐ qù chàng gē ba.',vn:'Cuối tuần chúng ta cùng đi hát nhé.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'他比我大＿＿岁。',frame_py:'Tā bǐ wǒ dà ___ suì.',vn:'Anh ấy lớn hơn tôi ＿＿ tuổi.',options:['一','两','三'],samples:['他比我大一岁。','他比我大两岁。','他比我大三岁。']},
-      {frame:'这个比那个＿＿。',frame_py:'Zhège bǐ nàge ___.',vn:'Cái này ＿＿ hơn cái kia.',options:['便宜','贵','大'],samples:['这个比那个便宜。','这个比那个贵。','这个比那个大。']},
-      {frame:'他姓＿＿。',frame_py:'Tā xìng ___.',vn:'Anh ấy họ ＿＿.',options:['王','李','张'],samples:['他姓王。','他姓李。','他姓张。']},
-      {frame:'你可能不认识＿＿。',frame_py:'Nǐ kěnéng bú rènshi ___.',vn:'Có thể bạn không quen ＿＿.',options:['他','她','我朋友'],samples:['你可能不认识他。','你可能不认识她。','你可能不认识我朋友。']},
+      {frame:'今天的菜比昨天＿＿。',frame_py:'Jīntiān de cài bǐ zuótiān ___.',vn:'Món hôm nay ＿＿ hơn hôm qua.',options:['便宜','贵','好吃'],samples:['今天的菜比昨天便宜。','今天的菜比昨天贵。','今天的菜比昨天好吃。']},
+      {frame:'他可能是＿＿。',frame_py:'Tā kěnéng shì ___.',vn:'Anh ấy có thể là ＿＿.',options:['新同事','实习生','老板'],samples:['他可能是新同事。','他可能是实习生。','他可能是老板。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🎤 Tình huống 1 — Hỏi về người bạn mới quen',
-       guide:'Bạn hỏi ai đó về người đã đi hát cùng họ hôm qua, có phải bạn trai/gái không.',
-       structure:['昨天和你一起＿＿的人是谁？','是＿＿介绍的。'],
-       sample:'昨天和你一起唱歌的人是谁？是我同学介绍的。',
-       sample_vn:'Người hôm qua cùng hát với bạn là ai? Là bạn học tớ giới thiệu.'},
-      {role:'👨‍👩‍👧 Tình huống 2 — So sánh tuổi tác anh chị em',
-       guide:'Bạn hỏi tuổi anh/chị của ai đó và so sánh với tuổi của họ.',
-       structure:['你＿＿多大？','他比我大/小＿＿岁。'],
-       sample:'你哥哥多大？他比我大三岁。',
-       sample_vn:'Anh trai bạn bao nhiêu tuổi? Anh ấy lớn hơn tôi 3 tuổi.'},
-      {role:'🛍️ Tình huống 3 — Mặc cả giá cả',
-       guide:'Bạn hỏi giá một món đồ ở chợ và so sánh với giá hôm qua.',
-       structure:['这个怎么卖？','比昨天＿＿一些。'],
-       sample:'西瓜怎么卖？比昨天便宜一些。',
-       sample_vn:'Dưa hấu bán thế nào? Rẻ hơn hôm qua một chút.'},
+      {role:'👔 Tình huống 1 — Giới thiệu đồng nghiệp mới',
+       guide:'Bạn giới thiệu một đồng nghiệp mới đến công ty cho bạn bè, nói họ tên và so sánh tuổi.',
+       structure:['他姓＿＿，是去年来的。','他比我大/小＿＿岁。'],
+       sample:'他姓王，是去年来的。他比我大两岁。',
+       sample_vn:'Anh ấy họ Vương, đến từ năm ngoái. Anh ấy lớn hơn tôi hai tuổi.',
+       note:'比 dùng để so sánh tuổi tác: A + 比 + B + 大/小 + số tuổi.'},
+      {role:'🍜 Tình huống 2 — Mặc cả giá cơm căng tin',
+       guide:'Bạn nhận xét giá món ăn hôm nay so với hôm qua và rủ đồng nghiệp ăn cùng.',
+       structure:['今天的菜比昨天＿＿。','我们多吃点儿吧。'],
+       sample:'今天的菜比昨天便宜，我们多吃点儿吧。',
+       sample_vn:'Món hôm nay rẻ hơn hôm qua, chúng ta ăn nhiều một chút đi.',
+       note:'比 cũng dùng để so sánh giá cả, chất lượng đồ vật.'},
+      {role:'🎤 Tình huống 3 — Rủ đồng nghiệp đi hát karaoke cuối tuần',
+       guide:'Bạn hẹn đồng nghiệp cùng đi hát karaoke vào cuối tuần.',
+       structure:['周末你有空吗？','我们一起去唱歌吧！'],
+       sample:'周末你有空吗？我们一起去唱歌吧！',
+       sample_vn:'Cuối tuần bạn có rảnh không? Chúng ta cùng đi hát đi!',
+       note:'Ôn lại cấu trúc rủ rê 一起……吧 đã gặp ở các bài trước.'},
     ],
   },
 };

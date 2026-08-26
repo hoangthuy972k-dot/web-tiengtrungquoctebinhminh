@@ -167,88 +167,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — đủ 4 hội thoại + 2 điểm ngữ pháp, có ôn 对(Bài 5) và 茶/咖啡/牛奶 để phân biệt
-const fillData = [
-  {pre:'不要看电视',blank:'了',post:'，明天还有课呢。',hint:'(trợ từ trong 不要...了)',ans:'了',exp:'不要/别 + Động từ + 了 = đừng làm... nữa'},
-  {pre:'看电视对学汉语有',blank:'帮助',post:'。',hint:'(có ích, giúp đỡ)',ans:'帮助',exp:'对...有帮助 = có ích đối với...'},
-  {pre:'',blank:'别',post:'看报纸了，医生说你要多休息。',hint:'(đừng)',ans:'别',exp:'别 + Động từ + 了 = đừng làm... nữa'},
-  {pre:'医生说吃药后两个小时不要喝',blank:'茶',post:'。',hint:'(trà)',ans:'茶',exp:'茶 = trà, danh từ chỉ đồ uống'},
-  {pre:'妈妈',blank:'正在',post:'准备午饭呢。',hint:'(đang)',ans:'正在',exp:'正在 + Động từ + 呢 = đang làm gì đó'},
-  {pre:'你看见我的',blank:'手机',post:'了吗？',hint:'(điện thoại di động)',ans:'手机',exp:'手机 = điện thoại di động'},
-  {pre:'那件衣服我帮你',blank:'洗',post:'了。',hint:'(giặt)',ans:'洗',exp:'洗 = rửa, giặt'},
-  {pre:'运动',blank:'对',post:'身体很好。',hint:'(đối với — ôn từ Bài 5)',ans:'对',exp:'对 + đối tượng + 好/不好 = tốt/không tốt cho...'},
-];
-
-// Sắp xếp — câu khác hẳn Điền từ, có câu ôn cấu trúc 对 với chủ đề khác
-const sortData = [
-  {words:['别','玩','手机','了','，','快','去','学习','吧','。'],ans:'别玩手机了，快去学习吧。',audio:'别玩手机了，快去学习吧。'},
-  {words:['明天','的','课','你','都','准备','好','了','吗','？'],ans:'明天的课你都准备好了吗？',audio:'明天的课你都准备好了吗？'},
-  {words:['哥哥','今天','中午','回来','吃饭','。'],ans:'哥哥今天中午回来吃饭。',audio:'哥哥今天中午回来吃饭。'},
-  {words:['手机','在','桌子','上','，','电脑','旁边','。'],ans:'手机在桌子上，电脑旁边。',audio:'手机在桌子上，电脑旁边。'},
-  {words:['老师','对','学生','非常','好','。'],ans:'老师对学生非常好。',audio:'老师对学生非常好。'},
-  {words:['吃饭','以前','要','洗','手','。'],ans:'吃饭以前要洗手。',audio:'吃饭以前要洗手。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'不要看电视了，',right:'明天上午还有汉语课呢。'},
-  {left:'别看报纸了，',right:'医生说你要多休息。'},
-  {left:'你怎么买了这么多东西呀？',right:'哥哥今天中午回来吃饭。'},
-  {left:'你看见我的手机了吗？',right:'别找了，手机在桌子上呢。'},
-  {left:'你看见我的衣服了吗？',right:'那件衣服我帮你洗了。'},
-  {left:'看电视',right:'对学汉语有帮助。'},
+  {left:'上',right:'课'},
+  {left:'玩',right:'手机'},
+  {left:'洗',right:'手'},
+  {left:'别',right:'担心'},
+  {left:'需要',right:'帮助'},
+  {left:'正在',right:'练习'},
 ];
 
-// Trắc nghiệm — không audio; dùng từ Bài 3/5 làm phương án nhiễu để phân biệt
-const mcData = [
-  {q:'不要看电视＿＿，明天还有课。',opts:['了','吗','呢','的'],ans:0},
-  {q:'别看报纸＿＿，医生说你要多休息。',opts:['了','吗','呢','过'],ans:0},
-  {q:'看电视对学汉语有＿＿。',opts:['帮助','希望','准备','意思'],ans:0},
-  {q:'医生说吃药后两个小时不要喝＿＿。',opts:['茶','咖啡','牛奶','水'],ans:0},
-  {q:'妈妈＿＿准备午饭呢。',opts:['正在','已经','非常','还'],ans:0},
-  {q:'你看见我的＿＿了吗？白色的。',opts:['手机','手表','报纸','衣服'],ans:0},
-  {q:'那件衣服我帮你＿＿了。',opts:['洗','买','穿','找'],ans:0},
-  {q:'运动＿＿身体很好。',opts:['对','给','从','离'],ans:0},
-  {q:'＿＿今天中午回来吃饭。',opts:['哥哥','姐姐','女儿','丈夫'],ans:0},
-  {q:'桌子上有一个＿＿。',opts:['手机','颜色','身体','时间'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: ở phòng tập gym.
+// Ôn lại 有点儿(Bài 5), 已经(Bài 4/9), 一下(Bài 3), 完(Bài 9).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'我正在健身房锻炼身体，运动对身体很好，可是今天有点儿累。',
+   questions:[
+     {q:'他在哪儿？',opts:['健身房','医院','学校','家里'],ans:0},
+     {q:'运动对身体怎么样？',opts:['很好','不好','没有帮助','不知道'],ans:0},
+   ]},
+  {audio:'教练说：别练太多了，你已经练了一个小时，休息一下吧。',
+   questions:[
+     {q:'教练让他做什么？',opts:['休息一下','继续练','马上回家','再练一个小时'],ans:0},
+     {q:'他已经练了多久？',opts:['一个小时','两个小时','半个小时','不知道'],ans:0},
+   ]},
+  {audio:'锻炼完以后，哥哥请我吃鸡蛋和西瓜，他说这样对身体有帮助。',
+   questions:[
+     {q:'锻炼完以后哥哥请他吃什么？',opts:['鸡蛋和西瓜','面条和米饭','咖啡和茶','没吃什么'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở phòng tập gym
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你怎么还在这儿运动？别练',blank:'了',post:'，已经很晚了。',hint:'(đừng... nữa)',ans:'了',exp:'别/不要 + Động từ + 了 = đừng làm... nữa.'},
+  {pre:'我知道，可是运动',blank:'对',post:'身体很好，我想多练一下。',hint:'(đối với)',ans:'对',exp:'对 đứng sau chủ ngữ, trước đối tượng chịu tác động: 运动对身体好.'},
+  {pre:'你今天上的是第几节健身',blank:'课',post:'？',hint:'(tiết học, lớp học)',ans:'课'},
+  {pre:'这是我',blank:'正在',post:'上的第三节课。',hint:'(đang)',ans:'正在'},
+  {pre:'练完以后别忘了',blank:'洗',post:'手再吃东西。',hint:'(rửa)',ans:'洗'},
+  {pre:'对了，你看见我的',blank:'手机',post:'了吗？我找不到了。',hint:'(điện thoại)',ans:'手机'},
+  {pre:'别找了，在你包里呢。运动对身体真有',blank:'帮助',post:'。',hint:'(giúp ích)',ans:'帮助'},
+  {pre:'',blank:'哥哥',post:'也常常和我一起来锻炼。',hint:'(anh trai)',ans:'哥哥'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['别','玩','手机','了','，','快','去','锻炼','吧','。'],ans:'别玩手机了，快去锻炼吧。',audio:'别玩手机了，快去锻炼吧。'},
+  {words:['运动','对','身体','非常','好','。'],ans:'运动对身体非常好。',audio:'运动对身体非常好。'},
+  {words:['我','正在','上','健身','课','呢','。'],ans:'我正在上健身课呢。',audio:'我正在上健身课呢。'},
+  {words:['锻炼','完','以后','要','洗','手','。'],ans:'锻炼完以后要洗手。',audio:'锻炼完以后要洗手。'},
+  {words:['哥哥','常常','帮助','我','练习','。'],ans:'哥哥常常帮助我练习。',audio:'哥哥常常帮助我练习。'},
+  {words:['教练','已经','练','了','一个','小时','了','。'],ans:'教练已经练了一个小时了。',audio:'教练已经练了一个小时了。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'不要玩手机，了。',
+   opts:['不要玩手机了。','不要玩手机，了。','不要了玩手机。','了不要玩手机。'],ans:0,
+   exp:'了 gắn liền ngay sau cụm động từ+tân ngữ, không tách bằng dấu phẩy và không đứng riêng.'},
+  {wrong:'别了玩手机。',
+   opts:['别玩手机了。','别了玩手机。','别玩了手机。','玩别手机了。'],ans:0,
+   exp:'Cấu trúc là 别 + Động từ + Tân ngữ + 了, 了 luôn đứng ở CUỐI câu/cụm, không chen vào giữa 别 và động từ.'},
+  {wrong:'运动身体对很好。',
+   opts:['运动对身体很好。','运动身体对很好。','对运动身体很好。','运动很好对身体。'],ans:0,
+   exp:'对 đứng NGAY SAU chủ ngữ và NGAY TRƯỚC đối tượng chịu ảnh hưởng: Chủ ngữ + 对 + Đối tượng + Tính từ/Động từ.'},
+  {wrong:'对运动身体很好。',
+   opts:['运动对身体很好。','对运动身体很好。','身体对运动很好。','很好运动对身体。'],ans:0,
+   exp:'对 không đứng ở đầu câu thay cho chủ ngữ — chủ ngữ (运动) phải đứng trước 对.'},
+  {wrong:'我练已经了一个小时。',
+   opts:['我已经练了一个小时。','我练已经了一个小时。','我了已经练一个小时。','已经我练了一个小时。'],ans:0,
+   exp:'已经 đứng TRƯỚC động từ (đã học ở Bài 4/9: 已经 + Động từ + 了), không chen 了 vào giữa 已经 và động từ.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'不要看电视了，明天上午还有汉语课呢。',py:'Bú yào kàn diànshì le, míngtiān shàngwǔ hái yǒu Hànyǔ kè ne.',vn:'Đừng xem tivi nữa, sáng mai còn có tiết học tiếng Trung đấy.'},
-      {zh:'别看报纸了，医生说你要多休息。',py:'Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi.',vn:'Đừng đọc báo nữa, bác sĩ bảo bạn cần nghỉ ngơi nhiều.'},
-      {zh:'哥哥今天中午回来吃饭。',py:'Gēge jīntiān zhōngwǔ huílái chīfàn.',vn:'Trưa nay anh trai về ăn cơm.'},
-      {zh:'别找了，手机在桌子上呢。',py:'Bié zhǎo le, shǒujī zài zhuōzi shang ne.',vn:'Đừng tìm nữa, điện thoại ở trên bàn kìa.'},
+      {zh:'别玩手机了，快去锻炼吧。',py:'Bié wán shǒujī le, kuài qù duànliàn ba.',vn:'Đừng chơi điện thoại nữa, mau đi tập thể dục đi.'},
+      {zh:'运动对身体非常好。',py:'Yùndòng duì shēntǐ fēicháng hǎo.',vn:'Vận động rất tốt cho sức khỏe.'},
+      {zh:'我正在上健身课呢。',py:'Wǒ zhèngzài shàng jiànshēn kè ne.',vn:'Tôi đang học lớp thể hình đấy.'},
+      {zh:'锻炼完以后要洗手。',py:'Duànliàn wán yǐhòu yào xǐ shǒu.',vn:'Tập xong phải rửa tay.'},
+      {zh:'哥哥常常帮助我练习。',py:'Gēge chángcháng bāngzhù wǒ liànxí.',vn:'Anh trai thường giúp tôi luyện tập.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'不要＿＿了，快去休息吧。',frame_py:'Bú yào ___ le, kuài qù xiūxi ba.',vn:'Đừng ＿＿ nữa, mau đi nghỉ đi.',options:['玩手机','看电视','看报纸'],samples:['不要玩手机了，快去休息吧。','不要看电视了，快去休息吧。','不要看报纸了，快去休息吧。']},
-      {frame:'别＿＿了，医生说你要多休息。',frame_py:'Bié ___ le, yīshēng shuō nǐ yào duō xiūxi.',vn:'Đừng ＿＿ nữa, bác sĩ bảo bạn cần nghỉ ngơi.',options:['看报纸','玩手机','喝咖啡'],samples:['别看报纸了，医生说你要多休息。','别玩手机了，医生说你要多休息。','别喝咖啡了，医生说你要多休息。']},
-      {frame:'＿＿正在准备午饭呢。',frame_py:'___ zhèngzài zhǔnbèi wǔfàn ne.',vn:'＿＿ đang chuẩn bị bữa trưa.',options:['妈妈','姐姐','哥哥'],samples:['妈妈正在准备午饭呢。','姐姐正在准备午饭呢。','哥哥正在准备午饭呢。']},
-      {frame:'那件衣服我帮你＿＿了。',frame_py:'Nà jiàn yīfu wǒ bāng nǐ ___ le.',vn:'Chiếc áo đó tớ ＿＿ giúp bạn rồi.',options:['洗','买','找'],samples:['那件衣服我帮你洗了。','那件衣服我帮你买了。','那件衣服我帮你找了。']},
+      {frame:'别＿＿了，快去锻炼吧。',frame_py:'Bié ___ le, kuài qù duànliàn ba.',vn:'Đừng ＿＿ nữa, mau đi tập thể dục đi.',options:['玩手机','看电视','睡觉'],samples:['别玩手机了，快去锻炼吧。','别看电视了，快去锻炼吧。','别睡觉了，快去锻炼吧。']},
+      {frame:'＿＿对身体很好。',frame_py:'___ duì shēntǐ hěn hǎo.',vn:'＿＿ rất tốt cho sức khỏe.',options:['运动','游泳','跑步'],samples:['运动对身体很好。','游泳对身体很好。','跑步对身体很好。']},
+      {frame:'我已经练了＿＿了。',frame_py:'Wǒ yǐjīng liàn le ___ le.',vn:'Tôi đã tập ＿＿ rồi.',options:['一个小时','半个小时','两个小时'],samples:['我已经练了一个小时了。','我已经练了半个小时了。','我已经练了两个小时了。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'📺 Tình huống 1 — Khuyên người thân nghỉ ngơi',
-       guide:'Bạn khuyên người thân đừng xem tivi/đọc báo nữa vì ngày mai có việc quan trọng.',
-       structure:['不要＿＿了，','明天还有＿＿呢。'],
-       sample:'不要看电视了，明天还有考试呢。',
-       sample_vn:'Đừng xem tivi nữa, ngày mai còn có kỳ thi đấy.'},
-      {role:'🛒 Tình huống 2 — Kể chuyện đi chợ về',
-       guide:'Bạn kể đã mua những gì ở chợ và nấu cho ai ăn.',
-       structure:['我买了＿＿、＿＿。','＿＿今天回来吃饭。'],
-       sample:'我买了羊肉、鸡蛋。哥哥今天回来吃饭。',
-       sample_vn:'Tôi đã mua thịt dê, trứng gà. Anh trai hôm nay về ăn cơm.'},
-      {role:'📱 Tình huống 3 — Giúp bạn tìm đồ thất lạc',
-       guide:'Bạn của bạn đang tìm một món đồ, hãy nói cho bạn ấy biết nó ở đâu.',
-       structure:['你看见我的＿＿了吗？','别找了，在＿＿呢。'],
-       sample:'你看见我的手机了吗？别找了，在桌子上呢。',
-       sample_vn:'Bạn có thấy điện thoại của tôi không? Đừng tìm nữa, ở trên bàn kìa.'},
+      {role:'🏋️ Tình huống 1 — Khuyên bạn đừng lười tập',
+       guide:'Bạn thấy bạn mình cứ chơi điện thoại ở phòng gym, hãy khuyên bạn ấy đi tập luôn.',
+       structure:['别玩手机了，','快去锻炼吧，运动对身体很好。'],
+       sample:'别玩手机了，快去锻炼吧，运动对身体很好。',
+       sample_vn:'Đừng chơi điện thoại nữa, mau đi tập đi, vận động rất tốt cho sức khỏe.',
+       note:'别/不要 + Động từ + 了 dùng để khuyên ngăn một cách nhẹ nhàng.'},
+      {role:'📅 Tình huống 2 — Hẹn bạn cùng đi tập gym',
+       guide:'Bạn rủ bạn mình cùng đi tập gym vào một buổi cụ thể trong tuần.',
+       structure:['你明天有空吗？','我们一起去健身房锻炼，好吗？'],
+       sample:'你明天有空吗？我们一起去健身房锻炼，好吗？',
+       sample_vn:'Ngày mai bạn có rảnh không? Chúng ta cùng đi phòng gym tập luyện nhé?',
+       note:'Ôn lại cấu trúc rủ rê ……好吗？ đã học ở Bài 8.'},
+      {role:'📱 Tình huống 3 — Tìm điện thoại bị thất lạc ở phòng gym',
+       guide:'Bạn không tìm thấy điện thoại của mình sau khi tập xong, hỏi bạn tập cùng.',
+       structure:['你看见我的手机了吗？','别找了，在＿＿呢。'],
+       sample:'你看见我的手机了吗？别找了，在你包里呢。',
+       sample_vn:'Bạn có thấy điện thoại của tôi không? Đừng tìm nữa, ở trong túi của bạn kìa.',
+       note:'别 + Động từ + 了 cũng dùng để trấn an, bảo người khác không cần làm gì nữa.'},
     ],
   },
 };

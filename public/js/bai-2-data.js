@@ -250,85 +250,131 @@ const dialogData = [
    ]},
 ];
 
-const fillData = [
-  {pre:'你很少生病，',blank:'是不是',post:'喜欢运动？',hint:'(có phải... không?)',ans:'是不是',exp:'是不是 dùng để hỏi lại nhằm xác nhận điều đã đoán'},
-  {pre:'我',blank:'每',post:'天早上都要出去跑步。',hint:'(mỗi)',ans:'每',exp:'每 + lượng từ/danh từ + 都 = mỗi... đều...'},
-  {pre:'你',blank:'多',post:'大？',hint:'(hỏi mức độ)',ans:'多',exp:'多 + tính từ để hỏi mức độ: 多大, 多高'},
-  {pre:'吃了。现在好',blank:'多',post:'了。',hint:'(nhiều hơn)',ans:'多',exp:'好多了 = tốt hơn nhiều rồi'},
-  {pre:'医生说下个',blank:'星期',post:'。',hint:'(tuần)',ans:'星期',exp:'下个星期 = tuần sau'},
-  {pre:'大卫今年多大？20',blank:'多',post:'岁。',hint:'(hơn — số ước lượng)',ans:'多',exp:'Số + 多 + 岁 = hơn ... tuổi'},
-  {pre:'他这几天很忙，没有时间',blank:'休息',post:'。',hint:'(nghỉ ngơi)',ans:'休息',exp:'休息 = nghỉ ngơi'},
-  {pre:'他每天回来都很',blank:'累',post:'。',hint:'(mệt)',ans:'累',exp:'累 = mệt, tính từ chỉ trạng thái'},
-];
 
-const sortData = [
-  {words:['我','每天','六点','起床','。'],ans:'我每天六点起床。',audio:'我每天六点起床。'},
-  {words:['我','每天','早上','都要','出去','跑步','。'],ans:'我每天早上都要出去跑步。',audio:'我每天早上都要出去跑步。'},
-  {words:['他','这几天','很忙','。'],ans:'他这几天很忙。',audio:'他这几天很忙。'},
-  {words:['你','每天','几点','起床','？'],ans:'你每天几点起床？',audio:'你每天几点起床？'},
-  {words:['现在','身体','怎么样','？'],ans:'现在身体怎么样？',audio:'现在身体怎么样？'},
-  {words:['他','多','高','？'],ans:'他多高？',audio:'他多高？'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'你很少生病，',right:'是不是喜欢运动？'},
-  {left:'我每天早上',right:'都要出去跑步。'},
-  {left:'吃药了吗？',right:'现在身体怎么样？'},
-  {left:'什么时候',right:'能出院？'},
-  {left:'他这几天很忙，',right:'没有时间休息。'},
-  {left:'他每天回来',right:'都很累。'},
+  {left:'吃',right:'药'},
+  {left:'每天',right:'跑步'},
+  {left:'身体',right:'好'},
+  {left:'没有',right:'时间'},
+  {left:'很',right:'忙'},
+  {left:'早上',right:'起床'},
 ];
 
-const mcData = [
-  {q:'你很少生病，＿＿喜欢运动？',opts:['是不是','因为','所以','怎么'],ans:0},
-  {q:'我＿＿天都要出去跑步。',opts:['是','每','多','几'],ans:1},
-  {q:'你＿＿大？',opts:['多','几','是','很'],ans:0},
-  {q:'吃了，现在好＿＿了。',opts:['多','很','太','都'],ans:0},
-  {q:'医生说＿＿星期。',opts:['这个','下个','那个','每个'],ans:1},
-  {q:'他今年20＿＿岁。',opts:['多','几','很','太'],ans:0},
-  {q:'他这几天很忙，没有＿＿休息。',opts:['时间','身体','起床','知道'],ans:0},
-  {q:'他每天回来都很＿＿。',opts:['忙','累','高','早'],ans:1},
-  {q:'他＿＿我同学。',opts:['有','是','在','很'],ans:1},
-  {q:'你怎么＿＿这么多呀？',opts:['知道','起床','休息','出院'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: hỏi thăm sức khỏe đồng nghiệp,
+// khám sức khỏe định kỳ. Ôn lại 为什么/觉得/要 (Bài 1).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'小李每天早上都跑步，是不是身体很好？他说：是啊，我很少生病。',
+   questions:[
+     {q:'小李是不是身体很好？',opts:['是','不是','不知道','他没说'],ans:0},
+     {q:'小李每天什么时候跑步？',opts:['早上','晚上','中午','他没有时间跑步'],ans:0},
+   ]},
+  {audio:'王老师这几天很忙，没有时间休息，他觉得很累。',
+   questions:[
+     {q:'王老师为什么很累？',opts:['因为很忙，没有时间休息','因为生病了','因为要去旅游','因为在跑步'],ans:0},
+     {q:'王老师现在怎么样？',opts:['很忙很累','很高兴','身体很好','要出院了'],ans:0},
+   ]},
+  {audio:'他今年20多岁，一米8多高，医生说他身体很好。',
+   questions:[
+     {q:'"20多岁"是什么意思？',opts:['超过20岁','正好20岁','不到20岁','不知道'],ans:0},
+     {q:'医生说他身体怎么样？',opts:['很好','生病了','很忙','很累'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi thăm đồng nghiệp mới ốm dậy
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你',blank:'是不是',post:'生病了？',hint:'(có phải... không — câu hỏi Có/Không)',ans:'是不是',exp:'是不是 đặt sau chủ ngữ, trước phần muốn hỏi.'},
+  {pre:'是啊，我',blank:'每',post:'天都要吃药。',hint:'(mỗi)',ans:'每',exp:'每 luôn cần 都 đi kèm ở vị ngữ phía sau.'},
+  {pre:'你',blank:'多',post:'高？',hint:'(bao nhiêu — hỏi mức độ, đứng trước tính từ)',ans:'多',exp:'多 + Tính từ dùng để hỏi mức độ: 多高/多大/多重.'},
+  {pre:'我一米七',blank:'多',post:'。',hint:'(hơn — ôn lại Bài 1)',ans:'多'},
+  {pre:'你每天',blank:'几',post:'点起床？',hint:'(mấy — ôn lại Bài 1)',ans:'几'},
+  {pre:'我每天六点起床，可是身体还是很',blank:'累',post:'。',hint:'(mệt)',ans:'累'},
+  {pre:'你',blank:'为什么',post:'这么忙？',hint:'(tại sao — ôn lại Bài 1)',ans:'为什么'},
+  {pre:'因为我没有',blank:'时间',post:'休息。',hint:'(thời gian)',ans:'时间'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['你','是不是','很','忙','？'],ans:'你是不是很忙？',audio:'你是不是很忙？'},
+  {words:['他','每天','都','跑步','。'],ans:'他每天都跑步。',audio:'他每天都跑步。'},
+  {words:['你','朋友','多','高','？'],ans:'你朋友多高？',audio:'你朋友多高？'},
+  {words:['我','每天','七','点','起床','。'],ans:'我每天七点起床。',audio:'我每天七点起床。'},
+  {words:['医生','说','我','身体','很','好','。'],ans:'医生说我身体很好。',audio:'医生说我身体很好。'},
+  {words:['我','很','累','，','也','很','忙','。'],ans:'我很累，也很忙。',audio:'我很累，也很忙。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'他每天跑步。',
+   opts:['他每天都跑步。','他每都天跑步。','都他每天跑步。','他都每天跑步。'],ans:0,
+   exp:'每 luôn cần 都 đi kèm ở vị ngữ: 每 + Danh từ + 都 + Động từ.'},
+  {wrong:'你高多？',
+   opts:['你多高？','你多么高？','高你多？','多你高？'],ans:0,
+   exp:'多 đứng NGAY TRƯỚC tính từ khi hỏi mức độ, không đặt sau như "cao bao nhiêu" trong tiếng Việt.'},
+  {wrong:'你生病是不是了？',
+   opts:['你是不是生病了？','你是不是了生病？','是不是你了生病？','你了是不是生病？'],ans:0,
+   exp:'是不是 đứng NGAY SAU chủ ngữ, TRƯỚC toàn bộ phần vị ngữ muốn hỏi.'},
+  {wrong:'我很没有时间。',
+   opts:['我没有时间。','我时间很没有。','很我没有时间。','我没有很时间。'],ans:0,
+   exp:'没有 (phủ định của 有) KHÔNG dùng 很 phía trước — đây là lỗi thường gặp do ảnh hưởng "rất không có" trong tiếng Việt.'},
+  {wrong:'他身体好很。',
+   opts:['他身体很好。','他身体很好很。','很他身体好。','他很身体好。'],ans:0,
+   exp:'很 phải đứng TRƯỚC tính từ, không đặt sau.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'你每天几点起床？',py:'Nǐ měitiān jǐ diǎn qǐchuáng?',vn:'Mỗi ngày bạn thức dậy lúc mấy giờ?'},
-      {zh:'现在身体怎么样？',py:'Xiànzài shēntǐ zěnmeyàng?',vn:'Bây giờ sức khỏe thế nào rồi?'},
-      {zh:'他多高？',py:'Tā duō gāo?',vn:'Anh ấy cao bao nhiêu?'},
-      {zh:'他这几天很忙，没有时间休息。',py:'Tā zhè jǐ tiān hěn máng, méiyǒu shíjiān xiūxi.',vn:'Mấy ngày nay anh ấy rất bận, không có thời gian nghỉ ngơi.'},
+      {zh:'你是不是每天都跑步？',py:'Nǐ shìbushì měitiān dōu pǎobù?',vn:'Có phải bạn ngày nào cũng chạy bộ không?'},
+      {zh:'我每天六点起床。',py:'Wǒ měitiān liù diǎn qǐchuáng.',vn:'Mỗi ngày tôi thức dậy lúc 6 giờ.'},
+      {zh:'你多高？我一米七多。',py:'Nǐ duō gāo? Wǒ yì mǐ qī duō.',vn:'Bạn cao bao nhiêu? Tôi hơn 1 mét 7.'},
+      {zh:'医生说我身体很好。',py:'Yīshēng shuō wǒ shēntǐ hěn hǎo.',vn:'Bác sĩ nói sức khỏe tôi rất tốt.'},
+      {zh:'我很忙，也很累。',py:'Wǒ hěn máng, yě hěn lèi.',vn:'Tôi rất bận, cũng rất mệt.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
+      {frame:'你是不是＿＿？',frame_py:'Nǐ shìbushì ___?',vn:'Có phải bạn ＿＿ không?',options:['很忙','生病了','很累'],samples:['你是不是很忙？','你是不是生病了？','你是不是很累？']},
       {frame:'我每天＿＿点起床。',frame_py:'Wǒ měitiān ___ diǎn qǐchuáng.',vn:'Mỗi ngày tôi thức dậy lúc ＿＿ giờ.',options:['六','七','八'],samples:['我每天六点起床。','我每天七点起床。','我每天八点起床。']},
-      {frame:'我觉得有点儿＿＿。',frame_py:'Wǒ juéde yǒudiǎnr ___.',vn:'Tôi thấy hơi ＿＿.',options:['累','忙','不舒服'],samples:['我觉得有点儿累。','我觉得有点儿忙。','我觉得有点儿不舒服。']},
-      {frame:'他每天回来都很＿＿。',frame_py:'Tā měitiān huílái dōu hěn ___.',vn:'Mỗi ngày anh ấy về nhà đều rất ＿＿.',options:['累','忙','高兴'],samples:['他每天回来都很累。','他每天回来都很忙。','他每天回来都很高兴。']},
-      {frame:'你多＿＿？',frame_py:'Nǐ duō ___?',vn:'Bạn ＿＿ bao nhiêu?',options:['大','高'],samples:['你多大？','你多高？']},
+      {frame:'你多＿＿？',frame_py:'Nǐ duō ___?',vn:'Bạn ＿＿ bao nhiêu?',options:['高','大'],samples:['你多高？','你多大？']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🏃 Tình huống 1 — Hỏi thăm thói quen tập thể dục',
-       guide:'Bạn hỏi bạn mình có phải thích vận động không, và mỗi ngày thức dậy lúc mấy giờ.',
-       structure:['你是不是＿＿？','你每天＿＿点起床？'],
-       sample:'你是不是喜欢运动？你每天几点起床？',
-       sample_vn:'Bạn có phải thích vận động không? Mỗi ngày bạn thức dậy lúc mấy giờ?'},
-      {role:'🏥 Tình huống 2 — Hỏi thăm người vừa ốm dậy',
-       guide:'Bạn hỏi thăm bạn mình vừa ốm dậy: hỏi sức khỏe thế nào, và khi nào có thể xuất viện.',
-       structure:['现在身体＿＿？','什么时候能＿＿？'],
-       sample:'现在身体怎么样？什么时候能出院？',
-       sample_vn:'Bây giờ sức khỏe thế nào rồi? Khi nào thì có thể xuất viện?'},
-      {role:'👥 Tình huống 3 — Giới thiệu về bạn mình',
-       guide:'Bạn giới thiệu tuổi và chiều cao của một người bạn cho người khác nghe.',
-       structure:['他今年多＿＿？','他多＿＿？'],
-       sample:'他今年多大？他多高？他是我同学。',
-       sample_vn:'Năm nay anh ấy bao nhiêu tuổi? Anh ấy cao bao nhiêu? Anh ấy là bạn học của tôi.'},
+      {role:'🏥 Tình huống 1 — Hỏi thăm đồng nghiệp mới ốm dậy',
+       guide:'Đồng nghiệp bạn vừa nghỉ ốm, hôm nay đi làm lại. Bạn hỏi thăm sức khỏe của họ.',
+       structure:['你是不是生病了？现在身体怎么样？','吃药了，现在好多了。'],
+       sample:'你是不是生病了？现在身体怎么样？吃药了，现在好多了。',
+       sample_vn:'Có phải bạn bị ốm không? Bây giờ sức khỏe thế nào rồi? Uống thuốc rồi, bây giờ đỡ nhiều rồi.',
+       note:'是不是 là cách hỏi lịch sự, nhẹ nhàng hơn khi quan tâm đến ai đó, thay vì hỏi thẳng.'},
+      {role:'🙋 Tình huống 2 — Hỏi thông tin bạn mới quen',
+       guide:'Bạn hỏi một người bạn mới quen về chiều cao và tuổi của họ.',
+       structure:['你多高？你多大？'],
+       sample:'你多高？我一米七多。你多大？我20多岁。',
+       sample_vn:'Bạn cao bao nhiêu? Tôi hơn 1 mét 7. Bạn bao nhiêu tuổi? Tôi hơn 20 tuổi.',
+       note:'多 + Tính từ dùng để hỏi mức độ chưa biết; trả lời có thể dùng 多 (ôn Bài 1) để nói số ước lượng.'},
+      {role:'💼 Tình huống 3 — Giải thích vì sao dạo này bận rộn',
+       guide:'Bạn giải thích cho bạn bè vì sao dạo này mình bận và mệt, không có thời gian nghỉ ngơi.',
+       structure:['我每天都很忙，也很累。','为什么？','因为我没有时间休息。'],
+       sample:'我每天都很忙，也很累。为什么？因为我没有时间休息。',
+       sample_vn:'Ngày nào tôi cũng rất bận, cũng rất mệt. Tại sao vậy? Vì tôi không có thời gian nghỉ ngơi.',
+       note:'也 (ôn Bài 1) dùng để nối thêm một trạng thái tương tự — 很忙，也很累 = vừa bận vừa mệt.'},
     ],
   },
 };

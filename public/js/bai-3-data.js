@@ -247,89 +247,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — tập trung vào ngữ pháp + từ vựng trọng tâm
-const fillData = [
-  {pre:'这块手表不是我的，是我爸爸',blank:'的',post:'。',hint:'(trợ từ sở hữu)',ans:'的',exp:'A + 的 = của A; đây là danh từ hoá A + 的'},
-  {pre:'多少',blank:'钱',post:'买的？',hint:'(tiền)',ans:'钱',exp:'钱 = tiền; 多少钱 = bao nhiêu tiền'},
-  {pre:'这是今天早上的报纸',blank:'吗',post:'？',hint:'(trợ từ nghi vấn)',ans:'吗',exp:'吗 đặt cuối câu để tạo câu hỏi Có/Không'},
-  {pre:'你听，是不是',blank:'送',post:'报纸的来了？',hint:'(đưa, giao)',ans:'送',exp:'送 = đưa, giao, tặng'},
-  {pre:'我看',blank:'一下',post:'。不是，是送牛奶的。',hint:'(một chút — sau động từ)',ans:'一下',exp:'一下 sau động từ để giảm nhẹ hành động: xem thử một chút'},
-  {pre:'旁边那个小的房间是我',blank:'女儿',post:'的。',hint:'(con gái)',ans:'女儿',exp:'女儿 = con gái'},
-  {pre:'你女儿的房间',blank:'真',post:'漂亮！',hint:'(thật là — nhấn mạnh)',ans:'真',exp:'真 + tính từ nhấn mạnh cảm xúc/đánh giá thật sự'},
-  {pre:'粉色是我女儿最喜欢的',blank:'颜色',post:'。',hint:'(màu sắc)',ans:'颜色',exp:'颜色 = màu sắc'},
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
+const matchData = [
+  {left:'买',right:'手表'},
+  {left:'送',right:'牛奶'},
+  {left:'什么',right:'颜色'},
+  {left:'旁边',right:'房间'},
+  {left:'多少',right:'钱'},
+  {left:'真',right:'漂亮'},
 ];
 
-// Sắp xếp — dùng câu KHÁC với phần Điền từ/Trắc nghiệm để tránh trùng lặp
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: đi chợ mua đồng hồ, hỏi giá, hỏi màu.
+// Ôn lại 新/几/觉得 (Bài 1).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'我想买一块新手表，可是钱不够，只有几十块。',
+   questions:[
+     {q:'他想买什么？',opts:['手表','报纸','牛奶','衣服'],ans:0},
+     {q:'他钱够不够？',opts:['不够','够','很多','不知道'],ans:0},
+   ]},
+  {audio:'这份报纸不是我的，是邻居的。是今天送来的，不是昨天的。',
+   questions:[
+     {q:'这份报纸是谁的？',opts:['邻居的','我的','爸爸的','丈夫的'],ans:0},
+     {q:'报纸是什么时候送来的？',opts:['今天','昨天','明天','没有说'],ans:0},
+   ]},
+  {audio:'你看一下这个颜色，是不是很漂亮？我觉得这个颜色真好看。',
+   questions:[
+     {q:'说话人觉得这个颜色怎么样？',opts:['真好看','不好看','很贵','不知道'],ans:0},
+   ]},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở cửa hàng mua đồng hồ, hỏi màu
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你好，这块手表',blank:'多',post:'少钱？',hint:'(bao nhiêu — trong "多少")',ans:'多'},
+  {pre:'3000',blank:'多',post:'块，不贵。',hint:'(hơn — ôn Bài 1)',ans:'多'},
+  {pre:'这块手表真',blank:'漂亮',post:'！',hint:'(đẹp)',ans:'漂亮'},
+  {pre:'是啊，这是我',blank:'昨天',post:'买的。',hint:'(hôm qua)',ans:'昨天',exp:'的 sau động từ để danh hoá cả cụm "hành động + thời gian".'},
+  {pre:'这是谁',blank:'的',post:'房间？',hint:'(trợ từ sở hữu/danh hoá)',ans:'的',exp:'的 dùng để danh hoá: 谁的 = của ai.'},
+  {pre:'是我',blank:'丈夫',post:'的房间。',hint:'(chồng)',ans:'丈夫'},
+  {pre:'你',blank:'要',post:'看一下这个颜色。',hint:'(hãy — ôn Bài 1)',ans:'要'},
+  {pre:'我',blank:'觉得',post:'这个颜色很漂亮。',hint:'(cảm thấy — ôn Bài 1)',ans:'觉得'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 const sortData = [
   {words:['这','块','手表','是','谁','的','？'],ans:'这块手表是谁的？',audio:'这块手表是谁的？'},
-  {words:['我','看','一下','。'],ans:'我看一下。',audio:'我看一下。'},
-  {words:['是','送','牛奶','的','。'],ans:'是送牛奶的。',audio:'是送牛奶的。'},
-  {words:['这','不是','今天','的','报纸','。'],ans:'这不是今天的报纸。',audio:'这不是今天的报纸。'},
-  {words:['你','女儿','的','房间','真','漂亮','。'],ans:'你女儿的房间真漂亮。',audio:'你女儿的房间真漂亮。'},
-  {words:['粉色','是','我','女儿','最','喜欢','的','颜色','。'],ans:'粉色是我女儿最喜欢的颜色。',audio:'粉色是我女儿最喜欢的颜色。'},
+  {words:['我','昨天','买','了','一','块','新','手表','。'],ans:'我昨天买了一块新手表。',audio:'我昨天买了一块新手表。'},
+  {words:['你','看','一下','这个','颜色','。'],ans:'你看一下这个颜色。',audio:'你看一下这个颜色。'},
+  {words:['这个','房间','真','漂亮','。'],ans:'这个房间真漂亮。',audio:'这个房间真漂亮。'},
+  {words:['谁','送','来','了','牛奶','？'],ans:'谁送来了牛奶？',audio:'谁送来了牛奶？'},
+  {words:['我','觉得','这个','颜色','最','漂亮','。'],ans:'我觉得这个颜色最漂亮。',audio:'我觉得这个颜色最漂亮。'},
 ];
 
-// Nối câu — lấy nguyên văn hội thoại, khác nội dung Sắp xếp
-const matchData = [
-  {left:'这块手表不是我的，',right:'是我爸爸的。'},
-  {left:'多少钱',right:'买的？'},
-  {left:'你听，是不是',right:'送报纸的来了？'},
-  {left:'我看一下。不是，',right:'是送牛奶的。'},
-  {left:'旁边那个小的房间',right:'是我女儿的。'},
-  {left:'粉色是我女儿',right:'最喜欢的颜色。'},
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'这是手表谁的？',
+   opts:['这块手表是谁的？','这是谁手表的？','手表这是谁的？','这谁是手表的？'],ans:0,
+   exp:'Cấu trúc hỏi sở hữu: Danh từ + 是 + 谁 + 的？'},
+  {wrong:'我一下看。',
+   opts:['我看一下。','一下我看。','我一下看了。','看我一下。'],ans:0,
+   exp:'一下 luôn đứng NGAY SAU động từ, không đặt trước như "một chút" có thể đứng linh hoạt trong tiếng Việt.'},
+  {wrong:'漂亮真这个房间。',
+   opts:['这个房间真漂亮。','这个真房间漂亮。','真这个房间漂亮。','这个房间漂亮真。'],ans:0,
+   exp:'真 đứng NGAY TRƯỚC tính từ, không đặt sau như "đẹp thật" trong tiếng Việt.'},
+  {wrong:'这是我爸爸手表。',
+   opts:['这是我爸爸的手表。','这是我的爸爸手表。','这我爸爸是的手表。','这是的我爸爸手表。'],ans:0,
+   exp:'Khi nói "của ai", giữa danh từ sở hữu và vật phải có 的: 我爸爸的手表.'},
+  {wrong:'颜色什么这是？',
+   opts:['这是什么颜色？','什么这是颜色？','这什么是颜色？','是这什么颜色？'],ans:0,
+   exp:'什么 đứng NGAY TRƯỚC danh từ nó hỏi: 什么颜色, giống 什么时候, 什么运动.'},
 ];
 
-// Trắc nghiệm — không gắn nút nghe, câu hỏi đa dạng hoá ngữ cảnh so với Điền từ
-const mcData = [
-  {q:'这块手表是你的吗？不是我的，是我爸爸＿＿。',opts:['的','了','吗','呢'],ans:0},
-  {q:'这是今天早上的报纸＿＿？',opts:['吗','呢','吧','了'],ans:0},
-  {q:'你听，是不是送报纸＿＿来了？',opts:['的','了','着','过'],ans:0},
-  {q:'我看＿＿，不是送报纸的。',opts:['一下','一点儿','有点儿','真'],ans:0},
-  {q:'这是谁＿＿房间？',opts:['的','了','吗','呢'],ans:0},
-  {q:'旁边那个小的房间是我＿＿的。',opts:['女儿','丈夫','颜色','报纸'],ans:0},
-  {q:'你女儿的房间＿＿漂亮！',opts:['真','很','太','都'],ans:0},
-  {q:'粉色是我女儿最喜欢的＿＿。',opts:['颜色','手表','牛奶','报纸'],ans:0},
-  {q:'这块手表多少＿＿买的？',opts:['钱','块','个','元'],ans:0},
-  {q:'不是送报纸的，是送＿＿的。',opts:['牛奶','手表','颜色','丈夫'],ans:0},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'这块手表是你的吗？',py:'Zhè kuài shǒubiǎo shì nǐ de ma?',vn:'Chiếc đồng hồ này có phải của bạn không?'},
-      {zh:'多少钱买的？',py:'Duōshao qián mǎi de?',vn:'Mua hết bao nhiêu tiền thế?'},
-      {zh:'你女儿的房间真漂亮。',py:'Nǐ nǚ\'ér de fángjiān zhēn piàoliang.',vn:'Phòng con gái bạn thật đẹp.'},
-      {zh:'粉色是我女儿最喜欢的颜色。',py:'Fěnsè shì wǒ nǚ\'ér zuì xǐhuan de yánsè.',vn:'Màu hồng là màu con gái tôi thích nhất.'},
+      {zh:'这块手表是谁的？',py:'Zhè kuài shǒubiǎo shì shéi de?',vn:'Chiếc đồng hồ này là của ai?'},
+      {zh:'这块手表多少钱？',py:'Zhè kuài shǒubiǎo duōshao qián?',vn:'Chiếc đồng hồ này bao nhiêu tiền?'},
+      {zh:'这个房间真漂亮！',py:'Zhège fángjiān zhēn piàoliang!',vn:'Căn phòng này đẹp thật!'},
+      {zh:'我昨天买了一块新手表。',py:'Wǒ zuótiān mǎile yí kuài xīn shǒubiǎo.',vn:'Hôm qua tôi mua một chiếc đồng hồ mới.'},
+      {zh:'我觉得这个颜色最漂亮。',py:'Wǒ juéde zhège yánsè zuì piàoliang.',vn:'Tôi thấy màu này đẹp nhất.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'这个＿＿的是我的。',frame_py:'Zhège ___ de shì wǒ de.',vn:'Cái ＿＿ là của tôi.',options:['红色','蓝色','小'],samples:['这个红色的是我的。','这个蓝色的是我的。','这个小的是我的。']},
-      {frame:'这是我＿＿的。',frame_py:'Zhè shì wǒ ___ de.',vn:'Đây là của ＿＿ tôi.',options:['爸爸','女儿','丈夫'],samples:['这是我爸爸的。','这是我女儿的。','这是我丈夫的。']},
-      {frame:'你的房间真＿＿！',frame_py:'Nǐ de fángjiān zhēn ___!',vn:'Phòng của bạn thật ＿＿!',options:['漂亮','大','干净'],samples:['你的房间真漂亮！','你的房间真大！','你的房间真干净！']},
-      {frame:'我＿＿一下。',frame_py:'Wǒ ___ yíxià.',vn:'Để tôi ＿＿ một chút.',options:['看','听','想'],samples:['我看一下。','我听一下。','我想一下。']},
+      {frame:'这是谁的＿＿？',frame_py:'Zhè shì shéi de ___?',vn:'Đây là ＿＿ của ai?',options:['手表','房间','报纸'],samples:['这是谁的手表？','这是谁的房间？','这是谁的报纸？']},
+      {frame:'这个＿＿真漂亮！',frame_py:'Zhège ___ zhēn piàoliang!',vn:'＿＿ này đẹp thật!',options:['房间','颜色','手表'],samples:['这个房间真漂亮！','这个颜色真漂亮！','这个手表真漂亮！']},
+      {frame:'我＿＿买了新手表。',frame_py:'Wǒ ___ mǎile xīn shǒubiǎo.',vn:'＿＿ tôi mua đồng hồ mới.',options:['昨天','今天'],samples:['我昨天买了新手表。','我今天买了新手表。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'⌚ Tình huống 1 — Hỏi về đồ vật của ai',
-       guide:'Bạn thấy một chiếc đồng hồ lạ trong phòng, hỏi xem của ai và mua hết bao nhiêu tiền.',
-       structure:['这是谁的＿＿？','＿＿钱买的？'],
-       sample:'这是谁的手表？多少钱买的？',
-       sample_vn:'Đây là đồng hồ của ai? Mua hết bao nhiêu tiền?'},
-      {role:'🚪 Tình huống 2 — Giới thiệu các phòng trong nhà',
-       guide:'Bạn dẫn khách đi xem nhà, giới thiệu phòng nào là của ai.',
-       structure:['这是我和＿＿的房间。','旁边那个是＿＿的。'],
-       sample:'这是我和我丈夫的房间。旁边那个是我女儿的。',
-       sample_vn:'Đây là phòng của tôi và chồng tôi. Căn bên cạnh là của con gái tôi.'},
-      {role:'🎨 Tình huống 3 — Khen phòng và hỏi sở thích màu sắc',
-       guide:'Bạn khen căn phòng đẹp, rồi hỏi màu yêu thích của chủ nhà là gì.',
-       structure:['你的房间真＿＿！','你最喜欢的颜色是＿＿？'],
-       sample:'你的房间真漂亮！你最喜欢的颜色是什么？',
-       sample_vn:'Phòng của bạn thật đẹp! Màu bạn thích nhất là màu gì?'},
+      {role:'🏪 Tình huống 1 — Hỏi giá ở cửa hàng đồng hồ',
+       guide:'Bạn vào cửa hàng, hỏi giá một chiếc đồng hồ mới và nhận xét về giá.',
+       structure:['这块手表多少钱？','3000＿＿块，不贵。'],
+       sample:'这块手表多少钱？3000多块，不贵。',
+       sample_vn:'Chiếc đồng hồ này bao nhiêu tiền? Hơn 3000 tệ, không đắt.',
+       note:'多 (ôn Bài 1) đứng sau số đếm lớn hơn 10 để nói số ước lượng: 3000多.'},
+      {role:'🎨 Tình huống 2 — Hỏi ý kiến bạn về màu sắc đồ mới mua',
+       guide:'Bạn vừa mua một món đồ mới, hỏi bạn mình xem màu này có đẹp không.',
+       structure:['你看一下这个颜色，漂亮吗？','我觉得这个颜色真漂亮。'],
+       sample:'你看一下这个颜色，漂亮吗？我觉得这个颜色真漂亮。',
+       sample_vn:'Bạn xem thử màu này đi, có đẹp không? Tôi thấy màu này đẹp thật.',
+       note:'真 + Tính từ dùng để khen ngợi với cảm xúc chân thật, mạnh hơn 很.'},
+      {role:'🚪 Tình huống 3 — Giới thiệu phòng trong nhà cho khách',
+       guide:'Bạn dẫn khách đi xem nhà và giới thiệu phòng của ai ở đâu.',
+       structure:['这是谁的房间？','这是我＿＿的房间，旁边是＿＿的。'],
+       sample:'这是谁的房间？这是我丈夫的房间，旁边是我的。',
+       sample_vn:'Đây là phòng của ai? Đây là phòng của chồng tôi, bên cạnh là của tôi.',
+       note:'的 dùng để danh hoá — 我丈夫的 nghĩa là "cái của chồng tôi", không cần lặp lại danh từ.'},
     ],
   },
 };

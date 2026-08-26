@@ -31,11 +31,13 @@
   <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
   <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
   <button class="tab-btn" data-action="show-tab" data-tab="dialog">💬 Hội thoại</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="fill">✏️ Điền từ</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="sort">🧩 Sắp xếp</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="match">🔗 Nối câu</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="mc">🎯 Trắc nghiệm</button>
-  <button class="tab-btn" data-action="show-tab" data-tab="speak">🗣️ Luyện nói</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="match">1️⃣ Ghép từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="listen">2️⃣ Nghe</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="fill">3️⃣ Điền từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="sort">3️⃣ Sắp xếp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="errfix">3️⃣ Sửa lỗi</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="speak">4️⃣ Luyện nói</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="tongket">5️⃣ Tổng kết</button>
 </nav>
 
 <div class="main">
@@ -176,9 +178,34 @@
 </div>
 
 <!-- ĐIỀN TỪ -->
+<div id="match" class="section">
+  <div class="sec-head">
+    <div class="sec-title">1️⃣ Ghép từ <span class="sec-badge">搭配</span></div>
+    <div class="sec-sub">Bấm 1 ô <strong style="color:var(--sky)">bên trái</strong> → bấm ô <strong style="color:var(--teal)">bên phải</strong> để ghép thành cụm từ đúng (Động từ/Phó từ + Tân ngữ/Tính từ)</div>
+  </div>
+  <div class="m-fb" id="m-fb"></div>
+  <div class="match-grid">
+    <div><div class="mcol-title">Từ 1</div><div id="m-left"></div></div>
+    <div><div class="mcol-title">Từ 2</div><div id="m-right"></div></div>
+  </div>
+  <div class="btn-row"><button class="btn-s" data-action="reset-match">Làm lại</button></div>
+</div>
+
+<div id="listen" class="section">
+  <div class="sec-head">
+    <div class="sec-title">2️⃣ Nghe hiểu <span class="sec-badge">听力</span></div>
+    <div class="sec-sub">Nhấn 🔊 nghe đoạn hội thoại/câu (tình huống mới), rồi trả lời câu hỏi bên dưới</div>
+  </div>
+  <div id="listen-wrap"></div>
+  <div class="score-box" id="listen-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="listen-sn"></div></div>
+    <div class="score-m" id="listen-sm"></div>
+  </div>
+</div>
+
 <div id="fill" class="section">
   <div class="sec-head">
-    <div class="sec-title">✏️ Điền vào chỗ trống</div>
+    <div class="sec-title">3️⃣ Điền vào chỗ trống</div>
     <div class="sec-sub">Điền từ/cụm từ thích hợp để hoàn thành câu</div>
   </div>
   <div class="prog-bar"><div class="prog-fill" id="fill-prog" style="width:0%"></div></div>
@@ -193,10 +220,9 @@
   </div>
 </div>
 
-<!-- SẮP XẾP -->
 <div id="sort" class="section">
   <div class="sec-head">
-    <div class="sec-title">🧩 Sắp xếp thành câu</div>
+    <div class="sec-title">3️⃣ Sắp xếp thành câu</div>
     <div class="sec-sub">Nhấn 🔊 để nghe câu, rồi bấm các từ theo đúng thứ tự — <strong style="color:var(--warm)">nhớ đặt cả dấu câu (。／？／！)</strong> vào cuối · Bấm từ đã đặt để xóa</div>
   </div>
   <div id="sort-list"></div>
@@ -210,38 +236,23 @@
   </div>
 </div>
 
-<!-- NỐI CÂU -->
-<div id="match" class="section">
+<div id="errfix" class="section">
   <div class="sec-head">
-    <div class="sec-title">🔗 Nối câu</div>
-    <div class="sec-sub">Bấm 1 ô <strong style="color:var(--sky)">vế đầu</strong> bên trái → bấm ô <strong style="color:var(--teal)">vế sau</strong> bên phải để ghép thành câu hoàn chỉnh</div>
+    <div class="sec-title">3️⃣ Sửa lỗi sai <span class="sec-badge">改错</span></div>
+    <div class="sec-sub">Mỗi câu bên dưới đang SAI ngữ pháp — đây là lỗi mà học sinh Việt Nam rất hay mắc phải. Chọn câu SỬA ĐÚNG.</div>
   </div>
-  <div class="m-fb" id="m-fb"></div>
-  <div class="match-grid">
-    <div><div class="mcol-title">Vế đầu</div><div id="m-left"></div></div>
-    <div><div class="mcol-title">Vế sau</div><div id="m-right"></div></div>
+  <div id="errfix-list"></div>
+  <div class="score-box" id="errfix-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="errfix-sn"></div></div>
+    <div class="score-m" id="errfix-sm"></div>
   </div>
-  <div class="btn-row"><button class="btn-s" data-action="reset-match">Làm lại</button></div>
 </div>
 
-<!-- TRẮC NGHIỆM -->
-<div id="mc" class="section">
-  <div class="sec-head">
-    <div class="sec-title">🎯 Trắc nghiệm</div>
-    <div class="sec-sub">Chọn đáp án đúng nhất — kết quả hiện ngay</div>
-  </div>
-  <div class="prog-bar"><div class="prog-fill" id="mc-prog" style="width:0%"></div></div>
-  <div id="mc-list"></div>
-  <div class="score-box" id="mc-score">
-    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="mc-sn"></div></div>
-    <div class="score-m" id="mc-sm"></div>
-  </div>
-</div>
 
 <!-- LUYỆN NÓI -->
 <div id="speak" class="section">
   <div class="sec-head">
-    <div class="sec-title">🗣️ Luyện nói theo 3 tầng</div>
+    <div class="sec-title">4️⃣ Luyện nói theo 3 tầng</div>
     <div class="sec-sub">Luyện theo thứ tự: <strong style="color:var(--sky)">Tầng 1 mô phỏng</strong> → <strong style="color:var(--gold)">Tầng 2 có hướng dẫn</strong> → <strong style="color:var(--teal)">Tầng 3 nói tự do</strong>. Không nhảy thẳng vào tầng 3.</div>
   </div>
   <div class="speak-tabs">
@@ -250,6 +261,14 @@
     <button class="speak-tb" data-action="show-speak" data-tier="3">③ Nói tự do</button>
   </div>
   <div id="speak-wrap"></div>
+</div>
+
+<div id="tongket" class="section">
+  <div class="sec-head">
+    <div class="sec-title">5️⃣ Tổng kết bài học <span class="sec-badge">总结</span></div>
+    <div class="sec-sub">Điểm tổng hợp từ 4 phần bài tập bên trên — hoàn thành hết rồi quay lại đây để xem điểm chính xác nhất!</div>
+  </div>
+  <div id="summary-wrap"></div>
 </div>
 
 </div><!-- /main -->

@@ -188,88 +188,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — cả 3 điểm ngữ pháp (着/不是…吗/往), có ôn 到 (Bài 7)
-const fillData = [
-  {pre:'门开',blank:'着',post:'呢，请进。',hint:'(trợ từ động thái)',ans:'着',exp:'Động từ + 着 = trạng thái đang được duy trì'},
-  {pre:'手里',blank:'拿',post:'着铅笔的那个人。',hint:'(cầm)',ans:'拿'},
-  {pre:'就是我们班那个',blank:'长',post:'着两个大眼睛的女孩。',hint:'(mọc, có đặc điểm)',ans:'长'},
-  {pre:'她',blank:'不是',post:'有男朋友吗？',hint:'(chẳng phải... sao?)',ans:'不是',exp:'不是……吗？dùng nhắc lại thông tin, tỏ ý ngạc nhiên'},
-  {pre:'从这一直',blank:'往',post:'前走。',hint:'(hướng về phía)',ans:'往',exp:'往 + hướng = đi về phía nào đó'},
-  {pre:'到了前面的路',blank:'口',post:'再往右走。',hint:'(ghép thành 路口 - ngã tư)',ans:'口'},
-  {pre:'她非常爱',blank:'笑',post:'。',hint:'(cười)',ans:'笑'},
-  {pre:'走路二十分钟就',blank:'到',post:'了。',hint:'(đến — ôn từ Bài 7)',ans:'到'},
-];
-
-// Sắp xếp — khác Điền từ
-const sortData = [
-  {words:['请问','张','先生','在','吗','？'],ans:'请问张先生在吗？',audio:'请问张先生在吗？'},
-  {words:['那个','手里','拿着','铅笔','的','呢','？'],ans:'那个手里拿着铅笔的呢？',audio:'那个手里拿着铅笔的呢？'},
-  {words:['她','不是','有','男朋友','吗','？'],ans:'她不是有男朋友吗？',audio:'她不是有男朋友吗？'},
-  {words:['不','远','，','走路','二十','分钟','就','到','。'],ans:'不远，走路二十分钟就到。',audio:'不远，走路二十分钟就到。'},
-  {words:['你','能','告诉','我','怎么','走','吗','？'],ans:'你能告诉我怎么走吗？',audio:'你能告诉我怎么走吗？'},
-  {words:['她','姓','杨','，','叫','杨','笑笑','。'],ans:'她姓杨，叫杨笑笑。',audio:'她姓杨，叫杨笑笑。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'门开着呢，',right:'请进。'},
-  {left:'请问张先生在吗？',right:'他出去了，你下午再来吧。'},
-  {left:'那个正在说话的女孩子是谁？',right:'她姓杨，叫杨笑笑。'},
-  {left:'听说你有女朋友了？',right:'就是我们班那个爱笑的女孩。'},
-  {left:'请问这离新宾馆远吗？',right:'不远，走路二十分钟就到。'},
-  {left:'你能告诉我怎么走吗？',right:'从这一直往前走。'},
+  {left:'拿',right:'铅笔'},
+  {left:'一直',right:'走'},
+  {left:'往',right:'前'},
+  {left:'路',right:'口'},
+  {left:'长',right:'眼睛'},
+  {left:'爱',right:'笑'},
 ];
 
-// Trắc nghiệm — không audio; trộn từ Bài 9/10/11/12 làm phương án nhiễu
-const mcData = [
-  {q:'门开＿＿呢，请进。',opts:['着','了','过','的'],ans:0},
-  {q:'手里＿＿着铅笔。',opts:['拿','穿','洗','进'],ans:0},
-  {q:'她＿＿有男朋友吗？',opts:['不是','不','没','别'],ans:0},
-  {q:'从这一直＿＿前走。',opts:['往','从','离','对'],ans:0},
-  {q:'到了前面的路＿＿再往右走。',opts:['口','边','上','里'],ans:0},
-  {q:'她非常爱＿＿。',opts:['笑','哭','唱歌','跳舞'],ans:0},
-  {q:'走路二十分钟就＿＿了。',opts:['到','进','近','远'],ans:0},
-  {q:'那个＿＿两个大眼睛的女孩。',opts:['长','穿','姓','拿'],ans:0},
-  {q:'请问这离新＿＿远吗？',opts:['宾馆','公司','房间','学校'],ans:0},
-  {q:'我们＿＿有很多学生。',opts:['班','课','题','问题'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: đón bạn ở sân bay.
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'我在机场门口等你，我手里拿着一本红色的书，你一看就能认出我。',
+   questions:[
+     {q:'他在哪儿等？',opts:['机场门口','宾馆里','路口','班里'],ans:0},
+     {q:'他手里拿着什么？',opts:['一本红色的书','铅笔','手机','报纸'],ans:0},
+   ]},
+  {audio:'那个长着两个大眼睛、一直在笑的女孩不是你妹妹吗？',
+   questions:[
+     {q:'那个女孩子长什么样？',opts:['长着大眼睛、一直在笑','很矮','戴眼镜','不知道'],ans:0},
+     {q:'说话人怎么问？',opts:['不是你妹妹吗','是你妹妹','不认识她','是新同事'],ans:0},
+   ]},
+  {audio:'从机场出来一直往前走，到了路口往右走，就是宾馆了。',
+   questions:[
+     {q:'从机场出来先怎么走？',opts:['一直往前走','往左走','往右走','坐车走'],ans:0},
+     {q:'到了路口怎么走？',opts:['往右走','往左走','一直走','往后走'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: đón bạn ở sân bay
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'我在机场门口等你，手里拿',blank:'着',post:'一本红色的书。',hint:'(trợ từ động thái)',ans:'着',exp:'Động từ + 着 = trạng thái đang được duy trì.'},
+  {pre:'好的，手里',blank:'拿',post:'着书的就是你吧？',hint:'(cầm)',ans:'拿'},
+  {pre:'对，你怎么一下就认出我了？因为你',blank:'一直',post:'在笑啊！',hint:'(luôn, cứ)',ans:'一直'},
+  {pre:'她',blank:'不是',post:'你妹妹吗？怎么变化这么大！',hint:'(chẳng phải... sao?)',ans:'不是',exp:'不是……吗？dùng để xác nhận lại, tỏ ý ngạc nhiên.'},
+  {pre:'是啊，她',blank:'长',post:'高了很多。',hint:'(lớn lên, cao lên)',ans:'长'},
+  {pre:'我们从这儿一直',blank:'往',post:'前走吧。',hint:'(hướng về phía)',ans:'往'},
+  {pre:'到了前面的路',blank:'口',post:'，宾馆就在那儿。',hint:'(ghép 路口 – ngã tư)',ans:'口'},
+  {pre:'',blank:'宾馆',post:'离机场不远，走十分钟就到。',hint:'(khách sạn)',ans:'宾馆'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['我','手里','拿着','一','本','书','。'],ans:'我手里拿着一本书。',audio:'我手里拿着一本书。'},
+  {words:['她','不是','你','妹妹','吗','？'],ans:'她不是你妹妹吗？',audio:'她不是你妹妹吗？'},
+  {words:['从','这儿','一直','往','前','走','。'],ans:'从这儿一直往前走。',audio:'从这儿一直往前走。'},
+  {words:['到','了','路口','往','右','走','。'],ans:'到了路口往右走。',audio:'到了路口往右走。'},
+  {words:['那个','女孩子','一直','在','笑','。'],ans:'那个女孩子一直在笑。',audio:'那个女孩子一直在笑。'},
+  {words:['宾馆','离','机场','不','远','。'],ans:'宾馆离机场不远。',audio:'宾馆离机场不远。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'门着开呢。',
+   opts:['门开着呢。','门着开呢。','门开呢着。','着门开呢。'],ans:0,
+   exp:'着 luôn đứng NGAY SAU động từ (开着), không đặt trước động từ.'},
+  {wrong:'她手里着拿书。',
+   opts:['她手里拿着书。','她手里着拿书。','她手里书拿着。','着她手里拿书。'],ans:0,
+   exp:'着 gắn liền ngay sau động từ chính (拿着), rồi mới đến tân ngữ (书).'},
+  {wrong:'她是不有男朋友吗？',
+   opts:['她不是有男朋友吗？','她是不有男朋友吗？','她有不是男朋友吗？','她男朋友不是有吗？'],ans:0,
+   exp:'Cấu trúc đúng là 不是 (đi liền nhau) + Động từ/Tính từ + 吗？, không tách rời 不 và 是.'},
+  {wrong:'她有男朋友不是吗？',
+   opts:['她不是有男朋友吗？','她有男朋友不是吗？','她不有是男朋友吗？','有她不是男朋友吗？'],ans:0,
+   exp:'不是 phải đứng Ở ĐẦU phần khẳng định (trước động từ 有), không đặt ở cuối câu.'},
+  {wrong:'一直前往走。',
+   opts:['一直往前走。','一直前往走。','往一直前走。','前一直往走。'],ans:0,
+   exp:'Trật tự chuẩn: 一直 + 往 + Hướng (前/左/右) + 走, 往 phải đứng ngay trước từ chỉ hướng.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'门开着呢，请进。',py:'Mén kāizhe ne, qǐng jìn.',vn:'Cửa đang mở đấy, mời vào.'},
-      {zh:'那个手里拿着铅笔的呢？',py:'Nàge shǒu lǐ názhe qiānbǐ de ne?',vn:'Thế còn người tay cầm bút chì đằng kia thì sao?'},
-      {zh:'她不是有男朋友吗？',py:'Tā bú shì yǒu nánpéngyou ma?',vn:'Cô ấy không phải là có bạn trai rồi sao?'},
-      {zh:'从这一直往前走，到了前面的路口再往右走。',py:'Cóng zhè yìzhí wǎng qián zǒu, dàole qiánmiàn de lùkǒu zài wǎng yòu zǒu.',vn:'Từ đây đi thẳng về phía trước, đến ngã tư phía trước thì rẽ phải.'},
+      {zh:'我手里拿着一本红色的书，你一看就能认出我。',py:'Wǒ shǒu lǐ názhe yì běn hóngsè de shū, nǐ yí kàn jiù néng rènchū wǒ.',vn:'Tay tôi cầm một quyển sách màu đỏ, bạn nhìn là nhận ra tôi ngay.'},
+      {zh:'她不是你妹妹吗？',py:'Tā bú shì nǐ mèimei ma?',vn:'Cô ấy không phải em gái bạn à?'},
+      {zh:'从这儿一直往前走。',py:'Cóng zhèr yìzhí wǎng qián zǒu.',vn:'Từ đây đi thẳng về phía trước.'},
+      {zh:'到了路口往右走。',py:'Dàole lùkǒu wǎng yòu zǒu.',vn:'Đến ngã tư thì rẽ phải.'},
+      {zh:'宾馆离机场不远。',py:'Bīnguǎn lí jīchǎng bù yuǎn.',vn:'Khách sạn cách sân bay không xa.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'那个手里拿着＿＿的人。',frame_py:'Nàge shǒu lǐ názhe ___ de rén.',vn:'Người tay đang cầm ＿＿ kia.',options:['铅笔','报纸','手机'],samples:['那个手里拿着铅笔的人。','那个手里拿着报纸的人。','那个手里拿着手机的人。']},
-      {frame:'她不是有＿＿吗？',frame_py:'Tā bú shì yǒu ___ ma?',vn:'Cô ấy không phải có ＿＿ rồi sao?',options:['男朋友','女朋友','工作'],samples:['她不是有男朋友吗？','她不是有女朋友吗？','她不是有工作吗？']},
-      {frame:'从这一直往＿＿走。',frame_py:'Cóng zhè yìzhí wǎng ___ zǒu.',vn:'Từ đây đi thẳng về hướng ＿＿.',options:['前','左','右'],samples:['从这一直往前走。','从这一直往左走。','从这一直往右走。']},
-      {frame:'到了路口再往＿＿走。',frame_py:'Dàole lùkǒu zài wǎng ___ zǒu.',vn:'Đến ngã tư thì rẽ ＿＿.',options:['右','左','前'],samples:['到了路口再往右走。','到了路口再往左走。','到了路口再往前走。']},
+      {frame:'我手里拿着＿＿。',frame_py:'Wǒ shǒu lǐ názhe ___.',vn:'Tay tôi đang cầm ＿＿.',options:['一本书','铅笔','手机'],samples:['我手里拿着一本书。','我手里拿着铅笔。','我手里拿着手机。']},
+      {frame:'从这儿一直往＿＿走。',frame_py:'Cóng zhèr yìzhí wǎng ___ zǒu.',vn:'Từ đây đi thẳng về hướng ＿＿.',options:['前','左','右'],samples:['从这儿一直往前走。','从这儿一直往左走。','从这儿一直往右走。']},
+      {frame:'她不是＿＿吗？',frame_py:'Tā bú shì ___ ma?',vn:'Cô ấy không phải ＿＿ à?',options:['你妹妹','你同学','新同事'],samples:['她不是你妹妹吗？','她不是你同学吗？','她不是新同事吗？']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🏢 Tình huống 1 — Tìm người trong văn phòng',
-       guide:'Bạn đến văn phòng tìm một người nhưng người đó vừa ra ngoài.',
-       structure:['请问＿＿在吗？','他出去了，你＿＿再来吧。'],
-       sample:'请问张先生在吗？他出去了，你下午再来吧。',
-       sample_vn:'Xin hỏi có ông Trương ở đây không? Anh ấy ra ngoài rồi, chiều bạn quay lại nhé.'},
-      {role:'👀 Tình huống 2 — Miêu tả ngoại hình bạn bè',
-       guide:'Bạn miêu tả một người bạn cùng lớp cho ai đó nghe qua ngoại hình.',
-       structure:['就是我们班那个＿＿的人。'],
-       sample:'就是我们班那个长着两个大眼睛、非常爱笑的女孩。',
-       sample_vn:'Chính là cô gái có đôi mắt to, rất hay cười ở lớp chúng mình.'},
-      {role:'🗺️ Tình huống 3 — Chỉ đường cho người lạ',
-       guide:'Có người hỏi đường đến khách sạn, bạn hãy chỉ đường cho họ.',
-       structure:['请问这离＿＿远吗？','从这一直往前走，到了路口再往＿＿走。'],
-       sample:'请问这离新宾馆远吗？从这一直往前走，到了路口再往右走。',
-       sample_vn:'Xin hỏi ở đây cách khách sạn mới có xa không? Từ đây đi thẳng, đến ngã tư thì rẽ phải.'},
+      {role:'✈️ Tình huống 1 — Hẹn giờ và mô tả bản thân để bạn nhận ra ở sân bay',
+       guide:'Bạn nhắn cho bạn mình biết mình sẽ đứng đợi ở đâu và tay đang cầm gì để dễ nhận ra.',
+       structure:['我在机场门口等你，','我手里拿着＿＿。'],
+       sample:'我在机场门口等你，我手里拿着一本红色的书。',
+       sample_vn:'Tôi đợi bạn ở cửa sân bay, tay tôi cầm một quyển sách màu đỏ.',
+       note:'着 dùng để miêu tả trạng thái đang duy trì (tay đang cầm gì đó).'},
+      {role:'❓ Tình huống 2 — Ngạc nhiên khi gặp lại người quen',
+       guide:'Bạn bất ngờ khi thấy một người quen đã thay đổi rất nhiều, hỏi lại để xác nhận.',
+       structure:['她不是＿＿吗？','怎么变化这么大！'],
+       sample:'她不是你妹妹吗？怎么变化这么大！',
+       sample_vn:'Cô ấy không phải em gái bạn à? Sao thay đổi nhiều thế!',
+       note:'不是……吗？dùng để xác nhận lại thông tin, tỏ ý ngạc nhiên.'},
+      {role:'🗺️ Tình huống 3 — Chỉ đường từ sân bay đến khách sạn',
+       guide:'Bạn chỉ đường cho một người từ sân bay đi bộ đến khách sạn.',
+       structure:['从这儿一直往前走，','到了路口往＿＿走，宾馆就在那儿。'],
+       sample:'从这儿一直往前走，到了路口往右走，宾馆就在那儿。',
+       sample_vn:'Từ đây đi thẳng về phía trước, đến ngã tư thì rẽ phải, khách sạn ở đó.',
+       note:'往 + hướng + 走 dùng để chỉ đường từng chặng một.'},
     ],
   },
 };

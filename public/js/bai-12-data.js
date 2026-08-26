@@ -151,88 +151,130 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — giảm lặp: chỉ 3/8 câu blank là 得 (đúng trọng tâm ngữ pháp), còn lại đa dạng từ vựng
-const fillData = [
-  {pre:'你吃',blank:'得',post:'太少了。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得',exp:'Động từ + 得 + Tính từ = miêu tả mức độ/kết quả hành động'},
-  {pre:'我妻子比我做',blank:'得',post:'好。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得'},
-  {pre:'有',blank:'零',post:'下十度吧。',hint:'(số 0)',ans:'零'},
-  {pre:'你',blank:'穿',post:'得太少了，我们进房间吧。',hint:'(mặc)',ans:'穿'},
-  {pre:'我',blank:'弟弟',post:'让我帮他找个房子。',hint:'(em trai)',ans:'弟弟'},
-  {pre:'他也希望能住得',blank:'近',post:'一点儿。',hint:'(gần)',ans:'近'},
-  {pre:'你比我早起一个小时，你睡',blank:'得',post:'也早。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得'},
-  {pre:'我们',blank:'进',post:'房间吧。',hint:'(vào)',ans:'进'},
-];
-
-// Sắp xếp — khác hẳn Điền từ
-const sortData = [
-  {words:['我','每天','晚上','十','点','就','睡觉','。'],ans:'我每天晚上十点就睡觉。',audio:'我每天晚上十点就睡觉。'},
-  {words:['再','来','点儿','米饭','吧','。'],ans:'再来点儿米饭吧。',audio:'再来点儿米饭吧。'},
-  {words:['你','穿','得','太','少','了','。'],ans:'你穿得太少了。',audio:'你穿得太少了。'},
-  {words:['我','弟弟','让','我','帮','他','找','房子','。'],ans:'我弟弟让我帮他找房子。',audio:'我弟弟让我帮他找房子。'},
-  {words:['他','希望','能','住','得','近','一点儿','。'],ans:'他希望能住得近一点儿。',audio:'他希望能住得近一点儿。'},
-  {words:['今天','真','冷','。'],ans:'今天真冷。',audio:'今天真冷。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'你每天早上几点起床？',right:'六点多。'},
-  {left:'你吃得太少了，',right:'再来点儿米饭吧。'},
-  {left:'你做饭做得怎么样？',right:'我妻子比我做得好。'},
-  {left:'今天真冷，',right:'有零下十度吧。'},
-  {left:'你穿得太少了，',right:'我们进房间吧。'},
-  {left:'你在忙什么呢？',right:'我弟弟让我帮他找个房子。'},
+  {left:'穿',right:'衣服'},
+  {left:'进',right:'房间'},
+  {left:'下',right:'雪'},
+  {left:'零',right:'下'},
+  {left:'近',right:'一点儿'},
+  {left:'得',right:'很好'},
 ];
 
-// Trắc nghiệm — không audio; trộn từ Bài 2/7 (远/慢) làm phương án nhiễu
-const mcData = [
-  {q:'你吃＿＿太少了。',opts:['得','了','过','着'],ans:0},
-  {q:'我妻子比我做＿＿好。',opts:['得','了','过','的'],ans:0},
-  {q:'有＿＿下十度吧。',opts:['零','一','两','三'],ans:0},
-  {q:'你＿＿得太少了。',opts:['穿','吃','喝','做'],ans:0},
-  {q:'我们＿＿房间吧。',opts:['进','出','回','到'],ans:0},
-  {q:'他希望能住得＿＿一点儿。',opts:['近','远','快','慢'],ans:0},
-  {q:'我＿＿让我帮他找房子。',opts:['弟弟','哥哥','姐姐','女儿'],ans:0},
-  {q:'你比我早起一个＿＿。',opts:['小时','时间','以后','已经'],ans:0},
-  {q:'他起＿＿不早。',opts:['得','了','过','着'],ans:0},
-  {q:'我睡＿＿也早。',opts:['得','了','过','着'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: giải chạy marathon mùa đông.
+// Ôn lại 已经(Bài 4/9/10), 一下(Bài 3), 远(Bài 7).
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'今天零下五度，可是弟弟穿得不多，他说跑步的时候不冷。',
+   questions:[
+     {q:'今天多少度？',opts:['零下五度','零下十度','五度','十度'],ans:0},
+     {q:'弟弟穿得怎么样？',opts:['不多','很多','正好','不知道'],ans:0},
+   ]},
+  {audio:'妻子跑得比我快，她已经进终点了，我还在后面。',
+   questions:[
+     {q:'谁跑得快？',opts:['妻子','我','弟弟','教练'],ans:0},
+     {q:'妻子怎么样了？',opts:['已经进终点了','还没开始跑','正在准备','不知道'],ans:0},
+   ]},
+  {audio:'比赛结束后，我们进屋休息，屋子里比外面暖和，离家也不远，走一下就到了。',
+   questions:[
+     {q:'比赛结束后大家做什么？',opts:['进屋休息','继续跑步','马上回家','出去吃饭'],ans:0},
+     {q:'屋子离家怎么样？',opts:['不远','很远','要开车才到','不知道'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ngày chạy marathon mùa đông
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'今天是',blank:'零',post:'下五度，很冷。',hint:'(số 0, âm)',ans:'零'},
+  {pre:'弟弟',blank:'穿',post:'得不多，我让他多穿点儿。',hint:'(mặc)',ans:'穿'},
+  {pre:'他跑步的时候穿',blank:'得',post:'不多，说这样才舒服。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得',exp:'Động từ + 得 + Tính từ = miêu tả mức độ/trạng thái của hành động.'},
+  {pre:'妻子跑',blank:'得',post:'比我快多了。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得',exp:'Khi kết hợp so sánh: Động từ + 得 + 比 + B + Tính từ.'},
+  {pre:'她已经',blank:'进',post:'终点了，我还在后面。',hint:'(vào, tiến vào)',ans:'进'},
+  {pre:'屋子里比外面暖和，离家也',blank:'近',post:'，走一下就到了。',hint:'(gần)',ans:'近'},
+  {pre:'',blank:'弟弟',post:'说明年还要参加马拉松比赛。',hint:'(em trai)',ans:'弟弟'},
+  {pre:'',blank:'妻子',post:'在终点等我们，还给我们拍照了。',hint:'(vợ)',ans:'妻子'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['现在','是','零','下','十','度','。'],ans:'现在是零下十度。',audio:'现在是零下十度。'},
+  {words:['弟弟','穿','得','太','少','了','。'],ans:'弟弟穿得太少了。',audio:'弟弟穿得太少了。'},
+  {words:['妻子','跑','得','比','我','快','。'],ans:'妻子跑得比我快。',audio:'妻子跑得比我快。'},
+  {words:['大家','都','进','屋','休息','了','。'],ans:'大家都进屋休息了。',audio:'大家都进屋休息了。'},
+  {words:['我家','离','公司','很','近','。'],ans:'我家离公司很近。',audio:'我家离公司很近。'},
+  {words:['外面','下雪','了','，','真','冷','啊','。'],ans:'外面下雪了，真冷啊。',audio:'外面下雪了，真冷啊。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'他跑很快得。',
+   opts:['他跑得很快。','他跑很快得。','他得跑很快。','很快他跑得。'],ans:0,
+   exp:'得 phải đứng NGAY SAU động từ, rồi mới đến phần miêu tả mức độ/trạng thái: Động từ + 得 + Tính từ.'},
+  {wrong:'弟弟穿不得多。',
+   opts:['弟弟穿得不多。','弟弟穿不得多。','弟弟不穿得多。','弟弟穿多得不。'],ans:0,
+   exp:'Phủ định (不) đứng SAU 得, không chen vào giữa động từ và 得: Động từ + 得 + 不 + Tính từ.'},
+  {wrong:'她跑得我比快。',
+   opts:['她跑得比我快。','她跑得我比快。','她比我快跑得。','跑得她比我快。'],ans:0,
+   exp:'Khi kết hợp so sánh với bổ ngữ trạng thái, 比 + đối tượng đứng NGAY SAU 得, trước tính từ: Động từ + 得 + 比 + B + Tính từ.'},
+  {wrong:'我们屋子进休息了。',
+   opts:['我们进屋休息了。','我们屋子进休息了。','我们进休息屋了。','屋子我们进休息了。'],ans:0,
+   exp:'进 (động từ) phải đứng NGAY TRƯỚC tân ngữ chỉ nơi chốn (屋), không đảo tân ngữ lên trước động từ.'},
+  {wrong:'离家近很。',
+   opts:['离家很近。','离家近很。','很离家近。','近离家很。'],ans:0,
+   exp:'Phó từ mức độ 很 đứng TRƯỚC tính từ (近), không đặt phía sau: 很 + Tính từ.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'你每天早上几点起床？',py:'Nǐ měitiān zǎoshang jǐ diǎn qǐchuáng?',vn:'Mỗi sáng bạn thức dậy lúc mấy giờ?'},
-      {zh:'你吃得太少了，再来点儿米饭吧。',py:'Nǐ chī de tài shǎo le, zài lái diǎnr mǐfàn ba.',vn:'Bạn ăn ít quá, ăn thêm chút cơm nữa đi.'},
-      {zh:'今天真冷，你穿得太少了。',py:'Jīntiān zhēn lěng, nǐ chuān de tài shǎo le.',vn:'Hôm nay lạnh thật, bạn mặc ít quá.'},
-      {zh:'我弟弟让我帮他找个房子。',py:'Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi.',vn:'Em trai tớ nhờ tớ tìm giúp nó một căn nhà.'},
+      {zh:'今天零下五度，你穿得太少了。',py:'Jīntiān líng xià wǔ dù, nǐ chuān de tài shǎo le.',vn:'Hôm nay âm 5 độ, bạn mặc ít quá.'},
+      {zh:'妻子跑得比我快多了。',py:'Qīzi pǎo de bǐ wǒ kuài duō le.',vn:'Vợ tôi chạy nhanh hơn tôi nhiều.'},
+      {zh:'她已经进终点了。',py:'Tā yǐjīng jìn zhōngdiǎn le.',vn:'Cô ấy đã về đích rồi.'},
+      {zh:'屋子里比外面暖和。',py:'Wūzi lǐ bǐ wàimian nuǎnhuo.',vn:'Trong phòng ấm hơn ngoài trời.'},
+      {zh:'我家离公司很近。',py:'Wǒ jiā lí gōngsī hěn jìn.',vn:'Nhà tôi cách công ty rất gần.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我每天晚上＿＿点就睡觉。',frame_py:'Wǒ měitiān wǎnshang ___ diǎn jiù shuìjiào.',vn:'Mỗi tối tôi ＿＿ giờ đã ngủ rồi.',options:['九','十','十一'],samples:['我每天晚上九点就睡觉。','我每天晚上十点就睡觉。','我每天晚上十一点就睡觉。']},
-      {frame:'他比我做得＿＿。',frame_py:'Tā bǐ wǒ zuò de ___.',vn:'Anh ấy làm ＿＿ hơn tôi.',options:['好','快','慢'],samples:['他比我做得好。','他比我做得快。','他比我做得慢。']},
-      {frame:'今天有零下＿＿度。',frame_py:'Jīntiān yǒu líng xià ___ dù.',vn:'Hôm nay âm ＿＿ độ.',options:['五','十','十五'],samples:['今天有零下五度。','今天有零下十度。','今天有零下十五度。']},
-      {frame:'他希望住得＿＿一点儿。',frame_py:'Tā xīwàng zhù de ___ yìdiǎnr.',vn:'Anh ấy hy vọng ở ＿＿ hơn một chút.',options:['近','远','好'],samples:['他希望住得近一点儿。','他希望住得远一点儿。','他希望住得好一点儿。']},
+      {frame:'他跑得比我＿＿。',frame_py:'Tā pǎo de bǐ wǒ ___.',vn:'Anh ấy chạy ＿＿ hơn tôi.',options:['快','慢','好'],samples:['他跑得比我快。','他跑得比我慢。','他跑得比我好。']},
+      {frame:'今天零下＿＿度。',frame_py:'Jīntiān líng xià ___ dù.',vn:'Hôm nay âm ＿＿ độ.',options:['五','十','十五'],samples:['今天零下五度。','今天零下十度。','今天零下十五度。']},
+      {frame:'我家离公司很＿＿。',frame_py:'Wǒ jiā lí gōngsī hěn ___.',vn:'Nhà tôi cách công ty rất ＿＿.',options:['近','远'],samples:['我家离公司很近。','我家离公司很远。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🛏️ Tình huống 1 — So sánh giờ giấc ngủ nghỉ',
-       guide:'Bạn hỏi bạn mình mấy giờ thức dậy, rồi so sánh với giờ giấc của mình.',
-       structure:['你每天几点＿＿？','我比你＿＿一点儿。'],
-       sample:'你每天几点起床？我比你早一点儿。',
-       sample_vn:'Mỗi ngày bạn thức dậy lúc mấy giờ? Tôi sớm hơn bạn một chút.'},
-      {role:'🍚 Tình huống 2 — Mời khách ăn thêm',
-       guide:'Bạn mời khách ăn thêm vì thấy họ ăn ít.',
-       structure:['你吃得太＿＿了。','再来点儿＿＿吧。'],
-       sample:'你吃得太少了。再来点儿米饭吧。',
-       sample_vn:'Bạn ăn ít quá. Ăn thêm chút cơm nữa đi.'},
-      {role:'🏠 Tình huống 3 — Nhờ tìm nhà cho người thân',
-       guide:'Bạn kể việc em trai/chị gái nhờ bạn tìm nhà gần công ty hơn.',
-       structure:['我＿＿让我帮他找房子。','他希望能住得＿＿一点儿。'],
-       sample:'我弟弟让我帮他找房子。他希望能住得近一点儿。',
-       sample_vn:'Em trai tôi nhờ tôi tìm giúp nhà. Nó hy vọng có thể ở gần hơn một chút.'},
+      {role:'🥶 Tình huống 1 — Nhắc bạn mặc ấm khi trời lạnh',
+       guide:'Trời đang có tuyết, bạn thấy bạn mình mặc quá ít, hãy nhắc nhở.',
+       structure:['今天零下＿＿度，','你穿得太少了，我们进屋吧。'],
+       sample:'今天零下五度，你穿得太少了，我们进屋吧。',
+       sample_vn:'Hôm nay âm 5 độ, bạn mặc ít quá, chúng ta vào nhà đi.',
+       note:'Bổ ngữ trạng thái: Động từ (穿) + 得 + Tính từ (少) để nhận xét mức độ.'},
+      {role:'🏃 Tình huống 2 — So sánh kết quả chạy marathon',
+       guide:'Bạn kể ai đó trong gia đình chạy nhanh/chậm hơn bạn thế nào.',
+       structure:['＿＿跑得比我＿＿。','她/他已经进终点了。'],
+       sample:'妻子跑得比我快多了，她已经进终点了。',
+       sample_vn:'Vợ tôi chạy nhanh hơn tôi nhiều, cô ấy đã về đích rồi.',
+       note:'Kết hợp 比 với bổ ngữ trạng thái: V + 得 + 比 + B + Tính từ.'},
+      {role:'📅 Tình huống 3 — Rủ bạn đăng ký giải chạy',
+       guide:'Bạn rủ bạn mình cùng đăng ký tham gia một giải chạy vào cuối tuần.',
+       structure:['周末有一个马拉松比赛，','我们一起去跑，好吗？'],
+       sample:'周末有一个马拉松比赛，我们一起去跑，好吗？',
+       sample_vn:'Cuối tuần có một giải chạy marathon, chúng ta cùng đi chạy nhé?',
+       note:'Ôn lại cấu trúc rủ rê ……好吗？ đã học ở Bài 8.'},
     ],
   },
 };

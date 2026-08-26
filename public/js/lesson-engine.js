@@ -37,6 +37,25 @@ function miniSpeakBtn(text){return '<button type="button" class="speak-mini" dat
 const LESSON_NUM=(function(){var m=location.pathname.match(/bai-(\d+)/);return m?parseInt(m[1],10):null;})();
 const AUDIO_BASE=(function(){var m=location.pathname.match(/(hsk1-)?bai-(\d+)/);if(!m)return null;return m[1]?'/audio/hsk1-bai-'+m[2]:'/audio/bai-'+m[2];})();
 function audioLoadError(el){el.outerHTML='<span class="audio-missing">⚠️ Chưa có file audio gốc cho phần này.</span>';}
+// Dò tìm tuần tự base/prefix-1.mp3, prefix-2.mp3... (dừng khi không còn file/không phải audio),
+// dùng chung cho các phần có SỐ LƯỢNG track thay đổi theo từng bài (từ mới, nghe bổ sung...).
+function fetchAudioParts(base,prefix,container,onFound){
+  let idx=1;
+  (function tryNext(){
+    if(idx>20) return;
+    fetch(base+'/'+prefix+'-'+idx+'.mp3',{method:'HEAD'}).then(function(r){
+      const ct=r&&r.headers.get('content-type')||'';
+      if(r&&r.ok&&/audio/i.test(ct)){
+        if(onFound) onFound(idx);
+        container.insertAdjacentHTML('beforeend',
+          '<div class="vocab-audio-part"><span class="vap-label">Phần '+idx+'</span>'+
+          '<audio class="real-audio" controls preload="none" src="'+base+'/'+prefix+'-'+idx+'.mp3" onerror="audioLoadError(this)"></audio></div>');
+        idx++;
+        tryNext();
+      }
+    }).catch(function(){});
+  })();
+}
 
 // ══════════════════════════════════════════
 // EXERCISE SCORES (Phần 5 · Tổng kết — dashboard tổng hợp)
@@ -126,9 +145,10 @@ function buildVocab(){
     g.insertAdjacentHTML('beforebegin',
       '<div class="audio-box real-box" id="vocab-audio-box">'+
       '<span class="a-label"><span class="a-ico">🎙️</span> Audio gốc giáo trình · Từ mới</span>'+
-      '<audio class="real-audio" controls preload="none" src="'+AUDIO_BASE+'/vocab.mp3" onerror="audioLoadError(this)"></audio>'+
+      '<div class="vocab-audio-list" id="vocab-audio-list"></div>'+
       '<div class="audio-hint">Nghe cách đọc từ mới và câu ví dụ, đúng theo bản ghi âm gốc của giáo trình.</div>'+
       '</div>');
+    fetchAudioParts(AUDIO_BASE,'vocab',document.getElementById('vocab-audio-list'));
   }
   g.innerHTML='';
   vocabData.forEach(function(v,vi){

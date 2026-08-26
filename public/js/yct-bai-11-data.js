@@ -1,0 +1,206 @@
+// ══════════════════════════════════════════
+// DATA — YCT Bài 11: 我爱吃蛋糕
+// ══════════════════════════════════════════
+const vocabData = [
+  {n:1,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm',em:'🍚',lesson:1,
+   ex_zh:'我吃米饭。',ex_py:'Wǒ chī mǐfàn.',ex_vn:'Mình ăn cơm.',
+   exList:[{zh:'我吃米饭。',py:'Wǒ chī mǐfàn.',vn:'Mình ăn cơm.'}],
+   hanzi:[
+     {c:'米',p:'mǐ',type:'独体字 · Tượng hình',st:6,ord:'丷(hạt) trên → 十(cây) giữa → 八(hạt) dưới',rad:'米 (mễ – tự thành bộ)',mean:'gạo',
+      tip:'Hình vẽ các hạt gạo rải quanh một cây lúa ở giữa → GẠO.',
+      cf:'来 (lái – "đến", hình dáng gần giống)',w:'米饭'},
+     {c:'饭',p:'fàn',type:'左右结构 · Trái-phải',st:7,ord:'饣(thực) trái → 反(phản) phải',rad:'饣 (thực – ăn)',mean:'cơm',
+      tip:'Bộ 饣 chỉ đồ ĂN, ghép với 反 (đọc gần "fan") → CƠM.',
+      cf:'反 (fǎn – "trái lại")',w:'米饭'},
+   ]},
+  {n:2,zh:'面条',py:'miàntiáo',pos:'Danh từ',vn:'mì, bún',em:'🍜',lesson:1,
+   ex_zh:'我也吃面条。',ex_py:'Wǒ yě chī miàntiáo.',ex_vn:'Mình cũng ăn mì.',
+   exList:[{zh:'我也吃面条。',py:'Wǒ yě chī miàntiáo.',vn:'Mình cũng ăn mì.'}],
+   hanzi:[
+     {c:'面',p:'miàn',type:'独体字 · Chữ đơn',st:9,ord:'一(trán) → 囬(giản lược, khuôn mặt)',rad:'面 (diện – tự thành bộ)',mean:'mì, mặt',
+      tip:'Hình khuôn mặt được giản lược; sợi mì dẹt như một MẶT PHẲNG nên cũng gọi là 面.',
+      cf:'因 (yīn – "vì", khung ngoài gần giống)',w:'面条'},
+     {c:'条',p:'tiáo',type:'上下结构 · Trên-dưới',st:7,ord:'夂(giản lược) trên → 木(mộc) dưới',rad:'木 (mộc – gỗ, cây)',mean:'sợi, que',
+      tip:'Phía dưới có 木 (cành cây dài mảnh) → chỉ vật DÀI như SỢI mì.',
+      cf:'各 (gè – "mỗi")',w:'面条'},
+   ]},
+  {n:3,zh:'苹果',py:'píngguǒ',pos:'Danh từ',vn:'táo',em:'🍎',lesson:1,
+   ex_zh:'我也爱吃苹果。',ex_py:'Wǒ yě ài chī píngguǒ.',ex_vn:'Mình cũng rất thích ăn táo.',
+   exList:[{zh:'我也爱吃苹果。',py:'Wǒ yě ài chī píngguǒ.',vn:'Mình cũng rất thích ăn táo.'}],
+   hanzi:[
+     {c:'苹',p:'píng',type:'上下结构 · Trên-dưới',st:8,ord:'艹(thảo) trên → 平(bình) dưới',rad:'艹 (thảo – cỏ cây)',mean:'(trong 苹果) táo',
+      tip:'Bộ 艹 phía trên vì quả táo mọc ra từ cây → dùng trong từ 苹果 = TÁO.',
+      cf:'平 (píng – "bình yên", phần dưới giống)',w:'苹果'},
+     {c:'果',p:'guǒ',type:'独体字 · Tượng hình',st:8,ord:'田(quả) trên → 木(cây) dưới',rad:'木 (mộc – cây)',mean:'quả, trái cây',
+      tip:'Hình một quả tròn 田 mọc trên cây 木 → QUẢ, TRÁI CÂY.',
+      cf:'里 (lǐ – "bên trong")',w:'苹果'},
+   ]},
+  {n:4,zh:'牛奶',py:'niúnǎi',pos:'Danh từ',vn:'sữa',em:'🥛',lesson:1,
+   ex_zh:'我喝牛奶。',ex_py:'Wǒ hē niúnǎi.',ex_vn:'Mình uống sữa.',
+   exList:[{zh:'我喝牛奶。',py:'Wǒ hē niúnǎi.',vn:'Mình uống sữa.'}],
+   hanzi:[
+     {c:'牛',p:'niú',type:'独体字 · Tượng hình',st:4,ord:'丿(sừng) → 一→十(đầu và thân)',rad:'牛 (ngưu – tự thành bộ)',mean:'con bò, trâu',
+      tip:'Hình vẽ đầu con bò với hai sừng cong lên trên → CON BÒ, dùng trong 牛奶 (sữa bò).',
+      cf:'午 (wǔ – "buổi trưa")',w:'牛奶'},
+     {c:'奶',p:'nǎi',type:'左右结构 · Trái-phải',st:5,ord:'女(nữ) trái → 乃(nãi) phải',rad:'女 (nữ – con gái, mẹ)',mean:'sữa',
+      tip:'Bộ 女 (mẹ) bên trái, chỉ nguồn sữa nuôi con → SỮA.',
+      cf:'奴 (nú – "nô lệ")',w:'牛奶'},
+   ]},
+  {n:5,zh:'水',py:'shuǐ',pos:'Danh từ',vn:'nước',em:'💧',lesson:1,
+   ex_zh:'我也喝水。',ex_py:'Wǒ yě hē shuǐ.',ex_vn:'Mình cũng uống nước.',
+   exList:[{zh:'我也喝水。',py:'Wǒ yě hē shuǐ.',vn:'Mình cũng uống nước.'}],
+   hanzi:[
+     {c:'水',p:'shuǐ',type:'独体字 · Tượng hình',st:4,ord:'丨(dòng chảy) → ㇊→㇙→丿(nhánh rẽ)',rad:'水 (thủy – tự thành bộ)',mean:'nước',
+      tip:'Hình vẽ dòng nước đang chảy với các nhánh rẽ hai bên → NƯỚC.',
+      cf:'冰 (bīng – "băng")',w:'喝水'},
+   ]},
+  {n:6,zh:'吃',py:'chī',pos:'Động từ',vn:'ăn',em:'🍽️',lesson:2,
+   ex_zh:'你吃米饭吗？',ex_py:'Nǐ chī mǐfàn ma?',ex_vn:'Bạn ăn cơm không?',
+   exList:[{zh:'你吃米饭吗？',py:'Nǐ chī mǐfàn ma?',vn:'Bạn ăn cơm không?'}],
+   hanzi:[
+     {c:'吃',p:'chī',type:'左右结构 · Trái-phải',st:6,ord:'口(khẩu) trái → 乞(khất) phải',rad:'口 (khẩu – miệng)',mean:'ăn',
+      tip:'Bộ 口 (miệng) bên trái, ghép với 乞 (âm gần "chi") → dùng miệng để ĂN.',
+      cf:'吧 (ba – trợ từ)',w:'吃米饭'},
+   ]},
+  {n:7,zh:'喝',py:'hē',pos:'Động từ',vn:'uống',em:'🥤',lesson:2,
+   ex_zh:'你喝牛奶吗？',ex_py:'Nǐ hē niúnǎi ma?',ex_vn:'Bạn uống sữa không?',
+   exList:[{zh:'你喝牛奶吗？',py:'Nǐ hē niúnǎi ma?',vn:'Bạn uống sữa không?'}],
+   hanzi:[
+     {c:'喝',p:'hē',type:'左右结构 · Trái-phải',st:12,ord:'口(khẩu) trái → 曷(hạt) phải',rad:'口 (khẩu – miệng)',mean:'uống',
+      tip:'Bộ 口 (miệng) bên trái, ghép với 曷 chỉ hành động đưa nước vào miệng → UỐNG.',
+      cf:'渴 (kě – "khát", dùng bộ 氵thay vì 口)',w:'喝牛奶'},
+   ]},
+  {n:8,zh:'爱',py:'ài',pos:'Động từ',vn:'yêu, rất thích',em:'❤️',lesson:2,
+   ex_zh:'我爱吃蛋糕！',ex_py:'Wǒ ài chī dàngāo!',ex_vn:'Mình rất thích ăn bánh kem!',
+   exList:[{zh:'我爱吃蛋糕！',py:'Wǒ ài chī dàngāo!',vn:'Mình rất thích ăn bánh kem!'}],
+   hanzi:[
+     {c:'爱',p:'ài',type:'上下结构 · Trên-dưới',st:10,ord:'爫(trảo, giản lược) trên → 友(hữu) dưới',rad:'爫 (trảo – bàn tay)',mean:'yêu, rất thích',
+      tip:'Bàn tay 爫 nâng niu, ôm giữ điều mình trân trọng (友 – bạn) → YÊU, RẤT THÍCH.',
+      cf:'受 (shòu – "nhận")',w:'我爱吃苹果'},
+   ]},
+  {n:9,zh:'蛋糕',py:'dàngāo',pos:'Danh từ',vn:'bánh kem',em:'🎂',lesson:2,
+   ex_zh:'今天是我的生日，我爱吃蛋糕！',ex_py:'Jīntiān shì wǒ de shēngrì, wǒ ài chī dàngāo!',ex_vn:'Hôm nay là sinh nhật mình, mình rất thích ăn bánh kem!',
+   exList:[{zh:'今天是我的生日，我爱吃蛋糕！',py:'Jīntiān shì wǒ de shēngrì, wǒ ài chī dàngāo!',vn:'Hôm nay là sinh nhật mình, mình rất thích ăn bánh kem!'}],
+   hanzi:[
+     {c:'蛋',p:'dàn',type:'上下结构 · Trên-dưới',st:11,ord:'疋(giản lược) trên → 一(vỏ) dưới',rad:'疋 (sơ)',mean:'trứng',
+      tip:'Phần trên gợi hình con vật nhỏ, phần dưới 一 tượng trưng hình quả TRỨNG tròn.',
+      cf:'蚕 (cán – "con tằm")',w:'蛋糕'},
+     {c:'糕',p:'gāo',type:'左右结构 · Trái-phải',st:16,ord:'米(mễ) trái → 羔(cao) phải',rad:'米 (mễ – gạo, bột)',mean:'bánh (ngọt)',
+      tip:'Bộ 米 (bột) ghép với 羔 (đọc gần "gao") → BÁNH làm từ bột, như 蛋糕.',
+      cf:'高 (gāo – "cao", đã học ở Bài 6, đồng âm khác chữ)',w:'蛋糕'},
+   ]},
+];
+
+const wuData = [
+  {img:'🍚',label:'米饭',py:'mǐfàn',letter:'A'},
+  {img:'🍜',label:'面条',py:'miàntiáo',letter:'B'},
+  {img:'🍎',label:'苹果',py:'píngguǒ',letter:'C'},
+  {img:'🥛',label:'牛奶',py:'niúnǎi',letter:'D'},
+  {img:'🎂',label:'蛋糕',py:'dàngāo',letter:'E'},
+  {img:'💧',label:'水',py:'shuǐ',letter:'F'},
+];
+
+const dialogData = [
+  {scene:'Bữa ăn',
+   lines:[
+     {sp:0,zh:'你吃米饭吗？',py:'Nǐ chī mǐfàn ma?',vn:'Bạn ăn cơm không?'},
+     {sp:1,zh:'我吃米饭，也吃面条。',py:'Wǒ chī mǐfàn, yě chī miàntiáo.',vn:'Mình ăn cơm, cũng ăn mì.'},
+   ]},
+  {scene:'Uống gì',
+   lines:[
+     {sp:0,zh:'你喝牛奶吗？',py:'Nǐ hē niúnǎi ma?',vn:'Bạn uống sữa không?'},
+     {sp:1,zh:'我喝牛奶，也喝水。',py:'Wǒ hē niúnǎi, yě hē shuǐ.',vn:'Mình uống sữa, cũng uống nước.'},
+   ]},
+  {scene:'Sinh nhật và bánh kem',
+   lines:[
+     {sp:0,zh:'今天是我的生日！',py:'Jīntiān shì wǒ de shēngrì!',vn:'Hôm nay là sinh nhật mình!'},
+     {sp:1,zh:'我爱吃蛋糕！',py:'Wǒ ài chī dàngāo!',vn:'Mình rất thích ăn bánh kem!'},
+     {sp:0,zh:'我也爱吃苹果。',py:'Wǒ yě ài chī píngguǒ.',vn:'Mình cũng rất thích ăn táo.'},
+   ]},
+];
+
+// Điền từ — tình huống ăn uống
+const fillData = [
+  {pre:'Con hỏi bạn có ăn cơm không: “你',blank:'吃',post:'米饭吗？”',hint:'(ăn)',ans:'吃'},
+  {pre:'Con nói mình cũng ăn mì: “我也',blank:'吃',post:'面条。”',hint:'(ăn)',ans:'吃'},
+  {pre:'Con hỏi bạn có uống sữa không: “你',blank:'喝',post:'牛奶吗？”',hint:'(uống)',ans:'喝'},
+  {pre:'Con nói mình cũng uống nước: “我也',blank:'喝',post:'水。”',hint:'(uống)',ans:'喝'},
+  {pre:'Con nói hôm nay là sinh nhật mình: “今天是我的',blank:'生日',post:'！”',hint:'(sinh nhật)',ans:'生日'},
+  {pre:'Con nói mình rất thích ăn bánh kem: “我',blank:'爱',post:'吃蛋糕！”',hint:'(yêu, rất thích)',ans:'爱'},
+  {pre:'Con nói cũng rất thích ăn táo: “我也爱吃',blank:'苹果',post:'。”',hint:'(táo)',ans:'苹果'},
+  {pre:'Con nói mình uống sữa: “我喝',blank:'牛奶',post:'。”',hint:'(sữa)',ans:'牛奶'},
+];
+
+// Sắp xếp — câu về ăn uống
+const sortData = [
+  {words:['你','吃','米饭','吗','？'],ans:'你吃米饭吗？',audio:'你吃米饭吗？'},
+  {words:['我','也','吃','面条','。'],ans:'我也吃面条。',audio:'我也吃面条。'},
+  {words:['你','喝','牛奶','吗','？'],ans:'你喝牛奶吗？',audio:'你喝牛奶吗？'},
+  {words:['我','也','喝','水','。'],ans:'我也喝水。',audio:'我也喝水。'},
+  {words:['我','爱','吃','蛋糕','！'],ans:'我爱吃蛋糕！',audio:'我爱吃蛋糕！'},
+  {words:['我','也','爱','吃','苹果','。'],ans:'我也爱吃苹果。',audio:'我也爱吃苹果。'},
+];
+
+const matchData = [
+  {left:'你吃米饭吗？',right:'我吃米饭。'},
+  {left:'你喝牛奶吗？',right:'我喝牛奶。'},
+  {left:'今天是你的生日吗？',right:'是，今天是我的生日。'},
+  {left:'你爱吃什么？',right:'我爱吃蛋糕。'},
+  {left:'你喜欢苹果吗？',right:'我也爱吃苹果。'},
+];
+
+// Trắc nghiệm — không audio
+const mcData = [
+  {q:'"米饭" nghĩa là gì?',opts:['cơm','mì','bánh','nước'],ans:0},
+  {q:'"面条" nghĩa là gì?',opts:['mì, bún','cơm','táo','sữa'],ans:0},
+  {q:'"苹果" nghĩa là gì?',opts:['táo','bánh kem','nước','sữa'],ans:0},
+  {q:'"牛奶" nghĩa là gì?',opts:['sữa','nước','cơm','mì'],ans:0},
+  {q:'"水" nghĩa là gì?',opts:['nước','sữa','cơm','bánh'],ans:0},
+  {q:'"吃" nghĩa là gì?',opts:['ăn','uống','nấu','mua'],ans:0},
+  {q:'"喝" nghĩa là gì?',opts:['uống','ăn','nấu','mua'],ans:0},
+  {q:'"爱" (trong 我爱吃...) nghĩa là gì?',opts:['yêu, rất thích','ghét','sợ','buồn'],ans:0},
+  {q:'"蛋糕" nghĩa là gì?',opts:['bánh kem','cơm','mì','táo'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Mình rất thích ăn bánh kem."?',opts:['我爱吃蛋糕。','我蛋糕爱吃。','爱我吃蛋糕。','我吃爱蛋糕。'],ans:0},
+];
+
+const speakingData = {
+  t1:{
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    models:[
+      {zh:'你吃米饭吗？',py:'Nǐ chī mǐfàn ma?',vn:'Bạn ăn cơm không?'},
+      {zh:'我吃米饭，也吃面条。',py:'Wǒ chī mǐfàn, yě chī miàntiáo.',vn:'Mình ăn cơm, cũng ăn mì.'},
+      {zh:'你喝牛奶吗？',py:'Nǐ hē niúnǎi ma?',vn:'Bạn uống sữa không?'},
+      {zh:'我爱吃蛋糕！',py:'Wǒ ài chī dàngāo!',vn:'Mình rất thích ăn bánh kem!'},
+      {zh:'我也爱吃苹果。',py:'Wǒ yě ài chī píngguǒ.',vn:'Mình cũng rất thích ăn táo.'},
+    ],
+  },
+  t2:{
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    drills:[
+      {frame:'我爱吃＿＿。',frame_py:'Wǒ ài chī ___.',vn:'Mình rất thích ăn ＿＿.',options:['苹果','蛋糕','米饭'],samples:['我爱吃苹果。','我爱吃蛋糕。','我爱吃米饭。']},
+    ],
+  },
+  t3:{
+    intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
+    tasks:[
+      {role:'🍽️ Tình huống 1 — Hỏi bạn ăn gì vào bữa cơm',
+       guide:'Con hỏi bạn có ăn cơm không, và bạn trả lời mình ăn cả cơm và mì.',
+       structure:['你吃米饭吗？','我吃米饭，也吃面条。'],
+       sample:'你吃米饭吗？我吃米饭，也吃面条。',
+       sample_vn:'Bạn ăn cơm không? Mình ăn cơm, cũng ăn mì.',
+       note:'吃 dùng cho thức ĂN; 喝 dùng cho thức UỐNG — hai động từ không thể dùng thay nhau.'},
+      {role:'🥛 Tình huống 2 — Hỏi bạn uống gì',
+       guide:'Con hỏi bạn có uống sữa không, và bạn trả lời mình uống cả sữa và nước.',
+       structure:['你喝牛奶吗？','我喝牛奶，也喝水。'],
+       sample:'你喝牛奶吗？我喝牛奶，也喝水。',
+       sample_vn:'Bạn uống sữa không? Mình uống sữa, cũng uống nước.',
+       note:'也 đặt trước động từ thứ hai để nói "cũng làm việc đó" — 也喝水 = cũng uống nước.'},
+      {role:'🎂 Tình huống 3 — Chia sẻ món ăn yêu thích trong ngày sinh nhật',
+       guide:'Hôm nay là sinh nhật của con, con nói mình rất thích ăn bánh kem và cả táo nữa.',
+       structure:['今天是我的生日！','我爱吃蛋糕！','我也爱吃苹果。'],
+       sample:'今天是我的生日！我爱吃蛋糕！我也爱吃苹果。',
+       sample_vn:'Hôm nay là sinh nhật mình! Mình rất thích ăn bánh kem! Mình cũng rất thích ăn táo.',
+       note:'爱 mang sắc thái mạnh hơn 喜欢 một chút, thường dùng khi nói về điều mình RẤT thích.'},
+    ],
+  },
+};

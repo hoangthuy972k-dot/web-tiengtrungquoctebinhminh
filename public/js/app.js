@@ -122,7 +122,8 @@
   /* ---------------- Level cards ---------------- */
 
   var LEVEL_ICON_CLASS = { hsk1: 'is-red', hsk2: 'is-gold', hsk3: 'is-red', hsk4: 'is-gold', yct: 'is-red' };
-  var READY_LEVELS = { hsk2: true };
+  var READY_LEVELS = { hsk1: true, hsk2: true };
+  var practiceLevel = 'hsk1';
 
   function renderLevelCards() {
     var grid = $('#levelGrid');
@@ -155,18 +156,46 @@
           showToast(level.name + ' đang được xây dựng, quay lại sau nhé!');
           return;
         }
+        if (READY_LEVELS[level.id]) {
+          practiceLevel = level.id;
+          renderPracticeLevelTabs();
+          renderLessonList();
+        }
         document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
       });
       grid.appendChild(card);
     });
   }
 
-  /* ---------------- HSK2 lesson list (links out to standalone lesson pages) ---------------- */
+  /* ---------------- Practice level tabs (HSK1 / HSK2) ---------------- */
+
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk2: 'HSK 2' };
+
+  function renderPracticeLevelTabs() {
+    var wrap = $('#lessonListTabs');
+    if (!wrap) return;
+    var levels = Object.keys(READY_LEVELS).filter(function (id) { return READY_LEVELS[id]; });
+    wrap.innerHTML = '';
+    levels.forEach(function (id) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'lesson-tab' + (id === practiceLevel ? ' active' : '');
+      btn.textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
+      btn.addEventListener('click', function () {
+        practiceLevel = id;
+        renderPracticeLevelTabs();
+        renderLessonList();
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  /* ---------------- Lesson list (links out to standalone lesson pages) ---------------- */
 
   function renderLessonList() {
     var wrap = $('#lessonList');
     if (!wrap) return;
-    var lessons = (APP_DATA.lessons && APP_DATA.lessons.hsk2) || [];
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[practiceLevel]) || [];
     wrap.innerHTML = '';
 
     lessons.forEach(function (lesson) {
@@ -332,6 +361,7 @@
     initSearch();
     initPinyinToggle();
     renderLevelCards();
+    renderPracticeLevelTabs();
     renderLessonList();
     renderHeroWord();
     initAuth();

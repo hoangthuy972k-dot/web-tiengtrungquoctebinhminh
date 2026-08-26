@@ -788,6 +788,36 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   color: var(--color-gray-600);
 }
 
+/* ---------- Practice level tabs (HSK1 / HSK2 toggle) ---------- */
+.lesson-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.lesson-tabs .lesson-tab {
+  border: 1.5px solid var(--color-gray-200);
+  background: var(--color-white);
+  color: var(--color-gray-800);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s var(--ease-standard);
+}
+
+.lesson-tabs .lesson-tab:hover {
+  border-color: var(--color-red-500);
+}
+
+.lesson-tabs .lesson-tab.active {
+  background: var(--color-red-600);
+  border-color: var(--color-red-600);
+  color: #fff;
+}
+
 /* ---------- Lesson list (links to standalone lesson pages) ---------- */
 .lesson-list {
   display: flex;

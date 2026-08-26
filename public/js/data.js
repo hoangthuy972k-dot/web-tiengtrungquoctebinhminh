@@ -300,6 +300,188 @@ const APP_DATA = {
         grammarCount: 3,
         fullPageUrl: '/lessons/bai-15.html'
       }
+    ],
+    hsk1: [
+      {
+        id: 'hsk1-l1',
+        number: 1,
+        title: 'Chào anh! Chào bạn!',
+        titleHanzi: '你好!',
+        titlePinyin: 'Nǐ hǎo!',
+        topic: 'Chào hỏi & Xin lỗi cơ bản',
+        vocabCount: 6,
+        dialogueCount: 3,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk1-bai-1.html'
+      },
+      {
+        id: 'hsk1-l2',
+        number: 2,
+        title: 'Cảm ơn anh! Cảm ơn bạn!',
+        titleHanzi: '谢谢你!',
+        titlePinyin: 'Xièxie nǐ!',
+        topic: 'Cảm ơn & Tạm biệt',
+        vocabCount: 4,
+        dialogueCount: 3,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk1-bai-2.html'
+      },
+      {
+        id: 'hsk1-l3',
+        number: 3,
+        title: 'Bạn tên là gì?',
+        titleHanzi: '你叫什么名字?',
+        titlePinyin: 'Nǐ jiào shénme míngzi?',
+        topic: 'Tên gọi, Nghề nghiệp & Quốc tịch',
+        vocabCount: 11,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1-bai-3.html'
+      },
+      {
+        id: 'hsk1-l4',
+        number: 4,
+        title: 'Cô ấy là cô giáo dạy tôi tiếng Trung Quốc',
+        titleHanzi: '她是我的汉语老师。',
+        titlePinyin: 'Tā shì wǒ de Hànyǔ lǎoshī.',
+        topic: 'Người quen, Quốc tịch & Bạn bè',
+        vocabCount: 9,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1-bai-4.html'
+      },
+      {
+        id: 'hsk1-l5',
+        number: 5,
+        title: 'Con gái của cô ấy năm nay 20 tuổi',
+        titleHanzi: '她女儿今年二十岁。',
+        titlePinyin: "Tā nǚ'ér jīnnián èrshí suì.",
+        topic: 'Gia đình & Tuổi tác',
+        vocabCount: 10,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1-bai-5.html'
+      },
+      {
+        id: 'hsk1-l6',
+        number: 6,
+        title: 'Tôi biết nói tiếng Trung',
+        titleHanzi: '我会说汉语',
+        titlePinyin: 'Wǒ huì shuō Hànyǔ.',
+        topic: 'Ngôn ngữ, Ẩm thực & Chữ Hán',
+        vocabCount: 12,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1-bai-6.html'
+      },
+      {
+        id: 'hsk1-l7',
+        number: 7,
+        title: 'Hôm nay là ngày mấy?',
+        titleHanzi: '今天几号?',
+        titlePinyin: 'Jīntiān jǐ hào?',
+        topic: 'Ngày tháng & Đi học',
+        vocabCount: 12,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1-bai-7.html'
+      },
+      {
+        id: 'hsk1-l8',
+        number: 8,
+        title: 'Tôi muốn uống trà',
+        titleHanzi: '我想喝茶',
+        titlePinyin: 'Wǒ xiǎng hē chá.',
+        topic: 'Ăn uống & Mua sắm',
+        vocabCount: 15,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1-bai-8.html'
+      },
+      {
+        id: 'hsk1-l9',
+        number: 9,
+        title: 'Con trai anh làm việc ở đâu?',
+        titleHanzi: '你儿子在哪儿工作?',
+        titlePinyin: 'Nǐ érzi zài nǎr gōngzuò?',
+        topic: 'Vị trí, Thú cưng & Nghề nghiệp',
+        vocabCount: 14,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1-bai-9.html'
+      },
+      {
+        id: 'hsk1-l10',
+        number: 10,
+        title: 'Tôi có thể ngồi ở đây được không?',
+        titleHanzi: '我能坐这儿吗?',
+        titlePinyin: 'Wǒ néng zuò zhèr ma?',
+        topic: 'Đồ vật, Vị trí & Xin phép',
+        vocabCount: 12,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1-bai-10.html'
+      },
+      {
+        id: 'hsk1-l11',
+        number: 11,
+        title: 'Bây giờ là mấy giờ?',
+        titleHanzi: '现在几点?',
+        titlePinyin: 'Xiànzài jǐ diǎn?',
+        topic: 'Giờ giấc & Lịch trình',
+        vocabCount: 11,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1-bai-11.html'
+      },
+      {
+        id: 'hsk1-l12',
+        number: 12,
+        title: 'Ngày mai thời tiết thế nào?',
+        titleHanzi: '明天天气怎么样?',
+        titlePinyin: 'Míngtiān tiānqì zěnmeyàng?',
+        topic: 'Thời tiết & Sức khỏe',
+        vocabCount: 13,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1-bai-12.html'
+      },
+      {
+        id: 'hsk1-l13',
+        number: 13,
+        title: 'Anh ấy đang học nấu món ăn Trung Quốc',
+        titleHanzi: '他在学做中国菜呢。',
+        titlePinyin: 'Tā zài xué zuò Zhōngguó cài ne.',
+        topic: 'Gọi điện thoại & Hoạt động hằng ngày',
+        vocabCount: 10,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1-bai-13.html'
+      },
+      {
+        id: 'hsk1-l14',
+        number: 14,
+        title: 'Cô ấy đã mua nhiều quần áo',
+        titleHanzi: '她买了不少衣服。',
+        titlePinyin: 'Tā mǎile bùshǎo yīfu.',
+        topic: 'Mua sắm & Khen ngợi',
+        vocabCount: 16,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1-bai-14.html'
+      },
+      {
+        id: 'hsk1-l15',
+        number: 15,
+        title: 'Tôi đáp máy bay đến đây',
+        titleHanzi: '我是坐飞机来的。',
+        titlePinyin: 'Wǒ shì zuò fēijī lái de.',
+        topic: 'Làm quen & Phương tiện di chuyển',
+        vocabCount: 9,
+        dialogueCount: 3,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk1-bai-15.html'
+      }
     ]
   }
 };

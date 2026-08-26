@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HanYu Vui - Học tiếng Trung mỗi ngày</title>
-<meta name="description" content="Nền tảng học tiếng Trung HSK 1-4 và YCT thiếu nhi: bài học, trắc nghiệm từ vựng, điền từ, ghép câu và theo dõi tiến độ học tập." />
+<meta name="description" content="Nền tảng học tiếng Trung HSK 1-4 và YCT thiếu nhi: lộ trình HSK 2 đầy đủ 15 bài với khởi động, từ mới, thẻ nhớ, ngữ pháp, hội thoại và bài tập tương tác." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23d8202e%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23f7c948%22 font-family=%22sans-serif%22>汉</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,9 +29,7 @@
 
     <nav class="main-nav" aria-label="Điều hướng chính">
       <a href="#levels">Hệ thống kiến thức</a>
-      <a href="#hsk2-lessons">Lộ trình HSK2</a>
-      <a href="#practice">Bài tập</a>
-      <a href="#dashboard">Tiến độ</a>
+      <a href="#practice">Lộ trình &amp; Luyện tập HSK2</a>
       <a href="#footer">Liên hệ</a>
     </nav>
 
@@ -58,9 +56,7 @@
       <input type="search" id="lessonSearchMobile" placeholder="Tìm bài học, từ vựng..." autocomplete="off" />
     </form>
     <a href="#levels">Hệ thống kiến thức</a>
-    <a href="#hsk2-lessons">Lộ trình HSK2</a>
-    <a href="#practice">Bài tập thực hành</a>
-    <a href="#dashboard">Tiến độ học tập</a>
+    <a href="#practice">Lộ trình &amp; Luyện tập HSK2</a>
     <a href="#footer">Liên hệ</a>
   </div>
 </header>
@@ -119,118 +115,17 @@
     </div>
   </section>
 
-  <!-- HSK2 LESSON SYLLABUS -->
-  <section class="section section-alt" id="hsk2-lessons">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="section-eyebrow">Lộ trình bài học</p>
-          <h2>Chương trình HSK 2 theo từng bài</h2>
-          <p>Bấm vào một bài để mở trang học đầy đủ: khởi động, từ mới, thẻ nhớ, ngữ pháp, hội thoại và các dạng bài tập.</p>
-        </div>
-      </div>
-      <div class="lesson-list" id="lessonList"></div>
-    </div>
-  </section>
-
-  <!-- PRACTICE -->
+  <!-- PRACTICE (lộ trình 15 bài HSK2 gộp cùng luyện tập) -->
   <section class="section section-alt" id="practice">
     <div class="container">
       <div class="section-head">
         <div>
           <p class="section-eyebrow">Bài tập thực hành</p>
           <h2>Luyện tập để ghi nhớ lâu hơn</h2>
-          <p>Chọn cấp độ và dạng bài tập bạn muốn luyện. Kết quả Đúng/Sai hiển thị ngay lập tức.</p>
+          <p>Bấm vào một bài trong 15 bài HSK 2 để mở trang học đầy đủ: khởi động, từ mới, thẻ nhớ, ngữ pháp, hội thoại, điền từ, sắp xếp, nối câu, trắc nghiệm và luyện nói.</p>
         </div>
       </div>
-
-      <div class="level-pills" id="practiceLevelPills" role="group" aria-label="Chọn cấp độ luyện tập"></div>
-
-      <div class="practice-tabs" role="tablist" aria-label="Loại bài tập">
-        <button class="practice-tab is-active" role="tab" aria-selected="true" data-mode="mcq-meaning" type="button">Trắc nghiệm nghĩa</button>
-        <button class="practice-tab" role="tab" aria-selected="false" data-mode="mcq-pinyin" type="button">Trắc nghiệm Pinyin</button>
-        <button class="practice-tab" role="tab" aria-selected="false" data-mode="mcq-hanzi" type="button">Trắc nghiệm Hán tự</button>
-        <button class="practice-tab" role="tab" aria-selected="false" data-mode="fill-blank" type="button">Điền từ vào chỗ trống</button>
-        <button class="practice-tab" role="tab" aria-selected="false" data-mode="sentence-build" type="button">Ghép câu</button>
-      </div>
-
-      <div class="practice-panel is-active" id="exercisePanel">
-        <div class="exercise-card">
-          <div class="exercise-progress">
-            <span id="exerciseCounter">Câu 1 / 8</span>
-            <span class="score">Điểm: <span id="exerciseScore">0</span></span>
-          </div>
-          <div class="progress-track">
-            <div class="progress-fill" id="exerciseProgressFill" style="width: 12.5%;"></div>
-          </div>
-
-          <div id="exerciseBody"></div>
-
-          <div class="feedback-banner" id="feedbackBanner" role="status" aria-live="polite"></div>
-
-          <div class="exercise-actions">
-            <button class="btn btn-outline" id="restartExerciseBtn" type="button" hidden>Làm lại</button>
-            <button class="btn btn-primary" id="nextExerciseBtn" type="button" hidden>Câu tiếp theo</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DASHBOARD -->
-  <section class="section" id="dashboard">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="section-eyebrow">Tiến độ học tập</p>
-          <h2>Bảng theo dõi của bạn</h2>
-          <p>Dữ liệu được lưu trên trình duyệt này (chế độ demo), cập nhật mỗi khi bạn hoàn thành bài tập.</p>
-        </div>
-        <button class="btn btn-outline" id="resetProgressBtn" type="button">Đặt lại tiến độ</button>
-      </div>
-
-      <div class="dashboard-grid">
-        <div class="stat-card">
-          <div class="stat-icon is-red">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          </div>
-          <div>
-            <div class="stat-value" id="statMastered">0</div>
-            <div class="stat-label">Từ vựng đã thuộc</div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon is-gold">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a6 6 0 1 1-12 0c0-1 .5-2 .5-2s2 1.5 2 2z"/></svg>
-          </div>
-          <div>
-            <div class="stat-value" id="statStreak">0 ngày</div>
-            <div class="stat-label">Chuỗi ngày học liên tiếp</div>
-            <div class="streak-days" id="streakDots"></div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon is-red">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
-          </div>
-          <div>
-            <div class="stat-value" id="statAccuracy">0%</div>
-            <div class="stat-label">Độ chính xác trung bình</div>
-          </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon is-gold">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-          </div>
-          <div>
-            <div class="stat-value" id="statSessions">0</div>
-            <div class="stat-label">Phiên luyện tập đã hoàn thành</div>
-          </div>
-        </div>
-      </div>
+      <div class="lesson-list" id="lessonList"></div>
     </div>
   </section>
 </main>
@@ -264,8 +159,7 @@
         <h4>Liên kết nhanh</h4>
         <ul>
           <li><a href="#levels">Hệ thống kiến thức</a></li>
-          <li><a href="#practice">Bài tập thực hành</a></li>
-          <li><a href="#dashboard">Tiến độ học tập</a></li>
+          <li><a href="#practice">Lộ trình &amp; Luyện tập HSK2</a></li>
           <li><a href="#">Chính sách bảo mật</a></li>
         </ul>
       </div>

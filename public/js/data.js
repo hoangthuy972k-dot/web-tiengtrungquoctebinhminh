@@ -114,58 +114,6 @@ const APP_DATA = {
     ]
   },
 
-  fillBlank: {
-    hsk1: [
-      { id: 'fb1-1', sentence: '我 ___ 学生。', answer: '是', options: ['是', '不', '有', '在'] },
-      { id: 'fb1-2', sentence: '这 ___ 我的爸爸。', answer: '是', options: ['是', '很', '和', '去'] },
-      { id: 'fb1-3', sentence: '谢谢你的 ___。', answer: '帮助', options: ['帮助', '再见', '喜欢', '吃饭'] }
-    ],
-    hsk2: [
-      { id: 'fb2-1', sentence: '我 ___ 去过北京。', answer: '已经', options: ['已经', '因为', '容易', '知道'] },
-      { id: 'fb2-2', sentence: '___ 下雨，我们不能出去。', answer: '因为', options: ['因为', '所以', '如果', '觉得'] }
-    ],
-    hsk3: [
-      { id: 'fb3-1', sentence: '这件事我需要 ___ 一下。', answer: '解决', options: ['解决', '联系', '打算', '习惯'] },
-      { id: 'fb3-2', sentence: '工作压力让我很不 ___。', answer: '适合', options: ['适合', '负责', '坚持', '经验'] }
-    ],
-    hsk4: [
-      { id: 'fb4-1', sentence: '公司之间的 ___ 越来越激烈。', answer: '竞争', options: ['竞争', '合作', '投资', '效率'] },
-      { id: 'fb4-2', sentence: '每个人都要对自己的行为负 ___。', answer: '责任', options: ['责任', '挑战', '资源', '态度'] }
-    ],
-    yct: [
-      { id: 'fby-1', sentence: '我喜欢 ___ 苹果。', answer: '吃', options: ['吃', '玩', '大', '红色'] },
-      { id: 'fby-2', sentence: '晚上有 ___，白天有太阳。', answer: '月亮', options: ['月亮', '气球', '小', '狗'] }
-    ]
-  },
-
-  sentenceBuild: {
-    hsk1: [
-      { id: 'sb1-1', tokens: ['我', '是', '学生'], translation: 'Tôi là học sinh.' },
-      { id: 'sb1-2', tokens: ['他', '喜欢', '吃饭'], translation: 'Anh ấy thích ăn cơm.' }
-    ],
-    hsk2: [
-      { id: 'sb2-1', tokens: ['我', '已经', '知道', '了'], translation: 'Tôi đã biết rồi.' },
-      { id: 'sb2-2', tokens: ['因为', '下雨', '所以', '我', '没去'], translation: 'Vì trời mưa nên tôi đã không đi.' }
-    ],
-    hsk3: [
-      { id: 'sb3-1', tokens: ['他', '负责', '这个', '项目'], translation: 'Anh ấy phụ trách dự án này.' },
-      { id: 'sb3-2', tokens: ['我们', '需要', '解决', '这个', '问题'], translation: 'Chúng ta cần giải quyết vấn đề này.' }
-    ],
-    hsk4: [
-      { id: 'sb4-1', tokens: ['公司', '需要', '提高', '效率'], translation: 'Công ty cần nâng cao hiệu suất.' },
-      { id: 'sb4-2', tokens: ['这是', '一个', '很大的', '挑战'], translation: 'Đây là một thử thách rất lớn.' }
-    ],
-    yct: [
-      { id: 'sby-1', tokens: ['我', '有', '一只', '猫'], translation: 'Tôi có một con mèo.' },
-      { id: 'sby-2', tokens: ['太阳', '很', '大'], translation: 'Mặt trời rất to.' }
-    ]
-  },
-
-  /**
-   * Lo trinh bai hoc HSK2 - hien tai dang thu nghiem voi Bai 2 (ban day du: hoi thoai,
-   * tu vung co tu loai, ngu phap chi tiet, va 4 dang bai tap). Cac bai khac se duoc
-   * bo sung sau khi ban duyet noi dung nay.
-   */
   /**
    * Danh sach bai hoc HSK2 - moi bai la mot trang doc lap day du
    * (public/lessons/bai-N.html), thẻ ở đây chỉ hiển thị tóm tắt và dẫn thẳng tới đó.

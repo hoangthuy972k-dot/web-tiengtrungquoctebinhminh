@@ -100,63 +100,6 @@ const vocabData = [
    ]},
 ];
 
-const wuData = [
-  {img:'👨',label:'爸爸',py:'bàba',letter:'A'},
-  {img:'👩',label:'妈妈',py:'māma',letter:'B'},
-  {img:'👦',label:'哥哥',py:'gēge',letter:'C'},
-  {img:'👧',label:'姐姐',py:'jiějie',letter:'D'},
-  {img:'👶',label:'妹妹',py:'mèimei',letter:'E'},
-  {img:'🏠',label:'家',py:'jiā',letter:'F'},
-];
-
-const dialogData = [
-  {scene:'Hỏi về gia đình',
-   lines:[
-     {sp:0,zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'},
-     {sp:1,zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'},
-   ]},
-  {scene:'Hỏi về chị em',
-   lines:[
-     {sp:0,zh:'你有姐姐吗？',py:'Nǐ yǒu jiějie ma?',vn:'Bạn có chị gái không?'},
-     {sp:1,zh:'没有。我有一个妹妹。',py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',vn:'Không có. Mình có một em gái.'},
-   ]},
-  {scene:'Giới thiệu gia đình bạn',
-   lines:[
-     {sp:0,zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'},
-     {sp:1,zh:'三口人，爸爸、妈妈和我。',py:'Sān kǒu rén, bàba, māma hé wǒ.',vn:'Ba người, bố, mẹ và mình.'},
-   ]},
-];
-
-// Điền từ — tình huống hỏi về gia đình
-const fillData = [
-  {pre:'Con hỏi nhà bạn có mấy người: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有'},
-  {pre:'Con hỏi số lượng dưới 10: “你家有',blank:'几',post:'口人？”',hint:'(mấy)',ans:'几'},
-  {pre:'Con đếm số người trong nhà: “四',blank:'口',post:'人”',hint:'(lượng từ đếm người)',ans:'口'},
-  {pre:'Con nối bố và mẹ: “爸爸',blank:'和',post:'妈妈”',hint:'(và)',ans:'和'},
-  {pre:'Con nói mình không có chị gái: “我',blank:'没有',post:'姐姐。”',hint:'(không có)',ans:'没有'},
-  {pre:'Con nói mình có một em gái: “我有一',blank:'个',post:'妹妹。”',hint:'(cái, con)',ans:'个'},
-  {pre:'Con giới thiệu người trong ảnh: “这是我',blank:'爸爸',post:'。”',hint:'(bố)',ans:'爸爸'},
-  {pre:'Con giới thiệu nhà mình: “我',blank:'家',post:'有三口人。”',hint:'(nhà, gia đình)',ans:'家'},
-];
-
-// Sắp xếp — câu hỏi về gia đình
-const sortData = [
-  {words:['你','家','有','几','口','人','？'],ans:'你家有几口人？',audio:'你家有几口人？'},
-  {words:['四','口','人','，','爸爸','、','妈妈','、','哥哥','和','我','。'],ans:'四口人，爸爸、妈妈、哥哥和我。',audio:'四口人，爸爸、妈妈、哥哥和我。'},
-  {words:['你','有','姐姐','吗','？'],ans:'你有姐姐吗？',audio:'你有姐姐吗？'},
-  {words:['我','没有','姐姐','。'],ans:'我没有姐姐。',audio:'我没有姐姐。'},
-  {words:['我','有','一','个','妹妹','。'],ans:'我有一个妹妹。',audio:'我有一个妹妹。'},
-  {words:['三','口','人','，','爸爸','、','妈妈','和','我','。'],ans:'三口人，爸爸、妈妈和我。',audio:'三口人，爸爸、妈妈和我。'},
-];
-
-const matchData = [
-  {left:'你家有几口人？',right:'四口人，爸爸、妈妈、哥哥和我。'},
-  {left:'你有姐姐吗？',right:'没有。我有一个妹妹。'},
-  {left:'谁是你哥哥？',right:'他是我哥哥。'},
-  {left:'你家有妹妹吗？',right:'有，我有一个妹妹。'},
-  {left:'你家有几口人？',right:'三口人，爸爸、妈妈和我。'},
-];
-
 // Trắc nghiệm — không audio
 const mcData = [
   {q:'你家＿＿几口人？(có)',opts:['有','是','叫','在'],ans:0},
@@ -170,45 +113,3 @@ const mcData = [
   {q:'"家" nghĩa là gì?',opts:['nhà, gia đình','trường học','cửa hàng','công viên'],ans:0},
   {q:'Lượng từ nào dùng chung cho hầu hết đồ vật/con vật?',opts:['个','口','和','有'],ans:0},
 ];
-
-const speakingData = {
-  t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
-    models:[
-      {zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'},
-      {zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'},
-      {zh:'你有姐姐吗？',py:'Nǐ yǒu jiějie ma?',vn:'Bạn có chị gái không?'},
-      {zh:'没有。我有一个妹妹。',py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',vn:'Không có. Mình có một em gái.'},
-      {zh:'三口人，爸爸、妈妈和我。',py:'Sān kǒu rén, bàba, māma hé wǒ.',vn:'Ba người, bố, mẹ và mình.'},
-    ],
-  },
-  t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
-    drills:[
-      {frame:'我家有＿＿口人。',frame_py:'Wǒ jiā yǒu ___ kǒu rén.',vn:'Nhà mình có ＿＿ người.',options:['三','四','五'],samples:['我家有三口人。','我家有四口人。','我家有五口人。']},
-    ],
-  },
-  t3:{
-    intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
-    tasks:[
-      {role:'👨‍👩‍👧‍👦 Tình huống 1 — Giới thiệu gia đình mình',
-       guide:'Có bạn hỏi thăm gia đình con, hãy trả lời có bao nhiêu người và gồm những ai.',
-       structure:['你家有几口人？','＿＿口人，爸爸、妈妈和我。'],
-       sample:'你家有几口人？三口人，爸爸、妈妈和我。',
-       sample_vn:'Nhà bạn có mấy người? Ba người, bố, mẹ và mình.',
-       note:'Khi kể tên các thành viên trong nhà, dùng dấu 、để liệt kê, và 和 chỉ dùng để nối HAI THÀNH VIÊN CUỐI CÙNG trong danh sách.'},
-      {role:'👧 Tình huống 2 — Hỏi thăm anh chị em',
-       guide:'Con muốn biết bạn mình có chị gái hay em gái không.',
-       structure:['你有姐姐吗？','没有，我有一个＿＿。'],
-       sample:'你有姐姐吗？没有，我有一个妹妹。',
-       sample_vn:'Bạn có chị gái không? Không có, mình có một em gái.',
-       note:'没有 dùng để phủ định "có" — khác với 不, chỉ dùng được với động từ 有 chứ không dùng cho các động từ khác.'},
-      {role:'🔢 Tình huống 3 — Đếm số người trong nhà',
-       guide:'Con đếm và nói cho bạn nghe nhà mình có bao nhiêu người.',
-       structure:['你家有几口人？','我家有＿＿口人。'],
-       sample:'你家有几口人？我家有四口人。',
-       sample_vn:'Nhà bạn có mấy người? Nhà mình có bốn người.',
-       note:'口 CHỈ dùng để đếm người trong gia đình — với hầu hết đồ vật, con vật khác con dùng 个.'},
-    ],
-  },
-};

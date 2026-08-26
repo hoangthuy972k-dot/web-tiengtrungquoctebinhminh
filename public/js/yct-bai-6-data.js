@@ -100,63 +100,6 @@ const vocabData = [
    hanzi:[]},
 ];
 
-const wuData = [
-  {img:'💇',label:'头发',py:'tóufa',letter:'A'},
-  {img:'👃',label:'鼻子',py:'bízi',letter:'B'},
-  {img:'👂',label:'耳朵',py:'ěrduo',letter:'C'},
-  {img:'👀',label:'眼睛',py:'yǎnjing',letter:'D'},
-  {img:'✋',label:'手',py:'shǒu',letter:'E'},
-  {img:'📏',label:'个子',py:'gèzi',letter:'F'},
-];
-
-const dialogData = [
-  {scene:'Miêu tả em gái',
-   lines:[
-     {sp:0,zh:'妹妹的眼睛很小，耳朵很小，手不大，头发不长。',py:'Mèimei de yǎnjing hěn xiǎo, ěrduo hěn xiǎo, shǒu bú dà, tóufa bù cháng.',vn:'Mắt em gái mình rất nhỏ, tai rất nhỏ, tay không to, tóc không dài.'},
-     {sp:1,zh:'妹妹的眼睛大吗？头发长吗？',py:'Mèimei de yǎnjing dà ma? Tóufa cháng ma?',vn:'Mắt em gái bạn to không? Tóc dài không?'},
-   ]},
-  {scene:'Khen ngoại hình bạn',
-   lines:[
-     {sp:0,zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'},
-     {sp:1,zh:'你的鼻子真长！',py:'Nǐ de bízi zhēn cháng!',vn:'Mũi bạn dài thật!'},
-   ]},
-  {scene:'Hỏi thăm về tay',
-   lines:[
-     {sp:0,zh:'你的手大吗？',py:'Nǐ de shǒu dà ma?',vn:'Tay bạn to không?'},
-     {sp:1,zh:'我的手不大。',py:'Wǒ de shǒu bú dà.',vn:'Tay mình không to.'},
-   ]},
-];
-
-// Điền từ — tình huống miêu tả ngoại hình
-const fillData = [
-  {pre:'Con miêu tả tóc em gái không dài: “妹妹的',blank:'头发',post:'不长。”',hint:'(tóc)',ans:'头发'},
-  {pre:'Con miêu tả mắt em gái nhỏ: “妹妹的眼睛很',blank:'小',post:'。”',hint:'(nhỏ, bé)',ans:'小'},
-  {pre:'Con hỏi tai bạn to không: “你的耳朵',blank:'大',post:'吗？”',hint:'(to, lớn)',ans:'大'},
-  {pre:'Con khen vóc dáng bạn cao: “你的',blank:'个子',post:'真高！”',hint:'(vóc dáng)',ans:'个子'},
-  {pre:'Con trêu vui mũi bạn: “你的鼻子真',blank:'长',post:'！”',hint:'(dài)',ans:'长'},
-  {pre:'Con nói tay mình không to: “我的',blank:'手',post:'不大。”',hint:'(tay)',ans:'手'},
-  {pre:'Con chỉ sở hữu: “妹妹',blank:'的',post:'眼睛很小。”',hint:'(của — trợ từ sở hữu)',ans:'的'},
-  {pre:'Con hỏi tóc bạn dài không: “你',blank:'的',post:'头发长吗？”',hint:'(của — trợ từ sở hữu)',ans:'的'},
-];
-
-// Sắp xếp — câu miêu tả ngoại hình
-const sortData = [
-  {words:['妹妹','的','眼睛','很','小','。'],ans:'妹妹的眼睛很小。',audio:'妹妹的眼睛很小。'},
-  {words:['妹妹','的','头发','不','长','。'],ans:'妹妹的头发不长。',audio:'妹妹的头发不长。'},
-  {words:['你','的','个子','真','高','！'],ans:'你的个子真高！',audio:'你的个子真高！'},
-  {words:['你','的','鼻子','真','长','！'],ans:'你的鼻子真长！',audio:'你的鼻子真长！'},
-  {words:['你','的','手','大','吗','？'],ans:'你的手大吗？',audio:'你的手大吗？'},
-  {words:['我','的','手','不','大','。'],ans:'我的手不大。',audio:'我的手不大。'},
-];
-
-const matchData = [
-  {left:'妹妹的眼睛大吗？',right:'妹妹的眼睛很小。'},
-  {left:'你的个子真高！',right:'你的鼻子真长！'},
-  {left:'你的手大吗？',right:'我的手不大。'},
-  {left:'妹妹的头发长吗？',right:'不长。'},
-  {left:'谁的眼睛很小？',right:'妹妹的眼睛很小。'},
-];
-
 // Trắc nghiệm — không audio
 const mcData = [
   {q:'妹妹的眼睛很＿＿。(nhỏ)',opts:['小','大','长','高'],ans:0},
@@ -170,45 +113,3 @@ const mcData = [
   {q:'"的" dùng để làm gì?',opts:['biểu thị sở hữu (của)','phủ định','nghi vấn','liệt kê'],ans:0},
   {q:'"个子" nghĩa là gì?',opts:['vóc dáng, chiều cao','khuôn mặt','màu tóc','cân nặng'],ans:0},
 ];
-
-const speakingData = {
-  t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
-    models:[
-      {zh:'妹妹的眼睛很小，耳朵很小。',py:'Mèimei de yǎnjing hěn xiǎo, ěrduo hěn xiǎo.',vn:'Mắt em gái mình rất nhỏ, tai rất nhỏ.'},
-      {zh:'妹妹的头发不长。',py:'Mèimei de tóufa bù cháng.',vn:'Tóc em gái mình không dài.'},
-      {zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'},
-      {zh:'你的鼻子真长！',py:'Nǐ de bízi zhēn cháng!',vn:'Mũi bạn dài thật!'},
-      {zh:'我的手不大。',py:'Wǒ de shǒu bú dà.',vn:'Tay mình không to.'},
-    ],
-  },
-  t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
-    drills:[
-      {frame:'妹妹的眼睛很＿＿。',frame_py:'Mèimei de yǎnjing hěn ___.',vn:'Mắt em gái mình rất ＿＿.',options:['小','大'],samples:['妹妹的眼睛很小。','妹妹的眼睛很大。']},
-    ],
-  },
-  t3:{
-    intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
-    tasks:[
-      {role:'👧 Tình huống 1 — Miêu tả ngoại hình em gái',
-       guide:'Con miêu tả ngoại hình em gái mình cho bạn nghe.',
-       structure:['妹妹的眼睛很＿＿，耳朵很＿＿。'],
-       sample:'妹妹的眼睛很小，耳朵很小。',
-       sample_vn:'Mắt em gái mình rất nhỏ, tai rất nhỏ.',
-       note:'Câu vị ngữ tính từ (很 + tính từ) là mẫu câu cơ bản để MIÊU TẢ đặc điểm — luôn cần 很 dù không nhấn mạnh "rất".'},
-      {role:'😄 Tình huống 2 — Trêu đùa khen bạn bè',
-       guide:'Con và bạn trêu đùa khen ngoại hình nhau một cách vui vẻ.',
-       structure:['你的个子真高！','你的鼻子真长！'],
-       sample:'你的个子真高！你的鼻子真长！',
-       sample_vn:'Vóc dáng bạn cao thật! Mũi bạn dài thật!',
-       note:'真 + tính từ dùng để KHEN NGỢI hoặc NHẬN XÉT với cảm xúc mạnh — thường dùng trong giao tiếp thân mật, vui đùa giữa bạn bè.'},
-      {role:'✋ Tình huống 3 — Hỏi thăm về đôi tay',
-       guide:'Con hỏi bạn xem tay bạn ấy to hay nhỏ.',
-       structure:['你的手大吗？','我的手不大。'],
-       sample:'你的手大吗？我的手不大。',
-       sample_vn:'Tay bạn to không? Tay mình không to.',
-       note:'的 giúp gắn kết sở hữu (你的手 = tay của bạn) — đây là trợ từ con sẽ dùng RẤT NHIỀU khi nói về đồ vật, người thân của mình.'},
-    ],
-  },
-};

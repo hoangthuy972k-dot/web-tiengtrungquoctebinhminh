@@ -15,13 +15,40 @@
     wrongMatches: 0
   };
 
-  function speak(text) {
+  var ttsCache = {};
+  var ttsUnavailable = false;
+
+  function speakWebSpeech(text) {
     if (!('speechSynthesis' in window)) return;
     var u = new SpeechSynthesisUtterance(text);
     u.lang = 'zh-CN';
     u.rate = 0.85;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(u);
+  }
+
+  function speak(text) {
+    if (ttsUnavailable) { speakWebSpeech(text); return; }
+    if (ttsCache[text]) {
+      ttsCache[text].currentTime = 0;
+      ttsCache[text].play().catch(function () { speakWebSpeech(text); });
+      return;
+    }
+    fetch('/api/tts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: text })
+    }).then(function (r) {
+      if (!r.ok) throw new Error('tts unavailable');
+      return r.json();
+    }).then(function (data) {
+      var audio = new Audio('data:audio/mp3;base64,' + data.audioContent);
+      ttsCache[text] = audio;
+      audio.play();
+    }).catch(function () {
+      ttsUnavailable = true;
+      speakWebSpeech(text);
+    });
   }
 
   function stripTones(s) {

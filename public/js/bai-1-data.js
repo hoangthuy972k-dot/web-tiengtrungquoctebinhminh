@@ -224,88 +224,133 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — 要 / 最 / 几 / 多
-const fillData = [
-  {pre:'我',blank:'要',post:'去北京旅游。',hint:'(muốn, định)',ans:'要',exp:'要 + Động từ biểu thị nguyện vọng, ý định'},
-  {pre:'九月去北京旅游',blank:'最',post:'好。',hint:'(nhất)',ans:'最',exp:'最 đặt trước tính từ để biểu thị mức độ cao nhất'},
-  {pre:'我们要不要买',blank:'几',post:'个新的椅子？',hint:'(vài, mấy — số ước lượng nhỏ hơn 10)',ans:'几'},
-  {pre:'它六个',blank:'多',post:'月了。',hint:'(hơn — số đếm nhỏ hơn 10 thì 多 đứng sau lượng từ)',ans:'多'},
-  {pre:'它的眼睛',blank:'最',post:'漂亮。',hint:'(nhất)',ans:'最'},
-  {pre:'下午我们',blank:'一起',post:'去踢足球吧。',hint:'(cùng nhau)',ans:'一起'},
-  {pre:'车上有',blank:'几',post:'个人。',hint:'(vài, mấy)',ans:'几'},
-  {pre:'三个',blank:'多',post:'星期。',hint:'(hơn — số ước lượng)',ans:'多'},
-];
 
-// Sắp xếp — khác Điền từ
-const sortData = [
-  {words:['你','觉得','什么','时候','去','最','好','？'],ans:'你觉得什么时候去最好？',audio:'你觉得什么时候去最好？'},
-  {words:['九月','的','北京','天气','不','冷','也','不','热','。'],ans:'九月的北京天气不冷也不热。',audio:'九月的北京天气不冷也不热。'},
-  {words:['你','喜欢','什么','运动','？'],ans:'你喜欢什么运动？',audio:'你喜欢什么运动？'},
-  {words:['我','最','喜欢','踢','足球','。'],ans:'我最喜欢踢足球。',audio:'我最喜欢踢足球。'},
-  {words:['我们','要','不要','买','几','个','新','的','椅子','？'],ans:'我们要不要买几个新的椅子？',audio:'我们要不要买几个新的椅子？'},
-  {words:['它','叫','花花','，','它','很','漂亮','。'],ans:'它叫花花，它很漂亮。',audio:'它叫花花，它很漂亮。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation) — Động từ/Phó từ + Tân ngữ/Tính từ
+// Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'你觉得什么时候去最好？',right:'九月去北京旅游最好。'},
-  {left:'为什么？',right:'九月的北京天气不冷也不热。'},
-  {left:'你喜欢什么运动？',right:'我最喜欢踢足球。'},
-  {left:'我们要不要买几个新的椅子？',right:'好啊，什么时候去买？'},
-  {left:'你明天几点能回来？',right:'三点多。'},
-  {left:'它多大了？',right:'六个多月。'},
+  {left:'踢',right:'足球'},
+  {left:'要',right:'旅游'},
+  {left:'最',right:'喜欢'},
+  {left:'一起',right:'运动'},
+  {left:'新',right:'椅子'},
+  {left:'它的',right:'眼睛'},
 ];
 
-// Trắc nghiệm — không audio
-const mcData = [
-  {q:'我＿＿去北京旅游。',opts:['要','想','会','能'],ans:0},
-  {q:'九月去北京旅游＿＿好。',opts:['最','很','太','更'],ans:0},
-  {q:'我们要不要买＿＿个新的椅子？',opts:['几','多','一','两'],ans:0},
-  {q:'它六个＿＿月了。',opts:['多','几','才','就'],ans:0},
-  {q:'你喜欢什么＿＿？',opts:['运动','旅游','椅子','眼睛'],ans:0},
-  {q:'下午我们＿＿去踢足球吧。',opts:['一起','一下','一点','一直'],ans:0},
-  {q:'桌子＿＿面有个猫。',opts:['下','上','里','外'],ans:0},
-  {q:'它的＿＿最漂亮。',opts:['眼睛','足球','椅子','旅游'],ans:0},
-  {q:'车上有＿＿个人。',opts:['几','多','两','半'],ans:0},
-  {q:'三个＿＿星期。',opts:['多','几','两','半'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE (Listening) — tình huống MỚI, không trùng bài khoá
+// Dùng 要/最/几/多 + từ vựng bài 1, ngữ cảnh khác hoàn toàn (rủ đi vận động,
+// hỏi số bạn cùng lớp, mua ghế) thay vì Bắc Kinh / đá bóng / con mèo.
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'我朋友要买新椅子。他觉得白色的最好看。我也想买一把。',
+   questions:[
+     {q:'我朋友要做什么？',opts:['买新椅子','去旅游','踢足球','买眼镜'],ans:0},
+     {q:'我朋友觉得什么颜色的椅子最好看？',opts:['白色','黑色','红色','没有说'],ans:0},
+   ]},
+  {audio:'明天我们班要一起去运动。我不知道有几个同学要去，你为什么不去？',
+   questions:[
+     {q:'明天他们班要做什么？',opts:['一起去运动','买新椅子','去旅游','看眼睛'],ans:0},
+     {q:'说话的人问了什么问题？',opts:['你为什么不去','你要去几天','你觉得椅子好看吗','你几点回来'],ans:0},
+   ]},
+  {audio:'我要买十多把新椅子，我觉得这样最好。',
+   questions:[
+     {q:'"十多把"是什么意思？',opts:['超过十把','正好十把','不到十把','一把都没有'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hoàn thành đoạn thoại MỚI (rủ bạn đi vận động)
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你明天',blank:'要',post:'不要去公园运动？',hint:'(muốn, sẽ — trợ động từ)',ans:'要',exp:'要 đặt trước động từ để hỏi/nêu ý định.'},
+  {pre:'要啊，我',blank:'最',post:'喜欢运动了！',hint:'(nhất)',ans:'最',exp:'最 đặt trước động từ tâm lý/tính từ để biểu thị mức độ cao nhất.'},
+  {pre:'那我们',blank:'一起',post:'去吧，我叫上小李。',hint:'(cùng nhau)',ans:'一起'},
+  {pre:'好，我',blank:'也',post:'想叫他一起去。',hint:'(cũng)',ans:'也'},
+  {pre:'我们班有',blank:'几',post:'个同学要去呢？',hint:'(vài, mấy — số ước lượng nhỏ hơn 10)',ans:'几',exp:'几 phải đi kèm lượng từ + danh từ.'},
+  {pre:'好像有十',blank:'多',post:'个人要去。',hint:'(hơn — số ước lượng, số > 10 thì 多 đứng sau số đếm)',ans:'多'},
+  {pre:'你',blank:'为什么',post:'不去？',hint:'(tại sao)',ans:'为什么'},
+  {pre:'因为我',blank:'要',post:'去买新椅子。',hint:'(muốn, cần)',ans:'要'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP — câu MỚI, dùng 要/最/几/多/也/为什么
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['我','也','要','去','旅游','。'],ans:'我也要去旅游。',audio:'我也要去旅游。'},
+  {words:['他','最','喜欢','运动','。'],ans:'他最喜欢运动。',audio:'他最喜欢运动。'},
+  {words:['你们','要','不要','一起','去','？'],ans:'你们要不要一起去？',audio:'你们要不要一起去？'},
+  {words:['教室','里','有','几','把','新','椅子','。'],ans:'教室里有几把新椅子。',audio:'教室里有几把新椅子。'},
+  {words:['她','的','眼睛','最','好看','。'],ans:'她的眼睛最好看。',audio:'她的眼睛最好看。'},
+  {words:['我们','十','多','个','人','要','去','。'],ans:'我们十多个人要去。',audio:'我们十多个人要去。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI — lỗi ngữ pháp học sinh Việt hay mắc
+// (chuyển di tiêu cực từ trật tự từ tiếng Việt: "đẹp nhất", "cũng" cuối câu...)
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'她的眼睛漂亮最。',
+   opts:['她的眼睛最漂亮。','她最的眼睛漂亮。','最她的眼睛漂亮。','她的最眼睛漂亮。'],ans:0,
+   exp:'最 phải đứng NGAY TRƯỚC tính từ／động từ tâm lý, không đặt sau như trật tự "đẹp nhất" trong tiếng Việt.'},
+  {wrong:'我不要去旅游。(ý muốn nói "tôi không MUỐN đi du lịch")',
+   opts:['我不想去旅游。','我不去要旅游。','我要不去旅游。','我去不要旅游。'],ans:0,
+   exp:'Phủ định "muốn" phải dùng 不想, KHÔNG dùng 不要 (不要 mang nghĩa "đừng làm việc gì", như một lời cấm/khuyên).'},
+  {wrong:'教室里有几椅子。',
+   opts:['教室里有几把椅子。','教室里几有把椅子。','教室里有把几椅子。','教室里有几椅子把。'],ans:0,
+   exp:'Sau 几 bắt buộc phải có LƯỢNG TỪ (把) rồi mới đến danh từ — không được bỏ qua lượng từ như tiếng Việt "mấy ghế".'},
+  {wrong:'十把多椅子。',
+   opts:['十多把椅子。','多十把椅子。','十把椅子多。','把十多椅子。'],ans:0,
+   exp:'Với số đếm LỚN HƠN 10, 多 phải đứng SAU số đếm và TRƯỚC lượng từ: Số + 多 + Lượng từ + Danh từ.'},
+  {wrong:'我想去旅游也。',
+   opts:['我也想去旅游。','我想也去旅游。','想我也去旅游。','我想去也旅游。'],ans:0,
+   exp:'也 phải đứng SAU chủ ngữ và TRƯỚC động từ/trợ động từ, không đặt cuối câu như "cũng" trong tiếng Việt có thể đứng linh hoạt.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu.',
     models:[
-      {zh:'我要去北京旅游，你觉得什么时候去最好？',py:'Wǒ yào qù Běijīng lǚyóu, nǐ juéde shénme shíhou qù zuì hǎo?',vn:'Tôi muốn đi Bắc Kinh du lịch, bạn nghĩ đi vào thời gian nào là tốt nhất?'},
-      {zh:'九月的北京天气不冷也不热。',py:'Jiǔyuè de Běijīng tiānqì bù lěng yě bú rè.',vn:'Thời tiết Bắc Kinh vào tháng 9 không lạnh cũng không nóng.'},
-      {zh:'我最喜欢踢足球，下午我们一起去踢足球吧。',py:'Wǒ zuì xǐhuan tī zúqiú, xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.',vn:'Tôi thích đá bóng nhất, chiều nay chúng ta cùng nhau đi đá bóng đi.'},
-      {zh:'它叫花花，我觉得它的眼睛最漂亮。',py:'Tā jiào Huāhua, wǒ juéde tā de yǎnjing zuì piàoliang.',vn:'Nó tên là Hoa Hoa, tôi thấy đôi mắt của nó là đẹp nhất.'},
+      {zh:'你明天要不要去公园运动？',py:'Nǐ míngtiān yào bu yào qù gōngyuán yùndòng?',vn:'Ngày mai bạn có muốn đi công viên vận động không?'},
+      {zh:'我最喜欢踢足球了。',py:'Wǒ zuì xǐhuan tī zúqiú le.',vn:'Tôi thích đá bóng nhất.'},
+      {zh:'我们班有几个同学要去。',py:'Wǒmen bān yǒu jǐ ge tóngxué yào qù.',vn:'Lớp chúng tôi có vài bạn muốn đi.'},
+      {zh:'好像有十多个人要去。',py:'Hǎoxiàng yǒu shí duō ge rén yào qù.',vn:'Hình như có hơn mười người sẽ đi.'},
+      {zh:'她的眼睛最好看。',py:'Tā de yǎnjing zuì hǎokàn.',vn:'Đôi mắt của cô ấy đẹp nhất.'},
     ],
   },
   t2:{
     intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我要去＿＿旅游。',frame_py:'Wǒ yào qù ___ lǚyóu.',vn:'Tôi muốn đi ＿＿ du lịch.',options:['北京','上海','广州'],samples:['我要去北京旅游。','我要去上海旅游。','我要去广州旅游。']},
+      {frame:'我要去＿＿。',frame_py:'Wǒ yào qù ___.',vn:'Tôi muốn đi ＿＿.',options:['旅游','运动','买新椅子'],samples:['我要去旅游。','我要去运动。','我要去买新椅子。']},
       {frame:'我最喜欢＿＿。',frame_py:'Wǒ zuì xǐhuan ___.',vn:'Tôi thích ＿＿ nhất.',options:['踢足球','旅游','运动'],samples:['我最喜欢踢足球。','我最喜欢旅游。','我最喜欢运动。']},
-      {frame:'我们要不要买几个新的＿＿？',frame_py:'Wǒmen yào bu yào mǎi jǐ ge xīn de ___?',vn:'Chúng ta có cần mua vài cái ＿＿ mới không?',options:['椅子','桌子','杯子'],samples:['我们要不要买几个新的椅子？','我们要不要买几个新的桌子？','我们要不要买几个新的杯子？']},
-      {frame:'它＿＿个月了。',frame_py:'Tā ___ ge yuè le.',vn:'Nó được ＿＿ tháng rồi.',options:['六个多','三个多','两个多'],samples:['它六个多个月了。','它三个多个月了。','它两个多个月了。']},
+      {frame:'我们班有＿＿个同学要去。',frame_py:'Wǒmen bān yǒu ___ ge tóngxué yào qù.',vn:'Lớp chúng tôi có ＿＿ bạn muốn đi.',options:['几','十多','两'],samples:['我们班有几个同学要去。','我们班有十多个同学要去。','我们班有两个同学要去。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'✈️ Tình huống 1 — Bàn kế hoạch du lịch',
-       guide:'Bạn hỏi bạn mình nên đi Bắc Kinh du lịch vào lúc nào là tốt nhất.',
-       structure:['我要去＿＿旅游，你觉得什么时候去最好？','＿＿去＿＿旅游最好。'],
-       sample:'我要去北京旅游，你觉得什么时候去最好？九月去北京旅游最好。',
-       sample_vn:'Tôi muốn đi Bắc Kinh du lịch, bạn nghĩ đi vào thời gian nào là tốt nhất? Đi vào tháng 9 là tốt nhất.'},
-      {role:'⚽ Tình huống 2 — Nói về sở thích thể thao',
-       guide:'Bạn hỏi và trả lời về môn thể thao yêu thích, rồi rủ nhau đi chơi.',
-       structure:['你喜欢什么运动？','我最喜欢＿＿。'],
-       sample:'你喜欢什么运动？我最喜欢踢足球。',
-       sample_vn:'Bạn thích môn thể thao nào? Tôi thích đá bóng nhất.'},
-      {role:'🐱 Tình huống 3 — Miêu tả con vật nuôi',
-       guide:'Bạn giới thiệu con mèo của mình cho bạn bè nghe.',
-       structure:['它叫＿＿。它很＿＿。','我觉得它的＿＿最漂亮。'],
-       sample:'它叫花花。它很漂亮。我觉得它的眼睛最漂亮。',
-       sample_vn:'Nó tên là Hoa Hoa. Nó đẹp lắm. Tôi thấy đôi mắt của nó là đẹp nhất.'},
+      {role:'🏃 Tình huống 1 — Rủ bạn đi vận động cuối tuần',
+       guide:'Bạn rủ bạn mình cuối tuần cùng đi vận động, và nói môn thể thao bạn thích nhất.',
+       structure:['你明天要不要一起去运动？','我最喜欢＿＿。'],
+       sample:'你明天要不要一起去运动？我最喜欢踢足球。',
+       sample_vn:'Ngày mai bạn có muốn cùng đi vận động không? Tôi thích đá bóng nhất.',
+       note:'一起 luôn đứng TRƯỚC động từ chính (一起去/一起运动), không đứng sau như "cùng nhau" có thể đứng cuối câu trong tiếng Việt.'},
+      {role:'🪑 Tình huống 2 — Hỏi mua đồ mới ở nhà',
+       guide:'Bạn bàn với người nhà về việc mua vài chiếc ghế mới.',
+       structure:['我们要不要买几把新＿＿？','好啊，买十多把吧。'],
+       sample:'我们要不要买几把新椅子？好啊，买十多把吧。',
+       sample_vn:'Chúng ta có cần mua vài chiếc ghế mới không? Được đó, mua hơn mười chiếc đi.',
+       note:'几 (số nhỏ, chưa biết chính xác) và 多 (số ước lượng, thường đi với số đã biết) dùng trong hai tình huống khác nhau — đừng nhầm lẫn.'},
+      {role:'👀 Tình huống 3 — Khen ngoại hình bạn mới quen',
+       guide:'Bạn gặp một người bạn mới và khen một đặc điểm ngoại hình của họ.',
+       structure:['我觉得你的＿＿最好看。','谢谢，你也很好看。'],
+       sample:'我觉得你的眼睛最好看。谢谢，你也很好看。',
+       sample_vn:'Tôi thấy đôi mắt của bạn đẹp nhất. Cảm ơn, bạn cũng rất đẹp.',
+       note:'觉得 dùng để nêu ý kiến/cảm nhận cá nhân một cách lịch sự, tự nhiên hơn là khẳng định trực tiếp.'},
     ],
   },
 };

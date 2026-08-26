@@ -32,6 +32,11 @@ function speakSeq(texts){
 function miniSpeakBtn(text){return '<button type="button" class="speak-mini" data-action="speak" data-text="'+text.replace(/"/g,'&quot;')+'">🔊</button>';}
 
 // ══════════════════════════════════════════
+// EXERCISE SCORES (Phần 5 · Tổng kết — dashboard tổng hợp)
+// ══════════════════════════════════════════
+window.exerciseScores = { collocation:null, listen:null, fill:null, sort:null, errorfix:null, speak:null };
+
+// ══════════════════════════════════════════
 // NAV
 // ══════════════════════════════════════════
 function showTab(id,btn){
@@ -39,6 +44,7 @@ function showTab(id,btn){
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  if(id==='tongket' && typeof buildSummary==='function') buildSummary();
 }
 
 // ══════════════════════════════════════════
@@ -285,6 +291,7 @@ function checkFill(){
   document.getElementById('fill-sn').textContent=ok+'/'+fillData.length;
   document.getElementById('fill-sm').textContent=pct===100?'🎉 Hoàn hảo!':pct>=70?'👍 Làm tốt!':'💪 Thử lại nhé!';
   document.getElementById('fill-prog').style.width=pct+'%';
+  window.exerciseScores.fill={correct:ok,total:fillData.length};
 }
 function resetFill(){
   fillData.forEach(function(_,i){
@@ -349,6 +356,7 @@ function checkSort(){
   const sb=document.getElementById('sort-score');sb.style.display='flex';
   document.getElementById('sort-sn').textContent=ok+'/'+sortData.length;
   document.getElementById('sort-sm').textContent=pct===100?'🎉 Xuất sắc!':pct>=60?'👍 Làm tốt!':'💪 Xem lại và thử lại!';
+  window.exerciseScores.sort={correct:ok,total:sortData.length};
 }
 function resetSort(){
   document.getElementById('sort-score').style.display='none';
@@ -392,6 +400,7 @@ function mClickR(i){
     document.getElementById('mr'+i).classList.add('m-ok');
     mDone.add('L'+mSel);mDone.add('R'+i);
     document.getElementById('m-fb').innerHTML='<span style="color:var(--green)">✓ Đúng rồi!</span>';
+    window.exerciseScores.collocation={correct:mDone.size/2,total:matchData.length};
     if(mDone.size===matchData.length*2)setTimeout(function(){document.getElementById('m-fb').innerHTML='<span style="color:var(--sky-d);font-weight:700">🎉 Hoàn thành! Xuất sắc!</span>';},300);
   } else {
     document.getElementById('ml'+mSel).classList.remove('sel');
@@ -443,6 +452,7 @@ function checkMC(qi,chosen){
   document.getElementById('mc-sn').textContent=okC+'/'+done;
   document.getElementById('mc-sm').textContent=done===mcData.length?(okC>=9?'🎉 Xuất sắc!':okC>=7?'👍 Giỏi lắm!':'💪 Xem lại và thử lại!'):'Đã trả lời '+done+'/'+mcData.length+' câu';
   document.getElementById('mc-prog').style.width=(done/mcData.length*100)+'%';
+  window.exerciseScores.mc={correct:okC,total:mcData.length,done:done};
 }
 
 // ══ LUYỆN NÓI 3 TẦNG ══
@@ -485,10 +495,224 @@ function buildSpeaking(tier){
         '<button class="show-ans-btn" data-action="toggle-show" data-target="ts'+i+'">Xem đoạn nói mẫu ▾</button>'+
         '<div class="task-sample" id="ts'+i+'"><div class="ts-zh">'+t.sample+' '+miniSpeakBtn(t.sample)+'</div><div class="ts-vn">'+t.sample_vn+'</div></div>'+
         (t.note?'<div class="task-note"><b>💡 Lưu ý thực tế:</b> '+t.note+'</div>':'')+
+        buildRecorderHtml(i,t.sample)+
         '</div>';
     }).join('');
     w.innerHTML='<div class="tier-intro"><b>Tầng 3 · Nói tự do:</b> '+d.intro+'</div><div class="speak-grid">'+tasks+'</div>';
   }
+}
+
+// ══════════════════════════════════════════
+// GHI ÂM (Phần 4 · Luyện nói — MediaRecorder + Azure Pronunciation Assessment)
+// ══════════════════════════════════════════
+const recState={};
+function buildRecorderHtml(i,referenceText){
+  return '<div class="rec-box" id="rec'+i+'" data-ref="'+referenceText.replace(/"/g,'&quot;')+'">'+
+    '<div class="rec-row">'+
+      '<button type="button" class="rec-btn rec-start" data-action="rec-start" data-idx="'+i+'">🎙️ Ghi âm</button>'+
+      '<button type="button" class="rec-btn rec-stop" data-action="rec-stop" data-idx="'+i+'" disabled>⏹ Dừng</button>'+
+      '<button type="button" class="rec-btn rec-play" data-action="rec-play" data-idx="'+i+'" disabled>▶ Nghe lại</button>'+
+      '<button type="button" class="rec-btn rec-submit" data-action="rec-submit" data-idx="'+i+'" disabled>📤 Chấm điểm</button>'+
+    '</div>'+
+    '<div class="rec-status" id="rec-status'+i+'">Bấm 🎙️ Ghi âm rồi đọc to câu mẫu ở trên.</div>'+
+    '<div class="rec-result" id="rec-result'+i+'"></div>'+
+  '</div>';
+}
+function recStart(i){
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){
+    document.getElementById('rec-status'+i).textContent='Trình duyệt không hỗ trợ ghi âm.';return;
+  }
+  navigator.mediaDevices.getUserMedia({audio:true}).then(function(stream){
+    const mr=new MediaRecorder(stream);
+    const chunks=[];
+    mr.ondataavailable=function(e){if(e.data.size>0)chunks.push(e.data);};
+    mr.onstop=function(){
+      stream.getTracks().forEach(function(t){t.stop();});
+      const blob=new Blob(chunks,{type:mr.mimeType||'audio/webm'});
+      recState[i]={blob:blob,url:URL.createObjectURL(blob)};
+      document.getElementById('rec-status'+i).textContent='✓ Đã ghi âm xong. Nghe lại hoặc gửi chấm điểm.';
+      document.querySelector('#rec'+i+' .rec-play').disabled=false;
+      document.querySelector('#rec'+i+' .rec-submit').disabled=false;
+      document.querySelector('#rec'+i+' .rec-start').disabled=false;
+    };
+    mr.start();
+    recState[i]=recState[i]||{};
+    recState[i].mr=mr;
+    document.getElementById('rec-status'+i).textContent='🔴 Đang ghi âm... bấm ⏹ khi nói xong.';
+    document.querySelector('#rec'+i+' .rec-start').disabled=true;
+    document.querySelector('#rec'+i+' .rec-stop').disabled=false;
+  }).catch(function(){
+    document.getElementById('rec-status'+i).textContent='Không thể truy cập micro — hãy cho phép quyền micro rồi thử lại.';
+  });
+}
+function recStop(i){
+  if(recState[i]&&recState[i].mr&&recState[i].mr.state==='recording')recState[i].mr.stop();
+  document.querySelector('#rec'+i+' .rec-stop').disabled=true;
+}
+function recPlay(i){
+  if(!recState[i]||!recState[i].url)return;
+  const a=new Audio(recState[i].url);a.play();
+}
+function recSubmit(i){
+  if(!recState[i]||!recState[i].blob)return;
+  const box=document.getElementById('rec'+i);
+  const referenceText=box.dataset.ref;
+  const resultEl=document.getElementById('rec-result'+i);
+  const statusEl=document.getElementById('rec-status'+i);
+  statusEl.textContent='⏳ Đang chấm điểm...';
+  document.querySelector('#rec'+i+' .rec-submit').disabled=true;
+  const reader=new FileReader();
+  reader.onloadend=function(){
+    const b64=reader.result.split(',')[1];
+    fetch('/api/speech-assess',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({audioBase64:b64,mimeType:recState[i].blob.type,referenceText:referenceText})
+    }).then(function(r){return r.json().then(function(j){return {ok:r.ok,data:j};});})
+      .then(function(res){
+        document.querySelector('#rec'+i+' .rec-submit').disabled=false;
+        if(!res.ok){
+          statusEl.textContent='';
+          resultEl.innerHTML='<div class="rec-fallback">🙈 Chưa bật chấm điểm AI ('+(res.data.error||'')+'). Hãy tự nghe lại và đối chiếu với câu mẫu ở trên nhé — đó vẫn là cách luyện tập rất tốt!</div>';
+          window.exerciseScores.speak=window.exerciseScores.speak||{done:0,total:0};
+          window.exerciseScores.speak.done++;window.exerciseScores.speak.total++;
+          return;
+        }
+        const d=res.data;
+        resultEl.innerHTML='<div class="rec-scores">'+
+          '<div class="rec-score-item"><span>Phát âm</span><b>'+Math.round(d.pronunciation)+'</b></div>'+
+          '<div class="rec-score-item"><span>Độ chính xác</span><b>'+Math.round(d.accuracy)+'</b></div>'+
+          '<div class="rec-score-item"><span>Trôi chảy</span><b>'+Math.round(d.fluency)+'</b></div>'+
+          '<div class="rec-score-item"><span>Đầy đủ</span><b>'+Math.round(d.completeness)+'</b></div>'+
+          '</div>'+(d.recognizedText?'<div class="rec-recognized">Máy nghe được: "'+d.recognizedText+'"</div>':'');
+        statusEl.textContent='✓ Đã chấm điểm xong.';
+        window.exerciseScores.speak=window.exerciseScores.speak||{done:0,total:0,scores:[]};
+        window.exerciseScores.speak.done++;window.exerciseScores.speak.total++;
+        window.exerciseScores.speak.scores=window.exerciseScores.speak.scores||[];
+        window.exerciseScores.speak.scores.push(d.pronunciation);
+      }).catch(function(){
+        document.querySelector('#rec'+i+' .rec-submit').disabled=false;
+        statusEl.textContent='';
+        resultEl.innerHTML='<div class="rec-fallback">Không gửi được — hãy thử lại, hoặc tự đối chiếu với câu mẫu.</div>';
+      });
+  };
+  reader.readAsDataURL(recState[i].blob);
+}
+
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE (Listening comprehension — TTS + trắc nghiệm)
+// ══════════════════════════════════════════
+let listenAns=[];
+function buildListen(){
+  let qFlat=[];
+  listenData.forEach(function(g,gi){g.questions.forEach(function(q,qi){qFlat.push({gi:gi,qi:qi});});});
+  listenAns=Array(qFlat.length).fill(false);
+  const wrap=document.getElementById('listen-wrap');
+  wrap.innerHTML=listenData.map(function(g,gi){
+    const qs=g.questions.map(function(q,qi){
+      const flatIdx=qFlat.findIndex(function(f){return f.gi===gi&&f.qi===qi;});
+      return '<div class="quiz-card" id="lq'+gi+'_'+qi+'">'+
+        '<div class="q-text"><span class="q-num">'+(flatIdx+1)+'</span>'+q.q+'</div>'+
+        '<div class="q-opts">'+q.opts.map(function(o,ci){return '<button class="q-opt" id="lo'+gi+'_'+qi+'_'+ci+'" data-action="check-listen" data-gi="'+gi+'" data-qi="'+qi+'" data-ci="'+ci+'">'+o+'</button>';}).join('')+'</div>'+
+        '<div class="q-fb" id="lf'+gi+'_'+qi+'"></div></div>';
+    }).join('');
+    return '<div class="listen-passage">'+
+      '<button type="button" class="listen-play-btn" data-action="speak" data-text="'+g.audio.replace(/"/g,'&quot;')+'">🔊 Nghe đoạn '+(gi+1)+'</button>'+
+      qs+'</div>';
+  }).join('');
+  document.getElementById('listen-score').style.display='none';
+}
+function checkListenAnswer(gi,qi,chosen){
+  const idKey=gi+'_'+qi;
+  const q=listenData[gi].questions[qi];
+  const fb=document.getElementById('lf'+idKey);
+  if(fb.dataset.done)return;
+  fb.dataset.done='1';
+  const c=chosen===q.ans;
+  q.opts.forEach(function(_,ci){
+    const b=document.getElementById('lo'+gi+'_'+qi+'_'+ci);
+    b.style.pointerEvents='none';
+    if(ci===q.ans)b.classList.add('show-ok');
+    else if(ci===chosen&&!c)b.classList.add('sel-err');
+  });
+  fb.className='q-fb '+(c?'ok':'err');
+  fb.textContent=c?'✓ Đúng rồi!':'✗ Đáp án：「'+q.opts[q.ans]+'」';
+  let total=0,ok=0,done=0;
+  listenData.forEach(function(g,gi2){g.questions.forEach(function(qq,qi2){
+    total++;
+    const f=document.getElementById('lf'+gi2+'_'+qi2);
+    if(f.dataset.done){done++;if(f.classList.contains('ok'))ok++;}
+  });});
+  const sb=document.getElementById('listen-score');sb.style.display='flex';
+  document.getElementById('listen-sn').textContent=ok+'/'+total;
+  document.getElementById('listen-sm').textContent=done===total?(ok===total?'🎉 Xuất sắc!':'👍 Xem lại câu sai nhé!'):'Đã trả lời '+done+'/'+total+' câu';
+  window.exerciseScores.listen={correct:ok,total:total};
+}
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI (Error correction — lỗi thường gặp của HS Việt)
+// ══════════════════════════════════════════
+let errAns=[];
+function buildErrorFix(){
+  errAns=Array(errorFixData.length).fill(false);
+  const l=document.getElementById('errfix-list');
+  l.innerHTML=errorFixData.map(function(q,i){
+    const opts=q.opts.map(function(o,j){return '<button class="q-opt" id="eo'+i+'_'+j+'" data-action="check-errorfix" data-qi="'+i+'" data-ci="'+j+'">'+o+'</button>';}).join('');
+    return '<div class="quiz-card" id="efq'+i+'">'+
+      '<div class="q-text"><span class="q-num">'+(i+1)+'</span>❌ '+q.wrong+'</div>'+
+      '<div style="font-size:0.82rem;color:var(--soft);margin:-6px 0 10px 30px;">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'+
+      '<div class="q-opts">'+opts+'</div>'+
+      '<div class="q-fb" id="ef'+i+'"></div></div>';
+  }).join('');
+  document.getElementById('errfix-score').style.display='none';
+}
+function checkErrorFix(qi,chosen){
+  if(errAns[qi])return;errAns[qi]=true;
+  const q=errorFixData[qi],c=chosen===q.ans;
+  const fb=document.getElementById('ef'+qi);
+  q.opts.forEach(function(_,j){
+    const b=document.getElementById('eo'+qi+'_'+j);
+    b.style.pointerEvents='none';
+    if(j===q.ans)b.classList.add('show-ok');
+    else if(j===chosen&&!c)b.classList.add('sel-err');
+  });
+  fb.className='q-fb '+(c?'ok':'err');
+  fb.textContent=(c?'✓ Đúng rồi! ':'✗ Đáp án：「'+q.opts[q.ans]+'」 — ')+q.exp;
+  const done=errAns.filter(Boolean).length;
+  let ok=0;errorFixData.forEach(function(_,i){if(errAns[i]&&document.getElementById('ef'+i).classList.contains('ok'))ok++;});
+  const sb=document.getElementById('errfix-score');sb.style.display='flex';
+  document.getElementById('errfix-sn').textContent=ok+'/'+done;
+  document.getElementById('errfix-sm').textContent=done===errorFixData.length?(ok===errorFixData.length?'🎉 Xuất sắc!':'💪 Xem lại giải thích nhé!'):'Đã trả lời '+done+'/'+errorFixData.length+' câu';
+  window.exerciseScores.errorfix={correct:ok,total:errorFixData.length};
+}
+
+// ══════════════════════════════════════════
+// PHẦN 5 · TỔNG KẾT (Score dashboard — thang 100 + huy hiệu)
+// ══════════════════════════════════════════
+function buildSummary(){
+  const s=window.exerciseScores;
+  function pct(part){return part&&part.total?part.correct/part.total:0;}
+  const p1=pct(s.collocation)*15;
+  const p2=pct(s.listen)*20;
+  const gTotal=(s.fill?s.fill.total:0)+(s.sort?s.sort.total:0)+(s.errorfix?s.errorfix.total:0);
+  const gCorrect=(s.fill?s.fill.correct:0)+(s.sort?s.sort.correct:0)+(s.errorfix?s.errorfix.correct:0);
+  const p3=gTotal?(gCorrect/gTotal)*40:0;
+  const p4=(s.speak&&s.speak.total)?Math.min(1,s.speak.done/3)*25:0;
+  const total=Math.round(p1+p2+p3+p4);
+  let badge,stars;
+  if(total>=90){badge='🏆 Xuất sắc';stars='⭐⭐⭐';}
+  else if(total>=70){badge='👍 Khá tốt';stars='⭐⭐';}
+  else if(total>=50){badge='💪 Cần cố gắng thêm';stars='⭐';}
+  else {badge='🌱 Hãy luyện tập lại';stars='';}
+  const wrap=document.getElementById('summary-wrap');
+  wrap.innerHTML=
+    '<div class="sum-total"><div class="sum-total-n">'+total+'<span>/100</span></div><div class="sum-badge">'+badge+' '+stars+'</div></div>'+
+    '<div class="sum-parts">'+
+      '<div class="sum-part"><span>1️⃣ Ghép từ</span><b>'+Math.round(p1)+'/15</b></div>'+
+      '<div class="sum-part"><span>2️⃣ Nghe hiểu</span><b>'+Math.round(p2)+'/20</b></div>'+
+      '<div class="sum-part"><span>3️⃣ Ngữ pháp</span><b>'+Math.round(p3)+'/40</b></div>'+
+      '<div class="sum-part"><span>4️⃣ Luyện nói</span><b>'+Math.round(p4)+'/25</b></div>'+
+    '</div>'+
+    '<div class="sum-tip">💡 Hoàn thành đủ cả 4 phần bài tập ở trên rồi quay lại đây để xem điểm chính xác nhất nhé!</div>';
 }
 
 // ══════════════════════════════════════════
@@ -518,17 +742,25 @@ document.addEventListener('click', function(e){
   if(action==='place-word'){ placeW(parseInt(el.dataset.si,10), parseInt(el.dataset.wi,10), el.dataset.word); return; }
   if(action==='check-mc'){ checkMC(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='toggle-show'){ document.getElementById(el.dataset.target).classList.toggle('show'); return; }
+  if(action==='check-listen'){ checkListenAnswer(parseInt(el.dataset.gi,10), parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
+  if(action==='check-errorfix'){ checkErrorFix(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
+  if(action==='rec-start'){ e.stopPropagation(); recStart(parseInt(el.dataset.idx,10)); return; }
+  if(action==='rec-stop'){ e.stopPropagation(); recStop(parseInt(el.dataset.idx,10)); return; }
+  if(action==='rec-play'){ e.stopPropagation(); recPlay(parseInt(el.dataset.idx,10)); return; }
+  if(action==='rec-submit'){ e.stopPropagation(); recSubmit(parseInt(el.dataset.idx,10)); return; }
 });
 
 // ══════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════
-buildWarmup();
-buildVocab();
-updateFlash();
-buildDialogs();
-buildFill();
-buildSort();
-buildMatch();
-buildMC();
-buildSpeaking(1);
+if(typeof wuData!=='undefined')buildWarmup();
+if(typeof vocabData!=='undefined')buildVocab();
+if(typeof vocabData!=='undefined')updateFlash();
+if(typeof dialogData!=='undefined')buildDialogs();
+if(typeof fillData!=='undefined')buildFill();
+if(typeof sortData!=='undefined')buildSort();
+if(typeof matchData!=='undefined')buildMatch();
+if(typeof mcData!=='undefined')buildMC();
+if(typeof speakingData!=='undefined')buildSpeaking(1);
+if(typeof listenData!=='undefined')buildListen();
+if(typeof errorFixData!=='undefined')buildErrorFix();

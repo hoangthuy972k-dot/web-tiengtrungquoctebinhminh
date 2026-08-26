@@ -295,3 +295,42 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
   .vc-icon{width:52px;height:52px;}.vc-emoji{font-size:1.6rem;}.vc-zh{font-size:1.3rem;}
   .tab-nav{padding:0;}.wu-emoji{font-size:3rem;padding:14px;}
 }
+
+/* ══════════════════════════════════════════
+   PHẦN 2 · NGHE (Listening)
+   ══════════════════════════════════════════ */
+.listen-passage{border:2px dashed var(--border);border-radius:16px;padding:18px;margin-bottom:20px;}
+.listen-play-btn{background:var(--warm);color:#fff;border:none;border-radius:999px;padding:12px 26px;font-weight:700;font-size:1rem;cursor:pointer;margin-bottom:16px;display:block;}
+.listen-play-btn:hover{background:#ea580c;}
+
+/* ══════════════════════════════════════════
+   PHẦN 4 · GHI ÂM (Voice recording)
+   ══════════════════════════════════════════ */
+.rec-box{margin-top:14px;padding:14px 16px;background:var(--snow);border-radius:14px;border:1.5px solid var(--border);}
+.rec-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.rec-btn{border:none;border-radius:999px;padding:8px 16px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;background:white;border:1.5px solid var(--border);color:var(--ink);}
+.rec-btn.rec-start{background:var(--red);color:#fff;border-color:var(--red);}
+.rec-btn.rec-stop{background:var(--ink);color:#fff;}
+.rec-btn.rec-play{background:var(--sky);color:#fff;border-color:var(--sky);}
+.rec-btn.rec-submit{background:var(--green);color:#fff;border-color:var(--green);}
+.rec-btn:disabled{opacity:0.4;cursor:not-allowed;}
+.rec-status{font-size:0.82rem;color:var(--mid);min-height:20px;}
+.rec-result{margin-top:8px;}
+.rec-scores{display:flex;flex-wrap:wrap;gap:10px;}
+.rec-score-item{background:white;border:1.5px solid var(--border);border-radius:10px;padding:8px 14px;font-size:0.8rem;color:var(--mid);text-align:center;}
+.rec-score-item b{display:block;font-size:1.2rem;color:var(--sky-d);}
+.rec-recognized{margin-top:8px;font-size:0.82rem;color:var(--soft);font-style:italic;}
+.rec-fallback{font-size:0.85rem;color:var(--warm);background:var(--warm-l);border-radius:10px;padding:10px 14px;}
+
+/* ══════════════════════════════════════════
+   PHẦN 5 · TỔNG KẾT (Score summary dashboard)
+   ══════════════════════════════════════════ */
+.sum-total{text-align:center;padding:24px;background:linear-gradient(135deg,var(--sky-l),var(--snow));border-radius:20px;margin-bottom:20px;}
+.sum-total-n{font-size:3rem;font-weight:800;color:var(--sky-d);}
+.sum-total-n span{font-size:1.4rem;color:var(--soft);font-weight:600;}
+.sum-badge{font-size:1.2rem;font-weight:700;margin-top:6px;}
+.sum-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:16px;}
+.sum-part{background:white;border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;}
+.sum-part span{display:block;font-size:0.85rem;color:var(--mid);margin-bottom:6px;}
+.sum-part b{font-size:1.3rem;color:var(--sky-d);}
+.sum-tip{font-size:0.85rem;color:var(--soft);text-align:center;}

@@ -143,4 +143,21 @@ const mcData = [
   {q:'Đếm từ 1 đến 3: 一，二，＿＿',opts:['三','四','五','六'],ans:0},
   {q:'Đếm từ 8 đến 10: 八，九，＿＿',opts:['十','一','二','三'],ans:0},
   {q:'"你" dùng để gọi ai?',opts:['người đang nói chuyện cùng mình','thầy cô giáo','bố mẹ','bạn bè ở xa'],ans:0},
+  {q:'"你好" dùng khi nào?',opts:['khi gặp ai đó','khi chia tay','khi đếm số','khi hỏi tên'],ans:0},
+  {q:'"一" là số mấy?',opts:['một','hai','ba','không'],ans:0},
+  {q:'Số nào đứng ngay sau 二 (hai)?',opts:['三','一','四','五'],ans:0},
+  {q:'"再见" dùng khi nào?',opts:['khi chia tay, ra về','khi mới gặp','khi hỏi tên','khi đếm số'],ans:0},
+  {q:'Đếm ngược: 十，九，＿＿',opts:['八','七','六','五'],ans:0},
+];
+
+// Điền từ — tình huống chào hỏi & đếm số
+const fillData = [
+  {pre:'Con chào cô giáo, con nói: “',blank:'老师',post:'好！”',hint:'(thầy/cô giáo)',ans:'老师'},
+  {pre:'Con chào một người bạn: “',blank:'你',post:'好！”',hint:'(bạn, con, em)',ans:'你'},
+  {pre:'Con tạm biệt khi ra về: “',blank:'再见',post:'！”',hint:'(tạm biệt)',ans:'再见'},
+  {pre:'Đếm: 一，',blank:'二',post:'，三',hint:'(hai)',ans:'二'},
+  {pre:'Đếm: 四，',blank:'五',post:'，六',hint:'(năm)',ans:'五'},
+  {pre:'Đếm: 七，',blank:'八',post:'，九',hint:'(tám)',ans:'八'},
+  {pre:'Số cuối cùng khi đếm đến mười: “',blank:'十',post:'”',hint:'(mười)',ans:'十'},
+  {pre:'Đếm: 六，',blank:'七',post:'，八',hint:'(bảy)',ans:'七'},
 ];

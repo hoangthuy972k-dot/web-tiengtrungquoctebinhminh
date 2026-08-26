@@ -7,6 +7,7 @@
 (function () {
   var YCT_VOCAB = (typeof window.YCT_VOCAB !== 'undefined') ? window.YCT_VOCAB : (typeof vocabData !== 'undefined' ? vocabData : []);
   var YCT_QUIZ = (typeof window.YCT_QUIZ !== 'undefined') ? window.YCT_QUIZ : (typeof mcData !== 'undefined' ? mcData : []);
+  var YCT_FILL = (typeof window.YCT_FILL !== 'undefined') ? window.YCT_FILL : (typeof fillData !== 'undefined' ? fillData : []);
 
   var scoreState = {
     quiz: { correct: 0, total: 0 },
@@ -193,7 +194,7 @@
   /* ---------------- Nối từ (click-match columns) ---------------- */
   var noituState = { leftSel: null, matched: {} };
   function renderNoituTab() {
-    var items = shuffle(YCT_VOCAB).slice(0, Math.min(6, YCT_VOCAB.length));
+    var items = shuffle(YCT_VOCAB).slice(0, Math.min(8, YCT_VOCAB.length));
     var left = shuffle(items);
     var right = shuffle(items);
     noituState = { leftSel: null, matched: {} };
@@ -240,7 +241,7 @@
   /* ---------------- Ghép cặp (memory game) ---------------- */
   var memState = { flipped: [], steps: 0, lock: false };
   function renderMemoryTab() {
-    var n = Math.min(6, YCT_VOCAB.length);
+    var n = Math.min(8, YCT_VOCAB.length);
     var items = shuffle(YCT_VOCAB).slice(0, n);
     var cards = [];
     items.forEach(function (v) {
@@ -429,6 +430,52 @@
     document.getElementById('yq-next').disabled = false;
   }
 
+  /* ---------------- Điền từ ---------------- */
+  function renderFillTab() {
+    var panel = document.getElementById('yk-panel-dientu');
+    if (!YCT_FILL.length) {
+      panel.innerHTML = '<div class="yk-panel-title">✏️ Điền vào chỗ trống</div><p style="text-align:center;color:var(--yk-soft)">Bài này chưa có bài tập điền từ.</p>';
+      return;
+    }
+    var items = YCT_FILL.map(function (f, i) {
+      return '<div class="yk-fill-item" data-idx="' + i + '">' +
+        '<span class="yk-fill-text">' + f.pre + '</span>' +
+        '<input type="text" class="yk-fill-input" data-ans="' + f.ans + '" placeholder="?" />' +
+        '<span class="yk-fill-text">' + f.post + '</span>' +
+        '<span class="yk-fill-hint">' + f.hint + '</span>' +
+        '<span class="yk-fill-fb" id="yfl-fb-' + i + '"></span>' +
+        '</div>';
+    }).join('');
+    panel.innerHTML =
+      '<div class="yk-panel-title">✏️ Điền vào chỗ trống</div>' +
+      '<div class="yk-hint">Đọc tình huống rồi gõ chữ Hán thích hợp vào ô trống nhé!</div>' +
+      '<div id="yfl-list">' + items + '</div>' +
+      '<div class="yk-btn-row">' +
+        '<button type="button" class="yk-btn yk-btn-primary" id="yfl-check">Kiểm tra đáp án</button>' +
+        '<button type="button" class="yk-btn yk-btn-outline" id="yfl-reset">Làm lại</button>' +
+      '</div>' +
+      '<div class="yk-fill-score" id="yfl-score"></div>';
+    document.getElementById('yfl-check').addEventListener('click', checkFill);
+    document.getElementById('yfl-reset').addEventListener('click', renderFillTab);
+  }
+  function checkFill() {
+    var inputs = document.querySelectorAll('.yk-fill-input');
+    var correct = 0;
+    inputs.forEach(function (inp, i) {
+      var ok = inp.value.trim() === inp.dataset.ans;
+      var fb = document.getElementById('yfl-fb-' + i);
+      if (ok) {
+        correct++;
+        inp.classList.add('is-ok'); inp.classList.remove('is-bad');
+        fb.textContent = '✓';
+      } else {
+        inp.classList.add('is-bad'); inp.classList.remove('is-ok');
+        fb.textContent = '✗ ' + inp.dataset.ans;
+      }
+    });
+    document.getElementById('yfl-score').textContent = 'Điểm: ' + correct + '/' + inputs.length;
+  }
+
   /* ---------------- Điểm ---------------- */
   function renderScoreTab() {
     document.getElementById('yk-panel-diem').innerHTML =
@@ -455,6 +502,7 @@
     flashcard: renderFlashTab,
     noitu: renderNoituTab,
     ghepcap: renderMemoryTab,
+    dientu: renderFillTab,
     dich: renderDichTab,
     nghe: renderListenTab,
     luyentap: renderQuizTab,

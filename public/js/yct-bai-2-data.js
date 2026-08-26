@@ -97,4 +97,21 @@ const mcData = [
   {q:'"什么" nghĩa là gì?',opts:['cái gì, gì','ai','ở đâu','khi nào'],ans:0},
   {q:'"我" nghĩa là gì?',opts:['tôi, tớ, mình','bạn','cô ấy','chúng ta'],ans:0},
   {q:'Câu nào ĐÚNG khi hỏi tên bạn mới?',opts:['你叫什么？','你什么叫？','什么你叫？','叫你什么？'],ans:0},
+  {q:'"叫" nghĩa là gì?',opts:['gọi, tên là','biết','thích','đi'],ans:0},
+  {q:'"很" nghĩa là gì?',opts:['rất','không','cũng','đã'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Mình không quen."?',opts:['我不认识。','我认识不。','不我认识。','认识不我。'],ans:0},
+  {q:'"不" nghĩa là gì?',opts:['không, chẳng','có','rất','cũng'],ans:0},
+  {q:'Muốn nói vui khi quen ai đó, con dùng câu nào?',opts:['认识你，很高兴！','你好吗？','你叫什么？','你认识她吗？'],ans:0},
+];
+
+// Điền từ — tình huống làm quen bạn mới
+const fillData = [
+  {pre:'Con hỏi tên bạn mới: “你',blank:'叫',post:'什么？”',hint:'(gọi, tên là)',ans:'叫'},
+  {pre:'Con giới thiệu tên mình: “',blank:'我',post:'叫甜甜。”',hint:'(tôi, tớ)',ans:'我'},
+  {pre:'Con nói vui khi quen bạn mới: “认识你，',blank:'很',post:'高兴！”',hint:'(rất)',ans:'很'},
+  {pre:'Con nói mình rất vui: “我很',blank:'高兴',post:'！”',hint:'(vui, phấn khởi)',ans:'高兴'},
+  {pre:'Con hỏi có quen một bạn nữ không: “你认识',blank:'她',post:'吗？”',hint:'(cô ấy, bạn ấy)',ans:'她'},
+  {pre:'Con tạo câu hỏi Có/Không: “你叫乐乐',blank:'吗',post:'？”',hint:'(trợ từ hỏi)',ans:'吗'},
+  {pre:'Con phủ định là không quen: “',blank:'不',post:'认识。”',hint:'(không, chẳng)',ans:'不'},
+  {pre:'Con xác nhận là mình quen: “我',blank:'认识',post:'她。”',hint:'(quen, biết)',ans:'认识'},
 ];

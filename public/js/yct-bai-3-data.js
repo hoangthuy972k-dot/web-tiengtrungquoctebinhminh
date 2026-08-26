@@ -72,4 +72,21 @@ const mcData = [
   {q:'Câu nào ĐÚNG khi hỏi ai đó là người nước nào?',opts:['你是哪国人？','你哪是国人？','哪你是国人？','国你是哪人？'],ans:0},
   {q:'Từ nào dùng để hỏi "ai"?',opts:['谁','哪','什么','怎么'],ans:0},
   {q:'Câu nào ĐÚNG khi nói "Cô ấy là ai?"',opts:['她是谁？','她谁是？','谁她是？','是她谁？'],ans:0},
+  {q:'"哪" nghĩa là gì?',opts:['nào, cái nào','đó, kia','ai','gì'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Bạn ấy là Minh Minh."?',opts:['他是明明。','明明是他。','他明明是。','是他明明。'],ans:0},
+  {q:'Trong câu "他是中国人", chữ nào chỉ QUỐC TỊCH?',opts:['中国人','他','是','谁'],ans:0},
+  {q:'Muốn hỏi "Bạn là người nước nào?", con nói gì?',opts:['你是哪国人？','你是谁？','你是中国人吗？','他是谁？'],ans:0},
+  {q:'"她" và "他" khác nhau ở đâu?',opts:['她 chỉ bạn nữ, 他 chỉ bạn nam','cả hai đều chỉ bạn nam','cả hai đều chỉ bạn nữ','không khác nhau'],ans:0},
+];
+
+// Điền từ — tình huống hỏi về người & quốc tịch
+const fillData = [
+  {pre:'Con hỏi một người trong ảnh là ai: “他是',blank:'谁',post:'？”',hint:'(ai)',ans:'谁'},
+  {pre:'Con hỏi bạn ấy đến từ nước nào: “他是',blank:'哪',post:'国人？”',hint:'(nào, cái nào)',ans:'哪'},
+  {pre:'Con khẳng định bạn ấy là người Trung Quốc: “他是中国',blank:'人',post:'。”',hint:'(người)',ans:'人'},
+  {pre:'Con nói mình là người Trung Quốc: “我',blank:'是',post:'中国人。”',hint:'(là)',ans:'是'},
+  {pre:'Con hỏi một bạn nam là ai: “',blank:'他',post:'是谁？”',hint:'(anh ấy, bạn ấy)',ans:'他'},
+  {pre:'Con xác nhận lại quốc tịch: “你是中国人',blank:'吗',post:'？”',hint:'(trợ từ hỏi — ôn Bài 2)',ans:'吗'},
+  {pre:'Con nói phần "nước" trong từ quốc gia: “中',blank:'国',post:'人”',hint:'(nước, quốc gia)',ans:'国'},
+  {pre:'Con hỏi một bạn nữ là ai: “她',blank:'是',post:'谁？”',hint:'(là)',ans:'是'},
 ];

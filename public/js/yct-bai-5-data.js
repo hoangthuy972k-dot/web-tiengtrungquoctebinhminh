@@ -56,4 +56,21 @@ const mcData = [
   {q:'"几岁" dùng để hỏi ai?',opts:['trẻ em, số tuổi nhỏ','người lớn tuổi','ông bà','tất cả mọi người như nhau'],ans:0},
   {q:'Câu nào ĐÚNG khi nói "Mình cũng bảy tuổi"?',opts:['我也七岁。','我七也岁。','也我七岁。','七我也岁。'],ans:0},
   {q:'"多" nghĩa là gì?',opts:['nhiều, bao nhiêu','ít','vừa đủ','không có'],ans:0},
+  {q:'Câu nào ĐÚNG khi hỏi tuổi anh trai (người lớn hơn)?',opts:['你哥哥多大？','你哥哥几岁？','哥哥你多大？','多大你哥哥？'],ans:0},
+  {q:'"几岁" và "多大" khác nhau ở đâu?',opts:['几岁 hỏi trẻ em, 多大 hỏi người lớn hơn','cả hai đều hỏi trẻ em','cả hai đều hỏi người lớn','không khác nhau'],ans:0},
+  {q:'我七岁，你＿＿七岁吗？',opts:['也','多','大','几'],ans:0},
+  {q:'"岁" dùng để làm gì?',opts:['lượng từ đếm tuổi','lượng từ đếm người','lượng từ đếm đồ vật','động từ'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Bạn mấy tuổi?"?',opts:['你几岁？','你多岁？','几你岁？','岁你几？'],ans:0},
+];
+
+// Điền từ — tình huống hỏi tuổi
+const fillData = [
+  {pre:'Con hỏi tuổi bạn nhỏ: “你',blank:'几',post:'岁？”',hint:'(mấy — hỏi trẻ em)',ans:'几'},
+  {pre:'Con nói tuổi mình: “我六',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁'},
+  {pre:'Con hỏi tuổi anh trai bạn: “你哥哥',blank:'多',post:'大？”',hint:'(bao nhiêu — hỏi người lớn hơn)',ans:'多'},
+  {pre:'Con nói ai đó cũng bằng tuổi mình: “他',blank:'也',post:'六岁。”',hint:'(cũng)',ans:'也'},
+  {pre:'Con hỏi tuổi bố: “你爸爸',blank:'多',post:'大？”',hint:'(bao nhiêu)',ans:'多'},
+  {pre:'Con so sánh: “妹妹小，哥哥',blank:'大',post:'。”',hint:'(to, lớn)',ans:'大'},
+  {pre:'Con xác nhận tuổi mình: “我七',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁'},
+  {pre:'Con nói mình giống bạn: “我',blank:'也',post:'七岁。”',hint:'(cũng)',ans:'也'},
 ];

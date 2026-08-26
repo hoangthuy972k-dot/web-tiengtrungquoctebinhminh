@@ -112,4 +112,21 @@ const mcData = [
   {q:'"口" trong "几口人" dùng để làm gì?',opts:['lượng từ đếm người trong nhà','danh từ chỉ miệng','động từ ăn uống','tính từ'],ans:0},
   {q:'"家" nghĩa là gì?',opts:['nhà, gia đình','trường học','cửa hàng','công viên'],ans:0},
   {q:'Lượng từ nào dùng chung cho hầu hết đồ vật/con vật?',opts:['个','口','和','有'],ans:0},
+  {q:'"几" nghĩa là gì?',opts:['mấy (số nhỏ)','nhiều','ít','đủ'],ans:0},
+  {q:'Câu nào ĐÚNG khi nói "Nhà mình có bốn người."?',opts:['我家有四口人。','我家四有口人。','四口人我家有。','有我家四口人。'],ans:0},
+  {q:'"爸爸" nghĩa là gì?',opts:['bố','mẹ','anh trai','chị gái'],ans:0},
+  {q:'"妈妈" nghĩa là gì?',opts:['mẹ','bố','em gái','em trai'],ans:0},
+  {q:'Muốn hỏi số người trong nhà, con dùng câu nào?',opts:['你家有几口人？','你家在哪儿？','你叫什么？','你几岁？'],ans:0},
+];
+
+// Điền từ — tình huống hỏi về gia đình
+const fillData = [
+  {pre:'Con hỏi nhà bạn có mấy người: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有'},
+  {pre:'Con hỏi số lượng dưới 10: “你家有',blank:'几',post:'口人？”',hint:'(mấy)',ans:'几'},
+  {pre:'Con đếm số người trong nhà: “四',blank:'口',post:'人”',hint:'(lượng từ đếm người)',ans:'口'},
+  {pre:'Con nối bố và mẹ: “爸爸',blank:'和',post:'妈妈”',hint:'(và)',ans:'和'},
+  {pre:'Con nói mình không có chị gái: “我',blank:'没有',post:'姐姐。”',hint:'(không có)',ans:'没有'},
+  {pre:'Con nói mình có một em gái: “我有一',blank:'个',post:'妹妹。”',hint:'(cái, con)',ans:'个'},
+  {pre:'Con giới thiệu người trong ảnh: “这是我',blank:'爸爸',post:'。”',hint:'(bố)',ans:'爸爸'},
+  {pre:'Con giới thiệu nhà mình: “我',blank:'家',post:'有三口人。”',hint:'(nhà, gia đình)',ans:'家'},
 ];

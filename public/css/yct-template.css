@@ -318,6 +318,33 @@ body.yct-body {
 .yk-translate-fb.bad { color: #a3243f; }
 .yk-translate-answer { font-family: 'Noto Serif SC', serif; font-size: 1.3rem; color: var(--yk-pink-dark); }
 
+/* ---------- Điền từ ---------- */
+.yk-fill-item {
+  border: 2px solid var(--yk-pink-pale);
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.yk-fill-text { font-family: 'Noto Serif SC', serif; font-size: 1.05rem; color: var(--yk-text); }
+.yk-fill-input {
+  width: 64px;
+  text-align: center;
+  border: 2px solid var(--yk-pink-mid);
+  border-radius: 8px;
+  padding: 6px 4px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.05rem;
+}
+.yk-fill-input.is-ok { border-color: #3fb87a; background: #d7f5df; }
+.yk-fill-input.is-bad { border-color: #e0577a; background: #ffd6d6; }
+.yk-fill-hint { font-size: 0.8rem; color: var(--yk-soft); width: 100%; }
+.yk-fill-fb { font-weight: 700; color: var(--yk-pink-dark); }
+.yk-fill-score { text-align: center; font-weight: 800; color: var(--yk-pink-dark); margin-top: 12px; font-size: 1.1rem; }
+
 /* ---------- Nghe ---------- */
 .yk-listen-wrap { max-width: 420px; margin: 0 auto; text-align: center; }
 .yk-listen-play {

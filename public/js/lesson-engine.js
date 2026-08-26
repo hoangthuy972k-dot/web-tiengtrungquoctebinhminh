@@ -155,7 +155,7 @@ function buildVocab(){
     d.innerHTML='<div class="vc-icon"><span class="vc-num">'+v.n+'</span><span class="vc-emoji">'+v.em+'</span></div>'+
       '<div class="vc-body">'+
       '<div class="vc-head">'+
-        '<div class="vc-zh">'+v.zh+' '+miniSpeakBtn(v.zh)+'</div>'+
+        '<div class="vc-zh">'+v.zh+'</div>'+
         '<span class="vc-pos-badge" style="'+(posStyle[v.pos]||'')+'">'+v.pos+'</span>'+
       '</div>'+
       '<div class="vc-py">'+v.py+'</div>'+
@@ -230,7 +230,7 @@ function updateFlash(){
   document.getElementById('flash-card').classList.remove('flipped');
   fFlip=false;
 }
-function flipFlash(){fFlip=!fFlip;document.getElementById('flash-card').classList.toggle('flipped',fFlip);if(fFlip)speakZh(vocabData[fOrder[fIdx]].zh);}
+function flipFlash(){fFlip=!fFlip;document.getElementById('flash-card').classList.toggle('flipped',fFlip);}
 function flashNext(){fIdx=(fIdx+1)%fOrder.length;updateFlash();}
 function flashPrev(){fIdx=(fIdx-1+fOrder.length)%fOrder.length;updateFlash();}
 function shuffleFlash(){fOrder.sort(function(){return Math.random()-0.5;});fIdx=0;updateFlash();}
@@ -246,22 +246,19 @@ function buildDialogs(){
     const div=document.createElement('div');
     div.className='dlg-card'+(di===0?' active':'');
     div.id='dlg'+di;
-    const allZh=d.lines.map(function(l){return l.zh;});
     let h='<div class="dlg-scene">🎭 '+d.scene+'</div>'+
       (LESSON_NUM?('<div class="audio-box real-box">'+
       '<span class="a-label"><span class="a-ico">🎙️</span> Audio gốc giáo trình</span>'+
       '<audio class="real-audio" controls preload="none" src="/audio/bai-'+LESSON_NUM+'/dlg-'+(di+1)+'.mp3" onerror="audioLoadError(this)"></audio>'+
-      '</div>'):'')+
-      '<div class="audio-box"><span class="a-label"><span class="a-ico">🤖</span> Giọng đọc tổng hợp</span>'+
-      '<button type="button" class="speak-box-btn" data-action="speak-seq" data-texts="'+JSON.stringify(allZh).replace(/"/g,'&quot;')+'">▶ Nghe toàn bộ</button>'+
-      '<div class="audio-hint">Nghe từng câu, lặp lại theo (shadowing) — nghe 2 lượt trước khi luyện nói.</div></div>';
+      '<div class="audio-hint">Nghe từng câu, lặp lại theo (shadowing) — nghe 2 lượt trước khi luyện nói.</div>'+
+      '</div>'):'');
     d.lines.forEach(function(l){
       const isR=l.sp===1;
       const sc=spColors[l.sp]||spColors[0];
       h+='<div class="dlg-line'+(isR?' r':'')+'">'+
         '<div class="dlg-sp '+sc[0]+'">'+(l.sp===0?'A':'B')+'</div>'+
         '<div class="dlg-bub '+sc[1]+'">'+
-        '<div class="dlg-zh">'+l.zh+' '+miniSpeakBtn(l.zh)+'</div>'+
+        '<div class="dlg-zh">'+l.zh+'</div>'+
         '<div class="dlg-py">'+l.py+'</div>'+
         '<div class="dlg-vn">'+l.vn+'</div></div></div>';
     });

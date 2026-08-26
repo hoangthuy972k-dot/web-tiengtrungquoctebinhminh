@@ -132,16 +132,18 @@ function buildVocab(){
         '</div><div class="hz-tip"><b>💡 Mẹo nhớ:</b> '+h.tip+'</div>'+
         '<div class="hz-words"><span class="hz-wl">Từ đại diện:</span> '+h.w+'</div></div>';
     }).join('');
-    d.innerHTML='<div class="vc-img"><span class="vc-num">'+v.n+'</span><span>'+v.em+'</span>'+
-      '<span class="vc-pos-badge" style="'+(posStyle[v.pos]||'')+'">'+v.pos+'</span></div>'+
+    d.innerHTML='<div class="vc-icon"><span class="vc-num">'+v.n+'</span><span class="vc-emoji">'+v.em+'</span></div>'+
       '<div class="vc-body">'+
-      '<div class="vc-zh">'+v.zh+' '+miniSpeakBtn(v.zh)+'</div>'+
+      '<div class="vc-head">'+
+        '<div class="vc-zh">'+v.zh+' '+miniSpeakBtn(v.zh)+'</div>'+
+        '<span class="vc-pos-badge" style="'+(posStyle[v.pos]||'')+'">'+v.pos+'</span>'+
+      '</div>'+
       '<div class="vc-py">'+v.py+'</div>'+
       '<div class="vc-vn">→ <strong>'+v.vn+'</strong></div>'+
       '<div class="vc-ex"><div class="vc-ex-label">📝 Ví dụ mở rộng</div>'+exs+'</div>'+
       (hzs?'<div class="vc-hz"><button class="hz-btn" data-action="toggle-hz" data-vi="'+vi+'">🀄 Xem Hán tự ('+v.hanzi.length+' chữ)</button><div class="hz-panel" id="hzp'+vi+'">'+hzs+'</div></div>':'')+
       '</div>';
-    d.querySelector('.vc-img').onclick=function(){d.classList.toggle('flipped');};
+    d.querySelector('.vc-icon').onclick=function(){d.classList.toggle('flipped');};
     d.querySelector('.vc-py').onclick=function(){d.classList.toggle('flipped');};
     g.appendChild(d);
   });
@@ -184,24 +186,12 @@ function hzReplay(vi,hi){
   const w=hzWriters[vi+'_'+hi];
   if(w) w.animateCharacter();
 }
-function buildVocabAudio(lesson){
-  const box=document.getElementById('vocab-audio');
-  const groups={1:'từ mới Bài khoá 1',2:'từ mới Bài khoá 2',3:'từ mới Bài khoá 3–4'};
-  let items=lesson===0?[1,2,3]:[lesson];
-  box.innerHTML=items.map(function(i){
-    const words=vocabData.filter(function(v){return v.lesson===i;}).map(function(v){return v.zh;});
-    return '<div class="audio-box"><span class="a-label"><span class="a-ico">🔊</span> Nghe '+groups[i]+'</span>'+
-      '<button type="button" class="speak-box-btn" data-action="speak-seq" data-texts="'+JSON.stringify(words).replace(/"/g,'&quot;')+'">▶ Phát ('+words.length+' từ)</button>'+
-      '<div class="audio-hint">Nghe – đọc theo – nhắc lại từng từ để chuẩn thanh điệu.</div></div>';
-  }).join('');
-}
 function filterVocab(lesson,btn){
   document.querySelectorAll('.lesson-tab').forEach(function(t){t.classList.remove('active');});
   btn.classList.add('active');
   document.querySelectorAll('.vocab-card').forEach(function(c){
     c.style.display=(lesson===0||parseInt(c.dataset.lesson)===lesson)?'':'none';
   });
-  buildVocabAudio(lesson);
 }
 
 // ══════════════════════════════════════════
@@ -535,7 +525,6 @@ document.addEventListener('click', function(e){
 // ══════════════════════════════════════════
 buildWarmup();
 buildVocab();
-buildVocabAudio(0);
 updateFlash();
 buildDialogs();
 buildFill();

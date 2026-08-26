@@ -121,6 +121,18 @@ const APP_DATA = {
   lessons: {
     hsk2: [
       {
+        id: 'hsk2-l1',
+        number: 1,
+        title: 'Tháng 9 đi Bắc Kinh du lịch là đẹp nhất',
+        titleHanzi: '九月去北京旅游最好',
+        titlePinyin: 'Jiǔyuè qù Běijīng lǚyóu zuì hǎo',
+        topic: 'Du lịch, Thể thao & Sinh hoạt gia đình',
+        vocabCount: 14,
+        dialogueCount: 4,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/bai-1.html'
+      },
+      {
         id: 'hsk2-l2',
         number: 2,
         title: 'Mỗi ngày tôi đều thức dậy lúc 6 giờ',

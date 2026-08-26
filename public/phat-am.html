@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Học Phát Âm Tiếng Trung · HanYu Vui</title>
+<meta name="description" content="Học phát âm tiếng Trung: 21 phụ âm đầu, 36 vận mẫu, 4 thanh điệu + thanh nhẹ, ghép âm và trắc nghiệm nghe.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/lesson-template.css">
+<link rel="stylesheet" href="/css/phat-am.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="back-link" href="/">← Về trang chủ HanYu Vui</a>
+  <div class="header-badge">Nền tảng phát âm</div>
+  <div class="header-zh">发音</div>
+  <div class="header-py">Fāyīn</div>
+  <div class="header-vn">Học phát âm tiếng Trung</div>
+  <div class="header-meta">
+    <span class="h-chip">🔤 21 phụ âm đầu</span>
+    <span class="h-chip">🔡 36 vận mẫu</span>
+    <span class="h-chip">🎵 4 thanh điệu + thanh nhẹ</span>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-pa-tab="initials">🔤 Phụ âm đầu</button>
+  <button class="tab-btn" data-pa-tab="finals">🔡 Vận mẫu</button>
+  <button class="tab-btn" data-pa-tab="tones">🎵 Thanh điệu</button>
+  <button class="tab-btn" data-pa-tab="combo">🧩 Ghép âm</button>
+  <button class="tab-btn" data-pa-tab="quiz">🎯 Trắc nghiệm</button>
+</nav>
+
+<div class="main">
+
+<div id="initials" class="section active">
+  <div class="sec-head">
+    <div class="sec-title">🔤 Phụ âm đầu <span class="sec-badge">声母</span></div>
+    <div class="sec-sub">👆 Bấm vào từng âm để nghe cách phát âm và mẹo luyện tập</div>
+  </div>
+  <div id="pa-initials-list"></div>
+</div>
+
+<div id="finals" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🔡 Vận mẫu <span class="sec-badge">韵母</span></div>
+    <div class="sec-sub">👆 Bấm vào từng âm để nghe cách phát âm và mẹo luyện tập</div>
+  </div>
+  <div id="pa-finals-list"></div>
+</div>
+
+<div id="tones" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🎵 Thanh điệu <span class="sec-badge">声调</span></div>
+    <div class="sec-sub">👆 Bấm vào từng thẻ để nghe âm mẫu "ma" theo từng thanh điệu</div>
+  </div>
+  <div class="pa-tone-grid" id="pa-tones-list"></div>
+</div>
+
+<div id="combo" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🧩 Ghép âm <span class="sec-badge">拼音组合</span></div>
+    <div class="sec-sub">Chọn 1 phụ âm đầu và 1 vận mẫu để xem &amp; nghe âm tiết ghép được</div>
+  </div>
+  <div class="pa-combo-wrap">
+    <div class="pa-combo-picker">
+      <label for="pa-combo-initial" style="font-weight:600;font-size:0.88rem;color:var(--mid)">Phụ âm đầu (có thể để trống)</label>
+      <select class="pa-combo-select" id="pa-combo-initial"></select>
+      <label for="pa-combo-final" style="font-weight:600;font-size:0.88rem;color:var(--mid)">Vận mẫu</label>
+      <select class="pa-combo-select" id="pa-combo-final"></select>
+      <p style="font-size:0.8rem;color:var(--soft)">💡 Lưu ý: một số vận mẫu có cách viết đặc biệt khi đứng sau phụ âm đầu (VD: iou→iu, uei→ui, uen→un) hoặc khi đứng riêng một mình — các quy tắc này sẽ được học dần qua từng bài.</p>
+    </div>
+    <div class="pa-combo-result">
+      <div class="pa-combo-syllable" id="pa-combo-syllable">a</div>
+      <button type="button" class="pa-btn" id="pa-combo-speak">🔊 Nghe</button>
+    </div>
+  </div>
+</div>
+
+<div id="quiz" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🎯 Trắc nghiệm nghe thanh điệu <span class="sec-badge">听力测试</span></div>
+    <div class="sec-sub">Nghe âm mẫu rồi đoán xem đó là thanh điệu nào nhé!</div>
+  </div>
+  <div class="pa-quiz-wrap">
+    <button type="button" class="pa-quiz-play" id="pa-quiz-play">🔊 Nghe</button>
+    <div id="pa-quiz-opts"></div>
+    <div class="pa-quiz-score" id="pa-quiz-score"></div>
+  </div>
+</div>
+
+</div>
+
+<script src="/js/phat-am-data.js"></script>
+<script src="/js/phat-am-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+/* ══════════════════════════════════════════
+   YCT KID THEME — pink, rounded, playful
+   Brand: HanYu Vui (own palette, not cloned from any third party)
+   ══════════════════════════════════════════ */
+:root {
+  --yk-bg: #fff6f8;
+  --yk-pink1: #ff9a9e;
+  --yk-pink2: #fecfef;
+  --yk-pink-dark: #e0577a;
+  --yk-pink-mid: #ff7aa2;
+  --yk-pink-pale: #ffe3ec;
+  --yk-gold: #ffd166;
+  --yk-teal: #3fb8af;
+  --yk-text: #4a3540;
+  --yk-soft: #8a6b76;
+  --yk-white: #ffffff;
+  --yk-shadow: 0 10px 24px rgba(224, 87, 122, 0.14);
+  --yk-radius: 20px;
+}
+
+* { box-sizing: border-box; }
+
+body.yct-body {
+  margin: 0;
+  background: var(--yk-bg);
+  background-image:
+    radial-gradient(circle, rgba(255, 154, 158, 0.18) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  color: var(--yk-text);
+  font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+}
+
+.yct-wrap { max-width: 1040px; margin: 0 auto; padding: 18px 16px 60px; }
+
+/* ---------- Header ---------- */
+.yk-header {
+  background: linear-gradient(135deg, var(--yk-pink1) 0%, var(--yk-pink2) 100%);
+  border-radius: 26px;
+  padding: 26px 28px;
+  box-shadow: var(--yk-shadow);
+  text-align: center;
+  position: relative;
+  margin-bottom: 18px;
+}
+.yk-header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.yk-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #f0397a;
+  font-weight: 800;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+}
+.yk-slide-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: var(--yk-gold);
+  color: #2a1e00;
+  border: none;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.yk-title {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin: 6px 0;
+  font-family: 'Noto Sans SC', 'Be Vietnam Pro', sans-serif;
+}
+.yk-subtitle {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--yk-gold);
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 999px;
+  margin-top: 6px;
+}
+
+/* ---------- Top nav: Trang chủ + Bài 1..11 ---------- */
+.yk-topnav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 14px;
+  background: #fff;
+  border: 2px solid var(--yk-pink-pale);
+  border-radius: 20px;
+  margin-bottom: 14px;
+  scrollbar-width: thin;
+}
+.yk-topnav::-webkit-scrollbar { height: 6px; }
+.yk-topnav::-webkit-scrollbar-thumb { background: var(--yk-pink2); border-radius: 4px; }
+.yk-navbtn {
+  flex: 0 0 auto;
+  border: none;
+  background: #f4f4f6;
+  color: var(--yk-text);
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.yk-navbtn.is-active {
+  background: var(--yk-pink-mid);
+  color: #fff;
+}
+.yk-navbtn.is-home.is-active { background: var(--yk-pink-dark); }
+
+/* ---------- Tab bar: Từ vựng / Viết chữ / ... ---------- */
+.yk-tabbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.yk-tab {
+  border: 2px solid var(--yk-pink-pale);
+  background: #fff;
+  color: var(--yk-soft);
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.yk-tab.is-active {
+  background: var(--yk-gold);
+  color: #fff;
+  border-color: var(--yk-gold);
+}
+
+/* ---------- Panel ---------- */
+.yk-panel {
+  background: #fff;
+  border: 2px solid var(--yk-pink-pale);
+  border-radius: var(--yk-radius);
+  padding: 26px;
+  box-shadow: var(--yk-shadow);
+}
+.yk-panel-title {
+  text-align: center;
+  color: var(--yk-pink-dark);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 0 0 18px;
+}
+.yk-hint { text-align: center; color: var(--yk-soft); font-size: 0.92rem; margin-bottom: 18px; }
+
+/* ---------- Từ vựng table ---------- */
+.yk-vocab-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 14px; }
+.yk-vocab-table thead th {
+  background: var(--yk-pink-mid);
+  color: #fff;
+  padding: 12px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.yk-vocab-table tbody td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px dashed var(--yk-pink-pale);
+}
+.yk-vocab-table tbody tr:nth-child(even) { background: #fffafc; }
+.yk-vocab-table .yk-hanzi-cell { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; color: var(--yk-pink-dark); }
+.yk-vocab-table .yk-py-cell { color: var(--yk-soft); font-style: italic; }
+.yk-speak-btn {
+  background: var(--yk-gold);
+  border: none;
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ---------- Viết chữ ---------- */
+.yk-writer-wrap { max-width: 420px; margin: 0 auto; text-align: center; }
+.yk-writer-hanzi { font-size: 2rem; font-weight: 800; color: var(--yk-pink-dark); font-family: 'Noto Serif SC', serif; }
+.yk-writer-py { color: var(--yk-soft); margin-bottom: 4px; }
+.yk-writer-vn { font-weight: 700; margin-bottom: 14px; }
+.yk-writer-box {
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 16px;
+  border: 3px dashed var(--yk-gold);
+  border-radius: 16px;
+  background: #fffdf3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yk-writer-info {
+  background: var(--yk-pink-pale);
+  border-radius: 14px;
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.yk-writer-info div + div { margin-top: 6px; }
+.yk-writer-nav { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- Flashcard ---------- */
+.yk-flash-ctr { text-align: center; font-weight: 700; color: var(--yk-soft); margin-bottom: 10px; }
+.yk-flash-card {
+  max-width: 320px;
+  height: 220px;
+  margin: 0 auto 16px;
+  border: 3px solid var(--yk-pink-mid);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  background: #fff;
+  text-align: center;
+  padding: 12px;
+}
+.yk-flash-card .yk-fc-hanzi { font-size: 2.6rem; font-family: 'Noto Serif SC', serif; color: var(--yk-pink-dark); }
+.yk-flash-card .yk-fc-py { color: var(--yk-soft); }
+.yk-flash-card .yk-fc-hint { font-size: 0.8rem; color: #c8a3b0; margin-top: 8px; }
+
+/* ---------- Shared buttons ---------- */
+.yk-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.yk-btn-primary { background: var(--yk-pink-dark); color: #fff; }
+.yk-btn-gold { background: var(--yk-gold); color: #6b4a00; }
+.yk-btn-outline { background: #fff; border: 2px solid var(--yk-pink-pale); color: var(--yk-soft); }
+.yk-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.yk-btn-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+
+/* ---------- Nối từ (match columns) ---------- */
+.yk-match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 640px; margin: 0 auto; }
+.yk-match-col { display: flex; flex-direction: column; gap: 12px; }
+.yk-match-item {
+  border: 2px solid var(--yk-pink-mid);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  background: #fff;
+}
+.yk-match-item.is-selected { background: var(--yk-gold); border-color: var(--yk-gold); }
+.yk-match-item.is-ok { background: #d7f5df; border-color: #3fb87a; color: #206a3f; cursor: default; }
+.yk-match-item.is-bad { background: #ffd6d6; border-color: #e0577a; }
+
+/* ---------- Ghép cặp (memory game) ---------- */
+.yk-memory-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 520px; margin: 0 auto 16px; }
+.yk-memory-card {
+  aspect-ratio: 1;
+  background: var(--yk-pink-mid);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: transparent;
+  transition: background 0.15s;
+}
+.yk-memory-card.is-flipped { background: #fff; border: 2px solid var(--yk-gold); color: var(--yk-pink-dark); }
+.yk-memory-card.is-matched { background: #d7f5df; border: 2px solid #3fb87a; color: #206a3f; }
+.yk-memory-steps { text-align: center; font-weight: 700; color: var(--yk-soft); }
+
+/* ---------- Dịch ---------- */
+.yk-translate-wrap { max-width: 420px; margin: 0 auto; text-align: center; }
+.yk-translate-vn { font-size: 1.15rem; margin-bottom: 4px; }
+.yk-translate-vn strong { color: var(--yk-pink-dark); }
+.yk-translate-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--yk-pink-pale);
+  border-radius: 999px;
+  font-size: 1rem;
+  margin: 14px 0;
+  text-align: center;
+}
+.yk-translate-input:focus { outline: none; border-color: var(--yk-pink-mid); }
+.yk-translate-fb { min-height: 28px; font-weight: 700; }
+.yk-translate-fb.ok { color: #206a3f; }
+.yk-translate-fb.bad { color: #a3243f; }
+.yk-translate-answer { font-family: 'Noto Serif SC', serif; font-size: 1.3rem; color: var(--yk-pink-dark); }
+
+/* ---------- Nghe ---------- */
+.yk-listen-wrap { max-width: 420px; margin: 0 auto; text-align: center; }
+.yk-listen-play {
+  background: var(--yk-pink-dark);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.yk-listen-opt {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--yk-pink-mid);
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.yk-listen-opt.is-ok { background: #d7f5df; border-color: #3fb87a; }
+.yk-listen-opt.is-bad { background: #ffd6d6; border-color: #e0577a; }
+
+/* ---------- Luyện tập ---------- */
+.yk-quiz-wrap { max-width: 480px; margin: 0 auto; text-align: center; }
+.yk-quiz-q { font-weight: 700; margin-bottom: 18px; }
+.yk-quiz-opt {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--yk-pink-mid);
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+.yk-quiz-opt.is-ok { background: #d7f5df; border-color: #3fb87a; }
+.yk-quiz-opt.is-bad { background: #ffd6d6; border-color: #e0577a; }
+
+/* ---------- Điểm ---------- */
+.yk-score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+.yk-score-card {
+  border: 2px solid var(--yk-pink-pale);
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+}
+.yk-score-card .yk-score-label { font-weight: 700; color: var(--yk-soft); margin-bottom: 8px; }
+.yk-score-card .yk-score-value { font-size: 1.6rem; font-weight: 800; color: var(--yk-pink-dark); }
+
+/* ---------- Roadmap hub ---------- */
+.yk-roadmap-title { text-align: center; color: var(--yk-pink-dark); font-weight: 800; font-size: 1.5rem; margin-bottom: 10px; }
+.yk-roadmap-hint { text-align: center; color: var(--yk-soft); margin-bottom: 24px; }
+.yk-roadmap-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.yk-roadmap-btn {
+  border: 2px solid var(--yk-pink-mid);
+  background: #fff;
+  color: var(--yk-pink-dark);
+  font-weight: 800;
+  padding: 16px 26px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+.yk-roadmap-btn:hover { background: var(--yk-pink-pale); }
+
+@media (max-width: 640px) {
+  .yk-title { font-size: 1.3rem; }
+  .yk-match-grid { grid-template-columns: 1fr; }
+  .yk-memory-grid { grid-template-columns: repeat(3, 1fr); }
+}

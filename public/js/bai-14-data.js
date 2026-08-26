@@ -146,88 +146,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — 过/虽然……但是……/次
-const fillData = [
-  {pre:'你看',blank:'过',post:'那个电影吗？',hint:'(đã từng — kinh nghiệm)',ans:'过',exp:'Động từ + 过 = đã từng làm việc gì'},
-  {pre:'看过，很有',blank:'意思',post:'。',hint:'(thú vị)',ans:'意思'},
-  {pre:'我们今天晚上再去看一',blank:'次',post:'，怎么样？',hint:'(lần, lượt)',ans:'次'},
-  {pre:'',blank:'虽然',post:'北京很远，但是你一定要去看看。',hint:'(mặc dù)',ans:'虽然',exp:'虽然……但是……dùng để nêu hai vế tương phản'},
-  {pre:'我想去公园',blank:'玩儿',post:'，今天天气很晴。',hint:'(chơi)',ans:'玩儿'},
-  {pre:'我学了大概一',blank:'百',post:'个小时了。',hint:'(trăm)',ans:'百'},
-  {pre:'可以，',blank:'但是',post:'我女朋友也想一起去。',hint:'(nhưng)',ans:'但是'},
-  {pre:'今天天气很',blank:'晴',post:'，我们去公园吧。',hint:'(quang, nắng đẹp)',ans:'晴'},
-];
-
-// Sắp xếp — khác Điền từ
-const sortData = [
-  {words:['你','看','过','那个','电影','吗','？'],ans:'你看过那个电影吗？',audio:'你看过那个电影吗？'},
-  {words:['虽然','北京','很','远','，','但是','你','一定','要','去','看看','。'],ans:'虽然北京很远，但是你一定要去看看。',audio:'虽然北京很远，但是你一定要去看看。'},
-  {words:['我们','今天','晚上','再','去','看','一次','，','怎么样','？'],ans:'我们今天晚上再去看一次，怎么样？',audio:'我们今天晚上再去看一次，怎么样？'},
-  {words:['我','想','去','公园','玩儿','，','今天','天气','很','晴','。'],ans:'我想去公园玩儿，今天天气很晴。',audio:'我想去公园玩儿，今天天气很晴。'},
-  {words:['我','学','了','大概','一百','个','小时','了','。'],ans:'我学了大概一百个小时了。',audio:'我学了大概一百个小时了。'},
-  {words:['写','汉字','很','有意思','。'],ans:'写汉字很有意思。',audio:'写汉字很有意思。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'你看过那个电影吗？',right:'看过，很有意思。'},
-  {left:'我们今天晚上再去看一次，怎么样？',right:'可以，但是我女朋友也想一起去。'},
-  {left:'听说你去过中国，还想再去吗？',right:'想啊，我去过一次，但是还没去过北京。'},
-  {left:'周末你想做什么？',right:'我想去公园玩儿，今天天气很晴。'},
-  {left:'你学了几年汉语了？',right:'我学了大概一百个小时了。'},
-  {left:'虽然汉字很难，',right:'但是我很喜欢写汉字。'},
+  {left:'吃',right:'过'},
+  {left:'有',right:'意思'},
+  {left:'虽然',right:'但是'},
+  {left:'去',right:'玩儿'},
+  {left:'天气',right:'晴'},
+  {left:'再',right:'一次'},
 ];
 
-// Trắc nghiệm — không audio; trộn từ Bài 8/9/11/12 làm phương án nhiễu
-const mcData = [
-  {q:'你看＿＿那个电影吗？',opts:['过','着','了','的'],ans:0},
-  {q:'看过，很有＿＿。',opts:['意思','时候','问题','事情'],ans:0},
-  {q:'我们再去看一＿＿。',opts:['次','下','个','岁'],ans:0},
-  {q:'＿＿北京很远，但是你一定要去看看。',opts:['虽然','因为','还是','可能'],ans:0},
-  {q:'我想去公园＿＿。',opts:['玩儿','跳舞','上班','洗澡'],ans:0},
-  {q:'我学了大概一＿＿个小时了。',opts:['百','千','两','几'],ans:0},
-  {q:'今天天气很＿＿。',opts:['晴','阴','冷','近'],ans:0},
-  {q:'可以，＿＿我女朋友也想去。',opts:['但是','所以','因为','可能'],ans:0},
-  {q:'写汉字很＿＿。',opts:['有意思','没意思','有意见','有点儿'],ans:0},
-  {q:'他去过中国一＿＿。',opts:['次','个','件','岁'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: rủ nhau đi ăn nhà hàng Tứ Xuyên mới mở.
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'你吃过四川菜吗？虽然很辣，但是很有意思，你一定要尝尝。',
+   questions:[
+     {q:'说话人觉得四川菜怎么样？',opts:['虽然辣但是很有意思','不好吃','太贵了','没有意思'],ans:0},
+     {q:'说话人建议做什么？',opts:['尝尝四川菜','不要吃','去公园玩儿','学做菜'],ans:0},
+   ]},
+  {audio:'我们上次去吃了一次，这次想再去吃一次，你要不要一起去？',
+   questions:[
+     {q:'他们已经去吃过几次？',opts:['一次','两次','三次','没去过'],ans:0},
+     {q:'这次想怎么样？',opts:['再去吃一次','不想去了','换一家店','去公园玩儿'],ans:0},
+   ]},
+  {audio:'今天天气很晴，我们吃完饭以后去公园玩儿吧，我大概学了一百个小时汉语了，想跟你练习说中文。',
+   questions:[
+     {q:'吃完饭以后要做什么？',opts:['去公园玩儿','回家睡觉','去上班','继续吃饭'],ans:0},
+     {q:'他学了多少个小时汉语？',opts:['一百个小时','一千个小时','十个小时','不知道'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: rủ nhau đi ăn nhà hàng Tứ Xuyên mới mở
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'你吃',blank:'过',post:'四川菜吗？',hint:'(đã từng — kinh nghiệm)',ans:'过',exp:'Động từ + 过 = đã từng làm việc gì.'},
+  {pre:'吃过，',blank:'虽然',post:'很辣，但是很有意思。',hint:'(mặc dù)',ans:'虽然',exp:'虽然……但是……dùng để nêu hai vế tương phản.'},
+  {pre:'吃过，虽然很辣，',blank:'但是',post:'很有意思，我很喜欢。',hint:'(nhưng)',ans:'但是'},
+  {pre:'我们上次去吃了一',blank:'次',post:'，这次要不要再去？',hint:'(lần, lượt)',ans:'次'},
+  {pre:'好啊，我们去',blank:'玩儿',post:'一下吧。',hint:'(chơi)',ans:'玩儿'},
+  {pre:'今天天气很',blank:'晴',post:'，吃完饭正好去公园走走。',hint:'(trời quang, nắng đẹp)',ans:'晴'},
+  {pre:'我学了大概一',blank:'百',post:'个小时汉语了。',hint:'(trăm)',ans:'百'},
+  {pre:'用中文点菜很',blank:'有意思',post:'。',hint:'(thú vị)',ans:'有意思'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['你','吃','过','四川菜','吗','？'],ans:'你吃过四川菜吗？',audio:'你吃过四川菜吗？'},
+  {words:['虽然','很','辣','，','但是','很','好吃','。'],ans:'虽然很辣，但是很好吃。',audio:'虽然很辣，但是很好吃。'},
+  {words:['我们','再','去','吃','一次','吧','。'],ans:'我们再去吃一次吧。',audio:'我们再去吃一次吧。'},
+  {words:['今天','天气','很','晴','。'],ans:'今天天气很晴。',audio:'今天天气很晴。'},
+  {words:['我们','去','公园','玩儿','吧','。'],ans:'我们去公园玩儿吧。',audio:'我们去公园玩儿吧。'},
+  {words:['我','学','了','大概','一百','个','小时','汉语','。'],ans:'我学了大概一百个小时汉语。',audio:'我学了大概一百个小时汉语。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'你过吃四川菜吗？',
+   opts:['你吃过四川菜吗？','你过吃四川菜吗？','你吃四川菜过吗？','过你吃四川菜吗？'],ans:0,
+   exp:'过 phải đứng NGAY SAU động từ (吃过), không đặt trước động từ.'},
+  {wrong:'虽然很辣好吃但是。',
+   opts:['虽然很辣，但是很好吃。','虽然很辣好吃但是。','但是很辣，虽然很好吃。','很辣虽然但是好吃。'],ans:0,
+   exp:'但是 phải đứng ở ĐẦU vế thứ hai, không đặt ở cuối câu.'},
+  {wrong:'但是很辣，虽然很好吃。',
+   opts:['虽然很辣，但是很好吃。','但是很辣，虽然很好吃。','很好吃，但是虽然很辣。','虽然但是很辣很好吃。'],ans:0,
+   exp:'虽然 mở đầu vế nhượng bộ, 但是 mở đầu vế khẳng định — không đảo ngược thứ tự hai liên từ.'},
+  {wrong:'我们再去一次吃。',
+   opts:['我们再去吃一次。','我们再去一次吃。','我们再吃去一次。','我们一次再去吃。'],ans:0,
+   exp:'次 (lượng từ tần suất) đứng SAU động từ chính (去吃), không chen vào giữa hai động từ liên tiếp.'},
+  {wrong:'我学了一百个小时了大概。',
+   opts:['我学了大概一百个小时了。','我学了一百个小时了大概。','大概我学了一百个小时了。','我大概了学一百个小时了。'],ans:0,
+   exp:'大概 (khoảng chừng) đứng TRƯỚC số lượng (一百个小时), không đặt ở cuối câu.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'你看过那个电影吗？',py:'Nǐ kànguo nàge diànyǐng ma?',vn:'Bạn đã từng xem bộ phim đó chưa?'},
-      {zh:'我们今天晚上再去看一次，怎么样？',py:'Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?',vn:'Tối nay chúng ta đi xem thêm một lần nữa, được không?'},
-      {zh:'虽然北京很远，但是你一定要去看看。',py:'Suīrán Běijīng hěn yuǎn, dànshì nǐ yídìng yào qù kànkan.',vn:'Mặc dù Bắc Kinh xa, nhưng bạn nhất định phải đến xem thử.'},
-      {zh:'我学了大概一百个小时了，写汉字很有意思。',py:'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le, xiě Hànzì hěn yǒuyìsi.',vn:'Tôi đã học được khoảng một trăm tiếng rồi, viết chữ Hán rất thú vị.'},
+      {zh:'你吃过四川菜吗？',py:'Nǐ chīguo Sìchuān cài ma?',vn:'Bạn đã từng ăn món Tứ Xuyên chưa?'},
+      {zh:'虽然很辣，但是很有意思，你一定要尝尝。',py:'Suīrán hěn là, dànshì hěn yǒuyìsi, nǐ yídìng yào chángchang.',vn:'Mặc dù cay, nhưng rất thú vị, bạn nhất định phải thử.'},
+      {zh:'我们再去吃一次吧。',py:'Wǒmen zài qù chī yí cì ba.',vn:'Chúng ta đi ăn thêm một lần nữa đi.'},
+      {zh:'今天天气很晴，我们去公园玩儿吧。',py:'Jīntiān tiānqì hěn qíng, wǒmen qù gōngyuán wánr ba.',vn:'Hôm nay trời quang đãng, chúng ta đi công viên chơi đi.'},
+      {zh:'我学了大概一百个小时汉语了。',py:'Wǒ xuéle dàgài yìbǎi ge xiǎoshí Hànyǔ le.',vn:'Tôi đã học tiếng Trung được khoảng một trăm tiếng rồi.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'你看过＿＿吗？',frame_py:'Nǐ kànguo ___ ma?',vn:'Bạn đã từng xem/đến ＿＿ chưa?',options:['那个电影','这本书','中国'],samples:['你看过那个电影吗？','你看过这本书吗？','你看过中国吗？']},
-      {frame:'我们再去＿＿一次。',frame_py:'Wǒmen zài qù ___ yí cì.',vn:'Chúng ta đi ＿＿ thêm một lần nữa.',options:['看','吃','玩儿'],samples:['我们再去看一次。','我们再去吃一次。','我们再去玩儿一次。']},
-      {frame:'虽然＿＿，但是我很喜欢。',frame_py:'Suīrán ___, dànshì wǒ hěn xǐhuan.',vn:'Mặc dù ＿＿, nhưng tôi vẫn rất thích.',options:['汉字很难','天气很冷','工作很忙'],samples:['虽然汉字很难，但是我很喜欢。','虽然天气很冷，但是我很喜欢。','虽然工作很忙，但是我很喜欢。']},
-      {frame:'今天天气很＿＿。',frame_py:'Jīntiān tiānqì hěn ___.',vn:'Hôm nay thời tiết rất ＿＿.',options:['晴','冷','热'],samples:['今天天气很晴。','今天天气很冷。','今天天气很热。']},
+      {frame:'你吃过＿＿吗？',frame_py:'Nǐ chīguo ___ ma?',vn:'Bạn đã từng ăn ＿＿ chưa?',options:['四川菜','日本菜','越南菜'],samples:['你吃过四川菜吗？','你吃过日本菜吗？','你吃过越南菜吗？']},
+      {frame:'虽然＿＿，但是很好吃。',frame_py:'Suīrán ___, dànshì hěn hǎochī.',vn:'Mặc dù ＿＿, nhưng rất ngon.',options:['很辣','很贵','有点儿咸'],samples:['虽然很辣，但是很好吃。','虽然很贵，但是很好吃。','虽然有点儿咸，但是很好吃。']},
+      {frame:'我们再去＿＿一次吧。',frame_py:'Wǒmen zài qù ___ yí cì ba.',vn:'Chúng ta đi ＿＿ thêm một lần nữa đi.',options:['吃','玩儿','看看'],samples:['我们再去吃一次吧。','我们再去玩儿一次吧。','我们再去看看一次吧。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🎬 Tình huống 1 — Rủ bạn đi xem phim lại',
-       guide:'Bạn hỏi bạn mình đã xem phim đó chưa, rồi rủ đi xem lại.',
-       structure:['你看过＿＿吗？','我们再去看一次，怎么样？'],
-       sample:'你看过那个电影吗？我们今天晚上再去看一次，怎么样？',
-       sample_vn:'Bạn đã từng xem bộ phim đó chưa? Tối nay chúng ta đi xem thêm một lần nữa, được không?'},
-      {role:'🇨🇳 Tình huống 2 — Kể kinh nghiệm du lịch',
-       guide:'Bạn kể đã từng đến Trung Quốc nhưng chưa đến Bắc Kinh.',
-       structure:['我去过＿＿一次，但是还没去过＿＿。'],
-       sample:'我去过中国一次，但是还没去过北京。',
-       sample_vn:'Tôi đã từng đến Trung Quốc một lần, nhưng vẫn chưa đến Bắc Kinh.'},
-      {role:'📚 Tình huống 3 — Nói về việc học tiếng Trung',
-       guide:'Bạn chia sẻ đã học tiếng Trung bao lâu và cảm nhận về chữ Hán.',
-       structure:['我学了大概＿＿个小时了。','虽然汉字很难，但是我很喜欢写汉字。'],
-       sample:'我学了大概一百个小时了。虽然汉字很难，但是我很喜欢写汉字。',
-       sample_vn:'Tôi đã học được khoảng một trăm tiếng rồi. Mặc dù chữ Hán khó, nhưng tôi rất thích viết chữ Hán.'},
+      {role:'🌶️ Tình huống 1 — Giới thiệu món ăn cay cho bạn',
+       guide:'Bạn hỏi bạn đã ăn món Tứ Xuyên chưa và nhận xét về độ cay của nó.',
+       structure:['你吃过＿＿吗？','虽然很辣，但是很有意思。'],
+       sample:'你吃过四川菜吗？虽然很辣，但是很有意思，你一定要尝尝。',
+       sample_vn:'Bạn đã từng ăn món Tứ Xuyên chưa? Mặc dù cay nhưng rất thú vị, bạn nhất định phải thử.',
+       note:'虽然……但是…… dùng để nêu hai vế tương phản (cay nhưng vẫn ngon/thú vị).'},
+      {role:'🍜 Tình huống 2 — Rủ bạn quay lại quán ăn lần nữa',
+       guide:'Bạn rủ bạn quay lại một quán ăn đã từng đi cùng.',
+       structure:['我们上次去吃了一次，','这次要不要再去吃一次？'],
+       sample:'我们上次去吃了一次，这次要不要再去吃一次？',
+       sample_vn:'Lần trước chúng ta đã đi ăn một lần, lần này có muốn đi ăn lại không?',
+       note:'次 là lượng từ đếm số LẦN, đứng sau động từ.'},
+      {role:'🌤️ Tình huống 3 — Rủ đi công viên và nói về việc học tiếng Trung',
+       guide:'Bạn nhận xét thời tiết đẹp, rủ đi công viên, rồi chia sẻ đã học tiếng Trung bao lâu.',
+       structure:['今天天气很晴，我们去公园玩儿吧。','我学了大概＿＿个小时汉语了。'],
+       sample:'今天天气很晴，我们去公园玩儿吧。我学了大概一百个小时汉语了。',
+       sample_vn:'Hôm nay trời quang đãng, chúng ta đi công viên chơi đi. Tôi đã học tiếng Trung được khoảng một trăm tiếng rồi.',
+       note:'百 (trăm) dùng để nói số lượng lớn, ví dụ số giờ học.'},
     ],
   },
 };

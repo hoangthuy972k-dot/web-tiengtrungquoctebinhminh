@@ -152,88 +152,129 @@ const dialogData = [
    ]},
 ];
 
-// Điền từ — 更 / 就要-快要-快-要……了 / 都……了
-const fillData = [
-  {pre:'新年',blank:'就',post:'要到了。',hint:'(sắp — 就要……了)',ans:'就',exp:'就要……了 diễn tả việc sắp xảy ra'},
-  {pre:'今天',blank:'快',post:'要下雪了。',hint:'(sắp — 快要……了)',ans:'快'},
-  {pre:'明天',blank:'要',post:'下雨了。',hint:'(sắp — 要……了)',ans:'要'},
-  {pre:'火车马上',blank:'快',post:'走了。',hint:'(sắp — 快……了)',ans:'快'},
-  {pre:'今天比昨天',blank:'更',post:'冷。',hint:'(càng, hơn)',ans:'更',exp:'更 nhấn mạnh mức độ tăng thêm khi so sánh'},
-  {pre:'衣服',blank:'都',post:'买好了。',hint:'(đều đã — 都……了)',ans:'都'},
-  {pre:'大家',blank:'都',post:'在准备回家。',hint:'(đều)',ans:'都'},
-  {pre:'妹妹坐公共汽车去',blank:'火车站',post:'接朋友了。',hint:'(ga tàu — ôn từ vựng)',ans:'火车站'},
-];
-
-// Sắp xếp — khác Điền từ
-const sortData = [
-  {words:['新年','就要','到','了','，','你','有','什么','计划','？'],ans:'新年就要到了，你有什么计划？',audio:'新年就要到了，你有什么计划？'},
-  {words:['我','要','回家','过年','，','票','已经','买','好','了','。'],ans:'我要回家过年，票已经买好了。',audio:'我要回家过年，票已经买好了。'},
-  {words:['今天','阴','，','比','昨天','更','冷','。'],ans:'今天阴，比昨天更冷。',audio:'今天阴，比昨天更冷。'},
-  {words:['她','坐','公共汽车','去','火车站','接','朋友','了','。'],ans:'她坐公共汽车去火车站接朋友了。',audio:'她坐公共汽车去火车站接朋友了。'},
-  {words:['大家','都','在','准备','回家','。'],ans:'大家都在准备回家。',audio:'大家都在准备回家。'},
-  {words:['我','觉得','今年','比','去年','更','热闹','。'],ans:'我觉得今年比去年更热闹。',audio:'我觉得今年比去年更热闹。'},
-];
-
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 const matchData = [
-  {left:'新年就要到了，',right:'你有什么计划？'},
-  {left:'火车站人多不多？',right:'大家都在准备回家，人很多。'},
-  {left:'今天天气怎么样？',right:'今天阴，比昨天更冷。'},
-  {left:'你妹妹呢？',right:'她坐公共汽车去火车站接朋友了。'},
-  {left:'都几点了，她还没回来吗？',right:'快要回来了，你等一下。'},
-  {left:'新年快到了，你准备好了吗？',right:'差不多了，衣服都买好了。'},
+  {left:'新年',right:'快乐'},
+  {left:'买',right:'票'},
+  {left:'坐',right:'公共汽车'},
+  {left:'去',right:'火车站'},
+  {left:'天气',right:'阴'},
+  {left:'更',right:'热闹'},
 ];
 
-// Trắc nghiệm — không audio; trộn từ Bài 7/10/12/14 làm phương án nhiễu
-const mcData = [
-  {q:'新年＿＿要到了。',opts:['就','才','再','又'],ans:0},
-  {q:'今天阴，比昨天＿＿冷。',opts:['更','很','太','最'],ans:0},
-  {q:'她坐公共汽车去＿＿接朋友了。',opts:['火车站','宾馆','公司','教室'],ans:0},
-  {q:'＿＿都在准备回家。',opts:['大家','大人','朋友','同学'],ans:0},
-  {q:'火车＿＿买好了，你放心吧。',opts:['票','钱','书','表'],ans:0},
-  {q:'我觉得今年比去年＿＿热闹。',opts:['更','太','最','真'],ans:0},
-  {q:'他有一个＿＿，今年十岁。',opts:['妹妹','朋友','同学','老师'],ans:0},
-  {q:'今天天气有点儿＿＿，可能要下雨。',opts:['阴','晴','热','冷'],ans:0},
-  {q:'＿＿要下雪了，快回家吧。',opts:['快','就','才','再'],ans:0},
-  {q:'衣服＿＿买好了。',opts:['都','也','还','又'],ans:0},
+// ══════════════════════════════════════════
+// PHẦN 2 · NGHE — tình huống MỚI: tiệc tất niên ở công ty.
+// ══════════════════════════════════════════
+const listenData = [
+  {audio:'公司新年晚会的票大家都买好了，一共二十张。',
+   questions:[
+     {q:'晚会的票怎么样了？',opts:['都买好了','还没买','卖完了','不知道'],ans:0},
+     {q:'一共买了多少张票？',opts:['二十张','十张','三十张','不知道'],ans:0},
+   ]},
+  {audio:'新年就要到了，公司晚会就要开始了，大家都很高兴。',
+   questions:[
+     {q:'什么就要到了？',opts:['新年','生日','考试','放假'],ans:0},
+     {q:'大家心情怎么样？',opts:['很高兴','很难过','很累','不知道'],ans:0},
+   ]},
+  {audio:'我妹妹坐公共汽车去火车站接同事了，今天阴，比昨天更冷，她说要快点儿回来。',
+   questions:[
+     {q:'妹妹去火车站做什么？',opts:['接同事','买票','上班','买衣服'],ans:0},
+     {q:'今天天气怎么样？',opts:['阴，比昨天更冷','晴，很暖和','下雨','不知道'],ans:0},
+   ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: tiệc tất niên ở công ty
+// ══════════════════════════════════════════
+const fillData = [
+  {pre:'公司新年晚会的票，大家',blank:'都',post:'买好了。',hint:'(đều — 都……了)',ans:'都',exp:'都……了 nhấn mạnh TẤT CẢ đều đạt trạng thái/kết quả.'},
+  {pre:'新年',blank:'就',post:'要到了，你准备好了吗？',hint:'(sắp — 就要……了)',ans:'就',exp:'就要……了 diễn tả việc sắp xảy ra.'},
+  {pre:'晚会',blank:'快',post:'要开始了，大家快过来吧！',hint:'(sắp — 快要……了)',ans:'快'},
+  {pre:'今天阴，比昨天',blank:'更',post:'冷了。',hint:'(càng, hơn)',ans:'更',exp:'更 nhấn mạnh mức độ tăng thêm khi so sánh.'},
+  {pre:'我',blank:'妹妹',post:'坐公共汽车去火车站接同事了。',hint:'(em gái)',ans:'妹妹'},
+  {pre:'她坐',blank:'公共汽车',post:'去，说一会儿就到。',hint:'(xe buýt)',ans:'公共汽车'},
+  {pre:'新年晚会的',blank:'票',post:'一共买了二十张。',hint:'(vé)',ans:'票'},
+  {pre:'',blank:'大家',post:'都很高兴，晚会一定很热闹。',hint:'(mọi người)',ans:'大家'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
+const sortData = [
+  {words:['新年','晚会','的','票','大家','都','买','好','了','。'],ans:'新年晚会的票大家都买好了。',audio:'新年晚会的票大家都买好了。'},
+  {words:['新年','就要','到','了','。'],ans:'新年就要到了。',audio:'新年就要到了。'},
+  {words:['晚会','快要','开始','了','。'],ans:'晚会快要开始了。',audio:'晚会快要开始了。'},
+  {words:['今天','比','昨天','更','冷','。'],ans:'今天比昨天更冷。',audio:'今天比昨天更冷。'},
+  {words:['妹妹','坐','公共汽车','去','火车站','了','。'],ans:'妹妹坐公共汽车去火车站了。',audio:'妹妹坐公共汽车去火车站了。'},
+  {words:['大家','都','很','高兴','。'],ans:'大家都很高兴。',audio:'大家都很高兴。'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 3c · SỬA LỖI SAI
+// ══════════════════════════════════════════
+const errorFixData = [
+  {wrong:'今天更比昨天冷。',
+   opts:['今天比昨天更冷。','今天更比昨天冷。','今天比更昨天冷。','更今天比昨天冷。'],ans:0,
+   exp:'更 đứng SAU 比 + đối tượng so sánh, ngay trước tính từ: A + 比 + B + 更 + Tính từ.'},
+  {wrong:'新年到就要了。',
+   opts:['新年就要到了。','新年到就要了。','新年了就要到。','就要新年到了。'],ans:0,
+   exp:'Cấu trúc 就要……了 phải kẹp động từ ở giữa: 就要 + Động từ + 了, không tách rời 就要 và 了 ra hai đầu câu.'},
+  {wrong:'晚会开始快要了。',
+   opts:['晚会快要开始了。','晚会开始快要了。','晚会了快要开始。','快要晚会开始了。'],ans:0,
+   exp:'Tương tự 就要……了, cấu trúc 快要……了 cũng phải kẹp động từ ở giữa: 快要 + Động từ + 了.'},
+  {wrong:'都票买好了。',
+   opts:['票都买好了。','都票买好了。','票买都好了。','买票都好了。'],ans:0,
+   exp:'都 phải đứng SAU chủ ngữ/đối tượng (票), không đặt lên trước chủ ngữ.'},
+  {wrong:'大家高兴都很。',
+   opts:['大家都很高兴。','大家高兴都很。','大家很都高兴。','都大家很高兴。'],ans:0,
+   exp:'都 đứng TRƯỚC 很 và tính từ: Chủ ngữ + 都 + 很 + Tính từ, không đặt 都 ở cuối câu.'},
+];
+
+// ══════════════════════════════════════════
+// PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
+// ══════════════════════════════════════════
 const speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý thanh điệu và nhịp câu. Có thể đọc phân vai theo cặp.',
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
-      {zh:'新年就要到了，你有什么计划？',py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?'},
-      {zh:'我要回家过年，票已经买好了。',py:'Wǒ yào huíjiā guònián, piào yǐjīng mǎihǎo le.',vn:'Tôi sẽ về nhà ăn Tết, vé đã mua xong rồi.'},
+      {zh:'新年晚会的票大家都买好了。',py:'Xīnnián wǎnhuì de piào dàjiā dōu mǎihǎo le.',vn:'Vé tiệc tất niên mọi người đều mua xong rồi.'},
+      {zh:'新年就要到了，你准备好了吗？',py:'Xīnnián jiùyào dào le, nǐ zhǔnbèi hǎo le ma?',vn:'Năm mới sắp đến rồi, bạn chuẩn bị xong chưa?'},
+      {zh:'晚会快要开始了，大家快过来吧！',py:'Wǎnhuì kuàiyào kāishǐ le, dàjiā kuài guòlai ba!',vn:'Tiệc sắp bắt đầu rồi, mọi người mau lại đây đi!'},
       {zh:'今天阴，比昨天更冷。',py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',vn:'Hôm nay âm u, lạnh hơn hôm qua.'},
-      {zh:'她坐公共汽车去火车站接朋友了。',py:'Tā zuò gōnggòngqìchē qù huǒchēzhàn jiē péngyou le.',vn:'Cô ấy đi xe buýt đến ga tàu đón bạn rồi.'},
+      {zh:'我妹妹坐公共汽车去火车站接同事了。',py:'Wǒ mèimei zuò gōnggòngqìchē qù huǒchēzhàn jiē tóngshì le.',vn:'Em gái tôi đi xe buýt đến ga tàu đón đồng nghiệp rồi.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu mới. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'＿＿就要到了。',frame_py:'___ jiùyào dào le.',vn:'＿＿ sắp đến rồi.',options:['新年','火车','考试'],samples:['新年就要到了。','火车就要到了。','考试就要到了。']},
-      {frame:'今天比昨天更＿＿。',frame_py:'Jīntiān bǐ zuótiān gèng ___.',vn:'Hôm nay ＿＿ hơn hôm qua.',options:['冷','热','忙'],samples:['今天比昨天更冷。','今天比昨天更热。','今天比昨天更忙。']},
-      {frame:'他坐公共汽车去＿＿。',frame_py:'Tā zuò gōnggòngqìchē qù ___.',vn:'Anh ấy đi xe buýt đến ＿＿.',options:['火车站','宾馆','公司'],samples:['他坐公共汽车去火车站。','他坐公共汽车去宾馆。','他坐公共汽车去公司。']},
-      {frame:'衣服都＿＿了。',frame_py:'Yīfu dōu ___ le.',vn:'Quần áo đều đã ＿＿ rồi.',options:['买好','穿好','洗好'],samples:['衣服都买好了。','衣服都穿好了。','衣服都洗好了。']},
+      {frame:'＿＿就要到了。',frame_py:'___ jiùyào dào le.',vn:'＿＿ sắp đến rồi.',options:['新年','晚会','考试'],samples:['新年就要到了。','晚会就要到了。','考试就要到了。']},
+      {frame:'今天比昨天更＿＿。',frame_py:'Jīntiān bǐ zuótiān gèng ___.',vn:'Hôm nay ＿＿ hơn hôm qua.',options:['冷','热闹','忙'],samples:['今天比昨天更冷。','今天比昨天更热闹。','今天比昨天更忙。']},
+      {frame:'＿＿都准备好了。',frame_py:'___ dōu zhǔnbèi hǎo le.',vn:'＿＿ đều đã chuẩn bị xong rồi.',options:['票','衣服','大家'],samples:['票都准备好了。','衣服都准备好了。','大家都准备好了。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Nói liền 2–3 câu. Ghi âm lại rồi nghe để tự sửa.',
+    intro:'Không nhìn câu mẫu, tự dùng từ đã học để nói theo tình huống. Ghi âm lại để nghe hoặc gửi chấm điểm AI, rồi đối chiếu với câu mẫu.',
     tasks:[
-      {role:'🎉 Tình huống 1 — Nói về kế hoạch năm mới',
-       guide:'Bạn hỏi và trả lời về kế hoạch dịp năm mới sắp tới.',
-       structure:['新年就要到了，你有什么计划？','我要回家过年，票已经买好了。'],
-       sample:'新年就要到了，你有什么计划？我要回家过年，票已经买好了。',
-       sample_vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không? Tôi sẽ về nhà ăn Tết, vé đã mua xong rồi.'},
-      {role:'🌦️ Tình huống 2 — Nói về thời tiết',
-       guide:'Bạn miêu tả thời tiết hôm nay so với hôm qua, dự đoán trời sắp có tuyết.',
-       structure:['今天阴，比昨天更冷。','快要下雪了。'],
-       sample:'今天阴，比昨天更冷，快要下雪了。',
-       sample_vn:'Hôm nay âm u, lạnh hơn hôm qua, sắp có tuyết rơi rồi.'},
-      {role:'👨‍👩‍👧 Tình huống 3 — Nói về người thân đi đón bạn',
-       guide:'Bạn kể về việc em gái đi xe buýt ra ga tàu đón bạn.',
-       structure:['我妹妹坐公共汽车去火车站接朋友了。'],
-       sample:'我妹妹坐公共汽车去火车站接朋友了。',
-       sample_vn:'Em gái tôi đi xe buýt đến ga tàu đón bạn rồi.'},
+      {role:'🎉 Tình huống 1 — Rủ đồng nghiệp dự tiệc tất niên công ty',
+       guide:'Bạn rủ đồng nghiệp tham gia tiệc tất niên sắp diễn ra, hỏi họ đã chuẩn bị vé chưa.',
+       structure:['新年晚会就要开始了，','你的票买好了吗？'],
+       sample:'新年晚会就要开始了，你的票买好了吗？',
+       sample_vn:'Tiệc tất niên sắp bắt đầu rồi, vé của bạn mua xong chưa?',
+       note:'就要……了 diễn tả việc sắp xảy ra trong tương lai gần.'},
+      {role:'🌦️ Tình huống 2 — Nhận xét thời tiết lạnh hơn',
+       guide:'Bạn so sánh thời tiết hôm nay với hôm qua, nhận xét nó lạnh hơn.',
+       structure:['今天阴，','比昨天更冷。'],
+       sample:'今天阴，比昨天更冷。',
+       sample_vn:'Hôm nay âm u, lạnh hơn hôm qua.',
+       note:'更 dùng để nhấn mạnh mức độ tăng thêm khi so sánh hai đối tượng.'},
+      {role:'🚌 Tình huống 3 — Kể việc em gái đi đón người ở ga tàu',
+       guide:'Bạn kể lại việc em gái mình đi xe buýt ra ga tàu để đón một người bạn/đồng nghiệp.',
+       structure:['我妹妹坐公共汽车去火车站接＿＿了。'],
+       sample:'我妹妹坐公共汽车去火车站接同事了。',
+       sample_vn:'Em gái tôi đi xe buýt đến ga tàu đón đồng nghiệp rồi.',
+       note:'Ôn lại cấu trúc V+着 và trạng ngữ chỉ phương tiện di chuyển (坐公共汽车) đã học ở các bài trước.'},
     ],
   },
 };

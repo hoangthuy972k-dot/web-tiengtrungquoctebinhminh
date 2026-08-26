@@ -122,7 +122,7 @@
   /* ---------------- Level cards ---------------- */
 
   var LEVEL_ICON_CLASS = { hsk1: 'is-red', hsk2: 'is-gold', hsk3: 'is-red', hsk4: 'is-gold', yct: 'is-red' };
-  var READY_LEVELS = { hsk1: true, hsk2: true };
+  var READY_LEVELS = { hsk1: true, hsk2: true, yct: true };
   var practiceLevel = 'hsk1';
 
   function renderLevelCards() {
@@ -148,7 +148,7 @@
         '</div>' +
         '<span class="level-card-cta">' +
           (isReady
-            ? 'Xem lộ trình 15 bài <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'
+            ? 'Xem lộ trình ' + level.totalLessons + ' bài <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'
             : 'Sắp ra mắt') +
         '</span>';
       card.addEventListener('click', function () {
@@ -169,7 +169,7 @@
 
   /* ---------------- Practice level tabs (HSK1 / HSK2) ---------------- */
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk2: 'HSK 2' };
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk2: 'HSK 2', yct: 'YCT' };
 
   function renderPracticeLevelTabs() {
     var wrap = $('#lessonListTabs');

@@ -45,8 +45,8 @@ const APP_DATA = {
       name: 'YCT - Thiếu nhi',
       subtitle: 'Dành cho trẻ em',
       description: 'Chương trình tiếng Trung vui nhộn, hình ảnh sinh động cho trẻ.',
-      totalLessons: 10,
-      totalVocab: 80,
+      totalLessons: 11,
+      totalVocab: 100,
       color: 'red'
     }
   ],
@@ -481,6 +481,140 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk1-bai-15.html'
+      }
+    ],
+    yct: [
+      {
+        id: 'yct-l1',
+        number: 1,
+        title: 'Chào bạn!',
+        titleHanzi: '你好！',
+        titlePinyin: 'Nǐ hǎo!',
+        topic: 'Chào hỏi & Đếm số 1-10',
+        vocabCount: 14,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-1.html'
+      },
+      {
+        id: 'yct-l2',
+        number: 2,
+        title: 'Bạn tên gì?',
+        titleHanzi: '你叫什么？',
+        titlePinyin: 'Nǐ jiào shénme?',
+        topic: 'Tự giới thiệu & Làm quen bạn mới',
+        vocabCount: 9,
+        dialogueCount: 3,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/yct-bai-2.html'
+      },
+      {
+        id: 'yct-l3',
+        number: 3,
+        title: 'Anh ấy là ai vậy?',
+        titleHanzi: '他是谁？',
+        titlePinyin: 'Tā shì shéi?',
+        topic: 'Hỏi về người & Quốc tịch',
+        vocabCount: 7,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-3.html'
+      },
+      {
+        id: 'yct-l4',
+        number: 4,
+        title: 'Nhà bạn có mấy người?',
+        titleHanzi: '你家有几口人？',
+        titlePinyin: 'Nǐ jiā yǒu jǐ kǒu rén?',
+        topic: 'Gia đình',
+        vocabCount: 12,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-4.html'
+      },
+      {
+        id: 'yct-l5',
+        number: 5,
+        title: 'Bạn mấy tuổi?',
+        titleHanzi: '你几岁？',
+        titlePinyin: 'Nǐ jǐ suì?',
+        topic: 'Tuổi tác',
+        vocabCount: 6,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-5.html'
+      },
+      {
+        id: 'yct-l6',
+        number: 6,
+        title: 'Tóc mình rất dài',
+        titleHanzi: '我的头发很长',
+        titlePinyin: 'Wǒ de tóufa hěn cháng',
+        topic: 'Ngoại hình & Bộ phận cơ thể',
+        vocabCount: 12,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-6.html'
+      },
+      {
+        id: 'yct-l7',
+        number: 7,
+        title: 'Đây là con mèo',
+        titleHanzi: '这是猫',
+        titlePinyin: 'Zhè shì māo',
+        topic: 'Động vật & Chỉ định gần/xa',
+        vocabCount: 9,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-7.html'
+      },
+      {
+        id: 'yct-l8',
+        number: 8,
+        title: 'Mình đi trường học',
+        titleHanzi: '我去学校',
+        titlePinyin: 'Wǒ qù xuéxiào',
+        topic: 'Địa điểm & Đi đâu',
+        vocabCount: 8,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-8.html'
+      },
+      {
+        id: 'yct-l9',
+        number: 9,
+        title: 'Sinh nhật bạn là ngày mấy tháng mấy?',
+        titleHanzi: '你的生日是几月几号？',
+        titlePinyin: 'Nǐ de shēngrì shì jǐ yuè jǐ hào?',
+        topic: 'Ngày tháng & Sinh nhật',
+        vocabCount: 7,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-9.html'
+      },
+      {
+        id: 'yct-l10',
+        number: 10,
+        title: 'Bây giờ là mấy giờ?',
+        titleHanzi: '现在几点？',
+        titlePinyin: 'Xiànzài jǐ diǎn?',
+        topic: 'Giờ giấc',
+        vocabCount: 7,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-10.html'
+      },
+      {
+        id: 'yct-l11',
+        number: 11,
+        title: 'Mình rất thích ăn bánh kem',
+        titleHanzi: '我爱吃蛋糕',
+        titlePinyin: 'Wǒ ài chī dàngāo',
+        topic: 'Đồ ăn & Thức uống',
+        vocabCount: 9,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/yct-bai-11.html'
       }
     ]
   }

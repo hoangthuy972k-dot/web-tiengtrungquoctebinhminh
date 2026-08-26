@@ -32,6 +32,12 @@ function speakSeq(texts){
 function miniSpeakBtn(text){return '<button type="button" class="speak-mini" data-action="speak" data-text="'+text.replace(/"/g,'&quot;')+'">🔊</button>';}
 
 // ══════════════════════════════════════════
+// REAL AUDIO (bản ghi âm gốc từ giáo trình HSK标准教程 2)
+// ══════════════════════════════════════════
+const LESSON_NUM=(function(){var m=location.pathname.match(/bai-(\d+)/);return m?parseInt(m[1],10):null;})();
+function audioLoadError(el){el.outerHTML='<span class="audio-missing">⚠️ Chưa có file audio gốc cho phần này.</span>';}
+
+// ══════════════════════════════════════════
 // EXERCISE SCORES (Phần 5 · Tổng kết — dashboard tổng hợp)
 // ══════════════════════════════════════════
 window.exerciseScores = { collocation:null, listen:null, fill:null, sort:null, errorfix:null, speak:null };
@@ -115,6 +121,14 @@ function selectWuOpt(letter){
 const posStyle={'Danh từ':'background:#dbeafe;color:#1d4ed8','Động từ':'background:#dcfce7;color:#16a34a','Tính từ':'background:#fef9c3;color:#b45309','Đại từ':'background:#fce7f3;color:#be185d','Lượng từ':'background:#f0fdf4;color:#15803d'};
 function buildVocab(){
   const g=document.getElementById('vocab-grid');
+  if(LESSON_NUM && !document.getElementById('vocab-audio-box')){
+    g.insertAdjacentHTML('beforebegin',
+      '<div class="audio-box real-box" id="vocab-audio-box">'+
+      '<span class="a-label"><span class="a-ico">🎙️</span> Audio gốc giáo trình · Từ mới</span>'+
+      '<audio class="real-audio" controls preload="none" src="/audio/bai-'+LESSON_NUM+'/vocab.mp3" onerror="audioLoadError(this)"></audio>'+
+      '<div class="audio-hint">Nghe cách đọc từ mới và câu ví dụ, đúng theo bản ghi âm gốc của giáo trình.</div>'+
+      '</div>');
+  }
   g.innerHTML='';
   vocabData.forEach(function(v,vi){
     const d=document.createElement('div');
@@ -234,7 +248,11 @@ function buildDialogs(){
     div.id='dlg'+di;
     const allZh=d.lines.map(function(l){return l.zh;});
     let h='<div class="dlg-scene">🎭 '+d.scene+'</div>'+
-      '<div class="audio-box"><span class="a-label"><span class="a-ico">🎧</span> Nghe bài khoá '+(di+1)+'</span>'+
+      (LESSON_NUM?('<div class="audio-box real-box">'+
+      '<span class="a-label"><span class="a-ico">🎙️</span> Audio gốc giáo trình</span>'+
+      '<audio class="real-audio" controls preload="none" src="/audio/bai-'+LESSON_NUM+'/dlg-'+(di+1)+'.mp3" onerror="audioLoadError(this)"></audio>'+
+      '</div>'):'')+
+      '<div class="audio-box"><span class="a-label"><span class="a-ico">🤖</span> Giọng đọc tổng hợp</span>'+
       '<button type="button" class="speak-box-btn" data-action="speak-seq" data-texts="'+JSON.stringify(allZh).replace(/"/g,'&quot;')+'">▶ Nghe toàn bộ</button>'+
       '<div class="audio-hint">Nghe từng câu, lặp lại theo (shadowing) — nghe 2 lượt trước khi luyện nói.</div></div>';
     d.lines.forEach(function(l){
@@ -250,6 +268,13 @@ function buildDialogs(){
     div.innerHTML=h;
     w.appendChild(div);
   });
+  if(LESSON_NUM===3 && !document.getElementById('dlg-extra-audio')){
+    w.insertAdjacentHTML('afterend',
+      '<div class="audio-box real-box" id="dlg-extra-audio">'+
+      '<span class="a-label"><span class="a-ico">🎧</span> Đoạn nghe bổ sung (giáo trình gốc)</span>'+
+      '<audio class="real-audio" controls preload="none" src="/audio/bai-3/extra-1.mp3" onerror="audioLoadError(this)"></audio>'+
+      '</div>');
+  }
 }
 function showDlg(i,btn){
   document.querySelectorAll('.dlg-card').forEach(function(c){c.classList.remove('active');});

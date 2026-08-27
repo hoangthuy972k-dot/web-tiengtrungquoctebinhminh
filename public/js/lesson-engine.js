@@ -859,3 +859,13 @@ if(typeof errorFixData!=='undefined')buildErrorFix();
     if(days.indexOf(key)===-1){days.push(key);localStorage.setItem('hyv_study_days',JSON.stringify(days));}
   }catch(e){/* localStorage unavailable - fail silently */}
 })();
+
+// ══════════════════════════════════════════
+// MỞ SẴN TAB THEO #hash (đến từ hub "Danh sách bài học" ở trang chủ)
+// ══════════════════════════════════════════
+(function openTabFromHash(){
+  var tabId=location.hash.replace('#','');
+  if(!tabId) return;
+  var btn=document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
+  if(btn) btn.click();
+})();

@@ -147,22 +147,27 @@
     showLevelDetail(id);
   }
 
-  /* ---------------- View toggle: dashboard <-> level detail ---------------- */
+  /* ---------------- View toggle: dashboard <-> level detail <-> lesson hub ---------------- */
+
+  var currentLevelId = null;
 
   function showDashboard() {
     $('#home').hidden = false;
     $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
   }
 
   function showLevelDetail(id) {
+    currentLevelId = id;
     $('#home').hidden = true;
     $('#levelDetail').hidden = false;
+    $('#lessonHub').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  /* ---------------- Lesson list (links out to standalone lesson pages) ---------------- */
+  /* ---------------- Lesson list (opens the lesson hub instead of navigating away) ---------------- */
 
   function renderLessonList(id) {
     var wrap = $('#levelDetailList');
@@ -192,8 +197,94 @@
         '<span class="lesson-card-progress' + (isDone ? ' is-done' : '') + '">' + (isDone ? '✓ Đã học' : 'Chưa học') + '</span>' +
         '<svg class="icon lesson-card-arrow" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
 
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        showLessonHub(id, lesson);
+      });
+
       wrap.appendChild(card);
     });
+  }
+
+  /* ---------------- Lesson hub (danh mục dạng bài bên trong 1 bài học) ---------------- */
+
+  // Mỗi dạng bài tương ứng với đúng 1 tab CÓ THẬT trên trang bài học (mở qua #hash).
+  // Chỉ những dạng có tab thật mới bấm được; các ô "Sắp ra mắt" chưa có nội dung.
+  var HUB_TAB_DEFS = {
+    warmup: { label: 'Khởi động', emoji: '🎯', color: 'pink' },
+    vocab: { label: 'Từ vựng', emoji: '📚', color: 'red' },
+    flash: { label: 'Flashcard', emoji: '🃏', color: 'gold' },
+    grammar: { label: 'Ngữ pháp', emoji: '📐', color: 'blue' },
+    dialog: { label: 'Hội thoại · Shadowing', emoji: '💬', color: 'green' },
+    match: { label: 'Ghép từ / Nối câu', emoji: '🔗', color: 'purple' },
+    listen: { label: 'Luyện nghe', emoji: '🎧', color: 'teal' },
+    fill: { label: 'Điền từ', emoji: '✏️', color: 'orange' },
+    sort: { label: 'Sắp xếp câu', emoji: '🧩', color: 'indigo' },
+    errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink' },
+    mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal' },
+    speak: { label: 'Luyện nói', emoji: '🗣️', color: 'purple' }
+  };
+
+  // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
+  var LEVEL_HUB_TABS = {
+    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'fill', 'sort', 'match', 'mc', 'speak'],
+    hsk2: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'match', 'listen', 'fill', 'sort', 'errfix', 'speak'],
+    yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
+  };
+  var LEVEL_HUB_CTA_TAB = { hsk2: 'tongket' };
+
+  function showLessonHub(levelId, lesson) {
+    var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
+    var isDone = !!visited[lesson.fullPageUrl];
+
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = false;
+    $('#lessonHub').dataset.levelId = levelId;
+    $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
+
+    var pct = isDone ? 100 : 0;
+    $('#hubProgressFill').style.width = pct + '%';
+    $('#hubProgressPct').textContent = pct + '%';
+
+    var tabIds = LEVEL_HUB_TABS[levelId];
+    var grid = $('#hubTileGrid');
+    grid.innerHTML = '';
+    (tabIds || []).forEach(function (tabId) {
+      var def = HUB_TAB_DEFS[tabId];
+      if (!def) return;
+      var tile = document.createElement('a');
+      tile.className = 'hub-tile';
+      tile.href = lesson.fullPageUrl + '#' + tabId;
+      tile.innerHTML =
+        '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
+        '<span class="hub-tile-label">' + def.label + '</span>' +
+        '<svg class="icon hub-tile-arrow" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>';
+      grid.appendChild(tile);
+    });
+
+    if (!tabIds) {
+      grid.innerHTML = '<p style="color:var(--color-gray-600);grid-column:1/-1;">Bài học này dùng giao diện riêng, bấm vào để mở đầy đủ.</p>';
+    }
+
+    var ctaWrap = $('#hubCtaWrap');
+    ctaWrap.innerHTML = '';
+    var ctaTab = LEVEL_HUB_CTA_TAB[levelId];
+    if (ctaTab) {
+      var cta = document.createElement('a');
+      cta.className = 'hub-cta';
+      cta.href = lesson.fullPageUrl + '#' + ctaTab;
+      cta.innerHTML = '🏆 Xem kết quả cuối bài';
+      ctaWrap.appendChild(cta);
+    } else if (!tabIds) {
+      var openLink = document.createElement('a');
+      openLink.className = 'hub-cta';
+      openLink.href = lesson.fullPageUrl;
+      openLink.textContent = 'Mở bài học';
+      ctaWrap.appendChild(openLink);
+    }
+
+    $('#lessonHub').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
@@ -389,6 +480,10 @@
     initAuth();
 
     $('#levelDetailBack').addEventListener('click', showDashboard);
+    $('#lessonHubBack').addEventListener('click', function () {
+      if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
     $all('a[href="#home"]').forEach(function (link) {
       link.addEventListener('click', showDashboard);
     });

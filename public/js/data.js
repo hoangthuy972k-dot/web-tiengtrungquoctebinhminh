@@ -530,6 +530,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 1,
         fullPageUrl: '/lessons/hsk1v3-bai-2.html'
+      },
+      {
+        id: 'hsk1v3-l3',
+        number: 3,
+        title: 'Mình là người Trung Quốc',
+        titleHanzi: '我是中国人',
+        titlePinyin: 'Wǒ shì Zhōngguó rén',
+        topic: 'Quốc tịch & làm quen',
+        vocabCount: 22,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-3.html'
       }
     ],
     yct: [

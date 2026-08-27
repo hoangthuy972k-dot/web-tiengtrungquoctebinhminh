@@ -171,7 +171,7 @@
   var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk2', 'hsk3', 'yct'];
   var LEVEL_COLOR = { hsk1: 'red', hsk2: 'green', hsk3: 'gold', yct: 'blue' };
   var LEVEL_SHORT = { hsk1: 'HSK1', hsk2: 'HSK2', hsk3: 'HSK3', yct: 'YCT1' };
-  var READY_LEVELS = { hsk1: true, hsk2: true, yct: true };
+  var READY_LEVELS = { hsk1: true, hsk2: true, hsk3: true, yct: true };
   var practiceLevel = 'hsk2';
 
   function renderLevelCards() {
@@ -319,13 +319,15 @@
   // (thay vi hien 4 o rieng le); ben trong o do la man hinh chon game.
   var LEVEL_GAME_TYPES = {
     hsk1: ['match', 'fill', 'sort', 'mc'],
-    hsk2: ['match', 'fill', 'sort', 'errfix']
+    hsk2: ['match', 'fill', 'sort', 'errfix'],
+    hsk3: ['match', 'fill', 'sort', 'errfix']
   };
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
     hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
+    hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
   };
 
@@ -621,7 +623,7 @@
     var wrap = $('#vpContent');
     wrap.innerHTML = '<div class="vp-list-grid"></div>';
     var grid = wrap.firstChild;
-    vpVocab.forEach(function (v) {
+    vpVocab.forEach(function (v, vi) {
       var ex = v.exList && v.exList[0];
       var card = document.createElement('div');
       card.className = 'vp-word-card';
@@ -630,11 +632,41 @@
         '<div class="vp-word-py">' + v.py + '</div>' +
         '<div class="vp-word-vn">' + v.vn + '</div>' +
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
-        (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></div>' : '');
+        (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></div>' : '') +
+        (v.check ? renderVpCheckHtml(v.check, vi) : '');
       grid.appendChild(card);
     });
     $all('[data-speak]', grid).forEach(function (btn) {
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    wireVpCheckWidgets(grid);
+  }
+
+  // Khung luyện dịch nho nhỏ gắn ngay dưới mỗi thẻ từ vựng: học sinh tự gõ
+  // bản dịch, bấm "Xem đáp án mẫu" để đối chiếu ngay (khong tu dong cham diem).
+  function renderVpCheckHtml(check, vi) {
+    var isZh = check.promptLang === 'zh';
+    return '<div class="vp-check-box">' +
+      '<div class="vp-check-label">✏️ Luyện dịch câu này</div>' +
+      '<div class="vp-check-q' + (isZh ? ' hanzi' : '') + '">' + check.prompt + '</div>' +
+      '<textarea class="vp-check-input" data-check-input="' + vi + '" rows="2" placeholder="Nhập bản dịch của bạn..."></textarea>' +
+      '<button type="button" class="vp-check-btn" data-check-reveal="' + vi + '">Xem đáp án mẫu</button>' +
+      '<div class="vp-check-answer" data-check-answer="' + vi + '" hidden>' +
+        '<strong>Đáp án mẫu:</strong> <span class="hanzi">' + check.answer + '</span>' +
+        (check.answerPy ? '<div class="vp-check-py">' + check.answerPy + '</div>' : '') +
+        (check.note ? '<div class="vp-check-note">💡 ' + check.note + '</div>' : '') +
+      '</div>' +
+    '</div>';
+  }
+
+  function wireVpCheckWidgets(grid) {
+    $all('[data-check-reveal]', grid).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = btn.getAttribute('data-check-reveal');
+        var panel = grid.querySelector('[data-check-answer="' + idx + '"]');
+        if (panel) panel.hidden = false;
+        btn.disabled = true;
+      });
     });
   }
 
@@ -1432,6 +1464,59 @@
       { type: 'judge', context: 'Bạn so sánh thời tiết hôm nay lạnh hơn hôm qua.',
         sentence: '今天比昨天冷更。', isCorrect: false, correctVersion: '今天比昨天更冷。',
         explanation: '更 phải đứng NGAY TRƯỚC tính từ (冷), không đặt sau tính từ.' }
+    ],
+    '/lessons/hsk3-bai-2.html': [
+      { context: 'Ai đó đứng ngoài cửa gọi bạn ra.',
+        pre: '你', blank: '出来', post: '。', options: ['出来', '出去', '进来'], answer: 0,
+        explanation: '出来 = đi ra NGOÀI, hướng VỀ PHÍA người nói (người nói đang ở ngoài, gọi người khác ra với mình).' },
+      { context: 'Bạn đứng ngoài phòng, bảo người khác vào trong.',
+        pre: '你', blank: '进去', post: '吧。', options: ['进去', '进来', '出去'], answer: 0,
+        explanation: '进去 = đi VÀO bên trong, hướng RA XA khỏi vị trí người nói.' },
+      { context: 'Giám đốc gọi bạn đến chỗ của ông ấy (bạn đang ở xa).',
+        pre: '经理叫你', blank: '过去', post: '。', options: ['过去', '过来', '回去'], answer: 0,
+        explanation: '过去 = đi qua chỗ khác, hướng RA XA người nói.' },
+      { context: 'Bạn hỏi bạn mình mấy giờ về đến nhà (nhà của người nghe).',
+        pre: '你几点', blank: '回来', post: '？', options: ['回来', '回去', '出去'], answer: 0,
+        explanation: '回来 = về ĐẾN nơi người nói đang ở, hướng VỀ PHÍA người nói.' },
+      { context: 'Bạn đang ở tầng dưới, nói với người ở tầng trên rằng bạn sẽ lên đó.',
+        pre: '我', blank: '上去', post: '。', options: ['上去', '上来', '下来'], answer: 0,
+        explanation: '上去 = đi LÊN, hướng RA XA người nói (người nói đang ở tầng dưới).' },
+      { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+        sentence: '我们起去他家玩儿吧。', isCorrect: false, correctVersion: '我们一起去他家玩儿吧。',
+        explanation: '起 CHỈ kết hợp được với 来 (起来), KHÔNG có "起去" — đây là lỗi ghép sai bổ ngữ xu hướng.' },
+      { type: 'sort', context: 'Sắp xếp thành câu diễn tả bạn lên lầu lấy ô cho bạn mình.',
+        words: ['我', '上楼', '去', '给', '你', '拿', '把', '伞', '。'], answer: '我上楼去给你拿把伞。',
+        explanation: 'Trật tự: Chủ ngữ + 上楼去 (V+nơi chốn+去) + 给你 (giới từ) + 拿把伞 (V+lượng từ+O).' },
+      { type: 'translate', context: 'Dịch câu sau sang tiếng Trung, áp dụng bổ ngữ xu hướng V+来/去.',
+        promptLang: 'vi', prompt: 'Sách tiếng Trung bạn mang đến chưa?',
+        answer: '汉语书你带来了吗？', answerPy: 'Hànyǔ shū nǐ dàilai le ma?',
+        explanation: '带 (mang) + 来 (đến, hướng về người nói) — tân ngữ sự vật 汉语书 được đưa lên ĐẦU CÂU làm chủ đề, 来 đặt ngay sau động từ 带.' },
+      { context: 'Hoàn thành câu theo mẫu V了……就V…… (hai hành động liên tiếp).',
+        pre: '我下了课', blank: '就', post: '吃饭。', options: ['就', '才', '还'], answer: 0,
+        explanation: 'V了……就V…… diễn tả hai hành động xảy ra LIÊN TIẾP, hành động thứ hai xảy ra ngay sau hành động thứ nhất.' },
+      { context: 'Tiểu Cương lấy ô xong là xuống nhà ngay.',
+        pre: '小刚拿了伞', blank: '就', post: '下来。', options: ['就', '才', '也'], answer: 0,
+        explanation: '就 phải đứng NGAY TRƯỚC động từ thứ hai (下来) để nối tiếp hai hành động.' },
+      { type: 'sort', context: 'Sắp xếp câu diễn tả thói quen hằng ngày của bà Chu (dùng V了……就V……).',
+        words: ['你', '每天', '晚上', '吃', '了', '饭', '就', '睡觉', '。'], answer: '你每天晚上吃了饭就睡觉。',
+        explanation: '了 đặt NGAY SAU động từ đầu tiên (吃), trước tân ngữ (饭); 就 đặt ngay trước động từ thứ hai (睡觉).' },
+      { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+        sentence: '他到办公室了我就告诉他。', isCorrect: false, correctVersion: '他到了办公室我就告诉他。',
+        explanation: '了 phải đứng NGAY SAU động từ 到, TRƯỚC tân ngữ 办公室, không đặt sau tân ngữ.' },
+      { type: 'translate', context: 'Dịch câu sau, áp dụng cấu trúc V了……就V……, chú ý câu có 2 chủ ngữ khác nhau.',
+        promptLang: 'vi', prompt: 'Bố về đến nhà là chúng tôi ăn cơm ngay.',
+        answer: '爸爸回来了我们就吃饭。', answerPy: 'Bàba huílai le wǒmen jiù chīfàn.',
+        explanation: 'Khi câu có 2 chủ ngữ khác nhau (爸爸 và 我们), chủ ngữ thứ hai phải đặt NGAY TRƯỚC 就.' },
+      { context: 'Chọn cách diễn đạt phản vấn đúng theo mẫu 能……吗？',
+        pre: '你每天晚上吃了饭就睡觉，也不出去走走，', blank: '能不胖吗', post: '？', options: ['能不胖吗', '能胖吗', '不能胖吗'], answer: 0,
+        explanation: '能不胖吗 (dạng phủ định) mang ý nghĩa thực chất là KHẲNG ĐỊNH — "chắc chắn sẽ béo" (会胖).' },
+      { type: 'judge', context: 'Câu phản vấn sau có mang ý nghĩa thực chất là "không thể học tốt được" không?',
+        sentence: '你不做作业，也不练习，能学好吗？', isCorrect: true,
+        explanation: '能学好吗 (dạng khẳng định) mang ý nghĩa thực chất PHỦ ĐỊNH — "không thể học tốt được" (不能学好). Câu này đúng ngữ pháp và đúng ý phản vấn.' },
+      { type: 'translate', context: 'Dịch câu sau sang tiếng Trung, dùng câu phản vấn 能……吗？',
+        promptLang: 'vi', prompt: 'Anh ấy làm việc bận như vậy, sao mà không mệt được?',
+        answer: '他工作这么忙，能不累吗？', answerPy: 'Tā gōngzuò zhème máng, néng bú lèi ma?',
+        explanation: '能不累吗 (dạng phủ định) mang ý nghĩa thực chất KHẲNG ĐỊNH — "chắc chắn rất mệt" (一定很累).' }
     ]
   };
 
@@ -1536,7 +1621,7 @@
   }
 
   var GR_TYPE_LABEL = {
-    mc: '✏️ Điền từ', sort: '🧩 Sắp xếp câu', judge: '⚖️ Đúng hay sai?'
+    mc: '✏️ Điền từ', sort: '🧩 Sắp xếp câu', judge: '⚖️ Đúng hay sai?', translate: '🔄 Dịch câu'
   };
 
   function renderGrammarExercise() {
@@ -1576,6 +1661,7 @@
 
     if (type === 'sort') renderGrSort(q);
     else if (type === 'judge') renderGrJudge(q);
+    else if (type === 'translate') renderGrTranslate(q);
     else renderGrMC(q);
   }
 
@@ -1691,6 +1777,28 @@
         if (!q.isCorrect && q.correctVersion) exp = 'Câu đúng: "' + q.correctVersion + '". ' + exp;
         grFinishQuestion(isCorrect, exp);
       });
+    });
+  }
+
+  // Bai tap dich cau ap dung ngu phap: hoc sinh tu go dap an, bam nut de xem
+  // dap an mau + giai thich (khong the tu dong cham diem cau tu do nen tinh
+  // la "hoan thanh" ngay khi xem dap an, giong cach lam cua man Luyen dich).
+  function renderGrTranslate(q) {
+    var body = $('#grBody');
+    var isZh = q.promptLang === 'zh';
+    body.innerHTML =
+      '<div class="gr-translate-prompt' + (isZh ? ' hanzi' : '') + '">' + q.prompt + '</div>' +
+      '<textarea class="gr-translate-input" id="grTransInput" rows="2" placeholder="Nhập câu dịch của bạn..."></textarea>' +
+      '<button type="button" class="btn btn-primary" id="grShowAnswer">Xem đáp án mẫu</button>' +
+      '<div class="gr-translate-answer" id="grTransAnswer" hidden>' +
+        '<strong>Đáp án mẫu:</strong> <span class="hanzi">' + q.answer + '</span>' +
+        (q.answerPy ? '<div class="gr-translate-py">' + q.answerPy + '</div>' : '') +
+      '</div>';
+
+    $('#grShowAnswer').addEventListener('click', function () {
+      $('#grTransAnswer').hidden = false;
+      this.disabled = true;
+      grFinishQuestion(true, q.explanation);
     });
   }
 
@@ -2945,7 +3053,7 @@
   // Tong noi dung THAT cua toan bo nen tang (khong phai so bai nguoi dung da xem) —
   // tinh truc tiep tu du lieu that: HSK1 15 bai (164 tu, 182 vi du) + HSK2 15 bai
   // (172 tu, 516 vi du) + YCT 11 bai (100 tu, 101 vi du). Cap nhat lai neu them noi dung.
-  var PLATFORM_TOTALS = { levels: 3, lessons: 41, vocab: 436, examples: 799 };
+  var PLATFORM_TOTALS = { levels: 4, lessons: 42, vocab: 456, examples: 855 };
 
   function computeProgressStats() {
     return PLATFORM_TOTALS;

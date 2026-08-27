@@ -483,6 +483,20 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk1-bai-15.html'
       }
     ],
+    hsk3: [
+      {
+        id: 'hsk3-l2',
+        number: 2,
+        title: 'Khi nào anh ấy về',
+        titleHanzi: '他什么时候回来',
+        titlePinyin: 'Tā shénme shíhou huílai',
+        topic: 'Sức khỏe, Công sở & Sinh hoạt gia đình',
+        vocabCount: 20,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3-bai-2.html'
+      }
+    ],
     yct: [
       {
         id: 'yct-l1',

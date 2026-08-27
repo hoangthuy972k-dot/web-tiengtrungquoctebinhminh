@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK3 · Bài 2 · 他什么时候回来</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/lesson-template.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="back-link" href="/">← Về trang chủ Hi Hán 喜汉</a>
+  <div class="header-badge">HSK3 · Bài 2</div>
+  <div class="header-zh">他什么时候回来</div>
+  <div class="header-py">Tā shénme shíhou huílai</div>
+  <div class="header-vn">Khi nào anh ấy về</div>
+  <div class="header-meta">
+    <span class="h-chip">🏠 Chủ đề: Sức khỏe, Công sở &amp; Sinh hoạt gia đình</span>
+    <span class="h-chip">📚 20 từ mới</span>
+    <span class="h-chip">💬 4 hội thoại</span>
+    <span class="h-chip">📐 3 điểm ngữ pháp</span>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-action="show-tab" data-tab="warmup">🎯 Khởi động</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="vocab">📚 Từ mới</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="dialog">💬 Hội thoại</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="match">1️⃣ Ghép từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="listen">2️⃣ Nghe</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="fill">3️⃣ Điền từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="sort">3️⃣ Sắp xếp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="errfix">3️⃣ Sửa lỗi</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="speak">4️⃣ Luyện nói</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="tongket">5️⃣ Tổng kết</button>
+</nav>
+
+<div class="main">
+
+<div id="warmup" class="section active">
+  <div class="sec-head">
+    <div class="sec-title">🎯 Khởi động <span class="sec-badge">热身</span></div>
+    <div class="sec-sub">Bấm 1 hình ảnh, rồi bấm chữ Hán tương ứng bên dưới để ghép đúng</div>
+  </div>
+  <div class="warmup-grid" id="wu-grid"></div>
+  <div style="margin-bottom:16px;font-weight:600;color:var(--mid);font-size:0.9rem;">Các từ để nối:</div>
+  <div class="wu-options" id="wu-opts"></div>
+  <div style="min-height:24px;font-size:0.9rem;" id="wu-fb"></div>
+  <div class="wu-score" id="wu-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Kết quả</div><div class="score-n" id="wu-score-n"></div></div>
+    <div class="score-m" id="wu-score-m"></div>
+  </div>
+</div>
+
+<div id="vocab" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📚 Từ mới <span class="sec-badge">20 từ</span></div>
+    <div class="sec-sub">👆 Bấm thẻ để xem nghĩa, ví dụ mở rộng &amp; phân tích Hán tự · Chọn bài khoá để lọc từ</div>
+  </div>
+  <div class="lesson-tabs">
+    <button class="lesson-tab active" data-action="filter-vocab" data-lesson="0">Tất cả (20)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="1">📖 Bài khoá 1 · Xuống núi (1–6)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="2">📖 Bài khoá 2 · Gọi điện (7–12)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="3">📖 Bài khoá 3 · Tiễn bạn (13–17)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="4">📖 Bài khoá 4 · Ở nhà (18–20)</button>
+  </div>
+  <div class="flip-tip">👆 Bấm thẻ để lật xem nghĩa &amp; ví dụ · Bên dưới mỗi thẻ có khung luyện dịch riêng</div>
+  <div class="vocab-grid" id="vocab-grid"></div>
+</div>
+
+<div id="flash" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🃏 Thẻ nhớ nhanh</div>
+    <div class="sec-sub">Đoán nghĩa trước, rồi bấm lật thẻ kiểm tra</div>
+  </div>
+  <div class="flash-nav">
+    <button class="flash-btn" data-action="flash-prev">←</button>
+    <span class="flash-ctr" id="flash-ctr">1 / 20</span>
+    <button class="flash-btn" data-action="flash-next">→</button>
+  </div>
+  <div class="flash-wrap">
+    <div class="flash-outer" id="flash-card" data-action="flash-flip">
+      <div class="flash-face f-front">
+        <div class="f-emoji" id="ff-em"></div>
+        <div class="f-zh" id="ff-zh"></div>
+        <div class="f-py" id="ff-py"></div>
+        <div class="f-hint">Bấm để xem nghĩa</div>
+      </div>
+      <div class="flash-face f-back">
+        <div class="f-vn" id="fb-vn"></div>
+        <div class="f-py" id="fb-py" style="color:var(--teal)"></div>
+        <div class="f-ex" id="fb-ex"></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:14px;">
+    <button class="btn-s" data-action="flash-shuffle">🔀 Xáo trộn</button>
+  </div>
+</div>
+
+<div id="grammar" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📐 Ngữ pháp <span class="sec-badge">3 điểm</span></div>
+    <div class="sec-sub">Ba điểm ngữ pháp quan trọng của bài</div>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">1</span>Bổ ngữ xu hướng đơn 「V + 来 / 去」</div>
+    <div class="g-sub">Diễn tả phương hướng của hành động: 来 hướng VỀ PHÍA người nói, 去 hướng RA XA người nói. Các động từ thường gặp: 上/下/进/出/回/过/起 + 来/去 (riêng 起 chỉ ghép với 来 — không có "起去"). Tân ngữ chỉ nơi chốn BẮT BUỘC đứng giữa động từ và 来/去 (回家去); tân ngữ chỉ sự vật có thể đứng trước hoặc sau 来/去 (带一本书来 / 带来一本书).</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> Động từ (上/下/进/出/回/过/起) + <strong style="color:var(--sky-d)">来 / 去</strong> (+ Tân ngữ nơi chốn ở GIỮA)</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">你几点回来？我七点回去。</td><td style="color:var(--soft);font-size:0.82rem">Nǐ jǐ diǎn huílai? Wǒ qī diǎn huíqu.</td><td style="color:var(--mid);font-size:0.85rem">Mấy giờ bạn về (đây)? Tôi 7 giờ về (đó).</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">我上楼去给你拿把伞。</td><td style="color:var(--soft);font-size:0.82rem">Wǒ shànglóu qù gěi nǐ ná bǎ sǎn.</td><td style="color:var(--mid);font-size:0.85rem">Tôi lên lầu lấy cho bạn một cái ô.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">我拿了伞就下来。</td><td style="color:var(--soft);font-size:0.82rem">Wǒ nále sǎn jiù xiàlai.</td><td style="color:var(--mid);font-size:0.85rem">Tôi lấy ô xong là xuống ngay.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">汉语书你带来了吗？</td><td style="color:var(--soft);font-size:0.82rem">Hànyǔ shū nǐ dàilai le ma?</td><td style="color:var(--mid);font-size:0.85rem">Bạn mang sách tiếng Trung đến chưa?</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">2</span>Hai hành động liên tiếp 「V了……就V……」</div>
+    <div class="g-sub">Diễn tả hai hành động xảy ra LIÊN TIẾP: hành động thứ hai xảy ra ngay sau khi hành động thứ nhất kết thúc. Nếu câu có hai chủ ngữ khác nhau, chủ ngữ thứ hai phải đứng NGAY TRƯỚC 就.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> (Chủ ngữ 1) + V<sub>1</sub> + <strong style="color:var(--sky-d)">了</strong> + (Tân ngữ) + (Chủ ngữ 2) + <strong style="color:var(--sky-d)">就</strong> + V<sub>2</sub></div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">我下了课就吃饭。</td><td style="color:var(--soft);font-size:0.82rem">Wǒ xiàle kè jiù chīfàn.</td><td style="color:var(--mid);font-size:0.85rem">Tôi tan học xong là ăn cơm luôn.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">你每天晚上吃了饭就睡觉。</td><td style="color:var(--soft);font-size:0.82rem">Nǐ měitiān wǎnshang chīle fàn jiù shuìjiào.</td><td style="color:var(--mid);font-size:0.85rem">Bạn tối nào cũng ăn cơm xong là đi ngủ.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">他到了办公室我就告诉他。</td><td style="color:var(--soft);font-size:0.82rem">Tā dàole bàngōngshì wǒ jiù gàosu tā.</td><td style="color:var(--mid);font-size:0.85rem">Anh ấy đến văn phòng là tôi báo cho anh ấy ngay.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">3</span>Câu phản vấn 「能……吗？」</div>
+    <div class="g-sub">"能……吗" dùng để hỏi mang tính phản vấn (không phải hỏi thật): nếu ở dạng KHẲNG ĐỊNH thì ý nghĩa thực chất là PHỦ ĐỊNH; nếu ở dạng PHỦ ĐỊNH thì ý nghĩa thực chất là KHẲNG ĐỊNH.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> ...，<strong style="color:var(--sky-d)">能</strong> (+ 不) + Động từ/Tính từ + <strong style="color:var(--sky-d)">吗</strong>？</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">你每天晚上吃了饭就睡觉，也不出去走走，能不胖吗？</td><td style="color:var(--soft);font-size:0.82rem">Nǐ měitiān wǎnshang chīle fàn jiù shuìjiào, yě bù chūqu zǒuzou, néng bú pàng ma?</td><td style="color:var(--mid);font-size:0.85rem">Tối nào cũng ăn xong ngủ luôn, không đi dạo, sao mà không béo được? (= chắc chắn sẽ béo)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">你不做作业，也不练习，能学好吗？</td><td style="color:var(--soft);font-size:0.82rem">Nǐ bú zuò zuòyè, yě bú liànxí, néng xuéhǎo ma?</td><td style="color:var(--mid);font-size:0.85rem">Không làm bài tập, cũng không luyện tập, sao mà học tốt được? (= không thể học tốt)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="dialog" class="section">
+  <div class="sec-head">
+    <div class="sec-title">💬 Hội thoại <span class="sec-badge">4 đoạn</span></div>
+    <div class="sec-sub">Bốn tình huống hội thoại trong bài học</div>
+  </div>
+  <div class="dlg-tabs">
+    <button class="dlg-tb active" data-action="show-dlg" data-idx="0">1 · Xuống núi</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="1">2 · Gọi điện</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="2">3 · Tiễn bạn</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="3">4 · Ở nhà</button>
+  </div>
+  <div id="dlg-wrap"></div>
+</div>
+
+<div id="match" class="section">
+  <div class="sec-head">
+    <div class="sec-title">1️⃣ Ghép từ <span class="sec-badge">搭配</span></div>
+    <div class="sec-sub">Bấm 1 ô <strong style="color:var(--sky)">bên trái</strong> → bấm ô <strong style="color:var(--teal)">bên phải</strong> để ghép thành cụm từ đúng</div>
+  </div>
+  <div class="m-fb" id="m-fb"></div>
+  <div class="match-grid">
+    <div><div class="mcol-title">Từ 1</div><div id="m-left"></div></div>
+    <div><div class="mcol-title">Từ 2</div><div id="m-right"></div></div>
+  </div>
+  <div class="btn-row"><button class="btn-s" data-action="reset-match">Làm lại</button></div>
+</div>
+
+<div id="listen" class="section">
+  <div class="sec-head">
+    <div class="sec-title">2️⃣ Nghe hiểu <span class="sec-badge">听力</span></div>
+    <div class="sec-sub">Nhấn 🔊 nghe đoạn hội thoại/câu (tình huống mới), rồi trả lời câu hỏi bên dưới</div>
+  </div>
+  <div id="listen-wrap"></div>
+  <div class="score-box" id="listen-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="listen-sn"></div></div>
+    <div class="score-m" id="listen-sm"></div>
+  </div>
+</div>
+
+<div id="fill" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Điền vào chỗ trống</div>
+    <div class="sec-sub">Điền từ/cụm từ thích hợp để hoàn thành câu</div>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="fill-prog" style="width:0%"></div></div>
+  <div id="fill-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-fill">Kiểm tra đáp án</button>
+    <button class="btn-s" data-action="reset-fill">Làm lại</button>
+  </div>
+  <div class="score-box" id="fill-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="fill-sn"></div></div>
+    <div class="score-m" id="fill-sm"></div>
+  </div>
+</div>
+
+<div id="sort" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Sắp xếp thành câu</div>
+    <div class="sec-sub">Nhấn 🔊 để nghe câu, rồi bấm các từ theo đúng thứ tự — <strong style="color:var(--warm)">nhớ đặt cả dấu câu (。／？)</strong> vào cuối · Bấm từ đã đặt để xóa</div>
+  </div>
+  <div id="sort-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-sort">Kiểm tra</button>
+    <button class="btn-s" data-action="reset-sort">Làm lại</button>
+  </div>
+  <div class="score-box" id="sort-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="sort-sn"></div></div>
+    <div class="score-m" id="sort-sm"></div>
+  </div>
+</div>
+
+<div id="errfix" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Sửa lỗi sai <span class="sec-badge">改错</span></div>
+    <div class="sec-sub">Mỗi câu bên dưới đang SAI ngữ pháp — đây là lỗi mà học sinh Việt Nam rất hay mắc phải. Chọn câu SỬA ĐÚNG.</div>
+  </div>
+  <div id="errfix-list"></div>
+  <div class="score-box" id="errfix-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="errfix-sn"></div></div>
+    <div class="score-m" id="errfix-sm"></div>
+  </div>
+</div>
+
+<div id="speak" class="section">
+  <div class="sec-head">
+    <div class="sec-title">4️⃣ Luyện nói phản xạ</div>
+    <div class="sec-sub">Nhấn 🔊 nghe câu hỏi, rồi <strong style="color:var(--teal)">tự ghi âm câu trả lời của bạn</strong> — không đọc theo câu mẫu. Ghi âm xong có thể gửi chấm điểm AI hoặc đối chiếu với câu trả lời gợi ý.</div>
+  </div>
+  <div id="speak-wrap"></div>
+</div>
+
+<div id="tongket" class="section">
+  <div class="sec-head">
+    <div class="sec-title">5️⃣ Tổng kết bài học <span class="sec-badge">总结</span></div>
+    <div class="sec-sub">Điểm tổng hợp từ 4 phần bài tập bên trên — hoàn thành hết rồi quay lại đây để xem điểm chính xác nhất!</div>
+  </div>
+  <div id="summary-wrap"></div>
+</div>
+
+</div>
+
+<script src="/js/hsk3-bai-2-data.js"></script>
+<script src="/js/lesson-engine.js"></script>
+</body>
+</html>

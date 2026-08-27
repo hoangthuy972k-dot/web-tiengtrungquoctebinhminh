@@ -188,6 +188,9 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .vocab-audio-list{display:flex;flex-direction:column;gap:8px;width:100%;}
 .vocab-audio-part{display:flex;align-items:center;gap:10px;}
 .vap-label{font-size:0.78rem;font-weight:600;color:var(--sky-d);flex-shrink:0;min-width:52px;}
+.qa-question{margin-bottom:12px;}
+.qa-zh{font-family:'Noto Serif SC',serif;font-size:1.3rem;color:var(--ink);font-weight:600;margin:8px 0 4px;}
+.qa-vn{color:var(--mid);font-size:0.86rem;}
 
 /* QUIZ CHUNG */
 .quiz-card{background:white;border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin-bottom:16px;transition:all 0.25s;}

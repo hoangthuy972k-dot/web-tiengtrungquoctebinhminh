@@ -521,6 +521,24 @@ function showSpeak(tier,btn){
 }
 function buildSpeaking(tier){
   const w=document.getElementById('speak-wrap');
+  if(speakingData.questions){
+    const d=speakingData;
+    const items=d.questions.map(function(q,i){
+      return '<div class="task-card">'+
+        '<div class="qa-question">'+
+          '<button type="button" class="speak-box-btn" data-action="speak" data-text="'+q.q_zh.replace(/"/g,'&quot;')+'">🔊 Nghe câu hỏi</button>'+
+          '<div class="qa-zh">'+q.q_zh+'</div><div class="qa-vn">'+q.q_vn+'</div>'+
+        '</div>'+
+        (q.hint?'<div class="task-struct"><span class="task-chip">'+q.hint+'</span></div>':'')+
+        '<button class="show-ans-btn" data-action="toggle-show" data-target="ts'+i+'">Xem câu trả lời gợi ý ▾</button>'+
+        '<div class="task-sample" id="ts'+i+'"><div class="ts-zh">'+q.sample+' '+miniSpeakBtn(q.sample)+'</div><div class="ts-vn">'+q.sample_vn+'</div></div>'+
+        (q.note?'<div class="task-note"><b>💡 Lưu ý thực tế:</b> '+q.note+'</div>':'')+
+        buildRecorderHtml(i,q.sample)+
+        '</div>';
+    }).join('');
+    w.innerHTML='<div class="tier-intro">'+d.intro+'</div><div class="speak-grid">'+items+'</div>';
+    return;
+  }
   if(tier===1){
     const d=speakingData.t1;
     const models=d.models.map(function(m){

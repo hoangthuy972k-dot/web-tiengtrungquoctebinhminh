@@ -168,10 +168,10 @@
 
   /* ---------------- Level cards ---------------- */
 
-  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk2', 'hsk3', 'yct'];
-  var LEVEL_COLOR = { hsk1: 'red', hsk2: 'green', hsk3: 'gold', yct: 'blue' };
-  var LEVEL_SHORT = { hsk1: 'HSK1', hsk2: 'HSK2', hsk3: 'HSK3', yct: 'YCT1' };
-  var READY_LEVELS = { hsk1: true, hsk2: true, hsk3: true, yct: true };
+  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2', 'hsk3', 'yct'];
+  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'blue', hsk2: 'green', hsk3: 'gold', yct: 'blue' };
+  var LEVEL_SHORT = { hsk1: 'HSK1', hsk1v3: 'HSK1·3.0', hsk2: 'HSK2', hsk3: 'HSK3', yct: 'YCT1' };
+  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2: true, hsk3: true, yct: true };
   var practiceLevel = 'hsk2';
 
   function renderLevelCards() {
@@ -202,7 +202,7 @@
     });
   }
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk2: 'HSK 2', hsk3: 'HSK 3', yct: 'YCT 1' };
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', yct: 'YCT 1' };
 
   function selectLevel(id) {
     if (!READY_LEVELS[id]) {
@@ -319,6 +319,7 @@
   // (thay vi hien 4 o rieng le); ben trong o do la man hinh chon game.
   var LEVEL_GAME_TYPES = {
     hsk1: ['match', 'fill', 'sort', 'mc'],
+    hsk1v3: ['match', 'fill', 'sort', 'mc'],
     hsk2: ['match', 'fill', 'sort', 'errfix'],
     hsk3: ['match', 'fill', 'sort', 'errfix']
   };
@@ -326,6 +327,7 @@
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
     hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
+    hsk1v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
@@ -545,9 +547,9 @@
   }
 
   function audioBaseFor(lesson) {
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-)?bai-(\d+)\.html/);
     if (!m) return null;
-    return m[1] ? '/audio/hsk1-bai-' + m[2] : '/audio/bai-' + m[2];
+    return m[1] ? '/audio/' + m[1] + 'bai-' + m[2] : '/audio/bai-' + m[2];
   }
 
   var VP_TABS = [
@@ -3053,7 +3055,7 @@
   // Tong noi dung THAT cua toan bo nen tang (khong phai so bai nguoi dung da xem) —
   // tinh truc tiep tu du lieu that: HSK1 15 bai (164 tu, 182 vi du) + HSK2 15 bai
   // (172 tu, 516 vi du) + YCT 11 bai (100 tu, 101 vi du). Cap nhat lai neu them noi dung.
-  var PLATFORM_TOTALS = { levels: 4, lessons: 42, vocab: 456, examples: 855 };
+  var PLATFORM_TOTALS = { levels: 5, lessons: 44, vocab: 484, examples: 892 };
 
   function computeProgressStats() {
     return PLATFORM_TOTALS;

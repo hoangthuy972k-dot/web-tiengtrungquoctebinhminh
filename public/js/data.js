@@ -14,6 +14,15 @@ const APP_DATA = {
       color: 'red'
     },
     {
+      id: 'hsk1v3',
+      name: 'HSK 1 (3.0 Mới)',
+      subtitle: 'Giáo trình chuẩn mới · New HSK 1',
+      description: 'Giáo trình New HSK 1 (chuẩn HSK 3.0) biên dịch chính thức, đầy đủ 15 bài + audio gốc.',
+      totalLessons: 15,
+      totalVocab: 150,
+      color: 'blue'
+    },
+    {
       id: 'hsk2',
       name: 'HSK 2',
       subtitle: 'Sơ cấp',
@@ -495,6 +504,32 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3-bai-2.html'
+      }
+    ],
+    hsk1v3: [
+      {
+        id: 'hsk1v3-l1',
+        number: 1,
+        title: 'Xin chào AI Tiểu Ngữ!',
+        titleHanzi: 'AI小语，你好！',
+        titlePinyin: 'AI Xiǎoyǔ, nǐ hǎo!',
+        topic: 'Chào hỏi, cảm ơn & tạm biệt',
+        vocabCount: 12,
+        dialogueCount: 3,
+        grammarCount: 0,
+        fullPageUrl: '/lessons/hsk1v3-bai-1.html'
+      },
+      {
+        id: 'hsk1v3-l2',
+        number: 2,
+        title: 'Mình tên là Lý Văn',
+        titleHanzi: '我叫李文',
+        titlePinyin: 'Wǒ jiào Lǐ Wén',
+        topic: 'Tự giới thiệu tên & làm quen',
+        vocabCount: 15,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/hsk1v3-bai-2.html'
       }
     ],
     yct: [

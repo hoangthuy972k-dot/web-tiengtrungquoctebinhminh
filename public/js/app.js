@@ -759,7 +759,13 @@
       { pre: '', blank: '你们', post: '好！', options: ['你', '您', '你们'], answer: 2,
         explanation: '你们 dùng khi chào nhiều người cùng lúc (số nhiều).' },
       { pre: '对不起！', blank: '没关系', post: '！', options: ['没关系', '你好', '对不起'], answer: 0,
-        explanation: '没关系 dùng để đáp lại lời xin lỗi, nghĩa là "không sao đâu".' }
+        explanation: '没关系 dùng để đáp lại lời xin lỗi, nghĩa là "không sao đâu".' },
+      { context: 'Bạn gặp thầy hiệu trưởng lần đầu trong hành lang trường, bạn nên chào thế nào?',
+        pre: '', blank: '您好', post: '！', options: ['您好', '你好', '你们好'], answer: 0,
+        explanation: '您 dùng khi chào người có địa vị/tuổi tác cao hơn để thể hiện sự tôn trọng.' },
+      { context: 'Bạn vô tình giẫm chân bạn cùng bàn trong lớp, bạn xin lỗi và bạn ấy đáp lại thế nào?',
+        pre: '对不起！——', blank: '没关系', post: '！', options: ['没关系', '您好', '再见'], answer: 0,
+        explanation: '没关系 là câu đáp chuẩn khi ai đó xin lỗi mình.' }
     ],
     '/lessons/bai-1.html': [
       { pre: '我', blank: '要', post: '去北京旅游。', options: ['要', '最', '也'], answer: 0,
@@ -769,7 +775,13 @@
       { pre: '我们要不要买', blank: '几', post: '个新的椅子？', options: ['几', '多', '最'], answer: 0,
         explanation: '几 dùng để hỏi số lượng nhỏ chưa xác định, phía sau bắt buộc có lượng từ + danh từ.' },
       { pre: '六个', blank: '多', post: '月，我要去旅游。', options: ['多', '几', '最'], answer: 0,
-        explanation: '多 đặt SAU lượng từ khi số đếm nhỏ hơn 10, diễn tả nghĩa "hơn".' }
+        explanation: '多 đặt SAU lượng từ khi số đếm nhỏ hơn 10, diễn tả nghĩa "hơn".' },
+      { context: 'Bạn chia sẻ dự định nghỉ hè của mình với bạn bè.',
+        pre: '暑假我', blank: '要', post: '去旅游。', options: ['要', '最', '也'], answer: 0,
+        explanation: '要 đặt trước động từ diễn tả ý muốn/dự định.' },
+      { context: 'Bạn được hỏi môn thể thao mình thích nhất.',
+        pre: '我', blank: '最', post: '喜欢踢足球。', options: ['最', '要', '几'], answer: 0,
+        explanation: '最 biểu thị mức độ cao nhất.' }
     ],
     '/lessons/hsk1-bai-2.html': [
       { pre: '', blank: '谢谢', post: '你，你人真好！', options: ['谢谢', '再见', '不客气'], answer: 0,
@@ -777,7 +789,13 @@
       { pre: '谢谢你送我东西', blank: '不客气', post: '！', options: ['不客气', '没关系', '再见'], answer: 0,
         explanation: '不客气 dùng để đáp lại lời CẢM ƠN (谢谢); khác với 没关系 (đã học bài 1) dùng để đáp lại lời XIN LỖI (对不起).' },
       { pre: '老师，', blank: '再见', post: '！', options: ['再见', '你好', '谢谢'], answer: 0,
-        explanation: '再见 dùng khi CHIA TAY; 你好 (đã học bài 1) chỉ dùng khi GẶP MẶT, không dùng khi chia tay.' }
+        explanation: '再见 dùng khi CHIA TAY; 你好 (đã học bài 1) chỉ dùng khi GẶP MẶT, không dùng khi chia tay.' },
+      { context: 'Bạn cùng lớp cho bạn mượn bút, bạn cảm ơn và bạn ấy nên đáp lại thế nào?',
+        pre: '谢谢你！——', blank: '不客气', post: '！', options: ['不客气', '再见', '对不起'], answer: 0,
+        explanation: '不客气 là cách đáp chuẩn khi ai đó cảm ơn mình.' },
+      { context: 'Hết giờ học, bạn chào tạm biệt thầy giáo trước khi ra về.',
+        pre: '老师，', blank: '再见', post: '！', options: ['再见', '谢谢', '你好'], answer: 0,
+        explanation: '再见 dùng khi chia tay, kết thúc cuộc gặp.' }
     ],
     '/lessons/hsk1-bai-3.html': [
       { pre: '你叫', blank: '什么', post: '名字？', options: ['什么', '吗', '是'], answer: 0,
@@ -785,7 +803,13 @@
       { pre: '我', blank: '是', post: '学生。', options: ['是', '什么', '吗'], answer: 0,
         explanation: '是 dùng để khẳng định danh tính/thân phận, đứng giữa chủ ngữ và danh từ.' },
       { pre: '你是学生', blank: '吗', post: '？', options: ['吗', '什么', '是'], answer: 0,
-        explanation: '吗 là trợ từ nghi vấn, luôn đặt ở CUỐI câu trần thuật để biến thành câu hỏi Có/Không.' }
+        explanation: '吗 là trợ từ nghi vấn, luôn đặt ở CUỐI câu trần thuật để biến thành câu hỏi Có/Không.' },
+      { context: 'Bạn gặp một bạn mới trong lớp, muốn hỏi tên bạn ấy.',
+        pre: '你', blank: '叫什么名字', post: '？', options: ['叫什么名字', '是学生吗', '是中国人'], answer: 0,
+        explanation: '叫什么名字 là cách hỏi tên chuẩn khi mới gặp ai đó.' },
+      { context: 'Bạn muốn xác nhận xem người mới quen có phải giáo viên hay không.',
+        pre: '你', blank: '是', post: '老师吗？', options: ['是', '叫', '什么'], answer: 0,
+        explanation: '是 dùng để khẳng định thân phận/danh tính trong câu hỏi Có/Không với 吗.' }
     ],
     '/lessons/hsk1-bai-4.html': [
       { pre: '', blank: '谁', post: '是你的老师？', options: ['谁', '什么', '哪'], answer: 0,
@@ -793,7 +817,13 @@
       { pre: '这是他', blank: '的', post: '书。', options: ['的', '是', '呢'], answer: 0,
         explanation: '的 là trợ từ kết cấu biểu thị sở hữu, đứng giữa đại từ/danh từ và danh từ trung tâm.' },
       { pre: '我是学生，你', blank: '呢', post: '？', options: ['呢', '吗', '谁'], answer: 0,
-        explanation: '呢 đặt cuối câu để hỏi lại thông tin đã nhắc ở vế trước (A...呢?); khác với 吗 (đã học) dùng đặt câu hỏi Có/Không hoàn toàn mới.' }
+        explanation: '呢 đặt cuối câu để hỏi lại thông tin đã nhắc ở vế trước (A...呢?); khác với 吗 (đã học) dùng đặt câu hỏi Có/Không hoàn toàn mới.' },
+      { context: 'Bạn thấy một quyển sách lạ trên bàn, muốn hỏi ai là chủ nhân.',
+        pre: '这本书是', blank: '谁', post: '的？', options: ['谁', '什么', '哪'], answer: 0,
+        explanation: '谁 dùng để hỏi về NGƯỜI (chủ nhân của vật).' },
+      { context: 'Bạn giới thiệu về bạn thân của mình với người khác.',
+        pre: '她是我', blank: '的', post: '朋友。', options: ['的', '呢', '谁'], answer: 0,
+        explanation: '的 nối giữa đại từ sở hữu và danh từ để biểu thị quan hệ sở hữu.' }
     ],
     '/lessons/hsk1-bai-5.html': [
       { pre: '你家有', blank: '几', post: '口人？', options: ['几', '多', '什么'], answer: 0,
@@ -801,7 +831,13 @@
       { pre: '你女儿今年', blank: '多', post: '大了？', options: ['多', '几', '了'], answer: 0,
         explanation: '多 kết hợp với tính từ (大) để hỏi mức độ/tuổi tác của người LỚN; 几 chỉ dùng hỏi số nhỏ trực tiếp trước lượng từ.' },
       { pre: '李老师今年五十岁', blank: '了', post: '。', options: ['了', '呢', '吗'], answer: 0,
-        explanation: '了 đặt cuối câu để biểu thị một tình huống/trạng thái MỚI vừa xảy ra hoặc thay đổi.' }
+        explanation: '了 đặt cuối câu để biểu thị một tình huống/trạng thái MỚI vừa xảy ra hoặc thay đổi.' },
+      { context: 'Bạn hỏi thăm số người trong gia đình bạn mới quen.',
+        pre: '你家有', blank: '几', post: '口人？', options: ['几', '多', '谁'], answer: 0,
+        explanation: '几 dùng hỏi số lượng nhỏ (dưới 10), cần lượng từ theo sau.' },
+      { context: 'Bạn muốn hỏi tuổi của một người lớn, không phải trẻ nhỏ.',
+        pre: '您', blank: '今年多大', post: '了？', options: ['今年多大', '几岁', '叫什么名字'], answer: 0,
+        explanation: '多大 dùng hỏi tuổi người lớn lịch sự; 几岁 chỉ dùng hỏi tuổi trẻ em.' }
     ],
     '/lessons/hsk1-bai-6.html': [
       { pre: '我', blank: '会', post: '写汉字。', options: ['会', '很', '怎么'], answer: 0,
@@ -809,7 +845,13 @@
       { pre: '中国菜', blank: '很', post: '好吃。', options: ['很', '会', '怎么'], answer: 0,
         explanation: '很 đặt trước tính từ (好吃) tạo câu vị ngữ tính từ, biểu thị mức độ; không dùng 会 vì 好吃 là tính từ chứ không phải kỹ năng học được.' },
       { pre: '这个汉字', blank: '怎么', post: '读？', options: ['怎么', '会', '很'], answer: 0,
-        explanation: '怎么 đặt trước động từ (读) để hỏi CÁCH THỨC thực hiện hành động.' }
+        explanation: '怎么 đặt trước động từ (读) để hỏi CÁCH THỨC thực hiện hành động.' },
+      { context: 'Bạn khoe với bạn bè rằng mình đã học được cách viết chữ Hán.',
+        pre: '我', blank: '会', post: '写汉字了！', options: ['会', '很', '怎么'], answer: 0,
+        explanation: '会 biểu thị năng lực đã học được qua rèn luyện.' },
+      { context: 'Bạn không biết đọc một chữ Hán, muốn hỏi bạn cùng lớp.',
+        pre: '这个字', blank: '怎么', post: '读？', options: ['怎么', '什么', '谁'], answer: 0,
+        explanation: '怎么 đặt trước động từ để hỏi CÁCH THỨC thực hiện.' }
     ],
     '/lessons/hsk1-bai-7.html': [
       { pre: '今天9', blank: '月', post: '1号。', options: ['月', '号', '星期'], answer: 0,
@@ -817,7 +859,13 @@
       { pre: '', blank: '昨天', post: '你去学校了吗？', options: ['昨天', '明天', '号'], answer: 0,
         explanation: '昨天 (hôm qua) chỉ thời gian ĐÃ QUA, phân biệt với 明天 (ngày mai, tương lai) và 号 (chỉ số ngày trong tháng).' },
       { pre: '我', blank: '去', post: '学校看书。', options: ['去', '看', '请'], answer: 0,
-        explanation: '去 + Nơi chốn + Động từ 2 diễn tả "đi đến nơi nào đó để làm việc gì" (câu liên động).' }
+        explanation: '去 + Nơi chốn + Động từ 2 diễn tả "đi đến nơi nào đó để làm việc gì" (câu liên động).' },
+      { context: 'Bạn hẹn bạn cùng lớp cùng đến trường để đọc sách.',
+        pre: '我们', blank: '去', post: '学校看书吧。', options: ['去', '看', '请'], answer: 0,
+        explanation: '去 + Nơi chốn + Động từ diễn tả "đi đến đâu để làm gì".' },
+      { context: 'Bạn hỏi hôm nay là thứ mấy để sắp xếp lịch học.',
+        pre: '今天', blank: '星期几', post: '？', options: ['星期几', '几号', '什么'], answer: 0,
+        explanation: '星期几 dùng hỏi THỨ trong tuần.' }
     ],
     '/lessons/hsk1-bai-8.html': [
       { pre: '我', blank: '想', post: '买一个杯子。', options: ['想', '去', '会'], answer: 0,
@@ -825,7 +873,13 @@
       { pre: '这个杯子', blank: '多少', post: '钱？', options: ['多少', '几', '多'], answer: 0,
         explanation: '多少 dùng hỏi số lượng LỚN (thường >10), đặc biệt khi hỏi giá tiền; 几 (đã học bài 5) chỉ hỏi số nhỏ dưới 10.' },
       { pre: '我家有三', blank: '口', post: '人。', options: ['口', '个', '杯'], answer: 0,
-        explanation: '口 là lượng từ CHUYÊN DÙNG để đếm số thành viên trong gia đình; 个 là lượng từ dùng chung cho hầu hết danh từ khác.' }
+        explanation: '口 là lượng từ CHUYÊN DÙNG để đếm số thành viên trong gia đình; 个 là lượng từ dùng chung cho hầu hết danh từ khác.' },
+      { context: 'Bạn đang ở quán trà, muốn gọi đồ uống.',
+        pre: '我', blank: '想', post: '喝茶。', options: ['想', '会', '去'], answer: 0,
+        explanation: '想 biểu đạt nguyện vọng muốn làm gì.' },
+      { context: 'Bạn hỏi giá một món đồ trong cửa hàng.',
+        pre: '这个杯子', blank: '多少钱', post: '？', options: ['多少钱', '几个', '怎么样'], answer: 0,
+        explanation: '多少钱 dùng hỏi giá tiền (số lớn).' }
     ],
     '/lessons/hsk1-bai-9.html': [
       { pre: '我朋友', blank: '在', post: '学校。', options: ['在', '是', '有'], answer: 0,
@@ -833,7 +887,13 @@
       { pre: '我的杯子在', blank: '哪儿', post: '？', options: ['哪儿', '什么', '谁'], answer: 0,
         explanation: '哪儿 dùng để hỏi VỊ TRÍ của người/vật; 什么 (đã học) hỏi vật/sự việc, 谁 (đã học) hỏi người.' },
       { pre: '我的小猫', blank: '呢', post: '？', options: ['呢', '吗', '哪儿'], answer: 0,
-        explanation: '呢 đặt sau đối tượng đã biết để hỏi nhanh về vị trí hiện tại của nó (Đối tượng + 呢?).' }
+        explanation: '呢 đặt sau đối tượng đã biết để hỏi nhanh về vị trí hiện tại của nó (Đối tượng + 呢?).' },
+      { context: 'Bạn tìm con mèo của mình khắp nhà mà không thấy.',
+        pre: '我的猫', blank: '在哪儿', post: '？', options: ['在哪儿', '是谁', '叫什么'], answer: 0,
+        explanation: '在哪儿 dùng hỏi VỊ TRÍ của người/vật.' },
+      { context: 'Bạn giới thiệu nghề nghiệp và nơi làm việc của bố mình.',
+        pre: '我爸爸', blank: '在', post: '医院工作。', options: ['在', '是', '有'], answer: 0,
+        explanation: '在 + nơi chốn + động từ diễn tả nơi diễn ra hành động.' }
     ],
     '/lessons/hsk1-bai-10.html': [
       { pre: '桌子上', blank: '有', post: '一个电脑。', options: ['有', '是', '在'], answer: 0,
@@ -841,7 +901,13 @@
       { pre: '桌子上有电脑', blank: '和', post: '书。', options: ['和', '的', '呢'], answer: 0,
         explanation: '和 là liên từ dùng để nối hai danh từ ngang hàng (A 和 B).' },
       { pre: '我', blank: '能', post: '坐这儿吗？', options: ['能', '会', '想'], answer: 0,
-        explanation: '能 biểu thị khả năng/xin phép làm việc gì, dùng trong cấu trúc "能...吗?" để hỏi xin phép lịch sự; 会/想 (đã học) mang nghĩa khác.' }
+        explanation: '能 biểu thị khả năng/xin phép làm việc gì, dùng trong cấu trúc "能...吗?" để hỏi xin phép lịch sự; 会/想 (đã học) mang nghĩa khác.' },
+      { context: 'Bạn muốn xin phép ngồi vào chỗ trống bên cạnh một người lạ.',
+        pre: '我', blank: '能', post: '坐这儿吗？', options: ['能', '会', '想'], answer: 0,
+        explanation: '能...吗 dùng để xin phép một cách lịch sự.' },
+      { context: 'Bạn mời khách vào nhà ngồi.',
+        pre: '', blank: '请坐', post: '！', options: ['请坐', '再见', '对不起'], answer: 0,
+        explanation: '请 + động từ dùng để mời/đề nghị lịch sự.' }
     ],
     '/lessons/hsk1-bai-11.html': [
       { pre: '现在十', blank: '点', post: '十分。', options: ['点', '分', '号'], answer: 0,
@@ -849,7 +915,13 @@
       { pre: '妈妈', blank: '六点', post: '做饭。', options: ['六点', '现在', '前'], answer: 0,
         explanation: 'Cụm từ chỉ thời gian (六点) làm trạng ngữ, đứng SAU chủ ngữ và TRƯỚC động từ (không đặt cuối câu như trong tiếng Việt).' },
       { pre: '星期五', blank: '前', post: '，我们回家。', options: ['前', '现在', '点'], answer: 0,
-        explanation: '前 đặt SAU mốc thời gian (星期五) để diễn tả "trước mốc đó".' }
+        explanation: '前 đặt SAU mốc thời gian (星期五) để diễn tả "trước mốc đó".' },
+      { context: 'Bạn hẹn bạn bè đi ăn trưa, muốn biết mấy giờ họ rảnh.',
+        pre: '你', blank: '什么时候', post: '吃饭？', options: ['什么时候', '几点', '怎么样'], answer: 0,
+        explanation: '什么时候 dùng hỏi mốc/khoảng thời gian chung chung.' },
+      { context: 'Bạn hỏi giờ hiện tại để không đến muộn.',
+        pre: '', blank: '现在几点', post: '？', options: ['现在几点', '今天几号', '你几岁'], answer: 0,
+        explanation: '现在几点 dùng hỏi giờ hiện tại.' }
     ],
     '/lessons/hsk1-bai-12.html': [
       { pre: '明天天气', blank: '怎么样', post: '？', options: ['怎么样', '怎么', '多少'], answer: 0,
@@ -857,7 +929,13 @@
       { pre: '外面', blank: '太', post: '热了。', options: ['太', '很', '怎么样'], answer: 0,
         explanation: '太 + tính từ + 了 biểu thị mức độ VƯỢT TRỘI (quá mức); 很 (đã học) chỉ mức độ thông thường, không cần thêm 了.' },
       { pre: '我身体不', blank: '太', post: '好。', options: ['太', '很', '怎么样'], answer: 0,
-        explanation: 'Phủ định của 太 là "不太" (không...lắm); khác với thể khẳng định phải có 了 ở cuối.' }
+        explanation: 'Phủ định của 太 là "不太" (không...lắm); khác với thể khẳng định phải có 了 ở cuối.' },
+      { context: 'Bạn muốn biết cảm nhận của bạn bè về chuyến du lịch vừa rồi.',
+        pre: '你觉得那次旅行', blank: '怎么样', post: '？', options: ['怎么样', '多少钱', '谁的'], answer: 0,
+        explanation: '怎么样 dùng hỏi ý kiến/đánh giá về một sự việc.' },
+      { context: 'Trời hôm nay rất nóng, bạn than thở với bạn bè.',
+        pre: '今天', blank: '太热了', post: '！', options: ['太热了', '很热', '不热'], answer: 0,
+        explanation: '太...了 biểu thị mức độ vượt trội (quá mức).' }
     ],
     '/lessons/hsk1-bai-13.html': [
       { pre: '', blank: '喂', post: '，你在做什么呢？', options: ['喂', '吧', '呢'], answer: 0,
@@ -865,7 +943,13 @@
       { pre: '我', blank: '在', post: '睡觉呢。', options: ['在', '会', '想'], answer: 0,
         explanation: '在 + động từ (+呢) diễn tả hành động đang DIỄN RA (thì tiếp diễn); phủ định dùng 没(在), không dùng 呢.' },
       { pre: '她在工作呢，你下午打', blank: '吧', post: '。', options: ['吧', '呢', '吗'], answer: 0,
-        explanation: '吧 đặt cuối câu để làm dịu giọng, biến câu thành lời đề nghị nhẹ nhàng.' }
+        explanation: '吧 đặt cuối câu để làm dịu giọng, biến câu thành lời đề nghị nhẹ nhàng.' },
+      { context: 'Bạn gọi điện cho bạn nhưng không thấy trả lời tin nhắn, có thể bạn ấy đang bận học.',
+        pre: '她可能', blank: '在学习呢', post: '。', options: ['在学习呢', '会学习', '想学习'], answer: 0,
+        explanation: '在+động từ+呢 diễn tả hành động đang diễn ra.' },
+      { context: 'Bạn đề nghị bạn mình gọi điện cho bạn vào buổi tối.',
+        pre: '你晚上给我打电话', blank: '吧', post: '。', options: ['吧', '呢', '吗'], answer: 0,
+        explanation: '吧 đặt cuối câu làm dịu giọng, biến câu thành lời đề nghị nhẹ nhàng.' }
     ],
     '/lessons/hsk1-bai-14.html': [
       { pre: '我买', blank: '了', post: '不少衣服。', options: ['了', '的', '呢'], answer: 0,
@@ -873,7 +957,13 @@
       { pre: '40分钟', blank: '后', post: '，我回来。', options: ['后', '前', '了'], answer: 0,
         explanation: '后 đặt SAU một khoảng thời gian cụ thể để chỉ mốc "sau khi... thì..."; trái nghĩa với 前 (đã học bài 11).' },
       { pre: '这些', blank: '都', post: '是他的东西。', options: ['都', '也', '很'], answer: 0,
-        explanation: '都 đặt sau đối tượng số nhiều để nhấn mạnh TẤT CẢ đối tượng đó đều có chung tính chất.' }
+        explanation: '都 đặt sau đối tượng số nhiều để nhấn mạnh TẤT CẢ đối tượng đó đều có chung tính chất.' },
+      { context: 'Bạn vừa đi mua sắm về, kể lại với bạn bè là mình đã mua khá nhiều đồ.',
+        pre: '我', blank: '买了', post: '不少东西。', options: ['买了', '买', '要买'], answer: 0,
+        explanation: '了 đặt sau động từ biểu thị hành động đã HOÀN THÀNH.' },
+      { context: 'Bạn hẹn gặp bạn bè sau một khoảng thời gian cụ thể.',
+        pre: '三十分钟', blank: '后', post: '，我们见面。', options: ['后', '前', '了'], answer: 0,
+        explanation: '后 đặt sau khoảng thời gian để chỉ mốc "sau khi... thì...".' }
     ],
     '/lessons/hsk1-bai-15.html': [
       { pre: '我', blank: '是', post: '昨天来的。', options: ['是', '的', '了'], answer: 0,
@@ -881,7 +971,13 @@
       { pre: '我们不是坐出租车来', blank: '的', post: '。', options: ['的', '了', '吗'], answer: 0,
         explanation: 'Ở thể phủ định của 是……的, bắt buộc phải giữ nguyên 的 ở cuối câu (không được lược bỏ như thể khẳng định).' },
       { pre: '2011', blank: '年', post: '9月，我认识了他。', options: ['年', '月', '号'], answer: 0,
-        explanation: '年 (năm) đặt đầu tiên trong cách nói ngày tháng năm, theo thứ tự giảm dần từ đơn vị lớn (năm) đến nhỏ (tháng, ngày).' }
+        explanation: '年 (năm) đặt đầu tiên trong cách nói ngày tháng năm, theo thứ tự giảm dần từ đơn vị lớn (năm) đến nhỏ (tháng, ngày).' },
+      { context: 'Bạn kể cho bạn mới quen biết mình đã đến thành phố này khi nào.',
+        pre: '我', blank: '是', post: '去年来的。', options: ['是', '的', '了'], answer: 0,
+        explanation: '是……的 nhấn mạnh thời gian/cách thức của một hành động đã xảy ra.' },
+      { context: 'Bạn giải thích với bạn bè rằng nhóm mình không đi bằng máy bay.',
+        pre: '我们不是坐飞机来', blank: '的', post: '。', options: ['的', '了', '吗'], answer: 0,
+        explanation: 'Thể phủ định của 是……的 bắt buộc giữ 的 ở cuối câu.' }
     ],
     '/lessons/bai-2.html': [
       { pre: '', blank: '是不是', post: '明天爸爸休息？', options: ['是不是', '怎么样', '多'], answer: 0,
@@ -889,7 +985,13 @@
       { pre: '我', blank: '每天', post: '六点起床。', options: ['每天', '今天', '明天'], answer: 0,
         explanation: '每 + lượng từ + danh từ (每天) biểu thị "mỗi ngày", thường đi cùng 都 phía sau vị ngữ để nhấn mạnh tính lặp lại đều đặn.' },
       { pre: '大卫', blank: '多高', post: '？', options: ['多高', '怎么样', '几岁'], answer: 0,
-        explanation: '多 + tính từ (高) dùng hỏi MỨC ĐỘ cụ thể, khi trả lời phải nêu con số cụ thể; khác với 怎么样 chỉ hỏi tình trạng chung chung.' }
+        explanation: '多 + tính từ (高) dùng hỏi MỨC ĐỘ cụ thể, khi trả lời phải nêu con số cụ thể; khác với 怎么样 chỉ hỏi tình trạng chung chung.' },
+      { context: 'Bạn đoán bạn mình chăm chỉ tập thể dục nên ít khi ốm.',
+        pre: '你很少生病，', blank: '是不是', post: '喜欢运动？', options: ['是不是', '多', '每天'], answer: 0,
+        explanation: '是不是 dùng khi đã đoán khá chắc, muốn hỏi lại xác nhận.' },
+      { context: 'Bạn kể về thói quen buổi sáng đều đặn của mình.',
+        pre: '我', blank: '每天', post: '都六点起床。', options: ['每天', '今天', '明天'], answer: 0,
+        explanation: '每+danh từ+都 biểu thị "mỗi... đều...".' }
     ],
     '/lessons/bai-3.html': [
       { pre: '左边那个红色', blank: '的', post: '是我的。', options: ['的', '了', '吧'], answer: 0,
@@ -897,7 +999,13 @@
       { pre: '我看', blank: '一下', post: '。', options: ['一下', '的', '都'], answer: 0,
         explanation: '一下 đặt ngay sau động từ (看) để làm giảm nhẹ mức độ/thời lượng hành động, nghĩa là "thử xem, một chút".' },
       { pre: '你女儿的房间', blank: '真', post: '漂亮。', options: ['真', '很', '太'], answer: 0,
-        explanation: '真 đặt trước tính từ để nhấn mạnh CẢM XÚC/ĐÁNH GIÁ thật sự của người nói; khác với 很 (khách quan hơn) hay 太 (chỉ mức vượt trội).' }
+        explanation: '真 đặt trước tính từ để nhấn mạnh CẢM XÚC/ĐÁNH GIÁ thật sự của người nói; khác với 很 (khách quan hơn) hay 太 (chỉ mức vượt trội).' },
+      { context: 'Bạn đang chọn mua đồ, muốn chỉ định cái mình thích mà không cần lặp lại tên đồ vật.',
+        pre: '我要', blank: '红色的', post: '。', options: ['红色的', '的红色', '红色是'], answer: 0,
+        explanation: '(Tính từ)+的 dùng thay cho cả cụm danh từ khi ngữ cảnh đã rõ.' },
+      { context: 'Bạn nhờ ai đó xem giúp mình một chút.',
+        pre: '你', blank: '看一下', post: '，好吗？', options: ['看一下', '看', '一下看'], answer: 0,
+        explanation: '一下 đặt sau động từ làm giảm nhẹ mức độ/thời lượng hành động.' }
     ],
     '/lessons/bai-4.html': [
       { pre: '这本书', blank: '是', post: '我买的。', options: ['是', '的', '了'], answer: 0,
@@ -905,7 +1013,13 @@
       { pre: '我十一岁', blank: '的时候', post: '开始踢足球。', options: ['的时候', '的', '了'], answer: 0,
         explanation: '……的时候 đặt sau cụm từ chỉ thời gian/hành động để diễn tả MỐC THỜI GIAN mà sự việc khác xảy ra ("khi...", "lúc...").' },
       { pre: '电影', blank: '已经', post: '开始了。', options: ['已经', '是', '的'], answer: 0,
-        explanation: '已经 đặt trước động từ/tính từ, thường kết hợp với 了 ở cuối câu, biểu thị hành động ĐÃ hoàn thành hoặc đạt đến một mức độ nào đó.' }
+        explanation: '已经 đặt trước động từ/tính từ, thường kết hợp với 了 ở cuối câu, biểu thị hành động ĐÃ hoàn thành hoặc đạt đến một mức độ nào đó.' },
+      { context: 'Bạn hỏi ai đã mua món quà sinh nhật này.',
+        pre: '这个礼物是', blank: '谁买', post: '的？', options: ['谁买', '买谁', '是谁'], answer: 0,
+        explanation: '是……的 nhấn mạnh CHỦ THỂ thực hiện hành động trong quá khứ.' },
+      { context: 'Bạn kể lại một kỷ niệm thời thơ ấu.',
+        pre: '我五岁', blank: '的时候', post: '，喜欢踢足球。', options: ['的时候', '了', '是'], answer: 0,
+        explanation: '……的时候 diễn tả mốc thời gian mà sự việc khác xảy ra.' }
     ],
     '/lessons/bai-5.html': [
       { pre: '你不想去，', blank: '就', post: '在家休息吧。', options: ['就', '还', '太'], answer: 0,
@@ -913,7 +1027,13 @@
       { pre: '这件衣服大吗？', blank: '还', post: '行，不太大。', options: ['还', '很', '真'], answer: 0,
         explanation: '还 + tính từ tích cực biểu thị mức độ CHẤP NHẬN ĐƯỢC (tạm ổn, không xuất sắc nhưng cũng không tệ).' },
       { pre: '今天天气', blank: '有点儿', post: '冷。', options: ['有点儿', '一点儿', '太'], answer: 0,
-        explanation: '有点儿 đặt TRƯỚC tính từ/động từ tâm lý (thường mang sắc thái không hài lòng); phân biệt với 一点儿 (đặt SAU tính từ, mang nghĩa trung tính).' }
+        explanation: '有点儿 đặt TRƯỚC tính từ/động từ tâm lý (thường mang sắc thái không hài lòng); phân biệt với 一点儿 (đặt SAU tính từ, mang nghĩa trung tính).' },
+      { context: 'Bạn bè rủ đi đâu đó, bạn muốn quyết định nhanh dựa theo gợi ý vừa nghe.',
+        pre: '这儿不错，', blank: '就', post: '在这儿吧。', options: ['就', '还', '有点儿'], answer: 0,
+        explanation: '就 liên kết với thông tin đã nêu để đưa ra quyết định nhanh.' },
+      { context: 'Bạn được hỏi thăm sức khỏe sau khi ốm.',
+        pre: '我身体', blank: '还', post: '可以。', options: ['还', '有点儿', '就'], answer: 0,
+        explanation: '还+tính từ tích cực biểu thị mức độ tạm ổn, chấp nhận được.' }
     ],
     '/lessons/bai-6.html': [
       { pre: '你', blank: '怎么', post: '不吃饭？', options: ['怎么', '怎么样', '什么'], answer: 0,
@@ -921,7 +1041,13 @@
       { pre: '这个星期我', blank: '天天', post: '都吃羊肉。', options: ['天天', '经常', '所以'], answer: 0,
         explanation: 'Lượng từ lặp lại dạng AA (天天) + 都 nhấn mạnh TẤT CẢ cá thể trong nhóm đều như vậy (mỗi ngày đều...).' },
       { pre: '', blank: '因为', post: '她生病了，所以没上课。', options: ['因为', '所以', '就'], answer: 0,
-        explanation: '因为 mở đầu vế chỉ NGUYÊN NHÂN, kết hợp với 所以 (chỉ kết quả) ở vế sau.' }
+        explanation: '因为 mở đầu vế chỉ NGUYÊN NHÂN, kết hợp với 所以 (chỉ kết quả) ở vế sau.' },
+      { context: 'Bạn thấy bạn mình bỏ bữa, ngạc nhiên hỏi lý do.',
+        pre: '你', blank: '怎么', post: '不吃饭？', options: ['怎么', '怎么样', '什么'], answer: 0,
+        explanation: '怎么 đứng trước động từ để hỏi NGUYÊN NHÂN, mang sắc thái ngạc nhiên.' },
+      { context: 'Bạn giải thích lý do mình nghỉ học hôm qua.',
+        pre: '', blank: '因为', post: '我生病了，所以没上课。', options: ['因为', '所以', '就'], answer: 0,
+        explanation: '因为 mở đầu vế chỉ nguyên nhân, đi cùng 所以 ở vế kết quả.' }
     ],
     '/lessons/bai-7.html': [
       { pre: '已经九点多了，他怎么', blank: '还', post: '在学习？', options: ['还', '就', '离'], answer: 0,
@@ -929,7 +1055,13 @@
       { pre: '我们坐公共汽车一个小时', blank: '就', post: '到学校了。', options: ['就', '还', '到'], answer: 0,
         explanation: '就 biểu thị hành động xảy ra SỚM/NHANH/thuận lợi theo quan điểm người nói (chỉ mất 1 tiếng thôi).' },
       { pre: '你家', blank: '离', post: '公司远吗？', options: ['离', '在', '到'], answer: 0,
-        explanation: '离 dùng chỉ KHOẢNG CÁCH tương quan giữa hai địa điểm/mốc (A离B+远/近); 在 chỉ VỊ TRÍ, không chỉ khoảng cách.' }
+        explanation: '离 dùng chỉ KHOẢNG CÁCH tương quan giữa hai địa điểm/mốc (A离B+远/近); 在 chỉ VỊ TRÍ, không chỉ khoảng cách.' },
+      { context: 'Đã khuya rồi mà bạn thấy đèn phòng bạn cùng phòng vẫn sáng.',
+        pre: '这么晚了，他怎么', blank: '还', post: '在学习？', options: ['还', '就', '离'], answer: 0,
+        explanation: '还 biểu thị trạng thái VẪN đang tiếp diễn.' },
+      { context: 'Bạn hỏi thăm khoảng cách từ nhà bạn mới quen đến trường.',
+        pre: '你家', blank: '离', post: '学校远吗？', options: ['离', '在', '到'], answer: 0,
+        explanation: '离 dùng chỉ khoảng cách giữa hai địa điểm.' }
     ],
     '/lessons/bai-8.html': [
       { pre: '我们下午去看电影，', blank: '好吗', post: '？', options: ['好吗', '是不是', '怎么样'], answer: 0,
@@ -937,7 +1069,13 @@
       { pre: '明天下午', blank: '再', post: '去吧。', options: ['再', '就', '还'], answer: 0,
         explanation: '再 diễn tả hành động sẽ lặp lại/tiếp tục trong tương lai, thường sau khi hoàn thành một điều kiện.' },
       { pre: '老师', blank: '让', post: '我给大卫打电话。', options: ['让', '请', '告诉'], answer: 0,
-        explanation: '让 là động từ cầu khiến trong câu kiêm ngữ (Chủ ngữ+让+Kiêm ngữ+Động từ2), nghĩa "bảo/để ai làm gì"; 请 mang sắc thái mời lịch sự hơn.' }
+        explanation: '让 là động từ cầu khiến trong câu kiêm ngữ (Chủ ngữ+让+Kiêm ngữ+Động từ2), nghĩa "bảo/để ai làm gì"; 请 mang sắc thái mời lịch sự hơn.' },
+      { context: 'Bạn đề nghị bạn bè một kế hoạch và muốn hỏi ý kiến họ.',
+        pre: '我们明天去看电影，', blank: '好吗', post: '？', options: ['好吗', '是不是', '怎么样'], answer: 0,
+        explanation: '……，好吗？ dùng cuối câu đề nghị để hỏi ý kiến lịch sự.' },
+      { context: 'Bạn nhờ đồng nghiệp gọi điện giúp cho khách hàng.',
+        pre: '老师', blank: '让', post: '我给你打电话。', options: ['让', '请', '告诉'], answer: 0,
+        explanation: '让 trong câu kiêm ngữ nghĩa "bảo/để ai làm gì".' }
     ],
     '/lessons/bai-9.html': [
       { pre: '我听', blank: '懂', post: '了。', options: ['懂', '完', '错'], answer: 0,
@@ -945,7 +1083,13 @@
       { pre: '你', blank: '从', post: '几岁开始学习跳舞？', options: ['从', '离', '就'], answer: 0,
         explanation: '从 biểu thị ĐIỂM XUẤT PHÁT của thời gian/địa điểm (从+mốc); 离 chỉ khoảng cách, không chỉ điểm bắt đầu.' },
       { pre: '这是他的', blank: '第一', post: '个工作。', options: ['第一', '一个', '最'], answer: 0,
-        explanation: '第 + số đếm biểu thị SỐ THỨ TỰ (第一 = thứ nhất); 一个 chỉ số lượng, không mang nghĩa thứ tự.' }
+        explanation: '第 + số đếm biểu thị SỐ THỨ TỰ (第一 = thứ nhất); 一个 chỉ số lượng, không mang nghĩa thứ tự.' },
+      { context: 'Bạn nghe giảng xong, xác nhận với giáo viên là mình đã hiểu.',
+        pre: '老师，我', blank: '听懂', post: '了。', options: ['听懂', '听完', '听错'], answer: 0,
+        explanation: '懂 làm bổ ngữ kết quả biểu thị kết quả "nghe HIỂU".' },
+      { context: 'Bạn kể lại mình bắt đầu học nhảy từ khi nào.',
+        pre: '我', blank: '从', post: '五岁开始学跳舞。', options: ['从', '离', '就'], answer: 0,
+        explanation: '从 biểu thị điểm xuất phát về thời gian/địa điểm.' }
     ],
     '/lessons/bai-10.html': [
       { pre: '', blank: '别', post: '玩手机了，快去学习吧。', options: ['别', '不', '没'], answer: 0,
@@ -953,7 +1097,13 @@
       { pre: '运动', blank: '对', post: '身体很好。', options: ['对', '从', '离'], answer: 0,
         explanation: '对 dùng chỉ mối tương quan/tác động giữa sự vật này với sự vật khác (对+tân ngữ+động từ/tính từ), ở đây nghĩa "có ích đối với...".' },
       { pre: '老师', blank: '对', post: '学生非常好。', options: ['对', '给', '离'], answer: 0,
-        explanation: '对 dùng biểu thị thái độ hướng tới đối tượng (đối xử tốt VỚI ai); 给 mang nghĩa "cho, tặng", khác chức năng ngữ pháp.' }
+        explanation: '对 dùng biểu thị thái độ hướng tới đối tượng (đối xử tốt VỚI ai); 给 mang nghĩa "cho, tặng", khác chức năng ngữ pháp.' },
+      { context: 'Bạn thấy em trai chơi điện thoại quá lâu, nhắc nhở em.',
+        pre: '', blank: '别', post: '玩手机了，快去学习！', options: ['别', '不', '没'], answer: 0,
+        explanation: '别+động từ+了 dùng khuyên ngăn ai đó dừng hành động.' },
+      { context: 'Bạn giải thích lợi ích của việc tập thể dục.',
+        pre: '运动', blank: '对', post: '身体很好。', options: ['对', '从', '给'], answer: 0,
+        explanation: '对 dùng chỉ mối tương quan/tác động đến đối tượng.' }
     ],
     '/lessons/bai-11.html': [
       { pre: '这是我妈妈做', blank: '的', post: '饭。', options: ['的', '了', '对'], answer: 0,
@@ -961,7 +1111,13 @@
       { pre: '哥哥', blank: '比', post: '姐姐高。', options: ['比', '对', '从'], answer: 0,
         explanation: '比 dùng để SO SÁNH sự khác biệt giữa hai đối tượng A và B (A+比+B+tính từ).' },
       { pre: '', blank: '可能', post: '我明天不来上课了。', options: ['可能', '希望', '懂'], answer: 0,
-        explanation: '可能 đặt trước câu để diễn đạt một sự PHỎNG ĐOÁN/ước chừng về khả năng xảy ra; 希望 mang sắc thái mong muốn, khác với phỏng đoán.' }
+        explanation: '可能 đặt trước câu để diễn đạt một sự PHỎNG ĐOÁN/ước chừng về khả năng xảy ra; 希望 mang sắc thái mong muốn, khác với phỏng đoán.' },
+      { context: 'Bạn giới thiệu món ăn do chính mẹ mình nấu.',
+        pre: '这是我妈妈做', blank: '的', post: '菜。', options: ['的', '了', '着'], answer: 0,
+        explanation: 'Khi cụm động từ bổ nghĩa cho danh từ, cần thêm 的.' },
+      { context: 'Bạn so sánh chiều cao giữa hai anh em.',
+        pre: '哥哥', blank: '比', post: '弟弟高。', options: ['比', '对', '从'], answer: 0,
+        explanation: '比 dùng so sánh sự khác biệt giữa hai đối tượng.' }
     ],
     '/lessons/bai-12.html': [
       { pre: '他说', blank: '得', post: '很好。', options: ['得', '的', '了'], answer: 0,
@@ -969,7 +1125,13 @@
       { pre: '他', blank: '比', post: '我学得好。', options: ['比', '对', '得'], answer: 0,
         explanation: 'Khi kết hợp so sánh 比 với bổ ngữ trạng thái, 比 có thể đặt TRƯỚC động từ (A+比+B+V+得+tính từ) để so sánh mức độ thực hiện hành động.' },
       { pre: '他学', blank: '得', post: '比我好。', options: ['得', '的', '了'], answer: 0,
-        explanation: 'Đây là biến thể vị trí khác của 比 kết hợp bổ ngữ trạng thái (A+V+得+比+B+tính từ) — cả hai dạng đều đúng và mang nghĩa như nhau.' }
+        explanation: 'Đây là biến thể vị trí khác của 比 kết hợp bổ ngữ trạng thái (A+V+得+比+B+tính từ) — cả hai dạng đều đúng và mang nghĩa như nhau.' },
+      { context: 'Bạn khen bạn mình nói tiếng Trung rất giỏi.',
+        pre: '你汉语说', blank: '得', post: '真好！', options: ['得', '的', '了'], answer: 0,
+        explanation: '得 dẫn vào bổ ngữ trạng thái để đánh giá kết quả hành động.' },
+      { context: 'Bạn so sánh kết quả học tập giữa mình và bạn.',
+        pre: '他', blank: '比', post: '我学得好。', options: ['比', '对', '从'], answer: 0,
+        explanation: '比 kết hợp bổ ngữ trạng thái để so sánh mức độ thực hiện hành động.' }
     ],
     '/lessons/bai-13.html': [
       { pre: '她手里拿', blank: '着', post: '铅笔。', options: ['着', '了', '得'], answer: 0,
@@ -977,7 +1139,13 @@
       { pre: '你', blank: '不是', post: '去过中国吗？', options: ['不是', '可能', '希望'], answer: 0,
         explanation: '不是……吗？ dùng để XÁC NHẬN LẠI một thông tin, thường mang ý ngạc nhiên/phản bác nhẹ.' },
       { pre: '', blank: '往', post: '前走，到了路口再往右走。', options: ['往', '从', '离'], answer: 0,
-        explanation: '往 chỉ HƯỚNG di chuyển của hành động (往+hướng/nơi chốn+động từ), thường dùng khi chỉ đường; khác 从 (chỉ điểm xuất phát) và 离 (chỉ khoảng cách).' }
+        explanation: '往 chỉ HƯỚNG di chuyển của hành động (往+hướng/nơi chốn+động từ), thường dùng khi chỉ đường; khác 从 (chỉ điểm xuất phát) và 离 (chỉ khoảng cách).' },
+      { context: 'Bạn mô tả tư thế một người bạn đang đứng chờ, tay cầm điện thoại.',
+        pre: '她手里拿', blank: '着', post: '手机。', options: ['着', '了', '过'], answer: 0,
+        explanation: '着 biểu thị hành động/trạng thái đang được duy trì.' },
+      { context: 'Bạn chỉ đường cho khách du lịch đến khách sạn.',
+        pre: '你一直', blank: '往前走', post: '，就到了。', options: ['往前走', '往前', '走前'], answer: 0,
+        explanation: '往+hướng+động từ chỉ hướng di chuyển, thường dùng khi chỉ đường.' }
     ],
     '/lessons/bai-14.html': [
       { pre: '你看', blank: '过', post: '那个电影吗？', options: ['过', '了', '着'], answer: 0,
@@ -985,7 +1153,13 @@
       { pre: '', blank: '虽然', post: '北京很远，但是你一定要去看看。', options: ['虽然', '因为', '可能'], answer: 0,
         explanation: '虽然 mở đầu vế NHƯỢNG BỘ, luôn đi kèm 但是 ở vế sau; 因为 mở đầu vế NGUYÊN NHÂN, không phải nhượng bộ.' },
       { pre: '我去过', blank: '一次', post: '中国。', options: ['一次', '一下', '有点儿'], answer: 0,
-        explanation: '次 là lượng từ chỉ SỐ LẦN một hành động xảy ra, đứng sau động từ+过; 一下 chỉ mức độ nhẹ/thử làm, không đếm số lần.' }
+        explanation: '次 là lượng từ chỉ SỐ LẦN một hành động xảy ra, đứng sau động từ+过; 一下 chỉ mức độ nhẹ/thử làm, không đếm số lần.' },
+      { context: 'Bạn được hỏi đã từng xem một bộ phim cụ thể chưa.',
+        pre: '你', blank: '看过', post: '那个电影吗？', options: ['看过', '看了', '看着'], answer: 0,
+        explanation: '过 biểu thị một hành động đã từng xảy ra, nhấn mạnh kinh nghiệm.' },
+      { context: 'Bạn nhận xét chữ Hán tuy khó nhưng bạn vẫn thích viết.',
+        pre: '', blank: '虽然', post: '汉字很难，但是我很喜欢写汉字。', options: ['虽然', '因为', '可能'], answer: 0,
+        explanation: '虽然 mở đầu vế nhượng bộ, đi cùng 但是 ở vế sau.' }
     ],
     '/lessons/bai-15.html': [
       { pre: '今天阴，比昨天', blank: '更', post: '冷。', options: ['更', '太', '真'], answer: 0,
@@ -993,7 +1167,13 @@
       { pre: '新年', blank: '就要', post: '到了。', options: ['就要', '已经', '还'], answer: 0,
         explanation: '就要/快要/快/要……了 diễn tả một việc SẮP xảy ra trong tương lai gần; 已经 chỉ việc ĐÃ xảy ra rồi, ngược nghĩa thời gian.' },
       { pre: '衣服', blank: '都', post: '买好了。', options: ['都', '就', '还'], answer: 0,
-        explanation: '都……了 nhấn mạnh TẤT CẢ đối tượng đều đã đạt trạng thái/kết quả nêu ra.' }
+        explanation: '都……了 nhấn mạnh TẤT CẢ đối tượng đều đã đạt trạng thái/kết quả nêu ra.' },
+      { context: 'Bạn so sánh thời tiết hôm nay lạnh hơn hôm qua.',
+        pre: '今天', blank: '比昨天更', post: '冷。', options: ['比昨天更', '比昨天', '更比昨天'], answer: 0,
+        explanation: '更 nhấn mạnh mức độ tăng thêm khi so sánh.' },
+      { context: 'Bạn thông báo năm mới sắp đến gần.',
+        pre: '新年', blank: '就要', post: '到了。', options: ['就要', '已经', '还'], answer: 0,
+        explanation: '就要...了 diễn tả một việc sắp xảy ra trong tương lai gần.' }
     ]
   };
 
@@ -1126,6 +1306,7 @@
       '<div class="vp-quiz-progress">' + segs + '</div>' +
       '<div class="vp-quiz-counter">Câu ' + (grQuiz.pos + 1) + '/' + total + '</div>' +
       '<div class="vp-quiz-card">' +
+        (q.context ? '<div class="gr-exercise-context">🗣️ ' + q.context + '</div>' : '') +
         '<div class="gr-exercise-sentence hanzi">' + q.pre + '<span class="blank">___</span>' + q.post + '</div>' +
         '<div class="vp-quiz-options">' + optionsHtml + '</div>' +
         '<div id="grExplain" style="margin-top:var(--space-4);font-size:0.9rem;color:var(--color-gray-600);"></div>' +

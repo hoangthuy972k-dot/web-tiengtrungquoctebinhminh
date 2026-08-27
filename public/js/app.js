@@ -157,6 +157,7 @@
     $('#lessonHub').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -166,6 +167,7 @@
     $('#lessonHub').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -251,6 +253,7 @@
     $('#lessonHub').hidden = false;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -280,6 +283,11 @@
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showFlashcardPractice(levelId, lesson);
+        });
+      } else if (tabId === 'grammar') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showGrammarPractice(levelId, lesson);
         });
       }
       grid.appendChild(tile);
@@ -384,6 +392,7 @@
     $('#lessonHub').hidden = true;
     $('#vocabPractice').hidden = false;
     $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -544,6 +553,7 @@
     $('#lessonHub').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = false;
+    $('#grammarPractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -618,6 +628,183 @@
       fcTally.yes++;
       fcIndex++;
       renderFlashcard();
+    });
+  }
+
+  /* ---------------- Grammar practice (Bai hoc + Bai tap) ---------------- */
+
+  // Bai tap ngu phap tu soan theo skill ngu-phap-tieng-trung: chi dung tu vung
+  // da hoc tinh den bai nay, blank la 1 lua chon ngu phap that (khong tach
+  // vun cau co dinh), moi cau co giai thich ro nguyen nhan dung/sai.
+  // PILOT: moi hoan thanh Bai 1 HSK1 va Bai 1 HSK2 de xin xac nhan truoc khi
+  // lam tiep cho toan bo 15 bai HSK1 + 15 bai HSK2 con lai.
+  var GRAMMAR_EXERCISES = {
+    '/lessons/hsk1-bai-1.html': [
+      { pre: '', blank: '你', post: '好！', options: ['你', '您', '你们'], answer: 0,
+        explanation: '你 dùng khi chào một người ngang vai, thân mật.' },
+      { pre: '', blank: '您', post: '好！', options: ['你', '您', '你们'], answer: 1,
+        explanation: '您 dùng để chào người lớn tuổi hơn hoặc cần thể hiện sự tôn trọng.' },
+      { pre: '', blank: '你们', post: '好！', options: ['你', '您', '你们'], answer: 2,
+        explanation: '你们 dùng khi chào nhiều người cùng lúc (số nhiều).' },
+      { pre: '对不起！', blank: '没关系', post: '！', options: ['没关系', '你好', '对不起'], answer: 0,
+        explanation: '没关系 dùng để đáp lại lời xin lỗi, nghĩa là "không sao đâu".' }
+    ],
+    '/lessons/bai-1.html': [
+      { pre: '我', blank: '要', post: '去北京旅游。', options: ['要', '最', '也'], answer: 0,
+        explanation: '要 đặt trước động từ để diễn tả ý muốn/dự định làm việc gì.' },
+      { pre: '我', blank: '最', post: '喜欢踢足球。', options: ['要', '最', '也'], answer: 1,
+        explanation: '最 đặt trước tính từ/động từ chỉ trạng thái tâm lý (như 喜欢) để diễn tả mức độ cao nhất.' },
+      { pre: '我们要不要买', blank: '几', post: '个新的椅子？', options: ['几', '多', '最'], answer: 0,
+        explanation: '几 dùng để hỏi số lượng nhỏ chưa xác định, phía sau bắt buộc có lượng từ + danh từ.' },
+      { pre: '六个', blank: '多', post: '月，我要去旅游。', options: ['多', '几', '最'], answer: 0,
+        explanation: '多 đặt SAU lượng từ khi số đếm nhỏ hơn 10, diễn tả nghĩa "hơn".' }
+    ]
+  };
+
+  // "Bai hoc" doc lai dung noi dung ngu phap DA CO SAN trong .grammar-card cua
+  // chinh trang bai hoc (khong bia lai), qua fetch + DOMParser (khong eval,
+  // khong script - hop le CSP). "Bai tap" dung du lieu tu soan rieng ben duoi,
+  // ap dung skill ngu-phap-tieng-trung (chi dung tu da hoc, giai thich ro).
+  var grammarCache = {};
+  function loadLessonGrammar(lesson) {
+    if (grammarCache[lesson.fullPageUrl]) return Promise.resolve(grammarCache[lesson.fullPageUrl]);
+    return fetch(lesson.fullPageUrl)
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var section = doc.getElementById('grammar');
+        var cards = section ? $all('.grammar-card', section).map(function (card) {
+          var titleEl = card.querySelector('.g-title');
+          var numEl = titleEl ? titleEl.querySelector('.g-num') : null;
+          var title = titleEl ? titleEl.textContent.replace(numEl ? numEl.textContent : '', '').trim() : '';
+          var sub = card.querySelector('.g-sub') ? card.querySelector('.g-sub').textContent.trim() : '';
+          var ruleHtml = card.querySelector('.g-rule') ? card.querySelector('.g-rule').innerHTML.trim() : '';
+          var rows = $all('.g-table tbody tr', card).map(function (tr) {
+            var tds = $all('td', tr);
+            return {
+              zh: tds[0] ? tds[0].textContent.trim() : '',
+              py: tds[1] ? tds[1].textContent.trim() : '',
+              vn: tds[2] ? tds[2].textContent.trim() : ''
+            };
+          });
+          return { title: title, sub: sub, ruleHtml: ruleHtml, rows: rows };
+        }) : [];
+        grammarCache[lesson.fullPageUrl] = cards;
+        return cards;
+      });
+  }
+
+  var grMode = 'lesson';
+  var grPoints = [];
+  var grQuiz = null;
+
+  function showGrammarPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = false;
+    $('#grSubtitle').textContent = 'Đang tải...';
+    $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+
+    grMode = 'lesson';
+    $all('#grTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-gr-tab') === 'lesson'); });
+
+    loadLessonGrammar(lesson).then(function (points) {
+      grPoints = points;
+      grQuiz = null;
+      $('#grSubtitle').textContent = points.length + ' cấu trúc trong bài học này';
+      renderGrammarContent();
+    }).catch(function () {
+      $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung ngữ pháp của bài này.</p>';
+    });
+
+    $('#grammarPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderGrammarContent() {
+    if (grMode === 'lesson') renderGrammarLesson();
+    else renderGrammarExercise();
+  }
+
+  function renderGrammarLesson() {
+    var wrap = $('#grContent');
+    if (!grPoints.length) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có nội dung ngữ pháp.</p>';
+      return;
+    }
+    wrap.innerHTML = grPoints.map(function (p, i) {
+      var examplesHtml = p.rows.map(function (row) {
+        return '<div class="gr-example-item"><div class="gr-example-zh hanzi">' + row.zh +
+          ' <button type="button" class="vp-speak-btn" data-speak="' + row.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          '<div class="gr-example-py">' + row.py + '</div>' +
+          '<div class="gr-example-vn">' + row.vn + '</div></div>';
+      }).join('');
+      return '<div class="gr-card">' +
+        '<div class="gr-step"><span class="gr-num is-red">' + (i * 2 + 1) + '</span><div class="gr-step-text"><b>Cấu trúc:</b> ' + p.title + (p.ruleHtml ? '<br>' + p.ruleHtml : '') + '</div></div>' +
+        (p.sub ? '<div class="gr-step"><span class="gr-num is-red">' + (i * 2 + 2) + '</span><div class="gr-step-text"><b>Cách dùng:</b> ' + p.sub + '</div></div>' : '') +
+        (examplesHtml ? '<div class="gr-example-box"><div class="gr-step" style="margin-bottom:8px;"><span class="gr-num is-gold">' + '★' + '</span><div class="gr-step-text"><b>Ví dụ:</b></div></div>' + examplesHtml + '</div>' : '') +
+        '</div>';
+    }).join('');
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+  }
+
+  function renderGrammarExercise() {
+    var wrap = $('#grContent');
+    var items = GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || [];
+    if (!items.length) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài tập ngữ pháp.</p>';
+      return;
+    }
+    if (!grQuiz) grQuiz = { pos: 0, score: 0 };
+
+    if (grQuiz.pos >= items.length) {
+      wrap.innerHTML =
+        '<div class="vp-quiz-done"><strong>' + grQuiz.score + '/' + items.length + '</strong>' +
+        '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành bài tập ngữ pháp.</p>' +
+        '<button type="button" class="btn btn-primary" id="grRestart">Làm lại</button></div>';
+      $('#grRestart').addEventListener('click', function () { grQuiz = null; renderGrammarExercise(); });
+      return;
+    }
+
+    var total = items.length;
+    var q = items[grQuiz.pos];
+    var segs = '';
+    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < grQuiz.pos ? ' is-done' : '') + '"></div>';
+
+    var optionsHtml = q.options.map(function (opt, i) {
+      return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + opt + '</button>';
+    }).join('');
+
+    wrap.innerHTML =
+      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      '<div class="vp-quiz-counter">Câu ' + (grQuiz.pos + 1) + '/' + total + '</div>' +
+      '<div class="vp-quiz-card">' +
+        '<div class="gr-exercise-sentence hanzi">' + q.pre + '<span class="blank">___</span>' + q.post + '</div>' +
+        '<div class="vp-quiz-options">' + optionsHtml + '</div>' +
+        '<div id="grExplain" style="margin-top:var(--space-4);font-size:0.9rem;color:var(--color-gray-600);"></div>' +
+      '</div>';
+
+    $all('.vp-option-btn', wrap).forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        var isCorrect = i === q.answer;
+        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (j === q.answer) b.classList.add('is-correct');
+          else if (j === i) b.classList.add('is-wrong');
+        });
+        $('#grExplain').textContent = '💡 ' + q.explanation;
+        if (isCorrect) grQuiz.score++;
+        setTimeout(function () {
+          grQuiz.pos++;
+          renderGrammarExercise();
+        }, 1800);
+      });
     });
   }
 
@@ -827,6 +1014,19 @@
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();
+    });
+    $('#grBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $all('#grTabs .vp-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        grMode = tab.getAttribute('data-gr-tab');
+        grQuiz = null;
+        $all('#grTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t === tab); });
+        renderGrammarContent();
+      });
     });
     $all('a[href="#home"]').forEach(function (link) {
       link.addEventListener('click', showDashboard);

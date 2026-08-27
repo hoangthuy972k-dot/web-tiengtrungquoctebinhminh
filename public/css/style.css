@@ -1802,3 +1802,108 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .fc-btn-yes:hover {
   background: #17794a;
 }
+
+/* ---------- Grammar practice (Bai hoc + Bai tap) ---------- */
+.gr-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.gr-step {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.gr-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.gr-num.is-red {
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+}
+
+.gr-num.is-gold {
+  background: var(--color-gold-50);
+  color: #8a5a00;
+}
+
+.gr-step-text {
+  flex: 1;
+  padding-top: 1px;
+}
+
+.gr-step-text b {
+  color: var(--color-red-600);
+}
+
+.gr-example-box {
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-2) 0 var(--space-3) 36px;
+}
+
+.gr-example-item {
+  padding: var(--space-2) 0;
+}
+
+.gr-example-item + .gr-example-item {
+  border-top: 1px dashed var(--color-gray-200);
+  margin-top: var(--space-2);
+}
+
+.gr-example-zh {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-hanzi);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.gr-example-py {
+  color: var(--color-gold-500);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.gr-example-vn {
+  color: var(--color-gray-600);
+}
+
+.gr-note-box {
+  background: var(--color-gold-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-left: 36px;
+  color: #6b4a00;
+}
+
+.gr-exercise-sentence {
+  text-align: center;
+  font-family: var(--font-hanzi);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: var(--space-6);
+}
+
+.gr-exercise-sentence .blank {
+  display: inline-block;
+  min-width: 2.4em;
+  border-bottom: 2px solid var(--color-red-500);
+  color: var(--color-red-500);
+}

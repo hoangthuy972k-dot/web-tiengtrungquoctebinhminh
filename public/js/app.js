@@ -162,6 +162,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -176,6 +177,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -237,7 +239,8 @@
     errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink' },
     mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal' },
     game: { label: 'Game ôn tập', emoji: '🎮', color: 'indigo' },
-    speak: { label: 'Luyện nói', emoji: '🗣️', color: 'purple' }
+    speak: { label: 'Luyện nói', emoji: '🗣️', color: 'purple' },
+    translate: { label: 'Luyện dịch', emoji: '🔄', color: 'pink' }
   };
 
   // match/fill/sort/errfix/mc gop chung vao 1 o "Game on tap" tren giao dien chinh
@@ -249,8 +252,8 @@
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
-    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak'],
-    hsk2: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak'],
+    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
+    hsk2: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
   };
   var LEVEL_HUB_CTA_TAB = { hsk2: 'tongket' };
@@ -274,6 +277,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -328,6 +332,11 @@
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showGamePractice(levelId, lesson);
+        });
+      } else if (tabId === 'translate') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showTranslatePractice(levelId, lesson);
         });
       }
       grid.appendChild(tile);
@@ -405,7 +414,8 @@
             fillData: iframe.contentWindow.fillData || [],
             sortData: iframe.contentWindow.sortData || [],
             errorFixData: iframe.contentWindow.errorFixData || [],
-            mcData: iframe.contentWindow.mcData || []
+            mcData: iframe.contentWindow.mcData || [],
+            translateData: iframe.contentWindow.translateData || []
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -452,6 +462,10 @@
     });
   }
 
+  function loadLessonTranslate(lesson) {
+    return loadLessonRawData(lesson).then(function (data) { return data.translateData; });
+  }
+
   function audioBaseFor(lesson) {
     var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-)?bai-(\d+)\.html/);
     if (!m) return null;
@@ -482,6 +496,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -647,6 +662,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -1028,6 +1044,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -1147,6 +1164,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
     $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -1230,6 +1248,7 @@
     $('#listenPractice').hidden = false;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     lpMode = 'meaning';
@@ -1370,6 +1389,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = false;
     $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
     $('#spTabs').innerHTML = '';
     $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -1654,6 +1674,7 @@
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = false;
+    $('#translatePractice').hidden = true;
     $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     gpMode = null;
@@ -1980,6 +2001,111 @@
     });
   }
 
+  /* ---------------- Translate practice (Luyen dich: Viet<->Trung, tu kiem tra) ---------------- */
+
+  var tpDirection = 'vi2zh';
+  var tpData = [];
+  var tpQuiz = null;
+
+  function showTranslatePractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = false;
+    $('#tpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+
+    tpDirection = 'vi2zh';
+    $all('.tp-dir-btn').forEach(function (btn) { btn.classList.toggle('active', btn.getAttribute('data-tp-dir') === 'vi2zh'); });
+
+    loadLessonTranslate(lesson).then(function (data) {
+      tpData = data;
+      tpQuiz = null;
+      renderTranslateContent();
+    }).catch(function () {
+      $('#tpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung luyện dịch của bài này.</p>';
+    });
+
+    $('#translatePractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderTranslateContent() {
+    var wrap = $('#tpContent');
+    if (!tpData.length) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện dịch.</p>';
+      return;
+    }
+    if (!tpQuiz) tpQuiz = { pos: 0 };
+
+    if (tpQuiz.pos >= tpData.length) {
+      wrap.innerHTML =
+        '<div class="vp-quiz-done"><strong>' + tpData.length + '/' + tpData.length + '</strong>' +
+        '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện dịch này.</p>' +
+        '<button type="button" class="btn btn-primary" id="tpRestart">Luyện lại</button></div>';
+      $('#tpRestart').addEventListener('click', function () { tpQuiz = null; renderTranslateContent(); });
+      return;
+    }
+
+    var total = tpData.length;
+    var item = tpData[tpQuiz.pos];
+    var segs = '';
+    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < tpQuiz.pos ? ' is-done' : '') + '"></div>';
+
+    var promptHtml = tpDirection === 'vi2zh'
+      ? '<div class="tp-prompt-vi">“' + item.vi + '”</div>'
+      : '<div class="tp-prompt-zh"><span class="hanzi">' + item.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + item.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<div class="tp-prompt-py">' + item.py + '</div>';
+
+    wrap.innerHTML =
+      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      '<div class="vp-quiz-counter">Câu ' + (tpQuiz.pos + 1) + '/' + total + '</div>' +
+      '<div class="vp-quiz-card tp-card">' +
+        promptHtml +
+        '<textarea class="tp-input" id="tpInput" placeholder="' + (tpDirection === 'vi2zh' ? 'Nhập bản dịch tiếng Trung...' : 'Nhập bản dịch tiếng Việt...') + '"></textarea>' +
+        '<button type="button" class="tp-reveal-btn" id="tpReveal">Xem đáp án tham khảo</button>' +
+        '<div class="tp-answer" id="tpAnswer" hidden></div>' +
+      '</div>';
+
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    if (tpDirection === 'zh2vi') vpSpeak(item.zh);
+
+    $('#tpReveal').addEventListener('click', function () {
+      var answerEl = $('#tpAnswer');
+      answerEl.hidden = false;
+      if (tpDirection === 'vi2zh') {
+        answerEl.innerHTML =
+          '<div class="tp-answer-zh hanzi">' + item.zh + ' <button type="button" class="vp-speak-btn" data-speak="' + item.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          '<div class="tp-answer-py">' + item.py + '</div>';
+        vpSpeak(item.zh);
+      } else {
+        answerEl.innerHTML = '<div class="tp-answer-vi">' + item.vi + '</div>';
+      }
+      $all('[data-speak]', answerEl).forEach(function (btn) {
+        btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+      });
+      $('#tpReveal').style.display = 'none';
+      var nextBtn = document.createElement('button');
+      nextBtn.type = 'button';
+      nextBtn.className = 'btn btn-primary tp-next-btn';
+      nextBtn.textContent = (tpQuiz.pos + 1 < total) ? 'Câu tiếp theo →' : 'Hoàn thành';
+      nextBtn.addEventListener('click', function () {
+        tpQuiz.pos++;
+        renderTranslateContent();
+      });
+      answerEl.appendChild(nextBtn);
+    });
+  }
+
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
 
   var WEEKDAY_LABELS = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
@@ -2228,6 +2354,20 @@
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();
+    });
+    $('#tpBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $all('.tp-dir-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        tpDirection = btn.getAttribute('data-tp-dir');
+        tpQuiz = null;
+        $all('.tp-dir-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        renderTranslateContent();
+      });
     });
     $all('a[href="#home"]').forEach(function (link) {
       link.addEventListener('click', showDashboard);

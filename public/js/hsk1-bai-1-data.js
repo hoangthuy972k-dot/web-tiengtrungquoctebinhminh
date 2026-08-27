@@ -192,3 +192,14 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — chỉ dùng từ vựng bài 1 (không có bài trước để ôn)
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Chào bạn!', zh:'你好！', py:'Nǐ hǎo!'},
+  {vi:'Kính chào ngài!', zh:'您好！', py:'Nín hǎo!'},
+  {vi:'Chào các bạn!', zh:'你们好！', py:'Nǐmen hǎo!'},
+  {vi:'Xin lỗi!', zh:'对不起！', py:'Duìbuqǐ!'},
+  {vi:'Xin lỗi! — Không sao đâu!', zh:'对不起！——没关系！', py:'Duìbuqǐ! — Méi guānxi!'},
+];

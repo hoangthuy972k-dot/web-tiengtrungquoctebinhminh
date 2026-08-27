@@ -2664,3 +2664,124 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Translate practice (Luyen dich) ---------- */
+.tp-direction-toggle {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.tp-dir-btn {
+  border: 1.5px solid var(--color-gray-200);
+  background: var(--color-white);
+  color: var(--color-gray-800);
+  border-radius: var(--radius-full, 999px);
+  padding: var(--space-2) var(--space-5);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.tp-dir-btn.active {
+  background: var(--color-red-600);
+  border-color: var(--color-red-600);
+  color: var(--color-white);
+}
+
+.tp-card {
+  text-align: center;
+}
+
+.tp-prompt-vi {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-5);
+}
+
+.tp-prompt-zh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.tp-prompt-zh .hanzi {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.tp-prompt-py {
+  color: var(--color-gold-500);
+  font-weight: 600;
+  margin-bottom: var(--space-5);
+}
+
+.tp-input {
+  width: 100%;
+  min-height: 90px;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-hanzi);
+  font-size: 1rem;
+  resize: vertical;
+  margin-bottom: var(--space-4);
+  text-align: left;
+}
+
+.tp-input:focus {
+  outline: none;
+  border-color: var(--color-red-500);
+}
+
+.tp-reveal-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-5);
+  background: #ef7a82;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.tp-reveal-btn:hover {
+  background: #e85f68;
+}
+
+.tp-answer {
+  margin-top: var(--space-4);
+  background: var(--color-red-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.tp-answer-zh {
+  font-family: var(--font-hanzi);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.tp-answer-py {
+  color: var(--color-gold-500);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.tp-answer-vi {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.tp-next-btn {
+  margin-top: var(--space-4);
+}

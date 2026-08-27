@@ -334,3 +334,14 @@ var speakingData = {
      note:'觉得 dùng để nêu ý kiến/cảm nhận cá nhân một cách lịch sự, tự nhiên hơn là khẳng định trực tiếp.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — chỉ dùng từ vựng bài 1 (không có bài trước để ôn)
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Tôi muốn đi du lịch.', zh:'我要去旅游。', py:'Wǒ yào qù lǚyóu.'},
+  {vi:'Tôi thích đá bóng nhất.', zh:'我最喜欢踢足球。', py:'Wǒ zuì xǐhuan tī zúqiú.'},
+  {vi:'Chúng ta cùng đi nhé!', zh:'我们一起去吧！', py:'Wǒmen yìqǐ qù ba!'},
+  {vi:'Sao bạn không đi vận động?', zh:'你为什么不去运动？', py:'Nǐ wèishénme bú qù yùndòng?'},
+  {vi:'Đây là chiếc ghế mới.', zh:'这是新椅子。', py:'Zhè shì xīn yǐzi.'},
+];

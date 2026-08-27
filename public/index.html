@@ -302,46 +302,70 @@
 <!-- AUTH MODAL -->
 <div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
   <div class="modal">
-    <button class="modal-close" id="authModalClose" type="button" aria-label="Đóng">
-      <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <h2 id="authModalTitle">Chào mừng trở lại</h2>
-    <p class="modal-sub">Chế độ demo: dữ liệu tài khoản chỉ lưu trên trình duyệt này.</p>
-
-    <div class="auth-tabs">
-      <button class="auth-tab is-active" data-auth="login" type="button">Đăng nhập</button>
-      <button class="auth-tab" data-auth="register" type="button">Đăng ký</button>
+    <div class="modal-banner">
+      <button class="modal-close" id="authModalClose" type="button" aria-label="Đóng">
+        <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <svg class="modal-banner-logo" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="5" y="5" width="90" height="90" rx="22" fill="#ffffff"/>
+        <rect x="38" y="18" width="24" height="6" rx="3" fill="#c84b31"/>
+        <rect x="26" y="30" width="48" height="6" rx="3" fill="#c84b31"/>
+        <path d="M28,50 Q38,58 48,50" stroke="#c84b31" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <path d="M52,50 Q62,58 72,50" stroke="#c84b31" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <rect x="30" y="64" width="40" height="6" rx="3" fill="#c84b31"/>
+        <path d="M22,76 Q50,90 78,76" stroke="#c84b31" stroke-width="8" stroke-linecap="round" fill="none"/>
+      </svg>
     </div>
+    <div class="modal-body">
+      <h2 id="authModalTitle">Chào mừng trở lại</h2>
+      <p class="modal-sub" id="authModalSub">Đăng nhập để tiếp tục hành trình học tiếng Trung của bạn.</p>
 
-    <form class="auth-panel is-active" id="loginPanel" data-auth-panel="login">
-      <div class="form-field">
-        <label for="loginEmail">Email</label>
-        <input type="email" id="loginEmail" required autocomplete="email" />
+      <div class="auth-tabs">
+        <button class="auth-tab is-active" data-auth="login" type="button">Đăng nhập</button>
+        <button class="auth-tab" data-auth="register" type="button">Đăng ký</button>
       </div>
-      <div class="form-field">
-        <label for="loginPassword">Mật khẩu</label>
-        <input type="password" id="loginPassword" required autocomplete="current-password" minlength="4" />
-      </div>
-      <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
-      <p class="form-note">Chưa có tài khoản? <a href="#" data-auth-switch="register">Đăng ký ngay</a></p>
-    </form>
 
-    <form class="auth-panel" id="registerPanel" data-auth-panel="register">
-      <div class="form-field">
-        <label for="registerName">Họ tên</label>
-        <input type="text" id="registerName" required autocomplete="name" />
-      </div>
-      <div class="form-field">
-        <label for="registerEmail">Email</label>
-        <input type="email" id="registerEmail" required autocomplete="email" />
-      </div>
-      <div class="form-field">
-        <label for="registerPassword">Mật khẩu</label>
-        <input type="password" id="registerPassword" required autocomplete="new-password" minlength="4" />
-      </div>
-      <button class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button>
-      <p class="form-note">Đã có tài khoản? <a href="#" data-auth-switch="login">Đăng nhập</a></p>
-    </form>
+      <form class="auth-panel is-active" id="loginPanel" data-auth-panel="login">
+        <div class="form-field">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required autocomplete="email" />
+        </div>
+        <div class="form-field">
+          <label for="loginPassword">Mật khẩu</label>
+          <input type="password" id="loginPassword" required autocomplete="current-password" minlength="4" />
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
+        <p class="form-note">Chưa có tài khoản? <a href="#" data-auth-switch="register">Đăng ký ngay</a></p>
+      </form>
+
+      <form class="auth-panel" id="registerPanel" data-auth-panel="register">
+        <div class="form-field">
+          <label for="registerName">Họ tên</label>
+          <input type="text" id="registerName" required autocomplete="name" />
+        </div>
+        <div class="form-field">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" required autocomplete="email" />
+        </div>
+        <div class="form-field">
+          <label for="registerPassword">Mật khẩu</label>
+          <input type="password" id="registerPassword" required autocomplete="new-password" minlength="4" />
+        </div>
+        <div class="form-field">
+          <label for="registerLevel">Cấp độ đang học</label>
+          <select id="registerLevel">
+            <option value="hsk1">HSK 1</option>
+            <option value="hsk2">HSK 2</option>
+            <option value="hsk3">HSK 3</option>
+            <option value="yct">YCT (Thiếu nhi)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Tạo tài khoản</button>
+        <p class="form-note">Đã có tài khoản? <a href="#" data-auth-switch="login">Đăng nhập</a></p>
+      </form>
+
+      <p class="modal-demo-note">Chế độ demo: dữ liệu tài khoản chỉ lưu trên trình duyệt này.</p>
+    </div>
   </div>
 </div>
 

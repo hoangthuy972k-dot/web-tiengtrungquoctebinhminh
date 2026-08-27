@@ -1228,24 +1228,58 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 400px;
-  padding: var(--space-6);
+  padding: 0;
   position: relative;
   box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.modal-banner {
+  position: relative;
+  height: 96px;
+  background: linear-gradient(135deg, var(--color-red-600), var(--color-gold-500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 240 120%22><path d=%22M20,90 C20,70 40,70 45,80 C45,60 70,60 75,75 C75,50 105,50 110,70 C115,45 150,45 150,70 C160,55 185,60 180,80 C195,75 205,90 190,98 C195,110 175,115 165,105 C155,118 130,115 128,102 C110,115 85,110 88,98 C70,110 45,105 50,92 C35,102 15,98 20,90 Z%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%223%22 opacity=%220.25%22/></svg>");
+  background-repeat: no-repeat;
+  background-position: bottom -10px right -20px;
+  background-size: 200px;
+}
+
+.modal-banner-logo {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .modal-close {
   position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
-  width: 36px;
-  height: 36px;
+  z-index: 2;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: none;
-  background: var(--color-gray-100);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-gray-800);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.modal-body {
+  padding: var(--space-6);
 }
 
 .modal h2 {
@@ -1258,6 +1292,15 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   color: var(--color-gray-600);
   font-size: 0.9rem;
   margin: 0 0 var(--space-5);
+}
+
+.modal-demo-note {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-gray-100);
+  color: var(--color-gray-400);
+  font-size: 0.76rem;
+  text-align: center;
 }
 
 .auth-tabs {
@@ -1298,16 +1341,21 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   color: var(--color-gray-800);
 }
 
-.form-field input {
+.form-field input,
+.form-field select {
   width: 100%;
   height: 46px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-gray-200);
   padding: 0 var(--space-4);
   font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--color-gray-900);
+  background: var(--color-white);
 }
 
-.form-field input:focus {
+.form-field input:focus,
+.form-field select:focus {
   outline: none;
   border-color: var(--color-red-500);
   box-shadow: 0 0 0 3px var(--color-red-50);

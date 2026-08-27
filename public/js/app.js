@@ -2879,6 +2879,13 @@
       $all('.auth-panel').forEach(function (p) {
         p.classList.toggle('is-active', p.getAttribute('data-auth-panel') === tab);
       });
+      if (tab === 'register') {
+        $('#authModalTitle').textContent = 'Tạo tài khoản học sinh';
+        $('#authModalSub').textContent = 'Đăng ký để lưu tiến độ học và chuỗi ngày học của bạn.';
+      } else {
+        $('#authModalTitle').textContent = 'Chào mừng trở lại';
+        $('#authModalSub').textContent = 'Đăng nhập để tiếp tục hành trình học tiếng Trung của bạn.';
+      }
     }
 
     $all('.auth-tab').forEach(function (tab) {
@@ -2891,8 +2898,9 @@
       });
     });
 
-    function setLoggedInUser(name, email) {
-      writeJSON(STORAGE_KEYS.user, { name: name, email: email });
+    function setLoggedInUser(name, email, level) {
+      var existing = readJSON(STORAGE_KEYS.user, {});
+      writeJSON(STORAGE_KEYS.user, { name: name, email: email, level: level || existing.level });
       renderUserChip();
     }
 
@@ -2916,8 +2924,9 @@
       e.preventDefault();
       var name = $('#registerName').value.trim();
       var email = $('#registerEmail').value.trim();
+      var level = $('#registerLevel').value;
       if (!name || !email) return;
-      setLoggedInUser(name, email);
+      setLoggedInUser(name, email, level);
       closeModal();
       showToast('Tạo tài khoản thành công! Chào mừng ' + name + '.');
     });

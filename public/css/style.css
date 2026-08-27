@@ -2522,14 +2522,43 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 
 .fg-card.is-correct,
 .sg-card.is-correct,
-.mc-card.is-correct {
+.mc-card.is-correct,
+.vp-quiz-card.is-correct {
   border-color: var(--color-green-600);
 }
 
 .fg-card.is-wrong,
 .sg-card.is-wrong,
-.mc-card.is-wrong {
+.mc-card.is-wrong,
+.vp-quiz-card.is-wrong {
   border-color: var(--color-red-600);
+}
+
+.gr-type-badge {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 2px 10px;
+  border-radius: var(--radius-full, 999px);
+  background: var(--color-indigo-50, #eef0ff);
+  color: var(--color-indigo-600, #4f46e5);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.gr-judge-btns {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.gr-judge-btns .btn.is-correct {
+  border-color: var(--color-green-600);
+  color: var(--color-green-600);
+}
+
+.gr-judge-btns .btn.is-wrong {
+  border-color: var(--color-red-600);
+  color: var(--color-red-600);
 }
 
 .fg-text {

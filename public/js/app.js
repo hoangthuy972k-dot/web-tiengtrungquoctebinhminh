@@ -765,7 +765,13 @@
         explanation: '您 dùng khi chào người có địa vị/tuổi tác cao hơn để thể hiện sự tôn trọng.' },
       { context: 'Bạn vô tình giẫm chân bạn cùng bàn trong lớp, bạn xin lỗi và bạn ấy đáp lại thế nào?',
         pre: '对不起！——', blank: '没关系', post: '！', options: ['没关系', '您好', '再见'], answer: 0,
-        explanation: '没关系 là câu đáp chuẩn khi ai đó xin lỗi mình.' }
+        explanation: '没关系 là câu đáp chuẩn khi ai đó xin lỗi mình.' },
+      { type: 'sort', context: 'Sắp xếp thành câu chào hỏi thân mật.',
+        words: ['你', '好', '！'], answer: '你好！',
+        explanation: '你好 là cách chào phổ biến nhất khi gặp người ngang hàng, thân mật.' },
+      { type: 'judge', context: 'Bạn chào một nhóm bạn cùng lúc.',
+        sentence: '你们好！', isCorrect: true,
+        explanation: '你们 là số nhiều của 你, dùng đúng khi chào nhiều người cùng lúc.' }
     ],
     '/lessons/bai-1.html': [
       { pre: '我', blank: '要', post: '去北京旅游。', options: ['要', '最', '也'], answer: 0,
@@ -781,7 +787,13 @@
         explanation: '要 đặt trước động từ diễn tả ý muốn/dự định.' },
       { context: 'Bạn được hỏi môn thể thao mình thích nhất.',
         pre: '我', blank: '最', post: '喜欢踢足球。', options: ['最', '要', '几'], answer: 0,
-        explanation: '最 biểu thị mức độ cao nhất.' }
+        explanation: '最 biểu thị mức độ cao nhất.' },
+      { type: 'sort', context: 'Sắp xếp thành câu nói về sở thích thể thao.',
+        words: ['我', '最', '喜欢', '踢', '足球', '。'], answer: '我最喜欢踢足球。',
+        explanation: '最 phải đứng ngay trước động từ/tính từ chỉ trạng thái tâm lý (喜欢) để diễn tả mức độ cao nhất.' },
+      { type: 'judge', context: 'Học sinh Việt hay nhầm vị trí của 多 khi số đếm lớn hơn 10.',
+        sentence: '我们十多个人要去旅游。', isCorrect: true,
+        explanation: '多 đặt SAU số đếm khi số đó lớn hơn 10 (十多 = hơn mười) — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-2.html': [
       { pre: '', blank: '谢谢', post: '你，你人真好！', options: ['谢谢', '再见', '不客气'], answer: 0,
@@ -795,7 +807,13 @@
         explanation: '不客气 là cách đáp chuẩn khi ai đó cảm ơn mình.' },
       { context: 'Hết giờ học, bạn chào tạm biệt thầy giáo trước khi ra về.',
         pre: '老师，', blank: '再见', post: '！', options: ['再见', '谢谢', '你好'], answer: 0,
-        explanation: '再见 dùng khi chia tay, kết thúc cuộc gặp.' }
+        explanation: '再见 dùng khi chia tay, kết thúc cuộc gặp.' },
+      { type: 'sort', context: 'Sắp xếp thành câu cảm ơn.',
+        words: ['谢', '谢', '你', '！'], answer: '谢谢你！',
+        explanation: '谢谢 + đối tượng được cảm ơn.' },
+      { type: 'judge', context: 'Bạn cảm ơn bạn mình, bạn ấy nên đáp lại thế nào?',
+        sentence: '谢谢你！——你好！', isCorrect: false, correctVersion: '谢谢你！——不客气！',
+        explanation: 'Đáp lại lời cảm ơn (谢谢) phải dùng 不客气; 你好 chỉ dùng để chào gặp mặt.' }
     ],
     '/lessons/hsk1-bai-3.html': [
       { pre: '你叫', blank: '什么', post: '名字？', options: ['什么', '吗', '是'], answer: 0,
@@ -809,7 +827,13 @@
         explanation: '叫什么名字 là cách hỏi tên chuẩn khi mới gặp ai đó.' },
       { context: 'Bạn muốn xác nhận xem người mới quen có phải giáo viên hay không.',
         pre: '你', blank: '是', post: '老师吗？', options: ['是', '叫', '什么'], answer: 0,
-        explanation: '是 dùng để khẳng định thân phận/danh tính trong câu hỏi Có/Không với 吗.' }
+        explanation: '是 dùng để khẳng định thân phận/danh tính trong câu hỏi Có/Không với 吗.' },
+      { type: 'sort', context: 'Sắp xếp thành câu hỏi tên người mới quen.',
+        words: ['你', '叫', '什么', '名字', '？'], answer: '你叫什么名字？',
+        explanation: '什么 đứng trước danh từ (名字) làm tân ngữ trong câu hỏi.' },
+      { type: 'judge', context: 'Bạn hỏi xác nhận nghề nghiệp của ai đó.',
+        sentence: '他是老师吗？', isCorrect: true,
+        explanation: '吗 đặt cuối câu trần thuật để tạo câu hỏi Có/Không — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-4.html': [
       { pre: '', blank: '谁', post: '是你的老师？', options: ['谁', '什么', '哪'], answer: 0,
@@ -823,7 +847,13 @@
         explanation: '谁 dùng để hỏi về NGƯỜI (chủ nhân của vật).' },
       { context: 'Bạn giới thiệu về bạn thân của mình với người khác.',
         pre: '她是我', blank: '的', post: '朋友。', options: ['的', '呢', '谁'], answer: 0,
-        explanation: '的 nối giữa đại từ sở hữu và danh từ để biểu thị quan hệ sở hữu.' }
+        explanation: '的 nối giữa đại từ sở hữu và danh từ để biểu thị quan hệ sở hữu.' },
+      { type: 'sort', context: 'Sắp xếp thành câu hỏi về danh tính một người.',
+        words: ['她', '是', '谁', '？'], answer: '她是谁？',
+        explanation: '谁 đặt ở vị trí tân ngữ nghi vấn để hỏi về người.' },
+      { type: 'judge', context: 'Bạn giới thiệu quan hệ bạn bè.',
+        sentence: '他是我的同学。', isCorrect: true,
+        explanation: '的 nối giữa đại từ sở hữu (我) và danh từ (同学) — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-5.html': [
       { pre: '你家有', blank: '几', post: '口人？', options: ['几', '多', '什么'], answer: 0,
@@ -837,7 +867,13 @@
         explanation: '几 dùng hỏi số lượng nhỏ (dưới 10), cần lượng từ theo sau.' },
       { context: 'Bạn muốn hỏi tuổi của một người lớn, không phải trẻ nhỏ.',
         pre: '您', blank: '今年多大', post: '了？', options: ['今年多大', '几岁', '叫什么名字'], answer: 0,
-        explanation: '多大 dùng hỏi tuổi người lớn lịch sự; 几岁 chỉ dùng hỏi tuổi trẻ em.' }
+        explanation: '多大 dùng hỏi tuổi người lớn lịch sự; 几岁 chỉ dùng hỏi tuổi trẻ em.' },
+      { type: 'sort', context: 'Sắp xếp thành câu hỏi thăm số người trong gia đình.',
+        words: ['你', '家', '有', '几', '口', '人', '？'], answer: '你家有几口人？',
+        explanation: '几 phải đi kèm lượng từ (口) rồi mới đến danh từ.' },
+      { type: 'judge', context: 'Bạn kể tuổi của một người bạn.',
+        sentence: '我朋友今年十岁了。', isCorrect: true,
+        explanation: '了 đặt cuối câu để thông báo tuổi tác như một thông tin mới — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-6.html': [
       { pre: '我', blank: '会', post: '写汉字。', options: ['会', '很', '怎么'], answer: 0,
@@ -851,7 +887,13 @@
         explanation: '会 biểu thị năng lực đã học được qua rèn luyện.' },
       { context: 'Bạn không biết đọc một chữ Hán, muốn hỏi bạn cùng lớp.',
         pre: '这个字', blank: '怎么', post: '读？', options: ['怎么', '什么', '谁'], answer: 0,
-        explanation: '怎么 đặt trước động từ để hỏi CÁCH THỨC thực hiện.' }
+        explanation: '怎么 đặt trước động từ để hỏi CÁCH THỨC thực hiện.' },
+      { type: 'sort', context: 'Sắp xếp thành câu khoe khả năng viết chữ Hán.',
+        words: ['我', '会', '写', '汉字', '。'], answer: '我会写汉字。',
+        explanation: '会 đặt trước động từ (写) để biểu thị năng lực học được.' },
+      { type: 'judge', context: 'Bạn nhận xét về món ăn Trung Quốc.',
+        sentence: '中国菜很好吃。', isCorrect: true,
+        explanation: '很 + tính từ (好吃) tạo câu vị ngữ tính từ chuẩn — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-7.html': [
       { pre: '今天9', blank: '月', post: '1号。', options: ['月', '号', '星期'], answer: 0,
@@ -865,7 +907,13 @@
         explanation: '去 + Nơi chốn + Động từ diễn tả "đi đến đâu để làm gì".' },
       { context: 'Bạn hỏi hôm nay là thứ mấy để sắp xếp lịch học.',
         pre: '今天', blank: '星期几', post: '？', options: ['星期几', '几号', '什么'], answer: 0,
-        explanation: '星期几 dùng hỏi THỨ trong tuần.' }
+        explanation: '星期几 dùng hỏi THỨ trong tuần.' },
+      { type: 'sort', context: 'Sắp xếp thành câu rủ bạn đi trường đọc sách.',
+        words: ['我', '去', '学校', '看', '书', '。'], answer: '我去学校看书。',
+        explanation: '去 + Nơi chốn + Động từ 2 diễn tả câu liên động "đi đâu để làm gì".' },
+      { type: 'judge', context: 'Bạn hỏi đầy đủ ngày tháng và thứ trong cùng một câu.',
+        sentence: '今天几月几号星期几？', isCorrect: false, correctVersion: '今天几月几号？今天星期几？',
+        explanation: '几号 và 星期几 là hai câu hỏi riêng biệt, không ghép chung vào một câu.' }
     ],
     '/lessons/hsk1-bai-8.html': [
       { pre: '我', blank: '想', post: '买一个杯子。', options: ['想', '去', '会'], answer: 0,
@@ -879,7 +927,13 @@
         explanation: '想 biểu đạt nguyện vọng muốn làm gì.' },
       { context: 'Bạn hỏi giá một món đồ trong cửa hàng.',
         pre: '这个杯子', blank: '多少钱', post: '？', options: ['多少钱', '几个', '怎么样'], answer: 0,
-        explanation: '多少钱 dùng hỏi giá tiền (số lớn).' }
+        explanation: '多少钱 dùng hỏi giá tiền (số lớn).' },
+      { type: 'sort', context: 'Sắp xếp thành câu hỏi giá tiền.',
+        words: ['这个', '杯子', '多少', '钱', '？'], answer: '这个杯子多少钱？',
+        explanation: '多少 đặt trước 钱 để hỏi giá.' },
+      { type: 'judge', context: 'Bạn gọi trà trong quán.',
+        sentence: '我想喝几茶。', isCorrect: false, correctVersion: '我想喝茶。',
+        explanation: '茶 không cần thêm 几 khi không hỏi/nêu số lượng cụ thể.' }
     ],
     '/lessons/hsk1-bai-9.html': [
       { pre: '我朋友', blank: '在', post: '学校。', options: ['在', '是', '有'], answer: 0,
@@ -893,7 +947,13 @@
         explanation: '在哪儿 dùng hỏi VỊ TRÍ của người/vật.' },
       { context: 'Bạn giới thiệu nghề nghiệp và nơi làm việc của bố mình.',
         pre: '我爸爸', blank: '在', post: '医院工作。', options: ['在', '是', '有'], answer: 0,
-        explanation: '在 + nơi chốn + động từ diễn tả nơi diễn ra hành động.' }
+        explanation: '在 + nơi chốn + động từ diễn tả nơi diễn ra hành động.' },
+      { type: 'sort', context: 'Sắp xếp thành câu giới thiệu nơi làm việc của bố.',
+        words: ['我', '爸爸', '在', '医院', '工作', '。'], answer: '我爸爸在医院工作。',
+        explanation: '在 + nơi chốn + động từ diễn tả nơi diễn ra hành động.' },
+      { type: 'judge', context: 'Bạn hỏi vị trí một món đồ.',
+        sentence: '我的杯子在哪儿？', isCorrect: true,
+        explanation: '哪儿 dùng đúng vị trí để hỏi nơi chốn — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-10.html': [
       { pre: '桌子上', blank: '有', post: '一个电脑。', options: ['有', '是', '在'], answer: 0,
@@ -907,7 +967,13 @@
         explanation: '能...吗 dùng để xin phép một cách lịch sự.' },
       { context: 'Bạn mời khách vào nhà ngồi.',
         pre: '', blank: '请坐', post: '！', options: ['请坐', '再见', '对不起'], answer: 0,
-        explanation: '请 + động từ dùng để mời/đề nghị lịch sự.' }
+        explanation: '请 + động từ dùng để mời/đề nghị lịch sự.' },
+      { type: 'sort', context: 'Sắp xếp thành câu nói về đồ vật trên bàn.',
+        words: ['桌子', '上', '有', '一', '个', '电脑', '。'], answer: '桌子上有一个电脑。',
+        explanation: '有 dùng khẳng định sự tồn tại: Nơi chốn + 有 + Vật.' },
+      { type: 'judge', context: 'Bạn xin phép ngồi vào chỗ trống.',
+        sentence: '我能坐这儿吗？', isCorrect: true,
+        explanation: '能...吗 dùng xin phép lịch sự — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-11.html': [
       { pre: '现在十', blank: '点', post: '十分。', options: ['点', '分', '号'], answer: 0,
@@ -921,7 +987,13 @@
         explanation: '什么时候 dùng hỏi mốc/khoảng thời gian chung chung.' },
       { context: 'Bạn hỏi giờ hiện tại để không đến muộn.',
         pre: '', blank: '现在几点', post: '？', options: ['现在几点', '今天几号', '你几岁'], answer: 0,
-        explanation: '现在几点 dùng hỏi giờ hiện tại.' }
+        explanation: '现在几点 dùng hỏi giờ hiện tại.' },
+      { type: 'sort', context: 'Sắp xếp thành câu nói giờ hiện tại.',
+        words: ['现在', '十', '点', '十', '分', '。'], answer: '现在十点十分。',
+        explanation: '点 (giờ) luôn đứng trước 分 (phút).' },
+      { type: 'judge', context: 'Bạn kể giờ mẹ nấu cơm.',
+        sentence: '我六点做饭。', isCorrect: true,
+        explanation: 'Cụm thời gian (六点) làm trạng ngữ, đứng trước động từ — câu này ĐÚNG.' }
     ],
     '/lessons/hsk1-bai-12.html': [
       { pre: '明天天气', blank: '怎么样', post: '？', options: ['怎么样', '怎么', '多少'], answer: 0,
@@ -935,7 +1007,13 @@
         explanation: '怎么样 dùng hỏi ý kiến/đánh giá về một sự việc.' },
       { context: 'Trời hôm nay rất nóng, bạn than thở với bạn bè.',
         pre: '今天', blank: '太热了', post: '！', options: ['太热了', '很热', '不热'], answer: 0,
-        explanation: '太...了 biểu thị mức độ vượt trội (quá mức).' }
+        explanation: '太...了 biểu thị mức độ vượt trội (quá mức).' },
+      { type: 'sort', context: 'Sắp xếp thành câu hỏi thăm thời tiết.',
+        words: ['今天', '天气', '怎么样', '？'], answer: '今天天气怎么样？',
+        explanation: '怎么样 dùng hỏi về tình trạng/tính chất, đặt cuối câu.' },
+      { type: 'judge', context: 'Bạn than nóng và biến nó thành câu hỏi.',
+        sentence: '今天太热了吗？', isCorrect: false, correctVersion: '今天太热了。',
+        explanation: '太...了 là câu khẳng định cảm thán, không kết hợp với 吗 để tạo câu hỏi.' }
     ],
     '/lessons/hsk1-bai-13.html': [
       { pre: '', blank: '喂', post: '，你在做什么呢？', options: ['喂', '吧', '呢'], answer: 0,
@@ -949,7 +1027,13 @@
         explanation: '在+động từ+呢 diễn tả hành động đang diễn ra.' },
       { context: 'Bạn đề nghị bạn mình gọi điện cho bạn vào buổi tối.',
         pre: '你晚上给我打电话', blank: '吧', post: '。', options: ['吧', '呢', '吗'], answer: 0,
-        explanation: '吧 đặt cuối câu làm dịu giọng, biến câu thành lời đề nghị nhẹ nhàng.' }
+        explanation: '吧 đặt cuối câu làm dịu giọng, biến câu thành lời đề nghị nhẹ nhàng.' },
+      { type: 'sort', context: 'Sắp xếp thành câu nói mình đang ngủ.',
+        words: ['我', '在', '睡觉', '呢', '。'], answer: '我在睡觉呢。',
+        explanation: '在 + động từ + 呢 diễn tả hành động đang diễn ra.' },
+      { type: 'judge', context: 'Bạn đề nghị bạn gọi điện vào buổi chiều.',
+        sentence: '你下午打给我电话吧。', isCorrect: false, correctVersion: '你下午给我打电话吧。',
+        explanation: '给 (cho) phải đứng TRƯỚC động từ chính (打电话): 给+người+打电话, không tách rời 打...电话.' }
     ],
     '/lessons/hsk1-bai-14.html': [
       { pre: '我买', blank: '了', post: '不少衣服。', options: ['了', '的', '呢'], answer: 0,
@@ -963,7 +1047,13 @@
         explanation: '了 đặt sau động từ biểu thị hành động đã HOÀN THÀNH.' },
       { context: 'Bạn hẹn gặp bạn bè sau một khoảng thời gian cụ thể.',
         pre: '三十分钟', blank: '后', post: '，我们见面。', options: ['后', '前', '了'], answer: 0,
-        explanation: '后 đặt sau khoảng thời gian để chỉ mốc "sau khi... thì...".' }
+        explanation: '后 đặt sau khoảng thời gian để chỉ mốc "sau khi... thì...".' },
+      { type: 'sort', context: 'Sắp xếp thành câu kể việc vừa mua sắm.',
+        words: ['我', '买', '了', '不少', '衣服', '。'], answer: '我买了不少衣服。',
+        explanation: '了 đặt ngay sau động từ để biểu thị hành động đã hoàn thành.' },
+      { type: 'judge', context: 'Bạn khen những bộ quần áo mới mua.',
+        sentence: '这些都衣服很漂亮。', isCorrect: false, correctVersion: '这些衣服都很漂亮。',
+        explanation: '都 phải đứng ngay trước vị ngữ (很漂亮), sau chủ ngữ đầy đủ (这些衣服), không chen vào giữa danh từ.' }
     ],
     '/lessons/hsk1-bai-15.html': [
       { pre: '我', blank: '是', post: '昨天来的。', options: ['是', '的', '了'], answer: 0,
@@ -977,7 +1067,13 @@
         explanation: '是……的 nhấn mạnh thời gian/cách thức của một hành động đã xảy ra.' },
       { context: 'Bạn giải thích với bạn bè rằng nhóm mình không đi bằng máy bay.',
         pre: '我们不是坐飞机来', blank: '的', post: '。', options: ['的', '了', '吗'], answer: 0,
-        explanation: 'Thể phủ định của 是……的 bắt buộc giữ 的 ở cuối câu.' }
+        explanation: 'Thể phủ định của 是……的 bắt buộc giữ 的 ở cuối câu.' },
+      { type: 'sort', context: 'Sắp xếp thành câu kể thời điểm mình đến.',
+        words: ['我', '是', '昨天', '来', '的', '。'], answer: '我是昨天来的。',
+        explanation: '是……的 nhấn mạnh thời gian của hành động đã xảy ra.' },
+      { type: 'judge', context: 'Bạn giải thích cách nhóm mình đã đến.',
+        sentence: '我们不是坐飞机来的。', isCorrect: true,
+        explanation: 'Thể phủ định của 是……的 giữ nguyên 的 ở cuối câu — câu này ĐÚNG.' }
     ],
     '/lessons/bai-2.html': [
       { pre: '', blank: '是不是', post: '明天爸爸休息？', options: ['是不是', '怎么样', '多'], answer: 0,
@@ -991,7 +1087,13 @@
         explanation: '是不是 dùng khi đã đoán khá chắc, muốn hỏi lại xác nhận.' },
       { context: 'Bạn kể về thói quen buổi sáng đều đặn của mình.',
         pre: '我', blank: '每天', post: '都六点起床。', options: ['每天', '今天', '明天'], answer: 0,
-        explanation: '每+danh từ+都 biểu thị "mỗi... đều...".' }
+        explanation: '每+danh từ+都 biểu thị "mỗi... đều...".' },
+      { type: 'sort', context: 'Sắp xếp thành câu kể thói quen buổi sáng.',
+        words: ['我', '每天', '六点', '起床', '。'], answer: '我每天六点起床。',
+        explanation: '每+danh từ (每天) làm trạng ngữ đứng trước cụm thời gian+động từ.' },
+      { type: 'judge', context: 'Bạn đoán bạn mình thích vận động.',
+        sentence: '你是不是喜欢运动？', isCorrect: true,
+        explanation: '是不是 dùng khi đã đoán khá chắc — câu này ĐÚNG.' }
     ],
     '/lessons/bai-3.html': [
       { pre: '左边那个红色', blank: '的', post: '是我的。', options: ['的', '了', '吧'], answer: 0,
@@ -1005,7 +1107,13 @@
         explanation: '(Tính từ)+的 dùng thay cho cả cụm danh từ khi ngữ cảnh đã rõ.' },
       { context: 'Bạn nhờ ai đó xem giúp mình một chút.',
         pre: '你', blank: '看一下', post: '，好吗？', options: ['看一下', '看', '一下看'], answer: 0,
-        explanation: '一下 đặt sau động từ làm giảm nhẹ mức độ/thời lượng hành động.' }
+        explanation: '一下 đặt sau động từ làm giảm nhẹ mức độ/thời lượng hành động.' },
+      { type: 'sort', context: 'Sắp xếp thành câu nhờ ai đó xem thử.',
+        words: ['我', '看', '一下', '。'], answer: '我看一下。',
+        explanation: '一下 đặt ngay sau động từ để giảm nhẹ mức độ hành động.' },
+      { type: 'judge', context: 'Bạn khen màu sắc một món đồ.',
+        sentence: '这个红色很漂亮。', isCorrect: false, correctVersion: '这个颜色很漂亮。',
+        explanation: '红色 là một MÀU cụ thể (màu đỏ); muốn nói chung về "màu sắc" phải dùng 颜色.' }
     ],
     '/lessons/bai-4.html': [
       { pre: '这本书', blank: '是', post: '我买的。', options: ['是', '的', '了'], answer: 0,
@@ -1019,7 +1127,13 @@
         explanation: '是……的 nhấn mạnh CHỦ THỂ thực hiện hành động trong quá khứ.' },
       { context: 'Bạn kể lại một kỷ niệm thời thơ ấu.',
         pre: '我五岁', blank: '的时候', post: '，喜欢踢足球。', options: ['的时候', '了', '是'], answer: 0,
-        explanation: '……的时候 diễn tả mốc thời gian mà sự việc khác xảy ra.' }
+        explanation: '……的时候 diễn tả mốc thời gian mà sự việc khác xảy ra.' },
+      { type: 'sort', context: 'Sắp xếp thành câu kể bộ phim đã bắt đầu.',
+        words: ['电影', '已经', '开始', '了', '。'], answer: '电影已经开始了。',
+        explanation: '已经 đặt trước động từ, kết hợp 了 cuối câu biểu thị đã hoàn thành.' },
+      { type: 'judge', context: 'Bạn kể ai đã mua quyển sách này.',
+        sentence: '这本书是的我买。', isCorrect: false, correctVersion: '这本书是我买的。',
+        explanation: '是……的 phải đặt 的 ở CUỐI câu (sau chủ thể+động từ), không đặt giữa câu.' }
     ],
     '/lessons/bai-5.html': [
       { pre: '你不想去，', blank: '就', post: '在家休息吧。', options: ['就', '还', '太'], answer: 0,
@@ -1033,7 +1147,13 @@
         explanation: '就 liên kết với thông tin đã nêu để đưa ra quyết định nhanh.' },
       { context: 'Bạn được hỏi thăm sức khỏe sau khi ốm.',
         pre: '我身体', blank: '还', post: '可以。', options: ['还', '有点儿', '就'], answer: 0,
-        explanation: '还+tính từ tích cực biểu thị mức độ tạm ổn, chấp nhận được.' }
+        explanation: '还+tính từ tích cực biểu thị mức độ tạm ổn, chấp nhận được.' },
+      { type: 'sort', context: 'Sắp xếp thành câu khuyên bạn cứ ở nhà nghỉ ngơi.',
+        words: ['你', '不想', '去', '，', '就', '在家', '休息', '吧', '。'], answer: '你不想去，就在家休息吧。',
+        explanation: '就 liên kết thông tin đã nêu trước đó để đưa ra quyết định nhanh.' },
+      { type: 'judge', context: 'Bạn than thở về thời tiết.',
+        sentence: '今天天气有点儿冷。', isCorrect: true,
+        explanation: '有点儿 đặt trước tính từ, mang sắc thái không hài lòng nhẹ — câu này ĐÚNG.' }
     ],
     '/lessons/bai-6.html': [
       { pre: '你', blank: '怎么', post: '不吃饭？', options: ['怎么', '怎么样', '什么'], answer: 0,
@@ -1047,7 +1167,13 @@
         explanation: '怎么 đứng trước động từ để hỏi NGUYÊN NHÂN, mang sắc thái ngạc nhiên.' },
       { context: 'Bạn giải thích lý do mình nghỉ học hôm qua.',
         pre: '', blank: '因为', post: '我生病了，所以没上课。', options: ['因为', '所以', '就'], answer: 0,
-        explanation: '因为 mở đầu vế chỉ nguyên nhân, đi cùng 所以 ở vế kết quả.' }
+        explanation: '因为 mở đầu vế chỉ nguyên nhân, đi cùng 所以 ở vế kết quả.' },
+      { type: 'sort', context: 'Sắp xếp thành câu giải thích lý do nghỉ học.',
+        words: ['因为', '她', '生病', '了', '，', '所以', '没', '上课', '。'], answer: '因为她生病了，所以没上课。',
+        explanation: '因为...所以... nối vế nguyên nhân và vế kết quả.' },
+      { type: 'judge', context: 'Bạn hỏi lý do bạn bỏ bữa.',
+        sentence: '你怎么样不吃饭？', isCorrect: false, correctVersion: '你怎么不吃饭？',
+        explanation: 'Hỏi NGUYÊN NHÂN dùng 怎么, không dùng 怎么样 (hỏi tình trạng chung).' }
     ],
     '/lessons/bai-7.html': [
       { pre: '已经九点多了，他怎么', blank: '还', post: '在学习？', options: ['还', '就', '离'], answer: 0,
@@ -1061,7 +1187,13 @@
         explanation: '还 biểu thị trạng thái VẪN đang tiếp diễn.' },
       { context: 'Bạn hỏi thăm khoảng cách từ nhà bạn mới quen đến trường.',
         pre: '你家', blank: '离', post: '学校远吗？', options: ['离', '在', '到'], answer: 0,
-        explanation: '离 dùng chỉ khoảng cách giữa hai địa điểm.' }
+        explanation: '离 dùng chỉ khoảng cách giữa hai địa điểm.' },
+      { type: 'sort', context: 'Sắp xếp thành câu hỏi khoảng cách đến công ty.',
+        words: ['你', '家', '离', '公司', '远', '吗', '？'], answer: '你家离公司远吗？',
+        explanation: '离 dùng chỉ khoảng cách giữa hai địa điểm (A离B+远/近).' },
+      { type: 'judge', context: 'Bạn thấy bạn cùng phòng học khuya.',
+        sentence: '已经九点多了，他怎么还在学习？', isCorrect: true,
+        explanation: '还 biểu thị trạng thái vẫn đang tiếp diễn — câu này ĐÚNG.' }
     ],
     '/lessons/bai-8.html': [
       { pre: '我们下午去看电影，', blank: '好吗', post: '？', options: ['好吗', '是不是', '怎么样'], answer: 0,
@@ -1075,7 +1207,13 @@
         explanation: '……，好吗？ dùng cuối câu đề nghị để hỏi ý kiến lịch sự.' },
       { context: 'Bạn nhờ đồng nghiệp gọi điện giúp cho khách hàng.',
         pre: '老师', blank: '让', post: '我给你打电话。', options: ['让', '请', '告诉'], answer: 0,
-        explanation: '让 trong câu kiêm ngữ nghĩa "bảo/để ai làm gì".' }
+        explanation: '让 trong câu kiêm ngữ nghĩa "bảo/để ai làm gì".' },
+      { type: 'sort', context: 'Sắp xếp thành câu rủ bạn đi xem phim.',
+        words: ['我们', '明天', '去', '看', '电影', '，', '好吗', '？'], answer: '我们明天去看电影，好吗？',
+        explanation: '……，好吗？ đặt cuối câu đề nghị để hỏi ý kiến lịch sự.' },
+      { type: 'judge', context: 'Bạn nhờ ai đó gọi điện giúp.',
+        sentence: '老师叫我给你打电话。', isCorrect: true,
+        explanation: '叫 trong câu kiêm ngữ nghĩa "bảo/sai ai làm gì" — câu này ĐÚNG.' }
     ],
     '/lessons/bai-9.html': [
       { pre: '我听', blank: '懂', post: '了。', options: ['懂', '完', '错'], answer: 0,
@@ -1089,7 +1227,13 @@
         explanation: '懂 làm bổ ngữ kết quả biểu thị kết quả "nghe HIỂU".' },
       { context: 'Bạn kể lại mình bắt đầu học nhảy từ khi nào.',
         pre: '我', blank: '从', post: '五岁开始学跳舞。', options: ['从', '离', '就'], answer: 0,
-        explanation: '从 biểu thị điểm xuất phát về thời gian/địa điểm.' }
+        explanation: '从 biểu thị điểm xuất phát về thời gian/địa điểm.' },
+      { type: 'sort', context: 'Sắp xếp thành câu xác nhận đã nghe hiểu.',
+        words: ['我', '听', '懂', '了', '。'], answer: '我听懂了。',
+        explanation: '懂 làm bổ ngữ kết quả sau động từ 听.' },
+      { type: 'judge', context: 'Bạn kể mình học múa từ khi nào.',
+        sentence: '你从几岁学习跳舞开始？', isCorrect: false, correctVersion: '你从几岁开始学习跳舞？',
+        explanation: '从+mốc phải đứng trước 开始, và 开始 đứng trước cụm động từ chính (学习跳舞).' }
     ],
     '/lessons/bai-10.html': [
       { pre: '', blank: '别', post: '玩手机了，快去学习吧。', options: ['别', '不', '没'], answer: 0,
@@ -1103,7 +1247,13 @@
         explanation: '别+động từ+了 dùng khuyên ngăn ai đó dừng hành động.' },
       { context: 'Bạn giải thích lợi ích của việc tập thể dục.',
         pre: '运动', blank: '对', post: '身体很好。', options: ['对', '从', '给'], answer: 0,
-        explanation: '对 dùng chỉ mối tương quan/tác động đến đối tượng.' }
+        explanation: '对 dùng chỉ mối tương quan/tác động đến đối tượng.' },
+      { type: 'sort', context: 'Sắp xếp thành câu nhắc em trai đừng chơi điện thoại.',
+        words: ['别', '玩', '手机', '了', '，', '快', '去', '学习', '！'], answer: '别玩手机了，快去学习！',
+        explanation: '别+động từ+了 khuyên ngăn ai đó dừng hành động.' },
+      { type: 'judge', context: 'Bạn nói về lợi ích của vận động.',
+        sentence: '运动对身体很好。', isCorrect: true,
+        explanation: '对 dùng chỉ tác động tích cực đến đối tượng (身体) — câu này ĐÚNG.' }
     ],
     '/lessons/bai-11.html': [
       { pre: '这是我妈妈做', blank: '的', post: '饭。', options: ['的', '了', '对'], answer: 0,
@@ -1117,7 +1267,13 @@
         explanation: 'Khi cụm động từ bổ nghĩa cho danh từ, cần thêm 的.' },
       { context: 'Bạn so sánh chiều cao giữa hai anh em.',
         pre: '哥哥', blank: '比', post: '弟弟高。', options: ['比', '对', '从'], answer: 0,
-        explanation: '比 dùng so sánh sự khác biệt giữa hai đối tượng.' }
+        explanation: '比 dùng so sánh sự khác biệt giữa hai đối tượng.' },
+      { type: 'sort', context: 'Sắp xếp thành câu so sánh chiều cao.',
+        words: ['哥哥', '比', '姐姐', '高', '。'], answer: '哥哥比姐姐高。',
+        explanation: '比 dùng so sánh: A+比+B+tính từ.' },
+      { type: 'judge', context: 'Bạn so sánh giá hai món đồ.',
+        sentence: '这个比那个便宜比。', isCorrect: false, correctVersion: '这个比那个便宜。',
+        explanation: '比 chỉ xuất hiện MỘT LẦN ở đầu cấu trúc so sánh, không lặp lại ở cuối câu.' }
     ],
     '/lessons/bai-12.html': [
       { pre: '他说', blank: '得', post: '很好。', options: ['得', '的', '了'], answer: 0,
@@ -1131,7 +1287,13 @@
         explanation: '得 dẫn vào bổ ngữ trạng thái để đánh giá kết quả hành động.' },
       { context: 'Bạn so sánh kết quả học tập giữa mình và bạn.',
         pre: '他', blank: '比', post: '我学得好。', options: ['比', '对', '从'], answer: 0,
-        explanation: '比 kết hợp bổ ngữ trạng thái để so sánh mức độ thực hiện hành động.' }
+        explanation: '比 kết hợp bổ ngữ trạng thái để so sánh mức độ thực hiện hành động.' },
+      { type: 'sort', context: 'Sắp xếp thành câu khen ai đó nói giỏi.',
+        words: ['他', '说', '得', '很', '好', '。'], answer: '他说得很好。',
+        explanation: '得 dẫn vào bổ ngữ trạng thái sau động từ (说).' },
+      { type: 'judge', context: 'Bạn so sánh khả năng nói của hai người.',
+        sentence: '他比我说得好。', isCorrect: true,
+        explanation: '比 đặt trước động từ khi kết hợp với bổ ngữ trạng thái — câu này ĐÚNG.' }
     ],
     '/lessons/bai-13.html': [
       { pre: '她手里拿', blank: '着', post: '铅笔。', options: ['着', '了', '得'], answer: 0,
@@ -1145,7 +1307,13 @@
         explanation: '着 biểu thị hành động/trạng thái đang được duy trì.' },
       { context: 'Bạn chỉ đường cho khách du lịch đến khách sạn.',
         pre: '你一直', blank: '往前走', post: '，就到了。', options: ['往前走', '往前', '走前'], answer: 0,
-        explanation: '往+hướng+động từ chỉ hướng di chuyển, thường dùng khi chỉ đường.' }
+        explanation: '往+hướng+động từ chỉ hướng di chuyển, thường dùng khi chỉ đường.' },
+      { type: 'sort', context: 'Sắp xếp thành câu mô tả người đang cầm bút chì.',
+        words: ['她', '手里', '拿', '着', '铅笔', '。'], answer: '她手里拿着铅笔。',
+        explanation: '着 biểu thị trạng thái đang được duy trì, đặt ngay sau động từ.' },
+      { type: 'judge', context: 'Bạn xác nhận lại thông tin về việc ai đó đã từng đến Trung Quốc.',
+        sentence: '你不是去过中国吗？', isCorrect: true,
+        explanation: '不是……吗？ dùng xác nhận lại thông tin — câu này ĐÚNG.' }
     ],
     '/lessons/bai-14.html': [
       { pre: '你看', blank: '过', post: '那个电影吗？', options: ['过', '了', '着'], answer: 0,
@@ -1159,7 +1327,13 @@
         explanation: '过 biểu thị một hành động đã từng xảy ra, nhấn mạnh kinh nghiệm.' },
       { context: 'Bạn nhận xét chữ Hán tuy khó nhưng bạn vẫn thích viết.',
         pre: '', blank: '虽然', post: '汉字很难，但是我很喜欢写汉字。', options: ['虽然', '因为', '可能'], answer: 0,
-        explanation: '虽然 mở đầu vế nhượng bộ, đi cùng 但是 ở vế sau.' }
+        explanation: '虽然 mở đầu vế nhượng bộ, đi cùng 但是 ở vế sau.' },
+      { type: 'sort', context: 'Sắp xếp thành câu kể đã đến Trung Quốc một lần.',
+        words: ['我', '去', '过', '一', '次', '中国', '。'], answer: '我去过一次中国。',
+        explanation: '过 biểu thị kinh nghiệm, 次 (lượng từ số lần) đứng sau động từ+过.' },
+      { type: 'judge', context: 'Bạn nói về chữ Hán khó nhưng vẫn thích viết.',
+        sentence: '但是汉字很难，虽然我很喜欢写汉字。', isCorrect: false, correctVersion: '虽然汉字很难，但是我很喜欢写汉字。',
+        explanation: '虽然 phải mở đầu vế NHƯỢNG BỘ trước, 但是 mở đầu vế KHẲNG ĐỊNH sau — không đảo ngược thứ tự hai liên từ.' }
     ],
     '/lessons/bai-15.html': [
       { pre: '今天阴，比昨天', blank: '更', post: '冷。', options: ['更', '太', '真'], answer: 0,
@@ -1173,7 +1347,13 @@
         explanation: '更 nhấn mạnh mức độ tăng thêm khi so sánh.' },
       { context: 'Bạn thông báo năm mới sắp đến gần.',
         pre: '新年', blank: '就要', post: '到了。', options: ['就要', '已经', '还'], answer: 0,
-        explanation: '就要...了 diễn tả một việc sắp xảy ra trong tương lai gần.' }
+        explanation: '就要...了 diễn tả một việc sắp xảy ra trong tương lai gần.' },
+      { type: 'sort', context: 'Sắp xếp thành câu thông báo năm mới sắp đến.',
+        words: ['新年', '就要', '到', '了', '。'], answer: '新年就要到了。',
+        explanation: '就要...了 diễn tả một việc sắp xảy ra trong tương lai gần.' },
+      { type: 'judge', context: 'Bạn so sánh thời tiết hôm nay lạnh hơn hôm qua.',
+        sentence: '今天比昨天冷更。', isCorrect: false, correctVersion: '今天比昨天更冷。',
+        explanation: '更 phải đứng NGAY TRƯỚC tính từ (冷), không đặt sau tính từ.' }
     ]
   };
 
@@ -1275,6 +1455,10 @@
     });
   }
 
+  var GR_TYPE_LABEL = {
+    mc: '✏️ Điền từ', sort: '🧩 Sắp xếp câu', judge: '⚖️ Đúng hay sai?'
+  };
+
   function renderGrammarExercise() {
     var wrap = $('#grContent');
     var items = GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || [];
@@ -1295,37 +1479,136 @@
 
     var total = items.length;
     var q = items[grQuiz.pos];
+    var type = q.type || 'mc';
     var segs = '';
     for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < grQuiz.pos ? ' is-done' : '') + '"></div>';
 
+    wrap.innerHTML =
+      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      '<div class="vp-quiz-counter">Câu ' + (grQuiz.pos + 1) + '/' + total + ' <span class="gr-type-badge">' + GR_TYPE_LABEL[type] + '</span></div>' +
+      '<div class="vp-quiz-card" id="grCard">' +
+        (q.context ? '<div class="gr-exercise-context">🗣️ ' + q.context + '</div>' : '') +
+        '<div id="grBody"></div>' +
+        '<div id="grExplain" style="margin-top:var(--space-4);font-size:0.9rem;color:var(--color-gray-600);"></div>' +
+        '<div id="grNextWrap"></div>' +
+      '</div>';
+
+    if (type === 'sort') renderGrSort(q);
+    else if (type === 'judge') renderGrJudge(q);
+    else renderGrMC(q);
+  }
+
+  function grFinishQuestion(isCorrect, explanation) {
+    if (isCorrect) grQuiz.score++;
+    $('#grExplain').textContent = '💡 ' + explanation;
+    var total = (GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || []).length;
+    var nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'btn btn-primary';
+    nextBtn.style.marginTop = 'var(--space-4)';
+    nextBtn.textContent = (grQuiz.pos + 1 < total) ? 'Câu tiếp theo →' : 'Xem kết quả';
+    nextBtn.addEventListener('click', function () {
+      grQuiz.pos++;
+      renderGrammarExercise();
+    });
+    $('#grNextWrap').appendChild(nextBtn);
+  }
+
+  function renderGrMC(q) {
+    var body = $('#grBody');
     var optionsHtml = q.options.map(function (opt, i) {
       return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + opt + '</button>';
     }).join('');
+    body.innerHTML =
+      '<div class="gr-exercise-sentence hanzi">' + q.pre + '<span class="blank">___</span>' + q.post + '</div>' +
+      '<div class="vp-quiz-options">' + optionsHtml + '</div>';
 
-    wrap.innerHTML =
-      '<div class="vp-quiz-progress">' + segs + '</div>' +
-      '<div class="vp-quiz-counter">Câu ' + (grQuiz.pos + 1) + '/' + total + '</div>' +
-      '<div class="vp-quiz-card">' +
-        (q.context ? '<div class="gr-exercise-context">🗣️ ' + q.context + '</div>' : '') +
-        '<div class="gr-exercise-sentence hanzi">' + q.pre + '<span class="blank">___</span>' + q.post + '</div>' +
-        '<div class="vp-quiz-options">' + optionsHtml + '</div>' +
-        '<div id="grExplain" style="margin-top:var(--space-4);font-size:0.9rem;color:var(--color-gray-600);"></div>' +
-      '</div>';
-
-    $all('.vp-option-btn', wrap).forEach(function (btn, i) {
+    $all('.vp-option-btn', body).forEach(function (btn, i) {
       btn.addEventListener('click', function () {
         var isCorrect = i === q.answer;
-        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+        $all('.vp-option-btn', body).forEach(function (b, j) {
           b.disabled = true;
           if (j === q.answer) b.classList.add('is-correct');
           else if (j === i) b.classList.add('is-wrong');
         });
-        $('#grExplain').textContent = '💡 ' + q.explanation;
-        if (isCorrect) grQuiz.score++;
-        setTimeout(function () {
-          grQuiz.pos++;
-          renderGrammarExercise();
-        }, 1800);
+        grFinishQuestion(isCorrect, q.explanation);
+      });
+    });
+  }
+
+  function renderGrSort(q) {
+    var body = $('#grBody');
+    var shuffled = shuffle(q.words.slice());
+    var placed = [];
+
+    body.innerHTML =
+      '<p style="color:var(--color-gray-600);font-size:0.88rem;margin-bottom:var(--space-3);">Sắp xếp các từ dưới đây thành câu đúng:</p>' +
+      '<div class="sg-bank" id="grBank"></div>' +
+      '<div class="sg-answer" id="grAnswer"></div>' +
+      '<button type="button" class="btn btn-primary" id="grCheckSort" style="margin-top:var(--space-4);">Kiểm tra</button>';
+
+    function renderBank() {
+      var bankEl = $('#grBank');
+      bankEl.innerHTML = shuffled.map(function (w, wi) {
+        var isPunc = /^[。！？，、；：]$/.test(w);
+        var used = placed.some(function (p) { return p.wi === wi; });
+        return '<span class="sg-chip' + (isPunc ? ' is-punc' : '') + (used ? ' is-used' : '') + '" data-wi="' + wi + '">' + w + '</span>';
+      }).join('');
+      $all('.sg-chip', bankEl).forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          if (chip.classList.contains('is-used')) return;
+          var wi = parseInt(chip.getAttribute('data-wi'), 10);
+          placed.push({ wi: wi, word: shuffled[wi] });
+          renderBank();
+          renderAnswer();
+        });
+      });
+    }
+    function renderAnswer() {
+      var answerEl = $('#grAnswer');
+      answerEl.innerHTML = placed.map(function (p) {
+        var isPunc = /^[。！？，、；：]$/.test(p.word);
+        return '<span class="sg-placed' + (isPunc ? ' is-punc' : '') + '" data-wi="' + p.wi + '">' + p.word + '</span>';
+      }).join('');
+      $all('.sg-placed', answerEl).forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var wi = parseInt(chip.getAttribute('data-wi'), 10);
+          placed = placed.filter(function (p) { return p.wi !== wi; });
+          renderBank();
+          renderAnswer();
+        });
+      });
+    }
+    renderBank();
+    renderAnswer();
+
+    $('#grCheckSort').addEventListener('click', function () {
+      var joined = placed.map(function (p) { return p.word; }).join('');
+      var isCorrect = joined === q.answer;
+      $('#grCard').classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+      this.disabled = true;
+      grFinishQuestion(isCorrect, isCorrect ? q.explanation : 'Đáp án đúng: "' + q.answer + '". ' + q.explanation);
+    });
+  }
+
+  function renderGrJudge(q) {
+    var body = $('#grBody');
+    body.innerHTML =
+      '<div class="gr-exercise-sentence hanzi">' + q.sentence + '</div>' +
+      '<div class="gr-judge-btns">' +
+        '<button type="button" class="btn btn-outline" data-judge="true">✓ Đúng</button>' +
+        '<button type="button" class="btn btn-outline" data-judge="false">✗ Sai</button>' +
+      '</div>';
+
+    $all('[data-judge]', body).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var picked = btn.getAttribute('data-judge') === 'true';
+        var isCorrect = picked === q.isCorrect;
+        $all('[data-judge]', body).forEach(function (b) { b.disabled = true; });
+        btn.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+        var exp = q.explanation;
+        if (!q.isCorrect && q.correctVersion) exp = 'Câu đúng: "' + q.correctVersion + '". ' + exp;
+        grFinishQuestion(isCorrect, exp);
       });
     });
   }

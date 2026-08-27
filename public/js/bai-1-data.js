@@ -240,13 +240,11 @@ var matchData = [
 
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE (Listening) — đề nghe THẬT từ HSK标准教程2 练习册 (Bài 1)
-// audioP1 = câu 1-10 (Phần 1 phán đoán đúng/sai đã chuyển thành điền khuyết + Phần 2 hội thoại điền khuyết)
-// audioP2 = câu 11-15 (Phần 3 nghe hội thoại, chọn đáp án đúng)
+// 1 file audio duy nhất chứa đủ cả câu 1-15 (Phần 1+2+3)
 // ══════════════════════════════════════════
 var listenData = {
   type: 'workbook',
-  audioP1: '/audio/bai-1/listen-p1.mp3',
-  audioP2: '/audio/bai-1/listen-p2.mp3',
+  audio: '/audio/bai-1/listen-full.mp3',
   dictation: [
     {num:1, lines:[
       {pre:'下午', blank:'他要踢足球', post:'。', py:'Xiàwǔ tā yào tī zúqiú.', vn:'Chiều nay anh ấy sẽ đi đá bóng.'},

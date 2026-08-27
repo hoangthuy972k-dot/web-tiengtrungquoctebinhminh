@@ -1944,13 +1944,29 @@
   }
 
   // Đề nghe thật lấy từ sách bài tập (workbook): audio thật (không phải TTS),
-  // câu 1-10 dạng điền khuyết (nghe rồi gõ từ còn thiếu, bấm xem đáp án mẫu),
-  // câu 11-15 dạng trắc nghiệm nghe hội thoại chọn đáp án đúng.
+  // câu 1-10 dạng điền khuyết (nghe rồi gõ từ còn thiếu, bấm xem đáp án mẫu —
+  // chấm đúng/sai ngay lúc bấm bằng cách so khớp với đáp án), câu 11-15 dạng
+  // trắc nghiệm nghe hội thoại chọn đáp án đúng. Tổng 15 câu được chấm điểm
+  // và lưu vào recordLessonScore để hiện trong màn "Kết quả cuối bài".
   var lpWorkbookScore = null;
+  var LP_WB_TOTAL = 15;
+
+  function lpWorkbookUpdateScore() {
+    var correct = 0;
+    Object.keys(lpWorkbookScore.dictCorrect).forEach(function (k) { if (lpWorkbookScore.dictCorrect[k]) correct++; });
+    Object.keys(lpWorkbookScore.mcCorrect).forEach(function (k) { if (lpWorkbookScore.mcCorrect[k]) correct++; });
+    var graded = Object.keys(lpWorkbookScore.dictCorrect).length + Object.keys(lpWorkbookScore.mcCorrect).length;
+    var scoreBox = $('#lpWbScore');
+    if (scoreBox) {
+      scoreBox.textContent = 'Điểm: ' + correct + '/' + LP_WB_TOTAL + ' đúng (đã làm ' + graded + '/' + LP_WB_TOTAL + ' câu)';
+    }
+    recordLessonScore(currentHubLesson, 'listen', { correct: correct, total: LP_WB_TOTAL });
+  }
+
   function renderListenWorkbook() {
     var wrap = $('#lpContent');
     var data = lpListenData;
-    if (!lpWorkbookScore) lpWorkbookScore = { mcDone: {} };
+    if (!lpWorkbookScore) lpWorkbookScore = { dictCorrect: {}, mcCorrect: {} };
 
     var dictationHtml = data.dictation.map(function (item) {
       var linesHtml = item.lines.map(function (line, li) {
@@ -1958,7 +1974,7 @@
         return '<div class="lp-dict-line">' +
           (line.speaker ? '<span class="lp-dict-speaker">' + line.speaker + '：</span>' : '') +
           '<span class="lp-dict-pre hanzi">' + line.pre + '</span>' +
-          '<input type="text" class="lp-dict-input" id="' + inputId + '" placeholder="…">' +
+          '<input type="text" class="lp-dict-input" id="' + inputId + '" data-num="' + item.num + '" data-li="' + li + '" placeholder="…">' +
           '<span class="lp-dict-post hanzi">' + line.post + '</span>' +
         '</div>';
       }).join('');
@@ -1970,7 +1986,7 @@
         '</div>';
       }).join('');
       return '<div class="lp-dict-item">' +
-        '<div class="lp-dict-num">Câu ' + item.num + '</div>' +
+        '<div class="lp-dict-num">Câu ' + item.num + ' <span class="lp-dict-result" data-result-num="' + item.num + '"></span></div>' +
         linesHtml +
         '<button type="button" class="lp-dict-reveal" data-reveal-num="' + item.num + '">Xem đáp án</button>' +
         '<div class="lp-dict-answer" data-answer-num="' + item.num + '" hidden>' + answerHtml + '</div>' +
@@ -1989,32 +2005,50 @@
     }).join('');
 
     wrap.innerHTML =
+      '<div class="lp-wb-audio-pin">' +
+        '<div class="lp-wb-audio-pin-label">🎧 Audio đề nghe · Câu 1-15</div>' +
+        '<audio class="lp-wb-audio" controls preload="none" src="' + data.audio + '"></audio>' +
+        '<div class="lp-wb-score" id="lpWbScore">Điểm: 0/' + LP_WB_TOTAL + ' đúng (đã làm 0/' + LP_WB_TOTAL + ' câu)</div>' +
+      '</div>' +
       '<div class="lp-wb-part">' +
         '<div class="lp-wb-part-title">Phần 1-2 · Câu 1-10 — Nghe và điền vào chỗ trống</div>' +
-        '<audio class="lp-wb-audio" controls preload="none" src="' + data.audioP1 + '"></audio>' +
         dictationHtml +
       '</div>' +
       '<div class="lp-wb-part">' +
         '<div class="lp-wb-part-title">Phần 3 · Câu 11-15 — Nghe hội thoại, chọn đáp án đúng</div>' +
-        '<audio class="lp-wb-audio" controls preload="none" src="' + data.audioP2 + '"></audio>' +
         mcHtml +
       '</div>';
 
     $all('.lp-dict-reveal', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {
         var num = btn.getAttribute('data-reveal-num');
+        if (lpWorkbookScore.dictCorrect[num] !== undefined) return;
+        var item = data.dictation.find(function (d) { return String(d.num) === num; });
+        var allCorrect = true;
+        item.lines.forEach(function (line, li) {
+          var input = $('#lpDictInput-' + num + '-' + li, wrap);
+          var val = (input.value || '').trim();
+          var isLineCorrect = val === line.blank;
+          if (!isLineCorrect) allCorrect = false;
+          input.disabled = true;
+          input.classList.add(isLineCorrect ? 'is-correct' : 'is-wrong');
+        });
+        lpWorkbookScore.dictCorrect[num] = allCorrect;
+        $('[data-result-num="' + num + '"]', wrap).textContent = allCorrect ? '✓ Đúng' : '✗ Sai';
+        $('[data-result-num="' + num + '"]', wrap).classList.add(allCorrect ? 'is-correct' : 'is-wrong');
         $('[data-answer-num="' + num + '"]', wrap).hidden = false;
         btn.disabled = true;
+        lpWorkbookUpdateScore();
       });
     });
 
     $all('.lp-mc-opt', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {
         var num = btn.getAttribute('data-mc-num');
-        if (lpWorkbookScore.mcDone[num]) return;
-        lpWorkbookScore.mcDone[num] = true;
+        if (lpWorkbookScore.mcCorrect[num] !== undefined) return;
         var item = data.mc.find(function (m) { return String(m.num) === num; });
         var oi = parseInt(btn.getAttribute('data-oi'), 10);
+        lpWorkbookScore.mcCorrect[num] = (oi === item.ans);
         $all('.lp-mc-opt[data-mc-num="' + num + '"]', wrap).forEach(function (b, i) {
           b.disabled = true;
           if (i === item.ans) b.classList.add('is-correct');
@@ -2023,9 +2057,7 @@
         var explainEl = $('[data-explain-num="' + num + '"]', wrap);
         explainEl.hidden = false;
         explainEl.textContent = '💡 ' + item.explain;
-        if (Object.keys(lpWorkbookScore.mcDone).length === data.mc.length) {
-          recordLessonScore(currentHubLesson, 'listen', { done: true });
-        }
+        lpWorkbookUpdateScore();
       });
     });
   }

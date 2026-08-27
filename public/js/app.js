@@ -2,11 +2,11 @@
   'use strict';
 
   var STORAGE_KEYS = {
-    user: 'hyv_user',
     visitedLessons: 'hyv_visited_lessons',
     studyDays: 'hyv_study_days',
     pinyinVisible: 'hyv_pinyin_visible',
-    lessonScores: 'hyv_lesson_scores'
+    lessonScores: 'hyv_lesson_scores',
+    auth: 'hyv_auth'
   };
 
   // Diem that theo tung phan cua tung bai hoc, ghi lai khi hoc sinh hoan thanh
@@ -17,6 +17,7 @@
     ls[section] = data;
     all[lesson.fullPageUrl] = ls;
     writeJSON(STORAGE_KEYS.lessonScores, all);
+    syncProgressToServer();
   }
 
   function recordGameScore(lesson, subtype, correct, total) {
@@ -27,11 +28,51 @@
     ls.game = game;
     all[lesson.fullPageUrl] = ls;
     writeJSON(STORAGE_KEYS.lessonScores, all);
+    syncProgressToServer();
   }
 
   function getLessonScores(lesson) {
     var all = readJSON(STORAGE_KEYS.lessonScores, {});
     return all[lesson.fullPageUrl] || {};
+  }
+
+  // Gui tong diem THAT (tinh tu du lieu that da luu) len server de xep
+  // hang — chi khi hoc sinh da dang nhap that (co token). Khong lam gi
+  // neu chua dang nhap (diem van luu local binh thuong).
+  function syncProgressToServer() {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    if (!auth || !auth.token) return;
+
+    var allScores = readJSON(STORAGE_KEYS.lessonScores, {});
+    var totalCorrect = 0, totalQuestions = 0, lessonsDone = 0;
+    Object.keys(allScores).forEach(function (lessonUrl) {
+      var sections = allScores[lessonUrl];
+      var hasAny = false;
+      Object.keys(sections).forEach(function (key) {
+        var val = sections[key];
+        if (key === 'game') {
+          Object.keys(val).forEach(function (sub) {
+            totalCorrect += val[sub].correct;
+            totalQuestions += val[sub].total;
+            hasAny = true;
+          });
+        } else if (typeof val.total === 'number') {
+          totalCorrect += val.correct;
+          totalQuestions += val.total;
+          hasAny = true;
+        } else if (val.done) {
+          hasAny = true;
+        }
+      });
+      if (hasAny) lessonsDone++;
+    });
+    var streak = computeStreak(readJSON(STORAGE_KEYS.studyDays, []));
+
+    fetch('/api/scores/sync', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
+      body: JSON.stringify({ totalCorrect: totalCorrect, totalQuestions: totalQuestions, streak: streak, lessonsDone: lessonsDone })
+    }).catch(function () {});
   }
 
   /* ---------------- Utilities ---------------- */
@@ -191,6 +232,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -207,6 +249,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -307,6 +350,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -530,6 +574,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -698,6 +743,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -1441,6 +1487,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -1668,6 +1715,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
     $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -1758,6 +1806,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     lpMode = 'meaning';
@@ -1900,6 +1949,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#spTabs').innerHTML = '';
     $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -2186,6 +2236,7 @@
     $('#gamePractice').hidden = false;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     gpMode = null;
@@ -2539,6 +2590,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = false;
     $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
     $('#tpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     tpDirection = 'vi2zh';
@@ -2649,6 +2701,7 @@
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = false;
+    $('#leaderboard').hidden = true;
 
     renderResultsContent(lesson);
     $('#resultsPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2739,6 +2792,73 @@
     $('#rpGoReview').addEventListener('click', showDashboard);
   }
 
+  /* ---------------- Leaderboard (real ranking across registered students) ---------------- */
+
+  function showLeaderboard() {
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = false;
+
+    var content = $('#leaderboardContent');
+    content.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải bảng xếp hạng...</p>';
+
+    fetch('/api/leaderboard')
+      .then(function (r) { return r.json(); })
+      .then(function (data) { renderLeaderboard(data.leaderboard || []); })
+      .catch(function () {
+        content.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được bảng xếp hạng, thử lại sau.</p>';
+      });
+
+    $('#leaderboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderLeaderboard(rows) {
+    var content = $('#leaderboardContent');
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var myEmail = auth && auth.user ? auth.user.email : null;
+
+    if (!rows.length) {
+      content.innerHTML =
+        '<div class="lb-empty">' +
+          '<p>Chưa có ai trên bảng xếp hạng.</p>' +
+          '<p style="color:var(--color-gray-500);font-size:0.9rem;">Đăng ký tài khoản và hoàn thành bài tập để trở thành người đầu tiên!</p>' +
+        '</div>';
+      return;
+    }
+
+    var medalFor = function (rank) {
+      if (rank === 1) return '🥇';
+      if (rank === 2) return '🥈';
+      if (rank === 3) return '🥉';
+      return '#' + rank;
+    };
+
+    content.innerHTML =
+      '<div class="lb-list">' +
+      rows.map(function (row) {
+        var isMe = myEmail && row.name && auth.user.name === row.name && auth.user.level === row.level;
+        var pct = row.totalQuestions ? Math.round(row.totalCorrect / row.totalQuestions * 100) : 0;
+        return '<div class="lb-row' + (isMe ? ' is-me' : '') + '">' +
+          '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
+          '<span class="lb-name">' + row.name + (isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
+          '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>' +
+          '<span class="lb-streak">🔥 ' + row.streak + '</span>' +
+          '<span class="lb-score">' + row.totalCorrect + '/' + row.totalQuestions + ' (' + pct + '%)</span>' +
+        '</div>';
+      }).join('') +
+      '</div>';
+  }
+
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
 
   var WEEKDAY_LABELS = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
@@ -2773,6 +2893,8 @@
     return streak;
   }
 
+  var STREAK_MILESTONES = [3, 7, 14, 30, 60, 100, 200, 365];
+
   function renderStreak() {
     var studyDays = readJSON(STORAGE_KEYS.studyDays, []);
     var streak = computeStreak(studyDays);
@@ -2793,6 +2915,22 @@
         '<span class="dash-streak-dot' + (isDone ? ' is-done' : '') + (isToday ? ' is-today' : '') + '"></span>';
       wrap.appendChild(el);
     });
+
+    var reached = null;
+    var next = null;
+    STREAK_MILESTONES.forEach(function (m) {
+      if (streak >= m) reached = m;
+      if (next === null && streak < m) next = m;
+    });
+    var badgeEl = $('#streakBadge');
+    if (reached) {
+      badgeEl.innerHTML = '<span class="streak-badge-pill">🏅 Đã đạt mốc ' + reached + ' ngày!</span>' +
+        (next ? '<span class="streak-badge-next">Còn ' + (next - streak) + ' ngày nữa để đạt mốc ' + next + ' ngày</span>' : '');
+    } else if (next) {
+      badgeEl.innerHTML = '<span class="streak-badge-next">Học ' + next + ' ngày liên tiếp để nhận huy hiệu đầu tiên!</span>';
+    } else {
+      badgeEl.innerHTML = '';
+    }
   }
 
   /* ---------------- Stat tiles (real progress recorded from lesson pages) ---------------- */
@@ -2898,44 +3036,77 @@
       });
     });
 
-    function setLoggedInUser(name, email, level) {
-      var existing = readJSON(STORAGE_KEYS.user, {});
-      writeJSON(STORAGE_KEYS.user, { name: name, email: email, level: level || existing.level });
+    function setSession(token, user) {
+      writeJSON(STORAGE_KEYS.auth, { token: token, user: user });
       renderUserChip();
+      syncProgressToServer();
     }
 
     function renderUserChip() {
-      var user = readJSON(STORAGE_KEYS.user, null);
-      var name = user ? (user.name || user.email) : 'Học sinh Demo';
+      var auth = readJSON(STORAGE_KEYS.auth, null);
+      var name = auth && auth.user ? (auth.user.name || auth.user.email) : 'Khách';
       $('#userName').textContent = name;
       $('#userAvatar').textContent = name.trim().charAt(0).toUpperCase();
     }
 
+    function setFormError(form, message) {
+      var errEl = form.querySelector('.form-error');
+      if (!errEl) {
+        errEl = document.createElement('p');
+        errEl.className = 'form-error';
+        form.insertBefore(errEl, form.querySelector('button[type="submit"]'));
+      }
+      errEl.textContent = message || '';
+      errEl.hidden = !message;
+    }
+
     $('#loginPanel').addEventListener('submit', function (e) {
       e.preventDefault();
+      var form = e.target;
       var email = $('#loginEmail').value.trim();
-      if (!email) return;
-      setLoggedInUser(email.split('@')[0], email);
-      closeModal();
-      showToast('Đăng nhập thành công (chế độ demo).');
+      var password = $('#loginPassword').value;
+      setFormError(form, '');
+      fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, password: password })
+      }).then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+        .then(function (res) {
+          if (!res.ok) { setFormError(form, res.data.error || 'Đăng nhập thất bại.'); return; }
+          setSession(res.data.token, res.data.user);
+          closeModal();
+          showToast('Đăng nhập thành công! Chào mừng trở lại, ' + res.data.user.name + '.');
+        })
+        .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });
     });
 
     $('#registerPanel').addEventListener('submit', function (e) {
       e.preventDefault();
+      var form = e.target;
       var name = $('#registerName').value.trim();
       var email = $('#registerEmail').value.trim();
+      var password = $('#registerPassword').value;
       var level = $('#registerLevel').value;
-      if (!name || !email) return;
-      setLoggedInUser(name, email, level);
-      closeModal();
-      showToast('Tạo tài khoản thành công! Chào mừng ' + name + '.');
+      setFormError(form, '');
+      fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, password: password, level: level })
+      }).then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+        .then(function (res) {
+          if (!res.ok) { setFormError(form, res.data.error || 'Đăng ký thất bại.'); return; }
+          setSession(res.data.token, res.data.user);
+          closeModal();
+          showToast('Tạo tài khoản thành công! Chào mừng ' + res.data.user.name + '.');
+        })
+        .catch(function () { setFormError(form, 'Không kết nối được máy chủ, thử lại sau.'); });
     });
 
     sidebarUserBtn.addEventListener('click', function () {
-      var user = readJSON(STORAGE_KEYS.user, null);
-      if (user) {
-        if (!window.confirm('Đăng xuất khỏi tài khoản demo?')) return;
-        localStorage.removeItem(STORAGE_KEYS.user);
+      var auth = readJSON(STORAGE_KEYS.auth, null);
+      if (auth) {
+        if (!window.confirm('Đăng xuất khỏi tài khoản?')) return;
+        localStorage.removeItem(STORAGE_KEYS.auth);
         renderUserChip();
         showToast('Đã đăng xuất.');
       } else {
@@ -2944,6 +3115,7 @@
     });
 
     renderUserChip();
+    syncProgressToServer();
   }
 
   /* ---------------- Init ---------------- */
@@ -3037,6 +3209,10 @@
     });
     $all('a[href="#home"]').forEach(function (link) {
       link.addEventListener('click', showDashboard);
+    });
+    $('#navLeaderboard').addEventListener('click', function (e) {
+      e.preventDefault();
+      showLeaderboard();
     });
     $('#ctaStart').addEventListener('click', function () { selectLevel(practiceLevel); });
     $('#ctaStreak').addEventListener('click', function () { selectLevel(practiceLevel); });

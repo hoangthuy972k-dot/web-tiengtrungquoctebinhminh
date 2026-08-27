@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const express = require('express');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -55,6 +56,147 @@ app.use(express.static(PUBLIC_DIR, { extensions: ['html'] }));
 // without changing the frontend contract.
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', time: new Date().toISOString() });
+});
+
+// ══════════════════════════════════════════════════════════════════
+// Tai khoan hoc sinh THAT + Bang xep hang — luu vao file JSON tren
+// server (khong co database rieng, day la giai phap don gian nhat
+// khong can them dependency). KHONG chua du lieu gia — bang xep hang
+// chi hien thi hoc sinh da that su dang ky va nop diem.
+// ══════════════════════════════════════════════════════════════════
+const DATA_DIR = path.join(__dirname, 'data');
+const USERS_FILE = path.join(DATA_DIR, 'users.json');
+const SCORES_FILE = path.join(DATA_DIR, 'scores.json');
+
+function ensureDataDir() {
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+function readJsonFile(file) {
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (e) {
+    return null;
+  }
+}
+function writeJsonFile(file, data) {
+  ensureDataDir();
+  fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8');
+}
+function loadUsers() {
+  return readJsonFile(USERS_FILE) || [];
+}
+function saveUsers(users) {
+  writeJsonFile(USERS_FILE, users);
+}
+function loadScores() {
+  return readJsonFile(SCORES_FILE) || {};
+}
+function saveScores(scores) {
+  writeJsonFile(SCORES_FILE, scores);
+}
+
+function hashPassword(password, salt) {
+  return crypto.scryptSync(password, salt, 64).toString('hex');
+}
+function makeToken() {
+  return crypto.randomBytes(24).toString('hex');
+}
+
+function requireAuth(req, res, next) {
+  const header = req.headers.authorization || '';
+  const token = header.startsWith('Bearer ') ? header.slice(7) : null;
+  if (!token) return res.status(401).json({ error: 'Chưa đăng nhập.' });
+  const users = loadUsers();
+  const user = users.find((u) => u.sessionToken === token);
+  if (!user) return res.status(401).json({ error: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.' });
+  req.user = user;
+  next();
+}
+
+function publicUser(user) {
+  return { id: user.id, name: user.name, email: user.email, level: user.level };
+}
+
+app.post('/api/auth/register', (req, res) => {
+  const name = typeof req.body?.name === 'string' ? req.body.name.trim() : '';
+  const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
+  const password = typeof req.body?.password === 'string' ? req.body.password : '';
+  const level = typeof req.body?.level === 'string' ? req.body.level : 'hsk1';
+  if (!name || !email || !password || password.length < 4) {
+    return res.status(400).json({ error: 'Thiếu họ tên, email hoặc mật khẩu (tối thiểu 4 ký tự).' });
+  }
+  const users = loadUsers();
+  if (users.some((u) => u.email === email)) {
+    return res.status(409).json({ error: 'Email này đã được đăng ký.' });
+  }
+  const salt = crypto.randomBytes(16).toString('hex');
+  const user = {
+    id: crypto.randomUUID(),
+    name,
+    email,
+    level,
+    passwordSalt: salt,
+    passwordHash: hashPassword(password, salt),
+    sessionToken: makeToken(),
+    createdAt: new Date().toISOString(),
+  };
+  users.push(user);
+  saveUsers(users);
+  res.json({ token: user.sessionToken, user: publicUser(user) });
+});
+
+app.post('/api/auth/login', (req, res) => {
+  const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
+  const password = typeof req.body?.password === 'string' ? req.body.password : '';
+  if (!email || !password) return res.status(400).json({ error: 'Thiếu email hoặc mật khẩu.' });
+  const users = loadUsers();
+  const user = users.find((u) => u.email === email);
+  if (!user || hashPassword(password, user.passwordSalt) !== user.passwordHash) {
+    return res.status(401).json({ error: 'Email hoặc mật khẩu không đúng.' });
+  }
+  user.sessionToken = makeToken();
+  saveUsers(users);
+  res.json({ token: user.sessionToken, user: publicUser(user) });
+});
+
+app.get('/api/auth/me', requireAuth, (req, res) => {
+  res.json({ user: publicUser(req.user) });
+});
+
+// Hoc sinh gui len tong diem THAT (tinh san o client tu du lieu that
+// da luu), server chi luu lai de xep hang — khong tinh toan lai tu dau.
+app.post('/api/scores/sync', requireAuth, (req, res) => {
+  const totalCorrect = Number(req.body?.totalCorrect) || 0;
+  const totalQuestions = Number(req.body?.totalQuestions) || 0;
+  const streak = Number(req.body?.streak) || 0;
+  const lessonsDone = Number(req.body?.lessonsDone) || 0;
+  const scores = loadScores();
+  scores[req.user.id] = {
+    name: req.user.name,
+    level: req.user.level,
+    totalCorrect: Math.max(0, Math.round(totalCorrect)),
+    totalQuestions: Math.max(0, Math.round(totalQuestions)),
+    streak: Math.max(0, Math.round(streak)),
+    lessonsDone: Math.max(0, Math.round(lessonsDone)),
+    updatedAt: new Date().toISOString(),
+  };
+  saveScores(scores);
+  res.json({ ok: true });
+});
+
+app.get('/api/leaderboard', (req, res) => {
+  const scores = loadScores();
+  const rows = Object.keys(scores).map((userId) => scores[userId]);
+  rows.sort((a, b) => b.totalCorrect - a.totalCorrect || b.streak - a.streak);
+  const top = rows.slice(0, 50).map((row, i) => ({
+    rank: i + 1,
+    name: row.name,
+    level: row.level,
+    totalCorrect: row.totalCorrect,
+    totalQuestions: row.totalQuestions,
+    streak: row.streak,
+  }));
+  res.json({ leaderboard: top });
 });
 
 // Proxies Google Cloud Text-to-Speech so the API key never reaches the

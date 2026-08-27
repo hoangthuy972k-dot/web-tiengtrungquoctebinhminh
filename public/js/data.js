@@ -542,6 +542,42 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-3.html'
+      },
+      {
+        id: 'hsk1v3-l4',
+        number: 4,
+        title: 'Chị có hai con',
+        titleHanzi: '我有两个孩子',
+        titlePinyin: 'Wǒ yǒu liǎng gè háizi',
+        topic: 'Gia đình & tuổi tác',
+        vocabCount: 21,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1v3-bai-4.html'
+      },
+      {
+        id: 'hsk1v3-l5',
+        number: 5,
+        title: 'Hôm nay anh được nghỉ',
+        titleHanzi: '今天我休息',
+        titlePinyin: 'Jīntiān wǒ xiūxi',
+        topic: 'Ngày tháng & sở thích, kỹ năng',
+        vocabCount: 22,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-5.html'
+      },
+      {
+        id: 'hsk1v3-l6',
+        number: 6,
+        title: 'Số điện thoại di động của bạn là bao nhiêu?',
+        titleHanzi: '你的手机号是多少？',
+        titlePinyin: 'Nǐ de shǒujīhào shì duōshao?',
+        topic: 'Số điện thoại, mua sắm & ăn uống',
+        vocabCount: 23,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-6.html'
       }
     ],
     yct: [

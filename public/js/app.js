@@ -3055,7 +3055,7 @@
   // Tong noi dung THAT cua toan bo nen tang (khong phai so bai nguoi dung da xem) —
   // tinh truc tiep tu du lieu that: HSK1 15 bai (164 tu, 182 vi du) + HSK2 15 bai
   // (172 tu, 516 vi du) + YCT 11 bai (100 tu, 101 vi du). Cap nhat lai neu them noi dung.
-  var PLATFORM_TOTALS = { levels: 5, lessons: 45, vocab: 506, examples: 921 };
+  var PLATFORM_TOTALS = { levels: 5, lessons: 48, vocab: 572, examples: 1003 };
 
   function computeProgressStats() {
     return PLATFORM_TOTALS;

@@ -37,7 +37,7 @@
         <div class="app-nav-submenu is-open" id="levelsSubmenu"></div>
       </div>
 
-      <a href="#practice" class="app-nav-item">
+      <a href="#home" class="app-nav-item">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         Ôn tập
       </a>
@@ -103,17 +103,13 @@
       <div class="dash-stat-tiles" id="statTiles"></div>
     </section>
 
-    <!-- PRACTICE (lộ trình bài học, mở trang đầy đủ khi bấm vào) -->
-    <section class="section section-alt" id="practice" style="padding: 0; background: transparent;">
-      <div class="section-head">
-        <div>
-          <p class="section-eyebrow">Bài tập thực hành</p>
-          <h2>Luyện tập để ghi nhớ lâu hơn</h2>
-          <p>Chọn cấp độ rồi bấm vào một bài để mở trang học đầy đủ: khởi động, từ mới, thẻ nhớ, ngữ pháp, hội thoại và bài tập tương tác.</p>
-        </div>
-      </div>
-      <div class="lesson-tabs" id="lessonListTabs" style="margin-bottom:20px;"></div>
-      <div class="lesson-list" id="lessonList"></div>
+    <section class="dash-section" id="levelDetail" hidden>
+      <button type="button" class="level-detail-back" id="levelDetailBack">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Chọn cấp độ khác
+      </button>
+      <h1 id="levelDetailTitle">HSK 1</h1>
+      <div class="lesson-list" id="levelDetailList"></div>
     </section>
 
     <footer class="app-footer" id="footer" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-gray-200); color: var(--color-gray-600); font-size: 0.88rem;">

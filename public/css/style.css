@@ -245,8 +245,7 @@ button {
   width: var(--sidebar-w);
   display: flex;
   flex-direction: column;
-  background: var(--color-white);
-  border-right: 1px solid var(--color-gray-200);
+  background: linear-gradient(180deg, var(--color-red-600), var(--color-red-700));
   padding: var(--space-5) var(--space-4);
   position: fixed;
   top: 0;
@@ -277,7 +276,7 @@ button {
   gap: var(--space-2);
   font-weight: 800;
   font-size: 1.15rem;
-  color: var(--color-red-600);
+  color: var(--color-white);
   text-decoration: none;
   padding: var(--space-2);
   margin-bottom: var(--space-5);
@@ -287,8 +286,8 @@ button {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, var(--color-red-600), var(--color-red-700));
-  color: var(--color-gold-400);
+  background: var(--color-white);
+  color: var(--color-red-600);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,7 +314,7 @@ button {
   border-radius: var(--radius-md);
   border: none;
   background: transparent;
-  color: var(--color-gray-700);
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 600;
   font-size: 0.94rem;
   text-decoration: none;
@@ -325,11 +324,12 @@ button {
 }
 
 .app-nav-item:hover {
-  background: var(--color-gray-100);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
 }
 
 .app-nav-item.is-active {
-  background: var(--color-red-50);
+  background: var(--color-white);
   color: var(--color-red-600);
 }
 
@@ -345,7 +345,7 @@ button {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-gray-400);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .app-nav-expand .app-nav-chevron {
@@ -379,7 +379,7 @@ button {
   border-radius: var(--radius-sm);
   border: none;
   background: transparent;
-  color: var(--color-gray-700);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 600;
   font-size: 0.88rem;
   cursor: pointer;
@@ -388,12 +388,13 @@ button {
 }
 
 .app-nav-subitem:hover {
-  background: var(--color-gray-100);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
 }
 
 .app-nav-subitem.is-active {
-  color: var(--color-gray-900);
-  background: var(--color-gray-100);
+  color: var(--color-red-600);
+  background: var(--color-white);
 }
 
 .app-nav-dot {
@@ -416,7 +417,7 @@ button {
   background: transparent;
   padding: var(--space-3);
   margin-top: var(--space-4);
-  border-top: 1px solid var(--color-gray-100);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   cursor: pointer;
   text-align: left;
   font-family: inherit;
@@ -424,7 +425,7 @@ button {
 }
 
 .app-sidebar-user:hover {
-  background: var(--color-gray-100);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .app-sidebar-user .avatar {
@@ -449,12 +450,12 @@ button {
 
 .app-sidebar-user-info strong {
   font-size: 0.92rem;
-  color: var(--color-gray-900);
+  color: var(--color-white);
 }
 
 .app-sidebar-user-info span {
   font-size: 0.78rem;
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .app-scrim {
@@ -954,9 +955,9 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-red-600), var(--color-red-700));
-  color: var(--color-white);
+  border-radius: var(--radius-md);
+  background: var(--color-gold-50);
+  color: #8a5a00;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -1000,6 +1001,48 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .lesson-card-arrow {
   flex-shrink: 0;
   color: var(--color-red-600);
+}
+
+.lesson-card-progress {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gray-100);
+  color: var(--color-gray-500);
+  white-space: nowrap;
+}
+
+.lesson-card-progress.is-done {
+  background: var(--color-green-50);
+  color: var(--color-green-600);
+}
+
+/* ---------- Level detail view ---------- */
+.level-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: none;
+  background: transparent;
+  color: var(--color-gray-600);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: var(--space-2) 0;
+  margin-bottom: var(--space-3);
+  font-family: inherit;
+}
+
+.level-detail-back:hover {
+  color: var(--color-red-600);
+}
+
+#levelDetailTitle {
+  margin: 0 0 var(--space-5);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
 }
 
 /* ---------- Footer ---------- */

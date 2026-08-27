@@ -129,11 +129,12 @@
           return;
         }
         selectLevel(id);
-        document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
       });
       grid.appendChild(card);
     });
   }
+
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk2: 'HSK 2', hsk3: 'HSK 3', yct: 'YCT 1' };
 
   function selectLevel(id) {
     if (!READY_LEVELS[id]) {
@@ -143,46 +144,43 @@
     }
     practiceLevel = id;
     renderLevelSubmenu();
-    renderPracticeLevelTabs();
-    renderLessonList();
+    showLevelDetail(id);
   }
 
-  /* ---------------- Practice level tabs ---------------- */
+  /* ---------------- View toggle: dashboard <-> level detail ---------------- */
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk2: 'HSK 2', yct: 'YCT' };
+  function showDashboard() {
+    $('#home').hidden = false;
+    $('#levelDetail').hidden = true;
+  }
 
-  function renderPracticeLevelTabs() {
-    var wrap = $('#lessonListTabs');
-    if (!wrap) return;
-    var levels = Object.keys(READY_LEVELS).filter(function (id) { return READY_LEVELS[id]; });
-    wrap.innerHTML = '';
-    levels.forEach(function (id) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'lesson-tab' + (id === practiceLevel ? ' active' : '');
-      btn.textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
-      btn.addEventListener('click', function () { selectLevel(id); });
-      wrap.appendChild(btn);
-    });
+  function showLevelDetail(id) {
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = false;
+    $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
+    renderLessonList(id);
+    $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   /* ---------------- Lesson list (links out to standalone lesson pages) ---------------- */
 
-  function renderLessonList() {
-    var wrap = $('#lessonList');
+  function renderLessonList(id) {
+    var wrap = $('#levelDetailList');
     if (!wrap) return;
-    var lessons = (APP_DATA.lessons && APP_DATA.lessons[practiceLevel]) || [];
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[id]) || [];
+    var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
     wrap.innerHTML = '';
 
     lessons.forEach(function (lesson) {
+      var isDone = !!visited[lesson.fullPageUrl];
       var card = document.createElement('a');
       card.className = 'lesson-card-link';
       card.href = lesson.fullPageUrl;
 
       card.innerHTML =
-        '<span class="lesson-card-num">' + lesson.number + '</span>' +
+        '<span class="lesson-card-num">' + String(lesson.number).padStart(2, '0') + '</span>' +
         '<div class="lesson-card-body">' +
-          '<h3>' + lesson.title + '</h3>' +
+          '<h3>Bài ' + lesson.number + ': ' + lesson.title + '</h3>' +
           (lesson.titleHanzi ? '<span class="lesson-card-hanzi hanzi">' + lesson.titleHanzi + ' · ' + lesson.titlePinyin + '</span>' : '') +
           (lesson.topic ? '<p class="lesson-card-topic">' + lesson.topic + '</p>' : '') +
           '<div class="lesson-card-stats">' +
@@ -191,6 +189,7 @@
             (lesson.grammarCount ? '<span>📐 ' + lesson.grammarCount + ' điểm ngữ pháp</span>' : '') +
           '</div>' +
         '</div>' +
+        '<span class="lesson-card-progress' + (isDone ? ' is-done' : '') + '">' + (isDone ? '✓ Đã học' : 'Chưa học') + '</span>' +
         '<svg class="icon lesson-card-arrow" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
 
       wrap.appendChild(card);
@@ -385,18 +384,16 @@
     initSidebar();
     renderLevelCards();
     renderLevelSubmenu();
-    renderPracticeLevelTabs();
-    renderLessonList();
     renderStreak();
     renderStatTiles();
     initAuth();
 
-    $('#ctaStart').addEventListener('click', function () {
-      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
+    $('#levelDetailBack').addEventListener('click', showDashboard);
+    $all('a[href="#home"]').forEach(function (link) {
+      link.addEventListener('click', showDashboard);
     });
-    $('#ctaStreak').addEventListener('click', function () {
-      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
-    });
+    $('#ctaStart').addEventListener('click', function () { selectLevel(practiceLevel); });
+    $('#ctaStreak').addEventListener('click', function () { selectLevel(practiceLevel); });
   }
 
   document.addEventListener('DOMContentLoaded', init);

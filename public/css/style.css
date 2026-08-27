@@ -1,12 +1,14 @@
 :root {
-  --color-red-700: #b3121f;
-  --color-red-600: #d8202e;
-  --color-red-500: #e6303d;
-  --color-red-50: #fdeceb;
+  /* Do tram/gach (Terracotta) — mau chinh, may man nhung khong choi mat */
+  --color-red-700: #a83e28;
+  --color-red-600: #c84b31;
+  --color-red-500: #d66448;
+  --color-red-50: #fbeae5;
 
-  --color-gold-500: #f2b100;
-  --color-gold-400: #f7c948;
-  --color-gold-50: #fff7e0;
+  /* Vang cat/ho phach (Amber/Warm Gold) — mau phu */
+  --color-gold-500: #e58e26;
+  --color-gold-400: #ecb365;
+  --color-gold-50: #fdf2e0;
 
   --color-green-600: #1f9254;
   --color-green-500: #23a862;
@@ -31,19 +33,20 @@
   --color-orange-600: #ea580c;
   --color-orange-50: #fff1e6;
 
+  /* Nen kem am / Trang nga + van ban nau sam — giu do am, do mau tinh khiet */
   --color-white: #ffffff;
-  --color-gray-50: #faf9f8;
-  --color-gray-100: #f3f1ef;
-  --color-gray-200: #e6e2de;
-  --color-gray-400: #a39c95;
-  --color-gray-600: #6f6862;
-  --color-gray-800: #33302d;
-  --color-gray-900: #201e1c;
+  --color-gray-50: #f9f5eb;
+  --color-gray-100: #f3ece0;
+  --color-gray-200: #e6dcc9;
+  --color-gray-400: #a89a89;
+  --color-gray-600: #6b5d56;
+  --color-gray-800: #4a3e3d;
+  --color-gray-900: #2b2420;
 
   --color-success: #1f9254;
   --color-success-bg: #e8f7ef;
-  --color-error: #d8202e;
-  --color-error-bg: #fdeceb;
+  --color-error: #c84b31;
+  --color-error-bg: #fbeae5;
 
   --font-latin: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-hanzi: 'Noto Sans SC', var(--font-latin);
@@ -104,7 +107,14 @@ body {
   margin: 0;
   font-family: var(--font-latin);
   color: var(--color-gray-900);
-  background: var(--color-gray-50);
+  background-color: var(--color-gray-50);
+  background-image:
+    url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 240 120%22><path d=%22M20,90 C20,70 40,70 45,80 C45,60 70,60 75,75 C75,50 105,50 110,70 C115,45 150,45 150,70 C160,55 185,60 180,80 C195,75 205,90 190,98 C195,110 175,115 165,105 C155,118 130,115 128,102 C110,115 85,110 88,98 C70,110 45,105 50,92 C35,102 15,98 20,90 Z%22 fill=%22none%22 stroke=%22%23c84b31%22 stroke-width=%223%22 opacity=%220.07%22/></svg>"),
+    url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><g fill=%22none%22 stroke=%22%23e58e26%22 stroke-width=%222.5%22 opacity=%220.1%22><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(72 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(144 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(216 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(288 50 50)%22/><circle cx=%2250%22 cy=%2250%22 r=%224%22/></g></svg>");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom -40px right -40px, top 60px left -20px;
+  background-size: 420px, 160px;
+  background-attachment: fixed, fixed;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -260,7 +270,13 @@ button {
   width: var(--sidebar-w);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, var(--color-red-600), var(--color-red-700));
+  background-color: var(--color-red-600);
+  background-image:
+    linear-gradient(180deg, var(--color-red-600), var(--color-red-700)),
+    url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 240 120%22><path d=%22M20,90 C20,70 40,70 45,80 C45,60 70,60 75,75 C75,50 105,50 110,70 C115,45 150,45 150,70 C160,55 185,60 180,80 C195,75 205,90 190,98 C195,110 175,115 165,105 C155,118 130,115 128,102 C110,115 85,110 88,98 C70,110 45,105 50,92 C35,102 15,98 20,90 Z%22 fill=%22none%22 stroke=%22%23ecb365%22 stroke-width=%223%22 opacity=%220.16%22/></svg>");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, bottom -10px center;
+  background-size: cover, 280px;
   padding: var(--space-5) var(--space-4);
   position: fixed;
   top: 0;
@@ -581,6 +597,26 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   justify-content: space-between;
   gap: var(--space-5);
   min-height: 220px;
+}
+
+.dash-cta-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -30px;
+  right: -30px;
+  width: 200px;
+  height: 200px;
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><g fill=%22none%22 stroke=%22%23ecb365%22 stroke-width=%222.5%22 opacity=%220.22%22><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(72 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(144 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(216 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(288 50 50)%22/><circle cx=%2250%22 cy=%2250%22 r=%224%22/></g></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.dash-cta-text,
+.dash-cta-card-visual {
+  position: relative;
+  z-index: 1;
 }
 
 .dash-cta-text h2 {

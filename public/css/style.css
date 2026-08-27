@@ -2316,6 +2316,149 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   color: var(--color-red-600);
 }
 
+/* ---------- Listen workbook (de nghe that tu sach bai tap, audio that) ---------- */
+.lp-wb-part {
+  margin-bottom: var(--space-6);
+}
+
+.lp-wb-part-title {
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-3);
+}
+
+.lp-wb-audio {
+  width: 100%;
+  margin-bottom: var(--space-4);
+}
+
+.lp-dict-item, .lp-mc-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.lp-dict-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-red-600);
+  margin-bottom: var(--space-2);
+}
+
+.lp-dict-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+}
+
+.lp-dict-speaker {
+  font-weight: 700;
+  color: var(--color-gray-600);
+}
+
+.lp-dict-input {
+  min-width: 110px;
+  flex: 1 1 110px;
+  border: none;
+  border-bottom: 2px solid var(--color-gold-400);
+  background: var(--color-gold-50);
+  padding: 4px 8px;
+  font-family: var(--font-hanzi);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.lp-dict-input:focus {
+  outline: none;
+  border-color: var(--color-red-500);
+}
+
+.lp-dict-reveal {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: var(--space-1);
+}
+
+.lp-dict-reveal:hover:not(:disabled) {
+  background: var(--color-gray-200);
+}
+
+.lp-dict-reveal:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.lp-dict-answer {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-gray-200);
+}
+
+.lp-dict-answer-line {
+  margin-bottom: var(--space-2);
+}
+
+.lp-dict-answer-py {
+  color: var(--color-gold-500);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.lp-dict-answer-vn {
+  color: var(--color-gray-600);
+  font-size: 0.85rem;
+}
+
+.lp-mc-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lp-mc-opt {
+  text-align: left;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-white);
+  font-family: var(--font-hanzi);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.lp-mc-opt:hover:not(:disabled) {
+  border-color: var(--color-gold-400);
+}
+
+.lp-mc-opt.is-correct {
+  border-color: var(--color-green-600);
+  background: var(--color-green-50);
+  color: var(--color-green-600);
+}
+
+.lp-mc-opt.is-wrong {
+  border-color: var(--color-red-600);
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+}
+
+.lp-mc-explain {
+  margin-top: var(--space-3);
+  color: var(--color-gray-600);
+  font-size: 0.85rem;
+}
+
 /* ---------- Speaking practice (Luyen noi) ---------- */
 .sp-card {
   background: var(--color-white);

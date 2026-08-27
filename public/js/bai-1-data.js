@@ -239,26 +239,64 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE (Listening) — tình huống MỚI, không trùng bài khoá
-// Dùng 要/最/几/多 + từ vựng bài 1, ngữ cảnh khác hoàn toàn (rủ đi vận động,
-// hỏi số bạn cùng lớp, mua ghế) thay vì Bắc Kinh / đá bóng / con mèo.
+// PHẦN 2 · NGHE (Listening) — đề nghe THẬT từ HSK标准教程2 练习册 (Bài 1)
+// audioP1 = câu 1-10 (Phần 1 phán đoán đúng/sai đã chuyển thành điền khuyết + Phần 2 hội thoại điền khuyết)
+// audioP2 = câu 11-15 (Phần 3 nghe hội thoại, chọn đáp án đúng)
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我朋友要买新椅子。他觉得白色的最好看。我也想买一把。',
-   questions:[
-     {q:'我朋友要做什么？',opts:['买新椅子','去旅游','踢足球','买眼镜'],ans:0},
-     {q:'我朋友觉得什么颜色的椅子最好看？',opts:['白色','黑色','红色','没有说'],ans:0},
-   ]},
-  {audio:'明天我们班要一起去运动。我不知道有几个同学要去，你为什么不去？',
-   questions:[
-     {q:'明天他们班要做什么？',opts:['一起去运动','买新椅子','去旅游','看眼睛'],ans:0},
-     {q:'说话的人问了什么问题？',opts:['你为什么不去','你要去几天','你觉得椅子好看吗','你几点回来'],ans:0},
-   ]},
-  {audio:'我要买十多把新椅子，我觉得这样最好。',
-   questions:[
-     {q:'"十多把"是什么意思？',opts:['超过十把','正好十把','不到十把','一把都没有'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audioP1: '/audio/bai-1/listen-p1.mp3',
+  audioP2: '/audio/bai-1/listen-p2.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'下午', blank:'他要踢足球', post:'。', py:'Xiàwǔ tā yào tī zúqiú.', vn:'Chiều nay anh ấy sẽ đi đá bóng.'},
+    ]},
+    {num:2, lines:[
+      {pre:'妈妈', blank:'买了几件新衣服', post:'。', py:'Māma mǎile jǐ jiàn xīn yīfu.', vn:'Mẹ đã mua mấy bộ quần áo mới.'},
+    ]},
+    {num:3, lines:[
+      {pre:'她的', blank:'眼睛很漂亮', post:'。', py:'Tā de yǎnjīng hěn piàoliang.', vn:'Mắt của cô ấy rất đẹp.'},
+    ]},
+    {num:4, lines:[
+      {pre:'我们去', blank:'买一个新的桌子', post:'吧。', py:'Wǒmen qù mǎi yí gè xīn de zhuōzi ba.', vn:'Chúng ta đi mua một cái bàn mới đi.'},
+    ]},
+    {num:5, lines:[
+      {pre:'王小姐', blank:'最喜欢运动', post:'。', py:'Wáng xiǎojiě zuì xǐhuan yùndòng.', vn:'Cô Vương thích vận động nhất.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'你想', blank:'喝点儿什么', post:'？', py:'Nǐ xiǎng hē diǎnr shénme?', vn:'Bạn muốn uống gì?'},
+      {speaker:'女', pre:'我想', blank:'喝茶', post:'。', py:'Wǒ xiǎng hē chá.', vn:'Tôi muốn uống trà.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'我们下午', blank:'一起去运动', post:'吧。', py:'Wǒmen xiàwǔ yìqǐ qù yùndòng ba.', vn:'Chiều nay chúng ta cùng đi vận động đi.'},
+      {speaker:'女', pre:'好啊，我', blank:'最喜欢跑步了', post:'。', py:'Hǎo a, wǒ zuì xǐhuan pǎobù le.', vn:'Được đó, tôi thích chạy bộ nhất.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'女', pre:'你', blank:'几点能回来', post:'？', py:'Nǐ jǐ diǎn néng huílai?', vn:'Mấy giờ bạn có thể về?'},
+      {speaker:'男', pre:'', blank:'七点多，不会太晚', post:'。', py:'Qī diǎn duō, bú huì tài wǎn.', vn:'Hơn 7 giờ, sẽ không quá muộn đâu.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你的猫', blank:'多大了', post:'？', py:'Nǐ de māo duō dà le?', vn:'Con mèo của bạn được bao nhiêu tuổi rồi?'},
+      {speaker:'男', pre:'', blank:'一岁多', post:'。', py:'Yí suì duō.', vn:'Hơn một tuổi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'什么时候', blank:'去北京旅游最好', post:'？', py:'Shénme shíhou qù Běijīng lǚyóu zuì hǎo?', vn:'Khi nào đi du lịch Bắc Kinh là đẹp nhất?'},
+      {speaker:'男', pre:'', blank:'九月和十月北京天气最好，你九月去吧', post:'。', py:'Jiǔyuè hé shíyuè Běijīng tiānqì zuì hǎo, nǐ jiǔyuè qù ba.', vn:'Tháng 9 và tháng 10 thời tiết Bắc Kinh đẹp nhất, bạn đi vào tháng 9 đi.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['八月','几个月','九月'], ans:2,
+     explain:'女：你觉得什么时候去北京旅游最好？男：我觉得九月去最好。问：几月去北京旅游最好？ → 九月。'},
+    {num:12, options:['太远了','太冷了','太热了'], ans:1,
+     explain:'女：你喜欢上海吗？男：上海冬天太冷了，我不喜欢。问：男的为什么不喜欢上海？ → 太冷了。'},
+    {num:13, options:['桌子','椅子','杯子'], ans:1,
+     explain:'女：我要去商店，你去吗？男：我也去，我要买几个新椅子。问：男的要买什么？ → 椅子。'},
+    {num:14, options:['不到十岁','四十岁','十多岁'], ans:2,
+     explain:'女：王医生的女儿今年多大了？男：十四岁了。问：王医生的女儿今年多大了？ → 十多岁（14岁）。'},
+    {num:15, options:['杯子','北京','茶杯'], ans:0,
+     explain:'女：我觉得这个杯子很漂亮。男：你也很喜欢？这是我在北京买的。问：女的觉得什么很漂亮？ → 杯子。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hoàn thành đoạn thoại MỚI (rủ bạn đi vận động)

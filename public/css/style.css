@@ -2896,3 +2896,163 @@ body.pinyin-hidden .tp-answer-py,
 body.pinyin-hidden .py-inline {
   display: none;
 }
+
+/* ---------- Results screen (Ket qua cuoi bai) ---------- */
+.rp-ring-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.rp-ring {
+  width: 140px;
+  height: 140px;
+  transform: rotate(-90deg);
+  margin: 0 auto;
+  display: block;
+}
+
+.rp-ring-track {
+  fill: none;
+  stroke: var(--color-gray-200);
+  stroke-width: 10;
+}
+
+.rp-ring-fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.rp-ring-label {
+  margin-top: -96px;
+  margin-bottom: 44px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-gray-800);
+}
+
+.rp-ring-msg {
+  margin: 0;
+  color: var(--color-gray-600);
+  font-size: 0.95rem;
+}
+
+.rp-breakdown {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.rp-breakdown h3 {
+  margin: 0 0 var(--space-4);
+  font-size: 1.05rem;
+}
+
+.rp-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.rp-row:first-of-type { border-top: none; }
+
+.rp-row-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.rp-row-icon.is-red { background: var(--color-red-50); }
+.rp-row-icon.is-blue { background: var(--color-blue-50); }
+.rp-row-icon.is-indigo { background: var(--color-indigo-50); }
+.rp-row-icon.is-green { background: var(--color-green-50, #e8f7ee); }
+
+.rp-row-label {
+  font-weight: 600;
+  color: var(--color-gray-800);
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.rp-row-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-full, 999px);
+  background: var(--color-gray-100);
+  overflow: hidden;
+}
+
+.rp-row-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full, 999px);
+}
+
+.rp-row-bar-fill.is-red { background: var(--color-red-600); }
+.rp-row-bar-fill.is-blue { background: var(--color-blue-600, #2563eb); }
+.rp-row-bar-fill.is-indigo { background: var(--color-indigo-600); }
+.rp-row-bar-fill.is-green { background: var(--color-green-600); }
+
+.rp-row-pct {
+  font-weight: 700;
+  color: var(--color-gray-700);
+  width: 44px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.rp-row-done {
+  margin-left: auto;
+  color: var(--color-green-600);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.rp-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.rp-stat {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.rp-stat strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--color-red-600);
+}
+
+.rp-stat span {
+  color: var(--color-gray-600);
+  font-size: 0.85rem;
+}
+
+.rp-cta {
+  width: 100%;
+  min-height: 52px;
+}
+
+@media (max-width: 640px) {
+  .rp-row-label { width: 110px; font-size: 0.9rem; }
+  .rp-stats { grid-template-columns: 1fr 1fr; }
+}

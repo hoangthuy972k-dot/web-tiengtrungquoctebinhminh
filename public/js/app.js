@@ -5,8 +5,34 @@
     user: 'hyv_user',
     visitedLessons: 'hyv_visited_lessons',
     studyDays: 'hyv_study_days',
-    pinyinVisible: 'hyv_pinyin_visible'
+    pinyinVisible: 'hyv_pinyin_visible',
+    lessonScores: 'hyv_lesson_scores'
   };
+
+  // Diem that theo tung phan cua tung bai hoc, ghi lai khi hoc sinh hoan thanh
+  // 1 luot quiz/game — dung cho man hinh "Ket qua cuoi bai".
+  function recordLessonScore(lesson, section, data) {
+    var all = readJSON(STORAGE_KEYS.lessonScores, {});
+    var ls = all[lesson.fullPageUrl] || {};
+    ls[section] = data;
+    all[lesson.fullPageUrl] = ls;
+    writeJSON(STORAGE_KEYS.lessonScores, all);
+  }
+
+  function recordGameScore(lesson, subtype, correct, total) {
+    var all = readJSON(STORAGE_KEYS.lessonScores, {});
+    var ls = all[lesson.fullPageUrl] || {};
+    var game = ls.game || {};
+    game[subtype] = { correct: correct, total: total };
+    ls.game = game;
+    all[lesson.fullPageUrl] = ls;
+    writeJSON(STORAGE_KEYS.lessonScores, all);
+  }
+
+  function getLessonScores(lesson) {
+    var all = readJSON(STORAGE_KEYS.lessonScores, {});
+    return all[lesson.fullPageUrl] || {};
+  }
 
   /* ---------------- Utilities ---------------- */
 
@@ -164,6 +190,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -179,6 +206,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -257,7 +285,6 @@
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
   };
-  var LEVEL_HUB_CTA_TAB = { hsk2: 'tongket' };
 
   var currentHubLevelId = null;
   var currentHubLesson = null;
@@ -279,6 +306,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -349,12 +377,12 @@
 
     var ctaWrap = $('#hubCtaWrap');
     ctaWrap.innerHTML = '';
-    var ctaTab = LEVEL_HUB_CTA_TAB[levelId];
-    if (ctaTab) {
-      var cta = document.createElement('a');
+    if (tabIds) {
+      var cta = document.createElement('button');
+      cta.type = 'button';
       cta.className = 'hub-cta';
-      cta.href = lesson.fullPageUrl + '#' + ctaTab;
       cta.innerHTML = '🏆 Xem kết quả cuối bài';
+      cta.addEventListener('click', function () { showResultsPractice(levelId, lesson); });
       ctaWrap.appendChild(cta);
     } else if (!tabIds) {
       var openLink = document.createElement('a');
@@ -501,6 +529,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -579,6 +608,7 @@
     }
     var wrap = $('#vpContent');
     if (vpQuiz.pos >= vpQuiz.order.length) {
+      recordLessonScore(currentHubLesson, 'vocab', { correct: vpQuiz.score, total: vpQuiz.order.length });
       wrap.innerHTML =
         '<div class="vp-quiz-done"><strong>' + vpQuiz.score + '/' + vpQuiz.order.length + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện tập này.</p>' +
@@ -667,6 +697,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -1409,6 +1440,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -1470,6 +1502,7 @@
     if (!grQuiz) grQuiz = { pos: 0, score: 0 };
 
     if (grQuiz.pos >= items.length) {
+      recordLessonScore(currentHubLesson, 'grammar', { correct: grQuiz.score, total: items.length });
       wrap.innerHTML =
         '<div class="vp-quiz-done"><strong>' + grQuiz.score + '/' + items.length + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành bài tập ngữ pháp.</p>' +
@@ -1618,6 +1651,7 @@
 
   var dpScenes = [];
   var dpIndex = 0;
+  var dpViewed = null;
 
   function showDialoguePractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -1633,6 +1667,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
     $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -1640,6 +1675,7 @@
     loadLessonDialog(lesson).then(function (dialogData) {
       dpScenes = dialogData;
       dpIndex = 0;
+      dpViewed = new Set();
       $('#dpSubtitle').textContent = dialogData.length + ' đoạn hội thoại';
       renderDialogueTabs();
       renderDialogueScene();
@@ -1674,6 +1710,10 @@
     if (!scene) {
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có hội thoại.</p>';
       return;
+    }
+    if (dpViewed) {
+      dpViewed.add(dpIndex);
+      if (dpViewed.size === dpScenes.length) recordLessonScore(currentHubLesson, 'dialog', { done: true });
     }
     var audioBase = audioBaseFor(currentHubLesson);
     var audioSrc = audioBase ? audioBase + '/dlg-' + (dpIndex + 1) + '.mp3' : null;
@@ -1717,6 +1757,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     lpMode = 'meaning';
@@ -1858,6 +1899,7 @@
     $('#speakPractice').hidden = false;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#spTabs').innerHTML = '';
     $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -2143,6 +2185,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = false;
     $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
     $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     gpMode = null;
@@ -2203,8 +2246,8 @@
     if (type === 'match') renderGameMatch(data);
     else if (type === 'fill') renderGameFill(data);
     else if (type === 'sort') renderGameSort(data);
-    else if (type === 'errfix') renderGameMcList(data, { wrongPrefix: true });
-    else if (type === 'mc') renderGameMcList(data, { wrongPrefix: false });
+    else if (type === 'errfix') renderGameMcList(data, { wrongPrefix: true, gameKey: 'errfix' });
+    else if (type === 'mc') renderGameMcList(data, { wrongPrefix: false, gameKey: 'mc' });
   }
 
   var gmSel = null;
@@ -2276,6 +2319,7 @@
       gmDone.add('R' + ri);
       fb.innerHTML = '<span style="color:var(--color-green-600);">✓ Đúng rồi!</span>';
       if (gmDone.size === data.length * 2) {
+        recordGameScore(currentHubLesson, 'match', data.length, data.length);
         setTimeout(function () { fb.innerHTML = '<span style="color:var(--color-red-600);font-weight:700;">🎉 Hoàn thành! Xuất sắc!</span>'; }, 300);
       }
     } else {
@@ -2319,6 +2363,7 @@
         fb.className = 'fg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         if (correct) ok++;
       });
+      recordGameScore(currentHubLesson, 'fill', ok, data.length);
       var scoreEl = $('#fgScore');
       scoreEl.hidden = false;
       var pct = Math.round(ok / data.length * 100);
@@ -2372,6 +2417,7 @@
         fb.className = 'sg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         if (correct) ok++;
       });
+      recordGameScore(currentHubLesson, 'sort', ok, data.length);
       var scoreEl = $('#sgScore');
       scoreEl.hidden = false;
       var pct = Math.round(ok / data.length * 100);
@@ -2446,6 +2492,7 @@
       var scoreEl = $('#mcScore');
       scoreEl.hidden = false;
       scoreEl.textContent = 'Đã trả lời ' + done + '/' + data.length + ' câu — Đúng ' + ok + '/' + done;
+      recordGameScore(currentHubLesson, opts.gameKey || 'mc', ok, data.length);
     }
 
     $all('.vp-option-btn', wrap).forEach(function (btn) {
@@ -2491,6 +2538,7 @@
     $('#speakPractice').hidden = true;
     $('#gamePractice').hidden = true;
     $('#translatePractice').hidden = false;
+    $('#resultsPractice').hidden = true;
     $('#tpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     tpDirection = 'vi2zh';
@@ -2575,6 +2623,120 @@
       });
       answerEl.appendChild(nextBtn);
     });
+  }
+
+  /* ---------------- Results (Ket qua cuoi bai) — tong hop diem THAT tu cac phan da lam ---------------- */
+
+  var RESULT_SECTION_DEFS = [
+    { key: 'vocab', label: 'Từ vựng', emoji: '📖', color: 'red' },
+    { key: 'grammar', label: 'Ngữ pháp', emoji: '🎓', color: 'blue' },
+    { key: 'game', label: 'Game ôn tập', emoji: '🎮', color: 'indigo' },
+    { key: 'dialog', label: 'Hội thoại · Shadowing', emoji: '🗣️', color: 'green' }
+  ];
+
+  function showResultsPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = false;
+
+    renderResultsContent(lesson);
+    $('#resultsPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderResultsContent(lesson) {
+    var scores = getLessonScores(lesson);
+    var wrap = $('#rpContent');
+
+    var sectionResults = RESULT_SECTION_DEFS.map(function (def) {
+      var raw = scores[def.key];
+      if (!raw) return null;
+      if (def.key === 'game') {
+        var correct = 0, total = 0;
+        Object.keys(raw).forEach(function (k) { correct += raw[k].correct; total += raw[k].total; });
+        if (!total) return null;
+        return { def: def, scored: true, correct: correct, total: total, pct: Math.round(correct / total * 100) };
+      }
+      if (raw.done) return { def: def, scored: false, done: true };
+      if (typeof raw.total === 'number' && raw.total > 0) {
+        return { def: def, scored: true, correct: raw.correct, total: raw.total, pct: Math.round(raw.correct / raw.total * 100) };
+      }
+      return null;
+    }).filter(Boolean);
+
+    if (!sectionResults.length) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bạn chưa hoàn thành phần nào của bài học này. Hãy làm Từ vựng, Ngữ pháp, Game ôn tập hoặc Hội thoại trước, rồi quay lại đây xem kết quả nhé!</p>';
+      return;
+    }
+
+    var overallSum = 0;
+    sectionResults.forEach(function (s) { overallSum += s.scored ? s.pct : 100; });
+    var overallPct = Math.round(overallSum / sectionResults.length);
+
+    var message = overallPct >= 90 ? 'Xuất sắc! Bạn đã nắm chắc bài học này.' :
+      overallPct >= 70 ? 'Khá tốt! Ôn thêm một chút nữa nhé.' :
+      'Cần luyện tập thêm để nắm chắc bài học này.';
+    var ringColor = overallPct >= 90 ? 'var(--color-green-600)' : overallPct >= 70 ? 'var(--color-gold-500)' : 'var(--color-red-600)';
+
+    var circumference = 2 * Math.PI * 52;
+    var offset = circumference * (1 - overallPct / 100);
+
+    var rowsHtml = sectionResults.map(function (s) {
+      if (s.scored) {
+        return '<div class="rp-row">' +
+          '<span class="rp-row-icon is-' + s.def.color + '">' + s.def.emoji + '</span>' +
+          '<span class="rp-row-label">' + s.def.label + '</span>' +
+          '<div class="rp-row-bar"><div class="rp-row-bar-fill is-' + s.def.color + '" style="width:' + s.pct + '%"></div></div>' +
+          '<span class="rp-row-pct">' + s.pct + '%</span>' +
+        '</div>';
+      }
+      return '<div class="rp-row">' +
+        '<span class="rp-row-icon is-' + s.def.color + '">' + s.def.emoji + '</span>' +
+        '<span class="rp-row-label">' + s.def.label + '</span>' +
+        '<span class="rp-row-done">✓ Đã hoàn thành</span>' +
+      '</div>';
+    }).join('');
+
+    var vocabResult = sectionResults.filter(function (s) { return s.def.key === 'vocab' && s.scored; })[0];
+    var grammarResult = sectionResults.filter(function (s) { return s.def.key === 'grammar' && s.scored; })[0];
+    var wordsToReview = vocabResult ? (vocabResult.total - vocabResult.correct) : null;
+    var sentencesToReview = grammarResult ? (grammarResult.total - grammarResult.correct) : null;
+
+    var statsHtml = '';
+    if (wordsToReview !== null || sentencesToReview !== null) {
+      statsHtml = '<div class="rp-stats">' +
+        (wordsToReview !== null ? '<div class="rp-stat"><strong>' + wordsToReview + '</strong><span>Từ cần ôn lại</span></div>' : '') +
+        (sentencesToReview !== null ? '<div class="rp-stat"><strong>' + sentencesToReview + '</strong><span>Câu cần ôn lại</span></div>' : '') +
+      '</div>';
+    }
+
+    wrap.innerHTML =
+      '<div class="rp-ring-card">' +
+        '<svg viewBox="0 0 120 120" class="rp-ring">' +
+          '<circle cx="60" cy="60" r="52" class="rp-ring-track"></circle>' +
+          '<circle cx="60" cy="60" r="52" class="rp-ring-fill" style="stroke:' + ringColor + ';stroke-dasharray:' + circumference + ';stroke-dashoffset:' + offset + '"></circle>' +
+        '</svg>' +
+        '<div class="rp-ring-label">' + overallPct + '%</div>' +
+        '<p class="rp-ring-msg">' + message + '</p>' +
+      '</div>' +
+      '<div class="rp-breakdown">' +
+        '<h3>Chi tiết theo từng phần</h3>' +
+        rowsHtml +
+      '</div>' +
+      statsHtml +
+      '<button type="button" class="btn btn-primary rp-cta" id="rpGoReview">↻ Đi tới Ôn tập</button>';
+
+    $('#rpGoReview').addEventListener('click', showDashboard);
   }
 
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
@@ -2846,6 +3008,11 @@
       else showDashboard();
     });
     $('#tpBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#rpBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();

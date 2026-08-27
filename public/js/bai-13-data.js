@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 13: 门开着呢
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'着',py:'zhe',pos:'Trợ từ động thái',vn:'đang, duy trì trạng thái',em:'🔄',lesson:1,
    ex_zh:'门开着呢。',ex_py:'Mén kāizhe ne.',ex_vn:'Cửa đang mở đấy.',
    exList:[

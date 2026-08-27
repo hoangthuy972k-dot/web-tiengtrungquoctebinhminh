@@ -155,6 +155,7 @@
     $('#home').hidden = false;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -162,6 +163,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = false;
     $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -233,13 +235,19 @@
   };
   var LEVEL_HUB_CTA_TAB = { hsk2: 'tongket' };
 
+  var currentHubLevelId = null;
+  var currentHubLesson = null;
+
   function showLessonHub(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
     var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
     var isDone = !!visited[lesson.fullPageUrl];
 
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = false;
+    $('#vocabPractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -260,6 +268,12 @@
         '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
         '<span class="hub-tile-label">' + def.label + '</span>' +
         '<svg class="icon hub-tile-arrow" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>';
+      if (tabId === 'vocab') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showVocabPractice(levelId, lesson);
+        });
+      }
       grid.appendChild(tile);
     });
 
@@ -285,6 +299,224 @@
     }
 
     $('#lessonHub').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ---------------- Vocab practice (danh sach tu + 4 che do quiz) ---------------- */
+
+  var vpZhVoice = null;
+  function vpSpeak(text) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = 0.9;
+    if (!vpZhVoice) {
+      vpZhVoice = window.speechSynthesis.getVoices().filter(function (v) { return /^zh/i.test(v.lang); })[0] || null;
+    }
+    if (vpZhVoice) u.voice = vpZhVoice;
+    window.speechSynthesis.speak(u);
+  }
+
+  // Bai hoc data.js khai bao "var vocabData = [...]" o top-level; cac bai
+  // khac nhau deu dung lai cung ten bien nen khong the <script src> thang vao
+  // trang chinh (se bi loi/de lan nhau). Nap qua 1 iframe rieng (dung <script
+  // src> binh thuong, khong eval, khong script inline - hop le voi CSP), vi
+  // la "var" nen no gan thang vao window cua iframe, doc xong la huy iframe.
+  var vpDataCache = {};
+  function loadLessonVocab(lesson) {
+    if (vpDataCache[lesson.fullPageUrl]) return Promise.resolve(vpDataCache[lesson.fullPageUrl]);
+    var dataUrl = lesson.fullPageUrl.replace('/lessons/', '/js/').replace('.html', '-data.js');
+    return new Promise(function (resolve, reject) {
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+      var doc = iframe.contentDocument;
+      doc.open();
+      doc.write('<!doctype html><html><body></body></html>');
+      doc.close();
+      var script = doc.createElement('script');
+      script.src = dataUrl;
+      script.onload = function () {
+        var vocabData;
+        try {
+          vocabData = JSON.parse(JSON.stringify(iframe.contentWindow.vocabData || []));
+        } catch (e) {
+          document.body.removeChild(iframe);
+          reject(e);
+          return;
+        }
+        document.body.removeChild(iframe);
+        vpDataCache[lesson.fullPageUrl] = vocabData;
+        resolve(vocabData);
+      };
+      script.onerror = function () {
+        document.body.removeChild(iframe);
+        reject(new Error('Không tải được ' + dataUrl));
+      };
+      doc.body.appendChild(script);
+    });
+  }
+
+  var VP_TABS = [
+    { id: 'list', label: 'Danh sách từ' },
+    { id: 'zh-vn', label: 'Trung → Việt' },
+    { id: 'vn-zh', label: 'Việt → Trung' },
+    { id: 'py-zh', label: 'Pinyin → Hán tự' },
+    { id: 'listen-zh', label: 'Nghe → chọn từ' }
+  ];
+  var vpMode = 'list';
+  var vpVocab = [];
+  var vpQuiz = null; // {order:[idx...], pos:0, score:0}
+
+  function showVocabPractice(levelId, lesson) {
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = false;
+    $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    $('#vpSubtitle').textContent = 'Đang tải...';
+
+    loadLessonVocab(lesson).then(function (vocabData) {
+      vpVocab = vocabData;
+      vpMode = 'list';
+      $('#vpSubtitle').textContent = vocabData.length + ' từ trong bài học này';
+      renderVpTabs();
+      renderVpContent();
+    }).catch(function () {
+      $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được dữ liệu từ vựng của bài này.</p>';
+    });
+
+    $('#vocabPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderVpTabs() {
+    var wrap = $('#vpTabs');
+    wrap.innerHTML = '';
+    VP_TABS.forEach(function (t) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'vp-tab' + (t.id === vpMode ? ' active' : '');
+      btn.textContent = t.label;
+      btn.addEventListener('click', function () {
+        vpMode = t.id;
+        vpQuiz = null;
+        renderVpTabs();
+        renderVpContent();
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  function renderVpContent() {
+    if (vpMode === 'list') {
+      renderVpList();
+    } else {
+      renderVpQuiz(vpMode);
+    }
+  }
+
+  function renderVpList() {
+    var wrap = $('#vpContent');
+    wrap.innerHTML = '<div class="vp-list-grid"></div>';
+    var grid = wrap.firstChild;
+    vpVocab.forEach(function (v) {
+      var ex = v.exList && v.exList[0];
+      var card = document.createElement('div');
+      card.className = 'vp-word-card';
+      card.innerHTML =
+        '<div class="vp-word-row"><span class="vp-word-zh hanzi">' + v.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + v.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<div class="vp-word-py">' + v.py + '</div>' +
+        '<div class="vp-word-vn">' + v.vn + '</div>' +
+        (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
+        (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></div>' : '');
+      grid.appendChild(card);
+    });
+    $all('[data-speak]', grid).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+  }
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  function renderVpQuiz(mode) {
+    if (!vpQuiz) {
+      vpQuiz = { order: shuffle(vpVocab.map(function (_, i) { return i; })), pos: 0, score: 0 };
+    }
+    var wrap = $('#vpContent');
+    if (vpQuiz.pos >= vpQuiz.order.length) {
+      wrap.innerHTML =
+        '<div class="vp-quiz-done"><strong>' + vpQuiz.score + '/' + vpQuiz.order.length + '</strong>' +
+        '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện tập này.</p>' +
+        '<button type="button" class="btn btn-primary" id="vpRestart">Luyện lại</button></div>';
+      $('#vpRestart').addEventListener('click', function () { vpQuiz = null; renderVpQuiz(mode); });
+      return;
+    }
+
+    var total = vpQuiz.order.length;
+    var idx = vpQuiz.order[vpQuiz.pos];
+    var word = vpVocab[idx];
+    var distractorPool = vpVocab.filter(function (_, i) { return i !== idx; });
+    var distractors = shuffle(distractorPool).slice(0, 3);
+    var options = shuffle([word].concat(distractors));
+
+    var segs = '';
+    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < vpQuiz.pos ? ' is-done' : '') + '"></div>';
+
+    var promptHtml;
+    if (mode === 'zh-vn') {
+      promptHtml = '<div class="vp-quiz-prompt-zh hanzi">' + word.zh + '<button type="button" class="vp-speak-btn" data-speak="' + word.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-quiz-prompt-py">' + word.py + '</div>';
+    } else if (mode === 'vn-zh') {
+      promptHtml = '<div class="vp-quiz-prompt-vn">' + word.vn + '</div>';
+    } else if (mode === 'py-zh') {
+      promptHtml = '<div class="vp-quiz-prompt-vn">' + word.py + '</div>';
+    } else {
+      promptHtml = '<button type="button" class="vp-quiz-play-btn" data-speak="' + word.zh.replace(/"/g, '&quot;') + '">🔊 Nghe</button>';
+    }
+
+    var optionsHtml = options.map(function (opt, i) {
+      var label;
+      if (mode === 'zh-vn') label = opt.vn;
+      else if (mode === 'vn-zh') label = opt.zh;
+      else if (mode === 'py-zh') label = opt.zh;
+      else label = opt.zh + ' (' + opt.py + ')';
+      return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + label + '</button>';
+    }).join('');
+
+    wrap.innerHTML =
+      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      '<div class="vp-quiz-counter">Câu ' + (vpQuiz.pos + 1) + '/' + total + '</div>' +
+      '<div class="vp-quiz-card">' +
+        '<div class="vp-quiz-prompt">' + promptHtml + '</div>' +
+        '<div class="vp-quiz-options">' + optionsHtml + '</div>' +
+      '</div>';
+
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    if (mode === 'listen-zh') vpSpeak(word.zh);
+
+    $all('.vp-option-btn', wrap).forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        var isCorrect = options[i] === word;
+        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (options[j] === word) b.classList.add('is-correct');
+          else if (j === i) b.classList.add('is-wrong');
+        });
+        if (isCorrect) vpQuiz.score++;
+        setTimeout(function () {
+          vpQuiz.pos++;
+          renderVpQuiz(mode);
+        }, 700);
+      });
+    });
   }
 
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
@@ -482,6 +714,11 @@
     $('#levelDetailBack').addEventListener('click', showDashboard);
     $('#lessonHubBack').addEventListener('click', function () {
       if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#vocabBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();
     });
     $all('a[href="#home"]').forEach(function (link) {

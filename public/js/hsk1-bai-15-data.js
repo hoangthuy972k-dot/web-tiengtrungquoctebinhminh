@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 15: 我是坐飞机来的。
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen biết, hiểu biết',em:'🤝',lesson:1,
    ex_zh:'你和李小姐是什么时候认识的？',ex_py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',ex_vn:'Cô và cô Lý quen nhau khi nào vậy?',
    exList:[

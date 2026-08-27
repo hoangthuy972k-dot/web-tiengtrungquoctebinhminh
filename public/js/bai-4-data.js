@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 4: 这个工作是他帮我介绍的
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'生日',py:'shēngrì',pos:'Danh từ',vn:'sinh nhật',em:'🎂',lesson:1,
    ex_zh:'生日快乐！',ex_py:'Shēngrì kuàilè!',ex_vn:'Chúc mừng sinh nhật!',
    exList:[

@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 3: 你叫什么名字?
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'叫',py:'jiào',pos:'Động từ',vn:'tên là, gọi là',em:'📛',lesson:1,
    ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
    exList:[

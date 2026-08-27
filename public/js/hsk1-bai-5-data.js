@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 5: 她女儿今年二十岁。
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà, gia đình',em:'🏠',lesson:1,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà anh có mấy người vậy?',
    exList:[

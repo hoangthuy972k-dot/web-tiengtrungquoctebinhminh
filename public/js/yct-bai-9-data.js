@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 9: 你的生日是几月几号？
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'生日',py:'shēngrì',pos:'Danh từ',vn:'sinh nhật',em:'🎂',lesson:1,
    ex_zh:'你的生日是几月几号？',ex_py:'Nǐ de shēngrì shì jǐ yuè jǐ hào?',ex_vn:'Sinh nhật bạn là ngày mấy tháng mấy?',
    exList:[{zh:'你的生日是几月几号？',py:'Nǐ de shēngrì shì jǐ yuè jǐ hào?',vn:'Sinh nhật bạn là ngày mấy tháng mấy?'}],

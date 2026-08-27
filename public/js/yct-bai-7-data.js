@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 7: 这是猫
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'这',py:'zhè',pos:'Đại từ',vn:'này, đây (vật gần)',em:'👉',lesson:1,
    ex_zh:'这是猫。',ex_py:'Zhè shì māo.',ex_vn:'Đây là con mèo.',
    exList:[{zh:'这是猫。',py:'Zhè shì māo.',vn:'Đây là con mèo.'}],

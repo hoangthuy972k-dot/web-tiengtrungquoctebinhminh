@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 15: 新年就要到了
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'新年',py:'xīnnián',pos:'Danh từ',vn:'năm mới',em:'🎉',lesson:1,
    ex_zh:'新年就要到了，你有什么计划？',ex_py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',ex_vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?',
    exList:[

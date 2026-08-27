@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 5: 就买这件吧
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'外面',py:'wàimian',pos:'Danh từ',vn:'bên ngoài',em:'🌳',lesson:1,
    ex_zh:'我不想去外面吃。',ex_py:'Wǒ bù xiǎng qù wàimian chī.',ex_vn:'Tôi không muốn ra ngoài ăn.',
    exList:[

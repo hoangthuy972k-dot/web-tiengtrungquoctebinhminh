@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 8: 我想喝茶
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'想',py:'xiǎng',pos:'Động từ năng nguyện',vn:'muốn, dự định làm gì',em:'💭',lesson:1,
    ex_zh:'我想喝茶。',ex_py:'Wǒ xiǎng hē chá.',ex_vn:'Tôi muốn uống trà.',
    exList:[

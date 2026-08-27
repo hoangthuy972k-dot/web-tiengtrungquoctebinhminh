@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 3: 左边那个红色的是我的
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'块',py:'kuài',pos:'Lượng từ',vn:'đồng (tiền); miếng',em:'💰',lesson:1,
    ex_zh:'这块手表花了三千多块。',ex_py:'Zhè kuài shǒubiǎo huāle sānqiān duō kuài.',ex_vn:'Chiếc đồng hồ này tốn hơn 3000 tệ.',
    exList:[

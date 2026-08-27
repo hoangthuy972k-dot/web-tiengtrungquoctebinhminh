@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 4: 你家有几口人？
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'有',py:'yǒu',pos:'Động từ',vn:'có',em:'✅',lesson:1,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà bạn có mấy người?',
    exList:[{zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'}],

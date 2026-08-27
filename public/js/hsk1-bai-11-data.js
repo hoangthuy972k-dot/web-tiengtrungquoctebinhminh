@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 11: 现在几点?
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'现在',py:'xiànzài',pos:'Danh từ',vn:'bây giờ, hiện nay',em:'⏰',lesson:1,
    ex_zh:'现在几点？',ex_py:'Xiànzài jǐ diǎn?',ex_vn:'Bây giờ là mấy giờ rồi?',
    exList:[

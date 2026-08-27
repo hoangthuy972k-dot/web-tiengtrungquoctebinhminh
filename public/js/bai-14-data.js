@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 14: 你看过那个电影吗？
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'过',py:'guo',pos:'Trợ từ động thái',vn:'đã từng (kinh nghiệm)',em:'✅',lesson:1,
    ex_zh:'你看过那个电影吗？',ex_py:'Nǐ kànguo nàge diànyǐng ma?',ex_vn:'Bạn đã từng xem bộ phim đó chưa?',
    exList:[

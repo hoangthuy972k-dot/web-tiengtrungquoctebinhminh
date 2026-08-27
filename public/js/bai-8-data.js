@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 8: 让我想想再告诉你
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'让',py:'ràng',pos:'Động từ',vn:'để, bảo, cho phép',em:'🙏',lesson:1,
    ex_zh:'让我想想。',ex_py:'Ràng wǒ xiǎngxiang.',ex_vn:'Để tôi suy nghĩ một chút.',
    exList:[

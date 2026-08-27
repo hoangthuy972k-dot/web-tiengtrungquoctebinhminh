@@ -1414,3 +1414,270 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .hub-cta:hover {
   background: var(--color-red-700);
 }
+
+/* ---------- Vocab practice (Tu vung: danh sach + 4 che do quiz) ---------- */
+.vp-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.vp-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-red-500), var(--color-red-700));
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.vp-header h1 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  font-weight: 800;
+}
+
+.vp-header p {
+  margin: 2px 0 0;
+  color: var(--color-gray-600);
+  font-size: 0.9rem;
+}
+
+.vp-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.vp-tab {
+  border: 1.5px solid var(--color-gray-200);
+  background: var(--color-white);
+  color: var(--color-gray-800);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.18s var(--ease-standard);
+}
+
+.vp-tab:hover {
+  border-color: var(--color-red-500);
+}
+
+.vp-tab.active {
+  background: var(--color-red-600);
+  border-color: var(--color-red-600);
+  color: #fff;
+}
+
+.vp-list-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 700px) {
+  .vp-list-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.vp-word-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.vp-word-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.vp-word-zh {
+  font-family: var(--font-hanzi);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.vp-speak-btn {
+  border: none;
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.vp-speak-btn:hover {
+  background: var(--color-red-600);
+  color: var(--color-white);
+}
+
+.vp-word-py {
+  color: var(--color-gold-500);
+  font-weight: 700;
+  margin: var(--space-2) 0 2px;
+}
+
+.vp-word-vn {
+  color: var(--color-gray-900);
+}
+
+.vp-word-pos {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: 0.76rem;
+  color: var(--color-gray-500);
+}
+
+.vp-word-example {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-gray-200);
+}
+
+.vp-quiz-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--space-4);
+}
+
+.vp-quiz-seg {
+  flex: 1;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gray-100);
+}
+
+.vp-quiz-seg.is-done {
+  background: var(--color-red-600);
+}
+
+.vp-quiz-counter {
+  color: var(--color-gray-500);
+  font-size: 0.88rem;
+  margin-bottom: var(--space-5);
+}
+
+.vp-quiz-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.vp-quiz-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.vp-quiz-prompt-zh {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-hanzi);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.vp-quiz-prompt-py {
+  color: var(--color-gold-500);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.vp-quiz-prompt-vn {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.vp-quiz-play-btn {
+  border: none;
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+  font-weight: 700;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.vp-quiz-play-btn:hover {
+  background: var(--color-red-600);
+  color: var(--color-white);
+}
+
+.vp-quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.vp-option-btn {
+  width: 100%;
+  text-align: left;
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-gray-200);
+  background: var(--color-white);
+  font-family: var(--font-hanzi);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease-standard), background-color 0.15s var(--ease-standard);
+}
+
+.vp-option-btn:hover:not(:disabled) {
+  border-color: var(--color-red-500);
+}
+
+.vp-option-btn:disabled {
+  cursor: default;
+}
+
+.vp-option-btn.is-correct {
+  border-color: var(--color-green-600);
+  background: var(--color-green-50);
+  color: var(--color-green-600);
+}
+
+.vp-option-btn.is-wrong {
+  border-color: var(--color-red-600);
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+}
+
+.vp-quiz-done {
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+}
+
+.vp-quiz-done strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+}

@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 9: 题太多，我没做完
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'错',py:'cuò',pos:'Tính từ',vn:'sai, nhầm',em:'❌',lesson:1,
    ex_zh:'你打错了。',ex_py:'Nǐ dǎ cuò le.',ex_vn:'Bạn gọi nhầm số rồi.',
    exList:[

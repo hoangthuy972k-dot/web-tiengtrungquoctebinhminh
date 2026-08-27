@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 2: 你叫什么？
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, tớ, mình',em:'🙋',lesson:1,
    ex_zh:'我叫乐乐。',ex_py:'Wǒ jiào Lèle.',ex_vn:'Mình tên là Lạc Lạc.',
    exList:[{zh:'我叫乐乐。',py:'Wǒ jiào Lèle.',vn:'Mình tên là Lạc Lạc.'}],

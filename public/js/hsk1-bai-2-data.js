@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 2: 谢谢你!
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn',em:'🙏',lesson:1,
    ex_zh:'谢谢！',ex_py:'Xièxie!',ex_vn:'Cảm ơn!',
    exList:[

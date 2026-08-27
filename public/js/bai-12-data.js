@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 12: 你穿得太少了
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'得',py:'de',pos:'Trợ từ kết cấu',vn:'dùng sau động từ để nối bổ ngữ trạng thái',em:'🔗',lesson:1,
    ex_zh:'你吃得太少了。',ex_py:'Nǐ chī de tài shǎo le.',ex_vn:'Bạn ăn ít quá.',
    exList:[

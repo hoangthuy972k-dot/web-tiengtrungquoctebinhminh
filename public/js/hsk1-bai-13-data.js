@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 13: 他在学做中国菜呢。
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'喂',py:'wèi',pos:'Cảm thán từ',vn:'a lô, này',em:'📞',lesson:1,
    ex_zh:'喂，你在做什么呢？',ex_py:'Wèi, nǐ zài zuò shénme ne?',ex_vn:'A lô, anh đang làm gì vậy?',
    exList:[

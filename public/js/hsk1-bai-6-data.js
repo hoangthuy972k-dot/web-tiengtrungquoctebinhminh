@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 6: 我会说汉语
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'会',py:'huì',pos:'Động từ năng nguyện',vn:'biết (qua học tập, rèn luyện)',em:'🧠',lesson:1,
    ex_zh:'我会说汉语。',ex_py:'Wǒ huì shuō Hànyǔ.',ex_vn:'Tôi biết nói tiếng Trung.',
    exList:[

@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 1: 你好！
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'你',py:'nǐ',pos:'Đại từ',vn:'bạn, con, em',em:'🧒',lesson:1,
    ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn!',
    exList:[

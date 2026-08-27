@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 14: 她买了不少衣服。
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'东西',py:'dōngxi',pos:'Danh từ',vn:'đồ đạc, đồ dùng, hàng hóa',em:'🛍️',lesson:1,
    ex_zh:'我去商店买东西了。',ex_py:'Wǒ qù shāngdiàn mǎi dōngxi le.',ex_vn:'Mình đến cửa hàng để mua đồ.',
    exList:[

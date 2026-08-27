@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 7: 你家离公司远吗？
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'教室',py:'jiàoshì',pos:'Danh từ',vn:'phòng học, lớp học',em:'🏫',lesson:1,
    ex_zh:'他还在教室学习呢。',ex_py:'Tā hái zài jiàoshì xuéxí ne.',ex_vn:'Cậu ấy vẫn còn đang học ở trên lớp kìa.',
    exList:[

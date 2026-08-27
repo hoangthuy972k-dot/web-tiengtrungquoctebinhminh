@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 11: 他比我大三岁
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'唱歌',py:'chàng gē',pos:'Động từ',vn:'hát, ca hát',em:'🎤',lesson:1,
    ex_zh:'昨天和你一起唱歌的人是谁？',ex_py:'Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',ex_vn:'Người hôm qua cùng hát karaoke với bạn là ai thế?',
    exList:[

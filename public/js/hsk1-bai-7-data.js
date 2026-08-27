@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 7: 今天几号?
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'请',py:'qǐng',pos:'Động từ',vn:'mời, xin (lịch sự)',em:'🙏',lesson:1,
    ex_zh:'请问，今天几号？',ex_py:'Qǐngwèn, jīntiān jǐ hào?',ex_vn:'Xin hỏi hôm nay là ngày mấy?',
    exList:[

@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 4: 她是我的汉语老师。
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, bà ấy',em:'👩',lesson:1,
    ex_zh:'她是谁？',ex_py:'Tā shì shéi?',ex_vn:'Cô ấy là ai vậy?',
    exList:[

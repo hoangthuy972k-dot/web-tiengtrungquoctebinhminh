@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 8: 我去学校
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'学校',py:'xuéxiào',pos:'Danh từ',vn:'trường học',em:'🏫',lesson:1,
    ex_zh:'我去学校。',ex_py:'Wǒ qù xuéxiào.',ex_vn:'Mình đi trường học.',
    exList:[{zh:'我去学校。',py:'Wǒ qù xuéxiào.',vn:'Mình đi trường học.'}],

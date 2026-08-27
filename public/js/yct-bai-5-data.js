@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 5: 你几岁？
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'几岁',py:'jǐ suì',pos:'Cụm từ',vn:'mấy tuổi (hỏi trẻ em)',em:'🔢',lesson:1,
    ex_zh:'你几岁？',ex_py:'Nǐ jǐ suì?',ex_vn:'Bạn mấy tuổi?',
    exList:[{zh:'你几岁？',py:'Nǐ jǐ suì?',vn:'Bạn mấy tuổi?'}],

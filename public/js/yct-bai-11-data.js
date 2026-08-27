@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 11: 我爱吃蛋糕
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm',em:'🍚',lesson:1,
    ex_zh:'我吃米饭。',ex_py:'Wǒ chī mǐfàn.',ex_vn:'Mình ăn cơm.',
    exList:[{zh:'我吃米饭。',py:'Wǒ chī mǐfàn.',vn:'Mình ăn cơm.'}],

@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 10: 我能坐这儿吗?
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'桌子',py:'zhuōzi',pos:'Danh từ',vn:'cái bàn',em:'🍽️',lesson:1,
    ex_zh:'桌子上有什么？',ex_py:'Zhuōzi shang yǒu shénme?',ex_vn:'Trên bàn có gì vậy?',
    exList:[

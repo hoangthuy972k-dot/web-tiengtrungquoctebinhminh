@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — HSK1 Bài 9: 你儿子在哪儿工作?
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'小',py:'xiǎo',pos:'Tính từ',vn:'nhỏ, bé',em:'🔹',lesson:1,
    ex_zh:'小猫在哪儿？',ex_py:'Xiǎo māo zài nǎr?',ex_vn:'Con mèo đâu rồi?',
    exList:[

@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 1: 九月去北京旅游最好
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'旅游',py:'lǚyóu',pos:'Động từ / Danh từ',vn:'du lịch, đi chơi',em:'🧳',lesson:1,
    ex_zh:'我要去北京旅游。',ex_py:'Wǒ yào qù Běijīng lǚyóu.',ex_vn:'Tôi muốn đi Bắc Kinh du lịch.',
    exList:[

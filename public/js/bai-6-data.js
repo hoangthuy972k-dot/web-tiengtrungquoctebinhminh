@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 6: 你怎么不吃了？
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'门',py:'mén',pos:'Danh từ',vn:'cửa',em:'🚪',lesson:1,
    ex_zh:'我在门外看见他的自行车了。',ex_py:'Wǒ zài mén wài kànjiàn tā de zìxíngchē le.',ex_vn:'Tôi nhìn thấy xe đạp của cậu ấy ở ngoài cửa rồi.',
    exList:[

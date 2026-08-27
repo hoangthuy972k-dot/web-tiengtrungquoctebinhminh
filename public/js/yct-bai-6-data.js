@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — YCT Bài 6: 我的头发很长
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'头发',py:'tóufa',pos:'Danh từ',vn:'tóc',em:'💇',lesson:1,
    ex_zh:'妹妹的头发不长。',ex_py:'Mèimei de tóufa bù cháng.',ex_vn:'Tóc em gái mình không dài.',
    exList:[{zh:'妹妹的头发不长。',py:'Mèimei de tóufa bù cháng.',vn:'Tóc em gái mình không dài.'}],

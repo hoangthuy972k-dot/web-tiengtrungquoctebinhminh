@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════
 // DATA — Bài 10: 别找了，手机在桌子上呢
 // ══════════════════════════════════════════
-const vocabData = [
+var vocabData = [
   {n:1,zh:'课',py:'kè',pos:'Danh từ',vn:'bài học, tiết học, môn học',em:'📖',lesson:1,
    ex_zh:'明天上午还有汉语课呢。',ex_py:'Míngtiān shàngwǔ hái yǒu Hànyǔ kè ne.',ex_vn:'Sáng mai còn có tiết học tiếng Trung đấy.',
    exList:[

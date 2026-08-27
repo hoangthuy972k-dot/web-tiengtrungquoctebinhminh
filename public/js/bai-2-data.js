@@ -1,4 +1,4 @@
-const vocabData = [
+var vocabData = [
   {n:1,zh:'生病',py:'shēngbìng',pos:'Động từ',vn:'bị bệnh, sinh bệnh',em:'🤒',lesson:1,
    ex_zh:'他生病了，今天没有去上班。',ex_py:'Tā shēngbìng le, jīntiān méiyǒu qù shàngbān.',ex_vn:'Anh ấy bị bệnh rồi, hôm nay không đi làm.',
    exList:[

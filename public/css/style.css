@@ -1681,3 +1681,124 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   font-weight: 800;
   margin-bottom: var(--space-2);
 }
+
+/* ---------- Flashcard practice (lat the) ---------- */
+.fc-card-wrap {
+  max-width: 460px;
+  margin: 0 auto var(--space-6);
+  perspective: 1200px;
+}
+
+.fc-card {
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s var(--ease-standard);
+}
+
+.fc-card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.fc-face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.fc-front {
+  background: linear-gradient(135deg, var(--color-red-500), var(--color-red-700));
+}
+
+.fc-back {
+  background: linear-gradient(135deg, var(--color-green-500), var(--color-green-600));
+  transform: rotateY(180deg);
+}
+
+.fc-zh {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.fc-back .fc-zh {
+  font-size: 1.6rem;
+}
+
+.fc-face .vp-speak-btn {
+  background: rgba(255, 255, 255, 0.22);
+  color: var(--color-white);
+}
+
+.fc-face .vp-speak-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.fc-hint {
+  margin-top: var(--space-2);
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+.fc-py {
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.fc-vn {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.fc-example {
+  margin-top: var(--space-2);
+  font-size: 0.9rem;
+  opacity: 0.9;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: var(--space-2);
+}
+
+.fc-actions {
+  max-width: 460px;
+  margin: 0 auto;
+  display: flex;
+  gap: var(--space-3);
+}
+
+.fc-btn {
+  flex: 1;
+  min-height: 52px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--color-white);
+}
+
+.fc-btn-no {
+  background: var(--color-red-600);
+}
+
+.fc-btn-no:hover {
+  background: var(--color-red-700);
+}
+
+.fc-btn-yes {
+  background: var(--color-green-600);
+}
+
+.fc-btn-yes:hover {
+  background: #17794a;
+}

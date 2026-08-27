@@ -156,6 +156,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -164,6 +165,7 @@
     $('#levelDetail').hidden = false;
     $('#lessonHub').hidden = true;
     $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -248,6 +250,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = false;
     $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -272,6 +275,11 @@
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showVocabPractice(levelId, lesson);
+        });
+      } else if (tabId === 'flash') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showFlashcardPractice(levelId, lesson);
         });
       }
       grid.appendChild(tile);
@@ -369,10 +377,13 @@
   var vpQuiz = null; // {order:[idx...], pos:0, score:0}
 
   function showVocabPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#vocabPractice').hidden = false;
+    $('#flashcardPractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -516,6 +527,97 @@
           renderVpQuiz(mode);
         }, 700);
       });
+    });
+  }
+
+  /* ---------------- Flashcard practice (lat the tung tu, tu danh gia nho/chua nho) ---------------- */
+
+  var fcVocab = [];
+  var fcIndex = 0;
+  var fcTally = { yes: 0, no: 0 };
+
+  function showFlashcardPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = false;
+    $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    $('#fcSubtitle').textContent = 'Đang tải...';
+
+    loadLessonVocab(lesson).then(function (vocabData) {
+      fcVocab = vocabData;
+      fcIndex = 0;
+      fcTally = { yes: 0, no: 0 };
+      renderFlashcard();
+    }).catch(function () {
+      $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được dữ liệu từ vựng của bài này.</p>';
+    });
+
+    $('#flashcardPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderFlashcard() {
+    var total = fcVocab.length;
+    if (fcIndex >= total) {
+      $('#fcSubtitle').textContent = 'Hoàn thành';
+      $('#fcContent').innerHTML =
+        '<div class="vp-quiz-done"><strong>🟢 ' + fcTally.yes + ' · 🔴 ' + fcTally.no + '</strong>' +
+        '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã ôn hết ' + total + ' thẻ từ vựng.</p>' +
+        '<button type="button" class="btn btn-primary" id="fcRestart">Ôn lại</button></div>';
+      $('#fcRestart').addEventListener('click', function () {
+        fcIndex = 0;
+        fcTally = { yes: 0, no: 0 };
+        renderFlashcard();
+      });
+      return;
+    }
+
+    var word = fcVocab[fcIndex];
+    var ex = word.exList && word.exList[0];
+    $('#fcSubtitle').textContent = 'Thẻ ' + (fcIndex + 1) + '/' + total;
+
+    var segs = '';
+    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < fcIndex ? ' is-done' : '') + '"></div>';
+
+    $('#fcContent').innerHTML =
+      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      '<div class="fc-card-wrap"><div class="fc-card" id="fcCard">' +
+        '<div class="fc-face fc-front">' +
+          '<span class="fc-zh hanzi">' + word.zh + '</span>' +
+          '<button type="button" class="vp-speak-btn" id="fcSpeakBtn">🔊</button>' +
+          '<span class="fc-hint">❓ Chạm để lật thẻ</span>' +
+        '</div>' +
+        '<div class="fc-face fc-back">' +
+          '<span class="fc-py">' + word.py + '</span>' +
+          '<span class="fc-vn">' + word.vn + '</span>' +
+          (ex ? '<span class="fc-example">' + ex.zh + ' · ' + ex.vn + '</span>' : '') +
+        '</div>' +
+      '</div></div>' +
+      '<div class="fc-actions">' +
+        '<button type="button" class="fc-btn fc-btn-no" id="fcNo">🔴 Chưa nhớ</button>' +
+        '<button type="button" class="fc-btn fc-btn-yes" id="fcYes">🟢 Đã nhớ</button>' +
+      '</div>';
+
+    var card = $('#fcCard');
+    card.addEventListener('click', function () {
+      card.classList.toggle('is-flipped');
+    });
+    $('#fcSpeakBtn').addEventListener('click', function (e) {
+      e.stopPropagation();
+      vpSpeak(word.zh);
+    });
+    $('#fcNo').addEventListener('click', function () {
+      fcTally.no++;
+      fcIndex++;
+      renderFlashcard();
+    });
+    $('#fcYes').addEventListener('click', function () {
+      fcTally.yes++;
+      fcIndex++;
+      renderFlashcard();
     });
   }
 
@@ -717,6 +819,11 @@
       else showDashboard();
     });
     $('#vocabBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#fcBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();

@@ -3,7 +3,8 @@
 
   var STORAGE_KEYS = {
     user: 'hyv_user',
-    pinyinHidden: 'hyv_pinyin_hidden'
+    visitedLessons: 'hyv_visited_lessons',
+    studyDays: 'hyv_study_days'
   };
 
   /* ---------------- Utilities ---------------- */
@@ -14,21 +15,6 @@
 
   function $all(selector, scope) {
     return Array.prototype.slice.call((scope || document).querySelectorAll(selector));
-  }
-
-  function shuffle(arr) {
-    var a = arr.slice();
-    for (var i = a.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var tmp = a[i];
-      a[i] = a[j];
-      a[j] = tmp;
-    }
-    return a;
-  }
-
-  function sample(arr, n) {
-    return shuffle(arr).slice(0, n);
   }
 
   function readJSON(key, fallback) {
@@ -59,115 +45,109 @@
     }, 2600);
   }
 
-  /* ---------------- Header / nav ---------------- */
+  function dateKey(d) {
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
 
-  function initNav() {
-    var toggle = $('#navToggle');
-    var panel = $('#mobilePanel');
+  /* ---------------- Sidebar nav ---------------- */
+
+  function initSidebar() {
+    var sidebar = $('#appSidebar');
+    var scrim = $('#appScrim');
+    var toggle = $('#sidebarToggle');
+
+    function openSidebar() {
+      sidebar.classList.add('is-open');
+      scrim.classList.add('is-visible');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('is-open');
+      scrim.classList.remove('is-visible');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
     toggle.addEventListener('click', function () {
-      var isOpen = panel.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
+      sidebar.classList.contains('is-open') ? closeSidebar() : openSidebar();
     });
-    $all('.mobile-panel a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        panel.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+    scrim.addEventListener('click', closeSidebar);
+    $all('.app-nav-item, .app-nav-subitem', sidebar).forEach(function (item) {
+      item.addEventListener('click', closeSidebar);
+    });
+
+    var levelsToggle = $('#levelsToggle');
+    var levelsSubmenu = $('#levelsSubmenu');
+    levelsToggle.addEventListener('click', function () {
+      var isOpen = levelsToggle.classList.toggle('is-open');
+      levelsSubmenu.classList.toggle('is-open', isOpen);
+      levelsToggle.setAttribute('aria-expanded', String(isOpen));
     });
   }
 
-  function initSearch() {
-    function wireForm(formId, inputId) {
-      var form = $(formId);
-      var input = $(inputId);
-      if (!form) return;
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        applyLessonFilter(input.value);
-        document.getElementById('levels').scrollIntoView({ behavior: 'smooth' });
-      });
-      input.addEventListener('input', function () {
-        applyLessonFilter(input.value);
-      });
-    }
-    wireForm('#lessonSearchForm', '#lessonSearch');
-    wireForm('#lessonSearchFormMobile', '#lessonSearchMobile');
-  }
-
-  function applyLessonFilter(query) {
-    var q = query.trim().toLowerCase();
-    var cards = $all('.level-card');
-    var anyVisible = false;
-    cards.forEach(function (card) {
-      var haystack = card.getAttribute('data-search') || '';
-      var match = !q || haystack.indexOf(q) !== -1;
-      card.style.display = match ? '' : 'none';
-      if (match) anyVisible = true;
+  function renderLevelSubmenu() {
+    var wrap = $('#levelsSubmenu');
+    wrap.innerHTML = '';
+    DASHBOARD_LEVEL_IDS.forEach(function (id) {
+      var level = APP_DATA.levels.find(function (l) { return l.id === id; });
+      if (!level) return;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'app-nav-subitem' + (id === practiceLevel ? ' is-active' : '');
+      btn.innerHTML = '<span class="app-nav-dot is-' + LEVEL_COLOR[id] + '"></span>' + level.name;
+      btn.addEventListener('click', function () { selectLevel(id); });
+      wrap.appendChild(btn);
     });
-    var grid = $('#levelGrid');
-    var emptyMsg = $('#levelEmptyMsg');
-    if (!anyVisible) {
-      if (!emptyMsg) {
-        emptyMsg = document.createElement('p');
-        emptyMsg.id = 'levelEmptyMsg';
-        emptyMsg.style.color = 'var(--color-gray-600)';
-        emptyMsg.textContent = 'Không tìm thấy bài học phù hợp. Thử từ khoá khác.';
-        grid.parentNode.appendChild(emptyMsg);
-      }
-    } else if (emptyMsg) {
-      emptyMsg.remove();
-    }
   }
 
   /* ---------------- Level cards ---------------- */
 
-  var LEVEL_ICON_CLASS = { hsk1: 'is-red', hsk2: 'is-gold', hsk3: 'is-red', hsk4: 'is-gold', yct: 'is-red' };
+  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk2', 'hsk3', 'yct'];
+  var LEVEL_COLOR = { hsk1: 'red', hsk2: 'green', hsk3: 'gold', yct: 'blue' };
+  var LEVEL_SHORT = { hsk1: 'HSK1', hsk2: 'HSK2', hsk3: 'HSK3', yct: 'YCT1' };
   var READY_LEVELS = { hsk1: true, hsk2: true, yct: true };
-  var practiceLevel = 'hsk1';
+  var practiceLevel = 'hsk2';
 
   function renderLevelCards() {
     var grid = $('#levelGrid');
     grid.innerHTML = '';
-    APP_DATA.levels.forEach(function (level) {
-      var isReady = !!READY_LEVELS[level.id];
+    DASHBOARD_LEVEL_IDS.forEach(function (id) {
+      var level = APP_DATA.levels.find(function (l) { return l.id === id; });
+      if (!level) return;
+      var isReady = !!READY_LEVELS[id];
       var card = document.createElement('button');
       card.type = 'button';
       card.className = 'level-card' + (isReady ? '' : ' is-disabled');
-      card.setAttribute('data-level', level.id);
-      card.setAttribute('data-search', (level.name + ' ' + level.subtitle + ' ' + level.description).toLowerCase());
+      card.setAttribute('data-level', id);
       card.innerHTML =
-        '<div class="level-badge ' + LEVEL_ICON_CLASS[level.id] + ' hanzi">' + (level.id === 'yct' ? '儿' : level.name.replace('HSK ', '')) + '</div>' +
-        '<div>' +
+        '<div class="level-badge is-' + LEVEL_COLOR[id] + '">' + LEVEL_SHORT[id] + '</div>' +
+        '<div class="level-card-body">' +
           '<h3>' + level.name + '</h3>' +
-          '<span class="level-sub">' + level.subtitle + '</span>' +
-        '</div>' +
-        '<p>' + level.description + '</p>' +
-        '<div class="level-meta">' +
-          '<div><dt>' + level.totalLessons + '</dt><dd>Bài học</dd></div>' +
-          '<div><dt>' + level.totalVocab + '</dt><dd>Từ vựng</dd></div>' +
-        '</div>' +
-        '<span class="level-card-cta">' +
-          (isReady
-            ? 'Xem lộ trình ' + level.totalLessons + ' bài <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'
-            : 'Sắp ra mắt') +
-        '</span>';
+          '<span class="level-sub">Hán ngữ tiêu chuẩn</span>' +
+        '</div>';
       card.addEventListener('click', function () {
         if (!isReady) {
           showToast(level.name + ' đang được xây dựng, quay lại sau nhé!');
           return;
         }
-        if (READY_LEVELS[level.id]) {
-          practiceLevel = level.id;
-          renderPracticeLevelTabs();
-          renderLessonList();
-        }
+        selectLevel(id);
         document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
       });
       grid.appendChild(card);
     });
   }
 
-  /* ---------------- Practice level tabs (HSK1 / HSK2) ---------------- */
+  function selectLevel(id) {
+    if (!READY_LEVELS[id]) {
+      var level = APP_DATA.levels.find(function (l) { return l.id === id; });
+      showToast((level ? level.name : id) + ' đang được xây dựng, quay lại sau nhé!');
+      return;
+    }
+    practiceLevel = id;
+    renderLevelSubmenu();
+    renderPracticeLevelTabs();
+    renderLessonList();
+  }
+
+  /* ---------------- Practice level tabs ---------------- */
 
   var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk2: 'HSK 2', yct: 'YCT' };
 
@@ -181,11 +161,7 @@
       btn.type = 'button';
       btn.className = 'lesson-tab' + (id === practiceLevel ? ' active' : '');
       btn.textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
-      btn.addEventListener('click', function () {
-        practiceLevel = id;
-        renderPracticeLevelTabs();
-        renderLessonList();
-      });
+      btn.addEventListener('click', function () { selectLevel(id); });
       wrap.appendChild(btn);
     });
   }
@@ -221,31 +197,102 @@
     });
   }
 
-  /* ---------------- Hero word of the day ---------------- */
+  /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
 
-  function allVocab() {
+  var WEEKDAY_LABELS = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+
+  function currentWeekDates() {
+    var today = new Date();
+    var day = today.getDay(); // 0 = Sunday
+    var mondayOffset = day === 0 ? -6 : 1 - day;
+    var monday = new Date(today);
+    monday.setDate(today.getDate() + mondayOffset);
     var out = [];
-    Object.keys(APP_DATA.vocab).forEach(function (level) {
-      out = out.concat(APP_DATA.vocab[level]);
-    });
+    for (var i = 0; i < 7; i++) {
+      var d = new Date(monday);
+      d.setDate(monday.getDate() + i);
+      out.push(d);
+    }
     return out;
   }
 
-  function renderHeroWord() {
-    var word = sample(allVocab(), 1)[0];
-    $('#heroHanzi').textContent = word.hanzi;
-    $('#heroPinyin').textContent = word.pinyin;
-    $('#heroMeaning').textContent = word.meaning;
+  function computeStreak(studyDays) {
+    var set = {};
+    studyDays.forEach(function (d) { set[d] = true; });
+    var streak = 0;
+    var cursor = new Date();
+    if (!set[dateKey(cursor)]) {
+      cursor.setDate(cursor.getDate() - 1);
+    }
+    while (set[dateKey(cursor)]) {
+      streak++;
+      cursor.setDate(cursor.getDate() - 1);
+    }
+    return streak;
+  }
+
+  function renderStreak() {
+    var studyDays = readJSON(STORAGE_KEYS.studyDays, []);
+    var streak = computeStreak(studyDays);
+    $('#streakCount').textContent = streak + ' ngày';
+
+    var todayKey = dateKey(new Date());
+    var days = currentWeekDates();
+    var wrap = $('#streakDays');
+    wrap.innerHTML = '';
+    days.forEach(function (d, i) {
+      var key = dateKey(d);
+      var isDone = studyDays.indexOf(key) !== -1;
+      var isToday = key === todayKey;
+      var el = document.createElement('div');
+      el.className = 'dash-streak-day';
+      el.innerHTML =
+        '<span>' + WEEKDAY_LABELS[i] + '</span>' +
+        '<span class="dash-streak-dot' + (isDone ? ' is-done' : '') + (isToday ? ' is-today' : '') + '"></span>';
+      wrap.appendChild(el);
+    });
+  }
+
+  /* ---------------- Stat tiles (real progress recorded from lesson pages) ---------------- */
+
+  var STAT_TILE_DEFS = [
+    { key: 'levels', label: 'Cấp độ', icon: 'is-red', svg: '<path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>' },
+    { key: 'lessons', label: 'Bài học', icon: 'is-gold', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
+    { key: 'vocab', label: 'Từ vựng', icon: 'is-green', svg: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>' },
+    { key: 'examples', label: 'Câu ví dụ', icon: 'is-blue', svg: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' }
+  ];
+
+  function computeProgressStats() {
+    var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
+    var lessons = 0, vocab = 0, examples = 0;
+    Object.keys(visited).forEach(function (pageKey) {
+      lessons++;
+      vocab += visited[pageKey].vocab || 0;
+      examples += visited[pageKey].examples || 0;
+    });
+    return { levels: DASHBOARD_LEVEL_IDS.length, lessons: lessons, vocab: vocab, examples: examples };
+  }
+
+  function renderStatTiles() {
+    var stats = computeProgressStats();
+    var wrap = $('#statTiles');
+    wrap.innerHTML = '';
+    STAT_TILE_DEFS.forEach(function (def) {
+      var tile = document.createElement('div');
+      tile.className = 'stat-tile';
+      tile.innerHTML =
+        '<div class="stat-tile-icon ' + def.icon + '"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">' + def.svg + '</svg></div>' +
+        '<div><strong>' + stats[def.key] + '</strong><span>' + def.label + '</span></div>';
+      wrap.appendChild(tile);
+    });
   }
 
   /* ---------------- Auth (demo only, localStorage) ---------------- */
 
   function initAuth() {
     var overlay = $('#authModal');
-    var loginBtn = $('#loginBtn');
-    var registerBtn = $('#registerBtn');
     var closeBtn = $('#authModalClose');
-    var userChip = $('#userChip');
+    var sidebarUserBtn = $('#sidebarUserBtn');
 
     function openModal(tab) {
       overlay.classList.add('is-open');
@@ -257,8 +304,6 @@
       overlay.classList.remove('is-open');
     }
 
-    loginBtn.addEventListener('click', function () { openModal('login'); });
-    registerBtn.addEventListener('click', function () { openModal('register'); });
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) closeModal();
@@ -293,17 +338,9 @@
 
     function renderUserChip() {
       var user = readJSON(STORAGE_KEYS.user, null);
-      if (user) {
-        loginBtn.hidden = true;
-        registerBtn.hidden = true;
-        userChip.hidden = false;
-        $('#userName').textContent = user.name || user.email;
-        $('#userAvatar').textContent = (user.name || user.email || 'H').trim().charAt(0).toUpperCase();
-      } else {
-        loginBtn.hidden = false;
-        registerBtn.hidden = false;
-        userChip.hidden = true;
-      }
+      var name = user ? (user.name || user.email) : 'Học sinh Demo';
+      $('#userName').textContent = name;
+      $('#userAvatar').textContent = name.trim().charAt(0).toUpperCase();
     }
 
     $('#loginPanel').addEventListener('submit', function (e) {
@@ -325,11 +362,16 @@
       showToast('Tạo tài khoản thành công! Chào mừng ' + name + '.');
     });
 
-    userChip.addEventListener('click', function () {
-      if (!window.confirm('Đăng xuất khỏi tài khoản demo?')) return;
-      localStorage.removeItem(STORAGE_KEYS.user);
-      renderUserChip();
-      showToast('Đã đăng xuất.');
+    sidebarUserBtn.addEventListener('click', function () {
+      var user = readJSON(STORAGE_KEYS.user, null);
+      if (user) {
+        if (!window.confirm('Đăng xuất khỏi tài khoản demo?')) return;
+        localStorage.removeItem(STORAGE_KEYS.user);
+        renderUserChip();
+        showToast('Đã đăng xuất.');
+      } else {
+        openModal('login');
+      }
     });
 
     renderUserChip();
@@ -337,38 +379,23 @@
 
   /* ---------------- Init ---------------- */
 
-  function initPinyinToggle() {
-    var btn = $('#pinyinToggle');
-    if (!btn) return;
-    function apply(hidden) {
-      document.body.classList.toggle('pinyin-hidden', hidden);
-      btn.setAttribute('aria-pressed', String(!hidden));
-      btn.lastChild.textContent = hidden ? ' Ẩn' : ' Hiện';
-    }
-    var hidden = readJSON(STORAGE_KEYS.pinyinHidden, false);
-    apply(hidden);
-    btn.addEventListener('click', function () {
-      hidden = !hidden;
-      writeJSON(STORAGE_KEYS.pinyinHidden, hidden);
-      apply(hidden);
-    });
-  }
-
   function init() {
     $('#footerYear').textContent = new Date().getFullYear();
 
-    initNav();
-    initSearch();
-    initPinyinToggle();
+    initSidebar();
     renderLevelCards();
+    renderLevelSubmenu();
     renderPracticeLevelTabs();
     renderLessonList();
-    renderHeroWord();
+    renderStreak();
+    renderStatTiles();
     initAuth();
 
-    $('#heroWordRefresh').addEventListener('click', renderHeroWord);
     $('#ctaStart').addEventListener('click', function () {
-      document.getElementById('levels').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
+    });
+    $('#ctaStreak').addEventListener('click', function () {
+      document.getElementById('practice').scrollIntoView({ behavior: 'smooth' });
     });
   }
 

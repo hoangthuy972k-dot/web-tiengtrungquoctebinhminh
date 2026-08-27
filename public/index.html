@@ -14,166 +14,114 @@
 <body>
 <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
 
-<header class="site-header">
-  <div class="container">
-    <a href="#home" class="logo">
+<div class="app-shell">
+  <aside class="app-sidebar" id="appSidebar">
+    <a href="#home" class="app-logo">
       <span class="logo-mark hanzi">汉</span>
       HanYu Vui
     </a>
 
-    <form class="search-form" id="lessonSearchForm" role="search">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <label for="lessonSearch" class="visually-hidden">Tìm kiếm bài học</label>
-      <input type="search" id="lessonSearch" name="q" placeholder="Tìm bài học, từ vựng, cấp độ..." autocomplete="off" />
-    </form>
+    <nav class="app-nav" aria-label="Điều hướng chính">
+      <a href="#home" class="app-nav-item is-active">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+        Trang chủ
+      </a>
 
-    <nav class="main-nav" aria-label="Điều hướng chính">
-      <a href="#levels">Hệ thống kiến thức</a>
-      <a href="#practice">Lộ trình &amp; Luyện tập HSK2</a>
-      <a href="/phat-am.html">Học phát âm</a>
-      <a href="#footer">Liên hệ</a>
+      <div class="app-nav-section">
+        <span class="app-nav-label">Học tập</span>
+        <button type="button" class="app-nav-item app-nav-expand is-open" id="levelsToggle" aria-expanded="true" aria-controls="levelsSubmenu">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+          <span>Cấp độ</span>
+          <svg class="icon app-nav-chevron" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="app-nav-submenu is-open" id="levelsSubmenu"></div>
+      </div>
+
+      <a href="#practice" class="app-nav-item">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        Ôn tập
+      </a>
     </nav>
 
-    <div class="header-actions">
-      <button class="pinyin-toggle" id="pinyinToggle" type="button" aria-pressed="true">
-        <span class="hanzi">拼音</span> Hiện
-      </button>
-      <button class="btn btn-outline" id="loginBtn" type="button">Đăng nhập</button>
-      <button class="btn btn-primary" id="registerBtn" type="button">Đăng ký</button>
-      <button class="user-chip" id="userChip" type="button" hidden>
-        <span class="avatar" id="userAvatar">H</span>
-        <span id="userName">Học viên</span>
-      </button>
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobilePanel">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
-  </div>
+    <button type="button" class="app-sidebar-user" id="sidebarUserBtn">
+      <span class="avatar" id="userAvatar">H</span>
+      <span class="app-sidebar-user-info">
+        <strong id="userName">Học sinh Demo</strong>
+        <span>Học sinh</span>
+      </span>
+    </button>
+  </aside>
 
-  <div class="mobile-panel" id="mobilePanel">
-    <form class="search-form" id="lessonSearchFormMobile" role="search">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <label for="lessonSearchMobile" class="visually-hidden">Tìm kiếm bài học</label>
-      <input type="search" id="lessonSearchMobile" placeholder="Tìm bài học, từ vựng..." autocomplete="off" />
-    </form>
-    <a href="#levels">Hệ thống kiến thức</a>
-    <a href="#practice">Lộ trình &amp; Luyện tập HSK2</a>
-    <a href="/phat-am.html">Học phát âm</a>
-    <a href="#footer">Liên hệ</a>
-  </div>
-</header>
+  <div class="app-scrim" id="appScrim"></div>
 
-<main id="main">
+  <main class="app-main" id="main">
+    <button class="app-mobile-toggle" id="sidebarToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="appSidebar">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container hero-inner">
-      <div>
-        <span class="hero-eyebrow">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2L12 16.8 5.7 21l2.3-7.2-6-4.6h7.6z"/></svg>
-          Nền tảng học tiếng Trung #1 cho người Việt
-        </span>
-        <h1>Chinh phục tiếng Trung cùng <span class="accent">HanYu Vui</span> mỗi ngày</h1>
-        <p>Lộ trình HSK 1 đến HSK 4 và chương trình YCT dành cho thiếu nhi, kết hợp bài tập trắc nghiệm sinh động giúp bạn ghi nhớ từ vựng nhanh và bền vững.</p>
-        <div class="hero-actions">
-          <button class="btn btn-gold" id="ctaStart" type="button">
-            Bắt đầu học ngay
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          <a class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color:#fff;" href="#levels">Xem lộ trình học</a>
-        </div>
-        <dl class="hero-stats">
-          <div><dt>2,300+</dt><dd>Từ vựng HSK &amp; YCT</dd></div>
-          <div><dt>75+</dt><dd>Bài học có cấu trúc</dd></div>
-          <div><dt>5</dt><dd>Cấp độ luyện tập</dd></div>
-        </dl>
+    <section class="dash-section" id="home">
+      <div class="dash-breadcrumb">
+        <p class="dash-crumb-trail">HSK / YCT → Bài → Chủ đề → Dạng bài</p>
+        <h1>Các cấp độ</h1>
       </div>
 
-      <div class="hero-card">
-        <div class="hero-card-row">
-          <span class="hero-card-tag">Từ vựng hôm nay</span>
-          <button class="hero-card-refresh" id="heroWordRefresh" type="button" aria-label="Đổi từ vựng khác">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-          </button>
-        </div>
-        <div class="hanzi-big hanzi" id="heroHanzi">你好</div>
-        <div class="pinyin-big" id="heroPinyin">nǐ hǎo</div>
-        <div class="meaning-big" id="heroMeaning">xin chào</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEVELS -->
-  <section class="section" id="levels">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="section-eyebrow">Hệ thống kiến thức</p>
-          <h2>Chọn cấp độ phù hợp với bạn</h2>
-          <p>Từ người mới bắt đầu đến trình độ giao tiếp thành thạo, và cả chương trình riêng cho các bạn nhỏ.</p>
-        </div>
-      </div>
       <div class="level-grid" id="levelGrid"></div>
-    </div>
-  </section>
 
-  <!-- PRACTICE (lộ trình 15 bài HSK1 & HSK2 gộp cùng luyện tập) -->
-  <section class="section section-alt" id="practice">
-    <div class="container">
+      <div class="dash-row">
+        <div class="dash-cta-card">
+          <div class="dash-cta-text">
+            <h2>Kiên trì mỗi ngày,<br /><span class="accent">giỏi tiếng Trung nhanh hơn</span></h2>
+            <p>Chọn một cấp độ bên dưới và tiếp tục hành trình chinh phục HSK/YCT của bạn.</p>
+            <button class="btn btn-white" id="ctaStart" type="button">
+              Bắt đầu học ngay
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+          <div class="dash-cta-card-visual" aria-hidden="true">
+            <div class="flash-card">
+              <span class="hanzi">谢谢</span>
+              <span class="pinyin">xièxiè</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-streak-card">
+          <div class="dash-streak-head">🔥 Chuỗi ngày học</div>
+          <div class="dash-streak-main">
+            <span class="dash-streak-big-flame">🔥</span>
+            <div>
+              <strong id="streakCount">0 ngày</strong>
+              <span>liên tiếp</span>
+            </div>
+          </div>
+          <div class="dash-streak-days" id="streakDays"></div>
+          <p class="dash-streak-hint">Học ít nhất một bài mỗi ngày để giữ chuỗi và ghi nhớ lâu hơn.</p>
+          <button class="btn btn-dark btn-block" id="ctaStreak" type="button">Học ngay hôm nay</button>
+        </div>
+      </div>
+
+      <div class="dash-stat-tiles" id="statTiles"></div>
+    </section>
+
+    <!-- PRACTICE (lộ trình bài học, mở trang đầy đủ khi bấm vào) -->
+    <section class="section section-alt" id="practice" style="padding: 0; background: transparent;">
       <div class="section-head">
         <div>
           <p class="section-eyebrow">Bài tập thực hành</p>
           <h2>Luyện tập để ghi nhớ lâu hơn</h2>
-          <p>Chọn cấp độ rồi bấm vào một bài để mở trang học đầy đủ: khởi động, từ mới, thẻ nhớ, ngữ pháp, hội thoại, điền từ, sắp xếp, nối câu, trắc nghiệm và luyện nói.</p>
+          <p>Chọn cấp độ rồi bấm vào một bài để mở trang học đầy đủ: khởi động, từ mới, thẻ nhớ, ngữ pháp, hội thoại và bài tập tương tác.</p>
         </div>
       </div>
       <div class="lesson-tabs" id="lessonListTabs" style="margin-bottom:20px;"></div>
       <div class="lesson-list" id="lessonList"></div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer class="site-footer" id="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="#home" class="logo" style="color:#fff;">
-          <span class="logo-mark hanzi">汉</span>
-          HanYu Vui
-        </a>
-        <p style="margin-top: 12px; max-width: 40ch;">Nền tảng học tiếng Trung trực tuyến dành cho người Việt, đồng hành cùng bạn từ HSK 1 đến HSK 4 và chương trình YCT thiếu nhi.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><polygon points="10 9 15 12 10 15" class="icon-fill"/></svg></a>
-          <a href="#" aria-label="TikTok"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3v10.5a3.5 3.5 0 1 1-3.5-3.5c.34 0 .68.05 1 .13V7a6.5 6.5 0 1 0 6.5 6.5V8.5A6 6 0 0 0 22 9.8V6.5A5.5 5.5 0 0 1 16 3z"/></svg></a>
-        </div>
-      </div>
-
-      <div>
-        <h4>Liên hệ</h4>
-        <ul>
-          <li>Email: hotro@hanyuvui.vn</li>
-          <li>Zalo liên hệ: 0377 527 486</li>
-          <li>Địa chỉ: 368 Tân Sơn Nhì, Tân Phú, TP.HCM</li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Liên kết nhanh</h4>
-        <ul>
-          <li><a href="#levels">Hệ thống kiến thức</a></li>
-          <li><a href="#practice">Lộ trình &amp; Luyện tập HSK2</a></li>
-          <li><a href="#">Chính sách bảo mật</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© <span id="footerYear"></span> HanYu Vui. Bảo lưu mọi quyền.</span>
-      <span>Thiết kế với tinh thần văn hoá Trung Hoa hiện đại.</span>
-    </div>
-  </div>
-</footer>
+    <footer class="app-footer" id="footer" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-gray-200); color: var(--color-gray-600); font-size: 0.88rem;">
+      <p style="margin: 0 0 var(--space-2);">Email: hotro@hanyuvui.vn · Zalo: 0377 527 486</p>
+      <p style="margin: 0;">© <span id="footerYear"></span> HanYu Vui. Bảo lưu mọi quyền.</p>
+    </footer>
+  </main>
+</div>
 
 <!-- AUTH MODAL -->
 <div class="modal-overlay" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">

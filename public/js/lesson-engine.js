@@ -840,3 +840,22 @@ if(typeof mcData!=='undefined')buildMC();
 if(typeof speakingData!=='undefined')buildSpeaking(1);
 if(typeof listenData!=='undefined')buildListen();
 if(typeof errorFixData!=='undefined')buildErrorFix();
+
+// ══════════════════════════════════════════
+// GHI NHẬN TIẾN ĐỘ (cho thẻ thống kê + chuỗi ngày học ở trang chủ)
+// ══════════════════════════════════════════
+(function recordHomepageProgress(){
+  if(typeof vocabData==='undefined') return;
+  try{
+    var visited=JSON.parse(localStorage.getItem('hyv_visited_lessons')||'{}');
+    var vocabCount=vocabData.length;
+    var exampleCount=vocabData.reduce(function(sum,v){return sum+((v.exList&&v.exList.length)||(v.ex_zh?1:0));},0);
+    visited[location.pathname]={vocab:vocabCount,examples:exampleCount};
+    localStorage.setItem('hyv_visited_lessons',JSON.stringify(visited));
+
+    var today=new Date();
+    var key=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+    var days=JSON.parse(localStorage.getItem('hyv_study_days')||'[]');
+    if(days.indexOf(key)===-1){days.push(key);localStorage.setItem('hyv_study_days',JSON.stringify(days));}
+  }catch(e){/* localStorage unavailable - fail silently */}
+})();

@@ -288,13 +288,18 @@ button {
 .app-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-weight: 800;
-  font-size: 1.15rem;
+  gap: var(--space-3);
   color: var(--color-white);
   text-decoration: none;
   padding: var(--space-2);
   margin-bottom: 2px;
+}
+
+.app-logo-text {
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 1.85rem;
+  line-height: 1;
 }
 
 .app-slogan {
@@ -310,14 +315,6 @@ button {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background: var(--color-white);
-  color: var(--color-red-600);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-hanzi);
-  font-size: 1.4rem;
-  font-weight: 700;
   box-shadow: var(--shadow-sm);
   flex-shrink: 0;
 }
@@ -2834,4 +2831,68 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 
 .tp-next-btn {
   margin-top: var(--space-4);
+}
+
+/* ---------- Global pinyin toggle (persistent across every screen) ---------- */
+.pinyin-toggle {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-5);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-full, 999px);
+  padding: 6px 10px 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.pinyin-toggle .icon { color: var(--color-gray-500); flex-shrink: 0; }
+
+.pinyin-toggle-switch {
+  width: 34px;
+  height: 20px;
+  border-radius: var(--radius-full, 999px);
+  background: var(--color-gray-200);
+  position: relative;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.pinyin-toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease;
+}
+
+.pinyin-toggle[aria-pressed="true"] .pinyin-toggle-switch { background: var(--color-green-600, #16a34a); }
+.pinyin-toggle[aria-pressed="true"] .pinyin-toggle-knob { transform: translateX(14px); }
+
+@media (max-width: 640px) {
+  .pinyin-toggle { top: var(--space-2); right: var(--space-2); padding: 5px 8px 5px 10px; font-size: 0.78rem; }
+}
+
+body.pinyin-hidden .vp-word-py,
+body.pinyin-hidden .vp-quiz-prompt-py,
+body.pinyin-hidden .fc-py,
+body.pinyin-hidden .gr-example-py,
+body.pinyin-hidden .dp-py,
+body.pinyin-hidden .sp-model-py,
+body.pinyin-hidden .sp-drill-py,
+body.pinyin-hidden .tp-prompt-py,
+body.pinyin-hidden .tp-answer-py,
+body.pinyin-hidden .py-inline {
+  display: none;
 }

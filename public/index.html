@@ -5,20 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hi Hán 喜汉 - Học mà Chill, Chill là Giỏi</title>
 <meta name="description" content="Hi Hán 喜汉 — Học mà Chill, Chill là Giỏi. Nền tảng học tiếng Trung HSK 1-4 và YCT thiếu nhi: lộ trình HSK 2 đầy đủ 15 bài với từ mới, thẻ nhớ, ngữ pháp, hội thoại và bài tập tương tác." />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23d8202e%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23f7c948%22 font-family=%22sans-serif%22>汉</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%225%22 y=%225%22 width=%2290%22 height=%2290%22 rx=%2222%22 fill=%22%23d8202e%22/><rect x=%2238%22 y=%2218%22 width=%2224%22 height=%226%22 rx=%223%22 fill=%22%23fff6e9%22/><rect x=%2226%22 y=%2230%22 width=%2248%22 height=%226%22 rx=%223%22 fill=%22%23fff6e9%22/><path d=%22M28,50 Q38,58 48,50%22 stroke=%22%23fff6e9%22 stroke-width=%227%22 stroke-linecap=%22round%22 fill=%22none%22/><path d=%22M52,50 Q62,58 72,50%22 stroke=%22%23fff6e9%22 stroke-width=%227%22 stroke-linecap=%22round%22 fill=%22none%22/><rect x=%2230%22 y=%2264%22 width=%2240%22 height=%226%22 rx=%223%22 fill=%22%23fff6e9%22/><path d=%22M22,76 Q50,90 78,76%22 stroke=%22%23fff6e9%22 stroke-width=%228%22 stroke-linecap=%22round%22 fill=%22none%22/></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@500;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@500;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
 
+<button type="button" class="pinyin-toggle" id="pinyinToggle" aria-pressed="true">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+  Pinyin
+  <span class="pinyin-toggle-switch" aria-hidden="true"><span class="pinyin-toggle-knob"></span></span>
+</button>
+
 <div class="app-shell">
   <aside class="app-sidebar" id="appSidebar">
     <a href="#home" class="app-logo">
-      <span class="logo-mark hanzi">汉</span>
-      Hi Hán 喜汉
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="5" y="5" width="90" height="90" rx="22" fill="#d8202e"/>
+        <rect x="38" y="18" width="24" height="6" rx="3" fill="#fff6e9"/>
+        <rect x="26" y="30" width="48" height="6" rx="3" fill="#fff6e9"/>
+        <path d="M28,50 Q38,58 48,50" stroke="#fff6e9" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <path d="M52,50 Q62,58 72,50" stroke="#fff6e9" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <rect x="30" y="64" width="40" height="6" rx="3" fill="#fff6e9"/>
+        <path d="M22,76 Q50,90 78,76" stroke="#fff6e9" stroke-width="8" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="app-logo-text">Hi Hán</span>
     </a>
     <p class="app-slogan">Học mà Chill, Chill là Giỏi</p>
 

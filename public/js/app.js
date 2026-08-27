@@ -4,7 +4,8 @@
   var STORAGE_KEYS = {
     user: 'hyv_user',
     visitedLessons: 'hyv_visited_lessons',
-    studyDays: 'hyv_study_days'
+    studyDays: 'hyv_study_days',
+    pinyinVisible: 'hyv_pinyin_visible'
   };
 
   /* ---------------- Utilities ---------------- */
@@ -612,7 +613,7 @@
       if (mode === 'zh-vn') label = opt.vn;
       else if (mode === 'vn-zh') label = opt.zh;
       else if (mode === 'py-zh') label = opt.zh;
-      else label = opt.zh + ' (' + opt.py + ')';
+      else label = opt.zh + ' <span class="py-inline">(' + opt.py + ')</span>';
       return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + label + '</button>';
     }).join('');
 
@@ -1765,7 +1766,7 @@
     for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < lpQuiz.pos ? ' is-done' : '') + '"></div>';
 
     var optionsHtml = options.map(function (opt, i) {
-      var label = lpMode === 'hanzi' ? (opt.zh + ' (' + opt.py + ')') : opt.vn;
+      var label = lpMode === 'hanzi' ? (opt.zh + ' <span class="py-inline">(' + opt.py + ')</span>') : opt.vn;
       return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + label + '</button>';
     }).join('');
 
@@ -2641,15 +2642,33 @@
     { key: 'examples', label: 'Câu ví dụ', icon: 'is-blue', svg: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' }
   ];
 
+  // Tong noi dung THAT cua toan bo nen tang (khong phai so bai nguoi dung da xem) —
+  // tinh truc tiep tu du lieu that: HSK1 15 bai (164 tu, 182 vi du) + HSK2 15 bai
+  // (172 tu, 516 vi du) + YCT 11 bai (100 tu, 101 vi du). Cap nhat lai neu them noi dung.
+  var PLATFORM_TOTALS = { levels: 3, lessons: 41, vocab: 436, examples: 799 };
+
   function computeProgressStats() {
-    var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
-    var lessons = 0, vocab = 0, examples = 0;
-    Object.keys(visited).forEach(function (pageKey) {
-      lessons++;
-      vocab += visited[pageKey].vocab || 0;
-      examples += visited[pageKey].examples || 0;
+    return PLATFORM_TOTALS;
+  }
+
+  /* ---------------- Global pinyin toggle (persists across every screen) ---------------- */
+
+  function initPinyinToggle() {
+    var btn = $('#pinyinToggle');
+    var stored = readJSON(STORAGE_KEYS.pinyinVisible, true);
+    var visible = stored !== false;
+
+    function apply() {
+      document.body.classList.toggle('pinyin-hidden', !visible);
+      btn.setAttribute('aria-pressed', String(visible));
+    }
+    apply();
+
+    btn.addEventListener('click', function () {
+      visible = !visible;
+      writeJSON(STORAGE_KEYS.pinyinVisible, visible);
+      apply();
     });
-    return { levels: DASHBOARD_LEVEL_IDS.length, lessons: lessons, vocab: vocab, examples: examples };
   }
 
   function renderStatTiles() {
@@ -2767,6 +2786,7 @@
     renderStreak();
     renderStatTiles();
     initAuth();
+    initPinyinToggle();
 
     $('#levelDetailBack').addEventListener('click', showDashboard);
     $('#lessonHubBack').addEventListener('click', function () {

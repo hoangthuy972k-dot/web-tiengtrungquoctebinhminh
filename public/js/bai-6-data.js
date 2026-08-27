@@ -336,3 +336,13 @@ var speakingData = {
      note:'对……好/不好 (ôn Bài 5) dùng để nói điều gì đó có lợi hay có hại cho một đối tượng.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 6 + ôn lại từ bài 1-5 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Sao bạn lại không ăn cơm thế?', zh:'你怎么不吃饭？', py:'Nǐ zěnme bù chī fàn?'},
+  {vi:'Vì trời mưa nên chúng tôi không đi chơi bóng rổ.', zh:'因为下雨，所以我们没去打篮球。', py:'Yīnwèi xià yǔ, suǒyǐ wǒmen méi qù dǎ lánqiú.'},
+  {vi:'Tuần này ngày nào tôi cũng ăn thịt dê.', zh:'这个星期我天天都吃羊肉。', py:'Zhège xīngqī wǒ tiāntiān dōu chī yángròu.'},
+  {vi:'Chị gái tôi thường xuyên đi bơi.', zh:'我姐姐经常去游泳。', py:'Wǒ jiějie jīngcháng qù yóuyǒng.'},
+];

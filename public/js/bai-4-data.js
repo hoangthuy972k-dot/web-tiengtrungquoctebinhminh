@@ -327,3 +327,13 @@ var speakingData = {
      note:'非常 nhấn mạnh cảm xúc mạnh hơn 很 — 非常谢谢你 = cảm ơn bạn rất nhiều.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 4 + ôn lại từ bài 1-3 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Chúc mừng sinh nhật!', zh:'生日快乐！', py:'Shēngrì kuàilè!'},
+  {vi:'Quyển sách này là do tôi mua.', zh:'这本书是我买的。', py:'Zhè běn shū shì wǒ mǎi de.'},
+  {vi:'Bộ phim đã bắt đầu rồi.', zh:'电影已经开始了。', py:'Diànyǐng yǐjīng kāishǐ le.'},
+  {vi:'Bạn có thể giúp tôi giới thiệu một chút được không?', zh:'你能帮我介绍一下吗？', py:'Nǐ néng bāng wǒ jièshào yíxià ma?'},
+];

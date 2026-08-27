@@ -330,3 +330,13 @@ var speakingData = {
      note:'就 dùng để chốt một quyết định: 就这么定了 = quyết định như vậy đi.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 5 + ôn lại từ bài 1-4 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Cà phê ở đây ngon đấy, vậy uống cà phê đi.', zh:'这儿的咖啡不错，就喝咖啡吧。', py:'Zhèr de kāfēi búcuò, jiù hē kāfēi ba.'},
+  {vi:'Sức khỏe bạn thế nào? — Cũng tạm ổn.', zh:'你身体怎么样？还好。', py:'Nǐ shēntǐ zěnmeyàng? Hái hǎo.'},
+  {vi:'Hôm nay thời tiết hơi lạnh.', zh:'今天天气有点儿冷。', py:'Jīntiān tiānqì yǒudiǎnr lěng.'},
+  {vi:'Bạn không muốn đi thì ở nhà nghỉ ngơi đi.', zh:'你不想去，就在家休息吧。', py:'Nǐ bù xiǎng qù, jiù zài jiā xiūxi ba.'},
+];

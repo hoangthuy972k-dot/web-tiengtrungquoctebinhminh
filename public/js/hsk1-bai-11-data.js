@@ -221,3 +221,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 11 + ôn lại từ bài 1-10
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Bây giờ là mười giờ mười phút.', zh:'现在十点十分。', py:'Xiànzài shí diǎn shí fēn.'},
+  {vi:'Chúng tôi mấy giờ ăn cơm?', zh:'我们几点吃饭？', py:'Wǒmen jǐ diǎn chī fàn?'},
+  {vi:'Lúc nào bạn về nhà?', zh:'你什么时候回家？', py:'Nǐ shénme shíhou huí jiā?'},
+  {vi:'Trước thứ Sáu, tôi muốn đọc quyển sách này.', zh:'星期五前，我想看这本书。', py:'Xīngqīwǔ qián, wǒ xiǎng kàn zhè běn shū.'},
+];

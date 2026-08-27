@@ -295,3 +295,13 @@ var speakingData = {
      note:'懂/完/错 là các bổ ngữ kết quả thường gặp, đứng NGAY SAU động từ chính để chỉ KẾT QUẢ của hành động.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 9 + ôn lại từ bài 1-8 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Tôi đã nghe hiểu rồi.', zh:'我听懂了。', py:'Wǒ tīng dǒng le.'},
+  {vi:'Bạn bắt đầu học múa từ năm mấy tuổi?', zh:'你从几岁开始学习跳舞？', py:'Nǐ cóng jǐ suì kāishǐ xuéxí tiàowǔ?'},
+  {vi:'Đây là công việc đầu tiên của anh ấy.', zh:'这是他的第一个工作。', py:'Zhè shì tā de dì yī ge gōngzuò.'},
+  {vi:'Hoan nghênh bạn đến công ty chúng tôi làm việc.', zh:'欢迎你来我们公司上班。', py:'Huānyíng nǐ lái wǒmen gōngsī shàngbān.'},
+];

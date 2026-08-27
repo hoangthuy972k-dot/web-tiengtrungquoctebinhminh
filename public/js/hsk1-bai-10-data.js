@@ -242,3 +242,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 10 + ôn lại từ bài 1-9
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Trên bàn có một máy tính và một quyển sách.', zh:'桌子上有一个电脑和一本书。', py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.'},
+  {vi:'Tôi có thể ngồi đây không?', zh:'我能坐这儿吗？', py:'Wǒ néng zuò zhèr ma?'},
+  {vi:'Trong bàn không có tiền.', zh:'桌子里没有钱。', py:'Zhuōzi lǐ méiyǒu qián.'},
+  {vi:'Mời ngồi!', zh:'请坐！', py:'Qǐng zuò!'},
+];

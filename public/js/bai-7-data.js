@@ -321,3 +321,13 @@ var speakingData = {
      note:'还有……就……了 dùng để nói "còn bao lâu nữa thì" một sự việc sẽ xảy ra.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 7 + ôn lại từ bài 1-6 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Nhà bạn cách công ty có xa không?', zh:'你家离公司远吗？', py:'Nǐ jiā lí gōngsī yuǎn ma?'},
+  {vi:'Nhà tôi cách trường học không xa.', zh:'我家离学校不远。', py:'Wǒ jiā lí xuéxiào bù yuǎn.'},
+  {vi:'Đi xe buýt chỉ một tiếng là tới trường rồi.', zh:'坐公共汽车一个小时就到学校了。', py:'Zuò gōnggòng qìchē yí ge xiǎoshí jiù dào xuéxiào le.'},
+  {vi:'Đã hơn chín giờ rồi, sao cậu ấy vẫn đang học bài?', zh:'已经九点多了，他怎么还在学习？', py:'Yǐjīng jiǔ diǎn duō le, tā zěnme hái zài xuéxí?'},
+];

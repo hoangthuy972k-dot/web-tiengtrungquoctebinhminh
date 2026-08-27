@@ -213,3 +213,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 15 + ôn lại từ bài 1-14
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Tôi đến vào hôm qua.', zh:'我是昨天来的。', py:'Wǒ shì zuótiān lái de.'},
+  {vi:'Rất vui được quen biết bạn.', zh:'很高兴认识你。', py:'Hěn gāoxìng rènshi nǐ.'},
+  {vi:'Chúng tôi không phải đi taxi đến.', zh:'我们不是坐出租车来的。', py:'Wǒmen bú shì zuò chūzūchē lái de.'},
+  {vi:'Anh ấy học ở Đại học Bắc Kinh.', zh:'他在北京大学学习。', py:'Tā zài Běijīng Dàxué xuéxí.'},
+];

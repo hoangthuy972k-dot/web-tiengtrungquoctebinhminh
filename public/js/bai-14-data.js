@@ -252,3 +252,13 @@ var speakingData = {
      note:'百 (trăm) dùng để nói số lượng lớn, ví dụ số giờ học.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 14 + ôn lại từ bài 1-13 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Bạn đã từng xem bộ phim đó chưa?', zh:'你看过那个电影吗？', py:'Nǐ kànguo nàge diànyǐng ma?'},
+  {vi:'Tuy chữ Hán có nhiều, nhưng tôi rất thích viết chữ Hán.', zh:'虽然汉字很多，但是我很喜欢写汉字。', py:'Suīrán Hànzì hěn duō, dànshì wǒ hěn xǐhuan xiě Hànzì.'},
+  {vi:'Tôi đã từng đến Trung Quốc một lần.', zh:'我去过一次中国。', py:'Wǒ qùguo yí cì Zhōngguó.'},
+  {vi:'Hôm nay trời quang, chúng ta đi chơi đi.', zh:'今天天气晴，我们去玩儿吧。', py:'Jīntiān tiānqì qíng, wǒmen qù wánr ba.'},
+];

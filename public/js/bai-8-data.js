@@ -267,3 +267,13 @@ var speakingData = {
      note:'有点儿 (ôn Bài 5) chỉ dùng cho nhận xét mang tính KHÔNG MONG MUỐN như "hơi đắt".'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 8 + ôn lại từ bài 1-7 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Chiều mai bạn gọi điện cho tôi nhé, được không?', zh:'你明天下午给我打电话，好吗？', py:'Nǐ míngtiān xiàwǔ gěi wǒ dǎ diànhuà, hǎoma?'},
+  {vi:'Để tôi suy nghĩ một chút rồi mới nói cho bạn biết nhé.', zh:'让我想想再告诉你。', py:'Ràng wǒ xiǎngxiang zài gàosu nǐ.'},
+  {vi:'Bạn đợi tôi một chút được không?', zh:'你等等我好吗？', py:'Nǐ děngděng wǒ hǎoma?'},
+  {vi:'Cái áo màu trắng này hơi đắt.', zh:'这件白色的衣服有点儿贵。', py:'Zhè jiàn báisè de yīfu yǒudiǎnr guì.'},
+];

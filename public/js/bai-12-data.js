@@ -258,3 +258,13 @@ var speakingData = {
      note:'Ôn lại cấu trúc rủ rê ……好吗？ đã học ở Bài 8.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 12 + ôn lại từ bài 1-11 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Anh ấy nói tiếng Trung rất tốt.', zh:'他汉语说得很好。', py:'Tā Hànyǔ shuō de hěn hǎo.'},
+  {vi:'Món ăn vợ tôi nấu rất ngon.', zh:'我妻子做的菜很好吃。', py:'Wǒ qīzi zuò de cài hěn hǎochī.'},
+  {vi:'Hôm nay không độ, có tuyết rơi.', zh:'今天零度，下雪了。', py:'Jīntiān líng dù, xià xuě le.'},
+  {vi:'Anh ấy mặc áo mới vào phòng học.', zh:'他穿新衣服进教室。', py:'Tā chuān xīn yīfu jìn jiàoshì.'},
+];

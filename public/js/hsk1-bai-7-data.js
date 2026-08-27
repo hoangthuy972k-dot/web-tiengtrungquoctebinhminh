@@ -245,3 +245,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 7 + ôn lại từ bài 1-6
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Hôm nay là ngày mấy?', zh:'今天几号？', py:'Jīntiān jǐ hào?'},
+  {vi:'Xin hỏi, hôm nay là thứ mấy?', zh:'请问，今天星期几？', py:'Qǐngwèn, jīntiān xīngqī jǐ?'},
+  {vi:'Ngày mai tôi đi trường xem sách.', zh:'明天我去学校看书。', py:'Míngtiān wǒ qù xuéxiào kàn shū.'},
+  {vi:'Hôm qua bạn cùng lớp của tôi đi trường xem sách rồi.', zh:'昨天我同学去学校看书了。', py:'Zuótiān wǒ tóngxué qù xuéxiào kàn shū le.'},
+];

@@ -258,3 +258,13 @@ var speakingData = {
      note:'Ôn lại cấu trúc V+着 và trạng ngữ chỉ phương tiện di chuyển (坐公共汽车) đã học ở các bài trước.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 15 + ôn lại từ bài 1-14 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Năm mới sắp đến rồi.', zh:'新年就要到了。', py:'Xīnnián jiùyào dào le.'},
+  {vi:'Hôm nay âm u, lạnh hơn hôm qua.', zh:'今天阴，比昨天更冷。', py:'Jīntiān yīn, bǐ zuótiān gèng lěng.'},
+  {vi:'Mọi người đều đang chuẩn bị về nhà.', zh:'大家都在准备回家。', py:'Dàjiā dōu zài zhǔnbèi huí jiā.'},
+  {vi:'Em gái tôi đang mua vé ở ga tàu hỏa.', zh:'我妹妹在火车站买票。', py:'Wǒ mèimei zài huǒchēzhàn mǎi piào.'},
+];

@@ -161,3 +161,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 2 + ôn lại từ bài 1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Cảm ơn bạn!', zh:'谢谢你！', py:'Xièxie nǐ!'},
+  {vi:'Không có gì đâu!', zh:'不客气！', py:'Bú kèqi!'},
+  {vi:'Tạm biệt các bạn!', zh:'你们，再见！', py:'Nǐmen, zàijiàn!'},
+  {vi:'Chào bạn! Cảm ơn nhé!', zh:'你好！谢谢你！', py:'Nǐ hǎo! Xièxie nǐ!'},
+];

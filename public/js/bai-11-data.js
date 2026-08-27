@@ -301,3 +301,13 @@ var speakingData = {
      note:'Ôn lại cấu trúc rủ rê 一起……吧 đã gặp ở các bài trước.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 11 + ôn lại từ bài 1-10 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Anh trai cao hơn chị gái.', zh:'哥哥比姐姐高。', py:'Gēge bǐ jiějie gāo.'},
+  {vi:'Người cùng hát karaoke với bạn là ai?', zh:'和你一起唱歌的人是谁？', py:'Hé nǐ yìqǐ chàng gē de rén shì shéi?'},
+  {vi:'Có thể bạn không quen biết anh ấy.', zh:'你可能不认识他。', py:'Nǐ kěnéng bú rènshi tā.'},
+  {vi:'Cái này rẻ hơn cái kia một chút.', zh:'这个比那个便宜一点儿。', py:'Zhège bǐ nàge piányi yìdiǎnr.'},
+];

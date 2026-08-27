@@ -358,3 +358,13 @@ var speakingData = {
      note:'也 (ôn Bài 1) dùng để nối thêm một trạng thái tương tự — 很忙，也很累 = vừa bận vừa mệt.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 2 + ôn lại toàn bộ HSK1 và bài 1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Có phải bạn ít khi bị bệnh vì thích vận động không?', zh:'你很少生病，是不是喜欢运动？', py:'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?'},
+  {vi:'Mỗi ngày tôi đều thức dậy lúc sáu giờ.', zh:'我每天六点起床。', py:'Wǒ měitiān liù diǎn qǐchuáng.'},
+  {vi:'David cao bao nhiêu?', zh:'大卫多高？', py:'Dàwèi duō gāo?'},
+  {vi:'Tôi rất mệt, muốn nghỉ ngơi.', zh:'我很累，想休息。', py:'Wǒ hěn lèi, xiǎng xiūxi.'},
+];

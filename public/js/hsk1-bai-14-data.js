@@ -268,3 +268,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 14 + ôn lại từ bài 1-13
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Tôi đã mua khá nhiều quần áo.', zh:'我买了不少衣服。', py:'Wǒ mǎile bùshǎo yīfu.'},
+  {vi:'Bốn mươi phút sau tôi sẽ về.', zh:'四十分钟后我回来。', py:'Sìshí fēnzhōng hòu wǒ huílái.'},
+  {vi:'Những bộ quần áo này đều rất đẹp.', zh:'这些衣服都很漂亮。', py:'Zhèxiē yīfu dōu hěn piàoliang.'},
+  {vi:'Những thứ này đều là của bạn tôi.', zh:'这些东西都是我朋友的。', py:'Zhèxiē dōngxi dōu shì wǒ péngyou de.'},
+];

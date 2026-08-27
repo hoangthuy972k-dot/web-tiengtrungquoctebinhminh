@@ -220,3 +220,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 4 + ôn lại từ bài 1-3
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Cô ấy là ai?', zh:'她是谁？', py:'Tā shì shéi?'},
+  {vi:'Cô ấy là bạn của tôi.', zh:'她是我的朋友。', py:'Tā shì wǒ de péngyou.'},
+  {vi:'Anh ấy là bạn cùng lớp của tôi.', zh:'他是我的同学。', py:'Tā shì wǒ de tóngxué.'},
+  {vi:'Tôi là học sinh, còn bạn thì sao?', zh:'我是学生，你呢？', py:'Wǒ shì xuésheng, nǐ ne?'},
+];

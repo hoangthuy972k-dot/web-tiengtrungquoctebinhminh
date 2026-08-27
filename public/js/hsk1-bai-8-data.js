@@ -282,3 +282,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 8 + ôn lại từ bài 1-7
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Tôi muốn uống trà.', zh:'我想喝茶。', py:'Wǒ xiǎng hē chá.'},
+  {vi:'Cái cốc này bao nhiêu tiền?', zh:'这个杯子多少钱？', py:'Zhège bēizi duōshao qián?'},
+  {vi:'Chiều nay tôi muốn đi cửa hàng mua cốc.', zh:'下午我想去商店买杯子。', py:'Xiàwǔ wǒ xiǎng qù shāngdiàn mǎi bēizi.'},
+  {vi:'Năm đồng.', zh:'五块钱。', py:'Wǔ kuài qián.'},
+];

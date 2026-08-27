@@ -251,3 +251,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 12 + ôn lại từ bài 1-11
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Thời tiết hôm nay thế nào?', zh:'今天天气怎么样？', py:'Jīntiān tiānqì zěnmeyàng?'},
+  {vi:'Hôm nay nóng quá.', zh:'今天太热了。', py:'Jīntiān tài rè le.'},
+  {vi:'Sức khỏe tôi không tốt lắm.', zh:'我身体不太好。', py:'Wǒ shēntǐ bú tài hǎo.'},
+  {vi:'Mai anh ấy sẽ đến chứ?', zh:'明天他会来吗？', py:'Míngtiān tā huì lái ma?'},
+];

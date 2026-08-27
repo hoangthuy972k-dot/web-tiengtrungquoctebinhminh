@@ -294,3 +294,13 @@ var speakingData = {
      note:'往 + hướng + 走 dùng để chỉ đường từng chặng một.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 13 + ôn lại từ bài 1-12 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Cô ấy tay đang cầm bút chì.', zh:'她手里拿着铅笔。', py:'Tā shǒu lǐ názhe qiānbǐ.'},
+  {vi:'Đi thẳng về phía trước.', zh:'一直往前走。', py:'Yìzhí wǎng qián zǒu.'},
+  {vi:'Đến ngã tư thì rẽ phải.', zh:'到了路口再往右走。', py:'Dàole lùkǒu zài wǎng yòu zǒu.'},
+  {vi:'Cô ấy chẳng phải có bạn trai rồi sao?', zh:'她不是有男朋友吗？', py:'Tā bú shì yǒu nán péngyou ma?'},
+];

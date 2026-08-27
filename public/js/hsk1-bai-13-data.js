@@ -228,3 +228,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 13 + ôn lại từ bài 1-12
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'A lô, bạn đang làm gì vậy?', zh:'喂，你在做什么呢？', py:'Wèi, nǐ zài zuò shénme ne?'},
+  {vi:'Tôi đang ngủ đây.', zh:'我在睡觉呢。', py:'Wǒ zài shuìjiào ne.'},
+  {vi:'Tôi cũng thích xem tivi.', zh:'我也喜欢看电视。', py:'Wǒ yě xǐhuan kàn diànshì.'},
+  {vi:'Chiều nay bạn gọi điện cho tôi nhé.', zh:'你下午给我打电话吧。', py:'Nǐ xiàwǔ gěi wǒ dǎ diànhuà ba.'},
+];

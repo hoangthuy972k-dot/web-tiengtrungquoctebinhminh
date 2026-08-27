@@ -235,3 +235,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 6 + ôn lại từ bài 1-5
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Tôi biết viết chữ Hán.', zh:'我会写汉字。', py:'Wǒ huì xiě Hànzì.'},
+  {vi:'Món ăn Trung Quốc rất ngon.', zh:'中国菜很好吃。', py:'Zhōngguó cài hěn hǎochī.'},
+  {vi:'Chữ Hán này đọc thế nào?', zh:'汉字怎么读？', py:'Hànzì zěnme dú?'},
+  {vi:'Mẹ tôi biết nói tiếng Trung.', zh:'我妈妈会说汉语。', py:'Wǒ māma huì shuō Hànyǔ.'},
+];

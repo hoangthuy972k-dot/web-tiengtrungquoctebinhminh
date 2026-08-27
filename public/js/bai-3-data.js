@@ -353,3 +353,13 @@ var speakingData = {
      note:'的 dùng để danh hoá — 我丈夫的 nghĩa là "cái của chồng tôi", không cần lặp lại danh từ.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 3 + ôn lại từ bài 1-2 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Cái đồng hồ đeo tay này của ai vậy?', zh:'这块手表是谁的？', py:'Zhè kuài shǒubiǎo shì shéi de?'},
+  {vi:'Hôm qua chồng tôi tặng tôi báo.', zh:'昨天我丈夫送我报纸。', py:'Zuótiān wǒ zhàngfu sòng wǒ bàozhǐ.'},
+  {vi:'Phòng của con gái bạn thật đẹp.', zh:'你女儿的房间真漂亮。', py:"Nǐ nǚ'ér de fángjiān zhēn piàoliang."},
+  {vi:'Màu này rất đẹp.', zh:'这个颜色很漂亮。', py:'Zhège yánsè hěn piàoliang.'},
+];

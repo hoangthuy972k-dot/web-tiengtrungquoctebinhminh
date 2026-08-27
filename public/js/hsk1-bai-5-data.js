@@ -227,3 +227,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 5 + ôn lại từ bài 1-4
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Nhà bạn có mấy người?', zh:'你家有几口人？', py:'Nǐ jiā yǒu jǐ kǒu rén?'},
+  {vi:'Bạn của bạn năm nay bao nhiêu tuổi rồi?', zh:'你朋友今年多大了？', py:'Nǐ péngyou jīnnián duō dà le?'},
+  {vi:'Cô giáo năm nay năm mươi tuổi rồi.', zh:'老师今年五十岁了。', py:'Lǎoshī jīnnián wǔshí suì le.'},
+  {vi:'Gia đình tôi có bốn người.', zh:'我家有四口人。', py:'Wǒ jiā yǒu sì kǒu rén.'},
+];

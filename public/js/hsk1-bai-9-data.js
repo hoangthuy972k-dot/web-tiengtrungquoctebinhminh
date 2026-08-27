@@ -250,3 +250,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 9 + ôn lại từ bài 1-8
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Con mèo nhỏ ở đâu?', zh:'小猫在哪儿？', py:'Xiǎo māo zài nǎr?'},
+  {vi:'Bố tôi làm việc ở bệnh viện.', zh:'我爸爸在医院工作。', py:'Wǒ bàba zài yīyuàn gōngzuò.'},
+  {vi:'Con chó ở dưới ghế.', zh:'狗在椅子下面。', py:'Gǒu zài yǐzi xiàmiàn.'},
+  {vi:'Con trai tôi là bác sĩ.', zh:'我儿子是医生。', py:'Wǒ érzi shì yīshēng.'},
+];

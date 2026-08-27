@@ -246,3 +246,13 @@ var speakingData = {
     ],
   },
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 3 + ôn lại từ bài 1-2
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Bạn tên là gì?', zh:'你叫什么名字？', py:'Nǐ jiào shénme míngzi?'},
+  {vi:'Tôi là học sinh.', zh:'我是学生。', py:'Wǒ shì xuésheng.'},
+  {vi:'Bạn là giáo viên phải không?', zh:'你是老师吗？', py:'Nǐ shì lǎoshī ma?'},
+  {vi:'Cảm ơn thầy giáo!', zh:'谢谢老师！', py:'Xièxie lǎoshī!'},
+];

@@ -273,3 +273,13 @@ var speakingData = {
      note:'别 + Động từ + 了 cũng dùng để trấn an, bảo người khác không cần làm gì nữa.'},
   ],
 };
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH — dùng từ bài 10 + ôn lại từ bài 1-9 và HSK1
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:'Đừng xem tivi nữa, mau đi học bài đi.', zh:'别看电视了，快去学习吧。', py:'Bié kàn diànshì le, kuài qù xuéxí ba.'},
+  {vi:'Xem tivi có ích cho việc học tiếng Trung.', zh:'看电视对学汉语有帮助。', py:'Kàn diànshì duì xué Hànyǔ yǒu bāngzhù.'},
+  {vi:'Anh trai tôi đang rửa quả dưa hấu.', zh:'我哥哥正在洗西瓜。', py:'Wǒ gēge zhèngzài xǐ xīguā.'},
+  {vi:'Vận động rất tốt cho sức khỏe.', zh:'运动对身体很好。', py:'Yùndòng duì shēntǐ hěn hǎo.'},
+];

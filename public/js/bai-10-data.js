@@ -3,11 +3,11 @@
 // ══════════════════════════════════════════
 var vocabData = [
   {n:1,zh:'课',py:'kè',pos:'Danh từ',vn:'bài học, tiết học, môn học',em:'📖',lesson:1,
-   ex_zh:'明天上午还有汉语课呢。',ex_py:'Míngtiān shàngwǔ hái yǒu Hànyǔ kè ne.',ex_vn:'Sáng mai còn có tiết học tiếng Trung đấy.',
+   ex_zh:'我们下课了。',ex_py:'Wǒmen xiàkè le.',ex_vn:'Chúng tôi tan học rồi.',
    exList:[
-     {zh:'明天上午还有汉语课呢。',py:'Míngtiān shàngwǔ hái yǒu Hànyǔ kè ne.',vn:'Sáng mai còn có tiết học tiếng Trung đấy.'},
-     {zh:'今天我们有几节课？',py:'Jīntiān wǒmen yǒu jǐ jié kè?',vn:'Hôm nay chúng ta có mấy tiết học?'},
-     {zh:'这节课很有意思。',py:'Zhè jié kè hěn yǒu yìsi.',vn:'Tiết học này rất thú vị.'},
+     {zh:'我们下课了。',py:'Wǒmen xiàkè le.',vn:'Chúng tôi tan học rồi. (下课 — tan học)'},
+     {zh:'明天的课是汉语课。',py:'Míngtiān de kè shì Hànyǔ kè.',vn:'Tiết học ngày mai là tiết tiếng Trung. (汉语课 — tiết tiếng Trung)'},
+     {zh:'我上午有汉语课，下午有英语课。',py:'Wǒ shàngwǔ yǒu Hànyǔ kè, xiàwǔ yǒu Yīngyǔ kè.',vn:'Sáng tôi có tiết tiếng Trung, chiều có tiết tiếng Anh. (英语课 — tiết tiếng Anh)'},
    ],
    hanzi:[
      {c:'课',p:'kè',type:'左右结构 · Trái-phải',st:10,ord:'讠(ngôn) trái → 果 (quả) phải',rad:'讠(ngôn – lời nói)',mean:'bài học, môn học',
@@ -15,11 +15,11 @@ var vocabData = [
       cf:'棵 (kē – lượng từ cây)',w:'汉语课 / 上课 / 下课'},
    ]},
   {n:2,zh:'帮助',py:'bāngzhù',pos:'Động từ / Danh từ',vn:'giúp đỡ, có ích',em:'🤝',lesson:1,
-   ex_zh:'看电视对学汉语有帮助。',ex_py:'Kàn diànshì duì xué Hànyǔ yǒu bāngzhù.',ex_vn:'Xem tivi có ích cho việc học tiếng Trung.',
+   ex_zh:'他常常帮助同学。',ex_py:'Tā chángcháng bāngzhù tóngxué.',ex_vn:'Anh ấy thường xuyên giúp đỡ bạn học.',
    exList:[
-     {zh:'看电视对学汉语有帮助。',py:'Kàn diànshì duì xué Hànyǔ yǒu bāngzhù.',vn:'Xem tivi có ích cho việc học tiếng Trung.'},
-     {zh:'谢谢你的帮助。',py:'Xièxie nǐ de bāngzhù.',vn:'Cảm ơn sự giúp đỡ của bạn.'},
-     {zh:'他帮助了很多人。',py:'Tā bāngzhùle hěn duō rén.',vn:'Anh ấy đã giúp đỡ rất nhiều người.'},
+     {zh:'他常常帮助同学。',py:'Tā chángcháng bāngzhù tóngxué.',vn:'Anh ấy thường xuyên giúp đỡ bạn học. (帮助 + người)'},
+     {zh:'你能帮助一下大卫吗？',py:'Nǐ néng bāngzhù yíxià Dàwèi ma?',vn:'Bạn có thể giúp David một chút được không? (khẩu ngữ: 帮 + người, ví dụ 帮我一下)'},
+     {zh:'看书对学习有帮助。',py:'Kàn shū duì xuéxí yǒu bāngzhù.',vn:'Đọc sách có ích cho việc học. (cấu trúc: 对…有帮助)'},
    ],
    hanzi:[
      {c:'帮',p:'bāng',type:'上下结构 · Trên-dưới',st:9,ord:'邦 (biến thể) → 巾 (cân)',rad:'巾 (cân – khăn)',mean:'giúp đỡ',
@@ -30,11 +30,11 @@ var vocabData = [
       cf:'昨 (zuó – khác bộ trái)',w:'帮助 / 助手 / 互助'},
    ]},
   {n:3,zh:'别',py:'bié',pos:'Phó từ',vn:'đừng',em:'🚫',lesson:2,
-   ex_zh:'别看报纸了，医生说你要多休息。',ex_py:'Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi.',ex_vn:'Đừng đọc báo nữa, bác sĩ bảo bạn cần nghỉ ngơi nhiều.',
+   ex_zh:'别看电视了。',ex_py:'Bié kàn diànshì le.',ex_vn:'Đừng xem tivi nữa.',
    exList:[
+     {zh:'别看电视了。',py:'Bié kàn diànshì le.',vn:'Đừng xem tivi nữa. (别 + Động từ + 了)'},
      {zh:'别看报纸了，医生说你要多休息。',py:'Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi.',vn:'Đừng đọc báo nữa, bác sĩ bảo bạn cần nghỉ ngơi nhiều.'},
-     {zh:'别玩手机了，快去学习吧。',py:'Bié wán shǒujī le, kuài qù xuéxí ba.',vn:'Đừng chơi điện thoại nữa, mau đi học đi.'},
-     {zh:'别担心，没事儿。',py:'Bié dānxīn, méishìr.',vn:'Đừng lo, không sao đâu.'},
+     {zh:'别着急，我们还有时间。',py:'Bié zháojí, wǒmen hái yǒu shíjiān.',vn:'Đừng vội, chúng ta vẫn còn thời gian.'},
    ],
    hanzi:[
      {c:'别',p:'bié',type:'左右结构 · Trái-phải',st:7,ord:'另 (lánh) trái → 刂 (đao) phải',rad:'刂(đao – dao)',mean:'đừng; khác',
@@ -54,11 +54,11 @@ var vocabData = [
       cf:'歌 (gē – "bài hát")',w:'哥哥 / 大哥'},
    ]},
   {n:5,zh:'鸡蛋',py:'jīdàn',pos:'Danh từ',vn:'trứng gà',em:'🥚',lesson:3,
-   ex_zh:'我买了羊肉和鸡蛋。',ex_py:'Wǒ mǎile yángròu hé jīdàn.',ex_vn:'Tôi đã mua thịt dê và trứng gà.',
+   ex_zh:'我今天早上吃了一个鸡蛋。',ex_py:'Wǒ jīntiān zǎoshang chīle yí ge jīdàn.',ex_vn:'Sáng nay tôi đã ăn một quả trứng gà.',
    exList:[
-     {zh:'我买了羊肉和鸡蛋。',py:'Wǒ mǎile yángròu hé jīdàn.',vn:'Tôi đã mua thịt dê và trứng gà.'},
-     {zh:'我每天早上吃一个鸡蛋。',py:'Wǒ měitiān zǎoshang chī yí ge jīdàn.',vn:'Mỗi sáng tôi ăn một quả trứng gà.'},
-     {zh:'冰箱里有很多鸡蛋。',py:'Bīngxiāng lǐ yǒu hěn duō jīdàn.',vn:'Trong tủ lạnh có rất nhiều trứng gà.'},
+     {zh:'我今天早上吃了一个鸡蛋。',py:'Wǒ jīntiān zǎoshang chīle yí ge jīdàn.',vn:'Sáng nay tôi đã ăn một quả trứng gà.'},
+     {zh:'你会做鸡蛋汤吗？',py:'Nǐ huì zuò jīdàn tāng ma?',vn:'Bạn có biết làm canh trứng không? (鸡蛋汤 — canh trứng)'},
+     {zh:'我去超市买了一些鸡蛋。',py:'Wǒ qù chāoshì mǎile yìxiē jīdàn.',vn:'Tôi đã đi siêu thị mua một ít trứng gà.'},
    ],
    hanzi:[
      {c:'鸡',p:'jī',type:'左右结构 · Trái-phải',st:7,ord:'又 (hựu) trái → 鸟 (điểu) phải',rad:'鸟 (điểu – chim)',mean:'gà',
@@ -69,11 +69,11 @@ var vocabData = [
       cf:'蜑 (dàn – ít dùng)',w:'鸡蛋 / 鸭蛋'},
    ]},
   {n:6,zh:'西瓜',py:'xīguā',pos:'Danh từ',vn:'dưa hấu',em:'🍉',lesson:3,
-   ex_zh:'冰箱里有西瓜。',ex_py:'Bīngxiāng lǐ yǒu xīguā.',ex_vn:'Trong tủ lạnh có dưa hấu.',
+   ex_zh:'我买了一点儿西瓜。',ex_py:'Wǒ mǎile yìdiǎnr xīguā.',ex_vn:'Tôi đã mua một ít dưa hấu.',
    exList:[
-     {zh:'冰箱里有西瓜。',py:'Bīngxiāng lǐ yǒu xīguā.',vn:'Trong tủ lạnh có dưa hấu.'},
-     {zh:'夏天我喜欢吃西瓜。',py:'Xiàtiān wǒ xǐhuan chī xīguā.',vn:'Mùa hè tôi thích ăn dưa hấu.'},
-     {zh:'这个西瓜很甜。',py:'Zhège xīguā hěn tián.',vn:'Quả dưa hấu này rất ngọt.'},
+     {zh:'我买了一点儿西瓜。',py:'Wǒ mǎile yìdiǎnr xīguā.',vn:'Tôi đã mua một ít dưa hấu. (买西瓜 — mua dưa hấu)'},
+     {zh:'西瓜很甜。',py:'Xīguā hěn tián.',vn:'Dưa hấu rất ngọt.'},
+     {zh:'西瓜多少钱？',py:'Xīguā duōshao qián?',vn:'Dưa hấu bao nhiêu tiền?'},
    ],
    hanzi:[
      {c:'西',p:'xī',type:'独体字 · Chữ đơn',st:6,ord:'一→儿→一→凵',rad:'西 (tây – tự thành bộ)',mean:'phía Tây',
@@ -87,8 +87,8 @@ var vocabData = [
    ex_zh:'妈妈正在准备午饭呢。',ex_py:'Māma zhèngzài zhǔnbèi wǔfàn ne.',ex_vn:'Mẹ đang chuẩn bị bữa trưa kìa.',
    exList:[
      {zh:'妈妈正在准备午饭呢。',py:'Māma zhèngzài zhǔnbèi wǔfàn ne.',vn:'Mẹ đang chuẩn bị bữa trưa kìa.'},
-     {zh:'他正在看电视。',py:'Tā zhèngzài kàn diànshì.',vn:'Anh ấy đang xem tivi.'},
-     {zh:'我们正在上课呢。',py:'Wǒmen zhèngzài shàngkè ne.',vn:'Chúng tôi đang trong giờ học đấy.'},
+     {zh:'他们正在教室里上课。',py:'Tāmen zhèngzài jiàoshì lǐ shàngkè.',vn:'Họ đang học trong lớp học.'},
+     {zh:'正在下大雨，我不能出去。',py:'Zhèngzài xià dàyǔ, wǒ bùnéng chūqù.',vn:'Trời đang mưa to, tôi không thể ra ngoài. (lưu ý: không dùng 正在 với động từ trạng thái như 知道/认识/喜欢/爱)'},
    ],
    hanzi:[
      {c:'正',p:'zhèng',type:'独体字 · Chữ đơn',st:5,ord:'一→丨→一→乛→一',rad:'止 (chỉ)',mean:'đúng, chính',
@@ -102,8 +102,8 @@ var vocabData = [
    ex_zh:'手机在桌子上呢。',ex_py:'Shǒujī zài zhuōzi shang ne.',ex_vn:'Điện thoại ở trên bàn kìa.',
    exList:[
      {zh:'手机在桌子上呢。',py:'Shǒujī zài zhuōzi shang ne.',vn:'Điện thoại ở trên bàn kìa.'},
-     {zh:'我的手机没电了。',py:'Wǒ de shǒujī méi diàn le.',vn:'Điện thoại của tôi hết pin rồi.'},
-     {zh:'这是我新买的手机。',py:'Zhè shì wǒ xīn mǎi de shǒujī.',vn:'Đây là điện thoại tôi mới mua.'},
+     {zh:'我的手机没电了。',py:'Wǒ de shǒujī méi diàn le.',vn:'Điện thoại của tôi hết pin rồi. (没电了 — hết pin rồi)'},
+     {zh:'我的手机快没电了，我要去充电。',py:'Wǒ de shǒujī kuài méi diàn le, wǒ yào qù chōngdiàn.',vn:'Điện thoại của tôi sắp hết pin rồi, tôi phải đi sạc. (充电 — sạc pin)'},
    ],
    hanzi:[
      {c:'手',p:'shǒu',type:'独体字 · Tượng hình',st:4,ord:'丿→一→𠃌→丿',rad:'手 (thủ – tự thành bộ)',mean:'tay',
@@ -117,8 +117,8 @@ var vocabData = [
    ex_zh:'那件衣服我帮你洗了。',ex_py:'Nà jiàn yīfu wǒ bāng nǐ xǐ le.',ex_vn:'Chiếc áo đó tớ giặt giúp bạn rồi.',
    exList:[
      {zh:'那件衣服我帮你洗了。',py:'Nà jiàn yīfu wǒ bāng nǐ xǐ le.',vn:'Chiếc áo đó tớ giặt giúp bạn rồi.'},
-     {zh:'吃饭以前要洗手。',py:'Chīfàn yǐqián yào xǐ shǒu.',vn:'Trước khi ăn cơm phải rửa tay.'},
-     {zh:'这个西瓜洗了吗？',py:'Zhège xīguā xǐle ma?',vn:'Quả dưa hấu này rửa chưa?'},
+     {zh:'我每天都洗衣服。',py:'Wǒ měitiān dōu xǐ yīfu.',vn:'Ngày nào tôi cũng giặt quần áo. (洗衣服 — giặt quần áo)'},
+     {zh:'你能帮我洗一下这些碗吗？',py:'Nǐ néng bāng wǒ xǐ yíxià zhèxiē wǎn ma?',vn:'Bạn có thể giúp tôi rửa mấy cái bát này một chút không?'},
    ],
    hanzi:[
      {c:'洗',p:'xǐ',type:'左右结构 · Trái-phải',st:9,ord:'氵(thủy) trái → 先 (tiên) phải',rad:'氵(thủy – nước)',mean:'rửa, giặt',
@@ -275,21 +275,28 @@ var speakingData = {
 };
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — dùng từ bài 10 + ôn lại từ bài 1-9 và HSK1
+// LUYỆN DỊCH (Việt→Trung) — cau dich THAT tu giao an PPT bai 10
+// (phan "cau dich Viet-Trung" giao vien da soan de hoc sinh ung dung
+// cach dung tu qua collocation/cau truc di kem)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Đừng xem tivi nữa, mau đi học bài đi.', zh:'别看电视了，快去学习吧。', py:'Bié kàn diànshì le, kuài qù xuéxí ba.'},
-  {vi:'Xem tivi có ích cho việc học tiếng Trung.', zh:'看电视对学汉语有帮助。', py:'Kàn diànshì duì xué Hànyǔ yǒu bāngzhù.'},
-  {vi:'Anh trai tôi đang rửa quả dưa hấu.', zh:'我哥哥正在洗西瓜。', py:'Wǒ gēge zhèngzài xǐ xīguā.'},
-  {vi:'Vận động rất tốt cho sức khỏe.', zh:'运动对身体很好。', py:'Yùndòng duì shēntǐ hěn hǎo.'},
+  {vi:'Sáng nay tôi có tiết tiếng Trung, chiều nay có tiết tiếng Anh.', zh:'我上午有汉语课，下午有英语课。', py:'Wǒ shàngwǔ yǒu Hànyǔ kè, xiàwǔ yǒu Yīngyǔ kè.'},
+  {vi:'Học tiếng Trung có ích cho công việc.', zh:'学中文对工作有帮助。', py:'Xué Zhōngwén duì gōngzuò yǒu bāngzhù.'},
+  {vi:'Trời đã muộn rồi, đừng xem TV nữa, đi ngủ đi.', zh:'天很晚了，别看电视了，去睡觉吧。', py:'Tiān hěn wǎn le, bié kàn diànshì le, qù shuìjiào ba.'},
+  {vi:'Mẹ bảo tôi đi mua trứng.', zh:'妈妈让我去买鸡蛋。', py:'Māma ràng wǒ qù mǎi jīdàn.'},
+  {vi:'Tôi muốn mua một chiếc điện thoại mới, nhưng tôi không có nhiều tiền.', zh:'我想买一个新手机，但是我没有很多钱。', py:'Wǒ xiǎng mǎi yí ge xīn shǒujī, dànshì wǒ méiyǒu hěn duō qián.'},
+  {vi:'Bạn có thể giúp tôi rửa mấy cái bát này một chút không?', zh:'你能帮我洗一下这些碗吗？', py:'Nǐ néng bāng wǒ xǐ yíxià zhèxiē wǎn ma?'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// LUYỆN DỊCH (chiều Trung→Việt) — cau dich THAT khac, cung tu giao an
+// PPT bai 10, khong trung voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Đừng chơi điện thoại nữa, mau đi giúp anh trai rửa dưa hấu.', zh:'别玩手机了，快去帮助哥哥洗西瓜。', py:'Bié wán shǒujī le, kuài qù bāngzhù gēge xǐ xīguā.'},
-  {vi:'Tôi đang học bài, đừng gọi điện cho tôi.', zh:'我正在学习，别给我打电话。', py:'Wǒ zhèngzài xuéxí, bié gěi wǒ dǎ diànhuà.'},
-  {vi:'Trứng gà rất tốt cho sức khỏe, vận động cũng rất tốt cho sức khỏe.', zh:'鸡蛋对身体很好，运动也对身体很好。', py:'Jīdàn duì shēntǐ hěn hǎo, yùndòng yě duì shēntǐ hěn hǎo.'},
-  {vi:'Đừng xem tivi nữa, vận động có ích cho bạn.', zh:'别看电视了，运动对你有帮助。', py:'Bié kàn diànshì le, yùndòng duì nǐ yǒu bāngzhù.'},
+  {vi:'Tôi rất hứng thú với tiếng Trung.', zh:'我对汉语很感兴趣。', py:'Wǒ duì Hànyǔ hěn gǎn xìngqù.'},
+  {vi:'Họ đang học trong lớp học.', zh:'他们正在教室里上课。', py:'Tāmen zhèngzài jiàoshì lǐ shàngkè.'},
+  {vi:'Bạn ăn nhiều rồi, đừng ăn nữa.', zh:'你已经吃很多了，别吃了。', py:'Nǐ yǐjīng chī hěn duō le, bié chī le.'},
+  {vi:'Đi ngủ sớm dậy sớm có lợi cho sức khỏe.', zh:'早睡早起对身体有帮助。', py:'Zǎo shuì zǎo qǐ duì shēntǐ yǒu bāngzhù.'},
+  {vi:'Trong giờ học, bạn đừng chơi điện thoại.', zh:'你在课上不要玩手机。', py:'Nǐ zài kè shàng bú yào wán shǒujī.'},
+  {vi:'Điện thoại của tôi sắp hết pin rồi, tôi phải đi sạc.', zh:'我的手机快没电了，我要去充电。', py:'Wǒ de shǒujī kuài méi diàn le, wǒ yào qù chōngdiàn.'},
 ];

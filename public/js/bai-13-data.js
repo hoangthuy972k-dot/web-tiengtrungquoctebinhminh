@@ -304,3 +304,13 @@ var translateData = [
   {vi:'Đến ngã tư thì rẽ phải.', zh:'到了路口再往右走。', py:'Dàole lùkǒu zài wǎng yòu zǒu.'},
   {vi:'Cô ấy chẳng phải có bạn trai rồi sao?', zh:'她不是有男朋友吗？', py:'Tā bú shì yǒu nán péngyou ma?'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Anh ấy tay đang cầm điện thoại, cứ nói chuyện mãi.', zh:'他手里拿着手机，一直在说话。', py:'Tā shǒu lǐ názhe shǒujī, yìzhí zài shuōhuà.'},
+  {vi:'Khách sạn ở bên phải ngã tư, bạn đi thẳng là tới.', zh:'宾馆在路口右边，你一直走就到了。', py:'Bīnguǎn zài lùkǒu yòubian, nǐ yìzhí zǒu jiù dào le.'},
+  {vi:'Cô ấy cười rồi, cô ấy rất vui.', zh:'她笑了，她很高兴。', py:'Tā xiào le, tā hěn gāoxìng.'},
+  {vi:'Cô bé đó tay đang cầm bút chì, đang cười.', zh:'那个女孩子手里拿着铅笔，在笑。', py:'Nàge nǚ háizi shǒu lǐ názhe qiānbǐ, zài xiào.'},
+];

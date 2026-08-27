@@ -292,3 +292,13 @@ var translateData = [
   {vi:'Chiều nay tôi muốn đi cửa hàng mua cốc.', zh:'下午我想去商店买杯子。', py:'Xiàwǔ wǒ xiǎng qù shāngdiàn mǎi bēizi.'},
   {vi:'Năm đồng.', zh:'五块钱。', py:'Wǔ kuài qián.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Tôi muốn uống trà, tôi muốn ăn cơm.', zh:'我想喝茶，我想吃米饭。', py:'Wǒ xiǎng hē chá, wǒ xiǎng chī mǐfàn.'},
+  {vi:'Cái cốc này bao nhiêu tiền? Năm đồng.', zh:'这个杯子多少钱？五块钱。', py:'Zhège bēizi duōshao qián? Wǔ kuài qián.'},
+  {vi:'Chiều nay tôi muốn đi cửa hàng mua cơm.', zh:'下午我想去商店买米饭。', py:'Xiàwǔ wǒ xiǎng qù shāngdiàn mǎi mǐfàn.'},
+  {vi:'Nhà tôi có ba cái cốc.', zh:'我家有三个杯子。', py:'Wǒ jiā yǒu sān ge bēizi.'},
+];

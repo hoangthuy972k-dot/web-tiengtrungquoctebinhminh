@@ -278,3 +278,13 @@ var translateData = [
   {vi:'Những bộ quần áo này đều rất đẹp.', zh:'这些衣服都很漂亮。', py:'Zhèxiē yīfu dōu hěn piàoliang.'},
   {vi:'Những thứ này đều là của bạn tôi.', zh:'这些东西都是我朋友的。', py:'Zhèxiē dōngxi dōu shì wǒ péngyou de.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Những bộ quần áo này đều rất đẹp, tôi đã mua khá nhiều.', zh:'这些衣服都很漂亮，我买了不少。', py:'Zhèxiē yīfu dōu hěn piàoliang, wǒ mǎile bùshǎo.'},
+  {vi:'Bốn mươi phút sau, anh ấy đã về.', zh:'四十分钟后，他回来了。', py:'Sìshí fēnzhōng hòu, tā huílái le.'},
+  {vi:'Những thứ này đều rất ít, đều là của tôi.', zh:'这些东西都很少，都是我的。', py:'Zhèxiē dōngxi dōu hěn shǎo, dōu shì wǒ de.'},
+  {vi:'Ôi! Những bộ quần áo này đều đẹp quá!', zh:'啊！这些衣服都很漂亮！', py:'A! Zhèxiē yīfu dōu hěn piàoliang!'},
+];

@@ -337,3 +337,13 @@ var translateData = [
   {vi:'Bộ phim đã bắt đầu rồi.', zh:'电影已经开始了。', py:'Diànyǐng yǐjīng kāishǐ le.'},
   {vi:'Bạn có thể giúp tôi giới thiệu một chút được không?', zh:'你能帮我介绍一下吗？', py:'Nǐ néng bāng wǒ jièshào yíxià ma?'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Chúc mừng sinh nhật! Quyển sách này là tôi tặng bạn.', zh:'生日快乐！这本书是我送你的。', py:'Shēngrì kuàilè! Zhè běn shū shì wǒ sòng nǐ de.'},
+  {vi:'Phim đã bắt đầu rồi, bạn có thể đến không?', zh:'电影已经开始了，你能来吗？', py:'Diànyǐng yǐjīng kāishǐ le, nǐ néng lái ma?'},
+  {vi:'Bạn có thể giúp tôi giới thiệu một chút về con gái bạn không?', zh:'你能帮我介绍一下你女儿吗？', py:"Nǐ néng bāng wǒ jièshào yíxià nǐ nǚ'ér ma?"},
+  {vi:'Đã tối rồi, anh ấy chưa về.', zh:'已经晚上了，他没有回来。', py:'Yǐjīng wǎnshang le, tā méiyǒu huílái.'},
+];

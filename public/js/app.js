@@ -252,8 +252,8 @@
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
-    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
-    hsk2: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
+    hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
+    hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
   };
   var LEVEL_HUB_CTA_TAB = { hsk2: 'tongket' };
@@ -415,7 +415,8 @@
             sortData: iframe.contentWindow.sortData || [],
             errorFixData: iframe.contentWindow.errorFixData || [],
             mcData: iframe.contentWindow.mcData || [],
-            translateData: iframe.contentWindow.translateData || []
+            translateData: iframe.contentWindow.translateData || [],
+            translateDataRev: iframe.contentWindow.translateDataRev || []
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -463,7 +464,9 @@
   }
 
   function loadLessonTranslate(lesson) {
-    return loadLessonRawData(lesson).then(function (data) { return data.translateData; });
+    return loadLessonRawData(lesson).then(function (data) {
+      return { vi2zh: data.translateData, zh2vi: data.translateDataRev };
+    });
   }
 
   function audioBaseFor(lesson) {
@@ -2004,8 +2007,10 @@
   /* ---------------- Translate practice (Luyen dich: Viet<->Trung, tu kiem tra) ---------------- */
 
   var tpDirection = 'vi2zh';
-  var tpData = [];
+  var tpDataSets = { vi2zh: [], zh2vi: [] };
   var tpQuiz = null;
+
+  function tpActiveData() { return tpDataSets[tpDirection] || []; }
 
   function showTranslatePractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -2027,7 +2032,7 @@
     $all('.tp-dir-btn').forEach(function (btn) { btn.classList.toggle('active', btn.getAttribute('data-tp-dir') === 'vi2zh'); });
 
     loadLessonTranslate(lesson).then(function (data) {
-      tpData = data;
+      tpDataSets = data;
       tpQuiz = null;
       renderTranslateContent();
     }).catch(function () {
@@ -2039,8 +2044,9 @@
 
   function renderTranslateContent() {
     var wrap = $('#tpContent');
+    var tpData = tpActiveData();
     if (!tpData.length) {
-      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện dịch.</p>';
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện dịch cho chiều này.</p>';
       return;
     }
     if (!tpQuiz) tpQuiz = { pos: 0 };

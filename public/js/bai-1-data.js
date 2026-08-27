@@ -345,3 +345,13 @@ var translateData = [
   {vi:'Sao bạn không đi vận động?', zh:'你为什么不去运动？', py:'Nǐ wèishénme bú qù yùndòng?'},
   {vi:'Đây là chiếc ghế mới.', zh:'这是新椅子。', py:'Zhè shì xīn yǐzi.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Tôi cũng muốn đi du lịch, còn bạn thì sao?', zh:'我也要去旅游，你呢？', py:'Wǒ yě yào qù lǚyóu, nǐ ne?'},
+  {vi:'Môn thể thao anh ấy thích nhất là đá bóng.', zh:'他最喜欢的运动是踢足球。', py:'Tā zuì xǐhuan de yùndòng shì tī zúqiú.'},
+  {vi:'Đây là ghế mới, nó rất đẹp.', zh:'这是新椅子，它很好看。', py:'Zhè shì xīn yǐzi, tā hěn hǎokàn.'},
+  {vi:'Sao bạn không thích vận động?', zh:'你为什么不喜欢运动？', py:'Nǐ wèishénme bù xǐhuan yùndòng?'},
+];

@@ -305,3 +305,13 @@ var translateData = [
   {vi:'Đây là công việc đầu tiên của anh ấy.', zh:'这是他的第一个工作。', py:'Zhè shì tā de dì yī ge gōngzuò.'},
   {vi:'Hoan nghênh bạn đến công ty chúng tôi làm việc.', zh:'欢迎你来我们公司上班。', py:'Huānyíng nǐ lái wǒmen gōngsī shàngbān.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Câu hỏi của bạn tôi hiểu rồi, hoan nghênh bạn hỏi tiếp.', zh:'你的问题我懂了，欢迎你再问。', py:'Nǐ de wèntí wǒ dǒng le, huānyíng nǐ zài wèn.'},
+  {vi:'Anh ấy từ nhỏ đã thích nhảy múa.', zh:'他从小就喜欢跳舞。', py:'Tā cóngxiǎo jiù xǐhuan tiàowǔ.'},
+  {vi:'Đây là câu hỏi đầu tiên của tôi.', zh:'这是我的第一个问题。', py:'Zhè shì wǒ de dì yī ge wèntí.'},
+  {vi:'Tôi hy vọng bạn hiểu câu hỏi của tôi.', zh:'我希望你懂我的问题。', py:'Wǒ xīwàng nǐ dǒng wǒ de wèntí.'},
+];

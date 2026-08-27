@@ -331,3 +331,13 @@ var translateData = [
   {vi:'Đi xe buýt chỉ một tiếng là tới trường rồi.', zh:'坐公共汽车一个小时就到学校了。', py:'Zuò gōnggòng qìchē yí ge xiǎoshí jiù dào xuéxiào le.'},
   {vi:'Đã hơn chín giờ rồi, sao cậu ấy vẫn đang học bài?', zh:'已经九点多了，他怎么还在学习？', py:'Yǐjīng jiǔ diǎn duō le, tā zěnme hái zài xuéxí?'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Sân bay có cách đây xa không?', zh:'机场离这儿远吗？', py:'Jīchǎng lí zhèr yuǎn ma?'},
+  {vi:'Anh ấy đi bộ rất chậm, tôi đi bộ rất nhanh.', zh:'他走路很慢，我走路很快。', py:'Tā zǒulù hěn màn, wǒ zǒulù hěn kuài.'},
+  {vi:'Xe buýt đã đi rồi.', zh:'公共汽车已经走了。', py:'Gōnggòng qìchē yǐjīng zǒu le.'},
+  {vi:'Đến công ty mất một tiếng đồng hồ.', zh:'到公司要一个小时。', py:'Dào gōngsī yào yí ge xiǎoshí.'},
+];

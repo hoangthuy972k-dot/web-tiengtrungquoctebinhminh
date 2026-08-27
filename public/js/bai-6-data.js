@@ -346,3 +346,13 @@ var translateData = [
   {vi:'Tuần này ngày nào tôi cũng ăn thịt dê.', zh:'这个星期我天天都吃羊肉。', py:'Zhège xīngqī wǒ tiāntiān dōu chī yángròu.'},
   {vi:'Chị gái tôi thường xuyên đi bơi.', zh:'我姐姐经常去游泳。', py:'Wǒ jiějie jīngcháng qù yóuyǒng.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Vì tôi rất bận nên chưa ăn cơm.', zh:'因为我很忙，所以没吃饭。', py:'Yīnwèi wǒ hěn máng, suǒyǐ méi chī fàn.'},
+  {vi:'Chị gái tôi thường xuyên chơi bóng rổ, cũng thường xuyên đi bơi.', zh:'我姐姐经常打篮球，也经常游泳。', py:'Wǒ jiějie jīngcháng dǎ lánqiú, yě jīngcháng yóuyǒng.'},
+  {vi:'Mì rất ngon, thịt dê cũng rất ngon.', zh:'面条很好吃，羊肉也很好吃。', py:'Miàntiáo hěn hǎochī, yángròu yě hěn hǎochī.'},
+  {vi:'Anh ấy đi xe đạp đến trường.', zh:'他骑自行车去学校。', py:'Tā qí zìxíngchē qù xuéxiào.'},
+];

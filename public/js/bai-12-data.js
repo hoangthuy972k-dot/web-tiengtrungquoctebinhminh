@@ -268,3 +268,13 @@ var translateData = [
   {vi:'Hôm nay không độ, có tuyết rơi.', zh:'今天零度，下雪了。', py:'Jīntiān líng dù, xià xuě le.'},
   {vi:'Anh ấy mặc áo mới vào phòng học.', zh:'他穿新衣服进教室。', py:'Tā chuān xīn yīfu jìn jiàoshì.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Vợ tôi nói rất giỏi, cũng nấu ăn rất ngon.', zh:'我妻子说得很好，也做得很好吃。', py:'Wǒ qīzi shuō de hěn hǎo, yě zuò de hěn hǎochī.'},
+  {vi:'Em trai mặc áo mới rồi vào phòng học.', zh:'弟弟穿新衣服进了教室。', py:'Dìdi chuān xīn yīfu jìnle jiàoshì.'},
+  {vi:'Bên ngoài không độ, có tuyết rơi, rất lạnh.', zh:'外面零度，下雪了，很冷。', py:'Wàimiàn líng dù, xià xuě le, hěn lěng.'},
+  {vi:'Anh ấy nói giỏi hơn tôi.', zh:'他比我说得好。', py:'Tā bǐ wǒ shuō de hǎo.'},
+];

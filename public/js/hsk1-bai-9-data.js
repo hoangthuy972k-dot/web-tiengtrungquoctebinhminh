@@ -260,3 +260,13 @@ var translateData = [
   {vi:'Con chó ở dưới ghế.', zh:'狗在椅子下面。', py:'Gǒu zài yǐzi xiàmiàn.'},
   {vi:'Con trai tôi là bác sĩ.', zh:'我儿子是医生。', py:'Wǒ érzi shì yīshēng.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Bố tôi là bác sĩ, làm việc ở bệnh viện.', zh:'我爸爸是医生，在医院工作。', py:'Wǒ bàba shì yīshēng, zài yīyuàn gōngzuò.'},
+  {vi:'Con chó nhỏ ở đâu? Con chó nhỏ ở dưới ghế.', zh:'小狗在哪儿？小狗在椅子下面。', py:'Xiǎo gǒu zài nǎr? Xiǎo gǒu zài yǐzi xiàmiàn.'},
+  {vi:'Con trai tôi có làm việc ở bệnh viện không?', zh:'我儿子在医院工作吗？', py:'Wǒ érzi zài yīyuàn gōngzuò ma?'},
+  {vi:'Cái cốc của bố bạn ở đâu?', zh:'你爸爸的杯子在哪儿？', py:'Nǐ bàba de bēizi zài nǎr?'},
+];

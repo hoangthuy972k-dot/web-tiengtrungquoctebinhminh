@@ -237,3 +237,13 @@ var translateData = [
   {vi:'Cô giáo năm nay năm mươi tuổi rồi.', zh:'老师今年五十岁了。', py:'Lǎoshī jīnnián wǔshí suì le.'},
   {vi:'Gia đình tôi có bốn người.', zh:'我家有四口人。', py:'Wǒ jiā yǒu sì kǒu rén.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Nhà bạn của bạn có mấy người?', zh:'你朋友家有几口人？', py:'Nǐ péngyou jiā yǒu jǐ kǒu rén?'},
+  {vi:'Thưa cô, năm nay cô bao nhiêu tuổi ạ?', zh:'老师，您今年多大了？', py:'Lǎoshī, nín jīnnián duō dà le?'},
+  {vi:'Bạn cùng lớp của tôi năm nay mười lăm tuổi rồi.', zh:'我的同学今年十五岁了。', py:'Wǒ de tóngxué jīnnián shíwǔ suì le.'},
+  {vi:'Nhà anh ấy có mấy người? Nhà anh ấy có bốn người.', zh:'他家有几口人？他家有四口人。', py:'Tā jiā yǒu jǐ kǒu rén? Tā jiā yǒu sì kǒu rén.'},
+];

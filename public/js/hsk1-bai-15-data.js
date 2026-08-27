@@ -223,3 +223,13 @@ var translateData = [
   {vi:'Chúng tôi không phải đi taxi đến.', zh:'我们不是坐出租车来的。', py:'Wǒmen bú shì zuò chūzūchē lái de.'},
   {vi:'Anh ấy học ở Đại học Bắc Kinh.', zh:'他在北京大学学习。', py:'Tā zài Běijīng Dàxué xuéxí.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Rất vui được quen biết bạn, tôi đến vào hôm qua.', zh:'很高兴认识你，我是昨天来的。', py:'Hěn gāoxìng rènshi nǐ, wǒ shì zuótiān lái de.'},
+  {vi:'Chúng tôi đến bằng taxi, không phải đến bằng máy bay.', zh:'我们是坐出租车来的，不是坐飞机来的。', py:'Wǒmen shì zuò chūzūchē lái de, bú shì zuò fēijī lái de.'},
+  {vi:'Anh ấy học tiếng Trung ở Đại học Bắc Kinh.', zh:'他在北京大学学习汉语。', py:'Tā zài Běijīng Dàxué xuéxí Hànyǔ.'},
+  {vi:'Quen biết bạn, tôi rất vui.', zh:'认识你，我很高兴。', py:'Rènshi nǐ, wǒ hěn gāoxìng.'},
+];

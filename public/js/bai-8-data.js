@@ -277,3 +277,13 @@ var translateData = [
   {vi:'Bạn đợi tôi một chút được không?', zh:'你等等我好吗？', py:'Nǐ děngděng wǒ hǎoma?'},
   {vi:'Cái áo màu trắng này hơi đắt.', zh:'这件白色的衣服有点儿贵。', py:'Zhè jiàn báisè de yīfu yǒudiǎnr guì.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Nhân viên ơi, xin hỏi bộ quần áo này bao nhiêu tiền?', zh:'服务员，请问这件衣服多少钱？', py:'Fúwùyuán, qǐngwèn zhè jiàn yīfu duōshao qián?'},
+  {vi:'Để tôi suy nghĩ đã, chuyện này tôi sẽ nói cho bạn biết sau.', zh:'让我想想，这件事我再告诉你。', py:'Ràng wǒ xiǎngxiang, zhè jiàn shì wǒ zài gàosu nǐ.'},
+  {vi:'Bộ quần áo này màu trắng, bộ kia màu đen.', zh:'这件衣服是白色的，那件是黑色的。', py:'Zhè jiàn yīfu shì báisè de, nà jiàn shì hēisè de.'},
+  {vi:'Bạn đợi tôi một chút được không? Tôi sẽ đến rất nhanh.', zh:'你等等我，好吗？我很快就来。', py:'Nǐ děngděng wǒ, hǎoma? Wǒ hěn kuài jiù lái.'},
+];

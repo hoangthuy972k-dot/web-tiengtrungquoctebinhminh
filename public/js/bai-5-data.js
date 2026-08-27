@@ -340,3 +340,13 @@ var translateData = [
   {vi:'Hôm nay thời tiết hơi lạnh.', zh:'今天天气有点儿冷。', py:'Jīntiān tiānqì yǒudiǎnr lěng.'},
   {vi:'Bạn không muốn đi thì ở nhà nghỉ ngơi đi.', zh:'你不想去，就在家休息吧。', py:'Nǐ bù xiǎng qù, jiù zài jiā xiūxi ba.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Bộ quần áo này không tồi, bạn thấy thế nào?', zh:'这件衣服不错，你觉得怎么样？', py:'Zhè jiàn yīfu búcuò, nǐ juéde zěnmeyàng?'},
+  {vi:'Thời tiết hơi lạnh, chúng ta cứ ở nhà uống cà phê đi.', zh:'天气有点儿冷，我们就在家喝咖啡吧。', py:'Tiānqì yǒudiǎnr lěng, wǒmen jiù zài jiā hē kāfēi ba.'},
+  {vi:'Sức khỏe bạn vẫn ổn chứ? Cũng tạm được.', zh:'你身体还好吗？还可以。', py:'Nǐ shēntǐ hái hǎo ma? Hái kěyǐ.'},
+  {vi:'Kỳ thi lần này cũng khá tốt.', zh:'这次考试还不错。', py:'Zhè cì kǎoshì hái búcuò.'},
+];

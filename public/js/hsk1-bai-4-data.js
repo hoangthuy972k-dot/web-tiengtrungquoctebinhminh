@@ -230,3 +230,13 @@ var translateData = [
   {vi:'Anh ấy là bạn cùng lớp của tôi.', zh:'他是我的同学。', py:'Tā shì wǒ de tóngxué.'},
   {vi:'Tôi là học sinh, còn bạn thì sao?', zh:'我是学生，你呢？', py:'Wǒ shì xuésheng, nǐ ne?'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Anh ấy là ai? Anh ấy là bạn cùng lớp của tôi.', zh:'他是谁？他是我的同学。', py:'Tā shì shéi? Tā shì wǒ de tóngxué.'},
+  {vi:'Cô ấy là bạn tôi, cô ấy là người Trung Quốc.', zh:'她是我朋友，她是中国人。', py:'Tā shì wǒ péngyou, tā shì Zhōngguó rén.'},
+  {vi:'Giáo viên tiếng Trung của bạn là ai?', zh:'你的汉语老师是谁？', py:'Nǐ de Hànyǔ lǎoshī shì shéi?'},
+  {vi:'Tôi là giáo viên, còn bạn thì sao?', zh:'我是老师，你呢？', py:'Wǒ shì lǎoshī, nǐ ne?'},
+];

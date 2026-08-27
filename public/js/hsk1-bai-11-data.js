@@ -231,3 +231,13 @@ var translateData = [
   {vi:'Lúc nào bạn về nhà?', zh:'你什么时候回家？', py:'Nǐ shénme shíhou huí jiā?'},
   {vi:'Trước thứ Sáu, tôi muốn đọc quyển sách này.', zh:'星期五前，我想看这本书。', py:'Xīngqīwǔ qián, wǒ xiǎng kàn zhè běn shū.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Bây giờ mấy giờ? Bây giờ mười hai giờ, chúng ta ăn cơm đi.', zh:'现在几点？现在十二点，我们吃饭吧。', py:'Xiànzài jǐ diǎn? Xiànzài shí\'èr diǎn, wǒmen chī fàn ba.'},
+  {vi:'Khi nào bạn về nhà? Tôi sáu giờ về nhà.', zh:'你什么时候回家？我六点回家。', py:'Nǐ shénme shíhou huí jiā? Wǒ liù diǎn huí jiā.'},
+  {vi:'Trước thứ Sáu, tôi muốn đọc quyển sách này và quyển sách kia.', zh:'星期五前，我想看这本书和那本书。', py:'Xīngqīwǔ qián, wǒ xiǎng kàn zhè běn shū hé nà běn shū.'},
+  {vi:'Bây giờ mấy giờ rồi?', zh:'现在几点了？', py:'Xiànzài jǐ diǎn le?'},
+];

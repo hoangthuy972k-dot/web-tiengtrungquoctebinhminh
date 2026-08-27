@@ -238,3 +238,13 @@ var translateData = [
   {vi:'Tôi cũng thích xem tivi.', zh:'我也喜欢看电视。', py:'Wǒ yě xǐhuan kàn diànshì.'},
   {vi:'Chiều nay bạn gọi điện cho tôi nhé.', zh:'你下午给我打电话吧。', py:'Nǐ xiàwǔ gěi wǒ dǎ diànhuà ba.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'A lô, bạn có ở nhà không? Tôi đang ngủ đây.', zh:'喂，你在家吗？我在睡觉呢。', py:'Wèi, nǐ zài jiā ma? Wǒ zài shuìjiào ne.'},
+  {vi:'Tôi thích xem tivi, cũng thích đọc sách.', zh:'我喜欢看电视，也喜欢看书。', py:'Wǒ xǐhuan kàn diànshì, yě xǐhuan kàn shū.'},
+  {vi:'Chiều nay bạn gọi điện cho tôi nhé, được không?', zh:'你下午给我打电话，好吗？', py:'Nǐ xiàwǔ gěi wǒ dǎ diànhuà, hǎoma?'},
+  {vi:'Anh ấy cũng là bạn cùng lớp của tôi.', zh:'他也是我的同学。', py:'Tā yě shì wǒ de tóngxué.'},
+];

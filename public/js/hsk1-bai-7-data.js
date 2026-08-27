@@ -255,3 +255,13 @@ var translateData = [
   {vi:'Ngày mai tôi đi trường xem sách.', zh:'明天我去学校看书。', py:'Míngtiān wǒ qù xuéxiào kàn shū.'},
   {vi:'Hôm qua bạn cùng lớp của tôi đi trường xem sách rồi.', zh:'昨天我同学去学校看书了。', py:'Zuótiān wǒ tóngxué qù xuéxiào kàn shū le.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Hôm nay là ngày mấy tháng mấy?', zh:'今天几月几号？', py:'Jīntiān jǐ yuè jǐ hào?'},
+  {vi:'Hôm nay bạn có đi học không?', zh:'你今天去学校吗？', py:'Nǐ jīntiān qù xuéxiào ma?'},
+  {vi:'Ngày mai là thứ mấy?', zh:'明天是星期几？', py:'Míngtiān shì xīngqī jǐ?'},
+  {vi:'Hôm qua cô giáo mời tôi xem sách.', zh:'昨天老师请我看书。', py:'Zuótiān lǎoshī qǐng wǒ kàn shū.'},
+];

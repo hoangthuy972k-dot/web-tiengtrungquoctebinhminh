@@ -311,3 +311,13 @@ var translateData = [
   {vi:'Có thể bạn không quen biết anh ấy.', zh:'你可能不认识他。', py:'Nǐ kěnéng bú rènshi tā.'},
   {vi:'Cái này rẻ hơn cái kia một chút.', zh:'这个比那个便宜一点儿。', py:'Zhège bǐ nàge piányi yìdiǎnr.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Cô bé đang hát tên họ là gì?', zh:'唱歌的女孩子姓什么？', py:'Chàng gē de nǚ háizi xìng shénme?'},
+  {vi:'Cậu bé đang nói chuyện bên phải là bạn cùng lớp của tôi.', zh:'右边说话的男孩子是我同学。', py:'Yòubian shuōhuà de nán háizi shì wǒ tóngxué.'},
+  {vi:'Năm ngoái cái này rẻ hơn cái kia.', zh:'去年这个比那个便宜。', py:'Qùnián zhège bǐ nàge piányi.'},
+  {vi:'Có thể bạn không quen biết cô ấy, cô ấy họ Vương.', zh:'你可能不认识她，她姓王。', py:'Nǐ kěnéng bú rènshi tā, tā xìng Wáng.'},
+];

@@ -252,3 +252,13 @@ var translateData = [
   {vi:'Trong bàn không có tiền.', zh:'桌子里没有钱。', py:'Zhuōzi lǐ méiyǒu qián.'},
   {vi:'Mời ngồi!', zh:'请坐！', py:'Qǐng zuò!'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Trên bàn có cốc, trong bàn không có tiền.', zh:'桌子上有杯子，桌子里没有钱。', py:'Zhuōzi shang yǒu bēizi, zhuōzi lǐ méiyǒu qián.'},
+  {vi:'Tôi có thể ngồi đây không? Mời ngồi!', zh:'我能坐这儿吗？请坐！', py:'Wǒ néng zuò zhèr ma? Qǐng zuò!'},
+  {vi:'Phía trước bệnh viện có cửa hàng máy tính.', zh:'医院前面有电脑商店。', py:'Yīyuàn qiánmiàn yǒu diànnǎo shāngdiàn.'},
+  {vi:'Sách và cốc của bạn ở trên bàn.', zh:'你的书和杯子在桌子上。', py:'Nǐ de shū hé bēizi zài zhuōzi shang.'},
+];

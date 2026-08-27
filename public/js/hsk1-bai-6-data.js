@@ -245,3 +245,13 @@ var translateData = [
   {vi:'Chữ Hán này đọc thế nào?', zh:'汉字怎么读？', py:'Hànzì zěnme dú?'},
   {vi:'Mẹ tôi biết nói tiếng Trung.', zh:'我妈妈会说汉语。', py:'Wǒ māma huì shuō Hànyǔ.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Mẹ tôi biết nấu món Trung Quốc, rất ngon.', zh:'我妈妈会做中国菜，很好吃。', py:'Wǒ māma huì zuò Zhōngguó cài, hěn hǎochī.'},
+  {vi:'Cô giáo biết viết rất nhiều chữ Hán.', zh:'老师会写很多汉字。', py:'Lǎoshī huì xiě hěn duō Hànzì.'},
+  {vi:'Bạn tôi biết nói tiếng Trung.', zh:'我朋友会说汉语。', py:'Wǒ péngyou huì shuō Hànyǔ.'},
+  {vi:'Bạn có biết viết chữ Hán không?', zh:'你会写汉字吗？', py:'Nǐ huì xiě Hànzì ma?'},
+];

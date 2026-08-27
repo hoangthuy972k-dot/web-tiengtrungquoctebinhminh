@@ -368,3 +368,13 @@ var translateData = [
   {vi:'David cao bao nhiêu?', zh:'大卫多高？', py:'Dàwèi duō gāo?'},
   {vi:'Tôi rất mệt, muốn nghỉ ngơi.', zh:'我很累，想休息。', py:'Wǒ hěn lèi, xiǎng xiūxi.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Tôi mỗi ngày đều dậy lúc sáu giờ, ngày nào cũng chạy bộ.', zh:'我每天六点起床，每天都跑步。', py:'Wǒ měitiān liù diǎn qǐchuáng, měitiān dōu pǎobù.'},
+  {vi:'Anh ấy bị bệnh rồi, đang nghỉ ngơi ở bệnh viện.', zh:'他生病了，在医院休息。', py:'Tā shēngbìng le, zài yīyuàn xiūxi.'},
+  {vi:'Bạn có biết David cao bao nhiêu không?', zh:'你知道大卫多高吗？', py:'Nǐ zhīdào Dàwèi duō gāo ma?'},
+  {vi:'Tôi rất bận, cũng rất mệt.', zh:'我很忙，也很累。', py:'Wǒ hěn máng, yě hěn lèi.'},
+];

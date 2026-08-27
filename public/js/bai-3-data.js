@@ -363,3 +363,13 @@ var translateData = [
   {vi:'Phòng của con gái bạn thật đẹp.', zh:'你女儿的房间真漂亮。', py:"Nǐ nǚ'ér de fángjiān zhēn piàoliang."},
   {vi:'Màu này rất đẹp.', zh:'这个颜色很漂亮。', py:'Zhège yánsè hěn piàoliang.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Đây là đồng hồ của ai? Là của chồng tôi.', zh:'这是谁的手表？是我丈夫的。', py:'Zhè shì shéi de shǒubiǎo? Shì wǒ zhàngfu de.'},
+  {vi:'Phòng của con gái tôi rất đẹp, màu sắc cũng rất đẹp.', zh:'我女儿的房间很漂亮，颜色也很好。', py:"Wǒ nǚ'ér de fángjiān hěn piàoliang, yánsè yě hěn hǎo."},
+  {vi:'Hôm qua tôi đã mua báo và sữa.', zh:'昨天我买了报纸和牛奶。', py:'Zuótiān wǒ mǎile bàozhǐ hé niúnǎi.'},
+  {vi:'Cái đồng hồ này là mới à?', zh:'这块手表是新的吗？', py:'Zhè kuài shǒubiǎo shì xīn de ma?'},
+];

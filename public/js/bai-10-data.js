@@ -283,3 +283,13 @@ var translateData = [
   {vi:'Anh trai tôi đang rửa quả dưa hấu.', zh:'我哥哥正在洗西瓜。', py:'Wǒ gēge zhèngzài xǐ xīguā.'},
   {vi:'Vận động rất tốt cho sức khỏe.', zh:'运动对身体很好。', py:'Yùndòng duì shēntǐ hěn hǎo.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Đừng chơi điện thoại nữa, mau đi giúp anh trai rửa dưa hấu.', zh:'别玩手机了，快去帮助哥哥洗西瓜。', py:'Bié wán shǒujī le, kuài qù bāngzhù gēge xǐ xīguā.'},
+  {vi:'Tôi đang học bài, đừng gọi điện cho tôi.', zh:'我正在学习，别给我打电话。', py:'Wǒ zhèngzài xuéxí, bié gěi wǒ dǎ diànhuà.'},
+  {vi:'Trứng gà rất tốt cho sức khỏe, vận động cũng rất tốt cho sức khỏe.', zh:'鸡蛋对身体很好，运动也对身体很好。', py:'Jīdàn duì shēntǐ hěn hǎo, yùndòng yě duì shēntǐ hěn hǎo.'},
+  {vi:'Đừng xem tivi nữa, vận động có ích cho bạn.', zh:'别看电视了，运动对你有帮助。', py:'Bié kàn diànshì le, yùndòng duì nǐ yǒu bāngzhù.'},
+];

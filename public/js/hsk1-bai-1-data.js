@@ -203,3 +203,13 @@ var translateData = [
   {vi:'Xin lỗi!', zh:'对不起！', py:'Duìbuqǐ!'},
   {vi:'Xin lỗi! — Không sao đâu!', zh:'对不起！——没关系！', py:'Duìbuqǐ! — Méi guānxi!'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Chào bạn! Các bạn khỏe không?', zh:'你好！你们好吗？', py:'Nǐ hǎo! Nǐmen hǎo ma?'},
+  {vi:'Kính chào ngài! Xin lỗi ạ!', zh:'您好！对不起！', py:'Nín hǎo! Duìbuqǐ!'},
+  {vi:'Không sao đâu, chào bạn!', zh:'没关系，你好！', py:'Méi guānxi, nǐ hǎo!'},
+  {vi:'Chào các bạn! Xin lỗi! — Không sao đâu!', zh:'你们好！对不起！——没关系！', py:'Nǐmen hǎo! Duìbuqǐ! — Méi guānxi!'},
+];

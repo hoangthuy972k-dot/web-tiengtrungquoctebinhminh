@@ -262,3 +262,13 @@ var translateData = [
   {vi:'Tôi đã từng đến Trung Quốc một lần.', zh:'我去过一次中国。', py:'Wǒ qùguo yí cì Zhōngguó.'},
   {vi:'Hôm nay trời quang, chúng ta đi chơi đi.', zh:'今天天气晴，我们去玩儿吧。', py:'Jīntiān tiānqì qíng, wǒmen qù wánr ba.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Tuy hôm nay rất bận, nhưng tôi muốn đi chơi.', zh:'虽然今天很忙，但是我想去玩儿。', py:'Suīrán jīntiān hěn máng, dànshì wǒ xiǎng qù wánr.'},
+  {vi:'Tôi đã từng đến Trung Quốc, cũng đã từng đến Mỹ.', zh:'我去过中国，也去过美国。', py:'Wǒ qùguo Zhōngguó, yě qùguo Měiguó.'},
+  {vi:'Bộ phim này rất thú vị, tôi đã xem hai lần.', zh:'这个电影很有意思，我看了两次。', py:'Zhège diànyǐng hěn yǒuyìsi, wǒ kànle liǎng cì.'},
+  {vi:'Hôm nay trời quang, nhưng hơi lạnh.', zh:'今天晴，但是有点儿冷。', py:'Jīntiān qíng, dànshì yǒudiǎnr lěng.'},
+];

@@ -268,3 +268,13 @@ var translateData = [
   {vi:'Mọi người đều đang chuẩn bị về nhà.', zh:'大家都在准备回家。', py:'Dàjiā dōu zài zhǔnbèi huí jiā.'},
   {vi:'Em gái tôi đang mua vé ở ga tàu hỏa.', zh:'我妹妹在火车站买票。', py:'Wǒ mèimei zài huǒchēzhàn mǎi piào.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:'Năm mới sắp đến rồi, mọi người đều rất vui.', zh:'新年就要到了，大家都很高兴。', py:'Xīnnián jiùyào dào le, dàjiā dōu hěn gāoxìng.'},
+  {vi:'Em gái ở ga tàu, tôi ở sân bay, chúng tôi càng bận hơn.', zh:'妹妹在火车站，我在机场，我们更忙了。', py:'Mèimei zài huǒchēzhàn, wǒ zài jīchǎng, wǒmen gèng máng le.'},
+  {vi:'Hôm nay âm u hơn hôm qua, có thể sắp mưa rồi.', zh:'今天比昨天阴，可能要下雨了。', py:'Jīntiān bǐ zuótiān yīn, kěnéng yào xià yǔ le.'},
+  {vi:'Mọi người đều chuẩn bị đi xe buýt về nhà.', zh:'大家都准备坐公共汽车回家。', py:'Dàjiā dōu zhǔnbèi zuò gōnggòng qìchē huí jiā.'},
+];

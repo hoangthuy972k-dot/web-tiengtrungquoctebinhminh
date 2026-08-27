@@ -130,7 +130,7 @@ const wuData = [
   {img:'🛎️',label:'服务员',py:'fúwùyuán',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在教室 · Trong lớp học',
    lines:[
      {sp:0,zh:'我们下午去看电影好吗？',py:'Wǒmen xiàwǔ qù kàn diànyǐng hǎoma?',vn:'Chiều nay chúng ta cùng đi xem phim được không?'},

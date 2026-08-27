@@ -115,7 +115,7 @@ const wuData = [
   {img:'😊',label:'有意思',py:'yǒuyìsi',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'议看电影 · Rủ nhau xem phim',
    lines:[
      {sp:0,zh:'你看过那个电影吗？',py:'Nǐ kànguo nàge diànyǐng ma?',vn:'Bạn đã từng xem bộ phim đó chưa?'},

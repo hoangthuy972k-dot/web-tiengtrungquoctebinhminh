@@ -136,7 +136,7 @@ const wuData = [
   {img:'📖',label:'课',py:'kè',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在家里 · Xem tivi hay học bài',
    lines:[
      {sp:0,zh:'不要看电视了，明天上午还有汉语课呢。',py:'Bú yào kàn diànshì le, míngtiān shàngwǔ hái yǒu Hànyǔ kè ne.',vn:'Đừng xem tivi nữa, sáng mai còn có tiết học tiếng Trung đấy.'},

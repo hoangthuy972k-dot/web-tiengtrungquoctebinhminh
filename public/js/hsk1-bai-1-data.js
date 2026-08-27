@@ -88,7 +88,7 @@ const wuData = [
   {img:'🤝',label:'没关系',py:'méi guānxi',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Chào hỏi thông thường',
    lines:[
      {sp:0,zh:'你好！',py:'Nǐ hǎo!',vn:'Chào anh!'},

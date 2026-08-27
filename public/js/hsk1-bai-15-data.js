@@ -103,7 +103,7 @@ const wuData = [
   {img:'😄',label:'高兴',py:'gāoxìng',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở bàn ăn · Hỏi thăm quen biết',
    lines:[
      {sp:0,zh:'你和李小姐是什么时候认识的？',py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',vn:'Cô và cô Lý quen nhau khi nào vậy?'},

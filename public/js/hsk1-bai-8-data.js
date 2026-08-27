@@ -172,7 +172,7 @@ const wuData = [
   {img:'🥤',label:'喝',py:'hē',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở quán ăn · Gọi đồ uống, món ăn',
    lines:[
      {sp:0,zh:'你想喝什么？',py:'Nǐ xiǎng hē shénme?',vn:'Cô muốn uống gì?'},

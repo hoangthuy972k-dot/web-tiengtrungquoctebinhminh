@@ -118,7 +118,7 @@ const wuData = [
   {img:'📖',label:'学习',py:'xuéxí',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Gọi điện thoại · Hỏi đang làm gì',
    lines:[
      {sp:0,zh:'喂，你在做什么呢？',py:'Wèi, nǐ zài zuò shénme ne?',vn:'A lô, anh đang làm gì vậy?'},

@@ -166,7 +166,7 @@ const wuData = [
   {img:'🪪',label:'姓',py:'xìng',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在歌厅 · Trong phòng hát Karaoke',
    lines:[
      {sp:0,zh:'王方，昨天和你一起唱歌的人是谁？',py:'Wáng Fāng, zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',vn:'Vương Phương, người hôm qua cùng hát karaoke với bạn là ai thế?'},

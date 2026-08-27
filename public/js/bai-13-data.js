@@ -157,7 +157,7 @@ const wuData = [
   {img:'🚦',label:'路口',py:'lùkǒu',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在办公室 · Tìm người trong văn phòng',
    lines:[
      {sp:0,zh:'门开着呢，请进。',py:'Mén kāizhe ne, qǐng jìn.',vn:'Cửa đang mở đấy, mời vào.'},

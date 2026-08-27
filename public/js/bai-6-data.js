@@ -199,7 +199,7 @@ const wuData = [
   {img:'🚪',label:'门',py:'mén',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在学校 · Ở trường học',
    lines:[
      {sp:0,zh:'你知道小王今天什么时候来学校吗？',py:'Nǐ zhīdào Xiǎo Wáng jīntiān shénme shíhou lái xuéxiào ma?',vn:'Bạn có biết hôm nay khi nào Tiểu Vương đến trường không?'},

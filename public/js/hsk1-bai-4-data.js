@@ -113,7 +113,7 @@ const wuData = [
   {img:'❓',label:'谁',py:'shéi',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Trong lớp học · Hỏi về người khác',
    lines:[
      {sp:0,zh:'她是谁？',py:'Tā shì shéi?',vn:'Cô ấy là ai vậy?'},

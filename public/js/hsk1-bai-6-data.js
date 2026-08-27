@@ -126,7 +126,7 @@ const wuData = [
   {img:'📖',label:'读',py:'dú',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở trường · Hỏi khả năng nói tiếng Trung',
    lines:[
      {sp:0,zh:'你会说汉语吗？',py:'Nǐ huì shuō Hànyǔ ma?',vn:'Em có biết nói tiếng Trung Quốc không?'},

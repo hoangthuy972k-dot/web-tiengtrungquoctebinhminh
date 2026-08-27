@@ -217,7 +217,7 @@ const wuData = [
   {img:'🏃',label:'跑步',py:'pǎobù',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在运动场 · Trên sân vận động',
    lines:[
      {sp:0,zh:'你很少生病，是不是喜欢运动？',py:'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?',vn:'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?'},

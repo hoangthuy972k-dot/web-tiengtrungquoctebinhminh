@@ -136,7 +136,7 @@ const wuData = [
   {img:'📚',label:'书',py:'shū',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở ngân hàng · Hỏi ngày tháng',
    lines:[
      {sp:0,zh:'请问，今天几号？',py:'Qǐngwèn, jīntiān jǐ hào?',vn:'Xin hỏi hôm nay là ngày mấy?'},

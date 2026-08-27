@@ -184,7 +184,7 @@ const wuData = [
   {img:'⏰',label:'小时',py:'xiǎoshí',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在家里 · Ở nhà',
    lines:[
      {sp:0,zh:'大卫回来了吗？',py:'Dàwèi huílái le ma?',vn:'David đã về chưa?'},

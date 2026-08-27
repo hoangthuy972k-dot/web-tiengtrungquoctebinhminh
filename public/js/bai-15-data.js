@@ -121,7 +121,7 @@ const wuData = [
   {img:'🚌',label:'公共汽车',py:'gōnggòngqìchē',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'谈论新年 · Nói về năm mới',
    lines:[
      {sp:0,zh:'新年就要到了，你有什么计划？',py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?'},

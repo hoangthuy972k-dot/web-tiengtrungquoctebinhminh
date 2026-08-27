@@ -1907,3 +1907,107 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   border-bottom: 2px solid var(--color-red-500);
   color: var(--color-red-500);
 }
+
+/* ---------- Dialogue practice (Hoi thoai) ---------- */
+.dp-audio-box {
+  background: linear-gradient(135deg, var(--color-green-50), #eafaf1);
+  border: 1.5px solid #a7e3c3;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.dp-audio-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  color: var(--color-green-600);
+  margin-bottom: var(--space-3);
+  font-size: 0.9rem;
+}
+
+.dp-audio-box audio {
+  width: 100%;
+  height: 38px;
+}
+
+.dp-audio-missing {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+  font-style: italic;
+}
+
+.dp-scene-label {
+  font-weight: 700;
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-4);
+  font-size: 1rem;
+}
+
+.dp-line {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.dp-line.is-b {
+  flex-direction: row-reverse;
+}
+
+.dp-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--color-white);
+}
+
+.dp-line:not(.is-b) .dp-avatar {
+  background: var(--color-red-600);
+}
+
+.dp-line.is-b .dp-avatar {
+  background: var(--color-gray-700);
+}
+
+.dp-bubble {
+  max-width: 72%;
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+}
+
+.dp-line:not(.is-b) .dp-bubble {
+  background: var(--color-red-50);
+  border-top-left-radius: 4px;
+}
+
+.dp-line.is-b .dp-bubble {
+  background: var(--color-gray-100);
+  border-top-right-radius: 4px;
+  text-align: right;
+}
+
+.dp-zh {
+  font-family: var(--font-hanzi);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.dp-py {
+  color: var(--color-gold-500);
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
+.dp-vn {
+  color: var(--color-gray-600);
+  font-size: 0.88rem;
+  margin-top: 2px;
+}

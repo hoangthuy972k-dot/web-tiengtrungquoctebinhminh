@@ -158,6 +158,7 @@
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -168,6 +169,7 @@
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -254,6 +256,7 @@
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -288,6 +291,11 @@
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showGrammarPractice(levelId, lesson);
+        });
+      } else if (tabId === 'dialog') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showDialoguePractice(levelId, lesson);
         });
       }
       grid.appendChild(tile);
@@ -333,14 +341,15 @@
     window.speechSynthesis.speak(u);
   }
 
-  // Bai hoc data.js khai bao "var vocabData = [...]" o top-level; cac bai
-  // khac nhau deu dung lai cung ten bien nen khong the <script src> thang vao
-  // trang chinh (se bi loi/de lan nhau). Nap qua 1 iframe rieng (dung <script
-  // src> binh thuong, khong eval, khong script inline - hop le voi CSP), vi
-  // la "var" nen no gan thang vao window cua iframe, doc xong la huy iframe.
-  var vpDataCache = {};
-  function loadLessonVocab(lesson) {
-    if (vpDataCache[lesson.fullPageUrl]) return Promise.resolve(vpDataCache[lesson.fullPageUrl]);
+  // Bai hoc data.js khai bao "var vocabData = [...]", "var dialogData = [...]"
+  // o top-level; cac bai khac nhau deu dung lai cung ten bien nen khong the
+  // <script src> thang vao trang chinh (se bi loi/de lan nhau). Nap qua 1
+  // iframe rieng (dung <script src> binh thuong, khong eval, khong script
+  // inline - hop le voi CSP); vi la "var" nen no gan thang vao window cua
+  // iframe, doc xong la huy iframe.
+  var lessonDataCache = {};
+  function loadLessonRawData(lesson) {
+    if (lessonDataCache[lesson.fullPageUrl]) return Promise.resolve(lessonDataCache[lesson.fullPageUrl]);
     var dataUrl = lesson.fullPageUrl.replace('/lessons/', '/js/').replace('.html', '-data.js');
     return new Promise(function (resolve, reject) {
       var iframe = document.createElement('iframe');
@@ -353,17 +362,20 @@
       var script = doc.createElement('script');
       script.src = dataUrl;
       script.onload = function () {
-        var vocabData;
+        var data;
         try {
-          vocabData = JSON.parse(JSON.stringify(iframe.contentWindow.vocabData || []));
+          data = JSON.parse(JSON.stringify({
+            vocabData: iframe.contentWindow.vocabData || [],
+            dialogData: iframe.contentWindow.dialogData || []
+          }));
         } catch (e) {
           document.body.removeChild(iframe);
           reject(e);
           return;
         }
         document.body.removeChild(iframe);
-        vpDataCache[lesson.fullPageUrl] = vocabData;
-        resolve(vocabData);
+        lessonDataCache[lesson.fullPageUrl] = data;
+        resolve(data);
       };
       script.onerror = function () {
         document.body.removeChild(iframe);
@@ -371,6 +383,20 @@
       };
       doc.body.appendChild(script);
     });
+  }
+
+  function loadLessonVocab(lesson) {
+    return loadLessonRawData(lesson).then(function (data) { return data.vocabData; });
+  }
+
+  function loadLessonDialog(lesson) {
+    return loadLessonRawData(lesson).then(function (data) { return data.dialogData; });
+  }
+
+  function audioBaseFor(lesson) {
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-)?bai-(\d+)\.html/);
+    if (!m) return null;
+    return m[1] ? '/audio/hsk1-bai-' + m[2] : '/audio/bai-' + m[2];
   }
 
   var VP_TABS = [
@@ -393,6 +419,7 @@
     $('#vocabPractice').hidden = false;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -554,6 +581,7 @@
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = false;
     $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -707,6 +735,7 @@
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = false;
+    $('#dialoguePractice').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -806,6 +835,84 @@
         }, 1800);
       });
     });
+  }
+
+  /* ---------------- Dialogue practice (Hoi thoai: 4 doan + audio goc that) ---------------- */
+
+  var dpScenes = [];
+  var dpIndex = 0;
+
+  function showDialoguePractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = false;
+    $('#dpSubtitle').textContent = 'Đang tải...';
+    $('#dpTabs').innerHTML = '';
+    $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+
+    loadLessonDialog(lesson).then(function (dialogData) {
+      dpScenes = dialogData;
+      dpIndex = 0;
+      $('#dpSubtitle').textContent = dialogData.length + ' đoạn hội thoại';
+      renderDialogueTabs();
+      renderDialogueScene();
+    }).catch(function () {
+      $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung hội thoại của bài này.</p>';
+    });
+
+    $('#dialoguePractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderDialogueTabs() {
+    var wrap = $('#dpTabs');
+    wrap.innerHTML = '';
+    dpScenes.forEach(function (scene, i) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'vp-tab' + (i === dpIndex ? ' active' : '');
+      var parts = (scene.scene || '').split('·');
+      btn.textContent = (i + 1) + ' · ' + (parts[1] || parts[0] || '').trim();
+      btn.addEventListener('click', function () {
+        dpIndex = i;
+        renderDialogueTabs();
+        renderDialogueScene();
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  function renderDialogueScene() {
+    var wrap = $('#dpContent');
+    var scene = dpScenes[dpIndex];
+    if (!scene) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có hội thoại.</p>';
+      return;
+    }
+    var audioBase = audioBaseFor(currentHubLesson);
+    var audioSrc = audioBase ? audioBase + '/dlg-' + (dpIndex + 1) + '.mp3' : null;
+
+    var audioHtml = audioSrc
+      ? '<div class="dp-audio-box"><div class="dp-audio-label">🎙️ Audio gốc giáo trình</div><audio controls preload="none" src="' + audioSrc + '"></audio></div>'
+      : '<div class="dp-audio-box"><span class="dp-audio-missing">⚠️ Chưa có audio gốc cho đoạn này.</span></div>';
+
+    var linesHtml = scene.lines.map(function (line) {
+      var isB = line.sp === 1;
+      return '<div class="dp-line' + (isB ? ' is-b' : '') + '">' +
+        '<div class="dp-avatar">' + (isB ? 'B' : 'A') + '</div>' +
+        '<div class="dp-bubble"><div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
+        '</div>';
+    }).join('');
+
+    wrap.innerHTML =
+      '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>' +
+      audioHtml +
+      linesHtml;
   }
 
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
@@ -1027,6 +1134,11 @@
         $all('#grTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t === tab); });
         renderGrammarContent();
       });
+    });
+    $('#dpBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
     });
     $all('a[href="#home"]').forEach(function (link) {
       link.addEventListener('click', showDashboard);

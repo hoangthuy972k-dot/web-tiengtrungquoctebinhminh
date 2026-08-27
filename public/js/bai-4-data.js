@@ -190,7 +190,7 @@ const wuData = [
   {img:'🌙',label:'晚上',py:'wǎnshang',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在教室 · Trong lớp học',
    lines:[
      {sp:0,zh:'生日快乐！这是送给你的。',py:'Shēngrì kuàilè! Zhè shì sòng gěi nǐ de.',vn:'Sinh nhật vui vẻ! Đây là quà tặng bạn.'},

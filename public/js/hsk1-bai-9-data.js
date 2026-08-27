@@ -140,7 +140,7 @@ const wuData = [
   {img:'👨',label:'爸爸',py:'bàba',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở nhà · Tìm con mèo, con chó',
    lines:[
      {sp:0,zh:'小猫在哪儿？',py:'Xiǎo māo zài nǎr?',vn:'Con mèo đâu rồi?'},

@@ -223,7 +223,7 @@ const wuData = [
   {img:'🚪',label:'房间',py:'fángjiān',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在房间 · Trong phòng',
    lines:[
      {sp:0,zh:'这块手表是你的吗？',py:'Zhè kuài shǒubiǎo shì nǐ de ma?',vn:'Chiếc đồng hồ đeo tay này có phải của bạn không?'},

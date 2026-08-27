@@ -193,7 +193,7 @@ const wuData = [
   {img:'👀',label:'眼睛',py:'yǎnjing',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在学校 · Bàn chuyện đi du lịch',
    lines:[
      {sp:0,zh:'我要去北京旅游，你觉得什么时候去最好？',py:'Wǒ yào qù Běijīng lǚyóu, nǐ juéde shénme shíhou qù zuì hǎo?',vn:'Tôi muốn đi Bắc Kinh du lịch, bạn nghĩ đi vào thời gian nào là tốt nhất?'},

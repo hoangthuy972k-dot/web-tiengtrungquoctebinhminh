@@ -132,7 +132,7 @@ const wuData = [
   {img:'📦',label:'里',py:'li',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Trong văn phòng · Đồ vật trên bàn',
    lines:[
      {sp:0,zh:'桌子上有什么？',py:'Zhuōzi shang yǒu shénme?',vn:'Trên bàn có gì vậy?'},

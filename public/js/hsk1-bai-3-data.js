@@ -142,7 +142,7 @@ const wuData = [
   {img:'🇺🇸',label:'美国',py:'Měiguó',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở trường · Hỏi tên',
    lines:[
      {sp:0,zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},

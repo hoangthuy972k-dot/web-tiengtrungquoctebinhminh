@@ -121,7 +121,7 @@ const wuData = [
   {img:'📏',label:'大',py:'dà',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở trường · Hỏi số người trong nhà',
    lines:[
      {sp:0,zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà anh có mấy người vậy?'},

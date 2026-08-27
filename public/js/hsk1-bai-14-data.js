@@ -158,7 +158,7 @@ const wuData = [
   {img:'🤵',label:'先生',py:'xiānsheng',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở ký túc xá · Đi mua đồ',
    lines:[
      {sp:0,zh:'昨天上午你去哪儿了？',py:'Zuótiān shàngwù nǐ qù nǎr le?',vn:'Sáng hôm qua bạn đi đâu vậy?'},

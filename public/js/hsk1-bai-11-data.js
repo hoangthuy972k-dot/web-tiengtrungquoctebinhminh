@@ -110,7 +110,7 @@ const wuData = [
   {img:'🍚',label:'吃饭',py:'chī fàn',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Ở thư viện · Hỏi giờ',
    lines:[
      {sp:0,zh:'现在几点？',py:'Xiànzài jǐ diǎn?',vn:'Bây giờ là mấy giờ rồi?'},

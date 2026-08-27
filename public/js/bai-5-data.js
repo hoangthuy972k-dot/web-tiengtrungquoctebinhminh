@@ -193,7 +193,7 @@ const wuData = [
   {img:'📝',label:'准备',py:'zhǔnbèi',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在家里 · Ở nhà',
    lines:[
      {sp:0,zh:'晚上我们去饭馆吃饭怎么样？',py:'Wǎnshang wǒmen qù fànguǎn chīfàn zěnmeyàng?',vn:'Tối nay chúng ta ra nhà hàng ăn cơm nhé?'},

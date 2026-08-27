@@ -160,7 +160,7 @@ const wuData = [
   {img:'💡',label:'懂',py:'dǒng',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'打电话 · Gọi điện thoại',
    lines:[
      {sp:0,zh:'你好，请问张欢在吗？',py:'Nǐ hǎo, qǐngwèn Zhāng Huān zài ma?',vn:'Xin chào, cho hỏi có Trương Hoan ở đó không ạ?'},

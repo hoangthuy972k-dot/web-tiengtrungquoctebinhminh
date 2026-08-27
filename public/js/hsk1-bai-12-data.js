@@ -141,7 +141,7 @@ const wuData = [
   {img:'❤️',label:'爱',py:'ài',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'Trên đường · Hỏi thời tiết',
    lines:[
      {sp:0,zh:'昨天北京的天气怎么样？',py:'Zuótiān Běijīng de tiānqì zěnmeyàng?',vn:'Hôm qua thời tiết ở Bắc Kinh thế nào?'},

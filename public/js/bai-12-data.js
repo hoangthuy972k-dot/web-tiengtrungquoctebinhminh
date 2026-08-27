@@ -121,7 +121,7 @@ const wuData = [
   {img:'🌡️',label:'度',py:'dù',letter:'F'},
 ];
 
-const dialogData = [
+var dialogData = [
   {scene:'在教室 · Giờ giấc sinh hoạt',
    lines:[
      {sp:0,zh:'你每天早上几点起床？',py:'Nǐ měitiān zǎoshang jǐ diǎn qǐchuáng?',vn:'Mỗi sáng bạn thức dậy lúc mấy giờ?'},

@@ -237,7 +237,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: phỏng vấn hỏi kinh nghiệm làm việc/sở thích.
 // Ôn lại 几/觉得 (Bài 1).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'他是去年开始工作的，已经工作一年多了。',
    questions:[
      {q:'他是什么时候开始工作的？',opts:['去年','今年','明年','不知道'],ans:0},
@@ -304,7 +304,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'生日快乐！这是送给你的礼物。',

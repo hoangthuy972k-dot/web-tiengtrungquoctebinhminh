@@ -167,7 +167,7 @@ const matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: tiệc tất niên ở công ty.
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'公司新年晚会的票大家都买好了，一共二十张。',
    questions:[
      {q:'晚会的票怎么样了？',opts:['都买好了','还没买','卖完了','不知道'],ans:0},
@@ -235,7 +235,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你知道公司新年晚会的事吗？',

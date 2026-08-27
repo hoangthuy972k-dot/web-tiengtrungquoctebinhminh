@@ -161,7 +161,7 @@ const matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: rủ nhau đi ăn nhà hàng Tứ Xuyên mới mở.
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'你吃过四川菜吗？虽然很辣，但是很有意思，你一定要尝尝。',
    questions:[
      {q:'说话人觉得四川菜怎么样？',opts:['虽然辣但是很有意思','不好吃','太贵了','没有意思'],ans:0},
@@ -229,7 +229,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你吃过四川菜吗？',

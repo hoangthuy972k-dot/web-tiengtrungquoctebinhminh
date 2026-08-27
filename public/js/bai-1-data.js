@@ -243,7 +243,7 @@ const matchData = [
 // Dùng 要/最/几/多 + từ vựng bài 1, ngữ cảnh khác hoàn toàn (rủ đi vận động,
 // hỏi số bạn cùng lớp, mua ghế) thay vì Bắc Kinh / đá bóng / con mèo.
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'我朋友要买新椅子。他觉得白色的最好看。我也想买一把。',
    questions:[
      {q:'我朋友要做什么？',opts:['买新椅子','去旅游','踢足球','买眼镜'],ans:0},
@@ -311,7 +311,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi (không có chữ phiên âm đi kèm — luyện phản xạ nghe hiểu trực tiếp), sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你明天要不要跟朋友一起去运动？你最喜欢什么运动？',

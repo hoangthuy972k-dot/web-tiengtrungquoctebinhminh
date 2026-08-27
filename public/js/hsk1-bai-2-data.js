@@ -120,7 +120,7 @@ const mcData = [
   {q:'Muốn cảm ơn TRỰC TIẾP một người cụ thể, thêm từ nào vào sau 谢谢?',opts:['你','好','们','起'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý biến điệu: "不谢" đọc là "bú xiè" (不 đổi sang thanh 2 vì 谢 mang thanh 4).',
     models:[

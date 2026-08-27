@@ -204,7 +204,7 @@ const mcData = [
   {q:'"明天" nghĩa là gì?',opts:['ngày mai','hôm qua','hôm nay','tuần sau'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

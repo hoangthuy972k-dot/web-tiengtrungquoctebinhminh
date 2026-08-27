@@ -240,7 +240,7 @@ const mcData = [
   {q:'"喝" nghĩa là gì?',opts:['uống','ăn','nói','đọc'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

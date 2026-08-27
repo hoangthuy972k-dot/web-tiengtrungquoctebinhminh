@@ -200,7 +200,7 @@ const mcData = [
   {q:'"电脑" nghĩa là gì?',opts:['máy vi tính','điện thoại','sách','bàn'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

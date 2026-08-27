@@ -183,7 +183,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: ở phòng tập gym.
 // Ôn lại 有点儿(Bài 5), 已经(Bài 4/9), 一下(Bài 3), 完(Bài 9).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'我正在健身房锻炼身体，运动对身体很好，可是今天有点儿累。',
    questions:[
      {q:'他在哪儿？',opts:['健身房','医院','学校','家里'],ans:0},
@@ -250,7 +250,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你的朋友在健身房一直玩手机，不去锻炼，你会对他说什么？',

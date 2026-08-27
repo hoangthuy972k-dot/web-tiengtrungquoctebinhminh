@@ -231,7 +231,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: hỏi đường đến siêu thị/bệnh viện.
 // Ôn lại 因为 (Bài 6), 生日 (Bài 4).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'医院离我家不远，走十分钟就到了。',
    questions:[
      {q:'医院离他家远不远？',opts:['不远','很远','不知道','很远很远'],ans:0},
@@ -298,7 +298,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'超市离这儿远吗？',

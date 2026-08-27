@@ -167,7 +167,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: giải chạy marathon mùa đông.
 // Ôn lại 已经(Bài 4/9/10), 一下(Bài 3), 远(Bài 7).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'今天零下五度，可是弟弟穿得不多，他说跑步的时候不冷。',
    questions:[
      {q:'今天多少度？',opts:['零下五度','零下十度','五度','十度'],ans:0},
@@ -235,7 +235,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'今天零下五度，外面很冷，我们要不要进屋？',

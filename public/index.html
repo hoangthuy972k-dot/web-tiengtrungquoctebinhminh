@@ -193,6 +193,42 @@
       <div id="dpContent"></div>
     </section>
 
+    <section class="dash-section" id="listenPractice" hidden>
+      <button type="button" class="level-detail-back" id="lpBack">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Quay lại bài học
+      </button>
+      <div class="vp-header">
+        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-teal-600),#0a7a70)">🎧</div>
+        <div>
+          <h1>Luyện nghe</h1>
+          <p>Nghe và chọn đáp án đúng</p>
+        </div>
+      </div>
+      <div class="vp-tabs" id="lpTabs">
+        <button type="button" class="vp-tab active" data-lp-tab="meaning">Nghe → chọn nghĩa</button>
+        <button type="button" class="vp-tab" data-lp-tab="hanzi">Nghe → chọn chữ Hán</button>
+        <button type="button" class="vp-tab" data-lp-tab="dialog">Nghe hội thoại</button>
+      </div>
+      <div id="lpContent"></div>
+    </section>
+
+    <section class="dash-section" id="speakPractice" hidden>
+      <button type="button" class="level-detail-back" id="spBack">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Quay lại bài học
+      </button>
+      <div class="vp-header">
+        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-red-500),var(--color-red-700))">🗣️</div>
+        <div>
+          <h1 id="spTitle">Luyện nói</h1>
+          <p id="spSubtitle">Nghe câu hỏi rồi tự ghi âm câu trả lời</p>
+        </div>
+      </div>
+      <div class="vp-tabs" id="spTabs"></div>
+      <div id="spContent"></div>
+    </section>
+
     <footer class="app-footer" id="footer" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-gray-200); color: var(--color-gray-600); font-size: 0.88rem;">
       <p style="margin: 0 0 var(--space-2);">Email: hotro@hanyuvui.vn · Zalo: 0377 527 486</p>
       <p style="margin: 0;">© <span id="footerYear"></span> HanYu Vui. Bảo lưu mọi quyền.</p>

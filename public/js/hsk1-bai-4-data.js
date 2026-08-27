@@ -178,7 +178,7 @@ const mcData = [
   {q:'Câu nào SAI ngữ pháp?',opts:['她我是朋友','她是我朋友','她是我的朋友','我是她朋友'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

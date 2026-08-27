@@ -194,7 +194,7 @@ const mcData = [
   {q:'Câu nào đúng khi nói "Tôi biết đọc nhưng không biết viết"?',opts:['我会读，不会写','我会读，没写','我读会，不写会','我不会读也不会写'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

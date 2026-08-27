@@ -171,7 +171,7 @@ const mcData = [
   {q:'"听" nghĩa là gì?',opts:['nghe, nghe thấy','nói','xem','đọc'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

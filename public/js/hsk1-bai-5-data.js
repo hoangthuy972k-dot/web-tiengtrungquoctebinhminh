@@ -185,7 +185,7 @@ const mcData = [
   {q:'"有" nghĩa là gì?',opts:['có','không có','là','muốn'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

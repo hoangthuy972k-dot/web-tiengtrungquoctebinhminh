@@ -179,7 +179,7 @@ const mcData = [
   {q:'"我们" nghĩa là gì?',opts:['chúng tôi, chúng ta','các bạn','họ','bạn và tôi'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

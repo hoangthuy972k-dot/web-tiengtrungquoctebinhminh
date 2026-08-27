@@ -240,7 +240,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: chuẩn bị thi, mua áo, hẹn uống cà phê.
 // Ôn lại 颜色/觉得 (Bài 1, 3).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'我在准备明天的考试，还没有准备好，有点儿累。',
    questions:[
      {q:'他在准备什么？',opts:['考试','工作','生日','旅游'],ans:0},
@@ -307,7 +307,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你觉得这件衣服怎么样？',

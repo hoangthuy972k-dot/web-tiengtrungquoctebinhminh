@@ -246,7 +246,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: hỏi lý do vắng mặt, gọi món khác ở quán ăn.
 // Ôn lại 生病/休息 (Bài 2), 觉得/运动 (Bài 1), 对 (Bài 5).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'小李这几天怎么没来上课？因为他生病了，所以在家休息。',
    questions:[
      {q:'小李为什么没来上课？',opts:['因为他生病了','因为他去旅游了','因为他很忙','不知道'],ans:0},
@@ -313,7 +313,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你怎么没去打篮球？',

@@ -177,7 +177,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: gọi lễ tân sửa phòng, mua áo hỏi màu.
 // Ôn lại 有点儿 (Bài 5), 颜色/觉得 (Bài 1, 3).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'服务员，我房间的网不太好，可以让人来看看吗？',
    questions:[
      {q:'他遇到了什么事情？',opts:['房间的网不好','门打不开','没有热水','东西丢了'],ans:0},
@@ -244,7 +244,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'您好，请问有什么可以帮您？',

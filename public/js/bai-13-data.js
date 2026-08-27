@@ -203,7 +203,7 @@ const matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: đón bạn ở sân bay.
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'我在机场门口等你，我手里拿着一本红色的书，你一看就能认出我。',
    questions:[
      {q:'他在哪儿等？',opts:['机场门口','宾馆里','路口','班里'],ans:0},
@@ -271,7 +271,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你怎么才能让我在机场一眼就认出你？',

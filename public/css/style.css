@@ -2011,3 +2011,348 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   font-size: 0.88rem;
   margin-top: 2px;
 }
+
+/* ---------- Listen practice (Luyen nghe) ---------- */
+.lp-passage {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.lp-question {
+  margin-top: var(--space-4);
+}
+
+.lp-question-text {
+  font-family: var(--font-hanzi);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+.lp-question-opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+@media (max-width: 480px) {
+  .lp-question-opts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lp-opt-btn {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-gray-200);
+  background: var(--color-white);
+  font-family: var(--font-hanzi);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.lp-opt-btn:hover:not(:disabled) {
+  border-color: var(--color-red-500);
+}
+
+.lp-opt-btn.is-correct {
+  border-color: var(--color-green-600);
+  background: var(--color-green-50);
+  color: var(--color-green-600);
+}
+
+.lp-opt-btn.is-wrong {
+  border-color: var(--color-red-600);
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+}
+
+/* ---------- Speaking practice (Luyen noi) ---------- */
+.sp-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.sp-question {
+  margin-bottom: var(--space-4);
+}
+
+.sp-q-zh {
+  font-family: var(--font-hanzi);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-top: var(--space-3);
+}
+
+.sp-q-vn {
+  color: var(--color-gray-600);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.sp-hint {
+  display: inline-block;
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-hanzi);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.sp-toggle-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-red-600);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: var(--space-3);
+}
+
+.sp-sample {
+  background: var(--color-gray-50);
+  border-left: 3px solid var(--color-red-500);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.sp-sample-zh {
+  font-family: var(--font-hanzi);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.sp-sample-vn {
+  color: var(--color-gray-600);
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
+.sp-note {
+  background: var(--color-gold-50, #fff8e6);
+  color: var(--color-gray-700);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-4);
+}
+
+.sp-rec-box {
+  background: var(--color-red-50);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.sp-rec-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sp-rec-btn {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.sp-rec-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sp-rec-start {
+  background: var(--color-red-600);
+  color: var(--color-white);
+}
+
+.sp-rec-stop {
+  background: var(--color-gray-700);
+  color: var(--color-white);
+}
+
+.sp-rec-play,
+.sp-rec-submit {
+  background: var(--color-white);
+  color: var(--color-red-600);
+  border: 1.5px solid var(--color-red-200, var(--color-red-500));
+}
+
+.sp-rec-status {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-2);
+}
+
+.sp-rec-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.sp-rec-score-item {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 74px;
+}
+
+.sp-rec-score-item span {
+  font-size: 0.72rem;
+  color: var(--color-gray-500);
+}
+
+.sp-rec-score-item b {
+  font-size: 1.15rem;
+  color: var(--color-red-600);
+}
+
+.sp-rec-recognized {
+  margin-top: var(--space-3);
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  font-style: italic;
+}
+
+.sp-rec-fallback {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  margin-top: var(--space-2);
+}
+
+.sp-tier-intro {
+  color: var(--color-gray-600);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-5);
+}
+
+.sp-model-grid,
+.sp-drill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .sp-model-grid,
+  .sp-drill-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sp-model-card,
+.sp-drill-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.sp-model-zh {
+  font-family: var(--font-hanzi);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.sp-model-py {
+  color: var(--color-gold-500);
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
+.sp-model-vn {
+  color: var(--color-gray-600);
+  font-size: 0.88rem;
+  margin-top: 2px;
+}
+
+.sp-drill-frame {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+}
+
+.sp-drill-py {
+  color: var(--color-gold-500);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.sp-drill-vn {
+  color: var(--color-gray-600);
+  font-size: 0.85rem;
+  margin: 4px 0 var(--space-3);
+}
+
+.sp-drill-opts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sp-drill-opt {
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+  border-radius: var(--radius-md);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-hanzi);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sp-drill-sample {
+  font-family: var(--font-hanzi);
+  color: var(--color-gray-700);
+  font-size: 0.9rem;
+  margin-top: var(--space-2);
+}
+
+.sp-task-role {
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-2);
+}
+
+.sp-task-guide {
+  color: var(--color-gray-600);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-3);
+}
+
+.sp-hint-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.sp-hint-row .sp-hint {
+  margin-bottom: 0;
+}

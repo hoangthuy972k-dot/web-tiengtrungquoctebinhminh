@@ -210,7 +210,7 @@ const matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: giờ ăn trưa ở công ty, bàn về đồng nghiệp mới.
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'公司新来的男同事姓王，是去年来的，他比我大两岁。',
    questions:[
      {q:'新同事姓什么？',opts:['王','李','张','陈'],ans:0},
@@ -278,7 +278,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'那个新来的同事叫什么名字？他是什么时候来的？',

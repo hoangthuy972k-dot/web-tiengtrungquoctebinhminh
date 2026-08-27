@@ -267,7 +267,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: hỏi thăm sức khỏe đồng nghiệp,
 // khám sức khỏe định kỳ. Ôn lại 为什么/觉得/要 (Bài 1).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'小李每天早上都跑步，是不是身体很好？他说：是啊，我很少生病。',
    questions:[
      {q:'小李是不是身体很好？',opts:['是','不是','不知道','他没说'],ans:0},
@@ -335,7 +335,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'你是不是生病了？现在身体怎么样？',

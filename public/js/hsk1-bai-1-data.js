@@ -151,7 +151,7 @@ const mcData = [
   {q:'Cặp câu nào đúng theo thứ tự Hỏi – Đáp?',opts:['对不起 → 没关系','你好 → 对不起','您好 → 没关系','你们好 → 你好'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý biến điệu thanh 3 khi "你" và "好" đứng liền nhau (đọc gần giống "ní hǎo").',
     models:[

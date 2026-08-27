@@ -263,7 +263,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: đi chợ mua đồng hồ, hỏi giá, hỏi màu.
 // Ôn lại 新/几/觉得 (Bài 1).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'我想买一块新手表，可是钱不够，只有几十块。',
    questions:[
      {q:'他想买什么？',opts:['手表','报纸','牛奶','衣服'],ans:0},
@@ -330,7 +330,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'这块手表多少钱？',

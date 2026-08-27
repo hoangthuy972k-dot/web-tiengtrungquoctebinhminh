@@ -205,7 +205,7 @@ const matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: ngày đầu đi làm, kiểm tra hiểu bài.
 // Ôn lại 已经 (Bài 4).
 // ══════════════════════════════════════════
-const listenData = [
+var listenData = [
   {audio:'今天是我第一天上班，同事们都非常欢迎我，我希望在这儿工作得很好。',
    questions:[
      {q:'今天是他第几天上班？',opts:['第一天','第二天','最后一天','不知道'],ans:0},
@@ -272,7 +272,7 @@ const errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
-const speakingData = {
+var speakingData = {
   intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
   questions:[
     {q_zh:'欢迎你来上班！这是你第一次来吧？',

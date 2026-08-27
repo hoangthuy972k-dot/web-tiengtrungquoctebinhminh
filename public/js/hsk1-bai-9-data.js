@@ -208,7 +208,7 @@ const mcData = [
   {q:'"儿子" nghĩa là gì?',opts:['con trai','con gái','cháu trai','em trai'],ans:0},
 ];
 
-const speakingData = {
+var speakingData = {
   t1:{
     intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[

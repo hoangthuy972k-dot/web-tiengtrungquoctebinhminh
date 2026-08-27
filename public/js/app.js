@@ -159,6 +159,8 @@
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
     $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -170,6 +172,8 @@
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
     $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -235,7 +239,7 @@
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
-    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'fill', 'sort', 'match', 'mc', 'speak'],
+    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'fill', 'sort', 'match', 'mc', 'speak'],
     hsk2: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'match', 'listen', 'fill', 'sort', 'errfix', 'speak'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
   };
@@ -257,6 +261,8 @@
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
     $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -296,6 +302,16 @@
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showDialoguePractice(levelId, lesson);
+        });
+      } else if (tabId === 'listen') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showListenPractice(levelId, lesson);
+        });
+      } else if (tabId === 'speak') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showSpeakPractice(levelId, lesson);
         });
       }
       grid.appendChild(tile);
@@ -366,7 +382,9 @@
         try {
           data = JSON.parse(JSON.stringify({
             vocabData: iframe.contentWindow.vocabData || [],
-            dialogData: iframe.contentWindow.dialogData || []
+            dialogData: iframe.contentWindow.dialogData || [],
+            listenData: iframe.contentWindow.listenData || [],
+            speakingData: iframe.contentWindow.speakingData || null
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -391,6 +409,14 @@
 
   function loadLessonDialog(lesson) {
     return loadLessonRawData(lesson).then(function (data) { return data.dialogData; });
+  }
+
+  function loadLessonListenData(lesson) {
+    return loadLessonRawData(lesson).then(function (data) { return data.listenData; });
+  }
+
+  function loadLessonSpeaking(lesson) {
+    return loadLessonRawData(lesson).then(function (data) { return data.speakingData; });
   }
 
   function audioBaseFor(lesson) {
@@ -420,6 +446,8 @@
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
     $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -582,6 +610,8 @@
     $('#flashcardPractice').hidden = false;
     $('#grammarPractice').hidden = true;
     $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -736,6 +766,8 @@
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = false;
     $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -852,6 +884,8 @@
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
     $('#dialoguePractice').hidden = false;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
     $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -913,6 +947,420 @@
       '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>' +
       audioHtml +
       linesHtml;
+  }
+
+  /* ---------------- Listen practice (Luyen nghe: chon nghia / chon chu Han / hoi thoai) ---------------- */
+
+  var lpMode = 'meaning';
+  var lpVocab = [];
+  var lpListenData = [];
+  var lpQuiz = null;
+
+  function showListenPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = false;
+    $('#speakPractice').hidden = true;
+    $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+
+    lpMode = 'meaning';
+    $all('#lpTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-lp-tab') === 'meaning'); });
+
+    Promise.all([loadLessonVocab(lesson), loadLessonListenData(lesson)]).then(function (res) {
+      lpVocab = res[0];
+      lpListenData = res[1];
+      lpQuiz = null;
+      renderListenContent();
+    }).catch(function () {
+      $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được dữ liệu luyện nghe của bài này.</p>';
+    });
+
+    $('#listenPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderListenContent() {
+    if (lpMode === 'dialog') renderListenDialogPassages();
+    else renderListenMCQuiz();
+  }
+
+  function renderListenMCQuiz() {
+    var wrap = $('#lpContent');
+    if (!lpVocab.length) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có từ vựng để luyện nghe.</p>';
+      return;
+    }
+    if (!lpQuiz) lpQuiz = { order: shuffle(lpVocab.map(function (_, i) { return i; })), pos: 0, score: 0 };
+
+    var total = lpQuiz.order.length;
+    if (lpQuiz.pos >= total) {
+      wrap.innerHTML =
+        '<div class="vp-quiz-done"><strong>' + lpQuiz.score + '/' + total + '</strong>' +
+        '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện nghe này.</p>' +
+        '<button type="button" class="btn btn-primary" id="lpRestart">Luyện lại</button></div>';
+      $('#lpRestart').addEventListener('click', function () { lpQuiz = null; renderListenMCQuiz(); });
+      return;
+    }
+
+    var idx = lpQuiz.order[lpQuiz.pos];
+    var word = lpVocab[idx];
+    var distractors = shuffle(lpVocab.filter(function (_, i) { return i !== idx; })).slice(0, 3);
+    var options = shuffle([word].concat(distractors));
+
+    var segs = '';
+    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < lpQuiz.pos ? ' is-done' : '') + '"></div>';
+
+    var optionsHtml = options.map(function (opt, i) {
+      var label = lpMode === 'hanzi' ? (opt.zh + ' (' + opt.py + ')') : opt.vn;
+      return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + label + '</button>';
+    }).join('');
+
+    wrap.innerHTML =
+      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      '<div class="vp-quiz-counter">Câu ' + (lpQuiz.pos + 1) + '/' + total + '</div>' +
+      '<div class="vp-quiz-card">' +
+        '<div class="vp-quiz-prompt"><button type="button" class="vp-quiz-play-btn" id="lpPlayBtn">🔊 Nghe</button></div>' +
+        '<div class="vp-quiz-options">' + optionsHtml + '</div>' +
+      '</div>';
+
+    $('#lpPlayBtn').addEventListener('click', function () { vpSpeak(word.zh); });
+    vpSpeak(word.zh);
+
+    $all('.vp-option-btn', wrap).forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        var isCorrect = options[i] === word;
+        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (options[j] === word) b.classList.add('is-correct');
+          else if (j === i) b.classList.add('is-wrong');
+        });
+        if (isCorrect) lpQuiz.score++;
+        setTimeout(function () {
+          lpQuiz.pos++;
+          renderListenMCQuiz();
+        }, 900);
+      });
+    });
+  }
+
+  function renderListenDialogPassages() {
+    var wrap = $('#lpContent');
+    if (!lpListenData.length) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện nghe hội thoại.</p>';
+      return;
+    }
+    wrap.innerHTML = lpListenData.map(function (group, gi) {
+      var questionsHtml = group.questions.map(function (q, qi) {
+        var optsHtml = q.opts.map(function (opt, oi) {
+          return '<button type="button" class="lp-opt-btn" data-gi="' + gi + '" data-qi="' + qi + '" data-oi="' + oi + '">' + opt + '</button>';
+        }).join('');
+        return '<div class="lp-question"><div class="lp-question-text">' + (qi + 1) + '. ' + q.q + '</div><div class="lp-question-opts">' + optsHtml + '</div></div>';
+      }).join('');
+      return '<div class="lp-passage">' +
+        '<button type="button" class="vp-quiz-play-btn" data-audio="' + group.audio.replace(/"/g, '&quot;') + '">🔊 Nghe đoạn ' + (gi + 1) + '</button>' +
+        questionsHtml +
+        '</div>';
+    }).join('');
+
+    $all('[data-audio]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-audio')); });
+    });
+    $all('.lp-opt-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var gi = parseInt(btn.getAttribute('data-gi'), 10);
+        var qi = parseInt(btn.getAttribute('data-qi'), 10);
+        var oi = parseInt(btn.getAttribute('data-oi'), 10);
+        var q = lpListenData[gi].questions[qi];
+        var siblingBtns = btn.parentElement.querySelectorAll('.lp-opt-btn');
+        siblingBtns.forEach(function (b, i) {
+          b.disabled = true;
+          if (i === q.ans) b.classList.add('is-correct');
+          else if (i === oi && oi !== q.ans) b.classList.add('is-wrong');
+        });
+      });
+    });
+  }
+
+  /* ---------------- Speaking practice (Luyen noi: reuses the lesson's real speakingData) ---------------- */
+  /* Two shapes exist in the data files: HSK2 "questions" (flat, all with real recording + AI scoring),
+     and HSK1 "t1/t2/t3" (3-tier: mo phong / co huong dan / noi tu do, only tier 3 has recording). */
+
+  var spData = null;
+  var spTierMode = 1;
+  var spRecState = {};
+
+  function showSpeakPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = false;
+    $('#spTabs').innerHTML = '';
+    $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+
+    loadLessonSpeaking(lesson).then(function (speakingData) {
+      spData = speakingData;
+      spTierMode = 1;
+      spRecState = {};
+      renderSpeakTabs();
+      renderSpeakContent();
+    }).catch(function () {
+      $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung luyện nói của bài này.</p>';
+    });
+
+    $('#speakPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  var SP_TIER_LABELS = { 1: 'Tầng 1 · Mô phỏng', 2: 'Tầng 2 · Có hướng dẫn', 3: 'Tầng 3 · Nói tự do' };
+
+  function renderSpeakTabs() {
+    var wrap = $('#spTabs');
+    if (!spData || spData.questions) {
+      wrap.innerHTML = '';
+      return;
+    }
+    wrap.innerHTML = [1, 2, 3].map(function (tier) {
+      return '<button type="button" class="vp-tab' + (tier === spTierMode ? ' active' : '') + '" data-sp-tier="' + tier + '">' + SP_TIER_LABELS[tier] + '</button>';
+    }).join('');
+    $all('[data-sp-tier]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        spTierMode = parseInt(btn.getAttribute('data-sp-tier'), 10);
+        $all('[data-sp-tier]', wrap).forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        renderSpeakContent();
+      });
+    });
+  }
+
+  function renderSpeakContent() {
+    var wrap = $('#spContent');
+    if (!spData) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện nói.</p>';
+      return;
+    }
+    if (spData.questions) {
+      renderSpeakQuestions(wrap, spData.questions);
+    } else if (spTierMode === 1 && spData.t1) {
+      renderSpeakTier1(wrap, spData.t1);
+    } else if (spTierMode === 2 && spData.t2) {
+      renderSpeakTier2(wrap, spData.t2);
+    } else if (spTierMode === 3 && spData.t3) {
+      renderSpeakTier3(wrap, spData.t3);
+    } else {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện nói.</p>';
+    }
+  }
+
+  function bindSpeakButtons(wrap) {
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    $all('.sp-toggle-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = $('#' + btn.getAttribute('data-target'));
+        target.hidden = !target.hidden;
+      });
+    });
+  }
+
+  function recorderBoxHtml(i, referenceText) {
+    return '<div class="sp-rec-box" id="spRec' + i + '" data-ref="' + referenceText.replace(/"/g, '&quot;') + '">' +
+      '<div class="sp-rec-row">' +
+        '<button type="button" class="sp-rec-btn sp-rec-start" data-action="rec-start" data-idx="' + i + '">🎙️ Ghi âm</button>' +
+        '<button type="button" class="sp-rec-btn sp-rec-stop" data-action="rec-stop" data-idx="' + i + '" disabled>⏹ Dừng</button>' +
+        '<button type="button" class="sp-rec-btn sp-rec-play" data-action="rec-play" data-idx="' + i + '" disabled>▶ Nghe lại</button>' +
+        '<button type="button" class="sp-rec-btn sp-rec-submit" data-action="rec-submit" data-idx="' + i + '" disabled>📤 Chấm điểm</button>' +
+      '</div>' +
+      '<div class="sp-rec-status" id="spRecStatus' + i + '">Bấm 🎙️ Ghi âm rồi đọc to câu mẫu ở trên.</div>' +
+      '<div class="sp-rec-result" id="spRecResult' + i + '"></div>' +
+    '</div>';
+  }
+
+  function bindRecorderButtons(wrap) {
+    $all('[data-action="rec-start"]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { spRecStart(parseInt(btn.getAttribute('data-idx'), 10)); });
+    });
+    $all('[data-action="rec-stop"]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { spRecStop(parseInt(btn.getAttribute('data-idx'), 10)); });
+    });
+    $all('[data-action="rec-play"]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { spRecPlay(parseInt(btn.getAttribute('data-idx'), 10)); });
+    });
+    $all('[data-action="rec-submit"]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { spRecSubmit(parseInt(btn.getAttribute('data-idx'), 10)); });
+    });
+  }
+
+  function renderSpeakQuestions(wrap, questions) {
+    wrap.innerHTML = questions.map(function (q, i) {
+      return '<div class="sp-card">' +
+        '<div class="sp-question">' +
+          '<button type="button" class="vp-quiz-play-btn" data-speak="' + q.q_zh.replace(/"/g, '&quot;') + '">🔊 Nghe câu hỏi</button>' +
+          '<div class="sp-q-zh hanzi">' + q.q_zh + '</div>' +
+          '<div class="sp-q-vn">' + q.q_vn + '</div>' +
+        '</div>' +
+        (q.hint ? '<div class="sp-hint">' + q.hint + '</div>' : '') +
+        '<button type="button" class="sp-toggle-btn" data-target="spSample' + i + '">Xem câu trả lời gợi ý ▾</button>' +
+        '<div class="sp-sample" id="spSample' + i + '" hidden>' +
+          '<div class="sp-sample-zh hanzi">' + q.sample + ' <button type="button" class="vp-speak-btn" data-speak="' + q.sample.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          '<div class="sp-sample-vn">' + q.sample_vn + '</div>' +
+        '</div>' +
+        (q.note ? '<div class="sp-note">💡 ' + q.note + '</div>' : '') +
+        recorderBoxHtml(i, q.sample) +
+      '</div>';
+    }).join('');
+
+    bindSpeakButtons(wrap);
+    bindRecorderButtons(wrap);
+  }
+
+  function renderSpeakTier1(wrap, t1) {
+    var models = (t1.models || []).map(function (m) {
+      return '<div class="sp-model-card">' +
+        '<div class="sp-model-zh hanzi">' + m.zh + ' <button type="button" class="vp-speak-btn" data-speak="' + m.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<div class="sp-model-py">' + m.py + '</div>' +
+        '<div class="sp-model-vn">' + m.vn + '</div>' +
+      '</div>';
+    }).join('');
+    wrap.innerHTML = '<div class="sp-tier-intro">' + (t1.intro || '') + '</div><div class="sp-model-grid">' + models + '</div>';
+    bindSpeakButtons(wrap);
+  }
+
+  function renderSpeakTier2(wrap, t2) {
+    var drills = (t2.drills || []).map(function (dr, i) {
+      var frame = (dr.frame || '').replace(/＿＿/g, '<b>＿＿</b>');
+      var optsHtml = (dr.options || []).map(function (o) { return '<span class="sp-drill-opt">' + o + '</span>'; }).join('');
+      var samplesHtml = (dr.samples || []).map(function (s) {
+        return '<div class="sp-drill-sample">✓ ' + s + ' <button type="button" class="vp-speak-btn" data-speak="' + s.replace(/"/g, '&quot;') + '">🔊</button></div>';
+      }).join('');
+      return '<div class="sp-drill-card">' +
+        '<div class="sp-drill-frame hanzi">' + frame + '</div>' +
+        '<div class="sp-drill-py">' + (dr.frame_py || '') + '</div>' +
+        '<div class="sp-drill-vn">' + (dr.vn || '') + '</div>' +
+        '<div class="sp-drill-opts">' + optsHtml + '</div>' +
+        '<button type="button" class="sp-toggle-btn" data-target="spDrill' + i + '">Xem câu mẫu ▾</button>' +
+        '<div class="sp-drill-samples" id="spDrill' + i + '" hidden>' + samplesHtml + '</div>' +
+      '</div>';
+    }).join('');
+    wrap.innerHTML = '<div class="sp-tier-intro">' + (t2.intro || '') + '</div><div class="sp-drill-grid">' + drills + '</div>';
+    bindSpeakButtons(wrap);
+  }
+
+  function renderSpeakTier3(wrap, t3) {
+    var tasks = (t3.tasks || []).map(function (t, i) {
+      var chips = (t.structure || []).map(function (s) { return '<span class="sp-hint">' + s + '</span>'; }).join('');
+      return '<div class="sp-card">' +
+        '<div class="sp-task-role">' + t.role + '</div>' +
+        '<div class="sp-task-guide">' + t.guide + '</div>' +
+        '<div class="sp-hint-row">' + chips + '</div>' +
+        '<button type="button" class="sp-toggle-btn" data-target="spSample' + i + '">Xem đoạn nói mẫu ▾</button>' +
+        '<div class="sp-sample" id="spSample' + i + '" hidden>' +
+          '<div class="sp-sample-zh hanzi">' + t.sample + ' <button type="button" class="vp-speak-btn" data-speak="' + t.sample.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          '<div class="sp-sample-vn">' + t.sample_vn + '</div>' +
+        '</div>' +
+        (t.note ? '<div class="sp-note">💡 ' + t.note + '</div>' : '') +
+        recorderBoxHtml(i, t.sample) +
+      '</div>';
+    }).join('');
+    wrap.innerHTML = '<div class="sp-tier-intro">' + (t3.intro || '') + '</div>' + tasks;
+    bindSpeakButtons(wrap);
+    bindRecorderButtons(wrap);
+  }
+
+  function spRecStart(i) {
+    var statusEl = $('#spRecStatus' + i);
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      statusEl.textContent = 'Trình duyệt không hỗ trợ ghi âm.';
+      return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      var mr = new MediaRecorder(stream);
+      var chunks = [];
+      mr.ondataavailable = function (e) { if (e.data.size > 0) chunks.push(e.data); };
+      mr.onstop = function () {
+        stream.getTracks().forEach(function (t) { t.stop(); });
+        var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' });
+        spRecState[i] = spRecState[i] || {};
+        spRecState[i].blob = blob;
+        spRecState[i].url = URL.createObjectURL(blob);
+        statusEl.textContent = '✓ Đã ghi âm xong. Nghe lại hoặc gửi chấm điểm.';
+        var box = $('#spRec' + i);
+        box.querySelector('.sp-rec-play').disabled = false;
+        box.querySelector('.sp-rec-submit').disabled = false;
+        box.querySelector('.sp-rec-start').disabled = false;
+      };
+      mr.start();
+      spRecState[i] = spRecState[i] || {};
+      spRecState[i].mr = mr;
+      statusEl.textContent = '🔴 Đang ghi âm... bấm ⏹ khi nói xong.';
+      var box = $('#spRec' + i);
+      box.querySelector('.sp-rec-start').disabled = true;
+      box.querySelector('.sp-rec-stop').disabled = false;
+    }).catch(function () {
+      statusEl.textContent = 'Không thể truy cập micro — hãy cho phép quyền micro rồi thử lại.';
+    });
+  }
+
+  function spRecStop(i) {
+    if (spRecState[i] && spRecState[i].mr && spRecState[i].mr.state === 'recording') spRecState[i].mr.stop();
+    $('#spRec' + i).querySelector('.sp-rec-stop').disabled = true;
+  }
+
+  function spRecPlay(i) {
+    if (!spRecState[i] || !spRecState[i].url) return;
+    new Audio(spRecState[i].url).play();
+  }
+
+  function spRecSubmit(i) {
+    if (!spRecState[i] || !spRecState[i].blob) return;
+    var box = $('#spRec' + i);
+    var referenceText = box.dataset.ref;
+    var statusEl = $('#spRecStatus' + i);
+    var resultEl = $('#spRecResult' + i);
+    statusEl.textContent = '⏳ Đang chấm điểm...';
+    box.querySelector('.sp-rec-submit').disabled = true;
+    var reader = new FileReader();
+    reader.onloadend = function () {
+      var b64 = reader.result.split(',')[1];
+      fetch('/api/speech-assess', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ audioBase64: b64, mimeType: spRecState[i].blob.type, referenceText: referenceText })
+      }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, data: j }; }); })
+        .then(function (res) {
+          box.querySelector('.sp-rec-submit').disabled = false;
+          if (!res.ok) {
+            statusEl.textContent = '';
+            resultEl.innerHTML = '<div class="sp-rec-fallback">🙈 Chưa bật chấm điểm AI (' + (res.data.error || '') + '). Hãy tự nghe lại và đối chiếu với câu mẫu ở trên nhé!</div>';
+            return;
+          }
+          var d = res.data;
+          resultEl.innerHTML = '<div class="sp-rec-scores">' +
+            '<div class="sp-rec-score-item"><span>Phát âm</span><b>' + Math.round(d.pronunciation) + '</b></div>' +
+            '<div class="sp-rec-score-item"><span>Độ chính xác</span><b>' + Math.round(d.accuracy) + '</b></div>' +
+            '<div class="sp-rec-score-item"><span>Trôi chảy</span><b>' + Math.round(d.fluency) + '</b></div>' +
+            '<div class="sp-rec-score-item"><span>Đầy đủ</span><b>' + Math.round(d.completeness) + '</b></div>' +
+            '</div>' + (d.recognizedText ? '<div class="sp-rec-recognized">Máy nghe được: "' + d.recognizedText + '"</div>' : '');
+          statusEl.textContent = '✓ Đã chấm điểm xong.';
+        }).catch(function () {
+          box.querySelector('.sp-rec-submit').disabled = false;
+          statusEl.textContent = '';
+          resultEl.innerHTML = '<div class="sp-rec-fallback">Không gửi được — hãy thử lại, hoặc tự đối chiếu với câu mẫu.</div>';
+        });
+    };
+    reader.readAsDataURL(spRecState[i].blob);
   }
 
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
@@ -1136,6 +1584,25 @@
       });
     });
     $('#dpBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#lpBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $all('#lpTabs .vp-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        lpMode = tab.getAttribute('data-lp-tab');
+        lpQuiz = null;
+        $all('#lpTabs .vp-tab').forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        renderListenContent();
+      });
+    });
+    $('#spBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();

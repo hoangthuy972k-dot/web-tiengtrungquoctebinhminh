@@ -165,7 +165,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi con vật/nơi chốn so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi con mèo đang ở đâu: “小猫',blank:'在',post:'哪儿？”',hint:'(ở — động từ)',ans:'在'},
   {pre:'Bạn nói con chó ở dưới bàn: “小狗在桌子',blank:'下面',post:'。”',hint:'(bên dưới)',ans:'下面'},
   {pre:'Bạn hỏi ai đó làm việc ở đâu: “你在',blank:'哪儿',post:'工作？”',hint:'(ở đâu)',ans:'哪儿'},
@@ -177,7 +177,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi con vật/vị trí so với bài khoá
-const sortData = [
+var sortData = [
   {words:['小','猫','在','哪儿','？'],ans:'小猫在哪儿？',audio:'小猫在哪儿？'},
   {words:['小','狗','在','桌子','下面','。'],ans:'小狗在桌子下面。',audio:'小狗在桌子下面。'},
   {words:['你','在','哪儿','工作','？'],ans:'你在哪儿工作？',audio:'你在哪儿工作？'},
@@ -186,7 +186,7 @@ const sortData = [
   {words:['他','在','医院','。'],ans:'他在医院。',audio:'他在医院。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'小猫在哪儿？',right:'小猫在那儿。'},
   {left:'小狗在哪儿？',right:'小狗在椅子下面。'},
   {left:'你在哪儿工作？',right:'我在学校工作。'},
@@ -195,7 +195,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 在/哪儿, không audio
-const mcData = [
+var mcData = [
   {q:'小猫＿＿哪儿？',opts:['在','是','有','去'],ans:0},
   {q:'小狗在椅子＿＿。',opts:['下面','上面','里面','外面'],ans:0},
   {q:'你在＿＿工作？',opts:['哪儿','什么','谁','怎么'],ans:0},

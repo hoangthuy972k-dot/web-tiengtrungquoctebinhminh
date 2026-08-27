@@ -191,7 +191,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'拿',right:'铅笔'},
   {left:'一直',right:'走'},
   {left:'往',right:'前'},
@@ -224,7 +224,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: đón bạn ở sân bay
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'我在机场门口等你，手里拿',blank:'着',post:'一本红色的书。',hint:'(trợ từ động thái)',ans:'着',exp:'Động từ + 着 = trạng thái đang được duy trì.'},
   {pre:'好的，手里',blank:'拿',post:'着书的就是你吧？',hint:'(cầm)',ans:'拿'},
   {pre:'对，你怎么一下就认出我了？因为你',blank:'一直',post:'在笑啊！',hint:'(luôn, cứ)',ans:'一直'},
@@ -238,7 +238,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['我','手里','拿着','一','本','书','。'],ans:'我手里拿着一本书。',audio:'我手里拿着一本书。'},
   {words:['她','不是','你','妹妹','吗','？'],ans:'她不是你妹妹吗？',audio:'她不是你妹妹吗？'},
   {words:['从','这儿','一直','往','前','走','。'],ans:'从这儿一直往前走。',audio:'从这儿一直往前走。'},
@@ -250,7 +250,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'门着开呢。',
    opts:['门开着呢。','门着开呢。','门开呢着。','着门开呢。'],ans:0,
    exp:'着 luôn đứng NGAY SAU động từ (开着), không đặt trước động từ.'},

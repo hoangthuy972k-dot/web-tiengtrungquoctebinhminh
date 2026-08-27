@@ -233,7 +233,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'好吃',right:'面条'},
   {left:'打',right:'篮球'},
   {left:'经常',right:'游泳'},
@@ -266,7 +266,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi lý do vắng tập, gọi món khác
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'你',blank:'怎么',post:'没去打篮球？',hint:'(sao, tại sao)',ans:'怎么',exp:'怎么 đứng sau chủ ngữ, trước động từ, dùng hỏi lý do.'},
   {pre:'',blank:'因为',post:'昨天下雨，',hint:'(vì)',ans:'因为'},
   {pre:'',blank:'所以',post:'我没去。',hint:'(nên, cho nên)',ans:'所以',exp:'因为……，所以…… luôn đi thành cặp, không đảo ngược.'},
@@ -280,7 +280,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['你','怎么','没','去','打篮球','？'],ans:'你怎么没去打篮球？',audio:'你怎么没去打篮球？'},
   {words:['因为','昨天','下雨','，','所以','我','没','去','。'],ans:'因为昨天下雨，所以我没去。',audio:'因为昨天下雨，所以我没去。'},
   {words:['你','经常','游泳','吗','？'],ans:'你经常游泳吗？',audio:'你经常游泳吗？'},
@@ -292,7 +292,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'没去打篮球你怎么？',
    opts:['你怎么没去打篮球？','怎么你没去打篮球？','你没去怎么打篮球？','你没打篮球怎么去？'],ans:0,
    exp:'怎么 đứng SAU chủ ngữ, TRƯỚC động từ, dùng để hỏi lý do (= tại sao).'},

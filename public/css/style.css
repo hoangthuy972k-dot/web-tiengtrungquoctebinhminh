@@ -2356,3 +2356,311 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .sp-hint-row .sp-hint {
   margin-bottom: 0;
 }
+
+/* ---------- Game on tap (picker + match/fill/sort/errfix/mc) ---------- */
+.game-picker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .game-picker-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.game-picker-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: left;
+  cursor: pointer;
+}
+
+.game-picker-card:hover:not(:disabled) {
+  border-color: var(--color-red-500);
+}
+
+.game-picker-card:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.game-picker-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: var(--space-3);
+}
+
+.game-picker-title {
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: 2px;
+}
+
+.game-picker-desc {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+}
+
+.game-type-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.game-type-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.game-type-header h2 {
+  font-size: 1.2rem;
+  color: var(--color-gray-800);
+}
+
+/* Match (Ghep tu / Noi cau) */
+.mg-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+.mg-col-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-2);
+}
+
+.mg-item {
+  display: block;
+  width: 100%;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-hanzi);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mg-item.is-sel {
+  border-color: var(--color-red-500);
+  background: var(--color-red-50);
+}
+
+.mg-item.is-correct {
+  border-color: var(--color-green-600);
+  background: var(--color-green-50);
+  color: var(--color-green-600);
+  cursor: default;
+}
+
+@keyframes mg-shake-anim {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.mg-item.mg-shake {
+  animation: mg-shake-anim 0.3s;
+  border-color: var(--color-red-600);
+}
+
+.mg-fb {
+  min-height: 1.4em;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: var(--space-2);
+}
+
+/* Fill / Sort / MC shared bits */
+.fg-card,
+.sg-card,
+.mc-card {
+  margin-bottom: var(--space-4);
+}
+
+.fg-card.is-correct,
+.sg-card.is-correct,
+.mc-card.is-correct {
+  border-color: var(--color-green-600);
+}
+
+.fg-card.is-wrong,
+.sg-card.is-wrong,
+.mc-card.is-wrong {
+  border-color: var(--color-red-600);
+}
+
+.fg-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.fg-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-red-600);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: var(--space-2);
+}
+
+.fg-input {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid var(--color-gray-300);
+  font-family: var(--font-hanzi);
+  font-size: 1rem;
+  padding: 2px 4px;
+  margin: 0 4px;
+  background: transparent;
+}
+
+.fg-input:focus {
+  outline: none;
+  border-bottom-color: var(--color-red-500);
+}
+
+.fg-input.is-correct {
+  border-bottom-color: var(--color-green-600);
+  color: var(--color-green-600);
+}
+
+.fg-input.is-wrong {
+  border-bottom-color: var(--color-red-600);
+  color: var(--color-red-600);
+}
+
+.fg-hint {
+  color: var(--color-gray-500);
+  font-size: 0.82rem;
+  margin-top: var(--space-2);
+}
+
+.fg-fb,
+.sg-fb,
+.mc-fb {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: var(--space-2);
+  min-height: 1.3em;
+}
+
+.fg-fb.is-correct,
+.sg-fb.is-correct,
+.mc-fb.is-correct {
+  color: var(--color-green-600);
+}
+
+.fg-fb.is-wrong,
+.sg-fb.is-wrong,
+.mc-fb.is-wrong {
+  color: var(--color-red-600);
+}
+
+.fg-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.fg-score {
+  background: var(--color-red-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-weight: 700;
+  color: var(--color-red-600);
+  text-align: center;
+}
+
+/* Sort */
+.sg-bank,
+.sg-answer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) 0;
+}
+
+.sg-answer {
+  border-bottom: 2px dashed var(--color-gray-300);
+  margin-bottom: var(--space-3);
+}
+
+.sg-chip,
+.sg-placed {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-hanzi);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sg-chip.is-used {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.sg-placed {
+  border-color: var(--color-red-500);
+  background: var(--color-red-50);
+}
+
+/* MC / Errfix */
+.mc-prompt {
+  font-size: 1rem;
+  margin-bottom: var(--space-3);
+}
+
+.mc-sub {
+  font-family: var(--font-latin);
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
+  margin: 4px 0 0 30px;
+}
+
+.mc-opts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+@media (max-width: 480px) {
+  .mc-opts {
+    grid-template-columns: 1fr;
+  }
+}

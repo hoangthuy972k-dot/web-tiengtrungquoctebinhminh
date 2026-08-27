@@ -78,7 +78,7 @@ var dialogData = [
 ];
 
 // Điền từ — mô tả tình huống thực tế, không lặp nguyên văn bài khoá
-const fillData = [
+var fillData = [
   {pre:'Ai đó giúp bạn xách đồ nặng, bạn nói: “',blank:'谢谢',post:'”',hint:'(cảm ơn)',ans:'谢谢'},
   {pre:'Bạn thân cảm ơn bạn, bạn đáp lại đơn giản, thân mật: “',blank:'不谢',post:'”',hint:'(không cần cảm ơn — thân mật)',ans:'不谢'},
   {pre:'Một người lạ/khách hàng cảm ơn bạn, bạn đáp lại lịch sự hơn: “',blank:'不客气',post:'”',hint:'(đừng khách sáo — lịch sự, trang trọng)',ans:'不客气'},
@@ -90,7 +90,7 @@ const fillData = [
 ];
 
 // Sắp xếp — bao gồm 1 câu ôn tập kết hợp từ vựng Bài 1
-const sortData = [
+var sortData = [
   {words:['谢','谢','！'],ans:'谢谢！',audio:'谢谢！'},
   {words:['谢','谢','你','！'],ans:'谢谢你！',audio:'谢谢你！'},
   {words:['不','客','气','！'],ans:'不客气！',audio:'不客气！'},
@@ -99,7 +99,7 @@ const sortData = [
 ];
 
 // Nối câu — nối tình huống với câu nói phù hợp
-const matchData = [
+var matchData = [
   {left:'Cảm ơn ai đó vừa giúp bạn',right:'谢谢！'},
   {left:'Đáp lại lời cảm ơn một cách thân mật',right:'不谢！'},
   {left:'Đáp lại lời cảm ơn một cách lịch sự, trang trọng hơn',right:'不客气！'},
@@ -107,7 +107,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — kiểm tra ngữ dụng & quy tắc biến điệu của "不", không audio
-const mcData = [
+var mcData = [
   {q:'Ai đó giúp bạn, cách cảm ơn đúng là?',opts:['谢谢','再见','不客气','对不起'],ans:0},
   {q:'Đáp lại lời cảm ơn một cách THÂN MẬT, đơn giản nhất là?',opts:['不谢','不客气','谢谢','再见'],ans:0},
   {q:'Đáp lại lời cảm ơn một cách LỊCH SỰ hơn (với khách/người lạ) là?',opts:['不客气','不谢','谢谢','没关系'],ans:0},

@@ -155,7 +155,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'新年',right:'快乐'},
   {left:'买',right:'票'},
   {left:'坐',right:'公共汽车'},
@@ -188,7 +188,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: tiệc tất niên ở công ty
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'公司新年晚会的票，大家',blank:'都',post:'买好了。',hint:'(đều — 都……了)',ans:'都',exp:'都……了 nhấn mạnh TẤT CẢ đều đạt trạng thái/kết quả.'},
   {pre:'新年',blank:'就',post:'要到了，你准备好了吗？',hint:'(sắp — 就要……了)',ans:'就',exp:'就要……了 diễn tả việc sắp xảy ra.'},
   {pre:'晚会',blank:'快',post:'要开始了，大家快过来吧！',hint:'(sắp — 快要……了)',ans:'快'},
@@ -202,7 +202,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['新年','晚会','的','票','大家','都','买','好','了','。'],ans:'新年晚会的票大家都买好了。',audio:'新年晚会的票大家都买好了。'},
   {words:['新年','就要','到','了','。'],ans:'新年就要到了。',audio:'新年就要到了。'},
   {words:['晚会','快要','开始','了','。'],ans:'晚会快要开始了。',audio:'晚会快要开始了。'},
@@ -214,7 +214,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'今天更比昨天冷。',
    opts:['今天比昨天更冷。','今天更比昨天冷。','今天比更昨天冷。','更今天比昨天冷。'],ans:0,
    exp:'更 đứng SAU 比 + đối tượng so sánh, ngay trước tính từ: A + 比 + B + 更 + Tính từ.'},

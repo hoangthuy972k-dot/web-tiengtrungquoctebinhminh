@@ -136,7 +136,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi giờ/số ngày so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi giờ hiện tại: “',blank:'现在',post:'几点？”',hint:'(bây giờ)',ans:'现在'},
   {pre:'Bạn nói bây giờ là 3 giờ 20 phút: “现在三点二十',blank:'分',post:'。”',hint:'(phút)',ans:'分'},
   {pre:'Bạn hỏi khi nào mẹ về nhà: “妈妈什么',blank:'时候',post:'回家？”',hint:'(khi nào, lúc nào)',ans:'时候'},
@@ -148,7 +148,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi giờ/số ngày so với bài khoá
-const sortData = [
+var sortData = [
   {words:['现在','几','点','？'],ans:'现在几点？',audio:'现在几点？'},
   {words:['现在','十','点','十','分','。'],ans:'现在十点十分。',audio:'现在十点十分。'},
   {words:['爸爸','什么','时候','回家','？'],ans:'爸爸什么时候回家？',audio:'爸爸什么时候回家？'},
@@ -157,7 +157,7 @@ const sortData = [
   {words:['星期','五','前','能','回家','吗','？'],ans:'星期五前能回家吗？',audio:'星期五前能回家吗？'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'现在几点？',right:'现在十点十分。'},
   {left:'中午几点吃饭？',right:'十二点吃饭。'},
   {left:'爸爸什么时候回家？',right:'下午五点。'},
@@ -166,7 +166,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm cách nói giờ & trạng ngữ thời gian, không audio
-const mcData = [
+var mcData = [
   {q:'＿＿几点？',opts:['现在','什么','怎么','哪儿'],ans:0},
   {q:'Số "2 giờ" nói thế nào (không dùng 二)?',opts:['两点','二点','两个点','二个点'],ans:0},
   {q:'Trạng ngữ chỉ thời gian thường đứng ở đâu trong câu?',opts:['trước hoặc ngay sau chủ ngữ','luôn ở cuối câu','luôn tách biệt hoàn toàn ở đầu câu','sau động từ'],ans:0},

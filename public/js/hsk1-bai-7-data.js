@@ -161,7 +161,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi ngày/thứ so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi lịch sự về ngày hôm nay: “',blank:'请',post:'问，今天几号？”',hint:'(mời, xin — lịch sự)',ans:'请'},
   {pre:'Bạn hỏi thứ trong tuần: “今天',blank:'星期',post:'几？”',hint:'(tuần, thứ)',ans:'星期'},
   {pre:'Nói hôm nay là ngày 5 tháng 10: “今天10',blank:'月',post:'5号。”',hint:'(tháng)',ans:'月'},
@@ -173,7 +173,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi ngày/thứ so với bài khoá
-const sortData = [
+var sortData = [
   {words:['请','问','，','今天','几','号','？'],ans:'请问，今天几号？',audio:'请问，今天几号？'},
   {words:['今天','10','月','5','号','。'],ans:'今天10月5号。',audio:'今天10月5号。'},
   {words:['昨天','是','星期','一','。'],ans:'昨天是星期一。',audio:'昨天是星期一。'},
@@ -182,7 +182,7 @@ const sortData = [
   {words:['我','去','学校','看','书','。'],ans:'我去学校看书。',audio:'我去学校看书。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'今天几号？',right:'今天9月1号。'},
   {left:'今天星期几？',right:'星期三。'},
   {left:'昨天是几月几号？',right:'昨天是8月31号，星期二。'},
@@ -191,7 +191,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm ngày tháng & câu liên động 去, không audio
-const mcData = [
+var mcData = [
   {q:'请问，今天＿＿号？',opts:['几','什么','怎么','哪'],ans:0},
   {q:'今天＿＿几？(hỏi thứ)',opts:['星期','号','月','今天'],ans:0},
   {q:'Thứ tự đúng khi nói ngày tháng trong tiếng Trung là?',opts:['Tháng → Ngày → Thứ','Thứ → Ngày → Tháng','Ngày → Tháng → Thứ','Thứ → Tháng → Ngày'],ans:0},

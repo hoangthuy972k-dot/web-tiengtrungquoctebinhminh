@@ -170,7 +170,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'上',right:'课'},
   {left:'玩',right:'手机'},
   {left:'洗',right:'手'},
@@ -203,7 +203,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở phòng tập gym
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'你怎么还在这儿运动？别练',blank:'了',post:'，已经很晚了。',hint:'(đừng... nữa)',ans:'了',exp:'别/不要 + Động từ + 了 = đừng làm... nữa.'},
   {pre:'我知道，可是运动',blank:'对',post:'身体很好，我想多练一下。',hint:'(đối với)',ans:'对',exp:'对 đứng sau chủ ngữ, trước đối tượng chịu tác động: 运动对身体好.'},
   {pre:'你今天上的是第几节健身',blank:'课',post:'？',hint:'(tiết học, lớp học)',ans:'课'},
@@ -217,7 +217,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['别','玩','手机','了','，','快','去','锻炼','吧','。'],ans:'别玩手机了，快去锻炼吧。',audio:'别玩手机了，快去锻炼吧。'},
   {words:['运动','对','身体','非常','好','。'],ans:'运动对身体非常好。',audio:'运动对身体非常好。'},
   {words:['我','正在','上','健身','课','呢','。'],ans:'我正在上健身课呢。',audio:'我正在上健身课呢。'},
@@ -229,7 +229,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'不要玩手机，了。',
    opts:['不要玩手机了。','不要玩手机，了。','不要了玩手机。','了不要玩手机。'],ans:0,
    exp:'了 gắn liền ngay sau cụm động từ+tân ngữ, không tách bằng dấu phẩy và không đứng riêng.'},

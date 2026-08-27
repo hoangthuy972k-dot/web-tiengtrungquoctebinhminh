@@ -254,7 +254,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'吃',right:'药'},
   {left:'每天',right:'跑步'},
   {left:'身体',right:'好'},
@@ -288,7 +288,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi thăm đồng nghiệp mới ốm dậy
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'你',blank:'是不是',post:'生病了？',hint:'(có phải... không — câu hỏi Có/Không)',ans:'是不是',exp:'是不是 đặt sau chủ ngữ, trước phần muốn hỏi.'},
   {pre:'是啊，我',blank:'每',post:'天都要吃药。',hint:'(mỗi)',ans:'每',exp:'每 luôn cần 都 đi kèm ở vị ngữ phía sau.'},
   {pre:'你',blank:'多',post:'高？',hint:'(bao nhiêu — hỏi mức độ, đứng trước tính từ)',ans:'多',exp:'多 + Tính từ dùng để hỏi mức độ: 多高/多大/多重.'},
@@ -302,7 +302,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['你','是不是','很','忙','？'],ans:'你是不是很忙？',audio:'你是不是很忙？'},
   {words:['他','每天','都','跑步','。'],ans:'他每天都跑步。',audio:'他每天都跑步。'},
   {words:['你','朋友','多','高','？'],ans:'你朋友多高？',audio:'你朋友多高？'},
@@ -314,7 +314,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'他每天跑步。',
    opts:['他每天都跑步。','他每都天跑步。','都他每天跑步。','他都每天跑步。'],ans:0,
    exp:'每 luôn cần 都 đi kèm ở vị ngữ: 每 + Danh từ + 都 + Động từ.'},

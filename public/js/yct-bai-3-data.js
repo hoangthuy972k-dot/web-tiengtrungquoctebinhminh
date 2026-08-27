@@ -61,7 +61,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'他是＿＿？(hỏi về người)',opts:['谁','什么','哪','怎么样'],ans:0},
   {q:'他是＿＿国人？(hỏi quốc tịch)',opts:['哪','什么','谁','这'],ans:0},
   {q:'"是" nghĩa là gì?',opts:['là','có','muốn','đi'],ans:0},
@@ -80,7 +80,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống hỏi về người & quốc tịch
-const fillData = [
+var fillData = [
   {pre:'Con hỏi một người trong ảnh là ai: “他是',blank:'谁',post:'？”',hint:'(ai)',ans:'谁'},
   {pre:'Con hỏi bạn ấy đến từ nước nào: “他是',blank:'哪',post:'国人？”',hint:'(nào, cái nào)',ans:'哪'},
   {pre:'Con khẳng định bạn ấy là người Trung Quốc: “他是中国',blank:'人',post:'。”',hint:'(người)',ans:'人'},

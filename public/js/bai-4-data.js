@@ -224,7 +224,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'生日',right:'快乐'},
   {left:'已经',right:'开始'},
   {left:'帮',right:'介绍'},
@@ -257,7 +257,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chúc mừng sinh nhật + hỏi thăm công việc
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'生日',blank:'快乐',post:'！',hint:'(vui vẻ)',ans:'快乐'},
   {pre:'谢谢，这是你送',blank:'给',post:'我的礼物吗？',hint:'(cho, tặng)',ans:'给'},
   {pre:'对，是我',blank:'昨天',post:'买的。',hint:'(hôm qua — ôn Bài 3)',ans:'昨天'},
@@ -271,7 +271,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['这','是','我','昨天','买','的','。'],ans:'这是我昨天买的。',audio:'这是我昨天买的。'},
   {words:['我','是','8','岁','的','时候','开始','踢','足球','的','。'],ans:'我是8岁的时候开始踢足球的。',audio:'我是8岁的时候开始踢足球的。'},
   {words:['我','已经','工作','两','年','多','了','。'],ans:'我已经工作两年多了。',audio:'我已经工作两年多了。'},
@@ -283,7 +283,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'我买是这个的。',
    opts:['这是我买的。','我是买这个的。','是我这个买的。','我这个是买的。'],ans:0,
    exp:'是……的 dùng để nhấn mạnh CÁCH/THỜI GIAN/NGƯỜI thực hiện hành động đã xảy ra; 是 đặt đầu, 的 đặt cuối câu.'},

@@ -250,7 +250,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'买',right:'手表'},
   {left:'送',right:'牛奶'},
   {left:'什么',right:'颜色'},
@@ -283,7 +283,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở cửa hàng mua đồng hồ, hỏi màu
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'你好，这块手表',blank:'多',post:'少钱？',hint:'(bao nhiêu — trong "多少")',ans:'多'},
   {pre:'3000',blank:'多',post:'块，不贵。',hint:'(hơn — ôn Bài 1)',ans:'多'},
   {pre:'这块手表真',blank:'漂亮',post:'！',hint:'(đẹp)',ans:'漂亮'},
@@ -297,7 +297,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['这','块','手表','是','谁','的','？'],ans:'这块手表是谁的？',audio:'这块手表是谁的？'},
   {words:['我','昨天','买','了','一','块','新','手表','。'],ans:'我昨天买了一块新手表。',audio:'我昨天买了一块新手表。'},
   {words:['你','看','一下','这个','颜色','。'],ans:'你看一下这个颜色。',audio:'你看一下这个颜色。'},
@@ -309,7 +309,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'这是手表谁的？',
    opts:['这块手表是谁的？','这是谁手表的？','手表这是谁的？','这谁是手表的？'],ans:0,
    exp:'Cấu trúc hỏi sở hữu: Danh từ + 是 + 谁 + 的？'},

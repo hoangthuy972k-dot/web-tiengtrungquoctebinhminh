@@ -92,7 +92,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'"米饭" nghĩa là gì?',opts:['cơm','mì','bánh','nước'],ans:0},
   {q:'"面条" nghĩa là gì?',opts:['mì, bún','cơm','táo','sữa'],ans:0},
   {q:'"苹果" nghĩa là gì?',opts:['táo','bánh kem','nước','sữa'],ans:0},
@@ -111,7 +111,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống ăn uống
-const fillData = [
+var fillData = [
   {pre:'Con hỏi bạn có ăn cơm không: “你',blank:'吃',post:'米饭吗？”',hint:'(ăn)',ans:'吃'},
   {pre:'Con nói mình cũng ăn mì: “我也',blank:'吃',post:'面条。”',hint:'(ăn)',ans:'吃'},
   {pre:'Con hỏi bạn có uống sữa không: “你',blank:'喝',post:'牛奶吗？”',hint:'(uống)',ans:'喝'},

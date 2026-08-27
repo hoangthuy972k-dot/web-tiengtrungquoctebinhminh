@@ -73,7 +73,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'"生日" nghĩa là gì?',opts:['sinh nhật','ngày mai','hôm nay','tuần'],ans:0},
   {q:'"月" nghĩa là gì?',opts:['tháng','ngày','tuần','năm'],ans:0},
   {q:'"号" (trong ngày tháng) nghĩa là gì?',opts:['ngày (số)','tháng','tuần','giờ'],ans:0},
@@ -92,7 +92,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống ngày tháng và sở thích
-const fillData = [
+var fillData = [
   {pre:'Con hỏi sinh nhật bạn: “你的',blank:'生日',post:'是几月几号？”',hint:'(sinh nhật)',ans:'生日'},
   {pre:'Con nói sinh nhật mình vào tháng 5: “我的生日是五',blank:'月',post:'一号。”',hint:'(tháng)',ans:'月'},
   {pre:'Con nói rõ ngày: “我的生日是五月一',blank:'号',post:'。”',hint:'(ngày, số ngày trong tháng)',ans:'号'},

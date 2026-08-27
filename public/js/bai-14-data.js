@@ -149,7 +149,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'吃',right:'过'},
   {left:'有',right:'意思'},
   {left:'虽然',right:'但是'},
@@ -182,7 +182,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: rủ nhau đi ăn nhà hàng Tứ Xuyên mới mở
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'你吃',blank:'过',post:'四川菜吗？',hint:'(đã từng — kinh nghiệm)',ans:'过',exp:'Động từ + 过 = đã từng làm việc gì.'},
   {pre:'吃过，',blank:'虽然',post:'很辣，但是很有意思。',hint:'(mặc dù)',ans:'虽然',exp:'虽然……但是……dùng để nêu hai vế tương phản.'},
   {pre:'吃过，虽然很辣，',blank:'但是',post:'很有意思，我很喜欢。',hint:'(nhưng)',ans:'但是'},
@@ -196,7 +196,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['你','吃','过','四川菜','吗','？'],ans:'你吃过四川菜吗？',audio:'你吃过四川菜吗？'},
   {words:['虽然','很','辣','，','但是','很','好吃','。'],ans:'虽然很辣，但是很好吃。',audio:'虽然很辣，但是很好吃。'},
   {words:['我们','再','去','吃','一次','吧','。'],ans:'我们再去吃一次吧。',audio:'我们再去吃一次吧。'},
@@ -208,7 +208,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'你过吃四川菜吗？',
    opts:['你吃过四川菜吗？','你过吃四川菜吗？','你吃四川菜过吗？','过你吃四川菜吗？'],ans:0,
    exp:'过 phải đứng NGAY SAU động từ (吃过), không đặt trước động từ.'},

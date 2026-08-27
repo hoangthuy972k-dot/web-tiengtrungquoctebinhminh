@@ -229,7 +229,7 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation) — Động từ/Phó từ + Tân ngữ/Tính từ
 // Không copy câu bài khoá — chỉ ghép CỤM TỪ để phản xạ collocation.
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'踢',right:'足球'},
   {left:'要',right:'旅游'},
   {left:'最',right:'喜欢'},
@@ -263,7 +263,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hoàn thành đoạn thoại MỚI (rủ bạn đi vận động)
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'你明天',blank:'要',post:'不要去公园运动？',hint:'(muốn, sẽ — trợ động từ)',ans:'要',exp:'要 đặt trước động từ để hỏi/nêu ý định.'},
   {pre:'要啊，我',blank:'最',post:'喜欢运动了！',hint:'(nhất)',ans:'最',exp:'最 đặt trước động từ tâm lý/tính từ để biểu thị mức độ cao nhất.'},
   {pre:'那我们',blank:'一起',post:'去吧，我叫上小李。',hint:'(cùng nhau)',ans:'一起'},
@@ -277,7 +277,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP — câu MỚI, dùng 要/最/几/多/也/为什么
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['我','也','要','去','旅游','。'],ans:'我也要去旅游。',audio:'我也要去旅游。'},
   {words:['他','最','喜欢','运动','。'],ans:'他最喜欢运动。',audio:'他最喜欢运动。'},
   {words:['你们','要','不要','一起','去','？'],ans:'你们要不要一起去？',audio:'你们要不要一起去？'},
@@ -290,7 +290,7 @@ const sortData = [
 // PHẦN 3c · SỬA LỖI SAI — lỗi ngữ pháp học sinh Việt hay mắc
 // (chuyển di tiêu cực từ trật tự từ tiếng Việt: "đẹp nhất", "cũng" cuối câu...)
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'她的眼睛漂亮最。',
    opts:['她的眼睛最漂亮。','她最的眼睛漂亮。','最她的眼睛漂亮。','她的最眼睛漂亮。'],ans:0,
    exp:'最 phải đứng NGAY TRƯỚC tính từ／động từ tâm lý, không đặt sau như trật tự "đẹp nhất" trong tiếng Việt.'},

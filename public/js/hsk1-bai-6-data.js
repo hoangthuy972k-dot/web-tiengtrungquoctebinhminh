@@ -151,7 +151,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi chủ ngữ/đối tượng so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn khẳng định mình biết nói tiếng Trung: “我',blank:'会',post:'说汉语。”',hint:'(biết — qua học tập)',ans:'会'},
   {pre:'Bạn phủ định mẹ mình biết nói tiếng Trung: “我妈妈不',blank:'会',post:'说汉语。”',hint:'(biết)',ans:'会'},
   {pre:'Bạn khen món ăn ngon: “这个菜',blank:'很',post:'好吃。”',hint:'(rất)',ans:'很'},
@@ -163,7 +163,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi ngôi/đối tượng so với bài khoá
-const sortData = [
+var sortData = [
   {words:['你','会','说','汉语','吗','？'],ans:'你会说汉语吗？',audio:'你会说汉语吗？'},
   {words:['我','不','会','说','。'],ans:'我不会说。',audio:'我不会说。'},
   {words:['这个','菜','很','好吃','。'],ans:'这个菜很好吃。',audio:'这个菜很好吃。'},
@@ -172,7 +172,7 @@ const sortData = [
   {words:['我','会','读','，','不','会','写','。'],ans:'我会读，不会写。',audio:'我会读，不会写。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'你会说汉语吗？',right:'我会说汉语。'},
   {left:'你妈妈会说汉语吗？',right:'她不会说。'},
   {left:'中国菜好吃吗？',right:'中国菜很好吃。'},
@@ -181,7 +181,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 会/很/怎么, không audio
-const mcData = [
+var mcData = [
   {q:'我＿＿说汉语。(biết, qua học tập)',opts:['会','是','有','叫'],ans:0},
   {q:'Câu vị ngữ tính từ (Chủ ngữ + 很 + Tính từ). Câu nào ĐÚNG?',opts:['中国菜很好吃','中国菜好吃很','很中国菜好吃','中国菜很吃好'],ans:0},
   {q:'这个字＿＿写？(hỏi cách thức)',opts:['怎么','什么','谁','哪'],ans:0},

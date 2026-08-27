@@ -128,7 +128,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi năm/địa điểm/phương tiện so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi ai đó quen bạn mình khi nào: “你是什么时候',blank:'认识',post:'他的？”',hint:'(quen biết)',ans:'认识'},
   {pre:'Bạn nói mình quen bạn ấy năm 2015: “我是2015',blank:'年',post:'认识他的。”',hint:'(năm)',ans:'年'},
   {pre:'Bạn giới thiệu bạn học cùng đại học: “她是我',blank:'大学',post:'同学。”',hint:'(trường đại học)',ans:'大学'},
@@ -140,7 +140,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi năm/địa điểm/phương tiện so với bài khoá
-const sortData = [
+var sortData = [
   {words:['你','是','什么','时候','认识','他','的','？'],ans:'你是什么时候认识他的？',audio:'你是什么时候认识他的？'},
   {words:['我们','是','在','公司','认识','的','。'],ans:'我们是在公司认识的。',audio:'我们是在公司认识的。'},
   {words:['你们','是','怎么','来','的','？'],ans:'你们是怎么来的？',audio:'你们是怎么来的？'},
@@ -149,7 +149,7 @@ const sortData = [
   {words:['听','她','说','，','你','要','去','北京','。'],ans:'听她说，你要去北京。',audio:'听她说，你要去北京。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'你和李小姐是什么时候认识的？',right:'我们是2011年9月认识的。'},
   {left:'你们在哪儿认识的？',right:'我们是在学校认识的。'},
   {left:'你们是怎么来饭店的？',right:'我们是坐出租车来的。'},
@@ -158,7 +158,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 是……的, không audio
-const mcData = [
+var mcData = [
   {q:'你是什么时候＿＿他的？',opts:['认识','知道','看见','听'],ans:0},
   {q:'我们是2011年9月＿＿的。',opts:['认识','是','有','在'],ans:0},
   {q:'Cấu trúc nhấn mạnh "是……的" dùng để nhấn mạnh điều gì?',opts:['thời gian, địa điểm, cách thức của hành động đã xảy ra','hành động đang diễn ra','hành động sắp xảy ra','số lượng của sự vật'],ans:0},

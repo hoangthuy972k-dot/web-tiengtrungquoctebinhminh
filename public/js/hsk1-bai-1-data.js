@@ -108,7 +108,7 @@ var dialogData = [
 
 // Điền từ — mô tả TÌNH HUỐNG thực tế, học sinh chọn đúng cách nói
 // (không lặp lại nguyên văn bài khoá, kiểm tra khả năng dùng ĐÚNG NGỮ CẢNH)
-const fillData = [
+var fillData = [
   {pre:'Gặp một người bạn cùng tuổi ngoài đường, bạn nói: “',blank:'你好',post:'”',hint:'(chào thân mật, ngôi 2 số ít)',ans:'你好',exp:'你好 dùng khi chào người ngang hàng, thân mật'},
   {pre:'Gặp một cụ ông lớn tuổi lần đầu, muốn thể hiện phép lịch sự, bạn nói: “',blank:'您好',post:'”',hint:'(dùng 您 để thể hiện sự kính trọng)',ans:'您好',exp:'Với người lớn tuổi/cấp trên nên dùng 您 thay vì 你'},
   {pre:'Bước vào lớp học, bạn chào cả nhóm bạn cùng lúc: “',blank:'你们好',post:'”',hint:'(số nhiều — chào từ 2 người trở lên)',ans:'你们好'},
@@ -120,7 +120,7 @@ const fillData = [
 ];
 
 // Sắp xếp — ghép cả dấu câu (！), khác cách trình bày trong bài khoá
-const sortData = [
+var sortData = [
   {words:['你','好','！'],ans:'你好！',audio:'你好！'},
   {words:['您','好','！'],ans:'您好！',audio:'您好！'},
   {words:['你们','好','！'],ans:'你们好！',audio:'你们好！'},
@@ -129,7 +129,7 @@ const sortData = [
 ];
 
 // Nối câu — nối TÌNH HUỐNG với câu nói phù hợp (không phải nối lời thoại A-B)
-const matchData = [
+var matchData = [
   {left:'Chào một người bạn ngang hàng',right:'你好！'},
   {left:'Chào một người lớn tuổi, thể hiện kính trọng',right:'您好！'},
   {left:'Chào cả một nhóm người cùng lúc',right:'你们好！'},
@@ -138,7 +138,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — kiểm tra NGỮ DỤNG (chọn đúng ngữ cảnh) và quy tắc biến điệu, không audio
-const mcData = [
+var mcData = [
   {q:'Gặp một người bạn cùng tuổi ngoài đường, bạn nên chào thế nào?',opts:['你好','您好','你们好','没关系'],ans:0},
   {q:'Gặp một cụ ông lớn tuổi lần đầu, cách chào lịch sự nhất là?',opts:['您好','你好','你们好','对不起'],ans:0},
   {q:'Bạn muốn chào cả một nhóm bạn cùng lúc, nên nói?',opts:['你们好','你好','您好','没关系'],ans:0},

@@ -101,7 +101,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'你家＿＿几口人？(có)',opts:['有','是','叫','在'],ans:0},
   {q:'你家有＿＿口人？(mấy — số nhỏ)',opts:['几','什么','哪','谁'],ans:0},
   {q:'"没有" nghĩa là gì?',opts:['không có','có','muốn có','sẽ có'],ans:0},
@@ -120,7 +120,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống hỏi về gia đình
-const fillData = [
+var fillData = [
   {pre:'Con hỏi nhà bạn có mấy người: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有'},
   {pre:'Con hỏi số lượng dưới 10: “你家有',blank:'几',post:'口人？”',hint:'(mấy)',ans:'几'},
   {pre:'Con đếm số người trong nhà: “四',blank:'口',post:'人”',hint:'(lượng từ đếm người)',ans:'口'},

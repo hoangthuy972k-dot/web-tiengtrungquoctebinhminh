@@ -135,7 +135,7 @@ var dialogData = [
 ];
 
 // Điền từ — ngữ cảnh khác bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn chỉ vào một người trong ảnh và hỏi: “他是',blank:'谁',post:'？”',hint:'(ai)',ans:'谁'},
   {pre:'Bạn giới thiệu cô ấy là giáo viên dạy tiếng Trung của mình: “她是我',blank:'的',post:'汉语老师。”',hint:'(trợ từ sở hữu)',ans:'的'},
   {pre:'Bạn hỏi bạn mới quen đến từ nước nào: “你是',blank:'哪',post:'国人？”',hint:'(nào)',ans:'哪'},
@@ -147,7 +147,7 @@ const fillData = [
 ];
 
 // Sắp xếp — kèm 1 câu ôn tập kết hợp Bài 3
-const sortData = [
+var sortData = [
   {words:['她','是','我','的','汉语','老师','。'],ans:'她是我的汉语老师。',audio:'她是我的汉语老师。'},
   {words:['你','是','哪','国','人','？'],ans:'你是哪国人？',audio:'你是哪国人？'},
   {words:['我','是','中国','人','，','你','呢','？'],ans:'我是中国人，你呢？',audio:'我是中国人，你呢？'},
@@ -156,7 +156,7 @@ const sortData = [
   {words:['我','叫','王芳','，','我','是','中国','人','。'],ans:'我叫王芳，我是中国人。',audio:'我叫王芳，我是中国人。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'她是谁？',right:'她是我的汉语老师。'},
   {left:'你是哪国人？',right:'我是美国人。'},
   {left:'他是谁？',right:'他是我同学。'},
@@ -165,7 +165,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 谁/哪/的/呢, không audio
-const mcData = [
+var mcData = [
   {q:'他是＿＿？(hỏi về người)',opts:['谁','什么','哪','怎么样'],ans:0},
   {q:'你是＿＿国人？',opts:['哪','什么','谁','这'],ans:0},
   {q:'Trợ từ nào biểu thị quan hệ SỞ HỮU?',opts:['的','了','吗','呢'],ans:0},

@@ -101,7 +101,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'妹妹的眼睛很＿＿。(nhỏ)',opts:['小','大','长','高'],ans:0},
   {q:'你的个子真＿＿！(cao)',opts:['高','小','长','大'],ans:0},
   {q:'"头发" nghĩa là gì?',opts:['tóc','mắt','tai','mũi'],ans:0},
@@ -120,7 +120,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống miêu tả ngoại hình
-const fillData = [
+var fillData = [
   {pre:'Con miêu tả tóc em gái không dài: “妹妹的',blank:'头发',post:'不长。”',hint:'(tóc)',ans:'头发'},
   {pre:'Con miêu tả mắt em gái nhỏ: “妹妹的眼睛很',blank:'小',post:'。”',hint:'(nhỏ, bé)',ans:'小'},
   {pre:'Con hỏi tai bạn to không: “你的耳朵',blank:'大',post:'吗？”',hint:'(to, lớn)',ans:'大'},

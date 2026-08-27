@@ -218,7 +218,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'坐',right:'公共汽车'},
   {left:'离',right:'远'},
   {left:'走',right:'路'},
@@ -251,7 +251,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi đường đến siêu thị
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'超市',blank:'离',post:'这儿远吗？',hint:'(cách)',ans:'离'},
   {pre:'不远，走几分钟',blank:'就',post:'到了。',hint:'(là, liền)',ans:'就',exp:'就 ở đây nhấn mạnh khoảng cách/thời gian NGẮN.'},
   {pre:'你',blank:'还',post:'在超市吗？',hint:'(vẫn, còn)',ans:'还'},
@@ -265,7 +265,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['超市','离','这儿','远','吗','？'],ans:'超市离这儿远吗？',audio:'超市离这儿远吗？'},
   {words:['走','几','分钟','就','到','了','。'],ans:'走几分钟就到了。',audio:'走几分钟就到了。'},
   {words:['坐','公共汽车','要','一','个','多','小时','。'],ans:'坐公共汽车要一个多小时。',audio:'坐公共汽车要一个多小时。'},
@@ -277,7 +277,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'超市远这儿离吗？',
    opts:['超市离这儿远吗？','超市这儿离远吗？','离超市这儿远吗？','这儿超市离远吗？'],ans:0,
    exp:'离 đứng giữa hai ĐỊA ĐIỂM: A + 离 + B + xa/gần.'},

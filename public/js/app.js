@@ -161,6 +161,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
   }
 
   function showLevelDetail(id) {
@@ -174,6 +175,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -234,13 +236,21 @@
     sort: { label: 'Sắp xếp câu', emoji: '🧩', color: 'indigo' },
     errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink' },
     mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal' },
+    game: { label: 'Game ôn tập', emoji: '🎮', color: 'indigo' },
     speak: { label: 'Luyện nói', emoji: '🗣️', color: 'purple' }
+  };
+
+  // match/fill/sort/errfix/mc gop chung vao 1 o "Game on tap" tren giao dien chinh
+  // (thay vi hien 4 o rieng le); ben trong o do la man hinh chon game.
+  var LEVEL_GAME_TYPES = {
+    hsk1: ['match', 'fill', 'sort', 'mc'],
+    hsk2: ['match', 'fill', 'sort', 'errfix']
   };
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
-    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'fill', 'sort', 'match', 'mc', 'speak'],
-    hsk2: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'match', 'listen', 'fill', 'sort', 'errfix', 'speak'],
+    hsk1: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak'],
+    hsk2: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
   };
   var LEVEL_HUB_CTA_TAB = { hsk2: 'tongket' };
@@ -263,6 +273,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -312,6 +323,11 @@
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showSpeakPractice(levelId, lesson);
+        });
+      } else if (tabId === 'game') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showGamePractice(levelId, lesson);
         });
       }
       grid.appendChild(tile);
@@ -384,7 +400,12 @@
             vocabData: iframe.contentWindow.vocabData || [],
             dialogData: iframe.contentWindow.dialogData || [],
             listenData: iframe.contentWindow.listenData || [],
-            speakingData: iframe.contentWindow.speakingData || null
+            speakingData: iframe.contentWindow.speakingData || null,
+            matchData: iframe.contentWindow.matchData || [],
+            fillData: iframe.contentWindow.fillData || [],
+            sortData: iframe.contentWindow.sortData || [],
+            errorFixData: iframe.contentWindow.errorFixData || [],
+            mcData: iframe.contentWindow.mcData || []
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -419,6 +440,18 @@
     return loadLessonRawData(lesson).then(function (data) { return data.speakingData; });
   }
 
+  function loadLessonGameData(lesson) {
+    return loadLessonRawData(lesson).then(function (data) {
+      return {
+        match: data.matchData,
+        fill: data.fillData,
+        sort: data.sortData,
+        errfix: data.errorFixData,
+        mc: data.mcData
+      };
+    });
+  }
+
   function audioBaseFor(lesson) {
     var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-)?bai-(\d+)\.html/);
     if (!m) return null;
@@ -448,6 +481,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -612,6 +646,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -992,6 +1027,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -1110,6 +1146,7 @@
     $('#dialoguePractice').hidden = false;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
     $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -1192,6 +1229,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = false;
     $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
     $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     lpMode = 'meaning';
@@ -1331,6 +1369,7 @@
     $('#dialoguePractice').hidden = true;
     $('#listenPractice').hidden = true;
     $('#speakPractice').hidden = false;
+    $('#gamePractice').hidden = true;
     $('#spTabs').innerHTML = '';
     $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -1587,6 +1626,360 @@
     reader.readAsDataURL(spRecState[i].blob);
   }
 
+  /* ---------------- Game on tap (gop chung match/fill/sort/errfix/mc vao 1 man hinh) ---------------- */
+  /* Giu nguyen du lieu va logic kiem tra tu lesson-engine.js (buildMatch/buildFill/buildSort/
+     buildErrorFix/buildMC), chi doi giao dien sang theme do/trang cua trang chinh. */
+
+  var GAME_TYPE_DEFS = {
+    match: { label: 'Ghép từ / Nối câu', emoji: '🔗', color: 'purple', desc: 'Ghép các từ/cụm từ thành cặp đúng nghĩa' },
+    fill: { label: 'Điền từ', emoji: '✏️', color: 'orange', desc: 'Điền từ còn thiếu vào chỗ trống' },
+    sort: { label: 'Sắp xếp câu', emoji: '🧩', color: 'indigo', desc: 'Sắp xếp các từ thành câu đúng' },
+    errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink', desc: 'Tìm câu đúng để sửa lỗi sai thường gặp' },
+    mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal', desc: 'Chọn đáp án đúng cho mỗi câu hỏi' }
+  };
+
+  var gpGameData = null;
+  var gpMode = null;
+
+  function showGamePractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = false;
+    $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+
+    gpMode = null;
+    loadLessonGameData(lesson).then(function (data) {
+      gpGameData = data;
+      renderGameScreen();
+    }).catch(function () {
+      $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung game của bài này.</p>';
+    });
+
+    $('#gamePractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderGameScreen() {
+    if (gpMode === null) renderGamePicker();
+    else renderGameByType(gpMode);
+  }
+
+  function renderGamePicker() {
+    var wrap = $('#gpContent');
+    var types = LEVEL_GAME_TYPES[currentHubLevelId] || [];
+    wrap.innerHTML = '<div class="game-picker-grid">' + types.map(function (type) {
+      var def = GAME_TYPE_DEFS[type];
+      var count = (gpGameData && gpGameData[type] || []).length;
+      return '<button type="button" class="game-picker-card"' + (count ? ' data-game-type="' + type + '"' : ' disabled') + '>' +
+        '<div class="game-picker-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
+        '<div class="game-picker-title">' + def.label + '</div>' +
+        '<div class="game-picker-desc">' + (count ? def.desc : 'Chưa có nội dung') + '</div>' +
+      '</button>';
+    }).join('') + '</div>';
+
+    $all('.game-picker-card[data-game-type]', wrap).forEach(function (card) {
+      card.addEventListener('click', function () {
+        gpMode = card.getAttribute('data-game-type');
+        renderGameScreen();
+      });
+    });
+  }
+
+  function renderGameByType(type) {
+    var wrap = $('#gpContent');
+    var def = GAME_TYPE_DEFS[type];
+    var data = (gpGameData && gpGameData[type]) || [];
+    wrap.innerHTML =
+      '<button type="button" class="level-detail-back" id="gpBackToPicker">' +
+        '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>' +
+        'Chọn trò chơi khác' +
+      '</button>' +
+      '<div class="game-type-header"><span class="game-type-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</span><h2>' + def.label + '</h2></div>' +
+      '<div id="gpGameArea"></div>';
+    $('#gpBackToPicker').addEventListener('click', function () { gpMode = null; renderGameScreen(); });
+
+    if (!data.length) {
+      $('#gpGameArea').innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có nội dung.</p>';
+      return;
+    }
+
+    if (type === 'match') renderGameMatch(data);
+    else if (type === 'fill') renderGameFill(data);
+    else if (type === 'sort') renderGameSort(data);
+    else if (type === 'errfix') renderGameMcList(data, { wrongPrefix: true });
+    else if (type === 'mc') renderGameMcList(data, { wrongPrefix: false });
+  }
+
+  var gmSel = null;
+  var gmDone = null;
+  var gmOrder = [];
+
+  function renderGameMatch(data) {
+    gmSel = null;
+    gmDone = new Set();
+    gmOrder = shuffle(data.map(function (_, i) { return i; }));
+
+    var wrap = $('#gpGameArea');
+    wrap.innerHTML =
+      '<p style="color:var(--color-gray-600);font-size:0.88rem;margin-bottom:var(--space-4);">Bấm 1 ô <b>bên trái</b> → bấm ô <b>bên phải</b> để ghép thành cặp đúng.</p>' +
+      '<div class="mg-wrap">' +
+        '<div class="mg-col"><div class="mg-col-label">TỪ 1</div><div id="mgLeft"></div></div>' +
+        '<div class="mg-col"><div class="mg-col-label">TỪ 2</div><div id="mgRight"></div></div>' +
+      '</div>' +
+      '<div class="mg-fb" id="mgFb"></div>' +
+      '<button type="button" class="btn btn-outline" id="mgReset" style="margin-top:var(--space-4);">Làm lại</button>';
+
+    var leftWrap = $('#mgLeft');
+    var rightWrap = $('#mgRight');
+    data.forEach(function (pair, i) {
+      var item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'mg-item';
+      item.textContent = pair.left;
+      item.setAttribute('data-li', i);
+      item.addEventListener('click', function () { gmClickLeft(i); });
+      leftWrap.appendChild(item);
+    });
+    gmOrder.forEach(function (ri) {
+      var item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'mg-item';
+      item.textContent = data[ri].right;
+      item.setAttribute('data-ri', ri);
+      item.addEventListener('click', function () { gmClickRight(ri, data); });
+      rightWrap.appendChild(item);
+    });
+
+    $('#mgReset').addEventListener('click', function () { renderGameMatch(data); });
+  }
+
+  function gmClickLeft(i) {
+    if (gmDone.has('L' + i)) return;
+    $all('.mg-item[data-li]').forEach(function (el) { el.classList.remove('is-sel'); });
+    gmSel = i;
+    $('.mg-item[data-li="' + i + '"]').classList.add('is-sel');
+    $('#mgFb').textContent = '';
+  }
+
+  function gmClickRight(ri, data) {
+    var fb = $('#mgFb');
+    if (gmSel === null) {
+      fb.innerHTML = '<span style="color:var(--color-gold-500);">← Chọn vế trái trước</span>';
+      return;
+    }
+    if (gmDone.has('R' + ri)) return;
+    var isCorrect = gmSel === ri;
+    var leftEl = $('.mg-item[data-li="' + gmSel + '"]');
+    var rightEl = $('.mg-item[data-ri="' + ri + '"]');
+    if (isCorrect) {
+      leftEl.classList.remove('is-sel');
+      leftEl.classList.add('is-correct');
+      rightEl.classList.add('is-correct');
+      gmDone.add('L' + gmSel);
+      gmDone.add('R' + ri);
+      fb.innerHTML = '<span style="color:var(--color-green-600);">✓ Đúng rồi!</span>';
+      if (gmDone.size === data.length * 2) {
+        setTimeout(function () { fb.innerHTML = '<span style="color:var(--color-red-600);font-weight:700;">🎉 Hoàn thành! Xuất sắc!</span>'; }, 300);
+      }
+    } else {
+      leftEl.classList.remove('is-sel');
+      rightEl.classList.add('mg-shake');
+      fb.innerHTML = '<span style="color:var(--color-red-600);">✗ Chưa đúng, thử lại!</span>';
+      setTimeout(function () { rightEl.classList.remove('mg-shake'); }, 350);
+    }
+    gmSel = null;
+  }
+
+  function renderGameFill(data) {
+    var wrap = $('#gpGameArea');
+    wrap.innerHTML = data.map(function (q, i) {
+      return '<div class="sp-card fg-card" id="fgCard' + i + '">' +
+        '<div class="fg-text hanzi"><span class="fg-num">' + (i + 1) + '</span>' + q.pre + '<input type="text" class="fg-input" id="fgInput' + i + '" placeholder="___">' + q.post + '</div>' +
+        (q.hint ? '<div class="fg-hint">' + q.hint + '</div>' : '') +
+        '<div class="fg-fb" id="fgFb' + i + '"></div>' +
+      '</div>';
+    }).join('') +
+      '<div class="fg-actions">' +
+        '<button type="button" class="btn btn-primary" id="fgCheck">Kiểm tra đáp án</button>' +
+        '<button type="button" class="btn btn-outline" id="fgReset">Làm lại</button>' +
+      '</div>' +
+      '<div class="fg-score" id="fgScore" hidden></div>';
+
+    $('#fgCheck').addEventListener('click', function () {
+      var ok = 0;
+      data.forEach(function (q, i) {
+        var input = $('#fgInput' + i);
+        var card = $('#fgCard' + i);
+        var fb = $('#fgFb' + i);
+        var v = input.value.trim().replace(/\s+/g, '');
+        var a = q.ans.replace(/\s+/g, '');
+        var correct = v === a;
+        card.classList.remove('is-correct', 'is-wrong');
+        card.classList.add(correct ? 'is-correct' : 'is-wrong');
+        input.classList.remove('is-correct', 'is-wrong');
+        input.classList.add(correct ? 'is-correct' : 'is-wrong');
+        fb.textContent = correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.ans + '"' + (q.exp ? ' — ' + q.exp : '');
+        fb.className = 'fg-fb ' + (correct ? 'is-correct' : 'is-wrong');
+        if (correct) ok++;
+      });
+      var scoreEl = $('#fgScore');
+      scoreEl.hidden = false;
+      var pct = Math.round(ok / data.length * 100);
+      scoreEl.textContent = ok + '/' + data.length + ' — ' + (pct === 100 ? '🎉 Hoàn hảo!' : pct >= 70 ? '👍 Làm tốt!' : '💪 Thử lại nhé!');
+    });
+
+    $('#fgReset').addEventListener('click', function () { renderGameFill(data); });
+  }
+
+  var gsState = [];
+
+  function renderGameSort(data) {
+    gsState = data.map(function (s) {
+      return { placed: [], words: shuffle(s.words.slice()) };
+    });
+
+    var wrap = $('#gpGameArea');
+    wrap.innerHTML = data.map(function (s, i) {
+      return '<div class="sp-card sg-card" id="sgCard' + i + '">' +
+        '<button type="button" class="vp-quiz-play-btn" data-speak="' + (s.audio || s.ans).replace(/"/g, '&quot;') + '">🔊 Nghe câu cần sắp xếp</button>' +
+        '<div class="sg-bank" id="sgBank' + i + '"></div>' +
+        '<div class="sg-answer" id="sgAnswer' + i + '"></div>' +
+        '<div class="sg-fb" id="sgFb' + i + '"></div>' +
+      '</div>';
+    }).join('') +
+      '<div class="fg-actions">' +
+        '<button type="button" class="btn btn-primary" id="sgCheck">Kiểm tra đáp án</button>' +
+        '<button type="button" class="btn btn-outline" id="sgReset">Làm lại</button>' +
+      '</div>' +
+      '<div class="fg-score" id="sgScore" hidden></div>';
+
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+
+    data.forEach(function (s, i) {
+      renderSortBank(i);
+      renderSortAnswer(i);
+    });
+
+    $('#sgCheck').addEventListener('click', function () {
+      var ok = 0;
+      data.forEach(function (s, i) {
+        var placed = gsState[i].placed.map(function (p) { return p.word; }).join('');
+        var correct = placed === s.ans;
+        var card = $('#sgCard' + i);
+        var fb = $('#sgFb' + i);
+        card.classList.remove('is-correct', 'is-wrong');
+        card.classList.add(correct ? 'is-correct' : 'is-wrong');
+        fb.textContent = correct ? '✓ Đúng!' : '✗ Đáp án: "' + s.ans + '"';
+        fb.className = 'sg-fb ' + (correct ? 'is-correct' : 'is-wrong');
+        if (correct) ok++;
+      });
+      var scoreEl = $('#sgScore');
+      scoreEl.hidden = false;
+      var pct = Math.round(ok / data.length * 100);
+      scoreEl.textContent = ok + '/' + data.length + ' — ' + (pct === 100 ? '🎉 Xuất sắc!' : pct >= 60 ? '👍 Làm tốt!' : '💪 Xem lại và thử lại!');
+    });
+
+    $('#sgReset').addEventListener('click', function () { renderGameSort(data); });
+  }
+
+  function renderSortBank(i) {
+    var bankEl = $('#sgBank' + i);
+    var st = gsState[i];
+    bankEl.innerHTML = st.words.map(function (w, wi) {
+      var isPunc = /^[。！？，、；：]$/.test(w);
+      var used = st.placed.some(function (p) { return p.wi === wi; });
+      return '<span class="sg-chip' + (isPunc ? ' is-punc' : '') + (used ? ' is-used' : '') + '" data-wi="' + wi + '">' + w + '</span>';
+    }).join('');
+    $all('.sg-chip', bankEl).forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        if (chip.classList.contains('is-used')) return;
+        var wi = parseInt(chip.getAttribute('data-wi'), 10);
+        st.placed.push({ wi: wi, word: st.words[wi] });
+        renderSortBank(i);
+        renderSortAnswer(i);
+      });
+    });
+  }
+
+  function renderSortAnswer(i) {
+    var answerEl = $('#sgAnswer' + i);
+    var st = gsState[i];
+    answerEl.innerHTML = st.placed.map(function (p) {
+      var isPunc = /^[。！？，、；：]$/.test(p.word);
+      return '<span class="sg-placed' + (isPunc ? ' is-punc' : '') + '" data-wi="' + p.wi + '">' + p.word + '</span>';
+    }).join('');
+    $all('.sg-placed', answerEl).forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var wi = parseInt(chip.getAttribute('data-wi'), 10);
+        st.placed = st.placed.filter(function (p) { return p.wi !== wi; });
+        renderSortBank(i);
+        renderSortAnswer(i);
+      });
+    });
+    $('#sgFb' + i).className = 'sg-fb';
+    $('#sgFb' + i).textContent = '';
+    $('#sgCard' + i).classList.remove('is-correct', 'is-wrong');
+  }
+
+  function renderGameMcList(data, opts) {
+    var wrap = $('#gpGameArea');
+    wrap.innerHTML = data.map(function (q, i) {
+      var promptHtml = opts.wrongPrefix
+        ? '❌ ' + q.wrong + '<div class="mc-sub">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'
+        : q.q;
+      var optsHtml = q.opts.map(function (o, j) {
+        return '<button type="button" class="vp-option-btn" data-qi="' + i + '" data-oi="' + j + '">' + o + '</button>';
+      }).join('');
+      return '<div class="sp-card mc-card" id="mcCard' + i + '">' +
+        '<div class="mc-prompt hanzi"><span class="fg-num">' + (i + 1) + '</span>' + promptHtml + '</div>' +
+        '<div class="vp-quiz-options mc-opts">' + optsHtml + '</div>' +
+        '<div class="mc-fb" id="mcFb' + i + '"></div>' +
+      '</div>';
+    }).join('') + '<div class="fg-score" id="mcScore" hidden></div>';
+
+    var answered = {};
+
+    function updateScore() {
+      var done = Object.keys(answered).length;
+      if (!done) return;
+      var ok = 0;
+      Object.keys(answered).forEach(function (k) { if (answered[k]) ok++; });
+      var scoreEl = $('#mcScore');
+      scoreEl.hidden = false;
+      scoreEl.textContent = 'Đã trả lời ' + done + '/' + data.length + ' câu — Đúng ' + ok + '/' + done;
+    }
+
+    $all('.vp-option-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var qi = parseInt(btn.getAttribute('data-qi'), 10);
+        var oi = parseInt(btn.getAttribute('data-oi'), 10);
+        if (answered.hasOwnProperty(qi)) return;
+        var q = data[qi];
+        var correct = oi === q.ans;
+        answered[qi] = correct;
+        $all('.vp-option-btn[data-qi="' + qi + '"]', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (j === q.ans) b.classList.add('is-correct');
+          else if (j === oi && !correct) b.classList.add('is-wrong');
+        });
+        var fb = $('#mcFb' + qi);
+        fb.className = 'mc-fb ' + (correct ? 'is-correct' : 'is-wrong');
+        fb.textContent = (correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.opts[q.ans] + '"') + (q.exp ? ' — ' + q.exp : '');
+        updateScore();
+      });
+    });
+  }
+
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
 
   var WEEKDAY_LABELS = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
@@ -1827,6 +2220,11 @@
       });
     });
     $('#spBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#gpBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();

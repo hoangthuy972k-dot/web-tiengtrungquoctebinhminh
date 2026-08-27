@@ -183,7 +183,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi đồ vật/tình huống so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi hôm qua ai đó đi đâu: “昨天你去',blank:'哪儿',post:'了？”',hint:'(đâu, chỗ nào)',ans:'哪儿'},
   {pre:'Bạn nói mình đi mua đồ: “我去商店买',blank:'东西',post:'了。”',hint:'(đồ đạc, đồ dùng)',ans:'东西'},
   {pre:'Bạn nói mình mua một ít táo: “我买了一点儿',blank:'苹果',post:'。”',hint:'(táo)',ans:'苹果'},
@@ -195,7 +195,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi đồ vật/tình huống so với bài khoá
-const sortData = [
+var sortData = [
   {words:['你','去','商店','买','东西','了','。'],ans:'你去商店买东西了。',audio:'你去商店买东西了。'},
   {words:['我','买','了','一点儿','苹果','。'],ans:'我买了一点儿苹果。',audio:'我买了一点儿苹果。'},
   {words:['我','看见','他','了','。'],ans:'我看见他了。',audio:'我看见他了。'},
@@ -204,7 +204,7 @@ const sortData = [
   {words:['这些','都','是','我','的','。'],ans:'这些都是我的。',audio:'这些都是我的。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'昨天上午你去哪儿了？',right:'我去商店买东西了。'},
   {left:'你买什么了？',right:'我买了一点儿苹果。'},
   {left:'你看见张先生了吗？',right:'看见了，他去学开车了。'},
@@ -213,7 +213,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 了 (hoàn thành), 都, 不少, không audio
-const mcData = [
+var mcData = [
   {q:'我去商店买东西＿＿。(hành động đã hoàn thành)',opts:['了','吗','呢','吧'],ans:0},
   {q:'我买＿＿一点儿苹果。',opts:['了','吗','呢','吧'],ans:0},
   {q:'Phủ định của "了" (đã làm gì) dùng cấu trúc nào?',opts:['没 + Động từ (bỏ 了)','不 + Động từ + 了','没 + Động từ + 了','别 + Động từ + 了'],ans:0},

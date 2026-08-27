@@ -143,7 +143,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi hoạt động so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Nghe điện thoại reo, bạn bắt máy nói: “',blank:'喂',post:'，你好！”',hint:'(a lô)',ans:'喂'},
   {pre:'Bạn nói mình cũng đang đọc sách: “我',blank:'也',post:'在看书。”',hint:'(cũng)',ans:'也'},
   {pre:'Bạn nói mình đang ngủ: “我在',blank:'睡觉',post:'。”',hint:'(ngủ)',ans:'睡觉'},
@@ -155,7 +155,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi hoạt động so với bài khoá
-const sortData = [
+var sortData = [
   {words:['喂','，','你','在','做','什么','呢','？'],ans:'喂，你在做什么呢？',audio:'喂，你在做什么呢？'},
   {words:['我','在','看','书','呢','。'],ans:'我在看书呢。',audio:'我在看书呢。'},
   {words:['我','在','睡觉','呢','。'],ans:'我在睡觉呢。',audio:'我在睡觉呢。'},
@@ -164,7 +164,7 @@ const sortData = [
   {words:['我','现在','给','她','打电话','。'],ans:'我现在给她打电话。',audio:'我现在给她打电话。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'喂，你在做什么呢？',right:'我在看书呢。'},
   {left:'大卫也在看书吗？',right:'他没看书，他在学做中国菜呢。'},
   {left:'昨天上午你在做什么呢？',right:'我在睡觉呢。'},
@@ -173,7 +173,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 在……呢 (đang tiếp diễn), 吧, số điện thoại, không audio
-const mcData = [
+var mcData = [
   {q:'喂，你在做什么＿＿？',opts:['呢','吗','吧','了'],ans:0},
   {q:'我在睡觉＿＿。(diễn tả hành động đang tiếp diễn)',opts:['呢','吗','吧','了'],ans:0},
   {q:'Phủ định của hành động đang tiếp diễn dùng cấu trúc nào?',opts:['没(在) + Động từ','不 + Động từ','别 + Động từ','无 + Động từ'],ans:0},

@@ -142,7 +142,7 @@ var dialogData = [
 ];
 
 // Điền từ — thay đổi số liệu/đối tượng so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi số thành viên trong gia đình bạn mới quen: “你',blank:'家',post:'有几口人？”',hint:'(nhà, gia đình)',ans:'家'},
   {pre:'Bạn hỏi có bao nhiêu người trong nhà: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有'},
   {pre:'Nhà bạn có 4 người: “我家有四',blank:'口',post:'人。”',hint:'(lượng từ đếm người trong nhà)',ans:'口'},
@@ -154,7 +154,7 @@ const fillData = [
 ];
 
 // Sắp xếp — thay đổi số liệu/đối tượng so với bài khoá
-const sortData = [
+var sortData = [
   {words:['你','家','有','几','口','人','？'],ans:'你家有几口人？',audio:'你家有几口人？'},
   {words:['我','家','有','四','口','人','。'],ans:'我家有四口人。',audio:'我家有四口人。'},
   {words:['她','今年','五','岁','了','。'],ans:'她今年五岁了。',audio:'她今年五岁了。'},
@@ -163,7 +163,7 @@ const sortData = [
   {words:['我','女儿','今年','十','岁','。'],ans:'我女儿今年十岁。',audio:'我女儿今年十岁。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'你家有几口人？',right:'我家有四口人。'},
   {left:'你女儿几岁了？',right:'她今年五岁了。'},
   {left:'你爸爸多大了？',right:'他今年六十岁了。'},
@@ -172,7 +172,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 几/多/了, không audio
-const mcData = [
+var mcData = [
   {q:'你女儿＿＿岁了？(hỏi số nhỏ dưới 10)',opts:['几','多','怎么','什么'],ans:0},
   {q:'你爸爸＿＿大了？(hỏi tuổi người lớn)',opts:['多','几','怎么','什么'],ans:0},
   {q:'"了" đặt cuối câu dùng để biểu thị điều gì?',opts:['sự thay đổi/tình huống mới','sự phủ định','câu hỏi','số nhiều'],ans:0},

@@ -161,7 +161,7 @@ var dialogData = [
 ];
 
 // Điền từ — dùng tên/quốc tịch KHÁC bài khoá để tránh lặp nguyên văn
-const fillData = [
+var fillData = [
   {pre:'Bạn muốn hỏi tên người mới quen: “你',blank:'叫',post:'什么名字？”',hint:'(tên là, gọi là)',ans:'叫'},
   {pre:'Bạn khẳng định mình là học sinh: “我',blank:'是',post:'学生。”',hint:'(là)',ans:'是'},
   {pre:'Bạn phủ định mình không phải giáo viên: “我',blank:'不',post:'是老师。”',hint:'(không, chẳng)',ans:'不'},
@@ -173,7 +173,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đảo vai trò/mục tiêu so với bài khoá (không lặp nguyên văn)
-const sortData = [
+var sortData = [
   {words:['你','叫','什么','名字','？'],ans:'你叫什么名字？',audio:'你叫什么名字？'},
   {words:['我','叫','王芳','。'],ans:'我叫王芳。',audio:'我叫王芳。'},
   {words:['你','是','学生','吗','？'],ans:'你是学生吗？',audio:'你是学生吗？'},
@@ -182,7 +182,7 @@ const sortData = [
   {words:['我','不','是','美国','人','，','我','是','中国','人','。'],ans:'我不是美国人，我是中国人。',audio:'我不是美国人，我是中国人。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'你叫什么名字？',right:'我叫王芳。'},
   {left:'你是学生吗？',right:'我不是学生，我是老师。'},
   {left:'你是美国人吗？',right:'我不是美国人，我是中国人。'},
@@ -191,7 +191,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm ngữ pháp (什么/是-不是/吗), không audio
-const mcData = [
+var mcData = [
   {q:'你叫＿＿名字？',opts:['什么','谁','哪','怎么样'],ans:0},
   {q:'Muốn biến câu trần thuật thành câu hỏi Có/Không, thêm trợ từ nào vào cuối câu?',opts:['吗','呢','吧','了'],ans:0},
   {q:'Câu phủ định của "是" được tạo bằng cách thêm từ nào phía trước?',opts:['不','没','别','很'],ans:0},

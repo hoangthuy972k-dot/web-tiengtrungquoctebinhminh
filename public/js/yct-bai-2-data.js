@@ -86,7 +86,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'你＿＿什么？(hỏi tên)',opts:['叫','是','有','在'],ans:0},
   {q:'认识你，＿＿高兴！',opts:['很','不','叫','吗'],ans:0},
   {q:'"高兴" nghĩa là gì?',opts:['vui, phấn khởi','buồn','tức giận','sợ hãi'],ans:0},
@@ -105,7 +105,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống làm quen bạn mới
-const fillData = [
+var fillData = [
   {pre:'Con hỏi tên bạn mới: “你',blank:'叫',post:'什么？”',hint:'(gọi, tên là)',ans:'叫'},
   {pre:'Con giới thiệu tên mình: “',blank:'我',post:'叫甜甜。”',hint:'(tôi, tớ)',ans:'我'},
   {pre:'Con nói vui khi quen bạn mới: “认识你，',blank:'很',post:'高兴！”',hint:'(rất)',ans:'很'},

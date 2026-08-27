@@ -227,7 +227,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'准备',right:'考试'},
   {left:'有点儿',right:'累'},
   {left:'喝',right:'咖啡'},
@@ -260,7 +260,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chuẩn bị thi & mua áo mới
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'你准备好了吗？还没',blank:'准备',post:'好呢，我有点儿累。',hint:'(chuẩn bị)',ans:'准备'},
   {pre:'你觉得这件衣服',blank:'可以',post:'吗？',hint:'(được, có thể)',ans:'可以'},
   {pre:'颜色',blank:'还',post:'可以，就是有点儿大。',hint:'(tạm, cũng)',ans:'还',exp:'还可以 = tạm được, không hẳn tốt cũng không tệ.'},
@@ -274,7 +274,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['我','在','准备','明天','的','考试','。'],ans:'我在准备明天的考试。',audio:'我在准备明天的考试。'},
   {words:['这件','衣服','颜色','还','可以','。'],ans:'这件衣服颜色还可以。',audio:'这件衣服颜色还可以。'},
   {words:['我','有点儿','累','。'],ans:'我有点儿累。',audio:'我有点儿累。'},
@@ -286,7 +286,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'我累有点儿。',
    opts:['我有点儿累。','我点儿有累。','有点儿我累。','我累点儿有。'],ans:0,
    exp:'有点儿 đứng NGAY TRƯỚC tính từ/động từ mang nghĩa tiêu cực nhẹ, không đặt sau như "một chút" trong tiếng Việt.'},

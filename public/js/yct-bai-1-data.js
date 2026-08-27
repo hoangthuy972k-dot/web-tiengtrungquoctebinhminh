@@ -132,7 +132,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'Từ nào dùng để gọi thầy/cô giáo?',opts:['老师','学生','朋友','妈妈'],ans:0},
   {q:'"好" nghĩa là gì?',opts:['tốt, khỏe','xấu','buồn','mệt'],ans:0},
   {q:'"再见" nghĩa là gì?',opts:['tạm biệt','xin chào','cảm ơn','xin lỗi'],ans:0},
@@ -151,7 +151,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống chào hỏi & đếm số
-const fillData = [
+var fillData = [
   {pre:'Con chào cô giáo, con nói: “',blank:'老师',post:'好！”',hint:'(thầy/cô giáo)',ans:'老师'},
   {pre:'Con chào một người bạn: “',blank:'你',post:'好！”',hint:'(bạn, con, em)',ans:'你'},
   {pre:'Con tạm biệt khi ra về: “',blank:'再见',post:'！”',hint:'(tạm biệt)',ans:'再见'},

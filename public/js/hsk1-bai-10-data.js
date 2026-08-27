@@ -157,7 +157,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi đồ vật/địa điểm so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi trên bàn có gì: “桌子',blank:'上',post:'有什么？”',hint:'(trên, phía trên)',ans:'上'},
   {pre:'Bạn nói có sách và máy tính: “桌子上有一本书',blank:'和',post:'一个电脑。”',hint:'(và)',ans:'和'},
   {pre:'Bạn nói tiền để trong ngăn bàn: “钱在桌子',blank:'里',post:'。”',hint:'(trong, bên trong)',ans:'里'},
@@ -169,7 +169,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi câu chữ/đồ vật so với bài khoá
-const sortData = [
+var sortData = [
   {words:['桌子','上','有','一','个','电脑','。'],ans:'桌子上有一个电脑。',audio:'桌子上有一个电脑。'},
   {words:['钱','在','桌子','里','。'],ans:'钱在桌子里。',audio:'钱在桌子里。'},
   {words:['前面','那个','人','叫','什么','名字','？'],ans:'前面那个人叫什么名字？',audio:'前面那个人叫什么名字？'},
@@ -178,7 +178,7 @@ const sortData = [
   {words:['我','能','坐','这儿','吗','？'],ans:'我能坐这儿吗？',audio:'我能坐这儿吗？'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'桌子上有什么？',right:'桌子上有一个电脑和一本书。'},
   {left:'杯子在哪儿？',right:'杯子在桌子里。'},
   {left:'前面那个人叫什么名字？',right:'她叫王方，在医院工作。'},
@@ -187,7 +187,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 和/没有/能, không audio
-const mcData = [
+var mcData = [
   {q:'桌子＿＿有什么？',opts:['上','下','里','和'],ans:0},
   {q:'桌子上有一本书＿＿一个电脑。',opts:['和','是','有','在'],ans:0},
   {q:'钱在桌子＿＿。',opts:['里','上','和','能'],ans:0},

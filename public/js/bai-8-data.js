@@ -164,7 +164,7 @@ var dialogData = [
 // ══════════════════════════════════════════
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
-const matchData = [
+var matchData = [
   {left:'打',right:'电话'},
   {left:'找',right:'时间'},
   {left:'等',right:'一下'},
@@ -197,7 +197,7 @@ var listenData = [
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: gọi lễ tân sửa điều hoà, mua áo
 // ══════════════════════════════════════════
-const fillData = [
+var fillData = [
   {pre:'服务员，我房间的空调坏了，可以',blank:'让',post:'人来看看吗？',hint:'(để, bảo — câu kiêm ngữ)',ans:'让',exp:'让 + Người + Động từ = bảo/để ai đó làm gì.'},
   {pre:'好的，我先',blank:'找',post:'找是什么事情。',hint:'(tìm)',ans:'找'},
   {pre:'谢谢，那我先',blank:'等',post:'一下。',hint:'(đợi)',ans:'等'},
@@ -211,7 +211,7 @@ const fillData = [
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
-const sortData = [
+var sortData = [
   {words:['可以','让','人','来','看看','吗','？'],ans:'可以让人来看看吗？',audio:'可以让人来看看吗？'},
   {words:['我','先','找找','是','什么','事情','。'],ans:'我先找找是什么事情。',audio:'我先找找是什么事情。'},
   {words:['你','等','我','一下','。'],ans:'你等我一下。',audio:'你等我一下。'},
@@ -223,7 +223,7 @@ const sortData = [
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
-const errorFixData = [
+var errorFixData = [
   {wrong:'让人可以来看看吗？',
    opts:['可以让人来看看吗？','让可以人来看看吗？','人可以让来看看吗？','可以人让来看看吗？'],ans:0,
    exp:'可以 (trợ động từ) đứng TRƯỚC 让, còn 让 + Người + Động từ tạo thành câu kiêm ngữ.'},

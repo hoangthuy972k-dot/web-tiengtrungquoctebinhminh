@@ -63,7 +63,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'"学校" nghĩa là gì?',opts:['trường học','cửa hàng','nhà','công viên'],ans:0},
   {q:'"在" nghĩa là gì?',opts:['ở, tại','đi','đến','về'],ans:0},
   {q:'"去" nghĩa là gì?',opts:['đi','ở','đến','về'],ans:0},
@@ -82,7 +82,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống địa điểm và xã giao
-const fillData = [
+var fillData = [
   {pre:'Con hỏi bạn đi đâu: “你去',blank:'哪儿',post:'？”',hint:'(ở đâu)',ans:'哪儿'},
   {pre:'Con trả lời mình đi trường học: “我去',blank:'学校',post:'。”',hint:'(trường học)',ans:'学校'},
   {pre:'Con nói mình đang ở trường: “我',blank:'在',post:'学校。”',hint:'(ở, tại)',ans:'在'},

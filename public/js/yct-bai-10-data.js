@@ -60,7 +60,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'"现在" nghĩa là gì?',opts:['bây giờ','ngày mai','hôm nay','sáng nay'],ans:0},
   {q:'"点" (chỉ giờ) nghĩa là gì?',opts:['giờ (lượng từ)','phút','ngày','tháng'],ans:0},
   {q:'"分" nghĩa là gì?',opts:['phút','giờ','giây','ngày'],ans:0},
@@ -79,7 +79,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống giờ giấc
-const fillData = [
+var fillData = [
   {pre:'Con hỏi giờ hiện tại: “',blank:'现在',post:'几点？”',hint:'(bây giờ)',ans:'现在'},
   {pre:'Con trả lời bây giờ 8 giờ: “现在八',blank:'点',post:'。”',hint:'(giờ — lượng từ)',ans:'点'},
   {pre:'Con nói rõ thêm phút: “现在八点十',blank:'分',post:'。”',hint:'(phút)',ans:'分'},

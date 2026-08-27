@@ -73,7 +73,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'"这" nghĩa là gì?',opts:['này, đây (vật gần)','đó, kia (vật xa)','nhìn, xem','con mèo'],ans:0},
   {q:'"那" nghĩa là gì?',opts:['đó, kia (vật xa)','này, đây (vật gần)','con chó','con cá'],ans:0},
   {q:'"看" nghĩa là gì?',opts:['nhìn, xem','nghe','nói','viết'],ans:0},
@@ -92,7 +92,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống về vật gần/xa và động vật
-const fillData = [
+var fillData = [
   {pre:'Con muốn bạn nhìn con mèo của mình: “你',blank:'看',post:'，这是猫。”',hint:'(nhìn, xem)',ans:'看'},
   {pre:'Con chỉ vào con mèo ở NGAY gần mình: “',blank:'这',post:'是猫。”',hint:'(này, đây — vật gần)',ans:'这'},
   {pre:'Con chỉ vào con chó ở đằng XA: “',blank:'那',post:'是狗。”',hint:'(đó, kia — vật xa)',ans:'那'},

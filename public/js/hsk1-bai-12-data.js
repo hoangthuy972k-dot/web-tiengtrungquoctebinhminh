@@ -166,7 +166,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi tình huống/thời tiết so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn hỏi thời tiết hôm nay: “今天天气',blank:'怎么样',post:'？”',hint:'(thế nào)',ans:'怎么样'},
   {pre:'Bạn nói trời nóng quá: “今天',blank:'太',post:'热了。”',hint:'(quá, lắm)',ans:'太'},
   {pre:'Bạn nói thời tiết không lạnh cũng không nóng: “今天不冷不',blank:'热',post:'。”',hint:'(nóng)',ans:'热'},
@@ -178,7 +178,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi câu chữ/tình huống so với bài khoá
-const sortData = [
+var sortData = [
   {words:['今天','天气','怎么样','？'],ans:'今天天气怎么样？',audio:'今天天气怎么样？'},
   {words:['今天','很','冷','。'],ans:'今天很冷。',audio:'今天很冷。'},
   {words:['明天','会','下雨','吗','？'],ans:'明天会下雨吗？',audio:'明天会下雨吗？'},
@@ -187,7 +187,7 @@ const sortData = [
   {words:['你','多','喝','水','。'],ans:'你多喝水。',audio:'你多喝水。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'昨天北京的天气怎么样？',right:'太热了。'},
   {left:'明天天气怎么样？',right:'明天天气很好，不冷不热。'},
   {left:'今天会下雨吗？',right:'今天不会下雨。'},
@@ -196,7 +196,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 怎么样/太……了/会 dự đoán, không audio
-const mcData = [
+var mcData = [
   {q:'今天天气＿＿？',opts:['怎么样','什么','怎么','哪儿'],ans:0},
   {q:'今天＿＿热了。',opts:['太','很','不','没'],ans:0},
   {q:'Phủ định của "太……了" (quá) thường dùng cấu trúc nào?',opts:['不太……','没太……','别太……','无太……'],ans:0},

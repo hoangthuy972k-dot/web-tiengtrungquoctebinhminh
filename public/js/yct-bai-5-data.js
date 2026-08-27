@@ -45,7 +45,7 @@ var vocabData = [
 ];
 
 // Trắc nghiệm — không audio
-const mcData = [
+var mcData = [
   {q:'你＿＿岁？(hỏi tuổi trẻ em)',opts:['几','多','哪','什么'],ans:0},
   {q:'你哥哥＿＿大？(hỏi tuổi người lớn hơn)',opts:['多','几','哪','什么'],ans:0},
   {q:'"岁" nghĩa là gì?',opts:['tuổi','năm','tháng','ngày'],ans:0},
@@ -64,7 +64,7 @@ const mcData = [
 ];
 
 // Điền từ — tình huống hỏi tuổi
-const fillData = [
+var fillData = [
   {pre:'Con hỏi tuổi bạn nhỏ: “你',blank:'几',post:'岁？”',hint:'(mấy — hỏi trẻ em)',ans:'几'},
   {pre:'Con nói tuổi mình: “我六',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁'},
   {pre:'Con hỏi tuổi anh trai bạn: “你哥哥',blank:'多',post:'大？”',hint:'(bao nhiêu — hỏi người lớn hơn)',ans:'多'},

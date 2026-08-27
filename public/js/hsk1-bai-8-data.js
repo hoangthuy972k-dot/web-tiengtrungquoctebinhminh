@@ -197,7 +197,7 @@ var dialogData = [
 ];
 
 // Điền từ — đổi đối tượng/giá so với bài khoá
-const fillData = [
+var fillData = [
   {pre:'Bạn muốn gọi món uống ở quán: “我',blank:'想',post:'喝茶。”',hint:'(muốn)',ans:'想'},
   {pre:'Bạn hỏi ai đó muốn ăn gì: “你想',blank:'吃',post:'什么？”',hint:'(ăn)',ans:'吃'},
   {pre:'Bạn hỏi giá của cái ly: “这个杯子',blank:'多少',post:'钱？”',hint:'(bao nhiêu — số lớn)',ans:'多少'},
@@ -209,7 +209,7 @@ const fillData = [
 ];
 
 // Sắp xếp — đổi giá/đồ vật so với bài khoá
-const sortData = [
+var sortData = [
   {words:['你','想','喝','什么','？'],ans:'你想喝什么？',audio:'你想喝什么？'},
   {words:['我','想','吃','米饭','。'],ans:'我想吃米饭。',audio:'我想吃米饭。'},
   {words:['下午','我','想','去','商店','。'],ans:'下午我想去商店。',audio:'下午我想去商店。'},
@@ -218,7 +218,7 @@ const sortData = [
   {words:['那个','杯子','十五','块','钱','。'],ans:'那个杯子十五块钱。',audio:'那个杯子十五块钱。'},
 ];
 
-const matchData = [
+var matchData = [
   {left:'你想喝什么？',right:'我想喝茶。'},
   {left:'下午你想做什么？',right:'下午我想去商店。'},
   {left:'你想买什么？',right:'我想买一个杯子。'},
@@ -227,7 +227,7 @@ const matchData = [
 ];
 
 // Trắc nghiệm — trọng tâm 想/多少/这-那, không audio
-const mcData = [
+var mcData = [
   {q:'我＿＿喝茶。(muốn)',opts:['想','会','是','有'],ans:0},
   {q:'这个杯子＿＿钱？(hỏi số lớn hơn 10)',opts:['多少','几','怎么','什么'],ans:0},
   {q:'"个" là loại từ nào?',opts:['lượng từ dùng chung','danh từ chỉ người','động từ','tính từ'],ans:0},

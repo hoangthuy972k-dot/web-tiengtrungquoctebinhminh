@@ -1928,6 +1928,14 @@
       quizHtml +
       linesHtml;
 
+    var audioEl = $('.dp-audio-box audio', wrap);
+    if (audioEl) {
+      audioEl.addEventListener('error', function () {
+        var box = audioEl.closest('.dp-audio-box');
+        if (box) box.innerHTML = '<span class="dp-audio-missing">⚠️ Chưa có audio gốc cho đoạn này.</span>';
+      });
+    }
+
     if (hasQuiz && !state.revealed) {
       $all('.dp-quiz-opt', wrap).forEach(function (btn) {
         btn.addEventListener('click', function () {

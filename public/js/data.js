@@ -578,6 +578,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-6.html'
+      },
+      {
+        id: 'hsk1v3-l7',
+        number: 7,
+        title: 'Tôi 6 giờ rưỡi tối tan làm',
+        titleHanzi: '我晚上六点半下班',
+        titlePinyin: 'Wǒ wǎnshang liù diǎn bàn xiàbān',
+        topic: 'Giờ giấc & lịch hẹn',
+        vocabCount: 27,
+        dialogueCount: 3,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk1v3-bai-7.html'
       }
     ],
     yct: [

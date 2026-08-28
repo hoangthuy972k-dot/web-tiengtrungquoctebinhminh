@@ -1784,6 +1784,58 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   font-size: 0.85rem;
 }
 
+/* ---------- Thanh tiến độ dùng chung (đúng/sai) cho mọi màn luyện tập ---------- */
+.pgb-wrap {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.pgb-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.pgb-score {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-gray-800);
+}
+
+.pgb-praise {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-gold-500);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.pgb-praise.show { opacity: 1; transform: translateY(0); }
+
+.pgb-track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.pgb-seg {
+  width: 16px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-gray-200);
+  flex-shrink: 0;
+}
+.pgb-seg-correct { background: var(--color-green-600); }
+.pgb-seg-wrong { background: var(--color-red-600); }
+.pgb-seg-empty { background: var(--color-gray-200); }
+
 /* ---------- Hán tự (nét chữ + luyện viết) trong thẻ từ vựng SPA ---------- */
 .hz-btn {
   width: 100%;
@@ -3479,6 +3531,32 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .tp-next-btn {
   margin-top: var(--space-4);
 }
+
+.tp-self-check {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--color-gray-200);
+}
+
+.tp-self-check-label {
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.tp-self-btn {
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  margin: 0 var(--space-2) var(--space-2) 0;
+  background: var(--color-white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.tp-self-btn.tp-self-yes:hover { border-color: var(--color-green-600); color: var(--color-green-600); }
+.tp-self-btn.tp-self-no:hover { border-color: var(--color-red-600); color: var(--color-red-600); }
 
 /* ---------- Global pinyin toggle (persistent across every screen) ---------- */
 .pinyin-toggle {

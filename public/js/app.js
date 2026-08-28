@@ -807,9 +807,64 @@
     return a;
   }
 
+  // ══════════════════════════════════════════
+  // THANH TIẾN ĐỘ DÙNG CHUNG (progress bar) — gắn vào MỌI màn luyện tập có
+  // chấm đúng/sai: từ vựng, hội thoại, nghe, dịch, game, ngữ pháp. Mỗi câu
+  // là 1 ô vuông nhỏ: xanh = đúng, đỏ = sai, xám = chưa làm. Làm đúng liên
+  // tiếp ≥3 câu thì hiện lời cổ vũ ngẫu nhiên.
+  // ══════════════════════════════════════════
+  var PGB_PRAISE = ['Làm tốt lắm! 🎉', 'Xuất sắc, phát huy nhé! 🌟', 'Chuẩn không cần chỉnh! 👏', 'Quá đỉnh! 🔥', 'Giỏi quá đi! 💪', 'Đúng liên tục rồi đó! ✨'];
+  var pgbState = {}; // id -> { results:[true/false/null...], streak:0 }
+
+  function pgbInit(id, total) {
+    pgbState[id] = { results: new Array(total).fill(null), streak: 0 };
+  }
+
+  function pgbHtml(id, total) {
+    if (!pgbState[id]) pgbInit(id, total);
+    return '<div class="pgb-wrap">' +
+      '<div class="pgb-head"><span class="pgb-score" id="' + id + '-score">0/' + total + ' đúng</span><span class="pgb-praise" id="' + id + '-praise"></span></div>' +
+      '<div class="pgb-track" id="' + id + '-track"></div>' +
+      '</div>';
+  }
+
+  function pgbPaint(id) {
+    var st = pgbState[id];
+    if (!st) return;
+    var scoreEl = $('#' + id + '-score');
+    var trackEl = $('#' + id + '-track');
+    var correct = st.results.filter(function (r) { return r === true; }).length;
+    if (scoreEl) scoreEl.textContent = correct + '/' + st.results.length + ' đúng';
+    if (trackEl) {
+      trackEl.innerHTML = st.results.map(function (r) {
+        var cls = r === true ? 'pgb-seg-correct' : r === false ? 'pgb-seg-wrong' : 'pgb-seg-empty';
+        return '<span class="pgb-seg ' + cls + '"></span>';
+      }).join('');
+    }
+  }
+
+  function pgbRecord(id, index, isCorrect) {
+    var st = pgbState[id];
+    if (!st) return;
+    st.results[index] = isCorrect;
+    if (isCorrect) st.streak++; else st.streak = 0;
+    pgbPaint(id);
+    var praiseEl = $('#' + id + '-praise');
+    if (praiseEl) {
+      if (st.streak >= 3) {
+        praiseEl.textContent = PGB_PRAISE[Math.floor(Math.random() * PGB_PRAISE.length)];
+        praiseEl.classList.add('show');
+        setTimeout(function () { praiseEl.classList.remove('show'); }, 2200);
+      } else {
+        praiseEl.classList.remove('show');
+      }
+    }
+  }
+
   function renderVpQuiz(mode) {
     if (!vpQuiz) {
       vpQuiz = { order: shuffle(vpVocab.map(function (_, i) { return i; })), pos: 0, score: 0 };
+      pgbInit('vpq', vpQuiz.order.length);
     }
     var wrap = $('#vpContent');
     if (vpQuiz.pos >= vpQuiz.order.length) {
@@ -828,9 +883,6 @@
     var distractorPool = vpVocab.filter(function (_, i) { return i !== idx; });
     var distractors = shuffle(distractorPool).slice(0, 3);
     var options = shuffle([word].concat(distractors));
-
-    var segs = '';
-    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < vpQuiz.pos ? ' is-done' : '') + '"></div>';
 
     var promptHtml;
     if (mode === 'zh-vn') {
@@ -853,12 +905,13 @@
     }).join('');
 
     wrap.innerHTML =
-      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      pgbHtml('vpq', total) +
       '<div class="vp-quiz-counter">Câu ' + (vpQuiz.pos + 1) + '/' + total + '</div>' +
       '<div class="vp-quiz-card">' +
         '<div class="vp-quiz-prompt">' + promptHtml + '</div>' +
         '<div class="vp-quiz-options">' + optionsHtml + '</div>' +
       '</div>';
+    pgbPaint('vpq');
 
     $all('[data-speak]', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
@@ -874,6 +927,7 @@
           else if (j === i) b.classList.add('is-wrong');
         });
         if (isCorrect) vpQuiz.score++;
+        pgbRecord('vpq', vpQuiz.pos, isCorrect);
         setTimeout(function () {
           vpQuiz.pos++;
           renderVpQuiz(mode);
@@ -1936,6 +1990,8 @@
   var dpIndex = 0;
   var dpViewed = null;
   var dpQuizState = {};
+  var dpFlatOffsets = [];
+  var dpTotalQuiz = 0;
 
   function showDialoguePractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -1962,6 +2018,13 @@
       dpIndex = 0;
       dpViewed = new Set();
       dpQuizState = {};
+      dpFlatOffsets = [];
+      dpTotalQuiz = 0;
+      dialogData.forEach(function (scene) {
+        dpFlatOffsets.push(dpTotalQuiz);
+        dpTotalQuiz += (scene.preQuiz && scene.preQuiz.length) || 0;
+      });
+      if (dpTotalQuiz > 0) pgbInit('dpq', dpTotalQuiz);
       $('#dpSubtitle').textContent = dialogData.length + ' đoạn hội thoại';
       renderDialogueTabs();
       renderDialogueScene();
@@ -2049,10 +2112,12 @@
     }
 
     wrap.innerHTML =
+      (dpTotalQuiz > 0 ? pgbHtml('dpq', dpTotalQuiz) : '') +
       '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>' +
       audioHtml +
       quizHtml +
       linesHtml;
+    if (dpTotalQuiz > 0) pgbPaint('dpq');
 
     var audioEl = $('.dp-audio-box audio', wrap);
     if (audioEl) {
@@ -2069,6 +2134,7 @@
           var oi = parseInt(btn.getAttribute('data-oi'), 10);
           if (state.answers[qi] !== undefined) return;
           state.answers[qi] = oi;
+          pgbRecord('dpq', dpFlatOffsets[dpIndex] + qi, oi === scene.preQuiz[qi].ans);
           if (Object.keys(state.answers).length === scene.preQuiz.length) state.revealed = true;
           renderDialogueScene();
         });
@@ -2139,18 +2205,13 @@
     var correct = 0;
     Object.keys(lpWorkbookScore.dictCorrect).forEach(function (k) { if (lpWorkbookScore.dictCorrect[k]) correct++; });
     Object.keys(lpWorkbookScore.mcCorrect).forEach(function (k) { if (lpWorkbookScore.mcCorrect[k]) correct++; });
-    var graded = Object.keys(lpWorkbookScore.dictCorrect).length + Object.keys(lpWorkbookScore.mcCorrect).length;
-    var scoreBox = $('#lpWbScore');
-    if (scoreBox) {
-      scoreBox.textContent = 'Điểm: ' + correct + '/' + LP_WB_TOTAL + ' đúng (đã làm ' + graded + '/' + LP_WB_TOTAL + ' câu)';
-    }
     recordLessonScore(currentHubLesson, 'listen', { correct: correct, total: LP_WB_TOTAL });
   }
 
   function renderListenWorkbook() {
     var wrap = $('#lpContent');
     var data = lpListenData;
-    if (!lpWorkbookScore) lpWorkbookScore = { dictCorrect: {}, mcCorrect: {} };
+    if (!lpWorkbookScore) { lpWorkbookScore = { dictCorrect: {}, mcCorrect: {} }; pgbInit('lpwq', LP_WB_TOTAL); }
 
     var dictationHtml = data.dictation.map(function (item) {
       var linesHtml = item.lines.map(function (line, li) {
@@ -2192,8 +2253,8 @@
       '<div class="lp-wb-audio-pin">' +
         '<div class="lp-wb-audio-pin-label">🎧 Audio đề nghe · Câu 1-15</div>' +
         '<audio class="lp-wb-audio" controls preload="none" src="' + data.audio + '"></audio>' +
-        '<div class="lp-wb-score" id="lpWbScore">Điểm: 0/' + LP_WB_TOTAL + ' đúng (đã làm 0/' + LP_WB_TOTAL + ' câu)</div>' +
       '</div>' +
+      pgbHtml('lpwq', LP_WB_TOTAL) +
       '<div class="lp-wb-part">' +
         '<div class="lp-wb-part-title">Phần 1-2 · Câu 1-10 — Nghe và điền vào chỗ trống</div>' +
         dictationHtml +
@@ -2222,6 +2283,7 @@
         $('[data-result-num="' + num + '"]', wrap).classList.add(allCorrect ? 'is-correct' : 'is-wrong');
         $('[data-answer-num="' + num + '"]', wrap).hidden = false;
         btn.disabled = true;
+        pgbRecord('lpwq', parseInt(num, 10) - 1, allCorrect);
         lpWorkbookUpdateScore();
       });
     });
@@ -2241,6 +2303,7 @@
         var explainEl = $('[data-explain-num="' + num + '"]', wrap);
         explainEl.hidden = false;
         explainEl.textContent = '💡 ' + item.explain;
+        pgbRecord('lpwq', parseInt(num, 10) - 1, oi === item.ans);
         lpWorkbookUpdateScore();
       });
     });
@@ -3031,7 +3094,7 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện dịch cho chiều này.</p>';
       return;
     }
-    if (!tpQuiz) tpQuiz = { pos: 0 };
+    if (!tpQuiz) { tpQuiz = { pos: 0 }; pgbInit('tpq', tpData.length); }
 
     if (tpQuiz.pos >= tpData.length) {
       wrap.innerHTML =
@@ -3044,8 +3107,6 @@
 
     var total = tpData.length;
     var item = tpData[tpQuiz.pos];
-    var segs = '';
-    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < tpQuiz.pos ? ' is-done' : '') + '"></div>';
 
     var promptHtml = tpDirection === 'vi2zh'
       ? '<div class="tp-prompt-vi">“' + item.vi + '”</div>'
@@ -3053,7 +3114,7 @@
         '<div class="tp-prompt-py">' + item.py + '</div>';
 
     wrap.innerHTML =
-      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      pgbHtml('tpq', total) +
       '<div class="vp-quiz-counter">Câu ' + (tpQuiz.pos + 1) + '/' + total + '</div>' +
       '<div class="vp-quiz-card tp-card">' +
         promptHtml +
@@ -3061,6 +3122,7 @@
         '<button type="button" class="tp-reveal-btn" id="tpReveal">Xem đáp án tham khảo</button>' +
         '<div class="tp-answer" id="tpAnswer" hidden></div>' +
       '</div>';
+    pgbPaint('tpq');
 
     $all('[data-speak]', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
@@ -3082,15 +3144,37 @@
         btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
       });
       $('#tpReveal').style.display = 'none';
-      var nextBtn = document.createElement('button');
-      nextBtn.type = 'button';
-      nextBtn.className = 'btn btn-primary tp-next-btn';
-      nextBtn.textContent = (tpQuiz.pos + 1 < total) ? 'Câu tiếp theo →' : 'Hoàn thành';
-      nextBtn.addEventListener('click', function () {
-        tpQuiz.pos++;
-        renderTranslateContent();
+
+      var selfCheck = document.createElement('div');
+      selfCheck.className = 'tp-self-check';
+      selfCheck.innerHTML =
+        '<div class="tp-self-check-label">Bạn dịch đúng không?</div>' +
+        '<button type="button" class="tp-self-btn tp-self-yes">✅ Mình dịch đúng</button>' +
+        '<button type="button" class="tp-self-btn tp-self-no">❌ Mình dịch chưa đúng</button>';
+      answerEl.appendChild(selfCheck);
+
+      function goNext() {
+        var nextBtn = document.createElement('button');
+        nextBtn.type = 'button';
+        nextBtn.className = 'btn btn-primary tp-next-btn';
+        nextBtn.textContent = (tpQuiz.pos + 1 < total) ? 'Câu tiếp theo →' : 'Hoàn thành';
+        nextBtn.addEventListener('click', function () {
+          tpQuiz.pos++;
+          renderTranslateContent();
+        });
+        answerEl.appendChild(nextBtn);
+      }
+
+      $('.tp-self-yes', selfCheck).addEventListener('click', function () {
+        pgbRecord('tpq', tpQuiz.pos, true);
+        selfCheck.remove();
+        goNext();
       });
-      answerEl.appendChild(nextBtn);
+      $('.tp-self-no', selfCheck).addEventListener('click', function () {
+        pgbRecord('tpq', tpQuiz.pos, false);
+        selfCheck.remove();
+        goNext();
+      });
     });
   }
 

@@ -563,6 +563,113 @@
   var vpVocab = [];
   var vpQuiz = null; // {order:[idx...], pos:0, score:0}
 
+  // ---- Hán tự: nét chữ thật (HanziWriter) + luyện viết, gắn ngay trong thẻ từ vựng ----
+  var vpHzWriters = {};
+  var strokeDataCache = {};
+  var hanziWriterLibPromise = null;
+
+  function ensureHanziWriterLib() {
+    if (typeof HanziWriter !== 'undefined') return Promise.resolve();
+    if (hanziWriterLibPromise) return hanziWriterLibPromise;
+    hanziWriterLibPromise = new Promise(function (resolve) {
+      var s = document.createElement('script');
+      s.src = '/js/vendor/hanzi-writer.min.js';
+      s.onload = function () { resolve(); };
+      s.onerror = function () { resolve(); };
+      document.head.appendChild(s);
+    });
+    return hanziWriterLibPromise;
+  }
+
+  function strokesUrlFor(lesson) {
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-)?bai-(\d+)\.html/);
+    if (!m || !m[1]) return null;
+    return '/js/' + m[1] + 'bai-' + m[2] + '-strokes.js';
+  }
+
+  function loadStrokeData(lesson) {
+    var key = lesson.fullPageUrl;
+    if (Object.prototype.hasOwnProperty.call(strokeDataCache, key)) return Promise.resolve(strokeDataCache[key]);
+    var url = strokesUrlFor(lesson);
+    if (!url) { strokeDataCache[key] = null; return Promise.resolve(null); }
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error('no strokes');
+      return r.text();
+    }).then(function (text) {
+      var m = text.match(/const STROKE_DATA\s*=\s*(\{[\s\S]*\});?\s*$/);
+      var data = m ? JSON.parse(m[1]) : null;
+      strokeDataCache[key] = data;
+      return data;
+    }).catch(function () {
+      strokeDataCache[key] = null;
+      return null;
+    });
+  }
+
+  function vpToggleHz(btn, vi) {
+    var panel = $('#vphzp' + vi);
+    var open = !panel.classList.contains('open');
+    panel.classList.toggle('open', open);
+    btn.textContent = open ? '🀄 Ẩn Hán tự' : '🀄 Xem Hán tự (' + vpVocab[vi].hanzi.length + ' chữ)';
+    if (open) vpEnsureHzWriters(vi);
+  }
+
+  function vpEnsureHzWriters(vi) {
+    Promise.all([ensureHanziWriterLib(), loadStrokeData(currentHubLesson)]).then(function (res) {
+      var strokeData = res[1];
+      if (!strokeData || typeof HanziWriter === 'undefined') return;
+      (vpVocab[vi].hanzi || []).forEach(function (h, hi) {
+        var key = vi + '_' + hi;
+        if (vpHzWriters[key]) return;
+        var charData = strokeData[h.c];
+        if (!charData) return;
+        var target = $('#vphzw' + key);
+        if (!target) return;
+        target.innerHTML = '';
+        vpHzWriters[key] = HanziWriter.create(target, h.c, {
+          width: 130, height: 130, padding: 6,
+          showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 280,
+          strokeColor: '#2b2420', radicalColor: '#c84b31', outlineColor: '#e6dcc9',
+          charDataLoader: function () { return charData; }
+        });
+      });
+    });
+  }
+
+  function vpHzReplay(vi, hi) {
+    var w = vpHzWriters[vi + '_' + hi];
+    if (w) w.animateCharacter();
+  }
+
+  function vpHzQuiz(vi, hi) {
+    var w = vpHzWriters[vi + '_' + hi];
+    var fb = $('#vphzfb' + vi + '_' + hi);
+    if (!w) { if (fb) fb.textContent = 'Đang tải dữ liệu nét chữ, thử lại sau giây lát...'; return; }
+    if (fb) fb.textContent = '✏️ Hãy vẽ từng nét vào ô trên nhé!';
+    w.quiz({
+      onMistake: function () { if (fb) fb.textContent = '❌ Chưa đúng nét, thử lại nhé!'; },
+      onCorrectStroke: function () { if (fb) fb.textContent = '✅ Đúng rồi! Vẽ tiếp nét sau...'; },
+      onComplete: function (summary) { if (fb) fb.textContent = '🎉 Viết xong! (Sai ' + summary.totalMistakes + ' lần)'; }
+    });
+  }
+
+  function vpHzItemHtml(h, vi, hi) {
+    return '<div class="hz-item"><div class="hz-writer-wrap">' +
+      '<div class="hz-writer-box" id="vphzw' + vi + '_' + hi + '"><span class="hz-fallback">' + h.c + '</span></div>' +
+      '<div class="hz-writer-under"><span class="hzw-py">' + h.p + '</span>' +
+      '<button type="button" class="hz-replay-btn" data-hz-replay="' + vi + '_' + hi + '">▶ Xem thứ tự nét</button>' +
+      '<button type="button" class="hz-quiz-btn" data-hz-quiz="' + vi + '_' + hi + '">✏️ Luyện viết</button>' +
+      '</div><div class="hz-quiz-fb" id="vphzfb' + vi + '_' + hi + '"></div></div>' +
+      '<div class="hz-info">' +
+      '<div class="hz-row"><span class="hz-k">Loại:</span> ' + h.type + ' <span class="hz-strokes">' + h.st + ' nét</span></div>' +
+      '<div class="hz-row"><span class="hz-k">Bộ thủ:</span> <span class="hz-rad-dot"></span> <span class="hz-rad">' + h.rad + '</span></div>' +
+      '<div class="hz-row"><span class="hz-k">Nghĩa:</span> ' + h.mean + '</div>' +
+      '<div class="hz-row"><span class="hz-k">Bút thuận:</span> ' + h.ord + '</div>' +
+      '<div class="hz-row"><span class="hz-k">Dễ nhầm:</span> ' + h.cf + '</div>' +
+      '</div><div class="hz-tip"><b>💡 Mẹo nhớ:</b> ' + h.tip + '</div>' +
+      '<div class="hz-words"><span class="hz-wl">Từ đại diện:</span> ' + h.w + '</div></div>';
+  }
+
   function showVocabPractice(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
@@ -629,17 +736,36 @@
       var ex = v.exList && v.exList[0];
       var card = document.createElement('div');
       card.className = 'vp-word-card';
+      var hzs = (v.hanzi || []).map(function (h, hi) { return vpHzItemHtml(h, vi, hi); }).join('');
       card.innerHTML =
         '<div class="vp-word-row"><span class="vp-word-zh hanzi">' + v.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + v.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
         '<div class="vp-word-py">' + v.py + '</div>' +
         '<div class="vp-word-vn">' + v.vn + '</div>' +
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
         (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></div>' : '') +
+        (hzs ? '<div class="vc-hz"><button type="button" class="hz-btn" data-hz-toggle="' + vi + '">🀄 Xem Hán tự (' + v.hanzi.length + ' chữ)</button><div class="hz-panel" id="vphzp' + vi + '">' + hzs + '</div></div>' : '') +
         (v.check ? renderVpCheckHtml(v.check, vi) : '');
       grid.appendChild(card);
     });
     $all('[data-speak]', grid).forEach(function (btn) {
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    $all('[data-hz-toggle]', grid).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpToggleHz(btn, parseInt(btn.getAttribute('data-hz-toggle'), 10)); });
+    });
+    $all('[data-hz-replay]', grid).forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var parts = btn.getAttribute('data-hz-replay').split('_');
+        vpHzReplay(parseInt(parts[0], 10), parseInt(parts[1], 10));
+      });
+    });
+    $all('[data-hz-quiz]', grid).forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var parts = btn.getAttribute('data-hz-quiz').split('_');
+        vpHzQuiz(parseInt(parts[0], 10), parseInt(parts[1], 10));
+      });
     });
     wireVpCheckWidgets(grid);
   }

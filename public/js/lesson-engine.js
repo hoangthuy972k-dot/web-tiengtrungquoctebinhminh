@@ -71,7 +71,6 @@ function showTab(id,btn){
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
   if(id==='tongket' && typeof buildSummary==='function') buildSummary();
-  if(id==='hantu' && typeof buildHanTu==='function') buildHanTu();
 }
 
 // ══════════════════════════════════════════
@@ -164,6 +163,8 @@ function buildVocab(){
         '<div class="hz-writer-box" id="hzw'+vi+'_'+hi+'"><span class="hz-fallback">'+h.c+'</span></div>'+
         '<div class="hz-writer-under"><span class="hzw-py">'+h.p+'</span>'+
         (hasWriter?'<button type="button" class="hz-replay-btn" data-action="hz-replay" data-vi="'+vi+'" data-hi="'+hi+'">▶ Xem thứ tự nét</button>':'')+
+        (hasWriter?'<button type="button" class="hz-quiz-btn" data-action="hz-quiz" data-vi="'+vi+'" data-hi="'+hi+'">✏️ Luyện viết</button>':'')+
+        '<div class="hz-quiz-fb" id="hzfb'+vi+'_'+hi+'"></div>'+
         '</div></div>'+
         '<div class="hz-info">'+
         '<div class="hz-row"><span class="hz-k">Loại:</span> '+h.type+' <span class="hz-strokes">'+h.st+' nét</span></div>'+
@@ -228,94 +229,22 @@ function hzReplay(vi,hi){
   const w=hzWriters[vi+'_'+hi];
   if(w) w.animateCharacter();
 }
+function hzQuiz(vi,hi){
+  const w=hzWriters[vi+'_'+hi];
+  const fb=document.getElementById('hzfb'+vi+'_'+hi);
+  if(!w){ if(fb)fb.textContent='Chữ này chưa có dữ liệu để luyện viết.'; return; }
+  if(fb)fb.textContent='✏️ Hãy vẽ từng nét vào ô trên nhé!';
+  w.quiz({
+    onMistake:function(){ if(fb)fb.textContent='❌ Chưa đúng nét, thử lại nhé!'; },
+    onCorrectStroke:function(){ if(fb)fb.textContent='✅ Đúng rồi! Vẽ tiếp nét sau...'; },
+    onComplete:function(summary){ if(fb)fb.textContent='🎉 Viết xong! (Sai '+summary.totalMistakes+' lần)'; }
+  });
+}
 function filterVocab(lesson,btn){
   document.querySelectorAll('.lesson-tab').forEach(function(t){t.classList.remove('active');});
   btn.classList.add('active');
   document.querySelectorAll('.vocab-card').forEach(function(c){
     c.style.display=(lesson===0||parseInt(c.dataset.lesson)===lesson)?'':'none';
-  });
-}
-
-// ══════════════════════════════════════════
-// VIẾT CHỮ (Hán tự flashcard toàn màn hình, giống phần Viết chữ của YCT —
-// duyệt qua tất cả các chữ có sẵn hanzi[] trong vocabData, mỗi chữ 1 thẻ:
-// xem thứ tự nét (HanziWriter) rồi tự luyện viết (chế độ Thi)
-// ══════════════════════════════════════════
-let htIdx=0,htWriter=null;
-function hanTuChars(){
-  const out=[];
-  (typeof vocabData!=='undefined'?vocabData:[]).forEach(function(v){
-    (v.hanzi||[]).forEach(function(h){out.push(h);});
-  });
-  return out;
-}
-function buildHanTu(){
-  htIdx=0;
-  paintHanTu();
-}
-function moveHanTu(delta){
-  const chars=hanTuChars();
-  if(!chars.length) return;
-  htIdx=(htIdx+delta+chars.length)%chars.length;
-  paintHanTu();
-}
-function paintHanTu(){
-  const chars=hanTuChars();
-  const ctr=document.getElementById('ht-ctr');
-  const info=document.getElementById('ht-info');
-  const fb=document.getElementById('ht-quizfb');
-  const box=document.getElementById('ht-box');
-  if(!chars.length){
-    if(ctr)ctr.textContent='';
-    if(info)info.innerHTML='<p style="color:var(--mid)">Bài học này chưa có dữ liệu Hán tự để luyện viết.</p>';
-    if(box)box.innerHTML='';
-    return;
-  }
-  const h=chars[htIdx];
-  if(ctr)ctr.textContent=(htIdx+1)+' / '+chars.length;
-  document.getElementById('ht-hanzi').textContent=h.c;
-  document.getElementById('ht-py').textContent=h.p;
-  document.getElementById('ht-vn').textContent=h.mean;
-  if(fb)fb.textContent='';
-  if(info)info.innerHTML=
-    '<div class="ht-row"><span class="ht-k">Loại:</span> '+h.type+' <span class="ht-strokes">'+h.st+' nét</span></div>'+
-    '<div class="ht-row"><span class="ht-k">Bộ thủ &amp; cấu trúc:</span> '+h.rad+'</div>'+
-    '<div class="ht-row"><span class="ht-k">Bút thuận:</span> '+h.ord+'</div>'+
-    '<div class="ht-tip"><b>💡 Cách nhớ:</b> '+h.tip+'</div>'+
-    '<div class="ht-row"><span class="ht-k">Dễ nhầm:</span> '+h.cf+'</div>'+
-    '<div class="ht-row"><span class="ht-k">Từ đại diện:</span> '+h.w+'</div>';
-  if(box)box.innerHTML='';
-  htWriter=null;
-  if(typeof HanziWriter!=='undefined' && typeof STROKE_DATA!=='undefined' && STROKE_DATA[h.c] && box){
-    const charData=STROKE_DATA[h.c];
-    htWriter=HanziWriter.create(box,h.c,{
-      width:220,height:220,padding:8,
-      showOutline:true,strokeAnimationSpeed:1,delayBetweenStrokes:260,
-      strokeColor:'#2b2420',radicalColor:'#c84b31',outlineColor:'#f3ece0',
-      charDataLoader:function(){return charData;}
-    });
-  }else if(box){
-    box.innerHTML='<span class="ht-fallback">'+h.c+'</span>';
-  }
-}
-function playHanTu(){
-  if(!htWriter) return;
-  try{htWriter.cancelQuiz();}catch(e){}
-  const fb=document.getElementById('ht-quizfb');
-  if(fb)fb.textContent='';
-  htWriter.animateCharacter();
-}
-function quizHanTu(){
-  const fb=document.getElementById('ht-quizfb');
-  if(!htWriter){
-    if(fb)fb.textContent='Chữ này chưa có dữ liệu để luyện viết theo nét.';
-    return;
-  }
-  if(fb)fb.textContent='✏️ Hãy vẽ từng nét vào ô trên nhé!';
-  htWriter.quiz({
-    onMistake:function(){if(fb)fb.textContent='❌ Chưa đúng nét, thử lại nhé!';},
-    onCorrectStroke:function(){if(fb)fb.textContent='✅ Đúng rồi! Vẽ tiếp nét sau...';},
-    onComplete:function(summary){if(fb)fb.textContent='🎉 Viết xong! (Sai '+summary.totalMistakes+' lần)';}
   });
 }
 
@@ -899,10 +828,7 @@ document.addEventListener('click', function(e){
   if(action==='reset-match'){ resetMatch(); return; }
   if(action==='toggle-hz'){ e.stopPropagation(); toggleHz(el, parseInt(el.dataset.vi,10)); return; }
   if(action==='hz-replay'){ e.stopPropagation(); hzReplay(parseInt(el.dataset.vi,10), parseInt(el.dataset.hi,10)); return; }
-  if(action==='hantu-prev'){ moveHanTu(-1); return; }
-  if(action==='hantu-next'){ moveHanTu(1); return; }
-  if(action==='hantu-play'){ playHanTu(); return; }
-  if(action==='hantu-quiz'){ quizHanTu(); return; }
+  if(action==='hz-quiz'){ e.stopPropagation(); hzQuiz(parseInt(el.dataset.vi,10), parseInt(el.dataset.hi,10)); return; }
   if(action==='place-word'){ placeW(parseInt(el.dataset.si,10), parseInt(el.dataset.wi,10), el.dataset.word); return; }
   if(action==='check-mc'){ checkMC(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='toggle-show'){ document.getElementById(el.dataset.target).classList.toggle('show'); return; }

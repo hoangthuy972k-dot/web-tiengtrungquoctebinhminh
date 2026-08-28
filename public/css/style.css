@@ -1784,6 +1784,115 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   font-size: 0.85rem;
 }
 
+/* ---------- Hán tự (nét chữ + luyện viết) trong thẻ từ vựng SPA ---------- */
+.hz-btn {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid var(--color-red-600);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-red-600);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: var(--space-3);
+}
+
+.hz-btn:hover { background: var(--color-red-50); }
+
+.hz-panel { display: none; margin-top: var(--space-2); }
+.hz-panel.open { display: block; }
+
+.hz-item {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.hz-item:last-child { margin-bottom: 0; }
+
+.hz-writer-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.hz-writer-box {
+  width: 130px;
+  height: 130px;
+  background: var(--color-white);
+  border: 1px dashed var(--color-gray-200);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hz-writer-box .hz-fallback {
+  font-family: var(--font-hanzi);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--color-red-600);
+  line-height: 1;
+}
+
+.hz-writer-under { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; justify-content: center; }
+
+.hzw-py { color: var(--color-gold-500); font-weight: 600; font-size: 0.88rem; }
+
+.hz-replay-btn, .hz-quiz-btn {
+  padding: 6px 12px;
+  border: 1.5px solid var(--color-gold-400);
+  border-radius: 999px;
+  background: var(--color-gold-50);
+  color: var(--color-red-700);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.hz-replay-btn:hover, .hz-quiz-btn:hover { background: var(--color-gold-400); color: var(--color-white); }
+
+.hz-quiz-fb { min-height: 18px; font-size: 0.8rem; color: var(--color-gold-500); text-align: center; width: 100%; }
+
+.hz-rad-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--color-red-600); margin-right: 2px; vertical-align: middle; }
+
+.hz-info { font-size: 0.82rem; }
+.hz-row { margin-bottom: 4px; line-height: 1.5; }
+.hz-k { color: var(--color-gray-500); font-weight: 600; }
+.hz-rad { color: var(--color-red-700); font-weight: 600; }
+.hz-strokes { display: inline-block; background: var(--color-red-50); color: var(--color-red-700); font-size: 0.7rem; font-weight: 600; padding: 1px 8px; border-radius: 10px; margin-left: 4px; }
+
+.hz-tip {
+  background: var(--color-gold-50);
+  border: 1px solid var(--color-gold-400);
+  border-radius: var(--radius-md);
+  padding: 8px 11px;
+  font-size: 0.82rem;
+  margin-top: 9px;
+  line-height: 1.5;
+  color: var(--color-gray-800);
+}
+.hz-tip b { color: var(--color-gold-500); }
+
+.hz-words {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: 7px 11px;
+  font-family: var(--font-hanzi);
+  font-size: 0.92rem;
+  color: var(--color-gray-800);
+  margin-top: var(--space-2);
+}
+.hz-wl { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.72rem; color: var(--color-gray-500); font-weight: 600; margin-right: 5px; }
+
 .vp-quiz-progress {
   display: flex;
   gap: 6px;

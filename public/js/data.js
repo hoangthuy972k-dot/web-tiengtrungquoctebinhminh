@@ -590,6 +590,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 4,
         fullPageUrl: '/lessons/hsk1v3-bai-7.html'
+      },
+      {
+        id: 'hsk1v3-l8',
+        number: 8,
+        title: 'Bố em cũng làm việc ở bệnh viện',
+        titleHanzi: '我爸爸也在医院工作',
+        titlePinyin: 'Wǒ bàba yě zài yīyuàn gōngzuò',
+        topic: 'Vị trí, phương hướng & nghề nghiệp',
+        vocabCount: 23,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-8.html'
       }
     ],
     yct: [

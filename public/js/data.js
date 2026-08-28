@@ -626,6 +626,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-10.html'
+      },
+      {
+        id: 'hsk1v3-l11',
+        number: 11,
+        title: 'Em đang học đại học',
+        titleHanzi: '我读大学呢',
+        titlePinyin: 'Wǒ dú dàxué ne',
+        topic: 'Hành động đang diễn ra & câu hỏi chính phản',
+        vocabCount: 25,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-11.html'
       }
     ],
     yct: [

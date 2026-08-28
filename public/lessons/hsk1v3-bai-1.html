@@ -27,6 +27,7 @@
   <button class="tab-btn active" data-action="show-tab" data-tab="warmup">🎯 Khởi động</button>
   <button class="tab-btn" data-action="show-tab" data-tab="vocab">📚 Từ mới</button>
   <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="hantu">✍️ Viết chữ</button>
   <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
   <button class="tab-btn" data-action="show-tab" data-tab="dialog">💬 Hội thoại</button>
   <button class="tab-btn" data-action="show-tab" data-tab="match">🔗 Nối câu</button>
@@ -97,6 +98,28 @@
   </div>
   <div style="text-align:center;margin-top:14px;">
     <button class="btn-s" data-action="flash-shuffle">🔀 Xáo trộn</button>
+  </div>
+</div>
+
+<div id="hantu" class="section">
+  <div class="sec-head">
+    <div class="sec-title">✍️ Luyện viết Hán tự</div>
+    <div class="sec-sub">Xem đúng thứ tự nét, rồi tự luyện viết theo — bấm 🎯 Thi để tự vẽ từng nét</div>
+  </div>
+  <div class="ht-ctr" id="ht-ctr"></div>
+  <div class="ht-card">
+    <div class="ht-hanzi" id="ht-hanzi"></div>
+    <div class="ht-py" id="ht-py"></div>
+    <div class="ht-vn" id="ht-vn"></div>
+    <div class="ht-box" id="ht-box"></div>
+    <div class="ht-quizfb" id="ht-quizfb"></div>
+    <div class="ht-info" id="ht-info"></div>
+  </div>
+  <div class="ht-nav">
+    <button class="btn-s" data-action="hantu-prev">← Trở lại</button>
+    <button class="btn-p" data-action="hantu-play">✏️ Xem</button>
+    <button class="btn-s" data-action="hantu-quiz">🎯 Thi</button>
+    <button class="btn-p" data-action="hantu-next">Tiếp →</button>
   </div>
 </div>
 
@@ -211,6 +234,8 @@
 </div>
 
 <script src="/js/hsk1v3-bai-1-data.js"></script>
+<script src="/js/vendor/hanzi-writer.min.js"></script>
+<script src="/js/hsk1v3-bai-1-strokes.js"></script>
 <script src="/js/lesson-engine.js"></script>
 </body>
 </html>

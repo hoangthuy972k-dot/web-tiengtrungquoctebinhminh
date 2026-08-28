@@ -219,6 +219,11 @@ const wuData = [
 
 var dialogData = [
   {scene:'在运动场 · Trên sân vận động',
+   preQuiz:[
+     {q:'男的每天早上做什么？',opts:['出去跑步','在家看书','去上班'],ans:0},
+     {q:'男的每天几点起床？',opts:['5点','6点','7点'],ans:1},
+     {q:'女的为什么问他这些？',opts:['因为他很少生病','因为他生病了','因为他不运动'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你很少生病，是不是喜欢运动？',py:'Nǐ hěn shǎo shēngbìng, shìbushì xǐhuan yùndòng?',vn:'Bạn rất ít khi bị bệnh, có phải là vì thích vận động không?'},
      {sp:1,zh:'是啊，我每天早上都要出去跑步。',py:'Shì a, wǒ měitiān zǎoshang dōu yào chūqu pǎobù.',vn:'Đúng vậy, mỗi sáng tôi đều phải ra ngoài chạy bộ.'},
@@ -226,6 +231,11 @@ var dialogData = [
      {sp:1,zh:'我每天6点起床。',py:'Wǒ měitiān liù diǎn qǐchuáng.',vn:'Mỗi ngày tôi thức dậy lúc 6 giờ.'},
    ]},
   {scene:'在医院 · Trong bệnh viện',
+   preQuiz:[
+     {q:'病人吃药了吗？',opts:['吃了','没吃','忘了'],ans:0},
+     {q:'病人现在身体怎么样？',opts:['好多了','更不好了','一样'],ans:0},
+     {q:'医生说什么时候能出院？',opts:['明天','下个星期','不知道'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'吃药了吗？现在身体怎么样？',py:'Chī yào le ma? Xiànzài shēntǐ zěnmeyàng?',vn:'Bạn uống thuốc chưa? Bây giờ sức khỏe thế nào rồi?'},
      {sp:1,zh:'吃了。现在好多了。',py:'Chī le. Xiànzài hǎo duō le.',vn:'Uống rồi. Bây giờ tốt hơn nhiều rồi.'},
@@ -233,6 +243,11 @@ var dialogData = [
      {sp:1,zh:'医生说下个星期。',py:'Yīshēng shuō xià ge xīngqī.',vn:'Bác sĩ nói là tuần sau.'},
    ]},
   {scene:'在操场 · Trên sân tập',
+   preQuiz:[
+     {q:'大卫今年多大？',opts:['20多岁','30多岁','十几岁'],ans:0},
+     {q:'大卫多高？',opts:['一米7几','一米8几','一米9几'],ans:1},
+     {q:'女的怎么知道大卫这么多事情？',opts:['是他同学','是他老师','是他邻居'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'大卫今年多大？',py:'Dàwèi jīnnián duō dà?',vn:'David năm nay bao nhiêu tuổi?'},
      {sp:1,zh:'20多岁。',py:'Èrshí duō suì.',vn:'Hơn 20 tuổi.'},
@@ -242,6 +257,11 @@ var dialogData = [
      {sp:1,zh:'他是我同学。',py:'Tā shì wǒ tóngxué.',vn:'Anh ấy là bạn học của tôi.'},
    ]},
   {scene:'在房间 · Trong phòng',
+   preQuiz:[
+     {q:'张老师星期六休息吗？',opts:['休息','不休息','不知道'],ans:1},
+     {q:'张老师为什么没时间休息？',opts:['很忙','生病了','去旅游了'],ans:0},
+     {q:'张老师每天回来感觉怎么样？',opts:['很累','很高兴','没事'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'张老师星期六也不休息啊。',py:'Zhāng lǎoshī xīngqīliù yě bù xiūxi a.',vn:'Thầy Trương thứ Bảy cũng không nghỉ ngơi à.'},
      {sp:1,zh:'是啊，他这几天很忙，没有时间休息。',py:'Shì a, tā zhè jǐ tiān hěn máng, méiyǒu shíjiān xiūxi.',vn:'Đúng vậy, mấy ngày nay thầy ấy rất bận, không có thời gian nghỉ ngơi.'},

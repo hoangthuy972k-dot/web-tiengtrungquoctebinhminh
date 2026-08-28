@@ -192,6 +192,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在教室 · Trong lớp học',
+   preQuiz:[
+     {q:'那份生日礼物是什么？',opts:['一本书','一件衣服','一支笔'],ans:0},
+     {q:'那本书是谁写的？',opts:['送礼物的人自己写的','是买的','是借的'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'生日快乐！这是送给你的。',py:'Shēngrì kuàilè! Zhè shì sòng gěi nǐ de.',vn:'Sinh nhật vui vẻ! Đây là quà tặng bạn.'},
      {sp:1,zh:'是什么？是一本书吗？',py:'Shì shénme? Shì yì běn shū ma?',vn:'Cái gì thế? Là một quyển sách à?'},
@@ -199,6 +203,10 @@ var dialogData = [
      {sp:1,zh:'太谢谢你了！',py:'Tài xièxie nǐ le!',vn:'Cảm ơn bạn nhiều nhé!'},
    ]},
   {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'早上的电话是谁接的？',opts:['儿子','女儿','说话人自己'],ans:0},
+     {q:'女的打算什么时候问儿子？',opts:['现在','晚上','明天'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'早上有你一个电话。',py:'Zǎoshang yǒu nǐ yí ge diànhuà.',vn:'Buổi sáng có một cuộc điện thoại gọi cho bạn đấy.'},
      {sp:1,zh:'电话是谁打的？',py:'Diànhuà shì shéi dǎ de?',vn:'Điện thoại là do ai gọi thế?'},
@@ -206,6 +214,10 @@ var dialogData = [
      {sp:1,zh:'好，晚上我问一下儿子。',py:'Hǎo, wǎnshang wǒ wèn yíxià érzi.',vn:'Được rồi, tối nay tôi sẽ hỏi con trai một chút.'},
    ]},
   {scene:'在运动场 · Trên sân vận động',
+   preQuiz:[
+     {q:'男的几岁开始踢足球？',opts:['10岁','11岁','12岁'],ans:1},
+     {q:'他已经踢了多少年足球？',opts:['五年','十年','十五年'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'你喜欢踢足球吗？',py:'Nǐ xǐhuan tī zúqiú ma?',vn:'Bạn có thích đá bóng không?'},
      {sp:1,zh:'非常喜欢。',py:'Fēicháng xǐhuan.',vn:'Cực kỳ thích luôn.'},
@@ -213,6 +225,11 @@ var dialogData = [
      {sp:1,zh:'我11岁的时候开始踢足球，已经踢了十年了。',py:'Wǒ shíyī suì de shíhou kāishǐ tī zúqiú, yǐjīng tī le shí nián le.',vn:'Tôi bắt đầu đá bóng từ lúc 11 tuổi, đến nay đã đá được 10 năm rồi.'},
    ]},
   {scene:'在公司 · Ở công ty',
+   preQuiz:[
+     {q:'女的在这家公司工作多久了？',opts:['一年多','两年多','三年多'],ans:1},
+     {q:'女的是哪一年来的？',opts:['2010年','2011年','2012年'],ans:1},
+     {q:'这个工作是谁帮女的介绍的？',opts:['谢先生','张先生','她自己找的'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你在这里工作多长时间了？',py:'Nǐ zài zhèlǐ gōngzuò duō cháng shíjiān le?',vn:'Bạn làm việc ở đây được bao lâu rồi?'},
      {sp:1,zh:'已经两年多了，我是2011年来的。',py:'Yǐjīng liǎng nián duō le, wǒ shì èrlíngyīyī nián lái de.',vn:'Đã hơn hai năm rồi, tôi đến đây từ năm 2011.'},

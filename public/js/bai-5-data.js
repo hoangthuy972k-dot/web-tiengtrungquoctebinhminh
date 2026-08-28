@@ -195,6 +195,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'女的想在哪儿吃饭？',opts:['饭馆','家里','公司'],ans:1},
+     {q:'女的准备做什么菜？',opts:['鱼','面条','米饭'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'晚上我们去饭馆吃饭怎么样？',py:'Wǎnshang wǒmen qù fànguǎn chīfàn zěnmeyàng?',vn:'Tối nay chúng ta ra nhà hàng ăn cơm nhé?'},
      {sp:1,zh:'我不想去外面吃，我想在家吃。',py:'Wǒ bù xiǎng qù wàimian chī, wǒ xiǎng zài jiā chī.',vn:'Em không muốn ra ngoài ăn đâu, em muốn ăn ở nhà.'},
@@ -202,6 +206,10 @@ var dialogData = [
      {sp:1,zh:'就做你爱吃的鱼吧。',py:'Jiù zuò nǐ ài chī de yú ba.',vn:'Vậy thì làm món cá anh thích ăn nhất đi.'},
    ]},
   {scene:'在商店 · Trong cửa hàng',
+   preQuiz:[
+     {q:'第一件衣服有什么问题？',opts:['颜色不好','有点儿大','太贵'],ans:1},
+     {q:'最后买了哪件衣服？',opts:['大的','小的','都没买'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'帮我看一下这件衣服怎么样？',py:'Bāng wǒ kàn yíxià zhè jiàn yīfu zěnmeyàng?',vn:'Xem giúp tôi chiếc áo này thế nào?'},
      {sp:1,zh:'颜色还可以，就是有点儿大。',py:'Yánsè hái kěyǐ, jiùshì yǒudiǎnr dà.',vn:'Màu sắc cũng được, chỉ có điều hơi rộng một chút.'},
@@ -209,6 +217,11 @@ var dialogData = [
      {sp:1,zh:'这件不错，就买这件吧。',py:'Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.',vn:'Chiếc này đẹp đấy, quyết định mua chiếc này đi.'},
    ]},
   {scene:'在教室 · Trong lớp học',
+   preQuiz:[
+     {q:'男的今天为什么不去打球？',opts:['有点儿累','下雨','没时间'],ans:0},
+     {q:'男的觉得自己哪方面不好？',opts:['听和说','读和写','都不好'],ans:1},
+     {q:'男的在想什么事？',opts:['昨天的考试','明天的比赛','晚饭吃什么'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'今天去不去打球？',py:'Jīntiān qù bú qù dǎqiú?',vn:'Hôm nay có đi chơi bóng không?'},
      {sp:1,zh:'这两天有点儿累，不去打球了。',py:'Zhè liǎng tiān yǒudiǎnr lèi, bú qù dǎqiú le.',vn:'Hai ngày nay tôi hơi mệt, không đi chơi bóng nữa đâu.'},
@@ -216,6 +229,10 @@ var dialogData = [
      {sp:1,zh:'是啊，我觉得听和说还可以，读和写不好，很多字我都不知道是什么意思。',py:'Shì a, wǒ juéde tīng hé shuō hái kěyǐ, dú hé xiě bù hǎo, hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.',vn:'Đúng vậy, tôi thấy phần nghe và nói còn tạm được, còn đọc và viết thì rất tệ, nhiều chữ tôi còn chẳng biết nghĩa là gì.'},
    ]},
   {scene:'在公司 · Ở công ty',
+   preQuiz:[
+     {q:'男的已经喝了几杯咖啡？',opts:['一杯','两杯','三杯'],ans:1},
+     {q:'以后男的打算每天喝几杯咖啡？',opts:['一杯','两杯','不喝了'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'休息一下吧，喝咖啡吗？',py:'Xiūxi yíxià ba, hē kāfēi ma?',vn:'Nghỉ tay chút đi, bạn uống cà phê không?'},
      {sp:1,zh:'不喝了，我已经喝两杯了。',py:'Bù hē le, wǒ yǐjīng hē liǎng bēi le.',vn:'Không uống nữa đâu, tôi đã uống hai ly rồi.'},

@@ -225,6 +225,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在房间 · Trong phòng',
+   preQuiz:[
+     {q:'那块手表是谁的？',opts:['说话人自己的','他爸爸的','他妈妈的'],ans:1},
+     {q:'手表花了多少钱？',opts:['300多块','3000多块','30块'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'这块手表是你的吗？',py:'Zhè kuài shǒubiǎo shì nǐ de ma?',vn:'Chiếc đồng hồ đeo tay này có phải của bạn không?'},
      {sp:1,zh:'不是我的，是我爸爸的。',py:'Bú shì wǒ de, shì wǒ bàba de.',vn:'Không phải của tôi, là của bố tôi đấy.'},
@@ -232,6 +236,10 @@ var dialogData = [
      {sp:1,zh:'3000多块。',py:'Sānqiān duō kuài.',vn:'Hơn 3000 tệ.'},
    ]},
   {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'那份报纸是今天的还是昨天的？',opts:['今天的','昨天的','前天的'],ans:1},
+     {q:'来敲门的是谁？',opts:['送报纸的','送牛奶的','邻居'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'这是今天早上的报纸吗？',py:'Zhè shì jīntiān zǎoshang de bàozhǐ ma?',vn:'Đây là tờ báo sáng nay phải không?'},
      {sp:1,zh:'不是，是昨天的。',py:'Bú shì, shì zuótiān de.',vn:'Không phải, là báo ngày hôm qua.'},
@@ -239,6 +247,11 @@ var dialogData = [
      {sp:1,zh:'我看一下。不是，是送牛奶的。',py:'Wǒ kàn yíxià. Bú shì, shì sòng niúnǎi de.',vn:'Để tôi xem một chút. Không phải, là người giao sữa.'},
    ]},
   {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'旁边那间小房间是谁的？',opts:['女儿的','儿子的','客人的'],ans:0},
+     {q:'女儿的房间是什么颜色的？',opts:['粉色','白色','蓝色'],ans:0},
+     {q:'为什么女儿的房间都是粉色的？',opts:['因为那是她最喜欢的颜色','因为便宜','因为妈妈喜欢'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'这是谁的房间？',py:'Zhè shì shéi de fángjiān?',vn:'Đây là phòng của ai vậy?'},
      {sp:1,zh:'这是我和我丈夫的。旁边那个小的房间是我女儿的。',py:'Zhè shì wǒ hé wǒ zhàngfu de. Pángbiān nàge xiǎo de fángjiān shì wǒ nǚ\'ér de.',vn:'Đây là phòng của tôi và chồng tôi. Căn phòng nhỏ bên cạnh là của con gái tôi.'},

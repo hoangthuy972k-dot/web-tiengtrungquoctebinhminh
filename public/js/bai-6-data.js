@@ -201,6 +201,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在学校 · Ở trường học',
+   preQuiz:[
+     {q:'小王来学校了吗？',opts:['来了','没来','不知道'],ans:0},
+     {q:'女的怎么知道小王来了？',opts:['看见他自行车了','他打电话了','老师说的'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你知道小王今天什么时候来学校吗？',py:'Nǐ zhīdào Xiǎo Wáng jīntiān shénme shíhou lái xuéxiào ma?',vn:'Bạn có biết hôm nay khi nào Tiểu Vương đến trường không?'},
      {sp:1,zh:'他已经来了。',py:'Tā yǐjīng lái le.',vn:'Cậu ấy đến rồi đấy.'},
@@ -208,6 +212,10 @@ var dialogData = [
      {sp:1,zh:'我在门外看见他的自行车了。',py:'Wǒ zài mén wài kànjiàn tā de zìxíngchē le.',vn:'Tôi nhìn thấy xe đạp của cậu ấy ở ngoài cửa rồi.'},
    ]},
   {scene:'在饭馆 · Trong nhà hàng',
+   preQuiz:[
+     {q:'男的为什么不想吃羊肉了？',opts:['这周天天吃羊肉','羊肉不好吃','羊肉太贵'],ans:0},
+     {q:'男的接下来想吃什么？',opts:['面条','米饭','饺子'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'今天的羊肉很好吃，你怎么不吃了？',py:'Jīntiān de yángròu hěn hǎochī, nǐ zěnme bù chī le?',vn:'Thịt dê hôm nay ngon thế, sao bạn không ăn nữa?'},
      {sp:1,zh:'这个星期天天都吃羊肉，不想吃了。',py:'Zhège xīngqī tiāntiān dōu chī yángròu, bù xiǎng chī le.',vn:'Tuần này ngày nào cũng ăn thịt dê rồi, tôi không muốn ăn nữa.'},
@@ -215,6 +223,11 @@ var dialogData = [
      {sp:1,zh:'来一点儿面条吧。',py:'Lái yìdiǎnr miàntiáo ba.',vn:'Cho một ít mì sợi đi.'},
    ]},
   {scene:'在健身房 · Trong phòng tập thể hình',
+   preQuiz:[
+     {q:'昨天为什么没去打篮球？',opts:['下雨','没时间','生病了'],ans:0},
+     {q:'男的昨天做了什么运动？',opts:['游泳','跑步','打篮球'],ans:0},
+     {q:'男的现在多少公斤？',opts:['60公斤','70公斤','80公斤'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'昨天你们怎么都没去打篮球？',py:'Zuótiān nǐmen zěnme dōu méi qù dǎ lánqiú?',vn:'Hôm qua sao các bạn đều không đi chơi bóng rổ thế?'},
      {sp:1,zh:'因为昨天下雨，所以我们都没去。我去游泳了。',py:'Yīnwèi zuótiān xià yǔ, suǒyǐ wǒmen dōu méi qù. Wǒ qù yóuyǒng le.',vn:'Tại vì hôm qua trời mưa nên chúng tôi đều không đi. Tôi thì đi bơi rồi.'},
@@ -222,6 +235,10 @@ var dialogData = [
      {sp:1,zh:'这个月我天天游泳，我现在70公斤了。',py:'Zhège yuè wǒ tiāntiān yóuyǒng, wǒ xiànzài qīshí gōngjīn le.',vn:'Tháng này ngày nào tôi cũng đi bơi, bây giờ tôi được 70 kg rồi đấy.'},
    ]},
   {scene:'在办公室 · Trong văn phòng',
+   preQuiz:[
+     {q:'小张去哪儿了？',opts:['北京','上海','广州'],ans:0},
+     {q:'小张是去旅游吗？',opts:['是','不是，去看姐姐','不知道'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'这两天怎么没看见小张？',py:'Zhè liǎng tiān zěnme méi kànjiàn Xiǎo Zhāng?',vn:'Hai ngày nay sao không thấy Tiểu Trương nhỉ?'},
      {sp:1,zh:'他去北京了。',py:'Tā qù Běijīng le.',vn:'Cậu ấy đi Bắc Kinh rồi.'},

@@ -186,6 +186,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'大卫回来了吗？',opts:['回来了','没回来','不知道'],ans:1},
+     {q:'大卫为什么还在学习？',opts:['明天有考试','喜欢学习','老师让他留下'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'大卫回来了吗？',py:'Dàwèi huílái le ma?',vn:'David đã về chưa?'},
      {sp:1,zh:'没有，他还在教室学习呢。',py:'Méiyǒu, tā hái zài jiàoshì xuéxí ne.',vn:'Chưa, cậu ấy vẫn còn đang học ở trên lớp kìa.'},
@@ -193,6 +197,11 @@ var dialogData = [
      {sp:1,zh:'明天有考试，他说今天要好好准备。',py:'Míngtiān yǒu kǎoshì, tā shuō jīntiān yào hǎohǎo zhǔnbèi.',vn:'Ngày mai có bài thi, cậu ấy bảo hôm nay phải chuẩn bị thật tốt.'},
    ]},
   {scene:'去机场的路上 · Trên đường đi sân bay',
+   preQuiz:[
+     {q:'女的现在在哪儿？',opts:['在去机场的路上','已经到机场了','在飞机上'],ans:0},
+     {q:'男的下飞机了吗？',opts:['下了','还没下','不知道'],ans:0},
+     {q:'女的还要多久才到？',opts:['10分钟','20分钟','30分钟'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'你现在在哪儿呢？',py:'Nǐ xiànzài zài nǎr ne?',vn:'Bây giờ bạn đang ở đâu thế?'},
      {sp:1,zh:'在去机场的路上。你已经到了吗？',py:'Zài qù jīchǎng de lùshang. Nǐ yǐjīng dào le ma?',vn:'Đang trên đường ra sân bay. Bạn đã đến nơi chưa?'},
@@ -200,6 +209,11 @@ var dialogData = [
      {sp:1,zh:'20分钟就到。',py:'Èrshí fēnzhōng jiù dào.',vn:'20 phút nữa là tới liền.'},
    ]},
   {scene:'在健身房 · Trong phòng tập thể dục',
+   preQuiz:[
+     {q:'女的家离公司远吗？',opts:['很远','不远','不知道'],ans:0},
+     {q:'坐公共汽车要多长时间？',opts:['半个小时','一个多小时','两个小时'],ans:1},
+     {q:'女的为什么不开车？',opts:['路上车太多','没有车','不会开车'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你家离公司远吗？',py:'Nǐ jiā lí gōngsī yuǎn ma?',vn:'Nhà bạn cách công ty có xa không?'},
      {sp:1,zh:'很远，坐公共汽车要一个多小时呢。',py:'Hěn yuǎn, zuò gōnggòng qìchē yào yí ge duō xiǎoshí ne.',vn:'Rất xa, đi xe buýt mất hơn một tiếng đồng hồ cơ đấy.'},
@@ -207,6 +221,11 @@ var dialogData = [
      {sp:1,zh:'开车也不快，路上车太多了。',py:'Kāi chē yě bú kuài, lùshang chē tài duō le.',vn:'Lái xe cũng chẳng nhanh hơn đâu, trên đường nhiều xe lắm.'},
    ]},
   {scene:'在路上 · Trên đường đi',
+   preQuiz:[
+     {q:'女的的生日还有多久到？',opts:['一个多星期','两天','已经过了'],ans:0},
+     {q:'男的为什么今天要给她过生日？',opts:['下星期要去北京','忘了具体日期','女的要求'],ans:0},
+     {q:'他们打算去哪儿吃饭？',opts:['附近的中国饭馆','女的家里','机场餐厅'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'今天晚上我们一起吃饭吧，给你过生日。',py:'Jīntiān wǎnshang wǒmen yìqǐ chīfàn ba, gěi nǐ guò shēngrì.',vn:'Tối nay chúng ta cùng đi ăn cơm đi, để chúc mừng sinh nhật bạn.'},
      {sp:1,zh:'今天离我的生日还有一个多星期呢。',py:'Jīntiān lí wǒ de shēngrì hái yǒu yí ge duō xīngqī ne.',vn:'Hôm nay cách ngày sinh nhật của tôi tận hơn một tuần nữa cơ mà.'},

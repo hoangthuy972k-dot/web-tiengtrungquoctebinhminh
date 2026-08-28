@@ -162,12 +162,21 @@ const wuData = [
 
 var dialogData = [
   {scene:'打电话 · Gọi điện thoại',
+   preQuiz:[
+     {q:'男的要找谁？',opts:['张欢','张老师','李欢'],ans:0},
+     {q:'结果怎么样？',opts:['打错电话了','张欢不在','张欢生病了'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你好，请问张欢在吗？',py:'Nǐ hǎo, qǐngwèn Zhāng Huān zài ma?',vn:'Xin chào, cho hỏi có Trương Hoan ở đó không ạ?'},
      {sp:1,zh:'你打错了，我们这儿没有叫张欢的。',py:'Nǐ dǎ cuò le, wǒmen zhèr méiyǒu jiào Zhāng Huān de.',vn:'Bạn gọi nhầm số rồi, ở đây chúng tôi không có ai tên là Trương Hoan cả.'},
      {sp:0,zh:'对不起。',py:'Duìbùqǐ.',vn:'Xin lỗi nhé.'},
    ]},
   {scene:'在学校 · Ở trường học',
+   preQuiz:[
+     {q:'女老师第一次跳舞是几岁？',opts:['五岁','七岁','九岁'],ans:1},
+     {q:'男的想让谁跟老师学跳舞？',opts:['自己','女儿','儿子'],ans:1},
+     {q:'老师同意教吗？',opts:['同意','不同意','要考虑'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'您从几岁开始学习跳舞？',py:'Nín cóng jǐ suì kāishǐ xuéxí tiàowǔ?',vn:'Cô bắt đầu học khiêu vũ/múa từ năm mấy tuổi vậy ạ?'},
      {sp:1,zh:'我第一次跳舞是在七岁的时候。',py:'Wǒ dì yī cì tiàowǔ shì zài qī suì de shíhou.',vn:'Lần đầu tiên tôi múa là lúc 7 tuổi.'},
@@ -175,12 +184,21 @@ var dialogData = [
      {sp:1,zh:'没问题，非常欢迎。',py:'Méi wèntí, fēicháng huānyíng.',vn:'Không thành vấn đề, vô cùng hoan nghênh cháu.'},
    ]},
   {scene:'在家里 · Ở nhà',
+   preQuiz:[
+     {q:'大卫怎么了？',opts:['找到工作了','生病了','要搬家了'],ans:0},
+     {q:'大卫什么时候开始上班？',opts:['明天','下星期一','下个月'],ans:1},
+     {q:'这是大卫第几个工作？',opts:['第一个','第二个','第三个'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你知道吗？大卫找到工作了。',py:'Nǐ zhīdào ma? Dàwèi zhǎodào gōngzuò le.',vn:'Bạn biết tin gì chưa? David tìm được việc làm rồi đấy.'},
      {sp:1,zh:'太好了！他从什么时候开始上班？',py:'Tài hǎo le! Tā cóng shénme shíhou kāishǐ shàngbān?',vn:'Tuyệt vời quá! Cậu ấy bắt đầu đi làm từ khi nào thế?'},
      {sp:0,zh:'从下个星期一开始。这是他的第一个工作，希望他能喜欢。',py:'Cóng xià ge xīngqīyī kāishǐ. Zhè shì tā de dì yī ge gōngzuò, xīwàng tā néng xǐhuan.',vn:'Bắt đầu từ thứ Hai tuần sau. Đây là công việc đầu tiên của cậu ấy, hy vọng cậu ấy sẽ thích nó.'},
    ]},
   {scene:'在教室 · Trong lớp học',
+   preQuiz:[
+     {q:'女的昨天的考试听懂了吗？',opts:['听懂了','没听懂','听懂一半'],ans:0},
+     {q:'女的题都做完了吗？',opts:['做完了','没做完，题太多','忘了做'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'昨天的考试怎么样？你都听懂了吗？',py:'Zuótiān de kǎoshì zěnmeyàng? Nǐ dōu tīng dǒng le ma?',vn:'Bài thi hôm qua thế nào? Bạn nghe có hiểu hết không?'},
      {sp:1,zh:'听懂了。',py:'Tīng dǒng le.',vn:'Tôi nghe hiểu hết.'},

@@ -132,6 +132,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在教室 · Trong lớp học',
+   preQuiz:[
+     {q:'他们今天下午去看电影了吗？',opts:['去了','没去，改明天','取消了'],ans:1},
+     {q:'女的想看什么电影，她怎么回答？',opts:['马上告诉他','让他想想再告诉他','不想看'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'我们下午去看电影好吗？',py:'Wǒmen xiàwǔ qù kàn diànyǐng hǎoma?',vn:'Chiều nay chúng ta cùng đi xem phim được không?'},
      {sp:1,zh:'今天下午没有时间，明天下午再去吧。',py:'Jīntiān xiàwǔ méiyǒu shíjiān, míngtiān xiàwǔ zài qù ba.',vn:'Chiều nay tôi không có thời gian, chiều mai hẵng đi nhé.'},
@@ -139,6 +143,11 @@ var dialogData = [
      {sp:1,zh:'让我想想再告诉你。',py:'Ràng wǒ xiǎngxiang zài gàosu nǐ.',vn:'Để tôi suy nghĩ một chút rồi nói cho bạn biết sau.'},
    ]},
   {scene:'在宿舍 · Trong phòng ký túc xá',
+   preQuiz:[
+     {q:'女的要给谁打电话？',opts:['大卫','老师','家人'],ans:0},
+     {q:'为什么要打这个电话？',opts:['老师让她打的','大卫叫她打的','随便打的'],ans:0},
+     {q:'大卫怎么了？',opts:['生病了','搬家了','考试没过'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'外面天气很好，我们出去运动运动吧。',py:'Wàimiàn tiānqì hěn hǎo, wǒmen chūqu yùndòng yùndòng ba.',vn:'Bên ngoài thời tiết đẹp lắm, chúng ta ra ngoài vận động chút đi.'},
      {sp:1,zh:'你等等我好吗？老师让我给大卫打个电话。',py:'Nǐ děngděng wǒ hǎoma? Lǎoshī ràng wǒ gěi Dàwèi dǎ ge diànhuà.',vn:'Bạn đợi tôi một chút được không? Thầy giáo bảo tôi gọi điện thoại cho David.'},
@@ -146,6 +155,11 @@ var dialogData = [
      {sp:1,zh:'大卫病了，我想找时间去看看。',py:'Dàwèi bìng le, wǒ xiǎng zhǎo shíjiān qù kànkan.',vn:'David bị bệnh rồi, tôi muốn tìm thời gian ghé thăm cậu ấy.'},
    ]},
   {scene:'在宾馆的前台 · Tại quầy lễ tân khách sạn',
+   preQuiz:[
+     {q:'房间的门怎么了？',opts:['打不开','坏了没锁上','钥匙丢了'],ans:0},
+     {q:'客人住在哪个房间？',opts:['317','713','371'],ans:0},
+     {q:'服务员打算怎么处理？',opts:['叫人去看看','给他换房间','让他自己修'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'服务员，我房间的门打不开了。',py:'Fúwùyuán, wǒ fángjiān de mén dǎ bù kāi le.',vn:'Lễ tân ơi, cửa phòng của tôi không mở được rồi.'},
      {sp:1,zh:'您住哪个房间？',py:'Nín zhù nǎge fángjiān?',vn:'Quý khách ở phòng nào ạ?'},
@@ -153,6 +167,11 @@ var dialogData = [
      {sp:1,zh:'好的，我叫人去看看。',py:'Hǎode, wǒ jiào rén qù kànkan.',vn:'Dạ vâng, để em gọi người lên kiểm tra xem sao ạ.'},
    ]},
   {scene:'在商店 · Trong cửa hàng',
+   preQuiz:[
+     {q:'白色的衣服有什么问题？',opts:['有点儿长','有点儿贵','颜色不好'],ans:0},
+     {q:'黑色的衣服有什么问题？',opts:['有点儿长','有点儿贵','不好看'],ans:1},
+     {q:'红色的衣服是什么时候到的？',opts:['今天','昨天','上星期'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你看看这几件衣服怎么样？',py:'Nǐ kànkan zhè jǐ jiàn yīfu zěnmeyàng?',vn:'Bạn xem giúp tôi mấy chiếc áo này thế nào?'},
      {sp:1,zh:'这件白的有点儿长，那件黑的有点儿贵。',py:'Zhè jiàn bái de yǒudiǎnr cháng, nà jiàn hēi de yǒudiǎnr guì.',vn:'Chiếc màu trắng này hơi dài một chút, còn chiếc màu đen kia thì hơi đắt.'},

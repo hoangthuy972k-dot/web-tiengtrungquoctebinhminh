@@ -246,22 +246,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: hỏi lý do vắng mặt, gọi món khác ở quán ăn.
 // Ôn lại 生病/休息 (Bài 2), 觉得/运动 (Bài 1), 对 (Bài 5).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'小李这几天怎么没来上课？因为他生病了，所以在家休息。',
-   questions:[
-     {q:'小李为什么没来上课？',opts:['因为他生病了','因为他去旅游了','因为他很忙','不知道'],ans:0},
-     {q:'他现在在做什么？',opts:['在家休息','在打篮球','在游泳','在吃面条'],ans:0},
-   ]},
-  {audio:'这个饭馆的面条很好吃，可是我今天不想吃面条，想吃点儿别的。',
-   questions:[
-     {q:'这个饭馆的面条怎么样？',opts:['很好吃','不好吃','很贵','没有面条'],ans:0},
-     {q:'他今天想吃什么？',opts:['别的','面条','羊肉','什么都不想吃'],ans:0},
-   ]},
-  {audio:'他经常打篮球，也经常游泳，因为他觉得运动对身体很好。',
-   questions:[
-     {q:'他为什么经常运动？',opts:['因为运动对身体很好','因为很忙','因为要减肥','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-6/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'这个星期', blank:'天天吃羊肉', post:'。', py:'Zhège xīngqī tiāntiān chī yángròu.', vn:'Tuần này ngày nào cũng ăn thịt cừu.'},
+    ]},
+    {num:2, lines:[
+      {pre:'我每天', blank:'吃很多面条', post:'。', py:'Wǒ měitiān chī hěn duō miàntiáo.', vn:'Tôi ngày nào cũng ăn rất nhiều mì.'},
+    ]},
+    {num:3, lines:[
+      {pre:'这是我', blank:'房间的门', post:'。', py:'Zhè shì wǒ fángjiān de mén.', vn:'Đây là cửa phòng của tôi.'},
+    ]},
+    {num:4, lines:[
+      {pre:'他们', blank:'经常踢足球', post:'。', py:'Tāmen jīngcháng tī zúqiú.', vn:'Họ thường xuyên đá bóng.'},
+    ]},
+    {num:5, lines:[
+      {pre:'我', blank:'天天去游泳', post:'。', py:'Wǒ tiāntiān qù yóuyǒng.', vn:'Tôi ngày nào cũng đi bơi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'小王', blank:'来了吗', post:'？', py:'Xiǎo Wáng lái le ma?', vn:'Tiểu Vương đến chưa?'},
+      {speaker:'女', pre:'我在门外', blank:'看见他的自行车了', post:'。', py:'Wǒ zài mén wài kànjiàn tā de zìxíngchē le.', vn:'Tôi thấy xe đạp của cậu ấy ở ngoài cửa rồi.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'你还想', blank:'吃什么', post:'？', py:'Nǐ hái xiǎng chī shénme?', vn:'Bạn còn muốn ăn gì nữa?'},
+      {speaker:'女', pre:'', blank:'来点儿米饭吧', post:'。', py:'Lái diǎnr mǐfàn ba.', vn:'Cho thêm ít cơm đi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'女', pre:'昨天你们怎么', blank:'没去打篮球', post:'？', py:'Zuótiān nǐmen zěnme méi qù dǎ lánqiú?', vn:'Hôm qua sao các bạn không đi chơi bóng rổ?'},
+      {speaker:'男', pre:'因为下雨，', blank:'我们都没去', post:'。', py:'Yīnwèi xiàyǔ, wǒmen dōu méi qù.', vn:'Vì trời mưa, chúng tôi đều không đi.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你经常', blank:'游泳吗', post:'？', py:'Nǐ jīngcháng yóuyǒng ma?', vn:'Bạn có thường xuyên bơi không?'},
+      {speaker:'男', pre:'这个月我', blank:'天天游泳', post:'。', py:'Zhège yuè wǒ tiāntiān yóuyǒng.', vn:'Tháng này tôi ngày nào cũng bơi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'这两天怎么没', blank:'看见小张', post:'？', py:'Zhè liǎng tiān zěnme méi kànjiàn Xiǎo Zhāng?', vn:'Mấy hôm nay sao không thấy Tiểu Trương?'},
+      {speaker:'男', pre:'听说他', blank:'坐飞机去旅游了', post:'。', py:'Tīngshuō tā zuò fēijī qù lǚyóu le.', vn:'Nghe nói cậu ấy đi máy bay đi du lịch rồi.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['女的','男的','没有人看见小卫'], ans:2,
+     explain:'女：你看见小卫了吗？他的车在门外呢。男：我没看见。问：谁看见小卫了？ → 没有人看见小卫。'},
+    {num:12, options:['羊肉不好吃','羊肉太贵了','每天都吃'], ans:2,
+     explain:'女：你多吃一点儿羊肉吧。男：这个星期天天吃羊肉，我不想吃了，你吃吧。问：男的为什么不想吃羊肉？ → 每天都吃。'},
+    {num:13, options:['天气不好','天气太冷了','工作太忙了'], ans:0,
+     explain:'女：昨天你们怎么没去踢足球？男：因为昨天天气不太好，所以我们都没去。问：他们为什么没去踢足球？ → 天气不好。'},
+    {num:14, options:['八十公斤','六十五公斤','七十公斤'], ans:0,
+     explain:'女：你每天都运动吗？男：这个月我天天游泳，现在七十公斤了。问：男的以前可能多少公斤？ → 八十公斤（游泳后瘦了，以前应该更重）。'},
+    {num:15, options:['小王','小张','姐姐'], ans:1,
+     explain:'女：这几天怎么没看见小张？男：听小王说小张去北京看他姐姐了。问：谁去北京了？ → 小张。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi lý do vắng tập, gọi món khác

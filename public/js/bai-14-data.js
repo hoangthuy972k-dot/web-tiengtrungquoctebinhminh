@@ -117,6 +117,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'议看电影 · Rủ nhau xem phim',
+   preQuiz:[
+     {q:'女的看过那个电影吗？',opts:['看过','没看过','忘了'],ans:0},
+     {q:'除了他们俩，还有谁想一起去看？',opts:['女的的女朋友','男的的女朋友','没有别人'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'你看过那个电影吗？',py:'Nǐ kànguo nàge diànyǐng ma?',vn:'Bạn đã từng xem bộ phim đó chưa?'},
      {sp:1,zh:'看过，很有意思。',py:'Kànguo, hěn yǒuyìsi.',vn:'Xem rồi, rất thú vị.'},
@@ -124,6 +128,11 @@ var dialogData = [
      {sp:1,zh:'可以，但是我女朋友也想一起去。',py:'Kěyǐ, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.',vn:'Được, nhưng bạn gái tôi cũng muốn đi cùng.'},
    ]},
   {scene:'谈论中国旅行 · Nói về chuyến đi Trung Quốc',
+   preQuiz:[
+     {q:'女的去过中国吗？',opts:['去过一次','没去过','去过很多次'],ans:0},
+     {q:'女的去过北京吗？',opts:['去过','还没去过','不知道'],ans:1},
+     {q:'男的建议她怎么做？',opts:['一定要去北京看看','不用去北京','等以后再说'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'听说你去过中国，还想再去吗？',py:'Tīngshuō nǐ qùguo Zhōngguó, hái xiǎng zài qù ma?',vn:'Nghe nói bạn đã từng đến Trung Quốc, vẫn muốn đi nữa không?'},
      {sp:1,zh:'想啊，我去过一次，但是还没去过北京。',py:'Xiǎng a, wǒ qùguo yí cì, dànshì hái méi qùguo Běijīng.',vn:'Muốn chứ, tôi đã đi một lần rồi, nhưng vẫn chưa đến Bắc Kinh.'},
@@ -131,6 +140,10 @@ var dialogData = [
      {sp:1,zh:'好，下次有机会我一定去。',py:'Hǎo, xiàcì yǒu jīhuì wǒ yídìng qù.',vn:'Được, lần sau có cơ hội tôi nhất định sẽ đi.'},
    ]},
   {scene:'周末计划 · Kế hoạch cuối tuần',
+   preQuiz:[
+     {q:'女的周末想做什么？',opts:['去公园玩儿','在家休息','去上班'],ans:0},
+     {q:'男的会一起去吗？',opts:['会一起去','不去，还有事','也想去但没空'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'周末你想做什么？',py:'Zhōumò nǐ xiǎng zuò shénme?',vn:'Cuối tuần bạn muốn làm gì?'},
      {sp:1,zh:'我想去公园玩儿，今天天气很晴。',py:'Wǒ xiǎng qù gōngyuán wánr, jīntiān tiānqì hěn qíng.',vn:'Tôi muốn đi công viên chơi, hôm nay trời rất quang đãng.'},
@@ -138,6 +151,10 @@ var dialogData = [
      {sp:1,zh:'好吧，那我自己去。',py:'Hǎo ba, nà wǒ zìjǐ qù.',vn:'Được thôi, vậy tôi tự đi vậy.'},
    ]},
   {scene:'学中文经验 · Kinh nghiệm học tiếng Trung',
+   preQuiz:[
+     {q:'女的学了大概多长时间的汉语？',opts:['十个小时','一百个小时','一千个小时'],ans:1},
+     {q:'男的觉得汉字怎么样？',opts:['难，但很喜欢写','简单','不喜欢'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你学了几年汉语了？',py:'Nǐ xuéle jǐ nián Hànyǔ le?',vn:'Bạn đã học tiếng Trung được mấy năm rồi?'},
      {sp:1,zh:'我学了大概一百个小时了。',py:'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le.',vn:'Tôi đã học được khoảng một trăm tiếng rồi.'},

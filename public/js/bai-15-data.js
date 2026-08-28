@@ -123,6 +123,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'谈论新年 · Nói về năm mới',
+   preQuiz:[
+     {q:'女的新年打算做什么？',opts:['回家过年','去旅游','在家休息'],ans:0},
+     {q:'火车站人多吗？',opts:['人很多','人不多','不知道'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'新年就要到了，你有什么计划？',py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?'},
      {sp:1,zh:'我要回家过年，票已经买好了。',py:'Wǒ yào huíjiā guònián, piào yǐjīng mǎihǎo le.',vn:'Tôi sẽ về nhà ăn Tết, vé đã mua xong rồi.'},
@@ -130,6 +134,10 @@ var dialogData = [
      {sp:1,zh:'大家都在准备回家，人很多。',py:'Dàjiā dōu zài zhǔnbèi huíjiā, rén hěn duō.',vn:'Mọi người đều đang chuẩn bị về nhà, rất đông người.'},
    ]},
   {scene:'谈论天气 · Nói về sự thay đổi thời tiết',
+   preQuiz:[
+     {q:'今天天气怎么样？',opts:['阴，比昨天更冷','晴，很暖和','下雨'],ans:0},
+     {q:'天气预报说明天会怎么样？',opts:['下雪','下雨','晴天'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'今天天气怎么样？',py:'Jīntiān tiānqì zěnmeyàng?',vn:'Hôm nay thời tiết thế nào?'},
      {sp:1,zh:'今天阴，比昨天更冷。',py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',vn:'Hôm nay âm u, lạnh hơn hôm qua.'},
@@ -137,6 +145,11 @@ var dialogData = [
      {sp:1,zh:'是啊，天气预报说明天会下雪。',py:'Shì a, tiānqì yùbào shuō míngtiān huì xiàxuě.',vn:'Đúng vậy, dự báo thời tiết nói ngày mai sẽ có tuyết.'},
    ]},
   {scene:'妹妹的事情 · Chuyện của em gái',
+   preQuiz:[
+     {q:'妹妹去哪儿了？',opts:['去火车站接朋友','去买东西','去上班'],ans:0},
+     {q:'妹妹怎么去的？',opts:['坐公共汽车','走路','骑自行车'],ans:0},
+     {q:'妹妹快回来了吗？',opts:['快回来了','还早','不回来了'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你妹妹呢？',py:'Nǐ mèimei ne?',vn:'Em gái bạn đâu rồi?'},
      {sp:1,zh:'她坐公共汽车去火车站接朋友了。',py:'Tā zuò gōnggòngqìchē qù huǒchēzhàn jiē péngyou le.',vn:'Cô ấy đi xe buýt đến ga tàu đón bạn rồi.'},
@@ -144,6 +157,10 @@ var dialogData = [
      {sp:1,zh:'快要回来了，你等一下。',py:'Kuàiyào huílai le, nǐ děng yíxià.',vn:'Sắp về rồi, bạn đợi một chút.'},
    ]},
   {scene:'准备过年 · Chuẩn bị đón năm mới',
+   preQuiz:[
+     {q:'女的新年准备得怎么样了？',opts:['差不多了，衣服买好了','还没开始','都准备好了'],ans:0},
+     {q:'男的觉得今年和去年比怎么样？',opts:['今年更热闹','去年更热闹','差不多'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'新年快到了，你准备好了吗？',py:'Xīnnián kuài dào le, nǐ zhǔnbèi hǎo le ma?',vn:'Năm mới sắp đến rồi, bạn chuẩn bị xong chưa?'},
      {sp:1,zh:'差不多了，衣服都买好了。',py:'Chàbuduō le, yīfu dōu mǎihǎo le.',vn:'Gần xong rồi, quần áo đều mua xong cả rồi.'},

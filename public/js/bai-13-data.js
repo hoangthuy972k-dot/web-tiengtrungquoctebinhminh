@@ -159,6 +159,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在办公室 · Tìm người trong văn phòng',
+   preQuiz:[
+     {q:'张先生在办公室吗？',opts:['在','不在，出去了','生病请假'],ans:1},
+     {q:'什么时候可以再来？',opts:['明天','下午','晚上'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'门开着呢，请进。',py:'Mén kāizhe ne, qǐng jìn.',vn:'Cửa đang mở đấy, mời vào.'},
      {sp:1,zh:'请问张先生在吗？',py:'Qǐngwèn Zhāng xiānsheng zài ma?',vn:'Xin hỏi có ông Trương ở đây không ạ?'},
@@ -166,6 +170,11 @@ var dialogData = [
      {sp:1,zh:'好的，谢谢。',py:'Hǎode, xièxie.',vn:'Vâng, cảm ơn bạn.'},
    ]},
   {scene:'在办公室 · Hỏi thăm về đồng nghiệp',
+   preQuiz:[
+     {q:'那个正在说话的女孩子姓什么？',opts:['杨','王','李'],ans:0},
+     {q:'女的怎么认识杨笑笑的？',opts:['她姐姐是女的的同学','自己是同学','是邻居'],ans:0},
+     {q:'男的认识拿铅笔的那个人吗？',opts:['认识','不认识','不确定'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'那个正在说话的女孩子是谁？',py:'Nàge zhèngzài shuōhuà de nǚháizi shì shéi?',vn:'Cô gái đang nói chuyện đằng kia là ai thế?'},
      {sp:1,zh:'我知道她的名字，她姓杨，叫杨笑笑，她姐姐是我的同学。',py:'Wǒ zhīdào tā de míngzi, tā xìng Yáng, jiào Yáng Xiàoxiao, tā jiějie shì wǒ de tóngxué.',vn:'Tôi biết tên cô ấy, cô ấy họ Dương, tên là Dương Tiếu Tiếu. Chị gái cô ấy là bạn học của tớ.'},
@@ -173,6 +182,10 @@ var dialogData = [
      {sp:1,zh:'我不认识。',py:'Wǒ bú rènshi.',vn:'Tớ không quen.'},
    ]},
   {scene:'在运动场 · Hỏi thăm chuyện tình cảm',
+   preQuiz:[
+     {q:'男的的女朋友是什么样子的？',opts:['长着两个大眼睛，非常爱笑','很矮很瘦','戴眼镜'],ans:0},
+     {q:'那个女孩子以前的男朋友现在怎么样了？',opts:['已经是前男友','还在一起','不知道'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'听说你有女朋友了？我认识她吗？',py:'Tīngshuō nǐ yǒu nǚpéngyou le? Wǒ rènshi tā ma?',vn:'Nghe nói bạn có bạn gái rồi à? Tớ có quen cô ấy không?'},
      {sp:1,zh:'就是我们班那个长着两个大眼睛、非常爱笑的女孩。',py:'Jiùshì wǒmen bān nàge zhǎngzhe liǎng ge dà yǎnjing, fēicháng ài xiào de nǚhái.',vn:'Chính là cô gái có đôi mắt to, rất hay cười ở lớp chúng mình ấy.'},
@@ -180,6 +193,10 @@ var dialogData = [
      {sp:1,zh:'那个已经是她的前男友了。',py:'Nàge yǐjīng shì tā de qián nányǒu le.',vn:'Người đó đã là bạn trai cũ của cô ấy rồi.'},
    ]},
   {scene:'在路上 · Hỏi đường',
+   preQuiz:[
+     {q:'离新宾馆远吗？',opts:['不远，走路20分钟','很远，要坐车','就在旁边'],ans:0},
+     {q:'怎么走？',opts:['一直往前走，到路口往右走','往左走','坐公交车'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'请问这离新宾馆远吗？',py:'Qǐngwèn zhè lí xīn bīnguǎn yuǎn ma?',vn:'Xin hỏi ở đây cách khách sạn mới có xa không?'},
      {sp:1,zh:'不远，走路二十分钟就到。',py:'Bù yuǎn, zǒulù èrshí fēnzhōng jiù dào.',vn:'Không xa đâu, đi bộ 20 phút là đến nơi.'},

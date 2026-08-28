@@ -6,7 +6,8 @@
     studyDays: 'hyv_study_days',
     pinyinVisible: 'hyv_pinyin_visible',
     lessonScores: 'hyv_lesson_scores',
-    auth: 'hyv_auth'
+    auth: 'hyv_auth',
+    visitorId: 'hyv_visitor_id'
   };
 
   // Diem that theo tung phan cua tung bai hoc, ghi lai khi hoc sinh hoan thanh
@@ -73,6 +74,41 @@
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
       body: JSON.stringify({ totalCorrect: totalCorrect, totalQuestions: totalQuestions, streak: streak, lessonsDone: lessonsDone })
     }).catch(function () {});
+  }
+
+  /* ---------------- Analytics (luot truy cap + thoi gian hoc, gui ve server) ---------------- */
+
+  function getVisitorId() {
+    var id = localStorage.getItem(STORAGE_KEYS.visitorId);
+    if (id) return id;
+    id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() :
+      'v-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2);
+    try { localStorage.setItem(STORAGE_KEYS.visitorId, id); } catch (e) {}
+    return id;
+  }
+
+  function currentUserId() {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    return auth && auth.user ? auth.user.id : null;
+  }
+
+  function initAnalytics() {
+    var visitorId = getVisitorId();
+    fetch('/api/track/visit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ visitorId: visitorId })
+    }).catch(function () {});
+
+    var HEARTBEAT_MS = 60000;
+    setInterval(function () {
+      if (document.hidden) return;
+      fetch('/api/track/heartbeat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ visitorId: visitorId, userId: currentUserId(), seconds: HEARTBEAT_MS / 1000 })
+      }).catch(function () {});
+    }, HEARTBEAT_MS);
   }
 
   /* ---------------- Utilities ---------------- */
@@ -3650,6 +3686,7 @@
     renderStreak();
     renderStatTiles();
     initAuth();
+    initAnalytics();
     initPinyinToggle();
 
     $('#levelDetailBack').addEventListener('click', showDashboard);

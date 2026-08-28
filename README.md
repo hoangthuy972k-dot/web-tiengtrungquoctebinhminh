@@ -7,8 +7,9 @@ Website học tiếng Trung (HSK 1-4 và YCT thiếu nhi) xây dựng bằng Nod
 - Trang chủ với banner giới thiệu và từ vựng ngẫu nhiên mỗi lần tải lại.
 - Hệ thống kiến thức: thẻ danh mục HSK 1, HSK 2, HSK 3, HSK 4, YCT (số bài học / từ vựng / mô tả cấp độ).
 - Bài tập thực hành với 5 dạng: trắc nghiệm nghĩa, trắc nghiệm Pinyin, trắc nghiệm Hán tự, điền từ vào chỗ trống, ghép câu — chọn được cấp độ luyện tập, chấm điểm và hiển thị Đúng/Sai ngay lập tức.
-- Dashboard tiến độ: số từ vựng đã thuộc, chuỗi ngày học liên tiếp (streak), độ chính xác trung bình, số phiên đã hoàn thành — lưu trên `localStorage` (chế độ demo, chưa có tài khoản thật).
-- Đăng nhập / Đăng ký dạng demo (chưa có backend xác thực thật, dữ liệu chỉ lưu trên trình duyệt).
+- Dashboard tiến độ: số từ vựng đã thuộc, chuỗi ngày học liên tiếp (streak), độ chính xác trung bình, số phiên đã hoàn thành.
+- Tài khoản học sinh thật: đăng ký/đăng nhập có backend xác thực (mật khẩu băm bằng `scrypt`), lưu trên server (`data/users.json`). Sau khi đăng nhập, phiên đăng nhập được giữ trong `localStorage` của trình duyệt nên học sinh không cần đăng nhập lại mỗi lần vào học (trừ khi tự đăng xuất hoặc xoá dữ liệu trình duyệt).
+- Trang quản trị `/admin` (bảo vệ bằng mật khẩu riêng, xem mục bên dưới): xem số lượt truy cập trang (hôm nay / 7 ngày / 30 ngày / tổng), số người truy cập duy nhất, và với mỗi học sinh đã đăng ký — tổng thời gian học, hoạt động gần nhất, chuỗi ngày học, số câu đúng/tổng.
 
 > Dữ liệu từ vựng/bài tập trong `public/js/data.js` hiện là **dữ liệu mẫu**. Thay thế bằng nội dung đầy đủ trước khi dùng chính thức.
 
@@ -47,4 +48,12 @@ public/
 6. Bấm **Restart/Start Application**.
 7. Trỏ domain/subdomain của bạn vào Application URL được cấp, kiểm tra lại trang.
 
-Vì đây là chế độ demo dùng `localStorage`, không cần cấu hình database trên Hostinger ở bước này.
+Dữ liệu tài khoản, điểm số, lượt truy cập và thời gian học được lưu trong file JSON ở thư mục `data/` ngay trên server (không cần database rời). Thư mục này **không** nằm trong Git — khi deploy qua Git, các lần `git pull` sau sẽ không đụng đến dữ liệu đã có sẵn trên server, miễn là Hostinger cập nhật code bằng cách pull vào đúng thư mục ứng dụng (không xoá sạch rồi tạo lại từ đầu). Nên định kỳ tải file `data/*.json` về máy để sao lưu.
+
+### Xem thống kê truy cập & thời gian học (trang `/admin`)
+
+1. Trong Node.js App trên hPanel, thêm biến môi trường `ADMIN_PASSWORD` với một mật khẩu mạnh do bạn tự đặt (khác với mật khẩu học sinh).
+2. Khởi động lại ứng dụng.
+3. Truy cập `https://<domain-của-bạn>/admin`, nhập đúng `ADMIN_PASSWORD` để xem: số lượt truy cập trang, số người truy cập duy nhất, và danh sách học sinh kèm tổng thời gian học/hoạt động gần nhất.
+
+Trang này không có liên kết công khai trên site — chỉ ai biết đường dẫn và đúng mật khẩu mới xem được.

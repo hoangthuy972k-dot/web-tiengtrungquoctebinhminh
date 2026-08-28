@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản trị · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+<div id="adminGate" class="admin-gate">
+  <div class="admin-gate-card">
+    <div class="admin-gate-title">🔐 Trang quản trị</div>
+    <div class="admin-gate-sub">Nhập mật khẩu quản trị để xem thống kê truy cập &amp; thời gian học của học sinh.</div>
+    <form id="adminLoginForm">
+      <input type="password" id="adminPasswordInput" placeholder="Mật khẩu quản trị" autocomplete="current-password" required>
+      <button type="submit" class="btn btn-primary">Đăng nhập</button>
+      <p class="admin-gate-error" id="adminGateError" hidden></p>
+    </form>
+  </div>
+</div>
+
+<div id="adminDash" class="admin-dash" hidden>
+  <header class="admin-header">
+    <div>
+      <div class="admin-header-title">📊 Thống kê truy cập</div>
+      <div class="admin-header-sub">Hi Hán 喜汉 · Cập nhật lúc <span id="adminUpdatedAt">—</span></div>
+    </div>
+    <div class="admin-header-actions">
+      <button type="button" class="btn btn-outline" id="adminRefresh">🔄 Làm mới</button>
+      <button type="button" class="btn btn-outline" id="adminLogout">Đăng xuất</button>
+    </div>
+  </header>
+
+  <section class="admin-cards" id="adminTrafficCards"></section>
+
+  <section class="admin-section">
+    <div class="admin-section-title">👩‍🎓 Học sinh đã đăng ký</div>
+    <div class="admin-table-wrap">
+      <table class="admin-table" id="adminStudentTable">
+        <thead>
+          <tr>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>Cấp độ</th>
+            <th>Thời gian học</th>
+            <th>Hoạt động gần nhất</th>
+            <th>Chuỗi ngày</th>
+            <th>Đúng / Tổng câu</th>
+          </tr>
+        </thead>
+        <tbody id="adminStudentBody"></tbody>
+      </table>
+      <p class="admin-empty" id="adminStudentEmpty" hidden>Chưa có học sinh nào đăng ký tài khoản.</p>
+    </div>
+  </section>
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

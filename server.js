@@ -199,6 +199,146 @@ app.get('/api/leaderboard', (req, res) => {
   res.json({ leaderboard: top });
 });
 
+// ══════════════════════════════════════════════════════════════════
+// Thong ke truy cap + thoi gian hoc (Analytics) — luu vao file JSON
+// tren server, khong dung dich vu ngoai. Chi xem duoc qua /admin,
+// yeu cau mat khau quan tri (bien moi truong ADMIN_PASSWORD).
+// ══════════════════════════════════════════════════════════════════
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';
+const VISITS_FILE = path.join(DATA_DIR, 'visits.json');
+const STUDYTIME_FILE = path.join(DATA_DIR, 'studytime.json');
+
+function loadVisits() {
+  return readJsonFile(VISITS_FILE) || { visitors: {}, dailyPageviews: {} };
+}
+function saveVisits(v) {
+  writeJsonFile(VISITS_FILE, v);
+}
+function loadStudyTime() {
+  return readJsonFile(STUDYTIME_FILE) || {};
+}
+function saveStudyTime(s) {
+  writeJsonFile(STUDYTIME_FILE, s);
+}
+function todayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+app.post('/api/track/visit', (req, res) => {
+  const visitorId = typeof req.body?.visitorId === 'string' ? req.body.visitorId.slice(0, 64) : '';
+  if (!visitorId) return res.status(400).json({ error: 'Thiếu visitorId.' });
+  const visits = loadVisits();
+  const now = new Date().toISOString();
+  const day = todayKey();
+  if (!visits.visitors[visitorId]) {
+    visits.visitors[visitorId] = { firstSeen: now, lastSeen: now, visitCount: 1 };
+  } else {
+    visits.visitors[visitorId].lastSeen = now;
+    visits.visitors[visitorId].visitCount++;
+  }
+  visits.dailyPageviews[day] = (visits.dailyPageviews[day] || 0) + 1;
+  saveVisits(visits);
+  res.json({ ok: true });
+});
+
+app.post('/api/track/heartbeat', (req, res) => {
+  const visitorId = typeof req.body?.visitorId === 'string' ? req.body.visitorId.slice(0, 64) : '';
+  const userId = typeof req.body?.userId === 'string' ? req.body.userId.slice(0, 64) : null;
+  const seconds = Math.min(120, Math.max(0, Number(req.body?.seconds) || 0));
+  if (!visitorId || !seconds) return res.status(400).json({ error: 'Thiếu visitorId hoặc seconds.' });
+  const key = userId ? 'u:' + userId : 'v:' + visitorId;
+  const studyTime = loadStudyTime();
+  const now = new Date().toISOString();
+  const day = todayKey();
+  const minutes = seconds / 60;
+  if (!studyTime[key]) {
+    studyTime[key] = { userId: userId, visitorId: visitorId, totalMinutes: 0, lastActive: now, daily: {} };
+  }
+  const entry = studyTime[key];
+  entry.userId = userId || entry.userId;
+  entry.visitorId = visitorId;
+  entry.totalMinutes += minutes;
+  entry.lastActive = now;
+  entry.daily[day] = (entry.daily[day] || 0) + minutes;
+  saveStudyTime(studyTime);
+  res.json({ ok: true });
+});
+
+function requireAdmin(req, res, next) {
+  if (!ADMIN_PASSWORD) return res.status(503).json({ error: 'Trang quản trị chưa được cấu hình (thiếu ADMIN_PASSWORD trên server).' });
+  const provided = req.headers['x-admin-password'] || '';
+  if (provided !== ADMIN_PASSWORD) return res.status(401).json({ error: 'Sai mật khẩu quản trị.' });
+  next();
+}
+
+app.post('/api/admin/login', (req, res) => {
+  if (!ADMIN_PASSWORD) return res.status(503).json({ error: 'Trang quản trị chưa được cấu hình (thiếu ADMIN_PASSWORD trên server).' });
+  const password = typeof req.body?.password === 'string' ? req.body.password : '';
+  if (password !== ADMIN_PASSWORD) return res.status(401).json({ error: 'Sai mật khẩu quản trị.' });
+  res.json({ ok: true });
+});
+
+app.get('/api/admin/stats', requireAdmin, (req, res) => {
+  const visits = loadVisits();
+  const studyTime = loadStudyTime();
+  const users = loadUsers();
+  const scores = loadScores();
+
+  function daysAgoKey(n) {
+    const d = new Date();
+    d.setDate(d.getDate() - n);
+    return d.toISOString().slice(0, 10);
+  }
+  const last7 = [];
+  for (let i = 0; i < 7; i++) last7.push(daysAgoKey(i));
+  const last30 = [];
+  for (let i = 0; i < 30; i++) last30.push(daysAgoKey(i));
+
+  const today = todayKey();
+  const visitorList = Object.keys(visits.visitors).map((id) => visits.visitors[id]);
+  const uniqueVisitorsAllTime = visitorList.length;
+  const uniqueVisitorsToday = visitorList.filter((v) => v.lastSeen.slice(0, 10) === today).length;
+  const uniqueVisitors7d = visitorList.filter((v) => last7.indexOf(v.lastSeen.slice(0, 10)) !== -1).length;
+
+  const pageviewsToday = visits.dailyPageviews[today] || 0;
+  const pageviews7d = last7.reduce((sum, d) => sum + (visits.dailyPageviews[d] || 0), 0);
+  const pageviews30d = last30.reduce((sum, d) => sum + (visits.dailyPageviews[d] || 0), 0);
+  const pageviewsAllTime = Object.keys(visits.dailyPageviews).reduce((sum, d) => sum + visits.dailyPageviews[d], 0);
+
+  const students = users.map((u) => {
+    const st = studyTime['u:' + u.id];
+    const sc = scores[u.id];
+    return {
+      id: u.id,
+      name: u.name,
+      email: u.email,
+      level: u.level,
+      createdAt: u.createdAt,
+      totalMinutes: st ? Math.round(st.totalMinutes) : 0,
+      lastActive: st ? st.lastActive : null,
+      totalCorrect: sc ? sc.totalCorrect : 0,
+      totalQuestions: sc ? sc.totalQuestions : 0,
+      streak: sc ? sc.streak : 0,
+      lessonsDone: sc ? sc.lessonsDone : 0,
+    };
+  });
+  students.sort((a, b) => (b.lastActive || '').localeCompare(a.lastActive || ''));
+
+  res.json({
+    traffic: {
+      uniqueVisitorsAllTime,
+      uniqueVisitorsToday,
+      uniqueVisitors7d,
+      pageviewsToday,
+      pageviews7d,
+      pageviews30d,
+      pageviewsAllTime,
+    },
+    students,
+    totalRegisteredStudents: users.length,
+  });
+});
+
 // Proxies Google Cloud Text-to-Speech so the API key never reaches the
 // browser. Client sends { text }, gets back { audioContent } (base64 MP3).
 app.post('/api/tts', async (req, res) => {

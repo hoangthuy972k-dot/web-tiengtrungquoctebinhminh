@@ -263,22 +263,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: đi chợ mua đồng hồ, hỏi giá, hỏi màu.
 // Ôn lại 新/几/觉得 (Bài 1).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我想买一块新手表，可是钱不够，只有几十块。',
-   questions:[
-     {q:'他想买什么？',opts:['手表','报纸','牛奶','衣服'],ans:0},
-     {q:'他钱够不够？',opts:['不够','够','很多','不知道'],ans:0},
-   ]},
-  {audio:'这份报纸不是我的，是邻居的。是今天送来的，不是昨天的。',
-   questions:[
-     {q:'这份报纸是谁的？',opts:['邻居的','我的','爸爸的','丈夫的'],ans:0},
-     {q:'报纸是什么时候送来的？',opts:['今天','昨天','明天','没有说'],ans:0},
-   ]},
-  {audio:'你看一下这个颜色，是不是很漂亮？我觉得这个颜色真好看。',
-   questions:[
-     {q:'说话人觉得这个颜色怎么样？',opts:['真好看','不好看','很贵','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-3/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'这块手表不是她的，', blank:'是她丈夫的', post:'。', py:'Zhè kuài shǒubiǎo bú shì tā de, shì tā zhàngfu de.', vn:'Chiếc đồng hồ này không phải của cô ấy, mà là của chồng cô ấy.'},
+    ]},
+    {num:2, lines:[
+      {pre:'他每天早上都要', blank:'喝茶、看报纸', post:'。', py:'Tā měitiān zǎoshang dōu yào hē chá, kàn bàozhǐ.', vn:'Anh ấy sáng nào cũng uống trà, đọc báo.'},
+    ]},
+    {num:3, lines:[
+      {pre:'你女儿的房间真漂亮，', blank:'颜色也好看', post:'。', py:'Nǐ nǚ\'ér de fángjiān zhēn piàoliang, yánsè yě hǎokàn.', vn:'Phòng của con gái bạn thật đẹp, màu sắc cũng đẹp.'},
+    ]},
+    {num:4, lines:[
+      {pre:'送牛奶的来了，', blank:'你去开门吧', post:'。', py:'Sòng niúnǎi de lái le, nǐ qù kāimén ba.', vn:'Người giao sữa đến rồi, bạn ra mở cửa đi.'},
+    ]},
+    {num:5, lines:[
+      {pre:'旁边那个大点儿的杯子', blank:'是我的', post:'。', py:'Pángbiān nàge dà diǎnr de bēizi shì wǒ de.', vn:'Cái cốc to hơn ở bên cạnh là của tôi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'今天早上', blank:'送牛奶的来了吗', post:'？', py:'Jīntiān zǎoshang sòng niúnǎi de lái le ma?', vn:'Sáng nay người giao sữa đến chưa?'},
+      {speaker:'女', pre:'我不知道，', blank:'你看看外边有没有牛奶', post:'。', py:'Wǒ bù zhīdào, nǐ kànkan wàibian yǒu méiyǒu niúnǎi.', vn:'Tôi không biết, bạn xem bên ngoài có sữa không.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'今天的报纸', blank:'在哪儿', post:'？', py:'Jīntiān de bàozhǐ zài nǎr?', vn:'Báo hôm nay ở đâu?'},
+      {speaker:'男', pre:'', blank:'在电脑旁边', post:'。', py:'Zài diànnǎo pángbiān.', vn:'Ở cạnh máy tính.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'女', pre:'这个房间', blank:'真漂亮', post:'！', py:'Zhège fángjiān zhēn piàoliang!', vn:'Phòng này đẹp thật đấy!'},
+      {speaker:'男', pre:'这是我女儿的房间，', blank:'旁边的是我儿子的', post:'。', py:'Zhè shì wǒ nǚ\'ér de fángjiān, pángbiān de shì wǒ érzi de.', vn:'Đây là phòng của con gái tôi, bên cạnh là của con trai tôi.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你喜欢', blank:'哪件衣服', post:'？', py:'Nǐ xǐhuan nǎ jiàn yīfu?', vn:'Bạn thích cái áo nào?'},
+      {speaker:'男', pre:'我喜欢', blank:'白色的', post:'。', py:'Wǒ xǐhuan báisè de.', vn:'Tôi thích cái màu trắng.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'哪本书', blank:'是你的', post:'？', py:'Nǎ běn shū shì nǐ de?', vn:'Quyển sách nào là của bạn?'},
+      {speaker:'男', pre:'这几本书', blank:'都是我的', post:'。', py:'Zhè jǐ běn shū dōu shì wǒ de.', vn:'Mấy quyển sách này đều là của tôi.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['左边的','旁边的','右边的'], ans:0,
+     explain:'女：你最喜欢哪块手表？男：我最喜欢左边的。问：男的最喜欢哪块手表？ → 左边的。'},
+    {num:12, options:['昨天的','今天的','明天的'], ans:1,
+     explain:'女：今天的报纸在桌子上，你看吧。男：好，我知道了。问：桌子上的报纸是哪天的？ → 今天的。'},
+    {num:13, options:['送饭的','送牛奶的','送报纸的'], ans:2,
+     explain:'女：你听，送牛奶的来了，你去看一下。男：不是送牛奶的，是送报纸的。问：谁来了？ → 送报纸的。'},
+    {num:14, options:['爸爸妈妈的','丽丽的','哥哥的'], ans:0,
+     explain:'男：丽丽，这个房间真大，这是谁的房间？女：这是我爸爸妈妈的房间。问：这是谁的房间？ → 爸爸妈妈的。'},
+    {num:15, options:['新的','都不是','都是'], ans:1,
+     explain:'女：哪个杯子是你的？男：都不是我的，给我一个新的吧。问：哪个杯子是男的的？ → 都不是。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở cửa hàng mua đồng hồ, hỏi màu

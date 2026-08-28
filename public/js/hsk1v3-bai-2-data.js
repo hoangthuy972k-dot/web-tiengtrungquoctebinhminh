@@ -125,11 +125,18 @@ const wuData = [
 
 var dialogData = [
   {scene:'王一飞认识学生 · Làm quen tên trong lớp',
+   preQuiz:[
+     {q:'学生叫什么名字？',opts:['陈天中','王一飞','李文'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'请问，你叫什么名字？',py:'Qǐngwèn, nǐ jiào shénme míngzi?',vn:'Xin hỏi, em tên là gì?'},
      {sp:1,zh:'我叫陈天中。',py:'Wǒ jiào Chén Tiānzhōng.',vn:'Em tên là Trần Thiên Trung ạ.'},
    ]},
   {scene:'陈天中认错了人 · Chào nhầm người',
+   preQuiz:[
+     {q:'陈天中一开始把对方认成了谁？',opts:['安妮','白家月','李文'],ans:0},
+     {q:'对方其实是谁？',opts:['白家月','安妮','陈天中的朋友'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你好，安妮！',py:'Nǐ hǎo, Ānnī!',vn:'Chào Annie!'},
      {sp:1,zh:'你好，陈天中！我不是安妮，我是白家月。',py:'Nǐ hǎo, Chén Tiānzhōng! Wǒ bú shì Ānnī, wǒ shì Bái Jiāyuè.',vn:'Chào Trần Thiên Trung! Mình không phải là Annie, mình là Bạch Gia Nguyệt.'},
@@ -137,6 +144,10 @@ var dialogData = [
      {sp:1,zh:'没关系！',py:'Méi guānxi!',vn:'Không sao đâu!'},
    ]},
   {scene:'李文和白家月第一次相遇 · Lần đầu gặp gỡ',
+   preQuiz:[
+     {q:'男的叫什么名字？',opts:['李文','王文','陈文'],ans:0},
+     {q:'两人认识后心情怎么样？',opts:['很高兴','不高兴','没有说'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你好！我叫李文。',py:'Nǐ hǎo! Wǒ jiào Lǐ Wén.',vn:'Chào bạn! Mình tên là Lý Văn.'},
      {sp:1,zh:'你好！我叫白家月。',py:'Nǐ hǎo! Wǒ jiào Bái Jiāyuè.',vn:'Xin chào! Mình tên là Bạch Gia Nguyệt.'},
@@ -158,20 +169,9 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — tình huống MỚI dùng từ vựng bài học
+// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'请问，你叫什么名字？——我叫王文，很高兴认识你。',
-   questions:[
-     {q:'说话人在做什么？',opts:['问名字','说谢谢','说再见','道歉'],ans:0},
-     {q:'对方怎么回答？',opts:['我叫王文','对不起','没关系','你好'],ans:0},
-   ]},
-  {audio:'对不起，我认错人了！——没关系，没事！',
-   questions:[
-     {q:'说话人为什么说"对不起"？',opts:['认错人了','迟到了','没带书','不高兴'],ans:0},
-     {q:'对方怎么回应道歉？',opts:['没关系','谢谢','你好','再见'],ans:0},
-   ]},
-];
+var listenData = [];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ

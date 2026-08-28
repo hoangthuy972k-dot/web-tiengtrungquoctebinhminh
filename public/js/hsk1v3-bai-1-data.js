@@ -121,11 +121,18 @@ const wuData = [
 
 var dialogData = [
   {scene:'王一飞与AI小语打招呼 · Chào hỏi trợ giảng AI',
+   preQuiz:[
+     {q:'王老师对AI小语说了什么？',opts:['你好','再见','谢谢'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'AI小语，你好！',py:'AI Xiǎoyǔ, nǐ hǎo!',vn:'Chào cậu, AI Tiểu Ngữ!'},
      {sp:1,zh:'王老师，你好！',py:'Wáng lǎoshī, nǐ hǎo!',vn:'Chào cô Vương!'},
    ]},
   {scene:'Chào cả lớp trong giờ học',
+   preQuiz:[
+     {q:'老师怎么和全班打招呼？',opts:['大家好','你们好','同学们好'],ans:0},
+     {q:'学生怎么恭敬地向老师问好？',opts:['您好','你好','嗨'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'大家好！',py:'Dàjiā hǎo!',vn:'Chào mọi người!'},
      {sp:1,zh:'老师，您好！',py:'Lǎoshī, nín hǎo!',vn:'Chào cô ạ!'},
@@ -133,6 +140,11 @@ var dialogData = [
      {sp:1,zh:'你好，小语！',py:'Nǐ hǎo, Xiǎoyǔ!',vn:'Chào Tiểu Ngữ!'},
    ]},
   {scene:'Cảm ơn và tạm biệt cuối giờ',
+   preQuiz:[
+     {q:'别人帮忙后，应该说什么？',opts:['谢谢','你好','再见'],ans:0},
+     {q:'怎么回答别人说的"谢谢"？',opts:['不客气','再见','你好'],ans:0},
+     {q:'老师最后怎么和大家说再见？',opts:['同学们，再见','大家再见','明天见'],ans:0},
+   ],
    lines:[
      {sp:1,zh:'谢谢！',py:'Xièxie!',vn:'Cảm ơn!'},
      {sp:2,zh:'不客气！',py:'Bú kèqi!',vn:'Đừng khách sáo!'},
@@ -154,20 +166,9 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — tình huống MỚI dùng từ vựng bài học
+// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'大家好！我是老师。同学们，你们好！',
-   questions:[
-     {q:'说话的人是谁？',opts:['老师','学生','小语','家人'],ans:0},
-     {q:'老师对同学们说什么？',opts:['你们好','谢谢','再见','对不起'],ans:0},
-   ]},
-  {audio:'谢谢老师！——不客气！同学们，再见！',
-   questions:[
-     {q:'学生对老师说什么？',opts:['谢谢老师','你好','大家好','您好'],ans:0},
-     {q:'老师最后说了什么？',opts:['同学们，再见','谢谢','不客气','你好'],ans:0},
-   ]},
-];
+var listenData = [];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ

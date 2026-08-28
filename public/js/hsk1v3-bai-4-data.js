@@ -140,6 +140,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'刘明和王一雪聊天 · Hỏi thăm công việc',
+   preQuiz:[
+     {q:'一飞忙不忙？',opts:['很忙','不忙','不知道'],ans:0},
+     {q:'她有多少个学生？',opts:['十个','二十个','三十个'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'一飞忙吗？',py:'Yīfēi máng ma?',vn:'Nhất Phi có bận không?'},
      {sp:1,zh:'她很忙。',py:'Tā hěn máng.',vn:'Dì ấy rất bận.'},
@@ -147,6 +151,10 @@ var dialogData = [
      {sp:1,zh:'她有二十个学生。',py:'Tā yǒu èrshí gè xuésheng.',vn:'Dì ấy có hai mươi học sinh.'},
    ]},
   {scene:'王一雪和杨同乐聊家庭 · Hỏi thăm gia đình',
+   preQuiz:[
+     {q:'杨同乐有哥哥吗？',opts:['没有哥哥','有一个哥哥','有两个哥哥'],ans:0},
+     {q:'杨同乐家有几口人？',opts:['三口人','四口人','五口人'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'我有两个哥哥，你呢？',py:'Wǒ yǒu liǎng gè gēge, nǐ ne?',vn:'Chị có hai anh trai. Em thì sao?'},
      {sp:1,zh:'我没有哥哥。',py:'Wǒ méiyǒu gēge.',vn:'Em không có anh trai.'},
@@ -154,6 +162,11 @@ var dialogData = [
      {sp:1,zh:'我家有四口人，爸爸、妈妈、妹妹和我。',py:'Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.',vn:'Nhà em có bốn người: bố, mẹ, em gái và em.'},
    ]},
   {scene:'杨同乐遇见王一雪母子 · Hỏi thăm con cái',
+   preQuiz:[
+     {q:'王一雪有几个孩子？',opts:['一个','两个','三个'],ans:1},
+     {q:'她儿子今年几岁？',opts:['三岁','五岁','七岁'],ans:1},
+     {q:'她女儿今年多大？',opts:['十岁','十二岁','十五岁'],ans:1},
+   ],
    lines:[
      {sp:1,zh:'这是您儿子吗？',py:'Zhè shì nín érzi ma?',vn:'Đây là con trai chị phải không?'},
      {sp:0,zh:'是的。我有两个孩子，一个儿子，一个女儿。',py:'Shì de. Wǒ yǒu liǎng gè háizi, yí gè érzi, yí gè nǚ\'ér.',vn:'Đúng vậy. Chị có hai con, một con trai và một con gái.'},
@@ -177,20 +190,9 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — tình huống MỚI dùng từ vựng bài học
+// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我有一个哥哥，没有姐姐。我家有三口人，爸爸、妈妈和我。',
-   questions:[
-     {q:'说话人有哥哥吗？',opts:['有一个哥哥','没有哥哥','有两个哥哥','不知道'],ans:0},
-     {q:'说话人家有几口人？',opts:['三口人','四口人','两口人','五口人'],ans:0},
-   ]},
-  {audio:'我的儿子今年八岁，我的女儿今年三岁，她很可爱。',
-   questions:[
-     {q:'说话人的儿子今年几岁？',opts:['八岁','三岁','十岁','五岁'],ans:0},
-     {q:'说话人的女儿今年几岁？',opts:['三岁','八岁','十二岁','六岁'],ans:0},
-   ]},
-];
+var listenData = [];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ (dựa theo bài tập tổng hợp thật trong sách)

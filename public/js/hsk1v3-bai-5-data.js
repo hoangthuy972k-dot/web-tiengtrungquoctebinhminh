@@ -146,6 +146,11 @@ const wuData = [
 
 var dialogData = [
   {scene:'刘明和王一雪聊天 · Hỏi ngày tháng',
+   preQuiz:[
+     {q:'今天几月几号？',opts:['9月8号','8月9号','9月18号'],ans:0},
+     {q:'今天星期几？',opts:['星期一','星期日','星期六'],ans:1},
+     {q:'今天男的要做什么？',opts:['休息','上班','做饭'],ans:0},
+   ],
    lines:[
      {sp:1,zh:'今天几号？',py:'Jīntiān jǐ hào?',vn:'Hôm nay ngày mấy anh nhỉ?'},
      {sp:0,zh:'今天9月8号。',py:'Jīntiān jiǔ yuè bā hào.',vn:'Hôm nay là ngày 8 tháng 9.'},
@@ -153,6 +158,10 @@ var dialogData = [
      {sp:0,zh:'星期日。今天我休息。',py:'Xīngqīrì. Jīntiān wǒ xiūxi.',vn:'Chủ nhật. Hôm nay anh được nghỉ.'},
    ]},
   {scene:'王一雪和杨同乐聊天 · Hỏi chuyện nấu ăn',
+   preQuiz:[
+     {q:'杨同乐会做饭吗？',opts:['会','不会','不知道'],ans:0},
+     {q:'杨同乐会做什么菜？',opts:['面条儿、饺子','米饭、汤','水果沙拉'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你会做饭吗？',py:'Nǐ huì zuò fàn ma?',vn:'Em có biết nấu ăn không?'},
      {sp:1,zh:'我会做。',py:'Wǒ huì zuò.',vn:'Em biết.'},
@@ -160,6 +169,10 @@ var dialogData = [
      {sp:1,zh:'我会做面条儿、饺子，也会做一些菜。星期天我也做饭。',py:'Wǒ huì zuò miàntiáor, jiǎozi, yě huì zuò yìxiē cài. Xīngqītiān wǒ yě zuò fàn.',vn:'Em biết nấu mì, sủi cảo và biết chế biến một số món ăn khác. Chủ nhật em cũng nấu ăn.'},
    ]},
   {scene:'王一雪和杨同乐下班聊天 · Khen máy tính mới',
+   preQuiz:[
+     {q:'这台新电脑是谁的？',opts:['杨同乐的','王一雪的','别人的'],ans:0},
+     {q:'王一雪觉得这台电脑怎么样？',opts:['真好看','不好看','太贵了'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'同乐，下班吗？',py:'Tónglè, xiàbān ma?',vn:'Đồng Lạc, em tan làm chưa?'},
      {sp:1,zh:'下班。',py:'Xiàbān.',vn:'Em tan làm rồi.'},
@@ -183,20 +196,9 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — tình huống MỚI dùng từ vựng bài học
+// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'今天是十月一号，星期三，我不上班，我在家休息，也做一些菜。',
-   questions:[
-     {q:'今天是几月几号？',opts:['十月一号','九月八号','五月一号','十二月一号'],ans:0},
-     {q:'说话人今天做什么？',opts:['在家休息，做菜','去上班','去学校','去买电脑'],ans:0},
-   ]},
-  {audio:'我有一个新电脑，我很喜欢它。我不会做饭，但是我会做面条儿。',
-   questions:[
-     {q:'说话人喜欢什么？',opts:['新电脑','新手机','做饭','饺子'],ans:0},
-     {q:'说话人会做什么？',opts:['面条儿','饺子','菜','都不会'],ans:0},
-   ]},
-];
+var listenData = [];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ (dựa theo bài tập tổng hợp thật trong sách)

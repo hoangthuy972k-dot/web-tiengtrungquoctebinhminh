@@ -138,6 +138,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'李文向白家月要手机号 · Hỏi xin số điện thoại',
+   preQuiz:[
+     {q:'白家月手机号前面的国家区号是多少？',opts:['+33','+86','+84'],ans:0},
+     {q:'李文手机号前面的国家区号是多少？',opts:['+33','+86','+84'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'家月，你的手机号是多少？',py:'Jiāyuè, nǐ de shǒujīhào shì duōshao?',vn:'Gia Nguyệt, số điện thoại di động của bạn là bao nhiêu?'},
      {sp:1,zh:'我的手机号是+33 601493190。',py:'Wǒ de shǒujīhào shì +33 601493190.',vn:'Số điện thoại di động của mình là +33 601493190.'},
@@ -145,6 +149,10 @@ var dialogData = [
      {sp:1,zh:'好的。',py:'Hǎo de.',vn:'Ừ.'},
    ]},
   {scene:'白家月和陈天中聊天 · Kế hoạch đi siêu thị',
+   preQuiz:[
+     {q:'白家月明天想去哪儿？',opts:['超市','学校','饭店'],ans:0},
+     {q:'她想买什么？',opts:['牛奶','面包','水果'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'家月，明天你去哪儿？',py:'Jiāyuè, míngtiān nǐ qù nǎr?',vn:'Gia Nguyệt, ngày mai bạn đi đâu?'},
      {sp:1,zh:'我想去超市买东西。',py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',vn:'Mình muốn đi siêu thị mua đồ.'},
@@ -152,6 +160,11 @@ var dialogData = [
      {sp:1,zh:'我想买些牛奶。',py:'Wǒ xiǎng mǎi xiē niúnǎi.',vn:'Mình muốn mua ít sữa.'},
    ]},
   {scene:'王一雪一家讨论bữa tối cuối tuần · Kế hoạch ăn tối',
+   preQuiz:[
+     {q:'星期天他们打算去哪儿吃饭？',opts:['西安饭店','家里','超市'],ans:0},
+     {q:'孩子最后说自己想吃什么？',opts:['米饭','包子','面条'],ans:0},
+     {q:'他们怎么去饭店？',opts:['坐出租车','走路','坐公交车'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'星期天我们去哪儿吃晚饭？',py:'Xīngqītiān wǒmen qù nǎr chī wǎnfàn?',vn:'Chủ nhật này nhà mình đi đâu ăn tối nhỉ?'},
      {sp:1,zh:'我还想去西安饭店。',py:'Wǒ hái xiǎng qù Xī\'ān Fàndiàn.',vn:'Bố vẫn muốn đến nhà hàng Tây An.'},
@@ -175,20 +188,9 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — tình huống MỚI dùng từ vựng bài học
+// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我的手机号是13801234567，明天你想买什么东西，可以打电话给我。',
-   questions:[
-     {q:'说话人的手机号是多少？',opts:['13801234567','13552721160','601493190','不知道'],ans:0},
-     {q:'说话人让对方做什么？',opts:['有事打电话','去超市','吃晚饭','坐出租车'],ans:0},
-   ]},
-  {audio:'我们晚上想去饭店吃晚饭，那边的米饭和包子都非常好吃，我们坐出租车去吧。',
-   questions:[
-     {q:'那边的什么东西好吃？',opts:['米饭和包子','面条儿和牛奶','水果','没有好吃的'],ans:0},
-     {q:'他们怎么去饭店？',opts:['坐出租车','走路','坐公共汽车','骑车'],ans:0},
-   ]},
-];
+var listenData = [];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ (dựa theo bài tập tổng hợp thật trong sách)

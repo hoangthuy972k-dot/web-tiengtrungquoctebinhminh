@@ -138,6 +138,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在家里 · Xem tivi hay học bài',
+   preQuiz:[
+     {q:'女的觉得看电视对什么有帮助？',opts:['学汉语','工作','睡觉'],ans:0},
+     {q:'明天的课女的准备好了吗？',opts:['准备好了','还没准备','不知道'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'不要看电视了，明天上午还有汉语课呢。',py:'Bú yào kàn diànshì le, míngtiān shàngwǔ hái yǒu Hànyǔ kè ne.',vn:'Đừng xem tivi nữa, sáng mai còn có tiết học tiếng Trung đấy.'},
      {sp:1,zh:'看电视对学汉语有帮助。',py:'Kàn diànshì duì xué Hànyǔ yǒu bāngzhù.',vn:'Xem tivi có ích cho việc học tiếng Trung mà.'},
@@ -145,6 +149,10 @@ var dialogData = [
      {sp:1,zh:'都准备好了。',py:'Dōu zhǔnbèi hǎo le.',vn:'Tớ chuẩn bị tốt hết rồi.'},
    ]},
   {scene:'在医院 · Trong bệnh viện',
+   preQuiz:[
+     {q:'男的为什么让女的别看报纸？',opts:['医生说要多休息','太晚了','没有报纸'],ans:0},
+     {q:'吃药后多长时间不能喝茶？',opts:['一个小时','两个小时','三个小时'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'别看报纸了，医生说你要多休息。',py:'Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi.',vn:'Đừng đọc báo nữa, bác sĩ bảo bạn cần nghỉ ngơi nhiều đấy.'},
      {sp:1,zh:'好，不看了。给我一杯茶吧。',py:'Hǎo, bú kàn le. Gěi wǒ yì bēi chá ba.',vn:'Được rồi, không đọc nữa. Cho tôi một cốc trà đi.'},
@@ -152,6 +160,11 @@ var dialogData = [
      {sp:1,zh:'医生还说什么了？',py:'Yīshēng hái shuō shénme le?',vn:'Bác sĩ còn dặn gì nữa không?'},
    ]},
   {scene:'在家里 · Đi chợ về',
+   preQuiz:[
+     {q:'女的买这么多东西是为了什么？',opts:['哥哥中午回来吃饭','过节','招待客人'],ans:0},
+     {q:'女的买了哪些东西？',opts:['羊肉、鸡蛋、面条、西瓜','只有水果','只有肉'],ans:0},
+     {q:'妈妈在做什么？',opts:['正在准备午饭','在睡觉','出去了'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你怎么买了这么多东西呀？',py:'Nǐ zěnme mǎile zhème duō dōngxi ya?',vn:'Sao bạn mua nhiều đồ thế này?'},
      {sp:1,zh:'哥哥今天中午回来吃饭。',py:'Gēge jīntiān zhōngwǔ huílái chīfàn.',vn:'Trưa nay anh trai về ăn cơm.'},
@@ -159,6 +172,11 @@ var dialogData = [
      {sp:1,zh:'正在准备午饭呢。',py:'Zhèngzài zhǔnbèi wǔfàn ne.',vn:'Mẹ đang chuẩn bị bữa trưa kìa.'},
    ]},
   {scene:'在家里 · Tìm điện thoại',
+   preQuiz:[
+     {q:'女的在找什么？',opts:['手机','钱包','钥匙'],ans:0},
+     {q:'手机是什么颜色的？',opts:['白色','黑色','红色'],ans:0},
+     {q:'手机在哪儿？',opts:['桌子上，电脑旁边','床上','包里'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你在找什么？',py:'Nǐ zài zhǎo shénme?',vn:'Bạn đang tìm gì thế?'},
      {sp:1,zh:'你看见我的手机了吗？白色的。',py:'Nǐ kànjiàn wǒ de shǒujī le ma? Báisè de.',vn:'Bạn có thấy điện thoại của tớ đâu không? Cái màu trắng ấy.'},

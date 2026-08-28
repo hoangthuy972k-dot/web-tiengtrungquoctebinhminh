@@ -168,6 +168,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在歌厅 · Trong phòng hát Karaoke',
+   preQuiz:[
+     {q:'昨天和王方一起唱歌的人是谁？',opts:['男朋友','一个朋友，同学介绍的','她哥哥'],ans:1},
+     {q:'她认识这个朋友多久了？',opts:['很久了','昨天才第一次见','一个月'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'王方，昨天和你一起唱歌的人是谁？',py:'Wáng Fāng, zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',vn:'Vương Phương, người hôm qua cùng hát karaoke với bạn là ai thế?'},
      {sp:1,zh:'一个朋友。',py:'Yí ge péngyou.',vn:'Một người bạn thôi.'},
@@ -175,6 +179,11 @@ var dialogData = [
      {sp:1,zh:'不是不是，我同学介绍的，昨天第一次见。',py:'Bú shì bú shì, wǒ tóngxué jièshào de, zuótiān dì yī cì jiàn.',vn:'Không phải, không phải đâu, là bạn học tớ giới thiệu, hôm qua mới gặp lần đầu.'},
    ]},
   {scene:'在宿舍 · Trong phòng ký túc xá',
+   preQuiz:[
+     {q:'看报纸的女孩子是谁？',opts:['姐姐','妹妹','同学'],ans:0},
+     {q:'写字的人是谁？',opts:['哥哥','弟弟','朋友'],ans:0},
+     {q:'哥哥比女的大几岁？',opts:['两岁','三岁','四岁'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'左边这个看报纸的女孩子是你姐姐吗？',py:'Zuǒbiān zhège kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',vn:'Cô gái xem báo ở bên trái có phải chị gái bạn không?'},
      {sp:1,zh:'是，右边写字的那个人是我哥哥。',py:'Shì, yòubian xiě zì de nàge rén shì wǒ gēge.',vn:'Đúng vậy, còn người viết chữ bên phải là anh trai tớ.'},
@@ -182,12 +191,21 @@ var dialogData = [
      {sp:1,zh:'25岁，他比我大三岁。',py:'Èrshíwǔ suì, tā bǐ wǒ dà sān suì.',vn:'25 tuổi, anh ấy lớn hơn tớ 3 tuổi.'},
    ]},
   {scene:'在商店 · Ở cửa hàng',
+   preQuiz:[
+     {q:'今天的西瓜多少钱一斤？',opts:['两块五','三块五','四块五'],ans:1},
+     {q:'今天的西瓜和昨天比怎么样？',opts:['比昨天便宜','比昨天贵','一样'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'今天的西瓜怎么卖？',py:'Jīntiān de xīguā zěnme mài?',vn:'Dưa hấu hôm nay bán thế nào vậy?'},
      {sp:1,zh:'三块五一斤，比昨天便宜。',py:'Sān kuài wǔ yì jīn, bǐ zuótiān piányi.',vn:'3 tệ rưỡi một cân, rẻ hơn hôm qua đấy.'},
      {sp:0,zh:'苹果也比昨天便宜一些，您来点儿吧。',py:'Píngguǒ yě bǐ zuótiān piányi yìxiē, nín lái diǎnr ba.',vn:'Táo cũng rẻ hơn hôm qua một chút, bạn mua một ít đi.'},
    ]},
   {scene:'在学校 · Ở trường học',
+   preQuiz:[
+     {q:'前面说话的人是谁？',opts:['汉语老师','校长','同学'],ans:0},
+     {q:'这位老师是什么时候来的？',opts:['今年','去年','前年'],ans:1},
+     {q:'这位老师比女的的老师大还是小？',opts:['大两岁','小两岁','一样大'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'前面说话的那个人就是我的汉语老师，你可能不认识他。',py:'Qiánmiàn shuōhuà de nàge rén jiùshì wǒ de Hànyǔ lǎoshī, nǐ kěnéng bú rènshi tā.',vn:'Người nói chuyện phía trước chính là giáo viên tiếng Trung của chúng tớ, có thể bạn không quen thầy ấy đâu.'},
      {sp:1,zh:'是新来的汉语老师吗？',py:'Shì xīn lái de Hànyǔ lǎoshī ma?',vn:'Là giáo viên tiếng Trung mới đến à?'},

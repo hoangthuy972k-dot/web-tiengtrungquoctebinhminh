@@ -123,6 +123,10 @@ const wuData = [
 
 var dialogData = [
   {scene:'在教室 · Giờ giấc sinh hoạt',
+   preQuiz:[
+     {q:'女的每天几点起床？',opts:['五点多','六点多','七点多'],ans:1},
+     {q:'女的每天晚上几点睡觉？',opts:['九点','十点','十一点'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'你每天早上几点起床？',py:'Nǐ měitiān zǎoshang jǐ diǎn qǐchuáng?',vn:'Mỗi sáng bạn thức dậy lúc mấy giờ?'},
      {sp:1,zh:'六点多。',py:'Liù diǎn duō.',vn:'Hơn 6 giờ một chút.'},
@@ -130,6 +134,10 @@ var dialogData = [
      {sp:1,zh:'我睡得也早，我每天晚上十点就睡觉。早睡早起身体好。',py:'Wǒ shuì de yě zǎo, wǒ měitiān wǎnshang shí diǎn jiù shuìjiào. Zǎo shuì zǎo qǐ shēntǐ hǎo.',vn:'Tớ ngủ cũng sớm nữa, mỗi tối 10 giờ tớ đã đi ngủ rồi. Ngủ sớm dậy sớm tốt cho sức khỏe.'},
    ]},
   {scene:'在朋友家 · Mời khách ăn cơm',
+   preQuiz:[
+     {q:'男的觉得女的吃得怎么样？',opts:['吃得太少','吃得刚好','吃得太多'],ans:0},
+     {q:'谁做饭做得更好？',opts:['男的','男的的妻子','两人一样'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'再来点儿米饭吧，你吃得太少了。',py:'Zài lái diǎnr mǐfàn ba, nǐ chī de tài shǎo le.',vn:'Ăn thêm chút cơm nữa đi, bạn ăn ít quá.'},
      {sp:1,zh:'不少了，今天吃得很好，太谢谢你了。',py:'Bù shǎo le, jīntiān chī de hěn hǎo, tài xièxie nǐ le.',vn:'Không ít đâu, hôm nay tớ ăn ngon lắm, cảm ơn bạn rất nhiều nhé.'},
@@ -137,6 +145,11 @@ var dialogData = [
      {sp:1,zh:'不怎么样，我妻子比我做得好。',py:'Bù zěnmeyàng, wǒ qīzi bǐ wǒ zuò de hǎo.',vn:'Không ra làm sao cả, vợ tớ nấu ngon hơn tớ nhiều.'},
    ]},
   {scene:'在家门口 · Trời tuyết lạnh',
+   preQuiz:[
+     {q:'今天天气怎么样？',opts:['下雪，很冷','下雨','很热'],ans:0},
+     {q:'大概多少度？',opts:['零下十度','零度','十度'],ans:0},
+     {q:'他们决定怎么做？',opts:['进房间','继续在外面','去买衣服'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'下雪了，今天真冷。',py:'Xià xuě le, jīntiān zhēn lěng.',vn:'Tuyết rơi rồi, hôm nay lạnh thật.'},
      {sp:1,zh:'有零下十度吧。',py:'Yǒu líng xià shí dù ba.',vn:'Phải âm 10 độ ấy nhỉ.'},
@@ -144,6 +157,10 @@ var dialogData = [
      {sp:1,zh:'好吧。',py:'Hǎo ba.',vn:'Được thôi.'},
    ]},
   {scene:'在家里 · Nhờ tìm nhà',
+   preQuiz:[
+     {q:'女的在忙什么？',opts:['帮弟弟找房子','找工作','做饭'],ans:0},
+     {q:'弟弟为什么想换房子？',opts:['家离公司太远','房子太小','房租太贵'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你在忙什么呢？',py:'Nǐ zài máng shénme ne?',vn:'Bạn đang bận gì thế?'},
      {sp:1,zh:'我弟弟让我帮他找个房子。现在家离公司住得远，真的很累。',py:'Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi. Xiànzài jiā lí gōngsī zhù de yuǎn, zhēnde hěn lèi.',vn:'Em trai tớ nhờ tớ tìm giúp nó một căn nhà. Hiện tại nhà nó ở cách xa công ty quá, đi lại mệt lắm.'},

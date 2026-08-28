@@ -237,22 +237,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: phỏng vấn hỏi kinh nghiệm làm việc/sở thích.
 // Ôn lại 几/觉得 (Bài 1).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'他是去年开始工作的，已经工作一年多了。',
-   questions:[
-     {q:'他是什么时候开始工作的？',opts:['去年','今年','明年','不知道'],ans:0},
-     {q:'他工作多长时间了？',opts:['一年多','两年多','半年','不知道'],ans:0},
-   ]},
-  {audio:'小时候我非常喜欢踢足球，是8岁的时候开始踢的，现在已经踢了十几年了。',
-   questions:[
-     {q:'他是几岁开始踢足球的？',opts:['8岁','10岁','18岁','不知道'],ans:0},
-     {q:'他踢足球踢了多长时间？',opts:['十几年','一年','两年','不知道'],ans:0},
-   ]},
-  {audio:'这个工作是我朋友帮我介绍的，我觉得这份工作非常好。',
-   questions:[
-     {q:'这个工作是谁帮忙介绍的？',opts:['朋友','家人','老师','自己找的'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-4/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'妈妈知道电话', blank:'是谁打的', post:'。', py:'Māma zhīdào diànhuà shì shéi dǎ de.', vn:'Mẹ biết điện thoại là ai gọi đến.'},
+    ]},
+    {num:2, lines:[
+      {pre:'看，这是我', blank:'在和小王一起跑步', post:'。', py:'Kàn, zhè shì wǒ zài hé Xiǎo Wáng yìqǐ pǎobù.', vn:'Xem này, đây là tôi đang chạy bộ cùng Tiểu Vương.'},
+    ]},
+    {num:3, lines:[
+      {pre:'今天的晚饭', blank:'是我和丈夫一起做的', post:'。', py:'Jīntiān de wǎnfàn shì wǒ hé zhàngfu yìqǐ zuò de.', vn:'Bữa tối hôm nay là tôi và chồng cùng nấu.'},
+    ]},
+    {num:4, lines:[
+      {pre:'今天报纸', blank:'是王小姐买的', post:'。', py:'Jīntiān bàozhǐ shì Wáng xiǎojiě mǎi de.', vn:'Báo hôm nay là cô Vương mua.'},
+    ]},
+    {num:5, lines:[
+      {pre:'我非常喜欢这个工作，', blank:'已经工作两年了', post:'。', py:'Wǒ fēicháng xǐhuan zhège gōngzuò, yǐjīng gōngzuò liǎng nián le.', vn:'Tôi rất thích công việc này, đã làm được hai năm rồi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'你喜欢', blank:'吃中国菜吗', post:'？', py:'Nǐ xǐhuan chī Zhōngguó cài ma?', vn:'Bạn thích ăn món Trung Quốc không?'},
+      {speaker:'女', pre:'我非常喜欢吃，', blank:'我也会做', post:'。', py:'Wǒ fēicháng xǐhuan chī, wǒ yě huì zuò.', vn:'Tôi rất thích ăn, tôi cũng biết nấu.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'这个是', blank:'谁买的', post:'？', py:'Zhège shì shéi mǎi de?', vn:'Cái này ai mua vậy?'},
+      {speaker:'女', pre:'这个是安娜买的，', blank:'今天是大卫的生日', post:'。', py:'Zhège shì Ānnà mǎi de, jīntiān shì Dàwèi de shēngrì.', vn:'Cái này Anna mua, hôm nay là sinh nhật David.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'女', pre:'李先生出院', blank:'多长时间了', post:'？', py:'Lǐ xiānsheng chūyuàn duō cháng shíjiān le?', vn:'Ông Lý xuất viện được bao lâu rồi?'},
+      {speaker:'女', pre:'我不知道，', blank:'你问一下张医生吧', post:'。', py:'Wǒ bù zhīdào, nǐ wèn yíxià Zhāng yīshēng ba.', vn:'Tôi không biết, bạn hỏi bác sĩ Trương xem.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你怎么', blank:'认识芳芳的', post:'？', py:'Nǐ zěnme rènshi Fāngfāng de?', vn:'Bạn quen Phương Phương bằng cách nào?'},
+      {speaker:'男', pre:'是小明', blank:'帮我介绍的', post:'。', py:'Shì Xiǎomíng bāng wǒ jièshào de.', vn:'Là Tiểu Minh giới thiệu cho tôi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'男', pre:'女儿，你去', blank:'接一下电话', post:'。', py:'Nǚ\'ér, nǐ qù jiē yíxià diànhuà.', vn:'Con gái, con nghe điện thoại hộ bố.'},
+      {speaker:'女', pre:'对不起，爸爸，我', blank:'没时间接电话，我在做饭呢', post:'。', py:'Duìbuqǐ, bàba, wǒ méi shíjiān jiē diànhuà, wǒ zài zuò fàn ne.', vn:'Xin lỗi bố, con không có thời gian nghe điện thoại, con đang nấu cơm.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['张老师','小王','王老师'], ans:0,
+     explain:'女：小王，今天是张老师的生日。男：我知道。这本书是我买的，要送给张老师。问：这本书是送给谁的？ → 张老师。'},
+    {num:12, options:['大卫','李先生','不知道'], ans:1,
+     explain:'女：大卫，上午有你的一个电话。男：我知道，是李先生打的。问：上午的电话是谁打的？ → 李先生。'},
+    {num:13, options:['一年前','一年多了','两年前'], ans:2,
+     explain:'女：你的汉语真好！你是什么时候开始学汉语的？男：两年前开始的，我来中国已经一年多了。问：男的是什么时候开始学汉语的？ → 两年前。'},
+    {num:14, options:['很不喜欢','非常喜欢','不太喜欢'], ans:1,
+     explain:'女：你喜欢现在的工作吗？男：非常喜欢，我已经做了三年多了。问：他喜欢现在的工作吗？ → 非常喜欢。'},
+    {num:15, options:['十年','不到十年','十几年'], ans:0,
+     explain:'女：你什么时候认识谢先生的？男：我们十年前认识的，他是我的大学同学。问：男的和谢先生认识多长时间了？ → 十年。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chúc mừng sinh nhật + hỏi thăm công việc

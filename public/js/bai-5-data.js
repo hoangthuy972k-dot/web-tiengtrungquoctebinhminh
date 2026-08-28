@@ -240,22 +240,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: chuẩn bị thi, mua áo, hẹn uống cà phê.
 // Ôn lại 颜色/觉得 (Bài 1, 3).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我在准备明天的考试，还没有准备好，有点儿累。',
-   questions:[
-     {q:'他在准备什么？',opts:['考试','工作','生日','旅游'],ans:0},
-     {q:'他现在觉得怎么样？',opts:['有点儿累','很高兴','非常忙','身体不好'],ans:0},
-   ]},
-  {audio:'这件衣服颜色还可以，就是有点儿大，你觉得怎么样？',
-   questions:[
-     {q:'这件衣服怎么样？',opts:['颜色还可以，但是有点儿大','颜色不好看','太贵了','太小了'],ans:0},
-   ]},
-  {audio:'考试以后，我们一起去喝咖啡吧，我请客。',
-   questions:[
-     {q:'考试以后要做什么？',opts:['一起去喝咖啡','回家休息','去买衣服','去踢足球'],ans:0},
-     {q:'谁请客？',opts:['我','朋友','老师','大家一起'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-5/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'我今天有点儿累，', blank:'去外面吃晚饭吧', post:'。', py:'Wǒ jīntiān yǒudiǎnr lèi, qù wàimian chī wǎnfàn ba.', vn:'Hôm nay tôi hơi mệt, ra ngoài ăn tối đi.'},
+    ]},
+    {num:2, lines:[
+      {pre:'他们都', blank:'在准备下午的考试呢', post:'。', py:'Tāmen dōu zài zhǔnbèi xiàwǔ de kǎoshì ne.', vn:'Họ đều đang chuẩn bị cho kỳ thi chiều nay.'},
+    ]},
+    {num:3, lines:[
+      {pre:'医生说', blank:'喝茶对身体很好', post:'。', py:'Yīshēng shuō hē chá duì shēntǐ hěn hǎo.', vn:'Bác sĩ nói uống trà rất tốt cho sức khỏe.'},
+    ]},
+    {num:4, lines:[
+      {pre:'我准备了', blank:'你爱吃的鱼', post:'。', py:'Wǒ zhǔnbèi le nǐ ài chī de yú.', vn:'Tôi đã chuẩn bị con cá mà bạn thích ăn.'},
+    ]},
+    {num:5, lines:[
+      {pre:'这件衣服还不错，', blank:'你喜欢就买吧', post:'。', py:'Zhè jiàn yīfu hái búcuò, nǐ xǐhuan jiù mǎi ba.', vn:'Bộ quần áo này khá ổn, nếu bạn thích thì mua đi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'今天晚上你想', blank:'吃什么', post:'？', py:'Jīntiān wǎnshang nǐ xiǎng chī shénme?', vn:'Tối nay bạn muốn ăn gì?'},
+      {speaker:'女', pre:'我们在家吃吧，', blank:'就做你爱吃的', post:'。', py:'Wǒmen zài jiā chī ba, jiù zuò nǐ ài chī de.', vn:'Chúng ta ăn ở nhà đi, cứ nấu món bạn thích ăn.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'你', blank:'想不想去看电影', post:'？', py:'Nǐ xiǎng bu xiǎng qù kàn diànyǐng?', vn:'Bạn có muốn đi xem phim không?'},
+      {speaker:'女', pre:'我有点儿累，', blank:'在家看电视吧', post:'。', py:'Wǒ yǒudiǎnr lèi, zài jiā kàn diànshì ba.', vn:'Tôi hơi mệt, ở nhà xem tivi thôi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'你和小明', blank:'在做什么呢', post:'？', py:'Nǐ hé Xiǎomíng zài zuò shénme ne?', vn:'Bạn và Tiểu Minh đang làm gì vậy?'},
+      {speaker:'女', pre:'我们', blank:'在准备明天的考试呢', post:'。', py:'Wǒmen zài zhǔnbèi míngtiān de kǎoshì ne.', vn:'Chúng tôi đang chuẩn bị cho kỳ thi ngày mai.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'医生说每天', blank:'喝咖啡对身体不好', post:'。', py:'Yīshēng shuō měitiān hē kāfēi duì shēntǐ bù hǎo.', vn:'Bác sĩ nói uống cà phê mỗi ngày không tốt cho sức khỏe.'},
+      {speaker:'男', pre:'以后我', blank:'不喝咖啡了，喝茶', post:'。', py:'Yǐhòu wǒ bù hē kāfēi le, hē chá.', vn:'Sau này tôi không uống cà phê nữa, uống trà.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'你看看，这件衣服', blank:'怎么样', post:'？', py:'Nǐ kànkan, zhè jiàn yīfu zěnmeyàng?', vn:'Bạn xem thử, bộ quần áo này thế nào?'},
+      {speaker:'男', pre:'我觉得有点儿大，', blank:'那件还不错', post:'。', py:'Wǒ juéde yǒudiǎnr dà, nà jiàn hái búcuò.', vn:'Tôi thấy hơi to, cái kia khá ổn.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['外面','咖啡馆','书店'], ans:1,
+     explain:'女：外面有点儿冷！男：是啊，我们就在咖啡馆看书吧。问：他们在哪儿看书？ → 咖啡馆。'},
+    {num:12, options:['鱼','都爱吃','晚饭'], ans:0,
+     explain:'男：我去准备晚饭。你们爱吃什么？女：我丈夫和我都爱吃鱼。问：她丈夫最爱吃什么？ → 鱼。'},
+    {num:13, options:['他儿子不喜欢','椅子有点儿高','一百块钱'], ans:1,
+     explain:'女：这个椅子怎么样？男：我儿子不到一米，这个有点儿高。问：男的为什么不买这个椅子？ → 椅子有点儿高。'},
+    {num:14, options:['读和写还不错','说和写还不错','听和说还不错'], ans:2,
+     explain:'女：你昨天的考试怎么样？男：听和说还不错。问：男的昨天的考试怎么样？ → 听和说还不错。'},
+    {num:15, options:['一个','不吃','很多'], ans:2,
+     explain:'女：吃苹果对身体好，但是也不能吃太多。男：我以后少吃一点儿，每天吃一个。问：男的以前每天吃几个苹果？ → 很多（比一个多）。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: chuẩn bị thi & mua áo mới

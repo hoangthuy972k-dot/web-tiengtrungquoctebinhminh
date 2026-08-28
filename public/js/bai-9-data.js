@@ -205,22 +205,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: ngày đầu đi làm, kiểm tra hiểu bài.
 // Ôn lại 已经 (Bài 4).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'今天是我第一天上班，同事们都非常欢迎我，我希望在这儿工作得很好。',
-   questions:[
-     {q:'今天是他第几天上班？',opts:['第一天','第二天','最后一天','不知道'],ans:0},
-     {q:'同事们对他怎么样？',opts:['非常欢迎','不喜欢','不知道','很忙'],ans:0},
-   ]},
-  {audio:'老师说的话我都听懂了，可是题太多，我没做完。',
-   questions:[
-     {q:'他听懂了吗？',opts:['听懂了','没听懂','一点儿都不懂','不知道'],ans:0},
-     {q:'他做完题了吗？',opts:['没做完','做完了','不知道','没有做'],ans:0},
-   ]},
-  {audio:'他从去年开始学习中文，现在已经懂一点儿了。',
-   questions:[
-     {q:'他从什么时候开始学习中文？',opts:['去年','今年','明年','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-9/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'我第一次跳舞', blank:'是在七岁的时候', post:'。', py:'Wǒ dì-yī cì tiàowǔ shì zài qī suì de shíhou.', vn:'Lần đầu tiên tôi múa là lúc 7 tuổi.'},
+    ]},
+    {num:2, lines:[
+      {pre:'这是她的第一个工作，', blank:'她非常喜欢', post:'。', py:'Zhè shì tā de dì-yī gè gōngzuò, tā fēicháng xǐhuan.', vn:'Đây là công việc đầu tiên của cô ấy, cô ấy rất thích.'},
+    ]},
+    {num:3, lines:[
+      {pre:'今天的汉语课我', blank:'都听懂了', post:'。', py:'Jīntiān de Hànyǔ kè wǒ dōu tīngdǒng le.', vn:'Bài học tiếng Trung hôm nay tôi đều nghe hiểu hết.'},
+    ]},
+    {num:4, lines:[
+      {pre:'你看，衣服', blank:'都洗完了', post:'。', py:'Nǐ kàn, yīfu dōu xǐwán le.', vn:'Bạn xem, quần áo giặt xong hết rồi.'},
+    ]},
+    {num:5, lines:[
+      {pre:'考试的题太多了，', blank:'我没有做完', post:'。', py:'Kǎoshì de tí tài duō le, wǒ méiyǒu zuòwán.', vn:'Đề thi nhiều quá, tôi chưa làm xong.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'你从几岁', blank:'开始学跳舞', post:'？', py:'Nǐ cóng jǐ suì kāishǐ xué tiàowǔ?', vn:'Bạn học múa từ mấy tuổi?'},
+      {speaker:'女', pre:'我第一次跳舞', blank:'是在七岁的时候', post:'。', py:'Wǒ dì-yī cì tiàowǔ shì zài qī suì de shíhou.', vn:'Lần đầu tiên tôi múa là lúc 7 tuổi.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'今天的考试', blank:'怎么样', post:'？', py:'Jīntiān de kǎoshì zěnmeyàng?', vn:'Bài thi hôm nay thế nào?'},
+      {speaker:'男', pre:'不太好，', blank:'有几个题没做完', post:'。', py:'Bú tài hǎo, yǒu jǐ gè tí méi zuòwán.', vn:'Không tốt lắm, có vài câu chưa làm xong.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'你看见我的', blank:'手机了吗', post:'？', py:'Nǐ kànjiàn wǒ de shǒujī le ma?', vn:'Bạn có thấy điện thoại của tôi không?'},
+      {speaker:'女', pre:'就在', blank:'桌子上面，你看见了没有', post:'？', py:'Jiù zài zhuōzi shàngmian, nǐ kànjiàn le méiyǒu?', vn:'Ở ngay trên bàn kìa, bạn thấy chưa?'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'这么多的衣服，你一个人', blank:'能洗完吗', post:'？', py:'Zhème duō de yīfu, nǐ yí gè rén néng xǐwán ma?', vn:'Nhiều quần áo thế này, một mình bạn giặt xong được không?'},
+      {speaker:'男', pre:'你现在有时间吗？', blank:'帮我一起洗吧', post:'。', py:'Nǐ xiànzài yǒu shíjiān ma? Bāng wǒ yìqǐ xǐ ba.', vn:'Bạn có thời gian không? Giúp tôi giặt cùng đi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'这是我第一次去大医院，', blank:'医院里人真多啊', post:'。', py:'Zhè shì wǒ dì-yī cì qù dà yīyuàn, yīyuàn lǐ rén zhēn duō a.', vn:'Đây là lần đầu tôi đến bệnh viện lớn, trong bệnh viện đông người thật.'},
+      {speaker:'男', pre:'', blank:'是啊', post:'。', py:'Shì a.', vn:'Đúng vậy.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['想找女的','想找张欢','想去看看张欢'], ans:1,
+     explain:'男：您好，请问张欢在吗？女：对不起，我们这儿没有张欢，你打错电话了。问：男的为什么要打电话？ → 想找张欢。'},
+    {num:12, options:['昨天','今天','明天'], ans:2,
+     explain:'男：买到电影票了没有？今天晚上的。女：买到了，是明天的。今天的都卖完了。问：他们什么时候去看电影？ → 明天。'},
+    {num:13, options:['医院','学校','公司'], ans:0,
+     explain:'女：你真的认识去医院的路？是不是走错了？男：没错，就在那个公司的前面，学校的后面。问：他们想去哪儿？ → 医院。'},
+    {num:14, options:['没看见','看见了','没有报纸'], ans:0,
+     explain:'男：看见了没有？报纸就在电视的左边。女：等一下，你这儿的东西太多了。问：女的看见报纸了没有？ → 没看见。'},
+    {num:15, options:['没听懂','不会做','没做完'], ans:2,
+     explain:'男：昨天的考试怎么样？都做完了没有？女：题太多，我没做完。问：她昨天的考试怎么样？ → 没做完。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ngày đầu tiên đi làm

@@ -183,22 +183,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: ở phòng tập gym.
 // Ôn lại 有点儿(Bài 5), 已经(Bài 4/9), 一下(Bài 3), 完(Bài 9).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我正在健身房锻炼身体，运动对身体很好，可是今天有点儿累。',
-   questions:[
-     {q:'他在哪儿？',opts:['健身房','医院','学校','家里'],ans:0},
-     {q:'运动对身体怎么样？',opts:['很好','不好','没有帮助','不知道'],ans:0},
-   ]},
-  {audio:'教练说：别练太多了，你已经练了一个小时，休息一下吧。',
-   questions:[
-     {q:'教练让他做什么？',opts:['休息一下','继续练','马上回家','再练一个小时'],ans:0},
-     {q:'他已经练了多久？',opts:['一个小时','两个小时','半个小时','不知道'],ans:0},
-   ]},
-  {audio:'锻炼完以后，哥哥请我吃鸡蛋和西瓜，他说这样对身体有帮助。',
-   questions:[
-     {q:'锻炼完以后哥哥请他吃什么？',opts:['鸡蛋和西瓜','面条和米饭','咖啡和茶','没吃什么'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-10/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'看电影对', blank:'学习汉语有帮助', post:'。', py:'Kàn diànyǐng duì xuéxí Hànyǔ yǒu bāngzhù.', vn:'Xem phim có ích cho việc học tiếng Trung.'},
+    ]},
+    {num:2, lines:[
+      {pre:'妈妈，', blank:'别走了，我们休息休息吧', post:'。', py:'Māma, bié zǒu le, wǒmen xiūxi xiūxi ba.', vn:'Mẹ ơi, đừng đi vội, chúng ta nghỉ ngơi một chút đi.'},
+    ]},
+    {num:3, lines:[
+      {pre:'妈妈正在', blank:'准备午饭呢', post:'。', py:'Māma zhèngzài zhǔnbèi wǔfàn ne.', vn:'Mẹ đang chuẩn bị bữa trưa.'},
+    ]},
+    {num:4, lines:[
+      {pre:'张老师的手机', blank:'在桌子上呢', post:'。', py:'Zhāng lǎoshī de shǒujī zài zhuōzi shang ne.', vn:'Điện thoại của cô Trương ở trên bàn kìa.'},
+    ]},
+    {num:5, lines:[
+      {pre:'你的衣服我', blank:'帮你洗了', post:'。', py:'Nǐ de yīfu wǒ bāng nǐ xǐ le.', vn:'Quần áo của bạn tôi đã giặt giúp rồi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'别看电视了，', blank:'长时间看电视对眼睛不好', post:'。', py:'Bié kàn diànshì le, chángshíjiān kàn diànshì duì yǎnjīng bù hǎo.', vn:'Đừng xem tivi nữa, xem lâu không tốt cho mắt.'},
+      {speaker:'女', pre:'好的，我', blank:'去睡觉了', post:'。', py:'Hǎo de, wǒ qù shuìjiào le.', vn:'Được, tôi đi ngủ đây.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'明天的课你都', blank:'准备好了没有', post:'？', py:'Míngtiān de kè nǐ dōu zhǔnbèi hǎo le méiyǒu?', vn:'Bài học ngày mai bạn chuẩn bị xong hết chưa?'},
+      {speaker:'男', pre:'还没有呢，', blank:'正在准备', post:'。', py:'Hái méiyǒu ne, zhèngzài zhǔnbèi.', vn:'Chưa xong, đang chuẩn bị.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'医生，这个药', blank:'怎么吃', post:'？', py:'Yīshēng, zhège yào zěnme chī?', vn:'Bác sĩ, thuốc này uống thế nào?'},
+      {speaker:'女', pre:'饭后吃，', blank:'吃药以后两个小时不要喝茶', post:'。', py:'Fàn hòu chī, chī yào yǐhòu liǎng gè xiǎoshí bú yào hē chá.', vn:'Uống sau bữa ăn, sau khi uống thuốc 2 tiếng đừng uống trà.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'男', pre:'你怎么', blank:'买了这么多东西', post:'？', py:'Nǐ zěnme mǎile zhème duō dōngxi?', vn:'Sao bạn mua nhiều đồ thế?'},
+      {speaker:'女', pre:'今天有朋友', blank:'来我家吃饭', post:'。', py:'Jīntiān yǒu péngyou lái wǒ jiā chīfàn.', vn:'Hôm nay có bạn đến nhà tôi ăn cơm.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'你看见我', blank:'那件红色的衣服了吗', post:'？', py:'Nǐ kànjiàn wǒ nà jiàn hóngsè de yīfu le ma?', vn:'Bạn có thấy cái áo màu đỏ của tôi không?'},
+      {speaker:'男', pre:'我帮你洗了，', blank:'在外面呢', post:'。', py:'Wǒ bāng nǐ xǐ le, zài wàimian ne.', vn:'Tôi giặt giúp bạn rồi, đang phơi ngoài kia.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['电视好看','他不想睡觉','他想学习汉语'], ans:2,
+     explain:'女：大卫，不要看电视了，去睡觉吧。男：看电视对学习汉语有帮助，我再看一会儿。问：大卫为什么要看电视？ → 他想学习汉语。'},
+    {num:12, options:['茶不好喝','他生病了','他吃药了'], ans:2,
+     explain:'男：我想喝茶。女：医生说吃药后一个小时不要喝茶。问：男的为什么不能喝茶？ → 他吃药了。'},
+    {num:13, options:['不知道','床上','桌子上'], ans:0,
+     explain:'女：你看见我的手机了吗？我昨天晚上放在桌子上了。男：桌子上没有，你看看床上吧。问：女的的手机在哪儿？ → 不知道（男的只是建议去床上找找，并没有确认）。'},
+    {num:14, options:['不太忙','不太累','想休息'], ans:1,
+     explain:'男：过来喝杯水，休息一下吧。女：我不累。问：女的是什么意思？ → 不太累。'},
+    {num:15, options:['没有米饭','吃完了','很快就可以吃饭'], ans:2,
+     explain:'男：你别忙了，我不在这儿吃饭。女：菜很快就好了，吃了再走吧。问：女的是什么意思？ → 很快就可以吃饭。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ở phòng tập gym

@@ -177,22 +177,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: gọi lễ tân sửa phòng, mua áo hỏi màu.
 // Ôn lại 有点儿 (Bài 5), 颜色/觉得 (Bài 1, 3).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'服务员，我房间的网不太好，可以让人来看看吗？',
-   questions:[
-     {q:'他遇到了什么事情？',opts:['房间的网不好','门打不开','没有热水','东西丢了'],ans:0},
-     {q:'他想让服务员做什么？',opts:['让人来看看','换房间','退房','不知道'],ans:0},
-   ]},
-  {audio:'这件白的有点儿贵，那件黑的颜色还不错，你觉得怎么样？',
-   questions:[
-     {q:'白的怎么样？',opts:['有点儿贵','很便宜','很漂亮','不知道'],ans:0},
-     {q:'黑的颜色怎么样？',opts:['还不错','不好看','太黑了','没有黑的'],ans:0},
-   ]},
-  {audio:'你等我一下，我找找钥匙，找到了再告诉你。',
-   questions:[
-     {q:'他在找什么？',opts:['钥匙','衣服','手表','报纸'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-8/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'我喜欢', blank:'黑色的', post:'。', py:'Wǒ xǐhuan hēisè de.', vn:'Tôi thích cái màu đen.'},
+    ]},
+    {num:2, lines:[
+      {pre:'这个商店的', blank:'衣服很多', post:'。', py:'Zhège shāngdiàn de yīfu hěn duō.', vn:'Cửa hàng này có rất nhiều quần áo.'},
+    ]},
+    {num:3, lines:[
+      {pre:'公司的大门每天早上', blank:'六点开', post:'。', py:'Gōngsī de dàmén měitiān zǎoshang liù diǎn kāi.', vn:'Cổng công ty mở lúc 6 giờ sáng mỗi ngày.'},
+    ]},
+    {num:4, lines:[
+      {pre:'小张昨天', blank:'告诉我一件事', post:'。', py:'Xiǎo Zhāng zuótiān gàosu wǒ yí jiàn shì.', vn:'Tiểu Trương hôm qua nói cho tôi biết một việc.'},
+    ]},
+    {num:5, lines:[
+      {pre:'你的衣服', blank:'太长了，不好看', post:'。', py:'Nǐ de yīfu tài cháng le, bù hǎokàn.', vn:'Áo của bạn dài quá, không đẹp.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'女', pre:'中午我们一起', blank:'吃饭吧', post:'。', py:'Zhōngwǔ wǒmen yìqǐ chīfàn ba.', vn:'Trưa nay chúng ta cùng ăn cơm đi.'},
+      {speaker:'男', pre:'我现在很忙，你', blank:'五分钟后再给我打电话', post:'，好吗？', py:'Wǒ xiànzài hěn máng, nǐ wǔ fēnzhōng hòu zài gěi wǒ dǎ diànhuà, hǎo ma?', vn:'Tôi đang bận, lát nữa 5 phút gọi lại cho tôi nhé?'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'这件衣服', blank:'太贵了', post:'。', py:'Zhè jiàn yīfu tài guì le.', vn:'Bộ quần áo này đắt quá.'},
+      {speaker:'男', pre:'那你再看看', blank:'那件红的吧', post:'。', py:'Nà nǐ zài kànkan nà jiàn hóng de ba.', vn:'Vậy bạn xem thử cái màu đỏ kia đi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'大卫病了，我想', blank:'去医院看看他', post:'。', py:'Dàwèi bìng le, wǒ xiǎng qù yīyuàn kànkan tā.', vn:'David ốm rồi, tôi muốn đến bệnh viện thăm cậu ấy.'},
+      {speaker:'女', pre:'我跟你', blank:'一起去吧', post:'。', py:'Wǒ gēn nǐ yìqǐ qù ba.', vn:'Tôi đi cùng bạn nhé.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'房间的门', blank:'打不开了', post:'。', py:'Fángjiān de mén dǎ bu kāi le.', vn:'Cửa phòng không mở được nữa.'},
+      {speaker:'男', pre:'我', blank:'叫人去看看', post:'。', py:'Wǒ jiào rén qù kànkan.', vn:'Tôi sẽ gọi người đến xem thử.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'这是王小姐的报纸，你能', blank:'帮我给她吗', post:'？', py:'Zhè shì Wáng xiǎojiě de bàozhǐ, nǐ néng bāng wǒ gěi tā ma?', vn:'Đây là báo của cô Vương, bạn giúp tôi đưa cho cô ấy được không?'},
+      {speaker:'男', pre:'', blank:'好的', post:'。', py:'Hǎo de.', vn:'Được.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['手机','手表','自行车'], ans:0,
+     explain:'男：你看见我的手机了吗？女：让我想想，你看是不是在床上？问：男的在找什么？ → 手机。'},
+    {num:12, options:['想唱歌','想看电影','想看电视'], ans:1,
+     explain:'男：你给我打电话了？有什么事情吗？女：我想问问你晚上去不去看电影。问：女的为什么给男的打电话？ → 想看电影。'},
+    {num:13, options:['踢足球','跑步','打篮球'], ans:2,
+     explain:'女：外面天气很好，我们出去运动运动吧。男：好，打篮球怎么样？问：男的想做什么？ → 打篮球。'},
+    {num:14, options:['老师','医生','服务员'], ans:2,
+     explain:'男：你好，我房间的门打不开了。女：好的，先生。我叫人去看看。问：女的可能是做什么工作的？ → 服务员。'},
+    {num:15, options:['都不好','黑的','白的'], ans:0,
+     explain:'男：我想给妈妈买件衣服，你看这两件怎么样？女：这件白的有点儿长，那件黑的有点儿贵。问：女的觉得哪件衣服不错？ → 都不好。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: gọi lễ tân sửa điều hoà, mua áo

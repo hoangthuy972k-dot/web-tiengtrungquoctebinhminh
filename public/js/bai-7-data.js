@@ -231,22 +231,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: hỏi đường đến siêu thị/bệnh viện.
 // Ôn lại 因为 (Bài 6), 生日 (Bài 4).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'医院离我家不远，走十分钟就到了。',
-   questions:[
-     {q:'医院离他家远不远？',opts:['不远','很远','不知道','很远很远'],ans:0},
-     {q:'走路要多长时间？',opts:['十分钟','一个小时','半个小时','不知道'],ans:0},
-   ]},
-  {audio:'超市离公司很远，坐公共汽车要一个多小时，开车也不快，因为路上车太多。',
-   questions:[
-     {q:'超市离公司远吗？',opts:['很远','不远','不知道','一点儿都不远'],ans:0},
-     {q:'坐公共汽车要多长时间？',opts:['一个多小时','十分钟','半个小时','不知道'],ans:0},
-   ]},
-  {audio:'还有一个星期就是我的生日了，我们下个星期一起过吧。',
-   questions:[
-     {q:'还有多长时间是他的生日？',opts:['一个星期','一天','一个月','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-7/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'这是我们的', blank:'新教室', post:'。', py:'Zhè shì wǒmen de xīn jiàoshì.', vn:'Đây là lớp học mới của chúng tôi.'},
+    ]},
+    {num:2, lines:[
+      {pre:'我正在', blank:'去机场的路上呢', post:'。', py:'Wǒ zhèngzài qù jīchǎng de lùshang ne.', vn:'Tôi đang trên đường ra sân bay.'},
+    ]},
+    {num:3, lines:[
+      {pre:'我每天早上', blank:'六点就去跑步了', post:'。', py:'Wǒ měitiān zǎoshang liù diǎn jiù qù pǎobù le.', vn:'Tôi sáng nào cũng 6 giờ là đi chạy bộ rồi.'},
+    ]},
+    {num:4, lines:[
+      {pre:'我家离公司很远，', blank:'所以要坐公共汽车去公司', post:'。', py:'Wǒ jiā lí gōngsī hěn yuǎn, suǒyǐ yào zuò gōnggòngqìchē qù gōngsī.', vn:'Nhà tôi cách công ty rất xa, nên phải đi xe buýt đến công ty.'},
+    ]},
+    {num:5, lines:[
+      {pre:'大夫正', blank:'给他看病呢', post:'。', py:'Dàifu zhèng gěi tā kànbìng ne.', vn:'Bác sĩ đang khám bệnh cho anh ấy.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'大卫', blank:'回来了吗', post:'？', py:'Dàwèi huílai le ma?', vn:'David về chưa?'},
+      {speaker:'女', pre:'没有，他还', blank:'在教室学习呢', post:'。', py:'Méiyǒu, tā hái zài jiàoshì xuéxí ne.', vn:'Chưa, cậu ấy vẫn đang học ở lớp học.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'你家离学校', blank:'远吗', post:'？', py:'Nǐ jiā lí xuéxiào yuǎn ma?', vn:'Nhà bạn cách trường xa không?'},
+      {speaker:'女', pre:'很远，坐公共汽车', blank:'要一个多小时呢', post:'。', py:'Hěn yuǎn, zuò gōnggòngqìchē yào yí gè duō xiǎoshí ne.', vn:'Rất xa, đi xe buýt mất hơn một tiếng đấy.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'今天晚上一起吃饭吧。', blank:'给你过生日', post:'。', py:'Jīntiān wǎnshang yìqǐ chīfàn ba. Gěi nǐ guò shēngrì.', vn:'Tối nay cùng ăn cơm nhé. Mừng sinh nhật bạn.'},
+      {speaker:'女', pre:'好吧，', blank:'七点半怎么样', post:'？', py:'Hǎo ba, qī diǎn bàn zěnmeyàng?', vn:'Được, 7 giờ rưỡi thì sao?'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'在床上看书', blank:'对眼睛不好', post:'。', py:'Zài chuáng shang kàn shū duì yǎnjīng bù hǎo.', vn:'Nằm trên giường đọc sách không tốt cho mắt.'},
+      {speaker:'男', pre:'知道了，', blank:'再看一会儿就睡觉', post:'。', py:'Zhīdào le, zài kàn yíhuìr jiù shuìjiào.', vn:'Biết rồi, đọc thêm một chút nữa là ngủ.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'快起床吧。', blank:'八点了', post:'。', py:'Kuài qǐchuáng ba. Bā diǎn le.', vn:'Dậy nhanh đi. 8 giờ rồi.'},
+      {speaker:'男', pre:'没关系，我', blank:'再休息十分钟', post:'。', py:'Méi guānxi, wǒ zài xiūxi shí fēnzhōng.', vn:'Không sao, tôi nghỉ thêm 10 phút nữa.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['睡觉','考试','学习'], ans:2,
+     explain:'男：大卫睡觉了吗？女：他还没睡觉呢，他明天有考试。问：大卫在做什么？ → 学习。'},
+    {num:12, options:['路上','机场','飞机上'], ans:1,
+     explain:'男：你到机场了没有？女：我现在在去机场的路上呢，二十分钟后就到。问：女的想去哪儿？ → 机场。'},
+    {num:13, options:['坐公共汽车','自行车','出租车'], ans:0,
+     explain:'男：你家离公司远吗？女：我家离公司很远，我每天坐公共汽车去，要一个多小时呢。问：女的每天怎么去公司？ → 坐公共汽车。'},
+    {num:14, options:['二月一号','二月七号','二月十四号'], ans:2,
+     explain:'男：今天是你的生日吧？女：今天是二月七号，离我的生日还有一个星期呢。问：女的的生日是几号？ → 二月十四号。'},
+    {num:15, options:['不远','很远','不太远'], ans:0,
+     explain:'男：中午我们一起吃饭吧。女：好。我家前面有一个饭馆，走几分钟就到了。问：女的家离饭馆远吗？ → 不远。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi đường đến siêu thị

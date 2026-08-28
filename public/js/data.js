@@ -614,6 +614,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-9.html'
+      },
+      {
+        id: 'hsk1v3-l10',
+        number: 10,
+        title: 'Táo ở đây rẻ thật!',
+        titleHanzi: '这儿的苹果真便宜！',
+        titlePinyin: 'Zhèr de píngguǒ zhēn piányi!',
+        topic: 'Mua sắm & giá cả',
+        vocabCount: 23,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-10.html'
       }
     ],
     yct: [

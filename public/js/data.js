@@ -602,6 +602,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-8.html'
+      },
+      {
+        id: 'hsk1v3-l9',
+        number: 9,
+        title: 'Sáng mai mình học ở trường',
+        titleHanzi: '我明天上午在学校学习',
+        titlePinyin: 'Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí',
+        topic: 'Đồ vật, tồn tại & cuối tuần',
+        vocabCount: 23,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-9.html'
       }
     ],
     yct: [

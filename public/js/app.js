@@ -1813,7 +1813,7 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài tập ngữ pháp.</p>';
       return;
     }
-    if (!grQuiz) grQuiz = { pos: 0, score: 0 };
+    if (!grQuiz) { grQuiz = { pos: 0, score: 0 }; pgbInit('grq', items.length); }
 
     if (grQuiz.pos >= items.length) {
       recordLessonScore(currentHubLesson, 'grammar', { correct: grQuiz.score, total: items.length });
@@ -1828,11 +1828,9 @@
     var total = items.length;
     var q = items[grQuiz.pos];
     var type = q.type || 'mc';
-    var segs = '';
-    for (var i = 0; i < total; i++) segs += '<div class="vp-quiz-seg' + (i < grQuiz.pos ? ' is-done' : '') + '"></div>';
 
     wrap.innerHTML =
-      '<div class="vp-quiz-progress">' + segs + '</div>' +
+      pgbHtml('grq', total) +
       '<div class="vp-quiz-counter">Câu ' + (grQuiz.pos + 1) + '/' + total + ' <span class="gr-type-badge">' + GR_TYPE_LABEL[type] + '</span></div>' +
       '<div class="vp-quiz-card" id="grCard">' +
         (q.context ? '<div class="gr-exercise-context">🗣️ ' + q.context + '</div>' : '') +
@@ -1840,6 +1838,7 @@
         '<div id="grExplain" style="margin-top:var(--space-4);font-size:0.9rem;color:var(--color-gray-600);"></div>' +
         '<div id="grNextWrap"></div>' +
       '</div>';
+    pgbPaint('grq');
 
     if (type === 'sort') renderGrSort(q);
     else if (type === 'judge') renderGrJudge(q);
@@ -1849,6 +1848,7 @@
 
   function grFinishQuestion(isCorrect, explanation) {
     if (isCorrect) grQuiz.score++;
+    pgbRecord('grq', grQuiz.pos, isCorrect);
     $('#grExplain').textContent = '💡 ' + explanation;
     var total = (GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || []).length;
     var nextBtn = document.createElement('button');
@@ -2790,8 +2790,10 @@
     gmDone = new Set();
     gmOrder = shuffle(data.map(function (_, i) { return i; }));
 
+    pgbInit('gmMatch', data.length);
     var wrap = $('#gpGameArea');
     wrap.innerHTML =
+      pgbHtml('gmMatch', data.length) +
       '<p style="color:var(--color-gray-600);font-size:0.88rem;margin-bottom:var(--space-4);">Bấm 1 ô <b>bên trái</b> → bấm ô <b>bên phải</b> để ghép thành cặp đúng.</p>' +
       '<div class="mg-wrap">' +
         '<div class="mg-col"><div class="mg-col-label">TỪ 1</div><div id="mgLeft"></div></div>' +
@@ -2799,6 +2801,7 @@
       '</div>' +
       '<div class="mg-fb" id="mgFb"></div>' +
       '<button type="button" class="btn btn-outline" id="mgReset" style="margin-top:var(--space-4);">Làm lại</button>';
+    pgbPaint('gmMatch');
 
     var leftWrap = $('#mgLeft');
     var rightWrap = $('#mgRight');
@@ -2848,6 +2851,7 @@
       rightEl.classList.add('is-correct');
       gmDone.add('L' + gmSel);
       gmDone.add('R' + ri);
+      pgbRecord('gmMatch', gmSel, true);
       fb.innerHTML = '<span style="color:var(--color-green-600);">✓ Đúng rồi!</span>';
       if (gmDone.size === data.length * 2) {
         recordGameScore(currentHubLesson, 'match', data.length, data.length);
@@ -2863,8 +2867,11 @@
   }
 
   function renderGameFill(data) {
+    pgbInit('gmFill', data.length);
     var wrap = $('#gpGameArea');
-    wrap.innerHTML = data.map(function (q, i) {
+    wrap.innerHTML =
+      pgbHtml('gmFill', data.length) +
+      data.map(function (q, i) {
       return '<div class="sp-card fg-card" id="fgCard' + i + '">' +
         '<div class="fg-text hanzi"><span class="fg-num">' + (i + 1) + '</span>' + q.pre + '<input type="text" class="fg-input" id="fgInput' + i + '" placeholder="___">' + q.post + '</div>' +
         (q.hint ? '<div class="fg-hint">' + q.hint + '</div>' : '') +
@@ -2876,6 +2883,7 @@
         '<button type="button" class="btn btn-outline" id="fgReset">Làm lại</button>' +
       '</div>' +
       '<div class="fg-score" id="fgScore" hidden></div>';
+    pgbPaint('gmFill');
 
     $('#fgCheck').addEventListener('click', function () {
       var ok = 0;
@@ -2892,6 +2900,7 @@
         input.classList.add(correct ? 'is-correct' : 'is-wrong');
         fb.textContent = correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.ans + '"' + (q.exp ? ' — ' + q.exp : '');
         fb.className = 'fg-fb ' + (correct ? 'is-correct' : 'is-wrong');
+        pgbRecord('gmFill', i, correct);
         if (correct) ok++;
       });
       recordGameScore(currentHubLesson, 'fill', ok, data.length);
@@ -2911,8 +2920,11 @@
       return { placed: [], words: shuffle(s.words.slice()) };
     });
 
+    pgbInit('gmSort', data.length);
     var wrap = $('#gpGameArea');
-    wrap.innerHTML = data.map(function (s, i) {
+    wrap.innerHTML =
+      pgbHtml('gmSort', data.length) +
+      data.map(function (s, i) {
       return '<div class="sp-card sg-card" id="sgCard' + i + '">' +
         '<button type="button" class="vp-quiz-play-btn" data-speak="' + (s.audio || s.ans).replace(/"/g, '&quot;') + '">🔊 Nghe câu cần sắp xếp</button>' +
         '<div class="sg-bank" id="sgBank' + i + '"></div>' +
@@ -2925,6 +2937,7 @@
         '<button type="button" class="btn btn-outline" id="sgReset">Làm lại</button>' +
       '</div>' +
       '<div class="fg-score" id="sgScore" hidden></div>';
+    pgbPaint('gmSort');
 
     $all('[data-speak]', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
@@ -2946,6 +2959,7 @@
         card.classList.add(correct ? 'is-correct' : 'is-wrong');
         fb.textContent = correct ? '✓ Đúng!' : '✗ Đáp án: "' + s.ans + '"';
         fb.className = 'sg-fb ' + (correct ? 'is-correct' : 'is-wrong');
+        pgbRecord('gmSort', i, correct);
         if (correct) ok++;
       });
       recordGameScore(currentHubLesson, 'sort', ok, data.length);
@@ -2998,8 +3012,12 @@
   }
 
   function renderGameMcList(data, opts) {
+    var pgbId = 'gm-' + (opts.gameKey || 'mc');
+    pgbInit(pgbId, data.length);
     var wrap = $('#gpGameArea');
-    wrap.innerHTML = data.map(function (q, i) {
+    wrap.innerHTML =
+      pgbHtml(pgbId, data.length) +
+      data.map(function (q, i) {
       var promptHtml = opts.wrongPrefix
         ? '❌ ' + q.wrong + '<div class="mc-sub">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'
         : q.q;
@@ -3012,6 +3030,7 @@
         '<div class="mc-fb" id="mcFb' + i + '"></div>' +
       '</div>';
     }).join('') + '<div class="fg-score" id="mcScore" hidden></div>';
+    pgbPaint(pgbId);
 
     var answered = {};
 
@@ -3034,6 +3053,7 @@
         var q = data[qi];
         var correct = oi === q.ans;
         answered[qi] = correct;
+        pgbRecord(pgbId, qi, correct);
         $all('.vp-option-btn[data-qi="' + qi + '"]', wrap).forEach(function (b, j) {
           b.disabled = true;
           if (j === q.ans) b.classList.add('is-correct');

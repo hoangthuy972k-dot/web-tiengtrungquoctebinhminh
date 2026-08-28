@@ -638,6 +638,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-11.html'
+      },
+      {
+        id: 'hsk1v3-l12',
+        number: 12,
+        title: 'Hôm qua tuyết rơi rồi',
+        titleHanzi: '昨天下雪了',
+        titlePinyin: 'Zuótiān xià xuě le',
+        topic: 'Thời tiết & bệnh tật',
+        vocabCount: 24,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-12.html'
       }
     ],
     yct: [

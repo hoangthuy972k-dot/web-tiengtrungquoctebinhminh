@@ -161,23 +161,59 @@ var matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: rủ nhau đi ăn nhà hàng Tứ Xuyên mới mở.
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'你吃过四川菜吗？虽然很辣，但是很有意思，你一定要尝尝。',
-   questions:[
-     {q:'说话人觉得四川菜怎么样？',opts:['虽然辣但是很有意思','不好吃','太贵了','没有意思'],ans:0},
-     {q:'说话人建议做什么？',opts:['尝尝四川菜','不要吃','去公园玩儿','学做菜'],ans:0},
-   ]},
-  {audio:'我们上次去吃了一次，这次想再去吃一次，你要不要一起去？',
-   questions:[
-     {q:'他们已经去吃过几次？',opts:['一次','两次','三次','没去过'],ans:0},
-     {q:'这次想怎么样？',opts:['再去吃一次','不想去了','换一家店','去公园玩儿'],ans:0},
-   ]},
-  {audio:'今天天气很晴，我们吃完饭以后去公园玩儿吧，我大概学了一百个小时汉语了，想跟你练习说中文。',
-   questions:[
-     {q:'吃完饭以后要做什么？',opts:['去公园玩儿','回家睡觉','去上班','继续吃饭'],ans:0},
-     {q:'他学了多少个小时汉语？',opts:['一百个小时','一千个小时','十个小时','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-14/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'下个星期我要和女朋友', blank:'去看一次电影', post:'。', py:'Xià gè xīngqī wǒ yào hé nǚpéngyou qù kàn yí cì diànyǐng.', vn:'Tuần tới tôi sẽ cùng bạn gái đi xem một buổi phim.'},
+    ]},
+    {num:2, lines:[
+      {pre:'虽然工作很忙，', blank:'但是我每天都游泳', post:'。', py:'Suīrán gōngzuò hěn máng, dànshì wǒ měitiān dōu yóuyǒng.', vn:'Dù công việc rất bận, nhưng tôi ngày nào cũng đi bơi.'},
+    ]},
+    {num:3, lines:[
+      {pre:'你自己去跑步吧，', blank:'我还有事情要做呢', post:'。', py:'Nǐ zìjǐ qù pǎobù ba, wǒ hái yǒu shìqing yào zuò ne.', vn:'Bạn tự đi chạy bộ đi, tôi còn việc phải làm.'},
+    ]},
+    {num:4, lines:[
+      {pre:'这本书我', blank:'看过很多次了，真的很有意思', post:'。', py:'Zhè běn shū wǒ kànguo hěn duō cì le, zhēn de hěn yǒu yìsi.', vn:'Quyển sách này tôi đã đọc nhiều lần rồi, thật sự rất thú vị.'},
+    ]},
+    {num:5, lines:[
+      {pre:'长时间玩电脑对眼睛不好，', blank:'但是儿子非常喜欢', post:'。', py:'Chángshíjiān wán diànnǎo duì yǎnjīng bù hǎo, dànshì érzi fēicháng xǐhuan.', vn:'Chơi máy tính lâu không tốt cho mắt, nhưng con trai lại rất thích.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'女', pre:'爸爸，您看过这个电影吗？', blank:'我同学说很有意思', post:'。', py:'Bàba, nín kànguo zhège diànyǐng ma? Wǒ tóngxué shuō hěn yǒu yìsi.', vn:'Bố ơi, bố xem phim này chưa? Bạn con nói rất hay.'},
+      {speaker:'男', pre:'没看过，', blank:'下星期我们一起去看吧', post:'。', py:'Méi kànguo, xià xīngqī wǒmen yìqǐ qù kàn ba.', vn:'Chưa xem, tuần sau chúng ta cùng đi xem đi.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'虽然是晴天，', blank:'但是天气很冷', post:'。', py:'Suīrán shì qíngtiān, dànshì tiānqì hěn lěng.', vn:'Dù trời nắng, nhưng thời tiết rất lạnh.'},
+      {speaker:'男', pre:'没关系，我还要', blank:'和同学们一起打篮球呢', post:'。', py:'Méi guānxi, wǒ hái yào hé tóngxuémen yìqǐ dǎ lánqiú ne.', vn:'Không sao, tôi còn phải chơi bóng rổ cùng các bạn nữa.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'一起', blank:'吃早饭吧', post:'。', py:'Yìqǐ chī zǎofàn ba.', vn:'Cùng ăn sáng đi.'},
+      {speaker:'女', pre:'我已经吃过了，', blank:'你自己吃吧', post:'。', py:'Wǒ yǐjīng chīguo le, nǐ zìjǐ chī ba.', vn:'Tôi ăn rồi, bạn tự ăn đi.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'男', pre:'这次考试', blank:'怎么样', post:'？', py:'Zhè cì kǎoshì zěnmeyàng?', vn:'Bài thi lần này thế nào?'},
+      {speaker:'女', pre:'别说了，', blank:'很多学过的汉字我都不会写了', post:'。', py:'Bié shuō le, hěn duō xuéguo de Hànzì wǒ dōu bú huì xiě le.', vn:'Đừng nhắc nữa, nhiều chữ Hán đã học tôi đều quên viết rồi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'男', pre:'别买衣服了，', blank:'我没有那么多钱', post:'。', py:'Bié mǎi yīfu le, wǒ méiyǒu nàme duō qián.', vn:'Đừng mua quần áo nữa, tôi không có nhiều tiền vậy đâu.'},
+      {speaker:'女', pre:'没关系，', blank:'我这儿有钱', post:'。', py:'Méi guānxi, wǒ zhèr yǒu qián.', vn:'Không sao, tôi có tiền đây.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['一次','两次','三次'], ans:1,
+     explain:'男：您是第一次来我们这儿吗？女：不是，去年九月我来过一次。问：女的来过这里几次？ → 两次（去年一次+这次）。'},
+    {num:12, options:['东西好，便宜','东西不好，便宜','东西好，不便宜'], ans:2,
+     explain:'男：你在这个商店买过东西没有？女：买过一次，这儿的东西还可以，就是不便宜。问：女的是什么意思？ → 东西好，不便宜。'},
+    {num:13, options:['太忙','太累','不喜欢跑步'], ans:0,
+     explain:'女：明天一起去跑步吧。男：你自己去吧，我还有很多工作要做呢。问：男的为什么不去跑步？ → 太忙。'},
+    {num:14, options:['前天的','今天的','昨天的'], ans:2,
+     explain:'男：今天的报纸你看过了没有？女：没有，我在看昨天的报纸呢。问：女的看的是哪天的报纸？ → 昨天的。'},
+    {num:15, options:['不想让女的买','想让女的买','两百多块太贵了'], ans:1,
+     explain:'女：这件衣服不错，就是有点儿贵。男：两百多块还可以，喜欢就买吧。问：男的想让女的买这件衣服吗？ → 想让女的买。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: rủ nhau đi ăn nhà hàng Tứ Xuyên mới mở

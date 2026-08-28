@@ -167,23 +167,59 @@ var matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: tiệc tất niên ở công ty.
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'公司新年晚会的票大家都买好了，一共二十张。',
-   questions:[
-     {q:'晚会的票怎么样了？',opts:['都买好了','还没买','卖完了','不知道'],ans:0},
-     {q:'一共买了多少张票？',opts:['二十张','十张','三十张','不知道'],ans:0},
-   ]},
-  {audio:'新年就要到了，公司晚会就要开始了，大家都很高兴。',
-   questions:[
-     {q:'什么就要到了？',opts:['新年','生日','考试','放假'],ans:0},
-     {q:'大家心情怎么样？',opts:['很高兴','很难过','很累','不知道'],ans:0},
-   ]},
-  {audio:'我妹妹坐公共汽车去火车站接同事了，今天阴，比昨天更冷，她说要快点儿回来。',
-   questions:[
-     {q:'妹妹去火车站做什么？',opts:['接同事','买票','上班','买衣服'],ans:0},
-     {q:'今天天气怎么样？',opts:['阴，比昨天更冷','晴，很暖和','下雨','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-15/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'明天我要', blank:'去火车站买票', post:'。', py:'Míngtiān wǒ yào qù huǒchēzhàn mǎi piào.', vn:'Ngày mai tôi phải ra ga tàu mua vé.'},
+    ]},
+    {num:2, lines:[
+      {pre:'新年快要到了，', blank:'我想和朋友一起去旅游', post:'。', py:'Xīnnián kuàiyào dào le, wǒ xiǎng hé péngyou yìqǐ qù lǚyóu.', vn:'Năm mới sắp đến rồi, tôi muốn cùng bạn đi du lịch.'},
+    ]},
+    {num:3, lines:[
+      {pre:'她在公共汽车上呢，', blank:'我们等她一会儿吧', post:'。', py:'Tā zài gōnggòngqìchē shàng ne, wǒmen děng tā yíhuìr ba.', vn:'Cô ấy đang ở trên xe buýt, chúng ta đợi cô ấy một chút đi.'},
+    ]},
+    {num:4, lines:[
+      {pre:'今天天气不太好，', blank:'有点儿阴', post:'。', py:'Jīntiān tiānqì bú tài hǎo, yǒudiǎnr yīn.', vn:'Hôm nay thời tiết không tốt lắm, hơi âm u.'},
+    ]},
+    {num:5, lines:[
+      {pre:'王方是我妹妹，', blank:'她的歌唱得非常好', post:'。', py:'Wáng Fāng shì wǒ mèimei, tā de gē chàng de fēicháng hǎo.', vn:'Vương Phương là em gái tôi, cô ấy hát rất hay.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'女', pre:'你好！我的车出问题了，你们能', blank:'来帮我看一下吗', post:'？', py:'Nǐ hǎo! Wǒ de chē chū wèntí le, nǐmen néng lái bāng wǒ kàn yíxià ma?', vn:'Chào bạn! Xe tôi có vấn đề rồi, các bạn đến giúp tôi xem được không?'},
+      {speaker:'男', pre:'好的，请', blank:'告诉我您在哪儿', post:'。', py:'Hǎo de, qǐng gàosu wǒ nín zài nǎr.', vn:'Được, xin cho tôi biết bạn đang ở đâu.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'都六点了，你怎么', blank:'还不回家', post:'？', py:'Dōu liù diǎn le, nǐ zěnme hái bù huí jiā?', vn:'Đã 6 giờ rồi, sao bạn còn chưa về nhà?'},
+      {speaker:'女', pre:'我在想', blank:'晚饭吃什么呢', post:'。', py:'Wǒ zài xiǎng wǎnfàn chī shénme ne.', vn:'Tôi đang nghĩ tối nay ăn gì.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'这是你妹妹让我买的火车票，你能', blank:'帮我给她吗', post:'？', py:'Zhè shì nǐ mèimei ràng wǒ mǎi de huǒchēpiào, nǐ néng bāng wǒ gěi tā ma?', vn:'Đây là vé tàu em gái bạn nhờ tôi mua, bạn đưa giúp tôi cho cô ấy được không?'},
+      {speaker:'女', pre:'没问题，我', blank:'一会儿就给她', post:'。', py:'Méi wèntí, wǒ yíhuìr jiù gěi tā.', vn:'Không vấn đề gì, lát nữa tôi đưa cho cô ấy ngay.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'快要下课了，', blank:'还有哪位同学有问题', post:'？', py:'Kuàiyào xiàkè le, hái yǒu nǎ wèi tóngxué yǒu wèntí?', vn:'Sắp hết giờ rồi, còn bạn nào có câu hỏi không?'},
+      {speaker:'男', pre:'老师，我想', blank:'问一个问题', post:'。', py:'Lǎoshī, wǒ xiǎng wèn yí gè wèntí.', vn:'Thưa cô, em muốn hỏi một câu.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'男', pre:'你的狗怎么', blank:'不吃东西了', post:'？', py:'Nǐ de gǒu zěnme bù chī dōngxi le?', vn:'Sao con chó của bạn không ăn gì vậy?'},
+      {speaker:'女', pre:'它这几天', blank:'病了', post:'。', py:'Tā zhè jǐ tiān bìng le.', vn:'Mấy hôm nay nó bị ốm.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['去过','没有','去过很多次'], ans:1,
+     explain:'男：新年快要到了，你准备做什么？女：我听说北京很不错，我想和妈妈一起去北京旅游。问：女的去过北京吗？ → 没有（只是听说，还没去过）。'},
+    {num:12, options:['飞机票','汽车票','火车票'], ans:2,
+     explain:'男：你不是想回家过新年吗？买票了没有？女：还没有呢，明天我就去火车站买。问：女的想买什么票？ → 火车票。'},
+    {num:13, options:['来了','还没来','不知道'], ans:1,
+     explain:'女：都等了半个小时了，公共汽车怎么还没来？男：上班时间路上车多，再等一会儿吧，就快来了。问：公共汽车来了没有？ → 还没来。'},
+    {num:14, options:['不太好','下雨了','下雪了'], ans:0,
+     explain:'男：快要下雪了，我觉得比昨天更冷了。女：没关系，我穿的衣服比昨天多。问：今天天气怎么样？ → 不太好。'},
+    {num:15, options:['饭馆','学校','家里'], ans:2,
+     explain:'女：儿子，多吃菜啊。男：好，您做的菜比饭店的还好吃。问：他们最可能在哪儿说话？ → 家里。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: tiệc tất niên ở công ty

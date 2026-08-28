@@ -203,23 +203,59 @@ var matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: đón bạn ở sân bay.
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我在机场门口等你，我手里拿着一本红色的书，你一看就能认出我。',
-   questions:[
-     {q:'他在哪儿等？',opts:['机场门口','宾馆里','路口','班里'],ans:0},
-     {q:'他手里拿着什么？',opts:['一本红色的书','铅笔','手机','报纸'],ans:0},
-   ]},
-  {audio:'那个长着两个大眼睛、一直在笑的女孩不是你妹妹吗？',
-   questions:[
-     {q:'那个女孩子长什么样？',opts:['长着大眼睛、一直在笑','很矮','戴眼镜','不知道'],ans:0},
-     {q:'说话人怎么问？',opts:['不是你妹妹吗','是你妹妹','不认识她','是新同事'],ans:0},
-   ]},
-  {audio:'从机场出来一直往前走，到了路口往右走，就是宾馆了。',
-   questions:[
-     {q:'从机场出来先怎么走？',opts:['一直往前走','往左走','往右走','坐车走'],ans:0},
-     {q:'到了路口怎么走？',opts:['往右走','往左走','一直走','往后走'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-13/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'大卫', blank:'开着车出去了', post:'。', py:'Dàwèi kāizhe chē chūqù le.', vn:'David lái xe ra ngoài rồi.'},
+    ]},
+    {num:2, lines:[
+      {pre:'那个笑着说话的女孩儿', blank:'是谁', post:'？', py:'Nàge xiàozhe shuōhuà de nǚháir shì shéi?', vn:'Cô bé đang cười nói kia là ai vậy?'},
+    ]},
+    {num:3, lines:[
+      {pre:'那个手里拿着铅笔的人', blank:'是我朋友', post:'。', py:'Nàge shǒu lǐ ná zhe qiānbǐ de rén shì wǒ péngyou.', vn:'Người cầm bút chì trên tay kia là bạn tôi.'},
+    ]},
+    {num:4, lines:[
+      {pre:'我的女朋友长着两个大眼睛，', blank:'非常爱笑', post:'。', py:'Wǒ de nǚpéngyou zhǎngzhe liǎng gè dà yǎnjīng, fēicháng ài xiào.', vn:'Bạn gái tôi có đôi mắt to, rất hay cười.'},
+    ]},
+    {num:5, lines:[
+      {pre:'这儿离新京宾馆不太远，', blank:'到前面的路口再往右', post:'。', py:'Zhèr lí Xīnjīng Bīnguǎn bú tài yuǎn, dào qiánmiàn de lùkǒu zài wǎng yòu.', vn:'Chỗ này cách khách sạn Tân Kinh không xa lắm, đến ngã tư phía trước rẽ phải.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'那个非常爱笑的女孩儿', blank:'是谁', post:'？', py:'Nàge fēicháng ài xiào de nǚháir shì shéi?', vn:'Cô bé rất hay cười kia là ai vậy?'},
+      {speaker:'女', pre:'你不认识她吗？她叫笑笑，', blank:'是王老师的女儿', post:'。', py:'Nǐ bú rènshi tā ma? Tā jiào Xiàoxiao, shì Wáng lǎoshī de nǚ\'ér.', vn:'Bạn không quen à? Cô ấy tên Tiếu Tiếu, là con gái cô Vương.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'请问，这儿离商店', blank:'远吗', post:'？', py:'Qǐngwèn, zhèr lí shāngdiàn yuǎn ma?', vn:'Xin hỏi, chỗ này cách cửa hàng xa không?'},
+      {speaker:'男', pre:'不远，', blank:'往前走，下一个路口就是', post:'。', py:'Bù yuǎn, wǎng qián zǒu, xià yí gè lùkǒu jiù shì.', vn:'Không xa, đi thẳng, ngã tư tiếp theo là đến.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'那个手里拿着铅笔的孩子是', blank:'你妹妹吗', post:'？', py:'Nàge shǒu lǐ ná zhe qiānbǐ de háizi shì nǐ mèimei ma?', vn:'Đứa trẻ cầm bút chì kia là em gái bạn à?'},
+      {speaker:'女', pre:'不是，她是', blank:'我同学的妹妹', post:'。', py:'Bú shì, tā shì wǒ tóngxué de mèimei.', vn:'Không phải, đó là em gái bạn học của tôi.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'椅子上坐着的那个人', blank:'是谁', post:'？', py:'Yǐzi shàng zuòzhe de nàge rén shì shéi?', vn:'Người đang ngồi trên ghế kia là ai?'},
+      {speaker:'男', pre:'是我爸爸。他', blank:'有点儿累，正休息呢', post:'。', py:'Shì wǒ bàba. Tā yǒudiǎnr lèi, zhèng xiūxi ne.', vn:'Là bố tôi. Ông ấy hơi mệt, đang nghỉ ngơi.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'男', pre:'现在八点十分了，你', blank:'到机场了吗', post:'？', py:'Xiànzài bā diǎn shí fēn le, nǐ dào jīchǎng le ma?', vn:'Bây giờ 8 giờ 10 rồi, bạn đến sân bay chưa?'},
+      {speaker:'女', pre:'没有，我', blank:'还在出租车上呢，很快就到', post:'。', py:'Méiyǒu, wǒ hái zài chūzūchē shàng ne, hěn kuài jiù dào.', vn:'Chưa, tôi vẫn đang ở trên taxi, sắp đến rồi.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['在公司','在家里','在外面'], ans:2,
+     explain:'男：请问李先生在公司吗？女：他开着车出去了，你下午再来吧。问：李先生在哪儿？ → 在外面。'},
+    {num:12, options:['是','不是','不知道'], ans:1,
+     explain:'女：大卫是杨笑笑的男朋友吗？男：是杨笑笑的前男友。问：大卫现在是杨笑笑的男朋友吗？ → 不是。'},
+    {num:13, options:['书太大','书太多','书太贵'], ans:1,
+     explain:'男：你的书太多了，我帮你拿着吧。女：不用了，我一个人就可以了。问：男的为什么要帮女的拿书？ → 书太多。'},
+    {num:14, options:['喜欢红色','喜欢衣服','别人说好看'], ans:2,
+     explain:'男：为什么你每天都穿着红色的衣服？女：因为别人都说我穿红色的衣服好看。问：女的为什么每天都穿着红色的衣服？ → 别人说好看。'},
+    {num:15, options:['男的认识','女的认识','男的和女的都不认识'], ans:2,
+     explain:'男：那个笑着说话的女孩儿是谁？女：哪个？是穿红衣服的那个吗？男：对，就是她。女：她是新来的学生，我也不认识。问：谁认识那个女孩儿？ → 男的和女的都不认识。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: đón bạn ở sân bay

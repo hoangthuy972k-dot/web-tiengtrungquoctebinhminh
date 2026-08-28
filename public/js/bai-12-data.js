@@ -167,23 +167,59 @@ var matchData = [
 // PHẦN 2 · NGHE — tình huống MỚI: giải chạy marathon mùa đông.
 // Ôn lại 已经(Bài 4/9/10), 一下(Bài 3), 远(Bài 7).
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'今天零下五度，可是弟弟穿得不多，他说跑步的时候不冷。',
-   questions:[
-     {q:'今天多少度？',opts:['零下五度','零下十度','五度','十度'],ans:0},
-     {q:'弟弟穿得怎么样？',opts:['不多','很多','正好','不知道'],ans:0},
-   ]},
-  {audio:'妻子跑得比我快，她已经进终点了，我还在后面。',
-   questions:[
-     {q:'谁跑得快？',opts:['妻子','我','弟弟','教练'],ans:0},
-     {q:'妻子怎么样了？',opts:['已经进终点了','还没开始跑','正在准备','不知道'],ans:0},
-   ]},
-  {audio:'比赛结束后，我们进屋休息，屋子里比外面暖和，离家也不远，走一下就到了。',
-   questions:[
-     {q:'比赛结束后大家做什么？',opts:['进屋休息','继续跑步','马上回家','出去吃饭'],ans:0},
-     {q:'屋子离家怎么样？',opts:['不远','很远','要开车才到','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-12/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'你今天', blank:'起得真早', post:'。', py:'Nǐ jīntiān qǐ de zhēn zǎo.', vn:'Hôm nay bạn dậy sớm thật đấy.'},
+    ]},
+    {num:2, lines:[
+      {pre:'再来点儿米饭吧，', blank:'你吃得太少了', post:'。', py:'Zài lái diǎnr mǐfàn ba, nǐ chī de tài shǎo le.', vn:'Ăn thêm chút cơm đi, bạn ăn ít quá.'},
+    ]},
+    {num:3, lines:[
+      {pre:'下雪了，', blank:'今天真冷', post:'。', py:'Xiàxuě le, jīntiān zhēn lěng.', vn:'Tuyết rơi rồi, hôm nay lạnh thật.'},
+    ]},
+    {num:4, lines:[
+      {pre:'我觉得很热，', blank:'今天穿得太多了', post:'。', py:'Wǒ juéde hěn rè, jīntiān chuān de tài duō le.', vn:'Tôi thấy nóng quá, hôm nay mặc nhiều đồ quá.'},
+    ]},
+    {num:5, lines:[
+      {pre:'这件衣服', blank:'比弟弟送给我的那件漂亮', post:'。', py:'Zhè jiàn yīfu bǐ dìdi sòng gěi wǒ de nà jiàn piàoliang.', vn:'Bộ quần áo này đẹp hơn bộ mà em trai tặng tôi.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'我今天早上', blank:'七点就起床了', post:'。', py:'Wǒ jīntiān zǎoshang qī diǎn jiù qǐchuáng le.', vn:'Sáng nay tôi 7 giờ đã dậy rồi.'},
+      {speaker:'女', pre:'你比我', blank:'早起一个小时呢', post:'。', py:'Nǐ bǐ wǒ zǎo qǐ yí gè xiǎoshí ne.', vn:'Bạn dậy sớm hơn tôi một tiếng đấy.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'你做饭', blank:'做得怎么样', post:'？', py:'Nǐ zuò fàn zuò de zěnmeyàng?', vn:'Bạn nấu ăn thế nào?'},
+      {speaker:'男', pre:'不怎么样，', blank:'我妻子比我做得好', post:'。', py:'Bù zěnmeyàng, wǒ qīzi bǐ wǒ zuò de hǎo.', vn:'Không giỏi lắm, vợ tôi nấu ngon hơn tôi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'今天天气', blank:'真冷啊', post:'！', py:'Jīntiān tiānqì zhēn lěng a!', vn:'Hôm nay trời lạnh thật đấy!'},
+      {speaker:'女', pre:'是啊，我觉得', blank:'晚上可能下雪', post:'。', py:'Shì a, wǒ juéde wǎnshang kěnéng xiàxuě.', vn:'Đúng vậy, tôi thấy tối nay có thể có tuyết.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'大卫很喜欢', blank:'跑步', post:'。', py:'Dàwèi hěn xǐhuan pǎobù.', vn:'David rất thích chạy bộ.'},
+      {speaker:'男', pre:'是啊，他', blank:'跑得非常快', post:'。', py:'Shì a, tā pǎo de fēicháng kuài.', vn:'Đúng vậy, cậu ấy chạy rất nhanh.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'男', pre:'你今天', blank:'穿得真漂亮', post:'。', py:'Nǐ jīntiān chuān de zhēn piàoliang.', vn:'Hôm nay bạn mặc đẹp thật đấy.'},
+      {speaker:'女', pre:'谢谢，', blank:'今天是我的生日', post:'。', py:'Xièxie, jīntiān shì wǒ de shēngrì.', vn:'Cảm ơn, hôm nay là sinh nhật tôi.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['学习好','太累了','对身体好'], ans:2,
+     explain:'男：你每天几点睡觉？女：我每天十点就睡觉了，早睡早起身体好。问：女的为什么睡得很早？ → 对身体好。'},
+    {num:12, options:['很冷','不太冷','很热'], ans:0,
+     explain:'男：明天天气怎么样？女：零下十度，比今天冷多了。你要多穿点儿衣服。问：明天冷吗？ → 很冷。'},
+    {num:13, options:['男的','男的的妻子','女的'], ans:1,
+     explain:'女：你们家谁做饭做得好？男：我做得还可以，我妻子做的比我好吃。问：谁做饭做得最好？ → 男的的妻子。'},
+    {num:14, options:['离公司远','工作太累','离家有点儿远'], ans:0,
+     explain:'男：你这几天在忙什么呢？女：我弟弟让我帮他找个房子，他家离公司有点儿远。问：她弟弟为什么要找个房子？ → 离公司远。'},
+    {num:15, options:['不太好','非常好','还可以'], ans:2,
+     explain:'男：儿子这次考试考得怎么样？女：还不错，比上次好一些。问：儿子考得怎么样？ → 还可以。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: ngày chạy marathon mùa đông

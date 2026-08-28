@@ -195,6 +195,11 @@ const wuData = [
 
 var dialogData = [
   {scene:'在学校 · Bàn chuyện đi du lịch',
+   preQuiz:[
+     {q:'男的要去哪儿旅游？',opts:['北京','上海','广州'],ans:0},
+     {q:'女的觉得几月去最好？',opts:['八月','九月','十月'],ans:1},
+     {q:'为什么九月最好？',opts:['东西便宜','天气不冷也不热','人不多'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'我要去北京旅游，你觉得什么时候去最好？',py:'Wǒ yào qù Běijīng lǚyóu, nǐ juéde shénme shíhou qù zuì hǎo?',vn:'Tôi muốn đi Bắc Kinh du lịch, bạn nghĩ đi vào thời gian nào là tốt nhất?'},
      {sp:1,zh:'九月去北京旅游最好。',py:'Jiǔyuè qù Běijīng lǚyóu zuì hǎo.',vn:'Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất.'},
@@ -202,6 +207,11 @@ var dialogData = [
      {sp:1,zh:'九月的北京天气不冷也不热。',py:'Jiǔyuè de Běijīng tiānqì bù lěng yě bú rè.',vn:'Thời tiết Bắc Kinh vào tháng 9 không lạnh cũng không nóng.'},
    ]},
   {scene:'看照片 · Rủ nhau đi đá bóng',
+   preQuiz:[
+     {q:'男的最喜欢什么运动？',opts:['踢足球','游泳','打篮球'],ans:0},
+     {q:'他们打算什么时候去踢足球？',opts:['早上','下午','晚上'],ans:1},
+     {q:'女的同意一起去吗？',opts:['同意','不同意','没有回答'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你喜欢什么运动？',py:'Nǐ xǐhuan shénme yùndòng?',vn:'Bạn thích môn thể thao nào?'},
      {sp:1,zh:'我最喜欢踢足球。',py:'Wǒ zuì xǐhuan tī zúqiú.',vn:'Tôi thích đá bóng nhất.'},
@@ -209,6 +219,11 @@ var dialogData = [
      {sp:1,zh:'好啊。',py:'Hǎo a.',vn:'Được thôi.'},
    ]},
   {scene:'在家里 · Bàn chuyện mua ghế mới',
+   preQuiz:[
+     {q:'他们打算买什么？',opts:['椅子','桌子','杯子'],ans:0},
+     {q:'他们打算什么时候去买？',opts:['今天晚上','明天下午','后天早上'],ans:1},
+     {q:'女的明天几点能回来？',opts:['两点多','三点多','四点多'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'我们要不要买几个新的椅子？',py:'Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?',vn:'Chúng ta có cần mua vài chiếc ghế mới không?'},
      {sp:1,zh:'好啊，什么时候去买？',py:'Hǎo a, shénme shíhou qù mǎi?',vn:'Được thôi, khi nào thì đi mua?'},
@@ -216,6 +231,11 @@ var dialogData = [
      {sp:1,zh:'三点多。',py:'Sān diǎn duō.',vn:'Hơn 3 giờ một chút.'},
    ]},
   {scene:'在家里 · Nói chuyện về con mèo',
+   preQuiz:[
+     {q:'那只猫叫什么名字？',opts:['花花','毛毛','球球'],ans:0},
+     {q:'男的觉得猫的什么最漂亮？',opts:['眼睛','耳朵','尾巴'],ans:0},
+     {q:'那只猫多大了？',opts:['三个多月','六个多月','一年多'],ans:1},
+   ],
    lines:[
      {sp:0,zh:'桌子下面有个猫。',py:'Zhuōzi xiàmiàn yǒu ge māo.',vn:'Dưới gầm bàn có một con mèo kìa.'},
      {sp:1,zh:'那是我的猫，它叫花花。它很漂亮。',py:'Nà shì wǒ de māo, tā jiào Huāhua. Tā hěn piàoliang.',vn:'Đó là con mèo của tôi, nó tên là Hoa Hoa. Nó đẹp lắm.'},

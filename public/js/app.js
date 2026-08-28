@@ -1809,6 +1809,7 @@
   var dpScenes = [];
   var dpIndex = 0;
   var dpViewed = null;
+  var dpQuizState = {};
 
   function showDialoguePractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -1834,6 +1835,7 @@
       dpScenes = dialogData;
       dpIndex = 0;
       dpViewed = new Set();
+      dpQuizState = {};
       $('#dpSubtitle').textContent = dialogData.length + ' đoạn hội thoại';
       renderDialogueTabs();
       renderDialogueScene();
@@ -1869,10 +1871,6 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có hội thoại.</p>';
       return;
     }
-    if (dpViewed) {
-      dpViewed.add(dpIndex);
-      if (dpViewed.size === dpScenes.length) recordLessonScore(currentHubLesson, 'dialog', { done: true });
-    }
     var audioBase = audioBaseFor(currentHubLesson);
     var audioSrc = audioBase ? audioBase + '/dlg-' + (dpIndex + 1) + '.mp3' : null;
 
@@ -1880,18 +1878,70 @@
       ? '<div class="dp-audio-box"><div class="dp-audio-label">🎙️ Audio gốc giáo trình</div><audio controls preload="none" src="' + audioSrc + '"></audio></div>'
       : '<div class="dp-audio-box"><span class="dp-audio-missing">⚠️ Chưa có audio gốc cho đoạn này.</span></div>';
 
-    var linesHtml = scene.lines.map(function (line) {
-      var isB = line.sp === 1;
-      return '<div class="dp-line' + (isB ? ' is-b' : '') + '">' +
-        '<div class="dp-avatar">' + (isB ? 'B' : 'A') + '</div>' +
-        '<div class="dp-bubble"><div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
+    var hasQuiz = scene.preQuiz && scene.preQuiz.length;
+    if (!dpQuizState[dpIndex]) dpQuizState[dpIndex] = { answers: {}, revealed: !hasQuiz };
+    var state = dpQuizState[dpIndex];
+
+    var quizHtml = '';
+    if (hasQuiz) {
+      quizHtml =
+        '<div class="dp-quiz-box">' +
+          '<div class="dp-quiz-title">🎧 Nghe audio rồi trả lời trước khi xem nội dung bài khóa</div>' +
+          scene.preQuiz.map(function (q, qi) {
+            var answered = state.answers[qi] !== undefined;
+            var optsHtml = q.opts.map(function (opt, oi) {
+              var cls = 'dp-quiz-opt';
+              if (answered) {
+                if (oi === q.ans) cls += ' is-correct';
+                else if (oi === state.answers[qi]) cls += ' is-wrong';
+              }
+              return '<button type="button" class="' + cls + '" data-qi="' + qi + '" data-oi="' + oi + '"' + (answered ? ' disabled' : '') + '>' + opt + '</button>';
+            }).join('');
+            return '<div class="dp-quiz-q">' +
+              '<div class="dp-quiz-qtext">Câu ' + (qi + 1) + '. ' + q.q + '</div>' +
+              '<div class="dp-quiz-opts">' + optsHtml + '</div>' +
+            '</div>';
+          }).join('') +
+          (!state.revealed ? '<button type="button" class="dp-quiz-skip" id="dpQuizSkip">Bỏ qua, xem luôn nội dung bài khóa →</button>' : '') +
         '</div>';
-    }).join('');
+    }
+
+    var linesHtml = '';
+    if (state.revealed) {
+      linesHtml = scene.lines.map(function (line) {
+        var isB = line.sp === 1;
+        return '<div class="dp-line' + (isB ? ' is-b' : '') + '">' +
+          '<div class="dp-avatar">' + (isB ? 'B' : 'A') + '</div>' +
+          '<div class="dp-bubble"><div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
+          '</div>';
+      }).join('');
+      linesHtml = '<div class="dp-content-label">📖 Nội dung bài khóa</div>' + linesHtml;
+      if (dpViewed) {
+        dpViewed.add(dpIndex);
+        if (dpViewed.size === dpScenes.length) recordLessonScore(currentHubLesson, 'dialog', { done: true });
+      }
+    }
 
     wrap.innerHTML =
       '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>' +
       audioHtml +
+      quizHtml +
       linesHtml;
+
+    if (hasQuiz && !state.revealed) {
+      $all('.dp-quiz-opt', wrap).forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var qi = parseInt(btn.getAttribute('data-qi'), 10);
+          var oi = parseInt(btn.getAttribute('data-oi'), 10);
+          if (state.answers[qi] !== undefined) return;
+          state.answers[qi] = oi;
+          if (Object.keys(state.answers).length === scene.preQuiz.length) state.revealed = true;
+          renderDialogueScene();
+        });
+      });
+      var skipBtn = $('#dpQuizSkip', wrap);
+      if (skipBtn) skipBtn.addEventListener('click', function () { state.revealed = true; renderDialogueScene(); });
+    }
   }
 
   /* ---------------- Listen practice (Luyen nghe: chon nghia / chon chu Han / hoi thoai) ---------------- */

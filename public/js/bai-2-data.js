@@ -264,26 +264,62 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — tình huống MỚI: hỏi thăm sức khỏe đồng nghiệp,
-// khám sức khỏe định kỳ. Ôn lại 为什么/觉得/要 (Bài 1).
+// PHẦN 2 · NGHE (Listening) — đề nghe THẬT từ HSK标准教程2 练习册 (Bài 2)
+// 1 file audio duy nhất chứa đủ cả câu 1-15 (Phần 1+2+3)
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'小李每天早上都跑步，是不是身体很好？他说：是啊，我很少生病。',
-   questions:[
-     {q:'小李是不是身体很好？',opts:['是','不是','不知道','他没说'],ans:0},
-     {q:'小李每天什么时候跑步？',opts:['早上','晚上','中午','他没有时间跑步'],ans:0},
-   ]},
-  {audio:'王老师这几天很忙，没有时间休息，他觉得很累。',
-   questions:[
-     {q:'王老师为什么很累？',opts:['因为很忙，没有时间休息','因为生病了','因为要去旅游','因为在跑步'],ans:0},
-     {q:'王老师现在怎么样？',opts:['很忙很累','很高兴','身体很好','要出院了'],ans:0},
-   ]},
-  {audio:'他今年20多岁，一米8多高，医生说他身体很好。',
-   questions:[
-     {q:'"20多岁"是什么意思？',opts:['超过20岁','正好20岁','不到20岁','不知道'],ans:0},
-     {q:'医生说他身体怎么样？',opts:['很好','生病了','很忙','很累'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-2/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'医生说要住一个月，', blank:'现在不能出院', post:'。', py:'Yīshēng shuō yào zhù yí gè yuè, xiànzài bù néng chūyuàn.', vn:'Bác sĩ nói phải nằm viện một tháng, bây giờ chưa thể xuất viện.'},
+    ]},
+    {num:2, lines:[
+      {pre:'我爸爸', blank:'每天早上都要运动', post:'。', py:'Wǒ bàba měitiān zǎoshang dōu yào yùndòng.', vn:'Bố tôi sáng nào cũng phải vận động.'},
+    ]},
+    {num:3, lines:[
+      {pre:'张先生', blank:'已经给大卫打电话了', post:'。', py:'Zhāng xiānsheng yǐjīng gěi Dàwèi dǎ diànhuà le.', vn:'Ông Trương đã gọi điện cho David rồi.'},
+    ]},
+    {num:4, lines:[
+      {pre:'他最近太累了，', blank:'已经生病了', post:'。', py:'Tā zuìjìn tài lèi le, yǐjīng shēngbìng le.', vn:'Anh ấy gần đây quá mệt, đã bị ốm rồi.'},
+    ]},
+    {num:5, lines:[
+      {pre:'她每天十二点睡觉，', blank:'早上九点起床', post:'。', py:'Tā měitiān shí\'èr diǎn shuìjiào, zǎoshang jiǔ diǎn qǐchuáng.', vn:'Cô ấy ngày nào cũng ngủ lúc 12 giờ, sáng dậy lúc 9 giờ.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'男', pre:'你爸爸', blank:'每天运动吗', post:'？', py:'Nǐ bàba měitiān yùndòng ma?', vn:'Bố bạn ngày nào cũng vận động à?'},
+      {speaker:'女', pre:'对，他', blank:'每天早上出去跑步', post:'。', py:'Duì, tā měitiān zǎoshang chūqu pǎobù.', vn:'Đúng vậy, sáng nào bố cũng ra ngoài chạy bộ.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'男', pre:'你', blank:'怎么了', post:'？', py:'Nǐ zěnme le?', vn:'Bạn sao vậy?'},
+      {speaker:'女', pre:'', blank:'身体不好，已经两天了', post:'。', py:'Shēntǐ bù hǎo, yǐjīng liǎng tiān le.', vn:'Người không khỏe, đã hai ngày rồi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'明天下午你有时间吗？', blank:'我们去看电影吧', post:'。', py:'Míngtiān xiàwǔ nǐ yǒu shíjiān ma? Wǒmen qù kàn diànyǐng ba.', vn:'Chiều mai bạn có thời gian không? Chúng ta đi xem phim đi.'},
+      {speaker:'女', pre:'对不起，我', blank:'要看书，没有时间', post:'。', py:'Duìbuqǐ, wǒ yào kàn shū, méiyǒu shíjiān.', vn:'Xin lỗi, tôi phải đọc sách, không có thời gian.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'你的小女儿', blank:'多高', post:'？', py:'Nǐ de xiǎo nǚ\'ér duō gāo?', vn:'Con gái nhỏ của bạn cao bao nhiêu?'},
+      {speaker:'男', pre:'', blank:'一米多一点儿吧', post:'。', py:'Yì mǐ duō yìdiǎnr ba.', vn:'Hơn một mét một chút.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'医生，我明天', blank:'能出院吗', post:'？', py:'Yīshēng, wǒ míngtiān néng chūyuàn ma?', vn:'Bác sĩ, ngày mai tôi có thể xuất viện không?'},
+      {speaker:'男', pre:'能，', blank:'回家每天吃这个药', post:'。', py:'Néng, huí jiā měitiān chī zhège yào.', vn:'Được, về nhà uống thuốc này mỗi ngày.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['能','不能','不知道'], ans:1,
+     explain:'女：你什么时候能出院？男：医生说要再住三天看一看。问：男的明天能出院吗？ → 不能。'},
+    {num:12, options:['六点多','七点多','十点多'], ans:2,
+     explain:'女：你每天早上几点起床？男：七点多，星期六和星期天十点多起床。问：男的星期六几点起床？ → 十点多。'},
+    {num:13, options:['不累','很累','累'], ans:0,
+     explain:'女：你一个人做饭累不累？答：不累，我很喜欢做饭。问：女的觉得做饭累不累？ → 不累。'},
+    {num:14, options:['工作了','在学习','在找工作'], ans:0,
+     explain:'女：你女儿今年多大了？男：今年23岁，已经工作了。问：男的的女儿现在工作了吗？ → 工作了。'},
+    {num:15, options:['去医院了','病了','身体好多了'], ans:1,
+     explain:'女：我这几天身体不好，吃了很多药。男：我和你一起去医院看看吧。问：女的怎么了？ → 病了。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi thăm đồng nghiệp mới ốm dậy

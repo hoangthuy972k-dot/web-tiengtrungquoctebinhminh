@@ -210,23 +210,59 @@ var matchData = [
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — tình huống MỚI: giờ ăn trưa ở công ty, bàn về đồng nghiệp mới.
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'公司新来的男同事姓王，是去年来的，他比我大两岁。',
-   questions:[
-     {q:'新同事姓什么？',opts:['王','李','张','陈'],ans:0},
-     {q:'他是什么时候来公司的？',opts:['去年','今年','上个月','不知道'],ans:0},
-   ]},
-  {audio:'前面说话的那个女孩子可能是新来的实习生，她唱歌唱得很好。',
-   questions:[
-     {q:'前面说话的人可能是谁？',opts:['新来的实习生','老板','客人','老师'],ans:0},
-     {q:'她什么做得很好？',opts:['唱歌','说话','工作','游泳'],ans:0},
-   ]},
-  {audio:'今天食堂的菜比昨天便宜一些，大家都说要多吃点儿。',
-   questions:[
-     {q:'今天食堂的菜怎么样？',opts:['比昨天便宜','比昨天贵','跟昨天一样','不知道'],ans:0},
-     {q:'大家怎么说？',opts:['多吃点儿','少吃点儿','别吃了','不知道'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/bai-11/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {pre:'昨天我和朋友们一起', blank:'去唱歌了', post:'。', py:'Zuótiān wǒ hé péngyoumen yìqǐ qù chànggē le.', vn:'Hôm qua tôi cùng các bạn đi hát.'},
+    ]},
+    {num:2, lines:[
+      {pre:'右边看报纸的那个女孩子', blank:'是我姐姐', post:'。', py:'Yòubiān kàn bàozhǐ de nàge nǚháizi shì wǒ jiějie.', vn:'Cô bé đang đọc báo bên phải là chị gái tôi.'},
+    ]},
+    {num:3, lines:[
+      {pre:'他是', blank:'新来的汉语老师', post:'。', py:'Tā shì xīn lái de Hànyǔ lǎoshī.', vn:'Anh ấy là giáo viên tiếng Trung mới đến.'},
+    ]},
+    {num:4, lines:[
+      {pre:'北京10°C，我们那儿的天气', blank:'比北京的冷', post:'。', py:'Běijīng shí dù, wǒmen nàr de tiānqì bǐ Běijīng de lěng.', vn:'Bắc Kinh 10 độ, thời tiết chỗ chúng tôi lạnh hơn Bắc Kinh.'},
+    ]},
+    {num:5, lines:[
+      {pre:'她生病了，', blank:'明天可能不去上课了', post:'。', py:'Tā shēngbìng le, míngtiān kěnéng bú qù shàngkè le.', vn:'Cô ấy bị ốm, ngày mai có thể sẽ không đi học.'},
+    ]},
+    {num:6, lines:[
+      {speaker:'女', pre:'昨天和你一起唱歌的人', blank:'是谁', post:'？', py:'Zuótiān hé nǐ yìqǐ chànggē de rén shì shéi?', vn:'Người hôm qua hát cùng bạn là ai?'},
+      {speaker:'男', pre:'是', blank:'我女朋友', post:'。', py:'Shì wǒ nǚpéngyou.', vn:'Là bạn gái tôi.'},
+    ]},
+    {num:7, lines:[
+      {speaker:'女', pre:'右边看报纸的那个是', blank:'你哥哥吗', post:'？', py:'Yòubiān kàn bàozhǐ de nàge shì nǐ gēge ma?', vn:'Người đang đọc báo bên phải là anh trai bạn à?'},
+      {speaker:'男', pre:'对，他', blank:'是我哥哥', post:'。', py:'Duì, tā shì wǒ gēge.', vn:'Đúng vậy, anh ấy là anh trai tôi.'},
+    ]},
+    {num:8, lines:[
+      {speaker:'男', pre:'她是你们', blank:'新来的老师吗', post:'？', py:'Tā shì nǐmen xīn lái de lǎoshī ma?', vn:'Cô ấy là giáo viên mới đến của các bạn à?'},
+      {speaker:'女', pre:'她不是新来的老师，她', blank:'去年就来了', post:'。', py:'Tā bú shì xīn lái de lǎoshī, tā qùnián jiù lái le.', vn:'Cô ấy không phải giáo viên mới, cô ấy đến từ năm ngoái rồi.'},
+    ]},
+    {num:9, lines:[
+      {speaker:'女', pre:'今天的苹果', blank:'比昨天的便宜一些，你来点儿吗', post:'？', py:'Jīntiān de píngguǒ bǐ zuótiān de piányi yìxiē, nǐ lái diǎnr ma?', vn:'Táo hôm nay rẻ hơn hôm qua một chút, bạn lấy ít không?'},
+      {speaker:'男', pre:'我', blank:'再看看吧', post:'。', py:'Wǒ zài kànkan ba.', vn:'Để tôi xem thêm đã.'},
+    ]},
+    {num:10, lines:[
+      {speaker:'女', pre:'前边说话的那几个人', blank:'是谁', post:'？', py:'Qiánbian shuōhuà de nà jǐ gè rén shì shéi?', vn:'Mấy người đang nói chuyện đằng trước là ai vậy?'},
+      {speaker:'男', pre:'不认识，可能', blank:'是新来的学生吧', post:'。', py:'Bú rènshi, kěnéng shì xīn lái de xuésheng ba.', vn:'Không quen, có thể là học sinh mới đến.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['她的同学','她的男朋友','她的一个朋友'], ans:2,
+     explain:'男：昨天和你一起唱歌的人是谁？女：是一个朋友，我同学介绍的，昨天第一次见。问：昨天和女的一起唱歌的人是谁？ → 她的一个朋友。'},
+    {num:12, options:['25岁','22岁','28岁'], ans:1,
+     explain:'男：你哥哥多大？女：他25岁，比我大三岁。问：女的多大了？ → 22岁。'},
+    {num:13, options:['西瓜太贵','苹果很多','苹果好吃'], ans:0,
+     explain:'女：西瓜三块钱一斤，苹果一块五一斤。男：苹果比西瓜便宜多了，我还是买苹果吧。问：男的为什么买苹果？ → 西瓜太贵（相对苹果贵）。'},
+    {num:14, options:['女的和男的一样大','女的比男的大','男的比女的大'], ans:1,
+     explain:'男：你的生日是四月二十八号？女：是。你的生日是哪天？男：我也是那天的生日。我是八七年的，你呢？女：那我比你大一岁。问：他们两个人谁大？ → 女的比男的大。'},
+    {num:15, options:['病了','没睡觉','没休息好'], ans:2,
+     explain:'男：你的眼睛怎么红了？女：是吗？可能是没休息好。男：那今天晚上早点儿睡觉吧。女：好的，谢谢。问：女的怎么了？ → 没休息好。'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: giờ ăn trưa, bàn về đồng nghiệp mới & giá cơm

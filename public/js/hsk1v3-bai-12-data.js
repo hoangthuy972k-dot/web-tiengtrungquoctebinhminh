@@ -130,6 +130,15 @@ var vocabData = [
    ]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-12/xiayu.jpg',label:'下雨',py:'xià yǔ',letter:'A'},
+  {img:'/images/hsk1v3-bai-12/leng.jpg',label:'冷',py:'lěng',letter:'B'},
+  {img:'/images/hsk1v3-bai-12/shengbing.jpg',label:'生病',py:'shēngbìng',letter:'C'},
+  {img:'/images/hsk1v3-bai-12/kanbing.jpg',label:'看病',py:'kànbìng',letter:'D'},
+  {img:'/images/hsk1v3-bai-12/xue.jpg',label:'雪',py:'xuě',letter:'E'},
+  {img:'/images/hsk1v3-bai-12/shui.jpg',label:'水',py:'shuǐ',letter:'F'},
+];
+
 var dialogData = [
   {scene:'王一雪打电话给王一飞询问天气 · Hỏi thăm thời tiết',
    preQuiz:[

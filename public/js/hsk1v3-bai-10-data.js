@@ -107,6 +107,15 @@ var vocabData = [
    exList:[{zh:'男孩子的衣服在那儿。',py:'Nán háizi de yīfu zài nàr.',vn:'Quần áo dành cho bé trai ở đằng kia cơ.'}]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-10/yifu.jpg',label:'衣服',py:'yīfu',letter:'A'},
+  {img:'/images/hsk1v3-bai-10/pianyi.jpg',label:'便宜',py:'piányi',letter:'B'},
+  {img:'/images/hsk1v3-bai-10/pingguo.jpg',label:'苹果',py:'píngguǒ',letter:'C'},
+  {img:'/images/hsk1v3-bai-10/chuan.jpg',label:'穿',py:'chuān',letter:'D'},
+  {img:'/images/hsk1v3-bai-10/beizi.jpg',label:'杯子',py:'bēizi',letter:'E'},
+  {img:'/images/hsk1v3-bai-10/shangdian.jpg',label:'商店',py:'shāngdiàn',letter:'F'},
+];
+
 var dialogData = [
   {scene:'王一雪在一家小店买杯子 · Mua cốc',
    preQuiz:[

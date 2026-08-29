@@ -98,6 +98,15 @@ var vocabData = [
    ]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-13/mianbao.jpg',label:'面包',py:'miànbāo',letter:'A'},
+  {img:'/images/hsk1v3-bai-13/shuo.jpg',label:'说',py:'shuō',letter:'B'},
+  {img:'/images/hsk1v3-bai-13/gei.jpg',label:'给',py:'gěi',letter:'C'},
+  {img:'/images/hsk1v3-bai-13/cha.jpg',label:'茶',py:'chá',letter:'D'},
+  {img:'/images/hsk1v3-bai-13/yiban.jpg',label:'一半',py:'yíbàn',letter:'E'},
+  {img:'/images/hsk1v3-bai-13/qing.jpg',label:'请',py:'qǐng',letter:'F'},
+];
+
 var dialogData = [
   {scene:'白家月下课后问王老师问题 · Hỏi thêm một câu',
    preQuiz:[

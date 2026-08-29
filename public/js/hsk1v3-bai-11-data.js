@@ -115,6 +115,15 @@ var vocabData = [
    exList:[{zh:'他今天要和小朋友玩。',py:'Tā jīntiān yào hé xiǎopéngyǒu wán.',vn:'Hôm nay em muốn chơi với các bạn.'}]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-11/kaiche.jpg',label:'开车',py:'kāichē',letter:'A'},
+  {img:'/images/hsk1v3-bai-11/shuijiao.jpg',label:'睡觉',py:'shuìjiào',letter:'B'},
+  {img:'/images/hsk1v3-bai-11/wen.jpg',label:'问',py:'wèn',letter:'C'},
+  {img:'/images/hsk1v3-bai-11/fandian.jpg',label:'饭店',py:'fàndiàn',letter:'D'},
+  {img:'/images/hsk1v3-bai-11/zhao.jpg',label:'找',py:'zhǎo',letter:'E'},
+  {img:'/images/hsk1v3-bai-11/daxuesheng.jpg',label:'大学生',py:'dàxuéshēng',letter:'F'},
+];
+
 var dialogData = [
   {scene:'王一飞给正在找饭店的李文打电话 · Tìm nhà hàng',
    preQuiz:[

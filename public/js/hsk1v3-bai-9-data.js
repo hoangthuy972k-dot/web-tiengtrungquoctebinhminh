@@ -113,6 +113,15 @@ var vocabData = [
    exList:[{zh:'我在家里做饭、看电视，和孩子们、小狗玩。',py:'Wǒ zài jiā li zuò fàn, kàn diànshì, hé háizimen, xiǎo gǒu wán.',vn:'Em ở nhà nấu ăn, xem ti vi, chơi với các con và con chó nhỏ.'}]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-9/xiaogou.jpg',label:'小狗',py:'xiǎo gǒu',letter:'A'},
+  {img:'/images/hsk1v3-bai-9/dianshi.jpg',label:'电视',py:'diànshì',letter:'B'},
+  {img:'/images/hsk1v3-bai-9/xuexi.jpg',label:'学习',py:'xuéxí',letter:'C'},
+  {img:'/images/hsk1v3-bai-9/wan.jpg',label:'玩',py:'wán',letter:'D'},
+  {img:'/images/hsk1v3-bai-9/yizi.jpg',label:'椅子',py:'yǐzi',letter:'E'},
+  {img:'/images/hsk1v3-bai-9/shu.jpg',label:'书',py:'shū',letter:'F'},
+];
+
 var dialogData = [
   {scene:'李文和白家月在校园里聊天儿 · Hẹn xem phim',
    preQuiz:[

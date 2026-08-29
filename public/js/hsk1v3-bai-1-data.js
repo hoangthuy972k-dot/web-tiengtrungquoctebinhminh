@@ -205,7 +205,11 @@ var wbData = {
           {img:'/images/hsk1v3-bai-1-wb/cha.jpg', py:'chá', hz:'茶'},
           {img:'/images/hsk1v3-bai-1-wb/gou.jpg', py:'gǒu', hz:'狗'},
           {img:'/images/hsk1v3-bai-1-wb/mao.jpg', py:'māo', hz:'猫'},
-          {img:'/images/hsk1v3-bai-1-wb/cai.jpg', py:'cài', hz:'菜'}
+          {img:'/images/hsk1v3-bai-1-wb/cai.jpg', py:'cài', hz:'菜'},
+          {img:'/images/hsk1v3-bai-1-wb/beizi.jpg', py:'bēizi', hz:'杯子'},
+          {img:'/images/hsk1v3-bai-1-wb/xuesheng.jpg', py:'xuésheng', hz:'学生'},
+          {img:'/images/hsk1v3-bai-1-wb/laoshi.jpg', py:'lǎoshī', hz:'老师'},
+          {img:'/images/hsk1v3-bai-1-wb/jidan.jpg', py:'jīdàn', hz:'鸡蛋'}
         ] },
         { type: 'table', caption: 'Thanh mẫu và vận mẫu (1)',
           headers: ['Thanh mẫu (声母)', 'Vận mẫu ghép được (韵母)'],
@@ -216,12 +220,6 @@ var wbData = {
             ['', 'ang, eng, ong']
           ],
           note: 'Lưu ý: chỉ n và l ghép được với vận mẫu "ü"/các vần bắt đầu bằng "ü". Thanh mẫu b, p, f không ghép với "e". Thanh mẫu f, g, k, h không ghép với "i". Vận mẫu "er" luôn đứng riêng một mình, không ghép với thanh mẫu nào.' },
-        { type: 'photos', items: [
-          {img:'/images/hsk1v3-bai-1-wb/beizi.jpg', py:'bēizi', hz:'杯子'},
-          {img:'/images/hsk1v3-bai-1-wb/xuesheng.jpg', py:'xuésheng', hz:'学生'},
-          {img:'/images/hsk1v3-bai-1-wb/laoshi.jpg', py:'lǎoshī', hz:'老师'},
-          {img:'/images/hsk1v3-bai-1-wb/jidan.jpg', py:'jīdàn', hz:'鸡蛋'}
-        ] },
         { type: 'tones' },
         { type: 'table', caption: 'Luyện đọc theo 4 thanh điệu',
           headers: ['Thanh 1', 'Thanh 2', 'Thanh 3', 'Thanh 4'],

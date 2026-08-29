@@ -650,6 +650,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-12.html'
+      },
+      {
+        id: 'hsk1v3-l13',
+        number: 13,
+        title: 'Cho tôi một cốc trà',
+        titleHanzi: '请给我一杯茶',
+        titlePinyin: 'Qǐng gěi wǒ yì bēi chá',
+        topic: 'Gọi món & xin phép',
+        vocabCount: 21,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-13.html'
       }
     ],
     yct: [

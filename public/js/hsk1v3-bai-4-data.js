@@ -129,7 +129,7 @@ var vocabData = [
    ]},
 ];
 
-const wuData = [
+var wuData = [
   {img:'✋',label:'五',py:'wǔ',letter:'A'},
   {img:'👦',label:'哥哥',py:'gēge',letter:'B'},
   {img:'🙋',label:'学生',py:'xuésheng',letter:'C'},

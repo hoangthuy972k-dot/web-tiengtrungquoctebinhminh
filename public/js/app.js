@@ -259,6 +259,7 @@
     $('#home').hidden = false;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -276,6 +277,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = false;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -363,7 +365,7 @@
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
     hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
-    hsk1v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
+    hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
@@ -381,6 +383,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = false;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -411,7 +414,12 @@
         '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
         '<span class="hub-tile-label">' + def.label + '</span>' +
         '<svg class="icon hub-tile-arrow" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>';
-      if (tabId === 'vocab') {
+      if (tabId === 'warmup') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showWarmupPractice(levelId, lesson);
+        });
+      } else if (tabId === 'vocab') {
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showVocabPractice(levelId, lesson);
@@ -479,6 +487,120 @@
     $('#lessonHub').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  /* ---------------- Warmup (khoi dong: noi hinh anh voi chu Han) ---------------- */
+
+  var wpItems = [];
+  var wpSel = null;
+  var wpDone = null;
+
+  function showWarmupPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = false;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
+    $('#wpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+
+    loadLessonWarmup(lesson).then(function (data) {
+      wpItems = data || [];
+      wpSel = null;
+      wpDone = new Set();
+      $('#wpSubtitle').textContent = wpItems.length
+        ? wpItems.length + ' cặp hình ảnh - chữ Hán để ghép'
+        : 'Bài học này chưa có phần khởi động';
+      if (wpItems.length) pgbInit('wpq', wpItems.length);
+      renderWarmupPractice();
+    }).catch(function () {
+      $('#wpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung khởi động của bài này.</p>';
+    });
+
+    $('#warmupPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderWarmupPractice() {
+    var wrap = $('#wpContent');
+    if (!wpItems.length) {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có phần khởi động.</p>';
+      return;
+    }
+    var shuffledCards = shuffle(wpItems.slice());
+    var shuffledOpts = shuffle(wpItems.slice());
+    wrap.innerHTML =
+      pgbHtml('wpq', wpItems.length) +
+      '<div class="wu-grid" id="wpGrid">' +
+        shuffledCards.map(function (w) {
+          return '<div class="wu-card" id="wpc_' + w.letter + '" data-letter="' + w.letter + '">' +
+            '<div class="wu-emoji">' + w.img + '</div><div class="wu-label">（ ？ ）</div></div>';
+        }).join('') +
+      '</div>' +
+      '<div style="margin:var(--space-4) 0 var(--space-2);font-weight:600;color:var(--color-gray-600);font-size:0.9rem;">Các từ để nối:</div>' +
+      '<div class="wu-options" id="wpOpts">' +
+        shuffledOpts.map(function (w) {
+          return '<button type="button" class="wu-opt" id="wpopt_' + w.letter + '" data-letter="' + w.letter + '">' + w.letter + '. ' + w.label + '</button>';
+        }).join('') +
+      '</div>' +
+      '<div style="min-height:24px;font-size:0.9rem;margin-top:var(--space-3);" id="wpFb"></div>';
+    pgbPaint('wpq');
+
+    $all('.wu-card', wrap).forEach(function (card) {
+      card.addEventListener('click', function () { wpSelectCard(card.dataset.letter, card); });
+    });
+    $all('.wu-opt', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { wpSelectOpt(btn.dataset.letter); });
+    });
+  }
+
+  function wpSelectCard(letter, el) {
+    if (wpDone.has(letter)) return;
+    $all('.wu-card', $('#wpContent')).forEach(function (c) {
+      if (!c.classList.contains('matched')) c.classList.remove('is-sel');
+    });
+    wpSel = letter;
+    el.classList.add('is-sel');
+    $('#wpFb').innerHTML = '<span style="color:var(--color-blue-600);">← Bây giờ chọn đáp án chữ!</span>';
+  }
+
+  function wpSelectOpt(letter) {
+    var fb = $('#wpFb');
+    if (!wpSel) { fb.innerHTML = '<span style="color:var(--color-gold-500);">Hãy chọn hình ảnh trước!</span>'; return; }
+    if (wpDone.has('O' + letter)) return;
+    var correct = wpSel === letter;
+    var idx = wpItems.findIndex(function (w) { return w.letter === wpSel; });
+    var cardEl = document.getElementById('wpc_' + wpSel);
+    var optEl = document.getElementById('wpopt_' + letter);
+    var w = wpItems[idx];
+    if (correct) {
+      cardEl.classList.add('matched');
+      cardEl.classList.remove('is-sel');
+      cardEl.querySelector('.wu-label').innerHTML = '<strong>' + w.label + '</strong><br><span class="wu-py">' + w.py + '</span>';
+      optEl.classList.add('is-correct');
+      optEl.disabled = true;
+      wpDone.add(wpSel); wpDone.add('O' + letter);
+      pgbRecord('wpq', idx, true);
+      wpSel = null;
+      fb.innerHTML = '<span style="color:var(--color-green-600);">✓ Đúng rồi!</span>';
+      if (wpDone.size === wpItems.length * 2) {
+        fb.innerHTML = '<span style="color:var(--color-red-600);font-weight:700;">🎉 Hoàn thành! Bạn đã ghép đúng tất cả!</span>';
+        recordLessonScore(currentHubLesson, 'warmup', { correct: wpItems.length, total: wpItems.length });
+      }
+    } else {
+      optEl.classList.add('is-wrong');
+      fb.innerHTML = '<span style="color:var(--color-red-600);">✗ Chưa đúng, thử lại!</span>';
+      setTimeout(function () { optEl.classList.remove('is-wrong'); }, 600);
+    }
+  }
+
   /* ---------------- Vocab practice (danh sach tu + 4 che do quiz) ---------------- */
 
   var vpZhVoice = null;
@@ -519,6 +641,7 @@
         var data;
         try {
           data = JSON.parse(JSON.stringify({
+            wuData: iframe.contentWindow.wuData || [],
             vocabData: iframe.contentWindow.vocabData || [],
             dialogData: iframe.contentWindow.dialogData || [],
             listenData: iframe.contentWindow.listenData || [],
@@ -550,6 +673,10 @@
 
   function loadLessonVocab(lesson) {
     return loadLessonRawData(lesson).then(function (data) { return data.vocabData; });
+  }
+
+  function loadLessonWarmup(lesson) {
+    return loadLessonRawData(lesson).then(function (data) { return data.wuData; });
   }
 
   function loadLessonDialog(lesson) {
@@ -984,6 +1111,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = false;
     $('#grammarPractice').hidden = true;
@@ -1781,6 +1909,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = false;
@@ -2035,6 +2164,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -2193,6 +2323,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -2456,6 +2587,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -2743,6 +2875,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3117,6 +3250,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3249,6 +3383,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3355,6 +3490,7 @@
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3692,6 +3828,11 @@
     $('#levelDetailBack').addEventListener('click', showDashboard);
     $('#lessonHubBack').addEventListener('click', function () {
       if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#wpBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();
     });
     $('#vocabBack').addEventListener('click', function () {

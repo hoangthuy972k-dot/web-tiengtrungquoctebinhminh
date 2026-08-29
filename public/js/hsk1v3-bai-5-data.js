@@ -135,7 +135,7 @@ var vocabData = [
    ]},
 ];
 
-const wuData = [
+var wuData = [
   {img:'📅',label:'2025 年 5 月',py:'èr líng èr wǔ nián wǔ yuè',letter:'A'},
   {img:'🈷️',label:'星期一',py:'Xīngqīyī',letter:'B'},
   {img:'💻',label:'电脑',py:'diànnǎo',letter:'C'},

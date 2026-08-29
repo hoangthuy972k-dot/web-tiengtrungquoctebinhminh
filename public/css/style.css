@@ -3205,6 +3205,20 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   margin-bottom: var(--space-2);
 }
 
+.wu-photo {
+  margin: calc(var(--space-4) * -1) calc(var(--space-2) * -1) var(--space-2);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.wu-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .wu-label {
   font-family: var(--font-hanzi);
   font-size: 0.95rem;

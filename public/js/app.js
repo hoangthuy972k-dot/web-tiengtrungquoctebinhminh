@@ -540,8 +540,11 @@
       pgbHtml('wpq', wpItems.length) +
       '<div class="wu-grid" id="wpGrid">' +
         shuffledCards.map(function (w) {
+          var media = /^\//.test(w.img)
+            ? '<div class="wu-photo"><img src="' + w.img + '" alt="" loading="lazy"></div>'
+            : '<div class="wu-emoji">' + w.img + '</div>';
           return '<div class="wu-card" id="wpc_' + w.letter + '" data-letter="' + w.letter + '">' +
-            '<div class="wu-emoji">' + w.img + '</div><div class="wu-label">（ ？ ）</div></div>';
+            media + '<div class="wu-label">（ ？ ）</div></div>';
         }).join('') +
       '</div>' +
       '<div style="margin:var(--space-4) 0 var(--space-2);font-weight:600;color:var(--color-gray-600);font-size:0.9rem;">Các từ để nối:</div>' +

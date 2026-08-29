@@ -111,6 +111,15 @@ var vocabData = [
    exList:[{zh:'我爸爸也在医院工作，他也非常忙。',py:'Wǒ bàba yě zài yīyuàn gōngzuò, tā yě fēicháng máng.',vn:'Bố em cũng làm việc ở bệnh viện, ông ấy cũng bận lắm.'}]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-8/xiaomao.jpg',label:'小猫',py:'xiǎo māo',letter:'A'},
+  {img:'/images/hsk1v3-bai-8/xuexiao.jpg',label:'学校',py:'xuéxiào',letter:'B'},
+  {img:'/images/hsk1v3-bai-8/shudian.jpg',label:'书店',py:'shūdiàn',letter:'C'},
+  {img:'/images/hsk1v3-bai-8/yisheng.jpg',label:'医生',py:'yīshēng',letter:'D'},
+  {img:'/images/hsk1v3-bai-8/zhuozi.jpg',label:'桌子',py:'zhuōzi',letter:'E'},
+  {img:'/images/hsk1v3-bai-8/fangjian.jpg',label:'房间',py:'fángjiān',letter:'F'},
+];
+
 var dialogData = [
   {scene:'白家月和陈天中在王一飞家做客 · Con mèo nhỏ',
    preQuiz:[

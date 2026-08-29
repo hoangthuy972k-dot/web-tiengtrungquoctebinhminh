@@ -260,6 +260,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -278,6 +279,7 @@
     $('#levelDetail').hidden = false;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -350,7 +352,8 @@
     mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal' },
     game: { label: 'Game ôn tập', emoji: '🎮', color: 'indigo' },
     speak: { label: 'Luyện nói', emoji: '🗣️', color: 'purple' },
-    translate: { label: 'Luyện dịch', emoji: '🔄', color: 'pink' }
+    translate: { label: 'Luyện dịch', emoji: '🔄', color: 'pink' },
+    workbook: { label: 'Luyện tập sách bài tập', emoji: '📓', color: 'green' }
   };
 
   // match/fill/sort/errfix/mc gop chung vao 1 o "Game on tap" tren giao dien chinh
@@ -365,7 +368,7 @@
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
     hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
-    hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
+    hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook'],
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
@@ -384,6 +387,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = false;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -458,6 +462,11 @@
         tile.addEventListener('click', function (e) {
           e.preventDefault();
           showTranslatePractice(levelId, lesson);
+        });
+      } else if (tabId === 'workbook') {
+        tile.addEventListener('click', function (e) {
+          e.preventDefault();
+          showWorkbookPractice(levelId, lesson);
         });
       }
       grid.appendChild(tile);
@@ -604,6 +613,147 @@
     }
   }
 
+  /* ---------------- Workbook practice (Luyen tap sach bai tap) ---------------- */
+
+  var wbSections = [];
+  var wbActiveIdx = 0;
+
+  function showWorkbookPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#workbookPractice').hidden = false;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
+    $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    $('#wbTabs').innerHTML = '';
+
+    loadLessonWorkbook(lesson).then(function (data) {
+      wbSections = (data && data.sections) || [];
+      wbActiveIdx = 0;
+      if (!wbSections.length) {
+        $('#wbTabs').innerHTML = '';
+        $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có nội dung sách bài tập.</p>';
+        return;
+      }
+      renderWbTabs();
+      renderWbContent();
+    }).catch(function () {
+      $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung sách bài tập của bài này.</p>';
+    });
+
+    $('#workbookPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function renderWbTabs() {
+    var wrap = $('#wbTabs');
+    wrap.innerHTML = wbSections.map(function (s, i) {
+      return '<button type="button" class="vp-tab' + (i === wbActiveIdx ? ' active' : '') + '" data-wb-idx="' + i + '">' + s.title + '</button>';
+    }).join('');
+    $all('.vp-tab', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        wbActiveIdx = parseInt(btn.getAttribute('data-wb-idx'), 10);
+        renderWbTabs();
+        renderWbContent();
+      });
+    });
+  }
+
+  function wbRenderTable(block) {
+    var theadHtml = block.headers
+      ? '<thead><tr>' + block.headers.map(function (h) { return '<th>' + h + '</th>'; }).join('') + '</tr></thead>'
+      : '';
+    var rowsHtml = block.rows.map(function (row) {
+      return '<tr>' + row.map(function (cell) { return '<td>' + (cell === '' ? '—' : cell) + '</td>'; }).join('') + '</tr>';
+    }).join('');
+    return '<div class="wb-block">' +
+      (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
+      '<div class="wb-table-wrap"><table class="wb-table">' + theadHtml + '<tbody>' + rowsHtml + '</tbody></table></div>' +
+      (block.note ? '<p class="wb-note">' + block.note + '</p>' : '') +
+      '</div>';
+  }
+
+  function wbRenderPhotos(block) {
+    return '<div class="wb-block">' +
+      (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
+      '<div class="wb-photo-grid">' +
+      block.items.map(function (it) {
+        return '<div class="wb-photo-card">' +
+          '<div class="wb-photo-img"><img src="' + it.img + '" alt="" loading="lazy"></div>' +
+          '<div class="wb-photo-py">' + it.py + '</div>' +
+          '<div class="wb-photo-hz hanzi">' + it.hz + '</div>' +
+          '</div>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  function wbRenderTones() {
+    var tones = [
+      { label: '1 (ā)', cls: 'tone-1' },
+      { label: '2 (á)', cls: 'tone-2' },
+      { label: '3 (ǎ)', cls: 'tone-3' },
+      { label: '4 (à)', cls: 'tone-4' }
+    ];
+    return '<div class="wb-block">' +
+      '<div class="wb-block-caption">Bốn thanh điệu cơ bản</div>' +
+      '<div class="wb-tone-chart">' +
+      tones.map(function (t) {
+        return '<div class="wb-tone-col"><div class="wb-tone-line ' + t.cls + '"></div><div class="wb-tone-label">' + t.label + '</div></div>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  function wbRenderBlankdrill(block) {
+    return '<div class="wb-block">' +
+      (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
+      '<p class="wb-note">Nghe audio phía trên, rồi tự ghi đáp án ra giấy hoặc vở của bạn.</p>' +
+      '<div class="wb-drill-chips">' +
+      block.items.map(function (it) { return '<span class="wb-drill-chip">' + it + '</span>'; }).join('') +
+      '</div></div>';
+  }
+
+  function wbRenderDialoguePics(block) {
+    return '<div class="wb-block">' +
+      (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
+      '<div class="wb-dlgpic-grid">' +
+      block.items.map(function (it, i) {
+        return '<div class="wb-dlgpic-card">' +
+          '<div class="wb-dlgpic-num">' + (i + 1) + '</div>' +
+          '<div class="wb-dlgpic-img"><img src="' + it.img + '" alt="" loading="lazy"></div>' +
+          '<div class="wb-dlgpic-lines">' + it.lines.map(function (l) { return '<div>' + l + '</div>'; }).join('') + '</div>' +
+          '</div>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  function renderWbContent() {
+    var section = wbSections[wbActiveIdx];
+    var wrap = $('#wbContent');
+    if (!section) { wrap.innerHTML = ''; return; }
+    var audioHtml = section.audio
+      ? '<div class="wb-audio-box"><div class="wb-audio-label">🎧 Audio gốc sách bài tập</div><audio controls preload="none" src="' + section.audio + '"></audio></div>'
+      : '';
+    var blocksHtml = (section.blocks || []).map(function (block) {
+      if (block.type === 'table') return wbRenderTable(block);
+      if (block.type === 'photos') return wbRenderPhotos(block);
+      if (block.type === 'tones') return wbRenderTones();
+      if (block.type === 'blankdrill') return wbRenderBlankdrill(block);
+      if (block.type === 'dialoguepics') return wbRenderDialoguePics(block);
+      return '';
+    }).join('');
+    wrap.innerHTML = audioHtml + blocksHtml;
+  }
+
   /* ---------------- Vocab practice (danh sach tu + 4 che do quiz) ---------------- */
 
   var vpZhVoice = null;
@@ -645,6 +795,7 @@
         try {
           data = JSON.parse(JSON.stringify({
             wuData: iframe.contentWindow.wuData || [],
+            wbData: iframe.contentWindow.wbData || null,
             vocabData: iframe.contentWindow.vocabData || [],
             dialogData: iframe.contentWindow.dialogData || [],
             listenData: iframe.contentWindow.listenData || [],
@@ -680,6 +831,10 @@
 
   function loadLessonWarmup(lesson) {
     return loadLessonRawData(lesson).then(function (data) { return data.wuData; });
+  }
+
+  function loadLessonWorkbook(lesson) {
+    return loadLessonRawData(lesson).then(function (data) { return data.wbData; });
   }
 
   function loadLessonDialog(lesson) {
@@ -1115,6 +1270,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = false;
     $('#grammarPractice').hidden = true;
@@ -1913,6 +2069,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = false;
@@ -2168,6 +2325,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -2327,6 +2485,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -2591,6 +2750,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -2879,6 +3039,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3254,6 +3415,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3387,6 +3549,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3494,6 +3657,7 @@
     $('#levelDetail').hidden = true;
     $('#lessonHub').hidden = true;
     $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
     $('#vocabPractice').hidden = true;
     $('#flashcardPractice').hidden = true;
     $('#grammarPractice').hidden = true;
@@ -3831,6 +3995,11 @@
     $('#levelDetailBack').addEventListener('click', showDashboard);
     $('#lessonHubBack').addEventListener('click', function () {
       if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#wbBack').addEventListener('click', function () {
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();
     });
     $('#wpBack').addEventListener('click', function () {

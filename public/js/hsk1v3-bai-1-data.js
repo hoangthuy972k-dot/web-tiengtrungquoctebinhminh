@@ -182,6 +182,105 @@ var wuData = [
   {img:'🧑‍🎓',label:'同学',py:'tóngxué',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 1: Ngữ âm)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-1/wb-yuyin.mp3',
+      blocks: [
+        { type: 'table', caption: 'Âm tiết tiếng Trung — ví dụ ghép vần',
+          headers: ['Thanh mẫu', 'Vận mẫu', 'Thanh điệu', 'Âm tiết', 'Chữ ví dụ'],
+          rows: [
+            ['b', 'a', '1', 'bā', '八'],
+            ['b', 'a', '2', 'bá', '拔'],
+            ['b', 'a', '3', 'bǎ', '把'],
+            ['b', 'a', '4', 'bà', '爸'],
+            ['', 'a', '1', 'ā', '阿'],
+            ['', 'a', '2', 'á', '啊']
+          ] },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-1-wb/cha.jpg', py:'chá', hz:'茶'},
+          {img:'/images/hsk1v3-bai-1-wb/gou.jpg', py:'gǒu', hz:'狗'},
+          {img:'/images/hsk1v3-bai-1-wb/mao.jpg', py:'māo', hz:'猫'},
+          {img:'/images/hsk1v3-bai-1-wb/cai.jpg', py:'cài', hz:'菜'}
+        ] },
+        { type: 'table', caption: 'Thanh mẫu và vận mẫu (1)',
+          headers: ['Thanh mẫu (声母)', 'Vận mẫu ghép được (韵母)'],
+          rows: [
+            ['b, p, m, f', 'a, o, e, i, u, er'],
+            ['d, t, n, l', 'ai, ei, ao, ou'],
+            ['g, k, h', 'an, en'],
+            ['', 'ang, eng, ong']
+          ],
+          note: 'Lưu ý: chỉ n và l ghép được với vận mẫu "ü"/các vần bắt đầu bằng "ü". Thanh mẫu b, p, f không ghép với "e". Thanh mẫu f, g, k, h không ghép với "i". Vận mẫu "er" luôn đứng riêng một mình, không ghép với thanh mẫu nào.' },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-1-wb/beizi.jpg', py:'bēizi', hz:'杯子'},
+          {img:'/images/hsk1v3-bai-1-wb/xuesheng.jpg', py:'xuésheng', hz:'学生'},
+          {img:'/images/hsk1v3-bai-1-wb/laoshi.jpg', py:'lǎoshī', hz:'老师'},
+          {img:'/images/hsk1v3-bai-1-wb/jidan.jpg', py:'jīdàn', hz:'鸡蛋'}
+        ] },
+        { type: 'tones' },
+        { type: 'table', caption: 'Luyện đọc theo 4 thanh điệu',
+          headers: ['Thanh 1', 'Thanh 2', 'Thanh 3', 'Thanh 4'],
+          rows: [
+            ['ā', 'á', 'ǎ', 'à'],
+            ['ē', 'é', 'ě', 'è'],
+            ['', 'ér', 'ěr', 'èr'],
+            ['dā', 'dá', 'dǎ', 'dà'],
+            ['kē', 'ké', 'kě', 'kè']
+          ] },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-1-wb/kou.jpg', py:'kǒu', hz:'口'},
+          {img:'/images/hsk1v3-bai-1-wb/fan.jpg', py:'fàn', hz:'饭'},
+          {img:'/images/hsk1v3-bai-1-wb/he.jpg', py:'hē', hz:'喝'},
+          {img:'/images/hsk1v3-bai-1-wb/er.jpg', py:'èr', hz:'二'},
+          {img:'/images/hsk1v3-bai-1-wb/nihao.jpg', py:'nǐ hǎo', hz:'你好'},
+          {img:'/images/hsk1v3-bai-1-wb/pengyou.jpg', py:'péngyou', hz:'朋友'},
+          {img:'/images/hsk1v3-bai-1-wb/mianbao.jpg', py:'miànbāo', hz:'面包'},
+          {img:'/images/hsk1v3-bai-1-wb/meimei.jpg', py:'mèimei', hz:'妹妹'},
+          {img:'/images/hsk1v3-bai-1-wb/fangjian.jpg', py:'fángjiān', hz:'房间'},
+          {img:'/images/hsk1v3-bai-1-wb/baitian.jpg', py:'báitiān', hz:'白天'},
+          {img:'/images/hsk1v3-bai-1-wb/fandian.jpg', py:'fàndiàn', hz:'饭店'},
+          {img:'/images/hsk1v3-bai-1-wb/diannao.jpg', py:'diànnǎo', hz:'电脑'}
+        ] }
+      ]
+    },
+    {
+      title: 'Nghe và đọc luyện tập',
+      audio: '/audio/hsk1v3-bai-1/wb-tingdu.mp3',
+      blocks: [
+        { type: 'table', caption: 'Luyện đọc âm tiết theo 4 thanh điệu',
+          headers: ['Thanh 1', 'Thanh 2', 'Thanh 3', 'Thanh 4'],
+          rows: [
+            ['mō', 'mó', 'mǒ', 'mò'],
+            ['lōu', 'lóu', 'lǒu', 'lòu'],
+            ['fū', 'fú', 'fǔ', 'fù'],
+            ['hān', 'hán', 'hǎn', 'hàn'],
+            ['dī', 'dí', 'dǐ', 'dì'],
+            ['pāng', 'páng', 'pǎng', 'pàng'],
+            ['tāo', 'táo', 'tǎo', 'tào'],
+            ['gēn', 'gén', 'gěn', 'gèn']
+          ] },
+        { type: 'blankdrill', caption: 'Nghe và điền thanh mẫu còn thiếu',
+          items: ['___ + à', '___ + ěi', '___ + án', '___ + ù', '___ + ǎi', '___ + ěng', '___ + ó', '___ + ǎo', '___ + óng', '___ + ěn', '___ + ān', '___ + ōu', '___ + è', '___ + ǐ', '___ + áng'] },
+        { type: 'blankdrill', caption: 'Nghe và điền vận mẫu còn thiếu',
+          items: ['t + ___', 'h + ___', 'm + ___', 'd + ___', 'f + ___', 'd + ___', 'h + ___', 'g + ___', 'p + ___', 'g + ___', 'k + ___', 'f + ___', 'n + ___', 'l + ___', 'b + ___'] },
+        { type: 'blankdrill', caption: 'Nghe và đánh dấu thanh điệu đúng',
+          items: ['lao', 'neng', 'ge', 'ba', 'fen', 'kan', 'bai', 'li', 'gong', 'mang', 'gou', 'hou'] },
+        { type: 'dialoguepics', caption: 'Xem hình, đọc đúng lời hội thoại',
+          items: [
+            {img:'/images/hsk1v3-bai-1-wb/dlg1_qianti.jpg', lines:['A: 你好！', 'B: 你好！']},
+            {img:'/images/hsk1v3-bai-1-wb/dlg2_babing.jpg', lines:['A: 你好！', 'B: 你们好！']},
+            {img:'/images/hsk1v3-bai-1-wb/dlg3_xiexie.jpg', lines:['A: 谢谢！', 'B: 不客气！']}
+          ] }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'王一飞与AI小语打招呼 · Chào hỏi trợ giảng AI',
    preQuiz:[

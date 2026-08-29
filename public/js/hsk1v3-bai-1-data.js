@@ -270,17 +270,22 @@ var wbData = {
             {before:'', after:' + ěng', answer:'l'}, {before:'', after:' + ó', answer:'f'}, {before:'', after:' + ǎo', answer:'h'}, {before:'', after:' + óng', answer:'t'}, {before:'', after:' + ěn', answer:'h'},
             {before:'', after:' + ān', answer:'b'}, {before:'', after:' + ōu', answer:'d'}, {before:'', after:' + è', answer:'k'}, {before:'', after:' + ǐ', answer:'n'}, {before:'', after:' + áng', answer:'m'}
           ] },
-        { type: 'blankdrill', caption: 'Nghe và điền vận mẫu còn thiếu',
+        { type: 'tonemc', caption: 'Nghe và chọn vận mẫu đúng',
           items: [
-            {before:'t + ', after:'', answer:'ā'}, {before:'h + ', after:'', answer:'ěn'}, {before:'m + ', after:'', answer:'āo'}, {before:'d + ', after:'', answer:'ì'}, {before:'f + ', after:'', answer:'áng'},
-            {before:'d + ', after:'', answer:'ōng'}, {before:'h + ', after:'', answer:'àn'}, {before:'g + ', after:'', answer:'ǒu'}, {before:'p + ', after:'', answer:'éng'}, {before:'g + ', after:'', answer:'ē'},
-            {before:'k + ', after:'', answer:'āi'}, {before:'f + ', after:'', answer:'ēi'}, {before:'n + ', after:'', answer:'ù'}, {before:'l + ', after:'', answer:'ěng'}, {before:'b + ', after:'', answer:'ō'}
+            {before:'t + ', after:'', answer:'ā', options:['ā','á','ǎ','à']}, {before:'h + ', after:'', answer:'ěn', options:['ēn','én','ěn','èn']}, {before:'m + ', after:'', answer:'āo', options:['āo','áo','ǎo','ào']},
+            {before:'d + ', after:'', answer:'ì', options:['ī','í','ǐ','ì']}, {before:'f + ', after:'', answer:'áng', options:['āng','áng','ǎng','àng']}, {before:'d + ', after:'', answer:'ōng', options:['ōng','óng','ǒng','òng']},
+            {before:'h + ', after:'', answer:'àn', options:['ān','án','ǎn','àn']}, {before:'g + ', after:'', answer:'ǒu', options:['ōu','óu','ǒu','òu']}, {before:'p + ', after:'', answer:'éng', options:['ēng','éng','ěng','èng']},
+            {before:'g + ', after:'', answer:'ē', options:['ē','é','ě','è']}, {before:'k + ', after:'', answer:'āi', options:['āi','ái','ǎi','ài']}, {before:'f + ', after:'', answer:'ēi', options:['ēi','éi','ěi','èi']},
+            {before:'n + ', after:'', answer:'ù', options:['ū','ú','ǔ','ù']}, {before:'l + ', after:'', answer:'ěng', options:['ēng','éng','ěng','èng']}, {before:'b + ', after:'', answer:'ō', options:['ō','ó','ǒ','ò']}
           ] },
-        { type: 'blankdrill', caption: 'Nghe và đánh dấu thanh điệu đúng',
+        { type: 'tonemc', caption: 'Nghe và chọn thanh điệu đúng',
           items: [
-            {before:'lao → ', after:'', answer:'lǎo'}, {before:'neng → ', after:'', answer:'néng'}, {before:'ge → ', after:'', answer:'gè'}, {before:'ba → ', after:'', answer:'bā'},
-            {before:'fen → ', after:'', answer:'fēn'}, {before:'kan → ', after:'', answer:'kàn'}, {before:'bai → ', after:'', answer:'bái'}, {before:'li → ', after:'', answer:'lǐ'},
-            {before:'gong → ', after:'', answer:'gōng'}, {before:'mang → ', after:'', answer:'máng'}, {before:'gou → ', after:'', answer:'gǒu'}, {before:'hou → ', after:'', answer:'hòu'}
+            {before:'lao → ', after:'', answer:'lǎo', options:['lāo','láo','lǎo','lào']}, {before:'neng → ', after:'', answer:'néng', options:['nēng','néng','něng','nèng']},
+            {before:'ge → ', after:'', answer:'gè', options:['gē','gé','gě','gè']}, {before:'ba → ', after:'', answer:'bā', options:['bā','bá','bǎ','bà']},
+            {before:'fen → ', after:'', answer:'fēn', options:['fēn','fén','fěn','fèn']}, {before:'kan → ', after:'', answer:'kàn', options:['kān','kán','kǎn','kàn']},
+            {before:'bai → ', after:'', answer:'bái', options:['bāi','bái','bǎi','bài']}, {before:'li → ', after:'', answer:'lǐ', options:['lī','lí','lǐ','lì']},
+            {before:'gong → ', after:'', answer:'gōng', options:['gōng','góng','gǒng','gòng']}, {before:'mang → ', after:'', answer:'máng', options:['māng','máng','mǎng','màng']},
+            {before:'gou → ', after:'', answer:'gǒu', options:['gōu','góu','gǒu','gòu']}, {before:'hou → ', after:'', answer:'hòu', options:['hōu','hóu','hǒu','hòu']}
           ] },
         { type: 'dialoguepics', caption: 'Xem hình, đọc đúng lời hội thoại',
           items: [

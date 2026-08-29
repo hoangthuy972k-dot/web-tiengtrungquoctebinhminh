@@ -731,6 +731,23 @@
       '</div>';
   }
 
+  function wbRenderTonemc(block) {
+    return '<div class="wb-block">' +
+      (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
+      '<p class="wb-note">Nghe audio phía trên, bấm chọn đáp án đúng.</p>' +
+      '<div class="wb-tonemc-list">' +
+      block.items.map(function (it, i) {
+        return '<div class="wb-tonemc-item">' +
+          '<span class="wb-tonemc-prompt">' + it.before + '<span class="wb-tonemc-blank">？</span>' + it.after + '</span>' +
+          '<div class="wb-tonemc-opts">' +
+          it.options.map(function (opt) {
+            return '<button type="button" class="wb-tonemc-opt"' + (opt === it.answer ? ' data-correct="1"' : '') + '>' + opt + '</button>';
+          }).join('') +
+          '</div></div>';
+      }).join('') +
+      '</div></div>';
+  }
+
   function wbRenderDialoguePics(block) {
     return '<div class="wb-block">' +
       (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
@@ -757,10 +774,24 @@
       if (block.type === 'photos') return wbRenderPhotos(block);
       if (block.type === 'tones') return wbRenderTones();
       if (block.type === 'blankdrill') return wbRenderBlankdrill(block);
+      if (block.type === 'tonemc') return wbRenderTonemc(block);
       if (block.type === 'dialoguepics') return wbRenderDialoguePics(block);
       return '';
     }).join('');
     wrap.innerHTML = audioHtml + blocksHtml;
+    $all('.wb-tonemc-opt', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.wb-tonemc-item');
+        if (item.classList.contains('is-done')) return;
+        var correct = btn.hasAttribute('data-correct');
+        $all('.wb-tonemc-opt', item).forEach(function (b) {
+          b.disabled = true;
+          if (b.hasAttribute('data-correct')) b.classList.add('is-correct');
+        });
+        if (!correct) btn.classList.add('is-wrong');
+        item.classList.add('is-done');
+      });
+    });
     $all('.wb-reveal-btn', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {
         var target = document.getElementById(btn.getAttribute('data-reveal-target'));

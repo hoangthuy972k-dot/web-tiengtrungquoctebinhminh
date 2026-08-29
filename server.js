@@ -50,7 +50,27 @@ app.use(
 );
 app.use(compression());
 app.use(express.json({ limit: '10mb' }));
-app.use(express.static(PUBLIC_DIR, { extensions: ['html'] }));
+// Cache: HTML/CSS/JS phai luon kiem tra lai voi server truoc khi dung
+// (no-cache = van luu tren may, nhung phai xac nhan bang ETag), nen sua
+// code xong la reload thay ngay, khong bao gio dinh ban cu.
+// Audio/anh thi cache dai 30 ngay vi gan nhu khong bao gio doi.
+const REVALIDATE_EXT = new Set(['.html', '.css', '.js', '.json', '.webmanifest']);
+
+app.use(
+  express.static(PUBLIC_DIR, {
+    extensions: ['html'],
+    etag: true,
+    lastModified: true,
+    setHeaders(res, filePath) {
+      const ext = path.extname(filePath).toLowerCase();
+      if (REVALIDATE_EXT.has(ext)) {
+        res.setHeader('Cache-Control', 'no-cache');
+      } else {
+        res.setHeader('Cache-Control', 'public, max-age=2592000');
+      }
+    },
+  })
+);
 
 // Simple content API so lesson/vocab data can later move server-side
 // without changing the frontend contract.

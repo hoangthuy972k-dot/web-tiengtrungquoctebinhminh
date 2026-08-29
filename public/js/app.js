@@ -713,13 +713,22 @@
       '</div></div>';
   }
 
+  var wbBlockSeq = 0;
   function wbRenderBlankdrill(block) {
-    return '<div class="wb-block">' +
+    var blockId = 'wbdrill-' + (wbBlockSeq++);
+    return '<div class="wb-block" id="' + blockId + '">' +
       (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
-      '<p class="wb-note">Nghe audio phía trên, rồi tự ghi đáp án ra giấy hoặc vở của bạn.</p>' +
+      '<p class="wb-note">Nghe audio phía trên, điền trực tiếp vào ô trống rồi bấm "Xem đáp án" để đối chiếu.</p>' +
       '<div class="wb-drill-chips">' +
-      block.items.map(function (it) { return '<span class="wb-drill-chip">' + it + '</span>'; }).join('') +
-      '</div></div>';
+      block.items.map(function (it) {
+        return '<span class="wb-drill-chip">' + it.before +
+          '<input type="text" class="wb-drill-input" maxlength="6" autocomplete="off" spellcheck="false">' +
+          it.after +
+          '<span class="wb-drill-answer">→ ' + it.answer + '</span></span>';
+      }).join('') +
+      '</div>' +
+      '<button type="button" class="wb-reveal-btn" data-reveal-target="' + blockId + '">👁️ Xem đáp án</button>' +
+      '</div>';
   }
 
   function wbRenderDialoguePics(block) {
@@ -752,6 +761,14 @@
       return '';
     }).join('');
     wrap.innerHTML = audioHtml + blocksHtml;
+    $all('.wb-reveal-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = document.getElementById(btn.getAttribute('data-reveal-target'));
+        if (!target) return;
+        var revealed = target.classList.toggle('is-revealed');
+        btn.textContent = revealed ? '🙈 Ẩn đáp án' : '👁️ Xem đáp án';
+      });
+    });
   }
 
   /* ---------------- Vocab practice (danh sach tu + 4 che do quiz) ---------------- */

@@ -265,11 +265,23 @@ var wbData = {
             ['gēn', 'gén', 'gěn', 'gèn']
           ] },
         { type: 'blankdrill', caption: 'Nghe và điền thanh mẫu còn thiếu',
-          items: ['___ + à', '___ + ěi', '___ + án', '___ + ù', '___ + ǎi', '___ + ěng', '___ + ó', '___ + ǎo', '___ + óng', '___ + ěn', '___ + ān', '___ + ōu', '___ + è', '___ + ǐ', '___ + áng'] },
+          items: [
+            {before:'', after:' + à', answer:'d'}, {before:'', after:' + ěi', answer:'g'}, {before:'', after:' + án', answer:'p'}, {before:'', after:' + ù', answer:'b'}, {before:'', after:' + ǎi', answer:'m'},
+            {before:'', after:' + ěng', answer:'l'}, {before:'', after:' + ó', answer:'f'}, {before:'', after:' + ǎo', answer:'h'}, {before:'', after:' + óng', answer:'t'}, {before:'', after:' + ěn', answer:'h'},
+            {before:'', after:' + ān', answer:'b'}, {before:'', after:' + ōu', answer:'d'}, {before:'', after:' + è', answer:'k'}, {before:'', after:' + ǐ', answer:'n'}, {before:'', after:' + áng', answer:'m'}
+          ] },
         { type: 'blankdrill', caption: 'Nghe và điền vận mẫu còn thiếu',
-          items: ['t + ___', 'h + ___', 'm + ___', 'd + ___', 'f + ___', 'd + ___', 'h + ___', 'g + ___', 'p + ___', 'g + ___', 'k + ___', 'f + ___', 'n + ___', 'l + ___', 'b + ___'] },
+          items: [
+            {before:'t + ', after:'', answer:'ā'}, {before:'h + ', after:'', answer:'ěn'}, {before:'m + ', after:'', answer:'āo'}, {before:'d + ', after:'', answer:'ì'}, {before:'f + ', after:'', answer:'áng'},
+            {before:'d + ', after:'', answer:'ōng'}, {before:'h + ', after:'', answer:'àn'}, {before:'g + ', after:'', answer:'ǒu'}, {before:'p + ', after:'', answer:'éng'}, {before:'g + ', after:'', answer:'ē'},
+            {before:'k + ', after:'', answer:'āi'}, {before:'f + ', after:'', answer:'ēi'}, {before:'n + ', after:'', answer:'ù'}, {before:'l + ', after:'', answer:'ěng'}, {before:'b + ', after:'', answer:'ō'}
+          ] },
         { type: 'blankdrill', caption: 'Nghe và đánh dấu thanh điệu đúng',
-          items: ['lao', 'neng', 'ge', 'ba', 'fen', 'kan', 'bai', 'li', 'gong', 'mang', 'gou', 'hou'] },
+          items: [
+            {before:'lao → ', after:'', answer:'lǎo'}, {before:'neng → ', after:'', answer:'néng'}, {before:'ge → ', after:'', answer:'gè'}, {before:'ba → ', after:'', answer:'bā'},
+            {before:'fen → ', after:'', answer:'fēn'}, {before:'kan → ', after:'', answer:'kàn'}, {before:'bai → ', after:'', answer:'bái'}, {before:'li → ', after:'', answer:'lǐ'},
+            {before:'gong → ', after:'', answer:'gōng'}, {before:'mang → ', after:'', answer:'máng'}, {before:'gou → ', after:'', answer:'gǒu'}, {before:'hou → ', after:'', answer:'hòu'}
+          ] },
         { type: 'dialoguepics', caption: 'Xem hình, đọc đúng lời hội thoại',
           items: [
             {img:'/images/hsk1v3-bai-1-wb/dlg1_qianti.jpg', lines:['A: 你好！', 'B: 你好！']},

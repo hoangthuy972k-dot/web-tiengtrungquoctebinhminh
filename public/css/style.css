@@ -3266,13 +3266,18 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 
 /* ---------- Workbook practice (Luyen tap sach bai tap) ---------- */
 .wb-audio-box {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   align-items: center;
   gap: var(--space-3);
   background: var(--color-green-50);
+  border: 1px solid var(--color-green-600);
   border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
   margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-md);
   flex-wrap: wrap;
 }
 
@@ -3418,16 +3423,62 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .wb-drill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--color-white);
-  border: 1.5px dashed var(--color-gray-200);
+  border: 1.5px solid var(--color-gray-200);
   border-radius: var(--radius-md);
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-hanzi);
   font-size: 0.95rem;
   color: var(--color-gray-700);
+}
+
+.wb-drill-input {
+  width: 44px;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  padding: 4px 6px;
+  font-family: var(--font-hanzi);
+  font-size: 0.95rem;
+  text-align: center;
+  background: var(--color-gray-50);
+}
+
+.wb-drill-input:focus {
+  outline: none;
+  border-color: var(--color-green-600);
+  background: var(--color-white);
+}
+
+.wb-drill-answer {
+  color: var(--color-green-600);
+  font-weight: 700;
+  display: none;
+}
+
+.wb-block.is-revealed .wb-drill-answer {
+  display: inline;
+}
+
+.wb-reveal-btn {
+  background: var(--color-green-600);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-5);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.wb-reveal-btn:hover {
+  background: var(--color-green-500);
 }
 
 .wb-dlgpic-grid {

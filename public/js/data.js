@@ -674,6 +674,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-14.html'
+      },
+      {
+        id: 'hsk1v3-l15',
+        number: 15,
+        title: 'Hẹn gặp ở sân bay Đại Hưng!',
+        titleHanzi: '大兴机场见！',
+        titlePinyin: 'Dàxīng Jīchǎng jiàn!',
+        topic: 'Du lịch, ẩm thực & thủ đô Bắc Kinh',
+        vocabCount: 20,
+        dialogueCount: 3,
+        grammarCount: 1,
+        fullPageUrl: '/lessons/hsk1v3-bai-15.html'
       }
     ],
     yct: [

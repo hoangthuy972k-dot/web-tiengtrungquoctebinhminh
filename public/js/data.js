@@ -662,6 +662,18 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk1v3-bai-13.html'
+      },
+      {
+        id: 'hsk1v3-l14',
+        number: 14,
+        title: 'Mình đã xem một bộ phim',
+        titleHanzi: '我看了一个电影',
+        titlePinyin: 'Wǒ kànle yí gè diànyǐng',
+        topic: 'Hành động đã hoàn thành & việc học',
+        vocabCount: 28,
+        dialogueCount: 3,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk1v3-bai-14.html'
       }
     ],
     yct: [

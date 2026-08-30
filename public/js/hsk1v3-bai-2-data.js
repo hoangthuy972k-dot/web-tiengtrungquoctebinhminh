@@ -142,6 +142,14 @@ var wbData = {
             ['', 'üe, üan, ün']
           ],
           note: 'j, q, x chỉ ghép được với vận mẫu bắt đầu bằng "i" hoặc "ü" — không ghép trực tiếp với "a" hay "u".' },
+        { type: 'table', caption: 'Luyện đọc âm tiết j, q, x',
+          headers: ['1', '2', '3', '4'],
+          rows: [
+            ['jī', 'jí', 'jǐ', 'jì'],
+            ['qū', 'qú', 'qǔ', 'qù'],
+            ['xū', 'xú', 'xǔ', 'xù']
+          ],
+          note: 'Ví dụ thêm: jiā, jiàn, quán, qǐng, xiǎng, xīn.' },
         { type: 'photos', items: [
           {img:'/images/hsk1v3-bai-2-wb/ji.jpg', py:'jī', hz:'鸡'},
           {img:'/images/hsk1v3-bai-2-wb/qi.jpg', py:'qī', hz:'七'},
@@ -174,13 +182,18 @@ var wbData = {
             ['xū', 'xú', 'xǔ', 'xù']
           ],
           note: 'Khi "j, q, x" ghép với vận mẫu "ü", bỏ hai chấm trên "ü" và viết thành "u" (bản chất vẫn đọc là "ü").' },
-        { type: 'table', caption: 'Quy tắc chính tả — vận mẫu "iou"',
-          headers: ['Đứng một mình', 'Ghép với m/d/n/l/j/q/x'],
+        { type: 'table', caption: 'Quy tắc chính tả — vận mẫu "iou" đứng một mình',
+          headers: ['1', '2', '3', '4'],
           rows: [
-            ['yōu, yóu, yǒu, yòu', 'miù, diū, niú, liǔ'],
-            ['(viết là "you")', 'jiù, qiū, qiú, xiǔ (viết là "iu", dấu thanh đánh trên "u")']
+            ['yōu', 'yóu', 'yǒu', 'yòu']
           ],
-          note: 'Từ ví dụ: yóuyǒng (bơi lội), lǚyóu (du lịch), péngyou (bạn bè).' },
+          note: 'Khi "iou" đứng một mình làm thành cả âm tiết, viết thành "you". Từ ví dụ: yóuyǒng (bơi lội), lǚyóu (du lịch), péngyou (bạn bè).' },
+        { type: 'table', caption: 'Quy tắc chính tả — vận mẫu "iou" ghép với m, d, n, l, j, q, x',
+          rows: [
+            ['miù', 'diū', 'niú', 'liǔ'],
+            ['jiù', 'qiū', 'qiú', 'xiǔ']
+          ],
+          note: 'Khi "iou" ghép với thanh mẫu m, d, n, l, j, q, x thì viết thành "iu", và dấu thanh luôn đánh trên chữ "u".' },
         { type: 'photos', items: [
           {img:'/images/hsk1v3-bai-2-wb/jiu9.jpg', py:'jiǔ', hz:'九'},
           {img:'/images/hsk1v3-bai-2-wb/pengyou.jpg', py:'péngyou', hz:'朋友'},

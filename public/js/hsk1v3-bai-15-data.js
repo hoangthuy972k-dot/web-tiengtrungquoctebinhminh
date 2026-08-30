@@ -118,15 +118,14 @@ var wbData = {
       blocks: [
         { type: 'pymatch', caption: 'Nghe âm tiết, ghép với từ đúng',
           items: [{py:'nǐ hǎo', hz:'你好'}, {py:'méi kànjiàn', hz:'没看见'}, {py:'nǎxiē rén', hz:'哪些人'}, {py:'shuōhuà', hz:'说话'}, {py:'shénme shíhou', hz:'什么时候'}, {py:'zuò fēijī', hz:'坐飞机'}] },
-        { type: 'table', caption: 'Nghe câu, phân biệt 4 loại câu: trần thuật (A) / nghi vấn (B) / cảm thán (C) / cầu khiến (D)',
-          headers: ['Câu', 'Loại câu'],
-          rows: [
-            ['你是学生吗？', '疑问句 (B)'],
-            ['我爱吃水果。', '陈述句 (A)'],
-            ['这件衣服真漂亮！', '感叹句 (C)'],
-            ['你们去哪里？', '疑问句 (B)'],
-            ['请坐。', '祈使句 (D)'],
-            ['雨大吗？', '疑问句 (B)']
+        { type: 'tonemc', noBlank: true, caption: 'Nghe câu, chọn đúng loại câu: trần thuật / nghi vấn / cảm thán / cầu khiến',
+          items: [
+            {before:'你是学生吗？', after:'', answer:'Câu nghi vấn', options:['Câu trần thuật','Câu nghi vấn','Câu cảm thán','Câu cầu khiến']},
+            {before:'我爱吃水果。', after:'', answer:'Câu trần thuật', options:['Câu trần thuật','Câu nghi vấn','Câu cảm thán','Câu cầu khiến']},
+            {before:'这件衣服真漂亮！', after:'', answer:'Câu cảm thán', options:['Câu trần thuật','Câu nghi vấn','Câu cảm thán','Câu cầu khiến']},
+            {before:'你们去哪里？', after:'', answer:'Câu nghi vấn', options:['Câu trần thuật','Câu nghi vấn','Câu cảm thán','Câu cầu khiến']},
+            {before:'请坐。', after:'', answer:'Câu cầu khiến', options:['Câu trần thuật','Câu nghi vấn','Câu cảm thán','Câu cầu khiến']},
+            {before:'雨大吗？', after:'', answer:'Câu nghi vấn', options:['Câu trần thuật','Câu nghi vấn','Câu cảm thán','Câu cầu khiến']}
           ],
           note: 'Câu trần thuật kể sự việc; câu nghi vấn hỏi; câu cảm thán bộc lộ cảm xúc mạnh (thường có "真...!"); câu cầu khiến yêu cầu/ra lệnh (thường bắt đầu bằng "请").' },
         { type: 'table', caption: 'Chữ Hán (汉字) — Bộ thủ thường gặp',

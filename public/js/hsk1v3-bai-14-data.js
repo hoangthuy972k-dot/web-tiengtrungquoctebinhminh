@@ -147,17 +147,15 @@ var wbData = {
       blocks: [
         { type: 'pymatch', caption: 'Nghe âm tiết, ghép với từ đúng',
           items: [{py:'nǐ hǎo', hz:'你好'}, {py:'méi guānxi', hz:'没关系'}, {py:'nánpéngyou', hz:'男朋友'}, {py:'bú kèqi', hz:'不客气'}, {py:'nǚ\'ér', hz:'女儿'}, {py:'hǎowánr', hz:'好玩儿'}] },
-        { type: 'table', caption: 'Nghe câu, phân biệt câu trần thuật (A) hay câu nghi vấn (B)',
-          headers: ['Câu', 'Loại câu'],
-          rows: [
-            ['你是学生吗？', '疑问句 (B)'],
-            ['你是哪国人？', '疑问句 (B)'],
-            ['我叫李文。', '陈述句 (A)'],
-            ['今天我休息。', '陈述句 (A)'],
-            ['谁是老师？', '疑问句 (B)'],
-            ['我想去超市买东西。', '陈述句 (A)']
-          ],
-          note: 'Câu trần thuật (陈述句) kể lại sự việc, âm điệu cuối câu thường bằng hoặc hạ xuống. Câu nghi vấn (疑问句) đặt câu hỏi, âm điệu cuối câu thường lên cao (trừ câu hỏi có từ để hỏi như 谁/哪).' },
+        { type: 'tonemc', noBlank: true, caption: 'Nghe câu, chọn đây là câu trần thuật hay câu nghi vấn',
+          items: [
+            {before:'你是学生吗？', after:'', answer:'Câu nghi vấn', options:['Câu trần thuật','Câu nghi vấn']},
+            {before:'你是哪国人？', after:'', answer:'Câu nghi vấn', options:['Câu trần thuật','Câu nghi vấn']},
+            {before:'我叫李文。', after:'', answer:'Câu trần thuật', options:['Câu trần thuật','Câu nghi vấn']},
+            {before:'今天我休息。', after:'', answer:'Câu trần thuật', options:['Câu trần thuật','Câu nghi vấn']},
+            {before:'谁是老师？', after:'', answer:'Câu nghi vấn', options:['Câu trần thuật','Câu nghi vấn']},
+            {before:'我想去超市买东西。', after:'', answer:'Câu trần thuật', options:['Câu trần thuật','Câu nghi vấn']}
+          ] },
         { type: 'table', caption: 'Chữ Hán (汉字) — Cấu trúc hợp thể (tiếp)',
           rows: [
             ['上下结构 (trên-dưới)', '分 (fēn)'],

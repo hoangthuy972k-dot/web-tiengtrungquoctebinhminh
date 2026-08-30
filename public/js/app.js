@@ -737,15 +737,18 @@
       '<p class="wb-note">Nghe audio phía trên, bấm chọn đáp án đúng.</p>' +
       '<div class="wb-tonemc-list">' +
       block.items.map(function (it, i) {
+        var blankHtml = block.noBlank ? '' : '<span class="wb-tonemc-blank">？</span>';
         return '<div class="wb-tonemc-item">' +
-          '<span class="wb-tonemc-prompt">' + it.before + '<span class="wb-tonemc-blank">？</span>' + it.after + '</span>' +
+          '<span class="wb-tonemc-prompt' + (block.noBlank ? ' hanzi' : '') + '">' + it.before + blankHtml + it.after + '</span>' +
           '<div class="wb-tonemc-opts">' +
           it.options.map(function (opt) {
             return '<button type="button" class="wb-tonemc-opt"' + (opt === it.answer ? ' data-correct="1"' : '') + '>' + opt + '</button>';
           }).join('') +
           '</div></div>';
       }).join('') +
-      '</div></div>';
+      '</div>' +
+      (block.note ? '<p class="wb-note">' + block.note + '</p>' : '') +
+      '</div>';
   }
 
   function wbRenderWordlist(block) {

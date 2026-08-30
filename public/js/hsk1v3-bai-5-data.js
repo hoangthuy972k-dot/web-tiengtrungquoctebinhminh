@@ -180,8 +180,17 @@ var wbData = {
       title: 'Nghe và đọc luyện tập',
       audio: '/audio/hsk1v3-bai-5/wb-tingdu.mp3',
       blocks: [
-        { type: 'wordlist', caption: 'Nghe và chọn âm tiết nghe được, đọc to',
-          items: [['gē', 'kē'], ['jiǎng', 'qiǎng'], ['cóng', 'sóng'], ['nìng', 'lìng'], ['jiā', 'xiā'], ['zuàn', 'cuàn'], ['tōu', 'gōu'], ['zhí', 'shí']] },
+        { type: 'tonemc', caption: 'Nghe và chọn âm tiết nghe được, đọc to',
+          items: [
+            {before:'', after:'', answer:'gē', options:['gē','kē']},
+            {before:'', after:'', answer:'qiǎng', options:['jiǎng','qiǎng']},
+            {before:'', after:'', answer:'sóng', options:['cóng','sóng']},
+            {before:'', after:'', answer:'nìng', options:['nìng','lìng']},
+            {before:'', after:'', answer:'jiā', options:['jiā','xiā']},
+            {before:'', after:'', answer:'cuàn', options:['zuàn','cuàn']},
+            {before:'', after:'', answer:'tōu', options:['tōu','gōu']},
+            {before:'', after:'', answer:'shí', options:['zhí','shí']}
+          ] },
         { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý biến điệu của "不"',
           items: ['búyào', 'bú kèqi', 'bù hē', 'bù lái', 'bù lěng', 'bù zhīdào', 'bù xuéxí', 'bù hǎotīng'] },
         { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý biến điệu của "一"',

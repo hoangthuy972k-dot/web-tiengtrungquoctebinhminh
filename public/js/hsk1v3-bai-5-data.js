@@ -190,6 +190,7 @@ var wbData = {
     },
     {
       title: 'Mô phỏng đề thi',
+      audio: '/audio/hsk1v3-bai-5/wb-mocktest.mp3',
       blocks: [
         { type: 'mocktest',
           listening: [

@@ -187,6 +187,12 @@ var wbData = {
       title: 'Nghe và đọc luyện tập',
       audio: '/audio/hsk1v3-bai-3/wb-tingdu.mp3',
       blocks: [
+        { type: 'blankdrill', caption: 'Nghe và điền thanh mẫu còn thiếu',
+          items: [
+            {before:'', after:' + ān', answer:'s'}, {before:'', after:' + ī', answer:'ch'}, {before:'', after:' + ǒu', answer:'z'}, {before:'', after:' + èng', answer:'zh'},
+            {before:'', after:' + ì', answer:'z'}, {before:'', after:' + àng', answer:'ch'}, {before:'', after:' + én', answer:'r'}, {before:'', after:' + uì', answer:'s'},
+            {before:'', after:' + ài', answer:'c'}, {before:'', after:' + uǐ', answer:'sh'}, {before:'', after:' + ì', answer:'r'}, {before:'', after:' + ōng', answer:'zh'}
+          ] },
         { type: 'tonemc', caption: 'Nghe và chọn vận mẫu đúng',
           items: [
             {before:'z + ', after:'', answer:'ū', options:['ū','ú','ǔ','ù']}, {before:'zh + ', after:'', answer:'ī', options:['ī','í','ǐ','ì']},
@@ -205,7 +211,7 @@ var wbData = {
             {before:'shou → ', after:'', answer:'shǒu', options:['shōu','shóu','shǒu','shòu']}, {before:'zhen → ', after:'', answer:'zhēn', options:['zhēn','zhén','zhěn','zhèn']},
             {before:'sui → ', after:'', answer:'suì', options:['suī','suí','suǐ','suì']}, {before:'sheng → ', after:'', answer:'shēng', options:['shēng','shéng','shěng','shèng']},
             {before:'ri → ', after:'', answer:'rì', options:['rī','rí','rǐ','rì']}, {before:'zhong → ', after:'', answer:'zhōng', options:['zhōng','zhóng','zhǒng','zhòng']},
-            {before:'shui → ', after:'', answer:'shuì', options:['shuī','shuí','shuǐ','shuì']}, {before:'zuo → ', after:'', answer:'zuò', options:['zuō','zuó','zuǒ','zuò']},
+            {before:'shui → ', after:'', answer:'shuǐ', options:['shuī','shuí','shuǐ','shuì']}, {before:'zuo → ', after:'', answer:'zuò', options:['zuō','zuó','zuǒ','zuò']},
             {before:'chuang → ', after:'', answer:'chuáng', options:['chuāng','chuáng','chuǎng','chuàng']}, {before:'shu → ', after:'', answer:'shū', options:['shū','shú','shǔ','shù']},
             {before:'si → ', after:'', answer:'sì', options:['sī','sí','sǐ','sì']}
           ] },

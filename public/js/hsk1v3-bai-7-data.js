@@ -105,6 +105,164 @@ var vocabData = [
    exList:[{zh:'我十分钟后去。',py:'Wǒ shí fēnzhōng hòu qù.',vn:'10 phút nữa mình đi.'}]},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 7: Ngữ âm + Mô phỏng đề thi)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-7/wb-yuyin.mp3',
+      blocks: [
+        { type: 'table', caption: 'Phân biệt thanh mẫu bật hơi và không bật hơi',
+          rows: [
+            ['gǔ / kǔ', 'zēng / cēng', 'bái / pái'],
+            ['diān / tiān', 'zhǔn / chǔn', 'bēn / pēn'],
+            ['dòng / tòng', 'zhí / chí', 'jǔ / qǔ'],
+            ['jiǔ / qiǔ', 'zì / cì', 'guā / kuā']
+          ],
+          note: 'Tiếng Trung có 6 cặp thanh mẫu bật hơi/không bật hơi tương ứng: b–p, d–t, g–k, j–q, zh–ch, z–c.' },
+        { type: 'table', caption: 'Phân biệt vận mẫu mũi trước (-n) và mũi sau (-ng)',
+          rows: [
+            ['pén / péng', 'gǎn / gǎng'],
+            ['rǎn / rǎng', 'mén / méng'],
+            ['nián / niáng', 'sēn / sēng'],
+            ['jiàn / jiàng', 'zàn / zàng'],
+            ['shěn / shěng', 'lín / líng'],
+            ['huán / huáng', 'xiǎn / xiǎng'],
+            ['fàn / fàng', 'bìn / bìng'],
+            ['chēn / chēng', 'qīn / qīng']
+          ],
+          note: 'Vận mẫu mũi trước kết thúc bằng "-n", vận mẫu mũi sau kết thúc bằng "-ng".' },
+        { type: 'table', caption: 'Giới thiệu chữ Hán (汉字)',
+          rows: [],
+          note: 'Chữ Hán bắt nguồn từ Trung Quốc cổ đại, là một trong những hệ chữ viết cổ nhất thế giới và là hệ chữ viết duy nhất được sử dụng liên tục, không gián đoạn từ xưa đến nay. Chữ Hán đã trải qua các dạng: giáp cốt văn, kim văn, triện thư, lệ thư, khải thư, thảo thư, hành thư — trong đó khải thư là chữ chuẩn ngày nay. Khoảng 90% chữ Hán hiện đại là chữ hình thanh (gồm phần biểu âm + phần biểu nghĩa/bộ thủ), giúp việc học dễ dàng hơn. Ví dụ: "材" — "才" gợi âm đọc, bộ "木" (mộc) cho biết liên quan đến gỗ; "花" — "化" gợi âm đọc, bộ "艹" (thảo) cho biết liên quan đến cây cỏ.' }
+      ]
+    },
+    {
+      title: 'Mô phỏng đề thi',
+      audio: '/audio/hsk1v3-bai-7/wb-mocktest.mp3',
+      blocks: [
+        { type: 'mocktest',
+          listening: [
+            { n: 1, options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q1a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q1b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q1c.jpg'}
+            ], answer: 'C' },
+            { n: 2, options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q2a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q2b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q2c.jpg'}
+            ], answer: 'A' },
+            { n: 3, options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q3a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q3b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q3c.jpg'}
+            ], answer: 'C' },
+            { n: 4, options: [
+              {key:'A', text:'10:00', py:''},
+              {key:'B', text:'12:00', py:''},
+              {key:'C', text:'12号', py:'shí\'èr hào'}
+            ], answer: 'B' },
+            { n: 5, options: [
+              {key:'A', text:'8月', py:'bā yuè'},
+              {key:'B', text:'三分钟', py:'sān fēnzhōng'},
+              {key:'C', text:'7:10', py:''}
+            ], answer: 'C' },
+            { n: 6, options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-7-wb/q6to8_d.jpg'}
+            ], answer: 'C' },
+            { n: 7, options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-7-wb/q6to8_d.jpg'}
+            ], answer: 'D' },
+            { n: 8, options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-7-wb/q6to8_d.jpg'}
+            ], answer: 'B' },
+            { n: 9, options: [
+              {key:'A', text:'上课', py:'shàngkè'},
+              {key:'B', text:'上班', py:'shàngbān'},
+              {key:'C', text:'看电影', py:'kàn diànyǐng'}
+            ], answer: 'A' },
+            { n: 10, options: [
+              {key:'A', text:'饭店', py:'fàndiàn'},
+              {key:'B', text:'菜店', py:'càidiàn'},
+              {key:'C', text:'超市', py:'chāoshì'}
+            ], answer: 'C' }
+          ],
+          reading: [
+            { n: 11, prompt: '我在上课呢。', promptPy: 'Wǒ zài shàngkè ne.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-7-wb/q11to13_d.jpg'}
+            ], answer: 'D' },
+            { n: 12, prompt: '我下午有事，晚上7:00见吧。', promptPy: 'Wǒ xiàwǔ yǒu shì, wǎnshang 7:00 jiàn ba.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-7-wb/q11to13_d.jpg'}
+            ], answer: 'C' },
+            { n: 13, prompt: '今天不上班，我去超市买东西。', promptPy: 'Jīntiān bú shàngbān, wǒ qù chāoshì mǎi dōngxi.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-7-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-7-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-7-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-7-wb/q11to13_d.jpg'}
+            ], answer: 'B' },
+            { n: 14, prompt: '我们在哪儿见？', promptPy: 'Wǒmen zài nǎr jiàn?', options: [
+              {key:'A', text:'早上七点半。', py:'Zǎoshang qī diǎn bàn.'},
+              {key:'B', text:'对不起，我有课。', py:'Duìbuqǐ, wǒ yǒu kè.'},
+              {key:'C', text:'电影院。', py:'Diànyǐngyuàn.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'C' },
+            { n: 15, prompt: '现在几点？', promptPy: 'Xiànzài jǐ diǎn?', options: [
+              {key:'A', text:'早上七点半。', py:'Zǎoshang qī diǎn bàn.'},
+              {key:'B', text:'对不起，我有课。', py:'Duìbuqǐ, wǒ yǒu kè.'},
+              {key:'C', text:'电影院。', py:'Diànyǐngyuàn.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'A' },
+            { n: 16, prompt: '我们下午去超市吧。', promptPy: 'Wǒmen xiàwǔ qù chāoshì ba.', options: [
+              {key:'A', text:'早上七点半。', py:'Zǎoshang qī diǎn bàn.'},
+              {key:'B', text:'对不起，我有课。', py:'Duìbuqǐ, wǒ yǒu kè.'},
+              {key:'C', text:'电影院。', py:'Diànyǐngyuàn.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'B' },
+            { n: 17, prompt: '我们（　）12:00下课。', promptPy: 'Wǒmen ( ) 12:00 xiàkè.', options: [
+              {key:'A', text:'医院', py:'yīyuàn'},
+              {key:'B', text:'中午', py:'zhōngwǔ'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'B' },
+            { n: 18, prompt: '男：你现在在哪儿？\n女：我在（　）呢。', promptPy: 'Nǐ xiànzài zài nǎr? / Wǒ zài ( ) ne.', options: [
+              {key:'A', text:'医院', py:'yīyuàn'},
+              {key:'B', text:'中午', py:'zhōngwǔ'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'A' },
+            { n: 19, prompt: '我今天早上八点半上课，十点十分下课。\n★说话人今天几点下课？', promptPy: 'Wǒ jīntiān zǎoshang bā diǎn bàn shàngkè, shí diǎn shí fēn xiàkè.', options: [
+              {key:'A', text:'8:30', py:''},
+              {key:'B', text:'10:10', py:''},
+              {key:'C', text:'10:20', py:''}
+            ], answer: 'B' },
+            { n: 20, prompt: '妈妈今天休息，下午想去菜店买些菜。\n★妈妈下午想去菜店买：', promptPy: 'Māma jīntiān xiūxi, xiàwǔ xiǎng qù càidiàn mǎi xiē cài.', options: [
+              {key:'A', text:'菜', py:'cài'},
+              {key:'B', text:'饺子', py:'jiǎozi'},
+              {key:'C', text:'牛奶', py:'niúnǎi'}
+            ], answer: 'A' }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'白家月和安妮打电话 · Hỏi giờ, hẹn gặp',
    preQuiz:[

@@ -136,6 +136,177 @@ var wuData = [
   {img:'🍙',label:'米饭',py:'mǐfàn',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 6: Ngữ âm + Mô phỏng đề thi)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-6/wb-yuyin.mp3',
+      blocks: [
+        { type: 'table', caption: '儿化 (Erhua) — biến âm thêm "儿" cuối từ',
+          headers: ['Từ gốc', 'Từ loại', 'Đọc chuyển "儿"', 'Từ loại'],
+          rows: [
+            ['这 zhè', 'đại từ', '这儿 zhèr', 'đại từ'],
+            ['哪 nǎ', 'đại từ', '哪儿 nǎr', 'đại từ'],
+            ['画 huà', 'động từ', '画儿 huàr', 'danh từ'],
+            ['盖 gài', 'động từ', '盖儿 gàir', 'danh từ'],
+            ['个 gè', 'lượng từ', '个儿 gèr', 'danh từ'],
+            ['眼 yǎn', 'danh từ', '眼儿 yǎnr', 'danh từ']
+          ],
+          note: 'Thêm "儿 (ér)" vào cuối một số từ mang sắc thái nhỏ nhắn, đáng yêu, đôi khi làm thay đổi nghĩa hoặc từ loại của từ đó.' },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-6-wb/miantiaor.jpg', py:'miàntiáor', hz:'面条儿'},
+          {img:'/images/hsk1v3-bai-6-wb/haowanr.jpg', py:'hǎowánr', hz:'好玩儿'},
+          {img:'/images/hsk1v3-bai-6-wb/yidianr.jpg', py:'yìdiǎnr', hz:'一点儿'},
+          {img:'/images/hsk1v3-bai-6-wb/fangguanr.jpg', py:'fànguǎnr', hz:'饭馆（儿）'},
+          {img:'/images/hsk1v3-bai-6-wb/nar.jpg', py:'nàr', hz:'那儿'},
+          {img:'/images/hsk1v3-bai-6-wb/zher.jpg', py:'zhèr', hz:'这儿'},
+          {img:'/images/hsk1v3-bai-6-wb/wanr.jpg', py:'wánr', hz:'玩（儿）'},
+          {img:'/images/hsk1v3-bai-6-wb/ger.jpg', py:'gēr', hz:'歌（儿）'}
+        ] },
+        { type: 'table', caption: 'Quy tắc chính tả — dấu ngăn cách âm tiết ( \' )',
+          rows: [
+            ['shí\'èr (十二)', 'Xī\'ān (西安)', 'Tiān\'ān Mén (天安门)']
+          ],
+          note: 'Khi một âm tiết bắt đầu bằng "a, o, e" đứng liền sau âm tiết khác, dùng dấu ngăn cách ( \' ) ở giữa 2 âm tiết để tránh nhầm ranh giới âm tiết.' }
+      ]
+    },
+    {
+      title: 'Nghe và đọc luyện tập',
+      audio: '/audio/hsk1v3-bai-6/wb-tingdu.mp3',
+      blocks: [
+        { type: 'wordlist', caption: 'Nghe và chọn song âm tiết nghe được, đọc to',
+          items: [['nàpiān', 'nàbiān'], ['dōngxi', 'dōngxī'], ['chāoshì', 'chāoshī'], ['wǎnfàn', 'wǎnfēng'], ['shǒují', 'shǒujī'], ['diànhuà', 'biànhuà']] },
+        { type: 'wordlist', caption: 'Nghe và phân biệt phát âm儿化 với không儿化, đọc theo',
+          items: [['nà', 'nàr'], ['cí', 'cír'], ['huàr', 'huà'], ['yíkuàir', 'yíkuài'], ['jiāyóu', 'jiāyóur'], ['chànggē', 'chànggēr']] }
+      ]
+    },
+    {
+      title: 'Mô phỏng đề thi',
+      audio: '/audio/hsk1v3-bai-6/wb-mocktest.mp3',
+      blocks: [
+        { type: 'mocktest',
+          listening: [
+            { n: 1, options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q1a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q1b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q1c.jpg'}
+            ], answer: 'B' },
+            { n: 2, options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q2a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q2b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q2c.jpg'}
+            ], answer: 'B' },
+            { n: 3, options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q3a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q3b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q3c.jpg'}
+            ], answer: 'C' },
+            { n: 4, options: [
+              {key:'A', text:'超市', py:'chāoshì'},
+              {key:'B', text:'做饭', py:'zuò fàn'},
+              {key:'C', text:'东西', py:'dōngxi'}
+            ], answer: 'A' },
+            { n: 5, options: [
+              {key:'A', text:'去', py:'qù'},
+              {key:'B', text:'西安饭店', py:'Xī\'ān Fàndiàn'},
+              {key:'C', text:'坐出租车', py:'zuò chūzūchē'}
+            ], answer: 'C' },
+            { n: 6, options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-6-wb/q6to8_d.jpg'}
+            ], answer: 'C' },
+            { n: 7, options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-6-wb/q6to8_d.jpg'}
+            ], answer: 'B' },
+            { n: 8, options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-6-wb/q6to8_d.jpg'}
+            ], answer: 'D' },
+            { n: 9, options: [
+              {key:'A', text:'5362805', py:''},
+              {key:'B', text:'5398205', py:''},
+              {key:'C', text:'5326085', py:''}
+            ], answer: 'A' },
+            { n: 10, options: [
+              {key:'A', text:'包子', py:'bāozi'},
+              {key:'B', text:'饺子', py:'jiǎozi'},
+              {key:'C', text:'面条儿', py:'miàntiáor'}
+            ], answer: 'C' }
+          ],
+          reading: [
+            { n: 11, prompt: '我有一个新电脑。', promptPy: 'Wǒ yǒu yí gè xīn diànnǎo.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-6-wb/q11to13_d.jpg'}
+            ], answer: 'C' },
+            { n: 12, prompt: '今天星期二。', promptPy: 'Jīntiān Xīngqī\'èr.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-6-wb/q11to13_d.jpg'}
+            ], answer: 'B' },
+            { n: 13, prompt: '我想去超市买东西。', promptPy: 'Wǒ xiǎng qù chāoshì mǎi dōngxi.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-6-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-6-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-6-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-6-wb/q11to13_d.jpg'}
+            ], answer: 'D' },
+            { n: 14, prompt: '你吃什么？', promptPy: 'Nǐ chī shénme?', options: [
+              {key:'A', text:'坐出租车。', py:'Zuò chūzūchē.'},
+              {key:'B', text:'真好看！', py:'Zhēn hǎokàn!'},
+              {key:'C', text:'包子。', py:'Bāozi.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'C' },
+            { n: 15, prompt: '我们怎么去？', promptPy: 'Wǒmen zěnme qù?', options: [
+              {key:'A', text:'坐出租车。', py:'Zuò chūzūchē.'},
+              {key:'B', text:'真好看！', py:'Zhēn hǎokàn!'},
+              {key:'C', text:'包子。', py:'Bāozi.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'A' },
+            { n: 16, prompt: '这是老师的新电脑。', promptPy: 'Zhè shì lǎoshī de xīn diànnǎo.', options: [
+              {key:'A', text:'坐出租车。', py:'Zuò chūzūchē.'},
+              {key:'B', text:'真好看！', py:'Zhēn hǎokàn!'},
+              {key:'C', text:'包子。', py:'Bāozi.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'B' },
+            { n: 17, prompt: '我想买（　）。', promptPy: 'Wǒ xiǎng mǎi ( ).', options: [
+              {key:'A', text:'有', py:'yǒu'},
+              {key:'B', text:'牛奶', py:'niúnǎi'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'B' },
+            { n: 18, prompt: '男：我的手机号是 +86 13552721160。\n女：我（　）你的手机号，你的电话号呢？', promptPy: 'Wǒ de shǒujīhào shì... / Wǒ ( ) nǐ de shǒujīhào, nǐ de diànhuàhào ne?', options: [
+              {key:'A', text:'有', py:'yǒu'},
+              {key:'B', text:'牛奶', py:'niúnǎi'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'A' },
+            { n: 19, prompt: '我家有三口人：爸爸、妈妈和我。\n★说话人家里有几口人？', promptPy: 'Wǒ jiā yǒu sān kǒu rén: bàba, māma hé wǒ.', options: [
+              {key:'A', text:'三口人', py:'sān kǒu rén'},
+              {key:'B', text:'四口人', py:'sì kǒu rén'},
+              {key:'C', text:'六口人', py:'liù kǒu rén'}
+            ], answer: 'A' },
+            { n: 20, prompt: '明天星期天，我休息，想去超市买牛奶。\n★说话人想买什么？', promptPy: 'Míngtiān Xīngqītiān, wǒ xiūxi, xiǎng qù chāoshì mǎi niúnǎi.', options: [
+              {key:'A', text:'菜', py:'cài'},
+              {key:'B', text:'牛奶', py:'niúnǎi'},
+              {key:'C', text:'饺子', py:'jiǎozi'}
+            ], answer: 'B' }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'李文向白家月要手机号 · Hỏi xin số điện thoại',
    preQuiz:[

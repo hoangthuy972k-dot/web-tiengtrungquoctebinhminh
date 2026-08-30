@@ -191,8 +191,17 @@ var wbData = {
       title: 'Nghe và đọc luyện tập',
       audio: '/audio/hsk1v3-bai-4/wb-tingdu.mp3',
       blocks: [
-        { type: 'wordlist', caption: 'Nghe và chọn âm tiết nghe được, đọc to',
-          items: [['pā', 'bā'], ['zì', 'cí'], ['náng', 'láng'], ['jǔ', 'qǔ'], ['mén', 'méng'], ['rù', 'lù'], ['kè', 'rè'], ['qīn', 'qīng']] },
+        { type: 'tonemc', caption: 'Nghe và chọn âm tiết nghe được, đọc to',
+          items: [
+            {before:'', after:'', answer:'pā', options:['pā','bā']},
+            {before:'', after:'', answer:'zì', options:['zì','cì']},
+            {before:'', after:'', answer:'láng', options:['náng','láng']},
+            {before:'', after:'', answer:'jǔ', options:['jǔ','qǔ']},
+            {before:'', after:'', answer:'mén', options:['mén','méng']},
+            {before:'', after:'', answer:'rù', options:['rù','lù']},
+            {before:'', after:'', answer:'kè', options:['kè','rè']},
+            {before:'', after:'', answer:'qǐng', options:['qǐn','qǐng']}
+          ] },
         { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý biến điệu thanh 3',
           items: ['nǐ hǎo', 'kěyǐ', 'nǎlǐ', 'shuǐguǒ', 'shǒubiǎo', 'suǒyǐ', 'pěngchǎng', 'hǎojiǔ', 'wǎndiǎn', 'liǎojiě', 'xǐzǎo', 'zhíyóu'] },
         { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý phát âm thanh nhẹ',

@@ -177,8 +177,15 @@ var wbData = {
       title: 'Nghe và đọc luyện tập',
       audio: '/audio/hsk1v3-bai-6/wb-tingdu.mp3',
       blocks: [
-        { type: 'wordlist', caption: 'Nghe và chọn song âm tiết nghe được, đọc to',
-          items: [['nàpiān', 'nàbiān'], ['dōngxi', 'dōngxī'], ['chāoshì', 'chāoshī'], ['wǎnfàn', 'wǎnfēng'], ['shǒují', 'shǒujī'], ['diànhuà', 'biànhuà']] },
+        { type: 'tonemc', caption: 'Nghe và chọn song âm tiết nghe được, đọc to',
+          items: [
+            {before:'', after:'', answer:'nàbiān', options:['nàpiān','nàbiān']},
+            {before:'', after:'', answer:'dōngxi', options:['dōngxi','dōngxī']},
+            {before:'', after:'', answer:'chāoshì', options:['chāoshì','chāoshī']},
+            {before:'', after:'', answer:'wǎnfàn', options:['wǎnfàn','wǎnfēng']},
+            {before:'', after:'', answer:'shǒujī', options:['shǒují','shǒujī']},
+            {before:'', after:'', answer:'diànhuà', options:['diànhuà','biànhuà']}
+          ] },
         { type: 'wordlist', caption: 'Nghe và phân biệt phát âm儿化 với không儿化, đọc theo',
           items: [['nà', 'nàr'], ['cí', 'cír'], ['huàr', 'huà'], ['yíkuàir', 'yíkuài'], ['jiāyóu', 'jiāyóur'], ['chànggē', 'chànggēr']] }
       ]

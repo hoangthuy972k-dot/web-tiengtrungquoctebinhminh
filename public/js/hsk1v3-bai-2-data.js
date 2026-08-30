@@ -123,6 +123,114 @@ var wuData = [
   {img:'😄',label:'高兴',py:'gāoxìng',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 2: Ngữ âm)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-2/wb-yuyin.mp3',
+      blocks: [
+        { type: 'table', caption: 'Thanh mẫu và vận mẫu (2)',
+          headers: ['Thanh mẫu (声母)', 'Vận mẫu ghép được (韵母)'],
+          rows: [
+            ['j, q, x', 'i [i], ü'],
+            ['', 'ia, ie, iao, iou (iu)'],
+            ['', 'ian, in'],
+            ['', 'iang, ing, iong'],
+            ['', 'üe, üan, ün']
+          ],
+          note: 'j, q, x chỉ ghép được với vận mẫu bắt đầu bằng "i" hoặc "ü" — không ghép trực tiếp với "a" hay "u".' },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-2-wb/ji.jpg', py:'jī', hz:'鸡'},
+          {img:'/images/hsk1v3-bai-2-wb/qi.jpg', py:'qī', hz:'七'},
+          {img:'/images/hsk1v3-bai-2-wb/xie.jpg', py:'xiě', hz:'写'},
+          {img:'/images/hsk1v3-bai-2-wb/qing.jpg', py:'qǐng', hz:'请'},
+          {img:'/images/hsk1v3-bai-2-wb/zaijian.jpg', py:'zàijiàn', hz:'再见'},
+          {img:'/images/hsk1v3-bai-2-wb/xiexie.jpg', py:'xièxie', hz:'谢谢'},
+          {img:'/images/hsk1v3-bai-2-wb/xingqi.jpg', py:'xīngqī', hz:'星期'},
+          {img:'/images/hsk1v3-bai-2-wb/gaoxing.jpg', py:'gāoxìng', hz:'高兴'}
+        ] },
+        { type: 'table', caption: 'Quy tắc chính tả — "i, u, ü" đứng một mình',
+          headers: ['1', '2', '3', '4'],
+          rows: [
+            ['yī', 'yí', 'yǐ', 'yì'],
+            ['wū', 'wú', 'wǔ', 'wù'],
+            ['yū', 'yú', 'yǔ', 'yù']
+          ],
+          note: 'Khi vận mẫu "i, u, ü" đứng một mình làm thành cả âm tiết (không có thanh mẫu phía trước), phải viết thành "yi, wu, yu".' },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-2-wb/yu.jpg', py:'yǔ', hz:'雨'},
+          {img:'/images/hsk1v3-bai-2-wb/wu.jpg', py:'wǔ', hz:'五'},
+          {img:'/images/hsk1v3-bai-2-wb/yi.jpg', py:'yī', hz:'一'},
+          {img:'/images/hsk1v3-bai-2-wb/yizi.jpg', py:'yǐzi', hz:'椅子'}
+        ] },
+        { type: 'table', caption: 'Quy tắc chính tả — "j, q, x" ghép với "ü"',
+          headers: ['1', '2', '3', '4'],
+          rows: [
+            ['jū', 'jú', 'jǔ', 'jù'],
+            ['qū', 'qú', 'qǔ', 'qù'],
+            ['xū', 'xú', 'xǔ', 'xù']
+          ],
+          note: 'Khi "j, q, x" ghép với vận mẫu "ü", bỏ hai chấm trên "ü" và viết thành "u" (bản chất vẫn đọc là "ü").' },
+        { type: 'table', caption: 'Quy tắc chính tả — vận mẫu "iou"',
+          headers: ['Đứng một mình', 'Ghép với m/d/n/l/j/q/x'],
+          rows: [
+            ['yōu, yóu, yǒu, yòu', 'miù, diū, niú, liǔ'],
+            ['(viết là "you")', 'jiù, qiū, qiú, xiǔ (viết là "iu", dấu thanh đánh trên "u")']
+          ],
+          note: 'Từ ví dụ: yóuyǒng (bơi lội), lǚyóu (du lịch), péngyou (bạn bè).' },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-2-wb/jiu9.jpg', py:'jiǔ', hz:'九'},
+          {img:'/images/hsk1v3-bai-2-wb/pengyou.jpg', py:'péngyou', hz:'朋友'},
+          {img:'/images/hsk1v3-bai-2-wb/niunai.jpg', py:'niúnǎi', hz:'牛奶'},
+          {img:'/images/hsk1v3-bai-2-wb/xiuxi.jpg', py:'xiūxi', hz:'休息'}
+        ] }
+      ]
+    },
+    {
+      title: 'Nghe và đọc luyện tập',
+      audio: '/audio/hsk1v3-bai-2/wb-tingdu.mp3',
+      blocks: [
+        { type: 'blankdrill', caption: 'Nghe và điền thanh mẫu còn thiếu',
+          items: [
+            {before:'', after:' + ián', answer:'q'}, {before:'', after:' + īn', answer:'j'}, {before:'', after:' + iǎng', answer:'x'},
+            {before:'', after:' + iào', answer:'j'}, {before:'', after:' + iè', answer:'x'}, {before:'', after:' + ǐng', answer:'q'},
+            {before:'', after:' + ǐ', answer:'j'}, {before:'', after:' + ù', answer:'q'}, {before:'', after:' + ià', answer:'x'}
+          ] },
+        { type: 'tonemc', caption: 'Nghe và chọn vận mẫu đúng',
+          items: [
+            {before:'j + ', after:'', answer:'iàn', options:['iān','ián','iǎn','iàn']}, {before:'x + ', after:'', answer:'iě', options:['iē','ié','iě','iè']},
+            {before:'q + ', after:'', answer:'ù', options:['ū','ú','ǔ','ù']}, {before:'j + ', after:'', answer:'iào', options:['iāo','iáo','iǎo','iào']},
+            {before:'q + ', after:'', answer:'ǐng', options:['īng','íng','ǐng','ìng']}, {before:'x + ', after:'', answer:'ué', options:['uē','ué','uě','uè']},
+            {before:'j + ', after:'', answer:'iǎo', options:['iāo','iáo','iǎo','iào']}, {before:'x + ', after:'', answer:'īng', options:['īng','íng','ǐng','ìng']},
+            {before:'j + ', after:'', answer:'iě', options:['iē','ié','iě','iè']}, {before:'q + ', after:'', answer:'ián', options:['iān','ián','iǎn','iàn']},
+            {before:'x + ', after:'', answer:'iàn', options:['iān','ián','iǎn','iàn']}, {before:'q + ', after:'', answer:'ǐ', options:['ī','í','ǐ','ì']},
+            {before:'j + ', after:'', answer:'iū', options:['iū','iú','iǔ','iù']}, {before:'x + ', after:'', answer:'iū', options:['iū','iú','iǔ','iù']},
+            {before:'q + ', after:'', answer:'uán', options:['uān','uán','uǎn','uàn']}
+          ] },
+        { type: 'tonemc', caption: 'Nghe và chọn thanh điệu đúng',
+          items: [
+            {before:'xue → ', after:'', answer:'xué', options:['xuē','xué','xuě','xuè']}, {before:'jiao → ', after:'', answer:'jiào', options:['jiāo','jiáo','jiǎo','jiào']},
+            {before:'qun → ', after:'', answer:'qún', options:['qūn','qún','qǔn','qùn']}, {before:'jiu → ', after:'', answer:'jiǔ', options:['jiū','jiú','jiǔ','jiù']},
+            {before:'xin → ', after:'', answer:'xīn', options:['xīn','xín','xǐn','xìn']}, {before:'qing → ', after:'', answer:'qǐng', options:['qīng','qíng','qǐng','qìng']},
+            {before:'xia → ', after:'', answer:'xià', options:['xiā','xiá','xiǎ','xià']}, {before:'jia → ', after:'', answer:'jiā', options:['jiā','jiá','jiǎ','jià']},
+            {before:'qu → ', after:'', answer:'qù', options:['qū','qú','qǔ','qù']}, {before:'ji → ', after:'', answer:'jī', options:['jī','jí','jǐ','jì']},
+            {before:'xiao → ', after:'', answer:'xiǎo', options:['xiāo','xiáo','xiǎo','xiào']}, {before:'jie → ', after:'', answer:'jiě', options:['jiē','jié','jiě','jiè']}
+          ] },
+        { type: 'dialoguepics', caption: 'Xem hình, đọc đúng lời hội thoại',
+          items: [
+            {img:'/images/hsk1v3-bai-2-wb/dlg_handshake.jpg', lines:['A: 很高兴认识你。', 'B: 认识你我也很高兴。']},
+            {img:'/images/hsk1v3-bai-2-wb/dlg_girls.jpg', lines:['A: 老师，再见！', 'B: 再见！']},
+            {img:'/images/hsk1v3-bai-2-wb/dlg_blonde.jpg', lines:['A: 大家好，我叫白家月。', 'B: 白家月，你好。']},
+            {img:'/images/hsk1v3-bai-2-wb/dlg_couple.jpg', lines:['A: 对不起。', 'B: 没关系。']}
+          ] }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'王一飞认识学生 · Làm quen tên trong lớp',
    preQuiz:[

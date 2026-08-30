@@ -116,6 +116,158 @@ var wuData = [
   {img:'/images/hsk1v3-bai-10/shangdian.jpg',label:'商店',py:'shāngdiàn',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 10: Ngữ âm + Hán tự + Mô phỏng đề thi)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-10/wb-yuyin.mp3',
+      blocks: [
+        { type: 'wordlist', caption: 'Đánh dấu thanh điệu — nghe và đọc theo',
+          items: ['duì', 'jiā', 'guò', 'xiǎng', 'chāoshì', 'niúnǎi', 'shàngwǔ', 'diànyǐng'] },
+        { type: 'tonemc', caption: 'Phân biệt thanh điệu — chọn âm tiết có thanh điệu KHÁC trong nhóm',
+          items: [
+            {before:'', after:'', answer:'zhuō', options:['zuò','zì','zhuō']},
+            {before:'', after:'', answer:'chá', options:['xiě','chá','jiě']},
+            {before:'', after:'', answer:'qù', options:['chuān','qù','fēn']},
+            {before:'', after:'', answer:'yǒu', options:['yǒu','shuí','rén']},
+            {before:'', after:'', answer:'yīyuàn', options:['wàibian','zhège','yīyuàn']}
+          ] },
+        { type: 'table', caption: 'Chữ Hán (汉字) — Cấu tạo và bút thuận (tiếp)',
+          rows: [
+            ['Nét mới', '横折 héngzhé (ngang-gập), 横撇 héngpiě (ngang-phẩy), 竖折 shùzhé (sổ-gập), 竖提 shùtí (sổ-hất)'],
+            ['Quy tắc bút thuận', '从左到右 (trái trước phải sau) — ví dụ: 的; 先外后里 (ngoài trước trong sau) — ví dụ: 月'],
+            ['Ví dụ luyện viết', '日 (rì) → 星期日 (Xīngqīrì); 友 (yǒu) → 朋友 (péngyou); 医 (yī) → 医生 (yīshēng); 以 (yǐ) → 可以 (kěyǐ)']
+          ],
+          note: 'Phần luyện viết tay theo từng nét cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
+      ]
+    },
+    {
+      title: 'Mô phỏng đề thi',
+      audio: '/audio/hsk1v3-bai-10/wb-mocktest.mp3',
+      blocks: [
+        { type: 'mocktest',
+          listening: [
+            { n: 1, options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q1a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q1b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q1c.jpg'}
+            ], answer: 'B' },
+            { n: 2, options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q2a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q2b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q2c.jpg'}
+            ], answer: 'C' },
+            { n: 3, options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q3a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q3b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q3c.jpg'}
+            ], answer: 'B' },
+            { n: 4, options: [
+              {key:'A', text:'10:00', py:''},
+              {key:'B', text:'十块钱', py:'shí kuài qián'},
+              {key:'C', text:'十本书', py:'shí běn shū'}
+            ], answer: 'B' },
+            { n: 5, options: [
+              {key:'A', text:'不贵', py:'bú guì'},
+              {key:'B', text:'很好看', py:'hěn hǎokàn'},
+              {key:'C', text:'120元', py:'120 yuán'}
+            ], answer: 'B' },
+            { n: 6, options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-10-wb/q6to8_d.jpg'}
+            ], answer: 'C' },
+            { n: 7, options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-10-wb/q6to8_d.jpg'}
+            ], answer: 'D' },
+            { n: 8, options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-10-wb/q6to8_d.jpg'}
+            ], answer: 'B' },
+            { n: 9, options: [
+              {key:'A', text:'很多', py:'hěn duō'},
+              {key:'B', text:'真贵', py:'zhēn guì'},
+              {key:'C', text:'不好看', py:'bù hǎokàn'}
+            ], answer: 'A' },
+            { n: 10, options: [
+              {key:'A', text:'很少', py:'hěn shǎo'},
+              {key:'B', text:'很便宜', py:'hěn piányi'},
+              {key:'C', text:'很漂亮', py:'hěn piàoliang'}
+            ], answer: 'B' }
+          ],
+          reading: [
+            { n: 11, prompt: '请问，包子多少钱一个？', promptPy: 'Qǐngwèn, bāozi duōshao qián yí gè?', options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-10-wb/q11to13_d.jpg'}
+            ], answer: 'C' },
+            { n: 12, prompt: '这边的苹果真便宜。', promptPy: 'Zhèbiān de píngguǒ zhēn piányi.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-10-wb/q11to13_d.jpg'}
+            ], answer: 'B' },
+            { n: 13, prompt: '这些是男孩子穿的衣服。', promptPy: 'Zhèxiē shì nán háizi chuān de yīfu.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-10-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-10-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-10-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-10-wb/q11to13_d.jpg'}
+            ], answer: 'D' },
+            { n: 14, prompt: '女孩子的衣服在哪儿？', promptPy: 'Nǚ háizi de yīfu zài nǎr?', options: [
+              {key:'A', text:'十块钱。', py:'Shí kuài qián.'},
+              {key:'B', text:'对不起，没有。', py:'Duìbuqǐ, méiyǒu.'},
+              {key:'C', text:'在那边。', py:'Zài nàbiān.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'C' },
+            { n: 15, prompt: '杯子多少钱一个？', promptPy: 'Bēizi duōshao qián yí gè?', options: [
+              {key:'A', text:'十块钱。', py:'Shí kuài qián.'},
+              {key:'B', text:'对不起，没有。', py:'Duìbuqǐ, méiyǒu.'},
+              {key:'C', text:'在那边。', py:'Zài nàbiān.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'A' },
+            { n: 16, prompt: '请问这儿有牛奶吗？', promptPy: 'Qǐngwèn zhèr yǒu niúnǎi ma?', options: [
+              {key:'A', text:'十块钱。', py:'Shí kuài qián.'},
+              {key:'B', text:'对不起，没有。', py:'Duìbuqǐ, méiyǒu.'},
+              {key:'C', text:'在那边。', py:'Zài nàbiān.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'B' },
+            { n: 17, prompt: '那些苹果两（　）钱一斤，很便宜。', promptPy: 'Nàxiē píngguǒ liǎng ( ) qián yì jīn, hěn piányi.', options: [
+              {key:'A', text:'穿', py:'chuān'},
+              {key:'B', text:'块', py:'kuài'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'B' },
+            { n: 18, prompt: '男：这件衣服怎么样？\n女：很好看，10岁的男孩子能（　）。', promptPy: 'Zhè jiàn yīfu zěnmeyàng? / Hěn hǎokàn, 10 suì de nán háizi néng ( ).', options: [
+              {key:'A', text:'穿', py:'chuān'},
+              {key:'B', text:'块', py:'kuài'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'A' },
+            { n: 19, prompt: '我没有手机，今天想去商店买一个。\n★说话人想买什么？', promptPy: 'Wǒ méiyǒu shǒujī, jīntiān xiǎng qù shāngdiàn mǎi yí gè.', options: [
+              {key:'A', text:'杯子', py:'bēizi'},
+              {key:'B', text:'手机', py:'shǒujī'},
+              {key:'C', text:'水果', py:'shuǐguǒ'}
+            ], answer: 'B' },
+            { n: 20, prompt: '这件衣服很好看，你也能穿，买一件吧。\n★那件衣服：', promptPy: 'Zhè jiàn yīfu hěn hǎokàn, nǐ yě néng chuān, mǎi yí jiàn ba.', options: [
+              {key:'A', text:'好看', py:'hǎokàn'},
+              {key:'B', text:'便宜', py:'piányi'},
+              {key:'C', text:'很贵', py:'hěn guì'}
+            ], answer: 'A' }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'王一雪在一家小店买杯子 · Mua cốc',
    preQuiz:[

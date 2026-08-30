@@ -129,8 +129,17 @@ var wbData = {
       title: 'Ngữ âm',
       audio: '/audio/hsk1v3-bai-8/wb-yuyin.mp3',
       blocks: [
-        { type: 'wordlist', caption: 'Phân biệt âm tiết (1) — nghe và chọn, đọc to',
-          items: [['lián', 'nián'], ['rěn', 'shěn'], ['diē', 'tiē'], ['chǎn', 'chǎng'], ['liè', 'lüè'], ['hún', 'fén'], ['bīn', 'bīng'], ['gǒng', 'kǒng']] },
+        { type: 'tonemc', caption: 'Phân biệt âm tiết (1) — nghe và chọn, đọc to',
+          items: [
+            {before:'', after:'', answer:'nián', options:['lián','nián']},
+            {before:'', after:'', answer:'rěn', options:['rěn','shěn']},
+            {before:'', after:'', answer:'tiē', options:['diē','tiē']},
+            {before:'', after:'', answer:'chǎn', options:['chǎn','chǎng']},
+            {before:'', after:'', answer:'lüè', options:['liè','lüè']},
+            {before:'', after:'', answer:'hún', options:['hún','fén']},
+            {before:'', after:'', answer:'bīng', options:['bīn','bīng']},
+            {before:'', after:'', answer:'kǒng', options:['gǒng','kǒng']}
+          ] },
         { type: 'tonemc', caption: 'Phân biệt âm tiết (2) — nghe và chọn song âm tiết KHÔNG phải điệp âm (láy)',
           items: [
             {before:'', after:'', answer:'jiějie', options:['tīngting','tīnglì','jiějie']},

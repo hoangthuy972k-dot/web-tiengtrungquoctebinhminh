@@ -139,6 +139,157 @@ var wuData = [
   {img:'/images/hsk1v3-bai-12/shui.jpg',label:'水',py:'shuǐ',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 12: Ngữ âm + Hán tự + Mô phỏng đề thi)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-12/wb-yuyin.mp3',
+      blocks: [
+        { type: 'tonemc', caption: 'Phân biệt thanh điệu — chọn âm tiết có thanh điệu KHÁC trong nhóm',
+          items: [
+            {before:'', after:'', answer:'shuì', options:['shuǐ','shuì','hěn']},
+            {before:'', after:'', answer:'wèntí', options:['wèntí','kànbìng','diànshì']},
+            {before:'', after:'', answer:'fēicháng', options:['gāoxìng','fēicháng','zhīdào']},
+            {before:'', after:'', answer:'duìbuqǐ', options:['qù chāoshì','zài shāngdiàn','duìbuqǐ']}
+          ] },
+        { type: 'wordlist', caption: 'Nghe âm tiết, ghép với từ đúng — nghe và đọc theo',
+          items: [['nǐ hǎo', '你好'], ['míngzi', '名字'], ['Zhōngguó', '中国'], ['lǎoshī', '老师'], ['háizi', '孩子'], ['xièxie', '谢谢']] },
+        { type: 'table', caption: 'Chữ Hán (汉字) — Cấu tạo và bút thuận (tiếp)',
+          rows: [
+            ['Nét mới', '横折钩 héngzhégōu (ngang-gập-móc), 竖弯钩 shùwāngōu (sổ-cong-móc), 横折弯钩 héngzhéwāngōu (ngang-gập-cong-móc), 竖折折钩 shùzhézhégōu (sổ-gập-gập-móc)'],
+            ['Quy tắc bút thuận', '先中间后两边 (giữa trước hai bên sau) — ví dụ: 水'],
+            ['Ví dụ luyện viết', '书 (shū) → 读书 (dúshū); 几 (jǐ) → 几岁 (jǐ suì); 吃 (chī) → 吃饭 (chīfàn); 妈 (mā) → 妈妈 (māma); 少 (shǎo) → 多少 (duōshao)']
+          ],
+          note: 'Phần luyện viết tay theo từng nét cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
+      ]
+    },
+    {
+      title: 'Mô phỏng đề thi',
+      audio: '/audio/hsk1v3-bai-12/wb-mocktest.mp3',
+      blocks: [
+        { type: 'mocktest',
+          listening: [
+            { n: 1, options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q1a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q1b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q1c.jpg'}
+            ], answer: 'A' },
+            { n: 2, options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q2a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q2b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q2c.jpg'}
+            ], answer: 'C' },
+            { n: 3, options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q3a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q3b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q3c.jpg'}
+            ], answer: 'B' },
+            { n: 4, options: [
+              {key:'A', text:'在吃药', py:'zài chī yào'},
+              {key:'B', text:'有点儿', py:'yǒudiǎnr'},
+              {key:'C', text:'不太好', py:'bú tài hǎo'}
+            ], answer: 'C' },
+            { n: 5, options: [
+              {key:'A', text:'下雪了', py:'xià xuě le'},
+              {key:'B', text:'太热了', py:'tài rè le'},
+              {key:'C', text:'不喝水', py:'bù hē shuǐ'}
+            ], answer: 'B' },
+            { n: 6, options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-12-wb/q6to8_d.jpg'}
+            ], answer: 'D' },
+            { n: 7, options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-12-wb/q6to8_d.jpg'}
+            ], answer: 'C' },
+            { n: 8, options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-12-wb/q6to8_d.jpg'}
+            ], answer: 'B' },
+            { n: 9, options: [
+              {key:'A', text:'看医生', py:'kàn yīshēng'},
+              {key:'B', text:'看朋友', py:'kàn péngyou'},
+              {key:'C', text:'看病人', py:'kàn bìngrén'}
+            ], answer: 'A' },
+            { n: 10, options: [
+              {key:'A', text:'工作', py:'gōngzuò'},
+              {key:'B', text:'休息', py:'xiūxi'},
+              {key:'C', text:'读书', py:'dúshū'}
+            ], answer: 'B' }
+          ],
+          reading: [
+            { n: 11, prompt: '我女儿生病了。', promptPy: 'Wǒ nǚ\'ér shēngbìng le.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-12-wb/q11to13_d.jpg'}
+            ], answer: 'D' },
+            { n: 12, prompt: '今天天不太好，下雪了。', promptPy: 'Jīntiān tiān bú tài hǎo, xià xuě le.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-12-wb/q11to13_d.jpg'}
+            ], answer: 'B' },
+            { n: 13, prompt: '12:00了，你们怎么还在看电视？', promptPy: '12:00 le, nǐmen zěnme hái zài kàn diànshì?', options: [
+              {key:'A', img:'/images/hsk1v3-bai-12-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-12-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-12-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-12-wb/q11to13_d.jpg'}
+            ], answer: 'C' },
+            { n: 14, prompt: '你怎么了？', promptPy: 'Nǐ zěnme le?', options: [
+              {key:'A', text:'热水。', py:'Rè shuǐ.'},
+              {key:'B', text:'我病了。', py:'Wǒ bìng le.'},
+              {key:'C', text:'对。', py:'Duì.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'B' },
+            { n: 15, prompt: '你想喝点儿什么？', promptPy: 'Nǐ xiǎng hē diǎnr shénme?', options: [
+              {key:'A', text:'热水。', py:'Rè shuǐ.'},
+              {key:'B', text:'我病了。', py:'Wǒ bìng le.'},
+              {key:'C', text:'对。', py:'Duì.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'A' },
+            { n: 16, prompt: '你开车了？', promptPy: 'Nǐ kāichē le?', options: [
+              {key:'A', text:'热水。', py:'Rè shuǐ.'},
+              {key:'B', text:'我病了。', py:'Wǒ bìng le.'},
+              {key:'C', text:'对。', py:'Duì.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'C' },
+            { n: 17, prompt: '他（　）了，没来上班。', promptPy: 'Tā ( ) le, méi lái shàngbān.', options: [
+              {key:'A', text:'冷', py:'lěng'},
+              {key:'B', text:'生病', py:'shēngbìng'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'B' },
+            { n: 18, prompt: '男：外边雨大吗？\n女：很大，我觉得有点儿（　）。', promptPy: 'Wàibian yǔ dà ma? / Hěn dà, wǒ juéde yǒudiǎnr ( ).', options: [
+              {key:'A', text:'冷', py:'lěng'},
+              {key:'B', text:'生病', py:'shēngbìng'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'A' },
+            { n: 19, prompt: '昨天的天气很好，我和朋友们去外边玩了。\n★说话人觉得昨天：', promptPy: 'Zuótiān de tiānqì hěn hǎo, wǒ hé péngyoumen qù wàibian wán le.', options: [
+              {key:'A', text:'天气好', py:'tiānqì hǎo'},
+              {key:'B', text:'雨不大', py:'yǔ bú dà'},
+              {key:'C', text:'有点儿冷', py:'yǒudiǎnr lěng'}
+            ], answer: 'A' },
+            { n: 20, prompt: '老张去看病，医生说他要吃三天药。\n★医生说老张：', promptPy: 'Lǎo Zhāng qù kànbìng, yīshēng shuō tā yào chī sān tiān yào.', options: [
+              {key:'A', text:'要吃药', py:'yào chī yào'},
+              {key:'B', text:'要多睡觉', py:'yào duō shuìjiào'},
+              {key:'C', text:'要多喝水', py:'yào duō hē shuǐ'}
+            ], answer: 'A' }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'王一雪打电话给王一飞询问天气 · Hỏi thăm thời tiết',
    preQuiz:[

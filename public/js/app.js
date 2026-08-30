@@ -67,13 +67,60 @@
       });
       if (hasAny) lessonsDone++;
     });
-    var streak = computeStreak(readJSON(STORAGE_KEYS.studyDays, []));
+    var studyDays = readJSON(STORAGE_KEYS.studyDays, []);
+    var streak = computeStreak(studyDays);
 
     fetch('/api/scores/sync', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
-      body: JSON.stringify({ totalCorrect: totalCorrect, totalQuestions: totalQuestions, streak: streak, lessonsDone: lessonsDone })
+      body: JSON.stringify({
+        totalCorrect: totalCorrect, totalQuestions: totalQuestions, streak: streak, lessonsDone: lessonsDone,
+        studyDays: studyDays, lessonScores: allScores
+      })
     }).catch(function () {});
+  }
+
+  // Gop tien do tu server (chuoi ngay hoc + diem tung bai) vao du lieu
+  // dang co tren thiet bi nay, de dang nhap cung 1 tai khoan tren may
+  // tinh hay dien thoai deu thay CUNG mot chuoi ngay hoc / diem so —
+  // khong bao gio ghi de mat du lieu, chi gop (union) hai ben.
+  function mergeProgressFromServer(progress) {
+    if (!progress) return;
+    var localDays = readJSON(STORAGE_KEYS.studyDays, []);
+    var mergedDays = localDays.slice();
+    (progress.studyDays || []).forEach(function (d) {
+      if (mergedDays.indexOf(d) === -1) mergedDays.push(d);
+    });
+    writeJSON(STORAGE_KEYS.studyDays, mergedDays);
+
+    var localScores = readJSON(STORAGE_KEYS.lessonScores, {});
+    var mergedScores = {};
+    Object.keys(localScores).forEach(function (k) { mergedScores[k] = localScores[k]; });
+    Object.keys(progress.lessonScores || {}).forEach(function (k) { mergedScores[k] = progress.lessonScores[k]; });
+    writeJSON(STORAGE_KEYS.lessonScores, mergedScores);
+
+    renderStreak();
+    renderStatTiles();
+  }
+
+  // Khi mo trang va da co phien dang nhap san (tu lan truoc), keo tien
+  // do moi nhat tu server ve ngay — de neu vua hoc tren thiet bi khac,
+  // thiet bi nay cung thay chuoi ngay hoc/diem cap nhat ma khong can
+  // hoc lai. Neu server bao phien het han (token cu), tu dong dang xuat.
+  function refreshProgressFromServer() {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    if (!auth || !auth.token) return;
+    fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + auth.token } })
+      .then(function (r) {
+        if (r.status === 401) { localStorage.removeItem(STORAGE_KEYS.auth); return null; }
+        return r.json();
+      })
+      .then(function (data) {
+        if (!data) return;
+        mergeProgressFromServer(data.progress);
+        syncProgressToServer();
+      })
+      .catch(function () {});
   }
 
   /* ---------------- Analytics (luot truy cap + thoi gian hoc, gui ve server) ---------------- */
@@ -4137,9 +4184,10 @@
       });
     });
 
-    function setSession(token, user) {
+    function setSession(token, user, progress) {
       writeJSON(STORAGE_KEYS.auth, { token: token, user: user });
       renderUserChip();
+      if (progress) mergeProgressFromServer(progress);
       syncProgressToServer();
     }
 
@@ -4174,7 +4222,7 @@
       }).then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
         .then(function (res) {
           if (!res.ok) { setFormError(form, res.data.error || 'Đăng nhập thất bại.'); return; }
-          setSession(res.data.token, res.data.user);
+          setSession(res.data.token, res.data.user, res.data.progress);
           closeModal();
           showToast('Đăng nhập thành công! Chào mừng trở lại, ' + res.data.user.name + '.');
         })
@@ -4196,7 +4244,7 @@
       }).then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
         .then(function (res) {
           if (!res.ok) { setFormError(form, res.data.error || 'Đăng ký thất bại.'); return; }
-          setSession(res.data.token, res.data.user);
+          setSession(res.data.token, res.data.user, res.data.progress);
           closeModal();
           showToast('Tạo tài khoản thành công! Chào mừng ' + res.data.user.name + '.');
         })
@@ -4230,6 +4278,7 @@
     renderStreak();
     renderStatTiles();
     initAuth();
+    refreshProgressFromServer();
     initAnalytics();
     initPinyinToggle();
 

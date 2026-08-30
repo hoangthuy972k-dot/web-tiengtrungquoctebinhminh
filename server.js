@@ -137,6 +137,24 @@ function publicUser(user) {
   return { id: user.id, name: user.name, email: user.email, level: user.level };
 }
 
+// Tra ve toan bo tien do da luu tren server cho 1 user — dung de dong bo
+// lai xuong bat ky thiet bi nao dang nhap dung tai khoan (may tinh, dien
+// thoai...), khong chi con so streak ma ca danh sach ngay hoc that va
+// diem tung bai, de tai khoan dong nhat tren moi thiet bi.
+function userProgress(userId) {
+  const scores = loadScores();
+  const sc = scores[userId];
+  if (!sc) return { studyDays: [], lessonScores: {}, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
+  return {
+    studyDays: sc.studyDays || [],
+    lessonScores: sc.lessonScores || {},
+    streak: sc.streak || 0,
+    totalCorrect: sc.totalCorrect || 0,
+    totalQuestions: sc.totalQuestions || 0,
+    lessonsDone: sc.lessonsDone || 0,
+  };
+}
+
 app.post('/api/auth/register', (req, res) => {
   const name = typeof req.body?.name === 'string' ? req.body.name.trim() : '';
   const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
@@ -162,7 +180,7 @@ app.post('/api/auth/register', (req, res) => {
   };
   users.push(user);
   saveUsers(users);
-  res.json({ token: user.sessionToken, user: publicUser(user) });
+  res.json({ token: user.sessionToken, user: publicUser(user), progress: userProgress(user.id) });
 });
 
 app.post('/api/auth/login', (req, res) => {
@@ -176,21 +194,34 @@ app.post('/api/auth/login', (req, res) => {
   }
   user.sessionToken = makeToken();
   saveUsers(users);
-  res.json({ token: user.sessionToken, user: publicUser(user) });
+  res.json({ token: user.sessionToken, user: publicUser(user), progress: userProgress(user.id) });
 });
 
 app.get('/api/auth/me', requireAuth, (req, res) => {
-  res.json({ user: publicUser(req.user) });
+  res.json({ user: publicUser(req.user), progress: userProgress(req.user.id) });
 });
 
-// Hoc sinh gui len tong diem THAT (tinh san o client tu du lieu that
-// da luu), server chi luu lai de xep hang — khong tinh toan lai tu dau.
+// Hoc sinh gui len tong diem THAT (tinh san o client tu du lieu that da
+// luu), server luu lai de xep hang VA de dong bo nguoc xuong bat ky
+// thiet bi nao khac dang nhap cung tai khoan. studyDays va lessonScores
+// duoc GOP (khong ghi de) voi du lieu da co tren server, vi 2 thiet bi
+// co the co lich su khac nhau (vd hoc tren dien thoai hom qua, may tinh
+// hom nay) — gop lai moi khong bi mat ngay hoc/diem da co.
 app.post('/api/scores/sync', requireAuth, (req, res) => {
   const totalCorrect = Number(req.body?.totalCorrect) || 0;
   const totalQuestions = Number(req.body?.totalQuestions) || 0;
   const streak = Number(req.body?.streak) || 0;
   const lessonsDone = Number(req.body?.lessonsDone) || 0;
+  const incomingDays = Array.isArray(req.body?.studyDays)
+    ? req.body.studyDays.filter((d) => typeof d === 'string' && d.length === 10).slice(0, 3660)
+    : [];
+  const incomingLessonScores = req.body?.lessonScores && typeof req.body.lessonScores === 'object' && !Array.isArray(req.body.lessonScores)
+    ? req.body.lessonScores
+    : {};
   const scores = loadScores();
+  const existing = scores[req.user.id] || {};
+  const mergedDays = Array.from(new Set((existing.studyDays || []).concat(incomingDays))).sort();
+  const mergedLessonScores = Object.assign({}, existing.lessonScores || {}, incomingLessonScores);
   scores[req.user.id] = {
     name: req.user.name,
     level: req.user.level,
@@ -198,10 +229,12 @@ app.post('/api/scores/sync', requireAuth, (req, res) => {
     totalQuestions: Math.max(0, Math.round(totalQuestions)),
     streak: Math.max(0, Math.round(streak)),
     lessonsDone: Math.max(0, Math.round(lessonsDone)),
+    studyDays: mergedDays,
+    lessonScores: mergedLessonScores,
     updatedAt: new Date().toISOString(),
   };
   saveScores(scores);
-  res.json({ ok: true });
+  res.json({ ok: true, progress: userProgress(req.user.id) });
 });
 
 app.get('/api/leaderboard', (req, res) => {

@@ -144,6 +144,173 @@ var wuData = [
   {img:'🥟',label:'饺子',py:'jiǎozi',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 5: Ngữ âm + Mô phỏng đề thi)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-5/wb-yuyin.mp3',
+      blocks: [
+        { type: 'table', caption: 'Biến điệu của "不" (bù)',
+          rows: [
+            ['不 (bù) + shì (是)', '→  bú + shì (不是)'],
+            ['不 (bù) + huì (会)', '→  bú + huì (不会)'],
+            ['不 (bù) + dà (大)', '→  bú + dà (不大)'],
+            ['不 (bù) + duì (对)', '→  bú + duì (不对)']
+          ],
+          note: '"不 (bù)" khi đứng một mình hoặc đứng trước âm tiết thanh 1, 2, 3 thì không đổi thanh. Khi đứng trước âm tiết thanh 4 thì đọc thành thanh 2: 不 (bù) + thanh 4 → 不 (bú) + thanh 4.' },
+        { type: 'table', caption: 'Biến điệu của "一" (yī) — trường hợp (1): trước thanh 1/2/3, đọc thành thanh 4',
+          rows: [
+            ['yī (一) + xiē (些)', '→  yì + xiē (一些)'],
+            ['yī (一) + nián (年)', '→  yì + nián (一年)'],
+            ['yī (一) + kǒu (口)', '→  yì + kǒu (一口)']
+          ] },
+        { type: 'table', caption: 'Biến điệu của "一" (yī) — trường hợp (2): trước thanh 4, đọc thành thanh 2',
+          rows: [
+            ['yī (一) + gè (个)', '→  yí + gè (一个)'],
+            ['yī (一) + rì (日)', '→  yí + rì (一日)'],
+            ['yī (一) + suì (岁)', '→  yí + suì (一岁)']
+          ],
+          note: '"一 (yī)" khi đứng một mình hoặc biểu thị số thứ tự thì không đổi thanh. Có 2 trường hợp cần biến điệu: trước thanh 1/2/3 đọc thành thanh 4; trước thanh 4 đọc thành thanh 2.' }
+      ]
+    },
+    {
+      title: 'Nghe và đọc luyện tập',
+      audio: '/audio/hsk1v3-bai-5/wb-tingdu.mp3',
+      blocks: [
+        { type: 'wordlist', caption: 'Nghe và chọn âm tiết nghe được, đọc to',
+          items: [['gē', 'kē'], ['jiǎng', 'qiǎng'], ['cóng', 'sóng'], ['nìng', 'lìng'], ['jiā', 'xiā'], ['zuàn', 'cuàn'], ['tōu', 'gōu'], ['zhí', 'shí']] },
+        { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý biến điệu của "不"',
+          items: ['búyào', 'bú kèqi', 'bù hē', 'bù lái', 'bù lěng', 'bù zhīdào', 'bù xuéxí', 'bù hǎotīng'] },
+        { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý biến điệu của "一"',
+          items: ['yìtiān', 'yì yuán', 'yìdiǎnr', 'yíbàn', 'yì chē', 'yì rén', 'yì wǎn', 'yíxià'] }
+      ]
+    },
+    {
+      title: 'Mô phỏng đề thi',
+      blocks: [
+        { type: 'mocktest',
+          listening: [
+            { n: 1, options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q1a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q1b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q1c.jpg'}
+            ], answer: null },
+            { n: 2, options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q2a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q2b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q2c.jpg'}
+            ], answer: null },
+            { n: 3, options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q3a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q3b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q3c.jpg'}
+            ], answer: null },
+            { n: 4, options: [
+              {key:'A', text:'我不会', py:'wǒ bú huì'},
+              {key:'B', text:'我吃饺子', py:'wǒ chī jiǎozi'},
+              {key:'C', text:'做面条儿', py:'zuò miàntiáor'}
+            ], answer: null },
+            { n: 5, options: [
+              {key:'A', text:'休息', py:'xiūxi'},
+              {key:'B', text:'星期四', py:'Xīngqīsì'},
+              {key:'C', text:'五口人', py:'wǔ kǒu rén'}
+            ], answer: null },
+            { n: 6, options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-5-wb/q6to8_d.jpg'}
+            ], answer: null },
+            { n: 7, options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-5-wb/q6to8_d.jpg'}
+            ], answer: null },
+            { n: 8, options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-5-wb/q6to8_d.jpg'}
+            ], answer: null },
+            { n: 9, options: [
+              {key:'A', text:'菜', py:'cài'},
+              {key:'B', text:'饺子', py:'jiǎozi'},
+              {key:'C', text:'面条儿', py:'miàntiáor'}
+            ], answer: null },
+            { n: 10, options: [
+              {key:'A', text:'4号', py:'sì hào'},
+              {key:'B', text:'10号', py:'shí hào'},
+              {key:'C', text:'14号', py:'shísì hào'}
+            ], answer: null }
+          ],
+          reading: [
+            { n: 11, prompt: '王老师，再见。', promptPy: 'Wáng lǎoshī, zàijiàn.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-5-wb/q11to13_d.jpg'}
+            ], answer: 'D' },
+            { n: 12, prompt: '今天我休息。', promptPy: 'Jīntiān wǒ xiūxi.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-5-wb/q11to13_d.jpg'}
+            ], answer: 'C' },
+            { n: 13, prompt: '我有一个儿子，他今年7岁。', promptPy: 'Wǒ yǒu yí gè érzi, tā jīnnián 7 suì.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-5-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-5-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-5-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-5-wb/q11to13_d.jpg'}
+            ], answer: 'B' },
+            { n: 14, prompt: '你去超市买什么？', promptPy: 'Nǐ qù chāoshì mǎi shénme?', options: [
+              {key:'A', text:'好的，谢谢！', py:'Hǎo de, xièxie!'},
+              {key:'B', text:'我不会。', py:'Wǒ bú huì.'},
+              {key:'C', text:'面条儿。', py:'Miàntiáor.'},
+              {key:'D', text:'5月6号。', py:'Wǔ yuè liù hào.'}
+            ], answer: 'C' },
+            { n: 15, prompt: '你会做饭吗？', promptPy: 'Nǐ huì zuò fàn ma?', options: [
+              {key:'A', text:'好的，谢谢！', py:'Hǎo de, xièxie!'},
+              {key:'B', text:'我不会。', py:'Wǒ bú huì.'},
+              {key:'C', text:'面条儿。', py:'Miàntiáor.'},
+              {key:'D', text:'5月6号。', py:'Wǔ yuè liù hào.'}
+            ], answer: 'B' },
+            { n: 16, prompt: '今天几号？', promptPy: 'Jīntiān jǐ hào?', options: [
+              {key:'A', text:'好的，谢谢！', py:'Hǎo de, xièxie!'},
+              {key:'B', text:'我不会。', py:'Wǒ bú huì.'},
+              {key:'C', text:'面条儿。', py:'Miàntiáor.'},
+              {key:'D', text:'5月6号。', py:'Wǔ yuè liù hào.'}
+            ], answer: 'D' },
+            { n: 17, prompt: '今天（　）号？', promptPy: 'Jīntiān ( ) hào?', options: [
+              {key:'A', text:'几', py:'jǐ'},
+              {key:'B', text:'好看', py:'hǎokàn'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'A' },
+            { n: 18, prompt: '男：你的新电脑真（　）！\n女：谢谢，我也很喜欢。', promptPy: 'Nǐ de xīn diànnǎo zhēn ( )! / Xièxie, wǒ yě hěn xǐhuan.', options: [
+              {key:'A', text:'几', py:'jǐ'},
+              {key:'B', text:'好看', py:'hǎokàn'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'B' },
+            { n: 19, prompt: '我非常喜欢我的中文名字。\n★说话人喜欢什么？', promptPy: 'Wǒ fēicháng xǐhuan wǒ de Zhōngwén míngzi.', options: [
+              {key:'A', text:'新电脑', py:'xīn diànnǎo'},
+              {key:'B', text:'中国菜', py:'Zhōngguó cài'},
+              {key:'C', text:'中文名字', py:'Zhōngwén míngzi'}
+            ], answer: 'C' },
+            { n: 20, prompt: '今天8号，你几号休息？\n★说话人想知道什么？', promptPy: 'Jīntiān 8 hào, nǐ jǐ hào xiūxi?', options: [
+              {key:'A', text:'今天几号', py:'jīntiān jǐ hào'},
+              {key:'B', text:'哪天休息', py:'nǎ tiān xiūxi'},
+              {key:'C', text:'星期几上班', py:'xīngqī jǐ shàngbān'}
+            ], answer: 'B' }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'刘明和王一雪聊天 · Hỏi ngày tháng',
    preQuiz:[

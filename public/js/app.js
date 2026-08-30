@@ -779,18 +779,22 @@
     var promptHtml = q.prompt
       ? '<div class="mt-q-prompt">' + (q.promptPy ? '<div class="mt-q-py">' + q.promptPy + '</div>' : '') + '<div class="hanzi">' + q.prompt.replace(/\n/g, '<br>') + '</div></div>'
       : '';
+    var pendingTag = !q.answer ? '<span class="mt-q-pending">Đang chờ đáp án</span>' : '';
     return '<div class="mt-q" data-mt-qkey="' + qKey + '">' +
       '<div class="mt-q-num">' + q.n + '</div>' +
       '<div class="mt-q-body">' + promptHtml +
       '<div class="mt-q-opts">' + q.options.map(function (o) { return mtOptHtml(qKey, o); }).join('') + '</div>' +
+      pendingTag +
       '</div></div>';
   }
 
   function wbRenderMockTest(block) {
     var listeningHtml = block.listening.map(function (q) { return mtQuestionHtml(q, 'L' + q.n); }).join('');
     var readingHtml = block.reading.map(function (q) { return mtQuestionHtml(q, 'R' + q.n); }).join('');
+    var hasPending = block.listening.concat(block.reading).some(function (q) { return !q.answer; });
     return '<div class="wb-block mt-wrap">' +
       '<div class="mt-part-title">🎧 Nghe (câu 1–10)</div>' +
+      (hasPending ? '<p class="wb-note">Phần này chưa có đáp án chính thức từ sách, tạm thời chưa chấm điểm — vẫn có thể chọn để luyện tập.</p>' : '') +
       '<div class="mt-q-list">' + listeningHtml + '</div>' +
       '<div class="mt-part-title">📖 Đọc (câu 11–20)</div>' +
       '<div class="mt-q-list">' + readingHtml + '</div>' +
@@ -802,12 +806,18 @@
   function mtGrade(block) {
     var all = block.listening.concat(block.reading);
     var correctCount = 0;
+    var gradableCount = 0;
     all.forEach(function (q) {
       var qKey = (block.listening.indexOf(q) > -1 ? 'L' : 'R') + q.n;
       var picked = mtAnswers[qKey];
+      var qEl = document.querySelector('.mt-q[data-mt-qkey="' + qKey + '"]');
+      if (!q.answer) {
+        if (qEl) $all('.mt-opt', qEl).forEach(function (btn) { btn.disabled = true; });
+        return;
+      }
+      gradableCount++;
       var isCorrect = picked === q.answer;
       if (isCorrect) correctCount++;
-      var qEl = document.querySelector('.mt-q[data-mt-qkey="' + qKey + '"]');
       if (!qEl) return;
       $all('.mt-opt', qEl).forEach(function (btn) {
         btn.disabled = true;
@@ -816,7 +826,7 @@
         else if (key === picked) btn.classList.add('is-wrong');
       });
     });
-    return { correct: correctCount, total: all.length };
+    return { correct: correctCount, total: gradableCount };
   }
 
   function wbRenderDialoguePics(block) {

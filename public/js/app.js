@@ -748,6 +748,77 @@
       '</div></div>';
   }
 
+  function wbRenderWordlist(block) {
+    var isPairs = Array.isArray(block.items[0]);
+    return '<div class="wb-block">' +
+      (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
+      '<p class="wb-note">Nghe audio phía trên rồi đọc theo.</p>' +
+      '<div class="wb-wordlist">' +
+      block.items.map(function (it, i) {
+        var text = isPairs ? it.join(' / ') : it;
+        return '<span class="wb-word-chip"><span class="wb-word-num">' + (i + 1) + '</span>' + text + '</span>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  var mtAnswers = {};
+  var mtSubmitted = false;
+
+  function mtOptHtml(qKey, opt) {
+    if (opt.img) {
+      return '<button type="button" class="mt-opt mt-opt-pic" data-mt-q="' + qKey + '" data-mt-key="' + opt.key + '">' +
+        '<img src="' + opt.img + '" alt="" loading="lazy"><span class="mt-opt-key">' + opt.key + '</span></button>';
+    }
+    return '<button type="button" class="mt-opt mt-opt-text" data-mt-q="' + qKey + '" data-mt-key="' + opt.key + '">' +
+      '<span class="mt-opt-key">' + opt.key + '</span>' +
+      '<span class="mt-opt-body"><span class="hanzi">' + opt.text + '</span>' + (opt.py ? '<span class="mt-opt-py">' + opt.py + '</span>' : '') + '</span>' +
+      '</button>';
+  }
+
+  function mtQuestionHtml(q, qKey) {
+    var promptHtml = q.prompt
+      ? '<div class="mt-q-prompt">' + (q.promptPy ? '<div class="mt-q-py">' + q.promptPy + '</div>' : '') + '<div class="hanzi">' + q.prompt.replace(/\n/g, '<br>') + '</div></div>'
+      : '';
+    return '<div class="mt-q" data-mt-qkey="' + qKey + '">' +
+      '<div class="mt-q-num">' + q.n + '</div>' +
+      '<div class="mt-q-body">' + promptHtml +
+      '<div class="mt-q-opts">' + q.options.map(function (o) { return mtOptHtml(qKey, o); }).join('') + '</div>' +
+      '</div></div>';
+  }
+
+  function wbRenderMockTest(block) {
+    var listeningHtml = block.listening.map(function (q) { return mtQuestionHtml(q, 'L' + q.n); }).join('');
+    var readingHtml = block.reading.map(function (q) { return mtQuestionHtml(q, 'R' + q.n); }).join('');
+    return '<div class="wb-block mt-wrap">' +
+      '<div class="mt-part-title">🎧 Nghe (câu 1–10)</div>' +
+      '<div class="mt-q-list">' + listeningHtml + '</div>' +
+      '<div class="mt-part-title">📖 Đọc (câu 11–20)</div>' +
+      '<div class="mt-q-list">' + readingHtml + '</div>' +
+      '<div id="mtResultBar" class="mt-result-bar" hidden></div>' +
+      '<button type="button" id="mtSubmitBtn" class="wb-reveal-btn">✅ Nộp bài</button>' +
+      '</div>';
+  }
+
+  function mtGrade(block) {
+    var all = block.listening.concat(block.reading);
+    var correctCount = 0;
+    all.forEach(function (q) {
+      var qKey = (block.listening.indexOf(q) > -1 ? 'L' : 'R') + q.n;
+      var picked = mtAnswers[qKey];
+      var isCorrect = picked === q.answer;
+      if (isCorrect) correctCount++;
+      var qEl = document.querySelector('.mt-q[data-mt-qkey="' + qKey + '"]');
+      if (!qEl) return;
+      $all('.mt-opt', qEl).forEach(function (btn) {
+        btn.disabled = true;
+        var key = btn.getAttribute('data-mt-key');
+        if (key === q.answer) btn.classList.add('is-correct');
+        else if (key === picked) btn.classList.add('is-wrong');
+      });
+    });
+    return { correct: correctCount, total: all.length };
+  }
+
   function wbRenderDialoguePics(block) {
     return '<div class="wb-block">' +
       (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
@@ -776,9 +847,39 @@
       if (block.type === 'blankdrill') return wbRenderBlankdrill(block);
       if (block.type === 'tonemc') return wbRenderTonemc(block);
       if (block.type === 'dialoguepics') return wbRenderDialoguePics(block);
+      if (block.type === 'wordlist') return wbRenderWordlist(block);
+      if (block.type === 'mocktest') return wbRenderMockTest(block);
       return '';
     }).join('');
     wrap.innerHTML = audioHtml + blocksHtml;
+    var mockTestBlock = (section.blocks || []).filter(function (b) { return b.type === 'mocktest'; })[0];
+    if (mockTestBlock) {
+      mtAnswers = {};
+      mtSubmitted = false;
+      $all('.mt-opt', wrap).forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (mtSubmitted) return;
+          var qKey = btn.getAttribute('data-mt-q');
+          var qEl = btn.closest('.mt-q');
+          $all('.mt-opt', qEl).forEach(function (b) { b.classList.remove('is-selected'); });
+          btn.classList.add('is-selected');
+          mtAnswers[qKey] = btn.getAttribute('data-mt-key');
+        });
+      });
+      var submitBtn = $('#mtSubmitBtn');
+      if (submitBtn) {
+        submitBtn.addEventListener('click', function () {
+          if (mtSubmitted) { renderWbContent(); return; }
+          mtSubmitted = true;
+          var result = mtGrade(mockTestBlock);
+          var bar = $('#mtResultBar');
+          bar.hidden = false;
+          bar.innerHTML = '🎯 Bạn làm đúng <strong>' + result.correct + '/' + result.total + '</strong> câu.';
+          recordLessonScore(currentHubLesson, 'workbook-mocktest', { correct: result.correct, total: result.total });
+          submitBtn.textContent = '🔄 Làm lại';
+        });
+      }
+    }
     $all('.wb-tonemc-opt', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {
         var item = btn.closest('.wb-tonemc-item');

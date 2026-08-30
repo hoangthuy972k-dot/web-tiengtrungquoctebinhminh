@@ -3595,6 +3595,219 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   line-height: 1.6;
 }
 
+.wb-wordlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.wb-word-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-family: var(--font-hanzi);
+  font-size: 0.95rem;
+  color: var(--color-gray-800);
+}
+
+.wb-word-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-green-50);
+  color: var(--color-green-600);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.mt-wrap {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.mt-part-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-gray-900);
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.mt-part-title:first-child {
+  margin-top: 0;
+}
+
+.mt-q-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mt-q {
+  display: flex;
+  gap: var(--space-3);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.mt-q-num {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.mt-q-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.mt-q-prompt {
+  margin-bottom: var(--space-3);
+}
+
+.mt-q-prompt .hanzi {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+  line-height: 1.5;
+}
+
+.mt-q-py {
+  font-size: 0.78rem;
+  color: var(--color-gray-500);
+  margin-bottom: 2px;
+}
+
+.mt-q-opts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.mt-opt {
+  background: var(--color-gray-50);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mt-opt.mt-opt-pic {
+  position: relative;
+  width: 108px;
+}
+
+.mt-opt.mt-opt-pic img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.mt-opt-key {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--color-white);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.mt-opt.mt-opt-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--space-2) var(--space-3);
+}
+
+.mt-opt-text .mt-opt-key {
+  position: static;
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+.mt-opt-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mt-opt-body .hanzi {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.mt-opt-py {
+  font-size: 0.74rem;
+  color: var(--color-gray-500);
+}
+
+.mt-opt:hover:not(:disabled) {
+  border-color: var(--color-green-600);
+}
+
+.mt-opt.is-selected {
+  border-color: var(--color-green-600);
+  box-shadow: 0 0 0 2px var(--color-green-100);
+}
+
+.mt-opt.is-correct {
+  border-color: var(--color-green-600);
+  background: var(--color-green-50);
+}
+
+.mt-opt.is-correct .mt-opt-key {
+  background: var(--color-green-600);
+  color: var(--color-white);
+}
+
+.mt-opt.is-wrong {
+  border-color: var(--color-red-600);
+  background: var(--color-red-50);
+}
+
+.mt-opt.is-wrong .mt-opt-key {
+  background: var(--color-red-600);
+  color: var(--color-white);
+}
+
+.mt-result-bar {
+  background: var(--color-green-50);
+  border: 1.5px solid var(--color-green-600);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-4) 0;
+  font-size: 1rem;
+  color: var(--color-gray-900);
+  text-align: center;
+}
+
 /* Fill / Sort / MC shared bits */
 .fg-card,
 .sg-card,

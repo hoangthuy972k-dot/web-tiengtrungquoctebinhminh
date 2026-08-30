@@ -138,6 +138,192 @@ var wuData = [
   {img:'👩‍🏫',label:'老师',py:'lǎoshī',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 4: Ngữ âm + Mô phỏng đề thi)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-4/wb-yuyin.mp3',
+      blocks: [
+        { type: 'table', caption: 'Biến điệu 2 âm tiết thanh 3 liên tiếp (214+214 → 35+214)',
+          headers: ['Từ/cụm từ', 'Pinyin'],
+          rows: [
+            ['你好', 'nǐ + hǎo → ní + hǎo'],
+            ['哪里', 'nǎ + lǐ → ná + lǐ'],
+            ['可以', 'kě + yǐ → ké + yǐ'],
+            ['小语', 'Xiǎo + yǔ → Xiáo + yǔ'],
+            ['很好', 'hěn + hǎo → hén + hǎo']
+          ],
+          note: 'Khi 2 âm tiết thanh 3 (ˇ) đứng liền nhau, âm tiết đầu đọc thành thanh 2, tức 214+214→35+214.' },
+        { type: 'wordlist', caption: 'Đọc theo, chú ý biến điệu thanh 3',
+          items: ['shuǐguǒ', 'nǐ hǎo', 'kěyǐ', 'nǎlǐ', 'hěn hǎo', 'suǒyǐ', 'qǐng nǐ', 'shǒubiǎo'] },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-4-wb/nihao.jpg', py:'nǐ hǎo', hz:'你好'},
+          {img:'/images/hsk1v3-bai-4-wb/nali.jpg', py:'nǎlǐ', hz:'哪里'},
+          {img:'/images/hsk1v3-bai-4-wb/xiaoyu.jpg', py:'Xiǎoyǔ', hz:'小语'},
+          {img:'/images/hsk1v3-bai-4-wb/shuiguo.jpg', py:'shuǐguǒ', hz:'水果'}
+        ] },
+        { type: 'table', caption: 'Thanh nhẹ (轻声) — cùng từ nhưng khác nghĩa khi đọc thanh nhẹ',
+          headers: ['Từ', 'Có thanh điệu rõ', 'Đọc thanh nhẹ'],
+          rows: [
+            ['东西', 'dōngxī — phương hướng, đông và tây', 'dōngxi — đồ vật'],
+            ['买卖', 'mǎi mài — mua và bán', 'mǎimai — việc buôn bán'],
+            ['孙子', 'Sūnzǐ — tên riêng, nhà quân sự cổ đại TQ', 'sūnzi — cháu trai']
+          ],
+          note: 'Ngoài 4 thanh điệu cơ bản, một số âm tiết tiếng Trung đọc nhẹ và ngắn, gọi là thanh nhẹ (轻声), thường không đánh dấu thanh. Ví dụ: jiǎozi, bàba.' },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-4-wb/mama.jpg', py:'māma', hz:'妈妈'},
+          {img:'/images/hsk1v3-bai-4-wb/baba.jpg', py:'bàba', hz:'爸爸'},
+          {img:'/images/hsk1v3-bai-4-wb/yizi.jpg', py:'yǐzi', hz:'椅子'},
+          {img:'/images/hsk1v3-bai-4-wb/jiaozi.jpg', py:'jiǎozi', hz:'饺子'}
+        ] },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-4-wb/xiexie.jpg', py:'xièxie', hz:'谢谢'},
+          {img:'/images/hsk1v3-bai-4-wb/yifu.jpg', py:'yīfu', hz:'衣服'},
+          {img:'/images/hsk1v3-bai-4-wb/piaoliang.jpg', py:'piàoliang', hz:'漂亮'},
+          {img:'/images/hsk1v3-bai-4-wb/zaoshang.jpg', py:'zǎoshang', hz:'早上'}
+        ] }
+      ]
+    },
+    {
+      title: 'Nghe và đọc luyện tập',
+      audio: '/audio/hsk1v3-bai-4/wb-tingdu.mp3',
+      blocks: [
+        { type: 'wordlist', caption: 'Nghe và chọn âm tiết nghe được, đọc to',
+          items: [['pā', 'bā'], ['zì', 'cí'], ['náng', 'láng'], ['jǔ', 'qǔ'], ['mén', 'méng'], ['rù', 'lù'], ['kè', 'rè'], ['qīn', 'qīng']] },
+        { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý biến điệu thanh 3',
+          items: ['nǐ hǎo', 'kěyǐ', 'nǎlǐ', 'shuǐguǒ', 'shǒubiǎo', 'suǒyǐ', 'pěngchǎng', 'hǎojiǔ', 'wǎndiǎn', 'liǎojiě', 'xǐzǎo', 'zhíyóu'] },
+        { type: 'wordlist', caption: 'Nghe và đọc theo, chú ý phát âm thanh nhẹ',
+          items: ['bāozi', 'xièxie', 'piányi', 'dìdi', 'piàoliang', 'méi guānxi', 'duìbuqǐ', 'rènshi'] },
+        { type: 'wordlist', caption: 'Nghe và phân biệt thanh nhẹ với không thanh nhẹ, đọc theo',
+          items: [['Sūnzǐ', 'sūnzi'], ['dōngxī', 'dōngxi'], ['yùnqi', 'yùnqi'], ['Lǎozǐ', 'lǎozi'], ['dìfāng', 'dìfang'], ['mǎmǎhūhū', 'māhu']] }
+      ]
+    },
+    {
+      title: 'Mô phỏng đề thi',
+      blocks: [
+        { type: 'mocktest',
+          listening: [
+            { n: 1, options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q1a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q1b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q1c.jpg'}
+            ], answer: 'B' },
+            { n: 2, options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q2a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q2b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q2c.jpg'}
+            ], answer: 'C' },
+            { n: 3, options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q3a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q3b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q3c.jpg'}
+            ], answer: 'B' },
+            { n: 4, options: [
+              {key:'A', text:'十人', py:'shí rén'},
+              {key:'B', text:'20个', py:'èrshí gè'},
+              {key:'C', text:'三口人', py:'sān kǒu rén'}
+            ], answer: 'B' },
+            { n: 5, options: [
+              {key:'A', text:'大', py:'dà'},
+              {key:'B', text:'12岁', py:'shí\'èr suì'},
+              {key:'C', text:'两千', py:'liǎngqiān'}
+            ], answer: 'B' },
+            { n: 6, options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-4-wb/q6to8_d.jpg'}
+            ], answer: 'D' },
+            { n: 7, options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-4-wb/q6to8_d.jpg'}
+            ], answer: 'C' },
+            { n: 8, options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-4-wb/q6to8_d.jpg'}
+            ], answer: 'B' },
+            { n: 9, options: [
+              {key:'A', text:'中国人', py:'Zhōngguó rén'},
+              {key:'B', text:'泰国人', py:'Tàiguó rén'},
+              {key:'C', text:'法国人', py:'Fǎguó rén'}
+            ], answer: 'A' },
+            { n: 10, options: [
+              {key:'A', text:'安妮', py:'Ānnī'},
+              {key:'B', text:'王一飞', py:'Wáng Yīfēi'},
+              {key:'C', text:'白家月', py:'Bái Jiāyuè'}
+            ], answer: 'C' }
+          ],
+          reading: [
+            { n: 11, prompt: '老师，您好！', promptPy: 'Lǎoshī, nín hǎo!', options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-4-wb/q11to13_d.jpg'}
+            ], answer: 'C' },
+            { n: 12, prompt: '我家有四口人。', promptPy: 'Wǒ jiā yǒu sì kǒu rén.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-4-wb/q11to13_d.jpg'}
+            ], answer: 'D' },
+            { n: 13, prompt: '我哥哥今年20岁。', promptPy: 'Wǒ gēge jīnnián 20 suì.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-4-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-4-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-4-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-4-wb/q11to13_d.jpg'}
+            ], answer: 'B' },
+            { n: 14, prompt: '她是谁？', promptPy: 'Tā shì shéi?', options: [
+              {key:'A', text:'好的，谢谢！', py:'Hǎo de, xièxie!'},
+              {key:'B', text:'他今年5岁。', py:'Tā jīnnián 5 suì.'},
+              {key:'C', text:'我女朋友。', py:'Wǒ nǚpéngyou.'},
+              {key:'D', text:'是的。', py:'Shì de.'}
+            ], answer: 'C' },
+            { n: 15, prompt: '你是法国人吗？', promptPy: 'Nǐ shì Fǎguó rén ma?', options: [
+              {key:'A', text:'好的，谢谢！', py:'Hǎo de, xièxie!'},
+              {key:'B', text:'他今年5岁。', py:'Tā jīnnián 5 suì.'},
+              {key:'C', text:'我女朋友。', py:'Wǒ nǚpéngyou.'},
+              {key:'D', text:'是的。', py:'Shì de.'}
+            ], answer: 'D' },
+            { n: 16, prompt: '您儿子多大？', promptPy: 'Nín érzi duō dà?', options: [
+              {key:'A', text:'好的，谢谢！', py:'Hǎo de, xièxie!'},
+              {key:'B', text:'他今年5岁。', py:'Tā jīnnián 5 suì.'},
+              {key:'C', text:'我女朋友。', py:'Wǒ nǚpéngyou.'},
+              {key:'D', text:'是的。', py:'Shì de.'}
+            ], answer: 'B' },
+            { n: 17, prompt: '她工作很（　）。', promptPy: 'Tā gōngzuò hěn ( ).', options: [
+              {key:'A', text:'想', py:'xiǎng'},
+              {key:'B', text:'忙', py:'máng'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'B' },
+            { n: 18, prompt: '男：你们好吗？\n女：很好，我们很（　）你。', promptPy: 'Nǐmen hǎo ma? / Hěn hǎo, wǒmen hěn ( ) nǐ.', options: [
+              {key:'A', text:'想', py:'xiǎng'},
+              {key:'B', text:'忙', py:'máng'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'A' },
+            { n: 19, prompt: '我家有三口人，爸爸、妈妈和我。\n★说话人家里有：', promptPy: 'Wǒ jiā yǒu sān kǒu rén, bàba, māma hé wǒ.', options: [
+              {key:'A', text:'姐姐', py:'jiějie'},
+              {key:'B', text:'三口人', py:'sān kǒu rén'},
+              {key:'C', text:'四口人', py:'sì kǒu rén'}
+            ], answer: 'B' },
+            { n: 20, prompt: '她是法国人，我不是。\n★"她"是：', promptPy: 'Tā shì Fǎguó rén, wǒ bú shì.', options: [
+              {key:'A', text:'法国人', py:'Fǎguó rén'},
+              {key:'B', text:'中国人', py:'Zhōngguó rén'},
+              {key:'C', text:'泰国人', py:'Tàiguó rén'}
+            ], answer: 'A' }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'刘明和王一雪聊天 · Hỏi thăm công việc',
    preQuiz:[

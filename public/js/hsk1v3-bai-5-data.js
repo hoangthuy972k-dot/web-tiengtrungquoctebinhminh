@@ -197,55 +197,55 @@ var wbData = {
               {key:'A', img:'/images/hsk1v3-bai-5-wb/q1a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-5-wb/q1b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-5-wb/q1c.jpg'}
-            ], answer: null },
+            ], answer: 'C' },
             { n: 2, options: [
               {key:'A', img:'/images/hsk1v3-bai-5-wb/q2a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-5-wb/q2b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-5-wb/q2c.jpg'}
-            ], answer: null },
+            ], answer: 'A' },
             { n: 3, options: [
               {key:'A', img:'/images/hsk1v3-bai-5-wb/q3a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-5-wb/q3b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-5-wb/q3c.jpg'}
-            ], answer: null },
+            ], answer: 'B' },
             { n: 4, options: [
               {key:'A', text:'我不会', py:'wǒ bú huì'},
               {key:'B', text:'我吃饺子', py:'wǒ chī jiǎozi'},
               {key:'C', text:'做面条儿', py:'zuò miàntiáor'}
-            ], answer: null },
+            ], answer: 'A' },
             { n: 5, options: [
               {key:'A', text:'休息', py:'xiūxi'},
               {key:'B', text:'星期四', py:'Xīngqīsì'},
               {key:'C', text:'五口人', py:'wǔ kǒu rén'}
-            ], answer: null },
+            ], answer: 'B' },
             { n: 6, options: [
               {key:'A', img:'/images/hsk1v3-bai-5-wb/q6to8_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-5-wb/q6to8_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-5-wb/q6to8_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-5-wb/q6to8_d.jpg'}
-            ], answer: null },
+            ], answer: 'C' },
             { n: 7, options: [
               {key:'A', img:'/images/hsk1v3-bai-5-wb/q6to8_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-5-wb/q6to8_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-5-wb/q6to8_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-5-wb/q6to8_d.jpg'}
-            ], answer: null },
+            ], answer: 'B' },
             { n: 8, options: [
               {key:'A', img:'/images/hsk1v3-bai-5-wb/q6to8_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-5-wb/q6to8_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-5-wb/q6to8_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-5-wb/q6to8_d.jpg'}
-            ], answer: null },
+            ], answer: 'D' },
             { n: 9, options: [
               {key:'A', text:'菜', py:'cài'},
               {key:'B', text:'饺子', py:'jiǎozi'},
               {key:'C', text:'面条儿', py:'miàntiáor'}
-            ], answer: null },
+            ], answer: 'B' },
             { n: 10, options: [
               {key:'A', text:'4号', py:'sì hào'},
               {key:'B', text:'10号', py:'shí hào'},
               {key:'C', text:'14号', py:'shísì hào'}
-            ], answer: null }
+            ], answer: 'B' }
           ],
           reading: [
             { n: 11, prompt: '王老师，再见。', promptPy: 'Wáng lǎoshī, zàijiàn.', options: [

@@ -133,8 +133,17 @@ var wbData = {
       title: 'Ngữ âm',
       audio: '/audio/hsk1v3-bai-11/wb-yuyin.mp3',
       blocks: [
-        { type: 'wordlist', caption: 'Đánh dấu thanh điệu — nghe và đọc theo',
-          items: ['chàng', 'lěng', 'huì', 'shuìjiào', 'píngguǒ', 'jīdàn', 'dàxuéshēng', 'diànyǐngyuàn'] },
+        { type: 'tonemc', caption: 'Đánh dấu thanh điệu — nghe và chọn thanh điệu đúng',
+          items: [
+            {before:'chang → ', after:'', answer:'chàng', options:['chāng','cháng','chǎng','chàng']},
+            {before:'leng → ', after:'', answer:'lěng', options:['lēng','léng','lěng','lèng']},
+            {before:'hui → ', after:'', answer:'huì', options:['huī','huí','huǐ','huì']},
+            {before:'shuijiao → ', after:'', answer:'shuìjiào', options:['shuìjiào','shuījiào','shuìjiāo','shuījiāo']},
+            {before:'pingguo → ', after:'', answer:'píngguǒ', options:['píngguǒ','pīngguǒ','píngguō','pīngguō']},
+            {before:'jidan → ', after:'', answer:'jīdàn', options:['jīdàn','jídàn','jīdān','jídān']},
+            {before:'daxuesheng → ', after:'', answer:'dàxuéshēng', options:['dàxuéshēng','dāxuéshēng','dàxuěshēng','dāxuěshēng']},
+            {before:'dianyingyuan → ', after:'', answer:'diànyǐngyuàn', options:['diànyǐngyuàn','diānyǐngyuàn','diànyǐngyuán','diānyǐngyuán']}
+          ] },
         { type: 'tonemc', caption: 'Phân biệt thanh điệu — chọn âm tiết có thanh điệu KHÁC trong nhóm',
           items: [
             {before:'', after:'', answer:'mǎi', options:['mǎi','néng','méi']},

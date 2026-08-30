@@ -107,6 +107,171 @@ var wuData = [
   {img:'/images/hsk1v3-bai-15/nanpengyou.jpg',label:'男朋友',py:'nánpéngyou',letter:'F'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 15: Ngữ âm + Hán tự + Mô phỏng đề thi)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-15/wb-yuyin.mp3',
+      blocks: [
+        { type: 'wordlist', caption: 'Nghe âm tiết, ghép với từ đúng — nghe và đọc theo',
+          items: [['nǐ hǎo', '你好'], ['méi kànjiàn', '没看见'], ['nǎxiē rén', '哪些人'], ['shuōhuà', '说话'], ['shénme shíhou', '什么时候'], ['zuò fēijī', '坐飞机']] },
+        { type: 'table', caption: 'Nghe câu, phân biệt 4 loại câu: trần thuật (A) / nghi vấn (B) / cảm thán (C) / cầu khiến (D)',
+          headers: ['Câu', 'Loại câu'],
+          rows: [
+            ['你是学生吗？', '疑问句 (B)'],
+            ['我爱吃水果。', '陈述句 (A)'],
+            ['这件衣服真漂亮！', '感叹句 (C)'],
+            ['你们去哪里？', '疑问句 (B)'],
+            ['请坐。', '祈使句 (D)'],
+            ['雨大吗？', '疑问句 (B)']
+          ],
+          note: 'Câu trần thuật kể sự việc; câu nghi vấn hỏi; câu cảm thán bộc lộ cảm xúc mạnh (thường có "真...!"); câu cầu khiến yêu cầu/ra lệnh (thường bắt đầu bằng "请").' },
+        { type: 'table', caption: 'Chữ Hán (汉字) — Bộ thủ thường gặp',
+          headers: ['Tên bộ thủ', 'Hình dạng', 'Ví dụ'],
+          rows: [
+            ['口字旁 (bộ khẩu)', '口', '喝 (hē)'],
+            ['单人旁 (bộ nhân đứng)', '亻', '你 (nǐ)'],
+            ['言字旁 (bộ ngôn)', '讠', '认 (rèn)'],
+            ['日字旁 (bộ nhật)', '日', '明 (míng)'],
+            ['木字旁 (bộ mộc)', '木', '杯 (bēi)'],
+            ['女字旁 (bộ nữ)', '女', '姐 (jiě)']
+          ] },
+        { type: 'table', caption: 'Ví dụ luyện viết từ',
+          rows: [
+            ['喝 (hē) → 喝茶 (hē chá)', '你 (nǐ) → 你们 (nǐmen)'],
+            ['认 (rèn) → 认识 (rènshi)', '明 (míng) → 明天 (míngtiān)'],
+            ['杯 (bēi) → 杯子 (bēizi)', '姐 (jiě) → 姐姐 (jiějie)']
+          ],
+          note: 'Phần luyện viết tay theo từng nét cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
+      ]
+    },
+    {
+      title: 'Mô phỏng đề thi',
+      audio: '/audio/hsk1v3-bai-15/wb-mocktest.mp3',
+      blocks: [
+        { type: 'mocktest',
+          listening: [
+            { n: 1, options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q1a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q1b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q1c.jpg'}
+            ], answer: 'A' },
+            { n: 2, options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q2a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q2b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q2c.jpg'}
+            ], answer: 'B' },
+            { n: 3, options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q3a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q3b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q3c.jpg'}
+            ], answer: 'C' },
+            { n: 4, options: [
+              {key:'A', text:'太早了', py:'tài zǎo le'},
+              {key:'B', text:'没睡觉', py:'méi shuìjiào'},
+              {key:'C', text:'不想去', py:'bù xiǎng qù'}
+            ], answer: 'A' },
+            { n: 5, options: [
+              {key:'A', text:'很多', py:'hěn duō'},
+              {key:'B', text:'也不贵', py:'yě bú guì'},
+              {key:'C', text:'也很好看', py:'yě hěn hǎokàn'}
+            ], answer: 'C' },
+            { n: 6, options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-15-wb/q6to8_d.jpg'}
+            ], answer: 'B' },
+            { n: 7, options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-15-wb/q6to8_d.jpg'}
+            ], answer: 'D' },
+            { n: 8, options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q6to8_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q6to8_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q6to8_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-15-wb/q6to8_d.jpg'}
+            ], answer: 'C' },
+            { n: 9, options: [
+              {key:'A', text:'西安', py:'Xī\'ān'},
+              {key:'B', text:'北京', py:'Běijīng'},
+              {key:'C', text:'上海', py:'Shànghǎi'}
+            ], answer: 'A' },
+            { n: 10, options: [
+              {key:'A', text:'坐飞机', py:'zuò fēijī'},
+              {key:'B', text:'坐火车', py:'zuò huǒchē'},
+              {key:'C', text:'坐出租车', py:'zuò chūzūchē'}
+            ], answer: 'B' }
+          ],
+          reading: [
+            { n: 11, prompt: '我家有五口人，我们现在住在北京。', promptPy: 'Wǒ jiā yǒu wǔ kǒu rén, wǒmen xiànzài zhù zài Běijīng.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-15-wb/q11to13_d.jpg'}
+            ], answer: 'D' },
+            { n: 12, prompt: '这里有好吃的，还有好玩儿的。', promptPy: 'Zhèlǐ yǒu hǎochī de, hái yǒu hǎowánr de.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-15-wb/q11to13_d.jpg'}
+            ], answer: 'B' },
+            { n: 13, prompt: '现在我会说一点儿汉语，也会写一些汉字了。', promptPy: 'Xiànzài wǒ huì shuō yìdiǎnr Hànyǔ, yě huì xiě yìxiē Hànzì le.', options: [
+              {key:'A', img:'/images/hsk1v3-bai-15-wb/q11to13_a.jpg'},
+              {key:'B', img:'/images/hsk1v3-bai-15-wb/q11to13_b.jpg'},
+              {key:'C', img:'/images/hsk1v3-bai-15-wb/q11to13_c.jpg'},
+              {key:'D', img:'/images/hsk1v3-bai-15-wb/q11to13_d.jpg'}
+            ], answer: 'C' },
+            { n: 14, prompt: '你会写几个汉字？', promptPy: 'Nǐ huì xiě jǐ gè Hànzì?', options: [
+              {key:'A', text:'我女儿。', py:'Wǒ nǚ\'ér.'},
+              {key:'B', text:'十个。', py:'Shí gè.'},
+              {key:'C', text:'苹果。', py:'Píngguǒ.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'B' },
+            { n: 15, prompt: '谁上中学了？', promptPy: 'Shéi shàng zhōngxué le?', options: [
+              {key:'A', text:'我女儿。', py:'Wǒ nǚ\'ér.'},
+              {key:'B', text:'十个。', py:'Shí gè.'},
+              {key:'C', text:'苹果。', py:'Píngguǒ.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'A' },
+            { n: 16, prompt: '你爱吃什么？', promptPy: 'Nǐ ài chī shénme?', options: [
+              {key:'A', text:'我女儿。', py:'Wǒ nǚ\'ér.'},
+              {key:'B', text:'十个。', py:'Shí gè.'},
+              {key:'C', text:'苹果。', py:'Píngguǒ.'},
+              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            ], answer: 'C' },
+            { n: 17, prompt: '今年我们都想去（　）。', promptPy: 'Jīnnián wǒmen dōu xiǎng qù ( ).', options: [
+              {key:'A', text:'电视', py:'diànshì'},
+              {key:'B', text:'北京', py:'Běijīng'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'B' },
+            { n: 18, prompt: '男：我爱看电影，也爱唱歌。你呢？\n女：我喜欢看（　）。', promptPy: 'Wǒ ài kàn diànyǐng, yě ài chàng gē. Nǐ ne? / Wǒ xǐhuan kàn ( ).', options: [
+              {key:'A', text:'电视', py:'diànshì'},
+              {key:'B', text:'北京', py:'Běijīng'},
+              {key:'C', text:'名字', py:'míngzi'}
+            ], answer: 'A' },
+            { n: 19, prompt: '明天星期天，儿子想去看一个电影。\n★儿子明天想：', promptPy: 'Míngtiān Xīngqītiān, érzi xiǎng qù kàn yí gè diànyǐng.', options: [
+              {key:'A', text:'买电脑', py:'mǎi diànnǎo'},
+              {key:'B', text:'打电话', py:'dǎ diànhuà'},
+              {key:'C', text:'看电影', py:'kàn diànyǐng'}
+            ], answer: 'C' },
+            { n: 20, prompt: '下小雨了，小狗非常高兴，它喜欢小雨。\n★小狗喜欢：', promptPy: 'Xià xiǎoyǔ le, xiǎo gǒu fēicháng gāoxìng, tā xǐhuan xiǎoyǔ.', options: [
+              {key:'A', text:'下小雨', py:'xià xiǎoyǔ'},
+              {key:'B', text:'下大雨', py:'xià dàyǔ'},
+              {key:'C', text:'下小雪', py:'xià xiǎoxuě'}
+            ], answer: 'A' }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'李文邀请陈天中、白家月等朋友品尝中餐 · Mời ăn cơm',
    preQuiz:[

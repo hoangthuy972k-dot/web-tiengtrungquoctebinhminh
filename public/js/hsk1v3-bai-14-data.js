@@ -127,6 +127,15 @@ var vocabData = [
    ]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-14/huoche.jpg',label:'火车',py:'huǒchē',letter:'A'},
+  {img:'/images/hsk1v3-bai-14/kanjian.jpg',label:'看见',py:'kànjiàn',letter:'B'},
+  {img:'/images/hsk1v3-bai-14/hanzi.jpg',label:'汉字',py:'Hànzì',letter:'C'},
+  {img:'/images/hsk1v3-bai-14/ting.jpg',label:'听',py:'tīng',letter:'D'},
+  {img:'/images/hsk1v3-bai-14/xiaoxuesheng.jpg',label:'小学生',py:'xiǎoxuéshēng',letter:'E'},
+  {img:'/images/hsk1v3-bai-14/shuohua.jpg',label:'说话',py:'shuōhuà',letter:'F'},
+];
+
 var dialogData = [
   {scene:'白家月和陈天中谈论上次课外旅行 · Trên chuyến tàu',
    preQuiz:[

@@ -98,6 +98,15 @@ var vocabData = [
    exList:[{zh:'那我们和您姐姐在大兴机场见！',py:'Nà wǒmen hé nín jiějie zài Dàxīng Jīchǎng jiàn!',vn:'Vậy chúng em hẹn gặp chị cô ở sân bay Đại Hưng nhé!'}]},
 ];
 
+var wuData = [
+  {img:'/images/hsk1v3-bai-15/beijing.jpg',label:'北京',py:'Běijīng',letter:'A'},
+  {img:'/images/hsk1v3-bai-15/haowanr.jpg',label:'好玩儿',py:'hǎowánr',letter:'B'},
+  {img:'/images/hsk1v3-bai-15/feiji.jpg',label:'飞机',py:'fēijī',letter:'C'},
+  {img:'/images/hsk1v3-bai-15/zaofan.jpg',label:'早饭',py:'zǎofàn',letter:'D'},
+  {img:'/images/hsk1v3-bai-15/zao.jpg',label:'早',py:'zǎo',letter:'E'},
+  {img:'/images/hsk1v3-bai-15/nanpengyou.jpg',label:'男朋友',py:'nánpéngyou',letter:'F'},
+];
+
 var dialogData = [
   {scene:'李文邀请陈天中、白家月等朋友品尝中餐 · Mời ăn cơm',
    preQuiz:[

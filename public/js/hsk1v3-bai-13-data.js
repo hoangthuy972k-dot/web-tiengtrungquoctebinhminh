@@ -123,8 +123,8 @@ var wbData = {
             {before:'', after:'', answer:'xiěHànzì', options:['mǎibāozi','xiěHànzì','yǒubēizi']},
             {before:'', after:'', answer:'zhǎotóngxué', options:['mánggōngzuò','láishūdiàn','zhǎotóngxué']}
           ] },
-        { type: 'wordlist', caption: 'Nghe âm tiết, ghép với từ đúng — nghe và đọc theo',
-          items: [['nǐ hǎo', '你好'], ['gōngsī', '公司'], ['xiānsheng', '先生'], ['gōngzuò', '工作'], ['jiǎozi', '饺子'], ['péngyou', '朋友']] },
+        { type: 'pymatch', caption: 'Nghe âm tiết, ghép với từ đúng',
+          items: [{py:'nǐ hǎo', hz:'你好'}, {py:'gōngsī', hz:'公司'}, {py:'xiānsheng', hz:'先生'}, {py:'gōngzuò', hz:'工作'}, {py:'jiǎozi', hz:'饺子'}, {py:'péngyou', hz:'朋友'}] },
         { type: 'table', caption: 'Chữ Hán (汉字) — Cấu trúc độc thể/hợp thể, chữ hình thanh',
           rows: [
             ['独体字 (chữ độc thể)', 'Không thể tách thành 2 bộ phận trở lên — ví dụ: 口, 上, 下'],

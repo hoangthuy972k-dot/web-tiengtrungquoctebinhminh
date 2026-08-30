@@ -155,8 +155,8 @@ var wbData = {
             {before:'', after:'', answer:'fēicháng', options:['gāoxìng','fēicháng','zhīdào']},
             {before:'', after:'', answer:'duìbuqǐ', options:['qù chāoshì','zài shāngdiàn','duìbuqǐ']}
           ] },
-        { type: 'wordlist', caption: 'Nghe âm tiết, ghép với từ đúng — nghe và đọc theo',
-          items: [['nǐ hǎo', '你好'], ['míngzi', '名字'], ['Zhōngguó', '中国'], ['lǎoshī', '老师'], ['háizi', '孩子'], ['xièxie', '谢谢']] },
+        { type: 'pymatch', caption: 'Nghe âm tiết, ghép với từ đúng',
+          items: [{py:'nǐ hǎo', hz:'你好'}, {py:'míngzi', hz:'名字'}, {py:'Zhōngguó', hz:'中国'}, {py:'lǎoshī', hz:'老师'}, {py:'háizi', hz:'孩子'}, {py:'xièxie', hz:'谢谢'}] },
         { type: 'table', caption: 'Chữ Hán (汉字) — Cấu tạo và bút thuận (tiếp)',
           rows: [
             ['Nét mới', '横折钩 héngzhégōu (ngang-gập-móc), 竖弯钩 shùwāngōu (sổ-cong-móc), 横折弯钩 héngzhéwāngōu (ngang-gập-cong-móc), 竖折折钩 shùzhézhégōu (sổ-gập-gập-móc)'],

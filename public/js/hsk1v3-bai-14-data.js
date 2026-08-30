@@ -145,8 +145,8 @@ var wbData = {
       title: 'Ngữ âm',
       audio: '/audio/hsk1v3-bai-14/wb-yuyin.mp3',
       blocks: [
-        { type: 'wordlist', caption: 'Nghe âm tiết, ghép với từ đúng — nghe và đọc theo',
-          items: [['nǐ hǎo', '你好'], ['méi guānxi', '没关系'], ['nánpéngyou', '男朋友'], ['bú kèqi', '不客气'], ['nǚ\'ér', '女儿'], ['hǎowánr', '好玩儿']] },
+        { type: 'pymatch', caption: 'Nghe âm tiết, ghép với từ đúng',
+          items: [{py:'nǐ hǎo', hz:'你好'}, {py:'méi guānxi', hz:'没关系'}, {py:'nánpéngyou', hz:'男朋友'}, {py:'bú kèqi', hz:'不客气'}, {py:'nǚ\'ér', hz:'女儿'}, {py:'hǎowánr', hz:'好玩儿'}] },
         { type: 'table', caption: 'Nghe câu, phân biệt câu trần thuật (A) hay câu nghi vấn (B)',
           headers: ['Câu', 'Loại câu'],
           rows: [

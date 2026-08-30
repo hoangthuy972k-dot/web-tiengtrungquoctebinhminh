@@ -761,6 +761,68 @@
       '</div></div>';
   }
 
+  var wbMatchSelMap = {};
+  var wbMatchDoneMap = {};
+
+  function wbRenderPyMatch(block) {
+    var blockId = 'wbmatch-' + (wbBlockSeq++);
+    var order = shuffle(block.items.map(function (_, i) { return i; }));
+    return '<div class="wb-block" id="' + blockId + '">' +
+      (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
+      '<p class="wb-note">Nghe audio phía trên, bấm 1 pinyin bên trái rồi bấm hán tự tương ứng bên phải.</p>' +
+      '<div class="mg-wrap wb-pymatch-wrap" data-wb-match-id="' + blockId + '">' +
+        '<div class="mg-col"><div class="mg-col-label">Pinyin</div><div class="wb-pymatch-left">' +
+          block.items.map(function (it, i) {
+            return '<button type="button" class="mg-item" data-wpy-li="' + i + '">' + it.py + '</button>';
+          }).join('') +
+        '</div></div>' +
+        '<div class="mg-col"><div class="mg-col-label">Hán tự</div><div class="wb-pymatch-right">' +
+          order.map(function (ri) {
+            return '<button type="button" class="mg-item hanzi" data-wpy-ri="' + ri + '">' + block.items[ri].hz + '</button>';
+          }).join('') +
+        '</div></div>' +
+      '</div>' +
+      '<div class="mg-fb" data-wpy-fb="' + blockId + '"></div>' +
+      '</div>';
+  }
+
+  function wbMatchClickLeft(i, blockEl, blockId) {
+    wbMatchSelMap[blockId] = i;
+    $all('.mg-item[data-wpy-li]', blockEl).forEach(function (el) { el.classList.remove('is-sel'); });
+    blockEl.querySelector('.mg-item[data-wpy-li="' + i + '"]').classList.add('is-sel');
+    var fb = blockEl.querySelector('[data-wpy-fb]');
+    if (fb) fb.textContent = '';
+  }
+
+  function wbMatchClickRight(ri, block, blockEl, blockId) {
+    var fb = blockEl.querySelector('[data-wpy-fb]');
+    var sel = wbMatchSelMap[blockId];
+    if (sel === undefined || sel === null) {
+      fb.innerHTML = '<span style="color:var(--color-gold-500);">← Chọn pinyin trước</span>';
+      return;
+    }
+    var rightEl = blockEl.querySelector('.mg-item[data-wpy-ri="' + ri + '"]');
+    if (rightEl.classList.contains('is-correct')) return;
+    var leftEl = blockEl.querySelector('.mg-item[data-wpy-li="' + sel + '"]');
+    var isCorrect = sel === ri;
+    if (isCorrect) {
+      leftEl.classList.remove('is-sel');
+      leftEl.classList.add('is-correct');
+      rightEl.classList.add('is-correct');
+      wbMatchDoneMap[blockId].add(sel);
+      fb.innerHTML = '<span style="color:var(--color-green-600);">✓ Đúng rồi!</span>';
+      if (wbMatchDoneMap[blockId].size === block.items.length) {
+        fb.innerHTML = '<span style="color:var(--color-red-600);font-weight:700;">🎉 Hoàn thành! Ghép đúng tất cả!</span>';
+      }
+    } else {
+      leftEl.classList.remove('is-sel');
+      rightEl.classList.add('mg-shake');
+      fb.innerHTML = '<span style="color:var(--color-red-600);">✗ Chưa đúng, thử lại!</span>';
+      setTimeout(function () { rightEl.classList.remove('mg-shake'); }, 350);
+    }
+    wbMatchSelMap[blockId] = null;
+  }
+
   var mtAnswers = {};
   var mtSubmitted = false;
 
@@ -858,10 +920,27 @@
       if (block.type === 'tonemc') return wbRenderTonemc(block);
       if (block.type === 'dialoguepics') return wbRenderDialoguePics(block);
       if (block.type === 'wordlist') return wbRenderWordlist(block);
+      if (block.type === 'pymatch') return wbRenderPyMatch(block);
       if (block.type === 'mocktest') return wbRenderMockTest(block);
       return '';
     }).join('');
     wrap.innerHTML = audioHtml + blocksHtml;
+    $all('.wb-pymatch-wrap', wrap).forEach(function (wrapEl) {
+      var blockId = wrapEl.getAttribute('data-wb-match-id');
+      var blockEl = document.getElementById(blockId);
+      var pyList = $all('.wb-pymatch-left .mg-item', wrapEl).map(function (el) { return el.textContent; });
+      var hzByRi = {};
+      $all('.wb-pymatch-right .mg-item', wrapEl).forEach(function (el) { hzByRi[el.getAttribute('data-wpy-ri')] = el.textContent; });
+      var block = { items: pyList.map(function (py) { return { py: py }; }) };
+      wbMatchSelMap[blockId] = null;
+      wbMatchDoneMap[blockId] = new Set();
+      $all('.mg-item[data-wpy-li]', wrapEl).forEach(function (btn) {
+        btn.addEventListener('click', function () { wbMatchClickLeft(parseInt(btn.getAttribute('data-wpy-li'), 10), blockEl, blockId); });
+      });
+      $all('.mg-item[data-wpy-ri]', wrapEl).forEach(function (btn) {
+        btn.addEventListener('click', function () { wbMatchClickRight(parseInt(btn.getAttribute('data-wpy-ri'), 10), block, blockEl, blockId); });
+      });
+    });
     var mockTestBlock = (section.blocks || []).filter(function (b) { return b.type === 'mocktest'; })[0];
     if (mockTestBlock) {
       mtAnswers = {};

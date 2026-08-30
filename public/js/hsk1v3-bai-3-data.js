@@ -136,6 +136,91 @@ var vocabData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN TẬP SÁCH BÀI TẬP (New HSK Course 1 Workbook, Bài 3: Ngữ âm)
+// ══════════════════════════════════════════
+var wbData = {
+  sections: [
+    {
+      title: 'Ngữ âm',
+      audio: '/audio/hsk1v3-bai-3/wb-yuyin.mp3',
+      blocks: [
+        { type: 'table', caption: 'Luyện đọc âm tiết zh, sh, ch, z (4 thanh điệu)',
+          headers: ['1', '2', '3', '4'],
+          rows: [
+            ['zhā', 'zhá', 'zhǎ', 'zhà'],
+            ['shē', 'shé', 'shě', 'shè'],
+            ['chuāng', 'chuáng', 'chuǎng', 'chuàng'],
+            ['zuō', 'zuó', 'zuǒ', 'zuò']
+          ] },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-3-wb/ren.jpg', py:'rén', hz:'人'},
+          {img:'/images/hsk1v3-bai-3-wb/zuo.jpg', py:'zuò', hz:'坐'},
+          {img:'/images/hsk1v3-bai-3-wb/cai.jpg', py:'cài', hz:'菜'},
+          {img:'/images/hsk1v3-bai-3-wb/shu.jpg', py:'shū', hz:'书'},
+          {img:'/images/hsk1v3-bai-3-wb/shouji.jpg', py:'shǒujī', hz:'手机'},
+          {img:'/images/hsk1v3-bai-3-wb/yisheng.jpg', py:'yīshēng', hz:'医生'},
+          {img:'/images/hsk1v3-bai-3-wb/zhuozi.jpg', py:'zhuōzi', hz:'桌子'},
+          {img:'/images/hsk1v3-bai-3-wb/chuzuche.jpg', py:'chūzūchē', hz:'出租车'}
+        ] },
+        { type: 'table', caption: 'Quy tắc chính tả — vận mẫu bắt đầu bằng "u" đứng một mình',
+          headers: ['1', '2', '3', '4'],
+          rows: [
+            ['wā', 'wá', 'wǎ', 'wà'],
+            ['wēi', 'wéi', 'wěi', 'wèi']
+          ],
+          note: 'Các vận mẫu "ua, uo, uai, uei, uan, uen, uang, ueng" khi đứng một mình (không có thanh mẫu phía trước) thì "u" được viết thành "w": ua→wa, uo→wo, uai→wai, uei→wei, uan→wan, uen→wen, uang→wang, ueng→weng.' },
+        { type: 'table', caption: 'Quy tắc chính tả — vận mẫu "uei, uen" khi ghép với thanh mẫu',
+          rows: [
+            ['shuí', 'chǔn', 'suì', 'cūn']
+          ],
+          note: 'Khi vận mẫu "uei, uen" ghép với thanh mẫu thì viết thành "ui, un". Ví dụ: shuí, chǔn, suì, cūn.' },
+        { type: 'photos', items: [
+          {img:'/images/hsk1v3-bai-3-wb/chun.jpg', py:'chūn', hz:'春'},
+          {img:'/images/hsk1v3-bai-3-wb/cun.jpg', py:'cūn', hz:'村'},
+          {img:'/images/hsk1v3-bai-3-wb/shui.jpg', py:'shuì', hz:'睡'},
+          {img:'/images/hsk1v3-bai-3-wb/zui.jpg', py:'zuǐ', hz:'嘴'}
+        ] }
+      ]
+    },
+    {
+      title: 'Nghe và đọc luyện tập',
+      audio: '/audio/hsk1v3-bai-3/wb-tingdu.mp3',
+      blocks: [
+        { type: 'tonemc', caption: 'Nghe và chọn vận mẫu đúng',
+          items: [
+            {before:'z + ', after:'', answer:'ū', options:['ū','ú','ǔ','ù']}, {before:'zh + ', after:'', answer:'ī', options:['ī','í','ǐ','ì']},
+            {before:'c + ', after:'', answer:'ài', options:['āi','ái','ǎi','ài']}, {before:'z + ', after:'', answer:'ì', options:['ī','í','ǐ','ì']},
+            {before:'ch + ', after:'', answer:'āo', options:['āo','áo','ǎo','ào']}, {before:'r + ', after:'', answer:'èn', options:['ēn','én','ěn','èn']},
+            {before:'sh + ', after:'', answer:'àng', options:['āng','áng','ǎng','àng']}, {before:'z + ', after:'', answer:'ěn', options:['ēn','én','ěn','èn']},
+            {before:'r + ', after:'', answer:'ì', options:['ī','í','ǐ','ì']}, {before:'s + ', after:'', answer:'ān', options:['ān','án','ǎn','àn']},
+            {before:'ch + ', after:'', answer:'uān', options:['uān','uán','uǎn','uàn']}, {before:'r + ', after:'', answer:'è', options:['ē','é','ě','è']},
+            {before:'zh + ', after:'', answer:'uō', options:['uō','uó','uǒ','uò']}, {before:'c + ', after:'', answer:'óng', options:['ōng','óng','ǒng','òng']},
+            {before:'sh + ', after:'', answer:'éi', options:['ēi','éi','ěi','èi']}
+          ] },
+        { type: 'tonemc', caption: 'Nghe và chọn thanh điệu đúng',
+          items: [
+            {before:'che → ', after:'', answer:'chē', options:['chē','ché','chě','chè']}, {before:'ren → ', after:'', answer:'rén', options:['rēn','rén','rěn','rèn']},
+            {before:'chang → ', after:'', answer:'chàng', options:['chāng','cháng','chǎng','chàng']}, {before:'zao → ', after:'', answer:'zǎo', options:['zāo','záo','zǎo','zào']},
+            {before:'shou → ', after:'', answer:'shǒu', options:['shōu','shóu','shǒu','shòu']}, {before:'zhen → ', after:'', answer:'zhēn', options:['zhēn','zhén','zhěn','zhèn']},
+            {before:'sui → ', after:'', answer:'suì', options:['suī','suí','suǐ','suì']}, {before:'sheng → ', after:'', answer:'shēng', options:['shēng','shéng','shěng','shèng']},
+            {before:'ri → ', after:'', answer:'rì', options:['rī','rí','rǐ','rì']}, {before:'zhong → ', after:'', answer:'zhōng', options:['zhōng','zhóng','zhǒng','zhòng']},
+            {before:'shui → ', after:'', answer:'shuì', options:['shuī','shuí','shuǐ','shuì']}, {before:'zuo → ', after:'', answer:'zuò', options:['zuō','zuó','zuǒ','zuò']},
+            {before:'chuang → ', after:'', answer:'chuáng', options:['chuāng','chuáng','chuǎng','chuàng']}, {before:'shu → ', after:'', answer:'shū', options:['shū','shú','shǔ','shù']},
+            {before:'si → ', after:'', answer:'sì', options:['sī','sí','sǐ','sì']}
+          ] },
+        { type: 'dialoguepics', caption: 'Xem hình, chọn đúng lời hội thoại',
+          items: [
+            {img:'/images/hsk1v3-bai-3-wb/dlg1_teacher.jpg', lines:['A: 王老师是你的中文老师吗？', 'B: 是的。']},
+            {img:'/images/hsk1v3-bai-3-wb/dlg2_phone.jpg', lines:['A: 喂，你工作忙吗？', 'B: 我工作不忙。']},
+            {img:'/images/hsk1v3-bai-3-wb/dlg3_airplane.jpg', lines:['A: 我是法国人。', 'B: 我也是法国人。']},
+            {img:'/images/hsk1v3-bai-3-wb/dlg4_handshake.jpg', lines:['A: 这是我女朋友。', 'B: 你好，很高兴认识你。']}
+          ] }
+      ]
+    }
+  ]
+};
+
 var dialogData = [
   {scene:'李文和白家月聊国籍 · Nói về quốc tịch',
    preQuiz:[

@@ -145,6 +145,23 @@ var wbData = {
       title: 'Ngữ âm',
       audio: '/audio/hsk1v3-bai-3/wb-yuyin.mp3',
       blocks: [
+        { type: 'table', caption: 'Thanh mẫu (声母)',
+          rows: [
+            ['zh', 'ch', 'sh', 'r'],
+            ['z', 'c', 's', '']
+          ],
+          note: 'Nghe và đọc theo thanh mẫu, sau đó đọc to.' },
+        { type: 'table', caption: 'Vận mẫu (韵母)',
+          rows: [
+            ['a', 'e', 'i [ɿ/ʅ]', 'u'],
+            ['ai', 'ao', 'ou', ''],
+            ['an', 'en', '', ''],
+            ['ang', 'eng', 'ong', ''],
+            ['ua', 'uo', 'uai', 'uei (ui)'],
+            ['uan', 'uen (un)', '', ''],
+            ['uang', 'ueng', '', '']
+          ],
+          note: 'Nghe và đọc theo vận mẫu, sau đó đọc to. "i [ɿ/ʅ]" là cách đọc riêng của "i" khi đứng sau zh/ch/sh/r và z/c/s.' },
         { type: 'table', caption: 'Luyện đọc âm tiết zh, sh, ch, z (4 thanh điệu)',
           headers: ['1', '2', '3', '4'],
           rows: [

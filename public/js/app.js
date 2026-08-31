@@ -3984,13 +3984,6 @@
       return;
     }
 
-    var medalFor = function (rank) {
-      if (rank === 1) return '🥇';
-      if (rank === 2) return '🥈';
-      if (rank === 3) return '🥉';
-      return '#' + rank;
-    };
-
     content.innerHTML =
       '<div class="lb-list">' +
       rows.map(function (row) {
@@ -4005,6 +3998,46 @@
         '</div>';
       }).join('') +
       '</div>';
+  }
+
+  /* ---------------- Bang xep hang "hom nay" tren trang chu ---------------- */
+
+  function medalFor(rank) {
+    if (rank === 1) return '🥇';
+    if (rank === 2) return '🥈';
+    if (rank === 3) return '🥉';
+    return '#' + rank;
+  }
+
+  function renderTodayLeaderboard() {
+    var content = $('#todayLbContent');
+    if (!content) return;
+    fetch('/api/leaderboard/today')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var rows = data.leaderboard || [];
+        var auth = readJSON(STORAGE_KEYS.auth, null);
+        if (!rows.length) {
+          content.innerHTML = '<p class="dash-today-lb-empty">Chưa có ai học hôm nay — hãy là người đầu tiên!</p>';
+          return;
+        }
+        content.innerHTML = '<div class="lb-list">' +
+          rows.map(function (row) {
+            var isMe = auth && auth.user && auth.user.name === row.name && auth.user.level === row.level;
+            var pct = row.totalQuestions ? Math.round(row.totalCorrect / row.totalQuestions * 100) : 0;
+            return '<div class="lb-row' + (isMe ? ' is-me' : '') + '">' +
+              '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
+              '<span class="lb-name">' + row.name + (isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
+              '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>' +
+              '<span class="lb-streak">🔥 ' + row.streak + '</span>' +
+              '<span class="lb-score">' + row.totalCorrect + '/' + row.totalQuestions + ' (' + pct + '%)</span>' +
+            '</div>';
+          }).join('') +
+          '</div>';
+      })
+      .catch(function () {
+        content.innerHTML = '<p class="dash-today-lb-empty">Không tải được bảng xếp hạng, thử lại sau.</p>';
+      });
   }
 
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
@@ -4277,6 +4310,7 @@
     renderLevelSubmenu();
     renderStreak();
     renderStatTiles();
+    renderTodayLeaderboard();
     initAuth();
     refreshProgressFromServer();
     initAnalytics();

@@ -359,6 +359,28 @@ app.get('/api/leaderboard', asyncRoute(async (req, res) => {
   res.json({ leaderboard: top });
 }));
 
+// Bang xep hang "hom nay": khong co diem rieng theo ngay (he thong chi
+// luu tong diem all-time), nen "hom nay" nghia la loc ra nhung hoc sinh
+// co studyDays chua ngay hom nay (that su vao hoc hom nay), roi xep hang
+// nhu bang chinh — vinh danh dung nguoi dang hoc deu, khong bia diem gia.
+app.get('/api/leaderboard/today', asyncRoute(async (req, res) => {
+  const today = todayKey();
+  const scores = await loadScores();
+  const rows = Object.keys(scores)
+    .map((userId) => scores[userId])
+    .filter((row) => Array.isArray(row.studyDays) && row.studyDays.indexOf(today) !== -1);
+  rows.sort((a, b) => b.totalCorrect - a.totalCorrect || b.streak - a.streak);
+  const top = rows.slice(0, 20).map((row, i) => ({
+    rank: i + 1,
+    name: row.name,
+    level: row.level,
+    totalCorrect: row.totalCorrect,
+    totalQuestions: row.totalQuestions,
+    streak: row.streak,
+  }));
+  res.json({ leaderboard: top, date: today });
+}));
+
 // ══════════════════════════════════════════════════════════════════
 // Thong ke truy cap + thoi gian hoc (Analytics) — luu vao file JSON
 // tren server, khong dung dich vu ngoai. Chi xem duoc qua /admin,

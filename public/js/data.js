@@ -660,6 +660,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-14.html'
+      },
+      {
+        id: 'hsk3-l15',
+        number: 15,
+        title: 'Những câu khác đều không có vấn đề gì',
+        titleHanzi: '其他都没什么问题',
+        titlePinyin: 'Qítā dōu méi shénme wèntí',
+        topic: 'Du học, Lớp học & Lễ hội bia',
+        vocabCount: 21,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3-bai-15.html'
       }
     ],
     hsk1v3: [

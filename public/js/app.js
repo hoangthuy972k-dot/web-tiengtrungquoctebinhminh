@@ -3012,11 +3012,41 @@
     }).join('');
 
     var mcHtml = data.mc.map(function (item) {
+      // Cau 11-20 (neu co field "lines") cung nghe-dien-chinh-ta truoc, nhung
+      // blank chi 1 cum tu ngan (khong dai nhu cau 1-10); day la buoc tu
+      // kiem tra rieng, KHONG tinh vao diem — diem chinh van tinh theo dap
+      // an trac nghiem ben duoi (dung dinh dang de thi goc).
+      var mcDictHtml = '';
+      if (item.lines && item.lines.length) {
+        var mcLinesHtml = item.lines.map(function (line, li) {
+          var inputId = 'lpMcDictInput-' + item.num + '-' + li;
+          return '<div class="lp-dict-line">' +
+            (line.speaker ? '<span class="lp-dict-speaker">' + line.speaker + '：</span>' : '') +
+            '<span class="lp-dict-pre hanzi">' + line.pre + '</span>' +
+            '<input type="text" class="lp-dict-input" id="' + inputId + '" data-mcdict-num="' + item.num + '" data-li="' + li + '" placeholder="…">' +
+            '<span class="lp-dict-post hanzi">' + line.post + '</span>' +
+          '</div>';
+        }).join('');
+        var mcAnswerHtml = item.lines.map(function (line) {
+          return '<div class="lp-dict-answer-line">' +
+            '<span class="hanzi">' + (line.speaker ? line.speaker + '：' : '') + line.pre + line.blank + line.post + '</span>' +
+            '<div class="lp-dict-answer-py">' + line.py + '</div>' +
+            '<div class="lp-dict-answer-vn">' + line.vn + '</div>' +
+          '</div>';
+        }).join('');
+        mcDictHtml =
+          '<div class="lp-mc-dict">' +
+            mcLinesHtml +
+            '<button type="button" class="lp-mcdict-reveal" data-mcdict-reveal="' + item.num + '">Xem đáp án chính tả</button>' +
+            '<div class="lp-dict-answer" data-mcdict-answer="' + item.num + '" hidden>' + mcAnswerHtml + '</div>' +
+          '</div>';
+      }
       var optsHtml = item.options.map(function (opt, oi) {
         return '<button type="button" class="lp-mc-opt" data-mc-num="' + item.num + '" data-oi="' + oi + '">' + String.fromCharCode(65 + oi) + '. ' + opt + '</button>';
       }).join('');
       return '<div class="lp-mc-item">' +
         '<div class="lp-dict-num">Câu ' + item.num + '</div>' +
+        mcDictHtml +
         '<div class="lp-mc-opts">' + optsHtml + '</div>' +
         '<div class="lp-mc-explain" data-explain-num="' + item.num + '" hidden></div>' +
       '</div>';
@@ -3062,6 +3092,21 @@
         btn.disabled = true;
         pgbRecord('lpwq', parseInt(num, 10) - 1, allCorrect);
         lpWorkbookUpdateScore();
+      });
+    });
+
+    $all('.lp-mcdict-reveal', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var num = btn.getAttribute('data-mcdict-reveal');
+        var item = data.mc.find(function (m) { return String(m.num) === num; });
+        item.lines.forEach(function (line, li) {
+          var input = $('#lpMcDictInput-' + num + '-' + li, wrap);
+          var val = (input.value || '').trim();
+          input.disabled = true;
+          input.classList.add(val === line.blank ? 'is-correct' : 'is-wrong');
+        });
+        $('[data-mcdict-answer="' + num + '"]', wrap).hidden = false;
+        btn.disabled = true;
       });
     });
 

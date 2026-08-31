@@ -591,24 +591,64 @@ var listenData = {
   ],
   mc: [
     {num:11, options:['做饭','吃饭','打电话'], ans:1,
+     lines:[
+       {speaker:'女', pre:'饭', blank:'做好了', post:'，快过来吃。', py:'Fàn zuòhǎo le, kuài guòlai chī.', vn:'Cơm nấu xong rồi, mau lại ăn đi.'},
+       {speaker:'男', pre:'好，我打了电话就', blank:'过去', post:'。', py:'Hǎo, wǒ dǎle diànhuà jiù guòqu.', vn:'Được, tôi gọi điện xong là qua ngay.'},
+     ],
      explain:'女：饭做好了，快过来吃。男：好，我打了电话就过去。问：女的让男的做什么？ → 吃饭。'},
     {num:12, options:['公司','医院','学校'], ans:0,
+     lines:[
+       {speaker:'男', pre:'请问，方经理的办公室怎么', blank:'走', post:'？', py:'Qǐngwèn, Fāng jīnglǐ de bàngōngshì zěnme zǒu?', vn:'Xin hỏi, văn phòng giám đốc Phương đi thế nào ạ?'},
+       {speaker:'女', pre:'他外出办事了，现在', blank:'不在', post:'。', py:'Tā wàichū bànshì le, xiànzài bú zài.', vn:'Anh ấy ra ngoài giải quyết việc rồi, bây giờ không có ở đây.'},
+     ],
      explain:'男：请问，方经理的办公室怎么走？女：就在前边，右边第二个房间，1202。他外出办事了，现在不在。问：他们可能在哪儿？ → 公司 (vì hỏi thăm văn phòng của một giám đốc).'},
     {num:13, options:['老师和学生','丈夫和妻子','经理和秘书'], ans:1,
+     lines:[
+       {speaker:'女', pre:'每天坐车上班时间太长了，我们也', blank:'买辆车吧', post:'。', py:'Měitiān zuò chē shàngbān shíjiān tài cháng le, wǒmen yě mǎi liàng chē ba.', vn:'Ngày nào cũng đi xe đi làm mất nhiều thời gian quá, hay là mình cũng mua xe đi.'},
+       {speaker:'男', pre:'行啊，买了车我就每天', blank:'送你上班', post:'。', py:'Xíng a, mǎile chē wǒ jiù měitiān sòng nǐ shàngbān.', vn:'Được thôi, mua xe xong là ngày nào anh cũng đưa em đi làm.'},
+     ],
      explain:'女：每天坐车上班时间太长了，我们也买辆车吧。男：行啊，买了车我就每天送你上班。问：他们最可能是什么关系？ → 丈夫和妻子.'},
     {num:14, options:['喜欢看书','考得很好','喜欢玩儿电脑游戏'], ans:2,
+     lines:[
+       {speaker:'男', pre:'你考得真好，是怎么', blank:'学的', post:'？', py:'Nǐ kǎo de zhēn hǎo, shì zěnme xué de?', vn:'Bạn thi tốt thật đấy, học kiểu gì vậy?'},
+       {speaker:'女', pre:'我每天学习，你到了家就玩儿电脑游戏、睡觉，', blank:'不看书', post:'，能学好吗？', py:'Wǒ měitiān xuéxí, nǐ dàole jiā jiù wánr diànnǎo yóuxì, shuìjiào, bú kàn shū, néng xuéhǎo ma?', vn:'Tôi ngày nào cũng học, còn bạn về đến nhà là chơi điện tử, ngủ, không đọc sách, sao mà học tốt được?'},
+     ],
      explain:'男：你考得真好，是怎么学的？女：我每天学习，你到了家就玩儿电脑游戏、睡觉，不看书，能学好吗？问：关于男的，可以知道什么？ → 喜欢玩儿电脑游戏.'},
     {num:15, options:['运动一下','去办事','穿衣服'], ans:0,
+     lines:[
+       {speaker:'女', pre:'今晚你吃得太多了，', blank:'出去走走吧', post:'。', py:'Jīnwǎn nǐ chī de tài duō le, chūqu zǒuzou ba.', vn:'Tối nay bạn ăn nhiều quá, ra ngoài đi dạo một chút đi.'},
+       {speaker:'男', pre:'行，我', blank:'穿了衣服', post:'就去。', py:'Xíng, wǒ chuānle yīfu jiù qù.', vn:'Được, tôi mặc quần áo xong là đi ngay.'},
+     ],
      explain:'女：今晚你吃得太多了，出去走走吧。男：行，我穿了衣服就去。问：女的想让男的做什么？ → 运动一下.'},
     {num:16, options:['楼下','楼上','办公室'], ans:0,
+     lines:[
+       {speaker:'女', pre:'对不起，他不在，', blank:'下楼去送人了', post:'。', py:'Duìbuqǐ, tā bú zài, xiàlóu qù sòng rén le.', vn:'Xin lỗi, anh ấy không có ở đây, xuống lầu tiễn khách rồi.'},
+       {speaker:'女', pre:'几分钟就回来，他送了人就', blank:'上来', post:'。', py:'Jǐ fēnzhōng jiù huílai, tā sòngle rén jiù shànglai.', vn:'Mấy phút nữa là về, tiễn khách xong là anh ấy lên ngay.'},
+     ],
      explain:'男：请问王雨在吗？女：对不起，他不在，下楼去送人了。男：他什么时候回来？女：几分钟就回来，他送了人就上来。问：王雨现在可能在哪儿？ → 楼下.'},
     {num:17, options:['他拿东西','他没带手机','他要去办公楼打电话'], ans:0,
+     lines:[
+       {speaker:'男', pre:'', blank:'王东还没到', post:'。', py:'Wáng Dōng hái méi dào.', vn:'Vương Đông vẫn chưa đến.'},
+       {speaker:'男', pre:'我给他打电话了，他说去办公楼', blank:'拿了东西', post:'就过来。', py:'Wǒ gěi tā dǎ diànhuà le, tā shuō qù bàngōnglóu nále dōngxi jiù guòlai.', vn:'Tôi gọi điện cho anh ấy rồi, anh ấy nói đến tòa nhà văn phòng lấy đồ xong là qua ngay.'},
+     ],
      explain:'女：大家都到了吗？男：王东还没到。女：谁有他的电话？男：我给他打电话了，他说去办公楼拿了东西就过来。问：王东为什么还没来？ → 他拿东西.'},
     {num:18, options:['已经到了','走北边的路','走得很快'], ans:1,
+     lines:[
+       {speaker:'女', pre:'他们走', blank:'北边那条路', post:'，可能也快到了。', py:'Tāmen zǒu běibiān nà tiáo lù, kěnéng yě kuài dào le.', vn:'Họ đi con đường phía bắc, có lẽ cũng sắp đến rồi.'},
+       {speaker:'男', pre:'那条路难走，可能要', blank:'50分钟', post:'。', py:'Nà tiáo lù nán zǒu, kěnéng yào wǔshí fēnzhōng.', vn:'Con đường đó khó đi, có lẽ phải mất 50 phút.'},
+     ],
      explain:'女：我们真快，30分钟就到了。男：是啊，小方他们到哪儿了？女：他们走北边那条路，可能也快到了。男：那条路难走，可能要50分钟。问：关于小方他们，可以知道什么？ → 走北边的路.'},
     {num:19, options:['在楼上','在楼下','不知道在哪儿'], ans:0,
+     lines:[
+       {speaker:'男', pre:'你进来的时候', blank:'看见小白了吗', post:'？', py:'Nǐ jìnlai de shíhou kànjiàn Xiǎobái le ma?', vn:'Lúc bạn vào có thấy Tiểu Bạch không?'},
+       {speaker:'男', pre:'我让他下去', blank:'买午饭', post:'，还没回来。', py:'Wǒ ràng tā xiàqu mǎi wǔfàn, hái méi huílai.', vn:'Tôi bảo cậu ấy xuống mua cơm trưa, vẫn chưa về.'},
+     ],
      explain:'男：你进来的时候看见小白了吗？女：没看见。你找他有事？男：我让他下去买午饭，还没回来。女：给他打个电话问问吧。问：他们在哪儿？ → 在楼上 (vì nói 小白 "下去" mua cơm, nghĩa là 2 người đang nói chuyện đang ở trên lầu).'},
     {num:20, options:['还没回家','不着急','很着急'], ans:2,
+     lines:[
+       {speaker:'女', pre:'', blank:'东东还没回来呢', post:'。', py:'Dōngdōng hái méi huílai ne.', vn:'Đông Đông vẫn chưa về mà.'},
+       {speaker:'女', pre:'都这么晚了，我', blank:'能不着急吗', post:'？', py:'Dōu zhème wǎn le, wǒ néng bù zháojí ma?', vn:'Muộn thế này rồi, tôi sao mà không sốt ruột được?'},
+     ],
      explain:'男：你怎么还不吃饭？女：东东还没回来呢。男：你别着急，吃饭吧。女：都这么晚了，我能不着急吗？问：关于女的，可以知道什么？ → 很着急 (能不着急吗 = phản vấn, ý nghĩa thực chất là "rất sốt ruột").'},
   ],
 };

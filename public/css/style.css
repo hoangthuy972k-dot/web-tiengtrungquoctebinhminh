@@ -2852,6 +2852,35 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   gap: 8px;
 }
 
+/* Khoi nghe-dien-chinh-ta ngan gan truoc phan trac nghiem cua cau 11-20 —
+   tu kiem tra rieng, khong tinh diem (diem tinh theo dap an trac nghiem). */
+.lp-mc-dict {
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px dashed var(--color-gray-200);
+}
+
+.lp-mcdict-reveal {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin-top: var(--space-1);
+}
+
+.lp-mcdict-reveal:hover:not(:disabled) {
+  background: var(--color-gray-200);
+}
+
+.lp-mcdict-reveal:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
 .lp-mc-opt {
   text-align: left;
   border: 1.5px solid var(--color-gray-200);

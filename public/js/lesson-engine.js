@@ -692,6 +692,10 @@ function recSubmit(i){
 // ══════════════════════════════════════════
 let listenAns=[];
 function buildListen(){
+  if(listenData && !Array.isArray(listenData) && listenData.type==='workbook'){
+    buildListenWorkbook();
+    return;
+  }
   let qFlat=[];
   listenData.forEach(function(g,gi){g.questions.forEach(function(q,qi){qFlat.push({gi:gi,qi:qi});});});
   listenAns=Array(qFlat.length).fill(false);
@@ -731,6 +735,104 @@ function checkListenAnswer(gi,qi,chosen){
     const f=document.getElementById('lf'+gi2+'_'+qi2);
     if(f.dataset.done){done++;if(f.classList.contains('ok'))ok++;}
   });});
+  const sb=document.getElementById('listen-score');sb.style.display='flex';
+  document.getElementById('listen-sn').textContent=ok+'/'+total;
+  document.getElementById('listen-sm').textContent=done===total?(ok===total?'🎉 Xuất sắc!':'👍 Xem lại câu sai nhé!'):'Đã trả lời '+done+'/'+total+' câu';
+  window.exerciseScores.listen={correct:ok,total:total};
+}
+
+// ══════════════════════════════════════════
+// PHẦN 2b · NGHE — đề thi thật dạng workbook (nghe điền từ + nghe chọn đáp án)
+// ══════════════════════════════════════════
+function buildListenWorkbook(){
+  const wrap=document.getElementById('listen-wrap');
+  let html='';
+  if(listenData.audio){
+    html+='<div class="listen-passage" style="text-align:center;">'+
+      '<div style="font-weight:600;color:var(--mid);margin-bottom:8px;">🎧 Nghe toàn bộ đề (bản ghi âm gốc giáo trình)</div>'+
+      '<audio class="real-audio" controls preload="none" src="'+listenData.audio+'" onerror="audioLoadError(this)" style="width:100%;max-width:480px;"></audio></div>';
+  }
+  const dictFirst=listenData.dictation[0].num, dictLast=listenData.dictation[listenData.dictation.length-1].num;
+  html+='<div class="sec-sub" style="margin:18px 0 10px;font-weight:600;color:var(--ink);">📝 Phần 1 · Nghe điền từ còn thiếu (câu '+dictFirst+'-'+dictLast+')</div>';
+  html+=listenData.dictation.map(function(item,i){
+    const fullZh=item.lines.map(function(ln){return (ln.pre||'')+ln.blank+(ln.post||'');}).join(' ');
+    const lines=item.lines.map(function(ln,li){
+      return '<div class="q-text" style="margin-bottom:6px;">'+
+        (ln.speaker?'<b style="color:var(--sky-d)">'+ln.speaker+'：</b>':'')+
+        '<span>'+(ln.pre||'')+'</span>'+
+        '<input class="q-inp" id="dict'+i+'_'+li+'" type="text" placeholder="___" style="width:130px;">'+
+        '<span>'+(ln.post||'')+'</span></div>';
+    }).join('');
+    return '<div class="quiz-card" id="dictcard'+i+'">'+
+      '<div class="q-text" style="margin-bottom:8px;"><span class="q-num">'+item.num+'</span>'+
+      '<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button></div>'+
+      lines+
+      '<div class="btn-row" style="margin-top:8px;"><button class="btn-s" data-action="check-dictation" data-idx="'+i+'">Kiểm tra</button></div>'+
+      '<div class="q-fb" id="dictfb'+i+'"></div></div>';
+  }).join('');
+  const mcFirst=listenData.mc[0].num, mcLast=listenData.mc[listenData.mc.length-1].num;
+  html+='<div class="sec-sub" style="margin:24px 0 10px;font-weight:600;color:var(--ink);">✅ Phần 2 · Nghe hiểu, chọn đáp án đúng (câu '+mcFirst+'-'+mcLast+')</div>';
+  html+=listenData.mc.map(function(item,i){
+    const fullZh=item.lines.map(function(ln){return (ln.pre||'')+ln.blank+(ln.post||'');}).join(' ');
+    const transcript=item.lines.map(function(ln){
+      return '<div style="margin-bottom:4px;">'+(ln.speaker?'<b style="color:var(--sky-d)">'+ln.speaker+'：</b>':'')+(ln.pre||'')+ln.blank+(ln.post||'')+'</div>';
+    }).join('');
+    const opts=item.options.map(function(o,ci){return '<button class="q-opt" id="mco'+i+'_'+ci+'" data-action="check-listen-mc" data-idx="'+i+'" data-ci="'+ci+'">'+o+'</button>';}).join('');
+    return '<div class="quiz-card" id="mccard'+i+'">'+
+      '<div class="q-text" style="margin-bottom:8px;"><span class="q-num">'+item.num+'</span>'+
+      '<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button></div>'+
+      '<div style="font-size:0.85rem;color:var(--soft);margin:0 0 10px 30px;">'+transcript+'</div>'+
+      '<div class="q-opts">'+opts+'</div>'+
+      '<div class="q-fb" id="mcfb'+i+'"></div></div>';
+  }).join('');
+  wrap.innerHTML=html;
+  document.getElementById('listen-score').style.display='none';
+}
+function checkDictation(i){
+  const item=listenData.dictation[i];
+  let allOk=true;
+  item.lines.forEach(function(ln,li){
+    const inp=document.getElementById('dict'+i+'_'+li);
+    const v=inp.value.trim().replace(/\s+/g,'');
+    const a=ln.blank.replace(/\s+/g,'');
+    const c=v===a;
+    inp.className='q-inp '+(c?'ok':'err');
+    if(!c)allOk=false;
+  });
+  const fb=document.getElementById('dictfb'+i);
+  fb.className='q-fb '+(allOk?'ok':'err');
+  const answerText=item.lines.map(function(ln){return ln.blank;}).join(' / ');
+  const pyvn=item.lines.map(function(ln){return ln.py?('<div style="margin-top:4px;font-size:0.82rem;">'+ln.py+'<br><span style="color:var(--soft)">'+ln.vn+'</span></div>'):'';}).join('');
+  fb.innerHTML=(allOk?'✓ Đúng rồi!':'✗ Đáp án：「'+answerText+'」')+pyvn;
+  updateListenWbScore();
+}
+function checkListenMC(i,ci){
+  const fb=document.getElementById('mcfb'+i);
+  if(fb.dataset.done)return;
+  fb.dataset.done='1';
+  const item=listenData.mc[i];
+  const c=ci===item.ans;
+  item.options.forEach(function(_,j){
+    const b=document.getElementById('mco'+i+'_'+j);
+    b.style.pointerEvents='none';
+    if(j===item.ans)b.classList.add('show-ok');
+    else if(j===ci&&!c)b.classList.add('sel-err');
+  });
+  fb.className='q-fb '+(c?'ok':'err');
+  fb.innerHTML=(c?'✓ Đúng rồi!':'✗ Đáp án：「'+item.options[item.ans]+'」')+'<div style="margin-top:6px;color:var(--soft);font-size:0.82rem;">'+(item.explain||'')+'</div>';
+  updateListenWbScore();
+}
+function updateListenWbScore(){
+  const total=listenData.dictation.length+listenData.mc.length;
+  let done=0,ok=0;
+  listenData.dictation.forEach(function(_,i){
+    const fb=document.getElementById('dictfb'+i);
+    if(fb.classList.contains('ok')||fb.classList.contains('err')){done++;if(fb.classList.contains('ok'))ok++;}
+  });
+  listenData.mc.forEach(function(_,i){
+    const fb=document.getElementById('mcfb'+i);
+    if(fb.classList.contains('ok')||fb.classList.contains('err')){done++;if(fb.classList.contains('ok'))ok++;}
+  });
   const sb=document.getElementById('listen-score');sb.style.display='flex';
   document.getElementById('listen-sn').textContent=ok+'/'+total;
   document.getElementById('listen-sm').textContent=done===total?(ok===total?'🎉 Xuất sắc!':'👍 Xem lại câu sai nhé!'):'Đã trả lời '+done+'/'+total+' câu';
@@ -833,6 +935,8 @@ document.addEventListener('click', function(e){
   if(action==='check-mc'){ checkMC(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='toggle-show'){ document.getElementById(el.dataset.target).classList.toggle('show'); return; }
   if(action==='check-listen'){ checkListenAnswer(parseInt(el.dataset.gi,10), parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
+  if(action==='check-dictation'){ checkDictation(parseInt(el.dataset.idx,10)); return; }
+  if(action==='check-listen-mc'){ checkListenMC(parseInt(el.dataset.idx,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='check-errorfix'){ checkErrorFix(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='rec-start'){ e.stopPropagation(); recStart(parseInt(el.dataset.idx,10)); return; }
   if(action==='rec-stop'){ e.stopPropagation(); recStop(parseInt(el.dataset.idx,10)); return; }

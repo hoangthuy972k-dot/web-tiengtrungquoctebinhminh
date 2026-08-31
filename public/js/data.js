@@ -494,6 +494,18 @@ const APP_DATA = {
     ],
     hsk3: [
       {
+        id: 'hsk3-l1',
+        number: 1,
+        title: 'Cuối tuần bạn có kế hoạch gì?',
+        titleHanzi: '周末你有什么打算',
+        titlePinyin: 'Zhōumò nǐ yǒu shénme dǎsuàn',
+        topic: 'Kế hoạch cuối tuần, Du lịch & Sinh hoạt gia đình',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3-bai-1.html'
+      },
+      {
         id: 'hsk3-l2',
         number: 2,
         title: 'Khi nào anh ấy về',

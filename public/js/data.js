@@ -564,6 +564,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3-bai-6.html'
+      },
+      {
+        id: 'hsk3-l7',
+        number: 7,
+        title: 'Tôi và cô ấy quen nhau được năm năm rồi',
+        titleHanzi: '我跟她都认识五年了',
+        titlePinyin: 'Wǒ gēn tā dōu rènshi wǔ nián le',
+        topic: 'Công sở, Hôn nhân & Thời gian',
+        vocabCount: 12,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3-bai-7.html'
       }
     ],
     hsk1v3: [

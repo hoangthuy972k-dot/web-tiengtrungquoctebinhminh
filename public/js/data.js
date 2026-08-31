@@ -576,6 +576,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3-bai-7.html'
+      },
+      {
+        id: 'hsk3-l8',
+        number: 8,
+        title: 'Bạn đi đâu tôi đi đó',
+        titleHanzi: '你去哪儿我就去哪儿',
+        titlePinyin: 'Nǐ qù nǎr wǒ jiù qù nǎr',
+        topic: 'Nhà cửa, Tình bạn & Sức khỏe',
+        vocabCount: 17,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-8.html'
       }
     ],
     hsk1v3: [

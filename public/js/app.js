@@ -2967,19 +2967,24 @@
   // trắc nghiệm nghe hội thoại chọn đáp án đúng. Tổng 15 câu được chấm điểm
   // và lưu vào recordLessonScore để hiện trong màn "Kết quả cuối bài".
   var lpWorkbookScore = null;
-  var LP_WB_TOTAL = 15;
+  // Tong so cau = dictation.length + mc.length, tinh dong theo tung bai (khac
+  // nhau giua cac level: HSK2 la 10+5=15, HSK3 co the la 10+10=20...).
+  function lpWbTotal() {
+    var d = lpListenData;
+    return ((d.dictation && d.dictation.length) || 0) + ((d.mc && d.mc.length) || 0);
+  }
 
   function lpWorkbookUpdateScore() {
     var correct = 0;
     Object.keys(lpWorkbookScore.dictCorrect).forEach(function (k) { if (lpWorkbookScore.dictCorrect[k]) correct++; });
     Object.keys(lpWorkbookScore.mcCorrect).forEach(function (k) { if (lpWorkbookScore.mcCorrect[k]) correct++; });
-    recordLessonScore(currentHubLesson, 'listen', { correct: correct, total: LP_WB_TOTAL });
+    recordLessonScore(currentHubLesson, 'listen', { correct: correct, total: lpWbTotal() });
   }
 
   function renderListenWorkbook() {
     var wrap = $('#lpContent');
     var data = lpListenData;
-    if (!lpWorkbookScore) { lpWorkbookScore = { dictCorrect: {}, mcCorrect: {} }; pgbInit('lpwq', LP_WB_TOTAL); }
+    if (!lpWorkbookScore) { lpWorkbookScore = { dictCorrect: {}, mcCorrect: {} }; pgbInit('lpwq', lpWbTotal()); }
 
     var dictationHtml = data.dictation.map(function (item) {
       var linesHtml = item.lines.map(function (line, li) {
@@ -3017,18 +3022,22 @@
       '</div>';
     }).join('');
 
+    var dictCount = data.dictation.length;
+    var mcCount = data.mc.length;
+    var total = dictCount + mcCount;
+
     wrap.innerHTML =
       '<div class="lp-wb-audio-pin">' +
-        '<div class="lp-wb-audio-pin-label">🎧 Audio đề nghe · Câu 1-15</div>' +
+        '<div class="lp-wb-audio-pin-label">🎧 Audio đề nghe · Câu 1-' + total + '</div>' +
         '<audio class="lp-wb-audio" controls preload="none" src="' + data.audio + '"></audio>' +
       '</div>' +
-      pgbHtml('lpwq', LP_WB_TOTAL) +
+      pgbHtml('lpwq', total) +
       '<div class="lp-wb-part">' +
-        '<div class="lp-wb-part-title">Phần 1-2 · Câu 1-10 — Nghe và điền vào chỗ trống</div>' +
+        '<div class="lp-wb-part-title">Câu 1-' + dictCount + ' — Nghe và điền vào chỗ trống</div>' +
         dictationHtml +
       '</div>' +
       '<div class="lp-wb-part">' +
-        '<div class="lp-wb-part-title">Phần 3 · Câu 11-15 — Nghe hội thoại, chọn đáp án đúng</div>' +
+        '<div class="lp-wb-part-title">Câu ' + (dictCount + 1) + '-' + total + ' — Nghe hội thoại, chọn đáp án đúng</div>' +
         mcHtml +
       '</div>';
 

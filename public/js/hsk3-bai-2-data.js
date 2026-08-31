@@ -526,25 +526,92 @@ var matchData = [
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — tình huống MỚI dùng từ vựng bài học
+// PHẦN 2 · NGHE — đề nghe THẬT từ HSK标准教程3 练习册 (sách bài tập Bài 2)
+// Audio gốc duy nhất chứa đủ 20 câu (Phần 1+2+3+4 của đề gốc):
+//  - Phần 1 (câu 1-5, gốc: nghe chọn tranh) + Phần 2 (câu 6-10, gốc: nghe
+//    phán đoán đúng/sai) → gộp thành 10 câu ĐIỀN CHÍNH TẢ (nghe rồi gõ lại
+//    phần còn thiếu), vì trang không có giao diện chọn tranh/đúng-sai.
+//  - Phần 3 (câu 11-15) + Phần 4 (câu 16-20) → 10 câu TRẮC NGHIỆM (nghe hội
+//    thoại, chọn A/B/C), giữ nguyên đúng như đề gốc.
 // ══════════════════════════════════════════
-var listenData = [
-  {audio:'我今天腿疼，脚也疼，所以我们过去那边坐一下吧，那边树很多。',
-   questions:[
-     {q:'说话人现在怎么了？',opts:['腿疼，脚也疼','很胖','很忙','没有钱'],ans:0},
-     {q:'他们打算做什么？',opts:['过去那边坐一下','回家睡觉','去公园运动','去买伞'],ans:0},
-   ]},
-  {audio:'喂，你好，请问王经理在吗？他出去办事了，下午回来，回来了就让他给我打个电话。',
-   questions:[
-     {q:'王经理现在在哪儿？',opts:['出去办事了','在办公室','在家里','在楼上'],ans:0},
-     {q:'说话人希望秘书做什么？',opts:['让经理回来后打电话','让经理明天来','让经理买伞','让经理去楼上'],ans:0},
-   ]},
-  {audio:'外面下雨了，我去楼上拿把伞，你在这儿等我，我拿了伞就下来。',
-   questions:[
-     {q:'说话人要去做什么？',opts:['去楼上拿伞','去买东西','去办公室','去运动'],ans:0},
-     {q:'他会怎么样？',opts:['拿了伞就下来','明天再下来','不下来了','忘记拿伞'],ans:0},
-   ]},
-];
+var listenData = {
+  type: 'workbook',
+  audio: '/audio/hsk3-bai-2/listen-full.mp3',
+  dictation: [
+    {num:1, lines:[
+      {speaker:'女', pre:'', blank:'真没想到，你现在这么瘦', post:'！',
+       py:'Zhēn méi xiǎngdào, nǐ xiànzài zhème shòu!', vn:'Thật không ngờ, bạn bây giờ gầy thế này!'},
+      {speaker:'男', pre:'这几年我一直在运动，', blank:'每天都跑步', post:'，能不瘦吗？',
+       py:'Zhè jǐ nián wǒ yìzhí zài yùndòng, měitiān dōu pǎobù, néng bú shòu ma?', vn:'Mấy năm nay tôi luôn vận động, ngày nào cũng chạy bộ, sao mà không gầy được?'},
+    ]},
+    {num:2, lines:[
+      {speaker:'女', pre:'', blank:'周经理，您找我', post:'？',
+       py:'Zhōu jīnglǐ, nín zhǎo wǒ?', vn:'Giám đốc Chu, ngài tìm em ạ?'},
+      {speaker:'男', pre:'对，小方，你快上来，', blank:'来我办公室', post:'。',
+       py:'Duì, Xiǎofāng, nǐ kuài shànglái, lái wǒ bàngōngshì.', vn:'Đúng rồi, Tiểu Phương, em lên nhanh đi, đến văn phòng của anh.'},
+    ]},
+    {num:3, lines:[
+      {speaker:'男', pre:'', blank:'天气太冷了，回来时别坐公共汽车了', post:'。',
+       py:'Tiānqì tài lěng le, huílai shí bié zuò gōnggòng qìchē le.', vn:'Trời lạnh quá, lúc về đừng đi xe buýt nữa.'},
+      {speaker:'女', pre:'我叫到一辆出租车，', blank:'正准备上车呢', post:'。',
+       py:'Wǒ jiàodào yí liàng chūzūchē, zhèng zhǔnbèi shàngchē ne.', vn:'Em gọi được một chiếc taxi rồi, đang chuẩn bị lên xe đây.'},
+    ]},
+    {num:4, lines:[
+      {speaker:'男', pre:'', blank:'怎么下雨了？我没带伞', post:'。',
+       py:'Zěnme xiàyǔ le? Wǒ méi dài sǎn.', vn:'Sao lại mưa rồi? Tôi không mang ô.'},
+      {speaker:'女', pre:'', blank:'我也没带', post:'。',
+       py:'Wǒ yě méi dài.', vn:'Tôi cũng không mang.'},
+    ]},
+    {num:5, lines:[
+      {speaker:'男', pre:'', blank:'你怎么了？怎么不跑了', post:'？',
+       py:'Nǐ zěnme le? Zěnme bù pǎo le?', vn:'Bạn sao vậy? Sao không chạy nữa?'},
+      {speaker:'女', pre:'今天不知道怎么了，', blank:'脚一直疼', post:'。',
+       py:'Jīntiān bù zhīdào zěnme le, jiǎo yìzhí téng.', vn:'Hôm nay không biết sao nữa, chân cứ đau mãi.'},
+    ]},
+    {num:6, lines:[
+      {pre:'乐乐，你出来的时候带把伞，', blank:'外边下雨呢', post:'。',
+       py:'Lèle, nǐ chūlai de shíhou dài bǎ sǎn, wàibian xiàyǔ ne.', vn:'Lạc Lạc, lúc con ra ngoài nhớ mang theo ô, bên ngoài đang mưa đấy.'},
+    ]},
+    {num:7, lines:[
+      {pre:'王经理，您别着急，', blank:'我现在就上楼去', post:'。',
+       py:'Wáng jīnglǐ, nín bié zháojí, wǒ xiànzài jiù shànglóu qù.', vn:'Giám đốc Vương, ngài đừng vội, em lên lầu ngay bây giờ đây.'},
+    ]},
+    {num:8, lines:[
+      {pre:'你在这儿等我一下，', blank:'我上去拿了钱就下来', post:'。',
+       py:'Nǐ zài zhèr děng wǒ yíxià, wǒ shàngqu nále qián jiù xiàlai.', vn:'Bạn đợi tôi ở đây một chút, tôi lên lấy tiền xong là xuống ngay.'},
+    ]},
+    {num:9, lines:[
+      {pre:'我们快点儿进去喝杯热咖啡吧，', blank:'这儿太冷了', post:'。',
+       py:'Wǒmen kuài diǎnr jìnqu hē bēi rè kāfēi ba, zhèr tài lěng le.', vn:'Chúng ta mau vào trong uống ly cà phê nóng đi, ở đây lạnh quá.'},
+    ]},
+    {num:10, lines:[
+      {pre:'同学们，你们快过来，', blank:'到树下坐坐', post:'。',
+       py:'Tóngxuémen, nǐmen kuài guòlai, dào shù xià zuòzuo.', vn:'Các bạn ơi, mọi người mau lại đây, đến ngồi dưới gốc cây một chút.'},
+    ]},
+  ],
+  mc: [
+    {num:11, options:['做饭','吃饭','打电话'], ans:1,
+     explain:'女：饭做好了，快过来吃。男：好，我打了电话就过去。问：女的让男的做什么？ → 吃饭。'},
+    {num:12, options:['公司','医院','学校'], ans:0,
+     explain:'男：请问，方经理的办公室怎么走？女：就在前边，右边第二个房间，1202。他外出办事了，现在不在。问：他们可能在哪儿？ → 公司 (vì hỏi thăm văn phòng của một giám đốc).'},
+    {num:13, options:['老师和学生','丈夫和妻子','经理和秘书'], ans:1,
+     explain:'女：每天坐车上班时间太长了，我们也买辆车吧。男：行啊，买了车我就每天送你上班。问：他们最可能是什么关系？ → 丈夫和妻子.'},
+    {num:14, options:['喜欢看书','考得很好','喜欢玩儿电脑游戏'], ans:2,
+     explain:'男：你考得真好，是怎么学的？女：我每天学习，你到了家就玩儿电脑游戏、睡觉，不看书，能学好吗？问：关于男的，可以知道什么？ → 喜欢玩儿电脑游戏.'},
+    {num:15, options:['运动一下','去办事','穿衣服'], ans:0,
+     explain:'女：今晚你吃得太多了，出去走走吧。男：行，我穿了衣服就去。问：女的想让男的做什么？ → 运动一下.'},
+    {num:16, options:['楼下','楼上','办公室'], ans:0,
+     explain:'男：请问王雨在吗？女：对不起，他不在，下楼去送人了。男：他什么时候回来？女：几分钟就回来，他送了人就上来。问：王雨现在可能在哪儿？ → 楼下.'},
+    {num:17, options:['他拿东西','他没带手机','他要去办公楼打电话'], ans:0,
+     explain:'女：大家都到了吗？男：王东还没到。女：谁有他的电话？男：我给他打电话了，他说去办公楼拿了东西就过来。问：王东为什么还没来？ → 他拿东西.'},
+    {num:18, options:['已经到了','走北边的路','走得很快'], ans:1,
+     explain:'女：我们真快，30分钟就到了。男：是啊，小方他们到哪儿了？女：他们走北边那条路，可能也快到了。男：那条路难走，可能要50分钟。问：关于小方他们，可以知道什么？ → 走北边的路.'},
+    {num:19, options:['在楼上','在楼下','不知道在哪儿'], ans:0,
+     explain:'男：你进来的时候看见小白了吗？女：没看见。你找他有事？男：我让他下去买午饭，还没回来。女：给他打个电话问问吧。问：他们在哪儿？ → 在楼上 (vì nói 小白 "下去" mua cơm, nghĩa là 2 người đang nói chuyện đang ở trên lầu).'},
+    {num:20, options:['还没回家','不着急','很着急'], ans:2,
+     explain:'男：你怎么还不吃饭？女：东东还没回来呢。男：你别着急，吃饭吧。女：都这么晚了，我能不着急吗？问：关于女的，可以知道什么？ → 很着急 (能不着急吗 = phản vấn, ý nghĩa thực chất là "rất sốt ruột").'},
+  ],
+};
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ

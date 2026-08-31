@@ -112,7 +112,12 @@
     if (!auth || !auth.token) return;
     fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + auth.token } })
       .then(function (r) {
-        if (r.status === 401) { localStorage.removeItem(STORAGE_KEYS.auth); return null; }
+        if (r.status === 401) {
+          localStorage.removeItem(STORAGE_KEYS.auth);
+          renderUserChip();
+          renderAuthBanner();
+          return null;
+        }
         return r.json();
       })
       .then(function (data) {
@@ -4166,12 +4171,32 @@
     });
   }
 
-  /* ---------------- Auth (demo only, localStorage) ---------------- */
+  /* ---------------- Auth (tai khoan that, phien luu trong localStorage) ---------------- */
+
+  // Nhac dang ky/dang nhap ngay tren trang chu: hoc sinh chua tung dang
+  // nhap tren thiet bi nay (hoac phien da het han) se thay banner moi
+  // ho dang ky/dang nhap; da dang nhap hop le thi banner tu an, khong
+  // lam phien.
+  function renderAuthBanner() {
+    var banner = $('#authBanner');
+    if (!banner) return;
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    banner.hidden = !!auth;
+  }
+
+  function renderUserChip() {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var name = auth && auth.user ? (auth.user.name || auth.user.email) : 'Khách';
+    $('#userName').textContent = name;
+    $('#userAvatar').textContent = name.trim().charAt(0).toUpperCase();
+  }
 
   function initAuth() {
     var overlay = $('#authModal');
     var closeBtn = $('#authModalClose');
     var sidebarUserBtn = $('#sidebarUserBtn');
+    var authBannerRegisterBtn = $('#authBannerRegister');
+    var authBannerLoginBtn = $('#authBannerLogin');
 
     function openModal(tab) {
       overlay.classList.add('is-open');
@@ -4182,6 +4207,9 @@
     function closeModal() {
       overlay.classList.remove('is-open');
     }
+
+    if (authBannerRegisterBtn) authBannerRegisterBtn.addEventListener('click', function () { openModal('register'); });
+    if (authBannerLoginBtn) authBannerLoginBtn.addEventListener('click', function () { openModal('login'); });
 
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', function (e) {
@@ -4220,15 +4248,9 @@
     function setSession(token, user, progress) {
       writeJSON(STORAGE_KEYS.auth, { token: token, user: user });
       renderUserChip();
+      renderAuthBanner();
       if (progress) mergeProgressFromServer(progress);
       syncProgressToServer();
-    }
-
-    function renderUserChip() {
-      var auth = readJSON(STORAGE_KEYS.auth, null);
-      var name = auth && auth.user ? (auth.user.name || auth.user.email) : 'Khách';
-      $('#userName').textContent = name;
-      $('#userAvatar').textContent = name.trim().charAt(0).toUpperCase();
     }
 
     function setFormError(form, message) {
@@ -4290,6 +4312,7 @@
         if (!window.confirm('Đăng xuất khỏi tài khoản?')) return;
         localStorage.removeItem(STORAGE_KEYS.auth);
         renderUserChip();
+        renderAuthBanner();
         showToast('Đã đăng xuất.');
       } else {
         openModal('login');
@@ -4312,6 +4335,7 @@
     renderStatTiles();
     renderTodayLeaderboard();
     initAuth();
+    renderAuthBanner();
     refreshProgressFromServer();
     initAnalytics();
     initPinyinToggle();

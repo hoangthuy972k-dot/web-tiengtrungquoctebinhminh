@@ -588,6 +588,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-8.html'
+      },
+      {
+        id: 'hsk3-l9',
+        number: 9,
+        title: 'Cô ấy nói tiếng Trung hay như người Trung Quốc vậy',
+        titleHanzi: '她的汉语说得跟中国人一样好',
+        titlePinyin: 'Tā de Hànyǔ shuō de gēn Zhōngguórén yíyàng hǎo',
+        topic: 'Học tập, Leo núi & Sức khỏe',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-9.html'
       }
     ],
     hsk1v3: [

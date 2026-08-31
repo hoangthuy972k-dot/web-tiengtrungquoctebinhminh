@@ -648,6 +648,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-13.html'
+      },
+      {
+        id: 'hsk3-l14',
+        number: 14,
+        title: 'Cậu hãy mang trái cây đến đây',
+        titleHanzi: '你把水果拿过来',
+        titlePinyin: 'Nǐ bǎ shuǐguǒ ná guolai',
+        topic: 'Dọn nhà, Điện thoại & Ngắm trăng',
+        vocabCount: 17,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-14.html'
       }
     ],
     hsk1v3: [

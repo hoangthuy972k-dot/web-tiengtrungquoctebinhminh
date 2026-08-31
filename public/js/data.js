@@ -624,6 +624,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-11.html'
+      },
+      {
+        id: 'hsk3-l12',
+        number: 12,
+        title: 'Hãy để những đồ quan trọng ở chỗ tôi đi',
+        titleHanzi: '把重要的东西放在我这儿吧',
+        titlePinyin: 'Bǎ zhòngyào de dōngxi fàng zài wǒ zhèr ba',
+        topic: 'Đi công tác, Sân bay & Lớp học',
+        vocabCount: 14,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-12.html'
       }
     ],
     hsk1v3: [

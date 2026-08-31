@@ -612,6 +612,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-10.html'
+      },
+      {
+        id: 'hsk3-l11',
+        number: 11,
+        title: 'Đừng quên tắt máy điều hòa không khí nhé',
+        titleHanzi: '别忘了把空调关了',
+        titlePinyin: 'Bié wàngle bǎ kōngtiáo guān le',
+        topic: 'Thư viện, Công sở & Sinh hoạt gia đình',
+        vocabCount: 19,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-11.html'
       }
     ],
     hsk1v3: [

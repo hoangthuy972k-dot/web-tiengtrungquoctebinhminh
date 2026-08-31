@@ -636,6 +636,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-12.html'
+      },
+      {
+        id: 'hsk3-l13',
+        number: 13,
+        title: 'Anh đi bộ về',
+        titleHanzi: '我是走回来的',
+        titlePinyin: 'Wǒ shì zǒu huilai de',
+        topic: 'Gia đình, Cà phê & Cuộc sống thường ngày',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-13.html'
       }
     ],
     hsk1v3: [

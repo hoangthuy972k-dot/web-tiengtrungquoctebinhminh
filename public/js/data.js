@@ -504,6 +504,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3-bai-2.html'
+      },
+      {
+        id: 'hsk3-l3',
+        number: 3,
+        title: 'Trên bàn có rất nhiều thức uống',
+        titleHanzi: '桌子上放着很多饮料',
+        titlePinyin: 'Zhuōzi shang fàngzhe hěn duō yǐnliào',
+        topic: 'Mua sắm, Đồ uống & Sinh hoạt hằng ngày',
+        vocabCount: 17,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3-bai-3.html'
       }
     ],
     hsk1v3: [

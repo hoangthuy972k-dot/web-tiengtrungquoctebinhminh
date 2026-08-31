@@ -540,6 +540,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-4.html'
+      },
+      {
+        id: 'hsk3-l5',
+        number: 5,
+        title: 'Dạo này tôi ngày càng béo lên',
+        titleHanzi: '我最近越来越胖了',
+        titlePinyin: 'Wǒ zuìjìn yuè lái yuè pàng le',
+        topic: 'Sức khỏe, Thời tiết & Mùa trong năm',
+        vocabCount: 14,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-5.html'
       }
     ],
     hsk1v3: [

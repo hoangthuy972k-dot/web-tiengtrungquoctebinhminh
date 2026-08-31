@@ -1162,7 +1162,7 @@
   }
 
   function audioBaseFor(lesson) {
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2-|hsk3-)?bai-(\d+)\.html/);
     if (!m) return null;
     return m[1] ? '/audio/' + m[1] + 'bai-' + m[2] : '/audio/bai-' + m[2];
   }

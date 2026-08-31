@@ -452,6 +452,11 @@ const wuData = [
 
 var dialogData = [
   {scene:'下山的路上 · Trên đường xuống núi',
+   preQuiz:[
+     {q:'说话人A现在怎么了？',opts:['腿疼，脚也疼','很饿','很渴'],ans:0},
+     {q:'他们打算去哪儿休息一下？',opts:['树多的地方','山顶','车里'],ans:0},
+     {q:'根据对话，上山和下山哪个更难？',opts:['下山更难','上山更难','一样难'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'休息一下吧。',py:'Xiūxi yíxià ba.',vn:'Nghỉ một chút đi.'},
      {sp:1,zh:'怎么了？',py:'Zěnme le?',vn:'Sao vậy?'},
@@ -461,6 +466,11 @@ var dialogData = [
      {sp:1,zh:'上山容易下山难，你不知道？',py:'Shàng shān róngyì xià shān nán, nǐ bù zhīdào?',vn:'Lên núi dễ xuống núi khó, bạn không biết à?'},
    ]},
   {scene:'在打电话 · Đang gọi điện thoại',
+   preQuiz:[
+     {q:'周经理现在在哪儿？',opts:['出去办事了','在办公室','在家里'],ans:0},
+     {q:'周经理什么时候回来？',opts:['下午','晚上','明天'],ans:0},
+     {q:'说话人希望周经理回来后做什么？',opts:['给他打电话','去他家','写信'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'喂，你好，请问周明在吗？',py:'Wèi, nǐ hǎo, qǐngwèn Zhōu Míng zài ma?',vn:'Alô, xin chào, cho hỏi anh Chu Minh có ở đó không?'},
      {sp:1,zh:'周经理出去了，不在办公室。',py:'Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.',vn:'Giám đốc Chu ra ngoài rồi, không có ở văn phòng.'},
@@ -470,6 +480,11 @@ var dialogData = [
      {sp:1,zh:'好的，他到了办公室我就告诉他。',py:'Hǎo de, tā dàole bàngōngshì wǒ jiù gàosu tā.',vn:'Vâng, anh ấy đến văn phòng là tôi báo ngay cho anh ấy.'},
    ]},
   {scene:'在楼门口送朋友 · Tiễn bạn ở cửa tòa nhà',
+   preQuiz:[
+     {q:'外面天气怎么样？',opts:['雨下得很大','很晴朗','刮大风'],ans:0},
+     {q:'朋友打算怎么回去？',opts:['叫出租车','走路','骑自行车'],ans:0},
+     {q:'说话人上楼去做什么？',opts:['拿伞','拿钱','拿手机'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'雨下得真大。你怎么回去？我送你吧。',py:'Yǔ xià de zhēn dà. Nǐ zěnme huíqu? Wǒ sòng nǐ ba.',vn:'Mưa to quá. Bạn về bằng gì? Để tôi đưa bạn về.'},
      {sp:1,zh:'没事，我出去叫辆出租车就行了。',py:'Méishì, wǒ chūqu jiào liàng chūzūchē jiù xíng le.',vn:'Không sao, tôi ra ngoài gọi một chiếc taxi là được rồi.'},
@@ -478,6 +493,11 @@ var dialogData = [
      {sp:0,zh:'你在这儿等吧，我拿了伞就下来。',py:'Nǐ zài zhèr děng ba, wǒ nále sǎn jiù xiàlai.',vn:'Bạn đợi ở đây đi, tôi lấy ô xong là xuống ngay.'},
    ]},
   {scene:'在家 · Ở nhà',
+   preQuiz:[
+     {q:'说话人B觉得说话人A为什么会胖？',opts:['吃了饭就睡觉，不出去走走','吃得太多','不吃早饭'],ans:0},
+     {q:'说话人A说自己每天做什么运动？',opts:['做饭','跑步','游泳'],ans:0},
+     {q:'说话人B相信说话人A真的有运动吗？',opts:['不相信','相信','不知道'],ans:0},
+   ],
    lines:[
      {sp:0,zh:'你看，我这么胖，怎么办呢？',py:'Nǐ kàn, wǒ zhème pàng, zěnme bàn ne?',vn:'Con xem, mẹ béo thế này, phải làm sao đây?'},
      {sp:1,zh:'你每天晚上吃了饭就睡觉，也不出去走走，能不胖吗？',py:'Nǐ měitiān wǎnshang chīle fàn jiù shuìjiào, yě bù chūqu zǒuzou, néng bú pàng ma?',vn:'Mẹ ngày nào cũng ăn cơm xong là đi ngủ, cũng không ra ngoài đi dạo, sao mà không béo được?'},

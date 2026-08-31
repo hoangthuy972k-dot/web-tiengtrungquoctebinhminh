@@ -600,6 +600,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-9.html'
+      },
+      {
+        id: 'hsk3-l10',
+        number: 10,
+        title: 'Môn Toán khó hơn môn Lịch Sử nhiều',
+        titleHanzi: '数学比历史难多了',
+        titlePinyin: 'Shùxué bǐ lìshǐ nánduō le',
+        topic: 'Học tập, Xe cộ & Xem nhà',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-10.html'
       }
     ],
     hsk1v3: [

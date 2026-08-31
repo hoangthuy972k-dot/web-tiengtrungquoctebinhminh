@@ -552,6 +552,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-5.html'
+      },
+      {
+        id: 'hsk3-l6',
+        number: 6,
+        title: 'Sao đột nhiên tìm không thấy',
+        titleHanzi: '怎么突然找不到了',
+        titlePinyin: 'Zěnme tūrán zhǎo bu dào le',
+        topic: 'Đồ vật thất lạc, Học tập & Giải trí',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3-bai-6.html'
       }
     ],
     hsk1v3: [

@@ -528,6 +528,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3-bai-3.html'
+      },
+      {
+        id: 'hsk3-l4',
+        number: 4,
+        title: 'Cô ấy luôn cười khi nói chuyện với khách hàng',
+        titleHanzi: '她总是笑着跟客人说话',
+        titlePinyin: 'Tā zǒngshì xiàozhe gēn kèrén shuōhuà',
+        topic: 'Trường học, Tính cách con người & Cửa hàng',
+        vocabCount: 16,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-4.html'
       }
     ],
     hsk1v3: [

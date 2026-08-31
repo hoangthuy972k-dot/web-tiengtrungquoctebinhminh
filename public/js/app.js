@@ -7,7 +7,8 @@
     pinyinVisible: 'hyv_pinyin_visible',
     lessonScores: 'hyv_lesson_scores',
     auth: 'hyv_auth',
-    visitorId: 'hyv_visitor_id'
+    visitorId: 'hyv_visitor_id',
+    authPrompted: 'hyv_auth_prompted'
   };
 
   // Diem that theo tung phan cua tung bai hoc, ghi lai khi hoc sinh hoan thanh
@@ -4321,6 +4322,16 @@
 
     renderUserChip();
     syncProgressToServer();
+
+    var currentAuth = readJSON(STORAGE_KEYS.auth, null);
+    if (!currentAuth) {
+      var alreadyPrompted = false;
+      try { alreadyPrompted = sessionStorage.getItem(STORAGE_KEYS.authPrompted) === '1'; } catch (e) {}
+      if (!alreadyPrompted) {
+        try { sessionStorage.setItem(STORAGE_KEYS.authPrompted, '1'); } catch (e) {}
+        setTimeout(function () { openModal('register'); }, 600);
+      }
+    }
   }
 
   /* ---------------- Init ---------------- */

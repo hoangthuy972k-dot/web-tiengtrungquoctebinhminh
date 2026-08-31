@@ -102,17 +102,118 @@ function writeJsonFile(file, data) {
   ensureDataDir();
   fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf8');
 }
-function loadUsers() {
-  return readJsonFile(USERS_FILE) || [];
+
+// ── Tai khoan hoc sinh + diem so: MySQL khi co cau hinh (production tren
+// Hostinger, du lieu song song voi ma nguon nen KHONG mat khi deploy lai),
+// hoac file JSON khi chay local (khong can cai MySQL de dev). Ca hai duong
+// deu di qua cung 4 ham loadUsers/saveUsers/loadScores/saveScores ben duoi
+// nen phan con lai cua server khong can biet dang dung backend nao.
+const USE_DB = !!process.env.DB_HOST;
+let dbPool = null;
+if (USE_DB) {
+  const mysql = require('mysql2/promise');
+  dbPool = mysql.createPool({
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT) || 3306,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    waitForConnections: true,
+    connectionLimit: 5,
+  });
 }
-function saveUsers(users) {
-  writeJsonFile(USERS_FILE, users);
+
+async function initDb() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS users (' +
+      'id VARCHAR(36) PRIMARY KEY, ' +
+      'name VARCHAR(255) NOT NULL, ' +
+      'email VARCHAR(255) NOT NULL UNIQUE, ' +
+      'level VARCHAR(32) NOT NULL, ' +
+      'password_salt VARCHAR(64) NOT NULL, ' +
+      'password_hash VARCHAR(255) NOT NULL, ' +
+      'session_token VARCHAR(64), ' +
+      'created_at DATETIME NOT NULL' +
+    ')'
+  );
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS scores (' +
+      'user_id VARCHAR(36) PRIMARY KEY, ' +
+      'name VARCHAR(255), ' +
+      'level VARCHAR(32), ' +
+      'total_correct INT DEFAULT 0, ' +
+      'total_questions INT DEFAULT 0, ' +
+      'streak INT DEFAULT 0, ' +
+      'lessons_done INT DEFAULT 0, ' +
+      'study_days LONGTEXT, ' +
+      'lesson_scores LONGTEXT, ' +
+      'updated_at DATETIME, ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+  console.log('MySQL: da san sang (bang users/scores).');
 }
-function loadScores() {
-  return readJsonFile(SCORES_FILE) || {};
+
+async function loadUsers() {
+  if (!USE_DB) return readJsonFile(USERS_FILE) || [];
+  const [rows] = await dbPool.query('SELECT * FROM users');
+  return rows.map((r) => ({
+    id: r.id,
+    name: r.name,
+    email: r.email,
+    level: r.level,
+    passwordSalt: r.password_salt,
+    passwordHash: r.password_hash,
+    sessionToken: r.session_token,
+    createdAt: r.created_at,
+  }));
 }
-function saveScores(scores) {
-  writeJsonFile(SCORES_FILE, scores);
+async function saveUsers(users) {
+  if (!USE_DB) return writeJsonFile(USERS_FILE, users);
+  for (const u of users) {
+    await dbPool.query(
+      'INSERT INTO users (id,name,email,level,password_salt,password_hash,session_token,created_at) VALUES (?,?,?,?,?,?,?,?) ' +
+        'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), password_salt=VALUES(password_salt), ' +
+        'password_hash=VALUES(password_hash), session_token=VALUES(session_token)',
+      [u.id, u.name, u.email, u.level, u.passwordSalt, u.passwordHash, u.sessionToken, u.createdAt]
+    );
+  }
+}
+async function loadScores() {
+  if (!USE_DB) return readJsonFile(SCORES_FILE) || {};
+  const [rows] = await dbPool.query('SELECT * FROM scores');
+  const out = {};
+  rows.forEach((r) => {
+    out[r.user_id] = {
+      name: r.name,
+      level: r.level,
+      totalCorrect: r.total_correct,
+      totalQuestions: r.total_questions,
+      streak: r.streak,
+      lessonsDone: r.lessons_done,
+      studyDays: JSON.parse(r.study_days || '[]'),
+      lessonScores: JSON.parse(r.lesson_scores || '{}'),
+      updatedAt: r.updated_at,
+    };
+  });
+  return out;
+}
+async function saveScores(scores) {
+  if (!USE_DB) return writeJsonFile(SCORES_FILE, scores);
+  for (const userId of Object.keys(scores)) {
+    const s = scores[userId];
+    await dbPool.query(
+      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?) ' +
+        'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), total_correct=VALUES(total_correct), ' +
+        'total_questions=VALUES(total_questions), streak=VALUES(streak), lessons_done=VALUES(lessons_done), ' +
+        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), updated_at=VALUES(updated_at)',
+      [
+        userId, s.name, s.level, s.totalCorrect, s.totalQuestions, s.streak, s.lessonsDone,
+        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), s.updatedAt,
+      ]
+    );
+  }
 }
 
 function hashPassword(password, salt) {
@@ -122,16 +223,22 @@ function makeToken() {
   return crypto.randomBytes(24).toString('hex');
 }
 
-function requireAuth(req, res, next) {
+// Express 4 khong tu bat loi trong async handler — wrapper nho nay dam
+// bao 1 loi DB bat ngo tra ve 500 gon gang thay vi treo request.
+function asyncRoute(fn) {
+  return (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
+}
+
+const requireAuth = asyncRoute(async (req, res, next) => {
   const header = req.headers.authorization || '';
   const token = header.startsWith('Bearer ') ? header.slice(7) : null;
   if (!token) return res.status(401).json({ error: 'Chưa đăng nhập.' });
-  const users = loadUsers();
+  const users = await loadUsers();
   const user = users.find((u) => u.sessionToken === token);
   if (!user) return res.status(401).json({ error: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.' });
   req.user = user;
   next();
-}
+});
 
 function publicUser(user) {
   return { id: user.id, name: user.name, email: user.email, level: user.level };
@@ -141,8 +248,8 @@ function publicUser(user) {
 // lai xuong bat ky thiet bi nao dang nhap dung tai khoan (may tinh, dien
 // thoai...), khong chi con so streak ma ca danh sach ngay hoc that va
 // diem tung bai, de tai khoan dong nhat tren moi thiet bi.
-function userProgress(userId) {
-  const scores = loadScores();
+async function userProgress(userId) {
+  const scores = await loadScores();
   const sc = scores[userId];
   if (!sc) return { studyDays: [], lessonScores: {}, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
   return {
@@ -155,7 +262,7 @@ function userProgress(userId) {
   };
 }
 
-app.post('/api/auth/register', (req, res) => {
+app.post('/api/auth/register', asyncRoute(async (req, res) => {
   const name = typeof req.body?.name === 'string' ? req.body.name.trim() : '';
   const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
   const password = typeof req.body?.password === 'string' ? req.body.password : '';
@@ -163,7 +270,7 @@ app.post('/api/auth/register', (req, res) => {
   if (!name || !email || !password || password.length < 4) {
     return res.status(400).json({ error: 'Thiếu họ tên, email hoặc mật khẩu (tối thiểu 4 ký tự).' });
   }
-  const users = loadUsers();
+  const users = await loadUsers();
   if (users.some((u) => u.email === email)) {
     return res.status(409).json({ error: 'Email này đã được đăng ký.' });
   }
@@ -179,27 +286,27 @@ app.post('/api/auth/register', (req, res) => {
     createdAt: new Date().toISOString(),
   };
   users.push(user);
-  saveUsers(users);
-  res.json({ token: user.sessionToken, user: publicUser(user), progress: userProgress(user.id) });
-});
+  await saveUsers(users);
+  res.json({ token: user.sessionToken, user: publicUser(user), progress: await userProgress(user.id) });
+}));
 
-app.post('/api/auth/login', (req, res) => {
+app.post('/api/auth/login', asyncRoute(async (req, res) => {
   const email = typeof req.body?.email === 'string' ? req.body.email.trim().toLowerCase() : '';
   const password = typeof req.body?.password === 'string' ? req.body.password : '';
   if (!email || !password) return res.status(400).json({ error: 'Thiếu email hoặc mật khẩu.' });
-  const users = loadUsers();
+  const users = await loadUsers();
   const user = users.find((u) => u.email === email);
   if (!user || hashPassword(password, user.passwordSalt) !== user.passwordHash) {
     return res.status(401).json({ error: 'Email hoặc mật khẩu không đúng.' });
   }
   user.sessionToken = makeToken();
-  saveUsers(users);
-  res.json({ token: user.sessionToken, user: publicUser(user), progress: userProgress(user.id) });
-});
+  await saveUsers(users);
+  res.json({ token: user.sessionToken, user: publicUser(user), progress: await userProgress(user.id) });
+}));
 
-app.get('/api/auth/me', requireAuth, (req, res) => {
-  res.json({ user: publicUser(req.user), progress: userProgress(req.user.id) });
-});
+app.get('/api/auth/me', requireAuth, asyncRoute(async (req, res) => {
+  res.json({ user: publicUser(req.user), progress: await userProgress(req.user.id) });
+}));
 
 // Hoc sinh gui len tong diem THAT (tinh san o client tu du lieu that da
 // luu), server luu lai de xep hang VA de dong bo nguoc xuong bat ky
@@ -207,7 +314,7 @@ app.get('/api/auth/me', requireAuth, (req, res) => {
 // duoc GOP (khong ghi de) voi du lieu da co tren server, vi 2 thiet bi
 // co the co lich su khac nhau (vd hoc tren dien thoai hom qua, may tinh
 // hom nay) — gop lai moi khong bi mat ngay hoc/diem da co.
-app.post('/api/scores/sync', requireAuth, (req, res) => {
+app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
   const totalCorrect = Number(req.body?.totalCorrect) || 0;
   const totalQuestions = Number(req.body?.totalQuestions) || 0;
   const streak = Number(req.body?.streak) || 0;
@@ -218,7 +325,7 @@ app.post('/api/scores/sync', requireAuth, (req, res) => {
   const incomingLessonScores = req.body?.lessonScores && typeof req.body.lessonScores === 'object' && !Array.isArray(req.body.lessonScores)
     ? req.body.lessonScores
     : {};
-  const scores = loadScores();
+  const scores = await loadScores();
   const existing = scores[req.user.id] || {};
   const mergedDays = Array.from(new Set((existing.studyDays || []).concat(incomingDays))).sort();
   const mergedLessonScores = Object.assign({}, existing.lessonScores || {}, incomingLessonScores);
@@ -233,12 +340,12 @@ app.post('/api/scores/sync', requireAuth, (req, res) => {
     lessonScores: mergedLessonScores,
     updatedAt: new Date().toISOString(),
   };
-  saveScores(scores);
-  res.json({ ok: true, progress: userProgress(req.user.id) });
-});
+  await saveScores(scores);
+  res.json({ ok: true, progress: await userProgress(req.user.id) });
+}));
 
-app.get('/api/leaderboard', (req, res) => {
-  const scores = loadScores();
+app.get('/api/leaderboard', asyncRoute(async (req, res) => {
+  const scores = await loadScores();
   const rows = Object.keys(scores).map((userId) => scores[userId]);
   rows.sort((a, b) => b.totalCorrect - a.totalCorrect || b.streak - a.streak);
   const top = rows.slice(0, 50).map((row, i) => ({
@@ -250,7 +357,7 @@ app.get('/api/leaderboard', (req, res) => {
     streak: row.streak,
   }));
   res.json({ leaderboard: top });
-});
+}));
 
 // ══════════════════════════════════════════════════════════════════
 // Thong ke truy cap + thoi gian hoc (Analytics) — luu vao file JSON
@@ -331,11 +438,11 @@ app.post('/api/admin/login', (req, res) => {
   res.json({ ok: true });
 });
 
-app.get('/api/admin/stats', requireAdmin, (req, res) => {
+app.get('/api/admin/stats', requireAdmin, asyncRoute(async (req, res) => {
   const visits = loadVisits();
   const studyTime = loadStudyTime();
-  const users = loadUsers();
-  const scores = loadScores();
+  const users = await loadUsers();
+  const scores = await loadScores();
 
   function daysAgoKey(n) {
     const d = new Date();
@@ -390,7 +497,7 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
     students,
     totalRegisteredStudents: users.length,
   });
-});
+}));
 
 // Proxies Google Cloud Text-to-Speech so the API key never reaches the
 // browser. Client sends { text }, gets back { audioContent } (base64 MP3).
@@ -495,6 +602,13 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Chinese learning website running on port ${PORT}`);
-});
+initDb()
+  .catch((err) => {
+    console.error('Khong ket noi duoc MySQL, kiem tra lai DB_HOST/DB_USER/DB_PASSWORD/DB_NAME:', err.message);
+  })
+  .finally(() => {
+    app.listen(PORT, () => {
+      console.log(`Chinese learning website running on port ${PORT}`);
+      console.log(USE_DB ? 'Tai khoan/diem so: MySQL (' + process.env.DB_NAME + '@' + process.env.DB_HOST + ')' : 'Tai khoan/diem so: file JSON (data/) — chi dung cho local dev.');
+    });
+  });

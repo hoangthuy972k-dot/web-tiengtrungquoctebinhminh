@@ -2296,57 +2296,45 @@
         explanation: '更 phải đứng NGAY TRƯỚC tính từ (冷), không đặt sau tính từ.' }
     ],
     '/lessons/hsk3-bai-2.html': [
-      { context: 'Ai đó đứng ngoài cửa gọi bạn ra.',
-        pre: '你', blank: '出来', post: '。', options: ['出来', '出去', '进来'], answer: 0,
-        explanation: '出来 = đi ra NGOÀI, hướng VỀ PHÍA người nói (người nói đang ở ngoài, gọi người khác ra với mình).' },
-      { context: 'Bạn đứng ngoài phòng, bảo người khác vào trong.',
-        pre: '你', blank: '进去', post: '吧。', options: ['进去', '进来', '出去'], answer: 0,
-        explanation: '进去 = đi VÀO bên trong, hướng RA XA khỏi vị trí người nói.' },
-      { context: 'Giám đốc gọi bạn đến chỗ của ông ấy (bạn đang ở xa).',
-        pre: '经理叫你', blank: '过去', post: '。', options: ['过去', '过来', '回去'], answer: 0,
-        explanation: '过去 = đi qua chỗ khác, hướng RA XA người nói.' },
-      { context: 'Bạn hỏi bạn mình mấy giờ về đến nhà (nhà của người nghe).',
-        pre: '你几点', blank: '回来', post: '？', options: ['回来', '回去', '出去'], answer: 0,
-        explanation: '回来 = về ĐẾN nơi người nói đang ở, hướng VỀ PHÍA người nói.' },
-      { context: 'Bạn đang ở tầng dưới, nói với người ở tầng trên rằng bạn sẽ lên đó.',
-        pre: '我', blank: '上去', post: '。', options: ['上去', '上来', '下来'], answer: 0,
-        explanation: '上去 = đi LÊN, hướng RA XA người nói (người nói đang ở tầng dưới).' },
-      { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
-        sentence: '我们起去他家玩儿吧。', isCorrect: false, correctVersion: '我们一起去他家玩儿吧。',
-        explanation: '起 CHỈ kết hợp được với 来 (起来), KHÔNG có "起去" — đây là lỗi ghép sai bổ ngữ xu hướng.' },
-      { type: 'sort', context: 'Sắp xếp thành câu diễn tả bạn lên lầu lấy ô cho bạn mình.',
-        words: ['我', '上楼', '去', '给', '你', '拿', '把', '伞', '。'], answer: '我上楼去给你拿把伞。',
-        explanation: 'Trật tự: Chủ ngữ + 上楼去 (V+nơi chốn+去) + 给你 (giới từ) + 拿把伞 (V+lượng từ+O).' },
-      { type: 'translate', context: 'Dịch câu sau sang tiếng Trung, áp dụng bổ ngữ xu hướng V+来/去.',
-        promptLang: 'vi', prompt: 'Sách tiếng Trung bạn mang đến chưa?',
-        answer: '汉语书你带来了吗？', answerPy: 'Hànyǔ shū nǐ dàilai le ma?',
-        explanation: '带 (mang) + 来 (đến, hướng về người nói) — tân ngữ sự vật 汉语书 được đưa lên ĐẦU CÂU làm chủ đề, 来 đặt ngay sau động từ 带.' },
-      { context: 'Hoàn thành câu theo mẫu V了……就V…… (hai hành động liên tiếp).',
-        pre: '我下了课', blank: '就', post: '吃饭。', options: ['就', '才', '还'], answer: 0,
-        explanation: 'V了……就V…… diễn tả hai hành động xảy ra LIÊN TIẾP, hành động thứ hai xảy ra ngay sau hành động thứ nhất.' },
-      { context: 'Tiểu Cương lấy ô xong là xuống nhà ngay.',
-        pre: '小刚拿了伞', blank: '就', post: '下来。', options: ['就', '才', '也'], answer: 0,
-        explanation: '就 phải đứng NGAY TRƯỚC động từ thứ hai (下来) để nối tiếp hai hành động.' },
-      { type: 'sort', context: 'Sắp xếp câu diễn tả thói quen hằng ngày của bà Chu (dùng V了……就V……).',
-        words: ['你', '每天', '晚上', '吃', '了', '饭', '就', '睡觉', '。'], answer: '你每天晚上吃了饭就睡觉。',
-        explanation: '了 đặt NGAY SAU động từ đầu tiên (吃), trước tân ngữ (饭); 就 đặt ngay trước động từ thứ hai (睡觉).' },
-      { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
-        sentence: '他到办公室了我就告诉他。', isCorrect: false, correctVersion: '他到了办公室我就告诉他。',
-        explanation: '了 phải đứng NGAY SAU động từ 到, TRƯỚC tân ngữ 办公室, không đặt sau tân ngữ.' },
-      { type: 'translate', context: 'Dịch câu sau, áp dụng cấu trúc V了……就V……, chú ý câu có 2 chủ ngữ khác nhau.',
-        promptLang: 'vi', prompt: 'Bố về đến nhà là chúng tôi ăn cơm ngay.',
-        answer: '爸爸回来了我们就吃饭。', answerPy: 'Bàba huílai le wǒmen jiù chīfàn.',
-        explanation: 'Khi câu có 2 chủ ngữ khác nhau (爸爸 và 我们), chủ ngữ thứ hai phải đặt NGAY TRƯỚC 就.' },
-      { context: 'Chọn cách diễn đạt phản vấn đúng theo mẫu 能……吗？',
-        pre: '你每天晚上吃了饭就睡觉，也不出去走走，', blank: '能不胖吗', post: '？', options: ['能不胖吗', '能胖吗', '不能胖吗'], answer: 0,
-        explanation: '能不胖吗 (dạng phủ định) mang ý nghĩa thực chất là KHẲNG ĐỊNH — "chắc chắn sẽ béo" (会胖).' },
-      { type: 'judge', context: 'Câu phản vấn sau có mang ý nghĩa thực chất là "không thể học tốt được" không?',
-        sentence: '你不做作业，也不练习，能学好吗？', isCorrect: true,
-        explanation: '能学好吗 (dạng khẳng định) mang ý nghĩa thực chất PHỦ ĐỊNH — "không thể học tốt được" (不能学好). Câu này đúng ngữ pháp và đúng ý phản vấn.' },
-      { type: 'translate', context: 'Dịch câu sau sang tiếng Trung, dùng câu phản vấn 能……吗？',
-        promptLang: 'vi', prompt: 'Anh ấy làm việc bận như vậy, sao mà không mệt được?',
-        answer: '他工作这么忙，能不累吗？', answerPy: 'Tā gōngzuò zhème máng, néng bú lèi ma?',
-        explanation: '能不累吗 (dạng phủ định) mang ý nghĩa thực chất KHẲNG ĐỊNH — "chắc chắn rất mệt" (一定很累).' }
+      { point: 'Bổ ngữ xu hướng đơn 「V + 来 / 去」',
+        items: [
+          { context: 'Em bé nói với mẹ là mình sẽ về đến nhà ngay.',
+            pre: '我马上', blank: '回家去', post: '。', options: ['回家去', '回去家', '回去家去'], answer: 0,
+            explanation: 'Tân ngữ nơi chốn (家) BẮT BUỘC đứng GIỮA động từ 回 và 去: 回 + 家 + 去, không được tách rời hay đảo vị trí.' },
+          { type: 'sort', context: 'Sắp xếp thành câu diễn tả bạn lên lầu lấy ô cho bạn mình.',
+            words: ['我', '上楼', '去', '给', '你', '拿', '把', '伞', '。'], answer: '我上楼去给你拿把伞。',
+            explanation: 'Trật tự: Chủ ngữ + 上楼去 (V+nơi chốn+去) + 给你 (giới từ) + 拿把伞 (V+lượng từ+O).' },
+          { type: 'translate', context: 'Dịch câu sau sang tiếng Trung, áp dụng bổ ngữ xu hướng V+来/去.',
+            promptLang: 'vi', prompt: 'Sách tiếng Trung bạn mang đến chưa?',
+            answer: '汉语书你带来了吗？', answerPy: 'Hànyǔ shū nǐ dàilai le ma?',
+            explanation: '带 (mang) + 来 (đến, hướng về người nói) — tân ngữ sự vật 汉语书 được đưa lên ĐẦU CÂU làm chủ đề, 来 đặt ngay sau động từ 带.' },
+        ] },
+      { point: 'Hai hành động liên tiếp 「V了……就V……」',
+        items: [
+          { context: 'Hoàn thành câu theo mẫu V了……就V…… (hai hành động liên tiếp).',
+            pre: '我下了课', blank: '就', post: '吃饭。', options: ['就', '才', '还'], answer: 0,
+            explanation: 'V了……就V…… diễn tả hai hành động xảy ra LIÊN TIẾP, hành động thứ hai xảy ra ngay sau hành động thứ nhất.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '他到办公室了我就告诉他。', isCorrect: false, correctVersion: '他到了办公室我就告诉他。',
+            explanation: '了 phải đứng NGAY SAU động từ 到, TRƯỚC tân ngữ 办公室, không đặt sau tân ngữ.' },
+          { type: 'translate', context: 'Dịch câu sau, áp dụng cấu trúc V了……就V……, chú ý câu có 2 chủ ngữ khác nhau.',
+            promptLang: 'vi', prompt: 'Bố về đến nhà là chúng tôi ăn cơm ngay.',
+            answer: '爸爸回来了我们就吃饭。', answerPy: 'Bàba huílai le wǒmen jiù chīfàn.',
+            explanation: 'Khi câu có 2 chủ ngữ khác nhau (爸爸 và 我们), chủ ngữ thứ hai phải đặt NGAY TRƯỚC 就.' },
+        ] },
+      { point: 'Câu phản vấn 「能……吗？」',
+        items: [
+          { context: 'Chọn cách diễn đạt phản vấn đúng theo mẫu 能……吗？',
+            pre: '你每天晚上吃了饭就睡觉，也不出去走走，', blank: '能不胖吗', post: '？', options: ['能不胖吗', '能胖吗', '不能胖吗'], answer: 0,
+            explanation: '能不胖吗 (dạng phủ định) mang ý nghĩa thực chất là KHẲNG ĐỊNH — "chắc chắn sẽ béo" (会胖).' },
+          { type: 'judge', context: 'Câu phản vấn sau có mang ý nghĩa thực chất là "không thể học tốt được" không?',
+            sentence: '你不做作业，也不练习，能学好吗？', isCorrect: true,
+            explanation: '能学好吗 (dạng khẳng định) mang ý nghĩa thực chất PHỦ ĐỊNH — "không thể học tốt được" (不能学好). Câu này đúng ngữ pháp và đúng ý phản vấn.' },
+          { type: 'translate', context: 'Dịch câu sau sang tiếng Trung, dùng câu phản vấn 能……吗？',
+            promptLang: 'vi', prompt: 'Anh ấy làm việc bận như vậy, sao mà không mệt được?',
+            answer: '他工作这么忙，能不累吗？', answerPy: 'Tā gōngzuò zhème máng, néng bú lèi ma?',
+            explanation: '能不累吗 (dạng phủ định) mang ý nghĩa thực chất KHẲNG ĐỊNH — "chắc chắn rất mệt" (一定很累).' },
+        ] },
     ]
   };
 
@@ -2409,7 +2397,7 @@
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     grMode = 'lesson';
-    $all('#grTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-gr-tab') === 'lesson'); });
+    renderGrTabs();
 
     loadLessonGrammar(lesson).then(function (points) {
       grPoints = points;
@@ -2421,6 +2409,58 @@
     });
 
     $('#grammarPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Du lieu bai tap ngu phap co 2 dang: mang PHANG (cu — 1 tab "Bai tap" duy
+  // nhat, dung cho da so bai hoc), hoac mang NHOM theo tung diem ngu phap
+  // (moi phan tu co {point, items}) — dung khi 1 bai hoc muon tach rieng tab
+  // cho tung diem (hien tai la HSK3). Phat hien dang bang cach xem phan tu
+  // dau tien co field "items" (mang) hay khong.
+  function grRawExercises() {
+    return GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || [];
+  }
+  function grIsGrouped(raw) {
+    return raw.length > 0 && raw[0] && Array.isArray(raw[0].items);
+  }
+  function grCurrentItems() {
+    var raw = grRawExercises();
+    if (grIsGrouped(raw)) {
+      var idx = (typeof grMode === 'string' && grMode.indexOf('exercise_') === 0) ? parseInt(grMode.slice(9), 10) : 0;
+      return (raw[idx] && raw[idx].items) || [];
+    }
+    return raw;
+  }
+
+  function renderGrTabs() {
+    var wrap = $('#grTabs');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+    var lessonBtn = document.createElement('button');
+    lessonBtn.type = 'button';
+    lessonBtn.className = 'vp-tab' + (grMode === 'lesson' ? ' active' : '');
+    lessonBtn.textContent = 'Bài học';
+    lessonBtn.addEventListener('click', function () { grMode = 'lesson'; grQuiz = null; renderGrTabs(); renderGrammarContent(); });
+    wrap.appendChild(lessonBtn);
+
+    var raw = grRawExercises();
+    if (grIsGrouped(raw)) {
+      raw.forEach(function (g, gi) {
+        var modeId = 'exercise_' + gi;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'vp-tab' + (grMode === modeId ? ' active' : '');
+        btn.textContent = 'Bài tập ' + (gi + 1);
+        btn.addEventListener('click', function () { grMode = modeId; grQuiz = null; renderGrTabs(); renderGrammarContent(); });
+        wrap.appendChild(btn);
+      });
+    } else if (raw.length) {
+      var btn2 = document.createElement('button');
+      btn2.type = 'button';
+      btn2.className = 'vp-tab' + (grMode === 'exercise' ? ' active' : '');
+      btn2.textContent = 'Bài tập';
+      btn2.addEventListener('click', function () { grMode = 'exercise'; grQuiz = null; renderGrTabs(); renderGrammarContent(); });
+      wrap.appendChild(btn2);
+    }
   }
 
   function renderGrammarContent() {
@@ -2458,9 +2498,16 @@
 
   function renderGrammarExercise() {
     var wrap = $('#grContent');
-    var items = GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || [];
+    var raw = grRawExercises();
+    var items = grCurrentItems();
+    var groupTitle = null;
+    if (grIsGrouped(raw) && grMode.indexOf('exercise_') === 0) {
+      var gidx = parseInt(grMode.slice(9), 10);
+      groupTitle = raw[gidx] && raw[gidx].point;
+    }
+    var groupTitleHtml = groupTitle ? '<div class="gr-group-title">📐 ' + groupTitle + '</div>' : '';
     if (!items.length) {
-      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài tập ngữ pháp.</p>';
+      wrap.innerHTML = groupTitleHtml + '<p style="color:var(--color-gray-500);">Bài học này chưa có bài tập ngữ pháp.</p>';
       return;
     }
     if (!grQuiz) { grQuiz = { pos: 0, score: 0 }; pgbInit('grq', items.length); }
@@ -2468,6 +2515,7 @@
     if (grQuiz.pos >= items.length) {
       recordLessonScore(currentHubLesson, 'grammar', { correct: grQuiz.score, total: items.length });
       wrap.innerHTML =
+        groupTitleHtml +
         '<div class="vp-quiz-done"><strong>' + grQuiz.score + '/' + items.length + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành bài tập ngữ pháp.</p>' +
         '<button type="button" class="btn btn-primary" id="grRestart">Làm lại</button></div>';
@@ -2480,6 +2528,7 @@
     var type = q.type || 'mc';
 
     wrap.innerHTML =
+      groupTitleHtml +
       pgbHtml('grq', total) +
       '<div class="vp-quiz-counter">Câu ' + (grQuiz.pos + 1) + '/' + total + ' <span class="gr-type-badge">' + GR_TYPE_LABEL[type] + '</span></div>' +
       '<div class="vp-quiz-card" id="grCard">' +
@@ -2500,7 +2549,7 @@
     if (isCorrect) grQuiz.score++;
     pgbRecord('grq', grQuiz.pos, isCorrect);
     $('#grExplain').textContent = '💡 ' + explanation;
-    var total = (GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || []).length;
+    var total = grCurrentItems().length;
     var nextBtn = document.createElement('button');
     nextBtn.type = 'button';
     nextBtn.className = 'btn btn-primary';
@@ -4414,14 +4463,6 @@
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();
-    });
-    $all('#grTabs .vp-tab').forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        grMode = tab.getAttribute('data-gr-tab');
-        grQuiz = null;
-        $all('#grTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t === tab); });
-        renderGrammarContent();
-      });
     });
     $('#dpBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);

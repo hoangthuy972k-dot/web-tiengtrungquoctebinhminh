@@ -642,26 +642,26 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Chân tôi rất đau, chân cũng đau.', zh:'我的腿很疼，脚也疼。', py:'Wǒ de tuǐ hěn téng, jiǎo yě téng.'},
-  {vi:'Học tiếng Trung rất dễ, nhưng viết chữ Hán rất khó.', zh:'学汉语很容易，但是写汉字很难。', py:'Xué Hànyǔ hěn róngyì, dànshì xiě Hànzì hěn nán.'},
-  {vi:'Vợ tôi là thư ký, giám đốc của cô ấy rất bận.', zh:'我太太是秘书，她的经理很忙。', py:'Wǒ tàitai shì mìshū, tā de jīnglǐ hěn máng.'},
-  {vi:'Văn phòng của tôi ở tòa nhà số năm.', zh:'我的办公室在五号楼。', py:'Wǒ de bàngōngshì zài wǔ hào lóu.'},
-  {vi:'Bên ngoài có một chiếc xe, tôi đi lấy một cái ô rồi lên xe.', zh:'外边有一辆车，我去拿把伞就上车。', py:'Wàibian yǒu yí liàng chē, wǒ qù ná bǎ sǎn jiù shàng chē.'},
-  {vi:'Trước đây anh ấy rất béo, bây giờ gầy hơn trước rồi.', zh:'以前他很胖，现在比以前瘦了。', py:'Yǐqián tā hěn pàng, xiànzài bǐ yǐqián shòu le.'},
-  {vi:'Thật ra công việc này không khó, chỉ cần bạn cố gắng.', zh:'其实这个工作不难，只要你努力。', py:'Qíshí zhège gōngzuò bù nán, zhǐyào nǐ nǔlì.'},
-  {vi:'Tôi tan làm xong là về nhà, về nhà xong là nấu cơm.', zh:'我下了班就回家，回了家就做饭。', py:'Wǒ xiàle bān jiù huí jiā, huíle jiā jiù zuò fàn.'},
+  {vi:'Vì chân tôi bị đau nên hôm nay tôi không đi leo núi được.', zh:'因为我的腿疼，所以今天不能去爬山。', py:'Yīnwèi wǒ de tuǐ téng, suǒyǐ jīntiān bù néng qù páshān.'},
+  {vi:'Tuy công việc thư ký không khó, nhưng cần phải rất cẩn thận.', zh:'虽然秘书的工作不难，但是要很小心。', py:'Suīrán mìshū de gōngzuò bù nán, dànshì yào hěn xiǎoxīn.'},
+  {vi:'Nếu chiếc ô này bị hỏng thì bạn dùng cái của tôi đi.', zh:'如果这把伞坏了，你就用我的吧。', py:'Rúguǒ zhè bǎ sǎn huài le, nǐ jiù yòng wǒ de ba.'},
+  {vi:'Vì anh ấy béo lên nhiều nên quần áo cũ đều mặc không vừa nữa.', zh:'因为他胖了很多，所以旧衣服都穿不下了。', py:'Yīnwèi tā pàngle hěn duō, suǒyǐ jiù yīfu dōu chuān bu xià le.'},
+  {vi:'Tuy cô ấy gầy đi nhiều nhưng vẫn ăn rất khỏe.', zh:'虽然她瘦了很多，但是还是吃得很多。', py:'Suīrán tā shòule hěn duō, dànshì háishi chī de hěn duō.'},
+  {vi:'Thư ký vừa lên lầu vừa gọi điện cho giám đốc.', zh:'秘书一边上楼，一边给经理打电话。', py:'Mìshū yìbiān shànglóu, yìbiān gěi jīnglǐ dǎ diànhuà.'},
+  {vi:'Chỉ cần bạn mang theo ô thì dù trời mưa cũng không sao.', zh:'只要你带着伞，下雨就没关系。', py:'Zhǐyào nǐ dàizhe sǎn, xiàyǔ jiù méi guānxi.'},
+  {vi:'Cây trong sân nhà tôi vừa cao vừa to, mùa hè rất mát.', zh:'我家院子里的树又高又大，夏天很凉快。', py:'Wǒ jiā yuànzi lǐ de shù yòu gāo yòu dà, xiàtiān hěn liángkuai.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Giám đốc Chu ra ngoài giải quyết việc rồi, chiều mới về.', zh:'周经理出去办事了，下午才回来。', py:'Zhōu jīnglǐ chūqu bànshì le, xiàwǔ cái huílai.'},
-  {vi:'Anh ấy tối nào cũng ăn cơm xong là ngủ, không ra ngoài đi dạo, sao mà không béo được?', zh:'他每天晚上吃了饭就睡觉，不出去走走，能不胖吗？', py:'Tā měitiān wǎnshang chīle fàn jiù shuìjiào, bù chūqu zǒuzou, néng bú pàng ma?'},
-  {vi:'Mưa to quá, tôi lên lầu lấy cho bạn một cái ô nhé.', zh:'雨下得真大，我上楼去给你拿把伞吧。', py:'Yǔ xià de zhēn dà, wǒ shànglóu qù gěi nǐ ná bǎ sǎn ba.'},
-  {vi:'Cô thư ký nói giám đốc đến văn phòng là sẽ gọi điện ngay cho tôi.', zh:'秘书说经理到了办公室就会给我打电话。', py:'Mìshū shuō jīnglǐ dàole bàngōngshì jiù huì gěi wǒ dǎ diànhuà.'},
-  {vi:'Bộ quần áo này hơi chật, tôi gầy đi rồi.', zh:'这件衣服有点儿瘦，我瘦了。', py:'Zhè jiàn yīfu yǒudiǎnr shòu, wǒ shòu le.'},
-  {vi:'Ở đằng kia có nhiều cây, chúng ta đến đó ngồi nghỉ một chút đi, chân tôi đau chết đi được.', zh:'那边有很多树，我们过去坐一下吧，我的腿疼死了。', py:'Nàbiān yǒu hěn duō shù, wǒmen guòqu zuò yíxià ba, wǒ de tuǐ téngsǐle.'},
-  {vi:'Tôi thấy công việc này nhìn thì khó, nhưng thực ra rất dễ.', zh:'我觉得这个工作看起来很难，其实很容易。', py:'Wǒ juéde zhège gōngzuò kànqǐlai hěn nán, qíshí hěn róngyì.'},
-  {vi:'Anh muốn gọi một chiếc taxi về hay là để tôi đưa anh về?', zh:'你想叫辆出租车回去，还是让我送你回去？', py:'Nǐ xiǎng jiào liàng chūzūchē huíqu, háishi ràng wǒ sòng nǐ huíqu?'},
+  {vi:'Vì anh Chu họp đến rất muộn nên thư ký vẫn đang đợi anh ấy ở văn phòng.', zh:'因为周先生开会开到很晚，所以秘书还在办公室等他。', py:'Yīnwèi Zhōu xiānsheng kāihuì kāi dào hěn wǎn, suǒyǐ mìshū hái zài bàngōngshì děng tā.'},
+  {vi:'Tuy chiếc xe đó không đắt nhưng lái rất tốt.', zh:'虽然那辆车不贵，但是很好开。', py:'Suīrán nà liàng chē bú guì, dànshì hěn hǎo kāi.'},
+  {vi:'Nếu bà Chu gọi điện đến, bạn cứ nói với bà ấy là giám đốc mai sẽ về.', zh:'如果周太太打电话来，你就告诉她经理明天回来。', py:'Rúguǒ Zhōu tàitai dǎ diànhuà lái, nǐ jiù gàosu tā jīnglǐ míngtiān huílai.'},
+  {vi:'Anh ấy vừa cầm được ô là lập tức ra cửa ngay.', zh:'他一拿到伞，就马上出门了。', py:'Tā yì nádào sǎn, jiù mǎshàng chūmén le.'},
+  {vi:'Thư ký tuy rất bận nhưng văn phòng lúc nào cũng rất sạch sẽ.', zh:'秘书虽然很忙，但是办公室一直很干净。', py:'Mìshū suīrán hěn máng, dànshì bàngōngshì yìzhí hěn gānjìng.'},
+  {vi:'Chỉ cần bạn nghỉ ngơi nhiều hơn thì chân sẽ đỡ đau hơn.', zh:'只要你多休息，腿就不会那么疼了。', py:'Zhǐyào nǐ duō xiūxi, tuǐ jiù bú huì nàme téng le.'},
+  {vi:'Cái cây đó vừa to vừa già, đã ở đây một trăm năm rồi.', zh:'那棵树又大又老，已经在这儿一百年了。', py:'Nà kē shù yòu dà yòu lǎo, yǐjīng zài zhèr yìbǎi nián le.'},
+  {vi:'Bạn mỗi ngày vừa bận chăm con vừa phải đi làm, sao mà không mệt được?', zh:'你每天忙着照顾孩子，还要上班，能不累吗？', py:'Nǐ měitiān mángzhe zhàogù háizi, hái yào shàngbān, néng bú lèi ma?'},
 ];

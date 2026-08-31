@@ -4311,6 +4311,9 @@
       var auth = readJSON(STORAGE_KEYS.auth, null);
       if (auth) {
         if (!window.confirm('Đăng xuất khỏi tài khoản?')) return;
+        if (auth.token) {
+          fetch('/api/auth/logout', { method: 'POST', headers: { 'Authorization': 'Bearer ' + auth.token } }).catch(function () {});
+        }
         localStorage.removeItem(STORAGE_KEYS.auth);
         renderUserChip();
         renderAuthBanner();

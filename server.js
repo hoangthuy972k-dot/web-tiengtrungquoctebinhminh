@@ -87,6 +87,7 @@ app.get('/api/health', (req, res) => {
 const DATA_DIR = path.join(__dirname, 'data');
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const SCORES_FILE = path.join(DATA_DIR, 'scores.json');
+const SESSIONS_FILE = path.join(DATA_DIR, 'sessions.json');
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -133,8 +134,18 @@ async function initDb() {
       'level VARCHAR(32) NOT NULL, ' +
       'password_salt VARCHAR(64) NOT NULL, ' +
       'password_hash VARCHAR(255) NOT NULL, ' +
-      'session_token VARCHAR(64), ' +
       'created_at DATETIME NOT NULL' +
+    ')'
+  );
+  // Moi lan dang nhap tao 1 session RIENG thay vi ghi de 1 token duy nhat —
+  // de hoc sinh dang nhap tren nhieu thiet bi (dien thoai + may tinh) cung
+  // luc ma khong bi thiet bi kia tu dong dang xuat.
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS sessions (' +
+      'token VARCHAR(64) PRIMARY KEY, ' +
+      'user_id VARCHAR(36) NOT NULL, ' +
+      'created_at DATETIME NOT NULL, ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
     ')'
   );
   await dbPool.query(
@@ -165,7 +176,6 @@ async function loadUsers() {
     level: r.level,
     passwordSalt: r.password_salt,
     passwordHash: r.password_hash,
-    sessionToken: r.session_token,
     createdAt: r.created_at,
   }));
 }
@@ -173,12 +183,43 @@ async function saveUsers(users) {
   if (!USE_DB) return writeJsonFile(USERS_FILE, users);
   for (const u of users) {
     await dbPool.query(
-      'INSERT INTO users (id,name,email,level,password_salt,password_hash,session_token,created_at) VALUES (?,?,?,?,?,?,?,?) ' +
+      'INSERT INTO users (id,name,email,level,password_salt,password_hash,created_at) VALUES (?,?,?,?,?,?,?) ' +
         'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), password_salt=VALUES(password_salt), ' +
-        'password_hash=VALUES(password_hash), session_token=VALUES(session_token)',
-      [u.id, u.name, u.email, u.level, u.passwordSalt, u.passwordHash, u.sessionToken, u.createdAt]
+        'password_hash=VALUES(password_hash)',
+      [u.id, u.name, u.email, u.level, u.passwordSalt, u.passwordHash, u.createdAt]
     );
   }
+}
+
+// Session rieng cho tung lan dang nhap (khong ghi de nhau) — dung chung
+// cho ca che do file (local dev) va MySQL (production).
+async function createSession(userId) {
+  const token = makeToken();
+  if (!USE_DB) {
+    const sessions = readJsonFile(SESSIONS_FILE) || {};
+    sessions[token] = { userId, createdAt: new Date().toISOString() };
+    writeJsonFile(SESSIONS_FILE, sessions);
+    return token;
+  }
+  await dbPool.query('INSERT INTO sessions (token, user_id, created_at) VALUES (?,?,?)', [token, userId, new Date()]);
+  return token;
+}
+async function findUserIdBySession(token) {
+  if (!USE_DB) {
+    const sessions = readJsonFile(SESSIONS_FILE) || {};
+    return sessions[token] ? sessions[token].userId : null;
+  }
+  const [rows] = await dbPool.query('SELECT user_id FROM sessions WHERE token = ? LIMIT 1', [token]);
+  return rows[0] ? rows[0].user_id : null;
+}
+async function deleteSession(token) {
+  if (!USE_DB) {
+    const sessions = readJsonFile(SESSIONS_FILE) || {};
+    delete sessions[token];
+    writeJsonFile(SESSIONS_FILE, sessions);
+    return;
+  }
+  await dbPool.query('DELETE FROM sessions WHERE token = ?', [token]);
 }
 async function loadScores() {
   if (!USE_DB) return readJsonFile(SCORES_FILE) || {};
@@ -233,10 +274,13 @@ const requireAuth = asyncRoute(async (req, res, next) => {
   const header = req.headers.authorization || '';
   const token = header.startsWith('Bearer ') ? header.slice(7) : null;
   if (!token) return res.status(401).json({ error: 'Chưa đăng nhập.' });
+  const userId = await findUserIdBySession(token);
+  if (!userId) return res.status(401).json({ error: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.' });
   const users = await loadUsers();
-  const user = users.find((u) => u.sessionToken === token);
+  const user = users.find((u) => u.id === userId);
   if (!user) return res.status(401).json({ error: 'Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại.' });
   req.user = user;
+  req.sessionToken = token;
   next();
 });
 
@@ -282,12 +326,12 @@ app.post('/api/auth/register', asyncRoute(async (req, res) => {
     level,
     passwordSalt: salt,
     passwordHash: hashPassword(password, salt),
-    sessionToken: makeToken(),
     createdAt: new Date().toISOString(),
   };
   users.push(user);
   await saveUsers(users);
-  res.json({ token: user.sessionToken, user: publicUser(user), progress: await userProgress(user.id) });
+  const token = await createSession(user.id);
+  res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
 }));
 
 app.post('/api/auth/login', asyncRoute(async (req, res) => {
@@ -299,9 +343,13 @@ app.post('/api/auth/login', asyncRoute(async (req, res) => {
   if (!user || hashPassword(password, user.passwordSalt) !== user.passwordHash) {
     return res.status(401).json({ error: 'Email hoặc mật khẩu không đúng.' });
   }
-  user.sessionToken = makeToken();
-  await saveUsers(users);
-  res.json({ token: user.sessionToken, user: publicUser(user), progress: await userProgress(user.id) });
+  const token = await createSession(user.id);
+  res.json({ token, user: publicUser(user), progress: await userProgress(user.id) });
+}));
+
+app.post('/api/auth/logout', requireAuth, asyncRoute(async (req, res) => {
+  await deleteSession(req.sessionToken);
+  res.json({ ok: true });
 }));
 
 app.get('/api/auth/me', requireAuth, asyncRoute(async (req, res) => {

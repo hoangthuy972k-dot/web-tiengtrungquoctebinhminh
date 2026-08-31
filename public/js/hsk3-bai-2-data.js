@@ -4,6 +4,9 @@
 // ══════════════════════════════════════════
 var vocabData = [
   {n:1,zh:'腿',py:'tuǐ',pos:'Danh từ',vn:'chân, đùi',em:'🦵',lesson:1,
+   explain:['Bộ phận cơ thể tính từ hông đến bàn chân (gồm đùi và cẳng chân), dùng để đứng và di chuyển.'],
+   usage:'Danh từ chỉ bộ phận cơ thể, làm chủ ngữ hoặc định ngữ. Muốn nói bộ phận đó bị đau thì đặt 腿 TRƯỚC tính từ 疼: 腿 + 疼.',
+   collo:['长腿','短腿','腿疼','我的腿'],
    ex_zh:'我的腿很长。',ex_py:'Wǒ de tuǐ hěn cháng.',ex_vn:'Chân tôi rất dài.',
    exList:[
      {zh:'我的腿很长。',py:'Wǒ de tuǐ hěn cháng.',vn:'Chân tôi rất dài.'},
@@ -19,6 +22,9 @@ var vocabData = [
      note:'腿 chỉ phần chân từ hông đến mắt cá (đùi + cẳng chân), khác với 脚 (bàn chân).'}},
 
   {n:2,zh:'疼',py:'téng',pos:'Tính từ',vn:'đau, đau đớn',em:'🤕',lesson:1,
+   explain:['Cảm giác khó chịu, nhức nhối ở một bộ phận cơ thể do bị thương, bệnh, hoặc mệt mỏi.'],
+   usage:'Tính từ chỉ cảm giác, luôn đứng SAU danh từ chỉ bộ phận cơ thể: [bộ phận cơ thể] + 疼 (không đảo ngược thứ tự).',
+   collo:['头疼','腿疼','肚子疼','脚疼'],
    ex_zh:'你哪儿疼？',ex_py:'Nǐ nǎr téng?',ex_vn:'Bạn đau ở đâu?',
    exList:[
      {zh:'你哪儿疼？',py:'Nǐ nǎr téng?',vn:'Bạn đau ở đâu?'},
@@ -34,6 +40,9 @@ var vocabData = [
      note:'疼 là tính từ chỉ cảm giác đau, đứng trực tiếp sau bộ phận cơ thể: 头疼/腿疼/脚疼.'}},
 
   {n:3,zh:'脚',py:'jiǎo',pos:'Danh từ',vn:'chân, bàn chân',em:'🦶',lesson:1,
+   explain:['Phần dưới cùng của chân, tiếp xúc trực tiếp với mặt đất khi đứng/đi — khác với 腿 (chỉ toàn bộ chân từ hông trở xuống).'],
+   usage:'Danh từ chỉ bộ phận cơ thể; lượng từ đi kèm là 只 (một chiếc) hoặc 双 (một đôi): 一只脚 / 一双脚.',
+   collo:['左脚','右脚','一双脚','脚疼'],
    ex_zh:'我现在腿疼，脚也疼。',ex_py:'Wǒ xiànzài tuǐ téng, jiǎo yě téng.',ex_vn:'Bây giờ tôi đau chân, bàn chân cũng đau.',
    exList:[
      {zh:'我现在腿疼，脚也疼。',py:'Wǒ xiànzài tuǐ téng, jiǎo yě téng.',vn:'Bây giờ tôi đau chân, bàn chân cũng đau.'},
@@ -49,6 +58,9 @@ var vocabData = [
      note:'脚 chỉ riêng bàn chân (phần tiếp đất khi đi), khác 腿 (chân/đùi nói chung).'}},
 
   {n:4,zh:'树',py:'shù',pos:'Danh từ',vn:'cây',em:'🌳',lesson:1,
+   explain:['Loài thực vật thân gỗ, có rễ, thân, cành, lá — thường mọc cao lớn ngoài trời.'],
+   usage:'Danh từ; lượng từ CHUYÊN DÙNG là 棵 (không dùng 个): 一棵树, không nói 一个树.',
+   collo:['大树','小树','一棵树','种树'],
    ex_zh:'这里有一棵树。',ex_py:'Zhèlǐ yǒu yì kē shù.',ex_vn:'Ở đây có một cây.',
    exList:[
      {zh:'这里有一棵树。',py:'Zhèlǐ yǒu yì kē shù.',vn:'Ở đây có một cây.'},
@@ -64,6 +76,9 @@ var vocabData = [
      note:'Lượng từ của 树 là 棵: 一棵树 (một cây), không dùng 个.'}},
 
   {n:5,zh:'容易',py:'róngyì',pos:'Tính từ',vn:'dễ, dễ dàng',em:'✅',lesson:1,
+   explain:['Không tốn nhiều công sức, thời gian hay khó khăn để thực hiện hoặc hiểu.'],
+   usage:'Tính từ song âm tiết. Khi làm vị ngữ cần có phó từ mức độ (很/太) đứng TRƯỚC: 很容易 (không nói trơn 容易). Khi bổ nghĩa cho động từ: 容易 + V = dễ làm gì (容易学).',
+   collo:['很容易','太容易了','容易学','容易做'],
    ex_zh:'学汉语很容易。',ex_py:'Xué Hànyǔ hěn róngyì.',ex_vn:'Học tiếng Trung rất dễ.',
    exList:[
      {zh:'学汉语很容易。',py:'Xué Hànyǔ hěn róngyì.',vn:'Học tiếng Trung rất dễ.'},
@@ -82,6 +97,9 @@ var vocabData = [
      note:'容易 làm vị ngữ luôn cần phó từ mức độ (很/太) đứng trước: 很容易, không nói trơn "容易".'}},
 
   {n:6,zh:'难',py:'nán',pos:'Tính từ',vn:'khó',em:'❌',lesson:1,
+   explain:['Cần nhiều công sức, khó thực hiện hoặc khó hiểu — trái nghĩa với 容易.'],
+   usage:'Tính từ, cách dùng đối xứng với 容易: 很难 (làm vị ngữ); 难 + V = khó làm gì (难写, 难学).',
+   collo:['很难','难写','难学','难做'],
    ex_zh:'写汉字很难。',ex_py:'Xiě Hànzì hěn nán.',ex_vn:'Viết chữ Hán rất khó.',
    exList:[
      {zh:'写汉字很难。',py:'Xiě Hànzì hěn nán.',vn:'Viết chữ Hán rất khó.'},
@@ -97,6 +115,9 @@ var vocabData = [
      note:'难/容易 + động từ (难做/容易学) = khó/dễ làm việc gì; ghi nhớ thành ngữ 上山容易下山难.'}},
 
   {n:7,zh:'太太',py:'tàitai',pos:'Danh từ',vn:'bà, vợ, phu nhân',em:'👩',lesson:2,
+   explain:['1. Người vợ (cách nói lịch sự, trang trọng).','2. Cách xưng hô lịch sự với phụ nữ đã có chồng, đi kèm họ.'],
+   usage:'Danh từ. Khi dùng làm cách xưng hô lịch sự, đặt SAU họ của người đó: Họ + 太太 (周太太 = bà Chu).',
+   collo:['我太太','他太太','周太太','李太太'],
    ex_zh:'她是我的太太。',ex_py:'Tā shì wǒ de tàitai.',ex_vn:'Cô ấy là vợ tôi.',
    exList:[
      {zh:'她是我的太太。',py:'Tā shì wǒ de tàitai.',vn:'Cô ấy là vợ tôi.'},
@@ -112,6 +133,9 @@ var vocabData = [
      note:'太太 vừa là danh từ "vợ", vừa là cách xưng hô lịch sự kèm họ: 周太太, 李太太.'}},
 
   {n:8,zh:'秘书',py:'mìshū',pos:'Danh từ',vn:'thư ký',em:'📋',lesson:2,
+   explain:['Người phụ trách công việc văn phòng, giấy tờ, sắp xếp lịch làm việc cho cấp trên.'],
+   usage:'Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 秘书 (王秘书 = thư ký Vương).',
+   collo:['王秘书','我的秘书','秘书处'],
    ex_zh:'这是我的秘书。',ex_py:'Zhè shì wǒ de mìshū.',ex_vn:'Đây là thư ký của tôi.',
    exList:[
      {zh:'这是我的秘书。',py:'Zhè shì wǒ de mìshū.',vn:'Đây là thư ký của tôi.'},
@@ -127,6 +151,9 @@ var vocabData = [
      note:'Họ + 秘书 (王秘书) là cách gọi tên chức danh, tương tự cách dùng 经理.'}},
 
   {n:9,zh:'经理',py:'jīnglǐ',pos:'Danh từ',vn:'giám đốc, quản lý',em:'👔',lesson:2,
+   explain:['Người đứng đầu, phụ trách quản lý, điều hành công việc của một công ty/bộ phận.'],
+   usage:'Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 经理 (张经理, 李经理).',
+   collo:['张经理','李经理','总经理'],
    ex_zh:'这是我的经理。',ex_py:'Zhè shì wǒ de jīnglǐ.',ex_vn:'Đây là giám đốc của tôi.',
    exList:[
      {zh:'这是我的经理。',py:'Zhè shì wǒ de jīnglǐ.',vn:'Đây là giám đốc của tôi.'},
@@ -145,6 +172,9 @@ var vocabData = [
      note:'Họ + 经理 (张经理/李经理) dùng để xưng hô lịch sự với người giữ chức giám đốc.'}},
 
   {n:10,zh:'办公室',py:'bàngōngshì',pos:'Danh từ',vn:'văn phòng',em:'🏢',lesson:2,
+   explain:['Căn phòng dùng để làm việc, xử lý công việc hành chính, giấy tờ.'],
+   usage:'Danh từ chỉ nơi chốn; thường đi cùng giới từ 在 khi nói làm gì TẠI văn phòng: 在 + 办公室 + Động từ.',
+   collo:['在办公室','我的办公室','办公室主任'],
    ex_zh:'我的办公室在这里。',ex_py:'Wǒ de bàngōngshì zài zhèlǐ.',ex_vn:'Văn phòng của tôi ở đây.',
    exList:[
      {zh:'我的办公室在这里。',py:'Wǒ de bàngōngshì zài zhèlǐ.',vn:'Văn phòng của tôi ở đây.'},
@@ -163,18 +193,26 @@ var vocabData = [
      note:'在 + 办公室 + động từ = làm gì đó TẠI văn phòng (giới từ 在 đứng trước địa điểm).'}},
 
   {n:11,zh:'周',py:'Zhōu',pos:'Danh từ riêng',vn:'họ Chu',em:'👨',lesson:2,
+   explain:['Một họ (tên riêng) của người Trung Quốc, tương đương họ "Chu" trong tiếng Việt.'],
+   usage:'Danh từ riêng, dùng làm họ đứng TRƯỚC tên hoặc chức danh: 周 + tên (周明) hoặc 周 + chức danh (周经理).',
+   collo:['周明','周经理','周太太'],
    ex_zh:'请问周明在吗？',ex_py:'Qǐngwèn Zhōu Míng zài ma?',ex_vn:'Xin hỏi anh Chu Minh có ở đó không?',
    exList:[
      {zh:'请问周明在吗？',py:'Qǐngwèn Zhōu Míng zài ma?',vn:'Xin hỏi anh Chu Minh có ở đó không?'},
    ]},
 
   {n:12,zh:'周明',py:'Zhōu Míng',pos:'Danh từ riêng',vn:'tên người (Chu Minh)',em:'🙋',lesson:2,
+   explain:['Tên đầy đủ (họ + tên) của một nhân vật trong bài hội thoại.'],
+   usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    ex_zh:'周经理出去了，不在办公室。',ex_py:'Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.',ex_vn:'Giám đốc Chu ra ngoài rồi, không có ở văn phòng.',
    exList:[
      {zh:'周经理出去了，不在办公室。',py:'Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.',vn:'Giám đốc Chu ra ngoài rồi, không có ở văn phòng.'},
    ]},
 
   {n:13,zh:'辆',py:'liàng',pos:'Lượng từ',vn:'chiếc (xe cộ)',em:'🚗',lesson:3,
+   explain:['Lượng từ chuyên dùng để đếm số lượng xe cộ (ô tô, xe buýt, taxi...).'],
+   usage:'Lượng từ, đứng giữa SỐ TỪ và DANH TỪ chỉ xe: [số từ] + 辆 + [xe] (一辆车, 几辆公共汽车).',
+   collo:['一辆车','两辆','几辆','一辆出租车'],
    ex_zh:'这儿有一辆车。',ex_py:'Zhèr yǒu yí liàng chē.',ex_vn:'Ở đây có một chiếc xe.',
    exList:[
      {zh:'这儿有一辆车。',py:'Zhèr yǒu yí liàng chē.',vn:'Ở đây có một chiếc xe.'},
@@ -190,6 +228,9 @@ var vocabData = [
      note:'辆 là lượng từ chuyên dùng cho xe cộ: 一辆车/一辆出租车/一辆公共汽车.'}},
 
   {n:14,zh:'楼',py:'lóu',pos:'Danh từ',vn:'lầu, tòa nhà',em:'🏬',lesson:3,
+   explain:['1. Tòa nhà nhiều tầng.','2. Tầng (lầu) trong một tòa nhà.'],
+   usage:'Danh từ. Hỏi số tòa nhà dùng 几号楼; chỉ hướng lên/xuống tầng dùng 上楼/下楼, 楼上/楼下.',
+   collo:['大楼','几号楼','上楼','下楼','楼上','楼下'],
    ex_zh:'我在5号楼。',ex_py:'Wǒ zài wǔ hào lóu.',ex_vn:'Tôi ở tòa nhà số 5.',
    exList:[
      {zh:'我在5号楼。',py:'Wǒ zài wǔ hào lóu.',vn:'Tôi ở tòa nhà số 5.'},
@@ -205,6 +246,9 @@ var vocabData = [
      note:'几号楼 = tòa nhà số mấy; còn có 楼上/楼下 (tầng trên/dưới) và 上楼/下楼 (lên/xuống lầu).'}},
 
   {n:15,zh:'拿',py:'ná',pos:'Động từ',vn:'cầm, lấy',em:'🤲',lesson:3,
+   explain:['Dùng tay giữ hoặc mang lấy một vật gì đó.'],
+   usage:'Động từ, theo sau là tân ngữ chỉ vật được cầm/lấy: 拿 + [vật] (拿书, 拿钱, 拿伞).',
+   collo:['拿书','拿钱','拿伞','拿东西'],
    ex_zh:'你手里拿的是什么？',ex_py:'Nǐ shǒu lǐ ná de shì shénme?',ex_vn:'Cái bạn đang cầm trên tay là gì?',
    exList:[
      {zh:'你手里拿的是什么？',py:'Nǐ shǒu lǐ ná de shì shénme?',vn:'Cái bạn đang cầm trên tay là gì?'},
@@ -220,6 +264,9 @@ var vocabData = [
      note:'别忘了 + V = đừng quên làm gì; 拿 = cầm/lấy vật gì bằng tay.'}},
 
   {n:16,zh:'把',py:'bǎ',pos:'Lượng từ',vn:'cái, chiếc (đồ có tay cầm)',em:'🖐️',lesson:3,
+   explain:['Lượng từ dùng cho các đồ vật có tay cầm hoặc dùng bằng tay (ô, dao, ghế, quạt...).'],
+   usage:'Lượng từ, đứng giữa SỐ TỪ và DANH TỪ: [số từ] + 把 + [đồ vật] (一把伞, 一把椅子).',
+   collo:['一把伞','一把椅子','一把刀','一把扇子'],
    ex_zh:'我去拿把伞。',ex_py:'Wǒ qù ná bǎ sǎn.',ex_vn:'Tôi đi lấy một cái ô.',
    exList:[
      {zh:'我去拿把伞。',py:'Wǒ qù ná bǎ sǎn.',vn:'Tôi đi lấy một cái ô.'},
@@ -235,6 +282,9 @@ var vocabData = [
      note:'把 là lượng từ cho đồ vật có tay cầm: 一把伞/一把椅子/一把刀/一把扇子.'}},
 
   {n:17,zh:'伞',py:'sǎn',pos:'Danh từ',vn:'cái ô, dù',em:'☂️',lesson:3,
+   explain:['Vật dụng có cán và phần vải xòe tròn, dùng để che mưa hoặc che nắng.'],
+   usage:'Danh từ; lượng từ đi kèm là 把: 一把伞. Phân biệt 雨伞 (ô che mưa) và 太阳伞 (ô che nắng).',
+   collo:['雨伞','太阳伞','一把伞'],
    ex_zh:'外面下雨了，我去拿把伞。',ex_py:'Wàimian xiàyǔ le, wǒ qù ná bǎ sǎn.',ex_vn:'Bên ngoài mưa rồi, tôi đi lấy một cái ô.',
    exList:[
      {zh:'外面下雨了，我去拿把伞。',py:'Wàimian xiàyǔ le, wǒ qù ná bǎ sǎn.',vn:'Bên ngoài mưa rồi, tôi đi lấy một cái ô.'},
@@ -250,6 +300,9 @@ var vocabData = [
      note:'雨伞 (ô che mưa) khác 太阳伞 (ô che nắng); lượng từ đi kèm là 把.'}},
 
   {n:18,zh:'胖',py:'pàng',pos:'Tính từ',vn:'béo, mập',em:'🐷',lesson:4,
+   explain:['Có nhiều thịt/mỡ trên cơ thể, thân hình to lớn — trái nghĩa với 瘦 (gầy).'],
+   usage:'Tính từ; làm vị ngữ với 很 (很胖); nói mức độ tăng cân dùng 胖 + 了 + số lượng: 胖了5公斤.',
+   collo:['很胖','胖了','这么胖'],
    ex_zh:'他很胖，我很瘦。',ex_py:'Tā hěn pàng, wǒ hěn shòu.',ex_vn:'Anh ấy rất béo, tôi rất gầy.',
    exList:[
      {zh:'他很胖，我很瘦。',py:'Tā hěn pàng, wǒ hěn shòu.',vn:'Anh ấy rất béo, tôi rất gầy.'},
@@ -265,6 +318,9 @@ var vocabData = [
      note:'胖 (béo) trái nghĩa với 瘦 (gầy); "V了 + số lượng" diễn tả mức độ thay đổi (胖了5公斤).'}},
 
   {n:19,zh:'其实',py:'qíshí',pos:'Phó từ',vn:'thực ra, thật ra',em:'💬',lesson:4,
+   explain:['Dùng để đính chính, bổ sung một sự thật khác với điều vừa nói/nghĩ trước đó.'],
+   usage:'Phó từ, đứng ở ĐẦU CÂU hoặc NGAY SAU chủ ngữ, TRƯỚC động từ/tính từ: 其实 + [câu], hoặc [Chủ ngữ] + 其实 + [vị ngữ].',
+   collo:['其实……','他其实……','其实很容易'],
    ex_zh:'他看起来很年轻，其实已经40岁了。',ex_py:'Tā kànqǐlai hěn niánqīng, qíshí yǐjīng sìshí suì le.',ex_vn:'Anh ấy trông rất trẻ, nhưng thực ra đã 40 tuổi rồi.',
    exList:[
      {zh:'他看起来很年轻，其实已经40岁了。',py:'Tā kànqǐlai hěn niánqīng, qíshí yǐjīng sìshí suì le.',vn:'Anh ấy trông rất trẻ, nhưng thực ra đã 40 tuổi rồi.'},
@@ -283,6 +339,9 @@ var vocabData = [
      note:'其实 thường đứng ở ĐẦU CÂU hoặc NGAY SAU chủ ngữ, dùng để đính chính một nhận định trước đó.'}},
 
   {n:20,zh:'瘦',py:'shòu',pos:'Tính từ',vn:'gầy, ốm',em:'📉',lesson:4,
+   explain:['1. Ít thịt/mỡ trên cơ thể, thân hình nhỏ, mảnh — trái nghĩa 胖.','2. Quần áo bó sát, chật.'],
+   usage:'Tính từ; làm vị ngữ với 很/有点儿: 很瘦, 有点儿瘦; nói mức độ giảm cân dùng 瘦 + 了: 瘦了.',
+   collo:['很瘦','瘦了','有点儿瘦'],
    ex_zh:'我现在没以前那么胖了。',ex_py:'Wǒ xiànzài méi yǐqián nàme pàng le.',ex_vn:'Bây giờ tôi không còn béo như trước nữa.',
    exList:[
      {zh:'我现在没以前那么胖了。',py:'Wǒ xiànzài méi yǐqián nàme pàng le.',vn:'Bây giờ tôi không còn béo như trước nữa.'},

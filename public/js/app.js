@@ -1343,6 +1343,36 @@
     }
   }
 
+  // Khoi giai nghia/cach dung/collocation chi hien khi tu vung co field
+  // "explain" — dung cho tu vung kieu moi (hien tai la HSK3), khong anh
+  // huong den cac bai HSK1/HSK2/HSK1(3.0) van dung du lieu cu.
+  function vpWordRichHtml(v) {
+    if (!v.explain) return '';
+    var explainHtml = v.explain.length > 1
+      ? '<ol class="vp-explain-list">' + v.explain.map(function (e) { return '<li>' + e + '</li>'; }).join('') + '</ol>'
+      : '<div class="vp-explain-text">' + v.explain[0] + '</div>';
+    var usageHtml = v.usage ? '<div class="vp-word-usage"><span class="vp-usage-label">Cách dùng:</span> ' + v.usage + '</div>' : '';
+    var colloHtml = (v.collo && v.collo.length)
+      ? '<div class="vp-word-collo"><div class="vp-collo-label">Ví dụ cụm từ:</div><div class="vp-collo-chips">' +
+          v.collo.map(function (c) { return '<span class="vp-collo-chip hanzi">' + c + '</span>'; }).join('') +
+        '</div></div>'
+      : '';
+    return '<div class="vp-word-explain"><div class="vp-explain-label">Nghĩa:</div>' + explainHtml + '</div>' + usageHtml + colloHtml;
+  }
+
+  // Voi tu vung kieu moi, hien ca 3 cau vi du (danh so) thay vi chi 1 cau
+  // nhu truoc — khop voi bang cach trinh bay tu vung moi.
+  function vpWordAllExamplesHtml(v) {
+    var list = v.exList || [];
+    if (!list.length) return '';
+    var items = list.map(function (ex) {
+      return '<li><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.15rem;">' + ex.zh + '</span>' +
+        '<button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></li>';
+    }).join('');
+    return '<div class="vp-word-example vp-word-examples-all"><div class="vp-examples-label">Ví dụ:</div><ol class="vp-examples-list">' + items + '</ol></div>';
+  }
+
   function renderVpList() {
     var wrap = $('#vpContent');
     wrap.innerHTML = '<div class="vp-list-grid"></div>';
@@ -1357,7 +1387,8 @@
         '<div class="vp-word-py">' + v.py + '</div>' +
         '<div class="vp-word-vn">' + v.vn + '</div>' +
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
-        (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></div>' : '') +
+        vpWordRichHtml(v) +
+        (v.explain ? vpWordAllExamplesHtml(v) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></div>' : '')) +
         (hzs ? '<div class="vc-hz"><button type="button" class="hz-btn" data-hz-toggle="' + vi + '">🀄 Xem Hán tự (' + v.hanzi.length + ' chữ)</button><div class="hz-panel" id="vphzp' + vi + '">' + hzs + '</div></div>' : '') +
         (v.check ? renderVpCheckHtml(v.check, vi) : '');
       grid.appendChild(card);

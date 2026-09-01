@@ -684,6 +684,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3-bai-16.html'
+      },
+      {
+        id: 'hsk3-l17',
+        number: 17,
+        title: 'Ai cũng có cách chữa khỏi "bệnh" của em',
+        titleHanzi: '谁都有办法看好你的"病"',
+        titlePinyin: 'Shéi dōu yǒu bànfǎ kànhǎo nǐ de "bìng"',
+        topic: 'Xin nghỉ phép, Sở thích & Vận động',
+        vocabCount: 16,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-17.html'
       }
     ],
     hsk1v3: [

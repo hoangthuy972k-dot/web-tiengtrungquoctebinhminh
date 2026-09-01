@@ -206,6 +206,21 @@
     return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   }
 
+  // Ghi nhan "hom nay co vao hoc" ngay khi hoc sinh tuong tac voi bat ky
+  // bai tap nao (khong can lam het ca bai) — dung cho "Chuoi ngay hoc".
+  function markStudyDay() {
+    var days = readJSON(STORAGE_KEYS.studyDays, []);
+    var key = dateKey(new Date());
+    if (days.indexOf(key) === -1) {
+      days.push(key);
+      writeJSON(STORAGE_KEYS.studyDays, days);
+      syncProgressToServer();
+    }
+  }
+
+  var PRACTICE_SECTION_IDS = ['warmupPractice', 'workbookPractice', 'vocabPractice', 'flashcardPractice',
+    'grammarPractice', 'dialoguePractice', 'listenPractice', 'speakPractice', 'gamePractice', 'translatePractice'];
+
   /* ---------------- Sidebar nav ---------------- */
 
   function initSidebar() {
@@ -324,6 +339,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    renderStreak();
   }
 
   function showLevelDetail(id) {
@@ -6130,6 +6146,13 @@
     refreshProgressFromServer();
     initAnalytics();
     initPinyinToggle();
+
+    document.addEventListener('click', function (e) {
+      var section = e.target.closest('.dash-section');
+      if (!section || PRACTICE_SECTION_IDS.indexOf(section.id) === -1) return;
+      if (e.target.closest('.level-detail-back')) return;
+      markStudyDay();
+    });
 
     $('#levelDetailBack').addEventListener('click', showDashboard);
     $('#lessonHubBack').addEventListener('click', function () {

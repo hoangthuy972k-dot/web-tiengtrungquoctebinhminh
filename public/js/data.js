@@ -672,6 +672,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk3-bai-15.html'
+      },
+      {
+        id: 'hsk3-l16',
+        number: 16,
+        title: 'Bây giờ tôi mệt đến nỗi chỉ muốn đi ngủ sau khi hết giờ làm việc',
+        titleHanzi: '我现在累得下了班就想睡觉',
+        titlePinyin: 'Wǒ xiànzài lèi de xiàle bān jiù xiǎng shuìjiào',
+        topic: 'Công ty, Trẻ em & Quan hệ con người',
+        vocabCount: 16,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk3-bai-16.html'
       }
     ],
     hsk1v3: [

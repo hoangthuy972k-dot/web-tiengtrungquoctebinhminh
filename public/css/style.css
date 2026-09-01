@@ -2203,6 +2203,103 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   margin-bottom: var(--space-2);
 }
 
+/* ---------- On tap tong hop (tron nhieu bai) ---------- */
+.rv-round-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.rv-round-card {
+  text-align: left;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  cursor: pointer;
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.15s var(--ease-standard), background-color 0.15s var(--ease-standard);
+}
+
+.rv-round-card:hover {
+  border-color: var(--color-red-500);
+}
+
+.rv-round-card.active {
+  border-color: var(--color-red-600);
+  background: var(--color-red-50);
+}
+
+.rv-round-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--color-red-600);
+}
+
+.rv-round-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.rv-round-desc {
+  font-size: 0.82rem;
+  color: var(--color-gray-600);
+}
+
+.rv-cloze-prompt {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.rv-cloze-sentence {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.rv-cloze-blank {
+  display: inline-block;
+  min-width: 56px;
+  border-bottom: 2px solid var(--color-red-600);
+  margin: 0 4px;
+}
+
+.rv-cloze-hint {
+  margin-top: var(--space-2);
+  color: var(--color-gray-600);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.rv-word-badge {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gray-100);
+  color: var(--color-gray-600);
+}
+
+.rv-lesson-card {
+  width: 100%;
+  font: inherit;
+  cursor: pointer;
+}
+
+.rv-lesson-num {
+  background: var(--color-red-50);
+  color: var(--color-red-600);
+  font-size: 1.2rem;
+}
+
 /* ---------- Flashcard practice (lat the) ---------- */
 .fc-card-wrap {
   max-width: 460px;

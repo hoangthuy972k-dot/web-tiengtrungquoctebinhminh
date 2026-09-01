@@ -219,7 +219,8 @@
   }
 
   var PRACTICE_SECTION_IDS = ['warmupPractice', 'workbookPractice', 'vocabPractice', 'flashcardPractice',
-    'grammarPractice', 'dialoguePractice', 'listenPractice', 'speakPractice', 'gamePractice', 'translatePractice'];
+    'grammarPractice', 'dialoguePractice', 'listenPractice', 'speakPractice', 'gamePractice', 'translatePractice',
+    'reviewPractice'];
 
   /* ---------------- Sidebar nav ---------------- */
 
@@ -339,6 +340,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     renderStreak();
   }
 
@@ -359,6 +361,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
     $('#levelDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -366,11 +369,22 @@
 
   /* ---------------- Lesson list (opens the lesson hub instead of navigating away) ---------------- */
 
+  // Cu 3 bai co 1 "the on tap tong hop" chen ngay sau bai thu 3 trong nhom
+  // (vd sau Bai 3 -> on Bai 1-2-3; sau Bai 6 -> on Bai 4-5-6). Hien tai moi
+  // co du lieu cho nhom dau tien (HSK3 Bai 1-3) de lam thu; cac nhom khac
+  // se bo sung dan sau khi duyet giao dien nay.
+  var REVIEW_GROUPS = {
+    hsk3: [
+      { afterNumber: 3, lessons: [1, 2, 3] }
+    ]
+  };
+
   function renderLessonList(id) {
     var wrap = $('#levelDetailList');
     if (!wrap) return;
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[id]) || [];
     var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
+    var reviewGroups = REVIEW_GROUPS[id] || [];
     wrap.innerHTML = '';
 
     lessons.forEach(function (lesson) {
@@ -400,6 +414,27 @@
       });
 
       wrap.appendChild(card);
+
+      reviewGroups.forEach(function (group) {
+        if (group.afterNumber !== lesson.number) return;
+        var first = group.lessons[0], last = group.lessons[group.lessons.length - 1];
+        var title = 'Ôn tập tổng hợp: Bài ' + first + ' – ' + last;
+        var rcard = document.createElement('button');
+        rcard.type = 'button';
+        rcard.className = 'lesson-card-link rv-lesson-card';
+        rcard.innerHTML =
+          '<span class="lesson-card-num rv-lesson-num">🔄</span>' +
+          '<div class="lesson-card-body">' +
+            '<h3>' + title + '</h3>' +
+            '<p class="lesson-card-topic">Trộn từ vựng ' + group.lessons.length + ' bài để kiểm tra lại toàn diện trước khi học tiếp.</p>' +
+          '</div>' +
+          '<span class="lesson-card-progress">Ôn tập</span>' +
+          '<svg class="icon lesson-card-arrow" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+        rcard.addEventListener('click', function () {
+          showReviewPractice(id, group.lessons, title);
+        });
+        wrap.appendChild(rcard);
+      });
     });
   }
 
@@ -467,6 +502,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
@@ -588,6 +624,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#wpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     loadLessonWarmup(lesson).then(function (data) {
@@ -704,6 +741,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#wbTabs').innerHTML = '';
 
@@ -1317,6 +1355,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
@@ -1505,7 +1544,7 @@
     }
   }
 
-  function pgbRecord(id, index, isCorrect) {
+  function pgbRecord(id, index, isCorrect, praiseThreshold) {
     var st = pgbState[id];
     if (!st) return;
     st.results[index] = isCorrect;
@@ -1513,7 +1552,7 @@
     pgbPaint(id);
     var praiseEl = $('#' + id + '-praise');
     if (praiseEl) {
-      if (st.streak >= 3) {
+      if (st.streak >= (praiseThreshold || 3)) {
         praiseEl.textContent = PGB_PRAISE[Math.floor(Math.random() * PGB_PRAISE.length)];
         praiseEl.classList.add('show');
         setTimeout(function () { praiseEl.classList.remove('show'); }, 2200);
@@ -1598,6 +1637,252 @@
     });
   }
 
+  /* ---------------- On tap tong hop (tron tu vung nhieu bai, moi 3 bai 1 luot on) ---------------- */
+
+  var RV_ROUNDS = [
+    { id: 1, label: 'Ôn từ vựng', desc: 'Xem lại toàn bộ từ vựng của các bài trước khi vào kiểm tra.' },
+    { id: 2, label: 'Chọn đúng nghĩa', desc: 'Nhìn chữ Hán, chọn nghĩa tiếng Việt phù hợp.' },
+    { id: 3, label: 'Nhớ Pinyin', desc: 'Không nhìn đáp án, nhận diện âm đọc có thanh điệu.' },
+    { id: 4, label: 'Điền từ theo câu', desc: 'Dùng ngữ cảnh để chọn đúng từ còn thiếu.' },
+    { id: 5, label: 'Kiểm tra tổng hợp', desc: 'Trộn nghĩa, Pinyin và câu ví dụ trong một lượt.' }
+  ];
+
+  var rvVocab = [];
+  var rvQuiz = {};
+  var rvRound = 2;
+
+  function loadReviewVocab(levelId, lessonNumbers) {
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[levelId]) || [];
+    var targets = lessonNumbers.map(function (n) {
+      var found = null;
+      lessons.forEach(function (l) { if (l.number === n) found = l; });
+      return found;
+    }).filter(Boolean);
+    return Promise.all(targets.map(function (lesson) {
+      return loadLessonVocab(lesson).then(function (vocab) {
+        return vocab.map(function (w) {
+          var copy = Object.assign({}, w);
+          copy.__lessonNumber = lesson.number;
+          return copy;
+        });
+      });
+    })).then(function (arrays) {
+      var all = [];
+      arrays.forEach(function (arr) { all = all.concat(arr); });
+      return shuffle(all);
+    });
+  }
+
+  function rvPickDistractors(pool, exclude, count) {
+    return shuffle(pool.filter(function (w) { return w !== exclude; })).slice(0, count);
+  }
+
+  // Tim 1 cau vi du that (exList) co chua nguyen van tu can hoi, roi cat
+  // thanh pre/post de tao cau dien-tu-vao-cho-trong — khong bia cau moi.
+  function rvClozeFor(word) {
+    var list = word.exList || [];
+    for (var i = 0; i < list.length; i++) {
+      var ex = list[i];
+      if (ex && ex.zh && ex.zh.indexOf(word.zh) !== -1) {
+        var idx = ex.zh.indexOf(word.zh);
+        return { pre: ex.zh.slice(0, idx), post: ex.zh.slice(idx + word.zh.length), vn: ex.vn };
+      }
+    }
+    return null;
+  }
+
+  // Dong co dung chung cho ca 4 vong kiem tra (nghia / pinyin / dien-cau / tron):
+  // moi vong chi khac nhau o cach lay "tu dung" tu 1 item va cach hien thi de bai.
+  function rvQuizStep(pgbId, state, wordOf, promptHtmlOf, optionLabelOf, isZhOptionOf, onDone) {
+    var wrap = $('#rvContent');
+    var total = state.items.length;
+    if (state.pos >= total) {
+      wrap.innerHTML = '<div class="vp-quiz-done"><strong>' + state.score + '/' + total + '</strong>' +
+        '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt ôn tập này.</p>' +
+        '<button type="button" class="btn btn-primary" id="rvRetryBtn">Luyện lại</button></div>';
+      $('#rvRetryBtn').addEventListener('click', onDone);
+      return;
+    }
+    var item = state.items[state.pos];
+    var word = wordOf(item);
+    var distractors = rvPickDistractors(rvVocab, word, 3);
+    var options = shuffle([word].concat(distractors));
+    var isZh = isZhOptionOf(item);
+    var optionsHtml = options.map(function (opt, i) {
+      return '<button type="button" class="vp-option-btn' + (isZh ? ' hanzi' : '') + '" data-idx="' + i + '">' + optionLabelOf(item, opt) + '</button>';
+    }).join('');
+    wrap.innerHTML = pgbHtml(pgbId, total) +
+      '<div class="vp-quiz-counter">Câu ' + (state.pos + 1) + '/' + total + '</div>' +
+      '<div class="vp-quiz-card">' + promptHtmlOf(item) + '<div class="vp-quiz-options">' + optionsHtml + '</div></div>';
+    pgbPaint(pgbId);
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    $all('.vp-option-btn', wrap).forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        var isCorrect = options[i] === word;
+        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (options[j] === word) b.classList.add('is-correct');
+          else if (j === i) b.classList.add('is-wrong');
+        });
+        if (isCorrect) state.score++;
+        pgbRecord(pgbId, state.pos, isCorrect, 5);
+        setTimeout(function () {
+          state.pos++;
+          rvQuizStep(pgbId, state, wordOf, promptHtmlOf, optionLabelOf, isZhOptionOf, onDone);
+        }, 900);
+      });
+    });
+  }
+
+  function rvWordPromptHtml(zh, py) {
+    return '<div class="vp-quiz-prompt"><div class="vp-quiz-prompt-zh hanzi">' + zh +
+      '<button type="button" class="vp-speak-btn" data-speak="' + zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+      (py ? '<div class="vp-quiz-prompt-py">' + py + '</div>' : '') + '</div>';
+  }
+
+  function rvClozePromptHtml(cloze) {
+    return '<div class="rv-cloze-prompt"><div class="rv-cloze-sentence hanzi">' + cloze.pre +
+      '<span class="rv-cloze-blank">____</span>' + cloze.post + '</div>' +
+      '<div class="rv-cloze-hint">' + cloze.vn + '</div></div>';
+  }
+
+  function rvRenderWordList() {
+    var wrap = $('#rvContent');
+    wrap.innerHTML = '<div class="vp-list-grid">' + rvVocab.map(function (w) {
+      return '<div class="vp-word-card"><div class="vp-word-row">' +
+        '<span class="vp-word-zh hanzi">' + w.zh + '</span>' +
+        '<button type="button" class="vp-speak-btn" data-speak="' + w.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<div class="vp-quiz-prompt-py" style="margin-top:4px;">' + w.py + '</div>' +
+        '<div style="margin-top:4px;">' + w.vn + '</div>' +
+        '<span class="rv-word-badge">Bài ' + w.__lessonNumber + '</span>' +
+        '</div>';
+    }).join('') + '</div>';
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+  }
+
+  function rvRenderMeaningQuiz() {
+    if (!rvQuiz.meaning) { rvQuiz.meaning = { items: shuffle(rvVocab), pos: 0, score: 0 }; pgbInit('rvqmeaning', rvQuiz.meaning.items.length); }
+    rvQuizStep('rvqmeaning', rvQuiz.meaning,
+      function (item) { return item; },
+      function (item) { return rvWordPromptHtml(item.zh, item.py); },
+      function (item, opt) { return opt.vn; },
+      function () { return false; },
+      function () { rvQuiz.meaning = null; rvRenderMeaningQuiz(); });
+  }
+
+  function rvRenderPinyinQuiz() {
+    if (!rvQuiz.pinyin) { rvQuiz.pinyin = { items: shuffle(rvVocab), pos: 0, score: 0 }; pgbInit('rvqpinyin', rvQuiz.pinyin.items.length); }
+    rvQuizStep('rvqpinyin', rvQuiz.pinyin,
+      function (item) { return item; },
+      function (item) { return rvWordPromptHtml(item.zh, null); },
+      function (item, opt) { return opt.py; },
+      function () { return false; },
+      function () { rvQuiz.pinyin = null; rvRenderPinyinQuiz(); });
+  }
+
+  function rvRenderClozeQuiz() {
+    if (!rvQuiz.cloze) {
+      var items = rvVocab.map(function (w) { return { w: w, cloze: rvClozeFor(w) }; }).filter(function (x) { return x.cloze; });
+      rvQuiz.cloze = { items: shuffle(items), pos: 0, score: 0 };
+      pgbInit('rvqcloze', rvQuiz.cloze.items.length);
+    }
+    rvQuizStep('rvqcloze', rvQuiz.cloze,
+      function (item) { return item.w; },
+      function (item) { return rvClozePromptHtml(item.cloze); },
+      function (item, opt) { return opt.zh; },
+      function () { return true; },
+      function () { rvQuiz.cloze = null; rvRenderClozeQuiz(); });
+  }
+
+  function rvRenderMixedQuiz() {
+    if (!rvQuiz.mix) {
+      var types = ['meaning', 'pinyin', 'cloze'];
+      var items = shuffle(rvVocab).map(function (w) {
+        var cloze = rvClozeFor(w);
+        var avail = cloze ? types : ['meaning', 'pinyin'];
+        var type = avail[Math.floor(Math.random() * avail.length)];
+        return { w: w, type: type, cloze: cloze };
+      });
+      rvQuiz.mix = { items: items, pos: 0, score: 0 };
+      pgbInit('rvqmix', rvQuiz.mix.items.length);
+    }
+    rvQuizStep('rvqmix', rvQuiz.mix,
+      function (item) { return item.w; },
+      function (item) {
+        if (item.type === 'meaning') return rvWordPromptHtml(item.w.zh, item.w.py);
+        if (item.type === 'pinyin') return rvWordPromptHtml(item.w.zh, null);
+        return rvClozePromptHtml(item.cloze);
+      },
+      function (item, opt) {
+        if (item.type === 'meaning') return opt.vn;
+        if (item.type === 'pinyin') return opt.py;
+        return opt.zh;
+      },
+      function (item) { return item.type === 'cloze'; },
+      function () { rvQuiz.mix = null; rvRenderMixedQuiz(); });
+  }
+
+  function renderRvRoundTabs() {
+    var wrap = $('#rvRoundGrid');
+    wrap.innerHTML = RV_ROUNDS.map(function (r) {
+      return '<button type="button" class="rv-round-card' + (rvRound === r.id ? ' active' : '') + '" data-round="' + r.id + '">' +
+        '<span class="rv-round-tag">VÒNG ' + r.id + '</span>' +
+        '<span class="rv-round-title">' + r.label + '</span>' +
+        '<span class="rv-round-desc">' + r.desc + '</span>' +
+        '</button>';
+    }).join('');
+    $all('.rv-round-card', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { rvRenderRound(parseInt(btn.getAttribute('data-round'), 10)); });
+    });
+  }
+
+  function rvRenderRound(id) {
+    rvRound = id;
+    renderRvRoundTabs();
+    if (id === 1) rvRenderWordList();
+    else if (id === 2) rvRenderMeaningQuiz();
+    else if (id === 3) rvRenderPinyinQuiz();
+    else if (id === 4) rvRenderClozeQuiz();
+    else rvRenderMixedQuiz();
+  }
+
+  function showReviewPractice(levelId, lessonNumbers, title, subtitle) {
+    currentHubLevelId = levelId;
+    currentHubLesson = null;
+    $('#home').hidden = true;
+    $('#levelDetail').hidden = true;
+    $('#lessonHub').hidden = true;
+    $('#warmupPractice').hidden = true;
+    $('#workbookPractice').hidden = true;
+    $('#vocabPractice').hidden = true;
+    $('#flashcardPractice').hidden = true;
+    $('#grammarPractice').hidden = true;
+    $('#dialoguePractice').hidden = true;
+    $('#listenPractice').hidden = true;
+    $('#speakPractice').hidden = true;
+    $('#gamePractice').hidden = true;
+    $('#translatePractice').hidden = true;
+    $('#resultsPractice').hidden = true;
+    $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = false;
+    $('#rvTitle').textContent = title;
+    $('#rvSubtitle').textContent = subtitle || 'Trộn từ vựng nhiều bài để kiểm tra lại toàn diện.';
+    $('#rvRoundGrid').innerHTML = '';
+    $('#rvContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    rvQuiz = {};
+    rvRound = 2;
+    loadReviewVocab(levelId, lessonNumbers).then(function (vocab) {
+      rvVocab = vocab;
+      rvRenderRound(2);
+    }).catch(function () {
+      $('#rvContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được dữ liệu ôn tập.</p>';
+    });
+  }
+
   /* ---------------- Flashcard practice (lat the tung tu, tu danh gia nho/chua nho) ---------------- */
 
   var fcVocab = [];
@@ -1622,6 +1907,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
@@ -4052,6 +4338,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -4369,6 +4656,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
     $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -4529,6 +4817,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     lpMode = 'meaning';
@@ -4848,6 +5137,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#spTabs').innerHTML = '';
     $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -5137,6 +5427,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     gpMode = null;
@@ -5513,6 +5804,7 @@
     $('#translatePractice').hidden = false;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
     $('#tpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     tpDirection = 'vi2zh';
@@ -5647,6 +5939,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = false;
     $('#leaderboard').hidden = true;
+    $('#reviewPractice').hidden = true;
 
     renderResultsContent(lesson);
     $('#resultsPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -6172,6 +6465,10 @@
     $('#vocabBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#rvBack').addEventListener('click', function () {
+      if (currentHubLevelId) showLevelDetail(currentHubLevelId);
       else showDashboard();
     });
     $('#fcBack').addEventListener('click', function () {

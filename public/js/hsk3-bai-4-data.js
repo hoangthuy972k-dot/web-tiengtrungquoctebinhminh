@@ -718,7 +718,7 @@ var listenData = {
      explain:'男：请你来回答这个问题，好吗？女：对不起，你说得太快了，我没听懂你的问题。问：关于女的，可以知道什么？ → 不能回答。'},
     {num:16, options:['学习很认真','现在三年级','总是不写作业'], ans:0,
      lines:[
-       {speaker:'男', pre:'', blank:'你儿子上学了吗？现在几年级', post:'？', py:'Nǐ érzi shàngxué le ma? Xiànzài jǐ niánjí?', vn:'Con trai bạn đi học chưa? Giờ học lớp mấy rồi?'},
+       {speaker:'男', pre:'你儿子上学了吗？', blank:'现在几年级', post:'？', py:'Nǐ érzi shàngxué le ma? Xiànzài jǐ niánjí?', vn:'Con trai bạn đi học chưa? Giờ học lớp mấy rồi?'},
        {speaker:'女', pre:'', blank:'他现在二年级', post:'。', py:'Tā xiànzài èr niánjí.', vn:'Cháu giờ học lớp hai rồi.'},
        {speaker:'男', pre:'', blank:'学习怎么样', post:'？', py:'Xuéxí zěnmeyàng?', vn:'Học hành thế nào?'},
        {speaker:'女', pre:'还可以，很努力，', blank:'每天都复习、写作业', post:'。', py:'Hái kěyǐ, hěn nǔlì, měitiān dōu fùxí, xiě zuòyè.', vn:'Cũng được, cháu rất chăm, ngày nào cũng ôn bài, làm bài tập.'},

@@ -546,7 +546,7 @@ var listenData = {
     {num:13, options:['看电视','运动','周末'], ans:1,
      lines:[
        {speaker:'男', pre:'', blank:'你周末喜欢做什么', post:'？', py:'Nǐ zhōumò xǐhuan zuò shénme?', vn:'Cuối tuần bạn thích làm gì?'},
-       {speaker:'女', pre:'', blank:'我不爱运动，周末就在家看看电视', post:'。', py:'Wǒ bú ài yùndòng, zhōumò jiù zài jiā kànkan diànshì.', vn:'Tôi không thích vận động, cuối tuần chỉ ở nhà xem tivi thôi.'},
+       {speaker:'女', pre:'我不爱运动，', blank:'周末就在家看看电视', post:'。', py:'Wǒ bú ài yùndòng, zhōumò jiù zài jiā kànkan diànshì.', vn:'Tôi không thích vận động, cuối tuần chỉ ở nhà xem tivi thôi.'},
      ],
      explain:'男：你周末喜欢做什么？女：我不爱运动，周末就在家看看电视。问：女的对什么没有兴趣？ → 运动。'},
     {num:14, options:['同学','同事','师生'], ans:1,
@@ -597,7 +597,7 @@ var listenData = {
        {speaker:'男', pre:'祝你生日快乐，', blank:'这个送给你', post:'。', py:'Zhù nǐ shēngrì kuàilè, zhège sòng gěi nǐ.', vn:'Chúc bạn sinh nhật vui vẻ, cái này tặng bạn.'},
        {speaker:'女', pre:'', blank:'什么啊', post:'？', py:'Shénme a?', vn:'Cái gì vậy?'},
        {speaker:'男', pre:'', blank:'打开看看', post:'。', py:'Dǎkāi kànkan.', vn:'Mở ra xem thử đi.'},
-       {speaker:'女', pre:'', blank:'音乐会的票！我太喜欢了，谢谢你', post:'。', py:'Yīnyuèhuì de piào! Wǒ tài xǐhuan le, xièxie nǐ.', vn:'Vé buổi hòa nhạc! Tôi thích quá, cảm ơn bạn.'},
+       {speaker:'女', pre:'音乐会的票！', blank:'我太喜欢了，谢谢你', post:'。', py:'Yīnyuèhuì de piào! Wǒ tài xǐhuan le, xièxie nǐ.', vn:'Vé buổi hòa nhạc! Tôi thích quá, cảm ơn bạn.'},
      ],
      explain:'男：祝你生日快乐，这个送给你。女：什么啊？男：打开看看。女：音乐会的票！我太喜欢了，谢谢你。问：女的对什么感兴趣？ → 音乐。'},
   ],

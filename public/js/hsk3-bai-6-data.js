@@ -647,15 +647,15 @@ var listenData = {
      explain:'男：这些都是你女儿的照片吗？女：对，这是今年的，那是她六岁时的。男：你女儿越来越漂亮了！女：谢谢，她最爱听这些了。问：关于女儿，可以知道什么？ → 现在更漂亮。'},
     {num:18, options:['考得不好','睡不着','喜欢看电视'], ans:1,
      lines:[
-       {speaker:'男', pre:'', blank:'我刚到北京，晚上总是睡不着', post:'。', py:'Wǒ gāng dào Běijīng, wǎnshang zǒngshì shuì bu zháo.', vn:'Tôi vừa đến Bắc Kinh, buổi tối cứ ngủ không được.'},
-       {speaker:'女', pre:'', blank:'我睡不着的时候喜欢看电视，你也看看吧', post:'。', py:'Wǒ shuì bu zháo de shíhou xǐhuan kàn diànshì, nǐ yě kànkan ba.', vn:'Lúc tôi ngủ không được thì thích xem tivi, bạn cũng xem thử đi.'},
+       {speaker:'男', pre:'我刚到北京，', blank:'晚上总是睡不着', post:'。', py:'Wǒ gāng dào Běijīng, wǎnshang zǒngshì shuì bu zháo.', vn:'Tôi vừa đến Bắc Kinh, buổi tối cứ ngủ không được.'},
+       {speaker:'女', pre:'我睡不着的时候喜欢看电视，', blank:'你也看看吧', post:'。', py:'Wǒ shuì bu zháo de shíhou xǐhuan kàn diànshì, nǐ yě kànkan ba.', vn:'Lúc tôi ngủ không được thì thích xem tivi, bạn cũng xem thử đi.'},
        {speaker:'男', pre:'我听不懂汉语，也看不懂汉字。', blank:'多没意思啊', post:'！', py:'Wǒ tīng bu dǒng Hànyǔ, yě kàn bu dǒng Hànzì. Duō méi yìsi a!', vn:'Tôi không nghe hiểu tiếng Trung, cũng không đọc hiểu chữ Hán. Chán quá!'},
        {speaker:'女', pre:'', blank:'那跟我聊聊天儿吧', post:'。', py:'Nà gēn wǒ liáoliao tiānr ba.', vn:'Vậy tán gẫu với tôi đi.'},
      ],
      explain:'男：我刚到北京，晚上总是睡不着。女：我睡不着的时候喜欢看电视，你也看看吧。男：我听不懂汉语，也看不懂汉字。多没意思啊！女：那跟我聊聊天儿吧。问：男的有什么问题？ → 睡不着。'},
     {num:19, options:['去商店买东西了','找不到回家的路了','帮孩子的忙了'], ans:2,
      lines:[
-       {speaker:'女', pre:'', blank:'怎么回来这么晚？去哪儿了', post:'？', py:'Zěnme huílai zhème wǎn? Qù nǎr le?', vn:'Sao về muộn vậy? Đi đâu rồi?'},
+       {speaker:'女', pre:'怎么回来这么晚？', blank:'去哪儿了', post:'？', py:'Zěnme huílai zhème wǎn? Qù nǎr le?', vn:'Sao về muộn vậy? Đi đâu rồi?'},
        {speaker:'男', pre:'你不是让我给小猫买点儿吃的吗？', blank:'刚才我去商店了', post:'。', py:'Nǐ bú shì ràng wǒ gěi xiǎomāo mǎi diǎnr chī de ma? Gāngcái wǒ qù shāngdiàn le.', vn:'Chẳng phải bạn bảo tôi mua chút đồ ăn cho mèo con sao? Lúc nãy tôi ra cửa hàng rồi.'},
        {speaker:'女', pre:'商店就在楼下。', blank:'你还去什么地方了', post:'？', py:'Shāngdiàn jiù zài lóuxià. Nǐ hái qù shénme dìfang le?', vn:'Cửa hàng ở ngay dưới lầu mà. Bạn còn đi đâu nữa?'},
        {speaker:'男', pre:'刚出商店，有个孩子找不到回家的路了，', blank:'我过去帮他给他家里打了个电话', post:'。', py:'Gāng chū shāngdiàn, yǒu ge háizi zhǎo bu dào huí jiā de lù le, wǒ guòqu bāng tā gěi tā jiālǐ dǎle ge diànhuà.', vn:'Vừa ra khỏi cửa hàng, có một đứa trẻ tìm không thấy đường về nhà, tôi qua giúp gọi điện về nhà cho cậu bé.'},

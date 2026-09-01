@@ -631,7 +631,7 @@ var listenData = {
     {num:19, options:['买花','看花','看雨'], ans:0,
      lines:[
        {speaker:'男', pre:'你看，', blank:'天晴了', post:'。', py:'Nǐ kàn, tiān qíng le.', vn:'Bạn xem, trời quang rồi.'},
-       {speaker:'女', pre:'', blank:'这么快就不下雨了？我们出去吧', post:'。', py:'Zhème kuài jiù bú xiàyǔ le? Wǒmen chūqu ba.', vn:'Nhanh vậy đã hết mưa rồi à? Chúng ta ra ngoài đi.'},
+       {speaker:'女', pre:'这么快就不下雨了？', blank:'我们出去吧', post:'。', py:'Zhème kuài jiù bú xiàyǔ le? Wǒmen chūqu ba.', vn:'Nhanh vậy đã hết mưa rồi à? Chúng ta ra ngoài đi.'},
        {speaker:'男', pre:'好啊，', blank:'带孩子们去外边买些花回来', post:'。', py:'Hǎo a, dài háizimen qù wàibian mǎi xiē huā huílai.', vn:'Được đấy, đưa bọn trẻ ra ngoài mua ít hoa về.'},
        {speaker:'女', pre:'好，', blank:'我去叫他们', post:'。', py:'Hǎo, wǒ qù jiào tāmen.', vn:'Được, tôi đi gọi bọn trẻ.'},
      ],

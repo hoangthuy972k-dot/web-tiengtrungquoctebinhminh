@@ -647,7 +647,7 @@ var listenData = {
     {num:11, options:['不让女的喝可乐','不让女的睡觉','不想喝可乐'], ans:0,
      lines:[
        {speaker:'女', pre:'', blank:'我想再喝一杯可乐', post:'。', py:'Wǒ xiǎng zài hē yì bēi kělè.', vn:'Tôi muốn uống thêm một ly coca nữa.'},
-       {speaker:'男', pre:'', blank:'再喝一杯，你晚上就别想睡觉了', post:'。', py:'Zài hē yì bēi, nǐ wǎnshang jiù bié xiǎng shuìjiào le.', vn:'Uống thêm một ly nữa, tối nay đừng mong ngủ được đấy.'},
+       {speaker:'男', pre:'再喝一杯，', blank:'你晚上就别想睡觉了', post:'。', py:'Zài hē yì bēi, nǐ wǎnshang jiù bié xiǎng shuìjiào le.', vn:'Uống thêm một ly nữa, tối nay đừng mong ngủ được đấy.'},
      ],
      explain:'女：我想再喝一杯可乐。男：再喝一杯，你晚上就别想睡觉了。问：男的是什么意思？ → 不让女的喝可乐。'},
     {num:12, options:['想休息','感冒了','要照顾妈妈'], ans:1,
@@ -670,8 +670,8 @@ var listenData = {
      explain:'女：我儿子又没考好，真着急！男：别着急，孩子身体健康是最重要的。问：女的为什么着急？ → 儿子学习不好。'},
     {num:15, options:['买裙子','面试','买衬衫'], ans:1,
      lines:[
-       {speaker:'男', pre:'', blank:'明天要去面试，这两条裙子你穿哪条', post:'？', py:'Míngtiān yào qù miànshì, zhè liǎng tiáo qúnzi nǐ chuān nǎ tiáo?', vn:'Ngày mai phải đi phỏng vấn, hai cái váy này bạn mặc cái nào?'},
-       {speaker:'女', pre:'', blank:'哪条好看我就穿哪条，你再帮我拿一下那件白衬衫', post:'。', py:'Nǎ tiáo hǎokàn wǒ jiù chuān nǎ tiáo, nǐ zài bāng wǒ ná yíxià nà jiàn bái chènshān.', vn:'Cái nào đẹp thì tôi mặc cái đó, bạn lấy giúp tôi cái áo sơ mi trắng kia nữa.'},
+       {speaker:'男', pre:'明天要去面试，', blank:'这两条裙子你穿哪条', post:'？', py:'Míngtiān yào qù miànshì, zhè liǎng tiáo qúnzi nǐ chuān nǎ tiáo?', vn:'Ngày mai phải đi phỏng vấn, hai cái váy này bạn mặc cái nào?'},
+       {speaker:'女', pre:'哪条好看我就穿哪条，', blank:'你再帮我拿一下那件白衬衫', post:'。', py:'Nǎ tiáo hǎokàn wǒ jiù chuān nǎ tiáo, nǐ zài bāng wǒ ná yíxià nà jiàn bái chènshān.', vn:'Cái nào đẹp thì tôi mặc cái đó, bạn lấy giúp tôi cái áo sơ mi trắng kia nữa.'},
      ],
      explain:'男：明天要去面试，这两条裙子你穿哪条？女：哪条好看我就穿哪条，你再帮我拿一下那件白衬衫。问：女的明天做什么？ → 面试。'},
     {num:16, options:['咖啡馆','电梯那儿','超市'], ans:0,
@@ -685,7 +685,7 @@ var listenData = {
     {num:17, options:['药','面条','鸡蛋'], ans:1,
      lines:[
        {speaker:'男', pre:'', blank:'你吃药了吗', post:'？', py:'Nǐ chī yào le ma?', vn:'Bạn uống thuốc chưa?'},
-       {speaker:'女', pre:'', blank:'还没有，我吃完饭再吃', post:'。', py:'Hái méiyǒu, wǒ chīwán fàn zài chī.', vn:'Chưa đâu, tôi ăn cơm xong rồi uống.'},
+       {speaker:'女', pre:'还没有，', blank:'我吃完饭再吃', post:'。', py:'Hái méiyǒu, wǒ chīwán fàn zài chī.', vn:'Chưa đâu, tôi ăn cơm xong rồi uống.'},
        {speaker:'男', pre:'', blank:'今天我们吃面条儿', post:'？', py:'Jīntiān wǒmen chī miàntiáor?', vn:'Hôm nay chúng ta ăn mì à?'},
        {speaker:'女', pre:'是，', blank:'吃鸡蛋面，马上就好', post:'。', py:'Shì, chī jīdàn miàn, mǎshàng jiù hǎo.', vn:'Đúng vậy, ăn mì trứng, sắp xong rồi.'},
      ],
@@ -703,7 +703,7 @@ var listenData = {
        {speaker:'男', pre:'', blank:'我们一起吃个饭吧', post:'？', py:'Wǒmen yìqǐ chī ge fàn ba?', vn:'Chúng ta cùng ăn cơm nhé?'},
        {speaker:'女', pre:'', blank:'好啊，哪天', post:'？', py:'Hǎo a, nǎ tiān?', vn:'Được đấy, hôm nào?'},
        {speaker:'男', pre:'', blank:'你哪天不忙我们就哪天吃', post:'。', py:'Nǐ nǎ tiān bù máng wǒmen jiù nǎ tiān chī.', vn:'Bạn ngày nào rảnh thì chúng ta ăn ngày đó.'},
-       {speaker:'女', pre:'', blank:'那明天中午，老地方见吧', post:'。', py:'Nà míngtiān zhōngwǔ, lǎo dìfang jiàn ba.', vn:'Vậy trưa mai, gặp ở chỗ cũ nhé.'},
+       {speaker:'女', pre:'那明天中午，', blank:'老地方见吧', post:'。', py:'Nà míngtiān zhōngwǔ, lǎo dìfang jiàn ba.', vn:'Vậy trưa mai, gặp ở chỗ cũ nhé.'},
      ],
      explain:'男：我们一起吃个饭吧？女：好啊，哪天？男：你哪天不忙我们就哪天吃。女：那明天中午，老地方见吧。问：关于女的，可以知道什么？ → 明天中午不忙。'},
     {num:20, options:['考得很好','不会写汉字','一个题都不会'], ans:1,

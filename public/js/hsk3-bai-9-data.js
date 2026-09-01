@@ -629,7 +629,7 @@ var listenData = {
     {num:16, options:['每人最少讲3分钟','只要回答一个问题','没有问题'], ans:0,
      lines:[
        {speaker:'女', pre:'老师，', blank:'上次比赛每个人要讲3分钟，这次呢', post:'？', py:'Lǎoshī, shàng cì bǐsài měi ge rén yào jiǎng sān fēnzhōng, zhè cì ne?', vn:'Thầy ơi, lần thi trước mỗi người phải nói 3 phút, lần này thì sao ạ?'},
-       {speaker:'男', pre:'', blank:'跟上次一样，参赛的同学每人最少讲3分钟', post:'。', py:'Gēn shàng cì yíyàng, cānsài de tóngxué měi rén zuìshǎo jiǎng sān fēnzhōng.', vn:'Giống lần trước, học sinh dự thi mỗi người nói ít nhất 3 phút.'},
+       {speaker:'男', pre:'跟上次一样，', blank:'参赛的同学每人最少讲3分钟', post:'。', py:'Gēn shàng cì yíyàng, cānsài de tóngxué měi rén zuìshǎo jiǎng sān fēnzhōng.', vn:'Giống lần trước, học sinh dự thi mỗi người nói ít nhất 3 phút.'},
        {speaker:'女', pre:'', blank:'还要回答老师的问题吗', post:'？', py:'Hái yào huídá lǎoshī de wèntí ma?', vn:'Còn phải trả lời câu hỏi của thầy cô nữa không ạ?'},
        {speaker:'男', pre:'对，三个老师每人问一个问题。', blank:'你一定没问题，不用担心', post:'。', py:'Duì, sān ge lǎoshī měi rén wèn yí ge wèntí. Nǐ yídìng méi wèntí, búyòng dānxīn.', vn:'Đúng vậy, ba thầy cô mỗi người hỏi một câu. Em chắc chắn không có vấn đề gì, không cần lo lắng.'},
      ],
@@ -652,9 +652,9 @@ var listenData = {
      explain:'男：刚才是大晴天，现在怎么下雨了，还越下越大。女：夏天天气变得快，我们坐出租车回家吧。男：大家想得都跟你一样，你看，你叫得到车吗？女：那先去路边小商店买把伞吧。问：他们现在要去做什么？ → 买伞。'},
     {num:19, options:['山下下雪了','山上有雪','山路好走'], ans:1,
      lines:[
-       {speaker:'男', pre:'', blank:'你们去爬山了？怎么样？一定很累吧', post:'？', py:'Nǐmen qù páshān le? Zěnmeyàng? Yídìng hěn lèi ba?', vn:'Các bạn đi leo núi rồi à? Thế nào? Chắc mệt lắm nhỉ?'},
+       {speaker:'男', pre:'你们去爬山了？怎么样？', blank:'一定很累吧', post:'？', py:'Nǐmen qù páshān le? Zěnmeyàng? Yídìng hěn lèi ba?', vn:'Các bạn đi leo núi rồi à? Thế nào? Chắc mệt lắm nhỉ?'},
        {speaker:'女', pre:'越高的地方越冷，山路也越难走，但是特别漂亮。', blank:'虽然已经是春天了，可是山上跟山下一点儿也不一样，还都是白的', post:'。', py:'Yuè gāo de dìfang yuè lěng, shānlù yě yuè nán zǒu, dànshì tèbié piàoliang. Suīrán yǐjīng shì chūntiān le, kěshì shān shang gēn shān xià yìdiǎnr yě bù yíyàng, hái dōu shì bái de.', vn:'Chỗ càng cao càng lạnh, đường núi cũng càng khó đi, nhưng đẹp lắm. Tuy đã là mùa xuân rồi, nhưng trên núi và dưới núi khác hẳn nhau, trên đó vẫn toàn màu trắng.'},
-       {speaker:'男', pre:'', blank:'我越听越想去看看，下次你们也带我一起去吧', post:'。', py:'Wǒ yuè tīng yuè xiǎng qù kànkan, xià cì nǐmen yě dài wǒ yìqǐ qù ba.', vn:'Mình càng nghe càng muốn đi xem thử, lần sau các bạn cho mình đi cùng nhé.'},
+       {speaker:'男', pre:'我越听越想去看看，', blank:'下次你们也带我一起去吧', post:'。', py:'Wǒ yuè tīng yuè xiǎng qù kànkan, xià cì nǐmen yě dài wǒ yìqǐ qù ba.', vn:'Mình càng nghe càng muốn đi xem thử, lần sau các bạn cho mình đi cùng nhé.'},
        {speaker:'女', pre:'好，', blank:'下次去一定告诉你', post:'。', py:'Hǎo, xià cì qù yídìng gàosu nǐ.', vn:'Được, lần sau đi nhất định sẽ báo bạn.'},
      ],
      explain:'男：你们去爬山了？怎么样？一定很累吧？女：越高的地方越冷，山路也越难走，但是特别漂亮。虽然已经是春天了，可是山上跟山下一点儿也不一样，还都是白的。男：我越听越想去看看，下次你们也带我一起去吧。女：好，下次去一定告诉你。问：关于这次爬山，可以知道什么？ → 山上有雪。'},

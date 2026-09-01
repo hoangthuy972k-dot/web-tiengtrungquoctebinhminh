@@ -708,6 +708,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-18.html'
+      },
+      {
+        id: 'hsk3-l19',
+        number: 19,
+        title: 'Anh không nhìn ra được à?',
+        titleHanzi: '你没看出来吗',
+        titlePinyin: 'Nǐ méi kàn chulai ma',
+        topic: 'Gia đình, Ảnh chụp & Du lịch',
+        vocabCount: 14,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-19.html'
       }
     ],
     hsk1v3: [

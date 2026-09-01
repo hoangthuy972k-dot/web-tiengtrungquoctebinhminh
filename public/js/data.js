@@ -696,6 +696,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-17.html'
+      },
+      {
+        id: 'hsk3-l18',
+        number: 18,
+        title: 'Tôi tin họ sẽ đồng ý',
+        titleHanzi: '我相信他们会同意的',
+        titlePinyin: 'Wǒ xiāngxìn tāmen huì tóngyì de',
+        topic: 'Mượn tiền, Nuôi thú cưng & Phỏng vấn xin việc',
+        vocabCount: 17,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-18.html'
       }
     ],
     hsk1v3: [

@@ -41,9 +41,9 @@ var vocabData = [
       cf:'酉 (yǒu – "chi dậu", hình dáng gần giống")',w:'西边 / 西门 / 东西'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Xin hỏi, gần trường có ngân hàng Trung Quốc không?',answer:'请问，学校附近有中国银行吗？',answerPy:'Qǐngwèn, xuéxiào fùjìn yǒu Zhōngguó yínháng ma?',
+     {promptLang:'vi',prompt:'Xin hỏi, gần sân bay có chỗ nào bán trái cây không?',answer:'请问，机场附近有没有卖水果的地方？',answerPy:'Qǐngwèn, jīchǎng fùjìn yǒu méiyǒu mài shuǐguǒ de dìfang?',
       note:'附近 diễn tả khu vực lân cận (ôn lại 附近 đã học ở Bài 10).'},
-     {promptLang:'vi',prompt:'Ra khỏi cổng tây, đi sang trái hai trăm mét là thấy.',answer:'出了西门，向左走两百米就能看见。',answerPy:'Chūle xīmén, xiàng zuǒ zǒu liǎngbǎi mǐ jiù néng kànjiàn.',
+     {promptLang:'vi',prompt:'Từ cổng tây đi xe buýt, mười phút là đến được ga tàu.',answer:'从西门坐公交车，十分钟就能到火车站。',answerPy:'Cóng xīmén zuò gōngjiāochē, shí fēnzhōng jiù néng dào huǒchēzhàn.',
       note:'就 diễn tả hành động sẽ xảy ra nhanh chóng, thuận lợi.'},
    ]},
 
@@ -129,8 +129,8 @@ var vocabData = [
       cf:'饱 (bǎo – "no bụng", có bộ 饣")',w:'包 / 书包 / 面包'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Em đã để ảnh của em vào túi của anh rồi đấy.',answer:'我已经把我的照片放在你的包里了。',answerPy:'Wǒ yǐjīng bǎ wǒ de zhàopiàn fàng zài nǐ de bāo li le.',
-      note:'把字句2: 把+B(照片)+动词(放)+在+vị trí (điểm ngữ pháp bài này).'},
+     {promptLang:'vi',prompt:'Anh đã để chìa khóa vào túi của em rồi đấy.',answer:'我已经把钥匙放在你的包里了。',answerPy:'Wǒ yǐjīng bǎ yàoshi fàng zài nǐ de bāo li le.',
+      note:'把字句2: 把+B(钥匙)+动词(放)+在+vị trí (điểm ngữ pháp bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn tìm không thấy chìa khóa thì xem trong túi thử đi.',answer:'如果你找不到钥匙，就看看包里吧。',answerPy:'Rúguǒ nǐ zhǎo bu dào yàoshi, jiù kànkan bāo li ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 找不到 đã học ở Bài 6).'},
    ]},
@@ -151,8 +151,8 @@ var vocabData = [
       cf:'见 (jiàn – "nhìn thấy", không có bộ 王")',w:'发现 / 现在 / 出现'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.',answer:'来机场的路上我才发现忘带护照了。',answerPy:'Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.',
-      note:'才 diễn tả hành động xảy ra muộn/chậm (điểm ngữ pháp bài này, ôn lại 护照 sẽ học ngay bên dưới).'},
+     {promptLang:'vi',prompt:'Lúc lên máy bay tôi mới phát hiện quên mang điện thoại.',answer:'上飞机的时候我才发现忘带手机了。',answerPy:'Shàng fēijī de shíhou wǒ cái fāxiàn wàng dài shǒujī le.',
+      note:'才 diễn tả hành động xảy ra muộn/chậm (điểm ngữ pháp bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn phát hiện có vấn đề gì thì hãy nói cho tôi biết ngay.',answer:'如果你发现有问题，就马上告诉我吧。',answerPy:'Rúguǒ nǐ fāxiàn yǒu wèntí, jiù mǎshàng gàosu wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -173,8 +173,8 @@ var vocabData = [
       cf:'招 (zhāo – "vẫy tay, chiêu mộ", có bộ 扌")',w:'护照 / 照片 / 拍照'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn để hộ chiếu trong vali rồi à?',answer:'你把护照放在行李箱里了吗？',answerPy:'Nǐ bǎ hùzhào fàng zài xínglixiāng li le ma?',
-      note:'把字句2: 把+B(护照)+动词(放)+在+vị trí (ôn lại 行李箱 vừa học trong bài này).'},
+     {promptLang:'vi',prompt:'Bạn để hộ chiếu vào túi rồi à?',answer:'你把护照放在包里了吗？',answerPy:'Nǐ bǎ hùzhào fàng zài bāo li le ma?',
+      note:'把字句2: 把+B(护照)+动词(放)+在+vị trí (ôn lại 包 vừa học trong bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn quên mang hộ chiếu thì không thể lên máy bay được.',answer:'如果你忘带护照，就不能上飞机了。',answerPy:'Rúguǒ nǐ wàng dài hùzhào, jiù bù néng shàng fēijī le.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -283,8 +283,8 @@ var vocabData = [
       cf:'儒 (rú – "nho gia", có bộ 亻")',w:'需要 / 不需要'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chúng tôi cần đổi bàn ghế mới.',answer:'我们需要换新的桌子和椅子。',answerPy:'Wǒmen xūyào huàn xīn de zhuōzi hé yǐzi.',
-      note:'需要 + V diễn tả nhu cầu (ôn lại 换 đã học ở Bài 10).'},
+     {promptLang:'vi',prompt:'Thầy giáo cần mua một ít bút chì mới.',answer:'老师需要买一些新的铅笔。',answerPy:'Lǎoshī xūyào mǎi yìxiē xīn de qiānbǐ.',
+      note:'需要 + V diễn tả nhu cầu.'},
      {promptLang:'vi',prompt:'Nếu bạn cần giúp đỡ thì cứ nói với tôi nhé.',answer:'如果你需要帮忙，就跟我说吧。',answerPy:'Rúguǒ nǐ xūyào bāngmáng, jiù gēn wǒ shuō ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 帮忙 đã học ở Bài 6).'},
    ]},
@@ -398,18 +398,18 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'今天',blank:'太阳',post:'从西边出来了吗？',hint:'(mặt trời)',ans:'太阳'},
-  {pre:'今天太阳从',blank:'西',post:'边出来了吗？',hint:'(phía tây)',ans:'西'},
+  {pre:'因为今天没有云，所以',blank:'太阳',post:'特别亮。',hint:'(mặt trời)',ans:'太阳'},
+  {pre:'如果你从',blank:'西',post:'边走，就能更快到公园。',hint:'(phía tây)',ans:'西'},
   {pre:'经理',blank:'生气',post:'了。',hint:'(giận, tức giận)',ans:'生气'},
-  {pre:'那我帮你把衣服放到',blank:'行李箱',post:'里吧。',hint:'(hành lý, vali)',ans:'行李箱'},
-  {pre:'你要',blank:'自己',post:'照顾好自己。',hint:'(tự mình, bản thân)',ans:'自己'},
-  {pre:'我已经把我的照片放在你的',blank:'包',post:'里了。',hint:'(cặp, túi)',ans:'包'},
-  {pre:'来机场的路上我才',blank:'发现',post:'忘带护照了。',hint:'(phát hiện)',ans:'发现'},
-  {pre:'来机场的路上我才发现忘带',blank:'护照',post:'了。',hint:'(hộ chiếu)',ans:'护照'},
-  {pre:'快点吧，飞机就要',blank:'起飞',post:'了。',hint:'(cất cánh)',ans:'起飞'},
+  {pre:'如果你东西太多，就把书放到',blank:'行李箱',post:'里吧。',hint:'(hành lý, vali)',ans:'行李箱'},
+  {pre:'如果没有人帮你，你就得',blank:'自己',post:'去做。',hint:'(tự mình, bản thân)',ans:'自己'},
+  {pre:'因为外面下雨，所以我把伞放在',blank:'包',post:'里了。',hint:'(cặp, túi)',ans:'包'},
+  {pre:'打开箱子的时候我才',blank:'发现',post:'钱包不见了。',hint:'(phát hiện)',ans:'发现'},
+  {pre:'到了机场，我才发现没带',blank:'护照',post:'，只好又回家拿。',hint:'(hộ chiếu)',ans:'护照'},
+  {pre:'请大家坐好，飞机就要',blank:'起飞',post:'了。',hint:'(cất cánh)',ans:'起飞'},
   {pre:'',blank:'司机',post:'把我送到机场的时候。',hint:'(tài xế)',ans:'司机'},
-  {pre:'我',blank:'教',post:'学生画画儿。',hint:'(dạy)',ans:'教'},
-  {pre:'我教学生',blank:'画',post:'画儿。',hint:'(vẽ)',ans:'画'},
+  {pre:'她',blank:'教',post:'我们说汉语。',hint:'(dạy)',ans:'教'},
+  {pre:'妹妹喜欢',blank:'画',post:'小动物。',hint:'(vẽ)',ans:'画'},
   {pre:'下次学生',blank:'需要',post:'带的东西写在黑板上。',hint:'(cần)',ans:'需要'},
   {pre:'我把东西写在',blank:'黑板',post:'上。',hint:'(bảng đen)',ans:'黑板'},
 ];
@@ -418,12 +418,12 @@ var fillData = [
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['今天','太阳','从','西边','出来','了','吗','？'],ans:'今天太阳从西边出来了吗？',audio:'今天太阳从西边出来了吗？'},
-  {words:['经理','生气','了','。'],ans:'经理生气了。',audio:'经理生气了。'},
-  {words:['我','帮','你','把','衣服','放到','行李箱','里','吧','。'],ans:'我帮你把衣服放到行李箱里吧。',audio:'我帮你把衣服放到行李箱里吧。'},
-  {words:['来','机场','的','路上','我','才','发现','忘','带','护照','了','。'],ans:'来机场的路上我才发现忘带护照了。',audio:'来机场的路上我才发现忘带护照了。'},
-  {words:['因为','经理','生气','了','，','所以','小刚','8点','前','要','到','公司','。'],ans:'因为经理生气了，所以小刚8点前要到公司。',audio:'因为经理生气了，所以小刚8点前要到公司。'},
-  {words:['虽然','他','没','带','铅笔','，','但是','老师','还是','教','了','他','画画儿','。'],ans:'虽然他没带铅笔，但是老师还是教了他画画儿。',audio:'虽然他没带铅笔，但是老师还是教了他画画儿。'},
+  {words:['太阳','出来','以后','，','天气','就','暖和','了','。'],ans:'太阳出来以后，天气就暖和了。',audio:'太阳出来以后，天气就暖和了。'},
+  {words:['妈妈','有点儿','生气','。'],ans:'妈妈有点儿生气。',audio:'妈妈有点儿生气。'},
+  {words:['我','帮','你','把','水果','放到','包','里','吧','。'],ans:'我帮你把水果放到包里吧。',audio:'我帮你把水果放到包里吧。'},
+  {words:['下课','以后','我','才','发现','忘','拿','课本','了','。'],ans:'下课以后我才发现忘拿课本了。',audio:'下课以后我才发现忘拿课本了。'},
+  {words:['因为','学生','忘','了','拿','铅笔','，','所以','老师','有点儿','生气','。'],ans:'因为学生忘了拿铅笔，所以老师有点儿生气。',audio:'因为学生忘了拿铅笔，所以老师有点儿生气。'},
+  {words:['虽然','外面','下雨','，','但是','他','还是','去','公园','画画儿','了','。'],ans:'虽然外面下雨，但是他还是去公园画画儿了。',audio:'虽然外面下雨，但是他还是去公园画画儿了。'},
   {words:['如果','你','把','重要','的','东西','放在','我','这儿','，','我','就','帮','你','收好','。'],ans:'如果你把重要的东西放在我这儿，我就帮你收好。',audio:'如果你把重要的东西放在我这儿，我就帮你收好。'},
   {words:['我','看','你','还是','把','重要','的','东西','放在','我','这儿','吧','。'],ans:'我看你还是把重要的东西放在我这儿吧。',audio:'我看你还是把重要的东西放在我这儿吧。'},
 ];
@@ -444,9 +444,9 @@ var errorFixData = [
   {wrong:'我朋友把书我借了。',
    opts:['我朋友把书借给我了。','我朋友把书我借了。','我朋友把书借我给了。','我把朋友书借给我了。'],ans:0,
    exp:'Cấu trúc A+把+B+动词+给+người: 给+người phải đứng sau động từ, diễn tả chuyển giao sự vật.'},
-  {wrong:'司机把我到机场送了。',
-   opts:['司机把我送到机场了。','司机把我到机场送了。','司机把我送机场到了。','把司机我送到机场了。'],ans:0,
-   exp:'Động từ (送) phải đứng NGAY SAU 把+B(我), trước 到+vị trí, không đảo ngược thứ tự.'},
+  {wrong:'妈妈把行李箱到车上放了。',
+   opts:['妈妈把行李箱放到车上了。','妈妈把行李箱到车上放了。','妈妈把行李箱放车上到了。','把妈妈行李箱放到车上了。'],ans:0,
+   exp:'Động từ (放) phải đứng NGAY SAU 把+B(行李箱), trước 到+vị trí, không đảo ngược thứ tự.'},
 ];
 
 // ══════════════════════════════════════════
@@ -486,28 +486,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Sao anh đi ngủ sớm thế?', zh:'你怎么这么早就要睡觉了？', py:'Nǐ zěnme zhème zǎo jiù yào shuìjiào le?'},
-  {vi:'Em giúp anh xếp quần áo vào vali nhé.', zh:'我帮你把衣服放到行李箱里吧。', py:'Wǒ bāng nǐ bǎ yīfu fàngdào xínglixiāng li ba.'},
-  {vi:'Em đã để ảnh của em vào túi của anh rồi đấy.', zh:'我已经把我的照片放在你的包里了。', py:'Wǒ yǐjīng bǎ wǒ de zhàopiàn fàng zài nǐ de bāo li le.'},
-  {vi:'Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.', zh:'来机场的路上我才发现忘带护照了。', py:'Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.'},
-  {vi:'Máy bay sắp cất cánh rồi, nhanh lên đi.', zh:'飞机就要起飞了，快点吧。', py:'Fēijī jiù yào qǐfēi le, kuài diǎn ba.'},
-  {vi:'Tôi thấy cậu nên để những đồ quan trọng ở chỗ tôi thì hơn.', zh:'我看你还是把重要的东西放在我这儿吧。', py:'Wǒ kàn nǐ háishi bǎ zhòngyào de dōngxi fàngzài wǒ zhèr ba.'},
-  {vi:'Tôi dạy học sinh vẽ tranh.', zh:'我教学生画画儿。', py:'Wǒ jiāo xuésheng huà huàr.'},
-  {vi:'Tôi viết những đồ học sinh cần mang lên bảng.', zh:'我把学生需要带的东西写在黑板上。', py:'Wǒ bǎ xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.'},
+  {vi:'Sao anh phải ra khỏi nhà sớm thế?', zh:'你怎么这么早就要出门了？', py:'Nǐ zěnme zhème zǎo jiù yào chūmén le?'},
+  {vi:'Để tôi giúp bạn cho hộ chiếu vào túi nhé.', zh:'我帮你把护照放到包里吧。', py:'Wǒ bāng nǐ bǎ hùzhào fàngdào bāo li ba.'},
+  {vi:'Tôi đã để vé máy bay vào túi của bạn rồi đấy.', zh:'我已经把机票放在你的包里了。', py:'Wǒ yǐjīng bǎ jīpiào fàng zài nǐ de bāo li le.'},
+  {vi:'Về đến nhà tôi mới phát hiện quên mang chìa khóa.', zh:'回到家我才发现忘带钥匙了。', py:'Huídào jiā wǒ cái fāxiàn wàng dài yàoshi le.'},
+  {vi:'Cuộc họp sắp bắt đầu rồi, nhanh lên đi.', zh:'会议就要开始了，快点吧。', py:'Huìyì jiù yào kāishǐ le, kuài diǎn ba.'},
+  {vi:'Tôi thấy bạn nên đổi vé máy bay thì hơn.', zh:'我看你还是换一下机票吧。', py:'Wǒ kàn nǐ háishi huàn yíxià jīpiào ba.'},
+  {vi:'Cô ấy dạy tôi vẽ hoa.', zh:'她教我画花儿。', py:'Tā jiāo wǒ huà huār.'},
+  {vi:'Tôi viết tên của mình lên bảng.', zh:'我把自己的名字写在黑板上了。', py:'Wǒ bǎ zìjǐ de míngzi xiě zài hēibǎn shàng le.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Chỉ cần bạn tự chăm sóc bản thân tốt thì tôi sẽ yên tâm.', zh:'只要你自己照顾好自己，我就放心了。', py:'Zhǐyào nǐ zìjǐ zhàogù hǎo zìjǐ, wǒ jiù fàngxīn le.'},
-  {vi:'Tuy cậu ấy không mang bút chì nhưng thầy giáo vẫn dạy cậu ấy vẽ.', zh:'虽然他没带铅笔，但是老师还是教了他画画儿。', py:'Suīrán tā méi dài qiānbǐ, dànshì lǎoshī háishi jiāole tā huà huàr.'},
-  {vi:'Nếu bạn để đồ quan trọng ở chỗ tôi thì tôi sẽ giữ giúp bạn.', zh:'如果你把重要的东西放在我这儿，我就帮你收好。', py:'Rúguǒ nǐ bǎ zhòngyào de dōngxi fàng zài wǒ zhèr, wǒ jiù bāng nǐ shōuhǎo.'},
-  {vi:'Bạn tôi cho tôi mượn sách rồi.', zh:'我朋友把书借给我了。', py:'Wǒ péngyou bǎ shū jiè gěi wǒ le.'},
+  {vi:'Chỉ cần bạn tự chú ý an toàn thì tôi sẽ không lo nữa.', zh:'只要你自己多注意安全，我就不担心了。', py:'Zhǐyào nǐ zìjǐ duō zhùyì ānquán, wǒ jiù bù dānxīn le.'},
+  {vi:'Tuy bài này rất khó nhưng học sinh vẫn học được rất tốt.', zh:'虽然这课很难，但是学生还是学得很好。', py:'Suīrán zhè kè hěn nán, dànshì xuésheng háishi xué de hěn hǎo.'},
+  {vi:'Nếu bạn không biết dùng cái này thì tôi sẽ dạy bạn.', zh:'如果你不会用这个，我就教你。', py:'Rúguǒ nǐ bú huì yòng zhège, wǒ jiù jiāo nǐ.'},
+  {vi:'Chị gái tôi tặng cho tôi cái túi rồi.', zh:'我姐姐把包送给我了。', py:'Wǒ jiějie bǎ bāo sòng gěi wǒ le.'},
   {vi:'Em trai không trả tiền lại cho anh trai.', zh:'弟弟没把钱还给哥哥。', py:'Dìdi méi bǎ qián huán gěi gēge.'},
-  {vi:'Tài xế đưa tôi đến sân bay rồi.', zh:'司机把我送到机场了。', py:'Sījī bǎ wǒ sòngdào jīchǎng le.'},
+  {vi:'Anh trai đưa em đến trường rồi.', zh:'哥哥把我送到学校了。', py:'Gēge bǎ wǒ sòngdào xuéxiào le.'},
   {vi:'Ngồi máy bay một tiếng là đến rồi.', zh:'坐飞机一个小时就到了。', py:'Zuò fēijī yí ge xiǎoshí jiù dào le.'},
-  {vi:'Tám giờ vào học, cậu ấy chín giờ mới dậy.', zh:'八点上课，他九点才起床。', py:'Bā diǎn shàngkè, tā jiǔ diǎn cái qǐchuáng.'},
+  {vi:'Máy bay chín giờ cất cánh, anh ấy chín giờ mười phút mới đến sân bay.', zh:'飞机九点起飞，他九点十分才到机场。', py:'Fēijī jiǔ diǎn qǐfēi, tā jiǔ diǎn shí fēn cái dào jīchǎng.'},
 ];
 
 // ══════════════════════════════════════════

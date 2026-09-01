@@ -19,7 +19,7 @@ var vocabData = [
       cf:'流 (liú – "chảy", có bộ 氵")',w:'留学 / 留下'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Con gái đi du học nước ngoài được ba năm rồi.',answer:'女儿在国外留学三年了。',answerPy:'Nǚ\'ér zài guówài liú xué sān nián le.',
+     {promptLang:'vi',prompt:'Con gái của chú đi du học ở Úc được một năm rồi.',answer:'叔叔的女儿在澳大利亚留学一年了。',answerPy:'Shūshu de nǚ\'ér zài Àodàlìyà liú xué yì nián le.',
       note:'留学 + khoảng thời gian + 了 diễn tả việc đã kéo dài.'},
      {promptLang:'vi',prompt:'Tuy anh ấy đến Trung Quốc du học hai năm rồi nhưng trình độ tiến bộ không nhanh.',answer:'虽然他来中国留学两年了，但是水平提高得不快。',answerPy:'Suīrán tā lái Zhōngguó liú xué liǎng nián le, dànshì shuǐpíng tígāo de bú kuài.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
@@ -41,7 +41,7 @@ var vocabData = [
       cf:'干 (gān – "khô", không có nét ngang trên")',w:'水平 / 平常'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Trình độ tiếng Anh của anh ấy khá tốt.',answer:'他的英语水平很不错。',answerPy:'Tā de Yīngyǔ shuǐpíng hěn búcuò.',
+     {promptLang:'vi',prompt:'Trình độ tiếng Trung của em gái cũng khá tốt.',answer:'妹妹的汉语水平也很不错。',answerPy:'Mèimei de Hànyǔ shuǐpíng yě hěn búcuò.',
       note:'很不错 diễn tả đánh giá tích cực.'},
      {promptLang:'vi',prompt:'Nếu bạn học chăm chỉ thì trình độ sẽ nâng cao nhanh.',answer:'如果你认真学习，水平就会提高得很快。',answerPy:'Rúguǒ nǐ rènzhēn xuéxí, shuǐpíng jiù huì tígāo de hěn kuài.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'题 (tí – "đề bài", có bộ 页")',w:'提高 / 提问'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Phải nỗ lực luyện tập mới có thể nâng cao trình độ.',answer:'努力练习才能提高水平。',answerPy:'Nǔlì liànxí cái néng tígāo shuǐpíng.',
+     {promptLang:'vi',prompt:'Phải nghe nhiều nói nhiều mới có thể nâng cao trình độ tiếng Trung.',answer:'多听多说才能提高汉语水平。',answerPy:'Duō tīng duō shuō cái néng tígāo Hànyǔ shuǐpíng.',
       note:'才 diễn tả điều kiện cần (ôn lại đã học ở Bài 12).'},
      {promptLang:'vi',prompt:'Chỉ cần bạn chăm chỉ luyện tập thì trình độ sẽ nâng cao.',answer:'只要你认真练习，水平就会提高。',answerPy:'Zhǐyào nǐ rènzhēn liànxí, shuǐpíng jiù huì tígāo.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
@@ -85,7 +85,7 @@ var vocabData = [
       cf:'炼 (liàn – "tôi luyện", có bộ 火")',w:'练习 / 训练'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mấy bài tập này không khó lắm.',answer:'这些练习不太难。',answerPy:'Zhèxiē liànxí bú tài nán.',
+     {promptLang:'vi',prompt:'Bài tập hôm nay không nhiều lắm.',answer:'今天的练习不太多。',answerPy:'Jīntiān de liànxí bú tài duō.',
       note:'不太 + Adj diễn tả mức độ không cao lắm.'},
      {promptLang:'vi',prompt:'Nếu bạn làm xong bài tập thì có thể xem tivi.',answer:'如果你做完练习，就可以看电视。',answerPy:'Rúguǒ nǐ zuòwán liànxí, jiù kěyǐ kàn diànshì.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'城 (chéng – "thành phố", có bộ 土")',w:'完成 / 成功'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi đã hoàn thành bài tập hôm nay rồi.',answer:'我已经完成了今天的作业。',answerPy:'Wǒ yǐjīng wánchéngle jīntiān de zuòyè.',
+     {promptLang:'vi',prompt:'Anh ấy đã hoàn thành bài luyện tập của cuộc thi lần này rồi.',answer:'他已经完成了这次比赛的练习。',answerPy:'Tā yǐjīng wánchéngle zhè cì bǐsài de liànxí.',
       note:'已经……了 diễn tả hành động đã hoàn tất.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn hoàn thành bài tập thì có thể ra ngoài chơi.',answer:'只要你完成作业，就可以出去玩。',answerPy:'Zhǐyào nǐ wánchéng zuòyè, jiù kěyǐ chūqu wán.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'包 (bāo – "gói", có 巳 thay vì 口")',w:'句子 / 一句话'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Câu này đọc thế nào?',answer:'这个句子怎么读？',answerPy:'Zhège jùzi zěnme dú?',
+     {promptLang:'vi',prompt:'Câu này dịch thế nào?',answer:'这个句子怎么翻译？',answerPy:'Zhège jùzi zěnme fānyì?',
       note:'怎么 + V hỏi về cách thức.'},
      {promptLang:'vi',prompt:'Nếu câu nào không hiểu thì bạn có thể hỏi tôi.',answer:'如果有什么句子不明白，你就可以问我。',answerPy:'Rúguǒ yǒu shénme jùzi bù míngbai, nǐ jiù kěyǐ wèn wǒ.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'甚 (shèn – "rất", hình dáng gần giống")',w:'其他 / 其中'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Ngoài bạn Vân ra, những người khác đều đến rồi.',answer:'除了小云，其他人都来了。',answerPy:'Chúle Xiǎoyún, qítā rén dōu lái le.',
+     {promptLang:'vi',prompt:'Ngoài Tiểu Minh ra, các học sinh khác đều đã hoàn thành bài tập rồi.',answer:'除了小明，其他学生都完成作业了。',answerPy:'Chúle Xiǎomíng, qítā xuésheng dōu wánchéng zuòyè le.',
       note:'除了……都…… diễn tả loại trừ một phần (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn có việc khác cần giúp thì cứ nói với tôi.',answer:'如果你有其他事情需要帮忙，就跟我说吧。',answerPy:'Rúguǒ nǐ yǒu qítā shìqing xūyào bāngmáng, jiù gēn wǒ shuō ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'友 (yǒu – "bạn", hình dáng gần giống")',w:'发 / 出发 / 发现'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Điện thoại tôi lên mạng được, dùng điện thoại cũng gửi được.',answer:'我的手机能上网，用手机也能发。',answerPy:'Wǒ de shǒujī néng shàng wǎng, yòng shǒujī yě néng fā.',
+     {promptLang:'vi',prompt:'Máy tính này lên mạng được, cũng gửi email được.',answer:'这个电脑能上网，也能发电子邮件。',answerPy:'Zhège diànnǎo néng shàng wǎng, yě néng fā diànzǐ yóujiàn.',
       note:'能 diễn tả khả năng (ôn lại 上网 sẽ học ngay bên dưới).'},
      {promptLang:'vi',prompt:'Nếu bạn cần gửi email thì có thể dùng máy tính của tôi.',answer:'如果你要发电子邮件，就可以用我的电脑。',answerPy:'Rúguǒ nǐ yào fā diànzǐ yóujiàn, jiù kěyǐ yòng wǒ de diànnǎo.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'球 (qiú – "quả bóng", có bộ 王")',w:'要求 / 求助'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi chỉ có mỗi một yêu cầu này thôi.',answer:'我只有这一个要求。',answerPy:'Wǒ zhǐyǒu zhè yí ge yāoqiú.',
+     {promptLang:'vi',prompt:'Anh ấy chỉ có một yêu cầu về căn nhà thôi.',answer:'他对房子只有一个要求。',answerPy:'Tā duì fángzi zhǐyǒu yí ge yāoqiú.',
       note:'只有 diễn tả sự giới hạn duy nhất.'},
      {promptLang:'vi',prompt:'Nếu bạn có yêu cầu gì thì cứ nói với thầy giáo.',answer:'如果你有什么要求，就跟老师说吧。',answerPy:'Rúguǒ nǐ yǒu shénme yāoqiú, jiù gēn lǎoshī shuō ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -217,7 +217,7 @@ var vocabData = [
       cf:'住 (zhù – "ở", có bộ 亻")',w:'注意 / 注重'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lúc lái xe phải chú ý người đi bộ trên đường.',answer:'开车的时候要注意路上的行人。',answerPy:'Kāichē de shíhou yào zhù yì lùshang de xíngrén.',
+     {promptLang:'vi',prompt:'Lúc thi phải chú ý thời gian.',answer:'考试的时候要注意时间。',answerPy:'Kǎoshì de shíhou yào zhù yì shíjiān.',
       note:'……的时候 diễn tả thời điểm.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn chú ý an toàn thì bố mẹ sẽ yên tâm.',answer:'只要你注意安全，爸爸妈妈就会放心。',answerPy:'Zhǐyào nǐ zhù yì ānquán, bàba māma jiù huì fàngxīn.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'肉 (ròu – "thịt", hình dáng gần giống")',w:'上网 / 网上'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Em trai đành lên mạng xem chương trình tivi mình thích.',answer:'弟弟只好上网看自己喜欢的电视节目。',answerPy:'Dìdi zhǐhǎo shàng wǎng kàn zìjǐ xǐhuan de diànshì jiémù.',
+     {promptLang:'vi',prompt:'Bên ngoài trời mưa, anh ấy đành ở nhà lên mạng xem phim.',answer:'外面下雨，他只好在家上网看电影。',answerPy:'Wàimiàn xià yǔ, tā zhǐhǎo zài jiā shàng wǎng kàn diànyǐng.',
       note:'只好 diễn tả sự bất đắc dĩ (ôn lại 节目 đã học ở Bài 14).'},
      {promptLang:'vi',prompt:'Nếu bạn muốn xem tin tức thì có thể lên mạng.',answer:'如果你想看新闻，就可以上网。',answerPy:'Rúguǒ nǐ xiǎng kàn xīnwén, jiù kěyǐ shàng wǎng.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'问 (wèn – "hỏi", có 口 thay vì 耳")',w:'新闻 / 闻名'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Hôm nay báo có tin tức gì không?',answer:'今天报纸上有什么新闻吗？',answerPy:'Jīntiān bàozhǐ shang yǒu shénme xīnwén ma?',
+     {promptLang:'vi',prompt:'Trên mạng có tin tức gì thú vị không?',answer:'网上有什么有意思的新闻吗？',answerPy:'Wǎngshang yǒu shénme yǒuyìsi de xīnwén ma?',
       note:'什么 làm đại từ chỉ thị, hỏi một cách lịch sự (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Ngoài xem tin tức ra, ông ấy còn thích uống trà.',answer:'除了看新闻以外，他还喜欢喝茶。',answerPy:'Chúle kàn xīnwén yǐwài, tā hái xǐhuan hē chá.',
       note:'除了……还…… diễn tả bổ sung thêm điều khác.'},
@@ -305,7 +305,7 @@ var vocabData = [
       cf:'化 (huà – "biến đổi", không có bộ 艹")',w:'花钱 / 花 (hoa)'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tháng này sao bạn tiêu nhiều tiền thế?',answer:'这个月你怎么花了这么多钱？',answerPy:'Zhège yuè nǐ zěnme huāle zhème duō qián?',
+     {promptLang:'vi',prompt:'Sao bạn tốn nhiều thời gian thế?',answer:'你怎么花了那么长时间？',answerPy:'Nǐ zěnme huāle nàme cháng shíjiān?',
       note:'怎么 hỏi nguyên nhân, thái độ ngạc nhiên.'},
      {promptLang:'vi',prompt:'Nếu bạn không tốn tiền thì có thể mua thứ khác.',answer:'如果你不花钱，就可以买其他东西。',answerPy:'Rúguǒ nǐ bù huā qián, jiù kěyǐ mǎi qítā dōngxi.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 其他 đã học trong bài này).'},
@@ -327,7 +327,7 @@ var vocabData = [
       cf:'级 (jí – "cấp bậc", có bộ 纟")',w:'极了 / 积极'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Con chó nhỏ của tôi đáng yêu lắm.',answer:'我的小狗可爱极了。',answerPy:'Wǒ de xiǎogǒu kě\'ài jí le.',
+     {promptLang:'vi',prompt:'Bia ở đây ngon lắm.',answer:'这儿的啤酒好喝极了。',answerPy:'Zhèr de píjiǔ hǎohē jí le.',
       note:'Adj + 极了 diễn tả mức độ cao nhất (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Hôm nay thời tiết lạnh lắm.',answer:'今天天气冷极了。',answerPy:'Jīntiān tiānqì lěng jí le.',
       note:'Adj + 极了 diễn tả mức độ cao nhất.'},
@@ -349,7 +349,7 @@ var vocabData = [
       cf:'即 (jí – "ngay lập tức", có 艮 thay vì ⺮")',w:'节日 / 春节 / 节目'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tết Nguyên đán là ngày lễ quan trọng nhất của Trung Quốc.',answer:'春节是中国最重要的节日。',answerPy:'Chūnjié shì Zhōngguó zuì zhòngyào de jiérì.',
+     {promptLang:'vi',prompt:'Tết Trung thu là ngày lễ tôi thích nhất.',answer:'中秋节是我最喜欢的节日。',answerPy:'Zhōngqiū jié shì wǒ zuì xǐhuan de jiérì.',
       note:'最 + Adj diễn tả mức độ cao nhất tuyệt đối.'},
      {promptLang:'vi',prompt:'Ngoài Tết Nguyên đán ra, tôi còn thích Tết Trung thu.',answer:'除了春节以外，我还喜欢中秋节。',answerPy:'Chúle Chūnjié yǐwài, wǒ hái xǐhuan Zhōngqiū jié.',
       note:'除了……还…… diễn tả bổ sung thêm điều khác.'},
@@ -371,7 +371,7 @@ var vocabData = [
       cf:'兴 (xīng – "hưng thịnh", hình dáng gần giống")',w:'举行 / 举手'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Trường học mỗi năm đều tổ chức một lần hội thao.',answer:'学校每年都举行一次运动会。',answerPy:'Xuéxiào měi nián dōu jǔxíng yí cì yùndònghuì.',
+     {promptLang:'vi',prompt:'Công ty mỗi năm đều tổ chức một buổi tiệc năm mới.',answer:'公司每年都举行一次新年晚会。',answerPy:'Gōngsī měi nián dōu jǔxíng yí cì xīnnián wǎnhuì.',
       note:'每年都 diễn tả tính lặp lại hàng năm.'},
      {promptLang:'vi',prompt:'Nếu trường tổ chức thi đấu thì tôi nhất định tham gia.',answer:'如果学校举行比赛，我就一定参加。',answerPy:'Rúguǒ xuéxiào jǔxíng bǐsài, wǒ jiù yídìng cānjiā.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -393,7 +393,7 @@ var vocabData = [
       cf:'介 (jiè – "giới thiệu", không có bộ 田")',w:'世界 / 世界上'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Đây là một thế giới xinh đẹp.',answer:'这是一个美丽的世界。',answerPy:'Zhè shì yí ge měilì de shìjiè.',
+     {promptLang:'vi',prompt:'Đây là một thế giới thú vị.',answer:'这是一个有意思的世界。',answerPy:'Zhè shì yí ge yǒuyìsi de shìjiè.',
       note:'一个 + Adj + N cấu trúc miêu tả.'},
      {promptLang:'vi',prompt:'Nếu bạn muốn hiểu thế giới thì nên đi du lịch nhiều hơn.',answer:'如果你想了解世界，就应该多去旅游。',answerPy:'Rúguǒ nǐ xiǎng liǎojiě shìjiè, jiù yīnggāi duō qù lǚyóu.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 应该 đã học ở Bài 13).'},
@@ -415,7 +415,7 @@ var vocabData = [
       cf:'衔 (xián – "ngậm", có 金 thay vì 圭")',w:'街道 / 上街'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Căn nhà chúng tôi mới mua chính là ở con đường vừa đi qua đó.',answer:'我们新买的房子就在刚才过去的那条街上。',answerPy:'Wǒmen xīn mǎi de fángzi jiù zài gāngcái guòqu de nà tiáo jiē shang.',
+     {promptLang:'vi',prompt:'Nhà anh ấy chính là ở con đường phía trước đó.',answer:'他家就在前面那条街道上。',answerPy:'Tā jiā jiù zài qiánmiàn nà tiáo jiēdào shang.',
       note:'条 là lượng từ dùng cho đường phố.'},
      {promptLang:'vi',prompt:'Nếu đường phố sạch sẽ và yên tĩnh thì tôi rất thích sống ở đó.',answer:'如果街道又干净又安静，我就很喜欢住在那儿。',answerPy:'Rúguǒ jiēdào yòu gānjìng yòu ānjìng, wǒ jiù hěn xǐhuan zhù zài nàr.',
       note:'又……又…… diễn tả hai đặc điểm cùng tồn tại.'},
@@ -437,7 +437,7 @@ var vocabData = [
       cf:'名 (míng – "tên", có 夕 thay vì 夂")',w:'各 / 各种 / 各个'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Văn hóa của mỗi quốc gia đều khác nhau.',answer:'各个国家的文化都不一样。',answerPy:'Gège guójiā de wénhuà dōu bù yíyàng.',
+     {promptLang:'vi',prompt:'Thời tiết của mỗi mùa đều khác nhau.',answer:'各个季节的天气都不一样。',answerPy:'Gège jìjié de tiānqì dōu bù yíyàng.',
       note:'各个 + N + 都 diễn tả từng cái riêng biệt.'},
      {promptLang:'vi',prompt:'Nếu bạn muốn hiểu văn hóa các nước thì nên đi du lịch nhiều nơi.',answer:'如果你想了解各国文化，就应该多去几个地方旅游。',answerPy:'Rúguǒ nǐ xiǎng liǎojiě gè guó wénhuà, jiù yīnggāi duō qù jǐ ge dìfang lǚyóu.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -459,7 +459,7 @@ var vocabData = [
       cf:'花 (huā – "hoa", có bộ 艹")',w:'文化 / 变化'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi rất hứng thú với văn hóa Trung Quốc.',answer:'我对中国文化很感兴趣。',answerPy:'Wǒ duì Zhōngguó wénhuà hěn gǎn xìngqù.',
+     {promptLang:'vi',prompt:'Tôi rất hứng thú với văn hóa lễ hội bia.',answer:'我对啤酒节的文化很感兴趣。',answerPy:'Wǒ duì píjiǔ jié de wénhuà hěn gǎn xìngqù.',
       note:'对……感兴趣 diễn tả sự hứng thú.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn đến lễ hội bia thì có thể hiểu văn hóa ở đây.',answer:'只要你来啤酒节，就可以了解这里的文化。',answerPy:'Zhǐyào nǐ lái píjiǔ jié, jiù kěyǐ liǎojiě zhèli de wénhuà.',
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 节日 đã học trong bài này).'},
@@ -556,15 +556,15 @@ var fillData = [
   {pre:'我的汉语',blank:'水平',post:'提高得一点儿也不快。',hint:'(trình độ)',ans:'水平'},
   {pre:'汉语水平',blank:'提高',post:'得一点儿也不快。',hint:'(nâng cao, tiến bộ)',ans:'提高'},
   {pre:'每天做',blank:'练习',post:'、完成作业。',hint:'(bài tập)',ans:'练习'},
-  {pre:'每天做练习、',blank:'完成',post:'作业。',hint:'(hoàn thành)',ans:'完成'},
+  {pre:'他认真',blank:'完成',post:'了这次的作业。',hint:'(hoàn thành)',ans:'完成'},
   {pre:'这个',blank:'句子',post:'意思有些不清楚。',hint:'(câu)',ans:'句子'},
   {pre:'',blank:'其他',post:'都没什么问题。',hint:'(cái khác)',ans:'其他'},
   {pre:'可以给我打电话或者',blank:'发',post:'电子邮件。',hint:'(gửi, gửi đi)',ans:'发'},
   {pre:'我先给大家讲讲这次比赛的',blank:'要求',post:'。',hint:'(yêu cầu)',ans:'要求'},
   {pre:'一些需要',blank:'注意',post:'的地方。',hint:'(chú ý)',ans:'注意'},
-  {pre:'现在用电脑',blank:'上网',post:'真方便啊。',hint:'(lên mạng)',ans:'上网'},
+  {pre:'在家用手机',blank:'上网',post:'也很方便。',hint:'(lên mạng)',ans:'上网'},
   {pre:'',blank:'除了',post:'看新闻，人们还可以在网上听歌。',hint:'(ngoài...ra)',ans:'除了'},
-  {pre:'除了看',blank:'新闻',post:'，人们还可以在网上听歌。',hint:'(tin tức)',ans:'新闻'},
+  {pre:'他每天都看',blank:'新闻',post:'，了解世界大事。',hint:'(tin tức)',ans:'新闻'},
   {pre:'不用',blank:'花',post:'钱，还有新衣服穿。',hint:'(tốn, tiêu tốn)',ans:'花'},
   {pre:'他满意',blank:'极了',post:'。',hint:'(hết sức, cực kỳ)',ans:'极了'},
   {pre:'啤酒节也是这里很重要的一个',blank:'节日',post:'。',hint:'(ngày lễ)',ans:'节日'},
@@ -580,13 +580,13 @@ var fillData = [
 // ══════════════════════════════════════════
 var sortData = [
   {words:['你','每天','认真','学习','，','做','练习','、','完成','作业','。'],ans:'你每天认真学习，做练习、完成作业。',audio:'你每天认真学习，做练习、完成作业。'},
-  {words:['除了','这个','句子','意思','有些','不清楚','外','，','其他','都','没','什么','问题','。'],ans:'除了这个句子意思有些不清楚外，其他都没什么问题。',audio:'除了这个句子意思有些不清楚外，其他都没什么问题。'},
-  {words:['现在','用','电脑','上网','真','方便','啊','！'],ans:'现在用电脑上网真方便啊！',audio:'现在用电脑上网真方便啊！'},
-  {words:['他','满意','极了','。'],ans:'他满意极了。',audio:'他满意极了。'},
-  {words:['虽然','他','来','中国','留学','两年','了','，','但是','水平','提高','得','不快','。'],ans:'虽然他来中国留学两年了，但是水平提高得不快。',audio:'虽然他来中国留学两年了，但是水平提高得不快。'},
+  {words:['除了','这次','的','练习','有点儿','难','以外','，','其他','都','没','什么','问题','。'],ans:'除了这次的练习有点儿难以外，其他都没什么问题。',audio:'除了这次的练习有点儿难以外，其他都没什么问题。'},
+  {words:['在','图书馆','用','电脑','上网','很','方便','。'],ans:'在图书馆用电脑上网很方便。',audio:'在图书馆用电脑上网很方便。'},
+  {words:['这个','菜','好吃','极了','。'],ans:'这个菜好吃极了。',audio:'这个菜好吃极了。'},
+  {words:['虽然','妹妹','每天','认真','做','练习','，','但是','句子','写','得','还','不','够','好','。'],ans:'虽然妹妹每天认真做练习，但是句子写得还不够好。',audio:'虽然妹妹每天认真做练习，但是句子写得还不够好。'},
   {words:['如果','你','有','什么','不明白','的','地方','，','就','可以','给','我','打电话','。'],ans:'如果你有什么不明白的地方，就可以给我打电话。',audio:'如果你有什么不明白的地方，就可以给我打电话。'},
   {words:['只要','你','努力','练习','，','就','能','越','写','越','漂亮','。'],ans:'只要你努力练习，就能越写越漂亮。',audio:'只要你努力练习，就能越写越漂亮。'},
-  {words:['除了','春节','、','中秋节','以外','，','啤酒节','也','是','这里','很','重要','的','一个','节日','。'],ans:'除了春节、中秋节以外，啤酒节也是这里很重要的一个节日。',audio:'除了春节、中秋节以外，啤酒节也是这里很重要的一个节日。'},
+  {words:['除了','国庆节','、','劳动节','以外','，','元旦','也','是','这里','很','重要','的','一个','节日','。'],ans:'除了国庆节、劳动节以外，元旦也是这里很重要的一个节日。',audio:'除了国庆节、劳动节以外，元旦也是这里很重要的一个节日。'},
 ];
 
 // ══════════════════════════════════════════
@@ -596,18 +596,18 @@ var errorFixData = [
   {wrong:'除了这个汉字，别的汉字我不都认识。',
    opts:['除了这个汉字以外，别的汉字我都认识。','除了这个汉字，别的汉字我不都认识。','除了这个汉字以外，别的汉字我都不认识。','我除了这个汉字以外都认识别的汉字不。'],ans:0,
    exp:'Cấu trúc 除了……以外，都…… không đi cùng phủ định 不都; phải dùng 都 khẳng định.'},
-  {wrong:'我的小狗极了可爱。',
-   opts:['我的小狗可爱极了。','我的小狗极了可爱。','我的小狗极可爱了。','极了我的小狗可爱。'],ans:0,
-   exp:'极了 phải đứng SAU tính từ/động từ tâm lý (可爱), không đặt trước.'},
-  {wrong:'除了小云其他人来了都。',
-   opts:['除了小云，其他人都来了。','除了小云其他人来了都。','除了小云都其他人来了。','其他人除了小云来都了。'],ans:0,
-   exp:'都 phải đứng NGAY TRƯỚC động từ (来了), không đặt cuối câu.'},
+  {wrong:'这次的比赛极了有意思。',
+   opts:['这次的比赛有意思极了。','这次的比赛极了有意思。','极了这次的比赛有意思。','这次极了的比赛有意思。'],ans:0,
+   exp:'极了 phải đứng SAU tính từ/động từ tâm lý (有意思), không đặt trước.'},
+  {wrong:'除了老师其他学生进教室了都。',
+   opts:['除了老师，其他学生都进教室了。','除了老师其他学生进教室了都。','除了老师都其他学生进教室了。','其他学生除了老师进教室了都。'],ans:0,
+   exp:'都 phải đứng NGAY TRƯỚC động từ (进教室了), không đặt cuối câu.'},
   {wrong:'你写得很好，问题没什么。',
    opts:['你写得很好，没什么问题。','你写得很好，问题没什么。','你写得很好，什么没问题。','你写得很好，没问题什么。'],ans:0,
    exp:'什么 làm đại từ chỉ thị phải đứng TRƯỚC danh từ (问题), theo cấu trúc 没+什么+danh từ.'},
-  {wrong:'除了唱歌，他还跳舞喜欢以外。',
-   opts:['除了唱歌以外，他还喜欢跳舞。','除了唱歌，他还跳舞喜欢以外。','他除了唱歌以外还跳舞喜欢。','除了唱歌以外还喜欢，他跳舞。'],ans:0,
-   exp:'以外 phải đứng NGAY SAU phần bị loại trừ (唱歌); động từ+tân ngữ (喜欢跳舞) không được đảo.'},
+  {wrong:'除了游泳，她还爬山喜欢以外。',
+   opts:['除了游泳以外，她还喜欢爬山。','除了游泳，她还爬山喜欢以外。','她除了游泳以外还爬山喜欢。','除了游泳以外还喜欢，她爬山。'],ans:0,
+   exp:'以外 phải đứng NGAY SAU phần bị loại trừ (游泳); động từ+tân ngữ (喜欢爬山) không được đảo.'},
 ];
 
 // ══════════════════════════════════════════
@@ -647,27 +647,27 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Em đến Trung Quốc du học được hai năm rồi.', zh:'我来中国留学两年了。', py:'Wǒ lái Zhōngguó liú xué liǎng nián le.'},
+  {vi:'Anh trai tôi đi Hàn Quốc du học ba năm rồi.', zh:'我哥哥去韩国留学三年了。', py:'Wǒ gēge qù Hánguó liú xué sān nián le.'},
   {vi:'Ngoài câu này ra, còn lại đều không có vấn đề gì.', zh:'除了这个句子以外，其他都没什么问题。', py:'Chúle zhège jùzi yǐwài, qítā dōu méi shénme wèntí.'},
-  {vi:'Ngoài bạn Vân ra, những người khác đều đến rồi.', zh:'除了小云，其他人都来了。', py:'Chúle Xiǎoyún, qítā rén dōu lái le.'},
-  {vi:'Bây giờ dùng máy tính lên mạng tiện thật đấy!', zh:'现在用电脑上网真方便啊！', py:'Xiànzài yòng diànnǎo shàng wǎng zhēn fāngbiàn a!'},
-  {vi:'Cậu ấy hài lòng lắm.', zh:'他满意极了。', py:'Tā mǎnyì jí le.'},
-  {vi:'Nơi này mỗi năm vào mùa hè đều tổ chức một lần lễ hội bia.', zh:'这个地方每年夏天都要举行一次啤酒节。', py:'Zhège dìfang měi nián xiàtiān dōu yào jǔxíng yí cì píjiǔ jié.'},
-  {vi:'Bạn có thể uống được bia từ nhiều nơi khác nhau trên thế giới.', zh:'你可以喝到世界上不同地方的啤酒。', py:'Nǐ kěyǐ hēdào shìjiè shang bùtóng dìfang de píjiǔ.'},
-  {vi:'Bạn có muốn tìm hiểu văn hóa bia của các nơi trên thế giới không?', zh:'你想不想了解世界各个地方的啤酒文化？', py:'Nǐ xiǎng bu xiǎng liǎojiě shìjiè gège dìfang de píjiǔ wénhuà?'},
+  {vi:'Ngoài mì ra, các món khác cô ấy đều không thích.', zh:'除了面条以外，其他的菜她都不喜欢。', py:'Chúle miàntiáo yǐwài, qítā de cài tā dōu bù xǐhuan.'},
+  {vi:'Anh ấy tối nào cũng dùng điện thoại lên mạng trò chuyện.', zh:'他每天晚上都用手机上网聊天。', py:'Tā měi tiān wǎnshang dōu yòng shǒujī shàng wǎng liáotiān.'},
+  {vi:'Bức tranh này đẹp lắm.', zh:'这张画漂亮极了。', py:'Zhè zhāng huà piàoliang jí le.'},
+  {vi:'Trường chúng tôi mỗi năm mùa thu đều tổ chức một lần hội sách.', zh:'我们学校每年秋天都要举行一次读书节。', py:'Wǒmen xuéxiào měi nián qiūtiān dōu yào jǔxíng yí cì dúshū jié.'},
+  {vi:'Ở đây bạn có thể nếm được món ăn từ nhiều nơi khác nhau trên thế giới.', zh:'在这里你可以吃到世界上不同地方的美食。', py:'Zài zhèli nǐ kěyǐ chīdào shìjiè shang bùtóng dìfang de měishí.'},
+  {vi:'Bạn có muốn tìm hiểu văn hóa ẩm thực của các nước trên thế giới không?', zh:'你想不想了解世界各个国家的饮食文化？', py:'Nǐ xiǎng bu xiǎng liǎojiě shìjiè gège guójiā de yǐnshí wénhuà?'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tuy anh ấy đến Trung Quốc du học hai năm rồi nhưng trình độ tiến bộ không nhanh.', zh:'虽然他来中国留学两年了，但是水平提高得不快。', py:'Suīrán tā lái Zhōngguó liú xué liǎng nián le, dànshì shuǐpíng tígāo de bú kuài.'},
-  {vi:'Nếu bạn có chỗ nào không hiểu thì có thể gọi điện cho tôi.', zh:'如果你有什么不明白的地方，就可以给我打电话。', py:'Rúguǒ nǐ yǒu shénme bù míngbai de dìfang, jiù kěyǐ gěi wǒ dǎ diànhuà.'},
-  {vi:'Chỉ cần bạn nỗ lực luyện tập thì sẽ viết ngày càng đẹp.', zh:'只要你努力练习，就能越写越漂亮。', py:'Zhǐyào nǐ nǔlì liànxí, jiù néng yuè xiě yuè piàoliang.'},
-  {vi:'Ngoài hát ra, anh ấy còn thích nhảy múa.', zh:'除了唱歌以外，他还喜欢跳舞。', py:'Chúle chànggē yǐwài, tā hái xǐhuan tiàowǔ.'},
-  {vi:'Ngoài tiếng Trung ra, tôi còn biết nói tiếng Anh.', zh:'除了汉语以外，我还会说英语。', py:'Chúle Hànyǔ yǐwài, wǒ hái huì shuō Yīngyǔ.'},
-  {vi:'Con chó nhỏ của tôi đáng yêu lắm.', zh:'我的小狗可爱极了。', py:'Wǒ de xiǎogǒu kě\'ài jí le.'},
-  {vi:'Hôm nay thời tiết lạnh lắm.', zh:'今天天气冷极了。', py:'Jīntiān tiānqì lěng jí le.'},
+  {vi:'Tuy anh ấy đã hoàn thành bài tập nhưng vẫn còn vài câu chưa rõ nghĩa.', zh:'虽然他完成了作业，但是还有几个句子意思不清楚。', py:'Suīrán tā wánchéngle zuòyè, dànshì hái yǒu jǐ ge jùzi yìsi bù qīngchu.'},
+  {vi:'Nếu bạn có việc gấp thì có thể gọi điện cho tôi bất cứ lúc nào.', zh:'如果你有急事，随时都可以给我打电话。', py:'Rúguǒ nǐ yǒu jíshì, suíshí dōu kěyǐ gěi wǒ dǎ diànhuà.'},
+  {vi:'Chỉ cần bạn nghe nhiều nói nhiều thì có thể nâng cao trình độ nghe.', zh:'只要你多听多说，就能提高听力水平。', py:'Zhǐyào nǐ duō tīng duō shuō, jiù néng tígāo tīnglì shuǐpíng.'},
+  {vi:'Ngoài chơi bóng rổ ra, anh ấy còn thích chạy bộ.', zh:'除了打篮球以外，他还喜欢跑步。', py:'Chúle dǎ lánqiú yǐwài, tā hái xǐhuan pǎobù.'},
+  {vi:'Ngoài tiếng Việt ra, tôi còn biết nói tiếng Nhật.', zh:'除了越南语以外，我还会说日语。', py:'Chúle Yuènányǔ yǐwài, wǒ hái huì shuō Rìyǔ.'},
+  {vi:'Con mèo nhỏ của tôi thông minh lắm.', zh:'我的小猫聪明极了。', py:'Wǒ de xiǎomāo cōngming jí le.'},
+  {vi:'Câu hỏi này khó lắm.', zh:'这道题难极了。', py:'Zhè dào tí nán jí le.'},
   {vi:'Chiếc áo đó tôi thích lắm.', zh:'那件衣服我喜欢极了。', py:'Nà jiàn yīfu wǒ xǐhuan jí le.'},
 ];
 

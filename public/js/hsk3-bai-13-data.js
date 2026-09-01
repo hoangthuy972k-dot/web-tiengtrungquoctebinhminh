@@ -19,7 +19,7 @@ var vocabData = [
       cf:'冬 (dōng – "mùa đông", không có bộ 纟")',w:'终于 / 最终'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chờ mãi, cuối cùng tàu hoả cũng đến.',answer:'等了很久，火车终于来了。',answerPy:'Děngle hěn jiǔ, huǒchē zhōngyú lái le.',
+     {promptLang:'vi',prompt:'Đợi nửa tiếng, xe buýt cuối cùng cũng đến rồi.',answer:'等了半个小时，公共汽车终于来了。',answerPy:'Děngle bàn ge xiǎoshí, gōnggòng qìchē zhōngyú lái le.',
       note:'终于 đứng trước động từ, diễn tả sự việc cuối cùng cũng xảy ra sau thời gian dài.'},
      {promptLang:'vi',prompt:'Vì cuối cùng cũng tìm được nên tôi rất vui.',answer:'因为终于找到了，所以我很高兴。',answerPy:'Yīnwèi zhōngyú zhǎodào le, suǒyǐ wǒ hěn gāoxìng.',
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
@@ -41,7 +41,7 @@ var vocabData = [
       cf:'爸 (bà – "cha", có bộ 巴")',w:'爷爷 / 大爷'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Ông nội năm nay bảy mươi tuổi rồi.',answer:'爷爷今年七十岁了。',answerPy:'Yéye jīnnián qīshí suì le.',
+     {promptLang:'vi',prompt:'Ông nội của bạn tôi năm nay tám mươi tuổi rồi.',answer:'我朋友的爷爷今年八十岁了。',answerPy:'Wǒ péngyou de yéye jīnnián bāshí suì le.',
       note:'岁 chỉ tuổi tác, đi cùng con số.'},
      {promptLang:'vi',prompt:'Tuy ông nội đã già nhưng vẫn rất khoẻ mạnh.',answer:'虽然爷爷已经老了，但是他还是很健康。',answerPy:'Suīrán yéye yǐjīng lǎo le, dànshì tā háishi hěn jiànkāng.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'衣 (yī – "áo", không có bộ 礻")',w:'礼物 / 送礼'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bố mang một ít quà từ nước ngoài về.',answer:'爸爸从国外带回来一些礼物。',answerPy:'Bàba cóng guówài dài huilai yìxiē lǐwù.',
+     {promptLang:'vi',prompt:'Anh trai mang một chiếc bánh sinh nhật từ cửa hàng về.',answer:'哥哥从商店带回来一个生日蛋糕。',answerPy:'Gēge cóng shāngdiàn dài huilai yí ge shēngrì dàngāo.',
       note:'带回来 = bổ ngữ xu hướng kép (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn không biết mua quà gì thì tôi có thể giúp bạn.',answer:'如果你不知道买什么礼物，我就可以帮你。',answerPy:'Rúguǒ nǐ bù zhīdào mǎi shénme lǐwù, wǒ jiù kěyǐ bāng nǐ.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -85,7 +85,7 @@ var vocabData = [
       cf:'奴 (nú – "nô lệ", có 又 thay vì 乃")',w:'奶奶 / 牛奶'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Món ăn bà nội nấu đặc biệt ngon.',answer:'奶奶做的菜特别好吃。',answerPy:'Nǎinai zuò de cài tèbié hǎochī.',
+     {promptLang:'vi',prompt:'Món mì bà nội nấu đặc biệt ngon.',answer:'奶奶做的面条特别好吃。',answerPy:'Nǎinai zuò de miàntiáo tèbié hǎochī.',
       note:'的 nối định ngữ 奶奶做 với danh từ 菜.'},
      {promptLang:'vi',prompt:'Chỉ cần bà nội khoẻ mạnh thì cả nhà đều vui.',answer:'只要奶奶健康，全家人就都高兴。',answerPy:'Zhǐyào nǎinai jiànkāng, quánjiā rén jiù dōu gāoxìng.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'偶 (ǒu – "ngẫu nhiên", có bộ 亻")',w:'遇到 / 遇见'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lâu rồi không gặp! Không ngờ lại gặp bạn ở đây.',answer:'好久不见！没想到在这儿遇到你了。',answerPy:'Hǎojiǔ bú jiàn! Méi xiǎngdào zài zhèr yùdào nǐ le.',
+     {promptLang:'vi',prompt:'Lâu quá không gặp! Không ngờ lại gặp bạn ở siêu thị.',answer:'好久不见！没想到在超市遇到你了。',answerPy:'Hǎojiǔ bú jiàn! Méi xiǎngdào zài chāoshì yùdào nǐ le.',
       note:'没想到 diễn tả sự bất ngờ.'},
      {promptLang:'vi',prompt:'Nếu bạn gặp vấn đề gì thì cứ hỏi tôi.',answer:'如果你遇到什么问题，就问我吧。',answerPy:'Rúguǒ nǐ yùdào shénme wèntí, jiù wèn wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'力 (lì – "sức lực", không có bộ 辶")',w:'一边 / 旁边 / 那边'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mẹ vừa hát vừa nấu cơm.',answer:'妈妈一边唱歌一边做饭。',answerPy:'Māma yìbiān chànggē yìbiān zuò fàn.',
+     {promptLang:'vi',prompt:'Em gái vừa nghe nhạc vừa làm bài tập.',answer:'妹妹一边听音乐一边做作业。',answerPy:'Mèimei yìbiān tīng yīnyuè yìbiān zuò zuòyè.',
       note:'一边……一边…… diễn tả hai hành động xảy ra cùng lúc (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Thầy giáo vừa nói vừa cười.',answer:'老师边说边笑。',answerPy:'Lǎoshī biān shuō biān xiào.',
       note:'边……边…… là dạng lược bỏ 一 của 一边……一边…….'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'辻 (không phải chữ Hán thường dùng)',w:'过去 / 经过 / 过'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mười năm đã trôi qua, giờ anh ấy đã là hiệu trưởng rồi.',answer:'十年过去了，现在他已经是校长了。',answerPy:'Shí nián guòqu le, xiànzài tā yǐjīng shì xiàozhǎng le.',
+     {promptLang:'vi',prompt:'Năm năm đã trôi qua, giờ cô ấy đã là giáo viên rồi.',answer:'五年过去了，现在她已经是老师了。',answerPy:'Wǔ nián guòqu le, xiànzài tā yǐjīng shì lǎoshī le.',
       note:'过去了 diễn tả thời gian đã trôi qua (ôn lại 校长 sẽ học ngay bên dưới).'},
      {promptLang:'vi',prompt:'Tuy chuyện đó đã là quá khứ nhưng tôi vẫn nhớ rất rõ.',answer:'虽然那是过去的事，但是我还是记得很清楚。',answerPy:'Suīrán nà shì guòqù de shì, dànshì wǒ háishi jìde hěn qīngchu.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'船 (chuán – "thuyền", có bộ 舟 khác cách ghép)',w:'一般 / 那般'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi thường ngủ khoảng mười giờ.',answer:'我一般十点左右睡觉。',answerPy:'Wǒ yìbān shí diǎn zuǒyòu shuìjiào.',
+     {promptLang:'vi',prompt:'Tôi thường về nhà lúc khoảng sáu giờ.',answer:'我一般六点左右回家。',answerPy:'Wǒ yìbān liù diǎn zuǒyòu huí jiā.',
       note:'左右 = số ước lượng (ôn lại đã học ở Bài 11).'},
      {promptLang:'vi',prompt:'Nếu bạn thường xuyên tập thể dục thì sẽ khoẻ mạnh hơn.',answer:'如果你一般都锻炼身体，就会更健康。',answerPy:'Rúguǒ nǐ yìbān dōu duànliàn shēntǐ, jiù huì gèng jiànkāng.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'原 (yuán – "nguồn gốc", không có bộ 心")',w:'愿意 / 愿望'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn có muốn đi cùng tôi không?',answer:'你愿意跟我一起去吗？',answerPy:'Nǐ yuànyì gēn wǒ yìqǐ qù ma?',
+     {promptLang:'vi',prompt:'Bạn có muốn cùng tôi đi xem phim không?',answer:'你愿意跟我一起去看电影吗？',answerPy:'Nǐ yuànyì gēn wǒ yìqǐ qù kàn diànyǐng ma?',
       note:'愿意 + V diễn tả mong muốn.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn muốn thì chúng ta có thể cùng đi.',answer:'只要你愿意，我们就可以一起去。',answerPy:'Zhǐyào nǐ yuànyì, wǒmen jiù kěyǐ yìqǐ qù.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'店 (diàn – "cửa hàng", cũng có bộ 广")',w:'应该 / 答应'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chúng ta nên thường xuyên rèn luyện sức khoẻ.',answer:'我们应该经常锻炼身体。',answerPy:'Wǒmen yīnggāi jīngcháng duànliàn shēntǐ.',
+     {promptLang:'vi',prompt:'Bạn nên thường xuyên uống nước.',answer:'你应该经常喝水。',answerPy:'Nǐ yīnggāi jīngcháng hē shuǐ.',
       note:'经常 sẽ học ngay bên dưới trong bài này.'},
      {promptLang:'vi',prompt:'Nếu bạn nên nghỉ ngơi thì đừng làm việc quá nhiều.',answer:'如果你应该休息，就别工作太多。',answerPy:'Rúguǒ nǐ yīnggāi xiūxi, jiù bié gōngzuò tài duō.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -261,9 +261,9 @@ var vocabData = [
       cf:'话 (huà – "lời nói", có bộ 讠")',w:'生活 / 活动'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Cuộc sống của chúng tôi ngày càng tốt hơn.',answer:'我们的生活越来越好了。',answerPy:'Wǒmen de shēnghuó yuè lái yuè hǎo le.',
+     {promptLang:'vi',prompt:'Cuộc sống ở thành phố ngày càng đắt đỏ hơn.',answer:'城市里的生活越来越贵了。',answerPy:'Chéngshì lǐ de shēnghuó yuè lái yuè guì le.',
       note:'越来越 diễn tả xu hướng tăng dần.'},
-     {promptLang:'vi',prompt:'Có anh ấy ở bên, cuộc sống của tôi đã rất thú vị rồi.',answer:'有他在，我的生活已经很有意思了。',answerPy:'Yǒu tā zài, wǒ de shēnghuó yǐjīng hěn yǒu yìsi le.',
+     {promptLang:'vi',prompt:'Có con ở bên, cuộc sống của bà ấy rất vui vẻ.',answer:'有孩子在，她的生活很快乐。',answerPy:'Yǒu háizi zài, tā de shēnghuó hěn kuàilè.',
       note:'有……在 diễn tả sự hiện diện của ai đó.'},
    ]},
 
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'较 (jiào – "so sánh", có bộ 车")',w:'校长 / 学校'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Hôm nay hiệu trưởng có một cuộc họp quan trọng.',answer:'校长今天有一个重要的会议。',answerPy:'Xiàozhǎng jīntiān yǒu yí ge zhòngyào de huìyì.',
+     {promptLang:'vi',prompt:'Ngày mai hiệu trưởng có một cuộc họp quan trọng với phụ huynh.',answer:'校长明天有一个重要的家长会议。',answerPy:'Xiàozhǎng míngtiān yǒu yí ge zhòngyào de jiāzhǎng huìyì.',
       note:'重要 diễn tả tính quan trọng (ôn lại đã học ở Bài 12).'},
      {promptLang:'vi',prompt:'Tuy anh ấy đã là hiệu trưởng rồi nhưng vẫn rất bận.',answer:'虽然他已经是校长了，但是他还是很忙。',answerPy:'Suīrán tā yǐjīng shì xiàozhǎng le, dànshì tā háishi hěn máng.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
@@ -305,7 +305,7 @@ var vocabData = [
       cf:'环 (huán – "vòng", có bộ 王")',w:'累坏了 / 坏了 / 破坏'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Thang máy hỏng rồi, tôi trèo lên đấy.',answer:'电梯坏了，我是爬上来的。',answerPy:'Diàntī huài le, wǒ shì pá shanglai de.',
+     {promptLang:'vi',prompt:'Tivi hỏng rồi, chúng tôi đến nhà hàng xóm xem đấy.',answer:'电视坏了，我们是去邻居家看的。',answerPy:'Diànshì huài le, wǒmen shì qù línjū jiā kàn de.',
       note:'是……的 nhấn mạnh cách thức của hành động đã xảy ra.'},
      {promptLang:'vi',prompt:'Tôi thật sự sợ anh ấy mệt quá sức nên bảo anh ấy nghỉ ngơi nhiều hơn.',answer:'我真怕他累坏了，所以让他多休息。',answerPy:'Wǒ zhēn pà tā lèihuài le, suǒyǐ ràng tā duō xiūxi.',
       note:'所以 nêu kết quả từ nguyên nhân phía trước.'},
@@ -327,7 +327,7 @@ var vocabData = [
       cf:'轻 (qīng – "nhẹ", có bộ 车")',w:'经常 / 已经 / 经理'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Anh ấy thường xuyên một mình đến quán cà phê đọc sách.',answer:'他经常一个人去咖啡店看书。',answerPy:'Tā jīngcháng yí ge rén qù kāfēidiàn kàn shū.',
+     {promptLang:'vi',prompt:'Cô ấy thường xuyên một mình đi công viên chạy bộ.',answer:'她经常一个人去公园跑步。',answerPy:'Tā jīngcháng yí ge rén qù gōngyuán pǎobù.',
       note:'经常 đứng trước động từ diễn tả tần suất cao.'},
      {promptLang:'vi',prompt:'Mong anh ấy có thể thường xuyên ở bên tôi.',answer:'希望他能经常和我在一起。',answerPy:'Xīwàng tā néng jīngcháng hé wǒ zài yìqǐ.',
       note:'希望……能…… diễn tả mong muốn ai đó có thể làm gì.'},
@@ -425,31 +425,31 @@ var fillData = [
   {pre:'这是给',blank:'爷爷',post:'的礼物。',hint:'(ông nội)',ans:'爷爷'},
   {pre:'这是给爷爷奶奶的',blank:'礼物',post:'。',hint:'(quà biếu, quà tặng)',ans:'礼物'},
   {pre:'明天我们去看看爷爷',blank:'奶奶',post:'。',hint:'(bà nội)',ans:'奶奶'},
-  {pre:'她是我今天在路上',blank:'遇到',post:'的一个老同学。',hint:'(tình cờ gặp)',ans:'遇到'},
+  {pre:'王老师是我昨天在书店',blank:'遇到',post:'的一位老同学。',hint:'(tình cờ gặp)',ans:'遇到'},
   {pre:'我们',blank:'一边',post:'喝咖啡一边聊天儿。',hint:'(vừa)',ans:'一边'},
   {pre:'一边喝咖啡一边说了些',blank:'过去',post:'的事。',hint:'(quá khứ)',ans:'过去'},
   {pre:'周末你',blank:'一般',post:'跟小刚出去看电影吗？',hint:'(thông thường)',ans:'一般'},
   {pre:'我更',blank:'愿意',post:'在家看电视。',hint:'(muốn)',ans:'愿意'},
-  {pre:'坐久了还可以站',blank:'起来',post:'休息一会儿。',hint:'(chỉ sự di chuyển hướng lên)',ans:'起来'},
+  {pre:'在飞机上坐久了可以站',blank:'起来',post:'走一走。',hint:'(chỉ sự di chuyển hướng lên)',ans:'起来'},
   {pre:'你',blank:'应该',post:'多出去走走。',hint:'(nên, cần phải)',ans:'应该'},
   {pre:'这样你们的',blank:'生活',post:'会更有意思。',hint:'(đời sống, cuộc sống)',ans:'生活'},
   {pre:'现在他已经是',blank:'校长',post:'了。',hint:'(hiệu trưởng)',ans:'校长'},
-  {pre:'我真怕他累',blank:'坏',post:'了。',hint:'(quá, quá mức)',ans:'坏'},
-  {pre:'希望他能',blank:'经常',post:'和我在一起。',hint:'(thường xuyên)',ans:'经常'},
+  {pre:'孩子们玩了一天，都要累',blank:'坏',post:'了。',hint:'(quá, quá mức)',ans:'坏'},
+  {pre:'我希望孩子们能',blank:'经常',post:'去看看爷爷奶奶。',hint:'(thường xuyên)',ans:'经常'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['你','终于','回来','了','！'],ans:'你终于回来了！',audio:'你终于回来了！'},
-  {words:['这','是','给','爷爷','的','礼物','。'],ans:'这是给爷爷的礼物。',audio:'这是给爷爷的礼物。'},
-  {words:['一边','喝','咖啡','一边','说','了','些','过去','的','事','。'],ans:'一边喝咖啡一边说了些过去的事。',audio:'一边喝咖啡一边说了些过去的事。'},
+  {words:['我','终于','找到','工作','了','！'],ans:'我终于找到工作了！',audio:'我终于找到工作了！'},
+  {words:['那','是','给','奶奶','的','生日蛋糕','。'],ans:'那是给奶奶的生日蛋糕。',audio:'那是给奶奶的生日蛋糕。'},
+  {words:['一边','散步','一边','聊','了','些','工作','的','事','。'],ans:'一边散步一边聊了些工作的事。',audio:'一边散步一边聊了些工作的事。'},
   {words:['没有','公共','汽车','了','，','我','是','走','回来','的','。'],ans:'没有公共汽车了，我是走回来的。',audio:'没有公共汽车了，我是走回来的。'},
   {words:['因为','太','忙','，','所以','我','看不到','他','。'],ans:'因为太忙，所以我看不到他。',audio:'因为太忙，所以我看不到他。'},
-  {words:['虽然','他','已经','是','校长','了','，','但是','他','还是','很','忙','。'],ans:'虽然他已经是校长了，但是他还是很忙。',audio:'虽然他已经是校长了，但是他还是很忙。'},
+  {words:['虽然','今天','很','忙','，','但是','我','还是','想','去','看看','爷爷奶奶','。'],ans:'虽然今天很忙，但是我还是想去看看爷爷奶奶。',audio:'虽然今天很忙，但是我还是想去看看爷爷奶奶。'},
   {words:['如果','你','能','少','一些','会议','，','我','就','放心','了','。'],ans:'如果你能少一些会议，我就放心了。',audio:'如果你能少一些会议，我就放心了。'},
-  {words:['希望','他','能','少','一些','会议','，','多','一些','休息','，','可以','经常','和','我','还有','孩子','在一起','。'],ans:'希望他能少一些会议，多一些休息，可以经常和我还有孩子在一起。',audio:'希望他能少一些会议，多一些休息，可以经常和我还有孩子在一起。'},
+  {words:['希望','你','能','少','喝','一些','咖啡','，','多','运动','一下','，','可以','经常','和','我们','一起','出去','走走','。'],ans:'希望你能少喝一些咖啡，多运动一下，可以经常和我们一起出去走走。',audio:'希望你能少喝一些咖啡，多运动一下，可以经常和我们一起出去走走。'},
 ];
 
 // ══════════════════════════════════════════
@@ -465,11 +465,11 @@ var errorFixData = [
   {wrong:'你可以站休息一会儿。',
    opts:['你可以站起来休息一会儿。','你可以站休息一会儿。','你可以起来站休息一会儿。','你可以休息站起来一会儿。'],ans:0,
    exp:'Thiếu bổ ngữ xu hướng kép 起来 sau động từ 站 — câu cần đủ 站+起来 để diễn tả đứng dậy.'},
-  {wrong:'妈妈一边唱歌做饭。',
-   opts:['妈妈一边唱歌一边做饭。','妈妈一边唱歌做饭。','妈妈唱歌一边做饭一边。','妈妈一边做饭唱歌。'],ans:0,
+  {wrong:'爸爸一边看电视吃水果。',
+   opts:['爸爸一边看电视一边吃水果。','爸爸一边看电视吃水果。','爸爸看电视一边吃水果一边。','爸爸一边吃水果看电视。'],ans:0,
    exp:'Cấu trúc 一边……一边…… cần đủ CẢ HAI 一边, không được bỏ một bên.'},
-  {wrong:'我丈夫喜欢吃早饭一边看报纸一边。',
-   opts:['我丈夫喜欢一边吃早饭一边看报纸。','我丈夫喜欢吃早饭一边看报纸一边。','我丈夫一边喜欢吃早饭看报纸一边。','我丈夫喜欢一边看报纸吃早饭一边。'],ans:0,
+  {wrong:'我同事喜欢喝茶一边看新闻一边。',
+   opts:['我同事喜欢一边喝茶一边看新闻。','我同事喜欢喝茶一边看新闻一边。','我同事一边喜欢喝茶看新闻一边。','我同事喜欢一边看新闻喝茶一边。'],ans:0,
    exp:'一边 phải đứng NGAY TRƯỚC mỗi động từ, không đặt ở cuối câu.'},
 ];
 
@@ -510,28 +510,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Anh cuối cùng cũng về rồi!', zh:'你终于回来了！', py:'Nǐ zhōngyú huílai le!'},
-  {vi:'Đây là quà tặng cho ông nội.', zh:'这是给爷爷的礼物。', py:'Zhè shì gěi yéye de lǐwù.'},
+  {vi:'Chúng tôi cuối cùng cũng đến rồi!', zh:'我们终于到了！', py:'Wǒmen zhōngyú dào le!'},
+  {vi:'Đây là món quà tặng cho bà nội.', zh:'这是给奶奶的礼物。', py:'Zhè shì gěi nǎinai de lǐwù.'},
   {vi:'Cô ấy là một người bạn học cũ tôi tình cờ gặp trên đường.', zh:'她是我在路上遇到的一个老同学。', py:'Tā shì wǒ zài lùshang yùdào de yí ge lǎo tóngxué.'},
-  {vi:'Hết xe buýt rồi, tôi đi bộ về đấy.', zh:'没有公共汽车了，我是走回来的。', py:'Méiyǒu gōnggòng qìchē le, wǒ shì zǒu huilai de.'},
-  {vi:'Tôi thích ở nhà xem tivi hơn.', zh:'我更愿意在家看电视。', py:'Wǒ gèng yuànyì zài jiā kàn diànshì.'},
-  {vi:'Ngồi lâu còn có thể đứng dậy nghỉ một lát.', zh:'坐久了还可以站起来休息一会儿。', py:'Zuò jiǔ le hái kěyǐ zhàn qilai xiūxi yíhuìr.'},
-  {vi:'Bạn nên đi ra ngoài nhiều hơn.', zh:'你应该多出去走走。', py:'Nǐ yīnggāi duō chūqu zǒuzou.'},
-  {vi:'Hiện giờ anh ấy đã là hiệu trưởng rồi.', zh:'现在他已经是校长了。', py:'Xiànzài tā yǐjīng shì xiàozhǎng le.'},
+  {vi:'Không còn taxi nữa, tôi là đi xe đạp về đấy.', zh:'没有出租车了，我是骑车回来的。', py:'Méiyǒu chūzūchē le, wǒ shì qí chē huílai de.'},
+  {vi:'Tôi thích uống cà phê ở quán hơn.', zh:'我更愿意在咖啡店喝咖啡。', py:'Wǒ gèng yuànyì zài kāfēidiàn hē kāfēi.'},
+  {vi:'Làm việc lâu nên đứng dậy vận động một chút.', zh:'工作久了应该站起来活动一下。', py:'Gōngzuò jiǔ le yīnggāi zhàn qilai huódòng yíxià.'},
+  {vi:'Bạn nên đi ngủ sớm hơn một chút.', zh:'你应该早点儿睡觉。', py:'Nǐ yīnggāi zǎodiǎnr shuìjiào.'},
+  {vi:'Hiện giờ anh ấy đã là giám đốc rồi.', zh:'现在他已经是经理了。', py:'Xiànzài tā yǐjīng shì jīnglǐ le.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì quá bận nên tôi không thấy anh ấy đâu cả.', zh:'因为太忙，所以我看不到他。', py:'Yīnwèi tài máng, suǒyǐ wǒ kàn bu dào tā.'},
-  {vi:'Tuy anh ấy đã là hiệu trưởng rồi nhưng vẫn rất bận.', zh:'虽然他已经是校长了，但是他还是很忙。', py:'Suīrán tā yǐjīng shì xiàozhǎng le, dànshì tā háishi hěn máng.'},
+  {vi:'Vì trời mưa to nên chúng tôi không đi được.', zh:'因为下大雨，所以我们去不了。', py:'Yīnwèi xià dàyǔ, suǒyǐ wǒmen qù bu liǎo.'},
+  {vi:'Tuy anh ấy đã là hiệu trưởng rồi nhưng anh ấy vẫn đạp xe đi làm mỗi ngày.', zh:'虽然他已经是校长了，但是他还是每天骑车上班。', py:'Suīrán tā yǐjīng shì xiàozhǎng le, dànshì tā háishi měitiān qí chē shàngbān.'},
   {vi:'Nếu bạn có thể nghỉ ngơi nhiều hơn thì tôi sẽ yên tâm.', zh:'如果你能多休息，我就放心了。', py:'Rúguǒ nǐ néng duō xiūxi, wǒ jiù fàngxīn le.'},
-  {vi:'Mẹ vừa hát vừa nấu cơm.', zh:'妈妈一边唱歌一边做饭。', py:'Māma yìbiān chànggē yìbiān zuò fàn.'},
-  {vi:'Tôi thật sự sợ anh ấy mệt quá sức.', zh:'我真怕他累坏了。', py:'Wǒ zhēn pà tā lèihuài le.'},
+  {vi:'Chị gái vừa uống trà vừa đọc sách.', zh:'姐姐一边喝茶一边看书。', py:'Jiějie yìbiān hē chá yìbiān kàn shū.'},
+  {vi:'Tôi thật sự sợ em ấy học nhiều quá sẽ mệt đến kiệt sức.', zh:'我真怕她学习太多，都要累坏了。', py:'Wǒ zhēn pà tā xuéxí tài duō, dōu yào lèihuài le.'},
   {vi:'Con chó nhỏ chạy ra khỏi phòng.', zh:'小狗从房间跑出来。', py:'Xiǎogǒu cóng fángjiān pǎo chulai.'},
   {vi:'Anh trai mua một quả dưa hấu mang về.', zh:'哥哥买回来一个西瓜。', py:'Gēge mǎi huilai yí ge xīguā.'},
-  {vi:'Bố mang một ít quà từ nước ngoài về.', zh:'爸爸从国外带回来一些礼物。', py:'Bàba cóng guówài dài huilai yìxiē lǐwù.'},
+  {vi:'Mẹ mang một số quà từ chợ về nhà.', zh:'妈妈从市场带回来一些礼物。', py:'Māma cóng shìchǎng dài huilai yìxiē lǐwù.'},
 ];
 
 // ══════════════════════════════════════════

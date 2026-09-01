@@ -19,7 +19,7 @@ var vocabData = [
       cf:'暇 (xiá – "rảnh rỗi", có bộ 日")',w:'请假 / 假期'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tháng này bạn đã xin nghỉ hai tuần rồi, không thể xin nữa đâu.',answer:'这个月你已经请了两个星期假了，不能再请了。',answerPy:'Zhège yuè nǐ yǐjīng qǐngle liǎng ge xīngqī jià le, bù néng zài qǐng le.',
+     {promptLang:'vi',prompt:'Tháng này tôi đã xin nghỉ ba ngày rồi, tuần sau không thể xin nữa.',answer:'这个月我已经请了三天假了，下个星期不能再请了。',answerPy:'Zhège yuè wǒ yǐjīng qǐngle sān tiān jià le, xià ge xīngqī bù néng zài qǐng le.',
       note:'已经……了 diễn tả hành động đã hoàn tất.'},
      {promptLang:'vi',prompt:'Nếu bạn không khỏe thì cứ xin nghỉ đi.',answer:'如果你不舒服，就请假吧。',answerPy:'Rúguǒ nǐ bù shūfu, jiù qǐngjià ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
@@ -41,7 +41,7 @@ var vocabData = [
       cf:'具 (jù – "dụng cụ", có 目 thay vì 廿")',w:'一共 / 共同'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Học kỳ này lớp chúng tôi có thêm 2 bạn mới, tổng cộng 21 học sinh.',answer:'这个学期我们班新来了2个同学，一共21个学生。',answerPy:'Zhège xuéqī wǒmen bān xīn láile liǎng ge tóngxué, yígòng èrshíyī ge xuésheng.',
+     {promptLang:'vi',prompt:'Tháng trước tổ chúng tôi có thêm 3 đồng nghiệp mới, tổng cộng 12 người.',answer:'上个月我们组新来了3个同事，一共12个人。',answerPy:'Shàng ge yuè wǒmen zǔ xīn láile sān ge tóngshì, yígòng shí\'èr ge rén.',
       note:'一共 + số lượng diễn tả tổng số.'},
      {promptLang:'vi',prompt:'Nếu tổng cộng có 21 học sinh thì phòng học đủ chỗ không?',answer:'如果一共有21个学生，教室就够坐吗？',answerPy:'Rúguǒ yígòng yǒu èrshíyī ge xuésheng, jiàoshì jiù gòu zuò ma?',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'冷 (lěng – "lạnh", có bộ 冫")',w:'邻居 / 邻近'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chúng tôi là hàng xóm mới của các bạn, hôm qua vừa chuyển đến.',answer:'我们是你们的新邻居，昨天刚搬过来。',answerPy:'Wǒmen shì nǐmen de xīn línjū, zuótiān gāng bān guolai.',
+     {promptLang:'vi',prompt:'Họ là hàng xóm mới ở đối diện nhà chúng tôi, tuần trước vừa mới chuyển đến.',answer:'他们是我们对面的新邻居，上个星期刚搬过来。',answerPy:'Tāmen shì wǒmen duìmiàn de xīn línjū, shàng ge xīngqī gāng bān guolai.',
       note:'刚 + V diễn tả hành động vừa mới xảy ra.'},
      {promptLang:'vi',prompt:'Nếu bạn có vấn đề gì thì có thể đến hỏi hàng xóm.',answer:'如果你有什么问题，就可以来问邻居。',answerPy:'Rúguǒ nǐ yǒu shénme wèntí, jiù kěyǐ lái wèn línjū.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -85,7 +85,7 @@ var vocabData = [
       cf:'厚 (hòu – "dày", có 厂 thay vì 尸")',w:'后来 / 以后 / 后边'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sau đó con trai bị bệnh, để chăm sóc con, chẳng đi đâu cả.',answer:'后来儿子生病了，为了照顾他，哪儿都没去。',answerPy:'Hòulái érzi shēngbìng le, wèile zhàogù tā, nǎr dōu méi qù.',
+     {promptLang:'vi',prompt:'Sau đó con gái phải thi, để cho con yên tâm ôn tập, cả nhà chúng tôi chẳng đi chơi đâu cả.',answer:'后来女儿要考试了，为了让她安心复习，我们哪儿都没去玩儿。',answerPy:'Hòulái nǚ\'ér yào kǎoshì le, wèile ràng tā ānxīn fùxí, wǒmen nǎr dōu méi qù wánr.',
       note:'哪儿都 + phủ định diễn tả toàn bộ không ngoại lệ (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu sau này bạn hiểu rõ hơn thì hãy nói cho tôi biết.',answer:'如果后来你更了解了，就告诉我吧。',answerPy:'Rúguǒ hòulái nǐ gèng liǎojiě le, jiù gàosu wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'子 (zǐ – "con", không có bộ 女")',w:'爱好 / 好奇'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sở thích của tôi khác với của bạn, tôi thích bơi lội hơn.',answer:'我的爱好跟你的不一样，我更喜欢游泳。',answerPy:'Wǒ de àihào gēn nǐ de bù yíyàng, wǒ gèng xǐhuan yóuyǒng.',
+     {promptLang:'vi',prompt:'Sở thích của em trai tôi khác với tôi, nó thích đá bóng hơn.',answer:'我弟弟的爱好跟我的不一样，他更喜欢踢足球。',answerPy:'Wǒ dìdi de àihào gēn wǒ de bù yíyàng, tā gèng xǐhuan tī zúqiú.',
       note:'跟……不一样 diễn tả sự khác biệt.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn có sở thích chung thì các bạn sẽ trở thành bạn tốt.',answer:'只要你们有共同的爱好，就会成为好朋友。',answerPy:'Zhǐyào nǐmen yǒu gòngtóng de àihào, jiù huì chéngwéi hǎo péngyou.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'去 (qù – "đi", không có bộ 氵")',w:'办法 / 法律'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Không còn cách nào khác, để gầy đi một chút, tôi phải ăn ít lại.',answer:'没办法，为了瘦一点儿，我必须少吃。',answerPy:'Méi bànfǎ, wèile shòu yìdiǎnr, wǒ bìxū shǎo chī.',
+     {promptLang:'vi',prompt:'Không còn cách nào khác, để qua được kỳ thi, tôi phải ôn tập thêm hai tiếng mỗi ngày.',answer:'没办法，为了通过考试，我必须每天多复习两个小时。',answerPy:'Méi bànfǎ, wèile tōngguò kǎoshì, wǒ bìxū měitiān duō fùxí liǎng ge xiǎoshí.',
       note:'为了 diễn tả mục đích (sẽ học ngay bên dưới trong bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn có cách hay thì hãy nói cho tôi biết.',answer:'如果你有好办法，就告诉我吧。',answerPy:'Rúguǒ nǐ yǒu hǎo bànfǎ, jiù gàosu wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'抱 (bào – "ôm", có bộ 扌")',w:'吃饱 / 饱了'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bữa sáng của bạn chỉ có một cốc cà phê và một miếng bánh nhỏ, ăn không no đâu.',answer:'你的早饭只有一杯咖啡和一小块蛋糕，吃不饱。',answerPy:'Nǐ de zǎofàn zhǐyǒu yì bēi kāfēi hé yì xiǎo kuài dàngāo, chī bu bǎo.',
+     {promptLang:'vi',prompt:'Bữa trưa của bạn chỉ có một bát cơm và một chút rau xanh, ăn không no đâu.',answer:'你的午饭只有一碗米饭和一点儿青菜，吃不饱。',answerPy:'Nǐ de wǔfàn zhǐyǒu yì wǎn mǐfàn hé yìdiǎnr qīngcài, chī bu bǎo.',
       note:'吃不饱 diễn tả khả năng phủ định (không thể no).'},
      {promptLang:'vi',prompt:'Nếu bạn ăn no rồi thì đừng đi ngủ ngay.',answer:'如果你吃饱了，就别马上去睡觉。',answerPy:'Rúguǒ nǐ chībǎo le, jiù bié mǎshàng qù shuìjiào.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'办 (bàn – "làm", có 力 thay vì 丶")',w:'为了 / 因为'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Để chăm sóc con, chẳng đi đâu cả.',answer:'为了照顾他，哪儿都没去。',answerPy:'Wèile zhàogù tā, nǎr dōu méi qù.',
+     {promptLang:'vi',prompt:'Để chăm sóc mẹ bị ốm, tuần này tôi chẳng đi đâu cả.',answer:'为了照顾生病的妈妈，这个星期我哪儿都没去。',answerPy:'Wèile zhàogù shēngbìng de māma, zhège xīngqī wǒ nǎr dōu méi qù.',
       note:'为了 nêu mục đích, đứng đầu câu.'},
      {promptLang:'vi',prompt:'Vì muốn nâng cao trình độ tiếng Trung, tôi quyết định mỗi ngày đọc sách.',answer:'为了提高汉语水平，我决定每天看书。',answerPy:'Wèile tígāo Hànyǔ shuǐpíng, wǒ juédìng měitiān kàn shū.',
       note:'为了 + mục đích, 决定 + hành động (ôn lại 提高/水平 đã học ở Bài 15).'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'空 (kōng – "trống rỗng", có 工 thay vì 疋")',w:'决定 / 一定 / 定'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi vẫn chưa quyết định đâu.',answer:'我还没决定呢。',answerPy:'Wǒ hái méi juédìng ne.',
+     {promptLang:'vi',prompt:'Cuối tuần này có đi leo núi hay không, tôi vẫn chưa quyết định đâu.',answer:'这个周末去不去爬山，我还没决定呢。',answerPy:'Zhège zhōumò qù bu qù pá shān, wǒ hái méi juédìng ne.',
       note:'还没……呢 diễn tả hành động chưa xảy ra.'},
      {promptLang:'vi',prompt:'Nếu bạn quyết định đi thì tôi sẽ đi cùng bạn.',answer:'如果你决定去，我就跟你一起去。',answerPy:'Rúguǒ nǐ juédìng qù, wǒ jiù gēn nǐ yìqǐ qù.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -217,7 +217,7 @@ var vocabData = [
       cf:'洗 (xǐ – "rửa", có bộ 氵")',w:'选择 / 选举'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Thứ hai, phải chọn địa điểm "đúng".',answer:'第二，要选择"对"的地点。',answerPy:'Dì èr, yào xuǎnzé "duì" de dìdiǎn.',
+     {promptLang:'vi',prompt:'Thứ hai, phải chọn sở thích phù hợp với bản thân.',answer:'第二，要选择适合自己的爱好。',answerPy:'Dì èr, yào xuǎnzé shìhé zìjǐ de àihào.',
       note:'第二 dùng để liệt kê thứ tự.'},
      {promptLang:'vi',prompt:'Nếu bạn không biết chọn cái nào thì hỏi tôi đi.',answer:'如果你不知道选择哪个，就问我吧。',answerPy:'Rúguǒ nǐ bù zhīdào xuǎnzé nǎge, jiù wèn wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'各 (gè – "mỗi", hình dáng phần trên gần giống")',w:'冬天 / 冬季'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mùa đông đặc biệt dài, từ tháng 11 đến tháng 3 năm sau đều khá lạnh.',answer:'冬天特别长，从11月到第二年3月都比较冷。',answerPy:'Dōngtiān tèbié cháng, cóng shíyī yuè dào dì-èr nián sān yuè dōu bǐjiào lěng.',
+     {promptLang:'vi',prompt:'Mùa đông ở đây rất ngắn, từ tháng 12 đến tháng 1 năm sau mới khá lạnh.',answer:'这里的冬天很短，从12月到第二年1月才比较冷。',answerPy:'Zhèli de dōngtiān hěn duǎn, cóng shí\'èr yuè dào dì-èr nián yī yuè cái bǐjiào lěng.',
       note:'从……到…… diễn tả khoảng thời gian.'},
      {promptLang:'vi',prompt:'Nếu mùa đông ở đây quá lạnh thì tôi sẽ không quen được.',answer:'如果这里的冬天太冷，我就不会习惯。',answerPy:'Rúguǒ zhèli de dōngtiān tài lěng, wǒ jiù bú huì xíguàn.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -261,7 +261,7 @@ var vocabData = [
       cf:'颈 (jǐng – "cổ", có 圣 thay vì 彡")',w:'必须 / 须要'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Có những việc phải tự mình lựa chọn và quyết định.',answer:'有些事情必须要自己来做选择和决定。',answerPy:'Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng.',
+     {promptLang:'vi',prompt:'Có một số vấn đề phải do chính giáo viên tự lựa chọn và quyết định.',answer:'有些问题必须由老师自己来做选择和决定。',answerPy:'Yǒuxiē wèntí bìxū yóu lǎoshī zìjǐ lái zuò xuǎnzé hé juédìng.',
       note:'必须要 diễn tả sự bắt buộc (ôn lại 选择/决定 đã học trong bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn muốn khỏe mạnh thì phải tập thể dục thường xuyên.',answer:'如果你想健康，就必须经常锻炼。',answerPy:'Rúguǒ nǐ xiǎng jiànkāng, jiù bìxū jīngcháng duànliàn.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'居 (jū – "ở", không có bộ 扌")',w:'根据 / 数据'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Xin hãy chọn dựa theo tình trạng của bản thân.',answer:'请根据自己的情况选择。',answerPy:'Qǐng gēnjù zìjǐ de qíngkuàng xuǎnzé.',
+     {promptLang:'vi',prompt:'Xin hãy chọn quần áo phù hợp dựa theo tình hình thời tiết.',answer:'请根据天气的情况选择合适的衣服。',answerPy:'Qǐng gēnjù tiānqì de qíngkuàng xuǎnzé héshì de yīfu.',
       note:'根据 + căn cứ, mệnh đề sau nêu hành động (ôn lại 选择/情况 sẽ học trong bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn dựa theo yêu cầu để làm thì sẽ không sai.',answer:'如果你根据要求做，就不会错。',answerPy:'Rúguǒ nǐ gēnjù yāoqiú zuò, jiù bú huì cuò.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -305,7 +305,7 @@ var vocabData = [
       cf:'兄 (xiōng – "anh trai", không có bộ 冫")',w:'情况 / 何况'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Xin hãy tìm hiểu tình hình của nơi này.',answer:'请了解一下这个地方的情况。',answerPy:'Qǐng liǎojiě yíxià zhège dìfang de qíngkuàng.',
+     {promptLang:'vi',prompt:'Xin hãy tìm hiểu tình hình của công ty này.',answer:'请了解一下这家公司的情况。',answerPy:'Qǐng liǎojiě yíxià zhè jiā gōngsī de qíngkuàng.',
       note:'了解 + tân ngữ diễn tả tìm hiểu (ôn lại đã học ở Bài 15).'},
      {promptLang:'vi',prompt:'Chỉ cần bạn dựa theo tình hình sức khỏe để vận động thì cơ thể sẽ khỏe hơn.',answer:'只要你根据健康情况运动，身体就会更健康。',answerPy:'Zhǐyào nǐ gēnjù jiànkāng qíngkuàng yùndòng, shēntǐ jiù huì gèng jiànkāng.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
@@ -327,7 +327,7 @@ var vocabData = [
       cf:'囗 (wéi – "bao vây", chữ tương tự nhưng nghĩa khác")',w:'口 / 口渴 / 人口'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn uống một ngụm nước trước đã.',answer:'你先喝一口水吧。',answerPy:'Nǐ xiān hē yì kǒu shuǐ ba.',
+     {promptLang:'vi',prompt:'Bạn uống một ngụm trà trước đã.',answer:'你先喝一口茶吧。',answerPy:'Nǐ xiān hē yì kǒu chá ba.',
       note:'口 làm lượng từ chỉ một ngụm.'},
      {promptLang:'vi',prompt:'Nếu miệng bạn khát thì uống chút nước đi.',answer:'如果你口渴了，就喝点儿水吧。',answerPy:'Rúguǒ nǐ kǒu kě le, jiù hē diǎnr shuǐ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -349,7 +349,7 @@ var vocabData = [
       cf:'喝 (hē – "uống", có bộ 口")',w:'口渴 / 渴了'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chơi lâu thế này, khát rồi phải không?',answer:'玩儿了这么长时间，渴了吧？',answerPy:'Wánrle zhème cháng shíjiān, kě le ba?',
+     {promptLang:'vi',prompt:'Chạy lâu thế này, khát rồi phải không?',answer:'跑了这么长时间，渴了吧？',answerPy:'Pǎole zhème cháng shíjiān, kě le ba?',
       note:'……了吧 diễn tả sự phỏng đoán.'},
      {promptLang:'vi',prompt:'Nếu bạn khát thì uống chút nước đi.',answer:'如果你渴了，就喝点儿水吧。',answerPy:'Rúguǒ nǐ kě le, jiù hē diǎnr shuǐ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -443,19 +443,19 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'下个星期我可以',blank:'请假',post:'吗？',hint:'(xin nghỉ phép)',ans:'请假'},
-  {pre:'你',blank:'一共',post:'想请几天假？',hint:'(tổng cộng)',ans:'一共'},
+  {pre:'只要经理同意，我',blank:'一共',post:'可以请五天假。',hint:'(tổng cộng)',ans:'一共'},
   {pre:'我们过去是',blank:'邻居',post:'。',hint:'(láng giềng)',ans:'邻居'},
   {pre:'',blank:'后来',post:'是大学同学。',hint:'(sau này, sau đó)',ans:'后来'},
   {pre:'他有很多',blank:'爱好',post:'。',hint:'(sở thích)',ans:'爱好'},
   {pre:'谁都有',blank:'办法',post:'看好你的"病"。',hint:'(cách, biện pháp)',ans:'办法'},
   {pre:'你吃',blank:'饱',post:'了就睡。',hint:'(no)',ans:'饱'},
-  {pre:'',blank:'为了',post:'健康，我真应该多锻炼锻炼了。',hint:'(để, vì)',ans:'为了'},
+  {pre:'',blank:'为了',post:'以后能找到好工作，他决定每天多学习两个小时。',hint:'(để, vì)',ans:'为了'},
   {pre:'我',blank:'决定',post:'每天去长跑。',hint:'(quyết định)',ans:'决定'},
   {pre:'要',blank:'选择',post:'"对"的时间。',hint:'(lựa chọn)',ans:'选择'},
   {pre:'',blank:'冬天',post:'要再晚一些。',hint:'(mùa đông)',ans:'冬天'},
   {pre:'',blank:'必须',post:'要根据自己的健康情况运动。',hint:'(cần phải)',ans:'必须'},
-  {pre:'必须要',blank:'根据',post:'自己的健康情况运动。',hint:'(căn cứ vào, dựa vào)',ans:'根据'},
-  {pre:'必须要根据自己的健康',blank:'情况',post:'运动。',hint:'(tình hình, tình trạng)',ans:'情况'},
+  {pre:'老师会',blank:'根据',post:'学生的水平安排合适的练习。',hint:'(căn cứ vào, dựa vào)',ans:'根据'},
+  {pre:'医生会根据你的身体',blank:'情况',post:'给你合适的建议。',hint:'(tình hình, tình trạng)',ans:'情况'},
   {pre:'记得刚运动完',blank:'口',post:'渴的时候。',hint:'(miệng)',ans:'口'},
   {pre:'记得刚运动完口',blank:'渴',post:'的时候，不要马上喝水。',hint:'(khát)',ans:'渴'},
 ];
@@ -465,13 +465,13 @@ var fillData = [
 // ══════════════════════════════════════════
 var sortData = [
   {words:['我','的','一个','老','朋友','结婚','，','我','跟','他','两年','没','见','了','。'],ans:'我的一个老朋友结婚，我跟他两年没见了。',audio:'我的一个老朋友结婚，我跟他两年没见了。'},
-  {words:['谁','都','有','办法','看好','你','的','"病"','。'],ans:'谁都有办法看好你的"病"。',audio:'谁都有办法看好你的"病"。'},
+  {words:['谁','都','有','办法','解决','这个','问题','。'],ans:'谁都有办法解决这个问题。',audio:'谁都有办法解决这个问题。'},
   {words:['他','有','很多','爱好','，','什么','都','会','。'],ans:'他有很多爱好，什么都会。',audio:'他有很多爱好，什么都会。'},
-  {words:['为了','健康','，','我','真','应该','多','锻炼锻炼','了','。'],ans:'为了健康，我真应该多锻炼锻炼了。',audio:'为了健康，我真应该多锻炼锻炼了。'},
+  {words:['为了','身体','健康','，','他','每天','早上','都','去','公园','跑步','。'],ans:'为了身体健康，他每天早上都去公园跑步。',audio:'为了身体健康，他每天早上都去公园跑步。'},
   {words:['谁','都','喜欢','小丽','。'],ans:'谁都喜欢小丽。',audio:'谁都喜欢小丽。'},
   {words:['虽然','他','有','很多','爱好','，','但是','现在','没','时间','玩儿','了','。'],ans:'虽然他有很多爱好，但是现在没时间玩儿了。',audio:'虽然他有很多爱好，但是现在没时间玩儿了。'},
-  {words:['如果','你','渴','了','，','就','喝','点儿','水','吧','。'],ans:'如果你渴了，就喝点儿水吧。',audio:'如果你渴了，就喝点儿水吧。'},
-  {words:['必须','要','根据','自己','的','健康','情况','运动','。'],ans:'必须要根据自己的健康情况运动。',audio:'必须要根据自己的健康情况运动。'},
+  {words:['如果','你','饿','了','，','就','吃','点儿','东西','吧','。'],ans:'如果你饿了，就吃点儿东西吧。',audio:'如果你饿了，就吃点儿东西吧。'},
+  {words:['我们','必须','根据','老师','的','要求','认真','复习','。'],ans:'我们必须根据老师的要求认真复习。',audio:'我们必须根据老师的要求认真复习。'},
 ];
 
 // ══════════════════════════════════════════
@@ -484,8 +484,8 @@ var errorFixData = [
   {wrong:'我真应该多锻炼了锻炼。',
    opts:['我真应该多锻炼锻炼了。','我真应该多锻炼了锻炼。','我真应该多了锻炼锻炼。','我真应该锻炼多锻炼了。'],ans:0,
    exp:'了 phải đặt SAU CẢ CỤM động từ lặp (锻炼锻炼), không chen vào giữa hai âm tiết lặp.'},
-  {wrong:'谁小丽都喜欢。',
-   opts:['谁都喜欢小丽。','谁小丽都喜欢。','小丽谁都喜欢。','谁都小丽喜欢。'],ans:0,
+  {wrong:'谁运动都喜欢。',
+   opts:['谁都喜欢运动。','谁运动都喜欢。','运动谁都喜欢。','谁都运动喜欢。'],ans:0,
    exp:'都 phải đứng NGAY SAU đại từ nghi vấn (谁), trước động từ, không tách rời cấu trúc.'},
   {wrong:'我们去公园都怎么可以。',
    opts:['我们怎么去公园都可以。','我们去公园都怎么可以。','我们怎么都去公园可以。','我们都怎么去公园可以。'],ans:0,
@@ -533,12 +533,12 @@ var speakingData = {
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Tuần sau em xin nghỉ mấy ngày được không ạ?', zh:'下个星期我可以请几天假吗？', py:'Xià ge xīngqī wǒ kěyǐ qǐng jǐ tiān jià ma?'},
-  {vi:'Em muốn xin nghỉ tổng cộng mấy ngày?', zh:'你一共想请几天假？', py:'Nǐ yígòng xiǎng qǐng jǐ tiān jià?'},
+  {vi:'Nếu bạn cũng xin nghỉ phép, thì tuần này lớp chúng ta tổng cộng có ba người xin nghỉ.', zh:'如果你也请假，我们班这个星期一共就有三个人请假了。', py:'Rúguǒ nǐ yě qǐngjià, wǒmen bān zhège xīngqī yígòng jiù yǒu sān ge rén qǐngjià le.'},
   {vi:'Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học.', zh:'我们过去是邻居，后来是大学同学。', py:'Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué.'},
-  {vi:'Ai cũng có cách chữa khỏi "bệnh" của em.', zh:'谁都有办法看好你的"病"。', py:'Shéi dōu yǒu bànfǎ kànhǎo nǐ de "bìng".'},
-  {vi:'Vì sức khỏe, em thật sự nên tập luyện nhiều hơn.', zh:'为了健康，我真应该多锻炼锻炼了。', py:'Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le.'},
-  {vi:'Phải chọn thời gian "đúng".', zh:'要选择"对"的时间。', py:'Yào xuǎnzé "duì" de shíjiān.'},
-  {vi:'Phải vận động dựa theo tình trạng sức khỏe của bản thân.', zh:'必须要根据自己的健康情况运动。', py:'Bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.'},
+  {vi:'Chỉ cần bạn đi hỏi thầy giáo, thầy nhất định có cách giúp bạn.', zh:'只要你去问老师，他一定有办法帮你。', py:'Zhǐyào nǐ qù wèn lǎoshī, tā yídìng yǒu bànfǎ bāng nǐ.'},
+  {vi:'Để có thể nghe hiểu tin tức tiếng Trung, anh ấy quyết định mỗi ngày xem nửa tiếng tin tức.', zh:'为了能听懂中文新闻，他决定每天看半个小时新闻。', py:'Wèile néng tīngdǒng Zhōngwén xīnwén, tā juédìng měitiān kàn bàn ge xiǎoshí xīnwén.'},
+  {vi:'Nếu muốn thành công thì phải chọn đúng thời gian và địa điểm.', zh:'如果想成功，就要选择对的时间和地点。', py:'Rúguǒ xiǎng chénggōng, jiù yào xuǎnzé duì de shíjiān hé dìdiǎn.'},
+  {vi:'Mỗi người đều phải dựa theo tình huống thực tế của mình mà đưa ra quyết định.', zh:'每个人都必须根据自己的实际情况做决定。', py:'Měi ge rén dōu bìxū gēnjù zìjǐ de shíjì qíngkuàng zuò juédìng.'},
   {vi:'Lúc vừa vận động xong khát nước, đừng uống nước ngay.', zh:'刚运动完口渴的时候，不要马上喝水。', py:'Gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.'},
 ];
 
@@ -546,14 +546,14 @@ var translateData = [
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Ai cũng thích Tiểu Lệ.', zh:'谁都喜欢小丽。', py:'Shéi dōu xǐhuan Xiǎolì.'},
+  {vi:'Ai cũng thích mùa đông ở đây.', zh:'谁都喜欢这里的冬天。', py:'Shéi dōu xǐhuan zhèli de dōngtiān.'},
   {vi:'Tiểu Cương cái gì cũng thích ăn.', zh:'小刚什么都喜欢吃。', py:'Xiǎogāng shénme dōu xǐhuan chī.'},
-  {vi:'Chúng ta đi công viên thế nào cũng được.', zh:'我们怎么去公园都可以。', py:'Wǒmen zěnme qù gōngyuán dōu kěyǐ.'},
-  {vi:'Gần đây tôi thấy chỗ nào cũng khó chịu.', zh:'最近我觉得哪儿都不舒服。', py:'Zuìjìn wǒ juéde nǎr dōu bù shūfu.'},
-  {vi:'Bạn giới thiệu chúng tôi làm quen đi.', zh:'你介绍我们认识认识吧。', py:'Nǐ jièshào wǒmen rènshi rènshi ba.'},
+  {vi:'Chúng ta ăn gì cũng được.', zh:'我们吃什么都可以。', py:'Wǒmen chī shénme dōu kěyǐ.'},
+  {vi:'Gần đây anh ấy cảm thấy chuyện gì cũng chẳng có gì thú vị.', zh:'最近他觉得什么都没意思。', py:'Zuìjìn tā juéde shénme dōu méi yìsi.'},
+  {vi:'Bạn giới thiệu công việc mới này cho tôi đi.', zh:'你给我介绍介绍这份新工作吧。', py:'Nǐ gěi wǒ jièshào jièshào zhè fèn xīn gōngzuò ba.'},
   {vi:'Anh ấy mới đến, lúc nào rảnh bạn giúp đỡ anh ấy chút đi.', zh:'他是新来的，有时间你帮助帮助他吧。', py:'Tā shì xīn lái de, yǒu shíjiān nǐ bāngzhu bāngzhu tā ba.'},
   {vi:'Chỉ cần bạn vận động dựa theo tình trạng sức khỏe thì cơ thể sẽ khỏe hơn.', zh:'只要你根据情况运动，身体就会更健康。', py:'Zhǐyào nǐ gēnjù qíngkuàng yùndòng, shēntǐ jiù huì gèng jiànkāng.'},
-  {vi:'Nếu bạn khát thì uống chút nước đi.', zh:'如果你渴了，就喝点儿水吧。', py:'Rúguǒ nǐ kě le, jiù hē diǎnr shuǐ ba.'},
+  {vi:'Nếu bạn vẫn chưa quyết định thì hãy nghĩ thêm chút đi.', zh:'如果你还没决定，就再想一想吧。', py:'Rúguǒ nǐ hái méi juédìng, jiù zài xiǎng yi xiǎng ba.'},
 ];
 
 // ══════════════════════════════════════════

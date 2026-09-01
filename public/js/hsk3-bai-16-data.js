@@ -19,7 +19,7 @@ var vocabData = [
       cf:'诚 (chéng – "thành thật", có bộ 讠")',w:'城市 / 长城'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn thấy thành phố nào thú vị nhất?',answer:'你觉得哪个城市最好玩儿？',answerPy:'Nǐ juéde nǎge chéngshì zuì hǎowánr?',
+     {promptLang:'vi',prompt:'Trong những thành phố bạn từng đến, bạn thấy thành phố nào đẹp nhất?',answer:'在你去过的城市里，你觉得哪个城市最漂亮？',answerPy:'Zài nǐ qùguo de chéngshì lǐ, nǐ juéde nǎge chéngshì zuì piàoliang?',
       note:'哪个 + N hỏi lựa chọn.'},
      {promptLang:'vi',prompt:'Nếu bạn thích thành phố này thì chúng ta ở lại thêm vài ngày đi.',answer:'如果你喜欢这个城市，我们就多住几天吧。',answerPy:'Rúguǒ nǐ xǐhuan zhège chéngshì, wǒmen jiù duō zhù jǐ tiān ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).'},
@@ -41,7 +41,7 @@ var vocabData = [
       cf:'知 (zhī – "biết", có bộ 矢")',w:'如果 / 比如'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn mệt quá thì nghỉ một lát đi.',answer:'如果你太累了，就休息一会儿。',answerPy:'Rúguǒ nǐ tài lèi le, jiù xiūxi yíhuìr.',
+     {promptLang:'vi',prompt:'Nếu bạn đói thì ăn chút gì trước đi.',answer:'如果你饿了，就先吃点儿东西吧。',answerPy:'Rúguǒ nǐ è le, jiù xiān chī diǎnr dōngxi ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Tuy bây giờ tiền không còn là vấn đề nhưng chủ yếu là không có thời gian.',answer:'虽然现在钱不是问题了，但是主要是没有时间。',answerPy:'Suīrán xiànzài qián bú shì wèntí le, dànshì zhǔyào shì méiyǒu shíjiān.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'忍 (rěn – "nhẫn nhịn", có bộ 心")',w:'认为 / 认识 / 认真'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Cô ấy cho rằng người đàn ông đó không thể đi chạy bộ được.',answer:'她认为男的不可能去跑步。',answerPy:'Tā rènwéi nán de bù kěnéng qù pǎobù.',
+     {promptLang:'vi',prompt:'Mọi người đều cho rằng kỳ thi lần này không khó.',answer:'大家都认为这次考试不难。',answerPy:'Dàjiā dōu rènwéi zhè cì kǎoshì bù nán.',
       note:'认为 + mệnh đề diễn tả quan điểm.'},
      {promptLang:'vi',prompt:'Nếu bạn cho rằng đúng thì cứ làm theo cách đó đi.',answer:'如果你认为对，就照那个办法做吧。',answerPy:'Rúguǒ nǐ rènwéi duì, jiù zhào nàge bànfǎ zuò ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -85,7 +85,7 @@ var vocabData = [
       cf:'反 (fǎn – "trái lại", hình dáng gần giống")',w:'皮鞋 / 皮肤'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Đôi giày da nhỏ này đẹp thật, ai mua cho bạn vậy?',answer:'这双小皮鞋真好看，谁给你买的？',answerPy:'Zhè shuāng xiǎo píxié zhēn hǎokàn, shéi gěi nǐ mǎi de?',
+     {promptLang:'vi',prompt:'Đôi giày da đen đó chắc mắc lắm nhỉ, bạn mua ở đâu vậy?',answer:'那双黑皮鞋很贵吧，你在哪儿买的？',answerPy:'Nà shuāng hēi píxié hěn guì ba, nǐ zài nǎr mǎi de?',
       note:'双 là lượng từ dùng cho giày.'},
      {promptLang:'vi',prompt:'Nếu bạn thích đôi giày da đó thì tôi mua tặng bạn.',answer:'如果你喜欢那双皮鞋，我就买给你。',answerPy:'Rúguǒ nǐ xǐhuan nà shuāng píxié, wǒ jiù mǎi gěi nǐ.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'冒 (mào – "liều lĩnh", không có bộ 巾")',w:'帽子 / 戴帽子'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bên ngoài lạnh lắm, đội mũ vào đi.',answer:'外边冷极了，戴上帽子吧。',answerPy:'Wàibian lěng jí le, dàishang màozi ba.',
+     {promptLang:'vi',prompt:'Hôm nay nóng lắm, bạn đừng đội mũ nữa.',answer:'今天热极了，你别戴帽子了。',answerPy:'Jīntiān rè jí le, nǐ bié dài màozi le.',
       note:'冷极了 diễn tả mức độ cực điểm (ôn lại 极了 đã học ở Bài 15).'},
      {promptLang:'vi',prompt:'Nếu trời lạnh thì bạn nên đội mũ.',answer:'如果天气冷，你就应该戴帽子。',answerPy:'Rúguǒ tiānqì lěng, nǐ jiù yīnggāi dài màozi.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'张 (zhāng – "mở ra", có bộ 弓")',w:'长大 / 长得 / 校长'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lạc Lạc, con cao lên rồi, cũng mập lên rồi.',answer:'乐乐，你长高了，也长胖了。',answerPy:'Lèlè, nǐ zhǎnggāo le, yě zhǎngpàng le.',
+     {promptLang:'vi',prompt:'Con trai, mùa hè này con cao lên không ít đấy.',answer:'儿子，你这个暑假长高了不少。',answerPy:'Érzi, nǐ zhège shǔjià zhǎnggāo le bù shǎo.',
       note:'长 + bổ ngữ kết quả (高/胖) diễn tả sự phát triển.'},
      {promptLang:'vi',prompt:'Nếu con lớn lên, con sẽ hiểu bố mẹ hơn.',answer:'如果你长大了，就会更了解爸爸妈妈。',answerPy:'Rúguǒ nǐ zhǎngdà le, jiù huì gèng liǎojiě bàba māma.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 了解 đã học ở Bài 15).'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'受 (shòu – "nhận", hình dáng gần giống")',w:'可爱 / 爱好'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Con chó nhỏ nhà bạn nho nhỏ, trông đáng yêu thật!',answer:'你家小狗小小的，长得真可爱！',answerPy:'Nǐ jiā xiǎogǒu xiǎoxiǎo de, zhǎng de zhēn kě\'ài!',
+     {promptLang:'vi',prompt:'Con mèo nhà hàng xóm mũm mĩm, trông thật đáng yêu!',answer:'邻居家的猫咪胖胖的，看起来真可爱！',answerPy:'Línjū jiā de māomī pàngpàng de, kàn qilai zhēn kě\'ài!',
       note:'小小的 = tính từ đơn âm tiết lặp lại (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu con mèo đó đáng yêu thì chúng ta mang về nhà đi.',answer:'如果那只猫可爱，我们就把它带回家吧。',answerPy:'Rúguǒ nà zhī māo kě\'ài, wǒmen jiù bǎ tā dài huí jiā ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'来 (lái – "đến", hình dáng gần giống")',w:'米 (mét) / 大米'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Cách đây hai trăm mét là trường học.',answer:'离这儿两百米就是学校。',answerPy:'Lí zhèr liǎngbǎi mǐ jiùshì xuéxiào.',
+     {promptLang:'vi',prompt:'Cách nhà tôi không xa, khoảng ba trăm mét là đến siêu thị.',answer:'离我家不远，大概三百米就是超市。',answerPy:'Lí wǒ jiā bù yuǎn, dàgài sānbǎi mǐ jiùshì chāoshì.',
       note:'离 diễn tả khoảng cách (ôn lại 学校 đã học ở Bài 13).'},
      {promptLang:'vi',prompt:'Nếu bạn chạy được hai nghìn mét thì sức khỏe sẽ tốt hơn.',answer:'如果你能跑两千米，身体就会更好。',answerPy:'Rúguǒ nǐ néng pǎo liǎng qiān mǐ, shēntǐ jiù huì gèng hǎo.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'斥 (chì – "quở trách", có nét chấm thêm")',w:'公斤 / 斤 (đơn vị cân cổ)'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lúc đó cô ấy rất gầy, gầy đến mức chỉ có 40 cân.',answer:'那时候她很瘦，瘦得只有40公斤。',answerPy:'Nà shíhou tā hěn shòu, shòu de zhǐyǒu sìshí gōngjīn.',
+     {promptLang:'vi',prompt:'Bây giờ anh ấy béo lên rồi, béo đến mức đã tám mươi cân rồi.',answer:'现在他胖了，胖得已经有八十公斤了。',answerPy:'Xiànzài tā pàng le, pàng de yǐjīng yǒu bāshí gōngjīn le.',
       note:'瘦得 + cụm từ = bổ ngữ trạng thái phức tạp (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn ăn nhiều thì sẽ tăng thêm vài cân.',answer:'如果你多吃点儿，就会长几公斤。',answerPy:'Rúguǒ nǐ duō chī diǎnr, jiù huì zhǎng jǐ gōngjīn.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 长 vừa học trong bài này).'},
@@ -217,7 +217,7 @@ var vocabData = [
       cf:'自 (zì – "tự mình", chính là hình cái mũi ban đầu")',w:'鼻子 / 鼻音'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mũi giống bố, cao cao.',answer:'鼻子像爸爸，高高的。',answerPy:'Bízi xiàng bàba, gāogāo de.',
+     {promptLang:'vi',prompt:'Miệng giống chị gái, nho nhỏ.',answer:'嘴巴像姐姐，小小的。',answerPy:'Zuǐba xiàng jiějie, xiǎoxiǎo de.',
       note:'高高的 = tính từ đơn âm tiết lặp lại (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu mũi bé giống bố thì chắc chắn cao cao.',answer:'如果孩子的鼻子像爸爸，就一定是高高的。',answerPy:'Rúguǒ háizi de bízi xiàng bàba, jiù yídìng shì gāogāo de.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'发 (fā – "gửi, phát ra", cùng chữ khác âm đọc")',w:'头发 / 白发'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Người tóc dài dài này là chị gái phải không?',answer:'这个头发长长的是姐姐吧？',answerPy:'Zhège tóufa chángcháng de shì jiějie ba?',
+     {promptLang:'vi',prompt:'Người tóc ngắn ngắn đó là ai vậy?',answer:'那个头发短短的是谁啊？',answerPy:'Nàge tóufa duǎnduǎn de shì shéi a?',
       note:'长长的 = tính từ đơn âm tiết lặp lại.'},
      {promptLang:'vi',prompt:'Nếu tóc bạn dài thì trông sẽ đẹp hơn.',answer:'如果你的头发长长的，看起来就会更漂亮。',answerPy:'Rúguǒ nǐ de tóufa chángcháng de, kàn qilai jiù huì gèng piàoliang.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -261,7 +261,7 @@ var vocabData = [
       cf:'验 (yàn – "kiểm nghiệm", có bộ 马")',w:'检查 / 检验'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chỉ nghe bạn nói không được đâu, tôi cần khám thử mới rõ được.',answer:'只听你说不行，我需要检查一下才清楚。',answerPy:'Zhǐ tīng nǐ shuō bù xíng, wǒ xūyào jiǎnchá yíxià cái qīngchu.',
+     {promptLang:'vi',prompt:'Máy tính bị lỗi rồi, tôi phải tìm người kiểm tra thì mới dùng được.',answer:'电脑出问题了，我得找人检查一下才能用。',answerPy:'Diànnǎo chū wèntí le, wǒ děi zhǎo rén jiǎnchá yíxià cái néng yòng.',
       note:'才 diễn tả điều kiện cần (ôn lại đã học ở Bài 12).'},
      {promptLang:'vi',prompt:'Nếu ngày mai vẫn không khỏe thì đi khám bác sĩ đi.',answer:'如果明天还不好，就去检查一下医生吧。',answerPy:'Rúguǒ míngtiān hái bù hǎo, jiù qù jiǎnchá yíxià yīshēng ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'刻 (kè – "khắc", có 亥 thay vì 尸")',w:'刷牙 / 刷卡'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sau khi ngủ dậy phải đánh răng, rửa mặt trước.',answer:'起床以后要先刷牙、洗脸。',answerPy:'Qǐchuáng yǐhòu yào xiān shuā yá, xǐ liǎn.',
+     {promptLang:'vi',prompt:'Trước khi ngủ phải đánh răng, thay đồ trước.',answer:'睡觉以前要先刷牙、脱衣服。',answerPy:'Shuìjiào yǐqián yào xiān shuā yá, tuō yīfu.',
       note:'先……要 diễn tả việc cần làm trước.'},
      {promptLang:'vi',prompt:'Nếu bạn đánh răng cẩn thận thì răng sẽ không đau nữa.',answer:'如果你好好儿刷牙，牙就不会疼了。',answerPy:'Rúguǒ nǐ hǎohāor shuā yá, yá jiù bú huì téng le.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -305,7 +305,7 @@ var vocabData = [
       cf:'系 (jì – "buộc chặt", cùng chữ khác nghĩa")',w:'关系 / 关心'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Quan hệ với người khác sẽ trở nên tốt hơn.',answer:'和别人的关系就会变得更好。',answerPy:'Hé biéren de guānxi jiù huì biàn de gèng hǎo.',
+     {promptLang:'vi',prompt:'Học cách giúp đỡ lẫn nhau thì quan hệ giữa mọi người sẽ trở nên tốt hơn.',answer:'学会互相帮助，大家的关系就会变得更好。',answerPy:'Xuéhuì hùxiāng bāngzhù, dàjiā de guānxi jiù huì biàn de gèng hǎo.',
       note:'变得更好 diễn tả sự thay đổi tích cực.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn cười nhiều với người khác thì người khác sẽ sẵn lòng giúp bạn.',answer:'只要你多对别人笑笑，别人就会愿意帮助你。',answerPy:'Zhǐyào nǐ duō duì biéren xiàoxiao, biéren jiù huì yuànyì bāngzhù nǐ.',
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 愿意 đã học ở Bài 13).'},
@@ -327,7 +327,7 @@ var vocabData = [
       cf:'到 (dào – "đến", có 至 thay vì 另")',w:'别人 / 别的'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Khi gặp vấn đề, người khác đều sẵn lòng giúp bạn.',answer:'遇到问题时，别人都愿意帮助你。',answerPy:'Yùdào wèntí shí, biéren dōu yuànyì bāngzhù nǐ.',
+     {promptLang:'vi',prompt:'Khi gặp từ ngữ không hiểu, có thể hỏi người khác thử xem.',answer:'遇到不懂的词语时，可以问问别人。',answerPy:'Yùdào bù dǒng de cíyǔ shí, kěyǐ wènwen biéren.',
       note:'遇到 diễn tả tình cờ gặp phải (ôn lại đã học ở Bài 13).'},
      {promptLang:'vi',prompt:'Nếu bạn bận đến mức không gặp người khác thì quan hệ sẽ lạnh nhạt.',answer:'如果你忙得不跟别人见面，关系就会冷冷的。',answerPy:'Rúguǒ nǐ máng de bù gēn biéren jiànmiàn, guānxi jiù huì lěnglěng de.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -349,7 +349,7 @@ var vocabData = [
       cf:'司 (sī – "quản lý", không có bộ 讠")',w:'词语 / 生词'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Những từ ngữ này tôi đều không biết.',answer:'这些词语我都不认识。',answerPy:'Zhèxiē cíyǔ wǒ dōu bú rènshi.',
+     {promptLang:'vi',prompt:'Mấy câu này tôi đều không hiểu được.',answer:'这几个句子我都看不懂。',answerPy:'Zhè jǐ ge jùzi wǒ dōu kàn bu dǒng.',
       note:'都 + phủ định diễn tả toàn bộ đều không.'},
      {promptLang:'vi',prompt:'Nếu bạn học thuộc những từ ngữ này thì tiếng Trung sẽ tiến bộ nhanh.',answer:'如果你记住这些词语，汉语水平就会提高得很快。',answerPy:'Rúguǒ nǐ jìzhù zhèxiē cíyǔ, Hànyǔ shuǐpíng jiù huì tígāo de hěn kuài.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 水平/提高 đã học ở Bài 15).'},
@@ -441,18 +441,18 @@ var matchData = [
 var fillData = [
   {pre:'我不喜欢一直住在同一个',blank:'城市',post:'。',hint:'(thành phố)',ans:'城市'},
   {pre:'',blank:'如果',post:'有钱，就去了。',hint:'(nếu)',ans:'如果'},
-  {pre:'我',blank:'认为',post:'现在您有时间也不会出去玩儿。',hint:'(cho rằng)',ans:'认为'},
+  {pre:'虽然大家都说这个办法很好，但是我',blank:'认为',post:'还是有点儿问题。',hint:'(cho rằng)',ans:'认为'},
   {pre:'你送的小',blank:'皮鞋',post:'和小帽子真漂亮！',hint:'(giày da)',ans:'皮鞋'},
-  {pre:'你送的小皮鞋和小',blank:'帽子',post:'真漂亮！',hint:'(mũ, nón)',ans:'帽子'},
+  {pre:'他生日的时候，我送了他一顶新',blank:'帽子',post:'。',hint:'(mũ, nón)',ans:'帽子'},
   {pre:'乐乐，你',blank:'长',post:'高了。',hint:'(trưởng thành, lớn lên)',ans:'长'},
   {pre:'你女儿长得白白的、胖胖的，真',blank:'可爱',post:'！',hint:'(đáng yêu)',ans:'可爱'},
-  {pre:'快1',blank:'米',post:'了，25公斤。',hint:'(mét)',ans:'米'},
-  {pre:'快1米了，25',blank:'公斤',post:'。',hint:'(kilôgram)',ans:'公斤'},
+  {pre:'这条河大概有五十',blank:'米',post:'宽。',hint:'(mét)',ans:'米'},
+  {pre:'这个箱子太重了，差不多有三十',blank:'公斤',post:'。',hint:'(kilôgram)',ans:'公斤'},
   {pre:'她',blank:'鼻子',post:'小小的，头发黑黑的。',hint:'(mũi)',ans:'鼻子'},
-  {pre:'她鼻子小小的，',blank:'头发',post:'黑黑的。',hint:'(tóc)',ans:'头发'},
-  {pre:'如果不舒服，就去医院',blank:'检查',post:'一下吧。',hint:'(kiểm tra, khám)',ans:'检查'},
+  {pre:'奶奶年纪大了，',blank:'头发',post:'已经白白的了。',hint:'(tóc)',ans:'头发'},
+  {pre:'虽然只是头疼，但奶奶还是决定去医院',blank:'检查',post:'一下。',hint:'(kiểm tra, khám)',ans:'检查'},
   {pre:'回家好好儿',blank:'刷牙',post:'。',hint:'(chải răng)',ans:'刷牙'},
-  {pre:'和别人的',blank:'关系',post:'就会变得更好。',hint:'(quan hệ)',ans:'关系'},
+  {pre:'虽然吵过架，但是他们的',blank:'关系',post:'还是很好。',hint:'(quan hệ)',ans:'关系'},
   {pre:'我们应该多对',blank:'别人',post:'笑笑。',hint:'(người khác)',ans:'别人'},
   {pre:'多用一些"您好""谢谢"这样的',blank:'词语',post:'。',hint:'(từ ngữ)',ans:'词语'},
 ];
@@ -461,14 +461,14 @@ var fillData = [
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','不','喜欢','一直','住','在','同一个','城市','。'],ans:'我不喜欢一直住在同一个城市。',audio:'我不喜欢一直住在同一个城市。'},
-  {words:['如果','不','舒服','，','就','去','医院','检查','一下','吧','。'],ans:'如果不舒服，就去医院检查一下吧。',audio:'如果不舒服，就去医院检查一下吧。'},
-  {words:['你','女儿','长','得','白白','的','、','胖胖','的','，','真','可爱','！'],ans:'你女儿长得白白的、胖胖的，真可爱！',audio:'你女儿长得白白的、胖胖的，真可爱！'},
+  {words:['虽然','这个','城市','很','方便','，','但是','我','还是','想','去','别的','地方','看看','。'],ans:'虽然这个城市很方便，但是我还是想去别的地方看看。',audio:'虽然这个城市很方便，但是我还是想去别的地方看看。'},
+  {words:['如果','你','还是','不','舒服','，','就','去','药店','买','点儿','药','吃','吧','。'],ans:'如果你还是不舒服，就去药店买点儿药吃吧。',audio:'如果你还是不舒服，就去药店买点儿药吃吧。'},
+  {words:['那个','小','男孩','长','得','瘦瘦','的','、','高高','的','，','很','帅气','。'],ans:'那个小男孩长得瘦瘦的、高高的，很帅气。',audio:'那个小男孩长得瘦瘦的、高高的，很帅气。'},
   {words:['我','现在','累','得','下','了','班','就','想','睡觉','。'],ans:'我现在累得下了班就想睡觉。',audio:'我现在累得下了班就想睡觉。'},
-  {words:['如果','你','太','累','了','，','就','休息','一会儿','。'],ans:'如果你太累了，就休息一会儿。',audio:'如果你太累了，就休息一会儿。'},
-  {words:['虽然','现在','钱','不是','问题','了','，','但是','主要','是','没有','时间','。'],ans:'虽然现在钱不是问题了，但是主要是没有时间。',audio:'虽然现在钱不是问题了，但是主要是没有时间。'},
+  {words:['如果','你','想','学好','汉语','，','就','应该','每天','多','说','多','练','。'],ans:'如果你想学好汉语，就应该每天多说多练。',audio:'如果你想学好汉语，就应该每天多说多练。'},
+  {words:['虽然','工作','很','忙','，','但是','他','每天','都','回家','吃','晚饭','。'],ans:'虽然工作很忙，但是他每天都回家吃晚饭。',audio:'虽然工作很忙，但是他每天都回家吃晚饭。'},
   {words:['如果','能','多','用','一些','礼貌','的','词语','，','关系','就','会','变','得','更好','。'],ans:'如果能多用一些礼貌的词语，关系就会变得更好。',audio:'如果能多用一些礼貌的词语，关系就会变得更好。'},
-  {words:['很多','人','都','觉得','现在','人','和','人','的','关系','冷冷','的','。'],ans:'很多人都觉得现在人和人的关系冷冷的。',audio:'很多人都觉得现在人和人的关系冷冷的。'},
+  {words:['有的','人','觉得','住','在','大','城市','很','方便','，','有的','人','觉得','很','累','。'],ans:'有的人觉得住在大城市很方便，有的人觉得很累。',audio:'有的人觉得住在大城市很方便，有的人觉得很累。'},
 ];
 
 // ══════════════════════════════════════════
@@ -488,7 +488,7 @@ var errorFixData = [
    opts:['他鼻子小小的，长得像谁？','他鼻子小的小，长得像谁？','他鼻子的小小，长得像谁？','他鼻子小小，长得像谁的？'],ans:0,
    exp:'Tính từ đơn âm tiết lặp lại phải viết liền thành "AA的" (小小的), không tách rời.'},
   {wrong:'你女儿长得白、白的，胖胖的。',
-   opts:['你女儿长得白白的、胖胖的。','你女儿长得白、白的，胖胖的。','你女儿长得白白、的胖胖的。','你女儿白白的长得、胖胖的。'],ans:0,
+   opts:['那个房间静静的，很舒服。','你女儿长得白、白的，胖胖的。','你女儿长得白白、的胖胖的。','你女儿白白的长得、胖胖的。'],ans:0,
    exp:'"AA的" viết liền không tách bằng dấu phẩy giữa hai âm tiết lặp.'},
 ];
 
@@ -529,28 +529,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi không thích cứ sống mãi ở một thành phố.', zh:'我不喜欢一直住在同一个城市。', py:'Wǒ bù xǐhuan yìzhí zhù zài tóng yí ge chéngshì.'},
-  {vi:'Nếu khó chịu thì đi bệnh viện khám thử đi.', zh:'如果不舒服，就去医院检查一下吧。', py:'Rúguǒ bù shūfu, jiù qù yīyuàn jiǎnchá yíxià ba.'},
-  {vi:'Con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!', zh:'你女儿长得白白的、胖胖的，真可爱！', py:'Nǐ nǚ\'ér zhǎng de báibái de, pàngpàng de, zhēn kě\'ài!'},
-  {vi:'Bây giờ chú mệt đến mức hết giờ làm là chỉ muốn ngủ thôi.', zh:'我现在累得下了班就想睡觉。', py:'Wǒ xiànzài lèi de xiàle bān jiù xiǎng shuìjiào.'},
-  {vi:'Lần nào bác sĩ cũng bảo tôi, về nhà đánh răng cho kỹ.', zh:'每次医生都告诉我，回家好好儿刷牙。', py:'Měi cì yīshēng dōu gàosu wǒ, huí jiā hǎohāor shuā yá.'},
-  {vi:'Nhiều người cảm thấy quan hệ giữa người với người hiện nay lạnh nhạt.', zh:'很多人都觉得现在人和人的关系冷冷的。', py:'Hěn duō rén dōu juéde xiànzài rén hé rén de guānxi lěnglěng de.'},
-  {vi:'Chúng ta nên cười nhiều hơn với người khác.', zh:'我们应该多对别人笑笑。', py:'Wǒmen yīnggāi duō duì biéren xiàoxiao.'},
-  {vi:'Quan hệ với người khác sẽ trở nên tốt hơn.', zh:'和别人的关系就会变得更好。', py:'Hé biéren de guānxi jiù huì biàn de gèng hǎo.'},
+  {vi:'Nếu có cơ hội, tôi muốn đi thử vài thành phố khác.', zh:'如果有机会，我想去试试别的城市。', py:'Rúguǒ yǒu jīhuì, wǒ xiǎng qù shìshi bié de chéngshì.'},
+  {vi:'Nếu trời mưa thì chúng ta ở nhà xem phim đi.', zh:'如果外边下雨，我们就在家看电影吧。', py:'Rúguǒ wàibian xià yǔ, wǒmen jiù zài jiā kàn diànyǐng ba.'},
+  {vi:'Con trai bạn trông đen đen, cao cao, rất khỏe mạnh.', zh:'你儿子长得黑黑的、高高的，很健康。', py:'Nǐ érzi zhǎng de hēihēi de, gāogāo de, hěn jiànkāng.'},
+  {vi:'Anh ấy mệt đến mức về nhà là ngủ luôn, cơm cũng không ăn.', zh:'他累得一回家就睡着了，饭也没吃。', py:'Tā lèi de yì huí jiā jiù shuì zháo le, fàn yě méi chī.'},
+  {vi:'Mỗi lần bị cảm, mẹ đều bảo tôi uống nhiều nước nóng, nghỉ ngơi nhiều.', zh:'每次感冒，妈妈都让我多喝热水、多休息。', py:'Měi cì gǎnmào, māma dōu ràng wǒ duō hē rè shuǐ, duō xiūxi.'},
+  {vi:'Nhiều bạn trẻ bây giờ thích vừa làm việc vừa đi du lịch.', zh:'现在很多年轻人喜欢一边工作一边旅游。', py:'Xiànzài hěn duō niánqīng rén xǐhuan yìbiān gōngzuò yìbiān lǚyóu.'},
+  {vi:'Chúng ta nên thường xuyên dùng những từ ngữ lịch sự với người khác.', zh:'我们应该常常对别人说一些礼貌的词语。', py:'Wǒmen yīnggāi chángcháng duì biéren shuō yìxiē lǐmào de cíyǔ.'},
+  {vi:'Nếu bạn thường xuyên liên lạc với bạn bè thì quan hệ sẽ ngày càng tốt hơn.', zh:'如果你常常跟朋友联系，关系就会越来越好。', py:'Rúguǒ nǐ chángcháng gēn péngyou liánxì, guānxi jiù huì yuèláiyuè hǎo.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nếu bạn mệt quá thì nghỉ một lát đi.', zh:'如果你太累了，就休息一会儿。', py:'Rúguǒ nǐ tài lèi le, jiù xiūxi yíhuìr.'},
-  {vi:'Tuy bây giờ tiền không còn là vấn đề nhưng chủ yếu là không có thời gian.', zh:'虽然现在钱不是问题了，但是主要是没有时间。', py:'Suīrán xiànzài qián bú shì wèntí le, dànshì zhǔyào shì méiyǒu shíjiān.'},
-  {vi:'Chỉ cần bạn cười nhiều với người khác thì người khác sẽ sẵn lòng giúp bạn.', zh:'只要你多对别人笑笑，别人就会愿意帮助你。', py:'Zhǐyào nǐ duō duì biéren xiàoxiao, biéren jiù huì yuànyì bāngzhù nǐ.'},
-  {vi:'Bọn trẻ chơi đến mức không muốn về nhà.', zh:'孩子们玩儿得不想回家。', py:'Háizimen wánr de bù xiǎng huí jiā.'},
-  {vi:'Em trai vui đến mức nhảy dựng lên.', zh:'弟弟高兴得跳了起来。', py:'Dìdi gāoxìng de tiàole qilai.'},
+  {vi:'Nếu con đường này không thông thì chúng ta đi đường khác đi.', zh:'如果这条路不通，我们就走别的路吧。', py:'Rúguǒ zhè tiáo lù bù tōng, wǒmen jiù zǒu bié de lù ba.'},
+  {vi:'Tuy trời tối rồi nhưng cô ấy vẫn muốn ra ngoài đi dạo.', zh:'虽然天黑了，但是她还想出去散散步。', py:'Suīrán tiān hēi le, dànshì tā hái xiǎng chūqu sànsan bù.'},
+  {vi:'Chỉ cần con chăm chỉ học tập thì thành tích sẽ ngày càng tốt hơn.', zh:'只要你努力学习，成绩就会越来越好。', py:'Zhǐyào nǐ nǔlì xuéxí, chéngjì jiù huì yuèláiyuè hǎo.'},
+  {vi:'Anh ấy làm việc đến mức quên cả ăn cơm.', zh:'他工作得忘了吃饭。', py:'Tā gōngzuò de wàngle chī fàn.'},
+  {vi:'Bà nội vui đến mức cười không ngừng.', zh:'奶奶高兴得笑个不停。', py:'Nǎinai gāoxìng de xiào ge bù tíng.'},
   {vi:'Hoa bạn tặng đỏ đỏ, tôi rất thích.', zh:'你送的花红红的，我很喜欢。', py:'Nǐ sòng de huā hónghóng de, wǒ hěn xǐhuan.'},
   {vi:'Mấy ngọn cỏ này xanh xanh, đẹp thật.', zh:'这些草绿绿的，真漂亮。', py:'Zhèxiē cǎo lǜlǜ de, zhēn piàoliang.'},
-  {vi:'Anh ấy mũi nhỏ nhỏ, giống ai vậy?', zh:'他鼻子小小的，长得像谁？', py:'Tā bízi xiǎoxiǎo de, zhǎng de xiàng shéi?'},
+  {vi:'Cô ấy mắt to to, giống mẹ nhất.', zh:'她眼睛大大的，最像妈妈。', py:'Tā yǎnjing dàdà de, zuì xiàng māma.'},
 ];
 
 // ══════════════════════════════════════════

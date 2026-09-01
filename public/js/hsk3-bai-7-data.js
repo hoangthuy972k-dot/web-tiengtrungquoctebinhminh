@@ -41,8 +41,8 @@ var vocabData = [
       cf:'剪 (jiǎn – "cắt", có 刀 trên thay vì 月")',w:'以前 / 前边 / 前年'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Trước đây tôi làm việc ở trường học, bây giờ làm ở ngân hàng.',answer:'我以前在学校工作，现在在银行工作。',answerPy:'Wǒ yǐqián zài xuéxiào gōngzuò, xiànzài zài yínháng gōngzuò.',
-      note:'以前……现在…… diễn tả sự đối lập giữa quá khứ và hiện tại (ôn lại 银行 vừa học trong bài này).'},
+     {promptLang:'vi',prompt:'Trước đây tôi thích chơi thể thao, bây giờ thích nghe nhạc hơn.',answer:'我以前喜欢运动，现在更喜欢听音乐。',answerPy:'Wǒ yǐqián xǐhuan yùndòng, xiànzài gèng xǐhuan tīng yīnyuè.',
+      note:'以前……现在…… diễn tả sự đối lập giữa quá khứ và hiện tại.'},
      {promptLang:'vi',prompt:'Tuy trước đây tôi không thích âm nhạc nhưng bây giờ lại rất thích.',answer:'虽然我以前不喜欢音乐，但是现在很喜欢。',answerPy:'Suīrán wǒ yǐqián bù xǐhuan yīnyuè, dànshì xiànzài hěn xǐhuan.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'该 (gāi – "nên, phải", có 讠 thay vì 刂")',w:'一刻钟 / 三刻 / 立刻'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bây giờ là kém mười lăm phút nữa 9 giờ.',answer:'现在差一刻九点。',answerPy:'Xiànzài chà yí kè jiǔ diǎn.',
+     {promptLang:'vi',prompt:'Bây giờ là kém mười lăm phút nữa 6 giờ, chúng ta đi thôi.',answer:'现在差一刻六点，我们走吧。',answerPy:'Xiànzài chà yí kè liù diǎn, wǒmen zǒu ba.',
       note:'差+一刻+giờ = cách nói giờ kém (điểm ngữ pháp bài này, ôn lại 差 sẽ học ngay bên dưới).'},
      {promptLang:'vi',prompt:'Chúng tôi hát hai tiếng đồng hồ, rất vui.',answer:'我们唱了两个小时歌，很高兴。',answerPy:'Wǒmen chàngle liǎng ge xiǎoshí gē, hěn gāoxìng.',
       note:'唱了+thời lượng+歌 diễn tả khoảng thời gian hành động kéo dài.'},
@@ -357,32 +357,32 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'那个漂亮的新',blank:'同事',post:'是谁？',hint:'(đồng nghiệp)',ans:'同事'},
-  {pre:'',blank:'以前',post:'她在哪儿工作？',hint:'(trước đây)',ans:'以前'},
+  {pre:'办公室里那位很热情的新',blank:'同事',post:'叫什么名字？',hint:'(đồng nghiệp)',ans:'同事'},
+  {pre:'',blank:'以前',post:'你去过银行工作吗？',hint:'(trước đây)',ans:'以前'},
   {pre:'她在',blank:'银行',post:'工作了两年。',hint:'(ngân hàng)',ans:'银行'},
-  {pre:'你们唱了多',blank:'久',post:'？',hint:'(lâu)',ans:'久'},
-  {pre:'你们都对音乐',blank:'感兴趣',post:'吗？',hint:'(có hứng thú)',ans:'感兴趣'},
+  {pre:'你们在银行门口等了很',blank:'久',post:'，是吗？',hint:'(lâu)',ans:'久'},
+  {pre:'你同事对什么运动比较',blank:'感兴趣',post:'？',hint:'(có hứng thú)',ans:'感兴趣'},
   {pre:'我跟小丽下个月',blank:'结婚',post:'。',hint:'(kết hôn)',ans:'结婚'},
   {pre:'到时候',blank:'欢迎',post:'你来。',hint:'(hoan nghênh)',ans:'欢迎'},
-  {pre:'你看看手表，怎么',blank:'迟到',post:'了？',hint:'(đến muộn)',ans:'迟到'},
-  {pre:'你不是说七点',blank:'半',post:'来接我吗？',hint:'(rưỡi)',ans:'半'},
-  {pre:'你不是说七点半来',blank:'接',post:'我吗？',hint:'(đón)',ans:'接'},
-  {pre:'你迟到了一',blank:'刻',post:'钟。',hint:'(mười lăm phút)',ans:'刻'},
-  {pre:'已经',blank:'差',post:'一刻八点了！',hint:'(kém, thiếu)',ans:'差'},
+  {pre:'都八点半了，你怎么又',blank:'迟到',post:'了？',hint:'(đến muộn)',ans:'迟到'},
+  {pre:'我们八点',blank:'半',post:'在公司门口见面，好吗？',hint:'(rưỡi)',ans:'半'},
+  {pre:'谁明天去机场',blank:'接',post:'新同事？',hint:'(đón)',ans:'接'},
+  {pre:'我们在这儿等了一',blank:'刻',post:'钟了，他还没来。',hint:'(mười lăm phút)',ans:'刻'},
+  {pre:'你看，现在都',blank:'差',post:'五分六点了，我们该走了。',hint:'(kém, thiếu)',ans:'差'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['那个','漂亮','的','新','同事','是','谁','？'],ans:'那个漂亮的新同事是谁？',audio:'那个漂亮的新同事是谁？'},
-  {words:['她','在','银行','工作','了','两年','以后','来','的','我们','公司','。'],ans:'她在银行工作了两年以后来的我们公司。',audio:'她在银行工作了两年以后来的我们公司。'},
-  {words:['她','对','音乐','感兴趣','，','我','对','她','更','感兴趣','。'],ans:'她对音乐感兴趣，我对她更感兴趣。',audio:'她对音乐感兴趣，我对她更感兴趣。'},
-  {words:['我','跟','小丽','下个月','结婚','，','到时候','欢迎','你','来','。'],ans:'我跟小丽下个月结婚，到时候欢迎你来。',audio:'我跟小丽下个月结婚，到时候欢迎你来。'},
+  {words:['那位','新','同事','虽然','刚','来','，','但是','已经','很','受','欢迎','。'],ans:'那位新同事虽然刚来，但是已经很受欢迎。',audio:'那位新同事虽然刚来，但是已经很受欢迎。'},
+  {words:['如果','你','想','去','银行','工作','，','就','得','先','问问','经理','。'],ans:'如果你想去银行工作，就得先问问经理。',audio:'如果你想去银行工作，就得先问问经理。'},
+  {words:['虽然','我','对','唱歌','不','感兴趣','，','但是','我','很','喜欢','听','音乐会','。'],ans:'虽然我对唱歌不感兴趣，但是我很喜欢听音乐会。',audio:'虽然我对唱歌不感兴趣，但是我很喜欢听音乐会。'},
+  {words:['我','朋友','明年','春天','结婚','，','到时候','你','一定','要','来','。'],ans:'我朋友明年春天结婚，到时候你一定要来。',audio:'我朋友明年春天结婚，到时候你一定要来。'},
   {words:['因为','她','刚','来','公司','，','所以','我们','都','不','认识','她','。'],ans:'因为她刚来公司，所以我们都不认识她。',audio:'因为她刚来公司，所以我们都不认识她。'},
   {words:['虽然','我们','刚','认识','，','但是','感觉','很好','。'],ans:'虽然我们刚认识，但是感觉很好。',audio:'虽然我们刚认识，但是感觉很好。'},
   {words:['如果','你','对','音乐','感兴趣','，','就','来','听','音乐会','吧','。'],ans:'如果你对音乐感兴趣，就来听音乐会吧。',audio:'如果你对音乐感兴趣，就来听音乐会吧。'},
-  {words:['你','迟到','了','一','刻','钟','。'],ans:'你迟到了一刻钟。',audio:'你迟到了一刻钟。'},
+  {words:['如果','车','再','不','来','，','我们','就','要','迟到','一','刻','钟','了','。'],ans:'如果车再不来，我们就要迟到一刻钟了。',audio:'如果车再不来，我们就要迟到一刻钟了。'},
 ];
 
 // ══════════════════════════════════════════
@@ -401,8 +401,8 @@ var errorFixData = [
   {wrong:'我跟她结婚了都认识五年。',
    opts:['我跟她都认识五年了。','我跟她结婚了都认识五年。','我跟她认识都五年了。','我都跟她认识五年了。'],ans:0,
    exp:'Cấu trúc "Sub+V+了+thời lượng+了": 都 (đều/đã) đặt trước động từ 认识, 了 đặt cuối câu.'},
-  {wrong:'你迟到了钟一刻。',
-   opts:['你迟到了一刻钟。','你迟到了钟一刻。','你一刻钟了迟到。','你迟到钟了一刻。'],ans:0,
+  {wrong:'同事迟到了钟一刻。',
+   opts:['同事迟到了一刻钟。','同事迟到了钟一刻。','同事一刻钟了迟到。','同事迟到钟了一刻。'],ans:0,
    exp:'Bổ ngữ số lượng "一刻钟" (số từ+lượng từ+danh từ) phải đứng nguyên vẹn sau 了, không đảo thành "钟一刻".'},
 ];
 
@@ -443,28 +443,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cô ấy làm việc ở công ty này ba năm rồi.', zh:'她在这家公司工作三年了。', py:'Tā zài zhè jiā gōngsī gōngzuò sān nián le.'},
-  {vi:'Trước đây tôi làm việc ở trường học, bây giờ làm ở ngân hàng.', zh:'我以前在学校工作，现在在银行工作。', py:'Wǒ yǐqián zài xuéxiào gōngzuò, xiànzài zài yínháng gōngzuò.'},
-  {vi:'Bạn thích môn thể thao nào?', zh:'你对什么运动感兴趣？', py:'Nǐ duì shénme yùndòng gǎn xìngqù?'},
-  {vi:'Tháng sau chúng tôi kết hôn, hoan nghênh bạn đến.', zh:'我们下个月结婚，欢迎你来。', py:'Wǒmen xià ge yuè jié hūn, huānyíng nǐ lái.'},
-  {vi:'Bạn không phải nói 8 giờ đến đón tôi sao? Bạn đến muộn rồi.', zh:'你不是说八点来接我吗？你迟到了。', py:'Nǐ bú shì shuō bā diǎn lái jiē wǒ ma? Nǐ chídào le.'},
-  {vi:'Bây giờ là kém mười lăm phút nữa 9 giờ.', zh:'现在差一刻九点。', py:'Xiànzài chà yí kè jiǔ diǎn.'},
-  {vi:'Chúng tôi hát hai tiếng đồng hồ, rất vui.', zh:'我们唱了两个小时歌，很高兴。', py:'Wǒmen chàngle liǎng ge xiǎoshí gē, hěn gāoxìng.'},
-  {vi:'Nếu bạn thích âm nhạc thì cùng đi nghe hòa nhạc với tôi đi.', zh:'如果你对音乐感兴趣，就跟我一起去听音乐会吧。', py:'Rúguǒ nǐ duì yīnyuè gǎn xìngqù, jiù gēn wǒ yìqǐ qù tīng yīnyuèhuì ba.'},
+  {vi:'Vì đồng nghiệp mới vừa đến công ty, nên tôi phải giúp cô ấy nhiều.', zh:'因为新同事刚来公司，所以我得多帮她。', py:'Yīnwèi xīn tóngshì gāng lái gōngsī, suǒyǐ wǒ děi duō bāng tā.'},
+  {vi:'Trước đây chúng tôi làm việc ở ngân hàng, bây giờ đều làm ở công ty này.', zh:'我们以前在银行工作，现在都在这家公司工作。', py:'Wǒmen yǐqián zài yínháng gōngzuò, xiànzài dōu zài zhè jiā gōngsī gōngzuò.'},
+  {vi:'Bạn có hứng thú với công việc mới không?', zh:'你对新工作感兴趣吗？', py:'Nǐ duì xīn gōngzuò gǎn xìngqù ma?'},
+  {vi:'Đồng nghiệp của tôi tháng sau kết hôn, hoan nghênh mọi người đến.', zh:'我同事下个月结婚，欢迎大家来。', py:'Wǒ tóngshì xià ge yuè jié hūn, huānyíng dàjiā lái.'},
+  {vi:'Bạn không phải nói chín giờ đến đón tôi sao? Bạn đến muộn nửa tiếng rồi.', zh:'你不是说九点来接我吗？你迟到了半个小时。', py:'Nǐ bú shì shuō jiǔ diǎn lái jiē wǒ ma? Nǐ chídàole bàn ge xiǎoshí.'},
+  {vi:'Bây giờ là kém mười lăm phút nữa 3 giờ, buổi họp sắp bắt đầu rồi.', zh:'现在差一刻三点，会议快要开始了。', py:'Xiànzài chà yí kè sān diǎn, huìyì kuàiyào kāishǐ le.'},
+  {vi:'Chúng tôi hát ở đó nửa tiếng, tuy mệt nhưng rất vui.', zh:'我们在那儿唱了半个小时，虽然累，但是很高兴。', py:'Wǒmen zài nàr chàngle bàn ge xiǎoshí, suīrán lèi, dànshì hěn gāoxìng.'},
+  {vi:'Nếu bạn thích thể thao thì cuối tuần chúng ta cùng đi xem bóng đá đi.', zh:'如果你对运动感兴趣，我们周末就一起去看足球吧。', py:'Rúguǒ nǐ duì yùndòng gǎn xìngqù, wǒmen zhōumò jiù yìqǐ qù kàn zúqiú ba.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì cô ấy vừa đến công ty nên mọi người chưa quen cô ấy.', zh:'因为她刚来公司，所以大家还不认识她。', py:'Yīnwèi tā gāng lái gōngsī, suǒyǐ dàjiā hái bú rènshi tā.'},
-  {vi:'Chỉ cần bạn đến sớm mười lăm phút thì sẽ không muộn.', zh:'只要你早来一刻钟，就不会迟到。', py:'Zhǐyào nǐ zǎo lái yí kè zhōng, jiù bú huì chídào.'},
+  {vi:'Vì giám đốc mới đến công ty làm việc, nên các đồng nghiệp đều rất hoan nghênh anh ấy.', zh:'因为经理刚来公司工作，所以同事们都很欢迎他。', py:'Yīnwèi jīnglǐ gāng lái gōngsī gōngzuò, suǒyǐ tóngshìmen dōu hěn huānyíng tā.'},
+  {vi:'Chỉ cần bạn đến sớm nửa tiếng, chúng ta sẽ không cần vội vàng.', zh:'只要你早来半个小时，我们就不用着急了。', py:'Zhǐyào nǐ zǎo lái bàn ge xiǎoshí, wǒmen jiù búyòng zháojí le.'},
   {vi:'Tuy đồng hồ của tôi chạy nhanh nhưng tôi vẫn đến đúng giờ.', zh:'虽然我的表快了，但是我还是准时到了。', py:'Suīrán wǒ de biǎo kuài le, dànshì wǒ háishi zhǔnshí dào le.'},
-  {vi:'Anh trai tôi và vợ anh ấy quen nhau bảy năm rồi mới kết hôn.', zh:'我哥哥和他妻子认识七年了才结婚。', py:'Wǒ gēge hé tā qīzi rènshi qī nián le cái jiéhūn.'},
+  {vi:'Tiểu Lệ và bạn trai cô ấy quen nhau năm năm rồi mới kết hôn.', zh:'小丽和她男朋友认识五年了才结婚。', py:'Xiǎolì hé tā nánpéngyou rènshi wǔ nián le cái jiéhūn.'},
   {vi:'Bà tôi đã hơn 80 tuổi rồi nhưng vẫn thích nghe nhạc trẻ.', zh:'我奶奶已经80多岁了，但是还喜欢听年轻人的音乐。', py:'Wǒ nǎinai yǐjīng bāshí duō suì le, dànshì hái xǐhuan tīng niánqīngrén de yīnyuè.'},
-  {vi:'Anh ấy đợi tôi ở cửa công ty nửa tiếng rồi.', zh:'他在公司门口等了我半个小时了。', py:'Tā zài gōngsī ménkǒu děngle wǒ bàn ge xiǎoshí le.'},
+  {vi:'Tiểu Cương đã đợi ở cửa ngân hàng nửa tiếng rồi, sao bạn còn chưa đến?', zh:'小刚已经在银行门口等了半个小时了，你怎么还没到？', py:'Xiǎogāng yǐjīng zài yínháng ménkǒu děngle bàn ge xiǎoshí le, nǐ zěnme hái méi dào?'},
   {vi:'Con trai hai tuổi của tôi rất thích nghe nhạc.', zh:'我两岁的儿子很喜欢听音乐。', py:'Wǒ liǎng suì de érzi hěn xǐhuan tīng yīnyuè.'},
-  {vi:'Bạn có thể đến đón tôi lúc 7 giờ rưỡi không?', zh:'你能七点半来接我吗？', py:'Nǐ néng qī diǎn bàn lái jiē wǒ ma?'},
+  {vi:'Bạn có thể đến công ty đón tôi lúc tám giờ kém mười lăm không?', zh:'你能差一刻八点来公司接我吗？', py:'Nǐ néng chà yí kè bā diǎn lái gōngsī jiē wǒ ma?'},
 ];
 
 // ══════════════════════════════════════════

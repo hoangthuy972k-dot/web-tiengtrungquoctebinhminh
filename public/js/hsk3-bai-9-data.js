@@ -41,7 +41,7 @@ var vocabData = [
       cf:'斑 (bān – "đốm màu", có thêm nét trên")',w:'我们班 / 上班 / 班级'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn nam đứng giữa kia là bạn cùng lớp với tôi.',answer:'站在中间的那个男孩儿是我的同班同学。',answerPy:'Zhàn zài zhōngjiān de nàge nánháir shì wǒ de tóngbān tóngxué.',
+     {promptLang:'vi',prompt:'Người đứng ở giữa kia là lớp trưởng của lớp chúng tôi.',answer:'站在中间的那个人是我们班的班长。',answerPy:'Zhàn zài zhōngjiān de nàge rén shì wǒmen bān de bānzhǎng.',
       note:'站在中间 diễn tả vị trí (ôn lại 站/中间 sẽ học ngay bên dưới).'},
      {promptLang:'vi',prompt:'Nếu bạn muốn học tiếng Trung tốt thì hãy chăm đi học trên lớp.',answer:'如果你想学好中文，就要认真去班里上课。',answerPy:'Rúguǒ nǐ xiǎng xuéhǎo Zhōngwén, jiù yào rènzhēn qù bān lǐ shàngkè.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 认真 đã học ở Bài 4).'},
@@ -129,8 +129,8 @@ var vocabData = [
       cf:'空 (kōng – "trống rỗng", có bộ 穴")',w:'一定 / 决定 / 定了'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chắc chắn tham gia được, không ảnh hưởng gì cả.',answer:'一定能参加，一点儿影响也没有。',answerPy:'Yídìng néng cānjiā, yìdiǎnr yǐngxiǎng yě méiyǒu.',
-      note:'一点儿……也没有 diễn tả hoàn toàn không có gì (ôn lại 参加/影响 sẽ học ngay bên dưới).'},
+     {promptLang:'vi',prompt:'Hoạt động của lớp cuối tuần này tôi chắc chắn tham gia được, không có gì phiền phức cả.',answer:'这周末的班级活动我一定能参加，一点儿麻烦也没有。',answerPy:'Zhè zhōumò de bānjí huódòng wǒ yídìng néng cānjiā, yìdiǎnr máfan yě méiyǒu.',
+      note:'一点儿……也没有 diễn tả hoàn toàn không có gì (ôn lại 参加 sẽ học ngay bên dưới).'},
      {promptLang:'vi',prompt:'Nếu bạn nỗ lực thì nhất định sẽ thành công.',answer:'如果你努力，就一定会成功。',answerPy:'Rúguǒ nǐ nǔlì, jiù yídìng huì chénggōng.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -143,7 +143,7 @@ var vocabData = [
    exList:[
      {zh:'不用担心，有我呢，我对这儿比较了解。',py:'Bú yòng dānxīn, yǒu wǒ ne, wǒ duì zhèr bǐjiào liǎojiě.',vn:'Không cần lo, có mình đây mà, mình khá rành chỗ này.'},
      {zh:'你一定没问题，不用担心。',py:'Nǐ yídìng méi wèntí, búyòng dānxīn.',vn:'Bạn chắc chắn không có vấn đề gì, không cần lo lắng.'},
-     {zh:'别着急，孩子身体健康是最重要的。',py:'Bié zháojí, háizi shēntǐ jiànkāng shì zuì zhòngyào de.',vn:'Đừng lo, con cái khỏe mạnh mới là quan trọng nhất.'},
+     {zh:'如果你担心，就给妈妈打个电话问问吧。',py:'Rúguǒ nǐ dānxīn, jiù gěi māma dǎ ge diànhuà wènwen ba.',vn:'Nếu bạn lo lắng thì gọi điện hỏi mẹ thử xem.'},
    ],
    hanzi:[
      {c:'担',p:'dān',type:'左右结构 · Trái-phải',st:8,ord:'扌 trái → 旦 phải',rad:'扌 (thủ – tay)',mean:'gánh vác, gánh',
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'校 (xiào – "trường học", có bộ 木")',w:'比较 / 比较好'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi khá hiểu rõ nơi này.',answer:'我对这儿比较了解。',answerPy:'Wǒ duì zhèr bǐjiào liǎojiě.',
+     {promptLang:'vi',prompt:'Anh ấy khá hiểu rõ tình hình lớp học của chúng tôi.',answer:'他对我们班的情况比较了解。',answerPy:'Tā duì wǒmen bān de qíngkuàng bǐjiào liǎojiě.',
       note:'比较 + động từ tâm lý diễn tả mức độ tương đối.'},
      {promptLang:'vi',prompt:'Tuy con đường ở giữa khó đi nhưng phong cảnh rất đẹp.',answer:'虽然中间这条路比较难走，但是风景很漂亮。',answerPy:'Suīrán zhōngjiān zhè tiáo lù bǐjiào nán zǒu, dànshì fēngjǐng hěn piàoliang.',
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 中间 sẽ học ngay bên dưới).'},
@@ -241,7 +241,7 @@ var vocabData = [
    checkList:[
      {promptLang:'vi',prompt:'Chúng ta có thể đi lên từ con đường ở giữa.',answer:'我们可以从中间这条路上去。',answerPy:'Wǒmen kěyǐ cóng zhōngjiān zhè tiáo lù shàngqu.',
       note:'从 + nơi chốn diễn tả điểm xuất phát.'},
-     {promptLang:'vi',prompt:'Tuy con đường ở giữa khó đi nhưng phong cảnh rất đẹp.',answer:'虽然中间这条路比较难走，但是风景很漂亮。',answerPy:'Suīrán zhōngjiān zhè tiáo lù bǐjiào nán zǒu, dànshì fēngjǐng hěn piàoliang.',
+     {promptLang:'vi',prompt:'Tuy vị trí ngồi ở giữa khá đắt nhưng nhìn rất rõ.',answer:'虽然坐在中间的位置比较贵，但是看得很清楚。',answerPy:'Suīrán zuò zài zhōngjiān de wèizhi bǐjiào guì, dànshì kàn de hěn qīngchu.',
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 比较 vừa học trong bài này).'},
    ]},
 
@@ -261,7 +261,7 @@ var vocabData = [
       cf:'惨 (cǎn – "thảm thương", có bộ 忄")',w:'参加 / 参观'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chắc chắn tham gia được, không ảnh hưởng gì cả.',answer:'一定能参加，一点儿影响也没有。',answerPy:'Yídìng néng cānjiā, yìdiǎnr yǐngxiǎng yě méiyǒu.',
+     {promptLang:'vi',prompt:'Cuộc thi hùng biện tiếng Trung ngày mai, Lý Tĩnh chắc chắn sẽ tham gia, không hề căng thẳng chút nào.',answer:'明天的汉语演讲比赛，李静一定会参加，一点儿紧张也没有。',answerPy:'Míngtiān de Hànyǔ yǎnjiǎng bǐsài, Lǐ Jìng yídìng huì cānjiā, yìdiǎnr jǐnzhāng yě méiyǒu.',
       note:'一点儿……也没有 diễn tả hoàn toàn không có gì.'},
      {promptLang:'vi',prompt:'Trận thi đấu bóng rổ tháng sau, cô ấy nhất định sẽ tham gia.',answer:'下个月的篮球比赛，她一定会参加。',answerPy:'Xià ge yuè de lánqiú bǐsài, tā yídìng huì cānjiā.',
       note:'一定 + V diễn tả sự chắc chắn (ôn lại 一定 vừa học trong bài này).'},
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'景 (jǐng – "cảnh vật", không có bộ 彡")',w:'影响 / 电影 / 阴影'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Việc này đối với công việc của tôi có ảnh hưởng không nhỏ.',answer:'这件事对我的工作影响不小。',answerPy:'Zhè jiàn shì duì wǒ de gōngzuò yǐngxiǎng bù xiǎo.',
+     {promptLang:'vi',prompt:'Trận mưa lớn này ảnh hưởng không nhỏ đến việc chúng tôi leo núi.',answer:'这场大雨对我们爬山的计划影响不小。',answerPy:'Zhè chǎng dàyǔ duì wǒmen páshān de jìhuà yǐngxiǎng bù xiǎo.',
       note:'对……有/没有影响 diễn tả mức độ tác động.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn nghỉ ngơi tốt thì sẽ không ảnh hưởng đến trận thi đấu.',answer:'只要你休息好，就不会影响比赛。',answerPy:'Zhǐyào nǐ xiūxi hǎo, jiù bú huì yǐngxiǎng bǐsài.',
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 比赛 đã học ở Bài 4).'},
@@ -421,18 +421,18 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'马可，你的',blank:'中文',post:'越说越好了！',hint:'(tiếng Trung Quốc)',ans:'中文'},
-  {pre:'我们',blank:'班',post:'李静说得更好。',hint:'(lớp)',ans:'班'},
-  {pre:'她的汉语说得跟中国人',blank:'一样',post:'好。',hint:'(giống nhau, như nhau)',ans:'一样'},
-  {pre:'这是',blank:'最后',post:'一块。',hint:'(cuối cùng)',ans:'最后'},
-  {pre:'你',blank:'放心',post:'，我一定不会变胖。',hint:'(yên tâm)',ans:'放心'},
+  {pre:'李静老师教的',blank:'中文',post:'语法很清楚。',hint:'(tiếng Trung Quốc)',ans:'中文'},
+  {pre:'马可不是我们',blank:'班',post:'的学生。',hint:'(lớp)',ans:'班'},
+  {pre:'这次考试的成绩跟上次',blank:'一样',post:'好。',hint:'(giống nhau, như nhau)',ans:'一样'},
+  {pre:'这个学期',blank:'最后',post:'一次考试就是下星期。',hint:'(cuối cùng)',ans:'最后'},
+  {pre:'妈妈，你',blank:'放心',post:'，我一定按时回家。',hint:'(yên tâm)',ans:'放心'},
   {pre:'我',blank:'一定',post:'不会变胖。',hint:'(nhất định)',ans:'一定'},
-  {pre:'不用',blank:'担心',post:'，有我呢。',hint:'(lo lắng)',ans:'担心'},
-  {pre:'我对这儿',blank:'比较',post:'了解。',hint:'(tương đối, khá)',ans:'比较'},
-  {pre:'我对这儿比较',blank:'了解',post:'。',hint:'(hiểu rõ)',ans:'了解'},
+  {pre:'妈妈总是',blank:'担心',post:'我一个人在外面不安全。',hint:'(lo lắng)',ans:'担心'},
+  {pre:'李静老师觉得这次考试',blank:'比较',post:'简单。',hint:'(tương đối, khá)',ans:'比较'},
+  {pre:'大山对中国文化很',blank:'了解',post:'。',hint:'(hiểu rõ)',ans:'了解'},
   {pre:'那我们',blank:'先',post:'休息一下。',hint:'(trước, trước hết)',ans:'先'},
-  {pre:'我们可以从',blank:'中间',post:'这条路上去。',hint:'(giữa)',ans:'中间'},
-  {pre:'下个月的篮球比赛，你能',blank:'参加',post:'吗？',hint:'(tham gia)',ans:'参加'},
+  {pre:'照片',blank:'中间',post:'的那个人是我爸爸。',hint:'(giữa)',ans:'中间'},
+  {pre:'学校的乒乓球比赛，你打算',blank:'参加',post:'吗？',hint:'(tham gia)',ans:'参加'},
   {pre:'一点儿',blank:'影响',post:'也没有。',hint:'(ảnh hưởng)',ans:'影响'},
 ];
 
@@ -440,14 +440,14 @@ var fillData = [
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['你','的','中文','越','说','越','好','了','！'],ans:'你的中文越说越好了！',audio:'你的中文越说越好了！'},
-  {words:['她','的','汉语','说得','跟','中国人','一样','好','。'],ans:'她的汉语说得跟中国人一样好。',audio:'她的汉语说得跟中国人一样好。'},
+  {words:['同学们','的','中文','越','学','越','好','。'],ans:'同学们的中文越学越好。',audio:'同学们的中文越学越好。'},
+  {words:['李静','写字','写得','跟','老师','一样','漂亮','。'],ans:'李静写字写得跟老师一样漂亮。',audio:'李静写字写得跟老师一样漂亮。'},
   {words:['你','总是','吃','甜','的','东西','，','会','越','吃','越','胖','。'],ans:'你总是吃甜的东西，会越吃越胖。',audio:'你总是吃甜的东西，会越吃越胖。'},
   {words:['山','越','高','，','路','越','难走','。'],ans:'山越高，路越难走。',audio:'山越高，路越难走。'},
   {words:['因为','他家','的','人','都','很瘦','，','所以','吃','不','胖','。'],ans:'因为他家的人都很瘦，所以吃不胖。',audio:'因为他家的人都很瘦，所以吃不胖。'},
   {words:['虽然','山','很高','，','但是','路上','风景','很漂亮','。'],ans:'虽然山很高，但是路上风景很漂亮。',audio:'虽然山很高，但是路上风景很漂亮。'},
   {words:['如果','你','不','放心','，','就','跟','我','一起','去','吧','。'],ans:'如果你不放心，就跟我一起去吧。',audio:'如果你不放心，就跟我一起去吧。'},
-  {words:['一定','能','参加','，','一点儿','影响','也','没有','。'],ans:'一定能参加，一点儿影响也没有。',audio:'一定能参加，一点儿影响也没有。'},
+  {words:['小刚','一定','会','参加','篮球','比赛','，','一点儿','问题','也','没有','。'],ans:'小刚一定会参加篮球比赛，一点儿问题也没有。',audio:'小刚一定会参加篮球比赛，一点儿问题也没有。'},
 ];
 
 // ══════════════════════════════════════════
@@ -457,18 +457,18 @@ var errorFixData = [
   {wrong:'雨下越大越。',
    opts:['雨越下越大。','雨下越大越。','越雨下越大。','雨越大越下。'],ans:0,
    exp:'Cấu trúc 越A越B: 越 phải đặt ngay trước mỗi động từ/tính từ (越下越大), không tách rời khỏi vế của nó.'},
-  {wrong:'她的汉语说得中国人一样好跟。',
-   opts:['她的汉语说得跟中国人一样好。','她的汉语说得中国人一样好跟。','她的汉语跟说得中国人一样好。','她的汉语说得跟中国人好一样。'],ans:0,
+  {wrong:'这个蛋糕的味道妈妈做的一样好吃跟。',
+   opts:['这个蛋糕的味道跟妈妈做的一样好吃。','这个蛋糕的味道妈妈做的一样好吃跟。','这个蛋糕的味道跟一样妈妈做的好吃。','这个蛋糕的味道跟妈妈做的好吃一样。'],ans:0,
    exp:'Cấu trúc A跟B一样(+tính từ): 跟+B phải đứng ngay trước 一样, tính từ bổ nghĩa đặt sau 一样.'},
-  {wrong:'这辆车的颜色那辆车不一样跟。',
-   opts:['这辆车的颜色跟那辆车不一样。','这辆车的颜色那辆车不一样跟。','这辆车的颜色跟那辆车一样不。','这辆车不一样的颜色跟那辆车。'],ans:0,
+  {wrong:'这件衬衫的颜色那件不一样跟。',
+   opts:['这件衬衫的颜色跟那件不一样。','这件衬衫的颜色那件不一样跟。','这件衬衫的颜色跟那件一样不。','这件衬衫不一样的颜色跟那件。'],ans:0,
    exp:'Phủ định của 一样 là thêm 不 vào TRƯỚC 一样 (不一样); giới từ 跟 vẫn đứng trước danh từ so sánh, không đặt cuối câu.'},
   {wrong:'休息越多，好越快。',
    opts:['休息得越多，好得越快。','休息越多，好越快。','休息得越多，好越多快。','越休息多，越好快。'],ans:0,
    exp:'Khi động từ/tính từ mang bổ ngữ trình độ (休息得, 好得), phải giữ 得 trước khi thêm 越……越……'},
-  {wrong:'我一定不变胖会。',
-   opts:['我一定不会变胖。','我一定不变胖会。','我不一定会变胖。','我会一定不变胖。'],ans:0,
-   exp:'会 (trợ động từ khả năng) phải đứng ngay trước động từ chính (变胖), không đặt sau động từ.'},
+  {wrong:'我一定不忘记会。',
+   opts:['我一定不会忘记。','我一定不忘记会。','我不一定会忘记。','我会一定不忘记。'],ans:0,
+   exp:'会 (trợ động từ khả năng) phải đứng ngay trước động từ chính (忘记), không đặt sau động từ.'},
 ];
 
 // ══════════════════════════════════════════
@@ -508,14 +508,14 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tiếng Trung của bạn ngày càng nói giỏi rồi!', zh:'你的中文越说越好了！', py:'Nǐ de Zhōngwén yuè shuō yuè hǎo le!'},
-  {vi:'Chiếc quần này màu sắc giống với chiếc kia.', zh:'这条裤子的颜色跟那条一样。', py:'Zhè tiáo kùzi de yánsè gēn nà tiáo yíyàng.'},
-  {vi:'Đây là miếng bánh kem cuối cùng.', zh:'这是最后一块蛋糕。', py:'Zhè shì zuìhòu yí kuài dàngāo.'},
-  {vi:'Bạn yên tâm, tôi chắc chắn không đến muộn đâu.', zh:'你放心，我一定不会迟到。', py:'Nǐ fàngxīn, wǒ yídìng bú huì chídào.'},
-  {vi:'Đừng lo, có tôi ở đây mà.', zh:'不用担心，有我呢。', py:'Búyòng dānxīn, yǒu wǒ ne.'},
-  {vi:'Tôi khá hiểu rõ nơi này.', zh:'我对这儿比较了解。', py:'Wǒ duì zhèr bǐjiào liǎojiě.'},
-  {vi:'Chúng ta nghỉ một chút trước đã, lát nữa leo tiếp.', zh:'我们先休息一下，一会儿再爬。', py:'Wǒmen xiān xiūxi yíxià, yíhuìr zài pá.'},
-  {vi:'Chắc chắn tham gia được, không ảnh hưởng gì cả.', zh:'一定能参加，一点儿影响也没有。', py:'Yídìng néng cānjiā, yìdiǎnr yǐngxiǎng yě méiyǒu.'},
+  {vi:'Con trai tôi nói tiếng Trung ngày càng lưu loát rồi.', zh:'我儿子的中文说得越来越流利了。', py:'Wǒ érzi de Zhōngwén shuō de yuè lái yuè liúlì le.'},
+  {vi:'Đôi giày này giá cả giống với đôi kia.', zh:'这双鞋的价钱跟那双一样。', py:'Zhè shuāng xié de jiàqián gēn nà shuāng yíyàng.'},
+  {vi:'Đây là quả táo cuối cùng trong tủ lạnh.', zh:'这是冰箱里最后一个苹果。', py:'Zhè shì bīngxiāng lǐ zuìhòu yí ge píngguǒ.'},
+  {vi:'Bạn yên tâm, kỳ thi lần này sẽ không khó đâu.', zh:'你放心，这次考试不会很难。', py:'Nǐ fàngxīn, zhè cì kǎoshì bú huì hěn nán.'},
+  {vi:'Vì thời tiết không tốt nên thầy cô hơi lo lắng về sự an toàn khi chúng tôi leo núi.', zh:'因为天气不好，所以老师有点儿担心我们爬山的安全。', py:'Yīnwèi tiānqì bù hǎo, suǒyǐ lǎoshī yǒudiǎnr dānxīn wǒmen páshān de ānquán.'},
+  {vi:'Tuy anh ấy mới đến nhưng đã khá hiểu rõ tình hình ở đây.', zh:'虽然他刚来，但是对这儿已经比较了解了。', py:'Suīrán tā gāng lái, dànshì duì zhèr yǐjīng bǐjiào liǎojiě le.'},
+  {vi:'Họ quyết định ăn cơm trước, rồi mới đi leo núi.', zh:'他们决定先吃饭，再去爬山。', py:'Tāmen juédìng xiān chīfàn, zài qù páshān.'},
+  {vi:'Hoạt động leo núi lần này, Đại Sơn chắc chắn sẽ tham gia, không có gì nguy hiểm cả.', zh:'这次爬山活动，大山一定会参加，一点儿危险也没有。', py:'Zhè cì páshān huódòng, Dàshān yídìng huì cānjiā, yìdiǎnr wēixiǎn yě méiyǒu.'},
 ];
 
 // ══════════════════════════════════════════
@@ -527,8 +527,8 @@ var translateDataRev = [
   {vi:'Tuy con đường ở giữa khó đi nhưng phong cảnh rất đẹp.', zh:'虽然中间这条路难走，但是风景很漂亮。', py:'Suīrán zhōngjiān zhè tiáo lù nán zǒu, dànshì fēngjǐng hěn piàoliang.'},
   {vi:'Nếu bạn không yên tâm thì cùng tôi đi kiểm tra một lần nữa.', zh:'如果你不放心，就跟我再检查一次吧。', py:'Rúguǒ nǐ bú fàngxīn, jiù gēn wǒ zài jiǎnchá yí cì ba.'},
   {vi:'Chỉ cần bạn nghỉ ngơi nhiều thì sẽ khỏi nhanh hơn.', zh:'只要你多休息，就会好得更快。', py:'Zhǐyào nǐ duō xiūxi, jiù huì hǎo de gèng kuài.'},
-  {vi:'Trận thi đấu bóng rổ tháng sau, cô ấy nhất định sẽ tham gia.', zh:'下个月的篮球比赛，她一定会参加。', py:'Xià ge yuè de lánqiú bǐsài, tā yídìng huì cānjiā.'},
-  {vi:'Việc này đối với công việc của tôi có ảnh hưởng không nhỏ.', zh:'这件事对我的工作影响不小。', py:'Zhè jiàn shì duì wǒ de gōngzuò yǐngxiǎng bù xiǎo.'},
+  {vi:'Buổi biểu diễn văn nghệ của trường tháng sau, Tiểu Minh chắc chắn sẽ tham gia.', zh:'下个月学校的文艺演出，小明一定会参加。', py:'Xià ge yuè xuéxiào de wényì yǎnchū, Xiǎomíng yídìng huì cānjiā.'},
+  {vi:'Giấc ngủ không đủ ảnh hưởng không nhỏ đến sức khỏe của Tiểu Minh.', zh:'睡眠不够对小明的身体影响不小。', py:'Shuìmián bú gòu duì Xiǎomíng de shēntǐ yǐngxiǎng bù xiǎo.'},
   {vi:'Giáo viên tiếng Trung của chúng tôi nói tiếng Anh cũng giỏi như người Mỹ vậy.', zh:'我们的汉语老师说英语说得跟美国人一样好。', py:'Wǒmen de Hànyǔ lǎoshī shuō Yīngyǔ shuō de gēn Měiguórén yíyàng hǎo.'},
 ];
 

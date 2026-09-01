@@ -19,7 +19,7 @@ var vocabData = [
       cf:'条 (tiáo – "sợi, dải", có bộ 冬")',w:'耳朵 / 一朵花'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Vừa nãy bơi bị nước vào tai, giờ trong tai cứ khó chịu mãi.',answer:'刚才游泳时耳朵进水了，现在耳朵里一直不舒服。',answerPy:'Gāngcái yóuyǒng shí ěrduo jìn shuǐ le, xiànzài ěrduo li yìzhí bù shūfu.',
+     {promptLang:'vi',prompt:'Chỉ cần trời lạnh là tai cậu ấy lại khó chịu mãi không dứt.',answer:'只要天一冷，他的耳朵就一直不舒服。',answerPy:'Zhǐyào tiān yì lěng, tā de ěrduo jiù yìzhí bù shūfu.',
       note:'一直 diễn tả trạng thái kéo dài liên tục.'},
      {promptLang:'vi',prompt:'Nếu tai bạn khó chịu thì đi khám bác sĩ đi.',answer:'如果你的耳朵不舒服，就去看医生吧。',answerPy:'Rúguǒ nǐ de ěrduo bù shūfu, jiù qù kàn yīshēng ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
@@ -41,7 +41,7 @@ var vocabData = [
       cf:'检 (jiǎn – "kiểm tra", có bộ 木")',w:'脸 / 洗脸 / 脸色'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sắc mặt bạn trông không tốt lắm, chỗ nào khó chịu vậy?',answer:'你的脸色看上去不太好，哪儿不舒服啊？',answerPy:'Nǐ de liǎnsè kàn shangqu bú tài hǎo, nǎr bù shūfu a?',
+     {promptLang:'vi',prompt:'Tuy sắc mặt anh ấy trông không tốt lắm, nhưng anh ấy nói bản thân không sao.',answer:'虽然他脸色看上去不太好，但是他说自己没什么事。',answerPy:'Suīrán tā liǎnsè kàn shangqu bú tài hǎo, dànshì tā shuō zìjǐ méi shénme shì.',
       note:'看上去 diễn tả sự đánh giá qua quan sát (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn rửa mặt xong thì chúng ta đi ăn cơm đi.',answer:'如果你洗完脸了，我们就去吃饭吧。',answerPy:'Rúguǒ nǐ xǐwán liǎn le, wǒmen jiù qù chī fàn ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'豆 (dòu – "đậu", không có bộ 矢")',w:'短 / 短头发 / 短信'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Cái quần này hơi ngắn.',answer:'这条裤子有点儿短。',answerPy:'Zhè tiáo kùzi yǒudiǎnr duǎn.',
+     {promptLang:'vi',prompt:'Tuy cái áo này hơi ngắn, nhưng mặc vào vẫn khá đẹp.',answer:'虽然这件衣服有点儿短，但是穿起来还挺好看。',answerPy:'Suīrán zhè jiàn yīfu yǒudiǎnr duǎn, dànshì chuān qilai hái tǐng hǎokàn.',
       note:'有点儿 + Adj diễn tả mức độ nhẹ.'},
      {promptLang:'vi',prompt:'Nếu tóc bạn ngắn thì sẽ trông trẻ hơn.',answer:'如果你的头发短一些，就会看上去更年轻。',answerPy:'Rúguǒ nǐ de tóufa duǎn yìxiē, jiù huì kàn shangqu gèng niánqīng.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -85,7 +85,7 @@ var vocabData = [
       cf:'鸟 (niǎo – "chim", hình dáng gần giống")',w:'马 / 骑马'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Ông nội tôi, ông rất thích cưỡi ngựa, mà lại cưỡi rất giỏi.',answer:'我爷爷，他很喜欢骑马，而且骑得很好。',answerPy:'Wǒ yéye, tā hěn xǐhuan qí mǎ, érqiě qí de hěn hǎo.',
+     {promptLang:'vi',prompt:'Anh trai tôi không chỉ biết cưỡi ngựa, mà còn cưỡi nhanh hơn ai hết.',answer:'我哥哥不但会骑马，而且骑得比谁都快。',answerPy:'Wǒ gēge búdàn huì qí mǎ, érqiě qí de bǐ shéi dōu kuài.',
       note:'不但……而且…… có thể lược 不但, chỉ dùng 而且 khi ngữ cảnh rõ (ôn lại đã học ở Bài 18).'},
      {promptLang:'vi',prompt:'Nếu bạn thích cưỡi ngựa thì chúng ta đi công viên cưỡi thử đi.',answer:'如果你喜欢骑马，我们就去公园骑骑吧。',answerPy:'Rúguǒ nǐ xǐhuan qí mǎ, wǒmen jiù qù gōngyuán qíqi ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'长 (cháng/zhǎng – "dài/lớn lên", không có bộ 弓")',w:'张 / 一张纸'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tấm ảnh này khiến tôi nhớ đến nhà mình.',answer:'这张照片让我想起了我的家。',answerPy:'Zhè zhāng zhàopiàn ràng wǒ xiǎngqǐle wǒ de jiā.',
+     {promptLang:'vi',prompt:'Tấm ảnh đó khiến mẹ nhớ đến bản thân hồi nhỏ.',answer:'那张照片让妈妈想起了小时候的自己。',answerPy:'Nà zhāng zhàopiàn ràng māma xiǎngqǐle xiǎoshíhou de zìjǐ.',
       note:'让 + đối tượng + kết quả diễn tả sự khiến cho (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn có tấm ảnh nào đẹp thì cho tôi xem thử đi.',answer:'如果你有什么好看的照片，就给我看看吧。',answerPy:'Rúguǒ nǐ yǒu shénme hǎokàn de zhàopiàn, jiù gěi wǒ kànkan ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'立 (lì – "đứng", không có bộ 亻")',w:'位 / 位置'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Vị này là giám đốc mới của chúng tôi.',answer:'这位是我们的新经理。',answerPy:'Zhè wèi shì wǒmen de xīn jīnglǐ.',
+     {promptLang:'vi',prompt:'Vị này tuy là giám đốc mới đến, nhưng mọi người đều rất thích anh ấy.',answer:'这位虽然是新来的经理，但是大家都很喜欢他。',answerPy:'Zhè wèi suīrán shì xīnlái de jīnglǐ, dànshì dàjiā dōu hěn xǐhuan tā.',
       note:'这位 dùng lịch sự khi giới thiệu người.'},
      {promptLang:'vi',prompt:'Nếu vị này là giám đốc mới thì chúng ta nên chào hỏi.',answer:'如果这位是新经理，我们就应该打个招呼。',answerPy:'Rúguǒ zhè wèi shì xīn jīnglǐ, wǒmen jiù yīnggāi dǎ ge zhāohu.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'篮 (lán – "cái giỏ", có bộ ⺮")',w:'蓝色 / 蓝天'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Màu xanh sẽ khiến khuôn mặt tôi trông trẻ hơn một chút.',answer:'蓝色会让我的脸看上去更年轻些。',answerPy:'Lánsè huì ràng wǒ de liǎn kàn shangqu gèng niánqīng xiē.',
+     {promptLang:'vi',prompt:'Chỉ cần bạn mặc bộ âu phục xanh đó vào, sẽ khiến bạn trông bảnh hơn.',answer:'只要你穿上那件蓝西服，就会让你看上去更帅。',answerPy:'Zhǐyào nǐ chuānshang nà jiàn lán xīfú, jiù huì ràng nǐ kàn shangqu gèng shuài.',
       note:'让 + đối tượng + kết quả diễn tả sự khiến cho (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn thích màu xanh thì mua cái áo đó đi.',answer:'如果你喜欢蓝色，就买那件衣服吧。',answerPy:'Rúguǒ nǐ xǐhuan lánsè, jiù mǎi nà jiàn yīfu ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'秒 (miǎo – "giây", có 少 thay vì 火")',w:'秋天 / 秋季'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mùa tôi thích nhất là mùa thu.',answer:'我最喜欢的季节是秋天。',answerPy:'Wǒ zuì xǐhuan de jìjié shì qiūtiān.',
+     {promptLang:'vi',prompt:'Nơi tôi muốn đến nhất chính là Hoàng Hà vào mùa thu.',answer:'我最想去的地方就是秋天的黄河。',answerPy:'Wǒ zuì xiǎng qù de dìfang jiù shì qiūtiān de Huáng Hé.',
       note:'最 + động từ + 的 làm định ngữ.'},
      {promptLang:'vi',prompt:'Nếu mùa thu đến thì lá cây sẽ chuyển màu vàng.',answer:'如果秋天到了，树叶就会变黄。',answerPy:'Rúguǒ qiūtiān dào le, shùyè jiù huì biàn huáng.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'辻 (không phải chữ Hán thường dùng)',w:'过 / 经过 / 过年'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Ăn sinh nhật phải ăn mì, đây là lần đầu tiên tôi làm mì.',answer:'过生日要吃面条，这是我第一次做面条。',answerPy:'Guò shēngrì yào chī miàntiáo, zhè shì wǒ dì-yī cì zuò miàntiáo.',
+     {promptLang:'vi',prompt:'Tuy sinh nhật năm nay tổ chức đơn giản, nhưng tôi vẫn rất vui.',answer:'虽然今年的生日过得很简单，但是我还是很开心。',answerPy:'Suīrán jīnnián de shēngrì guò de hěn jiǎndān, dànshì wǒ háishi hěn kāixīn.',
       note:'过生日 diễn tả ăn mừng sinh nhật.'},
      {promptLang:'vi',prompt:'Nếu bạn qua sinh nhật vui vẻ thì tôi cũng vui theo.',answer:'如果你过生日过得开心，我也会跟着高兴。',answerPy:'Rúguǒ nǐ guò shēngrì guò de kāixīn, wǒ yě huì gēnzhe gāoxìng.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -217,7 +217,7 @@ var vocabData = [
       cf:'乌 (wū – "quạ", thiếu nét chấm mắt")',w:'鸟 / 小鸟'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Hàng cây hai bên đường phố, còn có chim nhỏ trên cây, khiến tôi cảm thấy rất vui.',answer:'街道两边的树，还有树上的小鸟，会使我觉得很快乐。',answerPy:'Jiēdào liǎng biān de shù, hái yǒu shù shang de xiǎo niǎo, huì shǐ wǒ juéde hěn kuàilè.',
+     {promptLang:'vi',prompt:'Chim nhỏ trong công viên vừa bay vừa hót, khiến tôi nhớ lại tuổi thơ.',answer:'公园里的小鸟一边飞一边叫，使我想起了童年。',answerPy:'Gōngyuán li de xiǎo niǎo yìbiān fēi yìbiān jiào, shǐ wǒ xiǎngqǐle tóngnián.',
       note:'使 diễn tả sự khiến cho (ôn lại 街道 đã học ở Bài 15).'},
      {promptLang:'vi',prompt:'Nếu bạn thích nghe chim hót thì đi công viên đi.',answer:'如果你喜欢听鸟叫，就去公园吧。',answerPy:'Rúguǒ nǐ xǐhuan tīng niǎo jiào, jiù qù gōngyuán ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'器 (qì – "dụng cụ", có 4 chữ 口")',w:'哭 / 别哭了'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Gần đây, bé Tiểu Vũ nhà tôi cứ khóc mãi, nói tai đau.',answer:'最近，我家小雨一直哭，说耳朵疼。',answerPy:'Zuìjìn, wǒ jiā Xiǎoyǔ yìzhí kū, shuō ěrduo téng.',
+     {promptLang:'vi',prompt:'Vì tai cứ đau mãi nên bé Tiểu Vũ mới khóc mãi không thôi.',answer:'因为耳朵一直很疼，所以小雨才一直哭。',answerPy:'Yīnwèi ěrduo yìzhí hěn téng, suǒyǐ Xiǎoyǔ cái yìzhí kū.',
       note:'一直 diễn tả trạng thái kéo dài liên tục (ôn lại 耳朵 vừa học trong bài này).'},
      {promptLang:'vi',prompt:'Nếu bé khóc thì bạn hát cho bé nghe đi.',answer:'如果孩子哭了，你就给她唱首歌吧。',answerPy:'Rúguǒ háizi kū le, nǐ jiù gěi tā chàng shǒu gē ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -261,7 +261,7 @@ var vocabData = [
       cf:'何 (hé – "gì, nào", không có bộ 氵")',w:'黄河 / 河边'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Hoàng Hà là con sông lớn nổi tiếng của Trung Quốc.',answer:'黄河是中国有名的大河。',answerPy:'Huáng Hé shì Zhōngguó yǒumíng de dà hé.',
+     {promptLang:'vi',prompt:'Chỉ cần nhắc đến những con sông lớn nổi tiếng của Trung Quốc là mọi người sẽ nghĩ đến Hoàng Hà.',answer:'只要提到中国有名的大河，大家就会想到黄河。',answerPy:'Zhǐyào tídào Zhōngguó yǒumíng de dà hé, dàjiā jiù huì xiǎngdào Huáng Hé.',
       note:'有名 diễn tả sự nổi tiếng (ôn lại đã học ở Bài 18).'},
      {promptLang:'vi',prompt:'Nếu bạn đến Trung Quốc thì nên đi xem Hoàng Hà một lần.',answer:'如果你来中国，就应该去看一次黄河。',answerPy:'Rúguǒ nǐ lái Zhōngguó, jiù yīnggāi qù kàn yí cì Huáng Hé.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'般 (bān – "loại", cũng có bộ 舟")',w:'船 / 坐船'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Đi tàu tuy rẻ, nhưng chậm quá, phải mất mười bốn tiếng.',answer:'坐船虽然便宜，但是太慢了，要十四个小时。',answerPy:'Zuò chuán suīrán piányi, dànshì tài màn le, yào shísì ge xiǎoshí.',
+     {promptLang:'vi',prompt:'Đi tàu tuy có thể ngắm cảnh, nhưng ngồi lâu quá, tôi hơi mệt.',answer:'坐船虽然能看风景，但是坐的时间太久，我有点儿累了。',answerPy:'Zuò chuán suīrán néng kàn fēngjǐng, dànshì zuò de shíjiān tài jiǔ, wǒ yǒudiǎnr lèi le.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
      {promptLang:'vi',prompt:'Nếu bạn thích ngồi tàu thì chúng ta đi tàu đi.',answer:'如果你喜欢坐船，我们就坐船去吧。',answerPy:'Rúguǒ nǐ xǐhuan zuò chuán, wǒmen jiù zuò chuán qù ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -297,7 +297,7 @@ var vocabData = [
    exList:[
      {zh:'一路上经过了很多地方，每个地方都不一样。',py:'Yí lù shang jīngguòle hěn duō dìfang, měi ge dìfang dōu bù yíyàng.',vn:'Suốt chặng đường đi qua rất nhiều nơi, mỗi nơi đều khác nhau.'},
      {zh:'上下班的时候，我都会经过这条街。',py:'Shàng xià bān de shíhou, wǒ dōu huì jīngguò zhè tiáo jiē.',vn:'Lúc đi làm về, tôi đều đi ngang qua con phố này.'},
-     {zh:'只要经过一段时间，就会慢慢地习惯。',py:'Zhǐyào jīngguò yí duàn shíjiān, jiù huì mànman de xíguàn.',vn:'Chỉ cần trải qua một khoảng thời gian, sẽ dần dần quen thôi.'},
+     {zh:'如果你经过我家，就进来喝杯茶吧。',py:'Rúguǒ nǐ jīngguò wǒ jiā, jiù jìnlai hē bēi chá ba.',vn:'Nếu bạn đi ngang qua nhà tôi thì ghé vào uống chén trà đi.'},
    ],
    hanzi:[
      {c:'经',p:'jīng',type:'左右结构 · Trái-phải',st:8,ord:'纟 trái → 圣 phải (giản thể)',rad:'纟 (mịch – tơ lụa)',mean:'trải qua, thường xuyên',
@@ -305,7 +305,7 @@ var vocabData = [
       cf:'轻 (qīng – "nhẹ", có bộ 车")',w:'经过 / 经常 / 已经'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lúc đi làm về, tôi đều đi ngang qua con phố này.',answer:'上下班的时候，我都会经过这条街。',answerPy:'Shàng xià bān de shíhou, wǒ dōu huì jīngguò zhè tiáo jiē.',
+     {promptLang:'vi',prompt:'Lúc đi bệnh viện, tôi đều đi ngang qua một công viên.',answer:'去医院的时候，我都会经过一个公园。',answerPy:'Qù yīyuàn de shíhou, wǒ dōu huì jīngguò yí ge gōngyuán.',
       note:'……的时候 diễn tả thời điểm (ôn lại 街道 đã học ở Bài 15).'},
      {promptLang:'vi',prompt:'Nếu bạn đi ngang qua nhà tôi thì hãy ghé vào chơi.',answer:'如果你经过我家，就进来玩儿吧。',answerPy:'Rúguǒ nǐ jīngguò wǒ jiā, jiù jìnlai wánr ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -399,7 +399,7 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'女儿最近喜欢把头发放在',blank:'耳朵',post:'后面。',hint:'(tai)',ans:'耳朵'},
-  {pre:'这样可以使她的',blank:'脸',post:'看上去漂亮一些。',hint:'(mặt, khuôn mặt)',ans:'脸'},
+  {pre:'虽然今天有点儿累，但她的',blank:'脸',post:'看上去还是很精神。',hint:'(mặt, khuôn mặt)',ans:'脸'},
   {pre:'她小时候喜欢',blank:'短',post:'头发。',hint:'(ngắn)',ans:'短'},
   {pre:'你会骑',blank:'马',post:'？',hint:'(ngựa)',ans:'马'},
   {pre:'我选了几',blank:'张',post:'洗出来了。',hint:'(tờ, tấm)',ans:'张'},
@@ -418,8 +418,8 @@ var fillData = [
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['女儿','最近','喜欢','把','头发','放','在','耳朵','后面','。'],ans:'女儿最近喜欢把头发放在耳朵后面。',audio:'女儿最近喜欢把头发放在耳朵后面。'},
-  {words:['这样','可以','使','她','的','脸','看上去','漂亮','一些','。'],ans:'这样可以使她的脸看上去漂亮一些。',audio:'这样可以使她的脸看上去漂亮一些。'},
+  {words:['如果','你','把','头发','放','在','耳朵','后面','，','就','会','看上去','更','整齐','。'],ans:'如果你把头发放在耳朵后面，就会看上去更整齐。',audio:'如果你把头发放在耳朵后面，就会看上去更整齐。'},
+  {words:['如果','你','笑一笑','，','你的','脸','就','会','看上去','更','好看','。'],ans:'如果你笑一笑，你的脸就会看上去更好看。',audio:'如果你笑一笑，你的脸就会看上去更好看。'},
   {words:['你','没','看出来','吗','？','他','是','小刚','啊','。'],ans:'你没看出来吗？他是小刚啊。',audio:'你没看出来吗？他是小刚啊。'},
   {words:['只要','他','爸爸','学','小鸟','叫','，','她','马上','就','安静','下来','了','。'],ans:'只要他爸爸学小鸟叫，她马上就安静下来了。',audio:'只要他爸爸学小鸟叫，她马上就安静下来了。'},
   {words:['读书','使','我','快乐','。'],ans:'读书使我快乐。',audio:'读书使我快乐。'},
@@ -441,12 +441,12 @@ var errorFixData = [
   {wrong:'我想起你的名字不来了。',
    opts:['我想不起来你的名字了。','我想起你的名字不来了。','我不想起来你的名字了。','我想起来不你的名字了。'],ans:0,
    exp:'Phủ định 不 phải chen vào GIỮA 想 và 起来 (想不起来), không đặt sau tân ngữ.'},
-  {wrong:'读书快乐使我。',
-   opts:['读书使我快乐。','读书快乐使我。','使读书我快乐。','读书使快乐我。'],ans:0,
-   exp:'Cấu trúc 使/叫/让 + đối tượng + kết quả: 使+我(đối tượng)+快乐(kết quả), không đảo lộn.'},
-  {wrong:'穿运动服他更年轻让。',
-   opts:['穿运动服让他更年轻。','穿运动服他更年轻让。','穿运动服让更年轻他。','让穿运动服他更年轻。'],ans:0,
-   exp:'让 phải đứng NGAY SAU chủ ngữ gây khiến (穿运动服), trước đối tượng bị ảnh hưởng (他).'},
+  {wrong:'旅游很开心使我。',
+   opts:['旅游使我很开心。','旅游很开心使我。','使旅游我很开心。','旅游使很开心我。'],ans:0,
+   exp:'Cấu trúc 使/叫/让 + đối tượng + kết quả: 使+我(đối tượng)+很开心(kết quả), không đảo lộn.'},
+  {wrong:'穿蓝色衣服她更漂亮让。',
+   opts:['穿蓝色衣服让她更漂亮。','穿蓝色衣服她更漂亮让。','穿蓝色衣服让更漂亮她。','让穿蓝色衣服她更漂亮。'],ans:0,
+   exp:'让 phải đứng NGAY SAU chủ ngữ gây khiến (穿蓝色衣服), trước đối tượng bị ảnh hưởng (她).'},
 ];
 
 // ══════════════════════════════════════════
@@ -486,14 +486,14 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Con gái gần đây thích để tóc ra sau tai.', zh:'女儿最近喜欢把头发放在耳朵后面。', py:'Nǚ\'ér zuìjìn xǐhuan bǎ tóufa fàng zài ěrduo hòumiàn.'},
-  {vi:'Như vậy có thể khiến khuôn mặt con trông xinh hơn một chút.', zh:'这样可以使她的脸看上去漂亮一些。', py:'Zhèyàng kěyǐ shǐ tā de liǎn kàn shangqu piàoliang yìxiē.'},
-  {vi:'Bạn không nhận ra à? Đó là Tiểu Cương đấy.', zh:'你没看出来吗？他是小刚啊。', py:'Nǐ méi kàn chulai ma? Tā shì Xiǎogāng a.'},
-  {vi:'Chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay.', zh:'只要他爸爸学小鸟叫，她马上就安静下来了。', py:'Zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.'},
-  {vi:'Đọc sách khiến tôi vui vẻ.', zh:'读书使我快乐。', py:'Dúshū shǐ wǒ kuàilè.'},
-  {vi:'Thi cử khiến tôi rất căng thẳng.', zh:'考试让我很紧张。', py:'Kǎoshì ràng wǒ hěn jǐnzhāng.'},
-  {vi:'Tôi trước tiên đi xem sông Hoàng Hà.', zh:'我先去看了黄河。', py:'Wǒ xiān qù kànle Huáng Hé.'},
-  {vi:'Suốt chặng đường đi qua rất nhiều nơi.', zh:'一路上经过了很多地方。', py:'Yí lù shang jīngguòle hěn duō dìfang.'},
+  {vi:'Chỉ cần bạn để tóc ra sau tai là mẹ sẽ khen bạn xinh.', zh:'只要你把头发放在耳朵后面，妈妈就会说你很漂亮。', py:'Zhǐyào nǐ bǎ tóufa fàng zài ěrduo hòumiàn, māma jiù huì shuō nǐ hěn piàoliang.'},
+  {vi:'Chỉ cần bạn tập thể dục mỗi ngày là khuôn mặt sẽ trông tinh thần hơn.', zh:'只要你天天运动，你的脸就会看上去更精神。', py:'Zhǐyào nǐ tiāntiān yùndòng, nǐ de liǎn jiù huì kàn shangqu gèng jīngshen.'},
+  {vi:'Tuy tấm ảnh hơi cũ nhưng tôi vẫn nhận ra ngay.', zh:'虽然照片有点儿旧，但是我还是一下就认出来了。', py:'Suīrán zhàopiàn yǒudiǎnr jiù, dànshì wǒ háishi yíxià jiù rèn chulai le.'},
+  {vi:'Chỉ cần nhìn thấy chim trên cây là em trai sẽ không khóc nữa.', zh:'只要看到树上的鸟，弟弟就不哭了。', py:'Zhǐyào kàndào shù shang de niǎo, dìdi jiù bù kū le.'},
+  {vi:'Vận động khiến tôi khỏe mạnh.', zh:'运动使我健康。', py:'Yùndòng shǐ wǒ jiànkāng.'},
+  {vi:'Ngày mưa khiến tôi cảm thấy rất dễ chịu.', zh:'下雨天让我觉得很舒服。', py:'Xià yǔ tiān ràng wǒ juéde hěn shūfu.'},
+  {vi:'Lúc chúng tôi đi thuyền qua Hoàng Hà, suốt đường đã chụp rất nhiều ảnh.', zh:'我们坐船经过黄河的时候，一路上拍了很多照片。', py:'Wǒmen zuò chuán jīngguò Huáng Hé de shíhou, yílù shang pāile hěn duō zhàopiàn.'},
+  {vi:'Tuy những nơi đi qua không nhiều nhưng mỗi nơi đều rất đẹp.', zh:'虽然经过的地方不多，但是每个地方都很美。', py:'Suīrán jīngguò de dìfang bù duō, dànshì měi ge dìfang dōu hěn měi.'},
 ];
 
 // ══════════════════════════════════════════
@@ -504,10 +504,10 @@ var translateDataRev = [
   {vi:'Bạn vẽ nhanh thật, một lát là vẽ xong rồi.', zh:'你画得真快，一会儿就画出来了。', py:'Nǐ huà de zhēn kuài, yíhuìr jiù huà chulai le.'},
   {vi:'Bạn nghe ra không? Đây là giọng của ai?', zh:'你听出来了吗？这是谁的声音？', py:'Nǐ tīng chulai le ma? Zhè shì shéi de shēngyīn?'},
   {vi:'Chiếc xe phía trước càng chạy càng chậm, dừng hẳn lại rồi.', zh:'前边的车越开越慢，停下来了。', py:'Qiánbian de chē yuè kāi yuè màn, tíng xialai le.'},
-  {vi:'Trời tối dần rồi, bọn trẻ phải về nhà thôi.', zh:'天黑下来了，孩子们要回家了。', py:'Tiān hēi xialai le, háizimen yào huí jiā le.'},
+  {vi:'Đèn đột nhiên tối dần đi, mọi người đều hơi sợ.', zh:'灯突然暗下来了，大家都有点儿害怕。', py:'Dēng tūrán àn xialai le, dàjiā dōu yǒudiǎnr hàipà.'},
   {vi:'Xin lỗi, tôi không nhớ ra tên bạn nữa.', zh:'对不起，我想不起来你的名字了。', py:'Duìbuqǐ, wǒ xiǎng bu qǐlai nǐ de míngzi le.'},
-  {vi:'Mặc đồ thể thao khiến anh ấy trẻ hơn.', zh:'穿运动服让他更年轻。', py:'Chuān yùndòngfú ràng tā gèng niánqīng.'},
-  {vi:'Tôi muốn gửi ảnh cho mọi người sớm, để bạn bè cũng vui vẻ một chút.', zh:'我想快点儿把照片发给大家，叫朋友们也高兴高兴。', py:'Wǒ xiǎng kuài diǎnr bǎ zhàopiàn fā gěi dàjiā, jiào péngyoumen yě gāoxìng gāoxìng.'},
+  {vi:'Cắt tóc ngắn khiến cô ấy trông tinh thần hơn.', zh:'剪短头发让她看上去更精神。', py:'Jiǎn duǎn tóufa ràng tā kàn shangqu gèng jīngshen.'},
+  {vi:'Tôi muốn sắp xếp hết những tấm ảnh này, cho vào album.', zh:'我想把这些照片都整理好，放进相册里。', py:'Wǒ xiǎng bǎ zhèxiē zhàopiàn dōu zhěnglǐ hǎo, fàng jìn xiàngcè li.'},
 ];
 
 // ══════════════════════════════════════════

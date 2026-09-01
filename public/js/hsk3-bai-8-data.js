@@ -283,8 +283,8 @@ var vocabData = [
       cf:'考 (kǎo – "thi cử", có phần trên giống nhau")',w:'老同学 / 老了 / 老朋友'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chú tôi tuy đã già nhưng vẫn rất khỏe mạnh.',answer:'我叔叔虽然老了，但是还很健康。',answerPy:'Wǒ shūshu suīrán lǎo le, dànshì hái hěn jiànkāng.',
-      note:'虽然……但是…… diễn tả sự tương phản (ôn lại 健康 sẽ học ngay bên dưới).'},
+     {promptLang:'vi',prompt:'Ông tôi tuy đã già nhưng ngày nào cũng đi tập thể dục.',answer:'我爷爷虽然老了，但是每天都去锻炼身体。',answerPy:'Wǒ yéye suīrán lǎo le, dànshì měitiān dōu qù duànliàn shēntǐ.',
+      note:'虽然……但是…… diễn tả sự tương phản (ôn lại 锻炼 đã học ở Bài 4).'},
      {promptLang:'vi',prompt:'Bạn học cũ của tôi hầu như không thay đổi gì cả.',answer:'我的老同学几乎没有变化。',answerPy:'Wǒ de lǎo tóngxué jīhū méiyǒu biànhuà.',
       note:'几乎+phủ định diễn tả gần như không (ôn lại 同事 đã học ở Bài 7, đây là 同学).'},
    ]},
@@ -340,8 +340,8 @@ var vocabData = [
    ex_zh:'健康最重要，胖瘦没关系。',ex_py:'Jiànkāng zuì zhòngyào, pàng shòu méi guānxi.',ex_vn:'Sức khỏe là quan trọng nhất, béo gầy không quan trọng.',
    exList:[
      {zh:'健康最重要，胖瘦没关系。',py:'Jiànkāng zuì zhòngyào, pàng shòu méi guānxi.',vn:'Sức khỏe là quan trọng nhất, béo gầy không quan trọng.'},
-     {zh:'别着急，孩子身体健康是最重要的。',py:'Bié zháojí, háizi shēntǐ jiànkāng shì zuì zhòngyào de.',vn:'Đừng lo, con cái khỏe mạnh mới là quan trọng nhất.'},
-     {zh:'为了让自己更健康，他每天都去锻炼。',py:'Wèile ràng zìjǐ gèng jiànkāng, tā měitiān dōu qù duànliàn.',vn:'Để bản thân khỏe mạnh hơn, anh ấy mỗi ngày đều đi tập thể dục.'},
+     {zh:'虽然他工作很忙，但是身体一直很健康。',py:'Suīrán tā gōngzuò hěn máng, dànshì shēntǐ yìzhí hěn jiànkāng.',vn:'Tuy anh ấy làm việc rất bận nhưng sức khỏe luôn khỏe mạnh.'},
+     {zh:'医生说只要多运动，身体就会更健康。',py:'Yīshēng shuō zhǐyào duō yùndòng, shēntǐ jiù huì gèng jiànkāng.',vn:'Bác sĩ nói chỉ cần vận động nhiều thì sức khỏe sẽ tốt hơn.'},
    ],
    hanzi:[
      {c:'康',p:'kāng',type:'半包围结构 · Bán bao vây',st:11,ord:'广 bao ngoài → 隶(biến thể) trong',rad:'广 (nghiễm – mái nhà)',mean:'khỏe mạnh, yên ổn',
@@ -362,7 +362,7 @@ var vocabData = [
    ex_zh:'健康最重要，胖瘦没关系。',ex_py:'Jiànkāng zuì zhòngyào, pàng shòu méi guānxi.',ex_vn:'Sức khỏe là quan trọng nhất, béo gầy không quan trọng.',
    exList:[
      {zh:'健康最重要，胖瘦没关系。',py:'Jiànkāng zuì zhòngyào, pàng shòu méi guānxi.',vn:'Sức khỏe là quan trọng nhất, béo gầy không quan trọng.'},
-     {zh:'别着急，孩子身体健康是最重要的。',py:'Bié zháojí, háizi shēntǐ jiànkāng shì zuì zhòngyào de.',vn:'Đừng lo, con cái khỏe mạnh mới là quan trọng nhất.'},
+     {zh:'如果你觉得这件事重要，就早点儿告诉我。',py:'Rúguǒ nǐ juéde zhè jiàn shì zhòngyào, jiù zǎo diǎnr gàosu wǒ.',vn:'Nếu bạn thấy việc này quan trọng thì hãy nói sớm cho tôi biết.'},
      {zh:'这件事对我来说很重要。',py:'Zhè jiàn shì duì wǒ láishuō hěn zhòngyào.',vn:'Việc này đối với tôi rất quan trọng.'},
    ],
    hanzi:[
@@ -371,7 +371,7 @@ var vocabData = [
       cf:'量 (liàng – "đo lường", có phần dưới giống nhau")',w:'重要 / 很重 / 重视'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Việc này đối với tôi rất quan trọng.',answer:'这件事对我来说很重要。',answerPy:'Zhè jiàn shì duì wǒ láishuō hěn zhòngyào.',
+     {promptLang:'vi',prompt:'Học tốt tiếng Trung đối với tôi rất quan trọng.',answer:'学好汉语对我来说很重要。',answerPy:'Xuéhǎo Hànyǔ duì wǒ láishuō hěn zhòngyào.',
       note:'对……来说 diễn tả góc nhìn/quan điểm.'},
      {promptLang:'vi',prompt:'Vì sức khỏe rất quan trọng nên anh ấy mỗi ngày đều tập thể dục.',answer:'因为健康很重要，所以他每天都锻炼。',answerPy:'Yīnwèi jiànkāng hěn zhòngyào, suǒyǐ tā měitiān dōu duànliàn.',
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 健康/锻炼 đã học).'},
@@ -469,30 +469,30 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'今天',blank:'又',post:'去看了看。',hint:'(lại)',ans:'又'},
-  {pre:'都不',blank:'满意',post:'吗？',hint:'(hài lòng)',ans:'满意'},
-  {pre:'一个没有',blank:'电梯',post:'，不方便。',hint:'(thang máy)',ans:'电梯'},
+  {pre:'你对这份工作',blank:'满意',post:'吗？',hint:'(hài lòng)',ans:'满意'},
+  {pre:'这栋楼没有',blank:'电梯',post:'，老人上下楼很难。',hint:'(thang máy)',ans:'电梯'},
   {pre:'但是在二十',blank:'层',post:'。',hint:'(tầng)',ans:'层'},
   {pre:'往下看多',blank:'害怕',post:'啊！',hint:'(sợ)',ans:'害怕'},
   {pre:'这个小',blank:'熊猫',post:'送给你。',hint:'(gấu trúc)',ans:'熊猫'},
-  {pre:'希望以后能再',blank:'见面',post:'。',hint:'(gặp nhau)',ans:'见面'},
-  {pre:'坐这儿吧，这儿',blank:'安静',post:'。',hint:'(yên tĩnh)',ans:'安静'},
-  {pre:'喝',blank:'可乐',post:'吧。',hint:'(coca-cola)',ans:'可乐'},
-  {pre:'你等我',blank:'一会儿',post:'，我马上回来。',hint:'(một lát)',ans:'一会儿'},
+  {pre:'我们下个月还会在上海',blank:'见面',post:'。',hint:'(gặp nhau)',ans:'见面'},
+  {pre:'我们去图书馆吧，那儿很',blank:'安静',post:'。',hint:'(yên tĩnh)',ans:'安静'},
+  {pre:'天气这么热，我们喝杯冰',blank:'可乐',post:'吧。',hint:'(coca-cola)',ans:'可乐'},
+  {pre:'你先在这儿坐',blank:'一会儿',post:'，我去买杯咖啡就回来。',hint:'(một lát)',ans:'一会儿'},
   {pre:'我',blank:'马上',post:'回来。',hint:'(ngay lập tức)',ans:'马上'},
-  {pre:'我去',blank:'洗手间',post:'。',hint:'(nhà vệ sinh)',ans:'洗手间'},
-  {pre:'快五年了，你',blank:'几乎',post:'没变化。',hint:'(hầu như)',ans:'几乎'},
-  {pre:'健康最',blank:'重要',post:'，胖瘦没关系。',hint:'(quan trọng)',ans:'重要'},
+  {pre:'他说他要先去一下',blank:'洗手间',post:'，马上就回来。',hint:'(nhà vệ sinh)',ans:'洗手间'},
+  {pre:'都十年了，这条街',blank:'几乎',post:'没变化。',hint:'(hầu như)',ans:'几乎'},
+  {pre:'对我来说，家人最',blank:'重要',post:'，工作没有那么重要。',hint:'(quan trọng)',ans:'重要'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['昨天','去','看','了','看','，','今天','又','去','看','了','看','。'],ans:'昨天去看了看，今天又去看了看。',audio:'昨天去看了看，今天又去看了看。'},
-  {words:['太','高','了','，','往下','看','多','害怕','啊','！'],ans:'太高了，往下看多害怕啊！',audio:'太高了，往下看多害怕啊！'},
-  {words:['这个','小','熊猫','送给','你','，','欢迎','你','以后','再','到','中国','来','。'],ans:'这个小熊猫送给你，欢迎你以后再到中国来。',audio:'这个小熊猫送给你，欢迎你以后再到中国来。'},
+  {words:['我','昨天','去','超市','买','了','菜','，','今天','又','去','买','了','一次','。'],ans:'我昨天去超市买了菜，今天又去买了一次。',audio:'我昨天去超市买了菜，今天又去买了一次。'},
+  {words:['这条','路','太','黑','了','，','一个','人','走','多','害怕','啊','！'],ans:'这条路太黑了，一个人走多害怕啊！',audio:'这条路太黑了，一个人走多害怕啊！'},
+  {words:['这张','熊猫','照片','送给','你','，','希望','你','喜欢','北京','。'],ans:'这张熊猫照片送给你，希望你喜欢北京。',audio:'这张熊猫照片送给你，希望你喜欢北京。'},
   {words:['你','坐','哪儿','我','就','坐','哪儿','。'],ans:'你坐哪儿我就坐哪儿。',audio:'你坐哪儿我就坐哪儿。'},
-  {words:['因为','二十','层','太','高','了','，','所以','她','往下','看','很','害怕','。'],ans:'因为二十层太高了，所以她往下看很害怕。',audio:'因为二十层太高了，所以她往下看很害怕。'},
+  {words:['因为','楼下','太','吵','了','，','所以','我们','换','了','一个','安静','的','房间','。'],ans:'因为楼下太吵了，所以我们换了一个安静的房间。',audio:'因为楼下太吵了，所以我们换了一个安静的房间。'},
   {words:['虽然','他','几乎','没','变化','，','但是','他','说','自己','胖','了','。'],ans:'虽然他几乎没变化，但是他说自己胖了。',audio:'虽然他几乎没变化，但是他说自己胖了。'},
   {words:['如果','你','不','满意','，','我们','就','再','去','看看','别的','。'],ans:'如果你不满意，我们就再去看看别的。',audio:'如果你不满意，我们就再去看看别的。'},
   {words:['我','想','吃','什么','就','吃','什么','。'],ans:'我想吃什么就吃什么。',audio:'我想吃什么就吃什么。'},
@@ -502,9 +502,9 @@ var sortData = [
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我昨天去看了看，今天再去看了看。',
-   opts:['我昨天去看了看，今天又去看了看。','我昨天去看了看，今天再去看了看。','我昨天再去看了看，今天又去看了看。','我今天去看了看，昨天又去看了看。'],ans:0,
-   exp:'又 dùng cho hành động ĐÃ lặp lại (rồi), 再 dùng cho hành động CHƯA/SẼ lặp lại — "hôm nay" là việc đã xảy ra nên phải dùng 又, không dùng 再.'},
+  {wrong:'我上午给他打了电话，下午再打了一次。',
+   opts:['我上午给他打了电话，下午又打了一次。','我上午给他打了电话，下午再打了一次。','我上午给他再打了电话，下午又打了一次。','我下午给他打了电话，上午又打了一次。'],ans:0,
+   exp:'又 dùng cho hành động ĐÃ lặp lại (rồi), 再 dùng cho hành động CHƯA/SẼ lặp lại — "buổi chiều" ở đây là việc đã xảy ra rồi nên phải dùng 又, không dùng 再.'},
   {wrong:'你只吃了一点儿饭，又吃一点儿吧。',
    opts:['你只吃了一点儿饭，再吃一点儿吧。','你只吃了一点儿饭，又吃一点儿吧。','你只吃了一点儿饭，吃再一点儿吧。','你只吃了一点儿饭，吃一点儿又吧。'],ans:0,
    exp:'再 dùng cho hành động CHƯA xảy ra (lời đề nghị ăn thêm), không dùng 又 (又 chỉ dùng cho việc đã xảy ra).'},
@@ -556,28 +556,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hôm qua tôi đi xem thử, hôm nay lại đi xem tiếp.', zh:'我昨天去看了看，今天又去看了看。', py:'Wǒ zuótiān qù kànle kàn, jīntiān yòu qù kànle kàn.'},
-  {vi:'Bạn có hài lòng với căn nhà mới không?', zh:'你对新房子满意吗？', py:'Nǐ duì xīn fángzi mǎnyì ma?'},
-  {vi:'Tầng này không có thang máy, thật bất tiện.', zh:'这层没有电梯，真不方便。', py:'Zhè céng méiyǒu diàntī, zhēn bù fāngbiàn.'},
-  {vi:'Con gấu trúc nhỏ này tặng bạn, hoan nghênh bạn lần sau lại đến.', zh:'这个小熊猫送给你，欢迎你以后再来。', py:'Zhège xiǎo xióngmāo sòng gěi nǐ, huānyíng nǐ yǐhòu zài lái.'},
+  {vi:'Hôm qua tôi đã giặt quần áo, hôm nay lại giặt thêm một lần nữa.', zh:'我昨天洗了衣服，今天又洗了一次。', py:'Wǒ zuótiān xǐle yīfu, jīntiān yòu xǐle yí cì.'},
+  {vi:'Anh ấy rất hài lòng với cuộc sống hiện tại.', zh:'他对现在的生活很满意。', py:'Tā duì xiànzài de shēnghuó hěn mǎnyì.'},
+  {vi:'Cửa hàng này không có thang máy, mua đồ rất mệt.', zh:'这家商店没有电梯，买东西很累。', py:'Zhè jiā shāngdiàn méiyǒu diàntī, mǎi dōngxi hěn lèi.'},
+  {vi:'Cuốn sách này tặng bạn, hoan nghênh bạn thường xuyên đến nhà tôi chơi.', zh:'这本书送给你，欢迎你常来我家玩。', py:'Zhè běn shū sòng gěi nǐ, huānyíng nǐ cháng lái wǒ jiā wán.'},
   {vi:'Bạn muốn ngồi đâu thì tôi ngồi đó.', zh:'你想坐哪儿我就坐哪儿。', py:'Nǐ xiǎng zuò nǎr wǒ jiù zuò nǎr.'},
-  {vi:'Sức khỏe là quan trọng nhất, tiền bạc không quan trọng.', zh:'健康最重要，钱不重要。', py:'Jiànkāng zuì zhòngyào, qián bú zhòngyào.'},
-  {vi:'Bạn hầu như không thay đổi gì cả.', zh:'你几乎没有变化。', py:'Nǐ jīhū méiyǒu biànhuà.'},
-  {vi:'Nếu bạn không hài lòng thì chúng ta đi xem nhà khác đi.', zh:'如果你不满意，我们就去看别的房子吧。', py:'Rúguǒ nǐ bù mǎnyì, wǒmen jiù qù kàn biéde fángzi ba.'},
+  {vi:'Đối với người già mà nói, sức khỏe quan trọng hơn tất cả.', zh:'对老人来说，身体健康比什么都重要。', py:'Duì lǎorén láishuō, shēntǐ jiànkāng bǐ shénme dōu zhòngyào.'},
+  {vi:'Cô ấy hầu như không uống coca, chỉ uống nước.', zh:'她几乎不喝可乐，只喝水。', py:'Tā jīhū bù hē kělè, zhǐ hē shuǐ.'},
+  {vi:'Nếu bạn không hài lòng với màu này thì chúng ta đổi cái khác đi.', zh:'如果你对这个颜色不满意，我们就换一个吧。', py:'Rúguǒ nǐ duì zhège yánsè bù mǎnyì, wǒmen jiù huàn yí ge ba.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì tầng 20 quá cao nên cô ấy nhìn xuống rất sợ.', zh:'因为二十层太高了，所以她往下看很害怕。', py:'Yīnwèi èrshí céng tài gāo le, suǒyǐ tā wǎng xià kàn hěn hàipà.'},
+  {vi:'Vì trong thang máy quá đông người nên tôi quyết định đi cầu thang lên.', zh:'因为电梯里人太多，所以我决定走楼梯上去。', py:'Yīnwèi diàntī lǐ rén tài duō, suǒyǐ wǒ juédìng zǒu lóutī shàngqu.'},
   {vi:'Chỉ cần bạn thích thì muốn ăn gì cứ ăn đó.', zh:'只要你喜欢，想吃什么就吃什么。', py:'Zhǐyào nǐ xǐhuan, xiǎng chī shénme jiù chī shénme.'},
-  {vi:'Tuy anh ấy hầu như không thay đổi nhưng tính cách khác trước nhiều.', zh:'虽然他几乎没变化，但是性格跟以前很不一样。', py:'Suīrán tā jīhū méi biànhuà, dànshì xìnggé gēn yǐqián hěn bù yíyàng.'},
+  {vi:'Tuy thành phố này hầu như không thay đổi nhưng người đông hơn nhiều.', zh:'虽然这个城市几乎没变化，但是人多了很多。', py:'Suīrán zhège chéngshì jīhū méi biànhuà, dànshì rén duōle hěn duō.'},
   {vi:'Ai thích cô ấy thì cô ấy thích lại người đó.', zh:'谁喜欢她，她就喜欢谁。', py:'Shéi xǐhuan tā, tā jiù xǐhuan shéi.'},
-  {vi:'Hy vọng sau này chúng ta còn có thể gặp lại nhau.', zh:'希望以后我们还能再见面。', py:'Xīwàng yǐhòu wǒmen hái néng zài jiànmiàn.'},
-  {vi:'Bạn đợi tôi một lát, tôi đi vệ sinh rồi quay lại ngay.', zh:'你等我一会儿，我去洗手间马上回来。', py:'Nǐ děng wǒ yíhuìr, wǒ qù xǐshǒujiān mǎshàng huílai.'},
-  {vi:'Cô ấy uống cà phê hay uống coca-cola?', zh:'她喝咖啡还是喝可乐？', py:'Tā hē kāfēi háishi hē kělè?'},
-  {vi:'Chú tôi tuy đã già nhưng vẫn rất khỏe mạnh.', zh:'我叔叔虽然老了，但是还很健康。', py:'Wǒ shūshu suīrán lǎo le, dànshì hái hěn jiànkāng.'},
+  {vi:'Tuy mọi người đều bận nhưng mỗi năm đều gặp nhau một lần.', zh:'虽然大家很忙，但是每年都会见一次面。', py:'Suīrán dàjiā hěn máng, dànshì měinián dōu huì jiàn yí cì miàn.'},
+  {vi:'Bạn đợi một lát ở dưới lầu, tôi xuống là tới ngay.', zh:'你在楼下等一会儿，我下楼就到。', py:'Nǐ zài lóuxià děng yíhuìr, wǒ xiàlóu jiù dào.'},
+  {vi:'Chỉ cần bạn muốn uống coca, tôi sẽ xuống dưới mua ngay.', zh:'只要你想喝可乐，我就去楼下买。', py:'Zhǐyào nǐ xiǎng hē kělè, wǒ jiù qù lóuxià mǎi.'},
+  {vi:'Quán ăn này tuy cũ nhưng hương vị vẫn luôn rất ngon.', zh:'这家饭馆虽然老了，但是味道一直很好。', py:'Zhè jiā fànguǎn suīrán lǎo le, dànshì wèidao yìzhí hěn hǎo.'},
 ];
 
 // ══════════════════════════════════════════

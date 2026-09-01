@@ -21,8 +21,8 @@ var vocabData = [
    checkList:[
      {promptLang:'vi',prompt:'Vì cuối tuần có trận thi đấu bóng rổ nên chúng tôi đều rất vui.',answer:'因为周末有篮球比赛，所以我们都很高兴。',answerPy:'Yīnwèi zhōumò yǒu lánqiú bǐsài, suǒyǐ wǒmen dōu hěn gāoxìng.',
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 周末 đã học ở Bài 1).'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn nỗ lực thì thi đấu chắc chắn sẽ không có vấn đề gì.',answer:'只要你努力，比赛就没问题。',answerPy:'Zhǐyào nǐ nǔlì, bǐsài jiù méi wèntí.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 没问题 xuất hiện ở Bài 3).'},
+     {promptLang:'vi',prompt:'Chỉ cần mọi người đều cố gắng, trận đấu này chắc chắn sẽ thắng.',answer:'只要大家都努力，这场比赛就一定会赢。',answerPy:'Zhǐyào dàjiā dōu nǔlì, zhè chǎng bǐsài jiù yídìng huì yíng.',
+      note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
   {n:2,zh:'照片',py:'zhàopiàn',pos:'Danh từ',vn:'bức ảnh',em:'📷',lesson:1,
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'极 (jí – "cực kỳ", có bộ 木 thay vì 纟")',w:'年级 / 一年级 / 高年级'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn nữ vừa cao vừa xinh kia là học sinh lớp hai.',answer:'那个又高又漂亮的女孩儿是二年级的。',answerPy:'Nàge yòu gāo yòu piàoliang de nǚháir shì èr niánjí de.',
+     {promptLang:'vi',prompt:'Cậu bé vừa thông minh vừa chăm chỉ đó là học sinh lớp ba.',answer:'那个又聪明又努力的男孩儿是三年级的。',answerPy:'Nàge yòu cōngming yòu nǔlì de nánháir shì sān niánjí de.',
       note:'又……又…… mô tả hai đặc điểm cùng tồn tại (điểm ngữ pháp bài này).'},
      {promptLang:'vi',prompt:'Vì con tôi mới học lớp một nên bài tập chưa nhiều.',answer:'因为我的孩子才一年级，所以作业还不多。',answerPy:'Yīnwèi wǒ de háizi cái yì niánjí, suǒyǐ zuòyè hái bù duō.',
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 作业 đã học ở Bài 1).'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'势 (shì – "thế lực", cũng có phần 埶")',w:'热情 / 很热 / 热心'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn nhiệt tình một chút thì khách hàng sẽ rất vui.',answer:'只要你热情一点儿，客人就会很高兴。',answerPy:'Zhǐyào nǐ rèqíng yìdiǎnr, kèrén jiù huì hěn gāoxìng.',
+     {promptLang:'vi',prompt:'Chỉ cần bạn nhiệt tình với khách một chút, khách sẽ rất hài lòng.',answer:'只要你对客人热情一点儿，客人就会很满意。',answerPy:'Zhǐyào nǐ duì kèrén rèqíng yìdiǎnr, kèrén jiù huì hěn mǎnyì.',
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 客人 vừa học trong bài này).'},
      {promptLang:'vi',prompt:'Nếu người phục vụ không nhiệt tình thì khách sẽ không muốn đến nữa.',answer:'如果服务员不热情，客人就不想再来了。',answerPy:'Rúguǒ fúwùyuán bú rèqíng, kèrén jiù bù xiǎng zài lái le.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -327,8 +327,8 @@ var vocabData = [
       cf:'队 (duì – "đội ngũ", không có bộ 讠")',w:'认真 / 认识 / 认真工作'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn nghiêm túc trả lời thì thầy giáo sẽ hài lòng.',answer:'只要你认真回答，老师就会满意。',answerPy:'Zhǐyào nǐ rènzhēn huídá, lǎoshī jiù huì mǎnyì.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 回答 vừa học trong bài này).'},
+     {promptLang:'vi',prompt:'Chỉ cần nhân viên phục vụ làm việc nghiêm túc thì khách hàng sẽ ngày càng đông.',answer:'只要服务员工作认真，客人就会越来越多。',answerPy:'Zhǐyào fúwùyuán gōngzuò rènzhēn, kèrén jiù huì yuèláiyuè duō.',
+      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 客人 vừa học trong bài này).'},
      {promptLang:'vi',prompt:'Vì cô ấy làm việc rất nghiêm túc nên khách hàng đều thích cô ấy.',answer:'因为她工作很认真，所以客人都喜欢她。',answerPy:'Yīnwèi tā gōngzuò hěn rènzhēn, suǒyǐ kèrén dōu xǐhuan tā.',
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
@@ -351,7 +351,7 @@ var vocabData = [
    checkList:[
      {promptLang:'vi',prompt:'Cô ấy luôn cười khi trả lời câu hỏi của khách hàng.',answer:'她总是笑着回答客人的问题。',answerPy:'Tā zǒngshì xiàozhe huídá kèrén de wèntí.',
       note:'V1着+V2 diễn tả hai hành động đồng thời (ôn lại 回答 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu người phục vụ không nhiệt tình thì khách sẽ không muốn đến nữa.',answer:'如果服务员不热情，客人就不想再来了。',answerPy:'Rúguǒ fúwùyuán bú rèqíng, kèrén jiù bù xiǎng zài lái le.',
+     {promptLang:'vi',prompt:'Nếu khách hàng có câu hỏi, bạn nên trả lời một cách nghiêm túc.',answer:'如果客人有问题，你就应该认真回答。',answerPy:'Rúguǒ kèrén yǒu wèntí, nǐ jiù yīnggāi rènzhēn huídá.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
@@ -508,31 +508,31 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这是你们',blank:'比赛',post:'的照片吗？',hint:'(cuộc thi đấu)',ans:'比赛'},
-  {pre:'照得不错，你们都是一个',blank:'年级',post:'的吗？',hint:'(lớp/khối)',ans:'年级'},
-  {pre:'那个',blank:'又',post:'高又漂亮的女孩儿是二年级的。',hint:'(vừa…vừa…)',ans:'又'},
-  {pre:'她又',blank:'聪明',post:'又热情，也很努力。',hint:'(thông minh)',ans:'聪明'},
-  {pre:'她又聪明又',blank:'热情',post:'，也很努力。',hint:'(nhiệt tình)',ans:'热情'},
-  {pre:'我看她总是笑着',blank:'回答',post:'老师的问题。',hint:'(trả lời)',ans:'回答'},
-  {pre:'那些拿着鲜花',blank:'站',post:'在门口的，都是等她的。',hint:'(đứng)',ans:'站'},
-  {pre:'我有点儿',blank:'饿',post:'了，我们进超市买点儿东西吧。',hint:'(đói)',ans:'饿'},
-  {pre:'我们进',blank:'超市',post:'买点儿东西吧。',hint:'(siêu thị)',ans:'超市'},
-  {pre:'这家超市的',blank:'蛋糕',post:'又便宜又好吃。',hint:'(bánh kem)',ans:'蛋糕'},
-  {pre:'你们这儿是不是有一个又',blank:'年轻',post:'又漂亮的服务员？',hint:'(trẻ tuổi)',ans:'年轻'},
-  {pre:'她工作又',blank:'认真',post:'又热情。',hint:'(nghiêm túc)',ans:'认真'},
-  {pre:'她总是笑着跟',blank:'客人',post:'说话。',hint:'(khách hàng)',ans:'客人'},
+  {pre:'只要你参加',blank:'比赛',post:'，就会更有信心。',hint:'(cuộc thi đấu)',ans:'比赛'},
+  {pre:'虽然我们不是一个',blank:'年级',post:'，但是经常一起做作业。',hint:'(lớp/khối)',ans:'年级'},
+  {pre:'那家',blank:'又',post:'便宜又好吃的蛋糕店，就在超市旁边。',hint:'(vừa…vừa…)',ans:'又'},
+  {pre:'虽然妹妹很',blank:'聪明',post:'，但是做作业总是不认真。',hint:'(thông minh)',ans:'聪明'},
+  {pre:'只要服务员对客人',blank:'热情',post:'，客人就会常来。',hint:'(nhiệt tình)',ans:'热情'},
+  {pre:'如果你不认真听，就不能',blank:'回答',post:'老师的问题。',hint:'(trả lời)',ans:'回答'},
+  {pre:'只要有空，他就喜欢',blank:'站',post:'在窗户旁边看比赛。',hint:'(đứng)',ans:'站'},
+  {pre:'虽然我有点儿',blank:'饿',post:'，但是想先喝杯咖啡。',hint:'(đói)',ans:'饿'},
+  {pre:'因为附近没有',blank:'超市',post:'，所以买东西不太方便。',hint:'(siêu thị)',ans:'超市'},
+  {pre:'虽然这块',blank:'蛋糕',post:'不便宜，但是很好吃。',hint:'(bánh kem)',ans:'蛋糕'},
+  {pre:'因为服务员比较',blank:'年轻',post:'，所以学得特别快。',hint:'(trẻ tuổi)',ans:'年轻'},
+  {pre:'虽然弟弟很年轻，但是做事很',blank:'认真',post:'。',hint:'(nghiêm túc)',ans:'认真'},
+  {pre:'因为她总是热情地帮助',blank:'客人',post:'，所以大家都很喜欢她。',hint:'(khách hàng)',ans:'客人'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['她','又','聪明','又','热情','，','也','很','努力','。'],ans:'她又聪明又热情，也很努力。',audio:'她又聪明又热情，也很努力。'},
-  {words:['这','家','超市','的','蛋糕','又','便宜','又','好吃','。'],ans:'这家超市的蛋糕又便宜又好吃。',audio:'这家超市的蛋糕又便宜又好吃。'},
+  {words:['因为','服务员','工作','很','认真','，','所以','客人','都','很','满意','。'],ans:'因为服务员工作很认真，所以客人都很满意。',audio:'因为服务员工作很认真，所以客人都很满意。'},
+  {words:['如果','你','想','买','便宜','的','蛋糕','，','就','去','那','家','超市','看看','。'],ans:'如果你想买便宜的蛋糕，就去那家超市看看。',audio:'如果你想买便宜的蛋糕，就去那家超市看看。'},
   {words:['很多','人','拿','着','鲜花','站','在','门口','。'],ans:'很多人拿着鲜花站在门口。',audio:'很多人拿着鲜花站在门口。'},
-  {words:['她','总是','笑','着','跟','客人','说话','。'],ans:'她总是笑着跟客人说话。',audio:'她总是笑着跟客人说话。'},
-  {words:['因为','他','工作','很','努力','，','所以','经理','很','喜欢','他','。'],ans:'因为他工作很努力，所以经理很喜欢他。',audio:'因为他工作很努力，所以经理很喜欢他。'},
-  {words:['虽然','她','总是','笑','着','，','但是','工作','很','认真','。'],ans:'虽然她总是笑着，但是工作很认真。',audio:'虽然她总是笑着，但是工作很认真。'},
+  {words:['因为','客人','越来越','多','，','所以','她','总是','很','忙','。'],ans:'因为客人越来越多，所以她总是很忙。',audio:'因为客人越来越多，所以她总是很忙。'},
+  {words:['虽然','弟弟','不是','很','聪明','，','但是','他','学习','特别','努力','。'],ans:'虽然弟弟不是很聪明，但是他学习特别努力。',audio:'虽然弟弟不是很聪明，但是他学习特别努力。'},
+  {words:['如果','你','总是','不','认真','，','老师','就','会','生气','。'],ans:'如果你总是不认真，老师就会生气。',audio:'如果你总是不认真，老师就会生气。'},
   {words:['如果','你','饿','了','，','就','去','超市','买','点儿','东西','吧','。'],ans:'如果你饿了，就去超市买点儿东西吧。',audio:'如果你饿了，就去超市买点儿东西吧。'},
   {words:['我们','回家','吃','着','蛋糕','看','电视','，','怎么样','？'],ans:'我们回家吃着蛋糕看电视，怎么样？',audio:'我们回家吃着蛋糕看电视，怎么样？'},
 ];
@@ -547,9 +547,9 @@ var errorFixData = [
   {wrong:'她总是回答着笑老师的问题。',
    opts:['她总是笑着回答老师的问题。','她总是回答着笑老师的问题。','她总是笑回答着老师的问题。','她笑着总是回答老师的问题。'],ans:0,
    exp:'Cấu trúc V1着+V2: động từ diễn tả trạng thái đi kèm (笑) đứng trước và gắn liền với 着, rồi mới đến động từ chính (回答)+tân ngữ.'},
-  {wrong:'很多人站着拿鲜花在门口。',
-   opts:['很多人拿着鲜花站在门口。','很多人站着拿鲜花在门口。','很多人拿鲜花着站在门口。','鲜花很多人拿着站在门口。'],ans:0,
-   exp:'Động tác đi kèm (拿着 — cầm) phải đứng trước, hành động chính (站在门口 — đứng ở cửa) đứng sau: V1着+V2, không đảo ngược thứ tự.'},
+  {wrong:'很多客人站着拿蛋糕在超市门口。',
+   opts:['很多客人拿着蛋糕站在超市门口。','很多客人站着拿蛋糕在超市门口。','很多客人拿蛋糕着站在超市门口。','蛋糕很多客人拿着站在超市门口。'],ans:0,
+   exp:'Động tác đi kèm (拿着 — cầm) phải đứng trước, hành động chính (站在超市门口 — đứng ở cửa siêu thị) đứng sau: V1着+V2, không đảo ngược thứ tự.'},
   {wrong:'超市又便宜蛋糕又好吃。',
    opts:['超市的蛋糕又便宜又好吃。','超市又便宜蛋糕又好吃。','超市蛋糕又又便宜好吃。','又超市的蛋糕便宜又好吃。'],ans:0,
    exp:'Chủ ngữ (超市的蛋糕) phải đứng nguyên vẹn trước cấu trúc 又……又……, không được chen danh từ vào giữa 又 và tính từ.'},

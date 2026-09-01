@@ -153,7 +153,7 @@ var vocabData = [
    checkList:[
      {promptLang:'vi',prompt:'Vì bài tập hôm nay đặc biệt khó nên tôi làm rất lâu.',answer:'因为今天的作业特别难，所以我做了很久。',answerPy:'Yīnwèi jīntiān de zuòyè tèbié nán, suǒyǐ wǒ zuòle hěn jiǔ.',
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 作业/难 đã học ở Bài 1-2).'},
-     {promptLang:'vi',prompt:'Cô ấy đặc biệt thích nghe nhạc.',answer:'她特别喜欢听音乐。',answerPy:'Tā tèbié xǐhuan tīng yīnyuè.',
+     {promptLang:'vi',prompt:'Anh ấy đặc biệt thích xem thi đấu bóng đá.',answer:'他特别喜欢看足球比赛。',answerPy:'Tā tèbié xǐhuan kàn zúqiú bǐsài.',
       note:'特别 + động từ tâm lý diễn tả mức độ cao.'},
    ]},
 
@@ -187,7 +187,7 @@ var vocabData = [
    exList:[
      {zh:'电话里讲不明白，你来我家吧。',py:'Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba.',vn:'Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi.'},
      {zh:'我都讲了三次了，你怎么还听不明白？',py:'Wǒ dōu jiǎngle sān cì le, nǐ zěnme hái tīng bu míngbai?',vn:'Tôi giảng những ba lần rồi, sao bạn vẫn không hiểu vậy?'},
-     {zh:'我懂了，就是白天的时间越来越长了。',py:'Wǒ dǒng le, jiùshì báitiān de shíjiān yuè lái yuè cháng le.',vn:'Tôi hiểu rồi, tức là thời gian ban ngày ngày càng dài ra.'},
+     {zh:'如果你还不明白，就再问问老师吧。',py:'Rúguǒ nǐ hái bù míngbai, jiù zài wènwen lǎoshī ba.',vn:'Nếu bạn vẫn chưa hiểu thì hỏi lại thầy giáo đi.'},
    ],
    hanzi:[
      {c:'白',p:'bái',type:'独体字 · Chữ đơn',st:5,ord:'nét liền, hình ánh sáng',rad:'白 (bạch – trắng)',mean:'trắng; rõ ràng',
@@ -195,8 +195,8 @@ var vocabData = [
       cf:'百 (bǎi – "trăm", thêm 1 nét trên 白")',w:'明白 / 白色 / 白天'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn nói rõ ràng hơn một chút thì tôi sẽ hiểu.',answer:'如果你说得清楚一点儿，我就会明白。',answerPy:'Rúguǒ nǐ shuō de qīngchu yìdiǎnr, wǒ jiù huì míngbai.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 清楚 vừa học trong bài này).'},
+     {promptLang:'vi',prompt:'Nếu bạn đọc lại một lần nữa thì sẽ hiểu rõ hơn.',answer:'如果你再读一遍，就会更明白。',answerPy:'Rúguǒ nǐ zài dú yí biàn, jiù huì gèng míngbai.',
+      note:'如果……就…… diễn tả giả thiết — kết quả.'},
      {promptLang:'vi',prompt:'Tôi nghe thầy giảng ba lần rồi mới hiểu rõ.',answer:'我听老师讲了三次才明白。',answerPy:'Wǒ tīng lǎoshī jiǎngle sān cì cái míngbai.',
       note:'才 diễn tả phải sau nhiều lần mới đạt được kết quả.'},
    ]},
@@ -423,19 +423,19 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我的',blank:'眼镜',post:'呢？怎么突然找不到了？',hint:'(mắt kính)',ans:'眼镜'},
-  {pre:'怎么',blank:'突然',post:'找不到了？',hint:'(bỗng nhiên)',ans:'突然'},
+  {pre:'虽然我的',blank:'眼镜',post:'有点儿旧了，但是戴着还很清楚。',hint:'(mắt kính)',ans:'眼镜'},
+  {pre:'昨天还好好的手机，怎么',blank:'突然',post:'不能用了？',hint:'(bỗng nhiên)',ans:'突然'},
   {pre:'我',blank:'离',post:'不开眼镜。',hint:'(rời khỏi)',ans:'离'},
-  {pre:'没有眼镜，我一个字也看不',blank:'清楚',post:'。',hint:'(rõ ràng)',ans:'清楚'},
-  {pre:'是不是',blank:'刚才',post:'放在桌子上了？',hint:'(lúc nãy)',ans:'刚才'},
-  {pre:'你快过来',blank:'帮忙',post:'啊。',hint:'(giúp đỡ)',ans:'帮忙'},
+  {pre:'虽然教室里灯光有点儿暗，但是黑板上的字我还看得',blank:'清楚',post:'。',hint:'(rõ ràng)',ans:'清楚'},
+  {pre:'你的手机是不是',blank:'刚才',post:'忘在餐厅里了？',hint:'(lúc nãy)',ans:'刚才'},
+  {pre:'厨房里的东西太重了，你快过来',blank:'帮忙',post:'搬一下吧。',hint:'(giúp đỡ)',ans:'帮忙'},
   {pre:'今天这些题',blank:'特别',post:'难。',hint:'(vô cùng, rất)',ans:'特别'},
   {pre:'电话里',blank:'讲',post:'不明白。',hint:'(nói, giải thích)',ans:'讲'},
-  {pre:'电话里讲不',blank:'明白',post:'。',hint:'(rõ ràng, dễ hiểu)',ans:'明白'},
-  {pre:'我',blank:'锻炼',post:'完了就过去。',hint:'(tập thể dục)',ans:'锻炼'},
+  {pre:'老师讲了两遍，我才',blank:'明白',post:'这道题的意思。',hint:'(rõ ràng, dễ hiểu)',ans:'明白'},
+  {pre:'虽然外边有点儿冷，但是我还是想去公园',blank:'锻炼',post:'一会儿。',hint:'(tập thể dục)',ans:'锻炼'},
   {pre:'她喜欢听',blank:'音乐',post:'。',hint:'(âm nhạc)',ans:'音乐'},
   {pre:'那去',blank:'公园',post:'走走。',hint:'(công viên)',ans:'公园'},
-  {pre:'你不是说晚上',blank:'睡不着',post:'觉吗？',hint:'(ngủ không được)',ans:'睡不着'},
+  {pre:'他昨天喝了很多咖啡，所以晚上',blank:'睡不着',post:'觉。',hint:'(ngủ không được)',ans:'睡不着'},
   {pre:'喝杯牛奶，可以睡得',blank:'更',post:'好些。',hint:'(càng, hơn nữa)',ans:'更'},
 ];
 
@@ -444,10 +444,10 @@ var fillData = [
 // ══════════════════════════════════════════
 var sortData = [
   {words:['我','的','眼镜','怎么','突然','找','不','到','了','？'],ans:'我的眼镜怎么突然找不到了？',audio:'我的眼镜怎么突然找不到了？'},
-  {words:['没有','眼镜','，','我','一','个','字','也','看','不','清楚','。'],ans:'没有眼镜，我一个字也看不清楚。',audio:'没有眼镜，我一个字也看不清楚。'},
-  {words:['电话','里','讲','不','明白','，','你','来','我家','吧','。'],ans:'电话里讲不明白，你来我家吧。',audio:'电话里讲不明白，你来我家吧。'},
-  {words:['音乐会','人','太','多','，','买','不','到','票','。'],ans:'音乐会人太多，买不到票。',audio:'音乐会人太多，买不到票。'},
-  {words:['你','不是','说','晚上','睡','不','着','觉','吗','？'],ans:'你不是说晚上睡不着觉吗？',audio:'你不是说晚上睡不着觉吗？'},
+  {words:['虽然','声音','很','小','，','但是','我','还','听','得','清楚','。'],ans:'虽然声音很小，但是我还听得清楚。',audio:'虽然声音很小，但是我还听得清楚。'},
+  {words:['虽然','这个','故事','很','长','，','但是','奶奶','讲','得','很','清楚','。'],ans:'虽然这个故事很长，但是奶奶讲得很清楚。',audio:'虽然这个故事很长，但是奶奶讲得很清楚。'},
+  {words:['虽然','电影院','人','很','多','，','但是','我们','买','到','了','票','。'],ans:'虽然电影院人很多，但是我们买到了票。',audio:'虽然电影院人很多，但是我们买到了票。'},
+  {words:['如果','房间','太','吵','，','我','就','睡','不','着','觉','。'],ans:'如果房间太吵，我就睡不着觉。',audio:'如果房间太吵，我就睡不着觉。'},
   {words:['因为','题','特别','难','，','所以','我','不','会','做','。'],ans:'因为题特别难，所以我不会做。',audio:'因为题特别难，所以我不会做。'},
   {words:['虽然','公园','很','大','，','但是','走走','也','不错','。'],ans:'虽然公园很大，但是走走也不错。',audio:'虽然公园很大，但是走走也不错。'},
   {words:['如果','你','锻炼','完','了','，','就','过来','吧','。'],ans:'如果你锻炼完了，就过来吧。',audio:'如果你锻炼完了，就过来吧。'},
@@ -469,8 +469,8 @@ var errorFixData = [
   {wrong:'我才做完作业，你呢？',
    opts:['我刚做完作业，你呢？','我才做完作业，你呢？','我做刚完作业，你呢？','刚我做完作业，你呢？'],ans:0,
    exp:'刚 (phó từ, đứng trước động từ) diễn tả hành động vừa xảy ra cách đây không lâu; 才 mang nghĩa khác (mãi mới, muộn), không phù hợp ngữ cảnh này.'},
-  {wrong:'电话里明白讲不。',
-   opts:['电话里讲不明白。','电话里明白讲不。','电话里不讲明白。','电话里讲明白不。'],ans:0,
+  {wrong:'这道题他明白讲不。',
+   opts:['这道题他讲不明白。','这道题他明白讲不。','这道题他不讲明白。','这道题他讲明白不。'],ans:0,
    exp:'Bổ ngữ khả năng: Động từ(讲)+不+bổ ngữ(明白) phải đứng liền nhau theo đúng thứ tự, không đảo lộn.'},
 ];
 
@@ -511,13 +511,13 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi tìm không thấy chìa khóa của mình, bạn nhìn thấy không?', zh:'我找不到我的钥匙，你看见了吗？', py:'Wǒ zhǎo bu dào wǒ de yàoshi, nǐ kànjiàn le ma?'},
-  {vi:'Không có kính tôi một chữ cũng không nhìn rõ.', zh:'没有眼镜，我一个字也看不清楚。', py:'Méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.'},
+  {vi:'Nếu bạn tìm không thấy chìa khóa xe thì cứ hỏi hàng xóm xem sao.', zh:'如果你找不到车钥匙，就问问邻居吧。', py:'Rúguǒ nǐ zhǎo bu dào chē yàoshi, jiù wènwen línjū ba.'},
+  {vi:'Tuy trời tối nhưng con đường đó tôi vẫn nhìn thấy rất rõ.', zh:'虽然天黑了，但是那条路我还看得很清楚。', py:'Suīrán tiān hēi le, dànshì nà tiáo lù wǒ hái kàn de hěn qīngchu.'},
   {vi:'Bài này khó quá, tôi không hiểu, bạn giúp tôi được không?', zh:'这道题特别难，我看不懂，你能帮我吗？', py:'Zhè dào tí tèbié nán, wǒ kàn bu dǒng, nǐ néng bāng wǒ ma?'},
   {vi:'Bạn đến nhà tôi đi, tôi giảng cho bạn.', zh:'你来我家吧，我给你讲讲。', py:'Nǐ lái wǒ jiā ba, wǒ gěi nǐ jiǎngjiang.'},
   {vi:'Công viên người đông quá, đi dạo cũng mệt.', zh:'公园人太多，走走也很累。', py:'Gōngyuán rén tài duō, zǒuzou yě hěn lèi.'},
-  {vi:'Bạn không phải nói tối qua ngủ không được sao?', zh:'你不是说昨晚睡不着觉吗？', py:'Nǐ bú shì shuō zuówǎn shuì bu zháo jiào ma?'},
-  {vi:'Uống ly sữa nóng, có thể ngủ ngon hơn.', zh:'喝杯热牛奶，可以睡得更好。', py:'Hē bēi rè niúnǎi, kěyǐ shuì de gèng hǎo.'},
+  {vi:'Bạn không phải nói hôm nay không cần đi làm sao?', zh:'你不是说今天不用上班吗？', py:'Nǐ bú shì shuō jīntiān bú yòng shàngbān ma?'},
+  {vi:'Nghe một bản nhạc nhẹ, có thể giúp bạn ngủ ngon hơn.', zh:'听一首轻音乐，可以帮助你睡得更好。', py:'Tīng yì shǒu qīng yīnyuè, kěyǐ bāngzhù nǐ shuì de gèng hǎo.'},
   {vi:'Tôi vừa mới tập thể dục xong, hơi mệt.', zh:'我刚锻炼完，有点儿累。', py:'Wǒ gāng duànliàn wán, yǒudiǎnr lèi.'},
 ];
 
@@ -526,11 +526,11 @@ var translateData = [
 // ══════════════════════════════════════════
 var translateDataRev = [
   {vi:'Nếu bạn nhìn không rõ thì nên đeo kính.', zh:'如果你看不清楚，就应该戴眼镜。', py:'Rúguǒ nǐ kàn bu qīngchu, jiù yīnggāi dài yǎnjìng.'},
-  {vi:'Vì bài tập hôm nay đặc biệt khó nên tôi làm rất lâu.', zh:'因为今天的作业特别难，所以我做了很久。', py:'Yīnwèi jīntiān de zuòyè tèbié nán, suǒyǐ wǒ zuòle hěn jiǔ.'},
-  {vi:'Chỉ cần bạn giải thích rõ thì tôi sẽ hiểu.', zh:'只要你讲明白，我就会懂。', py:'Zhǐyào nǐ jiǎng míngbai, wǒ jiù huì dǒng.'},
-  {vi:'Tuy công viên rất lớn nhưng đi dạo cũng thú vị.', zh:'虽然公园很大，但是走走也很有意思。', py:'Suīrán gōngyuán hěn dà, dànshì zǒuzou yě hěn yǒu yìsi.'},
-  {vi:'Vừa nãy có người gọi điện tìm bạn.', zh:'刚才有人打电话找你。', py:'Gāngcái yǒu rén dǎ diànhuà zhǎo nǐ.'},
-  {vi:'Cô bé đó thích nói chuyện với bà.', zh:'那个小女孩儿喜欢跟奶奶聊天儿。', py:'Nàge xiǎo nǚháir xǐhuan gēn nǎinai liáotiānr.'},
+  {vi:'Vì món đó đặc biệt cay nên tôi không ăn được nhiều.', zh:'因为那个菜特别辣，所以我吃不了很多。', py:'Yīnwèi nàge cài tèbié là, suǒyǐ wǒ chī bu liǎo hěn duō.'},
+  {vi:'Chỉ cần thầy giáo giảng chậm một chút thì học sinh sẽ nghe hiểu.', zh:'只要老师讲得慢一点儿，学生就能听懂。', py:'Zhǐyào lǎoshī jiǎng de màn yìdiǎnr, xuésheng jiù néng tīngdǒng.'},
+  {vi:'Tuy công viên hôm nay đông người nhưng không khí đặc biệt trong lành.', zh:'虽然公园今天人很多，但是空气特别新鲜。', py:'Suīrán gōngyuán jīntiān rén hěn duō, dànshì kōngqì tèbié xīnxiān.'},
+  {vi:'Chỉ cần bạn thấy cuộc gọi của tôi thì gọi lại cho tôi nhé.', zh:'只要你看见我的电话，就给我回个电话吧。', py:'Zhǐyào nǐ kànjiàn wǒ de diànhuà, jiù gěi wǒ huí ge diànhuà ba.'},
+  {vi:'Chỉ cần rảnh rỗi, ông tôi liền thích tán gẫu với hàng xóm.', zh:'只要有空，我爷爷就喜欢跟邻居聊天儿。', py:'Zhǐyào yǒu kòng, wǒ yéye jiù xǐhuan gēn línjū liáotiānr.'},
   {vi:'Anh trai tôi vừa tập thể dục xong liền đi tắm.', zh:'我哥哥刚锻炼完就去洗澡了。', py:'Wǒ gēge gāng duànliàn wán jiù qù xǐzǎo le.'},
   {vi:'Cốc cà phê này tôi chỉ uống một nửa.', zh:'这杯咖啡我只喝了一半。', py:'Zhè bēi kāfēi wǒ zhǐ hēle yíbàn.'},
 ];

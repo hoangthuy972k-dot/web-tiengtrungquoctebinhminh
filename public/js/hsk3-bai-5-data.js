@@ -239,7 +239,7 @@ var vocabData = [
       cf:'群 (qún – "đám đông", có 羊 thay vì 衤")',w:'裙子 / 一条裙子'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi thích nhìn bạn mặc váy đẹp.',answer:'我喜欢看你穿漂亮的裙子。',answerPy:'Wǒ xǐhuan kàn nǐ chuān piàoliang de qúnzi.',
+     {promptLang:'vi',prompt:'Tôi thích nhìn con gái tôi mặc váy mới.',answer:'我喜欢看我女儿穿新裙子。',answerPy:'Wǒ xǐhuan kàn wǒ nǚ\'ér chuān xīn qúnzi.',
       note:'V1(看)+V2(穿) — 看 mang một mệnh đề làm tân ngữ.'},
      {promptLang:'vi',prompt:'Nếu cái váy này không vừa nữa thì chúng ta đi mua cái khác.',answer:'如果这条裙子不能穿了，我们就去买别的。',answerPy:'Rúguǒ zhè tiáo qúnzi bù néng chuān le, wǒmen jiù qù mǎi biéde.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 条 đã học ở Bài 2).'},
@@ -399,32 +399,32 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'前几天有点儿',blank:'发烧',post:'，现在好多了。',hint:'(sốt)',ans:'发烧'},
+  {pre:'虽然弟弟只是有点儿',blank:'发烧',post:'，但是妈妈还是带他去了医院。',hint:'(sốt)',ans:'发烧'},
   {pre:'这是我',blank:'为',post:'你买的绿茶。',hint:'(cho, vì)',ans:'为'},
-  {pre:'我儿子生病了，我要在家',blank:'照顾',post:'他。',hint:'(chăm sóc)',ans:'照顾'},
+  {pre:'因为奶奶生病了，所以我今天要请假回家',blank:'照顾',post:'她。',hint:'(chăm sóc)',ans:'照顾'},
   {pre:'不',blank:'用',post:'去医院。',hint:'(cần)',ans:'用'},
-  {pre:'昨天吃了',blank:'感冒',post:'药，现在好一些了。',hint:'(cảm)',ans:'感冒'},
-  {pre:'你最喜欢哪个',blank:'季节',post:'？',hint:'(mùa)',ans:'季节'},
-  {pre:'',blank:'当然',post:'是春天，天气不那么冷了。',hint:'(đương nhiên)',ans:'当然'},
-  {pre:'',blank:'春',post:'天到了，花都开了。',hint:'(mùa xuân)',ans:'春'},
+  {pre:'因为最近感冒的人很多，所以大家都去药店买了',blank:'感冒',post:'药。',hint:'(cảm)',ans:'感冒'},
+  {pre:'如果只能选一个',blank:'季节',post:'，你会选春天还是秋天？',hint:'(mùa)',ans:'季节'},
+  {pre:'',blank:'当然',post:'要多穿衣服，不然容易感冒。',hint:'(đương nhiên)',ans:'当然'},
+  {pre:'虽然还没到3月，但是',blank:'春',post:'天已经快要到了。',hint:'(mùa xuân)',ans:'春'},
   {pre:'草和树都绿了，',blank:'草',post:'地上很好坐。',hint:'(cỏ)',ans:'草'},
-  {pre:'我最喜欢',blank:'夏',post:'天，因为我可以穿漂亮的裙子了。',hint:'(mùa hè)',ans:'夏'},
-  {pre:'我喜欢看你穿漂亮的',blank:'裙子',post:'。',hint:'(váy)',ans:'裙子'},
-  {pre:'我',blank:'最近',post:'越来越胖了。',hint:'(gần đây, dạo này)',ans:'最近'},
-  {pre:'我觉得你',blank:'越',post:'来越漂亮了。',hint:'(càng)',ans:'越'},
+  {pre:'虽然天气越来越热，但是我还是最喜欢',blank:'夏',post:'天。',hint:'(mùa hè)',ans:'夏'},
+  {pre:'虽然这条',blank:'裙子',post:'有点儿贵，但是我还是买了。',hint:'(váy)',ans:'裙子'},
+  {pre:'因为工作忙，我',blank:'最近',post:'很少运动，也很少出去玩儿。',hint:'(gần đây, dạo này)',ans:'最近'},
+  {pre:'自从她开始运动以后，身体',blank:'越',post:'来越好了。',hint:'(càng)',ans:'越'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['前几天','有点儿','发烧','，','现在','好多了','。'],ans:'前几天有点儿发烧，现在好多了。',audio:'前几天有点儿发烧，现在好多了。'},
-  {words:['这','是','我','为','你','买','的','绿茶','。'],ans:'这是我为你买的绿茶。',audio:'这是我为你买的绿茶。'},
-  {words:['我','儿子','生病','了','，','我','要','在家','照顾','他','。'],ans:'我儿子生病了，我要在家照顾他。',audio:'我儿子生病了，我要在家照顾他。'},
-  {words:['草','和','树','都','绿','了','，','花','也','开','了','。'],ans:'草和树都绿了，花也开了。',audio:'草和树都绿了，花也开了。'},
+  {words:['因为','同事','发烧','了','，','所以','他','今天','在家','休息','。'],ans:'因为同事发烧了，所以他今天在家休息。',audio:'因为同事发烧了，所以他今天在家休息。'},
+  {words:['虽然','很','贵','，','但是','这','是','我','特意','为','你','买','的','生日','礼物','。'],ans:'虽然很贵，但是这是我特意为你买的生日礼物。',audio:'虽然很贵，但是这是我特意为你买的生日礼物。'},
+  {words:['虽然','工作','很','忙','，','但是','我','还是','要','在家','照顾','生病','的','爸爸','。'],ans:'虽然工作很忙，但是我还是要在家照顾生病的爸爸。',audio:'虽然工作很忙，但是我还是要在家照顾生病的爸爸。'},
+  {words:['因为','下','了','几天','雨','，','所以','草','和','树','都','绿','了','。'],ans:'因为下了几天雨，所以草和树都绿了。',audio:'因为下了几天雨，所以草和树都绿了。'},
   {words:['因为','我','可以','穿','漂亮','的','裙子','了','，','所以','我','最','喜欢','夏天','。'],ans:'因为我可以穿漂亮的裙子了，所以我最喜欢夏天。',audio:'因为我可以穿漂亮的裙子了，所以我最喜欢夏天。'},
-  {words:['我','最近','越来越','胖','了','。'],ans:'我最近越来越胖了。',audio:'我最近越来越胖了。'},
-  {words:['我','觉得','你','越来越','漂亮','了','。'],ans:'我觉得你越来越漂亮了。',audio:'我觉得你越来越漂亮了。'},
+  {words:['虽然','最近','很','忙','，','但是','我','每天','都','运动','。'],ans:'虽然最近很忙，但是我每天都运动。',audio:'虽然最近很忙，但是我每天都运动。'},
+  {words:['这家','饭馆','的','菜','越','做','越','好吃','了','。'],ans:'这家饭馆的菜越做越好吃了。',audio:'这家饭馆的菜越做越好吃了。'},
   {words:['那','是','因为','你','吃','得','太','多','了','，','少','吃','点儿','吧','。'],ans:'那是因为你吃得太多了，少吃点儿吧。',audio:'那是因为你吃得太多了，少吃点儿吧。'},
 ];
 
@@ -435,9 +435,9 @@ var errorFixData = [
   {wrong:'我发烧有点儿了。',
    opts:['我有点儿发烧了。','我发烧有点儿了。','我了有点儿发烧。','有点儿我发烧了。'],ans:0,
    exp:'有点儿 (phó từ mức độ nhẹ) phải đứng NGAY TRƯỚC động từ/tính từ mà nó bổ nghĩa: 有点儿+发烧, không đảo vị trí.'},
-  {wrong:'这是我买为你的绿茶。',
-   opts:['这是我为你买的绿茶。','这是我买为你的绿茶。','这是为我你买的绿茶。','这是我为买你的绿茶。'],ans:0,
-   exp:'为+đối tượng phải đứng TRƯỚC động từ mà nó bổ nghĩa (为你买), không chen vào giữa động từ và tân ngữ.'},
+  {wrong:'这是姐姐买为我的衣服。',
+   opts:['这是姐姐为我买的衣服。','这是姐姐买为我的衣服。','这是为姐姐我买的衣服。','这是姐姐为买我的衣服。'],ans:0,
+   exp:'为+đối tượng phải đứng TRƯỚC động từ mà nó bổ nghĩa (为我买), không chen vào giữa động từ và tân ngữ.'},
   {wrong:'我越来越很漂亮了。',
    opts:['我越来越漂亮了。','我越来越很漂亮了。','我很越来越漂亮了。','我越来越了漂亮。'],ans:0,
    exp:'Không được thêm phó từ mức độ (很/非常) vào trước tính từ trong cấu trúc 越来越+tính từ.'},
@@ -486,28 +486,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì tôi hơi sốt nên hôm nay tôi không đi làm.', zh:'因为我有点儿发烧，所以今天不去上班。', py:'Yīnwèi wǒ yǒudiǎnr fā shāo, suǒyǐ jīntiān bú qù shàngbān.'},
-  {vi:'Đây là bánh kem tôi mua cho bạn.', zh:'这是我为你买的蛋糕。', py:'Zhè shì wǒ wèi nǐ mǎi de dàngāo.'},
-  {vi:'Tôi phải ở nhà chăm sóc con trai bị ốm.', zh:'我要在家照顾生病的儿子。', py:'Wǒ yào zài jiā zhàogù shēng bìng de érzi.'},
-  {vi:'Không cần lo lắng, uống thuốc rồi sẽ khỏe hơn.', zh:'不用着急，吃了药就会好一些。', py:'Búyòng zháojí, chīle yào jiù huì hǎo yìxiē.'},
+  {vi:'Chỉ cần mặc đủ ấm thì sẽ không dễ bị sốt.', zh:'只要多穿点儿衣服，就不容易发烧。', py:'Zhǐyào duō chuān diǎnr yīfu, jiù bù róngyì fā shāo.'},
+  {vi:'Nếu bạn thích hồng trà thì cốc này là tôi gọi cho bạn đấy.', zh:'如果你喜欢红茶，这杯就是我为你点的。', py:'Rúguǒ nǐ xǐhuan hóngchá, zhè bēi jiù shì wǒ wèi nǐ diǎn de.'},
+  {vi:'Nếu bạn bị ốm thì tôi sẽ ở nhà chăm sóc bạn.', zh:'如果你生病了，我就在家照顾你。', py:'Rúguǒ nǐ shēng bìng le, wǒ jiù zài jiā zhàogù nǐ.'},
+  {vi:'Không cần thay quần áo nữa, hôm nay trời không lạnh.', zh:'不用换衣服了，今天天气不冷。', py:'Búyòng huàn yīfu le, jīntiān tiānqì bù lěng.'},
   {vi:'Mùa xuân đến rồi, hoa cũng nở rồi.', zh:'春天到了，花也开了。', py:'Chūntiān dào le, huā yě kāi le.'},
-  {vi:'Tôi thích nhìn bạn mặc váy đẹp.', zh:'我喜欢看你穿漂亮的裙子。', py:'Wǒ xǐhuan kàn nǐ chuān piàoliang de qúnzi.'},
-  {vi:'Dạo này tôi ngày càng bận rộn.', zh:'我最近越来越忙了。', py:'Wǒ zuìjìn yuè lái yuè máng le.'},
-  {vi:'Con đường này càng đi càng khó đi.', zh:'这条路越走越难走。', py:'Zhè tiáo lù yuè zǒu yuè nán zǒu.'},
+  {vi:'Nếu bạn mặc cái váy này thì chắc chắn sẽ rất đẹp.', zh:'如果你穿这条裙子，一定很好看。', py:'Rúguǒ nǐ chuān zhè tiáo qúnzi, yídìng hěn hǎokàn.'},
+  {vi:'Dạo này tôi ngày càng gầy đi, vì ăn ít.', zh:'我最近越来越瘦了，因为吃得少。', py:'Wǒ zuìjìn yuè lái yuè shòu le, yīnwèi chī de shǎo.'},
+  {vi:'Quyển sách này càng đọc càng thấy thú vị.', zh:'这本书越看越有意思。', py:'Zhè běn shū yuè kàn yuè yǒu yìsi.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Chỉ cần bạn nhiều nghỉ ngơi thì cảm sẽ nhanh khỏi.', zh:'只要你多休息，感冒就会好得快。', py:'Zhǐyào nǐ duō xiūxi, gǎnmào jiù huì hǎo de kuài.'},
-  {vi:'Tuy dạo này tôi hơi mệt nhưng vẫn phải đi làm.', zh:'虽然我最近有点儿累，但是还是要上班。', py:'Suīrán wǒ zuìjìn yǒudiǎnr lèi, dànshì háishi yào shàngbān.'},
-  {vi:'Nếu con bạn bị sốt thì nên đưa đi bệnh viện.', zh:'如果你的孩子发烧了，就应该带他去医院。', py:'Rúguǒ nǐ de háizi fā shāo le, jiù yīnggāi dài tā qù yīyuàn.'},
-  {vi:'Cỏ và cây đều xanh rồi, mùa xuân đến thật rồi.', zh:'草和树都绿了，春天真的到了。', py:'Cǎo hé shù dōu lǜ le, chūntiān zhēnde dào le.'},
+  {vi:'Tôi bị cảm nên hôm nay không đi học.', zh:'我感冒了，所以今天没有去上课。', py:'Wǒ gǎnmào le, suǒyǐ jīntiān méiyǒu qù shàngkè.'},
+  {vi:'Dạo này thời tiết không đẹp nên chúng tôi không đi chơi.', zh:'最近天气不好，所以我们没有出去玩儿。', py:'Zuìjìn tiānqì bù hǎo, suǒyǐ wǒmen méiyǒu chūqu wánr.'},
+  {vi:'Nếu bạn vẫn còn sốt thì đừng đi làm nữa.', zh:'如果你还发烧，就不要去上班了。', py:'Rúguǒ nǐ hái fā shāo, jiù bú yào qù shàngbān le.'},
+  {vi:'Hoa trên bãi cỏ nở ngày càng nhiều, rất đẹp.', zh:'草地上的花越开越多，很漂亮。', py:'Cǎodì shang de huā yuè kāi yuè duō, hěn piàoliang.'},
   {vi:'Cái váy này tôi mua năm ngoái, năm nay không mặc vừa nữa.', zh:'这条裙子是我去年买的，今年不能穿了。', py:'Zhè tiáo qúnzi shì wǒ qùnián mǎi de, jīnnián bù néng chuān le.'},
   {vi:'Anh ấy càng nói càng nhanh, tôi không nghe hiểu nữa.', zh:'他越说越快，我听不懂了。', py:'Tā yuè shuō yuè kuài, wǒ tīngbudǒng le.'},
-  {vi:'Vì thời tiết ngày càng lạnh nên mọi người mặc ngày càng nhiều.', zh:'因为天气越来越冷，所以大家穿得越来越多。', py:'Yīnwèi tiānqì yuè lái yuè lěng, suǒyǐ dàjiā chuān de yuè lái yuè duō.'},
-  {vi:'Bà Trương nói ngày mai bà không thể đi chơi cùng chúng tôi nữa.', zh:'张太太说她明天不能和我们一起出去玩儿了。', py:'Zhāng tàitai shuō tā míngtiān bù néng hé wǒmen yìqǐ chūqu wánr le.'},
+  {vi:'Vì cô ấy ngày càng bận nên ngày càng ít vận động.', zh:'因为她越来越忙，所以越来越少运动了。', py:'Yīnwèi tā yuè lái yuè máng, suǒyǐ yuè lái yuè shǎo yùndòng le.'},
+  {vi:'Anh Trương nói hôm nay anh ấy không thể đến học được nữa.', zh:'张先生说他今天不能来上课了。', py:'Zhāng xiānsheng shuō tā jīntiān bù néng lái shàngkè le.'},
 ];
 
 // ══════════════════════════════════════════

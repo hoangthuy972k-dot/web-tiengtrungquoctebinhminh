@@ -19,7 +19,7 @@ var vocabData = [
       cf:'想 (xiǎng – "nghĩ", có thêm bộ 心")',w:'照相机 / 照相 / 相机'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bà nội có thích cái máy ảnh mới mua đó không?',answer:'奶奶喜欢那个新买的照相机吗？',answerPy:'Nǎinai xǐhuan nàge xīn mǎi de zhàoxiàngjī ma?',
+     {promptLang:'vi',prompt:'Chiếc máy ảnh mới mua này tuy đắt, nhưng chụp ảnh cực kỳ rõ nét.',answer:'这台新买的照相机虽然贵，但是拍照特别清楚。',answerPy:'Zhè tái xīn mǎi de zhàoxiàngjī suīrán guì, dànshì pāizhào tèbié qīngchu.',
       note:'新 + động từ + 的 làm định ngữ.'},
      {promptLang:'vi',prompt:'Nếu bạn mất máy ảnh thì tôi cho bạn mượn cái của tôi.',answer:'如果你的照相机丢了，我就把我的借给你。',answerPy:'Rúguǒ nǐ de zhàoxiàngjī diū le, wǒ jiù bǎ wǒ de jiè gěi nǐ.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
@@ -41,7 +41,7 @@ var vocabData = [
       cf:'披 (pī – "khoác", có bộ 扌")',w:'被 / 被子'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mình bị anh ấy ảnh hưởng đấy.',answer:'我被他影响的。',answerPy:'Wǒ bèi tā yǐngxiǎng de.',
+     {promptLang:'vi',prompt:'Suy nghĩ của tôi đã bị trải nghiệm lần này ảnh hưởng.',answer:'我的想法被这次经历影响了。',answerPy:'Wǒ de xiǎngfǎ bèi zhè cì jīnglì yǐngxiǎng le.',
       note:'被 diễn tả câu bị động (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Vấn đề vẫn chưa được giải quyết.',answer:'问题还没有被解决呢。',answerPy:'Wèntí hái méiyǒu bèi jiějué ne.',
       note:'Phó từ phủ định (没有) đặt TRƯỚC 被.'},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'过 (guò – cùng chữ đã học ở Bài 19")',w:'难过 / 难受'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn đừng buồn nữa, chúng tôi cùng giúp bạn nghĩ cách.',answer:'你别难过了，我们一起帮你想办法。',answerPy:'Nǐ bié nánguò le, wǒmen yìqǐ bāng nǐ xiǎng bànfǎ.',
+     {promptLang:'vi',prompt:'Đừng buồn nữa, tôi sẽ cùng bạn nghĩ cách giải quyết vấn đề này.',answer:'别难过了，我陪你一起想办法解决这个问题。',answerPy:'Bié nánguò le, wǒ péi nǐ yìqǐ xiǎng bànfǎ jiějué zhège wèntí.',
       note:'办法 diễn tả cách giải quyết (ôn lại đã học ở Bài 17).'},
      {promptLang:'vi',prompt:'Nếu bạn buồn thì cứ nói cho tôi biết.',answer:'如果你难过，就告诉我吧。',answerPy:'Rúguǒ nǐ nánguò, jiù gàosu wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -85,7 +85,7 @@ var vocabData = [
       cf:'车 (chē – "xe", hình dáng gần giống")',w:'东 / 东边 / 东西'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chỉ có đi về hướng đông mới đến được công viên quốc gia.',answer:'只有往东走才能到国家公园。',answerPy:'Zhǐyǒu wǎng dōng zǒu cái néng dào guójiā gōngyuán.',
+     {promptLang:'vi',prompt:'Chỉ có đi về hướng đông, mới tìm được nhà hàng mới khai trương đó.',answer:'只有往东走，才能找到那家新开的饭馆。',answerPy:'Zhǐyǒu wǎng dōng zǒu, cái néng zhǎodào nà jiā xīn kāi de fànguǎn.',
       note:'只有……才…… diễn tả điều kiện duy nhất (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn đi về phía đông thì sẽ thấy trường học.',answer:'如果你往东走，就会看到学校。',answerPy:'Rúguǒ nǐ wǎng dōng zǒu, jiù huì kàndào xuéxiào.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'卞 (biàn – họ Biện", hình dáng gần giống")',w:'信用卡 / 卡片'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Nhân viên nói thẻ tín dụng của tôi không dùng được nữa.',answer:'服务员说我这张信用卡不能用了。',answerPy:'Fúwùyuán shuō wǒ zhè zhāng xìnyòngkǎ bù néng yòng le.',
+     {promptLang:'vi',prompt:'Nhân viên bán hàng nói thẻ tín dụng này không phải của tôi.',answer:'售货员说这张信用卡不是我的。',answerPy:'Shòuhuòyuán shuō zhè zhāng xìnyòngkǎ bú shì wǒ de.',
       note:'张 là lượng từ cho vật phẳng (ôn lại đã học ở Bài 19).'},
      {promptLang:'vi',prompt:'Nếu thẻ tín dụng của bạn không dùng được thì đi ngân hàng hỏi thử đi.',answer:'如果你的信用卡不能用，就去银行问问吧。',answerPy:'Rúguǒ nǐ de xìnyòngkǎ bù néng yòng, jiù qù yínháng wènwen ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'吴 (wú – "họ Ngô", hình dáng khác")',w:'关心 / 关于 / 关系'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Anh ấy luôn luôn rất quan tâm tôi.',answer:'他一直都很关心我。',answerPy:'Tā yìzhí dōu hěn guānxīn wǒ.',
+     {promptLang:'vi',prompt:'Cô giáo luôn luôn rất quan tâm đến thành tích của mỗi học sinh.',answer:'老师一直都很关心每个学生的成绩。',answerPy:'Lǎoshī yìzhí dōu hěn guānxīn měi ge xuéshēng de chéngjì.',
       note:'一直都 diễn tả trạng thái duy trì liên tục.'},
      {promptLang:'vi',prompt:'Nếu bạn quan tâm đến sức khỏe thì nên tập thể dục thường xuyên.',answer:'如果你关心健康，就应该经常锻炼。',answerPy:'Rúguǒ nǐ guānxīn jiànkāng, jiù yīnggāi jīngcháng duànliàn.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'责 (zé – "trách nhiệm", không có bộ 纟")',w:'成绩 / 业绩'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Kết quả thi ra chưa?',answer:'考试成绩出来了吗？',answerPy:'Kǎoshì chéngjì chulai le ma?',
+     {promptLang:'vi',prompt:'Kết quả kỳ thi lần này khi nào ra vậy?',answer:'这次考试的成绩什么时候出来？',answerPy:'Zhè cì kǎoshì de chéngjì shénme shíhou chulai?',
       note:'出来 diễn tả kết quả xuất hiện (ôn lại đã học ở Bài 19).'},
      {promptLang:'vi',prompt:'Nếu bạn học chăm chỉ thì thành tích sẽ tốt hơn.',answer:'如果你认真学习，成绩就会更好。',answerPy:'Rúguǒ nǐ rènzhēn xuéxí, chéngjì jiù huì gèng hǎo.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'椀 (dạng cổ của 碗, làm bằng gỗ")',w:'碗 / 洗碗'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi rửa bát đũa, bạn đi xem tivi đi.',answer:'我来洗碗筷，你去看电视吧。',answerPy:'Wǒ lái xǐ wǎnkuài, nǐ qù kàn diànshì ba.',
+     {promptLang:'vi',prompt:'Để tôi rửa bát, bạn đi nghỉ một lát đi.',answer:'我来洗碗，你去休息一会儿吧。',answerPy:'Wǒ lái xǐ wǎn, nǐ qù xiūxi yíhuìr ba.',
       note:'我来 + V diễn tả sự chủ động đề nghị làm việc gì.'},
      {promptLang:'vi',prompt:'Nếu bát bẩn thì bạn rửa giúp tôi đi.',answer:'如果碗脏了，你就帮我洗洗吧。',answerPy:'Rúguǒ wǎn zāng le, nǐ jiù bāng wǒ xǐxi ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -217,7 +217,7 @@ var vocabData = [
       cf:'刀 (dāo – "dao", không có bộ 八")',w:'分 / 分开 / 分数'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi thế nào cũng không phân biệt rõ được hai chữ này.',answer:'我怎么也分不清这两个字。',answerPy:'Wǒ zěnme yě fēn bu qīng zhè liǎng ge zì.',
+     {promptLang:'vi',prompt:'Tôi thế nào cũng không phân biệt được mùi vị của hai loại trà này.',answer:'我怎么也分不出来这两种茶的味道。',answerPy:'Wǒ zěnme yě fēn bu chūlai zhè liǎng zhǒng chá de wèidào.',
       note:'怎么也 + phủ định diễn tả sự bất khả thi dù cố gắng thế nào.'},
      {promptLang:'vi',prompt:'Nếu bạn phân biệt được hai anh em thì thật giỏi.',answer:'如果你能分出来他们兄弟俩，就真厉害。',answerPy:'Rúguǒ nǐ néng fēn chulai tāmen xiōngdì liǎ, jiù zhēn lìhai.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'快 (kuài – "nhanh", có bộ 忄")',w:'解决 / 决定'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi thử giúp bạn giải quyết vấn đề máy tính.',answer:'我试着帮你解决电脑的问题。',answerPy:'Wǒ shìzhe bāng nǐ jiějué diànnǎo de wèntí.',
+     {promptLang:'vi',prompt:'Tôi thử tự mình giải quyết vấn đề thẻ tín dụng này.',answer:'我试着自己解决这个信用卡的问题。',answerPy:'Wǒ shìzhe zìjǐ jiějué zhège xìnyòngkǎ de wèntí.',
       note:'试着 + V diễn tả hành động thử làm (ôn lại 试 sẽ học ngay bên dưới).'},
      {promptLang:'vi',prompt:'Nếu bạn không giải quyết được thì cứ hỏi tôi.',answer:'如果你解决不了，就问我吧。',answerPy:'Rúguǒ nǐ jiějué bu liǎo, jiù wèn wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -261,7 +261,7 @@ var vocabData = [
       cf:'式 (shì – "kiểu cách", không có bộ 讠")',w:'试 / 试试 / 考试'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi tìm giúp anh đôi cỡ 43 thử nhé?',answer:'帮您找双43号的试试？',answerPy:'Bāng nín zhǎo shuāng sìshísān hào de shìshi?',
+     {promptLang:'vi',prompt:'Đôi giày này bạn mang thử xem?',answer:'这双鞋你穿着试试？',answerPy:'Zhè shuāng xié nǐ chuānzhe shìshi?',
       note:'试试 = động từ lặp lại dạng AA (ôn lại đã học ở Bài 17).'},
      {promptLang:'vi',prompt:'Nếu bạn không chắc thì cứ thử làm xem.',answer:'如果你不确定，就试着做做吧。',answerPy:'Rúguǒ nǐ bú quèdìng, jiù shìzhe zuòzuo ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'止 (zhǐ – "dừng lại", không có nét ngang trên")',w:'真正 / 正在 / 正常'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lúc buồn chúng ta nên làm một số việc thật sự khiến bản thân vui vẻ.',answer:'难过的时候我们应该做一些真正能使自己快乐的事。',answerPy:'Nánguò de shíhou wǒmen yīnggāi zuò yìxiē zhēnzhèng néng shǐ zìjǐ kuàilè de shì.',
+     {promptLang:'vi',prompt:'Vận động là một việc thật sự có thể khiến cơ thể trở nên khỏe mạnh.',answer:'运动是一件真正能使身体变得健康的事。',answerPy:'Yùndòng shì yí jiàn zhēnzhèng néng shǐ shēntǐ biàn de jiànkāng de shì.',
       note:'使 diễn tả sự khiến cho (ôn lại đã học ở Bài 19).'},
      {promptLang:'vi',prompt:'Chỉ khi bạn thực sự cố gắng thì mới thành công.',answer:'只有你真正努力，才会成功。',answerPy:'Zhǐyǒu nǐ zhēnzhèng nǔlì, cái huì chénggōng.',
       note:'只有……才…… diễn tả điều kiện duy nhất.'},
@@ -305,7 +305,7 @@ var vocabData = [
       cf:'公 (gōng – "công cộng", hình dáng khác")',w:'多么 / 什么 / 怎么'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mùa xuân đến rồi, hoa trong công viên đều nở hết, đẹp biết bao!',answer:'春天来了，公园里的花儿都开了，多么漂亮啊！',answerPy:'Chūntiān lái le, gōngyuán li de huār dōu kāi le, duōme piàoliang a!',
+     {promptLang:'vi',prompt:'Mùa đông đến rồi, tuyết bên ngoài rơi to biết bao!',answer:'冬天到了，外面的雪下得多么大啊！',answerPy:'Dōngtiān dào le, wàimian de xuě xià de duōme dà a!',
       note:'多么 + Adj + 啊 diễn tả câu cảm thán.'},
      {promptLang:'vi',prompt:'Nếu bạn tin tưởng thì vấn đề dù khó đến mấy cũng sẽ được giải quyết.',answer:'如果你相信，多么难的问题都会被解决的。',answerPy:'Rúguǒ nǐ xiāngxìn, duōme nán de wèntí dōu huì bèi jiějué de.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 相信 đã học ở Bài 18).'},
@@ -400,17 +400,17 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'我的',blank:'照相机',post:'被谁拿走了？',hint:'(máy chụp ảnh)',ans:'照相机'},
-  {pre:'我的照相机',blank:'被',post:'谁拿走了？',hint:'(bị, giới từ chỉ thể bị động)',ans:'被'},
+  {pre:'我的手机',blank:'被',post:'谁放在这儿了？',hint:'(bị, giới từ chỉ thể bị động)',ans:'被'},
   {pre:'别',blank:'难过',post:'，再买一个吧。',hint:'(buồn)',ans:'难过'},
   {pre:'公司',blank:'东',post:'门外有一个大商场。',hint:'(phía đông)',ans:'东'},
   {pre:'我这个月',blank:'信用卡',post:'里的钱已经花得差不多了。',hint:'(thẻ tín dụng)',ans:'信用卡'},
-  {pre:'你怎么突然',blank:'关心',post:'起体育来了？',hint:'(quan tâm, chú ý)',ans:'关心'},
+  {pre:'虽然工作很忙，但是他还是很',blank:'关心',post:'家人的生活。',hint:'(quan tâm, chú ý)',ans:'关心'},
   {pre:'我的',blank:'成绩',post:'差极了。',hint:'(thành tích, kết quả)',ans:'成绩'},
   {pre:'那个拿着',blank:'碗',post:'吃饭的人是你哥哥吗？',hint:'(bát)',ans:'碗'},
   {pre:'只有你们的爸爸妈妈才能',blank:'分',post:'出来。',hint:'(phân biệt)',ans:'分'},
   {pre:'得试着',blank:'试',post:'做做。',hint:'(thử)',ans:'试'},
   {pre:'只有',blank:'真正',post:'做事情的时候，才能了解有多难。',hint:'(thật sự)',ans:'真正'},
-  {pre:'',blank:'多么',post:'难的问题，都会被解决的。',hint:'(mức độ tương đối cao)',ans:'多么'},
+  {pre:'',blank:'多么',post:'重的箱子，他都能一个人搬走。',hint:'(mức độ tương đối cao)',ans:'多么'},
   {pre:'不同的问题有不同的',blank:'解决',post:'办法。',hint:'(giải quyết)',ans:'解决'},
 ];
 
@@ -418,34 +418,34 @@ var fillData = [
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','的','照相机','被','谁','拿走','了','？'],ans:'我的照相机被谁拿走了？',audio:'我的照相机被谁拿走了？'},
-  {words:['别','难过','，','再','买','一个','吧','。'],ans:'别难过，再买一个吧。',audio:'别难过，再买一个吧。'},
-  {words:['我','被','他','影响','的','。'],ans:'我被他影响的。',audio:'我被他影响的。'},
-  {words:['看来','只有','爱','，','才','能','让','人','有','变化','。'],ans:'看来只有爱，才能让人有变化。',audio:'看来只有爱，才能让人有变化。'},
-  {words:['问题','还','没有','被','解决','呢','。'],ans:'问题还没有被解决呢。',audio:'问题还没有被解决呢。'},
-  {words:['我们','经常','被','别人','认错','。'],ans:'我们经常被别人认错。',audio:'我们经常被别人认错。'},
+  {words:['我','的','信用卡','被','谁','弄丢','了','？'],ans:'我的信用卡被谁弄丢了？',audio:'我的信用卡被谁弄丢了？'},
+  {words:['别','难过','，','下次','一定','能','提高','成绩','。'],ans:'别难过，下次一定能提高成绩。',audio:'别难过，下次一定能提高成绩。'},
+  {words:['我','的','成绩','被','这次','考试','影响','了','。'],ans:'我的成绩被这次考试影响了。',audio:'我的成绩被这次考试影响了。'},
+  {words:['只有','努力','学习','，','才','能','提高','成绩','。'],ans:'只有努力学习，才能提高成绩。',audio:'只有努力学习，才能提高成绩。'},
+  {words:['碗','还','没有','被','洗','干净','呢','。'],ans:'碗还没有被洗干净呢。',audio:'碗还没有被洗干净呢。'},
+  {words:['这个','字','经常','被','学生','写错','。'],ans:'这个字经常被学生写错。',audio:'这个字经常被学生写错。'},
   {words:['只有','爸爸','、','妈妈','才','能','分','出来','。'],ans:'只有爸爸、妈妈才能分出来。',audio:'只有爸爸、妈妈才能分出来。'},
-  {words:['多么','难','的','问题','，','都','会','被','解决','的','。'],ans:'多么难的问题，都会被解决的。',audio:'多么难的问题，都会被解决的。'},
+  {words:['多么','脏','的','碗','，','她','都','能','洗','干净','。'],ans:'多么脏的碗，她都能洗干净。',audio:'多么脏的碗，她都能洗干净。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我照相机被拿走了谁？',
-   opts:['我的照相机被谁拿走了？','我照相机被拿走了谁？','我的照相机谁被拿走了？','谁被我的照相机拿走了？'],ans:0,
+  {wrong:'我钱包被拿走了谁？',
+   opts:['我的钱包被谁拿走了？','我钱包被拿走了谁？','我的钱包谁被拿走了？','谁被我的钱包拿走了？'],ans:0,
    exp:'Cấu trúc bị động: 主语+被+宾语(谁)+动词+其他, 谁 phải đứng SAU 被 và TRƯỚC động từ, không đặt cuối câu.'},
-  {wrong:'问题被没有解决呢还。',
-   opts:['问题还没有被解决呢。','问题被没有解决呢还。','问题没有还被解决呢。','问题还被没有解决呢。'],ans:0,
+  {wrong:'照相机被没有找到呢还。',
+   opts:['照相机还没有被找到呢。','照相机被没有找到呢还。','照相机没有还被找到呢。','照相机还被没有找到呢。'],ans:0,
    exp:'Phó từ phủ định (没有) và các thành phần khác phải đặt TRƯỚC 被, không đặt sau.'},
   {wrong:'蛋糕吃完了让弟弟。',
    opts:['蛋糕让弟弟吃完了。','蛋糕吃完了让弟弟。','蛋糕让吃完了弟弟。','弟弟蛋糕让吃完了。'],ans:0,
    exp:'Cấu trúc 让/叫/被: 主语+让+宾语(弟弟)+动词(吃完), thứ tự không được đảo.'},
-  {wrong:'写完作业只有，才能看电视。',
-   opts:['只有写完作业，才能看电视。','写完作业只有，才能看电视。','只有才写完作业，能看电视。','写完只有作业，才能看电视。'],ans:0,
+  {wrong:'洗完碗只有，才能出去玩儿。',
+   opts:['只有洗完碗，才能出去玩儿。','洗完碗只有，才能出去玩儿。','只有才洗完碗，能出去玩儿。','洗完只有碗，才能出去玩儿。'],ans:0,
    exp:'只有 phải đứng ở ĐẦU câu, trước điều kiện, không đặt giữa câu.'},
-  {wrong:'只有爱才，能让人有变化。',
-   opts:['只有爱，才能让人有变化。','只有爱才，能让人有变化。','只有才爱，能让人有变化。','只有爱，能才让人有变化。'],ans:0,
+  {wrong:'只有多吃蔬菜才，能更健康。',
+   opts:['只有多吃蔬菜，才能更健康。','只有多吃蔬菜才，能更健康。','只有才多吃蔬菜，能更健康。','只有多吃蔬菜，能才更健康。'],ans:0,
    exp:'才 phải đứng NGAY TRƯỚC động từ năng nguyện (能), không tách rời.'},
 ];
 
@@ -486,28 +486,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Máy ảnh của tôi bị ai lấy mất rồi?', zh:'我的照相机被谁拿走了？', py:'Wǒ de zhàoxiàngjī bèi shéi ná zǒu le?'},
-  {vi:'Đừng buồn, mua cái khác đi.', zh:'别难过，再买一个吧。', py:'Bié nánguò, zài mǎi yí ge ba.'},
-  {vi:'Mình bị anh ấy ảnh hưởng đấy.', zh:'我被他影响的。', py:'Wǒ bèi tā yǐngxiǎng de.'},
-  {vi:'Xem ra chỉ có tình yêu mới có thể khiến người ta thay đổi.', zh:'看来只有爱，才能让人有变化。', py:'Kànlái zhǐyǒu ài, cái néng ràng rén yǒu biànhuà.'},
-  {vi:'Chúng tôi thường bị người khác nhận nhầm.', zh:'我们经常被别人认错。', py:'Wǒmen jīngcháng bèi biéren rèncuò.'},
-  {vi:'Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em.', zh:'只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟。', py:'Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi.'},
+  {vi:'Cuốn sách của tôi bị ai lấy đi rồi?', zh:'我的书被谁拿走了？', py:'Wǒ de shū bèi shéi ná zǒu le?'},
+  {vi:'Đừng buồn, ngày mai mình đi ăn ngon nhé.', zh:'别难过，明天我们去吃好吃的吧。', py:'Bié nánguò, míngtiān wǒmen qù chī hǎochī de ba.'},
+  {vi:'Cuối tuần của tôi bị trận mưa lớn này ảnh hưởng.', zh:'我的周末被这场大雨影响了。', py:'Wǒ de zhōumò bèi zhè chǎng dà yǔ yǐngxiǎng le.'},
+  {vi:'Chỉ có kiên trì luyện tập, mới có thể nói tiếng Trung giỏi.', zh:'只有坚持练习，才能说好中文。', py:'Zhǐyǒu jiānchí liànxí, cái néng shuōhǎo Zhōngwén.'},
+  {vi:'Cái bát này thường bị mọi người dùng nhầm.', zh:'这个碗经常被大家用错。', py:'Zhège wǎn jīngcháng bèi dàjiā yòngcuò.'},
+  {vi:'Chỉ có bác sĩ mới có thể phân biệt được hai loại thuốc này.', zh:'只有医生才能分出来这两种药。', py:'Zhǐyǒu yīshēng cái néng fēn chulai zhè liǎng zhǒng yào.'},
   {vi:'Có những vấn đề nhìn có vẻ khó, nhưng làm thì lại rất đơn giản.', zh:'有些问题看上去很难，但是做起来非常简单。', py:'Yǒuxiē wèntí kàn shangqu hěn nán, dànshì zuò qilai fēicháng jiǎndān.'},
-  {vi:'Vấn đề dù khó đến mấy cũng sẽ được giải quyết.', zh:'多么难的问题，都会被解决的。', py:'Duōme nán de wèntí, dōu huì bèi jiějué de.'},
+  {vi:'Máy ảnh đắt đến mấy, anh ấy cũng đều muốn mua.', zh:'多么贵的照相机，他都想买。', py:'Duōme guì de zhàoxiàngjī, tā dōu xiǎng mǎi.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vấn đề vẫn chưa được giải quyết.', zh:'问题还没有被解决呢。', py:'Wèntí hái méiyǒu bèi jiějué ne.'},
+  {vi:'Bức tranh vẫn chưa được treo lên đâu.', zh:'画还没有被挂上呢。', py:'Huà hái méiyǒu bèi guà shàng ne.'},
   {vi:'Bệnh nhân vẫn chưa được đưa đến bệnh viện.', zh:'病人还没被送到医院呢。', py:'Bìngrén hái méi bèi sòngdào yīyuàn ne.'},
   {vi:'Tháng sau cô ấy sẽ được mẹ gửi sang Mỹ.', zh:'下个月她会被妈妈送到美国。', py:'Xià ge yuè tā huì bèi māma sòngdào Měiguó.'},
-  {vi:'Chỉ có làm xong bài tập mới được xem tivi.', zh:'只有写完作业，才能看电视。', py:'Zhǐyǒu xiěwán zuòyè, cái néng kàn diànshì.'},
+  {vi:'Chỉ có giải quyết xong vấn đề này, mới có thể yên tâm đi ngủ.', zh:'只有解决完这个问题，才能放心睡觉。', py:'Zhǐyǒu jiějué wán zhège wèntí, cái néng fàngxīn shuìjiào.'},
   {vi:'Chỉ có cơm mẹ nấu cô ấy mới thích ăn.', zh:'只有妈妈做的饭，她才爱吃。', py:'Zhǐyǒu māma zuò de fàn, tā cái ài chī.'},
   {vi:'Mũ bị gió thổi bay mất rồi.', zh:'帽子被刮跑了。', py:'Màozi bèi guā pǎo le.'},
-  {vi:'Bánh kem bị em trai ăn hết rồi.', zh:'蛋糕让弟弟吃完了。', py:'Dàngāo ràng dìdi chīwán le.'},
-  {vi:'Chỉ khi thực sự bắt tay vào làm mới hiểu được nó khó đến đâu.', zh:'只有真正做事情的时候，才能了解有多难。', py:'Zhǐyǒu zhēnzhèng zuò shìqing de shíhou, cái néng liǎojiě yǒu duō nán.'},
+  {vi:'Cơm bị em gái ăn hết rồi.', zh:'饭让妹妹吃完了。', py:'Fàn ràng mèimei chīwán le.'},
+  {vi:'Chỉ khi thật sự sống ở nước ngoài mới hiểu được nỗi nhớ nhà.', zh:'只有真正在国外生活的时候，才能了解想家的感觉。', py:'Zhǐyǒu zhēnzhèng zài guówài shēnghuó de shíhou, cái néng liǎojiě xiǎngjiā de gǎnjué.'},
 ];
 
 // ══════════════════════════════════════════

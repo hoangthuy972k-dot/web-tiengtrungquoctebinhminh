@@ -63,7 +63,7 @@ var vocabData = [
       cf:'点 (diǎn – "điểm", không liên quan nghĩa")',w:'词典 / 字典 / 经典'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Quyển từ điển này của bạn tôi, không phải của tôi.',answer:'这本词典是我朋友的，不是我的。',answerPy:'Zhè běn cídiǎn shì wǒ péngyou de, bú shì wǒ de.',
+     {promptLang:'vi',prompt:'Quyển từ điển này là của thư viện, không phải tôi mua.',answer:'这本词典是图书馆的，不是我买的。',answerPy:'Zhè běn cídiǎn shì túshūguǎn de, bú shì wǒ mǎi de.',
       note:'是……的 diễn tả sở hữu.'},
      {promptLang:'vi',prompt:'Vì tôi cần dùng từ điển nên tôi mượn thư viện một quyển.',answer:'因为我需要用词典，所以我在图书馆借了一本。',answerPy:'Yīnwèi wǒ xūyào yòng cídiǎn, suǒyǐ wǒ zài túshūguǎn jièle yì běn.',
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 图书馆 vừa học trong bài này).'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'仪 (yí – "nghi thức", có 亻 thay vì 讠")',w:'会议 / 开会 / 议论'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.',answer:'会议结束后，别忘记把空调关了。',answerPy:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.',
+     {promptLang:'vi',prompt:'Trước khi cuộc họp bắt đầu, làm ơn tắt điện thoại đi.',answer:'会议开始前，请把手机关了。',answerPy:'Huìyì kāishǐ qián, qǐng bǎ shǒujī guān le.',
       note:'把字句 diễn tả hành động xử lý sự vật xác định (điểm ngữ pháp bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn tham gia cuộc họp thì nhớ mang theo laptop nhé.',answer:'如果你参加会议，就记得带笔记本电脑。',answerPy:'Rúguǒ nǐ cānjiā huìyì, jiù jìde dài bǐjìběn diànnǎo.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 参加 đã học ở Bài 9).'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'速 (sù – "nhanh chóng", có bộ 辶")',w:'结束 / 一束花'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Hội thao khi nào kết thúc?',answer:'运动会什么时候结束？',answerPy:'Yùndònghuì shénme shíhou jiéshù?',
+     {promptLang:'vi',prompt:'Phim chừng nào kết thúc?',answer:'电影什么时候结束？',answerPy:'Diànyǐng shénme shíhou jiéshù?',
       note:'什么时候 hỏi thời gian.'},
      {promptLang:'vi',prompt:'Chỉ cần cuộc họp kết thúc thì chúng ta có thể đi ăn cơm.',answer:'只要会议结束，我们就可以去吃饭。',answerPy:'Zhǐyào huìyì jiéshù, wǒmen jiù kěyǐ qù chīfàn.',
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 会议 vừa học trong bài này).'},
@@ -173,8 +173,8 @@ var vocabData = [
       cf:'忙 (máng – "bận rộn", có 忄 thay vì 心")',w:'忘记 / 忘了 / 别忘了'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Con quên mất sinh nhật bố rồi.',answer:'我把爸爸的生日忘了。',answerPy:'Wǒ bǎ bàba de shēngrì wàng le.',
-      note:'把字句: 把+B(生日)+忘了 diễn tả sự việc bị quên.'},
+     {promptLang:'vi',prompt:'Tôi quên mất bài tập cô giáo giao rồi.',answer:'我把老师说的作业忘了。',answerPy:'Wǒ bǎ lǎoshī shuō de zuòyè wàng le.',
+      note:'把字句: 把+B(作业)+忘了 diễn tả sự việc bị quên.'},
      {promptLang:'vi',prompt:'Xin lỗi, tôi quên mất chuyện đó rồi.',answer:'对不起，我把那件事忘了。',answerPy:'Duìbuqǐ, wǒ bǎ nà jiàn shì wàng le.',
       note:'把字句 diễn tả sự việc bị quên.'},
    ]},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'周 (zhōu – "vòng, tuần", không có bộ 讠")',w:'空调 / 调整'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Đừng quên tắt máy điều hòa nhé.',answer:'别忘记把空调关了。',answerPy:'Bié wàngjì bǎ kōngtiáo guān le.',
+     {promptLang:'vi',prompt:'Đừng quên khóa cửa nhé.',answer:'别忘记把门锁了。',answerPy:'Bié wàngjì bǎ mén suǒ le.',
       note:'别 + V diễn tả lời nhắc nhở/mệnh lệnh, kết hợp 把字句.'},
      {promptLang:'vi',prompt:'Nếu trời nóng thì bạn mở máy điều hòa lên đi.',answer:'如果天气热，你就开空调吧。',answerPy:'Rúguǒ tiānqì rè, nǐ jiù kāi kōngtiáo ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -217,7 +217,7 @@ var vocabData = [
       cf:'并 (bìng – "cùng, và", hình dáng khác hẳn")',w:'关灯 / 关门 / 关系'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Máy tính của bạn tắt chưa?',answer:'你的电脑关了没有？',answerPy:'Nǐ de diànnǎo guānle méiyǒu?',
+     {promptLang:'vi',prompt:'Cửa lớp học đóng chưa?',answer:'教室的门关了没有？',answerPy:'Jiàoshì de mén guānle méiyǒu?',
       note:'V+了+没有 hỏi hành động đã hoàn thành chưa.'},
      {promptLang:'vi',prompt:'Chỉ cần bạn tắt máy điều hòa thì phòng sẽ không lạnh nữa.',answer:'只要你把空调关了，房间就不会冷了。',answerPy:'Zhǐyào nǐ bǎ kōngtiáo guān le, fángjiān jiù bú huì lěng le.',
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 空调 vừa học trong bài này).'},
@@ -261,8 +261,8 @@ var vocabData = [
       cf:'反 (fǎn – "trái ngược", chỉ có 1 chữ 又")',w:'一双筷子 / 一双鞋'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Còn thiếu một đôi đũa, con lấy giúp mẹ đi.',answer:'还差一双筷子，你去拿一下。',answerPy:'Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.',
-      note:'一双 + danh từ (筷子) đếm vật theo đôi.'},
+     {promptLang:'vi',prompt:'Mẹ mua hai đôi giày thể thao cho hai anh em chúng tôi.',answer:'妈妈买了两双运动鞋给我们兄弟俩。',answerPy:'Māma mǎile liǎng shuāng yùndòngxié gěi wǒmen xiōngdì liǎ.',
+      note:'两双 + danh từ (运动鞋) đếm vật theo đôi.'},
      {promptLang:'vi',prompt:'Chỉ cần lấy hai đôi đũa là đủ rồi.',answer:'只要拿两双筷子就够了。',answerPy:'Zhǐyào ná liǎng shuāng kuàizi jiù gòu le.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
@@ -508,42 +508,42 @@ var matchData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我去',blank:'图书馆',post:'借本书。',hint:'(thư viện)',ans:'图书馆'},
-  {pre:'我去图书馆',blank:'借',post:'本书。',hint:'(mượn)',ans:'借'},
-  {pre:'帮我把这本',blank:'词典',post:'还了吧。',hint:'(từ điển)',ans:'词典'},
-  {pre:'帮我把这本词典',blank:'还',post:'了吧。',hint:'(trả)',ans:'还'},
-  {pre:'记得把',blank:'灯',post:'关了。',hint:'(đèn)',ans:'灯'},
-  {pre:'',blank:'会议',post:'结束后，别忘记把空调关了。',hint:'(cuộc họp)',ans:'会议'},
-  {pre:'会议',blank:'结束',post:'后，别忘记把空调关了。',hint:'(kết thúc)',ans:'结束'},
-  {pre:'别',blank:'忘记',post:'把空调关了。',hint:'(quên)',ans:'忘记'},
-  {pre:'别忘记把',blank:'空调',post:'关了。',hint:'(máy điều hòa)',ans:'空调'},
-  {pre:'他正坐',blank:'地铁',post:'来我们公司呢。',hint:'(tàu điện ngầm)',ans:'地铁'},
+  {pre:'',blank:'图书馆',post:'离我家不远，走路十分钟就到。',hint:'(thư viện)',ans:'图书馆'},
+  {pre:'放学后，我想',blank:'借',post:'你的自行车骑一下。',hint:'(mượn)',ans:'借'},
+  {pre:'你能把这本',blank:'词典',post:'借给我一天吗？',hint:'(từ điển)',ans:'词典'},
+  {pre:'我明天一定把钱',blank:'还',post:'给你。',hint:'(trả)',ans:'还'},
+  {pre:'房间里太暗了，你去把',blank:'灯',post:'打开吧。',hint:'(đèn)',ans:'灯'},
+  {pre:'今天下午三点有一个',blank:'会议',post:'，你别迟到。',hint:'(cuộc họp)',ans:'会议'},
+  {pre:'今天的课八点',blank:'结束',post:'，我们早点儿回家吧。',hint:'(kết thúc)',ans:'结束'},
+  {pre:'你别',blank:'忘记',post:'带雨伞，外面下雨了。',hint:'(quên)',ans:'忘记'},
+  {pre:'夏天房间很热，我们开',blank:'空调',post:'吧。',hint:'(máy điều hòa)',ans:'空调'},
+  {pre:'从我家到公司，坐',blank:'地铁',post:'只要二十分钟。',hint:'(tàu điện ngầm)',ans:'地铁'},
   {pre:'还差一',blank:'双',post:'筷子。',hint:'(đôi)',ans:'双'},
-  {pre:'你爸爸一',blank:'口',post:'酒都不能喝。',hint:'(ngụm)',ans:'口'},
-  {pre:'别让他看见酒',blank:'瓶子',post:'。',hint:'(chai, lọ)',ans:'瓶子'},
-  {pre:'已经',blank:'习惯',post:'用电脑来学习和工作了。',hint:'(quen)',ans:'习惯'},
+  {pre:'他一',blank:'口',post:'水都没喝，就走了。',hint:'(ngụm)',ans:'口'},
+  {pre:'桌子上的',blank:'瓶子',post:'里装的是什么？',hint:'(chai, lọ)',ans:'瓶子'},
+  {pre:'来中国以后，我已经',blank:'习惯',post:'吃辣的菜了。',hint:'(quen)',ans:'习惯'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','去','图书馆','借','本','书','。'],ans:'我去图书馆借本书。',audio:'我去图书馆借本书。'},
-  {words:['帮','我','把','这','本','词典','还','了','吧','。'],ans:'帮我把这本词典还了吧。',audio:'帮我把这本词典还了吧。'},
-  {words:['会议','结束','后','，','别','忘记','把','空调','关','了','。'],ans:'会议结束后，别忘记把空调关了。',audio:'会议结束后，别忘记把空调关了。'},
-  {words:['我','把','爸爸','的','生日','忘','了','。'],ans:'我把爸爸的生日忘了。',audio:'我把爸爸的生日忘了。'},
+  {words:['他','常常','去','图书馆','借','杂志','。'],ans:'他常常去图书馆借杂志。',audio:'他常常去图书馆借杂志。'},
+  {words:['麻烦','你','把','这','本','词典','还给','图书馆','吧','。'],ans:'麻烦你把这本词典还给图书馆吧。',audio:'麻烦你把这本词典还给图书馆吧。'},
+  {words:['下班','以后','，','请','你','把','电脑','关','了','。'],ans:'下班以后，请你把电脑关了。',audio:'下班以后，请你把电脑关了。'},
+  {words:['弟弟','把','手机','忘','在','教室','了','。'],ans:'弟弟把手机忘在教室了。',audio:'弟弟把手机忘在教室了。'},
   {words:['因为','爸爸','不能','喝酒','，','所以','别','让','他','看见','酒','瓶子','。'],ans:'因为爸爸不能喝酒，所以别让他看见酒瓶子。',audio:'因为爸爸不能喝酒，所以别让他看见酒瓶子。'},
   {words:['虽然','会议','结束','了','，','但是','他','忘','了','把','空调','关','了','。'],ans:'虽然会议结束了，但是他忘了把空调关了。',audio:'虽然会议结束了，但是他忘了把空调关了。'},
   {words:['如果','你','去','图书馆','，','就','帮','我','把','词典','还','了','吧','。'],ans:'如果你去图书馆，就帮我把词典还了吧。',audio:'如果你去图书馆，就帮我把词典还了吧。'},
-  {words:['这个','笔记本','电脑','我','去年','买','的','时候','要','五千','块','左右','。'],ans:'这个笔记本电脑我去年买的时候要五千块左右。',audio:'这个笔记本电脑我去年买的时候要五千块左右。'},
+  {words:['我','朋友','的','笔记本','电脑','他','今年','买','的','时候','要','四千','块','左右','。'],ans:'我朋友的笔记本电脑他今年买的时候要四千块左右。',audio:'我朋友的笔记本电脑他今年买的时候要四千块左右。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'帮我这本词典把还了吧。',
-   opts:['帮我把这本词典还了吧。','帮我这本词典把还了吧。','帮我把还这本词典了吧。','这本词典帮我把还了吧。'],ans:0,
+  {wrong:'请你那本杂志把还给我。',
+   opts:['请你把那本杂志还给我。','请你那本杂志把还给我。','请你把还那本杂志给我。','那本杂志请你把还给我。'],ans:0,
    exp:'Cấu trúc 把字句: A+把+B+động từ, 把+B (danh từ xác định) phải đứng liền trước động từ, không tách rời.'},
   {wrong:'你把手机别忘了。',
    opts:['你别把手机忘了。','你把手机别忘了。','别你把手机忘了。','你把别手机忘了。'],ans:0,
@@ -596,28 +596,28 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Giúp mình trả quyển từ điển này nhé.', zh:'帮我把这本词典还了吧。', py:'Bāng wǒ bǎ zhè běn cídiǎn huánle ba.'},
-  {vi:'Lát nữa khi bạn rời khỏi lớp học, nhớ tắt đèn nhé.', zh:'等一会儿你离开教室的时候，记得把灯关了。', py:'Děng yíhuìr nǐ líkāi jiàoshì de shíhou, jìde bǎ dēng guān le.'},
-  {vi:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.', zh:'会议结束后，别忘记把空调关了。', py:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.'},
-  {vi:'Ông ấy đang đi tàu điện ngầm đến công ty mình đấy.', zh:'他正坐地铁来我们公司呢。', py:'Tā zhèng zuò dìtiě lái wǒmen gōngsī ne.'},
-  {vi:'Còn thiếu một đôi đũa, con lấy giúp mẹ đi.', zh:'还差一双筷子，你去拿一下。', py:'Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.'},
-  {vi:'Con quên mất sinh nhật bố rồi.', zh:'我把爸爸的生日忘了。', py:'Wǒ bǎ bàba de shēngrì wàng le.'},
-  {vi:'Bố con không được uống một ngụm rượu nào cả.', zh:'你爸爸一口酒都不能喝。', py:'Nǐ bàba yì kǒu jiǔ dōu bù néng hē.'},
-  {vi:'Tôi đã quen dùng máy tính để học tập và làm việc rồi.', zh:'我已经习惯用电脑来学习和工作了。', py:'Wǒ yǐjīng xíguàn yòng diànnǎo lái xuéxí hé gōngzuò le.'},
+  {vi:'Bạn nhớ trả cây dù đó cho bạn học nhé.', zh:'你记得把那把伞还给同学吧。', py:'Nǐ jìde bǎ nà bǎ sǎn huán gěi tóngxué ba.'},
+  {vi:'Nếu trời tối rồi thì bạn mở đèn lên đi.', zh:'如果天黑了，你就把灯打开吧。', py:'Rúguǒ tiān hēi le, nǐ jiù bǎ dēng dǎkāi ba.'},
+  {vi:'Nếu cuộc họp kết thúc muộn thì đừng quên gọi điện cho tôi.', zh:'如果会议结束得晚，就别忘记给我打电话。', py:'Rúguǒ huìyì jiéshù de wǎn, jiù bié wàngjì gěi wǒ dǎ diànhuà.'},
+  {vi:'Nếu bạn không muốn đi taxi thì có thể đi tàu điện ngầm đến đây.', zh:'如果你不想打车，就可以坐地铁过来。', py:'Rúguǒ nǐ bù xiǎng dǎchē, jiù kěyǐ zuò dìtiě guòlai.'},
+  {vi:'Bạn thấy chúng ta cần mấy đôi đũa?', zh:'你觉得我们需要几双筷子？', py:'Nǐ juéde wǒmen xūyào jǐ shuāng kuàizi?'},
+  {vi:'Anh ấy quên mất số điện thoại của tôi rồi.', zh:'他把我的手机号忘了。', py:'Tā bǎ wǒ de shǒujī hào wàng le.'},
+  {vi:'Nếu bạn cảm thấy nóng thì uống một ngụm nước đi.', zh:'如果你觉得热，就喝一口水吧。', py:'Rúguǒ nǐ juéde rè, jiù hē yì kǒu shuǐ ba.'},
+  {vi:'Tôi vẫn chưa quen dậy sớm để tập thể dục.', zh:'我还不习惯早起锻炼身体。', py:'Wǒ hái bù xíguàn zǎoqǐ duànliàn shēntǐ.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nếu bạn đi thư viện thì giúp mình trả quyển sách này nhé.', zh:'如果你去图书馆，就帮我把这本书还了吧。', py:'Rúguǒ nǐ qù túshūguǎn, jiù bāng wǒ bǎ zhè běn shū huán le ba.'},
-  {vi:'Chỉ cần bạn quen dùng máy tính thì sẽ tiện hơn nhiều.', zh:'只要你习惯用电脑，就会方便多了。', py:'Zhǐyào nǐ xíguàn yòng diànnǎo, jiù huì fāngbiàn duō le.'},
-  {vi:'Tuy cuộc họp đã kết thúc nhưng anh ấy quên tắt đèn.', zh:'虽然会议结束了，但是他忘了把灯关了。', py:'Suīrán huìyì jiéshù le, dànshì tā wàngle bǎ dēng guān le.'},
-  {vi:'Đừng quên mang theo từ điển khi đi học.', zh:'上课的时候别忘了带词典。', py:'Shàngkè de shíhou bié wàngle dài cídiǎn.'},
+  {vi:'Nếu bạn có thời gian thì giúp mình đi thư viện mượn một quyển từ điển nhé.', zh:'如果你有空，就帮我去图书馆借一本词典吧。', py:'Rúguǒ nǐ yǒu kòng, jiù bāng wǒ qù túshūguǎn jiè yì běn cídiǎn ba.'},
+  {vi:'Chỉ cần bạn thường xuyên luyện tập thì sẽ quen nói tiếng Trung.', zh:'只要你经常练习，就会习惯说汉语了。', py:'Zhǐyào nǐ jīngcháng liànxí, jiù huì xíguàn shuō Hànyǔ le.'},
+  {vi:'Tuy máy điều hòa đã tắt nhưng phòng vẫn còn hơi nóng.', zh:'虽然空调已经关了，但是房间还有点儿热。', py:'Suīrán kōngtiáo yǐjīng guān le, dànshì fángjiān hái yǒudiǎnr rè.'},
+  {vi:'Lúc đến công ty đừng quên mang theo máy tính xách tay nhé.', zh:'去公司的时候别忘了带笔记本电脑。', py:'Qù gōngsī de shíhou bié wàngle dài bǐjìběn diànnǎo.'},
   {vi:'Giám đốc Chu khoảng 3 giờ sẽ đến công ty.', zh:'周经理三点左右会到公司。', py:'Zhōu jīnglǐ sān diǎn zuǒyòu huì dào gōngsī.'},
-  {vi:'Chiếc máy tính xách tay đó cô ấy mua năm ngoái với giá khoảng tám nghìn đồng.', zh:'那个笔记本电脑她去年买的时候要八千块左右。', py:'Nàge bǐjìběn diànnǎo tā qùnián mǎi de shíhou yào bāqiān kuài zuǒyòu.'},
-  {vi:'Mẹ bảo tôi lấy giúp mẹ một cái bình.', zh:'妈妈让我去拿一个瓶子。', py:'Māma ràng wǒ qù ná yí ge píngzi.'},
-  {vi:'Xin lỗi, tôi quên mất chuyện đó rồi.', zh:'对不起，我把那件事忘了。', py:'Duìbuqǐ, wǒ bǎ nà jiàn shì wàng le.'},
+  {vi:'Chiếc điện thoại đó anh ấy mua tháng trước với giá khoảng hai nghìn đồng.', zh:'那个手机他上个月买的时候要两千块左右。', py:'Nàge shǒujī tā shàng ge yuè mǎi de shíhou yào liǎngqiān kuài zuǒyòu.'},
+  {vi:'Bố bảo tôi đi mua hai chai bia.', zh:'爸爸让我去买两瓶啤酒。', py:'Bàba ràng wǒ qù mǎi liǎng píng píjiǔ.'},
+  {vi:'Chuyện hôm qua bạn nhắc tôi, tôi đã quên mất rồi.', zh:'昨天你提醒我的事，我已经忘了。', py:'Zuótiān nǐ tíxǐng wǒ de shì, wǒ yǐjīng wàng le.'},
 ];
 
 // ══════════════════════════════════════════

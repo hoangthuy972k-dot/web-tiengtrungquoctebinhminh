@@ -19,7 +19,7 @@ var vocabData = [
       cf:'归 (guī – "trở về", có cách ghép khác")',w:'打扫 / 扫地'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn rửa bát trước đã, rồi dọn phòng.',answer:'你先把盘子洗一下，再打扫房间。',answerPy:'Nǐ xiān bǎ pánzi xǐ yíxià, zài dǎsǎo fángjiān.',
+     {promptLang:'vi',prompt:'Anh ấy lau tủ lạnh sạch sẽ trước, rồi dọn dẹp bếp.',answer:'他先把冰箱擦干净，再打扫厨房。',answerPy:'Tā xiān bǎ bīngxiāng cā gānjìng, zài dǎsǎo chúfáng.',
       note:'先……再…… diễn tả trình tự hành động (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu khách sắp đến thì chúng ta nên dọn phòng ngay.',answer:'如果客人快来了，我们就应该马上打扫房间。',answerPy:'Rúguǒ kèrén kuài lái le, wǒmen jiù yīnggāi mǎshàng dǎsǎo fángjiān.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 应该 đã học ở Bài 13).'},
@@ -41,8 +41,8 @@ var vocabData = [
       cf:'静 (jìng – "yên tĩnh", có bộ 青")',w:'干净 / 洗干净'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi giặt quần áo sạch sẽ rồi.',answer:'我把衣服洗干净了。',answerPy:'Wǒ bǎ yīfu xǐ gānjìng le.',
-      note:'把字句3: 把+B(衣服)+动词(洗)+结果补语(干净) (điểm ngữ pháp trọng tâm bài này).'},
+     {promptLang:'vi',prompt:'Em trai tự rửa sạch đĩa của mình rồi.',answer:'弟弟把自己的盘子洗干净了。',answerPy:'Dìdi bǎ zìjǐ de pánzi xǐ gānjìng le.',
+      note:'把字句3: 把+B(盘子)+动词(洗)+结果补语(干净) (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Chỉ cần bạn dọn phòng sạch sẽ thì mẹ sẽ vui.',answer:'只要你把房间打扫干净，妈妈就会高兴。',answerPy:'Zhǐyào nǐ bǎ fángjiān dǎsǎo gānjìng, māma jiù huì gāoxìng.',
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'燃 (rán – "đốt cháy", có thêm bộ 火")',w:'然后 / 突然 / 虽然'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Về nhà xong, tôi làm bài tập trước, sau đó ăn cơm.',answer:'回家以后，我先做作业，然后吃饭。',answerPy:'Huí jiā yǐhòu, wǒ xiān zuò zuòyè, ránhòu chī fàn.',
+     {promptLang:'vi',prompt:'Sau khi khách về, tôi rửa sạch đĩa trước, sau đó dọn phòng.',answer:'客人走了以后，我先把盘子洗干净，然后打扫房间。',answerPy:'Kèrén zǒule yǐhòu, wǒ xiān bǎ pánzi xǐ gānjìng, ránhòu dǎsǎo fángjiān.',
       note:'先……然后…… diễn tả trình tự hành động (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Tuy làm cơm trái cây rất đơn giản nhưng nhiều người chưa từng ăn.',answer:'虽然做水果饭很简单，但是很多人没吃过。',answerPy:'Suīrán zuò shuǐguǒ fàn hěn jiǎndān, dànshì hěn duō rén méi chīguo.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
@@ -85,8 +85,8 @@ var vocabData = [
       cf:'相 (xiāng – "lẫn nhau", không có bộ ⺮")',w:'冰箱 / 箱子'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sao bạn ăn hết đồ trong tủ lạnh vậy?',answer:'你怎么把冰箱里的东西都吃完了？',answerPy:'Nǐ zěnme bǎ bīngxiāng li de dōngxi dōu chīwán le?',
-      note:'把字句3: 把+B(东西)+动词(吃)+结果补语(完) (điểm ngữ pháp trọng tâm bài này).'},
+     {promptLang:'vi',prompt:'Sao em trai lại ăn hết dưa hấu trong tủ lạnh vậy?',answer:'弟弟怎么又把冰箱里的西瓜吃完了？',answerPy:'Dìdi zěnme yòu bǎ bīngxiāng li de xīguā chīwán le?',
+      note:'把字句3: 把+B(西瓜)+动词(吃)+结果补语(完) (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu tủ lạnh không có trái cây thì chúng ta đi mua thêm đi.',answer:'如果冰箱里没有水果，我们就去买点儿吧。',answerPy:'Rúguǒ bīngxiāng li méiyǒu shuǐguǒ, wǒmen jiù qù mǎi diǎnr ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'燥 (zào – "khô ráo", có bộ 火")',w:'洗澡 / 澡堂'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn đi tắm trước đã, sau đó chúng ta ăn cơm.',answer:'你先去洗澡，然后我们再吃饭。',answerPy:'Nǐ xiān qù xǐzǎo, ránhòu wǒmen zài chī fàn.',
+     {promptLang:'vi',prompt:'Em gái đi tắm trước đã, sau đó xem chương trình tivi.',answer:'妹妹先去洗澡，然后再看电视节目。',answerPy:'Mèimei xiān qù xǐzǎo, ránhòu zài kàn diànshì jiémù.',
       note:'先……然后…… diễn tả trình tự hành động (ôn lại đã học trong bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn tắm xong rồi thì chúng ta ra ngoài đi.',answer:'如果你洗完澡了，我们就出去吧。',answerPy:'Rúguǒ nǐ xǐwán zǎo le, wǒmen jiù chūqu ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'自 (zì – "tự mình", hình dáng gần giống")',w:'节目 / 目的'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chú Phương thích xem chương trình dạy nấu ăn.',answer:'方叔叔爱看教做饭的节目。',answerPy:'Fāng shūshu ài kàn jiāo zuò fàn de jiémù.',
+     {promptLang:'vi',prompt:'Chỉ cần có chương trình dạy nấu ăn thì chú Phương chắc chắn sẽ xem.',answer:'只要有教做饭的节目，方叔叔就一定会看。',answerPy:'Zhǐyào yǒu jiāo zuò fàn de jiémù, Fāng shūshu jiù yídìng huì kàn.',
       note:'叔叔 sẽ học ngay bên dưới trong bài này.'},
      {promptLang:'vi',prompt:'Nếu chương trình hay thì tôi sẽ xem hết.',answer:'如果节目很好看，我就会看完。',answerPy:'Rúguǒ jiémù hěn hǎokàn, wǒ jiù huì kànwán.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'京 (jīng – "kinh đô", có 小 thay vì 儿")',w:'月亮 / 漂亮 / 天亮'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chúng ta ngồi ở ngoài vừa ngắm trăng vừa ăn đồ.',answer:'我们坐在外边一边看月亮一边吃东西。',answerPy:'Wǒmen zuò zài wàibian yìbiān kàn yuèliang yìbiān chī dōngxi.',
+     {promptLang:'vi',prompt:'Bà thích vừa ngắm trăng vừa kể chuyện.',answer:'奶奶喜欢一边看月亮一边讲故事。',answerPy:'Nǎinai xǐhuan yìbiān kàn yuèliang yìbiān jiǎng gùshi.',
       note:'一边……一边…… diễn tả hai hành động cùng lúc (ôn lại đã học ở Bài 13).'},
      {promptLang:'vi',prompt:'Vì hôm nay không có trăng nên chúng ta không ra ngoài ngắm trăng nữa.',answer:'因为今天没有月亮，所以我们不出去看月亮了。',answerPy:'Yīnwèi jīntiān méiyǒu yuèliang, suǒyǐ wǒmen bù chūqu kàn yuèliang le.',
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'象 (xiàng – "con voi", không có bộ 亻")',w:'像 / 好像 / 图像'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn vẽ con gấu trúc đẹp thật, giống như thật vậy.',answer:'你的熊猫画得真好，像真的一样。',answerPy:'Nǐ de xióngmāo huà de zhēn hǎo, xiàng zhēn de yíyàng.',
+     {promptLang:'vi',prompt:'Quả chuối này ngọt thật, giống như đường vậy.',answer:'这个香蕉很甜，像糖一样。',answerPy:'Zhège xiāngjiāo hěn tián, xiàng táng yíyàng.',
       note:'像……一样 diễn tả sự giống nhau (ôn lại 画 đã học ở Bài 12).'},
      {promptLang:'vi',prompt:'Tuy con giống mẹ nhưng tính cách lại giống bố hơn.',answer:'虽然孩子像妈妈，但是性格更像爸爸。',answerPy:'Suīrán háizi xiàng māma, dànshì xìnggé gèng xiàng bàba.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'血 (xuè – "máu", cũng có bộ 皿")',w:'盘子 / 一盘菜'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tiểu Thường, những cái đĩa này đều phải rửa sạch.',answer:'小常，这些盘子都要洗干净。',answerPy:'Xiǎo Cháng, zhèxiē pánzi dōu yào xǐ gānjìng.',
+     {promptLang:'vi',prompt:'Chỉ cần con rửa sạch đĩa thì mẹ sẽ đưa con đi mua chuối.',answer:'只要你把盘子洗干净，我就带你去买香蕉。',answerPy:'Zhǐyào nǐ bǎ pánzi xǐ gānjìng, wǒ jiù dài nǐ qù mǎi xiāngjiāo.',
       note:'洗干净 = bổ ngữ kết quả (ôn lại 干净 đã học trong bài này).'},
      {promptLang:'vi',prompt:'Tôi rửa cốc xong trước, sau đó mới rửa đĩa.',answer:'我先把杯子洗完，然后再洗盘子。',answerPy:'Wǒ xiān bǎ bēizi xǐwán, ránhòu zài xǐ pánzi.',
       note:'先……然后再…… diễn tả trình tự hành động (điểm ngữ pháp trọng tâm bài này).'},
@@ -217,8 +217,8 @@ var vocabData = [
       cf:'活 (huó – "sống", có bộ 氵")',w:'刮风 / 刮胡子'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sao đột nhiên nổi gió to thế, thổi cả ô bay mất rồi!',answer:'怎么突然刮大风了，把伞都刮跑了！',answerPy:'Zěnme rán guā dà fēng le, bǎ sǎn dōu guā pǎo le!',
-      note:'把字句3: 把+B(伞)+动词(刮)+结果补语(跑了) (điểm ngữ pháp trọng tâm bài này).'},
+     {promptLang:'vi',prompt:'Bên ngoài nổi gió to, thổi bay cả thực đơn trên bàn.',answer:'外边刮大风，把桌子上的菜单都刮跑了。',answerPy:'Wàibian guā dà fēng, bǎ zhuōzi shang de càidān dōu guā pǎo le.',
+      note:'把字句3: 把+B(菜单)+动词(刮)+结果补语(跑了) (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu ngoài trời không có gió thì chúng ta ra ngoài ngồi đi.',answer:'如果外边不刮风，我们就出去坐坐吧。',answerPy:'Rúguǒ wàibian bù guā fēng, wǒmen jiù chūqu zuòzuo ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -239,8 +239,8 @@ var vocabData = [
       cf:'椒 (jiāo – "hạt tiêu", có bộ 木")',w:'叔叔 / 大叔'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chú và cô lần đầu đến nhà chúng tôi.',answer:'叔叔和阿姨第一次来我们家。',answerPy:'Shūshu hé āyí dì-yī cì lái wǒmen jiā.',
-      note:'第一次 diễn tả lần đầu tiên.'},
+     {promptLang:'vi',prompt:'Tuy chú bận công việc nhưng chú vẫn thường đến nhà chúng tôi.',answer:'虽然叔叔工作很忙，但是他常常来我们家。',answerPy:'Suīrán shūshu gōngzuò hěn máng, dànshì tā chángcháng lái wǒmen jiā.',
+      note:'虽然……但是…… diễn tả sự tương phản.'},
      {promptLang:'vi',prompt:'Chỉ cần chú kể chuyện thì các em nhỏ đều thích nghe.',answer:'只要叔叔讲故事，孩子们就都愿意听。',answerPy:'Zhǐyào shūshu jiǎng gùshi, háizimen jiù dōu yuànyì tīng.',
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 愿意 đã học ở Bài 13).'},
    ]},
@@ -261,8 +261,8 @@ var vocabData = [
       cf:'姑 (gū – "cô", có 古 thay vì 夷")',w:'阿姨 / 姨妈'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Cô Thường sống ở tầng dưới nhà tôi.',answer:'常阿姨住在我家楼下。',answerPy:'Cháng āyí zhù zài wǒ jiā lóuxià.',
-      note:'住在 diễn tả nơi ở.'},
+     {promptLang:'vi',prompt:'Nếu cô Thường ở nhà thì chúng ta sẽ đến tìm cô ấy trò chuyện.',answer:'如果常阿姨在家，我们就去找她聊天。',answerPy:'Rúguǒ Cháng āyí zài jiā, wǒmen jiù qù zhǎo tā liáotiān.',
+      note:'如果……就…… diễn tả giả thiết — kết quả.'},
      {promptLang:'vi',prompt:'Vì cô ấy rất nhiệt tình nên mọi người đều thích cô ấy.',answer:'因为阿姨很热情，所以大家都喜欢她。',answerPy:'Yīnwèi āyí hěn rèqíng, suǒyǐ dàjiā dōu xǐhuan tā.',
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
@@ -283,8 +283,8 @@ var vocabData = [
       cf:'古 (gǔ – "xưa", không có bộ 攵")',w:'故事 / 故乡'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Ông bà ơi, hôm nay cháu kể chuyện cho ông bà nghe nhé.',answer:'爷爷奶奶，今天我来给你们讲故事。',answerPy:'Yéye nǎinai, jīntiān wǒ lái gěi nǐmen jiǎng gùshi.',
-      note:'讲故事 (ôn lại 爷爷/奶奶 đã học ở Bài 13).'},
+     {promptLang:'vi',prompt:'Chỉ cần ông bà rảnh rỗi, cháu sẽ kể chuyện cho ông bà nghe.',answer:'只要爷爷奶奶有空，我就给他们讲故事。',answerPy:'Zhǐyào yéye nǎinai yǒu kòng, wǒ jiù gěi tāmen jiǎng gùshi.',
+      note:'只要……就…… diễn tả điều kiện đủ.'},
      {promptLang:'vi',prompt:'Nếu bạn kể chuyện thì tôi rất muốn nghe.',answer:'如果你讲故事，我就很想听。',answerPy:'Rúguǒ nǐ jiǎng gùshi, wǒ jiù hěn xiǎng tīng.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -305,8 +305,8 @@ var vocabData = [
       cf:'章 (zhāng – "chương", có 早 thay vì 曰")',w:'声音 / 音乐'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn vặn to tiếng tivi lên một chút.',answer:'你把电视声音开大一点儿。',answerPy:'Nǐ bǎ diànshì shēngyīn kāi dà yìdiǎnr.',
-      note:'把字句3: 把+B(声音)+动词(开)+结果补语(大) (điểm ngữ pháp trọng tâm bài này).'},
+     {promptLang:'vi',prompt:'Mẹ bảo tôi vặn nhỏ tiếng nhạc một chút.',answer:'妈妈让我把音乐声音开小一点儿。',answerPy:'Māma ràng wǒ bǎ yīnyuè shēngyīn kāi xiǎo yìdiǎnr.',
+      note:'把字句3: 把+B(声音)+动词(开)+结果补语(小) (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Tôi rất thích giọng nói của cô ấy, giống như hát vậy.',answer:'我很喜欢她的声音，像唱歌一样。',answerPy:'Wǒ hěn xǐhuan tā de shēngyīn, xiàng chànggē yíyàng.',
       note:'像……一样 diễn tả sự giống nhau (ôn lại đã học trong bài này).'},
    ]},
@@ -327,7 +327,7 @@ var vocabData = [
       cf:'佳 (jiā – "tốt đẹp", có bộ 亻")',w:'菜单 / 简单 / 单词'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chúng ta xem thực đơn trước đã, sau đó gọi món, được không?',answer:'我们先看看菜单，然后再点菜，好吗？',answerPy:'Wǒmen xiān kànkan càidān, ránhòu zài diǎn cài, hǎo ma?',
+     {promptLang:'vi',prompt:'Nhân viên phục vụ mang thực đơn đến trước, sau đó giúp chúng tôi gọi món.',answer:'服务员先把菜单拿过来，然后再帮我们点菜。',answerPy:'Fúwùyuán xiān bǎ càidān ná guolai, ránhòu zài bāng wǒmen diǎn cài.',
       note:'先……然后再…… diễn tả trình tự hành động (điểm ngữ pháp trọng tâm bài này).'},
      {promptLang:'vi',prompt:'Nếu thực đơn có cơm trái cây thì tôi muốn thử một lần.',answer:'如果菜单上有水果饭，我就想试一次。',answerPy:'Rúguǒ càidān shang yǒu shuǐguǒ fàn, wǒ jiù xiǎng shì yí cì.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -349,9 +349,9 @@ var vocabData = [
       cf:'间 (jiān – "giữa, khoảng", không có bộ ⺮")',w:'简单 / 简体字'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Vấn đề này rất đơn giản.',answer:'这个问题很简单。',answerPy:'Zhège wèntí hěn jiǎndān.',
+     {promptLang:'vi',prompt:'Kỳ thi lần này rất đơn giản.',answer:'这次的考试很简单。',answerPy:'Zhè cì de kǎoshì hěn jiǎndān.',
       note:'很 + Adj làm vị ngữ.'},
-     {promptLang:'vi',prompt:'Tuy làm cơm trái cây rất đơn giản nhưng nhiều người chưa từng ăn.',answer:'虽然做水果饭很简单，但是很多人没吃过。',answerPy:'Suīrán zuò shuǐguǒ fàn hěn jiǎndān, dànshì hěn duō rén méi chīguo.',
+     {promptLang:'vi',prompt:'Tuy vấn đề này rất đơn giản nhưng tôi vẫn hỏi chú.',answer:'虽然这个问题很简单，但是我还是问了叔叔。',answerPy:'Suīrán zhège wèntí hěn jiǎndān, dànshì wǒ háishi wènle shūshu.',
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
@@ -371,8 +371,8 @@ var vocabData = [
       cf:'焦 (jiāo – "cháy khét", không có bộ 艹")',w:'香蕉 / 蕉叶'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Chúng ta mua ít chuối đi, nhà không còn trái cây nữa.',answer:'我们买点儿香蕉吧，家里没有水果了。',answerPy:'Wǒmen mǎi diǎnr xiāngjiāo ba, jiā li méiyǒu shuǐguǒ le.',
-      note:'点儿 diễn tả số lượng ít.'},
+     {promptLang:'vi',prompt:'Chỉ cần bạn muốn ăn chuối, tôi sẽ xuống lầu mua một ít.',answer:'只要你想吃香蕉，我就去楼下买一点儿。',answerPy:'Zhǐyào nǐ xiǎng chī xiāngjiāo, wǒ jiù qù lóuxià mǎi yìdiǎnr.',
+      note:'只要……就…… diễn tả điều kiện đủ.'},
      {promptLang:'vi',prompt:'Nếu bạn thích ăn chuối thì tôi mua một ít cho bạn.',answer:'如果你喜欢吃香蕉，我就给你买一点儿。',answerPy:'Rúguǒ nǐ xǐhuan chī xiāngjiāo, wǒ jiù gěi nǐ mǎi yìdiǎnr.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -465,19 +465,19 @@ var matchData = [
 var fillData = [
   {pre:'你怎么还不',blank:'打扫',post:'房间啊？',hint:'(quét dọn)',ans:'打扫'},
   {pre:'他们会把房间打扫',blank:'干净',post:'。',hint:'(sạch sẽ)',ans:'干净'},
-  {pre:'先把茶和杯子放好，',blank:'然后',post:'把冰箱里的西瓜拿出来。',hint:'(sau đó)',ans:'然后'},
+  {pre:'我们先把桌子擦干净，',blank:'然后',post:'把西瓜拿出来吃。',hint:'(sau đó)',ans:'然后'},
   {pre:'我还是先把',blank:'冰箱',post:'里的西瓜拿出来吧。',hint:'(tủ lạnh)',ans:'冰箱'},
-  {pre:'他每天晚上都',blank:'洗澡',post:'。',hint:'(tắm, tắm rửa)',ans:'洗澡'},
+  {pre:'弟弟每天早上起床以后都要',blank:'洗澡',post:'，然后才吃早饭。',hint:'(tắm, tắm rửa)',ans:'洗澡'},
   {pre:'你先把电视',blank:'节目',post:'看完吧。',hint:'(chương trình truyền hình)',ans:'节目'},
   {pre:'今晚的',blank:'月亮',post:'真漂亮。',hint:'(mặt trăng)',ans:'月亮'},
   {pre:'',blank:'像',post:'白色的盘子一样。',hint:'(giống)',ans:'像'},
   {pre:'这些',blank:'盘子',post:'都要洗干净。',hint:'(đĩa, mâm)',ans:'盘子'},
   {pre:'外边也不',blank:'刮风',post:'。',hint:'(nổi gió)',ans:'刮风'},
   {pre:'我们听',blank:'叔叔',post:'阿姨讲故事。',hint:'(chú)',ans:'叔叔'},
-  {pre:'我们听叔叔',blank:'阿姨',post:'讲故事。',hint:'(dì, cô)',ans:'阿姨'},
+  {pre:'方叔叔和白',blank:'阿姨',post:'常常给我们讲故事。',hint:'(dì, cô)',ans:'阿姨'},
   {pre:'他们年轻时候的',blank:'故事',post:'。',hint:'(truyện, câu chuyện)',ans:'故事'},
   {pre:'你听外边的',blank:'声音',post:'，一定是大山。',hint:'(âm thanh, tiếng)',ans:'声音'},
-  {pre:'你在饭馆儿的',blank:'菜单',post:'上见过水果饭吗？',hint:'(thực đơn)',ans:'菜单'},
+  {pre:'服务员告诉我们，',blank:'菜单',post:'上有很多好吃的水果饭。',hint:'(thực đơn)',ans:'菜单'},
   {pre:'做水果饭很',blank:'简单',post:'。',hint:'(đơn giản)',ans:'简单'},
   {pre:'你可以做苹果饭、',blank:'香蕉',post:'饭。',hint:'(chuối tiêu)',ans:'香蕉'},
 ];
@@ -486,12 +486,12 @@ var fillData = [
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['你','怎么','还','不','打扫','房间','啊','？'],ans:'你怎么还不打扫房间啊？',audio:'你怎么还不打扫房间啊？'},
-  {words:['先','把','茶','和','杯子','放好','，','然后','把','冰箱','里','的','西瓜','拿出来','。'],ans:'先把茶和杯子放好，然后把冰箱里的西瓜拿出来。',audio:'先把茶和杯子放好，然后把冰箱里的西瓜拿出来。'},
-  {words:['你','先','把','电视','节目','看完','吧','，','然后','再','给','我','回','电话','。'],ans:'你先把电视节目看完吧，然后再给我回电话。',audio:'你先把电视节目看完吧，然后再给我回电话。'},
-  {words:['今晚','的','月亮','真','漂亮','，','像','白色','的','盘子','一样','。'],ans:'今晚的月亮真漂亮，像白色的盘子一样。',audio:'今晚的月亮真漂亮，像白色的盘子一样。'},
+  {words:['因为','客人','快','到','了','，','所以','他','赶紧','把','房间','打扫','干净','。'],ans:'因为客人快到了，所以他赶紧把房间打扫干净。',audio:'因为客人快到了，所以他赶紧把房间打扫干净。'},
+  {words:['妈妈','先','把','香蕉','放进','冰箱','，','然后','打扫','客厅','。'],ans:'妈妈先把香蕉放进冰箱，然后打扫客厅。',audio:'妈妈先把香蕉放进冰箱，然后打扫客厅。'},
+  {words:['你','先','把','这个','节目','看完','，','然后','再','去','洗澡','吧','。'],ans:'你先把这个节目看完，然后再去洗澡吧。',audio:'你先把这个节目看完，然后再去洗澡吧。'},
+  {words:['他','做','的','香蕉饭','真','好吃','，','像','饭馆','里','卖','的','一样','。'],ans:'他做的香蕉饭真好吃，像饭馆里卖的一样。',audio:'他做的香蕉饭真好吃，像饭馆里卖的一样。'},
   {words:['因为','客人','要','来','了','，','所以','我们','打扫','房间','。'],ans:'因为客人要来了，所以我们打扫房间。',audio:'因为客人要来了，所以我们打扫房间。'},
-  {words:['虽然','做','水果饭','很','简单','，','但是','很多','人','没','吃过','。'],ans:'虽然做水果饭很简单，但是很多人没吃过。',audio:'虽然做水果饭很简单，但是很多人没吃过。'},
+  {words:['虽然','外边','刮着','大风','，','但是','月亮','还是','那么','漂亮','。'],ans:'虽然外边刮着大风，但是月亮还是那么漂亮。',audio:'虽然外边刮着大风，但是月亮还是那么漂亮。'},
   {words:['如果','你','愿意','，','我们','就','一起','做','水果饭','。'],ans:'如果你愿意，我们就一起做水果饭。',audio:'如果你愿意，我们就一起做水果饭。'},
   {words:['先','把','米饭','做好','，','然后','再','把','一块块','新鲜','的','水果','放进去','。'],ans:'先把米饭做好，然后再把一块块新鲜的水果放进去。',audio:'先把米饭做好，然后再把一块块新鲜的水果放进去。'},
 ];
@@ -500,8 +500,8 @@ var sortData = [
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我把衣服洗。',
-   opts:['我把衣服洗干净了。','我把衣服洗。','我衣服把洗干净了。','我把洗衣服干净了。'],ans:0,
+  {wrong:'妈妈把房间打扫。',
+   opts:['妈妈把房间打扫干净了。','妈妈把房间打扫。','妈妈房间把打扫干净了。','妈妈把打扫房间干净了。'],ans:0,
    exp:'Câu 把字句3 cần có bổ ngữ kết quả/xu hướng SAU động từ, không thể chỉ có động từ đơn thuần.'},
   {wrong:'请同学们拿把铅笔出来。',
    opts:['请同学们把铅笔拿出来。','请同学们拿把铅笔出来。','请同学们铅笔把拿出来。','请把同学们铅笔拿出来。'],ans:0,
@@ -509,8 +509,8 @@ var errorFixData = [
   {wrong:'你水果把拿过来。',
    opts:['你把水果拿过来。','你水果把拿过来。','你把拿水果过来。','水果你把拿过来。'],ans:0,
    exp:'Thứ tự đúng là A+把+B+động từ+bổ ngữ, không đảo 把 ra sau B(水果).'},
-  {wrong:'回家以后，我又做作业，然后吃饭。',
-   opts:['回家以后，我先做作业，然后吃饭。','回家以后，我又做作业，然后吃饭。','回家以后，我然后做作业，先吃饭。','回家以后，我做作业又，然后吃饭。'],ans:0,
+  {wrong:'看完节目以后，我又洗澡，然后睡觉。',
+   opts:['看完节目以后，我先洗澡，然后睡觉。','看完节目以后，我又洗澡，然后睡觉。','看完节目以后，我然后洗澡，先睡觉。','看完节目以后，我洗澡又，然后睡觉。'],ans:0,
    exp:'先……然后…… diễn tả trình tự dự định; 又 chỉ dùng cho hành động ĐÃ xảy ra, không phù hợp ở đây.'},
   {wrong:'我先坐了一个小时公共汽车，再坐了一会儿地铁才到小刚家。',
    opts:['我先坐了一个小时公共汽车，又坐了一会儿地铁才到小刚家。','我先坐了一个小时公共汽车，再坐了一会儿地铁才到小刚家。','我又坐了一个小时公共汽车，先坐了一会儿地铁才到小刚家。','我先坐了一个小时公共汽车，然后坐再一会儿地铁才到小刚家。'],ans:0,
@@ -554,11 +554,11 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Khách sắp đến rồi, sao anh vẫn chưa dọn phòng vậy?', zh:'客人就要来了，你怎么还不打扫房间啊？', py:'Kèrén jiù yào lái le, nǐ zěnme hái bù dǎsǎo fángjiān a?'},
-  {vi:'Trước tiên để trà và cốc gọn gàng, sau đó lấy dưa hấu trong tủ lạnh ra.', zh:'先把茶和杯子放好，然后把冰箱里的西瓜拿出来。', py:'Xiān bǎ chá hé bēizi fànghǎo, ránhòu bǎ bīngxiāng li de xīguā ná chulai.'},
-  {vi:'Bạn xem xong chương trình tivi đã, rồi gọi lại cho tôi.', zh:'你先把电视节目看完吧，然后再给我回电话。', py:'Nǐ xiān bǎ diànshì jiémù kànwán ba, ránhòu zài gěi wǒ huí diànhuà.'},
-  {vi:'Trăng tối nay đẹp thật, giống như cái đĩa trắng vậy.', zh:'今晚的月亮真漂亮，像白色的盘子一样。', py:'Jīn wǎn de yuèliang zhēn piàoliang, xiàng báisè de pánzi yíyàng.'},
-  {vi:'Chúng ta nghe chú và cô kể chuyện thời trẻ của họ.', zh:'我们听叔叔阿姨讲讲他们年轻时候的故事。', py:'Wǒmen tīng shūshu āyí jiǎngjiang tāmen niánqīng shíhou de gùshi.'},
+  {vi:'Vì em trai cứ xem chương trình mãi, nên vẫn chưa dọn phòng.', zh:'因为弟弟一直在看节目，所以还没打扫房间。', py:'Yīnwèi dìdi yìzhí zài kàn jiémù, suǒyǐ hái méi dǎsǎo fángjiān.'},
+  {vi:'Tôi lau sạch bàn trước, sau đó để chuối lên đĩa.', zh:'我先把桌子擦干净，然后把香蕉放在盘子里。', py:'Wǒ xiān bǎ zhuōzi cā gānjìng, ránhòu bǎ xiāngjiāo fàng zài pánzi li.'},
+  {vi:'Bạn rửa đĩa xong trước đã, sau đó xem chương trình tivi tiếp nhé.', zh:'你先把盘子洗好，然后再看电视节目吧。', py:'Nǐ xiān bǎ pánzi xǐhǎo, ránhòu zài kàn diànshì jiémù ba.'},
+  {vi:'Trăng cô ấy vẽ đẹp thật, giống như thật vậy.', zh:'她画的月亮真好看，像真的一样。', py:'Tā huà de yuèliang zhēn hǎokàn, xiàng zhēn de yíyàng.'},
+  {vi:'Vì chú và cô thường đến nhà chúng tôi, nên chúng tôi đều rất muốn nghe họ kể chuyện.', zh:'因为叔叔阿姨常常来我们家，所以我们都很想听他们讲故事。', py:'Yīnwèi shūshu āyí chángcháng lái wǒmen jiā, suǒyǐ wǒmen dōu hěn xiǎng tīng tāmen jiǎng gùshi.'},
   {vi:'Bạn đã từng ăn cơm trái cây chưa?', zh:'你吃过水果饭吗？', py:'Nǐ chī guo shuǐguǒ fàn ma?'},
   {vi:'Thực ra làm cơm trái cây rất đơn giản.', zh:'其实做水果饭很简单。', py:'Qíshí zuò shuǐguǒ fàn hěn jiǎndān.'},
   {vi:'Ăn nhiều trái cây tươi tốt cho sức khỏe.', zh:'多吃新鲜水果对身体好。', py:'Duō chī xīnxiān shuǐguǒ duì shēntǐ hǎo.'},
@@ -568,12 +568,12 @@ var translateData = [
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì khách sắp đến nên chúng tôi dọn phòng.', zh:'因为客人要来了，所以我们打扫房间。', py:'Yīnwèi kèrén yào lái le, suǒyǐ wǒmen dǎsǎo fángjiān.'},
-  {vi:'Tuy làm cơm trái cây rất đơn giản nhưng nhiều người chưa từng ăn.', zh:'虽然做水果饭很简单，但是很多人没吃过。', py:'Suīrán zuò shuǐguǒ fàn hěn jiǎndān, dànshì hěn duō rén méi chīguo.'},
-  {vi:'Nếu bạn muốn thì chúng ta cùng làm cơm trái cây.', zh:'如果你愿意，我们就一起做水果饭。', py:'Rúguǒ nǐ yuànyì, wǒmen jiù yìqǐ zuò shuǐguǒ fàn.'},
+  {vi:'Vì thực đơn không có cơm trái cây, nên chúng tôi không gọi món đó.', zh:'因为菜单上没有水果饭，所以我们没有点。', py:'Yīnwèi càidān shang méiyǒu shuǐguǒ fàn, suǒyǐ wǒmen méiyǒu diǎn.'},
+  {vi:'Tuy tối nay không có trăng nhưng bên ngoài không hề có gió.', zh:'虽然今晚没有月亮，但是外边一点儿也不刮风。', py:'Suīrán jīnwǎn méiyǒu yuèliang, dànshì wàibian yìdiǎnr yě bù guā fēng.'},
+  {vi:'Nếu tủ lạnh có trái cây tươi, chúng ta sẽ cùng làm cơm trái cây.', zh:'如果冰箱里有新鲜的水果，我们就一起做水果饭。', py:'Rúguǒ bīngxiāng li yǒu xīnxiān de shuǐguǒ, wǒmen jiù yìqǐ zuò shuǐguǒ fàn.'},
   {vi:'Trước tiên nấu cơm xong, sau đó cho trái cây tươi vào.', zh:'先把米饭做好，然后再把新鲜的水果放进去。', py:'Xiān bǎ mǐfàn zuòhǎo, ránhòu zài bǎ xīnxiān de shuǐguǒ fàng jinqu.'},
-  {vi:'Tôi trước tiên đi một tiếng xe buýt, lại đi một lúc tàu điện ngầm mới đến nhà Tiểu Cương.', zh:'我先坐了一个小时公共汽车，又坐了一会儿地铁才到小刚家。', py:'Wǒ xiān zuòle yí ge xiǎoshí gōnggòng qìchē, yòu zuòle yíhuìr dìtiě cái dào Xiǎogāng jiā.'},
-  {vi:'Về nhà xong, tôi trước tiên làm bài tập, sau đó ăn cơm.', zh:'回家以后，我先做作业，然后吃饭。', py:'Huí jiā yǐhòu, wǒ xiān zuò zuòyè, ránhòu chī fàn.'},
+  {vi:'Tôi xem nửa tiếng chương trình trước, lại dọn phòng một lúc mới ra ngoài.', zh:'我先看了半个小时的节目，又打扫了一会儿房间才出门。', py:'Wǒ xiān kànle bàn ge xiǎoshí de jiémù, yòu dǎsǎole yíhuìr fángjiān cái chūmén.'},
+  {vi:'Chúng tôi đi ăn ở nhà hàng trước, sau đó cùng nhau đi ngắm trăng.', zh:'我们先去饭馆吃饭，然后一起去看月亮。', py:'Wǒmen xiān qù fànguǎn chī fàn, ránhòu yìqǐ qù kàn yuèliang.'},
   {vi:'Xin đừng vừa lái xe vừa gọi điện thoại.', zh:'请别一边开车一边打电话。', py:'Qǐng bié yìbiān kāichē yìbiān dǎ diànhuà.'},
   {vi:'Các bạn học sinh đều chạy ra khỏi lớp học rồi.', zh:'同学们都跑出教室去了。', py:'Tóngxuémen dōu pǎo chū jiàoshì qu le.'},
 ];

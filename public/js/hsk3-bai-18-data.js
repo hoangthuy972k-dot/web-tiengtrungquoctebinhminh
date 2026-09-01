@@ -19,7 +19,7 @@ var vocabData = [
       cf:'问 (wèn – "hỏi", có 门 thay vì 冂")',w:'向 / 方向'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Một người từ nơi khác hỏi đường tôi.',answer:'一个外地人向我问路。',answerPy:'Yí ge wàidìrén xiàng wǒ wènlù.',
+     {promptLang:'vi',prompt:'Vì trời tối nhìn không rõ đường, nên tôi hỏi đường chú bên cạnh.',answer:'因为天黑了看不清路，所以我向旁边的叔叔问路。',answerPy:'Yīnwèi tiān hēi le kàn bu qīng lù, suǒyǐ wǒ xiàng pángbiān de shūshu wènlù.',
       note:'向 + đối tượng + động từ diễn tả hướng của hành động.'},
      {promptLang:'vi',prompt:'Nếu bạn không biết đường thì hỏi cảnh sát đi.',answer:'如果你不知道路，就向警察问路吧。',answerPy:'Rúguǒ nǐ bù zhīdào lù, jiù xiàng jǐngchá wènlù ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
@@ -41,7 +41,7 @@ var vocabData = [
       cf:'方 (fāng – "phương hướng", hình dáng khác")',w:'万 / 一万'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi mua bức tranh này tốn ba vạn đồng đấy.',answer:'我买这画儿花了三万块呢。',answerPy:'Wǒ mǎi zhè huàr huāle sān wàn kuài ne.',
+     {promptLang:'vi',prompt:'Dù chiếc áo đó rất đắt, nhưng mẹ vẫn tốn hai vạn đồng mua cho tôi.',answer:'虽然那件衣服很贵，但是妈妈还是花了两万块买给我。',answerPy:'Suīrán nà jiàn yīfu hěn guì, dànshì māma háishi huāle liǎng wàn kuài mǎi gěi wǒ.',
       note:'花 + tiền diễn tả tiêu tốn (ôn lại 花 đã học ở Bài 15).'},
      {promptLang:'vi',prompt:'Nếu bạn có một vạn đồng thì có thể mua căn nhà này không?',answer:'如果你有一万块，就能买这个房子吗？',answerPy:'Rúguǒ nǐ yǒu yíwàn kuài, jiù néng mǎi zhège fángzi ma?',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -63,7 +63,7 @@ var vocabData = [
       cf:'口 (kǒu – "miệng", không có 八ở dưới")',w:'一只狗 / 只有'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Tôi có một bạn học rất thích động vật nhỏ, bạn ấy đồng ý giúp tôi chăm mấy hôm.',answer:'我有个同学很喜欢小动物，她同意帮我照顾几天。',answerPy:'Wǒ yǒu ge tóngxué hěn xǐhuan xiǎo dòngwù, tā tóngyì bāng wǒ zhàogù jǐ tiān.',
+     {promptLang:'vi',prompt:'Dù ban đầu bố không đồng ý, nhưng cuối cùng vẫn mua cho tôi một con mèo con.',answer:'虽然爸爸一开始不同意，但是最后还是给我买了一只小猫。',answerPy:'Suīrán bàba yì kāishǐ bù tóngyì, dànshì zuìhòu háishi gěi wǒ mǎile yì zhī xiǎomāo.',
       note:'同意 sẽ học ngay bên dưới trong bài này.'},
      {promptLang:'vi',prompt:'Nếu bạn thích con chó đó thì chúng ta mua về đi.',answer:'如果你喜欢那只狗，我们就买回去吧。',answerPy:'Rúguǒ nǐ xǐhuan nà zhī gǒu, wǒmen jiù mǎi huiqu ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -77,7 +77,7 @@ var vocabData = [
    exList:[
      {zh:'眼睛大大的，嘴小小的，我们买回去吧。',py:'Yǎnjing dàdà de, zuǐ xiǎoxiǎo de, wǒmen mǎi huiqu ba.',vn:'Mắt to to, miệng nhỏ nhỏ, mình mua về đi.'},
      {zh:'他跟你长得真像啊，但是他的嘴更像他爸爸。',py:'Tā gēn nǐ zhǎng de zhēn xiàng a, dànshì tā de zuǐ gèng xiàng tā bàba.',vn:'Nó giống bạn thật đấy, nhưng miệng nó lại giống bố nó hơn.'},
-     {zh:'这个人的口很大。',py:'Zhège rén de kǒu hěn dà.',vn:'Miệng người này to lắm.'},
+     {zh:'她的嘴小小的，笑起来很可爱。',py:'Tā de zuǐ xiǎoxiǎo de, xiào qilai hěn kě\'ài.',vn:'Miệng cô ấy nhỏ nhỏ, cười lên trông đáng yêu lắm.'},
    ],
    hanzi:[
      {c:'嘴',p:'zuǐ',type:'左右结构 · Trái-phải',st:16,ord:'口 trái → 觜 phải',rad:'口 (khẩu)',mean:'miệng',
@@ -85,7 +85,7 @@ var vocabData = [
       cf:'嗤 (chī – "cười khẩy", có 齿 thay vì 此")',w:'嘴 / 张嘴'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Nó giống bạn thật đấy, nhưng miệng nó lại giống bố nó hơn.',answer:'他跟你长得真像啊，但是他的嘴更像他爸爸。',answerPy:'Tā gēn nǐ zhǎng de zhēn xiàng a, dànshì tā de zuǐ gèng xiàng tā bàba.',
+     {promptLang:'vi',prompt:'Mắt em gái giống mẹ, nhưng miệng lại giống bố hơn.',answer:'妹妹的眼睛像妈妈，但是嘴更像爸爸。',answerPy:'Mèimei de yǎnjing xiàng māma, dànshì zuǐ gèng xiàng bàba.',
       note:'像 diễn tả sự giống nhau (ôn lại đã học ở Bài 14).'},
      {promptLang:'vi',prompt:'Nếu miệng bé giống bố thì chắc chắn nhỏ nhỏ.',answer:'如果孩子的嘴像爸爸，就一定是小小的。',answerPy:'Rúguǒ háizi de zuǐ xiàng bàba, jiù yídìng shì xiǎoxiǎo de.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -107,7 +107,7 @@ var vocabData = [
       cf:'物 vs 牛 (niú – chỉ riêng con trâu")',w:'动物 / 东西'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Đứa trẻ rất hứng thú với động vật.',answer:'孩子对动物很感兴趣。',answerPy:'Háizi duì dòngwù hěn gǎn xìngqù.',
+     {promptLang:'vi',prompt:'Dù em gái sợ chó con, nhưng bé lại rất hứng thú với những động vật khác.',answer:'虽然妹妹害怕小狗，但是她对别的动物很感兴趣。',answerPy:'Suīrán mèimei hàipà xiǎogǒu, dànshì tā duì bié de dòngwù hěn gǎn xìngqù.',
       note:'对……感兴趣 diễn tả sự hứng thú (ôn lại đã học ở Bài 15).'},
      {promptLang:'vi',prompt:'Nếu bạn thích động vật thì đi sở thú chơi đi.',answer:'如果你喜欢动物，就去动物园玩儿吧。',answerPy:'Rúguǒ nǐ xǐhuan dòngwù, jiù qù dòngwùyuán wánr ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -129,7 +129,7 @@ var vocabData = [
       cf:'锻 (duàn – "tôi luyện", có bộ 钅")',w:'一段时间 / 阶段'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lạ thật, dạo này sao không thấy Tiểu Chu đi làm nhỉ?',answer:'奇怪，这段时间怎么没看见小周来上班？',answerPy:'Qíguài, zhè duàn shíjiān zěnme méi kànjiàn Xiǎo Zhōu lái shàngbān?',
+     {promptLang:'vi',prompt:'Lạ thật, dạo này sao anh ấy cứ luôn bận vậy?',answer:'奇怪，这段时间他怎么总是很忙？',answerPy:'Qíguài, zhè duàn shíjiān tā zěnme zǒngshì hěn máng?',
       note:'奇怪 sẽ học ngay bên dưới trong bài này.'},
      {promptLang:'vi',prompt:'Nếu bạn có một khoảng thời gian rảnh thì cùng tôi đi du lịch đi.',answer:'如果你有一段空闲时间，就跟我一起去旅游吧。',answerPy:'Rúguǒ nǐ yǒu yí duàn kòngxián shíjiān, jiù gēn wǒ yìqǐ qù lǚyóu ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -151,7 +151,7 @@ var vocabData = [
       cf:'旦 (dàn – "bình minh", không có bộ 亻")',w:'不但 / 但是'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Sở thú không những môi trường tốt, mà đứa trẻ còn rất hứng thú với động vật.',answer:'动物园不但环境好，而且孩子对动物很感兴趣。',answerPy:'Dòngwùyuán búdàn huánjìng hǎo, érqiě háizi duì dòngwù hěn gǎn xìngqù.',
+     {promptLang:'vi',prompt:'Công viên không những rất rộng, mà bên trong còn có rất nhiều hoa đẹp.',answer:'公园不但很大，而且里面有很多好看的花。',answerPy:'Gōngyuán búdàn hěn dà, érqiě lǐmiàn yǒu hěn duō hǎokàn de huā.',
       note:'不但……而且…… diễn tả sự bổ sung tăng tiến.'},
      {promptLang:'vi',prompt:'Nhà hàng này cá không những tươi mà còn rẻ.',answer:'这家饭馆的鱼不但新鲜，而且便宜。',answerPy:'Zhè jiā fànguǎn de yú búdàn xīnxiān, érqiě piányi.',
       note:'不但……而且…… diễn tả sự bổ sung tăng tiến.'},
@@ -173,7 +173,7 @@ var vocabData = [
       cf:'各 (gè – "mỗi", có 夂 thay vì 夕")',w:'有名 / 名字'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Nghe nói thịt cừu của nhà hàng này rất nổi tiếng.',answer:'听说这家饭馆的羊肉非常有名。',answerPy:'Tīngshuō zhè jiā fànguǎn de yángròu fēicháng yǒumíng.',
+     {promptLang:'vi',prompt:'Nghe nói họa sĩ này ở Trung Quốc rất nổi tiếng.',answer:'听说这位画家在中国非常有名。',answerPy:'Tīngshuō zhè wèi huàjiā zài Zhōngguó fēicháng yǒumíng.',
       note:'非常 + Adj diễn tả mức độ cao.'},
      {promptLang:'vi',prompt:'Nếu quán ăn này nổi tiếng thì chắc chắn có nhiều khách.',answer:'如果这家饭馆很有名，就一定有很多客人。',answerPy:'Rúguǒ zhè jiā fànguǎn hěn yǒumíng, jiù yídìng yǒu hěn duō kèrén.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -195,7 +195,7 @@ var vocabData = [
       cf:'音 (yīn – "âm thanh", không có bộ 心")',w:'同意 / 意思'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Về điểm này, tôi đồng ý, nhưng ăn ít quá thì tối tôi không ngủ được.',answer:'关于这一点，我同意，可是吃太少，我晚上睡不着觉。',answerPy:'Guānyú zhè yì diǎn, wǒ tóngyì, kěshì chī tài shǎo, wǒ wǎnshang shuì bu zháo jiào.',
+     {promptLang:'vi',prompt:'Về chuyến du lịch này, tôi đồng ý với ý kiến của bạn, nhưng chúng ta vẫn cần hỏi mẹ thêm.',answer:'关于这次旅行，我同意你的看法，可是我们还需要问问妈妈。',answerPy:'Guānyú zhè cì lǚxíng, wǒ tóngyì nǐ de kànfǎ, kěshì wǒmen hái xūyào wènwen māma.',
       note:'关于 sẽ học ngay bên dưới trong bài này.'},
      {promptLang:'vi',prompt:'Nếu bố mẹ đồng ý thì tôi sẽ đi du học.',answer:'如果爸爸妈妈同意，我就去留学。',answerPy:'Rúguǒ bàba māma tóngyì, wǒ jiù qù liú xué.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 留学 đã học ở Bài 15).'},
@@ -217,7 +217,7 @@ var vocabData = [
       cf:'言 (yán – "lời nói", không có bộ 亻")',w:'相信 / 信 (lá thư)'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Đứa trẻ sao thế, thay đổi nhiều vậy, tôi thật sự không tin nổi.',answer:'孩子怎么了，变化这么大，我真没办法相信。',answerPy:'Háizi zěnme le, biànhuà zhème dà, wǒ zhēn méi bànfǎ xiāngxìn.',
+     {promptLang:'vi',prompt:'Tin tức này đột ngột quá, tôi thật sự không thể tin nổi.',answer:'这个消息太突然了，我真没办法相信。',answerPy:'Zhège xiāoxi tài tūrán le, wǒ zhēn méi bànfǎ xiāngxìn.',
       note:'没办法 diễn tả sự bất lực (ôn lại 办法 đã học ở Bài 17).'},
      {promptLang:'vi',prompt:'Nếu bạn tin tôi thì hãy cho tôi cơ hội thử một lần.',answer:'如果你相信我，就给我一次机会吧。',answerPy:'Rúguǒ nǐ xiāngxìn wǒ, jiù gěi wǒ yí cì jīhuì ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -239,7 +239,7 @@ var vocabData = [
       cf:'干 (gān – "khô", hình dáng gần giống")',w:'关于 / 对于 / 由于'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Gần đây tôi xem một số phim về văn hóa Trung Quốc.',answer:'我最近看了一些关于中国文化的电影。',answerPy:'Wǒ zuìjìn kànle yìxiē guānyú Zhōngguó wénhuà de diànyǐng.',
+     {promptLang:'vi',prompt:'Tôi đã đọc một quyển sách về lịch sử Trung Quốc.',answer:'我读了一本关于中国历史的书。',answerPy:'Wǒ dúle yì běn guānyú Zhōngguó lìshǐ de shū.',
       note:'关于 + chủ đề + 的 + danh từ.'},
      {promptLang:'vi',prompt:'Nếu bạn có vấn đề gì về công việc này thì hỏi tôi đi.',answer:'如果你对这个工作有什么问题，就问我吧。',answerPy:'Rúguǒ nǐ duì zhège gōngzuò yǒu shénme wèntí, jiù wèn wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -261,7 +261,7 @@ var vocabData = [
       cf:'云 (yún – "mây", không có bộ 人")',w:'机会 / 会议'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Ở chỗ chúng tôi rất ít khi có cơ hội đi xe đạp.',answer:'在我们那儿很少有机会骑自行车。',answerPy:'Zài wǒmen nàr hěn shǎo yǒu jīhuì qí zìxíngchē.',
+     {promptLang:'vi',prompt:'Ở thành phố này, chúng tôi rất ít khi có cơ hội nhìn thấy tuyết.',answer:'在这个城市，我们很少有机会看到雪。',answerPy:'Zài zhège chéngshì, wǒmen hěn shǎo yǒu jīhuì kàndào xuě.',
       note:'很少 + V diễn tả tần suất thấp.'},
      {promptLang:'vi',prompt:'Nếu bạn có cơ hội thì nên nắm bắt lấy.',answer:'如果你有机会，就应该抓住它。',answerPy:'Rúguǒ nǐ yǒu jīhuì, jiù yīnggāi zhuāzhù tā.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -283,7 +283,7 @@ var vocabData = [
       cf:'固 (gù – "vững chắc", có 古 thay vì 玉")',w:'国家 / 中国'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn từ quốc gia nào đến vậy?',answer:'你是从哪个国家来的？',answerPy:'Nǐ shì cóng nǎge guójiā lái de?',
+     {promptLang:'vi',prompt:'Anh ấy từ quốc gia nào đến đây làm việc vậy?',answer:'他是从哪个国家来这儿工作的？',answerPy:'Tā shì cóng nǎge guójiā lái zhèr gōngzuò de?',
       note:'是……的 nhấn mạnh nguồn gốc.'},
      {promptLang:'vi',prompt:'Nếu mỗi quốc gia đều tôn trọng văn hóa của nhau thì thế giới sẽ tốt đẹp hơn.',answer:'如果每个国家都尊重对方的文化，世界就会更美好。',answerPy:'Rúguǒ měi ge guójiā dōu zūnzhòng duìfāng de wénhuà, shìjiè jiù huì gèng měihǎo.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 世界 đã học ở Bài 15).'},
@@ -305,7 +305,7 @@ var vocabData = [
       cf:'重 (zhòng – "nặng", có bộ 里")',w:'种 / 种类'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Bạn thích uống loại trà nào?',answer:'你喜欢喝哪种茶？',answerPy:'Nǐ xǐhuan hē nǎ zhǒng chá?',
+     {promptLang:'vi',prompt:'Bạn muốn ăn loại trái cây nào?',answer:'你想吃哪种水果？',answerPy:'Nǐ xiǎng chī nǎ zhǒng shuǐguǒ?',
       note:'哪 + lượng từ hỏi lựa chọn.'},
      {promptLang:'vi',prompt:'Nếu bạn thích loại văn hóa này thì hãy tìm hiểu thêm.',answer:'如果你喜欢这种文化，就多了解一下吧。',answerPy:'Rúguǒ nǐ xǐhuan zhè zhǒng wénhuà, jiù duō liǎojiě yíxià ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -327,7 +327,7 @@ var vocabData = [
       cf:'持 (chí – "cầm giữ", có 扌thay vì 牛")',w:'特点 / 特别'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mỗi người đều có đặc điểm riêng của mình.',answer:'每个人都有自己的特点。',answerPy:'Měi ge rén dōu yǒu zìjǐ de tèdiǎn.',
+     {promptLang:'vi',prompt:'Mỗi đứa trẻ đều có đặc điểm riêng của mình.',answer:'每个孩子都有自己的特点。',answerPy:'Měi ge háizi dōu yǒu zìjǐ de tèdiǎn.',
       note:'每……都 diễn tả tính phổ quát.'},
      {promptLang:'vi',prompt:'Nếu bạn hiểu đặc điểm của nơi đó thì sẽ quen nhanh hơn.',answer:'如果你了解那里的特点，就会更快习惯。',answerPy:'Rúguǒ nǐ liǎojiě nàli de tèdiǎn, jiù huì gèng kuài xíguàn.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
@@ -349,8 +349,8 @@ var vocabData = [
       cf:'椅 (yǐ – "cái ghế", có bộ 木")',w:'奇怪 / 好奇'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Lạ thật, tôi nhớ để điện thoại vào túi rồi mà, sao tìm không thấy?',answer:'奇怪，我记得把手机放进包里了，怎么找不到了？',answerPy:'Qíguài, wǒ jìde bǎ shǒujī fàng jìn bāo li le, zěnme zhǎo bu dào le?',
-      note:'把字句3: 把+手机+放进+vị trí (ôn lại đã học ở Bài 14).'},
+     {promptLang:'vi',prompt:'Lạ thật, tôi nhớ để chìa khóa vào ngăn kéo rồi mà, sao không thấy nữa?',answer:'奇怪，我记得把钥匙放进抽屉里了，怎么不见了？',answerPy:'Qíguài, wǒ jìde bǎ yàoshi fàng jìn chōuti li le, zěnme bú jiàn le?',
+      note:'把字句3: 把+钥匙+放进+vị trí (ôn lại đã học ở Bài 14).'},
      {promptLang:'vi',prompt:'Nếu bạn thấy kỳ lạ thì cứ hỏi tôi đi.',answer:'如果你觉得奇怪，就问我吧。',answerPy:'Rúguǒ nǐ juéde qíguài, jiù wèn wǒ ba.',
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
@@ -371,8 +371,8 @@ var vocabData = [
       cf:'他 (tā – "anh ấy", có bộ 亻")',w:'慢慢地 / 地方'},
    ],
    checkList:[
-     {promptLang:'vi',prompt:'Mọi người đều nhìn tôi với vẻ ngạc nhiên.',answer:'大家都奇怪地看着我。',answerPy:'Dàjiā dōu qíguài de kànzhe wǒ.',
-      note:'奇怪 + 地 + 看着 diễn tả trạng ngữ chỉ cách thức (ôn lại 奇怪 vừa học trong bài này).'},
+     {promptLang:'vi',prompt:'Các bạn học đều ngạc nhiên hỏi tôi có chuyện gì.',answer:'同学们都奇怪地问我怎么回事。',answerPy:'Tóngxuémen dōu qíguài de wèn wǒ zěnme huí shì.',
+      note:'奇怪 + 地 + 问 diễn tả trạng ngữ chỉ cách thức (ôn lại 奇怪 vừa học trong bài này).'},
      {promptLang:'vi',prompt:'Nếu bạn học tập nghiêm túc thì trình độ sẽ nâng cao nhanh.',answer:'如果你认真地学习，水平就会提高得很快。',answerPy:'Rúguǒ nǐ rènzhēn de xuéxí, shuǐpíng jiù huì tígāo de hěn kuài.',
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 水平/提高 đã học ở Bài 15).'},
    ]},
@@ -465,20 +465,20 @@ var matchData = [
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'我想',blank:'向',post:'你借点儿钱。',hint:'(đối với, về phía)',ans:'向'},
-  {pre:'还差5',blank:'万',post:'块钱。',hint:'(vạn, mười nghìn)',ans:'万'},
+  {pre:'虽然那辆车很贵，但是我们已经存了三',blank:'万',post:'块钱了。',hint:'(vạn, mười nghìn)',ans:'万'},
   {pre:'你看那',blank:'只',post:'狗多可爱。',hint:'(con, lượng từ)',ans:'只'},
   {pre:'他的',blank:'嘴',post:'更像他爸爸。',hint:'(miệng)',ans:'嘴'},
-  {pre:'',blank:'动物',post:'和小孩儿一样，都需要人照顾。',hint:'(động vật)',ans:'动物'},
+  {pre:'虽然',blank:'动物',post:'不会说话，但是它们也有感情。',hint:'(động vật)',ans:'动物'},
   {pre:'这',blank:'段',post:'时间你自己的衣服都没洗。',hint:'(khoảng, quãng)',ans:'段'},
-  {pre:'贵公司',blank:'不但',post:'很有名，而且工作环境好。',hint:'(không những)',ans:'不但'},
+  {pre:'这家咖啡馆',blank:'不但',post:'环境安静，而且咖啡很好喝。',hint:'(không những)',ans:'不但'},
   {pre:'他的画都非常',blank:'有名',post:'。',hint:'(có tiếng, nổi tiếng)',ans:'有名'},
   {pre:'你家人',blank:'同意',post:'吗？',hint:'(đồng ý, tán thành)',ans:'同意'},
   {pre:'我',blank:'相信',post:'他们就会同意的。',hint:'(tin, tin tưởng)',ans:'相信'},
-  {pre:'',blank:'关于',post:'这个工作，还有什么问题吗？',hint:'(về)',ans:'关于'},
+  {pre:'',blank:'关于',post:'这次考试，你还有什么想问的吗？',hint:'(về)',ans:'关于'},
   {pre:'谢谢您给我这个',blank:'机会',post:'。',hint:'(cơ hội)',ans:'机会'},
   {pre:'不同的',blank:'国家',post:'有不同的文化。',hint:'(đất nước, quốc gia)',ans:'国家'},
   {pre:'每',blank:'种',post:'文化都有自己的特点。',hint:'(loại)',ans:'种'},
-  {pre:'每种文化都有自己的',blank:'特点',post:'。',hint:'(đặc điểm)',ans:'特点'},
+  {pre:'每个地方都有自己的',blank:'特点',post:'，我们应该尊重它们。',hint:'(đặc điểm)',ans:'特点'},
   {pre:'你会觉得有点',blank:'奇怪',post:'。',hint:'(kỳ lạ, lạ lùng)',ans:'奇怪'},
   {pre:'就会慢慢',blank:'地',post:'习惯。',hint:'(trợ từ nối trạng ngữ)',ans:'地'},
 ];
@@ -489,32 +489,32 @@ var fillData = [
 var sortData = [
   {words:['我','打算','买','房子','了','，','想','向','你','借','点儿','钱','。'],ans:'我打算买房子了，想向你借点儿钱。',audio:'我打算买房子了，想向你借点儿钱。'},
   {words:['只要','我','有','，','就','一定','会','借','给','你','的','。'],ans:'只要我有，就一定会借给你的。',audio:'只要我有，就一定会借给你的。'},
-  {words:['动物','和','小孩儿','一样','，','都','需要','人','照顾','。'],ans:'动物和小孩儿一样，都需要人照顾。',audio:'动物和小孩儿一样，都需要人照顾。'},
-  {words:['贵','公司','不但','很','有名','，','而且','工作','环境','好','。'],ans:'贵公司不但很有名，而且工作环境好。',audio:'贵公司不但很有名，而且工作环境好。'},
+  {words:['因为','小狗','很','可爱','，','所以','很多','人','都','喜欢','养','动物','。'],ans:'因为小狗很可爱，所以很多人都喜欢养动物。',audio:'因为小狗很可爱，所以很多人都喜欢养动物。'},
+  {words:['这','所','学校','不但','老师','认真','，','而且','学生','都','很','努力','。'],ans:'这所学校不但老师认真，而且学生都很努力。',audio:'这所学校不但老师认真，而且学生都很努力。'},
   {words:['只要','我','有','时间','，','就','一定','跟','你','去','旅游','。'],ans:'只要我有时间，就一定跟你去旅游。',audio:'只要我有时间，就一定跟你去旅游。'},
   {words:['只要','你','给','我','买','，','我','就','能','照顾好','它','。'],ans:'只要你给我买，我就能照顾好它。',audio:'只要你给我买，我就能照顾好它。'},
   {words:['关于','这','件','事','，','我们','还','没有','决定','呢','。'],ans:'关于这件事，我们还没有决定呢。',audio:'关于这件事，我们还没有决定呢。'},
-  {words:['不同','的','国家','有','不同','的','文化','，','每','种','文化','都','有','自己','的','特点','。'],ans:'不同的国家有不同的文化，每种文化都有自己的特点。',audio:'不同的国家有不同的文化，每种文化都有自己的特点。'},
+  {words:['不同','的','国家','有','不同','的','语言','，','每','种','语言','都','有','自己','的','特点','。'],ans:'不同的国家有不同的语言，每种语言都有自己的特点。',audio:'不同的国家有不同的语言，每种语言都有自己的特点。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'我有时间只要，就一定跟你去旅游。',
-   opts:['只要我有时间，就一定跟你去旅游。','我有时间只要，就一定跟你去旅游。','我只要有时间就，一定跟你去旅游。','只要就我有时间，一定跟你去旅游。'],ans:0,
+  {wrong:'你明天有空只要，我们就一起去看电影。',
+   opts:['只要你明天有空，我们就一起去看电影。','你明天有空只要，我们就一起去看电影。','只要你明天有空我们，就一起去看电影。','你明天有空，只要我们就一起去看电影。'],ans:0,
    exp:'只要 phải đứng ở ĐẦU câu hoặc trước chủ ngữ thứ nhất, không đặt sau chủ ngữ.'},
-  {wrong:'只要你给我买，能照顾好它我就。',
-   opts:['只要你给我买，我就能照顾好它。','只要你给我买，能照顾好它我就。','只要你给我买，就我能照顾好它。','只要给我买你，我就能照顾好它。'],ans:0,
+  {wrong:'只要你努力练习，相信你能成功我就。',
+   opts:['只要你努力练习，我就相信你能成功。','只要你努力练习，相信你能成功我就。','只要你努力练习，就我相信你能成功。','只要努力练习你，我就相信你能成功。'],ans:0,
    exp:'Chủ ngữ (我) của mệnh đề thứ hai phải đặt TRƯỚC 就, không đặt sau động từ.'},
-  {wrong:'这件事关于，我们还没有决定呢。',
-   opts:['关于这件事，我们还没有决定呢。','这件事关于，我们还没有决定呢。','我们关于这件事还没有决定呢。','这件事我们关于还没有决定呢。'],ans:0,
-   exp:'关于 phải đứng TRƯỚC danh từ nó giới thiệu (这件事), không đặt sau.'},
-  {wrong:'贵公司很有名不但，而且工作环境好。',
-   opts:['贵公司不但很有名，而且工作环境好。','贵公司很有名不但，而且工作环境好。','贵公司不但，很有名而且工作环境好。','贵公司很有名，不但而且工作环境好。'],ans:0,
-   exp:'不但 phải đứng NGAY TRƯỚC phần thông tin thứ nhất (很有名), không đặt sau.'},
-  {wrong:'今天不但来了很多北京人，还有很多外地人而且。',
-   opts:['今天不但来了很多北京人，而且还有很多外地人。','今天不但来了很多北京人，还有很多外地人而且。','今天不但来了很多北京人而且，还有很多外地人。','今天来了很多北京人不但，而且还有很多外地人。'],ans:0,
+  {wrong:'这次旅行关于，我们还没有商量好。',
+   opts:['关于这次旅行，我们还没有商量好。','这次旅行关于，我们还没有商量好。','我们关于这次旅行还没有商量好。','这次旅行我们关于还没有商量好。'],ans:0,
+   exp:'关于 phải đứng TRƯỚC danh từ nó giới thiệu (这次旅行), không đặt sau.'},
+  {wrong:'这个房间很干净不但，而且很安静。',
+   opts:['这个房间不但很干净，而且很安静。','这个房间很干净不但，而且很安静。','这个房间不但，很干净而且很安静。','这个房间很干净，不但而且很安静。'],ans:0,
+   exp:'不但 phải đứng NGAY TRƯỚC phần thông tin thứ nhất (很干净), không đặt sau.'},
+  {wrong:'今天不但下雨了，刮起了大风而且。',
+   opts:['今天不但下雨了，而且刮起了大风。','今天不但下雨了，刮起了大风而且。','今天不但下雨了而且，刮起了大风。','今天下雨了不但，而且刮起了大风。'],ans:0,
    exp:'而且 phải đứng NGAY TRƯỚC phần thông tin thứ hai, không đặt cuối câu.'},
 ];
 
@@ -555,26 +555,26 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Lão Chu ơi, tôi định mua nhà rồi, muốn mượn anh chút tiền.', zh:'老周，我打算买房子了，想向你借点儿钱。', py:'Lǎo Zhōu, wǒ dǎsuàn mǎi fángzi le, xiǎng xiàng nǐ jiè diǎnr qián.'},
-  {vi:'Chỉ cần tôi có, nhất định sẽ cho anh mượn.', zh:'只要我有，就一定会借给你的。', py:'Zhǐyào wǒ yǒu, jiù yídìng huì jiè gěi nǐ de.'},
+  {vi:'Vì xe đạp của tôi hỏng rồi, nên tôi muốn mượn xe của bạn một chút.', zh:'因为我的自行车坏了，所以想向你借一下你的。', py:'Yīnwèi wǒ de zìxíngchē huài le, suǒyǐ xiǎng xiàng nǐ jiè yíxià nǐ de.'},
+  {vi:'Chỉ cần bạn tin vào bản thân, nhất định sẽ làm tốt việc này.', zh:'只要你相信自己，就一定能做好这件事。', py:'Zhǐyào nǐ xiāngxìn zìjǐ, jiù yídìng néng zuò hǎo zhè jiàn shì.'},
   {vi:'Con chó đó đáng yêu chưa, mắt to to, miệng nhỏ nhỏ.', zh:'那只狗多可爱，眼睛大大的，嘴小小的。', py:'Nà zhī gǒu duō kě\'ài, yǎnjing dàdà de, zuǐ xiǎoxiǎo de.'},
-  {vi:'Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.', zh:'贵公司不但很有名，而且工作环境好。', py:'Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.'},
-  {vi:'Chỉ cần tôi muốn, tôi tin họ sẽ đồng ý thôi.', zh:'只要我愿意，我相信他们就会同意的。', py:'Zhǐyào wǒ yuànyì, wǒ xiāngxìn tāmen jiù huì tóngyì de.'},
+  {vi:'Khách sạn này không những giá rẻ, mà còn phục vụ rất tốt.', zh:'这家宾馆不但价格便宜，而且服务很好。', py:'Zhè jiā bīnguǎn búdàn jiàgé piányi, érqiě fúwù hěn hǎo.'},
+  {vi:'Chỉ cần ngày mai không mưa, tôi tin chúng ta sẽ có thể đi leo núi.', zh:'只要明天不下雨，我相信我们就能去爬山。', py:'Zhǐyào míngtiān bú xiàyǔ, wǒ xiāngxìn wǒmen jiù néng qù páshān.'},
   {vi:'Cảm ơn anh đã cho tôi cơ hội này, tôi sẽ cố gắng.', zh:'谢谢您给我这个机会，我会努力的。', py:'Xièxie nín gěi wǒ zhège jīhuì, wǒ huì nǔlì de.'},
-  {vi:'Mỗi loại văn hóa đều có đặc điểm riêng.', zh:'每种文化都有自己的特点。', py:'Měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.'},
-  {vi:'Chỉ cần trải qua một khoảng thời gian, sẽ dần dần quen thôi.', zh:'只要经过一段时间，就会慢慢地习惯。', py:'Zhǐyào jīngguò yí duàn shíjiān, jiù huì mànman de xíguàn.'},
+  {vi:'Mỗi quốc gia đều có đặc điểm riêng, chúng ta nên tìm hiểu lẫn nhau.', zh:'每个国家都有自己的特点，我们应该互相了解。', py:'Měi ge guójiā dōu yǒu zìjǐ de tèdiǎn, wǒmen yīnggāi hùxiāng liǎojiě.'},
+  {vi:'Chỉ cần bạn luyện tập mỗi ngày, trình độ tiếng Trung sẽ ngày càng tốt hơn.', zh:'只要你每天练习，中文水平就会越来越好。', py:'Zhǐyào nǐ měitiān liànxí, Zhōngwén shuǐpíng jiù huì yuè lái yuè hǎo.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tôi gần đây xem một số phim về văn hóa Trung Quốc.', zh:'我最近看了一些关于中国文化的电影。', py:'Wǒ zuìjìn kànle yìxiē guānyú Zhōngguó wénhuà de diànyǐng.'},
-  {vi:'Về việc này, chúng tôi vẫn chưa quyết định.', zh:'关于这件事，我们还没有决定呢。', py:'Guānyú zhè jiàn shì, wǒmen hái méiyǒu juédìng ne.'},
+  {vi:'Anh ấy viết một bài báo về bảo vệ môi trường.', zh:'他写了一篇关于环境保护的文章。', py:'Tā xiěle yì piān guānyú huánjìng bǎohù de wénzhāng.'},
+  {vi:'Về các món ăn Trung Quốc, tôi còn có rất nhiều điều muốn học.', zh:'关于中国菜，我还有很多想学的。', py:'Guānyú Zhōngguó cài, wǒ hái yǒu hěn duō xiǎng xué de.'},
   {vi:'Chỉ cần tôi thích, nhất định sẽ mua.', zh:'我只要喜欢，就一定会买。', py:'Wǒ zhǐyào xǐhuan, jiù yídìng huì mǎi.'},
   {vi:'Chỉ cần bạn muốn đi, tôi sẽ đi cùng bạn.', zh:'只要你想去，我就跟你去。', py:'Zhǐyào nǐ xiǎng qù, wǒ jiù gēn nǐ qù.'},
   {vi:'Về việc đi du học nước ngoài, mẹ đã đồng ý rồi.', zh:'关于出国学习的事，妈妈已经同意了。', py:'Guānyú chūguó xuéxí de shì, māma yǐjīng tóngyì le.'},
-  {vi:'Nhà hàng này cá không những tươi mà còn rẻ.', zh:'这家饭馆的鱼不但新鲜，而且便宜。', py:'Zhè jiā fànguǎn de yú búdàn xīnxiān, érqiě piányi.'},
+  {vi:'Chiếc điện thoại này không những chụp ảnh rõ, mà còn pin rất bền.', zh:'这个手机不但拍照清楚，而且电池很耐用。', py:'Zhège shǒujī búdàn pāizhào qīngchu, érqiě diànchí hěn nàiyòng.'},
   {vi:'Anh ấy tin rằng chỉ cần nỗ lực thì sẽ thành công.', zh:'他相信只要努力就会成功。', py:'Tā xiāngxìn zhǐyào nǔlì jiù huì chénggōng.'},
   {vi:'Đến một môi trường mới, cái gì cũng sẽ thấy mới lạ.', zh:'到了一个新环境，什么都会觉得很新鲜。', py:'Dàole yí ge xīn huánjìng, shénme dōu huì juéde hěn xīnxiān.'},
 ];

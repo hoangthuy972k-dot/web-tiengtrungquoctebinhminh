@@ -50,6 +50,15 @@ const APP_DATA = {
       color: 'gold'
     },
     {
+      id: 'hsk5',
+      name: 'HSK 5',
+      subtitle: 'Cao cấp 1',
+      description: 'Đọc báo, xem phim, phát biểu tương đối hoàn chỉnh bằng tiếng Trung.',
+      totalLessons: 18,
+      totalVocab: 2500,
+      color: 'red'
+    },
+    {
       id: 'yct',
       name: 'YCT - Thiếu nhi',
       subtitle: 'Dành cho trẻ em',

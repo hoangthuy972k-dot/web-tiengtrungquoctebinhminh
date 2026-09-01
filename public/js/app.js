@@ -257,9 +257,9 @@
 
   /* ---------------- Level cards ---------------- */
 
-  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2', 'hsk3', 'yct'];
-  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'blue', hsk2: 'green', hsk3: 'gold', yct: 'blue' };
-  var LEVEL_SHORT = { hsk1: 'HSK1', hsk1v3: 'HSK1·3.0', hsk2: 'HSK2', hsk3: 'HSK3', yct: 'YCT1' };
+  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'yct'];
+  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'blue', hsk2: 'green', hsk3: 'gold', hsk4: 'green', hsk5: 'gold', yct: 'blue' };
+  var LEVEL_SHORT = { hsk1: 'HSK1', hsk1v3: 'HSK1·3.0', hsk2: 'HSK2', hsk3: 'HSK3', hsk4: 'HSK4', hsk5: 'HSK5', yct: 'YCT1' };
   var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2: true, hsk3: true, yct: true };
   var practiceLevel = 'hsk2';
 
@@ -291,7 +291,7 @@
     });
   }
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', yct: 'YCT 1' };
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT 1' };
 
   function selectLevel(id) {
     if (!READY_LEVELS[id]) {

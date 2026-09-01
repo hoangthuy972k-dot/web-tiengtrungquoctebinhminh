@@ -720,6 +720,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk3-bai-19.html'
+      },
+      {
+        id: 'hsk3-l20',
+        number: 20,
+        title: 'Mình chịu ảnh hưởng từ anh ấy',
+        titleHanzi: '我被他影响了',
+        titlePinyin: 'Wǒ bèi tā yǐngxiǎng le',
+        topic: 'Máy ảnh, Sở thích & Giải quyết vấn đề',
+        vocabCount: 14,
+        dialogueCount: 4,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk3-bai-20.html'
       }
     ],
     hsk1v3: [

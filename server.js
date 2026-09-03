@@ -159,10 +159,18 @@ async function initDb() {
       'lessons_done INT DEFAULT 0, ' +
       'study_days LONGTEXT, ' +
       'lesson_scores LONGTEXT, ' +
+      'review_wrong_words LONGTEXT, ' +
       'updated_at DATETIME, ' +
       'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
     ')'
   );
+  // Bang scores co the da ton tai tu truoc khi co cot nay (deploy cu) —
+  // ALTER them cot, bo qua loi "da co cot roi" de khong crash khi khoi dong lai.
+  try {
+    await dbPool.query('ALTER TABLE scores ADD COLUMN review_wrong_words LONGTEXT');
+  } catch (err) {
+    if (err.code !== 'ER_DUP_FIELDNAME') throw err;
+  }
   console.log('MySQL: da san sang (bang users/scores).');
 }
 
@@ -235,6 +243,7 @@ async function loadScores() {
       lessonsDone: r.lessons_done,
       studyDays: JSON.parse(r.study_days || '[]'),
       lessonScores: JSON.parse(r.lesson_scores || '{}'),
+      reviewWrongWords: JSON.parse(r.review_wrong_words || '{}'),
       updatedAt: r.updated_at,
     };
   });
@@ -245,13 +254,13 @@ async function saveScores(scores) {
   for (const userId of Object.keys(scores)) {
     const s = scores[userId];
     await dbPool.query(
-      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?) ' +
+      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,review_wrong_words,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ' +
         'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), total_correct=VALUES(total_correct), ' +
         'total_questions=VALUES(total_questions), streak=VALUES(streak), lessons_done=VALUES(lessons_done), ' +
-        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), updated_at=VALUES(updated_at)',
+        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), review_wrong_words=VALUES(review_wrong_words), updated_at=VALUES(updated_at)',
       [
         userId, s.name, s.level, s.totalCorrect, s.totalQuestions, s.streak, s.lessonsDone,
-        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), s.updatedAt,
+        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), JSON.stringify(s.reviewWrongWords || {}), s.updatedAt,
       ]
     );
   }
@@ -295,10 +304,11 @@ function publicUser(user) {
 async function userProgress(userId) {
   const scores = await loadScores();
   const sc = scores[userId];
-  if (!sc) return { studyDays: [], lessonScores: {}, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
+  if (!sc) return { studyDays: [], lessonScores: {}, reviewWrongWords: {}, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
   return {
     studyDays: sc.studyDays || [],
     lessonScores: sc.lessonScores || {},
+    reviewWrongWords: sc.reviewWrongWords || {},
     streak: sc.streak || 0,
     totalCorrect: sc.totalCorrect || 0,
     totalQuestions: sc.totalQuestions || 0,
@@ -373,10 +383,25 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
   const incomingLessonScores = req.body?.lessonScores && typeof req.body.lessonScores === 'object' && !Array.isArray(req.body.lessonScores)
     ? req.body.lessonScores
     : {};
+  // reviewWrongWords: { "hsk3:1,2,3": ["词典", "腿", ...], ... } — moi nhom
+  // bai la 1 khoa. Khac voi studyDays (chi cong don), tu sai co the duoc
+  // XOA khoi mang khi hoc sinh tra loi dung lai, nen GHI DE theo tung khoa
+  // nhom bai (nhu lessonScores) thay vi gop (union) tung tu — thiet bi vua
+  // dong bo se thang cho dung nhom bai no vua sua, cac nhom khac giu nguyen.
+  const incomingReviewWrongWords = {};
+  if (req.body?.reviewWrongWords && typeof req.body.reviewWrongWords === 'object' && !Array.isArray(req.body.reviewWrongWords)) {
+    Object.keys(req.body.reviewWrongWords).slice(0, 200).forEach((key) => {
+      if (typeof key !== 'string' || key.length > 100) return;
+      const val = req.body.reviewWrongWords[key];
+      if (!Array.isArray(val)) return;
+      incomingReviewWrongWords[key] = val.filter((w) => typeof w === 'string' && w.length <= 40).slice(0, 500);
+    });
+  }
   const scores = await loadScores();
   const existing = scores[req.user.id] || {};
   const mergedDays = Array.from(new Set((existing.studyDays || []).concat(incomingDays))).sort();
   const mergedLessonScores = Object.assign({}, existing.lessonScores || {}, incomingLessonScores);
+  const mergedReviewWrongWords = Object.assign({}, existing.reviewWrongWords || {}, incomingReviewWrongWords);
   scores[req.user.id] = {
     name: req.user.name,
     level: req.user.level,
@@ -386,6 +411,7 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
     lessonsDone: Math.max(0, Math.round(lessonsDone)),
     studyDays: mergedDays,
     lessonScores: mergedLessonScores,
+    reviewWrongWords: mergedReviewWrongWords,
     updatedAt: new Date().toISOString(),
   };
   await saveScores(scores);

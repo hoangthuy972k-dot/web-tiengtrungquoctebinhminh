@@ -71,13 +71,14 @@
     });
     var studyDays = readJSON(STORAGE_KEYS.studyDays, []);
     var streak = computeStreak(studyDays);
+    var reviewWrongWords = readJSON(STORAGE_KEYS.reviewWrongWords, {});
 
     fetch('/api/scores/sync', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
       body: JSON.stringify({
         totalCorrect: totalCorrect, totalQuestions: totalQuestions, streak: streak, lessonsDone: lessonsDone,
-        studyDays: studyDays, lessonScores: allScores
+        studyDays: studyDays, lessonScores: allScores, reviewWrongWords: reviewWrongWords
       })
     }).catch(function () {});
   }
@@ -100,6 +101,12 @@
     Object.keys(localScores).forEach(function (k) { mergedScores[k] = localScores[k]; });
     Object.keys(progress.lessonScores || {}).forEach(function (k) { mergedScores[k] = progress.lessonScores[k]; });
     writeJSON(STORAGE_KEYS.lessonScores, mergedScores);
+
+    var localReviewWords = readJSON(STORAGE_KEYS.reviewWrongWords, {});
+    var mergedReviewWords = {};
+    Object.keys(localReviewWords).forEach(function (k) { mergedReviewWords[k] = localReviewWords[k]; });
+    Object.keys(progress.reviewWrongWords || {}).forEach(function (k) { mergedReviewWords[k] = progress.reviewWrongWords[k]; });
+    writeJSON(STORAGE_KEYS.reviewWrongWords, mergedReviewWords);
 
     renderStreak();
     renderStatTiles();
@@ -1677,6 +1684,7 @@
     var all = readJSON(STORAGE_KEYS.reviewWrongWords, {});
     all[rvGroupKey] = Array.from(rvWrongWords);
     writeJSON(STORAGE_KEYS.reviewWrongWords, all);
+    syncProgressToServer();
   }
 
   function loadReviewVocab(levelId, lessonNumbers) {

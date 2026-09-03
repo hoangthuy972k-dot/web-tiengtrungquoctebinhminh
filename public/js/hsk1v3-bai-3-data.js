@@ -17,12 +17,22 @@ var vocabData = [
    ex_zh:'我的中文老师也是中国人。',ex_py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',ex_vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.',
    exList:[
      {zh:'我的中文老师也是中国人。',py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.'},
+   ],
+   hanzi:[
+     {c:'的',p:'de',type:'左右结构 · Trái-phải',st:8,ord:'白(bạch) trái → 勺(chước) phải',rad:'白 (bạch – trắng, rõ ràng)',mean:'trợ từ sở hữu (của)',
+      tip:'白(rõ ràng, sáng tỏ) + 勺(cái muỗng, mượn âm đọc gần "de") → mượn âm 勺 ghép với 白 để tạo trợ từ chỉ SỞ HỮU, nghĩa gốc không còn liên quan.',
+      cf:'得 (dé/děi – "được, phải", cũng đọc "de" nhẹ trong một số trường hợp, dễ nhầm chức năng ngữ pháp)',w:'我的 / 你的 / 老师的'},
    ]},
   {n:3,zh:'这',py:'zhè',pos:'Đại từ',vn:'này, đây',em:'👆',lesson:2,
    ex_zh:'这是谁？',ex_py:'Zhè shì shéi?',ex_vn:'Đây là ai?',
    exList:[
      {zh:'这是谁？',py:'Zhè shì shéi?',vn:'Đây là ai?'},
      {zh:'这是我女朋友。',py:'Zhè shì wǒ nǚpéngyou.',vn:'Đây là bạn gái tôi.'},
+   ],
+   hanzi:[
+     {c:'这',p:'zhè',type:'半包围结构 · Bán bao vây',st:7,ord:'文(văn) bên trong → 辶(sước) bao quanh dưới-trái',rad:'辶 (sước – đi, chuyển động)',mean:'này, đây (chỉ thị gần)',
+      tip:'辶(đi, di chuyển tới) bao quanh 文(sự việc, văn bản) → bước tới chỉ ngay vào một thứ đang ở GẦN mình, nghĩa là "THIS, ĐÂY".',
+      cf:'边 (biān – "bên cạnh", cũng có bộ 辶 nhưng bên trong là 边")',w:'这是 / 这个 / 这里'},
    ]},
   {n:4,zh:'谁',py:'shéi/shuí',pos:'Đại từ',vn:'ai',em:'❓',lesson:2,
    ex_zh:'这是谁？',ex_py:'Zhè shì shéi?',ex_vn:'Đây là ai?',
@@ -38,41 +48,90 @@ var vocabData = [
    ex_zh:'这是我女朋友。',ex_py:'Zhè shì wǒ nǚpéngyou.',ex_vn:'Đây là bạn gái tôi.',
    exList:[
      {zh:'这是我女朋友。',py:'Zhè shì wǒ nǚpéngyou.',vn:'Đây là bạn gái tôi.'},
+   ],
+   hanzi:[
+     {c:'女',p:'nǚ',type:'独体字 · Chữ đơn',st:3,ord:'3 nét mô phỏng dáng người phụ nữ ngồi, hai tay khoanh trước ngực',rad:'女 (nữ – tự thành bộ, nghĩa: phụ nữ)',mean:'nữ, con gái, phụ nữ',
+      tip:'Chữ tượng hình cổ vẽ dáng một người PHỤ NỮ đang ngồi, hai tay khoanh trước ngực một cách dịu dàng.',
+      cf:'安 (ān – "an toàn", có 女 ở dưới bộ 宀")',w:'女朋友 / 女儿 / 女人'},
+     {c:'朋',p:'péng',type:'左右结构 · Trái-phải',st:8,ord:'月(nguyệt) trái → 月(nguyệt) phải',rad:'月 (nguyệt – trăng, tháng)',mean:'bạn bè',
+      tip:'Hai chữ 月(trăng) đứng sóng đôi cạnh nhau như hai vầng trăng luôn ở BÊN NHAU → tượng trưng cho BẠN BÈ gắn bó.',
+      cf:'崩 (bēng – "sụp đổ", trên có 山, dưới có 朋")',w:'朋友 / 女朋友 / 男朋友'},
+     {c:'友',p:'yǒu',type:'上下结构 · Trên-dưới',st:4,ord:'𠂇(tay trái, biến thể) trên → 又(tay phải) dưới',rad:'又 (hựu – lại, bàn tay)',mean:'bạn, bạn bè',
+      tip:'Hai bộ phận đều là hình biến thể của BÀN TAY (𠂇 trên, 又 dưới) nắm chặt lấy nhau → hai tay nắm nhau biểu thị tình BẠN BÈ thân thiết.',
+      cf:'反 (fǎn – "trái, ngược lại", cũng có 又 ở dưới nhưng trên là 厂")',w:'朋友 / 友好 / 女朋友'},
    ]},
   {n:6,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào',em:'🌍',lesson:2,
    ex_zh:'你女朋友是哪国人？',ex_py:'Nǐ nǚpéngyou shì nǎ guó rén?',ex_vn:'Bạn gái của bạn là người nước nào?',
    exList:[
      {zh:'你女朋友是哪国人？',py:'Nǐ nǚpéngyou shì nǎ guó rén?',vn:'Bạn gái của bạn là người nước nào?'},
+   ],
+   hanzi:[
+     {c:'哪',p:'nǎ',type:'左右结构 · Trái-phải',st:9,ord:'口(khẩu) trái → 那(na) phải',rad:'口 (khẩu – miệng)',mean:'nào, cái nào (nghi vấn)',
+      tip:'口(miệng, dùng để hỏi) + 那(kia, đó) → dùng MIỆNG hỏi xem đó là cái "kia" NÀO, tạo thành từ nghi vấn "哪".',
+      cf:'那 (nà – "đó, kia", chỉ khác là thiếu bộ 口 bên trái)',w:'哪国 / 哪里 / 哪个'},
    ]},
   {n:7,zh:'国',py:'guó',pos:'Danh từ',vn:'quốc gia, đất nước',em:'🏳️',lesson:2,
    ex_zh:'你女朋友是哪国人？',ex_py:'Nǐ nǚpéngyou shì nǎ guó rén?',ex_vn:'Bạn gái của bạn là người nước nào?',
    exList:[
      {zh:'你女朋友是哪国人？',py:'Nǐ nǚpéngyou shì nǎ guó rén?',vn:'Bạn gái của bạn là người nước nào?'},
+   ],
+   hanzi:[
+     {c:'国',p:'guó',type:'全包围结构 · Bao vây toàn phần',st:8,ord:'囗(vi) bao ngoài → 玉(ngọc, biến thể) bên trong',rad:'囗 (vi – vây quanh, bao bọc)',mean:'nước, quốc gia',
+      tip:'囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.',
+      cf:'固 (gù – "vững chắc", cũng có 囗 bao ngoài nhưng bên trong là 古")',w:'中国 / 法国 / 泰国'},
    ]},
   {n:8,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, chị ấy, bạn ấy',em:'👩',lesson:2,
    ex_zh:'她也是泰国人。',ex_py:'Tā yě shì Tàiguó rén.',ex_vn:'Cô ấy cũng là người Thái Lan.',
    exList:[
      {zh:'她也是泰国人。',py:'Tā yě shì Tàiguó rén.',vn:'Cô ấy cũng là người Thái Lan.'},
+   ],
+   hanzi:[
+     {c:'她',p:'tā',type:'左右结构 · Trái-phải',st:6,ord:'女(nữ) trái → 也(dã) phải',rad:'女 (nữ – phụ nữ)',mean:'cô ấy, chị ấy (đại từ ngôi 3, nữ)',
+      tip:'女(phụ nữ) + 也(cũng, mượn âm đọc gần "tā") → mượn âm 也 ghép với bộ 女 để tạo đại từ ngôi thứ ba riêng cho NỮ GIỚI.',
+      cf:'他 (tā – "anh ấy, ông ấy", cùng âm đọc nhưng dùng bộ 亻cho nam giới)',w:'她是 / 她的 / 她也'},
    ]},
   {n:9,zh:'喂',py:'wèi',pos:'Thán từ',vn:'a lô',em:'📞',lesson:3,
    ex_zh:'喂，一飞！',ex_py:'Wèi, Yīfēi!',ex_vn:'A lô, Nhất Phi à!',
    exList:[
      {zh:'喂，一飞！',py:'Wèi, Yīfēi!',vn:'A lô, Nhất Phi à!'},
+   ],
+   hanzi:[
+     {c:'喂',p:'wèi',type:'左右结构 · Trái-phải',st:12,ord:'口(khẩu) trái → 畏(uý) phải',rad:'口 (khẩu – miệng)',mean:'a lô, này (gọi ai đó / nghe điện thoại)',
+      tip:'口(miệng, phát ra tiếng) + 畏(e dè, thận trọng) → cất tiếng gọi một cách nhẹ nhàng để gây chú ý, giống tiếng "A LÔ" khi bắt đầu cuộc gọi.',
+      cf:'猥 (wěi – "bỉ ổi", cũng có 畏 nhưng bộ 犭 bên trái)',w:'喂，你好 / 喂？'},
    ]},
   {n:10,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái',em:'👧',lesson:3,
    ex_zh:'姐姐！',ex_py:'Jiějie!',ex_vn:'Chị ơi!',
    exList:[
      {zh:'姐姐！',py:'Jiějie!',vn:'Chị ơi!'},
+   ],
+   hanzi:[
+     {c:'姐',p:'jiě',type:'左右结构 · Trái-phải',st:8,ord:'女(nữ) trái → 且(thả) phải',rad:'女 (nữ – phụ nữ)',mean:'chị gái',
+      tip:'女(phụ nữ) + 且(thêm nữa, hình các lớp chồng lên nhau) → người phụ nữ sinh ra TRƯỚC, đứng ở bậc trên trong nhà, tức là CHỊ GÁI.',
+      cf:'组 (zǔ – "tổ, nhóm", bộ 纟 bên trái thay vì 女")',w:'姐姐 / 姐妹'},
    ]},
   {n:11,zh:'工作',py:'gōngzuò',pos:'Danh từ',vn:'công việc',em:'💼',lesson:3,
    ex_zh:'你工作还忙吗？',ex_py:'Nǐ gōngzuò hái máng ma?',ex_vn:'Công việc của em vẫn bận chứ?',
    exList:[
      {zh:'你工作还忙吗？',py:'Nǐ gōngzuò hái máng ma?',vn:'Công việc của em vẫn bận chứ?'},
+   ],
+   hanzi:[
+     {c:'工',p:'gōng',type:'独体字 · Chữ đơn',st:3,ord:'横(ngang trên) → 竖(sổ giữa) → 横(ngang dưới)',rad:'工 (công – tự thành bộ, nghĩa: công cụ, thợ)',mean:'công việc, thợ, công cụ',
+      tip:'Hình vẽ giống cây THƯỚC THỢ (dụng cụ xây dựng) với hai đầu ngang và một trục dọc → tượng trưng cho LAO ĐỘNG, CÔNG VIỆC.',
+      cf:'土 (tǔ – "đất", nét ngang dưới ngắn hơn thay vì dài bằng, hình dáng gần giống 工")',w:'工作 / 工人'},
+     {c:'作',p:'zuò',type:'左右结构 · Trái-phải',st:7,ord:'亻(nhân) trái → 乍(sạ) phải',rad:'亻 (nhân – người)',mean:'làm, việc làm',
+      tip:'亻(người) + 乍(bỗng nhiên, vừa mới) → người bắt tay vào LÀM một việc ngay khi vừa nghĩ ra.',
+      cf:'昨 (zuó – "hôm qua", cũng có 乍 nhưng bộ 日 bên trái)',w:'工作 / 作业'},
    ]},
   {n:12,zh:'还',py:'hái',pos:'Phó từ',vn:'vẫn',em:'🔁',lesson:3,
    ex_zh:'对，还很忙。',ex_py:'Duì, hái hěn máng.',ex_vn:'Vâng, vẫn rất bận.',
    exList:[
      {zh:'对，还很忙。',py:'Duì, hái hěn máng.',vn:'Vâng, vẫn rất bận.'},
+   ],
+   hanzi:[
+     {c:'还',p:'hái',type:'半包围结构 · Bán bao vây',st:7,ord:'不(bất) bên trong → 辶(sước) bao quanh dưới-trái',rad:'辶 (sước – đi, chuyển động)',mean:'vẫn, còn',
+      tip:'不(chưa, không) + 辶(di chuyển, tiếp diễn) → việc CHƯA xong nhưng vẫn tiếp tục DI CHUYỂN/duy trì, nghĩa là "VẪN CÒN".',
+      cf:'达 (dá – "đạt tới", cũng có bộ 辶 nhưng bên trong là 大")',w:'还忙 / 还是 / 还有'},
    ]},
   {n:13,zh:'忙',py:'máng',pos:'Tính từ',vn:'bận, bận rộn',em:'😰',lesson:3,
    ex_zh:'你也很忙吗？',ex_py:'Nǐ yě hěn máng ma?',ex_vn:'Chị cũng bận lắm phải không?',
@@ -88,21 +147,44 @@ var vocabData = [
    ex_zh:'你工作还忙吗？',ex_py:'Nǐ gōngzuò hái máng ma?',ex_vn:'Công việc của em vẫn bận chứ?',
    exList:[
      {zh:'你工作还忙吗？',py:'Nǐ gōngzuò hái máng ma?',vn:'Công việc của em vẫn bận chứ?'},
+   ],
+   hanzi:[
+     {c:'吗',p:'ma',type:'左右结构 · Trái-phải',st:6,ord:'口(khẩu) trái → 马(mã) phải',rad:'口 (khẩu – miệng)',mean:'trợ từ nghi vấn cuối câu',
+      tip:'口(miệng, lời nói) + 马(con ngựa, mượn âm đọc gần "ma") → mượn âm của 马 ghép bộ 口 để tạo trợ từ hỏi cuối câu, không liên quan nghĩa "ngựa".',
+      cf:'妈 (mā – "mẹ", cũng có 马 nhưng bộ 女 bên trái)',w:'忙吗 / 你好吗 / 是吗'},
    ]},
   {n:15,zh:'对',py:'duì',pos:'Tính từ',vn:'đúng',em:'✔️',lesson:3,
    ex_zh:'对，还很忙。',ex_py:'Duì, hái hěn máng.',ex_vn:'Vâng, vẫn rất bận.',
    exList:[
      {zh:'对，还很忙。',py:'Duì, hái hěn máng.',vn:'Vâng, vẫn rất bận.'},
+   ],
+   hanzi:[
+     {c:'对',p:'duì',type:'左右结构 · Trái-phải',st:5,ord:'又(biến thể, rút gọn) trái → 寸(thốn) phải',rad:'寸 (thốn – tấc, chuẩn mực, đo lường)',mean:'đúng, đối, đáp lại',
+      tip:'Bên trái là hình rút gọn tượng trưng lời nói/ý kiến, bên phải là 寸(chuẩn mực) → so ý kiến với CHUẨN MỰC thấy khớp thì là ĐÚNG.',
+      cf:'付 (fù – "trả (tiền)", cũng có 寸 bên phải nhưng bộ 亻bên trái)',w:'对，还很忙 / 对不起 / 不对'},
    ]},
   {n:16,zh:'太',py:'tài',pos:'Phó từ',vn:'quá, lắm',em:'⚡',lesson:3,
    ex_zh:'我不太忙。',ex_py:'Wǒ bú tài máng.',ex_vn:'Tôi không bận lắm.',
    exList:[
      {zh:'我不太忙。',py:'Wǒ bú tài máng.',vn:'Tôi không bận lắm.'},
+   ],
+   hanzi:[
+     {c:'太',p:'tài',type:'独体字 · Chữ đơn',st:4,ord:'大(đại) → thêm 丶(điểm) bên dưới',rad:'大 (đại – to lớn)',mean:'quá, lắm, thái (rất)',
+      tip:'大(to lớn) thêm một dấu CHẤM nhỏ bên dưới như phóng đại thêm nữa → "to đến mức QUÁ, LẮM".',
+      cf:'大 (dà – "to, lớn", thiếu dấu chấm so với 太")',w:'太忙 / 太好了 / 不太'},
    ]},
   {n:17,zh:'我们',py:'wǒmen',pos:'Đại từ',vn:'chúng tôi, chúng ta',em:'🙋‍♀️🙋',lesson:3,
    ex_zh:'我们很想你。',ex_py:'Wǒmen hěn xiǎng nǐ.',ex_vn:'Chúng tôi rất nhớ em.',
    exList:[
      {zh:'我们很想你。',py:'Wǒmen hěn xiǎng nǐ.',vn:'Chúng tôi rất nhớ em.'},
+   ],
+   hanzi:[
+     {c:'我',p:'wǒ',type:'独体字 · Chữ đơn',st:7,ord:'撇 → 横 → 竖钩 → 横 → 斜钩 → 撇 → 捺 (nét phức, tượng hình vũ khí cổ)',rad:'戈 (qua – cây giáo, vũ khí)',mean:'tôi, ta',
+      tip:'Chữ tượng hình cổ mô phỏng một loại VŨ KHÍ có răng cưa mà người xưa cầm để tự vệ, dần mang nghĩa "bản thân TA, TÔI" như người cầm vũ khí bảo vệ chính mình.',
+      cf:'找 (zhǎo – "tìm", cũng có 戈 bên phải nhưng thêm bộ 扌bên trái)',w:'我是 / 我的 / 我们'},
+     {c:'们',p:'men',type:'左右结构 · Trái-phải',st:5,ord:'亻(nhân) trái → 门(môn) phải',rad:'亻 (nhân – người)',mean:'(hậu tố chỉ số nhiều cho người)',
+      tip:'亻(người) + 门(cái cửa, mượn âm đọc gần "men") → như mở CỬA đón nhiều NGƯỜI vào, biểu thị số NHIỀU cho đại từ chỉ người.',
+      cf:'门 (mén – "cửa", thiếu bộ 亻bên trái)',w:'我们 / 你们 / 他们'},
    ]},
   {n:18,zh:'想',py:'xiǎng',pos:'Động từ',vn:'nhớ',em:'💭',lesson:3,
    ex_zh:'我也想你们。',ex_py:'Wǒ yě xiǎng nǐmen.',ex_vn:'Em cũng nhớ mọi người.',
@@ -118,21 +200,53 @@ var vocabData = [
    ex_zh:'我是中国人。',ex_py:'Wǒ shì Zhōngguó rén.',ex_vn:'Tôi là người Trung Quốc.',
    exList:[
      {zh:'我是中国人。',py:'Wǒ shì Zhōngguó rén.',vn:'Tôi là người Trung Quốc.'},
+   ],
+   hanzi:[
+     {c:'中',p:'zhōng',type:'独体字 · Chữ đơn',st:4,ord:'口(hình chữ nhật) → 丨(cổn, nét sổ xuyên giữa)',rad:'丨 (cổn – nét sổ thẳng)',mean:'giữa, trung tâm, trong',
+      tip:'Một nét sổ THẲNG xuyên qua chính giữa hình chữ nhật (口) như mũi tên cắm đúng TÂM bia → biểu thị vị trí Ở GIỮA, TRUNG TÂM.',
+      cf:'由 (yóu – "từ, bởi", nét sổ không xuyên hẳn lên trên như 中")',w:'中国 / 中文 / 中间'},
+     {c:'国',p:'guó',type:'全包围结构 · Bao vây toàn phần',st:8,ord:'囗(vi) bao ngoài → 玉(ngọc, biến thể) bên trong',rad:'囗 (vi – vây quanh, bao bọc)',mean:'nước, quốc gia',
+      tip:'囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.',
+      cf:'固 (gù – "vững chắc", cũng có 囗 bao ngoài nhưng bên trong là 古")',w:'中国 / 法国 / 泰国'},
    ]},
   {n:20,zh:'法国',py:'Fǎguó',pos:'Danh từ riêng',vn:'Pháp',em:'🇫🇷',lesson:1,
    ex_zh:'我是法国人。',ex_py:'Wǒ shì Fǎguó rén.',ex_vn:'Tôi là người Pháp.',
    exList:[
      {zh:'我是法国人。',py:'Wǒ shì Fǎguó rén.',vn:'Tôi là người Pháp.'},
+   ],
+   hanzi:[
+     {c:'法',p:'fǎ',type:'左右结构 · Trái-phải',st:8,ord:'氵(thuỷ) trái → 去(khứ) phải',rad:'氵 (thuỷ – nước)',mean:'pháp luật, phương pháp; (phiên âm "Pháp" trong 法国)',
+      tip:'氵(nước) + 去(rời đi, trôi đi) → nước luôn CHẢY theo một quy luật nhất định, không đổi hướng tuỳ tiện, tượng trưng cho PHÁP LUẬT, QUY TẮC.',
+      cf:'去 (qù – "đi", thiếu bộ 氵 bên trái)',w:'法国 / 法语 / 想办法'},
+     {c:'国',p:'guó',type:'全包围结构 · Bao vây toàn phần',st:8,ord:'囗(vi) bao ngoài → 玉(ngọc, biến thể) bên trong',rad:'囗 (vi – vây quanh, bao bọc)',mean:'nước, quốc gia',
+      tip:'囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.',
+      cf:'固 (gù – "vững chắc", cũng có 囗 bao ngoài nhưng bên trong là 古")',w:'中国 / 法国 / 泰国'},
    ]},
   {n:21,zh:'中文',py:'Zhōngwén',pos:'Danh từ riêng',vn:'tiếng Trung Quốc',em:'🈶',lesson:1,
    ex_zh:'我的中文老师也是中国人。',ex_py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',ex_vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.',
    exList:[
      {zh:'我的中文老师也是中国人。',py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.'},
+   ],
+   hanzi:[
+     {c:'中',p:'zhōng',type:'独体字 · Chữ đơn',st:4,ord:'口(hình chữ nhật) → 丨(cổn, nét sổ xuyên giữa)',rad:'丨 (cổn – nét sổ thẳng)',mean:'giữa, trung tâm, trong',
+      tip:'Một nét sổ THẲNG xuyên qua chính giữa hình chữ nhật (口) như mũi tên cắm đúng TÂM bia → biểu thị vị trí Ở GIỮA, TRUNG TÂM.',
+      cf:'由 (yóu – "từ, bởi", nét sổ không xuyên hẳn lên trên như 中")',w:'中国 / 中文 / 中间'},
+     {c:'文',p:'wén',type:'独体字 · Chữ đơn',st:4,ord:'点(chấm) → 横(ngang) → 撇(phẩy) → 捺(mác)',rad:'文 (văn – tự thành bộ, nghĩa: chữ viết, văn chương)',mean:'văn tự, chữ viết, ngôn ngữ',
+      tip:'Chữ tượng hình cổ mô phỏng hoạ tiết đan xen trên thân người/đồ vật thời xưa → dần mang nghĩa CHỮ VIẾT, VĂN CHƯƠNG.',
+      cf:'父 (fù – "cha", hai nét đầu là hai phẩy chéo thay vì chấm + ngang)',w:'中文 / 文化 / 文字'},
    ]},
   {n:22,zh:'泰国',py:'Tàiguó',pos:'Danh từ riêng',vn:'Thái Lan',em:'🇹🇭',lesson:2,
    ex_zh:'她也是泰国人。',ex_py:'Tā yě shì Tàiguó rén.',ex_vn:'Cô ấy cũng là người Thái Lan.',
    exList:[
      {zh:'她也是泰国人。',py:'Tā yě shì Tàiguó rén.',vn:'Cô ấy cũng là người Thái Lan.'},
+   ],
+   hanzi:[
+     {c:'泰',p:'tài',type:'上下结构 · Trên-dưới',st:9,ord:'𡗗(nhiều người, biến thể) trên → 水(thuỷ) dưới',rad:'水 (thuỷ – nước)',mean:'yên ổn, to lớn; (phiên âm "Thái" trong 泰国)',
+      tip:'Phần trên tượng trưng nhiều NGƯỜI cùng hợp sức, phần dưới là 水(nước) → nhiều người chung tay khơi thông dòng NƯỚC lớn mà vẫn giữ được YÊN ỔN, THÁI BÌNH (dùng phiên âm tên nước Thái Lan).',
+      cf:'秦 (qín – "nhà Tần", hình gần giống phần trên nhưng bên dưới là 禾")',w:'泰国 / 泰山'},
+     {c:'国',p:'guó',type:'全包围结构 · Bao vây toàn phần',st:8,ord:'囗(vi) bao ngoài → 玉(ngọc, biến thể) bên trong',rad:'囗 (vi – vây quanh, bao bọc)',mean:'nước, quốc gia',
+      tip:'囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.',
+      cf:'固 (gù – "vững chắc", cũng có 囗 bao ngoài nhưng bên trong là 古")',w:'中国 / 法国 / 泰国'},
    ]},
 ];
 

@@ -375,7 +375,13 @@
   // se bo sung dan sau khi duyet giao dien nay.
   var REVIEW_GROUPS = {
     hsk3: [
-      { afterNumber: 3, lessons: [1, 2, 3] }
+      { afterNumber: 3, lessons: [1, 2, 3] },
+      { afterNumber: 6, lessons: [4, 5, 6] },
+      { afterNumber: 9, lessons: [7, 8, 9] },
+      { afterNumber: 12, lessons: [10, 11, 12] },
+      { afterNumber: 15, lessons: [13, 14, 15] },
+      { afterNumber: 18, lessons: [16, 17, 18] },
+      { afterNumber: 20, lessons: [19, 20] }
     ]
   };
 

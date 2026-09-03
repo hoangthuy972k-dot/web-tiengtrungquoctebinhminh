@@ -8,7 +8,8 @@
     lessonScores: 'hyv_lesson_scores',
     auth: 'hyv_auth',
     visitorId: 'hyv_visitor_id',
-    authPrompted: 'hyv_auth_prompted'
+    authPrompted: 'hyv_auth_prompted',
+    reviewWrongWords: 'hyv_review_wrong_words'
   };
 
   // Diem that theo tung phan cua tung bai hoc, ghi lai khi hoc sinh hoan thanh
@@ -1657,7 +1658,26 @@
   var rvVocab = [];
   var rvQuiz = {};
   var rvRound = 2;
-  var rvWrongWords = new Set(); // tu da tra loi sai o bat ky vong nao trong luot on tap hien tai
+  // Tu da tra loi sai o bat ky vong nao — luu theo chu Han (w.zh) de con
+  // ghi duoc vao localStorage, va nho lau dai giua cac lan hoc (khong mat
+  // khi tat trinh duyet). rvGroupKey xac dinh "on tap nay la cua nhom bai nao".
+  var rvWrongWords = new Set();
+  var rvGroupKey = '';
+
+  function rvMakeGroupKey(levelId, lessonNumbers) {
+    return levelId + ':' + lessonNumbers.slice().sort(function (a, b) { return a - b; }).join(',');
+  }
+
+  function rvLoadWrongWords(groupKey) {
+    var all = readJSON(STORAGE_KEYS.reviewWrongWords, {});
+    return new Set(all[groupKey] || []);
+  }
+
+  function rvSaveWrongWords() {
+    var all = readJSON(STORAGE_KEYS.reviewWrongWords, {});
+    all[rvGroupKey] = Array.from(rvWrongWords);
+    writeJSON(STORAGE_KEYS.reviewWrongWords, all);
+  }
 
   function loadReviewVocab(levelId, lessonNumbers) {
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[levelId]) || [];
@@ -1734,7 +1754,8 @@
           if (options[j] === word) b.classList.add('is-correct');
           else if (j === i) b.classList.add('is-wrong');
         });
-        if (isCorrect) { state.score++; rvWrongWords.delete(word); } else { rvWrongWords.add(word); }
+        if (isCorrect) { state.score++; rvWrongWords.delete(word.zh); } else { rvWrongWords.add(word.zh); }
+        rvSaveWrongWords();
         pgbRecord(pgbId, state.pos, isCorrect, 5);
         setTimeout(function () {
           state.pos++;
@@ -1849,7 +1870,7 @@
   // anh dung trang thai hien tai.
   function rvRenderWeakQuiz() {
     var wrap = $('#rvContent');
-    var words = Array.from(rvWrongWords);
+    var words = rvVocab.filter(function (w) { return rvWrongWords.has(w.zh); });
     if (!words.length) {
       wrap.innerHTML = '<div class="vp-quiz-done">' +
         '<p style="color:var(--color-gray-600);">🎉 Hiện chưa có từ nào cần ôn lại. Hãy làm các vòng khác — từ nào bạn trả lời sai sẽ tự động xuất hiện ở đây để ôn lại.</p></div>';
@@ -1916,7 +1937,8 @@
     $('#rvContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     rvQuiz = {};
     rvRound = 2;
-    rvWrongWords = new Set();
+    rvGroupKey = rvMakeGroupKey(levelId, lessonNumbers);
+    rvWrongWords = rvLoadWrongWords(rvGroupKey);
     loadReviewVocab(levelId, lessonNumbers).then(function (vocab) {
       rvVocab = vocab;
       rvRenderRound(2);

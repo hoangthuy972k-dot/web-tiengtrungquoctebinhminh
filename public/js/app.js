@@ -390,16 +390,25 @@
   // (vd sau Bai 3 -> on Bai 1-2-3; sau Bai 6 -> on Bai 4-5-6). Hien tai moi
   // co du lieu cho nhom dau tien (HSK3 Bai 1-3) de lam thu; cac nhom khac
   // se bo sung dan sau khi duyet giao dien nay.
+  // Chia 1 cap do thanh cac nhom on tap moi 3 bai (nhom cuoi co the con 1-2
+  // bai le neu tong so bai khong chia het cho 3) — dung chung cho moi cap do
+  // thay vi liet ke tay tung nhom.
+  function rvBuildGroups(totalLessons) {
+    var groups = [];
+    for (var start = 1; start <= totalLessons; start += 3) {
+      var end = Math.min(start + 2, totalLessons);
+      var lessons = [];
+      for (var n = start; n <= end; n++) lessons.push(n);
+      groups.push({ afterNumber: end, lessons: lessons });
+    }
+    return groups;
+  }
+
   var REVIEW_GROUPS = {
-    hsk3: [
-      { afterNumber: 3, lessons: [1, 2, 3] },
-      { afterNumber: 6, lessons: [4, 5, 6] },
-      { afterNumber: 9, lessons: [7, 8, 9] },
-      { afterNumber: 12, lessons: [10, 11, 12] },
-      { afterNumber: 15, lessons: [13, 14, 15] },
-      { afterNumber: 18, lessons: [16, 17, 18] },
-      { afterNumber: 20, lessons: [19, 20] }
-    ]
+    hsk3: rvBuildGroups(20),
+    hsk1: rvBuildGroups(15),
+    hsk2: rvBuildGroups(15),
+    hsk1v3: rvBuildGroups(15)
   };
 
   function renderLessonList(id) {

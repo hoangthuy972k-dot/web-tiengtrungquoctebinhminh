@@ -42,7 +42,16 @@
   // Gui tong diem THAT (tinh tu du lieu that da luu) len server de xep
   // hang — chi khi hoc sinh da dang nhap that (co token). Khong lam gi
   // neu chua dang nhap (diem van luu local binh thuong).
+  // Nhieu su kien co the goi ham nay gan nhu cung luc (vd 1 cu click vua
+  // qua markStudyDay vua qua rvSaveWrongWords) — debounce 400ms de gop
+  // lai thanh 1 request DUY NHAT, luon doc du lieu localStorage MOI NHAT
+  // tai thoi diem no thuc su chay, tranh 2 request ghi de nhau (lost update).
+  var syncProgressTimer = null;
   function syncProgressToServer() {
+    clearTimeout(syncProgressTimer);
+    syncProgressTimer = setTimeout(doSyncProgressToServer, 400);
+  }
+  function doSyncProgressToServer() {
     var auth = readJSON(STORAGE_KEYS.auth, null);
     if (!auth || !auth.token) return;
 

@@ -1650,12 +1650,14 @@
     { id: 2, label: 'Chọn đúng nghĩa', desc: 'Nhìn chữ Hán, chọn nghĩa tiếng Việt phù hợp.' },
     { id: 3, label: 'Nhớ Pinyin', desc: 'Không nhìn đáp án, nhận diện âm đọc có thanh điệu.' },
     { id: 4, label: 'Điền từ theo câu', desc: 'Dùng ngữ cảnh để chọn đúng từ còn thiếu.' },
-    { id: 5, label: 'Kiểm tra tổng hợp', desc: 'Trộn nghĩa, Pinyin và câu ví dụ trong một lượt.' }
+    { id: 5, label: 'Kiểm tra tổng hợp', desc: 'Trộn nghĩa, Pinyin và câu ví dụ trong một lượt.' },
+    { id: 6, label: 'Từ cần ôn lại', desc: 'Ôn lại các từ bạn đã trả lời sai hoặc chưa nắm chắc.' }
   ];
 
   var rvVocab = [];
   var rvQuiz = {};
   var rvRound = 2;
+  var rvWrongWords = new Set(); // tu da tra loi sai o bat ky vong nao trong luot on tap hien tai
 
   function loadReviewVocab(levelId, lessonNumbers) {
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[levelId]) || [];
@@ -1732,7 +1734,7 @@
           if (options[j] === word) b.classList.add('is-correct');
           else if (j === i) b.classList.add('is-wrong');
         });
-        if (isCorrect) state.score++;
+        if (isCorrect) { state.score++; rvWrongWords.delete(word); } else { rvWrongWords.add(word); }
         pgbRecord(pgbId, state.pos, isCorrect, 5);
         setTimeout(function () {
           state.pos++;
@@ -1804,41 +1806,73 @@
       function () { rvQuiz.cloze = null; rvRenderClozeQuiz(); });
   }
 
+  // Xay danh sach cau hoi "tron loai" (nghia / pinyin / dien-cau) tu 1 danh
+  // sach tu bat ky — dung chung cho vong 5 (toan bo tu) va vong 6 (chi tu sai).
+  function rvBuildTypedItems(words) {
+    var types = ['meaning', 'pinyin', 'cloze'];
+    return shuffle(words).map(function (w) {
+      var cloze = rvClozeFor(w);
+      var avail = cloze ? types : ['meaning', 'pinyin'];
+      var type = avail[Math.floor(Math.random() * avail.length)];
+      return { w: w, type: type, cloze: cloze };
+    });
+  }
+
+  function rvTypedPromptHtml(item) {
+    if (item.type === 'meaning') return rvWordPromptHtml(item.w.zh, item.w.py);
+    if (item.type === 'pinyin') return rvWordPromptHtml(item.w.zh, null);
+    return rvClozePromptHtml(item.cloze);
+  }
+
+  function rvTypedOptionLabel(item, opt) {
+    if (item.type === 'meaning') return opt.vn;
+    if (item.type === 'pinyin') return opt.py;
+    return opt.zh;
+  }
+
   function rvRenderMixedQuiz() {
     if (!rvQuiz.mix) {
-      var types = ['meaning', 'pinyin', 'cloze'];
-      var items = shuffle(rvVocab).map(function (w) {
-        var cloze = rvClozeFor(w);
-        var avail = cloze ? types : ['meaning', 'pinyin'];
-        var type = avail[Math.floor(Math.random() * avail.length)];
-        return { w: w, type: type, cloze: cloze };
-      });
-      rvQuiz.mix = { items: items, pos: 0, score: 0 };
+      rvQuiz.mix = { items: rvBuildTypedItems(rvVocab), pos: 0, score: 0 };
       pgbInit('rvqmix', rvQuiz.mix.items.length);
     }
     rvQuizStep('rvqmix', rvQuiz.mix,
       function (item) { return item.w; },
-      function (item) {
-        if (item.type === 'meaning') return rvWordPromptHtml(item.w.zh, item.w.py);
-        if (item.type === 'pinyin') return rvWordPromptHtml(item.w.zh, null);
-        return rvClozePromptHtml(item.cloze);
-      },
-      function (item, opt) {
-        if (item.type === 'meaning') return opt.vn;
-        if (item.type === 'pinyin') return opt.py;
-        return opt.zh;
-      },
+      rvTypedPromptHtml,
+      rvTypedOptionLabel,
       function (item) { return item.type === 'cloze'; },
       function () { rvQuiz.mix = null; rvRenderMixedQuiz(); });
+  }
+
+  // Vong "Tu can on lai": chi lay nhung tu da tra loi sai o bat ky vong nao
+  // (kho song, cap nhat lien tuc — dung sai roi lai dung thi tu se tu bien
+  // mat khoi danh sach nay). Xay lai tu dau moi khi vao vong, de luon phan
+  // anh dung trang thai hien tai.
+  function rvRenderWeakQuiz() {
+    var wrap = $('#rvContent');
+    var words = Array.from(rvWrongWords);
+    if (!words.length) {
+      wrap.innerHTML = '<div class="vp-quiz-done">' +
+        '<p style="color:var(--color-gray-600);">🎉 Hiện chưa có từ nào cần ôn lại. Hãy làm các vòng khác — từ nào bạn trả lời sai sẽ tự động xuất hiện ở đây để ôn lại.</p></div>';
+      return;
+    }
+    rvQuiz.weak = { items: rvBuildTypedItems(words), pos: 0, score: 0 };
+    pgbInit('rvqweak', rvQuiz.weak.items.length);
+    rvQuizStep('rvqweak', rvQuiz.weak,
+      function (item) { return item.w; },
+      rvTypedPromptHtml,
+      rvTypedOptionLabel,
+      function (item) { return item.type === 'cloze'; },
+      function () { rvRenderWeakQuiz(); });
   }
 
   function renderRvRoundTabs() {
     var wrap = $('#rvRoundGrid');
     wrap.innerHTML = RV_ROUNDS.map(function (r) {
+      var desc = r.id === 6 ? r.desc + ' (' + rvWrongWords.size + ' từ)' : r.desc;
       return '<button type="button" class="rv-round-card' + (rvRound === r.id ? ' active' : '') + '" data-round="' + r.id + '">' +
         '<span class="rv-round-tag">VÒNG ' + r.id + '</span>' +
         '<span class="rv-round-title">' + r.label + '</span>' +
-        '<span class="rv-round-desc">' + r.desc + '</span>' +
+        '<span class="rv-round-desc">' + desc + '</span>' +
         '</button>';
     }).join('');
     $all('.rv-round-card', wrap).forEach(function (btn) {
@@ -1853,7 +1887,8 @@
     else if (id === 2) rvRenderMeaningQuiz();
     else if (id === 3) rvRenderPinyinQuiz();
     else if (id === 4) rvRenderClozeQuiz();
-    else rvRenderMixedQuiz();
+    else if (id === 5) rvRenderMixedQuiz();
+    else rvRenderWeakQuiz();
   }
 
   function showReviewPractice(levelId, lessonNumbers, title, subtitle) {
@@ -1881,6 +1916,7 @@
     $('#rvContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     rvQuiz = {};
     rvRound = 2;
+    rvWrongWords = new Set();
     loadReviewVocab(levelId, lessonNumbers).then(function (vocab) {
       rvVocab = vocab;
       rvRenderRound(2);

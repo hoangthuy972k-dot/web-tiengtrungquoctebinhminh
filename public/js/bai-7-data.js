@@ -308,9 +308,9 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: hỏi đường đến siêu thị
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'超市',blank:'离',post:'这儿远吗？',hint:'(cách)',ans:'离'},
+  {pre:'商店',blank:'离',post:'这儿远吗？',hint:'(cách)',ans:'离'},
   {pre:'不远，走几分钟',blank:'就',post:'到了。',hint:'(là, liền)',ans:'就',exp:'就 ở đây nhấn mạnh khoảng cách/thời gian NGẮN.'},
-  {pre:'你',blank:'还',post:'在超市吗？',hint:'(vẫn, còn)',ans:'还'},
+  {pre:'你',blank:'还',post:'在商店吗？',hint:'(vẫn, còn)',ans:'还'},
   {pre:'对，我还在这儿买东西',blank:'呢',post:'。',hint:'(trợ từ ngữ khí — nhấn mạnh)',ans:'呢'},
   {pre:'坐公共汽车要一个多',blank:'小时',post:'。',hint:'(tiếng đồng hồ)',ans:'小时'},
   {pre:'坐公共汽车太',blank:'慢',post:'了。',hint:'(chậm)',ans:'慢'},
@@ -322,7 +322,7 @@ var fillData = [
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['超市','离','这儿','远','吗','？'],ans:'超市离这儿远吗？',audio:'超市离这儿远吗？'},
+  {words:['商店','离','这儿','远','吗','？'],ans:'商店离这儿远吗？',audio:'商店离这儿远吗？'},
   {words:['走','几','分钟','就','到','了','。'],ans:'走几分钟就到了。',audio:'走几分钟就到了。'},
   {words:['坐','公共汽车','要','一','个','多','小时','。'],ans:'坐公共汽车要一个多小时。',audio:'坐公共汽车要一个多小时。'},
   {words:['坐','公共汽车','太','慢','了','。'],ans:'坐公共汽车太慢了。',audio:'坐公共汽车太慢了。'},
@@ -334,14 +334,14 @@ var sortData = [
 // PHẦN 3c · SỬA LỖI SAI
 // ══════════════════════════════════════════
 var errorFixData = [
-  {wrong:'超市远这儿离吗？',
-   opts:['超市离这儿远吗？','超市这儿离远吗？','离超市这儿远吗？','这儿超市离远吗？'],ans:0,
+  {wrong:'商店远这儿离吗？',
+   opts:['商店离这儿远吗？','商店这儿离远吗？','离商店这儿远吗？','这儿商店离远吗？'],ans:0,
    exp:'离 đứng giữa hai ĐỊA ĐIỂM: A + 离 + B + xa/gần.'},
   {wrong:'到就几分钟走了。',
    opts:['走几分钟就到了。','就走几分钟到了。','到走几分钟就了。','几分钟走就到了。'],ans:0,
    exp:'就 đứng NGAY TRƯỚC động từ 到 để nhấn mạnh việc xảy ra nhanh/sớm.'},
-  {wrong:'你在超市还吗？',
-   opts:['你还在超市吗？','你在还超市吗？','还你在超市吗？','你在超市还了吗？'],ans:0,
+  {wrong:'你在商店还吗？',
+   opts:['你还在商店吗？','你在还商店吗？','还你在商店吗？','你在商店还了吗？'],ans:0,
    exp:'还 (vẫn, còn) đứng TRƯỚC động từ 在, không đặt cuối câu như "còn" trong tiếng Việt.'},
   {wrong:'我在这儿买东西还呢。',
    opts:['我还在这儿买东西呢。','我在这儿还买东西呢。','我在这儿买东西呢还。','还我在这儿买东西呢。'],ans:0,

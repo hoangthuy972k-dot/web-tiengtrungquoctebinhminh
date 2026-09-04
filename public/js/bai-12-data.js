@@ -244,12 +244,12 @@ var listenData = {
 var fillData = [
   {pre:'今天是',blank:'零',post:'下五度，很冷。',hint:'(số 0, âm)',ans:'零'},
   {pre:'弟弟',blank:'穿',post:'得不多，我让他多穿点儿。',hint:'(mặc)',ans:'穿'},
-  {pre:'他跑步的时候穿',blank:'得',post:'不多，说这样才舒服。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得',exp:'Động từ + 得 + Tính từ = miêu tả mức độ/trạng thái của hành động.'},
+  {pre:'他跑步的时候穿',blank:'得',post:'不多，说这样才好。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得',exp:'Động từ + 得 + Tính từ = miêu tả mức độ/trạng thái của hành động.'},
   {pre:'妻子跑',blank:'得',post:'比我快多了。',hint:'(trợ từ nối bổ ngữ trạng thái)',ans:'得',exp:'Khi kết hợp so sánh: Động từ + 得 + 比 + B + Tính từ.'},
-  {pre:'她已经',blank:'进',post:'终点了，我还在后面。',hint:'(vào, tiến vào)',ans:'进'},
-  {pre:'屋子里比外面暖和，离家也',blank:'近',post:'，走一下就到了。',hint:'(gần)',ans:'近'},
-  {pre:'',blank:'弟弟',post:'说明年还要参加马拉松比赛。',hint:'(em trai)',ans:'弟弟'},
-  {pre:'',blank:'妻子',post:'在终点等我们，还给我们拍照了。',hint:'(vợ)',ans:'妻子'},
+  {pre:'她已经',blank:'进',post:'房间了，我还在后面。',hint:'(vào, tiến vào)',ans:'进'},
+  {pre:'房间里比外面好，离家也',blank:'近',post:'，走一下就到了。',hint:'(gần)',ans:'近'},
+  {pre:'',blank:'弟弟',post:'说明年还要去跑步。',hint:'(em trai)',ans:'弟弟'},
+  {pre:'',blank:'妻子',post:'在家等我们，还给我们做菜了。',hint:'(vợ)',ans:'妻子'},
 ];
 
 // ══════════════════════════════════════════
@@ -259,7 +259,7 @@ var sortData = [
   {words:['现在','是','零','下','十','度','。'],ans:'现在是零下十度。',audio:'现在是零下十度。'},
   {words:['弟弟','穿','得','太','少','了','。'],ans:'弟弟穿得太少了。',audio:'弟弟穿得太少了。'},
   {words:['妻子','跑','得','比','我','快','。'],ans:'妻子跑得比我快。',audio:'妻子跑得比我快。'},
-  {words:['大家','都','进','屋','休息','了','。'],ans:'大家都进屋休息了。',audio:'大家都进屋休息了。'},
+  {words:['大家','都','进','房间','休息','了','。'],ans:'大家都进房间休息了。',audio:'大家都进房间休息了。'},
   {words:['我家','离','公司','很','近','。'],ans:'我家离公司很近。',audio:'我家离公司很近。'},
   {words:['外面','下雪','了','，','真','冷','啊','。'],ans:'外面下雪了，真冷啊。',audio:'外面下雪了，真冷啊。'},
 ];
@@ -277,9 +277,9 @@ var errorFixData = [
   {wrong:'她跑得我比快。',
    opts:['她跑得比我快。','她跑得我比快。','她比我快跑得。','跑得她比我快。'],ans:0,
    exp:'Khi kết hợp so sánh với bổ ngữ trạng thái, 比 + đối tượng đứng NGAY SAU 得, trước tính từ: Động từ + 得 + 比 + B + Tính từ.'},
-  {wrong:'我们屋子进休息了。',
-   opts:['我们进屋休息了。','我们屋子进休息了。','我们进休息屋了。','屋子我们进休息了。'],ans:0,
-   exp:'进 (động từ) phải đứng NGAY TRƯỚC tân ngữ chỉ nơi chốn (屋), không đảo tân ngữ lên trước động từ.'},
+  {wrong:'我们房间进休息了。',
+   opts:['我们进房间休息了。','我们房间进休息了。','我们进休息房间了。','房间我们进休息了。'],ans:0,
+   exp:'进 (động từ) phải đứng NGAY TRƯỚC tân ngữ chỉ nơi chốn (房间), không đảo tân ngữ lên trước động từ.'},
   {wrong:'离家近很。',
    opts:['离家很近。','离家近很。','很离家近。','近离家很。'],ans:0,
    exp:'Phó từ mức độ 很 đứng TRƯỚC tính từ (近), không đặt phía sau: 很 + Tính từ.'},

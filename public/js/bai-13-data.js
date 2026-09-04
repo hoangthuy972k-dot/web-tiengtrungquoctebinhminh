@@ -281,7 +281,7 @@ var fillData = [
   {pre:'我在机场门口等你，手里拿',blank:'着',post:'一本红色的书。',hint:'(trợ từ động thái)',ans:'着',exp:'Động từ + 着 = trạng thái đang được duy trì.'},
   {pre:'好的，手里',blank:'拿',post:'着书的就是你吧？',hint:'(cầm)',ans:'拿'},
   {pre:'对，你怎么一下就认出我了？因为你',blank:'一直',post:'在笑啊！',hint:'(luôn, cứ)',ans:'一直'},
-  {pre:'她',blank:'不是',post:'你妹妹吗？怎么变化这么大！',hint:'(chẳng phải... sao?)',ans:'不是',exp:'不是……吗？dùng để xác nhận lại, tỏ ý ngạc nhiên.'},
+  {pre:'她',blank:'不是',post:'你妹妹吗？怎么长这么高了！',hint:'(chẳng phải... sao?)',ans:'不是',exp:'不是……吗？dùng để xác nhận lại, tỏ ý ngạc nhiên.'},
   {pre:'是啊，她',blank:'长',post:'高了很多。',hint:'(lớn lên, cao lên)',ans:'长'},
   {pre:'我们从这儿一直',blank:'往',post:'前走吧。',hint:'(hướng về phía)',ans:'往'},
   {pre:'到了前面的路',blank:'口',post:'，宾馆就在那儿。',hint:'(ghép 路口 – ngã tư)',ans:'口'},

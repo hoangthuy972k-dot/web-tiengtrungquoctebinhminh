@@ -249,7 +249,7 @@ var fillData = [
   {pre:'我',blank:'妹妹',post:'坐公共汽车去火车站接同事了。',hint:'(em gái)',ans:'妹妹'},
   {pre:'她坐',blank:'公共汽车',post:'去，说一会儿就到。',hint:'(xe buýt)',ans:'公共汽车'},
   {pre:'新年晚会的',blank:'票',post:'一共买了二十张。',hint:'(vé)',ans:'票'},
-  {pre:'',blank:'大家',post:'都很高兴，晚会一定很热闹。',hint:'(mọi người)',ans:'大家'},
+  {pre:'',blank:'大家',post:'都很高兴，晚会非常热闹。',hint:'(mọi người)',ans:'大家'},
 ];
 
 // ══════════════════════════════════════════

@@ -773,15 +773,16 @@ function buildListenWorkbook(){
   const mcFirst=listenData.mc[0].num, mcLast=listenData.mc[listenData.mc.length-1].num;
   html+='<div class="sec-sub" style="margin:24px 0 10px;font-weight:600;color:var(--ink);">✅ Phần 2 · Nghe hiểu, chọn đáp án đúng (câu '+mcFirst+'-'+mcLast+')</div>';
   html+=listenData.mc.map(function(item,i){
-    const fullZh=item.lines.map(function(ln){return (ln.pre||'')+ln.blank+(ln.post||'');}).join(' ');
-    const transcript=item.lines.map(function(ln){
+    const hasLines=item.lines&&item.lines.length;
+    const fullZh=hasLines?item.lines.map(function(ln){return (ln.pre||'')+ln.blank+(ln.post||'');}).join(' '):'';
+    const transcript=hasLines?item.lines.map(function(ln){
       return '<div style="margin-bottom:4px;">'+(ln.speaker?'<b style="color:var(--sky-d)">'+ln.speaker+'：</b>':'')+(ln.pre||'')+ln.blank+(ln.post||'')+'</div>';
-    }).join('');
+    }).join(''):'';
     const opts=item.options.map(function(o,ci){return '<button class="q-opt" id="mco'+i+'_'+ci+'" data-action="check-listen-mc" data-idx="'+i+'" data-ci="'+ci+'">'+o+'</button>';}).join('');
     return '<div class="quiz-card" id="mccard'+i+'">'+
       '<div class="q-text" style="margin-bottom:8px;"><span class="q-num">'+item.num+'</span>'+
-      '<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button></div>'+
-      '<div style="font-size:0.85rem;color:var(--soft);margin:0 0 10px 30px;">'+transcript+'</div>'+
+      (hasLines?'<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button>':'')+'</div>'+
+      (hasLines?'<div style="font-size:0.85rem;color:var(--soft);margin:0 0 10px 30px;">'+transcript+'</div>':'')+
       '<div class="q-opts">'+opts+'</div>'+
       '<div class="q-fb" id="mcfb'+i+'"></div></div>';
   }).join('');

@@ -320,12 +320,12 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ — hoàn thành đoạn thoại MỚI (rủ bạn đi vận động)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你明天',blank:'要',post:'不要去公园运动？',hint:'(muốn, sẽ — trợ động từ)',ans:'要',exp:'要 đặt trước động từ để hỏi/nêu ý định.'},
+  {pre:'你明天',blank:'要',post:'不要去运动？',hint:'(muốn, sẽ — trợ động từ)',ans:'要',exp:'要 đặt trước động từ để hỏi/nêu ý định.'},
   {pre:'要啊，我',blank:'最',post:'喜欢运动了！',hint:'(nhất)',ans:'最',exp:'最 đặt trước động từ tâm lý/tính từ để biểu thị mức độ cao nhất.'},
   {pre:'那我们',blank:'一起',post:'去吧，我叫上小李。',hint:'(cùng nhau)',ans:'一起'},
   {pre:'好，我',blank:'也',post:'想叫他一起去。',hint:'(cũng)',ans:'也'},
   {pre:'我们班有',blank:'几',post:'个同学要去呢？',hint:'(vài, mấy — số ước lượng nhỏ hơn 10)',ans:'几',exp:'几 phải đi kèm lượng từ + danh từ.'},
-  {pre:'好像有十',blank:'多',post:'个人要去。',hint:'(hơn — số ước lượng, số > 10 thì 多 đứng sau số đếm)',ans:'多'},
+  {pre:'有十',blank:'多',post:'个人要去。',hint:'(hơn — số ước lượng, số > 10 thì 多 đứng sau số đếm)',ans:'多'},
   {pre:'你',blank:'为什么',post:'不去？',hint:'(tại sao)',ans:'为什么'},
   {pre:'因为我',blank:'要',post:'去买新椅子。',hint:'(muốn, cần)',ans:'要'},
 ];

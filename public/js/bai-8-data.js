@@ -184,7 +184,7 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'打',right:'电话'},
+  {left:'看',right:'电视'},
   {left:'找',right:'时间'},
   {left:'等',right:'一下'},
   {left:'有点儿',right:'贵'},
@@ -254,14 +254,14 @@ var listenData = {
 // PHẦN 3a · ĐIỀN TỪ — hội thoại MỚI: gọi lễ tân sửa điều hoà, mua áo
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'服务员，我房间的空调坏了，可以',blank:'让',post:'人来看看吗？',hint:'(để, bảo — câu kiêm ngữ)',ans:'让',exp:'让 + Người + Động từ = bảo/để ai đó làm gì.'},
+  {pre:'服务员，我房间的门打不开了，可以',blank:'让',post:'人来看看吗？',hint:'(để, bảo — câu kiêm ngữ)',ans:'让',exp:'让 + Người + Động từ = bảo/để ai đó làm gì.'},
   {pre:'好的，我先',blank:'找',post:'找是什么事情。',hint:'(tìm)',ans:'找'},
   {pre:'谢谢，那我先',blank:'等',post:'一下。',hint:'(đợi)',ans:'等'},
   {pre:'找到问题以后我',blank:'再',post:'告诉您。',hint:'(rồi mới, lại)',ans:'再',exp:'再 chỉ hành động xảy ra SAU một hành động khác, không dùng cho việc đã xảy ra rồi (đó là 又).'},
   {pre:'这件白的有点儿',blank:'贵',post:'。',hint:'(đắt)',ans:'贵'},
   {pre:'那件',blank:'黑',post:'的颜色还不错。',hint:'(đen)',ans:'黑'},
   {pre:'您有什么',blank:'事情',post:'吗？',hint:'(chuyện, việc)',ans:'事情'},
-  {pre:'我想',blank:'告诉',post:'您一个好消息。',hint:'(nói cho biết)',ans:'告诉'},
+  {pre:'我想',blank:'告诉',post:'您一件事情。',hint:'(nói cho biết)',ans:'告诉'},
 ];
 
 // ══════════════════════════════════════════
@@ -293,8 +293,8 @@ var errorFixData = [
    opts:['我们下午去看电影，好吗？','我们去看电影下午，好吗？','下午好吗我们去看电影？','我们下午好吗去看电影？'],ans:0,
    exp:'……好吗？ luôn đặt ở CUỐI CÂU để hỏi ý kiến, không chen vào giữa câu.'},
   {wrong:'我们运动吧。(muốn nói "vận động chút cho nhẹ nhàng")',
-   opts:['我们运动运动吧。','我们运动运吧。','我们运运动吧。','我们动运动吧。'],ans:0,
-   exp:'Lặp lại động từ 2 âm tiết theo dạng AB→ABAB (运动运动) để diễn tả hành động NHẸ NHÀNG, thử làm một chút.'},
+   opts:['我们运动运动吧。','我们很运动运动吧。','我们运动运动了吧。','我们运动运动运动吧。'],ans:0,
+   exp:'Lặp lại động từ 2 âm tiết theo dạng AB→ABAB (运动运动) để diễn tả hành động NHẸ NHÀNG, thử làm một chút; không thêm 很 trước động từ đã lặp, không thêm 了, và không lặp quá 2 lần.'},
 ];
 
 // ══════════════════════════════════════════

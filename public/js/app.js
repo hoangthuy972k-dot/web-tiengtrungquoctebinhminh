@@ -39,6 +39,32 @@
     return all[lesson.fullPageUrl] || {};
   }
 
+  // Mot vai o trong Hub (vd "Luyen tap sach bai tap") ghi diem duoi 1 khoa
+  // khac ten voi chinh tabId cua no — anh xa lai o day de biet tra cuu dau.
+  var HUB_TAB_SCORE_KEY = { workbook: 'workbook-mocktest' };
+
+  // Dung de hien dau "da lam" tren tung o trong Hub bai hoc, va tinh % tien
+  // do tong the — doc lai dung du lieu diem da luu (hyv_lesson_scores), thay
+  // vi 1 co "da hoc" nhi phan cho ca bai như truoc (khong bao gio cap nhat
+  // khi hoc qua man hinh Hub, chi cap nhat khi mo trang bai hoc cu rieng).
+  function isHubTileDone(lesson, tabId) {
+    var scores = getLessonScores(lesson);
+    if (tabId === 'game') {
+      var gameRaw = scores.game;
+      return !!(gameRaw && Object.keys(gameRaw).length);
+    }
+    var key = HUB_TAB_SCORE_KEY[tabId] || tabId;
+    var raw = scores[key];
+    if (!raw) return false;
+    if (raw.done) return true;
+    if (typeof raw.total === 'number' && raw.total > 0) return true;
+    return false;
+  }
+
+  function lessonHasAnyProgress(lesson) {
+    return Object.keys(getLessonScores(lesson)).length > 0;
+  }
+
   // Gui tong diem THAT (tinh tu du lieu that da luu) len server de xep
   // hang — chi khi hoc sinh da dang nhap that (co token). Khong lam gi
   // neu chua dang nhap (diem van luu local binh thuong).
@@ -420,7 +446,7 @@
     wrap.innerHTML = '';
 
     lessons.forEach(function (lesson) {
-      var isDone = !!visited[lesson.fullPageUrl];
+      var isDone = !!visited[lesson.fullPageUrl] || lessonHasAnyProgress(lesson);
       var card = document.createElement('a');
       card.className = 'lesson-card-link';
       card.href = lesson.fullPageUrl;
@@ -516,8 +542,6 @@
   function showLessonHub(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
-    var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
-    var isDone = !!visited[lesson.fullPageUrl];
 
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
@@ -538,22 +562,25 @@
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
-    var pct = isDone ? 100 : 0;
+    var tabIds = LEVEL_HUB_TABS[levelId] || [];
+    var doneCount = tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
+    var pct = tabIds.length ? Math.round((doneCount / tabIds.length) * 100) : 0;
     $('#hubProgressFill').style.width = pct + '%';
     $('#hubProgressPct').textContent = pct + '%';
 
-    var tabIds = LEVEL_HUB_TABS[levelId];
     var grid = $('#hubTileGrid');
     grid.innerHTML = '';
-    (tabIds || []).forEach(function (tabId) {
+    tabIds.forEach(function (tabId) {
       var def = HUB_TAB_DEFS[tabId];
       if (!def) return;
+      var done = isHubTileDone(lesson, tabId);
       var tile = document.createElement('a');
-      tile.className = 'hub-tile';
+      tile.className = 'hub-tile' + (done ? ' is-done' : '');
       tile.href = lesson.fullPageUrl + '#' + tabId;
       tile.innerHTML =
         '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
         '<span class="hub-tile-label">' + def.label + '</span>' +
+        (done ? '<span class="hub-tile-check">✓ Đã làm</span>' : '') +
         '<svg class="icon hub-tile-arrow" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>';
       if (tabId === 'warmup') {
         tile.addEventListener('click', function (e) {
@@ -2016,6 +2043,7 @@
   function renderFlashcard() {
     var total = fcVocab.length;
     if (fcIndex >= total) {
+      recordLessonScore(currentHubLesson, 'flash', { correct: fcTally.yes, total: total });
       $('#fcSubtitle').textContent = 'Hoàn thành';
       $('#fcContent').innerHTML =
         '<div class="vp-quiz-done"><strong>🟢 ' + fcTally.yes + ' · 🔴 ' + fcTally.no + '</strong>' +
@@ -5918,9 +5946,10 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện dịch cho chiều này.</p>';
       return;
     }
-    if (!tpQuiz) { tpQuiz = { pos: 0 }; pgbInit('tpq', tpData.length); }
+    if (!tpQuiz) { tpQuiz = { pos: 0, score: 0 }; pgbInit('tpq', tpData.length); }
 
     if (tpQuiz.pos >= tpData.length) {
+      recordLessonScore(currentHubLesson, 'translate', { correct: tpQuiz.score, total: tpData.length });
       wrap.innerHTML =
         '<div class="vp-quiz-done"><strong>' + tpData.length + '/' + tpData.length + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện dịch này.</p>' +
@@ -5990,6 +6019,7 @@
       }
 
       $('.tp-self-yes', selfCheck).addEventListener('click', function () {
+        tpQuiz.score++;
         pgbRecord('tpq', tpQuiz.pos, true);
         selfCheck.remove();
         goNext();

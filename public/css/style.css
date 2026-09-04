@@ -1589,6 +1589,22 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   letter-spacing: 0.03em;
 }
 
+.hub-tile.is-done {
+  border-color: var(--color-green-500);
+  background: var(--color-green-50);
+}
+
+.hub-tile-check {
+  flex-shrink: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-green-600);
+  background: var(--color-white);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
 .hub-tile-arrow {
   flex-shrink: 0;
   color: var(--color-gray-400);

@@ -791,6 +791,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-4.html'
+      },
+      {
+        id: 'hsk4-l5',
+        number: 5,
+        title: 'Chỉ mua cái đúng, không mua cái đắt',
+        titleHanzi: '只买对的，不买贵的',
+        titlePinyin: 'Zhǐ mǎi duì de, bù mǎi guì de',
+        topic: 'Mua sắm, Tiêu dùng & Quảng cáo',
+        vocabCount: 33,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-5.html'
       }
     ],
     hsk1v3: [

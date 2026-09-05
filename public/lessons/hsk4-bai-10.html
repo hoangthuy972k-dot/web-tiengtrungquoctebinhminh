@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK4 · Bài 10 · 幸福的标准</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/lesson-template.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="back-link" href="/">← Về trang chủ Hi Hán 喜汉</a>
+  <div class="header-badge">HSK4 · Bài 10</div>
+  <div class="header-zh">幸福的标准</div>
+  <div class="header-py">Xìngfú de biāozhǔn</div>
+  <div class="header-vn">Tiêu chuẩn của hạnh phúc</div>
+  <div class="header-meta">
+    <span class="h-chip">🏠 Chủ đề: Hạnh phúc, Nghề nghiệp & Cuộc sống</span>
+    <span class="h-chip">📚 32 từ mới</span>
+    <span class="h-chip">💬 5 bài khoá</span>
+    <span class="h-chip">📐 5 điểm ngữ pháp</span>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-action="show-tab" data-tab="warmup">🎯 Khởi động</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="vocab">📚 Từ mới</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="dialog">💬 Bài khoá</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="match">1️⃣ Ghép từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="listen">2️⃣ Nghe</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="fill">3️⃣ Điền từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="sort">3️⃣ Sắp xếp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="errfix">3️⃣ Chọn từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="speak">4️⃣ Luyện nói</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="tongket">5️⃣ Tổng kết</button>
+</nav>
+
+<div class="main">
+
+<div id="warmup" class="section active">
+  <div class="sec-head">
+    <div class="sec-title">🎯 Khởi động <span class="sec-badge">热身</span></div>
+    <div class="sec-sub">Bấm 1 hình ảnh, rồi bấm chữ Hán tương ứng bên dưới để ghép đúng</div>
+  </div>
+  <div class="warmup-grid" id="wu-grid"></div>
+  <div style="margin-bottom:16px;font-weight:600;color:var(--mid);font-size:0.9rem;">Các từ để nối:</div>
+  <div class="wu-options" id="wu-opts"></div>
+  <div style="min-height:24px;font-size:0.9rem;" id="wu-fb"></div>
+  <div class="wu-score" id="wu-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Kết quả</div><div class="score-n" id="wu-score-n"></div></div>
+    <div class="score-m" id="wu-score-m"></div>
+  </div>
+</div>
+
+<div id="vocab" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📚 Từ mới <span class="sec-badge">33 từ</span></div>
+    <div class="sec-sub">👆 Bấm thẻ để xem nghĩa, ví dụ mở rộng &amp; phân tích Hán tự · Chọn bài khoá để lọc từ</div>
+  </div>
+  <div class="lesson-tabs">
+    <button class="lesson-tab active" data-action="filter-vocab" data-lesson="0">Tất cả (32)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="1">📖 Bài khoá 1 · Cuộc sống của Vương Tĩnh (1–6, 31–32)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="2">📖 Bài khoá 2 · Thầy Cao và thầy Lý nói về hạnh phúc (7–12)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="3">📖 Bài khoá 3 · Tiểu Vũ và Tiểu Hạ bàn chuyện tìm việc (13–19)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="4">📖 Bài khoá 4 · Điều kiện kinh tế và hạnh phúc (20–25)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="5">📖 Bài khoá 5 · Tiêu chuẩn của hạnh phúc (26–30)</button>
+  </div>
+  <div class="flip-tip">👆 Bấm thẻ để lật xem nghĩa &amp; ví dụ · Bên dưới mỗi thẻ có khung luyện dịch riêng</div>
+  <div class="vocab-grid" id="vocab-grid"></div>
+</div>
+
+<div id="flash" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🃏 Thẻ nhớ nhanh</div>
+    <div class="sec-sub">Đoán nghĩa trước, rồi bấm lật thẻ kiểm tra</div>
+  </div>
+  <div class="flash-nav">
+    <button class="flash-btn" data-action="flash-prev">←</button>
+    <span class="flash-ctr" id="flash-ctr">1 / 30</span>
+    <button class="flash-btn" data-action="flash-next">→</button>
+  </div>
+  <div class="flash-wrap">
+    <div class="flash-outer" id="flash-card" data-action="flash-flip">
+      <div class="flash-face f-front">
+        <div class="f-emoji" id="ff-em"></div>
+        <div class="f-zh" id="ff-zh"></div>
+        <div class="f-py" id="ff-py"></div>
+        <div class="f-hint">Bấm để xem nghĩa</div>
+      </div>
+      <div class="flash-face f-back">
+        <div class="f-vn" id="fb-vn"></div>
+        <div class="f-py" id="fb-py" style="color:var(--teal)"></div>
+        <div class="f-ex" id="fb-ex"></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:14px;">
+    <button class="btn-s" data-action="flash-shuffle">🔀 Xáo trộn</button>
+  </div>
+</div>
+
+<div id="grammar" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📐 Ngữ pháp <span class="sec-badge">5 điểm</span></div>
+    <div class="sec-sub">Năm điểm ngữ pháp quan trọng của bài</div>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">1</span>「不过」so sánh với 「但是」</div>
+    <div class="g-sub">不过 có thể làm liên từ, đứng ở đầu vế câu sau để chỉ sự chuyển ý, bổ sung/điều chỉnh ý của vế câu trước. 不过 và 但是 giống nhau: đều dùng ở đầu vế câu sau để chỉ sự chuyển ý. Khác nhau: (1) Khi diễn tả ý chuyển ý, 不过 thường dùng trong văn nói để đưa ra ý kiến hay lời từ chối một cách nhẹ nhàng, lịch sự; còn 但是 có ngữ khí mạnh hơn. (2) 不过 còn có thể làm phó từ, mang nghĩa "chỉ", phía sau thường đi với con số; 但是 không có cách dùng này.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> Vế 1，<strong style="color:var(--sky-d)">不过</strong> + Vế 2 (liên từ, nhẹ nhàng) &nbsp;|&nbsp; <strong style="color:var(--sky-d)">不过</strong> + Số lượng (phó từ, "chỉ")</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">我现在上有老，下有小。除了工作以外，家里还有母亲和儿子需要照顾。不过现在我很幸福。</td><td style="color:var(--soft);font-size:0.82rem">Chúle gōngzuò yǐwài, jiā li hái yǒu mǔqīn hé érzi xūyào zhàogù. Búguò xiànzài wǒ hěn xìngfú.</td><td style="color:var(--mid);font-size:0.85rem">Tôi bây giờ trên có già, dưới có nhỏ. Ngoài công việc ra, trong nhà còn có mẹ và con trai cần chăm sóc. Nhưng bây giờ tôi rất hạnh phúc.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">对不起，先生，那种蛋糕已经卖完了，不过，您可以尝一下这种饼干，味道也很不错。（不过 — nhẹ nhàng hơn 但是）</td><td style="color:var(--soft);font-size:0.82rem">Duìbuqǐ, xiānsheng, nà zhǒng dàngāo yǐjīng màiwán le, búguò, nín kěyǐ cháng yíxià zhè zhǒng bǐnggān.</td><td style="color:var(--mid);font-size:0.85rem">Xin lỗi, thưa ông, loại bánh kem đó đã bán hết rồi, nhưng, ông có thể nếm thử loại bánh quy này, hương vị cũng khá ngon.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">你太客气了，我不过是给了些建议，这一切都是你们辛苦努力的结果。（不过 — phó từ, chỉ）</td><td style="color:var(--soft);font-size:0.82rem">Nǐ tài kèqi le, wǒ búguò shì gěile xiē jiànyì, zhè yíqiè dōu shì nǐmen xīnkǔ nǔlì de jiéguǒ.</td><td style="color:var(--mid);font-size:0.85rem">Bạn khách sáo quá rồi, tôi chỉ là đưa ra vài ý kiến thôi, tất cả đây đều là kết quả nỗ lực vất vả của các bạn.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">2</span>「确实」</div>
+    <div class="g-sub">确实 là phó từ, dùng để khẳng định tính xác thực của một tình huống khách quan.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> Chủ ngữ + <strong style="color:var(--sky-d)">确实</strong> + Tính từ/Động từ</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">爱情确实是结婚的重要原因，但仅有爱情是不够的。</td><td style="color:var(--soft);font-size:0.82rem">Àiqíng quèshí shì jiéhūn de zhòngyào yuányīn, dàn jǐn yǒu àiqíng shì bú gòu de.</td><td style="color:var(--mid);font-size:0.85rem">Tình yêu thực sự là nguyên nhân quan trọng của hôn nhân, nhưng chỉ có tình yêu thôi thì không đủ.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">A: 好几年没见，你还是这么爱开玩笑，我哪儿有你说的那么年轻。B: 我说的是真的，你确实比以前更年轻、更漂亮了。</td><td style="color:var(--soft);font-size:0.82rem">B: Wǒ shuō de shì zhēn de, nǐ quèshí bǐ yǐqián gèng niánqīng, gèng piàoliang le.</td><td style="color:var(--mid);font-size:0.85rem">A: Mấy năm không gặp, bạn vẫn thích đùa như vậy, tôi đâu có trẻ như bạn nói. B: Tôi nói thật đấy, bạn thực sự trẻ hơn, đẹp hơn trước rồi.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">我女儿确实不错，记得她刚拿到第一个月工资时，就兴奋地拉着我和她爸俩去商场，给我们买礼物。</td><td style="color:var(--soft);font-size:0.82rem">Wǒ nǚ'ér quèshí búcuò, jìde tā gāng nádào dì-yī ge yuè gōngzī shí, jiù xīngfèn de lāzhe wǒ hé tā bà liǎ qù shāngchǎng.</td><td style="color:var(--mid);font-size:0.85rem">Con gái tôi thực sự rất tốt, nhớ lúc nó vừa nhận lương tháng đầu tiên, đã hào hứng kéo tôi và bố nó đi trung tâm mua sắm, mua quà cho chúng tôi.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">3</span>「在……看来」</div>
+    <div class="g-sub">在……看来 là thành phần chêm xen (插入语), dùng để chỉ ra rằng nội dung tiếp theo là lời phát biểu ý kiến hay quan điểm của người/nhóm người được nêu trong khoảng trống.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> <strong style="color:var(--sky-d)">在</strong> + Người/Nhóm người + <strong style="color:var(--sky-d)">看来</strong>，……</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">在很多人看来，听流行音乐仅仅是年轻人的爱好，其实现在不少中老年人对流行歌曲也很感兴趣。</td><td style="color:var(--soft);font-size:0.82rem">Zài hěn duō rén kànlái, tīng liúxíng yīnyuè jǐnjǐn shì niánqīngrén de àihào.</td><td style="color:var(--mid);font-size:0.85rem">Trong mắt nhiều người, nghe nhạc流行 chỉ là sở thích của người trẻ, thực ra hiện nay không ít người trung niên và cao tuổi cũng rất hứng thú với các bài hát流行.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">在我看来，比赛结果并不是最重要的，在参加比赛的过程中使自己获得提高更重要。</td><td style="color:var(--soft);font-size:0.82rem">Zài wǒ kànlái, bǐsài jiéguǒ bìng bú shì zuì zhòngyào de, zài cānjiā bǐsài de guòchéng zhōng shǐ zìjǐ huòdé tígāo gèng zhòngyào.</td><td style="color:var(--mid);font-size:0.85rem">Theo tôi thấy, kết quả thi đấu không phải là quan trọng nhất, việc bản thân được nâng cao trong quá trình tham gia thi đấu mới quan trọng hơn.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">A: 你觉得在选择职业时，收入重要吗？B: 在我看来，赚钱多少不是最重要的，兴趣才是关键。</td><td style="color:var(--soft);font-size:0.82rem">B: Zài wǒ kànlái, zhuàn qián duōshao bú shì zuì zhòngyào de, xìngqù cái shì guānjiàn.</td><td style="color:var(--mid);font-size:0.85rem">A: Bạn thấy khi chọn nghề nghiệp, thu nhập có quan trọng không? B: Theo tôi thấy, kiếm được nhiều tiền hay không không phải điều quan trọng nhất, hứng thú mới là điều mấu chốt.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">4</span>「由于」</div>
+    <div class="g-sub">由于 có thể làm liên từ, chỉ nguyên nhân, phía sau đi với một câu, thường dùng ở vế đầu của câu phức. 由于 còn có thể làm giới từ, cũng chỉ nguyên nhân, phía sau đi với cụm danh từ.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> <strong style="color:var(--sky-d)">由于</strong> + Mệnh đề，……(liên từ) &nbsp;|&nbsp; <strong style="color:var(--sky-d)">由于</strong> + Cụm danh từ，……(giới từ)</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">今年春节他们本来打算出国去逛逛，但是由于家里的老人突然生病了，所以他们只好放弃了这个计划。</td><td style="color:var(--soft);font-size:0.82rem">Dàn shì yóuyú jiā li de lǎorén tūrán shēng bìng le, suǒyǐ tāmen zhǐhǎo fàngqìle zhège jìhuà.</td><td style="color:var(--mid);font-size:0.85rem">Tết năm nay họ vốn định ra nước ngoài đi dạo, nhưng vì người già trong nhà đột nhiên bị ốm, nên họ đành phải từ bỏ kế hoạch này.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">当你生病了，如果由于缺钱而不能及时去看医生，你的健康都很难得到保证，就更别说幸福了。</td><td style="color:var(--soft);font-size:0.82rem">Rúguǒ yóuyú quē qián ér bù néng jíshí qù kàn yīshēng, nǐ de jiànkāng dōu hěn nán dédào bǎozhèng.</td><td style="color:var(--mid);font-size:0.85rem">Khi bạn bị ốm, nếu vì thiếu tiền mà không thể kịp thời đi khám bệnh, sức khỏe của bạn rất khó được đảm bảo, đừng nói đến hạnh phúc nữa.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">由于工作的需要，我去年十月去了趟上海，跟一家公司去谈生意。（由于 — giới từ + cụm danh từ）</td><td style="color:var(--soft);font-size:0.82rem">Yóuyú gōngzuò de xūyào, wǒ qùnián shíyuè qùle tàng Shànghǎi, gēn yì jiā gōngsī qù tán shēngyi.</td><td style="color:var(--mid);font-size:0.85rem">Vì nhu cầu công việc, tháng 10 năm ngoái tôi đã đến Thượng Hải, đến đàm phán kinh doanh với một công ty.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">5</span>「比如」</div>
+    <div class="g-sub">比如 là động từ, dùng để dẫn ra ví dụ nhằm giải thích cho một sự vật/tình huống nào đó.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> ……，<strong style="color:var(--sky-d)">比如</strong> + Ví dụ cụ thể</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">还有人说，小时候幸福是一件东西，比如一块橡皮、一块糖，得到了就很幸福。</td><td style="color:var(--soft);font-size:0.82rem">Hái yǒu rén shuō, xiǎo shíhou xìngfú shì yí jiàn dōngxi, bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú.</td><td style="color:var(--mid);font-size:0.85rem">Còn có người nói, lúc nhỏ hạnh phúc là một món đồ, ví dụ như cục tẩy, viên kẹo, có được là rất hạnh phúc.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">每个人都有自己特别感兴趣的东西，比如，作家爱写小说，画家爱画画儿。我们只有了解了自己的兴趣爱好后，才能更好地发展自己。</td><td style="color:var(--soft);font-size:0.82rem">Měi ge rén dōu yǒu zìjǐ tèbié gǎn xìngqù de dōngxi, bǐrú, zuòjiā ài xiě xiǎoshuō, huàjiā ài huà huàr.</td><td style="color:var(--mid);font-size:0.85rem">Mỗi người đều có thứ mình đặc biệt hứng thú, ví dụ như, nhà văn thích viết tiểu thuyết, họa sĩ thích vẽ tranh. Chúng ta chỉ khi hiểu rõ sở thích của bản thân, mới có thể phát triển bản thân tốt hơn.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">旅游前最好做个计划，比如要去几个地方，怎么坐车，带哪些东西，一共要玩儿多少天等。</td><td style="color:var(--soft);font-size:0.82rem">Lǚyóu qián zuìhǎo zuò ge jìhuà, bǐrú yào qù jǐ ge dìfang, zěnme zuò chē, dài nǎxiē dōngxi.</td><td style="color:var(--mid);font-size:0.85rem">Trước khi du lịch tốt nhất nên lập kế hoạch, ví dụ như định đi mấy nơi, đi xe thế nào, mang theo những gì, tổng cộng chơi mấy ngày, vân vân.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="dialog" class="section">
+  <div class="sec-head">
+    <div class="sec-title">💬 Bài khoá <span class="sec-badge">5 đoạn</span></div>
+    <div class="sec-sub">Ba đoạn hội thoại và hai bài đọc ngắn về chủ đề hạnh phúc</div>
+  </div>
+  <div class="dlg-tabs">
+    <button class="dlg-tb active" data-action="show-dlg" data-idx="0">1 · Cuộc sống của Vương Tĩnh</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="1">2 · Thầy Cao và thầy Lý</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="2">3 · Tìm việc làm</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="3">4 · Kinh tế và hạnh phúc</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="4">5 · Tiêu chuẩn hạnh phúc</button>
+  </div>
+  <div id="dlg-wrap"></div>
+</div>
+
+<div id="match" class="section">
+  <div class="sec-head">
+    <div class="sec-title">1️⃣ Ghép từ <span class="sec-badge">搭配</span></div>
+    <div class="sec-sub">Bấm 1 ô <strong style="color:var(--sky)">bên trái</strong> → bấm ô <strong style="color:var(--teal)">bên phải</strong> để ghép thành cụm từ đúng</div>
+  </div>
+  <div class="m-fb" id="m-fb"></div>
+  <div class="match-grid">
+    <div><div class="mcol-title">Từ 1</div><div id="m-left"></div></div>
+    <div><div class="mcol-title">Từ 2</div><div id="m-right"></div></div>
+  </div>
+  <div class="btn-row"><button class="btn-s" data-action="reset-match">Làm lại</button></div>
+</div>
+
+<div id="listen" class="section">
+  <div class="sec-head">
+    <div class="sec-title">2️⃣ Nghe hiểu <span class="sec-badge">听力</span></div>
+    <div class="sec-sub">Nhấn 🔊 nghe đoạn hội thoại/câu (đề thật từ sách bài tập), rồi trả lời câu hỏi bên dưới</div>
+  </div>
+  <div id="listen-wrap"></div>
+  <div class="score-box" id="listen-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="listen-sn"></div></div>
+    <div class="score-m" id="listen-sm"></div>
+  </div>
+</div>
+
+<div id="fill" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Điền vào chỗ trống</div>
+    <div class="sec-sub">Điền từ/cụm từ thích hợp để hoàn thành câu</div>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="fill-prog" style="width:0%"></div></div>
+  <div id="fill-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-fill">Kiểm tra đáp án</button>
+    <button class="btn-s" data-action="reset-fill">Làm lại</button>
+  </div>
+  <div class="score-box" id="fill-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="fill-sn"></div></div>
+    <div class="score-m" id="fill-sm"></div>
+  </div>
+</div>
+
+<div id="sort" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Sắp xếp thành câu</div>
+    <div class="sec-sub">Nhấn 🔊 để nghe câu, rồi bấm các từ theo đúng thứ tự — <strong style="color:var(--warm)">nhớ đặt cả dấu câu (。／？)</strong> vào cuối · Bấm từ đã đặt để xóa</div>
+  </div>
+  <div id="sort-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-sort">Kiểm tra</button>
+    <button class="btn-s" data-action="reset-sort">Làm lại</button>
+  </div>
+  <div class="score-box" id="sort-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="sort-sn"></div></div>
+    <div class="score-m" id="sort-sm"></div>
+  </div>
+</div>
+
+<div id="errfix" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Chọn từ thích hợp <span class="sec-badge">选词填空</span></div>
+    <div class="sec-sub">Bài tập gốc từ sách giáo khoa (练习2) — chọn từ đúng để điền vào chỗ trống trong mỗi câu.</div>
+  </div>
+  <div id="errfix-list"></div>
+  <div class="score-box" id="errfix-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="errfix-sn"></div></div>
+    <div class="score-m" id="errfix-sm"></div>
+  </div>
+</div>
+
+<div id="speak" class="section">
+  <div class="sec-head">
+    <div class="sec-title">4️⃣ Luyện nói phản xạ</div>
+    <div class="sec-sub">Nhấn 🔊 nghe câu hỏi, rồi <strong style="color:var(--teal)">tự ghi âm câu trả lời của bạn</strong> — không đọc theo câu mẫu. Ghi âm xong có thể gửi chấm điểm AI hoặc đối chiếu với câu trả lời gợi ý.</div>
+  </div>
+  <div id="speak-wrap"></div>
+</div>
+
+<div id="tongket" class="section">
+  <div class="sec-head">
+    <div class="sec-title">5️⃣ Tổng kết bài học <span class="sec-badge">总结</span></div>
+    <div class="sec-sub">Điểm tổng hợp từ 4 phần bài tập bên trên — hoàn thành hết rồi quay lại đây để xem điểm chính xác nhất!</div>
+  </div>
+  <div id="summary-wrap"></div>
+</div>
+
+</div>
+
+<script src="/js/hsk4-bai-10-data.js"></script>
+<script src="/js/lesson-engine.js"></script>
+</body>
+</html>

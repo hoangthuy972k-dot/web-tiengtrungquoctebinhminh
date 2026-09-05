@@ -851,6 +851,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-9.html'
+      },
+      {
+        id: 'hsk4-l10',
+        number: 10,
+        title: 'Tiêu chuẩn của hạnh phúc',
+        titleHanzi: '幸福的标准',
+        titlePinyin: 'Xìngfú de biāozhǔn',
+        topic: 'Hạnh phúc, Nghề nghiệp & Cuộc sống',
+        vocabCount: 32,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-10.html'
       }
     ],
     hsk1v3: [

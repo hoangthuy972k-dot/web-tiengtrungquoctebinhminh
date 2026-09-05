@@ -847,11 +847,14 @@ let errAns=[];
 function buildErrorFix(){
   errAns=Array(errorFixData.length).fill(false);
   const l=document.getElementById('errfix-list');
+  const isWordChoice=typeof errorFixMode!=='undefined'&&errorFixMode==='wordchoice';
+  const icon=isWordChoice?'📝':'❌';
+  const hint=isWordChoice?'👆 Chọn từ thích hợp điền vào chỗ trống:':'👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:';
   l.innerHTML=errorFixData.map(function(q,i){
     const opts=q.opts.map(function(o,j){return '<button class="q-opt" id="eo'+i+'_'+j+'" data-action="check-errorfix" data-qi="'+i+'" data-ci="'+j+'">'+o+'</button>';}).join('');
     return '<div class="quiz-card" id="efq'+i+'">'+
-      '<div class="q-text"><span class="q-num">'+(i+1)+'</span>❌ '+q.wrong+'</div>'+
-      '<div style="font-size:0.82rem;color:var(--soft);margin:-6px 0 10px 30px;">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'+
+      '<div class="q-text"><span class="q-num">'+(i+1)+'</span>'+icon+' '+q.wrong+'</div>'+
+      '<div style="font-size:0.82rem;color:var(--soft);margin:-6px 0 10px 30px;">'+hint+'</div>'+
       '<div class="q-opts">'+opts+'</div>'+
       '<div class="q-fb" id="ef'+i+'"></div></div>';
   }).join('');

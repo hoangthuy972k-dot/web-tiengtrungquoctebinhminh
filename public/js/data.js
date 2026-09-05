@@ -743,6 +743,20 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk3-bai-20.html'
       }
     ],
+    hsk4: [
+      {
+        id: 'hsk4-l1',
+        number: 1,
+        title: 'Tình yêu đơn giản',
+        titleHanzi: '简单的爱情',
+        titlePinyin: 'Jiǎndān de àiqíng',
+        topic: 'Tình yêu, Hôn nhân & Tính cách con người',
+        vocabCount: 32,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-1.html'
+      }
+    ],
     hsk1v3: [
       {
         id: 'hsk1v3-l1',

@@ -319,7 +319,7 @@
   var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'yct'];
   var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'blue', hsk2: 'green', hsk3: 'gold', hsk4: 'green', hsk5: 'gold', yct: 'blue' };
   var LEVEL_SHORT = { hsk1: 'HSK1', hsk1v3: 'HSK1·3.0', hsk2: 'HSK2', hsk3: 'HSK3', hsk4: 'HSK4', hsk5: 'HSK5', yct: 'YCT1' };
-  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2: true, hsk3: true, yct: true };
+  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2: true, hsk3: true, hsk4: true, yct: true };
   var practiceLevel = 'hsk2';
 
   function renderLevelCards() {
@@ -524,7 +524,8 @@
     hsk1: ['match', 'fill', 'sort', 'mc'],
     hsk1v3: ['match', 'fill', 'sort', 'mc'],
     hsk2: ['match', 'fill', 'sort', 'errfix'],
-    hsk3: ['match', 'fill', 'sort', 'errfix']
+    hsk3: ['match', 'fill', 'sort', 'errfix'],
+    hsk4: ['match', 'fill', 'sort', 'errfix']
   };
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
@@ -533,6 +534,7 @@
     hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook'],
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
+    hsk4: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     yct: null // trang YCT dùng cấu trúc tab riêng (yk-tab), chưa hỗ trợ mở qua hub
   };
 
@@ -1263,7 +1265,8 @@
         fill: data.fillData,
         sort: data.sortData,
         errfix: data.errorFixData,
-        mc: data.mcData
+        mc: data.mcData,
+        errorFixMode: data.errorFixMode
       };
     });
   }
@@ -1275,7 +1278,7 @@
   }
 
   function audioBaseFor(lesson) {
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2-|hsk3-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2-|hsk3-|hsk4-)?bai-(\d+)\.html/);
     if (!m) return null;
     return m[1] ? '/audio/' + m[1] + 'bai-' + m[2] : '/audio/bai-' + m[2];
   }
@@ -4398,6 +4401,174 @@
             answer: '你每天晚上玩儿到12点才睡觉，第二天早上能不困吗？', answerPy: 'Nǐ měitiān wǎnshang wánr dào shí\'èr diǎn cái shuìjiào, dì-èr tiān zǎoshang néng bú kùn ma?',
             explanation: '能不困吗 (dạng phủ định) mang ý nghĩa thực chất KHẲNG ĐỊNH: "chắc chắn sẽ buồn ngủ".' },
         ] },
+    ],
+    '/lessons/hsk4-bai-1.html': [
+      { point: '「不仅……也/还/而且……」',
+        items: [
+          { context: 'Hoàn thành câu: cô ấy không những học giỏi, mà tính cách cũng rất tốt.',
+            pre: '她', blank: '不仅', post: '学习好，性格也很好。', options: ['不仅', '虽然', '因为'], answer: 0,
+            explanation: '不仅……也…… dùng để bổ sung thêm một ý ngoài điều vừa nêu, khi chủ ngữ hai vế giống nhau thì 不仅 đứng SAU chủ ngữ.' },
+          { context: 'Hoàn thành câu: hai người sống chung, không những cần tình yêu lãng mạn, càng cần tính cách hợp nhau.',
+            pre: '两个人共同生活，', blank: '不仅', post: '需要浪漫的爱情，更需要性格上互相吸引。', options: ['不仅', '即使', '从来'], answer: 0,
+            explanation: '不仅……更…… là biến thể nhấn mạnh hơn của 不仅……也……, 更 nêu ý quan trọng hơn ở vế sau.' },
+          { context: 'Hoàn thành câu: không những tôi thích uống cà phê, bạn tôi cũng thích.',
+            pre: '', blank: '不仅', post: '我喜欢喝咖啡，我朋友也喜欢。', options: ['不仅', '只有', '即使'], answer: 0,
+            explanation: 'Khi chủ ngữ hai vế KHÁC NHAU (我 và 我朋友), 不仅 đứng TRƯỚC chủ ngữ của vế 1.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '他不仅足球踢得好，性格也不错。', isCorrect: true,
+            explanation: 'Câu đúng: chủ ngữ 他 giống nhau ở hai vế, 不仅 đứng ngay sau chủ ngữ, 也 hô ứng ở vế sau.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '他也不仅足球踢得好，性格好。', isCorrect: false, correctVersion: '他不仅足球踢得好，性格也不错。',
+            explanation: '也 không được đặt trước 不仅; 也 phải đứng ở VẾ SAU, ngay trước vị ngữ thứ hai (性格也不错).' },
+          { type: 'sort', context: 'Sắp xếp câu: anh ấy không những hóm hỉnh, mà tính cách cũng rất tốt.',
+            words: ['他', '不仅', '很', '幽默', '，', '性格', '也', '很', '好', '。'], answer: '他不仅很幽默，性格也很好。',
+            explanation: '不仅 sau chủ ngữ 他, 也 sau chủ ngữ ẩn của vế 2 (性格).' },
+          { type: 'sort', context: 'Sắp xếp câu: không những cô ấy xinh đẹp, mà còn rất thông minh.',
+            words: ['她', '不仅', '长得', '漂亮', '，', '还', '很', '聪明', '。'], answer: '她不仅长得漂亮，还很聪明。',
+            explanation: '不仅……还…… là một cặp hô ứng khác của cùng cấu trúc, thay cho 也.' },
+          { type: 'translate', context: 'Dịch câu sau, dùng 不仅……也……',
+            promptLang: 'vi', prompt: 'Cô ấy không những xinh đẹp, mà còn rất thông minh.',
+            answer: '她不仅长得漂亮，也很聪明。', answerPy: 'Tā bùjǐn zhǎng de piàoliang, yě hěn cōngming.',
+            explanation: '不仅……也…… — không những … mà còn ….' },
+          { type: 'translate', context: 'Dịch câu sau.',
+            promptLang: 'vi', prompt: 'Không những tôi thích xem phim, bạn tôi cũng thích.',
+            answer: '不仅我喜欢看电影，我朋友也喜欢。', answerPy: 'Bùjǐn wǒ xǐhuan kàn diànyǐng, wǒ péngyou yě xǐhuan.',
+            explanation: 'Chủ ngữ khác nhau nên 不仅 đứng trước chủ ngữ của vế 1.' },
+          { context: 'Hoàn thành câu: cô ấy không những học giỏi, mà thể thao cũng rất giỏi.',
+            pre: '她', blank: '不仅', post: '学习好，运动也很好。', options: ['不仅', '刚', '即使'], answer: 0,
+            explanation: '不仅……也…… — không những … mà còn ….' },
+        ] },
+      { point: '「从来」— từ trước đến nay',
+        items: [
+          { context: 'Hoàn thành câu: anh ấy đi họp từ trước đến giờ chưa bao giờ đến muộn.',
+            pre: '他开会', blank: '从来', post: '不迟到。', options: ['从来', '刚', '即使'], answer: 0,
+            explanation: '从来 (phó từ) đứng trước 不/没, diễn tả từ quá khứ đến hiện tại luôn luôn như vậy.' },
+          { context: 'Hoàn thành câu: tôi từ trước đến giờ chưa từng vui như vậy.',
+            pre: '我', blank: '从来', post: '没这么快乐过。', options: ['从来', '刚才', '一直都'], answer: 0,
+            explanation: '从来没……过 — chưa từng … bao giờ.' },
+          { context: 'Hoàn thành câu: quán mì này từ trước đến giờ chỉ bán một loại.',
+            pre: '这家面馆', blank: '从来', post: '只卖一种东西。', options: ['从来', '刚', '最好'], answer: 0,
+            explanation: '从来 + chỉ/luôn — nhấn mạnh tính không đổi từ trước đến nay.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '虽然我们认识的时间不长，但我从来没这么快乐过。', isCorrect: true,
+            explanation: 'Câu đúng: 虽然……但…… kết hợp 从来没……过 để nhấn mạnh mức độ chưa từng có.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '我从来这么快乐没过。', isCorrect: false, correctVersion: '我从来没这么快乐过。',
+            explanation: '从来 phải đứng ngay trước 没/不, không được tách rời khỏi 没.' },
+          { type: 'sort', context: 'Sắp xếp câu: anh ấy từ trước đến giờ đều rất đúng giờ.',
+            words: ['他', '从来', '都', '很', '准时', '。'], answer: '他从来都很准时。',
+            explanation: '从来都 + tính từ — nhấn mạnh sự ổn định lâu dài.' },
+          { type: 'sort', context: 'Sắp xếp câu: cô ấy từ trước đến giờ chưa từng nói dối tôi.',
+            words: ['她', '从来', '没', '骗', '过', '我', '。'], answer: '她从来没骗过我。',
+            explanation: '从来没 + V + 过 — chưa từng làm gì.' },
+          { type: 'translate', context: 'Dịch câu sau, dùng 从来.',
+            promptLang: 'vi', prompt: 'Anh ấy từ trước đến giờ chưa từng nổi giận với tôi.',
+            answer: '他从来没跟我生过气。', answerPy: 'Tā cónglái méi gēn wǒ shēngguo qì.',
+            explanation: '从来没……过 — chưa từng ….' },
+          { type: 'translate', context: 'Dịch câu sau.',
+            promptLang: 'vi', prompt: 'Từ trước đến giờ cô ấy đều rất quan tâm đến bạn bè.',
+            answer: '她从来都很关心朋友。', answerPy: 'Tā cónglái dōu hěn guānxīn péngyou.',
+            explanation: '从来都 + tính từ/động từ — luôn luôn như vậy.' },
+          { context: 'Hoàn thành câu: cô ấy từ trước đến giờ chưa từng đến muộn.',
+            pre: '她', blank: '从来', post: '没迟到过。', options: ['从来', '刚', '最好'], answer: 0,
+            explanation: '从来没……过 — chưa từng ….' },
+        ] },
+      { point: '「刚」so sánh với 「刚才」',
+        items: [
+          { context: 'Hoàn thành câu: chúng tôi vừa mới quen nhau.',
+            pre: '我们', blank: '刚', post: '认识，还不太熟悉。', options: ['刚', '刚才', '从来'], answer: 0,
+            explanation: '刚 (phó từ) đứng sau chủ ngữ, trước động từ, diễn tả việc vừa mới xảy ra.' },
+          { context: 'Hoàn thành câu: tôi vừa mới xem qua hộp thư, không có thư mới.',
+            pre: '我', blank: '刚', post: '看了邮箱，没有新邮件。', options: ['刚', '刚才', '一直'], answer: 0,
+            explanation: '刚 có thể đi cùng thời lượng phía sau động từ (刚看了); 刚才 (danh từ) thì không.' },
+          { context: 'Hoàn thành câu: (đứng đầu câu) vừa nãy tôi đi vệ sinh, bạn có gọi điện cho tôi không?',
+            pre: '', blank: '刚才', post: '我去洗手间了，你给我打电话了？', options: ['刚才', '刚', '从来'], answer: 0,
+            explanation: '刚才 (danh từ chỉ thời gian) có thể đứng ĐẦU CÂU, trước chủ ngữ — điều mà 刚 không làm được.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '我们搬来刚一个星期，还不熟悉。', isCorrect: false, correctVersion: '我们刚搬来一个星期，还不熟悉。',
+            explanation: '刚 phải đứng ngay sau chủ ngữ và trước động từ (我们 + 刚 + 搬来), không đặt sau động từ.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '你为什么刚才不说，现在才说？', isCorrect: true,
+            explanation: 'Câu đúng: 刚才 có thể theo sau bởi phủ định 不, còn 刚 thì không được dùng theo cách này.' },
+          { type: 'sort', context: 'Sắp xếp câu: tôi vừa từ phòng họp qua đây.',
+            words: ['我', '刚', '从', '会议室', '过来', '。'], answer: '我刚从会议室过来。',
+            explanation: '刚 đứng sau chủ ngữ 我, trước cụm giới từ 从会议室.' },
+          { type: 'sort', context: 'Sắp xếp câu: vừa nãy tôi đi vệ sinh rồi, bạn gọi điện cho tôi lúc nào?',
+            words: ['刚才', '我', '去', '洗手间', '了', '，', '你', '什么时候', '给', '我', '打电话', '的', '？'], answer: '刚才我去洗手间了，你什么时候给我打电话的？',
+            explanation: '刚才 đứng đầu câu vì là danh từ chỉ thời gian, không phải phó từ.' },
+          { type: 'translate', context: 'Dịch câu sau, dùng 刚.',
+            promptLang: 'vi', prompt: 'Chúng tôi vừa mới chuyển đến đây một tuần.',
+            answer: '我们刚搬来这儿一个星期。', answerPy: 'Wǒmen gāng bānlái zhèr yí ge xīngqī.',
+            explanation: '刚 đứng sau chủ ngữ, trước động từ, có thể mang thời lượng phía sau.' },
+          { type: 'translate', context: 'Dịch câu sau, dùng 刚才.',
+            promptLang: 'vi', prompt: 'Vừa nãy ai gọi điện cho bạn vậy?',
+            answer: '刚才是谁给你打电话的？', answerPy: 'Gāngcái shì shéi gěi nǐ dǎ diànhuà de?',
+            explanation: '刚才 đứng đầu câu, là danh từ chỉ thời gian.' },
+        ] },
+      { point: '「即使……也……」',
+        items: [
+          { context: 'Hoàn thành câu: cho dù công việc bận, anh ấy cũng sẽ gọi điện cho gia đình mỗi ngày.',
+            pre: '即使工作很忙，他', blank: '也', post: '会每天给家人打电话。', options: ['也', '才', '刚'], answer: 0,
+            explanation: '即使……也…… — 也 phải đứng ngay sau chủ ngữ của vế 2, trước động từ.' },
+          { context: 'Hoàn thành câu: cho dù chỉ là chuyện nhỏ bình thường, nó cũng có thể khiến người ta cảm động.',
+            pre: '', blank: '即使', post: '只是一件普通的小事，它也能让人感动。', options: ['即使', '不仅', '从来'], answer: 0,
+            explanation: '即使 đứng đầu vế 1, nêu tình huống nhượng bộ giả thiết hoặc đã tồn tại.' },
+          { context: 'Hoàn thành câu: cho dù thất bại, ấn tượng cô ấy để lại vẫn khiến người ta ngưỡng mộ.',
+            pre: '即使失败了，她留下的印象', blank: '也', post: '让人羡慕。', options: ['也', '才', '就'], answer: 0,
+            explanation: '即使……也…… diễn tả: dù A xảy ra, kết quả B vẫn không đổi.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '即使工作很忙，也他每天打电话。', isCorrect: false, correctVersion: '即使工作很忙，他也每天打电话。',
+            explanation: '也 phải đứng SAU chủ ngữ của vế 2 (他也……), không đặt trước chủ ngữ.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '即使他脾气不太好，我也还是很喜欢他。', isCorrect: true,
+            explanation: 'Câu đúng: 即使……也还是…… — cho dù … tôi vẫn ….' },
+          { type: 'sort', context: 'Sắp xếp câu: cho dù chỉ là ăn cơm, trò chuyện với họ, họ cũng sẽ cảm thấy rất hạnh phúc.',
+            words: ['即使', '只是', '跟', '他们', '吃吃饭', '、', '聊聊天', '，', '他们', '也', '会', '觉得', '很', '幸福', '。'], answer: '即使只是跟他们吃吃饭、聊聊天，他们也会觉得很幸福。',
+            explanation: '即使 mở đầu vế điều kiện nhượng bộ, 也 hô ứng ở vế kết quả.' },
+          { type: 'sort', context: 'Sắp xếp câu: cho dù mỗi ngày đều tăng ca, anh ấy cũng không hề than phiền.',
+            words: ['即使', '每天', '都', '加班', '，', '他', '也', '从来', '不', '抱怨', '。'], answer: '即使每天都加班，他也从来不抱怨。',
+            explanation: '即使……也…… có thể kết hợp thêm 从来不 ở vế sau để nhấn mạnh.' },
+          { type: 'translate', context: 'Dịch câu sau, dùng 即使……也……',
+            promptLang: 'vi', prompt: 'Cho dù về nhà rất muộn, đèn nhà anh ấy vẫn luôn sáng.',
+            answer: '即使回家很晚，他家的灯也一直亮着。', answerPy: 'Jíshǐ huí jiā hěn wǎn, tā jiā de dēng yě yìzhí liàngzhe.',
+            explanation: '即使……也…… — cho dù … vẫn ….' },
+          { type: 'translate', context: 'Dịch câu sau.',
+            promptLang: 'vi', prompt: 'Cho dù tính tình cô ấy không tốt lắm, mọi người vẫn thích cô ấy.',
+            answer: '即使她脾气不太好，大家也还是喜欢她。', answerPy: 'Jíshǐ tā píqi bú tài hǎo, dàjiā yě háishi xǐhuan tā.',
+            explanation: '即使……也还是…… — cho dù … mọi người vẫn ….' },
+        ] },
+      { point: '「(在)……上」— chỉ phương diện, khía cạnh',
+        items: [
+          { context: 'Hoàn thành câu: hai người cần thu hút lẫn nhau về mặt tính cách.',
+            pre: '两个人需要性格', blank: '上', post: '互相吸引。', options: ['上', '里', '下'], answer: 0,
+            explanation: 'danh từ chỉ phương vị 上 đứng sau danh từ chỉ phạm vi (性格 + 上), diễn tả "về mặt/phương diện nào đó".' },
+          { context: 'Hoàn thành câu: về mặt công việc, chúng tôi luôn giúp đỡ lẫn nhau.',
+            pre: '在工作', blank: '上', post: '，我们一直互相帮助。', options: ['上', '中', '内'], answer: 0,
+            explanation: '在……上 — cấu trúc đầy đủ với 在 ở đầu, 上 ở cuối cụm danh từ chỉ phạm vi.' },
+          { context: 'Hoàn thành câu: bài tập hôm nay là ôn từ mới, ngày mai sẽ kiểm tra trên lớp.',
+            pre: '今天的作业是复习生词，明天课', blank: '上', post: '听写。', options: ['上', '里', '中'], answer: 0,
+            explanation: '课上 = trên lớp, trong giờ học — 上 chỉ phạm vi "trong khuôn khổ tiết học".' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '两个人需要性格互相上吸引。', isCorrect: false, correctVersion: '两个人需要性格上互相吸引。',
+            explanation: '上 phải đứng ngay sau danh từ chỉ phạm vi (性格), không được chen 互相 vào giữa.' },
+          { type: 'judge', context: 'Xét câu sau có đúng ngữ pháp không.',
+            sentence: '你觉得北方和南方在饮食上有什么不同？', isCorrect: true,
+            explanation: 'Câu đúng: 在……上 nêu phạm vi so sánh (饮食 = ăn uống).' },
+          { type: 'sort', context: 'Sắp xếp câu: về mặt cuộc sống, chúng tôi luôn giúp đỡ lẫn nhau.',
+            words: ['在', '生活', '上', '，', '我们', '一直', '互相', '帮助', '。'], answer: '在生活上，我们一直互相帮助。',
+            explanation: '在 + danh từ phạm vi + 上, đứng đầu câu làm trạng ngữ.' },
+          { type: 'sort', context: 'Sắp xếp câu: ngay cả khi ấn tượng ban đầu không tốt, nó vẫn có thể thay đổi.',
+            words: ['即使', '第一', '印象', '不好', '，', '它', '也', '可以', '改变', '。'], answer: '即使第一印象不好，它也可以改变。',
+            explanation: 'Ôn lại 即使……也…… kết hợp với từ vựng bài học (印象).' },
+          { type: 'translate', context: 'Dịch câu sau, dùng (在)……上.',
+            promptLang: 'vi', prompt: 'Về phương diện tình cảm, tôi cảm thấy mình rất hạnh phúc.',
+            answer: '在感情上，我觉得自己很幸福。', answerPy: 'Zài gǎnqíng shang, wǒ juéde zìjǐ hěn xìngfú.',
+            explanation: '在……上 — về phương diện, khía cạnh nào đó.' },
+          { type: 'translate', context: 'Dịch câu sau.',
+            promptLang: 'vi', prompt: 'Về vấn đề này, hai người tốt nhất nên hiểu nhau nhiều hơn.',
+            answer: '在这件事上，两个人最好多互相理解。', answerPy: 'Zài zhè jiàn shì shang, liǎng ge rén zuìhǎo duō hùxiāng lǐjiě.',
+            explanation: '在……上 kết hợp 最好 nêu lời khuyên.' },
+        ] },
     ]
   };
 
@@ -5521,8 +5692,17 @@
     fill: { label: 'Điền từ', emoji: '✏️', color: 'orange', desc: 'Điền từ còn thiếu vào chỗ trống' },
     sort: { label: 'Sắp xếp câu', emoji: '🧩', color: 'indigo', desc: 'Sắp xếp các từ thành câu đúng' },
     errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink', desc: 'Tìm câu đúng để sửa lỗi sai thường gặp' },
+    errfixWord: { label: 'Chọn từ thích hợp', emoji: '📝', color: 'pink', desc: 'Chọn từ đúng để điền vào chỗ trống (bài gốc trong SGK)' },
     mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal', desc: 'Chọn đáp án đúng cho mỗi câu hỏi' }
   };
+
+  // errorFixData được tái sử dụng theo 2 kiểu: mặc định là "sửa lỗi sai" (chọn
+  // câu đúng), một số bài (vd. HSK4 dùng nguyên bài SGK) là "chọn từ thích hợp"
+  // điền vào chỗ trống — data file đánh dấu bằng errorFixMode:'wordchoice'.
+  function errfixDef() {
+    var isWordChoice = gpGameData && gpGameData.errorFixMode === 'wordchoice';
+    return isWordChoice ? GAME_TYPE_DEFS.errfixWord : GAME_TYPE_DEFS.errfix;
+  }
 
   var gpGameData = null;
   var gpMode = null;
@@ -5568,7 +5748,7 @@
     var wrap = $('#gpContent');
     var types = LEVEL_GAME_TYPES[currentHubLevelId] || [];
     wrap.innerHTML = '<div class="game-picker-grid">' + types.map(function (type) {
-      var def = GAME_TYPE_DEFS[type];
+      var def = type === 'errfix' ? errfixDef() : GAME_TYPE_DEFS[type];
       var count = (gpGameData && gpGameData[type] || []).length;
       return '<button type="button" class="game-picker-card"' + (count ? ' data-game-type="' + type + '"' : ' disabled') + '>' +
         '<div class="game-picker-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
@@ -5587,7 +5767,7 @@
 
   function renderGameByType(type) {
     var wrap = $('#gpContent');
-    var def = GAME_TYPE_DEFS[type];
+    var def = type === 'errfix' ? errfixDef() : GAME_TYPE_DEFS[type];
     var data = (gpGameData && gpGameData[type]) || [];
     wrap.innerHTML =
       '<button type="button" class="level-detail-back" id="gpBackToPicker">' +
@@ -5606,7 +5786,7 @@
     if (type === 'match') renderGameMatch(data);
     else if (type === 'fill') renderGameFill(data);
     else if (type === 'sort') renderGameSort(data);
-    else if (type === 'errfix') renderGameMcList(data, { wrongPrefix: true, gameKey: 'errfix' });
+    else if (type === 'errfix') renderGameMcList(data, { wrongPrefix: gpGameData.errorFixMode !== 'wordchoice', blankMode: gpGameData.errorFixMode === 'wordchoice', gameKey: 'errfix' });
     else if (type === 'mc') renderGameMcList(data, { wrongPrefix: false, gameKey: 'mc' });
   }
 
@@ -5847,7 +6027,9 @@
     wrap.innerHTML =
       pgbHtml(pgbId, data.length) +
       data.map(function (q, i) {
-      var promptHtml = opts.wrongPrefix
+      var promptHtml = opts.blankMode
+        ? '📝 ' + q.wrong + '<div class="mc-sub">👆 Chọn từ thích hợp điền vào chỗ trống:</div>'
+        : opts.wrongPrefix
         ? '❌ ' + q.wrong + '<div class="mc-sub">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'
         : q.q;
       var optsHtml = q.opts.map(function (o, j) {

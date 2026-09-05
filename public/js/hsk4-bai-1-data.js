@@ -889,6 +889,7 @@ var sortData = [
 // 5 từ ngân hàng từ gốc; chuyển thành trắc nghiệm 4 lựa chọn (đáp án đúng +
 // 3 từ nhiễu lấy trong cùng ngân hàng từ của bài, đúng tinh thần đề gốc).
 // ══════════════════════════════════════════
+var errorFixMode = 'wordchoice'; // bài này dùng đúng nội dung SGK (chọn từ thích hợp), không phải sửa lỗi sai
 var errorFixData = [
   {wrong:'他们两个人____努力，终于完成了工作。',
    opts:['共同','吸引','接受','熟悉'],ans:0,

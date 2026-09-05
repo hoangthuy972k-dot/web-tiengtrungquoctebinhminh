@@ -827,6 +827,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-7.html'
+      },
+      {
+        id: 'hsk4-l8',
+        number: 8,
+        title: 'Cuộc sống không thiếu cái đẹp',
+        titleHanzi: '生活中不缺少美',
+        titlePinyin: 'Shēnghuó zhōng bù quēshǎo měi',
+        topic: 'Cảm xúc, Thái độ sống & Vẻ đẹp cuộc sống',
+        vocabCount: 29,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-8.html'
       }
     ],
     hsk1v3: [

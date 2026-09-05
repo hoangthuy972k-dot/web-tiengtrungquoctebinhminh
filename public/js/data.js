@@ -815,6 +815,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-6.html'
+      },
+      {
+        id: 'hsk4-l7',
+        number: 7,
+        title: 'Bác sĩ tốt nhất là bản thân',
+        titleHanzi: '最好的医生是自己',
+        titlePinyin: 'Zuì hǎo de yīshēng shì zìjǐ',
+        topic: 'Sức khỏe, Thói quen sinh hoạt & Thể thao',
+        vocabCount: 33,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-7.html'
       }
     ],
     hsk1v3: [

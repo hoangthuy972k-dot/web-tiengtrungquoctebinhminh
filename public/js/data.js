@@ -839,6 +839,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-8.html'
+      },
+      {
+        id: 'hsk4-l9',
+        number: 9,
+        title: 'Sau cơn mưa trời lại sáng',
+        titleHanzi: '阳光总在风雨后',
+        titlePinyin: 'Yángguāng zǒng zài fēngyǔ hòu',
+        topic: 'Thành công, Thất bại & Nỗ lực',
+        vocabCount: 34,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-9.html'
       }
     ],
     hsk1v3: [

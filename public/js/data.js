@@ -779,6 +779,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-3.html'
+      },
+      {
+        id: 'hsk4-l4',
+        number: 4,
+        title: 'Đừng quá nôn nóng kiếm tiền',
+        titleHanzi: '不要太着急赚钱',
+        titlePinyin: 'Búyào tài zháojí zhuàn qián',
+        topic: 'Công việc, Kinh doanh & Trách nhiệm nghề nghiệp',
+        vocabCount: 34,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-4.html'
       }
     ],
     hsk1v3: [

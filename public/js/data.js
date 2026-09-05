@@ -803,6 +803,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-5.html'
+      },
+      {
+        id: 'hsk4-l6',
+        number: 6,
+        title: 'Tiền nào của nấy',
+        titleHanzi: '一分钱一分货',
+        titlePinyin: 'Yì fēn qián yì fēn huò',
+        topic: 'Mua sắm, Giá cả & Chất lượng hàng hóa',
+        vocabCount: 33,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-6.html'
       }
     ],
     hsk1v3: [

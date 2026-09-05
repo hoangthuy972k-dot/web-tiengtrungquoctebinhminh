@@ -755,6 +755,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-1.html'
+      },
+      {
+        id: 'hsk4-l2',
+        number: 2,
+        title: 'Người bạn chân chính',
+        titleHanzi: '真正的朋友',
+        titlePinyin: 'Zhēnzhèng de péngyou',
+        topic: 'Tình bạn, Cuộc sống sinh viên & Giao tiếp xã hội',
+        vocabCount: 30,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-2.html'
       }
     ],
     hsk1v3: [

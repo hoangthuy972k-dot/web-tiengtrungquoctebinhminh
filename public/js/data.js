@@ -767,6 +767,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-2.html'
+      },
+      {
+        id: 'hsk4-l3',
+        number: 3,
+        title: 'Giám đốc có ấn tượng tốt về tôi',
+        titleHanzi: '经理对我印象不错',
+        titlePinyin: 'Jīnglǐ duì wǒ yìnxiàng búcuò',
+        topic: 'Tìm việc, Phỏng vấn & Ấn tượng đầu tiên',
+        vocabCount: 33,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-3.html'
       }
     ],
     hsk1v3: [

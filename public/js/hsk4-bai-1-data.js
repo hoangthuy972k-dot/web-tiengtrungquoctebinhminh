@@ -1002,7 +1002,11 @@ var translateDataRev = [
 // ══════════════════════════════════════════
 var listenData = {
   type: 'workbook',
-  audio: '/audio/hsk4-bai-1/listen-full.mp3',
+  audioParts: [
+    { src: '/audio/hsk4-bai-1/listen-1.mp3', from: 1, to: 5 },
+    { src: '/audio/hsk4-bai-1/listen-2.mp3', from: 6, to: 12 },
+    { src: '/audio/hsk4-bai-1/listen-3.mp3', from: 13, to: 22 }
+  ],
   dictation: [
     {num:1, lines:[
       {pre:'我和他是', blank:'在朋友家里认识的', post:'，虽然第一次见面的时候没怎么聊天儿，但是他给我的印象很深。后来我们进了同一家公司，才慢慢熟悉起来。',

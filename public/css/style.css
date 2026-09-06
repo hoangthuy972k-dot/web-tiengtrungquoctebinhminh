@@ -2884,6 +2884,13 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 /* ---------- Listen workbook (de nghe that tu sach bai tap, audio that) ---------- */
+/* Moi phan (audio + cac cau thuoc phan) la 1 group; audio sticky chi ghim trong
+   pham vi group cua no nen khi cuon sang phan sau, audio phan sau thay the. */
+.lp-wb-group {
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
 .lp-wb-audio-pin {
   position: sticky;
   top: 0;

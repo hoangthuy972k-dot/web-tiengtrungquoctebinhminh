@@ -8310,7 +8310,7 @@
     var data = lpListenData;
     if (!lpWorkbookScore) { lpWorkbookScore = { dictCorrect: {}, mcCorrect: {} }; pgbInit('lpwq', lpWbTotal()); }
 
-    var dictationHtml = data.dictation.map(function (item) {
+    var dictItemsHtml = data.dictation.map(function (item) {
       var linesHtml = item.lines.map(function (line, li) {
         var inputId = 'lpDictInput-' + item.num + '-' + li;
         return '<div class="lp-dict-line">' +
@@ -8333,9 +8333,9 @@
         '<button type="button" class="lp-dict-reveal" data-reveal-num="' + item.num + '">Xem đáp án</button>' +
         '<div class="lp-dict-answer" data-answer-num="' + item.num + '" hidden>' + answerHtml + '</div>' +
       '</div>';
-    }).join('');
+    });
 
-    var mcHtml = data.mc.map(function (item) {
+    var mcItemsHtml = data.mc.map(function (item) {
       // Cau 11-20 (neu co field "lines") cung nghe-dien-chinh-ta truoc, nhung
       // blank chi 1 cum tu ngan (khong dai nhu cau 1-10); day la buoc tu
       // kiem tra rieng, KHONG tinh vao diem — diem chinh van tinh theo dap
@@ -8374,26 +8374,51 @@
         '<div class="lp-mc-opts">' + optsHtml + '</div>' +
         '<div class="lp-mc-explain" data-explain-num="' + item.num + '" hidden></div>' +
       '</div>';
-    }).join('');
+    });
 
     var dictCount = data.dictation.length;
     var mcCount = data.mc.length;
     var total = dictCount + mcCount;
 
-    wrap.innerHTML =
-      '<div class="lp-wb-audio-pin">' +
-        '<div class="lp-wb-audio-pin-label">🎧 Audio đề nghe · Câu 1-' + total + '</div>' +
-        '<audio class="lp-wb-audio" controls preload="none" src="' + data.audio + '"></audio>' +
-      '</div>' +
-      pgbHtml('lpwq', total) +
-      '<div class="lp-wb-part">' +
-        '<div class="lp-wb-part-title">Câu 1-' + dictCount + ' — Nghe và điền vào chỗ trống</div>' +
-        dictationHtml +
-      '</div>' +
-      '<div class="lp-wb-part">' +
-        '<div class="lp-wb-part-title">Câu ' + (dictCount + 1) + '-' + total + ' — Nghe hội thoại, chọn đáp án đúng</div>' +
-        mcHtml +
-      '</div>';
+    // Audio chia phần theo số câu của sách bài tập (HSK4: listen-1 = câu 1-5,
+    // listen-2 = câu 6-12, listen-3 = câu 13-22). Bài chỉ có 1 file audio thì
+    // coi như 1 phần cho toàn đề. Mỗi phần = audio ghim + các câu thuộc phần.
+    var parts = (data.audioParts && data.audioParts.length)
+      ? data.audioParts
+      : (data.audio ? [{ src: data.audio, from: 1, to: Math.max(total, 1) }] : []);
+    var usedD = {}, usedM = {};
+    function rangeLabel(items) {
+      return 'Câu ' + items[0].num + (items.length > 1 ? '-' + items[items.length - 1].num : '');
+    }
+    function renderGroup(part, pi) {
+      function inRange(it) { return !part || (it.num >= part.from && it.num <= part.to); }
+      var dIdx = [], mIdx = [];
+      data.dictation.forEach(function (it, i) { if (!usedD[i] && inRange(it)) { dIdx.push(i); usedD[i] = 1; } });
+      data.mc.forEach(function (it, i) { if (!usedM[i] && inRange(it)) { mIdx.push(i); usedM[i] = 1; } });
+      if (!dIdx.length && !mIdx.length) return '';
+      var html = '<div class="lp-wb-group">';
+      if (part) {
+        html += '<div class="lp-wb-audio-pin">' +
+          '<div class="lp-wb-audio-pin-label">🎧 Audio ' + (parts.length > 1 ? 'phần ' + (pi + 1) + ' · ' : 'đề nghe · ') + 'Câu ' + part.from + '-' + part.to + '</div>' +
+          '<audio class="lp-wb-audio" controls preload="none" src="' + part.src + '"></audio>' +
+        '</div>';
+      }
+      if (dIdx.length) {
+        html += '<div class="lp-wb-part">' +
+          '<div class="lp-wb-part-title">' + rangeLabel(dIdx.map(function (i) { return data.dictation[i]; })) + ' — Nghe và điền vào chỗ trống</div>' +
+          dIdx.map(function (i) { return dictItemsHtml[i]; }).join('') +
+        '</div>';
+      }
+      if (mIdx.length) {
+        html += '<div class="lp-wb-part">' +
+          '<div class="lp-wb-part-title">' + rangeLabel(mIdx.map(function (i) { return data.mc[i]; })) + ' — Nghe hội thoại, chọn đáp án đúng</div>' +
+          mIdx.map(function (i) { return mcItemsHtml[i]; }).join('') +
+        '</div>';
+      }
+      return html + '</div>';
+    }
+
+    wrap.innerHTML = pgbHtml('lpwq', total) + parts.map(renderGroup).join('') + renderGroup(null, -1);
 
     $all('.lp-dict-reveal', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {

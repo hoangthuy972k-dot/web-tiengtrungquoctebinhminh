@@ -968,7 +968,11 @@ var translateDataRev = [
 // ══════════════════════════════════════════
 var listenData = {
   type: 'workbook',
-  audio: '/audio/hsk4-bai-2/listen-full.mp3',
+  audioParts: [
+    { src: '/audio/hsk4-bai-2/listen-1.mp3', from: 1, to: 5 },
+    { src: '/audio/hsk4-bai-2/listen-2.mp3', from: 6, to: 12 },
+    { src: '/audio/hsk4-bai-2/listen-3.mp3', from: 13, to: 22 }
+  ],
   dictation: [
     {num:1, lines:[
       {pre:'平时要主动给朋友打电话，别等到需要朋友帮助时才想到要和他们联系。要知道，', blank:'能有一个真正的朋友，有一段真正的友谊，是多么不容易', post:'！',

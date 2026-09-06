@@ -754,15 +754,14 @@ function checkListenAnswer(gi,qi,chosen){
 // ══════════════════════════════════════════
 function buildListenWorkbook(){
   const wrap=document.getElementById('listen-wrap');
-  let html='';
-  if(listenData.audio){
-    html+='<div class="listen-passage" style="text-align:center;">'+
-      '<div style="font-weight:600;color:var(--mid);margin-bottom:8px;">🎧 Nghe toàn bộ đề (bản ghi âm gốc giáo trình)</div>'+
-      '<audio class="real-audio" controls preload="none" src="'+listenData.audio+'" onerror="audioLoadError(this)" style="width:100%;max-width:480px;"></audio></div>';
-  }
-  const dictFirst=listenData.dictation[0].num, dictLast=listenData.dictation[listenData.dictation.length-1].num;
-  html+='<div class="sec-sub" style="margin:18px 0 10px;font-weight:600;color:var(--ink);">📝 Phần 1 · Nghe điền từ còn thiếu (câu '+dictFirst+'-'+dictLast+')</div>';
-  html+=listenData.dictation.map(function(item,i){
+  const total=listenData.dictation.length+listenData.mc.length;
+  // Audio chia phần theo số câu của sách bài tập (HSK4: listen-1 = câu 1-5,
+  // listen-2 = câu 6-12, listen-3 = câu 13-22). Bài chỉ có 1 file audio thì
+  // coi như 1 phần cho toàn đề.
+  const parts=(listenData.audioParts&&listenData.audioParts.length)
+    ?listenData.audioParts
+    :(listenData.audio?[{src:listenData.audio,from:1,to:Math.max(total,1)}]:[]);
+  const dictCards=listenData.dictation.map(function(item,i){
     const fullZh=item.lines.map(function(ln){return (ln.pre||'')+ln.blank+(ln.post||'');}).join(' ');
     const lines=item.lines.map(function(ln,li){
       return '<div class="q-text" style="margin-bottom:6px;">'+
@@ -777,10 +776,8 @@ function buildListenWorkbook(){
       lines+
       '<div class="btn-row" style="margin-top:8px;"><button class="btn-s" data-action="check-dictation" data-idx="'+i+'">Kiểm tra</button></div>'+
       '<div class="q-fb" id="dictfb'+i+'"></div></div>';
-  }).join('');
-  const mcFirst=listenData.mc[0].num, mcLast=listenData.mc[listenData.mc.length-1].num;
-  html+='<div class="sec-sub" style="margin:24px 0 10px;font-weight:600;color:var(--ink);">✅ Phần 2 · Nghe hiểu, chọn đáp án đúng (câu '+mcFirst+'-'+mcLast+')</div>';
-  html+=listenData.mc.map(function(item,i){
+  });
+  const mcCards=listenData.mc.map(function(item,i){
     const hasLines=item.lines&&item.lines.length;
     const fullZh=hasLines?item.lines.map(function(ln){return (ln.pre||'')+ln.blank+(ln.post||'');}).join(' '):'';
     const transcript=hasLines?item.lines.map(function(ln){
@@ -793,8 +790,34 @@ function buildListenWorkbook(){
       (hasLines?'<div style="font-size:0.85rem;color:var(--soft);margin:0 0 10px 30px;">'+transcript+'</div>':'')+
       '<div class="q-opts">'+opts+'</div>'+
       '<div class="q-fb" id="mcfb'+i+'"></div></div>';
-  }).join('');
-  wrap.innerHTML=html;
+  });
+  function rangeLabel(items){return 'câu '+items[0].num+(items.length>1?'-'+items[items.length-1].num:'');}
+  const usedD={},usedM={};
+  // Mỗi phần = 1 audio + các câu (điền từ / trắc nghiệm) nằm trong khoảng số
+  // câu của phần đó; part=null gom các câu còn sót (không thuộc phần nào).
+  function renderGroup(part,pi){
+    function inRange(it){return !part||(it.num>=part.from&&it.num<=part.to);}
+    const dIdx=[],mIdx=[];
+    listenData.dictation.forEach(function(it,i){if(!usedD[i]&&inRange(it)){dIdx.push(i);usedD[i]=1;}});
+    listenData.mc.forEach(function(it,i){if(!usedM[i]&&inRange(it)){mIdx.push(i);usedM[i]=1;}});
+    if(!dIdx.length&&!mIdx.length)return '';
+    let h='';
+    if(part){
+      h+='<div class="listen-passage" style="text-align:center;">'+
+        '<div style="font-weight:600;color:var(--mid);margin-bottom:8px;">🎧 Audio '+(parts.length>1?'phần '+(pi+1)+' · ':'')+'câu '+part.from+'-'+part.to+' (bản ghi âm gốc sách bài tập)</div>'+
+        '<audio class="real-audio" controls preload="none" src="'+part.src+'" onerror="audioLoadError(this)" style="width:100%;max-width:480px;"></audio></div>';
+    }
+    if(dIdx.length){
+      h+='<div class="sec-sub" style="margin:18px 0 10px;font-weight:600;color:var(--ink);">📝 Nghe điền từ còn thiếu ('+rangeLabel(dIdx.map(function(i){return listenData.dictation[i];}))+')</div>'+
+        dIdx.map(function(i){return dictCards[i];}).join('');
+    }
+    if(mIdx.length){
+      h+='<div class="sec-sub" style="margin:18px 0 10px;font-weight:600;color:var(--ink);">✅ Nghe hiểu, chọn đáp án đúng ('+rangeLabel(mIdx.map(function(i){return listenData.mc[i];}))+')</div>'+
+        mIdx.map(function(i){return mcCards[i];}).join('');
+    }
+    return h;
+  }
+  wrap.innerHTML=parts.map(renderGroup).join('')+renderGroup(null,-1);
   document.getElementById('listen-score').style.display='none';
 }
 function checkDictation(i){

@@ -1479,13 +1479,22 @@
 
   // Voi tu vung kieu moi, hien ca 3 cau vi du (danh so) thay vi chi 1 cau
   // nhu truoc — khop voi bang cach trinh bay tu vung moi.
-  function vpWordAllExamplesHtml(v) {
+  // opts.alwaysPy: pinyin luon hien (bo qua nut tat pinyin toan trang).
+  // opts.hideVn:   nghia tieng Viet cua vi du an sau nut "Xem nghia".
+  function vpExampleVnHtml(vn, opts) {
+    if (!opts || !opts.hideVn) return '<div class="vp-word-vn">' + vn + '</div>';
+    return '<button type="button" class="vp-ex-vn-btn" data-ex-vn-toggle>👁 Xem nghĩa tiếng Việt</button>' +
+      '<div class="vp-word-vn vp-ex-vn" hidden>' + vn + '</div>';
+  }
+
+  function vpWordAllExamplesHtml(v, opts) {
     var list = v.exList || [];
     if (!list.length) return '';
+    var pyCls = 'vp-word-py' + (opts && opts.alwaysPy ? ' py-always' : '');
     var items = list.map(function (ex) {
       return '<li><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.15rem;">' + ex.zh + '</span>' +
         '<button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
-        '<div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></li>';
+        '<div class="' + pyCls + '">' + ex.py + '</div>' + vpExampleVnHtml(ex.vn, opts) + '</li>';
     }).join('');
     return '<div class="vp-word-example vp-word-examples-all"><div class="vp-examples-label">Ví dụ:</div><ol class="vp-examples-list">' + items + '</ol></div>';
   }
@@ -1494,6 +1503,11 @@
     var wrap = $('#vpContent');
     wrap.innerHTML = '<div class="vp-list-grid"></div>';
     var grid = wrap.firstChild;
+    // HSK4: pinyin luon hien cho moi tu/vi du; nghia tieng Viet cua vi du
+    // chi hien khi hoc sinh bam nut (de tu dich truoc roi doi chieu).
+    var isHsk4 = !!(currentHubLesson && /\/hsk4-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    var opts = { alwaysPy: isHsk4, hideVn: isHsk4 };
+    var pyCls = 'vp-word-py' + (isHsk4 ? ' py-always' : '');
     vpVocab.forEach(function (v, vi) {
       var ex = v.exList && v.exList[0];
       var card = document.createElement('div');
@@ -1501,11 +1515,11 @@
       var hzs = (v.hanzi || []).map(function (h, hi) { return vpHzItemHtml(h, vi, hi); }).join('');
       card.innerHTML =
         '<div class="vp-word-row"><span class="vp-word-zh hanzi">' + v.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + v.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
-        '<div class="vp-word-py">' + v.py + '</div>' +
+        '<div class="' + pyCls + '">' + v.py + '</div>' +
         '<div class="vp-word-vn">' + v.vn + '</div>' +
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
         vpWordRichHtml(v) +
-        (v.explain ? vpWordAllExamplesHtml(v) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-word-py">' + ex.py + '</div><div class="vp-word-vn">' + ex.vn + '</div></div>' : '')) +
+        (v.explain ? vpWordAllExamplesHtml(v, opts) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="' + pyCls + '">' + ex.py + '</div>' + vpExampleVnHtml(ex.vn, opts) + '</div>' : '')) +
         (hzs ? '<div class="vc-hz"><button type="button" class="hz-btn" data-hz-toggle="' + vi + '">🀄 Xem Hán tự (' + v.hanzi.length + ' chữ)</button><div class="hz-panel" id="vphzp' + vi + '">' + hzs + '</div></div>' : '') +
         (v.checkList ? v.checkList.map(function (c, ci) { return renderVpCheckHtml(c, vi + '_' + ci); }).join('') : (v.check ? renderVpCheckHtml(v.check, vi) : ''));
       grid.appendChild(card);
@@ -1515,6 +1529,16 @@
     });
     $all('[data-hz-toggle]', grid).forEach(function (btn) {
       btn.addEventListener('click', function () { vpToggleHz(btn, parseInt(btn.getAttribute('data-hz-toggle'), 10)); });
+    });
+    $all('[data-ex-vn-toggle]', grid).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var panel = btn.nextElementSibling;
+        if (!panel) return;
+        var show = panel.hidden;
+        panel.hidden = !show;
+        btn.textContent = show ? '🙈 Ẩn nghĩa tiếng Việt' : '👁 Xem nghĩa tiếng Việt';
+        btn.classList.toggle('open', show);
+      });
     });
     $all('[data-hz-replay]', grid).forEach(function (btn) {
       btn.addEventListener('click', function (e) {

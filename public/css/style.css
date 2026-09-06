@@ -1847,6 +1847,33 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   margin-top: var(--space-3);
 }
 
+/* Nut "Xem nghia tieng Viet" cua tung cau vi du (HSK4): nghia an mac dinh */
+.vp-ex-vn-btn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border: 1px dashed var(--color-gold-500);
+  border-radius: 999px;
+  background: var(--color-gold-50);
+  color: var(--color-red-600);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.vp-ex-vn-btn:hover,
+.vp-ex-vn-btn.open {
+  background: var(--color-red-600);
+  border-style: solid;
+  border-color: var(--color-red-600);
+  color: var(--color-white);
+}
+
+.vp-ex-vn {
+  margin-top: 4px;
+}
+
 /* Khung luyen dich nho gan duoi moi the tu vung (vp-word-card) */
 .vp-check-box {
   margin-top: var(--space-3);
@@ -4534,7 +4561,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   .pinyin-toggle { top: var(--space-2); right: var(--space-2); padding: 5px 8px 5px 10px; font-size: 0.78rem; }
 }
 
-body.pinyin-hidden .vp-word-py,
+body.pinyin-hidden .vp-word-py:not(.py-always),
 body.pinyin-hidden .vp-quiz-prompt-py,
 body.pinyin-hidden .fc-py,
 body.pinyin-hidden .gr-example-py,

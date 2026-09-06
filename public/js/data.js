@@ -887,6 +887,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-12.html'
+      },
+      {
+        id: 'hsk4-l13',
+        number: 13,
+        title: 'Uống trà trong lúc xem Kinh kịch',
+        titleHanzi: '喝着茶看京剧',
+        titlePinyin: 'Hēzhe chá kàn jīngjù',
+        topic: 'Kinh kịch, Văn hóa & Trà Trung Quốc',
+        vocabCount: 33,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-13.html'
       }
     ],
     hsk1v3: [

@@ -875,6 +875,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-11.html'
+      },
+      {
+        id: 'hsk4-l12',
+        number: 12,
+        title: 'Khám phá thế giới bằng trái tim',
+        titleHanzi: '用心发现世界',
+        titlePinyin: 'Yòng xīn fāxiàn shìjiè',
+        topic: 'Kinh nghiệm, Phương pháp & Cách nói chuyện',
+        vocabCount: 33,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-12.html'
       }
     ],
     hsk1v3: [

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK4 · Bài 12 · 用心发现世界</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/lesson-template.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="back-link" href="/">← Về trang chủ Hi Hán 喜汉</a>
+  <div class="header-badge">HSK4 · Bài 12</div>
+  <div class="header-zh">用心发现世界</div>
+  <div class="header-py">Yòng xīn fāxiàn shìjiè</div>
+  <div class="header-vn">Khám phá thế giới bằng trái tim</div>
+  <div class="header-meta">
+    <span class="h-chip">🏠 Chủ đề: Kinh nghiệm, Phương pháp & Cách nói chuyện</span>
+    <span class="h-chip">📚 33 từ mới</span>
+    <span class="h-chip">💬 5 bài khoá</span>
+    <span class="h-chip">📐 5 điểm ngữ pháp</span>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-action="show-tab" data-tab="warmup">🎯 Khởi động</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="vocab">📚 Từ mới</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="dialog">💬 Bài khoá</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="match">1️⃣ Ghép từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="listen">2️⃣ Nghe</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="fill">3️⃣ Điền từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="sort">3️⃣ Sắp xếp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="errfix">3️⃣ Chọn từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="speak">4️⃣ Luyện nói</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="tongket">5️⃣ Tổng kết</button>
+</nav>
+
+<div class="main">
+
+<div id="warmup" class="section active">
+  <div class="sec-head">
+    <div class="sec-title">🎯 Khởi động <span class="sec-badge">热身</span></div>
+    <div class="sec-sub">Bấm 1 hình ảnh, rồi bấm chữ Hán tương ứng bên dưới để ghép đúng</div>
+  </div>
+  <div class="warmup-grid" id="wu-grid"></div>
+  <div style="margin-bottom:16px;font-weight:600;color:var(--mid);font-size:0.9rem;">Các từ để nối:</div>
+  <div class="wu-options" id="wu-opts"></div>
+  <div style="min-height:24px;font-size:0.9rem;" id="wu-fb"></div>
+  <div class="wu-score" id="wu-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Kết quả</div><div class="score-n" id="wu-score-n"></div></div>
+    <div class="score-m" id="wu-score-m"></div>
+  </div>
+</div>
+
+<div id="vocab" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📚 Từ mới <span class="sec-badge">33 từ</span></div>
+    <div class="sec-sub">👆 Bấm thẻ để xem nghĩa, ví dụ mở rộng &amp; phân tích Hán tự · Chọn bài khoá để lọc từ</div>
+  </div>
+  <div class="lesson-tabs">
+    <button class="lesson-tab active" data-action="filter-vocab" data-lesson="0">Tất cả (33)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="1">📖 Bài khoá 1 · Giám đốc Vương làm ăn gặp khó khăn (1–7)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="2">📖 Bài khoá 2 · Cô Cao chỉ con gái cách giặt quần áo (8–12, 33)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="3">📖 Bài khoá 3 · Thầy Cao học phương pháp giáo dục của GS Vương (13–18)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="4">📖 Bài khoá 4 · Nghệ thuật nói chuyện (19–24)</button>
+    <button class="lesson-tab" data-action="filter-vocab" data-lesson="5">📖 Bài khoá 5 · Phương pháp đúng — 事半功倍 (25–32)</button>
+  </div>
+  <div class="flip-tip">👆 Bấm thẻ để lật xem nghĩa &amp; ví dụ · Bên dưới mỗi thẻ có khung luyện dịch riêng</div>
+  <div class="vocab-grid" id="vocab-grid"></div>
+</div>
+
+<div id="flash" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🃏 Thẻ nhớ nhanh</div>
+    <div class="sec-sub">Đoán nghĩa trước, rồi bấm lật thẻ kiểm tra</div>
+  </div>
+  <div class="flash-nav">
+    <button class="flash-btn" data-action="flash-prev">←</button>
+    <span class="flash-ctr" id="flash-ctr">1 / 30</span>
+    <button class="flash-btn" data-action="flash-next">→</button>
+  </div>
+  <div class="flash-wrap">
+    <div class="flash-outer" id="flash-card" data-action="flash-flip">
+      <div class="flash-face f-front">
+        <div class="f-emoji" id="ff-em"></div>
+        <div class="f-zh" id="ff-zh"></div>
+        <div class="f-py" id="ff-py"></div>
+        <div class="f-hint">Bấm để xem nghĩa</div>
+      </div>
+      <div class="flash-face f-back">
+        <div class="f-vn" id="fb-vn"></div>
+        <div class="f-py" id="fb-py" style="color:var(--teal)"></div>
+        <div class="f-ex" id="fb-ex"></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:14px;">
+    <button class="btn-s" data-action="flash-shuffle">🔀 Xáo trộn</button>
+  </div>
+</div>
+
+<div id="grammar" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📐 Ngữ pháp <span class="sec-badge">5 điểm</span></div>
+    <div class="sec-sub">Năm điểm ngữ pháp quan trọng của bài — ví dụ có lồng ghép ngữ pháp các bài trước để ôn tập</div>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">1</span>「并且」</div>
+    <div class="g-sub">并且 là liên từ, dùng để nối động từ/tính từ song song — diễn tả vài hành động được thực hiện cùng lúc hoặc vài tính chất tồn tại cùng lúc; cũng dùng để nối câu, diễn tả ý "hơn nữa" (tiến thêm một bước). So với 同时 (Bài 11), 并且 thiên về liệt kê song song.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> A，<strong style="color:var(--sky-d)">并且</strong> B &nbsp;|&nbsp; Động từ/Tính từ + <strong style="color:var(--sky-d)">并且</strong> + Động từ/Tính từ</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">他做事很认真，并且有丰富的经验，让他负责很合适。</td><td style="color:var(--soft);font-size:0.82rem">Tā zuò shì hěn rènzhēn, bìngqiě yǒu fēngfù de jīngyàn, ràng tā fùzé hěn héshì.</td><td style="color:var(--mid);font-size:0.85rem">Anh ấy làm việc rất nghiêm túc, hơn nữa có kinh nghiệm phong phú, để anh ấy phụ trách rất hợp. (ôn lại 让 Bài 8)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">这房子家具全，电视、空调、冰箱都很新，并且价格也便宜，真的很值得考虑。</td><td style="color:var(--soft);font-size:0.82rem">Zhè fángzi jiājù quán, diànshì, kōngtiáo, bīngxiāng dōu hěn xīn, bìngqiě jiàgé yě piányi, zhēn de hěn zhídé kǎolǜ.</td><td style="color:var(--mid);font-size:0.85rem">Căn nhà này đủ đồ đạc, TV, điều hòa, tủ lạnh đều mới, hơn nữa giá cũng rẻ, thật sự rất đáng cân nhắc. (ôn lại 值得 Bài 6)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">好，我再跟同事商量商量，希望能及时发现问题，并且准确地找到解决问题的方法。</td><td style="color:var(--soft);font-size:0.82rem">Hǎo, wǒ zài gēn tóngshì shāngliang shāngliang, xīwàng néng jíshí fāxiàn wèntí, bìngqiě zhǔnquè de zhǎodào jiějué wèntí de fāngfǎ.</td><td style="color:var(--mid);font-size:0.85rem">Được, tôi sẽ bàn bạc thêm với đồng nghiệp, hy vọng kịp thời phát hiện vấn đề, đồng thời tìm ra chính xác cách giải quyết.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">2</span>「再……也……」</div>
+    <div class="g-sub">Cấu trúc "再……也……" thường dùng trong câu giả thiết nhượng bộ; 再 mang nghĩa "cho dù, dù thế nào đi nữa" (tương đương 即使/无论怎么 — ôn lại Bài 1 và Bài 11), theo sau 再 có thể là động từ, tính từ hoặc câu.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> <strong style="color:var(--sky-d)">再</strong> + Động từ/Tính từ，……<strong style="color:var(--sky-d)">也</strong>……</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">事情已经发生了，你再后悔也无法改变，别伤心了。</td><td style="color:var(--soft);font-size:0.82rem">Shìqing yǐjīng fāshēng le, nǐ zài hòuhuǐ yě wúfǎ gǎibiàn, bié shāngxīn le.</td><td style="color:var(--mid);font-size:0.85rem">Chuyện đã xảy ra rồi, bạn có hối hận thế nào cũng không thể thay đổi, đừng buồn nữa.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">用盐水来洗新衣服，这样穿得再久、洗的次数再多，衣服也不容易掉颜色。</td><td style="color:var(--soft);font-size:0.82rem">Yòng yánshuǐ lái xǐ xīn yīfu, zhèyàng chuān de zài jiǔ, xǐ de cìshù zài duō, yīfu yě bù róngyì diào yánsè.</td><td style="color:var(--mid);font-size:0.85rem">Dùng nước muối giặt quần áo mới, như vậy mặc lâu đến đâu, giặt nhiều lần đến đâu, quần áo cũng không dễ phai màu.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">如果我们有什么看法或者意见，不管别人再怎么不同意、不支持，也应该说出来，让别人知道我们的想法和态度。</td><td style="color:var(--soft);font-size:0.82rem">Bùguǎn biérén zài zěnme bù tóngyì, bù zhīchí, yě yīnggāi shuō chulai.</td><td style="color:var(--mid);font-size:0.85rem">Nếu chúng ta có quan điểm hay ý kiến gì, bất kể người khác có không đồng ý, không ủng hộ thế nào, cũng nên nói ra, để người khác biết suy nghĩ và thái độ của mình. (ôn lại 不管 Bài 3, 看法 Bài 11)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">3</span>「对于」so sánh với 「关于」</div>
+    <div class="g-sub">对于 là giới từ, nêu đối tượng được đề cập trong tình huống nào đó hay qua thái độ của người nào đó; "对于……" có thể đứng trước hoặc sau chủ ngữ. 对于 và 关于 (Bài 3 HSK3) đều là giới từ nhưng nghĩa khác nhau: (1) 对于 nêu rõ ĐỐI TƯỢNG chịu tác động (对于这次调查计划，经理特别满意); 关于 nêu rõ PHẠM VI, cho biết sự vật được nói đến (关于这次调查计划，经理说有很多不清楚的地方). (2) 对于 có thể đứng trước hoặc sau chủ ngữ; 关于 chỉ đứng trước chủ ngữ. (3) 关于…… có thể xuất hiện trong tên sách/bài báo (《关于中国经济的几个问题》); 对于 không có cách dùng này.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> <strong style="color:var(--sky-d)">对于</strong> + Đối tượng，Chủ ngữ + …… &nbsp;|&nbsp; Chủ ngữ + <strong style="color:var(--sky-d)">对于</strong> + Đối tượng + …… &nbsp;|&nbsp; <strong style="color:var(--sky-d)">对于</strong>……来说</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">对于这件事，我跟大家的看法不同。</td><td style="color:var(--soft);font-size:0.82rem">Duìyú zhè jiàn shì, wǒ gēn dàjiā de kànfǎ bùtóng.</td><td style="color:var(--mid);font-size:0.85rem">Đối với việc này, quan điểm của tôi khác với mọi người. (ôn lại 看法 Bài 11)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">对于中国人来说，春节是一年之中最重要的节日，春节的时候人们会举行各种各样的迎新年活动。</td><td style="color:var(--soft);font-size:0.82rem">Duìyú Zhōngguó rén lái shuō, Chūnjié shì yì nián zhī zhōng zuì zhòngyào de jiérì.</td><td style="color:var(--mid);font-size:0.85rem">Đối với người Trung Quốc, Tết là ngày lễ quan trọng nhất trong năm, dịp Tết mọi người tổ chức đủ loại hoạt động đón năm mới. (ôn lại 之 Bài 11)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">他对于每个需要帮助的人都会热情、耐心地提供帮助。（对于 sau chủ ngữ — 关于 không dùng được）</td><td style="color:var(--soft);font-size:0.82rem">Tā duìyú měi ge xūyào bāngzhù de rén dōu huì rèqíng, nàixīn de tígōng bāngzhù.</td><td style="color:var(--mid);font-size:0.85rem">Anh ấy đối với mỗi người cần giúp đỡ đều nhiệt tình, kiên nhẫn giúp đỡ.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">4</span>「名量词重叠」— Lặp lại danh từ / lượng từ</div>
+    <div class="g-sub">Danh từ/lượng từ được lặp lại thường có dạng "AA", mang nghĩa "mỗi" (人人 = mỗi người, 天天 = mỗi ngày, 件件 = mỗi việc). Cấu trúc này có thể làm chủ ngữ, định ngữ của chủ ngữ và trạng ngữ, nhưng KHÔNG được làm tân ngữ hay định ngữ của tân ngữ.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> Danh từ/Lượng từ <strong style="color:var(--sky-d)">AA</strong> (+都) + …… &nbsp;·&nbsp; 人人 / 天天 / 年年 / 本本 / 件件</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">人人都会使用语言，但是怎么用语言把话说好却是一门艺术。</td><td style="color:var(--soft);font-size:0.82rem">Rénrén dōu huì shǐyòng yǔyán, dànshì zěnme yòng yǔyán bǎ huà shuōhǎo què shì yì mén yìshù.</td><td style="color:var(--mid);font-size:0.85rem">Ai cũng biết sử dụng ngôn ngữ, nhưng dùng ngôn ngữ nói sao cho hay lại là một nghệ thuật. (ôn lại 却 Bài 2)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">白先生天天都去那家咖啡馆坐一会儿，因为他觉得，工作了一天，只有安静的地方才能让他得到放松。</td><td style="color:var(--soft);font-size:0.82rem">Bái xiānsheng tiāntiān dōu qù nà jiā kāfēiguǎn zuò yíhuìr.</td><td style="color:var(--mid);font-size:0.85rem">Ông Bạch ngày nào cũng đến quán cà phê đó ngồi một lát, vì ông thấy, làm việc cả ngày, chỉ có nơi yên tĩnh mới giúp ông được thư giãn. (ôn lại 只有……才)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">做好小事是完成大事的第一步，因此，件件小事都应该被看成是一次学习的机会。</td><td style="color:var(--soft);font-size:0.82rem">Zuòhǎo xiǎo shì shì wánchéng dà shì de dì-yī bù, yīncǐ, jiànjiàn xiǎo shì dōu yīnggāi bèi kànchéng shì yí cì xuéxí de jīhuì.</td><td style="color:var(--mid);font-size:0.85rem">Làm tốt việc nhỏ là bước đầu tiên để hoàn thành việc lớn, vì vậy, mỗi việc nhỏ đều nên được xem là một cơ hội học tập. (ôn lại 因此 Bài 8, câu chữ 被)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">5</span>「相反」</div>
+    <div class="g-sub">相反 có 2 cách dùng: (1) Liên từ — dùng ở đầu hoặc giữa vế câu sau để chỉ sự chuyển ý hoặc diễn tả sự tăng tiến ("ngược lại"). (2) Tính từ — diễn tả hai mặt của sự vật đối lập/mâu thuẫn nhau, có thể làm vị ngữ hoặc bổ nghĩa cho danh từ; khi bổ nghĩa danh từ phải có 的 (相反的方向).</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> ……。<strong style="color:var(--sky-d)">相反</strong>，……(liên từ) &nbsp;|&nbsp; A 和 B (完全)<strong style="color:var(--sky-d)">相反</strong> &nbsp;|&nbsp; <strong style="color:var(--sky-d)">相反的</strong> + Danh từ</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">如果还是使用以前的办法，不但不能解决任何问题，相反，会使问题变得更复杂。</td><td style="color:var(--soft);font-size:0.82rem">Rúguǒ háishi shǐyòng yǐqián de bànfǎ, búdàn bù néng jiějué rènhé wèntí, xiāngfǎn, huì shǐ wèntí biànde gèng fùzá.</td><td style="color:var(--mid);font-size:0.85rem">Nếu vẫn dùng cách cũ, không những không giải quyết được vấn đề nào, ngược lại, sẽ khiến vấn đề phức tạp hơn. (ôn lại 使 Bài 8, 复杂 Bài 11)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">调查结果和他们想的几乎完全相反，他们不得不改变原来的计划。（tính từ — vị ngữ）</td><td style="color:var(--soft);font-size:0.82rem">Diàochá jiéguǒ hé tāmen xiǎng de jīhū wánquán xiāngfǎn, tāmen bùdébù gǎibiàn yuánlái de jìhuà.</td><td style="color:var(--mid);font-size:0.85rem">Kết quả điều tra hầu như hoàn toàn trái ngược với điều họ nghĩ, họ buộc phải thay đổi kế hoạch ban đầu. (ôn lại 几乎 Bài 2, 不得不 Bài 4)</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">我本来以为任务能顺利完成，没想到事情正好向相反的方向发展。（相反的 + danh từ）</td><td style="color:var(--soft);font-size:0.82rem">Wǒ běnlái yǐwéi rènwu néng shùnlì wánchéng, méi xiǎngdào shìqing zhènghǎo xiàng xiāngfǎn de fāngxiàng fāzhǎn.</td><td style="color:var(--mid);font-size:0.85rem">Tôi vốn tưởng nhiệm vụ sẽ hoàn thành thuận lợi, không ngờ sự việc lại phát triển theo hướng ngược lại. (ôn lại 本来 Bài 3, 以为 Bài 4, 正好 Bài 2, 方向/发展 Bài 10)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="dialog" class="section">
+  <div class="sec-head">
+    <div class="sec-title">💬 Bài khoá <span class="sec-badge">5 đoạn</span></div>
+    <div class="sec-sub">Ba đoạn hội thoại và hai bài đọc ngắn về kinh nghiệm, phương pháp và cách nói chuyện</div>
+  </div>
+  <div class="dlg-tabs">
+    <button class="dlg-tb active" data-action="show-dlg" data-idx="0">1 · Làm ăn gặp khó</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="1">2 · Cách giặt quần áo</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="2">3 · Phương pháp giáo dục</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="3">4 · Nghệ thuật nói chuyện</button>
+    <button class="dlg-tb" data-action="show-dlg" data-idx="4">5 · 事半功倍</button>
+  </div>
+  <div id="dlg-wrap"></div>
+</div>
+
+<div id="match" class="section">
+  <div class="sec-head">
+    <div class="sec-title">1️⃣ Ghép từ <span class="sec-badge">搭配</span></div>
+    <div class="sec-sub">Bấm 1 ô <strong style="color:var(--sky)">bên trái</strong> → bấm ô <strong style="color:var(--teal)">bên phải</strong> để ghép thành cụm từ đúng</div>
+  </div>
+  <div class="m-fb" id="m-fb"></div>
+  <div class="match-grid">
+    <div><div class="mcol-title">Từ 1</div><div id="m-left"></div></div>
+    <div><div class="mcol-title">Từ 2</div><div id="m-right"></div></div>
+  </div>
+  <div class="btn-row"><button class="btn-s" data-action="reset-match">Làm lại</button></div>
+</div>
+
+<div id="listen" class="section">
+  <div class="sec-head">
+    <div class="sec-title">2️⃣ Nghe hiểu <span class="sec-badge">听力</span></div>
+    <div class="sec-sub">Nhấn 🔊 nghe đoạn hội thoại/câu (đề thật từ sách bài tập), rồi trả lời câu hỏi bên dưới</div>
+  </div>
+  <div id="listen-wrap"></div>
+  <div class="score-box" id="listen-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="listen-sn"></div></div>
+    <div class="score-m" id="listen-sm"></div>
+  </div>
+</div>
+
+<div id="fill" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Điền vào chỗ trống</div>
+    <div class="sec-sub">Điền từ/cụm từ thích hợp để hoàn thành câu</div>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="fill-prog" style="width:0%"></div></div>
+  <div id="fill-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-fill">Kiểm tra đáp án</button>
+    <button class="btn-s" data-action="reset-fill">Làm lại</button>
+  </div>
+  <div class="score-box" id="fill-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="fill-sn"></div></div>
+    <div class="score-m" id="fill-sm"></div>
+  </div>
+</div>
+
+<div id="sort" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Sắp xếp thành câu</div>
+    <div class="sec-sub">Nhấn 🔊 để nghe câu, rồi bấm các từ theo đúng thứ tự — <strong style="color:var(--warm)">nhớ đặt cả dấu câu (。／？)</strong> vào cuối · Bấm từ đã đặt để xóa</div>
+  </div>
+  <div id="sort-list"></div>
+  <div class="btn-row">
+    <button class="btn-p" data-action="check-sort">Kiểm tra</button>
+    <button class="btn-s" data-action="reset-sort">Làm lại</button>
+  </div>
+  <div class="score-box" id="sort-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="sort-sn"></div></div>
+    <div class="score-m" id="sort-sm"></div>
+  </div>
+</div>
+
+<div id="errfix" class="section">
+  <div class="sec-head">
+    <div class="sec-title">3️⃣ Chọn từ thích hợp <span class="sec-badge">选词填空</span></div>
+    <div class="sec-sub">Bài tập gốc từ sách giáo khoa (练习2) — chọn từ đúng để điền vào chỗ trống trong mỗi câu.</div>
+  </div>
+  <div id="errfix-list"></div>
+  <div class="score-box" id="errfix-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="errfix-sn"></div></div>
+    <div class="score-m" id="errfix-sm"></div>
+  </div>
+</div>
+
+<div id="speak" class="section">
+  <div class="sec-head">
+    <div class="sec-title">4️⃣ Luyện nói phản xạ</div>
+    <div class="sec-sub">Nhấn 🔊 nghe câu hỏi, rồi <strong style="color:var(--teal)">tự ghi âm câu trả lời của bạn</strong> — không đọc theo câu mẫu. Ghi âm xong có thể gửi chấm điểm AI hoặc đối chiếu với câu trả lời gợi ý.</div>
+  </div>
+  <div id="speak-wrap"></div>
+</div>
+
+<div id="tongket" class="section">
+  <div class="sec-head">
+    <div class="sec-title">5️⃣ Tổng kết bài học <span class="sec-badge">总结</span></div>
+    <div class="sec-sub">Điểm tổng hợp từ 4 phần bài tập bên trên — hoàn thành hết rồi quay lại đây để xem điểm chính xác nhất!</div>
+  </div>
+  <div id="summary-wrap"></div>
+</div>
+
+</div>
+
+<script src="/js/hsk4-bai-12-data.js"></script>
+<script src="/js/lesson-engine.js"></script>
+</body>
+</html>

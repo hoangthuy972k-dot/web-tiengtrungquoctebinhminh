@@ -35,7 +35,9 @@ function miniSpeakBtn(text){return '<button type="button" class="speak-mini" dat
 // REAL AUDIO (bản ghi âm gốc từ giáo trình HSK标准教程 2)
 // ══════════════════════════════════════════
 const LESSON_NUM=(function(){var m=location.pathname.match(/bai-(\d+)/);return m?parseInt(m[1],10):null;})();
-const AUDIO_BASE=(function(){var m=location.pathname.match(/(hsk1-|hsk1v3-)?bai-(\d+)/);if(!m)return null;return m[1]?'/audio/'+m[1]+'bai-'+m[2]:'/audio/bai-'+m[2];})();
+// Thư mục audio theo cấp: /audio/hsk1-bai-N, hsk1v3-bai-N, hsk3-bai-N, hsk4-bai-N;
+// riêng HSK2 (bai-N.html không có tiền tố) dùng /audio/bai-N.
+const AUDIO_BASE=(function(){var m=location.pathname.match(/(hsk1-|hsk1v3-|hsk3-|hsk4-)?bai-(\d+)/);if(!m)return null;return m[1]?'/audio/'+m[1]+'bai-'+m[2]:'/audio/bai-'+m[2];})();
 function audioLoadError(el){el.outerHTML='<span class="audio-missing">⚠️ Chưa có file audio gốc cho phần này.</span>';}
 // Dò tìm tuần tự base/prefix-1.mp3, prefix-2.mp3... (dừng khi không còn file/không phải audio),
 // dùng chung cho các phần có SỐ LƯỢNG track thay đổi theo từng bài (từ mới, nghe bổ sung...).

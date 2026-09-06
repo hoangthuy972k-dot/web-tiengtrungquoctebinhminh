@@ -157,9 +157,12 @@
     fetch('/api/auth/me', { headers: { 'Authorization': 'Bearer ' + auth.token } })
       .then(function (r) {
         if (r.status === 401) {
+          // Server khong con phien nay (da dang xuat o thiet bi khac, hoac
+          // tai khoan bi xoa) — bao ro cho hoc sinh thay vi lang le dang xuat.
           localStorage.removeItem(STORAGE_KEYS.auth);
           renderUserChip();
           renderAuthBanner();
+          showToast('Phiên đăng nhập trước đã hết hạn, vui lòng đăng nhập lại.');
           return null;
         }
         return r.json();

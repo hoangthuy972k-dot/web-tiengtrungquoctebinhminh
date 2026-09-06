@@ -971,6 +971,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-19.html'
+      },
+      {
+        id: 'hsk4-l20',
+        number: 20,
+        title: 'Quang cảnh dọc đường',
+        titleHanzi: '路上的风景',
+        titlePinyin: 'Lù shang de fēngjǐng',
+        topic: 'Du lịch, Ẩm thực & Nam Bắc Trung Quốc',
+        vocabCount: 30,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-20.html'
       }
     ],
     hsk1v3: [

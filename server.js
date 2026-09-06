@@ -56,6 +56,33 @@ app.use(express.json({ limit: '10mb' }));
 // Audio/anh thi cache dai 30 ngay vi gan nhu khong bao gio doi.
 const REVALIDATE_EXT = new Set(['.html', '.css', '.js', '.json', '.webmanifest']);
 
+// CDN cua Hostinger (hcdn) cache file .js/.css o edge va bo header Cache-Control,
+// nen sau moi lan deploy hoc sinh van co the nhan ban cu (trinh duyet cache
+// theo heuristic). Cach chac chan nhat: moi lan server khoi dong (= moi lan
+// deploy) tao 1 ma phien ban moi va gan ?v=... vao MOI the <script>/<link>
+// tro toi /js/ va /css/ trong HTML tra ve — URL moi thi CDN lan trinh duyet
+// deu phai tai lai. HTML thi luon no-cache nen ban than trang khong bi cu.
+const ASSET_VERSION = Date.now().toString(36);
+const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css)\/[^"?#]+\.(?:js|css))(")/g;
+
+function sendVersionedHtml(res, filePath) {
+  let html = fs.readFileSync(filePath, 'utf8');
+  html = html.replace(ASSET_REF_RE, (m, before, url, after) => before + url + '?v=' + ASSET_VERSION + after);
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('X-Asset-Version', ASSET_VERSION);
+  res.type('html').send(html);
+}
+
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+  let p = decodeURIComponent(req.path);
+  if (p.endsWith('/')) p += 'index.html';
+  if (!p.endsWith('.html')) return next();
+  const filePath = path.join(PUBLIC_DIR, p);
+  if (!filePath.startsWith(PUBLIC_DIR) || !fs.existsSync(filePath)) return next();
+  sendVersionedHtml(res, filePath);
+});
+
 app.use(
   express.static(PUBLIC_DIR, {
     extensions: ['html'],
@@ -744,7 +771,7 @@ app.post('/api/speech-assess', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
+  sendVersionedHtml(res, path.join(PUBLIC_DIR, 'index.html'));
 });
 
 initDb()

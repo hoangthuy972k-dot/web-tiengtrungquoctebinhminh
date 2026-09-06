@@ -1189,9 +1189,18 @@
   // inline - hop le voi CSP); vi la "var" nen no gan thang vao window cua
   // iframe, doc xong la huy iframe.
   var lessonDataCache = {};
+  // Ma phien ban tai san do server gan vao the <script src="/js/app.js?v=..."> —
+  // dung lai cho cac file du lieu bai hoc tai dong, de CDN/trinh duyet
+  // khong dua ban cu sau khi deploy (xem ASSET_VERSION trong server.js).
+  var ASSET_VERSION = (function () {
+    var s = document.querySelector('script[src*="/js/app.js"]');
+    var m = s && s.getAttribute('src').match(/[?&]v=([^&]+)/);
+    return m ? m[1] : '';
+  })();
+
   function loadLessonRawData(lesson) {
     if (lessonDataCache[lesson.fullPageUrl]) return Promise.resolve(lessonDataCache[lesson.fullPageUrl]);
-    var dataUrl = lesson.fullPageUrl.replace('/lessons/', '/js/').replace('.html', '-data.js');
+    var dataUrl = lesson.fullPageUrl.replace('/lessons/', '/js/').replace('.html', '-data.js') + (ASSET_VERSION ? '?v=' + ASSET_VERSION : '');
     return new Promise(function (resolve, reject) {
       var iframe = document.createElement('iframe');
       iframe.style.display = 'none';

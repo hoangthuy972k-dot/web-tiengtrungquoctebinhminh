@@ -935,6 +935,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-16.html'
+      },
+      {
+        id: 'hsk4-l17',
+        number: 17,
+        title: 'Con người và thiên nhiên',
+        titleHanzi: '人与自然',
+        titlePinyin: 'Rén yǔ zìrán',
+        topic: 'Thiên nhiên, Động vật & Đại dương',
+        vocabCount: 29,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-17.html'
       }
     ],
     hsk1v3: [

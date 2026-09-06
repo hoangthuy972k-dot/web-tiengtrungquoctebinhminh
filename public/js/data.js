@@ -911,6 +911,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-14.html'
+      },
+      {
+        id: 'hsk4-l15',
+        number: 15,
+        title: 'Nghệ thuật giáo dục con cái',
+        titleHanzi: '教育孩子的艺术',
+        titlePinyin: 'Jiàoyù háizi de yìshù',
+        topic: 'Giáo dục con cái, Khen ngợi & Phê bình',
+        vocabCount: 31,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-15.html'
       }
     ],
     hsk1v3: [

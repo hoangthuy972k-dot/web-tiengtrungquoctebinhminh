@@ -899,6 +899,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-13.html'
+      },
+      {
+        id: 'hsk4-l14',
+        number: 14,
+        title: 'Bảo vệ Mẹ Trái đất',
+        titleHanzi: '保护地球母亲',
+        titlePinyin: 'Bǎohù dìqiú mǔqīn',
+        topic: 'Môi trường, Ô nhiễm & Bảo vệ Trái đất',
+        vocabCount: 32,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-14.html'
       }
     ],
     hsk1v3: [

@@ -154,8 +154,13 @@ function buildVocab(){
   vocabData.forEach(function(v,vi){
     const d=document.createElement('div');
     d.className='vocab-card';d.dataset.lesson=v.lesson;
+    // HSK4: nghĩa tiếng Việt của ví dụ ẩn sau nút "Xem nghĩa" để học sinh tự dịch trước.
+    const hideExVn=/hsk4-bai-\d+/.test(location.pathname);
     const exs=(v.exList||[{zh:v.ex_zh,py:v.ex_py,vn:v.ex_vn}]).map(function(e){
-      return '<div class="vc-ex-item"><div class="vc-ex-zh">'+e.zh+'</div><div class="vc-ex-py">'+e.py+'</div><div class="vc-ex-vn">'+e.vn+'</div></div>';
+      const vnHtml=hideExVn
+        ? '<button type="button" class="vc-ex-vn-btn" data-action="toggle-ex-vn">👁 Xem nghĩa tiếng Việt</button><div class="vc-ex-vn" hidden>'+e.vn+'</div>'
+        : '<div class="vc-ex-vn">'+e.vn+'</div>';
+      return '<div class="vc-ex-item"><div class="vc-ex-zh">'+e.zh+'</div><div class="vc-ex-py">'+e.py+'</div>'+vnHtml+'</div>';
     }).join('');
     const hzs=(v.hanzi||[]).map(function(h,hi){
       const hasWriter=(typeof STROKE_DATA!=='undefined')&&!!STROKE_DATA[h.c]&&(typeof HanziWriter!=='undefined');
@@ -938,6 +943,14 @@ document.addEventListener('click', function(e){
   if(action==='place-word'){ placeW(parseInt(el.dataset.si,10), parseInt(el.dataset.wi,10), el.dataset.word); return; }
   if(action==='check-mc'){ checkMC(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='toggle-show'){ document.getElementById(el.dataset.target).classList.toggle('show'); return; }
+  if(action==='toggle-ex-vn'){
+    e.stopPropagation();
+    const p=el.nextElementSibling; if(!p) return;
+    const show=p.hidden; p.hidden=!show;
+    el.textContent=show?'🙈 Ẩn nghĩa tiếng Việt':'👁 Xem nghĩa tiếng Việt';
+    el.classList.toggle('open',show);
+    return;
+  }
   if(action==='check-listen'){ checkListenAnswer(parseInt(el.dataset.gi,10), parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='check-dictation'){ checkDictation(parseInt(el.dataset.idx,10)); return; }
   if(action==='check-listen-mc'){ checkListenMC(parseInt(el.dataset.idx,10), parseInt(el.dataset.ci,10)); return; }

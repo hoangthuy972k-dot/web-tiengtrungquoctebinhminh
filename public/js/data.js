@@ -923,6 +923,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-15.html'
+      },
+      {
+        id: 'hsk4-l16',
+        number: 16,
+        title: 'Cuộc sống có thể tốt đẹp hơn',
+        titleHanzi: '生活可以更美好',
+        titlePinyin: 'Shēnghuó kěyǐ gèng měihǎo',
+        topic: 'Kế hoạch, Cơ hội & Cách từ chối',
+        vocabCount: 31,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-16.html'
       }
     ],
     hsk1v3: [

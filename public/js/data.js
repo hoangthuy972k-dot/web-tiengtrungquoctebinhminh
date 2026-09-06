@@ -959,6 +959,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-18.html'
+      },
+      {
+        id: 'hsk4-l19',
+        number: 19,
+        title: 'Mùi vị của cuộc sống',
+        titleHanzi: '生活的味道',
+        titlePinyin: 'Shēnghuó de wèidào',
+        topic: 'Đời sống, Thuê nhà & Thể thao',
+        vocabCount: 32,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-19.html'
       }
     ],
     hsk1v3: [

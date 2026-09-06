@@ -1481,20 +1481,23 @@
   // nhu truoc — khop voi bang cach trinh bay tu vung moi.
   // opts.alwaysPy: pinyin luon hien (bo qua nut tat pinyin toan trang).
   // opts.hideVn:   nghia tieng Viet cua vi du an sau nut "Xem nghia".
-  function vpExampleVnHtml(vn, opts) {
-    if (!opts || !opts.hideVn) return '<div class="vp-word-vn">' + vn + '</div>';
-    return '<button type="button" class="vp-ex-vn-btn" data-ex-vn-toggle>👁 Xem nghĩa tiếng Việt</button>' +
-      '<div class="vp-word-vn vp-ex-vn" hidden>' + vn + '</div>';
+  // Phan pinyin + nghia cua MOT cau vi du. Voi HSK4 (opts.hideVn) ca hai deu
+  // an sau nut "Xem pinyin & nghia" de hoc sinh tu doc/tu dich truoc.
+  function vpExampleDetailHtml(ex, opts) {
+    var pyCls = 'vp-word-py' + (opts && opts.alwaysPy ? ' py-always' : '');
+    var pyHtml = '<div class="' + pyCls + '">' + ex.py + '</div>';
+    if (!opts || !opts.hideVn) return pyHtml + '<div class="vp-word-vn">' + ex.vn + '</div>';
+    return '<button type="button" class="vp-ex-vn-btn" data-ex-vn-toggle>👁 Xem pinyin &amp; nghĩa</button>' +
+      '<div class="vp-ex-detail" hidden>' + pyHtml + '<div class="vp-word-vn vp-ex-vn">' + ex.vn + '</div></div>';
   }
 
   function vpWordAllExamplesHtml(v, opts) {
     var list = v.exList || [];
     if (!list.length) return '';
-    var pyCls = 'vp-word-py' + (opts && opts.alwaysPy ? ' py-always' : '');
     var items = list.map(function (ex) {
       return '<li><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.15rem;">' + ex.zh + '</span>' +
         '<button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
-        '<div class="' + pyCls + '">' + ex.py + '</div>' + vpExampleVnHtml(ex.vn, opts) + '</li>';
+        vpExampleDetailHtml(ex, opts) + '</li>';
     }).join('');
     return '<div class="vp-word-example vp-word-examples-all"><div class="vp-examples-label">Ví dụ:</div><ol class="vp-examples-list">' + items + '</ol></div>';
   }
@@ -1519,7 +1522,7 @@
         '<div class="vp-word-vn">' + v.vn + '</div>' +
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
         vpWordRichHtml(v) +
-        (v.explain ? vpWordAllExamplesHtml(v, opts) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="' + pyCls + '">' + ex.py + '</div>' + vpExampleVnHtml(ex.vn, opts) + '</div>' : '')) +
+        (v.explain ? vpWordAllExamplesHtml(v, opts) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' + vpExampleDetailHtml(ex, opts) + '</div>' : '')) +
         (hzs ? '<div class="vc-hz"><button type="button" class="hz-btn" data-hz-toggle="' + vi + '">🀄 Xem Hán tự (' + v.hanzi.length + ' chữ)</button><div class="hz-panel" id="vphzp' + vi + '">' + hzs + '</div></div>' : '') +
         (v.checkList ? v.checkList.map(function (c, ci) { return renderVpCheckHtml(c, vi + '_' + ci); }).join('') : (v.check ? renderVpCheckHtml(v.check, vi) : ''));
       grid.appendChild(card);
@@ -1536,7 +1539,7 @@
         if (!panel) return;
         var show = panel.hidden;
         panel.hidden = !show;
-        btn.textContent = show ? '🙈 Ẩn nghĩa tiếng Việt' : '👁 Xem nghĩa tiếng Việt';
+        btn.textContent = show ? '🙈 Ẩn pinyin & nghĩa' : '👁 Xem pinyin & nghĩa';
         btn.classList.toggle('open', show);
       });
     });

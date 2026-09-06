@@ -74,9 +74,25 @@ app.use(
 
 // Simple content API so lesson/vocab data can later move server-side
 // without changing the frontend contract.
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', time: new Date().toISOString() });
-});
+app.get('/api/health', asyncRoute(async (req, res) => {
+  // storage + so luong tai khoan/phien (khong co du lieu ca nhan) — de kiem
+  // tra nhanh production dang luu vao MySQL hay file JSON (file JSON bi xoa
+  // moi lan deploy lai tu GitHub nen phien dang nhap se mat).
+  let users = 0, sessions = 0, storage = USE_DB ? 'mysql' : 'json';
+  try {
+    if (USE_DB) {
+      const [[u]] = await dbPool.query('SELECT COUNT(*) AS c FROM users');
+      const [[s]] = await dbPool.query('SELECT COUNT(*) AS c FROM sessions');
+      users = u.c; sessions = s.c;
+    } else {
+      users = (readJsonFile(USERS_FILE) || []).length;
+      sessions = Object.keys(readJsonFile(SESSIONS_FILE) || {}).length;
+    }
+  } catch (err) {
+    storage = storage + '-error:' + err.code;
+  }
+  res.json({ status: 'ok', time: new Date().toISOString(), storage, users, sessions });
+}));
 
 // ══════════════════════════════════════════════════════════════════
 // Tai khoan hoc sinh THAT + Bang xep hang — luu vao file JSON tren

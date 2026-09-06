@@ -1874,6 +1874,9 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   margin-top: 4px;
 }
 
+.vp-ex-detail { margin-top: 4px; }
+.vp-ex-detail[hidden] { display: none; }
+
 /* Khung luyen dich nho gan duoi moi the tu vung (vp-word-card) */
 .vp-check-box {
   margin-top: var(--space-3);

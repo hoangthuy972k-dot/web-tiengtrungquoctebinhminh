@@ -172,6 +172,39 @@ async function initDb() {
     if (err.code !== 'ER_DUP_FIELDNAME') throw err;
   }
   console.log('MySQL: da san sang (bang users/scores).');
+  await migrateJsonToDbIfNeeded();
+}
+
+// Chuyen du lieu tu file JSON (data/) sang MySQL DUY NHAT 1 LAN, khi vua
+// cau hinh DB_HOST lan dau tren mot server truoc do chay bang file JSON —
+// de tai khoan hoc sinh da dang ky khong bi mat, VA giu nguyen session
+// token cu de thiet bi da dang nhap tu truoc khong bi dang xuat. Chi chay
+// khi bang users con trong (chua tung migrate) VA file JSON co du lieu.
+async function migrateJsonToDbIfNeeded() {
+  const [[{ c }]] = await dbPool.query('SELECT COUNT(*) AS c FROM users');
+  if (c > 0) return; // da co du lieu (migrate roi hoac da dang dung DB tu dau) — khong lam gi ca
+  const oldUsers = readJsonFile(USERS_FILE);
+  if (!Array.isArray(oldUsers) || oldUsers.length === 0) return; // khong co du lieu JSON cu de chuyen
+
+  await saveUsers(oldUsers);
+
+  const oldSessions = readJsonFile(SESSIONS_FILE) || {};
+  for (const token of Object.keys(oldSessions)) {
+    const s = oldSessions[token];
+    if (!s || !s.userId) continue;
+    await dbPool.query(
+      'INSERT INTO sessions (token, user_id, created_at) VALUES (?,?,?) ON DUPLICATE KEY UPDATE user_id=VALUES(user_id)',
+      [token, s.userId, s.createdAt || new Date()]
+    );
+  }
+
+  const oldScores = readJsonFile(SCORES_FILE) || {};
+  if (Object.keys(oldScores).length > 0) await saveScores(oldScores);
+
+  console.log(
+    'MySQL: da chuyen ' + oldUsers.length + ' tai khoan + ' + Object.keys(oldSessions).length +
+    ' phien dang nhap + ' + Object.keys(oldScores).length + ' ban ghi diem tu file JSON sang MySQL.'
+  );
 }
 
 async function loadUsers() {

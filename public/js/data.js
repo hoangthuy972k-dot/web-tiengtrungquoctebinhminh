@@ -947,6 +947,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-17.html'
+      },
+      {
+        id: 'hsk4-l18',
+        number: 18,
+        title: 'Khoa học công nghệ và thế giới',
+        titleHanzi: '科技与世界',
+        titlePinyin: 'Kējì yǔ shìjiè',
+        topic: 'Khoa học, Công nghệ & Internet',
+        vocabCount: 32,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-18.html'
       }
     ],
     hsk1v3: [

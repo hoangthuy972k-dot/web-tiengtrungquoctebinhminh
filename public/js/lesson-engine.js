@@ -880,7 +880,7 @@ function buildErrorFix(){
   const l=document.getElementById('errfix-list');
   const isWordChoice=typeof errorFixMode!=='undefined'&&errorFixMode==='wordchoice';
   const icon=isWordChoice?'📝':'❌';
-  const hint=isWordChoice?'👆 Chọn từ thích hợp điền vào chỗ trống:':'👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:';
+  const hint=isWordChoice?'👆 Chọn từ phù hợp với nghĩa của câu để điền vào chỗ trống:':'👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:';
   l.innerHTML=errorFixData.map(function(q,i){
     const opts=q.opts.map(function(o,j){return '<button class="q-opt" id="eo'+i+'_'+j+'" data-action="check-errorfix" data-qi="'+i+'" data-ci="'+j+'">'+o+'</button>';}).join('');
     return '<div class="quiz-card" id="efq'+i+'">'+

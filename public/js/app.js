@@ -1225,6 +1225,7 @@
             fillData: iframe.contentWindow.fillData || [],
             sortData: iframe.contentWindow.sortData || [],
             errorFixData: iframe.contentWindow.errorFixData || [],
+            errorFixMode: iframe.contentWindow.errorFixMode || null,
             mcData: iframe.contentWindow.mcData || [],
             translateData: iframe.contentWindow.translateData || [],
             translateDataRev: iframe.contentWindow.translateDataRev || []
@@ -8869,7 +8870,7 @@
     fill: { label: 'Điền từ', emoji: '✏️', color: 'orange', desc: 'Điền từ còn thiếu vào chỗ trống' },
     sort: { label: 'Sắp xếp câu', emoji: '🧩', color: 'indigo', desc: 'Sắp xếp các từ thành câu đúng' },
     errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink', desc: 'Tìm câu đúng để sửa lỗi sai thường gặp' },
-    errfixWord: { label: 'Chọn từ thích hợp', emoji: '📝', color: 'pink', desc: 'Chọn từ đúng để điền vào chỗ trống (bài gốc trong SGK)' },
+    errfixWord: { label: 'Chọn từ phù hợp với nghĩa', emoji: '📝', color: 'pink', desc: 'Đọc câu, chọn từ phù hợp với nghĩa để điền vào chỗ trống (bài gốc trong SGK)' },
     mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal', desc: 'Chọn đáp án đúng cho mỗi câu hỏi' }
   };
 
@@ -9205,7 +9206,7 @@
       pgbHtml(pgbId, data.length) +
       data.map(function (q, i) {
       var promptHtml = opts.blankMode
-        ? '📝 ' + q.wrong + '<div class="mc-sub">👆 Chọn từ thích hợp điền vào chỗ trống:</div>'
+        ? '📝 ' + q.wrong + '<div class="mc-sub">👆 Chọn từ phù hợp với nghĩa của câu để điền vào chỗ trống:</div>'
         : opts.wrongPrefix
         ? '❌ ' + q.wrong + '<div class="mc-sub">👆 Câu này sai — chọn câu SỬA ĐÚNG bên dưới:</div>'
         : q.q;

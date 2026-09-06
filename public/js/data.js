@@ -863,6 +863,18 @@ const APP_DATA = {
         dialogueCount: 5,
         grammarCount: 5,
         fullPageUrl: '/lessons/hsk4-bai-10.html'
+      },
+      {
+        id: 'hsk4-l11',
+        number: 11,
+        title: 'Đọc sách có lợi, đọc sách hay, thích đọc sách',
+        titleHanzi: '读书好，读好书，好读书',
+        titlePinyin: 'Dú shū hǎo, dú hǎo shū, hào dú shū',
+        topic: 'Học tiếng Trung, Thi cử & Đọc sách',
+        vocabCount: 31,
+        dialogueCount: 5,
+        grammarCount: 5,
+        fullPageUrl: '/lessons/hsk4-bai-11.html'
       }
     ],
     hsk1v3: [

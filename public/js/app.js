@@ -8035,6 +8035,11 @@
   var dpQuizState = {};
   var dpFlatOffsets = [];
   var dpTotalQuiz = 0;
+  // HSK4: phan dich tieng Viet trong "Noi dung bai khoa" an mac dinh, hoc
+  // sinh bam nut de hien/an toan bo, hoac bam vao tung bong bong de xem
+  // rieng cau do. Cac cap khac giu nguyen (luon hien).
+  var dpHideVn = false;
+  var dpLineShown = {};
 
   function showDialoguePractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -8064,6 +8069,8 @@
       dpIndex = 0;
       dpViewed = new Set();
       dpQuizState = {};
+      dpHideVn = /\/hsk4-bai-\d+\.html/.test(lesson.fullPageUrl || '');
+      dpLineShown = {};
       dpFlatOffsets = [];
       dpTotalQuiz = 0;
       dialogData.forEach(function (scene) {
@@ -8143,14 +8150,22 @@
 
     var linesHtml = '';
     if (state.revealed) {
-      linesHtml = scene.lines.map(function (line) {
+      var shownSet = dpLineShown[dpIndex] || {};
+      linesHtml = scene.lines.map(function (line, li) {
         var isB = line.sp === 1;
-        return '<div class="dp-line' + (isB ? ' is-b' : '') + '">' +
+        var lineShown = dpHideVn && shownSet[li];
+        return '<div class="dp-line' + (isB ? ' is-b' : '') + (lineShown ? ' show-vn' : '') + '" data-li="' + li + '">' +
           '<div class="dp-avatar">' + (isB ? 'B' : 'A') + '</div>' +
           '<div class="dp-bubble"><div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
           '</div>';
       }).join('');
-      linesHtml = '<div class="dp-content-label">📖 Nội dung bài khóa</div>' + linesHtml;
+      var isHsk4Dp = /\/hsk4-bai-\d+\.html/.test((currentHubLesson && currentHubLesson.fullPageUrl) || '');
+      var toggleHtml = isHsk4Dp
+        ? '<button type="button" class="dp-vn-toggle' + (dpHideVn ? '' : ' open') + '" id="dpVnToggle">' + (dpHideVn ? '👁 Hiện dịch' : '🙈 Ẩn dịch') + '</button>'
+        : '';
+      var hintHtml = (isHsk4Dp && dpHideVn) ? '<div class="dp-vn-hint">Bấm vào từng câu để xem nghĩa riêng câu đó.</div>' : '';
+      linesHtml = '<div class="dp-content-head"><div class="dp-content-label">📖 Nội dung bài khóa</div>' + toggleHtml + '</div>' + hintHtml +
+        '<div class="dp-lines' + (dpHideVn ? ' vn-hidden' : '') + '">' + linesHtml + '</div>';
       if (dpViewed) {
         dpViewed.add(dpIndex);
         if (dpViewed.size === dpScenes.length) recordLessonScore(currentHubLesson, 'dialog', { done: true });
@@ -8170,6 +8185,25 @@
       audioEl.addEventListener('error', function () {
         var box = audioEl.closest('.dp-audio-box');
         if (box) box.innerHTML = '<span class="dp-audio-missing">⚠️ Chưa có audio gốc cho đoạn này.</span>';
+      });
+    }
+
+    var vnToggle = $('#dpVnToggle', wrap);
+    if (vnToggle) {
+      vnToggle.addEventListener('click', function () {
+        dpHideVn = !dpHideVn;
+        renderDialogueScene();
+      });
+    }
+    if (dpHideVn) {
+      $all('.dp-lines.vn-hidden .dp-bubble', wrap).forEach(function (bubble) {
+        bubble.addEventListener('click', function () {
+          var lineEl = bubble.closest('.dp-line');
+          var li = lineEl.getAttribute('data-li');
+          if (!dpLineShown[dpIndex]) dpLineShown[dpIndex] = {};
+          dpLineShown[dpIndex][li] = !dpLineShown[dpIndex][li];
+          lineEl.classList.toggle('show-vn', !!dpLineShown[dpIndex][li]);
+        });
       });
     }
 

@@ -63,7 +63,7 @@ const REVALIDATE_EXT = new Set(['.html', '.css', '.js', '.json', '.webmanifest']
 // tro toi /js/ va /css/ trong HTML tra ve — URL moi thi CDN lan trinh duyet
 // deu phai tai lai. HTML thi luon no-cache nen ban than trang khong bi cu.
 const ASSET_VERSION = Date.now().toString(36);
-const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css)\/[^"?#]+\.(?:js|css))(")/g;
+const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css|exam)\/[^"?#]+\.(?:js|css))(")/g;
 
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');

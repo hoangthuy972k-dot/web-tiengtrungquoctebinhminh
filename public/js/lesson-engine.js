@@ -770,9 +770,17 @@ function buildListenWorkbook(){
         '<input class="q-inp" id="dict'+i+'_'+li+'" type="text" placeholder="___" style="width:130px;">'+
         '<span>'+(ln.post||'')+'</span></div>';
     }).join('');
+    // Đề gốc HSK4 câu 1-5 là "判断对错": hiện câu ★ để học sinh phán đoán
+    // đúng/sai (tự kiểm tra, không tính vào điểm điền từ).
+    const judge=item.stmt?'<div class="wb-judge" data-idx="'+i+'">'+
+      '<span class="wb-judge-stmt">★ '+item.stmt+'</span>'+
+      '<button type="button" class="btn-s wb-judge-btn" data-action="judge" data-idx="'+i+'" data-val="1">✓ Đúng</button>'+
+      '<button type="button" class="btn-s wb-judge-btn" data-action="judge" data-idx="'+i+'" data-val="0">✗ Sai</button>'+
+      '<span class="wb-judge-result" id="judgefb'+i+'"></span></div>':'';
     return '<div class="quiz-card" id="dictcard'+i+'">'+
       '<div class="q-text" style="margin-bottom:8px;"><span class="q-num">'+item.num+'</span>'+
       '<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button></div>'+
+      judge+
       lines+
       '<div class="btn-row" style="margin-top:8px;"><button class="btn-s" data-action="check-dictation" data-idx="'+i+'">Kiểm tra</button></div>'+
       '<div class="q-fb" id="dictfb'+i+'"></div></div>';
@@ -786,7 +794,8 @@ function buildListenWorkbook(){
     const opts=item.options.map(function(o,ci){return '<button class="q-opt" id="mco'+i+'_'+ci+'" data-action="check-listen-mc" data-idx="'+i+'" data-ci="'+ci+'">'+o+'</button>';}).join('');
     return '<div class="quiz-card" id="mccard'+i+'">'+
       '<div class="q-text" style="margin-bottom:8px;"><span class="q-num">'+item.num+'</span>'+
-      (hasLines?'<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button>':'')+'</div>'+
+      (hasLines?'<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button>':'')+
+      (item.q?'<span class="wb-mc-q">问：'+item.q+'</span>':'')+'</div>'+
       (hasLines?'<div style="font-size:0.85rem;color:var(--soft);margin:0 0 10px 30px;">'+transcript+'</div>':'')+
       '<div class="q-opts">'+opts+'</div>'+
       '<div class="q-fb" id="mcfb'+i+'"></div></div>';
@@ -819,6 +828,18 @@ function buildListenWorkbook(){
   }
   wrap.innerHTML=parts.map(renderGroup).join('')+renderGroup(null,-1);
   document.getElementById('listen-score').style.display='none';
+}
+// Câu ★ đúng/sai (判断对错) của đề HSK4 — tự kiểm tra, không tính điểm.
+function judgeDictation(i,chosen,btn){
+  const item=listenData.dictation[i];
+  const box=btn.closest('.wb-judge');
+  if(!box||box.classList.contains('done'))return;
+  const ok=chosen===!!item.judge;
+  box.classList.add('done',ok?'ok':'err');
+  btn.classList.add('chosen');
+  const fb=document.getElementById('judgefb'+i);
+  fb.textContent=ok?'✓ Đúng':('✗ Sai — đáp án: '+(item.judge?'√ Đúng':'× Sai'));
+  fb.className='wb-judge-result '+(ok?'ok':'err');
 }
 function checkDictation(i){
   const item=listenData.dictation[i];
@@ -979,6 +1000,7 @@ document.addEventListener('click', function(e){
   }
   if(action==='check-listen'){ checkListenAnswer(parseInt(el.dataset.gi,10), parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='check-dictation'){ checkDictation(parseInt(el.dataset.idx,10)); return; }
+  if(action==='judge'){ judgeDictation(parseInt(el.dataset.idx,10), el.dataset.val==='1', el); return; }
   if(action==='check-listen-mc'){ checkListenMC(parseInt(el.dataset.idx,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='check-errorfix'){ checkErrorFix(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }
   if(action==='rec-start'){ e.stopPropagation(); recStart(parseInt(el.dataset.idx,10)); return; }

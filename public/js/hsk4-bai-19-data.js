@@ -833,49 +833,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-19/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-19/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-19/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'没关系，不用道歉，',blank:'谁都有粗心填错的时候',post:'。',py:'Méi guānxi, búyòng dào qiàn, shéi dōu yǒu cūxīn tiáncuò de shíhou.',vn:'Không sao, không cần xin lỗi, ai cũng có lúc cẩu thả điền sai.'}]},
-    {num:2,lines:[{pre:'看来今天',blank:'吃不上羊肉饺子',post:'了。',py:'Kànlái jīntiān chībushàng yángròu jiǎozi le.',vn:'Xem ra hôm nay không ăn được sủi cảo thịt dê rồi.'}]},
-    {num:3,lines:[{pre:'这种语言',blank:'与国籍无关',post:'，无论哪个国家的人都能看懂。',py:'Zhè zhǒng yǔyán yǔ guójí wúguān, wúlùn nǎ ge guójiā de rén dōu néng kàndǒng.',vn:'Ngôn ngữ này không liên quan quốc tịch, người nước nào cũng hiểu.'}]},
-    {num:4,lines:[{pre:'',blank:'总的来说',post:'，这套房子他很满意，于是他就记下了房东的手机号码。',py:'Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jìxiàle fángdōng de shǒujī hàomǎ.',vn:'Nhìn chung anh rất hài lòng, thế là ghi số chủ nhà.'}]},
-    {num:5,lines:[{pre:'人们常说',blank:'"生命在于运动"',post:'，所以很多人一到周末就会到体育馆打几场球。',py:'Rénmen cháng shuō "shēngmìng zàiyú yùndòng", suǒyǐ hěn duō rén yí dào zhōumò jiù huì dào tǐyùguǎn dǎ jǐ chǎng qiú.',vn:'Người ta nói "sự sống nằm ở vận động", nên cuối tuần nhiều người đến nhà thi đấu.'}]},
+  dictation: [
+    {num:1, stmt:'想重新让人相信很难。', judge:true, lines:[
+      {pre:'别以为做错了事道个歉，说句对不起就行了。因为得到别人的原谅很容易，', blank:'但要重新让别人再相信你却很难', post:'。',
+       py:'Bié yǐwéi zuòcuòle shì dào ge qiàn, shuō jù duìbuqǐ jiù xíng le. Yīnwèi dédào biérén de yuánliàng hěn róngyì, dàn yào chóngxīn ràng biérén zài xiāngxìn nǐ què hěn nán.',
+       vn:'Đừng tưởng làm sai rồi xin lỗi, nói câu xin lỗi là xong. Vì được người khác tha thứ rất dễ, nhưng để người khác tin bạn lần nữa lại rất khó.'}]},
+    {num:2, stmt:'他在理发店。', judge:true, lines:[
+      {pre:'你好，', blank:'我想理个发，稍微短一点儿就可以', post:'。一会儿我还有些事要办，所以麻烦你快一点儿。',
+       py:'Nǐ hǎo, wǒ xiǎng lǐ ge fà, shāowēi duǎn yìdiǎnr jiù kěyǐ. Yíhuìr wǒ hái yǒu xiē shì yào bàn, suǒyǐ máfan nǐ kuài yìdiǎnr.',
+       vn:'Chào bạn, tôi muốn cắt tóc, ngắn hơn một chút là được. Lát nữa tôi còn có việc, nên phiền bạn nhanh một chút.'}]},
+    {num:3, stmt:'他想租个大房子。', judge:false, lines:[
+      {pre:'我想租一个交通方便的房子，离地铁站近点儿，', blank:'但是周围环境不能太吵，房租最好也别太贵', post:'。当然，如果房东比较友好，那就更好了。',
+       py:'Wǒ xiǎng zū yí ge jiāotōng fāngbiàn de fángzi, lí dìtiězhàn jìn diǎnr, dànshì zhōuwéi huánjìng bù néng tài chǎo, fángzū zuì hǎo yě bié tài guì. Dāngrán, rúguǒ fángdōng bǐjiào yǒuhǎo, nà jiù gèng hǎo le.',
+       vn:'Tôi muốn thuê một căn nhà giao thông thuận tiện, gần ga tàu điện ngầm, nhưng môi trường xung quanh không được quá ồn, tiền thuê tốt nhất cũng đừng quá đắt. Đương nhiên, nếu chủ nhà thân thiện thì càng tốt.'}]},
+    {num:4, stmt:'人们可以通过音乐交流感情。', judge:true, lines:[
+      {pre:'音乐不仅是一门艺术，也是一种语言。人们对音乐的喜爱与国籍无关。', blank:'通过音乐，不同国家的人可以交流感情', post:'，增进了解。',
+       py:'Yīnyuè bùjǐn shì yì mén yìshù, yě shì yì zhǒng yǔyán. Rénmen duì yīnyuè de xǐ\'ài yǔ guójí wúguān. Tōngguò yīnyuè, bùtóng guójiā de rén kěyǐ jiāoliú gǎnqíng, zēngjìn liǎojiě.',
+       vn:'Âm nhạc không chỉ là một môn nghệ thuật mà còn là một ngôn ngữ. Tình yêu âm nhạc không liên quan đến quốc tịch. Qua âm nhạc, người các nước khác nhau có thể giao lưu tình cảm, tăng thêm hiểu biết.'}]},
+    {num:5, stmt:'他刚来这儿不久。', judge:false, lines:[
+      {pre:'他虽然不是在这儿出生的，但却是在这儿长大的。', blank:'他三岁跟父亲母亲一起来到这儿', post:'，就再也没离开过。因此，他对这个地方感情很深。',
+       py:'Tā suīrán bú shì zài zhèr chūshēng de, dàn què shì zài zhèr zhǎngdà de. Tā sān suì gēn fùqīn mǔqīn yìqǐ láidào zhèr, jiù zài yě méi líkāiguo. Yīncǐ, tā duì zhège dìfang gǎnqíng hěn shēn.',
+       vn:'Anh ấy tuy không sinh ra ở đây nhưng lớn lên ở đây. Ba tuổi anh ấy cùng bố mẹ đến đây, rồi không bao giờ rời đi nữa. Vì vậy anh ấy có tình cảm rất sâu đậm với nơi này.'}]}
   ],
-  mc:[
-    {num:6,options:['护照号码','出生年月','联系电话'],ans:0,
-     lines:[{speaker:'男',pre:'真抱歉，我不小心把',blank:'护照号码',post:'填错了，您能再给我一份新的申请表吗？',py:'Zhēn bàoqiàn, wǒ bù xiǎoxīn bǎ hùzhào hàomǎ tiáncuò le, nín néng zài gěi wǒ yí fèn xīn de shēnqǐngbiǎo ma?',vn:'Thật xin lỗi, em lỡ điền sai số hộ chiếu, thầy cho em đơn mới được không?'}],
-     explain:'原文明确说"把护照号码填错了"。'},
-    {num:7,options:['复印护照','交学费','照相'],ans:0,
-     lines:[{speaker:'女',pre:'请把你的护照给我，我们要',blank:'把护照复印一下',post:'。',py:'Qǐng bǎ nǐ de hùzhào gěi wǒ, wǒmen yào bǎ hùzhào fùyìn yíxià.',vn:'Đưa hộ chiếu cho tôi, chúng tôi cần photo hộ chiếu.'}],
-     explain:'原文明确说"把护照复印一下"。'},
-    {num:8,options:['用刀切肉的时候','洗衣服的时候','包饺子的时候'],ans:0,
-     lines:[{speaker:'女',pre:'我想给你做点儿羊肉饺子，刚才',blank:'用刀切肉的时候',post:'把手弄破了。',py:'Wǒ xiǎng gěi nǐ zuò diǎnr yángròu jiǎozi, gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.',vn:'Em muốn làm sủi cảo, vừa rồi dùng dao thái thịt làm đứt tay.'}],
-     explain:'原文明确说"用刀切肉的时候把手弄破了"。'},
-    {num:9,options:['包子','饺子','面条'],ans:0,
-     lines:[{speaker:'男',pre:'我常去的那家理发店附近有个餐厅，那里的',blank:'包子',post:'很好吃，我一会儿去买一点儿。',py:'Wǒ cháng qù de nà jiā lǐfàdiàn fùjìn yǒu ge cāntīng, nàli de bāozi hěn hǎochī, wǒ yíhuìr qù mǎi yìdiǎnr.',vn:'Gần tiệm cắt tóc có nhà hàng, bánh bao ở đó ngon, lát anh đi mua.'}],
-     explain:'原文明确说"那里的包子很好吃"。'},
-    {num:10,options:['忘戴眼镜了','没听见','故意的'],ans:0,
-     lines:[{speaker:'女',pre:'真是对不起，我不是故意的，今天早上我',blank:'忘戴眼镜了',post:'，看不清楚。',py:'Zhēn shì duìbuqǐ, wǒ bú shì gùyì de, jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.',vn:'Thật xin lỗi, tôi không cố ý, sáng nay quên đeo kính, nhìn không rõ.'}],
-     explain:'原文明确说"忘戴眼镜了"。'},
-    {num:11,options:['两年','两个月','十年'],ans:0,
-     lines:[{speaker:'女',pre:'我小时候妈妈教我跳过',blank:'两年',post:'的舞，所以稍微有点儿基础。',py:'Wǒ xiǎoshíhou māma jiāo wǒ tiàoguo liǎng nián de wǔ, suǒyǐ shāowēi yǒudiǎnr jīchǔ.',vn:'Hồi nhỏ mẹ dạy tôi múa hai năm, nên hơi có nền tảng.'}],
-     explain:'原文明确说"跳过两年的舞"。'},
-    {num:12,options:['先抬胳膊','先抬腿','先转头'],ans:0,
-     lines:[{speaker:'女',pre:'应该像我这样：',blank:'先抬胳膊',post:'，然后抬腿，最后头再向右转一下。',py:'Yīnggāi xiàng wǒ zhèyàng: xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.',vn:'Nên như tôi: giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay phải.'}],
-     explain:'原文明确说"先抬胳膊"。'},
-    {num:13,options:['周围环境非常吵','房子太贵','离学校太远'],ans:0,
-     lines:[{speaker:'男',pre:'马克去年租的房子离马路很近，对面有大大小小的商店，',blank:'周围环境非常吵',post:'。',py:'Mǎkè qùnián zū de fángzi lí mǎlù hěn jìn, duìmiàn yǒu dàdà-xiǎoxiǎo de shāngdiàn, zhōuwéi huánjìng fēicháng chǎo.',vn:'Nhà Mã Khắc thuê sát đường, đối diện nhiều cửa hàng, xung quanh rất ồn.'}],
-     explain:'原文明确说"周围环境非常吵"。'},
-    {num:14,options:['写错了一个数字','房东不在家','手机没电了'],ans:0,
-     lines:[{speaker:'男',pre:'第二天，他又仔细看了一下广告，原来在记号码的时候',blank:'写错了一个数字',post:'。',py:'Dì-èr tiān, tā yòu zǐxì kànle yíxià guǎnggào, yuánlái zài jì hàomǎ de shíhou xiěcuòle yí ge shùzì.',vn:'Hôm sau xem kỹ lại quảng cáo, hóa ra lúc ghi số viết sai một chữ số.'}],
-     explain:'原文明确说"写错了一个数字"。'},
-    {num:15,options:['打球时发出的声音','发明者的名字','一个地方的名字'],ans:0,
-     lines:[{speaker:'女',pre:'"乒乓球"这个名字也很有意思，"乒"和"乓"就是',blank:'打球时发出的声音',post:'。',py:'"Pīngpāngqiú" zhège míngzi yě hěn yǒu yìsi, "pīng" hé "pāng" jiù shì dǎ qiú shí fāchū de shēngyīn.',vn:'Tên "乒乓球" rất thú vị, "乒" "乓" là âm thanh khi đánh bóng.'}],
-     explain:'原文明确说"就是打球时发出的声音"。'},
+  mc: [
+    {num:6, options:['最近很忙','可以教他','会打网球','明天见面'], ans:1, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'你乒乓球打得真不错，', blank:'有时间能教教我吗', post:'？', py:'Nǐ pīngpāngqiú dǎ de zhēn búcuò, yǒu shíjiān néng jiāojiao wǒ ma?', vn:'Cậu chơi bóng bàn giỏi thật, có thời gian dạy tôi được không?'},
+       {speaker:'女', pre:'没问题。我每周六都会来体育馆，', blank:'到时候你来找我就行了', post:'。', py:'Méi wèntí. Wǒ měi zhōuliù dōu huì lái tǐyùguǎn, dào shíhou nǐ lái zhǎo wǒ jiù xíng le.', vn:'Không vấn đề. Thứ Bảy nào tôi cũng đến nhà thi đấu, lúc đó cậu đến tìm tôi là được.'}
+     ],
+     explain:'问：女的是什么意思？ "没问题…你来找我就行了" → B 可以教他. C sai: là 乒乓球, không phải 网球.'},
+    {num:7, options:['铅笔用完了','要打印材料','马上下课了','听不见声音'], ans:1, q:'女的为什么很着急？',
+     lines:[
+       {speaker:'男', pre:'你这么着急去哪儿啊？', blank:'我刚才叫你两次你都没听到', post:'。', py:'Nǐ zhème zháojí qù nǎr a? Wǒ gāngcái jiào nǐ liǎng cì nǐ dōu méi tīngdào.', vn:'Cậu vội thế đi đâu vậy? Vừa nãy tôi gọi hai lần cậu đều không nghe.'},
+       {speaker:'女', pre:'', blank:'我去打印几份材料', post:'，一会儿上课讨论的时候要用。', py:'Wǒ qù dǎyìn jǐ fèn cáiliào, yíhuìr shàngkè tǎolùn de shíhou yào yòng.', vn:'Tôi đi in mấy bộ tài liệu, lát nữa thảo luận trên lớp cần dùng.'}
+     ],
+     explain:'问：女的为什么很着急？ "我去打印几份材料" → B 要打印材料.'},
+    {num:8, options:['肚子不舒服','在打羽毛球','想吃饭了','要去饭馆'], ans:2, q:'关于女的，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'打了一下午羽毛球，', blank:'肚子有点儿饿了', post:'。真香，今天吃什么？', py:'Dǎle yí xiàwǔ yǔmáoqiú, dùzi yǒudiǎnr è le. Zhēn xiāng, jīntiān chī shénme?', vn:'Chơi cầu lông cả chiều, bụng hơi đói rồi. Thơm quá, hôm nay ăn gì?'},
+       {speaker:'男', pre:'你鼻子真好，今晚我们吃饺子。', blank:'再等一会儿，饭马上就好', post:'。', py:'Nǐ bízi zhēn hǎo, jīnwǎn wǒmen chī jiǎozi. Zài děng yíhuìr, fàn mǎshàng jiù hǎo.', vn:'Mũi em thính thật, tối nay mình ăn sủi cảo. Đợi chút nữa, cơm sắp xong rồi.'}
+     ],
+     explain:'问：关于女的，可以知道什么？ "肚子有点儿饿了…今天吃什么" → C 想吃饭了. B sai: đã chơi xong (打了一下午).'},
+    {num:9, options:['天气太热了','男的穿得多','女的想开窗','衣服太大了'], ans:1, q:'根据对话，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'开一下窗户吧，', blank:'热得我都有点儿受不了了', post:'。', py:'Kāi yíxià chuānghu ba, rè de wǒ dōu yǒudiǎnr shòubuliǎo le.', vn:'Mở cửa sổ đi, nóng đến mức anh hơi chịu không nổi.'},
+       {speaker:'女', pre:'', blank:'是你穿得太多了', post:'，把外面那件衣服脱了吧。', py:'Shì nǐ chuān de tài duō le, bǎ wàimiàn nà jiàn yīfu tuō le ba.', vn:'Là do anh mặc nhiều quá, cởi cái áo ngoài ra đi.'}
+     ],
+     explain:'问：根据对话，可以知道什么？ "是你穿得太多了" → B 男的穿得多. C sai: người muốn mở cửa sổ là người nam.'},
+    {num:10, options:['手表','手机','书包','出租车'], ans:0, q:'女的在找什么？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你看见我的手表没有', post:'？我印象里上车的时候还戴着呢。', py:'Nǐ kànjiàn wǒ de shǒubiǎo méiyǒu? Wǒ yìnxiàng li shàngchē de shíhou hái dàizhe ne.', vn:'Anh có thấy đồng hồ của em không? Em nhớ lúc lên xe vẫn đeo mà.'},
+       {speaker:'男', pre:'那看看在不在你包里。', blank:'不会丢在出租车上了吧', post:'？', py:'Nà kànkan zài bu zài nǐ bāo li. Bú huì diū zài chūzūchē shang le ba?', vn:'Vậy xem có trong túi em không. Không phải để quên trên taxi chứ?'}
+     ],
+     explain:'问：女的在找什么？ "你看见我的手表没有" → A 手表.'},
+    {num:11, options:['再算一遍','增加一列','减少字数','重新申请'], ans:1, q:'女的要求怎么做？',
+     lines:[
+       {speaker:'男', pre:'孙小姐，表格我做好了，', blank:'您看看有什么问题没有', post:'？', py:'Sūn xiǎojiě, biǎogé wǒ zuòhǎo le, nín kànkan yǒu shénme wèntí méiyǒu?', vn:'Cô Tôn, bảng biểu tôi làm xong rồi, cô xem có vấn đề gì không?'},
+       {speaker:'女', pre:'刚才忘和你说了，', blank:'还要再加上一列"性别"', post:'。', py:'Gāngcái wàng hé nǐ shuō le, hái yào zài jiāshàng yí liè "xìngbié".', vn:'Vừa nãy quên nói với anh, còn phải thêm một cột "giới tính".'}
+     ],
+     explain:'问：女的要求怎么做？ "还要再加上一列" → B 增加一列.'},
+    {num:12, options:['有点儿大','有问题','不太亮','没以前好了'], ans:2, q:'他们觉得厨房的灯怎么样？',
+     lines:[
+       {speaker:'男', pre:'厨房里的这个灯太小了，', blank:'抽时间换一个大点儿、亮点儿的吧', post:'。', py:'Chúfáng li de zhège dēng tài xiǎo le, chōu shíjiān huàn yí ge dà diǎnr, liàng diǎnr de ba.', vn:'Cái đèn trong bếp nhỏ quá, tranh thủ thời gian đổi cái to hơn, sáng hơn đi.'},
+       {speaker:'女', pre:'以前不觉得，你现在一说，', blank:'我也觉得确实挺小的', post:'。我今天下班去超市买一个。', py:'Yǐqián bù juéde, nǐ xiànzài yì shuō, wǒ yě juéde quèshí tǐng xiǎo de. Wǒ jīntiān xiàbān qù chāoshì mǎi yí ge.', vn:'Trước không thấy, giờ anh nói em cũng thấy đúng là khá nhỏ. Hôm nay tan làm em ra siêu thị mua một cái.'}
+     ],
+     explain:'问：他们觉得厨房的灯怎么样？ Đèn nhỏ, muốn đổi cái "亮点儿的" → đèn hiện tại không đủ sáng, đáp án C 不太亮. A ngược nghĩa (太小).'},
+    {num:13, options:['大使馆','银行','学校','医院'], ans:3, q:'男的最可能在哪儿？',
+     lines:[
+       {speaker:'女', pre:'请把', blank:'姓名、年龄、性别、联系方式等信息', post:'填在这张表上。', py:'Qǐng bǎ xìngmíng, niánlíng, xìngbié, liánxì fāngshì děng xìnxī tián zài zhè zhāng biǎo shang.', vn:'Xin điền họ tên, tuổi, giới tính, cách liên lạc… vào tờ này.'},
+       {speaker:'男', pre:'好的，', blank:'是在一楼打针吗', post:'？', py:'Hǎo de, shì zài yī lóu dǎzhēn ma?', vn:'Được, tiêm ở tầng một phải không?'},
+       {speaker:'女', pre:'对，一楼，第二个房间就是打针室。', blank:'到时候表交给护士就行了', post:'。', py:'Duì, yī lóu, dì-èr ge fángjiān jiù shì dǎzhēnshì. Dào shíhou biǎo jiāo gěi hùshi jiù xíng le.', vn:'Đúng, tầng một, phòng thứ hai là phòng tiêm. Lúc đó đưa tờ khai cho y tá là được.'},
+       {speaker:'男', pre:'好的，', blank:'谢谢你', post:'。', py:'Hǎo de, xièxie nǐ.', vn:'Được, cảm ơn cô.'}
+     ],
+     explain:'问：男的最可能在哪儿？ "打针…护士" → D 医院.'},
+    {num:14, options:['体育馆','电影院','宾馆','图书馆'], ans:1, q:'他们最可能在哪儿？',
+     lines:[
+       {speaker:'男', pre:'您好，', blank:'我要两张电影票', post:'，八点二十那场。', py:'Nín hǎo, wǒ yào liǎng zhāng diànyǐngpiào, bā diǎn èrshí nà chǎng.', vn:'Chào cô, tôi lấy hai vé xem phim, suất tám giờ hai mươi.'},
+       {speaker:'女', pre:'好的，您选一下座位吧，', blank:'电脑上这些蓝色的都可以选', post:'。', py:'Hǎo de, nín xuǎn yíxià zuòwèi ba, diànnǎo shang zhèxiē lánsè de dōu kěyǐ xuǎn.', vn:'Vâng, ông chọn chỗ ngồi, những ghế màu xanh trên máy đều chọn được.'},
+       {speaker:'男', pre:'我要中间的，', blank:'第十排，九号和十号', post:'。', py:'Wǒ yào zhōngjiān de, dì-shí pái, jiǔ hào hé shí hào.', vn:'Tôi lấy ghế giữa, hàng mười, số chín và số mười.'},
+       {speaker:'女', pre:'好的，先生，', blank:'一共一百二十元', post:'。', py:'Hǎo de, xiānsheng, yígòng yìbǎi èrshí yuán.', vn:'Vâng, thưa ông, tổng cộng một trăm hai mươi tệ.'}
+     ],
+     explain:'问：他们最可能在哪儿？ "两张电影票…选座位" → B 电影院.'},
+    {num:15, options:['带家具的','购物方便的','房租便宜的','离学校近的'], ans:2, q:'女的想找什么样的房子？',
+     lines:[
+       {speaker:'男', pre:'', blank:'你想租什么样的房子', post:'？', py:'Nǐ xiǎng zū shénmeyàng de fángzi?', vn:'Cậu muốn thuê nhà kiểu gì?'},
+       {speaker:'女', pre:'最好是离公司近一点儿，周围要安静，', blank:'当然也不能太贵了', post:'。', py:'Zuì hǎo shì lí gōngsī jìn yìdiǎnr, zhōuwéi yào ānjìng, dāngrán yě bù néng tài guì le.', vn:'Tốt nhất là gần công ty một chút, xung quanh phải yên tĩnh, đương nhiên cũng không được quá đắt.'},
+       {speaker:'男', pre:'咱公司附近是购物中心，', blank:'估计没有太便宜的房子', post:'。', py:'Zán gōngsī fùjìn shì gòuwù zhōngxīn, gūjì méiyǒu tài piányi de fángzi.', vn:'Gần công ty mình là trung tâm mua sắm, chắc không có nhà rẻ lắm đâu.'},
+       {speaker:'女', pre:'如果交通方便，', blank:'稍微远一点儿，我也可以考虑', post:'。', py:'Rúguǒ jiāotōng fāngbiàn, shāowēi yuǎn yìdiǎnr, wǒ yě kěyǐ kǎolǜ.', vn:'Nếu giao thông thuận tiện, xa hơn một chút tôi cũng có thể cân nhắc.'}
+     ],
+     explain:'问：女的想找什么样的房子？ "不能太贵了…稍微远一点儿也可以考虑" → ưu tiên giá, đáp án C 房租便宜的. D sai: gần công ty, không phải trường học.'},
+    {num:16, options:['图书馆','学校东门','商店','一楼'], ans:2, q:'根据对话，男的最可能去哪儿？',
+     lines:[
+       {speaker:'男', pre:'请问，', blank:'附近哪儿可以复印', post:'？', py:'Qǐngwèn, fùjìn nǎr kěyǐ fùyìn?', vn:'Xin hỏi, gần đây chỗ nào photo được?'},
+       {speaker:'女', pre:'', blank:'图书馆一楼东边有几台自助复印机', post:'。', py:'Túshūguǎn yī lóu dōngbian yǒu jǐ tái zìzhù fùyìnjī.', vn:'Phía đông tầng một thư viện có mấy máy photo tự động.'},
+       {speaker:'男', pre:'图书馆那儿人太多，总是排队，', blank:'还有其他地方吗', post:'？', py:'Túshūguǎn nàr rén tài duō, zǒngshì páiduì, hái yǒu qítā dìfang ma?', vn:'Thư viện đông quá, lúc nào cũng phải xếp hàng, còn chỗ khác không?'},
+       {speaker:'女', pre:'那你要去学校外面了，', blank:'南门对面有个小商店', post:'，那儿也可以复印。', py:'Nà nǐ yào qù xuéxiào wàimiàn le, nánmén duìmiàn yǒu ge xiǎo shāngdiàn, nàr yě kěyǐ fùyìn.', vn:'Vậy cậu phải ra ngoài trường, đối diện cổng nam có cửa hàng nhỏ, ở đó cũng photo được.'}
+     ],
+     explain:'问：男的最可能去哪儿？ Không muốn xếp hàng ở thư viện → đi cửa hàng nhỏ, đáp án C 商店. B sai: là 南门, không phải 东门.'},
+    {num:17, options:['桌子','沙发','冰箱','饮料'], ans:1, q:'女的在搬什么？',
+     lines:[
+       {speaker:'男', pre:'小心，您慢点儿，', blank:'我跟您一起搬吧', post:'。', py:'Xiǎoxīn, nín màn diǎnr, wǒ gēn nín yìqǐ bān ba.', vn:'Cẩn thận, bác từ từ, để cháu khiêng cùng bác.'},
+       {speaker:'女', pre:'没关系，', blank:'这个小沙发我自己搬得动', post:'。', py:'Méi guānxi, zhège xiǎo shāfā wǒ zìjǐ bāndedòng.', vn:'Không sao, cái sofa nhỏ này bác tự khiêng được.'},
+       {speaker:'男', pre:'', blank:'您这是要把它搬出来放哪儿啊', post:'？', py:'Nín zhè shì yào bǎ tā bān chūlai fàng nǎr a?', vn:'Bác khiêng nó ra định để đâu vậy?'},
+       {speaker:'女', pre:'就这儿，', blank:'再往左边一点儿就好了', post:'。', py:'Jiù zhèr, zài wǎng zuǒbian yìdiǎnr jiù hǎo le.', vn:'Ngay đây, dịch sang trái một chút nữa là được.'}
+     ],
+     explain:'问：女的在搬什么？ "这个小沙发我自己搬得动" → B 沙发.'},
+    {num:18, options:['年龄小','有基础','胳膊长','长得高'], ans:1, q:'女的为什么学得快？',
+     lines:[
+       {speaker:'男', pre:'', blank:'你学得可真快', post:'！', py:'Nǐ xué de kě zhēn kuài!', vn:'Cậu học nhanh thật đấy!'},
+       {speaker:'女', pre:'', blank:'我小时候学过两年的舞蹈', post:'，有点儿基础。', py:'Wǒ xiǎo shíhou xuéguo liǎng nián de wǔdǎo, yǒudiǎnr jīchǔ.', vn:'Hồi nhỏ tôi học hai năm múa, có chút nền tảng.'},
+       {speaker:'男', pre:'原来是这样啊，那你帮我看看，', blank:'我的动作对不对', post:'？', py:'Yuánlái shì zhèyàng a, nà nǐ bāng wǒ kànkan, wǒ de dòngzuò duì bu duì?', vn:'Ra là vậy, thế cậu xem giúp, động tác của tôi đúng không?'},
+       {speaker:'女', pre:'总的来说，你跳得也不错，不过，', blank:'胳膊再抬高点儿就更标准了', post:'。', py:'Zǒng de lái shuō, nǐ tiào de yě búcuò, búguò, gēbo zài táigāo diǎnr jiù gèng biāozhǔn le.', vn:'Nhìn chung cậu nhảy cũng được, nhưng cánh tay nâng cao thêm chút thì chuẩn hơn.'}
+     ],
+     explain:'问：女的为什么学得快？ "学过两年的舞蹈，有点儿基础" → B 有基础.'},
+    {num:19, options:['喜欢功夫','个子不高','十六岁了','考试第一'], ans:1, q:'关于邓亚萍，可以知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'邓亚萍是中国著名的乒乓球运动员，也是获得世界乒乓球比赛第一次数最多的女运动员。', blank:'她身高只有一米五五', post:'，看上去好像不是打乒乓球的材料，', py:'Dèng Yàpíng shì Zhōngguó zhùmíng de pīngpāngqiú yùndòngyuán, yě shì huòdé shìjiè pīngpāngqiú bǐsài dì-yī cìshù zuì duō de nǚ yùndòngyuán. Tā shēngāo zhǐyǒu yì mǐ wǔwǔ, kàn shàngqu hǎoxiàng bú shì dǎ pīngpāngqiú de cáiliào,', vn:'Đặng Á Bình là vận động viên bóng bàn nổi tiếng của Trung Quốc, cũng là nữ vận động viên giành nhiều chức vô địch thế giới nhất. Cô chỉ cao 1m55, trông có vẻ không phải "chất liệu" để chơi bóng bàn,'},
+       {speaker:'旁白', pre:'但她通过自己的努力，十三岁就获得全国第一，', blank:'十五岁获得亚洲第一', post:'，第二年又成为世界第一，改变了人们认为高个子才适合打乒乓球的看法。', py:'dàn tā tōngguò zìjǐ de nǔlì, shísān suì jiù huòdé quánguó dì-yī, shíwǔ suì huòdé Yàzhōu dì-yī, dì-èr nián yòu chéngwéi shìjiè dì-yī, gǎibiànle rénmen rènwéi gāo gèzi cái shìhé dǎ pīngpāngqiú de kànfǎ.', vn:'nhưng nhờ nỗ lực của bản thân, 13 tuổi cô đã vô địch toàn quốc, 15 tuổi vô địch châu Á, năm sau lại trở thành số một thế giới, thay đổi quan niệm rằng người cao mới hợp chơi bóng bàn.'}
+     ],
+     explain:'问：关于邓亚萍，可以知道什么？ "身高只有一米五五" → B 个子不高.'},
+    {num:20, options:['五十五岁','十五岁','五十六岁','十六岁'], ans:1, q:'邓亚萍什么时候获得亚洲第一？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）十三岁就获得全国第一，', blank:'十五岁获得亚洲第一', post:'，第二年又成为世界第一。', py:'(Tóng yí duàn huà) Shísān suì jiù huòdé quánguó dì-yī, shíwǔ suì huòdé Yàzhōu dì-yī, dì-èr nián yòu chéngwéi shìjiè dì-yī.', vn:'(Cùng đoạn văn) 13 tuổi vô địch toàn quốc, 15 tuổi vô địch châu Á, năm sau lại trở thành số một thế giới.'}
+     ],
+     explain:'问：邓亚萍什么时候获得亚洲第一？ "十五岁获得亚洲第一" → B 十五岁. Phân biệt 十五 (15) với 五十五 (55) và 一米五五.'},
+    {num:21, options:['同事','同学','学生','老师'], ans:0, q:'说话人一开始想和谁打招呼？',
+     lines:[
+       {speaker:'旁白', pre:'今天早上在上班路上，', blank:'我看见同事小月走在前面不远处', post:'，就想跟她打个招呼。于是，我一边快走一边叫她的名字，可她一直没回头。', py:'Jīntiān zǎoshang zài shàngbān lù shang, wǒ kànjiàn tóngshì Xiǎo Yuè zǒu zài qiánmian bù yuǎn chù, jiù xiǎng gēn tā dǎ ge zhāohu. Yúshì, wǒ yìbiān kuài zǒu yìbiān jiào tā de míngzi, kě tā yìzhí méi huítóu.', vn:'Sáng nay trên đường đi làm, tôi thấy đồng nghiệp Tiểu Nguyệt đi phía trước không xa, liền muốn chào cô ấy. Thế là tôi vừa đi nhanh vừa gọi tên cô ấy, nhưng cô ấy mãi không quay đầu.'},
+       {speaker:'旁白', pre:'我只好加快速度向她跑了过去，等到了她身边，', blank:'才发现原来我认错人了', post:'。', py:'Wǒ zhǐhǎo jiākuài sùdù xiàng tā pǎole guòqu, děng dàole tā shēnbiān, cái fāxiàn yuánlái wǒ rèncuò rén le.', vn:'Tôi đành tăng tốc chạy về phía cô ấy, đến bên cạnh mới phát hiện hoá ra tôi nhận nhầm người.'}
+     ],
+     explain:'问：说话人一开始想和谁打招呼？ "同事小月" → A 同事.'},
+    {num:22, options:['没上班','看错了','速度慢','声音小'], ans:1, q:'说话人怎么了？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）等到了她身边，', blank:'才发现原来我认错人了', post:'。', py:'(Tóng yí duàn huà) Děng dàole tā shēnbiān, cái fāxiàn yuánlái wǒ rèncuò rén le.', vn:'(Cùng đoạn văn) Đến bên cạnh mới phát hiện hoá ra tôi nhận nhầm người.'}
+     ],
+     explain:'问：说话人怎么了？ "我认错人了" → nhìn nhầm, đáp án B 看错了.'}
   ]
 };

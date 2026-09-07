@@ -349,3 +349,16 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .sum-part span{display:block;font-size:0.85rem;color:var(--mid);margin-bottom:6px;}
 .sum-part b{font-size:1.3rem;color:var(--sky-d);}
 .sum-tip{font-size:0.85rem;color:var(--soft);text-align:center;}
+
+/* Nghe — câu ★ đúng/sai (判断对错) và câu hỏi 问 của đề HSK4 */
+.wb-judge{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px 30px;padding:6px 10px;border:1px dashed var(--soft,#bbb);border-radius:8px}
+.wb-judge-stmt{font-weight:600;flex:1 1 180px}
+.wb-judge-btn{padding:5px 12px;font-size:0.82rem}
+.wb-judge.done .wb-judge-btn{opacity:.55;pointer-events:none}
+.wb-judge.done .wb-judge-btn.chosen{opacity:1}
+.wb-judge.ok .wb-judge-btn.chosen{background:var(--green-l,#e6f7ea);border-color:var(--green,#2e8b57);color:var(--green,#2e8b57)}
+.wb-judge.err .wb-judge-btn.chosen{background:var(--red-l,#fdeaea);border-color:var(--red,#c0392b);color:var(--red,#c0392b)}
+.wb-judge-result{font-size:.82rem;font-weight:600}
+.wb-judge-result.ok{color:var(--green,#2e8b57)}
+.wb-judge-result.err{color:var(--red,#c0392b)}
+.wb-mc-q{margin-left:8px;font-weight:600}

@@ -865,49 +865,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-10/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-10/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-10/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'礼拜天有空儿吗？陪我去',blank:'逛街',post:'怎么样？',py:'Lǐbàitiān yǒu kòngr ma? Péi wǒ qù guàng jiē zěnmeyàng?',vn:'Chủ nhật rảnh không? Đi cùng tôi dạo phố thì thế nào?'}]},
-    {num:2,lines:[{pre:'你有一个漂亮的女儿，还那么',blank:'优秀',post:'，硕士毕业后就当了翻译。',py:'Nǐ yǒu yí ge piàoliang de nǚ\'ér, hái nàme yōuxiù, shuòshì bìyè hòu jiù dāngle fānyì.',vn:'Bạn có một cô con gái xinh đẹp, lại xuất sắc như vậy, tốt nghiệp thạc sĩ xong liền làm phiên dịch viên.'}]},
-    {num:3,lines:[{pre:'在我看来，赚钱多少不是最重要的，',blank:'兴趣才是关键',post:'。',py:'Zài wǒ kànlái, zhuàn qián duōshao bú shì zuì zhòngyào de, xìngqù cái shì guānjiàn.',vn:'Theo tôi thấy, kiếm được nhiều tiền hay không không phải điều quan trọng nhất, hứng thú mới là điều mấu chốt.'}]},
-    {num:4,lines:[{pre:'有钱不一定幸福，因为很多东西都是不能用钱',blank:'买到',post:'的。',py:'Yǒu qián bù yídìng xìngfú, yīnwèi hěn duō dōngxi dōu shì bù néng yòng qián mǎidào de.',vn:'Có tiền không nhất định hạnh phúc, vì rất nhiều thứ đều không thể dùng tiền mua được.'}]},
-    {num:5,lines:[{pre:'不管你认为幸福是什么，只要你用心去找，就一定能',blank:'发现它',post:'。',py:'Bùguǎn nǐ rènwéi xìngfú shì shénme, zhǐyào nǐ yòng xīn qù zhǎo, jiù yídìng néng fāxiàn tā.',vn:'Bất kể bạn cho rằng hạnh phúc là gì, chỉ cần bạn dùng tâm đi tìm, thì nhất định sẽ phát hiện ra nó.'}]},
+  dictation: [
+    {num:1, stmt:'笑使人更健康。', judge:true, lines:[
+      {pre:'科学研究发现，', blank:'经常笑的人更容易感到幸福', post:'，而且更不容易生病。',
+       py:'Kēxué yánjiū fāxiàn, jīngcháng xiào de rén gèng róngyì gǎndào xìngfú, érqiě gèng bù róngyì shēngbìng.',
+       vn:'Nghiên cứu khoa học phát hiện, người hay cười dễ cảm thấy hạnh phúc hơn, và càng ít bị bệnh hơn.'}]},
+    {num:2, stmt:'他的职业是大夫。', judge:false, lines:[
+      {pre:'我爸爸是医生，妈妈是老师。我的性格很像我爸爸，', blank:'我现在学医', post:'，理想就是以后成为一个像他那样的医生。',
+       py:'Wǒ bàba shì yīshēng, māma shì lǎoshī. Wǒ de xìnggé hěn xiàng wǒ bàba, wǒ xiànzài xué yī, lǐxiǎng jiù shì yǐhòu chéngwéi yí ge xiàng tā nàyàng de yīshēng.',
+       vn:'Bố tôi là bác sĩ, mẹ là giáo viên. Tính cách tôi rất giống bố, hiện tôi đang học y, lý tưởng là sau này trở thành một bác sĩ như ông.'}]},
+    {num:3, stmt:'幸福是件很简单的事情。', judge:true, lines:[
+      {pre:'在我看来，幸福其实很简单，', blank:'比如一天的工作结束后，洗个热水澡', post:'，然后躺在床上看看书，就很幸福。',
+       py:'Zài wǒ kànlái, xìngfú qíshí hěn jiǎndān, bǐrú yì tiān de gōngzuò jiéshù hòu, xǐ ge rèshuǐzǎo, ránhòu tǎng zài chuáng shang kànkan shū, jiù hěn xìngfú.',
+       vn:'Theo tôi, hạnh phúc thực ra rất đơn giản, ví dụ sau một ngày làm việc, tắm nước nóng, rồi nằm trên giường đọc sách, thế là rất hạnh phúc.'}]},
+    {num:4, stmt:'那家公司在招人。', judge:true, lines:[
+      {pre:'昨天我在报纸上', blank:'看见一家公司在招聘高级翻译', post:'，要硕士，给出的条件还不错，你要不要去试试？',
+       py:'Zuótiān wǒ zài bàozhǐ shang kànjiàn yì jiā gōngsī zài zhāopìn gāojí fānyì, yào shuòshì, gěichū de tiáojiàn hái búcuò, nǐ yào bu yào qù shìshi?',
+       vn:'Hôm qua tôi thấy trên báo một công ty đang tuyển phiên dịch cao cấp, yêu cầu thạc sĩ, điều kiện đưa ra khá tốt, cậu có muốn thử không?'}]},
+    {num:5, stmt:'幸福有标准答案。', judge:false, lines:[
+      {pre:'什么是幸福？究竟怎样才算是真正的幸福？', blank:'一百个人有一百个答案', post:'，每个人对幸福都有不同的理解。',
+       py:'Shénme shì xìngfú? Jiūjìng zěnyàng cái suàn shì zhēnzhèng de xìngfú? Yìbǎi ge rén yǒu yìbǎi ge dá\'àn, měi ge rén duì xìngfú dōu yǒu bùtóng de lǐjiě.',
+       vn:'Hạnh phúc là gì? Rốt cuộc thế nào mới là hạnh phúc thật sự? Một trăm người có một trăm câu trả lời, mỗi người đều có cách hiểu khác nhau về hạnh phúc.'}]}
   ],
-  mc:[
-    {num:6,options:['去不了','马上就去','明天再去'],ans:0,
-     lines:[{speaker:'女',pre:'我可能',blank:'去不了',post:'，最近事情多。',py:'Wǒ kěnéng qù bu liǎo, zuìjìn shìqing duō.',vn:'Tôi có thể không đi được, gần đây nhiều việc quá.'}],
-     explain:'原文明确说"我可能去不了"。'},
-    {num:7,options:['母亲和儿子','丈夫和女儿','父亲和儿子'],ans:0,
-     lines:[{speaker:'女',pre:'除了工作以外，家里还有',blank:'母亲和儿子',post:'需要照顾。',py:'Chúle gōngzuò yǐwài, jiā li hái yǒu mǔqīn hé érzi xūyào zhàogù.',vn:'Ngoài công việc ra, trong nhà còn có mẹ và con trai cần chăm sóc.'}],
-     explain:'原文明确说"家里还有母亲和儿子需要照顾"。'},
-    {num:8,options:['当了教授','当了翻译','当了律师'],ans:0,
-     lines:[{speaker:'男',pre:'王老师刚来这儿工作三年就',blank:'当了教授',post:'。',py:'Wáng lǎoshī gāng lái zhèr gōngzuò sān nián jiù dāngle jiàoshòu.',vn:'Thầy Vương mới đến đây làm việc ba năm đã làm giáo sư rồi.'}],
-     explain:'原文明确说"刚来这儿工作三年就当了教授"。'},
-    {num:9,options:['硕士毕业','本科毕业','高中毕业'],ans:0,
-     lines:[{speaker:'女',pre:'她',blank:'硕士毕业',post:'后就当了翻译。',py:'Tā shuòshì bìyè hòu jiù dāngle fānyì.',vn:'Cô ấy tốt nghiệp thạc sĩ xong liền làm phiên dịch viên.'}],
-     explain:'原文明确说"硕士毕业后就当了翻译"。'},
-    {num:10,options:['兴趣才是关键','收入才是关键','公司大小才是关键'],ans:0,
-     lines:[{speaker:'男',pre:'赚钱多少不是最重要的，',blank:'兴趣才是关键',post:'。',py:'Zhuàn qián duōshao bú shì zuì zhòngyào de, xìngqù cái shì guānjiàn.',vn:'Kiếm được nhiều tiền hay không không phải điều quan trọng nhất, hứng thú mới là điều mấu chốt.'}],
-     explain:'原文明确说"兴趣才是关键"。'},
-    {num:11,options:['躺在床上看看书、听听音乐','出去逛街','马上睡觉'],ans:0,
-     lines:[{speaker:'女',pre:'工作结束回家后，洗个热水澡，然后',blank:'躺在床上看看书、听听音乐',post:'，困了睡睡觉，就很幸福。',py:'Gōngzuò jiéshù huí jiā hòu, xǐ ge rè shuǐzǎo, ránhòu tǎng zài chuáng shang kànkan shū, tīngting yīnyuè.',vn:'Sau khi làm việc xong về nhà, tắm nước nóng, rồi nằm trên giường đọc sách nghe nhạc.'}],
-     explain:'原文明确说"然后躺在床上看看书、听听音乐"。'},
-    {num:12,options:['富人过得并不愉快','富人过得很愉快','富人没有烦恼'],ans:0,
-     lines:[{speaker:'男',pre:'其实有很多',blank:'富人过得并不愉快',post:'，而有些穷人却过得很快乐。',py:'Qíshí yǒu hěn duō fù rén guò de bìng bù yúkuài, ér yǒuxiē qióng rén què guò de hěn kuàilè.',vn:'Thực ra có rất nhiều người giàu sống không hề vui vẻ, mà có người nghèo lại sống rất vui vẻ.'}],
-     explain:'原文明确说"有很多富人过得并不愉快"。'},
-    {num:13,options:['时间、感情、生活经历','衣服、房子、汽车','手机、电脑、家具'],ans:0,
-     lines:[{speaker:'女',pre:'很多东西都是不能用钱买到的，例如',blank:'时间、感情、生活经历',post:'等。',py:'Hěn duō dōngxi dōu shì bù néng yòng qián mǎidào de, lìrú shíjiān, gǎnqíng, shēnghuó jīnglì děng.',vn:'Rất nhiều thứ đều không thể dùng tiền mua được, ví dụ như thời gian, tình cảm, trải nghiệm cuộc sống, vân vân.'}],
-     explain:'原文明确说"例如时间、感情、生活经历等"。'},
-    {num:14,options:['得到一块橡皮、一块糖','拿到很多钱','买到很多玩具'],ans:0,
-     lines:[{speaker:'男',pre:'小时候幸福是一件东西，比如一块橡皮、一块糖，',blank:'得到了就很幸福',post:'。',py:'Bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú.',vn:'Ví dụ như cục tẩy, viên kẹo, có được là rất hạnh phúc.'}],
-     explain:'原文明确说"得到了就很幸福"。'},
-    {num:15,options:['没有一个标准答案','有一个标准答案','只有一种理解'],ans:0,
-     lines:[{speaker:'女',pre:'其实，幸福并',blank:'没有一个标准答案',post:'，每个人对幸福都有不同的理解。',py:'Qíshí, xìngfú bìng méiyǒu yí ge biāozhǔn dá\'àn, měi ge rén duì xìngfú dōu yǒu bùtóng de lǐjiě.',vn:'Thực ra, hạnh phúc không hề có một đáp án chuẩn nào, mỗi người đều có cách hiểu khác nhau về hạnh phúc.'}],
-     explain:'原文明确说"幸福并没有一个标准答案"。'},
+  mc: [
+    {num:6, options:['明天','下星期','下个月','明年'], ans:1, q:'新超市什么时候开？',
+     lines:[
+       {speaker:'女', pre:'听说', blank:'下周附近要开一家新超市', post:'。', py:'Tīngshuō xià zhōu fùjìn yào kāi yì jiā xīn chāoshì.', vn:'Nghe nói tuần sau gần đây sẽ mở một siêu thị mới.'},
+       {speaker:'男', pre:'真的吗？那到时候', blank:'咱们购物就方便多了', post:'。', py:'Zhēn de ma? Nà dào shíhou zánmen gòuwù jiù fāngbiàn duō le.', vn:'Thật à? Vậy lúc đó mình mua sắm tiện hơn nhiều rồi.'}
+     ],
+     explain:'问：新超市什么时候开？ "下周" = 下星期 → B.'},
+    {num:7, options:['老师','母亲','丈夫','孩子'], ans:1, q:'女的准备给谁打电话？',
+     lines:[
+       {speaker:'男', pre:'今天是母亲节，', blank:'记得给你妈妈打个电话', post:'。', py:'Jīntiān shì Mǔqīnjié, jìde gěi nǐ māma dǎ ge diànhuà.', vn:'Hôm nay là Ngày của Mẹ, nhớ gọi điện cho mẹ em nhé.'},
+       {speaker:'女', pre:'谢谢您的提醒，差点儿忘记了，', blank:'我现在就打', post:'。', py:'Xièxie nín de tíxǐng, chàdiǎnr wàngjì le, wǒ xiànzài jiù dǎ.', vn:'Cảm ơn anh nhắc, suýt quên mất, em gọi ngay đây.'}
+     ],
+     explain:'问：女的准备给谁打电话？ "给你妈妈打个电话…我现在就打" → B 母亲.'},
+    {num:8, options:['他认识路','他很准时','他上网查查','他们一起去'], ans:2, q:'男的是什么意思？',
+     lines:[
+       {speaker:'女', pre:'你知道怎么去动物园吗？', blank:'我明天要去动物园附近办点儿事', post:'。', py:'Nǐ zhīdào zěnme qù dòngwùyuán ma? Wǒ míngtiān yào qù dòngwùyuán fùjìn bàn diǎnr shì.', vn:'Anh biết đi sở thú thế nào không? Mai em phải đến gần sở thú làm chút việc.'},
+       {speaker:'男', pre:'我对那儿也不太熟悉，不过网上有地图，', blank:'我帮你查查', post:'。', py:'Wǒ duì nàr yě bú tài shúxi, búguò wǎngshàng yǒu dìtú, wǒ bāng nǐ chácha.', vn:'Anh cũng không quen chỗ đó lắm, nhưng trên mạng có bản đồ, anh tra giúp em.'}
+     ],
+     explain:'问：男的是什么意思？ "网上有地图，我帮你查查" → C 他上网查查. A sai vì "不太熟悉".'},
+    {num:9, options:['东边','西边','南边','北边'], ans:0, q:'女的认为应该往哪个方向走？',
+     lines:[
+       {speaker:'男', pre:'真的是往东走吗？', blank:'我怎么觉得是在西边呢', post:'？', py:'Zhēn de shì wǎng dōng zǒu ma? Wǒ zěnme juéde shì zài xībian ne?', vn:'Thật là đi về phía đông à? Sao anh thấy nó ở phía tây nhỉ?'},
+       {speaker:'女', pre:'', blank:'肯定是往东走', post:'，我以前来过这儿，相信我，保证错不了。', py:'Kěndìng shì wǎng dōng zǒu, wǒ yǐqián láiguo zhèr, xiāngxìn wǒ, bǎozhèng cuòbuliǎo.', vn:'Chắc chắn là đi về phía đông, em từng đến đây rồi, tin em đi, đảm bảo không sai đâu.'}
+     ],
+     explain:'问：女的认为应该往哪个方向走？ "肯定是往东走" → A 东边. 西边 là ý nghi ngờ của người nam.'},
+    {num:10, options:['女的要旅游','男的有女友','男的是硕士','男的在北京'], ans:1, q:'根据对话，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'我听说', blank:'过两天你要去旅游', post:'？', py:'Wǒ tīngshuō guò liǎng tiān nǐ yào qù lǚyóu?', vn:'Tôi nghe nói vài hôm nữa anh đi du lịch?'},
+       {speaker:'男', pre:'算是吧，', blank:'我女朋友在北京读研究生', post:'，我去看看她。', py:'Suàn shì ba, wǒ nǚpéngyou zài Běijīng dú yánjiūshēng, wǒ qù kànkan tā.', vn:'Cũng coi như vậy, bạn gái tôi học cao học ở Bắc Kinh, tôi đi thăm cô ấy.'}
+     ],
+     explain:'问：根据对话，可以知道什么？ "我女朋友在北京读研究生" → B 男的有女友. Người học cao học và ở Bắc Kinh là bạn gái, nên C, D sai.'},
+    {num:11, options:['自己','李律师','王教授','翻译公司'], ans:3, q:'女的准备找谁翻译这份材料？',
+     lines:[
+       {speaker:'男', pre:'您这次', blank:'打算安排谁来翻译这份材料', post:'？', py:'Nín zhè cì dǎsuàn ānpái shéi lái fānyì zhè fèn cáiliào?', vn:'Lần này chị định sắp xếp ai dịch tài liệu này?'},
+       {speaker:'女', pre:'我看', blank:'还是联系一家专业的翻译公司吧', post:'，他们翻译得也快一些。', py:'Wǒ kàn háishi liánxì yì jiā zhuānyè de fānyì gōngsī ba, tāmen fānyì de yě kuài yìxiē.', vn:'Tôi thấy nên liên hệ một công ty dịch thuật chuyên nghiệp, họ dịch cũng nhanh hơn.'}
+     ],
+     explain:'问：女的准备找谁翻译这份材料？ "联系一家专业的翻译公司" → D 翻译公司.'},
+    {num:12, options:['能力高','应聘的人少','专业好','长得好'], ans:0, q:'男的认为什么是关键？',
+     lines:[
+       {speaker:'女', pre:'你看电视上说了吗？', blank:'今年一个工作有一百个大学毕业生去面试', post:'。', py:'Nǐ kàn diànshì shang shuō le ma? Jīnnián yí ge gōngzuò yǒu yìbǎi ge dàxué bìyèshēng qù miànshì.', vn:'Anh xem tivi nói chưa? Năm nay một vị trí có một trăm sinh viên tốt nghiệp đến phỏng vấn.'},
+       {speaker:'男', pre:'关键还是看能力，', blank:'有能力的人不怕找不到好工作', post:'。', py:'Guānjiàn háishi kàn nénglì, yǒu nénglì de rén bú pà zhǎobudào hǎo gōngzuò.', vn:'Mấu chốt vẫn là năng lực, người có năng lực không sợ không tìm được việc tốt.'}
+     ],
+     explain:'问：男的认为什么是关键？ "关键还是看能力" → A 能力高.'},
+    {num:13, options:['饿了','想喝水','不想做饭','身体不舒服'], ans:3, q:'女的怎么了？',
+     lines:[
+       {speaker:'男', pre:'', blank:'你先去床上躺一会儿吧', post:'，等饭好了我叫你。', py:'Nǐ xiān qù chuáng shang tǎng yíhuìr ba, děng fàn hǎo le wǒ jiào nǐ.', vn:'Em lên giường nằm một lát đi, cơm xong anh gọi.'},
+       {speaker:'女', pre:'我没事，', blank:'还是我来做吧', post:'。', py:'Wǒ méi shì, háishi wǒ lái zuò ba.', vn:'Em không sao, để em làm cho.'},
+       {speaker:'男', pre:'', blank:'你不舒服', post:'，今天我来做，马上就好。', py:'Nǐ bù shūfu, jīntiān wǒ lái zuò, mǎshàng jiù hǎo.', vn:'Em không khoẻ, hôm nay anh làm, sắp xong rồi.'},
+       {speaker:'女', pre:'那你', blank:'简单做一点儿就行了', post:'。', py:'Nà nǐ jiǎndān zuò yìdiǎnr jiù xíng le.', vn:'Vậy anh làm đơn giản chút là được.'}
+     ],
+     explain:'问：女的怎么了？ "你不舒服，今天我来做" → D 身体不舒服. C sai vì cô ấy vẫn muốn tự nấu.'},
+    {num:14, options:['要出差','去旅游','叔叔一家来','很多同学来'], ans:2, q:'男的为什么要找宾馆？',
+     lines:[
+       {speaker:'男', pre:'附近', blank:'有没有条件好一点儿的宾馆', post:'？', py:'Fùjìn yǒu méiyǒu tiáojiàn hǎo yìdiǎnr de bīnguǎn?', vn:'Gần đây có khách sạn nào điều kiện tốt một chút không?'},
+       {speaker:'女', pre:'有啊，', blank:'怎么了', post:'？', py:'Yǒu a, zěnme le?', vn:'Có chứ, sao vậy?'},
+       {speaker:'男', pre:'', blank:'我叔叔一家下周要来旅游', post:'，家里住不下。', py:'Wǒ shūshu yì jiā xià zhōu yào lái lǚyóu, jiā li zhùbuxià.', vn:'Cả nhà chú tôi tuần sau đến du lịch, nhà tôi không đủ chỗ ở.'},
+       {speaker:'女', pre:'北边不远就有一家，', blank:'条件好，价格也不算贵', post:'。', py:'Běibian bù yuǎn jiù yǒu yì jiā, tiáojiàn hǎo, jiàgé yě bú suàn guì.', vn:'Phía bắc không xa có một khách sạn, điều kiện tốt, giá cũng không đắt lắm.'}
+     ],
+     explain:'问：男的为什么要找宾馆？ "我叔叔一家下周要来旅游，家里住不下" → C 叔叔一家来.'},
+    {num:15, options:['在学法律','读一年级','在读研究生','已经工作了'], ans:2, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'见到你真高兴，', blank:'听说你在读研究生', post:'？', py:'Jiàndào nǐ zhēn gāoxìng, tīngshuō nǐ zài dú yánjiūshēng?', vn:'Gặp cậu vui thật, nghe nói cậu đang học cao học?'},
+       {speaker:'男', pre:'是的，', blank:'现在读二年级', post:'。', py:'Shì de, xiànzài dú èr niánjí.', vn:'Đúng vậy, giờ đang học năm hai.'},
+       {speaker:'女', pre:'', blank:'还是原来的专业吗', post:'？', py:'Háishi yuánlái de zhuānyè ma?', vn:'Vẫn là chuyên ngành cũ à?'},
+       {speaker:'男', pre:'不是，', blank:'我现在学的是经济学', post:'。', py:'Bú shì, wǒ xiànzài xué de shì jīngjìxué.', vn:'Không, giờ tôi học kinh tế học.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ "在读研究生…是的" → C. B sai vì đang học năm hai; A sai vì học kinh tế.'},
+    {num:16, options:['冷了','腿疼','要去举办活动','想去公园走走'], ans:3, q:'关于男的，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'', blank:'你陪我去公园走走', post:'？', py:'Nǐ péi wǒ qù gōngyuán zǒuzou?', vn:'Em đi dạo công viên với anh nhé?'},
+       {speaker:'女', pre:'可是', blank:'你的腿', post:'……', py:'Kěshì nǐ de tuǐ……', vn:'Nhưng chân anh…'},
+       {speaker:'男', pre:'不用担心，已经不疼了，', blank:'医生说要多活动活动才会好得快', post:'。', py:'Búyòng dānxīn, yǐjīng bù téng le, yīshēng shuō yào duō huódòng huódòng cái huì hǎo de kuài.', vn:'Đừng lo, không đau nữa rồi, bác sĩ bảo phải vận động nhiều mới nhanh khỏi.'},
+       {speaker:'女', pre:'那好，我帮你拿件衣服，', blank:'外面有点儿冷', post:'。', py:'Nà hǎo, wǒ bāng nǐ ná jiàn yīfu, wàimiàn yǒudiǎnr lěng.', vn:'Vậy được, em lấy cho anh cái áo, bên ngoài hơi lạnh.'}
+     ],
+     explain:'问：关于男的，可以知道什么？ "你陪我去公园走走" → D 想去公园走走. B sai vì "已经不疼了".'},
+    {num:17, options:['房子不好','交通不方便','离公司太远','房租太贵'], ans:3, q:'男的认为房子怎么样？',
+     lines:[
+       {speaker:'女', pre:'', blank:'昨天看的房子怎么样', post:'？', py:'Zuótiān kàn de fángzi zěnmeyàng?', vn:'Căn nhà xem hôm qua thế nào?'},
+       {speaker:'男', pre:'还可以，', blank:'交通比较方便', post:'，离咱公司也不远。', py:'Hái kěyǐ, jiāotōng bǐjiào fāngbiàn, lí zán gōngsī yě bù yuǎn.', vn:'Cũng được, giao thông khá thuận tiện, cách công ty mình cũng không xa.'},
+       {speaker:'女', pre:'那就', blank:'快点儿租下来', post:'啊。', py:'Nà jiù kuài diǎnr zū xiàlai a.', vn:'Vậy thì mau thuê đi.'},
+       {speaker:'男', pre:'其他都好，', blank:'关键是房租太高', post:'。', py:'Qítā dōu hǎo, guānjiàn shì fángzū tài gāo.', vn:'Mọi thứ đều tốt, mấu chốt là tiền thuê quá cao.'}
+     ],
+     explain:'问：男的认为房子怎么样？ "关键是房租太高" → D 房租太贵. B, C ngược với nội dung.'},
+    {num:18, options:['国际关系','教学','法律','经济'], ans:2, q:'女的学的是哪个专业？',
+     lines:[
+       {speaker:'男', pre:'你硕士', blank:'读的什么专业', post:'？', py:'Nǐ shuòshì dú de shénme zhuānyè?', vn:'Thạc sĩ cậu học chuyên ngành gì?'},
+       {speaker:'女', pre:'法律，', blank:'国际法', post:'。', py:'Fǎlǜ, guójìfǎ.', vn:'Luật, luật quốc tế.'},
+       {speaker:'男', pre:'那你是', blank:'打算将来当律师', post:'？', py:'Nà nǐ shì dǎsuàn jiānglái dāng lǜshī?', vn:'Vậy cậu định sau này làm luật sư?'},
+       {speaker:'女', pre:'不一定，我还是比较喜欢在学校工作，', blank:'可以的话，我想留校当老师', post:'。', py:'Bù yídìng, wǒ háishi bǐjiào xǐhuan zài xuéxiào gōngzuò, kěyǐ de huà, wǒ xiǎng liúxiào dāng lǎoshī.', vn:'Chưa chắc, tôi vẫn thích làm việc ở trường hơn, nếu được, tôi muốn ở lại trường làm giảng viên.'}
+     ],
+     explain:'问：女的学的是哪个专业？ "法律，国际法" → C 法律. A 国际关系 là bẫy gần giống 国际法.'},
+    {num:19, options:['哭了','笑了','生气了','后悔了'], ans:0, q:'想起妈妈的话，说话人怎么了？',
+     lines:[
+       {speaker:'旁白', pre:'十五岁时，我问母亲她最幸福的事是什么，母亲回答说："', blank:'你第一次叫我"妈妈"', post:'。"', py:'Shíwǔ suì shí, wǒ wèn mǔqīn tā zuì xìngfú de shì shì shénme, mǔqīn huídá shuō: "Nǐ dì-yī cì jiào wǒ \'māma\'."', vn:'Năm mười lăm tuổi, tôi hỏi mẹ điều hạnh phúc nhất của bà là gì, mẹ trả lời: "Lần đầu tiên con gọi mẹ là \'mẹ\'."'},
+       {speaker:'旁白', pre:'二十五岁时，我也有了自己的女儿，回想起母亲当时说的这句话，不知为什么，', blank:'我一下子哭了', post:'。', py:'Èrshíwǔ suì shí, wǒ yě yǒule zìjǐ de nǚ\'ér, huíxiǎng qǐ mǔqīn dāngshí shuō de zhè jù huà, bù zhī wèishénme, wǒ yíxiàzi kū le.', vn:'Năm hai mươi lăm tuổi, tôi cũng có con gái của mình, nhớ lại câu nói ấy của mẹ, không hiểu sao tôi bỗng bật khóc.'}
+     ],
+     explain:'问：想起妈妈的话，说话人怎么了？ "我一下子哭了" → A 哭了.'},
+    {num:20, options:['有个女儿','有个儿子','二十岁了','母亲病了'], ans:0, q:'关于说话人，可以知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）二十五岁时，', blank:'我也有了自己的女儿', post:'。', py:'(Tóng yí duàn huà) Èrshíwǔ suì shí, wǒ yě yǒule zìjǐ de nǚ\'ér.', vn:'(Cùng đoạn văn) Năm hai mươi lăm tuổi, tôi cũng có con gái của mình.'}
+     ],
+     explain:'问：关于说话人，可以知道什么？ "我也有了自己的女儿" → A 有个女儿. C sai vì người nói 25 tuổi.'},
+    {num:21, options:['相信朋友','理解别人','有房子和汽车','知道想要什么'], ans:3, q:'怎样才更容易快乐？',
+     lines:[
+       {speaker:'旁白', pre:'幸福的标准是不同的。', blank:'有人觉得有房子和汽车就是幸福', post:'，有人认为找到真正的爱情就是幸福，有人却相信在工作中获得肯定和成功才是幸福。', py:'Xìngfú de biāozhǔn shì bùtóng de. Yǒu rén juéde yǒu fángzi hé qìchē jiù shì xìngfú, yǒu rén rènwéi zhǎodào zhēnzhèng de àiqíng jiù shì xìngfú, yǒu rén què xiāngxìn zài gōngzuò zhōng huòdé kěndìng hé chénggōng cái shì xìngfú.', vn:'Tiêu chuẩn hạnh phúc là khác nhau. Có người thấy có nhà có xe là hạnh phúc, có người cho rằng tìm được tình yêu đích thực là hạnh phúc, có người lại tin rằng được công nhận và thành công trong công việc mới là hạnh phúc.'},
+       {speaker:'旁白', pre:'所以，', blank:'了解自己想要的', post:'，才容易获得幸福和快乐。', py:'Suǒyǐ, liǎojiě zìjǐ xiǎng yào de, cái róngyì huòdé xìngfú hé kuàilè.', vn:'Vì vậy, hiểu rõ điều mình muốn thì mới dễ có được hạnh phúc và niềm vui.'}
+     ],
+     explain:'问：怎样才更容易快乐？ "了解自己想要的，才容易获得幸福和快乐" → D 知道想要什么.'},
+    {num:22, options:['钱','幸福','爱情','成功'], ans:1, q:'这段话主要谈什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'幸福的标准是不同的', post:'。…所以，了解自己想要的，才容易获得幸福和快乐。', py:'(Tóng yí duàn huà) Xìngfú de biāozhǔn shì bùtóng de. … Suǒyǐ, liǎojiě zìjǐ xiǎng yào de, cái róngyì huòdé xìngfú hé kuàilè.', vn:'(Cùng đoạn văn) Tiêu chuẩn hạnh phúc là khác nhau. … Vì vậy, hiểu rõ điều mình muốn thì mới dễ có được hạnh phúc và niềm vui.'}
+     ],
+     explain:'问：这段话主要谈什么？ Cả đoạn nói về 幸福的标准 → B 幸福. 钱, 爱情, 成功 chỉ là các ví dụ.'}
   ]
 };

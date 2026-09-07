@@ -843,49 +843,147 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-18/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-18/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-18/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'有一本书叫《新十万个为什么》，现在',blank:'卖得非常火',post:'。',py:'Yǒu yì běn shū jiào "Xīn Shíwàn Ge Wèi Shénme", xiànzài mài de fēicháng huǒ.',vn:'Có cuốn "Mười vạn câu hỏi vì sao mới", hiện bán rất chạy.'}]},
-    {num:2,lines:[{pre:'不过天天对着电脑看，',blank:'眼睛实在受不了',post:'。',py:'Búguò tiāntiān duìzhe diànnǎo kàn, yǎnjing shízài shòubuliǎo.',vn:'Nhưng ngày nào cũng nhìn màn hình, mắt thật chịu không nổi.'}]},
-    {num:3,lines:[{pre:'可以给网上的日记',blank:'加密码',post:'，那样只有得到了允许，别人才能看到。',py:'Kěyǐ gěi wǎngshang de rìjì jiā mìmǎ, nàyàng zhǐyǒu dédàole yǔnxǔ, biérén cái néng kàndào.',vn:'Có thể đặt mật khẩu cho nhật ký, chỉ khi được cho phép người khác mới xem được.'}]},
-    {num:4,lines:[{pre:'接着又梦见我跳到车上，',blank:'跟警察一起抓住了一个坏人',post:'。',py:'Jiēzhe yòu mèngjiàn wǒ tiàodào chē shang, gēn jǐngchá yìqǐ zhuāzhùle yí ge huàirén.',vn:'Ngay sau đó mơ tôi nhảy lên xe, cùng cảnh sát bắt kẻ xấu.'}]},
-    {num:5,lines:[{pre:'现代科学技术的发展让世界变得越来越小，所以现在人们都',blank:'把地球叫作"地球村"',post:'。',py:'Xiàndài kēxué jìshù de fāzhǎn ràng shìjiè biànde yuè lái yuè xiǎo, suǒyǐ xiànzài rénmen dōu bǎ dìqiú jiàozuò "dìqiúcūn".',vn:'Khoa học kỹ thuật khiến thế giới ngày càng nhỏ, nên người ta gọi Trái đất là "làng toàn cầu".'}]},
+  dictation: [
+    {num:1, stmt:'地址填错地方了。', judge:true, lines:[
+      {pre:'先生，', blank:'您把收件人和寄件人的地址填反了', post:'，这儿应该填您自己的地址。我再给您一张单子，您重新填一下吧。',
+       py:'Xiānsheng, nín bǎ shōujiànrén hé jìjiànrén de dìzhǐ tiánfǎn le, zhèr yīnggāi tián nín zìjǐ de dìzhǐ. Wǒ zài gěi nín yì zhāng dānzi, nín chóngxīn tián yíxià ba.',
+       vn:'Thưa ông, ông điền ngược địa chỉ người nhận và người gửi rồi, chỗ này phải điền địa chỉ của chính ông. Tôi đưa ông tờ khác, ông điền lại nhé.'}]},
+    {num:2, stmt:'他们要坐地铁。', judge:false, lines:[
+      {pre:'姐，咱们弄错方向了，', blank:'去西边的公共汽车应该过马路去那边坐', post:'。正好前边有个天桥，我们从那儿过马路吧。',
+       py:'Jiě, zánmen nòngcuò fāngxiàng le, qù xībian de gōnggòng qìchē yīnggāi guò mǎlù qù nàbiān zuò. Zhènghǎo qiánbian yǒu ge tiānqiáo, wǒmen cóng nàr guò mǎlù ba.',
+       vn:'Chị ơi, mình nhầm hướng rồi, xe buýt đi phía tây phải sang bên kia đường mới bắt được. Vừa hay phía trước có cầu vượt, mình qua đường ở đó nhé.'}]},
+    {num:3, stmt:'明天中午有大雪。', judge:false, lines:[
+      {pre:'由于冷空气南下，', blank:'我省明天将迎来大风降温天气', post:'，有些地方还会有小到中雨，交通会受到一定影响，听众朋友们出行时一定要注意安全。',
+       py:'Yóuyú lěng kōngqì nán xià, wǒ shěng míngtiān jiāng yínglái dàfēng jiàngwēn tiānqì, yǒuxiē dìfang hái huì yǒu xiǎo dào zhōng yǔ, jiāotōng huì shòudào yídìng yǐngxiǎng, tīngzhòng péngyoumen chūxíng shí yídìng yào zhùyì ānquán.',
+       vn:'Do không khí lạnh tràn xuống phía nam, ngày mai tỉnh ta sẽ có gió mạnh, nhiệt độ giảm, một số nơi còn có mưa nhỏ đến vừa, giao thông sẽ bị ảnh hưởng, quý thính giả ra ngoài nhất định chú ý an toàn.'}]},
+    {num:4, stmt:'遇到危险时要冷静。', judge:true, lines:[
+      {pre:'遇到危险时，哭不能解决任何问题，你应该想办法向别人求助。但在这之前，', blank:'你必须先让自己冷静下来', post:'。',
+       py:'Yùdào wēixiǎn shí, kū bù néng jiějué rènhé wèntí, nǐ yīnggāi xiǎng bànfǎ xiàng biérén qiúzhù. Dàn zài zhè zhīqián, nǐ bìxū xiān ràng zìjǐ lěngjìng xiàlai.',
+       vn:'Khi gặp nguy hiểm, khóc không giải quyết được gì, bạn nên tìm cách nhờ người khác giúp. Nhưng trước đó, bạn phải bình tĩnh lại đã.'}]},
+    {num:5, stmt:'黄河是中国的"母亲河"。', judge:true, lines:[
+      {pre:'黄河是中国第二大河，它有5464公里长，', blank:'人们把它叫作"母亲河"', post:'。从地图上看，它就像一个大大的"几"字。',
+       py:'Huáng Hé shì Zhōngguó dì-èr dà hé, tā yǒu wǔqiān sìbǎi liùshísì gōnglǐ cháng, rénmen bǎ tā jiàozuò "mǔqīnhé". Cóng dìtú shang kàn, tā jiù xiàng yí ge dàdà de "jǐ" zì.',
+       vn:'Hoàng Hà là con sông lớn thứ hai Trung Quốc, dài 5464 km, người ta gọi nó là "sông Mẹ". Nhìn trên bản đồ, nó giống một chữ "几" thật to.'}]}
   ],
-  mc:[
-    {num:6,options:['飞机是怎么起飞和降落的','为什么天是蓝的','鱼为什么会游泳'],ans:0,
-     lines:[{speaker:'女',pre:'上次女儿问我',blank:'飞机是怎么起飞和降落的',post:'，真不知道该怎么回答她。',py:'Shàng cì nǚ\'ér wèn wǒ fēijī shì zěnme qǐfēi hé jiàngluò de, zhēn bù zhīdào gāi zěnme huídá tā.',vn:'Lần trước con gái hỏi máy bay cất cánh hạ cánh thế nào, không biết trả lời sao.'}],
-     explain:'原文明确说"飞机是怎么起飞和降落的"。'},
-    {num:7,options:['儿童想知道的科学知识','历史故事','童话故事'],ans:0,
-     lines:[{speaker:'女',pre:'书里的内容都是',blank:'儿童想知道的科学知识',post:'，相信你女儿一定喜欢读。',py:'Shū li de nèiróng dōu shì értóng xiǎng zhīdào de kēxué zhīshi, xiāngxìn nǐ nǚ\'ér yídìng xǐhuan dú.',vn:'Nội dung đều là kiến thức khoa học trẻ muốn biết, tin rằng con gái bạn thích.'}],
-     explain:'原文明确说"儿童想知道的科学知识"。'},
-    {num:8,options:['70%','50%','90%'],ans:0,
-     lines:[{speaker:'男',pre:'据调查，',blank:'70%',post:'的人遇到问题时，首先想到的就是上网找答案。',py:'Jù diàochá, bǎifēnzhī qīshí de rén yùdào wèntí shí, shǒuxiān xiǎngdào de jiù shì shàng wǎng zhǎo dá\'àn.',vn:'Theo khảo sát, 70% người gặp vấn đề trước hết nghĩ đến lên mạng tìm đáp án.'}],
-     explain:'原文明确说"70%的人"。'},
-    {num:9,options:['眼睛受不了','太贵了','太慢了'],ans:0,
-     lines:[{speaker:'女',pre:'不过天天对着电脑看，',blank:'眼睛实在受不了',post:'。',py:'Búguò tiāntiān duìzhe diànnǎo kàn, yǎnjing shízài shòubuliǎo.',vn:'Nhưng ngày nào cũng nhìn màn hình, mắt thật chịu không nổi.'}],
-     explain:'原文明确说"眼睛实在受不了"。'},
-    {num:10,options:['在网上写日记','在网上购物','在网上看电影'],ans:0,
-     lines:[{speaker:'男',pre:'现在越来越多的学生喜欢',blank:'在网上写日记',post:'，他们说这样可以让朋友及时了解自己的生活。',py:'Xiànzài yuè lái yuè duō de xuésheng xǐhuan zài wǎngshang xiě rìjì, tāmen shuō zhèyàng kěyǐ ràng péngyou jíshí liǎojiě zìjǐ de shēnghuó.',vn:'Ngày càng nhiều sinh viên thích viết nhật ký trên mạng để bạn bè kịp thời biết cuộc sống.'}],
-     explain:'原文明确说"在网上写日记"。'},
-    {num:11,options:['加密码','不写日记','只给朋友看'],ans:0,
-     lines:[{speaker:'男',pre:'放心吧，可以给网上的日记',blank:'加密码',post:'，那样只有得到了允许，别人才能看到。',py:'Fàng xīn ba, kěyǐ gěi wǎngshang de rìjì jiā mìmǎ, nàyàng zhǐyǒu dédàole yǔnxǔ, biérén cái néng kàndào.',vn:'Yên tâm, có thể đặt mật khẩu cho nhật ký, chỉ khi được cho phép người khác mới xem được.'}],
-     explain:'原文明确说"加密码"。'},
-    {num:12,options:['在一座桥上走','在森林里跑','在海里游泳'],ans:0,
-     lines:[{speaker:'女',pre:'我昨天晚上做了一个特别奇怪的梦，梦到自己正',blank:'在一座桥上走',post:'。',py:'Wǒ zuótiān wǎnshang zuòle yí ge tèbié qíguài de mèng, mèngdào zìjǐ zhèngzài yí zuò qiáo shang zǒu.',vn:'Tối qua tôi mơ rất kỳ lạ, mơ thấy mình đang đi trên một cây cầu.'}],
-     explain:'原文明确说"正在一座桥上走"。'},
-    {num:13,options:['忘记了','没做过梦','睡得太好'],ans:0,
-     lines:[{speaker:'女',pre:'你之所以觉得从来没做过梦，只不过是',blank:'忘记了',post:'。',py:'Nǐ zhī suǒyǐ juéde cónglái méi zuòguo mèng, zhǐ búguò shì wàngjì le.',vn:'Bạn sở dĩ thấy chưa từng mơ, chẳng qua là quên mất.'}],
-     explain:'原文明确说"只不过是忘记了"。'},
-    {num:14,options:['买矿泉水','买饺子','找警察'],ans:0,
-     lines:[{speaker:'女',pre:'我晚饭吃得太咸，那天晚上就梦见自己到处找商店',blank:'买矿泉水',post:'。',py:'Wǒ wǎnfàn chī de tài xián, nà tiān wǎnshang jiù mèngjiàn zìjǐ dàochù zhǎo shāngdiàn mǎi kuàngquánshuǐ.',vn:'Bữa tối ăn quá mặn, tối đó mơ thấy đi khắp nơi tìm mua nước suối.'}],
-     explain:'原文明确说"买矿泉水"。'},
-    {num:15,options:['十几个小时','几个月','几天'],ans:0,
-     lines:[{speaker:'男',pre:'几千公里以外的国家，以前坐船需要几个月，现在乘坐飞机不过',blank:'十几个小时',post:'。',py:'Jǐqiān gōnglǐ yǐwài de guójiā, yǐqián zuò chuán xūyào jǐ ge yuè, xiànzài chéngzuò fēijī búguò shí jǐ ge xiǎoshí.',vn:'Nước cách vài nghìn km, trước đi thuyền mất mấy tháng, nay đi máy bay chỉ hơn chục tiếng.'}],
-     explain:'原文明确说"不过十几个小时"。'},
+  mc: [
+    {num:6, options:['没有邮件','电脑坏了','电话有问题','密码错了'], ans:3, q:'男的为什么感到奇怪？',
+     lines:[
+       {speaker:'女', pre:'你叔叔刚打电话来说', blank:'给你发了个电子邮件', post:'，让你查收。', py:'Nǐ shūshu gāng dǎ diànhuà lái shuō gěi nǐ fāle ge diànzǐ yóujiàn, ràng nǐ cháshōu.', vn:'Chú con vừa gọi điện nói đã gửi email cho con, bảo con kiểm tra.'},
+       {speaker:'男', pre:'我正在上邮箱，可一直进不去，真奇怪，', blank:'总说我的密码有错', post:'，没错啊。', py:'Wǒ zhèngzài shàng yóuxiāng, kě yìzhí jìnbuqù, zhēn qíguài, zǒng shuō wǒ de mìmǎ yǒu cuò, méi cuò a.', vn:'Con đang vào hộp thư mà mãi không vào được, lạ thật, cứ báo mật khẩu sai, đâu có sai.'}
+     ],
+     explain:'问：男的为什么感到奇怪？ "总说我的密码有错" → D 密码错了.'},
+    {num:7, options:['在超市','没带钱','在找人','迷路了'], ans:2, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'喂，你在哪儿呢？我已经到公园了，', blank:'怎么看不到你啊', post:'？', py:'Wèi, nǐ zài nǎr ne? Wǒ yǐjīng dào gōngyuán le, zěnme kànbudào nǐ a?', vn:'Alô, em ở đâu? Anh đến công viên rồi, sao không thấy em?'},
+       {speaker:'女', pre:'我在公园旁边的超市呢，正好我买了一箱矿泉水，', blank:'你来接我一下吧', post:'。', py:'Wǒ zài gōngyuán pángbiān de chāoshì ne, zhènghǎo wǒ mǎile yì xiāng kuàngquánshuǐ, nǐ lái jiē wǒ yíxià ba.', vn:'Em ở siêu thị cạnh công viên, vừa hay mua một thùng nước khoáng, anh đến đón em nhé.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ "怎么看不到你啊" → anh ấy đang tìm người, đáp án C 在找人. A sai: người ở siêu thị là người nữ.'},
+    {num:8, options:['寄信','写地址','找信封','发邮件'], ans:2, q:'男的让女的做什么？',
+     lines:[
+       {speaker:'男', pre:'', blank:'你那儿有大一点儿的信封吗', post:'？这个太小了。', py:'Nǐ nàr yǒu dà yìdiǎnr de xìnfēng ma? Zhège tài xiǎo le.', vn:'Chỗ cô có phong bì to hơn không? Cái này nhỏ quá.'},
+       {speaker:'女', pre:'稍等一下，', blank:'我发完这封电子邮件就给你找', post:'。', py:'Shāo děng yíxià, wǒ fāwán zhè fēng diànzǐ yóujiàn jiù gěi nǐ zhǎo.', vn:'Đợi chút, tôi gửi xong email này sẽ tìm cho anh.'}
+     ],
+     explain:'问：男的让女的做什么？ "有大一点儿的信封吗…就给你找" → C 找信封. D 发邮件 là việc cô ấy đang làm.'},
+    {num:9, options:['做菜','咖啡','面条','葡萄酒'], ans:0, q:'他们在谈什么？',
+     lines:[
+       {speaker:'男', pre:'你尝一下，', blank:'这个菜味道怎么样', post:'？', py:'Nǐ cháng yíxià, zhège cài wèidào zěnmeyàng?', vn:'Em nếm thử, món này vị thế nào?'},
+       {speaker:'女', pre:'我尝了，稍微有点儿咸，', blank:'是不是盐放多了', post:'？', py:'Wǒ cháng le, shāowēi yǒudiǎnr xián, shì bu shì yán fàng duō le?', vn:'Em nếm rồi, hơi mặn một chút, có phải cho nhiều muối quá không?'}
+     ],
+     explain:'问：他们在谈什么？ "这个菜味道…盐放多了" → A 做菜.'},
+    {num:10, options:['非常困','发烧了','没起床','受欢迎'], ans:0, q:'女的怎么了？',
+     lines:[
+       {speaker:'男', pre:'你困了就先去睡一会儿吧，', blank:'等比赛开始了，我再叫你起来接着看', post:'。', py:'Nǐ kùn le jiù xiān qù shuì yíhuìr ba, děng bǐsài kāishǐ le, wǒ zài jiào nǐ qǐlai jiēzhe kàn.', vn:'Em buồn ngủ thì đi ngủ một lát trước, đợi trận đấu bắt đầu anh gọi em dậy xem tiếp.'},
+       {speaker:'女', pre:'好的，', blank:'我实在受不了了', post:'，先去躺会儿。', py:'Hǎo de, wǒ shízài shòubuliǎo le, xiān qù tǎng huìr.', vn:'Được, em thật sự chịu không nổi nữa, đi nằm một lát.'}
+     ],
+     explain:'问：女的怎么了？ "你困了…我实在受不了了" → A 非常困.'},
+    {num:11, options:['高兴','无聊','担心','轻松'], ans:2, q:'男的现在心情怎么样？',
+     lines:[
+       {speaker:'女', pre:'做得怎么样了？', blank:'今天能解决这个问题吗', post:'？', py:'Zuò de zěnmeyàng le? Jīntiān néng jiějué zhège wèntí ma?', vn:'Làm đến đâu rồi? Hôm nay giải quyết được vấn đề này không?'},
+       {speaker:'男', pre:'情况比我们想的复杂得多，', blank:'还有一个技术问题不知道怎么办', post:'，今天恐怕完不了了。', py:'Qíngkuàng bǐ wǒmen xiǎng de fùzá de duō, hái yǒu yí ge jìshù wèntí bù zhīdào zěnme bàn, jīntiān kǒngpà wánbuliǎo le.', vn:'Tình hình phức tạp hơn chúng ta nghĩ nhiều, còn một vấn đề kỹ thuật không biết xử lý sao, hôm nay e là không xong được.'}
+     ],
+     explain:'问：男的现在心情怎么样？ "不知道怎么办…恐怕完不了了" → lo lắng, đáp án C 担心.'},
+    {num:12, options:['借钱','买饼干','找钥匙','问路'], ans:0, q:'男的在做什么？',
+     lines:[
+       {speaker:'男', pre:'我想买这本词典，可出门忘带钱包了，', blank:'你能不能先借我一点儿', post:'？一会儿回去还你。', py:'Wǒ xiǎng mǎi zhè běn cídiǎn, kě chūmén wàng dài qiánbāo le, nǐ néng bu néng xiān jiè wǒ yìdiǎnr? Yíhuìr huíqu huán nǐ.', vn:'Tôi muốn mua cuốn từ điển này, nhưng ra ngoài quên mang ví, cô cho tôi vay một ít được không? Lát về trả.'},
+       {speaker:'女', pre:'没问题。高老师，', blank:'您要多少', post:'？', py:'Méi wèntí. Gāo lǎoshī, nín yào duōshao?', vn:'Không vấn đề. Thầy Cao, thầy cần bao nhiêu?'}
+     ],
+     explain:'问：男的在做什么？ "你能不能先借我一点儿" → A 借钱.'},
+    {num:13, options:['大学毕业了','找到工作了','考上硕士了','做教育工作'], ans:2, q:'女的为什么说男的很厉害？',
+     lines:[
+       {speaker:'女', pre:'大学毕业后就没联系了，', blank:'你现在在哪儿工作呢', post:'？', py:'Dàxué bìyè hòu jiù méi liánxì le, nǐ xiànzài zài nǎr gōngzuò ne?', vn:'Tốt nghiệp đại học xong là mất liên lạc, giờ cậu làm ở đâu?'},
+       {speaker:'男', pre:'毕业后在老家工作了一年，', blank:'接着又考上了北京大学', post:'，现在在读研究生。', py:'Bìyè hòu zài lǎojiā gōngzuòle yì nián, jiēzhe yòu kǎoshàngle Běijīng Dàxué, xiànzài zài dú yánjiūshēng.', vn:'Tốt nghiệp xong làm ở quê một năm, rồi thi đỗ Đại học Bắc Kinh, giờ đang học cao học.'},
+       {speaker:'女', pre:'真厉害！是硕士了。', blank:'你读什么专业？几年', post:'？', py:'Zhēn lìhai! Shì shuòshì le. Nǐ dú shénme zhuānyè? Jǐ nián?', vn:'Giỏi thật! Thạc sĩ rồi. Cậu học ngành gì? Mấy năm?'},
+       {speaker:'男', pre:'', blank:'教育学，三年', post:'。', py:'Jiàoyùxué, sān nián.', vn:'Giáo dục học, ba năm.'}
+     ],
+     explain:'问：女的为什么说男的很厉害？ "考上了北京大学…真厉害！是硕士了" → C 考上硕士了. D sai: học giáo dục học, không phải làm nghề giáo dục.'},
+    {num:14, options:['火车站','机场','公园','图书馆'], ans:3, q:'他们明天要去哪儿？',
+     lines:[
+       {speaker:'男', pre:'', blank:'明天见面的地点改在东门了', post:'？', py:'Míngtiān jiànmiàn de dìdiǎn gǎi zài dōngmén le?', vn:'Địa điểm gặp mặt ngày mai đổi sang cổng đông rồi à?'},
+       {speaker:'女', pre:'是，', blank:'从那边去国家图书馆方便一些', post:'。', py:'Shì, cóng nàbiān qù Guójiā Túshūguǎn fāngbiàn yìxiē.', vn:'Đúng, từ bên đó đi Thư viện Quốc gia tiện hơn.'},
+       {speaker:'男', pre:'那我通知班里的同学。', blank:'时间变了吗', post:'？', py:'Nà wǒ tōngzhī bān li de tóngxué. Shíjiān biàn le ma?', vn:'Vậy tôi thông báo các bạn trong lớp. Thời gian có đổi không?'},
+       {speaker:'女', pre:'没变，', blank:'还是上午八点', post:'。', py:'Méi biàn, háishi shàngwǔ bā diǎn.', vn:'Không đổi, vẫn tám giờ sáng.'}
+     ],
+     explain:'问：他们明天要去哪儿？ "去国家图书馆" → D 图书馆. 东门 chỉ là chỗ tập trung.'},
+    {num:15, options:['网站有问题','网址错了','上网速度不快','女的的电脑坏了'], ans:3, q:'根据对话，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'这个网站地址是不是错的？', blank:'试了好几遍都打不开', post:'。', py:'Zhège wǎngzhàn dìzhǐ shì bu shì cuò de? Shìle hǎo jǐ biàn dōu dǎbukāi.', vn:'Địa chỉ trang web này có phải sai không? Thử mấy lần đều không mở được.'},
+       {speaker:'男', pre:'你把网址发过来，', blank:'我试一下', post:'。', py:'Nǐ bǎ wǎngzhǐ fā guòlai, wǒ shì yíxià.', vn:'Cậu gửi địa chỉ qua, tôi thử xem.'},
+       {speaker:'女', pre:'怎么样？', blank:'你那儿能打开吗', post:'？', py:'Zěnmeyàng? Nǐ nàr néng dǎkāi ma?', vn:'Sao rồi? Bên cậu mở được không?'},
+       {speaker:'男', pre:'可以，速度挺快的，', blank:'是不是你电脑有问题', post:'？', py:'Kěyǐ, sùdù tǐng kuài de, shì bu shì nǐ diànnǎo yǒu wèntí?', vn:'Được, tốc độ khá nhanh, có phải máy tính của cậu có vấn đề không?'}
+     ],
+     explain:'问：根据对话，可以知道什么？ Máy người nam mở được, "是不是你电脑有问题" → D 女的的电脑坏了. A, B, C đều bị loại vì trang mở bình thường, tốc độ nhanh.'},
+    {num:16, options:['是新手','开车慢','想停车','技术好'], ans:0, q:'通过对话，可以知道男的怎么样？',
+     lines:[
+       {speaker:'女', pre:'危险！', blank:'你开得太快了', post:'。', py:'Wēixiǎn! Nǐ kāi de tài kuài le.', vn:'Nguy hiểm! Anh lái nhanh quá.'},
+       {speaker:'男', pre:'好吧，好吧，', blank:'我开慢点儿', post:'。', py:'Hǎo ba, hǎo ba, wǒ kāi màn diǎnr.', vn:'Được rồi, được rồi, anh lái chậm lại.'},
+       {speaker:'女', pre:'你现在把车停下，我来开，', blank:'我真受不了你了', post:'！', py:'Nǐ xiànzài bǎ chē tíngxià, wǒ lái kāi, wǒ zhēn shòubuliǎo nǐ le!', vn:'Anh dừng xe lại ngay, để em lái, em chịu không nổi anh nữa!'},
+       {speaker:'男', pre:'让我再开会儿。你不是也刚学会几天吗？', blank:'自己也是个新手', post:'。', py:'Ràng wǒ zài kāi huìr. Nǐ bú shì yě gāng xuéhuì jǐ tiān ma? Zìjǐ yě shì ge xīnshǒu.', vn:'Để anh lái thêm chút. Em chẳng phải cũng mới biết lái vài ngày sao? Bản thân cũng là tay mới.'},
+       {speaker:'女', pre:'至少比你开得慢，', blank:'技术比你好', post:'。', py:'Zhìshǎo bǐ nǐ kāi de màn, jìshù bǐ nǐ hǎo.', vn:'Ít nhất em lái chậm hơn anh, kỹ thuật tốt hơn anh.'}
+     ],
+     explain:'问：可以知道男的怎么样？ Cả hai đều mới học lái ("你不是也刚学会几天吗？自己也是个新手") → A 是新手. B, D ngược nội dung.'},
+    {num:17, options:['学校','作者','办公室','中学生'], ans:1, q:'通过对话，可以知道男的联系了什么人？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你联系那位作者了吗', post:'？', py:'Nǐ liánxì nà wèi zuòzhě le ma?', vn:'Anh liên hệ với tác giả đó chưa?'},
+       {speaker:'男', pre:'联系了，她竟然是一位在校大学生，', blank:'没想到她那么年轻', post:'。', py:'Liánxì le, tā jìngrán shì yí wèi zàixiào dàxuéshēng, méi xiǎngdào tā nàme niánqīng.', vn:'Liên hệ rồi, cô ấy thế mà là sinh viên đang học, không ngờ trẻ vậy.'},
+       {speaker:'女', pre:'', blank:'她同意和我们聊一聊了', post:'？', py:'Tā tóngyì hé wǒmen liáo yi liáo le?', vn:'Cô ấy đồng ý trò chuyện với chúng ta rồi à?'},
+       {speaker:'男', pre:'是的，暂定在下星期一，', blank:'她上午九点来我们办公室谈', post:'。', py:'Shì de, zàndìng zài xià xīngqīyī, tā shàngwǔ jiǔ diǎn lái wǒmen bàngōngshì tán.', vn:'Đúng, tạm định thứ Hai tuần sau, chín giờ sáng cô ấy đến văn phòng chúng ta nói chuyện.'}
+     ],
+     explain:'问：可以知道男的联系了什么人？ "你联系那位作者了吗？— 联系了" → B 作者. D sai: cô ấy là sinh viên đại học, không phải học sinh trung học.'},
+    {num:18, options:['介绍科学知识','特别有意思','赚了很多钱','解释了很多梦'], ans:3, q:'关于《周公解梦》，下列哪个最可能正确？',
+     lines:[
+       {speaker:'男', pre:'我昨天晚上做了一个特别有意思的梦，', blank:'梦到家里有好多好多水', post:'，高兴死我了。', py:'Wǒ zuótiān wǎnshang zuòle yí ge tèbié yǒu yìsi de mèng, mèngdào jiā li yǒu hǎo duō hǎo duō shuǐ, gāoxìng sǐ wǒ le.', vn:'Tối qua tôi mơ một giấc mơ rất thú vị, mơ thấy nhà có rất nhiều nước, vui muốn chết.'},
+       {speaker:'女', pre:'这有什么可高兴的？晚上睡觉时，', blank:'身体感觉到什么，人就容易梦到什么内容', post:'。', py:'Zhè yǒu shénme kě gāoxìng de? Wǎnshang shuìjiào shí, shēntǐ gǎnjué dào shénme, rén jiù róngyì mèngdào shénme nèiróng.', vn:'Có gì đáng vui? Lúc ngủ, cơ thể cảm thấy gì thì người ta dễ mơ thấy cái đó.'},
+       {speaker:'男', pre:'早上一醒，我就去查了《周公解梦》，', blank:'书上说梦到水，说明会有很大一笔收入', post:'呢！', py:'Zǎoshang yì xǐng, wǒ jiù qù chále «Zhōugōng Jiěmèng», shū shang shuō mèngdào shuǐ, shuōmíng huì yǒu hěn dà yì bǐ shōurù ne!', vn:'Sáng vừa tỉnh tôi đi tra «Chu Công giải mộng», sách nói mơ thấy nước là sẽ có một khoản thu nhập lớn!'},
+       {speaker:'女', pre:'那你慢慢等着吧，', blank:'那本书上的内容一点儿也不科学', post:'。', py:'Nà nǐ mànman děngzhe ba, nà běn shū shang de nèiróng yìdiǎnr yě bù kēxué.', vn:'Vậy anh cứ từ từ mà đợi, nội dung cuốn sách đó chẳng khoa học chút nào.'}
+     ],
+     explain:'问：关于《周公解梦》，下列哪个最可能正确？ Sách giải thích ý nghĩa các giấc mơ → D 解释了很多梦. A sai vì "一点儿也不科学".'},
+    {num:19, options:['开始时间','完成的情况','做事的顺序','别浪费时间'], ans:2, q:'做计划表时，首先要注意什么？',
+     lines:[
+       {speaker:'旁白', pre:'每个人都应该学会管理时间，', blank:'而做计划表、严格按照计划做事是有效管理时间的第一步', post:'。', py:'Měi ge rén dōu yīnggāi xuéhuì guǎnlǐ shíjiān, ér zuò jìhuàbiǎo, yángé ànzhào jìhuà zuòshì shì yǒuxiào guǎnlǐ shíjiān de dì-yī bù.', vn:'Ai cũng nên học cách quản lý thời gian, mà lập bảng kế hoạch, làm việc nghiêm túc theo kế hoạch là bước đầu tiên để quản lý thời gian hiệu quả.'},
+       {speaker:'旁白', pre:'在做计划表时', blank:'首先要注意把重要的事安排在前面', post:'，除此之外，还要写明完成时间，这样才能做到不浪费一分一秒。', py:'Zài zuò jìhuàbiǎo shí shǒuxiān yào zhùyì bǎ zhòngyào de shì ānpái zài qiánmian, chú cǐ zhī wài, hái yào xiěmíng wánchéng shíjiān, zhèyàng cái néng zuòdào bú làngfèi yì fēn yì miǎo.', vn:'Khi lập bảng kế hoạch, trước hết phải chú ý xếp việc quan trọng lên trước, ngoài ra còn phải ghi rõ thời gian hoàn thành, như vậy mới không lãng phí một phút một giây.'}
+     ],
+     explain:'问：做计划表时，首先要注意什么？ "首先要注意把重要的事安排在前面" → thứ tự làm việc, đáp án C 做事的顺序.'},
+    {num:20, options:['工作总结','管理效果','做计划的方法','时间的重要性'], ans:2, q:'这段话主要谈的是什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'在做计划表时首先要注意把重要的事安排在前面，除此之外，还要写明完成时间', post:'。', py:'(Tóng yí duàn huà) Zài zuò jìhuàbiǎo shí shǒuxiān yào zhùyì bǎ zhòngyào de shì ānpái zài qiánmian, chú cǐ zhī wài, hái yào xiěmíng wánchéng shíjiān.', vn:'(Cùng đoạn văn) Khi lập bảng kế hoạch, trước hết phải xếp việc quan trọng lên trước, ngoài ra còn phải ghi rõ thời gian hoàn thành.'}
+     ],
+     explain:'问：这段话主要谈的是什么？ Đoạn chủ yếu hướng dẫn cách lập bảng kế hoạch → C 做计划的方法.'},
+    {num:21, options:['为了赚钱','减少污染','衣服太脏','洗衣服太辛苦'], ans:3, q:'根据这段话，为什么会出现洗衣机？',
+     lines:[
+       {speaker:'旁白', pre:'因为有些人觉得用手写字麻烦，于是有了打字机；因为有些人觉得每天爬楼麻烦，于是有了电梯；', blank:'因为有些人觉得洗衣服麻烦，于是有了洗衣机', post:'；', py:'Yīnwèi yǒuxiē rén juéde yòng shǒu xiě zì máfan, yúshì yǒule dǎzìjī; yīnwèi yǒuxiē rén juéde měi tiān pá lóu máfan, yúshì yǒule diàntī; yīnwèi yǒuxiē rén juéde xǐ yīfu máfan, yúshì yǒule xǐyījī;', vn:'Vì có người thấy viết tay phiền nên có máy đánh chữ; vì có người thấy ngày nào cũng leo cầu thang phiền nên có thang máy; vì có người thấy giặt quần áo phiền nên có máy giặt;'},
+       {speaker:'旁白', pre:'同样因为有些人觉得走路又累又麻烦，才有了各种交通工具。所以，', blank:'觉得麻烦不一定是件坏事', post:'。', py:'tóngyàng yīnwèi yǒuxiē rén juéde zǒulù yòu lèi yòu máfan, cái yǒule gè zhǒng jiāotōng gōngjù. Suǒyǐ, juéde máfan bù yídìng shì jiàn huàishì.', vn:'cũng vì có người thấy đi bộ vừa mệt vừa phiền nên mới có các loại phương tiện giao thông. Vì vậy, thấy phiền không hẳn là chuyện xấu.'}
+     ],
+     explain:'问：为什么会出现洗衣机？ "觉得洗衣服麻烦，于是有了洗衣机" → D 洗衣服太辛苦 (麻烦 ≈ vất vả, phiền).'},
+    {num:22, options:['麻烦的好处','麻烦的原因','爬楼的快乐','交通工具的特点'], ans:0, q:'这段话主要想告诉我们什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）所以，', blank:'觉得麻烦不一定是件坏事', post:'。', py:'(Tóng yí duàn huà) Suǒyǐ, juéde máfan bù yídìng shì jiàn huàishì.', vn:'(Cùng đoạn văn) Vì vậy, thấy phiền không hẳn là chuyện xấu.'}
+     ],
+     explain:'问：这段话主要想告诉我们什么？ Kết luận "觉得麻烦不一定是件坏事" → cái phiền có lợi ích (thúc đẩy phát minh), đáp án A 麻烦的好处.'}
   ]
 };

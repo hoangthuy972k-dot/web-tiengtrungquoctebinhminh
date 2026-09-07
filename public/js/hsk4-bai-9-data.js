@@ -894,49 +894,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-9/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-9/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-9/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'要想减肥成功，只能坚持，才会慢慢有',blank:'效果',post:'。',py:'Yào xiǎng jiǎn féi chénggōng, zhǐ néng jiānchí, cái huì mànman yǒu xiàoguǒ.',vn:'Muốn giảm cân thành công, chỉ có thể kiên trì, mới từ từ có hiệu quả.'}]},
-    {num:2,lines:[{pre:'没有人随随便便就能',blank:'成功',post:'的。',py:'Méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.',vn:'Không có ai tùy tiện là có thể thành công được.'}]},
-    {num:3,lines:[{pre:'任何成功都要通过',blank:'努力',post:'才能得到。',py:'Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào.',vn:'Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được.'}]},
-    {num:4,lines:[{pre:'即使最后失败了也没有关系，因为至少你已经',blank:'努力过',post:'。',py:'Jíshǐ zuìhòu shībàile yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo.',vn:'Dù cuối cùng có thất bại cũng không sao, vì ít nhất bạn đã nỗ lực rồi.'}]},
-    {num:5,lines:[{pre:'只有我们勇敢地面对困难，才能有希望',blank:'取得成功',post:'。',py:'Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.',vn:'Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công.'}]},
+  dictation: [
+    {num:1, stmt:'好的开始很重要。', judge:true, lines:[
+      {pre:'', blank:'好的开始是成功的一半', post:'，很多事情开头做好了，以后就容易多了；开头没做好，后面会更困难。',
+       py:'Hǎo de kāishǐ shì chénggōng de yíbàn, hěn duō shìqing kāitóu zuòhǎo le, yǐhòu jiù róngyì duō le; kāitóu méi zuòhǎo, hòumian huì gèng kùnnan.',
+       vn:'Khởi đầu tốt là một nửa của thành công, nhiều việc mở đầu làm tốt thì về sau dễ hơn nhiều; mở đầu không tốt, về sau sẽ càng khó khăn.'}]},
+    {num:2, stmt:'结果比过程更重要。', judge:false, lines:[
+      {pre:'其实，只要我们真正努力过了，', blank:'就不需要太关心结果', post:'。因为无论最后是成功还是失败，在努力的过程中，我们已经学到了很多东西。',
+       py:'Qíshí, zhǐyào wǒmen zhēnzhèng nǔlìguo le, jiù bù xūyào tài guānxīn jiéguǒ. Yīnwèi wúlùn zuìhòu shì chénggōng háishi shībài, zài nǔlì de guòchéng zhōng, wǒmen yǐjīng xuédàole hěn duō dōngxi.',
+       vn:'Thực ra, chỉ cần chúng ta đã thật sự nỗ lực, thì không cần quá quan tâm đến kết quả. Vì dù cuối cùng thành công hay thất bại, trong quá trình nỗ lực chúng ta đã học được rất nhiều.'}]},
+    {num:3, stmt:'没有失败就没有成功。', judge:true, lines:[
+      {pre:'为什么说没有失败就没有成功？', blank:'因为我们可以从失败中发现自己的缺点', post:'，总结出很多经验，有了这些经验的积累，才有可能获得成功。',
+       py:'Wèishénme shuō méiyǒu shībài jiù méiyǒu chénggōng? Yīnwèi wǒmen kěyǐ cóng shībài zhōng fāxiàn zìjǐ de quēdiǎn, zǒngjié chū hěn duō jīngyàn, yǒule zhèxiē jīngyàn de jīlěi, cái yǒu kěnéng huòdé chénggōng.',
+       vn:'Vì sao nói không có thất bại thì không có thành công? Vì chúng ta có thể phát hiện khuyết điểm của mình từ thất bại, đúc kết ra nhiều kinh nghiệm, có sự tích luỹ kinh nghiệm đó mới có thể đạt được thành công.'}]},
+    {num:4, stmt:'聪明最重要。', judge:false, lines:[
+      {pre:'我认为态度决定一切。如果一个人做事情积极、努力，那么他就更容易成功。', blank:'如果一个人不积极、不努力、不认真', post:'，他再聪明也很难成功。',
+       py:'Wǒ rènwéi tàidu juédìng yíqiè. Rúguǒ yí ge rén zuò shìqing jījí, nǔlì, nàme tā jiù gèng róngyì chénggōng. Rúguǒ yí ge rén bù jījí, bù nǔlì, bú rènzhēn, tā zài cōngming yě hěn nán chénggōng.',
+       vn:'Tôi cho rằng thái độ quyết định tất cả. Nếu một người làm việc tích cực, nỗ lực thì dễ thành công hơn. Nếu một người không tích cực, không nỗ lực, không nghiêm túc, dù thông minh đến đâu cũng khó thành công.'}]},
+    {num:5, stmt:'不要担心失败。', judge:true, lines:[
+      {pre:'如果你想做什么事情，那就勇敢地去做吧。', blank:'只有试过才知道能不能成功', post:'。实际上，即使最后不成功也没有关系，因为至少你努力过。',
+       py:'Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò ba. Zhǐyǒu shìguo cái zhīdào néng bu néng chénggōng. Shíjìshang, jíshǐ zuìhòu bù chénggōng yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ nǔlìguo.',
+       vn:'Nếu bạn muốn làm việc gì, hãy dũng cảm làm đi. Chỉ có thử rồi mới biết có thành công hay không. Thực tế, dù cuối cùng không thành công cũng không sao, vì ít nhất bạn đã nỗ lực.'}]}
   ],
-  mc:[
-    {num:6,options:['轻了一公斤','瘦了很多','完全没变化'],ans:0,
-     lines:[{speaker:'女',pre:'我就是这么做的，但这一个月下来，我只',blank:'轻了一公斤',post:'。',py:'Wǒ jiùshì zhème zuò de, dàn zhè yí ge yuè xialai, wǒ zhǐ qīngle yì gōngjīn.',vn:'Tôi chính là làm như vậy đấy, nhưng qua một tháng này, tôi chỉ nhẹ được một cân.'}],
-     explain:'原文明确说"我只轻了一公斤"。'},
-    {num:7,options:['太短了','太长了','刚好'],ans:0,
-     lines:[{speaker:'男',pre:'一个月',blank:'太短了',post:'。要想减肥成功，只能坚持。',py:'Yí ge yuè tài duǎn le. Yào xiǎng jiǎn féi chénggōng, zhǐ néng jiānchí.',vn:'Một tháng quá ngắn. Muốn giảm cân thành công, chỉ có thể kiên trì.'}],
-     explain:'原文明确说"一个月太短了"。'},
-    {num:8,options:['很多国际大奖','很多钱','很多朋友'],ans:0,
-     lines:[{speaker:'男',pre:'你网球打得真好，还得过那么多',blank:'国际大奖',post:'！',py:'Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng!',vn:'Bạn đánh quần vợt giỏi thật, còn từng giành nhiều giải quốc tế lớn như vậy!'}],
-     explain:'原文明确说"得过那么多国际大奖"。'},
-    {num:9,options:['从来没有休息过一天','每周休息一天','只在春天练习'],ans:0,
-     lines:[{speaker:'女',pre:'不管春夏秋冬，我练球',blank:'从来没有休息过一天',post:'。',py:'Bùguǎn chūn xià qiū dōng, wǒ liàn qiú cónglái méiyǒu xiūxiguo yì tiān.',vn:'Bất kể xuân hạ thu đông, tôi luyện bóng chưa từng nghỉ một ngày nào.'}],
-     explain:'原文明确说"从来没有休息过一天"。'},
-    {num:10,options:['都不支持她','都支持她','没有表态'],ans:0,
-     lines:[{speaker:'男',pre:'当时她的父母和亲戚',blank:'都不支持她',post:'。',py:'Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā.',vn:'Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy.'}],
-     explain:'原文明确说"她的父母和亲戚都不支持她"。'},
-    {num:11,options:['放弃是一种聪明的选择','放弃是失败','放弃是浪费时间'],ans:0,
-     lines:[{speaker:'女',pre:'所以有时候',blank:'放弃是一种聪明的选择',post:'。',py:'Suǒyǐ yǒu shíhou fàngqì shì yì zhǒng cōngming de xuǎnzé.',vn:'Vì vậy đôi khi từ bỏ là một lựa chọn khôn ngoan.'}],
-     explain:'原文明确说"放弃是一种聪明的选择"。'},
-    {num:12,options:['做事情的过程上','结果上','别人的看法上'],ans:0,
-     lines:[{speaker:'男',pre:'我们应该把注意力放在',blank:'做事情的过程',post:'上。',py:'Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang.',vn:'Chúng ta nên đặt sự chú ý vào quá trình làm việc.'}],
-     explain:'原文明确说"把注意力放在做事情的过程上"。'},
-    {num:13,options:['上千种材料','上百种材料','十种材料'],ans:0,
-     lines:[{speaker:'女',pre:'爱迪生就是在找了',blank:'上千种材料',post:'后才找到了能点亮电灯的材料。',py:'Àidíshēng jiùshì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.',vn:'Edison chính là sau khi tìm hàng nghìn loại vật liệu mới tìm được loại vật liệu có thể thắp sáng bóng đèn điện.'}],
-     explain:'原文明确说"找了上千种材料"。'},
-    {num:14,options:['他们都坚持了下来','他们更聪明','他们更幸运'],ans:0,
-     lines:[{speaker:'男',pre:'他们和普通人的区别就是',blank:'他们都坚持了下来',post:'。',py:'Tāmen hé pǔtōng rén de qūbié jiùshì tāmen dōu jiānchíle xiàlái.',vn:'Họ và người bình thường khác nhau ở chỗ họ đều kiên trì đến cùng.'}],
-     explain:'原文明确说"区别就是他们都坚持了下来"。'},
-    {num:15,options:['勇敢地面对困难','逃避困难','等待运气'],ans:0,
-     lines:[{speaker:'女',pre:'只有我们',blank:'勇敢地面对困难',post:'，才能有希望取得成功。',py:'Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.',vn:'Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công.'}],
-     explain:'原文明确说"只有我们勇敢地面对困难，才能有希望取得成功"。'},
+  mc: [
+    {num:6, options:['不饿','想吃巧克力','不能吃东西','正在减肥'], ans:3, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'饿了吧？', blank:'来块儿巧克力怎么样', post:'？', py:'È le ba? Lái kuàir qiǎokèlì zěnmeyàng?', vn:'Đói rồi phải không? Ăn miếng sô cô la nhé?'},
+       {speaker:'女', pre:'不，', blank:'我最近在减肥', post:'，我吃个西红柿吧。', py:'Bù, wǒ zuìjìn zài jiǎnféi, wǒ chī ge xīhóngshì ba.', vn:'Không, dạo này em đang giảm cân, em ăn quả cà chua vậy.'}
+     ],
+     explain:'问：女的是什么意思？ "我最近在减肥" → D 正在减肥. Cô ấy vẫn ăn (cà chua) nên A, C sai.'},
+    {num:7, options:['不想吃饭','放弃减肥','坚持运动','瘦了很多'], ans:1, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'怎么又买这么多吃的，', blank:'难道你不减肥了', post:'？', py:'Zěnme yòu mǎi zhème duō chī de, nándào nǐ bù jiǎnféi le?', vn:'Sao lại mua nhiều đồ ăn thế, chẳng lẽ em không giảm cân nữa?'},
+       {speaker:'女', pre:'我减了一个月，结果一点儿也没瘦，', blank:'我实在没有信心了', post:'。', py:'Wǒ jiǎnle yí ge yuè, jiéguǒ yìdiǎnr yě méi shòu, wǒ shízài méiyǒu xìnxīn le.', vn:'Em giảm một tháng rồi, kết quả chẳng gầy đi chút nào, em thật sự hết tự tin rồi.'}
+     ],
+     explain:'问：女的是什么意思？ Mua nhiều đồ ăn, "没有信心了" → bỏ cuộc giảm cân, đáp án B 放弃减肥.'},
+    {num:8, options:['有些着急','刚下火车','行李箱丢了','提前回来了'], ans:0, q:'男的怎么了？',
+     lines:[
+       {speaker:'男', pre:'你哥不是说三点到吗？都过去半个小时了，', blank:'怎么还没出来', post:'？', py:'Nǐ gē bú shì shuō sān diǎn dào ma? Dōu guòqù bàn ge xiǎoshí le, zěnme hái méi chūlai?', vn:'Anh trai em chẳng phải nói ba giờ đến sao? Đã qua nửa tiếng rồi, sao vẫn chưa ra?'},
+       {speaker:'女', pre:'他还得去取行李箱，', blank:'您别担心', post:'，我打个电话问问。', py:'Tā hái děi qù qǔ xínglixiāng, nín bié dānxīn, wǒ dǎ ge diànhuà wènwen.', vn:'Anh ấy còn phải đi lấy vali, bác đừng lo, cháu gọi điện hỏi thử.'}
+     ],
+     explain:'问：男的怎么了？ "都过去半个小时了，怎么还没出来" và cô gái nói "别担心" → người nam đang sốt ruột, đáp án A 有些着急.'},
+    {num:9, options:['走一会儿','别迟到','休息一下','再跑一会儿'], ans:3, q:'男的是什么意思？',
+     lines:[
+       {speaker:'女', pre:'我实在跑不动了，', blank:'你让我休息一会儿吧', post:'。', py:'Wǒ shízài pǎobudòng le, nǐ ràng wǒ xiūxi yíhuìr ba.', vn:'Em thật sự không chạy nổi nữa, cho em nghỉ một lát đi.'},
+       {speaker:'男', pre:'你才跑了十分钟，要坚持，', blank:'至少再跑十分钟', post:'。', py:'Nǐ cái pǎole shí fēnzhōng, yào jiānchí, zhìshǎo zài pǎo shí fēnzhōng.', vn:'Em mới chạy được mười phút, phải kiên trì, ít nhất chạy thêm mười phút nữa.'}
+     ],
+     explain:'问：男的是什么意思？ "至少再跑十分钟" → D 再跑一会儿. C là yêu cầu của người nữ.'},
+    {num:10, options:['加班','爬山','打网球','打篮球'], ans:2, q:'他们要去做什么？',
+     lines:[
+       {speaker:'女', pre:'走，', blank:'咱们一起去打网球吧', post:'，锻炼锻炼身体。', py:'Zǒu, zánmen yìqǐ qù dǎ wǎngqiú ba, duànliàn duànliàn shēntǐ.', vn:'Đi thôi, chúng ta cùng đi chơi tennis, rèn luyện sức khoẻ.'},
+       {speaker:'男', pre:'好主意，我很久没去运动了。你等我几分钟，', blank:'我去换双运动鞋', post:'。', py:'Hǎo zhǔyi, wǒ hěn jiǔ méi qù yùndòng le. Nǐ děng wǒ jǐ fēnzhōng, wǒ qù huàn shuāng yùndòngxié.', vn:'Ý hay đấy, lâu rồi tôi không vận động. Đợi tôi vài phút, tôi đi thay đôi giày thể thao.'}
+     ],
+     explain:'问：他们要去做什么？ "一起去打网球" → C 打网球.'},
+    {num:11, options:['提前完成了','遇到困难了','通过检查了','交给别人了'], ans:1, q:'任务怎么样了？',
+     lines:[
+       {speaker:'女', pre:'我本来以为任务能顺利完成，', blank:'没想到事情会变成这样', post:'。', py:'Wǒ běnlái yǐwéi rènwu néng shùnlì wánchéng, méi xiǎngdào shìqing huì biànchéng zhèyàng.', vn:'Tôi vốn tưởng nhiệm vụ sẽ hoàn thành thuận lợi, không ngờ sự việc lại thành ra thế này.'},
+       {speaker:'男', pre:'别着急，', blank:'会慢慢好起来的', post:'。', py:'Bié zháojí, huì mànman hǎo qilai de.', vn:'Đừng vội, sẽ dần dần ổn thôi.'}
+     ],
+     explain:'问：任务怎么样了？ "没想到事情会变成这样…会慢慢好起来" → gặp trục trặc, đáp án B 遇到困难了.'},
+    {num:12, options:['没找到他','没调查清楚','不敢告诉他','不想告诉他'], ans:0, q:'女的为什么没把这事告诉校长？',
+     lines:[
+       {speaker:'男', pre:'发生这么大的事，', blank:'你怎么没告诉校长呢', post:'？', py:'Fāshēng zhème dà de shì, nǐ zěnme méi gàosu xiàozhǎng ne?', vn:'Xảy ra chuyện lớn thế này, sao cô không báo hiệu trưởng?'},
+       {speaker:'女', pre:'当时他不在办公室，', blank:'打他的电话又一直没人接', post:'。', py:'Dāngshí tā bú zài bàngōngshì, dǎ tā de diànhuà yòu yìzhí méi rén jiē.', vn:'Lúc đó thầy ấy không ở văn phòng, gọi điện cũng mãi không ai nghe.'}
+     ],
+     explain:'问：女的为什么没把这事告诉校长？ Không ở văn phòng, gọi không ai nghe → A 没找到他.'},
+    {num:13, options:['很勇敢','很可爱','很诚实','很有礼貌'], ans:2, q:'女的觉得自己怎么样？',
+     lines:[
+       {speaker:'男', pre:'您能给我们', blank:'介绍一些您的成功经验', post:'吗？', py:'Nín néng gěi wǒmen jièshào yìxiē nín de chénggōng jīngyàn ma?', vn:'Bà có thể chia sẻ với chúng tôi một vài kinh nghiệm thành công không?'},
+       {speaker:'女', pre:'我觉得', blank:'平时的积累是最重要的', post:'，要多向周围的人学习。', py:'Wǒ juéde píngshí de jīlěi shì zuì zhòngyào de, yào duō xiàng zhōuwéi de rén xuéxí.', vn:'Tôi thấy tích luỹ thường ngày là quan trọng nhất, phải học hỏi nhiều từ những người xung quanh.'},
+       {speaker:'男', pre:'那您觉得', blank:'您最大的优点是什么', post:'呢？', py:'Nà nín juéde nín zuì dà de yōudiǎn shì shénme ne?', vn:'Vậy bà thấy ưu điểm lớn nhất của mình là gì?'},
+       {speaker:'女', pre:'', blank:'是诚实', post:'。', py:'Shì chéngshí.', vn:'Là thật thà.'}
+     ],
+     explain:'问：女的觉得自己怎么样？ "最大的优点…是诚实" → C 很诚实.'},
+    {num:14, options:['翻译','做调查','招聘','写总结'], ans:3, q:'经理让男的做什么？',
+     lines:[
+       {speaker:'女', pre:'你今天', blank:'怎么这么安静', post:'呀？', py:'Nǐ jīntiān zěnme zhème ānjìng ya?', vn:'Hôm nay sao anh im lặng thế?'},
+       {speaker:'男', pre:'刚刚经理让我写篇总结，', blank:'我正考虑怎么写呢', post:'。', py:'Gānggāng jīnglǐ ràng wǒ xiě piān zǒngjié, wǒ zhèng kǎolǜ zěnme xiě ne.', vn:'Vừa nãy giám đốc bảo tôi viết bản tổng kết, tôi đang nghĩ viết thế nào.'},
+       {speaker:'女', pre:'总结？', blank:'哪方面的', post:'？', py:'Zǒngjié? Nǎ fāngmiàn de?', vn:'Tổng kết? Về mặt nào?'},
+       {speaker:'男', pre:'', blank:'招聘方面的', post:'。', py:'Zhāopìn fāngmiàn de.', vn:'Về mảng tuyển dụng.'}
+     ],
+     explain:'问：经理让男的做什么？ "经理让我写篇总结" → D 写总结. 招聘 chỉ là chủ đề của bản tổng kết.'},
+    {num:15, options:['接受邀请了','在讲课','在邀请客人','没时间'], ans:0, q:'关于男的，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'黄教授，', blank:'我们想邀请您七月份也去我们那儿讲一次课', post:'，您看您有时间吗？', py:'Huáng jiàoshòu, wǒmen xiǎng yāoqǐng nín qī yuèfèn yě qù wǒmen nàr jiǎng yí cì kè, nín kàn nín yǒu shíjiān ma?', vn:'Giáo sư Hoàng, chúng tôi muốn mời thầy tháng Bảy cũng đến chỗ chúng tôi giảng một buổi, thầy xem có thời gian không?'},
+       {speaker:'男', pre:'', blank:'七月十二号以后应该都可以', post:'。', py:'Qī yuè shí\'èr hào yǐhòu yīnggāi dōu kěyǐ.', vn:'Sau ngày 12 tháng Bảy chắc đều được.'},
+       {speaker:'女', pre:'那我们暂时定七月十五号可以吗？', blank:'正好是星期五', post:'。', py:'Nà wǒmen zànshí dìng qī yuè shíwǔ hào kěyǐ ma? Zhènghǎo shì xīngqīwǔ.', vn:'Vậy chúng tôi tạm định ngày 15 tháng Bảy được không? Vừa đúng thứ Sáu.'},
+       {speaker:'男', pre:'好的，', blank:'如果有什么变化我会提前和你联系的', post:'。', py:'Hǎo de, rúguǒ yǒu shénme biànhuà wǒ huì tíqián hé nǐ liánxì de.', vn:'Được, nếu có thay đổi gì tôi sẽ liên hệ trước với cô.'}
+     ],
+     explain:'问：关于男的，可以知道什么？ "以后应该都可以…好的" → đã nhận lời, đáp án A 接受邀请了.'},
+    {num:16, options:['要去约会','正在减肥','不打算买裙子','想换小一号的'], ans:1, q:'关于女的，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'您穿这条裙子', blank:'有点儿大', post:'。', py:'Nín chuān zhè tiáo qúnzi yǒudiǎnr dà.', vn:'Chị mặc chiếc váy này hơi rộng.'},
+       {speaker:'女', pre:'那太好了，', blank:'我就买这条', post:'。', py:'Nà tài hǎo le, wǒ jiù mǎi zhè tiáo.', vn:'Vậy thì tốt quá, tôi mua chiếc này.'},
+       {speaker:'男', pre:'还是', blank:'给您换小一号的', post:'吧。', py:'Háishi gěi nín huàn xiǎo yí hào de ba.', vn:'Hay để tôi đổi cho chị cỡ nhỏ hơn một số nhé.'},
+       {speaker:'女', pre:'不用，我穿上它，', blank:'朋友见了肯定会说我减肥成功了', post:'。', py:'Búyòng, wǒ chuānshang tā, péngyou jiànle kěndìng huì shuō wǒ jiǎnféi chénggōng le.', vn:'Không cần, tôi mặc nó, bạn bè nhìn thấy chắc chắn sẽ nói tôi giảm cân thành công.'}
+     ],
+     explain:'问：关于女的，可以知道什么？ Cô ấy cố ý mua váy rộng để mọi người nghĩ giảm cân thành công → B 正在减肥. D sai vì cô ấy từ chối đổi cỡ nhỏ.'},
+    {num:17, options:['声音非常小','有上海味儿','别人听不懂','声音很好听'], ans:1, q:'男的的同学说话有什么特点？',
+     lines:[
+       {speaker:'女', pre:'上海话和普通话的区别很大，上次去上海，', blank:'我竟然一句也听不懂', post:'。', py:'Shànghǎihuà hé pǔtōnghuà de qūbié hěn dà, shàng cì qù Shànghǎi, wǒ jìngrán yí jù yě tīngbudǒng.', vn:'Tiếng Thượng Hải và tiếng phổ thông khác nhau nhiều lắm, lần trước đi Thượng Hải, tôi thế mà không hiểu nổi một câu.'},
+       {speaker:'男', pre:'别说你听不懂，', blank:'就连很多中国人听起来也很困难', post:'。', py:'Bié shuō nǐ tīngbudǒng, jiù lián hěn duō Zhōngguórén tīng qilai yě hěn kùnnan.', vn:'Đừng nói cậu không hiểu, ngay cả nhiều người Trung Quốc nghe cũng rất khó.'},
+       {speaker:'女', pre:'你的这个同学', blank:'是上海人吧', post:'？', py:'Nǐ de zhège tóngxué shì Shànghǎirén ba?', vn:'Bạn học này của cậu là người Thượng Hải phải không?'},
+       {speaker:'男', pre:'对，他虽然讲普通话，可是仔细听，', blank:'还是有上海味儿', post:'。', py:'Duì, tā suīrán jiǎng pǔtōnghuà, kěshì zǐxì tīng, háishi yǒu Shànghǎi wèir.', vn:'Đúng, cậu ấy tuy nói tiếng phổ thông, nhưng nghe kỹ vẫn có giọng Thượng Hải.'}
+     ],
+     explain:'问：男的的同学说话有什么特点？ "还是有上海味儿" → B 有上海味儿.'},
+    {num:18, options:['能够赚钱','能够出名','送给爱人','记下经历'], ans:3, q:'男的为什么要写这本书？',
+     lines:[
+       {speaker:'女', pre:'您', blank:'为什么会写这本书', post:'呢？', py:'Nín wèishénme huì xiě zhè běn shū ne?', vn:'Vì sao ông lại viết cuốn sách này?'},
+       {speaker:'男', pre:'这些年我经历了许多难忘的事情，', blank:'我想把它们都写下来', post:'。', py:'Zhèxiē nián wǒ jīnglìle xǔduō nánwàng de shìqing, wǒ xiǎng bǎ tāmen dōu xiě xiàlai.', vn:'Những năm qua tôi trải qua nhiều chuyện khó quên, tôi muốn viết tất cả lại.'},
+       {speaker:'女', pre:'您想通过这本书', blank:'告诉读者什么', post:'呢？', py:'Nín xiǎng tōngguò zhè běn shū gàosu dúzhě shénme ne?', vn:'Ông muốn nói với độc giả điều gì qua cuốn sách này?'},
+       {speaker:'男', pre:'我主要想告诉大家，', blank:'友谊是我们生命中不可缺少的', post:'。', py:'Wǒ zhǔyào xiǎng gàosu dàjiā, yǒuyì shì wǒmen shēngmìng zhōng bù kě quēshǎo de.', vn:'Tôi chủ yếu muốn nói với mọi người, tình bạn là thứ không thể thiếu trong cuộc đời chúng ta.'}
+     ],
+     explain:'问：男的为什么要写这本书？ "经历了许多难忘的事情，我想把它们都写下来" → D 记下经历.'},
+    {num:19, options:['后悔','紧张','高兴','难过'], ans:0, q:'许多人都有过怎样的经历？',
+     lines:[
+       {speaker:'旁白', pre:'', blank:'许多人都有过后悔的经历', post:'，其实，只要我们按照自己的想法去做了，就没什么后悔的，因为我们不可能把所有的事情都做对。', py:'Xǔduō rén dōu yǒuguo hòuhuǐ de jīnglì, qíshí, zhǐyào wǒmen ànzhào zìjǐ de xiǎngfǎ qù zuò le, jiù méi shénme hòuhuǐ de, yīnwèi wǒmen bù kěnéng bǎ suǒyǒu de shìqing dōu zuòduì.', vn:'Nhiều người từng có trải nghiệm hối hận, thực ra chỉ cần chúng ta đã làm theo suy nghĩ của mình thì không có gì phải hối hận, vì chúng ta không thể làm đúng mọi việc.'},
+       {speaker:'旁白', pre:'另外，让我们走向成功的，', blank:'往往是我们从过去做错的事情中得到的经验', post:'。', py:'Lìngwài, ràng wǒmen zǒuxiàng chénggōng de, wǎngwǎng shì wǒmen cóng guòqù zuòcuò de shìqing zhōng dédào de jīngyàn.', vn:'Ngoài ra, thứ đưa chúng ta đến thành công thường là kinh nghiệm rút ra từ những việc làm sai trong quá khứ.'}
+     ],
+     explain:'问：许多人都有过怎样的经历？ "许多人都有过后悔的经历" → A 后悔.'},
+    {num:20, options:['理想','努力工作','正确的方法','失败的经验'], ans:3, q:'什么能帮助我们走向成功？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）让我们走向成功的，', blank:'往往是我们从过去做错的事情中得到的经验', post:'。', py:'(Tóng yí duàn huà) Ràng wǒmen zǒuxiàng chénggōng de, wǎngwǎng shì wǒmen cóng guòqù zuòcuò de shìqing zhōng dédào de jīngyàn.', vn:'(Cùng đoạn văn) Thứ đưa chúng ta đến thành công thường là kinh nghiệm rút ra từ những việc làm sai trong quá khứ.'}
+     ],
+     explain:'问：什么能帮助我们走向成功？ "从过去做错的事情中得到的经验" = kinh nghiệm từ thất bại → D 失败的经验.'},
+    {num:21, options:['减肥','支持朋友','得奖金','锻炼身体'], ans:3, q:'第一个人为什么参加比赛？',
+     lines:[
+       {speaker:'旁白', pre:'有三个人参加长跑比赛，他们都很努力，却都没有得第一。这是不是说明三个都失败了？肯定不是，因为他们的目的不同。', blank:'第一个人是想通过跑步锻炼身体', post:'；', py:'Yǒu sān ge rén cānjiā chángpǎo bǐsài, tāmen dōu hěn nǔlì, què dōu méiyǒu dé dì-yī. Zhè shì bu shì shuōmíng sān ge dōu shībài le? Kěndìng bú shì, yīnwèi tāmen de mùdì bùtóng. Dì-yī ge rén shì xiǎng tōngguò pǎobù duànliàn shēntǐ;', vn:'Có ba người tham gia thi chạy đường dài, họ đều rất cố gắng nhưng không ai về nhất. Điều đó có phải nói lên cả ba đều thất bại? Chắc chắn không, vì mục đích của họ khác nhau. Người thứ nhất muốn rèn luyện sức khoẻ qua chạy bộ;'},
+       {speaker:'旁白', pre:'第二个人以前参加过长跑，', blank:'这次是想得到一个更好的成绩', post:'；第三个人是第一次参加，只要能跑完，他就很高兴。这样看来，三个人都成功了。', py:'dì-èr ge rén yǐqián cānjiāguo chángpǎo, zhè cì shì xiǎng dédào yí ge gèng hǎo de chéngjì; dì-sān ge rén shì dì-yī cì cānjiā, zhǐyào néng pǎowán, tā jiù hěn gāoxìng. Zhèyàng kànlái, sān ge rén dōu chénggōng le.', vn:'người thứ hai trước đây từng chạy, lần này muốn có thành tích tốt hơn; người thứ ba lần đầu tham gia, chỉ cần chạy hết là đã rất vui. Xem ra, cả ba người đều thành công.'}
+     ],
+     explain:'问：第一个人为什么参加比赛？ "第一个人是想通过跑步锻炼身体" → D 锻炼身体.'},
+    {num:22, options:['都想得第一','没有努力','都成功了','很有耐心'], ans:2, q:'说话人认为这三个人怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）这样看来，', blank:'三个人都成功了', post:'。', py:'(Tóng yí duàn huà) Zhèyàng kànlái, sān ge rén dōu chénggōng le.', vn:'(Cùng đoạn văn) Xem ra, cả ba người đều thành công.'}
+     ],
+     explain:'问：说话人认为这三个人怎么样？ "三个人都成功了" → C 都成功了. B sai vì "他们都很努力".'}
   ]
 };

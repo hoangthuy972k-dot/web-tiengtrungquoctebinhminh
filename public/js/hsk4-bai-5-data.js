@@ -884,55 +884,148 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-5/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-5/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-5/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'您放心，质量',blank:'肯定',post:'不"打折"。',py:'Nín fàngxīn, zhìliàng kěndìng bù "dǎzhé".',vn:'Anh yên tâm, chất lượng chắc chắn không "giảm giá".'}]},
-    {num:2,lines:[{pre:'咱家的冰箱',blank:'实在',post:'太旧了。',py:'Zán jiā de bīngxiāng shízài tài jiù le.',vn:'Tủ lạnh nhà chúng ta thực sự cũ quá rồi.'}]},
-    {num:3,lines:[{pre:'广告只会介绍优点，却不会说它的',blank:'缺点',post:'。',py:'Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.',vn:'Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó.'}]},
-    {num:4,lines:[{pre:'我认真',blank:'考虑',post:'了一个晚上。',py:'Wǒ rènzhēn kǎolǜle yí ge wǎnshang.',vn:'Tôi đã suy nghĩ nghiêm túc suốt một tối.'}]},
-    {num:5,lines:[{pre:'人们可以在任何时间上网购买自己喜欢的东西，卖家可以把你买的东西',blank:'寄到',post:'你办公室或者家里。',py:'Rénmen kěyǐ zài rènhé shíjiān shàngwǎng gòumǎi zìjǐ xǐhuan de dōngxi, màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiā li.',vn:'Mọi người có thể lên mạng mua thứ mình thích vào bất kỳ thời gian nào, người bán có thể gửi đồ bạn mua đến văn phòng hoặc nhà bạn.'}]},
+  dictation: [
+    {num:1, stmt:'他们正在请客。', judge:false, lines:[
+      {pre:'你去拿辆购物车吧，', blank:'咱们今天要买的东西挺多的', post:'，那样方便一些。',
+       py:'Nǐ qù ná liàng gòuwùchē ba, zánmen jīntiān yào mǎi de dōngxi tǐng duō de, nàyàng fāngbiàn yìxiē.',
+       vn:'Anh đi lấy một chiếc xe đẩy đi, hôm nay chúng ta phải mua khá nhiều đồ, như vậy tiện hơn.'}]},
+    {num:2, stmt:'他对那条裙子很满意。', judge:true, lines:[
+      {pre:'我觉得这条裙子很适合女儿，', blank:'又是女儿最喜欢的颜色', post:'，而且还打折，咱们就买这条吧。',
+       py:'Wǒ juéde zhè tiáo qúnzi hěn shìhé nǚ\'ér, yòu shì nǚ\'ér zuì xǐhuan de yánsè, érqiě hái dǎzhé, zánmen jiù mǎi zhè tiáo ba.',
+       vn:'Tôi thấy chiếc váy này rất hợp với con gái, lại là màu con gái thích nhất, hơn nữa còn giảm giá, chúng ta mua chiếc này đi.'}]},
+    {num:3, stmt:'小王说明天会还钱。', judge:true, lines:[
+      {pre:'小王没带现金，而且这里不能使用信用卡，必须用现金，所以他只能向我借钱，', blank:'他保证明天就还我', post:'。',
+       py:'Xiǎo Wáng méi dài xiànjīn, érqiě zhèlǐ bù néng shǐyòng xìnyòngkǎ, bìxū yòng xiànjīn, suǒyǐ tā zhǐ néng xiàng wǒ jiè qián, tā bǎozhèng míngtiān jiù huán wǒ.',
+       vn:'Tiểu Vương không mang tiền mặt, mà ở đây không dùng được thẻ tín dụng, bắt buộc phải dùng tiền mặt, nên cậu ấy chỉ còn cách vay tôi, cậu ấy đảm bảo mai sẽ trả.'}]},
+    {num:4, stmt:'网上购物比较麻烦。', judge:false, lines:[
+      {pre:'现在流行网上购物，越来越多的人选择在网上买东西，', blank:'因为在网站上买东西很方便', post:'，而且比去商店买便宜。',
+       py:'Xiànzài liúxíng wǎngshàng gòuwù, yuè lái yuè duō de rén xuǎnzé zài wǎngshàng mǎi dōngxi, yīnwèi zài wǎngzhàn shang mǎi dōngxi hěn fāngbiàn, érqiě bǐ qù shāngdiàn mǎi piányi.',
+       vn:'Bây giờ mua sắm trực tuyến đang thịnh hành, ngày càng nhiều người chọn mua đồ trên mạng, vì mua trên website rất tiện, hơn nữa rẻ hơn đi cửa hàng.'}]},
+    {num:5, stmt:'那家店为顾客送家具。', judge:true, lines:[
+      {pre:'您放心，只要是在我店购买的家具，不管价钱多少，不管您家离这儿多远，', blank:'我们都会为您提供送货上门服务', post:'。',
+       py:'Nín fàngxīn, zhǐyào shì zài wǒ diàn gòumǎi de jiājù, bùguǎn jiàqián duōshao, bùguǎn nín jiā lí zhèr duō yuǎn, wǒmen dōu huì wèi nín tígōng sònghuò shàngmén fúwù.',
+       vn:'Ngài yên tâm, chỉ cần là đồ nội thất mua ở cửa hàng chúng tôi, bất kể giá bao nhiêu, bất kể nhà ngài cách đây bao xa, chúng tôi đều giao hàng tận nhà.'}]}
   ],
-  mc:[
-    {num:6,options:['沙发','冰箱','衣服'],ans:0,
-     lines:[{speaker:'女',pre:'谢谢，我想买',blank:'沙发',post:'。',py:'Xièxie, wǒ xiǎng mǎi shāfā.',vn:'Cảm ơn, tôi muốn mua ghế sô pha.'}],
-     explain:'原文明确说"我想买沙发"。'},
-    {num:7,options:['便宜了一千块','贵了一千块','没有变化'],ans:0,
-     lines:[{speaker:'男',pre:'现在正在打折，比平时',blank:'便宜了一千块',post:'。',py:'Xiànzài zhèngzài dǎzhé, bǐ píngshí piányile yìqiān kuài.',vn:'Hiện đang giảm giá, rẻ hơn bình thường một nghìn tệ.'}],
-     explain:'原文明确说"比平时便宜了一千块"。'},
-    {num:8,options:['两千多','三千多','一千多'],ans:0,
-     lines:[{speaker:'女',pre:'上个星期光买沙发就花了',blank:'两千多',post:'。',py:'Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.',vn:'Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn.'}],
-     explain:'原文明确说"光买沙发就花了两千多"。'},
-    {num:9,options:['现金不够','没带钱包','信用卡坏了'],ans:0,
-     lines:[{speaker:'男',pre:'那好吧，我带的',blank:'现金不够',post:'，用你的信用卡吧。',py:'Nà hǎo ba, wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.',vn:'Vậy được, tiền mặt tôi mang không đủ, dùng thẻ tín dụng của bạn đi.'}],
-     explain:'原文明确说"我带的现金不够"。'},
-    {num:10,options:['葡萄酒','衣服','书'],ans:0,
-     lines:[{speaker:'女',pre:'他很喜欢',blank:'葡萄酒',post:'，我们就给他买两瓶吧。',py:'Tā hěn xǐhuan pútaojiǔ, wǒmen jiù gěi tā mǎi liǎng píng ba.',vn:'Thầy rất thích rượu vang, chúng ta mua cho thầy hai chai đi.'}],
-     explain:'原文明确说"他很喜欢葡萄酒"。'},
-    {num:11,options:['优点','缺点','价格'],ans:0,
-     lines:[{speaker:'男',pre:'广告只会介绍',blank:'优点',post:'，却不会说它的缺点。',py:'Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.',vn:'Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó.'}],
-     explain:'原文明确说"广告只会介绍优点"。'},
-    {num:12,options:['质量要好，不能太贵','要流行','要便宜'],ans:0,
-     lines:[{speaker:'女',pre:'第二，衣服的',blank:'质量要好，而且又不能太贵',post:'。',py:'Dì-èr, yīfu de zhìliàng yào hǎo, érqiě yòu bù néng tài guì.',vn:'Thứ hai, chất lượng quần áo phải tốt, hơn nữa lại không thể quá đắt.'}],
-     explain:'原文明确说"衣服的质量要好，而且又不能太贵"。'},
-    {num:13,options:['是一种浪费','很划算','没关系'],ans:0,
-     lines:[{speaker:'男',pre:'如果不适合自己，即使花钱很少，也',blank:'是一种浪费',post:'。',py:'Rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.',vn:'Nếu không phù hợp với bản thân, dù chi tiêu rất ít tiền, cũng là một sự lãng phí.'}],
-     explain:'原文明确说"也是一种浪费"。'},
-    {num:14,options:['东西多，比商店便宜','速度快','服务好'],ans:0,
-     lines:[{speaker:'女',pre:'首先，网上的东西很多，而且比去商店买便宜，这是吸引人们购买的',blank:'主要原因',post:'。',py:'Shǒuxiān, wǎngshang de dōngxi hěn duō, érqiě bǐ qù shāngdiàn mǎi piányi, zhè shì xīyǐn rénmen gòumǎi de zhǔyào yuányīn.',vn:'Trước hết, đồ trên mạng rất nhiều, hơn nữa rẻ hơn ra cửa hàng mua, đây là nguyên nhân chính thu hút mọi người mua.'}],
-     explain:'原文明确说"网上的东西很多，而且比去商店买便宜"。'},
-    {num:15,options:['寄到办公室或者家里','必须自己去取','只能去邮局取'],ans:0,
-     lines:[{speaker:'男',pre:'卖家可以把你买的东西',blank:'寄到你办公室或者家里',post:'，非常方便。',py:'Màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiā li, fēicháng fāngbiàn.',vn:'Người bán có thể gửi đồ bạn mua đến văn phòng hoặc nhà bạn, rất tiện lợi.'}],
-     explain:'原文明确说"寄到你办公室或者家里"。'},
-    {num:16,options:['王静','李进','李老师'],ans:2,
-     lines:[{speaker:'女',pre:'',blank:'李老师',post:'邀请咱们去他家做客，给他带点儿什么礼物好呢？',py:'Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, gěi tā dài diǎnr shénme lǐwù hǎo ne?',vn:'Thầy Lý mời chúng ta đến nhà thầy chơi, mang cho thầy chút quà gì thì tốt nhỉ?'}],
-     explain:'原文明确说是"李老师"邀请大家做客。'},
-    {num:17,options:['不能完全相信广告','可以完全相信广告','广告都是假的'],ans:0,
-     lines:[{speaker:'男',pre:'实际上，很多东西并不像广告上说的那么好，所以',blank:'不能完全相信广告',post:'。',py:'Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.',vn:'Thực tế thì, rất nhiều thứ không được như quảng cáo nói, vì vậy không thể hoàn toàn tin vào quảng cáo.'}],
-     explain:'原文明确说"所以不能完全相信广告"。'},
+  mc: [
+    {num:6, options:['沙发','椅子','冰箱','桌子'], ans:0, q:'女的要买什么？',
+     lines:[
+       {speaker:'男', pre:'小姐，您好！', blank:'您想买什么家具', post:'我给您介绍一下。', py:'Xiǎojiě, nín hǎo! Nín xiǎng mǎi shénme jiājù wǒ gěi nín jièshào yíxià.', vn:'Chào cô! Cô muốn mua đồ nội thất gì, tôi giới thiệu cho cô.'},
+       {speaker:'女', pre:'谢谢，', blank:'我想看看沙发', post:'，这种沙发有别的颜色的吗？', py:'Xièxie, wǒ xiǎng kànkan shāfā, zhè zhǒng shāfā yǒu biéde yánsè de ma?', vn:'Cảm ơn, tôi muốn xem sofa, loại sofa này có màu khác không?'}
+     ],
+     explain:'问：女的要买什么？ "我想看看沙发" → A 沙发.'},
+    {num:7, options:['很好看','很贵','不适合她','不流行'], ans:2, q:'女的觉得裙子怎么样？',
+     lines:[
+       {speaker:'男', pre:'这条裙子挺漂亮的，', blank:'你穿上试试', post:'？', py:'Zhè tiáo qúnzi tǐng piàoliang de, nǐ chuānshang shìshi?', vn:'Chiếc váy này khá đẹp, em mặc thử xem?'},
+       {speaker:'女', pre:'', blank:'这个不适合我', post:'，再去前面看看别的吧。', py:'Zhège bú shìhé wǒ, zài qù qiánmian kànkan biéde ba.', vn:'Cái này không hợp với em, đi lên phía trước xem cái khác đi.'}
+     ],
+     explain:'问：女的觉得裙子怎么样？ "这个不适合我" → C 不适合她. A là ý của người nam.'},
+    {num:8, options:['20块','30块','40块','60块'], ans:1, q:'女儿的票多少钱一张？',
+     lines:[
+       {speaker:'男', pre:'小姐，', blank:'我女儿要买多少钱一张的票', post:'？', py:'Xiǎojiě, wǒ nǚ\'ér yào mǎi duōshao qián yì zhāng de piào?', vn:'Cô ơi, con gái tôi phải mua vé bao nhiêu tiền một chiếc?'},
+       {speaker:'女', pre:'您好，您的六十，', blank:'您孩子不到1米2，半价', post:'。', py:'Nín hǎo, nín de liùshí, nín háizi bú dào yì mǐ èr, bànjià.', vn:'Chào anh, vé của anh sáu mươi, con anh chưa đến 1m2 nên nửa giá.'}
+     ],
+     explain:'问：女儿的票多少钱一张？ Vé người lớn 60, trẻ em 半价 (nửa giá) → 30 块, đáp án B. Cần tự tính, không nghe trực tiếp số 30.'},
+    {num:9, options:['比较贵','质量差','颜色不好','样子难看'], ans:0, q:'孙阿姨觉得那些家具怎么样？',
+     lines:[
+       {speaker:'女', pre:'那些家具孙阿姨看了吗？', blank:'她觉得怎么样', post:'？', py:'Nàxiē jiājù Sūn āyí kàn le ma? Tā juéde zěnmeyàng?', vn:'Dì Tôn xem những đồ nội thất đó chưa? Dì ấy thấy thế nào?'},
+       {speaker:'男', pre:'她比较满意，', blank:'只是问价格能不能打点儿折', post:'。', py:'Tā bǐjiào mǎnyì, zhǐshì wèn jiàgé néng bu néng dǎ diǎnr zhé.', vn:'Dì ấy khá hài lòng, chỉ hỏi giá có thể giảm chút được không.'}
+     ],
+     explain:'问：孙阿姨觉得那些家具怎么样？ Hài lòng nhưng "问价格能不能打点儿折" → thấy hơi đắt, đáp án A 比较贵. B, C, D không được nhắc đến.'},
+    {num:10, options:['17号','第二天','下周五','生日那天'], ans:1, q:'洗衣机哪天能送到？',
+     lines:[
+       {speaker:'男', pre:'妈，我刚在网上买了台洗衣机，', blank:'明天上午送到', post:'，您明天注意接一下电话。', py:'Mā, wǒ gāng zài wǎngshàng mǎile tái xǐyījī, míngtiān shàngwǔ sòngdào, nín míngtiān zhùyì jiē yíxià diànhuà.', vn:'Mẹ, con vừa mua trên mạng một chiếc máy giặt, sáng mai giao đến, mai mẹ chú ý nghe điện thoại nhé.'},
+       {speaker:'女', pre:'好的。', blank:'钱交了吗', post:'？', py:'Hǎo de. Qián jiāo le ma?', vn:'Được. Trả tiền chưa?'}
+     ],
+     explain:'问：洗衣机哪天能送到？ "明天上午送到" → ngày mai = B 第二天.'},
+    {num:11, options:['搬不动','很满意','先别着急买','带的钱不够'], ans:2, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'我觉得这沙发挺好的，', blank:'质量好，颜色也不错', post:'。', py:'Wǒ juéde zhè shāfā tǐng hǎo de, zhìliàng hǎo, yánsè yě búcuò.', vn:'Anh thấy bộ sofa này khá tốt, chất lượng tốt, màu cũng đẹp.'},
+       {speaker:'女', pre:'别着急，我们再看几家，', blank:'看看其他的再决定也不迟', post:'。', py:'Bié zháojí, wǒmen zài kàn jǐ jiā, kànkan qítā de zài juédìng yě bù chí.', vn:'Đừng vội, mình xem thêm vài cửa hàng nữa, xem những cái khác rồi quyết định cũng chưa muộn.'}
+     ],
+     explain:'问：女的是什么意思？ "别着急…再看几家…再决定也不迟" → C 先别着急买.'},
+    {num:12, options:['他们在客厅','女的在借钱','男的没带钱','男的想刷卡'], ans:3, q:'根据对话，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'一共三百七十九。', blank:'现金还是刷卡', post:'？', py:'Yígòng sānbǎi qīshíjiǔ. Xiànjīn háishi shuākǎ?', vn:'Tổng cộng ba trăm bảy mươi chín. Tiền mặt hay quẹt thẻ?'},
+       {speaker:'男', pre:'我的现金不够，', blank:'还是刷卡吧', post:'。', py:'Wǒ de xiànjīn bú gòu, háishi shuākǎ ba.', vn:'Tiền mặt của tôi không đủ, quẹt thẻ vậy.'}
+     ],
+     explain:'问：根据对话，下列哪个正确？ "还是刷卡吧" → D 男的想刷卡. C sai vì anh ấy có mang tiền nhưng không đủ.'},
+    {num:13, options:['家里','商场','超市','银行'], ans:1, q:'他们现在在哪儿？',
+     lines:[
+       {speaker:'女', pre:'咱家的洗衣机总出问题，', blank:'商场正好打折', post:'，我们顺便买一台吧。', py:'Zán jiā de xǐyījī zǒng chū wèntí, shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn mǎi yì tái ba.', vn:'Máy giặt nhà mình cứ hỏng hoài, trung tâm thương mại đang giảm giá, mình tiện thể mua một cái đi.'},
+       {speaker:'男', pre:'今天刚买了冰箱，', blank:'带的钱不够了', post:'，下次再说？', py:'Jīntiān gāng mǎile bīngxiāng, dài de qián bú gòu le, xià cì zài shuō?', vn:'Hôm nay vừa mua tủ lạnh, tiền mang theo không đủ nữa, lần sau tính?'},
+       {speaker:'女', pre:'', blank:'我带着信用卡呢', post:'，给你。', py:'Wǒ dàizhe xìnyòngkǎ ne, gěi nǐ.', vn:'Em có mang thẻ tín dụng đây, đưa anh.'},
+       {speaker:'男', pre:'', blank:'好吧', post:'。', py:'Hǎo ba.', vn:'Được rồi.'}
+     ],
+     explain:'问：他们现在在哪儿？ "商场正好打折，我们顺便买一台" và vừa mua tủ lạnh → họ đang ở 商场 (B).'},
+    {num:14, options:['星期天','明天','今天','月底'], ans:0, q:'男的哪天有空儿？',
+     lines:[
+       {speaker:'女', pre:'你', blank:'最近哪天有空儿', post:'？', py:'Nǐ zuìjìn nǎ tiān yǒu kòngr?', vn:'Dạo này hôm nào anh rảnh?'},
+       {speaker:'男', pre:'干什么？', blank:'又想让我陪你逛街呀', post:'？', py:'Gàn shénme? Yòu xiǎng ràng wǒ péi nǐ guàngjiē ya?', vn:'Làm gì? Lại muốn anh đi dạo phố cùng à?'},
+       {speaker:'女', pre:'咱家的冰箱太旧了，制冷效果不好了，', blank:'我想买个新的', post:'。', py:'Zán jiā de bīngxiāng tài jiù le, zhìlěng xiàoguǒ bù hǎo le, wǒ xiǎng mǎi ge xīn de.', vn:'Tủ lạnh nhà mình cũ quá, làm lạnh kém rồi, em muốn mua cái mới.'},
+       {speaker:'男', pre:'明天周六我要加班，', blank:'后天咱们去商场看看', post:'。', py:'Míngtiān zhōuliù wǒ yào jiābān, hòutiān zánmen qù shāngchǎng kànkan.', vn:'Mai thứ Bảy anh phải tăng ca, ngày kia mình đi trung tâm thương mại xem.'}
+     ],
+     explain:'问：男的哪天有空儿？ Mai là thứ Bảy phải tăng ca, "后天" đi xem → ngày kia là Chủ nhật, đáp án A 星期天.'},
+    {num:15, options:['蓝色','白色','绿色','红色'], ans:2, q:'今年流行什么颜色？',
+     lines:[
+       {speaker:'男', pre:'这条红裙子', blank:'你穿着挺漂亮的', post:'。', py:'Zhè tiáo hóng qúnzi nǐ chuānzhe tǐng piàoliang de.', vn:'Chiếc váy đỏ này em mặc khá đẹp.'},
+       {speaker:'女', pre:'不过', blank:'今年不怎么流行这个颜色', post:'。', py:'Búguò jīnnián bù zěnme liúxíng zhège yánsè.', vn:'Nhưng năm nay màu này không thịnh hành lắm.'},
+       {speaker:'男', pre:'那', blank:'今年什么颜色受欢迎', post:'呢？', py:'Nà jīnnián shénme yánsè shòu huānyíng ne?', vn:'Vậy năm nay màu gì được ưa chuộng?'},
+       {speaker:'女', pre:'', blank:'草绿色', post:'。', py:'Cǎolǜsè.', vn:'Màu xanh lá cỏ.'},
+       {speaker:'男', pre:'那你看', blank:'旁边那条怎么样', post:'？', py:'Nà nǐ kàn pángbiān nà tiáo zěnmeyàng?', vn:'Vậy em xem chiếc bên cạnh thế nào?'}
+     ],
+     explain:'问：今年流行什么颜色？ "草绿色" → C 绿色. D 红色 là màu chiếc váy đang thử, không thịnh hành năm nay.'},
+    {num:16, options:['价格高','质量差','不干净','不适合他'], ans:3, q:'男的担心网上买衣服会怎么样？',
+     lines:[
+       {speaker:'男', pre:'这件衬衫真好看，', blank:'在哪儿买的', post:'？', py:'Zhè jiàn chènshān zhēn hǎokàn, zài nǎr mǎi de?', vn:'Chiếc sơ mi này đẹp thật, mua ở đâu vậy?'},
+       {speaker:'女', pre:'', blank:'在网上', post:'。', py:'Zài wǎngshàng.', vn:'Trên mạng.'},
+       {speaker:'男', pre:'网上买衣服没法试穿，', blank:'不适合我怎么办', post:'？', py:'Wǎngshàng mǎi yīfu méi fǎ shìchuān, bú shìhé wǒ zěnme bàn?', vn:'Mua quần áo trên mạng không thử được, không hợp với tôi thì sao?'},
+       {speaker:'女', pre:'没关系，', blank:'衣服一般都是可以换的', post:'。', py:'Méi guānxi, yīfu yìbān dōu shì kěyǐ huàn de.', vn:'Không sao, quần áo thường đều đổi được.'},
+       {speaker:'男', pre:'', blank:'那还不错', post:'。', py:'Nà hái búcuò.', vn:'Vậy cũng ổn đấy.'}
+     ],
+     explain:'问：男的担心网上买衣服会怎么样？ "没法试穿，不适合我怎么办" → D 不适合他.'},
+    {num:17, options:['冰箱','空调','家具','洗衣机'], ans:1, q:'他们打算买什么？',
+     lines:[
+       {speaker:'女', pre:'咱们家', blank:'这个空调太旧了', post:'。', py:'Zánmen jiā zhège kōngtiáo tài jiù le.', vn:'Cái điều hoà nhà mình cũ quá rồi.'},
+       {speaker:'男', pre:'是，', blank:'制冷效果不太好了', post:'。', py:'Shì, zhìlěng xiàoguǒ bú tài hǎo le.', vn:'Ừ, làm lạnh không còn tốt nữa.'},
+       {speaker:'女', pre:'那咱们星期六去商店看看，', blank:'买一台新的', post:'？', py:'Nà zánmen xīngqīliù qù shāngdiàn kànkan, mǎi yì tái xīn de?', vn:'Vậy thứ Bảy mình đi cửa hàng xem, mua một cái mới nhé?'},
+       {speaker:'男', pre:'', blank:'行', post:'。', py:'Xíng.', vn:'Được.'}
+     ],
+     explain:'问：他们打算买什么？ "这个空调太旧了…买一台新的" → B 空调.'},
+    {num:18, options:['啤酒','饮料','牛奶','水'], ans:1, q:'现在冰箱里有什么？',
+     lines:[
+       {speaker:'女', pre:'这个周末', blank:'我们邀请叔叔一家来吃饭', post:'，怎么样？', py:'Zhège zhōumò wǒmen yāoqǐng shūshu yì jiā lái chīfàn, zěnmeyàng?', vn:'Cuối tuần này mình mời cả nhà chú đến ăn cơm, thế nào?'},
+       {speaker:'男', pre:'好啊。不过', blank:'咱们得提前准备一下', post:'。', py:'Hǎo a. Búguò zánmen děi tíqián zhǔnbèi yíxià.', vn:'Được đấy. Nhưng mình phải chuẩn bị trước một chút.'},
+       {speaker:'女', pre:'我看了，', blank:'冰箱里只有几瓶饮料了', post:'。', py:'Wǒ kàn le, bīngxiāng li zhǐ yǒu jǐ píng yǐnliào le.', vn:'Em xem rồi, trong tủ lạnh chỉ còn vài chai nước ngọt.'},
+       {speaker:'男', pre:'你想想该买什么，', blank:'我下午就去超市', post:'。', py:'Nǐ xiǎngxiang gāi mǎi shénme, wǒ xiàwǔ jiù qù chāoshì.', vn:'Em nghĩ xem cần mua gì, chiều anh đi siêu thị luôn.'}
+     ],
+     explain:'问：现在冰箱里有什么？ "冰箱里只有几瓶饮料了" → B 饮料.'},
+    {num:19, options:['很旧','正在打折','有几种颜色','质量不好'], ans:2, q:'关于这双鞋，可以知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'您喜欢这双鞋？这个样子的鞋今年很流行，', blank:'现在还有黑色的和蓝色的', post:'。穿起来很舒服，走路一点儿也不累。', py:'Nín xǐhuan zhè shuāng xié? Zhège yàngzi de xié jīnnián hěn liúxíng, xiànzài hái yǒu hēisè de hé lánsè de. Chuān qilai hěn shūfu, zǒulù yìdiǎnr yě bú lèi.', vn:'Ngài thích đôi giày này ạ? Kiểu giày này năm nay rất thịnh hành, hiện còn màu đen và màu xanh lam. Đi rất êm, đi bộ không hề mỏi.'},
+       {speaker:'旁白', pre:'一双七百五十块钱，', blank:'这个价格真的不贵', post:'，挺适合您穿的，您先试一试？', py:'Yì shuāng qībǎi wǔshí kuài qián, zhège jiàgé zhēn de bú guì, tǐng shìhé nín chuān de, nín xiān shì yi shì?', vn:'Một đôi bảy trăm năm mươi tệ, giá này thật sự không đắt, rất hợp với ngài, ngài thử trước nhé?'}
+     ],
+     explain:'问：关于这双鞋，可以知道什么？ "还有黑色的和蓝色的" → có mấy màu, đáp án C. Không nhắc giảm giá (B) hay chất lượng kém (D).'},
+    {num:20, options:['只有黑色','蓝色和白色','黑色和白色','蓝色和黑色'], ans:3, q:'现在还有什么颜色的？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）这个样子的鞋今年很流行，', blank:'现在还有黑色的和蓝色的', post:'。', py:'(Tóng yí duàn huà) Zhège yàngzi de xié jīnnián hěn liúxíng, xiànzài hái yǒu hēisè de hé lánsè de.', vn:'(Cùng đoạn văn) Kiểu giày này năm nay rất thịnh hành, hiện còn màu đen và màu xanh lam.'}
+     ],
+     explain:'问：现在还有什么颜色的？ "黑色的和蓝色的" → D 蓝色和黑色.'},
+    {num:21, options:['裤子','袜子','衬衫','帽子'], ans:2, q:'那位先生买了什么？',
+     lines:[
+       {speaker:'旁白', pre:'对不起，先生，', blank:'我们店的刷卡机坏了', post:'，只能用现金。不过商场一层有取款机，您下了电梯右转，走到头儿就能看到。', py:'Duìbuqǐ, xiānsheng, wǒmen diàn de shuākǎjī huài le, zhǐ néng yòng xiànjīn. Búguò shāngchǎng yī céng yǒu qǔkuǎnjī, nín xiàle diàntī yòu zhuǎn, zǒudào tóur jiù néng kàndào.', vn:'Xin lỗi ông, máy quẹt thẻ của cửa hàng chúng tôi hỏng rồi, chỉ dùng được tiền mặt. Nhưng tầng một của trung tâm thương mại có máy rút tiền, ông xuống thang máy rẽ phải, đi đến cuối là thấy.'},
+       {speaker:'旁白', pre:'', blank:'这件衬衫我们先给您留着', post:'，您看可以吗？', py:'Zhè jiàn chènshān wǒmen xiān gěi nín liúzhe, nín kàn kěyǐ ma?', vn:'Chiếc sơ mi này chúng tôi giữ lại cho ông trước, ông thấy được không?'}
+     ],
+     explain:'问：那位先生买了什么？ "这件衬衫我们先给您留着" → C 衬衫.'},
+    {num:22, options:['停电了','卡里钱不够','没带银行卡','刷卡机坏了'], ans:3, q:'那位先生为什么不能用银行卡付款？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）对不起，先生，', blank:'我们店的刷卡机坏了，只能用现金', post:'。', py:'(Tóng yí duàn huà) Duìbuqǐ, xiānsheng, wǒmen diàn de shuākǎjī huài le, zhǐ néng yòng xiànjīn.', vn:'(Cùng đoạn văn) Xin lỗi ông, máy quẹt thẻ của cửa hàng chúng tôi hỏng rồi, chỉ dùng được tiền mặt.'}
+     ],
+     explain:'问：那位先生为什么不能用银行卡付款？ "刷卡机坏了" → D.'}
   ]
 };

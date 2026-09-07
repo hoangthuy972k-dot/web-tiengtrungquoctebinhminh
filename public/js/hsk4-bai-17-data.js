@@ -778,49 +778,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-17/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-17/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-17/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'最近天气',blank:'越来越凉快',post:'了，看来秋天已经到了。',py:'Zuìjìn tiānqì yuè lái yuè liángkuai le, kànlái qiūtiān yǐjīng dào le.',vn:'Dạo này thời tiết ngày càng mát, xem ra mùa thu đã đến.'}]},
-    {num:2,lines:[{pre:'去长城',blank:'倒是一个好主意',post:'，那我们明天去吧。',py:'Qù Chángchéng dào shì yí ge hǎo zhǔyi, nà wǒmen míngtiān qù ba.',vn:'Đi Trường Thành thì đúng là ý hay, vậy mai đi nhé.'}]},
-    {num:3,lines:[{pre:'然后它就会',blank:'严格按照你的要求',post:'做了。',py:'Ránhòu tā jiù huì yángé ànzhào nǐ de yāoqiú zuò le.',vn:'Sau đó nó sẽ làm nghiêm ngặt theo yêu cầu của bạn.'}]},
-    {num:4,lines:[{pre:'入口处',blank:'排队的人很多',post:'，动物园里热闹极了。',py:'Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.',vn:'Cổng vào rất đông người xếp hàng, sở thú náo nhiệt vô cùng.'}]},
-    {num:5,lines:[{pre:'植物会',blank:'为了阳光、空气和水而竞争',post:'。',py:'Zhíwù huì wèile yángguāng, kōngqì hé shuǐ ér jìngzhēng.',vn:'Cây cối cạnh tranh vì ánh nắng, không khí và nước.'}]},
+  dictation: [
+    {num:1, stmt:'秋季不适合去黄山。', judge:false, lines:[
+      {pre:'', blank:'我觉得秋天是去黄山的最好季节', post:'，因为这时候天气不冷也不热，而且山上的树叶有很多种颜色，绿的、黄的、红的，漂亮极了。',
+       py:'Wǒ juéde qiūtiān shì qù Huángshān de zuì hǎo jìjié, yīnwèi zhè shíhou tiānqì bù lěng yě bú rè, érqiě shān shang de shùyè yǒu hěn duō zhǒng yánsè, lǜ de, huáng de, hóng de, piàoliang jí le.',
+       vn:'Tôi thấy mùa thu là mùa đẹp nhất để đi Hoàng Sơn, vì lúc này thời tiết không lạnh không nóng, hơn nữa lá cây trên núi có nhiều màu, xanh, vàng, đỏ, đẹp vô cùng.'}]},
+    {num:2, stmt:'地图上蓝色表示海洋。', judge:true, lines:[
+      {pre:'儿子，你看，地图上不同的颜色表示不同的地方，', blank:'绿色的是森林，蓝色的是海洋', post:'。这里是北京，那里是上海，你来找找我们现在在哪儿。',
+       py:'Érzi, nǐ kàn, dìtú shang bùtóng de yánsè biǎoshì bùtóng de dìfang, lǜsè de shì sēnlín, lánsè de shì hǎiyáng. Zhèlǐ shì Běijīng, nàlǐ shì Shànghǎi, nǐ lái zhǎozhao wǒmen xiànzài zài nǎr.',
+       vn:'Con trai, con xem, trên bản đồ màu khác nhau biểu thị nơi khác nhau, màu xanh lá là rừng, màu xanh lam là biển. Đây là Bắc Kinh, kia là Thượng Hải, con tìm xem giờ mình đang ở đâu.'}]},
+    {num:3, stmt:'开车时听广播很不安全。', judge:false, lines:[
+      {pre:'很多司机都喜欢开车时听广播，因为通过听广播，他们不但可以了解路上的堵车情况，', blank:'而且开车时也不会觉得太无聊', post:'。',
+       py:'Hěn duō sījī dōu xǐhuan kāichē shí tīng guǎngbō, yīnwèi tōngguò tīng guǎngbō, tāmen búdàn kěyǐ liǎojiě lù shang de dǔchē qíngkuàng, érqiě kāichē shí yě bú huì juéde tài wúliáo.',
+       vn:'Nhiều tài xế thích nghe đài khi lái xe, vì qua nghe đài họ không những biết tình hình tắc đường mà lúc lái xe cũng không thấy quá buồn chán.'}]},
+    {num:4, stmt:'海洋里的植物很少。', judge:false, lines:[
+      {pre:'和森林一样，', blank:'在海洋里也有很多种植物', post:'，它们与海洋里的动物，共同组成了一个美丽的海底世界。',
+       py:'Hé sēnlín yíyàng, zài hǎiyáng li yě yǒu hěn duō zhǒng zhíwù, tāmen yǔ hǎiyáng li de dòngwù, gòngtóng zǔchéngle yí ge měilì de hǎidǐ shìjiè.',
+       vn:'Giống như rừng, trong đại dương cũng có rất nhiều loài thực vật, chúng cùng với động vật biển tạo nên một thế giới đáy biển tuyệt đẹp.'}]},
+    {num:5, stmt:'明天是中秋节。', judge:false, lines:[
+      {pre:'', blank:'昨天是中秋节', post:'，这一天的月亮应该是一年中最大最亮的。但是让人失望的是，昨天的月亮一直在厚厚的云层后面睡觉，我们什么也看不见。',
+       py:'Zuótiān shì Zhōngqiūjié, zhè yì tiān de yuèliang yīnggāi shì yì nián zhōng zuì dà zuì liàng de. Dànshì ràng rén shīwàng de shì, zuótiān de yuèliang yìzhí zài hòuhòu de yúncéng hòumian shuìjiào, wǒmen shénme yě kànbujiàn.',
+       vn:'Hôm qua là Tết Trung thu, trăng ngày này đáng lẽ to nhất, sáng nhất trong năm. Nhưng đáng thất vọng là trăng hôm qua cứ ngủ sau tầng mây dày, chúng tôi chẳng nhìn thấy gì.'}]}
   ],
-  mc:[
-    {num:6,options:['秋天','春天','夏天'],ans:0,
-     lines:[{speaker:'男',pre:'风一刮，草地上就会有一层厚厚的黄叶，看来',blank:'秋天',post:'已经到了。',py:'Fēng yì guā, cǎodì shang jiù huì yǒu yì céng hòuhòu de huángyè, kànlái qiūtiān yǐjīng dào le.',vn:'Gió vừa thổi, bãi cỏ đã có lớp lá vàng dày, xem ra mùa thu đã đến.'}],
-     explain:'原文明确说"秋天已经到了"。'},
-    {num:7,options:['今天肯定有大雨','香山太远','他不喜欢红叶'],ans:0,
-     lines:[{speaker:'男',pre:'你看天上的云，',blank:'今天肯定有大雨',post:'。再说，香山上看红叶的人太多了。',py:'Nǐ kàn tiānshang de yún, jīntiān kěndìng yǒu dà yǔ. Zàishuō, Xiāng Shān shang kàn hóngyè de rén tài duō le.',vn:'Bạn xem mây trên trời, hôm nay chắc chắn mưa to. Hơn nữa người xem lá đỏ đông quá.'}],
-     explain:'原文明确说"今天肯定有大雨"。'},
-    {num:8,options:['他爸的生日','他要出差','他要考试'],ans:0,
-     lines:[{speaker:'男',pre:'明天恐怕也不行，明天是',blank:'我爸的生日',post:'。',py:'Míngtiān kǒngpà yě bù xíng, míngtiān shì wǒ bà de shēngrì.',vn:'Mai e cũng không được, mai là sinh nhật bố tôi.'}],
-     explain:'原文明确说"明天是我爸的生日"。'},
-    {num:9,options:['很聪明','很懒','很笨'],ans:0,
-     lines:[{speaker:'女',pre:'狗是',blank:'很聪明',post:'的动物，只要稍微花点儿时间教教它，它就能学会很多东西。',py:'Gǒu shì hěn cōngming de dòngwù, zhǐyào shāowēi huā diǎnr shíjiān jiāojiao tā, tā jiù néng xuéhuì hěn duō dōngxi.',vn:'Chó là động vật rất thông minh, chỉ cần bỏ chút thời gian dạy là học được nhiều.'}],
-     explain:'原文明确说"狗是很聪明的动物"。'},
-    {num:10,options:['耐心地一遍一遍地教','只教一次','严格地批评'],ans:0,
-     lines:[{speaker:'女',pre:'只教一次是不够的，应该',blank:'耐心地一遍一遍地教',post:'给它，使它熟悉。',py:'Zhǐ jiāo yí cì shì bú gòu de, yīnggāi nàixīn de yí biàn yí biàn de jiāo gěi tā, shǐ tā shúxī.',vn:'Chỉ dạy một lần không đủ, nên kiên nhẫn dạy từng lần một để nó quen.'}],
-     explain:'原文明确说"耐心地一遍一遍地教给它"。'},
-    {num:11,options:['500种','50种','5000种'],ans:0,
-     lines:[{speaker:'男',pre:'上个月我去了趟北京动物园，那里约有',blank:'500种',post:'动物。',py:'Shàng ge yuè wǒ qùle tàng Běijīng Dòngwùyuán, nàli yuē yǒu wǔbǎi zhǒng dòngwù.',vn:'Tháng trước tôi đi sở thú Bắc Kinh, ở đó có khoảng 500 loài.'}],
-     explain:'原文明确说"约有500种动物"。'},
-    {num:12,options:['熊猫','老虎','马'],ans:0,
-     lines:[{speaker:'女',pre:'我特别喜欢',blank:'熊猫',post:'，可惜它们当时大多在睡觉。',py:'Wǒ tèbié xǐhuan xióngmāo, kěxī tāmen dāngshí dàduō zài shuì jiào.',vn:'Tôi đặc biệt thích gấu trúc, tiếc là lúc đó chúng phần lớn đang ngủ.'}],
-     explain:'原文明确说"我特别喜欢熊猫"。'},
-    {num:13,options:['六一儿童节','春节','国庆节'],ans:0,
-     lines:[{speaker:'男',pre:'我去的那天正赶上',blank:'六一儿童节',post:'，许多父母带着孩子去动物园。',py:'Wǒ qù de nà tiān zhèng gǎnshang Liùyī Értóngjié, xǔduō fùmǔ dàizhe háizi qù dòngwùyuán.',vn:'Hôm tôi đi đúng ngày Quốc tế thiếu nhi, nhiều cha mẹ đưa con đến sở thú.'}],
-     explain:'原文明确说"正赶上六一儿童节"。'},
-    {num:14,options:['一千多只','一万多只','一百多只'],ans:0,
-     lines:[{speaker:'男',pre:'它们数量不多，现在全世界一共才有',blank:'一千多只',post:'吧。',py:'Tāmen shùliàng bù duō, xiànzài quán shìjiè yígòng cái yǒu yìqiān duō zhī ba.',vn:'Số lượng chúng không nhiều, hiện cả thế giới chỉ có hơn một nghìn con.'}],
-     explain:'原文明确说"一共才有一千多只"。'},
-    {num:15,options:['表示友好','赚钱','保护熊猫'],ans:0,
-     lines:[{speaker:'女',pre:'为了',blank:'表示友好',post:'，从1957年开始，中国把大熊猫作为礼物送给其他一些国家。',py:'Wèile biǎoshì yǒuhǎo, cóng yī jiǔ wǔ qī nián kāishǐ, Zhōngguó bǎ dà xióngmāo zuòwéi lǐwù sònggěi qítā yìxiē guójiā.',vn:'Để tỏ tình hữu nghị, từ 1957 Trung Quốc tặng gấu trúc làm quà cho một số nước.'}],
-     explain:'原文明确说"为了表示友好"。'},
+  mc: [
+    {num:6, options:['入口很远','应该右拐','女的在问路','海洋馆很好'], ans:2, q:'根据对话，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'请问，', blank:'您知道海洋馆的入口在哪儿吗', post:'？', py:'Qǐngwèn, nín zhīdào hǎiyángguǎn de rùkǒu zài nǎr ma?', vn:'Xin hỏi, anh biết lối vào thuỷ cung ở đâu không?'},
+       {speaker:'男', pre:'这条路直走，', blank:'大约再有两百米', post:'，你就能看到了。', py:'Zhè tiáo lù zhí zǒu, dàyuē zài yǒu liǎngbǎi mǐ, nǐ jiù néng kàndào le.', vn:'Đi thẳng đường này, khoảng hai trăm mét nữa là cô thấy.'}
+     ],
+     explain:'问：根据对话，可以知道什么？ "您知道…入口在哪儿吗" → C 女的在问路. B sai vì "直走" (đi thẳng).'},
+    {num:7, options:['想请假','被表扬了','受到邀请了','要写计划书'], ans:3, q:'关于男的，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'这次文化节活动由你来负责，', blank:'一定要办得热闹点儿', post:'。', py:'Zhè cì wénhuàjié huódòng yóu nǐ lái fùzé, yídìng yào bàn de rènao diǎnr.', vn:'Hoạt động lễ hội văn hoá lần này do cậu phụ trách, nhất định phải tổ chức cho thật náo nhiệt.'},
+       {speaker:'男', pre:'好，我们回去就开会讨论，', blank:'星期五之前把详细的计划书发给您', post:'。', py:'Hǎo, wǒmen huíqu jiù kāihuì tǎolùn, xīngqīwǔ zhīqián bǎ xiángxì de jìhuàshū fā gěi nín.', vn:'Vâng, chúng tôi về họp bàn ngay, trước thứ Sáu gửi bản kế hoạch chi tiết cho chị.'}
+     ],
+     explain:'问：关于男的，可以知道什么？ "把详细的计划书发给您" → D 要写计划书.'},
+    {num:8, options:['没有精神','发烧了','适应环境','肚子饿了'], ans:0, q:'小狗怎么了？',
+     lines:[
+       {speaker:'男', pre:'小狗是不是生病了？毛的颜色不亮，', blank:'看上去精神也不太好', post:'。', py:'Xiǎo gǒu shì bu shì shēngbìng le? Máo de yánsè bú liàng, kàn shàngqu jīngshén yě bú tài hǎo.', vn:'Con chó nhỏ có phải bị ốm không? Lông không bóng, trông tinh thần cũng không tốt.'},
+       {speaker:'女', pre:'我猜可能是它刚换了新环境，', blank:'还没有适应', post:'，熟悉了就好了。', py:'Wǒ cāi kěnéng shì tā gāng huànle xīn huánjìng, hái méiyǒu shìyìng, shúxi le jiù hǎo le.', vn:'Em đoán có lẽ nó vừa đổi môi trường mới, chưa thích nghi, quen rồi sẽ ổn.'}
+     ],
+     explain:'问：小狗怎么了？ "精神也不太好" → A 没有精神. C ngược nghĩa (还没有适应).'},
+    {num:9, options:['地铁站','机场','公交车站','火车站'], ans:2, q:'女的现在最可能在哪儿？',
+     lines:[
+       {speaker:'男', pre:'', blank:'52路和407路都能到我这儿', post:'，你看看有没有这两趟车？', py:'Wǔshí\'èr lù hé sì líng qī lù dōu néng dào wǒ zhèr, nǐ kànkan yǒu méiyǒu zhè liǎng tàng chē?', vn:'Xe 52 và 407 đều đến chỗ anh, em xem có hai tuyến này không?'},
+       {speaker:'女', pre:'', blank:'52路来了', post:'，我先挂了啊，一会儿见。', py:'Wǔshí\'èr lù lái le, wǒ xiān guà le a, yíhuìr jiàn.', vn:'Xe 52 đến rồi, em cúp máy đây, lát gặp.'}
+     ],
+     explain:'问：女的现在最可能在哪儿？ 52路, 407路 là xe buýt → C 公交车站.'},
+    {num:10, options:['做生意很容易','比赛非常精彩','价格已经最低','竞争也有好处'], ans:3, q:'关于对话，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'现在生意越来越不好做了，', blank:'咱们公司只能把价格再降低一些了', post:'。', py:'Xiànzài shēngyi yuè lái yuè bù hǎo zuò le, zánmen gōngsī zhǐ néng bǎ jiàgé zài jiàngdī yìxiē le.', vn:'Giờ kinh doanh ngày càng khó, công ty mình chỉ còn cách hạ giá thêm nữa.'},
+       {speaker:'女', pre:'是啊，竞争压力确实是越来越大。', blank:'不过我觉得竞争对公司的发展有很大的好处', post:'，就好像一场体育比赛，有了竞争，比赛才会更精彩。', py:'Shì a, jìngzhēng yālì quèshí shì yuè lái yuè dà. Búguò wǒ juéde jìngzhēng duì gōngsī de fāzhǎn yǒu hěn dà de hǎochù, jiù hǎoxiàng yì chǎng tǐyù bǐsài, yǒule jìngzhēng, bǐsài cái huì gèng jīngcǎi.', vn:'Đúng vậy, áp lực cạnh tranh quả thật ngày càng lớn. Nhưng tôi thấy cạnh tranh có lợi lớn cho sự phát triển của công ty, giống như một trận thi đấu thể thao, có cạnh tranh trận đấu mới hấp dẫn.'}
+     ],
+     explain:'问：关于对话，下列哪个正确？ "竞争对公司的发展有很大的好处" → D 竞争也有好处. B chỉ là ví von.'},
+    {num:11, options:['回趟家','去国外','看奶奶','准备考试'], ans:3, q:'女的暑假计划干什么？',
+     lines:[
+       {speaker:'男', pre:'马上就要放暑假了，我打算先回一趟家，看看我奶奶，然后去国外逛逛。', blank:'你有什么安排吗', post:'？', py:'Mǎshàng jiù yào fàng shǔjià le, wǒ dǎsuàn xiān huí yí tàng jiā, kànkan wǒ nǎinai, ránhòu qù guówài guàngguang. Nǐ yǒu shénme ānpái ma?', vn:'Sắp nghỉ hè rồi, tôi định về nhà một chuyến thăm bà, rồi đi nước ngoài chơi. Cậu có kế hoạch gì không?'},
+       {speaker:'女', pre:'这个暑假你倒轻松，真羡慕你啊！', blank:'我计划在学校准备研究生考试', post:'。', py:'Zhège shǔjià nǐ dào qīngsōng, zhēn xiànmù nǐ a! Wǒ jìhuà zài xuéxiào zhǔnbèi yánjiūshēng kǎoshì.', vn:'Hè này cậu thảnh thơi thật, ngưỡng mộ quá! Tôi định ở trường ôn thi cao học.'}
+     ],
+     explain:'问：女的暑假计划干什么？ "在学校准备研究生考试" → D 准备考试. A, B, C là kế hoạch của người nam.'},
+    {num:12, options:['电影票免费','票还没买','女的下午有事','电影很精彩'], ans:1, q:'根据对话，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'我明天下午要去大使馆取签证，', blank:'电影票最好买五六点的', post:'。', py:'Wǒ míngtiān xiàwǔ yào qù dàshǐguǎn qǔ qiānzhèng, diànyǐngpiào zuì hǎo mǎi wǔ-liù diǎn de.', vn:'Chiều mai anh phải đến đại sứ quán lấy visa, vé xem phim tốt nhất mua suất năm sáu giờ.'},
+       {speaker:'女', pre:'我刚上网看了一下，五点的已经卖光了，', blank:'只剩下六点半的了', post:'，我们看这个时间的怎么样？', py:'Wǒ gāng shàngwǎng kànle yíxià, wǔ diǎn de yǐjīng màiguāng le, zhǐ shèngxià liù diǎn bàn de le, wǒmen kàn zhège shíjiān de zěnmeyàng?', vn:'Em vừa lên mạng xem, suất năm giờ bán hết rồi, chỉ còn suất sáu giờ rưỡi, mình xem suất này nhé?'}
+     ],
+     explain:'问：根据对话，下列哪个正确？ Họ đang bàn mua vé suất nào → B 票还没买. C sai: người bận chiều mai là người nam.'},
+    {num:13, options:['喜欢照相','五岁了','有个哥哥','个子不高'], ans:2, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'我猜', blank:'照片中间这个男孩儿是你', post:'，对不对？', py:'Wǒ cāi zhàopiàn zhōngjiān zhège nánháir shì nǐ, duì bu duì?', vn:'Em đoán cậu bé ở giữa bức ảnh là anh, đúng không?'},
+       {speaker:'男', pre:'对，这是我五岁时照的照片。', blank:'左边这个是我哥哥', post:'。', py:'Duì, zhè shì wǒ wǔ suì shí zhào de zhàopiàn. Zuǒbian zhège shì wǒ gēge.', vn:'Đúng, đây là ảnh chụp lúc anh năm tuổi. Người bên trái là anh trai anh.'},
+       {speaker:'女', pre:'你们俩长得真像，', blank:'个子也差不多', post:'。', py:'Nǐmen liǎ zhǎng de zhēn xiàng, gèzi yě chàbuduō.', vn:'Hai anh em giống nhau thật, chiều cao cũng tương đương.'},
+       {speaker:'男', pre:'是，', blank:'大家都这么说', post:'。', py:'Shì, dàjiā dōu zhème shuō.', vn:'Ừ, mọi người đều nói vậy.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ "左边这个是我哥哥" → C 有个哥哥. B sai: ảnh chụp lúc 5 tuổi, không phải hiện tại.'},
+    {num:14, options:['公园','餐厅','超市','宾馆'], ans:0, q:'他们在哪儿？',
+     lines:[
+       {speaker:'男', pre:'', blank:'这里的景色确实很不错', post:'。', py:'Zhèlǐ de jǐngsè quèshí hěn búcuò.', vn:'Cảnh ở đây quả thật rất đẹp.'},
+       {speaker:'女', pre:'那当然，', blank:'这是我最喜欢的一个森林公园', post:'。', py:'Nà dāngrán, zhè shì wǒ zuì xǐhuan de yí ge sēnlín gōngyuán.', vn:'Đương nhiên rồi, đây là công viên rừng em thích nhất.'},
+       {speaker:'男', pre:'阳光好，空气新鲜，', blank:'来这儿散步真舒服', post:'。', py:'Yángguāng hǎo, kōngqì xīnxiān, lái zhèr sànbù zhēn shūfu.', vn:'Nắng đẹp, không khí trong lành, đến đây đi dạo thật dễ chịu.'},
+       {speaker:'女', pre:'既然你喜欢，', blank:'以后我们可以常来', post:'。', py:'Jìrán nǐ xǐhuan, yǐhòu wǒmen kěyǐ cháng lái.', vn:'Anh đã thích thì sau này mình có thể đến thường xuyên.'}
+     ],
+     explain:'问：他们在哪儿？ "森林公园" → A 公园.'},
+    {num:15, options:['下雨了','在下雪','很暖和','刮风了'], ans:1, q:'外面天气怎么样？',
+     lines:[
+       {speaker:'女', pre:'早，', blank:'我看外面下雪了', post:'，很冷吧？', py:'Zǎo, wǒ kàn wàimiàn xiàxuě le, hěn lěng ba?', vn:'Chào buổi sáng, em thấy ngoài trời có tuyết, lạnh lắm nhỉ?'},
+       {speaker:'男', pre:'还行，', blank:'不是太冷', post:'。', py:'Hái xíng, bú shì tài lěng.', vn:'Cũng được, không lạnh lắm.'},
+       {speaker:'女', pre:'我把空调打开了，', blank:'一会儿就暖和了', post:'。', py:'Wǒ bǎ kōngtiáo dǎkāi le, yíhuìr jiù nuǎnhuo le.', vn:'Em bật điều hoà rồi, lát nữa là ấm.'},
+       {speaker:'男', pre:'其实不用开空调，我是走路过来的，', blank:'走得都有点儿热了', post:'。', py:'Qíshí búyòng kāi kōngtiáo, wǒ shì zǒulù guòlai de, zǒu de dōu yǒudiǎnr rè le.', vn:'Thực ra không cần bật điều hoà, anh đi bộ đến, đi đến hơi nóng rồi.'}
+     ],
+     explain:'问：外面天气怎么样？ "外面下雪了" → B 在下雪. C sai: ấm là do bật điều hoà/đi bộ, không phải thời tiết.'},
+    {num:16, options:['地球大小','海水颜色','节约用水','空气污染'], ans:2, q:'女的对什么感到奇怪？',
+     lines:[
+       {speaker:'女', pre:'叔叔，', blank:'为什么说地球是蓝色的', post:'？', py:'Shūshu, wèishénme shuō dìqiú shì lánsè de?', vn:'Chú ơi, vì sao nói Trái Đất màu xanh lam?'},
+       {speaker:'男', pre:'因为地球上百分之七十的地方都是海洋，', blank:'而海水是蓝色的', post:'。', py:'Yīnwèi dìqiú shang bǎi fēn zhī qīshí de dìfang dōu shì hǎiyáng, ér hǎishuǐ shì lánsè de.', vn:'Vì 70% bề mặt Trái Đất là đại dương, mà nước biển màu xanh lam.'},
+       {speaker:'女', pre:'既然地球上有这么多的水，', blank:'为什么老师还让我们节约用水', post:'？', py:'Jìrán dìqiú shang yǒu zhème duō de shuǐ, wèishénme lǎoshī hái ràng wǒmen jiéyuē yòng shuǐ?', vn:'Trái Đất nhiều nước như vậy, sao cô giáo vẫn bảo chúng cháu tiết kiệm nước?'},
+       {speaker:'男', pre:'因为海水是不能直接喝的，', blank:'人可以用的水实际上非常少', post:'。', py:'Yīnwèi hǎishuǐ shì bù néng zhíjiē hē de, rén kěyǐ yòng de shuǐ shíjìshang fēicháng shǎo.', vn:'Vì nước biển không uống trực tiếp được, nước con người dùng được thực ra rất ít.'}
+     ],
+     explain:'问：女的对什么感到奇怪？ "为什么老师还让我们节约用水" → C 节约用水.'},
+    {num:17, options:['害怕失败','还没输过','不太会打','没有男的好'], ans:1, q:'小王的网球打得怎么样？',
+     lines:[
+       {speaker:'男', pre:'你换球鞋干什么啊？', blank:'又要出去啊', post:'？', py:'Nǐ huàn qiúxié gàn shénme a? Yòu yào chūqu a?', vn:'Em thay giày thể thao làm gì? Lại ra ngoài à?'},
+       {speaker:'女', pre:'去打网球。我约了小王，', blank:'他打网球很厉害', post:'，你敢和他打吗？', py:'Qù dǎ wǎngqiú. Wǒ yuēle Xiǎo Wáng, tā dǎ wǎngqiú hěn lìhai, nǐ gǎn hé tā dǎ ma?', vn:'Đi chơi tennis. Em hẹn Tiểu Vương, cậu ấy chơi tennis giỏi lắm, anh dám đấu với cậu ấy không?'},
+       {speaker:'男', pre:'当然敢。虽然你们和他打，', blank:'他从来没输过', post:'，可我倒不怕他。', py:'Dāngrán gǎn. Suīrán nǐmen hé tā dǎ, tā cónglái méi shūguo, kě wǒ dào bú pà tā.', vn:'Đương nhiên dám. Tuy các em đấu với cậu ấy chưa bao giờ thắng, nhưng anh không sợ.'},
+       {speaker:'女', pre:'那一起去吧！', blank:'看看你到底能不能赢', post:'。', py:'Nà yìqǐ qù ba! Kànkan nǐ dàodǐ néng bu néng yíng.', vn:'Vậy đi cùng nhé! Xem anh rốt cuộc có thắng nổi không.'}
+     ],
+     explain:'问：小王的网球打得怎么样？ "他从来没输过" → B 还没输过.'},
+    {num:18, options:['植物园','卧室','院子里','南方'], ans:2, q:'女的想把花儿放在哪儿？',
+     lines:[
+       {speaker:'男', pre:'奇怪，这花儿才买来几天，', blank:'怎么叶子就掉了', post:'？', py:'Qíguài, zhè huār cái mǎilái jǐ tiān, zěnme yèzi jiù diào le?', vn:'Lạ thật, hoa này mới mua mấy hôm, sao lá đã rụng?'},
+       {speaker:'女', pre:'这种花儿在南方很常见，需要阳光。', blank:'你是不是一直把它放在阳光不好的地方了', post:'？', py:'Zhè zhǒng huār zài nánfāng hěn chángjiàn, xūyào yángguāng. Nǐ shì bu shì yìzhí bǎ tā fàng zài yángguāng bù hǎo de dìfang le?', vn:'Loại hoa này ở miền Nam rất phổ biến, cần ánh nắng. Có phải anh cứ để nó ở chỗ thiếu nắng không?'},
+       {speaker:'男', pre:'是啊，', blank:'就放在卧室里了', post:'。', py:'Shì a, jiù fàng zài wòshì li le.', vn:'Ừ, để trong phòng ngủ.'},
+       {speaker:'女', pre:'这种植物喜欢阳光，光不好很容易掉叶子。', blank:'咱们把它搬到院子里', post:'，可能会好些。', py:'Zhè zhǒng zhíwù xǐhuan yángguāng, guāng bù hǎo hěn róngyì diào yèzi. Zánmen bǎ tā bāndào yuànzi li, kěnéng huì hǎo xiē.', vn:'Loại cây này ưa nắng, thiếu sáng rất dễ rụng lá. Mình chuyển nó ra sân, có thể sẽ đỡ hơn.'}
+     ],
+     explain:'问：女的想把花儿放在哪儿？ "把它搬到院子里" → C 院子里. B 卧室 là chỗ hiện tại.'},
+    {num:19, options:['植物学','医学','历史学','动物学'], ans:3, q:'王教授研究的是什么专业？',
+     lines:[
+       {speaker:'旁白', pre:'各位观众，大家晚上好。欢迎大家在星期六晚上，准时收看我们的《人与自然》节目。', blank:'在今天的节目里，我们主要向大家介绍亚洲虎', post:'。', py:'Gèwèi guānzhòng, dàjiā wǎnshang hǎo. Huānyíng dàjiā zài xīngqīliù wǎnshang, zhǔnshí shōukàn wǒmen de «Rén yǔ Zìrán» jiémù. Zài jīntiān de jiémù li, wǒmen zhǔyào xiàng dàjiā jièshào Yàzhōu hǔ.', vn:'Kính chào quý khán giả. Hoan nghênh quý vị đón xem đúng giờ chương trình «Con người và Thiên nhiên» tối thứ Bảy. Trong chương trình hôm nay, chúng tôi chủ yếu giới thiệu về hổ châu Á.'},
+       {speaker:'旁白', pre:'今天我们还请来了', blank:'国内著名的动物学家王教授', post:'来给我们介绍这方面的知识。', py:'Jīntiān wǒmen hái qǐngláile guónèi zhùmíng de dòngwùxuéjiā Wáng jiàoshòu lái gěi wǒmen jièshào zhè fāngmiàn de zhīshi.', vn:'Hôm nay chúng tôi còn mời giáo sư Vương, nhà động vật học nổi tiếng trong nước, đến giới thiệu kiến thức về lĩnh vực này.'}
+     ],
+     explain:'问：王教授研究的是什么专业？ "动物学家王教授" → D 动物学.'},
+    {num:20, options:['自然','节目','老虎','亚洲'], ans:2, q:'今天的节目主要介绍什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）在今天的节目里，', blank:'我们主要向大家介绍亚洲虎', post:'。', py:'(Tóng yí duàn huà) Zài jīntiān de jiémù li, wǒmen zhǔyào xiàng dàjiā jièshào Yàzhōu hǔ.', vn:'(Cùng đoạn văn) Trong chương trình hôm nay, chúng tôi chủ yếu giới thiệu về hổ châu Á.'}
+     ],
+     explain:'问：今天的节目主要介绍什么？ "亚洲虎" = hổ châu Á → C 老虎. D 亚洲 chỉ là nơi sống của hổ.'},
+    {num:21, options:['寒假','暑假','每天中午','每月15号'], ans:1, q:'什么时候参观人数较多？',
+     lines:[
+       {speaker:'旁白', pre:'', blank:'每年七八月份，也就是放暑假的时候', post:'，会有大量的游客来这儿参观，最多的时候会比平时多出三四倍。', py:'Měi nián qī-bā yuèfèn, yě jiù shì fàng shǔjià de shíhou, huì yǒu dàliàng de yóukè lái zhèr cānguān, zuì duō de shíhou huì bǐ píngshí duōchū sān-sì bèi.', vn:'Hằng năm vào tháng bảy, tháng tám, tức là kỳ nghỉ hè, sẽ có lượng lớn du khách đến tham quan, lúc đông nhất nhiều gấp ba bốn lần ngày thường.'},
+       {speaker:'旁白', pre:'为了使参观能顺利进行，保证游客的安全，参观的人数如果超过一定的数量，', blank:'那我们会暂时关门', post:'，不让太多的游客进入。', py:'Wèile shǐ cānguān néng shùnlì jìnxíng, bǎozhèng yóukè de ānquán, cānguān de rénshù rúguǒ chāoguò yídìng de shùliàng, nà wǒmen huì zànshí guānmén, bú ràng tài duō de yóukè jìnrù.', vn:'Để việc tham quan diễn ra thuận lợi, đảm bảo an toàn cho du khách, nếu số người tham quan vượt quá một số lượng nhất định, chúng tôi sẽ tạm thời đóng cửa, không cho quá nhiều du khách vào.'}
+     ],
+     explain:'问：什么时候参观人数较多？ "七八月份，也就是放暑假的时候" → B 暑假.'},
+    {num:22, options:['天气太热','地方太小','提前下班','保证安全'], ans:3, q:'为什么不让太多游客进入？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）为了使参观能顺利进行，', blank:'保证游客的安全', post:'，…我们会暂时关门，不让太多的游客进入。', py:'(Tóng yí duàn huà) Wèile shǐ cānguān néng shùnlì jìnxíng, bǎozhèng yóukè de ānquán, … wǒmen huì zànshí guānmén, bú ràng tài duō de yóukè jìnrù.', vn:'(Cùng đoạn văn) Để tham quan thuận lợi, đảm bảo an toàn cho du khách, … chúng tôi sẽ tạm đóng cửa, không cho quá nhiều du khách vào.'}
+     ],
+     explain:'问：为什么不让太多游客进入？ "保证游客的安全" → D 保证安全.'}
   ]
 };

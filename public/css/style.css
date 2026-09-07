@@ -2953,6 +2953,53 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   margin-left: 6px;
 }
 
+/* Câu ★ đúng/sai (判断对错) — đề HSK4 câu 1-5 */
+.lp-judge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-gray-50);
+  border: 1px dashed var(--color-gray-300);
+}
+
+.lp-judge-stmt {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-gray-800);
+  flex: 1 1 200px;
+}
+
+.lp-judge-btns { display: inline-flex; gap: var(--space-2); }
+
+.lp-judge-btn {
+  border: 1px solid var(--color-gray-300);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lp-judge-btn:hover { border-color: var(--color-red-600); }
+.lp-judge.done .lp-judge-btn { cursor: default; opacity: 0.6; }
+.lp-judge.done .lp-judge-btn.chosen { opacity: 1; }
+.lp-judge.is-correct .lp-judge-btn.chosen { border-color: var(--color-green-600); background: var(--color-green-50); color: var(--color-green-600); }
+.lp-judge.is-wrong .lp-judge-btn.chosen { border-color: var(--color-red-600); background: var(--color-red-50); color: var(--color-red-600); }
+.lp-judge-result { font-size: 0.8rem; font-weight: 700; }
+.lp-judge.is-correct .lp-judge-result { color: var(--color-green-600); }
+.lp-judge.is-wrong .lp-judge-result { color: var(--color-red-600); }
+
+.lp-mc-q {
+  font-weight: 600;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-2);
+}
+
 .lp-dict-result.is-correct { color: var(--color-green-600); }
 .lp-dict-result.is-wrong { color: var(--color-red-600); }
 

@@ -8328,8 +8328,21 @@
           '<div class="lp-dict-answer-vn">' + line.vn + '</div>' +
         '</div>';
       }).join('');
+      // Đề gốc sách bài tập (HSK4): câu 1-5 là "判断对错" — nghe rồi phán đoán
+      // câu ★ đúng hay sai. Bước tự kiểm tra, không tính vào điểm điền từ.
+      var judgeHtml = item.stmt
+        ? '<div class="lp-judge" data-judge-num="' + item.num + '">' +
+            '<span class="lp-judge-stmt hanzi">★ ' + item.stmt + '</span>' +
+            '<span class="lp-judge-btns">' +
+              '<button type="button" class="lp-judge-btn" data-judge-val="1">✓ Đúng</button>' +
+              '<button type="button" class="lp-judge-btn" data-judge-val="0">✗ Sai</button>' +
+            '</span>' +
+            '<span class="lp-judge-result"></span>' +
+          '</div>'
+        : '';
       return '<div class="lp-dict-item">' +
         '<div class="lp-dict-num">Câu ' + item.num + ' <span class="lp-dict-result" data-result-num="' + item.num + '"></span></div>' +
+        judgeHtml +
         linesHtml +
         '<button type="button" class="lp-dict-reveal" data-reveal-num="' + item.num + '">Xem đáp án</button>' +
         '<div class="lp-dict-answer" data-answer-num="' + item.num + '" hidden>' + answerHtml + '</div>' +
@@ -8371,6 +8384,7 @@
       }).join('');
       return '<div class="lp-mc-item">' +
         '<div class="lp-dict-num">Câu ' + item.num + '</div>' +
+        (item.q ? '<div class="lp-mc-q hanzi">问：' + item.q + '</div>' : '') +
         mcDictHtml +
         '<div class="lp-mc-opts">' + optsHtml + '</div>' +
         '<div class="lp-mc-explain" data-explain-num="' + item.num + '" hidden></div>' +
@@ -8442,6 +8456,19 @@
         btn.disabled = true;
         pgbRecord('lpwq', parseInt(num, 10) - 1, allCorrect);
         lpWorkbookUpdateScore();
+      });
+    });
+
+    $all('.lp-judge-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var box = btn.closest('.lp-judge');
+        if (box.classList.contains('done')) return;
+        var item = data.dictation.find(function (d) { return String(d.num) === box.getAttribute('data-judge-num'); });
+        var chosen = btn.getAttribute('data-judge-val') === '1';
+        var ok = chosen === !!item.judge;
+        box.classList.add('done', ok ? 'is-correct' : 'is-wrong');
+        btn.classList.add('chosen');
+        $('.lp-judge-result', box).textContent = ok ? '✓ Đúng' : ('✗ Sai — đáp án: ' + (item.judge ? '√ Đúng' : '× Sai'));
       });
     });
 

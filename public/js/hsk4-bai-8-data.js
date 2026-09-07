@@ -821,49 +821,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-8/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-8/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-8/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'听说伤心难过的时候吃块儿巧克力，还能使人的心情变得',blank:'愉快',post:'。',py:'Tīngshuō shāngxīn nánguò de shíhou chī kuàir qiǎokèlì, hái néng shǐ rén de xīnqíng biàn de yúkuài.',vn:'Nghe nói lúc buồn bã đau lòng ăn miếng sô cô la, còn có thể khiến tâm trạng người ta trở nên vui vẻ.'}]},
-    {num:2,lines:[{pre:'你不要有压力，好好儿准备下次',blank:'比赛',post:'就好了。',py:'Nǐ búyào yǒu yālì, hǎohāor zhǔnbèi xià cì bǐsài jiù hǎo le.',vn:'Bạn đừng có áp lực, chuẩn bị tốt cho trận đấu lần sau là được.'}]},
-    {num:3,lines:[{pre:'一遇到堵车，人们就容易变得没有',blank:'耐心',post:'。',py:'Yí yùdào dǔchē, rénmen jiù róngyì biàn de méiyǒu nàixīn.',vn:'Hễ gặp kẹt xe, người ta liền dễ trở nên mất kiên nhẫn.'}]},
-    {num:4,lines:[{pre:'生活中不缺少美，缺少的是发现美的',blank:'眼睛',post:'。',py:'Shēnghuó zhōng bù quēshǎo měi, quēshǎo de shì fāxiàn měi de yǎnjing.',vn:'Cuộc sống không thiếu cái đẹp, thiếu là đôi mắt phát hiện ra cái đẹp.'}]},
-    {num:5,lines:[{pre:'女孩子对衣服颜色的选择往往与她们的',blank:'性格',post:'有关。',py:'Nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān.',vn:'Sự lựa chọn màu sắc quần áo của các cô gái thường liên quan đến tính cách của họ.'}]},
+  dictation: [
+    {num:1, stmt:'心情可以选择。', judge:true, lines:[
+      {pre:'生活中遇到什么样的事情，我们无法选择，', blank:'但我们可以选择态度', post:'。用一个能够带给我们快乐的方法，我们才能选对心情，选对生活态度。',
+       py:'Shēnghuó zhōng yùdào shénmeyàng de shìqing, wǒmen wúfǎ xuǎnzé, dàn wǒmen kěyǐ xuǎnzé tàidu. Yòng yí ge nénggòu dài gěi wǒmen kuàilè de fāngfǎ, wǒmen cái néng xuǎn duì xīnqíng, xuǎn duì shēnghuó tàidu.',
+       vn:'Trong cuộc sống gặp chuyện gì, chúng ta không thể chọn, nhưng chúng ta có thể chọn thái độ. Dùng một cách có thể mang lại niềm vui, chúng ta mới chọn đúng tâm trạng, chọn đúng thái độ sống.'}]},
+    {num:2, stmt:'小李对上次比赛很满意。', judge:false, lines:[
+      {pre:'小李最近心情不太好，', blank:'可能是上次比赛没有打好', post:'，受了影响。你最好找个时间跟他谈一下，让他不要有压力，好好准备下次比赛。',
+       py:'Xiǎo Lǐ zuìjìn xīnqíng bú tài hǎo, kěnéng shì shàng cì bǐsài méiyǒu dǎhǎo, shòule yǐngxiǎng. Nǐ zuì hǎo zhǎo ge shíjiān gēn tā tán yíxià, ràng tā bú yào yǒu yālì, hǎohāo zhǔnbèi xià cì bǐsài.',
+       vn:'Tiểu Lý dạo này tâm trạng không tốt, có lẽ do trận đấu lần trước chơi không tốt nên bị ảnh hưởng. Cậu nên tìm lúc nói chuyện với cậu ấy, bảo cậu ấy đừng áp lực, chuẩn bị tốt cho trận sau.'}]},
+    {num:3, stmt:'生气时别急着做决定。', judge:true, lines:[
+      {pre:'生气时不要急着下判断或做决定，', blank:'因为此时做的决定很可能会让你以后后悔', post:'。',
+       py:'Shēngqì shí bú yào jízhe xià pànduàn huò zuò juédìng, yīnwèi cǐshí zuò de juédìng hěn kěnéng huì ràng nǐ yǐhòu hòuhuǐ.',
+       vn:'Khi tức giận đừng vội phán đoán hay quyết định, vì quyết định đưa ra lúc này rất có thể sẽ khiến bạn hối hận sau này.'}]},
+    {num:4, stmt:'办公环境对心情没有影响。', judge:false, lines:[
+      {pre:'你的办公环境会影响你的心情。', blank:'如果环境干净，你每天都会感到愉快', post:'。所以，如果你的办公桌很乱，是时候改变它了。',
+       py:'Nǐ de bàngōng huánjìng huì yǐngxiǎng nǐ de xīnqíng. Rúguǒ huánjìng gānjìng, nǐ měi tiān dōu huì gǎndào yúkuài. Suǒyǐ, rúguǒ nǐ de bàngōngzhuō hěn luàn, shì shíhou gǎibiàn tā le.',
+       vn:'Môi trường làm việc sẽ ảnh hưởng đến tâm trạng của bạn. Nếu môi trường sạch sẽ, mỗi ngày bạn đều thấy vui vẻ. Vì vậy, nếu bàn làm việc của bạn rất bừa bộn, đã đến lúc thay đổi nó.'}]},
+    {num:5, stmt:'吃甜的东西能使人心情变好。', judge:true, lines:[
+      {pre:'研究发现，', blank:'吃甜的东西能使人心情愉快', post:'。所以，如果你觉得心烦，可以吃点儿蛋糕或者巧克力，这些甜的东西可能会给你带来好心情。',
+       py:'Yánjiū fāxiàn, chī tián de dōngxi néng shǐ rén xīnqíng yúkuài. Suǒyǐ, rúguǒ nǐ juéde xīnfán, kěyǐ chī diǎnr dàngāo huòzhě qiǎokèlì, zhèxiē tián de dōngxi kěnéng huì gěi nǐ dàilái hǎo xīnqíng.',
+       vn:'Nghiên cứu phát hiện, ăn đồ ngọt có thể khiến tâm trạng vui vẻ. Vì vậy, nếu bạn thấy bực bội, có thể ăn chút bánh ngọt hoặc sô cô la, những đồ ngọt này có thể mang lại tâm trạng tốt cho bạn.'}]}
   ],
-  mc:[
-    {num:6,options:['自己买的','女儿从国外带回来的','朋友送的'],ans:1,
-     lines:[{speaker:'女',pre:'不是我买的，是我女儿给我从国外带回来的',blank:'礼物',post:'。',py:'Bú shì wǒ mǎi de, shì wǒ nǚ\'ér gěi wǒ cóng guówài dài huilai de lǐwù.',vn:'Không phải tôi mua, là con gái tôi tặng tôi, mang từ nước ngoài về.'}],
-     explain:'原文明确说"是我女儿给我从国外带回来的礼物"。'},
-    {num:7,options:['很甜','很苦','很辣'],ans:0,
-     lines:[{speaker:'男',pre:'巧克力大多是',blank:'甜',post:'的，而很多女性都喜欢吃甜的。',py:'Qiǎokèlì dàduō shì tián de, ér hěn duō nǚxìng dōu xǐhuan chī tián de.',vn:'Sô cô la phần lớn là ngọt, mà rất nhiều phụ nữ đều thích ăn đồ ngọt.'}],
-     explain:'原文明确说"巧克力大多是甜的"。'},
-    {num:8,options:['上次足球比赛后','工作压力大','天气不好'],ans:0,
-     lines:[{speaker:'女',pre:'好多了，',blank:'上次足球比赛',post:'后，好久都没这么放松了。',py:'Hǎoduō le, shàng cì zúqiú bǐsài hòu, hǎojiǔ dōu méi zhème fàngsōng le.',vn:'Đỡ nhiều rồi, sau trận đấu bóng đá lần trước, đã lâu rồi tôi không được thư giãn như vậy.'}],
-     explain:'原文明确说"上次足球比赛后，好久都没这么放松了"。'},
-    {num:9,options:['一个人回忆比赛','看书','找朋友聊天'],ans:0,
-     lines:[{speaker:'男',pre:'这段时间我总是',blank:'一个人坐在房间里回忆那次比赛',post:'。',py:'Zhè duàn shíjiān wǒ zǒngshì yí ge rén zuò zài fángjiān li huíyì nà cì bǐsài.',vn:'Khoảng thời gian này tôi luôn một mình ngồi trong phòng nhớ lại trận đấu đó.'}],
-     explain:'原文明确说"总是一个人坐在房间里回忆那次比赛"。'},
-    {num:10,options:['走错路了','前面堵车','车坏了'],ans:1,
-     lines:[{speaker:'男',pre:'现在是上班时间，前面有点儿',blank:'堵车',post:'，我们走另外一条路。',py:'Xiànzài shì shàngbān shíjiān, qiánmian yǒudiǎnr dǔchē, wǒmen zǒu lìngwài yì tiáo lù.',vn:'Bây giờ là giờ đi làm, phía trước hơi kẹt xe, chúng ta đi đường khác.'}],
-     explain:'原文明确说"前面有点儿堵车"。'},
-    {num:11,options:['听音乐、休息一下','打电话抱怨','下车走路'],ans:0,
-     lines:[{speaker:'女',pre:'堵车时正好可以休息一下，还可以',blank:'听听自己喜欢的音乐',post:'。',py:'Dǔchē shí zhènghǎo kěyǐ xiūxi yíxià, hái kěyǐ tīngting zìjǐ xǐhuan de yīnyuè.',vn:'Lúc kẹt xe đúng lúc có thể nghỉ ngơi một chút, còn có thể nghe nhạc mình thích.'}],
-     explain:'原文明确说"还可以听听自己喜欢的音乐"。'},
-    {num:12,options:['发现美的眼睛','很多钱','很多时间'],ans:0,
-     lines:[{speaker:'男',pre:'生活中不缺少美，缺少的是',blank:'发现美的眼睛',post:'。',py:'Shēnghuó zhōng bù quēshǎo měi, quēshǎo de shì fāxiàn měi de yǎnjing.',vn:'Cuộc sống không thiếu cái đẹp, thiếu là đôi mắt phát hiện ra cái đẹp.'}],
-     explain:'原文明确说"缺少的是发现美的眼睛"。'},
-    {num:13,options:['选择站在哪个窗户前','改变窗外的样子','关上窗户'],ans:0,
-     lines:[{speaker:'女',pre:'窗外是什么样子，我们无法改变，但我们可以',blank:'选择站在哪个窗户前',post:'。',py:'Chuāng wài shì shénme yàngzi, wǒmen wúfǎ gǎibiàn, dàn wǒmen kěyǐ xuǎnzé zhàn zài nǎ ge chuānghu qián.',vn:'Bên ngoài cửa sổ như thế nào, chúng ta không thể thay đổi, nhưng chúng ta có thể chọn đứng trước cửa sổ nào.'}],
-     explain:'原文明确说"我们可以选择站在哪个窗户前"。'},
-    {num:14,options:['比较阳光','比较浪漫','比较严肃'],ans:0,
-     lines:[{speaker:'男',pre:'喜欢穿白色衣服的女孩子性格',blank:'比较阳光',post:'。',py:'Xǐhuan chuān báisè yīfu de nǚháizi xìnggé bǐjiào yángguāng.',vn:'Các cô gái thích mặc đồ trắng tính cách khá lạc quan.'}],
-     explain:'原文明确说"喜欢穿白色衣服的女孩子性格比较阳光"。'},
-    {num:15,options:['伤心','热情','安静'],ans:0,
-     lines:[{speaker:'女',pre:'黑色却容易让人感到',blank:'伤心',post:'。',py:'Hēisè què róngyì ràng rén gǎndào shāngxīn.',vn:'Đen lại dễ khiến người ta cảm thấy buồn bã.'}],
-     explain:'原文明确说"黑色却容易让人感到伤心"。'},
+  mc: [
+    {num:6, options:['伤心','愉快','紧张','烦恼'], ans:1, q:'男的现在心情怎么样？',
+     lines:[
+       {speaker:'女', pre:'马老师，', blank:'大家都说您越来越年轻了', post:'。', py:'Mǎ lǎoshī, dàjiā dōu shuō nín yuè lái yuè niánqīng le.', vn:'Thầy Mã, mọi người đều nói thầy ngày càng trẻ ra.'},
+       {speaker:'男', pre:'谢谢，', blank:'这话我爱听', post:'。', py:'Xièxie, zhè huà wǒ ài tīng.', vn:'Cảm ơn, câu này tôi thích nghe.'}
+     ],
+     explain:'问：男的现在心情怎么样？ Được khen trẻ ra, "这话我爱听" → vui vẻ, đáp án B 愉快.'},
+    {num:7, options:['音乐','电影','性格','感情'], ans:0, q:'他们在谈什么？',
+     lines:[
+       {speaker:'女', pre:'你', blank:'喜欢听什么样的歌儿', post:'？', py:'Nǐ xǐhuan tīng shénmeyàng de gēr?', vn:'Anh thích nghe loại bài hát nào?'},
+       {speaker:'男', pre:'我喜欢那些听起来浪漫的，', blank:'让人感觉放松、心情愉快的', post:'。', py:'Wǒ xǐhuan nàxiē tīng qilai làngmàn de, ràng rén gǎnjué fàngsōng, xīnqíng yúkuài de.', vn:'Tôi thích những bài nghe lãng mạn, khiến người ta thấy thư giãn, vui vẻ.'}
+     ],
+     explain:'问：他们在谈什么？ "喜欢听什么样的歌儿" → nói về âm nhạc, đáp án A 音乐.'},
+    {num:8, options:['一刻钟','5分钟','25分钟','半小时'], ans:0, q:'去火车站需要多长时间？',
+     lines:[
+       {speaker:'女', pre:'师傅，我去火车站。要多长时间？', blank:'半小时能到吗', post:'？', py:'Shīfu, wǒ qù huǒchēzhàn. Yào duō cháng shíjiān? Bàn xiǎoshí néng dào ma?', vn:'Bác tài, tôi đi ga tàu. Mất bao lâu? Nửa tiếng đến kịp không?'},
+       {speaker:'男', pre:'现在不堵车，', blank:'估计十五分钟就能到', post:'。', py:'Xiànzài bù dǔchē, gūjì shíwǔ fēnzhōng jiù néng dào.', vn:'Bây giờ không tắc đường, ước chừng mười lăm phút là đến.'}
+     ],
+     explain:'问：去火车站需要多长时间？ "十五分钟" = 一刻钟 → A. D 半小时 là câu hỏi của khách, không phải thời gian thực tế.'},
+    {num:9, options:['感谢','满意','生气','没关系'], ans:3, q:'男的是什么态度？',
+     lines:[
+       {speaker:'女', pre:'这件事是我不对，', blank:'我真的觉得很对不起您', post:'。', py:'Zhè jiàn shì shì wǒ bú duì, wǒ zhēn de juéde hěn duìbuqǐ nín.', vn:'Chuyện này là tôi sai, tôi thật sự thấy rất có lỗi với ông.'},
+       {speaker:'男', pre:'没关系，', blank:'过去的事情就让它过去吧', post:'，你也别太放在心上。', py:'Méi guānxi, guòqù de shìqing jiù ràng tā guòqù ba, nǐ yě bié tài fàng zài xīn shang.', vn:'Không sao, chuyện đã qua thì cho qua đi, cô cũng đừng để trong lòng quá.'}
+     ],
+     explain:'问：男的是什么态度？ "没关系…别太放在心上" → D 没关系 (bỏ qua, không trách).'},
+    {num:10, options:['很高兴','有些紧张','非常着急','有点儿难过'], ans:1, q:'女的现在心情怎么样？',
+     lines:[
+       {speaker:'女', pre:'下一个就是我了，', blank:'我突然有点儿紧张', post:'。', py:'Xià yí ge jiù shì wǒ le, wǒ tūrán yǒudiǎnr jǐnzhāng.', vn:'Người tiếp theo là tôi rồi, tôi đột nhiên hơi căng thẳng.'},
+       {speaker:'男', pre:'没事，放松点儿，', blank:'像平时练习时那样就可以', post:'。', py:'Méi shì, fàngsōng diǎnr, xiàng píngshí liànxí shí nàyàng jiù kěyǐ.', vn:'Không sao, thả lỏng chút, cứ như lúc luyện tập bình thường là được.'}
+     ],
+     explain:'问：女的现在心情怎么样？ "我突然有点儿紧张" → B 有些紧张.'},
+    {num:11, options:['大夫','经理','司机','服务员'], ans:2, q:'他们打算感谢谁？',
+     lines:[
+       {speaker:'女', pre:'', blank:'那位司机的服务态度很不错', post:'，我们玩儿得很愉快。', py:'Nà wèi sījī de fúwù tàidu hěn búcuò, wǒmen wánr de hěn yúkuài.', vn:'Thái độ phục vụ của bác tài xế đó rất tốt, chúng ta chơi rất vui.'},
+       {speaker:'男', pre:'可不是，', blank:'我们真应该好好谢谢他', post:'。', py:'Kě bú shì, wǒmen zhēn yīnggāi hǎohāo xièxie tā.', vn:'Đúng thế, chúng ta thật sự nên cảm ơn bác ấy tử tế.'}
+     ],
+     explain:'问：他们打算感谢谁？ "那位司机…我们真应该好好谢谢他" → C 司机.'},
+    {num:12, options:['伤心','紧张','愉快','后悔'], ans:2, q:'男的现在心情怎么样？',
+     lines:[
+       {speaker:'女', pre:'看你这高兴的样子，', blank:'问题解决了', post:'？', py:'Kàn nǐ zhè gāoxìng de yàngzi, wèntí jiějué le?', vn:'Nhìn anh vui thế này, vấn đề giải quyết xong rồi à?'},
+       {speaker:'男', pre:'是啊，白老师提醒我换一种方法试试，', blank:'问题果然就解决了', post:'。', py:'Shì a, Bái lǎoshī tíxǐng wǒ huàn yì zhǒng fāngfǎ shìshi, wèntí guǒrán jiù jiějué le.', vn:'Đúng vậy, thầy Bạch nhắc tôi thử đổi cách khác, quả nhiên vấn đề được giải quyết.'}
+     ],
+     explain:'问：男的现在心情怎么样？ "看你这高兴的样子…问题解决了" → C 愉快.'},
+    {num:13, options:['紧张','着急','放松','难过'], ans:1, q:'女的现在心情怎么样？',
+     lines:[
+       {speaker:'女', pre:'世界公园到底是不是在东边啊？', blank:'怎么还没到', post:'？', py:'Shìjiè Gōngyuán dàodǐ shì bu shì zài dōngbian a? Zěnme hái méi dào?', vn:'Công viên Thế giới rốt cuộc có ở phía đông không? Sao vẫn chưa tới?'},
+       {speaker:'男', pre:'肯定没错，', blank:'估计再有几分钟就到了吧', post:'。', py:'Kěndìng méi cuò, gūjì zài yǒu jǐ fēnzhōng jiù dào le ba.', vn:'Chắc chắn không sai, chắc vài phút nữa là đến.'},
+       {speaker:'女', pre:'再晚了', blank:'我们就来不及看节目了', post:'。', py:'Zài wǎn le wǒmen jiù láibují kàn jiémù le.', vn:'Muộn nữa là chúng ta không kịp xem tiết mục đâu.'},
+       {speaker:'男', pre:'别担心，', blank:'下午还有呢', post:'。', py:'Bié dānxīn, xiàwǔ hái yǒu ne.', vn:'Đừng lo, chiều vẫn còn mà.'}
+     ],
+     explain:'问：女的现在心情怎么样？ "怎么还没到…来不及看节目了" → sốt ruột, đáp án B 着急.'},
+    {num:14, options:['要去留学','要结婚了','通过考试了','做成生意了'], ans:2, q:'女的为什么高兴？',
+     lines:[
+       {speaker:'男', pre:'你今天心情不错，', blank:'看样子有什么好事', post:'。', py:'Nǐ jīntiān xīnqíng búcuò, kàn yàngzi yǒu shénme hǎoshì.', vn:'Hôm nay tâm trạng cậu tốt nhỉ, xem ra có chuyện vui.'},
+       {speaker:'女', pre:'告诉你一个好消息，', blank:'我通过法律考试了', post:'，可以当律师了。', py:'Gàosu nǐ yí ge hǎo xiāoxi, wǒ tōngguò fǎlǜ kǎoshì le, kěyǐ dāng lǜshī le.', vn:'Nói cậu một tin vui, tôi đã đỗ kỳ thi luật rồi, có thể làm luật sư rồi.'},
+       {speaker:'男', pre:'太好了！老同学，', blank:'这可真是个好消息', post:'。', py:'Tài hǎo le! Lǎo tóngxué, zhè kě zhēn shì ge hǎo xiāoxi.', vn:'Tuyệt quá! Bạn cũ ơi, đúng là tin tốt thật.'},
+       {speaker:'女', pre:'谢谢！走，', blank:'我们边走边谈', post:'。', py:'Xièxie! Zǒu, wǒmen biān zǒu biān tán.', vn:'Cảm ơn! Đi thôi, vừa đi vừa nói chuyện.'}
+     ],
+     explain:'问：女的为什么高兴？ "我通过法律考试了" → C 通过考试了.'},
+    {num:15, options:['很担心','很放松','非常紧张','特别难过'], ans:1, q:'女的现在心情怎么样？',
+     lines:[
+       {speaker:'女', pre:'这里的景色真美，', blank:'空气也好', post:'。', py:'Zhèlǐ de jǐngsè zhēn měi, kōngqì yě hǎo.', vn:'Cảnh ở đây đẹp thật, không khí cũng tốt.'},
+       {speaker:'男', pre:'怎么样，', blank:'心情好些了吗', post:'？', py:'Zěnmeyàng, xīnqíng hǎo xiē le ma?', vn:'Sao rồi, tâm trạng đỡ hơn chưa?'},
+       {speaker:'女', pre:'好多了，最近压力大，', blank:'好久都没这么放松了', post:'，真是谢谢你。', py:'Hǎo duō le, zuìjìn yālì dà, hǎojiǔ dōu méi zhème fàngsōng le, zhēn shì xièxie nǐ.', vn:'Đỡ nhiều rồi, dạo này áp lực lớn, lâu lắm rồi không được thư giãn thế này, cảm ơn anh thật nhiều.'},
+       {speaker:'男', pre:'', blank:'不客气', post:'。', py:'Bú kèqi.', vn:'Không có gì.'}
+     ],
+     explain:'问：女的现在心情怎么样？ "好久都没这么放松了" → B 很放松.'},
+    {num:16, options:['收到短信了','减肥成功了','超市在打折','得到礼物了'], ans:3, q:'女的为什么很高兴？',
+     lines:[
+       {speaker:'男', pre:'小姐，您是今天第一个来我们超市的客人，', blank:'我们准备了一个小礼物送给您', post:'。', py:'Xiǎojiě, nín shì jīntiān dì-yī ge lái wǒmen chāoshì de kèrén, wǒmen zhǔnbèile yí ge xiǎo lǐwù sòng gěi nín.', vn:'Thưa cô, cô là khách hàng đầu tiên đến siêu thị chúng tôi hôm nay, chúng tôi chuẩn bị một món quà nhỏ tặng cô.'},
+       {speaker:'女', pre:'真的吗？谢谢你！', blank:'太高兴了', post:'。', py:'Zhēn de ma? Xièxie nǐ! Tài gāoxìng le.', vn:'Thật sao? Cảm ơn anh! Vui quá.'},
+       {speaker:'男', pre:'这是我们超市送您的巧克力，', blank:'祝您购物愉快', post:'。', py:'Zhè shì wǒmen chāoshì sòng nín de qiǎokèlì, zhù nín gòuwù yúkuài.', vn:'Đây là sô cô la siêu thị tặng cô, chúc cô mua sắm vui vẻ.'},
+       {speaker:'女', pre:'', blank:'谢谢', post:'。', py:'Xièxie.', vn:'Cảm ơn.'}
+     ],
+     explain:'问：女的为什么很高兴？ Được tặng 小礼物 (sô cô la) → D 得到礼物了.'},
+    {num:17, options:['觉得不好意思','非常高兴','难过极了','感到不满意'], ans:1, q:'男的是什么心情？',
+     lines:[
+       {speaker:'男', pre:'这次活动非常成功，', blank:'我们顺利完成了公司交给的工作', post:'。', py:'Zhè cì huódòng fēicháng chénggōng, wǒmen shùnlì wánchéngle gōngsī jiāo gěi de gōngzuò.', vn:'Hoạt động lần này rất thành công, chúng tôi đã hoàn thành thuận lợi công việc công ty giao.'},
+       {speaker:'女', pre:'', blank:'辛苦了', post:'！', py:'Xīnkǔ le!', vn:'Vất vả rồi!'},
+       {speaker:'男', pre:'', blank:'谢谢您对我们的支持', post:'。', py:'Xièxie nín duì wǒmen de zhīchí.', vn:'Cảm ơn sự ủng hộ của chị dành cho chúng tôi.'},
+       {speaker:'女', pre:'能有这么大的成绩，', blank:'主要是你们工作努力', post:'。', py:'Néng yǒu zhème dà de chéngjì, zhǔyào shì nǐmen gōngzuò nǔlì.', vn:'Có được thành tích lớn thế này, chủ yếu là do các bạn làm việc chăm chỉ.'}
+     ],
+     explain:'问：男的是什么心情？ Hoạt động thành công, hoàn thành thuận lợi → B 非常高兴.'},
+    {num:18, options:['堵车','票卖完了','电影没意思','可能要加班'], ans:0, q:'男的担心什么？',
+     lines:[
+       {speaker:'男', pre:'电影七点开始，', blank:'下了班去来不及了吧', post:'？', py:'Diànyǐng qī diǎn kāishǐ, xiàle bān qù láibují le ba?', vn:'Phim bảy giờ bắt đầu, tan làm đi thì không kịp đâu nhỉ?'},
+       {speaker:'女', pre:'', blank:'应该来得及', post:'。', py:'Yīnggāi láidejí.', vn:'Chắc là kịp.'},
+       {speaker:'男', pre:'可是那个时候', blank:'堵车很严重', post:'，出租车也不好打。', py:'Kěshì nàge shíhou dǔchē hěn yánzhòng, chūzūchē yě bù hǎo dǎ.', vn:'Nhưng giờ đó tắc đường nghiêm trọng lắm, taxi cũng khó bắt.'},
+       {speaker:'女', pre:'不用担心，', blank:'我们坐地铁去', post:'，很快的。', py:'Búyòng dānxīn, wǒmen zuò dìtiě qù, hěn kuài de.', vn:'Không phải lo, mình đi tàu điện ngầm, nhanh lắm.'}
+     ],
+     explain:'问：男的担心什么？ "那个时候堵车很严重" → A 堵车.'},
+    {num:19, options:['爱情','烦恼','快乐','压力'], ans:2, q:'吃香蕉能给我们带来什么？',
+     lines:[
+       {speaker:'旁白', pre:'香蕉是一种"快乐水果"，', blank:'因为吃香蕉能帮助人减轻压力，让人高兴', post:'。', py:'Xiāngjiāo shì yì zhǒng "kuàilè shuǐguǒ", yīnwèi chī xiāngjiāo néng bāngzhù rén jiǎnqīng yālì, ràng rén gāoxìng.', vn:'Chuối là một loại "trái cây hạnh phúc", vì ăn chuối giúp giảm áp lực, khiến người ta vui vẻ.'},
+       {speaker:'旁白', pre:'另外香蕉还有很多好处，', blank:'睡觉前吃香蕉能让你睡得更好', post:'，多吃香蕉对我们的皮肤很好，而且香蕉还有不错的减肥效果。', py:'Lìngwài xiāngjiāo hái yǒu hěn duō hǎochù, shuìjiào qián chī xiāngjiāo néng ràng nǐ shuì de gèng hǎo, duō chī xiāngjiāo duì wǒmen de pífū hěn hǎo, érqiě xiāngjiāo hái yǒu búcuò de jiǎnféi xiàoguǒ.', vn:'Ngoài ra chuối còn nhiều lợi ích, ăn chuối trước khi ngủ giúp bạn ngủ ngon hơn, ăn nhiều chuối rất tốt cho da, hơn nữa chuối còn có hiệu quả giảm cân khá tốt.'}
+     ],
+     explain:'问：吃香蕉能给我们带来什么？ "快乐水果…让人高兴" → C 快乐. 压力 là thứ chuối giúp giảm bớt, không phải mang lại.'},
+    {num:20, options:['让人高兴','让人聪明','让人睡得好','让人皮肤好'], ans:1, q:'根据这段话，以下哪个不是香蕉的好处？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'睡觉前吃香蕉能让你睡得更好，多吃香蕉对我们的皮肤很好', post:'，而且香蕉还有不错的减肥效果。', py:'(Tóng yí duàn huà) Shuìjiào qián chī xiāngjiāo néng ràng nǐ shuì de gèng hǎo, duō chī xiāngjiāo duì wǒmen de pífū hěn hǎo, érqiě xiāngjiāo hái yǒu búcuò de jiǎnféi xiàoguǒ.', vn:'(Cùng đoạn văn) Ăn chuối trước khi ngủ giúp ngủ ngon hơn, ăn nhiều chuối rất tốt cho da, hơn nữa chuối còn có hiệu quả giảm cân khá tốt.'}
+     ],
+     explain:'问：以下哪个不是香蕉的好处？ Đoạn nói: 让人高兴, 睡得更好, 皮肤好, 减肥. Không nhắc "让人聪明" → B. Chú ý câu hỏi phủ định "不是".'},
+    {num:21, options:['晴天','阴天','下雨天','下雪天'], ans:1, q:'根据这段话，哪种天气会使人觉得不舒服？',
+     lines:[
+       {speaker:'旁白', pre:'科学研究证明，天气会影响人的心情，不同的天气会给人带来不同的感情变化。', blank:'晴天会让人变得轻松，觉得心情愉快', post:'；', py:'Kēxué yánjiū zhèngmíng, tiānqì huì yǐngxiǎng rén de xīnqíng, bùtóng de tiānqì huì gěi rén dàilái bùtóng de gǎnqíng biànhuà. Qíngtiān huì ràng rén biàn de qīngsōng, juéde xīnqíng yúkuài;', vn:'Nghiên cứu khoa học chứng minh, thời tiết ảnh hưởng đến tâm trạng, thời tiết khác nhau mang lại những thay đổi cảm xúc khác nhau. Trời nắng khiến người ta thấy nhẹ nhõm, vui vẻ;'},
+       {speaker:'旁白', pre:'', blank:'阴天容易使人感到难过', post:'，干什么事情都没有精神；有些人在下雨天会觉得很舒服，变得安静下来；下雪天会让人兴奋，对我们的身体也有好处。', py:'Yīntiān róngyì shǐ rén gǎndào nánguò, gàn shénme shìqing dōu méiyǒu jīngshén; yǒuxiē rén zài xiàyǔtiān huì juéde hěn shūfu, biàn de ānjìng xiàlai; xiàxuětiān huì ràng rén xīngfèn, duì wǒmen de shēntǐ yě yǒu hǎochù.', vn:'trời âm u dễ khiến người ta buồn, làm gì cũng không có tinh thần; có người vào ngày mưa thấy rất dễ chịu, trở nên yên tĩnh; ngày tuyết khiến người ta hưng phấn, cũng có lợi cho cơ thể.'}
+     ],
+     explain:'问：哪种天气会使人觉得不舒服？ "阴天容易使人感到难过，…没有精神" → B 阴天.'},
+    {num:22, options:['难过','兴奋','高兴','紧张'], ans:2, q:'根据这段话，晴天会让人的心情怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'晴天会让人变得轻松，觉得心情愉快', post:'。', py:'(Tóng yí duàn huà) Qíngtiān huì ràng rén biàn de qīngsōng, juéde xīnqíng yúkuài.', vn:'(Cùng đoạn văn) Trời nắng khiến người ta thấy nhẹ nhõm, tâm trạng vui vẻ.'}
+     ],
+     explain:'问：晴天会让人的心情怎么样？ "心情愉快" → C 高兴. B 兴奋 là 下雪天.'}
   ]
 };

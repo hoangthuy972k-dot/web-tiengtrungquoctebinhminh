@@ -897,49 +897,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-13/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-13/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-13/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'他本来就是京剧演员，年轻时很有名，深受',blank:'观众们的喜爱',post:'。',py:'Tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí hěn yǒumíng, shēn shòu guānzhòngmen de xǐ\'ài.',vn:'Ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng, được khán giả vô cùng yêu thích.'}]},
-    {num:2,lines:[{pre:'我常常跟着电视学唱京剧，然后',blank:'一遍一遍地练习',post:'。',py:'Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí.',vn:'Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại.'}]},
-    {num:3,lines:[{pre:'这次活动继续',blank:'由你负责',post:'，相信也一定会很成功。',py:'Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.',vn:'Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng nhất định sẽ thành công.'}]},
-    {num:4,lines:[{pre:'有人在互联网上专门',blank:'进行过调查',post:'。',py:'Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá.',vn:'Có người đã tiến hành khảo sát chuyên biệt trên Internet.'}]},
-    {num:5,lines:[{pre:'在中国，喝茶是一种',blank:'十分普遍',post:'的生活习惯。',py:'Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.',vn:'Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến.'}]},
+  dictation: [
+    {num:1, stmt:'演出已经结束了。', judge:false, lines:[
+      {pre:'虽然演出八点才开始，', blank:'但是差一刻八点观众就不能进场了', post:'，我们还是早点儿去吧。',
+       py:'Suīrán yǎnchū bā diǎn cái kāishǐ, dànshì chà yí kè bā diǎn guānzhòng jiù bù néng jìnchǎng le, wǒmen háishi zǎo diǎnr qù ba.',
+       vn:'Tuy buổi diễn tám giờ mới bắt đầu, nhưng tám giờ kém mười lăm khán giả đã không được vào nữa, chúng ta vẫn nên đi sớm một chút.'}]},
+    {num:2, stmt:'他介绍得很详细。', judge:false, lines:[
+      {pre:'由于时间关系，这份材料我就不向大家详细介绍了，', blank:'我只对其中重要的部分简单说明一下', post:'。有什么问题，大家一会儿可以讨论。',
+       py:'Yóuyú shíjiān guānxi, zhè fèn cáiliào wǒ jiù bú xiàng dàjiā xiángxì jièshào le, wǒ zhǐ duì qízhōng zhòngyào de bùfen jiǎndān shuōmíng yíxià. Yǒu shénme wèntí, dàjiā yíhuìr kěyǐ tǎolùn.',
+       vn:'Vì lý do thời gian, tài liệu này tôi sẽ không giới thiệu chi tiết với mọi người, tôi chỉ giải thích ngắn gọn những phần quan trọng. Có vấn đề gì, lát nữa mọi người có thể thảo luận.'}]},
+    {num:3, stmt:'他们决定不去植物园了。', judge:true, lines:[
+      {pre:'我问过大家了，', blank:'三分之二的同学都去过植物园', post:'，所以这次春游得换个地方了。咱们明天开个班会商量一下去哪儿玩儿吧。',
+       py:'Wǒ wènguo dàjiā le, sān fēn zhī èr de tóngxué dōu qùguo zhíwùyuán, suǒyǐ zhè cì chūnyóu děi huàn ge dìfang le. Zánmen míngtiān kāi ge bānhuì shāngliang yíxià qù nǎr wánr ba.',
+       vn:'Tôi đã hỏi mọi người rồi, hai phần ba bạn trong lớp đều từng đi vườn thực vật, nên chuyến dã ngoại xuân này phải đổi chỗ. Mai chúng ta họp lớp bàn xem đi đâu chơi nhé.'}]},
+    {num:4, stmt:'应该总结过去的经验。', judge:true, lines:[
+      {pre:'回忆过去，有苦也有甜，有伤心、难过，也有幸福、愉快，有很多故事让人难以忘记，', blank:'有很多经验值得我们总结', post:'。',
+       py:'Huíyì guòqù, yǒu kǔ yě yǒu tián, yǒu shāngxīn, nánguò, yě yǒu xìngfú, yúkuài, yǒu hěn duō gùshi ràng rén nányǐ wàngjì, yǒu hěn duō jīngyàn zhídé wǒmen zǒngjié.',
+       vn:'Nhớ lại quá khứ, có đắng có ngọt, có đau lòng, buồn bã, cũng có hạnh phúc, vui vẻ, có nhiều câu chuyện khó quên, có nhiều kinh nghiệm đáng để chúng ta đúc kết.'}]},
+    {num:5, stmt:'现在是十点一刻。', judge:true, lines:[
+      {pre:'大家请注意，现在休息十五分钟，', blank:'十点半会议继续进行', post:'。我们为大家准备了饮料和蛋糕，就在门口的桌子上。',
+       py:'Dàjiā qǐng zhùyì, xiànzài xiūxi shíwǔ fēnzhōng, shí diǎn bàn huìyì jìxù jìnxíng. Wǒmen wèi dàjiā zhǔnbèile yǐnliào hé dàngāo, jiù zài ménkǒu de zhuōzi shang.',
+       vn:'Mọi người chú ý, bây giờ nghỉ mười lăm phút, mười giờ rưỡi hội nghị tiếp tục. Chúng tôi đã chuẩn bị đồ uống và bánh ngọt, ở ngay trên bàn cạnh cửa.'}]}
   ],
-  mc:[
-    {num:6,options:['京剧演员','老师','医生'],ans:0,
-     lines:[{speaker:'女',pre:'他本来就是',blank:'京剧演员',post:'，年轻时在我们那儿很有名。',py:'Tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí zài wǒmen nàr hěn yǒumíng.',vn:'Ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng ở chỗ chúng tôi.'}],
-     explain:'原文明确说"他本来就是京剧演员"。'},
-    {num:7,options:['60多年','30多年','8年'],ans:0,
-     lines:[{speaker:'女',pre:'他8岁就开始上台演出，到现在大概唱了',blank:'60多年',post:'了。',py:'Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.',vn:'Ông 8 tuổi đã lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.'}],
-     explain:'原文明确说"大概唱了60多年了"。'},
-    {num:8,options:['跟着电视学唱','在学校学的','爷爷教的'],ans:0,
-     lines:[{speaker:'男',pre:'我常常',blank:'跟着电视学唱京剧',post:'，然后一遍一遍地练习。',py:'Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí.',vn:'Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại.'}],
-     explain:'原文明确说"跟着电视学唱京剧"。'},
-    {num:9,options:['有一些音乐基础','是中国人','接受过专门教育'],ans:0,
-     lines:[{speaker:'男',pre:'别吃惊，因为我以前学习过音乐，',blank:'有一些音乐基础',post:'。',py:'Bié chī jīng, yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ.',vn:'Đừng ngạc nhiên, vì trước đây tôi từng học âm nhạc, có chút nền tảng.'}],
-     explain:'原文明确说"有一些音乐基础"。'},
-    {num:10,options:['流行音乐','京剧','古典音乐'],ans:0,
-     lines:[{speaker:'女',pre:'我还是比较喜欢听',blank:'流行音乐',post:'。',py:'Wǒ háishi bǐjiào xǐhuan tīng liúxíng yīnyuè.',vn:'Tôi vẫn thích nghe nhạc pop hơn.'}],
-     explain:'原文明确说"比较喜欢听流行音乐"。'},
-    {num:11,options:['举办中国传统文化节活动','放假一周','去春游'],ans:0,
-     lines:[{speaker:'女',pre:'所以我们想申请',blank:'举办一次中国传统文化节活动',post:'。',py:'Suǒyǐ wǒmen xiǎng shēnqǐng jǔbàn yí cì Zhōngguó chuántǒng wénhuà jié huódòng.',vn:'Vì vậy chúng tôi muốn xin tổ chức một lễ hội văn hóa truyền thống Trung Quốc.'}],
-     explain:'原文明确说"申请举办一次中国传统文化节活动"。'},
-    {num:12,options:['继续由李老师负责','由校长负责','由学生负责'],ans:0,
-     lines:[{speaker:'男',pre:'上次的春游活动你们办得非常有趣，这次活动',blank:'继续由你负责',post:'。',py:'Shàng cì de chūnyóu huódòng nǐmen bàn de fēicháng yǒuqù, zhè cì huódòng jìxù yóu nǐ fùzé.',vn:'Hoạt động dã ngoại lần trước các bạn tổ chức rất thú vị, hoạt động lần này tiếp tục do bạn phụ trách.'}],
-     explain:'原文明确说"这次活动继续由你负责"。'},
-    {num:13,options:['星期五之前','下个月','明天'],ans:0,
-     lines:[{speaker:'女',pre:'我们回去就开会讨论，',blank:'星期五之前',post:'把详细的计划书发给您。',py:'Wǒmen huíqu jiù kāi huì tǎolùn, xīngqīwǔ zhīqián bǎ xiángxì de jìhuàshū fāgěi nín.',vn:'Chúng tôi về sẽ họp thảo luận, trước thứ Sáu gửi bản kế hoạch chi tiết cho ngài.'}],
-     explain:'原文明确说"星期五之前把详细的计划书发给您"。'},
-    {num:14,options:['3000多年','300多年','30多年'],ans:0,
-     lines:[{speaker:'男',pre:'筷子在中国大约已经有',blank:'3000多年',post:'的历史了。',py:'Kuàizi zài Zhōngguó dàyuē yǐjīng yǒu sānqiān duō nián de lìshǐ le.',vn:'Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm.'}],
-     explain:'原文明确说"大约已经有3000多年的历史"。'},
-    {num:15,options:['一种药','一种饮料','一种菜'],ans:0,
-     lines:[{speaker:'女',pre:'最早的时候，茶只是被当作',blank:'一种药',post:'，而不是饮料。',py:'Zuì zǎo de shíhou, chá zhǐshì bèi dàngzuò yì zhǒng yào, ér bú shì yǐnliào.',vn:'Thời kỳ đầu, trà chỉ được coi là một loại thuốc, chứ không phải thức uống.'}],
-     explain:'原文明确说"茶只是被当作一种药"。'},
+  mc: [
+    {num:6, options:['值得去看','没有观众','没什么意思','越来越有趣'], ans:2, q:'关于那个电视节目，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'我觉得', blank:'这个节目越来越无聊了', post:'。', py:'Wǒ juéde zhège jiémù yuè lái yuè wúliáo le.', vn:'Tôi thấy chương trình này ngày càng nhạt.'},
+       {speaker:'女', pre:'是啊，前几期还可以，', blank:'现在看的人也越来越少了', post:'。', py:'Shì a, qián jǐ qī hái kěyǐ, xiànzài kàn de rén yě yuè lái yuè shǎo le.', vn:'Ừ, mấy số đầu còn được, giờ người xem cũng ngày càng ít.'}
+     ],
+     explain:'问：关于那个电视节目，可以知道什么？ "越来越无聊了" → C 没什么意思. B sai vì người xem ít đi chứ không phải không có.'},
+    {num:7, options:['饿了','感冒了','害怕了','去医院了'], ans:1, q:'女的怎么了？',
+     lines:[
+       {speaker:'男', pre:'怎么了？身体不舒服吗？', blank:'去医院看看吧', post:'。', py:'Zěnme le? Shēntǐ bù shūfu ma? Qù yīyuàn kànkan ba.', vn:'Sao thế? Không khoẻ à? Đi bệnh viện khám đi.'},
+       {speaker:'女', pre:'', blank:'我只是感冒，头稍微有点儿疼', post:'，不严重，休息休息就好了。', py:'Wǒ zhǐshì gǎnmào, tóu shāowēi yǒudiǎnr téng, bù yánzhòng, xiūxi xiūxi jiù hǎo le.', vn:'Tôi chỉ bị cảm, đầu hơi đau chút, không nghiêm trọng, nghỉ ngơi là khỏi.'}
+     ],
+     explain:'问：女的怎么了？ "我只是感冒" → B 感冒了. D sai vì cô ấy không đi viện.'},
+    {num:8, options:['很无聊','很有趣','很有名','很流行'], ans:1, q:'女的觉得那本小说怎么样？',
+     lines:[
+       {speaker:'男', pre:'这本小说有四百多页，', blank:'你竟然一天就看完了', post:'？', py:'Zhè běn xiǎoshuō yǒu sìbǎi duō yè, nǐ jìngrán yì tiān jiù kànwán le?', vn:'Cuốn tiểu thuyết này hơn bốn trăm trang, cậu thế mà một ngày đọc xong?'},
+       {speaker:'女', pre:'这书虽然厚，', blank:'但写得很有趣', post:'，所以看起来很快。', py:'Zhè shū suīrán hòu, dàn xiě de hěn yǒuqù, suǒyǐ kàn qilai hěn kuài.', vn:'Sách tuy dày nhưng viết rất thú vị nên đọc rất nhanh.'}
+     ],
+     explain:'问：女的觉得那本小说怎么样？ "写得很有趣" → B 很有趣.'},
+    {num:9, options:['明天','下周日','过完生日','现在'], ans:1, q:'他们准备什么时候告诉他好消息？',
+     lines:[
+       {speaker:'男', pre:'下个礼拜天是他的生日，', blank:'那时候再把这个好消息告诉他不是更好', post:'？', py:'Xià ge lǐbàitiān shì tā de shēngrì, nà shíhou zài bǎ zhège hǎo xiāoxi gàosu tā bú shì gèng hǎo?', vn:'Chủ nhật tuần sau là sinh nhật cậu ấy, lúc đó mới báo tin vui này chẳng phải tốt hơn sao?'},
+       {speaker:'女', pre:'好主意，', blank:'到时他知道了肯定特别开心', post:'。', py:'Hǎo zhǔyi, dào shí tā zhīdào le kěndìng tèbié kāixīn.', vn:'Ý hay, lúc đó cậu ấy biết chắc chắn vui lắm.'}
+     ],
+     explain:'问：他们准备什么时候告诉他好消息？ "下个礼拜天…那时候再…告诉他" → B 下周日 (礼拜天 = 周日).'},
+    {num:10, options:['时间','地方','演员','节目'], ans:2, q:'关于这次活动，女的想知道什么？',
+     lines:[
+       {speaker:'女', pre:'听说这次公司举办的活动会邀请许多著名的演员来表演，是真的吗？', blank:'都有谁呢', post:'？', py:'Tīngshuō zhè cì gōngsī jǔbàn de huódòng huì yāoqǐng xǔduō zhùmíng de yǎnyuán lái biǎoyǎn, shì zhēn de ma? Dōu yǒu shéi ne?', vn:'Nghe nói hoạt động công ty tổ chức lần này sẽ mời nhiều diễn viên nổi tiếng đến biểu diễn, thật không? Có những ai vậy?'},
+       {speaker:'男', pre:'我只知道下周还是在会议中心举行，', blank:'这次活动是小张负责的', post:'，你可以去问问他。', py:'Wǒ zhǐ zhīdào xià zhōu háishi zài huìyì zhōngxīn jǔxíng, zhè cì huódòng shì Xiǎo Zhāng fùzé de, nǐ kěyǐ qù wènwen tā.', vn:'Tôi chỉ biết tuần sau vẫn tổ chức ở trung tâm hội nghị, hoạt động này do Tiểu Trương phụ trách, cô có thể hỏi cậu ấy.'}
+     ],
+     explain:'问：关于这次活动，女的想知道什么？ "演员…都有谁呢" → C 演员. Thời gian và địa điểm là do người nam nói.'},
+    {num:11, options:['孙叔叔','邻居','王阿姨','李大夫'], ans:0, q:'他们要去谁家做客？',
+     lines:[
+       {speaker:'男', pre:'', blank:'孙叔叔邀请我们去他家做客', post:'，我们带点儿什么礼物好呢？', py:'Sūn shūshu yāoqǐng wǒmen qù tā jiā zuòkè, wǒmen dài diǎnr shénme lǐwù hǎo ne?', vn:'Chú Tôn mời chúng ta đến nhà chơi, mình mang quà gì thì hay?'},
+       {speaker:'女', pre:'我记得他和邻居王阿姨、李大夫一样，', blank:'最爱喝茶了', post:'，我们去买点儿绿茶吧。', py:'Wǒ jìde tā hé línjū Wáng āyí, Lǐ dàifu yíyàng, zuì ài hē chá le, wǒmen qù mǎi diǎnr lǜchá ba.', vn:'Em nhớ chú ấy cũng giống hàng xóm dì Vương, bác sĩ Lý, thích uống trà nhất, mình đi mua ít trà xanh đi.'}
+     ],
+     explain:'问：他们要去谁家做客？ "孙叔叔邀请我们去他家做客" → A. 王阿姨, 李大夫 chỉ được nhắc để so sánh sở thích.'},
+    {num:12, options:['正在开会','来自上海','比较满意','还在旅游'], ans:2, q:'根据对话，男的怎么样？',
+     lines:[
+       {speaker:'女', pre:'王校长，', blank:'这次去上海开会一切都顺利吧', post:'？', py:'Wáng xiàozhǎng, zhè cì qù Shànghǎi kāihuì yíqiè dōu shùnlì ba?', vn:'Hiệu trưởng Vương, lần này đi Thượng Hải họp mọi việc thuận lợi chứ ạ?'},
+       {speaker:'男', pre:'会议进行得很顺利，来自全国各地的人特别多，', blank:'但安排得很好', post:'，这次我还顺便在上海玩儿了两天。', py:'Huìyì jìnxíng de hěn shùnlì, láizì quánguó gèdì de rén tèbié duō, dàn ānpái de hěn hǎo, zhè cì wǒ hái shùnbiàn zài Shànghǎi wánr le liǎng tiān.', vn:'Hội nghị diễn ra rất thuận lợi, người từ khắp cả nước rất đông, nhưng sắp xếp rất tốt, lần này tôi còn tiện thể chơi ở Thượng Hải hai ngày.'}
+     ],
+     explain:'问：根据对话，男的怎么样？ "很顺利…安排得很好…还顺便玩儿了两天" → hài lòng, đáp án C 比较满意. Ông ấy đã về nên A, D sai.'},
+    {num:13, options:['宾馆','公司','教室','公园'], ans:0, q:'他们现在最可能在哪儿？',
+     lines:[
+       {speaker:'女', pre:'先生，给您，', blank:'您的房间在六零二', post:'。', py:'Xiānsheng, gěi nín, nín de fángjiān zài liù líng èr.', vn:'Thưa ông, của ông đây, phòng ông ở 602.'},
+       {speaker:'男', pre:'谢谢。', blank:'请问附近有银行吗', post:'？', py:'Xièxie. Qǐngwèn fùjìn yǒu yínháng ma?', vn:'Cảm ơn. Xin hỏi gần đây có ngân hàng không?'},
+       {speaker:'女', pre:'有一个银行，', blank:'您出门向右走大约五百米就能看到', post:'，就在路北边。', py:'Yǒu yí ge yínháng, nín chūmén xiàng yòu zǒu dàyuē wǔbǎi mǐ jiù néng kàndào, jiù zài lù běibian.', vn:'Có một ngân hàng, ông ra cửa rẽ phải đi khoảng năm trăm mét là thấy, ngay phía bắc đường.'},
+       {speaker:'男', pre:'好，', blank:'谢谢你', post:'。', py:'Hǎo, xièxie nǐ.', vn:'Được, cảm ơn cô.'}
+     ],
+     explain:'问：他们现在最可能在哪儿？ "您的房间在六零二" → khách sạn, đáp án A 宾馆.'},
+    {num:14, options:['心情','计划','演出','演员'], ans:2, q:'他们在谈什么？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你们的表演精彩极了', post:'！', py:'Nǐmen de biǎoyǎn jīngcǎi jí le!', vn:'Màn biểu diễn của các bạn đặc sắc quá!'},
+       {speaker:'男', pre:'真的吗？', blank:'当时我们别提多紧张了', post:'。', py:'Zhēn de ma? Dāngshí wǒmen biétí duō jǐnzhāng le.', vn:'Thật sao? Lúc đó chúng tôi căng thẳng khỏi phải nói.'},
+       {speaker:'女', pre:'你们表演完', blank:'很多观众都高兴地站起来为你们叫好', post:'呢。', py:'Nǐmen biǎoyǎn wán hěn duō guānzhòng dōu gāoxìng de zhàn qilai wèi nǐmen jiàohǎo ne.', vn:'Các bạn diễn xong, nhiều khán giả đứng dậy hoan hô đấy.'},
+       {speaker:'男', pre:'', blank:'谢谢您的支持', post:'。', py:'Xièxie nín de zhīchí.', vn:'Cảm ơn sự ủng hộ của cô.'}
+     ],
+     explain:'问：他们在谈什么？ Cả đoạn nói về 表演 → C 演出.'},
+    {num:15, options:['生病了','不常运动','想喝水','力气不大'], ans:1, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'咱们在这儿稍微休息一下吧，', blank:'我没力气爬了', post:'。', py:'Zánmen zài zhèr shāowēi xiūxi yíxià ba, wǒ méi lìqi pá le.', vn:'Mình nghỉ ở đây một chút đi, anh hết sức leo rồi.'},
+       {speaker:'女', pre:'一看就知道', blank:'你不经常锻炼', post:'。', py:'Yí kàn jiù zhīdào nǐ bù jīngcháng duànliàn.', vn:'Nhìn là biết anh không thường xuyên tập luyện.'},
+       {speaker:'男', pre:'是啊，', blank:'我好久没运动了', post:'。', py:'Shì a, wǒ hǎojiǔ méi yùndòng le.', vn:'Ừ, anh lâu rồi không vận động.'},
+       {speaker:'女', pre:'那你先坐会儿，', blank:'我去那边买两瓶水', post:'。', py:'Nà nǐ xiān zuò huìr, wǒ qù nàbiān mǎi liǎng píng shuǐ.', vn:'Vậy anh ngồi một lát, em qua bên kia mua hai chai nước.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ "我好久没运动了" → B 不常运动. 没力气爬 là do mệt, không phải bệnh.'},
+    {num:16, options:['听音乐会','看京剧','去交流处','看王老师'], ans:0, q:'他们准备安排学生做什么？',
+     lines:[
+       {speaker:'男', pre:'这次一共有', blank:'多少个学生去听音乐会', post:'？', py:'Zhè cì yígòng yǒu duōshao ge xuésheng qù tīng yīnyuèhuì?', vn:'Lần này tổng cộng có bao nhiêu sinh viên đi nghe hoà nhạc?'},
+       {speaker:'女', pre:'和上次看京剧的人差不多，', blank:'大约二十个', post:'。', py:'Hé shàng cì kàn jīngjù de rén chàbuduō, dàyuē èrshí ge.', vn:'Cũng như lần xem Kinh kịch trước, khoảng hai mươi người.'},
+       {speaker:'男', pre:'好的，', blank:'这次谁跟着去', post:'？', py:'Hǎo de, zhè cì shéi gēnzhe qù?', vn:'Được, lần này ai đi cùng?'},
+       {speaker:'女', pre:'', blank:'我和国际交流处的王老师一块儿去', post:'。', py:'Wǒ hé guójì jiāoliúchù de Wáng lǎoshī yíkuàir qù.', vn:'Tôi đi cùng thầy Vương ở phòng giao lưu quốc tế.'}
+     ],
+     explain:'问：他们准备安排学生做什么？ "学生去听音乐会" → A. 看京剧 là lần trước.'},
+    {num:17, options:['图书馆里','地铁站口','图书馆门口','地铁上'], ans:1, q:'他们在哪儿见面？',
+     lines:[
+       {speaker:'女', pre:'喂，我到国家图书馆了，', blank:'你在哪儿', post:'？', py:'Wèi, wǒ dào Guójiā Túshūguǎn le, nǐ zài nǎr?', vn:'Alô, tôi đến Thư viện Quốc gia rồi, cậu ở đâu?'},
+       {speaker:'男', pre:'我还在地铁里，', blank:'大概十分钟就到了', post:'。', py:'Wǒ hái zài dìtiě li, dàgài shí fēnzhōng jiù dào le.', vn:'Tôi vẫn ở trên tàu điện ngầm, khoảng mười phút nữa đến.'},
+       {speaker:'女', pre:'好，', blank:'你到了就从西北口出来吧', post:'，我在那儿等你。', py:'Hǎo, nǐ dào le jiù cóng xīběi kǒu chūlai ba, wǒ zài nàr děng nǐ.', vn:'Được, cậu đến thì ra cửa tây bắc nhé, tôi đợi ở đó.'},
+       {speaker:'男', pre:'好的，', blank:'一会儿见', post:'。', py:'Hǎo de, yíhuìr jiàn.', vn:'Được, lát gặp.'}
+     ],
+     explain:'问：他们在哪儿见面？ "从西北口出来吧，我在那儿等你" → cửa ga tàu điện ngầm, đáp án B 地铁站口.'},
+    {num:18, options:['爱喝茶','喜欢京剧','会唱京剧','是中国人'], ans:3, q:'关于男的，下列哪个不正确？',
+     lines:[
+       {speaker:'女', pre:'你对', blank:'我们国家的文化了解多少', post:'？', py:'Nǐ duì wǒmen guójiā de wénhuà liǎojiě duōshao?', vn:'Bạn hiểu văn hoá đất nước chúng tôi được bao nhiêu?'},
+       {speaker:'男', pre:'我喜欢喝中国茶，还爱听京剧，', blank:'我觉得京剧很有特点', post:'。', py:'Wǒ xǐhuan hē Zhōngguó chá, hái ài tīng jīngjù, wǒ juéde jīngjù hěn yǒu tèdiǎn.', vn:'Tôi thích uống trà Trung Quốc, còn thích nghe Kinh kịch, tôi thấy Kinh kịch rất đặc sắc.'},
+       {speaker:'女', pre:'', blank:'你还喜欢京剧啊', post:'？', py:'Nǐ hái xǐhuan jīngjù a?', vn:'Bạn còn thích Kinh kịch à?'},
+       {speaker:'男', pre:'你不相信吗？我不仅喜欢，', blank:'还能唱上几句', post:'呢。', py:'Nǐ bù xiāngxìn ma? Wǒ bùjǐn xǐhuan, hái néng chàngshàng jǐ jù ne.', vn:'Bạn không tin à? Tôi không chỉ thích mà còn hát được vài câu đấy.'}
+     ],
+     explain:'问：关于男的，下列哪个不正确？ "你对我们国家的文化了解多少" cho thấy người nam là người nước ngoài → D 是中国人 không đúng. Chú ý câu hỏi phủ định.'},
+    {num:19, options:['高兴','新鲜','感动','无聊'], ans:1, q:'看到筷子的使用说明，说话人感觉怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'我在国外留学时，有一次在一家中国饭馆儿吃饭，', blank:'看到放筷子的纸袋上提供了使用筷子的详细说明', post:'。', py:'Wǒ zài guówài liúxué shí, yǒu yí cì zài yì jiā Zhōngguó fànguǎnr chīfàn, kàndào fàng kuàizi de zhǐdài shang tígōngle shǐyòng kuàizi de xiángxì shuōmíng.', vn:'Khi tôi du học nước ngoài, có lần ăn ở một quán ăn Trung Quốc, thấy trên túi giấy đựng đũa có hướng dẫn chi tiết cách dùng đũa.'},
+       {speaker:'旁白', pre:'头一次看见关于筷子的使用说明，', blank:'让我觉得非常新鲜', post:'。因为对中国人来说，使用筷子实在是再熟悉不过的事了。', py:'Tóu yí cì kànjiàn guānyú kuàizi de shǐyòng shuōmíng, ràng wǒ juéde fēicháng xīnxiān. Yīnwèi duì Zhōngguórén lái shuō, shǐyòng kuàizi shízài shì zài shúxi búguò de shì le.', vn:'Lần đầu thấy hướng dẫn sử dụng đũa khiến tôi thấy rất mới lạ. Vì với người Trung Quốc, dùng đũa thật sự là việc quá đỗi quen thuộc.'}
+     ],
+     explain:'问：看到筷子的使用说明，说话人感觉怎么样？ "让我觉得非常新鲜" → B 新鲜.'},
+    {num:20, options:['在饭馆儿工作','是中国人','不会用筷子','看不懂说明'], ans:1, q:'关于说话人，可以知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'因为对中国人来说，使用筷子实在是再熟悉不过的事了', post:'。', py:'(Tóng yí duàn huà) Yīnwèi duì Zhōngguórén lái shuō, shǐyòng kuàizi shízài shì zài shúxi búguò de shì le.', vn:'(Cùng đoạn văn) Vì với người Trung Quốc, dùng đũa thật sự là việc quá đỗi quen thuộc.'}
+     ],
+     explain:'问：关于说话人，可以知道什么？ Người nói thấy lạ vì "对中国人来说…再熟悉不过" → người nói là người Trung Quốc, đáp án B.'},
+    {num:21, options:['应该长远考虑','要做详细计划','总在不停变化','不会顺利进行'], ans:2, q:'长大以后，人们会发现生活怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'有些人喜欢为自己的生活做长远的计划。但是，随着一天一天地长大，', blank:'我们会发现生活总是在不停地变化', post:'，生活往往不会按照定好的计划来进行。', py:'Yǒuxiē rén xǐhuan wèi zìjǐ de shēnghuó zuò chángyuǎn de jìhuà. Dànshì, suízhe yì tiān yì tiān de zhǎngdà, wǒmen huì fāxiàn shēnghuó zǒngshì zài bù tíng de biànhuà, shēnghuó wǎngwǎng bú huì ànzhào dìnghǎo de jìhuà lái jìnxíng.', vn:'Có người thích lập kế hoạch dài hạn cho cuộc sống. Nhưng khi lớn lên từng ngày, chúng ta sẽ thấy cuộc sống luôn không ngừng thay đổi, thường không diễn ra theo kế hoạch đã định.'},
+       {speaker:'旁白', pre:'因此，光有计划还不够，', blank:'还需要我们能及时地做出改变', post:'。只有这样，才能更好地适应生活。', py:'Yīncǐ, guāng yǒu jìhuà hái bú gòu, hái xūyào wǒmen néng jíshí de zuòchū gǎibiàn. Zhǐyǒu zhèyàng, cái néng gèng hǎo de shìyìng shēnghuó.', vn:'Vì vậy, chỉ có kế hoạch thôi chưa đủ, còn cần chúng ta kịp thời thay đổi. Chỉ như vậy mới thích ứng tốt hơn với cuộc sống.'}
+     ],
+     explain:'问：长大以后，人们会发现生活怎么样？ "生活总是在不停地变化" → C 总在不停变化.'},
+    {num:22, options:['坚持以前的看法','回忆原来的事情','做出长远计划','改变旧的计划'], ans:3, q:'怎样才能更好地适应生活？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）光有计划还不够，', blank:'还需要我们能及时地做出改变', post:'。只有这样，才能更好地适应生活。', py:'(Tóng yí duàn huà) Guāng yǒu jìhuà hái bú gòu, hái xūyào wǒmen néng jíshí de zuòchū gǎibiàn. Zhǐyǒu zhèyàng, cái néng gèng hǎo de shìyìng shēnghuó.', vn:'(Cùng đoạn văn) Chỉ có kế hoạch thôi chưa đủ, còn cần chúng ta kịp thời thay đổi. Chỉ như vậy mới thích ứng tốt hơn với cuộc sống.'}
+     ],
+     explain:'问：怎样才能更好地适应生活？ "及时地做出改变" → D 改变旧的计划. C sai vì đoạn nói chỉ có kế hoạch là chưa đủ.'}
   ]
 };

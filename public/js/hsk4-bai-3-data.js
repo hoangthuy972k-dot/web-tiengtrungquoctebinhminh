@@ -882,62 +882,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-3/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-3/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-3/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'他们问的问题都挺容易的，就是我有点儿',blank:'紧张',post:'。',py:'Tāmen wèn de wèntí dōu tǐng róngyì de, jiùshì wǒ yǒudiǎnr jǐnzhāng.',vn:'Những câu hỏi họ hỏi đều khá dễ, chỉ là tôi hơi hồi hộp.'}]},
-    {num:2,lines:[{pre:'要相信自己有',blank:'能力',post:'做好这份工作。',py:'Yào xiāngxìn zìjǐ yǒu nénglì zuòhǎo zhè fèn gōngzuò.',vn:'Phải tin rằng bản thân có năng lực làm tốt công việc này.'}]},
-    {num:3,lines:[{pre:'这两个人的能力都比较',blank:'符合',post:'我们的要求。',py:'Zhè liǎng ge rén de nénglì dōu bǐjiào fúhé wǒmen de yāoqiú.',vn:'Năng lực của hai người này đều khá phù hợp với yêu cầu của chúng ta.'}]},
-    {num:4,lines:[{pre:'另外，',blank:'收入',post:'也不错。',py:'Lìngwài, shōurù yě búcuò.',vn:'Ngoài ra, thu nhập cũng không tệ.'}]},
-    {num:5,lines:[{pre:'不管是上课还是上班，',blank:'准时',post:'都非常重要。',py:'Bùguǎn shì shàng kè háishi shàng bān, zhǔnshí dōu fēicháng zhòngyào.',vn:'Bất kể là đi học hay đi làm, đúng giờ đều rất quan trọng.'}]},
+  dictation: [
+    {num:1, stmt:'他在等面试通知。', judge:false, lines:[
+      {pre:'我通过那家公司的面试了。', blank:'经理对我印象不错', post:'，他要我明天就正式去上班。真没想到，找工作这么容易。',
+       py:'Wǒ tōngguò nà jiā gōngsī de miànshì le. Jīnglǐ duì wǒ yìnxiàng búcuò, tā yào wǒ míngtiān jiù zhèngshì qù shàngbān. Zhēn méi xiǎngdào, zhǎo gōngzuò zhème róngyì.',
+       vn:'Tôi đã qua vòng phỏng vấn của công ty đó rồi. Giám đốc có ấn tượng tốt về tôi, ông ấy muốn tôi ngày mai đi làm chính thức luôn. Thật không ngờ, tìm việc lại dễ thế này.'}]},
+    {num:2, stmt:'小林正在找工作。', judge:false, lines:[
+      {pre:'小林，这次招聘是你负责吧？', blank:'李教授介绍了他的一个学生', post:'，还不错，这是他的材料，你看看。',
+       py:'Xiǎo Lín, zhè cì zhāopìn shì nǐ fùzé ba? Lǐ jiàoshòu jièshàole tā de yí ge xuésheng, hái búcuò, zhè shì tā de cáiliào, nǐ kànkan.',
+       vn:'Tiểu Lâm, đợt tuyển dụng này là cậu phụ trách phải không? Giáo sư Lý giới thiệu một học trò của ông ấy, cũng khá đấy, đây là hồ sơ của cậu ấy, cậu xem thử.'}]},
+    {num:3, stmt:'面试时必须准时到。', judge:false, lines:[
+      {pre:'去面试的时候衣服要穿得正式一些，不能太随便，', blank:'这样能给面试者留下一个好的第一印象', post:'。',
+       py:'Qù miànshì de shíhou yīfu yào chuān de zhèngshì yìxiē, bù néng tài suíbiàn, zhèyàng néng gěi miànshìzhě liúxià yí ge hǎo de dì-yī yìnxiàng.',
+       vn:'Khi đi phỏng vấn nên ăn mặc trang trọng một chút, không được quá tuỳ tiện, như vậy mới để lại ấn tượng đầu tiên tốt cho người phỏng vấn.'}]},
+    {num:4, stmt:'他去过很多国家。', judge:true, lines:[
+      {pre:'大学毕业以后，他去了一家公司。公司经常让他去国外，', blank:'短短一年的时间，就去了十几个国家', post:'。同学们都很羡慕他。',
+       py:'Dàxué bìyè yǐhòu, tā qùle yì jiā gōngsī. Gōngsī jīngcháng ràng tā qù guówài, duǎnduǎn yì nián de shíjiān, jiù qùle shí jǐ ge guójiā. Tóngxuémen dōu hěn xiànmù tā.',
+       vn:'Sau khi tốt nghiệp đại học, anh ấy vào một công ty. Công ty thường xuyên cử anh ấy ra nước ngoài, chỉ trong vòng một năm ngắn ngủi đã đi hơn mười nước. Các bạn học đều rất ngưỡng mộ anh ấy.'}]},
+    {num:5, stmt:'马经理告诉大家他很满意。', judge:false, lines:[
+      {pre:'大家现在工作都很努力，虽然马经理没有说，但是大家都明白，', blank:'他对我们最近的工作还是很满意的', post:'。',
+       py:'Dàjiā xiànzài gōngzuò dōu hěn nǔlì, suīrán Mǎ jīnglǐ méiyǒu shuō, dànshì dàjiā dōu míngbai, tā duì wǒmen zuìjìn de gōngzuò háishi hěn mǎnyì de.',
+       vn:'Bây giờ mọi người làm việc đều rất chăm chỉ, tuy giám đốc Mã không nói ra, nhưng ai cũng hiểu, ông ấy vẫn rất hài lòng với công việc gần đây của chúng tôi.'}]}
   ],
-  mc:[
-    {num:6,options:['很紧张','很容易','没有信心'],ans:1,
-     lines:[{speaker:'女',pre:'你今天面试得怎么样？',blank:'',post:'',py:'Nǐ jīntiān miànshì de zěnmeyàng?',vn:'Hôm nay bạn phỏng vấn thế nào?'},
-             {speaker:'男',pre:'还可以，他们问的问题都挺',blank:'容易',post:'的，就是我有点儿紧张。',py:'Hái kěyǐ, tāmen wèn de wèntí dōu tǐng róngyì de, jiùshì wǒ yǒudiǎnr jǐnzhāng.',vn:'Cũng được, những câu hỏi họ hỏi đều khá dễ, chỉ là tôi hơi hồi hộp.'}],
-     explain:'男的说问题"挺容易的"，只是自己有点儿紧张，所以答案是"很容易"。'},
-    {num:7,options:['小李','小林','马经理'],ans:0,
-     lines:[{speaker:'男',pre:'这次招聘不是',blank:'小李',post:'负责吗？',py:'Zhè cì zhāopìn bú shì Xiǎo Lǐ fùzé ma?',vn:'Đợt tuyển dụng này chẳng phải Tiểu Lý phụ trách sao?'},
-             {speaker:'女',pre:'本来是他负责的，但是他生病住院了。',blank:'',post:'',py:'Běnlái shì tā fùzé de, dànshì tā shēng bìng zhù yuàn le.',vn:'Ban đầu là anh ấy phụ trách, nhưng anh ấy bị bệnh nhập viện rồi.'}],
-     explain:'对话明确提到"本来"负责招聘的人是小李，后来生病住院了。'},
-    {num:8,options:['周一上午九点','周二下午三点','周三上午十点'],ans:0,
-     lines:[{speaker:'男',pre:'你通知他们',blank:'下周一上午九点',post:'来我办公室吧。',py:'Nǐ tōngzhī tāmen xià zhōuyī shàngwǔ jiǔ diǎn lái wǒ bàngōngshì ba.',vn:'Bạn báo cho họ sáng thứ Hai tuần sau 9 giờ đến văn phòng tôi nhé.'}],
-     explain:'男的明确说了具体时间：下周一上午九点。'},
-    {num:9,options:['律师','老师','经理'],ans:0,
-     lines:[{speaker:'女',pre:'你现在做什么工作？',blank:'',post:'',py:'Nǐ xiànzài zuò shénme gōngzuò?',vn:'Bạn bây giờ làm công việc gì?'},
-             {speaker:'男',pre:'我一毕业就去上海当',blank:'律师',post:'了。',py:'Wǒ yí bì yè jiù qù Shànghǎi dāng lǜshī le.',vn:'Tôi vừa tốt nghiệp là đi Thượng Hải làm luật sư ngay.'}],
-     explain:'男的说自己"当律师"，所以答案是"律师"。'},
-    {num:10,options:['法律','经济','医学'],ans:0,
-     lines:[{speaker:'男',pre:'我学的就是',blank:'法律',post:'专业。',py:'Wǒ xué de jiùshì fǎlǜ zhuānyè.',vn:'Chuyên ngành tôi học chính là luật.'}],
-     explain:'原文明确提到学的是"法律专业"。'},
-    {num:11,options:['不错','不高','一般'],ans:0,
-     lines:[{speaker:'女',pre:'收入怎么样？',blank:'',post:'',py:'Shōurù zěnmeyàng?',vn:'Thu nhập thế nào?'},
-             {speaker:'男',pre:'另外，收入也',blank:'不错',post:'，同事们都很喜欢我。',py:'Lìngwài, shōurù yě búcuò, tóngshìmen dōu hěn xǐhuan wǒ.',vn:'Ngoài ra, thu nhập cũng không tệ, đồng nghiệp đều rất quý tôi.'}],
-     explain:'男的说"收入也不错"。'},
-    {num:12,options:['穿正式的衣服','带很多钱','带朋友一起去'],ans:0,
-     lines:[{speaker:'女',pre:'首先，要穿',blank:'正式的衣服',post:'，这会给面试者留下一个好的印象。',py:'Shǒuxiān, yào chuān zhèngshì de yīfu, zhè huì gěi miànshìzhě liúxià yí ge hǎo de yìnxiàng.',vn:'Trước hết, phải mặc trang phục lịch sự, điều này sẽ để lại ấn tượng tốt cho người phỏng vấn.'}],
-     explain:'"首先"后面明确说了"要穿正式的衣服"。'},
-    {num:13,options:['不要紧张','要多说话','要迟到'],ans:0,
-     lines:[{speaker:'女',pre:'其次，应聘时',blank:'不要紧张',post:'，要对自己有信心。',py:'Qícì, yìngpìn shí búyào jǐnzhāng, yào duì zìjǐ yǒu xìnxīn.',vn:'Tiếp theo, khi ứng tuyển đừng hồi hộp, phải tự tin vào bản thân.'}],
-     explain:'"其次"后面明确说了"应聘时不要紧张"。'},
-    {num:14,options:['要诚实','要说得多','要说得快'],ans:0,
-     lines:[{speaker:'女',pre:'最重要的是回答问题要',blank:'诚实',post:'，不能说谎。',py:'Zuì zhòngyào de shì huídá wèntí yào chéngshí, bù néng shuōhuǎng.',vn:'Quan trọng nhất là trả lời câu hỏi phải thành thật, không được nói dối.'}],
-     explain:'"最重要的是"后面明确说了"回答问题要诚实"。'},
-    {num:15,options:['感觉和判断','工作和收入','衣服和样子'],ans:0,
-     lines:[{speaker:'男',pre:'第一印象会影响你以后对这个人的',blank:'感觉和判断',post:'。',py:'Dì-yī yìnxiàng huì yǐngxiǎng nǐ yǐhòu duì zhège rén de gǎnjué hé pànduàn.',vn:'Ấn tượng đầu tiên sẽ ảnh hưởng đến cảm nhận và đánh giá của bạn về người này sau này.'}],
-     explain:'原文明确提到影响的是"感觉和判断"。'},
-    {num:16,options:['很难改变','很容易改变','完全不会改变'],ans:0,
-     lines:[{speaker:'男',pre:'虽然第一印象不总是对的，但如果想改变却',blank:'很困难',post:'。',py:'Suīrán dì-yī yìnxiàng bù zǒng shì duì de, dàn rúguǒ xiǎng gǎibiàn què hěn kùnnan.',vn:'Tuy ấn tượng đầu tiên không phải lúc nào cũng đúng, nhưng nếu muốn thay đổi thì lại rất khó.'}],
-     explain:'原文说"想改变却很困难"，即"很难改变"。'},
-    {num:17,options:['卖出更多东西','少卖东西','不影响生意'],ans:0,
-     lines:[{speaker:'男',pre:'给顾客留下好的印象，你可能会',blank:'卖出更多',post:'的东西。',py:'Gěi gùkè liúxià hǎo de yìnxiàng, nǐ kěnéng huì màichū gèng duō de dōngxi.',vn:'Để lại ấn tượng tốt cho khách hàng, bạn có thể sẽ bán được nhiều hàng hơn.'}],
-     explain:'原文说会"卖出更多的东西"。'},
-    {num:18,options:['准时','多说话','穿好衣服'],ans:0,
-     lines:[{speaker:'男',pre:'不管是上课、上班，还是与别人约会，',blank:'准时',post:'都非常重要。',py:'Bùguǎn shì shàng kè, shàng bān, háishi yǔ biéren yuēhuì, zhǔnshí dōu fēicháng zhòngyào.',vn:'Bất kể là đi học, đi làm, hay hẹn gặp người khác, đúng giờ đều rất quan trọng.'}],
-     explain:'原文明确提到最重要的是"准时"。'},
+  mc: [
+    {num:6, options:['明天上午','明天下午','后天上午','后天下午'], ans:2, q:'会议原来准备什么时候开？',
+     lines:[
+       {speaker:'男', pre:'小张，', blank:'原定后天上午的会改在明天下午两点了', post:'，你通知一下其他人。', py:'Xiǎo Zhāng, yuándìng hòutiān shàngwǔ de huì gǎi zài míngtiān xiàwǔ liǎng diǎn le, nǐ tōngzhī yíxià qítā rén.', vn:'Tiểu Trương, cuộc họp vốn định vào sáng ngày kia đổi sang hai giờ chiều mai rồi, cậu thông báo cho mọi người nhé.'},
+       {speaker:'女', pre:'好的，经理，', blank:'我现在就打电话', post:'。', py:'Hǎo de, jīnglǐ, wǒ xiànzài jiù dǎ diànhuà.', vn:'Vâng, giám đốc, tôi gọi điện ngay bây giờ.'}
+     ],
+     explain:'问：会议原来准备什么时候开？ 男的说"原定后天上午的会"→ vốn định họp vào sáng ngày kia (C 后天上午). Chú ý phân biệt thời gian cũ (后天上午) và thời gian mới (明天下午).'},
+    {num:7, options:['买衣服','招聘人','约会','聚会'], ans:1, q:'男的下午要做什么？',
+     lines:[
+       {speaker:'女', pre:'穿得这么正式，', blank:'是不是又有约会', post:'？', py:'Chuān de zhème zhèngshì, shì bu shì yòu yǒu yuēhuì?', vn:'Mặc trang trọng thế này, có phải lại có hẹn hò không?'},
+       {speaker:'男', pre:'不是，', blank:'下午公司要面试几个人', post:'，我去看一下。', py:'Bú shì, xiàwǔ gōngsī yào miànshì jǐ ge rén, wǒ qù kàn yíxià.', vn:'Không phải, chiều nay công ty phỏng vấn mấy người, tôi đi xem một chút.'}
+     ],
+     explain:'问：男的下午要做什么？ "公司要面试几个人，我去看一下" → anh ấy đi phỏng vấn (tuyển) người, đáp án B 招聘人. Không phải 约会 (đó chỉ là suy đoán của cô gái).'},
+    {num:8, options:['长得很帅','不太认真','专业不对','符合要求'], ans:3, q:'女的觉得小王怎么样？',
+     lines:[
+       {speaker:'男', pre:'这件事', blank:'让小王负责怎么样', post:'？', py:'Zhè jiàn shì ràng Xiǎo Wáng fùzé zěnmeyàng?', vn:'Việc này để Tiểu Vương phụ trách thì thế nào?'},
+       {speaker:'女', pre:'我觉得他挺适合的，', blank:'他就是学这个专业的，做事情也很认真', post:'。', py:'Wǒ juéde tā tǐng shìhé de, tā jiù shì xué zhège zhuānyè de, zuò shìqing yě hěn rènzhēn.', vn:'Tôi thấy cậu ấy rất phù hợp, cậu ấy học đúng chuyên ngành này, làm việc cũng rất nghiêm túc.'}
+     ],
+     explain:'问：女的觉得小王怎么样？ "挺适合的…学这个专业…很认真" → phù hợp yêu cầu, đáp án D 符合要求. B và C nói ngược lại với nội dung.'},
+    {num:9, options:['有信心','有能力','很紧张','不诚实'], ans:1, q:'女的觉得第一个小伙子怎么样？',
+     lines:[
+       {speaker:'男', pre:'你感觉', blank:'今天来应聘的两个人怎么样', post:'？', py:'Nǐ gǎnjué jīntiān lái yìngpìn de liǎng ge rén zěnmeyàng?', vn:'Cậu thấy hai người đến ứng tuyển hôm nay thế nào?'},
+       {speaker:'女', pre:'我觉得第一个小伙子不错，', blank:'不但有能力，而且很诚实', post:'。', py:'Wǒ juéde dì-yī ge xiǎohuǒzi búcuò, búdàn yǒu nénglì, érqiě hěn chéngshí.', vn:'Tôi thấy chàng trai đầu tiên khá tốt, không những có năng lực mà còn rất thật thà.'}
+     ],
+     explain:'问：女的觉得第一个小伙子怎么样？ "不但有能力，而且很诚实" → B 有能力. D 不诚实 ngược nghĩa với 很诚实.'},
+    {num:10, options:['时间变了','地方变了','不举行了','马经理不参加了'], ans:1, q:'关于这次会议，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'你', blank:'联系马经理了吗', post:'？', py:'Nǐ liánxì Mǎ jīnglǐ le ma?', vn:'Cậu liên hệ với giám đốc Mã chưa?'},
+       {speaker:'女', pre:'联系过了，', blank:'我已经通知他会议改到办公楼了', post:'。', py:'Liánxìguo le, wǒ yǐjīng tōngzhī tā huìyì gǎidào bàngōnglóu le.', vn:'Liên hệ rồi, tôi đã thông báo với ông ấy cuộc họp đổi sang toà nhà văn phòng rồi.'}
+     ],
+     explain:'问：关于这次会议，可以知道什么？ "会议改到办公楼了" → đổi địa điểm, đáp án B 地方变了. Không nhắc đến thay đổi thời gian.'},
+    {num:11, options:['王律师','方律师','王老师','方老师'], ans:0, q:'男的在找谁？',
+     lines:[
+       {speaker:'男', pre:'如果', blank:'王律师回来', post:'，请你马上通知我。', py:'Rúguǒ Wáng lǜshī huílai, qǐng nǐ mǎshàng tōngzhī wǒ.', vn:'Nếu luật sư Vương quay về, xin hãy báo cho tôi ngay.'},
+       {speaker:'女', pre:'好的，', blank:'他一回来我就跟您联系', post:'。', py:'Hǎo de, tā yì huílai wǒ jiù gēn nín liánxì.', vn:'Vâng, ông ấy vừa về là tôi liên lạc với ngài ngay.'}
+     ],
+     explain:'问：男的在找谁？ "如果王律师回来" → A 王律师. Cần nghe rõ họ 王/方 và chức danh 律师/老师.'},
+    {num:12, options:['能力差','不认真','不诚实','没热情'], ans:1, q:'男的觉得小李怎么样？',
+     lines:[
+       {speaker:'女', pre:'你', blank:'对小李的印象怎么样', post:'？', py:'Nǐ duì Xiǎo Lǐ de yìnxiàng zěnmeyàng?', vn:'Ấn tượng của anh về Tiểu Lý thế nào?'},
+       {speaker:'男', pre:'虽然他能力比较强，工作有热情，', blank:'但是太不认真了', post:'，不适合我们的工作。', py:'Suīrán tā nénglì bǐjiào qiáng, gōngzuò yǒu rèqíng, dànshì tài bú rènzhēn le, bú shìhé wǒmen de gōngzuò.', vn:'Tuy cậu ấy năng lực khá tốt, làm việc nhiệt tình, nhưng quá không nghiêm túc, không phù hợp với công việc của chúng ta.'}
+     ],
+     explain:'问：男的觉得小李怎么样？ Ý chính nằm sau 但是: "太不认真了" → B 不认真. A, D bị phủ định bởi vế 虽然.'},
+    {num:13, options:['还没毕业','不想上班','找到工作了','九月七号上班'], ans:2, q:'关于女的，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'你', blank:'工作找得怎么样了', post:'？', py:'Nǐ gōngzuò zhǎo de zěnmeyàng le?', vn:'Cậu tìm việc thế nào rồi?'},
+       {speaker:'女', pre:'挺好的，', blank:'已经定下来了', post:'。', py:'Tǐng hǎo de, yǐjīng dìng xiàlai le.', vn:'Khá tốt, đã chốt được rồi.'},
+       {speaker:'男', pre:'太好了！', blank:'什么时候正式上班', post:'？', py:'Tài hǎo le! Shénme shíhou zhèngshì shàngbān?', vn:'Tốt quá! Bao giờ chính thức đi làm?'},
+       {speaker:'女', pre:'', blank:'七月九号', post:'。', py:'Qī yuè jiǔ hào.', vn:'Ngày 9 tháng 7.'}
+     ],
+     explain:'问：关于女的，可以知道什么？ "已经定下来了" → đã tìm được việc, đáp án C. D sai vì ngày đi làm là 七月九号, không phải 九月七号.'},
+    {num:14, options:['去约会了','去面试了','去吃饭了','去看病了'], ans:1, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'哥，', blank:'今天面试怎么样', post:'？', py:'Gē, jīntiān miànshì zěnmeyàng?', vn:'Anh ơi, hôm nay phỏng vấn thế nào?'},
+       {speaker:'男', pre:'还行，', blank:'刚开始有点儿紧张', post:'，后来慢慢就好了。', py:'Hái xíng, gāng kāishǐ yǒudiǎnr jǐnzhāng, hòulái mànman jiù hǎo le.', vn:'Cũng ổn, lúc mới bắt đầu hơi căng thẳng, sau đó dần dần ổn hơn.'},
+       {speaker:'女', pre:'我相信', blank:'你一定没问题', post:'。', py:'Wǒ xiāngxìn nǐ yídìng méi wèntí.', vn:'Em tin anh chắc chắn không có vấn đề gì.'},
+       {speaker:'男', pre:'他们说', blank:'下个星期会发邮件通知', post:'。', py:'Tāmen shuō xià ge xīngqī huì fā yóujiàn tōngzhī.', vn:'Họ nói tuần sau sẽ gửi email thông báo.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ Cả đoạn nói về buổi 面试 hôm nay của người anh → B 去面试了.'},
+    {num:15, options:['可爱','漂亮','客气','认真'], ans:3, q:'男的觉得小李的妹妹怎么样？',
+     lines:[
+       {speaker:'男', pre:'小李，我那儿还需要个服务员，', blank:'你有没有好的人选', post:'？', py:'Xiǎo Lǐ, wǒ nàr hái xūyào ge fúwùyuán, nǐ yǒu méiyǒu hǎo de rénxuǎn?', vn:'Tiểu Lý, chỗ tôi còn cần một nhân viên phục vụ, cậu có ứng viên nào tốt không?'},
+       {speaker:'女', pre:'是吗？', blank:'能让我妹妹来试试吗', post:'？', py:'Shì ma? Néng ràng wǒ mèimei lái shìshi ma?', vn:'Vậy à? Có thể để em gái tôi đến thử không?'},
+       {speaker:'男', pre:'当然可以。我见过她，', blank:'很认真', post:'，明天让她来试一下吧。', py:'Dāngrán kěyǐ. Wǒ jiànguo tā, hěn rènzhēn, míngtiān ràng tā lái shì yíxià ba.', vn:'Đương nhiên được. Tôi gặp cô ấy rồi, rất nghiêm túc, mai bảo cô ấy đến thử nhé.'},
+       {speaker:'女', pre:'太好了！', blank:'谢谢您给她这个机会', post:'。', py:'Tài hǎo le! Xièxie nín gěi tā zhège jīhuì.', vn:'Tốt quá! Cảm ơn anh đã cho em ấy cơ hội này.'}
+     ],
+     explain:'问：男的觉得小李的妹妹怎么样？ "我见过她，很认真" → D 认真.'},
+    {num:16, options:['还没准备','准备好了','小张负责','经理负责'], ans:2, q:'关于这次招聘，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'', blank:'这次招聘谁负责', post:'？小张，是你吗？', py:'Zhè cì zhāopìn shéi fùzé? Xiǎo Zhāng, shì nǐ ma?', vn:'Đợt tuyển dụng này ai phụ trách? Tiểu Trương, là cậu à?'},
+       {speaker:'女', pre:'对，是我，经理。', blank:'都准备得差不多了', post:'。', py:'Duì, shì wǒ, jīnglǐ. Dōu zhǔnbèi de chàbuduō le.', vn:'Vâng, là tôi, giám đốc. Đều chuẩn bị gần xong rồi ạ.'},
+       {speaker:'男', pre:'有什么问题，', blank:'你可以来找我', post:'。', py:'Yǒu shénme wèntí, nǐ kěyǐ lái zhǎo wǒ.', vn:'Có vấn đề gì cậu cứ đến tìm tôi.'},
+       {speaker:'女', pre:'', blank:'谢谢您的帮助', post:'。', py:'Xièxie nín de bāngzhù.', vn:'Cảm ơn sự giúp đỡ của ngài.'}
+     ],
+     explain:'问：关于这次招聘，可以知道什么？ "小张，是你吗？— 对，是我" → C 小张负责. "准备得差不多了" nghĩa là gần xong, chưa hẳn 准备好了, nên B không phải đáp án chính xác nhất.'},
+    {num:17, options:['有约会','要去面试','要去招聘会','要参加聚会'], ans:1, q:'女的为什么穿得很正式？',
+     lines:[
+       {speaker:'男', pre:'你今天', blank:'怎么穿得这么正式', post:'？', py:'Nǐ jīntiān zěnme chuān de zhème zhèngshì?', vn:'Hôm nay sao cậu mặc trang trọng thế?'},
+       {speaker:'女', pre:'', blank:'有家银行通知我去面试', post:'，所以就穿成这样了。', py:'Yǒu jiā yínháng tōngzhī wǒ qù miànshì, suǒyǐ jiù chuānchéng zhèyàng le.', vn:'Có một ngân hàng thông báo tôi đi phỏng vấn, nên mới mặc thế này.'},
+       {speaker:'男', pre:'银行挺好的，', blank:'面试时别紧张啊', post:'！', py:'Yínháng tǐng hǎo de, miànshì shí bié jǐnzhāng a!', vn:'Ngân hàng tốt đấy, lúc phỏng vấn đừng căng thẳng nhé!'},
+       {speaker:'女', pre:'', blank:'放心吧', post:'。', py:'Fàngxīn ba.', vn:'Yên tâm đi.'}
+     ],
+     explain:'问：女的为什么穿得很正式？ "有家银行通知我去面试" → B 要去面试.'},
+    {num:18, options:['人不多','变化大','工作机会多','环境不错'], ans:2, q:'男的觉得北京怎么样？',
+     lines:[
+       {speaker:'女', pre:'毕业后', blank:'你打算留在北京', post:'？', py:'Bìyè hòu nǐ dǎsuàn liú zài Běijīng?', vn:'Sau khi tốt nghiệp cậu định ở lại Bắc Kinh à?'},
+       {speaker:'男', pre:'是的，我在这儿上了四年学，', blank:'对这儿比较熟悉', post:'。', py:'Shì de, wǒ zài zhèr shàngle sì nián xué, duì zhèr bǐjiào shúxi.', vn:'Đúng vậy, tôi học ở đây bốn năm rồi, khá quen thuộc nơi này.'},
+       {speaker:'女', pre:'可', blank:'打算留在北京工作的人很多啊', post:'。', py:'Kě dǎsuàn liú zài Běijīng gōngzuò de rén hěn duō a.', vn:'Nhưng người định ở lại Bắc Kinh làm việc nhiều lắm đấy.'},
+       {speaker:'男', pre:'是这样，', blank:'但机会也很多', post:'。', py:'Shì zhèyàng, dàn jīhuì yě hěn duō.', vn:'Đúng thế, nhưng cơ hội cũng rất nhiều.'}
+     ],
+     explain:'问：男的觉得北京怎么样？ "但机会也很多" → C 工作机会多. A sai vì cô gái nói người ở lại rất nhiều.'},
+    {num:19, options:['找人帮忙','马上去做','先想清楚','必须办成'], ans:2, q:'别人让你做的事情太难时，你该怎么办？',
+     lines:[
+       {speaker:'旁白', pre:'努力把事情做到最好，这当然是对的。不过，当别人请你帮忙时，对那些自己很难办成的事情，', blank:'最好还是先想清楚', post:'。', py:'Nǔlì bǎ shìqing zuòdào zuì hǎo, zhè dāngrán shì duì de. Búguò, dāng biérén qǐng nǐ bāngmáng shí, duì nàxiē zìjǐ hěn nán bànchéng de shìqing, zuì hǎo háishi xiān xiǎng qīngchu.', vn:'Cố gắng làm mọi việc tốt nhất, điều đó đương nhiên đúng. Nhưng khi người khác nhờ bạn giúp, với những việc mà bản thân rất khó làm được, tốt nhất vẫn nên nghĩ kỹ trước.'},
+       {speaker:'旁白', pre:'如果最后事情没办成，', blank:'不仅自己会觉得不好意思', post:'，而且别人以后也有可能不再相信你了。', py:'Rúguǒ zuìhòu shìqing méi bànchéng, bùjǐn zìjǐ huì juéde bù hǎoyìsi, érqiě biérén yǐhòu yě yǒu kěnéng bú zài xiāngxìn nǐ le.', vn:'Nếu cuối cùng việc không làm được, không những bản thân thấy ngại, mà người khác sau này cũng có thể không còn tin bạn nữa.'}
+     ],
+     explain:'问：别人让你做的事情太难时，你该怎么办？ "最好还是先想清楚" → C 先想清楚.'},
+    {num:20, options:['要学会说"不"','要努力工作','要帮助朋友','做事情要认真'], ans:0, q:'这段话主要想告诉我们什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）对那些自己很难办成的事情，最好还是先想清楚。如果最后事情没办成，不仅自己会觉得不好意思，', blank:'而且别人以后也有可能不再相信你了', post:'。', py:'(Tóng yí duàn huà) Duì nàxiē zìjǐ hěn nán bànchéng de shìqing, zuì hǎo háishi xiān xiǎng qīngchu. Rúguǒ zuìhòu shìqing méi bànchéng, bùjǐn zìjǐ huì juéde bù hǎoyìsi, érqiě biérén yǐhòu yě yǒu kěnéng bú zài xiāngxìn nǐ le.', vn:'(Cùng đoạn văn) Với những việc bản thân khó làm được, tốt nhất nên nghĩ kỹ trước. Nếu cuối cùng không làm được, không những mình thấy ngại mà người khác sau này cũng có thể không tin bạn nữa.'}
+     ],
+     explain:'问：这段话主要想告诉我们什么？ Ý cả đoạn: việc khó làm không được thì đừng nhận lời bừa → phải biết nói "không", đáp án A.'},
+    {num:21, options:['总是对的','不容易改变','不重要','样子最重要'], ans:1, q:'关于第一印象，可以知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'第一印象本来不一定是对的，', blank:'但改变起来却很困难', post:'。第一印象会影响你以后对这个人的感觉和判断。', py:'Dì-yī yìnxiàng běnlái bù yídìng shì duì de, dàn gǎibiàn qilai què hěn kùnnan. Dì-yī yìnxiàng huì yǐngxiǎng nǐ yǐhòu duì zhège rén de gǎnjué hé pànduàn.', vn:'Ấn tượng đầu tiên vốn không nhất định là đúng, nhưng muốn thay đổi lại rất khó. Ấn tượng đầu tiên sẽ ảnh hưởng đến cảm giác và phán đoán của bạn về người đó sau này.'},
+       {speaker:'旁白', pre:'所以，给第一次见面的同事留下好的印象，以后的工作可能会更好做；', blank:'给第一次见面的顾客留下好的印象', post:'，你可能会卖出更多的东西。', py:'Suǒyǐ, gěi dì-yī cì jiànmiàn de tóngshì liúxià hǎo de yìnxiàng, yǐhòu de gōngzuò kěnéng huì gèng hǎo zuò; gěi dì-yī cì jiànmiàn de gùkè liúxià hǎo de yìnxiàng, nǐ kěnéng huì màichū gèng duō de dōngxi.', vn:'Vì vậy, để lại ấn tượng tốt cho đồng nghiệp lần đầu gặp, công việc sau này có thể dễ làm hơn; để lại ấn tượng tốt cho khách hàng lần đầu gặp, bạn có thể bán được nhiều hàng hơn.'}
+     ],
+     explain:'问：关于第一印象，可以知道什么？ "改变起来却很困难" → B 不容易改变. A sai vì đoạn nói "不一定是对的".'},
+    {num:22, options:['爱情','生活','同事关系','第一印象'], ans:3, q:'这段话主要在说什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'第一印象会影响你以后对这个人的感觉和判断', post:'。所以，给第一次见面的同事、顾客留下好的印象很重要。', py:'(Tóng yí duàn huà) Dì-yī yìnxiàng huì yǐngxiǎng nǐ yǐhòu duì zhège rén de gǎnjué hé pànduàn. Suǒyǐ, gěi dì-yī cì jiànmiàn de tóngshì, gùkè liúxià hǎo de yìnxiàng hěn zhòngyào.', vn:'(Cùng đoạn văn) Ấn tượng đầu tiên sẽ ảnh hưởng đến cảm giác và phán đoán của bạn về người đó sau này. Vì vậy, để lại ấn tượng tốt cho đồng nghiệp, khách hàng lần đầu gặp rất quan trọng.'}
+     ],
+     explain:'问：这段话主要在说什么？ Cả đoạn xoay quanh 第一印象 → D. 同事关系 chỉ là một ví dụ trong đoạn.'}
   ]
 };

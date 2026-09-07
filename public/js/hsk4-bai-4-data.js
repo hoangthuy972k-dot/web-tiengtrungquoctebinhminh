@@ -894,58 +894,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-4/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-4/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-4/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'我以为新工作比以前的好，没想到还没有',blank:'以前',post:'好呢。',py:'Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.',vn:'Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.'}]},
-    {num:2,lines:[{pre:'完全',blank:'适应',post:'一个新的工作需要一年时间。',py:'Wánquán shìyìng yí ge xīn de gōngzuò xūyào yì nián shíjiān.',vn:'Hoàn toàn thích nghi với một công việc mới cần một năm thời gian.'}]},
-    {num:3,lines:[{pre:'按原来的计划应该是两周，但是我们可以',blank:'提前',post:'完成。',py:'Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.',vn:'Theo kế hoạch ban đầu nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn.'}]},
-    {num:4,lines:[{pre:'我原来以为做生意很简单，后来才发现其实',blank:'并',post:'不容易。',py:'Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.',vn:'Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.'}]},
-    {num:5,lines:[{pre:'一个人即使能力再高，如果对工作没有',blank:'责任心',post:'，也很难把工作做好。',py:'Yí ge rén jíshǐ nénglì zài gāo, rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.',vn:'Một người dù năng lực có cao đến đâu, nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.'}]},
+  dictation: [
+    {num:1, stmt:'小张的计划书写得很好。', judge:true, lines:[
+      {pre:'小张，', blank:'你这份计划书写得不错', post:'，就按照这个计划去做调查吧。',
+       py:'Xiǎo Zhāng, nǐ zhè fèn jìhuàshū xiě de búcuò, jiù ànzhào zhège jìhuà qù zuò diàochá ba.',
+       vn:'Tiểu Trương, bản kế hoạch này cậu viết khá tốt, cứ theo kế hoạch này mà đi làm khảo sát nhé.'}]},
+    {num:2, stmt:'他们今天不用加班。', judge:false, lines:[
+      {pre:'小李，你把这些材料发给大家，', blank:'再通知一下大家今天晚上要加班', post:'。',
+       py:'Xiǎo Lǐ, nǐ bǎ zhèxiē cáiliào fā gěi dàjiā, zài tōngzhī yíxià dàjiā jīntiān wǎnshang yào jiābān.',
+       vn:'Tiểu Lý, cậu phát những tài liệu này cho mọi người, rồi thông báo với mọi người tối nay phải tăng ca.'}]},
+    {num:3, stmt:'李经理不在上海。', judge:false, lines:[
+      {pre:'', blank:'李经理这两天去上海了', post:'，现在不在公司。您如果有什么着急的事情找他，可以打他的手机。',
+       py:'Lǐ jīnglǐ zhè liǎng tiān qù Shànghǎi le, xiànzài bú zài gōngsī. Nín rúguǒ yǒu shénme zháojí de shìqing zhǎo tā, kěyǐ dǎ tā de shǒujī.',
+       vn:'Giám đốc Lý mấy hôm nay đi Thượng Hải rồi, hiện không có ở công ty. Nếu ngài có việc gấp cần tìm ông ấy, có thể gọi vào di động.'}]},
+    {num:4, stmt:'经理明天去火车站接人。', judge:false, lines:[
+      {pre:'经理，我查了一下明天去北京的火车，', blank:'晚上六点二十的还有票，八点到', post:'。时间还不是太紧张，您觉得怎么样？',
+       py:'Jīnglǐ, wǒ chále yíxià míngtiān qù Běijīng de huǒchē, wǎnshang liù diǎn èrshí de hái yǒu piào, bā diǎn dào. Shíjiān hái bú shì tài jǐnzhāng, nín juéde zěnmeyàng?',
+       vn:'Giám đốc, tôi đã tra tàu đi Bắc Kinh ngày mai, chuyến sáu giờ hai mươi tối vẫn còn vé, tám giờ đến nơi. Thời gian cũng không quá gấp, ngài thấy thế nào?'}]},
+    {num:5, stmt:'现在是十点一刻。', judge:true, lines:[
+      {pre:'大家请注意，现在休息十五分钟，', blank:'十点半大家一起照相', post:'。我们为大家准备了饮料和蛋糕，就在门口的桌子上。',
+       py:'Dàjiā qǐng zhùyì, xiànzài xiūxi shíwǔ fēnzhōng, shí diǎn bàn dàjiā yìqǐ zhàoxiàng. Wǒmen wèi dàjiā zhǔnbèile yǐnliào hé dàngāo, jiù zài ménkǒu de zhuōzi shang.',
+       vn:'Mọi người chú ý, bây giờ nghỉ mười lăm phút, mười giờ rưỡi mọi người cùng chụp ảnh. Chúng tôi đã chuẩn bị đồ uống và bánh ngọt cho mọi người, ở ngay trên bàn cạnh cửa.'}]}
   ],
-  mc:[
-    {num:6,options:['一次','两次','三次'],ans:2,
-     lines:[{speaker:'男',pre:'听说你又换工作了？今年已经换了',blank:'三次',post:'工作了吧？',py:'Tīngshuō nǐ yòu huàn gōngzuò le? Jīnnián yǐjīng huànle sān cì gōngzuò le ba?',vn:'Nghe nói bạn lại đổi việc rồi? Năm nay đã đổi ba lần việc rồi phải không?'}],
-     explain:'原文明确提到"今年已经换了三次工作了"。'},
-    {num:7,options:['两个月','两周','两年'],ans:0,
-     lines:[{speaker:'女',pre:'上次那份工作你只做了',blank:'两个月',post:'就离开了。',py:'Shàng cì nà fèn gōngzuò nǐ zhǐ zuòle liǎng ge yuè jiù líkāi le.',vn:'Công việc lần trước bạn chỉ làm được hai tháng đã nghỉ rồi.'}],
-     explain:'原文明确说"只做了两个月就离开了"。'},
-    {num:8,options:['收入太少','太累','离家太远'],ans:0,
-     lines:[{speaker:'男',pre:'但是那份工作的',blank:'收入太少',post:'了！',py:'Dànshì nà fèn gōngzuò de shōurù tài shǎo le!',vn:'Nhưng thu nhập công việc đó quá ít!'}],
-     explain:'原文说"那份工作的收入太少了"。'},
-    {num:9,options:['两周','三周','一个月'],ans:0,
-     lines:[{speaker:'女',pre:'按原来的计划应该是',blank:'两周',post:'。',py:'Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu.',vn:'Theo kế hoạch ban đầu nên là hai tuần.'}],
-     explain:'原文明确提到"按原来的计划应该是两周"。'},
-    {num:10,options:['把计划写在笔记本上','多请假','换工作'],ans:0,
-     lines:[{speaker:'男',pre:'每天早上我都把当天计划要做的事情',blank:'写在笔记本上',post:'，提醒自己安排好时间。',py:'Měitiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà yào zuò de shìqing xiě zài bǐjìběn shang, tíxǐng zìjǐ ānpái hǎo shíjiān.',vn:'Mỗi sáng tôi đều viết những việc dự định làm trong ngày vào sổ tay, nhắc nhở bản thân sắp xếp thời gian tốt.'}],
-     explain:'原文明确说"把当天计划要做的事情写在笔记本上"。'},
-    {num:11,options:['谈成了生意','换了工作','生病了'],ans:0,
-     lines:[{speaker:'女',pre:'我们和上次那个公司的生意终于',blank:'谈成',post:'了。',py:'Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.',vn:'Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.'}],
-     explain:'原文明确说"生意终于谈成了"。'},
-    {num:12,options:['很简单','很难','没意思'],ans:0,
-     lines:[{speaker:'男',pre:'我原来以为做生意很',blank:'简单',post:'，后来才发现其实并不容易。',py:'Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.',vn:'Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.'}],
-     explain:'原文说"原来以为做生意很简单"。'},
-    {num:13,options:['按照计划完成了','没有完成','提前一个月完成'],ans:0,
-     lines:[{speaker:'女',pre:'我们今年的工作都已经',blank:'按照计划',post:'完成了。',py:'Wǒmen jīnnián de gōngzuò dōu yǐjīng ànzhào jìhuà wánchéng le.',vn:'Công việc năm nay của chúng tôi đều đã hoàn thành theo kế hoạch.'}],
-     explain:'原文明确说"都已经按照计划完成了"。'},
-    {num:14,options:['三千元','两千元','五千元'],ans:0,
-     lines:[{speaker:'男',pre:'公司决定这个月给每人多发',blank:'三千元',post:'奖金。',py:'Gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.',vn:'Công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.'}],
-     explain:'原文明确说"多发三千元奖金"。'},
-    {num:15,options:['丰富工作经验','多赚钱','少工作'],ans:0,
-     lines:[{speaker:'女',pre:'在工作的前几年，重要的是',blank:'丰富自己的工作经验',post:'。',py:'Zài gōngzuò de qián jǐ nián, zhòngyào de shì fēngfù zìjǐ de gōngzuò jīngyàn.',vn:'Trong mấy năm đầu đi làm, quan trọng là làm phong phú kinh nghiệm làm việc của bản thân.'}],
-     explain:'原文明确说"重要的是丰富自己的工作经验"。'},
-    {num:16,options:['责任心','工资高','聪明'],ans:0,
-     lines:[{speaker:'男',pre:'这时，我们最需要的就是对工作的',blank:'责任心',post:'。',py:'Zhè shí, wǒmen zuì xūyào de jiùshì duì gōngzuò de zérènxīn.',vn:'Lúc này, điều chúng ta cần nhất chính là trách nhiệm với công việc.'}],
-     explain:'原文明确说"最需要的就是对工作的责任心"。'},
-    {num:17,options:['很难把工作做好','没有关系','会被开除'],ans:0,
-     lines:[{speaker:'女',pre:'如果对工作没有责任心，也',blank:'很难把工作做好',post:'。',py:'Rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.',vn:'Nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.'}],
-     explain:'原文明确说"也很难把工作做好"。'},
-    {num:18,options:['王红','马经理','王经理'],ans:0,
-     lines:[{speaker:'男',pre:'今天是',blank:'王红',post:'的生日，记得给她打个电话。',py:'Jīntiān shì Wáng Hóng de shēngrì, jìde gěi tā dǎ ge diànhuà.',vn:'Hôm nay là sinh nhật Vương Hồng, nhớ gọi điện cho cô ấy.'}],
-     explain:'原文明确提到是"王红的生日"。'},
+  mc: [
+    {num:6, options:['很聪明','有经验','太紧张','爱锻炼'], ans:0, q:'女的觉得那个小伙子怎么样？',
+     lines:[
+       {speaker:'男', pre:'你对', blank:'新来的那个小伙子', post:'印象怎么样？', py:'Nǐ duì xīn lái de nàge xiǎohuǒzi yìnxiàng zěnmeyàng?', vn:'Ấn tượng của chị về chàng trai mới đến thế nào?'},
+       {speaker:'女', pre:'不错，', blank:'人挺聪明，学东西也快', post:'，就是没什么经验，还需要多锻炼锻炼。', py:'Búcuò, rén tǐng cōngming, xué dōngxi yě kuài, jiù shì méi shénme jīngyàn, hái xūyào duō duànliàn duànliàn.', vn:'Khá tốt, người rất thông minh, học việc cũng nhanh, chỉ là chưa có kinh nghiệm, còn cần rèn luyện thêm.'}
+     ],
+     explain:'问：女的觉得那个小伙子怎么样？ "人挺聪明" → A 很聪明. B sai vì "没什么经验"; 锻炼 ở đây là rèn luyện trong công việc, không phải thể thao.'},
+    {num:7, options:['写得很好','还没写完','都写对了','需要改改'], ans:3, q:'关于计划书，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'小李，计划书我看了，', blank:'有几个地方需要改改', post:'，我写在上面了。', py:'Xiǎo Lǐ, jìhuàshū wǒ kàn le, yǒu jǐ ge dìfang xūyào gǎigai, wǒ xiě zài shàngmian le.', vn:'Tiểu Lý, bản kế hoạch tôi xem rồi, có vài chỗ cần sửa, tôi đã ghi lên trên đó.'},
+       {speaker:'女', pre:'我认真看了，您提醒得对，', blank:'我马上改', post:'。', py:'Wǒ rènzhēn kàn le, nín tíxǐng de duì, wǒ mǎshàng gǎi.', vn:'Tôi đã xem kỹ rồi, anh nhắc đúng, tôi sửa ngay.'}
+     ],
+     explain:'问：关于计划书，可以知道什么？ "有几个地方需要改改" → D 需要改改.'},
+    {num:8, options:['应聘','招聘','约会','上课'], ans:0, q:'女的最可能在做什么？',
+     lines:[
+       {speaker:'男', pre:'能谈谈', blank:'你为什么会选择这份工作', post:'吗？', py:'Néng tántan nǐ wèishénme huì xuǎnzé zhè fèn gōngzuò ma?', vn:'Có thể nói một chút vì sao bạn chọn công việc này không?'},
+       {speaker:'女', pre:'首先，我对这份工作很感兴趣，其次，', blank:'我学的也是这个专业', post:'，比较熟悉。', py:'Shǒuxiān, wǒ duì zhè fèn gōngzuò hěn gǎn xìngqù, qícì, wǒ xué de yě shì zhège zhuānyè, bǐjiào shúxi.', vn:'Trước hết, tôi rất hứng thú với công việc này, sau nữa, tôi học đúng chuyên ngành này nên khá quen thuộc.'}
+     ],
+     explain:'问：女的最可能在做什么？ Người hỏi "为什么选择这份工作", người nữ trả lời như khi phỏng vấn → cô ấy đang 应聘 (ứng tuyển), đáp án A. B 招聘 là phía tuyển người (người nam).'},
+    {num:9, options:['不开了','没通知','提前了','改地方了'], ans:2, q:'关于会议，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'小马，', blank:'今天下午的会议提前一个小时', post:'，改在两点开。', py:'Xiǎo Mǎ, jīntiān xiàwǔ de huìyì tíqián yí ge xiǎoshí, gǎi zài liǎng diǎn kāi.', vn:'Tiểu Mã, cuộc họp chiều nay sớm lên một tiếng, đổi sang hai giờ họp.'},
+       {speaker:'男', pre:'', blank:'我已经看到通知了', post:'，谢谢你。', py:'Wǒ yǐjīng kàndào tōngzhī le, xièxie nǐ.', vn:'Tôi đã xem thông báo rồi, cảm ơn cậu.'}
+     ],
+     explain:'问：关于会议，可以知道什么？ "提前一个小时" → C 提前了. B sai vì đã có thông báo.'},
+    {num:10, options:['经理','小李','女的','小丽'], ans:1, q:'谁的经验少？',
+     lines:[
+       {speaker:'女', pre:'经理，', blank:'我想把这个工作交给小李', post:'，您看怎么样？', py:'Jīnglǐ, wǒ xiǎng bǎ zhège gōngzuò jiāo gěi Xiǎo Lǐ, nín kàn zěnmeyàng?', vn:'Giám đốc, tôi muốn giao công việc này cho Tiểu Lý, ngài thấy thế nào?'},
+       {speaker:'男', pre:'他有能力也有责任心，', blank:'虽然经验不多', post:'，但可以让他试试。', py:'Tā yǒu nénglì yě yǒu zérènxīn, suīrán jīngyàn bù duō, dàn kěyǐ ràng tā shìshi.', vn:'Cậu ấy có năng lực, có trách nhiệm, tuy kinh nghiệm không nhiều nhưng có thể để cậu ấy thử.'}
+     ],
+     explain:'问：谁的经验少？ Người nam nói về 小李: "虽然经验不多" → B 小李.'},
+    {num:11, options:['买汽车了','当经理了','生意谈成了','要结婚了'], ans:2, q:'男的为什么高兴？',
+     lines:[
+       {speaker:'女', pre:'', blank:'什么事让你这么高兴', post:'啊？', py:'Shénme shì ràng nǐ zhème gāoxìng a?', vn:'Chuyện gì khiến anh vui thế?'},
+       {speaker:'男', pre:'我们和上次那个汽车公司的', blank:'生意终于谈成了', post:'。', py:'Wǒmen hé shàng cì nàge qìchē gōngsī de shēngyi zhōngyú tánchéng le.', vn:'Vụ làm ăn với công ty ô tô lần trước cuối cùng đã đàm phán thành công rồi.'}
+     ],
+     explain:'问：男的为什么高兴？ "生意终于谈成了" → C. Chú ý 汽车公司 chỉ là đối tác, không phải mua xe (A).'},
+    {num:12, options:['工资少','想多陪孩子','没有奖金','和同事关系不好'], ans:1, q:'女的为什么想换工作？',
+     lines:[
+       {speaker:'男', pre:'你怎么又想换工作了？', blank:'这儿的收入不是挺高的吗', post:'？', py:'Nǐ zěnme yòu xiǎng huàn gōngzuò le? Zhèr de shōurù bú shì tǐng gāo de ma?', vn:'Sao cậu lại muốn đổi việc nữa? Thu nhập ở đây chẳng phải khá cao sao?'},
+       {speaker:'女', pre:'可是经常要加班，', blank:'我几乎没时间陪孩子', post:'。', py:'Kěshì jīngcháng yào jiābān, wǒ jīhū méi shíjiān péi háizi.', vn:'Nhưng thường xuyên phải tăng ca, tôi hầu như không có thời gian ở bên con.'}
+     ],
+     explain:'问：女的为什么想换工作？ "几乎没时间陪孩子" → B 想多陪孩子. A sai vì thu nhập "挺高的".'},
+    {num:13, options:['身体有问题','生意没谈成','事情很顺利','男的很高兴'], ans:1, q:'根据对话，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'', blank:'今天的生意谈成了吗', post:'？', py:'Jīntiān de shēngyi tánchéng le ma?', vn:'Vụ làm ăn hôm nay đàm phán xong chưa?'},
+       {speaker:'男', pre:'没有，', blank:'出了点儿问题', post:'。', py:'Méiyǒu, chūle diǎnr wèntí.', vn:'Chưa, có chút vấn đề.'},
+       {speaker:'女', pre:'', blank:'怎么回事', post:'？', py:'Zěnme huí shì?', vn:'Chuyện gì vậy?'},
+       {speaker:'男', pre:'遇到些困难，', blank:'事情变得比较麻烦', post:'，我回去再跟你说。', py:'Yùdào xiē kùnnan, shìqing biàn de bǐjiào máfan, wǒ huíqu zài gēn nǐ shuō.', vn:'Gặp một số khó khăn, mọi việc trở nên khá rắc rối, về rồi anh kể sau.'}
+     ],
+     explain:'问：根据对话，下列哪个正确？ "没有（谈成），出了点儿问题" → B 生意没谈成.'},
+    {num:14, options:['太累','收入高','能积累经验','会影响学习'], ans:2, q:'男的对一边学习一边工作怎么看？',
+     lines:[
+       {speaker:'女', pre:'听说你', blank:'大学三年级的时候就开始给电脑公司做事了', post:'。', py:'Tīngshuō nǐ dàxué sān niánjí de shíhou jiù kāishǐ gěi diànnǎo gōngsī zuòshì le.', vn:'Nghe nói từ năm ba đại học cậu đã bắt đầu làm cho công ty máy tính rồi.'},
+       {speaker:'男', pre:'是的，', blank:'这让我积累了不少工作经验', post:'。', py:'Shì de, zhè ràng wǒ jīlěile bù shǎo gōngzuò jīngyàn.', vn:'Đúng vậy, điều đó giúp tôi tích luỹ được không ít kinh nghiệm làm việc.'},
+       {speaker:'女', pre:'这样做', blank:'不会影响你的学习吗', post:'？', py:'Zhèyàng zuò bú huì yǐngxiǎng nǐ de xuéxí ma?', vn:'Làm vậy không ảnh hưởng đến việc học của cậu à?'},
+       {speaker:'男', pre:'我认为不会，', blank:'工作能让我更好地理解书本上的知识', post:'。', py:'Wǒ rènwéi bú huì, gōngzuò néng ràng wǒ gèng hǎo de lǐjiě shūběn shang de zhīshi.', vn:'Tôi cho là không, công việc giúp tôi hiểu tốt hơn kiến thức trong sách vở.'}
+     ],
+     explain:'问：男的对一边学习一边工作怎么看？ "积累了不少工作经验" và "不会（影响学习）" → C 能积累经验.'},
+    {num:15, options:['不难','时间短','不太顺利','不太正式'], ans:2, q:'女的觉得面试怎么样？',
+     lines:[
+       {speaker:'男', pre:'下午的面试怎么样？', blank:'顺利吗', post:'？', py:'Xiàwǔ de miànshì zěnmeyàng? Shùnlì ma?', vn:'Buổi phỏng vấn chiều nay thế nào? Thuận lợi không?'},
+       {speaker:'女', pre:'我以为挺简单，所以准备得不够，', blank:'谁知道问了很多问题', post:'，我说话时特别紧张。', py:'Wǒ yǐwéi tǐng jiǎndān, suǒyǐ zhǔnbèi de bú gòu, shéi zhīdào wènle hěn duō wèntí, wǒ shuōhuà shí tèbié jǐnzhāng.', vn:'Tôi tưởng khá đơn giản nên chuẩn bị không đủ, ai ngờ họ hỏi rất nhiều, lúc nói tôi cực kỳ căng thẳng.'},
+       {speaker:'男', pre:'他们', blank:'什么时候给你通知', post:'？', py:'Tāmen shénme shíhou gěi nǐ tōngzhī?', vn:'Bao giờ họ thông báo cho cậu?'},
+       {speaker:'女', pre:'明天或者后天吧，', blank:'他们会打电话通知', post:'。', py:'Míngtiān huòzhě hòutiān ba, tāmen huì dǎ diànhuà tōngzhī.', vn:'Mai hoặc ngày kia, họ sẽ gọi điện thông báo.'}
+     ],
+     explain:'问：女的觉得面试怎么样？ "准备得不够…问了很多问题…特别紧张" → không thuận lợi, đáp án C 不太顺利. A sai vì "以为挺简单" chỉ là tưởng lúc đầu.'},
+    {num:16, options:['开会','看手机','打电话','看电视'], ans:0, q:'李经理正在做什么？',
+     lines:[
+       {speaker:'女', pre:'', blank:'谁的手机', post:'啊？', py:'Shéi de shǒujī a?', vn:'Điện thoại của ai vậy?'},
+       {speaker:'男', pre:'是李经理的，', blank:'他在会议室开会呢', post:'。', py:'Shì Lǐ jīnglǐ de, tā zài huìyìshì kāihuì ne.', vn:'Của giám đốc Lý, ông ấy đang họp trong phòng họp.'},
+       {speaker:'女', pre:'你把手机给他拿过去吧，', blank:'可能谁有什么急事要联系他', post:'。', py:'Nǐ bǎ shǒujī gěi tā náguoqu ba, kěnéng shéi yǒu shénme jíshì yào liánxì tā.', vn:'Cậu mang điện thoại sang cho ông ấy đi, có thể ai đó có việc gấp cần liên lạc.'},
+       {speaker:'男', pre:'好的，', blank:'我现在就去', post:'。', py:'Hǎo de, wǒ xiànzài jiù qù.', vn:'Được, tôi đi ngay.'}
+     ],
+     explain:'问：李经理正在做什么？ "他在会议室开会呢" → A 开会.'},
+    {num:17, options:['搬走了','生意不好','牛奶不好','不提供牛奶了'], ans:3, q:'以前的奶牛场怎么了？',
+     lines:[
+       {speaker:'男', pre:'你那儿', blank:'最近有什么好消息没', post:'？', py:'Nǐ nàr zuìjìn yǒu shénme hǎo xiāoxi méi?', vn:'Chỗ cậu dạo này có tin gì tốt không?'},
+       {speaker:'女', pre:'好消息和坏消息各有一个，', blank:'你先听哪个', post:'？', py:'Hǎo xiāoxi hé huài xiāoxi gè yǒu yí ge, nǐ xiān tīng nǎge?', vn:'Tin tốt và tin xấu mỗi loại một cái, anh muốn nghe cái nào trước?'},
+       {speaker:'男', pre:'那你', blank:'先说坏消息是什么', post:'。', py:'Nà nǐ xiān shuō huài xiāoxi shì shénme.', vn:'Vậy cậu nói tin xấu trước đi.'},
+       {speaker:'女', pre:'以前那家奶牛场', blank:'不向我们提供牛奶了', post:'。好消息是我们又联系上了另一家奶牛场。', py:'Yǐqián nà jiā nǎiniúchǎng bú xiàng wǒmen tígōng niúnǎi le. Hǎo xiāoxi shì wǒmen yòu liánxì shàngle lìng yì jiā nǎiniúchǎng.', vn:'Trang trại bò sữa trước đây không cung cấp sữa cho chúng ta nữa. Tin tốt là chúng ta lại liên hệ được một trang trại khác.'}
+     ],
+     explain:'问：以前的奶牛场怎么了？ "不向我们提供牛奶了" → D 不提供牛奶了.'},
+    {num:18, options:['做生意很简单','别做生意了','多积累经验','做生意太辛苦了'], ans:2, q:'女的是什么意思？',
+     lines:[
+       {speaker:'女', pre:'听说', blank:'你现在在做生意', post:'，怎么样？', py:'Tīngshuō nǐ xiànzài zài zuò shēngyi, zěnmeyàng?', vn:'Nghe nói giờ anh đang kinh doanh, thế nào rồi?'},
+       {speaker:'男', pre:'我本来以为很简单，', blank:'做起来才发现并不容易', post:'，很辛苦。', py:'Wǒ běnlái yǐwéi hěn jiǎndān, zuò qilai cái fāxiàn bìng bù róngyì, hěn xīnkǔ.', vn:'Tôi vốn tưởng đơn giản, làm rồi mới thấy chẳng dễ chút nào, rất vất vả.'},
+       {speaker:'女', pre:'万事开头难，慢慢来，', blank:'重要的是要多积累经验', post:'。', py:'Wànshì kāitóu nán, mànman lái, zhòngyào de shì yào duō jīlěi jīngyàn.', vn:'Vạn sự khởi đầu nan, từ từ thôi, quan trọng là phải tích luỹ nhiều kinh nghiệm.'},
+       {speaker:'男', pre:'是，', blank:'我也是这样想的', post:'。', py:'Shì, wǒ yě shì zhèyàng xiǎng de.', vn:'Ừ, tôi cũng nghĩ vậy.'}
+     ],
+     explain:'问：女的是什么意思？ "重要的是要多积累经验" → C 多积累经验.'},
+    {num:19, options:['工资多少','自己的缺点','自己的水平','自己想干什么'], ans:3, q:'大学生找工作先要知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'大学生毕业前找工作时，', blank:'首先要知道自己想干什么', post:'；其次还要知道自己能干什么，这样才能找到一个适合自己的工作。', py:'Dàxuéshēng bìyè qián zhǎo gōngzuò shí, shǒuxiān yào zhīdào zìjǐ xiǎng gàn shénme; qícì hái yào zhīdào zìjǐ néng gàn shénme, zhèyàng cái néng zhǎodào yí ge shìhé zìjǐ de gōngzuò.', vn:'Sinh viên đại học khi tìm việc trước lúc tốt nghiệp, trước hết phải biết mình muốn làm gì; sau đó còn phải biết mình có thể làm gì, như vậy mới tìm được công việc phù hợp.'},
+       {speaker:'旁白', pre:'另外，不要只看工资，', blank:'还要注意多积累工作经验', post:'。', py:'Lìngwài, bú yào zhǐ kàn gōngzī, hái yào zhùyì duō jīlěi gōngzuò jīngyàn.', vn:'Ngoài ra, đừng chỉ nhìn vào lương, còn phải chú ý tích luỹ nhiều kinh nghiệm làm việc.'}
+     ],
+     explain:'问：大学生找工作先要知道什么？ "首先要知道自己想干什么" → D.'},
+    {num:20, options:['赚多少钱','上班时间','积累经验','公司大小'], ans:2, q:'这段话建议大学生找工作要注意什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）另外，', blank:'不要只看工资，还要注意多积累工作经验', post:'。', py:'(Tóng yí duàn huà) Lìngwài, bú yào zhǐ kàn gōngzī, hái yào zhùyì duō jīlěi gōngzuò jīngyàn.', vn:'(Cùng đoạn văn) Ngoài ra, đừng chỉ nhìn vào lương, còn phải chú ý tích luỹ nhiều kinh nghiệm làm việc.'}
+     ],
+     explain:'问：这段话建议大学生找工作要注意什么？ "注意多积累工作经验" → C 积累经验. A sai vì đoạn khuyên "不要只看工资".'},
+    {num:21, options:['想当医生','经验不够','专业是法律','没有信心'], ans:2, q:'关于说话人，下列哪个正确？',
+     lines:[
+       {speaker:'旁白', pre:'首先，律师是我最喜欢的工作，', blank:'我从小就想当一名律师', post:'；其次，我大学和研究生学的都是法律专业，符合招聘的要求；', py:'Shǒuxiān, lǜshī shì wǒ zuì xǐhuan de gōngzuò, wǒ cóngxiǎo jiù xiǎng dāng yì míng lǜshī; qícì, wǒ dàxué hé yánjiūshēng xué de dōu shì fǎlǜ zhuānyè, fúhé zhāopìn de yāoqiú;', vn:'Trước hết, luật sư là công việc tôi thích nhất, từ nhỏ tôi đã muốn làm luật sư; thứ hai, đại học và cao học tôi đều học chuyên ngành luật, phù hợp yêu cầu tuyển dụng;'},
+       {speaker:'旁白', pre:'第三，', blank:'我有丰富的工作经验', post:'，而且做事认真，比较有责任心。所以，我觉得我完全有能力做好这份工作，希望您可以给我一个机会，谢谢。', py:'dì-sān, wǒ yǒu fēngfù de gōngzuò jīngyàn, érqiě zuòshì rènzhēn, bǐjiào yǒu zérènxīn. Suǒyǐ, wǒ juéde wǒ wánquán yǒu nénglì zuòhǎo zhè fèn gōngzuò, xīwàng nín kěyǐ gěi wǒ yí ge jīhuì, xièxie.', vn:'thứ ba, tôi có kinh nghiệm làm việc phong phú, hơn nữa làm việc nghiêm túc, khá có trách nhiệm. Vì vậy tôi thấy mình hoàn toàn có khả năng làm tốt công việc này, mong ngài cho tôi một cơ hội, xin cảm ơn.'}
+     ],
+     explain:'问：关于说话人，下列哪个正确？ "大学和研究生学的都是法律专业" → C. A sai (muốn làm luật sư), B sai (kinh nghiệm phong phú), D sai (rất tự tin).'},
+    {num:22, options:['参加面试','跟朋友聊天儿','约会','面试别人'], ans:0, q:'说话人最可能在做什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）所以，我觉得我完全有能力做好这份工作，', blank:'希望您可以给我一个机会', post:'，谢谢。', py:'(Tóng yí duàn huà) Suǒyǐ, wǒ juéde wǒ wánquán yǒu nénglì zuòhǎo zhè fèn gōngzuò, xīwàng nín kěyǐ gěi wǒ yí ge jīhuì, xièxie.', vn:'(Cùng đoạn văn) Vì vậy tôi thấy mình hoàn toàn có khả năng làm tốt công việc này, mong ngài cho tôi một cơ hội, xin cảm ơn.'}
+     ],
+     explain:'问：说话人最可能在做什么？ Người nói tự giới thiệu lý do chọn nghề, chuyên ngành, kinh nghiệm và xin "给我一个机会" → đang 参加面试 (A).'}
   ]
 };

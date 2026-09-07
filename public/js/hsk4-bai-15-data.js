@@ -819,49 +819,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-15/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-15/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-15/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'那个',blank:'一边弹钢琴一边唱歌',post:'的男孩子是谁？',py:'Nàge yìbiān tán gāngqín yìbiān chàng gē de nán háizi shì shéi?',vn:'Cậu bé vừa chơi piano vừa hát kia là ai?'}]},
-    {num:2,lines:[{pre:'父母是孩子',blank:'最重要的老师',post:'。',py:'Fùmǔ shì háizi zuì zhòngyào de lǎoshī.',vn:'Cha mẹ là người thầy quan trọng nhất của con.'}]},
-    {num:3,lines:[{pre:'你应该让孩子',blank:'学会管理时间',post:'。',py:'Nǐ yīnggāi ràng háizi xuéhuì guǎnlǐ shíjiān.',vn:'Bạn nên để con học cách quản lý thời gian.'}]},
-    {num:4,lines:[{pre:'表扬',blank:'千万不要太多',post:'，过多的表扬可能会给孩子带来压力。',py:'Biǎoyáng qiānwàn búyào tài duō, guò duō de biǎoyáng kěnéng huì gěi háizi dàilái yālì.',vn:'Khen tuyệt đối đừng quá nhiều, khen quá nhiều có thể gây áp lực cho trẻ.'}]},
-    {num:5,lines:[{pre:'七岁左右的儿童',blank:'普遍好动',post:'，坐不住。',py:'Qī suì zuǒyòu de értóng pǔbiàn hào dòng, zuòbuzhù.',vn:'Trẻ khoảng bảy tuổi thường hiếu động, không ngồi yên.'}]},
+  dictation: [
+    {num:1, stmt:'他做事比过去仔细了。', judge:true, lines:[
+      {pre:'经历过那次失败后，他改变了许多，', blank:'不再像以前那么粗心了', post:'，大家都说他现在做事仔细多了。',
+       py:'Jīnglìguo nà cì shībài hòu, tā gǎibiànle xǔduō, bú zài xiàng yǐqián nàme cūxīn le, dàjiā dōu shuō tā xiànzài zuòshì zǐxì duō le.',
+       vn:'Sau lần thất bại đó, anh ấy thay đổi nhiều, không còn cẩu thả như trước nữa, mọi người đều nói giờ anh ấy làm việc cẩn thận hơn nhiều.'}]},
+    {num:2, stmt:'沙发上的袜子是旧的。', judge:false, lines:[
+      {pre:'你的那双袜子破了，我把它扔掉了。', blank:'我给你买了一双新的，放在沙发上了', post:'，你试一下，看看合适不合适。',
+       py:'Nǐ de nà shuāng wàzi pò le, wǒ bǎ tā rēngdiào le. Wǒ gěi nǐ mǎile yì shuāng xīn de, fàng zài shāfā shang le, nǐ shì yíxià, kànkan héshì bu héshì.',
+       vn:'Đôi tất kia của anh rách rồi, em vứt đi rồi. Em mua cho anh một đôi mới, để trên sofa, anh thử xem có vừa không.'}]},
+    {num:3, stmt:'他今天六点就起床了。', judge:false, lines:[
+      {pre:'昨天晚上我一直工作到很晚才睡，', blank:'结果今天早上手机响我完全没听到', post:'，醒的时候已经九点了。',
+       py:'Zuótiān wǎnshang wǒ yìzhí gōngzuò dào hěn wǎn cái shuì, jiéguǒ jīntiān zǎoshang shǒujī xiǎng wǒ wánquán méi tīngdào, xǐng de shíhou yǐjīng jiǔ diǎn le.',
+       vn:'Tối qua tôi làm việc đến rất khuya mới ngủ, kết quả sáng nay điện thoại reo tôi hoàn toàn không nghe thấy, lúc tỉnh dậy đã chín giờ.'}]},
+    {num:4, stmt:'孩子更容易获得快乐。', judge:true, lines:[
+      {pre:'大人有时会羡慕孩子，', blank:'因为孩子的世界没有那么复杂', post:'，所以他们总是很快乐。同时，孩子也是最诚实的，不会怀疑别人，更不会去骗人。',
+       py:'Dàren yǒushí huì xiànmù háizi, yīnwèi háizi de shìjiè méiyǒu nàme fùzá, suǒyǐ tāmen zǒngshì hěn kuàilè. Tóngshí, háizi yě shì zuì chéngshí de, bú huì huáiyí biérén, gèng bú huì qù piàn rén.',
+       vn:'Người lớn đôi khi ngưỡng mộ trẻ con, vì thế giới của trẻ không phức tạp như vậy nên chúng luôn rất vui vẻ. Đồng thời, trẻ con cũng thật thà nhất, không nghi ngờ người khác, càng không lừa ai.'}]},
+    {num:5, stmt:'父母对孩子要讲信用。', judge:true, lines:[
+      {pre:'父母对孩子必须做到言而有信，', blank:'一定要说到做到', post:'。如果实在做不到，就应向孩子说对不起，并解释原因，否则孩子会认为你在骗他。',
+       py:'Fùmǔ duì háizi bìxū zuòdào yán ér yǒu xìn, yídìng yào shuōdào zuòdào. Rúguǒ shízài zuòbudào, jiù yīng xiàng háizi shuō duìbuqǐ, bìng jiěshì yuányīn, fǒuzé háizi huì rènwéi nǐ zài piàn tā.',
+       vn:'Cha mẹ với con cái phải giữ lời, nói là phải làm. Nếu thật sự không làm được thì nên xin lỗi con và giải thích lý do, nếu không con sẽ nghĩ bạn đang lừa nó.'}]}
   ],
-  mc:[
-    {num:6,options:['李老师的孙子','李老师的儿子','王静的儿子'],ans:0,
-     lines:[{speaker:'男',pre:'是',blank:'我孙子',post:'。去年寒假前的新年晚会他也表演过一次。',py:'Shì wǒ sūnzi. Qùnián hánjià qián de xīnnián wǎnhuì tā yě biǎoyǎnguo yí cì.',vn:'Là cháu nội tôi. Đêm hội năm mới trước nghỉ đông năm ngoái nó cũng biểu diễn.'}],
-     explain:'原文明确说"是我孙子"。'},
-    {num:7,options:['他父母教育得好','学校老师教得好','他自己很努力'],ans:0,
-     lines:[{speaker:'男',pre:'是',blank:'他父母教育得好',post:'。父母是孩子最重要的老师。',py:'Shì tā fùmǔ jiàoyù de hǎo. Fùmǔ shì háizi zuì zhòngyào de lǎoshī.',vn:'Là bố mẹ nó dạy tốt. Cha mẹ là người thầy quan trọng nhất.'}],
-     explain:'原文明确说"是他父母教育得好"。'},
-    {num:8,options:['11点','10点','12点'],ans:0,
-     lines:[{speaker:'女',pre:'别提了。我女儿昨晚做作业又做到',blank:'11点',post:'。',py:'Bié tí le. Wǒ nǚ\'ér zuó wǎn zuò zuòyè yòu zuòdào shíyī diǎn.',vn:'Đừng nhắc nữa. Con gái tôi tối qua làm bài lại đến 11 giờ.'}],
-     explain:'原文明确说"做到11点"。'},
-    {num:9,options:['她做事情比较慢','作业太多','她太懒'],ans:0,
-     lines:[{speaker:'女',pre:'主要是',blank:'她做事情比较慢',post:'，比如早上闹钟响了她不醒。',py:'Zhǔyào shì tā zuò shìqing bǐjiào màn, bǐrú zǎoshang nàozhōng xiǎngle tā bù xǐng.',vn:'Chủ yếu là nó làm việc khá chậm, ví dụ sáng báo thức reo không dậy.'}],
-     explain:'原文明确说"主要是她做事情比较慢"。'},
-    {num:10,options:['学会管理时间','多做作业','早点儿睡觉'],ans:0,
-     lines:[{speaker:'女',pre:'你应该让孩子',blank:'学会管理时间',post:'。',py:'Nǐ yīnggāi ràng háizi xuéhuì guǎnlǐ shíjiān.',vn:'Bạn nên để con học cách quản lý thời gian.'}],
-     explain:'原文明确说"学会管理时间"。'},
-    {num:11,options:['打针','吃药','看牙'],ans:0,
-     lines:[{speaker:'女',pre:'明天又要带我儿子去医院',blank:'打针',post:'，想想我就头疼。',py:'Míngtiān yòu yào dài wǒ érzi qù yīyuàn dǎ zhēn, xiǎngxiang wǒ jiù tóu téng.',vn:'Mai lại phải đưa con trai đi bệnh viện tiêm, nghĩ đến là đau đầu.'}],
-     explain:'原文明确说"去医院打针"。'},
-    {num:12,options:['马上就不哭了','哭得更厉害了','跑出去了'],ans:0,
-     lines:[{speaker:'女',pre:'我就小声地和护士说我女儿很勇敢，女儿听了以后',blank:'马上就不哭了',post:'。',py:'Wǒ jiù xiǎoshēng de hé hùshi shuō wǒ nǚ\'ér hěn yǒnggǎn, nǚ\'ér tīngle yǐhòu mǎshàng jiù bù kū le.',vn:'Tôi khẽ nói với y tá con gái tôi rất dũng cảm, con bé nghe xong lập tức nín.'}],
-     explain:'原文明确说"马上就不哭了"。'},
-    {num:13,options:['给孩子带来压力','让孩子更努力','让孩子更高兴'],ans:0,
-     lines:[{speaker:'女',pre:'表扬千万不要太多，过多的表扬可能会',blank:'给孩子带来压力',post:'。',py:'Biǎoyáng qiānwàn búyào tài duō, guò duō de biǎoyáng kěnéng huì gěi háizi dàilái yālì.',vn:'Khen tuyệt đối đừng quá nhiều, khen quá nhiều có thể gây áp lực cho trẻ.'}],
-     explain:'原文明确说"给孩子带来压力"。'},
-    {num:14,options:['引起父母的注意','让父母生气','和朋友玩儿'],ans:0,
-     lines:[{speaker:'男',pre:'有的孩子会通过哭、扔东西或者故意敲打来',blank:'引起父母的注意',post:'。',py:'Yǒude háizi huì tōngguò kū, rēng dōngxi huòzhě gùyì qiāodǎ lái yǐnqǐ fùmǔ de zhùyì.',vn:'Có trẻ khóc, ném đồ hoặc cố tình gõ đập để thu hút chú ý của cha mẹ.'}],
-     explain:'原文明确说"引起父母的注意"。'},
-    {num:15,options:['引起他们的兴趣','批评他们','让他们多做作业'],ans:0,
-     lines:[{speaker:'男',pre:'老师在教这个年龄段的孩子时，一定要想办法',blank:'引起他们的兴趣',post:'。',py:'Lǎoshī zài jiāo zhège niánlíng duàn de háizi shí, yídìng yào xiǎng bànfǎ yǐnqǐ tāmen de xìngqù.',vn:'Giáo viên dạy lứa tuổi này nhất định phải nghĩ cách khơi dậy hứng thú của chúng.'}],
-     explain:'原文明确说"引起他们的兴趣"。'},
+  mc: [
+    {num:6, options:['饿了','困了','累了','病了'], ans:3, q:'男的怎么了？',
+     lines:[
+       {speaker:'女', pre:'你怎么', blank:'咳嗽得越来越厉害了', post:'？吃药了吗？', py:'Nǐ zěnme késou de yuè lái yuè lìhai le? Chī yào le ma?', vn:'Sao anh ho ngày càng nặng thế? Uống thuốc chưa?'},
+       {speaker:'男', pre:'吃了，好像不太管用，', blank:'我明天还是去医院打针吧', post:'。', py:'Chī le, hǎoxiàng bú tài guǎnyòng, wǒ míngtiān háishi qù yīyuàn dǎzhēn ba.', vn:'Uống rồi, hình như không hiệu quả lắm, mai anh đi bệnh viện tiêm vậy.'}
+     ],
+     explain:'问：男的怎么了？ Ho nặng, uống thuốc, đi tiêm → D 病了.'},
+    {num:7, options:['力气很大','调查完了','拒绝帮助','在搬东西'], ans:3, q:'关于女的，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'我发现', blank:'你的东西没多少啊', post:'。', py:'Wǒ fāxiàn nǐ de dōngxi méi duōshao a.', vn:'Tôi thấy đồ của cậu chẳng có bao nhiêu.'},
+       {speaker:'女', pre:'这些只是三分之一，', blank:'还有很多还没来得及整理呢', post:'，下周再搬。', py:'Zhèxiē zhǐshì sān fēn zhī yī, hái yǒu hěn duō hái méi láidejí zhěnglǐ ne, xià zhōu zài bān.', vn:'Đây mới là một phần ba, còn nhiều thứ chưa kịp thu dọn, tuần sau chuyển tiếp.'}
+     ],
+     explain:'问：关于女的，下列哪个正确？ "还没来得及整理…下周再搬" → cô ấy đang chuyển đồ, đáp án D 在搬东西.'},
+    {num:8, options:['护士','教师','经理','服务员'], ans:1, q:'男的最可能是做什么的？',
+     lines:[
+       {speaker:'女', pre:'如果再让我来选择一次，肯定不选现在的工作。', blank:'真羡慕你每年都有一个寒假和一个暑假', post:'。', py:'Rúguǒ zài ràng wǒ lái xuǎnzé yí cì, kěndìng bù xuǎn xiànzài de gōngzuò. Zhēn xiànmù nǐ měi nián dōu yǒu yí ge hánjià hé yí ge shǔjià.', vn:'Nếu được chọn lại lần nữa, chắc chắn tôi không chọn công việc hiện tại. Thật ngưỡng mộ anh mỗi năm có một kỳ nghỉ đông và một kỳ nghỉ hè.'},
+       {speaker:'男', pre:'我当时选择这个职业时可没考虑这个，', blank:'只是因为喜欢和孩子们在一起', post:'。', py:'Wǒ dāngshí xuǎnzé zhège zhíyè shí kě méi kǎolǜ zhège, zhǐshì yīnwèi xǐhuan hé háizimen zài yìqǐ.', vn:'Lúc chọn nghề này tôi chẳng nghĩ đến điều đó, chỉ vì thích ở cùng bọn trẻ.'}
+     ],
+     explain:'问：男的最可能是做什么的？ Có nghỉ đông, nghỉ hè và "喜欢和孩子们在一起" → B 教师.'},
+    {num:9, options:['60元','70元','30元','免费'], ans:0, q:'男的的票多少钱一张？',
+     lines:[
+       {speaker:'男', pre:'小姐，', blank:'请问多少钱一张票', post:'？', py:'Xiǎojiě, qǐngwèn duōshao qián yì zhāng piào?', vn:'Cô ơi, xin hỏi bao nhiêu tiền một vé?'},
+       {speaker:'女', pre:'您好，', blank:'您的六十', post:'，70岁以上老人免费，您孩子买儿童票，半价。', py:'Nín hǎo, nín de liùshí, qīshí suì yǐshàng lǎorén miǎnfèi, nín háizi mǎi értóng piào, bànjià.', vn:'Chào anh, vé của anh sáu mươi, người già trên 70 tuổi miễn phí, con anh mua vé trẻ em, nửa giá.'}
+     ],
+     explain:'问：男的的票多少钱一张？ "您的六十" → A 60元. 30 là vé trẻ em, 70 là tuổi miễn phí — bẫy số liệu.'},
+    {num:10, options:['迟到了','发烧了','眼睛疼','口渴了'], ans:2, q:'女的怎么了？',
+     lines:[
+       {speaker:'男', pre:'你真是太懒了，', blank:'再不起床就要迟到了', post:'。', py:'Nǐ zhēn shì tài lǎn le, zài bù qǐchuáng jiù yào chídào le.', vn:'Em lười quá đi, không dậy nữa là muộn đấy.'},
+       {speaker:'女', pre:'', blank:'我眼睛有点儿疼', post:'，让我再躺一会儿吧。', py:'Wǒ yǎnjing yǒudiǎnr téng, ràng wǒ zài tǎng yíhuìr ba.', vn:'Mắt em hơi đau, cho em nằm thêm một lát.'}
+     ],
+     explain:'问：女的怎么了？ "我眼睛有点儿疼" → C 眼睛疼. A sai vì mới "要迟到" (sắp), chưa muộn.'},
+    {num:11, options:['教育','艺术','科学','自然'], ans:0, q:'他们在谈论什么？',
+     lines:[
+       {speaker:'男', pre:'很多学者认为，', blank:'父母应该经常表扬孩子，鼓励他们', post:'。', py:'Hěn duō xuézhě rènwéi, fùmǔ yīnggāi jīngcháng biǎoyáng háizi, gǔlì tāmen.', vn:'Nhiều học giả cho rằng cha mẹ nên thường xuyên khen ngợi, khích lệ con cái.'},
+       {speaker:'女', pre:'没错，', blank:'批评对孩子的发展没什么好处', post:'。', py:'Méi cuò, pīpíng duì háizi de fāzhǎn méi shénme hǎochù.', vn:'Đúng vậy, phê bình chẳng có lợi gì cho sự phát triển của trẻ.'}
+     ],
+     explain:'问：他们在谈论什么？ Nói về 表扬/批评 con cái → A 教育.'},
+    {num:12, options:['伤心','粗心','害羞','病了'], ans:2, q:'王教授的孙女今天怎么了？',
+     lines:[
+       {speaker:'男', pre:'王教授，您的小孙女真可爱，', blank:'但是好像不太爱说话', post:'。', py:'Wáng jiàoshòu, nín de xiǎo sūnnǚ zhēn kě\'ài, dànshì hǎoxiàng bú tài ài shuōhuà.', vn:'Giáo sư Vương, cháu gái nhỏ của bà thật đáng yêu, nhưng hình như không thích nói chuyện lắm.'},
+       {speaker:'女', pre:'也许是因为第一次跟你见面，还不太熟，', blank:'有些害羞', post:'。她平时不是这样的，话特别多。', py:'Yěxǔ shì yīnwèi dì-yī cì gēn nǐ jiànmiàn, hái bú tài shú, yǒuxiē hàixiū. Tā píngshí bú shì zhèyàng de, huà tèbié duō.', vn:'Có lẽ vì lần đầu gặp cậu, chưa quen nên hơi ngại. Bình thường nó không thế đâu, nói nhiều lắm.'}
+     ],
+     explain:'问：王教授的孙女今天怎么了？ "有些害羞" → C 害羞.'},
+    {num:13, options:['会跳舞','羡慕女的','从小弹钢琴','喜欢打篮球'], ans:2, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'没想到', blank:'你钢琴弹得这么好', post:'，真让人羡慕。', py:'Méi xiǎngdào nǐ gāngqín tán de zhème hǎo, zhēn ràng rén xiànmù.', vn:'Không ngờ anh chơi piano giỏi thế, thật đáng ngưỡng mộ.'},
+       {speaker:'男', pre:'', blank:'我从六岁开始学', post:'，养成了每天练琴的习惯。', py:'Wǒ cóng liù suì kāishǐ xué, yǎngchéngle měi tiān liàn qín de xíguàn.', vn:'Tôi học từ năm sáu tuổi, tạo được thói quen luyện đàn mỗi ngày.'},
+       {speaker:'女', pre:'', blank:'一开始学琴的时候很苦', post:'吧？', py:'Yì kāishǐ xué qín de shíhou hěn kǔ ba?', vn:'Lúc mới học đàn chắc khổ lắm nhỉ?'},
+       {speaker:'男', pre:'是，万事开头难，', blank:'后来慢慢就好了', post:'。', py:'Shì, wànshì kāitóu nán, hòulái mànman jiù hǎo le.', vn:'Ừ, vạn sự khởi đầu nan, sau dần dần ổn.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ "我从六岁开始学（钢琴）" → C 从小弹钢琴. B ngược: người nữ ngưỡng mộ anh ấy.'},
+    {num:14, options:['一个月了','喜欢照相','在叫爸妈','刚会说话'], ans:3, q:'关于张阿姨的孙子，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'张阿姨，', blank:'这是您孙子的照片', post:'？', py:'Zhāng āyí, zhè shì nín sūnzi de zhàopiàn?', vn:'Dì Trương, đây là ảnh cháu trai dì à?'},
+       {speaker:'女', pre:'对，这是他刚一个月时的照片，', blank:'现在一岁零四个月了', post:'。', py:'Duì, zhè shì tā gāng yí ge yuè shí de zhàopiàn, xiànzài yí suì líng sì ge yuè le.', vn:'Đúng, đây là ảnh lúc nó mới một tháng, giờ được một tuổi bốn tháng rồi.'},
+       {speaker:'男', pre:'真可爱，', blank:'会说话了吗', post:'？', py:'Zhēn kě\'ài, huì shuōhuà le ma?', vn:'Đáng yêu thật, biết nói chưa?'},
+       {speaker:'女', pre:'会叫爸爸妈妈了，', blank:'也能说一些简单的词', post:'。', py:'Huì jiào bàba māma le, yě néng shuō yìxiē jiǎndān de cí.', vn:'Biết gọi bố mẹ rồi, cũng nói được vài từ đơn giản.'}
+     ],
+     explain:'问：关于张阿姨的孙子，可以知道什么？ "会叫爸爸妈妈了，也能说一些简单的词" → D 刚会说话. A sai: ảnh chụp lúc một tháng, giờ đã 1 tuổi 4 tháng.'},
+    {num:15, options:['开车很快','去机场接人','担心时间不够','已经迟到了'], ans:2, q:'关于女的，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'师傅，去机场。我赶飞机，', blank:'麻烦您开快点儿', post:'。', py:'Shīfu, qù jīchǎng. Wǒ gǎn fēijī, máfan nín kāi kuài diǎnr.', vn:'Bác tài, đi sân bay. Tôi phải kịp chuyến bay, phiền bác lái nhanh chút.'},
+       {speaker:'男', pre:'好的，', blank:'您几点的飞机', post:'？', py:'Hǎo de, nín jǐ diǎn de fēijī?', vn:'Được, chuyến bay mấy giờ vậy?'},
+       {speaker:'女', pre:'两点，', blank:'来得及吗', post:'？', py:'Liǎng diǎn, láidejí ma?', vn:'Hai giờ, kịp không?'},
+       {speaker:'男', pre:'没问题，', blank:'保证一点之前就把您送到', post:'。', py:'Méi wèntí, bǎozhèng yì diǎn zhīqián jiù bǎ nín sòngdào.', vn:'Không vấn đề, đảm bảo trước một giờ đưa chị đến nơi.'}
+     ],
+     explain:'问：关于女的，可以知道什么？ "麻烦您开快点儿…来得及吗" → C 担心时间不够. B sai: cô ấy đi máy bay, không phải đón người.'},
+    {num:16, options:['很懒','工作没做完','提前回家了','正在谈生意'], ans:2, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'喂，你在哪儿？我敲了半天门，', blank:'怎么没人在家', post:'？', py:'Wèi, nǐ zài nǎr? Wǒ qiāole bàntiān mén, zěnme méi rén zài jiā?', vn:'Alô, em ở đâu? Anh gõ cửa mãi, sao không có ai ở nhà?'},
+       {speaker:'女', pre:'我和孩子在花园里玩儿呢，', blank:'你不是说要到九点才回来吗', post:'？', py:'Wǒ hé háizi zài huāyuán li wánr ne, nǐ bú shì shuō yào dào jiǔ diǎn cái huílai ma?', vn:'Em và con đang chơi trong vườn hoa, anh chẳng phải nói chín giờ mới về sao?'},
+       {speaker:'男', pre:'', blank:'工作提前做完了', post:'。你们什么时候回来？', py:'Gōngzuò tíqián zuòwán le. Nǐmen shénme shíhou huílai?', vn:'Công việc xong sớm. Hai mẹ con bao giờ về?'},
+       {speaker:'女', pre:'这就回去，', blank:'你再等一会儿', post:'。', py:'Zhè jiù huíqu, nǐ zài děng yíhuìr.', vn:'Về ngay đây, anh đợi một lát.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ "工作提前做完了" nên về trước chín giờ → C 提前回家了.'},
+    {num:17, options:['脏了','丢了','掉色了','被女的扔了'], ans:0, q:'那件衬衫怎么了？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你的衬衫怎么了', post:'？', py:'Nǐ de chènshān zěnme le?', vn:'Áo sơ mi của anh sao thế?'},
+       {speaker:'男', pre:'喝咖啡时', blank:'不小心弄脏了', post:'。', py:'Hē kāfēi shí bù xiǎoxīn nòngzāng le.', vn:'Lúc uống cà phê không cẩn thận làm bẩn rồi.'},
+       {speaker:'女', pre:'我正好要洗衣服，', blank:'你脱下来一起洗了吧', post:'。', py:'Wǒ zhènghǎo yào xǐ yīfu, nǐ tuō xiàlai yìqǐ xǐ le ba.', vn:'Em đang định giặt đồ, anh cởi ra giặt luôn nhé.'},
+       {speaker:'男', pre:'', blank:'好的', post:'。', py:'Hǎo de.', vn:'Được.'}
+     ],
+     explain:'问：那件衬衫怎么了？ "不小心弄脏了" → A 脏了.'},
+    {num:18, options:['取材料','开证明','还杂志','整理房间'], ans:0, q:'女的找李老师做什么？',
+     lines:[
+       {speaker:'女', pre:'打扰一下，', blank:'请问您是李老师吗', post:'？', py:'Dǎrǎo yíxià, qǐngwèn nín shì Lǐ lǎoshī ma?', vn:'Làm phiền chút, xin hỏi thầy là thầy Lý phải không?'},
+       {speaker:'男', pre:'对，', blank:'你是', post:'……', py:'Duì, nǐ shì……', vn:'Đúng, em là…'},
+       {speaker:'女', pre:'您好，我是谢教授的学生，', blank:'他让我过来取材料', post:'。', py:'Nín hǎo, wǒ shì Xiè jiàoshòu de xuésheng, tā ràng wǒ guòlai qǔ cáiliào.', vn:'Chào thầy, em là học trò của giáo sư Tạ, thầy ấy bảo em qua lấy tài liệu.'},
+       {speaker:'男', pre:'你先坐一下，等几分钟，', blank:'我马上就整理完了', post:'。', py:'Nǐ xiān zuò yíxià, děng jǐ fēnzhōng, wǒ mǎshàng jiù zhěnglǐ wán le.', vn:'Em ngồi một lát, đợi vài phút, thầy sắp sắp xếp xong rồi.'}
+     ],
+     explain:'问：女的找李老师做什么？ "他让我过来取材料" → A 取材料.'},
+    {num:19, options:['一直很节约','比以前懂事了','参加工作了','自己管理工资'], ans:0, q:'关于女儿，下列哪个不正确？',
+     lines:[
+       {speaker:'旁白', pre:'', blank:'女儿过去花钱很随便', post:'，但从她开始工作、知道赚钱的辛苦后，就变得懂事多了，', py:'Nǚ\'ér guòqù huā qián hěn suíbiàn, dàn cóng tā kāishǐ gōngzuò, zhīdào zhuàn qián de xīnkǔ hòu, jiù biàn de dǒngshì duō le,', vn:'Con gái trước đây tiêu tiền rất tuỳ tiện, nhưng từ khi đi làm, biết kiếm tiền vất vả, nó trở nên hiểu chuyện hơn nhiều,'},
+       {speaker:'旁白', pre:'她开始学着管理自己的工资，', blank:'把每天花的钱都记下来', post:'，提醒自己要节约，还对我说以后再也不乱花钱了。', py:'tā kāishǐ xuézhe guǎnlǐ zìjǐ de gōngzī, bǎ měi tiān huā de qián dōu jì xiàlai, tíxǐng zìjǐ yào jiéyuē, hái duì wǒ shuō yǐhòu zài yě bú luàn huā qián le.', vn:'nó bắt đầu học cách quản lý lương của mình, ghi lại số tiền tiêu mỗi ngày, nhắc mình phải tiết kiệm, còn nói với tôi sau này không tiêu tiền bừa bãi nữa.'}
+     ],
+     explain:'问：关于女儿，下列哪个不正确？ "过去花钱很随便" → không phải luôn tiết kiệm, đáp án A. Chú ý câu hỏi phủ định.'},
+    {num:20, options:['更漂亮了','更勇敢了','不乱花钱了','不怕打针了'], ans:2, q:'女儿有什么变化？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）她开始学着管理自己的工资…提醒自己要节约，', blank:'还对我说以后再也不乱花钱了', post:'。', py:'(Tóng yí duàn huà) Tā kāishǐ xuézhe guǎnlǐ zìjǐ de gōngzī … tíxǐng zìjǐ yào jiéyuē, hái duì wǒ shuō yǐhòu zài yě bú luàn huā qián le.', vn:'(Cùng đoạn văn) Nó bắt đầu học cách quản lý lương … nhắc mình tiết kiệm, còn nói với tôi sau này không tiêu tiền bừa bãi nữa.'}
+     ],
+     explain:'问：女儿有什么变化？ "再也不乱花钱了" → C 不乱花钱了.'},
+    {num:21, options:['性格','兴趣','健康','年龄'], ans:0, q:'根据这段话，教育孩子要考虑哪方面的不同？',
+     lines:[
+       {speaker:'旁白', pre:'', blank:'教育不同性格的孩子要使用不同的办法', post:'：对那些活泼的孩子要经常告诉他们哪些事情不能做；', py:'Jiàoyù bùtóng xìnggé de háizi yào shǐyòng bùtóng de bànfǎ: duì nàxiē huópo de háizi yào jīngcháng gàosu tāmen nǎxiē shìqing bù néng zuò;', vn:'Giáo dục trẻ có tính cách khác nhau phải dùng cách khác nhau: với những trẻ hiếu động phải thường xuyên nói cho chúng biết việc gì không được làm;'},
+       {speaker:'旁白', pre:'对那些害羞的孩子要经常鼓励他们说出自己的看法，当他们这样做了以后，', blank:'要表扬他们', post:'，这样才能让每一个孩子都健康地发展。', py:'duì nàxiē hàixiū de háizi yào jīngcháng gǔlì tāmen shuōchū zìjǐ de kànfǎ, dāng tāmen zhèyàng zuòle yǐhòu, yào biǎoyáng tāmen, zhèyàng cái néng ràng měi yí ge háizi dōu jiànkāng de fāzhǎn.', vn:'với những trẻ nhút nhát phải thường xuyên khích lệ chúng nói ra ý kiến của mình, khi chúng làm được thì phải khen, như vậy mới giúp mỗi đứa trẻ phát triển lành mạnh.'}
+     ],
+     explain:'问：教育孩子要考虑哪方面的不同？ "教育不同性格的孩子要使用不同的办法" → A 性格.'},
+    {num:22, options:['孩子的性格','教育的方法','怎么鼓励孩子','表扬很重要'], ans:1, q:'这段话主要谈什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'教育不同性格的孩子要使用不同的办法', post:'…这样才能让每一个孩子都健康地发展。', py:'(Tóng yí duàn huà) Jiàoyù bùtóng xìnggé de háizi yào shǐyòng bùtóng de bànfǎ … zhèyàng cái néng ràng měi yí ge háizi dōu jiànkāng de fāzhǎn.', vn:'(Cùng đoạn văn) Giáo dục trẻ có tính cách khác nhau phải dùng cách khác nhau … như vậy mới giúp mỗi đứa trẻ phát triển lành mạnh.'}
+     ],
+     explain:'问：这段话主要谈什么？ Chủ đề là cách giáo dục theo từng tính cách → B 教育的方法. A chỉ là yếu tố để chọn cách, C/D là chi tiết.'}
   ]
 };

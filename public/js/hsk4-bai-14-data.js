@@ -851,49 +851,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-14/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-14/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-14/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'不用拿这些，宾馆都会',blank:'免费提供',post:'的。',py:'Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de.',vn:'Không cần mang những thứ này, khách sạn đều cung cấp miễn phí.'}]},
-    {num:2,lines:[{pre:'这样不仅省油钱，而且还不会',blank:'污染空气',post:'。',py:'Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.',vn:'Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.'}]},
-    {num:3,lines:[{pre:'经理您放心，我一定',blank:'以最快的速度',post:'完成。',py:'Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng.',vn:'Giám đốc yên tâm, tôi nhất định hoàn thành với tốc độ nhanh nhất.'}]},
-    {num:4,lines:[{pre:'其实目的挺简单的，就是提醒人们',blank:'节约用电',post:'。',py:'Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn.',vn:'Thực ra mục đích khá đơn giản, chính là nhắc mọi người tiết kiệm điện.'}]},
-    {num:5,lines:[{pre:'这样做可以',blank:'减少塑料袋的使用数量',post:'。',py:'Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng.',vn:'Làm như vậy có thể giảm số lượng túi nilông sử dụng.'}]},
+  dictation: [
+    {num:1, stmt:'大家同意我的看法。', judge:false, lines:[
+      {pre:'虽然我建议这次演出的事情让小黄来负责，', blank:'可是大家觉得他太年轻', post:'，担心他经验不够。',
+       py:'Suīrán wǒ jiànyì zhè cì yǎnchū de shìqing ràng Xiǎo Huáng lái fùzé, kěshì dàjiā juéde tā tài niánqīng, dānxīn tā jīngyàn bú gòu.',
+       vn:'Tuy tôi đề nghị để Tiểu Hoàng phụ trách buổi biểu diễn lần này, nhưng mọi người thấy cậu ấy quá trẻ, lo cậu ấy chưa đủ kinh nghiệm.'}]},
+    {num:2, stmt:'超市提供免费塑料袋。', judge:false, lines:[
+      {pre:'为了减少塑料袋给环境带来的污染，', blank:'现在超市不再提供免费塑料袋', post:'，有需要的顾客，可以向超市购买。',
+       py:'Wèile jiǎnshǎo sùliàodài gěi huánjìng dàilái de wūrǎn, xiànzài chāoshì bú zài tígōng miǎnfèi sùliàodài, yǒu xūyào de gùkè, kěyǐ xiàng chāoshì gòumǎi.',
+       vn:'Để giảm ô nhiễm môi trường do túi ni lông gây ra, hiện nay siêu thị không còn cung cấp túi ni lông miễn phí, khách hàng có nhu cầu có thể mua từ siêu thị.'}]},
+    {num:3, stmt:'年轻人应该相信自己。', judge:true, lines:[
+      {pre:'年轻就是健康，年轻就是美丽。不要太担心胖瘦，也不要太关心自己长得是不是漂亮、是不是帅，', blank:'年轻人最重要的是要对自己有信心', post:'。',
+       py:'Niánqīng jiù shì jiànkāng, niánqīng jiù shì měilì. Bú yào tài dānxīn pàng shòu, yě bú yào tài guānxīn zìjǐ zhǎng de shì bu shì piàoliang, shì bu shì shuài, niánqīngrén zuì zhòngyào de shì yào duì zìjǐ yǒu xìnxīn.',
+       vn:'Trẻ là khoẻ, trẻ là đẹp. Đừng quá lo béo gầy, cũng đừng quá bận tâm mình có đẹp, có bảnh hay không, điều quan trọng nhất với người trẻ là phải tự tin vào bản thân.'}]},
+    {num:4, stmt:'她不愿意用宾馆的毛巾。', judge:true, lines:[
+      {pre:'虽然还有一部分宾馆会向客人提供免费的毛巾、牙膏和牙刷，但是每次出差，', blank:'她都会自己带这些东西', post:'，很少用宾馆里的。',
+       py:'Suīrán hái yǒu yí bùfen bīnguǎn huì xiàng kèrén tígōng miǎnfèi de máojīn, yágāo hé yáshuā, dànshì měi cì chūchāi, tā dōu huì zìjǐ dài zhèxiē dōngxi, hěn shǎo yòng bīnguǎn li de.',
+       vn:'Tuy vẫn có một số khách sạn cung cấp khăn mặt, kem đánh răng và bàn chải miễn phí cho khách, nhưng mỗi lần đi công tác cô ấy đều tự mang những thứ này, rất ít dùng đồ của khách sạn.'}]},
+    {num:5, stmt:'舞会上不要直接拒绝邀请。', judge:true, lines:[
+      {pre:'', blank:'舞会上最好不要直接拒绝别人的邀请', post:'，如果不得不拒绝，可以告诉他："我有些累了，想休息一下。"之后也不要很快又接受其他人的邀请。',
+       py:'Wǔhuì shang zuì hǎo bú yào zhíjiē jùjué biérén de yāoqǐng, rúguǒ bùdébù jùjué, kěyǐ gàosu tā: "Wǒ yǒuxiē lèi le, xiǎng xiūxi yíxià." Zhīhòu yě bú yào hěn kuài yòu jiēshòu qítā rén de yāoqǐng.',
+       vn:'Trong buổi khiêu vũ tốt nhất đừng từ chối thẳng lời mời của người khác, nếu buộc phải từ chối, có thể nói: "Tôi hơi mệt, muốn nghỉ một chút." Sau đó cũng đừng nhanh chóng nhận lời mời của người khác.'}]}
   ],
-  mc:[
-    {num:6,options:['出差','旅行','搬家'],ans:0,
-     lines:[{speaker:'女',pre:'这是明天你',blank:'出差',post:'要带的毛巾、牙膏和牙刷。',py:'Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā.',vn:'Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang.'}],
-     explain:'原文明确说"明天你出差要带的"。'},
-    {num:7,options:['箱子够重了','宾馆不提供','东西太贵'],ans:0,
-     lines:[{speaker:'男',pre:'再说，',blank:'箱子已经够重的了',post:'！',py:'Zàishuō, xiāngzi yǐjīng gòu zhòng de le!',vn:'Hơn nữa, vali đã đủ nặng rồi!'}],
-     explain:'原文明确说"箱子已经够重的了"。'},
-    {num:8,options:['坐地铁','开车','坐出租车'],ans:0,
-     lines:[{speaker:'女',pre:'你还是',blank:'坐地铁',post:'去机场吧。这样不仅省油钱，而且还不会污染空气。',py:'Nǐ háishi zuò dìtiě qù jīchǎng ba. Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.',vn:'Anh vẫn nên đi tàu điện ngầm ra sân bay. Như vậy tiết kiệm tiền xăng, lại không ô nhiễm.'}],
-     explain:'原文明确说"你还是坐地铁去机场吧"。'},
-    {num:9,options:['卫生间很脏','客人太多','服务员太少'],ans:0,
-     lines:[{speaker:'男',pre:'小王，',blank:'卫生间怎么那么脏啊',post:'？快去打扫一下。',py:'Xiǎo Wáng, wèishēngjiān zěnme nàme zāng a? Kuài qù dǎsǎo yíxià.',vn:'Tiểu Vương, sao nhà vệ sinh bẩn thế? Mau đi dọn dẹp.'}],
-     explain:'原文明确说"卫生间怎么那么脏啊"。'},
-    {num:10,options:['店里太忙','他忘了','他生病了'],ans:0,
-     lines:[{speaker:'女',pre:'经理，实在抱歉。',blank:'今天店里太忙了',post:'，我还没来得及打扫。',py:'Jīnglǐ, shízài bàoqiàn. Jīntiān diàn li tài máng le, wǒ hái méi láidejí dǎsǎo.',vn:'Giám đốc, thật xin lỗi. Hôm nay cửa hàng bận quá, tôi chưa kịp dọn.'}],
-     explain:'原文明确说"今天店里太忙了"。'},
-    {num:11,options:['扔掉','洗干净','放到桌子上'],ans:0,
-     lines:[{speaker:'男',pre:'好的，我马上就去把它们',blank:'扔掉',post:'。',py:'Hǎo de, wǒ mǎshàng jiù qù bǎ tāmen rēngdiào.',vn:'Vâng, tôi đi vứt chúng ngay.'}],
-     explain:'原文明确说"把它们扔掉"。'},
-    {num:12,options:['2007年','2000年','2017年'],ans:0,
-     lines:[{speaker:'女',pre:'这个活动年年都有，最早是从',blank:'2007年',post:'开始的。',py:'Zhège huódòng niánnián dōu yǒu, zuì zǎo shì cóng èr líng líng qī nián kāishǐ de.',vn:'Hoạt động này năm nào cũng có, sớm nhất bắt đầu từ năm 2007.'}],
-     explain:'原文明确说"最早是从2007年开始的"。'},
-    {num:13,options:['不用加班','支持环保','可以早回家'],ans:0,
-     lines:[{speaker:'男',pre:'还以为你高兴是为了支持环保，原来是因为',blank:'不用加班',post:'啊！',py:'Hái yǐwéi nǐ gāoxìng shì wèile zhīchí huánbǎo, yuánlái shì yīnwèi búyòng jiā bān a!',vn:'Còn tưởng bạn vui vì ủng hộ môi trường, hóa ra là vì không phải tăng ca!'}],
-     explain:'原文明确说"原来是因为不用加班啊"。'},
-    {num:14,options:['提醒人们节约用电','让公司省钱','让大家早点儿休息'],ans:0,
-     lines:[{speaker:'女',pre:'其实目的挺简单的，就是',blank:'提醒人们节约用电',post:'。',py:'Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn.',vn:'Thực ra mục đích khá đơn giản, chính là nhắc mọi người tiết kiệm điện.'}],
-     explain:'原文明确说"就是提醒人们节约用电"。'},
-    {num:15,options:['不能提供免费塑料袋','不能卖塑料袋','必须用纸袋'],ans:0,
-     lines:[{speaker:'男',pre:'一些国家规定，超市、商场',blank:'不能为顾客提供免费塑料袋',post:'。',py:'Yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài.',vn:'Một số nước quy định siêu thị, trung tâm thương mại không được cung cấp túi nilông miễn phí.'}],
-     explain:'原文明确说"不能为顾客提供免费塑料袋"。'},
+  mc: [
+    {num:6, options:['很干净','很脏','很大','打扫完了'], ans:1, q:'那个房间怎么样？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你的房间实在是太脏了', post:'，快找时间好好儿打扫一下吧。', py:'Nǐ de fángjiān shízài shì tài zāng le, kuài zhǎo shíjiān hǎohāor dǎsǎo yíxià ba.', vn:'Phòng của anh bẩn quá đi, mau tìm thời gian dọn dẹp cho tử tế đi.'},
+       {speaker:'男', pre:'行，', blank:'我午饭前一定打扫干净', post:'。', py:'Xíng, wǒ wǔfàn qián yídìng dǎsǎo gānjìng.', vn:'Được, trước bữa trưa anh nhất định dọn sạch.'}
+     ],
+     explain:'问：那个房间怎么样？ "实在是太脏了" → B 很脏. D sai vì mới hứa sẽ dọn.'},
+    {num:7, options:['带吃的','放衣服','扔垃圾','送到山上'], ans:2, q:'女的为什么要拿塑料袋？',
+     lines:[
+       {speaker:'男', pre:'我们是去爬山，', blank:'你拿塑料袋干什么', post:'？', py:'Wǒmen shì qù páshān, nǐ ná sùliàodài gàn shénme?', vn:'Mình đi leo núi, em cầm túi ni lông làm gì?'},
+       {speaker:'女', pre:'我担心山上没有垃圾桶，', blank:'总不能乱扔垃圾啊', post:'。', py:'Wǒ dānxīn shān shang méiyǒu lājītǒng, zǒng bù néng luàn rēng lājī a.', vn:'Em sợ trên núi không có thùng rác, đâu thể vứt rác bừa bãi được.'}
+     ],
+     explain:'问：女的为什么要拿塑料袋？ "山上没有垃圾桶，总不能乱扔垃圾" → để đựng rác, đáp án C 扔垃圾.'},
+    {num:8, options:['没调查完','关于保护动物','10%的人不感兴趣','大部分人愿意参加'], ans:3, q:'关于这次调查，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'小夏，', blank:'这次的调查结果出来了吗', post:'？', py:'Xiǎo Xià, zhè cì de diàochá jiéguǒ chūlai le ma?', vn:'Tiểu Hạ, kết quả khảo sát lần này có chưa?'},
+       {speaker:'女', pre:'出来了，', blank:'表示愿意参加环保活动的人达到百分之九十', post:'，只有百分之四的人回答说不感兴趣。', py:'Chūlai le, biǎoshì yuànyì cānjiā huánbǎo huódòng de rén dádào bǎi fēn zhī jiǔshí, zhǐyǒu bǎi fēn zhī sì de rén huídá shuō bù gǎn xìngqù.', vn:'Có rồi, số người sẵn sàng tham gia hoạt động bảo vệ môi trường đạt 90%, chỉ 4% trả lời không hứng thú.'}
+     ],
+     explain:'问：关于这次调查，可以知道什么？ "百分之九十…愿意参加" → D 大部分人愿意参加. C sai: 4% chứ không phải 10%.'},
+    {num:9, options:['再使用','扔垃圾桶','打网球','放垃圾'], ans:0, q:'女的对那个盒子是什么意见？',
+     lines:[
+       {speaker:'男', pre:'这个盒子还有用吗？', blank:'没用我就扔垃圾桶里了', post:'。', py:'Zhège hézi hái yǒu yòng ma? Méi yòng wǒ jiù rēng lājītǒng li le.', vn:'Cái hộp này còn dùng không? Không dùng thì anh vứt vào thùng rác đây.'},
+       {speaker:'女', pre:'别扔，', blank:'正好可以用它来放网球', post:'。', py:'Bié rēng, zhènghǎo kěyǐ yòng tā lái fàng wǎngqiú.', vn:'Đừng vứt, vừa hay có thể dùng nó đựng bóng tennis.'}
+     ],
+     explain:'问：女的对那个盒子是什么意见？ "别扔，正好可以用它来放网球" → tận dụng lại, đáp án A 再使用.'},
+    {num:10, options:['正在出差','忘了时间','不想见面','感到抱歉'], ans:3, q:'关于王先生，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'王先生，', blank:'上星期跟您约好明天见面', post:'，您还记得吧？', py:'Wáng xiānsheng, shàng xīngqī gēn nín yuēhǎo míngtiān jiànmiàn, nín hái jìde ba?', vn:'Ông Vương, tuần trước hẹn ông ngày mai gặp mặt, ông còn nhớ chứ?'},
+       {speaker:'男', pre:'张小姐，我刚刚接到通知，明天要出差，', blank:'很抱歉', post:'，等我回来以后再跟您联系，我下周一回来。', py:'Zhāng xiǎojiě, wǒ gānggāng jiēdào tōngzhī, míngtiān yào chūchāi, hěn bàoqiàn, děng wǒ huílai yǐhòu zài gēn nín liánxì, wǒ xià zhōuyī huílai.', vn:'Cô Trương, tôi vừa nhận thông báo, mai phải đi công tác, rất xin lỗi, đợi tôi về rồi liên hệ lại với cô, thứ Hai tuần sau tôi về.'}
+     ],
+     explain:'问：关于王先生，可以知道什么？ "很抱歉" → D 感到抱歉. A sai vì mai mới đi công tác.'},
+    {num:11, options:['牙刷','牙膏','饮料','塑料袋'], ans:1, q:'男的想要什么？',
+     lines:[
+       {speaker:'男', pre:'', blank:'牙膏用完了', post:'，家里还有新的吗？', py:'Yágāo yòngwán le, jiā li hái yǒu xīn de ma?', vn:'Kem đánh răng hết rồi, nhà còn cái mới không?'},
+       {speaker:'女', pre:'有，我上午刚买的，', blank:'就在那个塑料袋里', post:'。', py:'Yǒu, wǒ shàngwǔ gāng mǎi de, jiù zài nàge sùliàodài li.', vn:'Có, sáng nay em vừa mua, ở ngay trong cái túi ni lông kia.'}
+     ],
+     explain:'问：男的想要什么？ "牙膏用完了" → B 牙膏. 塑料袋 chỉ là chỗ đựng.'},
+    {num:12, options:['目的','方法','过程','结果'], ans:2, q:'女的没提到什么？',
+     lines:[
+       {speaker:'男', pre:'太失败了，', blank:'我怎么觉得自己什么事儿都做不好呢', post:'？', py:'Tài shībài le, wǒ zěnme juéde zìjǐ shénme shìr dōu zuòbuhǎo ne?', vn:'Thất bại quá, sao tôi thấy mình chuyện gì cũng làm không tốt vậy?'},
+       {speaker:'女', pre:'不管做什么事情，在做之前，至少要考虑三点：首先，你的目的是什么？其次，你的方法是什么？', blank:'第三，你计划中的结果是什么样子', post:'？', py:'Bùguǎn zuò shénme shìqing, zài zuò zhīqián, zhìshǎo yào kǎolǜ sān diǎn: shǒuxiān, nǐ de mùdì shì shénme? Qícì, nǐ de fāngfǎ shì shénme? Dì-sān, nǐ jìhuà zhōng de jiéguǒ shì shénme yàngzi?', vn:'Dù làm việc gì, trước khi làm ít nhất phải cân nhắc ba điểm: trước hết, mục đích của bạn là gì? Thứ hai, phương pháp của bạn là gì? Thứ ba, kết quả bạn dự tính là như thế nào?'}
+     ],
+     explain:'问：女的没提到什么？ Cô ấy nhắc 目的, 方法, 结果; không nhắc 过程 → C. Chú ý câu hỏi phủ định.'},
+    {num:13, options:['挺舒服','正合适','更漂亮','容易脏'], ans:3, q:'女的觉得白色的怎么样？',
+     lines:[
+       {speaker:'男', pre:'你', blank:'再试试白色的', post:'。', py:'Nǐ zài shìshi báisè de.', vn:'Em thử thêm đôi màu trắng đi.'},
+       {speaker:'女', pre:'我觉得这双就挺舒服的，', blank:'大小也可以', post:'。', py:'Wǒ juéde zhè shuāng jiù tǐng shūfu de, dàxiǎo yě kěyǐ.', vn:'Em thấy đôi này khá êm, cỡ cũng vừa.'},
+       {speaker:'男', pre:'', blank:'白色的更漂亮', post:'。', py:'Báisè de gèng piàoliang.', vn:'Màu trắng đẹp hơn.'},
+       {speaker:'女', pre:'不试了，', blank:'白色的容易脏', post:'，还是黑色的好。', py:'Bú shì le, báisè de róngyì zāng, háishi hēisè de hǎo.', vn:'Không thử nữa, màu trắng dễ bẩn, vẫn là màu đen tốt hơn.'}
+     ],
+     explain:'问：女的觉得白色的怎么样？ "白色的容易脏" → D 容易脏. C là ý của người nam.'},
+    {num:14, options:['有人接女的','女的坐出租车回来的','男的写完材料了','女的帮男的检查'], ans:1, q:'根据对话，可以知道什么？',
+     lines:[
+       {speaker:'男', pre:'真抱歉，', blank:'本来我该去火车站接你的', post:'。', py:'Zhēn bàoqiàn, běnlái wǒ gāi qù huǒchēzhàn jiē nǐ de.', vn:'Thật xin lỗi, đáng lẽ anh phải ra ga đón em.'},
+       {speaker:'女', pre:'没关系，', blank:'我打个车就回来了', post:'，很方便。你那篇材料写完没有？', py:'Méi guānxi, wǒ dǎ ge chē jiù huílai le, hěn fāngbiàn. Nǐ nà piān cáiliào xiěwán méiyǒu?', vn:'Không sao, em bắt taxi về là được, rất tiện. Tài liệu của anh viết xong chưa?'},
+       {speaker:'男', pre:'差不多了，', blank:'我再检查一遍', post:'，就可以交了。', py:'Chàbuduō le, wǒ zài jiǎnchá yí biàn, jiù kěyǐ jiāo le.', vn:'Gần xong rồi, anh kiểm tra lại một lượt nữa là nộp được.'},
+       {speaker:'女', pre:'那你', blank:'快写吧', post:'。', py:'Nà nǐ kuài xiě ba.', vn:'Vậy anh viết nhanh đi.'}
+     ],
+     explain:'问：根据对话，可以知道什么？ "我打个车就回来了" → B 女的坐出租车回来的. A sai vì không ai đón; C sai vì "差不多了" (chưa xong hẳn).'},
+    {num:15, options:['空调卖光了','这个月没有上个月热','商场的活动很吸引人','空调卖得跟上个月一样多'], ans:2, q:'根据对话，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'你们这个月', blank:'空调卖得怎么样', post:'？', py:'Nǐmen zhège yuè kōngtiáo mài de zěnmeyàng?', vn:'Tháng này chỗ các bạn bán điều hoà thế nào?'},
+       {speaker:'女', pre:'挺好的，一共卖了四百多台，', blank:'几乎是上个月的两倍', post:'。', py:'Tǐng hǎo de, yígòng màile sìbǎi duō tái, jīhū shì shàng ge yuè de liǎng bèi.', vn:'Khá tốt, tổng cộng bán hơn bốn trăm chiếc, gần gấp đôi tháng trước.'},
+       {speaker:'男', pre:'天气热了，', blank:'自然就卖得好一些', post:'。', py:'Tiānqì rè le, zìrán jiù mài de hǎo yìxiē.', vn:'Trời nóng lên thì đương nhiên bán chạy hơn.'},
+       {speaker:'女', pre:'这是一方面，另外一个原因是', blank:'商场现在有"以旧换新"的活动', post:'，吸引了不少顾客。', py:'Zhè shì yì fāngmiàn, lìngwài yí ge yuányīn shì shāngchǎng xiànzài yǒu "yǐ jiù huàn xīn" de huódòng, xīyǐnle bù shǎo gùkè.', vn:'Đó là một mặt, một nguyên nhân khác là trung tâm thương mại đang có chương trình "đổi cũ lấy mới", thu hút không ít khách.'}
+     ],
+     explain:'问：下列哪个正确？ "活动…吸引了不少顾客" → C. D sai vì bán gần gấp đôi tháng trước.'},
+    {num:16, options:['他们一起回来的','家里停电了','邻居来了','灯有问题'], ans:3, q:'根据对话，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'怎么回事？', blank:'你怎么不开灯', post:'？', py:'Zěnme huí shì? Nǐ zěnme bù kāi dēng?', vn:'Sao thế? Sao anh không bật đèn?'},
+       {speaker:'男', pre:'我也是刚进门，', blank:'刚发现灯不亮', post:'，是不是停电了？', py:'Wǒ yě shì gāng jìnmén, gāng fāxiàn dēng bú liàng, shì bu shì tíngdiàn le?', vn:'Anh cũng vừa vào nhà, vừa phát hiện đèn không sáng, có phải mất điện không?'},
+       {speaker:'女', pre:'应该不会，', blank:'邻居家的灯都亮着呢', post:'。', py:'Yīnggāi bú huì, línjū jiā de dēng dōu liàngzhe ne.', vn:'Chắc không, đèn nhà hàng xóm vẫn sáng mà.'},
+       {speaker:'男', pre:'那', blank:'就是灯坏了', post:'。', py:'Nà jiù shì dēng huài le.', vn:'Vậy là đèn hỏng rồi.'}
+     ],
+     explain:'问：下列哪个正确？ "那就是灯坏了" → D 灯有问题. B sai vì hàng xóm vẫn có điện.'},
+    {num:17, options:['他生病了','姐姐喜欢狗','他要出差','他周六加班'], ans:2, q:'男的为什么让姐姐照顾他的狗？',
+     lines:[
+       {speaker:'男', pre:'姐，我要出几天差，', blank:'你能帮我照顾一下我的狗吗', post:'？', py:'Jiě, wǒ yào chū jǐ tiān chāi, nǐ néng bāng wǒ zhàogù yíxià wǒ de gǒu ma?', vn:'Chị ơi, em đi công tác mấy ngày, chị chăm con chó giúp em được không?'},
+       {speaker:'女', pre:'当然可以。', blank:'你要去几天', post:'？', py:'Dāngrán kěyǐ. Nǐ yào qù jǐ tiān?', vn:'Đương nhiên được. Em đi mấy ngày?'},
+       {speaker:'男', pre:'来回一共四天，我星期六就回来。', blank:'你记得每天要带它出去玩儿', post:'。', py:'Láihuí yígòng sì tiān, wǒ xīngqīliù jiù huílai. Nǐ jìde měi tiān yào dài tā chūqu wánr.', vn:'Đi về tổng cộng bốn ngày, thứ Bảy em về. Chị nhớ mỗi ngày dắt nó ra ngoài chơi nhé.'},
+       {speaker:'女', pre:'放心吧，', blank:'我会照顾好它的', post:'。', py:'Fàngxīn ba, wǒ huì zhàogù hǎo tā de.', vn:'Yên tâm, chị sẽ chăm nó tốt.'}
+     ],
+     explain:'问：男的为什么让姐姐照顾他的狗？ "我要出几天差" → C 他要出差.'},
+    {num:18, options:['宾馆','图书馆','饭馆','体育馆'], ans:3, q:'男的最可能去哪儿？',
+     lines:[
+       {speaker:'男', pre:'妈，', blank:'我去打篮球了', post:'。', py:'Mā, wǒ qù dǎ lánqiú le.', vn:'Mẹ, con đi chơi bóng rổ đây.'},
+       {speaker:'女', pre:'等一下，', blank:'你帮我把这袋垃圾扔到楼下', post:'。', py:'Děng yíxià, nǐ bāng wǒ bǎ zhè dài lājī rēngdào lóuxià.', vn:'Đợi chút, con mang túi rác này xuống dưới vứt giúp mẹ.'},
+       {speaker:'男', pre:'', blank:'好的', post:'。', py:'Hǎo de.', vn:'Vâng.'},
+       {speaker:'女', pre:'带手机了吗？', blank:'早点儿回来', post:'。', py:'Dài shǒujī le ma? Zǎo diǎnr huílai.', vn:'Mang điện thoại chưa? Về sớm nhé.'}
+     ],
+     explain:'问：男的最可能去哪儿？ "我去打篮球了" → D 体育馆.'},
+    {num:19, options:['上班时间','堵车情况','城市区别','地铁优点'], ans:3, q:'这段话主要介绍什么？',
+     lines:[
+       {speaker:'旁白', pre:'在北京，坐地铁很方便。很多人都选择坐地铁上下班，', blank:'一方面是考虑到地铁速度快', post:'，并且不会堵车，不用担心上班会迟到；', py:'Zài Běijīng, zuò dìtiě hěn fāngbiàn. Hěn duō rén dōu xuǎnzé zuò dìtiě shàng xiàbān, yì fāngmiàn shì kǎolǜ dào dìtiě sùdù kuài, bìngqiě bú huì dǔchē, búyòng dānxīn shàngbān huì chídào;', vn:'Ở Bắc Kinh, đi tàu điện ngầm rất tiện. Nhiều người chọn đi tàu điện ngầm đi làm, một mặt là vì tàu nhanh, lại không tắc đường, không lo đi làm muộn;'},
+       {speaker:'旁白', pre:'另一方面地铁也不算贵，跟别的城市差不多，距离不同、票价也不同，', blank:'最低三块', post:'。如果使用"一卡通"，每个月超过100块，还会打八折，这样就更便宜了。', py:'lìng yì fāngmiàn dìtiě yě bú suàn guì, gēn biéde chéngshì chàbuduō, jùlí bùtóng, piàojià yě bùtóng, zuì dī sān kuài. Rúguǒ shǐyòng "yīkǎtōng", měi ge yuè chāoguò yìbǎi kuài, hái huì dǎ bā zhé, zhèyàng jiù gèng piányi le.', vn:'mặt khác tàu điện ngầm cũng không đắt, tương đương các thành phố khác, quãng đường khác nhau thì giá vé khác nhau, thấp nhất ba tệ. Nếu dùng "thẻ một cửa", mỗi tháng quá 100 tệ còn được giảm 20%, như vậy càng rẻ hơn.'}
+     ],
+     explain:'问：这段话主要介绍什么？ Cả đoạn nói về ưu điểm của tàu điện ngầm (nhanh, không tắc, rẻ) → D 地铁优点.'},
+    {num:20, options:['3块','8块','1块','2块'], ans:0, q:'北京地铁票最低多少钱？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）距离不同、票价也不同，', blank:'最低三块', post:'。', py:'(Tóng yí duàn huà) Jùlí bùtóng, piàojià yě bùtóng, zuì dī sān kuài.', vn:'(Cùng đoạn văn) Quãng đường khác nhau thì giá vé khác nhau, thấp nhất ba tệ.'}
+     ],
+     explain:'问：北京地铁票最低多少钱？ "最低三块" → A 3块. 8 chỉ là 打八折 (giảm 20%).'},
+    {num:21, options:['很紧张','没意思','很熟悉','很简单'], ans:1, q:'刚开始运动时，很多人会觉得怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'"习惯成自然"这句话是说，一件事我们做的次数越多，就会越熟悉，习惯就会慢慢地养成。其实，', blank:'养成一个好习惯并没有我们想得那么难', post:'。', py:'"Xíguàn chéng zìrán" zhè jù huà shì shuō, yí jiàn shì wǒmen zuò de cìshù yuè duō, jiù huì yuè shúxi, xíguàn jiù huì mànman de yǎngchéng. Qíshí, yǎngchéng yí ge hǎo xíguàn bìng méiyǒu wǒmen xiǎng de nàme nán.', vn:'Câu "thói quen thành tự nhiên" nghĩa là một việc làm càng nhiều lần thì càng quen, thói quen sẽ dần hình thành. Thực ra, hình thành một thói quen tốt không khó như chúng ta nghĩ.'},
+       {speaker:'旁白', pre:'比如说运动，不少人刚开始运动时，', blank:'会感觉十分无聊', post:'，于是很快就放弃了。但坚持下来的人会告诉你："只要坚持一段时间，你会发现，运动已成为你生活中不可缺少的一部分。"', py:'Bǐrú shuō yùndòng, bù shǎo rén gāng kāishǐ yùndòng shí, huì gǎnjué shífēn wúliáo, yúshì hěn kuài jiù fàngqì le. Dàn jiānchí xiàlai de rén huì gàosu nǐ: "Zhǐyào jiānchí yí duàn shíjiān, nǐ huì fāxiàn, yùndòng yǐ chéngwéi nǐ shēnghuó zhōng bù kě quēshǎo de yí bùfen."', vn:'Ví dụ như vận động, không ít người lúc mới bắt đầu thấy rất chán nên nhanh chóng bỏ cuộc. Nhưng người kiên trì được sẽ nói với bạn: "Chỉ cần kiên trì một thời gian, bạn sẽ thấy vận động đã trở thành một phần không thể thiếu trong cuộc sống."'}
+     ],
+     explain:'问：刚开始运动时，很多人会觉得怎么样？ "会感觉十分无聊" → B 没意思.'},
+    {num:22, options:['坚持很重要','非常困难','要多听意见','需要别人帮忙'], ans:0, q:'对于养成好习惯，说话人觉得怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）养成一个好习惯并没有我们想得那么难。…', blank:'只要坚持一段时间', post:'，你会发现，运动已成为你生活中不可缺少的一部分。', py:'(Tóng yí duàn huà) Yǎngchéng yí ge hǎo xíguàn bìng méiyǒu wǒmen xiǎng de nàme nán. … Zhǐyào jiānchí yí duàn shíjiān, nǐ huì fāxiàn, yùndòng yǐ chéngwéi nǐ shēnghuó zhōng bù kě quēshǎo de yí bùfen.', vn:'(Cùng đoạn văn) Hình thành thói quen tốt không khó như ta nghĩ. … Chỉ cần kiên trì một thời gian, bạn sẽ thấy vận động đã thành một phần không thể thiếu trong cuộc sống.'}
+     ],
+     explain:'问：对于养成好习惯，说话人觉得怎么样？ "并没有那么难…只要坚持" → A 坚持很重要. B ngược nghĩa.'}
   ]
 };

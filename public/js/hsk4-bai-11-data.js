@@ -853,50 +853,147 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-11/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-11/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-11/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'你来中国才一年，汉语就说得这么',blank:'流利',post:'，真厉害！',py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!',vn:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!'}]},
-    {num:2,lines:[{pre:'你太厉害了！连中文报纸都',blank:'看得懂',post:'。',py:'Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.',vn:'Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được.'}]},
-    {num:3,lines:[{pre:'要想考好，不但要认真复习，还得注意',blank:'考试的方法',post:'。',py:'Yào xiǎng kǎohǎo, búdàn yào rènzhēn fùxí, hái děi zhùyì kǎoshì de fāngfǎ.',vn:'Muốn thi tốt, không chỉ phải ôn tập nghiêm túc, còn phải chú ý phương pháp thi.'}]},
-    {num:4,lines:[{pre:'一个真正爱看书的人总能找出时间来',blank:'阅读',post:'。',py:'Yí ge zhēnzhèng ài kàn shū de rén zǒng néng zhǎochū shíjiān lái yuèdú.',vn:'Một người thực sự yêu sách luôn có thể tìm ra thời gian để đọc.'}]},
-    {num:5,lines:[{pre:'"好读书"就是要',blank:'养成阅读的习惯',post:'。',py:'"Hào dú shū" jiù shì yào yǎngchéng yuèdú de xíguàn.',vn:'"Thích đọc sách" chính là phải hình thành thói quen đọc.'}]},
+  dictation: [
+    {num:1, stmt:'大多数孩子喜欢爸爸给他读书。', judge:true, lines:[
+      {pre:'这次调查发现，', blank:'超过70%的儿童更愿意让爸爸给自己读书', post:'。为什么会出现这种情况？可能是因为父亲平时陪孩子玩儿的时间太少。',
+       py:'Zhè cì diàochá fāxiàn, chāoguò bǎi fēn zhī qīshí de értóng gèng yuànyì ràng bàba gěi zìjǐ dú shū. Wèishénme huì chūxiàn zhè zhǒng qíngkuàng? Kěnéng shì yīnwèi fùqīn píngshí péi háizi wánr de shíjiān tài shǎo.',
+       vn:'Cuộc khảo sát này phát hiện, hơn 70% trẻ em muốn bố đọc sách cho mình hơn. Vì sao lại như vậy? Có thể vì bình thường bố có quá ít thời gian chơi với con.'}]},
+    {num:2, stmt:'他被那个故事感动了。', judge:true, lines:[
+      {pre:'等车的时候，我随便买了本杂志，看了没几页，就看到一个小故事，虽然这个故事不长，', blank:'但是写得却很好，让我很感动', post:'。',
+       py:'Děng chē de shíhou, wǒ suíbiàn mǎile běn zázhì, kànle méi jǐ yè, jiù kàndào yí ge xiǎo gùshi, suīrán zhège gùshi bù cháng, dànshì xiě de què hěn hǎo, ràng wǒ hěn gǎndòng.',
+       vn:'Lúc đợi xe, tôi tiện tay mua một cuốn tạp chí, xem chưa được mấy trang thì thấy một câu chuyện nhỏ, tuy chuyện không dài nhưng viết rất hay, khiến tôi rất cảm động.'}]},
+    {num:3, stmt:'要多跟人交流。', judge:true, lines:[
+      {pre:'多与人交流当然有很多好处。通过交流，你不但可以增加对别人的了解，', blank:'而且可以从不同的人那里得到不同的知识、经验、快乐等', post:'。',
+       py:'Duō yǔ rén jiāoliú dāngrán yǒu hěn duō hǎochù. Tōngguò jiāoliú, nǐ búdàn kěyǐ zēngjiā duì biérén de liǎojiě, érqiě kěyǐ cóng bùtóng de rén nàlǐ dédào bùtóng de zhīshi, jīngyàn, kuàilè děng.',
+       vn:'Giao lưu nhiều với mọi người đương nhiên có nhiều lợi ích. Qua giao lưu, bạn không những hiểu người khác hơn, mà còn nhận được từ những người khác nhau các kiến thức, kinh nghiệm, niềm vui khác nhau.'}]},
+    {num:4, stmt:'他现在是翻译。', judge:false, lines:[
+      {pre:'经过这段时间的学习，他的汉语水平提高了不少，不但可以听懂一些较短的句子，还可以进行简单的交流，', blank:'现在即使不用翻译也能理解是什么意思了', post:'。',
+       py:'Jīngguò zhè duàn shíjiān de xuéxí, tā de Hànyǔ shuǐpíng tígāole bù shǎo, búdàn kěyǐ tīngdǒng yìxiē jiào duǎn de jùzi, hái kěyǐ jìnxíng jiǎndān de jiāoliú, xiànzài jíshǐ búyòng fānyì yě néng lǐjiě shì shénme yìsi le.',
+       vn:'Qua thời gian học vừa rồi, trình độ tiếng Trung của anh ấy tiến bộ không ít, không những nghe hiểu được những câu ngắn mà còn giao tiếp đơn giản được, bây giờ dù không cần phiên dịch cũng hiểu được ý nghĩa.'}]},
+    {num:5, stmt:'老师让大家留下美好的回忆。', judge:true, lines:[
+      {pre:'老教授对新生说："从今天起，', blank:'如果你每天用100个字把自己的生活写下来', post:'，毕业时你将会得到一本10多万字的书，内容就是你4年大学生活的美好回忆。"',
+       py:'Lǎo jiàoshòu duì xīnshēng shuō: "Cóng jīntiān qǐ, rúguǒ nǐ měi tiān yòng yìbǎi ge zì bǎ zìjǐ de shēnghuó xiě xiàlai, bìyè shí nǐ jiāng huì dédào yì běn shí duō wàn zì de shū, nèiróng jiù shì nǐ sì nián dàxué shēnghuó de měihǎo huíyì."',
+       vn:'Vị giáo sư già nói với tân sinh viên: "Từ hôm nay, nếu mỗi ngày bạn dùng 100 chữ ghi lại cuộc sống của mình, khi tốt nghiệp bạn sẽ có một cuốn sách hơn 100 nghìn chữ, nội dung chính là những ký ức đẹp của 4 năm đại học."'}]}
   ],
-  mc:[
-    {num:6,options:['一年','三年','半年'],ans:0,
-     lines:[{speaker:'男',pre:'你来中国才',blank:'一年',post:'，汉语就说得这么流利。',py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì.',vn:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy.'}],
-     explain:'原文明确说"来中国才一年"。'},
-    {num:7,options:['坚持看中文报纸','多看电视','多背词典'],ans:0,
-     lines:[{speaker:'男',pre:'我建议你',blank:'坚持看中文报纸',post:'，这样能学到很多新词语。',py:'Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, zhèyàng néng xuédào hěn duō xīn cíyǔ.',vn:'Tôi khuyên bạn kiên trì đọc báo tiếng Trung, như vậy có thể học được rất nhiều từ mới.'}],
-     explain:'原文明确说"建议你坚持看中文报纸"。'},
-    {num:8,options:['写在本子上','马上忘掉','问老师'],ans:0,
-     lines:[{speaker:'男',pre:'遇到不认识的词语，你可以查词典，然后',blank:'写在本子上',post:'，有空儿就拿出来复习一下。',py:'Yùdào bú rènshi de cíyǔ, nǐ kěyǐ chá cídiǎn, ránhòu xiě zài běnzi shang, yǒu kòngr jiù ná chulai fùxí yíxià.',vn:'Gặp từ không biết, bạn có thể tra từ điển, rồi viết vào sổ, rảnh thì lấy ra ôn lại.'}],
-     explain:'原文明确说"然后写在本子上"。'},
-    {num:9,options:['题太多了，没做完','题太简单了','考了满分'],ans:0,
-     lines:[{speaker:'女',pre:'这次阅读考试的',blank:'题太多了，我没做完',post:'。',py:'Zhè cì yuèdú kǎoshì de tí tài duō le, wǒ méi zuòwán.',vn:'Đề thi đọc lần này quá nhiều, tôi không làm xong.'}],
-     explain:'原文明确说"题太多了，我没做完"。'},
-    {num:10,options:['只好放弃了','都做对了','重新做了一遍'],ans:0,
-     lines:[{speaker:'女',pre:'后面简单的题我虽然会，可是时间来不及，最后',blank:'只好放弃了',post:'。',py:'Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.',vn:'Những câu đơn giản phía sau tôi tuy biết làm, nhưng không kịp thời gian, cuối cùng đành phải bỏ.'}],
-     explain:'原文明确说"最后只好放弃了"。'},
-    {num:11,options:['一个都没猜对','全都猜对了','猜对了一半'],ans:0,
-     lines:[{speaker:'男',pre:'就随便猜了一个答案，结果',blank:'一个都没猜对',post:'。',py:'Jiù suíbiàn cāile yí ge dá\'àn, jiéguǒ yí ge dōu méi cāiduì.',vn:'Thế là đoán bừa một đáp án, kết quả không đoán đúng câu nào.'}],
-     explain:'原文明确说"结果一个都没猜对"。'},
-    {num:12,options:['到处是书','到处是杂志','很干净'],ans:0,
-     lines:[{speaker:'男',pre:'你的客厅里怎么',blank:'到处是书',post:'啊？',py:'Nǐ de kètīng li zěnme dàochù shì shū a?',vn:'Phòng khách của bạn sao khắp nơi đều là sách thế?'}],
-     explain:'原文明确说"客厅里怎么到处是书"。'},
-    {num:13,options:['300页','100页','30页'],ans:0,
-     lines:[{speaker:'女',pre:'每天花半个小时来读书，一个月就可以读',blank:'300页',post:'，差不多就是一本书了。',py:'Měi tiān huā bàn ge xiǎoshí lái dú shū, yí ge yuè jiù kěyǐ dú sānbǎi yè, chàbuduō jiù shì yì běn shū le.',vn:'Mỗi ngày dành nửa tiếng đọc sách, một tháng là có thể đọc 300 trang, gần như là một quyển sách rồi.'}],
-     explain:'原文明确说"一个月就可以读300页"。'},
-    {num:14,options:['把喜欢的词语和句子记下来','把整本书抄一遍','画画儿'],ans:0,
-     lines:[{speaker:'男',pre:'读书笔记有很多种，最简单的就是',blank:'把自己喜欢或者觉得有用的词语和句子记下来',post:'。',py:'Dúshū bǐjì yǒu hěn duō zhǒng, zuì jiǎndān de jiù shì bǎ zìjǐ xǐhuan huòzhě juéde yǒuyòng de cíyǔ hé jùzi jì xialai.',vn:'Ghi chép đọc sách có nhiều loại, đơn giản nhất là ghi lại những từ ngữ và câu mình thích hoặc thấy hữu ích.'}],
-     explain:'原文明确说"最简单的就是把……词语和句子记下来"。'},
-    {num:15,options:['养成阅读的习惯','读完世界上每一本书','只读著名小说'],ans:0,
-     lines:[{speaker:'女',pre:'"好读书"就是要',blank:'养成阅读的习惯',post:'，使读书真正成为自己的兴趣爱好。',py:'"Hào dú shū" jiù shì yào yǎngchéng yuèdú de xíguàn, shǐ dú shū zhēnzhèng chéngwéi zìjǐ de xìngqù àihào.',vn:'"Thích đọc sách" chính là phải hình thành thói quen đọc, khiến việc đọc sách thực sự trở thành sở thích của mình.'}],
-     explain:'原文明确说"好读书就是要养成阅读的习惯"。'},
+  mc: [
+    {num:6, options:['专业','学校','兴趣','老师'], ans:2, q:'男的认为考大学什么最重要？',
+     lines:[
+       {speaker:'女', pre:'我女儿明年要考大学了，', blank:'你觉得是学校重要还是专业重要', post:'？', py:'Wǒ nǚ\'ér míngnián yào kǎo dàxué le, nǐ juéde shì xuéxiào zhòngyào háishi zhuānyè zhòngyào?', vn:'Con gái tôi sang năm thi đại học, anh thấy trường quan trọng hay chuyên ngành quan trọng?'},
+       {speaker:'男', pre:'我觉得', blank:'主要得考虑孩子喜欢学什么', post:'。', py:'Wǒ juéde zhǔyào děi kǎolǜ háizi xǐhuan xué shénme.', vn:'Tôi thấy chủ yếu phải xem con thích học gì.'}
+     ],
+     explain:'问：男的认为考大学什么最重要？ "考虑孩子喜欢学什么" → sở thích, đáp án C 兴趣.'},
+    {num:7, options:['很复杂','不会猜','没听懂','没人教'], ans:2, q:'女的为什么不会做这个题？',
+     lines:[
+       {speaker:'男', pre:'这个填空题不是很复杂，', blank:'你再好好想一下', post:'。', py:'Zhège tiánkòngtí bú shì hěn fùzá, nǐ zài hǎohāo xiǎng yíxià.', vn:'Bài điền từ này không phức tạp lắm, cậu nghĩ kỹ lại xem.'},
+       {speaker:'女', pre:'', blank:'今天上课的时候我没听懂', post:'，而且填空题连猜都没办法猜，你教我怎么做吧。', py:'Jīntiān shàngkè de shíhou wǒ méi tīngdǒng, érqiě tiánkòngtí lián cāi dōu méi bànfǎ cāi, nǐ jiāo wǒ zěnme zuò ba.', vn:'Hôm nay trên lớp tôi không nghe hiểu, mà bài điền từ thì muốn đoán cũng không đoán được, cậu dạy tôi làm đi.'}
+     ],
+     explain:'问：女的为什么不会做这个题？ "今天上课的时候我没听懂" → C 没听懂. A sai vì người nam nói "不是很复杂".'},
+    {num:8, options:['手机','关教授','笔记','电话号码'], ans:3, q:'女的在找什么？',
+     lines:[
+       {speaker:'女', pre:'我记得上次', blank:'关教授把他的手机号码给我了', post:'，可是不知道写哪儿了。', py:'Wǒ jìde shàng cì Guān jiàoshòu bǎ tā de shǒujī hàomǎ gěi wǒ le, kěshì bù zhīdào xiě nǎr le.', vn:'Tôi nhớ lần trước giáo sư Quan đã cho tôi số điện thoại, nhưng không biết ghi ở đâu rồi.'},
+       {speaker:'男', pre:'你当时好像是在记笔记，', blank:'你看看是不是写在那儿上面了', post:'。', py:'Nǐ dāngshí hǎoxiàng shì zài jì bǐjì, nǐ kànkan shì bu shì xiě zài nàr shàngmian le.', vn:'Lúc đó hình như cậu đang ghi chép, xem thử có ghi lên đó không.'}
+     ],
+     explain:'问：女的在找什么？ "手机号码…不知道写哪儿了" → D 电话号码. Chú ý không phải tìm 手机 (A) hay 笔记 (C).'},
+    {num:9, options:['面试很重要','不用担心面试','不能改变顺序','下次早点儿来'], ans:2, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'您好，', blank:'请问我能换一下面试的时间吗', post:'？我家里突然有点儿急事儿。', py:'Nín hǎo, qǐngwèn wǒ néng huàn yíxià miànshì de shíjiān ma? Wǒ jiā li tūrán yǒudiǎnr jíshìr.', vn:'Chào chị, xin hỏi tôi có thể đổi giờ phỏng vấn không? Nhà tôi đột nhiên có việc gấp.'},
+       {speaker:'女', pre:'对不起，先生，', blank:'面试都是按顺序安排好的', post:'。', py:'Duìbuqǐ, xiānsheng, miànshì dōu shì àn shùnxù ānpái hǎo de.', vn:'Xin lỗi ông, phỏng vấn đều được sắp xếp theo thứ tự rồi.'}
+     ],
+     explain:'问：女的是什么意思？ "面试都是按顺序安排好的" → từ chối đổi, đáp án C 不能改变顺序.'},
+    {num:10, options:['没去上课','没记准新词','没听懂语法','没带笔记'], ans:1, q:'男的为什么向女的借笔记？',
+     lines:[
+       {speaker:'男', pre:'英语课笔记能借我看一下吗？', blank:'昨天课上增加了好多新词，我记得不太准确', post:'。', py:'Yīngyǔ kè bǐjì néng jiè wǒ kàn yíxià ma? Zuótiān kè shang zēngjiāle hǎo duō xīncí, wǒ jì de bú tài zhǔnquè.', vn:'Cho tôi mượn vở ghi tiết tiếng Anh xem được không? Hôm qua trên lớp thêm nhiều từ mới, tôi ghi không được chính xác lắm.'},
+       {speaker:'女', pre:'可以，', blank:'最后几页都是昨天课上讲的主要的词语和语法内容', post:'。', py:'Kěyǐ, zuìhòu jǐ yè dōu shì zuótiān kè shang jiǎng de zhǔyào de cíyǔ hé yǔfǎ nèiróng.', vn:'Được, mấy trang cuối đều là từ ngữ và ngữ pháp chính giảng hôm qua.'}
+     ],
+     explain:'问：男的为什么向女的借笔记？ "新词，我记得不太准确" → B 没记准新词. Anh ấy có đi học (A sai).'},
+    {num:11, options:['小说很贵','应该买报纸','男的不爱看书','书在桌子上'], ans:2, q:'女的什么意思？',
+     lines:[
+       {speaker:'男', pre:'我昨天买的那本小说哪儿去了？', blank:'我记得放在桌子上了', post:'。', py:'Wǒ zuótiān mǎi de nà běn xiǎoshuō nǎr qù le? Wǒ jìde fàng zài zhuōzi shang le.', vn:'Cuốn tiểu thuyết tôi mua hôm qua đâu rồi? Tôi nhớ đã để trên bàn.'},
+       {speaker:'女', pre:'奇怪，你一般连报纸都不买，', blank:'什么时候开始有兴趣看书了', post:'啊？', py:'Qíguài, nǐ yìbān lián bàozhǐ dōu bù mǎi, shénme shíhou kāishǐ yǒu xìngqù kàn shū le a?', vn:'Lạ nhỉ, bình thường anh đến báo còn chẳng mua, từ bao giờ có hứng thú đọc sách thế?'}
+     ],
+     explain:'问：女的什么意思？ "连报纸都不买，什么时候开始有兴趣看书了" → ý nói anh ấy vốn không thích đọc sách, đáp án C.'},
+    {num:12, options:['结果不重要','比赛有意思','没赢很难过','时间来得及'], ans:0, q:'女的是什么意思？',
+     lines:[
+       {speaker:'男', pre:'只差一点儿就赢了，', blank:'他现在肯定很难过', post:'。', py:'Zhǐ chà yìdiǎnr jiù yíng le, tā xiànzài kěndìng hěn nánguò.', vn:'Chỉ thiếu chút nữa là thắng rồi, giờ chắc cậu ấy buồn lắm.'},
+       {speaker:'女', pre:'他已经打出了自己最好的水平，', blank:'无论结果怎么样，我们都应该为他高兴', post:'。', py:'Tā yǐjīng dǎchūle zìjǐ zuì hǎo de shuǐpíng, wúlùn jiéguǒ zěnmeyàng, wǒmen dōu yīnggāi wèi tā gāoxìng.', vn:'Cậu ấy đã thi đấu hết khả năng, dù kết quả thế nào chúng ta đều nên mừng cho cậu ấy.'}
+     ],
+     explain:'问：女的是什么意思？ "无论结果怎么样，我们都应该为他高兴" → A 结果不重要.'},
+    {num:13, options:['比较难','应该改','可以猜','没问题'], ans:1, q:'那个题怎么了？',
+     lines:[
+       {speaker:'女', pre:'', blank:'那个题的答案有问题吧', post:'？', py:'Nàge tí de dá\'àn yǒu wèntí ba?', vn:'Đáp án của câu đó có vấn đề phải không?'},
+       {speaker:'男', pre:'你是说', blank:'那个填空题吗', post:'？', py:'Nǐ shì shuō nàge tiánkòngtí ma?', vn:'Cậu nói câu điền từ đó à?'},
+       {speaker:'女', pre:'是啊，这里填', blank:'"举办"、"举行"都可以', post:'。', py:'Shì a, zhèlǐ tián "jǔbàn", "jǔxíng" dōu kěyǐ.', vn:'Đúng, chỗ này điền "举办" hay "举行" đều được.'},
+       {speaker:'男', pre:'对，这个题有问题，', blank:'得重新改改', post:'。', py:'Duì, zhège tí yǒu wèntí, děi chóngxīn gǎigai.', vn:'Đúng, câu này có vấn đề, phải sửa lại.'}
+     ],
+     explain:'问：那个题怎么了？ "这个题有问题，得重新改改" → B 应该改.'},
+    {num:14, options:['汉语说得不太好','知道很多汉语词','觉得女的很厉害','刚刚开始学汉语'], ans:1, q:'关于男的，可以知道什么？',
+     lines:[
+       {speaker:'女', pre:'你的汉语说得很流利，', blank:'词语用得很丰富', post:'。', py:'Nǐ de Hànyǔ shuō de hěn liúlì, cíyǔ yòng de hěn fēngfù.', vn:'Tiếng Trung của anh nói rất lưu loát, dùng từ rất phong phú.'},
+       {speaker:'男', pre:'真的吗？谢谢！', blank:'其实没你说得那么厉害', post:'。', py:'Zhēn de ma? Xièxie! Qíshí méi nǐ shuō de nàme lìhai.', vn:'Thật sao? Cảm ơn! Thực ra không giỏi như cô nói đâu.'},
+       {speaker:'女', pre:'你', blank:'学汉语多长时间了', post:'？', py:'Nǐ xué Hànyǔ duō cháng shíjiān le?', vn:'Anh học tiếng Trung bao lâu rồi?'},
+       {speaker:'男', pre:'', blank:'差不多有三年了', post:'吧。', py:'Chàbuduō yǒu sān nián le ba.', vn:'Khoảng ba năm rồi.'}
+     ],
+     explain:'问：关于男的，可以知道什么？ "词语用得很丰富" → B 知道很多汉语词. D sai vì đã học ba năm.'},
+    {num:15, options:['用很长时间','多看材料','复习主要的','注意语法'], ans:2, q:'男的认为应该怎么复习？',
+     lines:[
+       {speaker:'男', pre:'', blank:'复习得怎么样了', post:'？', py:'Fùxí de zěnmeyàng le?', vn:'Ôn tập thế nào rồi?'},
+       {speaker:'女', pre:'材料这么多，', blank:'我估计看不完了', post:'。', py:'Cáiliào zhème duō, wǒ gūjì kànbuwán le.', vn:'Tài liệu nhiều thế này, tôi e là xem không hết.'},
+       {speaker:'男', pre:'来得及，复习要注意方法，', blank:'看主要内容', post:'。', py:'Láidejí, fùxí yào zhùyì fāngfǎ, kàn zhǔyào nèiróng.', vn:'Vẫn kịp, ôn tập phải chú ý phương pháp, xem nội dung chính.'},
+       {speaker:'女', pre:'只能这样了，', blank:'这些语法知识太难了', post:'。', py:'Zhǐ néng zhèyàng le, zhèxiē yǔfǎ zhīshi tài nán le.', vn:'Đành vậy thôi, mấy kiến thức ngữ pháp này khó quá.'}
+     ],
+     explain:'问：男的认为应该怎么复习？ "看主要内容" → C 复习主要的.'},
+    {num:16, options:['讲故事','做蛋糕','看完书','做计划'], ans:2, q:'妈妈让孩子做什么？',
+     lines:[
+       {speaker:'男', pre:'妈妈，', blank:'后面这几页书我明天再看行吗', post:'？', py:'Māma, hòumian zhè jǐ yè shū wǒ míngtiān zài kàn xíng ma?', vn:'Mẹ ơi, mấy trang sách còn lại mai con xem tiếp được không?'},
+       {speaker:'女', pre:'别养成坏习惯，记住，', blank:'今天能完成的事情一定不要留到明天做', post:'。', py:'Bié yǎngchéng huài xíguàn, jìzhu, jīntiān néng wánchéng de shìqing yídìng bú yào liúdào míngtiān zuò.', vn:'Đừng tạo thói quen xấu, nhớ nhé, việc hôm nay làm được thì nhất định đừng để đến mai.'},
+       {speaker:'男', pre:'那您快把刚才没吃完的蛋糕拿出来，', blank:'我现在就把它吃光', post:'！', py:'Nà nín kuài bǎ gāngcái méi chīwán de dàngāo ná chūlai, wǒ xiànzài jiù bǎ tā chīguāng!', vn:'Vậy mẹ mau lấy chỗ bánh chưa ăn hết lúc nãy ra, con ăn sạch ngay bây giờ!'},
+       {speaker:'女', pre:'你这孩子，', blank:'就知道吃', post:'。', py:'Nǐ zhè háizi, jiù zhīdào chī.', vn:'Cái thằng này, chỉ biết ăn.'}
+     ],
+     explain:'问：妈妈让孩子做什么？ Mẹ không cho để sách đến mai → phải đọc xong hôm nay, đáp án C 看完书.'},
+    {num:17, options:['送材料','取报纸','还杂志','送礼物'], ans:0, q:'女的找李校长做什么？',
+     lines:[
+       {speaker:'女', pre:'打扰一下，', blank:'请问李校长在吗', post:'？', py:'Dǎrǎo yíxià, qǐngwèn Lǐ xiàozhǎng zài ma?', vn:'Làm phiền chút, xin hỏi hiệu trưởng Lý có ở đây không?'},
+       {speaker:'男', pre:'他去吃午饭了，', blank:'您有什么事情吗', post:'？', py:'Tā qù chī wǔfàn le, nín yǒu shénme shìqing ma?', vn:'Thầy ấy đi ăn trưa rồi, chị có việc gì không?'},
+       {speaker:'女', pre:'', blank:'我有些材料要交给他', post:'，你知道他什么时候回来吗？', py:'Wǒ yǒu xiē cáiliào yào jiāo gěi tā, nǐ zhīdào tā shénme shíhou huílai ma?', vn:'Tôi có ít tài liệu cần đưa cho thầy ấy, anh biết bao giờ thầy ấy về không?'},
+       {speaker:'男', pre:'他应该很快就会回来了，', blank:'您等等他吧', post:'。', py:'Tā yīnggāi hěn kuài jiù huì huílai le, nín děngdeng tā ba.', vn:'Chắc thầy ấy sắp về rồi, chị đợi một chút nhé.'}
+     ],
+     explain:'问：女的找李校长做什么？ "我有些材料要交给他" → A 送材料.'},
+    {num:18, options:['内容精彩','图片漂亮','价格便宜','很吸引人'], ans:2, q:'这个杂志没有以下哪个特点？',
+     lines:[
+       {speaker:'女', pre:'现在', blank:'哪种体育杂志比较好看', post:'呢？', py:'Xiànzài nǎ zhǒng tǐyù zázhì bǐjiào hǎokàn ne?', vn:'Bây giờ tạp chí thể thao nào hay?'},
+       {speaker:'男', pre:'你知道《体育世界》吗？', blank:'那个杂志的内容比较精彩，图片很漂亮，很吸引人', post:'。', py:'Nǐ zhīdào «Tǐyù Shìjiè» ma? Nàge zázhì de nèiróng bǐjiào jīngcǎi, túpiàn hěn piàoliang, hěn xīyǐn rén.', vn:'Cậu biết «Thế giới Thể thao» không? Tạp chí đó nội dung khá đặc sắc, hình ảnh đẹp, rất hấp dẫn.'},
+       {speaker:'女', pre:'我怎么听说', blank:'买那本杂志的人很少', post:'呢？', py:'Wǒ zěnme tīngshuō mǎi nà běn zázhì de rén hěn shǎo ne?', vn:'Sao tôi nghe nói người mua tạp chí đó rất ít?'},
+       {speaker:'男', pre:'主要是它', blank:'价格定得太高', post:'。不少人虽然喜欢，但因为觉得太贵只好放弃了。', py:'Zhǔyào shì tā jiàgé dìng de tài gāo. Bù shǎo rén suīrán xǐhuan, dàn yīnwèi juéde tài guì zhǐhǎo fàngqì le.', vn:'Chủ yếu là giá đặt quá cao. Nhiều người tuy thích nhưng vì thấy đắt quá đành bỏ.'}
+     ],
+     explain:'问：这个杂志没有以下哪个特点？ Tạp chí 精彩, 图片漂亮, 吸引人 nhưng "价格定得太高" → không rẻ, đáp án C 价格便宜. Chú ý câu hỏi phủ định.'},
+    {num:19, options:['获得机会','选择新闻','关心大家','及时看报'], ans:1, q:'根据这段话，新闻工作者要学会什么？',
+     lines:[
+       {speaker:'旁白', pre:'对新闻工作者来说，获得及时准确的消息特别重要。除此之外，', blank:'还要学会选择', post:'，', py:'Duì xīnwén gōngzuòzhě lái shuō, huòdé jíshí zhǔnquè de xiāoxi tèbié zhòngyào. Chú cǐ zhī wài, hái yào xuéhuì xuǎnzé,', vn:'Với người làm báo, có được tin tức kịp thời và chính xác đặc biệt quan trọng. Ngoài ra, còn phải biết chọn lọc,'},
+       {speaker:'旁白', pre:'因为生活中每天都会发生各种各样的事情，但不是所有的都值得写在报纸上，', blank:'只有那些热点问题才会得到大家的注意和关心', post:'。', py:'yīnwèi shēnghuó zhōng měi tiān dōu huì fāshēng gè zhǒng gè yàng de shìqing, dàn bú shì suǒyǒu de dōu zhídé xiě zài bàozhǐ shang, zhǐyǒu nàxiē rèdiǎn wèntí cái huì dédào dàjiā de zhùyì hé guānxīn.', vn:'vì trong cuộc sống mỗi ngày đều xảy ra đủ loại chuyện, nhưng không phải cái nào cũng đáng viết lên báo, chỉ những vấn đề nóng mới được mọi người chú ý và quan tâm.'}
+     ],
+     explain:'问：新闻工作者要学会什么？ "还要学会选择" → B 选择新闻.'},
+    {num:20, options:['所有的消息','刚获得的消息','生活中的事','大家关心的热点'], ans:3, q:'根据这段话，哪些消息应该写在报纸上？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）不是所有的都值得写在报纸上，', blank:'只有那些热点问题才会得到大家的注意和关心', post:'。', py:'(Tóng yí duàn huà) Bú shì suǒyǒu de dōu zhídé xiě zài bàozhǐ shang, zhǐyǒu nàxiē rèdiǎn wèntí cái huì dédào dàjiā de zhùyì hé guānxīn.', vn:'(Cùng đoạn văn) Không phải cái nào cũng đáng viết lên báo, chỉ những vấn đề nóng mới được mọi người chú ý và quan tâm.'}
+     ],
+     explain:'问：哪些消息应该写在报纸上？ "只有那些热点问题" → D 大家关心的热点.'},
+    {num:21, options:['很诚实','汉语很好','想当翻译','爱开玩笑'], ans:1, q:'关于说话人，下列哪个正确？',
+     lines:[
+       {speaker:'旁白', pre:'我来中国差不多一年了，', blank:'大家都说我的中文很流利', post:'。有不少人问我是怎么做到的，其实我的方法很简单，就是多交一些中国朋友，经常和他们聊天儿。', py:'Wǒ lái Zhōngguó chàbuduō yì nián le, dàjiā dōu shuō wǒ de Zhōngwén hěn liúlì. Yǒu bù shǎo rén wèn wǒ shì zěnme zuòdào de, qíshí wǒ de fāngfǎ hěn jiǎndān, jiù shì duō jiāo yìxiē Zhōngguó péngyou, jīngcháng hé tāmen liáotiānr.', vn:'Tôi đến Trung Quốc gần một năm, mọi người đều nói tiếng Trung của tôi rất lưu loát. Nhiều người hỏi tôi làm thế nào, thực ra cách của tôi rất đơn giản, là kết bạn với nhiều người Trung Quốc, thường xuyên trò chuyện với họ.'},
+       {speaker:'旁白', pre:'还有，遇到不认识的词语，', blank:'我会马上查词典', post:'，然后写在笔记本上，有空儿就复习复习。这样慢慢积累，我的听说读写能力都得到了很大的提高。', py:'Hái yǒu, yùdào bú rènshi de cíyǔ, wǒ huì mǎshàng chá cídiǎn, ránhòu xiě zài bǐjìběn shang, yǒu kòngr jiù fùxí fùxí. Zhèyàng mànman jīlěi, wǒ de tīng shuō dú xiě nénglì dōu dédàole hěn dà de tígāo.', vn:'Ngoài ra, gặp từ không biết, tôi lập tức tra từ điển, rồi ghi vào sổ, rảnh thì ôn lại. Tích luỹ dần như vậy, khả năng nghe nói đọc viết của tôi đều tiến bộ rất nhiều.'}
+     ],
+     explain:'问：关于说话人，下列哪个正确？ "大家都说我的中文很流利" → B 汉语很好.'},
+    {num:22, options:['问同学','问老师','查词典','放在一边'], ans:2, q:'遇到不认识的词，说话人会怎么办？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）遇到不认识的词语，', blank:'我会马上查词典', post:'，然后写在笔记本上。', py:'(Tóng yí duàn huà) Yùdào bú rènshi de cíyǔ, wǒ huì mǎshàng chá cídiǎn, ránhòu xiě zài bǐjìběn shang.', vn:'(Cùng đoạn văn) Gặp từ không biết, tôi lập tức tra từ điển, rồi ghi vào sổ.'}
+     ],
+     explain:'问：遇到不认识的词，说话人会怎么办？ "马上查词典" → C 查词典.'}
   ]
 };
 

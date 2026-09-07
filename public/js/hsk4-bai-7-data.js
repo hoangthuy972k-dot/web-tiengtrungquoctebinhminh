@@ -910,49 +910,146 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-7/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-7/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-7/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'我还不习惯北方的气候，',blank:'估计',post:'是天气太干。',py:'Wǒ hái bù xíguàn běifāng de qìhòu, gūjì shì tiānqì tài gān.',vn:'Tôi vẫn chưa quen với khí hậu miền Bắc, đoán là do thời tiết quá khô.'}]},
-    {num:2,lines:[{pre:'等你身体出现问题了，后悔就',blank:'来不及',post:'了。',py:'Děng nǐ shēntǐ chūxiàn wèntí le, hòuhuǐ jiù láibují le.',vn:'Đợi đến khi cơ thể bạn xuất hiện vấn đề, hối hận cũng không kịp nữa.'}]},
-    {num:3,lines:[{pre:'研究发现，如果人一天静坐超过6小时，就会',blank:'影响',post:'身体健康。',py:'Yánjiū fāxiàn, rúguǒ rén yì tiān jìngzuò chāoguò liù xiǎoshí, jiù huì yǐngxiǎng shēntǐ jiànkāng.',vn:'Nghiên cứu phát hiện, nếu một người ngồi yên một ngày quá 6 tiếng, sẽ ảnh hưởng đến sức khỏe.'}]},
-    {num:4,lines:[{pre:'只有身体和精神都健康，才算是',blank:'真正',post:'的健康。',py:'Zhǐyǒu shēntǐ hé jīngshén dōu jiànkāng, cái suàn shì zhēnzhèng de jiànkāng.',vn:'Chỉ khi cả cơ thể và tinh thần đều khỏe mạnh, mới tính là sức khỏe thực sự.'}]},
-    {num:5,lines:[{pre:'散步既可以活动身体，又可以减肥，而且不会像跑步那样',blank:'辛苦',post:'。',py:'Sànbù jì kěyǐ huódòng shēntǐ, yòu kěyǐ jiǎnféi, érqiě bú huì xiàng pǎobù nàyàng xīnkǔ.',vn:'Đi dạo vừa có thể vận động cơ thể, vừa có thể giảm cân, hơn nữa lại không vất vả như chạy bộ.'}]},
+  dictation: [
+    {num:1, stmt:'他最近又胖了。', judge:false, lines:[
+      {pre:'尽管很辛苦，但他还是每天锻炼一个小时，几个月下来，', blank:'减肥的效果很不错', post:'。',
+       py:'Jǐnguǎn hěn xīnkǔ, dàn tā háishi měi tiān duànliàn yí ge xiǎoshí, jǐ ge yuè xiàlai, jiǎnféi de xiàoguǒ hěn búcuò.',
+       vn:'Dù rất vất vả, anh ấy vẫn tập luyện mỗi ngày một tiếng, mấy tháng trôi qua, hiệu quả giảm cân rất tốt.'}]},
+    {num:2, stmt:'春天容易感冒。', judge:true, lines:[
+      {pre:'春天天气时冷时热，很多人感冒，', blank:'医生提醒人们要注意室内空气质量', post:'，早上起床后应该打开窗户换换空气。如果感冒了，要及时去医院。',
+       py:'Chūntiān tiānqì shí lěng shí rè, hěn duō rén gǎnmào, yīshēng tíxǐng rénmen yào zhùyì shìnèi kōngqì zhìliàng, zǎoshang qǐchuáng hòu yīnggāi dǎkāi chuānghu huànhuan kōngqì. Rúguǒ gǎnmào le, yào jíshí qù yīyuàn.',
+       vn:'Mùa xuân thời tiết lúc lạnh lúc nóng, nhiều người bị cảm, bác sĩ nhắc mọi người chú ý chất lượng không khí trong nhà, buổi sáng dậy nên mở cửa sổ để thay không khí. Nếu bị cảm, phải kịp thời đi bệnh viện.'}]},
+    {num:3, stmt:'女人都想过减肥。', judge:false, lines:[
+      {pre:'我们调查发现，', blank:'差不多有五分之四的女人考虑过减肥', post:'，实际上，她们中的很多人并不胖。',
+       py:'Wǒmen diàochá fāxiàn, chàbuduō yǒu wǔ fēn zhī sì de nǚrén kǎolǜguo jiǎnféi, shíjìshang, tāmen zhōng de hěn duō rén bìng bú pàng.',
+       vn:'Khảo sát của chúng tôi phát hiện, gần bốn phần năm phụ nữ từng nghĩ đến chuyện giảm cân, thực tế, rất nhiều người trong số họ không hề béo.'}]},
+    {num:4, stmt:'自己要对健康负责。', judge:true, lines:[
+      {pre:'每一包香烟上都印有"吸烟有害健康"的句子，就是告诉人们抽烟对身体不好，', blank:'提醒人们要对自己的健康负责', post:'。',
+       py:'Měi yì bāo xiāngyān shang dōu yìn yǒu "xīyān yǒuhài jiànkāng" de jùzi, jiù shì gàosu rénmen chōuyān duì shēntǐ bù hǎo, tíxǐng rénmen yào duì zìjǐ de jiànkāng fùzé.',
+       vn:'Trên mỗi bao thuốc lá đều in câu "hút thuốc có hại cho sức khoẻ", chính là để nói với mọi người hút thuốc không tốt cho cơ thể, nhắc mọi người phải chịu trách nhiệm với sức khoẻ của mình.'}]},
+    {num:5, stmt:'睡太久对身体不好。', judge:true, lines:[
+      {pre:'很多人一到周末就喜欢睡觉，而且一睡就是大半天。医生提醒我们，', blank:'睡觉时间太长并不好', post:'，有时甚至会头疼，一般睡够八小时就可以了。',
+       py:'Hěn duō rén yí dào zhōumò jiù xǐhuan shuìjiào, érqiě yí shuì jiù shì dàbàntiān. Yīshēng tíxǐng wǒmen, shuìjiào shíjiān tài cháng bìng bù hǎo, yǒushí shènzhì huì tóuténg, yìbān shuì gòu bā xiǎoshí jiù kěyǐ le.',
+       vn:'Nhiều người cứ đến cuối tuần là thích ngủ, mà ngủ một mạch cả nửa ngày. Bác sĩ nhắc chúng ta, ngủ quá lâu không hề tốt, có khi còn đau đầu, thường ngủ đủ tám tiếng là được.'}]}
   ],
-  mc:[
-    {num:6,options:['吹了风','昨天穿得太少','没休息好'],ans:1,
-     lines:[{speaker:'男',pre:'就是因为昨天穿得太少，我都',blank:'感冒',post:'了。',py:'Jiù shì yīnwèi zuótiān chuān de tài shǎo, wǒ dōu gǎnmào le.',vn:'Chính vì hôm qua mặc quá ít, tôi bị cảm rồi.'}],
-     explain:'原文明确说"就是因为昨天穿得太少"。'},
-    {num:7,options:['很严重','不严重','很危险'],ans:1,
-     lines:[{speaker:'女',pre:'没有，我只是咳嗽，有点儿头疼，',blank:'不严重',post:'，多喝点儿水就好了。',py:'Méiyǒu, wǒ zhǐ shì késou, yǒudiǎnr tóuténg, bù yánzhòng, duō hē diǎnr shuǐ jiù hǎo le.',vn:'Không có, tôi chỉ ho thôi, hơi đau đầu, không nghiêm trọng, uống thêm nước là khỏi.'}],
-     explain:'原文明确说"不严重"。'},
-    {num:8,options:['打开窗户换换空气','关上窗户','开空调'],ans:0,
-     lines:[{speaker:'女',pre:'这时候一定要多注意保暖，另外，最好经常',blank:'打开窗户换换空气',post:'。',py:'Zhè shíhou yídìng yào duō zhùyì bǎonuǎn, lìngwài, zuìhǎo jīngcháng dǎkāi chuānghu huànhuan kōngqì.',vn:'Lúc này nhất định phải chú ý giữ ấm, ngoài ra, tốt nhất nên thường xuyên mở cửa sổ để thay đổi không khí.'}],
-     explain:'原文明确说"最好经常打开窗户换换空气"。'},
-    {num:9,options:['医生让他别抽烟了','医生说没关系','医生让他多运动'],ans:0,
-     lines:[{speaker:'女',pre:'还是老样子，他让我以后',blank:'不要再抽烟了',post:'。',py:'Hái shì lǎo yàngzi, tā ràng wǒ yǐhòu búyào zài chōuyān le.',vn:'Vẫn như cũ, bác sĩ bảo tôi sau này đừng hút thuốc nữa.'}],
-     explain:'原文明确说"他让我以后不要再抽烟了"。'},
-    {num:10,options:['看上去很帅','很便宜','很方便'],ans:0,
-     lines:[{speaker:'男',pre:'我也知道，可是我觉得抽烟这个动作',blank:'看上去很帅',post:'。',py:'Wǒ yě zhīdào, kěshì wǒ juéde chōuyān zhège dòngzuò kàn shangqu hěn shuài.',vn:'Tôi cũng biết, nhưng tôi thấy động tác hút thuốc trông rất ngầu.'}],
-     explain:'原文明确说"这个动作看上去很帅"。'},
-    {num:11,options:['长时间看电脑','没睡好','吃得太咸'],ans:0,
-     lines:[{speaker:'男',pre:'我最近眼睛总是跳，大夫说是因为我',blank:'长时间看电脑',post:'，眼睛太累。',py:'Wǒ zuìjìn yǎnjing zǒngshì tiào, dàifu shuō shì yīnwèi wǒ cháng shíjiān kàn diànnǎo, yǎnjing tài lèi.',vn:'Gần đây mắt tôi cứ giật liên tục, bác sĩ nói là do tôi nhìn máy tính lâu quá, mắt quá mỏi.'}],
-     explain:'原文明确说"是因为我长时间看电脑，眼睛太累"。'},
-    {num:12,options:['6小时','8小时','4小时'],ans:0,
-     lines:[{speaker:'女',pre:'研究发现，如果人一天静坐超过',blank:'6小时',post:'，就会影响身体健康。',py:'Yánjiū fāxiàn, rúguǒ rén yì tiān jìngzuò chāoguò liù xiǎoshí, jiù huì yǐngxiǎng shēntǐ jiànkāng.',vn:'Nghiên cứu phát hiện, nếu một người ngồi yên một ngày quá 6 tiếng, sẽ ảnh hưởng đến sức khỏe.'}],
-     explain:'原文明确说"超过6小时"。'},
-    {num:13,options:['身体不生病','精神上的健康','身体不生病和精神健康'],ans:2,
-     lines:[{speaker:'男',pre:'只有身体和精神都健康，才算是',blank:'真正的健康',post:'。',py:'Zhǐyǒu shēntǐ hé jīngshén dōu jiànkāng, cái suàn shì zhēnzhèng de jiànkāng.',vn:'Chỉ khi cả cơ thể và tinh thần đều khỏe mạnh, mới tính là sức khỏe thực sự.'}],
-     explain:'原文明确说"只有身体和精神都健康，才算是真正的健康"，即两者都要健康。'},
-    {num:14,options:['最好的运动是散步','最好的医生是自己','最好的药是时间'],ans:0,
-     lines:[{speaker:'女',pre:'前两条我理解得不深，最后一条我',blank:'完全同意',post:'。',py:'Qián liǎng tiáo wǒ lǐjiě de bù shēn, zuìhòu yì tiáo wǒ wánquán tóngyì.',vn:'Hai điều đầu tôi hiểu không sâu, điều cuối cùng tôi hoàn toàn đồng ý.'}],
-     explain:'原文说三条中"最后一条"是作者完全同意的，即"最好的运动是散步"。'},
-    {num:15,options:['活动身体、减肥','赚更多钱','认识更多朋友'],ans:0,
-     lines:[{speaker:'男',pre:'散步既可以',blank:'活动身体，又可以减肥',post:'，而且不会像跑步那样辛苦。',py:'Sànbù jì kěyǐ huódòng shēntǐ, yòu kěyǐ jiǎnféi, érqiě bú huì xiàng pǎobù nàyàng xīnkǔ.',vn:'Đi dạo vừa có thể vận động cơ thể, vừa có thể giảm cân, hơn nữa lại không vất vả như chạy bộ.'}],
-     explain:'原文明确说"既可以活动身体，又可以减肥"。'},
+  mc: [
+    {num:6, options:['发烧了','感冒了','流鼻血了','肚子疼'], ans:2, q:'男的怎么了？',
+     lines:[
+       {speaker:'女', pre:'你怎么', blank:'这两天总是鼻子流血', post:'？快用纸擦擦。', py:'Nǐ zěnme zhè liǎng tiān zǒngshì bízi liúxiě? Kuài yòng zhǐ cāca.', vn:'Sao mấy hôm nay anh cứ chảy máu mũi thế? Mau lấy giấy lau đi.'},
+       {speaker:'男', pre:'我还不习惯北方的气候，', blank:'估计是天气太干', post:'。', py:'Wǒ hái bù xíguàn běifāng de qìhòu, gūjì shì tiānqì tài gān.', vn:'Tôi vẫn chưa quen khí hậu miền Bắc, chắc là do thời tiết quá khô.'}
+     ],
+     explain:'问：男的怎么了？ "鼻子流血" → C 流鼻血了.'},
+    {num:7, options:['饿了','胖了','茶喝多了','肚子不舒服'], ans:3, q:'男的怎么了？',
+     lines:[
+       {speaker:'男', pre:'我今天吃得太多了，', blank:'肚子有点儿不舒服', post:'。', py:'Wǒ jīntiān chī de tài duō le, dùzi yǒudiǎnr bù shūfu.', vn:'Hôm nay tôi ăn nhiều quá, bụng hơi khó chịu.'},
+       {speaker:'女', pre:'', blank:'喝点儿热茶', post:'可能会好一些。', py:'Hē diǎnr rè chá kěnéng huì hǎo yìxiē.', vn:'Uống chút trà nóng có thể sẽ đỡ hơn.'}
+     ],
+     explain:'问：男的怎么了？ "肚子有点儿不舒服" → D 肚子不舒服. Trà chỉ là lời khuyên (C sai).'},
+    {num:8, options:['嘴','牙','头','肚子'], ans:1, q:'男的哪里不舒服？',
+     lines:[
+       {speaker:'男', pre:'大夫，', blank:'我的牙最近特别疼', post:'，不知道是怎么回事。', py:'Dàifu, wǒ de yá zuìjìn tèbié téng, bù zhīdào shì zěnme huí shì.', vn:'Bác sĩ, răng tôi dạo này đau lắm, không biết là sao.'},
+       {speaker:'女', pre:'你先躺这儿，好，', blank:'张开嘴我看看', post:'。', py:'Nǐ xiān tǎng zhèr, hǎo, zhāngkāi zuǐ wǒ kànkan.', vn:'Anh nằm xuống đây trước, được rồi, há miệng ra tôi xem.'}
+     ],
+     explain:'问：男的哪里不舒服？ "我的牙最近特别疼" → B 牙. Bác sĩ nói 张开嘴 nhưng chỗ đau là răng.'},
+    {num:9, options:['腿流血了','手流血了','足球丢了','去医院了'], ans:0, q:'男的刚才怎么了？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你的腿怎么流血了', post:'？快去医院吧。', py:'Nǐ de tuǐ zěnme liúxiě le? Kuài qù yīyuàn ba.', vn:'Chân anh sao chảy máu thế? Mau đi bệnh viện đi.'},
+       {speaker:'男', pre:'没关系，', blank:'刚才踢足球不小心擦掉了点儿皮', post:'，不用去医院。', py:'Méi guānxi, gāngcái tī zúqiú bù xiǎoxīn cādiàole diǎnr pí, búyòng qù yīyuàn.', vn:'Không sao, lúc nãy đá bóng không cẩn thận bị trầy chút da thôi, không cần đi bệnh viện.'}
+     ],
+     explain:'问：男的刚才怎么了？ "你的腿怎么流血了" → A 腿流血了. D sai vì anh ấy nói không cần đi viện.'},
+    {num:10, options:['图书馆','体育馆','医院','电影院'], ans:2, q:'男的最可能在哪儿？',
+     lines:[
+       {speaker:'女', pre:'', blank:'每天要按时吃药', post:'，注意休息，下个星期再来检查一次。', py:'Měi tiān yào ànshí chī yào, zhùyì xiūxi, xià ge xīngqī zài lái jiǎnchá yí cì.', vn:'Mỗi ngày phải uống thuốc đúng giờ, chú ý nghỉ ngơi, tuần sau đến kiểm tra lại một lần.'},
+       {speaker:'男', pre:'明白了，', blank:'谢谢大夫', post:'，再见。', py:'Míngbai le, xièxie dàifu, zàijiàn.', vn:'Tôi hiểu rồi, cảm ơn bác sĩ, tạm biệt.'}
+     ],
+     explain:'问：男的最可能在哪儿？ "按时吃药…再来检查…谢谢大夫" → C 医院.'},
+    {num:11, options:['她不用减肥','她太胖了','她太瘦了','她在开玩笑'], ans:0, q:'男的主要是什么意思？',
+     lines:[
+       {speaker:'女', pre:'我觉得我太胖了，所以我要减肥，', blank:'以后不吃甜食了', post:'。', py:'Wǒ juéde wǒ tài pàng le, suǒyǐ wǒ yào jiǎnféi, yǐhòu bù chī tiánshí le.', vn:'Em thấy mình béo quá nên phải giảm cân, sau này không ăn đồ ngọt nữa.'},
+       {speaker:'男', pre:'没那么严重吧。', blank:'我觉得你胖一点儿更漂亮', post:'。', py:'Méi nàme yánzhòng ba. Wǒ juéde nǐ pàng yìdiǎnr gèng piàoliang.', vn:'Không đến mức thế đâu. Anh thấy em hơi đầy đặn một chút càng đẹp.'}
+     ],
+     explain:'问：男的主要是什么意思？ "没那么严重…胖一点儿更漂亮" → ý là không cần giảm cân, đáp án A.'},
+    {num:12, options:['发烧了','肚子疼','一直咳嗽','陪同事看病'], ans:3, q:'女的为什么来医院？',
+     lines:[
+       {speaker:'男', pre:'你怎么也在医院？', blank:'身体不舒服', post:'？', py:'Nǐ zěnme yě zài yīyuàn? Shēntǐ bù shūfu?', vn:'Sao cậu cũng ở bệnh viện? Không khoẻ à?'},
+       {speaker:'女', pre:'不是，我同事突然肚子疼，', blank:'我陪她来检查一下', post:'。', py:'Bú shì, wǒ tóngshì tūrán dùzi téng, wǒ péi tā lái jiǎnchá yíxià.', vn:'Không phải, đồng nghiệp tôi đột nhiên đau bụng, tôi đưa cô ấy đến kiểm tra.'}
+     ],
+     explain:'问：女的为什么来医院？ "我陪她来检查一下" → D 陪同事看病. B 肚子疼 là đồng nghiệp, không phải cô ấy.'},
+    {num:13, options:['病好了','太忙了','请不了假','不愿意吃药'], ans:3, q:'男的为什么不去医院？',
+     lines:[
+       {speaker:'女', pre:'你的咳嗽怎么一直没好？', blank:'去医院看看吧', post:'。', py:'Nǐ de késou zěnme yìzhí méi hǎo? Qù yīyuàn kànkan ba.', vn:'Sao anh ho mãi không khỏi? Đi bệnh viện khám đi.'},
+       {speaker:'男', pre:'不去，不是很严重，', blank:'过两天就好了', post:'。', py:'Bú qù, bú shì hěn yánzhòng, guò liǎng tiān jiù hǎo le.', vn:'Không đi, không nghiêm trọng lắm, vài hôm nữa là khỏi.'},
+       {speaker:'女', pre:'但是', blank:'都一个星期了你也没好呀', post:'。', py:'Dànshì dōu yí ge xīngqī le nǐ yě méi hǎo ya.', vn:'Nhưng cả tuần rồi anh cũng có khỏi đâu.'},
+       {speaker:'男', pre:'不去。', blank:'我不想吃药', post:'。', py:'Bú qù. Wǒ bù xiǎng chī yào.', vn:'Không đi. Anh không muốn uống thuốc.'}
+     ],
+     explain:'问：男的为什么不去医院？ "我不想吃药" → D 不愿意吃药.'},
+    {num:14, options:['少吃饭','做运动','多吃水果','吃减肥药'], ans:1, q:'女的打算怎样减肥？',
+     lines:[
+       {speaker:'女', pre:'我又胖了七八斤，', blank:'必须减肥了', post:'。', py:'Wǒ yòu pàngle qī-bā jīn, bìxū jiǎnféi le.', vn:'Em lại tăng bảy tám cân, phải giảm cân thôi.'},
+       {speaker:'男', pre:'你又要不吃饭？', blank:'多影响健康啊', post:'！', py:'Nǐ yòu yào bù chīfàn? Duō yǐngxiǎng jiànkāng a!', vn:'Em lại định nhịn ăn à? Ảnh hưởng sức khoẻ lắm!'},
+       {speaker:'女', pre:'我这次打算运动减肥，', blank:'跑跑步、游游泳', post:'。', py:'Wǒ zhè cì dǎsuàn yùndòng jiǎnféi, pǎopao bù, yóuyou yǒng.', vn:'Lần này em định giảm cân bằng vận động, chạy bộ, bơi lội.'},
+       {speaker:'男', pre:'', blank:'那还行', post:'。', py:'Nà hái xíng.', vn:'Vậy thì được.'}
+     ],
+     explain:'问：女的打算怎样减肥？ "运动减肥，跑跑步、游游泳" → B 做运动. A là cách cũ bị người nam phản đối.'},
+    {num:15, options:['头疼','腿疼','肚子疼','耳朵疼'], ans:0, q:'女的怎么了？',
+     lines:[
+       {speaker:'男', pre:'你不是说下班要去逛街吗？', blank:'怎么回来了', post:'？', py:'Nǐ bú shì shuō xiàbān yào qù guàngjiē ma? Zěnme huílai le?', vn:'Em chẳng phải nói tan làm đi dạo phố sao? Sao lại về rồi?'},
+       {speaker:'女', pre:'', blank:'头有点儿疼', post:'，不想去了。', py:'Tóu yǒudiǎnr téng, bù xiǎng qù le.', vn:'Đầu hơi đau, không muốn đi nữa.'},
+       {speaker:'男', pre:'', blank:'要不要去医院看看', post:'？', py:'Yào bu yào qù yīyuàn kànkan?', vn:'Có cần đi bệnh viện khám không?'},
+       {speaker:'女', pre:'用不着，', blank:'休息一会儿就好了', post:'。', py:'Yòngbuzháo, xiūxi yíhuìr jiù hǎo le.', vn:'Không cần, nghỉ một lát là khỏi.'}
+     ],
+     explain:'问：女的怎么了？ "头有点儿疼" → A 头疼.'},
+    {num:16, options:['多喝水','不用吃药','少抽烟','经常运动'], ans:0, q:'医生让男的怎么做？',
+     lines:[
+       {speaker:'女', pre:'你的咳嗽不是很严重，', blank:'我给你开点儿药', post:'，回去好好休息。', py:'Nǐ de késou bú shì hěn yánzhòng, wǒ gěi nǐ kāi diǎnr yào, huíqu hǎohāo xiūxi.', vn:'Ho của anh không nghiêm trọng lắm, tôi kê chút thuốc, về nghỉ ngơi cho tốt.'},
+       {speaker:'男', pre:'好，', blank:'还有其他要注意的吗', post:'？', py:'Hǎo, hái yǒu qítā yào zhùyì de ma?', vn:'Vâng, còn gì cần chú ý nữa không?'},
+       {speaker:'女', pre:'最近不要抽烟，', blank:'多喝水', post:'。', py:'Zuìjìn bú yào chōuyān, duō hē shuǐ.', vn:'Dạo này đừng hút thuốc, uống nhiều nước.'},
+       {speaker:'男', pre:'好的，', blank:'谢谢您，大夫', post:'。', py:'Hǎo de, xièxie nín, dàifu.', vn:'Vâng, cảm ơn bác sĩ.'}
+     ],
+     explain:'问：医生让男的怎么做？ "多喝水" → A. Bác sĩ bảo "不要抽烟" (không hút) chứ không phải "少抽烟" (hút ít), và có kê thuốc nên B sai.'},
+    {num:17, options:['哭了','饿了','生病了','没吃药'], ans:2, q:'女的怎么了？',
+     lines:[
+       {speaker:'男', pre:'怎么样？', blank:'感觉好点儿了吗', post:'？', py:'Zěnmeyàng? Gǎnjué hǎo diǎnr le ma?', vn:'Thế nào? Cảm thấy đỡ hơn chưa?'},
+       {speaker:'女', pre:'这些天一直在吃您开的药，', blank:'比上次好多了', post:'。', py:'Zhèxiē tiān yìzhí zài chī nín kāi de yào, bǐ shàng cì hǎo duō le.', vn:'Mấy hôm nay tôi vẫn uống thuốc bác sĩ kê, đỡ hơn lần trước nhiều rồi.'},
+       {speaker:'男', pre:'那就好，回家还要按时吃药，', blank:'一个星期后再来检查一下', post:'。', py:'Nà jiù hǎo, huí jiā hái yào ànshí chī yào, yí ge xīngqī hòu zài lái jiǎnchá yíxià.', vn:'Vậy thì tốt, về nhà vẫn phải uống thuốc đúng giờ, một tuần sau đến kiểm tra lại.'},
+       {speaker:'女', pre:'好的，大夫，', blank:'谢谢您', post:'。', py:'Hǎo de, dàifu, xièxie nín.', vn:'Vâng, bác sĩ, cảm ơn ông.'}
+     ],
+     explain:'问：女的怎么了？ Cô ấy đang uống thuốc bác sĩ kê và tái khám → C 生病了. D sai vì "一直在吃药".'},
+    {num:18, options:['饿了','渴了','感冒了','肚子不舒服'], ans:3, q:'男的怎么了？',
+     lines:[
+       {speaker:'女', pre:'你怎么了？', blank:'脸色不太好', post:'。', py:'Nǐ zěnme le? Liǎnsè bú tài hǎo.', vn:'Anh sao thế? Sắc mặt không tốt lắm.'},
+       {speaker:'男', pre:'', blank:'我肚子有点儿不舒服', post:'。', py:'Wǒ dùzi yǒudiǎnr bù shūfu.', vn:'Bụng tôi hơi khó chịu.'},
+       {speaker:'女', pre:'要是严重的话，', blank:'我陪你去医院吧', post:'。', py:'Yàoshi yánzhòng de huà, wǒ péi nǐ qù yīyuàn ba.', vn:'Nếu nặng thì tôi đưa anh đi bệnh viện nhé.'},
+       {speaker:'男', pre:'', blank:'不用了', post:'，谢谢。', py:'Búyòng le, xièxie.', vn:'Không cần đâu, cảm ơn.'}
+     ],
+     explain:'问：男的怎么了？ "我肚子有点儿不舒服" → D 肚子不舒服.'},
+    {num:19, options:['刮风了','天气太干','看电视太久','长时间用电脑'], ans:3, q:'说话人的眼睛为什么不舒服？',
+     lines:[
+       {speaker:'旁白', pre:'我最近眼睛总觉得特别干，', blank:'医生说是因为我长时间对着电脑', post:'，眼睛太累。', py:'Wǒ zuìjìn yǎnjing zǒng juéde tèbié gān, yīshēng shuō shì yīnwèi wǒ cháng shíjiān duìzhe diànnǎo, yǎnjing tài lèi.', vn:'Dạo này mắt tôi luôn thấy rất khô, bác sĩ nói là do tôi nhìn máy tính quá lâu, mắt quá mệt.'},
+       {speaker:'旁白', pre:'他告诉我用电脑四五十分钟后，', blank:'就应该休息一下', post:'，多向远处看看，最好是多看看绿色的植物。', py:'Tā gàosu wǒ yòng diànnǎo sì-wǔshí fēnzhōng hòu, jiù yīnggāi xiūxi yíxià, duō xiàng yuǎnchù kànkan, zuì hǎo shì duō kànkan lǜsè de zhíwù.', vn:'Ông ấy bảo tôi dùng máy tính bốn năm mươi phút thì nên nghỉ một chút, nhìn ra xa nhiều hơn, tốt nhất là nhìn nhiều cây xanh.'}
+     ],
+     explain:'问：说话人的眼睛为什么不舒服？ "因为我长时间对着电脑" → D 长时间用电脑.'},
+    {num:20, options:['不用电脑','注意休息','少看电视','多做运动'], ans:1, q:'根据这段话，怎样能保证眼睛健康？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）用电脑四五十分钟后，', blank:'就应该休息一下，多向远处看看', post:'，最好是多看看绿色的植物。', py:'(Tóng yí duàn huà) Yòng diànnǎo sì-wǔshí fēnzhōng hòu, jiù yīnggāi xiūxi yíxià, duō xiàng yuǎnchù kànkan, zuì hǎo shì duō kànkan lǜsè de zhíwù.', vn:'(Cùng đoạn văn) Dùng máy tính bốn năm mươi phút thì nên nghỉ một chút, nhìn ra xa nhiều hơn, tốt nhất là nhìn nhiều cây xanh.'}
+     ],
+     explain:'问：根据这段话，怎样能保证眼睛健康？ "应该休息一下" → B 注意休息. A quá tuyệt đối, đoạn văn không nói bỏ hẳn máy tính.'},
+    {num:21, options:['休息好','少抽烟','幸福快乐','身体不生病'], ans:3, q:'以前人们认为健康是什么？',
+     lines:[
+       {speaker:'旁白', pre:'每个人都希望自己健康，那么到底什么才是健康呢？', blank:'过去，人们认为健康就是指身体不生病', post:'。', py:'Měi ge rén dōu xīwàng zìjǐ jiànkāng, nàme dàodǐ shénme cái shì jiànkāng ne? Guòqù, rénmen rènwéi jiànkāng jiù shì zhǐ shēntǐ bù shēngbìng.', vn:'Ai cũng mong mình khoẻ mạnh, vậy rốt cuộc thế nào mới là khoẻ mạnh? Trước đây, người ta cho rằng khoẻ mạnh là cơ thể không bị bệnh.'},
+       {speaker:'旁白', pre:'但是，现在人们认识到，', blank:'健康既包括身体上的健康又包括精神上的健康', post:'。只有身体和精神都健康，才算是真正的健康。', py:'Dànshì, xiànzài rénmen rènshi dào, jiànkāng jì bāokuò shēntǐ shang de jiànkāng yòu bāokuò jīngshén shang de jiànkāng. Zhǐyǒu shēntǐ hé jīngshén dōu jiànkāng, cái suàn shì zhēnzhèng de jiànkāng.', vn:'Nhưng hiện nay người ta nhận ra, khoẻ mạnh vừa bao gồm sức khoẻ thể chất vừa bao gồm sức khoẻ tinh thần. Chỉ khi cả thể chất và tinh thần đều khoẻ mới được coi là khoẻ mạnh thật sự.'}
+     ],
+     explain:'问：以前人们认为健康是什么？ "过去，人们认为健康就是指身体不生病" → D.'},
+    {num:22, options:['身体好','少生气','身心健康','精神健康'], ans:2, q:'怎样才算是真正的健康？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'只有身体和精神都健康', post:'，才算是真正的健康。', py:'(Tóng yí duàn huà) Zhǐyǒu shēntǐ hé jīngshén dōu jiànkāng, cái suàn shì zhēnzhèng de jiànkāng.', vn:'(Cùng đoạn văn) Chỉ khi cả thể chất và tinh thần đều khoẻ mới được coi là khoẻ mạnh thật sự.'}
+     ],
+     explain:'问：怎样才算是真正的健康？ "身体和精神都健康" = 身心健康 → C. A và D mỗi cái chỉ là một nửa.'}
   ]
 };

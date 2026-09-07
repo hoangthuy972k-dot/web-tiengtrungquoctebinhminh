@@ -796,49 +796,147 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-20/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-20/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-20/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'好，那我就放心了，',blank:'别开着开着没油了',post:'。',py:'Hǎo, nà wǒ jiù fàng xīn le, bié kāizhe kāizhe méi yóu le.',vn:'Được, vậy tôi yên tâm, đừng đang lái thì hết xăng.'}]},
-    {num:2,lines:[{pre:'等女儿',blank:'一回来我就告诉她',post:'这个好消息。',py:'Děng nǚ\'ér yì huílai wǒ jiù gàosu tā zhège hǎo xiāoxi.',vn:'Đợi con gái vừa về là tôi báo tin vui này.'}]},
-    {num:3,lines:[{pre:'',blank:'究竟哪个季节',post:'去丽江旅游比较好呢？',py:'Jiūjìng nǎ ge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne?',vn:'Rốt cuộc mùa nào đi Lệ Giang tốt hơn?'}]},
-    {num:4,lines:[{pre:'比如你跟上海人对话时，会发现上海话',blank:'听起来就像外语一样',post:'。',py:'Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.',vn:'Đối thoại với người Thượng Hải, tiếng Thượng Hải nghe như ngoại ngữ.'}]},
-    {num:5,lines:[{pre:'',blank:'说起吃的东西',post:'，给我印象最深的是湖南菜。',py:'Shuōqǐ chī de dōngxi, gěi wǒ yìnxiàng zuì shēn de shì Húnán cài.',vn:'Nói đến đồ ăn, ấn tượng sâu nhất là món Hồ Nam.'}]},
+  dictation: [
+    {num:1, stmt:'他们在火车上。', judge:false, lines:[
+      {pre:'各位乘客，你们好，', blank:'感谢大家乘坐本次航班', post:'。我们为您准备了饮料和小吃，请您在座位上等一下，工作人员会送到您身边。',
+       py:'Gèwèi chéngkè, nǐmen hǎo, gǎnxiè dàjiā chéngzuò běn cì hángbān. Wǒmen wèi nín zhǔnbèile yǐnliào hé xiǎochī, qǐng nín zài zuòwèi shang děng yíxià, gōngzuò rényuán huì sòngdào nín shēnbiān.',
+       vn:'Kính chào quý hành khách, cảm ơn quý vị đã đi chuyến bay này. Chúng tôi đã chuẩn bị đồ uống và đồ ăn nhẹ, xin quý vị đợi tại chỗ ngồi, nhân viên sẽ mang đến tận nơi.'}]},
+    {num:2, stmt:'大家受到了表扬。', judge:true, lines:[
+      {pre:'大家干得非常好，', blank:'我们已经提前完成了全年任务', post:'，感谢大家这几个月来的努力工作！好，现在我代表公司祝贺大家顺利完成任务！',
+       py:'Dàjiā gàn de fēicháng hǎo, wǒmen yǐjīng tíqián wánchéngle quánnián rènwu, gǎnxiè dàjiā zhè jǐ ge yuè lái de nǔlì gōngzuò! Hǎo, xiànzài wǒ dàibiǎo gōngsī zhùhè dàjiā shùnlì wánchéng rènwu!',
+       vn:'Mọi người làm rất tốt, chúng ta đã hoàn thành sớm nhiệm vụ cả năm, cảm ơn mọi người đã nỗ lực làm việc mấy tháng qua! Nào, giờ tôi thay mặt công ty chúc mừng mọi người hoàn thành nhiệm vụ!'}]},
+    {num:3, stmt:'他暑假想去云南旅行。', judge:true, lines:[
+      {pre:'我打算去云南玩儿，听说那边四季如春，', blank:'不仅风景美，而且当地少数民族都非常热情', post:'，相信这个暑假会十分有趣。',
+       py:'Wǒ dǎsuàn qù Yúnnán wánr, tīngshuō nàbiān sìjì rú chūn, bùjǐn fēngjǐng měi, érqiě dāngdì shǎoshù mínzú dōu fēicháng rèqíng, xiāngxìn zhège shǔjià huì shífēn yǒuqù.',
+       vn:'Tôi định đi Vân Nam chơi, nghe nói bên đó bốn mùa như xuân, không những phong cảnh đẹp mà các dân tộc thiểu số ở đó đều rất nhiệt tình, tin rằng kỳ nghỉ hè này sẽ rất thú vị.'}]},
+    {num:4, stmt:'大门钥匙只有一把。', judge:false, lines:[
+      {pre:'给，这是家里大门的钥匙，', blank:'你和你姐一人一把', post:'。这把小的是你房间的，拿好了，别弄丢了。',
+       py:'Gěi, zhè shì jiā li dàmén de yàoshi, nǐ hé nǐ jiě yì rén yì bǎ. Zhè bǎ xiǎo de shì nǐ fángjiān de, náhǎo le, bié nòngdiū le.',
+       vn:'Đây, chìa khoá cổng nhà, con và chị con mỗi đứa một chiếc. Chiếc nhỏ này là của phòng con, giữ cẩn thận, đừng làm mất.'}]},
+    {num:5, stmt:'加油站不允许打手机。', judge:true, lines:[
+      {pre:'在加油站或者离加油站很近的地方抽烟、打手机，是很危险的。因此，', blank:'法律规定加油站禁止抽烟和使用手机', post:'。',
+       py:'Zài jiāyóuzhàn huòzhě lí jiāyóuzhàn hěn jìn de dìfang chōuyān, dǎ shǒujī, shì hěn wēixiǎn de. Yīncǐ, fǎlǜ guīdìng jiāyóuzhàn jìnzhǐ chōuyān hé shǐyòng shǒujī.',
+       vn:'Hút thuốc, gọi điện thoại ở cây xăng hoặc nơi rất gần cây xăng là rất nguy hiểm. Vì vậy, pháp luật quy định cây xăng cấm hút thuốc và sử dụng điện thoại di động.'}]}
   ],
-  mc:[
-    {num:6,options:['四五公里','十几公里','一公里'],ans:0,
-     lines:[{speaker:'女',pre:'我记得过了长江大桥往右一拐就有一个加油站，大概有',blank:'四五公里',post:'远。',py:'Wǒ jìde guòle Chángjiāng Dàqiáo wǎng yòu yì guǎi jiù yǒu yí ge jiāyóuzhàn, dàgài yǒu sì-wǔ gōnglǐ yuǎn.',vn:'Qua cầu Trường Giang rẽ phải có trạm xăng, khoảng bốn năm km.'}],
-     explain:'原文明确说"大概有四五公里远"。'},
-    {num:7,options:['推迟了一个小时','提前了一个小时','取消了'],ans:0,
-     lines:[{speaker:'女',pre:'航班本来是十点的，后来机场网站上通知',blank:'推迟了一个小时',post:'。',py:'Hángbān běnlái shì shí diǎn de, hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí.',vn:'Chuyến bay vốn 10 giờ, sau đó thông báo hoãn một tiếng.'}],
-     explain:'原文明确说"推迟了一个小时"。'},
-    {num:8,options:['大约半个小时','一个小时','十分钟'],ans:0,
-     lines:[{speaker:'男',pre:'走高速公路',blank:'大约半个小时',post:'就到了。',py:'Zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.',vn:'Đi cao tốc khoảng nửa tiếng là đến.'}],
-     explain:'原文明确说"大约半个小时就到了"。'},
-    {num:9,options:['广西','广东','云南'],ans:0,
-     lines:[{speaker:'女',pre:'去年我同事带她儿子去',blank:'广西',post:'玩儿了一趟，听说很不错，我们就去广西吧。',py:'Qùnián wǒ tóngshì dài tā érzi qù Guǎngxī wánrle yí tàng, tīngshuō hěn búcuò, wǒmen jiù qù Guǎngxī ba.',vn:'Năm ngoái đồng nghiệp đưa con đi Quảng Tây, nghe nói tốt, chúng ta đi Quảng Tây.'}],
-     explain:'原文明确说"我们就去广西吧"。'},
-    {num:10,options:['吃烤鸭时','女儿一回来时','放假那天'],ans:0,
-     lines:[{speaker:'女',pre:'中午我们不是要去对面的饭店',blank:'吃烤鸭',post:'，祝贺她考试成绩都合格吗？那时候再告诉她，不是更好？',py:'Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma? Nà shíhou zài gàosu tā, bú shì gèng hǎo?',vn:'Trưa đến nhà hàng đối diện ăn vịt quay chúc mừng con, lúc đó nói chẳng phải tốt hơn?'}],
-     explain:'原文说吃烤鸭祝贺时再告诉女儿。'},
-    {num:11,options:['导游','少数民族','同学'],ans:0,
-     lines:[{speaker:'女',pre:'她是我们的',blank:'导游',post:'，不是少数民族。一路上她给我们讲了很多有趣的笑话。',py:'Tā shì wǒmen de dǎoyóu, bú shì shǎoshù mínzú. Yí lù shang tā gěi wǒmen jiǎngle hěn duō yǒuqù de xiàohua.',vn:'Cô ấy là hướng dẫn viên, không phải dân tộc thiểu số. Dọc đường kể nhiều truyện cười.'}],
-     explain:'原文明确说"她是我们的导游"。'},
-    {num:12,options:['存包的钥匙','手机','护照'],ans:0,
-     lines:[{speaker:'女',pre:'有一次我把',blank:'存包的钥匙',post:'丢了，最后还是她帮我找到的。',py:'Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.',vn:'Có lần tôi mất chìa khóa tủ gửi đồ, cô ấy giúp tìm được.'}],
-     explain:'原文明确说"把存包的钥匙丢了"。'},
-    {num:13,options:['每年12月到第二年3月','春天和秋天','夏天'],ans:0,
-     lines:[{speaker:'女',pre:'稍微好一点儿的时间是',blank:'每年12月到第二年3月',post:'。这段时间去丽江的话，无论交通还是吃、住都很便宜。',py:'Shāowēi hǎo yìdiǎnr de shíjiān shì měinián shí\'èryuè dào dì-èr nián sānyuè. Zhè duàn shíjiān qù Lìjiāng dehuà, wúlùn jiāotōng háishi chī, zhù dōu hěn piányi.',vn:'Thời gian tốt hơn là tháng 12 đến tháng 3 năm sau. Đi lúc đó mọi thứ đều rẻ.'}],
-     explain:'原文明确说"每年12月到第二年3月"。'},
-    {num:14,options:['5500公里','550公里','5000公里'],ans:0,
-     lines:[{speaker:'男',pre:'中国南北距离约',blank:'5500公里',post:'，因此南北气候有很大区别。',py:'Zhōngguó nán běi jùlí yuē wǔqiān wǔbǎi gōnglǐ, yīncǐ nán běi qìhòu yǒu hěn dà qūbié.',vn:'Trung Quốc Bắc Nam cách khoảng 5500 km, nên khí hậu khác nhiều.'}],
-     explain:'原文明确说"约5500公里"。'},
-    {num:15,options:['辣','甜','咸'],ans:0,
-     lines:[{speaker:'男',pre:'湖南菜的特点就是',blank:'辣',post:'，与其他地方的辣不同，湖南菜的辣主要是咸辣、香辣和酸辣。',py:'Húnán cài de tèdiǎn jiù shì là, yǔ qítā dìfang de là bù tóng, Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.',vn:'Đặc điểm món Hồ Nam là cay, chủ yếu cay mặn, cay thơm, cay chua.'}],
-     explain:'原文明确说"湖南菜的特点就是辣"。'},
+  mc: [
+    {num:6, options:['汽车坏了','行李丢了','航班错过了','上班迟到了'], ans:2, q:'男的怎么了？',
+     lines:[
+       {speaker:'女', pre:'你不是出差了吗？', blank:'怎么还在这里', post:'？', py:'Nǐ bú shì chūchāi le ma? Zěnme hái zài zhèlǐ?', vn:'Anh chẳng phải đi công tác rồi sao? Sao vẫn ở đây?'},
+       {speaker:'男', pre:'我是准时出发的，可是路上堵车。', blank:'我到机场时，我要坐的飞机已经起飞了', post:'。', py:'Wǒ shì zhǔnshí chūfā de, kěshì lù shang dǔchē. Wǒ dào jīchǎng shí, wǒ yào zuò de fēijī yǐjīng qǐfēi le.', vn:'Tôi xuất phát đúng giờ, nhưng đường tắc. Lúc tôi đến sân bay, máy bay tôi phải đi đã cất cánh rồi.'}
+     ],
+     explain:'问：男的怎么了？ "我到机场时…飞机已经起飞了" → C 航班错过了.'},
+    {num:7, options:['工资低','没有孩子','妻子爱买衣服','妻子很懒'], ans:3, q:'女的为什么觉得儿子可怜？',
+     lines:[
+       {speaker:'男', pre:'听说你儿子去年结婚了，', blank:'现在他生活不错吧', post:'。', py:'Tīngshuō nǐ érzi qùnián jiéhūn le, xiànzài tā shēnghuó búcuò ba.', vn:'Nghe nói con trai chị năm ngoái kết hôn, giờ chắc sống tốt nhỉ.'},
+       {speaker:'女', pre:'别提了，他怪可怜的。', blank:'他妻子太懒', post:'，不做饭，不洗衣服，连孩子也不带。', py:'Bié tí le, tā guài kělián de. Tā qīzi tài lǎn, bú zuò fàn, bù xǐ yīfu, lián háizi yě bú dài.', vn:'Đừng nhắc nữa, nó tội lắm. Vợ nó lười quá, không nấu cơm, không giặt đồ, đến con cũng không trông.'}
+     ],
+     explain:'问：女的为什么觉得儿子可怜？ "他妻子太懒" → D 妻子很懒. B sai vì có nhắc "连孩子也不带" (có con).'},
+    {num:8, options:['报名旅行','考普通话','参加面试','检查网站'], ans:1, q:'男的想要干什么？',
+     lines:[
+       {speaker:'男', pre:'你好，', blank:'我想报名参加这个月的普通话水平考试', post:'。', py:'Nǐ hǎo, wǒ xiǎng bàomíng cānjiā zhège yuè de pǔtōnghuà shuǐpíng kǎoshì.', vn:'Chào cô, tôi muốn đăng ký thi trình độ tiếng phổ thông tháng này.'},
+       {speaker:'女', pre:'对不起，报名工作今天上午刚结束。', blank:'下次考试的报名时间您可以上我们的网站查一下', post:'。', py:'Duìbuqǐ, bàomíng gōngzuò jīntiān shàngwǔ gāng jiéshù. Xià cì kǎoshì de bàomíng shíjiān nín kěyǐ shàng wǒmen de wǎngzhàn chá yíxià.', vn:'Xin lỗi, việc đăng ký vừa kết thúc sáng nay. Thời gian đăng ký kỳ thi sau ông có thể lên website của chúng tôi tra.'}
+     ],
+     explain:'问：男的想要干什么？ "报名参加…普通话水平考试" → B 考普通话.'},
+    {num:9, options:['书里','飞机上','网上','电梯里'], ans:2, q:'那个笑话是在哪儿看到的？',
+     lines:[
+       {speaker:'男', pre:'这个笑话确实有意思，', blank:'你在哪里看到的', post:'？', py:'Zhège xiàohua quèshí yǒu yìsi, nǐ zài nǎlǐ kàndào de?', vn:'Truyện cười này đúng là thú vị, cậu xem ở đâu vậy?'},
+       {speaker:'女', pre:'有一个网站，', blank:'里面有很多有趣的笑话', post:'，我现在就把网址发给你。', py:'Yǒu yí ge wǎngzhàn, lǐmiàn yǒu hěn duō yǒuqù de xiàohua, wǒ xiànzài jiù bǎ wǎngzhǐ fā gěi nǐ.', vn:'Có một trang web, trong đó có nhiều truyện cười thú vị, tôi gửi địa chỉ cho cậu ngay.'}
+     ],
+     explain:'问：那个笑话是在哪儿看到的？ "有一个网站" → C 网上.'},
+    {num:10, options:['桌子上','包里','银行里','门上'], ans:3, q:'钥匙在哪儿？',
+     lines:[
+       {speaker:'女', pre:'你看见我的钥匙了吗？', blank:'刚刚我去银行存钱时，记得放到包里了', post:'。这会儿就找不到了。', py:'Nǐ kànjiàn wǒ de yàoshi le ma? Gānggāng wǒ qù yínháng cún qián shí, jìde fàngdào bāo li le. Zhè huìr jiù zhǎobudào le.', vn:'Anh thấy chìa khoá của em không? Lúc nãy đi ngân hàng gửi tiền, em nhớ đã bỏ vào túi. Giờ lại không tìm thấy.'},
+       {speaker:'男', pre:'别找了，你看，', blank:'在门上挂着呢', post:'。', py:'Bié zhǎo le, nǐ kàn, zài mén shang guàzhe ne.', vn:'Đừng tìm nữa, em xem, đang treo trên cửa kìa.'}
+     ],
+     explain:'问：钥匙在哪儿？ "在门上挂着呢" → D 门上. 包里 chỉ là chỗ cô ấy nhớ nhầm.'},
+    {num:11, options:['抽烟','吃咸的','少吃辣','打针'], ans:2, q:'根据对话，哪个对男的身体有好处？',
+     lines:[
+       {speaker:'男', pre:'医生，我的病严重吗？', blank:'是不是需要打针啊', post:'？', py:'Yīshēng, wǒ de bìng yánzhòng ma? Shì bu shì xūyào dǎzhēn a?', vn:'Bác sĩ, bệnh của tôi có nặng không? Có cần tiêm không?'},
+       {speaker:'女', pre:'不是很严重，我给你开点儿药，回去好好休息。另外，', blank:'最近不要抽烟，少吃咸的和辣的', post:'。', py:'Bú shì hěn yánzhòng, wǒ gěi nǐ kāi diǎnr yào, huíqu hǎohāo xiūxi. Lìngwài, zuìjìn bú yào chōuyān, shǎo chī xián de hé là de.', vn:'Không nặng lắm, tôi kê chút thuốc, về nghỉ ngơi cho tốt. Ngoài ra, dạo này đừng hút thuốc, ăn ít đồ mặn và cay.'}
+     ],
+     explain:'问：哪个对男的身体有好处？ "少吃咸的和辣的" → C 少吃辣. Không cần tiêm (D), không hút thuốc (A).'},
+    {num:12, options:['高兴','抱歉','难过','失望'], ans:0, q:'男的是什么心情？',
+     lines:[
+       {speaker:'男', pre:'这次活动非常成功，大家顺利完成了公司交给的任务。', blank:'辛苦了，祝贺你们', post:'！', py:'Zhè cì huódòng fēicháng chénggōng, dàjiā shùnlì wánchéngle gōngsī jiāo gěi de rènwu. Xīnkǔ le, zhùhè nǐmen!', vn:'Hoạt động lần này rất thành công, mọi người đã hoàn thành thuận lợi nhiệm vụ công ty giao. Vất vả rồi, chúc mừng các bạn!'},
+       {speaker:'女', pre:'能有这么大的成绩，', blank:'主要是每个人工作都非常努力', post:'。来，干一杯！', py:'Néng yǒu zhème dà de chéngjì, zhǔyào shì měi ge rén gōngzuò dōu fēicháng nǔlì. Lái, gān yì bēi!', vn:'Có được thành tích lớn thế này chủ yếu là do mỗi người đều làm việc rất chăm chỉ. Nào, cạn ly!'}
+     ],
+     explain:'问：男的是什么心情？ "非常成功…祝贺你们" → A 高兴.'},
+    {num:13, options:['戴上帽子','少带东西','带些水果','带行李箱'], ans:1, q:'男的希望女的怎么样？',
+     lines:[
+       {speaker:'男', pre:'东西都收拾好了吗？', blank:'可以出发了吧', post:'？', py:'Dōngxi dōu shōushi hǎo le ma? Kěyǐ chūfā le ba?', vn:'Đồ đạc thu dọn xong chưa? Xuất phát được chưa?'},
+       {speaker:'女', pre:'马上，', blank:'再拿些吃的就行了', post:'。', py:'Mǎshàng, zài ná xiē chī de jiù xíng le.', vn:'Ngay đây, lấy thêm ít đồ ăn nữa là được.'},
+       {speaker:'男', pre:'', blank:'少拿点儿，别带太多', post:'。', py:'Shǎo ná diǎnr, bié dài tài duō.', vn:'Lấy ít thôi, đừng mang nhiều quá.'},
+       {speaker:'女', pre:'我知道，', blank:'就拿两瓶水，两包饼干', post:'。', py:'Wǒ zhīdào, jiù ná liǎng píng shuǐ, liǎng bāo bǐnggān.', vn:'Em biết, chỉ lấy hai chai nước, hai gói bánh quy.'}
+     ],
+     explain:'问：男的希望女的怎么样？ "少拿点儿，别带太多" → B 少带东西.'},
+    {num:14, options:['机场太远','汽车没油','航班推迟','忘了时间'], ans:1, q:'男的刚才担心什么？',
+     lines:[
+       {speaker:'男', pre:'油箱里剩的油不多了，', blank:'看看哪儿有加油站', post:'。', py:'Yóuxiāng li shèng de yóu bù duō le, kànkan nǎr yǒu jiāyóuzhàn.', vn:'Xăng trong bình còn không nhiều, xem chỗ nào có cây xăng.'},
+       {speaker:'女', pre:'前面就有一个，', blank:'大概有四五公里远', post:'。', py:'Qiánmiàn jiù yǒu yí ge, dàgài yǒu sì-wǔ gōnglǐ yuǎn.', vn:'Phía trước có một cây, cách khoảng bốn năm cây số.'},
+       {speaker:'男', pre:'好，那我就放心了，刚才我还有点儿担心，', blank:'怕开着开着没油了', post:'。', py:'Hǎo, nà wǒ jiù fàngxīn le, gāngcái wǒ hái yǒudiǎnr dānxīn, pà kāizhe kāizhe méi yóu le.', vn:'Tốt, vậy anh yên tâm rồi, lúc nãy còn hơi lo, sợ đang chạy thì hết xăng.'},
+       {speaker:'女', pre:'我们先去加油，', blank:'航班是十点的，来得及', post:'。', py:'Wǒmen xiān qù jiāyóu, hángbān shì shí diǎn de, láidejí.', vn:'Mình đi đổ xăng trước, chuyến bay mười giờ, vẫn kịp.'}
+     ],
+     explain:'问：男的刚才担心什么？ "怕开着开着没油了" → B 汽车没油.'},
+    {num:15, options:['骑马','超车','河边打球','江里游泳'], ans:3, q:'女的认为什么很危险？',
+     lines:[
+       {speaker:'女', pre:'', blank:'你会游泳吗', post:'？', py:'Nǐ huì yóuyǒng ma?', vn:'Anh biết bơi không?'},
+       {speaker:'男', pre:'当然会，我是在长江边上长大的，', blank:'小时候常去江里游泳', post:'。', py:'Dāngrán huì, wǒ shì zài Cháng Jiāng biān shang zhǎngdà de, xiǎo shíhou cháng qù jiāng li yóuyǒng.', vn:'Đương nhiên biết, anh lớn lên bên bờ Trường Giang, hồi nhỏ thường ra sông bơi.'},
+       {speaker:'女', pre:'真的？', blank:'那会不会很危险', post:'？', py:'Zhēn de? Nà huì bu huì hěn wēixiǎn?', vn:'Thật à? Thế có nguy hiểm không?'},
+       {speaker:'男', pre:'江边长大的孩子从小就习惯了，', blank:'没什么危险的', post:'。', py:'Jiāng biān zhǎngdà de háizi cóngxiǎo jiù xíguàn le, méi shénme wēixiǎn de.', vn:'Trẻ con lớn lên bên sông từ nhỏ đã quen, chẳng nguy hiểm gì.'}
+     ],
+     explain:'问：女的认为什么很危险？ Cô ấy hỏi "那会不会很危险" về việc bơi ở sông → D 江里游泳.'},
+    {num:16, options:['烤鸭贵','服务好','座位少','关门早'], ans:1, q:'女的觉得那家饭馆儿怎么样？',
+     lines:[
+       {speaker:'男', pre:'对面新开了家饭馆儿，', blank:'你去过吗', post:'？', py:'Duìmiàn xīn kāile jiā fànguǎnr, nǐ qùguo ma?', vn:'Đối diện mới mở một quán ăn, em đi chưa?'},
+       {speaker:'女', pre:'去过，那儿菜不错，特别是烤鸭，', blank:'服务态度也挺好', post:'，就是去晚了要等座位。', py:'Qùguo, nàr cài búcuò, tèbié shì kǎoyā, fúwù tàidu yě tǐng hǎo, jiù shì qù wǎn le yào děng zuòwèi.', vn:'Đi rồi, món ở đó ngon, nhất là vịt quay, thái độ phục vụ cũng rất tốt, chỉ là đến muộn phải đợi chỗ.'},
+       {speaker:'男', pre:'那我这会儿去', blank:'估计有很多人了', post:'。', py:'Nà wǒ zhè huìr qù gūjì yǒu hěn duō rén le.', vn:'Vậy giờ anh đi chắc đông người rồi.'},
+       {speaker:'女', pre:'是，', blank:'你想去的话要早点儿出发', post:'。', py:'Shì, nǐ xiǎng qù de huà yào zǎo diǎnr chūfā.', vn:'Ừ, muốn đi thì phải xuất phát sớm.'}
+     ],
+     explain:'问：女的觉得那家饭馆儿怎么样？ "服务态度也挺好" → B 服务好. C sai: đông khách chứ không phải ít chỗ.'},
+    {num:17, options:['有约会','去面试','去存钱','参加舞会'], ans:1, q:'女的今天为什么要打扮？',
+     lines:[
+       {speaker:'男', pre:'你今天打扮得真漂亮，', blank:'有约会啊', post:'？', py:'Nǐ jīntiān dǎban de zhēn piàoliang, yǒu yuēhuì a?', vn:'Hôm nay cậu ăn diện đẹp thật, có hẹn hò à?'},
+       {speaker:'女', pre:'不是，', blank:'下午有家银行通知我去面试', post:'，所以就打扮了一下。', py:'Bú shì, xiàwǔ yǒu jiā yínháng tōngzhī wǒ qù miànshì, suǒyǐ jiù dǎbanle yíxià.', vn:'Không phải, chiều nay có một ngân hàng gọi tôi đi phỏng vấn nên trang điểm một chút.'},
+       {speaker:'男', pre:'银行挺好的，', blank:'紧张不', post:'？', py:'Yínháng tǐng hǎo de, jǐnzhāng bù?', vn:'Ngân hàng tốt đấy, có căng thẳng không?'},
+       {speaker:'女', pre:'不紧张，', blank:'这是我这个星期的第四个面试了', post:'。', py:'Bù jǐnzhāng, zhè shì wǒ zhège xīngqī de dì-sì ge miànshì le.', vn:'Không, đây là buổi phỏng vấn thứ tư trong tuần này của tôi rồi.'}
+     ],
+     explain:'问：女的今天为什么要打扮？ "银行通知我去面试" → B 去面试. C 去存钱 là bẫy từ 银行.'},
+    {num:18, options:['很聪明','很有趣','很兴奋','丢钱了'], ans:2, q:'女的怎么了？',
+     lines:[
+       {speaker:'男', pre:'你怎么这么兴奋？', blank:'不就是收拾完房间了吗', post:'？', py:'Nǐ zěnme zhème xīngfèn? Bú jiù shì shōushi wán fángjiān le ma?', vn:'Sao em hưng phấn thế? Chẳng phải chỉ là dọn xong phòng thôi sao?'},
+       {speaker:'女', pre:'你猜', blank:'我收拾房间时找到什么了', post:'？', py:'Nǐ cāi wǒ shōushi fángjiān shí zhǎodào shénme le?', vn:'Anh đoán xem lúc dọn phòng em tìm thấy gì?'},
+       {speaker:'男', pre:'', blank:'难道找到钱了', post:'？', py:'Nándào zhǎodào qián le?', vn:'Chẳng lẽ nhặt được tiền?'},
+       {speaker:'女', pre:'你真聪明，', blank:'我在咱们床底下找到一百块钱', post:'。', py:'Nǐ zhēn cōngming, wǒ zài zánmen chuáng dǐxia zhǎodào yìbǎi kuài qián.', vn:'Anh thông minh thật, em tìm thấy một trăm tệ dưới gầm giường.'},
+       {speaker:'男', pre:'一说起钱，我突然想起来', blank:'我昨天衣服口袋里少了一百', post:'。那就是我的钱！', py:'Yì shuōqǐ qián, wǒ tūrán xiǎng qilai wǒ zuótiān yīfu kǒudai li shǎole yìbǎi. Nà jiù shì wǒ de qián!', vn:'Nhắc đến tiền, anh chợt nhớ hôm qua túi áo anh thiếu mất một trăm. Đó là tiền của anh!'}
+     ],
+     explain:'问：女的怎么了？ "你怎么这么兴奋" → C 很兴奋. D sai: người mất tiền là người nam.'},
+    {num:19, options:['看到酒的颜色','感觉到酒的香气','尝到酒的味道','听到好听的声音'], ans:3, q:'人们干杯时会怎样？',
+     lines:[
+       {speaker:'旁白', pre:'人们在喝酒时，用眼睛能欣赏到酒的颜色，用鼻子可以感觉到酒的香气，用嘴能尝到酒的味道，', blank:'只剩下耳朵没事做', post:'，所以它不太高兴。', py:'Rénmen zài hē jiǔ shí, yòng yǎnjing néng xīnshǎng dào jiǔ de yánsè, yòng bízi kěyǐ gǎnjué dào jiǔ de xiāngqì, yòng zuǐ néng chángdào jiǔ de wèidào, zhǐ shèngxià ěrduo méi shì zuò, suǒyǐ tā bú tài gāoxìng.', vn:'Khi uống rượu, mắt thưởng thức được màu rượu, mũi cảm nhận được hương rượu, miệng nếm được vị rượu, chỉ còn tai không có việc gì làm nên nó không vui lắm.'},
+       {speaker:'旁白', pre:'可当我们一干杯，', blank:'杯子就会发出好听的声音', post:'，耳朵一听到，就高兴起来了。这也许就是中国人喝酒时总喜欢干杯的原因。', py:'Kě dāng wǒmen yì gānbēi, bēizi jiù huì fāchū hǎotīng de shēngyīn, ěrduo yì tīngdào, jiù gāoxìng qilai le. Zhè yěxǔ jiù shì Zhōngguórén hē jiǔ shí zǒng xǐhuan gānbēi de yuányīn.', vn:'Nhưng khi chúng ta cụng ly, ly sẽ phát ra âm thanh dễ nghe, tai vừa nghe thấy liền vui lên. Đó có lẽ là lý do người Trung Quốc uống rượu luôn thích cụng ly.'}
+     ],
+     explain:'问：人们干杯时会怎样？ "杯子就会发出好听的声音" → D 听到好听的声音.'},
+    {num:20, options:['别抽烟','要小心','要慢点儿喝','为什么干杯'], ans:3, q:'这段话主要讲中国人喝酒时：',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'这也许就是中国人喝酒时总喜欢干杯的原因', post:'。', py:'(Tóng yí duàn huà) Zhè yěxǔ jiù shì Zhōngguórén hē jiǔ shí zǒng xǐhuan gānbēi de yuányīn.', vn:'(Cùng đoạn văn) Đó có lẽ là lý do người Trung Quốc uống rượu luôn thích cụng ly.'}
+     ],
+     explain:'问：这段话主要讲中国人喝酒时： Đoạn giải thích lý do thích 干杯 → D 为什么干杯.'},
+    {num:21, options:['树变绿了','都是晴天','慢慢变冷','突然下雪'], ans:0, q:'南方很多地方，2月会怎么样？',
+     lines:[
+       {speaker:'旁白', pre:'从中国的最南边到最北边有五千多公里，因此南北方的气候有很大区别。南方很多地方的冬天一点儿也不冷，温度跟北方春天差不多，', blank:'2月份的时候已经很暖和', post:'，可以只穿一件毛衣了，树开始长出新叶子，路边的花也开了，非常漂亮。', py:'Cóng Zhōngguó de zuì nánbian dào zuì běibian yǒu wǔqiān duō gōnglǐ, yīncǐ nán-běifāng de qìhòu yǒu hěn dà qūbié. Nánfāng hěn duō dìfang de dōngtiān yìdiǎnr yě bù lěng, wēndù gēn běifāng chūntiān chàbuduō, èr yuèfèn de shíhou yǐjīng hěn nuǎnhuo, kěyǐ zhǐ chuān yí jiàn máoyī le, shù kāishǐ zhǎngchū xīn yèzi, lùbiān de huā yě kāi le, fēicháng piàoliang.', vn:'Từ cực nam đến cực bắc Trung Quốc dài hơn năm nghìn cây số, vì vậy khí hậu nam bắc khác nhau rất nhiều. Mùa đông nhiều nơi ở miền Nam không hề lạnh, nhiệt độ gần bằng mùa xuân miền Bắc, tháng 2 đã rất ấm, chỉ cần mặc một chiếc áo len, cây bắt đầu ra lá mới, hoa ven đường cũng nở, rất đẹp.'},
+       {speaker:'旁白', pre:'所以', blank:'很多北方人都喜欢这个时候去南方旅行', post:'，而南方人也喜欢这个时候去北方滑雪和看冰灯。', py:'Suǒyǐ hěn duō běifāngrén dōu xǐhuan zhège shíhou qù nánfāng lǚxíng, ér nánfāngrén yě xǐhuan zhège shíhou qù běifāng huáxuě hé kàn bīngdēng.', vn:'Vì vậy nhiều người miền Bắc thích đi du lịch miền Nam vào lúc này, còn người miền Nam cũng thích lúc này lên miền Bắc trượt tuyết và ngắm đèn băng.'}
+     ],
+     explain:'问：南方很多地方，2月会怎么样？ "树开始长出新叶子" → A 树变绿了. C ngược nghĩa (已经很暖和).'},
+    {num:22, options:['二月的天气','南北的不同','南方的冬天','南方的风景'], ans:2, q:'这段话主要介绍什么？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）', blank:'南方很多地方的冬天一点儿也不冷', post:'，温度跟北方春天差不多…所以很多北方人都喜欢这个时候去南方旅行。', py:'(Tóng yí duàn huà) Nánfāng hěn duō dìfang de dōngtiān yìdiǎnr yě bù lěng, wēndù gēn běifāng chūntiān chàbuduō … suǒyǐ hěn duō běifāngrén dōu xǐhuan zhège shíhou qù nánfāng lǚxíng.', vn:'(Cùng đoạn văn) Mùa đông nhiều nơi ở miền Nam không hề lạnh, nhiệt độ gần bằng mùa xuân miền Bắc … vì vậy nhiều người miền Bắc thích đi du lịch miền Nam vào lúc này.'}
+     ],
+     explain:'问：这段话主要介绍什么？ Phần lớn đoạn miêu tả mùa đông ấm áp ở miền Nam → C 南方的冬天. B chỉ là câu mở đầu.'}
   ]
 };

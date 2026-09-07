@@ -907,49 +907,147 @@ var translateDataRev = [
 ];
 
 var listenData = {
-  type:'workbook',
+  type: 'workbook',
   audioParts: [
     { src: '/audio/hsk4-bai-12/listen-1.mp3', from: 1, to: 5 },
     { src: '/audio/hsk4-bai-12/listen-2.mp3', from: 6, to: 12 },
     { src: '/audio/hsk4-bai-12/listen-3.mp3', from: 13, to: 22 }
   ],
-  dictation:[
-    {num:1,lines:[{pre:'有句话叫"规定和经验是',blank:'死的',post:'，人是活的"。',py:'Yǒu jù huà jiào "guīdìng hé jīngyàn shì sǐ de, rén shì huó de".',vn:'Có câu nói rằng "quy định và kinh nghiệm là cứng nhắc, con người là linh hoạt".'}]},
-    {num:2,lines:[{pre:'我第一次听说盐有',blank:'保护衣服颜色',post:'的作用。',py:'Wǒ dì-yī cì tīngshuō yán yǒu bǎohù yīfu yánsè de zuòyòng.',vn:'Lần đầu con nghe nói muối có tác dụng bảo vệ màu quần áo.'}]},
-    {num:3,lines:[{pre:'您总是能用最简单的方法把复杂的问题',blank:'解释清楚',post:'。',py:'Nín zǒngshì néng yòng zuì jiǎndān de fāngfǎ bǎ fùzá de wèntí jiěshì qīngchu.',vn:'Thầy luôn dùng cách đơn giản nhất giải thích rõ vấn đề phức tạp.'}]},
-    {num:4,lines:[{pre:'世界上没有完全',blank:'相同的叶子',post:'。',py:'Shìjiè shang méiyǒu wánquán xiāngtóng de yèzi.',vn:'Trên thế giới không có hai chiếc lá hoàn toàn giống nhau.'}]},
-    {num:5,lines:[{pre:'使用正确的方法，我们做起事来能"',blank:'事半功倍',post:'"。',py:'Shǐyòng zhèngquè de fāngfǎ, wǒmen zuòqǐ shì lái néng "shì bàn gōng bèi".',vn:'Dùng phương pháp đúng, chúng ta làm việc có thể "làm ít được nhiều".'}]},
+  dictation: [
+    {num:1, stmt:'他决定离开北京。', judge:false, lines:[
+      {pre:'我认真考虑了一个晚上，也打电话和父母商量过了，', blank:'最后还是决定不去那家公司了', post:'。我想继续留在北京，看看还有没有别的机会。',
+       py:'Wǒ rènzhēn kǎolǜle yí ge wǎnshang, yě dǎ diànhuà hé fùmǔ shāngliangguo le, zuìhòu háishi juédìng bú qù nà jiā gōngsī le. Wǒ xiǎng jìxù liú zài Běijīng, kànkan hái yǒu méiyǒu biéde jīhuì.',
+       vn:'Tôi đã suy nghĩ nghiêm túc cả một đêm, cũng gọi điện bàn với bố mẹ rồi, cuối cùng vẫn quyết định không đến công ty đó nữa. Tôi muốn tiếp tục ở lại Bắc Kinh, xem còn cơ hội nào khác không.'}]},
+    {num:2, stmt:'做计划一定要很详细。', judge:false, lines:[
+      {pre:'不管做什么事情，提前做计划总是好的。每一步应该做什么、怎么做，', blank:'不用安排得特别详细', post:'，但必须差不多有一个想法。',
+       py:'Bùguǎn zuò shénme shìqing, tíqián zuò jìhuà zǒngshì hǎo de. Měi yí bù yīnggāi zuò shénme, zěnme zuò, búyòng ānpái de tèbié xiángxì, dàn bìxū chàbuduō yǒu yí ge xiǎngfǎ.',
+       vn:'Dù làm việc gì, lập kế hoạch trước luôn là tốt. Mỗi bước nên làm gì, làm thế nào, không cần sắp xếp quá chi tiết, nhưng nhất định phải có một ý tưởng đại khái.'}]},
+    {num:3, stmt:'他不想再乱买东西了。', judge:true, lines:[
+      {pre:'搬家时，我发现了很多以前买的却一次也没用过的东西。不要了吧，觉得可惜；留着吧，估计以后也用不到。', blank:'我以后再也不乱买东西了', post:'。',
+       py:'Bānjiā shí, wǒ fāxiànle hěn duō yǐqián mǎi de què yí cì yě méi yòngguo de dōngxi. Bú yào le ba, juéde kěxī; liúzhe ba, gūjì yǐhòu yě yòngbudào. Wǒ yǐhòu zài yě bú luàn mǎi dōngxi le.',
+       vn:'Lúc chuyển nhà, tôi phát hiện rất nhiều thứ mua trước đây nhưng chưa dùng lần nào. Bỏ đi thì tiếc; giữ lại thì chắc sau này cũng không dùng đến. Sau này tôi không mua đồ bừa bãi nữa.'}]},
+    {num:4, stmt:'现在人们更喜欢看报纸。', judge:false, lines:[
+      {pre:'现在越来越多的人选择上网看新闻，因为这样很方便，', blank:'而且能更及时地获得消息', post:'，网上的新闻内容也更详细、丰富。',
+       py:'Xiànzài yuè lái yuè duō de rén xuǎnzé shàngwǎng kàn xīnwén, yīnwèi zhèyàng hěn fāngbiàn, érqiě néng gèng jíshí de huòdé xiāoxi, wǎngshàng de xīnwén nèiróng yě gèng xiángxì, fēngfù.',
+       vn:'Hiện nay ngày càng nhiều người chọn xem tin tức trên mạng, vì rất tiện, hơn nữa có được thông tin kịp thời hơn, nội dung tin trên mạng cũng chi tiết, phong phú hơn.'}]},
+    {num:5, stmt:'做事情方法很重要。', judge:true, lines:[
+      {pre:'无论做什么事都要注意方法，', blank:'正确的方法可以帮我们节约时间', post:'。如果方法不对，可能花五倍甚至十倍的时间都不能完成任务。',
+       py:'Wúlùn zuò shénme shì dōu yào zhùyì fāngfǎ, zhèngquè de fāngfǎ kěyǐ bāng wǒmen jiéyuē shíjiān. Rúguǒ fāngfǎ bú duì, kěnéng huā wǔ bèi shènzhì shí bèi de shíjiān dōu bù néng wánchéng rènwu.',
+       vn:'Làm việc gì cũng phải chú ý phương pháp, phương pháp đúng giúp chúng ta tiết kiệm thời gian. Nếu phương pháp sai, có thể tốn gấp năm thậm chí gấp mười thời gian vẫn không hoàn thành nhiệm vụ.'}]}
   ],
-  mc:[
-    {num:6,options:['还没谈成','已经谈成了','不想谈了'],ans:0,
-     lines:[{speaker:'男',pre:'听说这次生意你到现在',blank:'还没谈成',post:'。',py:'Tīngshuō zhè cì shēngyi nǐ dào xiànzài hái méi tánchéng.',vn:'Nghe nói vụ làm ăn lần này đến giờ anh vẫn chưa đàm phán xong.'}],
-     explain:'原文明确说"到现在还没谈成"。'},
-    {num:7,options:['改变自己的态度和想法','放弃这次生意','换一家公司'],ans:0,
-     lines:[{speaker:'男',pre:'当"规定"和"经验"不能解决问题时，建议你',blank:'改变一下自己的态度和想法',post:'。',py:'Dāng "guīdìng" hé "jīngyàn" bù néng jiějué wèntí shí, jiànyì nǐ gǎibiàn yíxià zìjǐ de tàidù hé xiǎngfǎ.',vn:'Khi quy định và kinh nghiệm không giải quyết được vấn đề, khuyên anh thay đổi thái độ và cách nghĩ.'}],
-     explain:'原文明确说"建议你改变一下自己的态度和想法"。'},
-    {num:8,options:['跟同事商量商量','一个人决定','问经理'],ans:0,
-     lines:[{speaker:'男',pre:'好，我再',blank:'跟同事商量商量',post:'，希望能及时发现问题。',py:'Hǎo, wǒ zài gēn tóngshì shāngliang shāngliang, xīwàng néng jíshí fāxiàn wèntí.',vn:'Được, tôi sẽ bàn bạc thêm với đồng nghiệp, hy vọng kịp thời phát hiện vấn đề.'}],
-     explain:'原文明确说"我再跟同事商量商量"。'},
-    {num:9,options:['在水里加点儿盐','用热水洗','不要洗'],ans:0,
-     lines:[{speaker:'女',pre:'看来是掉颜色了，你洗的时候',blank:'在水里加点儿盐',post:'就不会这样了。',py:'Kànlái shì diào yánsè le, nǐ xǐ de shíhou zài shuǐ li jiā diǎnr yán jiù bú huì zhèyàng le.',vn:'Xem ra là phai màu rồi, lúc giặt con cho thêm chút muối vào nước thì sẽ không bị như vậy nữa.'}],
-     explain:'原文明确说"在水里加点儿盐"。'},
-    {num:10,options:['保护衣服颜色','让衣服更白','让衣服更香'],ans:0,
-     lines:[{speaker:'女',pre:'我第一次听说盐有',blank:'保护衣服颜色',post:'的作用。',py:'Wǒ dì-yī cì tīngshuō yán yǒu bǎohù yīfu yánsè de zuòyòng.',vn:'Lần đầu con nghe nói muối có tác dụng bảo vệ màu quần áo.'}],
-     explain:'原文明确说"盐有保护衣服颜色的作用"。'},
-    {num:11,options:['从生活中找到','只能从课本上找到','从老师那儿找到'],ans:0,
-     lines:[{speaker:'女',pre:'实际上，很多问题的答案都可以',blank:'从生活中找到',post:'。',py:'Shíjì shang, hěn duō wèntí de dá\'àn dōu kěyǐ cóng shēnghuó zhōng zhǎodào.',vn:'Thực tế, đáp án của rất nhiều vấn đề đều có thể tìm thấy trong cuộc sống.'}],
-     explain:'原文明确说"都可以从生活中找到"。'},
-    {num:12,options:['把复杂的问题解释清楚','讲得很快','留很多作业'],ans:0,
-     lines:[{speaker:'男',pre:'您总是能用最简单的方法',blank:'把复杂的问题解释清楚',post:'，让每个学生都能听懂。',py:'Nín zǒngshì néng yòng zuì jiǎndān de fāngfǎ bǎ fùzá de wèntí jiěshì qīngchu, ràng měi ge xuésheng dōu néng tīngdǒng.',vn:'Thầy luôn dùng cách đơn giản nhất giải thích rõ vấn đề phức tạp, để mỗi học sinh đều hiểu.'}],
-     explain:'原文明确说"把复杂的问题解释清楚"。'},
-    {num:13,options:['根据学生的特点选择不同的方法','让所有学生用一样的方法','每天上很多课'],ans:0,
-     lines:[{speaker:'男',pre:'在教育学生时，要',blank:'根据学生的特点选择不同的方法',post:'，我想这应该是最不容易做到的。',py:'Zài jiàoyù xuésheng shí, yào gēnjù xuésheng de tèdiǎn xuǎnzé bù tóng de fāngfǎ, wǒ xiǎng zhè yīnggāi shì zuì bù róngyì zuòdào de.',vn:'Khi giáo dục học sinh, phải căn cứ đặc điểm học sinh chọn phương pháp khác nhau, tôi nghĩ đây là điều khó làm nhất.'}],
-     explain:'原文明确说"要根据学生的特点选择不同的方法"。'},
-    {num:14,options:['可能会引起别人的误会','会让人觉得更友好','一定会成功'],ans:0,
-     lines:[{speaker:'女',pre:'直接说出别人缺点的人虽然很诚实，但是',blank:'可能会引起别人的误会',post:'。',py:'Zhíjiē shuōchū biérén quēdiǎn de rén suīrán hěn chéngshí, dànshì kěnéng huì yǐnqǐ biérén de wùhuì.',vn:'Người nói thẳng khuyết điểm của người khác tuy thành thật, nhưng có thể gây ra hiểu lầm.'}],
-     explain:'原文明确说"可能会引起别人的误会"。'},
-    {num:15,options:['并不一定适合自己','一定适合自己','完全没有用'],ans:0,
-     lines:[{speaker:'男',pre:'别人的方法也许很有效，但是',blank:'并不一定适合自己',post:'。',py:'Biérén de fāngfǎ yěxǔ hěn yǒuxiào, dànshì bìng bù yídìng shìhé zìjǐ.',vn:'Phương pháp của người khác có lẽ rất hiệu quả, nhưng không nhất định phù hợp với mình.'}],
-     explain:'原文明确说"并不一定适合自己"。'},
+  mc: [
+    {num:6, options:['买了勺子','喜欢上网','力气很大','拿不动箱子'], ans:2, q:'根据对话，可以知道男的怎样？',
+     lines:[
+       {speaker:'男', pre:'箱子里面放的是什么啊？', blank:'要是再重一点儿，连我也拿不动了', post:'。', py:'Xiāngzi lǐmiàn fàng de shì shénme a? Yàoshi zài zhòng yìdiǎnr, lián wǒ yě nábudòng le.', vn:'Trong thùng đựng gì thế? Nặng thêm chút nữa thì đến anh cũng không nhấc nổi.'},
+       {speaker:'女', pre:'是我从网上买的盘子和勺子。', blank:'咱们家就你力气大', post:'，你拿肯定没问题。', py:'Shì wǒ cóng wǎngshàng mǎi de pánzi hé sháozi. Zánmen jiā jiù nǐ lìqi dà, nǐ ná kěndìng méi wèntí.', vn:'Là đĩa và thìa em mua trên mạng. Nhà mình chỉ có anh khoẻ nhất, anh bê chắc chắn không sao.'}
+     ],
+     explain:'问：可以知道男的怎样？ "咱们家就你力气大" → C 力气很大. D sai vì anh ấy vẫn nhấc được ("再重一点儿" mới không nổi).'},
+    {num:7, options:['还有机会赢','比赛结束了','男的进球了','那个球没进'], ans:3, q:'根据对话，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'真可惜，', blank:'这个球差一点儿就踢进了', post:'。', py:'Zhēn kěxī, zhège qiú chà yìdiǎnr jiù tījìn le.', vn:'Tiếc thật, quả này suýt nữa thì vào rồi.'},
+       {speaker:'女', pre:'是呀，还有不到一分钟时间，马上就结束了，', blank:'看来没机会再赢球了', post:'。', py:'Shì ya, hái yǒu bú dào yì fēnzhōng shíjiān, mǎshàng jiù jiéshù le, kànlái méi jīhuì zài yíng qiú le.', vn:'Ừ, còn chưa đến một phút, sắp kết thúc rồi, xem ra không còn cơ hội thắng nữa.'}
+     ],
+     explain:'问：下列哪个正确？ "差一点儿就踢进了" nghĩa là chưa vào → D 那个球没进. B sai vì trận đấu "马上就结束" chứ chưa kết thúc.'},
+    {num:8, options:['语言环境好','经济条件好','学习更认真','会一些外语'], ans:0, q:'女的觉得应该去国外学习外语是因为什么？',
+     lines:[
+       {speaker:'男', pre:'', blank:'怎样才能说一口流利的外语', post:'呢？', py:'Zěnyàng cái néng shuō yì kǒu liúlì de wàiyǔ ne?', vn:'Làm thế nào mới nói được ngoại ngữ lưu loát?'},
+       {speaker:'女', pre:'如果你会一点儿外语，并且有一定的经济条件，那么出国学习是最好的选择，', blank:'因为语言环境对学习语言有很重要的作用', post:'。', py:'Rúguǒ nǐ huì yìdiǎnr wàiyǔ, bìngqiě yǒu yídìng de jīngjì tiáojiàn, nàme chūguó xuéxí shì zuì hǎo de xuǎnzé, yīnwèi yǔyán huánjìng duì xuéxí yǔyán yǒu hěn zhòngyào de zuòyòng.', vn:'Nếu bạn biết chút ngoại ngữ và có điều kiện kinh tế nhất định, thì đi du học là lựa chọn tốt nhất, vì môi trường ngôn ngữ có tác dụng rất quan trọng với việc học ngôn ngữ.'}
+     ],
+     explain:'问：女的觉得应该去国外学习外语是因为什么？ "因为语言环境…很重要的作用" → A 语言环境好. B, D chỉ là điều kiện, không phải lý do.'},
+    {num:9, options:['都是她的错','被误会了','不负责任','负责那件事'], ans:1, q:'关于李丽，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'那件事情，我们一直以为都是李丽的错，', blank:'但后来才发现，是我们误会她了', post:'。', py:'Nà jiàn shìqing, wǒmen yìzhí yǐwéi dōu shì Lǐ Lì de cuò, dàn hòulái cái fāxiàn, shì wǒmen wùhuì tā le.', vn:'Chuyện đó chúng ta vẫn tưởng đều là lỗi của Lý Lệ, nhưng sau này mới phát hiện là chúng ta hiểu lầm cô ấy.'},
+       {speaker:'女', pre:'是的，', blank:'那件事不应该让她负全部的责任', post:'。', py:'Shì de, nà jiàn shì bù yīnggāi ràng tā fù quánbù de zérèn.', vn:'Đúng vậy, chuyện đó không nên bắt cô ấy chịu toàn bộ trách nhiệm.'}
+     ],
+     explain:'问：关于李丽，下列哪个正确？ "是我们误会她了" → B 被误会了.'},
+    {num:10, options:['刚刚搬走','有很多时间','喜欢逛街','不熟悉环境'], ans:3, q:'关于王红，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'王红刚搬来没几天，这里熟人不多，', blank:'也不太了解周围的环境', post:'，有时间你多陪她上街逛逛。', py:'Wáng Hóng gāng bānlái méi jǐ tiān, zhèlǐ shúrén bù duō, yě bú tài liǎojiě zhōuwéi de huánjìng, yǒu shíjiān nǐ duō péi tā shàngjiē guàngguang.', vn:'Vương Hồng mới chuyển đến chưa được mấy ngày, ở đây ít người quen, cũng chưa rành môi trường xung quanh, có thời gian em đưa cô ấy đi dạo phố nhiều nhé.'},
+       {speaker:'女', pre:'放心，', blank:'我下午就带她出去走走', post:'。', py:'Fàngxīn, wǒ xiàwǔ jiù dài tā chūqu zǒuzou.', vn:'Yên tâm, chiều nay em đưa cô ấy ra ngoài đi dạo luôn.'}
+     ],
+     explain:'问：关于王红，下列哪个正确？ "不太了解周围的环境" → D 不熟悉环境. A sai: cô ấy mới chuyển ĐẾN (搬来), không phải chuyển đi.'},
+    {num:11, options:['去北京饭店','参加会议','打几个电话','去学校找人'], ans:3, q:'女的下午可能做什么？',
+     lines:[
+       {speaker:'男', pre:'这次会议地点改到北京饭店，', blank:'你通知马教授了吗', post:'？', py:'Zhè cì huìyì dìdiǎn gǎidào Běijīng Fàndiàn, nǐ tōngzhī Mǎ jiàoshòu le ma?', vn:'Địa điểm hội nghị lần này đổi sang khách sạn Bắc Kinh, cô đã báo giáo sư Mã chưa?'},
+       {speaker:'女', pre:'我都快为这事急死了，他的电话一直无法接通，', blank:'下午我准备直接去学校告诉他', post:'。', py:'Wǒ dōu kuài wèi zhè shì jísǐ le, tā de diànhuà yìzhí wúfǎ jiētōng, xiàwǔ wǒ zhǔnbèi zhíjiē qù xuéxiào gàosu tā.', vn:'Tôi sốt ruột muốn chết vì chuyện này, điện thoại ông ấy mãi không gọi được, chiều nay tôi định đến thẳng trường báo cho ông ấy.'}
+     ],
+     explain:'问：女的下午可能做什么？ "下午我准备直接去学校告诉他" → D 去学校找人.'},
+    {num:12, options:['应该努力赚钱','要过好的生活','不能随便花钱','时间才最重要'], ans:3, q:'下列哪个是女的的看法？',
+     lines:[
+       {speaker:'男', pre:'有了钱你想买什么就买什么，就能过自己想要的生活，', blank:'我觉得金钱比其他的都重要', post:'。', py:'Yǒule qián nǐ xiǎng mǎi shénme jiù mǎi shénme, jiù néng guò zìjǐ xiǎng yào de shēnghuó, wǒ juéde jīnqián bǐ qítā de dōu zhòngyào.', vn:'Có tiền thì muốn mua gì cũng được, sống cuộc sống mình muốn, tôi thấy tiền bạc quan trọng hơn mọi thứ khác.'},
+       {speaker:'女', pre:'我不这么认为。钱花光了可以再赚，可是一个人再怎么有钱，也买不到时间，', blank:'时间才是无价的', post:'。', py:'Wǒ bú zhème rènwéi. Qián huāguāng le kěyǐ zài zhuàn, kěshì yí ge rén zài zěnme yǒu qián, yě mǎibudào shíjiān, shíjiān cái shì wújià de.', vn:'Tôi không nghĩ vậy. Tiền tiêu hết có thể kiếm lại, nhưng một người dù giàu đến đâu cũng không mua được thời gian, thời gian mới là vô giá.'}
+     ],
+     explain:'问：下列哪个是女的的看法？ "时间才是无价的" → D 时间才最重要. A, B là quan điểm của người nam.'},
+    {num:13, options:['买了相机','相机不贵','没有说明书','正在照相'], ans:0, q:'关于男的，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'我今天用新买的相机照了几张相，你看，', blank:'照片是不是不清楚', post:'？', py:'Wǒ jīntiān yòng xīn mǎi de xiàngjī zhàole jǐ zhāng xiàng, nǐ kàn, zhàopiàn shì bu shì bù qīngchu?', vn:'Hôm nay anh dùng máy ảnh mới mua chụp mấy tấm, em xem, ảnh có phải không rõ không?'},
+       {speaker:'女', pre:'这么贵的相机，', blank:'怎么会呢', post:'？', py:'Zhème guì de xiàngjī, zěnme huì ne?', vn:'Máy ảnh đắt thế này, sao lại thế được?'},
+       {speaker:'男', pre:'也许是我对它不熟悉，', blank:'还不太会用', post:'。', py:'Yěxǔ shì wǒ duì tā bù shúxi, hái bú tài huì yòng.', vn:'Có lẽ anh chưa quen nó, chưa biết dùng lắm.'},
+       {speaker:'女', pre:'那你好好儿看看说明书，', blank:'仔细研究一下吧', post:'。', py:'Nà nǐ hǎohāor kànkan shuōmíngshū, zǐxì yánjiū yíxià ba.', vn:'Vậy anh xem kỹ sách hướng dẫn, nghiên cứu cẩn thận đi.'}
+     ],
+     explain:'问：关于男的，下列哪个正确？ "新买的相机" → A 买了相机. B sai vì "这么贵的相机"; C sai vì có sách hướng dẫn.'},
+    {num:14, options:['律师','经理','老师','服务员'], ans:3, q:'女的最可能是做什么的？',
+     lines:[
+       {speaker:'女', pre:'先生，', blank:'这是您的房卡', post:'，请拿好。', py:'Xiānsheng, zhè shì nín de fángkǎ, qǐng náhǎo.', vn:'Thưa ông, đây là thẻ phòng của ông, xin giữ cẩn thận.'},
+       {speaker:'男', pre:'谢谢！', blank:'我的行李箱在哪儿取', post:'呢？', py:'Xièxie! Wǒ de xínglixiāng zài nǎr qǔ ne?', vn:'Cảm ơn! Vali của tôi nhận ở đâu?'},
+       {speaker:'女', pre:'', blank:'我们一会儿会直接送到您的房间', post:'。', py:'Wǒmen yíhuìr huì zhíjiē sòngdào nín de fángjiān.', vn:'Lát nữa chúng tôi sẽ mang thẳng lên phòng ông.'},
+       {speaker:'男', pre:'谢谢！', blank:'麻烦你们了', post:'。', py:'Xièxie! Máfan nǐmen le.', vn:'Cảm ơn! Làm phiền các bạn rồi.'},
+       {speaker:'女', pre:'', blank:'不客气', post:'。', py:'Bú kèqi.', vn:'Không có gì.'}
+     ],
+     explain:'问：女的最可能是做什么的？ Đưa 房卡, mang hành lý lên phòng → nhân viên khách sạn, đáp án D 服务员.'},
+    {num:15, options:['明天七节课','九点下课','和男的一起上课','能参加招聘会'], ans:3, q:'关于女的，下列哪个正确？',
+     lines:[
+       {speaker:'男', pre:'明天上午学校有个招聘会，', blank:'你去不去', post:'？', py:'Míngtiān shàngwǔ xuéxiào yǒu ge zhāopìnhuì, nǐ qù bu qù?', vn:'Sáng mai trường có hội chợ tuyển dụng, cậu có đi không?'},
+       {speaker:'女', pre:'我明早有一节课，', blank:'估计赶不上', post:'。', py:'Wǒ míng zǎo yǒu yì jié kè, gūjì gǎnbushàng.', vn:'Sáng mai tôi có một tiết, chắc không kịp.'},
+       {speaker:'男', pre:'招聘会十点开始，', blank:'你几点下课', post:'？', py:'Zhāopìnhuì shí diǎn kāishǐ, nǐ jǐ diǎn xiàkè?', vn:'Hội chợ mười giờ bắt đầu, cậu mấy giờ tan học?'},
+       {speaker:'女', pre:'九点五十，', blank:'那我还来得及', post:'。', py:'Jiǔ diǎn wǔshí, nà wǒ hái láidejí.', vn:'Chín giờ năm mươi, vậy tôi vẫn kịp.'}
+     ],
+     explain:'问：关于女的，下列哪个正确？ "那我还来得及" → D 能参加招聘会. A sai (一节课), B sai (九点五十下课).'},
+    {num:16, options:['律师','警察','教师','作家'], ans:0, q:'男的以前想做什么职业？',
+     lines:[
+       {speaker:'男', pre:'小李，', blank:'听说你母亲是一位律师', post:'？', py:'Xiǎo Lǐ, tīngshuō nǐ mǔqīn shì yí wèi lǜshī?', vn:'Tiểu Lý, nghe nói mẹ cậu là luật sư?'},
+       {speaker:'女', pre:'', blank:'是啊', post:'。', py:'Shì a.', vn:'Đúng vậy.'},
+       {speaker:'男', pre:'真让人羡慕！', blank:'我本来也想学法律专业的', post:'，可惜没考上。', py:'Zhēn ràng rén xiànmù! Wǒ běnlái yě xiǎng xué fǎlǜ zhuānyè de, kěxī méi kǎoshàng.', vn:'Thật đáng ngưỡng mộ! Tôi vốn cũng muốn học ngành luật, tiếc là không thi đỗ.'},
+       {speaker:'女', pre:'其实干什么工作都一样，', blank:'只要用心，都能干好', post:'。', py:'Qíshí gàn shénme gōngzuò dōu yíyàng, zhǐyào yòngxīn, dōu néng gànhǎo.', vn:'Thực ra làm việc gì cũng như nhau, chỉ cần dụng tâm đều làm tốt được.'}
+     ],
+     explain:'问：男的以前想做什么职业？ "我本来也想学法律专业的" → A 律师.'},
+    {num:17, options:['喜欢猫','要找王明','爱开玩笑','觉得奇怪'], ans:3, q:'关于女的，下列哪个正确？',
+     lines:[
+       {speaker:'女', pre:'他不是叫"王明"吗？', blank:'我怎么总听你们叫他"老猫"呢', post:'？', py:'Tā bú shì jiào "Wáng Míng" ma? Wǒ zěnme zǒng tīng nǐmen jiào tā "lǎo māo" ne?', vn:'Anh ấy chẳng phải tên "Vương Minh" sao? Sao tôi cứ nghe các cậu gọi anh ấy là "lão mèo"?'},
+       {speaker:'男', pre:'"老猫"是他的外号，', blank:'因为他上课总爱睡觉', post:'，所以大家就给他起了这个名字。', py:'"Lǎo māo" shì tā de wàihào, yīnwèi tā shàngkè zǒng ài shuìjiào, suǒyǐ dàjiā jiù gěi tā qǐle zhège míngzi.', vn:'"Lão mèo" là biệt danh của cậu ấy, vì cậu ấy trên lớp cứ hay ngủ nên mọi người đặt cho cái tên này.'},
+       {speaker:'女', pre:'', blank:'他不会不高兴吗', post:'？', py:'Tā bú huì bù gāoxìng ma?', vn:'Cậu ấy không khó chịu à?'},
+       {speaker:'男', pre:'没关系，我们经常一起开玩笑，', blank:'一般只在熟悉的人面前才这么叫他', post:'。', py:'Méi guānxi, wǒmen jīngcháng yìqǐ kāi wánxiào, yìbān zhǐ zài shúxi de rén miànqián cái zhème jiào tā.', vn:'Không sao, bọn tôi thường đùa nhau, thường chỉ gọi thế trước mặt người quen thôi.'}
+     ],
+     explain:'问：关于女的，下列哪个正确？ Cô ấy thắc mắc vì sao gọi là "老猫" → D 觉得奇怪. C 爱开玩笑 nói về nhóm bạn của người nam.'},
+    {num:18, options:['坐地铁','坐出租车','自己开车','坐公共汽车'], ans:0, q:'男的打算怎么去机场？',
+     lines:[
+       {speaker:'女', pre:'我们', blank:'坐出租车去机场', post:'？', py:'Wǒmen zuò chūzūchē qù jīchǎng?', vn:'Mình đi taxi ra sân bay nhé?'},
+       {speaker:'男', pre:'现在路上堵车，坐出租车去，', blank:'我担心时间会来不及', post:'。', py:'Xiànzài lù shang dǔchē, zuò chūzūchē qù, wǒ dānxīn shíjiān huì láibují.', vn:'Bây giờ đường tắc, đi taxi anh sợ không kịp giờ.'},
+       {speaker:'女', pre:'那怎么办？', blank:'坐地铁去', post:'？', py:'Nà zěnme bàn? Zuò dìtiě qù?', vn:'Vậy làm sao? Đi tàu điện ngầm à?'},
+       {speaker:'男', pre:'还有两个多小时，', blank:'坐地铁应该来得及', post:'。', py:'Hái yǒu liǎng ge duō xiǎoshí, zuò dìtiě yīnggāi láidejí.', vn:'Còn hơn hai tiếng, đi tàu điện ngầm chắc kịp.'}
+     ],
+     explain:'问：男的打算怎么去机场？ "坐地铁应该来得及" → A 坐地铁.'},
+    {num:19, options:['说话少的','做事多的','会交流的','有想法的'], ans:2, q:'什么样的人更容易交到朋友？',
+     lines:[
+       {speaker:'旁白', pre:'说话是最容易的事，也是最难的事。因此，', blank:'有的人认为我们应该少说话多做事', post:'。实际上，这种想法也不对。', py:'Shuōhuà shì zuì róngyì de shì, yě shì zuì nán de shì. Yīncǐ, yǒu de rén rènwéi wǒmen yīnggāi shǎo shuōhuà duō zuòshì. Shíjìshang, zhè zhǒng xiǎngfǎ yě bú duì.', vn:'Nói chuyện là việc dễ nhất, cũng là việc khó nhất. Vì vậy có người cho rằng chúng ta nên nói ít làm nhiều. Thực ra cách nghĩ này cũng không đúng.'},
+       {speaker:'旁白', pre:'相反，成功离不开交流，交流自然需要说话。', blank:'会说话的人更容易交到朋友', post:'，也更容易获得成功。', py:'Xiāngfǎn, chénggōng líbukāi jiāoliú, jiāoliú zìrán xūyào shuōhuà. Huì shuōhuà de rén gèng róngyì jiāodào péngyou, yě gèng róngyì huòdé chénggōng.', vn:'Ngược lại, thành công không thể thiếu giao lưu, giao lưu đương nhiên cần nói chuyện. Người biết nói chuyện dễ kết bạn hơn, cũng dễ thành công hơn.'}
+     ],
+     explain:'问：什么样的人更容易交到朋友？ "会说话的人更容易交到朋友" → C 会交流的.'},
+    {num:20, options:['同意','反对','支持','理解'], ans:1, q:'说话人对"少说话多做事"是什么态度？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）有的人认为我们应该少说话多做事。', blank:'实际上，这种想法也不对', post:'。', py:'(Tóng yí duàn huà) Yǒu de rén rènwéi wǒmen yīnggāi shǎo shuōhuà duō zuòshì. Shíjìshang, zhè zhǒng xiǎngfǎ yě bú duì.', vn:'(Cùng đoạn văn) Có người cho rằng chúng ta nên nói ít làm nhiều. Thực ra cách nghĩ này cũng không đúng.'}
+     ],
+     explain:'问：说话人对"少说话多做事"是什么态度？ "这种想法也不对" → B 反对.'},
+    {num:21, options:['常晚到','没戴手表','不喜欢开车','没来上班'], ans:0, q:'关于司机，可以知道什么？',
+     lines:[
+       {speaker:'旁白', pre:'张经理和司机约好每天早上七点来接他上班，', blank:'可是司机经常迟到', post:'。这天，司机又迟到了十几分钟，他感到很不好意思，所以向张经理解释说，他的手表又出问题了。', py:'Zhāng jīnglǐ hé sījī yuēhǎo měi tiān zǎoshang qī diǎn lái jiē tā shàngbān, kěshì sījī jīngcháng chídào. Zhè tiān, sījī yòu chídàole shí jǐ fēnzhōng, tā gǎndào hěn bù hǎoyìsi, suǒyǐ xiàng Zhāng jīnglǐ jiěshì shuō, tā de shǒubiǎo yòu chū wèntí le.', vn:'Giám đốc Trương hẹn tài xế mỗi sáng bảy giờ đến đón đi làm, nhưng tài xế thường xuyên đến muộn. Hôm đó, tài xế lại muộn hơn mười phút, anh ta rất ngại nên giải thích với giám đốc rằng đồng hồ của mình lại hỏng.'},
+       {speaker:'旁白', pre:'张经理回答说："', blank:'你应该换一块儿表了', post:'，否则，我就要换一个司机了。"', py:'Zhāng jīnglǐ huídá shuō: "Nǐ yīnggāi huàn yí kuàir biǎo le, fǒuzé, wǒ jiù yào huàn yí ge sījī le."', vn:'Giám đốc Trương trả lời: "Anh nên đổi đồng hồ đi, nếu không, tôi sẽ đổi tài xế."'}
+     ],
+     explain:'问：关于司机，可以知道什么？ "司机经常迟到" → A 常晚到. B sai vì anh ta có đồng hồ (nhưng hỏng).'},
+    {num:22, options:['送司机新手表','相信司机的解释','司机不能再迟到','找新司机了'], ans:2, q:'张经理的话是什么意思？',
+     lines:[
+       {speaker:'旁白', pre:'（同一段话）张经理回答说："你应该换一块儿表了，', blank:'否则，我就要换一个司机了', post:'。"', py:'(Tóng yí duàn huà) Zhāng jīnglǐ huídá shuō: "Nǐ yīnggāi huàn yí kuàir biǎo le, fǒuzé, wǒ jiù yào huàn yí ge sījī le."', vn:'(Cùng đoạn văn) Giám đốc Trương trả lời: "Anh nên đổi đồng hồ đi, nếu không, tôi sẽ đổi tài xế."'}
+     ],
+     explain:'问：张经理的话是什么意思？ "否则，我就要换一个司机了" là lời cảnh cáo: không được muộn nữa → C 司机不能再迟到. D sai vì mới chỉ doạ, chưa đổi.'}
   ]
 };

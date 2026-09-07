@@ -33,7 +33,7 @@
 
   // ---------- Tải đề ----------
   var s = document.createElement('script');
-  s.src = '/exam/data/' + encodeURIComponent(id) + '.js';
+  s.src = '/exam/tests/' + encodeURIComponent(id) + '.js';
   s.onload = function () { data = window.EXAM_DATA; init(); };
   s.onerror = function () { $('#exMain').innerHTML = '<div class="ex-card"><h3>Không tìm thấy đề thi</h3><p><a href="/exam/">← Quay lại danh sách đề</a></p></div>'; };
   document.head.appendChild(s);

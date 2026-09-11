@@ -664,7 +664,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 马克申请下个学期继续在学校学习',
-   preQuiz:[{q:'马克把申请表填错后，高老师批评他了吗？',opts:['批评了','没有，她说谁都有粗心的时候','让他重新申请'],ans:1}],
+   preQuiz:[{q:'马克把申请表填错后，高老师批评他了吗？',opts:['批评了','没有，她说谁都有粗心的时候','让他重新申请'],ans:1},{q:'马克填错了什么？',opts:['护照号码','出生年月','联系电话'],ans:0},{q:'最后高老师还要做什么？',opts:['把马克的护照复印一下','给马克打电话','让马克回家'],ans:0}],
    lines:[
      {sp:0,zh:'老师，您好！我希望下个学期在这里继续学习，请问还需要重新申请吗？',py:'Lǎoshī, nín hǎo! Wǒ xīwàng xià ge xuéqī zài zhèli jìxù xuéxí, qǐngwèn hái xūyào chóngxīn shēnqǐng ma?',vn:'Chào thầy! Em muốn học kỳ sau tiếp tục học ở đây, xin hỏi có cần đăng ký lại không?'},
      {sp:1,zh:'是的。给你表格，出生年月、性别、护照号码都要填，还有联系地址、联系电话。',py:'Shì de. Gěi nǐ biǎogé, chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián, hái yǒu liánxì dìzhǐ, liánxì diànhuà.',vn:'Đúng. Đây là mẫu đơn, ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền, còn địa chỉ và điện thoại liên lạc.'},
@@ -674,7 +674,7 @@ var dialogData = [
      {sp:1,zh:'请把你的护照给我，我们要把护照复印一下。',py:'Qǐng bǎ nǐ de hùzhào gěi wǒ, wǒmen yào bǎ hùzhào fùyìn yíxià.',vn:'Đưa hộ chiếu cho tôi, chúng tôi cần photo hộ chiếu.'},
    ]},
   {scene:'课文2 · 王静做饺子时手受伤了',
-   preQuiz:[{q:'今天他们能吃到羊肉饺子吗？他们会怎么办？',opts:['能吃到','不能，李进去买包子','不能，他们去餐厅'],ans:1}],
+   preQuiz:[{q:'今天他们能吃到羊肉饺子吗？他们会怎么办？',opts:['能吃到','不能，李进去买包子','不能，他们去餐厅'],ans:1},{q:'王静的手为什么流血了？',opts:['切肉的时候把手弄破了','摔倒了','被狗咬了'],ans:0},{q:'王静口袋里有多少零钱？',opts:['十几块','几百块','几毛'],ans:0}],
    lines:[
      {sp:0,zh:'呀，你的手怎么流血了？等一下，我给你包起来。',py:'Ya, nǐ de shǒu zěnme liú xiě le? Děng yíxià, wǒ gěi nǐ bāo qilai.',vn:'Ơ, tay em sao chảy máu? Đợi chút, anh băng lại cho.'},
      {sp:1,zh:'没关系，我想给你做点儿羊肉饺子，刚才用刀切肉的时候把手弄破了。',py:'Méi guānxi, wǒ xiǎng gěi nǐ zuò diǎnr yángròu jiǎozi, gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.',vn:'Không sao, em muốn làm sủi cảo thịt dê cho anh, vừa rồi dùng dao thái thịt làm đứt tay.'},
@@ -684,7 +684,7 @@ var dialogData = [
      {sp:1,zh:'好吧，我衣服口袋里有十几块零钱，买包子应该够。',py:'Hǎo ba, wǒ yīfu kǒudai li yǒu shí jǐ kuài língqián, mǎi bāozi yīnggāi gòu.',vn:'Được, túi áo em có hơn chục đồng tiền lẻ, mua bánh bao chắc đủ.'},
    ]},
   {scene:'课文3 · 安娜帮助马克练习舞蹈动作',
-   preQuiz:[{q:'安娜为什么早上没看见马克？',opts:['她忘戴眼镜了','她在跳舞','她没来学校'],ans:0}],
+   preQuiz:[{q:'安娜为什么早上没看见马克？',opts:['她忘戴眼镜了','她在跳舞','她没来学校'],ans:0},{q:'安娜小时候跟谁学过跳舞？',opts:['妈妈','老师','朋友'],ans:0},{q:'安娜认为舞蹈是什么？',opts:['一门艺术，也是一种“语言”','一种运动','一种游戏'],ans:0}],
    lines:[
      {sp:0,zh:'我早上跟你打招呼，你没看见。想不到又在这儿碰见你了。',py:'Wǒ zǎoshang gēn nǐ dǎ zhāohu, nǐ méi kànjiàn. Xiǎngbudào yòu zài zhèr pèngjiàn nǐ le.',vn:'Sáng nay tôi chào bạn, bạn không thấy. Không ngờ lại gặp bạn ở đây.'},
      {sp:1,zh:'真是对不起，我不是故意的，今天早上我忘戴眼镜了，看不清楚。',py:'Zhēn shì duìbuqǐ, wǒ bú shì gùyì de, jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.',vn:'Thật xin lỗi, tôi không cố ý, sáng nay quên đeo kính, nhìn không rõ.'},
@@ -694,14 +694,14 @@ var dialogData = [
      {sp:1,zh:'你这个动作做得还是不太标准，我给你跳一遍。你仔细看着，应该像我这样：先抬胳膊，然后抬腿，最后头再向右转一下。',py:'Nǐ zhège dòngzuò zuò de háishi bú tài biāozhǔn, wǒ gěi nǐ tiào yí biàn. Nǐ zǐxì kànzhe, yīnggāi xiàng wǒ zhèyàng: xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.',vn:'Động tác này chưa chuẩn lắm, tôi múa cho bạn một lượt. Nhìn kỹ nhé, nên như tôi: giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải.'},
    ]},
   {scene:'课文4 · Mã Khắc tìm thuê nhà',
-   preQuiz:[{q:'vì sao Mã Khắc mãi không liên lạc được với chủ nhà?',opts:['chủ nhà bận','anh ghi sai một chữ số','điện thoại hỏng'],ans:1}],
+   preQuiz:[{q:'马克为什么打电话总是打不通？',opts:['记号码的时候写错了一个数字','房东很忙','手机坏了'],ans:0},{q:'马克为什么想换房子？',opts:['房子周围环境非常吵','房子太贵','房子太小'],ans:0},{q:'广告上的房子有什么特点？',opts:['交通方便，周围安静，厨房很大','离马路很近','很便宜'],ans:0}],
    lines:[
      {sp:0,zh:'马克去年租的房子离马路很近，对面有大大小小的商店，周围环境非常吵。所以，房子还没到期，马克就开始着急换房子了。',py:'Mǎkè qùnián zū de fángzi lí mǎlù hěn jìn, duìmiàn yǒu dàdà-xiǎoxiǎo de shāngdiàn, zhōuwéi huánjìng fēicháng chǎo. Suǒyǐ, fángzi hái méi dàoqī, Mǎkè jiù kāishǐ zháojí huàn fángzi le.',vn:'Nhà Mã Khắc thuê năm ngoái sát đường lớn, đối diện nhiều cửa hàng, xung quanh rất ồn. Nên nhà chưa hết hạn, anh đã vội đổi nhà.'},
      {sp:0,zh:'有一天，他在小区门口看到一个租房子的广告。广告上说房子交通方便，周围很安静，厨房很大。总的来说，这套房子他很满意，于是他就记下了房东的手机号码。',py:'Yǒu yì tiān, tā zài xiǎoqū ménkǒu kàndào yí ge zū fángzi de guǎnggào. Guǎnggào shang shuō fángzi jiāotōng fāngbiàn, zhōuwéi hěn ānjìng, chúfáng hěn dà. Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jìxiàle fángdōng de shǒujī hàomǎ.',vn:'Một hôm anh thấy quảng cáo cho thuê nhà ở cổng khu. Quảng cáo nói giao thông tiện, xung quanh yên tĩnh, bếp rộng. Nhìn chung anh rất hài lòng, thế là ghi số điện thoại chủ nhà.'},
      {sp:0,zh:'可回家后打电话，电话总是占线。第二天，他路过小区门口时，又仔细看了一下广告，原来在记号码的时候写错了一个数字。',py:'Kě huí jiā hòu dǎ diànhuà, diànhuà zǒngshì zhànxiàn. Dì-èr tiān, tā lùguò xiǎoqū ménkǒu shí, yòu zǐxì kànle yíxià guǎnggào, yuánlái zài jì hàomǎ de shíhou xiěcuòle yí ge shùzì.',vn:'Nhưng về nhà gọi, máy luôn bận. Hôm sau đi qua cổng khu, xem kỹ lại quảng cáo, hóa ra lúc ghi số viết sai một chữ số.'},
    ]},
   {scene:'课文5 · Kung fu và bóng bàn',
-   preQuiz:[{q:'tên "乒乓球" bắt nguồn từ đâu?',opts:['tên người phát minh','âm thanh khi đánh bóng','tên địa phương'],ans:1}],
+   preQuiz:[{q:'“乒乓球”这个名字是怎么来的？',opts:['“乒”和“乓”是打球时发出的声音','是发明人的名字','是一个地方的名字'],ans:0},{q:'很多外国人认为所有中国人都会什么？',opts:['功夫和乒乓球','游泳和跑步','唱歌和跳舞'],ans:0},{q:'看乒乓球比赛，运动员发球时观众要怎么做？',opts:['安静，不能大声讲话','大声加油','站起来'],ans:0}],
    lines:[
      {sp:0,zh:'很多外国人认为所有中国人都会功夫和乒乓球，其实只是喜爱这两种运动的中国人比较多。中国人特别喜欢打乒乓球，在中国你会发现到处都有乒乓球桌。',py:'Hěn duō wàiguó rén rènwéi suǒyǒu Zhōngguó rén dōu huì gōngfu hé pīngpāngqiú, qíshí zhǐshì xǐ\'ài zhè liǎng zhǒng yùndòng de Zhōngguó rén bǐjiào duō. Zhōngguó rén tèbié xǐhuan dǎ pīngpāngqiú, zài Zhōngguó nǐ huì fāxiàn dàochù dōu yǒu pīngpāngqiú zhuō.',vn:'Nhiều người nước ngoài nghĩ tất cả người Trung Quốc biết võ và bóng bàn, thực ra chỉ là người thích hai môn này khá nhiều. Người Trung Quốc rất thích bóng bàn, khắp nơi đều có bàn bóng bàn.'},
      {sp:0,zh:'像乒乓球、羽毛球、跑步等运动对条件要求不高，所以它们都成为人们运动不错的选择。人们常说"生命在于运动"，所以很多人一到周末就会到体育馆打几场球。',py:'Xiàng pīngpāngqiú, yǔmáoqiú, pǎo bù děng yùndòng duì tiáojiàn yāoqiú bù gāo, suǒyǐ tāmen dōu chéngwéi rénmen yùndòng búcuò de xuǎnzé. Rénmen cháng shuō "shēngmìng zàiyú yùndòng", suǒyǐ hěn duō rén yí dào zhōumò jiù huì dào tǐyùguǎn dǎ jǐ chǎng qiú.',vn:'Bóng bàn, cầu lông, chạy bộ yêu cầu điều kiện không cao, nên là lựa chọn tốt. Người ta nói "sự sống nằm ở vận động", nên cuối tuần nhiều người đến nhà thi đấu chơi vài trận.'},

@@ -738,7 +738,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 王经理做生意遇到了困难',
-   preQuiz:[{q:'王经理认为规定和经验不能解决问题时，应该怎么办？',opts:['放弃这次生意','改变自己的态度和想法','换一个同事'],ans:1}],
+   preQuiz:[{q:'王经理认为规定和经验不能解决问题时，应该怎么办？',opts:['放弃这次生意','改变自己的态度和想法','换一个同事'],ans:1},{q:'小李这次的生意怎么样了？',opts:['还没谈成','已经谈成了','不做了'],ans:0},{q:'遇到不能解决的问题时，应该试着做什么？',opts:['走走以前从来没走过的路','什么都不做','找别人代替自己'],ans:0}],
    lines:[
      {sp:0,zh:'听说这次生意你到现在还没谈成。',py:'Tīngshuō zhè cì shēngyi nǐ dào xiànzài hái méi tánchéng.',vn:'Nghe nói vụ làm ăn lần này đến giờ anh vẫn chưa đàm phán xong.'},
      {sp:1,zh:'按我以前的经验，早应该谈成了，这次我也不知道哪儿出了问题。',py:'Àn wǒ yǐqián de jīngyàn, zǎo yīnggāi tánchéng le, zhè cì wǒ yě bù zhīdào nǎr chūle wèntí.',vn:'Theo kinh nghiệm trước đây của tôi, lẽ ra đã xong từ lâu, lần này tôi cũng không biết đã có vấn đề ở đâu.'},
@@ -748,7 +748,7 @@ var dialogData = [
      {sp:1,zh:'好，我再跟同事商量商量，希望能及时发现问题，并且准确地找到解决问题的方法。',py:'Hǎo, wǒ zài gēn tóngshì shāngliang shāngliang, xīwàng néng jíshí fāxiàn wèntí, bìngqiě zhǔnquè de zhǎodào jiějué wèntí de fāngfǎ.',vn:'Được, tôi sẽ bàn bạc thêm với đồng nghiệp, hy vọng có thể kịp thời phát hiện vấn đề, đồng thời tìm ra chính xác cách giải quyết.'},
    ]},
   {scene:'课文2 · 高老师告诉女儿洗衣服的方法',
-   preQuiz:[{q:'高老师说在水里加什么可以让衣服不掉颜色？',opts:['糖','盐','醋'],ans:1}],
+   preQuiz:[{q:'高老师说在水里加什么可以让衣服不掉颜色？',opts:['糖','盐','醋'],ans:1},{q:'小夏的裤子怎么了？',opts:['洗完以后掉颜色了','太小了','破了'],ans:0},{q:'高老师认为很多问题的答案可以从哪儿找到？',opts:['生活中','课本上','电视上'],ans:0}],
    lines:[
      {sp:0,zh:'妈，您看我刚买的裤子，洗完以后颜色怎么变得这么难看呢？',py:'Mā, nín kàn wǒ gāng mǎi de kùzi, xǐwán yǐhòu yánsè zěnme biànde zhème nánkàn ne?',vn:'Mẹ, mẹ xem chiếc quần con vừa mua, giặt xong màu sao lại xấu đi thế này?'},
      {sp:1,zh:'看来是掉颜色了，你洗的时候在水里加点儿盐就不会这样了。',py:'Kànlái shì diào yánsè le, nǐ xǐ de shíhou zài shuǐ li jiā diǎnr yán jiù bú huì zhèyàng le.',vn:'Xem ra là phai màu rồi, lúc giặt con cho thêm chút muối vào nước thì sẽ không bị như vậy nữa.'},
@@ -758,7 +758,7 @@ var dialogData = [
      {sp:1,zh:'实际上，很多问题的答案都可以从生活中找到。但这需要你用眼睛去发现，用心去总结。',py:'Shíjì shang, hěn duō wèntí de dá\'àn dōu kěyǐ cóng shēnghuó zhōng zhǎodào. Dàn zhè xūyào nǐ yòng yǎnjing qù fāxiàn, yòng xīn qù zǒngjié.',vn:'Thực tế, đáp án của rất nhiều vấn đề đều có thể tìm thấy trong cuộc sống. Nhưng điều này cần con dùng mắt để phát hiện, dùng tâm để tổng kết.'},
    ]},
   {scene:'课文3 · 高老师学习王教授的教育方法',
-   preQuiz:[{q:'王教授认为对老师来说最难做到的是什么？',opts:['把复杂的问题解释清楚','根据学生的特点选择不同的方法','让每个学生都喜欢自己'],ans:1}],
+   preQuiz:[{q:'王教授认为对老师来说最难做到的是什么？',opts:['把复杂的问题解释清楚','根据学生的特点选择不同的方法','让每个学生都喜欢自己'],ans:1},{q:'王教授的课为什么受学生欢迎？',opts:['他能用最简单的方法把复杂的问题解释清楚','他不留作业','他经常请学生吃饭'],ans:0},{q:'“世界上没有完全相同的叶子”是什么意思？',opts:['世界上也没有完全一样的人','叶子都不好看','树太多了'],ans:0}],
    lines:[
      {sp:0,zh:'王教授，今天听完您的这节课，我终于明白为什么您的课那么受学生欢迎了。',py:'Wáng jiàoshòu, jīntiān tīngwán nín de zhè jié kè, wǒ zhōngyú míngbai wèi shénme nín de kè nàme shòu xuésheng huānyíng le.',vn:'Giáo sư Vương, hôm nay nghe xong tiết học này của thầy, tôi cuối cùng hiểu vì sao giờ học của thầy được học sinh yêu thích đến thế.'},
      {sp:1,zh:'谢谢！您能详细谈谈对我的课的看法吗？',py:'Xièxie! Nín néng xiángxì tántan duì wǒ de kè de kànfǎ ma?',vn:'Cảm ơn! Thầy có thể nói chi tiết về quan điểm đối với giờ học của tôi không?'},
@@ -768,14 +768,14 @@ var dialogData = [
      {sp:1,zh:'世界上没有完全相同的叶子，同样地，世界上也没有完全一样的人。所以，在教育学生时，要根据学生的特点选择不同的方法，我想这应该是最不容易做到的。',py:'Shìjiè shang méiyǒu wánquán xiāngtóng de yèzi, tóngyàng de, shìjiè shang yě méiyǒu wánquán yíyàng de rén. Suǒyǐ, zài jiàoyù xuésheng shí, yào gēnjù xuésheng de tèdiǎn xuǎnzé bù tóng de fāngfǎ, wǒ xiǎng zhè yīnggāi shì zuì bù róngyì zuòdào de.',vn:'Trên thế giới không có hai chiếc lá hoàn toàn giống nhau, tương tự, cũng không có hai người hoàn toàn giống nhau. Vì vậy, khi giáo dục học sinh, phải căn cứ vào đặc điểm của học sinh để chọn phương pháp khác nhau, tôi nghĩ đây là điều khó làm được nhất.'},
    ]},
   {scene:'课文4 · Nghệ thuật nói chuyện',
-   preQuiz:[{q:'theo bài đọc, người nói thẳng khuyết điểm của người khác có thể gây ra điều gì?',opts:['sự thân thiện','sự hiểu lầm','sự thành công'],ans:1}],
+   preQuiz:[{q:'直接说出别人缺点的人可能会引起什么？',opts:['别人的误会','别人的友好','别人的成功'],ans:0},{q:'看一个人怎么说话，可以判断出什么？',opts:['他是一个什么样的人','他有多少钱','他多大了'],ans:0},{q:'通过别的方法提醒别人缺点的人，会让人觉得怎么样？',opts:['更友好','很诚实','很奇怪'],ans:0}],
    lines:[
      {sp:0,zh:'人人都会使用语言，但是怎么用语言把话说好却是一门艺术。看一个人怎么说话，往往可以比较准确地判断出他是一个什么样的人。',py:'Rénrén dōu huì shǐyòng yǔyán, dànshì zěnme yòng yǔyán bǎ huà shuōhǎo què shì yì mén yìshù. Kàn yí ge rén zěnme shuō huà, wǎngwǎng kěyǐ bǐjiào zhǔnquè de pànduàn chū tā shì yí ge shénmeyàng de rén.',vn:'Ai cũng biết sử dụng ngôn ngữ, nhưng dùng ngôn ngữ nói sao cho hay lại là một nghệ thuật. Xem một người nói chuyện thế nào, thường có thể phán đoán khá chính xác người đó là người như thế nào.'},
      {sp:0,zh:'有的人心里怎么想，嘴上就怎么说，即使是别人的缺点，他也会直接说出来，这样的人虽然很诚实，但是可能会引起别人的误会；',py:'Yǒude rén xīnli zěnme xiǎng, zuǐ shang jiù zěnme shuō, jíshǐ shì biérén de quēdiǎn, tā yě huì zhíjiē shuō chulai, zhèyàng de rén suīrán hěn chéngshí, dànshì kěnéng huì yǐnqǐ biérén de wùhuì;',vn:'Có người trong lòng nghĩ sao thì miệng nói vậy, dù là khuyết điểm của người khác, họ cũng nói thẳng ra, người như vậy tuy rất thành thật, nhưng có thể gây ra hiểu lầm cho người khác;'},
      {sp:0,zh:'有的人虽然也看到了别人的缺点，但却不会直接指出来，而是通过别的方法来提醒，让他认识到自己的缺点，这样的人会让人觉得更友好。',py:'Yǒude rén suīrán yě kàndàole biérén de quēdiǎn, dàn què bú huì zhíjiē zhǐ chulai, ér shì tōngguò biéde fāngfǎ lái tíxǐng, ràng tā rènshi dào zìjǐ de quēdiǎn, zhèyàng de rén huì ràng rén juéde gèng yǒuhǎo.',vn:'Có người tuy cũng thấy khuyết điểm của người khác, nhưng lại không chỉ thẳng ra, mà thông qua cách khác để nhắc nhở, giúp họ nhận ra khuyết điểm của mình, người như vậy khiến người khác cảm thấy thân thiện hơn.'},
    ]},
   {scene:'课文5 · Phương pháp đúng — 事半功倍',
-   preQuiz:[{q:'"事半功倍" nghĩa là gì?',opts:['tốn nhiều công mà ít hiệu quả','tốn ít công mà hiệu quả gấp đôi','làm việc chậm mà chắc'],ans:1}],
+   preQuiz:[{q:'“事半功倍”是什么意思？',opts:['用较少的力气，取得更好的效果','花很多时间，效果很差','做事慢但是认真'],ans:0},{q:'如果方法不对，可能会怎么样？',opts:['花五倍甚至十倍的时间都不能完成任务','很快完成任务','节约时间'],ans:0},{q:'别人的方法很有效，我们应该怎么做？',opts:['仔细考虑，根据不同情况选择不同的方法','完全照做','完全不用'],ans:0}],
    lines:[
      {sp:0,zh:'无论做什么事情，都要注意方法，学习尤其是这样。使用正确的方法，我们做起事来能"事半功倍"，也就是说，能节约时间，用较少的力气，取得更好的效果。',py:'Wúlùn zuò shénme shìqing, dōu yào zhùyì fāngfǎ, xuéxí yóuqí shì zhèyàng. Shǐyòng zhèngquè de fāngfǎ, wǒmen zuòqǐ shì lái néng "shì bàn gōng bèi", yě jiù shì shuō, néng jiéyuē shíjiān, yòng jiào shǎo de lìqi, qǔdé gèng hǎo de xiàoguǒ.',vn:'Bất kể làm việc gì, đều phải chú ý phương pháp, học tập càng như vậy. Dùng phương pháp đúng, chúng ta làm việc có thể "làm ít được nhiều", nghĩa là, tiết kiệm thời gian, dùng ít sức hơn, đạt hiệu quả tốt hơn.'},
      {sp:0,zh:'相反，如果方法不对，可能花五倍甚至十倍的时间都不能完成任务，结果变成了"事倍功半"。',py:'Xiāngfǎn, rúguǒ fāngfǎ bú duì, kěnéng huā wǔ bèi shènzhì shí bèi de shíjiān dōu bù néng wánchéng rènwu, jiéguǒ biànchéngle "shì bèi gōng bàn".',vn:'Ngược lại, nếu phương pháp không đúng, có thể tốn gấp năm thậm chí gấp mười thời gian cũng không hoàn thành nhiệm vụ, kết quả thành "tốn nhiều được ít".'},

@@ -693,7 +693,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 孙月和王静聊王静的生活情况',
-   preQuiz:[{q:'王静为什么现在很幸福？',opts:['因为工作轻松','因为在母亲面前她永远是孩子，在孩子面前她又是母亲','因为她有很多钱'],ans:1}],
+   preQuiz:[{q:'王静为什么现在很幸福？',opts:['因为工作轻松','因为在母亲面前她永远是孩子，在孩子面前她又是母亲','因为她有很多钱'],ans:1},{q:'孙月礼拜天想去做什么？',opts:['给丈夫买生日礼物','看电影','去旅游'],ans:0},{q:'王静除了工作以外还要照顾谁？',opts:['母亲和儿子','丈夫和女儿','爷爷和奶奶'],ans:0}],
    lines:[
      {sp:0,zh:'礼拜天有空儿吗？陪我去逛街怎么样？我想去给丈夫买个生日礼物。',py:'Lǐbàitiān yǒu kòngr ma? Péi wǒ qù guàng jiē zěnmeyàng? Wǒ xiǎng qù gěi zhàngfu mǎi ge shēngrì lǐwù.',vn:'Chủ nhật rảnh không? Đi cùng tôi dạo phố thì thế nào? Tôi muốn đi mua cho chồng một món quà sinh nhật.'},
      {sp:1,zh:'我可能去不了，最近事情多。',py:'Wǒ kěnéng qù bu liǎo, zuìjìn shìqing duō.',vn:'Tôi có thể không đi được, gần đây nhiều việc quá.'},
@@ -703,7 +703,7 @@ var dialogData = [
      {sp:1,zh:'没事儿，谢谢！不过现在我很幸福，因为在母亲面前我可以做一个永远长不大的孩子；在孩子面前我又是个能照顾他的母亲，这让我有了努力的方向。',py:'Méishìr, xièxie! Búguò xiànzài wǒ hěn xìngfú, yīnwèi zài mǔqīn miànqián wǒ kěyǐ zuò yí ge yǒngyuǎn zhǎng bu dà de háizi; zài háizi miànqián wǒ yòu shì ge néng zhàogù tā de mǔqīn, zhè ràng wǒ yǒule nǔlì de fāngxiàng.',vn:'Không sao, cảm ơn! Nhưng bây giờ tôi rất hạnh phúc, vì trước mặt mẹ tôi có thể làm một đứa trẻ mãi mãi không lớn; trước mặt con tôi lại là một người mẹ có thể chăm sóc nó, điều này khiến tôi có được phương hướng nỗ lực.'},
    ]},
   {scene:'课文2 · 高老师和李老师在谈幸福',
-   preQuiz:[{q:'高老师的女儿是做什么工作的？',opts:['教授','翻译','律师'],ans:1}],
+   preQuiz:[{q:'高老师的女儿是做什么工作的？',opts:['教授','翻译','律师'],ans:1},{q:'王老师来这儿工作几年就当了教授？',opts:['一年','三年','十年'],ans:1},{q:'女儿拿到第一个月工资时做了什么？',opts:['拉着父母去商场买礼物','去旅游','请朋友吃饭'],ans:0}],
    lines:[
      {sp:0,zh:'你看人家王老师，刚来这儿工作三年就当了教授，还有个好妻子，真让人羡慕！',py:'Nǐ kàn rénjia Wáng lǎoshī, gāng lái zhèr gōngzuò sān nián jiù dāngle jiàoshòu, hái yǒu ge hǎo qīzi, zhēn ràng rén xiànmù!',vn:'Bạn xem thầy Vương người ta, mới đến đây làm việc ba năm đã làm giáo sư rồi, còn có vợ tốt nữa, thật khiến người ta ngưỡng mộ!'},
      {sp:1,zh:'其实，你在别人眼中也是很幸福的，只是你自己没有发现。',py:'Qíshí, nǐ zài biérén yǎn zhōng yě shì hěn xìngfú de, zhǐshì nǐ zìjǐ méiyǒu fāxiàn.',vn:'Thực ra, trong mắt người khác bạn cũng rất hạnh phúc, chỉ là bản thân bạn chưa phát hiện ra thôi.'},
@@ -713,7 +713,7 @@ var dialogData = [
      {sp:1,zh:'所以说每个人有每个人的生活，不用羡慕别人。你羡慕别人的时候，他们可能也正在羡慕你呢。',py:'Suǒyǐ shuō měi ge rén yǒu měi ge rén de shēnghuó, bú yòng xiànmù biérén. Nǐ xiànmù biérén de shíhou, tāmen kěnéng yě zhèngzài xiànmù nǐ ne.',vn:'Vì vậy nói mỗi người có cuộc sống của riêng mỗi người, không cần ngưỡng mộ người khác. Lúc bạn ngưỡng mộ người khác, họ có thể cũng đang ngưỡng mộ bạn đấy.'},
    ]},
   {scene:'课文3 · 小雨和小夏聊找工作的事情',
-   preQuiz:[{q:'小雨认为选择职业时，什么才是关键？',opts:['收入','兴趣','公司大小'],ans:1}],
+   preQuiz:[{q:'小雨认为选择职业时，什么才是关键？',opts:['收入','兴趣','公司大小'],ans:1},{q:'张远觉得生活压力大是因为什么？',opts:['什么东西都那么贵','工作太多','朋友太少'],ans:0},{q:'小雨觉得什么样的生活就很幸福？',opts:['回家洗个热水澡，看看书、听听音乐','有很多钱','住大房子'],ans:0}],
    lines:[
      {sp:0,zh:'时间过得真快，马上就要毕业了。毕业后你打算做什么？',py:'Shíjiān guò de zhēn kuài, mǎshàng jiù yào bìyè le. Bìyè hòu nǐ dǎsuàn zuò shénme?',vn:'Thời gian trôi nhanh thật, sắp tốt nghiệp rồi. Tốt nghiệp xong bạn định làm gì?'},
      {sp:1,zh:'我还没想好呢，正想听听你的建议。你觉得在选择职业时，收入重要吗？',py:'Wǒ hái méi xiǎnghǎo ne, zhèng xiǎng tīngting nǐ de jiànyì. Nǐ juéde zài xuǎnzé zhíyè shí, shōurù zhòngyào ma?',vn:'Tôi vẫn chưa nghĩ kỹ, đang muốn nghe ý kiến của bạn đây. Bạn thấy khi chọn nghề nghiệp, thu nhập có quan trọng không?'},
@@ -723,7 +723,7 @@ var dialogData = [
      {sp:1,zh:'你说的也对。如果能找到一份自己既感兴趣，收入又不错的工作，那就最好了。',py:'Nǐ shuō de yě duì. Rúguǒ néng zhǎodào yí fèn zìjǐ jì gǎn xìngqù, shōurù yòu búcuò de gōngzuò, nà jiù zuì hǎo le.',vn:'Bạn nói cũng đúng. Nếu có thể tìm được một công việc vừa có hứng thú, thu nhập lại không tệ, thì tốt nhất rồi.'},
    ]},
   {scene:'课文4 · Điều kiện kinh tế và hạnh phúc',
-   preQuiz:[{q:'theo bài đọc, những thứ nào không thể dùng tiền mua được?',opts:['nhà cửa và xe hơi','thời gian, tình cảm, trải nghiệm cuộc sống','quần áo đẹp'],ans:1}],
+   preQuiz:[{q:'哪些东西是不能用钱买到的？',opts:['时间、感情、生活经历','房子和汽车','漂亮的衣服'],ans:0},{q:'有钱一定幸福吗？',opts:['不一定','一定','没有钱才幸福'],ans:0},{q:'如果缺钱不能及时看医生，会怎么样？',opts:['健康很难得到保证','会更幸福','没有关系'],ans:0}],
    lines:[
      {sp:0,zh:'有的人希望穿得再好一些，房子再大一些，认为经济条件越好人就越幸福。',py:'Yǒude rén xīwàng chuān de zài hǎo yìxiē, fángzi zài dà yìxiē, rènwéi jīngjì tiáojiàn yuè hǎo rén jiù yuè xìngfú.',vn:'Có người hy vọng mặc đẹp hơn nữa, nhà to hơn nữa, cho rằng điều kiện kinh tế càng tốt thì người ta càng hạnh phúc.'},
      {sp:0,zh:'其实有很多富人过得并不愉快，而有些穷人却过得很快乐。',py:'Qíshí yǒu hěn duō fù rén guò de bìng bù yúkuài, ér yǒuxiē qióng rén què guò de hěn kuàilè.',vn:'Thực ra có rất nhiều người giàu sống không hề vui vẻ, mà có người nghèo lại sống rất vui vẻ.'},
@@ -732,7 +732,7 @@ var dialogData = [
      {sp:0,zh:'当你生病了，如果由于缺钱而不能及时去看医生，你的健康都很难得到保证，就更别说幸福了。',py:'Dāng nǐ shēng bìng le, rúguǒ yóuyú quē qián ér bù néng jíshí qù kàn yīshēng, nǐ de jiànkāng dōu hěn nán dédào bǎozhèng, jiù gèng biéshuō xìngfú le.',vn:'Khi bạn bị ốm, nếu vì thiếu tiền mà không thể kịp thời đi khám bệnh, sức khỏe của bạn rất khó được đảm bảo, đừng nói đến hạnh phúc nữa.'},
    ]},
   {scene:'课文5 · Tiêu chuẩn của hạnh phúc',
-   preQuiz:[{q:'theo bài đọc, hạnh phúc có một đáp án chuẩn không?',opts:['có, ai cũng giống nhau','không, mỗi người hiểu khác nhau','chỉ có người giàu mới có'],ans:1}],
+   preQuiz:[{q:'幸福有标准答案吗？',opts:['有，大家都一样','没有，每个人的理解不同','只有有钱人才有'],ans:1},{q:'小时候幸福是什么？',opts:['一件东西，比如一块糖','一种态度','一份工作'],ans:0},{q:'长大后幸福是什么？',opts:['一种态度','一块橡皮','一辆车'],ans:0}],
    lines:[
      {sp:0,zh:'什么是幸福？有的人认为，工资高、能赚钱就是幸福；有的人认为，心情放松、身体健康才是幸福；也有人认为，能帮助别人就是一种幸福。',py:'Shénme shì xìngfú? Yǒude rén rènwéi, gōngzī gāo, néng zhuàn qián jiù shì xìngfú; yǒude rén rènwéi, xīnqíng fàngsōng, shēntǐ jiànkāng cái shì xìngfú; yě yǒu rén rènwéi, néng bāngzhù biérén jiù shì yì zhǒng xìngfú.',vn:'Hạnh phúc là gì? Có người cho rằng, lương cao, kiếm được tiền là hạnh phúc; có người cho rằng, tâm trạng thoải mái, cơ thể khỏe mạnh mới là hạnh phúc; cũng có người cho rằng, có thể giúp đỡ người khác là một loại hạnh phúc.'},
      {sp:0,zh:'还有人说，小时候幸福是一件东西，比如一块橡皮、一块糖，得到了就很幸福；长大后幸福是一种态度，生活的态度决定了我们幸福感的高低。',py:'Hái yǒu rén shuō, xiǎo shíhou xìngfú shì yí jiàn dōngxi, bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú; zhǎngdà hòu xìngfú shì yì zhǒng tàidù, shēnghuó de tàidù juédìngle wǒmen xìngfúgǎn de gāo dī.',vn:'Còn có người nói, lúc nhỏ hạnh phúc là một món đồ, ví dụ như cục tẩy, viên kẹo, có được là rất hạnh phúc; lớn lên hạnh phúc là một thái độ, thái độ sống quyết định mức độ hạnh phúc cao thấp của chúng ta.'},

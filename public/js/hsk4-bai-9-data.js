@@ -724,7 +724,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 王静和孙月聊孙月减肥的事情',
-   preQuiz:[{q:'孙月一个月减肥的结果是什么？',opts:['轻了一公斤','瘦了很多','完全没变化'],ans:0}],
+   preQuiz:[{q:'孙月一个月减肥的结果是什么？',opts:['轻了一公斤','瘦了很多','完全没变化'],ans:0},{q:'朋友认为要想减肥成功，应该怎么做？',opts:['坚持','吃减肥药','不吃饭'],ans:0},{q:'孙月最后决定怎么做？',opts:['继续减肥，把饼干和巧克力送给朋友','放弃减肥','去医院'],ans:0}],
    lines:[
      {sp:0,zh:'怎么又买了这么多饼干和巧克力？难道你不减肥了？',py:'Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?',vn:'Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?'},
      {sp:1,zh:'减了一个月都没瘦下来，我实在没有信心了。',py:'Jiǎnle yí ge yuè dōu méi shòu xialai, wǒ shízài méiyǒu xìnxīn le.',vn:'Giảm một tháng rồi mà không gầy xuống được, tôi thực sự mất hết lòng tin rồi.'},
@@ -734,7 +734,7 @@ var dialogData = [
      {sp:1,zh:'我本来已经打算放弃了，但是你刚才的话让我改变了主意。这些饼干和巧克力送给你了。',py:'Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi. Zhèxiē bǐnggān hé qiǎokèlì sònggěi nǐ le.',vn:'Tôi vốn đã định bỏ cuộc rồi, nhưng lời bạn vừa nói khiến tôi thay đổi ý định. Số bánh quy và sô cô la này tặng cho bạn rồi.'},
    ]},
   {scene:'课文2 · 李进和张远聊张远的成功经历',
-   preQuiz:[{q:'张远练球的频率是怎样的？',opts:['只在夏天练习','不管春夏秋冬从来没有休息过','一周休息一天'],ans:1}],
+   preQuiz:[{q:'张远练球的频率是怎样的？',opts:['只在夏天练习','不管春夏秋冬从来没有休息过','一周休息一天'],ans:1},{q:'张远得过什么？',opts:['很多国际大奖','很多钱','很多礼物'],ans:0},{q:'张远认为成功要靠什么？',opts:['努力','运气','朋友'],ans:0}],
    lines:[
      {sp:0,zh:'你网球打得真好，还得过那么多国际大奖！每次看你比赛，感觉你轻轻松松就赢了。',py:'Nǐ wǎngqiú dǎ de zhēn hǎo, hái déguo nàme duō guójì dà jiǎng! Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.',vn:'Bạn đánh quần vợt giỏi thật, còn từng giành nhiều giải quốc tế lớn như vậy! Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng.'},
      {sp:1,zh:'哪里啊！那是你没看到我辛苦练习的一面，没有人随随便便就能成功的。',py:'Nǎli a! Nà shì nǐ méi kàndào wǒ xīnkǔ liànxí de yí miàn, méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.',vn:'Đâu có! Đó là vì bạn không nhìn thấy mặt tôi luyện tập vất vả, không có ai tùy tiện là có thể thành công được.'},
@@ -744,7 +744,7 @@ var dialogData = [
      {sp:1,zh:'任何成功都要通过努力才能得到。只要你坚持练习，我相信你也会越打越好的。',py:'Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào. Zhǐyào nǐ jiānchí liànxí, wǒ xiāngxìn nǐ yě huì yuè dǎ yuè hǎo de.',vn:'Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được. Chỉ cần bạn kiên trì luyện tập, tôi tin bạn cũng sẽ đánh ngày càng giỏi.'},
    ]},
   {scene:'课文3 · 小林和小李谈王红的成功经历',
-   preQuiz:[{q:'王红当时的父母和亲戚对她的选择态度怎样？',opts:['都支持她','都不支持她','没有表态'],ans:1}],
+   preQuiz:[{q:'王红当时的父母和亲戚对她的选择态度怎样？',opts:['都支持她','都不支持她','没有表态'],ans:1},{q:'王红毕业后放弃了什么工作？',opts:['律师','老师','医生'],ans:0},{q:'王红现在是做什么的？',opts:['有名的作家','有名的演员','有名的律师'],ans:0}],
    lines:[
      {sp:0,zh:'你还记得王红吗？我在报纸上看到一篇关于她的新闻，她现在已经是一个有名的作家了。',py:'Nǐ hái jìde Wáng Hóng ma? Wǒ zài bàozhǐ shang kàndào yì piān guānyú tā de xīnwén, tā xiànzài yǐjīng shì yí ge yǒumíng de zuòjiā le.',vn:'Bạn còn nhớ Vương Hồng không? Tôi đọc được trên báo một bài tin tức về cô ấy, cô ấy hiện giờ đã là một nhà văn nổi tiếng.'},
      {sp:1,zh:'听说她毕业后放弃了律师的工作，开始专门写小说，没想到她竟然成功了。',py:'Tīngshuō tā bìyè hòu fàngqìle lǜshī de gōngzuò, kāishǐ zhuānmén xiě xiǎoshuō, méi xiǎngdào tā jìngrán chénggōng le.',vn:'Nghe nói cô ấy sau khi tốt nghiệp đã từ bỏ công việc luật sư, bắt đầu chuyên viết tiểu thuyết, không ngờ cô ấy lại thành công.'},
@@ -754,14 +754,14 @@ var dialogData = [
      {sp:1,zh:'是啊，只有学会放弃，才能把自己的能力用到最该做的事情上，最后获得成功。',py:'Shì a, zhǐyǒu xuéhuì fàngqì, cái néng bǎ zìjǐ de nénglì yòngdào zuì gāi zuò de shìqing shang, zuìhòu huòdé chénggōng.',vn:'Đúng vậy, chỉ khi học được cách từ bỏ, mới có thể dùng năng lực của mình vào việc đáng làm nhất, cuối cùng đạt được thành công.'},
    ]},
   {scene:'课文4 · Hãy dũng cảm hành động',
-   preQuiz:[{q:'theo bài đọc, chúng ta nên đặt sự chú ý vào đâu?',opts:['kết quả','quá trình làm việc','tiền bạc'],ans:1}],
+   preQuiz:[{q:'我们应该把注意力放在哪里？',opts:['做事情的过程上','结果上','钱上'],ans:0},{q:'如果太看重结果，失败会给人们带来什么？',opts:['很多烦恼','很多钱','很多朋友'],ans:0},{q:'即使失败了，我们还可以得到什么？',opts:['有用的经验','更多的钱','更长的假期'],ans:0}],
    lines:[
      {sp:0,zh:'如果你想做什么事情，那就勇敢地去做，不要担心结果，不要考虑会不会失败。要是太看重结果，失败就会给人们带来很多烦恼。',py:'Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dānxīn jiéguǒ, búyào kǎolǜ huì bu huì shībài. Yàoshi tài kànzhòng jiéguǒ, shībài jiù huì gěi rénmen dàilai hěn duō fánnǎo.',vn:'Nếu bạn muốn làm việc gì, thì hãy dũng cảm làm đi, đừng lo lắng về kết quả, đừng cân nhắc việc có thất bại hay không. Nếu quá coi trọng kết quả, thất bại sẽ mang lại cho người ta rất nhiều phiền muộn.'},
      {sp:0,zh:'我们应该把注意力放在做事情的过程上，这样你会在做的过程中发现解决问题的快乐，这是其他任何东西都给不了的。',py:'Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang, zhèyàng nǐ huì zài zuò de guòchéng zhōng fāxiàn jiějué wèntí de kuàilè, zhè shì qítā rènhé dōngxi dōu gěi bu liǎo de.',vn:'Chúng ta nên đặt sự chú ý vào quá trình làm việc, như vậy bạn sẽ trong quá trình làm phát hiện niềm vui giải quyết vấn đề, đây là điều mà bất kỳ thứ gì khác cũng không thể mang lại được.'},
      {sp:0,zh:'即使最后失败了也没有关系，因为至少你已经努力过，而且我们还可以从失败中总结出有用的经验，有了这些积累，成功自然离我们越来越近。',py:'Jíshǐ zuìhòu shībàile yě méiyǒu guānxi, yīnwèi zhìshǎo nǐ yǐjīng nǔlìguo, érqiě wǒmen hái kěyǐ cóng shībài zhōng zǒngjié chū yǒuyòng de jīngyàn, yǒule zhèxiē jīlěi, chénggōng zìrán lí wǒmen yuè lái yuè jìn.',vn:'Dù cuối cùng có thất bại cũng không sao, vì ít nhất bạn đã nỗ lực rồi, hơn nữa chúng ta còn có thể từ thất bại tổng kết ra kinh nghiệm hữu ích, có được những tích lũy này, thành công tự nhiên ngày càng gần chúng ta hơn.'},
    ]},
   {scene:'课文5 · Edison và bài học thành công',
-   preQuiz:[{q:'Edison đã tìm bao nhiêu loại vật liệu trước khi tìm ra vật liệu thắp sáng bóng đèn?',opts:['vài chục loại','vài trăm loại','hàng nghìn loại'],ans:2}],
+   preQuiz:[{q:'爱迪生找了多少种材料才找到能点亮电灯的材料？',opts:['几十种','几百种','上千种'],ans:2},{q:'取得成功的人和普通人的区别是什么？',opts:['他们都坚持了下来','他们更聪明','他们更有钱'],ans:0},{q:'“阳光总在风雨后”是什么意思？',opts:['勇敢面对困难才有希望成功','下雨以后一定出太阳','风雨天气不好'],ans:0}],
    lines:[
      {sp:0,zh:'每一个人都希望成功，可是很多时候，在成功之前会遇到很多困难。有些人遇到困难就放弃，而有些人遇到困难却想办法解决它。',py:'Měi yí ge rén dōu xīwàng chénggōng, kěshì hěn duō shíhou, zài chénggōng zhīqián huì yùdào hěn duō kùnnan. Yǒuxiē rén yùdào kùnnan jiù fàngqì, ér yǒuxiē rén yùdào kùnnan què xiǎng bànfǎ jiějué tā.',vn:'Mỗi người đều mong muốn thành công, nhưng rất nhiều lúc, trước khi thành công sẽ gặp phải nhiều khó khăn. Có người gặp khó khăn liền từ bỏ, mà có người gặp khó khăn lại nghĩ cách giải quyết nó.'},
      {sp:0,zh:'对困难的态度不同，结果也是不一样的。爱迪生就是在找了上千种材料后才找到了能点亮电灯的材料。',py:'Duì kùnnan de tàidù bù tóng, jiéguǒ yě shì bù yíyàng de. Àidíshēng jiùshì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.',vn:'Thái độ đối với khó khăn khác nhau, kết quả cũng không giống nhau. Edison chính là sau khi tìm hàng nghìn loại vật liệu mới tìm được loại vật liệu có thể thắp sáng bóng đèn điện.'},

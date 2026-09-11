@@ -741,7 +741,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 小李和小林聊天气和身体情况',
-   preQuiz:[{q:'小李感冒的原因是什么？',opts:['吹了空调','昨天穿得太少','没休息好'],ans:1}],
+   preQuiz:[{q:'小李感冒的原因是什么？',opts:['吹了空调','昨天穿得太少','没休息好'],ans:1},{q:'小雨的鼻子为什么流血？',opts:['天气太干','被人打了','太累了'],ans:0},{q:'春天容易感冒时，应该注意什么？',opts:['注意保暖，经常开窗换空气','多吃肉','少喝水'],ans:0}],
    lines:[
      {sp:0,zh:'你的鼻子怎么流血了？快用纸擦擦。',py:'Nǐ de bízi zěnme liú xiě le? Kuài yòng zhǐ cāca.',vn:'Mũi bạn sao lại chảy máu vậy? Nhanh dùng giấy lau đi.'},
      {sp:1,zh:'我还不习惯北方的气候，估计是天气太干。今天天气不是很冷，你怎么穿这么多？',py:'Wǒ hái bù xíguàn běifāng de qìhòu, gūjì shì tiānqì tài gān. Jīntiān tiānqì bú shì hěn lěng, nǐ zěnme chuān zhème duō?',vn:'Tôi vẫn chưa quen với khí hậu miền Bắc, đoán là do thời tiết quá khô. Hôm nay thời tiết không lạnh lắm, sao bạn mặc nhiều vậy?'},
@@ -751,7 +751,7 @@ var dialogData = [
      {sp:1,zh:'春天天气时冷时热，特别容易感冒。这时候一定要多注意保暖，另外，最好经常打开窗户换换空气。',py:'Chūntiān tiānqì shí lěng shí rè, tèbié róngyì gǎnmào. Zhè shíhou yídìng yào duō zhùyì bǎonuǎn, lìngwài, zuìhǎo jīngcháng dǎkāi chuānghu huànhuan kōngqì.',vn:'Thời tiết mùa xuân lúc lạnh lúc nóng, đặc biệt dễ bị cảm. Lúc này nhất định phải chú ý giữ ấm, ngoài ra, tốt nhất nên thường xuyên mở cửa sổ để thay đổi không khí.'},
    ]},
   {scene:'课文2 · 小夏和小雨聊小雨抽烟的事情',
-   preQuiz:[{q:'小雨为什么觉得抽烟没什么？',opts:['觉得抽烟这个动作看上去很帅','医生说没关系','家人不反对'],ans:0}],
+   preQuiz:[{q:'小雨为什么觉得抽烟没什么？',opts:['觉得抽烟这个动作看上去很帅','医生说没关系','家人不反对'],ans:0},{q:'医生让小雨怎么做？',opts:['以后不要再抽烟了','多喝咖啡','多运动'],ans:0},{q:'小雨最近为什么有些担心了？',opts:['因为总是咳嗽','因为工作太忙','因为家人生气了'],ans:0}],
    lines:[
      {sp:0,zh:'你咳嗽好点儿了吗？医生怎么说的？',py:'Nǐ késou hǎo diǎnr le ma? Yīshēng zěnme shuō de?',vn:'Bạn ho đỡ hơn chưa? Bác sĩ nói gì?'},
      {sp:1,zh:'还是老样子，他让我以后不要再抽烟了。',py:'Hái shì lǎo yàngzi, tā ràng wǒ yǐhòu búyào zài chōuyān le.',vn:'Vẫn như cũ, bác sĩ bảo tôi sau này đừng hút thuốc nữa.'},
@@ -762,7 +762,7 @@ var dialogData = [
      {sp:0,zh:'抽烟不仅对自己没好处，还会影响周围人的身体健康。为了你和你的家人，别再抽了。',py:'Chōuyān bùjǐn duì zìjǐ méi hǎochù, hái huì yǐngxiǎng zhōuwéi rén de shēntǐ jiànkāng. Wèile nǐ hé nǐ de jiārén, bié zài chōu le.',vn:'Hút thuốc không những không có lợi cho bản thân, còn ảnh hưởng đến sức khỏe của người xung quanh. Vì bạn và gia đình bạn, đừng hút nữa.'},
    ]},
   {scene:'课文3 · 小李和小林聊电脑对身体的影响',
-   preQuiz:[{q:'如果一天静坐超过几小时，就会影响身体健康？',opts:['4小时','6小时','8小时'],ans:1}],
+   preQuiz:[{q:'如果一天静坐超过几小时，就会影响身体健康？',opts:['4小时','6小时','8小时'],ans:1},{q:'大夫说小张的眼睛为什么总是跳？',opts:['长时间看电脑，眼睛太累','没吃早饭','睡得太多'],ans:0},{q:'他们午饭后打算做什么？',opts:['去公园散步','继续工作','去看电影'],ans:0}],
    lines:[
      {sp:0,zh:'我最近眼睛总是跳，大夫说是因为我长时间看电脑，眼睛太累。',py:'Wǒ zuìjìn yǎnjing zǒngshì tiào, dàifu shuō shì yīnwèi wǒ cháng shíjiān kàn diànnǎo, yǎnjing tài lèi.',vn:'Gần đây mắt tôi cứ giật liên tục, bác sĩ nói là do tôi nhìn máy tính lâu quá, mắt quá mỏi.'},
      {sp:1,zh:'长时间坐在电脑前面工作，眼睛很容易累。最好是每过一小时就休息休息，然后再开始工作。',py:'Cháng shíjiān zuò zài diànnǎo qiánmian gōngzuò, yǎnjing hěn róngyì lèi. Zuìhǎo shì měi guò yì xiǎoshí jiù xiūxi xiūxi, ránhòu zài kāishǐ gōngzuò.',vn:'Ngồi lâu trước máy tính làm việc, mắt rất dễ mỏi. Tốt nhất là cứ mỗi tiếng lại nghỉ ngơi một chút, rồi mới tiếp tục làm việc.'},
@@ -772,13 +772,13 @@ var dialogData = [
      {sp:1,zh:'好，咱们午饭后就去附近的公园散散步吧。',py:'Hǎo, zánmen wǔfàn hòu jiù qù fùjìn de gōngyuán sànsan bù ba.',vn:'Được, chúng ta ăn trưa xong thì đi dạo ở công viên gần đây đi.'},
    ]},
   {scene:'课文4 · Sức khỏe thực sự là gì',
-   preQuiz:[{q:'theo bài đọc, sức khỏe thực sự bao gồm điều gì?',opts:['chỉ cơ thể không bệnh','cả cơ thể và tinh thần đều khỏe mạnh','chỉ cần tinh thần tốt'],ans:1}],
+   preQuiz:[{q:'真正的健康包括什么？',opts:['身体和精神都健康','只要身体不生病','只要心情好'],ans:0},{q:'教授用数字说明健康时，健康是什么？',opts:['1','0','10'],ans:0},{q:'我们平时应该怎么做？',opts:['注意锻炼，别等健康出问题才后悔','多吃药','多睡觉'],ans:0}],
    lines:[
      {sp:0,zh:'每个人都希望自己健康，那么什么才是健康呢？过去，人们认为健康就是指身体不生病。但是，现在人们认识到，健康还指精神上的健康。只有身体和精神都健康，才算是真正的健康。',py:'Měi ge rén dōu xīwàng zìjǐ jiànkāng, nàme shénme cái shì jiànkāng ne? Guòqù, rénmen rènwéi jiànkāng jiùshì zhǐ shēntǐ bù shēngbìng. Dànshì, xiànzài rénmen rènshi dào, jiànkāng hái zhǐ jīngshén shang de jiànkāng. Zhǐyǒu shēntǐ hé jīngshén dōu jiànkāng, cái suàn shì zhēnzhèng de jiànkāng.',vn:'Mỗi người đều mong muốn bản thân khỏe mạnh, vậy thế nào mới là khỏe mạnh? Trước đây, người ta cho rằng sức khỏe chính là chỉ việc cơ thể không bị bệnh. Nhưng, bây giờ người ta nhận thức được, sức khỏe còn chỉ về sự khỏe mạnh tinh thần. Chỉ khi cả cơ thể và tinh thần đều khỏe mạnh, mới tính là sức khỏe thực sự.'},
      {sp:0,zh:'有一位教授用数字来说明健康有多么重要：要是健康是1，其他都是1后面的0；如果没有1，不管有多少0也没用。所以我们平时一定要注意锻炼，别等健康出问题了才后悔。',py:'Yǒu yí wèi jiàoshòu yòng shùzì lái shuōmíng jiànkāng yǒu duōme zhòngyào: Yàoshi jiànkāng shì yī, qítā dōu shì yī hòumiàn de líng; rúguǒ méiyǒu yī, bùguǎn yǒu duōshao líng yě méi yòng. Suǒyǐ wǒmen píngshí yídìng yào zhùyì duànliàn, bié děng jiànkāng chū wèntí le cái hòuhuǐ.',vn:'Có một vị giáo sư dùng con số để giải thích sức khỏe quan trọng như thế nào: Nếu sức khỏe là số 1, những thứ khác đều là số 0 phía sau số 1; nếu không có số 1, bất kể có bao nhiêu số 0 cũng vô dụng. Vì vậy chúng ta bình thường nhất định phải chú ý rèn luyện, đừng đợi đến khi sức khỏe xuất hiện vấn đề mới hối hận.'},
    ]},
   {scene:'课文5 · Bác sĩ tốt nhất, thuốc tốt nhất, vận động tốt nhất',
-   preQuiz:[{q:'tác giả hoàn toàn đồng ý với điều gì trong ba câu nói của bác sĩ?',opts:['bác sĩ tốt nhất là bản thân','thuốc tốt nhất là thời gian','vận động tốt nhất là đi dạo'],ans:2}],
+   preQuiz:[{q:'作者完全同意医生说的哪句话？',opts:['最好的医生是自己','最好的药是时间','最好的运动是散步'],ans:2},{q:'散步和跑步比，有什么好处？',opts:['不会那么辛苦','能跑得更快','更花时间'],ans:0},{q:'晚饭后一家人一起散步有什么好处？',opts:['可以交流感情，忘掉烦恼','可以赚钱','可以学习汉语'],ans:0}],
    lines:[
      {sp:0,zh:'我听一位医生说过一句话："最好的医生是自己，最好的药是时间，最好的运动是散步。"前两条我理解得不深，最后一条我完全同意。',py:'Wǒ tīng yí wèi yīshēng shuōguo yí jù huà: "Zuì hǎo de yīshēng shì zìjǐ, zuì hǎo de yào shì shíjiān, zuì hǎo de yùndòng shì sànbù." Qián liǎng tiáo wǒ lǐjiě de bù shēn, zuìhòu yì tiáo wǒ wánquán tóngyì.',vn:'Tôi từng nghe một bác sĩ nói một câu: "Bác sĩ tốt nhất là bản thân, thuốc tốt nhất là thời gian, vận động tốt nhất là đi dạo." Hai điều đầu tôi hiểu không sâu, điều cuối cùng tôi hoàn toàn đồng ý.'},
      {sp:0,zh:'散步是生活中最简单的锻炼方法，既可以活动身体，又可以减肥，而且不会像跑步那样辛苦。晚饭后，一家人一起出去散散步，是一件很幸福的事情。',py:'Sànbù shì shēnghuó zhōng zuì jiǎndān de duànliàn fāngfǎ, jì kěyǐ huódòng shēntǐ, yòu kěyǐ jiǎnféi, érqiě bú huì xiàng pǎobù nàyàng xīnkǔ. Wǎnfàn hòu, yì jiā rén yìqǐ chūqu sànsan bù, shì yí jiàn hěn xìngfú de shìqing.',vn:'Đi dạo là phương pháp luyện tập đơn giản nhất trong cuộc sống, vừa có thể vận động cơ thể, vừa có thể giảm cân, hơn nữa lại không vất vả như chạy bộ. Sau bữa tối, cả nhà cùng nhau ra ngoài đi dạo, là một việc rất hạnh phúc.'},

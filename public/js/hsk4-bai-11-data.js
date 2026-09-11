@@ -684,7 +684,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 马克介绍自己学习汉语的方法',
-   preQuiz:[{q:'马克建议大卫怎么学习新词语？',opts:['多看电视','坚持看中文报纸','多背词典'],ans:1}],
+   preQuiz:[{q:'马克建议大卫怎么学习新词语？',opts:['多看电视','坚持看中文报纸','多背词典'],ans:1},{q:'马克来中国多长时间了？',opts:['一年','三年','五年'],ans:0},{q:'遇到不认识的词语时，马克怎么做？',opts:['查词典，写在本子上，有空儿复习','直接跳过','问老师'],ans:0}],
    lines:[
      {sp:0,zh:'你来中国才一年，汉语就说得这么流利，真厉害！',py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!',vn:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!'},
      {sp:1,zh:'谢谢！其实我的语法不太好，很多句子说得都不太准确。',py:'Xièxie! Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.',vn:'Cảm ơn! Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói đều không được chính xác lắm.'},
@@ -694,7 +694,7 @@ var dialogData = [
      {sp:1,zh:'刚开始肯定有困难，不过遇到不认识的词语，你可以查词典，然后写在本子上，有空儿就拿出来复习一下，慢慢地就会发现中文报纸也没那么难了。',py:'Gāng kāishǐ kěndìng yǒu kùnnan, búguò yùdào bú rènshi de cíyǔ, nǐ kěyǐ chá cídiǎn, ránhòu xiě zài běnzi shang, yǒu kòngr jiù ná chulai fùxí yíxià, mànmàn de jiù huì fāxiàn Zhōngwén bàozhǐ yě méi nàme nán le.',vn:'Mới bắt đầu chắc chắn có khó khăn, nhưng gặp từ ngữ không biết, bạn có thể tra từ điển, rồi viết vào sổ, rảnh thì lấy ra ôn lại một chút, dần dần sẽ phát hiện báo tiếng Trung cũng không khó đến thế.'},
    ]},
   {scene:'课文2 · 小夏和小雨聊考试的情况',
-   preQuiz:[{q:'小雨为什么没做完阅读考试的题？',opts:['因为题太简单','因为先做了难题，花了太多时间','因为睡着了'],ans:1}],
+   preQuiz:[{q:'小雨为什么没做完阅读考试的题？',opts:['因为题太简单','因为先做了难题，花了太多时间','因为睡着了'],ans:1},{q:'阅读考试的时间是多长？',opts:['一个小时','两个小时','三个小时'],ans:1},{q:'马克的选择题猜对了几个？',opts:['一个都没猜对','猜对了一半','全猜对了'],ans:0}],
    lines:[
      {sp:0,zh:'考试结束了，你对自己的成绩满意吗？',py:'Kǎoshì jiéshù le, nǐ duì zìjǐ de chéngjì mǎnyì ma?',vn:'Thi xong rồi, bạn có hài lòng với thành tích của mình không?'},
      {sp:1,zh:'说真的，我不太满意。这次阅读考试的题太多了，我没做完。',py:'Shuō zhēn de, wǒ bú tài mǎnyì. Zhè cì yuèdú kǎoshì de tí tài duō le, wǒ méi zuòwán.',vn:'Nói thật, tôi không hài lòng lắm. Đề thi đọc lần này quá nhiều, tôi không làm xong.'},
@@ -704,7 +704,7 @@ var dialogData = [
      {sp:1,zh:'看来要想考好，不但要认真复习，还得注意考试的方法，否则，会做的题也没时间做了。',py:'Kànlái yào xiǎng kǎohǎo, búdàn yào rènzhēn fùxí, hái děi zhùyì kǎoshì de fāngfǎ, fǒuzé, huì zuò de tí yě méi shíjiān zuò le.',vn:'Xem ra muốn thi tốt, không chỉ phải ôn tập nghiêm túc, còn phải chú ý phương pháp thi, nếu không, câu biết làm cũng không có thời gian làm nữa.'},
    ]},
   {scene:'课文3 · 小李告诉小林阅读的好处',
-   preQuiz:[{q:'每天花半个小时读书，一个月可以读多少页？',opts:['100页','300页','1000页'],ans:1}],
+   preQuiz:[{q:'每天花半个小时读书，一个月可以读多少页？',opts:['100页','300页','1000页'],ans:1},{q:'如果3分钟读一页书，半个小时可以读几页？',opts:['5页','10页','20页'],ans:1},{q:'坚持阅读除了增加知识，还有什么好处？',opts:['减轻压力','赚钱','减肥'],ans:0}],
    lines:[
      {sp:0,zh:'你的客厅里怎么到处是书啊？这些书你都喜欢看吗？',py:'Nǐ de kètīng li zěnme dàochù shì shū a? Zhèxiē shū nǐ dōu xǐhuan kàn ma?',vn:'Phòng khách của bạn sao khắp nơi đều là sách thế? Những sách này bạn đều thích đọc à?'},
      {sp:1,zh:'当然，我每天都要看书。无论是普通杂志，还是著名小说，只要打开它们，就会发现，世界上有那么多有意思的事情，有那么多不一样的生活。',py:'Dāngrán, wǒ měi tiān dōu yào kàn shū. Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn, shìjiè shang yǒu nàme duō yǒu yìsi de shìqing, yǒu nàme duō bù yíyàng de shēnghuó.',vn:'Đương nhiên, ngày nào tôi cũng đọc sách. Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện, trên thế giới có nhiều chuyện thú vị đến thế, có nhiều cuộc sống khác nhau đến thế.'},
@@ -714,14 +714,14 @@ var dialogData = [
      {sp:1,zh:'坚持阅读，除了能增加知识外，还能帮助我减轻压力，人也会变得轻松起来。',py:'Jiānchí yuèdú, chúle néng zēngjiā zhīshi wài, hái néng bāngzhù wǒ jiǎnqīng yālì, rén yě huì biànde qīngsōng qilai.',vn:'Kiên trì đọc sách, ngoài việc tăng thêm kiến thức, còn giúp tôi giảm bớt áp lực, con người cũng trở nên thư thái hơn.'},
    ]},
   {scene:'课文4 · Ghi chép khi đọc sách',
-   preQuiz:[{q:'theo bài đọc, cách đơn giản nhất để làm ghi chép đọc sách là gì?',opts:['chép lại cả quyển sách','ghi lại từ ngữ và câu mình thích/thấy hữu ích','vẽ tranh minh họa'],ans:1}],
+   preQuiz:[{q:'最简单的读书笔记是什么？',opts:['记下自己喜欢或者有用的词语和句子','抄整本书','画画儿'],ans:0},{q:'阅读能力好的人有什么好处？',opts:['容易找到工作，工资也比较高','不用工作','可以不上学'],ans:0},{q:'对书本上的内容应该怎么看？',opts:['要有自己的看法和判断','完全相信','完全不相信'],ans:0}],
    lines:[
      {sp:0,zh:'根据调查，阅读能力好的人，不但容易找到工作，而且工资也比较高。怎么才能有效提高自己的阅读能力呢？做读书笔记就是其中一种好方法。',py:'Gēnjù diàochá, yuèdú nénglì hǎo de rén, búdàn róngyì zhǎodào gōngzuò, érqiě gōngzī yě bǐjiào gāo. Zěnme cái néng yǒuxiào tígāo zìjǐ de yuèdú nénglì ne? Zuò dúshū bǐjì jiù shì qízhōng yì zhǒng hǎo fāngfǎ.',vn:'Theo điều tra, người có năng lực đọc tốt, không những dễ tìm được việc, mà lương cũng khá cao. Làm thế nào để nâng cao hiệu quả năng lực đọc của mình? Ghi chép khi đọc sách chính là một trong những phương pháp tốt.'},
      {sp:0,zh:'读书笔记有很多种，最简单的就是把自己喜欢或者觉得有用的词语和句子记下来。另外，在看完一篇文章或一本书之后，还可以把它的主要内容和自己的想法写下来。',py:'Dúshū bǐjì yǒu hěn duō zhǒng, zuì jiǎndān de jiù shì bǎ zìjǐ xǐhuan huòzhě juéde yǒuyòng de cíyǔ hé jùzi jì xialai. Lìngwài, zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng hé zìjǐ de xiǎngfǎ xiě xialai.',vn:'Ghi chép đọc sách có nhiều loại, đơn giản nhất là ghi lại những từ ngữ và câu mình thích hoặc thấy hữu ích. Ngoài ra, sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó và suy nghĩ của mình.'},
      {sp:0,zh:'然而，你不能完全相信书本上的内容，要有自己的看法和判断。坚持做读书笔记，对提高阅读能力有很大帮助。',py:'Rán\'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn. Jiānchí zuò dúshū bǐjì, duì tígāo yuèdú nénglì yǒu hěn dà bāngzhù.',vn:'Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình. Kiên trì ghi chép khi đọc sách, có ích rất lớn cho việc nâng cao năng lực đọc.'},
    ]},
   {scene:'课文5 · 读书好，读好书，好读书',
-   preQuiz:[{q:'"好读书" (hào dú shū) có nghĩa là gì?',opts:['đọc sách có ích','đọc những quyển sách hay','thích đọc sách, hình thành thói quen đọc'],ans:2}],
+   preQuiz:[{q:'“好读书”（hào dú shū）是什么意思？',opts:['读书有好处','读好的书','喜欢读书，养成阅读的习惯'],ans:2},{q:'为什么要“读好书”？',opts:['因为时间有限，不可能读完所有的书','因为好书便宜','因为老师要求'],ans:0},{q:'阅读能给我们带来什么？',opts:['丰富知识和情感，让生活更精彩','更多的钱','更多的朋友'],ans:0}],
    lines:[
      {sp:0,zh:'"读书好，读好书，好读书"。虽然这句话只用了三个相同的汉字，但是不同的顺序却表示了不同的意思。',py:'"Dú shū hǎo, dú hǎo shū, hào dú shū". Suīrán zhè jù huà zhǐ yòngle sān ge xiāngtóng de Hànzì, dànshì bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.',vn:'"Đọc sách có lợi, đọc sách hay, thích đọc sách". Tuy câu này chỉ dùng ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.'},
      {sp:0,zh:'首先，"读书好"说的是读书有很多好处；其次，每个人的时间都是有限的，不可能把世界上每一本书都读完，所以要读好的书；最后，"好读书"就是要养成阅读的习惯，使读书真正成为自己的兴趣爱好。',py:'Shǒuxiān, "dú shū hǎo" shuō de shì dú shū yǒu hěn duō hǎochù; qícì, měi ge rén de shíjiān dōu shì yǒuxiàn de, bù kěnéng bǎ shìjiè shang měi yì běn shū dōu dúwán, suǒyǐ yào dú hǎo de shū; zuìhòu, "hào dú shū" jiù shì yào yǎngchéng yuèdú de xíguàn, shǐ dú shū zhēnzhèng chéngwéi zìjǐ de xìngqù àihào.',vn:'Trước hết, "đọc sách có lợi" nói về việc đọc sách có rất nhiều lợi ích; thứ hai, thời gian của mỗi người đều có hạn, không thể đọc hết mọi quyển sách trên thế giới, nên phải đọc sách hay; cuối cùng, "thích đọc sách" chính là phải hình thành thói quen đọc, khiến việc đọc sách thực sự trở thành sở thích của mình.'},

@@ -715,7 +715,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 王静在家具店买沙发',
-   preQuiz:[{q:'王静最后决定买哪个颜色的沙发？',opts:['红色','蓝色','黑色'],ans:1}],
+   preQuiz:[{q:'王静最后决定买哪个颜色的沙发？',opts:['红色','蓝色','黑色'],ans:1},{q:'这个沙发现在比平时便宜多少钱？',opts:['一百块','一千块','五千块'],ans:1},{q:'王静担心沙发的什么？',opts:['价格','质量','颜色'],ans:1}],
    lines:[
      {sp:0,zh:'小姐，您好！您想买什么家具？需要我为您介绍一下吗？',py:'Xiǎojiě, nín hǎo! Nín xiǎng mǎi shénme jiājù? Xūyào wǒ wèi nín jièshào yíxià ma?',vn:'Chào chị! Chị muốn mua đồ nội thất gì? Cần tôi giới thiệu cho chị không?'},
      {sp:1,zh:'谢谢，我想买沙发。',py:'Xièxie, wǒ xiǎng mǎi shāfā.',vn:'Cảm ơn, tôi muốn mua ghế sô pha.'},
@@ -725,7 +725,7 @@ var dialogData = [
      {sp:1,zh:'这个蓝色的看上去不错，就要这个吧。',py:'Zhège lánsè de kàn shangqu búcuò, jiù yào zhège ba.',vn:'Chiếc màu xanh này trông không tệ, lấy cái này đi.'},
    ]},
   {scene:'课文2 · 王静和李进在商场买东西',
-   preQuiz:[{q:'王静和李进最后决定用什么付款？',opts:['现金','信用卡','支票'],ans:1}],
+   preQuiz:[{q:'王静和李进最后决定用什么付款？',opts:['现金','信用卡','支票'],ans:1},{q:'这个月家里已经花了多少钱？',opts:['两千多','五千多','一万多'],ans:1},{q:'李进为什么想买新冰箱？',opts:['旧冰箱制冷效果不太好了','旧冰箱太小','旧冰箱颜色不好看'],ans:0}],
    lines:[
      {sp:0,zh:'咱家的冰箱太旧了，商场正好打折，我们顺便也买一台吧。',py:'Zán jiā de bīngxiāng tài jiù le, shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.',vn:'Tủ lạnh nhà chúng ta cũ quá rồi, trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi.'},
      {sp:1,zh:'今天买的东西太多了。再说，这个月家里已经花了五千多了。',py:'Jīntiān mǎi de dōngxi tài duō le. Zàishuō, zhège yuè jiā li yǐjīng huāle wǔqiān duō le.',vn:'Hôm nay mua đồ nhiều quá rồi. Hơn nữa, tháng này nhà mình đã tiêu hơn năm nghìn rồi.'},
@@ -735,7 +735,7 @@ var dialogData = [
      {sp:1,zh:'那好吧，我带的现金不够，用你的信用卡吧。',py:'Nà hǎo ba, wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.',vn:'Vậy được, tiền mặt tôi mang không đủ, dùng thẻ tín dụng của bạn đi.'},
    ]},
   {scene:'课文3 · 李进和王静在超市买礼物',
-   preQuiz:[{q:'李进和王静最后决定给李老师买什么礼物？',opts:['一本书','两瓶葡萄酒','一台电脑'],ans:1}],
+   preQuiz:[{q:'李进和王静最后决定给李老师买什么礼物？',opts:['一本书','两瓶葡萄酒','一台电脑'],ans:1},{q:'李老师喜欢什么？',opts:['葡萄酒','咖啡','茶'],ans:0},{q:'王静对广告的看法是什么？',opts:['广告说的都是对的','不能完全相信广告','广告没有用'],ans:1}],
    lines:[
      {sp:1,zh:'李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？',py:'Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, gěi tā dài diǎnr shénme lǐwù hǎo ne?',vn:'Thầy Lý mời chúng ta đến nhà thầy chơi, mang cho thầy chút quà gì thì tốt nhỉ?'},
      {sp:0,zh:'他很喜欢葡萄酒，我们就给他买两瓶葡萄酒吧。',py:'Tā hěn xǐhuan pútaojiǔ, wǒmen jiù gěi tā mǎi liǎng píng pútaojiǔ ba.',vn:'Thầy rất thích rượu vang, chúng ta mua cho thầy hai chai rượu vang đi.'},
@@ -745,14 +745,14 @@ var dialogData = [
      {sp:0,zh:'你说的也对。',py:'Nǐ shuō de yě duì.',vn:'Bạn nói cũng đúng.'},
    ]},
   {scene:'课文4 · Tiêu chuẩn mua quần áo của tôi',
-   preQuiz:[{q:'tác giả không hiểu được điều gì?',opts:['vì sao người lớn tuổi thích giảm giá nhưng không cân nhắc phù hợp','vì sao quần áo đắt','vì sao phải mặc thoải mái'],ans:0}],
+   preQuiz:[{q:'作者买衣服的标准是什么？',opts:['只买对的，不买贵的','只买流行的','只买便宜的'],ans:0},{q:'对作者来说，衣服的什么不重要？',opts:['样子流行不流行','穿着舒服不舒服','质量好不好'],ans:0},{q:'作者理解不了什么？',opts:['有些人只买打折的衣服，却不考虑适不适合自己','为什么衣服这么贵','为什么要穿得舒服'],ans:0}],
    lines:[
      {sp:0,zh:'买衣服只考虑价格当然不好，但是只考虑买好看的也不一定对。我买衣服的标准是"只买对的，不买贵的"。',py:'Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo, dànshì zhǐ kǎolǜ mǎi hǎokàn de yě bù yídìng duì. Wǒ mǎi yīfu de biāozhǔn shì "zhǐ mǎi duì de, bù mǎi guì de".',vn:'Mua quần áo chỉ cân nhắc giá cả đương nhiên không tốt, nhưng chỉ cân nhắc mua cái đẹp cũng chưa chắc đúng. Tiêu chuẩn mua quần áo của tôi là "chỉ mua cái đúng, không mua cái đắt".'},
      {sp:0,zh:'第一，自己穿着舒服；第二，衣服的质量要好，而且又不能太贵。对我来说，衣服的样子流行不流行并不是很重要。',py:'Dì-yī, zìjǐ chuānzhe shūfu; dì-èr, yīfu de zhìliàng yào hǎo, érqiě yòu bù néng tài guì. Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.',vn:'Thứ nhất, bản thân mặc vào thoải mái; thứ hai, chất lượng quần áo phải tốt, hơn nữa lại không thể quá đắt. Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không phải là điều quan trọng.'},
      {sp:0,zh:'很多年龄大的人喜欢在打折的时候买便宜的衣服，但对那些衣服是不是适合自己却考虑得不多。这点是我理解不了的，因为如果不适合自己，即使花钱很少，也是一种浪费。',py:'Hěn duō niánlíng dà de rén xǐhuan zài dǎzhé de shíhou mǎi piányi de yīfu, dàn duì nàxiē yīfu shì bu shì shìhé zìjǐ què kǎolǜ de bù duō. Zhè diǎn shì wǒ lǐjiě bu liǎo de, yīnwèi rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.',vn:'Rất nhiều người lớn tuổi thích mua quần áo rẻ vào lúc giảm giá, nhưng lại không cân nhắc nhiều về việc những quần áo đó có phù hợp với mình không. Điểm này là tôi không thể hiểu được, vì nếu không phù hợp với bản thân, dù chi tiêu rất ít tiền, cũng là một sự lãng phí.'},
    ]},
   {scene:'课文5 · Vì sao mua sắm trên mạng ngày càng thịnh hành',
-   preQuiz:[{q:'nguyên nhân chính khiến mua sắm trên mạng được yêu thích là gì?',opts:['đồ nhiều và rẻ hơn, có thể mua bất cứ lúc nào','chỉ vì rẻ','chỉ vì tiện lợi khi trả hàng'],ans:0}],
+   preQuiz:[{q:'网上购物受欢迎的主要原因是什么？',opts:['东西多，而且比商店便宜','可以和朋友一起买','不用花钱'],ans:0},{q:'人们可以什么时间在网上买东西？',opts:['只能白天','任何时间','只能周末'],ans:1},{q:'谁尤其喜欢在网上买东西？',opts:['年轻人','老人','孩子'],ans:0}],
    lines:[
      {sp:0,zh:'现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。在网上几乎什么都可以买到，你可以上网买书、买衣服、买包，还可以买家具、买手机。',py:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi. Zài wǎngshang jīhū shénme dōu kěyǐ mǎidào, nǐ kěyǐ shàngwǎng mǎi shū, mǎi yīfu, mǎi bāo, hái kěyǐ mǎi jiājù, mǎi shǒujī.',vn:'Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng. Trên mạng gần như cái gì cũng có thể mua được, bạn có thể lên mạng mua sách, mua quần áo, mua túi, còn có thể mua đồ nội thất, mua điện thoại.'},
      {sp:0,zh:'网上购物能够受到人们的喜爱，原因主要有两个：首先，网上的东西很多，而且比去商店买便宜，这是吸引人们购买的主要原因。',py:'Wǎngshang gòuwù nénggòu shòudào rénmen de xǐ\'ài, yuányīn zhǔyào yǒu liǎng ge: shǒuxiān, wǎngshang de dōngxi hěn duō, érqiě bǐ qù shāngdiàn mǎi piányi, zhè shì xīyǐn rénmen gòumǎi de zhǔyào yuányīn.',vn:'Mua sắm trên mạng được mọi người yêu thích, nguyên nhân chủ yếu có hai điều: trước hết, đồ trên mạng rất nhiều, hơn nữa rẻ hơn ra cửa hàng mua, đây là nguyên nhân chính thu hút mọi người mua.'},

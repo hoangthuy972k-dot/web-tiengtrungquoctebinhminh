@@ -653,7 +653,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 李老师和高老师聊关于巧克力的事情',
-   preQuiz:[{q:'高老师的巧克力是从哪儿来的？',opts:['自己买的','女儿从国外带回来的','李老师送的'],ans:1}],
+   preQuiz:[{q:'高老师的巧克力是从哪儿来的？',opts:['自己买的','女儿从国外带回来的','李老师送的'],ans:1},{q:'很多人出国后常常买什么送给亲戚朋友？',opts:['外国的巧克力','外国的衣服','外国的手机'],ans:0},{q:'伤心难过的时候吃巧克力会怎么样？',opts:['心情变得愉快','更难过','睡不着'],ans:0}],
    lines:[
      {sp:0,zh:'这种巧克力味道不错，你在哪儿买的？',py:'Zhè zhǒng qiǎokèlì wèidào búcuò, nǐ zài nǎr mǎi de?',vn:'Loại sô cô la này mùi vị khá ngon, bạn mua ở đâu vậy?'},
      {sp:1,zh:'不是我买的，是我女儿给我从国外带回来的礼物。',py:'Bú shì wǒ mǎi de, shì wǒ nǚ\'ér gěi wǒ cóng guówài dài huilai de lǐwù.',vn:'Không phải tôi mua, là con gái tôi tặng tôi, mang từ nước ngoài về.'},
@@ -663,7 +663,7 @@ var dialogData = [
      {sp:1,zh:'巧克力大多是甜的，而很多女性都喜欢吃甜的。而且，听说伤心难过的时候吃块儿巧克力，还能使人的心情变得愉快。',py:'Qiǎokèlì dàduō shì tián de, ér hěn duō nǚxìng dōu xǐhuan chī tián de. Érqiě, tīngshuō shāngxīn nánguò de shíhou chī kuàir qiǎokèlì, hái néng shǐ rén de xīnqíng biàn de yúkuài.',vn:'Sô cô la phần lớn là ngọt, mà rất nhiều phụ nữ đều thích ăn đồ ngọt. Hơn nữa, nghe nói lúc buồn bã đau lòng ăn miếng sô cô la, còn có thể khiến tâm trạng người ta trở nên vui vẻ.'},
    ]},
   {scene:'课文2 · 小夏和马克聊关于上次足球比赛的事情',
-   preQuiz:[{q:'小夏为什么心情不好？',opts:['因为堵车','因为上次足球比赛','因为工作压力'],ans:1}],
+   preQuiz:[{q:'小夏为什么心情不好？',opts:['因为堵车','因为上次足球比赛','因为工作压力'],ans:1},{q:'这段时间小夏总是做什么？',opts:['一个人坐在房间里回忆那次比赛','出去踢球','和朋友聊天儿'],ans:0},{q:'朋友建议小夏怎么做？',opts:['过去的就让它过去，好好儿准备下次比赛','放弃踢球','换一个队'],ans:0}],
    lines:[
      {sp:0,zh:'这里的景色真美，空气也好。',py:'Zhèli de jǐngsè zhēn měi, kōngqì yě hǎo.',vn:'Phong cảnh nơi đây thật đẹp, không khí cũng tốt.'},
      {sp:1,zh:'怎么样，心情好些了吗？',py:'Zěnmeyàng, xīnqíng hǎoxiē le ma?',vn:'Thế nào, tâm trạng đỡ hơn chưa?'},
@@ -673,7 +673,7 @@ var dialogData = [
      {sp:1,zh:'事情已经发生了，过去的就让它成为过去吧。只要这次你好好儿准备，一定能把比赛踢好。',py:'Shìqing yǐjīng fāshēng le, guòqù de jiù ràng tā chéngwéi guòqù ba. Zhǐyào zhè cì nǐ hǎohāor zhǔnbèi, yídìng néng bǎ bǐsài tīhǎo.',vn:'Việc đã xảy ra rồi, cái đã qua thì để nó trở thành quá khứ đi. Chỉ cần lần này bạn chuẩn bị thật tốt, nhất định có thể đá tốt trận đấu.'},
    ]},
   {scene:'课文3 · 马克和司机聊关于堵车的事情',
-   preQuiz:[{q:'师傅心情好的原因是什么？',opts:['他能改变堵车','他试着改变自己的心情','他不在乎堵车'],ans:1}],
+   preQuiz:[{q:'师傅心情好的原因是什么？',opts:['他能改变堵车','他试着改变自己的心情','他不在乎堵车'],ans:1},{q:'客人要去哪儿？',opts:['大使馆','机场','火车站'],ans:0},{q:'师傅为什么走另外一条路？',opts:['前面有点儿堵车','另一条路更近','客人要求的'],ans:0}],
    lines:[
      {sp:0,zh:'师傅，我去大使馆，你是不是走错了？',py:'Shīfu, wǒ qù dàshǐguǎn, nǐ shì bu shì zǒucuò le?',vn:'Bác tài ơi, tôi đi đại sứ quán, bác có phải đi nhầm đường không?'},
      {sp:1,zh:'现在是上班时间，前面有点儿堵车，我们走另外一条路，距离差不多。',py:'Xiànzài shì shàngbān shíjiān, qiánmian yǒudiǎnr dǔchē, wǒmen zǒu lìngwài yì tiáo lù, jùlí chàbuduō.',vn:'Bây giờ là giờ đi làm, phía trước hơi kẹt xe, chúng ta đi đường khác, khoảng cách xấp xỉ nhau.'},
@@ -683,14 +683,14 @@ var dialogData = [
      {sp:1,zh:'我们改变不了堵车，但是可以试着改变自己的心情。堵车时正好可以休息一下，还可以听听自己喜欢的音乐。',py:'Wǒmen gǎibiàn bu liǎo dǔchē, dànshì kěyǐ shìzhe gǎibiàn zìjǐ de xīnqíng. Dǔchē shí zhènghǎo kěyǐ xiūxi yíxià, hái kěyǐ tīngting zìjǐ xǐhuan de yīnyuè.',vn:'Chúng ta không thể thay đổi tình trạng kẹt xe, nhưng có thể thử thay đổi tâm trạng của mình. Lúc kẹt xe đúng lúc có thể nghỉ ngơi một chút, còn có thể nghe nhạc mình thích.'},
    ]},
   {scene:'课文4 · Cuộc sống không thiếu cái đẹp',
-   preQuiz:[{q:'theo bài đọc, cuộc sống thiếu điều gì?',opts:['thiếu tiền','thiếu đôi mắt phát hiện cái đẹp','thiếu thời gian'],ans:1}],
+   preQuiz:[{q:'生活中缺少的是什么？',opts:['发现美的眼睛','钱','时间'],ans:0},{q:'遇到烦恼时应该怎么做？',opts:['想办法让自己从不高兴的心情中走出来','什么都不做','一直生气'],ans:0},{q:'我们无法改变什么，但可以选择什么？',opts:['无法改变窗外的样子，但可以选择站在哪个窗户前','无法改变自己，但可以改变别人','无法改变天气，但可以改变房子'],ans:0}],
    lines:[
      {sp:0,zh:'草绿了，那是生命的颜色；花开了，那是大自然的礼物。生活中不缺少美，缺少的是发现美的眼睛。只要有心，生活中的美到处都是。',py:'Cǎo lǜ le, nà shì shēngmìng de yánsè; huā kāi le, nà shì dàzìrán de lǐwù. Shēnghuó zhōng bù quēshǎo měi, quēshǎo de shì fāxiàn měi de yǎnjing. Zhǐyào yǒuxīn, shēnghuó zhōng de měi dàochù dōu shì.',vn:'Cỏ xanh rồi, đó là màu của sự sống; hoa nở rồi, đó là món quà của tự nhiên. Cuộc sống không thiếu cái đẹp, thiếu là đôi mắt phát hiện ra cái đẹp. Chỉ cần có tâm, cái đẹp trong cuộc sống ở khắp nơi.'},
      {sp:0,zh:'生活的态度要自己选择，因此，遇到烦恼时，你应该想一些办法让自己从不高兴的心情中走出来。窗外是什么样子，我们无法改变，但我们可以选择站在哪个窗户前。',py:'Shēnghuó de tàidù yào zìjǐ xuǎnzé, yīncǐ, yùdào fánnǎo shí, nǐ yīnggāi xiǎng yìxiē bànfǎ ràng zìjǐ cóng bù gāoxìng de xīnqíng zhōng zǒu chulai. Chuāng wài shì shénme yàngzi, wǒmen wúfǎ gǎibiàn, dàn wǒmen kěyǐ xuǎnzé zhàn zài nǎ ge chuānghu qián.',vn:'Thái độ sống phải tự mình lựa chọn, vì vậy, khi gặp phiền muộn, bạn nên nghĩ ra một số cách để bước ra khỏi tâm trạng không vui. Bên ngoài cửa sổ như thế nào, chúng ta không thể thay đổi, nhưng chúng ta có thể chọn đứng trước cửa sổ nào.'},
      {sp:0,zh:'选择一个能够带给我们快乐的窗户，这样才能选对心情，选对生活的态度。',py:'Xuǎnzé yí ge nénggòu dàigěi wǒmen kuàilè de chuānghu, zhèyàng cái néng xuǎnduì xīnqíng, xuǎnduì shēnghuó de tàidù.',vn:'Chọn một cửa sổ có thể mang lại niềm vui cho chúng ta, như vậy mới có thể chọn đúng tâm trạng, chọn đúng thái độ sống.'},
    ]},
   {scene:'课文5 · Màu sắc quần áo và tính cách',
-   preQuiz:[{q:'theo nghiên cứu, các cô gái thích mặc màu trắng có tính cách như thế nào?',opts:['lãng mạn','lạc quan, tích cực','trầm lặng'],ans:1}],
+   preQuiz:[{q:'喜欢穿白色衣服的女孩子性格怎么样？',opts:['浪漫','阳光，生活态度积极','安静'],ans:1},{q:'喜欢穿红色衣服的女孩子性格怎么样？',opts:['比较浪漫','比较害羞','比较安静'],ans:0},{q:'哪种颜色容易让人感到伤心？',opts:['黑色','黄色','绿色'],ans:0}],
    lines:[
      {sp:0,zh:'科学研究证明，女孩子对衣服颜色的选择往往与她们的性格有关。喜欢穿白色衣服的女孩子性格比较阳光，生活态度积极向上是她们的共同特点；而喜欢穿红色衣服的女孩子性格比较浪漫。',py:'Kēxué yánjiū zhèngmíng, nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān. Xǐhuan chuān báisè yīfu de nǚháizi xìnggé bǐjiào yángguāng, shēnghuó tàidù jījí xiàngshàng shì tāmen de gòngtóng tèdiǎn; ér xǐhuan chuān hóngsè yīfu de nǚháizi xìnggé bǐjiào làngmàn.',vn:'Nghiên cứu khoa học chứng minh, sự lựa chọn màu sắc quần áo của các cô gái thường liên quan đến tính cách của họ. Các cô gái thích mặc đồ trắng tính cách khá lạc quan, thái độ sống tích cực hướng lên là điểm chung của họ; còn các cô gái thích mặc đồ đỏ tính cách khá lãng mạn.'},
      {sp:0,zh:'颜色也会影响人的心情，不同的颜色会给我们带来不同的感情变化。红色让人变得热情；黄色和白色让人心情愉快；黑色却容易让人感到伤心；人们在看到蓝色时会觉得很舒服，变得安静下来；绿色让我们的眼睛得到休息。',py:'Yánsè yě huì yǐngxiǎng rén de xīnqíng, bùtóng de yánsè huì gěi wǒmen dàilái bùtóng de gǎnqíng biànhuà. Hóngsè ràng rén biàn de rèqíng; huángsè hé báisè ràng rén xīnqíng yúkuài; hēisè què róngyì ràng rén gǎndào shāngxīn; rénmen zài kàndào lánsè shí huì juéde hěn shūfu, biàn de ānjìng xialai; lǜsè ràng wǒmen de yǎnjing dédào xiūxi.',vn:'Màu sắc cũng ảnh hưởng đến tâm trạng con người, màu sắc khác nhau mang lại cho chúng ta những thay đổi cảm xúc khác nhau. Đỏ khiến người ta trở nên nhiệt tình; vàng và trắng khiến người ta tâm trạng vui vẻ; đen lại dễ khiến người ta cảm thấy buồn bã; người ta khi nhìn thấy xanh dương sẽ cảm thấy rất thoải mái, trở nên yên tĩnh; xanh lá khiến mắt chúng ta được nghỉ ngơi.'},

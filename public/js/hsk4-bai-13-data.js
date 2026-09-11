@@ -728,7 +728,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 小雨和小夏在聊小夏的爷爷表演京剧的情况',
-   preQuiz:[{q:'小夏的爷爷唱京剧大概唱了多少年了？',opts:['30多年','60多年','8年'],ans:1}],
+   preQuiz:[{q:'小夏的爷爷唱京剧大概唱了多少年了？',opts:['30多年','60多年','8年'],ans:1},{q:'小夏的爷爷几岁开始上台演出？',opts:['8岁','18岁','28岁'],ans:0},{q:'小夏为什么喜欢听京剧？',opts:['受了爷爷的影响','老师要求的','朋友都喜欢'],ans:0}],
    lines:[
      {sp:0,zh:'小夏，你爷爷京剧唱得真专业，我还以为他是京剧演员呢。',py:'Xiǎo Xià, nǐ yéye jīngjù chàng de zhēn zhuānyè, wǒ hái yǐwéi tā shì jīngjù yǎnyuán ne.',vn:'Tiểu Hạ, ông bạn hát Kinh kịch chuyên nghiệp thật, tôi còn tưởng ông là diễn viên Kinh kịch.'},
      {sp:1,zh:'对啊，他本来就是京剧演员，年轻时在我们那儿很有名，深受观众们的喜爱。',py:'Duì a, tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí zài wǒmen nàr hěn yǒumíng, shēn shòu guānzhòngmen de xǐ\'ài.',vn:'Đúng vậy, ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng ở chỗ chúng tôi, được khán giả vô cùng yêu thích.'},
@@ -738,7 +738,7 @@ var dialogData = [
      {sp:1,zh:'我小时候经常去看他的演出。平时他还给我讲很多京剧里的历史故事，让我学到了很多知识。',py:'Wǒ xiǎoshíhou jīngcháng qù kàn tā de yǎnchū. Píngshí tā hái gěi wǒ jiǎng hěn duō jīngjù li de lìshǐ gùshi, ràng wǒ xuédàole hěn duō zhīshi.',vn:'Hồi nhỏ tôi thường đi xem ông biểu diễn. Bình thường ông còn kể cho tôi nhiều câu chuyện lịch sử trong Kinh kịch, giúp tôi học được nhiều kiến thức.'},
    ]},
   {scene:'课文2 · 小雨和马克在聊京剧',
-   preQuiz:[{q:'马克为什么能比较容易地学会京剧的唱法？',opts:['因为他是中国人','因为他有音乐基础，又对京剧很感兴趣','因为他接受过专门教育'],ans:1}],
+   preQuiz:[{q:'马克为什么能比较容易地学会京剧的唱法？',opts:['因为他是中国人','因为他有音乐基础，又对京剧很感兴趣','因为他接受过专门教育'],ans:1},{q:'马克是怎么学唱京剧的？',opts:['跟着电视学，一遍一遍地练习','在学校上课','请老师到家里教'],ans:0},{q:'小夏比较喜欢听什么？',opts:['流行音乐','京剧','古典音乐'],ans:0}],
    lines:[
      {sp:0,zh:'真没想到你一个来自美国的外国留学生，能把京剧唱得这么好。',py:'Zhēn méi xiǎngdào nǐ yí ge láizì Měiguó de wàiguó liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.',vn:'Thật không ngờ một du học sinh đến từ Mỹ như bạn, lại hát Kinh kịch hay như vậy.'},
      {sp:1,zh:'我常常跟着电视学唱京剧，然后一遍一遍地练习，偶尔跟中国人一起唱上几句。',py:'Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí, ǒu\'ěr gēn Zhōngguó rén yìqǐ chàngshang jǐ jù.',vn:'Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại, thỉnh thoảng hát vài câu với người Trung Quốc.'},
@@ -748,7 +748,7 @@ var dialogData = [
      {sp:1,zh:'那是你不了解京剧的唱法。在音乐方面，京剧给了我很多新的想法。我还把京剧的一些特点增加到了自己的音乐中，达到了很好的效果。',py:'Nà shì nǐ bù liǎojiě jīngjù de chàngfǎ. Zài yīnyuè fāngmiàn, jīngjù gěile wǒ hěn duō xīn de xiǎngfǎ. Wǒ hái bǎ jīngjù de yìxiē tèdiǎn zēngjiā dàole zìjǐ de yīnyuè zhōng, dádàole hěn hǎo de xiàoguǒ.',vn:'Đó là vì bạn không hiểu cách hát của Kinh kịch. Về mặt âm nhạc, Kinh kịch cho tôi nhiều ý tưởng mới. Tôi còn đưa một số đặc điểm của Kinh kịch vào âm nhạc của mình, đạt hiệu quả rất tốt.'},
    ]},
   {scene:'课文3 · 李老师和校长在谈工作',
-   preQuiz:[{q:'李老师为什么想申请举办中国传统文化节活动？',opts:['因为学生想放假','因为留学生不了解中国文化，会影响交流','因为校长要求的'],ans:1}],
+   preQuiz:[{q:'李老师为什么想申请举办中国传统文化节活动？',opts:['因为学生想放假','因为留学生不了解中国文化，会影响交流','因为校长要求的'],ans:1},{q:'校长认为举办文化节有什么好处？',opts:['让各国学生更好地了解中国，互相交流学习','可以赚钱','可以放假'],ans:0},{q:'李老师什么时候把计划书发给校长？',opts:['星期五之前','下个月','明天'],ans:0}],
    lines:[
      {sp:0,zh:'校长，因为外国留学生不了解中国文化，有时候会影响他们和中国人之间的正常交流，甚至还可能引起误会，带来麻烦，所以我们想申请举办一次中国传统文化节活动。',py:'Xiàozhǎng, yīnwèi wàiguó liúxuéshēng bù liǎojiě Zhōngguó wénhuà, yǒushíhou huì yǐngxiǎng tāmen hé Zhōngguó rén zhījiān de zhèngcháng jiāoliú, shènzhì hái kěnéng yǐnqǐ wùhuì, dàilái máfan, suǒyǐ wǒmen xiǎng shēnqǐng jǔbàn yí cì Zhōngguó chuántǒng wénhuà jié huódòng.',vn:'Thưa hiệu trưởng, vì du học sinh nước ngoài không hiểu văn hóa Trung Quốc, có lúc ảnh hưởng đến giao lưu bình thường với người Trung Quốc, thậm chí có thể gây hiểu lầm, mang lại phiền phức, nên chúng tôi muốn xin tổ chức một lễ hội văn hóa truyền thống Trung Quốc.'},
      {sp:1,zh:'你们的想法很好，举办文化节活动，一方面能让各国学生更好地了解中国，另一方面也能为学生们提供互相交流和学习的机会。',py:'Nǐmen de xiǎngfǎ hěn hǎo, jǔbàn wénhuà jié huódòng, yì fāngmiàn néng ràng gè guó xuésheng gèng hǎo de liǎojiě Zhōngguó, lìng yì fāngmiàn yě néng wèi xuéshengmen tígōng hùxiāng jiāoliú hé xuéxí de jīhuì.',vn:'Ý tưởng của các bạn rất hay, tổ chức lễ hội văn hóa, một mặt giúp học sinh các nước hiểu Trung Quốc hơn, mặt khác cũng tạo cơ hội cho học sinh giao lưu và học hỏi lẫn nhau.'},
@@ -758,14 +758,14 @@ var dialogData = [
      {sp:1,zh:'好的，准备过程中有什么问题，你们可以直接来找我。',py:'Hǎo de, zhǔnbèi guòchéng zhōng yǒu shénme wèntí, nǐmen kěyǐ zhíjiē lái zhǎo wǒ.',vn:'Được, trong quá trình chuẩn bị có vấn đề gì, các bạn có thể trực tiếp đến tìm tôi.'},
    ]},
   {scene:'课文4 · Chuyện về đôi đũa',
-   preQuiz:[{q:'theo khảo sát trên Internet, bao nhiêu người Trung Quốc dùng đũa sai cách?',opts:['cứ 6 người có 1 người','cứ 2 người có 1 người','hầu như không ai'],ans:0}],
+   preQuiz:[{q:'筷子在中国有多长的历史？',opts:['300多年','3000多年','30000多年'],ans:1},{q:'调查发现，每几个中国人中就有一个使用筷子的方法是错误的？',opts:['每两个','每六个','每十个'],ans:1},{q:'国外的一些中国餐厅在放筷子的纸袋上提供什么？',opts:['使用筷子的详细说明','菜单','价格'],ans:0}],
    lines:[
      {sp:0,zh:'筷子在中国大约已经有3000多年的历史了。对外国人来说，使用筷子吃饭并不容易，所以，国外的一些中国餐厅在放筷子的纸袋上会提供使用筷子的详细说明。',py:'Kuàizi zài Zhōngguó dàyuē yǐjīng yǒu sānqiān duō nián de lìshǐ le. Duì wàiguó rén lái shuō, shǐyòng kuàizi chī fàn bìng bù róngyì, suǒyǐ, guówài de yìxiē Zhōngguó cāntīng zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.',vn:'Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm. Đối với người nước ngoài, dùng đũa ăn cơm không hề dễ, vì vậy, một số nhà hàng Trung Quốc ở nước ngoài in hướng dẫn chi tiết cách dùng đũa trên túi giấy đựng đũa.'},
      {sp:0,zh:'不过，如果你认为每个中国人都会正确使用筷子，那就错了。有人在互联网上专门进行过调查，结果发现每六个中国人中就有一个使用筷子的方法是错误的。',py:'Búguò, rúguǒ nǐ rènwéi měi ge Zhōngguó rén dōu huì zhèngquè shǐyòng kuàizi, nà jiù cuò le. Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá, jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.',vn:'Nhưng, nếu bạn cho rằng mỗi người Trung Quốc đều dùng đũa đúng cách, thì sai rồi. Có người đã tiến hành khảo sát trên Internet, kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách.'},
      {sp:0,zh:'如果你想正确使用筷子，那就好好练习吧。',py:'Rúguǒ nǐ xiǎng zhèngquè shǐyòng kuàizi, nà jiù hǎohāo liànxí ba.',vn:'Nếu bạn muốn dùng đũa đúng cách, thì hãy luyện tập cho tốt.'},
    ]},
   {scene:'课文5 · Văn hóa trà Trung Quốc',
-   preQuiz:[{q:'thời kỳ đầu, trà được coi là gì?',opts:['thức uống giải khát','một loại thuốc','một loại thức ăn'],ans:1}],
+   preQuiz:[{q:'最早的时候，茶被当作什么？',opts:['解渴的饮料','一种药','一种菜'],ans:1},{q:'茶在中国有多长的历史？',opts:['几百年','几千年','几十年'],ans:1},{q:'“凉茶”其实是什么？',opts:['一种用中药做成的饮料','真正的茶','一种咖啡'],ans:0}],
    lines:[
      {sp:0,zh:'茶在中国有几千年的历史，是中国最常见的饮料。最早的时候，茶只是被当作一种药，而不是饮料。后来，随着人们对茶的认识的加深，慢慢开始把它当作解渴的饮料，这才慢慢有了中国的茶文化。',py:'Chá zài Zhōngguó yǒu jǐqiān nián de lìshǐ, shì Zhōngguó zuì chángjiàn de yǐnliào. Zuì zǎo de shíhou, chá zhǐshì bèi dàngzuò yì zhǒng yào, ér bú shì yǐnliào. Hòulái, suízhe rénmen duì chá de rènshi de jiāshēn, mànmàn kāishǐ bǎ tā dàngzuò jiě kě de yǐnliào, zhè cái mànmàn yǒule Zhōngguó de chá wénhuà.',vn:'Trà ở Trung Quốc có lịch sử mấy nghìn năm, là thức uống phổ biến nhất Trung Quốc. Thời kỳ đầu, trà chỉ được coi là một loại thuốc, chứ không phải thức uống. Sau này, cùng với nhận thức về trà ngày càng sâu, người ta dần coi nó là thức uống giải khát, từ đó mới dần có văn hóa trà Trung Quốc.'},
      {sp:0,zh:'在中国，喝茶是一种十分普遍的生活习惯。对很多中国人来说，喝茶已成为他们生活中不可缺少的一部分。',py:'Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn. Duì hěn duō Zhōngguó rén lái shuō, hē chá yǐ chéngwéi tāmen shēnghuó zhōng bù kě quēshǎo de yí bùfen.',vn:'Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến. Đối với nhiều người Trung Quốc, uống trà đã trở thành một phần không thể thiếu trong cuộc sống.'},

@@ -724,7 +724,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 小林和小李聊小李的工作',
-   preQuiz:[{q:'小李今年已经换了几次工作？',opts:['两次','三次','四次'],ans:1}],
+   preQuiz:[{q:'小李今年已经换了几次工作？',opts:['两次','三次','四次'],ans:1},{q:'完全适应一个新的工作大概需要多长时间？',opts:['两个月','半年','一年'],ans:2},{q:'朋友认为刚到新公司最重要的是什么？',opts:['赚钱','多学习','换更好的工作'],ans:1}],
    lines:[
      {sp:0,zh:'听说你又换工作了？今年已经换了三次工作了吧？',py:'Tīngshuō nǐ yòu huàn gōngzuò le? Jīnnián yǐjīng huànle sān cì gōngzuò le ba?',vn:'Nghe nói bạn lại đổi việc rồi? Năm nay đã đổi ba lần việc rồi phải không?'},
      {sp:1,zh:'别提了！我以为新工作比以前的好，没想到还没有以前好呢。',py:'Bié tí le! Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.',vn:'Đừng nhắc đến nữa! Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.'},
@@ -734,7 +734,7 @@ var dialogData = [
      {sp:1,zh:'好。我一定会努力把现在这份工作做好。',py:'Hǎo. Wǒ yídìng huì nǔlì bǎ xiànzài zhè fèn gōngzuò zuòhǎo.',vn:'Được. Tôi nhất định sẽ nỗ lực làm tốt công việc hiện tại này.'},
    ]},
   {scene:'课文2 · 王经理和小李在说工作',
-   preQuiz:[{q:'小李用什么办法避免手忙脚乱？',opts:['多请假','把计划写在笔记本上','换工作'],ans:1}],
+   preQuiz:[{q:'小李用什么办法避免手忙脚乱？',opts:['多请假','把计划写在笔记本上','换工作'],ans:1},{q:'那份调查按原来的计划要多长时间？',opts:['一周','两周','一个月'],ans:1},{q:'小李保证什么时候做完调查？',opts:['今天','周末','下个月'],ans:1}],
    lines:[
      {sp:0,zh:'那份调查还要多长时间才能做完？',py:'Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?',vn:'Bản điều tra đó còn cần bao lâu nữa mới làm xong?'},
      {sp:1,zh:'按原来的计划应该是两周，但是我们可以提前完成，周末保证做完。',py:'Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.',vn:'Theo kế hoạch ban đầu nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn, cuối tuần cam đoan làm xong.'},
@@ -744,7 +744,7 @@ var dialogData = [
      {sp:1,zh:'这个办法真不错！这样我就不会手忙脚乱了。',py:'Zhège bànfǎ zhēn búcuò! Zhèyàng wǒ jiù bú huì shǒumáng-jiǎoluàn le.',vn:'Cách này thật hay! Như vậy tôi sẽ không còn luống cuống nữa.'},
    ]},
   {scene:'课文3 · 王经理和马经理在说工作',
-   preQuiz:[{q:'马经理原来以为做生意怎么样？',opts:['很难','很简单','没意思'],ans:1}],
+   preQuiz:[{q:'马经理原来以为做生意怎么样？',opts:['很难','很简单','没意思'],ans:1},{q:'马经理为什么这么高兴？',opts:['生意终于谈成了','他要结婚了','他买了新车'],ans:0},{q:'朋友认为做生意最重要的是什么？',opts:['多积累经验','多赚钱','多休息'],ans:0}],
    lines:[
      {sp:0,zh:'什么事让你这么高兴啊？',py:'Shénme shì ràng nǐ zhème gāoxìng a?',vn:'Điều gì khiến bạn vui vậy?'},
      {sp:1,zh:'我们和上次那个公司的生意终于谈成了。',py:'Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.',vn:'Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.'},
@@ -754,14 +754,14 @@ var dialogData = [
      {sp:1,zh:'我相信经过我们大家的努力，公司的生意会越做越大，一切都会好的。',py:'Wǒ xiāngxìn jīngguò wǒmen dàjiā de nǔlì, gōngsī de shēngyi huì yuè zuò yuè dà, yíqiè dōu huì hǎo de.',vn:'Tôi tin rằng nhờ nỗ lực của tất cả chúng ta, việc kinh doanh của công ty sẽ ngày càng lớn mạnh, mọi thứ sẽ ổn thôi.'},
    ]},
   {scene:'课文4 · Thông báo thành tích công ty',
-   preQuiz:[{q:'công ty quyết định thưởng thêm bao nhiêu tiền mỗi người?',opts:['一千元','两千元','三千元'],ans:2}],
+   preQuiz:[{q:'公司决定给每人多发多少钱奖金？',opts:['一千元','两千元','三千元'],ans:2},{q:'公司为什么给大家发奖金？',opts:['因为大家按时完成了工作','因为过新年','因为经理生日'],ans:0},{q:'大家努力工作了多长时间？',opts:['一个月','三个多月','一年'],ans:1}],
    lines:[
      {sp:0,zh:'我们今年的工作都已经按照计划完成了。这一段时间，尽管工作很紧张，中间也遇到了很多困难，但是因为有大家的努力，我们成功地解决了问题，顺利地完成了工作，非常感谢大家对我的帮助！',py:'Wǒmen jīnnián de gōngzuò dōu yǐjīng ànzhào jìhuà wánchéng le. Zhè yí duàn shíjiān, jǐnguǎn gōngzuò hěn jǐnzhāng, zhōngjiān yě yùdàole hěn duō kùnnan, dànshì yīnwèi yǒu dàjiā de nǔlì, wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò, fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!',vn:'Công việc năm nay của chúng tôi đều đã hoàn thành theo kế hoạch. Khoảng thời gian này, tuy công việc rất căng thẳng, giữa chừng cũng gặp phải nhiều khó khăn, nhưng vì có sự nỗ lực của mọi người, chúng tôi đã giải quyết vấn đề thành công, hoàn thành công việc thuận lợi, vô cùng cảm ơn sự giúp đỡ của mọi người dành cho tôi!'},
      {sp:0,zh:'另外，马经理让我告诉大家一个好消息，因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。',py:'Lìngwài, Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi, yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.',vn:'Ngoài ra, giám đốc Mã bảo tôi báo cho mọi người một tin tốt, vì mọi người hoàn thành công việc đúng hạn, công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.'},
      {sp:0,zh:'感谢大家这三个多月的努力工作，希望明年能有更大的成绩！',py:'Gǎnxiè dàjiā zhè sān ge duō yuè de nǔlì gōngzuò, xīwàng míngnián néng yǒu gèng dà de chéngjì!',vn:'Cảm ơn sự nỗ lực làm việc hơn ba tháng qua của mọi người, hy vọng năm sau có thành tích lớn hơn!'},
    ]},
   {scene:'课文5 · Lời khuyên cho người trẻ mới đi làm',
-   preQuiz:[{q:'theo bài đọc, điều quan trọng nhất khi mới đi làm là gì?',opts:['kiếm nhiều tiền','tích lũy kinh nghiệm và trách nhiệm với công việc','đổi việc thường xuyên'],ans:1}],
+   preQuiz:[{q:'年轻人刚开始工作时，什么比收入重要多了？',opts:['丰富工作经验、积累专业知识','工资和奖金','换很多工作'],ans:0},{q:'做自己不喜欢的工作时，最需要什么？',opts:['对工作的责任心','更多的工资','更长的假期'],ans:0},{q:'如果一个人对工作没有责任心，会怎么样？',opts:['很难把工作做好','工资会更高','很快当经理'],ans:0}],
    lines:[
      {sp:0,zh:'年轻人刚开始工作的时候，不要太急着赚钱，不要眼睛里只有工资和奖金。',py:'Niánqīng rén gāng kāishǐ gōngzuò de shíhou, búyào tài jízhe zhuàn qián, búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.',vn:'Người trẻ khi mới bắt đầu đi làm, đừng quá nôn nóng kiếm tiền, đừng để trong mắt chỉ có tiền lương và tiền thưởng.'},
      {sp:0,zh:'在工作的前几年，重要的是丰富自己的工作经验，学习与同事交流的方法，积累专业知识，这些比收入重要多了。',py:'Zài gōngzuò de qián jǐ nián, zhòngyào de shì fēngfù zìjǐ de gōngzuò jīngyàn, xuéxí yǔ tóngshì jiāoliú de fāngfǎ, jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.',vn:'Trong mấy năm đầu đi làm, quan trọng là làm phong phú kinh nghiệm làm việc của bản thân, học cách trao đổi với đồng nghiệp, tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều.'},

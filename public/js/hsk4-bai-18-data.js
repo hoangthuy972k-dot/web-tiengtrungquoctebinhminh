@@ -674,7 +674,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 王静给孙月推荐一本书',
-   preQuiz:[{q:'王静推荐的书叫什么？',opts:['《十万个为什么》','《新十万个为什么》','《地球村》'],ans:1}],
+   preQuiz:[{q:'王静推荐的书叫什么？',opts:['《十万个为什么》','《新十万个为什么》','《地球村》'],ans:1},{q:'孙月的女儿问了什么问题？',opts:['飞机是怎么起飞和降落的','为什么天是蓝的','为什么要上学'],ans:0},{q:'这本书的语言怎么样？',opts:['简单易懂','很难','都是英文'],ans:0}],
    lines:[
      {sp:0,zh:'上次女儿问我飞机是怎么起飞和降落的，真不知道该怎么回答她，她现在总是有各种各样的"为什么"。',py:'Shàng cì nǚ\'ér wèn wǒ fēijī shì zěnme qǐfēi hé jiàngluò de, zhēn bù zhīdào gāi zěnme huídá tā, tā xiànzài zǒngshì yǒu gè zhǒng gè yàng de "wèi shénme".',vn:'Lần trước con gái hỏi tôi máy bay cất cánh hạ cánh thế nào, thật không biết trả lời sao, giờ nó luôn có đủ loại "tại sao".'},
      {sp:1,zh:'孩子眼中的世界是美丽和奇特的。有一本书叫《新十万个为什么》，现在卖得非常火。书里的内容都是儿童想知道的科学知识，相信你女儿一定喜欢读。',py:'Háizi yǎnzhōng de shìjiè shì měilì hé qítè de. Yǒu yì běn shū jiào "Xīn Shíwàn Ge Wèi Shénme", xiànzài mài de fēicháng huǒ. Shū li de nèiróng dōu shì értóng xiǎng zhīdào de kēxué zhīshi, xiāngxìn nǐ nǚ\'ér yídìng xǐhuan dú.',vn:'Thế giới trong mắt trẻ đẹp và kỳ lạ. Có cuốn "Mười vạn câu hỏi vì sao mới", hiện bán rất chạy. Nội dung đều là kiến thức khoa học trẻ muốn biết, tin rằng con gái bạn sẽ thích.'},
@@ -684,7 +684,7 @@ var dialogData = [
      {sp:1,zh:'放心吧，这本书的语言简单易懂，一定能增长孩子的科学知识。',py:'Fàng xīn ba, zhè běn shū de yǔyán jiǎndān yìdǒng, yídìng néng zēngzhǎng háizi de kēxué zhīshi.',vn:'Yên tâm, ngôn ngữ cuốn sách đơn giản dễ hiểu, nhất định tăng kiến thức khoa học cho trẻ.'},
    ]},
   {scene:'课文2 · 李老师和高老师在聊电脑和互联网技术的发展',
-   preQuiz:[{q:'据调查，多少人遇到问题时首先想到上网找答案？',opts:['50%','70%','90%'],ans:1}],
+   preQuiz:[{q:'据调查，多少人遇到问题时首先想到上网找答案？',opts:['50%','70%','90%'],ans:1},{q:'越来越多的学生喜欢在网上做什么？',opts:['写日记','买衣服','看电影'],ans:0},{q:'怎么才能让别人看不到自己的网上日记？',opts:['给日记加密码','不写日记','关电脑'],ans:0}],
    lines:[
      {sp:0,zh:'现在的大学生一遇到不明白的问题，可以马上在网上查找答案，几秒钟就把问题解决了，这比我们上学的时候方便多了。',py:'Xiànzài de dàxuéshēng yí yùdào bù míngbai de wèntí, kěyǐ mǎshàng zài wǎngshang cházhǎo dá\'àn, jǐ miǎo zhōng jiù bǎ wèntí jiějué le, zhè bǐ wǒmen shàng xué de shíhou fāngbiàn duō le.',vn:'Sinh viên bây giờ gặp vấn đề không hiểu, tra ngay trên mạng, vài giây giải quyết xong, tiện hơn hồi chúng ta đi học nhiều.'},
      {sp:1,zh:'现在的人们，尤其是大学生开始普遍使用电脑，他们的生活已经离不开电脑。据调查，70%的人遇到问题时，首先想到的就是上网找答案。',py:'Xiànzài de rénmen, yóuqí shì dàxuéshēng kāishǐ pǔbiàn shǐyòng diànnǎo, tāmen de shēnghuó yǐjīng lí bu kāi diànnǎo. Jù diàochá, bǎifēnzhī qīshí de rén yùdào wèntí shí, shǒuxiān xiǎngdào de jiù shì shàng wǎng zhǎo dá\'àn.',vn:'Người ta bây giờ, nhất là sinh viên, bắt đầu dùng máy tính phổ biến, cuộc sống không thể thiếu máy tính. Theo khảo sát, 70% người gặp vấn đề trước hết nghĩ đến lên mạng tìm đáp án.'},
@@ -694,7 +694,7 @@ var dialogData = [
      {sp:1,zh:'放心吧，可以给网上的日记加密码，那样只有得到了允许，别人才能看到。',py:'Fàng xīn ba, kěyǐ gěi wǎngshang de rìjì jiā mìmǎ, nàyàng zhǐyǒu dédàole yǔnxǔ, biérén cái néng kàndào.',vn:'Yên tâm, có thể đặt mật khẩu cho nhật ký, như vậy chỉ khi được cho phép người khác mới xem được.'},
    ]},
   {scene:'课文3 · 王静和孙月在聊关于梦的情况',
-   preQuiz:[{q:'王静晚饭吃得太咸，那天晚上梦见了什么？',opts:['在桥上走','到处找商店买矿泉水','跟警察抓坏人'],ans:1}],
+   preQuiz:[{q:'王静晚饭吃得太咸，那天晚上梦见了什么？',opts:['在桥上走','到处找商店买矿泉水','跟警察抓坏人'],ans:1},{q:'张远为什么觉得自己从来没做过梦？',opts:['只不过是忘记了','他真的不做梦','他不睡觉'],ans:0},{q:'现在对梦有科学的说法了吗？',opts:['仍然没有','已经有了','只有一个'],ans:0}],
    lines:[
      {sp:0,zh:'我昨天晚上做了一个特别奇怪的梦，梦到自己正在一座桥上走，走着走着，突然开过来一辆车，非常危险，接着又梦见我跳到车上，跟警察一起抓住了一个坏人。',py:'Wǒ zuótiān wǎnshang zuòle yí ge tèbié qíguài de mèng, mèngdào zìjǐ zhèngzài yí zuò qiáo shang zǒu, zǒuzhe zǒuzhe, tūrán kāi guòlai yí liàng chē, fēicháng wēixiǎn, jiēzhe yòu mèngjiàn wǒ tiàodào chē shang, gēn jǐngchá yìqǐ zhuāzhùle yí ge huàirén.',vn:'Tối qua tôi mơ rất kỳ lạ, mơ thấy đang đi trên cầu, đột nhiên một chiếc xe lao tới, rất nguy hiểm, ngay sau đó lại mơ tôi nhảy lên xe, cùng cảnh sát bắt một kẻ xấu.'},
      {sp:1,zh:'奇怪，你怎么总能记住自己做了什么梦？我好像从来没做过梦。',py:'Qíguài, nǐ zěnme zǒng néng jìzhu zìjǐ zuòle shénme mèng? Wǒ hǎoxiàng cónglái méi zuòguo mèng.',vn:'Lạ thật, sao bạn luôn nhớ mình mơ gì? Hình như tôi chưa từng mơ.'},
@@ -704,14 +704,14 @@ var dialogData = [
      {sp:1,zh:'很多人都试着对梦进行解释，有些人甚至专门写过这方面的书，可惜到现在仍然没有一个科学的说法。',py:'Hěn duō rén dōu shìzhe duì mèng jìnxíng jiěshì, yǒuxiē rén shènzhì zhuānmén xiěguo zhè fāngmiàn de shū, kěxī dào xiànzài réngrán méiyǒu yí ge kēxué de shuōfǎ.',vn:'Nhiều người thử giải thích giấc mơ, có người thậm chí viết sách chuyên về nó, tiếc là đến nay vẫn chưa có cách giải thích khoa học.'},
    ]},
   {scene:'课文4 · Điện thoại di động thay đổi cuộc sống',
-   preQuiz:[{q:'khi lạc đường, điện thoại giúp gì?',opts:['gọi cảnh sát','dùng bản đồ tra địa chỉ để biết cách đến','chụp ảnh'],ans:1}],
+   preQuiz:[{q:'迷路时，用手机可以做什么？',opts:['用手机地图查地址','打电话给警察','照相'],ans:0},{q:'现在的手机更像什么？',opts:['一部可以拿在手中的电脑','一台电视','一本书'],ans:0},{q:'人们普遍使用的联系方法是什么？',opts:['打电话、发短信','写信','发传真'],ans:0}],
    lines:[
      {sp:0,zh:'现在手机不但价格降低了，而且作用也越来越大，打电话、发短信已经成了人们普遍使用的联系方法。除此以外，你还可以用它来听音乐、看电影、阅读、玩儿游戏、付款购物等，这大大方便了人们的生活。',py:'Xiànzài shǒujī búdàn jiàgé jiàngdī le, érqiě zuòyòng yě yuè lái yuè dà, dǎ diànhuà, fā duǎnxìn yǐjīng chéngle rénmen pǔbiàn shǐyòng de liánxì fāngfǎ. Chú cǐ yǐwài, nǐ hái kěyǐ yòng tā lái tīng yīnyuè, kàn diànyǐng, yuèdú, wánr yóuxì, fù kuǎn gòuwù děng, zhè dàdà fāngbiànle rénmen de shēnghuó.',vn:'Điện thoại giờ không chỉ rẻ hơn mà tác dụng ngày càng lớn, gọi điện, nhắn tin đã thành cách liên lạc phổ biến. Ngoài ra còn nghe nhạc, xem phim, đọc, chơi game, thanh toán mua sắm, tiện lợi lớn cho cuộc sống.'},
      {sp:0,zh:'举一个例子，迷路时，只要用手机地图查一下地址，马上就能知道怎么去那个地点。',py:'Jǔ yí ge lìzi, mí lù shí, zhǐyào yòng shǒujī dìtú chá yíxià dìzhǐ, mǎshàng jiù néng zhīdào zěnme qù nàge dìdiǎn.',vn:'Nêu một ví dụ, khi lạc đường, chỉ cần dùng bản đồ điện thoại tra địa chỉ, lập tức biết cách đến địa điểm đó.'},
      {sp:0,zh:'现在的手机更像是一部可以拿在手中的电脑，现代人的生活已经越来越离不开手机了。',py:'Xiànzài de shǒujī gèng xiàng shì yí bù kěyǐ ná zài shǒu zhōng de diànnǎo, xiàndài rén de shēnghuó yǐjīng yuè lái yuè lí bu kāi shǒujī le.',vn:'Điện thoại giờ giống một chiếc máy tính cầm tay, cuộc sống người hiện đại ngày càng không thể rời điện thoại.'},
    ]},
   {scene:'课文5 · "Làng toàn cầu"',
-   preQuiz:[{q:'vì sao người ta gọi Trái đất là "地球村"?',opts:['vì Trái đất rất nhỏ','vì khoa học kỹ thuật khiến thế giới ngày càng "nhỏ"','vì mọi người sống ở làng'],ans:1}],
+   preQuiz:[{q:'为什么人们把地球叫作“地球村”？',opts:['科学技术的发展让世界变得越来越小','地球真的很小','大家都住在村里'],ans:0},{q:'现在去几千公里以外的国家，坐飞机要多长时间？',opts:['十几个小时','几个月','几天'],ans:0},{q:'现在发电子邮件要多长时间？',opts:['用不了一分钟','好几天','一个小时'],ans:0}],
    lines:[
      {sp:0,zh:'21世纪，我们的生活发生了巨大变化。几千公里以外的国家，以前坐船需要几个月，现在乘坐飞机不过十几个小时。',py:'Èrshíyī shìjì, wǒmen de shēnghuó fāshēngle jùdà biànhuà. Jǐqiān gōnglǐ yǐwài de guójiā, yǐqián zuò chuán xūyào jǐ ge yuè, xiànzài chéngzuò fēijī búguò shí jǐ ge xiǎoshí.',vn:'Thế kỷ 21, cuộc sống thay đổi to lớn. Nước cách vài nghìn km, trước đi thuyền mất mấy tháng, nay đi máy bay chỉ hơn chục tiếng.'},
      {sp:0,zh:'原来寄信需要好几天，现在连邮局都不用去，只要在家里上网发个电子邮件，用不了一分钟，远处的朋友就能收到，比写信封用的时间都短。以前外地的新闻要几天后才能知道，现在只要打开网站，任何信息都可以在第一时间获得。',py:'Yuánlái jì xìn xūyào hǎo jǐ tiān, xiànzài lián yóujú dōu búyòng qù, zhǐyào zài jiāli shàng wǎng fā ge diànzǐ yóujiàn, yòngbuliǎo yì fēnzhōng, yuǎnchù de péngyou jiù néng shōudào, bǐ xiě xìnfēng yòng de shíjiān dōu duǎn. Yǐqián wàidì de xīnwén yào jǐ tiān hòu cái néng zhīdào, xiànzài zhǐyào dǎkāi wǎngzhàn, rènhé xìnxī dōu kěyǐ zài dì-yī shíjiān huòdé.',vn:'Trước gửi thư mất mấy ngày, nay không cần đến bưu điện, chỉ cần ở nhà gửi email, chưa đến một phút bạn ở xa nhận được, ngắn hơn cả viết phong bì. Trước tin nơi khác mấy ngày sau mới biết, nay mở trang web, mọi thông tin có ngay.'},

@@ -629,7 +629,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 小张去北京，朋友送小张去机场',
-   preQuiz:[{q:'小张坐的航班时间发生了什么变化？',opts:['提前了一个小时','推迟了一个小时','没有变化'],ans:1}],
+   preQuiz:[{q:'小张坐的航班时间发生了什么变化？',opts:['提前了一个小时','推迟了一个小时','没有变化'],ans:1},{q:'加油站在哪儿？',opts:['过了长江大桥往右一拐','机场旁边','高速公路上'],ans:0},{q:'小张到了首都机场以后会做什么？',opts:['给朋友发短信','给朋友打电话','什么都不做'],ans:0}],
    lines:[
      {sp:0,zh:'该加油了，去机场的路上有加油站吗？',py:'Gāi jiā yóu le, qù jīchǎng de lùshang yǒu jiāyóuzhàn ma?',vn:'Nên đổ xăng rồi, trên đường ra sân bay có trạm xăng không?'},
      {sp:1,zh:'我记得过了长江大桥往右一拐就有一个，大概有四五公里远。',py:'Wǒ jìde guòle Chángjiāng Dàqiáo wǎng yòu yì guǎi jiù yǒu yí ge, dàgài yǒu sì-wǔ gōnglǐ yuǎn.',vn:'Tôi nhớ qua cầu Trường Giang rẽ phải là có một trạm, khoảng bốn năm km.'},
@@ -639,7 +639,7 @@ var dialogData = [
      {sp:1,zh:'一会儿我自己进去换登机牌，你就不用送我了，等我到了首都机场再给你发短信。',py:'Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le, děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.',vn:'Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn, đợi tôi đến sân bay Thủ Đô sẽ nhắn tin.'},
    ]},
   {scene:'课文2 · 孙月和丈夫计划放寒假带女儿去旅行',
-   preQuiz:[{q:'他们想在什么时候告诉女儿去旅行的消息？',opts:['女儿一回来就告诉她','中午吃烤鸭祝贺她时','放假那天'],ans:1}],
+   preQuiz:[{q:'他们想在什么时候告诉女儿去旅行的消息？',opts:['女儿一回来就告诉她','中午吃烤鸭祝贺她时','放假那天'],ans:1},{q:'他们打算带女儿去哪儿旅游？',opts:['广西','北京','上海'],ans:0},{q:'广西的冬天怎么样？',opts:['非常暖和','非常冷','经常下雪'],ans:0}],
    lines:[
      {sp:0,zh:'女儿下个星期就要放寒假了，到时候咱们带她去旅游，放松放松，怎么样？',py:'Nǚ\'ér xià ge xīngqī jiù yào fàng hánjià le, dào shíhou zánmen dài tā qù lǚyóu, fàngsōng fàngsōng, zěnmeyàng?',vn:'Tuần sau con gái nghỉ đông rồi, đến lúc đó chúng ta đưa con đi du lịch, thư giãn chút, thế nào?'},
      {sp:1,zh:'平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。这次放假咱们带她去哪儿玩儿比较好呢？',py:'Píngshí nǚ\'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de. Zhè cì fàng jià zánmen dài tā qù nǎr wánr bǐjiào hǎo ne?',vn:'Bình thường con nhiều bài học, luôn nói muốn du lịch nhưng không có thời gian, tội nghiệp thật. Lần nghỉ này đưa con đi đâu chơi thì tốt?'},
@@ -649,7 +649,7 @@ var dialogData = [
      {sp:1,zh:'好主意，到时她知道了肯定特别开心。',py:'Hǎo zhǔyi, dào shí tā zhīdàole kěndìng tèbié kāixīn.',vn:'Ý hay, lúc đó con biết chắc chắn rất vui.'},
    ]},
   {scene:'课文3 · 安娜向马克介绍去丽江旅行的经验',
-   preQuiz:[{q:'什么时候去丽江旅游最好？',opts:['春天和秋天','每年12月到第二年3月','夏天'],ans:1}],
+   preQuiz:[{q:'什么时候去丽江旅游最好？',opts:['春天和秋天','每年12月到第二年3月','夏天'],ans:1},{q:'照片上和小夏干杯的人是谁？',opts:['导游','少数民族的朋友','小夏的妹妹'],ans:0},{q:'小夏丢了什么？导游帮他找到了吗？',opts:['存包的钥匙，找到了','护照，没找到','手机，找到了'],ans:0}],
    lines:[
      {sp:0,zh:'这么多照片，都是你这次去丽江旅行时照的？那里的自然风景可真美！',py:'Zhème duō zhàopiàn, dōu shì nǐ zhè cì qù Lìjiāng lǚxíng shí zhào de? Nàli de zìrán fēngjǐng kě zhēn měi!',vn:'Nhiều ảnh thế, đều chụp lúc bạn đi Lệ Giang à? Phong cảnh tự nhiên ở đó đẹp thật!'},
      {sp:1,zh:'是啊，小城四季的风景都很美，而且环境保护得也很好，因此每年都吸引着成千上万的游客去那儿旅游。',py:'Shì a, xiǎo chéng sìjì de fēngjǐng dōu hěn měi, érqiě huánjìng bǎohù de yě hěn hǎo, yīncǐ měi nián dōu xīyǐnzhe chéngqiān-shàngwàn de yóukè qù nàr lǚyóu.',vn:'Đúng, thị trấn nhỏ bốn mùa đều đẹp, môi trường bảo vệ tốt, nên mỗi năm thu hút hàng nghìn hàng vạn du khách.'},
@@ -659,13 +659,13 @@ var dialogData = [
      {sp:1,zh:'那儿最美的季节是春天和秋天，不过那时候人比较多。稍微好一点儿的时间是每年12月到第二年3月。这段时间去丽江的话，无论交通还是吃、住都很便宜。',py:'Nàr zuì měi de jìjié shì chūntiān hé qiūtiān, búguò nà shíhou rén bǐjiào duō. Shāowēi hǎo yìdiǎnr de shíjiān shì měinián shí\'èryuè dào dì-èr nián sānyuè. Zhè duàn shíjiān qù Lìjiāng dehuà, wúlùn jiāotōng háishi chī, zhù dōu hěn piányi.',vn:'Mùa đẹp nhất là xuân và thu, nhưng lúc đó đông người. Thời gian tốt hơn chút là tháng 12 đến tháng 3 năm sau. Đi lúc đó, giao thông hay ăn ở đều rẻ.'},
    ]},
   {scene:'课文4 · Bắc và Nam Trung Quốc',
-   preQuiz:[{q:'tháng 3–4, đi tàu từ Bắc vào Nam sẽ thấy gì?',opts:['cây từng cây xanh dần, Bắc còn tuyết, Nam đã xanh','khắp nơi đều tuyết','không có gì thay đổi'],ans:0}],
+   preQuiz:[{q:'三四月份从北方坐火车到南方，一路上会看到什么？',opts:['树一棵一棵地变绿，北方还下雪，南方已经到处是绿色','到处都是雪','什么变化都没有'],ans:0},{q:'中国南北距离大约多少公里？',opts:['5500公里','550公里','55000公里'],ans:0},{q:'南方菜的什么味道鲜美，很多北方人喜欢？',opts:['汤','面条','饺子'],ans:0}],
    lines:[
      {sp:0,zh:'中国南北距离约5500公里，因此南北气候有很大区别。每年三四月份的时候，如果从北方坐火车到南方去旅游，一路上你会发现，不同的地方有不同的风景：窗外的树一棵一棵地变绿，北方也许还下着雪，南方却已经到处都是绿色了。',py:'Zhōngguó nán běi jùlí yuē wǔqiān wǔbǎi gōnglǐ, yīncǐ nán běi qìhòu yǒu hěn dà qūbié. Měi nián sān-sì yuèfèn de shíhou, rúguǒ cóng běifāng zuò huǒchē dào nánfāng qù lǚyóu, yí lù shang nǐ huì fāxiàn, bù tóng de dìfang yǒu bù tóng de fēngjǐng: chuāngwài de shù yì kē yì kē de biàn lǜ, běifāng yěxǔ hái xiàzhe xuě, nánfāng què yǐjīng dàochù dōu shì lǜsè le.',vn:'Trung Quốc Bắc Nam cách khoảng 5500 km, nên khí hậu khác nhiều. Tháng 3–4, nếu đi tàu từ Bắc vào Nam, dọc đường bạn thấy mỗi nơi một cảnh: cây ngoài cửa sổ từng cây xanh dần, Bắc có lẽ còn tuyết, Nam đã xanh khắp nơi.'},
      {sp:0,zh:'南方菜很有特点，特别是汤，味道鲜美，很多北方人都喜欢喝。另外，南方和北方的语言也有很大不同。比如你跟上海人对话时，会发现上海话听起来就像外语一样。虽然上海人也会讲普通话，可是仔细听，还是有上海味儿。',py:'Nánfāng cài hěn yǒu tèdiǎn, tèbié shì tāng, wèidào xiānměi, hěn duō běifāng rén dōu xǐhuan hē. Lìngwài, nánfāng hé běifāng de yǔyán yě yǒu hěn dà bù tóng. Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng. Suīrán Shànghǎi rén yě huì jiǎng pǔtōnghuà, kěshì zǐxì tīng, háishi yǒu Shànghǎi wèir.',vn:'Món Nam rất đặc sắc, nhất là canh, vị tươi ngon, nhiều người Bắc thích. Ngoài ra ngôn ngữ Nam Bắc cũng khác nhiều. Ví dụ đối thoại với người Thượng Hải, tiếng Thượng Hải nghe như ngoại ngữ. Tuy họ nói tiếng phổ thông, nghe kỹ vẫn có giọng Thượng Hải.'},
    ]},
   {scene:'课文5 · Du lịch và món ăn Hồ Nam',
-   preQuiz:[{q:'đặc điểm của món Hồ Nam là gì?',opts:['ngọt','cay (cay mặn, cay thơm, cay chua)','nhạt'],ans:1}],
+   preQuiz:[{q:'湖南菜的特点是什么？',opts:['甜','辣','清淡'],ans:1},{q:'对作者来说，旅行最重要的是什么？',opts:['能尝到各地有名的小吃','能照很多照片','能买很多东西'],ans:0},{q:'每次旅行结束后，作者会怎么样？',opts:['精神百倍地开始工作','很累，不想工作','马上再去旅行'],ans:0}],
    lines:[
      {sp:0,zh:'一个人有时间一定要去旅行，旅行不仅能丰富一个人的经历，而且是很好的减压方法。但对我来说，最重要的是旅行能让我有机会尝到各地有名的小吃。放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。',py:'Yí ge rén yǒu shíjiān yídìng yào qù lǚxíng, lǚxíng bùjǐn néng fēngfù yí ge rén de jīnglì, érqiě shì hěn hǎo de jiǎnyā fāngfǎ. Dàn duì wǒ lái shuō, zuì zhòngyào de shì lǚxíng néng ràng wǒ yǒu jīhuì chángdào gè dì yǒumíng de xiǎochī. Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.',vn:'Có thời gian nhất định phải du lịch, du lịch làm phong phú trải nghiệm và giảm áp lực. Với tôi, quan trọng nhất là được nếm món ăn vặt nổi tiếng các nơi. Khi nghỉ, tôi dọn hành lý, mang bản đồ, mua vé tàu, xuất phát.'},
      {sp:0,zh:'说起吃的东西，给我印象最深的是湖南菜。湖南菜的特点就是辣，与其他地方的辣不同，湖南菜的辣主要是咸辣、香辣和酸辣。虽然全国各地都有湖南饭馆儿，但最好还是直接去那里尝一尝。每次旅行结束后，我都会精神百倍地开始我的工作。',py:'Shuōqǐ chī de dōngxi, gěi wǒ yìnxiàng zuì shēn de shì Húnán cài. Húnán cài de tèdiǎn jiù shì là, yǔ qítā dìfang de là bù tóng, Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là. Suīrán quánguó gè dì dōu yǒu Húnán fànguǎnr, dàn zuìhǎo háishi zhíjiē qù nàli cháng yi cháng. Měi cì lǚxíng jiéshù hòu, wǒ dōu huì jīngshén bǎibèi de kāishǐ wǒ de gōngzuò.',vn:'Nói đến đồ ăn, ấn tượng sâu nhất là món Hồ Nam. Đặc điểm là cay, khác nơi khác, chủ yếu cay mặn, cay thơm, cay chua. Tuy khắp nơi có quán Hồ Nam, tốt nhất đến tận nơi nếm. Sau mỗi chuyến đi, tôi tràn đầy tinh thần bắt đầu công việc.'},

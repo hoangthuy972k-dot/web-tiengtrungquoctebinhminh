@@ -702,7 +702,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 张远和李进聊李进昨晚的购物经历',
-   preQuiz:[{q:'李进为什么没接张远的电话？',opts:['手机没电了','把手机忘在家里了','没听到手机响'],ans:1}],
+   preQuiz:[{q:'李进为什么没接张远的电话？',opts:['手机没电了','把手机忘在家里了','没听到手机响'],ans:1},{q:'李进的妻子在商场买了什么？',opts:['一条裤子、一件衬衫、两双袜子','一件大衣','一双鞋'],ans:0},{q:'回家以后李进发现了什么？',opts:['忘了买果汁','忘了带钱','忘了关门'],ans:0}],
    lines:[
      {sp:0,zh:'昨天晚上我给你打电话一直没人接，你忙什么呢？',py:'Zuótiān wǎnshang wǒ gěi nǐ dǎ diànhuà yìzhí méi rén jiē, nǐ máng shénme ne?',vn:'Tối qua tôi gọi điện cho bạn mãi không ai nghe, bạn bận gì vậy?'},
      {sp:1,zh:'昨天妻子让我陪她去超市买果汁。我把手机忘在家里了。',py:'Zuótiān qīzi ràng wǒ péi tā qù chāoshì mǎi guǒzhī. Wǒ bǎ shǒujī wàng zài jiā li le.',vn:'Hôm qua vợ bảo tôi đi cùng cô ấy ra siêu thị mua nước trái cây. Tôi để quên điện thoại ở nhà rồi.'},
@@ -712,7 +712,7 @@ var dialogData = [
      {sp:1,zh:'是啊！回家以后，我才发现，竟然忘了去商场的超市买果汁！',py:'Shì a! Huí jiā yǐhòu, wǒ cái fāxiàn, jìngrán wàngle qù shāngchǎng de chāoshì mǎi guǒzhī!',vn:'Đúng vậy! Về nhà rồi, tôi mới phát hiện, không ngờ lại quên mất việc ra siêu thị ở trung tâm mua sắm mua nước trái cây!'},
    ]},
   {scene:'课文2 · 王静在商店买西红柿',
-   preQuiz:[{q:'今天西红柿多少钱一斤？',opts:['三块五','七块','十四块'],ans:1}],
+   preQuiz:[{q:'今天西红柿多少钱一斤？',opts:['三块五','七块','十四块'],ans:1},{q:'昨天西红柿多少钱一斤？',opts:['三块五','七块','十四块'],ans:0},{q:'售货员说吃这种西红柿有什么好处？',opts:['对皮肤有好处','能减肥','能睡得好'],ans:0}],
    lines:[
      {sp:0,zh:'西红柿新鲜吗？怎么卖？',py:'Xīhóngshì xīnxiān ma? Zěnme mài?',vn:'Cà chua có tươi không? Bán thế nào?'},
      {sp:1,zh:'七块钱一斤，您放心，保证百分之百新鲜。',py:'Qī kuài qián yì jīn, nín fàngxīn, bǎozhèng bǎi fēn zhī bǎi xīnxiān.',vn:'Bảy tệ một cân, chị yên tâm, cam đoan tươi 100%.'},
@@ -722,7 +722,7 @@ var dialogData = [
      {sp:1,zh:'好的，给您西红柿，一共两斤，十四块。',py:'Hǎode, gěi nín xīhóngshì, yígòng liǎng jīn, shísì kuài.',vn:'Vâng, cà chua của chị đây, tổng cộng hai cân, mười bốn tệ.'},
    ]},
   {scene:'课文3 · 李进在商场买行李箱',
-   preQuiz:[{q:'这个行李箱打完折是多少钱？',opts:['899','999','1099'],ans:1}],
+   preQuiz:[{q:'这个行李箱打完折是多少钱？',opts:['899','999','1099'],ans:1},{q:'顾客想买什么样的行李箱？',opts:['轻一点儿的','大一点儿的','便宜一点儿的'],ans:0},{q:'商场在多长时间内负责免费修理？',opts:['一个月','半年','一年'],ans:2}],
    lines:[
      {sp:0,zh:'先生，我们店的行李箱都在这里，请问您要什么样的？',py:'Xiānsheng, wǒmen diàn de xínglixiāng dōu zài zhèli, qǐngwèn nín yào shénmeyàng de?',vn:'Thưa anh, vali của cửa hàng chúng tôi đều ở đây, xin hỏi anh muốn loại nào?'},
      {sp:1,zh:'我想买一个轻一点儿的。',py:'Wǒ xiǎng mǎi yí ge qīng yìdiǎnr de.',vn:'Tôi muốn mua một cái nhẹ hơn một chút.'},
@@ -732,14 +732,14 @@ var dialogData = [
      {sp:1,zh:'你们的服务不错，价格也可以，就买这个吧。',py:'Nǐmen de fúwù búcuò, jiàgé yě kěyǐ, jiù mǎi zhège ba.',vn:'Dịch vụ của các bạn tốt, giá cả cũng được, mua cái này đi.'},
    ]},
   {scene:'课文4 · Thông báo khuyến mãi cửa hàng sách',
-   preQuiz:[{q:'mua sách đủ 500 tệ có thể được gì?',opts:['một cuốn từ điển','làm thẻ hội viên miễn phí','một cuốn sổ tay'],ans:1}],
+   preQuiz:[{q:'购书满500元可以得到什么？',opts:['一本词典','免费办会员卡','一个笔记本'],ans:1},{q:'购书满100元送什么？',opts:['一个笔记本','一本词典','一张地图'],ans:0},{q:'小说打几折？',opts:['六折','7.5折','八折'],ans:1}],
    lines:[
      {sp:0,zh:'顾客朋友们，为了感谢大家的支持，我们书店今天举行"购书送好礼"活动；购书满100元送一个笔记本，满200元送一本词典。',py:'Gùkè péngyoumen, wèile gǎnxiè dàjiā de zhīchí, wǒmen shūdiàn jīntiān jǔxíng "gòu shū sòng hǎo lǐ" huódòng; gòu shū mǎn yìbǎi yuán sòng yí ge bǐjìběn, mǎn èrbǎi yuán sòng yì běn cídiǎn.',vn:'Các bạn khách hàng thân mến, để cảm ơn sự ủng hộ của mọi người, cửa hàng sách chúng tôi hôm nay tổ chức chương trình "mua sách tặng quà"; mua sách đủ 100 tệ tặng một cuốn sổ tay, đủ 200 tệ tặng một cuốn từ điển.'},
      {sp:0,zh:'另外，一些图书还有打折活动，其中，小说7.5折，地图8折，留学考试用书6折。如果购书满500元可免费办会员卡，以后购书可打8折。',py:'Lìngwài, yìxiē túshū hái yǒu dǎzhé huódòng, qízhōng, xiǎoshuō qīwǔ zhé, dìtú bā zhé, liúxué kǎoshì yòngshū liù zhé. Rúguǒ gòu shū mǎn wǔbǎi yuán kě miǎnfèi bàn huìyuánkǎ, yǐhòu gòu shū kě dǎ bā zhé.',vn:'Ngoài ra, một số sách còn có chương trình giảm giá, trong đó, tiểu thuyết giảm 25%, bản đồ giảm 20%, sách thi du học giảm 40%. Nếu mua sách đủ 500 tệ có thể làm thẻ hội viên miễn phí, sau này mua sách có thể được giảm 8 phần.'},
      {sp:0,zh:'今天过生日的朋友和所有的小朋友还可以获得一份小礼物。欢迎大家选购！',py:'Jīntiān guò shēngrì de péngyou hé suǒyǒu de xiǎopéngyou hái kěyǐ huòdé yí fèn xiǎo lǐwù. Huānyíng dàjiā xuǎngòu!',vn:'Bạn nào hôm nay sinh nhật và tất cả các bạn nhỏ còn có thể nhận được một món quà nhỏ. Hoan nghênh mọi người chọn mua!'},
    ]},
   {scene:'课文5 · Vì sao "tiền nào của nấy"',
-   preQuiz:[{q:'theo bài đọc, khi nào đồ chất lượng tốt cũng có thể rẻ?',opts:['khi đổi mùa hoặc dịp lễ giảm giá','không bao giờ','chỉ khi mua online'],ans:0}],
+   preQuiz:[{q:'“一分钱一分货”是什么意思？',opts:['质量和价格有很大的关系','东西越便宜越好','价格不重要'],ans:0},{q:'什么时候质量很好的东西也会很便宜？',opts:['换季或者节日打折的时候','任何时候都不会','只有在网上'],ans:0},{q:'春天来了，什么会打折？',opts:['冬天的衣服','夏天的水果','新出的手机'],ans:0}],
    lines:[
      {sp:0,zh:'人们常说"一分钱一分货"，意思是东西的质量和价格有很大的关系，也可以说"便宜没好货，好货不便宜"，一般情况下，你花的钱越多，买的东西也就越好。',py:'Rénmen cháng shuō "yì fēn qián yì fēn huò", yìsi shì dōngxi de zhìliàng hé jiàgé yǒu hěn dà de guānxi, yě kěyǐ shuō "piányi méi hǎo huò, hǎo huò bù piányi", yìbān qíngkuàng xia, nǐ huā de qián yuè duō, mǎi de dōngxi yě jiù yuè hǎo.',vn:'Người ta thường nói "tiền nào của nấy", nghĩa là chất lượng và giá cả của đồ vật có quan hệ rất lớn với nhau, cũng có thể nói "rẻ không có hàng tốt, hàng tốt không rẻ", trong tình huống thông thường, bạn chi tiền càng nhiều, đồ mua được cũng càng tốt.'},
      {sp:0,zh:'其实也不一定都是这样的。有的时候，质量很好的东西也会很便宜。例如，春天来了，冬天的衣服就会打折，质量很好，还很便宜，花很少的钱就可以买到。',py:'Qíshí yě bù yídìng dōu shì zhèyàng de. Yǒude shíhou, zhìliàng hěn hǎo de dōngxi yě huì hěn piányi. Lìrú, chūntiān lái le, dōngtiān de yīfu jiù huì dǎzhé, zhìliàng hěn hǎo, hái hěn piányi, huā hěn shǎo de qián jiù kěyǐ mǎidào.',vn:'Thực ra cũng không nhất định đều như vậy. Có lúc, đồ chất lượng rất tốt cũng sẽ rất rẻ. Ví dụ như, mùa xuân đến, quần áo mùa đông sẽ giảm giá, chất lượng rất tốt, lại còn rẻ, tốn rất ít tiền là có thể mua được.'},

@@ -650,7 +650,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 李老师建议王静让孩子养成好习惯',
-   preQuiz:[{q:'李老师的孙子为什么这么优秀？',opts:['因为他很聪明','因为他父母教育得好，帮他养成了好习惯','因为他上了很好的学校'],ans:1}],
+   preQuiz:[{q:'李老师的孙子为什么这么优秀？',opts:['因为他很聪明','因为他父母教育得好，帮他养成了好习惯','因为他上了很好的学校'],ans:1},{q:'那个男孩子在晚会上表演了什么？',opts:['一边弹钢琴一边唱歌','跳舞','说笑话'],ans:0},{q:'李老师认为孩子最重要的老师是谁？',opts:['父母','学校老师','同学'],ans:0}],
    lines:[
      {sp:0,zh:'那个一边弹钢琴一边唱歌的男孩子是谁？表演得真棒！',py:'Nàge yìbiān tán gāngqín yìbiān chàng gē de nán háizi shì shéi? Biǎoyǎn de zhēn bàng!',vn:'Cậu bé vừa chơi piano vừa hát kia là ai? Biểu diễn hay thật!'},
      {sp:1,zh:'是我孙子。去年寒假前的新年晚会他也表演过一次。',py:'Shì wǒ sūnzi. Qùnián hánjià qián de xīnnián wǎnhuì tā yě biǎoyǎnguo yí cì.',vn:'Là cháu nội tôi. Đêm hội năm mới trước kỳ nghỉ đông năm ngoái nó cũng biểu diễn một lần.'},
@@ -660,7 +660,7 @@ var dialogData = [
      {sp:1,zh:'对。如果希望有一个优秀的孩子，你就要先成为一位优秀的父亲或者母亲。',py:'Duì. Rúguǒ xīwàng yǒu yí ge yōuxiù de háizi, nǐ jiù yào xiān chéngwéi yí wèi yōuxiù de fùqīn huòzhě mǔqīn.',vn:'Đúng. Nếu mong có một đứa con xuất sắc, bạn phải trở thành người cha hoặc mẹ xuất sắc trước.'},
    ]},
   {scene:'课文2 · 王静建议孙月教育孩子学会安排时间',
-   preQuiz:[{q:'王静认为孩子做事慢往往是因为什么？',opts:['因为孩子太懒','因为孩子不会安排自己的时间','因为作业太多'],ans:1}],
+   preQuiz:[{q:'王静认为孩子做事慢往往是因为什么？',opts:['因为孩子太懒','因为孩子不会安排自己的时间','因为作业太多'],ans:1},{q:'孙月的女儿昨晚做作业做到几点？',opts:['9点','11点','12点'],ans:1},{q:'孙月以后打算怎么做？',opts:['让女儿学会安排时间，自己的事情自己做','替女儿做所有的事','让女儿不做作业'],ans:0}],
    lines:[
      {sp:0,zh:'看你脸色不太好，是不是昨晚没休息好？',py:'Kàn nǐ liǎnsè bú tài hǎo, shì bu shì zuó wǎn méi xiūxi hǎo?',vn:'Thấy sắc mặt bạn không tốt lắm, có phải tối qua không nghỉ ngơi tốt?'},
      {sp:1,zh:'别提了。我女儿昨晚做作业又做到11点。',py:'Bié tí le. Wǒ nǚ\'ér zuó wǎn zuò zuòyè yòu zuòdào shíyī diǎn.',vn:'Đừng nhắc nữa. Con gái tôi tối qua làm bài tập lại đến 11 giờ.'},
@@ -670,7 +670,7 @@ var dialogData = [
      {sp:1,zh:'看来还是我的教育方法有问题。平时看她做事情慢，总想替她做，以后得让她学会安排时间，自己的事情自己做。',py:'Kànlái háishi wǒ de jiàoyù fāngfǎ yǒu wèntí. Píngshí kàn tā zuò shìqing màn, zǒng xiǎng tì tā zuò, yǐhòu děi ràng tā xuéhuì ānpái shíjiān, zìjǐ de shìqing zìjǐ zuò.',vn:'Xem ra vẫn là phương pháp giáo dục của tôi có vấn đề. Bình thường thấy nó làm chậm, cứ muốn làm thay, sau này phải để nó học sắp xếp thời gian, việc của mình tự làm.'},
    ]},
   {scene:'课文3 · 王静和孙月讨论表扬孩子的方法',
-   preQuiz:[{q:'孙月认为怎么表扬孩子才更有效果？',opts:['表扬越多越好','表扬要及时，不仅看结果，更要看过程','只表扬结果'],ans:1}],
+   preQuiz:[{q:'孙月认为怎么表扬孩子才更有效果？',opts:['表扬越多越好','表扬要及时，不仅看结果，更要看过程','只表扬结果'],ans:1},{q:'张远的儿子怕什么？',opts:['打针','吃药','看医生'],ans:0},{q:'过多的表扬可能会给孩子带来什么？',opts:['压力','信心','快乐'],ans:0}],
    lines:[
      {sp:0,zh:'明天又要带我儿子去医院打针，想想我就头疼。他就怕打针，每次打针都哭得特别厉害。',py:'Míngtiān yòu yào dài wǒ érzi qù yīyuàn dǎ zhēn, xiǎngxiang wǒ jiù tóu téng. Tā jiù pà dǎ zhēn, měi cì dǎ zhēn dōu kū de tèbié lìhai.',vn:'Mai lại phải đưa con trai đi bệnh viện tiêm, nghĩ đến là tôi đau đầu. Nó sợ nhất là tiêm, lần nào tiêm cũng khóc dữ dội.'},
      {sp:1,zh:'记得我女儿小时候，带她去医院打针，刚开始，她害怕得要哭。我就小声地和护士说我女儿很勇敢，一点儿也不怕打针，女儿听了以后马上就不哭了。',py:'Jìde wǒ nǚ\'ér xiǎoshíhou, dài tā qù yīyuàn dǎ zhēn, gāng kāishǐ, tā hàipà de yào kū. Wǒ jiù xiǎoshēng de hé hùshi shuō wǒ nǚ\'ér hěn yǒnggǎn, yìdiǎnr yě bú pà dǎ zhēn, nǚ\'ér tīngle yǐhòu mǎshàng jiù bù kū le.',vn:'Nhớ hồi con gái tôi còn nhỏ, đưa đi tiêm, lúc đầu nó sợ đến sắp khóc. Tôi khẽ nói với y tá rằng con gái tôi rất dũng cảm, không sợ tiêm chút nào, con bé nghe xong lập tức nín.'},
@@ -680,14 +680,14 @@ var dialogData = [
      {sp:1,zh:'我认为表扬要及时，而且表扬不仅仅要看结果，更要看过程，这样才能鼓励他的积极性，让他变得勇敢，不怕困难。',py:'Wǒ rènwéi biǎoyáng yào jíshí, érqiě biǎoyáng bù jǐnjǐn yào kàn jiéguǒ, gèng yào kàn guòchéng, zhèyàng cái néng gǔlì tā de jījíxìng, ràng tā biàn de yǒnggǎn, bú pà kùnnan.',vn:'Tôi cho rằng khen phải kịp thời, hơn nữa khen không chỉ nhìn kết quả, mà còn nhìn quá trình, như vậy mới khích lệ sự tích cực, khiến trẻ dũng cảm, không sợ khó khăn.'},
    ]},
   {scene:'课文4 · Khi trẻ cố tình gây chú ý',
-   preQuiz:[{q:'vì sao không nên lừa trẻ để giải quyết vấn đề?',opts:['vì trẻ sẽ khóc','vì trẻ thiếu năng lực phán đoán, sẽ học nói dối theo','vì trẻ không tin'],ans:1}],
+   preQuiz:[{q:'为什么不应该为了解决问题而骗孩子？',opts:['因为儿童缺少判断能力，会学着说假话','因为孩子会哭','因为孩子不相信'],ans:0},{q:'有的孩子得不到想要的东西时会怎么做？',opts:['哭、扔东西或者故意敲打','安静地睡觉','自己去买'],ans:0},{q:'这种情况下，建议父母怎么做？',opts:['先不要生气，陪孩子聊聊天儿，弄清楚问题','马上批评孩子','不理孩子'],ans:0}],
    lines:[
      {sp:0,zh:'有的孩子在得不到自己想要的东西的时候，会通过哭、扔东西或者故意敲打来引起父母的注意。',py:'Yǒude háizi zài débudào zìjǐ xiǎng yào de dōngxi de shíhou, huì tōngguò kū, rēng dōngxi huòzhě gùyì qiāodǎ lái yǐnqǐ fùmǔ de zhùyì.',vn:'Có đứa trẻ khi không được thứ mình muốn, sẽ khóc, ném đồ hoặc cố tình gõ đập để thu hút sự chú ý của cha mẹ.'},
      {sp:0,zh:'在这种情况下，建议父母先不要生气，应该停下手中的事情，陪孩子整理整理东西，和他们聊聊天儿，弄清楚他们的问题。父母的关心，可以让孩子心情愉快起来。',py:'Zài zhè zhǒng qíngkuàng xià, jiànyì fùmǔ xiān búyào shēng qì, yīnggāi tíngxià shǒu zhōng de shìqing, péi háizi zhěnglǐ zhěnglǐ dōngxi, hé tāmen liáoliao tiānr, nòng qīngchu tāmen de wèntí. Fùmǔ de guānxīn, kěyǐ ràng háizi xīnqíng yúkuài qilai.',vn:'Trong tình huống này, khuyên cha mẹ trước hết đừng giận, nên dừng việc đang làm, cùng con dọn dẹp, trò chuyện, làm rõ vấn đề của con. Sự quan tâm của cha mẹ có thể khiến tâm trạng trẻ vui lên.'},
      {sp:0,zh:'教育孩子应该选择合适的教育方法，最好不要为了解决问题而骗孩子，这是因为儿童缺少判断能力，看到父母骗人，他们也会学着说假话。',py:'Jiàoyù háizi yīnggāi xuǎnzé héshì de jiàoyù fāngfǎ, zuìhǎo búyào wèile jiějué wèntí ér piàn háizi, zhè shì yīnwèi értóng quēshǎo pànduàn nénglì, kàndào fùmǔ piàn rén, tāmen yě huì xuézhe shuō jiǎhuà.',vn:'Giáo dục con nên chọn phương pháp thích hợp, tốt nhất đừng vì giải quyết vấn đề mà lừa con, vì trẻ thiếu năng lực phán đoán, thấy cha mẹ lừa người, chúng cũng học nói dối.'},
    ]},
   {scene:'课文5 · Dạy trẻ theo tính cách',
-   preQuiz:[{q:'với trẻ nhút nhát, nên làm gì?',opts:['để trẻ yên','thường xuyên khuyến khích trẻ nói ra ý kiến','phê bình để trẻ mạnh dạn'],ans:1}],
+   preQuiz:[{q:'对性格害羞的孩子应该怎么做？',opts:['经常鼓励他说出自己的看法','不管他','批评他'],ans:0},{q:'七岁左右的儿童有什么特点？',opts:['好动，坐不住','很安静','喜欢读书'],ans:0},{q:'孩子不明白时，不应该怎么做？',opts:['用“懒”“笨”“粗心”批评他','鼓励他','再讲一遍'],ans:0}],
    lines:[
      {sp:0,zh:'七岁左右的儿童普遍好动，坐不住，所以老师在教这个年龄段的孩子时，一定要想办法引起他们的兴趣。只有让他们觉得你教的内容有趣，他们才会愿意努力学习。',py:'Qī suì zuǒyòu de értóng pǔbiàn hào dòng, zuòbuzhù, suǒyǐ lǎoshī zài jiāo zhège niánlíng duàn de háizi shí, yídìng yào xiǎng bànfǎ yǐnqǐ tāmen de xìngqù. Zhǐyǒu ràng tāmen juéde nǐ jiāo de nèiróng yǒuqù, tāmen cái huì yuànyì nǔlì xuéxí.',vn:'Trẻ khoảng bảy tuổi thường hiếu động, không ngồi yên, nên giáo viên dạy lứa tuổi này nhất định phải nghĩ cách khơi dậy hứng thú. Chỉ khi trẻ thấy nội dung thú vị, chúng mới chịu nỗ lực học.'},
      {sp:0,zh:'当孩子不明白时，应该多鼓励他，不要用"懒""笨""粗心"这种词批评他，这样对他们的正常发展不好。',py:'Dāng háizi bù míngbai shí, yīnggāi duō gǔlì tā, búyào yòng "lǎn" "bèn" "cūxīn" zhè zhǒng cí pīpíng tā, zhèyàng duì tāmen de zhèngcháng fāzhǎn bù hǎo.',vn:'Khi trẻ không hiểu, nên khuyến khích nhiều hơn, đừng dùng những từ như "lười", "ngốc", "cẩu thả" phê bình, như vậy không tốt cho sự phát triển bình thường.'},

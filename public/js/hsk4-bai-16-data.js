@@ -637,7 +637,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 小夏出国留学遇到了问题',
-   preQuiz:[{q:'小夏还缺什么材料？',opts:['成绩证明','护照','国外大学的邀请信'],ans:2}],
+   preQuiz:[{q:'小夏还缺什么材料？',opts:['成绩证明','护照','国外大学的邀请信'],ans:2},{q:'小夏将来有什么打算？',opts:['出国读博士','找工作','结婚'],ans:0},{q:'小夏什么时候去使馆办签证？',opts:['下个星期','明天','下个月'],ans:0}],
    lines:[
      {sp:0,zh:'你马上就要硕士毕业了吧？将来有什么打算？',py:'Nǐ mǎshàng jiù yào shuòshì bì yè le ba? Jiānglái yǒu shénme dǎsuàn?',vn:'Bạn sắp tốt nghiệp thạc sĩ rồi nhỉ? Tương lai có dự định gì?'},
      {sp:1,zh:'我想出国读博士，一直在准备办签证需要的材料。',py:'Wǒ xiǎng chū guó dú bóshì, yìzhí zài zhǔnbèi bàn qiānzhèng xūyào de cáiliào.',vn:'Tôi muốn ra nước ngoài học tiến sĩ, vẫn đang chuẩn bị tài liệu cần để làm visa.'},
@@ -648,7 +648,7 @@ var dialogData = [
      {sp:0,zh:'这可是个大问题，我也不太清楚。我帮你查一下学校的电话号码，你打电话问一下吧。',py:'Zhè kě shì ge dà wèntí, wǒ yě bú tài qīngchu. Wǒ bāng nǐ chá yíxià xuéxiào de diànhuà hàomǎ, nǐ dǎ diànhuà wèn yíxià ba.',vn:'Đây đúng là vấn đề lớn, tôi cũng không rõ lắm. Tôi giúp bạn tra số điện thoại của trường, bạn gọi hỏi thử đi.'},
    ]},
   {scene:'课文2 · 王老板告诉李进自己成功的经验',
-   preQuiz:[{q:'王老板会先吃哪块西瓜？为什么？',opts:['最大的，因为好吃','最小的，因为这样最后吃得更多','中间的'],ans:1}],
+   preQuiz:[{q:'王老板会先吃哪块西瓜？为什么？',opts:['最大的，因为好吃','最小的，因为这样最后吃得更多','中间的'],ans:1},{q:'王老板工作了多长时间？',opts:['十年','二十年','三年'],ans:0},{q:'王老板用西瓜的大小代表什么？',opts:['钱的多少','时间的长短','人的多少'],ans:0}],
    lines:[
      {sp:0,zh:'谢谢您带我参观您的公司。在参观过程中我很激动，有个问题一直想问您。',py:'Xièxie nín dài wǒ cānguān nín de gōngsī. Zài cānguān guòchéng zhōng wǒ hěn jīdòng, yǒu ge wèntí yìzhí xiǎng wèn nín.',vn:'Cảm ơn ngài đã dẫn tôi tham quan công ty. Trong quá trình tham quan tôi rất xúc động, có một câu hỏi luôn muốn hỏi ngài.'},
      {sp:1,zh:'好啊！小伙子，咱们一边吃西瓜，一边聊。',py:'Hǎo a! Xiǎohuǒzi, zánmen yìbiān chī xīguā, yìbiān liáo.',vn:'Được! Chàng trai, chúng ta vừa ăn dưa hấu vừa nói chuyện.'},
@@ -658,7 +658,7 @@ var dialogData = [
      {sp:1,zh:'我会先吃最小的一块，因为在你没吃完最大的那块时，我还有时间再多吃一块，最后一定比你吃的西瓜多。听完我的回答，恐怕你已经知道我的答案了吧。',py:'Wǒ huì xiān chī zuì xiǎo de yí kuài, yīnwèi zài nǐ méi chīwán zuì dà de nà kuài shí, wǒ hái yǒu shíjiān zài duō chī yí kuài, zuìhòu yídìng bǐ nǐ chī de xīguā duō. Tīngwán wǒ de huídá, kǒngpà nǐ yǐjīng zhīdào wǒ de dá\'àn le ba.',vn:'Tôi sẽ ăn miếng nhỏ nhất trước, vì khi cậu chưa ăn xong miếng to, tôi còn thời gian ăn thêm một miếng, cuối cùng chắc chắn ăn nhiều hơn cậu. Nghe xong, có lẽ cậu đã biết đáp án của tôi rồi.'},
    ]},
   {scene:'课文3 · 小林不好意思拒绝朋友',
-   preQuiz:[{q:'小李认为拒绝朋友说明什么？',opts:['不愿意帮忙','对朋友和父母负责','没有礼貌'],ans:1}],
+   preQuiz:[{q:'小李认为拒绝朋友说明什么？',opts:['不愿意帮忙','对朋友和父母负责','没有礼貌'],ans:1},{q:'小张的朋友让他做什么？',opts:['当导游','借钱','帮忙搬家'],ans:0},{q:'小张担心说“不”会怎么样？',opts:['让朋友误会和伤心','让父母生气','让老师批评'],ans:0}],
    lines:[
      {sp:0,zh:'今年放假我又回不了家了，这次我父母又要失望了。你有什么计划？',py:'Jīnnián fàng jià wǒ yòu huí bu liǎo jiā le, zhè cì wǒ fùmǔ yòu yào shīwàng le. Nǐ yǒu shénme jìhuà?',vn:'Năm nay nghỉ lễ tôi lại không về nhà được, lần này bố mẹ lại thất vọng. Bạn có kế hoạch gì?'},
      {sp:1,zh:'我计划去郊区住一个月。你不是已经买好火车票了吗？你到底怎么打算的呀？',py:'Wǒ jìhuà qù jiāoqū zhù yí ge yuè. Nǐ bú shì yǐjīng mǎihǎo huǒchēpiào le ma? Nǐ dàodǐ zěnme dǎsuàn de ya?',vn:'Tôi định đến ngoại ô ở một tháng. Chẳng phải bạn mua vé tàu rồi sao? Rốt cuộc bạn tính thế nào?'},
@@ -668,14 +668,14 @@ var dialogData = [
      {sp:1,zh:'别担心！如果你用一个既合适又礼貌的方法告诉朋友，他一定会原谅你的。',py:'Bié dānxīn! Rúguǒ nǐ yòng yí ge jì héshì yòu lǐmào de fāngfǎ gàosu péngyou, tā yídìng huì yuánliàng nǐ de.',vn:'Đừng lo! Nếu bạn dùng cách vừa thích hợp vừa lịch sự nói với bạn bè, họ nhất định sẽ tha thứ.'},
    ]},
   {scene:'课文4 · Đừng đẩy mọi việc sang "ngày mai"',
-   preQuiz:[{q:'theo bài đọc, học tiếng Trung trước hết cần chú ý gì?',opts:['làm nhiều bài tập','chuẩn bị bài trước khi lên lớp','nói chuyện với người Trung Quốc'],ans:1}],
+   preQuiz:[{q:'学汉语首先要注意什么？',opts:['课前预习','多做作业','多和中国人聊天'],ans:0},{q:'经常把“明天”挂在嘴边的态度会怎么样？',opts:['浪费时间，最后什么都做不成','让人更努力','得到别人的同情'],ans:0},{q:'课后要记得做什么？',opts:['复习','预习','休息'],ans:0}],
    lines:[
      {sp:0,zh:'有些同学经常把"明天"和"将来"挂在嘴边，常说作业明天再完成，下次考试一定好好儿复习，等等。这种态度会浪费时间，不但会让你到最后什么事情都做不成，而且还得不到别人的同情。',py:'Yǒuxiē tóngxué jīngcháng bǎ "míngtiān" hé "jiānglái" guà zài zuǐ biān, cháng shuō zuòyè míngtiān zài wánchéng, xià cì kǎoshì yídìng hǎohāor fùxí, děngděng. Zhè zhǒng tàidu huì làngfèi shíjiān, búdàn huì ràng nǐ dào zuìhòu shénme shìqing dōu zuòbuchéng, érqiě hái débudào biérén de tóngqíng.',vn:'Có bạn thường treo "ngày mai" và "tương lai" trên miệng, hay nói bài tập mai làm, lần sau thi nhất định ôn kỹ, vân vân. Thái độ này lãng phí thời gian, không những khiến cuối cùng chẳng làm được việc gì, mà còn không được ai thông cảm.'},
      {sp:0,zh:'所以不要把什么事情都推到"明天"，一切从现在做起。',py:'Suǒyǐ búyào bǎ shénme shìqing dōu tuīdào "míngtiān", yíqiè cóng xiànzài zuòqǐ.',vn:'Vì vậy đừng đẩy mọi việc sang "ngày mai", tất cả hãy bắt đầu từ bây giờ.'},
      {sp:0,zh:'就拿学汉语来说吧，首先要注意课前预习，找出第二天要学习的重点；其次，上课时要认真听，不能马虎；最后，课后要记得复习。只要这样，汉语就能越学越好，越说越自信。',py:'Jiù ná xué Hànyǔ lái shuō ba, shǒuxiān yào zhùyì kè qián yùxí, zhǎochū dì-èr tiān yào xuéxí de zhòngdiǎn; qícì, shàng kè shí yào rènzhēn tīng, bù néng mǎhu; zuìhòu, kè hòu yào jìde fùxí. Zhǐyào zhèyàng, Hànyǔ jiù néng yuè xué yuè hǎo, yuè shuō yuè zìxìn.',vn:'Lấy việc học tiếng Trung mà nói, trước hết chú ý chuẩn bị bài, tìm trọng điểm hôm sau; thứ hai, trên lớp nghe nghiêm túc, không lơ đễnh; cuối cùng, sau giờ học nhớ ôn tập. Chỉ cần vậy, tiếng Trung càng học càng giỏi, càng nói càng tự tin.'},
    ]},
   {scene:'课文5 · 天外有天，人外有人',
-   preQuiz:[{q:'dám thành thật nói mình không hiểu điều gì thì sao?',opts:['chứng tỏ mình kém','càng được người khác tôn trọng','bị người khác cười'],ans:1}],
+   preQuiz:[{q:'敢诚实地说出自己不了解什么，会怎么样？',opts:['更能得到别人的尊重','说明自己比别人差','被别人笑'],ans:0},{q:'“天外有天，人外有人”是什么意思？',opts:['很可能有人比你更厉害','天很高','人很多'],ans:0},{q:'我们知道的越多，就会发现什么？',opts:['自己不懂的也越多','自己什么都懂','别人都不懂'],ans:0}],
    lines:[
      {sp:0,zh:'当你认为自己在哪方面很优秀时，千万要冷静，不要骄傲。因为这个世界很大，"天外有天，人外有人"，很可能有人在这方面比你更厉害。你现在是第一，并不表示你永远都是第一。',py:'Dāng nǐ rènwéi zìjǐ zài nǎ fāngmiàn hěn yōuxiù shí, qiānwàn yào lěngjìng, búyào jiāo\'ào. Yīnwèi zhège shìjiè hěn dà, "tiān wài yǒu tiān, rén wài yǒu rén", hěn kěnéng yǒu rén zài zhè fāngmiàn bǐ nǐ gèng lìhai. Nǐ xiànzài shì dì-yī, bìng bù biǎoshì nǐ yǒngyuǎn dōu shì dì-yī.',vn:'Khi bạn cho rằng mình xuất sắc ở mặt nào, tuyệt đối phải bình tĩnh, đừng kiêu ngạo. Vì thế giới rất rộng, "ngoài trời còn có trời, ngoài người còn có người", rất có thể có người giỏi hơn bạn. Bạn hiện là số một, không có nghĩa mãi là số một.'},
      {sp:0,zh:'就像比赛一样，没有人会永远输，也没有人会一直赢。我们知道的越多，就会发现自己不懂的也越多。我们应该重视平时的积累，多向周围的人学习。',py:'Jiù xiàng bǐsài yíyàng, méiyǒu rén huì yǒngyuǎn shū, yě méiyǒu rén huì yìzhí yíng. Wǒmen zhīdào de yuè duō, jiù huì fāxiàn zìjǐ bù dǒng de yě yuè duō. Wǒmen yīnggāi zhòngshì píngshí de jīlěi, duō xiàng zhōuwéi de rén xuéxí.',vn:'Giống như thi đấu, không ai thua mãi, cũng không ai thắng mãi. Biết càng nhiều, càng phát hiện mình không hiểu càng nhiều. Chúng ta nên chú trọng tích lũy thường ngày, học hỏi người xung quanh.'},

@@ -715,7 +715,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 面试之后 (小夏 & 小雨)',
-   preQuiz:[{q:'小雨面试的感觉怎么样？',opts:['很难，答不上来','挺容易的，就是有点儿紧张','完全没准备好'],ans:1}],
+   preQuiz:[{q:'小雨面试的感觉怎么样？',opts:['很难，答不上来','挺容易的，就是有点儿紧张','完全没准备好'],ans:1},{q:'朋友让小雨面试时要怎么样？',opts:['对自己有信心','多穿几件衣服','早点儿回家'],ans:0},{q:'学校体育馆有什么活动？',opts:['篮球比赛','招聘会','音乐会'],ans:1}],
    lines:[
      {sp:0,zh:'小雨，你今天面试得怎么样？',py:'Xiǎoyǔ, nǐ jīntiān miànshì de zěnmeyàng?',vn:'Tiểu Vũ, hôm nay bạn phỏng vấn thế nào?'},
      {sp:1,zh:'还可以，他们问的问题都挺容易的，就是我有点儿紧张。',py:'Hái kěyǐ, tāmen wèn de wèntí dōu tǐng róngyì de, jiùshì wǒ yǒudiǎnr jǐnzhāng.',vn:'Cũng được, những câu hỏi họ hỏi đều khá dễ, chỉ là tôi hơi hồi hộp.'},
@@ -724,7 +724,7 @@ var dialogData = [
      {sp:0,zh:'这次招聘会提供的工作机会很多，我们一起去看看吧。',py:'Zhè cì zhāopìnhuì tígōng de gōngzuò jīhuì hěn duō, wǒmen yìqǐ qù kànkan ba.',vn:'Hội chợ tuyển dụng lần này cung cấp rất nhiều cơ hội việc làm, chúng ta cùng đi xem thử đi.'},
    ]},
   {scene:'课文2 · 招聘安排 (马经理 & 小林)',
-   preQuiz:[{q:'这次招聘本来是谁负责的？',opts:['马经理','小李','小林'],ans:1}],
+   preQuiz:[{q:'这次招聘本来是谁负责的？',opts:['马经理','小李','小林'],ans:1},{q:'小李为什么不能负责这次招聘？',opts:['他出差了','他突然生病住院了','他换工作了'],ans:1},{q:'经理让应聘的人什么时候来办公室？',opts:['下周一上午九点','今天下午三点','下个月'],ans:0}],
    lines:[
      {sp:0,zh:'这次招聘不是小李负责吗？',py:'Zhè cì zhāopìn bú shì Xiǎo Lǐ fùzé ma?',vn:'Đợt tuyển dụng này chẳng phải Tiểu Lý phụ trách sao?'},
      {sp:1,zh:'本来是小李负责的，但是他突然生病住院了，这件事就让我负责。',py:'Běnlái shì Xiǎo Lǐ fùzé de, dànshì tā tūrán shēng bìng zhù yuàn le, zhè jiàn shì jiù ràng wǒ fùzé.',vn:'Ban đầu là Tiểu Lý phụ trách, nhưng anh ấy đột nhiên bị bệnh phải nhập viện, việc này liền giao cho tôi phụ trách.'},
@@ -733,7 +733,7 @@ var dialogData = [
      {sp:1,zh:'好的，他们说下个星期会发邮件通知。',py:'Hǎode, tāmen shuō xià ge xīngqī huì fā yóujiàn tōngzhī.',vn:'Vâng, họ nói tuần sau sẽ gửi email thông báo.'},
    ]},
   {scene:'课文3 · 好久不见 (老同学重逢)',
-   preQuiz:[{q:'B现在的工作是什么？',opts:['经理','律师','老师'],ans:1}],
+   preQuiz:[{q:'B现在的工作是什么？',opts:['经理','律师','老师'],ans:1},{q:'B在哪儿工作？',opts:['北京','上海','广州'],ans:1},{q:'A为什么不能马上和B聚一聚？',opts:['A最近工作安排得很紧张','A要去旅游','A生病了'],ans:0}],
    lines:[
      {sp:0,zh:'好久不见，你现在做什么工作？',py:'Hǎojiǔ bú jiàn, nǐ xiànzài zuò shénme gōngzuò?',vn:'Lâu rồi không gặp, bạn bây giờ làm công việc gì?'},
      {sp:1,zh:'我一毕业就去上海当律师了，我学的就是法律专业。',py:'Wǒ yí bì yè jiù qù Shànghǎi dāng lùshī le, wǒ xué de jiùshì fǎlǜ zhuānyè.',vn:'Tôi vừa tốt nghiệp là đi Thượng Hải làm luật sư ngay, chuyên ngành tôi học chính là luật.'},
@@ -742,14 +742,14 @@ var dialogData = [
      {sp:0,zh:'好，不过我最近工作安排得很紧张，等我有空通知你。',py:'Hǎo, búguò wǒ zuìjìn gōngzuò ānpái de hěn jǐnzhāng, děng wǒ yǒu kòng tōngzhī nǐ.',vn:'Được, nhưng gần đây công việc tôi sắp xếp rất căng thẳng, đợi tôi rảnh sẽ báo cho bạn.'},
    ]},
   {scene:'课文4 · 面试小建议',
-   preQuiz:[{q:'面试时最重要的是什么？',opts:['穿正式的衣服','回答问题要诚实','不要紧张'],ans:1}],
+   preQuiz:[{q:'面试时最重要的是什么？',opts:['穿正式的衣服','回答问题要诚实','不要紧张'],ans:1},{q:'面试时首先要注意什么？',opts:['穿正式的衣服','带很多材料','早到一个小时'],ans:0},{q:'穿正式的衣服有什么好处？',opts:['能给面试者留下好印象','能多拿工资','能快点儿回家'],ans:0}],
    lines:[
      {sp:0,zh:'首先，要穿正式的衣服，这会给面试者留下一个好的印象。',py:'Shǒuxiān, yào chuān zhèngshì de yīfu, zhè huì gěi miànshìzhě liúxià yí ge hǎo de yìnxiàng.',vn:'Trước hết, phải mặc trang phục lịch sự, điều này sẽ để lại ấn tượng tốt cho người phỏng vấn.'},
      {sp:0,zh:'其次，应聘时不要紧张，要对自己有信心。',py:'Qícì, yìngpìn shí búyào jǐnzhāng, yào duì zìjǐ yǒu xìnxīn.',vn:'Tiếp theo, khi ứng tuyển đừng hồi hộp, phải tự tin vào bản thân.'},
      {sp:0,zh:'最重要的是回答问题要诚实，不能说谎。',py:'Zuì zhòngyào de shì huídá wèntí yào chéngshí, bù néng shuōhuǎng.',vn:'Quan trọng nhất là trả lời câu hỏi phải thành thật, không được nói dối.'},
    ]},
   {scene:'课文5 · 第一印象',
-   preQuiz:[{q:'为什么说准时很重要？',opts:['因为第一印象很难改变','因为公司要求','因为顾客喜欢'],ans:0}],
+   preQuiz:[{q:'为什么说准时很重要？',opts:['因为第一印象很难改变','因为公司要求','因为顾客喜欢'],ans:0},{q:'第一印象会影响什么？',opts:['以后对这个人的感觉和判断','天气','收入'],ans:0},{q:'给顾客留下好印象，可能会有什么结果？',opts:['卖出更多的东西','顾客不再来','东西变贵'],ans:0}],
    lines:[
      {sp:0,zh:'第一印象很重要，它会影响你以后对这个人的感觉和判断。',py:'Dì-yī yìnxiàng hěn zhòngyào, tā huì yǐngxiǎng nǐ yǐhòu duì zhège rén de gǎnjué hé pànduàn.',vn:'Ấn tượng đầu tiên rất quan trọng, nó sẽ ảnh hưởng đến cảm nhận và đánh giá của bạn về người này sau này.'},
      {sp:0,zh:'虽然第一印象不总是对的，但如果想改变却很困难。',py:'Suīrán dì-yī yìnxiàng bù zǒng shì duì de, dàn rúguǒ xiǎng gǎibiàn què hěn kùnnan.',vn:'Tuy ấn tượng đầu tiên không phải lúc nào cũng đúng, nhưng nếu muốn thay đổi thì lại rất khó.'},

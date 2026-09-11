@@ -682,7 +682,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 李进要出差，王静和李进在聊天儿',
-   preQuiz:[{q:'王静为什么建议李进坐地铁去机场？',opts:['因为开车太贵','因为堵车严重，坐地铁省油钱又不污染空气','因为她不会开车'],ans:1}],
+   preQuiz:[{q:'王静为什么建议李进坐地铁去机场？',opts:['因为开车太贵','因为堵车严重，坐地铁省油钱又不污染空气','因为她不会开车'],ans:1},{q:'李进为什么不想带毛巾、牙膏和牙刷？',opts:['宾馆会免费提供，而且箱子已经够重了','他不用这些东西','他要在机场买'],ans:0},{q:'李进明天的飞机是几点的？',opts:['上午8点','上午10点','下午2点'],ans:1}],
    lines:[
      {sp:0,zh:'这是明天你出差要带的毛巾、牙膏和牙刷，把它们放到箱子里吧。',py:'Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā, bǎ tāmen fàngdào xiāngzi li ba.',vn:'Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang, cho vào vali đi.'},
      {sp:1,zh:'不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！',py:'Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!',vn:'Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!'},
@@ -692,7 +692,7 @@ var dialogData = [
      {sp:1,zh:'好，那就听你的。',py:'Hǎo, nà jiù tīng nǐ de.',vn:'Được, vậy nghe em.'},
    ]},
   {scene:'课文2 · 经理和服务员在谈工作',
-   preQuiz:[{q:'经理希望小王做什么？',opts:['去买饮料','打扫卫生间，把空瓶子和纸盒子扔掉','招聘服务员'],ans:1}],
+   preQuiz:[{q:'经理希望小王做什么？',opts:['去买饮料','打扫卫生间，把空瓶子和纸盒子扔掉','招聘服务员'],ans:1},{q:'小王为什么还没打扫卫生间？',opts:['今天店里太忙了','他忘了','他不想打扫'],ans:0},{q:'小王认为餐厅应该做什么？',opts:['再多招聘几个服务员','关门休息','换经理'],ans:0}],
    lines:[
      {sp:0,zh:'小王，卫生间怎么那么脏啊？这会给客人留下不好的印象，快去打扫一下。',py:'Xiǎo Wáng, wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng, kuài qù dǎsǎo yíxià.',vn:'Tiểu Vương, sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách, mau đi dọn dẹp đi.'},
      {sp:1,zh:'经理，实在抱歉。今天店里太忙了，我还没来得及打扫。',py:'Jīnglǐ, shízài bàoqiàn. Jīntiān diàn li tài máng le, wǒ hái méi láidejí dǎsǎo.',vn:'Giám đốc, thật sự xin lỗi. Hôm nay cửa hàng bận quá, tôi chưa kịp dọn dẹp.'},
@@ -702,7 +702,7 @@ var dialogData = [
      {sp:1,zh:'经理您放心，我一定以最快的速度完成。不过咱们真的应该再多招聘几个服务员了。',py:'Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng. Búguò zánmen zhēn de yīnggāi zài duō zhāopìn jǐ ge fúwùyuán le.',vn:'Giám đốc yên tâm, tôi nhất định hoàn thành với tốc độ nhanh nhất. Nhưng chúng ta thật sự nên tuyển thêm mấy nhân viên phục vụ nữa.'},
    ]},
   {scene:'课文3 · 孙月和王静在聊关于环保的事情',
-   preQuiz:[{q:'"地球一小时"活动的目的是什么？',opts:['让大家不用加班','提醒人们节约用电，关注气候变暖问题','让公司省钱'],ans:1}],
+   preQuiz:[{q:'“地球一小时”活动的目的是什么？',opts:['让大家不用加班','提醒人们节约用电，关注气候变暖问题','让公司省钱'],ans:1},{q:'“地球一小时”活动是从哪一年开始的？',opts:['2000年','2007年','2017年'],ans:1},{q:'活动时人们会做什么？',opts:['关灯一小时','开灯一小时','不吃饭一小时'],ans:0}],
    lines:[
      {sp:0,zh:'早上听新闻说明天有一个叫"地球一小时"的活动，你对这个活动了解吗？',py:'Zǎoshang tīng xīnwén shuō míngtiān yǒu yí ge jiào "Dìqiú Yì Xiǎoshí" de huódòng, nǐ duì zhège huódòng liǎojiě ma?',vn:'Sáng nay nghe tin tức nói ngày mai có hoạt động tên "Giờ Trái đất", bạn có biết về hoạt động này không?'},
      {sp:1,zh:'这个活动年年都有，最早是从2007年开始的。明天晚上很多人都会关灯一小时，支持这个活动。你没看到门口的通知吗？我们公司也参加。',py:'Zhège huódòng niánnián dōu yǒu, zuì zǎo shì cóng èr líng líng qī nián kāishǐ de. Míngtiān wǎnshang hěn duō rén dōu huì guān dēng yì xiǎoshí, zhīchí zhège huódòng. Nǐ méi kàndào ménkǒu de tōngzhī ma? Wǒmen gōngsī yě cānjiā.',vn:'Hoạt động này năm nào cũng có, sớm nhất bắt đầu từ năm 2007. Tối mai nhiều người sẽ tắt đèn một tiếng để ủng hộ. Bạn không thấy thông báo ở cửa sao? Công ty chúng ta cũng tham gia.'},
@@ -712,14 +712,14 @@ var dialogData = [
      {sp:1,zh:'其实目的挺简单的，就是提醒人们节约用电，希望引起人们对气候变暖问题的关注。',py:'Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn, xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.',vn:'Thực ra mục đích khá đơn giản, chính là nhắc mọi người tiết kiệm điện, hy vọng khơi dậy sự quan tâm đến vấn đề khí hậu nóng lên.'},
    ]},
   {scene:'课文4 · Túi nilông và môi trường',
-   preQuiz:[{q:'một số nước quy định gì về túi nilông?',opts:['cấm hoàn toàn túi nilông','siêu thị không được phát túi nilông miễn phí','phải dùng túi giấy'],ans:1}],
+   preQuiz:[{q:'一些国家对塑料袋有什么规定？',opts:['超市不能为顾客提供免费塑料袋','完全不能用塑料袋','必须用纸袋'],ans:0},{q:'塑料袋大量使用带来了什么问题？',opts:['严重的环境污染','价格太贵','不方便'],ans:0},{q:'我们购物时可以怎么做？',opts:['自备购物袋','多要几个塑料袋','不买东西'],ans:0}],
    lines:[
      {sp:0,zh:'塑料袋给人们的生活带来方便，受到人们的普遍欢迎，可是，它的大量使用也带来了严重的环境污染问题。于是，一些国家规定，超市、商场不能为顾客提供免费塑料袋，并且鼓励大家购买可以多次使用的购物袋。',py:'Sùliàodài gěi rénmen de shēnghuó dàilái fāngbiàn, shòudào rénmen de pǔbiàn huānyíng, kěshì, tā de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí. Yúshì, yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài, bìngqiě gǔlì dàjiā gòumǎi kěyǐ duō cì shǐyòng de gòuwùdài.',vn:'Túi nilông mang lại tiện lợi cho cuộc sống, được mọi người đón nhận rộng rãi, nhưng việc dùng với số lượng lớn cũng mang lại ô nhiễm môi trường nghiêm trọng. Thế là, một số nước quy định siêu thị, trung tâm thương mại không được cung cấp túi nilông miễn phí, đồng thời khuyến khích mọi người mua túi dùng được nhiều lần.'},
      {sp:0,zh:'我们每个人都有责任保护环境，因此，请大家节约使用塑料袋，或者购物时自备购物袋，甚至拒绝使用塑料袋。',py:'Wǒmen měi ge rén dōu yǒu zérèn bǎohù huánjìng, yīncǐ, qǐng dàjiā jiéyuē shǐyòng sùliàodài, huòzhě gòuwù shí zì bèi gòuwùdài, shènzhì jùjué shǐyòng sùliàodài.',vn:'Mỗi chúng ta đều có trách nhiệm bảo vệ môi trường, vì vậy, mong mọi người tiết kiệm dùng túi nilông, hoặc tự mang túi khi mua sắm, thậm chí từ chối dùng túi nilông.'},
      {sp:0,zh:'虽然这是一件很小的事，但这样做可以减少塑料袋的使用数量，对环境保护有很大的作用。',py:'Suīrán zhè shì yí jiàn hěn xiǎo de shì, dàn zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, duì huánjìng bǎohù yǒu hěn dà de zuòyòng.',vn:'Tuy đây là việc rất nhỏ, nhưng làm vậy có thể giảm số lượng túi nilông sử dụng, có tác dụng rất lớn đối với bảo vệ môi trường.'},
    ]},
   {scene:'课文5 · Bảo vệ Trái đất từ việc nhỏ',
-   preQuiz:[{q:'bài đọc khuyên nên làm gì vào mùa hè để tiết kiệm điện?',opts:['không dùng điều hòa','để nhiệt độ điều hòa cao hơn một chút','mở cửa sổ'],ans:1}],
+   preQuiz:[{q:'夏天怎么做可以节约用电？',opts:['把空调的温度开得高一些','不用空调','开着窗户开空调'],ans:0},{q:'怎么做能降低空气污染？',opts:['少开车，多骑车或者乘坐地铁和公共汽车','多开车','多买车'],ans:0},{q:'保护地球环境是一件什么样的事情？',opts:['从身边的小事就可以做起','离我们很远，很难做到','只有科学家能做'],ans:0}],
    lines:[
      {sp:0,zh:'保护地球环境，并不是一件离我们很远、很难做到的事情。实际上，我们只需注意一下身边的小事就可以。',py:'Bǎohù dìqiú huánjìng, bìng bú shì yí jiàn lí wǒmen hěn yuǎn, hěn nán zuòdào de shìqing. Shíjì shang, wǒmen zhǐ xū zhùyì yíxià shēnbiān de xiǎo shì jiù kěyǐ.',vn:'Bảo vệ môi trường Trái đất không hề là việc xa vời, khó làm. Thực tế, chúng ta chỉ cần chú ý những việc nhỏ quanh mình là được.'},
      {sp:0,zh:'例如，夏天把空调的温度开得高一些，出门时记得关空调和电脑，这样可以节约用电；少开车，多骑车或者乘坐地铁和公共汽车，这样能降低空气污染；还有养成把垃圾丢进垃圾桶的习惯什么的。',py:'Lìrú, xiàtiān bǎ kōngtiáo de wēndù kāi de gāo yìxiē, chū mén shí jìde guān kōngtiáo hé diànnǎo, zhèyàng kěyǐ jiéyuē yòng diàn; shǎo kāi chē, duō qí chē huòzhě chéngzuò dìtiě hé gōnggòng qìchē, zhèyàng néng jiàngdī kōngqì wūrǎn; hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.',vn:'Ví dụ, mùa hè để nhiệt độ điều hòa cao hơn chút, ra ngoài nhớ tắt điều hòa và máy tính, như vậy tiết kiệm điện; ít lái xe, đi xe đạp hoặc tàu điện ngầm, xe buýt nhiều hơn, như vậy giảm ô nhiễm không khí; còn hình thành thói quen bỏ rác vào thùng rác, vân vân.'},

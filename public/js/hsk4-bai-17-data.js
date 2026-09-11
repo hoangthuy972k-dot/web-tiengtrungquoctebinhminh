@@ -609,7 +609,7 @@ var wuData = [
 
 var dialogData = [
   {scene:'课文1 · 小夏和安娜在聊天气',
-   preQuiz:[{q:'小夏为什么不同意今天去香山？',opts:['因为太远','因为今天肯定有大雨，人也太多','因为明天是他爸的生日'],ans:1}],
+   preQuiz:[{q:'小夏为什么不同意今天去香山？',opts:['因为太远','因为今天肯定有大雨，人也太多','因为明天是他爸的生日'],ans:1},{q:'香山这几天为什么特别热闹？',opts:['很多游客去看红叶','有音乐会','有比赛'],ans:0},{q:'小夏建议改天去哪儿？',opts:['长城','故宫','动物园'],ans:0}],
    lines:[
      {sp:0,zh:'最近天气越来越凉快了，风一刮，草地上就会有一层厚厚的黄叶，看来秋天已经到了。',py:'Zuìjìn tiānqì yuè lái yuè liángkuai le, fēng yì guā, cǎodì shang jiù huì yǒu yì céng hòuhòu de huángyè, kànlái qiūtiān yǐjīng dào le.',vn:'Dạo này thời tiết ngày càng mát, gió vừa thổi, trên bãi cỏ đã có một lớp lá vàng dày, xem ra mùa thu đã đến.'},
      {sp:1,zh:'这几天香山特别热闹，随着气温的降低，那里许多植物的叶子都由绿变黄或者变红，吸引了很多游客参观，咱们今天也去看看吧。',py:'Zhè jǐ tiān Xiāng Shān tèbié rènao, suízhe qìwēn de jiàngdī, nàli xǔduō zhíwù de yèzi dōu yóu lǜ biàn huáng huòzhě biàn hóng, xīyǐnle hěn duō yóukè cānguān, zánmen jīntiān yě qù kànkan ba.',vn:'Mấy hôm nay Hương Sơn rất náo nhiệt, cùng với nhiệt độ giảm, lá nhiều cây chuyển từ xanh sang vàng hoặc đỏ, thu hút nhiều du khách, hôm nay chúng ta cũng đi xem đi.'},
@@ -619,7 +619,7 @@ var dialogData = [
      {sp:1,zh:'没关系，那我们再约时间。',py:'Méi guānxi, nà wǒmen zài yuē shíjiān.',vn:'Không sao, vậy chúng ta hẹn lại sau.'},
    ]},
   {scene:'课文2 · 小林和小李在聊小李的狗',
-   preQuiz:[{q:'教狗完成任务可以用什么方法？',opts:['只教一次','耐心地一遍一遍地教，使它熟悉','严格批评它'],ans:1}],
+   preQuiz:[{q:'教狗完成任务可以用什么方法？',opts:['只教一次','耐心地一遍一遍地教，使它熟悉','严格批评它'],ans:1},{q:'张远的狗是什么颜色的？',opts:['黑色','白色','黄色'],ans:0},{q:'张远说狗在什么时候会一直陪着你？',opts:['你心里难受的时候','你吃饭的时候','你工作的时候'],ans:0}],
    lines:[
      {sp:0,zh:'你的这只大黑狗毛真漂亮，而且这么聪明，每次见了都想抱一抱它。',py:'Nǐ de zhè zhī dà hēi gǒu máo zhēn piàoliang, érqiě zhème cōngming, měi cì jiànle dōu xiǎng bào yi bào tā.',vn:'Con chó đen to của bạn lông đẹp thật, lại còn thông minh thế, lần nào gặp cũng muốn ôm nó.'},
      {sp:1,zh:'狗是很聪明的动物，只要稍微花点儿时间教教它，它就能学会很多东西。',py:'Gǒu shì hěn cōngming de dòngwù, zhǐyào shāowēi huā diǎnr shíjiān jiāojiao tā, tā jiù néng xuéhuì hěn duō dōngxi.',vn:'Chó là động vật rất thông minh, chỉ cần bỏ chút thời gian dạy, nó có thể học được nhiều thứ.'},
@@ -629,7 +629,7 @@ var dialogData = [
      {sp:1,zh:'狗是我们的好朋友，它能听懂人的话，明白人的心情。在你心里难受的时候，它会一直陪着你。',py:'Gǒu shì wǒmen de hǎo péngyou, tā néng tīngdǒng rén de huà, míngbai rén de xīnqíng. Zài nǐ xīnli nánshòu de shíhou, tā huì yìzhí péizhe nǐ.',vn:'Chó là bạn tốt của chúng ta, nó hiểu lời người, hiểu tâm trạng người. Khi bạn buồn, nó sẽ luôn ở bên bạn.'},
    ]},
   {scene:'课文3 · 马克和小夏在聊动物',
-   preQuiz:[{q:'现在全世界一共有多少只大熊猫？',opts:['一百多只','一千多只','一万多只'],ans:1}],
+   preQuiz:[{q:'现在全世界一共有多少只大熊猫？',opts:['一百多只','一千多只','一万多只'],ans:1},{q:'北京动物园大约有多少种动物？',opts:['50种','500种','5000种'],ans:1},{q:'中国从哪一年开始把大熊猫作为礼物送给其他国家？',opts:['1957年','1975年','1997年'],ans:0}],
    lines:[
      {sp:0,zh:'上个月我去了趟北京动物园，那里约有500种动物，听导游说北京动物园是亚洲最大的动物园之一。',py:'Shàng ge yuè wǒ qùle tàng Běijīng Dòngwùyuán, nàli yuē yǒu wǔbǎi zhǒng dòngwù, tīng dǎoyóu shuō Běijīng Dòngwùyuán shì Yàzhōu zuì dà de dòngwùyuán zhī yī.',vn:'Tháng trước tôi đi sở thú Bắc Kinh một chuyến, ở đó có khoảng 500 loài, nghe hướng dẫn viên nói đây là một trong những sở thú lớn nhất châu Á.'},
      {sp:1,zh:'去年放暑假的时候，我也去过一次，我在那儿看了马、熊猫、老虎等动物。我特别喜欢熊猫，可惜它们当时大多在睡觉。',py:'Qùnián fàng shǔjià de shíhou, wǒ yě qùguo yí cì, wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù. Wǒ tèbié xǐhuan xióngmāo, kěxī tāmen dāngshí dàduō zài shuì jiào.',vn:'Nghỉ hè năm ngoái tôi cũng đi một lần, xem ngựa, gấu trúc, hổ. Tôi đặc biệt thích gấu trúc, tiếc là lúc đó chúng phần lớn đang ngủ.'},
@@ -639,14 +639,14 @@ var dialogData = [
      {sp:1,zh:'以前只有中国有大熊猫，为了表示友好，从1957年开始，中国把大熊猫作为礼物送给其他一些国家。现在，很多国家的人们在本国都能看到大熊猫了。',py:'Yǐqián zhǐyǒu Zhōngguó yǒu dà xióngmāo, wèile biǎoshì yǒuhǎo, cóng yī jiǔ wǔ qī nián kāishǐ, Zhōngguó bǎ dà xióngmāo zuòwéi lǐwù sònggěi qítā yìxiē guójiā. Xiànzài, hěn duō guójiā de rénmen zài běnguó dōu néng kàndào dà xióngmāo le.',vn:'Trước đây chỉ Trung Quốc có gấu trúc, để tỏ tình hữu nghị, từ 1957 Trung Quốc tặng gấu trúc làm quà cho một số nước. Nay người dân nhiều nước có thể xem gấu trúc ngay tại nước mình.'},
    ]},
   {scene:'课文4 · Cạnh tranh trong rừng',
-   preQuiz:[{q:'cây cối cạnh tranh vì cái gì?',opts:['ánh nắng, không khí và nước','đất và phân bón','chỗ đứng'],ans:0}],
+   preQuiz:[{q:'植物为了什么而竞争？',opts:['阳光、空气和水','土地和肥料','位置'],ans:0},{q:'在暖和、水分多的地方，叶子往往长得怎么样？',opts:['又大又厚','又细又长','很小'],ans:0},{q:'比较低矮的植物只能长在哪儿？',opts:['高大植物的下面','山上','水里'],ans:0}],
    lines:[
      {sp:0,zh:'不仅社会上的人与人之间有竞争，森林里的各种植物之间也有竞争，这一点儿也不奇怪。植物会为了阳光、空气和水而竞争。',py:'Bùjǐn shèhuì shang de rén yǔ rén zhījiān yǒu jìngzhēng, sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng, zhè yìdiǎnr yě bù qíguài. Zhíwù huì wèile yángguāng, kōngqì hé shuǐ ér jìngzhēng.',vn:'Không chỉ giữa người với người trong xã hội có cạnh tranh, giữa các loài cây trong rừng cũng có, điều này chẳng lạ. Cây cối cạnh tranh vì ánh nắng, không khí và nước.'},
      {sp:0,zh:'一些高大的植物往往能获得更多的阳光、空气和水，而剩下的一些比较低矮的植物就只能长在这些高大植物的下面。',py:'Yìxiē gāodà de zhíwù wǎngwǎng néng huòdé gèng duō de yángguāng, kōngqì hé shuǐ, ér shèngxià de yìxiē bǐjiào dī\'ǎi de zhíwù jiù zhǐ néng zhǎng zài zhèxiē gāodà zhíwù de xiàmiàn.',vn:'Những cây cao lớn thường giành được nhiều nắng, không khí và nước hơn, còn những cây thấp bé còn lại chỉ có thể mọc dưới những cây cao lớn.'},
      {sp:0,zh:'由于气候条件不同，世界各地植物叶子的样子也很不相同。在暖和、水分比较多的地方，叶子往往长得又大又厚；在阳光特别厉害、水分少的地方，叶子就会长得又细又长。',py:'Yóuyú qìhòu tiáojiàn bù tóng, shìjiè gè dì zhíwù yèzi de yàngzi yě hěn bù xiāngtóng. Zài nuǎnhuo, shuǐfèn bǐjiào duō de dìfang, yèzi wǎngwǎng zhǎng de yòu dà yòu hòu; zài yángguāng tèbié lìhai, shuǐfèn shǎo de dìfang, yèzi jiù huì zhǎng de yòu xì yòu cháng.',vn:'Do điều kiện khí hậu khác nhau, hình dáng lá cây khắp nơi rất khác. Ở nơi ấm áp nhiều nước, lá thường vừa to vừa dày; ở nơi nắng gắt ít nước, lá vừa mảnh vừa dài.'},
    ]},
   {scene:'课文5 · Thế giới đáy biển',
-   preQuiz:[{q:'khoảng bao nhiêu phần trăm Trái đất là đại dương?',opts:['71%','51%','91%'],ans:0}],
+   preQuiz:[{q:'地球上大约百分之多少的地方是海洋？',opts:['71%','51%','91%'],ans:0},{q:'海底真的一点儿声音也没有吗？',opts:['不是，海底的动物一直在“说话”，只是人听不到','是的，非常安静','只有鱼会说话'],ans:0},{q:'几公里深的海底为什么能看到东西？',opts:['许多鱼会发出各种颜色的亮光','有太阳光','有人放了灯'],ans:0}],
    lines:[
      {sp:0,zh:'地球上大约71%的地方是蓝色的海洋，在美丽的海底世界里，生活着各种各样的植物和动物。我们小时候都听过美人鱼的故事，其实真正的海底世界比故事里写的更美。',py:'Dìqiú shang dàyuē bǎifēnzhī qīshíyī de dìfang shì lánsè de hǎiyáng, zài měilì de hǎidǐ shìjiè li, shēnghuózhe gè zhǒng gè yàng de zhíwù hé dòngwù. Wǒmen xiǎoshíhou dōu tīngguo Měirényú de gùshi, qíshí zhēnzhèng de hǎidǐ shìjiè bǐ gùshi li xiě de gèng měi.',vn:'Khoảng 71% Trái đất là đại dương xanh, trong thế giới đáy biển xinh đẹp sinh sống đủ loại thực vật, động vật. Hồi nhỏ chúng ta đều nghe chuyện Người cá, thực ra đáy biển thật còn đẹp hơn trong truyện.'},
      {sp:0,zh:'科学研究发现，海洋底部看上去非常安静，然而却不是一点儿声音也没有，海底的动物们一直在"说话"，只不过人的耳朵是听不到的。',py:'Kēxué yánjiū fāxiàn, hǎiyáng dǐbù kàn shangqu fēicháng ānjìng, rán\'ér què bú shì yìdiǎnr shēngyīn yě méiyǒu, hǎidǐ de dòngwùmen yìzhí zài "shuō huà", zhǐ búguò rén de ěrduo shì tīngbudào de.',vn:'Nghiên cứu khoa học phát hiện, đáy đại dương trông rất yên tĩnh, nhưng không phải không có âm thanh, động vật đáy biển luôn "nói chuyện", chỉ là tai người không nghe được.'},

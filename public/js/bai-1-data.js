@@ -367,28 +367,109 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm thật + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi (không có chữ phiên âm đi kèm — luyện phản xạ nghe hiểu trực tiếp), sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'你明天要不要跟朋友一起去运动？你最喜欢什么运动？',
-     q_vn:'Ngày mai bạn có muốn cùng bạn bè đi vận động không? Bạn thích môn thể thao nào nhất?',
-     hint:'你明天要不要一起去……？我最喜欢……。',
-     sample:'我明天要跟朋友一起去运动，我最喜欢踢足球。',
-     sample_vn:'Ngày mai tôi sẽ cùng bạn bè đi vận động, tôi thích đá bóng nhất.',
-     note:'一起 luôn đứng TRƯỚC động từ chính (一起去/一起运动), không đứng sau như "cùng nhau" có thể đứng cuối câu trong tiếng Việt.'},
-    {q_zh:'你们家要不要买几把新椅子？打算买多少把？',
-     q_vn:'Nhà bạn có cần mua vài chiếc ghế mới không? Định mua bao nhiêu chiếc?',
-     hint:'我们家要不要买……？买十多把吧。',
-     sample:'我们家要买几把新椅子，好像要买十多把。',
-     sample_vn:'Nhà tôi cần mua vài chiếc ghế mới, hình như cần mua hơn mười chiếc.',
-     note:'几 (số nhỏ, chưa biết chính xác) và 多 (số ước lượng, thường đi với số đã biết) dùng trong hai tình huống khác nhau — đừng nhầm lẫn.'},
-    {q_zh:'你觉得你朋友的什么地方最好看？',
-     q_vn:'Bạn thấy điểm nào trên gương mặt/ngoại hình của bạn mình đẹp nhất?',
-     hint:'我觉得你的……最好看。',
-     sample:'我觉得他的眼睛最好看。',
-     sample_vn:'Tôi thấy đôi mắt của anh ấy đẹp nhất.',
-     note:'觉得 dùng để nêu ý kiến/cảm nhận cá nhân một cách lịch sự, tự nhiên hơn là khẳng định trực tiếp.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 1. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Trong lớp, bạn học hỏi bạn về kế hoạch du lịch sắp tới.',
+      q_zh: '你想去哪儿旅游？你觉得什么时候去最好？',
+      q_py: 'Nǐ xiǎng qù nǎr lǚyóu? Nǐ juéde shénme shíhou qù zuì hǎo?',
+      q_vn: 'Bạn muốn đi du lịch ở đâu? Bạn thấy đi vào lúc nào là tốt nhất?',
+      grammar: { label: '我觉得 + thời gian + 去最好', any: ['觉得'] },
+      need: [
+        { label: 'Nói rõ là đi du lịch (旅游)', any: ['旅游', '旅行'] },
+        { label: 'Nêu thời gian (tháng / mùa / dịp nào)', any: ['月', '春天', '夏天', '秋天', '冬天', '时候', '号', '放假', '周末', '星期'] },
+        { label: 'Dùng 最 để nói “nhất”', any: ['最'] }
+      ],
+      bonus: { label: 'Nêu thêm lý do (因为… / 不冷也不热)', any: ['因为', '也', '天气', '不冷', '不热'] },
+      vocab: ['旅游', '觉得', '最'],
+      minLen: 14,
+      sample: '我想去北京旅游。我觉得九月去最好，九月的北京不冷也不热。',
+      sample_py: 'Wǒ xiǎng qù Běijīng lǚyóu. Wǒ juéde jiǔ yuè qù zuì hǎo, jiǔ yuè de Běijīng bù lěng yě bú rè.',
+      sample_vn: 'Tôi muốn đi Bắc Kinh du lịch. Tôi thấy tháng 9 đi là tốt nhất, Bắc Kinh tháng 9 không lạnh cũng không nóng.',
+      tip: 'Nêu ý kiến thì mở đầu bằng 我觉得…; 最 đặt ngay trước tính từ/động từ: 最好、最喜欢.'
+    },
+    {
+      situation: 'Một người bạn mới quen hỏi bạn về sở thích thể thao.',
+      q_zh: '你最喜欢什么运动？你常常跟谁一起做运动？',
+      q_py: 'Nǐ zuì xǐhuan shénme yùndòng? Nǐ chángcháng gēn shéi yìqǐ zuò yùndòng?',
+      q_vn: 'Bạn thích môn thể thao nào nhất? Bạn thường tập cùng ai?',
+      grammar: { label: '我最喜欢 + môn thể thao', any: ['最喜欢', '最爱', '喜欢'] },
+      need: [
+        { label: 'Nói tên môn thể thao', any: ['足球', '篮球', '排球', '网球', '羽毛球', '乒乓球', '跑步', '游泳', '爬山', '骑车', '跳舞', '运动', '打球', '踢球'] },
+        { label: 'Nói tập cùng ai (跟 / 和 + người)', any: ['跟', '和', '同学', '朋友', '哥哥', '姐姐', '爸爸', '妈妈', '同事'] },
+        { label: 'Dùng 一起', any: ['一起'] }
+      ],
+      bonus: { label: 'Thêm thời gian tập (每天 / 周末 / 下午…)', any: ['每天', '周末', '星期', '下午', '晚上', '上午', '常常'] },
+      vocab: ['运动', '踢', '足球', '一起', '最'],
+      minLen: 12,
+      sample: '我最喜欢踢足球。我常常跟同学一起去踢足球。',
+      sample_py: 'Wǒ zuì xǐhuan tī zúqiú. Wǒ chángcháng gēn tóngxué yìqǐ qù tī zúqiú.',
+      sample_vn: 'Tôi thích đá bóng nhất. Tôi thường cùng bạn học đi đá bóng.',
+      tip: '一起 luôn đứng TRƯỚC động từ: 跟朋友一起去 — không nói 去一起.'
+    },
+    {
+      situation: 'Bạn muốn rủ bạn cùng lớp chiều nay đi chơi.',
+      q_zh: '下午你想做什么？请你用中文约朋友一起去。',
+      q_py: 'Xiàwǔ nǐ xiǎng zuò shénme? Qǐng nǐ yòng Zhōngwén yuē péngyou yìqǐ qù.',
+      q_vn: 'Chiều nay bạn muốn làm gì? Hãy dùng tiếng Trung rủ bạn cùng đi.',
+      grammar: { label: '我们一起 + động từ + 吧！', any: ['一起'] },
+      need: [
+        { label: 'Nói việc định làm (đi đâu / làm gì)', any: ['去', '看', '吃', '喝', '踢', '打', '买', '学', '玩', '跑', '游', '听', '唱', '逛'] },
+        { label: 'Có lời mời: 吧 / 怎么样 / 好吗', any: ['吧', '怎么样', '好吗', '好不好', '行吗'] },
+        { label: 'Nói thời gian (下午 / 几点…)', any: ['下午', '上午', '晚上', '中午', '点', '明天', '今天', '周末', '星期'] }
+      ],
+      bonus: { label: 'Hỏi thêm giờ hẹn (你几点能来？)', any: ['几点', '什么时候'] },
+      vocab: ['一起', '要'],
+      minLen: 10,
+      sample: '下午我们一起去踢足球吧！你几点能来？',
+      sample_py: 'Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba! Nǐ jǐ diǎn néng lái?',
+      sample_vn: 'Chiều nay chúng mình cùng đi đá bóng nhé! Mấy giờ bạn đến được?',
+      tip: 'Lời rủ thân mật: 我们一起 + động từ + 吧！ Muốn hỏi ý kiến thì thêm …怎么样？'
+    },
+    {
+      situation: 'Ở nhà, bạn bàn với người nhà chuyện mua đồ mới.',
+      q_zh: '你们家要不要买新的东西？要买几个？什么时候去买？',
+      q_py: 'Nǐmen jiā yào bu yào mǎi xīn de dōngxi? Yào mǎi jǐ ge? Shénme shíhou qù mǎi?',
+      q_vn: 'Nhà bạn có cần mua đồ mới không? Định mua mấy cái? Khi nào đi mua?',
+      grammar: { label: '要买 + 几 + lượng từ + 新的…', any: ['要买', '要不要', '想买', '不买', '不要', '要'] },
+      need: [
+        { label: 'Nói rõ món đồ muốn mua', any: ['椅子', '桌子', '衣服', '手机', '电脑', '书', '车', '东西', '鞋', '包', '杯子', '床', '冰箱', '空调', '花', '本子'] },
+        { label: 'Nói số lượng (几个 / 两把 / 十多个…)', any: ['几', '个', '把', '张', '件', '条', '本', '台', '双', '多'] },
+        { label: 'Nói thời gian đi mua', any: ['明天', '今天', '后天', '周末', '星期', '下午', '上午', '晚上', '月', '号'] }
+      ],
+      bonus: { label: 'Dùng 数量 + 多 (三点多 / 十多个)', any: ['多'] },
+      vocab: ['要', '新', '椅子'],
+      minLen: 12,
+      sample: '我们家要买几个新椅子。明天下午去买吧，我三点多能回来。',
+      sample_py: 'Wǒmen jiā yào mǎi jǐ ge xīn yǐzi. Míngtiān xiàwǔ qù mǎi ba, wǒ sān diǎn duō néng huílai.',
+      sample_vn: 'Nhà tôi cần mua vài chiếc ghế mới. Chiều mai đi mua nhé, hơn 3 giờ tôi về được.',
+      tip: '要不要…？ là cách hỏi “có… không”, trả lời 要 hoặc 不要. 三点多 = hơn 3 giờ một chút.'
+    },
+    {
+      situation: 'Bạn khoe ảnh thú cưng hoặc ảnh bạn thân cho bạn học xem.',
+      q_zh: '说一说你的小动物或者你的朋友。你觉得他（它）什么地方最好看？',
+      q_py: 'Shuō yi shuō nǐ de xiǎo dòngwù huòzhě nǐ de péngyou. Nǐ juéde tā shénme dìfang zuì hǎokàn?',
+      q_vn: 'Hãy kể về con vật cưng hoặc người bạn của bạn. Bạn thấy chỗ nào của họ (nó) đẹp nhất?',
+      grammar: { label: '我觉得 + 它/他的 + … + 最好看', any: ['觉得'] },
+      need: [
+        { label: 'Giới thiệu đối tượng (这是我的…)', any: ['我的', '这是', '它', '他', '她', '猫', '狗', '朋友'] },
+        { label: 'Nói bộ phận / đặc điểm', any: ['眼睛', '头发', '脸', '嘴', '鼻子', '耳朵', '手', '个子', '笑', '性格', '衣服', '毛'] },
+        { label: 'Dùng 最 + 好看/漂亮/可爱', any: ['最'] }
+      ],
+      bonus: { label: 'Thêm tuổi hoặc tên (它叫… / 六个多月)', any: ['叫', '岁', '月', '名字'] },
+      vocab: ['觉得', '最', '眼睛', '它'],
+      minLen: 12,
+      sample: '这是我的猫，它叫花花，六个多月了。我觉得它的眼睛最好看。',
+      sample_py: 'Zhè shì wǒ de māo, tā jiào Huāhua, liù ge duō yuè le. Wǒ juéde tā de yǎnjing zuì hǎokàn.',
+      sample_vn: 'Đây là con mèo của tôi, nó tên Hoa Hoa, hơn 6 tháng tuổi. Tôi thấy đôi mắt của nó đẹp nhất.',
+      tip: '它 dùng cho con vật/đồ vật, 他/她 dùng cho người. Nhận xét thì dùng 我觉得…最….'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

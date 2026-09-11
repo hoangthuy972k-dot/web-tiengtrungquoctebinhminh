@@ -8662,7 +8662,7 @@
 
   function renderSpeakTabs() {
     var wrap = $('#spTabs');
-    if (!spData || spData.questions) {
+    if (!spData || spData.questions || spData.mode === 'ai-speak') {
       wrap.innerHTML = '';
       return;
     }
@@ -8685,7 +8685,9 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện nói.</p>';
       return;
     }
-    if (spData.questions) {
+    if (spData.mode === 'ai-speak' && spData.tasks) {
+      renderSpeakAI(wrap, spData);
+    } else if (spData.questions) {
       renderSpeakQuestions(wrap, spData.questions);
     } else if (spTierMode === 1 && spData.t1) {
       renderSpeakTier1(wrap, spData.t1);
@@ -8695,6 +8697,347 @@
       renderSpeakTier3(wrap, spData.t3);
     } else {
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện nói.</p>';
+    }
+  }
+
+  /* ---------------- Luyen noi voi AI (speakingData.mode === 'ai-speak') ----------------
+     Moi cau hoi la mot tinh huong doi song lay tu noi dung bai khoa. Hoc sinh bam ghi
+     am va tra loi bang tieng Trung: trinh duyet vua ghi am (MediaRecorder — de nghe
+     lai) vua nhan dien giong noi (Web Speech API, zh-CN) de lay loi hoc sinh vua noi.
+     Sau do cham diem theo 4 tieu chi: Noi dung (45) · Mau cau (25) · Tu vung (10) ·
+     Do troi chay (20), cong 3 diem thuong neu noi them y mo rong.
+     Neu server co AZURE_SPEECH_KEY thi goi them /api/speech-assess de lay diem phat am. */
+
+  var spAi = {};        // idx -> { recording, mr, rec, stream, blob, url, finalText, seconds, score }
+  var spAiTasks = [];
+
+  function spEsc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  // Bo dau cau/khoang trang de so khop tu khoa (may nhan dien thuong tu them 。，？)
+  function spNorm(text) {
+    return String(text || '')
+      .replace(/[\s　]/g, '')
+      .replace(/[，。！？、；：,.!?;:'"()（）「」『』]/g, '');
+  }
+
+  function spHitAny(text, list) {
+    for (var i = 0; i < (list || []).length; i++) {
+      if (list[i] && text.indexOf(list[i]) >= 0) return list[i];
+    }
+    return null;
+  }
+
+  function spAiScore(task, transcript, seconds) {
+    var t = spNorm(transcript);
+    var len = t.length;
+    var fb = [];
+
+    var need = task.need || [];
+    var needHits = need.map(function (n) { return { label: n.label, hit: !!spHitAny(t, n.any), eg: n.any[0] }; });
+    var okNeed = needHits.filter(function (x) { return x.hit; }).length;
+    var contentPts = need.length ? Math.round(okNeed / need.length * 45) : (len ? 45 : 0);
+
+    var gram = task.grammar;
+    var gramHit = gram ? !!spHitAny(t, gram.any) : true;
+    var gramPts = gramHit ? 25 : 0;
+
+    var vocab = task.vocab || [];
+    var vocabHit = vocab.filter(function (w) { return t.indexOf(w) >= 0; });
+    var vocabTarget = Math.max(1, Math.min(vocab.length, 3));
+    var vocabPts = vocab.length ? Math.round(Math.min(1, vocabHit.length / vocabTarget) * 10) : 10;
+
+    var minLen = task.minLen || 10;
+    var lenRatio = Math.min(1, len / minLen);
+    var rate = seconds > 0 ? len / seconds : 0;
+    var fluPts = Math.round(lenRatio * 14);
+    if (len >= minLen * 0.6 && rate >= 1 && rate <= 6) fluPts += 6;
+    else if (len >= minLen * 0.6) fluPts += 3;
+    fluPts = Math.min(20, fluPts);
+
+    var bonusHit = task.bonus ? !!spHitAny(t, task.bonus.any) : false;
+    var total = contentPts + gramPts + vocabPts + fluPts + (bonusHit ? 3 : 0);
+    if (!len) total = 0;
+    total = Math.max(0, Math.min(100, total));
+
+    needHits.forEach(function (x) {
+      if (!x.hit) fb.push({ type: 'bad', text: 'Chưa có ý: ' + x.label + ' (ví dụ: ' + x.eg + ')' });
+    });
+    if (gram && !gramHit) fb.push({ type: 'bad', text: 'Chưa dùng mẫu câu của bài: ' + gram.label });
+    if (gram && gramHit) fb.push({ type: 'good', text: 'Dùng đúng mẫu câu: ' + gram.label });
+    if (vocab.length && vocabHit.length) fb.push({ type: 'good', text: 'Có dùng từ mới của bài: ' + vocabHit.join('、') });
+    var vocabMiss = vocab.filter(function (w) { return t.indexOf(w) < 0; });
+    if (vocabMiss.length && vocabHit.length < vocabTarget) fb.push({ type: 'tip', text: 'Có thể thêm từ của bài: ' + vocabMiss.join('、') });
+    if (len && len < minLen) fb.push({ type: 'tip', text: 'Câu trả lời hơi ngắn (' + len + ' chữ) — hãy nói thêm một câu nữa cho đủ ý (khoảng ' + minLen + ' chữ trở lên).' });
+    if (len && rate > 7) fb.push({ type: 'tip', text: 'Bạn nói khá nhanh, thử nói chậm và rõ từng chữ hơn.' });
+    if (len && rate && rate < 1) fb.push({ type: 'tip', text: 'Bạn nói hơi chậm và ngắt nhiều, hãy luyện đọc trôi câu mẫu vài lần.' });
+    if (bonusHit) fb.push({ type: 'good', text: 'Điểm cộng: ' + task.bonus.label });
+    if (!len) fb = [{ type: 'bad', text: 'AI chưa nghe được tiếng nói nào. Hãy bấm 🎙️ rồi nói to, gần micro và thử lại.' }];
+
+    return {
+      total: total, transcript: transcript || '', chars: len, rate: rate,
+      parts: [
+        { key: 'content', label: 'Nội dung', got: contentPts, max: 45 },
+        { key: 'grammar', label: 'Mẫu câu', got: gramPts, max: 25 },
+        { key: 'vocab', label: 'Từ vựng', got: vocabPts, max: 10 },
+        { key: 'fluency', label: 'Trôi chảy', got: fluPts, max: 20 }
+      ],
+      feedback: fb
+    };
+  }
+
+  function spAiLevel(total) {
+    if (total >= 85) return { cls: 'is-great', text: 'Rất tốt! Bạn trả lời đủ ý và đúng mẫu câu.' };
+    if (total >= 70) return { cls: 'is-good', text: 'Khá tốt — chỉ cần bổ sung vài ý còn thiếu.' };
+    if (total >= 50) return { cls: 'is-mid', text: 'Tạm được. Hãy xem câu mẫu rồi nói lại một lần nữa.' };
+    return { cls: 'is-low', text: 'Cần luyện thêm. Nghe câu mẫu, đọc theo rồi ghi âm lại nhé.' };
+  }
+
+  function spAiCardHtml(task, i) {
+    var chips = (task.need || []).map(function (n) {
+      return '<span class="spai-chip">' + spEsc(n.label) + '</span>';
+    }).join('');
+    return '<div class="spai-card" id="spAiCard' + i + '">' +
+      '<div class="spai-head"><span class="spai-num">' + (i + 1) + '</span>' +
+        '<span class="spai-sit">' + spEsc(task.situation || '') + '</span></div>' +
+      '<div class="spai-q">' +
+        '<div class="spai-q-zh hanzi">' + spEsc(task.q_zh) +
+          ' <button type="button" class="vp-speak-btn" data-speak="' + spEsc(task.q_zh) + '">🔊</button></div>' +
+        '<div class="spai-q-py">' + spEsc(task.q_py || '') + '</div>' +
+        '<div class="spai-q-vn">' + spEsc(task.q_vn || '') + '</div>' +
+      '</div>' +
+      (task.grammar ? '<div class="spai-must">Mẫu câu cần dùng: <b class="hanzi">' + spEsc(task.grammar.label) + '</b></div>' : '') +
+      (chips ? '<div class="spai-chips">' + chips + '</div>' : '') +
+      '<div class="spai-actions">' +
+        '<button type="button" class="spai-btn spai-rec" data-spai-rec="' + i + '">🎙️ Bắt đầu nói</button>' +
+        '<button type="button" class="spai-btn spai-play" data-spai-play="' + i + '" disabled>▶ Nghe lại</button>' +
+        '<button type="button" class="spai-btn spai-ghost" data-spai-sample="' + i + '">💡 Câu mẫu</button>' +
+      '</div>' +
+      '<div class="spai-status" id="spAiStatus' + i + '">Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe và chấm điểm.</div>' +
+      '<div class="spai-result" id="spAiResult' + i + '"></div>' +
+      '<div class="spai-sample" id="spAiSample' + i + '" hidden>' +
+        '<div class="spai-sample-zh hanzi">' + spEsc(task.sample) +
+          ' <button type="button" class="vp-speak-btn" data-speak="' + spEsc(task.sample) + '">🔊</button></div>' +
+        '<div class="spai-sample-py">' + spEsc(task.sample_py || '') + '</div>' +
+        '<div class="spai-sample-vn">' + spEsc(task.sample_vn || '') + '</div>' +
+        (task.tip ? '<div class="spai-tip">💡 ' + spEsc(task.tip) + '</div>' : '') +
+      '</div>' +
+    '</div>';
+  }
+
+  function renderSpeakAI(wrap, data) {
+    spAiTasks = data.tasks || [];
+    spAi = {};
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    wrap.innerHTML =
+      '<div class="spai-intro">' + spEsc(data.intro || '') + '</div>' +
+      (SR ? '' : '<div class="spai-nosr">⚠️ Trình duyệt này chưa hỗ trợ nhận diện giọng nói nên AI không tự nghe được. Bạn vẫn ghi âm và nghe lại được; để AI chấm điểm hãy mở bằng <b>Chrome</b> hoặc <b>Microsoft Edge</b>.</div>') +
+      '<div class="spai-summary" id="spAiSummary">Đã chấm 0/' + spAiTasks.length + ' câu</div>' +
+      spAiTasks.map(spAiCardHtml).join('');
+
+    $all('[data-speak]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    $all('[data-spai-rec]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () { spAiToggle(parseInt(btn.getAttribute('data-spai-rec'), 10)); });
+    });
+    $all('[data-spai-play]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var st = spAi[parseInt(btn.getAttribute('data-spai-play'), 10)];
+        if (st && st.url) new Audio(st.url).play();
+      });
+    });
+    $all('[data-spai-sample]', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var box = $('#spAiSample' + btn.getAttribute('data-spai-sample'));
+        box.hidden = !box.hidden;
+        btn.textContent = box.hidden ? '💡 Câu mẫu' : '🙈 Ẩn câu mẫu';
+      });
+    });
+  }
+
+  function spAiToggle(i) {
+    var st = spAi[i];
+    if (st && st.recording) spAiStop(i); else spAiStart(i);
+  }
+
+  function spAiBtn(i) { return $('#spAiCard' + i + ' .spai-rec'); }
+
+  function spAiStart(i) {
+    var st = spAi[i] = spAi[i] || {};
+    var statusEl = $('#spAiStatus' + i);
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || typeof MediaRecorder === 'undefined') {
+      statusEl.innerHTML = '<span class="spai-warn">Trình duyệt không hỗ trợ ghi âm. Hãy dùng Chrome hoặc Edge.</span>';
+      return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      var chunks = [];
+      var mr = null;
+      try { mr = new MediaRecorder(stream); } catch (e) { mr = null; }
+      if (mr) {
+        mr.ondataavailable = function (e) { if (e.data && e.data.size) chunks.push(e.data); };
+        mr.onstop = function () {
+          var blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' });
+          st.blob = blob;
+          if (st.url) URL.revokeObjectURL(st.url);
+          st.url = URL.createObjectURL(blob);
+          var playBtn = $('#spAiCard' + i + ' .spai-play');
+          if (playBtn) playBtn.disabled = false;
+        };
+        try { mr.start(); } catch (e) { mr = null; }
+      }
+      st.stream = stream; st.mr = mr; st.recording = true; st.t0 = Date.now();
+      st.finalText = ''; st.srTries = 0;
+      var btn = spAiBtn(i);
+      if (btn) { btn.textContent = '⏹ Dừng & chấm điểm'; btn.classList.add('is-rec'); }
+      statusEl.innerHTML = '<span class="spai-live">🔴 Đang nghe… hãy nói câu trả lời của bạn.</span>' +
+        '<span class="spai-interim" id="spAiInterim' + i + '"></span>';
+      $('#spAiResult' + i).innerHTML = '';
+      spAiStartSR(i);
+      st.timer = setTimeout(function () { if (st.recording) spAiStop(i); }, 60000);
+    }).catch(function () {
+      statusEl.innerHTML = '<span class="spai-warn">Không truy cập được micro — hãy cho phép quyền micro cho trang này rồi thử lại.</span>';
+    });
+  }
+
+  function spAiStartSR(i) {
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var st = spAi[i];
+    if (!SR) { st.noSR = true; return; }
+    var rec;
+    try { rec = new SR(); } catch (e) { st.noSR = true; return; }
+    rec.lang = 'zh-CN';
+    rec.continuous = true;
+    rec.interimResults = true;
+    rec.maxAlternatives = 1;
+    rec.onresult = function (e) {
+      var interim = '';
+      for (var k = e.resultIndex; k < e.results.length; k++) {
+        if (e.results[k].isFinal) st.finalText += e.results[k][0].transcript;
+        else interim += e.results[k][0].transcript;
+      }
+      var el = $('#spAiInterim' + i);
+      var shown = st.finalText + interim;
+      if (el) el.textContent = shown ? ' 「' + shown + '」' : '';
+    };
+    rec.onerror = function (e) {
+      if (e && (e.error === 'not-allowed' || e.error === 'service-not-allowed')) st.srBlocked = true;
+    };
+    rec.onend = function () {
+      if (st.recording && st.srTries < 4) {
+        st.srTries++;
+        try { rec.start(); } catch (err) { /* bo qua */ }
+      }
+    };
+    try { rec.start(); } catch (e) { st.noSR = true; }
+    st.rec = rec;
+  }
+
+  function spAiStop(i) {
+    var st = spAi[i];
+    if (!st || !st.recording) return;
+    st.recording = false;
+    clearTimeout(st.timer);
+    st.seconds = (Date.now() - st.t0) / 1000;
+    if (st.rec) { try { st.rec.stop(); } catch (e) { /* bo qua */ } }
+    if (st.mr && st.mr.state === 'recording') { try { st.mr.stop(); } catch (e) { /* bo qua */ } }
+    if (st.stream) st.stream.getTracks().forEach(function (t) { t.stop(); });
+    var btn = spAiBtn(i);
+    if (btn) { btn.textContent = '🎙️ Ghi âm lại'; btn.classList.remove('is-rec'); }
+    $('#spAiStatus' + i).innerHTML = '<span class="spai-wait">⏳ AI đang nghe lại và chấm điểm…</span>';
+    setTimeout(function () { spAiFinish(i); }, 800);
+  }
+
+  function spAiFinish(i) {
+    var st = spAi[i], task = spAiTasks[i];
+    var text = (st.finalText || '').trim();
+    if (!text && (st.noSR || st.srBlocked)) {
+      $('#spAiStatus' + i).innerHTML = '<span class="spai-warn">AI chưa nghe được (trình duyệt không hỗ trợ hoặc chặn nhận diện giọng nói). Hãy nghe lại bản ghi và tự đối chiếu với câu mẫu.</span>';
+      $('#spAiResult' + i).innerHTML = '<div class="spai-self">Tự đánh giá câu trả lời của bạn: ' +
+        '<button type="button" class="spai-self-btn" data-self="' + i + '" data-val="50">Chưa đạt</button>' +
+        '<button type="button" class="spai-self-btn" data-self="' + i + '" data-val="75">Khá</button>' +
+        '<button type="button" class="spai-self-btn" data-self="' + i + '" data-val="90">Tốt</button></div>';
+      $all('[data-self="' + i + '"]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          st.score = { total: parseInt(b.getAttribute('data-val'), 10), self: true };
+          $('#spAiResult' + i).innerHTML = '<div class="spai-self">Bạn tự chấm: <b>' + st.score.total + '/100</b></div>';
+          spAiUpdateSummary();
+        });
+      });
+      return;
+    }
+    var score = spAiScore(task, text, st.seconds || 0);
+    st.score = score;
+    spAiRenderResult(i, task, score);
+    spAiUpdateSummary();
+    spAiTryPron(i, text);
+  }
+
+  function spAiRenderResult(i, task, score) {
+    var lv = spAiLevel(score.total);
+    var bars = score.parts.map(function (p) {
+      var pct = Math.round(p.got / p.max * 100);
+      return '<div class="spai-bar-row"><span class="spai-bar-label">' + p.label + '</span>' +
+        '<div class="spai-bar"><i style="width:' + pct + '%"></i></div>' +
+        '<span class="spai-bar-num">' + p.got + '/' + p.max + '</span></div>';
+    }).join('');
+    var fb = score.feedback.map(function (f) {
+      var icon = f.type === 'good' ? '✅' : f.type === 'bad' ? '⚠️' : '💡';
+      return '<li class="spai-fb-' + f.type + '">' + icon + ' ' + spEsc(f.text) + '</li>';
+    }).join('');
+    $('#spAiStatus' + i).innerHTML = '<span class="spai-done">✓ Đã chấm xong.</span>';
+    $('#spAiResult' + i).innerHTML =
+      '<div class="spai-score ' + lv.cls + '">' +
+        '<div class="spai-score-num">' + score.total + '<span>/100</span></div>' +
+        '<div class="spai-score-text">' + lv.text + '</div>' +
+      '</div>' +
+      '<div class="spai-heard">🎧 AI nghe được: <b class="hanzi">' + (score.transcript ? spEsc(score.transcript) : '(không nghe rõ)') + '</b>' +
+        (score.chars ? ' <span class="spai-meta">· ' + score.chars + ' chữ · ' + score.rate.toFixed(1) + ' chữ/giây</span>' : '') + '</div>' +
+      '<div class="spai-bars">' + bars + '</div>' +
+      '<ul class="spai-fb">' + fb + '</ul>' +
+      '<div class="spai-pron" id="spAiPron' + i + '"></div>';
+  }
+
+  // Diem phat am tu Azure (chi chay khi server da cau hinh AZURE_SPEECH_KEY);
+  // that bai thi im lang, phan cham diem chinh o tren van hoat dong binh thuong.
+  function spAiTryPron(i, text) {
+    var st = spAi[i];
+    if (!st || !st.blob || !text) return;
+    var reader = new FileReader();
+    reader.onloadend = function () {
+      var b64 = String(reader.result).split(',')[1];
+      fetch('/api/speech-assess', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ audioBase64: b64, mimeType: st.blob.type, referenceText: text.slice(0, 200) })
+      }).then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d || typeof d.pronunciation !== 'number') return;
+          var el = $('#spAiPron' + i);
+          if (el) el.innerHTML = '<span class="spai-pron-tag">Phát âm (AI): <b>' + Math.round(d.pronunciation) + '/100</b>' +
+            ' · chuẩn xác ' + Math.round(d.accuracy) + ' · trôi chảy ' + Math.round(d.fluency) + '</span>';
+        }).catch(function () { /* bo qua */ });
+    };
+    reader.readAsDataURL(st.blob);
+  }
+
+  function spAiUpdateSummary() {
+    var done = 0, sum = 0;
+    spAiTasks.forEach(function (t, i) {
+      var st = spAi[i];
+      if (st && st.score && typeof st.score.total === 'number') { done++; sum += st.score.total; }
+    });
+    var el = $('#spAiSummary');
+    if (el) {
+      el.innerHTML = done
+        ? 'Đã chấm <b>' + done + '/' + spAiTasks.length + '</b> câu · Điểm trung bình <b>' + Math.round(sum / done) + '/100</b>'
+        : 'Đã chấm 0/' + spAiTasks.length + ' câu';
+    }
+    if (done && currentHubLesson) {
+      recordLessonScore(currentHubLesson, 'speak', { correct: Math.round(sum), total: spAiTasks.length * 100 });
     }
   }
 

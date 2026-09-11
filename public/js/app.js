@@ -8182,21 +8182,31 @@
       }
     }
 
-    wrap.innerHTML =
-      (dpTotalQuiz > 0 ? pgbHtml('dpq', dpTotalQuiz) : '') +
-      '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>' +
-      audioHtml +
-      quizHtml +
-      linesHtml;
-    if (dpTotalQuiz > 0) pgbPaint('dpq');
-
-    var audioEl = $('.dp-audio-box audio', wrap);
-    if (audioEl) {
-      audioEl.addEventListener('error', function () {
-        var box = audioEl.closest('.dp-audio-box');
-        if (box) box.innerHTML = '<span class="dp-audio-missing">⚠️ Chưa có audio gốc cho đoạn này.</span>';
-      });
+    // Chia làm 3 khối: đầu (thanh tiến độ + tên cảnh), audio, thân (quiz + bài khóa).
+    // Khối audio chỉ được dựng lại khi đổi đoạn hội thoại (src khác); khi học sinh
+    // chọn đáp án / bấm ẩn-hiện dịch thì chỉ khối thân được vẽ lại, nên audio đang
+    // phát vẫn chạy tiếp, không bị quay về đầu.
+    var top = $('#dpTop', wrap), host = $('#dpAudioHost', wrap), body = $('#dpBody', wrap);
+    if (!top || !host || !body) {
+      wrap.innerHTML = '<div id="dpTop"></div><div id="dpAudioHost"></div><div id="dpBody"></div>';
+      top = $('#dpTop', wrap); host = $('#dpAudioHost', wrap); body = $('#dpBody', wrap);
     }
+    top.innerHTML =
+      (dpTotalQuiz > 0 ? pgbHtml('dpq', dpTotalQuiz) : '') +
+      '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>';
+    if (host.getAttribute('data-src') !== (audioSrc || '')) {
+      host.setAttribute('data-src', audioSrc || '');
+      host.innerHTML = audioHtml;
+      var audioEl = $('.dp-audio-box audio', host);
+      if (audioEl) {
+        audioEl.addEventListener('error', function () {
+          var box = audioEl.closest('.dp-audio-box');
+          if (box) box.innerHTML = '<span class="dp-audio-missing">⚠️ Chưa có audio gốc cho đoạn này.</span>';
+        });
+      }
+    }
+    body.innerHTML = quizHtml + linesHtml;
+    if (dpTotalQuiz > 0) pgbPaint('dpq');
 
     var vnToggle = $('#dpVnToggle', wrap);
     if (vnToggle) {

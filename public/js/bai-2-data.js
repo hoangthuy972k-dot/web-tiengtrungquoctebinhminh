@@ -391,28 +391,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'你是不是生病了？现在身体怎么样？',
-     q_vn:'Có phải bạn bị ốm không? Bây giờ sức khỏe thế nào rồi?',
-     hint:'吃药了，现在……了。',
-     sample:'吃药了，现在好多了。',
-     sample_vn:'Uống thuốc rồi, bây giờ đỡ nhiều rồi.',
-     note:'是不是 là cách hỏi lịch sự, nhẹ nhàng hơn khi quan tâm đến ai đó, thay vì hỏi thẳng.'},
-    {q_zh:'你多高？你多大？',
-     q_vn:'Bạn cao bao nhiêu? Bạn bao nhiêu tuổi?',
-     hint:'我一米＿＿多。我＿＿多岁。',
-     sample:'我一米七多，我20多岁。',
-     sample_vn:'Tôi hơn 1 mét 7, tôi hơn 20 tuổi.',
-     note:'多 + Tính từ dùng để hỏi mức độ chưa biết; trả lời có thể dùng 多 (ôn Bài 1) để nói số ước lượng.'},
-    {q_zh:'你最近怎么样？是不是很忙？',
-     q_vn:'Dạo này bạn thế nào? Có phải rất bận không?',
-     hint:'我每天都很忙，也很累。因为……，所以……。',
-     sample:'我每天都很忙，也很累，因为我没有时间休息。',
-     sample_vn:'Ngày nào tôi cũng rất bận, cũng rất mệt, vì tôi không có thời gian nghỉ ngơi.',
-     note:'也 (ôn Bài 1) dùng để nối thêm một trạng thái tương tự — 很忙，也很累 = vừa bận vừa mệt.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 2. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học hỏi bạn về thói quen buổi sáng.',
+      q_zh: '你每天几点起床？起床以后你做什么？',
+      q_py: 'Nǐ měi tiān jǐ diǎn qǐchuáng? Qǐchuáng yǐhòu nǐ zuò shénme?',
+      q_vn: 'Mỗi ngày bạn thức dậy lúc mấy giờ? Dậy xong bạn làm gì?',
+      grammar: { label: '我每天 + giờ + 起床', any: ['每天', '每'] },
+      need: [
+        { label: 'Nói giờ thức dậy (六点 / 六点半…)', any: ['点', '半'] },
+        { label: 'Dùng 起床', any: ['起床', '起来'] },
+        { label: 'Nói việc làm sau khi dậy', any: ['跑步', '运动', '吃', '洗', '看', '去', '学', '上班', '上学', '喝'] }
+      ],
+      bonus: { label: 'Thêm 早上 / 以后 để nối câu', any: ['早上', '以后', '然后'] },
+      vocab: ['每', '早上', '起床', '跑步'],
+      minLen: 12,
+      sample: '我每天早上六点起床。起床以后我去跑步，再吃早饭。',
+      sample_py: 'Wǒ měi tiān zǎoshang liù diǎn qǐchuáng. Qǐchuáng yǐhòu wǒ qù pǎobù, zài chī zǎofàn.',
+      sample_vn: 'Mỗi ngày tôi dậy lúc 6 giờ sáng. Dậy xong tôi đi chạy bộ, rồi ăn sáng.',
+      tip: '每天 đứng trước động từ, thường đi với 都: 我每天都六点起床。'
+    },
+    {
+      situation: 'Bạn bè hỏi vì sao bạn ít khi ốm.',
+      q_zh: '你身体好吗？你喜欢什么运动？',
+      q_py: 'Nǐ shēntǐ hǎo ma? Nǐ xǐhuan shénme yùndòng?',
+      q_vn: 'Sức khoẻ bạn thế nào? Bạn thích môn thể thao nào?',
+      grammar: { label: '我很少生病 / 我不常生病', any: ['生病', '病'] },
+      need: [
+        { label: 'Trả lời có hay ít khi ốm', any: ['很少', '不常', '常常', '经常', '不生病', '没'] },
+        { label: 'Nói môn thể thao mình thích', any: ['跑步', '运动', '游泳', '足球', '篮球', '打球', '爬山', '骑车', '跳舞'] },
+        { label: 'Nói mức độ / tần suất (每天 / 每个星期…)', any: ['每天', '每', '星期', '天天', '常常', '经常'] }
+      ],
+      bonus: { label: 'Thêm ích lợi cho 身体', any: ['身体', '健康', '好'] },
+      vocab: ['生病', '身体', '跑步', '每'],
+      minLen: 12,
+      sample: '我很少生病。我每天早上都去跑步，运动对身体很好。',
+      sample_py: 'Wǒ hěn shǎo shēngbìng. Wǒ měi tiān zǎoshang dōu qù pǎobù, yùndòng duì shēntǐ hěn hǎo.',
+      sample_vn: 'Tôi rất ít khi ốm. Sáng nào tôi cũng đi chạy bộ, vận động rất tốt cho sức khoẻ.',
+      tip: '很少 + động từ = rất ít khi làm gì: 我很少生病、我很少喝咖啡.'
+    },
+    {
+      situation: 'Bạn kể cho người quen nghe về một người bạn của mình.',
+      q_zh: '你的朋友今年多大？他多高？',
+      q_py: 'Nǐ de péngyou jīnnián duō dà? Tā duō gāo?',
+      q_vn: 'Bạn của bạn năm nay bao nhiêu tuổi? Cao bao nhiêu?',
+      grammar: { label: '多大 / 多高 + 一米八几、20多岁', any: ['岁', '米'] },
+      need: [
+        { label: 'Nói tuổi (20岁 / 20多岁)', any: ['岁'] },
+        { label: 'Nói chiều cao (一米七 / 一米八几)', any: ['米'] },
+        { label: 'Nói người đó là ai (同学 / 朋友 / 哥哥…)', any: ['同学', '朋友', '哥哥', '姐姐', '弟弟', '妹妹', '同事'] }
+      ],
+      bonus: { label: 'Nói vì sao bạn biết rõ (他是我同学)', any: ['知道', '同学', '认识'] },
+      vocab: ['高', '米', '知道'],
+      minLen: 12,
+      sample: '我朋友今年20多岁，他一米八几。他是我的同学。',
+      sample_py: 'Wǒ péngyou jīnnián èrshí duō suì, tā yì mǐ bā jǐ. Tā shì wǒ de tóngxué.',
+      sample_vn: 'Bạn tôi năm nay hơn 20 tuổi, cậu ấy cao một mét tám mấy. Cậu ấy là bạn học của tôi.',
+      tip: 'Hỏi tuổi người lớn dùng 多大, hỏi chiều cao dùng 多高. 20多岁 = hơn 20 tuổi.'
+    },
+    {
+      situation: 'Đồng nghiệp hỏi thăm tuần này của bạn.',
+      q_zh: '你这个星期忙不忙？有时间休息吗？',
+      q_py: 'Nǐ zhège xīngqī máng bu máng? Yǒu shíjiān xiūxi ma?',
+      q_vn: 'Tuần này bạn có bận không? Có thời gian nghỉ ngơi không?',
+      grammar: { label: '很忙 / 没有时间休息', any: ['忙', '休息'] },
+      need: [
+        { label: 'Trả lời bận hay không bận', any: ['忙', '不忙', '很忙', '有点儿忙'] },
+        { label: 'Nói về thời gian nghỉ', any: ['时间', '休息', '星期', '周末'] },
+        { label: 'Nói cảm giác hoặc lý do (累 / 工作 / 学习)', any: ['累', '工作', '学习', '上班', '上课', '考试'] }
+      ],
+      bonus: { label: 'Thêm 每天 / 星期六 để nói rõ', any: ['每天', '星期六', '星期天', '周末'] },
+      vocab: ['忙', '时间', '休息', '累'],
+      minLen: 12,
+      sample: '这个星期我很忙，没有时间休息。我每天回来都很累。',
+      sample_py: 'Zhège xīngqī wǒ hěn máng, méiyǒu shíjiān xiūxi. Wǒ měi tiān huílai dōu hěn lèi.',
+      sample_vn: 'Tuần này tôi rất bận, không có thời gian nghỉ. Ngày nào về tôi cũng rất mệt.',
+      tip: 'Câu hỏi chính phản 忙不忙？ trả lời gọn: 很忙 hoặc 不忙.'
+    },
+    {
+      situation: 'Bạn đang nằm viện, bác sĩ vào hỏi thăm. Hãy đóng vai người bệnh trả lời.',
+      q_zh: '吃药了吗？现在身体怎么样？什么时候能出院？',
+      q_py: 'Chī yào le ma? Xiànzài shēntǐ zěnmeyàng? Shénme shíhou néng chūyuàn?',
+      q_vn: 'Uống thuốc chưa? Sức khoẻ bây giờ thế nào? Khi nào xuất viện được?',
+      grammar: { label: '吃药了 / 好多了 / 医生说…', any: ['吃', '好多了', '医生'] },
+      need: [
+        { label: 'Trả lời đã uống thuốc chưa', any: ['吃了', '吃药', '没吃', '药'] },
+        { label: 'Nói tình trạng sức khoẻ', any: ['好多了', '好一点', '身体', '还好', '不舒服', '好了'] },
+        { label: 'Nói thời gian xuất viện', any: ['出院', '星期', '天', '明天', '下个'] }
+      ],
+      bonus: { label: 'Nhắc lời bác sĩ (医生说…)', any: ['医生说', '大夫说'] },
+      vocab: ['药', '身体', '出院', '休息'],
+      minLen: 12,
+      sample: '吃了，现在身体好多了。医生说下个星期能出院。',
+      sample_py: 'Chī le, xiànzài shēntǐ hǎo duō le. Yīshēng shuō xià ge xīngqī néng chūyuàn.',
+      sample_vn: 'Uống rồi, giờ sức khoẻ đỡ nhiều rồi. Bác sĩ nói tuần sau xuất viện được.',
+      tip: '好多了 = đỡ hơn nhiều rồi, dùng khi sức khoẻ/tình hình tốt lên.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

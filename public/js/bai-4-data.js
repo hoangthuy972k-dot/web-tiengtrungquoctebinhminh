@@ -358,28 +358,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'生日快乐！这是送给你的礼物。',
-     q_vn:'Sinh nhật vui vẻ! Đây là quà tặng bạn.',
-     hint:'谢谢你，我很喜欢。',
-     sample:'谢谢你！我很喜欢这个礼物。',
-     sample_vn:'Cảm ơn bạn! Tôi rất thích món quà này.',
-     note:'给 sau 送 để chỉ người NHẬN quà: 送给你 = tặng cho bạn.'},
-    {q_zh:'你是什么时候开始踢足球的？',
-     q_vn:'Bạn bắt đầu đá bóng từ khi nào?',
-     hint:'我是＿＿岁的时候开始的，已经＿＿年了。',
-     sample:'我是8岁的时候开始的，已经十年了。',
-     sample_vn:'Tôi bắt đầu từ lúc 8 tuổi, đã mười năm rồi.',
-     note:'是……的 dùng khi hỏi/nói rõ THỜI ĐIỂM một việc ĐÃ xảy ra, không dùng cho việc chưa xảy ra.'},
-    {q_zh:'你现在的工作怎么样？是谁帮你介绍的？',
-     q_vn:'Công việc hiện tại của bạn thế nào? Ai đã giúp bạn giới thiệu vậy?',
-     hint:'这份工作是＿＿帮我介绍的，非常谢谢你！',
-     sample:'这份工作是你帮我介绍的，非常谢谢你！',
-     sample_vn:'Công việc này là do bạn giúp tôi giới thiệu, cảm ơn bạn nhiều lắm!',
-     note:'非常 nhấn mạnh cảm xúc mạnh hơn 很 — 非常谢谢你 = cảm ơn bạn rất nhiều.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học hỏi về sinh nhật của bạn.',
+      q_zh: '你的生日是什么时候？朋友送过你什么礼物？',
+      q_py: 'Nǐ de shēngrì shì shénme shíhou? Péngyou sòngguo nǐ shénme lǐwù?',
+      q_vn: 'Sinh nhật bạn là khi nào? Bạn bè từng tặng bạn quà gì?',
+      grammar: { label: '我的生日是 + ngày tháng + 是…送给我的', any: ['生日'] },
+      need: [
+        { label: 'Nói ngày sinh nhật (月 / 号)', any: ['月', '号', '日'] },
+        { label: 'Nói món quà', any: ['书', '手表', '手机', '衣服', '花', '蛋糕', '礼物', '东西'] },
+        { label: 'Dùng 送 hoặc 给', any: ['送', '给'] }
+      ],
+      bonus: { label: 'Thêm lời chúc 生日快乐', any: ['快乐', '高兴', '谢谢'] },
+      vocab: ['生日', '快乐', '给', '送'],
+      minLen: 12,
+      sample: '我的生日是九月六号。去年朋友送给我一本书，我非常喜欢。',
+      sample_py: 'Wǒ de shēngrì shì jiǔ yuè liù hào. Qùnián péngyou sòng gěi wǒ yì běn shū, wǒ fēicháng xǐhuan.',
+      sample_vn: 'Sinh nhật tôi là ngày 6 tháng 9. Năm ngoái bạn tặng tôi một quyển sách, tôi rất thích.',
+      tip: 'Ngày tháng nói từ lớn đến nhỏ: 九月六号; tặng ai cái gì: 送给我一本书.'
+    },
+    {
+      situation: 'Giáo viên hỏi bạn về quá trình học tiếng Trung.',
+      q_zh: '你是什么时候开始学汉语的？已经学了多长时间了？',
+      q_py: 'Nǐ shì shénme shíhou kāishǐ xué Hànyǔ de? Yǐjīng xuéle duō cháng shíjiān le?',
+      q_vn: 'Bạn bắt đầu học tiếng Trung từ khi nào? Đã học bao lâu rồi?',
+      grammar: { label: '我是…开始学的 + 已经学了…了', any: ['开始'] },
+      need: [
+        { label: 'Nói mốc bắt đầu (去年 / 2023年 / 十岁的时候)', any: ['年', '月', '岁', '去年', '时候'] },
+        { label: 'Dùng 已经', any: ['已经'] },
+        { label: 'Nói khoảng thời gian đã học', any: ['年', '月', '天', '多长时间', '小时'] }
+      ],
+      bonus: { label: 'Thêm cảm nhận (非常喜欢 / 有意思)', any: ['非常', '喜欢', '有意思', '难'] },
+      vocab: ['开始', '已经', '长', '非常'],
+      minLen: 14,
+      sample: '我是去年九月开始学汉语的，已经学了一年多了。我非常喜欢汉语。',
+      sample_py: 'Wǒ shì qùnián jiǔ yuè kāishǐ xué Hànyǔ de, yǐjīng xuéle yì nián duō le. Wǒ fēicháng xǐhuan Hànyǔ.',
+      sample_vn: 'Tôi bắt đầu học tiếng Trung từ tháng 9 năm ngoái, đã học hơn một năm rồi. Tôi rất thích tiếng Trung.',
+      tip: 'Nhấn mạnh thời gian của việc đã xảy ra: 是…的 — 我是去年开始学的.'
+    },
+    {
+      situation: 'Đồng nghiệp mới hỏi bạn làm ở đây bao lâu rồi.',
+      q_zh: '你在这里工作（学习）多长时间了？',
+      q_py: 'Nǐ zài zhèlǐ gōngzuò (xuéxí) duō cháng shíjiān le?',
+      q_vn: 'Bạn làm việc (học) ở đây bao lâu rồi?',
+      grammar: { label: '已经 + số + 年/月 + 了', any: ['已经', '了'] },
+      need: [
+        { label: 'Nói khoảng thời gian (两年多 / 三个月)', any: ['年', '月', '天', '星期'] },
+        { label: 'Dùng 工作 hoặc 学习', any: ['工作', '学习', '上班', '上课'] },
+        { label: 'Nói mốc bắt đầu (我是…来的)', any: ['来', '年', '月', '开始'] }
+      ],
+      bonus: { label: 'Nói thêm ai giới thiệu việc này (帮我介绍的)', any: ['介绍', '帮'] },
+      vocab: ['已经', '长', '帮', '介绍'],
+      minLen: 12,
+      sample: '已经两年多了，我是2023年来的。这个工作是我朋友帮我介绍的。',
+      sample_py: 'Yǐjīng liǎng nián duō le, wǒ shì èr líng èr sān nián lái de. Zhège gōngzuò shì wǒ péngyou bāng wǒ jièshào de.',
+      sample_vn: 'Đã hơn hai năm rồi, tôi đến từ năm 2023. Công việc này là bạn tôi giới thiệu giúp.',
+      tip: '多长时间 hỏi độ dài thời gian; 两年多了 = hơn hai năm rồi.'
+    },
+    {
+      situation: 'Có điện thoại gọi đến nhà lúc bạn đi vắng, người nhà hỏi bạn.',
+      q_zh: '早上有你一个电话，你知道电话是谁打的吗？',
+      q_py: 'Zǎoshang yǒu nǐ yí ge diànhuà, nǐ zhīdào diànhuà shì shéi dǎ de ma?',
+      q_vn: 'Sáng nay có điện thoại gọi cho bạn, bạn có biết ai gọi không?',
+      grammar: { label: '是…打的 / 是…接的', any: ['打', '接', '的'] },
+      need: [
+        { label: 'Trả lời biết hay không biết', any: ['知道', '不知道'] },
+        { label: 'Nói ai gọi hoặc ai nghe máy', any: ['朋友', '同学', '老师', '儿子', '女儿', '妈妈', '爸爸', '公司', '同事'] },
+        { label: 'Nói bạn sẽ làm gì (晚上我问一下)', any: ['问', '打', '晚上', '一下'] }
+      ],
+      bonus: { label: 'Thêm 已经 / 接', any: ['已经', '接'] },
+      vocab: ['给', '接', '晚上', '问'],
+      minLen: 12,
+      sample: '我不知道，是我儿子接的。晚上我问一下他。',
+      sample_py: 'Wǒ bù zhīdào, shì wǒ érzi jiē de. Wǎnshang wǒ wèn yíxià tā.',
+      sample_vn: 'Tôi không biết, con trai tôi nghe máy. Tối tôi hỏi lại cháu.',
+      tip: '接电话 = nghe máy, 打电话 = gọi điện. Nhấn mạnh ai làm: 是我儿子接的.'
+    },
+    {
+      situation: 'Bạn khoe món đồ mới với bạn cùng phòng.',
+      q_zh: '这个东西是谁给你的？是在哪儿买的？',
+      q_py: 'Zhège dōngxi shì shéi gěi nǐ de? Shì zài nǎr mǎi de?',
+      q_vn: 'Món này ai cho bạn vậy? Mua ở đâu thế?',
+      grammar: { label: '是…给我的 / 是在…买的', any: ['的'] },
+      need: [
+        { label: 'Nói người tặng', any: ['朋友', '同学', '妈妈', '爸爸', '哥哥', '姐姐', '老师', '自己'] },
+        { label: 'Nói nơi mua', any: ['商店', '网上', '北京', '这儿', '那儿', '超市', '学校'] },
+        { label: 'Dùng 给 hoặc 买', any: ['给', '买', '送'] }
+      ],
+      bonus: { label: 'Nói thêm dịp tặng (生日)', any: ['生日', '新年', '快乐'] },
+      vocab: ['给', '介绍', '生日'],
+      minLen: 12,
+      sample: '这是我朋友给我的生日礼物，是在商店买的。',
+      sample_py: 'Zhè shì wǒ péngyou gěi wǒ de shēngrì lǐwù, shì zài shāngdiàn mǎi de.',
+      sample_vn: 'Đây là quà sinh nhật bạn tôi tặng, mua ở cửa hàng.',
+      tip: 'Hỏi nơi chốn của việc đã xảy ra: 是在哪儿买的？ Trả lời: 是在…买的.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

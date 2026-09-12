@@ -288,28 +288,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'今天零下五度，外面很冷，我们要不要进屋？',
-     q_vn:'Hôm nay âm 5 độ, ngoài trời rất lạnh, chúng ta có nên vào nhà không?',
-     hint:'你穿得太少了，我们进屋吧。',
-     sample:'对啊，你穿得太少了，我们快进屋吧。',
-     sample_vn:'Đúng vậy, bạn mặc ít quá, chúng ta mau vào nhà đi.',
-     note:'Bổ ngữ trạng thái: Động từ (穿) + 得 + Tính từ (少) để nhận xét mức độ.'},
-    {q_zh:'马拉松比赛结束了吗？你家里谁跑得比较快？',
-     q_vn:'Cuộc thi marathon kết thúc chưa? Trong nhà bạn ai chạy nhanh hơn?',
-     hint:'＿＿跑得比我＿＿。',
-     sample:'妻子跑得比我快多了，她已经进终点了。',
-     sample_vn:'Vợ tôi chạy nhanh hơn tôi nhiều, cô ấy đã về đích rồi.',
-     note:'Kết hợp 比 với bổ ngữ trạng thái: V + 得 + 比 + B + Tính từ.'},
-    {q_zh:'周末有一个马拉松比赛，你知道吗？',
-     q_vn:'Cuối tuần có một giải chạy marathon, bạn biết không?',
-     hint:'我们一起去跑，好吗？',
-     sample:'知道，我们一起去跑，好吗？',
-     sample_vn:'Biết chứ, chúng ta cùng đi chạy nhé?',
-     note:'Ôn lại cấu trúc rủ rê ……好吗？ đã học ở Bài 8.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 12. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn cùng lớp hỏi về giờ giấc sinh hoạt của bạn.',
+      q_zh: '你每天睡得早吗？起得早不早？',
+      q_py: 'Nǐ měi tiān shuì de zǎo ma? Qǐ de zǎo bu zǎo?',
+      q_vn: 'Hằng ngày bạn ngủ sớm không? Dậy có sớm không?',
+      grammar: { label: '动词 + 得 + tính từ (睡得早 / 起得早)', any: ['得'] },
+      need: [
+        { label: 'Dùng 得 với 睡 hoặc 起', any: ['睡得', '起得', '得'] },
+        { label: 'Nói giờ cụ thể', any: ['点', '半'] },
+        { label: 'Dùng 早 hoặc 晚', any: ['早', '晚'] }
+      ],
+      bonus: { label: 'Thêm câu nói về sức khoẻ (早睡早起身体好)', any: ['身体', '好'] },
+      vocab: ['得', '近'],
+      minLen: 12,
+      sample: '我睡得很早，每天晚上十点就睡觉，早上六点多起床。早睡早起身体好。',
+      sample_py: 'Wǒ shuì de hěn zǎo, měi tiān wǎnshang shí diǎn jiù shuìjiào, zǎoshang liù diǎn duō qǐchuáng. Zǎo shuì zǎo qǐ shēntǐ hǎo.',
+      sample_vn: 'Tôi ngủ rất sớm, tối nào cũng 10 giờ là đi ngủ, sáng hơn 6 giờ dậy. Ngủ sớm dậy sớm thì khoẻ.',
+      tip: 'Bổ ngữ trạng thái: động từ + 得 + tính từ — 睡得早、吃得多、说得好.'
+    },
+    {
+      situation: 'Bạn được mời đến nhà bạn ăn cơm, chủ nhà mời thêm.',
+      q_zh: '再来点儿米饭吧，你吃得太少了。你做饭做得怎么样？',
+      q_py: 'Zài lái diǎnr mǐfàn ba, nǐ chī de tài shǎo le. Nǐ zuòfàn zuò de zěnmeyàng?',
+      q_vn: 'Ăn thêm chút cơm đi, bạn ăn ít quá. Bạn nấu ăn thế nào?',
+      grammar: { label: '我做饭做得… / …比我做得好', any: ['得'] },
+      need: [
+        { label: 'Dùng 得 nhận xét việc nấu ăn', any: ['做得', '得'] },
+        { label: 'Trả lời về việc ăn no hay ít', any: ['不少', '吃', '饱', '够', '谢谢'] },
+        { label: 'So sánh với người khác hoặc tự nhận xét', any: ['比', '不怎么样', '好', '不好'] }
+      ],
+      bonus: { label: 'Dùng 妻子 / 丈夫 / 妈妈 để so sánh', any: ['妻子', '丈夫', '妈妈', '爸爸'] },
+      vocab: ['得', '妻子'],
+      minLen: 12,
+      sample: '不少了，今天吃得很好，太谢谢你了。我做饭做得不怎么样，我妻子比我做得好。',
+      sample_py: 'Bù shǎo le, jīntiān chī de hěn hǎo, tài xièxie nǐ le. Wǒ zuòfàn zuò de bù zěnmeyàng, wǒ qīzi bǐ wǒ zuò de hǎo.',
+      sample_vn: 'Không ít đâu, hôm nay tôi ăn rất ngon, cảm ơn bạn nhiều. Tôi nấu ăn không giỏi lắm, vợ tôi nấu ngon hơn tôi.',
+      tip: 'Động từ có tân ngữ thì lặp lại động từ: 做饭做得好、说汉语说得好.'
+    },
+    {
+      situation: 'Trời trở lạnh, bạn gặp bạn ở cửa nhà.',
+      q_zh: '下雪了，今天真冷，有零下几度吧？你穿得多不多？',
+      q_py: 'Xià xuě le, jīntiān zhēn lěng, yǒu língxià jǐ dù ba? Nǐ chuān de duō bu duō?',
+      q_vn: 'Tuyết rơi rồi, hôm nay lạnh thật, chắc âm mấy độ nhỉ? Bạn mặc nhiều không?',
+      grammar: { label: '零下…度 + 你穿得太少了', any: ['度', '穿得', '得'] },
+      need: [
+        { label: 'Nói nhiệt độ (零下十度)', any: ['度', '零下', '零'] },
+        { label: 'Dùng 穿得 + 多/少', any: ['穿得', '穿', '得'] },
+        { label: 'Đề nghị vào nhà hoặc mặc thêm', any: ['进', '房间', '多穿', '衣服', '回'] }
+      ],
+      bonus: { label: 'Nói về 雪 hoặc 冷', any: ['雪', '冷'] },
+      vocab: ['雪', '零', '度', '穿', '进'],
+      minLen: 12,
+      sample: '有零下十度吧，真冷。你穿得太少了，我们进房间吧。',
+      sample_py: 'Yǒu língxià shí dù ba, zhēn lěng. Nǐ chuān de tài shǎo le, wǒmen jìn fángjiān ba.',
+      sample_vn: 'Chắc âm mười độ, lạnh thật. Bạn mặc ít quá, chúng ta vào phòng đi.',
+      tip: 'Nhiệt độ dưới 0 đọc là 零下 + số + 度: 零下十度.'
+    },
+    {
+      situation: 'Bạn kể chuyện em trai (hoặc bạn) muốn chuyển nhà cho gần công ty.',
+      q_zh: '你弟弟（朋友）住得离公司远吗？他想住在哪儿？',
+      q_py: 'Nǐ dìdi (péngyou) zhù de lí gōngsī yuǎn ma? Tā xiǎng zhù zài nǎr?',
+      q_vn: 'Em trai (bạn) của bạn ở cách công ty có xa không? Anh ấy muốn ở đâu?',
+      grammar: { label: '住得远 / 住得近一点儿', any: ['住得', '得'] },
+      need: [
+        { label: 'Dùng 住得 + 远/近', any: ['住得', '得', '远', '近'] },
+        { label: 'Dùng 离 để nói khoảng cách', any: ['离'] },
+        { label: 'Nói mong muốn (希望 / 想 + 住得近)', any: ['希望', '想', '找'] }
+      ],
+      bonus: { label: 'Nói cảm giác (很累 / 太远)', any: ['累', '太'] },
+      vocab: ['得', '近', '弟弟'],
+      minLen: 12,
+      sample: '他现在住得离公司很远，每天很累，所以他希望能住得近一点儿。',
+      sample_py: 'Tā xiànzài zhù de lí gōngsī hěn yuǎn, měi tiān hěn lèi, suǒyǐ tā xīwàng néng zhù de jìn yìdiǎnr.',
+      sample_vn: 'Giờ cậu ấy ở cách công ty rất xa, ngày nào cũng mệt, nên cậu ấy mong ở gần hơn một chút.',
+      tip: '住得近一点儿 = ở gần hơn chút; "一点儿" đặt sau tính từ.'
+    },
+    {
+      situation: 'Giáo viên hỏi bạn tự đánh giá tiếng Trung của mình.',
+      q_zh: '你汉语说得怎么样？写汉字写得快吗？',
+      q_py: 'Nǐ Hànyǔ shuō de zěnmeyàng? Xiě Hànzì xiě de kuài ma?',
+      q_vn: 'Tiếng Trung bạn nói thế nào? Viết chữ Hán có nhanh không?',
+      grammar: { label: '说得… / 写得…', any: ['得'] },
+      need: [
+        { label: 'Dùng 说得 + nhận xét', any: ['说得', '得'] },
+        { label: 'Dùng 写得 + nhận xét', any: ['写得', '写'] },
+        { label: 'Nói mức độ (不错 / 不太好 / 很慢)', any: ['不错', '好', '不太好', '慢', '快', '还可以'] }
+      ],
+      bonus: { label: 'So sánh với bạn học (比…)', any: ['比'] },
+      vocab: ['得'],
+      minLen: 12,
+      sample: '我汉语说得还可以，但是写汉字写得很慢，同学都比我写得快。',
+      sample_py: 'Wǒ Hànyǔ shuō de hái kěyǐ, dànshì xiě Hànzì xiě de hěn màn, tóngxué dōu bǐ wǒ xiě de kuài.',
+      sample_vn: 'Tiếng Trung tôi nói tạm được, nhưng viết chữ Hán rất chậm, bạn học đều viết nhanh hơn tôi.',
+      tip: 'So sánh có bổ ngữ: A 比 B + động từ + 得 + tính từ — 他比我写得快.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

@@ -332,28 +332,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'那个新来的同事叫什么名字？他是什么时候来的？',
-     q_vn:'Đồng nghiệp mới đó tên gì? Anh ấy đến khi nào vậy?',
-     hint:'他姓＿＿，是去年来的。他比我大/小＿＿岁。',
-     sample:'他姓王，是去年来的，他比我大两岁。',
-     sample_vn:'Anh ấy họ Vương, đến từ năm ngoái. Anh ấy lớn hơn tôi hai tuổi.',
-     note:'比 dùng để so sánh tuổi tác: A + 比 + B + 大/小 + số tuổi.'},
-    {q_zh:'你觉得今天食堂的菜怎么样？',
-     q_vn:'Bạn thấy món ăn căng tin hôm nay thế nào?',
-     hint:'今天的菜比昨天＿＿。',
-     sample:'今天的菜比昨天便宜，我们多吃点儿吧。',
-     sample_vn:'Món hôm nay rẻ hơn hôm qua, chúng ta ăn nhiều một chút đi.',
-     note:'比 cũng dùng để so sánh giá cả, chất lượng đồ vật.'},
-    {q_zh:'周末你有空吗？',
-     q_vn:'Cuối tuần bạn có rảnh không?',
-     hint:'我们一起去＿＿吧！',
-     sample:'有空，我们一起去唱歌吧！',
-     sample_vn:'Có rảnh, chúng ta cùng đi hát đi!',
-     note:'Ôn lại cấu trúc rủ rê 一起……吧 đã gặp ở các bài trước.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 11. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học hỏi về anh chị em của bạn.',
+      q_zh: '你有哥哥吗？他比你大几岁？',
+      q_py: 'Nǐ yǒu gēge ma? Tā bǐ nǐ dà jǐ suì?',
+      q_vn: 'Bạn có anh trai không? Hơn bạn mấy tuổi?',
+      grammar: { label: 'A 比 B 大/小 + số + 岁', any: ['比'] },
+      need: [
+        { label: 'Dùng 比 để so sánh', any: ['比'] },
+        { label: 'Nói hơn kém mấy tuổi', any: ['岁'] },
+        { label: 'Nói người đó là ai', any: ['哥哥', '姐姐', '弟弟', '妹妹', '没有'] }
+      ],
+      bonus: { label: 'Nói thêm tuổi cụ thể (他25岁)', any: ['岁', '今年'] },
+      vocab: ['比', '哥哥', '孩子'],
+      minLen: 10,
+      sample: '我有一个哥哥，他今年25岁，比我大三岁。',
+      sample_py: 'Wǒ yǒu yí ge gēge, tā jīnnián èrshíwǔ suì, bǐ wǒ dà sān suì.',
+      sample_vn: 'Tôi có một anh trai, năm nay anh 25 tuổi, hơn tôi ba tuổi.',
+      tip: 'Mức chênh lệch đặt sau tính từ: 比我大三岁, không nói 比我三岁大.'
+    },
+    {
+      situation: 'Ở chợ, bạn hỏi giá dưa hấu hôm nay.',
+      q_zh: '今天的西瓜怎么卖？比昨天便宜吗？',
+      q_py: 'Jīntiān de xīguā zěnme mài? Bǐ zuótiān piányi ma?',
+      q_vn: 'Dưa hấu hôm nay bán thế nào? Có rẻ hơn hôm qua không?',
+      grammar: { label: '…比昨天便宜 + …一斤', any: ['比'] },
+      need: [
+        { label: 'Nói giá (块 / 斤)', any: ['块', '斤', '钱'] },
+        { label: 'Dùng 比 so sánh với hôm qua', any: ['比'] },
+        { label: 'Dùng 便宜 hoặc 贵', any: ['便宜', '贵'] }
+      ],
+      bonus: { label: 'Mời khách mua thêm (您来点儿吧)', any: ['来点儿', '吧', '买'] },
+      vocab: ['比', '便宜'],
+      minLen: 10,
+      sample: '三块五一斤，比昨天便宜。苹果也比昨天便宜一些，您来点儿吧。',
+      sample_py: 'Sān kuài wǔ yì jīn, bǐ zuótiān piányi. Píngguǒ yě bǐ zuótiān piányi yìxiē, nín lái diǎnr ba.',
+      sample_vn: 'Ba tệ rưỡi một cân, rẻ hơn hôm qua. Táo cũng rẻ hơn hôm qua một chút, ông/bà mua chút nhé.',
+      tip: '便宜一些 / 便宜一点儿 = rẻ hơn một chút, đặt sau tính từ.'
+    },
+    {
+      situation: 'Bạn xem ảnh chụp chung và giới thiệu từng người.',
+      q_zh: '照片里左边那个人是谁？右边的呢？',
+      q_py: 'Zhàopiàn lǐ zuǒbian nàge rén shì shéi? Yòubian de ne?',
+      q_vn: 'Trong ảnh người bên trái là ai? Còn người bên phải?',
+      grammar: { label: '左边那个 + động từ + 的是… / 右边…的是…', any: ['的'] },
+      need: [
+        { label: 'Dùng 左边 và 右边', any: ['左边', '右边'] },
+        { label: 'Tả người bằng động từ + 的 (看报纸的 / 写字的)', any: ['看', '写', '说', '唱', '笑', '坐', '站'] },
+        { label: 'Nói quan hệ (姐姐 / 哥哥 / 朋友)', any: ['姐姐', '哥哥', '弟弟', '妹妹', '朋友', '同学', '老师', '爸爸', '妈妈'] }
+      ],
+      bonus: { label: 'Nói thêm tuổi hoặc so sánh (比我大)', any: ['比', '岁'] },
+      vocab: ['右边', '男', '女', '孩子'],
+      minLen: 14,
+      sample: '左边那个看报纸的女孩子是我姐姐，右边写字的那个人是我哥哥。',
+      sample_py: 'Zuǒbian nàge kàn bàozhǐ de nǚháizi shì wǒ jiějie, yòubian xiě zì de nàge rén shì wǒ gēge.',
+      sample_vn: 'Cô gái đang đọc báo bên trái là chị tôi, người đang viết chữ bên phải là anh tôi.',
+      tip: 'Cụm "động từ + 的" dùng để tả người: 看报纸的（人）= người đang đọc báo.'
+    },
+    {
+      situation: 'Bạn giới thiệu giáo viên tiếng Trung của mình cho bạn mới.',
+      q_zh: '前面说话的那个人是你的汉语老师吗？他姓什么？多大？',
+      q_py: 'Qiánmiàn shuōhuà de nàge rén shì nǐ de Hànyǔ lǎoshī ma? Tā xìng shénme? Duō dà?',
+      q_vn: 'Người đang nói chuyện phía trước là giáo viên tiếng Trung của bạn à? Thầy họ gì? Bao nhiêu tuổi?',
+      grammar: { label: '他姓… + 他比…小/大…岁', any: ['姓'] },
+      need: [
+        { label: 'Dùng 姓 để nói họ', any: ['姓'] },
+        { label: 'Nói tuổi', any: ['岁'] },
+        { label: 'Nói thêm mốc thời gian thầy/cô đến dạy (去年 / 今年)', any: ['去年', '今年', '上个', '来'] }
+      ],
+      bonus: { label: 'Dùng 比 so sánh với giáo viên khác', any: ['比'] },
+      vocab: ['说话', '可能', '姓', '去年'],
+      minLen: 12,
+      sample: '是，他是去年来的，他姓王，28岁，比我们的老师小两岁。',
+      sample_py: 'Shì, tā shì qùnián lái de, tā xìng Wáng, èrshíbā suì, bǐ wǒmen de lǎoshī xiǎo liǎng suì.',
+      sample_vn: 'Đúng, thầy đến từ năm ngoái, thầy họ Vương, 28 tuổi, kém giáo viên của chúng tôi hai tuổi.',
+      tip: '姓 dùng cho họ (他姓王), 叫 dùng cho tên đầy đủ (他叫王方).'
+    },
+    {
+      situation: 'Bạn học tò mò hỏi về người đi hát cùng bạn hôm qua.',
+      q_zh: '昨天和你一起唱歌的人是谁？是不是男朋友？',
+      q_py: 'Zuótiān hé nǐ yìqǐ chànggē de rén shì shéi? Shì bu shì nánpéngyou?',
+      q_vn: 'Người đi hát cùng bạn hôm qua là ai? Có phải bạn trai không?',
+      grammar: { label: '不是…，是…介绍的 + 第一次见', any: ['不是', '介绍'] },
+      need: [
+        { label: 'Trả lời phải hay không phải', any: ['是', '不是'] },
+        { label: 'Nói người đó là ai (朋友 / 同学)', any: ['朋友', '同学', '同事', '哥哥', '姐姐'] },
+        { label: 'Dùng 唱歌 hoặc 一起', any: ['唱歌', '一起'] }
+      ],
+      bonus: { label: 'Nói thêm ai giới thiệu / lần đầu gặp', any: ['介绍', '第一次'] },
+      vocab: ['唱歌', '男', '女'],
+      minLen: 12,
+      sample: '不是男朋友，是一个朋友，我们一起唱歌。我同学介绍的，昨天第一次见。',
+      sample_py: 'Bú shì nánpéngyou, shì yí ge péngyou, wǒmen yìqǐ chànggē. Wǒ tóngxué jièshào de, zuótiān dì-yī cì jiàn.',
+      sample_vn: 'Không phải bạn trai, là một người bạn, chúng tôi hát cùng nhau. Bạn học tôi giới thiệu, hôm qua mới gặp lần đầu.',
+      tip: 'Nhấn mạnh bằng cách lặp phủ định rồi khẳng định: 不是…，是….'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

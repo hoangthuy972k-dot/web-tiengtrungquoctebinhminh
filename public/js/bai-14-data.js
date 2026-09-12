@@ -282,28 +282,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'你吃过四川菜吗？',
-     q_vn:'Bạn đã từng ăn món Tứ Xuyên chưa?',
-     hint:'虽然很辣，但是很有意思。',
-     sample:'吃过，虽然很辣，但是很有意思，你一定要尝尝。',
-     sample_vn:'Đã ăn rồi, mặc dù cay nhưng rất thú vị, bạn nhất định phải thử.',
-     note:'虽然……但是……dùng để nêu hai vế tương phản (cay nhưng vẫn ngon/thú vị).'},
-    {q_zh:'上次我们去的那家餐厅，你还记得吗？',
-     q_vn:'Quán ăn lần trước chúng ta đi ấy, bạn còn nhớ không?',
-     hint:'我们上次去吃了一次，这次要不要再去吃一次？',
-     sample:'记得，我们上次去吃了一次，这次要不要再去吃一次？',
-     sample_vn:'Nhớ chứ, lần trước chúng ta đã đi ăn một lần, lần này có muốn đi ăn lại không?',
-     note:'次 là lượng từ đếm số LẦN, đứng sau động từ.'},
-    {q_zh:'今天天气怎么样？你平时喜欢做什么？',
-     q_vn:'Hôm nay thời tiết thế nào? Bạn thường thích làm gì?',
-     hint:'今天天气很晴，我们去公园玩儿吧。',
-     sample:'今天天气很晴，我们去公园玩儿吧，我学了大概一百个小时汉语了。',
-     sample_vn:'Hôm nay trời quang đãng, chúng ta đi công viên chơi đi. Tôi đã học tiếng Trung được khoảng một trăm tiếng rồi.',
-     note:'百 (trăm) dùng để nói số lượng lớn, ví dụ số giờ học.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 14. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học rủ bạn đi xem lại một bộ phim.',
+      q_zh: '你看过那个电影吗？我们今天晚上再去看一次，怎么样？',
+      q_py: 'Nǐ kànguo nàge diànyǐng ma? Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?',
+      q_vn: 'Bạn xem phim đó chưa? Tối nay chúng mình đi xem lại một lần nữa nhé?',
+      grammar: { label: '看过 + 再看一次', any: ['过', '次'] },
+      need: [
+        { label: 'Dùng 过 để nói đã từng', any: ['过'] },
+        { label: 'Dùng 次 để nói số lần', any: ['次'] },
+        { label: 'Nhận xét bộ phim', any: ['有意思', '好看', '不错', '没意思', '喜欢'] }
+      ],
+      bonus: { label: 'Dùng 但是 để nêu điều kiện', any: ['但是', '可以'] },
+      vocab: ['过', '有意思', '次', '但是'],
+      minLen: 12,
+      sample: '看过，很有意思。可以，我们再去看一次，但是我女朋友也想一起去。',
+      sample_py: 'Kànguo, hěn yǒuyìsi. Kěyǐ, wǒmen zài qù kàn yí cì, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.',
+      sample_vn: 'Xem rồi, rất hay. Được thôi, mình đi xem lại một lần nữa, nhưng bạn gái tôi cũng muốn đi cùng.',
+      tip: '过 đứng ngay sau động từ chỉ kinh nghiệm: 看过、去过、吃过.'
+    },
+    {
+      situation: 'Bạn học hỏi về chuyến đi Trung Quốc của bạn.',
+      q_zh: '听说你去过中国，还想再去吗？你去过北京吗？',
+      q_py: 'Tīngshuō nǐ qùguo Zhōngguó, hái xiǎng zài qù ma? Nǐ qùguo Běijīng ma?',
+      q_vn: 'Nghe nói bạn từng đi Trung Quốc, còn muốn đi nữa không? Bạn đến Bắc Kinh chưa?',
+      grammar: { label: '我去过…，但是还没去过…', any: ['过'] },
+      need: [
+        { label: 'Dùng 过 nói đã từng đi', any: ['过'] },
+        { label: 'Nói nơi đã đi hoặc chưa đi', any: ['北京', '上海', '中国', '广州', '没去过', '地方'] },
+        { label: 'Nói số lần hoặc dự định (一次 / 下次)', any: ['次', '下次', '想', '一定'] }
+      ],
+      bonus: { label: 'Dùng 虽然…但是…', any: ['虽然', '但是'] },
+      vocab: ['过', '次', '虽然', '但是'],
+      minLen: 14,
+      sample: '我去过一次，但是还没去过北京。虽然北京很远，但是下次有时间我一定去。',
+      sample_py: 'Wǒ qùguo yí cì, dànshì hái méi qùguo Běijīng. Suīrán Běijīng hěn yuǎn, dànshì xià cì yǒu shíjiān wǒ yídìng qù.',
+      sample_vn: 'Tôi đi một lần rồi, nhưng chưa đến Bắc Kinh. Tuy Bắc Kinh rất xa nhưng lần sau có thời gian tôi nhất định sẽ đi.',
+      tip: 'Phủ định của 过 là 没…过: 没去过、没看过.'
+    },
+    {
+      situation: 'Chiều thứ Sáu, bạn cùng phòng hỏi kế hoạch cuối tuần.',
+      q_zh: '周末你想做什么？天气怎么样？',
+      q_py: 'Zhōumò nǐ xiǎng zuò shénme? Tiānqì zěnmeyàng?',
+      q_vn: 'Cuối tuần bạn muốn làm gì? Thời tiết thế nào?',
+      grammar: { label: '我想去…玩儿 + 虽然…但是…', any: ['想', '玩'] },
+      need: [
+        { label: 'Nói việc định làm', any: ['玩', '公园', '看', '去', '学习', '休息', '运动', '吃'] },
+        { label: 'Nói về thời tiết (晴 / 阴 / 下雨)', any: ['晴', '阴', '下雨', '天气', '冷', '热'] },
+        { label: 'Dùng 周末 hoặc ngày cụ thể', any: ['周末', '星期', '明天'] }
+      ],
+      bonus: { label: 'Dùng 但是 nêu trở ngại', any: ['但是', '虽然'] },
+      vocab: ['玩儿', '晴', '但是'],
+      minLen: 12,
+      sample: '这个周末我想去公园玩儿，今天天气很晴。虽然有点儿热，但是我还是想出去走走。',
+      sample_py: 'Zhè ge zhōumò wǒ xiǎng qù gōngyuán wánr, jīntiān tiānqì hěn qíng. Suīrán yǒudiǎnr rè, dànshì wǒ háishi xiǎng chūqu zǒuzou.',
+      sample_vn: 'Cuối tuần này tôi muốn ra công viên chơi, hôm nay trời nắng đẹp. Tuy hơi nóng nhưng tôi vẫn muốn ra ngoài dạo.',
+      tip: '玩儿 mang nghĩa "chơi, đi chơi": 去公园玩儿、来我家玩儿.'
+    },
+    {
+      situation: 'Giáo viên hỏi bạn thấy chữ Hán khó hay dễ.',
+      q_zh: '你学了几年汉语了？你觉得汉字难不难？',
+      q_py: 'Nǐ xuéle jǐ nián Hànyǔ le? Nǐ juéde Hànzì nán bu nán?',
+      q_vn: 'Bạn học tiếng Trung mấy năm rồi? Bạn thấy chữ Hán khó không?',
+      grammar: { label: '虽然汉字很难，但是我很喜欢…', any: ['虽然', '但是'] },
+      need: [
+        { label: 'Dùng cặp 虽然…但是…', any: ['虽然', '但是'] },
+        { label: 'Nói thời gian đã học', any: ['年', '月', '小时', '百'] },
+        { label: 'Nhận xét về chữ Hán', any: ['难', '有意思', '喜欢', '不难', '好玩'] }
+      ],
+      bonus: { label: 'Dùng 百 để nói số giờ đã học', any: ['百'] },
+      vocab: ['虽然', '但是', '有意思', '百'],
+      minLen: 14,
+      sample: '我学了大概一百个小时了。虽然汉字很难，但是我很喜欢写汉字，写汉字很有意思。',
+      sample_py: 'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le. Suīrán Hànzì hěn nán, dànshì wǒ hěn xǐhuan xiě Hànzì, xiě Hànzì hěn yǒuyìsi.',
+      sample_vn: 'Tôi học khoảng một trăm giờ rồi. Tuy chữ Hán rất khó nhưng tôi rất thích viết chữ Hán, viết chữ Hán rất thú vị.',
+      tip: 'Tiếng Trung dùng đủ cặp 虽然…但是…, không bỏ vế sau như tiếng Việt.'
+    },
+    {
+      situation: 'Bạn được hỏi về món ăn Trung Quốc.',
+      q_zh: '你吃过中国菜吗？你觉得怎么样？',
+      q_py: 'Nǐ chīguo Zhōngguó cài ma? Nǐ juéde zěnmeyàng?',
+      q_vn: 'Bạn từng ăn món Trung Quốc chưa? Bạn thấy thế nào?',
+      grammar: { label: '我吃过…次 + 虽然…但是…', any: ['过'] },
+      need: [
+        { label: 'Dùng 过 nói đã từng ăn', any: ['过', '没吃过'] },
+        { label: 'Nói tên món (羊肉 / 面条 / 米饭)', any: ['羊肉', '面条', '鱼', '米饭', '菜', '鸡蛋', '牛奶'] },
+        { label: 'Nhận xét món ăn', any: ['好吃', '不错', '喜欢', '有意思'] }
+      ],
+      bonus: { label: 'Nói số lần bằng 次', any: ['次'] },
+      vocab: ['过', '次', '但是'],
+      minLen: 12,
+      sample: '吃过，我吃过两三次。虽然我不会做，但是很好吃，我最喜欢吃面条。',
+      sample_py: 'Chīguo, wǒ chīguo liǎng sān cì. Suīrán wǒ bú huì zuò, dànshì hěn hǎochī, wǒ zuì xǐhuan chī miàntiáo.',
+      sample_vn: 'Ăn rồi, tôi ăn hai ba lần. Tuy tôi không biết nấu nhưng rất ngon, tôi thích ăn mì nhất.',
+      tip: 'Số lần đặt sau động từ: 吃过两次、看过一次、去过三次.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

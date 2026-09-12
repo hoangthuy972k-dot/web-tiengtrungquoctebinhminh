@@ -324,28 +324,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'你怎么才能让我在机场一眼就认出你？',
-     q_vn:'Làm sao để tôi có thể nhận ra bạn ngay ở sân bay?',
-     hint:'我在机场门口等你，我手里拿着＿＿。',
-     sample:'我在机场门口等你，我手里拿着一本红色的书。',
-     sample_vn:'Tôi đợi bạn ở cửa sân bay, tay tôi cầm một quyển sách màu đỏ.',
-     note:'着 dùng để miêu tả trạng thái đang duy trì (tay đang cầm gì đó).'},
-    {q_zh:'你看，前面那个人，你认识吗？',
-     q_vn:'Bạn xem, người phía trước kia, bạn có quen không?',
-     hint:'她不是＿＿吗？',
-     sample:'她不是你妹妹吗？怎么变化这么大！',
-     sample_vn:'Cô ấy không phải em gái bạn à? Sao thay đổi nhiều thế!',
-     note:'不是……吗？dùng để xác nhận lại thông tin, tỏ ý ngạc nhiên.'},
-    {q_zh:'请问，从这儿去宾馆怎么走？',
-     q_vn:'Xin hỏi, từ đây đến khách sạn đi thế nào?',
-     hint:'从这儿一直往前走，到了路口往＿＿走。',
-     sample:'从这儿一直往前走，到了路口往右走，宾馆就在那儿。',
-     sample_vn:'Từ đây đi thẳng về phía trước, đến ngã tư thì rẽ phải, khách sạn ở đó.',
-     note:'往 + hướng + 走 dùng để chỉ đường từng chặng một.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 13. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn đến văn phòng tìm người, cửa đang mở.',
+      q_zh: '门开着呢，请进。请问张先生在吗？',
+      q_py: 'Mén kāizhe ne, qǐng jìn. Qǐngwèn Zhāng xiānsheng zài ma?',
+      q_vn: 'Cửa đang mở, mời vào. Cho hỏi anh Trương có đây không?',
+      grammar: { label: '…着呢 (门开着呢) + 他出去了', any: ['着'] },
+      need: [
+        { label: 'Dùng 着 để nói trạng thái', any: ['着'] },
+        { label: 'Trả lời người đó có ở đây không', any: ['在', '不在', '出去', '回来'] },
+        { label: 'Hẹn lúc khác hoặc hướng dẫn', any: ['下午', '明天', '再来', '等', '一会儿'] }
+      ],
+      bonus: { label: 'Nói lời lịch sự (谢谢 / 好的)', any: ['谢谢', '好的', '请'] },
+      vocab: ['着', '一直'],
+      minLen: 10,
+      sample: '他出去了，你下午再来吧。门开着呢，你可以在里面等一下。',
+      sample_py: 'Tā chūqu le, nǐ xiàwǔ zài lái ba. Mén kāizhe ne, nǐ kěyǐ zài lǐmiàn děng yíxià.',
+      sample_vn: 'Anh ấy ra ngoài rồi, chiều bạn quay lại nhé. Cửa đang mở, bạn có thể vào trong đợi một lát.',
+      tip: '着 gắn sau động từ để chỉ trạng thái đang duy trì: 开着、拿着、坐着.'
+    },
+    {
+      situation: 'Trong văn phòng, bạn hỏi về hai người đồng nghiệp.',
+      q_zh: '那个正在说话的女孩子是谁？那个手里拿着铅笔的呢？',
+      q_py: 'Nàge zhèngzài shuōhuà de nǚháizi shì shéi? Nàge shǒu lǐ názhe qiānbǐ de ne?',
+      q_vn: 'Cô gái đang nói chuyện kia là ai? Còn người cầm bút chì trong tay?',
+      grammar: { label: '…拿着… / 正在…的', any: ['着'] },
+      need: [
+        { label: 'Dùng 着 (拿着 / 看着…)', any: ['着'] },
+        { label: 'Nói tên hoặc họ của người đó', any: ['姓', '叫', '名字'] },
+        { label: 'Nói bạn có quen hay không', any: ['认识', '不认识', '知道', '不知道'] }
+      ],
+      bonus: { label: 'Nói mối quan hệ (她姐姐是我同学)', any: ['同学', '朋友', '同事', '姐姐', '哥哥'] },
+      vocab: ['着', '手', '拿', '铅笔'],
+      minLen: 12,
+      sample: '我知道她的名字，她姓杨，叫杨笑笑。手里拿着铅笔的那个我不认识。',
+      sample_py: 'Wǒ zhīdào tā de míngzi, tā xìng Yáng, jiào Yáng Xiàoxiao. Shǒu lǐ názhe qiānbǐ de nàge wǒ bú rènshi.',
+      sample_vn: 'Tôi biết tên cô ấy, cô ấy họ Dương, tên Dương Tiếu Tiếu. Người cầm bút chì kia tôi không quen.',
+      tip: '手里拿着… = trong tay đang cầm…; cụm này đặt trước 的 để tả người.'
+    },
+    {
+      situation: 'Bạn học hỏi về người bạn thân của bạn trong lớp.',
+      q_zh: '你们班那个女孩子长什么样？',
+      q_py: 'Nǐmen bān nàge nǚháizi zhǎng shénme yàng?',
+      q_vn: 'Cô gái đó trong lớp bạn trông thế nào?',
+      grammar: { label: '长着 + 特点 (长着两个大眼睛)', any: ['长着', '着'] },
+      need: [
+        { label: 'Dùng 长着 để tả ngoại hình', any: ['长着', '着'] },
+        { label: 'Tả một đặc điểm (眼睛 / 头发 / 个子)', any: ['眼睛', '头发', '脸', '个子', '高', '大'] },
+        { label: 'Nói tính cách hoặc thói quen (爱笑)', any: ['笑', '爱', '喜欢'] }
+      ],
+      bonus: { label: 'Nói lớp hoặc quan hệ (我们班 / 同学)', any: ['班', '同学', '朋友'] },
+      vocab: ['长', '笑', '班'],
+      minLen: 12,
+      sample: '她是我们班那个长着两个大眼睛、非常爱笑的女孩子。',
+      sample_py: 'Tā shì wǒmen bān nàge zhǎngzhe liǎng ge dà yǎnjing, fēicháng ài xiào de nǚháizi.',
+      sample_vn: 'Cô ấy là cô gái có đôi mắt to, rất hay cười trong lớp tôi.',
+      tip: '长 ở đây đọc là zhǎng (mọc, trông), khác với 长 cháng (dài).'
+    },
+    {
+      situation: 'Một người khách hỏi đường đến khách sạn mới.',
+      q_zh: '请问这儿离新宾馆远吗？你能告诉我怎么走吗？',
+      q_py: 'Qǐngwèn zhèr lí xīn bīnguǎn yuǎn ma? Nǐ néng gàosu wǒ zěnme zǒu ma?',
+      q_vn: 'Cho hỏi từ đây đến khách sạn mới có xa không? Bạn chỉ giúp tôi đường đi được không?',
+      grammar: { label: '从这儿一直往前走，到…再往右（左）走', any: ['一直', '往'] },
+      need: [
+        { label: 'Dùng 一直往前走', any: ['一直', '往前'] },
+        { label: 'Dùng 往右 / 往左 tại ngã tư', any: ['往右', '往左', '右', '左'] },
+        { label: 'Nói khoảng cách hoặc thời gian đi', any: ['远', '不远', '分钟', '就到'] }
+      ],
+      bonus: { label: 'Dùng 路口 để nói ngã tư', any: ['路口'] },
+      vocab: ['宾馆', '一直', '往', '路口'],
+      minLen: 14,
+      sample: '不远，走路二十分钟就到。从这儿一直往前走，到了前面的路口再往右走。',
+      sample_py: 'Bù yuǎn, zǒulù èrshí fēnzhōng jiù dào. Cóng zhèr yìzhí wǎng qián zǒu, dàole qiánmiàn de lùkǒu zài wǎng yòu zǒu.',
+      sample_vn: 'Không xa, đi bộ hai mươi phút là tới. Từ đây đi thẳng, đến ngã tư phía trước thì rẽ phải.',
+      tip: '往 + hướng + 走: 往前走、往右走、往左走.'
+    },
+    {
+      situation: 'Bạn mô tả căn phòng mình đang ngồi cho bạn qua điện thoại.',
+      q_zh: '你现在的房间怎么样？门开着吗？桌子上放着什么？',
+      q_py: 'Nǐ xiànzài de fángjiān zěnmeyàng? Mén kāizhe ma? Zhuōzi shang fàngzhe shénme?',
+      q_vn: 'Phòng bạn đang ngồi thế nào? Cửa có đang mở không? Trên bàn đặt gì?',
+      grammar: { label: '门开着 / 关着，桌子上放着…', any: ['着'] },
+      need: [
+        { label: 'Dùng 着 ít nhất một lần', any: ['着'] },
+        { label: 'Nói về cửa (门开着 / 门关着)', any: ['门', '开', '关'] },
+        { label: 'Nói đồ vật trong phòng và vị trí', any: ['桌子', '上', '里', '旁边', '电脑', '书', '铅笔', '手机'] }
+      ],
+      bonus: { label: 'Nói thêm ai đang ở trong phòng', any: ['我', '朋友', '同学', '一个人'] },
+      vocab: ['着', '拿', '手'],
+      minLen: 12,
+      sample: '门开着呢。桌子上放着我的电脑和一支铅笔。',
+      sample_py: 'Mén kāizhe ne. Zhuōzi shang fàngzhe wǒ de diànnǎo hé yì zhī qiānbǐ.',
+      sample_vn: 'Cửa đang mở. Trên bàn đặt máy tính của tôi và một cây bút chì.',
+      tip: 'Nơi chốn + động từ + 着 + đồ vật: 桌子上放着一本书.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

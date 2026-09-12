@@ -288,28 +288,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'你知道公司新年晚会的事吗？',
-     q_vn:'Bạn có biết chuyện tiệc tất niên của công ty không?',
-     hint:'新年晚会就要开始了，你的票买好了吗？',
-     sample:'新年晚会就要开始了，你的票买好了吗？',
-     sample_vn:'Tiệc tất niên sắp bắt đầu rồi, vé của bạn mua xong chưa?',
-     note:'就要……了 diễn tả việc sắp xảy ra trong tương lai gần.'},
-    {q_zh:'今天天气怎么样？',
-     q_vn:'Hôm nay thời tiết thế nào?',
-     hint:'今天阴，比昨天更＿＿。',
-     sample:'今天阴，比昨天更冷。',
-     sample_vn:'Hôm nay âm u, lạnh hơn hôm qua.',
-     note:'更 dùng để nhấn mạnh mức độ tăng thêm khi so sánh hai đối tượng.'},
-    {q_zh:'你妹妹去哪儿了？',
-     q_vn:'Em gái bạn đi đâu rồi?',
-     hint:'我妹妹坐公共汽车去火车站接＿＿了。',
-     sample:'我妹妹坐公共汽车去火车站接同事了。',
-     sample_vn:'Em gái tôi đi xe buýt đến ga tàu đón đồng nghiệp rồi.',
-     note:'Ôn lại cấu trúc V+着 và trạng ngữ chỉ phương tiện di chuyển (坐公共汽车) đã học ở các bài trước.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 15. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Sắp Tết, bạn học hỏi kế hoạch của bạn.',
+      q_zh: '新年就要到了，你有什么计划？',
+      q_py: 'Xīnnián jiù yào dào le, nǐ yǒu shénme jìhuà?',
+      q_vn: 'Năm mới sắp đến rồi, bạn có kế hoạch gì?',
+      grammar: { label: '就要…了 / 快要…了', any: ['就要', '快要', '要'] },
+      need: [
+        { label: 'Dùng 就要…了 hoặc 快要…了', any: ['就要', '快要', '快', '要'] },
+        { label: 'Nói dự định (回家 / 旅游 / 过年)', any: ['回家', '过年', '旅游', '休息', '玩', '看'] },
+        { label: 'Nói về 新年 hoặc thời gian', any: ['新年', '年', '星期', '月'] }
+      ],
+      bonus: { label: 'Nói thêm việc đã chuẩn bị (票买好了)', any: ['票', '买好', '准备'] },
+      vocab: ['新年', '票', '大家'],
+      minLen: 12,
+      sample: '新年就要到了，我要回家过年，票已经买好了。',
+      sample_py: 'Xīnnián jiù yào dào le, wǒ yào huí jiā guònián, piào yǐjīng mǎihǎo le.',
+      sample_vn: 'Năm mới sắp đến rồi, tôi sẽ về nhà ăn Tết, vé đã mua xong rồi.',
+      tip: '就要…了 và 快要…了 đều là "sắp…rồi"; 就要 có thể đi với thời gian cụ thể.'
+    },
+    {
+      situation: 'Bạn vừa từ ga tàu về, người nhà hỏi thăm.',
+      q_zh: '火车站人多不多？你买到票了吗？',
+      q_py: 'Huǒchēzhàn rén duō bu duō? Nǐ mǎidào piào le ma?',
+      q_vn: 'Ở ga tàu đông người không? Bạn mua được vé chưa?',
+      grammar: { label: '大家都在… + 票已经买好了', any: ['大家', '已经', '买好'] },
+      need: [
+        { label: 'Trả lời đông hay ít người', any: ['多', '很多', '不多', '少'] },
+        { label: 'Dùng 票 và nói đã mua được chưa', any: ['票', '买'] },
+        { label: 'Dùng 大家 hoặc nói lý do đông', any: ['大家', '都', '回家', '过年', '新年'] }
+      ],
+      bonus: { label: 'Dùng 火车站 và 准备', any: ['火车站', '准备'] },
+      vocab: ['票', '火车站', '大家'],
+      minLen: 12,
+      sample: '火车站人很多，大家都在准备回家过年。我的票已经买好了。',
+      sample_py: 'Huǒchēzhàn rén hěn duō, dàjiā dōu zài zhǔnbèi huí jiā guònián. Wǒ de piào yǐjīng mǎihǎo le.',
+      sample_vn: 'Ga tàu rất đông, mọi người đều đang chuẩn bị về quê ăn Tết. Vé của tôi đã mua xong rồi.',
+      tip: '买好了 = đã mua xong xuôi; 好 làm bổ ngữ kết quả chỉ việc hoàn tất.'
+    },
+    {
+      situation: 'Buổi sáng, bạn và bạn cùng phòng nói chuyện thời tiết.',
+      q_zh: '今天天气怎么样？比昨天更冷吗？',
+      q_py: 'Jīntiān tiānqì zěnmeyàng? Bǐ zuótiān gèng lěng ma?',
+      q_vn: 'Hôm nay thời tiết thế nào? Có lạnh hơn hôm qua không?',
+      grammar: { label: '比昨天更 + tính từ', any: ['更', '比'] },
+      need: [
+        { label: 'Dùng 更 (比…更…)', any: ['更'] },
+        { label: 'Nói kiểu thời tiết (阴 / 晴 / 下雪)', any: ['阴', '晴', '雪', '雨', '冷', '热'] },
+        { label: 'Dùng 比 để so sánh với hôm qua', any: ['比', '昨天'] }
+      ],
+      bonus: { label: 'Dùng 快要…了 nói dự báo', any: ['快要', '就要', '会'] },
+      vocab: ['更', '阴'],
+      minLen: 12,
+      sample: '今天阴，比昨天更冷。天气预报说明天快要下雪了。',
+      sample_py: 'Jīntiān yīn, bǐ zuótiān gèng lěng. Tiānqì yùbào shuō míngtiān kuài yào xià xuě le.',
+      sample_vn: 'Hôm nay trời âm u, lạnh hơn hôm qua. Dự báo thời tiết nói ngày mai sắp có tuyết.',
+      tip: '更 dùng khi so sánh "càng… hơn": 比昨天更冷、比他更高.'
+    },
+    {
+      situation: 'Bạn đợi em gái về nhà, khách hỏi thăm.',
+      q_zh: '你妹妹呢？她去哪儿了？什么时候回来？',
+      q_py: 'Nǐ mèimei ne? Tā qù nǎr le? Shénme shíhou huílai?',
+      q_vn: 'Em gái bạn đâu? Cô ấy đi đâu rồi? Khi nào về?',
+      grammar: { label: '她坐…去…了 + 快要回来了', any: ['快要', '就要', '了'] },
+      need: [
+        { label: 'Nói nơi em gái đi', any: ['火车站', '学校', '公司', '商店', '机场', '医院', '朋友'] },
+        { label: 'Nói phương tiện (坐公共汽车 / 骑车)', any: ['公共汽车', '坐', '骑', '走', '开车', '地铁'] },
+        { label: 'Dùng 快要…了 nói sắp về', any: ['快要', '就要', '马上', '一会儿'] }
+      ],
+      bonus: { label: 'Nói mục đích (接朋友)', any: ['接', '买', '看', '玩'] },
+      vocab: ['妹妹', '公共汽车', '火车站'],
+      minLen: 12,
+      sample: '她坐公共汽车去火车站接朋友了，快要回来了，你等一下。',
+      sample_py: 'Tā zuò gōnggòngqìchē qù huǒchēzhàn jiē péngyou le, kuài yào huílai le, nǐ děng yíxià.',
+      sample_vn: 'Em ấy đi xe buýt ra ga tàu đón bạn rồi, sắp về rồi, bạn đợi một lát.',
+      tip: 'Trật tự: chủ ngữ + 坐/骑 phương tiện + 去 nơi chốn + mục đích.'
+    },
+    {
+      situation: 'Trước Tết, bạn học hỏi bạn đã chuẩn bị xong chưa.',
+      q_zh: '新年快到了，你准备好了吗？你觉得今年比去年更热闹吗？',
+      q_py: 'Xīnnián kuài dào le, nǐ zhǔnbèi hǎo le ma? Nǐ juéde jīnnián bǐ qùnián gèng rènao ma?',
+      q_vn: 'Năm mới sắp đến, bạn chuẩn bị xong chưa? Bạn thấy năm nay có nhộn nhịp hơn năm ngoái không?',
+      grammar: { label: '…好了 + 今年比去年更…', any: ['好了', '更', '比'] },
+      need: [
+        { label: 'Trả lời đã chuẩn bị xong chưa', any: ['准备', '好了', '差不多', '还没'] },
+        { label: 'Nói đã mua/làm gì', any: ['衣服', '票', '东西', '菜', '花', '买'] },
+        { label: 'Dùng 比…更… để so sánh hai năm', any: ['比', '更'] }
+      ],
+      bonus: { label: 'Nói cảm xúc mọi người (大家都很高兴)', any: ['大家', '高兴', '快乐'] },
+      vocab: ['新年', '更', '大家'],
+      minLen: 14,
+      sample: '差不多了，衣服都买好了。我觉得今年比去年更热闹，大家都很高兴。',
+      sample_py: 'Chàbuduō le, yīfu dōu mǎihǎo le. Wǒ juéde jīnnián bǐ qùnián gèng rènao, dàjiā dōu hěn gāoxìng.',
+      sample_vn: 'Cũng gần xong rồi, quần áo đã mua hết. Tôi thấy năm nay nhộn nhịp hơn năm ngoái, mọi người đều rất vui.',
+      tip: '差不多了 = gần xong rồi, câu trả lời rất thông dụng trong hội thoại.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

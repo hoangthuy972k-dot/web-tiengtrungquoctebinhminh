@@ -354,28 +354,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'超市离这儿远吗？',
-     q_vn:'Siêu thị cách đây có xa không?',
-     hint:'不远，走＿＿分钟就到了。',
-     sample:'不远，走几分钟就到了。',
-     sample_vn:'Không xa, đi bộ vài phút là tới.',
-     note:'离 dùng để nói khoảng cách giữa HAI địa điểm, không phải "từ" như 从.'},
-    {q_zh:'你还在哪儿呢？',
-     q_vn:'Bạn vẫn còn ở đâu vậy?',
-     hint:'我还在＿＿买东西呢。',
-     sample:'我还在超市买东西呢。',
-     sample_vn:'Tôi vẫn đang ở siêu thị mua đồ đấy.',
-     note:'呢 ở cuối câu trần thuật mang nghĩa nhấn mạnh, giống như "đấy/cơ" trong tiếng Việt.'},
-    {q_zh:'你的生日是什么时候？下个星期你有空吗？',
-     q_vn:'Sinh nhật bạn là khi nào? Tuần sau bạn có rảnh không?',
-     hint:'还有＿＿就是我的生日了。',
-     sample:'还有一个星期就是我的生日了，可是下个星期我要去北京，今天过吧！',
-     sample_vn:'Còn một tuần nữa là sinh nhật tôi, nhưng tuần sau tôi phải đi Bắc Kinh rồi, hôm nay tổ chức luôn đi!',
-     note:'还有……就……了 dùng để nói "còn bao lâu nữa thì" một sự việc sẽ xảy ra.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 7. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Đồng nghiệp mới hỏi đường đi làm của bạn.',
+      q_zh: '你家离公司（学校）远吗？你怎么去？要多长时间？',
+      q_py: 'Nǐ jiā lí gōngsī (xuéxiào) yuǎn ma? Nǐ zěnme qù? Yào duō cháng shíjiān?',
+      q_vn: 'Nhà bạn cách công ty (trường) có xa không? Bạn đi bằng gì? Mất bao lâu?',
+      grammar: { label: '我家离…很远/不远 + 坐…要…', any: ['离'] },
+      need: [
+        { label: 'Dùng 离 để nói khoảng cách', any: ['离'] },
+        { label: 'Nói phương tiện (坐公共汽车 / 开车 / 走路)', any: ['公共汽车', '开车', '走路', '走', '骑', '地铁', '出租车', '坐'] },
+        { label: 'Nói thời gian (一个多小时 / 20分钟)', any: ['小时', '分钟', '多'] }
+      ],
+      bonus: { label: 'Nhận xét nhanh hay chậm (慢 / 快)', any: ['慢', '快'] },
+      vocab: ['离', '公司', '远', '公共汽车', '小时'],
+      minLen: 14,
+      sample: '我家离公司很远，坐公共汽车要一个多小时，太慢了。',
+      sample_py: 'Wǒ jiā lí gōngsī hěn yuǎn, zuò gōnggòng qìchē yào yí ge duō xiǎoshí, tài màn le.',
+      sample_vn: 'Nhà tôi cách công ty rất xa, đi xe buýt mất hơn một tiếng, chậm quá.',
+      tip: 'A 离 B + 远/近: 我家离公司很远。Đừng dùng 从 ở đây.'
+    },
+    {
+      situation: 'Một người khách hỏi bạn đường ra ga tàu.',
+      q_zh: '请问，从这儿到学校怎么走？远不远？',
+      q_py: 'Qǐngwèn, cóng zhèr dào xuéxiào zěnme zǒu? Yuǎn bu yuǎn?',
+      q_vn: 'Xin hỏi, từ đây đến trường đi thế nào? Có xa không?',
+      grammar: { label: '从…到… + 走/坐…就到了', any: ['从', '到', '就'] },
+      need: [
+        { label: 'Dùng 从…到…', any: ['从', '到'] },
+        { label: 'Nói cách đi (走路 / 坐车)', any: ['走', '坐', '开车', '骑'] },
+        { label: 'Nói thời gian và dùng 就到了', any: ['分钟', '小时', '就到', '就'] }
+      ],
+      bonus: { label: 'Nói xa hay gần (不远 / 很近)', any: ['不远', '很近', '近', '远'] },
+      vocab: ['路', '到', '走', '快'],
+      minLen: 12,
+      sample: '不远，从这儿到学校走路二十分钟就到了。',
+      sample_py: 'Bù yuǎn, cóng zhèr dào xuéxiào zǒulù èrshí fēnzhōng jiù dào le.',
+      sample_vn: 'Không xa, từ đây đến trường đi bộ hai mươi phút là tới.',
+      tip: '就 đặt trước động từ để nhấn "chỉ… là đã…": 走几分钟就到了.'
+    },
+    {
+      situation: 'Bạn học hỏi sao bạn không lái xe đi làm.',
+      q_zh: '坐公共汽车太慢了，你怎么不开车？',
+      q_py: 'Zuò gōnggòng qìchē tài màn le, nǐ zěnme bù kāichē?',
+      q_vn: 'Đi xe buýt chậm quá, sao bạn không lái xe?',
+      grammar: { label: '开车也不快，因为…', any: ['快', '慢'] },
+      need: [
+        { label: 'Trả lời có lái xe hay không', any: ['开车', '不开', '没有车', '会', '不会'] },
+        { label: 'Nêu lý do (车太多 / 太贵 / 没有车)', any: ['车太多', '多', '贵', '没有', '停车', '路上'] },
+        { label: 'Dùng 快 hoặc 慢 để so sánh', any: ['快', '慢'] }
+      ],
+      bonus: { label: 'Nói phương án bạn chọn (坐地铁 / 骑车)', any: ['地铁', '骑', '走路', '公共汽车'] },
+      vocab: ['慢', '快', '路', '公司'],
+      minLen: 12,
+      sample: '开车也不快，路上车太多了。所以我还是坐公共汽车。',
+      sample_py: 'Kāichē yě bú kuài, lù shang chē tài duō le. Suǒyǐ wǒ háishi zuò gōnggòng qìchē.',
+      sample_vn: 'Lái xe cũng không nhanh, trên đường xe đông quá. Nên tôi vẫn đi xe buýt.',
+      tip: '太 + tính từ + 了 = quá…: 太慢了、太多了.'
+    },
+    {
+      situation: 'Bạn gọi điện cho người bạn đang trên đường ra sân bay đón bạn.',
+      q_zh: '你现在在哪儿呢？还有多长时间能到？',
+      q_py: 'Nǐ xiànzài zài nǎr ne? Hái yǒu duō cháng shíjiān néng dào?',
+      q_vn: 'Bạn đang ở đâu vậy? Còn bao lâu nữa thì tới?',
+      grammar: { label: '在…的路上 + …分钟就到', any: ['路上', '就到', '到'] },
+      need: [
+        { label: 'Nói vị trí hiện tại', any: ['路上', '家', '公司', '学校', '车上', '机场', '地铁'] },
+        { label: 'Nói thời gian còn lại', any: ['分钟', '小时', '就到', '马上'] },
+        { label: 'Dùng 到 để nói "tới nơi"', any: ['到'] }
+      ],
+      bonus: { label: 'Dùng 已经 nói việc đã xong', any: ['已经'] },
+      vocab: ['路', '到', '机场', '小时'],
+      minLen: 12,
+      sample: '我在去机场的路上，已经快到了，二十分钟就到。',
+      sample_py: 'Wǒ zài qù jīchǎng de lù shang, yǐjīng kuài dào le, èrshí fēnzhōng jiù dào.',
+      sample_vn: 'Tôi đang trên đường ra sân bay, sắp tới rồi, hai mươi phút nữa là tới.',
+      tip: '在去…的路上 = đang trên đường đi đâu đó.'
+    },
+    {
+      situation: 'Bạn rủ bạn thân đi ăn mừng sinh nhật sớm.',
+      q_zh: '今天晚上我们一起吃饭吧，给你过生日，好吗？',
+      q_py: 'Jīntiān wǎnshang wǒmen yìqǐ chīfàn ba, gěi nǐ guò shēngrì, hǎo ma?',
+      q_vn: 'Tối nay chúng ta ăn cơm cùng nhau nhé, mừng sinh nhật bạn, được không?',
+      grammar: { label: '离我的生日还有… / 离这儿不远有…', any: ['离'] },
+      need: [
+        { label: 'Trả lời đồng ý hay chưa tới sinh nhật', any: ['好', '可以', '离', '还有', '不'] },
+        { label: 'Nói địa điểm ăn (饭馆 / 饭店)', any: ['饭馆', '饭店', '家', '学校', '公司'] },
+        { label: 'Nói khoảng cách hoặc thời gian đi tới', any: ['远', '近', '分钟', '走', '就到'] }
+      ],
+      bonus: { label: 'Dùng 过生日', any: ['过生日', '生日'] },
+      vocab: ['过', '离', '远', '走'],
+      minLen: 12,
+      sample: '好吧。离这儿不远有一个中国饭馆，走几分钟就到了。',
+      sample_py: 'Hǎo ba. Lí zhèr bù yuǎn yǒu yí ge Zhōngguó fànguǎn, zǒu jǐ fēnzhōng jiù dào le.',
+      sample_vn: 'Được thôi. Cách đây không xa có một quán ăn Trung Quốc, đi vài phút là tới.',
+      tip: '过生日 = tổ chức/đón sinh nhật; 给你过生日 = mừng sinh nhật cho bạn.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

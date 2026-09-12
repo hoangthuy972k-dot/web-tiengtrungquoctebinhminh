@@ -300,28 +300,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'您好，请问有什么可以帮您？',
-     q_vn:'Xin chào, tôi có thể giúp gì cho bạn?',
-     hint:'我房间的＿＿坏了，可以让人来看看吗？',
-     sample:'我房间的空调坏了，可以让人来看看吗？',
-     sample_vn:'Điều hòa phòng tôi hỏng rồi, có thể để người đến xem giúp không?',
-     note:'让 + Người + Động từ dùng khi nhờ/bảo ai đó làm việc gì thay mình.'},
-    {q_zh:'你在找什么呢？怎么这么着急？',
-     q_vn:'Bạn đang tìm gì vậy? Sao có vẻ vội thế?',
-     hint:'你等我一下，我找找＿＿。',
-     sample:'你等我一下，我找找钥匙，找到了再告诉你。',
-     sample_vn:'Bạn đợi tôi một chút, tôi tìm chìa khóa đã. Tìm thấy rồi tôi sẽ báo bạn.',
-     note:'再 dùng để nói một hành động sẽ xảy ra SAU một hành động khác — khác với 就 (xảy ra ngay, ôn Bài 7).'},
-    {q_zh:'你看看这两件衣服，白的怎么样？',
-     q_vn:'Bạn xem giúp hai chiếc áo này, chiếc trắng thế nào?',
-     hint:'白的有点儿＿＿，黑的颜色还不错。',
-     sample:'白的有点儿贵，黑的颜色还不错。',
-     sample_vn:'Chiếc trắng hơi đắt, chiếc đen thì màu tạm ổn.',
-     note:'有点儿 (ôn Bài 5) chỉ dùng cho nhận xét mang tính KHÔNG MONG MUỐN như "hơi đắt".'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 8. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học rủ bạn đi xem phim chiều nay nhưng bạn bận.',
+      q_zh: '我们下午去看电影好吗？你想看什么电影？',
+      q_py: 'Wǒmen xiàwǔ qù kàn diànyǐng hǎo ma? Nǐ xiǎng kàn shénme diànyǐng?',
+      q_vn: 'Chiều nay chúng mình đi xem phim nhé? Bạn muốn xem phim gì?',
+      grammar: { label: '今天没有时间，…再去吧 / 让我想想再告诉你', any: ['再', '让'] },
+      need: [
+        { label: 'Nói bận hay rảnh', any: ['没有时间', '有时间', '忙', '可以', '不行'] },
+        { label: 'Dùng 再 để hẹn lúc khác', any: ['再'] },
+        { label: 'Nói sẽ nghĩ rồi báo lại (让我想想 / 告诉你)', any: ['想想', '告诉', '让我'] }
+      ],
+      bonus: { label: 'Nói rõ thời gian hẹn lại (明天下午)', any: ['明天', '后天', '周末', '晚上', '下午'] },
+      vocab: ['让', '告诉', '等'],
+      minLen: 12,
+      sample: '今天下午没有时间，明天下午再去吧。看什么电影？让我想想再告诉你。',
+      sample_py: 'Jīntiān xiàwǔ méiyǒu shíjiān, míngtiān xiàwǔ zài qù ba. Kàn shénme diànyǐng? Ràng wǒ xiǎngxiang zài gàosu nǐ.',
+      sample_vn: 'Chiều nay tôi không có thời gian, chiều mai đi nhé. Xem phim gì à? Để tôi nghĩ rồi báo bạn.',
+      tip: '再 dùng cho việc lặp lại trong tương lai: 明天再去、以后再说.'
+    },
+    {
+      situation: 'Bạn cùng phòng rủ bạn ra ngoài nhưng bạn còn việc thầy cô giao.',
+      q_zh: '我们出去运动运动吧。老师让你做什么了？',
+      q_py: 'Wǒmen chūqu yùndòng yùndòng ba. Lǎoshī ràng nǐ zuò shénme le?',
+      q_vn: 'Chúng mình ra ngoài vận động chút đi. Thầy cô bảo bạn làm gì thế?',
+      grammar: { label: '老师让我 + động từ', any: ['让'] },
+      need: [
+        { label: 'Dùng 让 để nói ai bảo mình làm gì', any: ['让'] },
+        { label: 'Nói việc phải làm', any: ['打电话', '打个电话', '看', '找', '写', '做', '告诉', '问'] },
+        { label: 'Nói lời xin đợi (你等等我)', any: ['等', '等等', '一下'] }
+      ],
+      bonus: { label: 'Nói lý do (同学病了 / 有事情)', any: ['病', '事情', '忙'] },
+      vocab: ['让', '等', '事情', '找'],
+      minLen: 12,
+      sample: '你等等我好吗？老师让我给大卫打个电话，大卫病了。',
+      sample_py: 'Nǐ děngdeng wǒ hǎo ma? Lǎoshī ràng wǒ gěi Dàwèi dǎ ge diànhuà, Dàwèi bìng le.',
+      sample_vn: 'Bạn đợi tôi chút nhé? Cô bảo tôi gọi điện cho David, David ốm rồi.',
+      tip: 'Lặp động từ cho nhẹ giọng: 等等、想想、看看、运动运动.'
+    },
+    {
+      situation: 'Ở khách sạn, cửa phòng bạn không mở được. Hãy gọi lễ tân.',
+      q_zh: '服务员，我房间的门打不开了。您能帮我看看吗？',
+      q_py: 'Fúwùyuán, wǒ fángjiān de mén dǎ bù kāi le. Nín néng bāng wǒ kànkan ma?',
+      q_vn: 'Nhân viên ơi, cửa phòng tôi không mở được. Anh/chị xem giúp tôi được không?',
+      grammar: { label: '我住…房间 + 帮我看看', any: ['房间', '看看', '帮'] },
+      need: [
+        { label: 'Xưng hô với nhân viên (服务员)', any: ['服务员', '你好', '请问'] },
+        { label: 'Nói số phòng', any: ['房间', '号', '三', '一', '二', '四', '五', '六', '七', '八', '九', '零'] },
+        { label: 'Nói vấn đề gặp phải', any: ['打不开', '门', '不能', '坏'] }
+      ],
+      bonus: { label: 'Dùng 找人 / 等一下', any: ['找', '等', '一下'] },
+      vocab: ['服务员', '找', '等', '事情'],
+      minLen: 12,
+      sample: '服务员，我住317房间，门打不开了，您能找人帮我看看吗？',
+      sample_py: 'Fúwùyuán, wǒ zhù sān yāo qī fángjiān, mén dǎ bù kāi le, nín néng zhǎo rén bāng wǒ kànkan ma?',
+      sample_vn: 'Nhân viên ơi, tôi ở phòng 317, cửa không mở được, anh/chị tìm người xem giúp tôi được không?',
+      tip: 'Số phòng đọc từng chữ số, số 1 thường đọc là yāo: 317 = sān yāo qī.'
+    },
+    {
+      situation: 'Trong cửa hàng, bạn thử mấy chiếc áo và nhận xét cho bạn đi cùng.',
+      q_zh: '你看看这几件衣服怎么样？白的、黑的、红的，你喜欢哪件？',
+      q_py: 'Nǐ kànkan zhè jǐ jiàn yīfu zěnmeyàng? Bái de, hēi de, hóng de, nǐ xǐhuan nǎ jiàn?',
+      q_vn: 'Bạn xem mấy chiếc áo này thế nào? Cái trắng, cái đen, cái đỏ, bạn thích cái nào?',
+      grammar: { label: '这件白的有点儿… / 那件黑的有点儿…', any: ['的'] },
+      need: [
+        { label: 'Nhận xét ít nhất hai chiếc áo', any: ['白', '黑', '红', '件'] },
+        { label: 'Dùng 有点儿 + tính từ', any: ['有点儿', '太'] },
+        { label: 'Nói bạn chọn cái nào hoặc còn xem thêm', any: ['喜欢', '买', '再看看', '想'] }
+      ],
+      bonus: { label: 'Dùng 贵 / 长 / 短 để chê nhẹ', any: ['贵', '长', '短', '大', '小'] },
+      vocab: ['白', '黑', '贵', '让'],
+      minLen: 14,
+      sample: '这件白的有点儿长，那件黑的有点儿贵。这件红的不错，让我再看看。',
+      sample_py: 'Zhè jiàn bái de yǒudiǎnr cháng, nà jiàn hēi de yǒudiǎnr guì. Zhè jiàn hóng de búcuò, ràng wǒ zài kànkan.',
+      sample_vn: 'Chiếc trắng này hơi dài, chiếc đen kia hơi đắt. Chiếc đỏ này khá đẹp, để tôi xem thêm.',
+      tip: 'Bỏ bớt danh từ sau 的 khi đã rõ: 白的 = chiếc màu trắng.'
+    },
+    {
+      situation: 'Một người bạn của bạn bị ốm. Hãy nói bạn định làm gì.',
+      q_zh: '你的朋友病了，你打算做什么？',
+      q_py: 'Nǐ de péngyou bìng le, nǐ dǎsuàn zuò shénme?',
+      q_vn: 'Bạn của bạn bị ốm, bạn định làm gì?',
+      grammar: { label: '我想找时间去看看他', any: ['找时间', '想', '去看'] },
+      need: [
+        { label: 'Nói việc bạn định làm', any: ['看', '打电话', '买', '去', '告诉', '帮'] },
+        { label: 'Dùng 找时间 hoặc nói thời gian', any: ['找时间', '时间', '明天', '今天', '下午', '晚上', '周末'] },
+        { label: 'Dùng 想 hoặc 要 để nói dự định', any: ['想', '要', '打算'] }
+      ],
+      bonus: { label: 'Nói mang gì đến (水果 / 药)', any: ['水果', '药', '牛奶', '东西', '花'] },
+      vocab: ['找', '事情', '等', '告诉'],
+      minLen: 12,
+      sample: '他病了，我想找时间去看看他，给他买点儿水果。',
+      sample_py: 'Tā bìng le, wǒ xiǎng zhǎo shíjiān qù kànkan tā, gěi tā mǎi diǎnr shuǐguǒ.',
+      sample_vn: 'Cậu ấy ốm rồi, tôi muốn tìm thời gian đến thăm, mua cho cậu ấy ít hoa quả.',
+      tip: '找时间 = sắp xếp thời gian; 给他买点儿… = mua chút gì đó cho ai.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

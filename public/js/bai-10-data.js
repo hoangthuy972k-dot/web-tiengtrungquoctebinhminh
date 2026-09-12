@@ -305,28 +305,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'你的朋友在健身房一直玩手机，不去锻炼，你会对他说什么？',
-     q_vn:'Bạn của bạn cứ chơi điện thoại ở phòng gym mà không chịu tập, bạn sẽ nói gì với anh ấy?',
-     hint:'别玩手机了，快去＿＿吧。',
-     sample:'别玩手机了，快去锻炼吧，运动对身体很好。',
-     sample_vn:'Đừng chơi điện thoại nữa, mau đi tập đi, vận động rất tốt cho sức khỏe.',
-     note:'别/不要 + Động từ + 了 dùng để khuyên ngăn một cách nhẹ nhàng.'},
-    {q_zh:'你明天有空吗？',
-     q_vn:'Ngày mai bạn có rảnh không?',
-     hint:'有空，我们一起去＿＿吧！',
-     sample:'有空，我们一起去健身房锻炼吧！',
-     sample_vn:'Có rảnh, chúng ta cùng đi phòng gym tập luyện đi!',
-     note:'Ôn lại cấu trúc rủ rê ……好吗？ đã học ở Bài 8.'},
-    {q_zh:'你看见我的手机了吗？',
-     q_vn:'Bạn có thấy điện thoại của tôi không?',
-     hint:'别找了，在＿＿呢。',
-     sample:'别找了，在你包里呢。',
-     sample_vn:'Đừng tìm nữa, ở trong túi của bạn kìa.',
-     note:'别 + Động từ + 了 cũng dùng để trấn an, bảo người khác không cần làm gì nữa.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 10. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn đang tìm điện thoại khắp nhà, người nhà nhìn thấy nó. Hãy đóng vai người nhà.',
+      q_zh: '你在找什么？我的手机你看见了吗？',
+      q_py: 'Nǐ zài zhǎo shénme? Wǒ de shǒujī nǐ kànjiàn le ma?',
+      q_vn: 'Bạn đang tìm gì thế? Bạn có thấy điện thoại của tôi không?',
+      grammar: { label: '别找了，…在…呢', any: ['别', '呢'] },
+      need: [
+        { label: 'Dùng 别…了 để bảo đừng tìm nữa', any: ['别', '不要'] },
+        { label: 'Nói vị trí đồ vật', any: ['桌子', '上', '旁边', '里', '下', '床', '包', '房间'] },
+        { label: 'Nói rõ đồ vật (手机 / 电脑…)', any: ['手机', '电脑', '书', '衣服', '钱', '钥匙'] }
+      ],
+      bonus: { label: 'Thêm màu sắc để nhận ra (白色的)', any: ['白', '黑', '红', '色'] },
+      vocab: ['别', '手机', '找'],
+      minLen: 10,
+      sample: '别找了，你的手机在桌子上呢，电脑旁边。',
+      sample_py: 'Bié zhǎo le, nǐ de shǒujī zài zhuōzi shang ne, diànnǎo pángbiān.',
+      sample_vn: 'Đừng tìm nữa, điện thoại của bạn ở trên bàn kìa, cạnh máy tính.',
+      tip: '别 + động từ + 了 = đừng… nữa. 呢 ở cuối câu nhấn trạng thái đang tồn tại.'
+    },
+    {
+      situation: 'Bạn gọi điện về nhà, hỏi mọi người đang làm gì.',
+      q_zh: '家里人现在正在做什么呢？',
+      q_py: 'Jiā lǐ rén xiànzài zhèngzài zuò shénme ne?',
+      q_vn: 'Người nhà bây giờ đang làm gì thế?',
+      grammar: { label: '…正在 + động từ + 呢', any: ['正在', '在'] },
+      need: [
+        { label: 'Dùng 正在…呢', any: ['正在', '在'] },
+        { label: 'Nói người đó là ai', any: ['妈妈', '爸爸', '哥哥', '姐姐', '弟弟', '妹妹', '丈夫', '妻子', '孩子'] },
+        { label: 'Nói việc đang làm', any: ['准备', '做饭', '看', '洗', '吃', '睡', '工作', '学习', '打电话'] }
+      ],
+      bonus: { label: 'Nói thêm bữa ăn hoặc đồ vật (午饭 / 衣服)', any: ['午饭', '晚饭', '衣服', '碗', '菜'] },
+      vocab: ['正在', '洗', '帮助'],
+      minLen: 10,
+      sample: '妈妈正在准备午饭呢，哥哥在洗衣服。',
+      sample_py: 'Māma zhèngzài zhǔnbèi wǔfàn ne, gēge zài xǐ yīfu.',
+      sample_vn: 'Mẹ đang chuẩn bị cơm trưa, anh trai đang giặt quần áo.',
+      tip: '正在 + động từ + 呢 = đang làm gì đó ngay lúc này.'
+    },
+    {
+      situation: 'Bạn học tranh luận: xem tivi có giúp học tiếng Trung không?',
+      q_zh: '看电视对学汉语有帮助吗？为什么？',
+      q_py: 'Kàn diànshì duì xué Hànyǔ yǒu bāngzhù ma? Wèi shénme?',
+      q_vn: 'Xem tivi có giúp ích cho việc học tiếng Trung không? Vì sao?',
+      grammar: { label: '…对…有帮助 / 没有帮助', any: ['帮助'] },
+      need: [
+        { label: 'Dùng 对…有帮助 hoặc 没有帮助', any: ['帮助'] },
+        { label: 'Trả lời rõ có ích hay không', any: ['有', '没有', '很有'] },
+        { label: 'Nêu lý do (可以听 / 学新词)', any: ['听', '说', '词', '字', '学', '因为'] }
+      ],
+      bonus: { label: 'Nói thêm việc học khác (课 / 准备)', any: ['课', '准备', '学习'] },
+      vocab: ['帮助', '课', '别'],
+      minLen: 12,
+      sample: '我觉得看电视对学汉语很有帮助，因为可以听很多中国人说话。',
+      sample_py: 'Wǒ juéde kàn diànshì duì xué Hànyǔ hěn yǒu bāngzhù, yīnwèi kěyǐ tīng hěn duō Zhōngguórén shuōhuà.',
+      sample_vn: 'Tôi thấy xem tivi rất có ích cho việc học tiếng Trung, vì được nghe nhiều người Trung Quốc nói chuyện.',
+      tip: 'A 对 B 有帮助 = A có ích cho B: 运动对身体有帮助.'
+    },
+    {
+      situation: 'Bạn vừa đi chợ về, người nhà hỏi bạn mua gì.',
+      q_zh: '你怎么买了这么多东西呀？今天谁回来吃饭？',
+      q_py: 'Nǐ zěnme mǎile zhème duō dōngxi ya? Jīntiān shéi huílai chīfàn?',
+      q_vn: 'Sao bạn mua nhiều đồ thế? Hôm nay ai về ăn cơm?',
+      grammar: { label: '…回来吃饭 + 我买了…', any: ['回来', '买'] },
+      need: [
+        { label: 'Nói ai về ăn cơm', any: ['哥哥', '姐姐', '弟弟', '妹妹', '爸爸', '妈妈', '朋友', '同学', '家里人'] },
+        { label: 'Kể ít nhất hai món đã mua', any: ['鸡蛋', '西瓜', '羊肉', '面条', '牛奶', '水果', '菜', '鱼', '米'] },
+        { label: 'Dùng 买了', any: ['买'] }
+      ],
+      bonus: { label: 'Nói thêm ai đang nấu ăn (正在准备)', any: ['正在', '准备', '做饭'] },
+      vocab: ['哥哥', '鸡蛋', '西瓜', '正在'],
+      minLen: 12,
+      sample: '哥哥今天中午回来吃饭，所以我买了羊肉、鸡蛋和一个西瓜。',
+      sample_py: 'Gēge jīntiān zhōngwǔ huílai chīfàn, suǒyǐ wǒ mǎile yángròu, jīdàn hé yí ge xīguā.',
+      sample_vn: 'Trưa nay anh trai về ăn cơm nên tôi mua thịt dê, trứng gà và một quả dưa hấu.',
+      tip: 'Liệt kê nhiều món dùng dấu 、 giữa các từ, từ cuối dùng 和.'
+    },
+    {
+      situation: 'Người nhà bạn ốm nhưng vẫn đọc báo. Hãy nhắc nhở họ.',
+      q_zh: '医生说要多休息，你看见家人还在看报纸，你会怎么说？',
+      q_py: 'Yīshēng shuō yào duō xiūxi, nǐ kànjiàn jiārén hái zài kàn bàozhǐ, nǐ huì zěnme shuō?',
+      q_vn: 'Bác sĩ nói phải nghỉ nhiều, bạn thấy người nhà vẫn đọc báo, bạn sẽ nói gì?',
+      grammar: { label: '别…了，医生说…', any: ['别', '医生说'] },
+      need: [
+        { label: 'Dùng 别…了', any: ['别', '不要'] },
+        { label: 'Nhắc tới lời bác sĩ', any: ['医生', '大夫', '说'] },
+        { label: 'Đề nghị việc nên làm (休息 / 吃药 / 喝水)', any: ['休息', '吃药', '药', '喝', '睡'] }
+      ],
+      bonus: { label: 'Đề nghị lịch sự (给你…吧)', any: ['吧', '给'] },
+      vocab: ['别', '帮助', '课'],
+      minLen: 12,
+      sample: '别看报纸了，医生说你要多休息。我给你一杯茶吧。',
+      sample_py: 'Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi. Wǒ gěi nǐ yì bēi chá ba.',
+      sample_vn: 'Đừng đọc báo nữa, bác sĩ nói bạn phải nghỉ nhiều. Tôi rót cho bạn cốc trà nhé.',
+      tip: '多 + động từ = làm nhiều hơn: 多休息、多喝水、多运动.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

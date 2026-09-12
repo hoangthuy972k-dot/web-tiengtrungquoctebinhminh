@@ -361,28 +361,121 @@ var errorFixData = [
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI 3 TẦNG (tầng 3 có ghi âm + chấm điểm AI)
 // ══════════════════════════════════════════
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
+// Luyen noi voi AI (mode 'ai-speak'): moi cau hoi la mot tinh huong doi song
+// lien quan den bai khoa; hoc sinh tu ghi am cau tra loi, AI nghe lai (nhan
+// dien giong noi tieng Trung) roi cham diem theo 4 tieu chi va nhan xet.
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn. Ghi âm xong mới nên xem gợi ý/câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'你觉得这件衣服怎么样？',
-     q_vn:'Bạn thấy chiếc áo này thế nào?',
-     hint:'颜色还可以，就是有点儿＿＿。',
-     sample:'颜色还可以，就是有点儿大。',
-     sample_vn:'Màu tạm được, chỉ có điều hơi rộng.',
-     note:'还 + Tính từ (还可以/还不错) dùng để đánh giá ở mức TRUNG BÌNH, không quá khen cũng không chê.'},
-    {q_zh:'你最近怎么样？',
-     q_vn:'Dạo này bạn thế nào?',
-     hint:'我在准备＿＿，有点儿累。',
-     sample:'我在准备明天的考试，有点儿累。',
-     sample_vn:'Tôi đang chuẩn bị cho kỳ thi ngày mai, hơi mệt một chút.',
-     note:'有点儿 chỉ dùng với tính từ/tình trạng KHÔNG MONG MUỐN (mệt, đắt, khó...), không dùng với tính từ tích cực.'},
-    {q_zh:'考试以后，我们去喝咖啡吧？',
-     q_vn:'Sau khi thi xong, chúng ta đi uống cà phê nhé?',
-     hint:'好啊，就这么定了！',
-     sample:'好啊，就这么定了！',
-     sample_vn:'Được đó, quyết định vậy nhé!',
-     note:'就 dùng để chốt một quyết định: 就这么定了 = quyết định như vậy đi.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 5. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Buổi tối, người nhà hỏi bạn muốn ăn ở đâu.',
+      q_zh: '晚上我们去饭馆吃饭还是在家吃？你准备做什么菜？',
+      q_py: 'Wǎnshang wǒmen qù fànguǎn chīfàn háishi zài jiā chī? Nǐ zhǔnbèi zuò shénme cài?',
+      q_vn: 'Tối nay chúng ta đi nhà hàng ăn hay ăn ở nhà? Bạn định nấu món gì?',
+      grammar: { label: '我想在家吃 + 就做…吧', any: ['就', '想'] },
+      need: [
+        { label: 'Chọn ăn ở nhà hay ra ngoài', any: ['家', '外面', '饭馆', '饭店'] },
+        { label: 'Nói món định nấu / định ăn', any: ['鱼', '菜', '面条', '羊肉', '鸡蛋', '米饭', '汤', '肉'] },
+        { label: 'Dùng 准备 hoặc 想', any: ['准备', '想', '要'] }
+      ],
+      bonus: { label: 'Dùng 就…吧 để chốt phương án', any: ['就', '吧'] },
+      vocab: ['外面', '准备', '就', '鱼'],
+      minLen: 12,
+      sample: '我不想去外面吃，我想在家吃。就做你爱吃的鱼吧。',
+      sample_py: 'Wǒ bù xiǎng qù wàimian chī, wǒ xiǎng zài jiā chī. Jiù zuò nǐ ài chī de yú ba.',
+      sample_vn: 'Tôi không muốn ra ngoài ăn, tôi muốn ăn ở nhà. Cứ nấu món cá bạn thích đi.',
+      tip: '就…吧 dùng khi chốt nhanh một phương án: 就买这件吧、就做鱼吧.'
+    },
+    {
+      situation: 'Trong cửa hàng, bạn nhờ bạn đi cùng cho ý kiến về chiếc áo.',
+      q_zh: '帮我看一下这件衣服怎么样？颜色和大小可以吗？',
+      q_py: 'Bāng wǒ kàn yíxià zhè jiàn yīfu zěnmeyàng? Yánsè hé dàxiǎo kěyǐ ma?',
+      q_vn: 'Xem giúp tôi chiếc áo này thế nào? Màu và cỡ được không?',
+      grammar: { label: '颜色还可以，就是有点儿…', any: ['还', '可以', '不错', '有点儿'] },
+      need: [
+        { label: 'Nhận xét về màu hoặc cỡ', any: ['颜色', '大', '小', '长', '短', '好看'] },
+        { label: 'Dùng 还可以 / 不错 / 有点儿', any: ['还可以', '不错', '有点儿', '可以'] },
+        { label: 'Đưa ra kết luận mua hay không', any: ['买', '就买', '不买', '换'] }
+      ],
+      bonus: { label: 'Dùng 就买这件吧 để chốt', any: ['就买', '就'] },
+      vocab: ['件', '还', '可以', '不错'],
+      minLen: 12,
+      sample: '颜色还可以，就是有点儿大。那件小的不错，就买这件吧。',
+      sample_py: 'Yánsè hái kěyǐ, jiù shì yǒudiǎnr dà. Nà jiàn xiǎo de búcuò, jiù mǎi zhè jiàn ba.',
+      sample_vn: 'Màu thì tạm được, chỉ hơi rộng. Chiếc nhỏ kia khá đẹp, mua chiếc này đi.',
+      tip: '有点儿 + tính từ mang ý chê nhẹ: 有点儿大、有点儿贵.'
+    },
+    {
+      situation: 'Sau kỳ thi, bạn học hỏi bạn làm bài thế nào.',
+      q_zh: '昨天的考试你觉得怎么样？听说读写哪个好？',
+      q_py: 'Zuótiān de kǎoshì nǐ juéde zěnmeyàng? Tīng shuō dú xiě nǎge hǎo?',
+      q_vn: 'Bài thi hôm qua bạn thấy thế nào? Nghe nói đọc viết, phần nào tốt?',
+      grammar: { label: '…还可以，…不好', any: ['还可以', '不好', '可以'] },
+      need: [
+        { label: 'Nhận xét chung về bài thi', any: ['还可以', '不错', '难', '不好', '好'] },
+        { label: 'Nói kỹ năng nào tốt / chưa tốt', any: ['听', '说', '读', '写', '字'] },
+        { label: 'Dùng 觉得', any: ['觉得', '我觉得'] }
+      ],
+      bonus: { label: 'Nói thêm về 意思 của chữ chưa hiểu', any: ['意思', '不知道', '不懂'] },
+      vocab: ['考试', '意思', '还', '可以'],
+      minLen: 14,
+      sample: '我觉得听和说还可以，读和写不好，很多字我都不知道是什么意思。',
+      sample_py: 'Wǒ juéde tīng hé shuō hái kěyǐ, dú hé xiě bù hǎo, hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.',
+      sample_vn: 'Tôi thấy nghe và nói thì tạm được, đọc và viết chưa tốt, nhiều chữ tôi không biết nghĩa là gì.',
+      tip: '还可以 = tạm được; 是什么意思 = có nghĩa là gì.'
+    },
+    {
+      situation: 'Giờ nghỉ ở công ty, đồng nghiệp mời bạn uống cà phê.',
+      q_zh: '休息一下吧，喝咖啡吗？你一天喝几杯？',
+      q_py: 'Xiūxi yíxià ba, hē kāfēi ma? Nǐ yì tiān hē jǐ bēi?',
+      q_vn: 'Nghỉ một chút nhé, uống cà phê không? Một ngày bạn uống mấy cốc?',
+      grammar: { label: '喝多了对身体不好 + 以后我少喝一点儿', any: ['对', '以后'] },
+      need: [
+        { label: 'Trả lời có uống hay không', any: ['喝', '不喝', '已经'] },
+        { label: 'Nói số lượng (一杯 / 两杯)', any: ['杯', '一天', '每天'] },
+        { label: 'Dùng 以后 nói dự định', any: ['以后', '以后我'] }
+      ],
+      bonus: { label: 'Dùng 对身体不好 để nêu lý do', any: ['对身体', '身体', '不好'] },
+      vocab: ['咖啡', '对', '以后', '休息'],
+      minLen: 12,
+      sample: '不喝了，我已经喝两杯了。咖啡喝多了对身体不好，以后我每天喝一杯。',
+      sample_py: 'Bù hē le, wǒ yǐjīng hē liǎng bēi le. Kāfēi hē duōle duì shēntǐ bù hǎo, yǐhòu wǒ měi tiān hē yì bēi.',
+      sample_vn: 'Thôi không uống nữa, tôi uống hai cốc rồi. Uống nhiều cà phê không tốt cho sức khoẻ, sau này mỗi ngày tôi uống một cốc.',
+      tip: '对 + đối tượng + 好/不好: 对身体好、对眼睛不好.'
+    },
+    {
+      situation: 'Bạn của bạn đang phân vân giữa hai món đồ và hỏi ý kiến bạn.',
+      q_zh: '这两个你觉得哪个好？为什么？',
+      q_py: 'Zhè liǎng ge nǐ juéde nǎge hǎo? Wèi shénme?',
+      q_vn: 'Hai cái này bạn thấy cái nào tốt hơn? Vì sao?',
+      grammar: { label: '我觉得…不错，就买…吧', any: ['觉得'] },
+      need: [
+        { label: 'Chọn một cái', any: ['这个', '那个', '第一', '第二', '大', '小', '红', '白', '黑'] },
+        { label: 'Nêu lý do (颜色 / 价格 / 大小)', any: ['颜色', '便宜', '贵', '大', '小', '好看', '不错', '有点儿'] },
+        { label: 'Dùng 觉得 để nêu ý kiến', any: ['觉得'] }
+      ],
+      bonus: { label: 'Chốt bằng 就…吧', any: ['就', '吧'] },
+      vocab: ['不错', '可以', '就'],
+      minLen: 12,
+      sample: '我觉得这个不错，颜色好看，也不太贵。就买这个吧。',
+      sample_py: 'Wǒ juéde zhège búcuò, yánsè hǎokàn, yě bú tài guì. Jiù mǎi zhège ba.',
+      sample_vn: 'Tôi thấy cái này khá ổn, màu đẹp, cũng không đắt lắm. Mua cái này đi.',
+      tip: '不太 + tính từ = không… lắm: 不太贵、不太大.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

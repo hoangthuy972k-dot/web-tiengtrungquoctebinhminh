@@ -542,6 +542,27 @@ function showSpeak(tier,btn){
 }
 function buildSpeaking(tier){
   const w=document.getElementById('speak-wrap');
+  if(speakingData.mode==='ai-speak'&&speakingData.tasks){
+    const d=speakingData;
+    const items=d.tasks.map(function(t,i){
+      const chips=[t.grammar].concat(t.need).map(function(g){return '<span class="task-chip">'+g.label+'</span>';}).join('');
+      return '<div class="task-card">'+
+        '<div class="task-role">'+(i+1)+'. '+t.situation+'</div>'+
+        '<div class="qa-question">'+
+          '<button type="button" class="speak-box-btn" data-action="speak" data-text="'+t.q_zh.replace(/"/g,'&quot;')+'">🔊 Nghe câu hỏi</button>'+
+          '<div class="qa-zh">'+t.q_zh+'</div><div class="qa-py">'+t.q_py+'</div><div class="qa-vn">'+t.q_vn+'</div>'+
+        '</div>'+
+        '<div class="task-guide">Câu trả lời của bạn cần có đủ những ý sau:</div>'+
+        '<div class="task-struct">'+chips+'</div>'+
+        '<button class="show-ans-btn" data-action="toggle-show" data-target="ts'+i+'">Xem câu trả lời mẫu ▾</button>'+
+        '<div class="task-sample" id="ts'+i+'"><div class="ts-zh">'+t.sample+' '+miniSpeakBtn(t.sample)+'</div><div class="ts-py">'+t.sample_py+'</div><div class="ts-vn">'+t.sample_vn+'</div></div>'+
+        (t.tip?'<div class="task-note"><b>💡 Lưu ý:</b> '+t.tip+'</div>':'')+
+        buildRecorderHtml(i,t.sample)+
+      '</div>';
+    }).join('');
+    w.innerHTML='<div class="tier-intro">'+d.intro+'</div><div class="speak-grid">'+items+'</div>';
+    return;
+  }
   if(speakingData.questions){
     const d=speakingData;
     const items=d.questions.map(function(q,i){

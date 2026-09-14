@@ -960,8 +960,14 @@ app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
 // Thu tu mac dinh groq -> gemini -> anthropic, doi bang AI_PROVIDERS="gemini,groq".
 // Nha dau het luot / loi truoc khi kip tra chu nao thi tu chuyen sang nha tiep theo.
 // ══════════════════════════════════════════════════════════════════
-const AI_DAILY_LIMIT_GUEST = 3;
-const AI_DAILY_LIMIT_USER = 10;
+// So cau hoi moi ngay cho moi nguoi: 0 = KHONG GIOI HAN (mac dinh). Muon gioi han lai thi
+// dat AI_DAILY_LIMIT_GUEST / AI_DAILY_LIMIT_USER trong bien moi truong cua hPanel.
+const AI_DAILY_LIMIT_GUEST = (Number.isFinite(parseInt(process.env.AI_DAILY_LIMIT_GUEST, 10)) ? Math.max(0, parseInt(process.env.AI_DAILY_LIMIT_GUEST, 10)) : 0);
+const AI_DAILY_LIMIT_USER = (Number.isFinite(parseInt(process.env.AI_DAILY_LIMIT_USER, 10)) ? Math.max(0, parseInt(process.env.AI_DAILY_LIMIT_USER, 10)) : 0);
+// Chong spam: toi da bao nhieu cau trong 1 phut cho moi nguoi (0 = tat), de mot nguoi
+// hoac may tu dong khong dot het han muc mien phi chung cua ca website.
+const AI_PER_MINUTE = (Number.isFinite(parseInt(process.env.AI_PER_MINUTE, 10)) ? Math.max(0, parseInt(process.env.AI_PER_MINUTE, 10)) : 10);
+const aiBurst = new Map(); // "u:id" | "ip:addr" -> [ms cac cau hoi trong 60 giay qua]
 const AI_FIRST_TOKEN_TIMEOUT_MS = 25000;
 const aiUsage = new Map(); // "day|key" -> so cau da hoi (bo nho, tu reset moi ngay)
 
@@ -1147,14 +1153,15 @@ async function aiQuotaFor(req) {
   const userId = await optionalUserId(req);
   const key = userId ? 'u:' + userId : 'ip:' + clientIp(req);
   const limit = userId ? AI_DAILY_LIMIT_USER : AI_DAILY_LIMIT_GUEST;
+  const unlimited = limit === 0;
   const mapKey = vnDayKey() + '|' + key;
   const used = aiUsage.get(mapKey) || 0;
-  return { mapKey, limit, used, remaining: Math.max(0, limit - used), loggedIn: !!userId };
+  return { key, mapKey, limit, used, unlimited, remaining: unlimited ? null : Math.max(0, limit - used), loggedIn: !!userId };
 }
 
 app.get('/api/ai/quota', asyncRoute(async (req, res) => {
   const q = await aiQuotaFor(req);
-  res.json({ enabled: aiProviders().length > 0, limit: q.limit, remaining: q.remaining, loggedIn: q.loggedIn });
+  res.json({ enabled: aiProviders().length > 0, unlimited: q.unlimited, limit: q.unlimited ? null : q.limit, remaining: q.remaining, loggedIn: q.loggedIn });
 }));
 
 app.post('/api/ai/chat', asyncRoute(async (req, res) => {
@@ -1169,28 +1176,46 @@ app.post('/api/ai/chat', asyncRoute(async (req, res) => {
     return res.status(400).json({ error: 'Hãy nhập câu hỏi.' });
   }
   const q = await aiQuotaFor(req);
-  if (q.remaining <= 0) {
+  if (!q.unlimited && q.remaining <= 0) {
     return res.status(429).json({
       error: q.loggedIn
         ? 'Hôm nay bạn đã dùng hết ' + q.limit + ' câu hỏi. Mai quay lại nhé!'
-        : 'Bạn đã dùng hết ' + q.limit + ' câu hỏi miễn phí hôm nay. Đăng nhập để được hỏi ' + AI_DAILY_LIMIT_USER + ' câu mỗi ngày.',
+        : 'Bạn đã dùng hết ' + q.limit + ' câu hỏi miễn phí hôm nay. Đăng nhập để được hỏi ' +
+          (AI_DAILY_LIMIT_USER ? AI_DAILY_LIMIT_USER + ' câu mỗi ngày.' : 'không giới hạn.'),
       remaining: 0, limit: q.limit,
     });
   }
-  // Tru luot truoc de nhieu request song song khong vuot han muc; loi thi hoan lai.
-  aiUsage.set(q.mapKey, q.used + 1);
-  if (aiUsage.size > 5000) {
-    const today = vnDayKey() + '|';
-    Array.from(aiUsage.keys()).forEach((k) => { if (!k.startsWith(today)) aiUsage.delete(k); });
+  // Chong spam: qua nhieu cau trong 1 phut thi nhac doi mot chut
+  if (AI_PER_MINUTE > 0) {
+    const now = Date.now();
+    const recent = (aiBurst.get(q.key) || []).filter((t) => now - t < 60000);
+    if (recent.length >= AI_PER_MINUTE) {
+      return res.status(429).json({ error: 'Bạn hỏi nhanh quá, đợi khoảng một phút rồi hỏi tiếp nhé.', burst: true });
+    }
+    recent.push(now);
+    aiBurst.set(q.key, recent);
+    if (aiBurst.size > 5000) {
+      aiBurst.forEach((list, k) => { if (!list.some((t) => now - t < 60000)) aiBurst.delete(k); });
+    }
   }
-  const refund = () => aiUsage.set(q.mapKey, Math.max(0, (aiUsage.get(q.mapKey) || 1) - 1));
+  // Co gioi han theo ngay: tru luot truoc de request song song khong vuot; loi thi hoan lai.
+  if (!q.unlimited) {
+    aiUsage.set(q.mapKey, q.used + 1);
+    if (aiUsage.size > 5000) {
+      const today = vnDayKey() + '|';
+      Array.from(aiUsage.keys()).forEach((k) => { if (!k.startsWith(today)) aiUsage.delete(k); });
+    }
+  }
+  const refund = () => { if (!q.unlimited) aiUsage.set(q.mapKey, Math.max(0, (aiUsage.get(q.mapKey) || 1) - 1)); };
 
   res.status(200);
   res.setHeader('Content-Type', 'text/plain; charset=utf-8');
   // no-transform: middleware compression khong gom lai, chu hien dan tren man hinh
   res.setHeader('Cache-Control', 'no-cache, no-transform');
-  res.setHeader('X-AI-Remaining', String(q.remaining - 1));
-  res.setHeader('X-AI-Limit', String(q.limit));
+  if (!q.unlimited) {
+    res.setHeader('X-AI-Remaining', String(q.remaining - 1));
+    res.setHeader('X-AI-Limit', String(q.limit));
+  }
 
   let clientGone = false;
   let current = null;

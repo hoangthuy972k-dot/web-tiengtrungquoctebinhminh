@@ -1,6 +1,6 @@
 /* ============================================================
    Hai nut noi o goc phai moi trang (tru phong thi HSK):
-   1) Tro ly AI "Tieu Han" — hoi dap tieng Trung, co gioi han so cau moi ngay
+   1) Tro ly AI "Tieu Han" — hoi dap tieng Trung (mac dinh khong gioi han so cau, co chong spam)
    2) Tin nhan — tim hoc sinh, xem ai dang truc tuyen, nhan tin, loi moi, chan
    Server gan file nay vao moi trang HTML (xem sendVersionedHtml trong server.js).
    ============================================================ */
@@ -208,9 +208,15 @@
     aiMsgs = []; ssSet('hw_ai_msgs', aiMsgs); renderAi(); aiInput.focus();
   });
 
+  // Chi het luot khi may chu dang dat gioi han theo ngay (mac dinh la khong gioi han)
+  function outOfQuota() {
+    return !!(aiQuota && aiQuota.enabled && !aiQuota.unlimited && aiQuota.remaining <= 0);
+  }
+
   function quotaText() {
     if (!aiQuota) return 'Đang kiểm tra…';
     if (!aiQuota.enabled) return 'Tạm thời chưa hoạt động';
+    if (aiQuota.unlimited) return 'Đang trực tuyến · hỏi thoải mái';
     return 'Còn lại ' + aiQuota.remaining + '/' + aiQuota.limit + ' câu hôm nay';
   }
   function loadQuota() {
@@ -222,7 +228,7 @@
     var html = '';
     if (aiQuota && !aiQuota.enabled) {
       html += '<p class="hw-note">Trợ lý AI đang được cài đặt và sẽ sớm hoạt động. Bạn quay lại sau nhé!</p>';
-    } else if (aiQuota && !aiQuota.loggedIn && aiQuota.remaining <= aiQuota.limit) {
+    } else if (aiQuota && !aiQuota.unlimited && !aiQuota.loggedIn) {
       html += '<p class="hw-note">Khách được hỏi ' + aiQuota.limit + ' câu mỗi ngày. <a href="#" data-hw-login>Đăng nhập</a> để được hỏi nhiều hơn.</p>';
     }
     if (!aiMsgs.length) {
@@ -245,7 +251,7 @@
     }
     aiBody.innerHTML = html;
     aiBody.scrollTop = aiBody.scrollHeight;
-    aiInput.placeholder = aiQuota && aiQuota.enabled && aiQuota.remaining <= 0
+    aiInput.placeholder = outOfQuota()
       ? 'Hôm nay bạn đã hết lượt hỏi, mai quay lại nhé'
       : 'Gõ câu hỏi của bạn…';
     syncAiInput();
@@ -291,7 +297,7 @@
 
   function askAi(text) {
     if (aiBusy || !text) return;
-    if (aiQuota && (!aiQuota.enabled || aiQuota.remaining <= 0)) {
+    if (aiQuota && (!aiQuota.enabled || outOfQuota())) {
       aiMsgs.push({ role: 'user', content: text });
       aiMsgs.push({
         role: 'assistant', error: true,

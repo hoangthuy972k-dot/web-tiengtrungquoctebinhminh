@@ -10392,6 +10392,16 @@
 
     if (authBannerRegisterBtn) authBannerRegisterBtn.addEventListener('click', function () { openModal('register'); });
     if (authBannerLoginBtn) authBannerLoginBtn.addEventListener('click', function () { openModal('login'); });
+    // Nut 'Dang nhap' trong khung Tin nhan / Tro ly AI o cac trang khac dan ve /#dang-nhap
+    function openLoginFromHash() {
+      if (location.hash !== '#dang-nhap') return;
+      // da chu dong bam Dang nhap: khong tu mo them khung Dang ky ben duoi nua
+      try { sessionStorage.setItem(STORAGE_KEYS.authPrompted, '1'); } catch (e) { /* ignore */ }
+      openModal('login');
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* ignore */ }
+    }
+    openLoginFromHash();
+    window.addEventListener('hashchange', openLoginFromHash);
 
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', function (e) {

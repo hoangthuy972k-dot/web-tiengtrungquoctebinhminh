@@ -66,8 +66,18 @@ const REVALIDATE_EXT = new Set(['.html', '.css', '.js', '.json', '.webmanifest']
 const ASSET_VERSION = Date.now().toString(36);
 const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css|exam)\/[^"?#]+\.(?:js|css))(")/g;
 
+// Hai nut noi (Tro ly AI + Tin nhan) duoc gan vao MOI trang HTML ngay tai may chu,
+// nen khong phai sua tung file bai hoc. Bo qua phong thi HSK (/exam/test/) de hoc
+// sinh khong hoi AI trong luc thi, va bo qua trang quan tri.
+const WIDGET_TAGS = '<link rel="stylesheet" href="/css/widgets.css" />\n<script src="/js/widgets.js" defer></script>\n';
+const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html)$/;
+
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
+  if (!WIDGET_EXCLUDE_RE.test(filePath) && html.indexOf('/js/widgets.js') === -1 && html.lastIndexOf('</body>') !== -1) {
+    const at = html.lastIndexOf('</body>');
+    html = html.slice(0, at) + WIDGET_TAGS + html.slice(at);
+  }
   html = html.replace(ASSET_REF_RE, (m, before, url, after) => before + url + '?v=' + ASSET_VERSION + after);
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('X-Asset-Version', ASSET_VERSION);
@@ -222,6 +232,7 @@ async function initDb() {
   }
   await initExamAttemptsTable();
   await initDailyPointsTable();
+  await initChatTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
   await migrateJsonToDbIfNeeded();
 }
@@ -936,6 +947,394 @@ app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
     rows: board.slice(0, 50).map(toRow), me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null,
     exams: exams.map((d) => ({ id: d.id, title: d.title })),
   });
+}));
+
+// ══════════════════════════════════════════════════════════════════
+// Tro ly AI (Claude) + Tin nhan giua hoc sinh + trang thai truc tuyen.
+// Hai nut noi o goc phai moi trang (tru phong thi HSK) goi cac API nay.
+// ══════════════════════════════════════════════════════════════════
+// Nap thu vien trong try: neu hosting thieu goi/Node qua cu thi chi tat Tro ly AI,
+// khong lam sap ca website.
+let Anthropic = null;
+try { Anthropic = require('@anthropic-ai/sdk'); } catch (err) { console.error('Khong nap duoc @anthropic-ai/sdk, Tro ly AI tam tat:', err.message); }
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || '';
+const anthropic = Anthropic && ANTHROPIC_API_KEY ? new Anthropic({ apiKey: ANTHROPIC_API_KEY }) : null;
+const AI_MODEL = 'claude-opus-5';
+const AI_DAILY_LIMIT_GUEST = 3;
+const AI_DAILY_LIMIT_USER = 10;
+const aiUsage = new Map(); // "day|key" -> so cau da hoi (bo nho, tu reset moi ngay)
+
+const AI_SYSTEM_PROMPT = [
+  'Bạn là "Tiểu Hán", trợ lý học tiếng Trung của website Hi Hán 喜汉 dành cho học sinh Việt Nam (chủ yếu HSK 1-4 và YCT).',
+  'Luôn trả lời bằng tiếng Việt. Khi đưa ra từ hoặc câu tiếng Trung, viết chữ Hán giản thể kèm pinyin có dấu thanh và nghĩa tiếng Việt.',
+  'Việc bạn làm: tra cứu từ vựng và chữ Hán (nghĩa, bộ thủ, cách dùng, ví dụ), giải thích ngữ pháp ngắn gọn với ví dụ, dịch Việt-Trung và Trung-Việt tự nhiên, luyện hội thoại đơn giản (bạn đóng một vai, mỗi lượt chỉ vài câu, sửa lỗi nhẹ nhàng).',
+  'Chọn từ và cấu trúc vừa trình độ người hỏi; nếu không rõ trình độ thì dùng từ HSK 1-3.',
+  'Trả lời gọn, dễ đọc trên điện thoại: đoạn ngắn, gạch đầu dòng khi liệt kê, dùng **đậm** cho từ khoá. Không dùng bảng.',
+  'Nếu câu hỏi không liên quan tới việc học tiếng Trung hoặc văn hoá Trung Quốc, nhẹ nhàng từ chối và gợi ý một câu hỏi về tiếng Trung.',
+  'Người dùng là học sinh, có thể là trẻ vị thành niên: giữ nội dung lành mạnh, không hỏi thông tin cá nhân.',
+  'Latency-sensitive; begin your visible answer immediately.',
+].join('\n');
+
+function clientIp(req) {
+  // lay dia chi do proxy cua hosting them vao CUOI danh sach (phan dau do trinh duyet tu gui, gia duoc)
+  const fwd = String(req.headers['x-forwarded-for'] || '').split(',').pop().trim();
+  return fwd || req.socket.remoteAddress || 'unknown';
+}
+
+async function aiQuotaFor(req) {
+  const userId = await optionalUserId(req);
+  const key = userId ? 'u:' + userId : 'ip:' + clientIp(req);
+  const limit = userId ? AI_DAILY_LIMIT_USER : AI_DAILY_LIMIT_GUEST;
+  const mapKey = vnDayKey() + '|' + key;
+  const used = aiUsage.get(mapKey) || 0;
+  return { mapKey, limit, used, remaining: Math.max(0, limit - used), loggedIn: !!userId };
+}
+
+app.get('/api/ai/quota', asyncRoute(async (req, res) => {
+  const q = await aiQuotaFor(req);
+  res.json({ enabled: !!anthropic, limit: q.limit, remaining: q.remaining, loggedIn: q.loggedIn });
+}));
+
+app.post('/api/ai/chat', asyncRoute(async (req, res) => {
+  if (!anthropic) return res.status(503).json({ error: 'Trợ lý AI chưa được bật trên máy chủ.' });
+  const raw = Array.isArray(req.body?.messages) ? req.body.messages.slice(-12) : [];
+  const messages = raw
+    .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim())
+    .map((m) => ({ role: m.role, content: m.content.slice(0, 2000) }));
+  while (messages.length && messages[0].role !== 'user') messages.shift();
+  if (!messages.length || messages[messages.length - 1].role !== 'user') {
+    return res.status(400).json({ error: 'Hãy nhập câu hỏi.' });
+  }
+  const q = await aiQuotaFor(req);
+  if (q.remaining <= 0) {
+    return res.status(429).json({
+      error: q.loggedIn
+        ? 'Hôm nay bạn đã dùng hết ' + q.limit + ' câu hỏi. Mai quay lại nhé!'
+        : 'Bạn đã dùng hết ' + q.limit + ' câu hỏi miễn phí hôm nay. Đăng nhập để được hỏi ' + AI_DAILY_LIMIT_USER + ' câu mỗi ngày.',
+      remaining: 0, limit: q.limit,
+    });
+  }
+  // Tru luot truoc de nhieu request song song khong vuot han muc; loi thi hoan lai.
+  aiUsage.set(q.mapKey, q.used + 1);
+  if (aiUsage.size > 5000) {
+    const today = vnDayKey() + '|';
+    Array.from(aiUsage.keys()).forEach((k) => { if (!k.startsWith(today)) aiUsage.delete(k); });
+  }
+  const refund = () => aiUsage.set(q.mapKey, Math.max(0, (aiUsage.get(q.mapKey) || 1) - 1));
+
+  res.status(200);
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  // no-transform: middleware compression khong gom lai, chu hien dan tren man hinh
+  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  res.setHeader('X-AI-Remaining', String(q.remaining - 1));
+  res.setHeader('X-AI-Limit', String(q.limit));
+
+  let wroteText = false;
+  let aborted = false;
+  req.on('close', () => { aborted = true; });
+  try {
+    const stream = anthropic.beta.messages.stream({
+      model: AI_MODEL,
+      max_tokens: 16000,
+      thinking: { type: 'adaptive' },
+      output_config: { effort: 'low' },
+      betas: ['server-side-fallback-2026-07-01'],
+      fallbacks: 'default',
+      system: AI_SYSTEM_PROMPT,
+      messages,
+    });
+    for await (const event of stream) {
+      if (aborted) { stream.abort(); break; }
+      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
+        wroteText = true;
+        res.write(event.delta.text);
+      }
+    }
+    if (!aborted) {
+      const final = await stream.finalMessage();
+      if (final.stop_reason === 'refusal') {
+        if (!wroteText) refund();
+        res.write((wroteText ? '\n\n' : '') + 'Xin lỗi, mình không thể trả lời câu này. Bạn thử hỏi một câu khác về tiếng Trung nhé.');
+      } else if (final.stop_reason === 'max_tokens') {
+        res.write('\n\n(Câu trả lời dài quá nên bị cắt bớt, bạn hỏi tiếp phần còn lại nhé.)');
+      }
+    }
+  } catch (err) {
+    if (!wroteText) refund();
+    let msg = 'Trợ lý AI đang bận, bạn thử lại sau ít phút nhé.';
+    if (err instanceof Anthropic.RateLimitError) msg = 'Trợ lý AI đang quá tải, bạn thử lại sau một lát nhé.';
+    else if (err instanceof Anthropic.AuthenticationError) msg = 'Trợ lý AI chưa được cấu hình đúng trên máy chủ.';
+    else if (err instanceof Anthropic.APIError) console.error('Claude API error', err.status, err.message);
+    else console.error('AI chat error', err && err.message);
+    res.write((wroteText ? '\n\n' : '') + '⚠️ ' + msg);
+  }
+  res.end();
+}));
+
+// ---------------- Trang thai truc tuyen ----------------
+const presence = new Map(); // userId -> lastSeenMs
+const ONLINE_WINDOW_MS = 150 * 1000;
+function isOnline(userId) { return Date.now() - (presence.get(userId) || 0) < ONLINE_WINDOW_MS; }
+
+app.post('/api/presence', requireAuth, (req, res) => {
+  presence.set(req.user.id, Date.now());
+  res.json({ ok: true });
+});
+
+// ---------------- Tin nhan ----------------
+const CHAT_FILE = path.join(DATA_DIR, 'chat.json');
+const CHAT_BODY_MAX = 1000;
+const chatSendLog = new Map(); // userId -> [ms...] de gioi han toc do gui
+
+async function initChatTables() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS chat_messages (' +
+      'id BIGINT AUTO_INCREMENT PRIMARY KEY, ' +
+      'from_id VARCHAR(36) NOT NULL, ' +
+      'to_id VARCHAR(36) NOT NULL, ' +
+      'body TEXT NOT NULL, ' +
+      'created_ms BIGINT NOT NULL, ' +
+      'read_ms BIGINT NULL, ' +
+      'INDEX idx_pair (from_id, to_id, created_ms), ' +
+      'INDEX idx_inbox (to_id, read_ms), ' +
+      'FOREIGN KEY (from_id) REFERENCES users(id) ON DELETE CASCADE, ' +
+      'FOREIGN KEY (to_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS chat_contacts (' +
+      'user_id VARCHAR(36) NOT NULL, ' +
+      'peer_id VARCHAR(36) NOT NULL, ' +
+      "status VARCHAR(16) NOT NULL, " + // accepted | blocked
+      'updated_ms BIGINT NOT NULL, ' +
+      'PRIMARY KEY (user_id, peer_id), ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE, ' +
+      'FOREIGN KEY (peer_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+}
+
+function readChatFile() {
+  const d = readJsonFile(CHAT_FILE) || {};
+  return { seq: d.seq || 0, messages: d.messages || [], contacts: d.contacts || [] };
+}
+
+// Moi tin nhan va trang thai lien quan toi 1 hoc sinh
+async function chatStateFor(userId) {
+  if (!USE_DB) {
+    const d = readChatFile();
+    return {
+      messages: d.messages.filter((m) => m.fromId === userId || m.toId === userId),
+      contacts: d.contacts.filter((c) => c.userId === userId || c.peerId === userId),
+    };
+  }
+  const [msgs] = await dbPool.query(
+    'SELECT id, from_id, to_id, body, created_ms, read_ms FROM chat_messages WHERE from_id = ? OR to_id = ? ORDER BY id',
+    [userId, userId]
+  );
+  const [cts] = await dbPool.query('SELECT user_id, peer_id, status FROM chat_contacts WHERE user_id = ? OR peer_id = ?', [userId, userId]);
+  return {
+    messages: msgs.map((m) => ({ id: Number(m.id), fromId: m.from_id, toId: m.to_id, body: m.body, createdMs: Number(m.created_ms), readMs: m.read_ms == null ? null : Number(m.read_ms) })),
+    contacts: cts.map((c) => ({ userId: c.user_id, peerId: c.peer_id, status: c.status })),
+  };
+}
+
+async function setContact(userId, peerId, status) {
+  if (!USE_DB) {
+    const d = readChatFile();
+    d.contacts = d.contacts.filter((c) => !(c.userId === userId && c.peerId === peerId));
+    if (status) d.contacts.push({ userId, peerId, status, updatedMs: Date.now() });
+    writeJsonFile(CHAT_FILE, d);
+    return;
+  }
+  if (!status) {
+    await dbPool.query('DELETE FROM chat_contacts WHERE user_id = ? AND peer_id = ?', [userId, peerId]);
+    return;
+  }
+  await dbPool.query(
+    'INSERT INTO chat_contacts (user_id, peer_id, status, updated_ms) VALUES (?,?,?,?) ON DUPLICATE KEY UPDATE status = VALUES(status), updated_ms = VALUES(updated_ms)',
+    [userId, peerId, status, Date.now()]
+  );
+}
+
+// Quan he giua "toi" va 1 nguoi: accepted (da ket noi) | request (ho gui loi moi) |
+// pending (toi dang cho ho chap nhan) | blocked (toi da chan) | none
+function relation(state, me, peer) {
+  const mine = state.contacts.find((c) => c.userId === me && c.peerId === peer);
+  const theirs = state.contacts.find((c) => c.userId === peer && c.peerId === me);
+  if (mine && mine.status === 'blocked') return 'blocked';
+  const iSent = state.messages.some((m) => m.fromId === me && m.toId === peer);
+  const theySent = state.messages.some((m) => m.fromId === peer && m.toId === me);
+  const iAccepted = (mine && mine.status === 'accepted') || iSent;
+  const theyAccepted = (theirs && theirs.status === 'accepted') || theySent;
+  if (iAccepted && theyAccepted) return 'accepted';
+  if (theySent && !iAccepted) return 'request';
+  if (iSent && !theyAccepted) return 'pending';
+  return 'none';
+}
+
+function isBlockedBy(state, blocker, other) {
+  return state.contacts.some((c) => c.userId === blocker && c.peerId === other && c.status === 'blocked');
+}
+
+// Bo dau tieng Viet de tim 'tran duc minh' van ra 'Trần Đức Minh'
+function foldVi(s) {
+  return String(s || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
+}
+
+function publicPeer(u) {
+  return { id: u.id, name: u.name, level: u.level, online: isOnline(u.id) };
+}
+
+async function usersById() {
+  const users = await loadUsers();
+  const map = {};
+  users.forEach((u) => { map[u.id] = u; });
+  return { users, map };
+}
+
+app.get('/api/chat/online', requireAuth, asyncRoute(async (req, res) => {
+  presence.set(req.user.id, Date.now());
+  const [{ map }, state] = await Promise.all([usersById(), chatStateFor(req.user.id)]);
+  const online = [];
+  presence.forEach((seen, uid) => {
+    if (uid === req.user.id || !map[uid] || Date.now() - seen >= ONLINE_WINDOW_MS) return;
+    if (isBlockedBy(state, req.user.id, uid) || isBlockedBy(state, uid, req.user.id)) return;
+    online.push({ user: publicPeer(map[uid]), seen });
+  });
+  online.sort((a, b) => b.seen - a.seen);
+  res.json({ users: online.slice(0, 30).map((o) => o.user), count: online.length });
+}));
+
+app.get('/api/chat/users', requireAuth, asyncRoute(async (req, res) => {
+  const q = foldVi(req.query.q);
+  if (q.length < 2) return res.json({ users: [] });
+  const [{ users }, state] = await Promise.all([usersById(), chatStateFor(req.user.id)]);
+  const found = users
+    .filter((u) => u.id !== req.user.id && !isBlockedBy(state, u.id, req.user.id))
+    .filter((u) => foldVi(u.name).includes(q))
+    .slice(0, 20)
+    .map(publicPeer);
+  res.json({ users: found });
+}));
+
+app.get('/api/chat/conversations', requireAuth, asyncRoute(async (req, res) => {
+  const me = req.user.id;
+  presence.set(me, Date.now());
+  const [{ map }, state] = await Promise.all([usersById(), chatStateFor(me)]);
+  const peers = new Set();
+  state.messages.forEach((m) => peers.add(m.fromId === me ? m.toId : m.fromId));
+  state.contacts.forEach((c) => { if (c.userId === me) peers.add(c.peerId); });
+  const conversations = [];
+  const blocked = [];
+  peers.forEach((pid) => {
+    const u = map[pid];
+    if (!u) return;
+    const rel = relation(state, me, pid);
+    if (rel === 'blocked') { blocked.push(publicPeer(u)); return; }
+    const thread = state.messages.filter((m) => (m.fromId === me && m.toId === pid) || (m.fromId === pid && m.toId === me));
+    if (!thread.length) return;
+    const last = thread[thread.length - 1];
+    conversations.push({
+      peer: publicPeer(u),
+      status: rel,
+      last: { body: last.body.slice(0, 120), mine: last.fromId === me, at: last.createdMs },
+      unread: thread.filter((m) => m.toId === me && m.readMs == null).length,
+    });
+  });
+  conversations.sort((a, b) => b.last.at - a.last.at);
+  res.json({ conversations, blocked, unreadTotal: conversations.reduce((a, c) => a + c.unread, 0) });
+}));
+
+app.get('/api/chat/messages', requireAuth, asyncRoute(async (req, res) => {
+  const me = req.user.id;
+  const peerId = String(req.query.with || '');
+  const [{ map }, state] = await Promise.all([usersById(), chatStateFor(me)]);
+  if (!map[peerId] || peerId === me) return res.status(404).json({ error: 'Không tìm thấy người dùng.' });
+  const rel = relation(state, me, peerId);
+  const thread = state.messages
+    .filter((m) => (m.fromId === me && m.toId === peerId) || (m.fromId === peerId && m.toId === me))
+    .slice(-100);
+  // Mo cuoc tro chuyen = da doc tin nhan cua nguoi kia gui cho minh
+  const unreadIds = thread.filter((m) => m.toId === me && m.readMs == null).map((m) => m.id);
+  if (unreadIds.length) {
+    const now = Date.now();
+    if (!USE_DB) {
+      const d = readChatFile();
+      d.messages.forEach((m) => { if (unreadIds.indexOf(m.id) !== -1) m.readMs = now; });
+      writeJsonFile(CHAT_FILE, d);
+    } else {
+      await dbPool.query('UPDATE chat_messages SET read_ms = ? WHERE to_id = ? AND from_id = ? AND read_ms IS NULL', [now, me, peerId]);
+    }
+  }
+  res.json({
+    peer: publicPeer(map[peerId]),
+    status: rel,
+    blockedMe: isBlockedBy(state, peerId, me),
+    messages: thread.map((m) => ({ id: m.id, mine: m.fromId === me, body: m.body, at: m.createdMs, read: m.readMs != null })),
+  });
+}));
+
+app.post('/api/chat/send', requireAuth, asyncRoute(async (req, res) => {
+  const me = req.user.id;
+  const peerId = String(req.body?.to || '');
+  const body = typeof req.body?.body === 'string' ? req.body.body.trim() : '';
+  if (!body) return res.status(400).json({ error: 'Tin nhắn trống.' });
+  if (body.length > CHAT_BODY_MAX) return res.status(400).json({ error: 'Tin nhắn tối đa ' + CHAT_BODY_MAX + ' ký tự.' });
+  const now = Date.now();
+  const recent = (chatSendLog.get(me) || []).filter((t) => now - t < 60000);
+  if (recent.length >= 20) return res.status(429).json({ error: 'Bạn gửi nhanh quá, đợi một chút nhé.' });
+  const [{ map }, state] = await Promise.all([usersById(), chatStateFor(me)]);
+  if (!map[peerId] || peerId === me) return res.status(404).json({ error: 'Không tìm thấy người dùng.' });
+  if (isBlockedBy(state, me, peerId)) return res.status(403).json({ error: 'Bạn đã chặn người này. Bỏ chặn để nhắn tin.' });
+  if (isBlockedBy(state, peerId, me)) return res.status(403).json({ error: 'Không thể gửi tin nhắn cho người này.' });
+  const rel = relation(state, me, peerId);
+  // Chua ket noi: chi duoc gui 1 tin loi moi, doi nguoi kia chap nhan moi nhan tiep
+  if (rel === 'pending') {
+    return res.status(403).json({ error: 'Đã gửi lời mời. Đợi bạn ấy chấp nhận rồi mới nhắn tiếp được nhé.' });
+  }
+  recent.push(now);
+  chatSendLog.set(me, recent);
+  if (!USE_DB) {
+    const d = readChatFile();
+    d.seq += 1;
+    d.messages.push({ id: d.seq, fromId: me, toId: peerId, body, createdMs: now, readMs: null });
+    writeJsonFile(CHAT_FILE, d);
+  } else {
+    await dbPool.query('INSERT INTO chat_messages (from_id, to_id, body, created_ms) VALUES (?,?,?,?)', [me, peerId, body, now]);
+  }
+  // Tra loi mot loi moi = chap nhan
+  if (rel === 'request') await setContact(me, peerId, 'accepted');
+  presence.set(me, now);
+  res.json({ ok: true, status: rel === 'request' || rel === 'accepted' ? 'accepted' : 'pending' });
+}));
+
+app.post('/api/chat/action', requireAuth, asyncRoute(async (req, res) => {
+  const me = req.user.id;
+  const peerId = String(req.body?.peer || '');
+  const action = String(req.body?.action || '');
+  const { map } = await usersById();
+  if (!map[peerId] || peerId === me) return res.status(404).json({ error: 'Không tìm thấy người dùng.' });
+  if (action === 'accept') {
+    await setContact(me, peerId, 'accepted');
+  } else if (action === 'block') {
+    await setContact(me, peerId, 'blocked');
+  } else if (action === 'unblock') {
+    await setContact(me, peerId, null);
+  } else if (action === 'decline') {
+    // Tu choi loi moi: xoa tin nhan nguoi do da gui cho minh (chua ket noi)
+    if (!USE_DB) {
+      const d = readChatFile();
+      d.messages = d.messages.filter((m) => !(m.fromId === peerId && m.toId === me));
+      writeJsonFile(CHAT_FILE, d);
+    } else {
+      await dbPool.query('DELETE FROM chat_messages WHERE from_id = ? AND to_id = ?', [peerId, me]);
+    }
+  } else {
+    return res.status(400).json({ error: 'Thao tác không hợp lệ.' });
+  }
+  res.json({ ok: true });
 }));
 
 // ══════════════════════════════════════════════════════════════════

@@ -467,19 +467,24 @@ function resetSort(){
 // MATCH
 // ══════════════════════════════════════════
 let mSel=null,mDone=new Set(),mOrder=[];
+// Co chu theo do dai: o ngan chu rat to, o dai vua phai
+function mSizeClass(text){
+  const len=Array.from(String(text)).length;
+  return len<=6?' m-sz-lg':(len<=14?' m-sz-md':' m-sz-sm');
+}
 function buildMatch(){
   const lEl=document.getElementById('m-left'),rEl=document.getElementById('m-right');
   lEl.innerHTML='';rEl.innerHTML='';
   mOrder=matchData.map(function(_,i){return i;}).sort(function(){return Math.random()-0.5;});
   matchData.forEach(function(p,i){
     const d=document.createElement('div');
-    d.className='m-item';d.id='ml'+i;
+    d.className='m-item'+mSizeClass(p.left);d.id='ml'+i;
     d.textContent=p.left;d.onclick=function(){mClickL(i);};
     lEl.appendChild(d);
   });
   mOrder.forEach(function(ri){
     const d=document.createElement('div');
-    d.className='m-item';d.id='mr'+ri;
+    d.className='m-item'+mSizeClass(matchData[ri].right);d.id='mr'+ri;
     d.textContent=matchData[ri].right;d.onclick=function(){mClickR(ri);};
     rEl.appendChild(d);
   });

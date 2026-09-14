@@ -9386,6 +9386,12 @@
   var gmDone = null;
   var gmOrder = [];
 
+  // Co chu theo do dai: o ngan (tu vung) chu rat to, o dai (nua cau, giai thich) vua phai
+  function gmSizeClass(text) {
+    var len = Array.from(String(text)).length;
+    return len <= 6 ? ' mg-sz-lg' : (len <= 14 ? ' mg-sz-md' : ' mg-sz-sm');
+  }
+
   function renderGameMatch(data) {
     gmSel = null;
     gmDone = new Set();
@@ -9396,7 +9402,7 @@
     wrap.innerHTML =
       pgbHtml('gmMatch', data.length) +
       '<p style="color:var(--color-gray-600);font-size:0.88rem;margin-bottom:var(--space-4);">Bấm 1 ô <b>bên trái</b> → bấm ô <b>bên phải</b> để ghép thành cặp đúng.</p>' +
-      '<div class="mg-wrap">' +
+      '<div class="mg-wrap mg-game">' +
         '<div class="mg-col"><div class="mg-col-label">TỪ 1</div><div id="mgLeft"></div></div>' +
         '<div class="mg-col"><div class="mg-col-label">TỪ 2</div><div id="mgRight"></div></div>' +
       '</div>' +
@@ -9409,7 +9415,7 @@
     data.forEach(function (pair, i) {
       var item = document.createElement('button');
       item.type = 'button';
-      item.className = 'mg-item';
+      item.className = 'mg-item' + gmSizeClass(pair.left);
       item.textContent = pair.left;
       item.setAttribute('data-li', i);
       item.addEventListener('click', function () { gmClickLeft(i); });
@@ -9418,7 +9424,7 @@
     gmOrder.forEach(function (ri) {
       var item = document.createElement('button');
       item.type = 'button';
-      item.className = 'mg-item';
+      item.className = 'mg-item' + gmSizeClass(data[ri].right);
       item.textContent = data[ri].right;
       item.setAttribute('data-ri', ri);
       item.addEventListener('click', function () { gmClickRight(ri, data); });

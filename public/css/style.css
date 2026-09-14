@@ -3884,6 +3884,30 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   border-color: var(--color-red-600);
 }
 
+/* Tro choi Ghep tu: chu lon, nam giua o */
+.mg-game .mg-col-label { text-align: center; }
+
+.mg-game .mg-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 68px;
+  text-align: center;
+  line-height: 1.35;
+  font-size: 1.15rem;
+}
+
+.mg-game .mg-item.mg-sz-lg { font-size: 1.75rem; white-space: nowrap; }
+.mg-game .mg-item.mg-sz-md { font-size: 1.3rem; }
+.mg-game .mg-item.mg-sz-sm { font-size: 1.02rem; }
+
+@media (max-width: 640px) {
+  .mg-game .mg-item { min-height: 58px; padding: var(--space-2) var(--space-3); }
+  .mg-game .mg-item.mg-sz-lg { font-size: 1.3rem; }
+  .mg-game .mg-item.mg-sz-md { font-size: 1.12rem; }
+  .mg-game .mg-item.mg-sz-sm { font-size: 0.95rem; }
+}
+
 .mg-fb {
   min-height: 1.4em;
   font-weight: 600;

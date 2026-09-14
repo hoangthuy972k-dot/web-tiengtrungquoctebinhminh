@@ -107,6 +107,7 @@
   /* ---------------- Viết chữ ---------------- */
   var writerIdx = 0;
   var hzWriter = null;
+  var hzQuizTok = 0; // luot luyen viet dang dien ra (0 = khong luyen)
   function renderWriterTab() {
     var panel = document.getElementById('yk-panel-vietchu');
     panel.innerHTML =
@@ -129,9 +130,9 @@
     document.getElementById('yw-next').addEventListener('click', function () { moveWriter(1); });
     document.getElementById('yw-play').addEventListener('click', function () {
       if (!hzWriter) return;
-      try { hzWriter.cancelQuiz(); } catch (e) {}
+      hzQuizTok = 0;
       document.getElementById('yw-quizfb').textContent = '';
-      hzWriter.animateCharacter();
+      hzWriter.loopCharacterAnimation();
     });
     document.getElementById('yw-quiz').addEventListener('click', quizWriterChar);
     writerIdx = 0;
@@ -162,15 +163,18 @@
       '<div><b>Cách nhớ:</b> ' + h.tip + '</div>' +
       '<div><b>Ví dụ:</b> ' + h.w + '</div>';
     var box = document.getElementById('yw-box');
+    if (hzWriter) { try { hzWriter.pauseAnimation(); } catch (e) {} }
+    hzQuizTok = 0;
     box.innerHTML = '';
     if (typeof HanziWriter !== 'undefined' && typeof STROKE_DATA !== 'undefined' && STROKE_DATA[h.c]) {
       var charData = STROKE_DATA[h.c];
       hzWriter = HanziWriter.create(box, h.c, {
         width: 220, height: 220, padding: 8,
-        showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 260,
+        showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 260, delayBetweenLoops: 1600,
         strokeColor: '#4a3540', radicalColor: '#e0577a', outlineColor: '#ffe3ec',
         charDataLoader: function () { return charData; }
       });
+      hzWriter.loopCharacterAnimation();
     } else {
       box.innerHTML = '<span style="font-size:3rem;font-family:\'Noto Serif SC\',serif;color:#e0577a">' + h.c + '</span>';
       hzWriter = null;
@@ -183,11 +187,19 @@
       return;
     }
     if (fb) fb.textContent = '✏️ Con hãy vẽ từng nét vào ô trên nhé!';
+    var w = hzWriter;
+    var tok = ++hzQuizTok;
     hzWriter.quiz({
       onMistake: function () { if (fb) fb.textContent = '❌ Chưa đúng nét, thử lại nhé!'; },
       onCorrectStroke: function () { if (fb) fb.textContent = '✅ Đúng rồi! Vẽ tiếp nét sau...'; },
       onComplete: function (summary) {
         if (fb) fb.textContent = '🎉 Con đã viết xong! (Sai ' + summary.totalMistakes + ' lần)';
+        // viet xong thi net chu tu chay lai sau 2 giay
+        setTimeout(function () {
+          if (hzWriter !== w || hzQuizTok !== tok) return;
+          hzQuizTok = 0;
+          w.loopCharacterAnimation();
+        }, 2000);
       }
     });
   }

@@ -1308,7 +1308,8 @@
   var vpQuiz = null; // {order:[idx...], pos:0, score:0}
 
   // ---- Hán tự: nét chữ thật (HanziWriter) + luyện viết, gắn ngay trong thẻ từ vựng ----
-  var vpHzWriters = {};
+  var vpHzWriters = {};   // key "vi_hi" -> { w: HanziWriter, el: o chu }
+  var vpHzQuizTok = {};   // key -> so hieu luot luyen viet dang dien ra (0 = khong luyen)
   var strokeDataCache = {};
   var hanziWriterLibPromise = null;
 
@@ -1356,6 +1357,23 @@
     panel.classList.toggle('open', open);
     btn.textContent = open ? '🀄 Ẩn Hán tự' : '🀄 Xem Hán tự (' + vpVocab[vi].hanzi.length + ' chữ)';
     if (open) vpEnsureHzWriters(vi);
+    else vpPauseHzWriters(vi);
+  }
+
+  // Dung het net chu dang chay (khi danh sach tu duoc ve lai, o chu cu da bi go khoi trang)
+  function vpResetHzWriters() {
+    Object.keys(vpHzWriters).forEach(function (k) {
+      try { vpHzWriters[k].w.pauseAnimation(); } catch (e) {}
+    });
+    vpHzWriters = {};
+    vpHzQuizTok = {};
+  }
+
+  function vpPauseHzWriters(vi) {
+    (vpVocab[vi].hanzi || []).forEach(function (h, hi) {
+      var rec = vpHzWriters[vi + '_' + hi];
+      if (rec) rec.w.pauseAnimation();
+    });
   }
 
   function vpEnsureHzWriters(vi) {
@@ -1364,36 +1382,60 @@
       if (!strokeData || typeof HanziWriter === 'undefined') return;
       (vpVocab[vi].hanzi || []).forEach(function (h, hi) {
         var key = vi + '_' + hi;
-        if (vpHzWriters[key]) return;
-        var charData = strokeData[h.c];
-        if (!charData) return;
         var target = $('#vphzw' + key);
         if (!target) return;
+        var rec = vpHzWriters[key];
+        if (rec && rec.el === target) {
+          // mo lai o chu da co: chay tiep vong lap (tru khi hoc sinh dang luyen viet)
+          if (!vpHzQuizTok[key]) rec.w.resumeAnimation();
+          return;
+        }
+        var charData = strokeData[h.c];
+        if (!charData) return;
         target.innerHTML = '';
-        vpHzWriters[key] = HanziWriter.create(target, h.c, {
+        var w = HanziWriter.create(target, h.c, {
           width: 130, height: 130, padding: 6,
-          showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 280,
+          showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 280, delayBetweenLoops: 1600,
           strokeColor: '#2b2420', radicalColor: '#c84b31', outlineColor: '#e6dcc9',
           charDataLoader: function () { return charData; }
         });
+        vpHzWriters[key] = { w: w, el: target };
+        w.loopCharacterAnimation();
       });
     });
   }
 
   function vpHzReplay(vi, hi) {
-    var w = vpHzWriters[vi + '_' + hi];
-    if (w) w.animateCharacter();
+    var key = vi + '_' + hi;
+    var rec = vpHzWriters[key];
+    if (!rec) return;
+    vpHzQuizTok[key] = 0;
+    var fb = $('#vphzfb' + key);
+    if (fb) fb.textContent = '';
+    rec.w.loopCharacterAnimation();
   }
 
   function vpHzQuiz(vi, hi) {
-    var w = vpHzWriters[vi + '_' + hi];
-    var fb = $('#vphzfb' + vi + '_' + hi);
-    if (!w) { if (fb) fb.textContent = 'Đang tải dữ liệu nét chữ, thử lại sau giây lát...'; return; }
+    var key = vi + '_' + hi;
+    var rec = vpHzWriters[key];
+    var fb = $('#vphzfb' + key);
+    if (!rec) { if (fb) fb.textContent = 'Đang tải dữ liệu nét chữ, thử lại sau giây lát...'; return; }
+    var w = rec.w;
+    var tok = (vpHzQuizTok[key] || 0) + 1;
+    vpHzQuizTok[key] = tok;
     if (fb) fb.textContent = '✏️ Hãy vẽ từng nét vào ô trên nhé!';
     w.quiz({
       onMistake: function () { if (fb) fb.textContent = '❌ Chưa đúng nét, thử lại nhé!'; },
       onCorrectStroke: function () { if (fb) fb.textContent = '✅ Đúng rồi! Vẽ tiếp nét sau...'; },
-      onComplete: function (summary) { if (fb) fb.textContent = '🎉 Viết xong! (Sai ' + summary.totalMistakes + ' lần)'; }
+      onComplete: function (summary) {
+        if (fb) fb.textContent = '🎉 Viết xong! (Sai ' + summary.totalMistakes + ' lần)';
+        // viet xong thi net chu tu chay lai sau 2 giay
+        setTimeout(function () {
+          if (vpHzQuizTok[key] !== tok || vpHzWriters[key] !== rec) return;
+          vpHzQuizTok[key] = 0;
+          w.loopCharacterAnimation();
+        }, 2000);
+      }
     });
   }
 
@@ -1401,7 +1443,7 @@
     return '<div class="hz-item"><div class="hz-writer-wrap">' +
       '<div class="hz-writer-box" id="vphzw' + vi + '_' + hi + '"><span class="hz-fallback">' + h.c + '</span></div>' +
       '<div class="hz-writer-under"><span class="hzw-py">' + h.p + '</span>' +
-      '<button type="button" class="hz-replay-btn" data-hz-replay="' + vi + '_' + hi + '">▶ Xem thứ tự nét</button>' +
+      '<button type="button" class="hz-replay-btn" data-hz-replay="' + vi + '_' + hi + '">↺ Chạy lại từ đầu</button>' +
       '<button type="button" class="hz-quiz-btn" data-hz-quiz="' + vi + '_' + hi + '">✏️ Luyện viết</button>' +
       '</div><div class="hz-quiz-fb" id="vphzfb' + vi + '_' + hi + '"></div></div>' +
       '<div class="hz-info">' +
@@ -1516,6 +1558,7 @@
   }
 
   function renderVpList() {
+    vpResetHzWriters();
     var wrap = $('#vpContent');
     wrap.innerHTML = '<div class="vp-list-grid"></div>';
     var grid = wrap.firstChild;

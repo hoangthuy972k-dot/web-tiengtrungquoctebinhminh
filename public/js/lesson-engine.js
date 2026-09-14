@@ -170,7 +170,7 @@ function buildVocab(){
       return '<div class="hz-item"><div class="hz-writer-wrap">'+
         '<div class="hz-writer-box" id="hzw'+vi+'_'+hi+'"><span class="hz-fallback">'+h.c+'</span></div>'+
         '<div class="hz-writer-under"><span class="hzw-py">'+h.p+'</span>'+
-        (hasWriter?'<button type="button" class="hz-replay-btn" data-action="hz-replay" data-vi="'+vi+'" data-hi="'+hi+'">▶ Xem thứ tự nét</button>':'')+
+        (hasWriter?'<button type="button" class="hz-replay-btn" data-action="hz-replay" data-vi="'+vi+'" data-hi="'+hi+'">↺ Chạy lại từ đầu</button>':'')+
         (hasWriter?'<button type="button" class="hz-quiz-btn" data-action="hz-quiz" data-vi="'+vi+'" data-hi="'+hi+'">✏️ Luyện viết</button>':'')+
         '<div class="hz-quiz-fb" id="hzfb'+vi+'_'+hi+'"></div>'+
         '</div></div>'+
@@ -205,17 +205,25 @@ function toggleHz(btn,vi){
   p.classList.toggle('open',open);
   btn.textContent=open?'🀄 Ẩn Hán tự':'🀄 Xem Hán tự ('+vocabData[vi].hanzi.length+' chữ)';
   if(open) ensureHzWriters(vi);
+  else pauseHzWriters(vi);
+}
+function pauseHzWriters(vi){
+  (vocabData[vi].hanzi||[]).forEach(function(h,hi){
+    const w=hzWriters[vi+'_'+hi];
+    if(w) w.pauseAnimation();
+  });
 }
 // ══════════════════════════════════════════
 // STROKE ORDER WRITER (HanziWriter, tuỳ chọn — chỉ hoạt động khi
 // trang có nạp /js/vendor/hanzi-writer.min.js + STROKE_DATA riêng của bài)
 // ══════════════════════════════════════════
 const hzWriters={};
+const hzQuizTok={};
 function ensureHzWriters(vi){
   if(typeof HanziWriter==='undefined'||typeof STROKE_DATA==='undefined') return;
   (vocabData[vi].hanzi||[]).forEach(function(h,hi){
     const key=vi+'_'+hi;
-    if(hzWriters[key]) return;
+    if(hzWriters[key]){ if(!hzQuizTok[key]) hzWriters[key].resumeAnimation(); return; }
     const charData=STROKE_DATA[h.c];
     if(!charData) return;
     const target=document.getElementById('hzw'+key);
@@ -226,26 +234,44 @@ function ensureHzWriters(vi){
       showOutline:true,
       strokeAnimationSpeed:1,
       delayBetweenStrokes:280,
+      delayBetweenLoops:1600,
       strokeColor:'#201e1c',
       radicalColor:'#d8202e',
       outlineColor:'#dde3ea',
       charDataLoader:function(){return charData;}
     });
+    hzWriters[key].loopCharacterAnimation();
   });
 }
 function hzReplay(vi,hi){
-  const w=hzWriters[vi+'_'+hi];
-  if(w) w.animateCharacter();
+  const key=vi+'_'+hi;
+  const w=hzWriters[key];
+  if(!w) return;
+  hzQuizTok[key]=0;
+  const fb=document.getElementById('hzfb'+key);
+  if(fb)fb.textContent='';
+  w.loopCharacterAnimation();
 }
 function hzQuiz(vi,hi){
   const w=hzWriters[vi+'_'+hi];
   const fb=document.getElementById('hzfb'+vi+'_'+hi);
   if(!w){ if(fb)fb.textContent='Chữ này chưa có dữ liệu để luyện viết.'; return; }
+  const key=vi+'_'+hi;
+  const tok=(hzQuizTok[key]||0)+1;
+  hzQuizTok[key]=tok;
   if(fb)fb.textContent='✏️ Hãy vẽ từng nét vào ô trên nhé!';
   w.quiz({
     onMistake:function(){ if(fb)fb.textContent='❌ Chưa đúng nét, thử lại nhé!'; },
     onCorrectStroke:function(){ if(fb)fb.textContent='✅ Đúng rồi! Vẽ tiếp nét sau...'; },
-    onComplete:function(summary){ if(fb)fb.textContent='🎉 Viết xong! (Sai '+summary.totalMistakes+' lần)'; }
+    onComplete:function(summary){
+      if(fb)fb.textContent='🎉 Viết xong! (Sai '+summary.totalMistakes+' lần)';
+      // viet xong thi net chu tu chay lai sau 2 giay
+      setTimeout(function(){
+        if(hzQuizTok[key]!==tok) return;
+        hzQuizTok[key]=0;
+        w.loopCharacterAnimation();
+      },2000);
+    }
   });
 }
 function filterVocab(lesson,btn){

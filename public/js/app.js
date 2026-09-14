@@ -1327,9 +1327,10 @@
   }
 
   function strokesUrlFor(lesson) {
+    // HSK1: hsk1-bai-N, HSK1 3.0: hsk1v3-bai-N, HSK2: bai-N (khong tien to)
     var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-)?bai-(\d+)\.html/);
-    if (!m || !m[1]) return null;
-    return '/js/' + m[1] + 'bai-' + m[2] + '-strokes.js';
+    if (!m) return null;
+    return '/js/' + (m[1] || '') + 'bai-' + m[2] + '-strokes.js';
   }
 
   function loadStrokeData(lesson) {

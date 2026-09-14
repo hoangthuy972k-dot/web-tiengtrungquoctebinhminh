@@ -1351,17 +1351,11 @@
     });
   }
 
-  function vpToggleHz(btn, vi) {
-    var panel = $('#vphzp' + vi);
-    var open = !panel.classList.contains('open');
-    panel.classList.toggle('open', open);
-    btn.textContent = open ? '🀄 Ẩn Hán tự' : '🀄 Xem Hán tự (' + vpVocab[vi].hanzi.length + ' chữ)';
-    if (open) vpEnsureHzWriters(vi);
-    else vpPauseHzWriters(vi);
-  }
+  var vpHzObserver = null;
 
   // Dung het net chu dang chay (khi danh sach tu duoc ve lai, o chu cu da bi go khoi trang)
   function vpResetHzWriters() {
+    if (vpHzObserver) { vpHzObserver.disconnect(); vpHzObserver = null; }
     Object.keys(vpHzWriters).forEach(function (k) {
       try { vpHzWriters[k].w.pauseAnimation(); } catch (e) {}
     });
@@ -1369,50 +1363,56 @@
     vpHzQuizTok = {};
   }
 
-  function vpPauseHzWriters(vi) {
-    (vpVocab[vi].hanzi || []).forEach(function (h, hi) {
-      var rec = vpHzWriters[vi + '_' + hi];
-      if (rec) rec.w.pauseAnimation();
-    });
-  }
-
-  function vpEnsureHzWriters(vi) {
+  // Net chu tu chay khi o chu lot vao man hinh va tam dung khi cuon qua,
+  // de bai nhieu chu khong phai ve cung luc hang chuc hinh dong.
+  function vpObserveHzBoxes(root) {
+    var boxes = $all('.hz-writer-box', root);
+    if (!boxes.length) return;
     Promise.all([ensureHanziWriterLib(), loadStrokeData(currentHubLesson)]).then(function (res) {
       var strokeData = res[1];
       if (!strokeData || typeof HanziWriter === 'undefined') return;
-      (vpVocab[vi].hanzi || []).forEach(function (h, hi) {
-        var key = vi + '_' + hi;
-        var target = $('#vphzw' + key);
-        if (!target) return;
-        var rec = vpHzWriters[key];
-        if (rec && rec.el === target) {
-          // mo lai o chu da co: chay tiep vong lap (tru khi hoc sinh dang luyen viet)
-          if (!vpHzQuizTok[key]) rec.w.resumeAnimation();
-          return;
-        }
-        var charData = strokeData[h.c];
-        if (!charData) return;
-        target.innerHTML = '';
-        var w = HanziWriter.create(target, h.c, {
-          width: 130, height: 130, padding: 6,
-          showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 280, delayBetweenLoops: 1600,
-          strokeColor: '#2b2420', radicalColor: '#c84b31', outlineColor: '#e6dcc9',
-          charDataLoader: function () { return charData; }
+      if (!root.isConnected) return; // danh sach da duoc ve lai trong luc cho tai du lieu
+      if (typeof IntersectionObserver === 'undefined') {
+        boxes.forEach(function (el) { vpHzShow(el, strokeData); });
+        return;
+      }
+      vpHzObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) vpHzShow(en.target, strokeData);
+          else vpHzHide(en.target);
         });
-        vpHzWriters[key] = { w: w, el: target };
-        w.loopCharacterAnimation();
-      });
+      }, { rootMargin: '120px 0px' });
+      boxes.forEach(function (el) { vpHzObserver.observe(el); });
     });
   }
 
-  function vpHzReplay(vi, hi) {
-    var key = vi + '_' + hi;
+  function vpHzShow(el, strokeData) {
+    var key = el.id.replace('vphzw', '');
     var rec = vpHzWriters[key];
-    if (!rec) return;
-    vpHzQuizTok[key] = 0;
-    var fb = $('#vphzfb' + key);
-    if (fb) fb.textContent = '';
-    rec.w.loopCharacterAnimation();
+    if (rec) {
+      if (!vpHzQuizTok[key]) rec.w.resumeAnimation();
+      return;
+    }
+    var parts = key.split('_');
+    var v = vpVocab[parseInt(parts[0], 10)];
+    var h = v && v.hanzi && v.hanzi[parseInt(parts[1], 10)];
+    var charData = h && strokeData[h.c];
+    if (!charData) return;
+    el.innerHTML = '';
+    var w = HanziWriter.create(el, h.c, {
+      width: 130, height: 130, padding: 6,
+      showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 280, delayBetweenLoops: 1600,
+      strokeColor: '#2b2420', radicalColor: '#c84b31', outlineColor: '#e6dcc9',
+      charDataLoader: function () { return charData; }
+    });
+    vpHzWriters[key] = { w: w, el: el };
+    w.loopCharacterAnimation();
+  }
+
+  function vpHzHide(el) {
+    var key = el.id.replace('vphzw', '');
+    var rec = vpHzWriters[key];
+    if (rec && !vpHzQuizTok[key]) rec.w.pauseAnimation();
   }
 
   function vpHzQuiz(vi, hi) {
@@ -1443,7 +1443,6 @@
     return '<div class="hz-item"><div class="hz-writer-wrap">' +
       '<div class="hz-writer-box" id="vphzw' + vi + '_' + hi + '"><span class="hz-fallback">' + h.c + '</span></div>' +
       '<div class="hz-writer-under"><span class="hzw-py">' + h.p + '</span>' +
-      '<button type="button" class="hz-replay-btn" data-hz-replay="' + vi + '_' + hi + '">↺ Chạy lại từ đầu</button>' +
       '<button type="button" class="hz-quiz-btn" data-hz-quiz="' + vi + '_' + hi + '">✏️ Luyện viết</button>' +
       '</div><div class="hz-quiz-fb" id="vphzfb' + vi + '_' + hi + '"></div></div>' +
       '<div class="hz-info">' +
@@ -1579,15 +1578,12 @@
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
         vpWordRichHtml(v) +
         (v.explain ? vpWordAllExamplesHtml(v, opts) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' + vpExampleDetailHtml(ex, opts) + '</div>' : '')) +
-        (hzs ? '<div class="vc-hz"><button type="button" class="hz-btn" data-hz-toggle="' + vi + '">🀄 Xem Hán tự (' + v.hanzi.length + ' chữ)</button><div class="hz-panel" id="vphzp' + vi + '">' + hzs + '</div></div>' : '') +
+        (hzs ? '<div class="vc-hz"><div class="vp-examples-label">🀄 Hán tự (' + v.hanzi.length + ' chữ)</div><div class="hz-panel open" id="vphzp' + vi + '">' + hzs + '</div></div>' : '') +
         (v.checkList ? v.checkList.map(function (c, ci) { return renderVpCheckHtml(c, vi + '_' + ci); }).join('') : (v.check ? renderVpCheckHtml(v.check, vi) : ''));
       grid.appendChild(card);
     });
     $all('[data-speak]', grid).forEach(function (btn) {
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
-    });
-    $all('[data-hz-toggle]', grid).forEach(function (btn) {
-      btn.addEventListener('click', function () { vpToggleHz(btn, parseInt(btn.getAttribute('data-hz-toggle'), 10)); });
     });
     $all('[data-ex-vn-toggle]', grid).forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -1599,13 +1595,6 @@
         btn.classList.toggle('open', show);
       });
     });
-    $all('[data-hz-replay]', grid).forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var parts = btn.getAttribute('data-hz-replay').split('_');
-        vpHzReplay(parseInt(parts[0], 10), parseInt(parts[1], 10));
-      });
-    });
     $all('[data-hz-quiz]', grid).forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -1613,6 +1602,7 @@
         vpHzQuiz(parseInt(parts[0], 10), parseInt(parts[1], 10));
       });
     });
+    vpObserveHzBoxes(grid);
     wireVpCheckWidgets(grid);
   }
 

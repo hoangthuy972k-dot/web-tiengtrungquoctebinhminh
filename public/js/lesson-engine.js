@@ -170,7 +170,6 @@ function buildVocab(){
       return '<div class="hz-item"><div class="hz-writer-wrap">'+
         '<div class="hz-writer-box" id="hzw'+vi+'_'+hi+'"><span class="hz-fallback">'+h.c+'</span></div>'+
         '<div class="hz-writer-under"><span class="hzw-py">'+h.p+'</span>'+
-        (hasWriter?'<button type="button" class="hz-replay-btn" data-action="hz-replay" data-vi="'+vi+'" data-hi="'+hi+'">↺ Chạy lại từ đầu</button>':'')+
         (hasWriter?'<button type="button" class="hz-quiz-btn" data-action="hz-quiz" data-vi="'+vi+'" data-hi="'+hi+'">✏️ Luyện viết</button>':'')+
         '<div class="hz-quiz-fb" id="hzfb'+vi+'_'+hi+'"></div>'+
         '</div></div>'+
@@ -192,26 +191,13 @@ function buildVocab(){
       '<div class="vc-py">'+v.py+'</div>'+
       '<div class="vc-vn">→ <strong>'+v.vn+'</strong></div>'+
       '<div class="vc-ex"><div class="vc-ex-label">📝 Ví dụ mở rộng</div>'+exs+'</div>'+
-      (hzs?'<div class="vc-hz"><button class="hz-btn" data-action="toggle-hz" data-vi="'+vi+'">🀄 Xem Hán tự ('+v.hanzi.length+' chữ)</button><div class="hz-panel" id="hzp'+vi+'">'+hzs+'</div></div>':'')+
+      (hzs?'<div class="vc-hz"><div class="vc-ex-label">🀄 Hán tự ('+v.hanzi.length+' chữ)</div><div class="hz-panel open" id="hzp'+vi+'">'+hzs+'</div></div>':'')+
       '</div>';
     d.querySelector('.vc-icon').onclick=function(){d.classList.toggle('flipped');};
     d.querySelector('.vc-py').onclick=function(){d.classList.toggle('flipped');};
     g.appendChild(d);
   });
-}
-function toggleHz(btn,vi){
-  const p=document.getElementById('hzp'+vi);
-  const open=!p.classList.contains('open');
-  p.classList.toggle('open',open);
-  btn.textContent=open?'🀄 Ẩn Hán tự':'🀄 Xem Hán tự ('+vocabData[vi].hanzi.length+' chữ)';
-  if(open) ensureHzWriters(vi);
-  else pauseHzWriters(vi);
-}
-function pauseHzWriters(vi){
-  (vocabData[vi].hanzi||[]).forEach(function(h,hi){
-    const w=hzWriters[vi+'_'+hi];
-    if(w) w.pauseAnimation();
-  });
+  observeHzBoxes(g);
 }
 // ══════════════════════════════════════════
 // STROKE ORDER WRITER (HanziWriter, tuỳ chọn — chỉ hoạt động khi
@@ -219,38 +205,47 @@ function pauseHzWriters(vi){
 // ══════════════════════════════════════════
 const hzWriters={};
 const hzQuizTok={};
-function ensureHzWriters(vi){
+// Net chu tu chay khi o chu hien tren man hinh (the tu vung da lat), tam dung khi khuat
+function observeHzBoxes(root){
   if(typeof HanziWriter==='undefined'||typeof STROKE_DATA==='undefined') return;
-  (vocabData[vi].hanzi||[]).forEach(function(h,hi){
-    const key=vi+'_'+hi;
-    if(hzWriters[key]){ if(!hzQuizTok[key]) hzWriters[key].resumeAnimation(); return; }
-    const charData=STROKE_DATA[h.c];
-    if(!charData) return;
-    const target=document.getElementById('hzw'+key);
-    if(!target) return;
-    target.innerHTML='';
-    hzWriters[key]=HanziWriter.create(target,h.c,{
-      width:118,height:118,padding:6,
-      showOutline:true,
-      strokeAnimationSpeed:1,
-      delayBetweenStrokes:280,
-      delayBetweenLoops:1600,
-      strokeColor:'#201e1c',
-      radicalColor:'#d8202e',
-      outlineColor:'#dde3ea',
-      charDataLoader:function(){return charData;}
+  const boxes=root.querySelectorAll('.hz-writer-box');
+  if(typeof IntersectionObserver==='undefined'){
+    boxes.forEach(function(el){ showHzWriter(el); });
+    return;
+  }
+  const io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting) showHzWriter(en.target);
+      else hideHzWriter(en.target);
     });
-    hzWriters[key].loopCharacterAnimation();
-  });
+  },{rootMargin:'120px 0px'});
+  boxes.forEach(function(el){ io.observe(el); });
 }
-function hzReplay(vi,hi){
-  const key=vi+'_'+hi;
-  const w=hzWriters[key];
-  if(!w) return;
-  hzQuizTok[key]=0;
-  const fb=document.getElementById('hzfb'+key);
-  if(fb)fb.textContent='';
-  w.loopCharacterAnimation();
+function hideHzWriter(el){
+  const key=el.id.replace('hzw','');
+  if(hzWriters[key]&&!hzQuizTok[key]) hzWriters[key].pauseAnimation();
+}
+function showHzWriter(el){
+  const key=el.id.replace('hzw','');
+  if(hzWriters[key]){ if(!hzQuizTok[key]) hzWriters[key].resumeAnimation(); return; }
+  const parts=key.split('_');
+  const v=vocabData[parseInt(parts[0],10)];
+  const h=v&&v.hanzi&&v.hanzi[parseInt(parts[1],10)];
+  const charData=h&&STROKE_DATA[h.c];
+  if(!charData) return;
+  el.innerHTML='';
+  hzWriters[key]=HanziWriter.create(el,h.c,{
+    width:118,height:118,padding:6,
+    showOutline:true,
+    strokeAnimationSpeed:1,
+    delayBetweenStrokes:280,
+    delayBetweenLoops:1600,
+    strokeColor:'#201e1c',
+    radicalColor:'#d8202e',
+    outlineColor:'#dde3ea',
+    charDataLoader:function(){return charData;}
+  });
+  hzWriters[key].loopCharacterAnimation();
 }
 function hzQuiz(vi,hi){
   const w=hzWriters[vi+'_'+hi];
@@ -1031,8 +1026,6 @@ document.addEventListener('click', function(e){
   if(action==='check-sort'){ checkSort(); return; }
   if(action==='reset-sort'){ resetSort(); return; }
   if(action==='reset-match'){ resetMatch(); return; }
-  if(action==='toggle-hz'){ e.stopPropagation(); toggleHz(el, parseInt(el.dataset.vi,10)); return; }
-  if(action==='hz-replay'){ e.stopPropagation(); hzReplay(parseInt(el.dataset.vi,10), parseInt(el.dataset.hi,10)); return; }
   if(action==='hz-quiz'){ e.stopPropagation(); hzQuiz(parseInt(el.dataset.vi,10), parseInt(el.dataset.hi,10)); return; }
   if(action==='place-word'){ placeW(parseInt(el.dataset.si,10), parseInt(el.dataset.wi,10), el.dataset.word); return; }
   if(action==='check-mc'){ checkMC(parseInt(el.dataset.qi,10), parseInt(el.dataset.ci,10)); return; }

@@ -9948,18 +9948,120 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = false;
+    bindLeaderboardTabs();
+    renderLeaderboardTab();
+    $('#leaderboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
+  // Hai bang: "Hoc tap" (tong cau dung khi hoc bai) va "Thi thu HSK"
+  // (diem xep hang do may chu cham tu diem thi + thoi gian lam bai).
+  var lbTab = 'study';
+  var lbTabsBound = false;
+
+  function bindLeaderboardTabs() {
+    if (lbTabsBound) return;
+    lbTabsBound = true;
+    $all('[data-lb-tab]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        lbTab = btn.getAttribute('data-lb-tab');
+        renderLeaderboardTab();
+      });
+    });
+    $('#lbExamSelect').addEventListener('change', loadExamLeaderboard);
+  }
+
+  function renderLeaderboardTab() {
+    $all('[data-lb-tab]').forEach(function (btn) {
+      var on = btn.getAttribute('data-lb-tab') === lbTab;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    $('#lbExamBar').hidden = lbTab !== 'exam';
+    if (lbTab === 'exam') {
+      $('#lbTrail').textContent = 'Xếp hạng lượt thi đầu tiên của mỗi đề, theo điểm bài thi và thời gian làm bài.';
+      loadExamLeaderboard();
+      return;
+    }
+    $('#lbTrail').textContent = 'Xếp hạng thật giữa các học sinh đã đăng ký, theo tổng số câu trả lời đúng.';
     var content = $('#leaderboardContent');
     content.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải bảng xếp hạng...</p>';
-
     fetch('/api/leaderboard')
       .then(function (r) { return r.json(); })
-      .then(function (data) { renderLeaderboard(data.leaderboard || []); })
+      .then(function (data) { if (lbTab === 'study') renderLeaderboard(data.leaderboard || []); })
       .catch(function () {
         content.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được bảng xếp hạng, thử lại sau.</p>';
       });
+  }
 
-    $('#leaderboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  function lbEsc(v) {
+    return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function lbFmtTime(sec) {
+    sec = Math.max(0, Math.round(sec || 0));
+    var h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+    var p = function (x) { return (x < 10 ? '0' : '') + x; };
+    return (h ? h + ':' + p(m) : m) + ':' + p(s);
+  }
+
+  function loadExamLeaderboard() {
+    var content = $('#leaderboardContent');
+    var select = $('#lbExamSelect');
+    var v = select.value;
+    var url = '/api/exam/leaderboard?' + (v.indexOf('level:') === 0 ? 'level=' + encodeURIComponent(v.slice(6)) : 'exam=' + encodeURIComponent(v));
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var headers = auth && auth.token ? { 'Authorization': 'Bearer ' + auth.token } : {};
+    content.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải bảng xếp hạng...</p>';
+    fetch(url, { headers: headers })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (data) {
+        if (lbTab !== 'exam' || select.value !== v) return;
+        if (select.options.length === 1 && data.exams) {
+          data.exams.forEach(function (ex) {
+            var o = document.createElement('option');
+            o.value = ex.id;
+            o.textContent = ex.title;
+            select.appendChild(o);
+          });
+        }
+        renderExamLeaderboard(data, !!(auth && auth.token));
+      })
+      .catch(function () {
+        content.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được bảng xếp hạng, thử lại sau.</p>';
+      });
+  }
+
+  function examLbRowHtml(row, mode) {
+    var info = mode === 'exam'
+      ? '<span class="lb-level">' + row.score + '/' + row.maxScore + (row.pass ? ' · Đạt' : '') + '</span><span class="lb-streak lb-time">⏱ ' + lbFmtTime(row.usedSec) + '</span>'
+      : '<span class="lb-level">' + row.exams + ' đề</span><span class="lb-streak lb-time">⏱ ' + lbFmtTime(row.usedSec) + '</span>';
+    return '<div class="lb-row' + (row.isMe ? ' is-me' : '') + '">' +
+      '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
+      '<span class="lb-name">' + lbEsc(row.name) + (row.isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
+      info +
+      '<span class="lb-score">' + row.rankPoints + ' điểm</span>' +
+    '</div>';
+  }
+
+  function renderExamLeaderboard(data, loggedIn) {
+    var content = $('#leaderboardContent');
+    if (!data.rows.length) {
+      content.innerHTML =
+        '<div class="lb-empty">' +
+          '<p>Chưa có ai trên bảng xếp hạng' + (data.mode === 'exam' ? ' của đề này' : ' thi thử') + '.</p>' +
+          '<p style="color:var(--color-gray-500);font-size:0.9rem;">Đăng nhập rồi vào <a href="/exam/">Thi thử HSK</a> để trở thành người đầu tiên!</p>' +
+        '</div>';
+      return;
+    }
+    var html = '<div class="lb-list">' + data.rows.map(function (r) { return examLbRowHtml(r, data.mode); }).join('') + '</div>';
+    if (data.me && !data.rows.some(function (r) { return r.isMe; })) {
+      html += '<p class="lb-me-label">Vị trí của bạn</p><div class="lb-list">' + examLbRowHtml(data.me, data.mode) + '</div>';
+    } else if (!data.me) {
+      html += '<p class="lb-me-label">' + (loggedIn ? 'Bạn chưa có lượt thi nào được xếp hạng.' : 'Đăng nhập trước khi thi để có tên trên bảng xếp hạng.') + '</p>';
+    }
+    content.innerHTML = html;
   }
 
   function renderLeaderboard(rows) {
@@ -9983,7 +10085,7 @@
         var pct = row.totalQuestions ? Math.round(row.totalCorrect / row.totalQuestions * 100) : 0;
         return '<div class="lb-row' + (isMe ? ' is-me' : '') + '">' +
           '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
-          '<span class="lb-name">' + row.name + (isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
+          '<span class="lb-name">' + lbEsc(row.name) + (isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
           '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>' +
           '<span class="lb-streak">🔥 ' + row.streak + '</span>' +
           '<span class="lb-score">' + row.totalCorrect + '/' + row.totalQuestions + ' (' + pct + '%)</span>' +
@@ -10019,7 +10121,7 @@
             var pct = row.totalQuestions ? Math.round(row.totalCorrect / row.totalQuestions * 100) : 0;
             return '<div class="lb-row' + (isMe ? ' is-me' : '') + '">' +
               '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
-              '<span class="lb-name">' + row.name + (isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
+              '<span class="lb-name">' + lbEsc(row.name) + (isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
               '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>' +
               '<span class="lb-streak">🔥 ' + row.streak + '</span>' +
               '<span class="lb-score">' + row.totalCorrect + '/' + row.totalQuestions + ' (' + pct + '%)</span>' +

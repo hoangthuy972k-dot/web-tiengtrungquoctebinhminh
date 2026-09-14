@@ -369,7 +369,16 @@
     <section class="dash-section" id="leaderboard" hidden>
       <div class="dash-breadcrumb">
         <h1>🏆 Bảng xếp hạng</h1>
-        <p class="dash-crumb-trail">Xếp hạng thật giữa các học sinh đã đăng ký, theo tổng số câu trả lời đúng.</p>
+        <p class="dash-crumb-trail" id="lbTrail">Xếp hạng thật giữa các học sinh đã đăng ký, theo tổng số câu trả lời đúng.</p>
+      </div>
+      <div class="lb-tabs" role="tablist" aria-label="Loại bảng xếp hạng">
+        <button type="button" class="lb-tab is-active" role="tab" aria-selected="true" data-lb-tab="study">📚 Học tập</button>
+        <button type="button" class="lb-tab" role="tab" aria-selected="false" data-lb-tab="exam">📝 Thi thử HSK</button>
+      </div>
+      <div class="lb-exam-bar" id="lbExamBar" hidden>
+        <label for="lbExamSelect">Xem bảng</label>
+        <select id="lbExamSelect"><option value="level:hsk2">Tổng hợp HSK 2</option></select>
+        <a href="/exam/#rank" class="lb-exam-link">Cách tính điểm · Trang thi thử →</a>
       </div>
       <div id="leaderboardContent"></div>
     </section>

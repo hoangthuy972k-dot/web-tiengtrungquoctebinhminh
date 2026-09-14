@@ -5252,8 +5252,80 @@ body.pinyin-hidden .py-inline {
   text-align: center;
 }
 
+/* Tab Hoc tap / Thi thu HSK */
+.lb-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: var(--space-4);
+  background: var(--color-gray-100);
+  border-radius: var(--radius-full, 999px);
+}
+
+.lb-tab {
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-full, 999px);
+  padding: 8px 18px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--color-gray-600);
+  cursor: pointer;
+}
+
+.lb-tab.is-active {
+  background: var(--color-white);
+  color: var(--color-red-600);
+  box-shadow: var(--shadow-sm);
+}
+
+.lb-tab:focus-visible { outline: 2px solid var(--color-red-500); outline-offset: 2px; }
+
+.lb-exam-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+  font-size: 0.9rem;
+  color: var(--color-gray-600);
+  font-weight: 600;
+}
+
+.lb-exam-bar select {
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-gray-800);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  min-width: 200px;
+}
+
+.lb-exam-link {
+  margin-left: auto;
+  color: var(--color-red-600);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lb-exam-link:hover { text-decoration: underline; }
+
+.lb-time { color: var(--color-gray-600); width: 84px; font-variant-numeric: tabular-nums; }
+
+.lb-me-label {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-gray-500);
+}
+
 @media (max-width: 640px) {
   .lb-row { flex-wrap: wrap; gap: var(--space-2); }
+  .lb-exam-link { margin-left: 0; }
+  .lb-exam-bar select { flex: 1; min-width: 0; }
   .lb-level, .lb-streak, .lb-score { width: auto; }
 }
 

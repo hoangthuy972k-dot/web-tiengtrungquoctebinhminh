@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const vm = require('vm');
 const express = require('express');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -214,7 +215,8 @@ async function initDb() {
   } catch (err) {
     if (err.code !== 'ER_DUP_FIELDNAME') throw err;
   }
-  console.log('MySQL: da san sang (bang users/scores).');
+  await initExamAttemptsTable();
+  console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
   await migrateJsonToDbIfNeeded();
 }
 
@@ -529,6 +531,304 @@ app.get('/api/leaderboard/today', asyncRoute(async (req, res) => {
     streak: row.streak,
   }));
   res.json({ leaderboard: top, date: today });
+}));
+
+// ══════════════════════════════════════════════════════════════════
+// Bang xep hang Thi thu HSK. May chu tu cham bai (doc dap an tu chinh
+// file de /exam/tests/<id>.js) va tu bam gio tu luc bat dau lam bai, nen
+// hoc sinh khong the gui diem hay thoi gian gia len bang xep hang.
+//
+// Diem xep hang (toi da 1000) = diem bai thi x 800 + thuong thoi gian x 200,
+// trong do thuong thoi gian = ti le diem x ti le thoi gian con thua. Nhan
+// voi ti le diem de nop bai that nhanh ma lam sai thi gan nhu khong duoc
+// thuong. Chi LUOT NOP DAU TIEN cua moi hoc sinh voi moi de duoc tinh xep
+// hang: nop xong la thay dap an, lam lai se khong con cong bang.
+// ══════════════════════════════════════════════════════════════════
+const EXAM_ATTEMPTS_FILE = path.join(DATA_DIR, 'exam_attempts.json');
+const EXAM_TESTS_DIR = path.join(PUBLIC_DIR, 'exam', 'tests');
+const EXAM_ID_RE = /^[a-z0-9-]{1,40}$/;
+const examDefCache = {};
+
+function loadExamDef(examId) {
+  if (typeof examId !== 'string' || !EXAM_ID_RE.test(examId)) return null;
+  if (examDefCache[examId]) return examDefCache[examId];
+  const file = path.join(EXAM_TESTS_DIR, examId + '.js');
+  if (!fs.existsSync(file)) return null;
+  const sandbox = { window: {} };
+  try {
+    vm.runInNewContext(fs.readFileSync(file, 'utf8'), sandbox, { timeout: 1000 });
+  } catch (err) {
+    return null;
+  }
+  const d = sandbox.window.EXAM_DATA;
+  if (!d || !Array.isArray(d.sections) || !d.sections.length) return null;
+  const sections = d.sections.map((sec) => {
+    const answers = [];
+    (sec.parts || []).forEach((part) => {
+      const qs = part.groups ? [].concat(...part.groups.map((g) => g.questions || [])) : (part.questions || []);
+      qs.forEach((q) => answers.push([String(q.n), q.answer]));
+    });
+    return { id: sec.id, name: sec.name, answers };
+  });
+  const def = {
+    id: examId,
+    level: examId.split('-')[0],
+    title: d.title || examId,
+    durationSec: Number(d.durationSec) || 0,
+    maxScore: Number(d.maxScore) || 0,
+    passScore: Number(d.passScore) || 0,
+    sections,
+    total: sections.reduce((a, s) => a + s.answers.length, 0),
+  };
+  examDefCache[examId] = def;
+  return def;
+}
+
+function listExamDefs(level) {
+  let files = [];
+  try { files = fs.readdirSync(EXAM_TESTS_DIR); } catch (err) { return []; }
+  return files
+    .filter((f) => f.endsWith('.js'))
+    .map((f) => loadExamDef(f.slice(0, -3)))
+    .filter((def) => def && (!level || def.level === level))
+    .sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }));
+}
+
+// Cung cach cham voi phong thi (exam.js): moi phan thi chia deu diem toi da.
+function gradeExam(def, answers) {
+  let correct = 0, score = 0;
+  const perSection = def.maxScore / def.sections.length;
+  def.sections.forEach((sec) => {
+    let c = 0;
+    sec.answers.forEach(([n, ans]) => { if (Object.prototype.hasOwnProperty.call(answers, n) && answers[n] === ans) c++; });
+    correct += c;
+    score += Math.round(sec.answers.length ? (c / sec.answers.length) * perSection : 0);
+  });
+  return { correct, total: def.total, score };
+}
+
+function examRankPoints(score, maxScore, usedSec, durationSec) {
+  const acc = maxScore ? Math.max(0, Math.min(1, score / maxScore)) : 0;
+  const timeLeft = durationSec ? Math.max(0, 1 - usedSec / durationSec) : 0;
+  const base = Math.round(acc * 800);
+  const bonus = Math.round(acc * timeLeft * 200);
+  return { base, bonus, points: base + bonus };
+}
+
+// Chi nhan dap an dang {"12": "A"} / {"3": true}, bo moi thu khac.
+function cleanExamAnswers(raw) {
+  const out = {};
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return out;
+  Object.keys(raw).slice(0, 400).forEach((k) => {
+    if (!/^\d{1,3}$/.test(k)) return;
+    const v = raw[k];
+    if (typeof v === 'boolean' || (typeof v === 'string' && v.length <= 4)) out[k] = v;
+  });
+  return out;
+}
+
+async function initExamAttemptsTable() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS exam_attempts (' +
+      'id VARCHAR(48) PRIMARY KEY, ' +
+      'user_id VARCHAR(36) NOT NULL, ' +
+      'exam_id VARCHAR(40) NOT NULL, ' +
+      'level VARCHAR(16) NOT NULL, ' +
+      'started_ms BIGINT NOT NULL, ' +
+      'submitted_ms BIGINT NULL, ' +
+      'used_sec INT NULL, ' +
+      'correct INT NULL, ' +
+      'total INT NULL, ' +
+      'score INT NULL, ' +
+      'max_score INT NULL, ' +
+      'rank_points INT NULL, ' +
+      'time_bonus INT NULL, ' +
+      'is_ranked TINYINT(1) NOT NULL DEFAULT 0, ' +
+      'auto_submit TINYINT(1) NOT NULL DEFAULT 0, ' +
+      'INDEX idx_exam_ranked (exam_id, is_ranked), ' +
+      'INDEX idx_level_ranked (level, is_ranked), ' +
+      'INDEX idx_user_exam (user_id, exam_id), ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+}
+
+function attemptFromRow(r) {
+  return {
+    id: r.id, userId: r.user_id, examId: r.exam_id, level: r.level,
+    startedMs: Number(r.started_ms), submittedMs: r.submitted_ms == null ? null : Number(r.submitted_ms),
+    usedSec: r.used_sec, correct: r.correct, total: r.total, score: r.score, maxScore: r.max_score,
+    rankPoints: r.rank_points, timeBonus: r.time_bonus, isRanked: !!r.is_ranked, autoSubmit: !!r.auto_submit,
+  };
+}
+
+async function createExamAttempt(a) {
+  if (!USE_DB) {
+    const list = readJsonFile(EXAM_ATTEMPTS_FILE) || [];
+    list.push(Object.assign({ submittedMs: null, isRanked: false }, a));
+    writeJsonFile(EXAM_ATTEMPTS_FILE, list);
+    return;
+  }
+  await dbPool.query(
+    'INSERT INTO exam_attempts (id,user_id,exam_id,level,started_ms) VALUES (?,?,?,?,?)',
+    [a.id, a.userId, a.examId, a.level, a.startedMs]
+  );
+}
+
+async function getExamAttempt(id) {
+  if (!USE_DB) return (readJsonFile(EXAM_ATTEMPTS_FILE) || []).find((a) => a.id === id) || null;
+  const [rows] = await dbPool.query('SELECT * FROM exam_attempts WHERE id = ? LIMIT 1', [id]);
+  return rows[0] ? attemptFromRow(rows[0]) : null;
+}
+
+async function getRankedExamAttempt(userId, examId) {
+  if (!USE_DB) return (readJsonFile(EXAM_ATTEMPTS_FILE) || []).find((a) => a.userId === userId && a.examId === examId && a.isRanked) || null;
+  const [rows] = await dbPool.query('SELECT * FROM exam_attempts WHERE user_id = ? AND exam_id = ? AND is_ranked = 1 LIMIT 1', [userId, examId]);
+  return rows[0] ? attemptFromRow(rows[0]) : null;
+}
+
+// Ghi ket qua 1 lan duy nhat; tra ve false neu luot nay da nop truoc do.
+async function finishExamAttempt(id, f) {
+  if (!USE_DB) {
+    const list = readJsonFile(EXAM_ATTEMPTS_FILE) || [];
+    const a = list.find((x) => x.id === id);
+    if (!a || a.submittedMs != null) return false;
+    Object.assign(a, f);
+    writeJsonFile(EXAM_ATTEMPTS_FILE, list);
+    return true;
+  }
+  const [r] = await dbPool.query(
+    'UPDATE exam_attempts SET submitted_ms=?, used_sec=?, correct=?, total=?, score=?, max_score=?, rank_points=?, time_bonus=?, is_ranked=?, auto_submit=? ' +
+      'WHERE id = ? AND submitted_ms IS NULL',
+    [f.submittedMs, f.usedSec, f.correct, f.total, f.score, f.maxScore, f.rankPoints, f.timeBonus, f.isRanked ? 1 : 0, f.autoSubmit ? 1 : 0, id]
+  );
+  return r.affectedRows === 1;
+}
+
+async function listRankedExamAttempts(filter) {
+  let rows;
+  if (!USE_DB) {
+    rows = (readJsonFile(EXAM_ATTEMPTS_FILE) || []).filter((a) => a.isRanked &&
+      (!filter.examId || a.examId === filter.examId) && (!filter.level || a.level === filter.level));
+  } else {
+    const where = ['is_ranked = 1'];
+    const params = [];
+    if (filter.examId) { where.push('exam_id = ?'); params.push(filter.examId); }
+    if (filter.level) { where.push('level = ?'); params.push(filter.level); }
+    const [r] = await dbPool.query('SELECT * FROM exam_attempts WHERE ' + where.join(' AND '), params);
+    rows = r.map(attemptFromRow);
+  }
+  const users = await loadUsers();
+  const nameById = {};
+  users.forEach((u) => { nameById[u.id] = u.name; });
+  return rows.filter((a) => nameById[a.userId]).map((a) => Object.assign({ name: nameById[a.userId] }, a));
+}
+
+// Bang theo 1 de: diem xep hang -> diem thi -> thoi gian ngan hon -> nop som hon
+function sortExamRows(rows) {
+  return rows.sort((a, b) =>
+    b.rankPoints - a.rankPoints || b.score - a.score || a.usedSec - b.usedSec || a.submittedMs - b.submittedMs);
+}
+
+// Bang tong hop 1 cap do: cong diem xep hang cua moi de da thi.
+function aggregateExamRows(rows) {
+  const byUser = {};
+  rows.forEach((a) => {
+    const u = byUser[a.userId] || (byUser[a.userId] = { userId: a.userId, name: a.name, rankPoints: 0, exams: 0, score: 0, maxScore: 0, usedSec: 0, lastMs: 0 });
+    u.rankPoints += a.rankPoints; u.exams += 1; u.score += a.score; u.maxScore += a.maxScore; u.usedSec += a.usedSec;
+    u.lastMs = Math.max(u.lastMs, a.submittedMs);
+  });
+  return Object.values(byUser).sort((a, b) =>
+    b.rankPoints - a.rankPoints || b.exams - a.exams || a.usedSec - b.usedSec || a.lastMs - b.lastMs);
+}
+
+async function optionalUserId(req) {
+  const header = req.headers.authorization || '';
+  if (!header.startsWith('Bearer ')) return null;
+  try { return await findUserIdBySession(header.slice(7)); } catch (err) { return null; }
+}
+
+app.post('/api/exam/start', requireAuth, asyncRoute(async (req, res) => {
+  const def = loadExamDef(req.body?.examId);
+  if (!def) return res.status(404).json({ error: 'Không tìm thấy đề thi.' });
+  const attempt = {
+    id: crypto.randomBytes(18).toString('hex'),
+    userId: req.user.id,
+    examId: def.id,
+    level: def.level,
+    startedMs: Date.now(),
+  };
+  await createExamAttempt(attempt);
+  const ranked = await getRankedExamAttempt(req.user.id, def.id);
+  res.json({ attemptId: attempt.id, startedAt: attempt.startedMs, counts: !ranked });
+}));
+
+app.post('/api/exam/submit', requireAuth, asyncRoute(async (req, res) => {
+  const attemptId = typeof req.body?.attemptId === 'string' ? req.body.attemptId.slice(0, 48) : '';
+  const attempt = attemptId ? await getExamAttempt(attemptId) : null;
+  if (!attempt || attempt.userId !== req.user.id) return res.status(404).json({ error: 'Không tìm thấy lượt thi.' });
+  const def = loadExamDef(attempt.examId);
+  if (!def) return res.status(404).json({ error: 'Không tìm thấy đề thi.' });
+
+  if (attempt.submittedMs == null) {
+    const now = Date.now();
+    const usedSec = Math.max(0, Math.min(def.durationSec, Math.round((now - attempt.startedMs) / 1000)));
+    const g = gradeExam(def, cleanExamAnswers(req.body?.answers));
+    const rp = examRankPoints(g.score, def.maxScore, usedSec, def.durationSec);
+    const already = await getRankedExamAttempt(req.user.id, def.id);
+    await finishExamAttempt(attempt.id, {
+      submittedMs: now, usedSec, correct: g.correct, total: g.total, score: g.score, maxScore: def.maxScore,
+      rankPoints: rp.points, timeBonus: rp.bonus, isRanked: !already, autoSubmit: !!req.body?.auto,
+    });
+  }
+
+  const mine = await getExamAttempt(attempt.id);
+  const rankedAttempt = await getRankedExamAttempt(req.user.id, def.id);
+  const board = sortExamRows(await listRankedExamAttempts({ examId: def.id }));
+  const pos = rankedAttempt ? board.findIndex((a) => a.id === rankedAttempt.id) + 1 : 0;
+  res.json({
+    ok: true,
+    attempt: {
+      score: mine.score, maxScore: mine.maxScore, correct: mine.correct, total: mine.total, usedSec: mine.usedSec,
+      rankPoints: mine.rankPoints, timeBonus: mine.timeBonus, basePoints: mine.rankPoints - mine.timeBonus, isRanked: mine.isRanked,
+    },
+    ranked: rankedAttempt ? { rankPoints: rankedAttempt.rankPoints, score: rankedAttempt.score, usedSec: rankedAttempt.usedSec, rank: pos, of: board.length } : null,
+  });
+}));
+
+app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
+  const meId = await optionalUserId(req);
+  const examId = typeof req.query.exam === 'string' ? req.query.exam : '';
+  if (examId) {
+    const def = loadExamDef(examId);
+    if (!def) return res.status(404).json({ error: 'Không tìm thấy đề thi.' });
+    const board = sortExamRows(await listRankedExamAttempts({ examId: def.id }));
+    const toRow = (a, i) => ({
+      rank: i + 1, name: a.name, isMe: a.userId === meId, rankPoints: a.rankPoints, timeBonus: a.timeBonus,
+      score: a.score, maxScore: a.maxScore, correct: a.correct, total: a.total, usedSec: a.usedSec,
+      pass: a.score >= def.passScore, submittedAt: a.submittedMs,
+    });
+    const meIdx = meId ? board.findIndex((a) => a.userId === meId) : -1;
+    return res.json({
+      mode: 'exam', exam: { id: def.id, title: def.title, durationSec: def.durationSec, maxScore: def.maxScore, passScore: def.passScore },
+      count: board.length, rows: board.slice(0, 50).map(toRow), me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null,
+      exams: listExamDefs(def.level).map((d) => ({ id: d.id, title: d.title })),
+    });
+  }
+  const level = typeof req.query.level === 'string' && EXAM_ID_RE.test(req.query.level) ? req.query.level : 'hsk2';
+  const exams = listExamDefs(level);
+  const board = aggregateExamRows(await listRankedExamAttempts({ level }));
+  const toRow = (u, i) => ({
+    rank: i + 1, name: u.name, isMe: u.userId === meId, rankPoints: u.rankPoints, exams: u.exams,
+    score: u.score, maxScore: u.maxScore, usedSec: u.usedSec,
+  });
+  const meIdx = meId ? board.findIndex((u) => u.userId === meId) : -1;
+  res.json({
+    mode: 'level', level, examCount: exams.length, count: board.length,
+    rows: board.slice(0, 50).map(toRow), me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null,
+    exams: exams.map((d) => ({ id: d.id, title: d.title })),
+  });
 }));
 
 // ══════════════════════════════════════════════════════════════════

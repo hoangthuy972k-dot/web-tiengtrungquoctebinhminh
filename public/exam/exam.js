@@ -43,10 +43,106 @@
     $('#exTitle').textContent = data.title;
     indexQuestions();
     loadState();
-    if (!state.startedAt) { state.startedAt = Date.now(); saveState(); }
+    var fresh = !state.startedAt;
+    if (fresh) { state.startedAt = Date.now(); saveState(); startAttempt(); }
     render();
     bindTop();
-    if (state.submitted) showResult(); else startTimer();
+    if (state.submitted) { showResult(); sendRank(state.result && state.result.auto); } else startTimer();
+  }
+
+  // ---------- Bảng xếp hạng ----------
+  // Máy chủ tự bấm giờ từ lúc gọi /api/exam/start và tự chấm lại đáp án khi
+  // nộp, nên điểm xếp hạng không phụ thuộc vào số liệu trình duyệt gửi lên.
+  var attemptReady = null;
+  function authToken() {
+    try { var a = JSON.parse(localStorage.getItem('hyv_auth') || 'null'); return a && a.token ? a.token : null; } catch (e) { return null; }
+  }
+  function postApi(path, body) {
+    return fetch(path, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken() },
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (!r.ok) throw new Error(j.error || 'HTTP ' + r.status);
+        return j;
+      });
+    });
+  }
+  function startAttempt() {
+    if (!authToken()) return;
+    attemptReady = postApi('/api/exam/start', { examId: id }).then(function (j) {
+      state.attemptId = j.attemptId;
+      state.attemptCounts = !!j.counts;
+      saveState();
+    }).catch(function () { /* mất mạng: lượt này không được xếp hạng */ })
+      .then(function () { attemptReady = null; updateRankNote(); });
+  }
+  function fmtShort(sec) {
+    sec = Math.max(0, Math.round(sec || 0));
+    var m = Math.floor(sec / 60), s2 = sec % 60;
+    return m + ':' + (s2 < 10 ? '0' : '') + s2;
+  }
+  function rankNoteHtml() {
+    if (state.attemptId) {
+      return state.attemptCounts
+        ? '<b>🏆 Lượt này được tính xếp hạng.</b> Điểm càng cao, nộp càng sớm thì hạng càng cao.'
+        : 'Bạn đã có lượt tính xếp hạng cho đề này. Lượt này chỉ để luyện tập.';
+    }
+    if (attemptReady) return 'Đang kết nối bảng xếp hạng…';
+    if (!authToken()) return 'Bạn chưa đăng nhập nên kết quả sẽ không lên <a href="/exam/#rank">bảng xếp hạng</a>.';
+    return 'Lượt này bắt đầu khi chưa đăng nhập nên không được tính xếp hạng.';
+  }
+  function updateRankNote() {
+    var el = document.getElementById('exRankNote');
+    if (el) el.innerHTML = rankNoteHtml();
+    if (state.submitted) renderRankBox();
+  }
+  function sendRank(auto) {
+    if (state.rank) { renderRankBox(); return; }
+    if (!state.attemptId && !attemptReady) { renderRankBox(); return; }
+    state.rankStatus = 'sending';
+    renderRankBox();
+    (attemptReady || Promise.resolve()).then(function () {
+      if (!state.attemptId) throw new Error('no-attempt');
+      return postApi('/api/exam/submit', { attemptId: state.attemptId, answers: state.answers, auto: !!auto });
+    }).then(function (j) {
+      state.rank = j; state.rankStatus = ''; saveState(); renderRankBox();
+    }).catch(function (err) {
+      state.rankStatus = err && err.message === 'no-attempt' ? '' : 'error';
+      saveState(); renderRankBox();
+    });
+  }
+  function renderRankBox() {
+    var box = document.getElementById('exRankBox');
+    if (!box) return;
+    var link = '<a class="ex-rank-link" href="/exam/?rank=' + encodeURIComponent(id) + '#rank">Xem bảng xếp hạng đề này →</a>';
+    var h;
+    if (state.rank && state.rank.attempt) {
+      var a = state.rank.attempt, r = state.rank.ranked;
+      if (a.isRanked) {
+        h = '<div class="ex-rank-head"><span>🏆 Điểm xếp hạng</span><b>' + a.rankPoints + '</b><small>/ 1000</small></div>' +
+          (r ? '<div class="ex-rank-pos">Hạng <b>#' + r.rank + '</b> trên ' + r.of + ' học sinh đã thi đề này</div>' : '') +
+          '<div class="ex-rank-calc"><div><span>Điểm bài thi ' + a.score + '/' + a.maxScore + '</span><b>' + a.basePoints + '</b></div>' +
+          '<div><span>Thưởng thời gian (làm ' + fmtShort(a.usedSec) + ' / ' + fmtShort(data.durationSec) + ')</span><b>+' + a.timeBonus + '</b></div></div>';
+      } else {
+        h = '<div class="ex-rank-title">🏆 Bảng xếp hạng</div><p>Đây là lượt làm lại để luyện tập nên không thay đổi bảng xếp hạng.</p>' +
+          (r ? '<div class="ex-rank-pos">Lượt tính điểm của bạn: <b>' + r.rankPoints + ' điểm</b> · Hạng <b>#' + r.rank + '</b> / ' + r.of + '</div>' : '');
+      }
+      h += link;
+    } else if (state.rankStatus === 'sending') {
+      h = '<div class="ex-rank-title">🏆 Bảng xếp hạng</div><p>Đang gửi kết quả lên bảng xếp hạng…</p>';
+    } else if (state.rankStatus === 'error') {
+      h = '<div class="ex-rank-title">🏆 Bảng xếp hạng</div><p>Chưa gửi được kết quả do mất kết nối.</p>' +
+        '<button type="button" class="ex-btn-ghost" id="exRankRetry">Gửi lại</button>';
+    } else {
+      h = '<div class="ex-rank-title">🏆 Bảng xếp hạng</div><p>' + (authToken()
+        ? 'Lượt thi này bắt đầu khi chưa đăng nhập nên không được tính xếp hạng.'
+        : 'Hãy đăng nhập tài khoản ở trang chủ trước khi thi để kết quả được xếp hạng.') + '</p>' + link;
+    }
+    box.innerHTML = h;
+    var retry = document.getElementById('exRankRetry');
+    if (retry) retry.addEventListener('click', function () { sendRank(state.result && state.result.auto); });
   }
 
   function indexQuestions() {
@@ -189,6 +285,7 @@
   function renderSide() {
     var h = '<div class="ex-timer-box"><span class="ex-timer" id="exTimer">' + ICONS.clock + '<span id="exTimerTxt">--:--:--</span></span>' +
       '<button type="button" class="ex-btn-primary" id="exSubmit">Nộp bài</button></div>' +
+      '<div class="ex-rank-note" id="exRankNote">' + rankNoteHtml() + '</div>' +
       '<div class="ex-nav" id="exNav">';
     data.sections.forEach(function (sec) {
       h += '<h3>' + esc(sec.name) + '</h3>';
@@ -319,6 +416,7 @@
       localStorage.setItem(RESULTS, JSON.stringify(hist));
     } catch (e) { /* ignore */ }
     showResult();
+    sendRank(auto);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -357,6 +455,7 @@
       '<div class="ex-ring-txt"><b>' + pct + '%</b><span>' + (res.pass ? 'Đạt' : 'Chưa đạt') + '</span></div></div>' +
       '<div class="ex-stats"><div><small>Chính xác</small><b>' + res.correct + '</b></div><div><small>Số điểm</small><b>' + res.score + '</b><small>/ ' + res.max + '</small></div><div><small>Câu hỏi</small><b>' + res.total + '</b></div></div>' +
       '<div class="ex-result-actions"><button type="button" class="ex-btn-primary" id="exRetry">Làm lại</button><a class="ex-btn-ghost" href="/exam/">Đề khác</a></div></div>';
+    h2 += '<div class="ex-rankbox" id="exRankBox"></div>';
     h2 += '<div class="ex-breakdown">';
     res.sections.forEach(function (sr) {
       var sp = Math.round(sr.correct / sr.total * 100);
@@ -382,8 +481,11 @@
     });
     h2 += '</div>';
     $('#exSide').innerHTML = h2;
+    renderRankBox();
     $('#exRetry').addEventListener('click', function () {
-      openModal('Làm lại đề này', 'Kết quả hiện tại sẽ được giữ trong lịch sử, bài làm sẽ bắt đầu lại từ đầu với thời gian đầy đủ.', 'Làm lại', function () {
+      var retryMsg = 'Kết quả hiện tại sẽ được giữ trong lịch sử, bài làm sẽ bắt đầu lại từ đầu với thời gian đầy đủ.' +
+        (state.attemptId || authToken() ? ' Lượt làm lại chỉ để luyện tập, bảng xếp hạng chỉ tính lượt nộp đầu tiên.' : '');
+      openModal('Làm lại đề này', retryMsg, 'Làm lại', function () {
         clearState(); location.reload();
       });
     });

@@ -147,10 +147,14 @@
         '<button type="button" class="hw-icon-btn" data-hw-close aria-label="Đóng">' + I.close + '</button>' +
       '</header>' +
       '<div class="hw-body" id="hwAiBody" aria-live="polite"></div>' +
-      '<form class="hw-foot" id="hwAiForm">' +
-        '<button type="button" class="hw-round" id="hwAiMic" aria-label="Nói để nhập câu hỏi">' + I.mic + '</button>' +
-        '<input class="hw-input" id="hwAiInput" type="text" maxlength="2000" autocomplete="off" placeholder="Hỏi trợ lý AI…" aria-label="Câu hỏi cho trợ lý AI" />' +
-        '<button type="submit" class="hw-round is-send" id="hwAiSend" aria-label="Gửi" disabled>' + I.send + '</button>' +
+      '<form class="hw-foot hw-ai-foot" id="hwAiForm">' +
+        '<button type="button" class="hw-round" id="hwAiMic" aria-label="Nói để nhập câu hỏi" title="Nói để nhập">' + I.mic + '</button>' +
+        '<div class="hw-compose">' +
+          '<textarea class="hw-textarea" id="hwAiInput" rows="1" maxlength="2000" autocomplete="off" spellcheck="false" placeholder="Gõ câu hỏi của bạn…" aria-label="Câu hỏi cho trợ lý AI" aria-describedby="hwAiHint"></textarea>' +
+          '<span class="hw-count" id="hwAiCount" hidden></span>' +
+        '</div>' +
+        '<button type="submit" class="hw-round is-send" id="hwAiSend" aria-label="Gửi câu hỏi" title="Gửi" disabled>' + I.send + '</button>' +
+        '<p class="hw-hint" id="hwAiHint">Enter để gửi · Shift + Enter để xuống dòng</p>' +
       '</form>' +
     '</section>' +
 
@@ -236,15 +240,27 @@
     } else {
       html += '<div class="hw-msgs">' + aiMsgs.map(function (m) {
         return '<div class="hw-msg ' + (m.role === 'user' ? 'is-me' : (m.error ? 'is-error' : 'is-them')) + '">' +
-          (m.role === 'user' ? esc(m.content) : richText(m.content)) + '</div>';
+          (m.role === 'user' ? esc(m.content).replace(/\n/g, '<br>') : richText(m.content)) + '</div>';
       }).join('') + (aiBusy ? '' : '') + '</div>';
     }
     aiBody.innerHTML = html;
     aiBody.scrollTop = aiBody.scrollHeight;
-    var disabled = aiBusy || (aiQuota && (!aiQuota.enabled || aiQuota.remaining <= 0));
-    aiInput.disabled = !!(aiQuota && !aiQuota.enabled);
-    aiInput.placeholder = aiQuota && aiQuota.enabled && aiQuota.remaining <= 0 ? 'Hôm nay bạn đã hết lượt hỏi' : 'Hỏi trợ lý AI…';
-    aiSend.disabled = disabled || !aiInput.value.trim();
+    aiInput.placeholder = aiQuota && aiQuota.enabled && aiQuota.remaining <= 0
+      ? 'Hôm nay bạn đã hết lượt hỏi, mai quay lại nhé'
+      : 'Gõ câu hỏi của bạn…';
+    syncAiInput();
+  }
+
+  // Hoc sinh luon go duoc chu. Nut Gui chi tat khi o trong hoac AI dang tra loi.
+  function syncAiInput() {
+    aiInput.style.height = 'auto';
+    aiInput.style.height = Math.min(aiInput.scrollHeight, 132) + 'px';
+    aiInput.classList.toggle('is-scroll', aiInput.scrollHeight > 132);
+    var len = aiInput.value.length;
+    var count = $('#hwAiCount', root);
+    count.hidden = len < 1500;
+    count.textContent = len + '/2000';
+    aiSend.disabled = aiBusy || !aiInput.value.trim();
   }
 
   aiBody.addEventListener('click', function (e) {
@@ -252,8 +268,21 @@
     if (chip) { askAi(chip.getAttribute('data-hw-suggest')); return; }
     if (e.target.closest('[data-hw-login]')) { e.preventDefault(); openLogin(); }
   });
-  aiInput.addEventListener('input', function () {
-    aiSend.disabled = aiBusy || !aiInput.value.trim() || (aiQuota && (!aiQuota.enabled || aiQuota.remaining <= 0));
+  aiInput.addEventListener('input', syncAiInput);
+  aiInput.addEventListener('keydown', function (e) {
+    // Enter = gui, Shift+Enter = xuong dong. Bo qua khi dang go bo go tieng Trung/tieng Viet
+    // (isComposing / keyCode 229), vi Enter luc do la de chon chu.
+    if (e.key !== 'Enter' || e.isComposing || e.keyCode === 229) return;
+    e.preventDefault();
+    if (e.shiftKey) {
+      // tu chen dong moi tai con tro de chac chan chay tren moi trinh duyet/ban phim
+      var start = aiInput.selectionStart, end = aiInput.selectionEnd;
+      aiInput.value = aiInput.value.slice(0, start) + '\n' + aiInput.value.slice(end);
+      aiInput.selectionStart = aiInput.selectionEnd = start + 1;
+      syncAiInput();
+      return;
+    }
+    if (!aiSend.disabled) askAi(aiInput.value.trim());
   });
   $('#hwAiForm', root).addEventListener('submit', function (e) {
     e.preventDefault();
@@ -261,8 +290,21 @@
   });
 
   function askAi(text) {
-    if (aiBusy) return;
-    if (aiQuota && (!aiQuota.enabled || aiQuota.remaining <= 0)) return;
+    if (aiBusy || !text) return;
+    if (aiQuota && (!aiQuota.enabled || aiQuota.remaining <= 0)) {
+      aiMsgs.push({ role: 'user', content: text });
+      aiMsgs.push({
+        role: 'assistant', error: true,
+        content: !aiQuota.enabled
+          ? 'Trợ lý AI đang được cài đặt nên chưa trả lời được. Câu hỏi của bạn vẫn còn trong khung chat, bạn quay lại hỏi sau nhé!'
+          : (aiQuota.loggedIn ? 'Hôm nay bạn đã dùng hết lượt hỏi. Mai quay lại nhé!' : 'Bạn đã dùng hết lượt hỏi miễn phí hôm nay. Đăng nhập để được hỏi thêm.')
+      });
+      aiInput.value = '';
+      ssSet('hw_ai_msgs', aiMsgs.slice(-30));
+      renderAi();
+      aiInput.focus();
+      return;
+    }
     aiBusy = true;
     aiInput.value = '';
     aiMsgs.push({ role: 'user', content: text });
@@ -335,7 +377,7 @@
         var t = '';
         for (var i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
         aiInput.value = t;
-        aiInput.dispatchEvent(new Event('input'));
+        syncAiInput();
       };
       rec.onend = function () { rec = null; mic.classList.remove('is-listening'); aiInput.focus(); };
       rec.onerror = rec.onend;

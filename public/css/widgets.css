@@ -211,6 +211,44 @@
 }
 
 .hw-input:focus { border-color: var(--hw-red); outline: none; }
+
+/* O go cau hoi cho Tro ly AI: nhieu dong, tu gian toi 5 dong */
+.hw-ai-foot { flex-wrap: wrap; align-items: flex-end; row-gap: 4px; }
+.hw-compose {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  border: 1.5px solid var(--hw-line);
+  border-radius: 22px;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.hw-compose:focus-within { border-color: var(--hw-red); box-shadow: 0 0 0 3px rgba(200, 75, 49, 0.12); }
+.hw-textarea {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+  max-height: 132px;
+  margin: 0;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 22px;
+  background: transparent;
+  color: var(--hw-ink);
+  font: inherit;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  resize: none;
+  overflow-y: hidden;
+}
+.hw-textarea.is-scroll { overflow-y: auto; }
+.hw-textarea:focus { outline: none; }
+.hw-textarea::placeholder { color: var(--hw-soft); }
+.hw-textarea:lang(zh), .hw-msg.is-me { font-family: var(--hw-font), var(--hw-font-zh); }
+.hw-count { position: absolute; right: 14px; bottom: -18px; font-size: 0.7rem; color: var(--hw-soft); }
+.hw-hint { flex-basis: 100%; margin: 0; padding-left: 56px; font-size: 0.72rem; color: var(--hw-soft); }
+.hw-panel .hw-textarea:focus-visible { outline: none; }
 .hw-input:disabled { background: var(--hw-bg-soft); }
 
 .hw-round {

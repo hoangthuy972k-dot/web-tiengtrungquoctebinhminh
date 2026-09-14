@@ -10103,34 +10103,127 @@
     return '#' + rank;
   }
 
+  // ---------------- Bang vang hom nay (trang chu) ----------------
+  // Vinh danh top 5 hoc sinh tra loi dung nhieu cau nhat trong ngay (gio VN).
+  // Diem do may chu cong: cau dung khi hoc bai + cau dung o luot thi thu dau.
+  var hbTimer = null;
+
+  var HB_ICONS = {
+    crown: '<svg class="hb-crown" viewBox="0 0 48 32" aria-hidden="true"><path d="M4 26 1 7l12 9L24 2l11 14 12-9-3 19z" fill="currentColor"/><rect x="4" y="27" width="40" height="4" rx="2" fill="currentColor"/><circle cx="24" cy="17" r="3" fill="#7d2616"/></svg>',
+    book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5c3-1.2 6.5-1.2 10 1 3.5-2.2 7-2.2 10-1v14c-3-1.2-6.5-1.2-10 1-3.5-2.2-7-2.2-10-1zM12 6v14" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+    pen: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+    flame: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-10-1 2-2 3-4 4 0-2 0-4-1-6-3 3-5 7-5 12 0 4 3 7 7 7z" fill="currentColor"/></svg>',
+    star: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z" fill="currentColor"/></svg>'
+  };
+
+  function hbInitial(name) {
+    var parts = String(name || '').trim().split(/\s+/);
+    var w = parts[parts.length - 1] || '?';
+    return w.charAt(0).toUpperCase();
+  }
+
+  function hbMetaHtml(row) {
+    return '<span title="Câu đúng khi học bài">' + HB_ICONS.book + row.lessonCorrect + '</span>' +
+      '<span title="Câu đúng khi thi thử">' + HB_ICONS.pen + row.examCorrect + '</span>' +
+      (row.streak > 0 ? '<span title="Chuỗi ngày học">' + HB_ICONS.flame + row.streak + '</span>' : '');
+  }
+
+  function hbPodiumItem(row, rank) {
+    var delay = rank === 1 ? '0.25s' : (rank === 2 ? '0.1s' : '0.4s');
+    if (!row) {
+      return '<li class="hb-seat hb-p' + rank + ' is-empty" style="--d:' + delay + '">' +
+        '<div class="hb-person"><div class="hb-avatar"><span>?</span></div>' +
+        '<div class="hb-name">Còn trống</div><div class="hb-points"><b>–</b></div></div>' +
+        '<div class="hb-step"><span>' + rank + '</span></div></li>';
+    }
+    return '<li class="hb-seat hb-p' + rank + (row.isMe ? ' is-me' : '') + '" style="--d:' + delay + '">' +
+      '<div class="hb-person">' +
+        (rank === 1 ? HB_ICONS.crown : '') +
+        '<div class="hb-avatar"><span>' + lbEsc(hbInitial(row.name)) + '</span></div>' +
+        '<div class="hb-name" title="' + lbEsc(row.name) + '">' + lbEsc(row.name) + '</div>' +
+        (row.isMe ? '<span class="hb-me">Bạn</span>' : '') +
+        '<div class="hb-points"><b>' + row.points + '</b><span>điểm</span></div>' +
+        '<div class="hb-meta">' + hbMetaHtml(row) + '</div>' +
+      '</div>' +
+      '<div class="hb-step" aria-hidden="true"><span>' + rank + '</span></div>' +
+    '</li>';
+  }
+
+  function hbFootHtml(data, loggedIn) {
+    var rule = '<p class="hb-rule">Điểm = số câu đúng khi học bài + khi thi thử (lượt đầu) trong ngày. Bảng làm mới lúc 0:00.</p>';
+    var msg, btn;
+    if (data.me && data.me.rank <= 5) {
+      msg = HB_ICONS.star + '<span>Tuyệt vời! Bạn đang đứng <b>hạng ' + data.me.rank + '</b> trên bảng vàng hôm nay.</span>';
+      btn = '<button type="button" class="hb-cta" data-hb-study>Giữ vững phong độ</button>';
+    } else if (data.me) {
+      msg = '<span>Bạn đang <b>hạng ' + data.me.rank + '</b> với ' + data.me.points + ' điểm' +
+        (data.toTop5 ? ' · còn <b>' + data.toTop5 + ' câu đúng</b> nữa để vào Top 5' : '') + '.</span>';
+      btn = '<button type="button" class="hb-cta" data-hb-study>Học tiếp</button>';
+    } else if (loggedIn) {
+      msg = '<span>Hôm nay bạn chưa có điểm. Làm bài tập hoặc thi thử để ghi danh lên bảng vàng.</span>';
+      btn = '<button type="button" class="hb-cta" data-hb-study>Học ngay</button>';
+    } else {
+      msg = '<span>Đăng nhập để tên bạn được ghi lên bảng vàng mỗi ngày.</span>';
+      btn = '<button type="button" class="hb-cta" data-hb-login>Đăng nhập</button>';
+    }
+    return '<div class="hb-foot"><div class="hb-foot-msg">' + msg + '</div>' + btn + '</div>' + rule;
+  }
+
+  function hbStartCountdown(seconds) {
+    var el = $('#hbCountdown');
+    if (!el) return;
+    clearInterval(hbTimer);
+    var end = Date.now() + seconds * 1000;
+    var pad = function (x) { return (x < 10 ? '0' : '') + x; };
+    var tick = function () {
+      var left = Math.max(0, Math.round((end - Date.now()) / 1000));
+      el.textContent = pad(Math.floor(left / 3600)) + ':' + pad(Math.floor(left % 3600 / 60)) + ':' + pad(left % 60);
+      if (left === 0) { clearInterval(hbTimer); setTimeout(renderTodayLeaderboard, 1500); }
+    };
+    tick();
+    hbTimer = setInterval(tick, 1000);
+  }
+
   function renderTodayLeaderboard() {
     var content = $('#todayLbContent');
     if (!content) return;
-    fetch('/api/leaderboard/today')
-      .then(function (r) { return r.json(); })
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var loggedIn = !!(auth && auth.token);
+    fetch('/api/leaderboard/today', { headers: loggedIn ? { 'Authorization': 'Bearer ' + auth.token } : {} })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (data) {
-        var rows = data.leaderboard || [];
-        var auth = readJSON(STORAGE_KEYS.auth, null);
-        if (!rows.length) {
-          content.innerHTML = '<p class="dash-today-lb-empty">Chưa có ai học hôm nay — hãy là người đầu tiên!</p>';
-          return;
+        var top = data.top || [];
+        var sub = $('#hbSub');
+        if (sub) {
+          var parts = String(data.date || '').split('-');
+          var dateTxt = parts.length === 3 ? parts[2] + '/' + parts[1] : '';
+          sub.textContent = (dateTxt ? 'Ngày ' + dateTxt + ' · ' : '') +
+            (top.length ? data.count + ' học sinh đã ghi điểm hôm nay' : 'Chưa ai ghi điểm hôm nay, vị trí số 1 đang chờ bạn');
         }
-        content.innerHTML = '<div class="lb-list">' +
-          rows.map(function (row) {
-            var isMe = auth && auth.user && auth.user.name === row.name && auth.user.level === row.level;
-            var pct = row.totalQuestions ? Math.round(row.totalCorrect / row.totalQuestions * 100) : 0;
-            return '<div class="lb-row' + (isMe ? ' is-me' : '') + '">' +
-              '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
-              '<span class="lb-name">' + lbEsc(row.name) + (isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
-              '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>' +
-              '<span class="lb-streak">🔥 ' + row.streak + '</span>' +
-              '<span class="lb-score">' + row.totalCorrect + '/' + row.totalQuestions + ' (' + pct + '%)</span>' +
-            '</div>';
-          }).join('') +
-          '</div>';
+        var podium = '<ol class="hb-podium" aria-label="Top 3 hôm nay">' +
+          hbPodiumItem(top[0], 1) + hbPodiumItem(top[1], 2) + hbPodiumItem(top[2], 3) + '</ol>';
+        var rest = top.length > 3
+          ? '<ol class="hb-rest" start="4" aria-label="Hạng 4 và 5">' + top.slice(3).map(function (row) {
+              return '<li class="hb-row' + (row.isMe ? ' is-me' : '') + '">' +
+                '<span class="hb-row-rank">' + row.rank + '</span>' +
+                '<span class="hb-avatar sm"><span>' + lbEsc(hbInitial(row.name)) + '</span></span>' +
+                '<span class="hb-row-name">' + lbEsc(row.name) + (row.isMe ? ' <span class="hb-me">Bạn</span>' : '') + '</span>' +
+                '<span class="hb-meta">' + hbMetaHtml(row) + '</span>' +
+                '<span class="hb-row-pts"><b>' + row.points + '</b> điểm</span>' +
+              '</li>';
+            }).join('') + '</ol>'
+          : '';
+        content.innerHTML = podium + rest + hbFootHtml(data, loggedIn);
+        var studyBtn = content.querySelector('[data-hb-study]');
+        if (studyBtn) studyBtn.addEventListener('click', function () { var b = $('#ctaStreak'); if (b) b.click(); });
+        var loginBtn = content.querySelector('[data-hb-login]');
+        if (loginBtn) loginBtn.addEventListener('click', function () { var b = $('#authBannerLogin') || $('#sidebarUserBtn'); if (b) b.click(); });
+        hbStartCountdown(data.resetInSec || 0);
       })
       .catch(function () {
-        content.innerHTML = '<p class="dash-today-lb-empty">Không tải được bảng xếp hạng, thử lại sau.</p>';
+        content.innerHTML = '<p class="hb-loading">Không tải được bảng vàng. <button type="button" class="hb-retry" id="hbRetry">Thử lại</button></p>';
+        var b = $('#hbRetry');
+        if (b) b.addEventListener('click', renderTodayLeaderboard);
       });
   }
 

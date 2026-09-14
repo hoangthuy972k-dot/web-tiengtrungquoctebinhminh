@@ -139,13 +139,18 @@
 
       <div class="dash-stat-tiles" id="statTiles"></div>
 
-      <div class="dash-today-lb" id="todayLbCard">
-        <div class="dash-today-lb-head">
-          <h2>🏆 Bảng xếp hạng hôm nay</h2>
-          <p>Top 20 học sinh chăm chỉ nhất hôm nay</p>
+      <section class="hb" id="todayLbCard" aria-labelledby="hbTitle">
+        <div class="hb-head">
+          <div class="hb-seal" aria-hidden="true">金榜</div>
+          <div class="hb-titles">
+            <p class="hb-eyebrow">Vinh danh mỗi ngày</p>
+            <h2 id="hbTitle">Bảng vàng hôm nay</h2>
+            <p class="hb-sub" id="hbSub">Top 5 học sinh trả lời đúng nhiều câu nhất trong ngày</p>
+          </div>
+          <div class="hb-reset"><span>Làm mới sau</span><b id="hbCountdown">--:--:--</b></div>
         </div>
-        <div id="todayLbContent"><p class="dash-today-lb-loading">Đang tải...</p></div>
-      </div>
+        <div id="todayLbContent"><p class="hb-loading">Đang tải bảng vàng…</p></div>
+      </section>
     </section>
 
     <section class="dash-section" id="levelDetail" hidden>

@@ -215,7 +215,13 @@ async function initDb() {
   } catch (err) {
     if (err.code !== 'ER_DUP_FIELDNAME') throw err;
   }
+  try {
+    await dbPool.query('ALTER TABLE scores ADD COLUMN peak_correct INT NULL');
+  } catch (err) {
+    if (err.code !== 'ER_DUP_FIELDNAME') throw err;
+  }
   await initExamAttemptsTable();
+  await initDailyPointsTable();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
   await migrateJsonToDbIfNeeded();
 }
@@ -322,6 +328,7 @@ async function loadScores() {
       studyDays: JSON.parse(r.study_days || '[]'),
       lessonScores: JSON.parse(r.lesson_scores || '{}'),
       reviewWrongWords: JSON.parse(r.review_wrong_words || '{}'),
+      peakCorrect: r.peak_correct == null ? null : r.peak_correct,
       updatedAt: r.updated_at,
     };
   });
@@ -332,13 +339,13 @@ async function saveScores(scores) {
   for (const userId of Object.keys(scores)) {
     const s = scores[userId];
     await dbPool.query(
-      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,review_wrong_words,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?) ' +
+      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,review_wrong_words,peak_correct,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ' +
         'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), total_correct=VALUES(total_correct), ' +
         'total_questions=VALUES(total_questions), streak=VALUES(streak), lessons_done=VALUES(lessons_done), ' +
-        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), review_wrong_words=VALUES(review_wrong_words), updated_at=VALUES(updated_at)',
+        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), review_wrong_words=VALUES(review_wrong_words), peak_correct=VALUES(peak_correct), updated_at=VALUES(updated_at)',
       [
         userId, s.name, s.level, s.totalCorrect, s.totalQuestions, s.streak, s.lessonsDone,
-        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), JSON.stringify(s.reviewWrongWords || {}), s.updatedAt,
+        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), JSON.stringify(s.reviewWrongWords || {}), s.peakCorrect == null ? null : s.peakCorrect, s.updatedAt,
       ]
     );
   }
@@ -476,7 +483,18 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
     });
   }
   const scores = await loadScores();
+  const hadRecord = !!scores[req.user.id];
   const existing = scores[req.user.id] || {};
+  // Diem "hom nay" = so cau dung vuot qua MUC CAO NHAT tung dat (peakCorrect),
+  // nen lam lai 1 bai cho diem tut roi lam lai cho diem len khong duoc cong 2 lan.
+  // Lan dong bo dau tien cua tai khoan chi lay moc (tien do cu tu truoc khi dang
+  // nhap khong tinh vao hom nay); moi lan chi nhan toi da 300 cau.
+  const oldPeak = existing.peakCorrect == null ? (Number(existing.totalCorrect) || 0) : Number(existing.peakCorrect);
+  const newPeak = Math.max(oldPeak, Math.max(0, Math.round(totalCorrect)));
+  const gainedCorrect = Math.round(totalCorrect) - oldPeak;
+  if (hadRecord && gainedCorrect > 0) {
+    await addDailyPoints(req.user.id, vnDayKey(), { lessonCorrect: Math.min(gainedCorrect, 300) });
+  }
   const mergedDays = Array.from(new Set((existing.studyDays || []).concat(incomingDays))).sort();
   const mergedLessonScores = Object.assign({}, existing.lessonScores || {}, incomingLessonScores);
   const mergedReviewWrongWords = Object.assign({}, existing.reviewWrongWords || {}, incomingReviewWrongWords);
@@ -490,6 +508,7 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
     studyDays: mergedDays,
     lessonScores: mergedLessonScores,
     reviewWrongWords: mergedReviewWrongWords,
+    peakCorrect: newPeak,
     updatedAt: new Date().toISOString(),
   };
   await saveScores(scores);
@@ -511,26 +530,112 @@ app.get('/api/leaderboard', asyncRoute(async (req, res) => {
   res.json({ leaderboard: top });
 }));
 
-// Bang xep hang "hom nay": khong co diem rieng theo ngay (he thong chi
-// luu tong diem all-time), nen "hom nay" nghia la loc ra nhung hoc sinh
-// co studyDays chua ngay hom nay (that su vao hoc hom nay), roi xep hang
-// nhu bang chinh — vinh danh dung nguoi dang hoc deu, khong bia diem gia.
+// ══════════════════════════════════════════════════════════════════
+// Bang vang hom nay (trang chu): vinh danh top 5 hoc sinh co nhieu cau tra
+// loi dung nhat TRONG NGAY theo gio Viet Nam. Diem = cau dung khi hoc bai
+// (phan tang them moi lan dong bo) + cau dung o luot thi thu dau tien.
+// ══════════════════════════════════════════════════════════════════
+const DAILY_POINTS_FILE = path.join(DATA_DIR, 'daily_points.json');
+const VN_OFFSET_MS = 7 * 3600 * 1000;
+
+function vnDayKey(ms) {
+  return new Date((ms || Date.now()) + VN_OFFSET_MS).toISOString().slice(0, 10);
+}
+function secondsToVnMidnight() {
+  const vnNow = Date.now() + VN_OFFSET_MS;
+  const next = Math.floor(vnNow / 86400000 + 1) * 86400000;
+  return Math.max(0, Math.round((next - vnNow) / 1000));
+}
+
+async function initDailyPointsTable() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS daily_points (' +
+      'user_id VARCHAR(36) NOT NULL, ' +
+      'day CHAR(10) NOT NULL, ' +
+      'lesson_correct INT NOT NULL DEFAULT 0, ' +
+      'exam_correct INT NOT NULL DEFAULT 0, ' +
+      'updated_ms BIGINT NOT NULL, ' +
+      'PRIMARY KEY (user_id, day), ' +
+      'INDEX idx_day (day), ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+}
+
+async function addDailyPoints(userId, day, add) {
+  const lesson = Math.max(0, Math.round(add.lessonCorrect || 0));
+  const exam = Math.max(0, Math.round(add.examCorrect || 0));
+  if (!lesson && !exam) return;
+  const now = Date.now();
+  if (!USE_DB) {
+    const all = readJsonFile(DAILY_POINTS_FILE) || {};
+    const dayMap = all[day] || (all[day] = {});
+    const rec = dayMap[userId] || (dayMap[userId] = { lessonCorrect: 0, examCorrect: 0, updatedMs: now });
+    rec.lessonCorrect += lesson;
+    rec.examCorrect += exam;
+    rec.updatedMs = now;
+    // chi giu 14 ngay gan nhat de file khong phinh ra
+    Object.keys(all).sort().slice(0, -14).forEach((d) => { delete all[d]; });
+    writeJsonFile(DAILY_POINTS_FILE, all);
+    return;
+  }
+  await dbPool.query(
+    'INSERT INTO daily_points (user_id, day, lesson_correct, exam_correct, updated_ms) VALUES (?,?,?,?,?) ' +
+      'ON DUPLICATE KEY UPDATE lesson_correct = lesson_correct + VALUES(lesson_correct), ' +
+      'exam_correct = exam_correct + VALUES(exam_correct), updated_ms = VALUES(updated_ms)',
+    [userId, day, lesson, exam, now]
+  );
+}
+
+async function loadDailyPoints(day) {
+  if (!USE_DB) {
+    const dayMap = (readJsonFile(DAILY_POINTS_FILE) || {})[day] || {};
+    return Object.keys(dayMap).map((userId) => Object.assign({ userId }, dayMap[userId]));
+  }
+  const [rows] = await dbPool.query('SELECT * FROM daily_points WHERE day = ?', [day]);
+  return rows.map((r) => ({ userId: r.user_id, lessonCorrect: r.lesson_correct, examCorrect: r.exam_correct, updatedMs: Number(r.updated_ms) }));
+}
+
 app.get('/api/leaderboard/today', asyncRoute(async (req, res) => {
-  const today = todayKey();
-  const scores = await loadScores();
-  const rows = Object.keys(scores)
-    .map((userId) => scores[userId])
-    .filter((row) => Array.isArray(row.studyDays) && row.studyDays.indexOf(today) !== -1);
-  rows.sort((a, b) => b.totalCorrect - a.totalCorrect || b.streak - a.streak);
-  const top = rows.slice(0, 20).map((row, i) => ({
-    rank: i + 1,
-    name: row.name,
-    level: row.level,
-    totalCorrect: row.totalCorrect,
-    totalQuestions: row.totalQuestions,
-    streak: row.streak,
-  }));
-  res.json({ leaderboard: top, date: today });
+  const day = vnDayKey();
+  const meId = await optionalUserId(req);
+  const [daily, users, scores] = await Promise.all([loadDailyPoints(day), loadUsers(), loadScores()]);
+  const userById = {};
+  users.forEach((u) => { userById[u.id] = u; });
+  const board = daily
+    .filter((d) => userById[d.userId])
+    .map((d) => {
+      const sc = scores[d.userId] || {};
+      return {
+        userId: d.userId,
+        name: userById[d.userId].name,
+        level: userById[d.userId].level,
+        lessonCorrect: d.lessonCorrect,
+        examCorrect: d.examCorrect,
+        points: d.lessonCorrect + d.examCorrect,
+        streak: sc.streak || 0,
+        updatedMs: d.updatedMs,
+      };
+    })
+    .filter((r) => r.points > 0)
+    // bang diem thi chuoi ngay hoc dai hon dung tren, roi ai dat diem som hon
+    .sort((a, b) => b.points - a.points || b.streak - a.streak || a.updatedMs - b.updatedMs);
+  const toRow = (r, i) => ({
+    rank: i + 1, name: r.name, level: r.level, points: r.points,
+    lessonCorrect: r.lessonCorrect, examCorrect: r.examCorrect, streak: r.streak, isMe: r.userId === meId,
+  });
+  const meIdx = meId ? board.findIndex((r) => r.userId === meId) : -1;
+  const fifth = board[4];
+  res.json({
+    date: day,
+    resetInSec: secondsToVnMidnight(),
+    count: board.length,
+    top: board.slice(0, 5).map(toRow),
+    me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null,
+    // so diem con thieu de chen vao top 5 (neu minh dang dung ngoai top 5)
+    toTop5: meIdx >= 5 && fifth ? fifth.points - board[meIdx].points + 1 : null,
+  });
 }));
 
 // ══════════════════════════════════════════════════════════════════
@@ -777,10 +882,12 @@ app.post('/api/exam/submit', requireAuth, asyncRoute(async (req, res) => {
     const g = gradeExam(def, cleanExamAnswers(req.body?.answers));
     const rp = examRankPoints(g.score, def.maxScore, usedSec, def.durationSec);
     const already = await getRankedExamAttempt(req.user.id, def.id);
-    await finishExamAttempt(attempt.id, {
+    const saved = await finishExamAttempt(attempt.id, {
       submittedMs: now, usedSec, correct: g.correct, total: g.total, score: g.score, maxScore: def.maxScore,
       rankPoints: rp.points, timeBonus: rp.bonus, isRanked: !already, autoSubmit: !!req.body?.auto,
     });
+    // Chi luot thi dau tien moi cong vao Bang vang hom nay (lam lai da biet dap an)
+    if (saved && !already) await addDailyPoints(req.user.id, vnDayKey(now), { examCorrect: g.correct });
   }
 
   const mine = await getExamAttempt(attempt.id);

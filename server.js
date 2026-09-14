@@ -950,19 +950,34 @@ app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
 }));
 
 // ══════════════════════════════════════════════════════════════════
-// Tro ly AI (Claude) + Tin nhan giua hoc sinh + trang thai truc tuyen.
+// Tro ly AI + Tin nhan giua hoc sinh + trang thai truc tuyen.
 // Hai nut noi o goc phai moi trang (tru phong thi HSK) goi cac API nay.
+//
+// Tro ly AI dung LAN LUOT nhieu nha cung cap, bat nha nao co khoa trong bien moi truong:
+//   GROQ_API_KEY      -> Groq, mo hinh Qwen (goi mien phi co gioi han theo ngay)
+//   GEMINI_API_KEY    -> Google Gemini (goi mien phi co gioi han)
+//   ANTHROPIC_API_KEY -> Claude (tra phi, tuy chon)
+// Thu tu mac dinh groq -> gemini -> anthropic, doi bang AI_PROVIDERS="gemini,groq".
+// Nha dau het luot / loi truoc khi kip tra chu nao thi tu chuyen sang nha tiep theo.
 // ══════════════════════════════════════════════════════════════════
-// Nap thu vien trong try: neu hosting thieu goi/Node qua cu thi chi tat Tro ly AI,
-// khong lam sap ca website.
-let Anthropic = null;
-try { Anthropic = require('@anthropic-ai/sdk'); } catch (err) { console.error('Khong nap duoc @anthropic-ai/sdk, Tro ly AI tam tat:', err.message); }
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || '';
-const anthropic = Anthropic && ANTHROPIC_API_KEY ? new Anthropic({ apiKey: ANTHROPIC_API_KEY }) : null;
-const AI_MODEL = 'claude-opus-5';
 const AI_DAILY_LIMIT_GUEST = 3;
 const AI_DAILY_LIMIT_USER = 10;
+const AI_FIRST_TOKEN_TIMEOUT_MS = 25000;
 const aiUsage = new Map(); // "day|key" -> so cau da hoi (bo nho, tu reset moi ngay)
+
+const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
+const GROQ_MODEL = process.env.GROQ_MODEL || 'qwen/qwen3.8-27b';
+const GROQ_BASE_URL = (process.env.GROQ_BASE_URL || 'https://api.groq.com/openai/v1').replace(/\/+$/, '');
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.8-flash';
+const GEMINI_BASE_URL = (process.env.GEMINI_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta').replace(/\/+$/, '');
+
+// Nap thu vien Claude trong try: thieu goi thi chi bo qua nha cung cap nay, khong sap website.
+let Anthropic = null;
+try { Anthropic = require('@anthropic-ai/sdk'); } catch (err) { console.error('Khong nap duoc @anthropic-ai/sdk, bo qua Claude:', err.message); }
+const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || '';
+const anthropic = Anthropic && ANTHROPIC_API_KEY ? new Anthropic({ apiKey: ANTHROPIC_API_KEY }) : null;
+const ANTHROPIC_MODEL = 'claude-opus-5';
 
 const AI_SYSTEM_PROMPT = [
   'Bạn là "Tiểu Hán", trợ lý học tiếng Trung của website Hi Hán 喜汉 dành cho học sinh Việt Nam (chủ yếu HSK 1-4 và YCT).',
@@ -972,8 +987,155 @@ const AI_SYSTEM_PROMPT = [
   'Trả lời gọn, dễ đọc trên điện thoại: đoạn ngắn, gạch đầu dòng khi liệt kê, dùng **đậm** cho từ khoá. Không dùng bảng.',
   'Nếu câu hỏi không liên quan tới việc học tiếng Trung hoặc văn hoá Trung Quốc, nhẹ nhàng từ chối và gợi ý một câu hỏi về tiếng Trung.',
   'Người dùng là học sinh, có thể là trẻ vị thành niên: giữ nội dung lành mạnh, không hỏi thông tin cá nhân.',
-  'Latency-sensitive; begin your visible answer immediately.',
 ].join('\n');
+const AI_REFUSAL_TEXT = 'Xin lỗi, mình không thể trả lời câu này. Bạn thử hỏi một câu khác về tiếng Trung nhé.';
+const AI_TRUNCATED_TEXT = '\n\n(Câu trả lời dài quá nên bị cắt bớt, bạn hỏi tiếp phần còn lại nhé.)';
+
+class AiProviderError extends Error {
+  constructor(provider, status, detail) {
+    super(provider + ' ' + status + ': ' + String(detail || '').slice(0, 300));
+    this.provider = provider;
+    this.status = status;
+  }
+}
+
+// Doc tung dong "data: ..." cua luong Server-Sent Events
+async function* sseData(body) {
+  const decoder = new TextDecoder();
+  let buf = '';
+  for await (const chunk of body) {
+    buf += decoder.decode(chunk, { stream: true });
+    let nl;
+    while ((nl = buf.indexOf('\n')) !== -1) {
+      const line = buf.slice(0, nl).replace(/\r$/, '');
+      buf = buf.slice(nl + 1);
+      if (line.startsWith('data:')) yield line.slice(5).trim();
+    }
+  }
+  buf += decoder.decode();
+  if (buf.startsWith('data:')) yield buf.slice(5).trim();
+}
+
+async function openStream(provider, url, init, signal) {
+  let res;
+  try {
+    res = await fetch(url, Object.assign({}, init, { signal }));
+  } catch (err) {
+    throw new AiProviderError(provider, 0, err.message);
+  }
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new AiProviderError(provider, res.status, text);
+  }
+  return res;
+}
+
+// Groq (API kieu OpenAI). Tai lieu Groq khuyen khong dung system prompt voi Qwen
+// nen gop huong dan vao tin nhan dau; tat suy nghi (reasoning_effort none) de
+// khong ton token cua goi mien phi.
+async function* streamGroq(messages, signal) {
+  const recent = messages.slice(-6);
+  while (recent.length && recent[0].role !== 'user') recent.shift();
+  const msgs = recent.map((m, i) => ({
+    role: m.role,
+    content: i === 0 ? AI_SYSTEM_PROMPT + '\n\n---\n\nCâu hỏi của học sinh:\n' + m.content : m.content,
+  }));
+  const res = await openStream('groq', GROQ_BASE_URL + '/chat/completions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + GROQ_API_KEY },
+    body: JSON.stringify({
+      model: GROQ_MODEL,
+      messages: msgs,
+      stream: true,
+      temperature: 0.6,
+      max_completion_tokens: 2048,
+      reasoning_effort: 'none',
+    }),
+  }, signal);
+  for await (const data of sseData(res.body)) {
+    if (data === '[DONE]') return;
+    let j;
+    try { j = JSON.parse(data); } catch (e) { continue; }
+    if (j.error) throw new AiProviderError('groq', 500, j.error.message || JSON.stringify(j.error));
+    const choice = j.choices && j.choices[0];
+    const text = choice && choice.delta && choice.delta.content;
+    if (text) yield text;
+    if (choice && choice.finish_reason === 'length') yield AI_TRUNCATED_TEXT;
+  }
+}
+
+// Google Gemini qua generateContent (Google xac nhan API nay van duoc ho tro day du).
+async function* streamGemini(messages, signal) {
+  const url = GEMINI_BASE_URL + '/models/' + encodeURIComponent(GEMINI_MODEL) + ':streamGenerateContent?alt=sse';
+  const res = await openStream('gemini', url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_API_KEY },
+    body: JSON.stringify({
+      system_instruction: { parts: [{ text: AI_SYSTEM_PROMPT }] },
+      contents: messages.map((m) => ({ role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }] })),
+      // du cho ca phan suy nghi noi bo cua mo hinh, tranh cau tra loi bi cat cut
+      generationConfig: { maxOutputTokens: 8192, temperature: 0.7 },
+    }),
+  }, signal);
+  let yielded = false;
+  for await (const data of sseData(res.body)) {
+    let j;
+    try { j = JSON.parse(data); } catch (e) { continue; }
+    if (j.error) throw new AiProviderError('gemini', j.error.code || 500, j.error.message);
+    if (j.promptFeedback && j.promptFeedback.blockReason) { yield AI_REFUSAL_TEXT; return; }
+    const cand = j.candidates && j.candidates[0];
+    if (!cand) continue;
+    const parts = (cand.content && cand.content.parts) || [];
+    for (const p of parts) {
+      if (p && typeof p.text === 'string' && p.text && !p.thought) { yielded = true; yield p.text; }
+    }
+    if (cand.finishReason === 'MAX_TOKENS') yield AI_TRUNCATED_TEXT;
+    else if (!yielded && ['SAFETY', 'PROHIBITED_CONTENT', 'BLOCKLIST', 'SPII', 'RECITATION'].indexOf(cand.finishReason) !== -1) {
+      yield AI_REFUSAL_TEXT;
+      return;
+    }
+  }
+}
+
+// Claude qua thu vien chinh thuc @anthropic-ai/sdk (tuy chon, tra phi).
+async function* streamAnthropic(messages, signal) {
+  const stream = anthropic.beta.messages.stream({
+    model: ANTHROPIC_MODEL,
+    max_tokens: 16000,
+    thinking: { type: 'adaptive' },
+    output_config: { effort: 'low' },
+    betas: ['server-side-fallback-2026-07-01'],
+    fallbacks: 'default',
+    system: AI_SYSTEM_PROMPT + '\nLatency-sensitive; begin your visible answer immediately.',
+    messages,
+  });
+  const onAbort = () => stream.abort();
+  signal.addEventListener('abort', onAbort);
+  try {
+    for await (const event of stream) {
+      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') yield event.delta.text;
+    }
+    const final = await stream.finalMessage();
+    if (final.stop_reason === 'refusal') yield AI_REFUSAL_TEXT;
+    else if (final.stop_reason === 'max_tokens') yield AI_TRUNCATED_TEXT;
+  } catch (err) {
+    if (Anthropic && err instanceof Anthropic.APIError) throw new AiProviderError('anthropic', err.status || 500, err.message);
+    throw new AiProviderError('anthropic', 0, err && err.message);
+  } finally {
+    signal.removeEventListener('abort', onAbort);
+  }
+}
+
+const AI_PROVIDER_DEFS = {
+  groq: { enabled: () => !!GROQ_API_KEY, stream: streamGroq },
+  gemini: { enabled: () => !!GEMINI_API_KEY, stream: streamGemini },
+  anthropic: { enabled: () => !!anthropic, stream: streamAnthropic },
+};
+function aiProviders() {
+  const order = String(process.env.AI_PROVIDERS || 'groq,gemini,anthropic').split(',').map((s) => s.trim().toLowerCase());
+  return order.filter((name, i) => AI_PROVIDER_DEFS[name] && order.indexOf(name) === i && AI_PROVIDER_DEFS[name].enabled())
+    .map((name) => ({ name, stream: AI_PROVIDER_DEFS[name].stream }));
+}
 
 function clientIp(req) {
   // lay dia chi do proxy cua hosting them vao CUOI danh sach (phan dau do trinh duyet tu gui, gia duoc)
@@ -992,11 +1154,12 @@ async function aiQuotaFor(req) {
 
 app.get('/api/ai/quota', asyncRoute(async (req, res) => {
   const q = await aiQuotaFor(req);
-  res.json({ enabled: !!anthropic, limit: q.limit, remaining: q.remaining, loggedIn: q.loggedIn });
+  res.json({ enabled: aiProviders().length > 0, limit: q.limit, remaining: q.remaining, loggedIn: q.loggedIn });
 }));
 
 app.post('/api/ai/chat', asyncRoute(async (req, res) => {
-  if (!anthropic) return res.status(503).json({ error: 'Trợ lý AI chưa được bật trên máy chủ.' });
+  const providers = aiProviders();
+  if (!providers.length) return res.status(503).json({ error: 'Trợ lý AI chưa được bật trên máy chủ.' });
   const raw = Array.isArray(req.body?.messages) ? req.body.messages.slice(-12) : [];
   const messages = raw
     .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim())
@@ -1029,43 +1192,46 @@ app.post('/api/ai/chat', asyncRoute(async (req, res) => {
   res.setHeader('X-AI-Remaining', String(q.remaining - 1));
   res.setHeader('X-AI-Limit', String(q.limit));
 
+  let clientGone = false;
+  let current = null;
+  res.on('close', () => {
+    if (res.writableFinished) return;
+    clientGone = true;
+    if (current) current.abort();
+  });
+
   let wroteText = false;
-  let aborted = false;
-  req.on('close', () => { aborted = true; });
-  try {
-    const stream = anthropic.beta.messages.stream({
-      model: AI_MODEL,
-      max_tokens: 16000,
-      thinking: { type: 'adaptive' },
-      output_config: { effort: 'low' },
-      betas: ['server-side-fallback-2026-07-01'],
-      fallbacks: 'default',
-      system: AI_SYSTEM_PROMPT,
-      messages,
-    });
-    for await (const event of stream) {
-      if (aborted) { stream.abort(); break; }
-      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
+  let lastErr = null;
+  for (const p of providers) {
+    if (clientGone) break;
+    current = new AbortController();
+    const timer = setTimeout(() => current.abort(), AI_FIRST_TOKEN_TIMEOUT_MS);
+    try {
+      for await (const text of p.stream(messages, current.signal)) {
+        clearTimeout(timer);
+        if (clientGone) break;
         wroteText = true;
-        res.write(event.delta.text);
+        res.write(text);
       }
+      clearTimeout(timer);
+      if (!wroteText && !clientGone) throw new AiProviderError(p.name, 502, 'empty response');
+      lastErr = null;
+      break;
+    } catch (err) {
+      clearTimeout(timer);
+      if (clientGone) break;
+      lastErr = err;
+      console.error('Tro ly AI: ' + p.name + ' loi', err.status != null ? err.status : '', err.message);
+      // da tra mot phan cau tra loi thi khong ghep them cau cua nha khac
+      if (wroteText) break;
     }
-    if (!aborted) {
-      const final = await stream.finalMessage();
-      if (final.stop_reason === 'refusal') {
-        if (!wroteText) refund();
-        res.write((wroteText ? '\n\n' : '') + 'Xin lỗi, mình không thể trả lời câu này. Bạn thử hỏi một câu khác về tiếng Trung nhé.');
-      } else if (final.stop_reason === 'max_tokens') {
-        res.write('\n\n(Câu trả lời dài quá nên bị cắt bớt, bạn hỏi tiếp phần còn lại nhé.)');
-      }
-    }
-  } catch (err) {
+  }
+
+  if (!clientGone && lastErr) {
     if (!wroteText) refund();
     let msg = 'Trợ lý AI đang bận, bạn thử lại sau ít phút nhé.';
-    if (err instanceof Anthropic.RateLimitError) msg = 'Trợ lý AI đang quá tải, bạn thử lại sau một lát nhé.';
-    else if (err instanceof Anthropic.AuthenticationError) msg = 'Trợ lý AI chưa được cấu hình đúng trên máy chủ.';
-    else if (err instanceof Anthropic.APIError) console.error('Claude API error', err.status, err.message);
-    else console.error('AI chat error', err && err.message);
+    if (lastErr.status === 429) msg = 'Trợ lý AI đã dùng hết lượt miễn phí hoặc đang quá tải, bạn thử lại sau nhé.';
+    else if (lastErr.status === 401 || lastErr.status === 403) msg = 'Trợ lý AI chưa được cấu hình đúng trên máy chủ.';
     res.write((wroteText ? '\n\n' : '') + '⚠️ ' + msg);
   }
   res.end();

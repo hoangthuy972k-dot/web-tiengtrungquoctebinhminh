@@ -232,6 +232,7 @@ async function initDb() {
   }
   await initExamAttemptsTable();
   await initDailyPointsTable();
+  await initResumeTable();
   await initChatTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
   await migrateJsonToDbIfNeeded();
@@ -400,8 +401,10 @@ function publicUser(user) {
 async function userProgress(userId) {
   const scores = await loadScores();
   const sc = scores[userId];
-  if (!sc) return { studyDays: [], lessonScores: {}, reviewWrongWords: {}, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
+  const resumeState = await loadResume(userId);
+  if (!sc) return { studyDays: [], lessonScores: {}, reviewWrongWords: {}, resumeState, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
   return {
+    resumeState,
     studyDays: sc.studyDays || [],
     lessonScores: sc.lessonScores || {},
     reviewWrongWords: sc.reviewWrongWords || {},
@@ -526,6 +529,17 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
   res.json({ ok: true, progress: await userProgress(req.user.id) });
 }));
 
+// Bai dang lam do: client gui len nhung bai vua thay doi (gop theo tung phan).
+app.post('/api/resume/sync', requireAuth, asyncRoute(async (req, res) => {
+  const incoming = req.body && req.body.resumeState;
+  if (!incoming || typeof incoming !== 'object' || Array.isArray(incoming)) {
+    return res.status(400).json({ error: 'Thiếu dữ liệu bài đang làm.' });
+  }
+  const merged = mergeResumeState(await loadResume(req.user.id), incoming);
+  await saveResume(req.user.id, merged);
+  res.json({ ok: true });
+}));
+
 app.get('/api/leaderboard', asyncRoute(async (req, res) => {
   const scores = await loadScores();
   const rows = Object.keys(scores).map((userId) => scores[userId]);
@@ -556,6 +570,98 @@ function secondsToVnMidnight() {
   const vnNow = Date.now() + VN_OFFSET_MS;
   const next = Math.floor(vnNow / 86400000 + 1) * 86400000;
   return Math.max(0, Math.round((next - vnNow) / 1000));
+}
+
+// ── Bai dang lam do (hoc sinh quay lai lam tiep, doi thiet bi van giu) ──
+// Luu rieng 1 dong / hoc sinh (khong nhet vao bang scores) de bang xep hang
+// khong phai doc them du lieu nay. Cau truc giong localStorage hyv_resume:
+// { "<lessonUrl>": { "<phan>": { t: ms, v: trang thai | null } } }.
+const RESUME_FILE = path.join(DATA_DIR, 'resume.json');
+const RESUME_TTL_MS = 90 * 864e5;
+const RESUME_TOMBSTONE_MS = 30 * 864e5;
+const RESUME_MAX_BYTES = 400 * 1024;
+const RESUME_ENTRY_MAX_BYTES = 24 * 1024;
+
+async function initResumeTable() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS resume_states (' +
+      'user_id VARCHAR(36) PRIMARY KEY, ' +
+      'data LONGTEXT, ' +
+      'updated_ms BIGINT NOT NULL, ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+}
+
+async function loadResume(userId) {
+  if (!USE_DB) {
+    const all = readJsonFile(RESUME_FILE) || {};
+    return all[userId] || {};
+  }
+  const [rows] = await dbPool.query('SELECT data FROM resume_states WHERE user_id = ?', [userId]);
+  if (!rows.length) return {};
+  try { return JSON.parse(rows[0].data || '{}') || {}; } catch (e) { return {}; }
+}
+
+async function saveResume(userId, data) {
+  const now = Date.now();
+  if (!USE_DB) {
+    const all = readJsonFile(RESUME_FILE) || {};
+    all[userId] = data;
+    writeJsonFile(RESUME_FILE, all);
+    return;
+  }
+  await dbPool.query(
+    'INSERT INTO resume_states (user_id, data, updated_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE data = VALUES(data), updated_ms = VALUES(updated_ms)',
+    [userId, JSON.stringify(data), now]
+  );
+}
+
+// Gop ban hoc sinh gui len vao ban dang luu: tung phan lay ban co moc thoi gian moi hon.
+function mergeResumeState(existing, incoming) {
+  const now = Date.now();
+  const out = existing && typeof existing === 'object' ? existing : {};
+  if (incoming && typeof incoming === 'object' && !Array.isArray(incoming)) {
+    Object.keys(incoming).slice(0, 300).forEach((url) => {
+      if (typeof url !== 'string' || url.length > 160 || !/^\/lessons\/[\w.-]+\.html$/.test(url)) return;
+      const parts = incoming[url];
+      if (!parts || typeof parts !== 'object' || Array.isArray(parts)) return;
+      Object.keys(parts).slice(0, 60).forEach((key) => {
+        if (typeof key !== 'string' || key.length > 60) return;
+        const e = parts[key];
+        if (!e || typeof e !== 'object' || typeof e.t !== 'number' || !isFinite(e.t)) return;
+        const t = Math.min(Math.round(e.t), now + 5 * 60 * 1000);
+        const v = e.v === undefined ? null : e.v;
+        if (v !== null && Buffer.byteLength(JSON.stringify(v), 'utf8') > RESUME_ENTRY_MAX_BYTES) return;
+        out[url] = out[url] || {};
+        const cur = out[url][key];
+        if (!cur || typeof cur.t !== 'number' || t > cur.t) out[url][key] = { t, v };
+      });
+    });
+  }
+  // Don dep: bo ban qua cu va dau "da xoa" qua 30 ngay
+  Object.keys(out).forEach((url) => {
+    const parts = out[url] || {};
+    Object.keys(parts).forEach((key) => {
+      const e = parts[key];
+      if (!e || now - e.t > RESUME_TTL_MS || (e.v === null && now - e.t > RESUME_TOMBSTONE_MS)) delete parts[key];
+    });
+    if (!Object.keys(parts).length) delete out[url];
+  });
+  // Qua lon thi bo dan cac bai lau khong dong toi nhat
+  let size = Buffer.byteLength(JSON.stringify(out), 'utf8');
+  if (size > RESUME_MAX_BYTES) {
+    const byAge = Object.keys(out).map((url) => ({
+      url, last: Math.max.apply(null, Object.values(out[url]).map((e) => e.t)),
+    })).sort((a, b) => a.last - b.last);
+    for (const item of byAge) {
+      if (size <= RESUME_MAX_BYTES) break;
+      delete out[item.url];
+      size = Buffer.byteLength(JSON.stringify(out), 'utf8');
+    }
+  }
+  return out;
 }
 
 async function initDailyPointsTable() {

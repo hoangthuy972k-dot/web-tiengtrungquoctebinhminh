@@ -144,6 +144,8 @@
     Object.keys(progress.reviewWrongWords || {}).forEach(function (k) { mergedReviewWords[k] = progress.reviewWrongWords[k]; });
     writeJSON(STORAGE_KEYS.reviewWrongWords, mergedReviewWords);
 
+    rsMergeFromServer(progress.resumeState);
+
     renderStreak();
     renderStatTiles();
   }
@@ -236,6 +238,185 @@
     } catch (e) {
       /* localStorage unavailable (private mode, quota) - fail silently for demo mode */
     }
+  }
+
+  /* ---------------- Ghi nho bai dang lam do: quay lai la lam tiep ----------------
+     hyv_resume = { "<lessonUrl>": { "<phan>": { t: ms, v: trang thai } } }
+     Moi phan nho trong bai (tu vung tung che do, ngu phap, hoi thoai, nghe, noi,
+     game, dich, khoi dong, sach bai tap, on tap nhanh) tu luu trang thai cua minh
+     sau moi cau tra loi. v = null nghia la "da xoa" (lam xong / bam lam lai) —
+     van giu moc thoi gian de lan dong bo sau xoa luon ban cu tren thiet bi khac.
+     Da dang nhap thi gui len may chu (/api/resume/sync) de doi may van lam tiep. */
+  var RESUME_KEY = 'hyv_resume';
+  var RESUME_TTL = 90 * 864e5;
+  var RESUME_TOMBSTONE_TTL = 30 * 864e5;
+  var rsDirty = {};
+  var rsSyncTimer = null;
+  var rsRestoring = 0;   // > 0: dang dung lai bai cu -> khong ghi de, khong phat am thanh
+  var sfxMuted = 0;
+
+  function rsStore() { return readJSON(RESUME_KEY, {}); }
+
+  function rsUrl(lesson) {
+    var l = lesson || currentHubLesson;
+    return l && l.fullPageUrl ? l.fullPageUrl : null;
+  }
+
+  function rsGet(part, lesson) {
+    var url = rsUrl(lesson);
+    if (!url) return null;
+    var entry = (rsStore()[url] || {})[part];
+    if (!entry || entry.v == null || Date.now() - entry.t > RESUME_TTL) return null;
+    return entry.v;
+  }
+
+  function rsWrite(part, value, lesson) {
+    var url = rsUrl(lesson);
+    if (!url || rsRestoring) return;
+    var all = rsStore();
+    var cur = all[url] && all[url][part];
+    if (value == null && (!cur || cur.v == null)) return;
+    all[url] = all[url] || {};
+    all[url][part] = { t: Date.now(), v: value == null ? null : value };
+    writeJSON(RESUME_KEY, all);
+    rsDirty[url] = true;
+    clearTimeout(rsSyncTimer);
+    rsSyncTimer = setTimeout(function () { rsFlush(false); }, 1500);
+  }
+  function rsSet(part, value, lesson) { rsWrite(part, value, lesson); }
+  function rsClear(part, lesson) { rsWrite(part, null, lesson); }
+
+  // Bai nay con phan nao dang lam do bat dau bang 1 trong cac tien to?
+  function rsHasPrefix(lesson, prefixes) {
+    var url = rsUrl(lesson);
+    var parts = (url && rsStore()[url]) || {};
+    return Object.keys(parts).some(function (k) {
+      var e = parts[k];
+      if (!e || e.v == null || Date.now() - e.t > RESUME_TTL) return false;
+      return prefixes.some(function (p) { return k === p || k.indexOf(p) === 0; });
+    });
+  }
+
+  function rsPrune(all) {
+    var now = Date.now();
+    Object.keys(all).forEach(function (url) {
+      var parts = all[url];
+      if (!parts || typeof parts !== 'object') { delete all[url]; return; }
+      Object.keys(parts).forEach(function (k) {
+        var e = parts[k];
+        if (!e || typeof e.t !== 'number' || now - e.t > RESUME_TTL || (e.v == null && now - e.t > RESUME_TOMBSTONE_TTL)) delete parts[k];
+      });
+      if (!Object.keys(parts).length) delete all[url];
+    });
+    return all;
+  }
+
+  function rsFlush(keepalive) {
+    var urls = Object.keys(rsDirty);
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    if (!urls.length || !auth || !auth.token) return;
+    var all = rsStore();
+    var payload = {};
+    urls.forEach(function (u) { if (all[u]) payload[u] = all[u]; });
+    rsDirty = {};
+    fetch('/api/resume/sync', {
+      method: 'POST',
+      keepalive: !!keepalive,
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
+      body: JSON.stringify({ resumeState: payload })
+    }).then(function (r) {
+      if (!r.ok) urls.forEach(function (u) { rsDirty[u] = true; });
+    }).catch(function () {
+      urls.forEach(function (u) { rsDirty[u] = true; });
+    });
+  }
+
+  // Gop ban tren may chu voi ban tren may nay: moi phan lay ban moi hon.
+  // Phan nao may nay moi hon thi danh dau de gui nguoc len.
+  function rsMergeFromServer(serverState) {
+    if (!serverState || typeof serverState !== 'object') return;
+    var local = rsStore();
+    Object.keys(serverState).forEach(function (url) {
+      var sParts = serverState[url] || {};
+      local[url] = local[url] || {};
+      Object.keys(sParts).forEach(function (k) {
+        var s = sParts[k], l = local[url][k];
+        if (s && typeof s.t === 'number' && (!l || s.t > l.t)) local[url][k] = s;
+      });
+    });
+    Object.keys(local).forEach(function (url) {
+      var sParts = serverState[url] || {};
+      Object.keys(local[url] || {}).forEach(function (k) {
+        var s = sParts[k], l = local[url][k];
+        if (l && (!s || l.t > s.t)) rsDirty[url] = true;
+      });
+    });
+    writeJSON(RESUME_KEY, rsPrune(local));
+    if (Object.keys(rsDirty).length) {
+      clearTimeout(rsSyncTimer);
+      rsSyncTimer = setTimeout(function () { rsFlush(false); }, 1500);
+    }
+  }
+
+  // Dung lai bai cu: khong luu de, khong keu tieng dung/sai
+  function rsQuiet(fn) {
+    rsRestoring++;
+    sfxMuted++;
+    try { fn(); } finally {
+      rsRestoring--;
+      setTimeout(function () { sfxMuted--; }, 80);
+    }
+  }
+
+  function rsEsc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  // Dong thong bao "Da khoi phuc bai lam do" ngay tren noi dung phan dang hoc
+  function rsNotice(contentSel, text, onRestart) {
+    var content = $(contentSel);
+    if (!content || !content.parentNode) return;
+    rsHideNotice(contentSel);
+    var el = document.createElement('div');
+    el.className = 'rs-notice';
+    el.id = 'rsNotice-' + content.id;
+    el.setAttribute('role', 'status');
+    el.innerHTML =
+      '<span class="rs-notice-icon" aria-hidden="true">↺</span>' +
+      '<span class="rs-notice-text">' + text + '</span>' +
+      '<button type="button" class="rs-notice-restart">Làm lại từ đầu</button>' +
+      '<button type="button" class="rs-notice-close" aria-label="Ẩn thông báo">×</button>';
+    content.parentNode.insertBefore(el, content);
+    $('.rs-notice-restart', el).addEventListener('click', function () {
+      el.remove();
+      onRestart();
+    });
+    $('.rs-notice-close', el).addEventListener('click', function () { el.remove(); });
+  }
+
+  function rsHideNotice(contentSel) {
+    var content = $(contentSel);
+    if (!content) return;
+    var old = document.getElementById('rsNotice-' + content.id);
+    if (old) old.remove();
+  }
+
+  // Chu go dang do (dien tu, dich cau...): luu sau khi ngung go 0,6 giay
+  var rsTypeTimers = {};
+  function rsDebounce(key, fn) {
+    clearTimeout(rsTypeTimers[key]);
+    rsTypeTimers[key] = setTimeout(fn, 600);
+  }
+
+  function pgbSnap(id) {
+    var st = pgbState[id];
+    return st ? st.results.slice() : [];
+  }
+  function pgbLoad(id, results, total) {
+    if (Array.isArray(results) && results.length === total) pgbState[id] = { results: results.slice(), streak: 0 };
+    else pgbInit(id, total);
   }
 
   var toastTimer;
@@ -677,6 +858,13 @@
   var currentHubLevelId = null;
   var currentHubLesson = null;
 
+  // O dang bai -> nhung phan luu "dang lam do" thuoc ve o do
+  var HUB_RESUME_PREFIX = {
+    warmup: ['warmup'], vocab: ['vocab:q:'], flash: ['flash'], grammar: ['grammar:q:'], dialog: ['dialog'],
+    listen: ['listen:q:', 'listen:dialog', 'listen:wb'], game: ['game:match', 'game:fill', 'game:sort', 'game:errfix', 'game:mc'],
+    speak: ['speak:ai', 'speak:rec:'], translate: ['translate:q:'], workbook: ['workbook']
+  };
+
   function showLessonHub(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
@@ -730,7 +918,9 @@
       tile.innerHTML =
         '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
         '<span class="hub-tile-label">' + def.label + '</span>' +
-        (done ? '<span class="hub-tile-check">✓ Đã làm</span>' : '') +
+        (rsHasPrefix(lesson, HUB_RESUME_PREFIX[tabId] || [tabId])
+          ? '<span class="hub-tile-resume">⏳ Đang làm dở</span>'
+          : (done ? '<span class="hub-tile-check">✓ Đã làm</span>' : '')) +
         '<svg class="icon hub-tile-arrow" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>';
       if (tabId === 'warmup') {
         tile.addEventListener('click', function (e) {
@@ -837,6 +1027,7 @@
     $('#reviewPractice').hidden = true;
     $('#wpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
+    rsHideNotice('#wpContent');
     loadLessonWarmup(lesson).then(function (data) {
       wpItems = data || [];
       wpSel = null;
@@ -845,7 +1036,18 @@
         ? wpItems.length + ' cặp hình ảnh - chữ Hán để ghép'
         : 'Bài học này chưa có phần khởi động';
       if (wpItems.length) pgbInit('wpq', wpItems.length);
-      renderWarmupPractice();
+      var saved = wpItems.length ? rsGet('warmup') : null;
+      var letters = wpItems.map(function (w) { return w.letter; }).sort().join('|');
+      if (saved && saved.cards && saved.cards.slice().sort().join('|') === letters &&
+          saved.opts && saved.opts.slice().sort().join('|') === letters && saved.done && saved.done.length) {
+        renderWarmupPractice(saved);
+        rsNotice('#wpContent', 'Đã khôi phục bài làm dở: ghép đúng <b>' + saved.done.length + '/' + wpItems.length + '</b> cặp.', function () {
+          rsClear('warmup');
+          showWarmupPractice(levelId, lesson);
+        });
+      } else {
+        renderWarmupPractice();
+      }
     }).catch(function () {
       $('#wpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung khởi động của bài này.</p>';
     });
@@ -853,14 +1055,30 @@
     $('#warmupPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function renderWarmupPractice() {
+  var wpOrder = { cards: [], opts: [] };
+
+  function wpByLetters(letters) {
+    return letters.map(function (l) { return wpItems.filter(function (w) { return w.letter === l; })[0]; });
+  }
+
+  function wpSave() {
+    var done = wpItems.filter(function (w) { return wpDone.has(w.letter); }).map(function (w) { return w.letter; });
+    if (!done.length || done.length === wpItems.length) { rsClear('warmup'); return; }
+    rsSet('warmup', { cards: wpOrder.cards, opts: wpOrder.opts, done: done });
+  }
+
+  function renderWarmupPractice(saved) {
     var wrap = $('#wpContent');
     if (!wpItems.length) {
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có phần khởi động.</p>';
       return;
     }
-    var shuffledCards = shuffle(wpItems.slice());
-    var shuffledOpts = shuffle(wpItems.slice());
+    var shuffledCards = saved ? wpByLetters(saved.cards) : shuffle(wpItems.slice());
+    var shuffledOpts = saved ? wpByLetters(saved.opts) : shuffle(wpItems.slice());
+    wpOrder = {
+      cards: shuffledCards.map(function (w) { return w.letter; }),
+      opts: shuffledOpts.map(function (w) { return w.letter; })
+    };
     wrap.innerHTML =
       pgbHtml('wpq', wpItems.length) +
       '<div class="wu-grid" id="wpGrid">' +
@@ -887,6 +1105,18 @@
     $all('.wu-opt', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () { wpSelectOpt(btn.dataset.letter); });
     });
+
+    if (saved) {
+      rsQuiet(function () {
+        saved.done.forEach(function (letter) {
+          var card = document.getElementById('wpc_' + letter);
+          if (!card || wpDone.has(letter)) return;
+          wpSelectCard(letter, card);
+          wpSelectOpt(letter);
+        });
+      });
+      $('#wpFb').innerHTML = '';
+    }
   }
 
   function wpSelectCard(letter, el) {
@@ -922,6 +1152,7 @@
         fb.innerHTML = '<span style="color:var(--color-red-600);font-weight:700;">🎉 Hoàn thành! Bạn đã ghép đúng tất cả!</span>';
         recordLessonScore(currentHubLesson, 'warmup', { correct: wpItems.length, total: wpItems.length });
       }
+      wpSave();
     } else {
       optEl.classList.add('is-wrong');
       fb.innerHTML = '<span style="color:var(--color-red-600);">✗ Chưa đúng, thử lại!</span>';
@@ -956,6 +1187,8 @@
     $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#wbTabs').innerHTML = '';
 
+    rsHideNotice('#wbContent');
+    wbBindResume();
     loadLessonWorkbook(lesson).then(function (data) {
       wbSections = (data && data.sections) || [];
       wbActiveIdx = 0;
@@ -964,8 +1197,18 @@
         $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có nội dung sách bài tập.</p>';
         return;
       }
+      wbSaved = rsGet('workbook') || { tab: 0, secs: {} };
+      if (!wbSaved.secs || typeof wbSaved.secs !== 'object') wbSaved.secs = {};
+      if (wbSaved.tab > 0 && wbSaved.tab < wbSections.length) wbActiveIdx = wbSaved.tab;
       renderWbTabs();
       renderWbContent();
+      var hasWork = Object.keys(wbSaved.secs).some(function (k) { return wbSnapHasWork(wbSaved.secs[k]); });
+      if (hasWork) {
+        rsNotice('#wbContent', 'Đã khôi phục bài làm dở trong sách bài tập (' + wbSections[wbActiveIdx].title + ').', function () {
+          rsClear('workbook');
+          showWorkbookPractice(levelId, lesson);
+        });
+      }
     }).catch(function () {
       $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung sách bài tập của bài này.</p>';
     });
@@ -980,10 +1223,102 @@
     }).join('');
     $all('.vp-tab', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {
+        wbSaveCurrent();
+        rsHideNotice('#wbContent');
         wbActiveIdx = parseInt(btn.getAttribute('data-wb-idx'), 10);
+        wbSaved.tab = wbActiveIdx;
+        wbPersist();
         renderWbTabs();
         renderWbContent();
       });
+    });
+  }
+
+  // ---- Ghi nho bai lam trong sach bai tap: chup lai trang thai trang dang mo ----
+  var wbSaved = { tab: 0, secs: {} };
+  var wbRestoreOrders = null;
+  var wbResumeBound = false;
+
+  function wbSnapshot() {
+    var wrap = $('#wbContent');
+    return {
+      inputs: $all('.wb-drill-input', wrap).map(function (inp) { return inp.value; }),
+      revealed: $all('.wb-block[id^="wbdrill-"]', wrap).map(function (b, i) { return b.classList.contains('is-revealed') ? i : -1; }).filter(function (i) { return i >= 0; }),
+      tone: $all('.wb-tonemc-item', wrap).map(function (item) { return item.hasAttribute('data-picked') ? parseInt(item.getAttribute('data-picked'), 10) : -1; }),
+      match: $all('.wb-pymatch-wrap', wrap).map(function (w) {
+        var done = wbMatchDoneMap[w.getAttribute('data-wb-match-id')];
+        return {
+          order: $all('.mg-item[data-wpy-ri]', w).map(function (el) { return parseInt(el.getAttribute('data-wpy-ri'), 10); }),
+          done: done ? Array.from(done) : []
+        };
+      }),
+      mt: $('#mtSubmitBtn', wrap) ? { answers: mtAnswers, submitted: mtSubmitted } : null
+    };
+  }
+
+  function wbSnapHasWork(snap) {
+    if (!snap) return false;
+    return (snap.inputs || []).some(function (v) { return v; }) || (snap.revealed || []).length ||
+      (snap.tone || []).some(function (v) { return v >= 0; }) ||
+      (snap.match || []).some(function (m) { return m.done && m.done.length; }) ||
+      !!(snap.mt && Object.keys(snap.mt.answers || {}).length);
+  }
+
+  function wbPersist() {
+    var any = Object.keys(wbSaved.secs).some(function (k) { return wbSnapHasWork(wbSaved.secs[k]); });
+    if (!any && !wbSaved.tab) rsClear('workbook');
+    else rsSet('workbook', wbSaved);
+  }
+
+  function wbSaveCurrent() {
+    if (rsRestoring || !wbSections.length || !$('#wbContent .wb-block, #wbContent .wb-audio-box')) return;
+    var snap = wbSnapshot();
+    if (wbSnapHasWork(snap)) wbSaved.secs[wbActiveIdx] = snap;
+    else delete wbSaved.secs[wbActiveIdx];
+    wbPersist();
+  }
+
+  function wbBindResume() {
+    if (wbResumeBound) return;
+    wbResumeBound = true;
+    var wrap = $('#wbContent');
+    wrap.addEventListener('click', function () { setTimeout(wbSaveCurrent, 0); });
+    wrap.addEventListener('input', function (e) {
+      if (e.target.classList.contains('wb-drill-input')) rsDebounce('workbook', wbSaveCurrent);
+    });
+  }
+
+  function wbApplySnapshot(snap) {
+    var wrap = $('#wbContent');
+    rsQuiet(function () {
+      var inputs = $all('.wb-drill-input', wrap);
+      (snap.inputs || []).forEach(function (v, i) { if (inputs[i]) inputs[i].value = v || ''; });
+      var drills = $all('.wb-block[id^="wbdrill-"]', wrap);
+      (snap.revealed || []).forEach(function (i) {
+        var btn = drills[i] && $('.wb-reveal-btn', drills[i]);
+        if (btn) btn.click();
+      });
+      var items = $all('.wb-tonemc-item', wrap);
+      (snap.tone || []).forEach(function (oi, i) {
+        var btn = oi >= 0 && items[i] && $all('.wb-tonemc-opt', items[i])[oi];
+        if (btn) btn.click();
+      });
+      $all('.wb-pymatch-wrap', wrap).forEach(function (w, k) {
+        var m = (snap.match || [])[k];
+        if (!m) return;
+        (m.done || []).forEach(function (li) {
+          var left = $('.mg-item[data-wpy-li="' + li + '"]', w);
+          var right = $('.mg-item[data-wpy-ri="' + li + '"]', w);
+          if (left && right) { left.click(); right.click(); }
+        });
+      });
+      if (snap.mt) {
+        Object.keys(snap.mt.answers || {}).forEach(function (qKey) {
+          var btn = $('.mt-opt[data-mt-q="' + qKey + '"][data-mt-key="' + snap.mt.answers[qKey] + '"]', wrap);
+          if (btn) btn.click();
+        });
+        if (snap.mt.submitted && $('#mtSubmitBtn')) $('#mtSubmitBtn').click();
+      }
     });
   }
 
@@ -1088,6 +1423,12 @@
   function wbRenderPyMatch(block) {
     var blockId = 'wbmatch-' + (wbBlockSeq++);
     var order = shuffle(block.items.map(function (_, i) { return i; }));
+    // Dung lai dung thu tu cot phai cua lan lam truoc (neu con khop so cap)
+    var savedOrder = wbRestoreOrders && wbRestoreOrders.shift();
+    if (savedOrder && savedOrder.length === block.items.length &&
+        savedOrder.slice().sort(function (a, b) { return a - b; }).every(function (v, i) { return v === i; })) {
+      order = savedOrder.slice();
+    }
     return '<div class="wb-block" id="' + blockId + '">' +
       (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
       '<p class="wb-note">Nghe audio phía trên, bấm 1 pinyin bên trái rồi bấm hán tự tương ứng bên phải.</p>' +
@@ -1230,6 +1571,8 @@
     var section = wbSections[wbActiveIdx];
     var wrap = $('#wbContent');
     if (!section) { wrap.innerHTML = ''; return; }
+    var snap = wbSaved.secs && wbSaved.secs[wbActiveIdx];
+    wbRestoreOrders = snap && snap.match ? snap.match.map(function (m) { return m.order; }) : null;
     var audioHtml = section.audio
       ? '<div class="wb-audio-box"><div class="wb-audio-label">🎧 Audio gốc sách bài tập</div><audio controls preload="none" src="' + section.audio + '"></audio></div>'
       : '';
@@ -1279,7 +1622,15 @@
       var submitBtn = $('#mtSubmitBtn');
       if (submitBtn) {
         submitBtn.addEventListener('click', function () {
-          if (mtSubmitted) { renderWbContent(); return; }
+          if (mtSubmitted) {
+            // "Lam lai" de kiem tra: bo phan bai kiem tra da luu, giu cac phan khac
+            if (wbSaved.secs[wbActiveIdx]) wbSaved.secs[wbActiveIdx].mt = null;
+            mtAnswers = {};
+            mtSubmitted = false;
+            renderWbContent();
+            wbSaveCurrent();
+            return;
+          }
           mtSubmitted = true;
           var result = mtGrade(mockTestBlock);
           var bar = $('#mtResultBar');
@@ -1295,6 +1646,7 @@
         var item = btn.closest('.wb-tonemc-item');
         if (item.classList.contains('is-done')) return;
         var correct = btn.hasAttribute('data-correct');
+        item.setAttribute('data-picked', $all('.wb-tonemc-opt', item).indexOf(btn));
         $all('.wb-tonemc-opt', item).forEach(function (b) {
           b.disabled = true;
           if (b.hasAttribute('data-correct')) b.classList.add('is-correct');
@@ -1311,6 +1663,8 @@
         btn.textContent = revealed ? '🙈 Ẩn đáp án' : '👁️ Xem đáp án';
       });
     });
+    wbRestoreOrders = null;
+    if (snap) wbApplySnapshot(snap);
   }
 
   /* ---------------- Vocab practice (danh sach tu + 4 che do quiz) ---------------- */
@@ -1624,9 +1978,12 @@
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
 
+    rsHideNotice('#vpContent');
     loadLessonVocab(lesson).then(function (vocabData) {
       vpVocab = vocabData;
-      vpMode = 'list';
+      var savedMode = rsGet('vocab:mode');
+      vpMode = VP_TABS.some(function (t) { return t.id === savedMode; }) ? savedMode : 'list';
+      vpQuiz = null;
       $('#vpSubtitle').textContent = vocabData.length + ' từ trong bài học này';
       renderVpTabs();
       renderVpContent();
@@ -1648,6 +2005,8 @@
       btn.addEventListener('click', function () {
         vpMode = t.id;
         vpQuiz = null;
+        rsHideNotice('#vpContent');
+        rsSet('vocab:mode', t.id === 'list' ? null : t.id);
         renderVpTabs();
         renderVpContent();
       });
@@ -1848,18 +2207,32 @@
   }
 
   function renderVpQuiz(mode) {
+    var rsKey = 'vocab:q:' + mode;
     if (!vpQuiz) {
-      vpQuiz = { order: shuffle(vpVocab.map(function (_, i) { return i; })), pos: 0, score: 0 };
-      pgbInit('vpq', vpQuiz.order.length);
+      var saved = rsGet(rsKey);
+      if (saved && Array.isArray(saved.order) && saved.order.length === vpVocab.length && saved.pos > 0 && saved.pos < saved.order.length) {
+        vpQuiz = { order: saved.order.slice(), pos: saved.pos, score: saved.score || 0 };
+        pgbLoad('vpq', saved.results, vpQuiz.order.length);
+        rsNotice('#vpContent', 'Tiếp tục từ câu <b>' + (saved.pos + 1) + '/' + saved.order.length + '</b> · đúng ' + (saved.score || 0) + ' câu.', function () {
+          rsClear(rsKey);
+          vpQuiz = null;
+          renderVpQuiz(mode);
+        });
+      } else {
+        vpQuiz = { order: shuffle(vpVocab.map(function (_, i) { return i; })), pos: 0, score: 0 };
+        pgbInit('vpq', vpQuiz.order.length);
+      }
     }
     var wrap = $('#vpContent');
     if (vpQuiz.pos >= vpQuiz.order.length) {
+      rsClear(rsKey);
+      rsHideNotice('#vpContent');
       recordLessonScore(currentHubLesson, 'vocab', { correct: vpQuiz.score, total: vpQuiz.order.length });
       wrap.innerHTML =
         '<div class="vp-quiz-done"><strong>' + vpQuiz.score + '/' + vpQuiz.order.length + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện tập này.</p>' +
         '<button type="button" class="btn btn-primary" id="vpRestart">Luyện lại</button></div>';
-      $('#vpRestart').addEventListener('click', function () { vpQuiz = null; renderVpQuiz(mode); });
+      $('#vpRestart').addEventListener('click', function () { rsClear(rsKey); vpQuiz = null; renderVpQuiz(mode); });
       return;
     }
 
@@ -1914,6 +2287,7 @@
         });
         if (isCorrect) vpQuiz.score++;
         pgbRecord('vpq', vpQuiz.pos, isCorrect);
+        rsSet(rsKey, { order: vpQuiz.order, pos: vpQuiz.pos + 1, score: vpQuiz.score, results: pgbSnap('vpq') });
         setTimeout(function () {
           vpQuiz.pos++;
           renderVpQuiz(mode);
@@ -2256,10 +2630,22 @@
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
 
+    rsHideNotice('#fcContent');
     loadLessonVocab(lesson).then(function (vocabData) {
       fcVocab = vocabData;
       fcIndex = 0;
       fcTally = { yes: 0, no: 0 };
+      var saved = rsGet('flash');
+      if (saved && saved.total === vocabData.length && saved.index > 0 && saved.index < vocabData.length) {
+        fcIndex = saved.index;
+        fcTally = { yes: saved.yes || 0, no: saved.no || 0 };
+        rsNotice('#fcContent', 'Tiếp tục từ thẻ <b>' + (fcIndex + 1) + '/' + vocabData.length + '</b> · đã nhớ ' + fcTally.yes + ' từ.', function () {
+          rsClear('flash');
+          fcIndex = 0;
+          fcTally = { yes: 0, no: 0 };
+          renderFlashcard();
+        });
+      }
       renderFlashcard();
     }).catch(function () {
       $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được dữ liệu từ vựng của bài này.</p>';
@@ -2271,6 +2657,8 @@
   function renderFlashcard() {
     var total = fcVocab.length;
     if (fcIndex >= total) {
+      rsClear('flash');
+      rsHideNotice('#fcContent');
       recordLessonScore(currentHubLesson, 'flash', { correct: fcTally.yes, total: total });
       $('#fcSubtitle').textContent = 'Hoàn thành';
       $('#fcContent').innerHTML =
@@ -2278,6 +2666,7 @@
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã ôn hết ' + total + ' thẻ từ vựng.</p>' +
         '<button type="button" class="btn btn-primary" id="fcRestart">Ôn lại</button></div>';
       $('#fcRestart').addEventListener('click', function () {
+        rsClear('flash');
         fcIndex = 0;
         fcTally = { yes: 0, no: 0 };
         renderFlashcard();
@@ -2319,14 +2708,17 @@
       e.stopPropagation();
       vpSpeak(word.zh);
     });
+    function fcSave() { rsSet('flash', { index: fcIndex, yes: fcTally.yes, no: fcTally.no, total: total }); }
     $('#fcNo').addEventListener('click', function () {
       fcTally.no++;
       fcIndex++;
+      fcSave();
       renderFlashcard();
     });
     $('#fcYes').addEventListener('click', function () {
       fcTally.yes++;
       fcIndex++;
+      fcSave();
       renderFlashcard();
     });
   }
@@ -7937,6 +8329,16 @@
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     grMode = 'lesson';
+    grQuiz = null;
+    rsHideNotice('#grContent');
+    var savedGrMode = rsGet('grammar:mode');
+    if (savedGrMode) {
+      var grRaw = grRawExercises();
+      var grOk = grIsGrouped(grRaw)
+        ? (/^exercise_\d+$/.test(savedGrMode) && !!grRaw[parseInt(savedGrMode.slice(9), 10)])
+        : (savedGrMode === 'exercise' && grRaw.length > 0);
+      if (grOk) grMode = savedGrMode;
+    }
     renderGrTabs();
 
     loadLessonGrammar(lesson).then(function (points) {
@@ -7979,7 +8381,7 @@
     lessonBtn.type = 'button';
     lessonBtn.className = 'vp-tab' + (grMode === 'lesson' ? ' active' : '');
     lessonBtn.textContent = 'Bài học';
-    lessonBtn.addEventListener('click', function () { grMode = 'lesson'; grQuiz = null; renderGrTabs(); renderGrammarContent(); });
+    lessonBtn.addEventListener('click', function () { grMode = 'lesson'; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', grMode === 'lesson' ? null : grMode); renderGrTabs(); renderGrammarContent(); });
     wrap.appendChild(lessonBtn);
 
     var raw = grRawExercises();
@@ -7990,7 +8392,7 @@
         btn.type = 'button';
         btn.className = 'vp-tab' + (grMode === modeId ? ' active' : '');
         btn.textContent = 'Bài tập ' + (gi + 1);
-        btn.addEventListener('click', function () { grMode = modeId; grQuiz = null; renderGrTabs(); renderGrammarContent(); });
+        btn.addEventListener('click', function () { grMode = modeId; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', grMode === 'lesson' ? null : grMode); renderGrTabs(); renderGrammarContent(); });
         wrap.appendChild(btn);
       });
     } else if (raw.length) {
@@ -7998,7 +8400,7 @@
       btn2.type = 'button';
       btn2.className = 'vp-tab' + (grMode === 'exercise' ? ' active' : '');
       btn2.textContent = 'Bài tập';
-      btn2.addEventListener('click', function () { grMode = 'exercise'; grQuiz = null; renderGrTabs(); renderGrammarContent(); });
+      btn2.addEventListener('click', function () { grMode = 'exercise'; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', grMode === 'lesson' ? null : grMode); renderGrTabs(); renderGrammarContent(); });
       wrap.appendChild(btn2);
     }
   }
@@ -8050,16 +8452,33 @@
       wrap.innerHTML = groupTitleHtml + '<p style="color:var(--color-gray-500);">Bài học này chưa có bài tập ngữ pháp.</p>';
       return;
     }
-    if (!grQuiz) { grQuiz = { pos: 0, score: 0 }; pgbInit('grq', items.length); }
+    var grKey = 'grammar:q:' + grMode;
+    if (!grQuiz) {
+      var grSaved = rsGet(grKey);
+      if (grSaved && grSaved.total === items.length && grSaved.pos > 0 && grSaved.pos < items.length) {
+        grQuiz = { pos: grSaved.pos, score: grSaved.score || 0 };
+        pgbLoad('grq', grSaved.results, items.length);
+        rsNotice('#grContent', 'Tiếp tục bài tập ngữ pháp từ câu <b>' + (grSaved.pos + 1) + '/' + items.length + '</b> · đúng ' + (grSaved.score || 0) + ' câu.', function () {
+          rsClear(grKey);
+          grQuiz = null;
+          renderGrammarExercise();
+        });
+      } else {
+        grQuiz = { pos: 0, score: 0 };
+        pgbInit('grq', items.length);
+      }
+    }
 
     if (grQuiz.pos >= items.length) {
+      rsClear(grKey);
+      rsHideNotice('#grContent');
       recordLessonScore(currentHubLesson, 'grammar', { correct: grQuiz.score, total: items.length });
       wrap.innerHTML =
         groupTitleHtml +
         '<div class="vp-quiz-done"><strong>' + grQuiz.score + '/' + items.length + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành bài tập ngữ pháp.</p>' +
         '<button type="button" class="btn btn-primary" id="grRestart">Làm lại</button></div>';
-      $('#grRestart').addEventListener('click', function () { grQuiz = null; renderGrammarExercise(); });
+      $('#grRestart').addEventListener('click', function () { rsClear(grKey); grQuiz = null; renderGrammarExercise(); });
       return;
     }
 
@@ -8088,6 +8507,7 @@
   function grFinishQuestion(isCorrect, explanation) {
     if (isCorrect) grQuiz.score++;
     pgbRecord('grq', grQuiz.pos, isCorrect);
+    rsSet('grammar:q:' + grMode, { pos: grQuiz.pos + 1, score: grQuiz.score, total: grCurrentItems().length, results: pgbSnap('grq') });
     $('#grExplain').textContent = '💡 ' + explanation;
     var total = grCurrentItems().length;
     var nextBtn = document.createElement('button');
@@ -8260,6 +8680,7 @@
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
     $('#dpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    rsHideNotice('#dpContent');
 
     loadLessonDialog(lesson).then(function (dialogData) {
       dpScenes = dialogData;
@@ -8275,6 +8696,17 @@
         dpTotalQuiz += (scene.preQuiz && scene.preQuiz.length) || 0;
       });
       if (dpTotalQuiz > 0) pgbInit('dpq', dpTotalQuiz);
+      var dpSaved = rsGet('dialog');
+      if (dpSaved && dpSaved.scenes === dialogData.length && dpSaved.quizTotal === dpTotalQuiz) {
+        dpIndex = Math.min(Math.max(0, dpSaved.index || 0), dialogData.length - 1);
+        dpQuizState = dpSaved.quiz || {};
+        (dpSaved.viewed || []).forEach(function (i) { dpViewed.add(i); });
+        if (dpTotalQuiz > 0) pgbLoad('dpq', dpSaved.results, dpTotalQuiz);
+        rsNotice('#dpContent', 'Tiếp tục ở <b>đoạn hội thoại ' + (dpIndex + 1) + '/' + dialogData.length + '</b> như lần trước.', function () {
+          rsClear('dialog');
+          showDialoguePractice(levelId, lesson);
+        });
+      }
       $('#dpSubtitle').textContent = dialogData.length + ' đoạn hội thoại';
       renderDialogueTabs();
       renderDialogueScene();
@@ -8298,8 +8730,26 @@
         dpIndex = i;
         renderDialogueTabs();
         renderDialogueScene();
+        dpSave();
       });
       wrap.appendChild(btn);
+    });
+  }
+
+  // Luu doan dang xem + dap an nghe hieu; xem het cac doan va tra loi het thi coi nhu xong
+  function dpSave() {
+    var allQuizDone = dpScenes.every(function (sc, i) {
+      var st = dpQuizState[i];
+      return !(sc.preQuiz && sc.preQuiz.length) || (st && st.revealed);
+    });
+    if (dpViewed && dpViewed.size === dpScenes.length && allQuizDone) { rsClear('dialog'); return; }
+    var hasWork = dpIndex > 0 || (dpViewed && dpViewed.size > 1) || Object.keys(dpQuizState).some(function (k) {
+      return Object.keys((dpQuizState[k] && dpQuizState[k].answers) || {}).length;
+    });
+    if (!hasWork) return;
+    rsSet('dialog', {
+      index: dpIndex, scenes: dpScenes.length, quizTotal: dpTotalQuiz, quiz: dpQuizState,
+      viewed: dpViewed ? Array.from(dpViewed) : [], results: dpTotalQuiz > 0 ? pgbSnap('dpq') : []
     });
   }
 
@@ -8424,10 +8874,11 @@
           pgbRecord('dpq', dpFlatOffsets[dpIndex] + qi, oi === scene.preQuiz[qi].ans);
           if (Object.keys(state.answers).length === scene.preQuiz.length) state.revealed = true;
           renderDialogueScene();
+          dpSave();
         });
       });
       var skipBtn = $('#dpQuizSkip', wrap);
-      if (skipBtn) skipBtn.addEventListener('click', function () { state.revealed = true; renderDialogueScene(); });
+      if (skipBtn) skipBtn.addEventListener('click', function () { state.revealed = true; renderDialogueScene(); dpSave(); });
     }
   }
 
@@ -8460,8 +8911,11 @@
     $('#reviewPractice').hidden = true;
     $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
-    lpMode = 'meaning';
-    $all('#lpTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-lp-tab') === 'meaning'); });
+    var savedLpMode = rsGet('listen:mode');
+    lpMode = ['meaning', 'hanzi', 'dialog'].indexOf(savedLpMode) >= 0 ? savedLpMode : 'meaning';
+    $all('#lpTabs .vp-tab').forEach(function (t) { t.classList.toggle('active', t.getAttribute('data-lp-tab') === lpMode); });
+    rsHideNotice('#lpContent');
+    lpBindResume();
 
     Promise.all([loadLessonVocab(lesson), loadLessonListenData(lesson)]).then(function (res) {
       lpVocab = res[0];
@@ -8476,6 +8930,66 @@
     });
 
     $('#listenPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ---- Ghi nho bai nghe lam do (de nghe sach bai tap + nghe hoi thoai) ----
+  var lpResumeBound = false;
+  function lpBindResume() {
+    if (lpResumeBound) return;
+    lpResumeBound = true;
+    var wrap = $('#lpContent');
+    wrap.addEventListener('click', function (e) {
+      if (e.target.closest('.lp-dict-reveal, .lp-judge-btn, .lp-mcdict-reveal, .lp-mc-opt, .lp-opt-btn')) setTimeout(lpSaveCurrent, 0);
+    });
+    wrap.addEventListener('input', function (e) {
+      if (e.target.classList.contains('lp-dict-input')) rsDebounce('listen', lpSaveCurrent);
+    });
+  }
+
+  function lpPickedIndex(btns) {
+    var wrong = -1, right = -1;
+    btns.forEach(function (b, i) {
+      if (b.classList.contains('is-wrong')) wrong = i;
+      if (b.classList.contains('is-correct')) right = i;
+    });
+    return wrong >= 0 ? wrong : right;
+  }
+
+  function lpSaveCurrent() {
+    if (rsRestoring || !currentHubLesson) return;
+    var wrap = $('#lpContent');
+    if (lpListenData && lpListenData.type === 'workbook') {
+      if (!lpWorkbookScore) return;
+      var inputs = {};
+      $all('.lp-dict-input', wrap).forEach(function (inp) { if (inp.value) inputs[inp.id] = inp.value; });
+      var judge = {};
+      $all('.lp-judge.done', wrap).forEach(function (box) {
+        var chosen = $('.lp-judge-btn.chosen', box);
+        if (chosen) judge[box.getAttribute('data-judge-num')] = chosen.getAttribute('data-judge-val');
+      });
+      var mcdict = $all('.lp-mcdict-reveal', wrap).filter(function (b) { return b.disabled; }).map(function (b) { return b.getAttribute('data-mcdict-reveal'); });
+      var mc = {};
+      Object.keys(lpWorkbookScore.mcCorrect).forEach(function (num) {
+        mc[num] = lpPickedIndex($all('.lp-mc-opt[data-mc-num="' + num + '"]', wrap));
+      });
+      var dict = Object.keys(lpWorkbookScore.dictCorrect);
+      var total = lpWbTotal();
+      if (dict.length + Object.keys(mc).length >= total) { rsClear('listen:wb'); return; }
+      if (!dict.length && !Object.keys(mc).length && !Object.keys(inputs).length && !Object.keys(judge).length) { rsClear('listen:wb'); return; }
+      rsSet('listen:wb', { total: total, inputs: inputs, dict: dict, judge: judge, mcdict: mcdict, mc: mc, results: pgbSnap('lpwq') });
+    } else if (lpMode === 'dialog') {
+      var answers = {};
+      var totalQ = 0;
+      $all('.lp-question-opts', wrap).forEach(function (group) {
+        totalQ++;
+        var btns = $all('.lp-opt-btn', group);
+        if (!btns.length || !btns[0].disabled) return;
+        answers[btns[0].getAttribute('data-gi') + '_' + btns[0].getAttribute('data-qi')] = lpPickedIndex(btns);
+      });
+      var n = Object.keys(answers).length;
+      if (!n || n >= totalQ) rsClear('listen:dialog');
+      else rsSet('listen:dialog', { total: totalQ, answers: answers });
+    }
   }
 
   function renderListenContent() {
@@ -8704,6 +9218,40 @@
         lpWorkbookUpdateScore();
       });
     });
+
+    var wbSavedListen = rsGet('listen:wb');
+    if (wbSavedListen && wbSavedListen.total === total && !Object.keys(lpWorkbookScore.dictCorrect).length && !Object.keys(lpWorkbookScore.mcCorrect).length) {
+      rsQuiet(function () {
+        Object.keys(wbSavedListen.inputs || {}).forEach(function (id) {
+          var inp = document.getElementById(id);
+          if (inp && wrap.contains(inp)) inp.value = wbSavedListen.inputs[id];
+        });
+        (wbSavedListen.dict || []).forEach(function (num) {
+          var b = $('.lp-dict-reveal[data-reveal-num="' + num + '"]', wrap);
+          if (b) b.click();
+        });
+        Object.keys(wbSavedListen.judge || {}).forEach(function (num) {
+          var b = $('.lp-judge[data-judge-num="' + num + '"] .lp-judge-btn[data-judge-val="' + wbSavedListen.judge[num] + '"]', wrap);
+          if (b) b.click();
+        });
+        (wbSavedListen.mcdict || []).forEach(function (num) {
+          var b = $('.lp-mcdict-reveal[data-mcdict-reveal="' + num + '"]', wrap);
+          if (b) b.click();
+        });
+        Object.keys(wbSavedListen.mc || {}).forEach(function (num) {
+          var b = $all('.lp-mc-opt[data-mc-num="' + num + '"]', wrap)[wbSavedListen.mc[num]];
+          if (b) b.click();
+        });
+      });
+      var doneCount = (wbSavedListen.dict || []).length + Object.keys(wbSavedListen.mc || {}).length;
+      if (doneCount || Object.keys(wbSavedListen.inputs || {}).length) {
+        rsNotice('#lpContent', 'Đã khôi phục đề nghe làm dở: xong <b>' + doneCount + '/' + total + '</b> câu.', function () {
+          rsClear('listen:wb');
+          lpWorkbookScore = null;
+          renderListenWorkbook();
+        });
+      }
+    }
   }
 
   function renderListenMCQuiz() {
@@ -8712,15 +9260,30 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có từ vựng để luyện nghe.</p>';
       return;
     }
-    if (!lpQuiz) lpQuiz = { order: shuffle(lpVocab.map(function (_, i) { return i; })), pos: 0, score: 0 };
+    var lpKey = 'listen:q:' + lpMode;
+    if (!lpQuiz) {
+      var lpSaved = rsGet(lpKey);
+      if (lpSaved && Array.isArray(lpSaved.order) && lpSaved.order.length === lpVocab.length && lpSaved.pos > 0 && lpSaved.pos < lpSaved.order.length) {
+        lpQuiz = { order: lpSaved.order.slice(), pos: lpSaved.pos, score: lpSaved.score || 0 };
+        rsNotice('#lpContent', 'Tiếp tục luyện nghe từ câu <b>' + (lpSaved.pos + 1) + '/' + lpSaved.order.length + '</b> · đúng ' + (lpSaved.score || 0) + ' câu.', function () {
+          rsClear(lpKey);
+          lpQuiz = null;
+          renderListenMCQuiz();
+        });
+      } else {
+        lpQuiz = { order: shuffle(lpVocab.map(function (_, i) { return i; })), pos: 0, score: 0 };
+      }
+    }
 
     var total = lpQuiz.order.length;
     if (lpQuiz.pos >= total) {
+      rsClear(lpKey);
+      rsHideNotice('#lpContent');
       wrap.innerHTML =
         '<div class="vp-quiz-done"><strong>' + lpQuiz.score + '/' + total + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện nghe này.</p>' +
         '<button type="button" class="btn btn-primary" id="lpRestart">Luyện lại</button></div>';
-      $('#lpRestart').addEventListener('click', function () { lpQuiz = null; renderListenMCQuiz(); });
+      $('#lpRestart').addEventListener('click', function () { rsClear(lpKey); lpQuiz = null; renderListenMCQuiz(); });
       return;
     }
 
@@ -8757,6 +9320,7 @@
           else if (j === i) b.classList.add('is-wrong');
         });
         if (isCorrect) lpQuiz.score++;
+        rsSet(lpKey, { order: lpQuiz.order, pos: lpQuiz.pos + 1, score: lpQuiz.score });
         setTimeout(function () {
           lpQuiz.pos++;
           renderListenMCQuiz();
@@ -8801,6 +9365,22 @@
         });
       });
     });
+
+    var dlgSaved = rsGet('listen:dialog');
+    var dlgTotal = $all('.lp-question-opts', wrap).length;
+    if (dlgSaved && dlgSaved.total === dlgTotal && Object.keys(dlgSaved.answers || {}).length) {
+      rsQuiet(function () {
+        Object.keys(dlgSaved.answers).forEach(function (k) {
+          var parts = k.split('_');
+          var b = $('.lp-opt-btn[data-gi="' + parts[0] + '"][data-qi="' + parts[1] + '"][data-oi="' + dlgSaved.answers[k] + '"]', wrap);
+          if (b) b.click();
+        });
+      });
+      rsNotice('#lpContent', 'Đã khôi phục bài nghe hội thoại: trả lời <b>' + Object.keys(dlgSaved.answers).length + '/' + dlgTotal + '</b> câu.', function () {
+        rsClear('listen:dialog');
+        renderListenDialogPassages();
+      });
+    }
   }
 
   /* ---------------- Speaking practice (Luyen noi: reuses the lesson's real speakingData) ---------------- */
@@ -8834,9 +9414,11 @@
     $('#spTabs').innerHTML = '';
     $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
+    rsHideNotice('#spContent');
     loadLessonSpeaking(lesson).then(function (speakingData) {
       spData = speakingData;
-      spTierMode = 1;
+      var savedTier = rsGet('speak:tier');
+      spTierMode = [2, 3].indexOf(savedTier) >= 0 ? savedTier : 1;
       spRecState = {};
       renderSpeakTabs();
       renderSpeakContent();
@@ -8861,6 +9443,8 @@
     $all('[data-sp-tier]', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () {
         spTierMode = parseInt(btn.getAttribute('data-sp-tier'), 10);
+        rsHideNotice('#spContent');
+        rsSet('speak:tier', spTierMode === 1 ? null : spTierMode);
         $all('[data-sp-tier]', wrap).forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
         renderSpeakContent();
@@ -9046,6 +9630,33 @@
         btn.textContent = box.hidden ? '💡 Câu mẫu' : '🙈 Ẩn câu mẫu';
       });
     });
+
+    // Diem cac cau da chấm o lan hoc truoc
+    var aiSaved = rsGet('speak:ai');
+    if (aiSaved && aiSaved.n === spAiTasks.length && aiSaved.scores) {
+      var restored = 0;
+      rsQuiet(function () {
+        Object.keys(aiSaved.scores).forEach(function (k) {
+          var i = parseInt(k, 10), sc = aiSaved.scores[k];
+          if (!spAiTasks[i] || !sc || typeof sc.total !== 'number') return;
+          spAi[i] = { score: sc };
+          if (sc.self) {
+            $('#spAiResult' + i).innerHTML = '<div class="spai-self">Bạn tự chấm: <b>' + sc.total + '/100</b></div>';
+          } else if (sc.parts) {
+            spAiRenderResult(i, spAiTasks[i], sc);
+          }
+          $('#spAiStatus' + i).innerHTML = '<span class="spai-done">✓ Đã chấm ở lần học trước — bấm 🎙️ để nói lại.</span>';
+          restored++;
+        });
+        spAiUpdateSummary();
+      });
+      if (restored) {
+        rsNotice('#spContent', 'Đã khôi phục điểm <b>' + restored + '/' + spAiTasks.length + '</b> câu đã luyện nói.', function () {
+          rsClear('speak:ai');
+          renderSpeakContent();
+        });
+      }
+    }
   }
 
   function spAiToggle(i) {
@@ -9228,6 +9839,18 @@
     if (done && currentHubLesson) {
       recordLessonScore(currentHubLesson, 'speak', { correct: Math.round(sum), total: spAiTasks.length * 100 });
     }
+    if (done >= spAiTasks.length) {
+      rsClear('speak:ai');
+    } else if (done) {
+      var scores = {};
+      spAiTasks.forEach(function (t, i) {
+        var st = spAi[i];
+        if (!st || !st.score || typeof st.score.total !== 'number') return;
+        var sc = st.score;
+        scores[i] = sc.self ? { total: sc.total, self: true } : { total: sc.total, transcript: sc.transcript, chars: sc.chars, rate: sc.rate, parts: sc.parts, feedback: sc.feedback };
+      });
+      rsSet('speak:ai', { n: spAiTasks.length, scores: scores });
+    }
   }
 
   function bindSpeakButtons(wrap) {
@@ -9270,6 +9893,48 @@
     });
   }
 
+  function spRecKey() { return 'speak:rec:' + (spData && spData.questions ? 'q' : 't3'); }
+  function spRecCount() { return $all('.sp-rec-box', $('#spContent')).length; }
+
+  function spRecSave(i, d) {
+    var key = spRecKey();
+    var saved = rsGet(key) || { n: spRecCount(), results: {} };
+    if (saved.n !== spRecCount()) saved = { n: spRecCount(), results: {} };
+    saved.results[i] = {
+      pronunciation: d.pronunciation, accuracy: d.accuracy, fluency: d.fluency,
+      completeness: d.completeness, recognizedText: d.recognizedText || ''
+    };
+    if (Object.keys(saved.results).length >= saved.n) rsClear(key);
+    else rsSet(key, saved);
+  }
+
+  function spRecRestore() {
+    var key = spRecKey();
+    var saved = rsGet(key);
+    var n = spRecCount();
+    if (!saved || saved.n !== n || !saved.results) return;
+    var count = 0;
+    Object.keys(saved.results).forEach(function (k) {
+      var d = saved.results[k];
+      var resultEl = $('#spRecResult' + k);
+      if (!resultEl || !d) return;
+      resultEl.innerHTML = '<div class="sp-rec-scores">' +
+        '<div class="sp-rec-score-item"><span>Phát âm</span><b>' + Math.round(d.pronunciation) + '</b></div>' +
+        '<div class="sp-rec-score-item"><span>Độ chính xác</span><b>' + Math.round(d.accuracy) + '</b></div>' +
+        '<div class="sp-rec-score-item"><span>Trôi chảy</span><b>' + Math.round(d.fluency) + '</b></div>' +
+        '<div class="sp-rec-score-item"><span>Đầy đủ</span><b>' + Math.round(d.completeness) + '</b></div>' +
+        '</div>' + (d.recognizedText ? '<div class="sp-rec-recognized">Máy nghe được: "' + rsEsc(d.recognizedText) + '"</div>' : '');
+      $('#spRecStatus' + k).textContent = '✓ Đã chấm ở lần học trước — ghi âm lại để luyện tiếp.';
+      count++;
+    });
+    if (count) {
+      rsNotice('#spContent', 'Đã khôi phục điểm <b>' + count + '/' + n + '</b> câu đã ghi âm.', function () {
+        rsClear(key);
+        renderSpeakContent();
+      });
+    }
+  }
+
   function renderSpeakQuestions(wrap, questions) {
     wrap.innerHTML = questions.map(function (q, i) {
       return '<div class="sp-card">' +
@@ -9291,6 +9956,7 @@
 
     bindSpeakButtons(wrap);
     bindRecorderButtons(wrap);
+    spRecRestore();
   }
 
   function renderSpeakTier1(wrap, t1) {
@@ -9344,6 +10010,7 @@
     wrap.innerHTML = '<div class="sp-tier-intro">' + (t3.intro || '') + '</div>' + tasks;
     bindSpeakButtons(wrap);
     bindRecorderButtons(wrap);
+    spRecRestore();
   }
 
   function spRecStart(i) {
@@ -9414,6 +10081,7 @@
             return;
           }
           var d = res.data;
+          spRecSave(i, d);
           resultEl.innerHTML = '<div class="sp-rec-scores">' +
             '<div class="sp-rec-score-item"><span>Phát âm</span><b>' + Math.round(d.pronunciation) + '</b></div>' +
             '<div class="sp-rec-score-item"><span>Độ chính xác</span><b>' + Math.round(d.accuracy) + '</b></div>' +
@@ -9477,8 +10145,11 @@
     $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
     gpMode = null;
+    rsHideNotice('#gpContent');
     loadLessonGameData(lesson).then(function (data) {
       gpGameData = data;
+      var savedGame = rsGet('game:mode');
+      if (savedGame && (LEVEL_GAME_TYPES[levelId] || []).indexOf(savedGame) >= 0 && (data[savedGame] || []).length) gpMode = savedGame;
       renderGameScreen();
     }).catch(function () {
       $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung game của bài này.</p>';
@@ -9508,6 +10179,7 @@
     $all('.game-picker-card[data-game-type]', wrap).forEach(function (card) {
       card.addEventListener('click', function () {
         gpMode = card.getAttribute('data-game-type');
+        rsSet('game:mode', gpMode);
         renderGameScreen();
       });
     });
@@ -9524,7 +10196,7 @@
       '</button>' +
       '<div class="game-type-header"><span class="game-type-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</span><h2>' + def.label + '</h2></div>' +
       '<div id="gpGameArea"></div>';
-    $('#gpBackToPicker').addEventListener('click', function () { gpMode = null; renderGameScreen(); });
+    $('#gpBackToPicker').addEventListener('click', function () { gpMode = null; rsHideNotice('#gpContent'); rsSet('game:mode', null); renderGameScreen(); });
 
     if (!data.length) {
       $('#gpGameArea').innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có nội dung.</p>';
@@ -9548,10 +10220,16 @@
     return len <= 6 ? ' mg-sz-lg' : (len <= 14 ? ' mg-sz-md' : ' mg-sz-sm');
   }
 
-  function renderGameMatch(data) {
+  function renderGameMatch(data, fresh) {
     gmSel = null;
     gmDone = new Set();
     gmOrder = shuffle(data.map(function (_, i) { return i; }));
+    var mSaved = fresh ? null : rsGet('game:match');
+    if (mSaved && mSaved.n === data.length && Array.isArray(mSaved.order) && mSaved.order.length === data.length && (mSaved.done || []).length) {
+      gmOrder = mSaved.order.slice();
+    } else {
+      mSaved = null;
+    }
 
     pgbInit('gmMatch', data.length);
     var wrap = $('#gpGameArea');
@@ -9587,7 +10265,22 @@
       rightWrap.appendChild(item);
     });
 
-    $('#mgReset').addEventListener('click', function () { renderGameMatch(data); });
+    $('#mgReset').addEventListener('click', function () { rsClear('game:match'); rsHideNotice('#gpContent'); renderGameMatch(data, true); });
+
+    if (mSaved) {
+      rsQuiet(function () {
+        mSaved.done.forEach(function (li) {
+          if (!data[li] || gmDone.has('L' + li)) return;
+          gmClickLeft(li);
+          gmClickRight(li, data);
+        });
+      });
+      $('#mgFb').textContent = '';
+      rsNotice('#gpContent', 'Tiếp tục trò ghép từ: đã ghép đúng <b>' + mSaved.done.length + '/' + data.length + '</b> cặp.', function () {
+        rsClear('game:match');
+        renderGameMatch(data, true);
+      });
+    }
   }
 
   function gmClickLeft(i) {
@@ -9615,6 +10308,9 @@
       gmDone.add('L' + gmSel);
       gmDone.add('R' + ri);
       pgbRecord('gmMatch', gmSel, true);
+      var doneLeft = Object.keys(data).map(Number).filter(function (li) { return gmDone.has('L' + li); });
+      if (doneLeft.length >= data.length) rsClear('game:match');
+      else rsSet('game:match', { n: data.length, order: gmOrder, done: doneLeft });
       fb.innerHTML = '<span style="color:var(--color-green-600);">✓ Đúng rồi!</span>';
       if (gmDone.size === data.length * 2) {
         recordGameScore(currentHubLesson, 'match', data.length, data.length);
@@ -9648,7 +10344,28 @@
       '<div class="fg-score" id="fgScore" hidden></div>';
     pgbPaint('gmFill');
 
+    var fSaved = rsGet('game:fill');
+    if (fSaved && fSaved.n === data.length && (fSaved.vals || []).some(function (v) { return v; })) {
+      fSaved.vals.forEach(function (v, i) { var inp = $('#fgInput' + i); if (inp) inp.value = v || ''; });
+      rsNotice('#gpContent', 'Đã khôi phục các từ bạn điền dở — kiểm tra lại rồi bấm <b>Kiểm tra đáp án</b>.', function () {
+        rsClear('game:fill');
+        renderGameFill(data);
+      });
+    }
+    $all('.fg-input', wrap).forEach(function (inp) {
+      inp.addEventListener('input', function () {
+        rsDebounce('game:fill', function () {
+          var vals = data.map(function (_, i) { var el = $('#fgInput' + i); return el ? el.value : ''; });
+          if (vals.some(function (v) { return v; })) rsSet('game:fill', { n: data.length, vals: vals });
+          else rsClear('game:fill');
+        });
+      });
+    });
+
     $('#fgCheck').addEventListener('click', function () {
+      clearTimeout(rsTypeTimers['game:fill']);
+      rsClear('game:fill');
+      rsHideNotice('#gpContent');
       var ok = 0;
       data.forEach(function (q, i) {
         var input = $('#fgInput' + i);
@@ -9673,15 +10390,39 @@
       scoreEl.textContent = ok + '/' + data.length + ' — ' + (pct === 100 ? '🎉 Hoàn hảo!' : pct >= 70 ? '👍 Làm tốt!' : '💪 Thử lại nhé!');
     });
 
-    $('#fgReset').addEventListener('click', function () { renderGameFill(data); });
+    $('#fgReset').addEventListener('click', function () { clearTimeout(rsTypeTimers['game:fill']); rsClear('game:fill'); rsHideNotice('#gpContent'); renderGameFill(data); });
   }
 
   var gsState = [];
 
-  function renderGameSort(data) {
+  function gsSave(total) {
+    if (rsRestoring) return;
+    var anyPlaced = gsState.some(function (st) { return st.placed.length; });
+    if (!anyPlaced) { rsClear('game:sort'); return; }
+    rsSet('game:sort', {
+      n: total,
+      words: gsState.map(function (st) { return st.words; }),
+      placed: gsState.map(function (st) { return st.placed.map(function (p) { return p.wi; }); })
+    });
+  }
+
+  function renderGameSort(data, fresh) {
     gsState = data.map(function (s) {
       return { placed: [], words: shuffle(s.words.slice()) };
     });
+    var sSaved = fresh ? null : rsGet('game:sort');
+    var sameWords = function (a, b) { return a.slice().sort().join('\u0001') === b.slice().sort().join('\u0001'); };
+    if (sSaved && sSaved.n === data.length && Array.isArray(sSaved.words) &&
+        data.every(function (s, i) { return Array.isArray(sSaved.words[i]) && sameWords(sSaved.words[i], s.words); })) {
+      gsState = data.map(function (s, i) {
+        var words = sSaved.words[i].slice();
+        var placed = (sSaved.placed[i] || []).filter(function (wi) { return words[wi] != null; })
+          .map(function (wi) { return { wi: wi, word: words[wi] }; });
+        return { placed: placed, words: words };
+      });
+    } else {
+      sSaved = null;
+    }
 
     pgbInit('gmSort', data.length);
     var wrap = $('#gpGameArea');
@@ -9711,7 +10452,17 @@
       renderSortAnswer(i);
     });
 
+    if (sSaved) {
+      var placedCount = gsState.filter(function (st) { return st.placed.length; }).length;
+      rsNotice('#gpContent', 'Đã khôi phục bài sắp xếp câu làm dở (' + placedCount + '/' + data.length + ' câu đang xếp).', function () {
+        rsClear('game:sort');
+        renderGameSort(data, true);
+      });
+    }
+
     $('#sgCheck').addEventListener('click', function () {
+      rsClear('game:sort');
+      rsHideNotice('#gpContent');
       var ok = 0;
       data.forEach(function (s, i) {
         var placed = gsState[i].placed.map(function (p) { return p.word; }).join('');
@@ -9732,7 +10483,7 @@
       scoreEl.textContent = ok + '/' + data.length + ' — ' + (pct === 100 ? '🎉 Xuất sắc!' : pct >= 60 ? '👍 Làm tốt!' : '💪 Xem lại và thử lại!');
     });
 
-    $('#sgReset').addEventListener('click', function () { renderGameSort(data); });
+    $('#sgReset').addEventListener('click', function () { rsClear('game:sort'); rsHideNotice('#gpContent'); renderGameSort(data, true); });
   }
 
   function renderSortBank(i) {
@@ -9750,6 +10501,7 @@
         st.placed.push({ wi: wi, word: st.words[wi] });
         renderSortBank(i);
         renderSortAnswer(i);
+        gsSave(gsState.length);
       });
     });
   }
@@ -9767,6 +10519,7 @@
         st.placed = st.placed.filter(function (p) { return p.wi !== wi; });
         renderSortBank(i);
         renderSortAnswer(i);
+        gsSave(gsState.length);
       });
     });
     $('#sgFb' + i).className = 'sg-fb';
@@ -9776,6 +10529,7 @@
 
   function renderGameMcList(data, opts) {
     var pgbId = 'gm-' + (opts.gameKey || 'mc');
+    var mcKey = 'game:' + (opts.gameKey || 'mc');
     pgbInit(pgbId, data.length);
     var wrap = $('#gpGameArea');
     wrap.innerHTML =
@@ -9828,8 +10582,32 @@
         fb.className = 'mc-fb ' + (correct ? 'is-correct' : 'is-wrong');
         fb.textContent = (correct ? '✓ Đúng rồi!' : '✗ Đáp án: "' + q.opts[q.ans] + '"') + (q.exp ? ' — ' + q.exp : '');
         updateScore();
+        if (!rsRestoring) {
+          if (Object.keys(answered).length >= data.length) { rsClear(mcKey); rsHideNotice('#gpContent'); }
+          else {
+            var picks = {};
+            Object.keys(answered).forEach(function (k) {
+              picks[k] = lpPickedIndex($all('.vp-option-btn[data-qi="' + k + '"]', wrap));
+            });
+            rsSet(mcKey, { n: data.length, answers: picks });
+          }
+        }
       });
     });
+
+    var mcSaved = rsGet(mcKey);
+    if (mcSaved && mcSaved.n === data.length && Object.keys(mcSaved.answers || {}).length) {
+      rsQuiet(function () {
+        Object.keys(mcSaved.answers).forEach(function (qi) {
+          var b = $('.vp-option-btn[data-qi="' + qi + '"][data-oi="' + mcSaved.answers[qi] + '"]', wrap);
+          if (b) b.click();
+        });
+      });
+      rsNotice('#gpContent', 'Tiếp tục bài làm dở: đã trả lời <b>' + Object.keys(mcSaved.answers).length + '/' + data.length + '</b> câu.', function () {
+        rsClear(mcKey);
+        renderGameMcList(data, opts);
+      });
+    }
   }
 
   /* ---------------- Translate practice (Luyen dich: Viet<->Trung, tu kiem tra) ---------------- */
@@ -9862,8 +10640,9 @@
     $('#reviewPractice').hidden = true;
     $('#tpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
-    tpDirection = 'vi2zh';
-    $all('.tp-dir-btn').forEach(function (btn) { btn.classList.toggle('active', btn.getAttribute('data-tp-dir') === 'vi2zh'); });
+    tpDirection = rsGet('translate:dir') === 'zh2vi' ? 'zh2vi' : 'vi2zh';
+    $all('.tp-dir-btn').forEach(function (btn) { btn.classList.toggle('active', btn.getAttribute('data-tp-dir') === tpDirection); });
+    rsHideNotice('#tpContent');
 
     loadLessonTranslate(lesson).then(function (data) {
       tpDataSets = data;
@@ -9883,15 +10662,32 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có bài luyện dịch cho chiều này.</p>';
       return;
     }
-    if (!tpQuiz) { tpQuiz = { pos: 0, score: 0 }; pgbInit('tpq', tpData.length); }
+    var tpKey = 'translate:q:' + tpDirection;
+    var tpSaved = rsGet(tpKey);
+    if (!tpQuiz) {
+      if (tpSaved && tpSaved.total === tpData.length && tpSaved.pos < tpData.length && (tpSaved.pos > 0 || tpSaved.draft)) {
+        tpQuiz = { pos: tpSaved.pos, score: tpSaved.score || 0 };
+        pgbLoad('tpq', tpSaved.results, tpData.length);
+        rsNotice('#tpContent', 'Tiếp tục luyện dịch từ câu <b>' + (tpSaved.pos + 1) + '/' + tpData.length + '</b>.', function () {
+          rsClear(tpKey);
+          tpQuiz = null;
+          renderTranslateContent();
+        });
+      } else {
+        tpQuiz = { pos: 0, score: 0 };
+        pgbInit('tpq', tpData.length);
+      }
+    }
 
     if (tpQuiz.pos >= tpData.length) {
+      rsClear(tpKey);
+      rsHideNotice('#tpContent');
       recordLessonScore(currentHubLesson, 'translate', { correct: tpQuiz.score, total: tpData.length });
       wrap.innerHTML =
         '<div class="vp-quiz-done"><strong>' + tpData.length + '/' + tpData.length + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt luyện dịch này.</p>' +
         '<button type="button" class="btn btn-primary" id="tpRestart">Luyện lại</button></div>';
-      $('#tpRestart').addEventListener('click', function () { tpQuiz = null; renderTranslateContent(); });
+      $('#tpRestart').addEventListener('click', function () { rsClear(tpKey); tpQuiz = null; renderTranslateContent(); });
       return;
     }
 
@@ -9918,6 +10714,19 @@
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
     });
     if (tpDirection === 'zh2vi') vpSpeak(item.zh);
+
+    // Ban dich dang go do cua dung cau nay
+    var tpInput = $('#tpInput');
+    if (tpSaved && tpSaved.draftPos === tpQuiz.pos && tpSaved.draft) tpInput.value = tpSaved.draft;
+    tpInput.addEventListener('input', function () {
+      rsDebounce(tpKey, function () {
+        rsSet(tpKey, { total: total, pos: tpQuiz.pos, score: tpQuiz.score, results: pgbSnap('tpq'), draft: tpInput.value, draftPos: tpQuiz.pos });
+      });
+    });
+    function tpSaveAnswered() {
+      clearTimeout(rsTypeTimers[tpKey]);
+      rsSet(tpKey, { total: total, pos: tpQuiz.pos + 1, score: tpQuiz.score, results: pgbSnap('tpq') });
+    }
 
     $('#tpReveal').addEventListener('click', function () {
       var answerEl = $('#tpAnswer');
@@ -9958,11 +10767,13 @@
       $('.tp-self-yes', selfCheck).addEventListener('click', function () {
         tpQuiz.score++;
         pgbRecord('tpq', tpQuiz.pos, true);
+        tpSaveAnswered();
         selfCheck.remove();
         goNext();
       });
       $('.tp-self-no', selfCheck).addEventListener('click', function () {
         pgbRecord('tpq', tpQuiz.pos, false);
+        tpSaveAnswered();
         selfCheck.remove();
         goNext();
       });
@@ -10820,8 +11631,30 @@
     track.style.transform = 'translateX(' + (-(pos * QR_STEP)) + 'px)';
   }
 
+  // Chang dang do cua hom nay (cung bo cau hoi) — null neu khong con dung duoc
+  function qrGetResume(lesson, qs) {
+    var r = rsGet('quick', lesson);
+    if (!r || r.day !== dateKey(new Date()) || r.n !== qs.length) return null;
+    if (!(r.i > 0 && r.i < qs.length && r.hearts > 0 && r.leftMs > 1000)) return null;
+    return r;
+  }
+
+  function qrSaveProgress() {
+    var s = qrState;
+    if (!s || s.finished) return;
+    var nextI = s.locked ? s.i + 1 : s.i;
+    var leftMs = Math.max(0, s.endAt - Date.now());
+    if (s.hearts <= 0 || nextI >= s.qs.length || leftMs <= 1000 || nextI === 0) { if (nextI === 0) return; rsClear('quick', s.lesson); return; }
+    rsSet('quick', {
+      day: dateKey(new Date()), n: s.qs.length, i: nextI, hearts: s.hearts, score: s.score, combo: s.combo,
+      bestCombo: s.bestCombo, correct: s.correct, answered: s.answered, leftMs: leftMs,
+      wrongs: s.wrongs.map(function (q) { return s.qs.indexOf(q); })
+    }, s.lesson);
+  }
+
   function qrRenderIntro(lesson, qs) {
     var stats = qrLessonStats(lesson);
+    var qrResume = qrGetResume(lesson, qs);
     var counts = [0, 0, 0, 0];
     qs.forEach(function (q) { counts[q.zone]++; });
     var wrap = $('#qrContent');
@@ -10845,12 +11678,19 @@
             (stats.streak ? '<span class="qr-pill is-fire">🔥 ' + stats.streak + ' ngày liên tiếp</span>' : '') +
             (stats.best ? '<span class="qr-pill">🏆 Kỷ lục ' + stats.best.toLocaleString('vi-VN') + ' điểm</span>' : '') +
           '</div>' +
-          '<button type="button" class="qr-start" id="qrStart">' + (stats.doneToday ? 'Chơi lại thử thách hôm nay' : 'Bắt đầu vượt ải') + '</button>' +
+          (qrResume
+            ? '<div class="qr-resume">' +
+                '<p class="qr-resume-text">⏳ Chặng đang dở: đã vượt <b>' + qrResume.i + '/' + qs.length + '</b> chướng ngại · còn <b>' + Math.floor(qrResume.leftMs / 60000) + ':' + ('0' + Math.floor(qrResume.leftMs / 1000) % 60).slice(-2) + '</b> · ❤ ' + qrResume.hearts + '</p>' +
+                '<button type="button" class="qr-start" id="qrContinue">Chạy tiếp chặng đang dở</button>' +
+                '<button type="button" class="qr-restart-link" id="qrStart">Chơi lại từ đầu</button>' +
+              '</div>'
+            : '<button type="button" class="qr-start" id="qrStart">' + (stats.doneToday ? 'Chơi lại thử thách hôm nay' : 'Bắt đầu vượt ải') + '</button>') +
           '<p class="qr-note">Bộ câu hỏi đổi mới mỗi ngày.</p>' +
         '</div>' +
       '</div>';
     qrPlaceTrack(0, false);
-    $('#qrStart').addEventListener('click', function () { qrStartGame(lesson, qs); });
+    $('#qrStart').addEventListener('click', function () { rsClear('quick', lesson); qrStartGame(lesson, qs); });
+    if (qrResume) $('#qrContinue').addEventListener('click', function () { qrStartGame(lesson, qs, qrResume); });
   }
 
   function qrStop() {
@@ -10858,12 +11698,23 @@
     if (window.speechSynthesis) { try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ } }
   }
 
-  function qrStartGame(lesson, qs) {
+  function qrStartGame(lesson, qs, resume) {
     qrStop();
     qrState = {
       lesson: lesson, qs: qs, i: 0, hearts: QR_HEARTS, score: 0, combo: 0, bestCombo: 0,
       correct: 0, answered: 0, wrongs: [], endAt: Date.now() + QR_DURATION * 1000, locked: false, finished: false
     };
+    if (resume) {
+      qrState.i = resume.i;
+      qrState.hearts = resume.hearts;
+      qrState.score = resume.score || 0;
+      qrState.combo = resume.combo || 0;
+      qrState.bestCombo = resume.bestCombo || 0;
+      qrState.correct = resume.correct || 0;
+      qrState.answered = resume.answered || resume.i;
+      qrState.wrongs = (resume.wrongs || []).map(function (wi) { return qs[wi]; }).filter(Boolean);
+      qrState.endAt = Date.now() + resume.leftMs;
+    }
     var wrap = $('#qrContent');
     wrap.innerHTML =
       '<div class="qr-play">' +
@@ -10877,7 +11728,7 @@
         '<div class="qr-progress"><i id="qrProgress"></i></div>' +
         '<div class="qr-card" id="qrCard"></div>' +
       '</div>';
-    qrPlaceTrack(0, false);
+    qrPlaceTrack(qrState.i, false);
     qrRenderHud();
     qrRenderQuestion();
     qrTimer = setInterval(qrTick, 1000);
@@ -10886,8 +11737,9 @@
 
   function qrTick() {
     if (!qrState || qrState.finished) return;
-    if ($('#quickReviewPractice').hidden) { qrStop(); return; }
+    if ($('#quickReviewPractice').hidden) { qrSaveProgress(); qrStop(); return; }
     var left = Math.max(0, Math.round((qrState.endAt - Date.now()) / 1000));
+    if (left % 5 === 0) qrSaveProgress();
     var el = $('#qrTimer');
     if (el) {
       el.textContent = Math.floor(left / 60) + ':' + ('0' + (left % 60)).slice(-2);
@@ -11004,6 +11856,7 @@
       s.wrongs.push(q);
     }
     sfxQueue(ok ? 'correct' : 'wrong');
+    qrSaveProgress();
 
     if (q.type === 'mc') {
       $all('#qrCard .qr-opt').forEach(function (btn) {
@@ -11071,6 +11924,7 @@
     var s = qrState;
     if (!s || s.finished) return;
     s.finished = true;
+    rsClear('quick', s.lesson);
     qrStop();
     var total = s.qs.length;
     var leftSec = Math.max(0, Math.round((s.endAt - Date.now()) / 1000));
@@ -11121,13 +11975,19 @@
   }
 
   // O noi bat tren trang bai hoc de vao On tap nhanh
+  function qrResumeInfo(lesson) {
+    var r = rsGet('quick', lesson);
+    if (!r || r.day !== dateKey(new Date()) || !(r.i > 0 && r.i < r.n && r.hearts > 0 && r.leftMs > 1000)) return '';
+    return '⏳ Đang dở ' + r.i + '/' + r.n;
+  }
+
   function qrHubEntryHtml(lesson) {
     var st = qrLessonStats(lesson);
     return '<button type="button" class="qr-entry" id="qrEntry">' +
       '<span class="qr-entry-art" aria-hidden="true">' + QR_MASCOT + '</span>' +
       '<span class="qr-entry-text"><b>⚡ Ôn tập nhanh 10 phút</b>' +
       '<span>Vượt Vạn Lý Trường Thành · ôn toàn bộ bài trong một lượt chơi</span></span>' +
-      '<span class="qr-entry-status">' + (st.doneToday ? '✓ Hôm nay đã ôn' : 'Hôm nay chưa ôn') + (st.streak ? '<em>🔥 ' + st.streak + ' ngày</em>' : '') + '</span>' +
+      '<span class="qr-entry-status">' + (qrResumeInfo(lesson) || (st.doneToday ? '✓ Hôm nay đã ôn' : 'Hôm nay chưa ôn')) + (st.streak ? '<em>🔥 ' + st.streak + ' ngày</em>' : '') + '</span>' +
       '</button>';
   }
 
@@ -11150,6 +12010,7 @@
   // Mot lan tra loi co the vua goi pgbRecord vua to mau o dap an: gop lai trong 25ms
   // de chi phat mot tieng; co tin hieu "sai" thi uu tien am "sai".
   function sfxQueue(kind) {
+    if (sfxMuted) return;
     if (kind === 'wrong') sfxPending = 'wrong';
     else if (sfxPending !== 'wrong') sfxPending = 'correct';
     if (sfxTimer) return;
@@ -11157,7 +12018,7 @@
       var k = sfxPending;
       sfxPending = null;
       sfxTimer = null;
-      if (k && sfxActive()) sfxPlay(k);
+      if (k && !sfxMuted && sfxActive()) sfxPlay(k);
     }, 25);
   }
 
@@ -11416,6 +12277,10 @@
         if (auth.token) {
           fetch('/api/auth/logout', { method: 'POST', headers: { 'Authorization': 'Bearer ' + auth.token } }).catch(function () {});
         }
+        // Bai lam do thuoc ve tai khoan nay: gui not len may chu roi xoa khoi may
+        // (may dung chung — hoc sinh khac dang nhap sau khong lam tiep nham bai cua ban).
+        rsFlush(true);
+        localStorage.removeItem(RESUME_KEY);
         localStorage.removeItem(STORAGE_KEYS.auth);
         renderUserChip();
         renderAuthBanner();
@@ -11461,6 +12326,10 @@
     initPinyinToggle();
     initAnswerSounds();
     initShellNav();
+    writeJSON(RESUME_KEY, rsPrune(rsStore()));
+    // Dong tab / chuyen ung dung: gui ngay phan con dang cho dong bo
+    document.addEventListener('visibilitychange', function () { if (document.hidden) rsFlush(true); });
+    window.addEventListener('pagehide', function () { rsFlush(true); });
 
     document.addEventListener('click', function (e) {
       var section = e.target.closest('.dash-section');
@@ -11471,6 +12340,7 @@
 
     $('#levelDetailBack').addEventListener('click', showDashboard);
     $('#qrBack').addEventListener('click', function () {
+      qrSaveProgress();
       qrStop();
       if (currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
     });
@@ -11521,6 +12391,8 @@
       tab.addEventListener('click', function () {
         lpMode = tab.getAttribute('data-lp-tab');
         lpQuiz = null;
+        rsHideNotice('#lpContent');
+        rsSet('listen:mode', lpMode === 'meaning' ? null : lpMode);
         $all('#lpTabs .vp-tab').forEach(function (t) { t.classList.remove('active'); });
         tab.classList.add('active');
         renderListenContent();
@@ -11550,6 +12422,8 @@
       btn.addEventListener('click', function () {
         tpDirection = btn.getAttribute('data-tp-dir');
         tpQuiz = null;
+        rsHideNotice('#tpContent');
+        rsSet('translate:dir', tpDirection === 'zh2vi' ? 'zh2vi' : null);
         $all('.tp-dir-btn').forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
         renderTranslateContent();

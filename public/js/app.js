@@ -321,10 +321,20 @@
   /* ---------------- Level cards ---------------- */
 
   var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'yct'];
-  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'blue', hsk2: 'green', hsk3: 'gold', hsk4: 'green', hsk5: 'gold', yct: 'blue' };
-  var LEVEL_SHORT = { hsk1: 'HSK1', hsk1v3: 'HSK1·3.0', hsk2: 'HSK2', hsk3: 'HSK3', hsk4: 'HSK4', hsk5: 'HSK5', yct: 'YCT1' };
+  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'orange', hsk2: 'gold', hsk3: 'green', hsk4: 'teal', hsk5: 'blue', yct: 'purple' };
+  // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
+  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], yct: ['YCT', '1'] };
+  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT Thiếu nhi' };
   var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2: true, hsk3: true, hsk4: true, yct: true };
   var practiceLevel = 'hsk2';
+
+  // Dem so bai da hoc (da mo hoac co diem) trong 1 cap do
+  function levelProgress(id) {
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[id]) || [];
+    var visited = readJSON(STORAGE_KEYS.visitedLessons, {});
+    var done = lessons.filter(function (l) { return !!visited[l.fullPageUrl] || lessonHasAnyProgress(l); }).length;
+    return { total: lessons.length, done: done };
+  }
 
   function renderLevelCards() {
     var grid = $('#levelGrid');
@@ -333,16 +343,25 @@
       var level = APP_DATA.levels.find(function (l) { return l.id === id; });
       if (!level) return;
       var isReady = !!READY_LEVELS[id];
+      var prog = levelProgress(id);
+      var pct = prog.total ? Math.round((prog.done / prog.total) * 100) : 0;
+      var sub = !isReady ? 'Sắp ra mắt'
+        : prog.done ? prog.done + '/' + prog.total + ' bài đã học'
+        : prog.total + ' bài học';
+      var mark = LEVEL_MARK[id] || [id.toUpperCase(), ''];
       var card = document.createElement('button');
       card.type = 'button';
-      card.className = 'level-card' + (isReady ? '' : ' is-disabled');
+      card.className = 'level-card is-' + (LEVEL_COLOR[id] || 'red') + (isReady ? '' : ' is-disabled');
       card.setAttribute('data-level', id);
+      card.setAttribute('aria-label', (LEVEL_CARD_NAME[id] || level.name) + ', ' + sub);
       card.innerHTML =
-        '<div class="level-badge is-' + LEVEL_COLOR[id] + '">' + LEVEL_SHORT[id] + '</div>' +
-        '<div class="level-card-body">' +
-          '<h3>' + level.name + '</h3>' +
-          '<span class="level-sub">Hán ngữ tiêu chuẩn</span>' +
-        '</div>';
+        (id === 'hsk1v3' ? '<span class="level-tag">Mới</span>' : '') +
+        '<span class="level-mark" aria-hidden="true"><span class="level-mark-top">' + mark[0] + '</span><span class="level-mark-num">' + mark[1] + '</span></span>' +
+        '<span class="level-card-body">' +
+          '<span class="level-card-title">' + (LEVEL_CARD_NAME[id] || level.name) + '</span>' +
+          '<span class="level-sub">' + sub + '</span>' +
+        '</span>' +
+        (isReady ? '<span class="level-meter" aria-hidden="true"><span style="width:' + pct + '%"></span></span>' : '');
       card.addEventListener('click', function () {
         if (!isReady) {
           showToast(level.name + ' đang được xây dựng, quay lại sau nhé!');
@@ -352,6 +371,114 @@
       });
       grid.appendChild(card);
     });
+  }
+
+  /* ---------------- Trang chu: loi chao + the "Tiep tuc hoc" ---------------- */
+
+  var LAST_LESSON_KEY = 'hyv_last_lesson';
+  var WEEKDAY_FULL = ['Chủ nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+
+  // Bai hoc mo gan nhat (luu khi mo trang bai hoc) — null neu chua hoc bai nao
+  function getLastLesson() {
+    var saved = readJSON(LAST_LESSON_KEY, null);
+    if (!saved || !saved.levelId || !READY_LEVELS[saved.levelId]) return null;
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[saved.levelId]) || [];
+    var lesson = lessons.find(function (l) { return l.fullPageUrl === saved.url; });
+    return lesson ? { levelId: saved.levelId, lesson: lesson } : null;
+  }
+
+  function lessonProgressPct(levelId, lesson) {
+    var tabIds = LEVEL_HUB_TABS[levelId] || [];
+    if (!tabIds.length) return 0;
+    var done = tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
+    return Math.round((done / tabIds.length) * 100);
+  }
+
+  function renderHomeHead() {
+    var now = new Date();
+    var dateEl = $('#homeDate');
+    if (dateEl) dateEl.textContent = WEEKDAY_FULL[now.getDay()] + ', ' + String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0');
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var name = auth && auth.user && auth.user.name ? auth.user.name.trim().split(/\s+/).pop() : '';
+    var h = now.getHours();
+    var part = h < 11 ? 'Chào buổi sáng' : h < 14 ? 'Chào buổi trưa' : h < 18 ? 'Chào buổi chiều' : 'Chào buổi tối';
+    var greet = $('#homeGreeting');
+    if (greet) greet.textContent = part + (name ? ', ' + name : '') + ' 👋';
+  }
+
+  function renderContinueCard() {
+    if (!$('#continueCard')) return;
+    var last = getLastLesson();
+    if (last) {
+      var lesson = last.lesson;
+      var pct = lessonProgressPct(last.levelId, lesson);
+      $('#ctaEyebrow').textContent = 'Tiếp tục học · ' + (PRACTICE_LEVEL_LABEL[last.levelId] || last.levelId.toUpperCase());
+      $('#ctaTitle').textContent = 'Bài ' + lesson.number + ': ' + lesson.title;
+      $('#ctaSub').textContent = lesson.topic || 'Học tiếp phần còn dang dở của bài này.';
+      $('#ctaProgress').hidden = false;
+      $('#ctaProgressFill').style.width = pct + '%';
+      $('#ctaProgressPct').textContent = pct + '%';
+      $('#ctaStartLabel').textContent = pct >= 100 ? 'Ôn lại bài này' : 'Học tiếp';
+      $('#ctaHanzi').textContent = lesson.titleHanzi ? lesson.titleHanzi.replace(/[，。？！、,.?!\s]/g, '').slice(0, 2) : '学习';
+      $('#ctaPinyin').textContent = lesson.titleHanzi ? 'Bài ' + lesson.number : 'xuéxí';
+    } else {
+      $('#ctaEyebrow').textContent = 'Bắt đầu hành trình';
+      $('#ctaTitle').textContent = 'Học bài đầu tiên chỉ trong 15 phút';
+      $('#ctaSub').textContent = 'Mỗi bài có từ vựng, ngữ pháp, hội thoại, luyện nghe, luyện nói và game ôn tập.';
+      $('#ctaProgress').hidden = true;
+      $('#ctaStartLabel').textContent = 'Chọn cấp độ';
+      $('#ctaHanzi').textContent = '学习';
+      $('#ctaPinyin').textContent = 'xuéxí';
+    }
+  }
+
+  // Nut "Hoc tiep": mo lai bai gan nhat, chua co thi dua toi danh sach cap do
+  function continueLearning() {
+    var last = getLastLesson();
+    if (last) {
+      practiceLevel = last.levelId;
+      currentLevelId = last.levelId;
+      renderLevelSubmenu();
+      showLessonHub(last.levelId, last.lesson);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    var head = $('#levelsHead');
+    if (head) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Muc dang chon tren menu trai + thanh duoi: suy ra tu man hinh dang hien
+  function syncNavState() {
+    var visible = $all('#main > .dash-section').filter(function (s) { return !s.hidden; })[0];
+    var key = !visible ? 'home' : visible.id === 'home' ? 'home' : visible.id === 'leaderboard' ? 'leaderboard' : 'learn';
+    $all('.app-nav-item[data-nav], .bn-item[data-nav]').forEach(function (el) {
+      var on = el.getAttribute('data-nav') === key;
+      el.classList.toggle('is-active', on);
+      if (el.tagName === 'A') {
+        if (on) el.setAttribute('aria-current', 'page');
+        else el.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  function initShellNav() {
+    var main = $('#main');
+    new MutationObserver(syncNavState).observe(main, { subtree: true, attributes: true, attributeFilter: ['hidden'] });
+    syncNavState();
+
+    var topbar = $('.app-topbar');
+    if (topbar) {
+      var onScroll = function () { topbar.classList.toggle('is-scrolled', window.scrollY > 4); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    var bnLearn = $('#bnLearn');
+    if (bnLearn) bnLearn.addEventListener('click', function () { selectLevel(practiceLevel); });
+    var bnLeaderboard = $('#bnLeaderboard');
+    if (bnLeaderboard) bnLeaderboard.addEventListener('click', function (e) { e.preventDefault(); showLeaderboard(); });
+    var bnMenu = $('#bnMenu');
+    if (bnMenu) bnMenu.addEventListener('click', function () { $('#sidebarToggle').click(); });
   }
 
   var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT 1' };
@@ -390,6 +517,9 @@
     $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     renderStreak();
+    renderHomeHead();
+    renderContinueCard();
+    renderLevelCards();
   }
 
   function showLevelDetail(id) {
@@ -550,6 +680,11 @@
   function showLessonHub(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
+    writeJSON(LAST_LESSON_KEY, { levelId: levelId, url: lesson.fullPageUrl });
+    if (practiceLevel !== levelId) {
+      practiceLevel = levelId;
+      renderLevelSubmenu();
+    }
 
     $('#home').hidden = true;
     $('#levelDetail').hidden = true;
@@ -1415,7 +1550,7 @@
     var w = HanziWriter.create(el, h.c, {
       width: 130, height: 130, padding: 6,
       showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 280, delayBetweenLoops: 1600,
-      strokeColor: '#2b2420', radicalColor: '#c84b31', outlineColor: '#e6dcc9',
+      strokeColor: '#1f1a17', radicalColor: '#c8372d', outlineColor: '#e6e2da',
       charDataLoader: function () { return charData; }
     });
     vpHzWriters[key] = { w: w, el: el };
@@ -10331,7 +10466,7 @@
     { key: 'levels', label: 'Cấp độ', icon: 'is-red', svg: '<path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>' },
     { key: 'lessons', label: 'Bài học', icon: 'is-gold', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
     { key: 'vocab', label: 'Từ vựng', icon: 'is-green', svg: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>' },
-    { key: 'examples', label: 'Câu ví dụ', icon: 'is-blue', svg: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' }
+    { key: 'dialogues', label: 'Hội thoại', icon: 'is-blue', svg: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' }
   ];
 
   // Tong noi dung THAT cua toan bo nen tang (khong phai so bai nguoi dung da xem) —
@@ -10340,7 +10475,18 @@
   var PLATFORM_TOTALS = { levels: 5, lessons: 48, vocab: 572, examples: 1003 };
 
   function computeProgressStats() {
-    return PLATFORM_TOTALS;
+    var totals = { levels: 0, lessons: 0, vocab: 0, dialogues: 0 };
+    Object.keys(READY_LEVELS).forEach(function (id) {
+      var lessons = (APP_DATA.lessons && APP_DATA.lessons[id]) || [];
+      if (!lessons.length) return;
+      totals.levels++;
+      totals.lessons += lessons.length;
+      lessons.forEach(function (l) {
+        totals.vocab += l.vocabCount || 0;
+        totals.dialogues += l.dialogueCount || 0;
+      });
+    });
+    return totals.lessons ? totals : PLATFORM_TOTALS;
   }
 
   /* ---------------- Global pinyin toggle (persists across every screen) ---------------- */
@@ -10604,11 +10750,11 @@
     '<ellipse cx="32" cy="33" rx="22" ry="21" fill="#d9533a"/>' +
     '<ellipse cx="25" cy="22" rx="9" ry="6" fill="#ef7a5f" opacity=".55"/>' +
     '<path d="M32 13v40M21 15c-5 10-5 26 0 36M43 15c5 10 5 26 0 36" stroke="#f6c979" stroke-opacity=".5" stroke-width="1.4" fill="none"/>' +
-    '<rect x="17" y="10" width="30" height="5" rx="2.5" fill="#ecb365"/><rect x="17" y="51" width="30" height="5" rx="2.5" fill="#ecb365"/>' +
-    '<ellipse cx="24.5" cy="32" rx="3.2" ry="3.8" fill="#2b2420"/><circle cx="25.6" cy="30.6" r="1.1" fill="#fff"/>' +
-    '<ellipse cx="39.5" cy="32" rx="3.2" ry="3.8" fill="#2b2420"/><circle cx="40.6" cy="30.6" r="1.1" fill="#fff"/>' +
+    '<rect x="17" y="10" width="30" height="5" rx="2.5" fill="#f2bf6b"/><rect x="17" y="51" width="30" height="5" rx="2.5" fill="#f2bf6b"/>' +
+    '<ellipse cx="24.5" cy="32" rx="3.2" ry="3.8" fill="#1f1a17"/><circle cx="25.6" cy="30.6" r="1.1" fill="#fff"/>' +
+    '<ellipse cx="39.5" cy="32" rx="3.2" ry="3.8" fill="#1f1a17"/><circle cx="40.6" cy="30.6" r="1.1" fill="#fff"/>' +
     '<ellipse cx="19.5" cy="38.5" rx="3.2" ry="2" fill="#f7a08b"/><ellipse cx="44.5" cy="38.5" rx="3.2" ry="2" fill="#f7a08b"/>' +
-    '<path d="M28 38.5q4 4 8 0" stroke="#2b2420" stroke-width="2" stroke-linecap="round" fill="none"/>' +
+    '<path d="M28 38.5q4 4 8 0" stroke="#1f1a17" stroke-width="2" stroke-linecap="round" fill="none"/>' +
     '<g class="qr-legs"><path class="qr-leg-a" d="M26 56l-3 11" stroke="#7d2616" stroke-width="3" stroke-linecap="round"/><path class="qr-leg-b" d="M38 56l3 11" stroke="#7d2616" stroke-width="3" stroke-linecap="round"/></g>' +
     '</svg>';
 
@@ -10618,14 +10764,14 @@
     // tang da
     '<svg viewBox="0 0 64 48" aria-hidden="true"><ellipse cx="32" cy="34" rx="27" ry="14" fill="#8d8378"/><ellipse cx="25" cy="28" rx="12" ry="6" fill="#a59c91"/><path d="M40 24l6 4" stroke="#6f665c" stroke-width="2" stroke-linecap="round"/></svg>',
     // trong do
-    '<svg viewBox="0 0 64 48" aria-hidden="true"><rect x="14" y="10" width="36" height="36" rx="9" fill="#a83e28"/><rect x="14" y="16" width="36" height="4" fill="#ecb365"/><rect x="14" y="36" width="36" height="4" fill="#ecb365"/><circle cx="32" cy="28" r="5" fill="#ecb365"/></svg>',
+    '<svg viewBox="0 0 64 48" aria-hidden="true"><rect x="14" y="10" width="36" height="36" rx="9" fill="#a82d24"/><rect x="14" y="16" width="36" height="4" fill="#f2bf6b"/><rect x="14" y="36" width="36" height="4" fill="#f2bf6b"/><circle cx="32" cy="28" r="5" fill="#f2bf6b"/></svg>',
     // lo lua
     '<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M14 30h36l-6 16H20z" fill="#5b4a3a"/><path d="M32 4c6 8 12 12 10 22H22c-2-8 4-12 6-16 1 4 3 5 4 6 0-4-1-8 0-12z" fill="#f08a24"/><path d="M32 14c3 5 6 7 5 12h-10c-1-4 2-7 5-12z" fill="#ffd166"/></svg>'
   ];
   var QR_TOWER = '<svg viewBox="0 0 80 96" aria-hidden="true"><rect x="10" y="30" width="60" height="66" fill="#c89a6d"/>' +
     '<rect x="6" y="20" width="12" height="14" fill="#b8875a"/><rect x="26" y="20" width="12" height="14" fill="#b8875a"/><rect x="46" y="20" width="12" height="14" fill="#b8875a"/><rect x="62" y="20" width="12" height="14" fill="#b8875a"/>' +
     '<rect x="6" y="30" width="68" height="6" fill="#a8774d"/><path d="M30 96V70a10 10 0 0 1 20 0v26z" fill="#5b3b24"/><rect x="18" y="46" width="10" height="12" rx="2" fill="#5b3b24"/><rect x="52" y="46" width="10" height="12" rx="2" fill="#5b3b24"/>' +
-    '<path d="M40 20V4" stroke="#7d2616" stroke-width="2"/><path d="M40 4h14l-4 5 4 5H40z" fill="#c84b31"/></svg>';
+    '<path d="M40 20V4" stroke="#7d2616" stroke-width="2"/><path d="M40 4h14l-4 5 4 5H40z" fill="#c8372d"/></svg>';
 
   function showQuickReviewPractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -11069,7 +11215,10 @@
       btn.setAttribute('aria-label', sfxOn ? 'Tắt âm thanh đúng/sai' : 'Bật âm thanh đúng/sai');
     }
     function syncVisibility() {
-      btn.hidden = !sfxActive();
+      // Chi doi khi khac gia tri: nut nam trong #main, gan lai "hidden" giong cu
+      // van tao ban ghi thay doi -> observer ben duoi se chay lai mai khong dung.
+      var shouldHide = !sfxActive();
+      if (btn.hidden !== shouldHide) btn.hidden = shouldHide;
     }
     applyBtn();
     syncVisibility();
@@ -11109,7 +11258,7 @@
       tile.className = 'stat-tile';
       tile.innerHTML =
         '<div class="stat-tile-icon ' + def.icon + '"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">' + def.svg + '</svg></div>' +
-        '<div><strong>' + stats[def.key] + '</strong><span>' + def.label + '</span></div>';
+        '<div><strong>' + Number(stats[def.key] || 0).toLocaleString('vi-VN') + '</strong><span>' + def.label + '</span></div>';
       wrap.appendChild(tile);
     });
   }
@@ -11132,6 +11281,7 @@
     var name = auth && auth.user ? (auth.user.name || auth.user.email) : 'Khách';
     $('#userName').textContent = name;
     $('#userAvatar').textContent = name.trim().charAt(0).toUpperCase();
+    renderHomeHead();
   }
 
   function initAuth() {
@@ -11295,6 +11445,10 @@
     $('#footerYear').textContent = new Date().getFullYear();
 
     initSidebar();
+    var last = getLastLesson();
+    if (last) practiceLevel = last.levelId;
+    renderHomeHead();
+    renderContinueCard();
     renderLevelCards();
     renderLevelSubmenu();
     renderStreak();
@@ -11306,6 +11460,7 @@
     initAnalytics();
     initPinyinToggle();
     initAnswerSounds();
+    initShellNav();
 
     document.addEventListener('click', function (e) {
       var section = e.target.closest('.dash-section');
@@ -11407,8 +11562,8 @@
       e.preventDefault();
       showLeaderboard();
     });
-    $('#ctaStart').addEventListener('click', function () { selectLevel(practiceLevel); });
-    $('#ctaStreak').addEventListener('click', function () { selectLevel(practiceLevel); });
+    $('#ctaStart').addEventListener('click', continueLearning);
+    $('#ctaStreak').addEventListener('click', continueLearning);
   }
 
   document.addEventListener('DOMContentLoaded', init);

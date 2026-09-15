@@ -48,7 +48,7 @@
     var parts = String(name || '').trim().split(/\s+/);
     return (parts[parts.length - 1] || '?').charAt(0).toUpperCase();
   }
-  var AVATAR_COLORS = ['#c84b31', '#2f3c7e', '#1f9254', '#b7791f', '#7c3aed', '#0d9488', '#db2777', '#4f46e5'];
+  var AVATAR_COLORS = ['#c8372d', '#2f3c7e', '#1f9254', '#b7791f', '#7c3aed', '#0d9488', '#db2777', '#4f46e5'];
   function avatarHtml(user, size) {
     var n = 0;
     String(user.id || user.name || '').split('').forEach(function (ch) { n = (n * 31 + ch.charCodeAt(0)) % 9973; });
@@ -96,13 +96,13 @@
         '<ellipse cx="32" cy="33" rx="22" ry="21" fill="#d9533a"/>' +
         '<ellipse cx="25" cy="22" rx="9" ry="6" fill="#ef7a5f" opacity=".55"/>' +
         '<path d="M32 13v40M21 15c-5 10-5 26 0 36M43 15c5 10 5 26 0 36" stroke="#f6c979" stroke-opacity=".5" stroke-width="1.4" fill="none"/>' +
-        '<rect x="17" y="10" width="30" height="5" rx="2.5" fill="#ecb365"/>' +
-        '<rect x="17" y="51" width="30" height="5" rx="2.5" fill="#ecb365"/>' +
-        '<ellipse cx="24.5" cy="32" rx="3.2" ry="3.8" fill="#2b2420"/><circle cx="25.6" cy="30.6" r="1.1" fill="#fff"/>' +
-        '<ellipse cx="39.5" cy="32" rx="3.2" ry="3.8" fill="#2b2420"/><circle cx="40.6" cy="30.6" r="1.1" fill="#fff"/>' +
+        '<rect x="17" y="10" width="30" height="5" rx="2.5" fill="#f2bf6b"/>' +
+        '<rect x="17" y="51" width="30" height="5" rx="2.5" fill="#f2bf6b"/>' +
+        '<ellipse cx="24.5" cy="32" rx="3.2" ry="3.8" fill="#1f1a17"/><circle cx="25.6" cy="30.6" r="1.1" fill="#fff"/>' +
+        '<ellipse cx="39.5" cy="32" rx="3.2" ry="3.8" fill="#1f1a17"/><circle cx="40.6" cy="30.6" r="1.1" fill="#fff"/>' +
         '<ellipse cx="19.5" cy="38.5" rx="3.2" ry="2" fill="#f7a08b"/><ellipse cx="44.5" cy="38.5" rx="3.2" ry="2" fill="#f7a08b"/>' +
-        '<path d="M28 38.5q4 4 8 0" stroke="#2b2420" stroke-width="2" stroke-linecap="round" fill="none"/>' +
-        '<path d="M32 56v4" stroke="#b7791f" stroke-width="2"/><path d="M28.5 59.5h7l-1.2 4.5h-4.6z" fill="#ecb365"/>' +
+        '<path d="M28 38.5q4 4 8 0" stroke="#1f1a17" stroke-width="2" stroke-linecap="round" fill="none"/>' +
+        '<path d="M32 56v4" stroke="#b7791f" stroke-width="2"/><path d="M28.5 59.5h7l-1.2 4.5h-4.6z" fill="#f2bf6b"/>' +
         '</svg>';
     },
     chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.6c-.5.4-1.3 0-1.3-.6V16A2.5 2.5 0 0 1 4 13.5z" fill="currentColor"/></svg>',
@@ -119,10 +119,10 @@
     hanzi: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M12 6v12M8 14c2 0 3 1 4 4M16 14c-2 0-3 1-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>',
     talk: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-3 3v-3H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M19 9h0a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1v3l-3-3h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
     emptyChat: '<svg viewBox="0 0 150 120" aria-hidden="true"><ellipse cx="75" cy="108" rx="52" ry="7" fill="#f0e6d6"/>' +
-      '<rect x="18" y="22" width="78" height="54" rx="16" fill="#fbeae5"/><path d="M34 76l-6 16 20-16z" fill="#fbeae5"/>' +
+      '<rect x="18" y="22" width="78" height="54" rx="16" fill="#fdefec"/><path d="M34 76l-6 16 20-16z" fill="#fdefec"/>' +
       '<rect x="32" y="38" width="46" height="6" rx="3" fill="#e8b8aa"/><rect x="32" y="52" width="30" height="6" rx="3" fill="#e8b8aa"/>' +
-      '<rect x="62" y="44" width="70" height="46" rx="14" fill="#fff6e5" stroke="#ecb365" stroke-width="2"/><path d="M116 90l6 13-17-13z" fill="#fff6e5" stroke="#ecb365" stroke-width="2" stroke-linejoin="round"/>' +
-      '<circle cx="84" cy="67" r="4" fill="#c84b31"/><circle cx="97" cy="67" r="4" fill="#c84b31" opacity=".7"/><circle cx="110" cy="67" r="4" fill="#c84b31" opacity=".4"/></svg>'
+      '<rect x="62" y="44" width="70" height="46" rx="14" fill="#fff6e5" stroke="#f2bf6b" stroke-width="2"/><path d="M116 90l6 13-17-13z" fill="#fff6e5" stroke="#f2bf6b" stroke-width="2" stroke-linejoin="round"/>' +
+      '<circle cx="84" cy="67" r="4" fill="#c8372d"/><circle cx="97" cy="67" r="4" fill="#c8372d" opacity=".7"/><circle cx="110" cy="67" r="4" fill="#c8372d" opacity=".4"/></svg>'
   };
 
   // ---------- Dung khung ----------

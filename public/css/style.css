@@ -1,18 +1,22 @@
 :root {
-  /* Do tram/gach (Terracotta) — mau chinh, may man nhung khong choi mat */
-  --color-red-700: #a83e28;
-  --color-red-600: #c84b31;
-  --color-red-500: #d66448;
-  --color-red-50: #fbeae5;
+  /* Do son — mau chinh, chi dung lam diem nhan (nut chinh, muc dang chon) */
+  --color-red-800: #8a241d;
+  --color-red-700: #a82d24;
+  --color-red-600: #c8372d;
+  --color-red-500: #dc4b3e;
+  --color-red-100: #f8d7d2;
+  --color-red-50: #fdefec;
 
-  /* Vang cat/ho phach (Amber/Warm Gold) — mau phu */
-  --color-gold-500: #e58e26;
-  --color-gold-400: #ecb365;
-  --color-gold-50: #fdf2e0;
+  /* Vang ho phach — mau phu cho thanh tich, chuoi ngay hoc */
+  --color-gold-700: #8a5a0f;
+  --color-gold-600: #b7791f;
+  --color-gold-500: #e9a23b;
+  --color-gold-400: #f2bf6b;
+  --color-gold-50: #fdf5e6;
 
-  --color-green-600: #1f9254;
-  --color-green-500: #23a862;
-  --color-green-50: #e8f7ef;
+  --color-green-600: #1f8a4c;
+  --color-green-500: #26a35b;
+  --color-green-50: #e9f6ee;
 
   --color-blue-600: #2f5fdb;
   --color-blue-500: #4472ea;
@@ -21,8 +25,8 @@
   --color-purple-600: #7c3aed;
   --color-purple-50: #f3e8ff;
 
-  --color-teal-600: #0d9488;
-  --color-teal-50: #e6fbf8;
+  --color-teal-600: #0d8a80;
+  --color-teal-50: #e6f7f5;
 
   --color-pink-600: #db2777;
   --color-pink-50: #fce7f3;
@@ -30,31 +34,40 @@
   --color-indigo-600: #4f46e5;
   --color-indigo-50: #eef0ff;
 
-  --color-orange-600: #ea580c;
+  --color-orange-600: #d9580c;
   --color-orange-50: #fff1e6;
 
-  /* Nen kem am / Trang nga + van ban nau sam — giu do am, do mau tinh khiet */
+  /* Trung tinh hoi am, chu gan den — de doc lau khong moi mat */
   --color-white: #ffffff;
-  --color-gray-50: #f9f5eb;
-  --color-gray-100: #f3ece0;
-  --color-gray-200: #e6dcc9;
-  --color-gray-400: #a89a89;
-  --color-gray-600: #6b5d56;
-  --color-gray-800: #4a3e3d;
-  --color-gray-900: #2b2420;
+  --color-gray-50: #fafaf7;
+  --color-gray-100: #f3f1ec;
+  --color-gray-200: #e6e2da;
+  --color-gray-300: #d3cec4;
+  --color-gray-400: #a39d93;
+  --color-gray-500: #7d776e;
+  --color-gray-600: #5f5952;
+  --color-gray-700: #48423c;
+  --color-gray-800: #38332e;
+  --color-gray-900: #1f1a17;
 
-  --color-success: #1f9254;
-  --color-success-bg: #e8f7ef;
-  --color-error: #c84b31;
-  --color-error-bg: #fbeae5;
+  --color-bg: var(--color-gray-50);
+  --color-surface: var(--color-white);
+  --color-border: var(--color-gray-200);
+
+  --color-success: #1f8a4c;
+  --color-success-bg: #e9f6ee;
+  --color-error: #c8372d;
+  --color-error-bg: #fdefec;
 
   --font-latin: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-hanzi: 'Noto Sans SC', var(--font-latin);
+  --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--font-latin);
 
   --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
   --radius-pill: 999px;
+  --radius-full: 999px;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -66,13 +79,15 @@
   --space-8: 64px;
   --space-9: 96px;
 
-  --shadow-sm: 0 1px 2px rgba(32, 30, 28, 0.08);
-  --shadow-md: 0 8px 24px rgba(32, 30, 28, 0.10);
-  --shadow-lg: 0 20px 48px rgba(179, 18, 31, 0.16);
+  --shadow-sm: 0 1px 2px rgba(31, 26, 23, 0.06);
+  --shadow-md: 0 6px 18px rgba(31, 26, 23, 0.08);
+  --shadow-lg: 0 18px 44px rgba(31, 26, 23, 0.14);
 
-  --header-h: 72px;
+  --header-h: 64px;
+  --bottom-nav-h: 64px;
   --max-w: 1200px;
-  --sidebar-w: 264px;
+  --content-max: 1120px;
+  --sidebar-w: 256px;
 
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -87,6 +102,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -107,17 +123,15 @@ body {
   margin: 0;
   font-family: var(--font-latin);
   color: var(--color-gray-900);
-  background-color: var(--color-gray-50);
-  background-image:
-    url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 240 120%22><path d=%22M20,90 C20,70 40,70 45,80 C45,60 70,60 75,75 C75,50 105,50 110,70 C115,45 150,45 150,70 C160,55 185,60 180,80 C195,75 205,90 190,98 C195,110 175,115 165,105 C155,118 130,115 128,102 C110,115 85,110 88,98 C70,110 45,105 50,92 C35,102 15,98 20,90 Z%22 fill=%22none%22 stroke=%22%23c84b31%22 stroke-width=%223%22 opacity=%220.07%22/></svg>"),
-    url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><g fill=%22none%22 stroke=%22%23e58e26%22 stroke-width=%222.5%22 opacity=%220.1%22><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(72 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(144 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(216 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(288 50 50)%22/><circle cx=%2250%22 cy=%2250%22 r=%224%22/></g></svg>");
-  background-repeat: no-repeat, no-repeat;
-  background-position: bottom -40px right -40px, top 60px left -20px;
-  background-size: 420px, 160px;
-  background-attachment: fixed, fixed;
+  background: var(--color-bg);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
 }
 
 img {
@@ -157,7 +171,7 @@ button {
 
 .skip-link {
   position: absolute;
-  top: -48px;
+  top: -200px;
   left: var(--space-4);
   background: var(--color-red-600);
   color: var(--color-white);
@@ -258,7 +272,7 @@ button {
   stroke: none;
 }
 
-/* ---------- App shell (sidebar dashboard layout) ---------- */
+/* ---------- App shell: menu sang ben trai, thanh tren cung, thanh duoi tren dien thoai ---------- */
 .app-shell {
   display: flex;
   align-items: stretch;
@@ -270,14 +284,9 @@ button {
   width: var(--sidebar-w);
   display: flex;
   flex-direction: column;
-  background-color: var(--color-red-600);
-  background-image:
-    linear-gradient(180deg, var(--color-red-600), var(--color-red-700)),
-    url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 240 120%22><path d=%22M20,90 C20,70 40,70 45,80 C45,60 70,60 75,75 C75,50 105,50 110,70 C115,45 150,45 150,70 C160,55 185,60 180,80 C195,75 205,90 190,98 C195,110 175,115 165,105 C155,118 130,115 128,102 C110,115 85,110 88,98 C70,110 45,105 50,92 C35,102 15,98 20,90 Z%22 fill=%22none%22 stroke=%22%23ecb365%22 stroke-width=%223%22 opacity=%220.16%22/></svg>");
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, bottom -10px center;
-  background-size: cover, 280px;
-  padding: var(--space-5) var(--space-4);
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-3);
   position: fixed;
   top: 0;
   left: 0;
@@ -304,41 +313,49 @@ button {
 .app-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  color: var(--color-white);
+  gap: 10px;
+  color: var(--color-gray-900);
   text-decoration: none;
-  padding: var(--space-2);
-  margin-bottom: 2px;
-}
-
-.app-logo-text {
-  font-family: "Caveat", cursive;
-  font-weight: 700;
-  font-size: 1.85rem;
-  line-height: 1;
-}
-
-.app-slogan {
-  margin: 0 0 var(--space-5) 0;
-  padding: 0 var(--space-2);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.01em;
+  padding: var(--space-2) var(--space-2) var(--space-5);
 }
 
 .logo-mark {
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
+  border-radius: 10px;
   flex-shrink: 0;
+}
+
+.app-logo-words {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.app-logo-text {
+  font-weight: 800;
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+}
+
+.app-logo-text .hanzi,
+.app-topbar-logo .hanzi {
+  color: var(--color-red-600);
+  font-weight: 700;
+}
+
+.app-slogan {
+  margin: 2px 0 0;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--color-gray-500);
 }
 
 .app-nav {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 2px;
   flex: 1;
 }
 
@@ -347,26 +364,36 @@ button {
   align-items: center;
   gap: var(--space-3);
   width: 100%;
-  padding: var(--space-3);
-  border-radius: var(--radius-md);
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  border-radius: 10px;
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-gray-700);
   font-weight: 600;
-  font-size: 0.94rem;
+  font-size: 0.93rem;
   text-decoration: none;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
+  transition: background-color 0.15s var(--ease-standard), color 0.15s var(--ease-standard);
+}
+
+.app-nav-item .icon {
+  color: var(--color-gray-500);
 }
 
 .app-nav-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-white);
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
 }
 
 .app-nav-item.is-active {
-  background: var(--color-white);
+  background: var(--color-red-50);
+  color: var(--color-red-700);
+}
+
+.app-nav-item.is-active .icon {
   color: var(--color-red-600);
 }
 
@@ -377,12 +404,12 @@ button {
 .app-nav-label {
   display: block;
   padding: 0 var(--space-3);
-  margin-bottom: var(--space-2);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  margin-bottom: var(--space-1);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-gray-500);
 }
 
 .app-nav-expand .app-nav-chevron {
@@ -398,25 +425,29 @@ button {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding-left: var(--space-4);
+  margin-left: 21px;
+  padding-left: var(--space-2);
+  border-left: 1px solid var(--color-border);
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.22s var(--ease-standard);
 }
 
 .app-nav-submenu.is-open {
-  max-height: 260px;
+  max-height: 400px;
+  margin-top: 2px;
 }
 
 .app-nav-subitem {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-2) var(--space-3);
+  gap: 10px;
+  min-height: 38px;
+  padding: 0 10px;
   border-radius: var(--radius-sm);
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-gray-600);
   font-weight: 600;
   font-size: 0.88rem;
   cursor: pointer;
@@ -425,57 +456,61 @@ button {
 }
 
 .app-nav-subitem:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-white);
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
 }
 
 .app-nav-subitem.is-active {
-  color: var(--color-red-600);
-  background: var(--color-white);
+  color: var(--color-red-700);
+  background: var(--color-red-50);
 }
 
 .app-nav-dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .app-nav-dot.is-red { background: var(--color-red-600); }
-.app-nav-dot.is-green { background: var(--color-green-600); }
+.app-nav-dot.is-orange { background: var(--color-orange-600); }
 .app-nav-dot.is-gold { background: var(--color-gold-500); }
+.app-nav-dot.is-green { background: var(--color-green-600); }
+.app-nav-dot.is-teal { background: var(--color-teal-600); }
 .app-nav-dot.is-blue { background: var(--color-blue-600); }
+.app-nav-dot.is-purple { background: var(--color-purple-600); }
 
 .app-sidebar-user {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  border: none;
-  background: transparent;
-  padding: var(--space-3);
+  width: 100%;
+  border: 1px solid var(--color-border);
+  background: var(--color-gray-50);
+  padding: 10px var(--space-3);
   margin-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
   cursor: pointer;
   text-align: left;
   font-family: inherit;
   border-radius: var(--radius-md);
+  transition: border-color 0.15s var(--ease-standard), background-color 0.15s var(--ease-standard);
 }
 
 .app-sidebar-user:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-surface);
+  border-color: var(--color-gray-300);
 }
 
 .app-sidebar-user .avatar {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--color-gold-500);
-  color: var(--color-gray-900);
+  background: var(--color-red-600);
+  color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-family: var(--font-hanzi);
   flex-shrink: 0;
 }
 
@@ -486,20 +521,23 @@ button {
 }
 
 .app-sidebar-user-info strong {
-  font-size: 0.92rem;
-  color: var(--color-white);
+  font-size: 0.9rem;
+  color: var(--color-gray-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .app-sidebar-user-info span {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.76rem;
+  color: var(--color-gray-500);
 }
 
 .app-scrim {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(32, 30, 28, 0.45);
+  background: rgba(31, 26, 23, 0.4);
   z-index: 190;
 }
 
@@ -516,31 +554,135 @@ button {
 .app-main {
   flex: 1;
   min-width: 0;
-  padding: var(--space-5) var(--space-4) var(--space-8);
+  padding: 0 var(--space-4) calc(var(--bottom-nav-h) + var(--space-6) + env(safe-area-inset-bottom));
 }
 
 @media (min-width: 700px) {
   .app-main {
-    padding: var(--space-6) var(--space-6) var(--space-8);
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
   }
 }
 
-.app-mobile-toggle {
-  display: inline-flex;
+@media (min-width: 1080px) {
+  .app-main {
+    padding-bottom: var(--space-8);
+  }
+}
+
+.app-main > .dash-section,
+.app-main > .app-footer {
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Thanh tren cung: logo (dien thoai) + nut Am thanh / Pinyin */
+.app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-gray-200);
-  background: var(--color-white);
-  margin-bottom: var(--space-4);
-  cursor: pointer;
+  gap: var(--space-3);
+  min-height: var(--header-h);
+  margin: 0 calc(-1 * var(--space-4)) var(--space-3);
+  padding: 10px var(--space-4);
+  background: rgba(250, 250, 247, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s var(--ease-standard);
+}
+
+.app-topbar.is-scrolled {
+  border-bottom-color: var(--color-border);
+}
+
+@media (min-width: 700px) {
+  .app-topbar {
+    margin: 0 calc(-1 * var(--space-6)) var(--space-4);
+    padding: 10px var(--space-6);
+  }
+}
+
+.app-topbar-logo {
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--color-gray-900);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.app-mobile-toggle {
+  display: none;
 }
 
 @media (min-width: 1080px) {
-  .app-mobile-toggle {
+  .app-topbar-logo {
     display: none;
+  }
+}
+
+/* Thanh dieu huong duoi day man hinh — chi hien tren dien thoai / may tinh bang */
+.app-bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 150;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  background: rgba(255, 255, 255, 0.97);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--color-border);
+  padding: 4px 4px calc(4px + env(safe-area-inset-bottom));
+}
+
+.bn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 54px;
+  border: none;
+  background: none;
+  border-radius: 10px;
+  color: var(--color-gray-500);
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bn-item .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.bn-item.is-active {
+  color: var(--color-red-600);
+}
+
+.bn-item.is-active .icon {
+  stroke-width: 2.4;
+}
+
+@media (min-width: 1080px) {
+  .app-bottom-nav {
+    display: none;
+  }
+}
+
+/* Nut Tro ly AI / Tin nhan nam tren thanh dieu huong duoi */
+@media (max-width: 1079px) {
+  .hw-fab-stack {
+    bottom: calc(var(--bottom-nav-h) + 12px + env(safe-area-inset-bottom)) !important;
   }
 }
 
@@ -551,16 +693,44 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   display: none !important;
 }
 
-/* ---------- Dashboard header ---------- */
+/* ---------- Trang chu ---------- */
 .dash-section {
   margin-bottom: var(--space-7);
 }
 
-#levelDetail {
-  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><g fill=%22none%22 stroke=%22%23a83e28%22 stroke-width=%223%22 opacity=%220.1%22><line x1=%22100%22 y1=%2210%22 x2=%22100%22 y2=%2224%22/><path d=%22M74,34 Q87,20 100,25 Q113,20 126,34%22/><path d=%22M68,39 L132,39%22/><path d=%22M52,56 Q73,36 100,43 Q127,36 148,56%22/><path d=%22M46,61 L154,61%22/><path d=%22M28,80 Q58,55 100,63 Q142,55 172,80%22/><path d=%22M22,86 L178,86%22/><rect x=%2258%22 y=%2286%22 width=%2284%22 height=%2228%22/><line x1=%2278%22 y1=%2286%22 x2=%2278%22 y2=%22114%22/><line x1=%22122%22 y1=%2286%22 x2=%22122%22 y2=%22114%22/></g></svg>");
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 220px;
+.home-head {
+  margin: var(--space-1) 0 var(--space-4);
+}
+
+.home-date {
+  margin: 0 0 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gray-500);
+}
+
+.home-head h1 {
+  margin: 0;
+  font-size: clamp(1.45rem, 3.2vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.home-section-head {
+  margin: var(--space-7) 0 var(--space-4);
+}
+
+.home-section-head h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.home-section-head p {
+  margin: 2px 0 0;
+  font-size: 0.88rem;
+  color: var(--color-gray-600);
 }
 
 .dash-auth-banner {
@@ -568,32 +738,32 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-4);
-  background: linear-gradient(135deg, var(--color-gold-500), var(--color-gold-400));
-  color: var(--color-white);
+  gap: var(--space-3) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-5) var(--space-6);
-  margin-bottom: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-4);
 }
 
 .dash-auth-banner-text strong {
   display: block;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 800;
-  margin-bottom: 4px;
+  color: var(--color-gray-900);
 }
 
 .dash-auth-banner-text p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.9rem;
-  max-width: 48ch;
+  margin: 2px 0 0;
+  color: var(--color-gray-600);
+  font-size: 0.88rem;
+  max-width: 56ch;
 }
 
 .dash-auth-banner-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: var(--space-2);
   flex-shrink: 0;
 }
 
@@ -608,8 +778,8 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 @media (max-width: 640px) {
-  .dash-auth-banner { flex-direction: column; align-items: stretch; }
-  .dash-auth-banner-actions { flex-direction: column; }
+  .dash-auth-banner-actions { width: 100%; }
+  .dash-auth-banner-actions .btn { flex: 1; }
 }
 
 .dash-breadcrumb {
@@ -617,53 +787,61 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .dash-crumb-trail {
-  margin: 0 0 var(--space-2);
-  font-size: 0.85rem;
+  margin: var(--space-1) 0 0;
+  font-size: 0.88rem;
   color: var(--color-gray-600);
 }
 
 .dash-breadcrumb h1 {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
   font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .dash-row {
   display: grid;
-  gap: var(--space-5);
-  margin-top: var(--space-5);
-  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 @media (min-width: 900px) {
   .dash-row {
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
   }
 }
 
+/* The "Tiep tuc hoc" — hanh dong quan trong nhat tren trang */
 .dash-cta-card {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--color-red-600), var(--color-red-700));
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(242, 191, 107, 0.28), transparent 55%),
+    var(--color-red-600);
   color: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-5) var(--space-5) var(--space-6);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-5);
-  min-height: 220px;
+}
+
+@media (max-width: 640px) {
+  .dash-cta-card {
+    padding: var(--space-5);
+  }
 }
 
 .dash-cta-card::before {
   content: "";
   position: absolute;
   z-index: 0;
-  top: -30px;
-  right: -30px;
-  width: 200px;
-  height: 200px;
-  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><g fill=%22none%22 stroke=%22%23ecb365%22 stroke-width=%222.5%22 opacity=%220.22%22><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(72 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(144 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(216 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(288 50 50)%22/><circle cx=%2250%22 cy=%2250%22 r=%224%22/></g></svg>");
+  bottom: -46px;
+  right: -40px;
+  width: 190px;
+  height: 190px;
+  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><g fill=%22none%22 stroke=%22%23fff6e9%22 stroke-width=%222.2%22 opacity=%220.16%22><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(72 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(144 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(216 50 50)%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2210%22 ry=%2216%22 transform=%22rotate(288 50 50)%22/><circle cx=%2250%22 cy=%2250%22 r=%224%22/></g></svg>");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -675,26 +853,67 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   z-index: 1;
 }
 
+.dash-cta-text {
+  min-width: 0;
+}
+
+.dash-cta-eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .dash-cta-text h2 {
-  margin: 0 0 var(--space-3);
-  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  margin: 0 0 var(--space-2);
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
   font-weight: 800;
   line-height: 1.3;
 }
 
-.dash-cta-text h2 .accent {
-  color: var(--color-gold-400);
+.dash-cta-text h2 .hanzi {
+  font-weight: 700;
 }
 
-.dash-cta-text p {
-  margin: 0 0 var(--space-5);
+.dash-cta-sub {
+  margin: 0 0 var(--space-4);
   color: rgba(255, 255, 255, 0.88);
-  max-width: 40ch;
+  max-width: 48ch;
+  font-size: 0.93rem;
+}
+
+.dash-cta-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 340px;
+  margin: 0 0 var(--space-4);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-cta-progress-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.dash-cta-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-gold-400);
+  transition: width 0.4s var(--ease-standard);
 }
 
 .btn-white {
   background: var(--color-white);
-  color: var(--color-red-600);
+  color: var(--color-red-700);
 }
 
 .btn-white:hover {
@@ -704,6 +923,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .dash-cta-card-visual {
   flex-shrink: 0;
   display: none;
+  padding-right: var(--space-3);
 }
 
 @media (min-width: 640px) {
@@ -715,19 +935,21 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .flash-card {
   background: var(--color-white);
   color: var(--color-gray-900);
-  border-radius: var(--radius-md);
-  padding: var(--space-5) var(--space-6);
-  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  min-width: 120px;
+  box-shadow: 0 16px 36px rgba(90, 20, 14, 0.28);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-1);
+  gap: 2px;
   transform: rotate(-4deg);
 }
 
 .flash-card .hanzi {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
+  line-height: 1.3;
   color: var(--color-red-600);
 }
 
@@ -738,41 +960,12 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .dash-streak-card {
-  position: relative;
-  overflow: hidden;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
   padding: var(--space-5);
   display: flex;
   flex-direction: column;
-}
-
-.dash-streak-card::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  bottom: -14px;
-  right: -10px;
-  width: 84px;
-  height: 84px;
-  background-image: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><g fill=%22none%22 stroke=%22%23c84b31%22 stroke-width=%222.5%22 opacity=%220.35%22><circle cx=%2250%22 cy=%2255%22 r=%2232%22/><circle cx=%2224%22 cy=%2228%22 r=%2213%22/><circle cx=%2276%22 cy=%2228%22 r=%2213%22/><ellipse cx=%2234%22 cy=%2252%22 rx=%2210%22 ry=%2213%22/><ellipse cx=%2266%22 cy=%2252%22 rx=%2210%22 ry=%2213%22/><ellipse cx=%2250%22 cy=%2268%22 rx=%226%22 ry=%224%22/></g><g fill=%22%23c84b31%22 opacity=%220.35%22><circle cx=%2234%22 cy=%2254%22 r=%223%22/><circle cx=%2266%22 cy=%2254%22 r=%223%22/></g></svg>");
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
-
-.dash-streak-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.dash-streak-head {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-weight: 700;
-  margin-bottom: var(--space-4);
 }
 
 .dash-streak-main {
@@ -783,21 +976,23 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .dash-streak-big-flame {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--color-gold-50);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
 }
 
 .dash-streak-main strong {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 800;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
 }
 
 .dash-streak-main span {
@@ -808,8 +1003,8 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .dash-streak-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: var(--space-2);
-  margin-bottom: var(--space-4);
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
 }
 
 .dash-streak-day {
@@ -820,7 +1015,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .dash-streak-day span:first-child {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--color-gray-500);
   font-weight: 600;
 }
@@ -840,36 +1035,31 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 
 .dash-streak-dot.is-today {
   border-color: var(--color-red-500);
-}
-
-.dash-streak-hint {
-  margin: 0 0 var(--space-4);
-  font-size: 0.82rem;
-  color: var(--color-gray-600);
-  flex: 1;
+  box-shadow: 0 0 0 3px var(--color-red-50);
 }
 
 .dash-streak-badge {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin: var(--space-3) 0;
+  margin: 0 0 var(--space-4);
+  flex: 1;
 }
 
 .streak-badge-pill {
   display: inline-block;
   align-self: flex-start;
   background: var(--color-gold-50);
-  color: #a86a10;
-  border-radius: var(--radius-full, 999px);
+  color: var(--color-gold-700);
+  border-radius: var(--radius-pill);
   padding: 4px 12px;
   font-size: 0.8rem;
   font-weight: 700;
 }
 
 .streak-badge-next {
-  font-size: 0.76rem;
-  color: var(--color-gray-400);
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
 }
 
 .btn-dark {
@@ -881,16 +1071,25 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   background: var(--color-gray-800);
 }
 
+.dash-streak-card .btn-dark {
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.dash-streak-card .btn-dark:hover {
+  background: var(--color-gray-200);
+}
+
 .dash-stat-tiles {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
   margin-top: var(--space-5);
 }
 
 @media (min-width: 800px) {
   .dash-stat-tiles {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -898,37 +1097,54 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-4);
 }
 
 .stat-tile-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 1.2rem;
 }
 
 .stat-tile-icon.is-red { background: var(--color-red-50); color: var(--color-red-600); }
-.stat-tile-icon.is-gold { background: var(--color-gold-50); color: #8a5a00; }
+.stat-tile-icon.is-gold { background: var(--color-gold-50); color: var(--color-gold-700); }
 .stat-tile-icon.is-green { background: var(--color-green-50); color: var(--color-green-600); }
 .stat-tile-icon.is-blue { background: var(--color-blue-50); color: var(--color-blue-600); }
 
 .stat-tile strong {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-tile span {
   font-size: 0.8rem;
   color: var(--color-gray-600);
+}
+
+#todayLbCard {
+  margin-top: var(--space-6);
+}
+
+.app-footer {
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-gray-600);
+  font-size: 0.86rem;
+}
+
+.app-footer p {
+  margin: 0 0 var(--space-1);
 }
 
 /* ---------- Sections ---------- */
@@ -970,86 +1186,139 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   margin: var(--space-2) 0 0;
 }
 
-/* ---------- Level cards ---------- */
+/* ---------- The cap do: gon, cho thay so bai va tien do ---------- */
 .level-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--space-5);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .level-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1000px) {
+  .level-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 .level-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-lg);
-  padding: 0;
-  cursor: pointer;
-  text-align: left;
+  --lv: var(--color-red-600);
+  --lv-bg: var(--color-red-50);
+  position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
   transition: transform 0.18s var(--ease-standard), box-shadow 0.18s var(--ease-standard), border-color 0.18s var(--ease-standard);
 }
 
 .level-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
+  border-color: var(--color-gray-300);
   box-shadow: var(--shadow-md);
 }
 
-.level-badge {
+.level-card.is-red { --lv: var(--color-red-600); --lv-bg: var(--color-red-50); }
+.level-card.is-orange { --lv: var(--color-orange-600); --lv-bg: var(--color-orange-50); }
+.level-card.is-gold { --lv: var(--color-gold-600); --lv-bg: var(--color-gold-50); }
+.level-card.is-green { --lv: var(--color-green-600); --lv-bg: var(--color-green-50); }
+.level-card.is-teal { --lv: var(--color-teal-600); --lv-bg: var(--color-teal-50); }
+.level-card.is-blue { --lv: var(--color-blue-600); --lv-bg: var(--color-blue-50); }
+.level-card.is-purple { --lv: var(--color-purple-600); --lv-bg: var(--color-purple-50); }
+
+.level-mark {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-6) var(--space-4);
-  font-family: var(--font-latin);
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--lv-bg);
+  color: var(--lv);
+  line-height: 1;
   font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--color-white);
 }
 
-.level-badge.is-red {
-  background: linear-gradient(135deg, var(--color-red-500), var(--color-red-700));
+.level-mark-top {
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
 }
 
-.level-badge.is-green {
-  background: linear-gradient(135deg, var(--color-green-500), var(--color-green-600));
-}
-
-.level-badge.is-gold {
-  background: linear-gradient(135deg, var(--color-gold-500), #d99400);
-}
-
-.level-badge.is-blue {
-  background: linear-gradient(135deg, var(--color-blue-500), var(--color-blue-600));
+.level-mark-num {
+  font-size: 1.4rem;
+  margin-top: 3px;
 }
 
 .level-card-body {
-  padding: var(--space-4) var(--space-5) var(--space-5);
+  display: block;
+  min-width: 0;
 }
 
-.level-card h3 {
+.level-card-title {
+  display: block;
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
+  line-height: 1.3;
 }
 
 .level-card .level-sub {
   display: block;
-  color: var(--color-gray-500);
+  margin-top: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+}
+
+.level-tag {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gold-50);
+  color: var(--color-gold-700);
+  font-size: 0.68rem;
   font-weight: 700;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-top: var(--space-1);
+}
+
+.level-meter {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin-top: auto;
+  border-radius: var(--radius-pill);
+  background: var(--color-gray-100);
+  overflow: hidden;
+}
+
+.level-meter > span {
+  display: block;
+  height: 100%;
+  min-width: 0;
+  border-radius: inherit;
+  background: var(--lv);
 }
 
 .level-card.is-disabled {
   cursor: default;
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
 .level-card.is-disabled:hover {
   transform: none;
   box-shadow: none;
+  border-color: var(--color-border);
 }
 
 /* ---------- Practice level tabs (HSK1 / HSK2 toggle) ---------- */
@@ -1093,10 +1362,10 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-5);
+  padding: var(--space-4) var(--space-5);
   text-decoration: none;
   color: inherit;
   transition: transform 0.18s var(--ease-standard), box-shadow 0.18s var(--ease-standard), border-color 0.18s var(--ease-standard);
@@ -1105,7 +1374,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .lesson-card-link:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--color-red-500);
+  border-color: var(--color-gray-300);
 }
 
 .lesson-card-num {
@@ -1113,8 +1382,8 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-md);
-  background: var(--color-gold-50);
-  color: #8a5a00;
+  background: var(--color-red-50);
+  color: var(--color-red-700);
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -1460,9 +1729,14 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 
 .toast {
   position: fixed;
-  bottom: var(--space-5);
+  bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
   left: 50%;
-  transform: translateX(-50%) translateY(120%);
+  max-width: calc(100vw - 32px);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(16px);
   background: var(--color-gray-900);
   color: var(--color-white);
   padding: var(--space-3) var(--space-5);
@@ -1470,12 +1744,18 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   font-weight: 600;
   font-size: 0.9rem;
   z-index: 300;
-  transition: transform 0.25s var(--ease-standard);
+  transition: transform 0.25s var(--ease-standard), opacity 0.2s var(--ease-standard), visibility 0.2s;
   box-shadow: var(--shadow-md);
 }
 
 .toast.is-visible {
+  opacity: 1;
+  visibility: visible;
   transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 1079px) {
+  .toast { bottom: calc(var(--bottom-nav-h) + var(--space-3) + env(safe-area-inset-bottom)); }
 }
 
 /* ---------- Lesson hub (danh mục các dạng bài trong 1 bài học) ---------- */
@@ -3579,8 +3859,8 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 @keyframes spaiPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 75, 49, 0.5); }
-  50% { box-shadow: 0 0 0 8px rgba(200, 75, 49, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 55, 45, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(200, 55, 45, 0); }
 }
 
 .spai-play,
@@ -4954,10 +5234,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 /* ---------- Global pinyin toggle (persistent across every screen) ---------- */
 /* Nut Am thanh + nut Pinyin nam chung mot cum co dinh o goc tren ben phai */
 .top-toggles {
-  position: fixed;
-  top: var(--space-4);
-  right: var(--space-5);
-  z-index: 60;
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -5012,7 +5289,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .sfx-toggle[aria-pressed="false"] .sfx-icon-off { display: block; color: var(--color-red-600); }
 
 @media (max-width: 640px) {
-  .top-toggles { top: var(--space-2); right: var(--space-2); gap: 6px; }
+  .top-toggles { gap: 6px; }
   .pinyin-toggle { padding: 5px 8px 5px 10px; font-size: 0.78rem; }
 }
 
@@ -5776,7 +6053,7 @@ body.pinyin-hidden .py-inline {
   border-radius: var(--radius-lg);
   background:
     radial-gradient(120% 140% at 0% 0%, rgba(236, 179, 101, 0.35), transparent 55%),
-    linear-gradient(135deg, #7d2616, #a83e28);
+    linear-gradient(135deg, #7d2616, #a82d24);
   color: #fff6e5;
   font: inherit;
   text-align: left;
@@ -5890,7 +6167,7 @@ body.pinyin-hidden .py-inline {
   font-size: 1.05rem;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 8px 18px rgba(200, 75, 49, 0.3);
+  box-shadow: 0 8px 18px rgba(200, 55, 45, 0.3);
 }
 .qr-start:hover { background: var(--color-red-700); }
 .qr-ghost { min-height: 52px; padding: 0 24px; border: 1.5px solid var(--color-gray-200); border-radius: var(--radius-pill); background: var(--color-white); color: var(--color-gray-800); font: inherit; font-weight: 700; cursor: pointer; }
@@ -6029,7 +6306,7 @@ body.pinyin-hidden .py-inline {
 @keyframes qrLegB { 0%, 100% { transform: rotate(-18deg); } 50% { transform: rotate(18deg); } }
 @keyframes qrHit { 0%, 100% { transform: none; } 30% { transform: translateX(6px); filter: drop-shadow(0 0 6px #e0413a); } 60% { transform: translateX(-6px); } }
 @keyframes qrShake { 0%, 100% { transform: none; } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
-@keyframes qrPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(200, 75, 49, 0.35); } 50% { box-shadow: 0 0 0 6px rgba(200, 75, 49, 0); } }
+@keyframes qrPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(200, 55, 45, 0.35); } 50% { box-shadow: 0 0 0 6px rgba(200, 55, 45, 0); } }
 @keyframes qrPop { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
 
 @media (max-width: 640px) {
@@ -6052,4 +6329,27 @@ body.pinyin-hidden .py-inline {
   .qr-track, .qr-obstacle, .qr-progress i { transition: none; }
   .qr-runner .qr-leg-a, .qr-runner .qr-leg-b, .qr-runner.is-jump, .qr-runner.is-trip,
   .qr-obstacle.is-hit, .qr-opt.is-bad, .qr-timer.is-low, .qr-zone-banner, .qr-result-mascot { animation: none; }
+}
+
+/* ---------- Thiet ke moi: tinh chinh tren dien thoai ---------- */
+.pinyin-toggle { white-space: nowrap; min-height: 36px; }
+
+@media (max-width: 420px) {
+  .top-toggles .tt-label { display: none; }
+  .pinyin-toggle { padding: 6px 8px; }
+}
+
+@media (max-width: 899px) {
+  /* Nut 'Hoc ngay' trung voi nut Hoc tiep ngay phia tren -> an cho gon */
+  .dash-streak-card #ctaStreak { display: none; }
+  .dash-streak-card { padding: var(--space-4); }
+  .dash-streak-main { margin-bottom: var(--space-3); }
+  .dash-streak-badge { margin-bottom: 0; }
+}
+
+@media (max-width: 640px) {
+  .dash-auth-banner-actions .btn { padding: 0 var(--space-4); white-space: nowrap; }
+  .lesson-card-link { padding: var(--space-4); gap: var(--space-3); align-items: flex-start; }
+  .lesson-card-arrow { display: none; }
+  .lesson-card-progress { align-self: center; }
 }

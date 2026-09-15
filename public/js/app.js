@@ -387,6 +387,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     renderStreak();
   }
@@ -408,6 +409,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#levelDetailTitle').textContent = PRACTICE_LEVEL_LABEL[id] || id.toUpperCase();
     renderLessonList(id);
@@ -564,6 +566,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#lessonHub').dataset.levelId = levelId;
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
@@ -573,6 +576,12 @@
     var pct = tabIds.length ? Math.round((doneCount / tabIds.length) * 100) : 0;
     $('#hubProgressFill').style.width = pct + '%';
     $('#hubProgressPct').textContent = pct + '%';
+
+    var quickWrap = $('#hubQuickWrap');
+    quickWrap.innerHTML = qrEnabled(lesson) ? qrHubEntryHtml(lesson) : '';
+    if (qrEnabled(lesson)) {
+      $('#qrEntry').addEventListener('click', function () { showQuickReviewPractice(levelId, lesson); });
+    }
 
     var grid = $('#hubTileGrid');
     grid.innerHTML = '';
@@ -689,6 +698,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#wpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -806,6 +816,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#wbTabs').innerHTML = '';
@@ -1473,6 +1484,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#vpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#vpSubtitle').textContent = 'Đang tải...';
@@ -2062,6 +2074,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = false;
     $('#rvTitle').textContent = title;
     $('#rvSubtitle').textContent = subtitle || 'Trộn từ vựng nhiều bài để kiểm tra lại toàn diện.';
@@ -2103,6 +2116,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#fcContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
     $('#fcSubtitle').textContent = 'Đang tải...';
@@ -7782,6 +7796,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#grSubtitle').textContent = 'Đang tải...';
     $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -8105,6 +8120,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#dpSubtitle').textContent = 'Đang tải...';
     $('#dpTabs').innerHTML = '';
@@ -8305,6 +8321,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#lpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -8677,6 +8694,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#spTabs').innerHTML = '';
     $('#spContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
@@ -9319,6 +9337,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#gpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -9704,6 +9723,7 @@
     $('#translatePractice').hidden = false;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
     $('#tpContent').innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
 
@@ -9841,6 +9861,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = false;
     $('#leaderboard').hidden = true;
+    $('#quickReviewPractice').hidden = true;
     $('#reviewPractice').hidden = true;
 
     renderResultsContent(lesson);
@@ -9950,6 +9971,7 @@
     $('#translatePractice').hidden = true;
     $('#resultsPractice').hidden = true;
     $('#leaderboard').hidden = false;
+    $('#quickReviewPractice').hidden = true;
     bindLeaderboardTabs();
     renderLeaderboardTab();
     $('#leaderboard').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -10341,6 +10363,628 @@
     });
   }
 
+  /* ---------------- On tap nhanh 10 phut: "Vuot Van Ly Truong Thanh" ----------------
+     Moi bai co 1 thu thach on tap tong hop: 20 chuong ngai vat chia 4 ai (Tu vung,
+     Ngu phap, Hoi thoai & Nghe, Dich cau), 5 mang, 10 phut dem nguoc, combo cong diem.
+     Cau hoi tu sinh tu chinh du lieu bai hoc (vocabData, fillData, errorFixData,
+     sortData, dialogData, listenData, translateData...), chon ngau nhien theo NGAY nen
+     moi ngay mot bo de moi; lam lai trong ngay thi giu nguyen bo de. */
+  // Moi bai HSK1, HSK2 (khong tien to), HSK3, HSK4 — khong ap dung cho HSK1 3.0 (hsk1v3-)
+  var QR_LESSON_RE = /\/lessons\/(hsk1-|hsk3-|hsk4-)?bai-\d+\.html$/;
+  var QR_STORE_KEY = 'hyv_quick_review';
+  var QR_DURATION = 600;
+  var QR_HEARTS = 5;
+  var QR_STEP = 132;
+  var qrState = null;
+  var qrTimer = null;
+
+  var QR_ZONES = [
+    { key: 'vocab', name: 'Ải Từ vựng', short: 'Từ vựng', icon: '📚' },
+    { key: 'grammar', name: 'Ải Ngữ pháp', short: 'Ngữ pháp', icon: '🧩' },
+    { key: 'dialog', name: 'Ải Hội thoại & Nghe', short: 'Hội thoại & Nghe', icon: '🎧' },
+    { key: 'translate', name: 'Ải Dịch câu', short: 'Dịch câu', icon: '🔄' }
+  ];
+
+  function qrEnabled(lesson) {
+    return !!(lesson && QR_LESSON_RE.test(lesson.fullPageUrl || ''));
+  }
+
+  function qrEsc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  // Bo so ngau nhien co "hat giong" -> cung ngay, cung bai thi cung bo de
+  function qrRng(seedText) {
+    var h = 2166136261;
+    for (var i = 0; i < seedText.length; i++) { h ^= seedText.charCodeAt(i); h = Math.imul(h, 16777619); }
+    var a = h >>> 0;
+    return function () {
+      a = (a + 0x6D2B79F5) >>> 0;
+      var t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function qrShuffle(arr, rnd) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(rnd() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  function qrUniq(arr) {
+    var seen = {};
+    return arr.filter(function (x) { if (!x || seen[x]) return false; seen[x] = true; return true; });
+  }
+  // 1 dap an dung + toi da 3 dap an nhieu (khong trung), tron thu tu
+  function qrOptions(correct, pool, rnd) {
+    var others = qrShuffle(qrUniq(pool).filter(function (x) { return x !== correct; }), rnd).slice(0, 3);
+    var opts = qrShuffle([correct].concat(others), rnd);
+    return { opts: opts, ans: opts.indexOf(correct) };
+  }
+  function qrSentence(line) {
+    return (line.pre || '') + (line.blank || '') + (line.post || '');
+  }
+
+  function qrBuildQuestions(data, rnd) {
+    var zones = [[], [], [], []];
+    var vocab = (data.vocabData || []).filter(function (v) { return v.zh && v.vn; });
+    var vocabZh = vocab.map(function (v) { return v.zh; });
+    var vocabVn = vocab.map(function (v) { return v.vn; });
+
+    // Ai 1 — Tu vung: 3 Han -> nghia, 2 nghia -> Han, 1 nghe -> chon tu
+    var words = qrShuffle(vocab, rnd);
+    words.slice(0, 3).forEach(function (v) {
+      var o = qrOptions(v.vn, vocabVn, rnd);
+      zones[0].push({ type: 'mc', kind: 'Chữ Hán → Nghĩa', prompt: 'Từ này nghĩa là gì?', big: v.zh, bigPy: v.py, opts: o.opts, ans: o.ans, optZh: false, explain: v.zh + ' (' + v.py + '): ' + v.vn });
+    });
+    words.slice(3, 5).forEach(function (v) {
+      var o = qrOptions(v.zh, vocabZh, rnd);
+      zones[0].push({ type: 'mc', kind: 'Nghĩa → Chữ Hán', prompt: 'Chọn chữ Hán đúng với nghĩa:', bigVn: v.vn, opts: o.opts, ans: o.ans, optZh: true, explain: v.zh + ' (' + v.py + '): ' + v.vn });
+    });
+    if (words[5]) {
+      var lw = words[5];
+      var lo = qrOptions(lw.zh, vocabZh, rnd);
+      zones[0].push({ type: 'mc', kind: 'Nghe → Chọn từ', prompt: 'Nghe và chọn từ bạn nghe được:', speak: lw.zh, opts: lo.opts, ans: lo.ans, optZh: true, explain: lw.zh + ' (' + lw.py + '): ' + lw.vn });
+    }
+
+    // Ai 2 — Ngu phap: 2 dien tu, 2 sua cau sai, 1 sap xep cau
+    var fills = qrShuffle(data.fillData || [], rnd);
+    var fillPool = (data.fillData || []).map(function (f) { return f.ans; }).concat(vocabZh);
+    fills.slice(0, 2).forEach(function (f) {
+      var o = qrOptions(f.ans, fillPool, rnd);
+      zones[1].push({ type: 'mc', kind: 'Điền từ', prompt: 'Chọn từ điền vào chỗ trống' + (f.hint ? ' <span class="qr-hint">' + qrEsc(f.hint) + '</span>' : '') + ':', sentence: { pre: f.pre, post: f.post }, opts: o.opts, ans: o.ans, optZh: true, explain: f.exp || '' });
+    });
+    qrShuffle(data.errorFixData || [], rnd).slice(0, 2).forEach(function (e) {
+      var correctText = e.opts[e.ans];
+      var o = qrOptions(correctText, e.opts, rnd);
+      zones[1].push({ type: 'mc', kind: 'Sửa câu sai', prompt: 'Câu dưới đây bị sai. Chọn cách viết đúng:', wrong: e.wrong, opts: o.opts, ans: o.ans, optZh: true, explain: e.exp || '' });
+    });
+    // Bai khong co "sua cau sai" (vd. HSK1): bu bang cau trac nghiem cua bai
+    var mcs = qrShuffle((data.mcData || []).filter(function (m) {
+      return m && m.q && Array.isArray(m.opts) && m.opts.length > 1 && m.opts[m.ans] != null;
+    }), rnd);
+    function qrMcQuestion(m) {
+      var o = qrOptions(m.opts[m.ans], m.opts, rnd);
+      return { type: 'mc', kind: 'Trắc nghiệm', prompt: qrEsc(m.q), opts: o.opts, ans: o.ans, optZh: /[一-鿿]/.test(m.opts.join('')), explain: m.exp || '' };
+    }
+    while (zones[1].length < 4 && mcs.length) zones[1].push(qrMcQuestion(mcs.shift()));
+    var sorts = qrShuffle(data.sortData || [], rnd);
+    if (sorts[0]) zones[1].push({ type: 'sort', kind: 'Sắp xếp câu', prompt: 'Chạm vào các từ theo đúng thứ tự để tạo thành câu:', words: sorts[0].words, answer: sorts[0].ans });
+
+    // Ai 3 — Hoi thoai & Nghe: 2 chon cau dap, 1 doc hieu, 2 nghe cau
+    var scenes = (data.dialogData || []).filter(function (s) { return s.lines && s.lines.length > 1; });
+    var allLines = [];
+    scenes.forEach(function (s) { s.lines.forEach(function (l) { if (l.zh) allLines.push(l.zh); }); });
+    var turnPairs = [];
+    scenes.forEach(function (s) {
+      for (var i = 1; i < s.lines.length; i++) {
+        if (s.lines[i].sp !== s.lines[i - 1].sp && s.lines[i].zh && s.lines[i - 1].zh) turnPairs.push({ scene: s, prev: s.lines[i - 1], next: s.lines[i] });
+      }
+    });
+    qrShuffle(turnPairs, rnd).slice(0, 2).forEach(function (p) {
+      // Dap an nhieu chi lay tu doan hoi thoai KHAC va bo cau qua ngan hoac long nhau
+      // (vd. "好啊。" voi "好啊，什么时候去买？"), tranh co hai cau deu hop ly.
+      var pool = [];
+      scenes.forEach(function (s) {
+        if (s === p.scene) return;
+        s.lines.forEach(function (l) {
+          var z = l.zh || '';
+          if (z.replace(/[，。？！、,.?!\s]/g, '').length < 4) return;
+          if (z.indexOf(p.next.zh.slice(0, 2)) === 0 || p.next.zh.indexOf(z) !== -1 || z.indexOf(p.next.zh) !== -1) return;
+          pool.push(z);
+        });
+      });
+      var o = qrOptions(p.next.zh, pool, rnd);
+      zones[2].push({ type: 'mc', kind: 'Chọn câu đáp', prompt: 'Trong tình huống <b>' + qrEsc(p.scene.scene) + '</b>, người kia nói:', quote: p.prev, promptAfter: 'Câu đáp nào hợp lý nhất?', opts: o.opts, ans: o.ans, optZh: true, explain: p.next.zh + ' — ' + (p.next.vn || '') });
+    });
+    var quizScenes = qrShuffle(scenes.filter(function (s) { return s.preQuiz && s.preQuiz.length; }), rnd);
+    if (quizScenes[0]) {
+      var sc = quizScenes[0];
+      var pq = sc.preQuiz[Math.floor(rnd() * sc.preQuiz.length)];
+      var pqCorrect = pq.opts[pq.ans];
+      var po = qrOptions(pqCorrect, pq.opts, rnd);
+      zones[2].push({ type: 'mc', kind: 'Đọc hiểu hội thoại', prompt: 'Đọc đoạn hội thoại rồi trả lời:', transcript: sc.lines.slice(0, 6), question: pq.q, opts: po.opts, ans: po.ans, optZh: true, explain: '' });
+    }
+    var dict = (data.listenData && data.listenData.dictation) || [];
+    var dictSentences = [];
+    dict.forEach(function (d) { (d.lines || []).forEach(function (l) { dictSentences.push({ zh: qrSentence(l), vn: l.vn, py: l.py }); }); });
+    if (!dictSentences.length) {
+      // Bai khong co phan nghe chep (vd. HSK1): nghe cau lay tu hoi thoai va bai dich
+      var seen = {};
+      scenes.forEach(function (s) { s.lines.forEach(function (l) { dictSentences.push({ zh: l.zh, vn: l.vn, py: l.py }); }); });
+      (data.translateData || []).concat(data.translateDataRev || []).forEach(function (t) { dictSentences.push({ zh: t.zh, vn: t.vi, py: t.py }); });
+      dictSentences = dictSentences.filter(function (d) {
+        var key = (d.zh || '').replace(/[，。？！、,.?!\s]/g, '');
+        if (key.length < 2 || seen[key]) return false;
+        seen[key] = true;
+        return true;
+      });
+    }
+    var dictPool = dictSentences.map(function (d) { return d.zh; });
+    var listenCount = Math.max(2, 5 - zones[2].length);
+    qrShuffle(dictSentences, rnd).slice(0, listenCount).forEach(function (d) {
+      // Bo cau long nhau (vd. "今天几号？" voi "请问，今天几号？") de nghe khong bi nham
+      var core = function (z) { return (z || '').replace(/[，。？！、,.?!—\s]/g, ''); };
+      var dc = core(d.zh);
+      var o = qrOptions(d.zh, dictPool.filter(function (z) {
+        var zc = core(z);
+        return zc === dc || (zc.indexOf(dc) === -1 && dc.indexOf(zc) === -1);
+      }), rnd);
+      zones[2].push({ type: 'mc', kind: 'Nghe câu', prompt: 'Nghe và chọn câu bạn nghe được:', speak: d.zh, opts: o.opts, ans: o.ans, optZh: true, explain: d.zh + ' — ' + (d.vn || '') });
+    });
+
+    // Ai 4 — Dich cau: 2 Viet -> Trung, 1 Trung -> Viet, 1 sap xep cau (cua ai)
+    var tr = (data.translateData || []).concat(data.translateDataRev || []);
+    var trZh = tr.map(function (t) { return t.zh; });
+    var trVn = tr.map(function (t) { return t.vi; });
+    var trPick = qrShuffle(tr, rnd);
+    trPick.slice(0, 2).forEach(function (t) {
+      var o = qrOptions(t.zh, trZh, rnd);
+      zones[3].push({ type: 'mc', kind: 'Dịch Việt → Trung', prompt: 'Câu tiếng Trung nào có nghĩa là:', bigVn: t.vi, opts: o.opts, ans: o.ans, optZh: true, explain: t.zh + (t.py ? ' (' + t.py + ')' : '') });
+    });
+    if (trPick[2]) {
+      var tv = trPick[2];
+      var vo = qrOptions(tv.vi, trVn, rnd);
+      zones[3].push({ type: 'mc', kind: 'Dịch Trung → Việt', prompt: 'Câu này nghĩa là gì?', big: tv.zh, bigPy: tv.py, opts: vo.opts, ans: vo.ans, optZh: false, explain: tv.zh + ' — ' + tv.vi });
+    }
+    if (sorts[1] || sorts[0]) {
+      var boss = sorts[1] || sorts[0];
+      zones[3].push({ type: 'sort', kind: 'Thử thách cuối', prompt: 'Chạm vào các từ theo đúng thứ tự để tạo thành câu:', words: boss.words, answer: boss.ans });
+    }
+
+    var list = [];
+    zones.forEach(function (qs, zi) {
+      qs.forEach(function (q) {
+        if (q.type === 'mc' && (!q.opts || q.opts.length < 2)) return;
+        q.zone = zi;
+        list.push(q);
+      });
+    });
+    return list;
+  }
+
+  function qrStore() { return readJSON(QR_STORE_KEY, {}); }
+  function qrLessonStats(lesson) {
+    var st = qrStore()[lesson.fullPageUrl] || { days: [], best: 0 };
+    var today = dateKey(new Date());
+    var set = {};
+    (st.days || []).forEach(function (d) { set[d] = true; });
+    var streak = 0;
+    var cur = new Date();
+    if (!set[today]) cur.setDate(cur.getDate() - 1);
+    while (set[dateKey(cur)]) { streak++; cur.setDate(cur.getDate() - 1); }
+    return { doneToday: !!set[today], streak: streak, best: st.best || 0 };
+  }
+  function qrSaveResult(lesson, res) {
+    var all = qrStore();
+    var st = all[lesson.fullPageUrl] || { days: [], best: 0 };
+    var today = dateKey(new Date());
+    // Chi tinh "hom nay da on" (giu chuoi ngay) khi ve dich hoac tra loi duoc it nhat nua so cau
+    var counts = res.reason === 'done' || res.answered * 2 >= res.total;
+    if (counts && (st.days || []).indexOf(today) === -1) st.days = (st.days || []).concat([today]).slice(-60);
+    var isRecord = res.score > (st.best || 0);
+    st.best = Math.max(st.best || 0, res.score);
+    all[lesson.fullPageUrl] = st;
+    writeJSON(QR_STORE_KEY, all);
+    // Giu ket qua tot nhat cho man "Ket qua cuoi bai" (lan choi te hon khong ghi de)
+    var prev = getLessonScores(lesson).quick;
+    if (!prev || res.correct >= (prev.correct || 0)) {
+      recordLessonScore(lesson, 'quick', { correct: res.correct, total: res.total, score: res.score, stars: res.stars, day: today });
+    }
+    return isRecord;
+  }
+
+  var QR_MASCOT = '<svg viewBox="0 0 64 70" aria-hidden="true">' +
+    '<rect x="27" y="3" width="10" height="6" rx="2" fill="#b7791f"/>' +
+    '<ellipse cx="32" cy="33" rx="22" ry="21" fill="#d9533a"/>' +
+    '<ellipse cx="25" cy="22" rx="9" ry="6" fill="#ef7a5f" opacity=".55"/>' +
+    '<path d="M32 13v40M21 15c-5 10-5 26 0 36M43 15c5 10 5 26 0 36" stroke="#f6c979" stroke-opacity=".5" stroke-width="1.4" fill="none"/>' +
+    '<rect x="17" y="10" width="30" height="5" rx="2.5" fill="#ecb365"/><rect x="17" y="51" width="30" height="5" rx="2.5" fill="#ecb365"/>' +
+    '<ellipse cx="24.5" cy="32" rx="3.2" ry="3.8" fill="#2b2420"/><circle cx="25.6" cy="30.6" r="1.1" fill="#fff"/>' +
+    '<ellipse cx="39.5" cy="32" rx="3.2" ry="3.8" fill="#2b2420"/><circle cx="40.6" cy="30.6" r="1.1" fill="#fff"/>' +
+    '<ellipse cx="19.5" cy="38.5" rx="3.2" ry="2" fill="#f7a08b"/><ellipse cx="44.5" cy="38.5" rx="3.2" ry="2" fill="#f7a08b"/>' +
+    '<path d="M28 38.5q4 4 8 0" stroke="#2b2420" stroke-width="2" stroke-linecap="round" fill="none"/>' +
+    '<g class="qr-legs"><path class="qr-leg-a" d="M26 56l-3 11" stroke="#7d2616" stroke-width="3" stroke-linecap="round"/><path class="qr-leg-b" d="M38 56l3 11" stroke="#7d2616" stroke-width="3" stroke-linecap="round"/></g>' +
+    '</svg>';
+
+  var QR_OBSTACLES = [
+    // hang rao go
+    '<svg viewBox="0 0 64 48" aria-hidden="true"><rect x="9" y="8" width="7" height="38" rx="2" fill="#8a5a12"/><rect x="48" y="8" width="7" height="38" rx="2" fill="#8a5a12"/><rect x="4" y="14" width="56" height="8" rx="3" fill="#c98a2b"/><rect x="4" y="28" width="56" height="8" rx="3" fill="#c98a2b"/></svg>',
+    // tang da
+    '<svg viewBox="0 0 64 48" aria-hidden="true"><ellipse cx="32" cy="34" rx="27" ry="14" fill="#8d8378"/><ellipse cx="25" cy="28" rx="12" ry="6" fill="#a59c91"/><path d="M40 24l6 4" stroke="#6f665c" stroke-width="2" stroke-linecap="round"/></svg>',
+    // trong do
+    '<svg viewBox="0 0 64 48" aria-hidden="true"><rect x="14" y="10" width="36" height="36" rx="9" fill="#a83e28"/><rect x="14" y="16" width="36" height="4" fill="#ecb365"/><rect x="14" y="36" width="36" height="4" fill="#ecb365"/><circle cx="32" cy="28" r="5" fill="#ecb365"/></svg>',
+    // lo lua
+    '<svg viewBox="0 0 64 48" aria-hidden="true"><path d="M14 30h36l-6 16H20z" fill="#5b4a3a"/><path d="M32 4c6 8 12 12 10 22H22c-2-8 4-12 6-16 1 4 3 5 4 6 0-4-1-8 0-12z" fill="#f08a24"/><path d="M32 14c3 5 6 7 5 12h-10c-1-4 2-7 5-12z" fill="#ffd166"/></svg>'
+  ];
+  var QR_TOWER = '<svg viewBox="0 0 80 96" aria-hidden="true"><rect x="10" y="30" width="60" height="66" fill="#c89a6d"/>' +
+    '<rect x="6" y="20" width="12" height="14" fill="#b8875a"/><rect x="26" y="20" width="12" height="14" fill="#b8875a"/><rect x="46" y="20" width="12" height="14" fill="#b8875a"/><rect x="62" y="20" width="12" height="14" fill="#b8875a"/>' +
+    '<rect x="6" y="30" width="68" height="6" fill="#a8774d"/><path d="M30 96V70a10 10 0 0 1 20 0v26z" fill="#5b3b24"/><rect x="18" y="46" width="10" height="12" rx="2" fill="#5b3b24"/><rect x="52" y="46" width="10" height="12" rx="2" fill="#5b3b24"/>' +
+    '<path d="M40 20V4" stroke="#7d2616" stroke-width="2"/><path d="M40 4h14l-4 5 4 5H40z" fill="#c84b31"/></svg>';
+
+  function showQuickReviewPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $all('#main > .dash-section').forEach(function (sec) { sec.hidden = sec.id !== 'quickReviewPractice'; });
+    qrStop();
+    var wrap = $('#qrContent');
+    wrap.innerHTML = '<p style="color:var(--color-gray-500);">Đang chuẩn bị đường đua…</p>';
+    loadLessonRawData(lesson).then(function (data) {
+      var today = dateKey(new Date());
+      var qs = qrBuildQuestions(data, qrRng(today + '|' + lesson.fullPageUrl));
+      qrRenderIntro(lesson, qs);
+    }).catch(function () {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung bài học, thử lại sau.</p>';
+    });
+    $('#quickReviewPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function qrSceneHtml(qs, pos) {
+    var width = (qs.length + 3) * QR_STEP;
+    var html = '<div class="qr-scene" aria-hidden="true">' +
+      '<div class="qr-sun"></div>' +
+      '<svg class="qr-mountains" viewBox="0 0 800 120" preserveAspectRatio="none"><path d="M0 120L0 70 70 30 140 62 220 18 300 58 380 26 470 66 540 34 620 60 700 22 800 56V120z" fill="#e9b98e" opacity=".55"/><path d="M0 120L0 90 90 60 170 84 260 52 350 86 430 58 520 88 610 62 700 86 800 70V120z" fill="#d9a077" opacity=".7"/></svg>' +
+      '<div class="qr-track" style="width:' + width + 'px">' +
+      '<div class="qr-wall"></div>';
+    var lastZone = -1;
+    qs.forEach(function (q, i) {
+      var x = (i + 1) * QR_STEP;
+      if (q.zone !== lastZone) {
+        html += '<div class="qr-tower" style="left:' + (x - 58) + 'px">' + QR_TOWER + '<span>' + QR_ZONES[q.zone].icon + '</span></div>';
+        lastZone = q.zone;
+      }
+      html += '<div class="qr-obstacle z' + q.zone + '" data-obs="' + i + '" style="left:' + (x + 18) + 'px">' + QR_OBSTACLES[q.zone] + '</div>';
+    });
+    html += '<div class="qr-finish" style="left:' + ((qs.length + 1) * QR_STEP + 20) + 'px">🏁</div>' +
+      '</div>' +
+      '<div class="qr-runner" id="qrRunner">' + QR_MASCOT + '</div>' +
+      '</div>';
+    return html;
+  }
+
+  function qrPlaceTrack(pos, animate) {
+    var track = $('#quickReviewPractice .qr-track');
+    if (!track) return;
+    track.style.transition = animate ? '' : 'none';
+    track.style.transform = 'translateX(' + (-(pos * QR_STEP)) + 'px)';
+  }
+
+  function qrRenderIntro(lesson, qs) {
+    var stats = qrLessonStats(lesson);
+    var counts = [0, 0, 0, 0];
+    qs.forEach(function (q) { counts[q.zone]++; });
+    var wrap = $('#qrContent');
+    wrap.innerHTML =
+      '<div class="qr-intro">' +
+        qrSceneHtml(qs, 0) +
+        '<div class="qr-intro-body">' +
+          '<p class="qr-eyebrow">Ôn tập nhanh 10 phút · Bài ' + qrEsc(lesson.number) + '</p>' +
+          '<h2 class="qr-title">Vượt Vạn Lý Trường Thành</h2>' +
+          '<p class="qr-lead">Cùng Tiểu Hán vượt ' + qs.length + ' chướng ngại vật. Mỗi chướng ngại là một câu hỏi ôn lại toàn bộ bài: từ vựng, ngữ pháp, hội thoại, nghe và dịch câu.</p>' +
+          '<ol class="qr-zones">' + QR_ZONES.map(function (z, zi) {
+            return counts[zi] ? '<li><span class="qr-zone-icon">' + z.icon + '</span><span class="qr-zone-name">' + z.name + '</span><span class="qr-zone-count">' + counts[zi] + ' câu</span></li>' : '';
+          }).join('') + '</ol>' +
+          '<ul class="qr-rules">' +
+            '<li><b>⏱ 10 phút</b> cho cả chặng</li>' +
+            '<li><b>❤️ ' + QR_HEARTS + ' mạng</b>, sai một câu mất một mạng</li>' +
+            '<li><b>🔥 Combo</b>: đúng liên tiếp được cộng điểm</li>' +
+          '</ul>' +
+          '<div class="qr-status">' +
+            (stats.doneToday ? '<span class="qr-pill is-done">✓ Hôm nay đã ôn</span>' : '<span class="qr-pill">Hôm nay chưa ôn</span>') +
+            (stats.streak ? '<span class="qr-pill is-fire">🔥 ' + stats.streak + ' ngày liên tiếp</span>' : '') +
+            (stats.best ? '<span class="qr-pill">🏆 Kỷ lục ' + stats.best.toLocaleString('vi-VN') + ' điểm</span>' : '') +
+          '</div>' +
+          '<button type="button" class="qr-start" id="qrStart">' + (stats.doneToday ? 'Chơi lại thử thách hôm nay' : 'Bắt đầu vượt ải') + '</button>' +
+          '<p class="qr-note">Bộ câu hỏi đổi mới mỗi ngày.</p>' +
+        '</div>' +
+      '</div>';
+    qrPlaceTrack(0, false);
+    $('#qrStart').addEventListener('click', function () { qrStartGame(lesson, qs); });
+  }
+
+  function qrStop() {
+    if (qrTimer) { clearInterval(qrTimer); qrTimer = null; }
+    if (window.speechSynthesis) { try { window.speechSynthesis.cancel(); } catch (e) { /* ignore */ } }
+  }
+
+  function qrStartGame(lesson, qs) {
+    qrStop();
+    qrState = {
+      lesson: lesson, qs: qs, i: 0, hearts: QR_HEARTS, score: 0, combo: 0, bestCombo: 0,
+      correct: 0, answered: 0, wrongs: [], endAt: Date.now() + QR_DURATION * 1000, locked: false, finished: false
+    };
+    var wrap = $('#qrContent');
+    wrap.innerHTML =
+      '<div class="qr-play">' +
+        '<div class="qr-hud">' +
+          '<span class="qr-hearts" id="qrHearts" aria-label="Số mạng"></span>' +
+          '<span class="qr-zone-now" id="qrZoneNow"></span>' +
+          '<span class="qr-timer" id="qrTimer">10:00</span>' +
+          '<span class="qr-score" id="qrScore">0</span>' +
+        '</div>' +
+        qrSceneHtml(qs, 0) +
+        '<div class="qr-progress"><i id="qrProgress"></i></div>' +
+        '<div class="qr-card" id="qrCard"></div>' +
+      '</div>';
+    qrPlaceTrack(0, false);
+    qrRenderHud();
+    qrRenderQuestion();
+    qrTimer = setInterval(qrTick, 1000);
+    qrTick();
+  }
+
+  function qrTick() {
+    if (!qrState || qrState.finished) return;
+    if ($('#quickReviewPractice').hidden) { qrStop(); return; }
+    var left = Math.max(0, Math.round((qrState.endAt - Date.now()) / 1000));
+    var el = $('#qrTimer');
+    if (el) {
+      el.textContent = Math.floor(left / 60) + ':' + ('0' + (left % 60)).slice(-2);
+      el.classList.toggle('is-low', left <= 60);
+    }
+    if (left <= 0) qrFinish('time');
+  }
+
+  function qrRenderHud() {
+    var s = qrState;
+    var hearts = '';
+    for (var h = 0; h < QR_HEARTS; h++) hearts += '<span class="' + (h < s.hearts ? 'is-on' : 'is-off') + '">❤</span>';
+    $('#qrHearts').innerHTML = hearts;
+    $('#qrHearts').setAttribute('aria-label', 'Còn ' + s.hearts + ' mạng');
+    $('#qrScore').innerHTML = '⭐ ' + s.score.toLocaleString('vi-VN') + (s.combo >= 2 ? ' <em>🔥x' + s.combo + '</em>' : '');
+    var q = s.qs[Math.min(s.i, s.qs.length - 1)];
+    $('#qrZoneNow').textContent = QR_ZONES[q.zone].icon + ' ' + QR_ZONES[q.zone].short + ' · ' + Math.min(s.i + 1, s.qs.length) + '/' + s.qs.length;
+    $('#qrProgress').style.width = Math.round((s.i / s.qs.length) * 100) + '%';
+  }
+
+  function qrRenderQuestion() {
+    var s = qrState;
+    var q = s.qs[s.i];
+    s.locked = false;
+    var card = $('#qrCard');
+    var body = '<div class="qr-kind">' + QR_ZONES[q.zone].icon + ' ' + qrEsc(q.kind) + '</div>' +
+      '<p class="qr-prompt">' + q.prompt + '</p>';
+    if (q.big) body += '<div class="qr-big hanzi">' + qrEsc(q.big) + '</div>' + (q.bigPy ? '<div class="qr-big-py py-inline">' + qrEsc(q.bigPy) + '</div>' : '');
+    if (q.bigVn) body += '<div class="qr-big-vn">' + qrEsc(q.bigVn) + '</div>';
+    if (q.sentence) body += '<div class="qr-sentence hanzi">' + qrEsc(q.sentence.pre) + '<span class="qr-blank">___</span>' + qrEsc(q.sentence.post) + '</div>';
+    if (q.wrong) body += '<div class="qr-wrong-sentence hanzi">' + qrEsc(q.wrong) + '</div>';
+    if (q.quote) body += '<div class="qr-quote hanzi">“' + qrEsc(q.quote.zh) + '”' + (q.quote.py ? '<span class="py-inline">' + qrEsc(q.quote.py) + '</span>' : '') + '</div>' + (q.promptAfter ? '<p class="qr-prompt">' + qrEsc(q.promptAfter) + '</p>' : '');
+    if (q.transcript) {
+      body += '<div class="qr-transcript">' + q.transcript.map(function (l) {
+        return '<div><b>' + (l.sp === 0 ? 'A' : 'B') + ':</b> <span class="hanzi">' + qrEsc(l.zh) + '</span></div>';
+      }).join('') + '</div><p class="qr-question hanzi">' + qrEsc(q.question) + '</p>';
+    }
+    if (q.speak) body += '<button type="button" class="qr-listen" id="qrListen">🔊 Nghe lại</button>';
+
+    if (q.type === 'mc') {
+      body += '<div class="qr-opts' + (q.optZh ? ' is-zh' : '') + '">' + q.opts.map(function (o, oi) {
+        return '<button type="button" class="qr-opt" data-oi="' + oi + '"><span class="qr-opt-key">' + 'ABCD'.charAt(oi) + '</span><span class="qr-opt-text' + (q.optZh ? ' hanzi' : '') + '">' + qrEsc(o) + '</span></button>';
+      }).join('') + '</div>';
+    } else {
+      q.placed = [];
+      q.bank = qrShuffle(q.words.map(function (w, wi) { return { w: w, id: wi }; }), Math.random);
+      body += '<div class="qr-sort-answer hanzi" id="qrSortAnswer"></div><div class="qr-sort-bank" id="qrSortBank"></div>' +
+        '<button type="button" class="qr-check" id="qrSortCheck" disabled>Kiểm tra</button>';
+    }
+    body += '<div class="qr-feedback" id="qrFeedback" role="status" aria-live="polite" hidden></div>';
+    card.innerHTML = body;
+    card.classList.remove('is-correct-card', 'is-wrong-card');
+
+    if (q.speak) {
+      $('#qrListen').addEventListener('click', function () { vpSpeak(q.speak); });
+      setTimeout(function () { if (qrState && qrState.qs[qrState.i] === q) vpSpeak(q.speak); }, 350);
+    }
+    if (q.type === 'mc') {
+      $all('#qrCard .qr-opt').forEach(function (btn) {
+        btn.addEventListener('click', function () { qrAnswer(parseInt(btn.getAttribute('data-oi'), 10)); });
+      });
+    } else {
+      qrRenderSort(q);
+      $('#qrSortCheck').addEventListener('click', function () {
+        qrAnswer(q.placed.map(function (p) { return p.w; }).join(''));
+      });
+    }
+  }
+
+  function qrRenderSort(q) {
+    var ans = $('#qrSortAnswer');
+    var bank = $('#qrSortBank');
+    ans.innerHTML = q.placed.length ? q.placed.map(function (p, pi) {
+      return '<button type="button" class="qr-token is-placed" data-pi="' + pi + '">' + qrEsc(p.w) + '</button>';
+    }).join('') : '<span class="qr-sort-empty">Chạm từ bên dưới để xếp câu</span>';
+    bank.innerHTML = q.bank.map(function (b, bi) {
+      var used = q.placed.some(function (p) { return p.id === b.id; });
+      return '<button type="button" class="qr-token" data-bi="' + bi + '"' + (used ? ' disabled' : '') + '>' + qrEsc(b.w) + '</button>';
+    }).join('');
+    $all('#qrSortAnswer .qr-token').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (qrState.locked) return;
+        q.placed.splice(parseInt(btn.getAttribute('data-pi'), 10), 1);
+        qrRenderSort(q);
+      });
+    });
+    $all('#qrSortBank .qr-token').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (qrState.locked) return;
+        q.placed.push(q.bank[parseInt(btn.getAttribute('data-bi'), 10)]);
+        qrRenderSort(q);
+      });
+    });
+    $('#qrSortCheck').disabled = q.placed.length !== q.words.length;
+  }
+
+  function qrAnswer(value) {
+    var s = qrState;
+    if (!s || s.locked || s.finished) return;
+    s.locked = true;
+    var q = s.qs[s.i];
+    var ok = q.type === 'mc' ? value === q.ans : value === q.answer;
+    s.answered++;
+    var gained = 0;
+    if (ok) {
+      s.correct++;
+      s.combo++;
+      s.bestCombo = Math.max(s.bestCombo, s.combo);
+      gained = 100 + Math.min(s.combo - 1, 5) * 20;
+      s.score += gained;
+    } else {
+      s.combo = 0;
+      s.hearts--;
+      s.wrongs.push(q);
+    }
+    sfxQueue(ok ? 'correct' : 'wrong');
+
+    if (q.type === 'mc') {
+      $all('#qrCard .qr-opt').forEach(function (btn) {
+        var oi = parseInt(btn.getAttribute('data-oi'), 10);
+        btn.disabled = true;
+        if (oi === q.ans) btn.classList.add('is-right');
+        else if (oi === value) btn.classList.add('is-bad');
+      });
+    } else {
+      $all('#qrCard .qr-token').forEach(function (b) { b.disabled = true; });
+      $('#qrSortCheck').disabled = true;
+      $('#qrSortAnswer').classList.add(ok ? 'is-right' : 'is-bad');
+    }
+    $('#qrCard').classList.add(ok ? 'is-correct-card' : 'is-wrong-card');
+
+    var rightText = q.type === 'mc' ? q.opts[q.ans] : q.answer;
+    var fb = $('#qrFeedback');
+    fb.innerHTML =
+      '<div class="qr-fb-head">' + (ok ? '✅ Chính xác! <b>+' + gained + '</b>' + (s.combo >= 2 ? ' · 🔥 Combo x' + s.combo : '') : '❌ Chưa đúng, mất 1 mạng') + '</div>' +
+      (!ok ? '<div class="qr-fb-answer">Đáp án: <span class="hanzi">' + qrEsc(rightText) + '</span></div>' : '') +
+      (q.explain ? '<div class="qr-fb-explain">' + qrEsc(q.explain) + '</div>' : '') +
+      '<button type="button" class="qr-next" id="qrNext">' + (s.hearts <= 0 ? 'Xem kết quả' : (s.i + 1 >= s.qs.length ? 'Về đích 🏁' : 'Tiếp tục ➜')) + '</button>';
+    fb.hidden = false;
+    qrRenderHud();
+
+    // Tieu Han nhay qua chuong ngai (dung) hoac vap nga (sai) roi tien toi
+    var runner = $('#qrRunner');
+    var obs = $('#quickReviewPractice .qr-obstacle[data-obs="' + s.i + '"]');
+    if (runner) {
+      runner.classList.remove('is-jump', 'is-trip');
+      void runner.offsetWidth;
+      runner.classList.add(ok ? 'is-jump' : 'is-trip');
+    }
+    if (obs) obs.classList.add(ok ? 'is-cleared' : 'is-hit');
+    qrPlaceTrack(s.i + 1, true);
+
+    var nextBtn = $('#qrNext');
+    nextBtn.focus({ preventScroll: true });
+    nextBtn.addEventListener('click', qrNext);
+    if (ok && s.hearts > 0) {
+      var at = s.i;
+      setTimeout(function () { if (qrState === s && s.i === at && s.locked && !s.finished) qrNext(); }, 1600);
+    }
+  }
+
+  function qrNext() {
+    var s = qrState;
+    if (!s || s.finished) return;
+    if (s.hearts <= 0) { qrFinish('fall'); return; }
+    s.i++;
+    if (s.i >= s.qs.length) { qrFinish('done'); return; }
+    var prevZone = s.qs[s.i - 1].zone;
+    var q = s.qs[s.i];
+    qrRenderHud();
+    if (q.zone !== prevZone) {
+      var card = $('#qrCard');
+      card.innerHTML = '<div class="qr-zone-banner"><span>' + QR_ZONES[q.zone].icon + '</span><b>Qua ' + QR_ZONES[prevZone].name + '!</b><em>Tiếp theo: ' + QR_ZONES[q.zone].name + '</em></div>';
+      setTimeout(function () { if (qrState === s && !s.finished) qrRenderQuestion(); }, 1300);
+    } else {
+      qrRenderQuestion();
+    }
+  }
+
+  function qrFinish(reason) {
+    var s = qrState;
+    if (!s || s.finished) return;
+    s.finished = true;
+    qrStop();
+    var total = s.qs.length;
+    var leftSec = Math.max(0, Math.round((s.endAt - Date.now()) / 1000));
+    var timeBonus = reason === 'done' ? leftSec * 2 : 0;
+    var heartBonus = reason === 'done' ? s.hearts * 50 : 0;
+    s.score += timeBonus + heartBonus;
+    var acc = total ? s.correct / total : 0;
+    var stars = acc >= 0.9 ? 3 : acc >= 0.7 ? 2 : acc >= 0.5 ? 1 : 0;
+    var isRecord = qrSaveResult(s.lesson, { correct: s.correct, total: total, score: s.score, stars: stars, reason: reason, answered: s.answered });
+    var usedSec = QR_DURATION - leftSec;
+    var title = reason === 'done' ? (stars === 3 ? 'Chinh phục Trường Thành!' : 'Về đích rồi!') : reason === 'time' ? 'Hết giờ!' : 'Tiểu Hán bị ngã…';
+    var sub = reason === 'done' ? 'Bạn đã vượt qua tất cả ' + total + ' chướng ngại vật.' :
+      reason === 'time' ? 'Bạn đã vượt ' + s.answered + '/' + total + ' chướng ngại vật trong 10 phút.' :
+      'Hết mạng ở chướng ngại vật thứ ' + s.answered + '. Ôn lại các câu sai rồi thử lại nhé!';
+    var starHtml = '';
+    for (var k = 1; k <= 3; k++) starHtml += '<span class="' + (k <= stars ? 'is-on' : '') + '">★</span>';
+    var wrongHtml = s.wrongs.length ? '<div class="qr-review"><h3>Ôn lại câu sai</h3><ol>' + s.wrongs.map(function (q) {
+      var right = q.type === 'mc' ? q.opts[q.ans] : q.answer;
+      var ask = q.big || q.bigVn || q.wrong || (q.sentence ? q.sentence.pre + '___' + q.sentence.post : '') || (q.quote ? q.quote.zh : '') || q.question || q.speak || q.prompt;
+      return '<li><span class="qr-review-kind">' + qrEsc(q.kind) + '</span><span class="hanzi">' + qrEsc(String(ask).replace(/<[^>]+>/g, '')) + '</span><span class="qr-review-ans">→ <b class="hanzi">' + qrEsc(right) + '</b></span>' + (q.explain ? '<small>' + qrEsc(q.explain) + '</small>' : '') + '</li>';
+    }).join('') + '</ol></div>' : '<p class="qr-perfect">Không sai câu nào. Tuyệt vời!</p>';
+
+    $('#qrContent').innerHTML =
+      '<div class="qr-result">' +
+        '<div class="qr-result-hero">' +
+          '<div class="qr-result-mascot">' + QR_MASCOT + '</div>' +
+          '<div class="qr-stars" aria-label="' + stars + ' trên 3 sao">' + starHtml + '</div>' +
+          '<h2>' + title + '</h2><p>' + sub + '</p>' +
+          (isRecord ? '<span class="qr-pill is-fire">🏆 Kỷ lục mới!</span>' : '') +
+        '</div>' +
+        '<div class="qr-stats">' +
+          '<div><small>Điểm</small><b>' + s.score.toLocaleString('vi-VN') + '</b></div>' +
+          '<div><small>Đúng</small><b>' + s.correct + '/' + total + '</b></div>' +
+          '<div><small>Combo dài nhất</small><b>' + s.bestCombo + '</b></div>' +
+          '<div><small>Thời gian</small><b>' + Math.floor(usedSec / 60) + ':' + ('0' + (usedSec % 60)).slice(-2) + '</b></div>' +
+        '</div>' +
+        (timeBonus || heartBonus ? '<p class="qr-bonus">Thưởng về đích: +' + heartBonus + ' (mạng còn lại) · +' + timeBonus + ' (thời gian còn lại)</p>' : '') +
+        wrongHtml +
+        '<div class="qr-result-actions">' +
+          '<button type="button" class="qr-start" id="qrRetry">Chơi lại</button>' +
+          '<button type="button" class="qr-ghost" id="qrToLesson">Về bài học</button>' +
+        '</div>' +
+      '</div>';
+    if (stars >= 2) sfxQueue('correct');
+    $('#qrRetry').addEventListener('click', function () { qrStartGame(s.lesson, s.qs); });
+    $('#qrToLesson').addEventListener('click', function () { showLessonHub(currentHubLevelId, s.lesson); });
+    $('#quickReviewPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // O noi bat tren trang bai hoc de vao On tap nhanh
+  function qrHubEntryHtml(lesson) {
+    var st = qrLessonStats(lesson);
+    return '<button type="button" class="qr-entry" id="qrEntry">' +
+      '<span class="qr-entry-art" aria-hidden="true">' + QR_MASCOT + '</span>' +
+      '<span class="qr-entry-text"><b>⚡ Ôn tập nhanh 10 phút</b>' +
+      '<span>Vượt Vạn Lý Trường Thành · ôn toàn bộ bài trong một lượt chơi</span></span>' +
+      '<span class="qr-entry-status">' + (st.doneToday ? '✓ Hôm nay đã ôn' : 'Hôm nay chưa ôn') + (st.streak ? '<em>🔥 ' + st.streak + ' ngày</em>' : '') + '</span>' +
+      '</button>';
+  }
+
   /* ---------------- Am thanh khi lam dung / sai (moi bai hoc, moi cap do) ----------------
      Hai nguon tin hieu, gop lai thanh mot tieng cho moi cau:
      - pgbRecord(): moi dang bai deu ghi dung/sai len thanh tien do qua ham nay (ke ca
@@ -10351,7 +10995,7 @@
      canh nut Pinyin (luu tren may). */
   var SFX_SCREENS = ['lessonHub', 'warmupPractice', 'workbookPractice', 'vocabPractice', 'flashcardPractice',
     'grammarPractice', 'dialoguePractice', 'listenPractice', 'speakPractice', 'gamePractice',
-    'translatePractice', 'resultsPractice'];
+    'translatePractice', 'resultsPractice', 'quickReviewPractice'];
   var sfxOn = true;
   var sfxCtx = null;
   var sfxPending = null;
@@ -10671,6 +11315,10 @@
     });
 
     $('#levelDetailBack').addEventListener('click', showDashboard);
+    $('#qrBack').addEventListener('click', function () {
+      qrStop();
+      if (currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+    });
     $('#lessonHubBack').addEventListener('click', function () {
       if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();

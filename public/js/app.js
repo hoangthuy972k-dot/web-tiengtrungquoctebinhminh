@@ -9,7 +9,8 @@
     auth: 'hyv_auth',
     visitorId: 'hyv_visitor_id',
     authPrompted: 'hyv_auth_prompted',
-    reviewWrongWords: 'hyv_review_wrong_words'
+    reviewWrongWords: 'hyv_review_wrong_words',
+    sfxOn: 'hyv_sfx_on'
   };
 
   // Diem that theo tung phan cua tung bai hoc, ghi lai khi hoc sinh hoan thanh
@@ -1683,6 +1684,7 @@
   function pgbRecord(id, index, isCorrect, praiseThreshold) {
     var st = pgbState[id];
     if (!st) return;
+    sfxQueue(isCorrect ? 'correct' : 'wrong');
     st.results[index] = isCorrect;
     if (isCorrect) st.streak++; else st.streak = 0;
     pgbPaint(id);
@@ -10339,6 +10341,121 @@
     });
   }
 
+  /* ---------------- Am thanh khi lam dung / sai (moi bai hoc, moi cap do) ----------------
+     Hai nguon tin hieu, gop lai thanh mot tieng cho moi cau:
+     - pgbRecord(): moi dang bai deu ghi dung/sai len thanh tien do qua ham nay (ke ca
+       hoi thoai ve lai ca khung khi tra loi);
+     - MutationObserver nghe class 'is-correct' / 'is-wrong' / 'mg-shake' cho nhung lan
+       chon sai khong duoc ghi (vd. ghep sai trong tro choi ghep tu, khoi dong).
+     Am thanh tao bang Web Audio, khong can file. Hoc sinh tat/bat bang nut "Am thanh"
+     canh nut Pinyin (luu tren may). */
+  var SFX_SCREENS = ['lessonHub', 'warmupPractice', 'workbookPractice', 'vocabPractice', 'flashcardPractice',
+    'grammarPractice', 'dialoguePractice', 'listenPractice', 'speakPractice', 'gamePractice',
+    'translatePractice', 'resultsPractice'];
+  var sfxOn = true;
+  var sfxCtx = null;
+  var sfxPending = null;
+  var sfxTimer = null;
+
+  // Mot lan tra loi co the vua goi pgbRecord vua to mau o dap an: gop lai trong 25ms
+  // de chi phat mot tieng; co tin hieu "sai" thi uu tien am "sai".
+  function sfxQueue(kind) {
+    if (kind === 'wrong') sfxPending = 'wrong';
+    else if (sfxPending !== 'wrong') sfxPending = 'correct';
+    if (sfxTimer) return;
+    sfxTimer = setTimeout(function () {
+      var k = sfxPending;
+      sfxPending = null;
+      sfxTimer = null;
+      if (k && sfxActive()) sfxPlay(k);
+    }, 25);
+  }
+
+  function sfxActive() {
+    if (!currentHubLesson) return false;
+    return SFX_SCREENS.some(function (id) {
+      var el = document.getElementById(id);
+      return el && !el.hidden;
+    });
+  }
+
+  function sfxTone(freq, start, dur, type, vol, endFreq) {
+    var osc = sfxCtx.createOscillator();
+    var gain = sfxCtx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, start);
+    if (endFreq) osc.frequency.exponentialRampToValueAtTime(endFreq, start + dur);
+    gain.gain.setValueAtTime(0.0001, start);
+    gain.gain.exponentialRampToValueAtTime(vol, start + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, start + dur);
+    osc.connect(gain);
+    gain.connect(sfxCtx.destination);
+    osc.start(start);
+    osc.stop(start + dur + 0.03);
+  }
+
+  function sfxPlay(kind) {
+    if (!sfxOn) return;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    try {
+      if (!sfxCtx) sfxCtx = new AC();
+      if (sfxCtx.state === 'suspended') sfxCtx.resume();
+      var t = sfxCtx.currentTime + 0.01;
+      if (kind === 'correct') {
+        // "ting ting" sang, vui tai: La5 roi Mi6, them hoa am nhe cho tron tieng
+        sfxTone(880, t, 0.14, 'sine', 0.2);
+        sfxTone(1760, t, 0.1, 'sine', 0.05);
+        sfxTone(1318.5, t + 0.11, 0.26, 'sine', 0.22);
+        sfxTone(2637, t + 0.11, 0.18, 'sine', 0.04);
+      } else {
+        // "bup" tram, ngan, khong gay giat minh
+        sfxTone(220, t, 0.24, 'triangle', 0.24, 140);
+      }
+    } catch (e) { /* trinh duyet chan am thanh: bo qua */ }
+  }
+
+  function initAnswerSounds() {
+    var btn = $('#sfxToggle');
+    if (!btn) return;
+    sfxOn = readJSON(STORAGE_KEYS.sfxOn, true) !== false;
+
+    function applyBtn() {
+      btn.setAttribute('aria-pressed', String(sfxOn));
+      btn.setAttribute('aria-label', sfxOn ? 'Tắt âm thanh đúng/sai' : 'Bật âm thanh đúng/sai');
+    }
+    function syncVisibility() {
+      btn.hidden = !sfxActive();
+    }
+    applyBtn();
+    syncVisibility();
+
+    btn.addEventListener('click', function () {
+      sfxOn = !sfxOn;
+      writeJSON(STORAGE_KEYS.sfxOn, sfxOn);
+      applyBtn();
+      if (sfxOn) sfxPlay('correct');
+    });
+
+    var main = document.getElementById('main') || document.body;
+    new MutationObserver(function (records) {
+      var screenChanged = false;
+      records.forEach(function (r) {
+        if (r.attributeName === 'hidden') { screenChanged = true; return; }
+        var el = r.target;
+        if (!el.classList) return;
+        var old = ' ' + (r.oldValue || '') + ' ';
+        var newWrong = (el.classList.contains('is-wrong') && old.indexOf(' is-wrong ') === -1) ||
+          (el.classList.contains('mg-shake') && old.indexOf(' mg-shake ') === -1);
+        var newCorrect = el.classList.contains('is-correct') && old.indexOf(' is-correct ') === -1;
+        // Tra loi sai thuong to do o da chon VA to xanh o dung cung luc -> uu tien am "sai"
+        if (newWrong) sfxQueue('wrong');
+        else if (newCorrect) sfxQueue('correct');
+      });
+      if (screenChanged) syncVisibility();
+    }).observe(main, { subtree: true, attributes: true, attributeFilter: ['class', 'hidden'], attributeOldValue: true });
+  }
+
   function renderStatTiles() {
     var stats = computeProgressStats();
     var wrap = $('#statTiles');
@@ -10544,6 +10661,7 @@
     refreshProgressFromServer();
     initAnalytics();
     initPinyinToggle();
+    initAnswerSounds();
 
     document.addEventListener('click', function (e) {
       var section = e.target.closest('.dash-section');

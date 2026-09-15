@@ -14,11 +14,19 @@
 <body>
 <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
 
-<button type="button" class="pinyin-toggle" id="pinyinToggle" aria-pressed="true">
-  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-  Pinyin
-  <span class="pinyin-toggle-switch" aria-hidden="true"><span class="pinyin-toggle-knob"></span></span>
-</button>
+<div class="top-toggles">
+  <button type="button" class="pinyin-toggle sfx-toggle" id="sfxToggle" aria-pressed="true" aria-label="Tắt âm thanh đúng/sai" title="Âm thanh khi làm đúng/sai" hidden>
+    <svg class="icon sfx-icon-on" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+    <svg class="icon sfx-icon-off" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m22 9-6 6M16 9l6 6"/></svg>
+    Âm thanh
+    <span class="pinyin-toggle-switch" aria-hidden="true"><span class="pinyin-toggle-knob"></span></span>
+  </button>
+  <button type="button" class="pinyin-toggle" id="pinyinToggle" aria-pressed="true">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+    Pinyin
+    <span class="pinyin-toggle-switch" aria-hidden="true"><span class="pinyin-toggle-knob"></span></span>
+  </button>
+</div>
 
 <div class="app-shell">
   <aside class="app-sidebar" id="appSidebar">

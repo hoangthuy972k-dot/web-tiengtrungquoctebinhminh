@@ -10988,12 +10988,15 @@
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (data) {
         if (lbTab !== 'exam' || select.value !== v) return;
-        if (select.options.length === 1 && data.exams) {
-          data.exams.forEach(function (ex) {
+        // Bang tong hop HSK 2 tra ve danh sach de HSK 2: chen ngay sau dong "Tong hop HSK 2"
+        if (!select.dataset.filled && v === 'level:hsk2' && data.exams) {
+          select.dataset.filled = '1';
+          data.exams.forEach(function (ex, i) {
+            if (select.querySelector('option[value="' + ex.id + '"]')) return;
             var o = document.createElement('option');
             o.value = ex.id;
             o.textContent = ex.title;
-            select.appendChild(o);
+            select.insertBefore(o, select.options[1 + i] || null);
           });
         }
         renderExamLeaderboard(data, !!(auth && auth.token));

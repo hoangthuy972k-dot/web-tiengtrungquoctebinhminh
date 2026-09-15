@@ -393,3 +393,111 @@ body.py-off .ex-text .py { display: none; }
   .rk-unit { display: inline; }
   .rk-points { grid-column: 4; grid-row: 1 / span 2; }
 }
+
+/* ============================================================
+   HSK3+: nghe tung cau, o trong trong cau, sap xep cau, viet chu Han
+   ============================================================ */
+.ex-play {
+  width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--ex-line); background: #fff;
+  color: var(--ex-ink); display: inline-grid; place-items: center; flex-shrink: 0; cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.ex-play svg { width: 18px; height: 18px; }
+.ex-play:hover { border-color: var(--ex-navy); color: var(--ex-navy); }
+.ex-play.is-playing { background: var(--ex-navy); border-color: var(--ex-navy); color: #fff; }
+.ex-play:focus-visible { outline: 3px solid var(--ex-navy); outline-offset: 2px; }
+.ex-card-head .ex-play { margin-left: 2px; }
+.ex-row { grid-template-columns: minmax(44px, auto) minmax(0, 1fr) auto; }
+.ex-row-n { display: inline-flex; align-items: center; gap: 12px; }
+
+/* o trong trong cau (dien tu / viet chu Han) */
+.ex-blank {
+  display: inline-block; min-width: 3.2em; height: 1.5em; margin: 0 4px; padding: 0 6px;
+  vertical-align: middle; border-radius: 6px; background: #e3ebfb; color: var(--ex-navy);
+  font-weight: 600; text-align: center; line-height: 1.5em;
+}
+.ex-blank.filled { background: var(--ex-navy-soft); box-shadow: inset 0 -2px 0 var(--ex-navy); }
+.ex-passage .zh { font-size: 1.12rem; }
+.ex-star-q { margin-top: 6px; }
+.ex-star-q .zh { font-size: 1.15rem; }
+.ex-star.ex-star-only { margin-top: 0; }
+.ex-example-part { margin: -4px 4px 12px; }
+
+/* sap xep tu thanh cau */
+.ex-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.ex-chip {
+  min-height: 46px; padding: 0 14px; border-radius: 12px; border: 2px solid transparent; background: var(--ex-chip);
+  font-family: var(--font-zh); font-size: 1.2rem; color: var(--ex-ink); cursor: pointer;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+.ex-chip:hover { border-color: var(--ex-navy); }
+.ex-chip.is-used { opacity: 0.3; pointer-events: none; }
+.ex-chip.is-placed { background: var(--ex-navy-soft); border-color: var(--ex-navy); color: var(--ex-navy); }
+.ex-chip:disabled { cursor: default; }
+.ex-arrange-line {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 64px; margin-top: 14px;
+  padding: 9px 12px; border: 2px dashed var(--ex-line); border-radius: 14px; background: #fff;
+}
+.ex-arrange-ph { color: var(--ex-soft); font-size: 0.9rem; }
+.ex-arrange-line.ok { border-style: solid; border-color: var(--ex-green); background: var(--ex-green-soft); }
+.ex-arrange-line.bad { border-style: solid; border-color: var(--ex-red); background: var(--ex-red-soft); }
+.ex-arrange-line.skip { border-color: #e0b400; }
+.ex-arrange-clear {
+  margin-top: 10px; min-height: 36px; padding: 0 14px; border: 1px solid var(--ex-line); border-radius: 999px;
+  background: #fff; color: var(--ex-mid); font-weight: 600; cursor: pointer;
+}
+.ex-arrange-clear:hover { border-color: var(--ex-navy); color: var(--ex-navy); }
+
+/* viet chu Han theo pinyin */
+.ex-write { display: flex; align-items: center; gap: 16px 24px; flex-wrap: wrap; }
+.ex-write-sent { flex: 1 1 360px; min-width: 0; font-family: var(--font-zh); font-size: 1.25rem; line-height: 2.4; letter-spacing: 0.03em; }
+.ex-write-ruby { ruby-position: over; }
+.ex-write-ruby rt { font-family: var(--font-vn); font-size: 0.72rem; color: var(--ex-mid); letter-spacing: 0; }
+.ex-input {
+  flex: 0 0 200px; height: 46px; padding: 0 18px; border-radius: 999px; border: 2px solid transparent;
+  background: var(--ex-chip); font-family: var(--font-zh); font-size: 1.15rem; color: var(--ex-ink);
+}
+.ex-input::placeholder { font-family: var(--font-vn); font-size: 0.95rem; color: var(--ex-soft); }
+.ex-input:focus { outline: none; border-color: var(--ex-navy); background: #fff; }
+.ex-input.ok { border-color: var(--ex-green); background: var(--ex-green-soft); color: var(--ex-green); }
+.ex-input.bad { border-color: var(--ex-red); background: var(--ex-red-soft); color: var(--ex-red); }
+.ex-input.skip { border-color: #e0b400; }
+
+@media (max-width: 720px) {
+  .ex-input { flex: 1 1 100%; }
+  .ex-chip { font-size: 1.1rem; }
+}
+/* Hinh tach nen (de mau HSK3): hien tron hinh, khong cat mat nguoi */
+.ex-pics { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+.ex-pic img { object-fit: contain; padding: 6px; }
+/* Nghe phan 2 (chi co cau ★): nut ✓ ✗ nam ngang ben phai nhu de thi tren may */
+.ex-judge-text:has(.ex-star-only) { grid-template-columns: minmax(0, 1fr) auto; }
+.ex-judge-text:has(.ex-star-only) .ex-judge-btns { flex-direction: row; width: auto; }
+.ex-judge-text:has(.ex-star-only) .ex-tf { width: 128px; }
+.ex-star.ex-star-only { border-left: none; background: none; padding: 0; }
+.ex-star.ex-star-only .zh { font-size: 1.2rem; }
+.ex-star.ex-star-only .zh::before { content: '★'; color: var(--ex-ink); }
+@media (max-width: 720px) {
+  .ex-judge-text:has(.ex-star-only) { grid-template-columns: 1fr; }
+  .ex-judge-text:has(.ex-star-only) .ex-tf { flex: 1; width: auto; }
+}
+/* Phan thi: tieu de ghim trong pham vi phan do (thay cho thanh audio ghim rieng) */
+.ex-sec { position: relative; }
+.ex-sec-head { position: sticky; top: 64px; z-index: 41; flex-wrap: wrap; box-shadow: 0 6px 14px rgba(31, 26, 23, 0.06); }
+.ex-sec-title { white-space: nowrap; }
+.ex-sec-audio { flex: 1 1 260px; max-width: 420px; height: 40px; margin-left: auto; }
+.ex-sec-audio + .ex-info { margin-left: 4px; }
+.ex-audio-note { margin: -8px 6px 14px; font-size: 0.82rem; color: var(--ex-mid); }
+.ex-card { scroll-margin-top: 160px; }
+.ex-row.is-long { grid-template-columns: minmax(44px, auto) minmax(0, 1fr); }
+.ex-row.is-long .ex-letters { grid-column: 2; justify-content: flex-start; }
+@media (max-width: 960px) {
+  .ex-sec-head { top: 56px; padding: 10px 14px; }
+  .ex-sec-audio { flex-basis: 100%; max-width: none; margin-left: 0; order: 3; }
+  .ex-card { scroll-margin-top: 190px; }
+}
+/* Cau khong co chu (chon hinh): phan giai thich sau khi nop trai het chieu ngang */
+.ex-row.no-text .ex-row-text { grid-column: 1 / -1; grid-row: 2; }
+.ex-row.no-text .ex-row-text:empty { display: none; }
+.ex-pill { white-space: nowrap; }
+@media (max-width: 420px) { .ex-pill { padding-left: 10px; padding-right: 10px; font-size: 0.85rem; } }

@@ -788,7 +788,9 @@ function loadExamDef(examId) {
     const answers = [];
     (sec.parts || []).forEach((part) => {
       const qs = part.groups ? [].concat(...part.groups.map((g) => g.questions || [])) : (part.questions || []);
-      qs.forEach((q) => answers.push([String(q.n), q.answer]));
+      // Cau tu viet (sap xep cau, viet chu Han) cham theo chu, bo khoang trang + dau cau
+      const isText = part.type === 'arrange' || part.type === 'write';
+      qs.forEach((q) => answers.push([String(q.n), q.answer, isText]));
     });
     return { id: sec.id, name: sec.name, answers };
   });
@@ -817,12 +819,20 @@ function listExamDefs(level) {
 }
 
 // Cung cach cham voi phong thi (exam.js): moi phan thi chia deu diem toi da.
+function normExamText(v) {
+  return String(v == null ? '' : v).replace(/[\s，。！？、,.!?；;：:“”"'‘’（）()]/g, '');
+}
+
 function gradeExam(def, answers) {
   let correct = 0, score = 0;
   const perSection = def.maxScore / def.sections.length;
   def.sections.forEach((sec) => {
     let c = 0;
-    sec.answers.forEach(([n, ans]) => { if (Object.prototype.hasOwnProperty.call(answers, n) && answers[n] === ans) c++; });
+    sec.answers.forEach(([n, ans, isText]) => {
+      if (!Object.prototype.hasOwnProperty.call(answers, n)) return;
+      if (isText) { if (typeof answers[n] === 'string' && normExamText(answers[n]) !== '' && normExamText(answers[n]) === normExamText(ans)) c++; }
+      else if (answers[n] === ans) c++;
+    });
     correct += c;
     score += Math.round(sec.answers.length ? (c / sec.answers.length) * perSection : 0);
   });
@@ -844,7 +854,7 @@ function cleanExamAnswers(raw) {
   Object.keys(raw).slice(0, 400).forEach((k) => {
     if (!/^\d{1,3}$/.test(k)) return;
     const v = raw[k];
-    if (typeof v === 'boolean' || (typeof v === 'string' && v.length <= 4)) out[k] = v;
+    if (typeof v === 'boolean' || (typeof v === 'string' && v.length <= 60)) out[k] = v;
   });
   return out;
 }

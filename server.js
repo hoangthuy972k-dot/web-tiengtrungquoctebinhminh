@@ -790,7 +790,7 @@ function loadExamDef(examId) {
       const qs = part.groups ? [].concat(...part.groups.map((g) => g.questions || [])) : (part.questions || []);
       // Cau tu viet (sap xep cau, viet chu Han) cham theo chu, bo khoang trang + dau cau
       const isText = part.type === 'arrange' || part.type === 'write';
-      qs.forEach((q) => answers.push([String(q.n), q.answer, isText]));
+      qs.forEach((q) => answers.push([String(q.n), isText ? [q.answer].concat(q.accept || []) : q.answer, isText]));
     });
     return { id: sec.id, name: sec.name, answers };
   });
@@ -830,7 +830,10 @@ function gradeExam(def, answers) {
     let c = 0;
     sec.answers.forEach(([n, ans, isText]) => {
       if (!Object.prototype.hasOwnProperty.call(answers, n)) return;
-      if (isText) { if (typeof answers[n] === 'string' && normExamText(answers[n]) !== '' && normExamText(answers[n]) === normExamText(ans)) c++; }
+      if (isText) {
+        const got = typeof answers[n] === 'string' ? normExamText(answers[n]) : '';
+        if (got !== '' && ans.some((a) => got === normExamText(a))) c++;
+      }
       else if (answers[n] === ans) c++;
     });
     correct += c;

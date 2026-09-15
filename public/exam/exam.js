@@ -172,7 +172,11 @@
   function isRight(n, v) {
     var it = questionIndex[n];
     if (!it || v === undefined) return false;
-    if (it.text) return normText(v) !== '' && normText(v) === normText(it.q.answer);
+    if (it.text) {
+      var got = normText(v);
+      // q.accept: cac cach viet dung khac (dap an chinh thuc cho phep 2 cach xep cau)
+      return got !== '' && [it.q.answer].concat(it.q.accept || []).some(function (a) { return got === normText(a); });
+    }
     return v === it.q.answer;
   }
   function hasAnswer(n) {

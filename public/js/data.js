@@ -1260,6 +1260,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-7.html'
+      },
+      {
+        id: 'hsk2v3-l8',
+        number: 8,
+        title: 'Mặc dù em quên, nhưng anh vẫn nhớ',
+        titleHanzi: '虽然你忘了，但是我记得',
+        titlePinyin: 'Suīrán nǐ wàng le, dànshì wǒ jìde',
+        topic: 'So sánh, mua sắm & mừng sinh nhật',
+        vocabCount: 16,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-8.html'
       }
     ],
     yct: [

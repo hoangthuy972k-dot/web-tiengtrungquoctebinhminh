@@ -1236,6 +1236,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-5.html'
+      },
+      {
+        id: 'hsk2v3-l6',
+        number: 6,
+        title: 'Chúc mừng sinh nhật Tiểu Tuyết!',
+        titleHanzi: '小雪，生日快乐！',
+        titlePinyin: 'Xiǎoxuě, shēngrì kuàilè!',
+        topic: 'Sinh nhật, quà tặng & bữa tiệc gia đình',
+        vocabCount: 14,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-6.html'
       }
     ],
     yct: [

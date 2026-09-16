@@ -26,9 +26,9 @@ const APP_DATA = {
       id: 'hsk2v3',
       name: 'HSK 2 (3.0 Mới)',
       subtitle: 'Giáo trình chuẩn mới · New HSK 2',
-      description: 'Giáo trình New HSK 2 (chuẩn HSK 3.0) biên dịch chính thức, 15 bài · 200 từ mới + audio gốc.',
+      description: 'Giáo trình New HSK 2 (chuẩn HSK 3.0) biên dịch chính thức, 15 bài · 213 từ mới + audio gốc.',
       totalLessons: 15,
-      totalVocab: 200,
+      totalVocab: 213,
       color: 'teal'
     },
     {
@@ -1344,6 +1344,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-14.html'
+      },
+      {
+        id: 'hsk2v3-l15',
+        number: 15,
+        title: 'Em muốn đi Trung Quốc một lần nữa',
+        titleHanzi: '我想再去一次中国',
+        titlePinyin: 'Wǒ xiǎng zài qù yí cì Zhōngguó',
+        topic: 'Kế hoạch du lịch, sân bay & số lần làm việc gì',
+        vocabCount: 11,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-15.html'
       }
     ],
     yct: [

@@ -1296,6 +1296,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-10.html'
+      },
+      {
+        id: 'hsk2v3-l11',
+        number: 11,
+        title: 'Em thích ăn món Trung Quốc nhất',
+        titleHanzi: '我最喜欢吃中国菜',
+        titlePinyin: 'Wǒ zuì xǐhuan chī Zhōngguó cài',
+        topic: 'Sức khoẻ, đi khám bệnh & trạng thái đang duy trì',
+        vocabCount: 13,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-11.html'
       }
     ],
     yct: [

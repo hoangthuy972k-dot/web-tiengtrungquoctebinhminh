@@ -2082,7 +2082,12 @@
       var card = document.createElement('div');
       card.className = 'vp-word-card';
       var hzs = (v.hanzi || []).map(function (h, hi) { return vpHzItemHtml(h, vi, hi); }).join('');
+      // Anh minh hoa (neu bai hoc co) hien ben canh chu Han, giong the tu dien.
+      var imgHtml = v.img
+        ? '<img class="vp-word-img" src="' + v.img + '" alt="' + String(v.vn || '').replace(/"/g, '&quot;') + '" loading="lazy" decoding="async" onerror="this.remove()">'
+        : '';
       card.innerHTML =
+        imgHtml +
         '<div class="vp-word-row"><span class="vp-word-zh hanzi">' + v.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + v.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
         '<div class="' + pyCls + '">' + v.py + '</div>' +
         '<div class="vp-word-vn">' + v.vn + '</div>' +

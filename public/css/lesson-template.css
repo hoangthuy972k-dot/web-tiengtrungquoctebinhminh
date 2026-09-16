@@ -74,6 +74,11 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .vocab-card.flipped{border-color:var(--sky);background:#faf6f1;}
 .vc-icon{flex-shrink:0;width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#faf6f1,#f6efe6);position:relative;}
 .vc-emoji{font-size:1.9rem;}
+/* O chu co anh minh hoa: rong hon de nhin ro tranh, anh phu kin o. */
+.vc-icon.has-img{width:92px;height:92px;overflow:hidden;}
+.vc-img{width:100%;height:100%;object-fit:cover;border-radius:14px;}
+/* Emoji chi la lop duoi: anh che len, khi anh loi (bi remove) thi emoji hien ra. */
+.vc-icon.has-img .vc-emoji.is-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:-1;}
 .vc-num{position:absolute;top:-6px;left:-6px;width:20px;height:20px;background:var(--sky);color:white;border-radius:50%;font-size:0.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:'Be Vietnam Pro',sans-serif;}
 .vc-body{flex:1;min-width:0;}
 .vc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
@@ -131,6 +136,7 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .f-front{background:linear-gradient(135deg,#f6efe6,#f1e3d3);}
 .f-back{background:linear-gradient(135deg,#dcfce7,#bbf7d0);transform:rotateY(180deg);}
 .f-emoji{font-size:2.5rem;margin-bottom:10px;}
+.f-img{width:132px;height:132px;object-fit:contain;display:block;margin:0 auto;}
 .f-zh{font-family:'Noto Serif SC',serif;font-size:2.8rem;font-weight:900;color:var(--ink);}
 .f-py{color:var(--py);font-size:1rem;letter-spacing:1px;margin-top:6px;}
 .f-hint{color:var(--soft);font-size:0.8rem;margin-top:8px;}
@@ -321,6 +327,7 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
   .main{padding:18px 14px 110px;}.match-grid{grid-template-columns:1fr;}
   .warmup-grid{grid-template-columns:repeat(2,1fr);}
   .vc-icon{width:52px;height:52px;}.vc-emoji{font-size:1.6rem;}.vc-zh{font-size:1.3rem;}
+  .vc-icon.has-img{width:74px;height:74px;}.f-img{width:104px;height:104px;}
   .tab-nav{padding:0;}.wu-emoji{font-size:3rem;padding:14px;}
 }
 

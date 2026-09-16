@@ -182,7 +182,13 @@ function buildVocab(){
         '</div><div class="hz-tip"><b>💡 Mẹo nhớ:</b> '+h.tip+'</div>'+
         '<div class="hz-words"><span class="hz-wl">Từ đại diện:</span> '+h.w+'</div></div>';
     }).join('');
-    d.innerHTML='<div class="vc-icon"><span class="vc-num">'+v.n+'</span><span class="vc-emoji">'+v.em+'</span></div>'+
+    // O hinh cua tu: uu tien anh minh hoa (v.img), khong co thi dung emoji.
+    // Anh loi (chua ve kip) se tu an di va emoji hien lai, nen khong bao gio vo o.
+    const icon=v.img
+      ? '<img class="vc-img" src="'+v.img+'" alt="'+v.vn+'" loading="lazy" decoding="async" onerror="this.remove()">'+
+        '<span class="vc-emoji is-fallback">'+v.em+'</span>'
+      : '<span class="vc-emoji">'+v.em+'</span>';
+    d.innerHTML='<div class="vc-icon'+(v.img?' has-img':'')+'"><span class="vc-num">'+v.n+'</span>'+icon+'</div>'+
       '<div class="vc-body">'+
       '<div class="vc-head">'+
         '<div class="vc-zh">'+v.zh+'</div>'+
@@ -283,7 +289,10 @@ function filterVocab(lesson,btn){
 let fIdx=0,fOrder=vocabData.map(function(_,i){return i;}),fFlip=false;
 function updateFlash(){
   const v=vocabData[fOrder[fIdx]];
-  document.getElementById('ff-em').textContent=v.em;
+  const fem=document.getElementById('ff-em');
+  fem.innerHTML=v.img
+    ? '<img class="f-img" src="'+v.img+'" alt="'+v.vn+'" loading="lazy" decoding="async" onerror="this.replaceWith(document.createTextNode(\''+v.em+'\'))">'
+    : v.em;
   document.getElementById('ff-zh').textContent=v.zh;
   document.getElementById('ff-py').textContent=v.py;
   document.getElementById('fb-vn').textContent=v.vn;

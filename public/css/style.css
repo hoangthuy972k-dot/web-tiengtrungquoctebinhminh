@@ -1993,6 +1993,17 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   padding: var(--space-5);
 }
 
+/* Anh minh hoa cua tu — chi hien khi du lieu bai hoc co field "img". */
+.vp-word-img {
+  float: left;
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin: 0 var(--space-4) var(--space-2) 0;
+  background: var(--color-gray-100);
+}
+
 .vp-word-row {
   display: flex;
   align-items: center;

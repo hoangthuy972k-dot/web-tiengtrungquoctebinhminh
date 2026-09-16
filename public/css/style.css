@@ -3067,6 +3067,23 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   background: var(--color-gray-700);
 }
 
+/* Nguoi noi thu ba va thu tu (C, D) trong cac doan hoi thoai nhieu nguoi. */
+.dp-line.dp-sp2 .dp-avatar {
+  background: #a86a12;
+}
+
+.dp-line.dp-sp3 .dp-avatar {
+  background: #5a4bb5;
+}
+
+.dp-line.dp-sp2 .dp-bubble {
+  background: #fdf8ee;
+}
+
+.dp-line.dp-sp3 .dp-bubble {
+  background: #f4f2fb;
+}
+
 .dp-bubble {
   max-width: 72%;
   border-radius: var(--radius-lg);

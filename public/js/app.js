@@ -8802,10 +8802,12 @@
     if (state.revealed) {
       var shownSet = dpLineShown[dpIndex] || {};
       linesHtml = scene.lines.map(function (line, li) {
-        var isB = line.sp === 1;
+        // Cac doan hoi thoai co the co toi 4 nguoi noi: nguoi le (B, D) dung ben phai.
+        var spIdx = typeof line.sp === 'number' ? line.sp : 0;
+        var isB = spIdx % 2 === 1;
         var lineShown = dpHideVn && shownSet[li];
-        return '<div class="dp-line' + (isB ? ' is-b' : '') + (lineShown ? ' show-vn' : '') + '" data-li="' + li + '">' +
-          '<div class="dp-avatar">' + (isB ? 'B' : 'A') + '</div>' +
+        return '<div class="dp-line' + (isB ? ' is-b' : '') + ' dp-sp' + spIdx + (lineShown ? ' show-vn' : '') + '" data-li="' + li + '">' +
+          '<div class="dp-avatar">' + ('ABCD'.charAt(spIdx) || 'A') + '</div>' +
           '<div class="dp-bubble"><div class="dp-zh hanzi">' + line.zh + '</div><div class="dp-py">' + line.py + '</div><div class="dp-vn">' + line.vn + '</div></div>' +
           '</div>';
       }).join('');

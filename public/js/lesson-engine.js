@@ -301,7 +301,9 @@ function shuffleFlash(){fOrder.sort(function(){return Math.random()-0.5;});fIdx=
 // ══════════════════════════════════════════
 // DIALOGS
 // ══════════════════════════════════════════
-const spColors=[['sp1','bub1'],['sp2','bub2']];
+// Moi nguoi noi trong doan hoi thoai co mot mau + mot chu cai rieng (toi da 4 nguoi).
+const spColors=[['sp1','bub1'],['sp2','bub2'],['sp3','bub3'],['sp4','bub4']];
+const spLetters=['A','B','C','D'];
 function buildDialogs(){
   const w=document.getElementById('dlg-wrap');
   w.innerHTML='';
@@ -319,7 +321,7 @@ function buildDialogs(){
       const isR=l.sp===1;
       const sc=spColors[l.sp]||spColors[0];
       h+='<div class="dlg-line'+(isR?' r':'')+'">'+
-        '<div class="dlg-sp '+sc[0]+'">'+(l.sp===0?'A':'B')+'</div>'+
+        '<div class="dlg-sp '+sc[0]+'">'+(spLetters[l.sp]||'A')+'</div>'+
         '<div class="dlg-bub '+sc[1]+'">'+
         '<div class="dlg-zh">'+l.zh+'</div>'+
         '<div class="dlg-py">'+l.py+'</div>'+

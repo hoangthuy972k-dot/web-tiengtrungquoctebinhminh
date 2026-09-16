@@ -1188,6 +1188,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-1.html'
+      },
+      {
+        id: 'hsk2v3-l2',
+        number: 2,
+        title: 'Chúng ta vẫn nên gọi taxi đi Đại học Bắc Kinh nhé',
+        titleHanzi: '还是打车去北大吧',
+        titlePinyin: 'Háishi dǎchē qù Běidà ba',
+        topic: 'Hỏi đường, phương tiện & Đại học Bắc Kinh',
+        vocabCount: 17,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-2.html'
       }
     ],
     yct: [

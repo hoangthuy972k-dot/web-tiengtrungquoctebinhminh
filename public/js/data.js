@@ -23,6 +23,15 @@ const APP_DATA = {
       color: 'blue'
     },
     {
+      id: 'hsk2v3',
+      name: 'HSK 2 (3.0 Mới)',
+      subtitle: 'Giáo trình chuẩn mới · New HSK 2',
+      description: 'Giáo trình New HSK 2 (chuẩn HSK 3.0) biên dịch chính thức, 15 bài · 200 từ mới + audio gốc.',
+      totalLessons: 15,
+      totalVocab: 200,
+      color: 'teal'
+    },
+    {
       id: 'hsk2',
       name: 'HSK 2',
       subtitle: 'Sơ cấp',
@@ -1165,6 +1174,20 @@ const APP_DATA = {
         dialogueCount: 3,
         grammarCount: 1,
         fullPageUrl: '/lessons/hsk1v3-bai-15.html'
+      }
+    ],
+    hsk2v3: [
+      {
+        id: 'hsk2v3-l1',
+        number: 1,
+        title: 'Chị ấy đã mời chúng em ăn vịt quay Bắc Kinh',
+        titleHanzi: '她请我们吃了北京烤鸭',
+        titlePinyin: 'Tā qǐng wǒmen chīle Běijīng Kǎoyā',
+        topic: 'Đón bạn ở sân bay, nhờ vả & vịt quay Bắc Kinh',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-1.html'
       }
     ],
     yct: [

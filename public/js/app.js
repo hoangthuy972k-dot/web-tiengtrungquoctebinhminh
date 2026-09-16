@@ -501,12 +501,12 @@
 
   /* ---------------- Level cards ---------------- */
 
-  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'yct'];
-  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'orange', hsk2: 'gold', hsk3: 'green', hsk4: 'teal', hsk5: 'blue', yct: 'purple' };
+  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'yct'];
+  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'orange', hsk2v3: 'teal', hsk2: 'gold', hsk3: 'green', hsk4: 'teal', hsk5: 'blue', yct: 'purple' };
   // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
-  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], yct: ['YCT', '1'] };
-  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT Thiếu nhi' };
-  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2: true, hsk3: true, hsk4: true, yct: true };
+  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], yct: ['YCT', '1'] };
+  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT Thiếu nhi' };
+  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk2: true, hsk3: true, hsk4: true, yct: true };
   var practiceLevel = 'hsk2';
 
   // Dem so bai da hoc (da mo hoac co diem) trong 1 cap do
@@ -536,7 +536,7 @@
       card.setAttribute('data-level', id);
       card.setAttribute('aria-label', (LEVEL_CARD_NAME[id] || level.name) + ', ' + sub);
       card.innerHTML =
-        (id === 'hsk1v3' ? '<span class="level-tag">Mới</span>' : '') +
+        (id === 'hsk1v3' || id === 'hsk2v3' ? '<span class="level-tag">Mới</span>' : '') +
         '<span class="level-mark" aria-hidden="true"><span class="level-mark-top">' + mark[0] + '</span><span class="level-mark-num">' + mark[1] + '</span></span>' +
         '<span class="level-card-body">' +
           '<span class="level-card-title">' + (LEVEL_CARD_NAME[id] || level.name) + '</span>' +
@@ -662,7 +662,7 @@
     if (bnMenu) bnMenu.addEventListener('click', function () { $('#sidebarToggle').click(); });
   }
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT 1' };
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2v3: 'HSK 2 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT 1' };
 
   function selectLevel(id) {
     if (!READY_LEVELS[id]) {
@@ -751,7 +751,8 @@
     hsk3: rvBuildGroups(20),
     hsk1: rvBuildGroups(15),
     hsk2: rvBuildGroups(15),
-    hsk1v3: rvBuildGroups(15)
+    hsk1v3: rvBuildGroups(15),
+    hsk2v3: rvBuildGroups(15)
   };
 
   function renderLessonList(id) {
@@ -840,6 +841,7 @@
   var LEVEL_GAME_TYPES = {
     hsk1: ['match', 'fill', 'sort', 'mc'],
     hsk1v3: ['match', 'fill', 'sort', 'mc'],
+    hsk2v3: ['match', 'fill', 'sort', 'mc'],
     hsk2: ['match', 'fill', 'sort', 'errfix'],
     hsk3: ['match', 'fill', 'sort', 'errfix'],
     hsk4: ['match', 'fill', 'sort', 'errfix']
@@ -849,6 +851,7 @@
   var LEVEL_HUB_TABS = {
     hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
     hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook'],
+    hsk2v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk4: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
@@ -1792,7 +1795,7 @@
   }
 
   function audioBaseFor(lesson) {
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2-|hsk3-|hsk4-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk2-|hsk3-|hsk4-)?bai-(\d+)\.html/);
     if (!m) return null;
     return m[1] ? '/audio/' + m[1] + 'bai-' + m[2] : '/audio/bai-' + m[2];
   }
@@ -1829,7 +1832,7 @@
 
   function strokesUrlFor(lesson) {
     // HSK1: hsk1-bai-N, HSK1 3.0: hsk1v3-bai-N, HSK2: bai-N (khong tien to)
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-)?bai-(\d+)\.html/);
     if (!m) return null;
     return '/js/' + (m[1] || '') + 'bai-' + m[2] + '-strokes.js';
   }

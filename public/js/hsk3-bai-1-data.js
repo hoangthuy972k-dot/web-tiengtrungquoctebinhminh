@@ -496,33 +496,101 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小刚周末打算做什么？',
-     q_vn:'Anh Cương cuối tuần định làm gì?',
-     hint:'请小丽吃饭、看电影、喝咖啡',
-     sample:'小刚打算请小丽吃饭、看电影、喝咖啡。',
-     sample_vn:'Anh Cương định mời chị Lệ ăn cơm, xem phim, uống cà phê.',
-     note:'打算 + V = dự định làm gì.'},
-    {q_zh:'儿子的作业写完了吗？他着急吗？',
-     q_vn:'Bài tập của con trai làm xong chưa? Cậu ấy có lo lắng không?',
-     hint:'都写完了，一点儿也不着急',
-     sample:'儿子的作业都写完了，他一点儿也不着急。',
-     sample_vn:'Bài tập của con trai đã làm xong hết rồi, cậu ấy không lo lắng chút nào.',
-     note:'一点儿也不 + tính từ = hoàn toàn không.'},
-    {q_zh:'小丽觉得去南方还是去北方好？为什么？',
-     q_vn:'Chị Lệ thấy đi miền Nam hay miền Bắc tốt hơn? Vì sao?',
-     hint:'北方好一些，因为不冷也不热',
-     sample:'小刚觉得北方好一些，因为北方不冷也不热。',
-     sample_vn:'Anh Cương thấy miền Bắc tốt hơn, vì miền Bắc không lạnh cũng không nóng.',
-     note:'不冷也不热 = không lạnh cũng không nóng, cấu trúc song song phủ định.'},
-    {q_zh:'他们准备去旅游需要带什么？',
-     q_vn:'Họ chuẩn bị đi du lịch cần mang theo gì?',
-     hint:'水果、面包、茶，还有手机、电脑、地图',
-     sample:'他们需要带水果、面包、茶，还有手机、电脑、地图。',
-     sample_vn:'Họ cần mang trái cây, bánh mì, trà, còn có điện thoại, máy tính, bản đồ.',
-     note:'还有 dùng để liệt kê thêm các vật khác.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 1. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Chiều thứ sáu, bạn học nhắn hỏi kế hoạch cuối tuần của bạn.',
+      q_zh: '这个周末你打算做什么？跟谁一起去？',
+      q_py: 'Zhège zhōumò nǐ dǎsuàn zuò shénme? Gēn shéi yìqǐ qù?',
+      q_vn: 'Cuối tuần này bạn định làm gì? Đi cùng ai?',
+      grammar: { label: '打算 + động từ', any: ['打算'] },
+      need: [
+        { label: 'Nói rõ dự định cuối tuần', any: ['打算', '想', '要'] },
+        { label: 'Nói đi cùng ai', any: ['跟', '和', '一个人'] },
+        { label: 'Kể một việc cụ thể', any: ['看电影', '吃饭', '爬山', '咖啡', '游戏', '复习', '买'] }
+      ],
+      bonus: { label: 'Nói thêm việc làm sau đó bằng 然后 / 再', any: ['然后', '再'] },
+      vocab: ['周末', '打算', '跟'],
+      minLen: 18,
+      sample: '这个周末我打算跟朋友一起去看电影，看完电影再去喝咖啡。',
+      sample_py: 'Zhège zhōumò wǒ dǎsuàn gēn péngyou yìqǐ qù kàn diànyǐng, kàn wán diànyǐng zài qù hē kāfēi.',
+      sample_vn: 'Cuối tuần này tôi định cùng bạn đi xem phim, xem xong phim rồi đi uống cà phê.',
+      tip: '打算 + động từ nói về dự định: 我打算去旅游。Người cùng làm đặt sau 跟: 跟朋友一起去。'
+    },
+    {
+      situation: 'Mẹ hỏi bạn đã làm xong bài tập chưa và chiều nay học gì.',
+      q_zh: '今天的作业你写好了吗？下午你打算复习什么？',
+      q_py: 'Jīntiān de zuòyè nǐ xiě hǎo le ma? Xiàwǔ nǐ dǎsuàn fùxí shénme?',
+      q_vn: 'Bài tập hôm nay bạn viết xong chưa? Chiều nay bạn định ôn gì?',
+      grammar: { label: 'Động từ + 好 (了) — làm xong và hài lòng', any: ['写好', '做好', '准备好', '想好'] },
+      need: [
+        { label: 'Trả lời bài tập xong hay chưa', any: ['写好', '做好', '还没', '已经'] },
+        { label: 'Nói sẽ ôn môn gì', any: ['复习', '汉语', '数学', '历史', '课文', '生词'] }
+      ],
+      bonus: { label: 'Nói thêm kế hoạch buổi tối', any: ['晚上', '然后', '以后'] },
+      vocab: ['作业', '复习', '打算'],
+      minLen: 18,
+      sample: '今天的作业我已经写好了，下午我打算复习汉语，晚上再玩儿一会儿游戏。',
+      sample_py: 'Jīntiān de zuòyè wǒ yǐjīng xiě hǎo le, xiàwǔ wǒ dǎsuàn fùxí Hànyǔ, wǎnshang zài wánr yíhuìr yóuxì.',
+      sample_vn: 'Bài tập hôm nay tôi đã viết xong rồi, chiều tôi định ôn tiếng Hán, tối chơi game một lát.',
+      tip: '好 đứng sau động từ nghĩa là xong xuôi, vừa ý: 饭做好了、票买好了。'
+    },
+    {
+      situation: 'Sắp thi, bạn cùng lớp thấy bạn vẫn rất bình tĩnh nên hỏi thăm.',
+      q_zh: '快考试了，你着急吗？为什么？',
+      q_py: 'Kuài kǎoshì le, nǐ zháojí ma? Wèishénme?',
+      q_vn: 'Sắp thi rồi, bạn có sốt ruột không? Vì sao?',
+      grammar: { label: '一点儿也/都 + 不/没 …', any: ['一点儿也', '一点儿都', '一点也', '一点都'] },
+      need: [
+        { label: 'Nói có sốt ruột hay không', any: ['着急', '紧张', '担心'] },
+        { label: 'Nêu lý do', any: ['因为', '所以', '每天', '已经'] }
+      ],
+      bonus: { label: 'Nói thêm cách chuẩn bị của bạn', any: ['复习', '作业', '练习', '准备'] },
+      vocab: ['着急', '复习', '一直'],
+      minLen: 18,
+      sample: '我一点儿也不着急，因为我每天都复习，作业也一直写得很认真。',
+      sample_py: 'Wǒ yìdiǎnr yě bù zháojí, yīnwèi wǒ měitiān dōu fùxí, zuòyè yě yì zhí xiě děi hěn rènzhēn.',
+      sample_vn: 'Tôi không sốt ruột chút nào, vì ngày nào tôi cũng ôn bài, bài tập cũng luôn làm rất nghiêm túc.',
+      tip: '一点儿也不 + tính từ là phủ định hoàn toàn: 一点儿也不累、一点儿也不难。'
+    },
+    {
+      situation: 'Cả nhà đang bàn xem kỳ nghỉ nên đi miền Nam hay miền Bắc.',
+      q_zh: '放假你想去南方还是去北方？为什么？',
+      q_py: 'Fàng jiǎ nǐ xiǎng qù nánfāng háishi qù běifāng? Wèishénme?',
+      q_vn: 'Nghỉ lễ bạn muốn đi miền Nam hay miền Bắc? Vì sao?',
+      grammar: { label: '那 + câu kết luận (vậy thì…)', any: ['那'] },
+      need: [
+        { label: 'Chọn miền Nam hay miền Bắc', any: ['南方', '北方'] },
+        { label: 'Nêu lý do về thời tiết', any: ['冷', '热', '天气', '舒服'] }
+      ],
+      bonus: { label: 'Dùng 那 để chốt lại kế hoạch', any: ['那'] },
+      vocab: ['南方', '北方', '舒服'],
+      minLen: 18,
+      sample: '我想去北方，因为北方不冷也不热，很舒服。那我们就买去北方的票吧。',
+      sample_py: 'Wǒ xiǎng qù běifāng, yīnwèi běifāng bù lěng yě bú rè, hěn shūfu. Nà wǒmen jiù mǎi qù běifāng de piào ba.',
+      sample_vn: 'Tôi muốn đi miền Bắc, vì miền Bắc không lạnh cũng không nóng, rất dễ chịu. Vậy chúng ta mua vé đi miền Bắc nhé.',
+      tip: '那 đứng đầu câu để chốt lại theo ý vừa nghe: 那我们就走吧。'
+    },
+    {
+      situation: 'Trước chuyến đi chơi, bạn cùng phòng hỏi bạn chuẩn bị mang gì.',
+      q_zh: '去旅游以前，你要带什么东西？',
+      q_py: 'Qù lǚyóu yǐqián, nǐ yào dài shénme dōngxi?',
+      q_vn: 'Trước khi đi du lịch, bạn cần mang những gì?',
+      grammar: { label: '带 + đồ vật, liệt kê thêm bằng 还有', any: ['带'] },
+      need: [
+        { label: 'Kể ít nhất hai món đồ', any: ['面包', '水果', '地图', '手机', '电脑', '衣服', '钱', '药'] },
+        { label: 'Dùng động từ 带', any: ['带'] }
+      ],
+      bonus: { label: 'Liệt kê thêm bằng 还有', any: ['还有', '还要'] },
+      vocab: ['带', '面包', '地图'],
+      minLen: 18,
+      sample: '去旅游以前我要带面包、水果和茶，还有手机、地图和相机。',
+      sample_py: 'Qù lǚyóu yǐqián wǒ yào dài miànbāo, shuǐguǒ hé chá, hái yǒu shǒujī, dìtú hé xiàng jī.',
+      sample_vn: 'Trước khi đi du lịch tôi sẽ mang bánh mì, hoa quả và trà, còn có điện thoại, bản đồ và máy ảnh.',
+      tip: 'Liệt kê đồ vật dùng 、 giữa các từ, cuối cùng thêm 还有 cho ý bổ sung.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

@@ -760,28 +760,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 16 (kết hợp ngữ pháp các bài trước) để nói về kế hoạch, cơ hội và cách từ chối.',
-  questions:[
-    {q_zh:'上课前，你有预习的习惯吗？预习的时候一般会预习哪些内容？',q_vn:'Trước khi lên lớp bạn có thói quen chuẩn bị bài không? Thường chuẩn bị nội dung gì?',
-     hint:'拿……来说；首先……其次……',
-     sample:'有。拿学汉语来说，首先我会看生词，找出重点；其次读一遍课文；这样上课时就不会马虎了。',sample_vn:'Có. Lấy tiếng Trung mà nói, trước hết tôi xem từ mới, tìm trọng điểm; sau đó đọc bài khóa một lượt; như vậy lên lớp sẽ không lơ đễnh.',
-     note:'拿……来说 (bài mới) + 首先/其次 (Bài 10) + 遍 (Bài 13).'},
-    {q_zh:'你认为机会和努力，哪个对成功更重要？',q_vn:'Bạn cho rằng cơ hội và nỗ lực, cái nào quan trọng hơn với thành công?',
-     hint:'恐怕……；只有……才……',
-     sample:'我觉得努力更重要。没有努力，恐怕有机会也抓不住。只有重视平时的积累，机会来了才敢去试。',sample_vn:'Tôi thấy nỗ lực quan trọng hơn. Không nỗ lực, e rằng có cơ hội cũng không nắm được. Chỉ khi chú trọng tích lũy, cơ hội đến mới dám thử.',
-     note:'恐怕/敢/重视 (bài mới) + 只有……才 (Bài 9).'},
-    {q_zh:'你的好朋友向你借钱，可是你正准备结婚买房子，你会拒绝吗？',q_vn:'Bạn thân hỏi vay tiền nhưng bạn đang chuẩn bị cưới mua nhà, bạn có từ chối không?',
-     hint:'既……又……；他一定会原谅……',
-     sample:'我会用一个既合适又礼貌的方法告诉他我的困难。既然是好朋友，他一定会原谅我的。',sample_vn:'Tôi sẽ dùng cách vừa thích hợp vừa lịch sự nói với bạn về khó khăn của mình. Đã là bạn thân, họ nhất định sẽ thông cảm.',
-     note:'礼貌/原谅 (bài mới) + 既……又 (Bài 7) + 既然 (Bài 14) + 合适 (Bài 15).'},
-    {q_zh:'你到底想毕业后工作还是继续读书？为什么？',q_vn:'Rốt cuộc bạn muốn đi làm sau tốt nghiệp hay học tiếp? Vì sao?',
-     hint:'到底……；先……然后再……',
-     sample:'我到底想先工作两年，然后再读硕士。因为我想先积累一些经验，这样读书时重点更清楚。',sample_vn:'Rốt cuộc tôi muốn đi làm hai năm trước, rồi mới học thạc sĩ. Vì muốn tích lũy kinh nghiệm, như vậy khi học trọng điểm rõ hơn.',
-     note:'到底/重点 (bài mới) + 先……然后再 (Bài 3) + 硕士 (Bài 9).'},
-    {q_zh:'要是别人问你问题，可是你不会，你会觉得不好意思吗？',q_vn:'Nếu người khác hỏi mà bạn không biết, bạn có ngại không?',
-     hint:'敢……；并不……，相反……',
-     sample:'不会。我敢诚实地说"我不知道"。这并不说明我比别人差，相反，这样更能得到别人的尊重。',sample_vn:'Không. Tôi dám thành thật nói "tôi không biết". Điều này không chứng tỏ tôi kém, ngược lại, càng được tôn trọng.',
-     note:'敢/尊重 (bài mới) + 并不 (Bài 4) + 相反 (Bài 12) + 诚实 (Bài 10).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 16. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Thầy nhắc cả lớp chuẩn bị bài trước khi lên lớp.',
+      q_zh: '上课前，你有预习的习惯吗？预习的时候一般看哪些内容？',
+      q_py: 'Shàngkè qián, nǐ yǒu yùxí de xíguàn ma? Yùxí de shíhou yìbān kàn nǎxiē nèiróng?',
+      q_vn: 'Trước giờ học bạn có thói quen chuẩn bị bài không? Thường xem những nội dung gì?',
+      grammar: { label: '拿……来说; 首先……其次……', any: ['来说', '首先', '其次'] },
+      need: [
+        { label: 'Nói có thói quen hay không', any: ['预习', '有', '没有', '习惯'] },
+        { label: 'Kể nội dung chuẩn bị', any: ['生词', '课文', '重点', '语法', '问题', '读'] }
+      ],
+      bonus: { label: 'Dùng 马虎 nói điều tránh được', any: ['马虎', '认真', '自信'] },
+      vocab: ['预习', '重点', '马虎'],
+      minLen: 22,
+      sample: '有。拿学汉语来说，首先我会看生词，找出重点；其次读一遍课文，把不懂的地方记下来。这样上课的时候就不会马虎，也更自信。',
+      sample_py: 'Yǒu. Ná xué Hànyǔ lái shuō, shǒuxiān wǒ huì kàn shēng cí, zhǎo chū zhòngdiǎn; qícì dú yí biàn kè wén, bǎ bù dǒng de dìfang jì xià lái. Zhè yàng shàngkè de shíhou jiù bú huì mǎhu, yě gèng zìxìn.',
+      sample_vn: 'Có. Lấy việc học tiếng Hán mà nói, trước hết tôi xem từ mới, tìm ra trọng tâm; sau đó đọc bài khóa một lượt, ghi lại chỗ chưa hiểu. Như vậy vào lớp sẽ không cẩu thả, cũng tự tin hơn.',
+      tip: '拿……来说 dùng để nêu ví dụ: 拿我来说，我每天都跑步。'
+    },
+    {
+      situation: 'Cả nhóm tranh luận yếu tố nào quyết định thành công.',
+      q_zh: '你认为机会和努力，哪个对成功更重要？',
+      q_py: 'Nǐ rènwéi jīhuì hé nǔlì, nǎge duì chénggōng gèng zhòngyào?',
+      q_vn: 'Bạn cho rằng cơ hội và nỗ lực, cái nào quan trọng hơn với thành công?',
+      grammar: { label: '恐怕…… (e rằng); 只有……才敢/才能……', any: ['恐怕', '只有'] },
+      need: [
+        { label: 'Chọn một bên', any: ['努力', '机会', '重要'] },
+        { label: 'Nêu lý do', any: ['积累', '准备', '抓住', '重视', '经验', '基础'] }
+      ],
+      bonus: { label: 'Dùng 恐怕 nêu điều lo ngại', any: ['恐怕'] },
+      vocab: ['恐怕', '重视', '敢'],
+      minLen: 22,
+      sample: '我觉得努力更重要。没有努力，恐怕机会来了也抓不住。只有重视平时的积累，机会出现的时候我们才敢去试。',
+      sample_py: 'Wǒ juéde nǔlì gèng zhòngyào. Méiyǒu nǔlì, kǒngpà jīhuì lái le yě zhuā bú zhù. Zhǐyǒu zhòngshì píngshí de jīlěi, jīhuì chūxiàn de shíhou wǒmen cái gǎn qù shì.',
+      sample_vn: 'Tôi thấy nỗ lực quan trọng hơn. Không nỗ lực thì e rằng cơ hội đến cũng không nắm được. Chỉ khi coi trọng tích lũy hằng ngày, lúc cơ hội xuất hiện ta mới dám thử.',
+      tip: '恐怕 diễn đạt lo ngại về khả năng xấu: 恐怕来不及了。'
+    },
+    {
+      situation: 'Bạn thân hỏi vay tiền đúng lúc bạn cũng đang cần.',
+      q_zh: '好朋友向你借钱，可是你正准备结婚买房子，你会拒绝吗？',
+      q_py: 'Hǎo péngyou xiàng nǐ jiè qián, kěshì nǐ zhèng zhǔnbèi jiéhūn mǎi fáng zi, nǐ huì jùjué ma?',
+      q_vn: 'Bạn thân hỏi vay tiền nhưng bạn đang chuẩn bị cưới và mua nhà, bạn có từ chối không?',
+      grammar: { label: '既……又……; 既然……就……', any: ['既', '既然'] },
+      need: [
+        { label: 'Nói cách trả lời bạn', any: ['拒绝', '说明', '告诉', '困难', '情况'] },
+        { label: 'Nói thái độ lịch sự', any: ['礼貌', '合适', '原谅', '友好', '尊重'] }
+      ],
+      bonus: { label: 'Nói cách giúp khác nếu không cho vay được', any: ['帮', '一部分', '别的办法', '以后'] },
+      vocab: ['礼貌', '原谅', '拒绝'],
+      minLen: 22,
+      sample: '我会用一个既合适又礼貌的方法告诉他我的困难，如果可以，我会先借一小部分。既然是好朋友，他一定会原谅我，也会理解我。',
+      sample_py: 'Wǒ huì yòng yí ge jì héshì yòu lǐmào de fāngfǎ gàosu tā wǒ de kùnnan, rúguǒ kěyǐ, wǒ huì xiān jiè yì xiǎo bùfen. Jìrán shì hǎo péngyou, tā yí dìng huì yuánliàng wǒ, yě huì lǐjiě wǒ.',
+      sample_vn: 'Tôi sẽ dùng cách vừa hợp lý vừa lịch sự để nói với cậu ấy khó khăn của mình, nếu được thì cho mượn một phần nhỏ trước. Đã là bạn thân thì cậu ấy nhất định tha thứ và hiểu cho tôi.',
+      tip: '既……又…… nêu hai đặc điểm cùng lúc: 既便宜又好吃。'
+    },
+    {
+      situation: 'Sắp tốt nghiệp, gia đình hỏi bạn tính thế nào.',
+      q_zh: '你到底想毕业后工作还是继续读书？为什么？',
+      q_py: 'Nǐ dàodǐ xiǎng bìyè hòu gōngzuò háishi jìxù dúshū? Wèishénme?',
+      q_vn: 'Rốt cuộc sau khi tốt nghiệp bạn muốn đi làm hay học tiếp? Vì sao?',
+      grammar: { label: '到底…… (rốt cuộc) + 先……然后……', any: ['到底', '先', '然后'] },
+      need: [
+        { label: 'Nói lựa chọn của bạn', any: ['工作', '读书', '硕士', '博士', '先'] },
+        { label: 'Nêu lý do', any: ['经验', '积累', '重点', '收入', '机会', '兴趣'] }
+      ],
+      bonus: { label: 'Dùng 到底 nhấn mạnh quyết định', any: ['到底'] },
+      vocab: ['到底', '重点', '自信'],
+      minLen: 22,
+      sample: '我到底还是想先工作两年，然后再去读硕士。因为先积累一些经验，读书的时候重点会更清楚，我自己也更自信。',
+      sample_py: 'Wǒ dàodǐ háishi xiǎng xiān gōngzuò liǎng nián, ránhòu zài qù dú shuòshì. Yīnwèi xiān jīlěi yì xiē jīngyàn, dúshū de shíhou zhòngdiǎn huì gèng qīngchu, wǒ zìjǐ yě gèng zìxìn.',
+      sample_vn: 'Rốt cuộc tôi vẫn muốn đi làm hai năm trước, rồi mới học thạc sĩ. Vì tích lũy chút kinh nghiệm trước thì lúc học trọng tâm sẽ rõ hơn, bản thân tôi cũng tự tin hơn.',
+      tip: '到底 trong câu trần thuật nghĩa là "rốt cuộc thì vẫn": 他到底还是来了。'
+    },
+    {
+      situation: 'Trong cuộc họp, ai đó hỏi bạn một vấn đề bạn chưa nắm.',
+      q_zh: '要是别人问你问题，可是你不会，你会觉得不好意思吗？',
+      q_py: 'Yàoshi biérén wèn nǐ wèntí, kěshì nǐ bú huì, nǐ huì juéde bù hǎo yìsi ma?',
+      q_vn: 'Nếu người khác hỏi mà bạn không biết, bạn có ngại không?',
+      grammar: { label: '并不说明……; 相反……', any: ['并不', '相反'] },
+      need: [
+        { label: 'Nói cảm giác và cách xử lý', any: ['不好意思', '不会', '诚实', '不知道', '问', '查'] },
+        { label: 'Nêu lý do', any: ['尊重', '相反', '并不', '学', '进步'] }
+      ],
+      bonus: { label: 'Dùng 敢 nói thái độ', any: ['敢'] },
+      vocab: ['尊重', '敢', '冷静'],
+      minLen: 22,
+      sample: '不会。我敢冷静地说“我不知道，我去查一下再回答你”。这并不说明我比别人差，相反，诚实的态度更能得到别人的尊重。',
+      sample_py: 'Bú huì. Wǒ gǎn lěngjìng de shuō "wǒ bù zhīdao, wǒ qù chá yíxià zài huídá nǐ". Zhè bìng bìng shuōmíng wǒ bǐ biérén chà, xiāngfǎn, chéngshí de tàidù gèng néng děi dào biérén de zūnzhòng.',
+      sample_vn: 'Không. Tôi dám bình tĩnh nói "Tôi chưa biết, để tôi tra rồi trả lời bạn". Điều đó không có nghĩa tôi kém hơn người khác, ngược lại, thái độ thành thật càng được người ta tôn trọng.',
+      tip: '并不说明…… = không có nghĩa là…: 输了并不说明你不行。'
+    }
   ]
 };
 

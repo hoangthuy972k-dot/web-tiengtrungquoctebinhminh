@@ -496,33 +496,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'周明年轻的时候为什么没去其他城市？现在为什么也不去？',
-     q_vn:'Vì sao lúc trẻ Chu Minh không đi các thành phố khác? Bây giờ vì sao cũng không đi?',
-     hint:'那时候没钱，现在没时间，累得下了班就想睡觉',
-     sample:'周明年轻的时候没有钱，所以没去。现在钱不是问题了，但是他累得下了班就想睡觉，所以也不去。',
-     sample_vn:'Lúc trẻ Chu Minh không có tiền, nên không đi. Bây giờ tiền không còn là vấn đề nữa, nhưng anh ấy mệt đến mức hết giờ làm là chỉ muốn ngủ, nên cũng không đi.',
-     note:'得 + cụm động từ diễn tả mức độ trạng thái (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'同事的女儿长得像谁？为什么？',
-     q_vn:'Con gái đồng nghiệp giống ai? Vì sao?',
-     hint:'像爸爸，出生时爸爸高兴得一晚上没睡',
-     sample:'同事的女儿长得像她爸爸，因为她出生的时候，爸爸高兴得一个晚上都没睡着。',
-     sample_vn:'Con gái đồng nghiệp giống bố, vì lúc con mới sinh, bố vui đến mức cả đêm không ngủ được.',
-     note:'高兴得 + cụm động từ diễn tả mức độ (ôn lại 关系 sẽ học ngay bên dưới trong bài này).'},
-    {q_zh:'小刚的牙一直疼，医生每次都告诉他什么？',
-     q_vn:'Răng Tiểu Cương cứ đau, bác sĩ lần nào cũng bảo cậu ấy gì?',
-     hint:'回家好好儿刷牙',
-     sample:'小刚的牙检查好几次了，但是没什么用，医生每次都告诉他，回家好好儿刷牙。',
-     sample_vn:'Răng Tiểu Cương khám mấy lần rồi, nhưng chẳng có tác dụng gì, bác sĩ lần nào cũng bảo cậu ấy về nhà đánh răng cho kỹ.',
-     note:'好几次了 diễn tả số lần nhiều.'},
-    {q_zh:'怎么样才能让人和人的关系变得更好？',
-     q_vn:'Làm thế nào để quan hệ giữa người với người trở nên tốt hơn?',
-     hint:'多对别人笑笑，多用"您好""谢谢"这样的词语',
-     sample:'如果我们能多对别人笑笑，说话时多用一些"您好""谢谢"这样的词语，和别人的关系就会变得更好。',
-     sample_vn:'Nếu chúng ta có thể cười nhiều hơn với người khác, khi nói chuyện dùng nhiều hơn những từ ngữ như "xin chào", "cảm ơn", thì quan hệ với người khác sẽ trở nên tốt hơn.',
-     note:'如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 16. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn bè hỏi kế hoạch cuối tuần, nhưng thời tiết chưa chắc chắn.',
+      q_zh: '如果这个周末天气很好，你就做什么？下雨呢？',
+      q_py: 'Rúguǒ zhège zhōumò tiānqì hěn hǎo, nǐ jiù zuò shénme? Xiàyǔ ne?',
+      q_vn: 'Nếu cuối tuần này thời tiết đẹp, bạn sẽ làm gì? Còn nếu mưa?',
+      grammar: { label: '如果……(的话)，(主语)就……', any: ['如果', '要是'] },
+      need: [
+        { label: 'Dùng 如果……就……', any: ['如果', '要是'] },
+        { label: 'Nói hai phương án khác nhau', any: ['下雨', '在家', '出去', '公园', '看书', '电影'] }
+      ],
+      bonus: { label: 'Nói rõ đi cùng ai', any: ['朋友', '同事', '家里人', '一起'] },
+      vocab: ['如果', '城市', '认为'],
+      minLen: 20,
+      sample: '如果这个周末天气很好，我就跟朋友去城市旁边的公园照相；如果下雨，我就在家看书、听音乐。',
+      sample_py: 'Rúguǒ zhège zhōumò tiānqì hěn hǎo, wǒ jiù gēn péngyou qù chéngshì pángbiān de gōngyuán zhào xiàng; rúguǒ xiàyǔ, wǒ jiù zài jiā kàn shū, tīng yīnyuè.',
+      sample_vn: 'Nếu cuối tuần này trời đẹp, tôi sẽ cùng bạn ra công viên cạnh thành phố chụp ảnh; nếu mưa thì tôi ở nhà đọc sách, nghe nhạc.',
+      tip: '如果……就…… luôn có 就 ở vế sau: 如果你来，我就在家等你。'
+    },
+    {
+      situation: 'Thầy hỏi bạn tự đánh giá khả năng tiếng Hán của mình.',
+      q_zh: '你觉得自己汉语说得怎么样？写汉字写得快吗？',
+      q_py: 'Nǐ juéde zìjǐ Hànyǔ shuō děi zěnmeyàng? Xiě hànzì xiě děi kuài ma?',
+      q_vn: 'Bạn thấy mình nói tiếng Hán thế nào? Viết chữ Hán có nhanh không?',
+      grammar: { label: 'Bổ ngữ trạng thái: V + 得 + …', any: ['得'] },
+      need: [
+        { label: 'Dùng V得 để tự nhận xét', any: ['说得', '写得', '学得', '记得'] },
+        { label: 'Nói điểm còn yếu', any: ['慢', '不太', '还', '错', '忘'] }
+      ],
+      bonus: { label: 'Nói cách khắc phục', any: ['练习', '检查', '每天', '多写'] },
+      vocab: ['词语', '检查', '认为'],
+      minLen: 20,
+      sample: '我汉语说得还可以，可是写汉字写得比较慢，有些词语记得也不太清楚。我认为只要多练习、常检查，就能写得又快又好。',
+      sample_py: 'Wǒ Hànyǔ shuō děi hái kěyǐ, kěshì xiě hànzì xiě děi bǐjiào màn, yǒuxiē cíyǔ jìde yě bú tài qīngchu. Wǒ rènwéi zhǐyào duō liànxí, cháng jiǎnchá, jiù néng xiě děi yòu kuài yòu hǎo.',
+      sample_vn: 'Tôi nói tiếng Hán cũng tạm được, nhưng viết chữ Hán khá chậm, có vài từ nhớ cũng chưa rõ. Tôi cho rằng chỉ cần luyện nhiều, hay kiểm tra lại là viết vừa nhanh vừa đẹp.',
+      tip: 'V + 得 + tính từ nhận xét mức độ: 他跑得很快、我写得不好。'
+    },
+    {
+      situation: 'Bạn cho bạn bè xem ảnh hồi nhỏ của mình.',
+      q_zh: '说一说你小时候的样子：头发长不长？',
+      q_py: 'Shuō yi shuō nǐ xiǎoshí hòu de yàngzi: tóufa zhǎng bu zhǎng?',
+      q_vn: 'Hãy kể dáng vẻ hồi nhỏ của bạn: tóc dài hay ngắn?',
+      grammar: { label: 'Tính từ đơn âm lặp lại: 短短的、大大的', any: ['短短', '大大', '小小', '白白', '长长', '胖胖'] },
+      need: [
+        { label: 'Tả tóc', any: ['头发', '长', '短'] },
+        { label: 'Tả một nét trên khuôn mặt', any: ['眼睛', '鼻子', '脸', '嘴'] }
+      ],
+      bonus: { label: 'Dùng 可爱 để nhận xét', any: ['可爱'] },
+      vocab: ['头发', '鼻子', '可爱', '长'],
+      minLen: 18,
+      sample: '我小时候头发短短的，眼睛大大的，鼻子小小的，大家都说我很可爱。现在我的头发比那时候长多了。',
+      sample_py: 'Wǒ xiǎoshí hòu tóufa duǎn duǎn de, yǎnjing dà dà de, bízi xiǎo xiǎo de, dàjiā dōu shuō wǒ hěn kě\'ài. Xiànzài wǒ de tóufa bǐ nà shíhou zhǎng duō le.',
+      sample_vn: 'Hồi nhỏ tóc tôi ngắn ngắn, mắt to tròn, mũi nhỏ nhỏ, ai cũng bảo tôi đáng yêu. Giờ tóc tôi dài hơn hồi đó nhiều.',
+      tip: 'Tính từ một âm tiết lặp lại + 的 làm câu mềm và sinh động: 红红的脸。'
+    },
+    {
+      situation: 'Bạn đi khám sức khỏe định kỳ và y tá hỏi thông tin.',
+      q_zh: '你多高？多重？多长时间检查一次身体？',
+      q_py: 'Nǐ duō gāo? Duō zhòng? Duō zhǎng shíjiān jiǎnchá yí cì shēntǐ?',
+      q_vn: 'Bạn cao bao nhiêu? Nặng bao nhiêu? Bao lâu kiểm tra sức khỏe một lần?',
+      grammar: { label: 'Đơn vị 米 / 公斤 + số lần 一次', any: ['米', '公斤', '次'] },
+      need: [
+        { label: 'Nói chiều cao hoặc cân nặng', any: ['米', '公斤'] },
+        { label: 'Nói tần suất khám', any: ['一次', '一年', '半年', '检查'] }
+      ],
+      bonus: { label: 'Nói kết quả hoặc lời dặn của bác sĩ', any: ['医生', '健康', '注意', '锻炼'] },
+      vocab: ['米', '公斤', '检查'],
+      minLen: 18,
+      sample: '我一米七，六十五公斤。我一年检查一次身体，上次检查以后医生说我很健康，只要多锻炼就好。',
+      sample_py: 'Wǒ yì mǐ qī, liù shí wǔ gōngjīn. Wǒ yì nián jiǎnchá yí cì shēntǐ, shàng cì jiǎnchá yǐhòu yīshēng shuō wǒ hěn jiànkāng, zhǐyào duō duànliàn jiù hǎo.',
+      sample_vn: 'Tôi cao 1m70, nặng 65kg. Mỗi năm tôi khám sức khỏe một lần, lần trước khám xong bác sĩ nói tôi rất khỏe, chỉ cần tập luyện nhiều hơn.',
+      tip: '一米七 = 1m70; 六十五公斤 = 65kg. Số lần đặt sau động từ: 检查一次。'
+    },
+    {
+      situation: 'Nha sĩ hỏi bạn về thói quen chăm sóc răng miệng.',
+      q_zh: '你每天刷几次牙？为什么这个习惯很重要？',
+      q_py: 'Nǐ měitiān shuā jǐ cì yá? Wèishénme zhège xíguàn hěn zhòngyào?',
+      q_vn: 'Mỗi ngày bạn đánh răng mấy lần? Vì sao thói quen này quan trọng?',
+      grammar: { label: '如果……就…… + 跟别人的关系', any: ['如果', '关系'] },
+      need: [
+        { label: 'Nói số lần đánh răng', any: ['刷牙', '次', '早上', '晚上'] },
+        { label: 'Nêu lý do quan trọng', any: ['坏', '健康', '牙', '别人', '关系'] }
+      ],
+      bonus: { label: 'Dùng 如果 nêu hậu quả', any: ['如果', '要是'] },
+      vocab: ['刷牙', '别人', '关系'],
+      minLen: 20,
+      sample: '我每天早上和晚上各刷一次牙。如果不刷牙，牙容易坏，跟别人说话的时候也不太好，所以这个习惯跟健康关系很大。',
+      sample_py: 'Wǒ měitiān zǎoshang hé wǎnshang gè shuā yí cì yá. Rúguǒ bù shuāyá, yá róngyì huài, gēn biérén shuōhuà de shíhou yě bú tài hǎo, suǒyǐ zhège xíguàn gēn jiànkāng guānxi hěn dà.',
+      sample_vn: 'Mỗi ngày tôi đánh răng sáng một lần, tối một lần. Nếu không đánh răng, răng dễ hỏng, lúc nói chuyện với người khác cũng không hay, nên thói quen này liên quan nhiều đến sức khỏe.',
+      tip: '各 + động từ + số lượng: 早晚各一次 = sáng tối mỗi buổi một lần.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

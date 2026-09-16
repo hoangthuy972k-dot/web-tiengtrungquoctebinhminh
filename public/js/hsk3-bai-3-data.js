@@ -524,33 +524,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小刚小丽明天要做什么？',
-     q_vn:'Tiểu Cương và Tiểu Lệ ngày mai định làm gì?',
-     hint:'要去爬山',
-     sample:'小刚小丽明天要去爬山。',
-     sample_vn:'Tiểu Cương và Tiểu Lệ ngày mai định đi leo núi.',
-     note:'要 + V diễn tả dự định sắp làm.'},
-    {q_zh:'周太太看上的衬衫多少钱？',
-     q_vn:'Cái áo sơ mi bà Chu ưng ý giá bao nhiêu?',
-     hint:'320元',
-     sample:'那件衬衫320元。',
-     sample_vn:'Cái áo sơ mi đó giá 320 đồng.',
-     note:'Số tiền + 元 đứng sau danh từ chỉ giá.'},
-    {q_zh:'水果店里的水果怎么样？他们买了什么？',
-     q_vn:'Trái cây trong cửa hàng thế nào? Họ mua gì?',
-     hint:'很新鲜，买了西瓜和苹果',
-     sample:'水果很新鲜，他们买了西瓜和苹果。',
-     sample_vn:'Trái cây rất tươi, họ mua dưa hấu và táo.',
-     note:'很 + tính từ làm vị ngữ miêu tả.'},
-    {q_zh:'小丽最喜欢喝什么？为什么？',
-     q_vn:'Tiểu Lệ thích uống gì nhất? Vì sao?',
-     hint:'喜欢喝茶，天冷了或者工作累了的时候喝茶会很舒服',
-     sample:'小丽最喜欢喝茶，因为天冷了或者工作累了的时候，喝杯热茶会很舒服。',
-     sample_vn:'Tiểu Lệ thích uống trà nhất, vì khi trời lạnh hoặc làm việc mệt, uống ly trà nóng sẽ rất dễ chịu.',
-     note:'因为 giải thích lý do cho câu trả lời.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 3. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Cuối tuần trời đẹp, bạn cùng phòng hỏi bạn muốn đi chơi hay ở nhà.',
+      q_zh: '周末你想去爬山还是在家休息？如果下雨呢？',
+      q_py: 'Zhōumò nǐ xiǎng qù páshān háishi zài jiā xiūxi? Rúguǒ xiàyǔ ne?',
+      q_vn: 'Cuối tuần bạn muốn đi leo núi hay ở nhà nghỉ? Nếu trời mưa thì sao?',
+      grammar: { label: '还是 (câu hỏi lựa chọn) / 或者 (kể lựa chọn)', any: ['还是', '或者'] },
+      need: [
+        { label: 'Chọn một trong hai', any: ['爬山', '休息', '在家'] },
+        { label: 'Nói phương án khi trời mưa', any: ['下雨', '就', '如果', '要是'] }
+      ],
+      bonus: { label: 'Dùng 或者 để nêu hai việc thay thế', any: ['或者'] },
+      vocab: ['爬山', '还是', '或者'],
+      minLen: 18,
+      sample: '周末我想去爬山，因为山上空气很好。如果下雨，我就在家看书或者听音乐。',
+      sample_py: 'Zhōumò wǒ xiǎng qù páshān, yīnwèi shān shàng kōngqì hěn hǎo. Rúguǒ xiàyǔ, wǒ jiù zài jiā kàn shū huòzhě tīng yīnyuè.',
+      sample_vn: 'Cuối tuần tôi muốn đi leo núi, vì trên núi không khí rất tốt. Nếu mưa thì tôi ở nhà đọc sách hoặc nghe nhạc.',
+      tip: '还是 dùng trong câu hỏi, 或者 dùng trong câu trần thuật: 你喝茶还是咖啡？我喝茶或者咖啡都行。'
+    },
+    {
+      situation: 'Bạn đang thử quần áo trong cửa hàng và người bán hỏi ý bạn.',
+      q_zh: '你买衣服的时候喜欢什么颜色？这条裤子多少钱？',
+      q_py: 'Nǐ mǎi yīfu de shíhou xǐhuan shénme yánsè? Zhè tiáo kùzi duōshao qián?',
+      q_vn: 'Khi mua quần áo bạn thích màu gì? Chiếc quần này bao nhiêu tiền?',
+      grammar: { label: 'Lượng từ 条/件 + giá tiền …元', any: ['条', '件', '元', '块'] },
+      need: [
+        { label: 'Nói màu yêu thích', any: ['绿', '白', '黑', '红', '蓝', '颜色'] },
+        { label: 'Nói giá bằng 元 hoặc 块', any: ['元', '块'] }
+      ],
+      bonus: { label: 'Nhận xét mặc có thoải mái không', any: ['舒服', '合适', '好看'] },
+      vocab: ['裤子', '衬衫', '元'],
+      minLen: 18,
+      sample: '我喜欢买绿色的衬衫。这条裤子一百二十元，不太贵，穿着也很舒服。',
+      sample_py: 'Wǒ xǐhuan mǎi lǜ sè de chènshān. Zhè tiáo kùzi yì bǎi èr shí yuán, bú tài guì, chuān zhe yě hěn shūfu.',
+      sample_vn: 'Tôi thích mua áo sơ mi màu xanh lá. Chiếc quần này 120 tệ, không đắt lắm, mặc cũng rất thoải mái.',
+      tip: '条 dùng cho quần, váy, cá, sông; 件 dùng cho áo, việc: 一条裤子、一件衬衫。'
+    },
+    {
+      situation: 'Bạn gọi video cho gia đình và họ muốn xem phòng của bạn.',
+      q_zh: '说一说你的房间：桌子上放着什么？',
+      q_py: 'Shuō yi shuō nǐ de fángjiān: zhuōzi shàng fàng zhe shénme?',
+      q_vn: 'Hãy kể về phòng của bạn: trên bàn để những gì?',
+      grammar: { label: 'Nơi chốn + V 着 + số lượng + danh từ', any: ['着'] },
+      need: [
+        { label: 'Dùng 放着 hoặc 有 để tả đồ trên bàn', any: ['放着', '有', '摆着'] },
+        { label: 'Kể ít nhất hai món đồ', any: ['电脑', '书', '手机', '杯子', '饮料', '花', '本子', '笔'] }
+      ],
+      bonus: { label: 'Tả thêm một chỗ khác trong phòng', any: ['旁边', '上面', '下面', '床', '前面', '后面'] },
+      vocab: ['放', '花', '饮料'],
+      minLen: 18,
+      sample: '我的桌子上放着一台电脑和两本书，旁边还放着一杯饮料和一些花，房间不大，但是很舒服。',
+      sample_py: 'Wǒ de zhuōzi shàng fàng zhe yì tái diànnǎo hé liǎng běn shū, pángbiān hái fàng zhe yì bēi yǐnliào hé yì xiē huā, fángjiān bú dà, dànshì hěn shūfu.',
+      sample_vn: 'Trên bàn tôi để một cái máy tính và hai quyển sách, bên cạnh còn để một cốc nước và ít hoa, phòng không lớn nhưng rất thoải mái.',
+      tip: 'Câu tồn tại: 桌子上放着一本书 = trên bàn có đặt một quyển sách (nhấn trạng thái đang tồn tại).'
+    },
+    {
+      situation: 'Bạn và bạn bè đang xem dự báo thời tiết cho ngày mai.',
+      q_zh: '你觉得明天会下雨吗？如果下雨，你的计划会变吗？',
+      q_py: 'Nǐ juéde míngtiān huì xiàyǔ ma? Rúguǒ xiàyǔ, nǐ de jìhuà huì biàn ma?',
+      q_vn: 'Bạn thấy ngày mai trời có mưa không? Nếu mưa, kế hoạch của bạn có đổi không?',
+      grammar: { label: '会 + động từ (khả năng sẽ xảy ra)', any: ['会'] },
+      need: [
+        { label: 'Đoán trời mưa hay không bằng 会', any: ['会'] },
+        { label: 'Nói kế hoạch thay thế', any: ['就', '在家', '看', '听', '复习', '去'] }
+      ],
+      bonus: { label: 'Nhắc bạn mình cẩn thận bằng 小心', any: ['小心', '记得'] },
+      vocab: ['记得', '小心', '还是'],
+      minLen: 18,
+      sample: '我觉得明天会下雨。如果下雨，我就不去爬山了，在家复习汉语。你出门记得带伞，路上小心。',
+      sample_py: 'Wǒ juéde míngtiān huì xiàyǔ. Rúguǒ xiàyǔ, wǒ jiù bú qù páshān le, zài jiā fùxí Hànyǔ. Nǐ chū mén jìde dài sǎn, lù shàng xiǎoxīn.',
+      sample_vn: 'Tôi thấy mai trời sẽ mưa. Nếu mưa thì tôi không đi leo núi nữa, ở nhà ôn tiếng Hán. Bạn ra ngoài nhớ mang ô, đi đường cẩn thận.',
+      tip: '会 ở đây nói về khả năng xảy ra trong tương lai: 明天会冷。'
+    },
+    {
+      situation: 'Bạn đi siêu thị mua hoa quả cho cả nhà.',
+      q_zh: '在超市买水果的时候，你怎么看水果新鲜不新鲜？',
+      q_py: 'Zài chāoshì mǎi shuǐguǒ de shíhou, nǐ zěnme kàn shuǐguǒ xīnxiān bù xīnxiān?',
+      q_vn: 'Khi mua hoa quả ở siêu thị, bạn xem hoa quả tươi hay không bằng cách nào?',
+      grammar: { label: 'Tính từ 新鲜 / 甜 để nhận xét đồ ăn', any: ['新鲜', '甜'] },
+      need: [
+        { label: 'Nói cách chọn', any: ['看', '问', '闻', '颜色', '服务员'] },
+        { label: 'Nhận xét hoa quả', any: ['新鲜', '甜', '好吃'] }
+      ],
+      bonus: { label: 'Nói mua bao nhiêu', any: ['斤', '个', '一些', '两'] },
+      vocab: ['新鲜', '甜', '只'],
+      minLen: 18,
+      sample: '我先看颜色，再问问服务员。这些水果很新鲜，也很甜，所以我买了两斤回家。',
+      sample_py: 'Wǒ xiān kàn yánsè, zài wènwen fúwùyuán. Zhèxiē shuǐguǒ hěn xīnxiān, yě hěn tián, suǒyǐ wǒ mǎi le liǎng jīn huí jiā.',
+      sample_vn: 'Tôi xem màu trước, rồi hỏi nhân viên. Mấy loại quả này rất tươi, cũng rất ngọt, nên tôi mua hai cân về nhà.',
+      tip: '新鲜 dùng cho rau quả, cá thịt và cả không khí: 空气很新鲜。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

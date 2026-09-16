@@ -863,28 +863,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 7 để trả lời các câu hỏi sau về sức khỏe và thói quen sinh hoạt.',
-  questions:[
-    {q_zh:'你觉得抽烟对身体有什么影响？',q_vn:'Bạn thấy hút thuốc có ảnh hưởng gì đến sức khỏe?',
-     hint:'不仅……还会……',
-     sample:'抽烟不仅对自己没好处，还会影响周围人的身体健康。',sample_vn:'Hút thuốc không những không có lợi cho bản thân, còn ảnh hưởng đến sức khỏe của người xung quanh.',
-     note:'不仅……还会…… ôn lại từ vựng của bài.'},
-    {q_zh:'长时间坐在电脑前工作，你会怎么保护自己的眼睛和身体？',q_vn:'Khi ngồi lâu trước máy tính làm việc, bạn sẽ bảo vệ mắt và cơ thể như thế nào?',
-     hint:'最好是每过……就休息休息',
-     sample:'最好是每过一小时就休息休息，多看看绿色的植物。',sample_vn:'Tốt nhất là cứ mỗi tiếng lại nghỉ ngơi một chút, nhìn nhiều vào cây xanh.',
-     note:'最好是……就…… kết hợp 植物, ôn lại từ vựng của bài.'},
-    {q_zh:'你觉得健康只是指身体不生病吗？',q_vn:'Bạn thấy sức khỏe chỉ là việc cơ thể không bị bệnh thôi sao?',
-     hint:'不只是指……还指……',
-     sample:'我觉得不是，健康不只是指身体，还指精神上的健康。',sample_vn:'Tôi thấy không phải, sức khỏe không chỉ chỉ về cơ thể, còn chỉ về sự khỏe mạnh tinh thần.',
-     note:'不只是指……还指…… kết hợp 精神, ôn lại từ vựng của bài.'},
-    {q_zh:'要是你每天都有时间锻炼身体，你会选择什么运动？为什么？',q_vn:'Nếu mỗi ngày bạn đều có thời gian rèn luyện thân thể, bạn sẽ chọn môn thể thao nào? Vì sao?',
-     hint:'要是……就…… / 既……又……',
-     sample:'要是我每天都有时间，我就会选择散步，因为散步既可以活动身体，又不会像跑步那样辛苦。',sample_vn:'Nếu mỗi ngày tôi đều có thời gian, tôi sẽ chọn đi dạo, vì đi dạo vừa có thể vận động cơ thể, lại không vất vả như chạy bộ.',
-     note:'要是……就……既……又…… ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'晚饭后和家人一起散步有什么好处？',q_vn:'Sau bữa tối cùng gia đình đi dạo có lợi ích gì?',
-     hint:'既可以……又可以……而且……',
-     sample:'晚饭后散步既可以帮助消化，又可以加深感情，而且能让一天的烦恼都跑掉。',sample_vn:'Đi dạo sau bữa tối vừa có thể giúp tiêu hóa, vừa có thể làm sâu sắc thêm tình cảm, hơn nữa có thể khiến phiền muộn cả ngày biến mất.',
-     note:'既可以……又可以…… kết hợp 感情/烦恼, ôn lại từ vựng của bài.'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 7. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Đồng nghiệp của bạn hút thuốc ngay cạnh bàn làm việc.',
+      q_zh: '你觉得抽烟对身体有什么影响？',
+      q_py: 'Nǐ juéde chōuyān duì shēntǐ yǒu shénme yǐngxiǎng?',
+      q_vn: 'Bạn thấy hút thuốc ảnh hưởng thế nào đến sức khỏe?',
+      grammar: { label: '不仅……还…… (không những… còn…)', any: ['不仅', '不但'] },
+      need: [
+        { label: 'Nói ảnh hưởng với bản thân', any: ['好处', '健康', '咳嗽', '严重', '身体'] },
+        { label: 'Nói ảnh hưởng với người xung quanh', any: ['周围', '别人', '家人', '空气'] }
+      ],
+      bonus: { label: 'Nêu lời khuyên bằng 最好', any: ['最好', '应该', '反对'] },
+      vocab: ['抽烟', '好处', '空气'],
+      minLen: 22,
+      sample: '抽烟不仅对自己没有好处，还会让周围的空气变差，影响别人的身体健康。我觉得最好在家里和办公室都别抽。',
+      sample_py: 'Chōuyān bùjǐn duì zìjǐ méiyǒu hǎochù, hái huì ràng zhōuwéi de kōngqì biàn chà, yǐngxiǎng biérén de shēntǐ jiànkāng. Wǒ juéde zuì hǎo zài jiā lǐ hé bàngōngshì dōu bié chōu.',
+      sample_vn: 'Hút thuốc không những chẳng lợi gì cho bản thân, còn làm không khí xung quanh xấu đi, ảnh hưởng sức khỏe người khác. Tôi thấy tốt nhất ở nhà và văn phòng đều không nên hút.',
+      tip: '对……有好处 / 没好处 = có lợi / không có lợi cho…'
+    },
+    {
+      situation: 'Bạn ngồi máy tính cả ngày và thấy mỏi mắt.',
+      q_zh: '长时间坐在电脑前工作，你会怎么保护自己的眼睛和身体？',
+      q_py: 'Zhǎng shíjiān zuò zài diànnǎo qián gōngzuò, nǐ huì zěnme bǎohù zìjǐ de yǎnjing hé shēntǐ?',
+      q_vn: 'Ngồi lâu trước máy tính làm việc, bạn bảo vệ mắt và cơ thể thế nào?',
+      grammar: { label: '最好是……就…… (lời khuyên)', any: ['最好'] },
+      need: [
+        { label: 'Nói cách nghỉ ngơi', any: ['休息', '小时', '站', '走', '动'] },
+        { label: 'Nói cách bảo vệ mắt', any: ['眼睛', '植物', '绿色', '看远', '窗户'] }
+      ],
+      bonus: { label: 'Nhắc đến không khí trong phòng', any: ['空气', '窗户', '散步'] },
+      vocab: ['植物', '窗户', '空气'],
+      minLen: 22,
+      sample: '最好是每过一个小时就休息休息，站起来走一走，多看看绿色的植物。我还会打开窗户，让房间里的空气好一些。',
+      sample_py: 'Zuì hǎo shì měi guo yí ge xiǎoshí jiù xiūxixiūxi, zhàn qǐlai zǒu yi zǒu, duō kànkan lǜ sè de zhíwù. Wǒ hái huì dǎ kāi chuānghu, ràng fángjiān lǐ de kōngqì hǎo yì xiē.',
+      sample_vn: 'Tốt nhất cứ một tiếng là nghỉ một lát, đứng dậy đi lại, nhìn nhiều cây xanh. Tôi còn mở cửa sổ cho không khí trong phòng tốt hơn.',
+      tip: '最好 + động từ đưa lời khuyên nhẹ nhàng: 你最好早点儿睡。'
+    },
+    {
+      situation: 'Lớp học đang thảo luận thế nào là khỏe mạnh.',
+      q_zh: '你觉得健康只是指身体不生病吗？',
+      q_py: 'Nǐ juéde jiànkāng zhǐshì zhǐ shēntǐ bù shēngbìng ma?',
+      q_vn: 'Bạn thấy sức khỏe chỉ là cơ thể không bị bệnh thôi sao?',
+      grammar: { label: '不只是指……，还指……', any: ['指', '不只', '不仅'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['不是', '不只', '不仅', '我觉得'] },
+        { label: 'Nhắc đến tinh thần', any: ['精神', '心情', '快乐', '烦恼'] }
+      ],
+      bonus: { label: 'Dùng 说明 hoặc 研究 để dẫn chứng', any: ['说明', '研究', '教授', '数字'] },
+      vocab: ['精神', '指', '研究'],
+      minLen: 22,
+      sample: '我觉得不是。健康不只是指身体不生病，还指精神上的健康。有研究说明，心情好的人一般身体也比较好。',
+      sample_py: 'Wǒ juéde bú shì. Jiànkāng bù zhǐshì zhǐ shēntǐ bù shēngbìng, hái zhǐ jīngshén shàng de jiànkāng. Yǒu yánjiū shuōmíng, xīnqíng hǎo de rén yìbān shēntǐ yě bǐjiào hǎo.',
+      sample_vn: 'Tôi thấy không phải. Sức khỏe không chỉ là cơ thể không bệnh, còn là sức khỏe tinh thần. Có nghiên cứu chỉ ra, người tâm trạng tốt thì cơ thể cũng thường tốt hơn.',
+      tip: '指 = chỉ về, nói đến: 这里说的“健康”指身体和精神。'
+    },
+    {
+      situation: 'Bác sĩ khuyên bạn nên vận động mỗi ngày.',
+      q_zh: '要是你每天都有时间锻炼身体，你会选择什么运动？为什么？',
+      q_py: 'Yàoshi nǐ měitiān dōu yǒu shíjiān duànliàn shēntǐ, nǐ huì xuǎnzé shénme yùndòng? Wèishénme?',
+      q_vn: 'Nếu mỗi ngày đều có thời gian rèn luyện, bạn sẽ chọn môn nào? Vì sao?',
+      grammar: { label: '要是……(的话)，就……; 既……又……', any: ['要是', '既'] },
+      need: [
+        { label: 'Dùng 要是……就……', any: ['要是', '如果'] },
+        { label: 'Chọn môn và nêu lý do', any: ['散步', '跑步', '游泳', '打球', '因为', '辛苦', '轻松'] }
+      ],
+      bonus: { label: 'Dùng 既……又…… nêu hai ưu điểm', any: ['既'] },
+      vocab: ['要是', '既', '散步', '辛苦'],
+      minLen: 22,
+      sample: '要是我每天都有时间，我就会选择散步。散步既可以活动身体，又不会像跑步那样辛苦，晚饭后走半个小时最舒服。',
+      sample_py: 'Yàoshi wǒ měitiān dōu yǒu shíjiān, wǒ jiù huì xuǎnzé sànbù. Sànbù jì kěyǐ huódòng shēntǐ, yòu bú huì xiàng pǎobù nà yàng xīnkǔ, wǎnfàn hòu zǒu bàn ge xiǎoshí zuì shūfu.',
+      sample_vn: 'Nếu ngày nào tôi cũng có thời gian, tôi sẽ chọn đi bộ. Đi bộ vừa vận động được cơ thể, lại không mệt như chạy, sau bữa tối đi nửa tiếng là dễ chịu nhất.',
+      tip: '既……又…… nêu hai đặc điểm cùng có, chủ ngữ giống nhau.'
+    },
+    {
+      situation: 'Cả nhà bạn có thói quen đi dạo sau bữa tối.',
+      q_zh: '晚饭后和家人一起散步有什么好处？',
+      q_py: 'Wǎnfàn hòu hé jiārén yìqǐ sànbù yǒu shénme hǎochù?',
+      q_vn: 'Sau bữa tối cùng người nhà đi dạo có lợi ích gì?',
+      grammar: { label: '既……又……，而且……', any: ['既', '而且'] },
+      need: [
+        { label: 'Nói lợi ích cho cơ thể', any: ['身体', '健康', '消化', '肚子', '睡'] },
+        { label: 'Nói lợi ích cho tình cảm', any: ['感情', '家人', '聊', '交流'] }
+      ],
+      bonus: { label: 'Nhắc đến việc quên đi phiền muộn bằng 烦恼', any: ['烦恼', '掉', '轻松'] },
+      vocab: ['散步', '感情', '烦恼'],
+      minLen: 22,
+      sample: '晚饭后散步既对身体好，又能加深家人之间的感情。一边走一边聊天儿，一天的烦恼差不多都跑掉了。',
+      sample_py: 'Wǎnfàn hòu sànbù jì duì shēntǐ hǎo, yòu néng jiā shēn jiārén zhī jiān de gǎnqíng. Yìbiān zǒu yìbiān liáo tiān ér, yì tiān de fánnǎo chàbuduō dōu pǎo diào le.',
+      sample_vn: 'Đi dạo sau bữa tối vừa tốt cho cơ thể, vừa làm tình cảm gia đình thêm gắn bó. Vừa đi vừa trò chuyện, phiền muộn cả ngày gần như tan biến.',
+      tip: '掉 làm bổ ngữ kết quả chỉ sự mất đi: 忘掉、跑掉、扔掉。'
+    }
   ]
 };
 

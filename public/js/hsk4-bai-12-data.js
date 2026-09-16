@@ -860,28 +860,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 12 (kết hợp ngữ pháp các bài trước) để trả lời các câu hỏi sau về kinh nghiệm, phương pháp và cách nói chuyện.',
-  questions:[
-    {q_zh:'你觉得经验有没有用？为什么？',q_vn:'Bạn thấy kinh nghiệm có ích không? Vì sao?',
-     hint:'可惜……；相反，……',
-     sample:'经验当然有用，可惜经验不是全部都是对的。相反，有时候旧经验会使问题变得更复杂。',sample_vn:'Kinh nghiệm đương nhiên có ích, đáng tiếc kinh nghiệm không phải toàn bộ đều đúng. Ngược lại, có lúc kinh nghiệm cũ khiến vấn đề phức tạp hơn.',
-     note:'相反 (bài mới) + 使 (Bài 8).'},
-    {q_zh:'要是工作或学习遇到困难，你可能用什么方法去解决？',q_vn:'Nếu công việc hay học tập gặp khó khăn, bạn có thể dùng cách gì để giải quyết?',
-     hint:'跟……商量商量，并且……',
-     sample:'我会先跟朋友商量商量，并且试着走走以前没走过的路，也许这样就能找到办法。',sample_vn:'Tôi sẽ bàn với bạn bè trước, đồng thời thử đi những con đường chưa từng đi, có lẽ như vậy sẽ tìm ra cách.',
-     note:'并且/也许 (bài mới) + 要是……就 (Bài 7).'},
-    {q_zh:'你从生活中学到了哪些课本上学不到的知识？',q_vn:'Bạn đã học được từ cuộc sống những kiến thức gì mà sách vở không dạy?',
-     hint:'比如……，无法……',
-     sample:'比如用盐水洗新衣服可以保护颜色，这种知识课本上无法学到，需要用心去发现。',sample_vn:'Ví dụ dùng nước muối giặt quần áo mới có thể bảo vệ màu, kiến thức này sách vở không dạy được, cần dùng tâm để phát hiện.',
-     note:'比如 (Bài 10) + 无法/保护 (bài mới).'},
-    {q_zh:'对于老师来说，你觉得什么是最难做到的？',q_vn:'Đối với giáo viên mà nói, bạn thấy điều gì khó làm được nhất?',
-     hint:'对于……来说；再……也……',
-     sample:'在我看来，对于老师来说，最难的是根据每个学生的特点教育他们，因为学生再多也没有完全一样的人。',sample_vn:'Theo tôi, đối với giáo viên, khó nhất là giáo dục theo đặc điểm từng học sinh, vì học sinh nhiều đến đâu cũng không có hai người hoàn toàn giống nhau.',
-     note:'对于/再……也 (bài mới) + 在……看来 (Bài 10).'},
-    {q_zh:'看到别人的缺点，你会直接说出来吗？',q_vn:'Thấy khuyết điểm của người khác, bạn sẽ nói thẳng ra không?',
-     hint:'虽然……，但是可能会引起误会',
-     sample:'我不会直接说，虽然直接说很诚实，但是可能会引起误会。我会通过别的方法提醒他，这样更友好。',sample_vn:'Tôi sẽ không nói thẳng, tuy nói thẳng rất thành thật, nhưng có thể gây hiểu lầm. Tôi sẽ nhắc bằng cách khác, như vậy thân thiện hơn.',
-     note:'直接/引起/误会/友好 (bài mới) + 通过 (Bài 9).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 12. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Đồng nghiệp lớn tuổi khuyên bạn cứ làm theo cách cũ.',
+      q_zh: '你觉得经验有没有用？为什么？',
+      q_py: 'Nǐ juéde jīngyàn yǒu méiyǒu yòng? Wèishénme?',
+      q_vn: 'Bạn thấy kinh nghiệm có ích không? Vì sao?',
+      grammar: { label: '相反…… (ngược lại); 可惜……', any: ['相反', '可惜'] },
+      need: [
+        { label: 'Nêu quan điểm về kinh nghiệm', any: ['有用', '经验', '当然', '不一定'] },
+        { label: 'Nêu mặt hạn chế', any: ['可惜', '相反', '复杂', '全部', '不对', '变化'] }
+      ],
+      bonus: { label: 'Đưa ví dụ cụ thể', any: ['比如', '例如', '上次', '有一次'] },
+      vocab: ['可惜', '全部', '相反', '复杂'],
+      minLen: 22,
+      sample: '经验当然有用，可惜经验不是全部都对。相反，情况变了以后，旧经验有时候会让问题变得更复杂，所以还要多想一想。',
+      sample_py: 'Jīngyàn dāngrán yǒu yòng, kěxī jīngyàn bú shì quánbù dōu duì. Xiāngfǎn, qíngkuàng biàn le yǐhòu, jiù jīngyàn yǒu shíhou huì ràng wèntí biàn děi gèng fùzá, suǒyǐ hái yào duō xiǎng yi xiǎng.',
+      sample_vn: 'Kinh nghiệm tất nhiên có ích, tiếc là kinh nghiệm không phải lúc nào cũng đúng. Ngược lại, khi tình hình đổi, kinh nghiệm cũ đôi khi làm vấn đề phức tạp hơn, nên vẫn phải suy nghĩ thêm.',
+      tip: '相反 dùng đầu câu để nêu ý ngược lại: 相反，他一点儿也不累。'
+    },
+    {
+      situation: 'Bạn đang bế tắc với một nhiệm vụ ở công ty.',
+      q_zh: '要是工作或学习遇到困难，你可能用什么方法去解决？',
+      q_py: 'Yàoshi gōngzuò huò xuéxí yùdào kùnnan, nǐ kěnéng yòng shénme fāngfǎ qù jiějué?',
+      q_vn: 'Nếu công việc hay học tập gặp khó khăn, bạn có thể dùng cách nào để giải quyết?',
+      grammar: { label: '并且……; 也许…… (có lẽ)', any: ['并且', '也许'] },
+      need: [
+        { label: 'Nói cách tìm trợ giúp', any: ['商量', '问', '朋友', '同事', '老师', '上网'] },
+        { label: 'Nói cách thử hướng mới', any: ['试', '方法', '路', '换', '重新'] }
+      ],
+      bonus: { label: 'Dùng 也许 thể hiện khả năng', any: ['也许'] },
+      vocab: ['商量', '并且', '也许', '任务'],
+      minLen: 22,
+      sample: '我会先跟同事商量商量，并且试着走走以前没走过的路。也许换个方法，任务就没有想象的那么难了。',
+      sample_py: 'Wǒ huì xiān gēn tóngshì shāngliang shāngliang, bìngqiě shì zhe zǒuzou yǐqián méi zǒu guo de lù. Yěxǔ huàn ge fāngfǎ, rènwu jiù méiyǒu xiǎng xiàng de nàme nán le.',
+      sample_vn: 'Tôi sẽ bàn bạc với đồng nghiệp trước, đồng thời thử đi con đường mình chưa từng đi. Có lẽ đổi cách làm thì nhiệm vụ không khó như tưởng tượng.',
+      tip: '并且 nối hai vế cùng chiều, trang trọng hơn 而且 trong văn viết.'
+    },
+    {
+      situation: 'Cả nhóm nói về những điều học được ngoài sách vở.',
+      q_zh: '你从生活中学到了哪些课本上学不到的知识？',
+      q_py: 'Nǐ cóng shēnghuó zhōngxué dào le nǎxiē kè běn shàngxué bú dào de zhīshi?',
+      q_vn: 'Bạn học được từ cuộc sống những kiến thức gì mà sách vở không có?',
+      grammar: { label: '无法 + động từ (không cách nào…)', any: ['无法'] },
+      need: [
+        { label: 'Nêu một kinh nghiệm cụ thể', any: ['盐', '洗', '做饭', '修', '照顾', '省', '钱'] },
+        { label: 'Dùng 无法 hoặc 需要 nói về sách vở', any: ['无法', '课本', '需要', '发现'] }
+      ],
+      bonus: { label: 'Nói bạn học được từ ai', any: ['妈妈', '奶奶', '同事', '朋友', '网上'] },
+      vocab: ['无法', '作用', '使用'],
+      minLen: 22,
+      sample: '比如用盐水洗新衣服可以保护颜色，这种知识课本上无法学到，是我妈妈教我的。生活中很多小方法都很有作用。',
+      sample_py: 'Bǐrú yòng yán shuǐ xǐ xīn yīfu kěyǐ bǎohù yánsè, zhè zhǒng zhīshi kè běn shàng wúfǎ xué dào, shì wǒ māma jiāo wǒ de. Shēnghuó zhōng hěn duō xiǎo fāngfǎ dōu hěn yǒu zuòyòng.',
+      sample_vn: 'Ví dụ dùng nước muối giặt quần áo mới sẽ giữ được màu, kiến thức này sách vở không dạy, là mẹ tôi dạy tôi. Nhiều mẹo nhỏ trong cuộc sống rất có tác dụng.',
+      tip: '无法 + động từ hai âm tiết: 无法解决、无法理解。'
+    },
+    {
+      situation: 'Bạn nói chuyện với một người bạn làm nghề giáo.',
+      q_zh: '对于老师来说，你觉得什么是最难做到的？',
+      q_py: 'Duìyú lǎoshī lái shuō, nǐ juéde shénme shì zuì nán zuò dào de?',
+      q_vn: 'Đối với giáo viên, bạn thấy điều gì khó làm được nhất?',
+      grammar: { label: '对于……来说……', any: ['对于', '来说'] },
+      need: [
+        { label: 'Dùng 对于……来说', any: ['对于', '来说'] },
+        { label: 'Nêu điều khó', any: ['教育', '学生', '特点', '公平', '耐心', '不一样'] }
+      ],
+      bonus: { label: 'Nêu lý do bằng 因为', any: ['因为', '由于'] },
+      vocab: ['对于', '教育', '解释', '详细'],
+      minLen: 22,
+      sample: '在我看来，对于老师来说，最难的是根据每个学生的特点来教育他们。因为学生再多，也没有完全一样的人，有时候还要一遍一遍详细地解释。',
+      sample_py: 'Zài wǒ kàn lái, duìyú lǎoshī lái shuō, zuì nán de shì gēnjù měi ge xuésheng de tèdiǎn lái jiàoyù tāmen. Yīnwèi xuésheng zài duō, yě méiyǒu wánquán yí yàng de rén, yǒu shíhou hái yào yí biàn yi biàn xiángxì de jiěshì.',
+      sample_vn: 'Theo tôi, với giáo viên, khó nhất là dạy học sinh theo đặc điểm của từng em. Vì học sinh dù đông cũng không có ai giống hệt ai, đôi khi còn phải giải thích tỉ mỉ nhiều lần.',
+      tip: '对于……来说 nêu góc nhìn của một nhóm người: 对于学生来说……'
+    },
+    {
+      situation: 'Bạn thân của bạn có một thói quen chưa tốt.',
+      q_zh: '看到别人的缺点，你会直接说出来吗？',
+      q_py: 'Kàn dào biérén de quēdiǎn, nǐ huì zhíjiē shuō chū lái ma?',
+      q_vn: 'Thấy khuyết điểm của người khác, bạn có nói thẳng không?',
+      grammar: { label: '虽然……，但是……可能会引起误会', any: ['虽然', '引起', '误会'] },
+      need: [
+        { label: 'Nói có nói thẳng hay không', any: ['直接', '不会', '会'] },
+        { label: 'Nêu lý do hoặc cách làm khác', any: ['误会', '友好', '提醒', '方法', '意见', '语言'] }
+      ],
+      bonus: { label: 'Dùng 引起误会 hoặc 友好', any: ['引起', '友好'] },
+      vocab: ['直接', '引起', '误会', '友好'],
+      minLen: 22,
+      sample: '我一般不会直接说。虽然直接说很诚实，但是可能会引起误会，让人不高兴。我会用比较友好的语言提醒他，这样他更容易接受我的意见。',
+      sample_py: 'Wǒ yìbān bú huì zhíjiē shuō. Suīrán zhíjiē shuō hěn chéngshí, dànshì kěnéng huì yǐnqǐ wùhuì, ràng rén bù gāoxìng. Wǒ huì yòng bǐjiào yǒuhǎo de yǔyán tíxǐng tā, zhè yàng tā gèng róngyì jiēshòu wǒ de yìjiàn.',
+      sample_vn: 'Tôi thường không nói thẳng. Tuy nói thẳng là thành thật, nhưng có thể gây hiểu lầm, làm người ta khó chịu. Tôi sẽ dùng lời lẽ thân thiện hơn để nhắc, như vậy họ dễ tiếp nhận ý kiến của tôi hơn.',
+      tip: '引起 + 误会/注意/问题: 这句话引起了很多讨论。'
+    }
   ]
 };
 

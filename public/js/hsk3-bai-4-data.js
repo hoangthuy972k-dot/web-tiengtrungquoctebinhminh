@@ -565,33 +565,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'那个又高又漂亮的女孩儿是几年级的？',
-     q_vn:'Bạn nữ vừa cao vừa xinh kia là học sinh khối mấy?',
-     hint:'二年级',
-     sample:'那个又高又漂亮的女孩儿是二年级的。',
-     sample_vn:'Bạn nữ vừa cao vừa xinh kia là học sinh khối hai.',
-     note:'又……又…… mô tả hai đặc điểm cùng tồn tại.'},
-    {q_zh:'同学觉得小红怎么样？',
-     q_vn:'Bạn học thấy Tiểu Hồng thế nào?',
-     hint:'又聪明又热情，也很努力',
-     sample:'她又聪明又热情，也很努力。',
-     sample_vn:'Bạn ấy vừa thông minh vừa nhiệt tình, cũng rất chăm chỉ.',
-     note:'又……又…… kết hợp 也 liệt kê thêm một đặc điểm.'},
-    {q_zh:'小刚小丽在超市门口打算做什么？',
-     q_vn:'Tiểu Cương và Tiểu Lệ ở trước siêu thị định làm gì?',
-     hint:'进超市买蛋糕和喝的',
-     sample:'他们有点儿饿了，打算进超市买蛋糕和一些喝的。',
-     sample_vn:'Họ hơi đói, định vào siêu thị mua bánh kem và ít đồ uống.',
-     note:'打算 + V diễn tả dự định sắp làm (ôn lại 打算 đã học ở Bài 1).'},
-    {q_zh:'经理最后猜到客人说的服务员是谁？',
-     q_vn:'Cuối cùng quản lý đoán ra người phục vụ mà khách nói đến là ai?',
-     hint:'李小美，她总是笑着跟客人说话',
-     sample:'是李小美，因为她总是笑着跟客人说话。',
-     sample_vn:'Là Lý Tiểu Mỹ, vì cô ấy luôn cười khi nói chuyện với khách hàng.',
-     note:'因为 giải thích lý do cho câu trả lời.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn giới thiệu với lớp về một người bạn thân của mình.',
+      q_zh: '说一说你的一个好朋友，他是个什么样的人？',
+      q_py: 'Shuō yi shuō nǐ de yí ge hǎo péngyou, tā shì ge shénme yàng de rén?',
+      q_vn: 'Hãy kể về một người bạn thân của bạn, bạn ấy là người thế nào?',
+      grammar: { label: '又……又…… (vừa… vừa…)', any: ['又'] },
+      need: [
+        { label: 'Dùng 又……又…… để tả tính cách', any: ['又'] },
+        { label: 'Kể một việc bạn ấy hay làm', any: ['帮', '回答', '学习', '努力', '认真', '问题'] }
+      ],
+      bonus: { label: 'Dùng 总是 để nói việc thường xuyên', any: ['总是', '经常'] },
+      vocab: ['聪明', '热情', '努力'],
+      minLen: 20,
+      sample: '我的朋友又聪明又热情，学习很努力。同学有问题的时候，他总是认真地回答。',
+      sample_py: 'Wǒ de péngyou yòu cōngming yòu rèqíng, xuéxí hěn nǔlì. Tóngxué yǒu wèntí de shíhou, tā zǒngshì rènzhēn de huídá.',
+      sample_vn: 'Bạn tôi vừa thông minh vừa nhiệt tình, học rất chăm. Khi các bạn có câu hỏi, cậu ấy luôn trả lời rất nghiêm túc.',
+      tip: '又……又…… nối hai tính chất cùng có: 这个菜又便宜又好吃。'
+    },
+    {
+      situation: 'Bạn đang xem lại ảnh cũ cùng người nhà.',
+      q_zh: '看这张照片，照片上的人在做什么？',
+      q_py: 'Kàn zhè zhāng zhàopiàn, zhàopiàn shàng de rén zài zuò shénme?',
+      q_vn: 'Xem tấm ảnh này, người trong ảnh đang làm gì?',
+      grammar: { label: 'V1 着 (O1) + V2 (O2) — vừa… vừa làm', any: ['着'] },
+      need: [
+        { label: 'Dùng V着 tả tư thế', any: ['站着', '坐着', '拿着', '笑着', '看着'] },
+        { label: 'Nói việc người đó đang làm', any: ['吃', '喝', '说', '照', '玩', '唱'] }
+      ],
+      bonus: { label: 'Nhận xét tâm trạng trong ảnh', any: ['高兴', '快乐', '热情', '年轻'] },
+      vocab: ['照片', '站', '蛋糕'],
+      minLen: 18,
+      sample: '照片上的人站着吃蛋糕，手里还拿着一杯咖啡，看上去很高兴。',
+      sample_py: 'Zhàopiàn shàng de rén zhàn zhe chī dàngāo, shǒu lǐ hái ná zhe yì bēi kāfēi, kàn shàng qù hěn gāoxìng.',
+      sample_vn: 'Người trong ảnh đứng ăn bánh ga-tô, trên tay còn cầm một cốc cà phê, trông rất vui.',
+      tip: 'V1着 + V2 cho biết tư thế khi làm việc kia: 他笑着说、我站着吃。'
+    },
+    {
+      situation: 'Thầy giáo hỏi cả lớp về kinh nghiệm tham gia cuộc thi.',
+      q_zh: '你参加过什么比赛？后来结果怎么样？',
+      q_py: 'Nǐ cānjiā guo shénme bǐsài? Hòulái jiéguǒ zěnmeyàng?',
+      q_vn: 'Bạn từng tham gia cuộc thi gì? Kết quả sau đó thế nào?',
+      grammar: { label: '参加 + 比赛, dùng 过 kể trải nghiệm', any: ['过', '参加'] },
+      need: [
+        { label: 'Nói cuộc thi nào', any: ['比赛', '考试', '汉语', '唱歌', '跑步', '足球', '篮球'] },
+        { label: 'Nói kết quả', any: ['第一', '第二', '第三', '名', '得', '没', '成绩'] }
+      ],
+      bonus: { label: 'Nói bạn đã chuẩn bị thế nào', any: ['认真', '努力', '准备', '练习'] },
+      vocab: ['比赛', '认真', '努力'],
+      minLen: 20,
+      sample: '去年我参加过一次汉语比赛。那时候我准备得很认真，每天都练习，最后得了第二名。',
+      sample_py: 'Qùnián wǒ cānjiā guo yí cì Hànyǔ bǐsài. Nà shíhou wǒ zhǔnbèi děi hěn rènzhēn, měitiān dōu liànxí, zuìhòu děi le dì èr míng.',
+      sample_vn: 'Năm ngoái tôi từng tham gia một cuộc thi tiếng Hán. Hồi đó tôi chuẩn bị rất nghiêm túc, ngày nào cũng luyện, cuối cùng được giải nhì.',
+      tip: '过 đặt sau động từ để kể việc đã từng làm: 我去过中国。'
+    },
+    {
+      situation: 'Bạn tan làm về nhà, bụng đói mà tủ lạnh trống trơn.',
+      q_zh: '下班回家你饿了，可是家里没有吃的，你会怎么办？',
+      q_py: 'Xiàbān huí jiā nǐ è le, kěshì jiā lǐ méiyǒu chī de, nǐ huì zěnme bàn?',
+      q_vn: 'Tan làm về nhà bạn đói, nhưng ở nhà không có gì ăn, bạn sẽ làm thế nào?',
+      grammar: { label: '先……，再/然后…… (trình tự việc làm)', any: ['先', '然后', '再'] },
+      need: [
+        { label: 'Nói đi mua hay gọi đồ ăn', any: ['超市', '买', '饭馆', '外面', '点'] },
+        { label: 'Nói món ăn cụ thể', any: ['面包', '鸡蛋', '面条', '米饭', '菜', '蛋糕'] }
+      ],
+      bonus: { label: 'Nói thêm vì sao chọn cách đó', any: ['因为', '方便', '便宜', '快'] },
+      vocab: ['饿', '超市', '蛋糕'],
+      minLen: 18,
+      sample: '我饿了就先去超市买点儿面包和鸡蛋，然后回家做一个简单的菜，因为这样又快又便宜。',
+      sample_py: 'Wǒ è le jiù xiān qù chāoshì mǎi diǎn ér miànbāo hé jīdàn, ránhòu huí jiā zuò yí ge jiǎndān de cài, yīnwèi zhè yàng yòu kuài yòu piányi.',
+      sample_vn: 'Đói thì tôi ra siêu thị mua ít bánh mì và trứng trước, rồi về nhà nấu một món đơn giản, vì như vậy vừa nhanh vừa rẻ.',
+      tip: '先……然后…… nói thứ tự các việc: 先写作业，然后看电视。'
+    },
+    {
+      situation: 'Một người bạn nước ngoài hỏi về lớp học của bạn.',
+      q_zh: '介绍一下你们班：同学们年轻吗？大家学得怎么样？',
+      q_py: 'Jièshào yíxià nǐmen bān: tóngxué men niánqīng ma? Dàjiā xué děi zěnmeyàng?',
+      q_vn: 'Giới thiệu về lớp bạn: các bạn học sinh có trẻ không? Mọi người học thế nào?',
+      grammar: { label: '又……又…… + 总是 (tả chung cả nhóm)', any: ['又', '总是', '都'] },
+      need: [
+        { label: 'Nói về tuổi hoặc khối lớp', any: ['年轻', '年级', '岁', '大学'] },
+        { label: 'Nhận xét tinh thần học', any: ['认真', '努力', '聪明', '热情'] }
+      ],
+      bonus: { label: 'Kể một hoạt động chung của lớp', any: ['比赛', '一起', '活动', '照片', '参加'] },
+      vocab: ['年级', '年轻', '认真'],
+      minLen: 20,
+      sample: '我们班的同学都很年轻，大部分是三年级的学生。大家学得又认真又努力，上个月还一起参加了汉语比赛。',
+      sample_py: 'Wǒmen bān de tóngxué dōu hěn niánqīng, dà bùfen shì sān niánjí de xuésheng. Dàjiā xué děi yòu rènzhēn yòu nǔlì, shàng ge yuè hái yìqǐ cānjiā le Hànyǔ bǐsài.',
+      sample_vn: 'Các bạn lớp tôi đều rất trẻ, phần lớn là sinh viên năm ba. Mọi người học vừa nghiêm túc vừa chăm chỉ, tháng trước còn cùng nhau tham gia cuộc thi tiếng Hán.',
+      tip: '年级 là khối/năm học, 年轻 là trẻ tuổi — đừng nhầm hai từ này.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

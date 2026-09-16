@@ -796,28 +796,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 18 (kết hợp ngữ pháp các bài trước) để nói về khoa học công nghệ và cuộc sống.',
-  questions:[
-    {q_zh:'你常用电脑做什么？你平均每天上网的时间大概是多长？',q_vn:'Bạn thường dùng máy tính làm gì? Trung bình mỗi ngày bạn lên mạng bao lâu?',
-     hint:'除此以外……；大概……左右',
-     sample:'我常用电脑查信息、写作业。除此以外，我还用它看电影。我每天上网的时间大概三个小时左右。',sample_vn:'Tôi thường dùng máy tính tra thông tin, làm bài tập. Ngoài ra còn xem phim. Mỗi ngày lên mạng khoảng ba tiếng.',
-     note:'除此以外/信息 (bài mới) + 大概 (Bài 13) + 左右 (Bài 15).'},
-    {q_zh:'互联网对你的生活有哪些影响？',q_vn:'Internet có ảnh hưởng gì đến cuộc sống của bạn?',
-     hint:'不仅……，而且连……也……；离不开',
-     sample:'互联网不仅改变了我的学习方式，而且连生活方式也改变了。现在我付款、购物都用手机，已经离不开它了。',sample_vn:'Internet không chỉ thay đổi cách học của tôi mà cả lối sống cũng thay đổi. Giờ thanh toán, mua sắm đều dùng điện thoại, không thể thiếu nó.',
-     note:'方式/付款 (bài mới) + 不仅……而且 (Bài 6) + 连……也 (Bài 11) + bổ ngữ khả năng 离不开.'},
-    {q_zh:'你会因为上网而减少和朋友正常交流的时间吗？',q_vn:'Bạn có vì lên mạng mà giảm thời gian giao lưu bình thường với bạn bè không?',
-     hint:'是否……；受不了……',
-     sample:'我不知道自己是否会这样。有时候朋友们聚会时都在看手机，我真受不了这种情况，所以我会提醒大家少看手机。',sample_vn:'Tôi không biết mình có vậy không. Có lúc bạn bè họp mặt đều nhìn điện thoại, tôi thật chịu không nổi tình huống đó, nên tôi nhắc mọi người bớt nhìn điện thoại.',
-     note:'是否/受不了 (bài mới) + 聚会 (Bài 8) + 提醒 (Bài 4).'},
-    {q_zh:'请举一个例子，说说科技的发展给我们的生活带来了什么变化。',q_vn:'Hãy nêu ví dụ về thay đổi mà khoa học công nghệ mang lại cho cuộc sống.',
-     hint:'举一个例子；原来……，现在……',
-     sample:'举一个例子，原来寄信需要好几天，现在发个电子邮件用不了一分钟朋友就能收到，连邮局都不用去了。',sample_vn:'Nêu ví dụ, trước gửi thư mất mấy ngày, nay gửi email chưa đến một phút bạn đã nhận được, đến bưu điện cũng không cần.',
-     note:'举/邮局/收 (bài mới) + 原来 (Bài 4) + 连……都 (Bài 11) + 用不了 (Bài 5).'},
-    {q_zh:'你做过什么奇怪的梦？你觉得梦是否能告诉我们将来的事情？',q_vn:'Bạn từng mơ giấc mơ kỳ lạ nào? Bạn nghĩ giấc mơ có báo trước tương lai không?',
-     hint:'梦到……，接着又……；仍然没有……',
-     sample:'我梦到自己在一座桥上走，接着又梦见掉进了水里。我觉得梦不能告诉我们将来的事，到现在科学家仍然没有一个科学的说法。',sample_vn:'Tôi mơ đang đi trên cầu, ngay sau đó lại mơ rơi xuống nước. Tôi nghĩ mơ không báo trước tương lai, đến nay các nhà khoa học vẫn chưa có lời giải thích khoa học.',
-     note:'接着/座/桥 (bài mới) + 梦 (Bài 17) + 仍然 (Bài 17) + 掉 (Bài 5).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 18. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Đồng nghiệp hỏi bạn dùng máy tính vào việc gì nhiều nhất.',
+      q_zh: '你常用电脑做什么？你平均每天上网的时间大概是多长？',
+      q_py: 'Nǐ cháng yòng diànnǎo zuò shénme? Nǐ píng jūn měitiān shàngwǎng de shíjiān dàgài shì duō zhǎng?',
+      q_vn: 'Bạn thường dùng máy tính làm gì? Trung bình mỗi ngày bạn lên mạng bao lâu?',
+      grammar: { label: '除此以外，还…… + 大概……左右', any: ['除此以外', '除了', '大概', '左右'] },
+      need: [
+        { label: 'Kể việc làm trên máy tính', any: ['信息', '作业', '工作', '电影', '邮件', '查'] },
+        { label: 'Nói thời gian lên mạng', any: ['小时', '大概', '左右', '分钟'] }
+      ],
+      bonus: { label: 'Dùng 除此以外 bổ sung ý', any: ['除此以外', '除了'] },
+      vocab: ['信息', '方式', '网站'],
+      minLen: 22,
+      sample: '我常用电脑查信息、写作业，也常上几个新闻网站。除此以外，我还用它看电影。我每天上网的时间大概三个小时左右。',
+      sample_py: 'Wǒ cháng yòng diànnǎo chá xìnxī, xiě zuòyè, yě cháng shàng jǐ ge xīnwén wǎngzhàn. Chú cǐ yǐ wài, wǒ hái yòng tā kàn diànyǐng. Wǒ měitiān shàngwǎng de shíjiān dàgài sān ge xiǎoshí zuǒyòu.',
+      sample_vn: 'Tôi hay dùng máy tính tra thông tin, làm bài tập, cũng hay vào vài trang tin. Ngoài ra tôi còn dùng nó xem phim. Thời gian lên mạng mỗi ngày của tôi khoảng ba tiếng.',
+      tip: '除此以外 = ngoài ra, dùng đầu câu trong văn viết.'
+    },
+    {
+      situation: 'Lớp bạn thảo luận Internet thay đổi cuộc sống thế nào.',
+      q_zh: '互联网对你的生活有哪些影响？',
+      q_py: 'Hùliánwǎng duì nǐ de shēnghuó yǒu nǎxiē yǐngxiǎng?',
+      q_vn: 'Internet ảnh hưởng gì đến cuộc sống của bạn?',
+      grammar: { label: '不仅……而且连……也…… ', any: ['不仅', '连'] },
+      need: [
+        { label: 'Nói ảnh hưởng đến học tập hoặc công việc', any: ['学习', '工作', '方式', '查', '上课'] },
+        { label: 'Nói ảnh hưởng đến sinh hoạt', any: ['付款', '购物', '生活', '手机', '买'] }
+      ],
+      bonus: { label: 'Dùng 连……也…… nhấn mạnh', any: ['连'] },
+      vocab: ['互联网', '方式', '付款'],
+      minLen: 22,
+      sample: '互联网不仅改变了我的学习方式，而且连生活方式也改变了。现在我付款、购物都用手机，遇到问题也是先上网查，已经离不开它了。',
+      sample_py: 'Hùliánwǎng bùjǐn gǎibiàn le wǒ de xuéxí fāngshì, ér qiě lián shēnghuó fāngshì yě gǎibiàn le. Xiànzài wǒ fùkuǎn, gòuwù dōu yòng shǒujī, yùdào wèntí yě shì xiān shàngwǎng chá, yǐjīng lí bù kāi tā le.',
+      sample_vn: 'Internet không những thay đổi cách học của tôi mà ngay cả cách sống cũng thay đổi. Giờ tôi trả tiền, mua sắm đều dùng điện thoại, gặp vấn đề cũng lên mạng tra trước, đã không thể thiếu nó.',
+      tip: '连……也/都…… nhấn mạnh cả điều bất ngờ nhất: 连孩子都知道。'
+    },
+    {
+      situation: 'Trong buổi gặp mặt, mọi người đều cắm mặt vào điện thoại.',
+      q_zh: '你会因为上网而减少和朋友正常交流的时间吗？',
+      q_py: 'Nǐ huì yīnwèi shàngwǎng ér jiǎnshǎo hé péngyou zhèngcháng jiāoliú de shíjiān ma?',
+      q_vn: 'Bạn có vì lên mạng mà giảm thời gian trò chuyện trực tiếp với bạn bè không?',
+      grammar: { label: '是否…… (có… hay không); 受不了……', any: ['是否', '受不了'] },
+      need: [
+        { label: 'Nêu quan điểm hoặc thói quen của bạn', any: ['会', '不会', '减少', '交流', '聚会'] },
+        { label: 'Nói cách xử lý', any: ['提醒', '放下', '少看', '关', '约定'] }
+      ],
+      bonus: { label: 'Dùng 是否 hoặc 受不了', any: ['是否', '受不了'] },
+      vocab: ['是否', '受不了', '方式'],
+      minLen: 22,
+      sample: '我也不知道自己是否完全没有这个问题。有时候朋友聚会大家都在看手机，我真受不了这种情况，所以我会提醒大家把手机放下，好好聊聊天儿。',
+      sample_py: 'Wǒ yě bù zhīdao zìjǐ shìfǒu wánquán méiyǒu zhège wèntí. Yǒu shíhou péngyou jùhuì dàjiā dōu zài kàn shǒujī, wǒ zhēn shòubuliǎo zhè zhǒng qíngkuàng, suǒyǐ wǒ huì tíxǐng dàjiā bǎ shǒujī fàng xià, hǎohāo liáo liáo tiān ér.',
+      sample_vn: 'Tôi cũng không chắc mình có hoàn toàn tránh được chuyện này không. Có lúc bạn bè gặp nhau ai cũng nhìn điện thoại, tôi thật sự không chịu nổi, nên tôi sẽ nhắc mọi người bỏ điện thoại xuống, trò chuyện cho tử tế.',
+      tip: '是否 = 是不是, dùng trong văn viết: 请说明是否同意。'
+    },
+    {
+      situation: 'Bạn viết một đoạn ngắn về công nghệ cho lớp.',
+      q_zh: '请举一个例子，说说科技的发展给我们的生活带来了什么变化。',
+      q_py: 'Qǐng jǔ yí ge lì zǐ, shuōshuo kē jì de fāzhǎn gěi wǒmen de shēnghuó dài lái le shénme biànhuà.',
+      q_vn: 'Hãy nêu ví dụ về thay đổi mà công nghệ mang lại cho cuộc sống.',
+      grammar: { label: '举一个例子……; 用不了…… (chưa tới…)', any: ['举', '例子', '用不了'] },
+      need: [
+        { label: 'Nêu một ví dụ cụ thể', any: ['寄信', '邮局', '电子邮件', '手机', '网上', '付款', '地图'] },
+        { label: 'So sánh trước và nay', any: ['原来', '以前', '现在', '几天', '一分钟', '秒'] }
+      ],
+      bonus: { label: 'Dùng 连……都…… nhấn mạnh', any: ['连'] },
+      vocab: ['技术', '邮局', '秒'],
+      minLen: 22,
+      sample: '举一个例子，原来寄信需要好几天，现在发个电子邮件用不了几秒钟朋友就能收到，连邮局都不用去了。技术真的改变了我们的生活。',
+      sample_py: 'Jǔ yí ge lì zǐ, yuánlái jì xìn xūyào hǎo jǐ tiān, xiànzài fā ge diànzǐyóujiàn yòng bù le jǐ miǎo zhōng péngyou jiù néng shōu dào, lián yóujú dōu bú yòng qù le. Jìshù zhēn de gǎibiàn le wǒmen de shēnghuó.',
+      sample_vn: 'Lấy một ví dụ, trước đây gửi thư mất mấy ngày, giờ gửi email chưa tới vài giây bạn bè đã nhận được, đến bưu điện cũng không cần đi. Công nghệ thật sự đã thay đổi cuộc sống của chúng ta.',
+      tip: '用不了 + thời gian = chưa cần đến…: 用不了十分钟就到了。'
+    },
+    {
+      situation: 'Sáng nay bạn tỉnh dậy sau một giấc mơ lạ.',
+      q_zh: '你做过什么奇怪的梦？你觉得梦是否能告诉我们将来的事情？',
+      q_py: 'Nǐ zuò guo shénme qíguài de mèng? Nǐ juéde mèng shìfǒu néng gàosu wǒmen jiānglái de shìqing?',
+      q_vn: 'Bạn từng mơ giấc mơ kỳ lạ nào? Bạn thấy giấc mơ có báo trước tương lai không?',
+      grammar: { label: '接着…… (ngay sau đó); 仍然……', any: ['接着', '仍然'] },
+      need: [
+        { label: 'Kể nội dung giấc mơ', any: ['梦', '桥', '水', '飞', '考试', '掉'] },
+        { label: 'Nêu quan điểm về giấc mơ', any: ['不能', '能', '将来', '科学', '说明', '相信'] }
+      ],
+      bonus: { label: 'Dùng 接着 kể diễn biến', any: ['接着'] },
+      vocab: ['危险', '安全', '仍然'],
+      minLen: 22,
+      sample: '我梦到自己在一座很高的桥上走，接着又梦见掉进了水里，醒来以后还觉得很危险。我觉得梦不能告诉我们将来的事，科学家到现在仍然没有一个准确的说法。',
+      sample_py: 'Wǒ mèng dào zìjǐ zài yí zuò hěn gāo de qiáo shàng zǒu, jiēzhe yòu mèng jiàn diào jìn le shuǐ lǐ, xǐng lái yǐhòu hái juéde hěn wēixiǎn. Wǒ juéde mèng bù néng gàosu wǒmen jiānglái de shì, kēxué jiā dào xiànzài réngrán méiyǒu yí ge zhǔnquè de shuō fǎ.',
+      sample_vn: 'Tôi mơ thấy mình đi trên một cây cầu rất cao, ngay sau đó lại mơ rơi xuống nước, tỉnh dậy vẫn thấy nguy hiểm. Tôi thấy giấc mơ không báo trước được tương lai, đến giờ các nhà khoa học vẫn chưa có kết luận chính xác.',
+      tip: '接着 nối sự việc xảy ra tiếp ngay sau: 他说完，接着就走了。'
+    }
   ]
 };
 

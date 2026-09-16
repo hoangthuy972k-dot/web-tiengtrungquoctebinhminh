@@ -453,33 +453,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小刚为什么这么早就要睡觉？经理为什么生气？',
-     q_vn:'Vì sao Tiểu Cương đi ngủ sớm thế? Vì sao giám đốc giận?',
-     hint:'明天8点就要到公司，因为经理告诉他8点不到以后别来了',
-     sample:'小刚明天8点就要到公司，因为经理生气了，告诉他明天8点不到，以后就别来了。',
-     sample_vn:'Tiểu Cương ngày mai 8 giờ phải đến công ty, vì giám đốc giận rồi, bảo cậu ấy mai không đến trước 8 giờ thì sau này đừng đến nữa.',
-     note:'就 diễn tả hành động xảy ra sớm/nhanh (điểm ngữ pháp bài này).'},
-    {q_zh:'小刚要去哪儿？小丽帮他做了什么？',
-     q_vn:'Tiểu Cương định đi đâu? Tiểu Lệ giúp cậu ấy gì?',
-     hint:'跟周经理去外地办事，帮他把衣服放到行李箱里，把照片放在他包里',
-     sample:'小刚要跟周经理去外地办事，小丽帮他把衣服放到行李箱里，还把自己的照片放在他的包里了。',
-     sample_vn:'Tiểu Cương phải đi công tác nơi khác cùng giám đốc Chu, Tiểu Lệ giúp cậu ấy xếp quần áo vào vali, còn để ảnh của mình vào túi của cậu ấy.',
-     note:'把字句2: 把+B+động từ+到/在+vị trí (điểm ngữ pháp bài này).'},
-    {q_zh:'小刚在去机场的路上才发现什么？',
-     q_vn:'Tiểu Cương trên đường ra sân bay mới phát hiện điều gì?',
-     hint:'忘带护照了，忘记带钱包了',
-     sample:'小刚在去机场的路上才发现忘带护照了，司机送他到机场的时候，他才发现忘记带钱包了。',
-     sample_vn:'Tiểu Cương trên đường ra sân bay mới phát hiện quên mang hộ chiếu, lúc tài xế chở đến sân bay, cậu ấy mới phát hiện quên mang ví tiền.',
-     note:'才 diễn tả hành động xảy ra muộn/chậm.'},
-    {q_zh:'这个老师为什么生气？他觉得真正的原因是什么？',
-     q_vn:'Vì sao thầy giáo này tức giận? Thầy nghĩ nguyên nhân thực sự là gì?',
-     hint:'学生总是忘了拿铅笔，真正原因是没有好的学习习惯',
-     sample:'这个老师有点儿生气，因为学生总是忘了拿铅笔，但是他觉得真正的原因是学生没有好的学习习惯。',
-     sample_vn:'Thầy giáo này hơi tức giận, vì học sinh luôn quên mang bút chì, nhưng thầy nghĩ nguyên nhân thực sự là học sinh không có thói quen học tập tốt.',
-     note:'不是……是…… diễn tả sự phủ định và khẳng định nguyên nhân thực sự.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 12. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn đang xếp đồ cho chuyến bay sáng mai.',
+      q_zh: '出门旅游以前，你会把护照和钱放在哪儿？',
+      q_py: 'Chū mén lǚyóu yǐqián, nǐ huì bǎ hùzhào hé qián fàng zài nǎr?',
+      q_vn: 'Trước khi đi du lịch, bạn để hộ chiếu và tiền ở đâu?',
+      grammar: { label: '把 + đồ vật + 放在/放到 + nơi chốn', any: ['放在', '放到', '把'] },
+      need: [
+        { label: 'Dùng 把……放在/放到……', any: ['放在', '放到'] },
+        { label: 'Nói rõ để ở đâu', any: ['包', '行李箱', '口袋', '身上'] }
+      ],
+      bonus: { label: 'Nói lý do làm vậy', any: ['放心', '方便', '安全', '容易找'] },
+      vocab: ['护照', '包', '行李箱'],
+      minLen: 20,
+      sample: '出门以前我会把护照和钱放在包里，把大件的衣服放到行李箱里，这样比较方便，也放心。',
+      sample_py: 'Chū mén yǐqián wǒ huì bǎ hùzhào hé qián fàng zài bāo lǐ, bǎ dà jiàn de yīfu fàng dào xínglixiāng lǐ, zhè yàng bǐjiào fāngbiàn, yě fàngxīn.',
+      sample_vn: 'Trước khi đi tôi để hộ chiếu và tiền vào túi xách, còn quần áo to thì cho vào vali, như vậy tiện hơn và yên tâm.',
+      tip: '把 + O + 放在 + nơi chốn: 把书放在桌子上。'
+    },
+    {
+      situation: 'Bạn cùng phòng thấy bạn thức khuya cuối tuần nên hỏi giờ giấc của bạn.',
+      q_zh: '你平时几点睡觉？周末呢？',
+      q_py: 'Nǐ píngshí jǐ diǎn shuìjiào? Zhōumò ne?',
+      q_vn: 'Ngày thường bạn ngủ lúc mấy giờ? Cuối tuần thì sao?',
+      grammar: { label: '就 (sớm/nhanh) và 才 (muộn/chậm)', any: ['就', '才'] },
+      need: [
+        { label: 'Dùng 就 cho ngày thường', any: ['就'] },
+        { label: 'Dùng 才 cho cuối tuần', any: ['才'] }
+      ],
+      bonus: { label: 'Nói cảm nhận về việc ngủ muộn', any: ['累', '不舒服', '需要', '休息'] },
+      vocab: ['发现', '自己', '需要'],
+      minLen: 20,
+      sample: '我平时十点半就睡觉了，周末常常十二点才睡。我发现晚睡以后自己第二天特别累，所以还是需要早点儿休息。',
+      sample_py: 'Wǒ píngshí shí diǎn bàn jiù shuìjiào le, zhōumò chángcháng shí èr diǎn cái shuì. Wǒ fāxiàn wǎn shuì yǐhòu zìjǐ dì èr tiān tèbié lèi, suǒyǐ háishi xūyào zǎo diǎn ér xiūxi.',
+      sample_vn: 'Ngày thường 10 rưỡi tôi đã ngủ, cuối tuần thường 12 giờ mới ngủ. Tôi thấy ngủ muộn thì hôm sau mình rất mệt, nên vẫn cần nghỉ sớm hơn.',
+      tip: '就 = sớm hơn mong đợi, 才 = muộn hơn mong đợi: 他五点就来了 / 他五点才来。'
+    },
+    {
+      situation: 'Bạn thân hỏi bạn có hay nổi nóng không.',
+      q_zh: '什么事情会让你生气？生气的时候你会怎么办？',
+      q_py: 'Shénme shìqing huì ràng nǐ shēngqì? Shēngqì de shíhou nǐ huì zěnme bàn?',
+      q_vn: 'Chuyện gì khiến bạn tức giận? Lúc tức giận bạn làm gì?',
+      grammar: { label: '让 + người + 生气; 先……再……', any: ['让', '先', '再'] },
+      need: [
+        { label: 'Nói việc khiến bạn giận', any: ['生气', '迟到', '不认真', '骗', '吵', '不守'] },
+        { label: 'Nói cách xử lý', any: ['走走', '想', '说', '休息', '安静', '听音乐'] }
+      ],
+      bonus: { label: 'Nói bạn tự xử lý bằng 自己', any: ['自己'] },
+      vocab: ['生气', '自己', '发现'],
+      minLen: 20,
+      sample: '别人不注意时间、常常迟到的时候我会有点儿生气。不过我一般不马上说，先自己出去走走，想清楚了再跟他说。',
+      sample_py: 'Biérén bú zhùyì shíjiān, chángcháng chídào de shíhou wǒ huì yǒudiǎnr shēngqì. Búguò wǒ yìbān bù mǎshàng shuō, xiān zìjǐ chū qù zǒuzou, xiǎng qīngchu le zài gēn tā shuō.',
+      sample_vn: 'Khi người khác không để ý giờ giấc, hay đến muộn thì tôi hơi bực. Nhưng tôi thường không nói ngay, ra ngoài đi dạo một mình trước, nghĩ thông rồi mới nói với họ.',
+      tip: '让 + người + tính từ/động từ: 这件事让我很高兴。'
+    },
+    {
+      situation: 'Bạn kể một lần suýt lỡ chuyến bay.',
+      q_zh: '坐飞机的时候，你一般提前多久到机场？',
+      q_py: 'Zuò fēijī de shíhou, nǐ yìbān tíqián duō jiǔ dào jīchǎng?',
+      q_vn: 'Khi đi máy bay, bạn thường đến sân bay sớm bao lâu?',
+      grammar: { label: '把 + người/đồ + 送到 + nơi chốn', any: ['送到', '把'] },
+      need: [
+        { label: 'Nói đến sớm bao lâu', any: ['小时', '分钟', '提前', '早'] },
+        { label: 'Nhắc đến máy bay cất cánh', any: ['起飞', '飞机'] }
+      ],
+      bonus: { label: 'Kể một lần suýt muộn', any: ['差点儿', '迟到', '着急', '快'] },
+      vocab: ['司机', '起飞', '需要'],
+      minLen: 20,
+      sample: '我一般提前两个小时到机场。上次司机把我送到机场的时候，离起飞只有四十分钟，我着急得不行，以后我需要早点儿出门。',
+      sample_py: 'Wǒ yìbān tíqián liǎng ge xiǎoshí dào jīchǎng. Shàng cì sījī bǎ wǒ sòng dào jīchǎng de shíhou, lí qǐfēi zhǐyǒu sì shífēn zhōng, wǒ zháojí děi bù xíng, yǐhòu wǒ xūyào zǎo diǎn ér chū mén.',
+      sample_vn: 'Tôi thường đến sân bay trước hai tiếng. Lần trước lúc tài xế đưa tôi tới sân bay thì chỉ còn 40 phút là cất cánh, tôi lo sốt vó, sau này tôi cần đi sớm hơn.',
+      tip: '把……送到…… = đưa ai/cái gì đến đâu: 把孩子送到学校。'
+    },
+    {
+      situation: 'Lớp học vẽ hỏi bạn về khả năng hội họa của mình.',
+      q_zh: '你会画画儿吗？谁教你的？',
+      q_py: 'Nǐ huì huà huà ér ma? Shéi jiāo nǐ de?',
+      q_vn: 'Bạn biết vẽ không? Ai dạy bạn?',
+      grammar: { label: '教 + người + làm gì; 把 + tranh + 画在 + nơi chốn', any: ['教', '画'] },
+      need: [
+        { label: 'Nói biết vẽ hay không', any: ['会', '不会', '一点儿'] },
+        { label: 'Nói ai dạy hoặc học ở đâu', any: ['教', '妈妈', '老师', '自己', '学'] }
+      ],
+      bonus: { label: 'Kể thứ bạn hay vẽ', any: ['太阳', '山', '花', '猫', '房子', '人'] },
+      vocab: ['教', '画', '黑板', '太阳'],
+      minLen: 20,
+      sample: '我会画一点儿。小时候是我妈妈教我的，老师也常常让我在黑板上画。现在我最喜欢画太阳和山。',
+      sample_py: 'Wǒ huì huà yìdiǎnr. Xiǎoshí hòu shì wǒ māma jiāo wǒ de, lǎoshī yě chángcháng ràng wǒ zài hēibǎn shàng huà. Xiànzài wǒ zuì xǐhuan huà tàiyáng hé shān.',
+      sample_vn: 'Tôi biết vẽ chút ít. Hồi nhỏ mẹ dạy tôi, thầy cô cũng hay cho tôi vẽ trên bảng. Giờ tôi thích vẽ mặt trời và núi nhất.',
+      tip: '教 + người + nội dung: 老师教我们汉语。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

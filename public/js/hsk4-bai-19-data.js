@@ -786,28 +786,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 19 (kết hợp ngữ pháp các bài trước) để nói về cuộc sống hằng ngày: thuê nhà, thể thao, xin lỗi.',
-  questions:[
-    {q_zh:'你现在租房子住吗？你租的房子条件怎么样？',q_vn:'Bạn đang thuê nhà à? Điều kiện nhà thuê thế nào?',
-     hint:'总的来说……；虽然……但是……',
-     sample:'我现在租房子住。房子虽然离马路近，有点儿吵，但是交通方便，厨房也很大。总的来说，我挺满意的。',sample_vn:'Tôi đang thuê nhà. Nhà tuy gần đường lớn, hơi ồn, nhưng giao thông tiện, bếp cũng rộng. Nhìn chung tôi khá hài lòng.',
-     note:'总的来说/租/吵/厨房 (bài mới) + 虽然……但是 + 挺……的 (Bài 6).'},
-    {q_zh:'在租房子的时候，房子的哪些条件会吸引你？对你来说，哪个最重要？',q_vn:'Khi thuê nhà, điều kiện nào thu hút bạn? Với bạn, cái nào quan trọng nhất?',
-     hint:'关键在于……；对……来说',
-     sample:'对我来说，交通方便和周围安静都很重要，但关键在于房东是否友好。什么样的房子都行，房东好才是最重要的。',sample_vn:'Với tôi, giao thông tiện và xung quanh yên tĩnh đều quan trọng, nhưng then chốt ở chủ nhà có thân thiện không. Nhà thế nào cũng được, chủ nhà tốt mới quan trọng nhất.',
-     note:'在于/房东 (bài mới) + 对……来说 (Bài 5) + 是否 (Bài 18) + 什么……都 (ngữ pháp bài).'},
-    {q_zh:'在你们国家，哪种运动最普遍？为什么？',q_vn:'Ở nước bạn, môn thể thao nào phổ biến nhất? Vì sao?',
-     hint:'对条件要求不高；一到……就……',
-     sample:'在越南，足球和羽毛球最普遍。羽毛球对条件要求不高，谁都可以打，所以很多人一到周末就去打几场球。',sample_vn:'Ở Việt Nam, bóng đá và cầu lông phổ biến nhất. Cầu lông yêu cầu điều kiện không cao, ai cũng chơi được, nên nhiều người cứ cuối tuần là đi chơi vài trận.',
-     note:'羽毛球/场 (bài mới) + 普遍 (Bài 13) + 一……就 (Bài 2) + 谁都 (ngữ pháp bài).'},
-    {q_zh:'如果你不小心做错了事，你会怎么向别人道歉？',q_vn:'Nếu bạn lỡ làm sai, bạn xin lỗi người khác thế nào?',
-     hint:'不是故意的；主动……',
-     sample:'我会主动向他道歉，说明我不是故意的。既然知道是自己错了，就应该用一个礼貌的方法说出来，这样他一定会原谅我的。',sample_vn:'Tôi sẽ chủ động xin lỗi, giải thích tôi không cố ý. Đã biết mình sai thì nên nói ra một cách lịch sự, như vậy họ nhất định tha thứ.',
-     note:'道歉 (bài mới) + 故意 (Bài 15) + 既然……就 (Bài 14) + 礼貌/原谅 (Bài 16).'},
-    {q_zh:'看比赛或者演出的时候，观众应该注意什么？',q_vn:'Khi xem thi đấu hoặc biểu diễn, khán giả nên chú ý gì?',
-     hint:'禁止……；千万不要……',
-     sample:'观众要安静，禁止大声讲话，也不要随便离开座位。看京剧的时候千万不要接电话，否则会影响演员和别的观众。',sample_vn:'Khán giả phải yên tĩnh, cấm nói to, cũng đừng tùy tiện rời chỗ. Xem Kinh kịch tuyệt đối đừng nghe điện thoại, nếu không ảnh hưởng diễn viên và khán giả khác.',
-     note:'禁止/座位 (bài mới) + 随便 (Bài 7) + 千万 (Bài 15) + 否则 (Bài 11).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 19. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn mới chuyển đến căn hộ thuê và bạn bè hỏi thăm.',
+      q_zh: '你现在租房子住吗？你租的房子条件怎么样？',
+      q_py: 'Nǐ xiànzài zū fáng zi zhù ma? Nǐ zū de fáng zi tiáojiàn zěnmeyàng?',
+      q_vn: 'Bạn đang thuê nhà à? Nhà bạn thuê điều kiện thế nào?',
+      grammar: { label: '虽然……但是……; 总的来说……', any: ['虽然', '总的来说'] },
+      need: [
+        { label: 'Nói về nhà đang ở', any: ['租', '房子', '房东', '厨房', '房间'] },
+        { label: 'Nhận xét ưu và nhược điểm', any: ['吵', '安静', '方便', '大', '小', '贵', '便宜'] }
+      ],
+      bonus: { label: 'Dùng 总的来说 để kết luận', any: ['总的来说'] },
+      vocab: ['租', '吵', '厨房', '房东'],
+      minLen: 22,
+      sample: '我现在租房子住。房子离马路近，有点儿吵，但是交通方便，厨房也很大，房东人很好。总的来说，我挺满意的。',
+      sample_py: 'Wǒ xiànzài zū fáng zi zhù. Fáng zi lí mǎ lù jìn, yǒudiǎnr chǎo, dànshì jiāotōng fāngbiàn, chúfáng yě hěn dà, fángdōng rén hěn hǎo. Zǒng de lái shuō, wǒ tǐng mǎnyì de.',
+      sample_vn: 'Tôi đang thuê nhà. Nhà gần đường lớn nên hơi ồn, nhưng đi lại thuận tiện, bếp cũng rộng, chủ nhà rất tốt. Nói chung tôi khá hài lòng.',
+      tip: '总的来说 = nói chung, dùng để chốt ý.'
+    },
+    {
+      situation: 'Bạn của bạn sắp thuê nhà và hỏi nên chọn thế nào.',
+      q_zh: '在租房子的时候，房子的哪些条件会吸引你？哪个最重要？',
+      q_py: 'Zài zū fáng zi de shíhou, fáng zi de nǎxiē tiáojiàn huì xīyǐn nǐ? Nǎge zuì zhòngyào?',
+      q_vn: 'Khi thuê nhà, điều kiện nào hấp dẫn bạn? Cái nào quan trọng nhất?',
+      grammar: { label: '对我来说……; 关键在于……', any: ['来说', '关键'] },
+      need: [
+        { label: 'Kể ít nhất hai tiêu chí', any: ['交通', '安静', '价格', '厨房', '干净', '附近', '安全'] },
+        { label: 'Chọn tiêu chí quan trọng nhất', any: ['最重要', '关键', '首先'] }
+      ],
+      bonus: { label: 'Nhắc đến chủ nhà bằng 房东', any: ['房东'] },
+      vocab: ['吸引', '房东', '安全'],
+      minLen: 22,
+      sample: '对我来说，交通方便、周围安静都很吸引我，价格也要合适。不过关键在于房东是否友好，房子再好，房东不好也住得不安心。',
+      sample_py: 'Duì wǒ lái shuō, jiāotōng fāngbiàn, zhōuwéi ānjìng dōu hěn xīyǐn wǒ, jiàgé yě yào héshì. Búguò guānjiàn zài yú fángdōng shìfǒu yǒuhǎo, fáng zi zài hǎo, fángdōng bù hǎo yě zhù děi bù ān xīn.',
+      sample_vn: 'Với tôi, giao thông thuận tiện, xung quanh yên tĩnh đều hấp dẫn, giá cũng phải hợp lý. Nhưng mấu chốt là chủ nhà có thân thiện không, nhà tốt mấy mà chủ không tốt thì ở cũng không yên tâm.',
+      tip: '关键在于…… = mấu chốt nằm ở…: 关键在于你自己。'
+    },
+    {
+      situation: 'Bạn Trung Quốc hỏi về phong trào thể thao ở nước bạn.',
+      q_zh: '在你们国家，哪种运动最普遍？为什么？',
+      q_py: 'Zài nǐmen guójiā, nǎ zhǒng yùndòng zuì pǔbiàn? Wèishénme?',
+      q_vn: 'Ở nước bạn, môn thể thao nào phổ biến nhất? Vì sao?',
+      grammar: { label: '谁都可以……; 一……就……', any: ['谁都', '一', '就'] },
+      need: [
+        { label: 'Nói môn thể thao', any: ['足球', '羽毛球', '乒乓球', '篮球', '跑步', '运动'] },
+        { label: 'Nêu lý do phổ biến', any: ['条件', '容易', '便宜', '谁都', '场地', '普遍'] }
+      ],
+      bonus: { label: 'Dùng lượng từ 场 với trận đấu', any: ['场'] },
+      vocab: ['羽毛球', '乒乓球', '场'],
+      minLen: 22,
+      sample: '在我们国家，足球和羽毛球最普遍。羽毛球对条件的要求不高，谁都可以打，所以很多人一到周末就去打几场球，公园里也常常有人打乒乓球。',
+      sample_py: 'Zài wǒmen guójiā, zúqiú hé yǔmáoqiú zuì pǔbiàn. Yǔmáoqiú duì tiáojiàn de yāoqiú bù gāo, shéi dōu kěyǐ dǎ, suǒyǐ hěn duō rén yí dào zhōumò jiù qù dǎ jǐ chǎng qiú, gōngyuán lǐ yě chángcháng yǒu rén dǎ pīngpāngqiú.',
+      sample_vn: 'Ở nước tôi, bóng đá và cầu lông phổ biến nhất. Cầu lông không đòi hỏi điều kiện cao, ai cũng chơi được, nên nhiều người cứ đến cuối tuần là đi đánh mấy trận, trong công viên cũng thường có người chơi bóng bàn.',
+      tip: '场 là lượng từ cho trận đấu, buổi biểu diễn: 一场比赛、一场电影。'
+    },
+    {
+      situation: 'Bạn lỡ làm hỏng việc của đồng nghiệp.',
+      q_zh: '如果你不小心做错了事，你会怎么向别人道歉？',
+      q_py: 'Rúguǒ nǐ bù xiǎoxīn zuò cuò le shì, nǐ huì zěnme xiàng biérén dàoqiàn?',
+      q_vn: 'Nếu lỡ làm sai, bạn sẽ xin lỗi người khác thế nào?',
+      grammar: { label: '向 + người + 道歉; 既然……就……', any: ['向', '道歉', '既然'] },
+      need: [
+        { label: 'Dùng 向……道歉', any: ['道歉', '对不起', '向'] },
+        { label: 'Nói thái độ và cách sửa', any: ['故意', '说明', '礼貌', '改', '弥补', '负责'] }
+      ],
+      bonus: { label: 'Dùng 原谅 nói mong được tha thứ', any: ['原谅'] },
+      vocab: ['道歉', '打招呼', '故意'],
+      minLen: 22,
+      sample: '我会主动向他道歉，说明我不是故意的，然后想办法把事情做好。既然知道是自己错了，就应该用礼貌的方法说出来，这样他一般会原谅我。',
+      sample_py: 'Wǒ huì zhǔ dòng xiàng tā dàoqiàn, shuōmíng wǒ bú shì gùyì de, ránhòu xiǎng bànfǎ bǎ shìqing zuò hǎo. Jìrán zhīdao shì zìjǐ cuò le, jiù yīnggāi yòng lǐmào de fāngfǎ shuō chū lái, zhè yàng tā yìbān huì yuánliàng wǒ.',
+      sample_vn: 'Tôi sẽ chủ động xin lỗi họ, nói rõ tôi không cố ý, rồi tìm cách làm lại cho tốt. Đã biết mình sai thì nên nói ra một cách lịch sự, như vậy họ thường sẽ tha thứ.',
+      tip: '向 + người + 道歉/学习/借: 向老师请教。'
+    },
+    {
+      situation: 'Bạn đưa bạn bè đi xem một buổi biểu diễn.',
+      q_zh: '看比赛或者演出的时候，观众应该注意什么？',
+      q_py: 'Kàn bǐsài huòzhě yǎnchū de shíhou, guānzhòng yīnggāi zhùyì shénme?',
+      q_vn: 'Khi xem thi đấu hoặc biểu diễn, khán giả nên chú ý gì?',
+      grammar: { label: '禁止 + động từ; 否则……', any: ['禁止', '否则'] },
+      need: [
+        { label: 'Nêu điều nên làm', any: ['安静', '排队', '座位', '关手机', '尊重'] },
+        { label: 'Nêu điều không nên', any: ['禁止', '大声', '离开', '接电话', '照相'] }
+      ],
+      bonus: { label: 'Dùng 否则 nêu hậu quả', any: ['否则'] },
+      vocab: ['禁止', '座位', '尊重'],
+      minLen: 22,
+      sample: '观众要保持安静，禁止大声讲话，也不要随便离开座位。看演出的时候千万别接电话，否则会影响演员和别的观众，这也是对别人的尊重。',
+      sample_py: 'Guānzhòng yào bǎo chí ānjìng, jìnzhǐ dà shēng jiǎng huà, yě bú yào suíbiàn líkāi zuòwèi. Kàn yǎnchū de shíhou qiānwàn bié jiē diànhuà, fǒuzé huì yǐngxiǎng yǎnyuán hé biéde guānzhòng, zhè yě shì duì biérén de zūnzhòng.',
+      sample_vn: 'Khán giả phải giữ yên lặng, cấm nói to, cũng đừng tùy tiện rời chỗ. Lúc xem biểu diễn tuyệt đối đừng nghe điện thoại, nếu không sẽ ảnh hưởng diễn viên và khán giả khác, đó cũng là tôn trọng người khác.',
+      tip: '禁止 + động từ: 禁止抽烟、禁止照相。'
+    }
   ]
 };
 

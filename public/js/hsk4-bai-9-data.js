@@ -847,28 +847,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 9 để trả lời các câu hỏi sau về thành công và thất bại.',
-  questions:[
-    {q_zh:'你觉得减肥最重要的是什么？',q_vn:'Bạn thấy điều quan trọng nhất khi giảm cân là gì?',
-     hint:'只能坚持，才会慢慢有效果',
-     sample:'我觉得只能坚持，才会慢慢有效果，一个月是不够的。',sample_vn:'Tôi thấy chỉ có thể kiên trì, mới từ từ có hiệu quả, một tháng là không đủ.',
-     note:'只能坚持，才会…… ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'你同意"没有人随随便便就能成功"这句话吗？',q_vn:'Bạn có đồng ý câu "không có ai tùy tiện là có thể thành công" không?',
-     hint:'任何成功都要通过努力才能得到',
-     sample:'我同意，任何成功都要通过努力才能得到。',sample_vn:'Tôi đồng ý, bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được.',
-     note:'任何……都要通过……才能…… ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'如果为了理想需要放弃一些东西，你会怎么选择？',q_vn:'Nếu vì lý tưởng cần từ bỏ một số thứ, bạn sẽ chọn thế nào?',
-     hint:'为了……理想，放弃……也是值得的',
-     sample:'我觉得为了自己的理想，放弃一些东西也是值得的。',sample_vn:'Tôi thấy vì lý tưởng của bản thân, từ bỏ một số thứ cũng đáng.',
-     note:'为了……理想……放弃……值得 ôn lại từ vựng của bài.'},
-    {q_zh:'你觉得应该关心结果还是关心过程？为什么？',q_vn:'Bạn thấy nên quan tâm kết quả hay quan tâm quá trình? Vì sao?',
-     hint:'把注意力放在……过程上',
-     sample:'我觉得应该把注意力放在做事情的过程上，这样才能发现解决问题的快乐。',sample_vn:'Tôi thấy nên đặt sự chú ý vào quá trình làm việc, như vậy mới có thể phát hiện niềm vui giải quyết vấn đề.',
-     note:'把注意力放在……过程上 ôn lại từ vựng của bài.'},
-    {q_zh:'你有没有遇到过困难想放弃，但最后坚持下来的经历？',q_vn:'Bạn đã từng gặp khó khăn muốn từ bỏ, nhưng cuối cùng kiên trì đến cùng chưa?',
-     hint:'虽然……可是……坚持……最后',
-     sample:'有，虽然当时很难，可是我坚持了下来，最后取得了成功。',sample_vn:'Có, tuy lúc đó rất khó, nhưng tôi đã kiên trì đến cùng, cuối cùng đạt được thành công.',
-     note:'虽然……可是……坚持……取得成功 ôn lại nhiều từ vựng của bài.'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 9. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn bè hỏi kinh nghiệm giảm cân của bạn.',
+      q_zh: '你觉得减肥最重要的是什么？',
+      q_py: 'Nǐ juéde jiǎnféi zuì zhòngyào de shì shénme?',
+      q_vn: 'Bạn thấy điều quan trọng nhất khi giảm cân là gì?',
+      grammar: { label: '只有……，才…… (chỉ có… mới…)', any: ['只有', '才'] },
+      need: [
+        { label: 'Nêu điều quan trọng nhất', any: ['坚持', '运动', '吃', '习惯'] },
+        { label: 'Nói về thời gian hoặc hiệu quả', any: ['效果', '个月', '慢慢', '一天', '时间'] }
+      ],
+      bonus: { label: 'Nói điều không nên làm', any: ['放弃', '不吃饭', '着急', '暂时'] },
+      vocab: ['坚持', '放弃', '暂时'],
+      minLen: 22,
+      sample: '我觉得最重要的是坚持。只有每天运动、少吃甜的，才会慢慢有效果，一两个星期是不够的，更不能暂时坚持几天就放弃。',
+      sample_py: 'Wǒ juéde zuì zhòngyào de shì jiānchí. Zhǐyǒu měitiān yùndòng, shǎo chī tián de, cái huì mànmàn yǒu xiàoguǒ, yì liǎng ge xīngqī shì bú gòu de, gèng bù néng zànshí jiānchí jǐ tiān jiù fàngqì.',
+      sample_vn: 'Tôi thấy quan trọng nhất là kiên trì. Chỉ có mỗi ngày vận động, ăn ít đồ ngọt thì mới dần có hiệu quả, một hai tuần là chưa đủ, càng không thể cố mấy hôm rồi bỏ.',
+      tip: '只有……才…… nêu điều kiện duy nhất: 只有努力，才能成功。'
+    },
+    {
+      situation: 'Cả lớp bàn về câu "không ai tùy tiện mà thành công".',
+      q_zh: '你同意“没有人随随便便就能成功”这句话吗？',
+      q_py: 'Nǐ tóngyì "méiyǒu rén suí suíbiàn biàn jiù néng chénggōng" zhè jù huà ma?',
+      q_vn: 'Bạn có đồng ý câu "không ai tùy tiện là thành công được" không?',
+      grammar: { label: '通过…… + 才能…… (nhờ vào… mới có thể…)', any: ['通过', '才能'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['同意', '不同意', '我觉得'] },
+        { label: 'Dùng 通过 hoặc 努力 nêu lý do', any: ['通过', '努力', '坚持', '经历', '过程'] }
+      ],
+      bonus: { label: 'Nêu ví dụ người nổi tiếng hoặc bản thân', any: ['作家', '爱迪生', '同学', '我自己', '比如'] },
+      vocab: ['随便', '通过', '坚持'],
+      minLen: 22,
+      sample: '我同意。任何成功都要通过努力才能得到，那些看起来很随便就成功的人，其实在我们看不见的地方坚持了很久。',
+      sample_py: 'Wǒ tóngyì. Rènhé chénggōng dōu yào tōngguò nǔlì cái néng děi dào, nàxiē kàn qǐlai hěn suíbiàn jiù chénggōng de rén, qíshí zài wǒmen kàn bú jiàn de dìfang jiānchí le hěn jiǔ.',
+      sample_vn: 'Tôi đồng ý. Mọi thành công đều phải nhờ nỗ lực mới có được, những người trông có vẻ dễ dàng thành công thật ra đã kiên trì rất lâu ở chỗ ta không thấy.',
+      tip: '通过 + phương thức + 才能…: 通过练习才能提高。'
+    },
+    {
+      situation: 'Bạn phải chọn giữa công việc ổn định và ước mơ của mình.',
+      q_zh: '如果为了理想需要放弃一些东西，你会怎么选择？',
+      q_py: 'Rúguǒ wèile lǐxiǎng xūyào fàngqì yì xiē dōngxi, nǐ huì zěnme xuǎnzé?',
+      q_vn: 'Nếu vì lý tưởng phải từ bỏ vài thứ, bạn sẽ chọn thế nào?',
+      grammar: { label: '为了……，放弃……也是值得的', any: ['为了', '值得'] },
+      need: [
+        { label: 'Nói lựa chọn của bạn', any: ['理想', '放弃', '选择', '坚持'] },
+        { label: 'Nêu lý do', any: ['值得', '喜欢', '将来', '后悔', '勇敢'] }
+      ],
+      bonus: { label: 'Nói điều bạn sẽ không từ bỏ', any: ['家人', '健康', '感情', '不会放弃'] },
+      vocab: ['理想', '放弃', '勇敢'],
+      minLen: 22,
+      sample: '我觉得为了自己的理想，放弃一些暂时的东西也是值得的。年轻的时候应该勇敢一点儿，不过健康和家人我不会放弃。',
+      sample_py: 'Wǒ juéde wèile zìjǐ de lǐxiǎng, fàngqì yì xiē zànshí de dōngxi yě shì zhídé de. Niánqīng de shíhou yīnggāi yǒnggǎn yìdiǎnr, búguò jiànkāng hé jiārén wǒ bú huì fàngqì.',
+      sample_vn: 'Tôi thấy vì lý tưởng của mình, từ bỏ vài thứ tạm thời cũng đáng. Khi còn trẻ nên dũng cảm một chút, nhưng sức khỏe và gia đình thì tôi sẽ không từ bỏ.',
+      tip: '值得 + động từ hoặc 值得 + 小句: 这本书值得看。'
+    },
+    {
+      situation: 'Bạn vừa thi đấu xong nhưng không đạt giải.',
+      q_zh: '你觉得应该关心结果还是关心过程？为什么？',
+      q_py: 'Nǐ juéde yīnggāi guānxīn jiéguǒ háishi guānxīn guòchéng? Wèishénme?',
+      q_vn: 'Bạn thấy nên quan tâm kết quả hay quá trình? Vì sao?',
+      grammar: { label: '把注意力放在……上 / 结果 · 过程', any: ['过程', '结果'] },
+      need: [
+        { label: 'Chọn kết quả hay quá trình', any: ['过程', '结果'] },
+        { label: 'Nêu lý do', any: ['快乐', '经验', '总结', '失败', '学到', '成长'] }
+      ],
+      bonus: { label: 'Dùng 至少 hoặc 总结 nói điều thu được', any: ['至少', '总结'] },
+      vocab: ['结果', '过程', '总结', '至少'],
+      minLen: 22,
+      sample: '我觉得应该把注意力放在过程上。就算结果是失败，认真总结以后，至少也能积累经验，下次做得更好。',
+      sample_py: 'Wǒ juéde yīnggāi bǎ zhùyì lì fàng zài guòchéng shàng. Jiù suàn jiéguǒ shì shībài, rènzhēn zǒngjié yǐhòu, zhìshǎo yě néng jīlěi jīngyàn, xià cì zuò děi gèng hǎo.',
+      sample_vn: 'Tôi thấy nên đặt sự chú ý vào quá trình. Cho dù kết quả là thất bại, sau khi tổng kết nghiêm túc, ít nhất cũng tích lũy được kinh nghiệm, lần sau làm tốt hơn.',
+      tip: '至少 = ít nhất: 至少要练习一个小时。'
+    },
+    {
+      situation: 'Bạn kể một lần suýt bỏ cuộc nhưng đã cố đi tiếp.',
+      q_zh: '你有没有遇到过困难想放弃，但最后坚持下来的经历？',
+      q_py: 'Nǐ yǒu méiyǒu yùdào guo kùnnan xiǎng fàngqì, dàn zuìhòu jiānchí xià lái de jīnglì?',
+      q_vn: 'Bạn từng gặp khó khăn muốn bỏ cuộc nhưng cuối cùng vẫn kiên trì chưa?',
+      grammar: { label: '虽然……，可是……，最后……', any: ['虽然', '可是', '最后'] },
+      need: [
+        { label: 'Kể khó khăn cụ thể', any: ['考试', '工作', '比赛', '学习', '困难', '当时'] },
+        { label: 'Nói kết quả', any: ['坚持', '成功', '通过', '取得', '完成'] }
+      ],
+      bonus: { label: 'Dùng 面对 hoặc 经历 nói cảm nhận', any: ['面对', '经历'] },
+      vocab: ['坚持', '当时', '经历'],
+      minLen: 22,
+      sample: '有。准备汉语考试的时候，我觉得太难了，当时真想放弃。可是我每天坚持背二十个词，最后通过了考试，这次经历让我更有信心。',
+      sample_py: 'Yǒu. Zhǔnbèi Hànyǔ kǎoshì de shíhou, wǒ juéde tài nán le, dāngshí zhēn xiǎng fàngqì. Kěshì wǒ měitiān jiānchí bèi èr shí ge cí, zuìhòu tōngguò le kǎoshì, zhè cì jīnglì ràng wǒ gèng yǒu xìnxīn.',
+      sample_vn: 'Có. Lúc ôn thi tiếng Hán, tôi thấy khó quá, khi đó thật sự muốn bỏ. Nhưng tôi kiên trì học 20 từ mỗi ngày, cuối cùng đã đỗ, trải nghiệm này khiến tôi tự tin hơn.',
+      tip: '当时 = lúc đó (trong quá khứ), khác 现在 và 那时候 mang nghĩa gần giống.'
+    }
   ]
 };
 

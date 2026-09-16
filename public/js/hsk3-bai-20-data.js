@@ -453,33 +453,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小丽的照相机怎么了？她为什么不想马上买新的？',
-     q_vn:'Máy ảnh của Tiểu Lệ sao rồi? Vì sao cô không muốn mua ngay cái mới?',
-     hint:'被拿走了找不到，信用卡里的钱花得差不多了',
-     sample:'小丽的照相机被谁拿走了，怎么也找不到，她不想马上买新的，因为这个月信用卡里的钱已经花得差不多了。',
-     sample_vn:'Máy ảnh của Tiểu Lệ bị ai lấy mất, tìm mãi không thấy, cô không muốn mua ngay cái mới, vì tiền trong thẻ tín dụng tháng này đã tiêu gần hết rồi.',
-     note:'被 diễn tả câu bị động (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'朋友为什么突然关心起体育来了？这对她有什么影响？',
-     q_vn:'Vì sao bạn cô ấy đột nhiên quan tâm đến thể thao? Điều đó ảnh hưởng gì đến cô ấy?',
-     hint:'被男朋友影响，天天看球赛，但成绩差极了',
-     sample:'朋友因为被男朋友影响，开始天天看球赛，但是因为天天上网玩儿游戏，她的成绩差极了。',
-     sample_vn:'Bạn của cô ấy vì bị bạn trai ảnh hưởng, bắt đầu xem bóng đá hàng ngày, nhưng vì lên mạng chơi game hàng ngày, thành tích của cô ấy tệ lắm.',
-     note:'被 diễn tả câu bị động, nêu nguyên nhân của sự thay đổi.'},
-    {q_zh:'大卫和他哥哥为什么经常被别人认错？谁才能分出来？',
-     q_vn:'Vì sao David và anh trai thường bị người khác nhận nhầm? Ai mới phân biệt được?',
-     hint:'长得很像，只有父母和他们自己才能分出来',
-     sample:'大卫和他哥哥长得真像，所以经常被别人认错，只有他们的爸爸妈妈和他们自己才能分出来哪个是哥哥，哪个是弟弟。',
-     sample_vn:'David và anh trai trông giống nhau thật, nên thường bị người khác nhận nhầm, chỉ có bố mẹ họ và chính họ mới phân biệt được ai là anh, ai là em.',
-     note:'只有……才…… diễn tả điều kiện duy nhất (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'关于解决问题，这段话给我们什么建议？',
-     q_vn:'Về việc giải quyết vấn đề, đoạn này cho chúng ta lời khuyên gì?',
-     hint:'不同问题有不同办法，试着做做，多么难的问题都会被解决',
-     sample:'不同的问题有不同的解决办法，有些问题看上去很难，但做起来简单，所以要试着做做，我们要相信，多么难的问题，都会被解决的。',
-     sample_vn:'Những vấn đề khác nhau có cách giải quyết khác nhau, có những vấn đề nhìn có vẻ khó, nhưng làm thì lại đơn giản, nên phải thử làm xem, chúng ta phải tin, vấn đề dù khó đến mấy cũng sẽ được giải quyết.',
-     note:'都会被解决的 diễn tả câu bị động ở thì tương lai.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 20. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Đồ của bạn bị người khác cầm nhầm ở lớp.',
+      q_zh: '你的东西被别人拿走过吗？后来怎么解决的？',
+      q_py: 'Nǐ de dōngxi bèi biérén ná zǒu guo ma? Hòulái zěnme jiějué de?',
+      q_vn: 'Đồ của bạn từng bị người khác cầm đi chưa? Sau đó giải quyết thế nào?',
+      grammar: { label: 'Câu chữ 被: A 被 B + động từ', any: ['被'] },
+      need: [
+        { label: 'Dùng câu chữ 被', any: ['被'] },
+        { label: 'Nói cách giải quyết', any: ['解决', '打电话', '找', '还', '问'] }
+      ],
+      bonus: { label: 'Nói cảm xúc lúc đó bằng 难过 / 着急', any: ['难过', '着急', '生气'] },
+      vocab: ['照相机', '被', '难过', '解决'],
+      minLen: 20,
+      sample: '有一次我的照相机被同学拿走了，我很难过。后来他给我打电话说拿错了，第二天就还给我，问题很快就解决了。',
+      sample_py: 'Yǒu yí cì wǒ de zhàoxiàngjī bèi tóngxué ná zǒu le, wǒ hěn nánguò. Hòulái tā gěi wǒ dǎdiànhuà shuō ná cuò le, dì èr tiān jiù hái gěi wǒ, wèntí hěn kuài jiù jiějué le.',
+      sample_vn: 'Có lần máy ảnh của tôi bị bạn học cầm đi, tôi rất buồn. Sau đó cậu ấy gọi điện bảo cầm nhầm, hôm sau trả lại, vấn đề được giải quyết rất nhanh.',
+      tip: 'Câu 被 thường nói việc ngoài ý muốn: 我的自行车被人骑走了。'
+    },
+    {
+      situation: 'Thầy hỏi cả lớp bí quyết học tốt.',
+      q_zh: '你觉得只有怎么做，才能提高汉语成绩？',
+      q_py: 'Nǐ juéde zhǐyǒu zěnme zuò, cái néng tígāo Hànyǔ chéngjì?',
+      q_vn: 'Bạn thấy chỉ có làm thế nào mới nâng được điểm tiếng Hán?',
+      grammar: { label: '只有……，才……', any: ['只有'] },
+      need: [
+        { label: 'Dùng 只有……才……', any: ['只有'] },
+        { label: 'Nói cách học cụ thể', any: ['练习', '每天', '听', '说', '写', '复习', '问'] }
+      ],
+      bonus: { label: 'Dùng 真正 nhấn mạnh', any: ['真正'] },
+      vocab: ['成绩', '真正', '解决'],
+      minLen: 20,
+      sample: '我觉得只有每天练习，才能真正提高成绩。上课认真听，下课多说多写，遇到不懂的问题马上解决。',
+      sample_py: 'Wǒ juéde zhǐyǒu měitiān liànxí, cái néng zhēnzhèng tígāo chéngjì. Shàngkè rènzhēn tīng, xiàkè duō shuō duō xiě, yùdào bù dǒng de wèntí mǎshàng jiějué.',
+      sample_vn: 'Tôi thấy chỉ có luyện tập mỗi ngày mới thật sự nâng được điểm. Trên lớp nghe nghiêm túc, hết giờ nói và viết nhiều, gặp chỗ không hiểu thì giải quyết ngay.',
+      tip: '只有……才…… nêu điều kiện duy nhất: 只有努力，才能成功。'
+    },
+    {
+      situation: 'Bạn thanh toán ở siêu thị và người bạn hỏi cách trả tiền.',
+      q_zh: '你买东西喜欢用信用卡还是用手机？为什么？',
+      q_py: 'Nǐ mǎi dōngxi xǐhuan yòng xìnyòngkǎ háishi yòng shǒujī? Wèishénme?',
+      q_vn: 'Mua đồ bạn thích dùng thẻ tín dụng hay điện thoại? Vì sao?',
+      grammar: { label: '用 + công cụ + động từ', any: ['用'] },
+      need: [
+        { label: 'Nói cách trả tiền', any: ['信用卡', '手机', '钱', '卡'] },
+        { label: 'Nêu lý do', any: ['方便', '安全', '习惯', '快', '便宜'] }
+      ],
+      bonus: { label: 'Nhắc đến số tiền nhỏ bằng 角/分', any: ['角', '分', '块'] },
+      vocab: ['信用卡', '分', '真正'],
+      minLen: 20,
+      sample: '买贵一点儿的东西我用信用卡，买小东西的时候用手机，因为这样又快又方便。几角几分的东西我一般用零钱。',
+      sample_py: 'Mǎi guì yìdiǎnr de dōngxi wǒ yòng xìnyòngkǎ, mǎi xiǎo dōngxi de shíhou yòng shǒujī, yīnwèi zhè yàng yòu kuài yòu fāngbiàn. Jǐ jiǎo jǐ fēn de dōngxi wǒ yìbān yòng língqián.',
+      sample_vn: 'Mua đồ đắt tiền thì tôi dùng thẻ tín dụng, mua đồ nhỏ thì dùng điện thoại, vì như vậy vừa nhanh vừa tiện. Mấy hào mấy xu thì tôi thường dùng tiền lẻ.',
+      tip: '一块 = 10角 = 100分; trong khẩu ngữ hay nói 块、角、分.'
+    },
+    {
+      situation: 'Bạn nói chuyện với bạn bè về gia đình mình.',
+      q_zh: '家里人怎么关心你？你怎么关心他们？',
+      q_py: 'Jiā lǐ rén zěnme guānxīn nǐ? Nǐ zěnme guānxīn tāmen?',
+      q_vn: 'Người nhà quan tâm bạn thế nào? Bạn quan tâm họ ra sao?',
+      grammar: { label: '关心 + người; 被 + người + 关心', any: ['关心'] },
+      need: [
+        { label: 'Kể người nhà quan tâm thế nào', any: ['关心', '问', '打电话', '做饭', '照顾'] },
+        { label: 'Kể việc bạn làm cho họ', any: ['打电话', '回家', '帮', '买', '做饭', '照顾'] }
+      ],
+      bonus: { label: 'Nói tần suất bằng 每个星期 / 经常', any: ['每个星期', '经常', '常常', '每天'] },
+      vocab: ['关心', '难过', '碗'],
+      minLen: 20,
+      sample: '我妈妈很关心我，常常问我吃饭了没有，我难过的时候她一直听我说。我也关心他们，每个星期都打电话，放假回家帮他们做饭、洗碗。',
+      sample_py: 'Wǒ māma hěn guānxīn wǒ, chángcháng wèn wǒ chīfàn le méiyǒu, wǒ nánguò de shíhou tā yì zhí tīng wǒ shuō. Wǒ yě guānxīn tāmen, měi ge xīngqī dōu dǎdiànhuà, fàng jiǎ huí jiā bāng tāmen zuòfàn, xǐ wǎn.',
+      sample_vn: 'Mẹ tôi rất quan tâm tôi, hay hỏi tôi ăn cơm chưa, lúc tôi buồn mẹ luôn lắng nghe. Tôi cũng quan tâm họ, tuần nào cũng gọi điện, nghỉ lễ về nhà nấu cơm, rửa bát giúp.',
+      tip: '关心 + người/việc: 关心孩子的学习、关心身体。'
+    },
+    {
+      situation: 'Bạn được giao một việc trông có vẻ rất khó.',
+      q_zh: '遇到看上去很难的事情，你会先试一试吗？',
+      q_py: 'Yùdào kàn shàng qù hěn nán de shìqing, nǐ huì xiān shì yi shì ma?',
+      q_vn: 'Gặp việc trông rất khó, bạn có thử làm trước không?',
+      grammar: { label: '多么 + tính từ; 试一试', any: ['多么', '试'] },
+      need: [
+        { label: 'Trả lời có thử hay không', any: ['试', '会', '不会', '先'] },
+        { label: 'Nêu suy nghĩ của bạn', any: ['难', '简单', '做起来', '看上去', '真正'] }
+      ],
+      bonus: { label: 'Dùng 多么 để nhấn mạnh', any: ['多么'] },
+      vocab: ['试', '多么', '真正'],
+      minLen: 20,
+      sample: '我会先试一试。有些问题看上去多么难，做起来其实很简单，只有真正做了以后，才知道难还是不难。',
+      sample_py: 'Wǒ huì xiān shì yi shì. Yǒuxiē wèntí kàn shàng qù duōme nán, zuò qǐlai qíshí hěn jiǎndān, zhǐyǒu zhēnzhèng zuò le yǐhòu, cái zhīdao nán háishi bù nán.',
+      sample_vn: 'Tôi sẽ thử trước. Có những vấn đề nhìn khó đến thế, làm thì thật ra rất đơn giản, chỉ khi thật sự bắt tay làm mới biết khó hay không.',
+      tip: '多么 + tính từ dùng để cảm thán hoặc nhấn mạnh: 多么漂亮的花儿！'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

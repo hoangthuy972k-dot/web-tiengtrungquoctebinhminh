@@ -818,28 +818,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 10 để trả lời các câu hỏi sau về hạnh phúc.',
-  questions:[
-    {q_zh:'你觉得什么是幸福？',q_vn:'Bạn thấy hạnh phúc là gì?',
-     hint:'其实，幸福并没有一个标准答案',
-     sample:'我觉得幸福并没有一个标准答案，每个人对幸福都有不同的理解。',sample_vn:'Tôi thấy hạnh phúc không hề có một đáp án chuẩn nào, mỗi người đều có cách hiểu khác nhau về hạnh phúc.',
-     note:'幸福并没有……标准答案 ôn lại từ vựng của bài.'},
-    {q_zh:'你觉得经济条件越好，人就越幸福吗？',q_vn:'Bạn có nghĩ điều kiện kinh tế càng tốt thì người ta càng hạnh phúc không?',
-     hint:'有很多富人过得并不愉快，有些穷人却过得很快乐',
-     sample:'不一定，其实有很多富人过得并不愉快，而有些穷人却过得很快乐。',sample_vn:'Không nhất định, thực ra có rất nhiều người giàu sống không hề vui vẻ, mà có người nghèo lại sống rất vui vẻ.',
-     note:'富人……穷人……快乐 ôn lại từ vựng của bài.'},
-    {q_zh:'在选择职业时，你觉得收入和兴趣哪个更重要？',q_vn:'Khi chọn nghề nghiệp, bạn thấy thu nhập và hứng thú cái nào quan trọng hơn?',
-     hint:'赚钱多少不是最重要的，兴趣才是关键',
-     sample:'在我看来，赚钱多少不是最重要的，兴趣才是关键。',sample_vn:'Theo tôi thấy, kiếm được nhiều tiền hay không không phải điều quan trọng nhất, hứng thú mới là điều mấu chốt.',
-     note:'在……看来……兴趣才是关键 ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'工作结束回家后，你一般做什么让自己感到幸福？',q_vn:'Sau khi làm việc xong về nhà, bạn thường làm gì để bản thân cảm thấy hạnh phúc?',
-     hint:'洗个热水澡，然后躺在床上看看书、听听音乐',
-     sample:'我觉得洗个热水澡，然后躺在床上看看书、听听音乐，困了睡睡觉，就很幸福。',sample_vn:'Tôi thấy tắm nước nóng, rồi nằm trên giường đọc sách nghe nhạc, buồn ngủ thì ngủ, thế là rất hạnh phúc.',
-     note:'躺在床上……困了睡睡觉 ôn lại từ vựng của bài.'},
-    {q_zh:'你羡慕过别人的生活吗？后来怎么想的？',q_vn:'Bạn đã từng ngưỡng mộ cuộc sống của người khác chưa? Sau đó bạn nghĩ thế nào?',
-     hint:'每个人有每个人的生活，不用羡慕别人',
-     sample:'羡慕过，但后来我发现，每个人有每个人的生活，不用羡慕别人。',sample_vn:'Đã từng ngưỡng mộ, nhưng sau đó tôi phát hiện, mỗi người có cuộc sống của riêng mỗi người, không cần ngưỡng mộ người khác.',
-     note:'每个人有每个人的生活 ôn lại từ vựng của bài.'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 10. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Nhóm bạn cùng nói về ý nghĩa của hạnh phúc.',
+      q_zh: '你觉得什么是幸福？',
+      q_py: 'Nǐ juéde shénme shì xìngfú?',
+      q_vn: 'Bạn thấy hạnh phúc là gì?',
+      grammar: { label: '并没有……; 每个人对……有不同的理解', any: ['并没有', '并不', '理解'] },
+      need: [
+        { label: 'Nêu quan điểm riêng', any: ['幸福', '我觉得', '对我来说', '答案'] },
+        { label: 'Đưa ví dụ cụ thể', any: ['家人', '健康', '工作', '朋友', '生活', '比如'] }
+      ],
+      bonus: { label: 'Dùng 并 phủ định nhấn mạnh', any: ['并没有', '并不'] },
+      vocab: ['答案', '比如', '永远'],
+      minLen: 22,
+      sample: '我觉得幸福并没有一个标准答案，每个人的理解都不一样。对我来说，家人永远健康、工作做得开心，就是幸福。',
+      sample_py: 'Wǒ juéde xìngfú bìng méiyǒu yí ge biāozhǔn dá\'àn, měi ge rén de lǐjiě dōu bù yí yàng. Duì wǒ lái shuō, jiārén yǒngyuǎn jiànkāng, gōngzuò zuò děi kāixīn, jiù shì xìngfú.',
+      sample_vn: 'Tôi thấy hạnh phúc không có một đáp án chuẩn, mỗi người hiểu một khác. Với tôi, người nhà luôn khỏe mạnh, công việc làm vui vẻ, đó là hạnh phúc.',
+      tip: '并 + 不/没有 dùng để phủ định điều người ta hay nghĩ: 事情并不简单。'
+    },
+    {
+      situation: 'Trên mạng đang tranh luận giàu có và hạnh phúc.',
+      q_zh: '你觉得经济条件越好，人就越幸福吗？',
+      q_py: 'Nǐ juéde jīngjì tiáojiàn yuè hǎo, rén jiù yuè xìngfú ma?',
+      q_vn: 'Bạn thấy điều kiện kinh tế càng tốt thì càng hạnh phúc không?',
+      grammar: { label: '……却…… (nhưng lại) / 由于……', any: ['却', '由于'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['不一定', '同意', '不同意', '我觉得'] },
+        { label: 'So sánh giàu và nghèo', any: ['富', '穷', '经济', '条件', '钱'] }
+      ],
+      bonus: { label: 'Dùng 却 nêu điều trái ngược', any: ['却'] },
+      vocab: ['经济', '条件', '富', '穷'],
+      minLen: 22,
+      sample: '不一定。有的人经济条件很好，生活却并不愉快；有些人虽然比较穷，却过得很快乐。幸福主要看自己怎么想。',
+      sample_py: 'Bù yí dìng. Yǒude rén jīngjì tiáojiàn hěn hǎo, shēnghuó què bìng bù yúkuài; yǒuxiē rén suīrán bǐjiào qióng, què guo děi hěn kuàilè. Xìngfú zhǔyào kàn zìjǐ zěnme xiǎng.',
+      sample_vn: 'Không hẳn. Có người điều kiện kinh tế rất tốt nhưng sống lại chẳng vui; có người tuy khá nghèo lại sống rất vui vẻ. Hạnh phúc chủ yếu là do mình nghĩ thế nào.',
+      tip: '却 đứng trước động từ, nhấn mạnh sự trái ngược: 他很累，却很开心。'
+    },
+    {
+      situation: 'Bạn đang cân nhắc giữa hai lời mời làm việc.',
+      q_zh: '在选择职业时，你觉得收入和兴趣哪个更重要？',
+      q_py: 'Zài xuǎnzé zhíyè shí, nǐ juéde shōurù hé xìng qù nǎge gèng zhòngyào?',
+      q_vn: 'Khi chọn nghề, bạn thấy thu nhập và hứng thú cái nào quan trọng hơn?',
+      grammar: { label: '在……看来 (theo cách nhìn của…)', any: ['在我看来', '看来'] },
+      need: [
+        { label: 'Nêu lựa chọn', any: ['兴趣', '收入', '关键', '重要'] },
+        { label: 'Nêu lý do', any: ['喜欢', '坚持', '发展', '将来', '快乐', '努力'] }
+      ],
+      bonus: { label: 'Dùng 在我看来 mở đầu', any: ['在我看来'] },
+      vocab: ['职业', '关键', '将来', '发展'],
+      minLen: 22,
+      sample: '在我看来，赚钱多少不是最重要的，兴趣才是关键。做自己喜欢的职业，将来才愿意坚持下去，发展也会更好。',
+      sample_py: 'Zài wǒ kàn lái, zhuàn qián duōshao bú shì zuì zhòngyào de, xìng qù cái shì guānjiàn. Zuò zìjǐ xǐhuan de zhíyè, jiānglái cái yuànyì jiānchí xià qù, fāzhǎn yě huì gèng hǎo.',
+      sample_vn: 'Theo tôi, kiếm được bao nhiêu không phải quan trọng nhất, hứng thú mới là mấu chốt. Làm nghề mình thích thì sau này mới chịu theo đuổi, phát triển cũng tốt hơn.',
+      tip: '在……看来 nêu quan điểm: 在他看来，这件事很简单。'
+    },
+    {
+      situation: 'Sau một ngày làm việc mệt, bạn về đến nhà.',
+      q_zh: '工作结束回家后，你一般做什么让自己感到幸福？',
+      q_py: 'Gōngzuò jiéshù huí jiā hòu, nǐ yìbān zuò shénme ràng zìjǐ gǎn dào xìngfú?',
+      q_vn: 'Sau khi làm việc xong về nhà, bạn thường làm gì để thấy hạnh phúc?',
+      grammar: { label: '躺在……上 + 动词; ……就很幸福', any: ['躺', '幸福'] },
+      need: [
+        { label: 'Kể hoạt động thư giãn', any: ['洗澡', '躺', '看书', '音乐', '电视', '睡', '做饭'] },
+        { label: 'Nói cảm giác', any: ['幸福', '舒服', '轻松', '愉快'] }
+      ],
+      bonus: { label: 'Dùng 困 hoặc 空儿 nói thói quen', any: ['困', '空儿'] },
+      vocab: ['躺', '困', '空儿'],
+      minLen: 22,
+      sample: '我一般先洗个热水澡，然后躺在床上看看书、听听音乐，困了就睡觉。有空儿的时候跟家人打个电话，这样我就觉得很幸福。',
+      sample_py: 'Wǒ yìbān xiān xǐ ge rè shuǐ zǎo, ránhòu tǎng zài chuáng shàng kànkan shū, tīngting yīnyuè, kùn le jiù shuìjiào. Yǒu kòngr de shíhou gēn jiārén dǎ ge diànhuà, zhè yàng wǒ jiù juéde hěn xìngfú.',
+      sample_vn: 'Tôi thường tắm nước nóng trước, rồi nằm trên giường đọc sách, nghe nhạc, buồn ngủ thì đi ngủ. Lúc rảnh thì gọi điện cho người nhà, như vậy tôi thấy rất hạnh phúc.',
+      tip: '躺在 + nơi chốn + 上: 躺在沙发上看电视。'
+    },
+    {
+      situation: 'Bạn thấy bạn bè trên mạng xã hội có cuộc sống rất đẹp.',
+      q_zh: '你羡慕过别人的生活吗？后来是怎么想的？',
+      q_py: 'Nǐ xiànmù guo biérén de shēnghuó ma? Hòulái shì zěnme xiǎng de?',
+      q_vn: 'Bạn từng ngưỡng mộ cuộc sống của người khác chưa? Sau đó bạn nghĩ thế nào?',
+      grammar: { label: '不过…… (nhưng, song) — nhẹ hơn 但是', any: ['不过'] },
+      need: [
+        { label: 'Nói từng ngưỡng mộ điều gì', any: ['羡慕', '生活', '工作', '房子', '旅游', '朋友'] },
+        { label: 'Nói suy nghĩ về sau', any: ['后来', '发现', '每个人', '自己', '不用'] }
+      ],
+      bonus: { label: 'Dùng 不过 hoặc 确实 để chuyển ý', any: ['不过', '确实'] },
+      vocab: ['羡慕', '不过', '确实'],
+      minLen: 22,
+      sample: '羡慕过。我确实羡慕过同学能常常去旅游，不过后来我发现，每个人有每个人的生活和困难，过好自己的日子最重要。',
+      sample_py: 'Xiànmù guo. Wǒ quèshí xiànmù guo tóngxué néng chángcháng qù lǚyóu, búguò hòulái wǒ fāxiàn, měi ge rén yǒu měi ge rén de shēnghuó hé kùnnan, guo hǎo zìjǐ de rì zi zuì zhòngyào.',
+      sample_vn: 'Có chứ. Tôi từng thật sự ngưỡng mộ bạn học hay được đi du lịch, nhưng sau đó tôi nhận ra mỗi người có cuộc sống và khó khăn riêng, sống tốt ngày của mình mới là quan trọng nhất.',
+      tip: '不过 dùng trong khẩu ngữ, ý chuyển nhẹ hơn 但是.'
+    }
   ]
 };
 

@@ -522,33 +522,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'朋友为什么要向周明借钱？周明怎么回答？',
-     q_vn:'Vì sao người bạn mượn tiền Chu Minh? Chu Minh trả lời thế nào?',
-     hint:'打算买房子，还差5万块，周明说只要有就一定会借',
-     sample:'朋友打算买房子，还差5万块钱，所以向周明借钱，周明说只要他有，就一定会借给朋友。',
-     sample_vn:'Bạn định mua nhà, còn thiếu 5 vạn đồng, nên mượn tiền Chu Minh, Chu Minh nói chỉ cần anh có, nhất định sẽ cho bạn mượn.',
-     note:'只要……就…… diễn tả điều kiện đủ (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'妈妈为什么不想让小明买狗？小明怎么保证？',
-     q_vn:'Vì sao mẹ không muốn Tiểu Minh mua chó? Tiểu Minh cam đoan thế nào?',
-     hint:'动物需要人照顾，小明自己的衣服都没洗，小明说只要买就能照顾好',
-     sample:'妈妈觉得动物和小孩儿一样都需要人照顾，小明自己的衣服都没洗，但是小明说只要妈妈给他买，他就能照顾好它。',
-     sample_vn:'Mẹ nghĩ động vật cũng như trẻ con đều cần người chăm sóc, quần áo của Tiểu Minh còn chưa giặt, nhưng Tiểu Minh nói chỉ cần mẹ mua cho, cậu sẽ chăm nó tốt.',
-     note:'只要……就…… diễn tả điều kiện đủ.'},
-    {q_zh:'学生为什么选择来这家公司工作？',
-     q_vn:'Vì sao học sinh chọn đến công ty này làm việc?',
-     hint:'公司不但很有名，而且工作环境好',
-     sample:'学生选择来这家公司工作，因为贵公司不但很有名，而且工作环境好。',
-     sample_vn:'Học sinh chọn đến công ty này làm việc, vì quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.',
-     note:'不但……而且…… diễn tả sự bổ sung tăng tiến (ôn lại 有名 đã học trong bài này).'},
-    {q_zh:'关于不同国家的文化，有什么有趣的例子？',
-     q_vn:'Về văn hóa của các quốc gia khác nhau, có ví dụ thú vị nào?',
-     hint:'有些国家人名写在姓前面，有些写在姓后面，经过一段时间就会习惯',
-     sample:'有些国家的人名写在姓前面，有些国家的人名写在姓后面，但是只要经过一段时间，就会慢慢地习惯。',
-     sample_vn:'Có những nước tên người viết trước họ, có những nước tên người viết sau họ, nhưng chỉ cần trải qua một khoảng thời gian, sẽ dần dần quen thôi.',
-     note:'关于 giới thiệu chủ đề được nói đến (điểm ngữ pháp trọng tâm bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 18. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học hỏi bạn hay làm gì khi rảnh.',
+      q_zh: '只要有时间，你就会做什么？',
+      q_py: 'Zhǐyào yǒu shíjiān, nǐ jiù huì zuò shénme?',
+      q_vn: 'Chỉ cần có thời gian là bạn sẽ làm gì?',
+      grammar: { label: '只要……，就……', any: ['只要'] },
+      need: [
+        { label: 'Dùng 只要……就……', any: ['只要'] },
+        { label: 'Nói việc bạn làm', any: ['看书', '图书馆', '运动', '学', '听', '朋友', '休息'] }
+      ],
+      bonus: { label: 'Dùng 相信 nói niềm tin của bạn', any: ['相信'] },
+      vocab: ['只要', '相信', '机会'],
+      minLen: 20,
+      sample: '只要有时间，我就去图书馆看书。我相信只要每天看一点儿，水平就会越来越高，机会也会越来越多。',
+      sample_py: 'Zhǐyào yǒu shíjiān, wǒ jiù qù túshūguǎn kàn shū. Wǒ xiāngxìn zhǐyào měitiān kàn yìdiǎnr, shuǐpíng jiù huì yuè lái yuè gāo, jīhuì yě huì yuè lái yuè duō.',
+      sample_vn: 'Chỉ cần có thời gian là tôi ra thư viện đọc sách. Tôi tin chỉ cần mỗi ngày đọc một chút thì trình độ sẽ ngày càng cao, cơ hội cũng ngày càng nhiều.',
+      tip: '只要 nêu điều kiện đủ: 只要努力，就一定能做好。'
+    },
+    {
+      situation: 'Bạn bè bàn về các chương trình truyền hình yêu thích.',
+      q_zh: '你喜欢看关于什么的书或者节目？',
+      q_py: 'Nǐ xǐhuan kàn guānyú shénme de shū huòzhě jiémù?',
+      q_vn: 'Bạn thích xem sách hoặc chương trình về chủ đề gì?',
+      grammar: { label: '关于 + chủ đề; 不但……而且……', any: ['关于', '不但'] },
+      need: [
+        { label: 'Dùng 关于 nói chủ đề', any: ['关于'] },
+        { label: 'Nêu chủ đề cụ thể', any: ['动物', '国家', '文化', '历史', '新闻', '旅游', '运动'] }
+      ],
+      bonus: { label: 'Dùng 不但……而且…… nêu hai lý do', any: ['不但', '而且'] },
+      vocab: ['关于', '动物', '国家', '种'],
+      minLen: 20,
+      sample: '我喜欢看关于动物和各个国家文化的节目。这种节目不但有意思，而且能让我知道很多新东西。',
+      sample_py: 'Wǒ xǐhuan kàn guānyú dòngwù hé gè ge guójiā wénhuà de jiémù. Zhè zhǒng jiémù bú dàn yǒuyìsi, ér qiě néng ràng wǒ zhīdao hěn duō xīn dōngxi.',
+      sample_vn: 'Tôi thích xem chương trình về động vật và văn hóa các nước. Loại chương trình này không những thú vị mà còn giúp tôi biết nhiều điều mới.',
+      tip: '关于 đứng trước chủ đề: 关于这个问题，我有几句话。'
+    },
+    {
+      situation: 'Công ty đề nghị chuyển bạn đi làm ở thành phố khác.',
+      q_zh: '如果公司给你一个去外地工作的机会，你会同意吗？',
+      q_py: 'Rúguǒ gōngsī gěi nǐ yí ge qù wài de gōngzuò de jīhuì, nǐ huì tóngyì ma?',
+      q_vn: 'Nếu công ty cho bạn cơ hội đi làm ở nơi khác, bạn có đồng ý không?',
+      grammar: { label: '同意 / 不同意 + lý do; 只要……就……', any: ['同意', '只要'] },
+      need: [
+        { label: 'Trả lời đồng ý hay không', any: ['同意', '不同意', '会', '不会'] },
+        { label: 'Nêu lý do', any: ['机会', '年轻', '工作', '家里', '城市', '生活'] }
+      ],
+      bonus: { label: 'Nói sẽ bàn với gia đình trước', any: ['家里人', '说一下', '先'] },
+      vocab: ['机会', '同意', '相信'],
+      minLen: 20,
+      sample: '如果公司给我这样的机会，我会同意，因为年轻的时候应该多看看别的城市。不过我必须先跟家里人说一下，我相信他们也会同意。',
+      sample_py: 'Rúguǒ gōngsī gěi wǒ zhè yàng de jīhuì, wǒ huì tóngyì, yīnwèi niánqīng de shíhou yīnggāi duō kànkan biéde chéngshì. Búguò wǒ bìxū xiān gēn jiā lǐ rén shuō yíxià, wǒ xiāngxìn tāmen yě huì tóngyì.',
+      sample_vn: 'Nếu công ty cho tôi cơ hội như vậy, tôi sẽ đồng ý, vì khi còn trẻ nên đi xem nhiều thành phố khác. Nhưng tôi phải nói với gia đình trước, tôi tin họ cũng sẽ đồng ý.',
+      tip: '同意 + việc/ý kiến: 我同意你的看法。'
+    },
+    {
+      situation: 'Người bạn nước ngoài định đến thăm đất nước bạn.',
+      q_zh: '你们国家有什么有名的地方？有什么特点？',
+      q_py: 'Nǐmen guójiā yǒu shénme yǒumíng de dìfang? Yǒu shénme tèdiǎn?',
+      q_vn: 'Nước bạn có nơi nào nổi tiếng? Có đặc điểm gì?',
+      grammar: { label: '有名 + 的地方; 特点 là……', any: ['有名', '特点'] },
+      need: [
+        { label: 'Kể một nơi nổi tiếng', any: ['有名', '地方', '城市', '海', '山', '河'] },
+        { label: 'Nói đặc điểm', any: ['特点', '干净', '安静', '热闹', '漂亮', '文化'] }
+      ],
+      bonus: { label: 'Dùng số lớn với 万 để nói lượng khách', any: ['万'] },
+      vocab: ['有名', '特点', '万', '国家'],
+      minLen: 20,
+      sample: '我们国家有很多有名的地方，比如海边的城市。那儿的特点是又干净又安静，每年有几十万人去那儿旅游。',
+      sample_py: 'Wǒmen guójiā yǒu hěn duō yǒumíng de dìfang, bǐrú hǎi bian de chéngshì. Nàr de tèdiǎn shì yòu gānjìng yòu ānjìng, měi nián yǒu jǐ shí wàn rén qù nàr lǚyóu.',
+      sample_vn: 'Nước tôi có nhiều nơi nổi tiếng, ví dụ những thành phố ven biển. Đặc điểm ở đó là vừa sạch vừa yên tĩnh, mỗi năm có mấy chục vạn người đến du lịch.',
+      tip: '万 = 10 000: 十万 = 100 000, 几十万 = mấy trăm nghìn.'
+    },
+    {
+      situation: 'Bạn kể về một lần đi sở thú.',
+      q_zh: '你见过什么奇怪的动物？它长什么样？',
+      q_py: 'Nǐ jiàn guo shénme qíguài de dòngwù? Tā zhǎng shénme yàng?',
+      q_vn: 'Bạn từng thấy con vật nào kỳ lạ? Nó trông thế nào?',
+      grammar: { label: '一种 + danh từ; 又……又……', any: ['种', '又'] },
+      need: [
+        { label: 'Nói con vật gì, ở đâu', any: ['动物', '鸟', '动物园', '见过'] },
+        { label: 'Tả hình dáng', any: ['嘴', '大', '长', '奇怪', '可爱', '样子'] }
+      ],
+      bonus: { label: 'Dùng 种 làm lượng từ', any: ['种'] },
+      vocab: ['奇怪', '嘴', '动物', '种'],
+      minLen: 20,
+      sample: '我在动物园见过一种鸟，它的嘴又长又大，样子很奇怪，可是很可爱，我照了很多照片。',
+      sample_py: 'Wǒ zài dòngwù yuán jiàn guo yì zhǒng niǎo, tā de zuǐ yòu zhǎng yòu dà, yàngzi hěn qíguài, kěshì hěn kě\'ài, wǒ zhào le hěn duō zhàopiàn.',
+      sample_vn: 'Tôi từng thấy một loài chim ở sở thú, mỏ nó vừa dài vừa to, trông rất kỳ lạ nhưng lại đáng yêu, tôi chụp rất nhiều ảnh.',
+      tip: '种 là lượng từ chỉ loại: 这种菜、那种人。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

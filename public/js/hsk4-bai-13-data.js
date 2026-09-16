@@ -850,28 +850,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 13 (kết hợp ngữ pháp các bài trước) để trả lời các câu hỏi sau về Kinh kịch, văn hóa và trà.',
-  questions:[
-    {q_zh:'你看过京剧吗？你觉得京剧怎么样？',q_vn:'Bạn đã xem Kinh kịch chưa? Bạn thấy Kinh kịch thế nào?',
-     hint:'大概……；虽然……却……',
-     sample:'我大概看过一两次。虽然听不太懂，却觉得演员的表演很精彩，衣服也很漂亮。',sample_vn:'Tôi đại khái xem một hai lần. Tuy nghe không hiểu lắm, nhưng thấy diễn viên biểu diễn rất đặc sắc, trang phục cũng rất đẹp.',
-     note:'大概 (bài mới) + 却 (Bài 2) + 精彩 (Bài 11).'},
-    {q_zh:'你偶尔会做什么和平时不一样的事情？',q_vn:'Thỉnh thoảng bạn làm việc gì khác với ngày thường?',
-     hint:'平时……，偶尔……',
-     sample:'我平时上班很忙，很少运动，偶尔周末会约朋友一起去爬山，稍微放松一下。',sample_vn:'Ngày thường tôi đi làm rất bận, ít vận động, thỉnh thoảng cuối tuần hẹn bạn đi leo núi, thư giãn một chút.',
-     note:'偶尔/稍微 (bài mới) + 放松 (Bài 9).'},
-    {q_zh:'在你们学校或公司，活动一般由谁负责？',q_vn:'Ở trường hay công ty bạn, hoạt động thường do ai phụ trách?',
-     hint:'由……负责，并且……',
-     sample:'活动一般由班长负责，并且大家会开会讨论，然后把详细的计划发给老师。',sample_vn:'Hoạt động thường do lớp trưởng phụ trách, hơn nữa mọi người sẽ họp thảo luận, rồi gửi kế hoạch chi tiết cho thầy.',
-     note:'由/讨论 (bài mới) + 并且/详细 (Bài 12).'},
-    {q_zh:'你会用筷子吗？对外国人来说，使用筷子难不难？',q_vn:'Bạn biết dùng đũa không? Đối với người nước ngoài, dùng đũa có khó không?',
-     hint:'对……来说，……并不容易；只要……就……',
-     sample:'我会用。对外国人来说，使用筷子并不容易，不过只要多练习，就一定能学会。',sample_vn:'Tôi biết dùng. Đối với người nước ngoài, dùng đũa không hề dễ, nhưng chỉ cần luyện nhiều là chắc chắn học được.',
-     note:'对……来说 (Bài 5) + 并 (Bài 4) + 只要……就 (Bài 8).'},
-    {q_zh:'随着社会的发展，你们国家的生活习惯有什么变化？',q_vn:'Cùng với sự phát triển của xã hội, thói quen sinh hoạt ở nước bạn có thay đổi gì?',
-     hint:'随着……的发展，越来越……',
-     sample:'随着互联网的发展，越来越多的人在网上购物，用手机付钱也已经十分普遍了。',sample_vn:'Cùng với sự phát triển của Internet, ngày càng nhiều người mua sắm online, thanh toán bằng điện thoại cũng đã rất phổ biến.',
-     note:'随着/互联网/十分/普遍 (bài mới) + 购物 (Bài 5).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 13. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn bè rủ bạn đi xem một buổi diễn Kinh kịch.',
+      q_zh: '你看过京剧吗？你觉得京剧怎么样？',
+      q_py: 'Nǐ kàn guo jīngjù ma? Nǐ juéde jīngjù zěnmeyàng?',
+      q_vn: 'Bạn xem Kinh kịch chưa? Bạn thấy Kinh kịch thế nào?',
+      grammar: { label: '大概/大约 + số lượng; 却……', any: ['大概', '大约', '却'] },
+      need: [
+        { label: 'Nói đã xem hay chưa, mấy lần', any: ['看过', '没看过', '次', '遍', '大概'] },
+        { label: 'Nêu cảm nhận', any: ['精彩', '有趣', '漂亮', '听不懂', '表演', '演员'] }
+      ],
+      bonus: { label: 'Dùng 却 nêu điều bất ngờ', any: ['却'] },
+      vocab: ['京剧', '演员', '表演', '大概'],
+      minLen: 22,
+      sample: '我大概看过一两次。虽然唱的词听不太懂，却觉得演员的表演很精彩，衣服和动作都很漂亮，观众也非常开心。',
+      sample_py: 'Wǒ dàgài kàn guo yì liǎng cì. Suīrán chàng de cí tīng bú tài dǒng, què juéde yǎnyuán de biǎoyǎn hěn jīngcǎi, yīfu hé dòngzuò dōu hěn piàoliang, guānzhòng yě fēicháng kāixīn.',
+      sample_vn: 'Tôi xem khoảng một hai lần. Tuy lời hát nghe không hiểu lắm, nhưng tôi thấy diễn viên diễn rất đặc sắc, trang phục và động tác đều đẹp, khán giả cũng rất vui.',
+      tip: '遍 nhấn mạnh xem/đọc trọn vẹn từ đầu đến cuối: 看了两遍。'
+    },
+    {
+      situation: 'Đồng nghiệp hỏi bạn cuối tuần có gì đổi khác không.',
+      q_zh: '你偶尔会做什么和平时不一样的事情？',
+      q_py: 'Nǐ ǒu\'ěr huì zuò shénme hé píngshí bù yí yàng de shìqing?',
+      q_vn: 'Thỉnh thoảng bạn làm việc gì khác với ngày thường?',
+      grammar: { label: '偶尔 + động từ; 稍微 + tính từ + 一点儿', any: ['偶尔', '稍微'] },
+      need: [
+        { label: 'Dùng 偶尔', any: ['偶尔'] },
+        { label: 'Kể hoạt động khác thường', any: ['爬山', '旅游', '做饭', '看演出', '运动', '朋友'] }
+      ],
+      bonus: { label: 'Dùng 稍微……一点儿', any: ['稍微'] },
+      vocab: ['偶尔', '稍微', '开心'],
+      minLen: 22,
+      sample: '我平时上班很忙，很少运动。偶尔周末会约朋友一起去爬山，稍微累一点儿，但是心情特别开心。',
+      sample_py: 'Wǒ píngshí shàngbān hěn máng, hěn shǎo yùndòng. Ǒu\'ěr zhōumò huì yuē péngyou yìqǐ qù páshān, shāowēi lèi yìdiǎnr, dànshì xīnqíng tèbié kāixīn.',
+      sample_vn: 'Ngày thường tôi đi làm rất bận, ít vận động. Thỉnh thoảng cuối tuần tôi hẹn bạn đi leo núi, hơi mệt một chút nhưng tâm trạng cực kỳ vui.',
+      tip: '稍微 + tính từ + 一点儿/一些: 稍微便宜一点儿。'
+    },
+    {
+      situation: 'Lớp bạn đang chuẩn bị một buổi liên hoan.',
+      q_zh: '在你们学校或公司，活动一般由谁负责？',
+      q_py: 'Zài nǐmen xuéxiào huò gōngsī, huódòng yìbān yóu shéi fùzé?',
+      q_vn: 'Ở trường hay công ty bạn, hoạt động thường do ai phụ trách?',
+      grammar: { label: '由 + người + 负责 (do ai phụ trách)', any: ['由'] },
+      need: [
+        { label: 'Dùng 由……负责', any: ['由', '负责'] },
+        { label: 'Nói cách bàn bạc, tiến hành', any: ['讨论', '开会', '计划', '进行', '安排'] }
+      ],
+      bonus: { label: 'Nói kế hoạch được gửi cho ai', any: ['老师', '经理', '发', '详细'] },
+      vocab: ['由', '讨论', '进行'],
+      minLen: 22,
+      sample: '活动一般由班长负责。大家先开会讨论，把详细的计划写好发给老师，然后按照计划进行，每个人做一部分工作。',
+      sample_py: 'Huódòng yìbān yóu bān zhǎng fùzé. Dàjiā xiān kāi huì tǎolùn, bǎ xiángxì de jìhuà xiě hǎo fā gěi lǎoshī, ránhòu ànzhào jìhuà jìnxíng, měi ge rén zuò yí bùfen gōngzuò.',
+      sample_vn: 'Hoạt động thường do lớp trưởng phụ trách. Mọi người họp bàn trước, viết kế hoạch chi tiết gửi thầy, rồi tiến hành theo kế hoạch, mỗi người làm một phần việc.',
+      tip: '由 + người + động từ nêu người thực hiện: 这件事由我来做。'
+    },
+    {
+      situation: 'Bạn nước ngoài mới đến Trung Quốc và lúng túng với đôi đũa.',
+      q_zh: '你会用筷子吗？对外国人来说，使用筷子难不难？',
+      q_py: 'Nǐ huì yòng kuàizi ma? Duì wài guó rén lái shuō, shǐyòng kuàizi nán bu nán?',
+      q_vn: 'Bạn biết dùng đũa không? Với người nước ngoài, dùng đũa có khó không?',
+      grammar: { label: '对……来说……并不…… / 只要……就……', any: ['来说', '并不', '只要'] },
+      need: [
+        { label: 'Nói bạn biết dùng hay không', any: ['会用', '不会', '会'] },
+        { label: 'Nhận xét độ khó', any: ['难', '容易', '并不', '练习', '基础'] }
+      ],
+      bonus: { label: 'Dùng 只要……就…… động viên', any: ['只要'] },
+      vocab: ['使用', '基础', '继续'],
+      minLen: 22,
+      sample: '我会用。对外国人来说，使用筷子开始并不容易，不过只要有一点儿基础，继续多练习几次，就一定能学会。',
+      sample_py: 'Wǒ huì yòng. Duì wài guó rén lái shuō, shǐyòng kuàizi kāishǐ bìng bù róngyì, búguò zhǐyào yǒu yìdiǎnr jīchǔ, jìxù duō liànxí jǐ cì, jiù yí dìng néng xué huì.',
+      sample_vn: 'Tôi biết dùng. Với người nước ngoài, dùng đũa lúc đầu không dễ, nhưng chỉ cần có chút cơ bản, tiếp tục luyện thêm vài lần là nhất định học được.',
+      tip: '使用 trang trọng hơn 用, hay dùng với đồ vật, công cụ, phần mềm.'
+    },
+    {
+      situation: 'Một người bạn Trung Quốc hỏi về đời sống ở nước bạn.',
+      q_zh: '随着社会的发展，你们国家的生活习惯有什么变化？',
+      q_py: 'Suízhe shèhuì de fāzhǎn, nǐmen guójiā de shēnghuó xíguàn yǒu shénme biànhuà?',
+      q_vn: 'Cùng với sự phát triển của xã hội, thói quen sinh hoạt ở nước bạn thay đổi thế nào?',
+      grammar: { label: '随着……，越来越……', any: ['随着', '越来越'] },
+      need: [
+        { label: 'Dùng 随着 nêu bối cảnh', any: ['随着'] },
+        { label: 'Nêu thay đổi cụ thể', any: ['网上', '手机', '购物', '互联网', '付', '习惯', '普遍'] }
+      ],
+      bonus: { label: 'Dùng 十分 hoặc 普遍 nhận xét', any: ['十分', '普遍'] },
+      vocab: ['随着', '互联网', '普遍', '十分'],
+      minLen: 22,
+      sample: '随着互联网的发展，越来越多的人在网上购物，用手机付钱也已经十分普遍了。不过大部分家庭还是喜欢一起在家吃晚饭。',
+      sample_py: 'Suízhe hùliánwǎng de fāzhǎn, yuè lái yuè duō de rén zài wǎng shàng gòuwù, yòng shǒujī fù qián yě yǐjīng shífēn pǔbiàn le. Búguò dà bùfen jiā tíng háishi xǐhuan yìqǐ zài jiā chī wǎnfàn.',
+      sample_vn: 'Cùng với sự phát triển của Internet, ngày càng nhiều người mua sắm trên mạng, trả tiền bằng điện thoại cũng đã rất phổ biến. Nhưng phần lớn gia đình vẫn thích cùng ăn tối ở nhà.',
+      tip: '随着 + danh từ/cụm động từ: 随着年龄的增长……'
+    }
   ]
 };
 

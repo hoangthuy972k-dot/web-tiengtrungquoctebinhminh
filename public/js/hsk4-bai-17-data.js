@@ -731,28 +731,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 17 (kết hợp ngữ pháp các bài trước) để nói về thiên nhiên, động vật và cách bảo vệ chúng.',
-  questions:[
-    {q_zh:'你最喜欢什么动物？为什么？',q_vn:'Bạn thích loài vật nào nhất? Vì sao?',
-     hint:'又……又……；在……的时候，……一直陪着……',
-     sample:'我最喜欢狗。狗又聪明又活泼，好像朋友一样。在我心里难受的时候，它会一直陪着我。',sample_vn:'Tôi thích chó nhất. Chó vừa thông minh vừa hoạt bát, như một người bạn. Khi tôi buồn, nó luôn ở bên tôi.',
-     note:'活泼/难受 (bài mới) + 又……又 (Bài 1) + 好像……一样 (Bài 6) + 着 (Bài 2).'},
-    {q_zh:'哪些动物应该得到保护？为什么？',q_vn:'Những động vật nào nên được bảo vệ? Vì sao?',
-     hint:'数量不多；为了……而……',
-     sample:'大熊猫和老虎应该得到保护，因为它们数量不多。有的人为了赚钱而伤害动物，这一点儿也不应该。',sample_vn:'Gấu trúc và hổ nên được bảo vệ, vì số lượng không nhiều. Có người vì kiếm tiền mà làm hại động vật, điều này không nên chút nào.',
-     note:'为了……而 (bài mới) + 数量 (Bài 14) + 赚 (Bài 10) + 一点儿也不 (Bài 6).'},
-    {q_zh:'你去过动物园或者森林公园吗？请说说那一趟的经历。',q_vn:'Bạn đã đi sở thú hay công viên rừng chưa? Hãy kể về chuyến đi đó.',
-     hint:'去了一趟……；热闹极了；照照片',
-     sample:'去年放暑假我去了一趟动物园。那天正赶上儿童节，入口处排队的人很多，热闹极了。我给熊猫照了不少照片。',sample_vn:'Nghỉ hè năm ngoái tôi đi sở thú một chuyến. Hôm đó đúng ngày thiếu nhi, cổng vào rất đông người xếp hàng, náo nhiệt vô cùng. Tôi chụp nhiều ảnh gấu trúc.',
-     note:'趟/热闹/排队/照 (bài mới) + 极了 (Bài 4) + 赶 (Bài 15).'},
-    {q_zh:'如果没有森林，世界会变成什么样子？',q_vn:'Nếu không có rừng, thế giới sẽ thành ra thế nào?',
-     hint:'恐怕……；仍然……',
-     sample:'如果没有森林，空气会越来越脏，很多动物恐怕会失去自己的家。所以尽管现在森林越来越少，我们仍然要努力保护它。',sample_vn:'Nếu không có rừng, không khí ngày càng bẩn, nhiều động vật e sẽ mất nhà. Nên dù rừng ngày càng ít, chúng ta vẫn phải nỗ lực bảo vệ.',
-     note:'森林/仍然 (bài mới) + 恐怕 (Bài 16) + 尽管 (Bài 9) + 脏 (Bài 14).'},
-    {q_zh:'海洋跟我们的生活有什么关系？',q_vn:'Đại dương có quan hệ gì với cuộc sống của chúng ta?',
-     hint:'不仅……，而且……；就拿……来说',
-     sample:'海洋跟我们的关系很大。就拿吃的来说，我们不仅从海洋得到鱼，而且海洋还能影响气候。所以千万不要往海里扔垃圾。',sample_vn:'Đại dương quan hệ rất lớn với chúng ta. Lấy chuyện ăn mà nói, ta không chỉ có cá từ biển, mà biển còn ảnh hưởng khí hậu. Nên tuyệt đối đừng vứt rác xuống biển.',
-     note:'海洋 (bài mới) + 拿……来说 (Bài 16) + 不仅……而且 (Bài 6) + 千万 (Bài 15) + 扔 (Bài 14).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 17. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn bè khoe ảnh thú cưng và hỏi bạn thích con vật nào.',
+      q_zh: '你最喜欢什么动物？为什么？',
+      q_py: 'Nǐ zuì xǐhuan shénme dòngwù? Wèishénme?',
+      q_vn: 'Bạn thích loài vật nào nhất? Vì sao?',
+      grammar: { label: '又……又……; 好像……一样', any: ['又', '好像'] },
+      need: [
+        { label: 'Nói con vật yêu thích', any: ['狗', '猫', '熊猫', '鸟', '马', '动物'] },
+        { label: 'Tả đặc điểm', any: ['聪明', '活泼', '可爱', '安静', '好像'] }
+      ],
+      bonus: { label: 'Kể một kỷ niệm với con vật đó', any: ['陪', '难受', '一起', '小时候'] },
+      vocab: ['活泼', '难受', '抱'],
+      minLen: 22,
+      sample: '我最喜欢狗。狗又聪明又活泼，好像朋友一样。我心里难受的时候，它会一直坐在旁边陪着我，抱一抱它心情就好多了。',
+      sample_py: 'Wǒ zuì xǐhuan gǒu. Gǒu yòu cōngming yòu huópō, hǎoxiàng péngyou yí yàng. Wǒ xīn lǐ nánshòu de shíhou, tā huì yì zhí zuò zài pángbiān péi zhe wǒ, bào yi bào tā xīnqíng jiù hǎo duō le.',
+      sample_vn: 'Tôi thích chó nhất. Chó vừa thông minh vừa hoạt bát, như một người bạn vậy. Lúc tôi buồn, nó ngồi cạnh bên tôi mãi, ôm nó một cái là tâm trạng khá hơn nhiều.',
+      tip: '好像……一样 dùng để so sánh: 他跑得好像风一样快。'
+    },
+    {
+      situation: 'Lớp bạn làm bài thuyết trình về bảo vệ động vật.',
+      q_zh: '哪些动物应该得到保护？为什么？',
+      q_py: 'Nǎxiē dòngwù yīnggāi děi dào bǎohù? Wèishénme?',
+      q_vn: 'Những loài vật nào nên được bảo vệ? Vì sao?',
+      grammar: { label: '为了……而…… (vì… mà…)', any: ['为了', '而'] },
+      need: [
+        { label: 'Kể loài cần bảo vệ', any: ['熊猫', '老虎', '鸟', '鱼', '动物'] },
+        { label: 'Nêu lý do', any: ['数量', '少', '森林', '环境', '伤害', '保护'] }
+      ],
+      bonus: { label: 'Nêu thái độ phản đối việc săn bắt', any: ['不应该', '禁止', '反对', '赚钱'] },
+      vocab: ['老虎', '森林', '社会'],
+      minLen: 22,
+      sample: '大熊猫和老虎应该得到保护，因为它们的数量已经不多了，森林也越来越少。有的人为了赚钱而伤害动物，整个社会都应该反对这种做法。',
+      sample_py: 'Dà xióngmāo hé lǎohǔ yīnggāi děi dào bǎohù, yīnwèi tāmen de shùliàng yǐjīng bù duō le, sēnlín yě yuè lái yuè shǎo. Yǒude rén wèile zhuàn qián ér shāng hài dòngwù, zhěng ge shèhuì dōu yīnggāi fǎnduì zhè zhǒng zuò fǎ.',
+      sample_vn: 'Gấu trúc và hổ nên được bảo vệ, vì số lượng của chúng đã không còn nhiều, rừng cũng ngày càng ít. Có người vì kiếm tiền mà hại động vật, cả xã hội nên phản đối cách làm đó.',
+      tip: '为了……而…… trang trọng: 为了理想而努力。'
+    },
+    {
+      situation: 'Bạn kể một chuyến đi sở thú cho lớp nghe.',
+      q_zh: '你去过动物园或者森林公园吗？请说说那一趟的经历。',
+      q_py: 'Nǐ qù guo dòngwù yuán huòzhě sēnlín gōngyuán ma? Qǐng shuōshuo nà yí tàng de jīnglì.',
+      q_vn: 'Bạn từng đi sở thú hoặc công viên rừng chưa? Hãy kể về chuyến đi đó.',
+      grammar: { label: 'Lượng từ 趟 (chuyến); 热闹极了', any: ['趟', '极了'] },
+      need: [
+        { label: 'Nói thời gian và nơi đến', any: ['去年', '暑假', '动物园', '森林', '公园', '上个月'] },
+        { label: 'Kể hoạt động', any: ['照相', '排队', '看', '熊猫', '老虎', '入口'] }
+      ],
+      bonus: { label: 'Dùng 趟 làm lượng từ', any: ['趟'] },
+      vocab: ['趟', '排队', '热闹', '放暑假'],
+      minLen: 22,
+      sample: '去年放暑假我去了一趟动物园。那天正赶上儿童节，入口处排队的人很多，热闹极了。我给熊猫照了不少照片，玩儿得很开心。',
+      sample_py: 'Qùnián fàngshǔjià wǒ qù le yí tàng dòngwù yuán. Nà tiān zhèng gǎn shàng értóng jié, rùkǒu chù páiduì de rén hěn duō, rènao jí le. Wǒ gěi xióngmāo zhào le bù shǎo zhàopiàn, wánr děi hěn kāixīn.',
+      sample_vn: 'Mùa hè năm ngoái tôi đi sở thú một chuyến. Hôm đó đúng dịp Tết thiếu nhi, cổng vào rất đông người xếp hàng, náo nhiệt vô cùng. Tôi chụp khá nhiều ảnh gấu trúc, chơi rất vui.',
+      tip: '趟 dùng cho số lần đi lại: 我去了一趟银行。'
+    },
+    {
+      situation: 'Bài học hôm nay nói về rừng và khí hậu.',
+      q_zh: '如果没有森林，世界会变成什么样子？',
+      q_py: 'Rúguǒ méiyǒu sēnlín, shìjiè huì biàn chéng shénme yàngzi?',
+      q_vn: 'Nếu không có rừng, thế giới sẽ ra sao?',
+      grammar: { label: '尽管……仍然……', any: ['尽管', '仍然'] },
+      need: [
+        { label: 'Nói hậu quả', any: ['空气', '脏', '动物', '气候', '污染', '失去'] },
+        { label: 'Nêu điều nên làm', any: ['保护', '努力', '种树', '减少'] }
+      ],
+      bonus: { label: 'Dùng 仍然 nhấn mạnh', any: ['仍然'] },
+      vocab: ['森林', '仍然', '社会'],
+      minLen: 22,
+      sample: '如果没有森林，空气会越来越脏，很多动物恐怕会失去自己的家，气候也会变得很奇怪。所以尽管现在森林越来越少，我们仍然要努力保护它。',
+      sample_py: 'Rúguǒ méiyǒu sēnlín, kōngqì huì yuè lái yuè zāng, hěn duō dòngwù kǒngpà huì shī qù zìjǐ de jiā, qìhòu yě huì biàn děi hěn qíguài. Suǒyǐ jǐnguǎn xiànzài sēnlín yuè lái yuè shǎo, wǒmen réngrán yào nǔlì bǎohù tā.',
+      sample_vn: 'Nếu không có rừng, không khí sẽ ngày càng bẩn, nhiều loài vật e rằng sẽ mất nhà, khí hậu cũng trở nên kỳ lạ. Nên dù rừng đang ngày càng ít, chúng ta vẫn phải nỗ lực bảo vệ.',
+      tip: '尽管……仍然/还是…… = mặc dù… vẫn…'
+    },
+    {
+      situation: 'Bạn xem một bộ phim tài liệu về đại dương.',
+      q_zh: '海洋跟我们的生活有什么关系？',
+      q_py: 'Hǎiyáng gēn wǒmen de shēnghuó yǒu shénme guānxi?',
+      q_vn: 'Đại dương có quan hệ gì với cuộc sống của chúng ta?',
+      grammar: { label: '就拿……来说; 不仅……而且……', any: ['拿', '来说', '不仅'] },
+      need: [
+        { label: 'Nêu quan hệ cụ thể', any: ['鱼', '吃', '气候', '海洋', '水', '空气'] },
+        { label: 'Nêu điều nên tránh', any: ['扔', '垃圾', '污染', '千万'] }
+      ],
+      bonus: { label: 'Dùng 就拿……来说 nêu ví dụ', any: ['拿'] },
+      vocab: ['海洋', '底', '公里'],
+      minLen: 22,
+      sample: '海洋跟我们的关系很大。就拿吃的来说，我们不仅从海洋得到鱼，而且海洋还能影响气候。海底几公里深的地方还有很多我们不了解的植物，所以千万不要往海里扔垃圾。',
+      sample_py: 'Hǎiyáng gēn wǒmen de guānxi hěn dà. Jiù ná chī de lái shuō, wǒmen bùjǐn cóng hǎiyáng děi dào yú, ér qiě hǎiyáng hái néng yǐngxiǎng qìhòu. Hǎi dǐ jǐ gōnglǐ shēn de dìfang hái yǒu hěn duō wǒmen bù liǎojiě de zhíwù, suǒyǐ qiānwàn bú yào wǎng hǎi lǐ rēng lā jī.',
+      sample_vn: 'Đại dương liên quan rất nhiều đến chúng ta. Lấy chuyện ăn uống mà nói, ta không những lấy cá từ biển mà biển còn ảnh hưởng đến khí hậu. Dưới đáy biển sâu mấy km còn nhiều loài thực vật ta chưa biết, nên tuyệt đối đừng vứt rác xuống biển.',
+      tip: '就拿……来说 = lấy… làm ví dụ mà nói.'
+    }
   ]
 };
 

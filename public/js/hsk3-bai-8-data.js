@@ -523,33 +523,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小丽在看什么房子？她满意吗？为什么？',
-     q_vn:'Tiểu Lệ đang xem nhà thế nào? Cô ấy có ưng ý không? Vì sao?',
-     hint:'看房子，都不满意，一个没有电梯，一个在二十层太高了',
-     sample:'小丽在看房子，但是她都不满意，因为一个没有电梯，一个虽然有电梯但是在二十层，往下看很害怕。',
-     sample_vn:'Tiểu Lệ đang xem nhà, nhưng cô ấy đều không ưng ý, vì một căn không có thang máy, một căn tuy có thang máy nhưng ở tầng 20, nhìn xuống rất sợ.',
-     note:'因为……所以…… (rút gọn) giải thích lý do.'},
-    {q_zh:'马可什么时候回国？小明送了他什么？',
-     q_vn:'Marco khi nào về nước? Tiểu Minh tặng cậu ấy gì?',
-     hint:'下个星期，送了一个小熊猫',
-     sample:'马可下个星期就要回国了，小明送了他一个小熊猫，希望以后能再见面。',
-     sample_vn:'Marco tuần sau sẽ về nước, Tiểu Minh tặng cậu ấy một con gấu trúc nhỏ, hy vọng sau này có thể gặp lại.',
-     note:'希望+V diễn tả mong muốn.'},
-    {q_zh:'小刚在咖啡厅怎么回答小丽的问题？',
-     q_vn:'Tiểu Cương trả lời câu hỏi của Tiểu Lệ ở quán cà phê thế nào?',
-     hint:'你坐哪儿我就坐哪儿，你喝什么我就喝什么',
-     sample:'小刚说小丽坐哪儿他就坐哪儿，小丽喝什么他就喝什么，他对小丽真好。',
-     sample_vn:'Tiểu Cương nói Tiểu Lệ ngồi đâu anh ấy ngồi đó, Tiểu Lệ uống gì anh ấy uống đó, anh ấy thật tốt với Tiểu Lệ.',
-     note:'疑问代词+就+疑问代词 diễn tả sự tùy ý theo người kia (điểm ngữ pháp bài này).'},
-    {q_zh:'周太太的老同学觉得她变化大吗？周太太怎么说？',
-     q_vn:'Bạn học cũ của bà Chu thấy bà ấy thay đổi nhiều không? Bà Chu nói sao?',
-     hint:'几乎没变化，周太太说自己胖了',
-     sample:'老同学觉得周太太几乎没变化，但是周太太说自己胖了，以前的衣服都不能穿了。',
-     sample_vn:'Bạn học cũ thấy bà Chu hầu như không thay đổi, nhưng bà Chu nói mình đã béo lên, quần áo trước đây đều không mặc vừa nữa.',
-     note:'几乎+phủ định diễn tả gần như không có gì thay đổi.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 8. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Huấn luyện viên hỏi bạn hôm qua tập gì và hôm nay có tập nữa không.',
+      q_zh: '你昨天做了什么运动？今天还会再做一次吗？',
+      q_py: 'Nǐ zuótiān zuò le shénme yùndòng? Jīntiān hái huì zài zuò yí cì ma?',
+      q_vn: 'Hôm qua bạn tập môn gì? Hôm nay có tập lại không?',
+      grammar: { label: '又 (đã lại) / 再 (sẽ lại)', any: ['又', '再'] },
+      need: [
+        { label: 'Kể việc đã làm hôm qua bằng 又', any: ['又'] },
+        { label: 'Nói dự định hôm nay bằng 再', any: ['再'] }
+      ],
+      bonus: { label: 'Nói lý do liên quan đến sức khỏe', any: ['健康', '身体', '重要'] },
+      vocab: ['又', '健康', '重要'],
+      minLen: 18,
+      sample: '我昨天又去跑步了，今天下午还打算再去一次，因为我觉得运动对健康非常重要。',
+      sample_py: 'Wǒ zuótiān yòu qù pǎobù le, jīntiān xiàwǔ hái dǎsuàn zài qù yí cì, yīnwèi wǒ juéde yùndòng duì jiànkāng fēicháng zhòngyào.',
+      sample_vn: 'Hôm qua tôi lại đi chạy bộ, chiều nay định đi thêm lần nữa, vì tôi thấy vận động rất quan trọng với sức khỏe.',
+      tip: '又 dùng cho việc đã lặp lại, 再 dùng cho việc sắp lặp lại: 他又来了。明天再来吧。'
+    },
+    {
+      situation: 'Bạn bè rủ đi ăn và hỏi bạn muốn ăn gì.',
+      q_zh: '跟朋友吃饭的时候，他问你想吃什么，你会怎么回答？',
+      q_py: 'Gēn péngyou chīfàn de shíhou, tā wèn nǐ xiǎng chī shénme, nǐ huì zěnme huídá?',
+      q_vn: 'Khi đi ăn với bạn, bạn ấy hỏi bạn muốn ăn gì, bạn sẽ trả lời thế nào?',
+      grammar: { label: '疑问代词 + 就 + 疑问代词 (什么……就什么……)', any: ['就'] },
+      need: [
+        { label: 'Dùng cặp nghi vấn 什么…就什么 / 哪儿…就哪儿', any: ['什么', '哪儿', '谁'] },
+        { label: 'Nói thêm ý kiến riêng', any: ['我觉得', '我想', '我一般', '都可以', '随便'] }
+      ],
+      bonus: { label: 'Gợi ý một món cụ thể', any: ['面条', '米饭', '菜', '鱼', '羊肉', '可乐'] },
+      vocab: ['满意', '马上', '可乐'],
+      minLen: 18,
+      sample: '我一般说：你想吃什么我们就吃什么，你想去哪儿我们就去哪儿。要是你也没想好，我们马上去楼下那家饭馆儿，我对那儿的面条儿很满意。',
+      sample_py: 'Wǒ yìbān shuō: nǐ xiǎng chī shénme wǒmen jiù chī shénme, nǐ xiǎng qù nǎr wǒmen jiù qù nǎr. Yàoshi nǐ yě méi xiǎng hǎo, wǒmen mǎshàng qù lóu xià nà jiā fàn guǎn ér, wǒ duì nàr de miàntiáor hěn mǎnyì.',
+      sample_vn: 'Tôi thường nói: Bạn muốn ăn gì thì mình ăn cái đó, muốn đi đâu thì mình đi đó. Nếu bạn cũng chưa nghĩ ra, mình xuống quán dưới nhà luôn, tôi rất ưng món mì ở đó.',
+      tip: 'Cặp đại từ nghi vấn hô ứng: 你什么时候来，我什么时候走。'
+    },
+    {
+      situation: 'Khách đến công ty hỏi đường lên phòng bạn.',
+      q_zh: '你家或者公司在几层？你坐电梯还是走楼梯？',
+      q_py: 'Nǐ jiā huòzhě gōngsī zài jǐ céng? Nǐ zuò diàntī háishi zǒu lóu tī?',
+      q_vn: 'Nhà hoặc công ty bạn ở tầng mấy? Bạn đi thang máy hay cầu thang bộ?',
+      grammar: { label: 'Số + 层 / 坐电梯 · 走楼梯', any: ['层', '电梯', '楼梯'] },
+      need: [
+        { label: 'Nói tầng mấy', any: ['层', '楼'] },
+        { label: 'Nói đi thang máy hay cầu thang', any: ['电梯', '楼梯', '走'] }
+      ],
+      bonus: { label: 'Nói lý do chọn cách đó', any: ['锻炼', '快', '人多', '方便', '健康'] },
+      vocab: ['电梯', '层', '健康'],
+      minLen: 18,
+      sample: '我们公司在十二层，我一般坐电梯上去。电梯人太多的时候，我就走楼梯，这样也能锻炼身体。',
+      sample_py: 'Wǒmen gōngsī zài shí èr céng, wǒ yìbān zuò diàntī shàng qù. Diàntī rén tài duō de shíhou, wǒ jiù zǒu lóu tī, zhè yàng yě néng duànliàn shēntǐ.',
+      sample_vn: 'Công ty tôi ở tầng 12, tôi thường đi thang máy. Khi thang máy đông người, tôi đi cầu thang bộ, như vậy cũng rèn luyện được sức khỏe.',
+      tip: 'Tầng nhà dùng 层: 三层 = tầng 3; 楼 thường chỉ tòa nhà: 那座楼。'
+    },
+    {
+      situation: 'Bạn và bạn bè đang nói chuyện về nơi chốn khiến mình thấy dễ chịu.',
+      q_zh: '你害怕什么？什么样的地方让你觉得安静、舒服？',
+      q_py: 'Nǐ hàipà shénme? Shénme yàng de dìfang ràng nǐ juéde ānjìng, shūfu?',
+      q_vn: 'Bạn sợ cái gì? Nơi thế nào khiến bạn thấy yên tĩnh, dễ chịu?',
+      grammar: { label: '害怕 + danh từ/động từ; 几乎 + động từ', any: ['害怕', '几乎'] },
+      need: [
+        { label: 'Nói điều mình sợ', any: ['害怕', '怕'] },
+        { label: 'Nói nơi yên tĩnh bạn thích', any: ['安静', '图书馆', '公园', '家', '河边', '山'] }
+      ],
+      bonus: { label: 'Dùng 几乎 nói mức độ', any: ['几乎'] },
+      vocab: ['害怕', '安静', '几乎'],
+      minLen: 20,
+      sample: '我有点儿害怕大狗。我喜欢安静的地方，比如图书馆和公园，在那儿我几乎能看一下午的书。',
+      sample_py: 'Wǒ yǒudiǎnr hàipà dà gǒu. Wǒ xǐhuan ānjìng de dìfang, bǐrú túshūguǎn hé gōngyuán, zài nàr wǒ jīhū néng kàn yíxià wǔ de shū.',
+      sample_vn: 'Tôi hơi sợ chó to. Tôi thích chỗ yên tĩnh, ví dụ thư viện và công viên, ở đó tôi gần như ngồi đọc sách được cả buổi chiều.',
+      tip: '几乎 = gần như: 我几乎每天都跑步。'
+    },
+    {
+      situation: 'Cuối năm, cả lớp kể về thay đổi của mình trong một năm qua.',
+      q_zh: '这一年你有什么变化？',
+      q_py: 'Zhè yì nián nǐ yǒu shénme biànhuà?',
+      q_vn: 'Một năm qua bạn có thay đổi gì?',
+      grammar: { label: '变化 + 大/不小; 越来越 + tính từ', any: ['变化', '越来越'] },
+      need: [
+        { label: 'Nói thay đổi lớn hay nhỏ', any: ['变化', '不小', '很大', '一些'] },
+        { label: 'Kể một thay đổi cụ thể', any: ['健康', '汉语', '工作', '锻炼', '认识', '朋友', '习惯'] }
+      ],
+      bonus: { label: 'Dùng 几乎 hoặc 又 để nói thói quen mới', any: ['几乎', '又', '每天'] },
+      vocab: ['变化', '健康', '几乎'],
+      minLen: 20,
+      sample: '这一年我的变化不小：身体比以前健康了，也不那么害怕说汉语了，现在我几乎每天都跟同学用汉语聊天儿。',
+      sample_py: 'Zhè yì nián wǒ de biànhuà bù xiǎo: shēntǐ bǐ yǐqián jiànkāng le, yě bú nàme hàipà shuō Hànyǔ le, xiànzài wǒ jīhū měitiān dōu gēn tóngxué yòng Hànyǔ liáo tiān ér.',
+      sample_vn: 'Một năm qua tôi thay đổi không ít: cơ thể khỏe hơn trước, cũng không còn sợ nói tiếng Hán nữa, giờ gần như ngày nào tôi cũng trò chuyện với bạn bằng tiếng Hán.',
+      tip: '变化 vừa là danh từ vừa là động từ: 变化很大、天气变化了。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

@@ -410,33 +410,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小丽以前在哪儿工作？现在在哪儿工作？',
-     q_vn:'Trước đây Tiểu Lệ làm việc ở đâu? Bây giờ làm ở đâu?',
-     hint:'以前在银行工作，现在在小刚的公司',
-     sample:'小丽以前在银行工作了两年，后来来了小刚的公司工作。',
-     sample_vn:'Trước đây Tiểu Lệ làm việc ở ngân hàng hai năm, sau đó đến công ty của Tiểu Cương làm việc.',
-     note:'Sub+V+了+thời lượng diễn tả khoảng thời gian hành động kéo dài (điểm ngữ pháp bài này).'},
-    {q_zh:'小刚和小丽周末做了什么？他们对什么感兴趣？',
-     q_vn:'Cuối tuần Tiểu Cương và Tiểu Lệ đã làm gì? Họ thích điều gì?',
-     hint:'去唱歌，听音乐会，小刚对小丽更感兴趣',
-     sample:'他们周末去唱歌，晚上还听了音乐会，小丽对音乐感兴趣，小刚对小丽更感兴趣。',
-     sample_vn:'Cuối tuần họ đi hát, buổi tối còn nghe hòa nhạc, Tiểu Lệ thích âm nhạc, còn Tiểu Cương thích Tiểu Lệ hơn.',
-     note:'对……感兴趣 diễn tả sự hứng thú với điều gì đó.'},
-    {q_zh:'小刚要做什么大事？他和小丽认识多久了？',
-     q_vn:'Tiểu Cương sắp làm việc trọng đại gì? Anh ấy và Tiểu Lệ quen nhau bao lâu rồi?',
-     hint:'下个月结婚，认识五年了',
-     sample:'小刚下个月要跟小丽结婚，他们都认识五年了。',
-     sample_vn:'Tháng sau Tiểu Cương sẽ kết hôn với Tiểu Lệ, họ quen nhau năm năm rồi.',
-     note:'Sub+V+了+thời lượng+了 diễn tả khoảng thời gian đã trôi qua và vẫn tiếp diễn.'},
-    {q_zh:'小刚迟到了吗？后来发现是什么原因？',
-     q_vn:'Tiểu Cương có đến muộn không? Sau đó phát hiện ra nguyên nhân là gì?',
-     hint:'他说没有，是小丽的表快了一刻钟',
-     sample:'小刚说他没迟到，后来发现是小丽的表快了一刻钟。',
-     sample_vn:'Tiểu Cương nói mình không đến muộn, sau đó phát hiện ra là đồng hồ của Tiểu Lệ chạy nhanh mười lăm phút.',
-     note:'一刻钟 = mười lăm phút (điểm ngữ pháp bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 7. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Một người bạn Trung Quốc mới quen hỏi bạn học tiếng Hán bao lâu rồi.',
+      q_zh: '你学汉语学了多长时间了？每天学多久？',
+      q_py: 'Nǐ xué Hànyǔ xué le duō zhǎng shíjiān le? Měitiān xué duō jiǔ?',
+      q_vn: 'Bạn học tiếng Hán được bao lâu rồi? Mỗi ngày học bao lâu?',
+      grammar: { label: 'Bổ ngữ thời lượng: V + 了 + thời gian + 了', any: ['了', '年', '个月', '小时'] },
+      need: [
+        { label: 'Nói học được bao lâu', any: ['年', '个月', '星期'] },
+        { label: 'Nói mỗi ngày học bao lâu', any: ['小时', '分钟', '半', '每天'] }
+      ],
+      bonus: { label: 'Nói cuối tuần học khác ngày thường bằng 更 / 久', any: ['久', '更', '周末'] },
+      vocab: ['久', '半', '以前'],
+      minLen: 18,
+      sample: '我学汉语学了两年了，每天学一个半小时。周末没有课，我学得更久一些。',
+      sample_py: 'Wǒ xué Hànyǔ xué le liǎng nián le, měitiān xué yí ge bàn xiǎoshí. Zhōumò méiyǒu kè, wǒ xué děi gèng jiǔ yì xiē.',
+      sample_vn: 'Tôi học tiếng Hán được hai năm rồi, mỗi ngày học một tiếng rưỡi. Cuối tuần không có lớp, tôi học lâu hơn một chút.',
+      tip: 'Thời lượng đặt sau động từ, tân ngữ lặp động từ: 我学汉语学了两年。'
+    },
+    {
+      situation: 'Trong buổi làm quen, mọi người kể về sở thích của mình.',
+      q_zh: '你对什么感兴趣？为什么？',
+      q_py: 'Nǐ duì shénme gǎnxìngqù? Wèishénme?',
+      q_vn: 'Bạn hứng thú với cái gì? Vì sao?',
+      grammar: { label: '对……感兴趣 / 对……有兴趣', any: ['感兴趣', '有兴趣'] },
+      need: [
+        { label: 'Dùng 对……感兴趣', any: ['感兴趣', '有兴趣'] },
+        { label: 'Nêu lý do hoặc việc bạn hay làm', any: ['因为', '所以', '常常', '经常', '每天'] }
+      ],
+      bonus: { label: 'So sánh với trước đây bằng 以前', any: ['以前'] },
+      vocab: ['感兴趣', '以前', '同事'],
+      minLen: 20,
+      sample: '我对中国文化很感兴趣，特别是中国菜和中国电影。以前我一点儿也不懂，现在我常常跟同事一起看中文节目。',
+      sample_py: 'Wǒ duì Zhōngguó wénhuà hěn gǎnxìngqù, tèbié shì Zhōngguó cài hé Zhōngguó diànyǐng. Yǐqián wǒ yìdiǎnr yě bù dǒng, xiànzài wǒ chángcháng gēn tóngshì yìqǐ kàn Zhōngwén jiémù.',
+      sample_vn: 'Tôi rất hứng thú với văn hóa Trung Quốc, nhất là món ăn và phim Trung Quốc. Trước đây tôi chẳng hiểu gì, giờ tôi hay xem chương trình tiếng Trung cùng đồng nghiệp.',
+      tip: 'Cấu trúc: 对 + đối tượng + 感兴趣。Ví dụ: 我对历史很感兴趣。'
+    },
+    {
+      situation: 'Bạn kể lịch một ngày của mình cho người bạn nước ngoài.',
+      q_zh: '你今天几点起床？几点到公司或者学校？',
+      q_py: 'Nǐ jīntiān jǐ diǎn qǐchuáng? Jǐ diǎn dào gōngsī huòzhě xuéxiào?',
+      q_vn: 'Hôm nay bạn dậy lúc mấy giờ? Mấy giờ đến công ty hoặc trường?',
+      grammar: { label: 'Nói giờ với 半 / 刻 / 差', any: ['半', '刻', '差'] },
+      need: [
+        { label: 'Nói giờ dậy', any: ['点', '半', '刻'] },
+        { label: 'Nói giờ đến nơi', any: ['到', '点', '差', '刻'] }
+      ],
+      bonus: { label: 'Nói thời gian đi đường mất bao lâu', any: ['分钟', '小时', '路上'] },
+      vocab: ['半', '刻', '差'],
+      minLen: 18,
+      sample: '我今天六点半起床，差一刻八点就到公司了。路上要坐半个小时的地铁，所以我起得比较早。',
+      sample_py: 'Wǒ jīntiān liù diǎn bàn qǐchuáng, chà yí kè bā diǎn jiù dào gōngsī le. Lù shàng yào zuò bàn ge xiǎoshí de dìtiě, suǒyǐ wǒ qǐ děi bǐjiào zǎo.',
+      sample_vn: 'Hôm nay tôi dậy lúc 6 rưỡi, 7 giờ 45 đã đến công ty. Trên đường phải đi tàu điện ngầm nửa tiếng, nên tôi dậy khá sớm.',
+      tip: '差一刻八点 = 7 giờ 45; 八点一刻 = 8 giờ 15; 八点半 = 8 giờ 30.'
+    },
+    {
+      situation: 'Sáng nay tắc đường, bạn sẽ đến lớp muộn.',
+      q_zh: '如果你要迟到了，会怎么跟老师或者经理说？',
+      q_py: 'Rúguǒ nǐ yào chídào le, huì zěnme gēn lǎoshī huòzhě jīnglǐ shuō?',
+      q_vn: 'Nếu sắp đến muộn, bạn sẽ nói gì với thầy cô hoặc giám đốc?',
+      grammar: { label: '会 + động từ (dự định) + 请您……', any: ['会', '请'] },
+      need: [
+        { label: 'Xin lỗi và báo đến muộn', any: ['对不起', '迟到', '晚'] },
+        { label: 'Nói lý do', any: ['车', '路上', '堵', '雨', '地铁', '堵车'] }
+      ],
+      bonus: { label: 'Nói sẽ đến trong bao lâu nữa', any: ['分钟', '一会儿', '马上'] },
+      vocab: ['迟到', '久', '接'],
+      minLen: 20,
+      sample: '我会先给老师打个电话说：对不起，路上车太多了，我可能会迟到十分钟，请您等我一会儿，不会太久，到了我就接着上课。',
+      sample_py: 'Wǒ huì xiān gěi lǎoshī dǎ ge diànhuà shuō: duìbuqǐ, lù shàng chē tài duō le, wǒ kěnéng huì chídào shífēn zhōng, qǐng nín děng wǒ yíhuìr, bú huì tài jiǔ, dào le wǒ jiù jiēzhe shàngkè.',
+      sample_vn: 'Tôi sẽ gọi điện cho thầy trước và nói: Em xin lỗi, đường đông quá, chắc em sẽ muộn 10 phút, thầy đợi em một lát, không lâu đâu, đến nơi em sẽ học tiếp ngay.',
+      tip: 'Báo muộn nên có ba phần: xin lỗi + lý do + thời gian sẽ đến.'
+    },
+    {
+      situation: 'Một đồng nghiệp thân thiết vừa báo tin sắp kết hôn.',
+      q_zh: '同事要结婚了，你会说什么？还会做什么？',
+      q_py: 'Tóngshì yào jiéhūn le, nǐ huì shuō shénme? Hái huì zuò shénme?',
+      q_vn: 'Đồng nghiệp sắp kết hôn, bạn sẽ nói gì? Còn làm gì nữa?',
+      grammar: { label: '欢迎 + người + làm gì / 祝 + lời chúc', any: ['祝', '欢迎'] },
+      need: [
+        { label: 'Nói lời chúc', any: ['祝', '快乐', '高兴', '幸福'] },
+        { label: 'Nói việc bạn sẽ làm', any: ['礼物', '参加', '去', '接', '买', '照片'] }
+      ],
+      bonus: { label: 'Mời họ đến nhà chơi bằng 欢迎', any: ['欢迎'] },
+      vocab: ['结婚', '同事', '欢迎'],
+      minLen: 20,
+      sample: '我会说：祝你们快乐！然后跟别的同事一起给他们买个礼物，以后也欢迎他们来我家做客。',
+      sample_py: 'Wǒ huì shuō: zhù nǐmen kuàilè! Ránhòu gēn biéde tóngshì yìqǐ gěi tāmen mǎi ge lǐwù, yǐhòu yě huānyíng tāmen lái wǒ jiā zuò kè.',
+      sample_vn: 'Tôi sẽ nói: Chúc hai bạn hạnh phúc! Rồi cùng các đồng nghiệp khác mua quà cho họ, sau này cũng hoan nghênh họ đến nhà tôi chơi.',
+      tip: '欢迎 + người + động từ: 欢迎你来我家。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

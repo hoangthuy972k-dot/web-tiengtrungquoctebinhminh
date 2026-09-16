@@ -521,33 +521,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'周太太让周明先做什么，再做什么？',
-     q_vn:'Bà Chu bảo Chu Minh trước tiên làm gì, sau đó làm gì?',
-     hint:'先把茶和杯子放好，然后把西瓜拿出来',
-     sample:'周太太让周明先把茶和杯子放好，然后把冰箱里的西瓜拿出来。',
-     sample_vn:'Bà Chu bảo Chu Minh trước tiên để trà và cốc gọn gàng, sau đó lấy dưa hấu trong tủ lạnh ra.',
-     note:'先……然后…… diễn tả trình tự hành động (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'小刚为什么没接同事的电话？',
-     q_vn:'Vì sao Tiểu Cương không nghe máy đồng nghiệp gọi?',
-     hint:'刚洗了个澡，没听见',
-     sample:'小刚刚洗了个澡，没听见手机响，所以没接同事的电话。',
-     sample_vn:'Tiểu Cương vừa tắm xong, không nghe thấy điện thoại reo, nên không nghe máy đồng nghiệp gọi.',
-     note:'洗澡 diễn tả hành động tắm rửa (ôn lại vừa học trong bài này).'},
-    {q_zh:'同学和小明打算怎么过今晚？',
-     q_vn:'Bạn học và Tiểu Minh định trải qua tối nay thế nào?',
-     hint:'坐在外边一边看月亮一边吃东西，听叔叔阿姨讲故事',
-     sample:'他们打算坐在外边，一边看月亮一边吃东西，听叔叔阿姨讲讲他们年轻时候的故事。',
-     sample_vn:'Họ định ngồi ở ngoài, vừa ngắm trăng vừa ăn đồ, nghe chú và cô kể chuyện thời trẻ của họ.',
-     note:'一边……一边…… diễn tả hai hành động cùng lúc (ôn lại đã học ở Bài 13).'},
-    {q_zh:'做水果饭的步骤是什么？',
-     q_vn:'Các bước làm cơm trái cây là gì?',
-     hint:'先把米饭做好，然后再把新鲜的水果放进去',
-     sample:'先把米饭做好，然后再把一块块新鲜的水果放进去，水果饭就做好了。',
-     sample_vn:'Trước tiên nấu cơm xong, sau đó cho từng miếng trái cây tươi vào, cơm trái cây là xong.',
-     note:'先……然后再…… diễn tả trình tự các bước (điểm ngữ pháp trọng tâm bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 14. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Cuối tuần bạn tổng vệ sinh căn phòng của mình.',
+      q_zh: '周末你怎么打扫房间？先做什么，然后做什么？',
+      q_py: 'Zhōumò nǐ zěnme dǎsǎo fángjiān? Xiān zuò shénme, ránhòu zuò shénme?',
+      q_vn: 'Cuối tuần bạn dọn phòng thế nào? Làm gì trước, rồi làm gì?',
+      grammar: { label: '先……，然后……，最后…… + 把……打扫干净', any: ['先', '然后', '最后', '把'] },
+      need: [
+        { label: 'Dùng 先……然后…… nói thứ tự', any: ['先', '然后', '最后'] },
+        { label: 'Dùng 把 + việc dọn dẹp', any: ['把', '打扫', '洗', '干净'] }
+      ],
+      bonus: { label: 'Nói việc thư giãn sau khi dọn xong', any: ['洗澡', '节目', '电视', '休息', '音乐'] },
+      vocab: ['打扫', '干净', '然后', '盘子'],
+      minLen: 20,
+      sample: '周末我先把房间打扫干净，然后把盘子和碗洗好，最后洗个澡，看看喜欢的节目。',
+      sample_py: 'Zhōumò wǒ xiān bǎ fángjiān dǎsǎo gānjìng, ránhòu bǎ pánzi hé wǎn xǐ hǎo, zuìhòu xǐ ge zǎo, kànkan xǐhuan de jiémù.',
+      sample_vn: 'Cuối tuần tôi dọn phòng sạch sẽ trước, rồi rửa đĩa bát, cuối cùng tắm một cái và xem chương trình mình thích.',
+      tip: '把 + đồ vật + động từ + bổ ngữ kết quả: 把房间打扫干净、把衣服洗干净。'
+    },
+    {
+      situation: 'Bạn vừa đi siêu thị về và đang cất đồ.',
+      q_zh: '买回来的东西你一般怎么放？',
+      q_py: 'Mǎi huílai de dōngxi nǐ yìbān zěnme fàng?',
+      q_vn: 'Đồ mua về bạn thường cất thế nào?',
+      grammar: { label: '把 + đồ vật + 拿出来 / 放到……里', any: ['把', '拿出来', '放到'] },
+      need: [
+        { label: 'Dùng 把 + động từ + bổ ngữ xu hướng', any: ['拿出来', '放进去', '放到', '拿回来'] },
+        { label: 'Nhắc đến tủ lạnh hoặc chỗ cất', any: ['冰箱', '厨房', '桌子', '柜子'] }
+      ],
+      bonus: { label: 'Nói lý do làm vậy', any: ['坏', '新鲜', '简单', '方便'] },
+      vocab: ['冰箱', '香蕉', '简单'],
+      minLen: 20,
+      sample: '我一般先把水果和香蕉拿出来放在桌子上，再把牛奶和菜放到冰箱里。这样很简单，东西也不容易坏。',
+      sample_py: 'Wǒ yìbān xiān bǎ shuǐguǒ hé xiāngjiāo ná chū lái fàng zài zhuōzi shàng, zài bǎ niúnǎi hé cài fàng dào bīngxiāng lǐ. Zhè yàng hěn jiǎndān, dōngxi yě bù róngyì huài.',
+      sample_vn: 'Tôi thường lấy hoa quả và chuối ra để lên bàn trước, rồi cho sữa và rau vào tủ lạnh. Như vậy rất đơn giản, đồ cũng không dễ hỏng.',
+      tip: '把……拿出来 / 放进去: động từ + bổ ngữ xu hướng đứng sau tân ngữ của 把.'
+    },
+    {
+      situation: 'Tối trung thu, bạn ra ngoài ngắm trăng cùng bạn bè.',
+      q_zh: '说一说今天晚上的天气：月亮怎么样？外面刮风吗？',
+      q_py: 'Shuō yi shuō jīntiān wǎnshang de tiānqì: yuèliang zěnmeyàng? Wàimian guāfēng ma?',
+      q_vn: 'Hãy kể thời tiết tối nay: mặt trăng thế nào? Bên ngoài có gió không?',
+      grammar: { label: '像 + danh từ (giống như…)', any: ['像'] },
+      need: [
+        { label: 'Tả mặt trăng', any: ['月亮', '大', '圆', '亮'] },
+        { label: 'Nói về gió hoặc thời tiết', any: ['刮风', '风', '冷', '舒服', '天气'] }
+      ],
+      bonus: { label: 'Dùng 像 để so sánh', any: ['像'] },
+      vocab: ['月亮', '像', '刮风', '盘子'],
+      minLen: 18,
+      sample: '今天晚上的月亮又大又亮，像一个白色的盘子。外面有点儿刮风，可是一点儿也不冷，很舒服。',
+      sample_py: 'Jīntiān wǎnshang de yuèliang yòu dà yòu liàng, xiàng yí ge bái sè de pánzi. Wàimian yǒudiǎnr guāfēng, kěshì yìdiǎnr yě bù lěng, hěn shūfu.',
+      sample_vn: 'Mặt trăng tối nay vừa to vừa sáng, giống như một cái đĩa trắng. Bên ngoài hơi có gió, nhưng không lạnh chút nào, rất dễ chịu.',
+      tip: '像 + danh từ = giống như: 他像他爸爸。'
+    },
+    {
+      situation: 'Bạn kể kỷ niệm tuổi thơ cho lớp nghe.',
+      q_zh: '小时候谁给你讲故事？讲的是什么故事？',
+      q_py: 'Xiǎoshí hòu shéi gěi nǐ jiǎng gùshi? Jiǎng de shì shénme gùshi?',
+      q_vn: 'Hồi nhỏ ai kể chuyện cho bạn? Kể chuyện gì?',
+      grammar: { label: '给 + người + 讲故事', any: ['讲', '给'] },
+      need: [
+        { label: 'Nói ai kể chuyện', any: ['叔叔', '阿姨', '妈妈', '爸爸', '爷爷', '奶奶', '老师'] },
+        { label: 'Nói nội dung câu chuyện', any: ['故事', '动物', '月亮', '小鸟', '书'] }
+      ],
+      bonus: { label: 'Tả giọng kể bằng 声音', any: ['声音'] },
+      vocab: ['叔叔', '故事', '声音'],
+      minLen: 20,
+      sample: '小时候我叔叔常常给我讲故事，他的声音很好听。我最喜欢听他讲小动物的故事，听完以后我才愿意睡觉。',
+      sample_py: 'Xiǎoshí hòu wǒ shūshu chángcháng gěi wǒ jiǎng gùshi, tā de shēngyīn hěn hǎotīng. Wǒ zuì xǐhuan tīng tā jiǎng xiǎo dòngwù de gùshi, tīng wán yǐhòu wǒ cái yuànyì shuìjiào.',
+      sample_vn: 'Hồi nhỏ chú hay kể chuyện cho tôi, giọng chú rất dễ nghe. Tôi thích nhất nghe chú kể chuyện về các con vật nhỏ, nghe xong mới chịu đi ngủ.',
+      tip: '讲 = kể, giảng: 讲故事、老师讲语法。'
+    },
+    {
+      situation: 'Bạn dẫn bạn bè vào một quán ăn mới.',
+      q_zh: '在饭馆儿点菜的时候，你一般先做什么？',
+      q_py: 'Zài fàn guǎn ér diǎn cài de shíhou, nǐ yìbān xiān zuò shénme?',
+      q_vn: 'Khi gọi món ở quán, bạn thường làm gì trước?',
+      grammar: { label: '先……，然后……，最后……', any: ['先', '然后', '最后'] },
+      need: [
+        { label: 'Nói xem thực đơn', any: ['菜单', '看'] },
+        { label: 'Nói hỏi nhân viên hoặc chọn món', any: ['服务员', '问', '点', '菜'] }
+      ],
+      bonus: { label: 'Nói chọn món đơn giản bằng 简单', any: ['简单', '新鲜', '不太贵'] },
+      vocab: ['菜单', '简单', '然后'],
+      minLen: 20,
+      sample: '我一般先看看菜单，然后问问服务员今天什么菜新鲜，最后点两三个简单的菜和一个汤。',
+      sample_py: 'Wǒ yìbān xiān kànkan càidān, ránhòu wènwen fúwùyuán jīntiān shénme cài xīnxiān, zuìhòu diǎn liǎng sān ge jiǎndān de cài hé yí ge tāng.',
+      sample_vn: 'Tôi thường xem thực đơn trước, rồi hỏi nhân viên hôm nay món gì tươi, cuối cùng gọi hai ba món đơn giản và một bát canh.',
+      tip: '先……然后……最后…… giúp câu trả lời có thứ tự rõ ràng.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

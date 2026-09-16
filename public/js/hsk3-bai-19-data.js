@@ -453,33 +453,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'女儿最近有什么变化？爸爸妈妈怎么看？',
-     q_vn:'Gần đây con gái có thay đổi gì? Bố mẹ nhìn nhận thế nào?',
-     hint:'喜欢把头发放耳朵后面，小时候喜欢短头发，现在慢慢像个女孩子了',
-     sample:'女儿最近喜欢把头发放在耳朵后面，爸爸妈妈觉得她和以前不太一样了，她小时候喜欢短头发，像男孩子，但现在慢慢地开始像个女孩子了。',
-     sample_vn:'Con gái gần đây thích để tóc ra sau tai, bố mẹ thấy con khác trước nhiều rồi, hồi nhỏ con thích tóc ngắn, giống con trai, nhưng bây giờ dần dần bắt đầu giống con gái thật rồi.',
-     note:'使 diễn tả sự khiến cho (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'照片里骑得最快的人是谁？为什么同事没认出来？',
-     q_vn:'Người cưỡi nhanh nhất trong ảnh là ai? Vì sao đồng nghiệp không nhận ra?',
-     hint:'是小刚，因为他平时穿西服，比赛时穿运动服，看上去更年轻',
-     sample:'照片里骑得最快的人是小刚，同事没认出来，因为他上班穿西服，比赛的时候穿运动服，看上去更年轻。',
-     sample_vn:'Người cưỡi nhanh nhất trong ảnh là Tiểu Cương, đồng nghiệp không nhận ra, vì anh ấy đi làm mặc âu phục, lúc thi đấu mặc đồ thể thao, trông trẻ hơn.',
-     note:'看上去 diễn tả sự đánh giá qua quan sát (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'朋友的女儿喜欢什么？哭的时候怎么才能安静下来？',
-     q_vn:'Con gái của người bạn thích gì? Lúc khóc làm sao mới yên lặng được?',
-     hint:'喜欢听爸爸学鸟叫，哭的时候爸爸学鸟叫就能安静下来',
-     sample:'朋友的女儿喜欢听她爸爸学鸟叫，哭的时候，只要她爸爸学小鸟叫，她马上就安静下来了。',
-     sample_vn:'Con gái của bạn thích nghe bố bắt chước tiếng chim kêu, lúc khóc, chỉ cần bố bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay.',
-     note:'安静下来 diễn tả sự chuyển từ động sang tĩnh.'},
-    {q_zh:'这次旅游，作者印象最深的是什么？',
-     q_vn:'Chuyến du lịch này, ấn tượng sâu sắc nhất của tác giả là gì?',
-     hint:'黄河，坐在船上一边看一边照相，经过很多不一样的地方',
-     sample:'这次旅游，作者印象最深的是黄河，他坐在船上，一边看一边照相，一路上经过了很多地方，每个地方都不一样。',
-     sample_vn:'Chuyến du lịch này, ấn tượng sâu sắc nhất của tác giả là sông Hoàng Hà, anh ấy ngồi trên thuyền, vừa ngắm vừa chụp ảnh, suốt chặng đường đi qua rất nhiều nơi, mỗi nơi đều khác nhau.',
-     note:'经过 diễn tả đi ngang qua (điểm từ vựng trọng tâm bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 19. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn bè hỏi điều gì khiến bạn thấy vui nhất.',
+      q_zh: '什么事情能让你觉得很快乐？',
+      q_py: 'Shénme shìqing néng ràng nǐ juéde hěn kuàilè?',
+      q_vn: 'Chuyện gì khiến bạn thấy rất vui?',
+      grammar: { label: '让/使/叫 + người + tính từ hoặc động từ', any: ['让', '使', '叫'] },
+      need: [
+        { label: 'Dùng 让 hoặc 使', any: ['让', '使'] },
+        { label: 'Kể việc cụ thể', any: ['吃饭', '家里人', '朋友', '音乐', '运动', '旅游', '照片'] }
+      ],
+      bonus: { label: 'Tả cảm xúc trên gương mặt', any: ['脸', '笑', '高兴'] },
+      vocab: ['脸', '过', '短'],
+      minLen: 18,
+      sample: '跟家里人一起吃饭最让我快乐，这时候我的脸上一直有笑。听听音乐也使我很舒服，一天的累很快就过去了。',
+      sample_py: 'Gēn jiā lǐ rén yìqǐ chīfàn zuì ràng wǒ kuàilè, zhè shíhou wǒ de liǎn shàng yì zhí yǒu xiào. Tīngting yīnyuè yě shǐ wǒ hěn shūfu, yì tiān de lèi hěn kuài jiù guòqù le.',
+      sample_vn: 'Được ăn cơm cùng gia đình khiến tôi vui nhất, lúc đó mặt tôi lúc nào cũng có nụ cười. Nghe nhạc cũng khiến tôi dễ chịu, mệt mỏi cả ngày qua rất nhanh.',
+      tip: '让/使 + đối tượng + trạng thái: 这件事让我很难过。'
+    },
+    {
+      situation: 'Cả nhóm đang nói về những lúc dễ xúc động.',
+      q_zh: '什么事情会让你笑起来或者哭起来？',
+      q_py: 'Shénme shìqing huì ràng nǐ xiào qǐlai huòzhě kū qǐlai?',
+      q_vn: 'Chuyện gì khiến bạn bật cười hoặc bật khóc?',
+      grammar: { label: 'Nghĩa mở rộng của bổ ngữ xu hướng: 笑起来、哭起来', any: ['起来'] },
+      need: [
+        { label: 'Dùng 起来 với 笑 hoặc 哭', any: ['笑起来', '哭起来', '起来'] },
+        { label: 'Nói tình huống cụ thể', any: ['照片', '电影', '朋友', '故事', '家里人', '新闻'] }
+      ],
+      bonus: { label: 'Nhận xét về bản thân', any: ['容易', '常常', '我这个人'] },
+      vocab: ['哭', '过', '位'],
+      minLen: 18,
+      sample: '看到小时候的照片，我会马上笑起来；看难过的电影的时候，我也容易哭起来。朋友们都说我这个人很容易感动。',
+      sample_py: 'Kàn dào xiǎoshí hòu de zhàopiàn, wǒ huì mǎshàng xiào qǐlai; kàn nánguò de diànyǐng de shíhou, wǒ yě róngyì kū qǐlai. Péngyou men dōu shuō wǒ zhège rén hěn róngyì gǎndòng.',
+      sample_vn: 'Nhìn ảnh hồi bé là tôi bật cười ngay; xem phim buồn thì tôi cũng dễ bật khóc. Bạn bè đều bảo tôi là người dễ xúc động.',
+      tip: 'V + 起来 còn chỉ bắt đầu một hành động/trạng thái: 唱起来、下起雨来。'
+    },
+    {
+      situation: 'Bạn kể chuyến đi mùa thu năm ngoái.',
+      q_zh: '你去过什么河或者海？坐过船吗？',
+      q_py: 'Nǐ qù guo shénme hé huòzhě hǎi? Zuò guo chuán ma?',
+      q_vn: 'Bạn từng đến con sông hay biển nào? Từng đi thuyền chưa?',
+      grammar: { label: '经过 + nơi chốn; 坐船', any: ['经过', '坐船', '船'] },
+      need: [
+        { label: 'Nói nơi đã đến', any: ['黄河', '河', '海', '山', '去过'] },
+        { label: 'Nói phương tiện hoặc hoạt động', any: ['船', '坐', '照相', '走'] }
+      ],
+      bonus: { label: 'Nói thời gian bằng mùa', any: ['秋', '春', '夏', '冬'] },
+      vocab: ['秋', '黄河', '船', '经过'],
+      minLen: 20,
+      sample: '去年秋天我去过黄河。我们坐船在河上走了两个小时，经过的地方都很漂亮，我照了很多张照片。',
+      sample_py: 'Qùnián qiū tiān wǒ qù guo Huáng Hé. Wǒmen zuò chuán zài hé shàng zǒu le liǎng ge xiǎoshí, jīngguò de dìfang dōu hěn piàoliang, wǒ zhào le hěn duō zhāng zhàopiàn.',
+      sample_vn: 'Mùa thu năm ngoái tôi đã đến sông Hoàng Hà. Chúng tôi ngồi thuyền đi trên sông hai tiếng, những nơi đi qua đều rất đẹp, tôi chụp rất nhiều ảnh.',
+      tip: '经过 = đi qua (nơi chốn) hoặc trải qua (thời gian, sự việc).'
+    },
+    {
+      situation: 'Đồng nghiệp rủ bạn đi cưỡi ngựa cuối tuần.',
+      q_zh: '你骑过马吗？跟几位朋友一起去的？',
+      q_py: 'Nǐ qí guo mǎ ma? Gēn jǐ wèi péngyou yìqǐ qù de?',
+      q_vn: 'Bạn từng cưỡi ngựa chưa? Đi cùng mấy người bạn?',
+      grammar: { label: 'Lượng từ 位 (lịch sự) và 张 (ảnh, bàn, giấy)', any: ['位', '张'] },
+      need: [
+        { label: 'Nói đã từng hay chưa', any: ['骑过', '没骑过', '马'] },
+        { label: 'Dùng lượng từ 位 với người', any: ['位'] }
+      ],
+      bonus: { label: 'Dùng 张 khi nói về ảnh', any: ['张'] },
+      vocab: ['马', '位', '张'],
+      minLen: 18,
+      sample: '我骑过一次马，是跟三位同事一起去的。那天我们照了很多张照片，我有点儿害怕，可是特别高兴。',
+      sample_py: 'Wǒ qí guo yí cì mǎ, shì gēn sān wèi tóngshì yìqǐ qù de. Nà tiān wǒmen zhào le hěn duō zhāng zhàopiàn, wǒ yǒudiǎnr hàipà, kěshì tèbié gāoxìng.',
+      sample_vn: 'Tôi từng cưỡi ngựa một lần, đi cùng ba đồng nghiệp. Hôm đó chúng tôi chụp rất nhiều ảnh, tôi hơi sợ nhưng vô cùng vui.',
+      tip: '位 dùng khi nói về người một cách lịch sự: 三位老师、那位先生。'
+    },
+    {
+      situation: 'Bạn vừa thay đổi kiểu tóc và đồng nghiệp nhận xét.',
+      q_zh: '说一说你最近的变化：头发长了还是短了？',
+      q_py: 'Shuō yi shuō nǐ zuìjìn de biànhuà: tóufa zhǎng le háishi duǎn le?',
+      q_vn: 'Hãy kể thay đổi gần đây của bạn: tóc dài ra hay ngắn đi?',
+      grammar: { label: '使/让 + người + 看起来 + tính từ', any: ['使', '让', '看起来'] },
+      need: [
+        { label: 'Nói tóc dài hay ngắn', any: ['头发', '短', '长'] },
+        { label: 'Nói người khác nhận xét thế nào', any: ['同事', '朋友', '说', '年轻', '好看'] }
+      ],
+      bonus: { label: 'Tả thêm khuôn mặt hoặc tai', any: ['脸', '耳朵', '瘦'] },
+      vocab: ['短', '脸', '耳朵'],
+      minLen: 18,
+      sample: '我最近把头发弄短了一些，同事说这样使我看起来更年轻。头发短了以后，脸比以前瘦了，耳朵也看得见了。',
+      sample_py: 'Wǒ zuìjìn bǎ tóufa nòng duǎn le yì xiē, tóngshì shuō zhè yàng shǐ wǒ kàn qǐlai gèng niánqīng. Tóufa duǎn le yǐhòu, liǎn bǐ yǐqián shòu le, ěrduo yě kàn děi jiàn le.',
+      sample_vn: 'Gần đây tôi cắt tóc ngắn đi một chút, đồng nghiệp nói như vậy khiến tôi trông trẻ hơn. Tóc ngắn rồi thì mặt gọn hơn trước, tai cũng lộ ra.',
+      tip: '使 mang sắc thái trang trọng hơn 让, thường dùng trong văn viết.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

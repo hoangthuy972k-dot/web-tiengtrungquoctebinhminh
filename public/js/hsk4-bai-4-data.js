@@ -847,28 +847,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 4 để trả lời các câu hỏi sau về công việc và thái độ làm việc.',
-  questions:[
-    {q_zh:'你觉得刚开始工作的时候，应该太着急赚钱吗？为什么？',q_vn:'Bạn thấy khi mới bắt đầu đi làm, có nên quá nôn nóng kiếm tiền không? Vì sao?',
-     hint:'不要……才是最重要的 / 积累经验',
-     sample:'我觉得不应该，多积累经验才是最重要的，赚钱可以慢慢来。',sample_vn:'Tôi thấy không nên, tích lũy nhiều kinh nghiệm mới là điều quan trọng nhất, kiếm tiền có thể từ từ.',
-     note:'才是最重要的 — mới là điều quan trọng nhất.'},
-    {q_zh:'你有没有以为一件事很简单，后来发现并不容易的经历？',q_vn:'Bạn có từng nghĩ một việc rất đơn giản, sau đó phát hiện ra không hề dễ dàng không?',
-     hint:'以为……后来才发现……并不……',
-     sample:'我以为学做饭很简单，后来才发现其实并不容易。',sample_vn:'Tôi cứ tưởng học nấu ăn rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.',
-     note:'以为……后来才发现……并不…… ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'为了不手忙脚乱，你会用什么办法安排自己的时间？',q_vn:'Để không bị luống cuống, bạn sẽ dùng cách nào để sắp xếp thời gian của mình?',
-     hint:'把……写在……上 / 提醒自己',
-     sample:'我会把每天要做的事情写在笔记本上，提醒自己安排好时间。',sample_vn:'Tôi sẽ viết những việc cần làm mỗi ngày vào sổ tay, nhắc nhở bản thân sắp xếp thời gian tốt.',
-     note:'把……写在……上 — ôn lại câu 把.'},
-    {q_zh:'你觉得一个人对工作有责任心重要吗？为什么？',q_vn:'Bạn thấy một người có trách nhiệm với công việc có quan trọng không? Vì sao?',
-     hint:'即使……如果……也……',
-     sample:'我觉得非常重要，一个人即使能力再高，如果没有责任心，也很难把工作做好。',sample_vn:'Tôi thấy rất quan trọng, một người dù năng lực có cao đến đâu, nếu không có trách nhiệm, cũng khó làm tốt công việc.',
-     note:'即使……如果……也…… ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'如果你完成工作的时间比计划提前，你会怎么做？',q_vn:'Nếu bạn hoàn thành công việc sớm hơn kế hoạch, bạn sẽ làm gì?',
-     hint:'按照计划 / 提前完成',
-     sample:'我会按照计划提前完成，然后利用剩下的时间积累专业知识。',sample_vn:'Tôi sẽ hoàn thành sớm hơn kế hoạch, sau đó tận dụng thời gian còn lại để tích lũy kiến thức chuyên môn.',
-     note:'按照计划 kết hợp 提前, ôn lại từ vựng của bài.'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Một bạn mới ra trường hỏi bạn về chuyện lương bổng.',
+      q_zh: '你觉得刚开始工作的时候，应该太着急赚钱吗？为什么？',
+      q_py: 'Nǐ juéde gāng kāishǐ gōngzuò de shíhou, yīnggāi tài zháojí zhuàn qián ma? Wèishénme?',
+      q_vn: 'Bạn thấy lúc mới đi làm có nên quá nóng vội kiếm tiền không? Vì sao?',
+      grammar: { label: '……才是最重要的', any: ['才是', '最重要'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['应该', '不应该', '我觉得', '我认为'] },
+        { label: 'Nói điều quan trọng hơn', any: ['经验', '积累', '知识', '能力', '学'] }
+      ],
+      bonus: { label: 'Nhắc đến lương thưởng bằng 工资 / 奖金', any: ['工资', '奖金', '赚'] },
+      vocab: ['赚', '积累', '经验'],
+      minLen: 22,
+      sample: '我觉得不应该。刚开始工作的时候，多积累经验才是最重要的，工资和奖金可以慢慢来。',
+      sample_py: 'Wǒ juéde bú yīnggāi. Gāng kāishǐ gōngzuò de shíhou, duō jīlěi jīngyàn cái shì zuì zhòngyào de, gōngzī hé jiǎngjīn kěyǐ mànmàn lái.',
+      sample_vn: 'Tôi thấy không nên. Lúc mới đi làm, tích lũy kinh nghiệm mới là quan trọng nhất, lương thưởng có thể từ từ.',
+      tip: '……才是最重要的 nhấn mạnh trọng tâm: 健康才是最重要的。'
+    },
+    {
+      situation: 'Bạn kể một việc tưởng dễ mà hóa ra rất khó.',
+      q_zh: '你有没有以为一件事很简单，后来发现并不容易的经历？',
+      q_py: 'Nǐ yǒu méiyǒu yǐwéi yí jiàn shì hěn jiǎndān, hòulái fāxiàn bìng bù róngyì de jīnglì?',
+      q_vn: 'Bạn từng nghĩ một việc rất đơn giản, sau mới thấy không hề dễ chưa?',
+      grammar: { label: '以为……，后来才发现并不……', any: ['以为', '并'] },
+      need: [
+        { label: 'Dùng 以为', any: ['以为'] },
+        { label: 'Dùng 并不 phủ định mạnh', any: ['并不', '并没'] }
+      ],
+      bonus: { label: 'Dùng 甚至 để nói thêm mức độ', any: ['甚至'] },
+      vocab: ['以为', '并', '甚至'],
+      minLen: 22,
+      sample: '我以为学做饭很简单，后来才发现并不容易，刚开始的时候我甚至连米饭都做不好。',
+      sample_py: 'Wǒ yǐwéi xué zuòfàn hěn jiǎndān, hòulái cái fāxiàn bìng bù róngyì, gāng kāishǐ de shíhou wǒ shènzhì lián mǐfàn dōu zuò bù hǎo.',
+      sample_vn: 'Tôi tưởng học nấu ăn rất đơn giản, sau mới thấy chẳng dễ chút nào, lúc đầu tôi thậm chí nấu cơm cũng không xong.',
+      tip: '以为 = tưởng (nhưng thực tế không phải): 我以为今天是星期六。'
+    },
+    {
+      situation: 'Bạn có nhiều việc chồng lên nhau trong tuần này.',
+      q_zh: '为了不手忙脚乱，你会用什么办法安排自己的时间？',
+      q_py: 'Wèile bù shǒu máng jiǎo luàn, nǐ huì yòng shénme bànfǎ ānpái zìjǐ de shíjiān?',
+      q_vn: 'Để khỏi luống cuống, bạn dùng cách nào sắp xếp thời gian?',
+      grammar: { label: '按照 + 计划 + 做; 把……写在……上', any: ['按照', '把'] },
+      need: [
+        { label: 'Nói cách lên kế hoạch', any: ['计划', '写', '本子', '手机', '提醒', '安排'] },
+        { label: 'Dùng 按照 hoặc 提前', any: ['按照', '提前'] }
+      ],
+      bonus: { label: 'Nói việc quan trọng làm trước', any: ['重要', '先', '首先'] },
+      vocab: ['按照', '计划', '提醒', '提前'],
+      minLen: 22,
+      sample: '我会把每天要做的事情写在本子上，按照计划一件一件地做，重要的工作提前完成，手机也会提醒我。',
+      sample_py: 'Wǒ huì bǎ měitiān yào zuò de shìqing xiě zài běn zi shàng, ànzhào jìhuà yí jiàn yi jiàn de zuò, zhòngyào de gōngzuò tíqián wánchéng, shǒujī yě huì tíxǐng wǒ.',
+      sample_vn: 'Tôi ghi việc phải làm mỗi ngày vào sổ, làm từng việc theo kế hoạch, việc quan trọng thì hoàn thành sớm, điện thoại cũng nhắc tôi.',
+      tip: '按照 + kế hoạch/yêu cầu + động từ: 按照老师的要求做。'
+    },
+    {
+      situation: 'Công ty đang bình chọn nhân viên tiêu biểu.',
+      q_zh: '你觉得一个人对工作有责任心重要吗？为什么？',
+      q_py: 'Nǐ juéde yí ge rén duì gōngzuò yǒu zérèn xīn zhòngyào ma? Wèishénme?',
+      q_vn: 'Bạn thấy tinh thần trách nhiệm với công việc có quan trọng không? Vì sao?',
+      grammar: { label: '即使……，如果……，也……', any: ['即使', '如果'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['重要', '责任'] },
+        { label: 'Nêu lý do hoặc hậu quả', any: ['能力', '做好', '影响', '保证', '别人'] }
+      ],
+      bonus: { label: 'Dùng 甚至 nói hậu quả nặng hơn', any: ['甚至'] },
+      vocab: ['责任', '保证', '甚至'],
+      minLen: 22,
+      sample: '我觉得非常重要。一个人即使能力再高，如果没有责任心，也很难保证把工作做好，甚至会影响别人的工作。',
+      sample_py: 'Wǒ juéde fēicháng zhòngyào. Yí ge rén jíshǐ nénglì zài gāo, rúguǒ méiyǒu zérèn xīn, yě hěn nán bǎozhèng bǎ gōngzuò zuò hǎo, shènzhì huì yǐngxiǎng biérén de gōngzuò.',
+      sample_vn: 'Tôi thấy rất quan trọng. Một người dù năng lực cao đến mấy, nếu không có trách nhiệm thì cũng khó đảm bảo làm tốt công việc, thậm chí ảnh hưởng đến việc của người khác.',
+      tip: '甚至 nêu mức độ cao hơn ý vừa nói: 他忙得甚至忘了吃饭。'
+    },
+    {
+      situation: 'Bạn làm xong việc sớm hơn thời hạn sếp giao.',
+      q_zh: '如果你完成工作的时间比计划提前，你会怎么做？',
+      q_py: 'Rúguǒ nǐ wánchéng gōngzuò de shíjiān bǐ jìhuà tíqián, nǐ huì zěnme zuò?',
+      q_vn: 'Nếu bạn hoàn thành công việc sớm hơn kế hoạch, bạn sẽ làm gì?',
+      grammar: { label: '提前 + 完成; 保证 + chất lượng', any: ['提前', '保证'] },
+      need: [
+        { label: 'Nói việc làm tiếp theo', any: ['检查', '学', '知识', '帮', '同事', '休息'] },
+        { label: 'Dùng 提前 hoặc 按时', any: ['提前', '按时'] }
+      ],
+      bonus: { label: 'Nhắc đến chất lượng bằng 保证', any: ['保证'] },
+      vocab: ['提前', '保证', '知识'],
+      minLen: 22,
+      sample: '我会先检查一遍，保证质量没有问题。既然提前做完了，我就用多出来的时间积累专业知识，或者帮同事做一些事情。',
+      sample_py: 'Wǒ huì xiān jiǎnchá yí biàn, bǎozhèng zhìliàng méiyǒu wèntí. Jìrán tíqián zuò wán le, wǒ jiù yòng duō chū lái de shíjiān jīlěi zhuānyè zhīshi, huòzhě bāng tóngshì zuò yì xiē shìqing.',
+      sample_vn: 'Tôi sẽ kiểm tra lại một lượt, đảm bảo chất lượng không có vấn đề. Đã làm xong sớm thì tôi dùng thời gian dôi ra để tích lũy kiến thức chuyên môn hoặc giúp đồng nghiệp.',
+      tip: '提前 + động từ: 提前完成、提前到; 按时 = đúng hạn.'
+    }
   ]
 };
 

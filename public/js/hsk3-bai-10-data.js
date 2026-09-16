@@ -478,33 +478,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'大山和马可比，谁更高？谁的汉语更好？',
-     q_vn:'So sánh Đại Sơn và Marco, ai cao hơn? Ai nói tiếng Trung giỏi hơn?',
-     hint:'马可更高，马可的汉语也更好一些',
-     sample:'马可比大山高，马可的汉语也比大山说得好一些。',
-     sample_vn:'Marco cao hơn Đại Sơn, tiếng Trung của Marco cũng nói giỏi hơn Đại Sơn một chút.',
-     note:'A比B+tính từ diễn tả so sánh hơn (điểm ngữ pháp bài này).'},
-    {q_zh:'小明为什么不喜欢数学课？同学怎么帮他？',
-     q_vn:'Vì sao Tiểu Minh không thích môn Toán? Bạn học giúp cậu ấy thế nào?',
-     hint:'数学比历史难多了，听不懂，同学说可以帮他',
-     sample:'小明觉得数学比历史难多了，他听不懂，所以同学说可以帮他，他们每天学一两个小时。',
-     sample_vn:'Tiểu Minh thấy môn Toán khó hơn Lịch Sử nhiều, cậu ấy nghe không hiểu, nên bạn học nói có thể giúp cậu ấy, họ học mỗi ngày một hai tiếng.',
-     note:'比+tính từ+多了 diễn tả mức độ chênh lệch lớn.'},
-    {q_zh:'小丽最近为什么来得早？她打算怎么换交通方式？',
-     q_vn:'Vì sao dạo này Tiểu Lệ đến sớm? Cô ấy định thay đổi phương tiện đi lại thế nào?',
-     hint:'搬家了，打算买辆自行车',
-     sample:'小丽最近搬家了，走路二十分钟就到，她还打算买辆自行车，骑车七八分钟就能到。',
-     sample_vn:'Tiểu Lệ dạo này chuyển nhà rồi, đi bộ hai mươi phút là đến, cô ấy còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được.',
-     note:'Số ước lượng (hai số liên tiếp) diễn tả khoảng thời gian không chính xác (điểm ngữ pháp bài này).'},
-    {q_zh:'大山在看的两个地方的房子，哪个更安静？哪个更方便？',
-     q_vn:'Trong hai chỗ nhà mà Đại Sơn đang xem, chỗ nào yên tĩnh hơn? Chỗ nào tiện hơn?',
-     hint:'学校外边更安静，学校里边更方便',
-     sample:'学校里边的没有学校外边的那么安静，但是学校里边比学校外边方便，附近有三四个车站。',
-     sample_vn:'Bên trong trường không yên tĩnh bằng bên ngoài trường, nhưng bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe.',
-     note:'A没有B那么+tính từ diễn tả phủ định của so sánh (điểm ngữ pháp bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 10. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn khoe ảnh gia đình và bạn bè hỏi về vóc dáng mọi người.',
+      q_zh: '你跟你的弟弟或者朋友比，谁的个子高一些？',
+      q_py: 'Nǐ gēn nǐ de dìdi huòzhě péngyou bǐ, shéi de gèzi gāo yì xiē?',
+      q_vn: 'So với em trai hoặc bạn của bạn, ai cao hơn một chút?',
+      grammar: { label: 'A 比 B + tính từ + 一点儿/得多', any: ['比'] },
+      need: [
+        { label: 'Dùng câu so sánh 比', any: ['比'] },
+        { label: 'Nói mức chênh lệch', any: ['一点儿', '一些', '得多', '多了', '厘米', '米'] }
+      ],
+      bonus: { label: 'So sánh thêm một điểm khác', any: ['胖', '瘦', '矮', '大', '小'] },
+      vocab: ['个子', '矮', '换'],
+      minLen: 18,
+      sample: '我的个子比我弟弟高一点儿，可是他比我胖得多。他小时候很矮，这两年长得特别快。',
+      sample_py: 'Wǒ de gèzi bǐ wǒ dìdi gāo yìdiǎnr, kěshì tā bǐ wǒ pàng děi duō. Tā xiǎoshí hòu hěn ǎi, zhè liǎng nián zhǎng děi tèbié kuài.',
+      sample_vn: 'Tôi cao hơn em trai một chút, nhưng cậu ấy béo hơn tôi nhiều. Hồi nhỏ cậu ấy rất thấp, hai năm nay lớn rất nhanh.',
+      tip: 'Mức chênh lệch đặt sau tính từ: 比他高一点儿 / 比他高得多。'
+    },
+    {
+      situation: 'Bạn nói chuyện với bạn học về các môn học ở trường.',
+      q_zh: '历史、体育和数学，你觉得哪个比较难？为什么？',
+      q_py: 'Lìshǐ, tǐyù hé shùxué, nǐ juéde nǎge bǐjiào nán? Wèishénme?',
+      q_vn: 'Lịch sử, thể dục và toán, bạn thấy môn nào khó hơn? Vì sao?',
+      grammar: { label: 'A 比 B + tính từ + 得多 / 最 + tính từ', any: ['比', '最'] },
+      need: [
+        { label: 'So sánh ít nhất hai môn', any: ['比', '最'] },
+        { label: 'Gọi tên môn học', any: ['历史', '体育', '数学', '汉语', '英语'] }
+      ],
+      bonus: { label: 'Nêu lý do bằng 因为', any: ['因为', '从小', '喜欢', '不喜欢'] },
+      vocab: ['历史', '体育', '数学'],
+      minLen: 18,
+      sample: '我觉得数学比历史难得多，体育最容易，因为我从小就喜欢运动，数学总是学不好。',
+      sample_py: 'Wǒ juéde shùxué bǐ lìshǐ nán děi duō, tǐyù zuì róngyì, yīnwèi wǒ cóng xiǎo jiù xǐhuan yùndòng, shùxué zǒngshì xué bù hǎo.',
+      sample_vn: 'Tôi thấy toán khó hơn lịch sử nhiều, thể dục dễ nhất, vì từ nhỏ tôi đã thích vận động, còn toán thì luôn học không tốt.',
+      tip: '得多 / 多了 đặt sau tính từ để nói chênh lệch lớn: 难得多、好多了。'
+    },
+    {
+      situation: 'Đồng nghiệp mới hỏi bạn đi làm bằng phương tiện gì.',
+      q_zh: '你上班上学骑自行车还是坐车？为什么？',
+      q_py: 'Nǐ shàngbān shàngxué qí zìxíngchē háishi zuò chē? Wèishénme?',
+      q_vn: 'Bạn đi làm, đi học bằng xe đạp hay xe buýt? Vì sao?',
+      grammar: { label: 'A 比 B + 方便/快 + 得多', any: ['比'] },
+      need: [
+        { label: 'Nói phương tiện', any: ['自行车', '骑', '公共汽车', '地铁', '走路', '开车'] },
+        { label: 'So sánh và nêu lý do', any: ['比', '方便', '快', '便宜', '近'] }
+      ],
+      bonus: { label: 'Nói thời gian đi mất bao lâu', any: ['分钟', '小时'] },
+      vocab: ['自行车', '骑', '方便'],
+      minLen: 20,
+      sample: '我一般骑自行车，因为学校离我家很近，骑车比坐公共汽车方便得多，二十分钟就到了，也比较便宜。',
+      sample_py: 'Wǒ yìbān qí zìxíngchē, yīnwèi xuéxiào lí wǒ jiā hěn jìn, qí chē bǐ zuò gōnggòngqìchē fāngbiàn děi duō, èr shífēn zhōng jiù dào le, yě bǐjiào piányi.',
+      sample_vn: 'Tôi thường đạp xe, vì trường gần nhà, đạp xe tiện hơn đi xe buýt nhiều, 20 phút là tới, cũng khá rẻ.',
+      tip: '骑 dùng cho xe đạp, xe máy, ngựa; 坐 dùng cho xe buýt, tàu, máy bay.'
+    },
+    {
+      situation: 'Đồ dùng của bạn đã cũ, người nhà khuyên đổi cái mới.',
+      q_zh: '你的手机或者自行车旧了，你会马上换新的吗？',
+      q_py: 'Nǐ de shǒujī huòzhě zìxíngchē jiù le, nǐ huì mǎshàng huàn xīn de ma?',
+      q_vn: 'Điện thoại hoặc xe đạp của bạn cũ rồi, bạn có đổi mới ngay không?',
+      grammar: { label: 'Số ước lượng: hai số liền nhau (五六年、两三个)', any: ['五六', '两三', '三四', '七八', '十几'] },
+      need: [
+        { label: 'Nói đồ đã dùng bao lâu', any: ['年', '个月', '久'] },
+        { label: 'Nói có đổi hay không và vì sao', any: ['换', '不换', '还能', '因为', '旧'] }
+      ],
+      bonus: { label: 'Dùng số ước lượng kiểu 五六年', any: ['五六', '两三', '三四', '七八'] },
+      vocab: ['旧', '换', '主要'],
+      minLen: 20,
+      sample: '我的自行车已经骑了五六年，有点儿旧了，但是还能骑，所以我还不想换新的。主要是我觉得没坏就不用换。',
+      sample_py: 'Wǒ de zìxíngchē yǐjīng qí le wǔ liù nián, yǒudiǎnr jiù le, dànshì hái néng qí, suǒyǐ wǒ hái bù xiǎng huàn xīn de. Zhǔyào shì wǒ juéde méi huài jiù bú yòng huàn.',
+      sample_vn: 'Xe đạp của tôi đã đi năm sáu năm, hơi cũ rồi, nhưng vẫn đi được nên tôi chưa muốn đổi mới. Chủ yếu là tôi thấy chưa hỏng thì không cần đổi.',
+      tip: 'Hai số liền nhau chỉ số ước lượng: 五六年 = năm sáu năm.'
+    },
+    {
+      situation: 'Bạn giới thiệu khu mình sống với người bạn định chuyển đến gần đó.',
+      q_zh: '说一说你住的地方：附近的环境怎么样？',
+      q_py: 'Shuō yi shuō nǐ zhù de dìfang: fùjìn de huánjìng zěnmeyàng?',
+      q_vn: 'Hãy kể về nơi bạn ở: môi trường xung quanh thế nào?',
+      grammar: { label: '……附近有…… / 环境 + 很 + tính từ', any: ['附近', '环境'] },
+      need: [
+        { label: 'Nói xung quanh có gì', any: ['附近', '公园', '超市', '银行', '学校', '饭馆', '医院'] },
+        { label: 'Nhận xét môi trường', any: ['环境', '安静', '方便', '干净', '好'] }
+      ],
+      bonus: { label: 'So sánh với chỗ ở cũ', any: ['比', '以前', '旧'] },
+      vocab: ['地方', '环境', '附近'],
+      minLen: 20,
+      sample: '我住的地方环境很好，附近有公园和超市，买东西很方便，晚上也比较安静，比我以前住的地方好多了。',
+      sample_py: 'Wǒ zhù de dìfang huánjìng hěn hǎo, fùjìn yǒu gōngyuán hé chāoshì, mǎi dōngxi hěn fāngbiàn, wǎnshang yě bǐjiào ānjìng, bǐ wǒ yǐqián zhù de dìfang hǎo duō le.',
+      sample_vn: 'Nơi tôi ở môi trường rất tốt, gần đó có công viên và siêu thị, mua đồ rất tiện, buổi tối cũng khá yên tĩnh, tốt hơn chỗ tôi ở trước nhiều.',
+      tip: '附近 đứng sau nơi chốn: 学校附近有一家书店。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

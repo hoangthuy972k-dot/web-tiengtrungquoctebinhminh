@@ -791,33 +791,100 @@ var errorFixData = [
 // PHẦN 4 · LUYỆN NÓI (dùng câu hỏi đọc-hiểu thật từ giáo trình)
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小丽现在怎么了？',
-     q_vn:'Tiểu Lệ bây giờ thế nào?',
-     hint:'腿也疼，脚也疼',
-     sample:'小丽现在腿也疼，脚也疼。',
-     sample_vn:'Tiểu Lệ bây giờ vừa đau chân vừa đau bàn chân.',
-     note:'Dùng cấu trúc A也……，B也…… để liệt kê hai trạng thái xảy ra cùng lúc.'},
-    {q_zh:'周经理去哪儿了？什么时候回来？',
-     q_vn:'Giám đốc Chu đi đâu rồi? Khi nào về?',
-     hint:'出去办事了，下午回来',
-     sample:'周经理出去办事了，下午回来。',
-     sample_vn:'Giám đốc Chu ra ngoài giải quyết việc, chiều về.',
-     note:'出去 + 办事 = ra ngoài giải quyết công việc.'},
-    {q_zh:'小丽怎么回去？',
-     q_vn:'Tiểu Lệ về bằng cách nào?',
-     hint:'叫辆出租车回去',
-     sample:'小丽打算叫辆出租车回去。',
-     sample_vn:'Tiểu Lệ định gọi một chiếc taxi để về.',
-     note:'辆 là lượng từ cho xe cộ: 一辆车/一辆出租车.'},
-    {q_zh:'周太太为什么这么胖？',
-     q_vn:'Vì sao bà Chu lại béo như vậy?',
-     hint:'每天晚上吃了饭就睡觉，也不出去走走',
-     sample:'因为周太太每天晚上吃了饭就睡觉，也不出去走走。',
-     sample_vn:'Vì bà Chu tối nào cũng ăn cơm xong là đi ngủ, cũng không ra ngoài đi dạo.',
-     note:'Cấu trúc V了……就V…… diễn tả hai hành động liên tiếp xảy ra.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 2. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Sau buổi chạy bộ, bạn thấy người ê ẩm và bạn bè hỏi thăm.',
+      q_zh: '运动以后你哪儿疼过？后来你是怎么做的？',
+      q_py: 'Yùndòng yǐhòu nǐ nǎr téng guo? Hòulái nǐ shì zěnme zuò de?',
+      q_vn: 'Sau khi vận động bạn từng đau ở đâu? Sau đó bạn đã làm gì?',
+      grammar: { label: 'A 也……，B 也…… (liệt kê hai trạng thái)', any: ['也'] },
+      need: [
+        { label: 'Nói chỗ bị đau', any: ['腿', '脚', '手', '头', '疼'] },
+        { label: 'Nói cách xử lý', any: ['休息', '看医生', '吃药', '不运动', '睡'] }
+      ],
+      bonus: { label: 'Nói thêm bây giờ đã đỡ chưa', any: ['现在', '好了', '好多了'] },
+      vocab: ['腿', '疼', '脚'],
+      minLen: 18,
+      sample: '上个星期我跑步以后，腿也疼，脚也疼，所以我在家休息了两天，现在好多了。',
+      sample_py: 'Shàng ge xīngqī wǒ pǎobù yǐhòu, tuǐ yě téng, jiǎo yě téng, suǒyǐ wǒ zài jiā xiūxi le liǎng tiān, xiànzài hǎo duō le.',
+      sample_vn: 'Tuần trước sau khi chạy bộ, chân tôi đau, bàn chân cũng đau, nên tôi nghỉ ở nhà hai hôm, giờ đỡ nhiều rồi.',
+      tip: 'Cấu trúc A也…，B也… dùng để kể hai việc cùng xảy ra: 他也累，我也累。'
+    },
+    {
+      situation: 'Trời đổ mưa lúc bạn chuẩn bị ra khỏi nhà.',
+      q_zh: '外面下雨了，出门的时候你会拿什么？',
+      q_py: 'Wàimian xiàyǔ le, chū mén de shíhou nǐ huì ná shénme?',
+      q_vn: 'Bên ngoài mưa rồi, lúc ra khỏi nhà bạn sẽ cầm gì?',
+      grammar: { label: 'Động từ + 来/去 (bổ ngữ xu hướng)', any: ['出去', '回来', '下去', '上来', '过去', '进来', '回去'] },
+      need: [
+        { label: 'Nói cầm theo đồ gì', any: ['伞', '雨伞', '衣服', '帽子'] },
+        { label: 'Dùng lượng từ 把 với cái ô', any: ['一把', '把伞'] }
+      ],
+      bonus: { label: 'Nói thêm cách đi lại hôm mưa', any: ['出租车', '公共汽车', '开车', '走路', '地铁'] },
+      vocab: ['拿', '把', '伞'],
+      minLen: 16,
+      sample: '外面下雨了，我会拿一把伞出去，如果雨很大，我就叫辆出租车。',
+      sample_py: 'Wàimian xiàyǔ le, wǒ huì ná yì bǎ sǎn chū qù, rúguǒ yǔ hěn dà, wǒ jiù jiào liàng chūzūchē.',
+      sample_vn: 'Bên ngoài mưa rồi, tôi sẽ cầm một chiếc ô ra ngoài, nếu mưa to thì tôi gọi một chiếc taxi.',
+      tip: '来/去 đứng sau động từ cho biết hướng: 拿出去、走回来。'
+    },
+    {
+      situation: 'Bạn của bạn than dạo này tăng cân nhanh và hỏi thói quen buổi tối của bạn.',
+      q_zh: '你晚上吃了饭就做什么？这样对身体好吗？',
+      q_py: 'Nǐ wǎnshang chī le fàn jiù zuò shénme? Zhè yàng duì shēntǐ hǎo ma?',
+      q_vn: 'Buổi tối ăn cơm xong bạn làm gì ngay? Như vậy có tốt cho sức khỏe không?',
+      grammar: { label: 'V 了……就 V…… (làm xong việc này là làm ngay việc kia)', any: ['了就', '就'] },
+      need: [
+        { label: 'Kể việc làm ngay sau bữa tối', any: ['走走', '散步', '看书', '睡觉', '洗', '运动', '学'] },
+        { label: 'Nhận xét tốt hay không tốt', any: ['好', '不好', '容易胖', '健康'] }
+      ],
+      bonus: { label: 'Nhắc đến chuyện béo/gầy bằng 胖 hoặc 瘦', any: ['胖', '瘦'] },
+      vocab: ['其实', '胖', '瘦'],
+      minLen: 18,
+      sample: '我吃了饭就出去走走，不马上睡觉。其实吃了饭就睡很容易胖，对身体也不好。',
+      sample_py: 'Wǒ chī le fàn jiù chū qù zǒuzou, bù mǎshàng shuìjiào. Qíshí chī le fàn jiù shuì hěn róngyì pàng, duì shēntǐ yě bù hǎo.',
+      sample_vn: 'Tôi ăn cơm xong là ra ngoài đi dạo, không đi ngủ ngay. Thật ra ăn xong ngủ luôn rất dễ béo, cũng không tốt cho sức khỏe.',
+      tip: 'V了…就V… nhấn mạnh hai việc nối nhau: 我下了班就回家。'
+    },
+    {
+      situation: 'Bạn gọi điện đến công ty nhưng giám đốc không có ở văn phòng.',
+      q_zh: '你给经理打电话，秘书说他不在办公室，你会怎么说？',
+      q_py: 'Nǐ gěi jīnglǐ dǎdiànhuà, mìshū shuō tā bú zài bàngōngshì, nǐ huì zěnme shuō?',
+      q_vn: 'Bạn gọi cho giám đốc, thư ký nói ông ấy không có ở văn phòng, bạn sẽ nói gì?',
+      grammar: { label: 'Câu phản vấn 能……吗？(nhờ vả lịch sự)', any: ['能', '可以'] },
+      need: [
+        { label: 'Chào và nói muốn tìm ai', any: ['您好', '我找', '经理'] },
+        { label: 'Nhờ nhắn lại hoặc hẹn gọi lại', any: ['告诉', '打', '下午', '一下'] }
+      ],
+      bonus: { label: 'Nói lời cảm ơn lịch sự', any: ['谢谢', '麻烦'] },
+      vocab: ['经理', '秘书', '办公室'],
+      minLen: 18,
+      sample: '您好，我找周经理。他不在办公室吗？那我下午再打来，能麻烦您告诉他一下吗？谢谢您。',
+      sample_py: 'Nín hǎo, wǒ zhǎo Zhōu jīnglǐ. Tā bú zài bàngōngshì ma? Nà wǒ xiàwǔ zài dǎ lái, néng máfan nín gàosu tā yíxià ma? Xièxie nín.',
+      sample_vn: 'Chào chị, tôi tìm giám đốc Chu. Anh ấy không ở văn phòng ạ? Vậy chiều tôi gọi lại, phiền chị nhắn giúp tôi được không? Cảm ơn chị.',
+      tip: '能……吗？là cách nhờ vả lịch sự: 能帮我一下吗？'
+    },
+    {
+      situation: 'Một người bạn buồn vì nghĩ mình béo lên, bạn an ủi họ.',
+      q_zh: '朋友说自己太胖了，很不高兴，你会怎么跟他说？',
+      q_py: 'Péngyou shuō zìjǐ tài pàng le, hěn bù gāoxìng, nǐ huì zěnme gēn tā shuō?',
+      q_vn: 'Bạn của bạn nói mình béo quá và rất buồn, bạn sẽ nói gì với họ?',
+      grammar: { label: '其实 + ý kiến thật của bạn', any: ['其实'] },
+      need: [
+        { label: 'An ủi bạn', any: ['不胖', '别', '没关系', '很好看'] },
+        { label: 'Góp ý cách làm', any: ['运动', '锻炼', '走走', '吃', '睡'] }
+      ],
+      bonus: { label: 'Dùng 一点儿也不 của bài trước', any: ['一点儿也', '一点儿都'] },
+      vocab: ['其实', '胖', '瘦'],
+      minLen: 18,
+      sample: '其实你一点儿也不胖，比以前还瘦了一些。多出去走走、少吃甜的就好了，别不高兴。',
+      sample_py: 'Qíshí nǐ yìdiǎnr yě bú pàng, bǐ yǐqián hái shòu le yì xiē. Duō chū qù zǒuzou, shǎo chī tián de jiù hǎo le, bié bù gāoxìng.',
+      sample_vn: 'Thật ra bạn chẳng béo chút nào, còn gầy hơn trước một chút. Chịu khó ra ngoài đi dạo, bớt ăn ngọt là được, đừng buồn.',
+      tip: '其实 dùng khi nói ra sự thật khác với điều người kia nghĩ: 其实我不累。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

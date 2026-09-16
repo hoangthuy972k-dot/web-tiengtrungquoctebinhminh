@@ -477,33 +477,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小刚买礼物给谁了？小丽的礼物是什么？',
-     q_vn:'Tiểu Cương mua quà cho ai? Quà của Tiểu Lệ là gì?',
-     hint:'买了红酒给爷爷，小刚说自己回来就是礼物',
-     sample:'小刚买了红酒给爷爷做礼物，小丽问自己的礼物在哪儿，小刚说他已经回来了，这就是礼物。',
-     sample_vn:'Tiểu Cương mua rượu vang làm quà cho ông nội, Tiểu Lệ hỏi quà của mình đâu, Tiểu Cương nói anh ấy đã về rồi, đó chính là quà.',
-     note:'是给……的礼物 diễn tả mục đích tặng quà (ôn lại 礼物 vừa học trong bài này).'},
-    {q_zh:'小刚今天在路上遇到了谁？他们做了什么？',
-     q_vn:'Hôm nay Tiểu Cương tình cờ gặp ai trên đường? Họ đã làm gì?',
-     hint:'遇到老同学，一起去喝咖啡，一边喝咖啡一边说过去的事',
-     sample:'小刚今天在路上遇到了一个老同学，他们一起去喝咖啡，一边喝咖啡一边说了些过去的事。',
-     sample_vn:'Hôm nay Tiểu Cương tình cờ gặp một người bạn học cũ trên đường, họ cùng nhau đi uống cà phê, vừa uống cà phê vừa nói chuyện xưa.',
-     note:'一边……一边…… diễn tả hai hành động xảy ra cùng lúc (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'小丽为什么更愿意在家看电视，不去电影院？',
-     q_vn:'Vì sao Tiểu Lệ thích xem tivi ở nhà hơn, không đi rạp?',
-     hint:'可以一边吃一边看，坐久了可以站起来休息',
-     sample:'小丽更愿意在家看电视，因为可以一边吃一边看，坐久了还可以站起来休息一会儿。',
-     sample_vn:'Tiểu Lệ thích xem tivi ở nhà hơn, vì có thể vừa ăn vừa xem, ngồi lâu còn có thể đứng dậy nghỉ một lát.',
-     note:'站起来 dùng bổ ngữ xu hướng kép 起来 (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'这位妻子希望丈夫以后怎么样？',
-     q_vn:'Người vợ này mong chồng mình sau này thế nào?',
-     hint:'少一些会议，多一些休息，经常和她还有孩子在一起',
-     sample:'这位妻子希望丈夫能少一些会议，多一些休息，可以经常和她还有孩子在一起。',
-     sample_vn:'Người vợ này mong chồng có thể họp ít lại, nghỉ ngơi nhiều hơn, có thể thường xuyên ở bên cô ấy và các con.',
-     note:'经常 diễn tả tần suất cao (điểm từ vựng trọng tâm bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 13. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Cả nhà đang nói về thói quen trong bữa cơm.',
+      q_zh: '你吃饭的时候喜欢一边吃一边做什么？',
+      q_py: 'Nǐ chīfàn de shíhou xǐhuan yìbiān chī yìbiān zuò shénme?',
+      q_vn: 'Lúc ăn cơm bạn thích vừa ăn vừa làm gì?',
+      grammar: { label: '一边……一边…… (vừa… vừa…)', any: ['一边'] },
+      need: [
+        { label: 'Dùng 一边……一边……', any: ['一边'] },
+        { label: 'Nói việc làm kèm theo', any: ['听音乐', '看电视', '聊天', '看手机', '新闻'] }
+      ],
+      bonus: { label: 'Nêu ý kiến nên hay không nên bằng 应该', any: ['应该', '不应该'] },
+      vocab: ['一边', '应该', '经常'],
+      minLen: 18,
+      sample: '我喜欢一边吃饭一边听音乐。可是妈妈说，经常一边吃饭一边看手机对身体不好，应该好好吃饭。',
+      sample_py: 'Wǒ xǐhuan yìbiān chīfàn yìbiān tīng yīnyuè. Kěshì māma shuō, jīngcháng yìbiān chīfàn yìbiān kàn shǒujī duì shēntǐ bù hǎo, yīnggāi hǎohāo chīfàn.',
+      sample_vn: 'Tôi thích vừa ăn cơm vừa nghe nhạc. Nhưng mẹ nói thường xuyên vừa ăn vừa xem điện thoại không tốt cho sức khỏe, nên ăn cho tử tế.',
+      tip: '一边……一边…… dùng cho hai việc làm cùng lúc, chủ ngữ giống nhau.'
+    },
+    {
+      situation: 'Bạn kể buổi sáng của mình cho lớp nghe.',
+      q_zh: '你早上一般几点起来？起来以后先做什么？',
+      q_py: 'Nǐ zǎoshang yìbān jǐ diǎn qǐlai? Qǐlai yǐhòu xiān zuò shénme?',
+      q_vn: 'Buổi sáng bạn thường dậy lúc mấy giờ? Dậy rồi làm gì trước?',
+      grammar: { label: 'Bổ ngữ xu hướng phức: 起来 / 下去 / 出来', any: ['起来', '下去', '出来', '回来', '过来'] },
+      need: [
+        { label: 'Nói giờ thức dậy', any: ['点', '半', '起来', '起床'] },
+        { label: 'Kể việc làm đầu tiên', any: ['喝', '水', '跑步', '洗', '吃', '走'] }
+      ],
+      bonus: { label: 'Dùng 然后 hoặc 再 nối các việc', any: ['然后', '再', '先'] },
+      vocab: ['起来', '一般', '经常'],
+      minLen: 18,
+      sample: '我一般六点半起来，起来以后先喝一杯水，然后下楼跑跑步。经常运动以后，我一天都很有力气。',
+      sample_py: 'Wǒ yìbān liù diǎn bàn qǐlai, qǐlai yǐhòu xiān hē yì bēi shuǐ, ránhòu xià lóu pǎo pǎobù. Jīngcháng yùndòng yǐhòu, wǒ yì tiān dōu hěn yǒu lìqi.',
+      sample_vn: 'Tôi thường dậy lúc 6 rưỡi, dậy rồi uống một cốc nước trước, sau đó xuống nhà chạy bộ. Vận động thường xuyên xong, cả ngày tôi rất có sức.',
+      tip: '起来 ngoài nghĩa "đứng dậy" còn dùng cho bắt đầu một trạng thái: 天气热起来了。'
+    },
+    {
+      situation: 'Sắp đến ngày lễ, bạn chọn quà cho ông bà.',
+      q_zh: '过节的时候你给爷爷奶奶买什么礼物？',
+      q_py: 'Guo jié de shíhou nǐ gěi yéye nǎinai mǎi shénme lǐwù?',
+      q_vn: 'Vào dịp lễ bạn mua quà gì cho ông bà?',
+      grammar: { label: '给 + người + 买 + đồ vật', any: ['给'] },
+      need: [
+        { label: 'Nói món quà', any: ['礼物', '水果', '茶', '衣服', '照片', '药', '花'] },
+        { label: 'Dùng 给 chỉ người nhận', any: ['给', '送'] }
+      ],
+      bonus: { label: 'Kể phản ứng của ông bà', any: ['高兴', '笑', '愿意', '喜欢'] },
+      vocab: ['礼物', '爷爷', '奶奶'],
+      minLen: 20,
+      sample: '过节的时候我一般给爷爷奶奶买一些水果和茶。去年我还送了他们一张全家的照片，他们非常高兴。',
+      sample_py: 'Guo jié de shíhou wǒ yìbān gěi yéye nǎinai mǎi yì xiē shuǐguǒ hé chá. Qùnián wǒ hái sòng le tāmen yì zhāng quán jiā de zhàopiàn, tāmen fēicháng gāoxìng.',
+      sample_vn: 'Dịp lễ tôi thường mua ít hoa quả và trà cho ông bà. Năm ngoái tôi còn tặng họ một tấm ảnh cả nhà, ông bà rất vui.',
+      tip: '给 + người + động từ: 给妈妈打电话、给他买礼物。'
+    },
+    {
+      situation: 'Bạn học nhóm hỏi cách bạn xử lý bài khó.',
+      q_zh: '遇到不会做的问题，你愿意自己想还是问别人？',
+      q_py: 'Yùdào bú huì zuò de wèntí, nǐ yuànyì zìjǐ xiǎng háishi wèn biérén?',
+      q_vn: 'Gặp bài không làm được, bạn thích tự nghĩ hay hỏi người khác?',
+      grammar: { label: '愿意 + động từ; 遇到 + vấn đề', any: ['愿意', '遇到'] },
+      need: [
+        { label: 'Nói tự nghĩ hay đi hỏi', any: ['自己', '问', '老师', '同学', '愿意'] },
+        { label: 'Nói thứ tự làm', any: ['先', '再', '然后', '最后'] }
+      ],
+      bonus: { label: 'Dùng 终于 nói kết quả', any: ['终于'] },
+      vocab: ['遇到', '愿意', '终于'],
+      minLen: 20,
+      sample: '遇到不会做的问题，我一般先自己想一想。想了很久还不明白，我才愿意去问老师或者同学。终于明白的时候，我特别高兴。',
+      sample_py: 'Yùdào bú huì zuò de wèntí, wǒ yìbān xiān zìjǐ xiǎng yi xiǎng. Xiǎng le hěn jiǔ hái bù míngbai, wǒ cái yuànyì qù wèn lǎoshī huòzhě tóngxué. Zhōngyú míngbai de shíhou, wǒ tèbié gāoxìng.',
+      sample_vn: 'Gặp bài không làm được, tôi thường tự nghĩ trước. Nghĩ lâu vẫn không hiểu thì tôi mới hỏi thầy hoặc bạn. Lúc cuối cùng hiểu ra, tôi rất vui.',
+      tip: '终于 dùng cho kết quả đạt được sau quá trình dài: 我终于明白了。'
+    },
+    {
+      situation: 'Bạn cũ lâu ngày gặp lại hỏi thăm cuộc sống của bạn.',
+      q_zh: '说一说你现在的生活：经常做什么？',
+      q_py: 'Shuō yi shuō nǐ xiànzài de shēnghuó: jīngcháng zuò shénme?',
+      q_vn: 'Hãy kể về cuộc sống hiện nay của bạn: thường làm gì?',
+      grammar: { label: '经常 + động từ; 一般 + động từ', any: ['经常', '一般'] },
+      need: [
+        { label: 'Kể việc ban ngày', any: ['上班', '上课', '学习', '工作'] },
+        { label: 'Kể việc buổi tối hoặc cuối tuần', any: ['晚上', '周末', '公园', '朋友', '休息', '运动'] }
+      ],
+      bonus: { label: 'Nhận xét chung về cuộc sống', any: ['简单', '安静', '忙', '快乐', '生活'] },
+      vocab: ['生活', '经常', '一般'],
+      minLen: 20,
+      sample: '我现在的生活比较简单：白天上班，晚上经常去公园走走或者跟朋友聊天儿。周末我一般在家休息，生活很安静。',
+      sample_py: 'Wǒ xiànzài de shēnghuó bǐjiào jiǎndān: báitiān shàngbān, wǎnshang jīngcháng qù gōngyuán zǒuzou huòzhě gēn péngyou liáo tiān ér. Zhōumò wǒ yìbān zài jiā xiūxi, shēnghuó hěn ānjìng.',
+      sample_vn: 'Cuộc sống của tôi giờ khá đơn giản: ban ngày đi làm, buổi tối hay ra công viên đi dạo hoặc trò chuyện với bạn. Cuối tuần tôi thường nghỉ ở nhà, cuộc sống rất yên bình.',
+      tip: '经常 = thường xuyên, 一般 = thông thường, nói về thói quen.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

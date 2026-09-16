@@ -475,33 +475,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'李静的汉语说得怎么样？她是谁？',
-     q_vn:'Tiếng Trung của Lý Tĩnh nói thế nào? Cô ấy là ai?',
-     hint:'跟中国人一样好，是他们的汉语老师',
-     sample:'李静的汉语说得跟中国人一样好，她是马可他们的汉语老师。',
-     sample_vn:'Tiếng Trung của Lý Tĩnh nói hay như người Trung Quốc, cô ấy là giáo viên tiếng Trung của Marco.',
-     note:'A跟B一样(+tính từ) diễn tả so sánh bằng (điểm ngữ pháp bài này).'},
-    {q_zh:'小刚吃了几块蛋糕？他担心自己会变胖吗？为什么？',
-     q_vn:'Tiểu Cương ăn mấy miếng bánh kem? Anh ấy có lo béo lên không? Vì sao?',
-     hint:'三块，不担心，因为家里人都很瘦',
-     sample:'小刚已经吃了三块蛋糕，但是他不担心会变胖，因为他们家的人都很瘦，吃不胖。',
-     sample_vn:'Tiểu Cương đã ăn ba miếng bánh kem rồi, nhưng anh ấy không lo béo lên, vì người nhà anh ấy đều gầy, ăn không béo được.',
-     note:'因为……所以…… (rút gọn) giải thích lý do.'},
-    {q_zh:'小丽为什么害怕？小刚怎么安慰她？',
-     q_vn:'Vì sao Tiểu Lệ sợ? Tiểu Cương an ủi cô ấy thế nào?',
-     hint:'山越高路越难走，小刚说他比较了解这儿',
-     sample:'小丽害怕是因为山越高，路越难走，她越爬越冷，小刚说不用担心，他对这儿比较了解。',
-     sample_vn:'Tiểu Lệ sợ vì núi càng cao, đường càng khó đi, cô ấy càng leo càng lạnh, Tiểu Cương nói đừng lo, anh ấy khá rành chỗ này.',
-     note:'越A越B diễn tả B thay đổi theo A (điểm ngữ pháp bài này).'},
-    {q_zh:'小明为什么眼睛跟熊猫一样？他能参加篮球比赛吗？',
-     q_vn:'Vì sao mắt Tiểu Minh giống gấu trúc? Anh ấy tham gia được trận bóng rổ không?',
-     hint:'脚疼没休息好，一定能参加',
-     sample:'小明因为脚疼没休息好，所以眼睛跟熊猫一样，但是他说一定能参加篮球比赛，没有影响。',
-     sample_vn:'Tiểu Minh vì đau chân không ngủ ngon nên mắt giống gấu trúc, nhưng anh ấy nói chắc chắn tham gia được trận bóng rổ, không bị ảnh hưởng gì.',
-     note:'一点儿……也没有 diễn tả hoàn toàn không có gì.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 9. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn học hỏi cảm nhận của bạn sau một năm học tiếng Hán.',
+      q_zh: '你觉得汉语越学越难还是越学越有意思？为什么？',
+      q_py: 'Nǐ juéde Hànyǔ yuè xué yuè nán háishi yuè xué yuè yǒuyìsi? Wèishénme?',
+      q_vn: 'Bạn thấy tiếng Hán càng học càng khó hay càng học càng thú vị? Vì sao?',
+      grammar: { label: '越 A 越 B', any: ['越'] },
+      need: [
+        { label: 'Dùng 越……越……', any: ['越'] },
+        { label: 'Nêu lý do cụ thể', any: ['词', '生词', '语法', '汉字', '听', '说', '因为'] }
+      ],
+      bonus: { label: 'Nói về việc bạn hiểu được gì bằng 了解 / 比较', any: ['了解', '比较'] },
+      vocab: ['中文', '比较', '了解'],
+      minLen: 20,
+      sample: '我觉得汉语越学越有意思。词越多，我越能看懂中文新闻，也比较了解中国人的生活了。',
+      sample_py: 'Wǒ juéde Hànyǔ yuè xué yuè yǒuyìsi. Cí yuè duō, wǒ yuè néng kàn dǒng Zhōngwén xīnwén, yě bǐjiào liǎojiě zhōngguórén de shēnghuó le.',
+      sample_vn: 'Tôi thấy tiếng Hán càng học càng thú vị. Từ càng nhiều, tôi càng đọc hiểu được tin tức tiếng Trung, cũng hiểu hơn về cuộc sống của người Trung Quốc.',
+      tip: '越 A 越 B: mức độ B tăng theo A — 雨越下越大。'
+    },
+    {
+      situation: 'Bạn giới thiệu bản thân và người bạn thân trước lớp.',
+      q_zh: '说一说你跟你的好朋友：你们哪儿一样，哪儿不一样？',
+      q_py: 'Shuō yi shuō nǐ gēn nǐ de hǎo péngyou: nǐmen nǎr yí yàng, nǎr bù yí yàng?',
+      q_vn: 'Hãy nói về bạn và người bạn thân: hai người giống nhau chỗ nào, khác nhau chỗ nào?',
+      grammar: { label: 'A 跟 B 一样 (+ tính từ)', any: ['一样'] },
+      need: [
+        { label: 'Nói điểm giống nhau bằng 一样', any: ['一样'] },
+        { label: 'Nói điểm khác nhau', any: ['不一样', '可是', '但是', '比较'] }
+      ],
+      bonus: { label: 'Nói thêm về sở thích chung', any: ['爱好', '运动', '音乐', '一起'] },
+      vocab: ['一样', '比较', '参加'],
+      minLen: 20,
+      sample: '我跟我的好朋友一样喜欢运动，我们常常一起参加学校的比赛。可是他比较安静，我比较热情，这一点不太一样。',
+      sample_py: 'Wǒ gēn wǒ de hǎo péngyou yí yàng xǐhuan yùndòng, wǒmen chángcháng yìqǐ cānjiā xuéxiào de bǐsài. Kěshì tā bǐjiào ānjìng, wǒ bǐjiào rèqíng, zhè yì diǎn bú tài yí yàng.',
+      sample_vn: 'Tôi và bạn thân giống nhau ở chỗ đều thích thể thao, chúng tôi hay cùng tham gia thi đấu của trường. Nhưng cậu ấy khá trầm, tôi khá sôi nổi, điểm này không giống nhau.',
+      tip: 'A 跟 B 一样 + tính từ: 我跟他一样高。Phủ định: A 跟 B 不一样。'
+    },
+    {
+      situation: 'Bạn đi học xa nhà, bố mẹ gọi điện vì lo lắng.',
+      q_zh: '家里人担心你的时候，你会怎么让他们放心？',
+      q_py: 'Jiā lǐ rén dānxīn nǐ de shíhou, nǐ huì zěnme ràng tāmen fàngxīn?',
+      q_vn: 'Khi người nhà lo cho bạn, bạn sẽ làm gì để họ yên tâm?',
+      grammar: { label: '先……，再/然后…… + 让……放心', any: ['先', '让', '放心'] },
+      need: [
+        { label: 'Nói việc làm để trấn an', any: ['打电话', '告诉', '照片', '视频', '说'] },
+        { label: 'Dùng 放心 hoặc 别担心', any: ['放心', '别担心', '不用担心'] }
+      ],
+      bonus: { label: 'Dùng 一定 để hứa hẹn', any: ['一定'] },
+      vocab: ['担心', '放心', '先'],
+      minLen: 20,
+      sample: '我会先给他们打个电话，告诉他们我吃得好、睡得好，让他们放心。我也一定注意身体，别让他们担心。',
+      sample_py: 'Wǒ huì xiān gěi tāmen dǎ ge diànhuà, gàosu tāmen wǒ chī děi hǎo, shuì děi hǎo, ràng tāmen fàngxīn. Wǒ yě yí dìng zhùyì shēntǐ, bié ràng tāmen dānxīn.',
+      sample_vn: 'Tôi sẽ gọi điện cho họ trước, nói rằng tôi ăn ngon ngủ tốt để họ yên tâm. Tôi cũng nhất định chú ý sức khỏe, không để họ lo.',
+      tip: '让 + người + động từ: 让他们放心、让我想想。'
+    },
+    {
+      situation: 'Bạn kể về một lớp học hoặc câu lạc bộ mình từng tham gia.',
+      q_zh: '你参加过什么班或者活动？对你有什么影响？',
+      q_py: 'Nǐ cānjiā guo shénme bān huòzhě huódòng? Duì nǐ yǒu shénme yǐngxiǎng?',
+      q_vn: 'Bạn từng tham gia lớp hoặc hoạt động gì? Nó ảnh hưởng thế nào đến bạn?',
+      grammar: { label: '对……有影响 / 影响 + người', any: ['影响'] },
+      need: [
+        { label: 'Nói lớp hoặc hoạt động nào', any: ['班', '比赛', '活动', '课', '参加'] },
+        { label: 'Nói ảnh hưởng', any: ['影响', '帮助', '越来越', '提高', '更'] }
+      ],
+      bonus: { label: 'Nhắc đến thầy cô hoặc bạn học', any: ['老师', '同学', '朋友'] },
+      vocab: ['班', '参加', '影响'],
+      minLen: 20,
+      sample: '我参加过一个中文班，那个班的老师很认真，对我影响很大。现在我越来越爱说汉语，也认识了不少新朋友。',
+      sample_py: 'Wǒ cānjiā guo yí ge Zhōngwén bān, nàge bān de lǎoshī hěn rènzhēn, duì wǒ yǐngxiǎng hěn dà. Xiànzài wǒ yuè lái yuè ài shuō Hànyǔ, yě rènshi le bù shǎo xīn péngyou.',
+      sample_vn: 'Tôi từng tham gia một lớp tiếng Trung, thầy lớp đó rất tận tâm, ảnh hưởng đến tôi rất lớn. Giờ tôi ngày càng thích nói tiếng Hán, cũng quen thêm nhiều bạn mới.',
+      tip: '影响 vừa là động từ vừa là danh từ: 他影响了我 / 对我影响很大。'
+    },
+    {
+      situation: 'Trong lớp có bạn mới và mọi người đang làm quen.',
+      q_zh: '你怎么了解一个新朋友？',
+      q_py: 'Nǐ zěnme liǎojiě yí ge xīn péngyou?',
+      q_vn: 'Bạn tìm hiểu một người bạn mới bằng cách nào?',
+      grammar: { label: '先……，最后…… (trình tự)', any: ['先', '最后'] },
+      need: [
+        { label: 'Nói bước đầu tiên', any: ['先', '聊天', '问', '打招呼', '说'] },
+        { label: 'Nói việc làm cùng nhau sau đó', any: ['一起', '运动', '吃饭', '看电影', '学习'] }
+      ],
+      bonus: { label: 'Dùng 了解 nói kết quả', any: ['了解'] },
+      vocab: ['了解', '最后', '先'],
+      minLen: 20,
+      sample: '我一般先跟他聊聊天儿，问问他的爱好，最后再一起去做一样的事情，比如运动或者看电影，这样就慢慢了解他了。',
+      sample_py: 'Wǒ yìbān xiān gēn tā liáo liáo tiān ér, wènwen tā de àihào, zuìhòu zài yìqǐ qù zuò yí yàng de shìqing, bǐrú yùndòng huòzhě kàn diànyǐng, zhè yàng jiù mànmàn liǎojiě tā le.',
+      sample_vn: 'Tôi thường trò chuyện với bạn ấy trước, hỏi về sở thích, cuối cùng cùng nhau làm việc gì đó giống nhau như tập thể thao hoặc xem phim, như vậy dần dần sẽ hiểu bạn ấy.',
+      tip: '了解 nhấn mạnh hiểu sâu; 知道 chỉ là biết thông tin.'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

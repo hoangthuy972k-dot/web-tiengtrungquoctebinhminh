@@ -774,28 +774,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 8 để trả lời các câu hỏi sau về cảm xúc và thái độ sống.',
-  questions:[
-    {q_zh:'伤心难过的时候，你会做什么让自己心情变好？',q_vn:'Lúc buồn bã đau lòng, bạn sẽ làm gì để tâm trạng tốt hơn?',
-     hint:'使人的心情变得愉快',
-     sample:'我会吃一块巧克力，听说这样能使人的心情变得愉快。',sample_vn:'Tôi sẽ ăn một miếng sô cô la, nghe nói như vậy có thể khiến tâm trạng người ta trở nên vui vẻ.',
-     note:'使……愉快 ôn lại từ vựng của bài.'},
-    {q_zh:'遇到堵车的时候，你一般会怎么做？',q_vn:'Khi gặp kẹt xe, bạn thường làm gì?',
-     hint:'虽然改变不了堵车，但是可以试着……',
-     sample:'虽然改变不了堵车，但是我会试着改变自己的心情，听听音乐。',sample_vn:'Tuy không thể thay đổi kẹt xe, nhưng tôi sẽ thử thay đổi tâm trạng của mình, nghe nhạc.',
-     note:'改变不了……但是可以试着…… kết hợp 堵车, ôn lại từ vựng của bài.'},
-    {q_zh:'你同意"生活中不缺少美，缺少的是发现美的眼睛"这句话吗？',q_vn:'Bạn có đồng ý câu "cuộc sống không thiếu cái đẹp, thiếu là đôi mắt phát hiện ra cái đẹp" không?',
-     hint:'只要有心，……到处都是',
-     sample:'我同意，只要有心，生活中的美到处都是。',sample_vn:'Tôi đồng ý, chỉ cần có tâm, cái đẹp trong cuộc sống ở khắp nơi.',
-     note:'只要……到处都是 ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'你觉得颜色会影响人的心情吗？举例说说。',q_vn:'Bạn thấy màu sắc có ảnh hưởng đến tâm trạng con người không? Cho ví dụ.',
-     hint:'……让人……',
-     sample:'我觉得会，比如红色让人变得热情，蓝色让人变得安静。',sample_vn:'Tôi thấy có, ví dụ như màu đỏ khiến người ta trở nên nhiệt tình, xanh dương khiến người ta trở nên yên tĩnh.',
-     note:'……让人变得…… kết hợp màu sắc, ôn lại từ vựng của bài.'},
-    {q_zh:'你觉得生活的态度应该怎么选择？',q_vn:'Bạn thấy thái độ sống nên chọn như thế nào?',
-     hint:'因此……应该……',
-     sample:'我觉得生活的态度要自己选择，因此，遇到烦恼时，应该想办法让自己走出来。',sample_vn:'Tôi thấy thái độ sống phải tự mình lựa chọn, vì vậy, khi gặp phiền muộn, nên nghĩ cách để bước ra khỏi nó.',
-     note:'因此 ôn lại điểm ngữ pháp của bài.'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 8. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Hôm nay bạn có chuyện không vui ở công ty.',
+      q_zh: '伤心难过的时候，你会做什么让自己心情变好？',
+      q_py: 'Shāngxīn nánguò de shíhou, nǐ huì zuò shénme ràng zìjǐ xīnqíng biàn hǎo?',
+      q_vn: 'Lúc buồn bã, bạn làm gì để tâm trạng tốt lên?',
+      grammar: { label: '使 + người + 变得…… (khiến ai đó trở nên…)', any: ['使', '让'] },
+      need: [
+        { label: 'Kể việc bạn làm', any: ['音乐', '走', '吃', '睡', '朋友', '运动', '看'] },
+        { label: 'Dùng 使 hoặc 让 nói tác dụng', any: ['使', '让'] }
+      ],
+      bonus: { label: 'Nói cảm giác sau đó bằng 愉快 / 轻松', any: ['愉快', '轻松', '好多了'] },
+      vocab: ['使', '愉快', '烦恼'],
+      minLen: 22,
+      sample: '我会先出去走走，然后听听音乐，有时候吃一块巧克力。听说甜的东西能使人的心情变得愉快，烦恼也少一些。',
+      sample_py: 'Wǒ huì xiān chū qù zǒuzou, ránhòu tīngting yīnyuè, yǒu shíhou chī yí kuài qiǎokèlì. Tīng shuō tián de dōngxi néng shǐ rén de xīnqíng biàn děi yúkuài, fánnǎo yě shǎo yì xiē.',
+      sample_vn: 'Tôi sẽ ra ngoài đi dạo trước, rồi nghe nhạc, đôi khi ăn một miếng sô-cô-la. Nghe nói đồ ngọt khiến tâm trạng vui hơn, phiền muộn cũng bớt đi.',
+      tip: '使 thường dùng trong văn viết: 这个消息使大家很高兴。'
+    },
+    {
+      situation: 'Bạn bị kẹt xe trên đường đi làm.',
+      q_zh: '遇到堵车的时候，你一般会怎么做？',
+      q_py: 'Yùdào dǔchē de shíhou, nǐ yìbān huì zěnme zuò?',
+      q_vn: 'Khi gặp tắc đường, bạn thường làm gì?',
+      grammar: { label: '虽然……，但是…… (nhượng bộ)', any: ['虽然', '但是'] },
+      need: [
+        { label: 'Thừa nhận không đổi được tình hình', any: ['改变', '堵车', '没办法', '虽然'] },
+        { label: 'Nói cách giữ tâm trạng', any: ['音乐', '广播', '新闻', '心情', '休息', '想'] }
+      ],
+      bonus: { label: 'Dùng 只要……就…… nêu cách nghĩ tích cực', any: ['只要', '因此'] },
+      vocab: ['改变', '心情', '往往'],
+      minLen: 22,
+      sample: '虽然改变不了堵车，但是我会试着改变自己的心情，听听音乐或者新闻。着急往往没有用，早出门十分钟才有用。',
+      sample_py: 'Suīrán gǎibiàn bù le dǔchē, dànshì wǒ huì shì zhe gǎibiàn zìjǐ de xīnqíng, tīngting yīnyuè huòzhě xīnwén. Zháojí wǎngwǎng méiyǒu yòng, zǎo chū mén shífēn zhōng cái yǒu yòng.',
+      sample_vn: 'Dù không thay đổi được việc tắc đường, tôi sẽ thử thay đổi tâm trạng, nghe nhạc hoặc tin tức. Sốt ruột thường chẳng ích gì, ra khỏi nhà sớm 10 phút mới có tác dụng.',
+      tip: '往往 chỉ quy luật thường xảy ra, không dùng cho tương lai.'
+    },
+    {
+      situation: 'Bạn bè bàn về một câu nói nổi tiếng.',
+      q_zh: '你同意“生活中不缺少美，缺少的是发现美的眼睛”这句话吗？',
+      q_py: 'Nǐ tóngyì "shēnghuó zhōng bù quēshǎo měi, quēshǎo de shì fāxiàn měi de yǎnjing" zhè jù huà ma?',
+      q_vn: 'Bạn có đồng ý câu "cuộc sống không thiếu cái đẹp, thiếu là đôi mắt biết phát hiện" không?',
+      grammar: { label: '只要……就…… (chỉ cần… thì…)', any: ['只要'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['同意', '不同意', '我觉得', '我认为'] },
+        { label: 'Nêu ví dụ trong cuộc sống', any: ['生活', '花', '天空', '早上', '小事', '路上', '笑'] }
+      ],
+      bonus: { label: 'Dùng 只要……就……', any: ['只要'] },
+      vocab: ['美', '只要', '因此'],
+      minLen: 22,
+      sample: '我同意。只要愿意留心，生活中的美到处都是，比如早上的阳光、路边的花。因此，心情不好的时候，我会试着多看看身边的小事。',
+      sample_py: 'Wǒ tóngyì. Zhǐyào yuànyì liú xīn, shēnghuó zhōng de měi dàochù dōu shì, bǐrú zǎoshang de yángguāng, lù bian de huā. Yīncǐ, xīnqíng bù hǎo de shíhou, wǒ huì shì zhe duō kànkan shēn bian de xiǎo shì.',
+      sample_vn: 'Tôi đồng ý. Chỉ cần chịu để ý, cái đẹp trong cuộc sống ở khắp nơi, ví dụ nắng sớm, hoa bên đường. Vì vậy, lúc tâm trạng không tốt, tôi thử nhìn nhiều hơn vào những điều nhỏ quanh mình.',
+      tip: '因此 = vì thế, dùng nối câu trong văn viết.'
+    },
+    {
+      situation: 'Bạn đang chọn màu sơn cho phòng làm việc.',
+      q_zh: '你觉得颜色会影响人的心情吗？举例说说。',
+      q_py: 'Nǐ juéde yánsè huì yǐngxiǎng rén de xīnqíng ma? Jǔ lì shuōshuo.',
+      q_vn: 'Bạn thấy màu sắc có ảnh hưởng tâm trạng không? Cho ví dụ.',
+      grammar: { label: '让/使 + người + 变得 + tính từ', any: ['让', '使'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['会', '不会', '我觉得', '影响'] },
+        { label: 'Nêu ví dụ màu sắc', any: ['红色', '蓝色', '绿色', '黄色', '白色', '比如'] }
+      ],
+      bonus: { label: 'Nói bạn chọn màu gì cho phòng mình', any: ['房间', '选', '墙', '喜欢'] },
+      vocab: ['影响', '使', '比如'],
+      minLen: 22,
+      sample: '我觉得会。比如红色让人变得热情，蓝色使人变得安静。所以我的房间选了浅蓝色，工作的时候心情比较放松。',
+      sample_py: 'Wǒ juéde huì. Bǐrú hóng sè ràng rén biàn děi rèqíng, lán sè shǐ rén biàn děi ānjìng. Suǒyǐ wǒ de fángjiān xuǎn le qiǎn lán sè, gōngzuò de shíhou xīnqíng bǐjiào fàngsōng.',
+      sample_vn: 'Tôi thấy có. Ví dụ màu đỏ khiến người ta sôi nổi, màu xanh lam khiến người ta trầm tĩnh. Nên phòng tôi chọn màu xanh nhạt, lúc làm việc tâm trạng khá thư thái.',
+      tip: '让/使 + tân ngữ + 变得 + tính từ: 音乐让我变得轻松。'
+    },
+    {
+      situation: 'Một người bạn đang gặp chuyện buồn và hỏi bạn cách sống.',
+      q_zh: '你觉得生活的态度应该怎么选择？',
+      q_py: 'Nǐ juéde shēnghuó de tàidù yīnggāi zěnme xuǎnzé?',
+      q_vn: 'Bạn thấy nên chọn thái độ sống thế nào?',
+      grammar: { label: '因此…… (vì vậy…)', any: ['因此', '所以'] },
+      need: [
+        { label: 'Nêu quan điểm về thái độ sống', any: ['态度', '选择', '自己', '乐观', '积极'] },
+        { label: 'Nói cách làm khi gặp phiền muộn', any: ['烦恼', '办法', '想', '朋友', '运动', '走出来'] }
+      ],
+      bonus: { label: 'Dùng 因此 nối ý', any: ['因此'] },
+      vocab: ['态度', '烦恼', '因此'],
+      minLen: 22,
+      sample: '我觉得生活的态度要自己选择。因此，遇到烦恼的时候，应该想办法让自己走出来，比如找朋友聊聊，或者出去运动运动。',
+      sample_py: 'Wǒ juéde shēnghuó de tàidù yào zìjǐ xuǎnzé. Yīncǐ, yùdào fánnǎo de shíhou, yīnggāi xiǎng bànfǎ ràng zìjǐ zǒu chū lái, bǐrú zhǎo péngyou liáo liáo, huòzhě chū qù yùndòng yùndòng.',
+      sample_vn: 'Tôi thấy thái độ sống phải do mình chọn. Vì vậy, khi gặp phiền muộn, nên tìm cách để mình bước ra khỏi nó, ví dụ tìm bạn tâm sự hoặc ra ngoài vận động.',
+      tip: '因此 dùng nối kết quả, trang trọng hơn 所以.'
+    }
   ]
 };
 

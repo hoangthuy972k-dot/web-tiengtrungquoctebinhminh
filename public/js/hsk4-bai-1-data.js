@@ -927,39 +927,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 5 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'王静和李进是怎么认识的？',
-     q_vn:'Vương Tịnh và Lý Tiến quen nhau thế nào?',
-     hint:'在一次足球比赛中认识的，李进踢进两个球',
-     sample:'他们是在一次足球比赛中认识的，李进一个人踢进两个球，王静对他印象很深。',
-     sample_vn:'Họ quen nhau trong một trận đấu bóng đá, Lý Tiến một mình đá lọt hai bàn, Vương Tịnh có ấn tượng rất sâu sắc về anh ấy.',
-     note:'不仅……也…… dùng để nêu hai điểm tốt của một người.'},
-    {q_zh:'王静和李进认识多长时间了？李老师觉得怎么样？',
-     q_vn:'Vương Tịnh và Lý Tiến quen nhau bao lâu rồi? Cô Lý thấy thế nào?',
-     hint:'才认识一个月，李老师觉得他们是在开玩笑',
-     sample:'他们才认识一个月，李老师觉得王静是在开玩笑吧。',
-     sample_vn:'Họ mới quen nhau một tháng, cô Lý nghĩ Vương Tịnh đang đùa.',
-     note:'才 + số lượng — nhấn mạnh thời gian ngắn.'},
-    {q_zh:'高老师觉得两个人共同生活需要什么？',
-     q_vn:'Thầy Cao nghĩ hai người sống chung cần gì?',
-     hint:'只有浪漫和新鲜感是不够的，还要接受对方的缺点',
-     sample:'高老师觉得只有浪漫和新鲜感是不够的，还要接受对方的缺点。',
-     sample_vn:'Thầy Cao nghĩ chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ, còn phải chấp nhận khuyết điểm của đối phương.',
-     note:'只有……是不够的，还…… — chỉ có … thì không đủ, còn cần ….'},
-    {q_zh:'年轻人、中年人、老年人对浪漫分别有什么理解？',
-     q_vn:'Người trẻ, người trung niên, người già hiểu về sự lãng mạn thế nào?',
-     hint:'年轻人：星星和月亮；中年人：加班后家里的灯；老年人：一起慢慢变老',
-     sample:'年轻人说浪漫是想要月亮时不给星星；中年人说浪漫是即使加班到零点，家里也还亮着灯；老年人说浪漫就是和你一起慢慢变老。',
-     sample_vn:'Người trẻ nói lãng mạn là khi muốn mặt trăng thì không đưa ngôi sao; người trung niên nói lãng mạn là cho dù tăng ca đến nửa đêm, đèn nhà vẫn sáng; người già nói lãng mạn chính là cùng nhau già đi.',
-     note:'即使……也…… dùng để nêu ví dụ về sự lãng mạn của người trung niên.'},
-    {q_zh:'我的丈夫是个什么样的人？',
-     q_vn:'Chồng của tôi là người thế nào?',
-     hint:'很幽默，脾气也不错，结婚快十年了很少吵架',
-     sample:'我的丈夫不仅很幽默，脾气也不错，结婚快十年了，我们俩几乎没红过脸。',
-     sample_vn:'Chồng tôi không những rất hóm hỉnh, tính tình cũng khá tốt, kết hôn gần mười năm rồi, hai chúng tôi hầu như chưa từng cãi nhau.',
-     note:'不仅……也…… kết hợp với 从来/几乎 để miêu tả tính cách.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 1. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn giới thiệu một người thân thiết với nhóm bạn mới.',
+      q_zh: '说一说你的一个好朋友或者家人，他是个什么样的人？',
+      q_py: 'Shuō yi shuō nǐ de yí ge hǎo péngyou huòzhě jiārén, tā shì ge shénme yàng de rén?',
+      q_vn: 'Hãy kể về một người bạn thân hoặc người nhà của bạn, người đó thế nào?',
+      grammar: { label: '不仅……也/还…… (không những… mà còn…)', any: ['不仅', '不但'] },
+      need: [
+        { label: 'Dùng 不仅……也/还……', any: ['不仅', '不但'] },
+        { label: 'Tả tính cách', any: ['幽默', '脾气', '性格', '热情', '认真', '聪明'] }
+      ],
+      bonus: { label: 'Dùng 从来 nói điều chưa từng xảy ra', any: ['从来'] },
+      vocab: ['幽默', '脾气', '从来', '性格'],
+      minLen: 22,
+      sample: '我的好朋友不仅很幽默，脾气也特别好。我们认识五年了，几乎从来没生过气，有什么事都可以互相说。',
+      sample_py: 'Wǒ de hǎo péngyou bùjǐn hěn yōumò, píqi yě tèbié hǎo. Wǒmen rènshi wǔ nián le, jīhū cónglái méi shēng guo qì, yǒu shénme shì dōu kěyǐ hùxiāng shuō.',
+      sample_vn: 'Bạn thân của tôi không những hóm hỉnh mà tính tình cũng rất tốt. Chúng tôi quen nhau năm năm, gần như chưa từng giận nhau, có chuyện gì cũng nói được với nhau.',
+      tip: '不仅……也…… nối hai ưu điểm: 他不仅会说汉语，还会说法语。'
+    },
+    {
+      situation: 'Đồng nghiệp tò mò về cách bạn quen người bạn thân nhất.',
+      q_zh: '你跟最好的朋友是怎么认识的？第一次见面印象怎么样？',
+      q_py: 'Nǐ gēn zuì hǎo de péngyou shì zěnme rènshi de? Dì yī cì jiànmiàn yìnxiàng zěnmeyàng?',
+      q_vn: 'Bạn quen người bạn thân nhất thế nào? Lần đầu gặp ấn tượng ra sao?',
+      grammar: { label: '对……印象很深 / 是在……认识的', any: ['印象', '是在'] },
+      need: [
+        { label: 'Kể hoàn cảnh quen nhau', any: ['认识', '比赛', '学校', '公司', '图书馆', '朋友', '网上'] },
+        { label: 'Dùng 印象 nói cảm nhận đầu tiên', any: ['印象'] }
+      ],
+      bonus: { label: 'Dùng 熟悉 nói sự thân quen hiện nay', any: ['熟悉'] },
+      vocab: ['印象', '深', '熟悉'],
+      minLen: 22,
+      sample: '我们是在一次足球比赛中认识的。那天他一个人踢进了两个球，我对他的印象很深。现在我们已经非常熟悉了。',
+      sample_py: 'Wǒmen shì zài yí cì zúqiú bǐsài zhōng rènshi de. Nà tiān tā yí ge rén tī jìn le liǎng ge qiú, wǒ duì tā de yìnxiàng hěn shēn. Xiànzài wǒmen yǐjīng fēicháng shúxi le.',
+      sample_vn: 'Chúng tôi quen nhau trong một trận bóng đá. Hôm đó anh ấy một mình ghi hai bàn, tôi ấn tượng rất sâu. Giờ chúng tôi đã rất thân.',
+      tip: '对……印象深 = ấn tượng sâu về ai: 我对那个城市印象很深。'
+    },
+    {
+      situation: 'Trong buổi trò chuyện về hôn nhân, mọi người nêu quan điểm của mình.',
+      q_zh: '你觉得两个人共同生活，最需要的是什么？',
+      q_py: 'Nǐ juéde liǎng ge rén gòngtóng shēnghuó, zuì xūyào de shì shénme?',
+      q_vn: 'Bạn thấy hai người sống chung, điều cần nhất là gì?',
+      grammar: { label: '只有……是不够的，还要……', any: ['不够', '还要', '还得'] },
+      need: [
+        { label: 'Nêu điều cần nhất', any: ['理解', '接受', '共同', '幸福', '性格', '互相'] },
+        { label: 'Nói thêm điều kiện thứ hai', any: ['还', '也', '另外', '除了'] }
+      ],
+      bonus: { label: 'Nhắc đến khuyết điểm bằng 缺点', any: ['缺点'] },
+      vocab: ['共同', '接受', '缺点', '幸福'],
+      minLen: 22,
+      sample: '我觉得只有浪漫是不够的，还要互相理解，接受对方的缺点。有共同的爱好和目标，生活才会幸福。',
+      sample_py: 'Wǒ juéde zhǐyǒu làngmàn shì bú gòu de, hái yào hùxiāng lǐjiě, jiēshòu duì fāng de quēdiǎn. Yǒu gòngtóng de àihào hé mù biāo, shēnghuó cái huì xìngfú.',
+      sample_vn: 'Tôi thấy chỉ có lãng mạn thì chưa đủ, còn phải hiểu nhau, chấp nhận khuyết điểm của đối phương. Có sở thích và mục tiêu chung thì cuộc sống mới hạnh phúc.',
+      tip: '只有……是不够的 dùng để nói một điều kiện chưa đủ.'
+    },
+    {
+      situation: 'Bạn bè tranh luận xem thế nào mới gọi là lãng mạn.',
+      q_zh: '在你看来，什么是浪漫？请举个例子。',
+      q_py: 'Zài nǐ kàn lái, shénme shì làngmàn? Qǐng jǔ ge lì zǐ.',
+      q_vn: 'Theo bạn, thế nào là lãng mạn? Hãy nêu một ví dụ.',
+      grammar: { label: '即使……也…… (cho dù… thì vẫn…)', any: ['即使'] },
+      need: [
+        { label: 'Nêu quan điểm của bạn về 浪漫', any: ['浪漫', '我觉得', '我认为', '对我来说'] },
+        { label: 'Đưa một ví dụ cụ thể', any: ['加班', '灯', '星星', '月亮', '一起', '生活', '花'] }
+      ],
+      bonus: { label: 'Dùng 即使……也…… trong ví dụ', any: ['即使'] },
+      vocab: ['即使', '加班', '亮', '浪漫'],
+      minLen: 22,
+      sample: '对我来说，即使加班到很晚，回家的时候家里还亮着一盏灯，有人等我吃饭，这就是浪漫。',
+      sample_py: 'Duì wǒ lái shuō, jíshǐ jiābān dào hěn wǎn, huí jiā de shíhou jiā lǐ hái liàng zhe yì zhǎn dēng, yǒu rén děng wǒ chīfàn, zhè jiù shì làngmàn.',
+      sample_vn: 'Với tôi, dù tăng ca đến rất khuya, về đến nhà vẫn còn một ngọn đèn sáng, có người đợi mình ăn cơm, đó chính là lãng mạn.',
+      tip: '即使……也…… giả thiết nhượng bộ: 即使下雨，我也去。'
+    },
+    {
+      situation: 'Lớp học đang thảo luận vì sao người ta thích nhau.',
+      q_zh: '什么样的人容易互相吸引？为什么？',
+      q_py: 'Shénme yàng de rén róngyì hùxiāng xīyǐn? Wèishénme?',
+      q_vn: 'Người thế nào dễ hấp dẫn lẫn nhau? Vì sao?',
+      grammar: { label: '互相 + động từ (吸引 / 学习 / 帮助)', any: ['互相'] },
+      need: [
+        { label: 'Dùng 互相', any: ['互相'] },
+        { label: 'Nêu lý do liên quan tính cách hoặc sở thích', any: ['性格', '爱好', '共同', '一样', '不同', '原因'] }
+      ],
+      bonus: { label: 'Dùng 吸引 nói sức hút', any: ['吸引'] },
+      vocab: ['性格', '互相', '吸引', '共同'],
+      minLen: 22,
+      sample: '我认为性格不同的人也能互相吸引，因为他们可以互相学习。不过最重要的原因还是有共同的爱好和想法。',
+      sample_py: 'Wǒ rènwéi xìnggé bù tóng de rén yě néng hùxiāng xīyǐn, yīnwèi tāmen kěyǐ hùxiāng xuéxí. Búguò zuì zhòngyào de yuányīn háishi yǒu gòngtóng de àihào hé xiǎng fǎ.',
+      sample_vn: 'Tôi cho rằng người tính cách khác nhau cũng có thể hút nhau, vì họ học được ở nhau. Nhưng nguyên nhân quan trọng nhất vẫn là có sở thích và suy nghĩ chung.',
+      tip: '互相 chỉ dùng trước động từ hai âm tiết: 互相帮助、互相理解。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

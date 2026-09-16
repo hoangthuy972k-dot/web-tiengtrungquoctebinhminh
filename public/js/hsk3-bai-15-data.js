@@ -614,33 +614,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'老师觉得大山的作业写得怎么样？',
-     q_vn:'Thầy giáo thấy bài tập của Đại Sơn viết thế nào?',
-     hint:'除了一个句子意思不清楚外，其他都没问题',
-     sample:'老师觉得大山写得不错，除了这个句子意思有些不清楚外，其他都没什么问题。',
-     sample_vn:'Thầy giáo thấy Đại Sơn viết khá tốt, ngoài câu này ý nghĩa hơi không rõ ràng ra, còn lại đều không có vấn đề gì.',
-     note:'除了……都…… diễn tả loại trừ một phần (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'小云为什么还没来上课？',
-     q_vn:'Vì sao bạn Vân vẫn chưa đến lớp?',
-     hint:'刚打电话了，她在路上呢',
-     sample:'小云还没来，因为她在路上呢，刚才有人给她打电话了。',
-     sample_vn:'Vân vẫn chưa đến, vì bạn ấy đang trên đường, vừa nãy có người gọi điện cho bạn ấy rồi.',
-     note:'在路上呢 diễn tả hành động đang diễn ra.'},
-    {q_zh:'小刚从网上买的衣服后来怎么样了？',
-     q_vn:'Cái áo Tiểu Cương mua trên mạng sau đó thế nào?',
-     hint:'穿着有点儿小，给弟弟了，弟弟满意极了',
-     sample:'小刚从网上买的衣服穿着有点儿小，就给弟弟了，弟弟不用花钱还有新衣服穿，满意极了。',
-     sample_vn:'Cái áo Tiểu Cương mua trên mạng mặc hơi chật, nên cho em trai rồi, em trai không tốn tiền mà lại có áo mới mặc, hài lòng lắm.',
-     note:'极了 diễn tả mức độ cực điểm (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'在啤酒节上可以做什么？',
-     q_vn:'Tại lễ hội bia có thể làm gì?',
-     hint:'喝到世界各地的啤酒，看到不同地方的歌舞',
-     sample:'在啤酒节上，你可以喝到世界上不同地方的啤酒，还可以在街道两边看到世界上不同地方的歌舞。',
-     sample_vn:'Tại lễ hội bia, bạn có thể uống được bia từ nhiều nơi khác nhau trên thế giới, còn có thể thấy các điệu múa hát từ nhiều nơi khác nhau trên thế giới ở hai bên đường phố.',
-     note:'除了……还可以…… diễn tả bổ sung thêm điều khác.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 15. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Trong buổi giao lưu, mọi người kể về những ngoại ngữ mình học.',
+      q_zh: '除了汉语以外，你还学过什么外语？',
+      q_py: 'Chúle Hànyǔ yǐ wài, nǐ hái xué guo shénme wài yǔ?',
+      q_vn: 'Ngoài tiếng Hán ra, bạn còn học ngoại ngữ nào?',
+      grammar: { label: '除了……以外，还/也……', any: ['除了'] },
+      need: [
+        { label: 'Dùng 除了……以外，还……', any: ['除了'] },
+        { label: 'Kể ngoại ngữ khác', any: ['英语', '日语', '韩语', '法语', '中文', '汉语'] }
+      ],
+      bonus: { label: 'So sánh trình độ bằng 水平', any: ['水平', '比', '高', '好'] },
+      vocab: ['除了', '水平', '练习'],
+      minLen: 20,
+      sample: '除了汉语以外，我还学过一点儿英语。我的汉语水平比英语高，因为我每天都练习说汉语。',
+      sample_py: 'Chúle Hànyǔ yǐ wài, wǒ hái xué guo yìdiǎnr yīng yǔ. Wǒ de Hànyǔ shuǐpíng bǐ yīng yǔ gāo, yīnwèi wǒ měitiān dōu liànxí shuō Hànyǔ.',
+      sample_vn: 'Ngoài tiếng Hán ra, tôi còn học chút tiếng Anh. Trình độ tiếng Hán của tôi cao hơn tiếng Anh, vì ngày nào tôi cũng luyện nói tiếng Hán.',
+      tip: '除了……以外，还…… = ngoài… ra còn…; 除了……以外，都…… = ngoài… ra thì đều…'
+    },
+    {
+      situation: 'Thầy hỏi cả lớp về cách tự học ở nhà.',
+      q_zh: '你想怎么提高自己的汉语水平？',
+      q_py: 'Nǐ xiǎng zěnme tígāo zìjǐ de Hànyǔ shuǐpíng?',
+      q_vn: 'Bạn muốn nâng cao trình độ tiếng Hán của mình bằng cách nào?',
+      grammar: { label: '提高 + 水平 / 完成 + 作业', any: ['提高', '完成'] },
+      need: [
+        { label: 'Kể cách học cụ thể', any: ['上网', '新闻', '练习', '听', '说', '看', '写'] },
+        { label: 'Dùng 提高 hoặc 完成', any: ['提高', '完成'] }
+      ],
+      bonus: { label: 'Nói tần suất bằng 每天 / 经常', any: ['每天', '经常', '常常'] },
+      vocab: ['提高', '完成', '上网', '新闻'],
+      minLen: 20,
+      sample: '我每天完成作业以后，还会上网看中文新闻、听中文歌。老师说这样提高得比较快。',
+      sample_py: 'Wǒ měitiān wánchéng zuòyè yǐhòu, hái huì shàngwǎng kàn Zhōngwén xīnwén, tīng Zhōngwén gē. Lǎoshī shuō zhè yàng tígāo děi bǐjiào kuài.',
+      sample_vn: 'Mỗi ngày làm xong bài tập, tôi còn lên mạng xem tin tức tiếng Trung, nghe nhạc Hoa. Thầy nói như vậy tiến bộ khá nhanh.',
+      tip: '提高 đi với 水平、成绩; 完成 đi với 作业、工作。'
+    },
+    {
+      situation: 'Bạn kể về một dịp lễ đáng nhớ.',
+      q_zh: '你参加过的节日活动，哪一次让你觉得高兴极了？',
+      q_py: 'Nǐ cānjiā guo de jiérì huódòng, nǎ yí cì ràng nǐ juéde gāoxìng jí le?',
+      q_vn: 'Trong các hoạt động lễ hội bạn từng tham gia, lần nào khiến bạn vui nhất?',
+      grammar: { label: 'Tính từ + 极了 (…vô cùng)', any: ['极了'] },
+      need: [
+        { label: 'Nói dịp lễ nào', any: ['节', '春节', '中秋', '节日', '生日'] },
+        { label: 'Tả hoạt động', any: ['举行', '活动', '街道', '花', '灯', '唱', '跳'] }
+      ],
+      bonus: { label: 'Dùng 极了 để nói mức độ', any: ['极了'] },
+      vocab: ['节日', '举行', '街道', '各'],
+      minLen: 20,
+      sample: '去年春节，街道上举行了很多活动，人多极了。各种花和灯都很漂亮，我跟朋友一起看到很晚，高兴极了。',
+      sample_py: 'Qùnián Chūnjié, jiēdào shàng jǔxíng le hěn duō huódòng, rén duō jí le. Gè zhǒng huā hé dēng dōu hěn piàoliang, wǒ gēn péngyou yìqǐ kàn dào hěn wǎn, gāoxìng jí le.',
+      sample_vn: 'Tết năm ngoái, trên phố tổ chức rất nhiều hoạt động, đông vô cùng. Đủ loại hoa và đèn đều rất đẹp, tôi và bạn xem đến khuya, vui vô cùng.',
+      tip: '极了 đặt sau tính từ, không dùng 很 kèm theo: 好极了 (không nói 很好极了).'
+    },
+    {
+      situation: 'Thầy vừa nêu yêu cầu mới cho cả lớp.',
+      q_zh: '老师对你们有什么要求？你最注意哪一点？',
+      q_py: 'Lǎoshī duì nǐmen yǒu shénme yāoqiú? Nǐ zuì zhùyì nǎ yì diǎn?',
+      q_vn: 'Thầy cô yêu cầu gì ở các bạn? Bạn chú ý nhất điểm nào?',
+      grammar: { label: '对……有要求 / 注意 + nội dung', any: ['要求', '注意'] },
+      need: [
+        { label: 'Nói yêu cầu của thầy cô', any: ['要求', '每天', '练习', '写', '读', '听'] },
+        { label: 'Nói điểm bạn chú ý', any: ['注意', '句子', '声调', '错字', '汉字', '语法'] }
+      ],
+      bonus: { label: 'Nói bạn làm được đến đâu', any: ['完成', '提高', '努力', '还'] },
+      vocab: ['要求', '注意', '句子', '练习'],
+      minLen: 20,
+      sample: '老师要求我们每天练习写句子，还要注意声调。我最注意的是把句子写完整，不写错字。',
+      sample_py: 'Lǎoshī yāoqiú wǒmen měitiān liànxí xiě jùzi, hái yào zhùyì shēng diào. Wǒ zuì zhùyì de shì bǎ jùzi xiě wán zhěng, bù xiě cuò zì.',
+      sample_vn: 'Thầy yêu cầu chúng em mỗi ngày luyện viết câu, còn phải chú ý thanh điệu. Điều em chú ý nhất là viết câu cho trọn vẹn, không viết sai chữ.',
+      tip: '要求 vừa là động từ vừa là danh từ: 老师要求我们…… / 老师的要求很高。'
+    },
+    {
+      situation: 'Bạn nói chuyện với thầy cô về dự định du học.',
+      q_zh: '你想去别的国家留学吗？为什么？',
+      q_py: 'Nǐ xiǎng qù biéde guójiā liúxué ma? Wèishénme?',
+      q_vn: 'Bạn có muốn đi du học nước khác không? Vì sao?',
+      grammar: { label: '除了……以外，还想…… (nêu thêm mục đích)', any: ['除了', '还'] },
+      need: [
+        { label: 'Nói muốn hay không và đi đâu', any: ['留学', '中国', '想', '不想', '国家'] },
+        { label: 'Nêu lý do', any: ['文化', '汉语', '水平', '提高', '了解', '朋友'] }
+      ],
+      bonus: { label: 'Nhắc đến thế giới hoặc nơi khác bằng 其他 / 世界', any: ['其他', '世界'] },
+      vocab: ['留学', '文化', '世界', '其他'],
+      minLen: 20,
+      sample: '我很想去中国留学。除了学汉语以外，我还想了解中国的文化，也想看看世界其他地方的生活。',
+      sample_py: 'Wǒ hěn xiǎng qù Zhōngguó liúxué. Chúle xué Hànyǔ yǐ wài, wǒ hái xiǎng liǎojiě Zhōngguó de wénhuà, yě xiǎng kànkan shìjiè qítā dìfang de shēnghuó.',
+      sample_vn: 'Tôi rất muốn đi du học Trung Quốc. Ngoài học tiếng Hán ra, tôi còn muốn tìm hiểu văn hóa Trung Quốc, cũng muốn xem cuộc sống ở những nơi khác trên thế giới.',
+      tip: '留学 là từ ly hợp: 去中国留学、留过两年学。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

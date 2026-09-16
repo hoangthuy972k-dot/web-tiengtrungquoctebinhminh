@@ -824,28 +824,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 6 để trả lời các câu hỏi sau về mua sắm và giá cả.',
-  questions:[
-    {q_zh:'你觉得"一分钱一分货"这句话对吗？为什么？',q_vn:'Bạn thấy câu "tiền nào của nấy" có đúng không? Vì sao?',
-     hint:'其实也不一定都是这样的。例如……',
-     sample:'我觉得不一定，其实也不一定都是这样的，例如打折的时候，质量很好的东西也会很便宜。',sample_vn:'Tôi thấy không nhất định, thực ra cũng không nhất định đều như vậy, ví dụ như lúc giảm giá, đồ chất lượng tốt cũng có thể rất rẻ.',
-     note:'其实……例如…… ôn lại từ vựng của bài.'},
-    {q_zh:'买东西的时候，你希望售货员一直跟着介绍，还是自己看、自己选？',q_vn:'Khi mua đồ, bạn muốn nhân viên bán hàng luôn theo giới thiệu, hay tự mình xem, tự mình chọn?',
-     hint:'不希望被……打扰',
-     sample:'我喜欢自己看、自己选，不希望被别人打扰。',sample_vn:'Tôi thích tự mình xem, tự mình chọn, không muốn bị người khác làm phiền.',
-     note:'不希望被……打扰 ôn lại từ vựng của bài.'},
-    {q_zh:'你有没有过竟然忘记做某件事的经历？',q_vn:'Bạn đã từng có trải nghiệm không ngờ lại quên làm việc gì đó chưa?',
-     hint:'竟然忘了……',
-     sample:'有，有一次我出门买东西，回家以后才发现，竟然忘了买最重要的那样东西。',sample_vn:'Có, một lần tôi ra ngoài mua đồ, về nhà mới phát hiện, không ngờ lại quên mua thứ quan trọng nhất.',
-     note:'竟然忘了…… ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'你买东西时更看重价格方面，还是质量方面？',q_vn:'Khi mua đồ bạn coi trọng khía cạnh giá cả hơn, hay khía cạnh chất lượng hơn?',
-     hint:'不管从……方面看，还是从……上看',
-     sample:'不管从价格方面看，还是从质量上看，我都觉得质量更重要。',sample_vn:'Bất kể từ góc độ giá cả mà xem, hay từ chất lượng mà xem, tôi đều thấy chất lượng quan trọng hơn.',
-     note:'不管从……方面看，还是从……上看 ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'你参加过商场的打折活动吗？说说你的购物经历。',q_vn:'Bạn đã từng tham gia hoạt động giảm giá của trung tâm mua sắm chưa? Kể về trải nghiệm mua sắm của bạn.',
-     hint:'举办……活动，降低价格',
-     sample:'参加过，一到节日，商场就会举办各种各样的活动，降低价格，我买到了又便宜又好的东西。',sample_vn:'Đã từng tham gia, cứ đến ngày lễ, trung tâm mua sắm liền tổ chức đủ loại hoạt động, hạ giá, tôi đã mua được đồ vừa rẻ vừa tốt.',
-     note:'举办……活动，降低价格 ôn lại từ vựng của bài.'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 6. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn và bạn bè tranh luận về câu "tiền nào của nấy".',
+      q_zh: '你觉得“一分钱一分货”这句话对吗？为什么？',
+      q_py: 'Nǐ juéde "yì fēn qián yì fēn huò" zhè jù huà duì ma? Wèishénme?',
+      q_vn: 'Bạn thấy câu "tiền nào của nấy" có đúng không? Vì sao?',
+      grammar: { label: '其实……，例如…… (nêu ý thật và ví dụ)', any: ['其实', '例如'] },
+      need: [
+        { label: 'Nêu quan điểm đồng ý hay không', any: ['对', '不对', '不一定', '同意'] },
+        { label: 'Đưa ví dụ cụ thể', any: ['例如', '比如', '打折', '活动', '便宜', '质量'] }
+      ],
+      bonus: { label: 'Dùng 值得 nhận xét món hàng', any: ['值得'] },
+      vocab: ['例如', '值得', '降低'],
+      minLen: 22,
+      sample: '我觉得不一定。其实打折的时候，质量很好的东西也会降低价格，例如上个月我买的那双鞋就很值得买。',
+      sample_py: 'Wǒ juéde bù yí dìng. Qíshí dǎzhé de shíhou, zhìliàng hěn hǎo de dōngxi yě huì jiàngdī jiàgé, lìrú shàng ge yuè wǒ mǎi de nà shuāng xié jiù hěn zhídé mǎi.',
+      sample_vn: 'Tôi thấy không hẳn. Thật ra khi giảm giá, đồ chất lượng tốt cũng hạ giá, ví dụ đôi giày tôi mua tháng trước rất đáng mua.',
+      tip: '例如 / 比如 dùng để nêu ví dụ; 值得 + động từ: 值得考虑、值得买。'
+    },
+    {
+      situation: 'Trong cửa hàng, nhân viên đi theo bạn giới thiệu liên tục.',
+      q_zh: '买东西的时候，你希望售货员一直跟着介绍，还是自己看、自己选？',
+      q_py: 'Mǎi dōngxi de shíhou, nǐ xīwàng shòuhuòyuán yì zhí gēn zhe jièshào, háishi zìjǐ kàn, zìjǐ xuǎn?',
+      q_vn: 'Khi mua đồ, bạn muốn nhân viên đi theo giới thiệu hay tự mình xem, tự chọn?',
+      grammar: { label: '被 + người + 打扰 (bị làm phiền)', any: ['打扰', '被'] },
+      need: [
+        { label: 'Nói bạn thích kiểu nào', any: ['自己', '售货员', '介绍', '喜欢'] },
+        { label: 'Nêu lý do', any: ['打扰', '安静', '考虑', '慢慢', '压力'] }
+      ],
+      bonus: { label: 'Nói khi nào bạn mới cần nhân viên tư vấn', any: ['问', '需要', '不懂', '大小'] },
+      vocab: ['售货员', '打扰', '情况'],
+      minLen: 22,
+      sample: '我更喜欢自己看、自己选，不希望一直被售货员打扰。不过要是遇到不懂的情况，我会主动问他们。',
+      sample_py: 'Wǒ gèng xǐhuan zìjǐ kàn, zìjǐ xuǎn, bù xīwàng yì zhí bèi shòuhuòyuán dǎrǎo. Búguò yàoshi yùdào bù dǒng de qíngkuàng, wǒ huì zhǔ dòng wèn tāmen.',
+      sample_vn: 'Tôi thích tự xem, tự chọn hơn, không muốn bị nhân viên làm phiền suốt. Nhưng nếu gặp tình huống không hiểu thì tôi sẽ chủ động hỏi họ.',
+      tip: '打扰 = làm phiền: 对不起，打扰一下。'
+    },
+    {
+      situation: 'Bạn kể một lần đãng trí khiến cả nhóm bật cười.',
+      q_zh: '你有没有过竟然忘记做某件事的经历？',
+      q_py: 'Nǐ yǒu méiyǒu guo jìngrán wàngjì zuò mǒu jiàn shì de jīnglì?',
+      q_vn: 'Bạn từng có trải nghiệm không ngờ lại quên làm một việc gì chưa?',
+      grammar: { label: '竟然 (không ngờ lại…)', any: ['竟然'] },
+      need: [
+        { label: 'Dùng 竟然', any: ['竟然'] },
+        { label: 'Kể việc bị quên', any: ['忘', '买', '带', '关', '通知', '作业'] }
+      ],
+      bonus: { label: 'Nói kết quả hoặc cách xử lý', any: ['只好', '后来', '再', '又'] },
+      vocab: ['竟然', '情况', '所有'],
+      minLen: 22,
+      sample: '有。有一次我去超市买了所有的东西，回家以后才发现，竟然忘了买最重要的那样，只好又出去了一趟。',
+      sample_py: 'Yǒu. Yǒu yí cì wǒ qù chāoshì mǎi le suǒyǒu de dōngxi, huí jiā yǐhòu cái fāxiàn, jìngrán wàng le mǎi zuì zhòngyào de nà yàng, zhǐhǎo yòu chū qù le yí tàng.',
+      sample_vn: 'Có. Có lần tôi ra siêu thị mua tất cả mọi thứ, về nhà mới phát hiện không ngờ lại quên mua đúng món quan trọng nhất, đành phải đi thêm một chuyến.',
+      tip: '竟然 đứng trước động từ, thể hiện sự bất ngờ: 他竟然不知道。'
+    },
+    {
+      situation: 'Bạn chọn giữa hai món đồ: một rẻ và một bền hơn.',
+      q_zh: '你买东西时更看重价格方面，还是质量方面？',
+      q_py: 'Nǐ mǎi dōngxi shí gèng kàn zhòng jiàgé fāngmiàn, háishi zhìliàng fāngmiàn?',
+      q_vn: 'Khi mua đồ bạn coi trọng mặt giá cả hay mặt chất lượng hơn?',
+      grammar: { label: '不管从……方面看，还是从……上看，都……', any: ['不管', '方面'] },
+      need: [
+        { label: 'Dùng 方面 so sánh hai mặt', any: ['方面', '价格', '质量'] },
+        { label: 'Nêu lựa chọn và lý do', any: ['重要', '值得', '用', '久', '便宜'] }
+      ],
+      bonus: { label: 'Dùng 不管……都…… nhấn mạnh', any: ['不管'] },
+      vocab: ['方面', '值得', '倍'],
+      minLen: 22,
+      sample: '不管从价格方面看，还是从质量上看，我都觉得质量更重要。质量好的东西就算贵一倍，也能用很多年，很值得。',
+      sample_py: 'Bùguǎn cóng jiàgé fāngmiàn kàn, háishi cóng zhìliàng shàng kàn, wǒ dōu juéde zhìliàng gèng zhòngyào. Zhìliàng hǎo de dōngxi jiù suàn guì yí bèi, yě néng yòng hěn duō nián, hěn zhídé.',
+      sample_vn: 'Dù xét về giá hay về chất lượng, tôi đều thấy chất lượng quan trọng hơn. Đồ tốt dù đắt gấp đôi cũng dùng được nhiều năm, rất đáng.',
+      tip: '倍 = lần (bội số): 贵一倍 = đắt gấp đôi.'
+    },
+    {
+      situation: 'Trung tâm thương mại đang có đợt khuyến mãi lớn dịp lễ.',
+      q_zh: '你参加过商场的打折活动吗？说说你的购物经历。',
+      q_py: 'Nǐ cānjiā guo shāng chǎng de dǎzhé huódòng ma? Shuōshuo nǐ de gòuwù jīnglì.',
+      q_vn: 'Bạn từng tham gia đợt giảm giá của trung tâm thương mại chưa? Kể trải nghiệm mua sắm của bạn.',
+      grammar: { label: '举办 + 活动; 降低 + 价格', any: ['举办', '降低'] },
+      need: [
+        { label: 'Nói về hoạt động giảm giá', any: ['活动', '打折', '举办', '降低', '节日'] },
+        { label: 'Kể món đồ đã mua', any: ['买', '衣服', '鞋', '袜子', '果汁', '东西'] }
+      ],
+      bonus: { label: 'Nhắc đến ưu đãi khác như 免费 / 修理', any: ['免费', '修理', '其中'] },
+      vocab: ['举办', '活动', '降低', '免费'],
+      minLen: 22,
+      sample: '参加过。一到节日，商场就举办各种各样的活动，降低价格，其中有些东西还免费修理一年，我买到了又便宜又好的衣服。',
+      sample_py: 'Cānjiā guo. Yí dào jiérì, shāng chǎng jiù jǔbàn gè zhǒng gè yàng de huódòng, jiàngdī jiàgé, qízhōng yǒuxiē dōngxi hái miǎnfèi xiūlǐ yì nián, wǒ mǎi dào le yòu piányi yòu hǎo de yīfu.',
+      sample_vn: 'Có tham gia. Cứ đến lễ là trung tâm tổ chức đủ loại hoạt động, hạ giá, trong đó có món còn được sửa miễn phí một năm, tôi mua được quần áo vừa rẻ vừa tốt.',
+      tip: '举办 đi với 活动、比赛、晚会; 举行 cũng tương tự nhưng trang trọng hơn.'
+    }
   ]
 };
 

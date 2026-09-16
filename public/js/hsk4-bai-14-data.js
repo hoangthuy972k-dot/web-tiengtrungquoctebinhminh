@@ -804,28 +804,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 14 (kết hợp ngữ pháp các bài trước) để nói về bảo vệ môi trường.',
-  questions:[
-    {q_zh:'你认为在生活中哪些方面会产生污染？',q_vn:'Bạn cho rằng những mặt nào trong cuộc sống gây ra ô nhiễm?',
-     hint:'……什么的；不仅……而且……',
-     sample:'我觉得开车、乱扔垃圾、使用塑料袋什么的都会产生污染。汽车不仅污染空气，而且数量越来越多。',sample_vn:'Tôi thấy lái xe, vứt rác bừa, dùng túi nilông vân vân đều gây ô nhiễm. Ô tô không những làm ô nhiễm không khí mà số lượng còn ngày càng nhiều.',
-     note:'什么的 (bài mới) + 不仅……而且 (Bài 6) + 使用 (Bài 12).'},
-    {q_zh:'你认为一个国家应该有哪些规定来保护环境？',q_vn:'Bạn nghĩ một quốc gia nên có những quy định gì để bảo vệ môi trường?',
-     hint:'应该规定……，以……；鼓励……',
-     sample:'我觉得国家应该规定超市不能免费提供塑料袋，以减少塑料袋的使用数量，并且鼓励大家乘坐公共汽车。',sample_vn:'Tôi nghĩ nhà nước nên quy định siêu thị không được phát túi nilông miễn phí, để giảm số lượng túi nilông, đồng thời khuyến khích mọi người đi xe buýt.',
-     note:'以 (mục đích, bài mới) + 规定/并且 (Bài 12) + 免费/提供 (Bài 5, 6).'},
-    {q_zh:'既然保护环境这么重要，我们应该做些什么？',q_vn:'Đã biết bảo vệ môi trường quan trọng như vậy, chúng ta nên làm gì?',
-     hint:'既然……，就……；从身边的小事做起',
-     sample:'既然保护环境这么重要，我们就应该从身边的小事做起，比如出门时记得关灯，把垃圾丢进垃圾桶。',sample_vn:'Đã biết bảo vệ môi trường quan trọng như vậy, chúng ta nên bắt đầu từ việc nhỏ quanh mình, ví dụ ra ngoài nhớ tắt đèn, bỏ rác vào thùng rác.',
-     note:'既然……就 (bài mới) + 比如 (Bài 3) + câu chữ 把.'},
-    {q_zh:'污染对你的生活有哪些影响？',q_vn:'Ô nhiễm có ảnh hưởng gì đến cuộc sống của bạn?',
-     hint:'随着……，越来越……；于是……',
-     sample:'随着汽车数量的增加，空气越来越脏，我经常咳嗽。于是，我决定少开车，多骑自行车。',sample_vn:'Cùng với số lượng ô tô tăng, không khí ngày càng bẩn, tôi thường ho. Thế là tôi quyết định ít lái xe, đi xe đạp nhiều hơn.',
-     note:'于是 (bài mới) + 随着 (Bài 13) + 增加 (Bài 9) + 咳嗽 (Bài 7).'},
-    {q_zh:'你出差或旅行时，会自己带毛巾、牙膏吗？为什么？',q_vn:'Khi đi công tác hay du lịch, bạn có tự mang khăn, kem đánh răng không? Vì sao?',
-     hint:'虽然……，但是……；够……的了',
-     sample:'虽然宾馆免费提供，但是我还是自己带。这样可以保护环境，再说，我的箱子还不够重。',sample_vn:'Tuy khách sạn cung cấp miễn phí, nhưng tôi vẫn tự mang. Như vậy có thể bảo vệ môi trường, hơn nữa vali tôi chưa đủ nặng.',
-     note:'够 (bài mới) + 再说 (Bài 11) + 免费 (Bài 5).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 14. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Lớp bạn đang làm dự án về môi trường.',
+      q_zh: '你认为在生活中哪些方面会产生污染？',
+      q_py: 'Nǐ rènwéi zài shēnghuó zhōng nǎxiē fāngmiàn huì chǎn shēng wūrǎn?',
+      q_vn: 'Bạn cho rằng những mặt nào trong cuộc sống gây ô nhiễm?',
+      grammar: { label: '不仅……而且……; ……什么的 (…v.v.)', any: ['不仅', '而且', '什么的'] },
+      need: [
+        { label: 'Kể ít nhất hai nguồn ô nhiễm', any: ['开车', '垃圾', '塑料袋', '污染', '工厂', '空气'] },
+        { label: 'Nói tác hại', any: ['空气', '脏', '数量', '健康', '地球'] }
+      ],
+      bonus: { label: 'Dùng 不仅……而且…… nêu hai ý', any: ['不仅', '而且'] },
+      vocab: ['污染', '塑料袋', '数量', '扔'],
+      minLen: 22,
+      sample: '我觉得开车、乱扔垃圾、使用塑料袋什么的都会产生污染。汽车不仅污染空气，而且数量越来越多，城市里的空气越来越脏。',
+      sample_py: 'Wǒ juéde kāichē, luàn rēng lā jī, shǐyòng sùliàodài shénme de dōu huì chǎn shēng wūrǎn. Qì chē bùjǐn wūrǎn kōngqì, ér qiě shùliàng yuè lái yuè duō, chéngshì lǐ de kōngqì yuè lái yuè zāng.',
+      sample_vn: 'Tôi thấy lái xe, vứt rác bừa, dùng túi nilon v.v. đều gây ô nhiễm. Ô tô không những làm bẩn không khí mà số lượng còn ngày càng nhiều, không khí trong thành phố ngày càng bẩn.',
+      tip: '……什么的 = …v.v., dùng cuối danh sách trong khẩu ngữ.'
+    },
+    {
+      situation: 'Bạn viết bài phát biểu về chính sách môi trường.',
+      q_zh: '你认为一个国家应该有哪些规定来保护环境？',
+      q_py: 'Nǐ rènwéi yí ge guójiā yīnggāi yǒu nǎxiē guīdìng lái bǎohù huánjìng?',
+      q_vn: 'Bạn cho rằng một quốc gia nên có quy định gì để bảo vệ môi trường?',
+      grammar: { label: '以 + mục đích (以减少……); 鼓励 + người + động từ', any: ['以', '鼓励'] },
+      need: [
+        { label: 'Nêu một quy định cụ thể', any: ['规定', '塑料袋', '免费', '垃圾', '工厂', '汽车'] },
+        { label: 'Nói mục đích', any: ['减少', '保护', '数量', '环境', '污染'] }
+      ],
+      bonus: { label: 'Dùng 鼓励 nêu biện pháp khuyến khích', any: ['鼓励'] },
+      vocab: ['规定', '减少', '鼓励', '乘坐'],
+      minLen: 22,
+      sample: '我觉得国家应该规定超市不能免费提供塑料袋，以减少塑料袋的使用数量，并且鼓励大家多乘坐公共汽车、少开车。',
+      sample_py: 'Wǒ juéde guójiā yīnggāi guīdìng chāoshì bù néng miǎnfèi tígōng sùliàodài, yǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, bìngqiě gǔlì dàjiā duō chéngzuò gōnggòngqìchē, shǎo kāichē.',
+      sample_vn: 'Tôi thấy nhà nước nên quy định siêu thị không được phát miễn phí túi nilon để giảm lượng túi sử dụng, đồng thời khuyến khích mọi người đi xe buýt nhiều hơn, lái xe ít đi.',
+      tip: '以 + động từ nêu mục đích, dùng trong văn viết: 以提高质量。'
+    },
+    {
+      situation: 'Cả lớp thảo luận việc mỗi người có thể làm gì cho môi trường.',
+      q_zh: '既然保护环境这么重要，我们应该做些什么？',
+      q_py: 'Jìrán bǎohù huánjìng zhème zhòngyào, wǒmen yīnggāi zuò xiē shénme?',
+      q_vn: 'Đã biết bảo vệ môi trường quan trọng như vậy, chúng ta nên làm gì?',
+      grammar: { label: '既然……，就…… (đã… thì…)', any: ['既然'] },
+      need: [
+        { label: 'Dùng 既然……就……', any: ['既然'] },
+        { label: 'Kể việc nhỏ có thể làm', any: ['关灯', '垃圾桶', '塑料袋', '省', '自行车', '水', '电'] }
+      ],
+      bonus: { label: 'Dùng 从身边的小事做起', any: ['小事', '身边', '开始'] },
+      vocab: ['既然', '垃圾桶', '省'],
+      minLen: 22,
+      sample: '既然保护环境这么重要，我们就应该从身边的小事做起。比如出门时记得关灯、省一点儿水电，把垃圾丢进垃圾桶，购物时自己带袋子。',
+      sample_py: 'Jìrán bǎohù huánjìng zhème zhòngyào, wǒmen jiù yīnggāi cóng shēn bian de xiǎo shì zuò qǐ. Bǐrú chū mén shí jìde guān dēng, shěng yìdiǎnr shuǐ diàn, bǎ lā jī diū jìn lājītǒng, gòuwù shí zìjǐ dài dài zǐ.',
+      sample_vn: 'Đã biết bảo vệ môi trường quan trọng như vậy thì ta nên bắt đầu từ việc nhỏ quanh mình. Ví dụ ra khỏi nhà nhớ tắt đèn, tiết kiệm điện nước, bỏ rác vào thùng, đi mua sắm tự mang túi.',
+      tip: '既然 nêu tiền đề đã biết, vế sau thường có 就: 既然来了，就多坐一会儿。'
+    },
+    {
+      situation: 'Dạo này không khí thành phố bạn rất xấu.',
+      q_zh: '污染对你的生活有哪些影响？',
+      q_py: 'Wūrǎn duì nǐ de shēnghuó yǒu nǎxiē yǐngxiǎng?',
+      q_vn: 'Ô nhiễm ảnh hưởng thế nào đến cuộc sống của bạn?',
+      grammar: { label: '随着……的增加; 于是…… (thế là)', any: ['随着', '于是'] },
+      need: [
+        { label: 'Nói ảnh hưởng cụ thể', any: ['空气', '脏', '咳嗽', '健康', '窗户', '出门'] },
+        { label: 'Nói bạn thay đổi thế nào', any: ['决定', '少开车', '骑', '走路', '口罩', '乘坐'] }
+      ],
+      bonus: { label: 'Dùng 于是 nối kết quả', any: ['于是'] },
+      vocab: ['污染', '数量', '于是'],
+      minLen: 22,
+      sample: '随着汽车数量的增加，空气越来越脏，我经常咳嗽，也不太愿意开窗户。于是我决定少开车，多骑自行车或者乘坐地铁。',
+      sample_py: 'Suízhe qì chē shùliàng de zēngjiā, kōngqì yuè lái yuè zāng, wǒ jīngcháng késou, yě bú tài yuànyì kāi chuānghu. Yúshì wǒ juédìng shǎo kāichē, duō qí zìxíngchē huòzhě chéngzuò dìtiě.',
+      sample_vn: 'Cùng với số lượng ô tô tăng lên, không khí ngày càng bẩn, tôi hay bị ho, cũng ngại mở cửa sổ. Thế là tôi quyết định lái xe ít đi, đạp xe hoặc đi tàu điện ngầm nhiều hơn.',
+      tip: '于是 nối sự việc xảy ra tiếp theo: 天黑了，于是我们回家了。'
+    },
+    {
+      situation: 'Bạn chuẩn bị hành lý cho chuyến công tác ba ngày.',
+      q_zh: '你出差或旅行时，会自己带毛巾、牙膏吗？为什么？',
+      q_py: 'Nǐ chūchāi huò lǚxíng shí, huì zìjǐ dài máojīn, yágāo ma? Wèishénme?',
+      q_vn: 'Khi đi công tác hay du lịch, bạn có tự mang khăn, kem đánh răng không? Vì sao?',
+      grammar: { label: '虽然……但是……; 再说…… (hơn nữa)', any: ['虽然', '再说'] },
+      need: [
+        { label: 'Trả lời có mang hay không', any: ['带', '自己', '不带'] },
+        { label: 'Nêu lý do', any: ['保护环境', '干净', '习惯', '省', '污染', '放心'] }
+      ],
+      bonus: { label: 'Dùng 再说 bổ sung lý do', any: ['再说', '而且'] },
+      vocab: ['出差', '毛巾', '牙膏', '重'],
+      minLen: 22,
+      sample: '虽然宾馆免费提供，但是我出差还是自己带毛巾和牙膏。这样既干净又可以保护环境，再说这些东西很轻，箱子也不会太重。',
+      sample_py: 'Suīrán bīnguǎn miǎnfèi tígōng, dànshì wǒ chūchāi háishi zìjǐ dài máojīn hé yágāo. Zhè yàng jì gānjìng yòu kěyǐ bǎohù huánjìng, zài shuō zhèxiē dōngxi hěn qīng, xiāng zǐ yě bú huì tài zhòng.',
+      sample_vn: 'Tuy khách sạn có sẵn miễn phí, nhưng đi công tác tôi vẫn tự mang khăn và kem đánh răng. Như vậy vừa sạch vừa bảo vệ môi trường, hơn nữa mấy thứ này rất nhẹ, vali cũng không nặng thêm.',
+      tip: '再说 dùng để thêm lý do trong khẩu ngữ: 太贵了，再说我也不需要。'
+    }
   ]
 };
 

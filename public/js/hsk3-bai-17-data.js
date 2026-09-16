@@ -499,33 +499,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小丽为什么要请假？',
-     q_vn:'Vì sao Tiểu Lệ xin nghỉ phép?',
-     hint:'老朋友结婚，两年没见了',
-     sample:'小丽要请假，因为她的一个老朋友结婚，她跟他两年没见了。',
-     sample_vn:'Tiểu Lệ xin nghỉ phép, vì một người bạn cũ của cô kết hôn, cô với anh ấy hai năm không gặp rồi.',
-     note:'一共 diễn tả tổng số (điểm từ vựng trọng tâm bài này).'},
-    {q_zh:'小丽和那个高高的男人是什么关系？',
-     q_vn:'Tiểu Lệ và người đàn ông cao cao đó có quan hệ gì?',
-     hint:'过去是邻居，后来是大学同学，现在是丈夫',
-     sample:'他们过去是邻居，后来是大学同学，关系一直很不错，现在他是小丽的丈夫。',
-     sample_vn:'Trước đây họ là hàng xóm, sau đó là bạn học đại học, quan hệ luôn rất tốt, bây giờ anh ấy là chồng của Tiểu Lệ.',
-     note:'后来 diễn tả trình tự thời gian tiếp theo.'},
-    {q_zh:'周太太为什么觉得不舒服？周明怎么回答？',
-     q_vn:'Vì sao bà Chu thấy khó chịu? Ông Chu trả lời thế nào?',
-     hint:'三年没运动了，谁都知道运动对身体好',
-     sample:'周太太三年没运动了，周明说谁都知道运动对身体好，她应该多锻炼锻炼。',
-     sample_vn:'Bà Chu ba năm không vận động rồi, ông Chu nói ai cũng biết vận động tốt cho sức khỏe, bà nên tập luyện nhiều hơn.',
-     note:'谁都 + động từ diễn tả toàn bộ không ngoại lệ (điểm ngữ pháp trọng tâm bài này).'},
-    {q_zh:'怎样才是正确的运动方法？',
-     q_vn:'Thế nào mới là phương pháp vận động đúng đắn?',
-     hint:'选择对的时间和地点，根据健康情况，运动后不要马上喝水',
-     sample:'要选择"对"的时间和地点，还必须要根据自己的健康情况运动，刚运动完口渴的时候，不要马上喝水。',
-     sample_vn:'Phải chọn thời gian và địa điểm "đúng", còn phải vận động dựa theo tình trạng sức khỏe của bản thân, lúc vừa vận động xong khát nước thì đừng uống nước ngay.',
-     note:'必须要 diễn tả sự cần thiết.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 17. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn cần nghỉ vài ngày để về quê dự đám cưới bạn cũ.',
+      q_zh: '你要请假的时候，会怎么跟经理或者老师说？一共请几天？',
+      q_py: 'Nǐ yào qǐngjià de shíhou, huì zěnme gēn jīnglǐ huòzhě lǎoshī shuō? Yígòng qǐng jǐ tiān?',
+      q_vn: 'Khi cần xin nghỉ, bạn sẽ nói với giám đốc hoặc thầy cô thế nào? Xin nghỉ tổng cộng mấy ngày?',
+      grammar: { label: '请 + số ngày + 假 (từ ly hợp 请假)', any: ['请假', '请'] },
+      need: [
+        { label: 'Nói xin nghỉ mấy ngày', any: ['天', '一共', '假'] },
+        { label: 'Nêu lý do', any: ['结婚', '生病', '家里', '事', '朋友'] }
+      ],
+      bonus: { label: 'Hứa hoàn thành công việc bằng 完成', any: ['完成', '一定', '回来'] },
+      vocab: ['请假', '一共', '办法'],
+      minLen: 20,
+      sample: '我会说：经理，下个星期我想请假，因为老朋友结婚，一共三天。我会想办法在走以前把工作完成。',
+      sample_py: 'Wǒ huì shuō: jīnglǐ, xià ge xīngqī wǒ xiǎng qǐngjià, yīnwèi lǎo péngyou jiéhūn, yígòng sān tiān. Wǒ huì xiǎng bànfǎ zài zǒu yǐqián bǎ gōngzuò wánchéng.',
+      sample_vn: 'Tôi sẽ nói: Thưa giám đốc, tuần sau tôi muốn xin nghỉ vì bạn cũ kết hôn, tổng cộng ba ngày. Tôi sẽ tìm cách hoàn thành công việc trước khi đi.',
+      tip: '请假 là từ ly hợp: 请三天假, không nói 请假三天。'
+    },
+    {
+      situation: 'Đồng nghiệp hỏi bạn cuối tuần thường nghỉ ngơi thế nào.',
+      q_zh: '周末你一般怎么休息？',
+      q_py: 'Zhōumò nǐ yìbān zěnme xiūxi?',
+      q_vn: 'Cuối tuần bạn thường nghỉ ngơi thế nào?',
+      grammar: { label: 'Động từ hai âm tiết lặp lại (ABAB): 休息休息、运动运动', any: ['休息休息', '运动运动', '聊聊', '看看', '走走', '锻炼锻炼'] },
+      need: [
+        { label: 'Dùng động từ lặp lại', any: ['休息休息', '运动运动', '聊聊', '走走', '看看'] },
+        { label: 'Nói sở thích của bạn', any: ['爱好', '跑步', '音乐', '看书', '游泳', '爬山'] }
+      ],
+      bonus: { label: 'Nhắc đến hàng xóm hoặc bạn bè', any: ['邻居', '朋友', '同事'] },
+      vocab: ['邻居', '爱好', '后来'],
+      minLen: 20,
+      sample: '周末我一般在家休息休息，下午跟邻居聊聊天儿、运动运动。我的爱好是跑步，后来我又开始学游泳了。',
+      sample_py: 'Zhōumò wǒ yìbān zài jiā xiūxixiūxi, xiàwǔ gēn línjū liáo liáo tiān ér, yùndòng yùndòng. Wǒ de àihào shì pǎobù, hòulái wǒ yòu kāishǐ xué yóuyǒng le.',
+      sample_vn: 'Cuối tuần tôi thường nghỉ ngơi ở nhà, chiều trò chuyện với hàng xóm, vận động một chút. Sở thích của tôi là chạy bộ, sau này tôi còn bắt đầu học bơi.',
+      tip: 'Động từ hai âm tiết lặp ABAB làm giọng nhẹ đi: 我们商量商量。'
+    },
+    {
+      situation: 'Bạn học hỏi bạn cách xử lý khi gặp khó khăn.',
+      q_zh: '遇到问题的时候，你觉得应该怎么找办法？',
+      q_py: 'Yùdào wèntí de shíhou, nǐ juéde yīnggāi zěnme zhǎo bànfǎ?',
+      q_vn: 'Khi gặp vấn đề, bạn thấy nên tìm cách giải quyết thế nào?',
+      grammar: { label: 'Đại từ nghi vấn chỉ chung: 谁都、什么都', any: ['谁都', '什么都', '哪儿都'] },
+      need: [
+        { label: 'Dùng 谁都 / 什么都', any: ['谁都', '什么都', '哪儿都'] },
+        { label: 'Nói cách chọn giải pháp', any: ['办法', '选择', '根据', '情况', '问'] }
+      ],
+      bonus: { label: 'Khuyên đừng vội bằng 别着急', any: ['别着急', '不要着急', '慢慢'] },
+      vocab: ['办法', '根据', '情况', '选择'],
+      minLen: 20,
+      sample: '我觉得谁都会遇到问题，所以别着急。可以根据情况选择办法，自己想不出来的时候就问问别人。',
+      sample_py: 'Wǒ juéde shéi dōu huì yùdào wèntí, suǒyǐ bié zháojí. Kěyǐ gēnjù qíngkuàng xuǎnzé bànfǎ, zìjǐ xiǎng bù chū lái de shíhou jiù wènwen biérén.',
+      sample_vn: 'Tôi thấy ai cũng gặp vấn đề, nên đừng vội. Có thể tùy tình huống mà chọn cách, tự nghĩ không ra thì hỏi người khác.',
+      tip: '谁都 + 会/不 = ai cũng…: 谁都知道这件事。'
+    },
+    {
+      situation: 'Bạn vừa quyết định thay đổi lối sống để khỏe hơn.',
+      q_zh: '为了身体健康，你最近决定做什么？',
+      q_py: 'Wèile shēntǐ jiànkāng, nǐ zuìjìn juédìng zuò shénme?',
+      q_vn: 'Vì sức khỏe, gần đây bạn quyết định làm gì?',
+      grammar: { label: '为了 + mục đích，(主语)决定/必须……', any: ['为了'] },
+      need: [
+        { label: 'Dùng 为了 nêu mục đích', any: ['为了'] },
+        { label: 'Nói quyết định cụ thể', any: ['决定', '每天', '跑', '锻炼', '不吃', '早睡'] }
+      ],
+      bonus: { label: 'Dùng 必须 nhấn mạnh việc bắt buộc', any: ['必须'] },
+      vocab: ['为了', '决定', '必须', '饱'],
+      minLen: 20,
+      sample: '为了身体健康，我决定每天早上跑二十分钟，晚上不吃得太饱，睡觉以前必须放下手机。',
+      sample_py: 'Wèile shēntǐ jiànkāng, wǒ juédìng měitiān zǎoshang pǎo èr shífēn zhōng, wǎnshang bù chī děi tài bǎo, shuìjiào yǐqián bìxū fàng xià shǒujī.',
+      sample_vn: 'Vì sức khỏe, tôi quyết định mỗi sáng chạy 20 phút, buổi tối không ăn quá no, trước khi ngủ nhất định phải bỏ điện thoại xuống.',
+      tip: '为了 + mục đích đứng đầu câu: 为了提高水平，我每天练习。'
+    },
+    {
+      situation: 'Mùa đông đến, bạn bè nói về đồ uống yêu thích.',
+      q_zh: '冬天你一般喝什么？渴的时候呢？',
+      q_py: 'Dōng tiān nǐ yìbān hē shénme? Kě de shíhou ne?',
+      q_vn: 'Mùa đông bạn thường uống gì? Lúc khát thì sao?',
+      grammar: { label: 'Lượng từ 口: 一口一口地喝', any: ['口'] },
+      need: [
+        { label: 'Nói đồ uống mùa đông', any: ['茶', '热水', '牛奶', '咖啡', '汤'] },
+        { label: 'Nói khi khát làm gì', any: ['渴', '喝', '水'] }
+      ],
+      bonus: { label: 'Nêu lý do liên quan sức khỏe', any: ['健康', '生病', '身体', '冷'] },
+      vocab: ['冬', '渴', '口'],
+      minLen: 18,
+      sample: '冬天我一般喝热茶或者热水。渴的时候我先喝一口热水，不喝太冷的，因为冬天喝冷的容易生病。',
+      sample_py: 'Dōng tiān wǒ yìbān hē rè chá huòzhě rè shuǐ. Kě de shíhou wǒ xiān hē yì kǒu rè shuǐ, bù hē tài lěng de, yīnwèi dōng tiān hē lěng de róngyì shēngbìng.',
+      sample_vn: 'Mùa đông tôi thường uống trà nóng hoặc nước nóng. Lúc khát tôi uống một ngụm nước ấm trước, không uống đồ quá lạnh, vì mùa đông uống lạnh dễ ốm.',
+      tip: '口 là lượng từ cho ngụm, miếng: 喝一口水、吃一口菜。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

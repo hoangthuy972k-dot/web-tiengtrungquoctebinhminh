@@ -749,28 +749,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 20 (kết hợp ngữ pháp của cả 20 bài) để kể về những chuyến đi của bạn.',
-  questions:[
-    {q_zh:'你认为理想的旅行方式是什么样的？为什么？',q_vn:'Bạn cho rằng cách du lịch lý tưởng là thế nào? Vì sao?',
-     hint:'一……就……；对……来说',
-     sample:'对我来说，理想的旅行是一放假就出发，坐火车去南方，一路上看不同的风景，尝各地有名的小吃。',sample_vn:'Với tôi, du lịch lý tưởng là vừa nghỉ là lên đường, đi tàu vào Nam, dọc đường ngắm cảnh khác nhau, nếm món ăn vặt các nơi.',
-     note:'一……就/出发/小吃 (bài mới) + 对……来说 (Bài 5) + 尝 (Bài 7).'},
-    {q_zh:'哪次旅行是你最难忘的？给你印象最深的是什么？',q_vn:'Chuyến đi nào khó quên nhất với bạn? Ấn tượng sâu nhất là gì?',
-     hint:'说起……；给我印象最深的是……',
-     sample:'说起旅行，给我印象最深的是去年去丽江那一趟。导游一路上讲了很多笑话，风景美极了。我们还和少数民族的人一起干杯。',sample_vn:'Nói về du lịch, ấn tượng sâu nhất là chuyến Lệ Giang năm ngoái. Hướng dẫn viên kể nhiều truyện cười, cảnh đẹp vô cùng. Chúng tôi còn cạn ly với người dân tộc thiểu số.',
-     note:'说起/笑话/干杯/民族 (bài mới, V+起) + 趟 (Bài 17) + 导游 (Bài 16) + 极了 (Bài 4).'},
-    {q_zh:'在你的印象中，中国南方和北方有什么不同？',q_vn:'Theo bạn, miền Nam và miền Bắc Trung Quốc khác nhau thế nào?',
-     hint:'究竟……；……听起来像……',
-     sample:'南北气候有很大区别，北方冬天下雪，南方却很暖和。语言也不同，上海话听起来就像外语一样。究竟哪边更好，我也说不清楚。',sample_vn:'Khí hậu Nam Bắc khác nhiều, Bắc mùa đông có tuyết, Nam lại ấm. Ngôn ngữ cũng khác, tiếng Thượng Hải nghe như ngoại ngữ. Rốt cuộc bên nào tốt hơn, tôi cũng nói không rõ.',
-     note:'究竟/听起来 (bài mới) + 区别 (Bài 8) + 暖和 (Bài 17) + 像……一样 (Bài 6).'},
-    {q_zh:'你喜欢吃辣的吗？你们国家的菜有什么特点？',q_vn:'Bạn thích ăn cay không? Món ăn nước bạn có đặc điểm gì?',
-     hint:'又……又……；特点就是……',
-     sample:'我不太能吃辣，一吃辣就咳嗽。越南菜的特点就是又酸又香，特别是汤，味道鲜美，还有很多有名的小吃。',sample_vn:'Tôi không ăn cay được lắm, vừa ăn cay là ho. Đặc điểm món Việt là vừa chua vừa thơm, nhất là canh, vị tươi ngon, còn nhiều món ăn vặt nổi tiếng.',
-     note:'辣/酸/香/汤 (bài mới) + 一……就 + 又……又 (Bài 1) + 特点 (Bài 18) + 咳嗽 (Bài 7).'},
-    {q_zh:'去机场或者出发旅行前，你一般会做哪些准备？',q_vn:'Trước khi ra sân bay hoặc đi du lịch, bạn thường chuẩn bị gì?',
-     hint:'先……，然后……，最后……；千万别……',
-     sample:'我会先收拾好行李，然后查一下航班有没有推迟，最后去加油站加满油再上高速公路。千万别开着开着没油了。',sample_vn:'Tôi dọn hành lý trước, rồi kiểm tra chuyến bay có hoãn không, cuối cùng đến trạm xăng đổ đầy rồi lên cao tốc. Tuyệt đối đừng đang lái thì hết xăng.',
-     note:'收拾/航班/推迟/加油站/高速公路/V着V着 (bài mới) + 先……然后……最后 (Bài 3) + 千万 (Bài 15).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 20. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Cả nhóm đang lên kế hoạch cho kỳ nghỉ sắp tới.',
+      q_zh: '你认为理想的旅行方式是什么样的？为什么？',
+      q_py: 'Nǐ rènwéi lǐxiǎng de lǚxíng fāngshì shì shénme yàng de? Wèishénme?',
+      q_vn: 'Bạn cho rằng cách du lịch lý tưởng là thế nào? Vì sao?',
+      grammar: { label: '一……就……; 对我来说……', any: ['一', '就', '来说'] },
+      need: [
+        { label: 'Nói cách đi bạn thích', any: ['火车', '飞机', '自己开车', '出发', '旅行'] },
+        { label: 'Nói điều bạn muốn trải nghiệm', any: ['风景', '小吃', '文化', '朋友', '照相', '尝'] }
+      ],
+      bonus: { label: 'Dùng 一……就…… nói hành động ngay', any: ['一', '就'] },
+      vocab: ['旅行', '出发', '小吃'],
+      minLen: 22,
+      sample: '对我来说，理想的旅行是一放假就出发，坐火车去南方，一路上看不同的风景，尝尝各地有名的小吃，不用赶时间。',
+      sample_py: 'Duì wǒ lái shuō, lǐxiǎng de lǚxíng shì yí fàng jiǎ jiù chūfā, zuò huǒchē qù nánfāng, yí lù shàng kàn bù tóng de fēng jǐng, chángchang gè de yǒumíng de xiǎochī, bú yòng gǎn shíjiān.',
+      sample_vn: 'Với tôi, chuyến đi lý tưởng là vừa nghỉ là lên đường, đi tàu xuống phía Nam, dọc đường ngắm phong cảnh khác nhau, nếm món ăn vặt nổi tiếng từng nơi, không phải vội.',
+      tip: '一……就…… = vừa… là…: 我一到家就给你打电话。'
+    },
+    {
+      situation: 'Bạn bè hỏi chuyến đi nào bạn nhớ nhất.',
+      q_zh: '哪次旅行是你最难忘的？给你印象最深的是什么？',
+      q_py: 'Nǎ cì lǚxíng shì nǐ zuì nán wàng de? Gěi nǐ yìnxiàng zuì shēn de shì shénme?',
+      q_vn: 'Chuyến đi nào khó quên nhất với bạn? Điều gì để lại ấn tượng sâu nhất?',
+      grammar: { label: '说起……; 给我印象最深的是……', any: ['说起', '印象'] },
+      need: [
+        { label: 'Nói chuyến đi nào', any: ['去年', '上次', '旅行', '那一趟', '去过'] },
+        { label: 'Nói điều ấn tượng', any: ['印象', '风景', '导游', '笑话', '民族', '小吃', '人'] }
+      ],
+      bonus: { label: 'Dùng 干杯 hoặc 祝贺 kể chi tiết vui', any: ['干杯', '祝贺', '热闹'] },
+      vocab: ['旅行', '民族', '干杯'],
+      minLen: 22,
+      sample: '说起旅行，给我印象最深的是去年那一趟。导游一路上讲了很多笑话，风景美极了，我们还和当地少数民族的朋友一起吃饭、干杯，特别热闹。',
+      sample_py: 'Shuō qǐ lǚxíng, gěi wǒ yìnxiàng zuì shēn de shì qùnián nà yí tàng. Dǎoyóu yí lù shàng jiǎng le hěn duō xiàohua, fēng jǐng měi jí le, wǒmen hái hé dāng de shǎo shù mínzú de péngyou yìqǐ chīfàn, gānbēi, tèbié rènao.',
+      sample_vn: 'Nói đến du lịch, ấn tượng sâu nhất với tôi là chuyến năm ngoái. Hướng dẫn viên kể nhiều chuyện cười dọc đường, cảnh đẹp vô cùng, chúng tôi còn ăn cơm, cụng ly với các bạn dân tộc địa phương, rất náo nhiệt.',
+      tip: '说起…… = nói đến…, dùng mở đầu câu chuyện.'
+    },
+    {
+      situation: 'Một người bạn sắp sang Trung Quốc và hỏi nên đi miền nào.',
+      q_zh: '在你的印象中，中国南方和北方有什么不同？',
+      q_py: 'Zài nǐ de yìnxiàng zhōng, Zhōngguó nánfāng hé běifāng yǒu shénme bù tóng?',
+      q_vn: 'Theo cảm nhận của bạn, miền Nam và miền Bắc Trung Quốc khác nhau thế nào?',
+      grammar: { label: '……却……; 究竟…… (rốt cuộc)', any: ['却', '究竟'] },
+      need: [
+        { label: 'So sánh khí hậu', any: ['气候', '冬天', '下雪', '暖和', '冷', '热'] },
+        { label: 'So sánh mặt khác', any: ['语言', '普通话', '吃', '米饭', '面', '习惯'] }
+      ],
+      bonus: { label: 'Dùng 究竟 nêu điều khó kết luận', any: ['究竟'] },
+      vocab: ['普通话', '究竟', '对话'],
+      minLen: 22,
+      sample: '南北的气候有很大区别，北方冬天下雪，南方却比较暖和。语言也不同，有的地方话听起来就像外语一样，所以大家用普通话对话更方便。究竟哪边更好，我也说不清楚。',
+      sample_py: 'Nán běi de qìhòu yǒu hěn dà qūbié, běifāng dōng tiān xià xuě, nánfāng què bǐjiào nuǎnhuo. Yǔyán yě bù tóng, yǒude dìfang huà tīng qǐlai jiù xiàng wài yǔ yí yàng, suǒyǐ dàjiā yòng pǔtōnghuà duìhuà gèng fāngbiàn. Jiūjìng nǎ bian gèng hǎo, wǒ yě shuō bù qīngchu.',
+      sample_vn: 'Khí hậu Nam Bắc khác nhau nhiều, mùa đông miền Bắc có tuyết, còn miền Nam lại khá ấm. Ngôn ngữ cũng khác, tiếng vài nơi nghe như ngoại ngữ, nên mọi người nói chuyện bằng tiếng phổ thông sẽ tiện hơn. Rốt cuộc bên nào hơn thì tôi cũng không nói rõ được.',
+      tip: '究竟 dùng trong câu hỏi nhấn mạnh: 你究竟想说什么？'
+    },
+    {
+      situation: 'Bạn dẫn khách nước ngoài đi ăn món quê mình.',
+      q_zh: '你喜欢吃辣的吗？你们国家的菜有什么特点？',
+      q_py: 'Nǐ xǐhuan chī là de ma? Nǐmen guójiā de cài yǒu shénme tèdiǎn?',
+      q_vn: 'Bạn thích ăn cay không? Món ăn nước bạn có đặc điểm gì?',
+      grammar: { label: '一……就……; 又……又……', any: ['一', '就', '又'] },
+      need: [
+        { label: 'Nói khẩu vị của bạn', any: ['辣', '不辣', '喜欢', '能吃', '不太'] },
+        { label: 'Tả đặc điểm món ăn', any: ['酸', '香', '甜', '咸', '汤', '小吃', '特点'] }
+      ],
+      bonus: { label: 'Kể tên một món cụ thể', any: ['汤', '米饭', '面', '鱼', '烤鸭', '春卷'] },
+      vocab: ['辣', '酸', '香', '汤'],
+      minLen: 22,
+      sample: '我不太能吃辣，一吃辣就咳嗽。我们国家菜的特点是又酸又香，特别是汤，味道很鲜。街上的小吃也很有名，来了一定要尝尝。',
+      sample_py: 'Wǒ bú tài néng chī là, yì chī là jiù késou. Wǒmen guójiā cài de tèdiǎn shì yòu suān yòu xiāng, tèbié shì tāng, wèidào hěn xiān. Jiē shàng de xiǎochī yě hěn yǒumíng, lái le yí dìng yào chángchang.',
+      sample_vn: 'Tôi không ăn cay được mấy, cứ ăn cay là ho. Đặc điểm món ăn nước tôi là vừa chua vừa thơm, nhất là canh, vị rất ngọt thanh. Món ăn vặt ngoài phố cũng rất nổi tiếng, đến thì nhất định phải thử.',
+      tip: '一……就…… còn dùng cho phản ứng ngay: 一累就想睡觉。'
+    },
+    {
+      situation: 'Tối nay bạn phải bay sớm ngày mai.',
+      q_zh: '去机场或者出发旅行前，你一般会做哪些准备？',
+      q_py: 'Qù jīchǎng huòzhě chūfā lǚxíng qián, nǐ yìbān huì zuò nǎxiē zhǔnbèi?',
+      q_vn: 'Trước khi ra sân bay hay lên đường, bạn thường chuẩn bị gì?',
+      grammar: { label: '先……然后……最后……; 千万别……', any: ['先', '然后', '最后', '千万'] },
+      need: [
+        { label: 'Kể việc chuẩn bị', any: ['收拾', '行李', '登机牌', '航班', '护照', '查'] },
+        { label: 'Nói thứ tự bằng 先/然后/最后', any: ['先', '然后', '最后'] }
+      ],
+      bonus: { label: 'Dùng 千万 nhắc điều dễ quên', any: ['千万'] },
+      vocab: ['收拾', '航班', '推迟', '出发'],
+      minLen: 22,
+      sample: '我会先收拾好行李，然后查一下航班有没有推迟，最后提前两个小时出发去机场。千万别忘了带护照和登机牌，否则什么都来不及。',
+      sample_py: 'Wǒ huì xiān shōushi hǎo xíng lǐ, ránhòu chá yíxià hángbān yǒu méiyǒu tuīchí, zuìhòu tíqián liǎng ge xiǎoshí chūfā qù jīchǎng. Qiānwàn bié wàng le dài hùzhào hé dēngjīpái, fǒuzé shénme dōu láibují.',
+      sample_vn: 'Tôi sẽ sắp xếp hành lý trước, rồi kiểm tra chuyến bay có bị hoãn không, cuối cùng xuất phát ra sân bay trước hai tiếng. Tuyệt đối đừng quên hộ chiếu và thẻ lên máy bay, nếu không thì chẳng kịp gì cả.',
+      tip: '推迟 = hoãn lại: 会议推迟到下午。'
+    }
   ]
 };
 

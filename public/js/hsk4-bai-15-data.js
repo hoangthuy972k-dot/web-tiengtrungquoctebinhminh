@@ -772,28 +772,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 15 (kết hợp ngữ pháp các bài trước) để nói về cách giáo dục con cái.',
-  questions:[
-    {q_zh:'你小时候做错了事，你的父母会批评你吗？为什么？',q_vn:'Hồi nhỏ làm sai, bố mẹ bạn có phê bình bạn không? Vì sao?',
-     hint:'想起来……；弄得……',
-     sample:'我想起来了，小时候我打坏了邻居的窗户，父亲批评了我一顿，弄得我一整天心情都不好。不过他也告诉我，做错事要诚实。',sample_vn:'Tôi nhớ ra rồi, hồi nhỏ tôi làm vỡ cửa sổ hàng xóm, bố phê bình một trận, khiến tôi cả ngày không vui. Nhưng bố cũng dạy tôi làm sai phải thành thật.',
-     note:'想起来/弄得 (bài mới) + 邻居 (Bài 7) + 诚实 (Bài 10).'},
-    {q_zh:'你的父母会在什么情况下表扬你？他们会用哪种方式表扬你？',q_vn:'Bố mẹ bạn khen bạn trong tình huống nào? Họ khen bằng cách nào?',
-     hint:'不仅……，而且……；千万……',
-     sample:'我考试取得好成绩时，父母不仅表扬我，而且会带我去餐厅吃饭。但是他们常说：千万别骄傲。',sample_vn:'Khi tôi thi được điểm tốt, bố mẹ không chỉ khen mà còn đưa đi nhà hàng ăn. Nhưng họ thường nói: tuyệt đối đừng kiêu ngạo.',
-     note:'千万 (bài mới) + 不仅……而且 (Bài 6) + 取得 (Bài 9) + 餐厅 (Bài 13).'},
-    {q_zh:'如果你有了孩子，你会怎么帮他养成好习惯？',q_vn:'Nếu có con, bạn sẽ giúp con hình thành thói quen tốt như thế nào?',
-     hint:'我来……；让他学会……',
-     sample:'我来给他定一个计划，让他学会管理时间，比如每天七点左右起床，自己整理房间，自己的事情自己做。',sample_vn:'Tôi sẽ lập kế hoạch cho con, để con học quản lý thời gian, ví dụ mỗi ngày dậy khoảng 7 giờ, tự dọn phòng, việc của mình tự làm.',
-     note:'来/左右/管理/整理 (bài mới) + 比如 (Bài 3).'},
-    {q_zh:'孩子怕打针、怕困难的时候，你会怎么鼓励他？',q_vn:'Khi trẻ sợ tiêm, sợ khó khăn, bạn khuyến khích trẻ thế nào?',
-     hint:'既然……，就……；一点儿也不……',
-     sample:'我会小声地说："你很勇敢，一点儿也不怕。"既然鼓励对孩子有用，我就不会用"笨"这种词批评他。',sample_vn:'Tôi sẽ khẽ nói: "Con rất dũng cảm, không sợ chút nào." Đã biết khuyến khích có ích với trẻ, tôi sẽ không dùng từ "ngốc" để phê bình.',
-     note:'既然……就 (Bài 14) + 勇敢 (Bài 9) + 一点儿也不 (Bài 6).'},
-    {q_zh:'你认为你的父母教育你的方式都正确吗？为什么？',q_vn:'Bạn cho rằng cách bố mẹ giáo dục bạn đều đúng không? Vì sao?',
-     hint:'并不……；对……来说……',
-     sample:'并不都正确。对我来说，他们有时太严格，总是替我做决定。不过我理解他们，因为父母都希望孩子优秀。',sample_vn:'Không phải đều đúng. Với tôi, họ đôi khi quá nghiêm khắc, luôn quyết định thay tôi. Nhưng tôi hiểu, vì cha mẹ nào cũng mong con xuất sắc.',
-     note:'并不 (Bài 4) + 对……来说 (Bài 5) + 严格 (Bài 12) + 优秀 (Bài 10).'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 15. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn kể một kỷ niệm bị bố mẹ mắng hồi nhỏ.',
+      q_zh: '你小时候做错了事，你的父母会批评你吗？为什么？',
+      q_py: 'Nǐ xiǎoshí hòu zuò cuò le shì, nǐ de fù mǔ huì pīpíng nǐ ma? Wèishénme?',
+      q_vn: 'Hồi nhỏ làm sai, bố mẹ bạn có phê bình bạn không? Vì sao?',
+      grammar: { label: '批评 + người; 弄得…… (khiến cho…)', any: ['批评', '弄得'] },
+      need: [
+        { label: 'Kể việc làm sai', any: ['打坏', '弄坏', '考试', '迟到', '骗', '窗户', '作业'] },
+        { label: 'Nói phản ứng của bố mẹ', any: ['批评', '生气', '说', '教育', '父亲', '母亲'] }
+      ],
+      bonus: { label: 'Nói bài học rút ra', any: ['诚实', '以后', '明白', '道理'] },
+      vocab: ['批评', '弄', '父亲'],
+      minLen: 22,
+      sample: '会。小时候我打坏了邻居的窗户，父亲批评了我一顿，弄得我一整天心情都不好。不过他也告诉我，做错事要诚实，这句话我记到现在。',
+      sample_py: 'Huì. Xiǎoshí hòu wǒ dǎ huài le línjū de chuānghu, fùqīn pīpíng le wǒ yí dùn, nòng děi wǒ yì zhěng tiān xīnqíng dōu bù hǎo. Búguò tā yě gàosu wǒ, zuò cuò shì yào chéngshí, zhè jù huà wǒ jì dào xiànzài.',
+      sample_vn: 'Có. Hồi nhỏ tôi làm vỡ cửa sổ nhà hàng xóm, bố mắng tôi một trận, làm tôi buồn cả ngày. Nhưng bố cũng dạy tôi làm sai thì phải thành thật, câu đó tôi nhớ đến giờ.',
+      tip: '弄 thay cho nhiều động từ cụ thể: 弄坏、弄脏、弄丢。'
+    },
+    {
+      situation: 'Bạn vừa được điểm cao và về khoe gia đình.',
+      q_zh: '你的父母会在什么情况下表扬你？他们会用哪种方式表扬你？',
+      q_py: 'Nǐ de fù mǔ huì zài shénme qíngkuàng xià biǎoyáng nǐ? Tāmen huì yòng nǎ zhǒng fāngshì biǎoyáng nǐ?',
+      q_vn: 'Bố mẹ khen bạn trong hoàn cảnh nào? Họ khen bằng cách nào?',
+      grammar: { label: '不仅……而且……; 千万别…… (nhất định đừng…)', any: ['不仅', '千万'] },
+      need: [
+        { label: 'Nói dịp được khen', any: ['成绩', '考试', '帮', '工作', '努力', '进步'] },
+        { label: 'Nói cách khen', any: ['表扬', '带我', '礼物', '说', '高兴', '饭'] }
+      ],
+      bonus: { label: 'Dùng 千万 nói lời dặn', any: ['千万'] },
+      vocab: ['表扬', '千万', '骄傲'],
+      minLen: 22,
+      sample: '我考试取得好成绩的时候，父母不仅会表扬我，而且会带我去餐厅吃一顿好的。不过他们常说：千万别骄傲，下次还要努力。',
+      sample_py: 'Wǒ kǎoshì qǔ děi hǎo chéngjì de shíhou, fù mǔ bùjǐn huì biǎoyáng wǒ, ér qiě huì dài wǒ qù cāntīng chī yí dùn hǎo de. Búguò tāmen cháng shuō: qiānwàn bié jiāo\'ào, xià cì hái yào nǔlì.',
+      sample_vn: 'Khi tôi đạt điểm tốt, bố mẹ không những khen mà còn dẫn tôi ra nhà hàng ăn một bữa ngon. Nhưng họ hay dặn: tuyệt đối đừng kiêu, lần sau vẫn phải cố gắng.',
+      tip: '千万 + 别/不要: 千万别忘了带护照。'
+    },
+    {
+      situation: 'Bạn bè có con nhỏ và đang hỏi kinh nghiệm nuôi dạy.',
+      q_zh: '如果你有了孩子，你会怎么帮他养成好习惯？',
+      q_py: 'Rúguǒ nǐ yǒu le háizi, nǐ huì zěnme bāng tā yǎngchéng hǎo xíguàn?',
+      q_vn: 'Nếu có con, bạn sẽ giúp con hình thành thói quen tốt thế nào?',
+      grammar: { label: '让 + người + 学会……; ……左右 (khoảng)', any: ['让', '左右'] },
+      need: [
+        { label: 'Nói cách rèn nền nếp', any: ['计划', '时间', '起床', '整理', '自己', '管理'] },
+        { label: 'Nói thói quen cụ thể', any: ['七点', '房间', '作业', '睡觉', '看书'] }
+      ],
+      bonus: { label: 'Dùng 左右 nói giờ giấc ước chừng', any: ['左右'] },
+      vocab: ['管理', '整理', '左右'],
+      minLen: 22,
+      sample: '我会给他定一个简单的计划，让他学会管理自己的时间。比如每天七点左右起床，自己整理房间，自己的事情自己做，做好了就表扬他。',
+      sample_py: 'Wǒ huì gěi tā dìng yí ge jiǎndān de jìhuà, ràng tā xué huì guǎnlǐ zìjǐ de shíjiān. Bǐrú měitiān qī diǎn zuǒyòu qǐchuáng, zìjǐ zhěnglǐ fángjiān, zìjǐ de shìqing zìjǐ zuò, zuò hǎo le jiù biǎoyáng tā.',
+      sample_vn: 'Tôi sẽ lập cho con một kế hoạch đơn giản, để con học cách quản lý thời gian. Ví dụ mỗi ngày dậy khoảng 7 giờ, tự dọn phòng, việc của mình tự làm, làm tốt thì khen con.',
+      tip: '……左右 = khoảng chừng: 三十岁左右、一个小时左右。'
+    },
+    {
+      situation: 'Cháu nhỏ của bạn sợ đi tiêm và khóc.',
+      q_zh: '孩子怕打针、怕困难的时候，你会怎么鼓励他？',
+      q_py: 'Háizi pà dǎzhēn, pà kùnnan de shíhou, nǐ huì zěnme gǔlì tā?',
+      q_vn: 'Khi trẻ sợ tiêm, sợ khó khăn, bạn sẽ động viên thế nào?',
+      grammar: { label: '既然……就…… + 千万别用 “笨” 这样的词', any: ['既然', '鼓励'] },
+      need: [
+        { label: 'Nói lời động viên cụ thể', any: ['勇敢', '不怕', '很棒', '可以的', '加油'] },
+        { label: 'Nói điều nên tránh', any: ['笨', '批评', '骂', '别说', '不会说'] }
+      ],
+      bonus: { label: 'Dùng 鼓励 nói phương pháp', any: ['鼓励', '表扬'] },
+      vocab: ['鼓励', '打针', '笨'],
+      minLen: 22,
+      sample: '我会小声地跟他说：“你很勇敢，一点儿也不怕。”既然鼓励对孩子有用，我就不会用“笨”这样的词批评他，打针以后还会表扬他。',
+      sample_py: 'Wǒ huì xiǎo shēng de gēn tā shuō: "nǐ hěn yǒnggǎn, yìdiǎnr yě ér yě." Jìrán gǔlì duì háizi yǒu yòng, wǒ jiù yòng huì yòng "bèn" zhè huì de “ pīpíng tā, dǎzhēn yǐhòu hái huì biǎoyáng tā.',
+      sample_vn: 'Tôi sẽ nói nhỏ với bé: "Con dũng cảm lắm, chẳng sợ gì đâu." Đã biết động viên có tác dụng với trẻ thì tôi sẽ không dùng từ "ngốc" để mắng, tiêm xong còn khen bé.',
+      tip: 'Khen trẻ nên khen hành động cụ thể: 你今天自己整理房间，真棒！'
+    },
+    {
+      situation: 'Bạn và bạn bè nói về cách bố mẹ dạy con.',
+      q_zh: '你认为你的父母教育你的方式都正确吗？为什么？',
+      q_py: 'Nǐ rènwéi nǐ de fù mǔ jiàoyù nǐ de fāngshì dōu zhèngquè ma? Wèishénme?',
+      q_vn: 'Bạn cho rằng cách bố mẹ giáo dục bạn đều đúng không? Vì sao?',
+      grammar: { label: '并不都……; 不过…… (nhưng)', any: ['并不', '不过'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['正确', '并不', '不都', '对'] },
+        { label: 'Nêu ví dụ cụ thể', any: ['严格', '决定', '比较', '批评', '自由', '意见'] }
+      ],
+      bonus: { label: 'Bày tỏ sự thông cảm với bố mẹ', any: ['理解', '希望', '为了', '优秀'] },
+      vocab: ['教育', '合适', '怀疑'],
+      minLen: 22,
+      sample: '并不都正确。对我来说，他们有时候太严格，总是替我做决定，我也怀疑过这样合适不合适。不过我理解他们，因为父母都希望孩子优秀。',
+      sample_py: 'Bìng bù dōu zhèngquè. Duì wǒ lái shuō, tāmen yǒu shíhou tài yángé, zǒngshì tì wǒ zuò juédìng, wǒ yě huáiyí guo zhè yàng héshì bù héshì. Búguò wǒ lǐjiě tāmen, yīnwèi fù mǔ dōu xīwàng háizi yōuxiù.',
+      sample_vn: 'Không phải đều đúng. Với tôi, đôi khi bố mẹ quá nghiêm, luôn quyết định thay tôi, tôi cũng từng nghi ngờ như vậy có hợp không. Nhưng tôi hiểu họ, vì cha mẹ nào cũng mong con giỏi giang.',
+      tip: '并不都 = không phải tất cả đều: 这些说法并不都对。'
+    }
   ]
 };
 

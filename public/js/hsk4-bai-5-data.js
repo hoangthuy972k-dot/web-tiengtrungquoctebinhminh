@@ -837,28 +837,99 @@ var errorFixData = [
 ];
 
 var speakingData = {
-  intro:'Hãy dùng từ vựng và ngữ pháp của Bài 5 để trả lời các câu hỏi sau về mua sắm và tiêu dùng.',
-  questions:[
-    {q_zh:'你买东西的标准是什么？价格重要还是质量重要？',q_vn:'Tiêu chuẩn mua đồ của bạn là gì? Giá cả quan trọng hơn hay chất lượng quan trọng hơn?',
-     hint:'标准是……对我来说……',
-     sample:'我买东西的标准是质量要好，对我来说，价格并不是最重要的。',sample_vn:'Tiêu chuẩn mua đồ của tôi là chất lượng phải tốt, đối với tôi, giá cả không phải là quan trọng nhất.',
-     note:'对……来说 ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'你觉得可以完全相信广告吗？为什么？',q_vn:'Bạn thấy có thể hoàn toàn tin vào quảng cáo không? Vì sao?',
-     hint:'实际上……并不像……那么……',
-     sample:'不可以，广告只会介绍优点，实际上很多东西并不像广告上说的那么好。',sample_vn:'Không thể, quảng cáo chỉ giới thiệu ưu điểm, thực tế thì rất nhiều thứ không được như quảng cáo nói.',
-     note:'实际上……并不像……那么…… ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'你喜欢网上购物还是去商店买东西？为什么？',q_vn:'Bạn thích mua sắm trên mạng hay ra cửa hàng mua đồ? Vì sao?',
-     hint:'尤其是……方便',
-     sample:'我更喜欢网上购物，尤其是买书的时候，网上又便宜又方便。',sample_vn:'Tôi thích mua sắm trên mạng hơn, đặc biệt là khi mua sách, trên mạng vừa rẻ vừa tiện lợi.',
-     note:'尤其是 ôn lại điểm ngữ pháp của bài.'},
-    {q_zh:'如果一件衣服很流行但不适合你，你会买吗？',q_vn:'Nếu một chiếc áo rất thịnh hành nhưng không phù hợp với bạn, bạn có mua không?',
-     hint:'即使……也是浪费',
-     sample:'我不会买，因为如果不适合自己，即使很流行，也是一种浪费。',sample_vn:'Tôi sẽ không mua, vì nếu không phù hợp với bản thân, dù rất thịnh hành, cũng là một sự lãng phí.',
-     note:'即使……也是浪费 ôn lại từ vựng của bài.'},
-    {q_zh:'你有没有邀请朋友来家里做客的经历？你会准备什么礼物？',q_vn:'Bạn đã từng mời bạn bè đến nhà chơi chưa? Bạn sẽ chuẩn bị quà gì?',
-     hint:'邀请……做客',
-     sample:'有，我邀请过朋友来家里做客，我会给他们准备一些葡萄酒和水果。',sample_vn:'Có, tôi từng mời bạn bè đến nhà chơi, tôi sẽ chuẩn bị cho họ ít rượu vang và trái cây.',
-     note:'邀请……做客 ôn lại từ vựng của bài.'},
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 5. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn và bạn bè đang chọn đồ trong trung tâm thương mại.',
+      q_zh: '你买东西的标准是什么？价格重要还是质量重要？',
+      q_py: 'Nǐ mǎi dōngxi de biāozhǔn shì shénme? Jiàgé zhòngyào háishi zhìliàng zhòngyào?',
+      q_vn: 'Tiêu chuẩn mua đồ của bạn là gì? Giá cả quan trọng hay chất lượng quan trọng?',
+      grammar: { label: '对……来说 (đối với ai đó mà nói)', any: ['对我来说', '来说'] },
+      need: [
+        { label: 'Nói tiêu chuẩn của bạn', any: ['标准', '质量', '价格', '样子', '实用'] },
+        { label: 'Dùng 对……来说', any: ['来说'] }
+      ],
+      bonus: { label: 'Nhắc đến giảm giá bằng 打折', any: ['打折', '便宜'] },
+      vocab: ['标准', '价格', '质量'],
+      minLen: 22,
+      sample: '我买东西的标准是质量要好。对我来说，价格并不是最重要的，如果质量好，我愿意多花一点儿钱。',
+      sample_py: 'Wǒ mǎi dōngxi de biāozhǔn shì zhìliàng yào hǎo. Duì wǒ lái shuō, jiàgé bìng bú shì zuì zhòngyào de, rúguǒ zhìliàng hǎo, wǒ yuànyì duō huā yìdiǎnr qián.',
+      sample_vn: 'Tiêu chuẩn mua đồ của tôi là chất lượng phải tốt. Với tôi, giá cả không phải quan trọng nhất, nếu chất lượng tốt tôi sẵn sàng chi thêm.',
+      tip: '对……来说 nêu góc nhìn: 对学生来说，时间很重要。'
+    },
+    {
+      situation: 'Trên tivi vừa chiếu một quảng cáo rất hấp dẫn.',
+      q_zh: '你觉得可以完全相信广告吗？为什么？',
+      q_py: 'Nǐ juéde kěyǐ wánquán xiāngxìn guǎnggào ma? Wèishénme?',
+      q_vn: 'Bạn thấy có thể tin hoàn toàn vào quảng cáo không? Vì sao?',
+      grammar: { label: '实际上……并不像……那么……', any: ['实际', '并不'] },
+      need: [
+        { label: 'Nêu quan điểm', any: ['不可以', '不能', '可以', '相信'] },
+        { label: 'Nêu lý do', any: ['优点', '广告', '实际', '并不', '效果'] }
+      ],
+      bonus: { label: 'Nhắc đến ưu điểm bằng 优点', any: ['优点'] },
+      vocab: ['广告', '实际', '优点'],
+      minLen: 22,
+      sample: '不可以。广告一般只介绍优点，实际上很多东西并不像广告上说的那么好，所以还要自己考虑清楚。',
+      sample_py: 'Bù kěyǐ. Guǎnggào yìbān zhī jièshào yōudiǎn, shíjì shàng hěn duō dōngxi bìng bú xiàng guǎnggào shàng shuō de nàme hǎo, suǒyǐ hái yào zìjǐ kǎolǜ qīngchu.',
+      sample_vn: 'Không nên. Quảng cáo thường chỉ giới thiệu ưu điểm, thực tế nhiều thứ không tốt như quảng cáo nói, nên vẫn phải tự cân nhắc kỹ.',
+      tip: '并不 + tính từ/động từ là phủ định nhấn mạnh: 我并不喜欢。'
+    },
+    {
+      situation: 'Bạn cần mua sách và vài món đồ dùng trong tuần này.',
+      q_zh: '你喜欢网上购物还是去商店买东西？为什么？',
+      q_py: 'Nǐ xǐhuan wǎng shàng gòuwù háishi qù shāngdiàn mǎi dōngxi? Wèishénme?',
+      q_vn: 'Bạn thích mua sắm trên mạng hay ra cửa hàng? Vì sao?',
+      grammar: { label: '尤其是…… (nhất là…)', any: ['尤其'] },
+      need: [
+        { label: 'Chọn một cách mua', any: ['网上', '购物', '商店', '超市'] },
+        { label: 'Nêu lý do', any: ['方便', '便宜', '快', '可以试', '质量', '看得见'] }
+      ],
+      bonus: { label: 'Dùng 尤其是 nêu trường hợp tiêu biểu', any: ['尤其'] },
+      vocab: ['购物', '尤其', '价格'],
+      minLen: 22,
+      sample: '我更喜欢网上购物，尤其是买书的时候，网上的价格又便宜又方便。不过买衣服我还是想去商店试一试。',
+      sample_py: 'Wǒ gèng xǐhuan wǎng shàng gòuwù, yóuqí shì mǎi shū de shíhou, wǎng shàng de jiàgé yòu piányi yòu fāngbiàn. Búguò mǎi yīfu wǒ háishi xiǎng qù shāngdiàn shì yi shì.',
+      sample_vn: 'Tôi thích mua trên mạng hơn, nhất là khi mua sách, giá trên mạng vừa rẻ vừa tiện. Nhưng mua quần áo thì tôi vẫn muốn ra cửa hàng thử.',
+      tip: '尤其 thường đi với 是: 我喜欢运动，尤其是游泳。'
+    },
+    {
+      situation: 'Bạn thử một chiếc áo đang rất mốt nhưng không hợp dáng.',
+      q_zh: '如果一件衣服很流行但不适合你，你会买吗？',
+      q_py: 'Rúguǒ yí jiàn yīfu hěn liúxíng dàn bú shìhé nǐ, nǐ huì mǎi ma?',
+      q_vn: 'Nếu một chiếc áo rất mốt nhưng không hợp với bạn, bạn có mua không?',
+      grammar: { label: '即使……，也是一种浪费', any: ['即使', '浪费'] },
+      need: [
+        { label: 'Trả lời mua hay không', any: ['会买', '不会', '不买'] },
+        { label: 'Nêu lý do', any: ['适合', '流行', '浪费', '样子', '标准'] }
+      ],
+      bonus: { label: 'Dùng 即使……也……', any: ['即使'] },
+      vocab: ['流行', '浪费', '样子'],
+      minLen: 22,
+      sample: '我不会买。如果样子不适合自己，即使很流行，买回来也很少穿，那就是一种浪费。',
+      sample_py: 'Wǒ bú huì mǎi. Rúguǒ yàngzi bú shìhé zìjǐ, jíshǐ hěn liúxíng, mǎi huílai yě hěn shǎo chuān, nà jiù shì yì zhǒng làngfèi.',
+      sample_vn: 'Tôi sẽ không mua. Nếu kiểu dáng không hợp mình, dù có mốt đến mấy, mua về cũng ít mặc, như vậy là lãng phí.',
+      tip: '浪费 đi với 时间、钱、水: 别浪费时间。'
+    },
+    {
+      situation: 'Bạn được mời đến nhà đồng nghiệp ăn cơm cuối tuần.',
+      q_zh: '你有没有邀请朋友来家里做客的经历？你会准备什么？',
+      q_py: 'Nǐ yǒu méiyǒu yāoqǐng péngyou lái jiā lǐ zuò kè de jīnglì? Nǐ huì zhǔnbèi shénme?',
+      q_vn: 'Bạn từng mời bạn bè đến nhà chơi chưa? Bạn sẽ chuẩn bị gì?',
+      grammar: { label: '邀请 + người + 来/去 + làm gì', any: ['邀请'] },
+      need: [
+        { label: 'Dùng 邀请', any: ['邀请', '请'] },
+        { label: 'Kể việc chuẩn bị', any: ['做饭', '水果', '葡萄', '茶', '打扫', '买'] }
+      ],
+      bonus: { label: 'Nhắc đến món ăn hoặc mùi vị bằng 味道', any: ['味道', '好吃'] },
+      vocab: ['邀请', '葡萄', '味道'],
+      minLen: 22,
+      sample: '有，我邀请过同事来家里做客。我会提前打扫房间，做几个拿手菜，再准备一些葡萄和茶，大家都说味道不错。',
+      sample_py: 'Yǒu, wǒ yāoqǐng guo tóngshì lái jiā lǐ zuò kè. Wǒ huì tíqián dǎsǎo fángjiān, zuò jǐ ge ná shǒu cài, zài zhǔnbèi yì xiē pútao hé chá, dàjiā dōu shuō wèidào bú cuò.',
+      sample_vn: 'Có, tôi từng mời đồng nghiệp đến nhà chơi. Tôi dọn nhà trước, nấu vài món tủ, chuẩn bị thêm ít nho và trà, mọi người đều khen ngon.',
+      tip: '邀请 trang trọng hơn 请: 我们邀请您参加聚会。'
+    }
   ]
 };
 

@@ -563,33 +563,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小明要去哪儿？他请同学帮忙做什么？',
-     q_vn:'Tiểu Minh định đi đâu? Cậu ấy nhờ bạn học giúp gì?',
-     hint:'去图书馆借书，请同学把词典还了和把灯关了',
-     sample:'小明要去图书馆借书，他请同学帮他把词典还了，还让同学离开教室时把灯关了。',
-     sample_vn:'Tiểu Minh định đi thư viện mượn sách, cậu ấy nhờ bạn học giúp trả quyển từ điển, còn bảo bạn học tắt đèn khi rời khỏi lớp.',
-     note:'把字句 diễn tả sự sắp đặt/xử lý đối với sự vật xác định (điểm ngữ pháp bài này).'},
-    {q_zh:'周明提醒小丽什么事？王经理什么时候来的电话？',
-     q_vn:'Chu Minh nhắc Tiểu Lệ việc gì? Giám đốc Vương gọi điện lúc mấy giờ?',
-     hint:'会议结束后把空调关了，两点左右',
-     sample:'周明提醒小丽会议结束后要把空调关了，王经理两点左右来了个电话。',
-     sample_vn:'Chu Minh nhắc Tiểu Lệ sau khi họp xong phải tắt máy điều hòa, giám đốc Vương lúc 2 giờ có gọi điện đến.',
-     note:'两点左右 = số ước lượng (điểm ngữ pháp bài này).'},
-    {q_zh:'今天是什么日子？儿子记得吗？',
-     q_vn:'Hôm nay là ngày gì? Con trai có nhớ không?',
-     hint:'爸爸的生日，儿子忘了',
-     sample:'今天是爸爸的生日，但是儿子把爸爸的生日忘了。',
-     sample_vn:'Hôm nay là sinh nhật bố, nhưng con trai đã quên mất sinh nhật bố rồi.',
-     note:'把字句 diễn tả sự việc bị xử lý/quên (把生日忘了).'},
-    {q_zh:'这个人的电脑是什么时候买的？现在他习惯用电脑做什么？',
-     q_vn:'Máy tính của người này mua khi nào? Bây giờ anh ấy quen dùng máy tính làm gì?',
-     hint:'去年买的，看电子邮件、学习和工作',
-     sample:'这个笔记本电脑是他去年买的，现在他每天打开电脑看电子邮件，已经习惯用电脑来学习和工作了。',
-     sample_vn:'Chiếc máy tính xách tay này anh ấy mua năm ngoái, bây giờ mỗi ngày anh ấy mở máy tính xem email, đã quen dùng máy tính để học tập và làm việc rồi.',
-     note:'习惯 + V diễn tả thói quen.'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 11. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn là người cuối cùng rời khỏi phòng làm việc buổi tối.',
+      q_zh: '出门以前，你会把灯和空调怎么样？',
+      q_py: 'Chū mén yǐqián, nǐ huì bǎ dēng hé kōngtiáo zěnmeyàng?',
+      q_vn: 'Trước khi ra khỏi phòng, bạn sẽ xử lý đèn và điều hòa thế nào?',
+      grammar: { label: 'Câu chữ 把: A 把 B + động từ + …', any: ['把'] },
+      need: [
+        { label: 'Dùng câu chữ 把', any: ['把'] },
+        { label: 'Nói tắt đèn, tắt điều hòa', any: ['关', '灯', '空调'] }
+      ],
+      bonus: { label: 'Nói đó là thói quen của bạn bằng 习惯', any: ['习惯'] },
+      vocab: ['灯', '空调', '关', '习惯'],
+      minLen: 18,
+      sample: '出门以前我一定把灯关上，也把空调关了，这已经是我的习惯了。',
+      sample_py: 'Chū mén yǐqián wǒ yí dìng bǎ dēng guān shàng, yě bǎ kōngtiáo guān le, zhè yǐjīng shì wǒ de xíguàn le.',
+      sample_vn: 'Trước khi ra ngoài tôi nhất định tắt đèn, cũng tắt điều hòa, đây đã thành thói quen của tôi rồi.',
+      tip: 'Câu chữ 把 nhấn mạnh xử lý đồ vật: 把灯关上、把门关好。'
+    },
+    {
+      situation: 'Bạn ở thư viện trường và bạn cùng lớp hỏi bạn mượn sách gì.',
+      q_zh: '你在图书馆借过什么书？什么时候还？',
+      q_py: 'Nǐ zài túshūguǎn jiè guo shénme shū? Shénme shíhou hái?',
+      q_vn: 'Bạn từng mượn sách gì ở thư viện? Khi nào trả?',
+      grammar: { label: '把 + đồ vật + 还 + 回去/给…', any: ['把', '还'] },
+      need: [
+        { label: 'Nói mượn sách gì', any: ['借', '书', '词典', '图书馆'] },
+        { label: 'Nói khi nào trả', any: ['还', '星期', '天', '月', '昨天', '明天'] }
+      ],
+      bonus: { label: 'Nói bạn đọc trong bao lâu', any: ['看了', '读了', '个星期', '天'] },
+      vocab: ['图书馆', '借', '词典', '还'],
+      minLen: 20,
+      sample: '上个月我在图书馆借了一本汉语词典，看了两三个星期，昨天已经把它还回去了。',
+      sample_py: 'Shàng ge yuè wǒ zài túshūguǎn jiè le yì běn Hànyǔ cídiǎn, kàn le liǎng sān ge xīngqī, zuótiān yǐjīng bǎ tā hái huí qù le.',
+      sample_vn: 'Tháng trước tôi mượn một cuốn từ điển tiếng Hán ở thư viện, đọc hai ba tuần, hôm qua đã trả lại rồi.',
+      tip: '还 ở đây đọc là huán (trả lại), khác với 还 hái (còn, vẫn).'
+    },
+    {
+      situation: 'Đồng nghiệp mới hỏi bạn về lịch họp của công ty.',
+      q_zh: '你们公司的会议一般几点开始？几点结束？',
+      q_py: 'Nǐmen gōngsī de huìyì yìbān jǐ diǎn kāishǐ? Jǐ diǎn jiéshù?',
+      q_vn: 'Cuộc họp của công ty bạn thường mấy giờ bắt đầu? Mấy giờ kết thúc?',
+      grammar: { label: 'Số ước lượng với 左右 (九点左右)', any: ['左右'] },
+      need: [
+        { label: 'Nói giờ bắt đầu', any: ['点', '开始'] },
+        { label: 'Nói giờ kết thúc', any: ['结束', '点', '完'] }
+      ],
+      bonus: { label: 'Dùng 左右 để nói khoảng chừng', any: ['左右'] },
+      vocab: ['会议', '结束', '电子邮件'],
+      minLen: 20,
+      sample: '我们的会议一般九点左右开始，十点半左右结束。结束以后我就把会议的内容写成电子邮件发给同事。',
+      sample_py: 'Wǒmen de huìyì yìbān jiǔ diǎn zuǒyòu kāishǐ, shí diǎn bàn zuǒyòu jiéshù. Jiéshù yǐhòu wǒ jiù bǎ huìyì de nèiróng xiě chéng diànzǐyóujiàn fā gěi tóngshì.',
+      sample_vn: 'Cuộc họp của chúng tôi thường bắt đầu khoảng 9 giờ, kết thúc khoảng 10 rưỡi. Xong họp tôi viết nội dung thành email gửi cho đồng nghiệp.',
+      tip: '左右 đặt sau số lượng để chỉ khoảng chừng: 三十岁左右、十点左右。'
+    },
+    {
+      situation: 'Bạn kể một lần đãng trí đáng nhớ.',
+      q_zh: '你忘记过什么重要的东西吗？后来怎么办的？',
+      q_py: 'Nǐ wàngjì guo shénme zhòngyào de dōngxi ma? Hòulái zěnme bàn de?',
+      q_vn: 'Bạn từng quên thứ gì quan trọng chưa? Sau đó bạn xử lý thế nào?',
+      grammar: { label: '把 + đồ vật + 忘在 + nơi chốn', any: ['忘', '把'] },
+      need: [
+        { label: 'Nói quên đồ gì', any: ['忘记', '忘', '词典', '书', '手机', '钱', '包', '本子'] },
+        { label: 'Nói cách xử lý sau đó', any: ['回去', '再', '找', '老师', '同学', '打电话'] }
+      ],
+      bonus: { label: 'Nói bạn rút ra bài học gì', any: ['以后', '习惯', '注意', '每次'] },
+      vocab: ['忘记', '词典', '习惯'],
+      minLen: 20,
+      sample: '有一次我把词典忘在教室里了，第二天才发现。还好老师帮我拿到了办公室，以后我养成了走以前看一遍桌子的习惯。',
+      sample_py: 'Yǒu yí cì wǒ bǎ cídiǎn wàng zài jiàoshì lǐ le, dì èr tiān cái fāxiàn. Hái hǎo lǎoshī bāng wǒ ná dào le bàngōngshì, yǐhòu wǒ yǎngchéng le zǒu yǐqián kàn yí biàn zhuōzi de xíguàn.',
+      sample_vn: 'Có lần tôi để quên từ điển trong lớp, hôm sau mới phát hiện. May là thầy cầm về văn phòng giúp, từ đó tôi có thói quen nhìn lại bàn một lượt trước khi đi.',
+      tip: '把……忘在…… nói quên đồ ở đâu: 我把手机忘在车上了。'
+    },
+    {
+      situation: 'Bạn nước ngoài hỏi bạn đã quen dùng đũa chưa.',
+      q_zh: '你习惯用筷子吃饭吗？家里有几双？',
+      q_py: 'Nǐ xíguàn yòng kuàizi chīfàn ma? Jiā lǐ yǒu jǐ shuāng?',
+      q_vn: 'Bạn đã quen dùng đũa ăn cơm chưa? Ở nhà có mấy đôi?',
+      grammar: { label: '习惯 + động từ; lượng từ 双/瓶/口', any: ['习惯', '双', '瓶'] },
+      need: [
+        { label: 'Nói đã quen hay chưa', any: ['习惯', '不习惯', '已经'] },
+        { label: 'Dùng lượng từ 双 với đũa', any: ['双'] }
+      ],
+      bonus: { label: 'Nói thêm về đồ uống bằng 瓶 hoặc 口', any: ['瓶', '口', '啤酒'] },
+      vocab: ['习惯', '双', '筷子', '啤酒'],
+      minLen: 20,
+      sample: '我已经习惯用筷子了，家里有十几双筷子。吃面条儿的时候用筷子很方便，喝啤酒的时候我一口一口地慢慢喝。',
+      sample_py: 'Wǒ yǐjīng xíguàn yòng kuàizi le, jiā lǐ yǒu shí jǐ shuāng kuàizi. Chī miàntiáor de shíhou yòng kuàizi hěn fāngbiàn, hē píjiǔ de shíhou wǒ yì kǒu yi kǒu de mànmàn hē.',
+      sample_vn: 'Tôi đã quen dùng đũa rồi, ở nhà có hơn chục đôi đũa. Ăn mì dùng đũa rất tiện, uống bia thì tôi uống từng ngụm chậm rãi.',
+      tip: '双 dùng cho đồ có đôi: 一双筷子、一双鞋。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

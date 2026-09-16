@@ -453,33 +453,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'小丽身体怎么了？朋友为她买了什么？',
-     q_vn:'Tiểu Lệ bị làm sao? Bạn của cô ấy mua gì cho cô ấy?',
-     hint:'有点儿发烧，朋友为她买了绿茶',
-     sample:'小丽前几天有点儿发烧，朋友为她买了绿茶。',
-     sample_vn:'Tiểu Lệ mấy hôm trước hơi sốt, bạn mua cho cô ấy trà xanh.',
-     note:'为 + đối tượng diễn tả hành động vì ai đó.'},
-    {q_zh:'周太太为什么不能出去玩儿？',
-     q_vn:'Vì sao bà Chu không thể đi chơi?',
-     hint:'儿子生病了，要在家照顾他',
-     sample:'因为周太太的儿子生病了，她要在家照顾他。',
-     sample_vn:'Vì con trai bà Chu bị ốm, bà phải ở nhà chăm sóc cháu.',
-     note:'因为 giải thích lý do.'},
-    {q_zh:'小刚和小丽最喜欢哪个季节？为什么？',
-     q_vn:'Tiểu Cương và Tiểu Lệ thích mùa nào nhất? Vì sao?',
-     hint:'小刚喜欢春天，小丽喜欢夏天（因为可以穿裙子）',
-     sample:'小刚最喜欢春天，小丽最喜欢夏天，因为她可以穿漂亮的裙子了。',
-     sample_vn:'Tiểu Cương thích mùa xuân nhất, Tiểu Lệ thích mùa hè nhất, vì cô ấy có thể mặc váy đẹp.',
-     note:'因为 giải thích lý do lựa chọn.'},
-    {q_zh:'小丽最近怎么样？小刚怎么说？',
-     q_vn:'Dạo này Tiểu Lệ thế nào? Tiểu Cương nói sao?',
-     hint:'越来越胖了，小刚说她越来越漂亮',
-     sample:'小丽说她最近越来越胖了，但是小刚说她越来越漂亮了。',
-     sample_vn:'Tiểu Lệ nói dạo này cô ấy ngày càng béo lên, nhưng Tiểu Cương lại nói cô ấy ngày càng xinh hơn.',
-     note:'越来越 + tính từ diễn tả sự thay đổi theo thời gian (điểm ngữ pháp bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 5. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Bạn nghỉ ốm mấy hôm, đồng nghiệp gọi điện hỏi thăm.',
+      q_zh: '你最近身体怎么样？感冒过吗？那时候谁照顾你？',
+      q_py: 'Nǐ zuìjìn shēntǐ zěnmeyàng? Gǎnmào guo ma? Nà shíhou shéi zhàogù nǐ?',
+      q_vn: 'Dạo này sức khỏe bạn thế nào? Có bị cảm không? Lúc đó ai chăm sóc bạn?',
+      grammar: { label: '为 + người + làm gì / 照顾 + người', any: ['为', '照顾'] },
+      need: [
+        { label: 'Nói tình trạng sức khỏe', any: ['感冒', '发烧', '不舒服', '好', '健康'] },
+        { label: 'Nói ai chăm sóc và làm gì', any: ['照顾', '为', '买药', '做饭', '妈妈', '家里人', '朋友'] }
+      ],
+      bonus: { label: 'Nói bây giờ đã khỏi chưa bằng 了', any: ['现在', '好了', '已经'] },
+      vocab: ['感冒', '发烧', '照顾'],
+      minLen: 20,
+      sample: '我上个星期感冒了，还发烧了。家里人为我买了药，在家照顾了我两天，现在已经好了。',
+      sample_py: 'Wǒ shàng ge xīngqī gǎnmào le, hái fāshāo le. Jiā lǐ rén wèi wǒ mǎi le yào, zài jiā zhàogù le wǒ liǎng tiān, xiànzài yǐjīng hǎo le.',
+      sample_vn: 'Tuần trước tôi bị cảm, còn sốt nữa. Người nhà mua thuốc cho tôi, chăm tôi ở nhà hai hôm, giờ đã khỏi rồi.',
+      tip: '为 + người chỉ đối tượng mình làm việc gì đó vì họ: 妈妈为我做饭。'
+    },
+    {
+      situation: 'Bạn nhắn tin cho bạn bè kể về thời tiết chỗ mình.',
+      q_zh: '最近天气怎么样？跟上个月比有什么变化？',
+      q_py: 'Zuìjìn tiānqì zěnmeyàng? Gēn shàng ge yuè bǐ yǒu shénme biànhuà?',
+      q_vn: 'Dạo này thời tiết thế nào? So với tháng trước có thay đổi gì?',
+      grammar: { label: '越来越 + tính từ (ngày càng…)', any: ['越来越'] },
+      need: [
+        { label: 'Dùng 越来越 nói thay đổi', any: ['越来越'] },
+        { label: 'Nói về thời tiết hoặc cảnh vật', any: ['热', '冷', '暖和', '草', '花', '绿', '天气'] }
+      ],
+      bonus: { label: 'Nói việc bạn đã bắt đầu làm vì thời tiết đổi', any: ['裙子', '衣服', '空调', '游泳', '开始'] },
+      vocab: ['最近', '越', '草'],
+      minLen: 18,
+      sample: '最近天气越来越热了，草也越来越绿了。上个月我还穿着外套，现在已经开始穿裙子了。',
+      sample_py: 'Zuìjìn tiānqì yuè lái yuè rè le, cǎo yě yuè lái yuè lǜ le. Shàng ge yuè wǒ hái chuān zhe wài tào, xiànzài yǐjīng kāishǐ chuān qúnzi le.',
+      sample_vn: 'Dạo này trời ngày càng nóng, cỏ cũng ngày càng xanh. Tháng trước tôi còn mặc áo khoác, giờ đã bắt đầu mặc váy rồi.',
+      tip: '越来越 + tính từ chỉ mức độ tăng dần theo thời gian: 汉语越来越有意思。'
+    },
+    {
+      situation: 'Lớp học đang nói về bốn mùa trong năm.',
+      q_zh: '你最喜欢哪个季节？为什么？',
+      q_py: 'Nǐ zuì xǐhuan nǎge jìjié? Wèishénme?',
+      q_vn: 'Bạn thích mùa nào nhất? Vì sao?',
+      grammar: { label: '因为…… (nêu lý do) + 不……也不……', any: ['因为'] },
+      need: [
+        { label: 'Chọn một mùa', any: ['春', '夏', '秋', '冬', '季节'] },
+        { label: 'Nêu lý do', any: ['因为', '不冷', '不热', '花', '草', '舒服'] }
+      ],
+      bonus: { label: 'Kể việc bạn hay làm vào mùa đó', any: ['公园', '旅游', '爬山', '游泳', '走走', '照相'] },
+      vocab: ['季节', '春', '草'],
+      minLen: 20,
+      sample: '我最喜欢春天，因为春天不冷也不热，花开了，草也绿了，周末可以去公园走走。',
+      sample_py: 'Wǒ zuì xǐhuan chūn tiān, yīnwèi chūn tiān bù lěng yě bú rè, huā kāi le, cǎo yě lǜ le, zhōumò kěyǐ qù gōngyuán zǒuzou.',
+      sample_vn: 'Tôi thích mùa xuân nhất, vì mùa xuân không lạnh cũng không nóng, hoa nở, cỏ cũng xanh, cuối tuần có thể ra công viên dạo chơi.',
+      tip: '不……也不…… nói hai điều đều không: 不大也不小。'
+    },
+    {
+      situation: 'Người thân trong nhà bị ốm và bạn phải chăm sóc họ.',
+      q_zh: '家里人生病的时候，你会为他做什么？',
+      q_py: 'Jiā lǐ rén shēngbìng de shíhou, nǐ huì wèi tā zuò shénme?',
+      q_vn: 'Khi người nhà bị ốm, bạn sẽ làm gì cho họ?',
+      grammar: { label: '为 + người + động từ', any: ['为'] },
+      need: [
+        { label: 'Kể ít nhất hai việc bạn làm', any: ['做饭', '买药', '照顾', '看病', '打电话', '休息'] },
+        { label: 'Dùng 为 hoặc 给 chỉ đối tượng', any: ['为', '给'] }
+      ],
+      bonus: { label: 'Khuyên người bệnh nghỉ ngơi', any: ['好好', '休息', '别', '多喝水'] },
+      vocab: ['为', '照顾', '发烧'],
+      minLen: 20,
+      sample: '家里人生病的时候，我会为他做饭、买药，在家照顾他，让他好好休息，多喝水。',
+      sample_py: 'Jiā lǐ rén shēngbìng de shíhou, wǒ huì wèi tā zuòfàn, mǎi yào, zài jiā zhàogù tā, ràng tā hǎohāo xiūxi, duō hē shuǐ.',
+      sample_vn: 'Khi người nhà ốm, tôi sẽ nấu cơm, mua thuốc cho họ, ở nhà chăm sóc, để họ nghỉ ngơi cho tốt và uống nhiều nước.',
+      tip: 'Phân biệt 为 (vì ai đó) và 给 (đưa cho ai): 为你做饭、给你打电话。'
+    },
+    {
+      situation: 'Bạn nói chuyện với thầy cô về thói quen dùng điện thoại.',
+      q_zh: '你用手机做什么最多？最近有什么变化吗？',
+      q_py: 'Nǐ yòng shǒujī zuò shénme zuì duō? Zuìjìn yǒu shénme biànhuà ma?',
+      q_vn: 'Bạn dùng điện thoại làm gì nhiều nhất? Gần đây có thay đổi gì không?',
+      grammar: { label: '用 + công cụ + làm gì; 了 chỉ sự thay đổi', any: ['用'] },
+      need: [
+        { label: 'Dùng 用 nói công dụng', any: ['用'] },
+        { label: 'Kể việc cụ thể', any: ['听音乐', '看新闻', '学', '玩', '打电话', '看电影', '聊天'] }
+      ],
+      bonus: { label: 'Dùng 最近 hoặc 越来越 nói sự thay đổi', any: ['最近', '越来越'] },
+      vocab: ['用', '最近', '越'],
+      minLen: 18,
+      sample: '我用手机听音乐、看新闻最多。最近我还用手机学汉语，觉得越来越方便了。',
+      sample_py: 'Wǒ yòng shǒujī tīng yīnyuè, kàn xīnwén zuì duō. Zuìjìn wǒ hái yòng shǒujī xué Hànyǔ, juéde yuè lái yuè fāngbiàn le.',
+      sample_vn: 'Tôi dùng điện thoại để nghe nhạc, xem tin tức nhiều nhất. Gần đây tôi còn dùng điện thoại học tiếng Hán, thấy ngày càng tiện.',
+      tip: '用 + công cụ đứng trước động từ chính: 我用筷子吃饭。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

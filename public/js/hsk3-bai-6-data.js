@@ -478,33 +478,100 @@ var errorFixData = [
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Nhấn 🔊 để nghe câu hỏi, sau đó tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá. Ghi âm xong mới nên xem câu trả lời mẫu để đối chiếu.',
-  questions:[
-    {q_zh:'周明的眼镜怎么了？周太太怎么帮他？',
-     q_vn:'Kính của Chu Minh bị làm sao? Bà Chu giúp anh ấy thế nào?',
-     hint:'突然找不到了，周太太帮他去找找',
-     sample:'周明的眼镜突然找不到了，周太太帮他去找找。',
-     sample_vn:'Kính của Chu Minh đột nhiên không tìm thấy nữa, bà Chu giúp anh ấy đi tìm.',
-     note:'突然 diễn tả sự việc xảy ra bất ngờ.'},
-    {q_zh:'同学的作业怎么样？儿子怎么帮她？',
-     q_vn:'Bài tập của bạn học thế nào? Con trai giúp cô ấy ra sao?',
-     hint:'题特别难，看不懂，儿子说来我家给你讲讲',
-     sample:'同学的作业题特别难，她看不懂，儿子说让她来家里，他给她讲讲。',
-     sample_vn:'Bài tập của bạn học rất khó, cô ấy không hiểu, con trai bảo cô ấy đến nhà, anh sẽ giảng cho.',
-     note:'讲不明白 diễn tả không thể giải thích rõ.'},
-    {q_zh:'小刚为什么不能请小丽听音乐会？他们最后决定做什么？',
-     q_vn:'Vì sao Tiểu Cương không thể mời Tiểu Lệ nghe hòa nhạc? Cuối cùng họ quyết định làm gì?',
-     hint:'买不到票，最后决定去公园聊天儿',
-     sample:'因为音乐会买不到票，所以他们最后决定去公园聊聊天儿。',
-     sample_vn:'Vì không mua được vé nghe hòa nhạc nên cuối cùng họ quyết định đi công viên tán gẫu.',
-     note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-    {q_zh:'周明晚上为什么睡不着？周太太让他喝什么？',
-     q_vn:'Vì sao buổi tối Chu Minh ngủ không được? Bà Chu bảo anh uống gì?',
-     hint:'还喝了咖啡，周太太让他喝牛奶',
-     sample:'周明晚上睡不着觉，还喝咖啡，周太太让他喝杯牛奶，可以睡得更好些。',
-     sample_vn:'Buổi tối Chu Minh ngủ không được, còn uống cà phê, bà Chu bảo anh uống ly sữa, sẽ ngủ ngon hơn.',
-     note:'更 + tính từ diễn tả mức độ tăng thêm (điểm ngữ pháp bài này).'},
-  ],
+  mode: 'ai-speak',
+  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 6. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  tasks: [
+    {
+      situation: 'Sau tiết học, thầy hỏi bạn nghe giảng có hiểu không.',
+      q_zh: '老师讲的汉语你听得懂吗？哪儿还不太清楚？',
+      q_py: 'Lǎoshī jiǎng de Hànyǔ nǐ tīng děi dǒng ma? Nǎr hái bú tài qīngchu?',
+      q_vn: 'Tiếng Hán thầy giảng bạn nghe hiểu không? Chỗ nào còn chưa rõ lắm?',
+      grammar: { label: 'Bổ ngữ khả năng: V + 得/不 + bổ ngữ (听得懂 / 听不懂)', any: ['得懂', '不懂', '得清楚', '不清楚', '得明白', '不明白'] },
+      need: [
+        { label: 'Nói nghe hiểu được hay không', any: ['听得懂', '听不懂', '明白', '清楚'] },
+        { label: 'Nói chỗ còn khó', any: ['快', '词', '生词', '语法', '声调', '有些'] }
+      ],
+      bonus: { label: 'Nói cách bạn khắc phục', any: ['问', '复习', '练习', '再听', '录'] },
+      vocab: ['讲', '清楚', '明白'],
+      minLen: 20,
+      sample: '老师讲得很清楚，大部分我都听得懂。可是老师说得快的时候，有些词我还听不明白，下课以后我会再问一下。',
+      sample_py: 'Lǎoshī jiǎng děi hěn qīngchu, dà bùfen wǒ dōu tīng děi dǒng. Kěshì lǎoshī shuō děi kuài de shíhou, yǒuxiē cí wǒ hái tīng bù míngbai, xiàkè yǐhòu wǒ huì zài wèn yíxià.',
+      sample_vn: 'Thầy giảng rất rõ, phần lớn em nghe hiểu. Nhưng khi thầy nói nhanh, có vài từ em vẫn nghe không hiểu, tan học em sẽ hỏi lại.',
+      tip: 'Bổ ngữ khả năng: 听得懂 (nghe hiểu được) / 听不懂 (nghe không hiểu được).'
+    },
+    {
+      situation: 'Bạn tìm mãi không thấy kính của mình ở nhà.',
+      q_zh: '你找不到眼镜的时候，会怎么问家里人？',
+      q_py: 'Nǐ zhǎo bú dào yǎnjìng de shíhou, huì zěnme wèn jiā lǐ rén?',
+      q_vn: 'Khi không tìm thấy kính, bạn sẽ hỏi người nhà thế nào?',
+      grammar: { label: 'Danh từ + 呢？(hỏi vị trí)', any: ['呢'] },
+      need: [
+        { label: 'Hỏi đồ vật ở đâu', any: ['呢', '在哪儿', '哪儿'] },
+        { label: 'Kể lại lúc nãy để ở đâu', any: ['刚才', '放', '桌子', '包', '床'] }
+      ],
+      bonus: { label: 'Dùng 突然 để nói bỗng dưng không thấy', any: ['突然'] },
+      vocab: ['眼镜', '突然', '刚才'],
+      minLen: 18,
+      sample: '妈，我的眼镜呢？刚才我还放在桌子上，现在突然找不到了，您看见了吗？',
+      sample_py: 'Mā, wǒ de yǎnjìng ne? Gāngcái wǒ hái fàng zài zhuōzi shàng, xiànzài tūrán zhǎo bú dào le, nín kànjiàn le ma?',
+      sample_vn: 'Mẹ ơi, kính của con đâu? Lúc nãy con còn để trên bàn, giờ tự nhiên không thấy nữa, mẹ có thấy không?',
+      tip: '名词 + 呢？là cách hỏi ngắn về vị trí: 我的手机呢？'
+    },
+    {
+      situation: 'Bác sĩ khuyên bạn vận động nhiều hơn và hỏi thói quen của bạn.',
+      q_zh: '你平时在哪儿锻炼？一般锻炼多长时间？',
+      q_py: 'Nǐ píngshí zài nǎr duànliàn? Yìbān duànliàn duō zhǎng shíjiān?',
+      q_vn: 'Bình thường bạn tập ở đâu? Thường tập bao lâu?',
+      grammar: { label: 'Bổ ngữ thời lượng: V + 时间 (跑三十分钟)', any: ['分钟', '小时', '半'] },
+      need: [
+        { label: 'Nói nơi tập', any: ['公园', '家', '房间', '学校', '楼下', '健身'] },
+        { label: 'Nói thời gian tập', any: ['分钟', '小时', '半'] }
+      ],
+      bonus: { label: 'Nói cảm giác sau khi tập bằng 特别 / 更', any: ['特别', '更'] },
+      vocab: ['锻炼', '公园', '特别'],
+      minLen: 18,
+      sample: '我一般在家附近的公园锻炼，每天跑三十分钟。跑完以后觉得特别舒服，晚上也睡得更好。',
+      sample_py: 'Wǒ yìbān zài jiā fùjìn de gōngyuán duànliàn, měitiān pǎo sān shífēn zhōng. Pǎo wán yǐhòu juéde tèbié shūfu, wǎnshang yě shuì děi gèng hǎo.',
+      sample_vn: 'Tôi thường tập ở công viên gần nhà, mỗi ngày chạy 30 phút. Chạy xong thấy rất dễ chịu, buổi tối cũng ngủ ngon hơn.',
+      tip: 'Thời lượng đặt sau động từ: 跑三十分钟、学两个小时。'
+    },
+    {
+      situation: 'Bạn cùng phòng hỏi vì sao đêm qua bạn trằn trọc mãi.',
+      q_zh: '你晚上容易睡着吗？睡不着的时候你会做什么？',
+      q_py: 'Nǐ wǎnshang róngyì shuìzháo ma? Shuì bù zhe de shíhou nǐ huì zuò shénme?',
+      q_vn: 'Buổi tối bạn có dễ ngủ không? Lúc không ngủ được bạn làm gì?',
+      grammar: { label: '睡得着 / 睡不着 (bổ ngữ khả năng)', any: ['睡着', '睡得着', '睡不着'] },
+      need: [
+        { label: 'Nói dễ ngủ hay khó ngủ', any: ['睡着', '睡不着', '容易', '很快'] },
+        { label: 'Kể việc làm khi không ngủ được', any: ['音乐', '看书', '听', '喝', '走走'] }
+      ],
+      bonus: { label: 'Nói điều bạn tránh làm trước khi ngủ', any: ['手机', '咖啡', '不玩', '别'] },
+      vocab: ['睡着', '音乐', '更'],
+      minLen: 18,
+      sample: '我一般很快就睡着了。睡不着的时候，我会听听音乐或者看一会儿书，不玩儿手机，这样睡得更快。',
+      sample_py: 'Wǒ yìbān hěn kuài jiù shuìzháo le. Shuì bù zhe de shíhou, wǒ huì tīngting yīnyuè huòzhě kàn yíhuìr shū, bù wánr shǒujī, zhè yàng shuì děi gèng kuài.',
+      sample_vn: 'Tôi thường ngủ rất nhanh. Khi không ngủ được, tôi nghe nhạc hoặc đọc sách một lát, không nghịch điện thoại, như vậy ngủ nhanh hơn.',
+      tip: '睡着 (zháo) nghĩa là chìm vào giấc ngủ, khác với 睡觉 (đi ngủ).'
+    },
+    {
+      situation: 'Đồng nghiệp của bạn cần người phụ giúp chuyển nhà.',
+      q_zh: '同事需要帮忙的时候，你会怎么做？',
+      q_py: 'Tóngshì xūyào bāngmáng de shíhou, nǐ huì zěnme zuò?',
+      q_vn: 'Khi đồng nghiệp cần giúp đỡ, bạn sẽ làm gì?',
+      grammar: { label: '帮 + người + làm gì / 帮忙', any: ['帮忙', '帮'] },
+      need: [
+        { label: 'Nói có giúp hay không', any: ['帮忙', '帮', '一定'] },
+        { label: 'Kể một việc cụ thể đã giúp', any: ['搬', '打扫', '买', '做', '接', '送'] }
+      ],
+      bonus: { label: 'Kể chuyện trò sau khi giúp xong bằng 聊天儿', any: ['聊天'] },
+      vocab: ['帮忙', '聊天', '离开'],
+      minLen: 20,
+      sample: '同事要是有事，我一定帮忙。上个星期他搬家，我帮他搬了一下午，离开以前我们还一起聊天儿、喝了杯咖啡。',
+      sample_py: 'Tóngshì yàoshi yǒu shì, wǒ yí dìng bāngmáng. Shàng ge xīngqī tā bān jiā, wǒ bāng tā bān le yíxià wǔ, líkāi yǐqián wǒmen hái yìqǐ liáo tiān ér, hē le bēi kāfēi.',
+      sample_vn: 'Đồng nghiệp có việc thì tôi nhất định giúp. Tuần trước anh ấy chuyển nhà, tôi giúp cả buổi chiều, trước khi về chúng tôi còn trò chuyện, uống cà phê.',
+      tip: '帮忙 là từ ly hợp, không nói 帮忙他 mà nói 帮他的忙 hoặc 帮他。'
+    }
+  ]
 };
 
 // ══════════════════════════════════════════

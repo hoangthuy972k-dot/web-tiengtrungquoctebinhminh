@@ -1284,6 +1284,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-9.html'
+      },
+      {
+        id: 'hsk2v3-l10',
+        number: 10,
+        title: 'Sắp thi rồi',
+        titleHanzi: '就要考试了',
+        titlePinyin: 'Jiù yào kǎoshì le',
+        topic: 'Chuyện học hành, thi cử & câu hỏi lựa chọn',
+        vocabCount: 14,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-10.html'
       }
     ],
     yct: [

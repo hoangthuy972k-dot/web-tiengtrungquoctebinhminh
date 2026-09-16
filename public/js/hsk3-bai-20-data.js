@@ -337,9 +337,9 @@ var dialogData = [
    ]},
   {scene:'在教室 · Trong lớp học',
    preQuiz:[
-     {q:'朋友gần đây quan tâm gì?',opts:['thể thao (bóng đá)','âm nhạc','ẩm thực'],ans:0},
-     {q:'vì sao朋友thay đổi như vậy?',opts:['bị bạn trai ảnh hưởng','tự mình thích','vì công việc'],ans:0},
-     {q:'điều đó ảnh hưởng thế nào đến việc học?',opts:['thành tích tệ đi','thành tích tốt hơn','không thay đổi'],ans:0},
+     {q:'她最近关心什么？',opts:['体育，天天看足球比赛','音乐','做饭'],ans:0},
+     {q:'她为什么有这样的变化？',opts:['被男朋友影响的','自己一直喜欢','为了工作'],ans:0},
+     {q:'这对她的学习有什么影响？',opts:['成绩差极了','成绩更好了','没有影响'],ans:0},
    ],
    lines:[
      {sp:0,zh:'你怎么突然关心起体育来了？',py:'Nǐ zěnme tūrán guānxīn qǐ tǐyù lái le?',vn:'Sao đột nhiên bạn lại quan tâm đến thể thao vậy?'},
@@ -351,9 +351,9 @@ var dialogData = [
    ]},
   {scene:'在饭馆儿 · Ở quán ăn',
    preQuiz:[
-     {q:'大卫thường bị nhầm với ai?',opts:['anh trai','em trai','bạn học'],ans:0},
-     {q:'ai mới phân biệt được hai anh em?',opts:['bố mẹ và chính họ','giáo viên','bạn bè'],ans:0},
-     {q:'ngoài giống mặt, họ còn giống điểm gì?',opts:['sống cùng tòa nhà, cùng phòng','cùng sở thích','cùng công việc'],ans:0},
+     {q:'他常常被别人认错成谁？',opts:['他哥哥','他弟弟','他同学'],ans:0},
+     {q:'谁能分出来哪个是哥哥，哪个是弟弟？',opts:['他们的父母和他们自己','他们的老师','他们的朋友'],ans:0},
+     {q:'除了长得像，他们还有什么相同的地方？',opts:['住在同一个楼、同一个房间','爱好相同','工作相同'],ans:0},
    ],
    lines:[
      {sp:1,zh:'那个拿着碗吃饭的人是你哥哥吗？他和你长得真像。',py:'Nàge názhe wǎn chī fàn de rén shì nǐ gēge ma? Tā hé nǐ zhǎng de zhēn xiàng.',vn:'Người cầm bát ăn cơm đó là anh trai bạn à? Anh ấy trông giống bạn thật đấy.'},
@@ -363,11 +363,11 @@ var dialogData = [
      {sp:1,zh:'你们两个除了长得像，还有什么相同的地方？',py:'Nǐmen liǎng ge chúle zhǎng de xiàng, hái yǒu shénme xiāngtóng de dìfang?',vn:'Hai bạn ngoài giống nhau về ngoại hình, còn có điểm gì giống nhau nữa?'},
      {sp:0,zh:'我们住在同一个楼、同一个房间……',py:'Wǒmen zhù zài tóng yí ge lóu, tóng yí ge fángjiān……',vn:'Chúng tôi sống cùng một tòa nhà, cùng một phòng…'},
    ]},
-  {scene:'độc bạch · Tự thuật (triết lý giải quyết vấn đề)',
+  {scene:'独白 · Tự thuật (triết lý giải quyết vấn đề)',
    preQuiz:[
-     {q:'người trẻ gặp vấn đề khó thường thế nào?',opts:['lo lắng, không biết làm sao','bình tĩnh giải quyết','bỏ qua'],ans:0},
-     {q:'vấn đề nhìn khó nhưng làm thì thế nào?',opts:['có thể rất đơn giản','luôn khó','không thể giải quyết'],ans:0},
-     {q:'khi nào mới hiểu vấn đề khó đến đâu?',opts:['khi thực sự bắt tay vào làm','khi hỏi người khác','khi đọc sách'],ans:0},
+     {q:'年轻人遇到难题的时候常常怎么样？',opts:['很着急，不知道怎么办','很快就解决了','一点儿也不管'],ans:0},
+     {q:'有些问题看上去很难，做起来怎么样？',opts:['非常简单','更难了','解决不了'],ans:0},
+     {q:'什么时候才能了解问题有多难？',opts:['真正做事情的时候','问别人的时候','看书的时候'],ans:0},
    ],
    lines:[
      {sp:0,zh:'年轻人遇到难题，常常很着急，不知道怎么办。其实，不同的问题有不同的解决办法。',py:'Niánqīng rén yùdào nántí, chángcháng hěn zháojí, bù zhīdào zěnme bàn. Qíshí, bùtóng de wèntí yǒu bùtóng de jiějué bànfǎ.',vn:'Người trẻ gặp phải vấn đề khó, thường rất lo lắng, không biết làm sao. Thực ra, những vấn đề khác nhau có cách giải quyết khác nhau.'},

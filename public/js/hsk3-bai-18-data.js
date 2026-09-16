@@ -390,9 +390,9 @@ const wuData = [
 var dialogData = [
   {scene:'在打电话 · Nói chuyện qua điện thoại',
    preQuiz:[
-     {q:'朋友muốn làm gì?',opts:['mua nhà, mượn tiền','mua xe','du học'],ans:0},
-     {q:'còn thiếu bao nhiêu tiền?',opts:['5万块','1万块','10万块'],ans:0},
-     {q:'朋友định mua nhà ở đâu?',opts:['trước bệnh viện','gần trường học','trung tâm thành phố'],ans:0},
+     {q:'他打算做什么？',opts:['买房子，向老周借钱','买一辆车','出国旅游'],ans:0},
+     {q:'他还差多少钱？',opts:['5万块','1万块','10万块'],ans:0},
+     {q:'他打算在哪儿买房子？',opts:['医院前面','学校旁边','公司后面'],ans:0},
    ],
    lines:[
      {sp:0,zh:'老周，我打算买房子了，想向你借点儿钱。',py:'Lǎo Zhōu, wǒ dǎsuàn mǎi fángzi le, xiǎng xiàng nǐ jiè diǎnr qián.',vn:'Lão Chu ơi, tôi định mua nhà rồi, muốn mượn anh chút tiền.'},
@@ -404,9 +404,9 @@ var dialogData = [
    ]},
   {scene:'在商店 · Ở cửa hàng',
    preQuiz:[
-     {q:'小明muốn mua gì?',opts:['một con chó','một con mèo','một con chim'],ans:0},
-     {q:'mẹ lo lắng về điều gì?',opts:['ai sẽ chăm sóc nó','giá tiền','nơi để nuôi'],ans:0},
-     {q:'小明hứa gì?',opts:['chỉ cần mẹ mua, sẽ chăm nó tốt','sẽ tự kiếm tiền mua','sẽ nhờ bạn chăm'],ans:0},
+     {q:'小明想买什么？',opts:['一只狗','一只猫','一只鸟'],ans:0},
+     {q:'妈妈担心什么？',opts:['谁照顾它','太贵了','家里没地方'],ans:0},
+     {q:'小明说什么？',opts:['只要妈妈买，他就能照顾好','他自己挣钱买','让朋友帮他照顾'],ans:0},
    ],
    lines:[
      {sp:0,zh:'妈妈，你看那只狗多可爱，眼睛大大的，嘴小小的，我们买回去吧。',py:'Māma, nǐ kàn nà zhī gǒu duō kě\'ài, yǎnjing dàdà de, zuǐ xiǎoxiǎo de, wǒmen mǎi huiqu ba.',vn:'Mẹ ơi, mẹ xem con chó đó đáng yêu chưa, mắt to to, miệng nhỏ nhỏ, mình mua về đi.'},
@@ -417,9 +417,9 @@ var dialogData = [
    ]},
   {scene:'在公司 · Trong công ty (phỏng vấn xin việc)',
    preQuiz:[
-     {q:'学生chọn công ty này vì lý do gì?',opts:['nổi tiếng và môi trường tốt','lương cao','gần nhà'],ans:0},
-     {q:'công việc này có gì vất vả?',opts:['cần thường xuyên đi công tác xa','làm việc muộn','ít nghỉ phép'],ans:0},
-     {q:'学生tin gia đình sẽ thế nào?',opts:['sẽ đồng ý','sẽ phản đối','chưa biết'],ans:0},
+     {q:'他为什么选择来这家公司工作？',opts:['公司很有名，工作环境好','工资比较高','离家很近'],ans:0},
+     {q:'这个工作什么地方有点儿累？',opts:['需要经常去外地','每天下班很晚','假期非常少'],ans:0},
+     {q:'他相信家里人会怎么样？',opts:['会同意','不会同意','还不知道'],ans:0},
    ],
    lines:[
      {sp:1,zh:'说说你为什么选择来我们公司工作。',py:'Shuōshuo nǐ wèi shénme xuǎnzé lái wǒmen gōngsī gōngzuò.',vn:'Hãy nói xem vì sao bạn chọn đến công ty chúng tôi làm việc.'},
@@ -429,11 +429,11 @@ var dialogData = [
      {sp:1,zh:'好，那你明天来上班吧。关于这个工作，还有什么问题吗？',py:'Hǎo, nà nǐ míngtiān lái shàngbān ba. Guānyú zhège gōngzuò, hái yǒu shénme wèntí ma?',vn:'Được, vậy mai bạn đến làm việc nhé. Về công việc này, còn vấn đề gì không?'},
      {sp:0,zh:'没有了，谢谢您给我这个机会，我会努力的。',py:'Méiyǒu le, xièxie nín gěi wǒ zhège jīhuì, wǒ huì nǔlì de.',vn:'Không còn ạ, cảm ơn anh đã cho tôi cơ hội này, tôi sẽ cố gắng.'},
    ]},
-  {scene:'độc bạch · Tự thuật (sự khác biệt văn hóa)',
+  {scene:'独白 · Tự thuật (sự khác biệt văn hóa)',
    preQuiz:[
-     {q:'mỗi loại văn hóa đều có gì?',opts:['đặc điểm riêng','ngôn ngữ riêng','món ăn riêng'],ans:0},
-     {q:'đến môi trường mới bạn sẽ cảm thấy thế nào?',opts:['mới lạ và hơi kỳ lạ','buồn chán','sợ hãi'],ans:0},
-     {q:'sự khác biệt được nhắc đến là gì?',opts:['vị trí viết tên trước/sau họ','màu sắc trang phục','giờ ăn'],ans:0},
+     {q:'每种文化都有什么？',opts:['自己的特点','自己的语言','自己的节日'],ans:0},
+     {q:'到了新环境，人会觉得怎么样？',opts:['什么都很新鲜，还有点儿奇怪','非常没有意思','特别害怕'],ans:0},
+     {q:'这段话举了什么例子？',opts:['名字写在姓前面还是后面','衣服的颜色','吃饭的时间'],ans:0},
    ],
    lines:[
      {sp:0,zh:'不同的国家有不同的文化，每种文化都有自己的特点。',py:'Bùtóng de guójiā yǒu bùtóng de wénhuà, měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.',vn:'Các quốc gia khác nhau có văn hóa khác nhau, mỗi loại văn hóa đều có đặc điểm riêng.'},

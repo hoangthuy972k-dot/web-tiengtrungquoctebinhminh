@@ -324,9 +324,9 @@ const wuData = [
 var dialogData = [
   {scene:'在家 · Ở nhà (nói về con gái)',
    preQuiz:[
-     {q:'con gái gần đây thích gì?',opts:['để tóc ra sau tai','tóc ngắn','đội mũ'],ans:0},
-     {q:'điều đó khiến khuôn mặt trông thế nào?',opts:['xinh hơn một chút','già hơn','buồn cười'],ans:0},
-     {q:'hồi nhỏ con gái thích gì?',opts:['tóc ngắn, giống con trai','tóc dài','đội mũ'],ans:0},
+     {q:'女儿最近喜欢做什么？',opts:['把头发放在耳朵后面','留短头发','天天戴帽子'],ans:0},
+     {q:'这样会使她的脸看上去怎么样？',opts:['漂亮一些','大一些','老一些'],ans:0},
+     {q:'女儿小时候喜欢什么？',opts:['短头发，像男孩子一样','长头发','戴帽子'],ans:0},
    ],
    lines:[
      {sp:0,zh:'女儿最近喜欢把头发放在耳朵后面，你知道为什么吗？',py:'Nǚ\'ér zuìjìn xǐhuan bǎ tóufa fàng zài ěrduo hòumiàn, nǐ zhīdào wèi shénme ma?',vn:'Con gái gần đây thích để tóc ra sau tai, em biết vì sao không?'},
@@ -337,9 +337,9 @@ var dialogData = [
    ]},
   {scene:'在看照片 · Đang xem ảnh',
    preQuiz:[
-     {q:'ảnh chụp lúc nào?',opts:['cuộc thi cưỡi ngựa lần trước','sinh nhật','du lịch'],ans:0},
-     {q:'người cưỡi nhanh nhất trong ảnh là ai?',opts:['小刚','小丽','同事'],ans:0},
-     {q:'vì sao đồng nghiệp không nhận ra?',opts:['ngày thường mặc âu phục, khác lúc thi đấu','ảnh mờ','lâu không gặp'],ans:0},
+     {q:'那些照片是什么时候照的？',opts:['上次骑马比赛的时候','过生日的时候','去旅游的时候'],ans:0},
+     {q:'照片上骑得最快的是谁？',opts:['小刚','小丽','经理'],ans:0},
+     {q:'他为什么看上去跟现在不太一样？',opts:['上班穿西服，比赛时穿运动服','照片照得不清楚','很久没见面了'],ans:0},
    ],
    lines:[
      {sp:0,zh:'上次我们参加骑马比赛的照片，我选了几张洗出来了。',py:'Shàng cì wǒmen cānjiā qí mǎ bǐsài de zhàopiàn, wǒ xuǎnle jǐ zhāng xǐ chulai le.',vn:'Ảnh chúng ta chụp khi tham gia cuộc thi cưỡi ngựa lần trước, tôi chọn mấy tấm rửa ra rồi.'},
@@ -351,9 +351,9 @@ var dialogData = [
    ]},
   {scene:'在小丽家 · Tại nhà chị Lệ',
    preQuiz:[
-     {q:'朋友bao lâu không gặp小丽?',opts:['một năm','hai năm','ba năm'],ans:0},
-     {q:'con gái của朋友sinh khi nào?',opts:['mùa thu năm ngoái','mùa hè năm ngoái','mùa xuân năm nay'],ans:0},
-     {q:'con bé thích gì?',opts:['nghe bố bắt chước tiếng chim','đồ chơi','âm nhạc'],ans:0},
+     {q:'他们多久没见面了？',opts:['一年','两年','三年'],ans:0},
+     {q:'朋友的女儿是什么时候出生的？',opts:['去年秋天','去年夏天','今年春天'],ans:0},
+     {q:'那个孩子喜欢什么？',opts:['听她爸爸学鸟叫','玩具','音乐'],ans:0},
    ],
    lines:[
      {sp:0,zh:'我们一年没见面了吧？',py:'Wǒmen yì nián méi jiànmiàn le ba?',vn:'Chúng ta một năm không gặp nhau rồi nhỉ?'},
@@ -363,11 +363,11 @@ var dialogData = [
      {sp:0,zh:'她就喜欢听她爸爸学鸟叫。哭的时候，只要他爸爸学小鸟叫，她马上就安静下来了。',py:'Tā jiù xǐhuan tīng tā bàba xué niǎo jiào. Kū de shíhou, zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.',vn:'Con bé chỉ thích nghe bố nó bắt chước tiếng chim kêu. Lúc khóc, chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay.'},
      {sp:1,zh:'啊？这个礼物我没办法送。',py:'Á? Zhège lǐwù wǒ méi bànfǎ sòng.',vn:'Hả? Món quà này tôi không tặng được đâu.'},
    ]},
-  {scene:'độc bạch · Tự thuật (chuyến du lịch sông Hoàng Hà)',
+  {scene:'独白 · Tự thuật (chuyến du lịch sông Hoàng Hà)',
    preQuiz:[
-     {q:'tác giả đi xem gì?',opts:['黄河','长江','大海'],ans:0},
-     {q:'tác giả ngồi ở đâu để ngắm cảnh?',opts:['thuyền','xe','máy bay'],ans:0},
-     {q:'tác giả định làm gì với những tấm ảnh?',opts:['gửi cho bạn bè','đăng mạng','in ra treo'],ans:0},
+     {q:'这次旅游他去看了什么？',opts:['黄河','长江','大海'],ans:0},
+     {q:'他坐在哪儿一边看一边照相？',opts:['船上','车上','飞机上'],ans:0},
+     {q:'他想把照片怎么样？',opts:['快点儿发给朋友们','放在网上卖','洗出来挂在家里'],ans:0},
    ],
    lines:[
      {sp:0,zh:'这次旅游，我去了不少地方，每个地方都让我非常难忘。',py:'Zhè cì lǚyóu, wǒ qùle bù shǎo dìfang, měi ge dìfang dōu ràng wǒ fēicháng nánwàng.',vn:'Chuyến du lịch này, tôi đã đi qua không ít nơi, mỗi nơi đều khiến tôi nhớ mãi không quên.'},

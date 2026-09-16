@@ -368,9 +368,9 @@ const wuData = [
 var dialogData = [
   {scene:'在公司 · Trong công ty (nói về ước mơ đi du lịch)',
    preQuiz:[
-     {q:'小丽muốn gì?',opts:['đi các thành phố khác xem thử','chuyển nhà','đổi công việc'],ans:0},
-     {q:'周明lúc trẻ tại sao không đi?',opts:['không có tiền','không có thời gian','không thích'],ans:0},
-     {q:'周明bây giờ tại sao không đi?',opts:['không có thời gian, mệt quá','không có tiền','không thích'],ans:0},
+     {q:'小丽想做什么？',opts:['去其他城市看一看','换一个工作','搬到别的国家'],ans:0},
+     {q:'周经理年轻的时候为什么没去？',opts:['没有钱','没有时间','不喜欢旅游'],ans:0},
+     {q:'周经理现在为什么不去？',opts:['没有时间，下了班就想睡觉','没有钱','身体不好'],ans:0},
    ],
    lines:[
      {sp:0,zh:'我不喜欢一直住在同一个城市，想去其他城市看一看。',py:'Wǒ bù xǐhuan yìzhí zhù zài tóng yí ge chéngshì, xiǎng qù qítā chéngshì kàn yi kàn.',vn:'Tôi không thích cứ sống mãi ở một thành phố, muốn đi các thành phố khác xem thử.'},
@@ -382,9 +382,9 @@ var dialogData = [
    ]},
   {scene:'在同事家 · Tại nhà đồng nghiệp',
    preQuiz:[
-     {q:'小丽tặng quà gì?',opts:['giày da và mũ nhỏ','đồ chơi','sách'],ans:0},
-     {q:'con gái đồng nghiệp nặng bao nhiêu?',opts:['25公斤','20公斤','30公斤'],ans:0},
-     {q:'con gái giống ai?',opts:['giống bố','giống mẹ','không giống ai'],ans:0},
+     {q:'小丽送了什么礼物？',opts:['小皮鞋和小帽子','玩具和糖','书和铅笔'],ans:0},
+     {q:'同事的女儿有多重？',opts:['25公斤','20公斤','30公斤'],ans:0},
+     {q:'女儿长得像谁？',opts:['像她爸爸','像她妈妈','谁都不像'],ans:0},
    ],
    lines:[
      {sp:0,zh:'谢谢你们来看我女儿。你送的小皮鞋和小帽子真漂亮！',py:'Xièxie nǐmen lái kàn wǒ nǚ\'ér. Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!',vn:'Cảm ơn các bạn đến thăm con gái mình. Đôi giày da và cái mũ bạn tặng đẹp thật!'},
@@ -406,11 +406,11 @@ var dialogData = [
      {sp:1,zh:'大夫怎么说的？',py:'Dàifu zěnme shuō de?',vn:'Bác sĩ nói sao?'},
      {sp:0,zh:'每次医生都告诉我，回家好好儿刷牙。',py:'Měi cì yīshēng dōu gàosu wǒ, huí jiā hǎohāor shuā yá.',vn:'Lần nào bác sĩ cũng bảo tôi, về nhà đánh răng cho kỹ.'},
    ]},
-  {scene:'độc bạch · Tự thuật (về mối quan hệ con người)',
+  {scene:'独白 · Tự thuật (về mối quan hệ con người)',
    preQuiz:[
-     {q:'nhiều người cảm thấy quan hệ giữa người với người hiện nay thế nào?',opts:['lạnh nhạt','rất tốt','không thay đổi'],ans:0},
-     {q:'nguyên nhân có thể là gì?',opts:['công việc quá bận','thiếu tiền','ở xa nhau'],ans:0},
-     {q:'làm sao để quan hệ tốt hơn?',opts:['cười nhiều, dùng từ ngữ lịch sự','tặng quà nhiều','gọi điện thường xuyên'],ans:0},
+     {q:'很多人觉得现在人和人的关系怎么样？',opts:['冷冷的','越来越好','没有变化'],ans:0},
+     {q:'这可能是因为什么？',opts:['工作太忙，太累','没有钱','住得太远'],ans:0},
+     {q:'怎么能让关系变得更好？',opts:['多对别人笑笑，多说“您好”“谢谢”','多送礼物','每天打电话'],ans:0},
    ],
    lines:[
      {sp:0,zh:'很多人都觉得现在人和人的关系冷冷的，这可能是因为工作太忙，忙得没时间跟别人见面，累得不愿意和别人多说话。',py:'Hěn duō rén dōu juéde xiànzài rén hé rén de guānxi lěnglěng de, zhè kěnéng shì yīnwèi gōngzuò tài máng, máng de méi shíjiān gēn biéren jiànmiàn, lèi de bú yuànyì hé biéren duō shuōhuà.',vn:'Nhiều người cảm thấy quan hệ giữa người với người hiện nay lạnh nhạt, điều này có thể vì công việc quá bận, bận đến mức không có thời gian gặp người khác, mệt đến mức không muốn nói chuyện nhiều với người khác.'},

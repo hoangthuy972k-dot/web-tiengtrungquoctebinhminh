@@ -363,7 +363,7 @@ var dialogData = [
      {sp:1,zh:'您有钱吗？司机把我送到机场的时候，我才发现忘记带钱包了。',py:'Nín yǒu qián ma? Sījī bǎ wǒ sòngdào jīchǎng de shíhou, wǒ cái fāxiàn wàngjì dài qiánbāo le.',vn:'Anh có tiền không ạ? Lúc tài xế chở em đến sân bay, em mới phát hiện quên mang ví tiền.'},
      {sp:0,zh:'我看你还是把重要的东西放在我这儿吧。',py:'Wǒ kàn nǐ háishi bǎ zhòngyào de dōngxi fàngzài wǒ zhèr ba.',vn:'Tôi thấy cậu nên để những đồ quan trọng ở chỗ tôi thì hơn.'},
    ]},
-  {scene:'độc bạch · Tự thuật (một giáo viên trung học)',
+  {scene:'独白 · Tự thuật (một giáo viên trung học)',
    preQuiz:[
      {q:'这个人的职业是什么？',opts:['中学老师','司机','医生'],ans:0},
      {q:'他每次下课前做什么？',opts:['把学生需要带的东西写在黑板上','布置作业','打扫教室'],ans:0},

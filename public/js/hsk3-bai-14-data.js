@@ -428,7 +428,7 @@ var dialogData = [
      {sp:0,zh:'太好了！记得给大山打个电话，让他马上过来。',py:'Tài hǎo le! Jìde gěi Dàshān dǎ ge diànhuà, ràng tā mǎshàng guòlai.',vn:'Tuyệt quá! Nhớ gọi điện cho Đại Sơn, bảo cậu ấy đến ngay nhé.'},
      {sp:1,zh:'不用打了，你听外边的声音，一定是大山。',py:'Búyòng dǎ le, nǐ tīng wàibian de shēngyīn, yídìng shì Dàshān.',vn:'Không cần gọi nữa đâu, cậu nghe âm thanh bên ngoài đi, chắc chắn là Đại Sơn rồi.'},
    ]},
-  {scene:'độc bạch · Tự thuật (giới thiệu cách làm cơm trái cây)',
+  {scene:'独白 · Tự thuật (giới thiệu cách làm cơm trái cây)',
    preQuiz:[
      {q:'做水果饭难吗？',opts:['很简单','很难','要很长时间'],ans:0},
      {q:'做水果饭的第一步是什么？',opts:['先把米饭做好','先切水果','先买水果'],ans:0},

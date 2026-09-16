@@ -386,7 +386,7 @@ var dialogData = [
      {sp:1,zh:'你应该多出去走走，这样你们的生活会更有意思。',py:'Nǐ yīnggāi duō chūqu zǒuzou, zhèyàng nǐmen de shēnghuó huì gèng yǒu yìsi.',vn:'Bạn nên đi ra ngoài nhiều hơn, như vậy cuộc sống của hai người sẽ thú vị hơn.'},
      {sp:0,zh:'有他在，我的生活已经很有意思了。',py:'Yǒu tā zài, wǒ de shēnghuó yǐjīng hěn yǒu yìsi le.',vn:'Có anh ấy ở bên, cuộc sống của mình đã rất thú vị rồi.'},
    ]},
-  {scene:'độc bạch · Tự thuật (một người vợ nói về chồng mình)',
+  {scene:'独白 · Tự thuật (một người vợ nói về chồng mình)',
    preQuiz:[
      {q:'刚结婚的时候，丈夫的职业是什么？',opts:['中学老师','校长','司机'],ans:0},
      {q:'十年后，丈夫现在是什么职位？',opts:['校长','老师','经理'],ans:0},

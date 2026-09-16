@@ -368,9 +368,9 @@ const wuData = [
 var dialogData = [
   {scene:'在公司 · Trong công ty (xin nghỉ phép)',
    preQuiz:[
-     {q:'小丽xin nghỉ vì lý do gì?',opts:['một người bạn cũ kết hôn','đi du lịch','bị bệnh'],ans:0},
-     {q:'小丽muốn xin nghỉ tổng cộng mấy ngày?',opts:['三天','一天','一个星期'],ans:0},
-     {q:'小丽bao lâu không gặp bạn cũ?',opts:['两年','一年','三年'],ans:0},
+     {q:'小丽为什么请假？',opts:['老朋友结婚','想去旅游','身体不舒服'],ans:0},
+     {q:'小丽一共想请几天假？',opts:['三天','一天','一个星期'],ans:0},
+     {q:'小丽和那个老朋友多久没见了？',opts:['两年','一年','三年'],ans:0},
    ],
    lines:[
      {sp:0,zh:'周经理，下个星期我可以请几天假吗？',py:'Zhōu jīnglǐ, xià ge xīngqī wǒ kěyǐ qǐng jǐ tiān jià ma?',vn:'Giám đốc Chu, tuần sau em xin nghỉ mấy ngày được không ạ?'},
@@ -381,9 +381,9 @@ var dialogData = [
    ]},
   {scene:'在公司 · Trong công ty (nói về chồng)',
    preQuiz:[
-     {q:'小丽và người đàn ông đó quen nhau từ đâu?',opts:['hàng xóm, sau đó bạn học đại học','công ty','trường tiểu học'],ans:0},
-     {q:'anh ấy có sở thích gì?',opts:['hát, vẽ tranh, đá bóng','đọc sách','nấu ăn'],ans:0},
-     {q:'người đàn ông đó thực ra là ai?',opts:['chồng của Tiểu Lệ','đồng nghiệp','anh trai'],ans:0},
+     {q:'小丽和那个男人是怎么认识的？',opts:['过去是邻居，后来是大学同学','在公司认识的','是小学同学'],ans:0},
+     {q:'他有什么爱好？',opts:['唱歌、画画儿、踢足球','看书、写字','做饭、买东西'],ans:0},
+     {q:'那个男人是谁？',opts:['小丽的丈夫','小丽的同事','小丽的哥哥'],ans:0},
    ],
    lines:[
      {sp:1,zh:'小丽，那个高高的男人是你们公司的吗？你对他了解吗？',py:'Xiǎolì, nàge gāogāo de nánrén shì nǐmen gōngsī de ma? Nǐ duì tā liǎojiě ma?',vn:'Tiểu Lệ, người đàn ông cao cao đó là người công ty bạn à? Bạn hiểu rõ anh ấy không?'},
@@ -395,9 +395,9 @@ var dialogData = [
    ]},
   {scene:'在家 · Ở nhà (bàn về vận động)',
    preQuiz:[
-     {q:'周太太gần đây thấy thế nào?',opts:['chỗ nào cũng khó chịu','rất khỏe','rất vui'],ans:0},
-     {q:'周太太bao lâu không vận động?',opts:['三年','一年','一个月'],ans:0},
-     {q:'周太太quyết định làm gì từ ngày mai?',opts:['mỗi ngày chạy bộ đường dài','ăn kiêng','đi ngủ sớm'],ans:0},
+     {q:'周太太最近觉得怎么样？',opts:['哪儿都不舒服','身体特别好','非常高兴'],ans:0},
+     {q:'周太太多久没运动了？',opts:['三年','一年','一个月'],ans:0},
+     {q:'从明天起周太太决定做什么？',opts:['每天去长跑','少吃一点儿','早点儿睡觉'],ans:0},
    ],
    lines:[
      {sp:1,zh:'最近我觉得哪儿都不舒服，你带我去医院检查检查吧。',py:'Zuìjìn wǒ juéde nǎr dōu bù shūfu, nǐ dài wǒ qù yīyuàn jiǎnchá jiǎncha ba.',vn:'Gần đây em thấy chỗ nào cũng khó chịu, anh đưa em đi bệnh viện khám thử đi.'},
@@ -406,11 +406,11 @@ var dialogData = [
      {sp:0,zh:'谁都知道运动对身体好。但是你吃饱了就睡。',py:'Shéi dōu zhīdào yùndòng duì shēntǐ hǎo. Dànshì nǐ chībǎole jiù shuì.',vn:'Ai cũng biết vận động tốt cho sức khỏe. Nhưng em ăn no là ngủ.'},
      {sp:1,zh:'为了健康，我真应该多锻炼锻炼了。从明天起，我决定每天去长跑。',py:'Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le. Cóng míngtiān qǐ, wǒ juédìng měitiān qù chángpǎo.',vn:'Vì sức khỏe, em thật sự nên tập luyện nhiều hơn. Từ ngày mai, em quyết định mỗi ngày đi chạy bộ đường dài.'},
    ]},
-  {scene:'độc bạch · Tự thuật (cách vận động đúng)',
+  {scene:'独白 · Tự thuật (cách vận động đúng)',
    preQuiz:[
-     {q:'nên chọn thời gian nào để vận động?',opts:['9 giờ sáng, mùa đông muộn hơn','buổi tối','giữa trưa'],ans:0},
-     {q:'nên chọn địa điểm nào?',opts:['công viên, trên núi, bể bơi','trong phòng ngủ','siêu thị'],ans:0},
-     {q:'sau khi vận động khát nước thì nên làm gì?',opts:['không uống nước ngay','uống thật nhiều nước ngay','ăn đồ ngọt'],ans:0},
+     {q:'什么时候运动最好？',opts:['早上9点，冬天要再晚一些','晚上睡觉以前','中午吃饭以后'],ans:0},
+     {q:'在哪些地方可以运动？',opts:['公园、山上、游泳馆','房间里','超市里'],ans:0},
+     {q:'刚运动完口渴的时候应该怎么做？',opts:['不要马上喝水','马上喝很多水','吃点儿甜的'],ans:0},
    ],
    lines:[
      {sp:0,zh:'"运动很重要"这句话谁都懂。但是你知道怎么运动吗？第一，要选择"对"的时间。',py:'"Yùndòng hěn zhòngyào" zhè jù huà shéi dōu dǒng. Dànshì nǐ zhīdào zěnme yùndòng ma? Dì yī, yào xuǎnzé "duì" de shíjiān.',vn:'Câu "vận động rất quan trọng" ai cũng hiểu. Nhưng bạn có biết vận động thế nào không? Thứ nhất, phải chọn thời gian "đúng".'},

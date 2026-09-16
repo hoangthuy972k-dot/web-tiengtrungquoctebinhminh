@@ -472,7 +472,7 @@ var dialogData = [
      {sp:1,zh:'真的啊？我把爸爸的生日忘了。那我们今天喝点儿啤酒吧。',py:'Zhēn de a? Wǒ bǎ bàba de shēngrì wàng le. Nà wǒmen jīntiān hē diǎnr píjiǔ ba.',vn:'Thật á? Con quên mất sinh nhật bố rồi. Vậy hôm nay chúng ta uống chút bia đi.'},
      {sp:0,zh:'医生说你爸爸一口酒都不能喝，别让他看见酒瓶子。',py:'Yīshēng shuō nǐ bàba yì kǒu jiǔ dōu bù néng hē, bié ràng tā kànjiàn jiǔ píngzi.',vn:'Bác sĩ nói bố con không được uống một ngụm rượu nào cả, đừng để ông ấy nhìn thấy chai rượu.'},
    ]},
-  {scene:'độc bạch · Tự thuật (thói quen dùng máy tính)',
+  {scene:'独白 · Tự thuật (thói quen dùng máy tính)',
    preQuiz:[
      {q:'这个笔记本电脑去年买的时候多少钱？',opts:['五千块左右','八千块左右','三千块左右'],ans:0},
      {q:'他想把电脑怎么样？',opts:['卖了，再买更好的','送人','扔了'],ans:0},

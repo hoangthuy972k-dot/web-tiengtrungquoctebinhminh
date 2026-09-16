@@ -517,7 +517,7 @@ var dialogData = [
      {sp:1,zh:'他满意吗？',py:'Tā mǎnyì ma?',vn:'Cậu ấy có hài lòng không?'},
      {sp:0,zh:'不用花钱，还有新衣服穿，他满意极了。',py:'Búyòng huā qián, hái yǒu xīn yīfu chuān, tā mǎnyì jí le.',vn:'Không tốn tiền mà lại có áo mới mặc, cậu ấy hài lòng lắm.'},
    ]},
-  {scene:'độc bạch · Tự thuật (giới thiệu lễ hội bia)',
+  {scene:'独白 · Tự thuật (giới thiệu lễ hội bia)',
    preQuiz:[
      {q:'啤酒节是什么时候举行？',opts:['每年夏天','每年冬天','每个月'],ans:0},
      {q:'在啤酒节上可以做什么？',opts:['喝到世界各地的啤酒，看歌舞','买衣服','看电影'],ans:0},

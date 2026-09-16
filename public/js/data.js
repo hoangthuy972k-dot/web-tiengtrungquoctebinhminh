@@ -1272,6 +1272,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-8.html'
+      },
+      {
+        id: 'hsk2v3-l9',
+        number: 9,
+        title: 'Em đi mua một cốc trà sữa',
+        titleHanzi: '我去买杯奶茶',
+        titlePinyin: 'Wǒ qù mǎi bēi nǎichá',
+        topic: 'So sánh “không bằng”, khoảng cách & thời lượng',
+        vocabCount: 13,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-9.html'
       }
     ],
     yct: [

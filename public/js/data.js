@@ -1332,6 +1332,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-13.html'
+      },
+      {
+        id: 'hsk2v3-l14',
+        number: 14,
+        title: 'Một mình đón năm mới thì thật vô vị',
+        titleHanzi: '一个人过年多没意思啊',
+        titlePinyin: 'Yí ge rén guònián duō méi yìsi a',
+        topic: 'Tả người, tả nơi chốn & đón Tết cùng nhau',
+        vocabCount: 12,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-14.html'
       }
     ],
     yct: [

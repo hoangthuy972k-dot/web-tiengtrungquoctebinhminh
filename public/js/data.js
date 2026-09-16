@@ -1308,6 +1308,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-11.html'
+      },
+      {
+        id: 'hsk2v3-l12',
+        number: 12,
+        title: 'Ở đây lạnh hơn Bắc Kinh nhiều',
+        titleHanzi: '这里比北京冷多了',
+        titlePinyin: 'Zhèlǐ bǐ Běijīng lěngduō le',
+        topic: 'Thời tiết & so sánh mức độ chênh lệch lớn',
+        vocabCount: 11,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-12.html'
       }
     ],
     yct: [

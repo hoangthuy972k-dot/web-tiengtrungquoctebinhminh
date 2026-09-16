@@ -1248,6 +1248,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-6.html'
+      },
+      {
+        id: 'hsk2v3-l7',
+        number: 7,
+        title: 'Bạn ấy chơi bóng rổ rất hay',
+        titleHanzi: '他篮球打得很好',
+        titlePinyin: 'Tā lánqiú dǎ de hěn hǎo',
+        topic: 'Thể thao, sở thích & miêu tả mức độ làm việc gì',
+        vocabCount: 15,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-7.html'
       }
     ],
     yct: [

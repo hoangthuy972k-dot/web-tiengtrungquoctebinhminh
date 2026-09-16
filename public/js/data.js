@@ -1200,6 +1200,42 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-2.html'
+      },
+      {
+        id: 'hsk2v3-l3',
+        number: 3,
+        title: 'Em muốn đi Tây An du lịch',
+        titleHanzi: '我想去西安旅游',
+        titlePinyin: 'Wǒ xiǎng qù Xī’ān lǚyóu',
+        topic: 'Việc nhà, nghỉ ngơi & lên kế hoạch du lịch',
+        vocabCount: 16,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-3.html'
+      },
+      {
+        id: 'hsk2v3-l4',
+        number: 4,
+        title: 'Con mặc đồ màu đỏ rất đẹp',
+        titleHanzi: '你穿红色的很好看',
+        titlePinyin: 'Nǐ chuān hóngsè de hěn hǎokàn',
+        topic: 'Mua sắm, quần áo & màu sắc',
+        vocabCount: 16,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-4.html'
+      },
+      {
+        id: 'hsk2v3-l5',
+        number: 5,
+        title: 'Lần đầu đến thăm nhà bạn người Trung Quốc',
+        titleHanzi: '第一次去中国朋友家',
+        titlePinyin: 'Dì-yī cì qù Zhōngguó péngyou jiā',
+        topic: 'Làm khách, quà tặng & phép lịch sự của người Trung Quốc',
+        vocabCount: 17,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-5.html'
       }
     ],
     yct: [

@@ -1320,6 +1320,18 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-12.html'
+      },
+      {
+        id: 'hsk2v3-l13',
+        number: 13,
+        title: 'Chúng tôi yêu thích môn tiếng Trung Quốc',
+        titleHanzi: '我们爱上中文课',
+        titlePinyin: 'Wǒmen ài shàng Zhōngwén kè',
+        topic: 'Quà năm mới, lớp học & so sánh mức chênh lệch cụ thể',
+        vocabCount: 13,
+        dialogueCount: 4,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk2v3-bai-13.html'
       }
     ],
     yct: [

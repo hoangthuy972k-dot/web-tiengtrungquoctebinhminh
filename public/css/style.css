@@ -60,9 +60,10 @@
   --color-error-bg: #fdefec;
 
   --font-latin: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  /* Chu Han dung serif cho khop voi trang bai hoc (lesson-template.css von da
-     dung Noto Serif SC), va de di cung font serif cua tieu de. */
-  --font-hanzi: 'Noto Serif SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--font-latin);
+  /* Chu Han trong cau, o nhap, nut chon: sans cho ro net o co nho. */
+  --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--font-latin);
+  /* Chu Han co lon de HOC (tu moi, the nho, tieu de bai): serif cho dep. */
+  --font-hanzi-display: 'Noto Serif SC', 'Noto Sans SC', 'PingFang SC', serif;
   /* Font serif cho tieu de — cung font YouHSK dung, tao net bao chi cho trang. */
   --font-display: 'Newsreader', 'Be Vietnam Pro', Georgia, serif;
 
@@ -2024,7 +2025,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .vp-word-zh {
-  font-family: var(--font-hanzi);
+  font-family: var(--font-hanzi-display);
   font-size: 1.8rem;
   font-weight: 700;
 }
@@ -2365,7 +2366,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .hz-writer-box .hz-fallback {
-  font-family: var(--font-hanzi);
+  font-family: var(--font-hanzi-display);
   font-size: 2.6rem;
   font-weight: 700;
   color: var(--color-red-600);
@@ -2466,7 +2467,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  font-family: var(--font-hanzi);
+  font-family: var(--font-hanzi-display);
   font-size: 2.2rem;
   font-weight: 700;
 }

@@ -60,7 +60,9 @@
   --color-error-bg: #fdefec;
 
   --font-latin: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--font-latin);
+  /* Chu Han dung serif cho khop voi trang bai hoc (lesson-template.css von da
+     dung Noto Serif SC), va de di cung font serif cua tieu de. */
+  --font-hanzi: 'Noto Serif SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--font-latin);
   /* Font serif cho tieu de — cung font YouHSK dung, tao net bao chi cho trang. */
   --font-display: 'Newsreader', 'Be Vietnam Pro', Georgia, serif;
 

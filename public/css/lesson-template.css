@@ -58,10 +58,10 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .wu-card:hover{border-color:var(--sky);transform:translateY(-3px);box-shadow:0 8px 24px rgba(200,55,45,0.12);}
 .wu-card.matched{border-color:var(--green);background:var(--green-l);}
 .wu-emoji{font-size:4rem;text-align:center;padding:20px;background:linear-gradient(135deg,#faf6f1,#f6efe6);}
-.wu-label{padding:12px 16px;text-align:center;font-family:var(--font-hanzi);font-size:1rem;font-weight:600;color:var(--ink);}
+.wu-label{padding:12px 16px;text-align:center;font-family:var(--font-hanzi-display);font-size:1.5rem;font-weight:600;color:var(--ink);}
 .wu-py{font-size:0.8rem;color:var(--soft);margin-top:2px;}
 .wu-options{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
-.wu-opt{padding:10px 20px;border:2px solid var(--border);border-radius:10px;cursor:pointer;font-family:var(--font-hanzi);font-size:1rem;background:white;transition:all 0.2s;}
+.wu-opt{padding:10px 20px;border:2px solid var(--border);border-radius:10px;cursor:pointer;font-family:var(--font-hanzi-display);font-size:1.5rem;background:white;transition:all 0.2s;}
 .wu-opt:hover{border-color:var(--sky);color:var(--sky);}
 .wu-opt.sel-ok{border-color:var(--green);background:var(--green-l);color:var(--green);pointer-events:none;}
 .wu-opt.sel-err{border-color:var(--red);background:var(--red-l);color:var(--red);}

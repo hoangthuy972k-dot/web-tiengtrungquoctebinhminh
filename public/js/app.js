@@ -2262,13 +2262,16 @@
       promptHtml = '<button type="button" class="vp-quiz-play-btn" data-speak="' + word.zh.replace(/"/g, '&quot;') + '">🔊 Nghe</button>';
     }
 
+    // Dap an la chu Han thi danh dau "hanzi" de CSS phong to va dung font serif —
+    // nhung o che do Trung → Viet thi dap an la tieng Viet, khong danh dau.
+    var optionIsZh = mode !== 'zh-vn';
     var optionsHtml = options.map(function (opt, i) {
       var label;
       if (mode === 'zh-vn') label = opt.vn;
       else if (mode === 'vn-zh') label = opt.zh;
       else if (mode === 'py-zh') label = opt.zh;
       else label = opt.zh + ' <span class="py-inline">(' + opt.py + ')</span>';
-      return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + label + '</button>';
+      return '<button type="button" class="vp-option-btn' + (optionIsZh ? ' hanzi' : '') + '" data-idx="' + i + '">' + label + '</button>';
     }).join('');
 
     wrap.innerHTML =

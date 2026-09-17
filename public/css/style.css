@@ -2479,7 +2479,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .vp-quiz-prompt-vn {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 800;
 }
 
@@ -2520,6 +2520,23 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   font-weight: 600;
   cursor: pointer;
   transition: border-color 0.15s var(--ease-standard), background-color 0.15s var(--ease-standard);
+}
+
+/* Khi dap an chinh la chu Han can nhan mat, phong to va dung serif — truoc day
+   chu Han o day chi 1.05rem, nho hon ca chu Viet, nhin lot thom trong nut. */
+.vp-option-btn.hanzi {
+  font-family: var(--font-hanzi-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Pinyin in kem sau chu Han van giu co chu thuong, khong phong theo. */
+.vp-option-btn.hanzi .py-inline {
+  font-family: var(--font-latin);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gold-500);
 }
 
 .vp-option-btn:hover:not(:disabled) {
@@ -4287,8 +4304,8 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 }
 
 .wu-label {
-  font-family: var(--font-hanzi);
-  font-size: 0.95rem;
+  font-family: var(--font-hanzi-display);
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-gray-600);
 }
@@ -4311,8 +4328,8 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   border: 1.5px solid var(--color-gray-200);
   border-radius: var(--radius-pill);
   padding: var(--space-2) var(--space-4);
-  font-family: var(--font-hanzi);
-  font-size: 0.92rem;
+  font-family: var(--font-hanzi-display);
+  font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
   transition: border-color 0.15s var(--ease-standard), background-color 0.15s var(--ease-standard);

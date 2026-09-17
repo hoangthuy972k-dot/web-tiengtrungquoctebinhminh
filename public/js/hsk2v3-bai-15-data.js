@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '姓名', py: 'xìngmíng', pos: 'Danh từ', vn: 'họ tên', em: '🪪', lesson: 1,
+    n: 1, zh: '姓名', py: 'xìngmíng', pos: 'Danh từ', vn: 'họ tên', em: '🪪', img: '/images/hsk2v3-bai-15/xingming.jpg', lesson: 1,
     ex_zh: '考试就要开始了，请大家写上姓名。', ex_py: 'Kǎoshì jiù yào kāishǐ le, qǐng dàjiā xiě shàng xìngmíng.', ex_vn: 'Sắp bắt đầu vào giờ thi rồi, mời các em viết họ tên mình vào.',
     exList: [
       { zh: '考试就要开始了，请大家写上姓名。', py: 'Kǎoshì jiù yào kāishǐ le, qǐng dàjiā xiě shàng xìngmíng.', vn: 'Sắp bắt đầu vào giờ thi rồi, mời các em viết họ tên mình vào.' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '姓', p: 'xìng', type: '形声字 · Chữ hình thanh', st: 8, ord: '女 → 生', rad: '女 (nữ)', mean: 'họ', tip: 'Ôn bài 14: 姓 + họ, 叫 + tên; 姓名 = cả họ lẫn tên.', cf: '名字 (míngzi)', w: '姓名 / 姓 / 名字' }]
   },
   {
-    n: 2, zh: '出国', py: 'chūguó', pos: 'Động từ', vn: 'ra nước ngoài, xuất ngoại', em: '🛂', lesson: 2,
+    n: 2, zh: '出国', py: 'chūguó', pos: 'Động từ', vn: 'ra nước ngoài, xuất ngoại', em: '🛂', img: '/images/hsk2v3-bai-15/chuguo.jpg', lesson: 2,
     ex_zh: '考完试了，我现在可以出国旅游了。', ex_py: 'Kǎowán shì le, wǒ xiànzài kěyǐ chūguó lǚyóu le.', ex_vn: 'Thi xong rồi, bây giờ mình có thể đi du lịch nước ngoài được rồi.',
     exList: [
       { zh: '考完试了，我现在可以出国旅游了。', py: 'Kǎowán shì le, wǒ xiànzài kěyǐ chūguó lǚyóu le.', vn: 'Thi xong rồi, bây giờ mình có thể đi du lịch nước ngoài được rồi.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '出', p: 'chū', type: '会意字 · Chữ hội ý', st: 5, ord: '凵 → 丨 → 凵', rad: '凵 (khảm)', mean: 'ra', tip: 'Cùng nhóm: 出国、出门、出去 (bổ ngữ xu hướng, bài 14).', cf: '进 (jìn – vào, bài 11)', w: '出国 / 出门 / 出去' }]
   },
   {
-    n: 3, zh: '门票', py: 'ménpiào', pos: 'Danh từ', vn: 'vé vào cửa', em: '🎫', lesson: 2,
+    n: 3, zh: '门票', py: 'ménpiào', pos: 'Danh từ', vn: 'vé vào cửa', em: '🎫', img: '/images/hsk2v3-bai-15/menpiao.jpg', lesson: 2,
     ex_zh: '我还在网上买好颐和园的门票了呢。', ex_py: 'Wǒ hái zài wǎngshang mǎihǎo Yíhé Yuán de ménpiào le ne.', ex_vn: 'Mình còn mua sẵn vé vào cổng Di Hoà Viên trên mạng rồi đây này.',
     exList: [
       { zh: '我还在网上买好颐和园的门票了呢。', py: 'Wǒ hái zài wǎngshang mǎihǎo Yíhé Yuán de ménpiào le ne.', vn: 'Mình còn mua sẵn vé vào cổng Di Hoà Viên trên mạng rồi đây này.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '票', p: 'piào', type: '形声字 · Chữ hình thanh', st: 11, ord: '覀 → 示', rad: '示 (thị)', mean: 'vé, phiếu', tip: 'Cùng nhóm: 门票、机票、电影票.', cf: '', w: '门票 / 机票 / 买票' }]
   },
   {
-    n: 4, zh: '高中', py: 'gāozhōng', pos: 'Danh từ', vn: 'cấp ba, trung học phổ thông', em: '🎓', lesson: 2,
+    n: 4, zh: '高中', py: 'gāozhōng', pos: 'Danh từ', vn: 'cấp ba, trung học phổ thông', em: '🎓', img: '/images/hsk2v3-bai-15/gaozhong.jpg', lesson: 2,
     ex_zh: '我的高中同学就在颐和园上班。', ex_py: 'Wǒ de gāozhōng tóngxué jiù zài Yíhé Yuán shàngbān.', ex_vn: 'Bạn học thời phổ thông trung học của mình đang làm việc ngay tại Di Hoà Viên.',
     exList: [
       { zh: '我的高中同学就在颐和园上班。', py: 'Wǒ de gāozhōng tóngxué jiù zài Yíhé Yuán shàngbān.', vn: 'Bạn học thời phổ thông trung học của mình đang làm việc ngay tại Di Hoà Viên.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '中', p: 'zhōng', type: '指事字 · Chữ chỉ sự', st: 4, ord: '丨 → 口 → 丨', rad: '丨 (cổn)', mean: 'giữa, trung', tip: '小学 → 中学 (初中/高中) → 大学.', cf: '大学 (dàxué)', w: '高中 / 中学 / 中文' }]
   },
   {
-    n: 5, zh: '出门', py: 'chūmén', pos: 'Động từ', vn: 'ra ngoài, rời nhà', em: '🚪', lesson: 2,
+    n: 5, zh: '出门', py: 'chūmén', pos: 'Động từ', vn: 'ra ngoài, rời nhà', em: '🚪', img: '/images/hsk2v3-bai-15/chumen.jpg', lesson: 2,
     ex_zh: '出门旅游，多个朋友多条路。', ex_py: 'Chūmén lǚyóu, duō ge péngyou duō tiáo lù.', ex_vn: 'Đi du lịch, thêm một người bạn là thêm một con đường.',
     exList: [
       { zh: '出门旅游，多个朋友多条路。', py: 'Chūmén lǚyóu, duō ge péngyou duō tiáo lù.', vn: 'Đi du lịch, thêm một người bạn là thêm một con đường.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '门', p: 'mén', type: '象形字 · Chữ tượng hình', st: 3, ord: '丶 → 丨 → 乛', rad: '门 (môn – cửa)', mean: 'cửa', tip: '出门 = bước ra khỏi cửa nhà, đi đâu đó.', cf: '门口 (bài 9)', w: '出门 / 门口 / 门票' }]
   },
   {
-    n: 6, zh: '路', py: 'lù', pos: 'Danh từ', vn: 'con đường', em: '🛤️', lesson: 2,
+    n: 6, zh: '路', py: 'lù', pos: 'Danh từ', vn: 'con đường', em: '🛤️', img: '/images/hsk2v3-bai-15/lu.jpg', lesson: 2,
     ex_zh: '多个朋友多条路。', ex_py: 'Duō ge péngyou duō tiáo lù.', ex_vn: 'Thêm một người bạn là thêm một con đường.',
     exList: [
       { zh: '多个朋友多条路。', py: 'Duō ge péngyou duō tiáo lù.', vn: 'Thêm một người bạn là thêm một con đường.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '路', p: 'lù', type: '形声字 · Chữ hình thanh', st: 13, ord: '⻊ → 各', rad: '⻊ (túc – chân)', mean: 'đường', tip: 'Lượng từ của 路 là 条: 一条路 (như 一条裤子).', cf: '走路 (bài 9) · 路上 (bài 11)', w: '路 / 一条路 / 路上' }]
   },
   {
-    n: 7, zh: '机场', py: 'jīchǎng', pos: 'Danh từ', vn: 'sân bay', em: '🛫', lesson: 3,
+    n: 7, zh: '机场', py: 'jīchǎng', pos: 'Danh từ', vn: 'sân bay', em: '🛫', img: '/images/hsk2v3-bai-15/jichang.jpg', lesson: 3,
     ex_zh: '还是我送你去的机场呢。', ex_py: 'Hái shì wǒ sòng nǐ qù de jīchǎng ne.', ex_vn: 'Chính là mình tiễn bạn ra sân bay mà.',
     exList: [
       { zh: '还是我送你去的机场呢。', py: 'Hái shì wǒ sòng nǐ qù de jīchǎng ne.', vn: 'Chính là mình tiễn bạn ra sân bay mà.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '场', p: 'chǎng', type: '形声字 · Chữ hình thanh', st: 6, ord: '土 → 汤', rad: '土 (thổ – đất)', mean: 'sân, bãi', tip: 'Cùng chữ 场 trong 商场 (trung tâm thương mại).', cf: '商场 (shāngchǎng)', w: '机场 / 商场 / 去机场' }]
   },
   {
-    n: 8, zh: '机票', py: 'jīpiào', pos: 'Danh từ', vn: 'vé máy bay', em: '✈️', lesson: 3,
+    n: 8, zh: '机票', py: 'jīpiào', pos: 'Danh từ', vn: 'vé máy bay', em: '✈️', img: '/images/hsk2v3-bai-15/jipiao.jpg', lesson: 3,
     ex_zh: '我记得你那次的机票很便宜。', ex_py: 'Wǒ jìde nǐ nà cì de jīpiào hěn piányi.', ex_vn: 'Mình nhớ lần đó vé máy bay của bạn rẻ lắm.',
     exList: [
       { zh: '我记得你那次的机票很便宜。', py: 'Wǒ jìde nǐ nà cì de jīpiào hěn piányi.', vn: 'Mình nhớ lần đó vé máy bay của bạn rẻ lắm.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '机', p: 'jī', type: '形声字 · Chữ hình thanh', st: 6, ord: '木 → 几', rad: '木 (mộc – gỗ)', mean: 'máy', tip: '飞机 (máy bay) → 机票、机场.', cf: '手机 (shǒujī)', w: '机票 / 飞机 / 机场' }]
   },
   {
-    n: 9, zh: '飞', py: 'fēi', pos: 'Động từ', vn: 'bay', em: '🕊️', lesson: 3,
+    n: 9, zh: '飞', py: 'fēi', pos: 'Động từ', vn: 'bay', em: '🕊️', img: '/images/hsk2v3-bai-15/fei.jpg', lesson: 3,
     ex_zh: '想到就要飞北京了，我还是很高兴的。', ex_py: 'Xiǎngdào jiù yào fēi Běijīng le, wǒ háishi hěn gāoxìng de.', ex_vn: 'Nghĩ đến việc sắp được bay đến Bắc Kinh là mình vẫn thấy rất háo hức.',
     exList: [
       { zh: '想到就要飞北京了，我还是很高兴的。', py: 'Xiǎngdào jiù yào fēi Běijīng le, wǒ háishi hěn gāoxìng de.', vn: 'Nghĩ đến việc sắp được bay đến Bắc Kinh là mình vẫn thấy rất háo hức.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '像', p: 'xiàng', type: '形声字 · Chữ hình thanh', st: 13, ord: '亻 → 象', rad: '亻 (nhân đứng)', mean: 'giống, tựa như', tip: '好像 vừa là "giống như", vừa là "hình như" (phỏng đoán).', cf: '可能 (kěnéng – bài 13)', w: '好像 / 好像小鸟 / 好像下雨了' }]
   },
   {
-    n: 11, zh: '鸟', py: 'niǎo', pos: 'Danh từ', vn: 'con chim', em: '🐦', lesson: 4,
+    n: 11, zh: '鸟', py: 'niǎo', pos: 'Danh từ', vn: 'con chim', em: '🐦', img: '/images/hsk2v3-bai-15/niao.jpg', lesson: 4,
     ex_zh: '你看，那只小鸟多漂亮啊！', ex_py: 'Nǐ kàn, nà zhī xiǎo niǎo duō piàoliang a!', ex_vn: 'Bạn xem, chú chim nhỏ kia đẹp quá!',
     exList: [
       { zh: '你看，那只小鸟多漂亮啊！', py: 'Nǐ kàn, nà zhī xiǎo niǎo duō piàoliang a!', vn: 'Bạn xem, chú chim nhỏ kia đẹp quá!' },

@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '回来', py: 'huílái', pos: 'Động từ', vn: 'quay về, trở về', em: '🏠', lesson: 1,
+    n: 1, zh: '回来', py: 'huílái', pos: 'Động từ', vn: 'quay về, trở về', em: '🏠', img: '/images/hsk2v3-bai-3/huilai.jpg', lesson: 1,
     ex_zh: '今天回来这么晚啊！', ex_py: 'Jīntiān huílái zhème wǎn a!', ex_vn: 'Hôm nay anh về muộn thế!',
     exList: [
       { zh: '今天回来这么晚啊！', py: 'Jīntiān huílái zhème wǎn a!', vn: 'Hôm nay anh về muộn thế!' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '这', p: 'zhè', type: '形声字 · Chữ hình thanh', st: 7, ord: '文 → 辶', rad: '辶 (sước – đi)', mean: 'này, đây', tip: '这么 (thế này) ↔ 那么 (thế kia).', cf: '那么 (nàme)', w: '这么 / 这个 / 这儿' }]
   },
   {
-    n: 3, zh: '完', py: 'wán', pos: 'Động từ', vn: 'xong, hết', em: '✔️', lesson: 1,
+    n: 3, zh: '完', py: 'wán', pos: 'Động từ', vn: 'xong, hết', em: '✔️', img: '/images/hsk2v3-bai-3/wan.jpg', lesson: 1,
     ex_zh: '下班的时候没做完。', ex_py: 'Xiàbān de shíhou méi zuòwán.', ex_vn: 'Đến giờ tan làm mà vẫn chưa xong.',
     exList: [
       { zh: '下班的时候没做完。', py: 'Xiàbān de shíhou méi zuòwán.', vn: 'Đến giờ tan làm mà vẫn chưa xong.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '起', p: 'qǐ', type: '形声字 · Chữ hình thanh', st: 10, ord: '走 → 己', rad: '走 (tẩu – đi)', mean: 'dậy, khởi', tip: '一起 = cùng nhau; 起来 = đứng dậy, bắt đầu.', cf: '', w: '一起 / 起床 / 起来' }]
   },
   {
-    n: 5, zh: '出去', py: 'chūqù', pos: 'Động từ', vn: 'đi ra, ra ngoài', em: '🚪', lesson: 2,
+    n: 5, zh: '出去', py: 'chūqù', pos: 'Động từ', vn: 'đi ra, ra ngoài', em: '🚪', img: '/images/hsk2v3-bai-3/chuqu.jpg', lesson: 2,
     ex_zh: '我也很想一起出去玩。', ex_py: 'Wǒ yě hěn xiǎng yìqǐ chūqù wán.', ex_vn: 'Mình cũng rất muốn cùng ra ngoài chơi.',
     exList: [
       { zh: '我也很想一起出去玩。', py: 'Wǒ yě hěn xiǎng yìqǐ chūqù wán.', vn: 'Mình cũng rất muốn cùng ra ngoài chơi.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '出', p: 'chū', type: '会意字 · Chữ hội ý', st: 5, ord: '凵 → 凵', rad: '凵 (khảm)', mean: 'ra, đi ra', tip: '出去 = ra khỏi (xa người nói); 出来 = ra (về phía người nói).', cf: '', w: '出去 / 出来 / 出门' }]
   },
   {
-    n: 6, zh: '洗', py: 'xǐ', pos: 'Động từ', vn: 'rửa, giặt', em: '🚿', lesson: 3,
+    n: 6, zh: '洗', py: 'xǐ', pos: 'Động từ', vn: 'rửa, giặt', em: '🚿', img: '/images/hsk2v3-bai-3/xi.jpg', lesson: 3,
     ex_zh: '吃个苹果吧，我都洗好了。', ex_py: 'Chī ge píngguǒ ba, wǒ dōu xǐhǎo le.', ex_vn: 'Ăn quả táo đi, anh đã rửa sạch rồi.',
     exList: [
       { zh: '吃个苹果吧，我都洗好了。', py: 'Chī ge píngguǒ ba, wǒ dōu xǐhǎo le.', vn: 'Ăn quả táo đi, anh đã rửa sạch rồi.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '自', p: 'zì', type: '象形字 · Chữ tượng hình', st: 6, ord: '丿 → 目', rad: '自 (tự)', mean: 'tự, mình', tip: 'Vốn là hình cái mũi — người Trung Quốc chỉ vào mũi khi nói "tôi".', cf: '', w: '自己 / 自行车' }]
   },
   {
-    n: 8, zh: '拿', py: 'ná', pos: 'Động từ', vn: 'cầm, lấy', em: '✋', lesson: 3,
+    n: 8, zh: '拿', py: 'ná', pos: 'Động từ', vn: 'cầm, lấy', em: '✋', img: '/images/hsk2v3-bai-3/na.jpg', lesson: 3,
     ex_zh: '你自己拿。', ex_py: 'Nǐ zìjǐ ná.', ex_vn: 'Em tự lấy nhé.',
     exList: [
       { zh: '你自己拿。', py: 'Nǐ zìjǐ ná.', vn: 'Em tự lấy nhé.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '拿', p: 'ná', type: '会意字 · Chữ hội ý', st: 10, ord: '人 → 一 → 口 → 手', rad: '手 (thủ – tay)', mean: 'cầm, lấy', tip: '合 (hợp) + 手 (tay): khép tay lại để cầm đồ.', cf: '', w: '拿东西 / 拿着 / 拿来' }]
   },
   {
-    n: 9, zh: '手', py: 'shǒu', pos: 'Danh từ', vn: 'tay', em: '🖐️', lesson: 3,
+    n: 9, zh: '手', py: 'shǒu', pos: 'Danh từ', vn: 'tay', em: '🖐️', img: '/images/hsk2v3-bai-3/shou.jpg', lesson: 3,
     ex_zh: '我去洗洗手。', ex_py: 'Wǒ qù xǐxi shǒu.', ex_vn: 'Em đi rửa tay đã.',
     exList: [
       { zh: '我去洗洗手。', py: 'Wǒ qù xǐxi shǒu.', vn: 'Em đi rửa tay đã.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '为', p: 'wèi', type: '会意字 · Chữ hội ý', st: 4, ord: '丶 → 力 → 丶 → 丶', rad: '丶 (chủ)', mean: 'vì, cho', tip: 'Đọc wèi khi nghĩa "vì"; đọc wéi khi nghĩa "làm, là".', cf: '', w: '为什么 / 为了 / 为你' }]
   },
   {
-    n: 11, zh: '不错', py: 'búcuò', pos: 'Tính từ', vn: 'không tồi, khá hay', em: '👍', lesson: 3,
+    n: 11, zh: '不错', py: 'búcuò', pos: 'Tính từ', vn: 'không tồi, khá hay', em: '👍', img: '/images/hsk2v3-bai-3/bucuo.jpg', lesson: 3,
     ex_zh: '这个时候去西安很不错！', ex_py: 'Zhège shíhou qù Xī’ān hěn búcuò!', ex_vn: 'Thời điểm này đi Tây An rất tuyệt!',
     exList: [
       { zh: '这个时候去西安很不错！', py: 'Zhège shíhou qù Xī’ān hěn búcuò!', vn: 'Thời điểm này đi Tây An rất tuyệt!' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '错', p: 'cuò', type: '形声字 · Chữ hình thanh', st: 13, ord: '钅 → 昔', rad: '钅 (kim – kim loại)', mean: 'sai, lầm', tip: '不错 nghĩa là "khá tốt" chứ không phải "không sai".', cf: '', w: '不错 / 错了 / 错误' }]
   },
   {
-    n: 12, zh: '送', py: 'sòng', pos: 'Động từ', vn: 'đưa, tiễn, tặng', em: '🎁', lesson: 4,
+    n: 12, zh: '送', py: 'sòng', pos: 'Động từ', vn: 'đưa, tiễn, tặng', em: '🎁', img: '/images/hsk2v3-bai-3/song.jpg', lesson: 4,
     ex_zh: '刘明开车送孩子去学校。', ex_py: 'Liú Míng kāichē sòng háizi qù xuéxiào.', ex_vn: 'Lưu Minh lái xe đưa con đi đến trường.',
     exList: [
       { zh: '刘明开车送孩子去学校。', py: 'Liú Míng kāichē sòng háizi qù xuéxiào.', vn: 'Lưu Minh lái xe đưa con đi đến trường.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '送', p: 'sòng', type: '形声字 · Chữ hình thanh', st: 9, ord: '关 → 辶', rad: '辶 (sước – đi)', mean: 'đưa, tiễn, tặng', tip: 'Bộ 辶 (đi) — đưa người hoặc đồ đến nơi khác.', cf: '', w: '送孩子 / 送礼物 / 送你回家' }]
   },
   {
-    n: 13, zh: '回去', py: 'huíqù', pos: 'Động từ', vn: 'quay về, về', em: '↩️', lesson: 4,
+    n: 13, zh: '回去', py: 'huíqù', pos: 'Động từ', vn: 'quay về, về', em: '↩️', img: '/images/hsk2v3-bai-3/huiqu.jpg', lesson: 4,
     ex_zh: '医院就来电话了，让他回去上班。', ex_py: 'Yīyuàn jiù lái diànhuà le, ràng tā huíqù shàngbān.', ex_vn: 'Bệnh viện gọi điện đến, yêu cầu anh ấy quay về làm việc.',
     exList: [
       { zh: '医院就来电话了，让他回去上班。', py: 'Yīyuàn jiù lái diànhuà le, ràng tā huíqù shàngbān.', vn: 'Bệnh viện gọi điện đến, yêu cầu anh ấy quay về làm việc.' },
@@ -129,7 +129,7 @@ var vocabData = [
     hanzi: [{ c: '每', p: 'měi', type: '会意字 · Chữ hội ý', st: 7, ord: '丿 → 乛 → 母', rad: '母 (mẫu – mẹ)', mean: 'mỗi, từng', tip: '每 thường đi kèm 都: 每天都、每个人都。', cf: '', w: '每天 / 每个 / 每年' }]
   },
   {
-    n: 15, zh: '累', py: 'lèi', pos: 'Tính từ', vn: 'mệt', em: '😮‍💨', lesson: 4,
+    n: 15, zh: '累', py: 'lèi', pos: 'Tính từ', vn: 'mệt', em: '😮‍💨', img: '/images/hsk2v3-bai-3/lei.jpg', lesson: 4,
     ex_zh: '我觉得他这个月每天都很累。', ex_py: 'Wǒ juéde tā zhège yuè měitiān dōu hěn lèi.', ex_vn: 'Tôi thấy tháng này ngày nào anh ấy cũng rất mệt.',
     exList: [
       { zh: '我觉得他这个月每天都很累。', py: 'Wǒ juéde tā zhège yuè měitiān dōu hěn lèi.', vn: 'Tôi thấy tháng này ngày nào anh ấy cũng rất mệt.' },

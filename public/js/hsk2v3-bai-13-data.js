@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '新年', py: 'xīnnián', pos: 'Danh từ', vn: 'năm mới', em: '🎊', lesson: 1,
+    n: 1, zh: '新年', py: 'xīnnián', pos: 'Danh từ', vn: 'năm mới', em: '🎊', img: '/images/hsk2v3-bai-13/xinnian.jpg', lesson: 1,
     ex_zh: '时间过得真快啊！新年就要到了。', ex_py: 'Shíjiān guò de zhēn kuài a! Xīnnián jiù yào dào le.', ex_vn: 'Thời gian trôi nhanh thật đấy! Sắp đến năm mới rồi.',
     exList: [
       { zh: '时间过得真快啊！新年就要到了。', py: 'Shíjiān guò de zhēn kuài a! Xīnnián jiù yào dào le.', vn: 'Thời gian trôi nhanh thật đấy! Sắp đến năm mới rồi.' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '新', p: 'xīn', type: '形声字 · Chữ hình thanh', st: 13, ord: '亲 → 斤', rad: '斤 (cân – rìu)', mean: 'mới', tip: 'Ôn 就要……了 (bài 10): 新年就要到了。', cf: '旧 (jiù – cũ)', w: '新年 / 新的 / 新衣服' }]
   },
   {
-    n: 2, zh: '教', py: 'jiāo', pos: 'Động từ', vn: 'dạy', em: '👩‍🏫', lesson: 1,
+    n: 2, zh: '教', py: 'jiāo', pos: 'Động từ', vn: 'dạy', em: '👩‍🏫', img: '/images/hsk2v3-bai-13/jiao.jpg', lesson: 1,
     ex_zh: '这一年王老师教我们中文，每天工作都很累。', ex_py: 'Zhè yì nián Wáng lǎoshī jiāo wǒmen Zhōngwén, měi tiān gōngzuò dōu hěn lèi.', ex_vn: 'Một năm nay, cô Vương dạy chúng ta tiếng Trung Quốc, ngày nào làm việc cũng đều rất mệt.',
     exList: [
       { zh: '这一年王老师教我们中文，每天工作都很累。', py: 'Zhè yì nián Wáng lǎoshī jiāo wǒmen Zhōngwén, měi tiān gōngzuò dōu hěn lèi.', vn: 'Một năm nay, cô Vương dạy chúng ta tiếng Trung Quốc, ngày nào làm việc cũng đều rất mệt.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '教', p: 'jiāo', type: '会意字 · Chữ hội ý', st: 11, ord: '孝 → 攵', rad: '攵 (phốc)', mean: 'dạy', tip: '教 cũng là câu hai tân ngữ: 教 + người + môn học.', cf: '学 (xué – học)', w: '教 / 教我们中文 / 教得好' }]
   },
   {
-    n: 3, zh: '花', py: 'huā', pos: 'Danh từ', vn: 'hoa', em: '🌸', lesson: 1,
+    n: 3, zh: '花', py: 'huā', pos: 'Danh từ', vn: 'hoa', em: '🌸', img: '/images/hsk2v3-bai-13/hua.jpg', lesson: 1,
     ex_zh: '王老师喜欢花，就送给她花吧。', ex_py: 'Wáng lǎoshī xǐhuan huā, jiù sòng gěi tā huā ba.', ex_vn: 'Cô Vương thích hoa đấy, cứ tặng hoa cho cô đi.',
     exList: [
       { zh: '王老师喜欢花，就送给她花吧。', py: 'Wáng lǎoshī xǐhuan huā, jiù sòng gěi tā huā ba.', vn: 'Cô Vương thích hoa đấy, cứ tặng hoa cho cô đi.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '花', p: 'huā', type: '形声字 · Chữ hình thanh', st: 7, ord: '艹 → 化', rad: '艹 (thảo – cỏ)', mean: 'hoa; tiêu (tiền)', tip: 'Cùng chữ 花 với 花钱 (tiêu tiền, bài 8) nhưng khác từ loại.', cf: '花钱 (huā qián)', w: '花 / 花店 / 买花' }]
   },
   {
-    n: 4, zh: '希望', py: 'xīwàng', pos: 'Động từ', vn: 'hy vọng, mong muốn', em: '🙏', lesson: 1,
+    n: 4, zh: '希望', py: 'xīwàng', pos: 'Động từ', vn: 'hy vọng, mong muốn', em: '🙏', img: '/images/hsk2v3-bai-13/xiwang.jpg', lesson: 1,
     ex_zh: '希望花店还有漂亮的花。', ex_py: 'Xīwàng huādiàn hái yǒu piàoliang de huā.', ex_vn: 'Hy vọng ở cửa hàng hoa vẫn còn hoa đẹp.',
     exList: [
       { zh: '希望花店还有漂亮的花。', py: 'Xīwàng huādiàn hái yǒu piàoliang de huā.', vn: 'Hy vọng ở cửa hàng hoa vẫn còn hoa đẹp.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '希', p: 'xī', type: '会意字 · Chữ hội ý', st: 7, ord: '乂 → 丿 → 巾', rad: '巾 (cân – khăn)', mean: 'hy vọng, mong', tip: 'Ôn 地 (bài 6): 希望她高高兴兴地过个新年。', cf: '', w: '希望 / 希望你…… / 我希望' }]
   },
   {
-    n: 5, zh: '上面', py: 'shàngmiàn', pos: 'Danh từ', vn: 'phía trên, bên trên', em: '⬆️', lesson: 2,
+    n: 5, zh: '上面', py: 'shàngmiàn', pos: 'Danh từ', vn: 'phía trên, bên trên', em: '⬆️', img: '/images/hsk2v3-bai-13/shangmian.jpg', lesson: 2,
     ex_zh: '现在我来说，你们在本子上面写。', ex_py: 'Xiànzài wǒ lái shuō, nǐmen zài běnzi shàngmiàn xiě.', ex_vn: 'Bây giờ cô sẽ đọc, các em viết vào vở nhé.',
     exList: [
       { zh: '现在我来说，你们在本子上面写。', py: 'Xiànzài wǒ lái shuō, nǐmen zài běnzi shàngmiàn xiě.', vn: 'Bây giờ cô sẽ đọc, các em viết vào vở nhé.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '面', p: 'miàn', type: '象形字 · Chữ tượng hình', st: 9, ord: '一 → 丿 → 囗 → 三', rad: '面 (diện)', mean: 'mặt, phía', tip: 'Cùng nhóm: 上面、里面、外面 (bài 12)、后面 (bài 10).', cf: '下面 (xiàmiàn)', w: '上面 / 里面 / 外面' }]
   },
   {
-    n: 6, zh: '洗手间', py: 'xǐshǒujiān', pos: 'Danh từ', vn: 'nhà vệ sinh', em: '🚻', lesson: 2,
+    n: 6, zh: '洗手间', py: 'xǐshǒujiān', pos: 'Danh từ', vn: 'nhà vệ sinh', em: '🚻', img: '/images/hsk2v3-bai-13/xishoujian.jpg', lesson: 2,
     ex_zh: '同学们，“洗手间”的“间”字写错了。', ex_py: 'Tóngxuémen, “xǐshǒujiān” de “jiān” zì xiěcuò le.', ex_vn: 'Các em ơi, chữ “间” trong từ “洗手间” viết sai rồi.',
     exList: [
       { zh: '同学们，“洗手间”的“间”字写错了。', py: 'Tóngxuémen, “xǐshǒujiān” de “jiān” zì xiěcuò le.', vn: 'Các em ơi, chữ “间” trong từ “洗手间” viết sai rồi.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '间', p: 'jiān', type: '会意字 · Chữ hội ý', st: 7, ord: '门 → 日', rad: '门 (môn – cửa)', mean: 'gian, phòng', tip: 'Bên trong 间 là 日, không phải 口 — viết 口 sẽ thành 问.', cf: '问 (wèn – hỏi)', w: '洗手间 / 房间 / 时间' }]
   },
   {
-    n: 7, zh: '里面', py: 'lǐmiàn', pos: 'Danh từ', vn: 'bên trong', em: '📦', lesson: 2,
+    n: 7, zh: '里面', py: 'lǐmiàn', pos: 'Danh từ', vn: 'bên trong', em: '📦', img: '/images/hsk2v3-bai-13/limian.jpg', lesson: 2,
     ex_zh: '它的里面是“日”，不是“口”。', ex_py: 'Tā de lǐmiàn shì “rì”, bú shì “kǒu”.', ex_vn: 'Bên trong nó là chữ “日” chứ không phải chữ “口” đâu nhé.',
     exList: [
       { zh: '它的里面是“日”，不是“口”。', py: 'Tā de lǐmiàn shì “rì”, bú shì “kǒu”.', vn: 'Bên trong nó là chữ “日” chứ không phải chữ “口” đâu nhé.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '能', p: 'néng', type: '象形字 · Chữ tượng hình', st: 10, ord: '厶 → 月 → 匕 → 匕', rad: '月 (nguyệt)', mean: 'có thể, năng lực', tip: '可能 dùng để phỏng đoán; phủ định là 不可能.', cf: '会 (huì) · 能 (néng)', w: '可能 / 不可能 / 有可能' }]
   },
   {
-    n: 10, zh: '上网', py: 'shàngwǎng', pos: 'Động từ', vn: 'lên mạng', em: '💻', lesson: 3,
+    n: 10, zh: '上网', py: 'shàngwǎng', pos: 'Động từ', vn: 'lên mạng', em: '💻', img: '/images/hsk2v3-bai-13/shangwang.jpg', lesson: 3,
     ex_zh: '我是上网买的，真没那么贵。', ex_py: 'Wǒ shì shàngwǎng mǎi de, zhēn méi nàme guì.', ex_vn: 'Mình mua trên mạng đấy, thật sự không đắt đến thế đâu.',
     exList: [
       { zh: '我是上网买的，真没那么贵。', py: 'Wǒ shì shàngwǎng mǎi de, zhēn méi nàme guì.', vn: 'Mình mua trên mạng đấy, thật sự không đắt đến thế đâu.' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '样', p: 'yàng', type: '形声字 · Chữ hình thanh', st: 10, ord: '木 → 羊', rad: '木 (mộc – cây)', mean: 'dáng, kiểu', tip: '这样 (bài 9) ↔ 那样; 那么 (bài 9) chỉ mức độ.', cf: '这样 (zhèyàng)', w: '那样 / 这样 / 怎么样' }]
   },
   {
-    n: 12, zh: '告诉', py: 'gàosu', pos: 'Động từ', vn: 'nói cho biết, kể', em: '🗣️', lesson: 4,
+    n: 12, zh: '告诉', py: 'gàosu', pos: 'Động từ', vn: 'nói cho biết, kể', em: '🗣️', img: '/images/hsk2v3-bai-13/gaosu.jpg', lesson: 4,
     ex_zh: '她告诉我是在网上买的。', ex_py: 'Tā gàosu wǒ shì zài wǎngshang mǎi de.', ex_vn: 'Bạn ấy kể với tôi là mua ở trên mạng.',
     exList: [
       { zh: '她告诉我是在网上买的。', py: 'Tā gàosu wǒ shì zài wǎngshang mǎi de.', vn: 'Bạn ấy kể với tôi là mua ở trên mạng.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '告', p: 'gào', type: '会意字 · Chữ hội ý', st: 7, ord: '丿 → 土 → 口', rad: '口 (khẩu – miệng)', mean: 'báo, nói', tip: '告诉 cũng mang hai tân ngữ: 告诉 + người + nội dung.', cf: '', w: '告诉 / 告诉我 / 告诉他一件事' }]
   },
   {
-    n: 13, zh: '班', py: 'bān', pos: 'Danh từ', vn: 'lớp', em: '👥', lesson: 4,
+    n: 13, zh: '班', py: 'bān', pos: 'Danh từ', vn: 'lớp', em: '👥', img: '/images/hsk2v3-bai-13/ban.jpg', lesson: 4,
     ex_zh: '我们班同学也送了王老师漂亮的花。', ex_py: 'Wǒmen bān tóngxué yě sòngle Wáng lǎoshī piàoliang de huā.', ex_vn: 'Các bạn lớp tôi cũng tặng cô Vương bó hoa đẹp.',
     exList: [
       { zh: '我们班同学也送了王老师漂亮的花。', py: 'Wǒmen bān tóngxué yě sòngle Wáng lǎoshī piàoliang de huā.', vn: 'Các bạn lớp tôi cũng tặng cô Vương bó hoa đẹp.' },

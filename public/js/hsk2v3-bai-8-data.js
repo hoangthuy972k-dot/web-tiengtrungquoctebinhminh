@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '手表', py: 'shǒubiǎo', pos: 'Danh từ', vn: 'đồng hồ đeo tay', em: '⌚', lesson: 1,
+    n: 1, zh: '手表', py: 'shǒubiǎo', pos: 'Danh từ', vn: 'đồng hồ đeo tay', em: '⌚', img: '/images/hsk2v3-bai-8/shoubiao.jpg', lesson: 1,
     ex_zh: '你看，这两块手表怎么样？', ex_py: 'Nǐ kàn, zhè liǎng kuài shǒubiǎo zěnmeyàng?', ex_vn: 'Anh nhìn này, hai chiếc đồng hồ này thế nào?',
     exList: [
       { zh: '你看，这两块手表怎么样？', py: 'Nǐ kàn, zhè liǎng kuài shǒubiǎo zěnmeyàng?', vn: 'Anh nhìn này, hai chiếc đồng hồ này thế nào?' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '表', p: 'biǎo', type: '会意字 · Chữ hội ý', st: 8, ord: '一 → 二 → 丨 → 衣', rad: '衣 (y – áo)', mean: 'đồng hồ; bảng biểu', tip: 'Lượng từ của đồng hồ đeo tay là 块: 一块手表.', cf: '', w: '手表 / 一块手表 / 表 (bảng)' }]
   },
   {
-    n: 2, zh: '左边', py: 'zuǒbian', pos: 'Danh từ', vn: 'bên trái', em: '⬅️', lesson: 1,
+    n: 2, zh: '左边', py: 'zuǒbian', pos: 'Danh từ', vn: 'bên trái', em: '⬅️', img: '/images/hsk2v3-bai-8/zuobian.jpg', lesson: 1,
     ex_zh: '我喜欢左边这个。', ex_py: 'Wǒ xǐhuan zuǒbian zhège.', ex_vn: 'Em thích chiếc bên trái này.',
     exList: [
       { zh: '我喜欢左边这个。', py: 'Wǒ xǐhuan zuǒbian zhège.', vn: 'Em thích chiếc bên trái này.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '左', p: 'zuǒ', type: '会意字 · Chữ hội ý', st: 5, ord: '一 → 丿 → 工', rad: '工 (công)', mean: 'bên trái', tip: 'Nhớ cặp đối lập 左 ↔ 右, 左边 ↔ 右边.', cf: '右 (yòu – phải)', w: '左边 / 左 / 往左走' }]
   },
   {
-    n: 3, zh: '左', py: 'zuǒ', pos: 'Danh từ', vn: 'trái', em: '👈', lesson: 1,
+    n: 3, zh: '左', py: 'zuǒ', pos: 'Danh từ', vn: 'trái', em: '👈', img: '/images/hsk2v3-bai-8/zuo.jpg', lesson: 1,
     ex_zh: '往左走就到电影院了。', ex_py: 'Wǎng zuǒ zǒu jiù dào diànyǐngyuàn le.', ex_vn: 'Đi về bên trái là tới rạp chiếu phim.',
     exList: [
       { zh: '往左走就到电影院了。', py: 'Wǎng zuǒ zǒu jiù dào diànyǐngyuàn le.', vn: 'Đi về bên trái là tới rạp chiếu phim.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '比', p: 'bǐ', type: '会意字 · Chữ hội ý', st: 4, ord: '匕 → 匕', rad: '比 (tỉ)', mean: 'so sánh', tip: 'Hai người đứng cạnh nhau để so — A 比 B + tính từ.', cf: '', w: '比 / A比B好 / 比较' }]
   },
   {
-    n: 5, zh: '右边', py: 'yòubian', pos: 'Danh từ', vn: 'bên phải', em: '➡️', lesson: 1,
+    n: 5, zh: '右边', py: 'yòubian', pos: 'Danh từ', vn: 'bên phải', em: '➡️', img: '/images/hsk2v3-bai-8/youbian.jpg', lesson: 1,
     ex_zh: '左边的比右边的好看。', ex_py: 'Zuǒbian de bǐ yòubian de hǎokàn.', ex_vn: 'Chiếc bên trái đẹp hơn chiếc bên phải.',
     exList: [
       { zh: '左边的比右边的好看。', py: 'Zuǒbian de bǐ yòubian de hǎokàn.', vn: 'Chiếc bên trái đẹp hơn chiếc bên phải.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '右', p: 'yòu', type: '会意字 · Chữ hội ý', st: 5, ord: '一 → 丿 → 口', rad: '口 (khẩu)', mean: 'bên phải', tip: '右 có 口 ở dưới, 左 có 工 ở dưới — mẹo phân biệt.', cf: '左 (zuǒ – trái)', w: '右边 / 右 / 往右走' }]
   },
   {
-    n: 6, zh: '右', py: 'yòu', pos: 'Danh từ', vn: 'phải', em: '👉', lesson: 1,
+    n: 6, zh: '右', py: 'yòu', pos: 'Danh từ', vn: 'phải', em: '👉', img: '/images/hsk2v3-bai-8/you.jpg', lesson: 1,
     ex_zh: '往右走，前边就是电影院。', ex_py: 'Wǎng yòu zǒu, qiánbian jiù shì diànyǐngyuàn.', ex_vn: 'Đi về bên phải, phía trước là rạp chiếu phim.',
     exList: [
       { zh: '往右走，前边就是电影院。', py: 'Wǎng yòu zǒu, qiánbian jiù shì diànyǐngyuàn.', vn: 'Đi về bên phải, phía trước là rạp chiếu phim.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '右', p: 'yòu', type: '会意字 · Chữ hội ý', st: 5, ord: '一 → 丿 → 口', rad: '口 (khẩu)', mean: 'bên phải', tip: 'Đi cùng 往 (bài 7): 往右走.', cf: '左 (zuǒ)', w: '右 / 右边 / 往右' }]
   },
   {
-    n: 7, zh: '记得', py: 'jìde', pos: 'Động từ', vn: 'nhớ, nhớ là', em: '🧠', lesson: 2,
+    n: 7, zh: '记得', py: 'jìde', pos: 'Động từ', vn: 'nhớ, nhớ là', em: '🧠', img: '/images/hsk2v3-bai-8/jide.jpg', lesson: 2,
     ex_zh: '我记得你喜欢看爱情片。', ex_py: 'Wǒ jìde nǐ xǐhuan kàn àiqíngpiàn.', ex_vn: 'Anh nhớ là em thích xem phim tình cảm.',
     exList: [
       { zh: '我记得你喜欢看爱情片。', py: 'Wǒ jìde nǐ xǐhuan kàn àiqíngpiàn.', vn: 'Anh nhớ là em thích xem phim tình cảm.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '记', p: 'jì', type: '形声字 · Chữ hình thanh', st: 5, ord: '讠 → 己', rad: '讠 (ngôn – lời nói)', mean: 'ghi nhớ, ghi chép', tip: '记得 trái nghĩa với 忘 (wàng, bài 6).', cf: '忘 (wàng – quên)', w: '记得 / 记住 / 日记' }]
   },
   {
-    n: 8, zh: '爱情片', py: 'àiqíngpiàn', pos: 'Danh từ', vn: 'phim tình cảm', em: '💕', lesson: 2,
+    n: 8, zh: '爱情片', py: 'àiqíngpiàn', pos: 'Danh từ', vn: 'phim tình cảm', em: '💕', img: '/images/hsk2v3-bai-8/aiqingpian.jpg', lesson: 2,
     ex_zh: '我们看那个爱情片，怎么样？', ex_py: 'Wǒmen kàn nàge àiqíngpiàn, zěnmeyàng?', ex_vn: 'Hay chúng ta xem bộ phim tình cảm kia, được không?',
     exList: [
       { zh: '我们看那个爱情片，怎么样？', py: 'Wǒmen kàn nàge àiqíngpiàn, zěnmeyàng?', vn: 'Hay chúng ta xem bộ phim tình cảm kia, được không?' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '情', p: 'qíng', type: '形声字 · Chữ hình thanh', st: 11, ord: '忄 → 青', rad: '忄 (tâm – trái tim)', mean: 'tình cảm', tip: '爱情 (tình yêu) + 片 (phim) = phim tình cảm.', cf: '', w: '爱情片 / 爱情 / 心情' }]
   },
   {
-    n: 9, zh: '有意思', py: 'yǒu yìsi', pos: 'Cụm từ', vn: 'hay, thú vị', em: '✨', lesson: 2,
+    n: 9, zh: '有意思', py: 'yǒu yìsi', pos: 'Cụm từ', vn: 'hay, thú vị', em: '✨', img: '/images/hsk2v3-bai-8/youyisi.jpg', lesson: 2,
     ex_zh: '这个电影比那个爱情片更有意思。', ex_py: 'Zhège diànyǐng bǐ nàge àiqíngpiàn gèng yǒu yìsi.', ex_vn: 'Bộ phim này hay hơn bộ phim tình cảm kia.',
     exList: [
       { zh: '这个电影比那个爱情片更有意思。', py: 'Zhège diànyǐng bǐ nàge àiqíngpiàn gèng yǒu yìsi.', vn: 'Bộ phim này hay hơn bộ phim tình cảm kia.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '意', p: 'yì', type: '会意字 · Chữ hội ý', st: 13, ord: '立 → 曰 → 心', rad: '心 (tâm)', mean: 'ý, ý nghĩa', tip: 'Phủ định là 没有意思 (chán, không thú vị).', cf: '', w: '有意思 / 没意思 / 意思' }]
   },
   {
-    n: 10, zh: '点', py: 'diǎn', pos: 'Động từ', vn: 'gọi, chọn (món)', em: '📋', lesson: 3,
+    n: 10, zh: '点', py: 'diǎn', pos: 'Động từ', vn: 'gọi, chọn (món)', em: '📋', img: '/images/hsk2v3-bai-8/dian.jpg', lesson: 3,
     ex_zh: '怎么点这么多菜？', ex_py: 'Zěnme diǎn zhème duō cài?', ex_vn: 'Sao anh gọi nhiều món thế?',
     exList: [
       { zh: '怎么点这么多菜？', py: 'Zěnme diǎn zhème duō cài?', vn: 'Sao anh gọi nhiều món thế?' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '但', p: 'dàn', type: '形声字 · Chữ hình thanh', st: 7, ord: '亻 → 旦', rad: '亻 (nhân đứng)', mean: 'nhưng', tip: 'Có thể rút gọn thành 但 hoặc thay bằng 可是.', cf: '可是 (kěshì)', w: '但是 / 但 / 虽然……但是……' }]
   },
   {
-    n: 13, zh: '花', py: 'huā', pos: 'Động từ', vn: 'tiêu, chi tiêu', em: '💸', lesson: 3,
+    n: 13, zh: '花', py: 'huā', pos: 'Động từ', vn: 'tiêu, chi tiêu', em: '💸', img: '/images/hsk2v3-bai-8/hua.jpg', lesson: 3,
     ex_zh: '今天花了不少钱吧？', ex_py: 'Jīntiān huāle bù shǎo qián ba?', ex_vn: 'Hôm nay anh đã tiêu không ít tiền nhỉ?',
     exList: [
       { zh: '今天花了不少钱吧？', py: 'Jīntiān huāle bù shǎo qián ba?', vn: 'Hôm nay anh đã tiêu không ít tiền nhỉ?' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '花', p: 'huā', type: '形声字 · Chữ hình thanh', st: 7, ord: '艹 → 化', rad: '艹 (thảo – cỏ)', mean: 'hoa; tiêu (tiền)', tip: '花钱 = tiêu tiền; 花时间 = mất thời gian.', cf: '', w: '花钱 / 花时间 / 花儿' }]
   },
   {
-    n: 14, zh: '妻子', py: 'qīzi', pos: 'Danh từ', vn: 'vợ', em: '👩', lesson: 4,
+    n: 14, zh: '妻子', py: 'qīzi', pos: 'Danh từ', vn: 'vợ', em: '👩', img: '/images/hsk2v3-bai-8/qizi.jpg', lesson: 4,
     ex_zh: '虽然妻子忘了今天是自己的生日，但是丈夫记得。', ex_py: 'Suīrán qīzi wàngle jīntiān shì zìjǐ de shēngrì, dànshì zhàngfu jìde.', ex_vn: 'Mặc dù người vợ quên hôm nay là sinh nhật của mình, nhưng người chồng vẫn nhớ.',
     exList: [
       { zh: '虽然妻子忘了今天是自己的生日，但是丈夫记得。', py: 'Suīrán qīzi wàngle jīntiān shì zìjǐ de shēngrì, dànshì zhàngfu jìde.', vn: 'Mặc dù người vợ quên hôm nay là sinh nhật của mình, nhưng người chồng vẫn nhớ.' },
@@ -129,7 +129,7 @@ var vocabData = [
     hanzi: [{ c: '妻', p: 'qī', type: '会意字 · Chữ hội ý', st: 8, ord: '十 → 彐 → 女', rad: '女 (nữ)', mean: 'vợ', tip: 'Cặp từ 妻子 ↔ 丈夫 dùng khi nói trang trọng.', cf: '丈夫 (zhàngfu – chồng)', w: '妻子 / 我的妻子' }]
   },
   {
-    n: 15, zh: '丈夫', py: 'zhàngfu', pos: 'Danh từ', vn: 'chồng', em: '👨', lesson: 4,
+    n: 15, zh: '丈夫', py: 'zhàngfu', pos: 'Danh từ', vn: 'chồng', em: '👨', img: '/images/hsk2v3-bai-8/zhangfu.jpg', lesson: 4,
     ex_zh: '丈夫请妻子去饭馆吃饭。', ex_py: 'Zhàngfu qǐng qīzi qù fànguǎn chīfàn.', ex_vn: 'Người chồng mời vợ đi ăn ở nhà hàng.',
     exList: [
       { zh: '丈夫请妻子去饭馆吃饭。', py: 'Zhàngfu qǐng qīzi qù fànguǎn chīfàn.', vn: 'Người chồng mời vợ đi ăn ở nhà hàng.' },
@@ -138,7 +138,7 @@ var vocabData = [
     hanzi: [{ c: '丈', p: 'zhàng', type: '指事字 · Chữ chỉ sự', st: 3, ord: '一 → 丿 → 乀', rad: '一 (nhất)', mean: 'trượng; chồng', tip: 'Ở đây 请 mang nghĩa "请客" — mời (và trả tiền).', cf: '妻子 (qīzi – vợ)', w: '丈夫 / 我丈夫' }]
   },
   {
-    n: 16, zh: '饭馆', py: 'fànguǎn', pos: 'Danh từ', vn: 'nhà hàng, quán ăn', em: '🍜', lesson: 4,
+    n: 16, zh: '饭馆', py: 'fànguǎn', pos: 'Danh từ', vn: 'nhà hàng, quán ăn', em: '🍜', img: '/images/hsk2v3-bai-8/fanguan.jpg', lesson: 4,
     ex_zh: '丈夫请妻子去饭馆吃饭。', ex_py: 'Zhàngfu qǐng qīzi qù fànguǎn chīfàn.', ex_vn: 'Người chồng mời vợ đi ăn ở nhà hàng.',
     exList: [
       { zh: '丈夫请妻子去饭馆吃饭。', py: 'Zhàngfu qǐng qīzi qù fànguǎn chīfàn.', vn: 'Người chồng mời vợ đi ăn ở nhà hàng.' },

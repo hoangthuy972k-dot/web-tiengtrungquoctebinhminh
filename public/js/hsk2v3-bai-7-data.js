@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '往', p: 'wǎng', type: '形声字 · Chữ hình thanh', st: 8, ord: '彳 → 主', rad: '彳 (xích – bước đi)', mean: 'đi về phía', tip: 'Bộ 彳 chỉ việc đi lại: 往 + phương hướng (前/外/左/右).', cf: '', w: '往外 / 往前 / 往这儿' }]
   },
   {
-    n: 3, zh: '跑', py: 'pǎo', pos: 'Động từ', vn: 'chạy', em: '🏃', lesson: 1,
+    n: 3, zh: '跑', py: 'pǎo', pos: 'Động từ', vn: 'chạy', em: '🏃', img: '/images/hsk2v3-bai-7/pao.jpg', lesson: 1,
     ex_zh: '你跑得快不快？', ex_py: 'Nǐ pǎo de kuài bu kuài?', ex_vn: 'Bạn chạy có nhanh không?',
     exList: [
       { zh: '你跑得快不快？', py: 'Nǐ pǎo de kuài bu kuài?', vn: 'Bạn chạy có nhanh không?' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '跑', p: 'pǎo', type: '形声字 · Chữ hình thanh', st: 12, ord: '足 → 包', rad: '⻊ (túc – chân)', mean: 'chạy', tip: '⻊ (chân) + 包 (bāo) chỉ âm: việc làm bằng chân.', cf: '走 (zǒu – đi)', w: '跑步 / 往外跑 / 跑得快' }]
   },
   {
-    n: 4, zh: '打', py: 'dǎ', pos: 'Động từ', vn: 'đánh, chơi (thể thao)', em: '🏀', lesson: 1,
+    n: 4, zh: '打', py: 'dǎ', pos: 'Động từ', vn: 'đánh, chơi (thể thao)', em: '🏀', img: '/images/hsk2v3-bai-7/da.jpg', lesson: 1,
     ex_zh: '我跟同学说好了，一起去打篮球。', ex_py: 'Wǒ gēn tóngxué shuōhǎo le, yìqǐ qù dǎ lánqiú.', ex_vn: 'Mình đã hẹn với các bạn cùng đi chơi bóng rổ rồi.',
     exList: [
       { zh: '我跟同学说好了，一起去打篮球。', py: 'Wǒ gēn tóngxué shuōhǎo le, yìqǐ qù dǎ lánqiú.', vn: 'Mình đã hẹn với các bạn cùng đi chơi bóng rổ rồi.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '打', p: 'dǎ', type: '形声字 · Chữ hình thanh', st: 5, ord: '扌 → 丁', rad: '扌 (thủ – tay)', mean: 'đánh; chơi; gọi', tip: 'Môn thể thao dùng tay thì đi với 打 (打篮球), dùng chân thì đi với 踢 (踢足球).', cf: '踢 (tī – đá)', w: '打篮球 / 打电话 / 打开' }]
   },
   {
-    n: 5, zh: '篮球', py: 'lánqiú', pos: 'Danh từ', vn: 'bóng rổ', em: '🏀', lesson: 1,
+    n: 5, zh: '篮球', py: 'lánqiú', pos: 'Danh từ', vn: 'bóng rổ', em: '🏀', img: '/images/hsk2v3-bai-7/lanqiu.jpg', lesson: 1,
     ex_zh: '他篮球打得很好。', ex_py: 'Tā lánqiú dǎ de hěn hǎo.', ex_vn: 'Bạn ấy chơi bóng rổ rất hay.',
     exList: [
       { zh: '他篮球打得很好。', py: 'Tā lánqiú dǎ de hěn hǎo.', vn: 'Bạn ấy chơi bóng rổ rất hay.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '篮', p: 'lán', type: '形声字 · Chữ hình thanh', st: 16, ord: '⺮ → 监', rad: '⺮ (trúc – tre)', mean: 'rổ, giỏ', tip: '篮 vốn là cái rổ đan bằng tre — 篮球 là "bóng ném vào rổ".', cf: '', w: '篮球 / 打篮球' }]
   },
   {
-    n: 6, zh: '运动', py: 'yùndòng', pos: 'Danh từ / Động từ', vn: 'thể thao; vận động, tập thể dục', em: '⚽', lesson: 2,
+    n: 6, zh: '运动', py: 'yùndòng', pos: 'Danh từ / Động từ', vn: 'thể thao; vận động, tập thể dục', em: '⚽', img: '/images/hsk2v3-bai-7/yundong.jpg', lesson: 2,
     ex_zh: '你还喜欢什么运动？', ex_py: 'Nǐ hái xǐhuan shénme yùndòng?', ex_vn: 'Bạn còn thích môn thể thao nào khác?',
     exList: [
       { zh: '你还喜欢什么运动？', py: 'Nǐ hái xǐhuan shénme yùndòng?', vn: 'Bạn còn thích môn thể thao nào khác?' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '运', p: 'yùn', type: '形声字 · Chữ hình thanh', st: 7, ord: '云 → 辶', rad: '辶 (sước – đi)', mean: 'vận chuyển, vận động', tip: '运动 = 运 (chuyển) + 动 (động): làm cho cơ thể chuyển động.', cf: '', w: '运动 / 去运动 / 运动员' }]
   },
   {
-    n: 7, zh: '踢', py: 'tī', pos: 'Động từ', vn: 'đá', em: '🦵', lesson: 2,
+    n: 7, zh: '踢', py: 'tī', pos: 'Động từ', vn: 'đá', em: '🦵', img: '/images/hsk2v3-bai-7/ti.jpg', lesson: 2,
     ex_zh: '我还喜欢踢足球。', ex_py: 'Wǒ hái xǐhuan tī zúqiú.', ex_vn: 'Mình còn thích chơi bóng đá nữa.',
     exList: [
       { zh: '我还喜欢踢足球。', py: 'Wǒ hái xǐhuan tī zúqiú.', vn: 'Mình còn thích chơi bóng đá nữa.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '踢', p: 'tī', type: '形声字 · Chữ hình thanh', st: 15, ord: '足 → 易', rad: '⻊ (túc – chân)', mean: 'đá', tip: 'Bộ 足 cho biết hành động bằng chân; 易 (yì) chỉ âm.', cf: '打 (dǎ – đánh, chơi bằng tay)', w: '踢足球 / 踢球 / 踢得好' }]
   },
   {
-    n: 8, zh: '足球', py: 'zúqiú', pos: 'Danh từ', vn: 'bóng đá', em: '⚽', lesson: 2,
+    n: 8, zh: '足球', py: 'zúqiú', pos: 'Danh từ', vn: 'bóng đá', em: '⚽', img: '/images/hsk2v3-bai-7/zuqiu.jpg', lesson: 2,
     ex_zh: '一到星期天就跟朋友们去踢足球。', ex_py: 'Yí dào xīngqītiān jiù gēn péngyoumen qù tī zúqiú.', ex_vn: 'Cứ đến Chủ nhật là mình lại đi đá bóng cùng bạn bè.',
     exList: [
       { zh: '一到星期天就跟朋友们去踢足球。', py: 'Yí dào xīngqītiān jiù gēn péngyoumen qù tī zúqiú.', vn: 'Cứ đến Chủ nhật là mình lại đi đá bóng cùng bạn bè.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '足', p: 'zú', type: '象形字 · Chữ tượng hình', st: 7, ord: '口 → 止', rad: '足 (túc – chân)', mean: 'chân; đủ', tip: 'Hình bàn chân — 足球 là môn bóng chơi bằng chân.', cf: '', w: '足球 / 踢足球' }]
   },
   {
-    n: 9, zh: '球', py: 'qiú', pos: 'Danh từ', vn: 'quả bóng', em: '🏐', lesson: 2,
+    n: 9, zh: '球', py: 'qiú', pos: 'Danh từ', vn: 'quả bóng', em: '🏐', img: '/images/hsk2v3-bai-7/qiu.jpg', lesson: 2,
     ex_zh: '一到星期天就跟朋友们去踢球。', ex_py: 'Yí dào xīngqītiān jiù gēn péngyoumen qù tī qiú.', ex_vn: 'Cứ đến Chủ nhật là mình lại đi đá bóng cùng bạn bè.',
     exList: [
       { zh: '一到星期天就跟朋友们去踢球。', py: 'Yí dào xīngqītiān jiù gēn péngyoumen qù tī qiú.', vn: 'Cứ đến Chủ nhật là mình lại đi đá bóng cùng bạn bè.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '得', p: 'de', type: '形声字 · Chữ hình thanh', st: 11, ord: '彳 → 旦 → 寸', rad: '彳 (xích – bước đi)', mean: '(de) trợ từ bổ ngữ; (dé) được', tip: '的 trước danh từ · 地 trước động từ · 得 sau động từ.', cf: '的 (de) · 地 (de)', w: '跑得快 / 唱得好听 / 玩得很高兴' }]
   },
   {
-    n: 11, zh: '跑步', py: 'pǎobù', pos: 'Động từ', vn: 'chạy bộ', em: '🏃‍♀️', lesson: 3,
+    n: 11, zh: '跑步', py: 'pǎobù', pos: 'Động từ', vn: 'chạy bộ', em: '🏃‍♀️', img: '/images/hsk2v3-bai-7/paobu.jpg', lesson: 3,
     ex_zh: '跑步呢？你跑得快不快？', ex_py: 'Pǎobù ne? Nǐ pǎo de kuài bu kuài?', ex_vn: 'Còn chạy bộ thì sao? Bạn chạy có nhanh không?',
     exList: [
       { zh: '跑步呢？你跑得快不快？', py: 'Pǎobù ne? Nǐ pǎo de kuài bu kuài?', vn: 'Còn chạy bộ thì sao? Bạn chạy có nhanh không?' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '步', p: 'bù', type: '会意字 · Chữ hội ý', st: 7, ord: '止 → 少', rad: '止 (chỉ – bàn chân)', mean: 'bước chân', tip: '跑步 là từ li hợp: nói "跑得快" chứ không nói "跑步得快".', cf: '', w: '跑步 / 一步 / 散步' }]
   },
   {
-    n: 12, zh: '游泳', py: 'yóuyǒng', pos: 'Động từ', vn: 'bơi, bơi lội', em: '🏊', lesson: 3,
+    n: 12, zh: '游泳', py: 'yóuyǒng', pos: 'Động từ', vn: 'bơi, bơi lội', em: '🏊', img: '/images/hsk2v3-bai-7/youyong.jpg', lesson: 3,
     ex_zh: '那你喜欢游泳吗？', ex_py: 'Nà nǐ xǐhuan yóuyǒng ma?', ex_vn: 'Vậy bạn có thích bơi không?',
     exList: [
       { zh: '那你喜欢游泳吗？', py: 'Nà nǐ xǐhuan yóuyǒng ma?', vn: 'Vậy bạn có thích bơi không?' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '泳', p: 'yǒng', type: '形声字 · Chữ hình thanh', st: 8, ord: '氵 → 永', rad: '氵 (thuỷ – nước)', mean: 'bơi', tip: '游泳 cũng là từ li hợp: 游泳游得不快.', cf: '', w: '游泳 / 去游泳 / 游泳池' }]
   },
   {
-    n: 13, zh: '游', py: 'yóu', pos: 'Động từ', vn: 'bơi', em: '🌊', lesson: 3,
+    n: 13, zh: '游', py: 'yóu', pos: 'Động từ', vn: 'bơi', em: '🌊', img: '/images/hsk2v3-bai-7/you.jpg', lesson: 3,
     ex_zh: '喜欢，但我游泳游得不快。', ex_py: 'Xǐhuan, dàn wǒ yóuyǒng yóu de bú kuài.', ex_vn: 'Có, nhưng mình bơi không nhanh lắm.',
     exList: [
       { zh: '喜欢，但我游泳游得不快。', py: 'Xǐhuan, dàn wǒ yóuyǒng yóu de bú kuài.', vn: 'Có, nhưng mình bơi không nhanh lắm.' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '游', p: 'yóu', type: '形声字 · Chữ hình thanh', st: 12, ord: '氵 → 方 → 子', rad: '氵 (thuỷ – nước)', mean: 'bơi; đi chơi', tip: 'Bộ 氵 cho biết hành động ở dưới nước.', cf: '', w: '游 / 游泳 / 旅游' }]
   },
   {
-    n: 14, zh: '爱好', py: 'àihào', pos: 'Danh từ / Động từ', vn: 'sở thích; thích', em: '💚', lesson: 4,
+    n: 14, zh: '爱好', py: 'àihào', pos: 'Danh từ / Động từ', vn: 'sở thích; thích', em: '💚', img: '/images/hsk2v3-bai-7/aihao.jpg', lesson: 4,
     ex_zh: '我的爱好是运动。', ex_py: 'Wǒ de àihào shì yùndòng.', ex_vn: 'Sở thích của tôi là thể thao.',
     exList: [
       { zh: '我的爱好是运动。', py: 'Wǒ de àihào shì yùndòng.', vn: 'Sở thích của tôi là thể thao.' },
@@ -129,7 +129,7 @@ var vocabData = [
     hanzi: [{ c: '爱', p: 'ài', type: '会意字 · Chữ hội ý', st: 10, ord: '爫 → 冖 → 友', rad: '爫 (trảo)', mean: 'yêu, thích', tip: '爱好 chỉ sở thích lâu dài, khác 喜欢 (thích, dùng rộng hơn).', cf: '喜欢 (xǐhuan)', w: '爱好 / 爱吃 / 我爱你' }]
   },
   {
-    n: 15, zh: '开始', py: 'kāishǐ', pos: 'Động từ / Danh từ', vn: 'bắt đầu; lúc đầu', em: '▶️', lesson: 4,
+    n: 15, zh: '开始', py: 'kāishǐ', pos: 'Động từ / Danh từ', vn: 'bắt đầu; lúc đầu', em: '▶️', img: '/images/hsk2v3-bai-7/kaishi.jpg', lesson: 4,
     ex_zh: '从上小学开始，我每天都跟爸爸去运动。', ex_py: 'Cóng shàng xiǎoxué kāishǐ, wǒ měi tiān dōu gēn bàba qù yùndòng.', ex_vn: 'Bắt đầu từ khi học tiểu học, ngày nào tôi cũng tập thể thao cùng bố.',
     exList: [
       { zh: '从上小学开始，我每天都跟爸爸去运动。', py: 'Cóng shàng xiǎoxué kāishǐ, wǒ měi tiān dōu gēn bàba qù yùndòng.', vn: 'Bắt đầu từ khi học tiểu học, ngày nào tôi cũng tập thể thao cùng bố.' },

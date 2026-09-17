@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '就', p: 'jiù', type: '形声字 · Chữ hình thanh', st: 12, ord: '亠 → 口 → 小 → 尤', rad: '尢 (uông)', mean: 'liền, ngay, chính là', tip: 'Bên trái là 京 (kinh đô) rút gọn, bên phải là 尤 — nhớ "đến kinh đô là đi ngay".', cf: '', w: '就是 / 就要 / 有事就找我' }]
   },
   {
-    n: 2, zh: '给', py: 'gěi', pos: 'Giới từ / Động từ', vn: 'cho', em: '🎁', lesson: 1,
+    n: 2, zh: '给', py: 'gěi', pos: 'Giới từ / Động từ', vn: 'cho', em: '🎁', img: '/images/hsk2v3-bai-1/gei.jpg', lesson: 1,
     ex_zh: '一飞给我打电话了。', ex_py: 'Yīfēi gěi wǒ dǎ diànhuà le.', ex_vn: 'Nhất Phi đã gọi điện thoại cho chị.',
     exList: [
       { zh: '一飞给我打电话了。', py: 'Yīfēi gěi wǒ dǎ diànhuà le.', vn: 'Nhất Phi đã gọi điện thoại cho chị.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '给', p: 'gěi', type: '形声字 · Chữ hình thanh', st: 9, ord: '纟 → 人 → 一 → 口', rad: '纟 (mịch – sợi tơ)', mean: 'đưa cho, cấp cho', tip: 'Bộ 纟 (sợi tơ) + 合 (hợp): ngày xưa vải vóc là thứ đem cho, tặng.', cf: '', w: '给我 / 给你打电话' }]
   },
   {
-    n: 3, zh: '让', py: 'ràng', pos: 'Động từ', vn: 'bảo, để, cho phép, nhờ', em: '🙏', lesson: 1,
+    n: 3, zh: '让', py: 'ràng', pos: 'Động từ', vn: 'bảo, để, cho phép, nhờ', em: '🙏', img: '/images/hsk2v3-bai-1/rang.jpg', lesson: 1,
     ex_zh: '一飞让我来接你们。', ex_py: 'Yīfēi ràng wǒ lái jiē nǐmen.', ex_vn: 'Nhất Phi nhờ chị đến đón các em.',
     exList: [
       { zh: '一飞让我来接你们。', py: 'Yīfēi ràng wǒ lái jiē nǐmen.', vn: 'Nhất Phi nhờ chị đến đón các em.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '让', p: 'ràng', type: '形声字 · Chữ hình thanh', st: 5, ord: '讠 → 上', rad: '讠 (ngôn – lời nói)', mean: 'nhường, để cho, bảo', tip: 'Bộ 讠 (lời nói) + 上: dùng lời bảo ai đó làm việc gì.', cf: '', w: '让我来 / 让孩子回家' }]
   },
   {
-    n: 4, zh: '接', py: 'jiē', pos: 'Động từ', vn: 'đón; nhận (điện thoại)', em: '🤝', lesson: 1,
+    n: 4, zh: '接', py: 'jiē', pos: 'Động từ', vn: 'đón; nhận (điện thoại)', em: '🤝', img: '/images/hsk2v3-bai-1/jie.jpg', lesson: 1,
     ex_zh: '让我来接你们。', ex_py: 'Ràng wǒ lái jiē nǐmen.', ex_vn: 'Nhờ chị đến đón các em.',
     exList: [
       { zh: '让我来接你们。', py: 'Ràng wǒ lái jiē nǐmen.', vn: 'Nhờ chị đến đón các em.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '次', p: 'cì', type: '会意字 · Chữ hội ý', st: 6, ord: '冫 → 欠', rad: '冫 (băng)', mean: 'lần, thứ tự', tip: 'Đếm số lần: 第一次 (lần đầu), 第二次 (lần hai).', cf: '', w: '第一次 / 一次 / 下次' }]
   },
   {
-    n: 6, zh: '旅游', py: 'lǚyóu', pos: 'Động từ', vn: 'du lịch', em: '🧳', lesson: 2,
+    n: 6, zh: '旅游', py: 'lǚyóu', pos: 'Động từ', vn: 'du lịch', em: '🧳', img: '/images/hsk2v3-bai-1/luyou.jpg', lesson: 2,
     ex_zh: '我们是来旅游的。', ex_py: 'Wǒmen shì lái lǚyóu de.', ex_vn: 'Chúng em đến du lịch ạ.',
     exList: [
       { zh: '我们是来旅游的。', py: 'Wǒmen shì lái lǚyóu de.', vn: 'Chúng em đến du lịch ạ.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '旅', p: 'lǚ', type: '会意字 · Chữ hội ý', st: 10, ord: '方 → 人 → 衣 phần dưới', rad: '方 (phương)', mean: 'đi xa, lữ hành', tip: 'Gắn với việc rời nhà đi xa: 旅游 (du lịch), 旅行 (lữ hành).', cf: '', w: '旅游 / 旅行' }]
   },
   {
-    n: 7, zh: '帮忙', py: 'bāngmáng', pos: 'Động từ (ly hợp)', vn: 'giúp đỡ', em: '🤲', lesson: 3,
+    n: 7, zh: '帮忙', py: 'bāngmáng', pos: 'Động từ (ly hợp)', vn: 'giúp đỡ', em: '🤲', img: '/images/hsk2v3-bai-1/bangmang.jpg', lesson: 3,
     ex_zh: '我想请你帮个忙。', ex_py: 'Wǒ xiǎng qǐng nǐ bāng ge máng.', ex_vn: 'Mình muốn nhờ bạn giúp một việc.',
     exList: [
       { zh: '我想请你帮个忙。', py: 'Wǒ xiǎng qǐng nǐ bāng ge máng.', vn: 'Mình muốn nhờ bạn giúp một việc.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '帮', p: 'bāng', type: '形声字 · Chữ hình thanh', st: 9, ord: '丰 → 阝 → 巾', rad: '巾 (cân – khăn)', mean: 'giúp', tip: '帮忙 là từ ly hợp: nói 帮个忙, không nói 帮忙你.', cf: '', w: '帮忙 / 帮我 / 帮个忙' }]
   },
   {
-    n: 8, zh: '不好意思', py: 'bù hǎoyìsi', pos: 'Cụm từ', vn: 'xin lỗi, ngại, áy náy', em: '😅', lesson: 3,
+    n: 8, zh: '不好意思', py: 'bù hǎoyìsi', pos: 'Cụm từ', vn: 'xin lỗi, ngại, áy náy', em: '😅', img: '/images/hsk2v3-bai-1/buhaoyisi.jpg', lesson: 3,
     ex_zh: '不好意思，我已经到北京了。', ex_py: 'Bù hǎoyìsi, wǒ yǐjīng dào Běijīng le.', ex_vn: 'Xin lỗi nhé, mình đã đến Bắc Kinh rồi.',
     exList: [
       { zh: '不好意思，我已经到北京了。', py: 'Bù hǎoyìsi, wǒ yǐjīng dào Běijīng le.', vn: 'Xin lỗi nhé, mình đã đến Bắc Kinh rồi.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '那', p: 'nà', type: '形声字 · Chữ hình thanh', st: 6, ord: '刀 phần trái → 阝', rad: '阝 (ấp)', mean: 'kia, đó; vậy thì', tip: 'Ở đầu câu 那 là liên từ "vậy thì", khác với 那 chỉ định "cái kia".', cf: '哪 (nǎ – nào)', w: '那我们走吧 / 那个' }]
   },
   {
-    n: 11, zh: '介绍', py: 'jièshào', pos: 'Động từ', vn: 'giới thiệu', em: '🗣️', lesson: 4,
+    n: 11, zh: '介绍', py: 'jièshào', pos: 'Động từ', vn: 'giới thiệu', em: '🗣️', img: '/images/hsk2v3-bai-1/jieshao.jpg', lesson: 4,
     ex_zh: '她还给我们介绍了很多东西。', ex_py: 'Tā hái gěi wǒmen jièshàole hěn duō dōngxi.', ex_vn: 'Chị ấy còn giới thiệu cho chúng em rất nhiều thứ.',
     exList: [
       { zh: '她还给我们介绍了很多东西。', py: 'Tā hái gěi wǒmen jièshàole hěn duō dōngxi.', vn: 'Chị ấy còn giới thiệu cho chúng em rất nhiều thứ.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '时', p: 'shí', type: '形声字 · Chữ hình thanh', st: 7, ord: '日 → 寸', rad: '日 (nhật – mặt trời)', mean: 'thời gian, lúc', tip: 'Bộ 日 (mặt trời) cho biết chữ liên quan đến thời gian.', cf: '', w: '有时 / 时候 / 小时' }]
   },
   {
-    n: 13, zh: '懂', py: 'dǒng', pos: 'Động từ', vn: 'hiểu', em: '💡', lesson: 4,
+    n: 13, zh: '懂', py: 'dǒng', pos: 'Động từ', vn: 'hiểu', em: '💡', img: '/images/hsk2v3-bai-1/dong.jpg', lesson: 4,
     ex_zh: '有时不太懂她的意思。', ex_py: 'Yǒushí bú tài dǒng tā de yìsi.', ex_vn: 'Có khi chưa hiểu lắm ý của chị ấy.',
     exList: [
       { zh: '有时不太懂她的意思。', py: 'Yǒushí bú tài dǒng tā de yìsi.', vn: 'Có khi chưa hiểu lắm ý của chị ấy.' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '懂', p: 'dǒng', type: '形声字 · Chữ hình thanh', st: 15, ord: '忄 → 艹 → 重', rad: '忄 (tâm đứng – trái tim)', mean: 'hiểu, thông tỏ', tip: 'Bộ 忄 (tim) + 董: hiểu là việc của trái tim và trí óc.', cf: '', w: '懂 / 听懂 / 看懂' }]
   },
   {
-    n: 14, zh: '意思', py: 'yìsi', pos: 'Danh từ', vn: 'ý, ý nghĩa', em: '💭', lesson: 4,
+    n: 14, zh: '意思', py: 'yìsi', pos: 'Danh từ', vn: 'ý, ý nghĩa', em: '💭', img: '/images/hsk2v3-bai-1/yisi.jpg', lesson: 4,
     ex_zh: '你懂我的意思吗？', ex_py: 'Nǐ dǒng wǒ de yìsi ma?', ex_vn: 'Bạn hiểu ý tôi không?',
     exList: [
       { zh: '你懂我的意思吗？', py: 'Nǐ dǒng wǒ de yìsi ma?', vn: 'Bạn hiểu ý tôi không?' },
@@ -129,7 +129,7 @@ var vocabData = [
     hanzi: [{ c: '思', p: 'sī', type: '会意字 · Chữ hội ý', st: 9, ord: '田 → 心', rad: '心 (tâm – trái tim)', mean: 'nghĩ, suy nghĩ', tip: '田 (ruộng, tượng trưng cho đầu óc) + 心 (tim) = suy nghĩ.', cf: '', w: '意思 / 思想' }]
   },
   {
-    n: 15, zh: '北京烤鸭', py: 'Běijīng Kǎoyā', pos: 'Danh từ riêng', vn: 'vịt quay Bắc Kinh', em: '🦆', lesson: 4,
+    n: 15, zh: '北京烤鸭', py: 'Běijīng Kǎoyā', pos: 'Danh từ riêng', vn: 'vịt quay Bắc Kinh', em: '🦆', img: '/images/hsk2v3-bai-1/beijingkaoya.jpg', lesson: 4,
     ex_zh: '她请我们吃了北京烤鸭。', ex_py: 'Tā qǐng wǒmen chīle Běijīng Kǎoyā.', ex_vn: 'Chị ấy đã mời chúng em ăn vịt quay Bắc Kinh.',
     exList: [
       { zh: '她请我们吃了北京烤鸭。', py: 'Tā qǐng wǒmen chīle Běijīng Kǎoyā.', vn: 'Chị ấy đã mời chúng em ăn vịt quay Bắc Kinh.' },

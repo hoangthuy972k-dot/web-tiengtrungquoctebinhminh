@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '站', py: 'zhàn', pos: 'Động từ', vn: 'đứng', em: '🧍', lesson: 1,
+    n: 1, zh: '站', py: 'zhàn', pos: 'Động từ', vn: 'đứng', em: '🧍', img: '/images/hsk2v3-bai-14/zhan.jpg', lesson: 1,
     ex_zh: '王老师，你家楼下站着一个人。', ex_py: 'Wáng lǎoshī, nǐ jiā lóu xià zhànzhe yí ge rén.', ex_vn: 'Cô Vương ơi, ở dưới tầng nhà cô có một người đang đứng kìa.',
     exList: [
       { zh: '王老师，你家楼下站着一个人。', py: 'Wáng lǎoshī, nǐ jiā lóu xià zhànzhe yí ge rén.', vn: 'Cô Vương ơi, ở dưới tầng nhà cô có một người đang đứng kìa.' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '站', p: 'zhàn', type: '形声字 · Chữ hình thanh', st: 10, ord: '立 → 占', rad: '立 (lập – đứng)', mean: 'đứng; trạm', tip: 'Ở bài 12, 站 là danh từ "trạm"; ở đây là động từ "đứng".', cf: '坐 (zuò – ngồi)', w: '站 / 站着 / 站起来' }]
   },
   {
-    n: 2, zh: '包', py: 'bāo', pos: 'Danh từ / Động từ / Lượng từ', vn: 'túi, gói, bao', em: '👜', lesson: 1,
+    n: 2, zh: '包', py: 'bāo', pos: 'Danh từ / Động từ / Lượng từ', vn: 'túi, gói, bao', em: '👜', img: '/images/hsk2v3-bai-14/bao.jpg', lesson: 1,
     ex_zh: '手里还拿着一个黑色的包。', ex_py: 'Shǒu li hái názhe yí ge hēisè de bāo.', ex_vn: 'Trên tay còn đang cầm một chiếc túi màu đen nữa.',
     exList: [
       { zh: '手里还拿着一个黑色的包。', py: 'Shǒu li hái názhe yí ge hēisè de bāo.', vn: 'Trên tay còn đang cầm một chiếc túi màu đen nữa.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '包', p: 'bāo', type: '会意字 · Chữ hội ý', st: 5, ord: '勹 → 巳', rad: '勹 (bao)', mean: 'túi; bọc', tip: 'Cùng chữ 包 trong 书包 (cặp sách), 面包 (bánh mì).', cf: '', w: '包 / 书包 / 面包' }]
   },
   {
-    n: 3, zh: '过年', py: 'guònián', pos: 'Động từ', vn: 'đón Tết, ăn Tết', em: '🧧', lesson: 2,
+    n: 3, zh: '过年', py: 'guònián', pos: 'Động từ', vn: 'đón Tết, ăn Tết', em: '🧧', img: '/images/hsk2v3-bai-14/guonian.jpg', lesson: 2,
     ex_zh: '就要过年了，你一个人在这儿多没意思啊。', ex_py: 'Jiù yào guònián le, nǐ yí ge rén zài zhèr duō méi yìsi a.', ex_vn: 'Sắp đến Tết rồi, em ở đây một mình thì thật vô vị.',
     exList: [
       { zh: '就要过年了，你一个人在这儿多没意思啊。', py: 'Jiù yào guònián le, nǐ yí ge rén zài zhèr duō méi yìsi a.', vn: 'Sắp đến Tết rồi, em ở đây một mình thì thật vô vị.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '年', p: 'nián', type: '象形字 · Chữ tượng hình', st: 6, ord: '丿 → 一 → 一 → 丨 → 一 → 丨', rad: '干 (can)', mean: 'năm', tip: 'Ôn 过 (bài 6): 过生日、过年 đều là "đón, trải qua".', cf: '新年 (xīnnián – bài 13)', w: '过年 / 今年 / 新年' }]
   },
   {
-    n: 4, zh: '没意思', py: 'méi yìsi', pos: 'Cụm từ', vn: 'vô vị, chán', em: '😑', lesson: 2,
+    n: 4, zh: '没意思', py: 'méi yìsi', pos: 'Cụm từ', vn: 'vô vị, chán', em: '😑', img: '/images/hsk2v3-bai-14/meiyisi.jpg', lesson: 2,
     ex_zh: '你一个人在这儿多没意思啊。', ex_py: 'Nǐ yí ge rén zài zhèr duō méi yìsi a.', ex_vn: 'Em ở đây một mình thì thật vô vị.',
     exList: [
       { zh: '你一个人在这儿多没意思啊。', py: 'Nǐ yí ge rén zài zhèr duō méi yìsi a.', vn: 'Em ở đây một mình thì thật vô vị.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '位', p: 'wèi', type: '会意字 · Chữ hội ý', st: 7, ord: '亻 → 立', rad: '亻 (nhân đứng)', mean: 'vị trí; vị (người)', tip: '位 lịch sự hơn 个 khi nói về người.', cf: '个 (ge)', w: '一位老师 / 这位 / 位子' }]
   },
   {
-    n: 6, zh: '前面', py: 'qiánmiàn', pos: 'Danh từ', vn: 'phía trước', em: '⬆️', lesson: 2,
+    n: 6, zh: '前面', py: 'qiánmiàn', pos: 'Danh từ', vn: 'phía trước', em: '⬆️', img: '/images/hsk2v3-bai-14/qianmian.jpg', lesson: 2,
     ex_zh: '我家就在前面那个楼，有时间来玩。', ex_py: 'Wǒ jiā jiù zài qiánmiàn nàge lóu, yǒu shíjiān lái wán.', ex_vn: 'Nhà em ở ngay toà nhà phía trước kia, lúc nào rảnh anh qua chơi nhé.',
     exList: [
       { zh: '我家就在前面那个楼，有时间来玩。', py: 'Wǒ jiā jiù zài qiánmiàn nàge lóu, yǒu shíjiān lái wán.', vn: 'Nhà em ở ngay toà nhà phía trước kia, lúc nào rảnh anh qua chơi nhé.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '前', p: 'qián', type: '会意字 · Chữ hội ý', st: 9, ord: '丷 → 一 → 月 → 刂', rad: '刂 (đao)', mean: 'trước', tip: 'Đủ bộ phương vị: 前面/后面、里面/外面、上面/下面.', cf: '后面 (hòumiàn – bài 10)', w: '前面 / 前边 / 以前' }]
   },
   {
-    n: 7, zh: '房子', py: 'fángzi', pos: 'Danh từ', vn: 'nhà, ngôi nhà, căn hộ', em: '🏠', lesson: 3,
+    n: 7, zh: '房子', py: 'fángzi', pos: 'Danh từ', vn: 'nhà, ngôi nhà, căn hộ', em: '🏠', img: '/images/hsk2v3-bai-14/fangzi.jpg', lesson: 3,
     ex_zh: '一飞，你住的房子真不错，很大，离学校也不远。', ex_py: 'Yīfēi, nǐ zhù de fángzi zhēn búcuò, hěn dà, lí xuéxiào yě bù yuǎn.', ex_vn: 'Nhất Phi, căn hộ em ở thật đẹp, rộng rãi, lại không xa trường học.',
     exList: [
       { zh: '一飞，你住的房子真不错，很大，离学校也不远。', py: 'Yīfēi, nǐ zhù de fángzi zhēn búcuò, hěn dà, lí xuéxiào yě bù yuǎn.', vn: 'Nhất Phi, căn hộ em ở thật đẹp, rộng rãi, lại không xa trường học.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '房', p: 'fáng', type: '形声字 · Chữ hình thanh', st: 8, ord: '户 → 方', rad: '户 (hộ – cửa)', mean: 'nhà, phòng', tip: 'Ôn 离 (bài 9): 离学校也不远.', cf: '', w: '房子 / 房间 / 买房' }]
   },
   {
-    n: 8, zh: '小孩儿', py: 'xiǎoháir', pos: 'Danh từ', vn: 'đứa trẻ, trẻ con', em: '🧒', lesson: 3,
+    n: 8, zh: '小孩儿', py: 'xiǎoháir', pos: 'Danh từ', vn: 'đứa trẻ, trẻ con', em: '🧒', img: '/images/hsk2v3-bai-14/xiaohair.jpg', lesson: 3,
     ex_zh: '我也帮他们家的小孩儿学中文。', ex_py: 'Wǒ yě bāng tāmen jiā de xiǎoháir xué Zhōngwén.', ex_vn: 'Em cũng đang giúp con họ học tiếng Trung Quốc.',
     exList: [
       { zh: '我也帮他们家的小孩儿学中文。', py: 'Wǒ yě bāng tāmen jiā de xiǎoháir xué Zhōngwén.', vn: 'Em cũng đang giúp con họ học tiếng Trung Quốc.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '孩', p: 'hái', type: '形声字 · Chữ hình thanh', st: 9, ord: '子 → 亥', rad: '子 (tử – con)', mean: 'trẻ con', tip: 'Ôn 帮 (bài 10): 帮 + người + việc.', cf: '男孩儿 (bài 9) · 女孩儿', w: '小孩儿 / 孩子 / 女孩儿' }]
   },
   {
-    n: 9, zh: '女孩儿', py: 'nǚháir', pos: 'Danh từ', vn: 'bé gái, cô bé', em: '👧', lesson: 3,
+    n: 9, zh: '女孩儿', py: 'nǚháir', pos: 'Danh từ', vn: 'bé gái, cô bé', em: '👧', img: '/images/hsk2v3-bai-14/nuhair.jpg', lesson: 3,
     ex_zh: '我记得你跟我说过，是个女孩儿，学得也很好。', ex_py: 'Wǒ jìde nǐ gēn wǒ shuōguo, shì ge nǚháir, xué de yě hěn hǎo.', ex_vn: 'Anh nhớ em đã từng kể với anh rồi, là một bé gái, học cũng rất giỏi.',
     exList: [
       { zh: '我记得你跟我说过，是个女孩儿，学得也很好。', py: 'Wǒ jìde nǐ gēn wǒ shuōguo, shì ge nǚháir, xué de yě hěn hǎo.', vn: 'Anh nhớ em đã từng kể với anh rồi, là một bé gái, học cũng rất giỏi.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '女', p: 'nǚ', type: '象形字 · Chữ tượng hình', st: 3, ord: '⺩ → 丿 → 一', rad: '女 (nữ)', mean: 'nữ, con gái', tip: '女孩儿 ↔ 男孩儿 (bài 9).', cf: '男孩儿 (nánháir)', w: '女孩儿 / 女儿 / 女的' }]
   },
   {
-    n: 10, zh: '姓', py: 'xìng', pos: 'Động từ', vn: 'họ (là)', em: '🪪', lesson: 4,
+    n: 10, zh: '姓', py: 'xìng', pos: 'Động từ', vn: 'họ (là)', em: '🪪', img: '/images/hsk2v3-bai-14/xing.jpg', lesson: 4,
     ex_zh: '我男朋友姓杨，叫杨同乐。', ex_py: 'Wǒ nánpéngyou xìng Yáng, jiào Yáng Tónglè.', ex_vn: 'Bạn trai tôi họ Dương, tên là Dương Đồng Lạc.',
     exList: [
       { zh: '我男朋友姓杨，叫杨同乐。', py: 'Wǒ nánpéngyou xìng Yáng, jiào Yáng Tónglè.', vn: 'Bạn trai tôi họ Dương, tên là Dương Đồng Lạc.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '姓', p: 'xìng', type: '形声字 · Chữ hình thanh', st: 8, ord: '女 → 生', rad: '女 (nữ)', mean: 'họ', tip: '姓 + họ, 叫 + tên đầy đủ — mẫu giới thiệu quen thuộc.', cf: '叫 (jiào)', w: '姓 / 你姓什么 / 姓名' }]
   },
   {
-    n: 11, zh: '眼睛', py: 'yǎnjing', pos: 'Danh từ', vn: 'mắt', em: '👁️', lesson: 4,
+    n: 11, zh: '眼睛', py: 'yǎnjing', pos: 'Danh từ', vn: 'mắt', em: '👁️', img: '/images/hsk2v3-bai-14/yanjing.jpg', lesson: 4,
     ex_zh: '他高个子、大眼睛，唱歌唱得很好。', ex_py: 'Tā gāo gèzi, dà yǎnjing, chànggē chàng de hěn hǎo.', ex_vn: 'Anh ấy có dáng người cao, mắt to, hát rất hay.',
     exList: [
       { zh: '他高个子、大眼睛，唱歌唱得很好。', py: 'Tā gāo gèzi, dà yǎnjing, chànggē chàng de hěn hǎo.', vn: 'Anh ấy có dáng người cao, mắt to, hát rất hay.' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '眼', p: 'yǎn', type: '形声字 · Chữ hình thanh', st: 11, ord: '目 → 艮', rad: '目 (mục – mắt)', mean: 'mắt', tip: 'Ôn tính từ lặp (bài 6): 眼睛大大的.', cf: '', w: '眼睛 / 大眼睛 / 眼里' }]
   },
   {
-    n: 12, zh: '跳舞', py: 'tiàowǔ', pos: 'Động từ', vn: 'nhảy múa, khiêu vũ', em: '💃', lesson: 4,
+    n: 12, zh: '跳舞', py: 'tiàowǔ', pos: 'Động từ', vn: 'nhảy múa, khiêu vũ', em: '💃', img: '/images/hsk2v3-bai-14/tiaowu.jpg', lesson: 4,
     ex_zh: '跳舞跳得也不错。', ex_py: 'Tiàowǔ tiào de yě búcuò.', ex_vn: 'Nhảy cũng rất đẹp.',
     exList: [
       { zh: '跳舞跳得也不错。', py: 'Tiàowǔ tiào de yě búcuò.', vn: 'Nhảy cũng rất đẹp.' },

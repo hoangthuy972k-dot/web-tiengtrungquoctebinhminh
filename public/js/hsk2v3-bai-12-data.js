@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '事情', py: 'shìqing', pos: 'Danh từ', vn: 'sự việc, việc', em: '📋', lesson: 1,
+    n: 1, zh: '事情', py: 'shìqing', pos: 'Danh từ', vn: 'sự việc, việc', em: '📋', img: '/images/hsk2v3-bai-12/shiqing.jpg', lesson: 1,
     ex_zh: '家月，是你啊！有什么事情吗？', ex_py: 'Jiāyuè, shì nǐ a! Yǒu shénme shìqing ma?', ex_vn: 'Gia Nguyệt, là em à! Có việc gì không?',
     exList: [
       { zh: '家月，是你啊！有什么事情吗？', py: 'Jiāyuè, shì nǐ a! Yǒu shénme shìqing ma?', vn: 'Gia Nguyệt, là em à! Có việc gì không?' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '事', p: 'shì', type: '象形字 · Chữ tượng hình', st: 8, ord: '一 → 口 → 彐 → 亅', rad: '亅 (quyết)', mean: 'việc, sự việc', tip: 'Ôn 没什么事 (bài 11) = không có việc gì quan trọng.', cf: '', w: '事情 / 有事 / 没事' }]
   },
   {
-    n: 2, zh: '晴', py: 'qíng', pos: 'Tính từ', vn: 'nắng, tạnh ráo, quang đãng', em: '☀️', lesson: 1,
+    n: 2, zh: '晴', py: 'qíng', pos: 'Tính từ', vn: 'nắng, tạnh ráo, quang đãng', em: '☀️', img: '/images/hsk2v3-bai-12/qing.jpg', lesson: 1,
     ex_zh: '北京这几天虽然是晴天，但是有点儿冷。', ex_py: 'Běijīng zhè jǐ tiān suīrán shì qíngtiān, dànshì yǒudiǎnr lěng.', ex_vn: 'Mấy ngày nay Bắc Kinh tuy nắng nhưng vẫn hơi lạnh.',
     exList: [
       { zh: '北京这几天虽然是晴天，但是有点儿冷。', py: 'Běijīng zhè jǐ tiān suīrán shì qíngtiān, dànshì yǒudiǎnr lěng.', vn: 'Mấy ngày nay Bắc Kinh tuy nắng nhưng vẫn hơi lạnh.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '正', p: 'zhèng', type: '指事字 · Chữ chỉ sự', st: 5, ord: '一 → 丨 → 一 → 丨 → 一', rad: '止 (chỉ)', mean: 'đang; ngay ngắn', tip: '正 + 动词 + 着 + 呢 — cách nói đầy đủ nhất của "đang".', cf: '在 (zài) · 着 (zhe)', w: '正 / 正在 / 正下着雪' }]
   },
   {
-    n: 4, zh: '外面', py: 'wàimiàn', pos: 'Danh từ', vn: 'bên ngoài', em: '🌳', lesson: 2,
+    n: 4, zh: '外面', py: 'wàimiàn', pos: 'Danh từ', vn: 'bên ngoài', em: '🌳', img: '/images/hsk2v3-bai-12/waimian.jpg', lesson: 2,
     ex_zh: '你去外面的时候多穿点儿衣服。', ex_py: 'Nǐ qù wàimiàn de shíhou duō chuān diǎnr yīfu.', ex_vn: 'Khi đi ra ngoài, em nhớ mặc thêm nhiều quần áo một chút nhé.',
     exList: [
       { zh: '你去外面的时候多穿点儿衣服。', py: 'Nǐ qù wàimiàn de shíhou duō chuān diǎnr yīfu.', vn: 'Khi đi ra ngoài, em nhớ mặc thêm nhiều quần áo một chút nhé.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '外', p: 'wài', type: '会意字 · Chữ hội ý', st: 5, ord: '夕 → 卜', rad: '夕 (tịch – chiều tối)', mean: 'ngoài', tip: 'Cùng nhóm phương vị: 里面、外面、后面、旁边.', cf: '里面 (lǐmiàn – bên trong)', w: '外面 / 外边 / 往外' }]
   },
   {
-    n: 5, zh: '阴', py: 'yīn', pos: 'Tính từ', vn: 'âm u, nhiều mây, râm', em: '☁️', lesson: 2,
+    n: 5, zh: '阴', py: 'yīn', pos: 'Tính từ', vn: 'âm u, nhiều mây, râm', em: '☁️', img: '/images/hsk2v3-bai-12/yin.jpg', lesson: 2,
     ex_zh: '一次多买点儿，阴天下雪什么的就少出去吧。', ex_py: 'Yí cì duō mǎi diǎnr, yīntiān xià xuě shénmede jiù shǎo chūqù ba.', ex_vn: 'Mỗi lần mua thì nên mua nhiều một chút, những lúc trời âm u hoặc có tuyết thì nên hạn chế ra ngoài.',
     exList: [
       { zh: '一次多买点儿，阴天下雪什么的就少出去吧。', py: 'Yí cì duō mǎi diǎnr, yīntiān xià xuě shénmede jiù shǎo chūqù ba.', vn: 'Mỗi lần mua thì nên mua nhiều một chút, những lúc trời âm u hoặc có tuyết thì nên hạn chế ra ngoài.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '从', p: 'cóng', type: '会意字 · Chữ hội ý', st: 4, ord: '人 → 人', rad: '人 (nhân)', mean: 'từ, theo', tip: 'Ôn 从 (bài 7): 从小 = từ khi còn nhỏ, thường đi với 就.', cf: '小时候 (xiǎoshíhou)', w: '从小 / 从……开始 / 从小就' }]
   },
   {
-    n: 7, zh: '地铁', py: 'dìtiě', pos: 'Danh từ', vn: 'tàu điện ngầm', em: '🚇', lesson: 3,
+    n: 7, zh: '地铁', py: 'dìtiě', pos: 'Danh từ', vn: 'tàu điện ngầm', em: '🚇', img: '/images/hsk2v3-bai-12/ditie.jpg', lesson: 3,
     ex_zh: '我现在坐地铁去找你，一会儿楼下见。', ex_py: 'Wǒ xiànzài zuò dìtiě qù zhǎo nǐ, yíhuìr lóu xià jiàn.', ex_vn: 'Bây giờ mình đi tàu điện ngầm qua chỗ bạn, lát nữa gặp nhau ở dưới tầng nhé.',
     exList: [
       { zh: '我现在坐地铁去找你，一会儿楼下见。', py: 'Wǒ xiànzài zuò dìtiě qù zhǎo nǐ, yíhuìr lóu xià jiàn.', vn: 'Bây giờ mình đi tàu điện ngầm qua chỗ bạn, lát nữa gặp nhau ở dưới tầng nhé.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '铁', p: 'tiě', type: '形声字 · Chữ hình thanh', st: 10, ord: '钅 → 失', rad: '钅 (kim – kim loại)', mean: 'sắt', tip: '地铁 = tàu chạy dưới lòng đất (地 + 铁).', cf: '', w: '地铁 / 坐地铁 / 地铁站' }]
   },
   {
-    n: 8, zh: '楼', py: 'lóu', pos: 'Danh từ', vn: 'toà nhà, lầu, tầng', em: '🏢', lesson: 3,
+    n: 8, zh: '楼', py: 'lóu', pos: 'Danh từ', vn: 'toà nhà, lầu, tầng', em: '🏢', img: '/images/hsk2v3-bai-12/lou.jpg', lesson: 3,
     ex_zh: '一会儿楼下见。', ex_py: 'Yíhuìr lóu xià jiàn.', ex_vn: 'Lát nữa gặp nhau ở dưới tầng nhé.',
     exList: [
       { zh: '一会儿楼下见。', py: 'Yíhuìr lóu xià jiàn.', vn: 'Lát nữa gặp nhau ở dưới tầng nhé.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '楼', p: 'lóu', type: '形声字 · Chữ hình thanh', st: 13, ord: '木 → 米 → 女', rad: '木 (mộc – gỗ)', mean: 'lầu, toà nhà', tip: '楼上 / 楼下 — ôn lại bổ ngữ xu hướng bài 5 (上去/下来).', cf: '', w: '楼 / 楼下 / 楼上' }]
   },
   {
-    n: 9, zh: '站', py: 'zhàn', pos: 'Danh từ', vn: 'trạm, bến, ga', em: '🚉', lesson: 4,
+    n: 9, zh: '站', py: 'zhàn', pos: 'Danh từ', vn: 'trạm, bến, ga', em: '🚉', img: '/images/hsk2v3-bai-12/zhan.jpg', lesson: 4,
     ex_zh: '每天坐两站地铁去学校。', ex_py: 'Měi tiān zuò liǎng zhàn dìtiě qù xuéxiào.', ex_vn: 'Mỗi ngày đi hai trạm tàu điện ngầm để đến trường.',
     exList: [
       { zh: '每天坐两站地铁去学校。', py: 'Měi tiān zuò liǎng zhàn dìtiě qù xuéxiào.', vn: 'Mỗi ngày đi hai trạm tàu điện ngầm để đến trường.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '站', p: 'zhàn', type: '形声字 · Chữ hình thanh', st: 10, ord: '立 → 占', rad: '立 (lập – đứng)', mean: 'đứng; trạm', tip: '站 cũng là động từ "đứng": 站着 (ôn 着 bài 11).', cf: '', w: '站 / 两站 / 地铁站' }]
   },
   {
-    n: 10, zh: '小时候', py: 'xiǎoshíhou', pos: 'Danh từ', vn: 'lúc nhỏ, thời thơ ấu', em: '👶', lesson: 4,
+    n: 10, zh: '小时候', py: 'xiǎoshíhou', pos: 'Danh từ', vn: 'lúc nhỏ, thời thơ ấu', em: '👶', img: '/images/hsk2v3-bai-12/xiaoshihou.jpg', lesson: 4,
     ex_zh: '他小时候经常跑步。', ex_py: 'Tā xiǎoshíhou jīngcháng pǎobù.', ex_vn: 'Hồi nhỏ bạn ấy thường xuyên chạy bộ.',
     exList: [
       { zh: '他小时候经常跑步。', py: 'Tā xiǎoshíhou jīngcháng pǎobù.', vn: 'Hồi nhỏ bạn ấy thường xuyên chạy bộ.' },

@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '快', py: 'kuài', pos: 'Phó từ / Tính từ', vn: 'mau, nhanh', em: '⚡', lesson: 1,
+    n: 1, zh: '快', py: 'kuài', pos: 'Phó từ / Tính từ', vn: 'mau, nhanh', em: '⚡', img: '/images/hsk2v3-bai-5/kuai.jpg', lesson: 1,
     ex_zh: '家月，快下来吧。', ex_py: 'Jiāyuè, kuài xiàlái ba.', ex_vn: 'Gia Nguyệt, mau xuống nhé.',
     exList: [
       { zh: '家月，快下来吧。', py: 'Jiāyuè, kuài xiàlái ba.', vn: 'Gia Nguyệt, mau xuống nhé.' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '快', p: 'kuài', type: '形声字 · Chữ hình thanh', st: 7, ord: '忄 → 夬', rad: '忄 (tâm đứng – trái tim)', mean: 'nhanh; vui', tip: '快 + động từ = mau làm gì: 快来、快走、快吃。', cf: '慢 (màn – chậm)', w: '快点儿 / 很快 / 快来' }]
   },
   {
-    n: 2, zh: '下来', py: 'xiàlái', pos: 'Động từ', vn: 'xuống, xuống đây', em: '⬇️', lesson: 1,
+    n: 2, zh: '下来', py: 'xiàlái', pos: 'Động từ', vn: 'xuống, xuống đây', em: '⬇️', img: '/images/hsk2v3-bai-5/xialai.jpg', lesson: 1,
     ex_zh: '家月，快下来吧。', ex_py: 'Jiāyuè, kuài xiàlái ba.', ex_vn: 'Gia Nguyệt, mau xuống đây nhé.',
     exList: [
       { zh: '家月，快下来吧。', py: 'Jiāyuè, kuài xiàlái ba.', vn: 'Gia Nguyệt, mau xuống đây nhé.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '来', p: 'lái', type: '象形字 · Chữ tượng hình', st: 7, ord: '一 → 丷 → 十 → 八', rad: '木 (mộc)', mean: 'đến, lại', tip: '来 = hướng về phía người nói; 去 = rời xa người nói.', cf: '去 (qù)', w: '下来 / 上来 / 进来 / 过来' }]
   },
   {
-    n: 3, zh: '上来', py: 'shànglái', pos: 'Động từ', vn: 'lên, lên đây', em: '⬆️', lesson: 1,
+    n: 3, zh: '上来', py: 'shànglái', pos: 'Động từ', vn: 'lên, lên đây', em: '⬆️', img: '/images/hsk2v3-bai-5/shanglai.jpg', lesson: 1,
     ex_zh: '还有时间，你上来吧。', ex_py: 'Hái yǒu shíjiān, nǐ shànglái ba.', ex_vn: 'Vẫn còn thời gian, bạn lên đây đi.',
     exList: [
       { zh: '还有时间，你上来吧。', py: 'Hái yǒu shíjiān, nǐ shànglái ba.', vn: 'Vẫn còn thời gian, bạn lên đây đi.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '上', p: 'shàng', type: '指事字 · Chữ chỉ sự', st: 3, ord: '丨 → 一 → 一', rad: '一 (nhất)', mean: 'trên, lên', tip: '上来 = lên chỗ người nói; 上去 = lên chỗ khác.', cf: '下 (xià)', w: '上来 / 上去 / 上班' }]
   },
   {
-    n: 4, zh: '上去', py: 'shàngqù', pos: 'Động từ', vn: 'lên, đi lên', em: '🔼', lesson: 1,
+    n: 4, zh: '上去', py: 'shàngqù', pos: 'Động từ', vn: 'lên, đi lên', em: '🔼', img: '/images/hsk2v3-bai-5/shangqu.jpg', lesson: 1,
     ex_zh: '我不上去了，就在下面等你。', ex_py: 'Wǒ bú shàngqù le, jiù zài xiàmiàn děng nǐ.', ex_vn: 'Mình không lên nữa, đợi bạn ở dưới này thôi.',
     exList: [
       { zh: '我不上去了，就在下面等你。', py: 'Wǒ bú shàngqù le, jiù zài xiàmiàn děng nǐ.', vn: 'Mình không lên nữa, đợi bạn ở dưới này thôi.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '去', p: 'qù', type: '会意字 · Chữ hội ý', st: 5, ord: '土 → 厶', rad: '厶 (khư)', mean: 'đi, đến', tip: '动词 + 去 = đi xa chỗ người nói: 上去、下去、进去、出去。', cf: '来 (lái)', w: '上去 / 下去 / 出去' }]
   },
   {
-    n: 5, zh: '下面', py: 'xiàmiàn', pos: 'Danh từ', vn: 'phía dưới, bên dưới', em: '👇', lesson: 1,
+    n: 5, zh: '下面', py: 'xiàmiàn', pos: 'Danh từ', vn: 'phía dưới, bên dưới', em: '👇', img: '/images/hsk2v3-bai-5/xiamian.jpg', lesson: 1,
     ex_zh: '就在下面等你。', ex_py: 'Jiù zài xiàmiàn děng nǐ.', ex_vn: 'Đợi bạn ở dưới này thôi.',
     exList: [
       { zh: '就在下面等你。', py: 'Jiù zài xiàmiàn děng nǐ.', vn: 'Đợi bạn ở dưới này thôi.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '面', p: 'miàn', type: '象形字 · Chữ tượng hình', st: 9, ord: '一 → 丿 → 囗 → 二', rad: '面 (diện)', mean: 'mặt; phía', tip: '面 là hình thái tố chỉ phía: 下面、上面、里面、外面。', cf: '', w: '下面 / 上面 / 里面' }]
   },
   {
-    n: 6, zh: '等', py: 'děng', pos: 'Động từ', vn: 'đợi, chờ', em: '⏳', lesson: 1,
+    n: 6, zh: '等', py: 'děng', pos: 'Động từ', vn: 'đợi, chờ', em: '⏳', img: '/images/hsk2v3-bai-5/deng.jpg', lesson: 1,
     ex_zh: '我们都在下面等你呢。', ex_py: 'Wǒmen dōu zài xiàmiàn děng nǐ ne.', ex_vn: 'Chúng tôi đều đang đợi bạn ở dưới này.',
     exList: [
       { zh: '我们都在下面等你呢。', py: 'Wǒmen dōu zài xiàmiàn děng nǐ ne.', vn: 'Chúng tôi đều đang đợi bạn ở dưới này.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '会', p: 'huì', type: '会意字 · Chữ hội ý', st: 6, ord: '人 → 二 → 厶', rad: '人 (nhân – người)', mean: 'hội; biết; lát', tip: 'Trong 一会儿 đọc là huìr, nghĩa "khoảng thời gian ngắn".', cf: '', w: '一会儿 / 会议 / 会说' }]
   },
   {
-    n: 8, zh: '下去', py: 'xiàqù', pos: 'Động từ', vn: 'xuống, đi xuống', em: '🔽', lesson: 1,
+    n: 8, zh: '下去', py: 'xiàqù', pos: 'Động từ', vn: 'xuống, đi xuống', em: '🔽', img: '/images/hsk2v3-bai-5/xiaqu.jpg', lesson: 1,
     ex_zh: '那我一会儿就下去。', ex_py: 'Nà wǒ yíhuìr jiù xiàqù.', ex_vn: 'Vậy một lát nữa mình xuống.',
     exList: [
       { zh: '那我一会儿就下去。', py: 'Nà wǒ yíhuìr jiù xiàqù.', vn: 'Vậy một lát nữa mình xuống.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '下', p: 'xià', type: '指事字 · Chữ chỉ sự', st: 3, ord: '一 → 丨 → 丶', rad: '一 (nhất)', mean: 'dưới, xuống', tip: '下去 = xuống chỗ khác; 下来 = xuống chỗ người nói.', cf: '上 (shàng)', w: '下去 / 下来 / 下面' }]
   },
   {
-    n: 9, zh: '进来', py: 'jìnlái', pos: 'Động từ', vn: 'vào, vào đây', em: '🚪', lesson: 2,
+    n: 9, zh: '进来', py: 'jìnlái', pos: 'Động từ', vn: 'vào, vào đây', em: '🚪', img: '/images/hsk2v3-bai-5/jinlai.jpg', lesson: 2,
     ex_zh: '家月、安妮，快进来！', ex_py: 'Jiāyuè, Ānnī, kuài jìnlái!', ex_vn: 'Gia Nguyệt, Annie, mau vào đi!',
     exList: [
       { zh: '家月、安妮，快进来！', py: 'Jiāyuè, Ānnī, kuài jìnlái!', vn: 'Gia Nguyệt, Annie, mau vào đi!' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '进', p: 'jìn', type: '形声字 · Chữ hình thanh', st: 7, ord: '井 → 辶', rad: '辶 (sước – đi)', mean: 'vào', tip: 'Khi có tân ngữ chỉ nơi chốn: 进教室来 (không nói 进来教室).', cf: '', w: '进来 / 进去 / 进教室' }]
   },
   {
-    n: 10, zh: '爷爷', py: 'yéye', pos: 'Danh từ', vn: 'ông nội', em: '👴', lesson: 2,
+    n: 10, zh: '爷爷', py: 'yéye', pos: 'Danh từ', vn: 'ông nội', em: '👴', img: '/images/hsk2v3-bai-5/yeye.jpg', lesson: 2,
     ex_zh: '这是孩子们的爷爷、奶奶。', ex_py: 'Zhè shì háizimen de yéye, nǎinai.', ex_vn: 'Đây là ông nội và bà nội của các con chị.',
     exList: [
       { zh: '这是孩子们的爷爷、奶奶。', py: 'Zhè shì háizimen de yéye, nǎinai.', vn: 'Đây là ông nội và bà nội của các con chị.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '爷', p: 'yé', type: '形声字 · Chữ hình thanh', st: 6, ord: '父 → 卩', rad: '父 (phụ – cha)', mean: 'ông, cụ', tip: 'Bộ 父 cho biết chữ chỉ người bề trên trong nhà.', cf: '', w: '爷爷 / 老爷爷' }]
   },
   {
-    n: 11, zh: '奶奶', py: 'nǎinai', pos: 'Danh từ', vn: 'bà nội', em: '👵', lesson: 2,
+    n: 11, zh: '奶奶', py: 'nǎinai', pos: 'Danh từ', vn: 'bà nội', em: '👵', img: '/images/hsk2v3-bai-5/nainai.jpg', lesson: 2,
     ex_zh: '这是孩子们的奶奶。', ex_py: 'Zhè shì háizimen de nǎinai.', ex_vn: 'Đây là bà nội của các cháu.',
     exList: [
       { zh: '这是孩子们的奶奶。', py: 'Zhè shì háizimen de nǎinai.', vn: 'Đây là bà nội của các cháu.' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '奶', p: 'nǎi', type: '形声字 · Chữ hình thanh', st: 5, ord: '女 → 乃', rad: '女 (nữ – phụ nữ)', mean: 'bà; sữa', tip: '奶 còn nghĩa là sữa: 牛奶、奶茶。', cf: '', w: '奶奶 / 牛奶 / 奶茶' }]
   },
   {
-    n: 12, zh: '礼物', py: 'lǐwù', pos: 'Danh từ', vn: 'quà, quà tặng', em: '🎁', lesson: 2,
+    n: 12, zh: '礼物', py: 'lǐwù', pos: 'Danh từ', vn: 'quà, quà tặng', em: '🎁', img: '/images/hsk2v3-bai-5/liwu.jpg', lesson: 2,
     ex_zh: '这是送你们的礼物。', ex_py: 'Zhè shì sòng nǐmen de lǐwù.', ex_vn: 'Đây là chút quà chúng cháu biếu hai bác ạ.',
     exList: [
       { zh: '这是送你们的礼物。', py: 'Zhè shì sòng nǐmen de lǐwù.', vn: 'Đây là chút quà chúng cháu biếu hai bác ạ.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '礼', p: 'lǐ', type: '形声字 · Chữ hình thanh', st: 5, ord: '礻 → 乚', rad: '礻 (kỳ – thờ cúng)', mean: 'lễ, lễ vật', tip: 'Bộ 礻 liên quan lễ nghi, cúng tế.', cf: '', w: '礼物 / 礼貌 / 送礼' }]
   },
   {
-    n: 13, zh: '准备', py: 'zhǔnbèi', pos: 'Động từ', vn: 'chuẩn bị', em: '📦', lesson: 2,
+    n: 13, zh: '准备', py: 'zhǔnbèi', pos: 'Động từ', vn: 'chuẩn bị', em: '📦', img: '/images/hsk2v3-bai-5/zhunbei.jpg', lesson: 2,
     ex_zh: '这是给孩子们准备的礼物。', ex_py: 'Zhè shì gěi háizimen zhǔnbèi de lǐwù.', ex_vn: 'Đây là quà em chuẩn bị cho các cháu.',
     exList: [
       { zh: '这是给孩子们准备的礼物。', py: 'Zhè shì gěi háizimen zhǔnbèi de lǐwù.', vn: 'Đây là quà em chuẩn bị cho các cháu.' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '准', p: 'zhǔn', type: '形声字 · Chữ hình thanh', st: 10, ord: '冫 → 隹', rad: '冫 (băng)', mean: 'chuẩn, chính xác', tip: '准备 = sắp sẵn trước; 准时 = đúng giờ.', cf: '', w: '准备 / 准时' }]
   },
   {
-    n: 14, zh: '奶茶', py: 'nǎichá', pos: 'Danh từ', vn: 'trà sữa', em: '🧋', lesson: 3,
+    n: 14, zh: '奶茶', py: 'nǎichá', pos: 'Danh từ', vn: 'trà sữa', em: '🧋', img: '/images/hsk2v3-bai-5/naicha.jpg', lesson: 3,
     ex_zh: '奶茶也很好喝。', ex_py: 'Nǎichá yě hěn hǎohē.', ex_vn: 'Trà sữa cũng rất ngon.',
     exList: [
       { zh: '奶茶也很好喝。', py: 'Nǎichá yě hěn hǎohē.', vn: 'Trà sữa cũng rất ngon.' },
@@ -138,7 +138,7 @@ var vocabData = [
     hanzi: [{ c: '跟', p: 'gēn', type: '形声字 · Chữ hình thanh', st: 13, ord: '足 → 艮', rad: '足 (túc – chân)', mean: 'theo, cùng', tip: 'Bộ 足 (chân) — nghĩa gốc là "đi theo sau".', cf: '', w: '跟我去 / 跟他说 / 跟……一样' }]
   },
   {
-    n: 16, zh: '走', py: 'zǒu', pos: 'Động từ', vn: 'đi bộ, đi', em: '🚶', lesson: 4,
+    n: 16, zh: '走', py: 'zǒu', pos: 'Động từ', vn: 'đi bộ, đi', em: '🚶', img: '/images/hsk2v3-bai-5/zou.jpg', lesson: 4,
     ex_zh: '我们吃完饭是走回酒店的。', ex_py: 'Wǒmen chīwán fàn shì zǒu huí jiǔdiàn de.', ex_vn: 'Sau bữa ăn chúng tôi đã đi bộ về khách sạn.',
     exList: [
       { zh: '我们吃完饭是走回酒店的。', py: 'Wǒmen chīwán fàn shì zǒu huí jiǔdiàn de.', vn: 'Sau bữa ăn chúng tôi đã đi bộ về khách sạn.' },
@@ -147,7 +147,7 @@ var vocabData = [
     hanzi: [{ c: '走', p: 'zǒu', type: '会意字 · Chữ hội ý', st: 7, ord: '土 → 疋', rad: '走 (tẩu – đi)', mean: 'đi, bước đi', tip: '走 trong tiếng Trung hiện đại là "đi bộ", không phải "chạy".', cf: '跑 (pǎo – chạy)', w: '走回 / 走路 / 我们走吧' }]
   },
   {
-    n: 17, zh: '酒店', py: 'jiǔdiàn', pos: 'Danh từ', vn: 'khách sạn', em: '🏨', lesson: 4,
+    n: 17, zh: '酒店', py: 'jiǔdiàn', pos: 'Danh từ', vn: 'khách sạn', em: '🏨', img: '/images/hsk2v3-bai-5/jiudian.jpg', lesson: 4,
     ex_zh: '我们吃完饭是走回酒店的。', ex_py: 'Wǒmen chīwán fàn shì zǒu huí jiǔdiàn de.', ex_vn: 'Ăn xong chúng tôi đi bộ về khách sạn.',
     exList: [
       { zh: '我们吃完饭是走回酒店的。', py: 'Wǒmen chīwán fàn shì zǒu huí jiǔdiàn de.', vn: 'Ăn xong chúng tôi đi bộ về khách sạn.' },

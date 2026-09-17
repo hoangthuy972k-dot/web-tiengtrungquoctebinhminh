@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '过', p: 'guò', type: '形声字 · Chữ hình thanh', st: 6, ord: '寸 → 辶', rad: '辶 (sước – đi)', mean: 'qua; từng', tip: 'Đọc nhẹ "guo" khi làm trợ từ động thái: 吃过、去过。', cf: '', w: '来过 / 去过 / 吃过' }]
   },
   {
-    n: 2, zh: '商场', py: 'shāngchǎng', pos: 'Danh từ', vn: 'trung tâm thương mại', em: '🏬', lesson: 1,
+    n: 2, zh: '商场', py: 'shāngchǎng', pos: 'Danh từ', vn: 'trung tâm thương mại', em: '🏬', img: '/images/hsk2v3-bai-4/shangchang.jpg', lesson: 1,
     ex_zh: '我和妈妈去了一家商场。', ex_py: 'Wǒ hé māma qùle yì jiā shāngchǎng.', ex_vn: 'Mình đã đi đến một trung tâm thương mại với mẹ.',
     exList: [
       { zh: '我和妈妈去了一家商场。', py: 'Wǒ hé māma qùle yì jiā shāngchǎng.', vn: 'Mình đã đi đến một trung tâm thương mại với mẹ.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '商', p: 'shāng', type: '形声字 · Chữ hình thanh', st: 11, ord: '亠 → 丷 → 冂 → 八 → 口', rad: '口 (khẩu – miệng)', mean: 'buôn bán, thương mại', tip: '商场 = nơi buôn bán lớn; 商店 = cửa hàng.', cf: '', w: '商场 / 商店 / 商量' }]
   },
   {
-    n: 3, zh: '进去', py: 'jìnqù', pos: 'Động từ', vn: 'đi vào', em: '🚪', lesson: 1,
+    n: 3, zh: '进去', py: 'jìnqù', pos: 'Động từ', vn: 'đi vào', em: '🚪', img: '/images/hsk2v3-bai-4/jinqu.jpg', lesson: 1,
     ex_zh: '我们进去看看吧。', ex_py: 'Wǒmen jìnqù kànkan ba.', ex_vn: 'Chúng ta đi vào xem một chút nhé.',
     exList: [
       { zh: '我们进去看看吧。', py: 'Wǒmen jìnqù kànkan ba.', vn: 'Chúng ta đi vào xem một chút nhé.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '条', p: 'tiáo', type: '会意字 · Chữ hội ý', st: 7, ord: '夂 → 木', rad: '木 (mộc – cây)', mean: 'sợi, chiếc (vật dài)', tip: 'Dùng cho vật dài: 一条裤子、一条鱼、一条路。', cf: '', w: '一条裤子 / 一条鱼 / 一条街' }]
   },
   {
-    n: 5, zh: '裤子', py: 'kùzi', pos: 'Danh từ', vn: 'quần', em: '👖', lesson: 1,
+    n: 5, zh: '裤子', py: 'kùzi', pos: 'Danh từ', vn: 'quần', em: '👖', img: '/images/hsk2v3-bai-4/kuzi.jpg', lesson: 1,
     ex_zh: '我想买这条白色的裤子。', ex_py: 'Wǒ xiǎng mǎi zhè tiáo báisè de kùzi.', ex_vn: 'Con muốn mua chiếc quần màu trắng này.',
     exList: [
       { zh: '我想买这条白色的裤子。', py: 'Wǒ xiǎng mǎi zhè tiáo báisè de kùzi.', vn: 'Con muốn mua chiếc quần màu trắng này.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '裤', p: 'kù', type: '形声字 · Chữ hình thanh', st: 12, ord: '衤 → 广 → 车', rad: '衤 (y – áo)', mean: 'quần', tip: 'Bộ 衤 (áo quần) cho biết chữ liên quan đến trang phục.', cf: '', w: '裤子 / 短裤' }]
   },
   {
-    n: 6, zh: '白色', py: 'báisè', pos: 'Danh từ', vn: 'màu trắng', em: '⚪', lesson: 2,
+    n: 6, zh: '白色', py: 'báisè', pos: 'Danh từ', vn: 'màu trắng', em: '⚪', img: '/images/hsk2v3-bai-4/baise.jpg', lesson: 2,
     ex_zh: '你有很多白色的衣服。', ex_py: 'Nǐ yǒu hěn duō báisè de yīfu.', ex_vn: 'Con đã có rất nhiều quần áo màu trắng rồi.',
     exList: [
       { zh: '你有很多白色的衣服。', py: 'Nǐ yǒu hěn duō báisè de yīfu.', vn: 'Con đã có rất nhiều quần áo màu trắng rồi.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '因', p: 'yīn', type: '会意字 · Chữ hội ý', st: 6, ord: '囗 → 大', rad: '囗 (vi – bao quanh)', mean: 'nguyên nhân', tip: '因为 thường đi cặp với 所以.', cf: '', w: '因为 / 原因' }]
   },
   {
-    n: 8, zh: '试', py: 'shì', pos: 'Động từ', vn: 'thử', em: '🧪', lesson: 2,
+    n: 8, zh: '试', py: 'shì', pos: 'Động từ', vn: 'thử', em: '🧪', img: '/images/hsk2v3-bai-4/shi.jpg', lesson: 2,
     ex_zh: '你试试那条红色的吧。', ex_py: 'Nǐ shìshi nà tiáo hóngsè de ba.', ex_vn: 'Con thử chiếc màu đỏ kia xem sao.',
     exList: [
       { zh: '你试试那条红色的吧。', py: 'Nǐ shìshi nà tiáo hóngsè de ba.', vn: 'Con thử chiếc màu đỏ kia xem sao.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '试', p: 'shì', type: '形声字 · Chữ hình thanh', st: 8, ord: '讠 → 式', rad: '讠 (ngôn – lời nói)', mean: 'thử, thi', tip: '试试 (thử một chút) là dạng lặp của động từ đơn âm tiết.', cf: '', w: '试试 / 考试 / 试衣服' }]
   },
   {
-    n: 9, zh: '红色', py: 'hóngsè', pos: 'Danh từ', vn: 'màu đỏ', em: '🔴', lesson: 2,
+    n: 9, zh: '红色', py: 'hóngsè', pos: 'Danh từ', vn: 'màu đỏ', em: '🔴', img: '/images/hsk2v3-bai-4/hongse.jpg', lesson: 2,
     ex_zh: '我没穿过红色的。', ex_py: 'Wǒ méi chuānguo hóngsè de.', ex_vn: 'Con chưa từng mặc màu đỏ.',
     exList: [
       { zh: '我没穿过红色的。', py: 'Wǒ méi chuānguo hóngsè de.', vn: 'Con chưa từng mặc màu đỏ.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '所', p: 'suǒ', type: '形声字 · Chữ hình thanh', st: 8, ord: '户 → 斤', rad: '户 (hộ – cửa)', mean: 'nơi; (kết cấu)', tip: '所以 = vì vậy, đứng ở vế kết quả.', cf: '', w: '所以 / 所有 / 厕所' }]
   },
   {
-    n: 11, zh: '书包', py: 'shūbāo', pos: 'Danh từ', vn: 'cặp sách', em: '🎒', lesson: 3,
+    n: 11, zh: '书包', py: 'shūbāo', pos: 'Danh từ', vn: 'cặp sách', em: '🎒', img: '/images/hsk2v3-bai-4/shubao.jpg', lesson: 3,
     ex_zh: '妈妈，我想买个新书包。', ex_py: 'Māma, wǒ xiǎng mǎi ge xīn shūbāo.', ex_vn: 'Mẹ ơi, con muốn mua cặp sách mới ạ.',
     exList: [
       { zh: '妈妈，我想买个新书包。', py: 'Māma, wǒ xiǎng mǎi ge xīn shūbāo.', vn: 'Mẹ ơi, con muốn mua cặp sách mới ạ.' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '包', p: 'bāo', type: '象形字 · Chữ tượng hình', st: 5, ord: '⺈ → 巳', rad: '勹 (bao)', mean: 'túi, bọc', tip: '书包 = túi đựng sách; 面包 = bánh mì.', cf: '', w: '书包 / 面包 / 包子' }]
   },
   {
-    n: 12, zh: '过去', py: 'guòqù', pos: 'Động từ', vn: 'sang, đi sang', em: '➡️', lesson: 3,
+    n: 12, zh: '过去', py: 'guòqù', pos: 'Động từ', vn: 'sang, đi sang', em: '➡️', img: '/images/hsk2v3-bai-4/guoqu.jpg', lesson: 3,
     ex_zh: '那边卖书包，我们过去看看吧。', ex_py: 'Nàbiān mài shūbāo, wǒmen guòqù kànkan ba.', ex_vn: 'Đằng kia có bán cặp sách, chúng ta sang đó xem thử nhé.',
     exList: [
       { zh: '那边卖书包，我们过去看看吧。', py: 'Nàbiān mài shūbāo, wǒmen guòqù kànkan ba.', vn: 'Đằng kia có bán cặp sách, chúng ta sang đó xem thử nhé.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '去', p: 'qù', type: '会意字 · Chữ hội ý', st: 5, ord: '土 → 厶', rad: '厶 (khư)', mean: 'đi, đến', tip: '过去 (sang đó) ↔ 过来 (sang đây).', cf: '过来 (guòlái)', w: '过去 / 过来 / 出去' }]
   },
   {
-    n: 13, zh: '绿色', py: 'lǜsè', pos: 'Danh từ', vn: 'màu xanh lá cây', em: '🟢', lesson: 3,
+    n: 13, zh: '绿色', py: 'lǜsè', pos: 'Danh từ', vn: 'màu xanh lá cây', em: '🟢', img: '/images/hsk2v3-bai-4/luse.jpg', lesson: 3,
     ex_zh: '我也觉得绿色的更好看。', ex_py: 'Wǒ yě juéde lǜsè de gèng hǎokàn.', ex_vn: 'Mẹ cũng thấy cái màu xanh lá cây đẹp hơn.',
     exList: [
       { zh: '我也觉得绿色的更好看。', py: 'Wǒ yě juéde lǜsè de gèng hǎokàn.', vn: 'Mẹ cũng thấy cái màu xanh lá cây đẹp hơn.' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '绿', p: 'lǜ', type: '形声字 · Chữ hình thanh', st: 11, ord: '纟 → 录', rad: '纟 (mịch – sợi tơ)', mean: 'màu xanh lá', tip: '绿 (xanh lá) khác 蓝 (xanh lam).', cf: '蓝 (lán – xanh lam)', w: '绿色 / 绿茶 / 很绿' }]
   },
   {
-    n: 14, zh: '黑色', py: 'hēisè', pos: 'Danh từ', vn: 'màu đen', em: '⚫', lesson: 3,
+    n: 14, zh: '黑色', py: 'hēisè', pos: 'Danh từ', vn: 'màu đen', em: '⚫', img: '/images/hsk2v3-bai-4/heise.jpg', lesson: 3,
     ex_zh: '红色的、绿色的、黑色的，你想买哪个？', ex_py: 'Hóngsè de, lǜsè de, hēisè de, nǐ xiǎng mǎi nǎge?', ex_vn: 'Cái màu đỏ, màu xanh lá, màu đen, con muốn mua cái nào?',
     exList: [
       { zh: '红色的、绿色的、黑色的，你想买哪个？', py: 'Hóngsè de, lǜsè de, hēisè de, nǐ xiǎng mǎi nǎge?', vn: 'Cái màu đỏ, màu xanh lá, màu đen, con muốn mua cái nào?' },
@@ -138,7 +138,7 @@ var vocabData = [
     hanzi: [{ c: '更', p: 'gèng', type: '会意字 · Chữ hội ý', st: 7, ord: '一 → 日 → 乂', rad: '一 (nhất)', mean: 'càng, hơn', tip: '更 + tính từ: 更好、更漂亮、更便宜。', cf: '', w: '更好看 / 更便宜 / 更喜欢' }]
   },
   {
-    n: 16, zh: '颜色', py: 'yánsè', pos: 'Danh từ', vn: 'màu sắc', em: '🎨', lesson: 4,
+    n: 16, zh: '颜色', py: 'yánsè', pos: 'Danh từ', vn: 'màu sắc', em: '🎨', img: '/images/hsk2v3-bai-4/yanse.jpg', lesson: 4,
     ex_zh: '商场里的衣服颜色很多。', ex_py: 'Shāngchǎng li de yīfu yánsè hěn duō.', ex_vn: 'Quần áo trong trung tâm thương mại có rất nhiều màu sắc.',
     exList: [
       { zh: '商场里的衣服颜色很多。', py: 'Shāngchǎng li de yīfu yánsè hěn duō.', vn: 'Quần áo trong trung tâm thương mại có rất nhiều màu sắc.' },

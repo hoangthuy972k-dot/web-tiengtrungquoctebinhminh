@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '公交车', py: 'gōngjiāochē', pos: 'Danh từ', vn: 'xe buýt', em: '🚌', lesson: 1,
+    n: 1, zh: '公交车', py: 'gōngjiāochē', pos: 'Danh từ', vn: 'xe buýt', em: '🚌', img: '/images/hsk2v3-bai-2/gongjiaoche.jpg', lesson: 1,
     ex_zh: '这儿有到北京大学的公交车吗？', ex_py: 'Zhèr yǒu dào Běijīng Dàxué de gōngjiāochē ma?', ex_vn: 'Ở đây có xe buýt đi đến Đại học Bắc Kinh không?',
     exList: [
       { zh: '这儿有到北京大学的公交车吗？', py: 'Zhèr yǒu dào Běijīng Dàxué de gōngjiāochē ma?', vn: 'Ở đây có xe buýt đi đến Đại học Bắc Kinh không?' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '但', p: 'dàn', type: '形声字 · Chữ hình thanh', st: 7, ord: '亻 → 日 → 一', rad: '亻 (nhân đứng)', mean: 'nhưng, chỉ', tip: '但 = 但是 dạng ngắn, hay dùng trong văn viết và khẩu ngữ nhanh.', cf: '', w: '但 / 但是' }]
   },
   {
-    n: 3, zh: '车站', py: 'chēzhàn', pos: 'Danh từ', vn: 'bến xe, trạm xe', em: '🚏', lesson: 1,
+    n: 3, zh: '车站', py: 'chēzhàn', pos: 'Danh từ', vn: 'bến xe, trạm xe', em: '🚏', img: '/images/hsk2v3-bai-2/chezhan.jpg', lesson: 1,
     ex_zh: '去北京大学的车站在哪儿？', ex_py: 'Qù Běijīng Dàxué de chēzhàn zài nǎr?', ex_vn: 'Bến xe đi Đại học Bắc Kinh ở đâu?',
     exList: [
       { zh: '去北京大学的车站在哪儿？', py: 'Qù Běijīng Dàxué de chēzhàn zài nǎr?', vn: 'Bến xe đi Đại học Bắc Kinh ở đâu?' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '站', p: 'zhàn', type: '形声字 · Chữ hình thanh', st: 10, ord: '立 → 占', rad: '立 (lập – đứng)', mean: 'đứng; ga, bến', tip: 'Bộ 立 (đứng) — chỗ xe dừng cho người đứng đợi.', cf: '', w: '车站 / 站起来' }]
   },
   {
-    n: 4, zh: '远', py: 'yuǎn', pos: 'Tính từ', vn: 'xa', em: '📏', lesson: 1,
+    n: 4, zh: '远', py: 'yuǎn', pos: 'Tính từ', vn: 'xa', em: '📏', img: '/images/hsk2v3-bai-2/yuan.jpg', lesson: 1,
     ex_zh: '你家太远了。', ex_py: 'Nǐ jiā tài yuǎn le.', ex_vn: 'Nhà bạn xa quá.',
     exList: [
       { zh: '你家太远了。', py: 'Nǐ jiā tài yuǎn le.', vn: 'Nhà bạn xa quá.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '远', p: 'yuǎn', type: '形声字 · Chữ hình thanh', st: 7, ord: '元 → 辶', rad: '辶 (sước – đi)', mean: 'xa', tip: 'Bộ 辶 (bước đi) — phải đi lâu tức là xa. Trái nghĩa: 近 (gần).', cf: '近 (jìn – gần)', w: '远 / 不远 / 远方' }]
   },
   {
-    n: 5, zh: '打车', py: 'dǎchē', pos: 'Động từ (ly hợp)', vn: 'gọi taxi, bắt xe', em: '🚕', lesson: 1,
+    n: 5, zh: '打车', py: 'dǎchē', pos: 'Động từ (ly hợp)', vn: 'gọi taxi, bắt xe', em: '🚕', img: '/images/hsk2v3-bai-2/dache.jpg', lesson: 1,
     ex_zh: '我们还是打车去吧。', ex_py: 'Wǒmen háishi dǎchē qù ba.', ex_vn: 'Chúng ta vẫn nên gọi taxi đi thôi.',
     exList: [
       { zh: '我们还是打车去吧。', py: 'Wǒmen háishi dǎchē qù ba.', vn: 'Chúng ta vẫn nên gọi taxi đi thôi.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '万', p: 'wàn', type: '象形字 · Chữ tượng hình', st: 3, ord: '一 → 𠃌 → 丿', rad: '一 (nhất)', mean: 'vạn, mười nghìn', tip: '一万 = 10 000; 四万多 = hơn bốn vạn (hơn 40 000).', cf: '方 (fāng)', w: '一万 / 四万多 / 千万' }]
   },
   {
-    n: 9, zh: '名', py: 'míng', pos: 'Lượng từ / Danh từ', vn: '(lượng từ chỉ người); tên, thứ hạng', em: '🧑‍🎓', lesson: 2,
+    n: 9, zh: '名', py: 'míng', pos: 'Lượng từ / Danh từ', vn: '(lượng từ chỉ người); tên, thứ hạng', em: '🧑‍🎓', img: '/images/hsk2v3-bai-2/ming.jpg', lesson: 2,
     ex_zh: '北京大学有三千多名外国学生。', ex_py: 'Běijīng Dàxué yǒu sānqiān duō míng wàiguó xuésheng.', ex_vn: 'Đại học Bắc Kinh có hơn ba nghìn sinh viên nước ngoài.',
     exList: [
       { zh: '北京大学有三千多名外国学生。', py: 'Běijīng Dàxué yǒu sānqiān duō míng wàiguó xuésheng.', vn: 'Đại học Bắc Kinh có hơn ba nghìn sinh viên nước ngoài.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '名', p: 'míng', type: '会意字 · Chữ hội ý', st: 6, ord: '夕 → 口', rad: '口 (khẩu – miệng)', mean: 'tên; lượng từ chỉ người', tip: '夕 (tối) + 口 (miệng): trời tối phải xưng tên để nhận ra nhau.', cf: '', w: '一名学生 / 名字 / 第一名' }]
   },
   {
-    n: 10, zh: '网上', py: 'wǎngshang', pos: 'Danh từ', vn: 'trên mạng', em: '🌐', lesson: 2,
+    n: 10, zh: '网上', py: 'wǎngshang', pos: 'Danh từ', vn: 'trên mạng', em: '🌐', img: '/images/hsk2v3-bai-2/wangshang.jpg', lesson: 2,
     ex_zh: '是网上说的。', ex_py: 'Shì wǎngshang shuō de.', ex_vn: 'Là thông tin trên mạng nói vậy.',
     exList: [
       { zh: '是网上说的。', py: 'Shì wǎngshang shuō de.', vn: 'Là thông tin trên mạng nói vậy.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '网', p: 'wǎng', type: '象形字 · Chữ tượng hình', st: 6, ord: '冂 → 㐅 → 㐅', rad: '冂 (quynh)', mean: 'lưới, mạng', tip: 'Hình cái lưới đan — ngày nay chỉ mạng Internet.', cf: '', w: '网上 / 上网 / 网站' }]
   },
   {
-    n: 11, zh: '外国', py: 'wàiguó', pos: 'Danh từ', vn: 'nước ngoài', em: '🌍', lesson: 2,
+    n: 11, zh: '外国', py: 'wàiguó', pos: 'Danh từ', vn: 'nước ngoài', em: '🌍', img: '/images/hsk2v3-bai-2/waiguo.jpg', lesson: 2,
     ex_zh: '北京大学有很多外国学生。', ex_py: 'Běijīng Dàxué yǒu hěn duō wàiguó xuésheng.', ex_vn: 'Đại học Bắc Kinh có rất nhiều sinh viên nước ngoài.',
     exList: [
       { zh: '北京大学有很多外国学生。', py: 'Běijīng Dàxué yǒu hěn duō wàiguó xuésheng.', vn: 'Đại học Bắc Kinh có rất nhiều sinh viên nước ngoài.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '间', p: 'jiān', type: '会意字 · Chữ hội ý', st: 7, ord: '门 → 日', rad: '门 (môn – cửa)', mean: 'khoảng, gian phòng', tip: '门 (cửa) + 日 (mặt trời): ánh nắng lọt qua khe cửa — nghĩa "khoảng giữa".', cf: '', w: '一间教室 / 房间 / 时间' }]
   },
   {
-    n: 13, zh: '教室', py: 'jiàoshì', pos: 'Danh từ', vn: 'phòng học, lớp học', em: '🏫', lesson: 2,
+    n: 13, zh: '教室', py: 'jiàoshì', pos: 'Danh từ', vn: 'phòng học, lớp học', em: '🏫', img: '/images/hsk2v3-bai-2/jiaoshi.jpg', lesson: 2,
     ex_zh: '教室里有二十多个学生。', ex_py: 'Jiàoshì li yǒu èrshí duō ge xuésheng.', ex_vn: 'Trong phòng học có hơn hai mươi học sinh.',
     exList: [
       { zh: '教室里有二十多个学生。', py: 'Jiàoshì li yǒu èrshí duō ge xuésheng.', vn: 'Trong phòng học có hơn hai mươi học sinh.' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '室', p: 'shì', type: '形声字 · Chữ hình thanh', st: 9, ord: '宀 → 至', rad: '宀 (miên – mái nhà)', mean: 'phòng, buồng', tip: 'Bộ 宀 (mái nhà) cho biết chữ chỉ một căn phòng.', cf: '', w: '教室 / 办公室 / 洗手间' }]
   },
   {
-    n: 14, zh: '票', py: 'piào', pos: 'Danh từ', vn: 'vé', em: '🎟️', lesson: 3,
+    n: 14, zh: '票', py: 'piào', pos: 'Danh từ', vn: 'vé', em: '🎟️', img: '/images/hsk2v3-bai-2/piao.jpg', lesson: 3,
     ex_zh: '他们卖的电影票也很便宜。', ex_py: 'Tāmen mài de diànyǐngpiào yě hěn piányi.', ex_vn: 'Vé xem phim họ bán cũng rất rẻ.',
     exList: [
       { zh: '他们卖的电影票也很便宜。', py: 'Tāmen mài de diànyǐngpiào yě hěn piányi.', vn: 'Vé xem phim họ bán cũng rất rẻ.' },
@@ -138,7 +138,7 @@ var vocabData = [
     hanzi: [{ c: '别', p: 'bié', type: '会意字 · Chữ hội ý', st: 7, ord: '口 → 力 → 刂', rad: '刂 (đao – dao)', mean: 'khác; đừng', tip: '别 + động từ = đừng làm gì: 别说话、别走。', cf: '', w: '别看 / 别的 / 别人' }]
   },
   {
-    n: 16, zh: '过来', py: 'guòlái', pos: 'Động từ', vn: 'đến, đến đây, qua đây', em: '➡️', lesson: 4,
+    n: 16, zh: '过来', py: 'guòlái', pos: 'Động từ', vn: 'đến, đến đây, qua đây', em: '➡️', img: '/images/hsk2v3-bai-2/guolai.jpg', lesson: 4,
     ex_zh: '我们有时间还想再过来看个电影。', ex_py: 'Wǒmen yǒu shíjiān hái xiǎng zài guòlái kàn ge diànyǐng.', ex_vn: 'Nếu có thời gian chúng tôi vẫn muốn quay lại xem phim.',
     exList: [
       { zh: '我们有时间还想再过来看个电影。', py: 'Wǒmen yǒu shíjiān hái xiǎng zài guòlái kàn ge diànyǐng.', vn: 'Nếu có thời gian chúng tôi vẫn muốn quay lại xem phim.' },

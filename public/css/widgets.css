@@ -60,6 +60,18 @@
 .hw-mascot:hover { transform: scale(1.06); }
 .hw-mascot svg { width: 48px; height: 48px; }
 
+/* Dau X tat linh vat: giu nho cho gon mat, nhung noi rong vung bam ra 44px
+   bang mot lop trong suot phia sau, de ngon tay khong bam truot. */
+.hw-mascot-hide::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
 .hw-mascot-hide {
   position: absolute;
   top: -4px;
@@ -509,6 +521,10 @@
 
 @media (max-width: 640px) {
   .hw-fab-stack { right: 14px; bottom: 14px; gap: 12px; }
+  /* Trang nao co thanh dieu huong duoi thi day hai nut noi len tren no. Truoc
+     day nut chat nam de dung len o "Tai khoan", bam vao nav lai trung nut chat.
+     Chi nang khi that su co thanh nav, de trang bai hoc van giu nut sat day. */
+  body:has(.app-bottom-nav) .hw-fab-stack { bottom: calc(var(--bottom-nav-h, 64px) + 14px); }
   .hw-mascot { width: 54px; height: 54px; }
   .hw-mascot svg { width: 42px; height: 42px; }
   .hw-chat-fab { width: 52px; height: 52px; }

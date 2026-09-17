@@ -6,6 +6,8 @@
   --gold:#b7791f;--gold-l:#fdf5e6;--teal:#0d8a80;--teal-l:#e6f7f5;
   --purple:#7c3aed;--purple-l:#f3e8ff;
   --py:#a8691a;
+  /* Font serif cho tieu de — dung chung voi trang chinh. */
+  --font-display:'Newsreader','Be Vietnam Pro',Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;}
@@ -43,7 +45,7 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 
 /* SECTION TITLES */
 .sec-head{margin-bottom:28px;}
-.sec-title{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;font-size:1.35rem;font-weight:800;letter-spacing:-0.01em;color:var(--ink);display:flex;align-items:center;gap:10px;margin-bottom:5px;}
+.sec-title{font-family:var(--font-display);font-size:1.4rem;font-weight:600;letter-spacing:-0.02em;color:var(--ink);display:flex;align-items:center;gap:10px;margin-bottom:5px;}
 .sec-badge{background:var(--sky);color:white;font-size:0.7rem;font-weight:600;padding:3px 10px;border-radius:20px;letter-spacing:1px;}
 .sec-sub{color:var(--soft);font-size:0.88rem;}
 .divider{height:1px;background:var(--border);margin:24px 0;}

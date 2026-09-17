@@ -61,6 +61,8 @@
 
   --font-latin: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', var(--font-latin);
+  /* Font serif cho tieu de — cung font YouHSK dung, tao net bao chi cho trang. */
+  --font-display: 'Newsreader', 'Be Vietnam Pro', Georgia, serif;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -132,6 +134,14 @@ body {
 
 h1, h2, h3 {
   text-wrap: balance;
+}
+
+/* Tieu de lon dung serif, chu than van la sans — cach xep font cua YouHSK.
+   Khong dung cho h3 tro xuong: o co nho serif doc kem ro hon sans. */
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 img {
@@ -442,7 +452,8 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 38px;
+  /* 44px la muc toi thieu de ngon tay bam trung tren dien thoai. */
+  min-height: 44px;
   padding: 0 10px;
   border-radius: var(--radius-sm);
   border: none;
@@ -712,7 +723,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .home-head h1 {
   margin: 0;
   font-size: clamp(1.45rem, 3.2vw, 1.9rem);
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
@@ -5271,6 +5282,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .pinyin-toggle {
   display: flex;
   align-items: center;
+  min-height: 44px;
   gap: var(--space-2);
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
@@ -6360,7 +6372,7 @@ body.pinyin-hidden .py-inline {
 }
 
 /* ---------- Thiet ke moi: tinh chinh tren dien thoai ---------- */
-.pinyin-toggle { white-space: nowrap; min-height: 36px; }
+.pinyin-toggle { white-space: nowrap; }
 
 @media (max-width: 420px) {
   .top-toggles .tt-label { display: none; }

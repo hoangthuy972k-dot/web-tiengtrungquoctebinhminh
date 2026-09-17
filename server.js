@@ -30,6 +30,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const GOOGLE_TTS_API_KEY = process.env.GOOGLE_TTS_API_KEY || '';
+// Giong doc va toc do doc doi duoc tu bien moi truong (hPanel), khong phai sua code.
+// TTS_VOICE_FALLBACK la giong chac chan chay duoc: neu giong chinh bi tu choi
+// (ten sai, chua mo cho khu vuc...) thi thu lai bang giong nay de hoc sinh
+// khong mat tieng doc.
+const TTS_VOICE = process.env.TTS_VOICE || 'cmn-CN-Wavenet-A';
+const TTS_VOICE_FALLBACK = process.env.TTS_VOICE_FALLBACK || 'cmn-CN-Wavenet-A';
+const TTS_SPEED = Number(process.env.TTS_SPEED || 0.9);
 const AZURE_SPEECH_KEY = process.env.AZURE_SPEECH_KEY || '';
 const AZURE_SPEECH_REGION = process.env.AZURE_SPEECH_REGION || '';
 
@@ -1797,24 +1804,59 @@ app.post('/api/tts', async (req, res) => {
   if (!text || text.length > 200) {
     return res.status(400).json({ error: 'Thiếu hoặc sai định dạng "text".' });
   }
+  const synth = (voiceName) => fetch(
+    `https://texttospeech.googleapis.com/v1/text:synthesize?key=${encodeURIComponent(GOOGLE_TTS_API_KEY)}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        input: { text },
+        voice: { languageCode: 'cmn-CN', name: voiceName },
+        audioConfig: { audioEncoding: 'MP3', speakingRate: TTS_SPEED },
+      }),
+    }
+  );
+
   try {
-    const googleRes = await fetch(
-      `https://texttospeech.googleapis.com/v1/text:synthesize?key=${encodeURIComponent(GOOGLE_TTS_API_KEY)}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          input: { text },
-          voice: { languageCode: 'cmn-CN', name: 'cmn-CN-Wavenet-A' },
-          audioConfig: { audioEncoding: 'MP3', speakingRate: 0.9 },
-        }),
-      }
-    );
-    const data = await googleRes.json();
+    let googleRes = await synth(TTS_VOICE);
+    let data = await googleRes.json();
+    // Giong chinh bi tu choi (ten sai, chua mo cho khu vuc...) thi doc bang
+    // giong du phong, hoc sinh van nghe duoc thay vi mat tieng.
+    if (!googleRes.ok && TTS_VOICE_FALLBACK && TTS_VOICE_FALLBACK !== TTS_VOICE) {
+      console.warn(`[tts] giong "${TTS_VOICE}" loi (${data?.error?.message || googleRes.status}), doc bang "${TTS_VOICE_FALLBACK}"`);
+      googleRes = await synth(TTS_VOICE_FALLBACK);
+      data = await googleRes.json();
+    }
     if (!googleRes.ok) {
       return res.status(502).json({ error: data?.error?.message || 'Lỗi từ Google TTS.' });
     }
     res.json({ audioContent: data.audioContent });
+  } catch (err) {
+    res.status(502).json({ error: 'Không gọi được dịch vụ TTS.' });
+  }
+});
+
+// Liet ke giong doc tieng Trung dang dung duoc voi khoa hien tai, kem giong
+// nao dang chay. Dung de chon giong moi ma khong phai doan ten.
+app.get('/api/tts/voices', async (req, res) => {
+  if (!GOOGLE_TTS_API_KEY) {
+    return res.status(503).json({ error: 'TTS chưa được cấu hình (thiếu GOOGLE_TTS_API_KEY).' });
+  }
+  try {
+    const r = await fetch(
+      `https://texttospeech.googleapis.com/v1/voices?languageCode=cmn-CN&key=${encodeURIComponent(GOOGLE_TTS_API_KEY)}`
+    );
+    const data = await r.json();
+    if (!r.ok) return res.status(502).json({ error: data?.error?.message || 'Lỗi từ Google TTS.' });
+    res.json({
+      dangDung: TTS_VOICE,
+      tocDo: TTS_SPEED,
+      giong: (data.voices || []).map((v) => ({
+        ten: v.name,
+        gioiTinh: v.ssmlGender,
+        tanSo: v.naturalSampleRateHertz,
+      })),
+    });
   } catch (err) {
     res.status(502).json({ error: 'Không gọi được dịch vụ TTS.' });
   }

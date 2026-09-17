@@ -2,10 +2,31 @@
 // AUDIO (Web Speech API — không có file mp3 thật)
 // ══════════════════════════════════════════
 var zhVoice=null;
+// Chon giong doc tot nhat trong so giong may hoc sinh dang co.
+// - Bo han giong Quang Dong (zh-HK / yue): doc chu Han bang am Quang Dong
+//   se day sai phat am, tha khong doc con hon.
+// - Uu tien quan thoai dai luc (zh-CN), roi den giong Google / giong
+//   "Natural" cua Microsoft vi nghe ro va tu nhien hon giong may cu.
 function pickZhVoice(){
   if(!window.speechSynthesis) return null;
-  var vs=window.speechSynthesis.getVoices();
-  return vs.filter(function(v){return /^zh/i.test(v.lang);})[0]||null;
+  var vs=window.speechSynthesis.getVoices()||[];
+  var quanThoai=vs.filter(function(v){
+    var lang=(v.lang||'').toLowerCase().replace('_','-');
+    if(/^(yue|zh-hk)/.test(lang)) return false;
+    return /^zh/.test(lang);
+  });
+  if(!quanThoai.length) return null;
+  function diem(v){
+    var lang=(v.lang||'').toLowerCase().replace('_','-');
+    var ten=(v.name||'').toLowerCase();
+    var d=0;
+    if(/^zh-cn|^zh-hans/.test(lang)) d+=100;
+    if(/google/.test(ten)) d+=40;
+    if(/natural|online|neural/.test(ten)) d+=30;
+    if(v.localService===false) d+=10;
+    return d;
+  }
+  return quanThoai.slice().sort(function(a,b){return diem(b)-diem(a);})[0];
 }
 if(window.speechSynthesis){
   zhVoice=pickZhVoice();

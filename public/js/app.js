@@ -1673,15 +1673,48 @@
   /* ---------------- Vocab practice (danh sach tu + 4 che do quiz) ---------------- */
 
   var vpZhVoice = null;
+
+  // Chon giong doc tot nhat trong so giong may hoc sinh dang co.
+  // - Bo han giong Quang Dong (zh-HK / yue): doc chu Han bang am Quang Dong
+  //   se day sai phat am, tha khong doc con hon.
+  // - Uu tien quan thoai dai luc (zh-CN), roi den giong Google / giong
+  //   "Natural" cua Microsoft vi nghe ro va tu nhien hon giong may cu.
+  function vpPickZhVoice() {
+    if (!window.speechSynthesis) return null;
+    var all = window.speechSynthesis.getVoices() || [];
+    var quanThoai = all.filter(function (v) {
+      var lang = (v.lang || '').toLowerCase().replace('_', '-');
+      if (/^(yue|zh-hk)/.test(lang)) return false;
+      return /^zh/.test(lang);
+    });
+    if (!quanThoai.length) return null;
+    function diem(v) {
+      var lang = (v.lang || '').toLowerCase().replace('_', '-');
+      var ten = (v.name || '').toLowerCase();
+      var d = 0;
+      if (/^zh-cn|^zh-hans/.test(lang)) d += 100;
+      if (/google/.test(ten)) d += 40;
+      if (/natural|online|neural/.test(ten)) d += 30;
+      if (v.localService === false) d += 10;
+      return d;
+    }
+    return quanThoai.slice().sort(function (a, b) { return diem(b) - diem(a); })[0];
+  }
+
+  // Danh sach giong nap khong dong bo, nen chon lai khi trinh duyet bao co them.
+  if (window.speechSynthesis) {
+    window.speechSynthesis.addEventListener('voiceschanged', function () {
+      vpZhVoice = vpPickZhVoice();
+    });
+  }
+
   function vpSpeak(text) {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
     u.lang = 'zh-CN';
     u.rate = 0.9;
-    if (!vpZhVoice) {
-      vpZhVoice = window.speechSynthesis.getVoices().filter(function (v) { return /^zh/i.test(v.lang); })[0] || null;
-    }
+    if (!vpZhVoice) vpZhVoice = vpPickZhVoice();
     if (vpZhVoice) u.voice = vpZhVoice;
     window.speechSynthesis.speak(u);
   }

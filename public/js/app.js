@@ -23,6 +23,7 @@
     writeJSON(STORAGE_KEYS.lessonScores, all);
     syncProgressToServer();
     taskMark('learn'); // xong 1 phan bai hoc = viec (2) cua nhiem vu hom nay
+    updatePathBar();
   }
 
   function recordGameScore(lesson, subtype, correct, total) {
@@ -35,6 +36,7 @@
     writeJSON(STORAGE_KEYS.lessonScores, all);
     syncProgressToServer();
     taskMark('learn');
+    updatePathBar();
   }
 
   function getLessonScores(lesson) {
@@ -1146,6 +1148,15 @@
 
     var grid = $('#hubTileGrid');
     grid.innerHTML = '';
+    if (pathEnabled(lesson)) {
+      grid.hidden = true;
+      renderLessonPath(levelId, lesson);
+      $('#lessonHub').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    grid.hidden = false;
+    $('#lessonPath').hidden = true;
+    $('.hub-progress-label').textContent = 'Tiến độ tổng';
     tabIds.forEach(function (tabId) {
       var def = HUB_TAB_DEFS[tabId];
       if (!def) return;
@@ -1236,6 +1247,273 @@
     }
 
     $('#lessonHub').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ---------------- Lo trinh bai hoc 7 buoc (dang thu: HSK 2 (3.0) Bai 1) ----------------
+     Moi bai la 1 con duong co thu tu (引 dan nhap → 懂 hieu → 会 luyen → 用 van dung →
+     验 kiem tra) thay cho luoi o ngang hang. Buoc sau khong bi khoa, chi duoc goi y.
+     Thanh "Tiep tuc →" (#pathBar) hien o duoi man hinh khi dang lam 1 buoc. */
+
+  var PATH_LESSON_RE = /\/lessons\/hsk2v3-bai-1\.html$/;
+  function pathEnabled(lesson) { return !!(lesson && PATH_LESSON_RE.test(lesson.fullPageUrl || '')); }
+
+  var PATH_STEPS = [
+    { key: 'warmup', title: 'Khởi động', stage: '引', desc: 'Nhìn tranh, đoán nghĩa từ mới', min: 2, icon: '🎯', section: 'warmupPractice',
+      open: function (l, s) { showWarmupPractice(l, s); } },
+    { key: 'vocab', title: 'Học từ', stage: '懂', desc: 'Thẻ từ có tranh, âm thanh và âm Hán Việt', min: 5, icon: '📚', section: 'vocabPractice',
+      open: function (l, s) { showVocabPractice(l, s); } },
+    { key: 'dialog', title: 'Hội thoại', stage: '懂', desc: 'Nghe → đọc theo → đóng vai', min: 5, icon: '💬', section: 'dialoguePractice',
+      open: function (l, s) { showDialoguePractice(l, s); } },
+    { key: 'grammar', title: 'Ngữ pháp', stage: '会', desc: 'Xem ví dụ, rút ra công thức, luyện ngay', min: 5, icon: '📐', section: 'grammarPractice',
+      open: function (l, s) { showGrammarPractice(l, s); } },
+    { key: 'game', title: 'Luyện tập', stage: '会', desc: 'Nối câu, điền từ, sắp xếp câu', min: 5, icon: '🧩', section: 'gamePractice',
+      open: function (l, s) { showGamePractice(l, s); } },
+    { key: 'speak', title: 'Nói', stage: '用', desc: 'Trả lời câu hỏi thật về bản thân', min: 3, icon: '🗣️', section: 'speakPractice',
+      open: function (l, s) { showSpeakPractice(l, s); } },
+    { key: 'final', title: 'Kiểm tra cuối bài', stage: '验', desc: '10 câu trộn → điểm, sao và chứng nhận', min: 3, icon: '🎓', section: 'finalPractice',
+      open: function (l, s) { showFinalPractice(l, s); } }
+  ];
+  var PATH_EXTRA = ['flash', 'listen', 'translate'];
+
+  function pathStepDone(lesson, step) {
+    if (step.key === 'final') {
+      var f = getLessonScores(lesson).final;
+      return !!(f && f.total > 0);
+    }
+    return isHubTileDone(lesson, step.key);
+  }
+  function pathCurrentIndex(lesson) {
+    for (var i = 0; i < PATH_STEPS.length; i++) if (!pathStepDone(lesson, PATH_STEPS[i])) return i;
+    return PATH_STEPS.length; // xong het
+  }
+
+  function renderLessonPath(levelId, lesson) {
+    var cur = pathCurrentIndex(lesson);
+    var doneCount = PATH_STEPS.filter(function (s) { return pathStepDone(lesson, s); }).length;
+    var pct = Math.round(doneCount / PATH_STEPS.length * 100);
+    $('.hub-progress-label').textContent = cur >= PATH_STEPS.length ? 'Hoàn thành 7/7 bước 🎉' : 'Bước ' + (cur + 1) + '/7';
+    $('#hubProgressFill').style.width = pct + '%';
+    $('#hubProgressPct').textContent = pct + '%';
+
+    var list = $('#lessonPath');
+    list.hidden = false;
+    list.innerHTML = PATH_STEPS.map(function (s, i) {
+      var done = pathStepDone(lesson, s);
+      var state = done ? 'is-done' : (i === cur ? 'is-current' : (i > cur ? 'is-later' : 'is-open'));
+      var badge = done ? '✓ Đã xong' : (i === cur ? 'Bắt đầu ở đây' : (i > cur ? 'Gợi ý: làm bước ' + (cur + 1) + ' trước' : ''));
+      return '<li class="lp-step ' + state + '">' +
+        '<button type="button" class="lp-btn" data-path-step="' + i + '">' +
+          '<span class="lp-node" aria-hidden="true">' + (done ? '✓' : (i + 1)) + '</span>' +
+          '<span class="lp-body">' +
+            '<span class="lp-top"><span class="lp-stage">' + s.stage + '</span><b>' + s.icon + ' Bước ' + (i + 1) + ' · ' + s.title + '</b><span class="lp-min">' + s.min + "'</span></span>" +
+            '<span class="lp-desc">' + s.desc + '</span>' +
+            (badge ? '<span class="lp-badge">' + badge + '</span>' : '') +
+          '</span>' +
+          '<span class="lp-go" aria-hidden="true">' + (i === cur ? 'Học ngay →' : '→') + '</span>' +
+        '</button></li>';
+    }).join('');
+    $all('[data-path-step]', list).forEach(function (btn) {
+      btn.addEventListener('click', function () { openPathStep(levelId, lesson, parseInt(btn.getAttribute('data-path-step'), 10)); });
+    });
+
+    // Luyen them + che do giao vien + ket qua
+    var extra = PATH_EXTRA.map(function (k) {
+      var d = HUB_TAB_DEFS[k];
+      return '<button type="button" class="lp-extra-btn" data-path-extra="' + k + '">' + d.emoji + ' ' + d.label + (isHubTileDone(lesson, k) ? ' ✓' : '') + '</button>';
+    }).join('');
+    var cta = $('#hubCtaWrap');
+    cta.innerHTML =
+      '<div class="lp-extra"><p class="lp-extra-title">Luyện thêm (không bắt buộc)</p><div class="lp-extra-row">' + extra + '</div></div>' +
+      '<div class="lp-foot">' +
+        '<button type="button" class="hub-cta" id="lpResults">🏆 Xem kết quả cuối bài</button>' +
+        '<a class="lp-teacher" href="' + lesson.fullPageUrl + '" target="_blank" rel="noopener">🖥️ Chế độ giáo viên / trình chiếu (toàn bộ bài trên 1 trang)</a>' +
+      '</div>';
+    $('#lpResults').addEventListener('click', function () { showResultsPractice(levelId, lesson); });
+    $all('[data-path-extra]', cta).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var k = btn.getAttribute('data-path-extra');
+        pathState = null;
+        if (k === 'flash') showFlashcardPractice(levelId, lesson);
+        else if (k === 'listen') showListenPractice(levelId, lesson);
+        else if (k === 'translate') showTranslatePractice(levelId, lesson);
+      });
+    });
+  }
+
+  var pathState = null; // { levelId, lesson, idx }
+  function openPathStep(levelId, lesson, idx) {
+    pathState = { levelId: levelId, lesson: lesson, idx: idx };
+    // Dong moi man khac truoc (vai man luyen tap khong tu dong man Khoi dong)
+    $all('#main > .dash-section').forEach(function (s) { s.hidden = true; });
+    PATH_STEPS[idx].open(levelId, lesson);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    updatePathBar();
+  }
+
+  // Thanh duoi man hinh: "Buoc 3/7 · Hoi thoai" + nut "Tiep tuc →"
+  function updatePathBar() {
+    var bar = $('#pathBar');
+    if (!bar) return;
+    if (!pathState) { bar.hidden = true; document.body.classList.remove('has-path-bar'); return; }
+    var step = PATH_STEPS[pathState.idx];
+    var sec = document.getElementById(step.section);
+    if (!sec || sec.hidden) { bar.hidden = true; document.body.classList.remove('has-path-bar'); return; }
+    var done = pathStepDone(pathState.lesson, step);
+    var last = pathState.idx === PATH_STEPS.length - 1;
+    var next = last ? null : PATH_STEPS[pathState.idx + 1];
+    bar.innerHTML =
+      '<div class="pb-info">' +
+        '<span class="pb-step">Bước ' + (pathState.idx + 1) + '/7 · ' + step.title + (done ? ' <em>✓ đã xong</em>' : '') + '</span>' +
+        '<span class="pb-track">' + PATH_STEPS.map(function (s, i) {
+          return '<i class="' + (pathStepDone(pathState.lesson, s) ? 'is-done' : '') + (i === pathState.idx ? ' is-here' : '') + '"></i>';
+        }).join('') + '</span>' +
+        (done || last ? '' : '<span class="pb-hint">Làm xong bước này để được đánh dấu ✓</span>') +
+      '</div>' +
+      '<div class="pb-actions">' +
+        '<button type="button" class="pb-map" id="pbMap">Lộ trình</button>' +
+        '<button type="button" class="pb-next" id="pbNext">' + (next
+          ? '<span class="pb-long">Tiếp tục: ' + next.title + ' →</span><span class="pb-short">Tiếp tục →</span>'
+          : 'Xem kết quả →') + '</button>' +
+      '</div>';
+    bar.hidden = false;
+    document.body.classList.add('has-path-bar');
+    $('#pbNext').addEventListener('click', function () {
+      var st = pathState;
+      if (!st) return;
+      if (st.idx < PATH_STEPS.length - 1) openPathStep(st.levelId, st.lesson, st.idx + 1);
+      else { pathState = null; updatePathBar(); showResultsPractice(st.levelId, st.lesson); }
+    });
+    $('#pbMap').addEventListener('click', function () {
+      var st = pathState;
+      pathState = null;
+      updatePathBar();
+      if (st) showLessonHub(st.levelId, st.lesson);
+    });
+  }
+
+  // An/hien thanh khi hoc sinh chuyen man hinh (nut quay lai, menu...)
+  (function watchPathBar() {
+    var main = document.getElementById('main');
+    if (!main || !window.MutationObserver) return;
+    new MutationObserver(function () {
+      // Man "Kiem tra cuoi bai" moi: cac ham show* cu khong biet de an no —
+      // hoc sinh sang man khac (menu, trang chu...) thi tu an
+      var fq = document.getElementById('finalPractice');
+      if (fq && !fq.hidden) {
+        var others = $all('#main > .dash-section').filter(function (s) { return s !== fq && !s.hidden; });
+        if (others.length) fq.hidden = true;
+      }
+      updatePathBar();
+    }).observe(main, { attributes: true, attributeFilter: ['hidden'], subtree: true });
+  })();
+
+  /* ---------------- Kiem tra cuoi bai: 10 cau tron → diem, sao, chung nhan ---------------- */
+
+  var fqState = null;
+  function showFinalPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $all('#main > .dash-section').forEach(function (sec) { sec.hidden = sec.id !== 'finalPractice'; });
+    var wrap = $('#fqContent');
+    wrap.innerHTML = '<p style="color:var(--color-gray-500);">Đang chuẩn bị đề…</p>';
+    loadLessonRawData(lesson).then(function (data) {
+      fqState = { lesson: lesson, levelId: levelId, items: fqBuild(data), pos: 0, score: 0 };
+      pgbInit('fq', fqState.items.length);
+      fqRender();
+    }).catch(function () {
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung bài học, thử lại sau.</p>';
+    });
+  }
+
+  // 5 cau nghia tu vung + 5 cau trac nghiem cua bai (thieu thi bu bang tu vung Viet → Trung)
+  function fqBuild(data) {
+    var vocab = (data.vocabData || []).filter(function (v) { return v.zh && v.vn; });
+    var items = [];
+    shuffle(vocab).slice(0, 5).forEach(function (v) {
+      var opts = shuffle([v].concat(shuffle(vocab.filter(function (x) { return x !== v; })).slice(0, 3)));
+      items.push({ kind: 'Từ vựng', prompt: '<div class="fq-zh hanzi">' + v.zh + '</div><div class="fq-py">' + v.py + '</div>', speak: v.zh,
+        opts: opts.map(function (o) { return o.vn; }), ans: opts.indexOf(v), zhOpts: false });
+    });
+    shuffle((data.mcData || []).slice()).slice(0, 5).forEach(function (q) {
+      items.push({ kind: 'Trắc nghiệm', prompt: '<div class="fq-q hanzi">' + q.q + '</div>', opts: q.opts.slice(), ans: q.ans, zhOpts: true });
+    });
+    var used = {};
+    items.forEach(function (it) { if (it.speak) used[it.speak] = 1; });
+    shuffle(vocab.filter(function (v) { return !used[v.zh]; })).forEach(function (v) {
+      if (items.length >= 10) return;
+      var opts = shuffle([v].concat(shuffle(vocab.filter(function (x) { return x !== v; })).slice(0, 3)));
+      items.push({ kind: 'Từ vựng', prompt: '<div class="fq-q">Chọn chữ Hán có nghĩa: <b>' + v.vn + '</b></div>', opts: opts.map(function (o) { return o.zh; }), ans: opts.indexOf(v), zhOpts: true });
+    });
+    return shuffle(items).slice(0, 10);
+  }
+
+  function fqRender() {
+    var st = fqState, wrap = $('#fqContent');
+    var total = st.items.length;
+    if (st.pos >= total) { fqFinish(); return; }
+    var it = st.items[st.pos];
+    wrap.innerHTML = pgbHtml('fq', total) +
+      '<div class="vp-quiz-counter">Câu ' + (st.pos + 1) + '/' + total + ' · ' + it.kind + '</div>' +
+      '<div class="vp-quiz-card"><div class="vp-quiz-prompt">' + it.prompt +
+        (it.speak ? '<button type="button" class="vp-speak-btn" data-speak="' + it.speak + '">🔊</button>' : '') + '</div>' +
+        '<div class="vp-quiz-options">' + it.opts.map(function (o, i) {
+          return '<button type="button" class="vp-option-btn' + (it.zhOpts ? ' hanzi' : '') + '" data-i="' + i + '">' + o + '</button>';
+        }).join('') + '</div></div>';
+    pgbPaint('fq');
+    $all('[data-speak]', wrap).forEach(function (b) { b.addEventListener('click', function () { vpSpeak(b.getAttribute('data-speak')); }); });
+    $all('.vp-option-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var i = parseInt(btn.getAttribute('data-i'), 10);
+        var ok = i === it.ans;
+        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (j === it.ans) b.classList.add('is-correct');
+          else if (j === i) b.classList.add('is-wrong');
+        });
+        if (ok) st.score++;
+        pgbRecord('fq', st.pos, ok);
+        setTimeout(function () { st.pos++; fqRender(); }, 950);
+      });
+    });
+  }
+
+  function fqFinish() {
+    var st = fqState, wrap = $('#fqContent');
+    var total = st.items.length;
+    recordLessonScore(st.lesson, 'final', { correct: st.score, total: total });
+    var pass = st.score >= 7;
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var name = auth && auth.user && auth.user.name ? auth.user.name : 'Học viên Hi Hán';
+    var d = new Date();
+    var dateTxt = String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+    var lvl = PRACTICE_LEVEL_LABEL[st.levelId] || st.levelId;
+    wrap.innerHTML =
+      '<div class="fq-result">' +
+        '<div class="fq-score">' + st.score + '<span>/' + total + '</span></div>' +
+        '<p class="fq-msg">' + (st.score === total ? 'Xuất sắc! Đúng tất cả 🎉' : pass ? 'Rất tốt! Bạn đã nắm được bài này.' : 'Cần ôn thêm một chút — làm lại để nhận chứng nhận nhé!') + '</p>' +
+        '<p class="fq-stars">Mỗi câu đúng lần đầu được +1 ⭐</p>' +
+      '</div>' +
+      (pass
+        ? '<div class="cert" id="fqCert">' +
+            '<div class="cert-seal">喜汉</div>' +
+            '<p class="cert-eyebrow">Chứng nhận hoàn thành</p>' +
+            '<p class="cert-name">' + idiomEsc(name) + '</p>' +
+            '<p class="cert-text">đã hoàn thành <b>Bài ' + st.lesson.number + ': ' + idiomEsc(st.lesson.titleHanzi || '') + '</b><br>' + idiomEsc(lvl) + ' · đạt <b>' + st.score + '/' + total + '</b> điểm</p>' +
+            '<div class="cert-foot"><span>Ngày ' + dateTxt + '</span><span>Cô Hoàng Thùy · Hi Hán 喜汉</span></div>' +
+          '</div>'
+        : '') +
+      '<div class="fq-actions">' +
+        '<button type="button" class="btn btn-ghost" id="fqRetry">↻ Làm lại</button>' +
+        (pass ? '<button type="button" class="btn btn-ghost" id="fqPrint">🖨️ In / lưu chứng nhận</button>' : '') +
+        '<button type="button" class="btn btn-primary" id="fqDone">Xem kết quả cả bài →</button>' +
+      '</div>';
+    $('#fqRetry').addEventListener('click', function () { showFinalPractice(st.levelId, st.lesson); });
+    if (pass) $('#fqPrint').addEventListener('click', function () {
+      document.body.classList.add('print-cert');
+      window.print();
+      setTimeout(function () { document.body.classList.remove('print-cert'); }, 500);
+    });
+    $('#fqDone').addEventListener('click', function () { pathState = null; updatePathBar(); showResultsPractice(st.levelId, st.lesson); });
   }
 
   /* ---------------- Warmup (khoi dong: noi hinh anh voi chu Han) ---------------- */
@@ -2358,6 +2636,7 @@
         imgHtml +
         '<div class="vp-word-row"><span class="vp-word-zh hanzi">' + v.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + v.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
         '<div class="' + pyCls + '">' + v.py + '</div>' +
+        (v.hv ? '<div class="vp-word-hv">Hán Việt: <b>' + v.hv + '</b></div>' : '') +
         '<div class="vp-word-vn">' + v.vn + '</div>' +
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
         vpWordRichHtml(v) +
@@ -2985,6 +3264,7 @@
         '</div>' +
         '<div class="fc-face fc-back">' +
           '<span class="fc-py">' + word.py + '</span>' +
+          (word.hv ? '<span class="fc-hv">Hán Việt: <b>' + word.hv + '</b></span>' : '') +
           '<span class="fc-vn">' + word.vn + '</span>' +
           (ex ? '<span class="fc-example">' + ex.zh + ' · ' + ex.vn + '</span>' : '') +
         '</div>' +
@@ -11097,7 +11377,8 @@
     { key: 'speak', label: 'Luyện nói', emoji: '🎤', color: 'green', sources: ['speak', 'page-speak'] },
     { key: 'translate', label: 'Luyện dịch', emoji: '🔄', color: 'teal', sources: ['translate'] },
     { key: 'workbook', label: 'Sách bài tập', emoji: '📘', color: 'indigo', sources: ['workbook-mocktest'] },
-    { key: 'quick', label: 'Ôn nhanh', emoji: '⚡', color: 'gold', sources: ['quick'] }
+    { key: 'quick', label: 'Ôn nhanh', emoji: '⚡', color: 'gold', sources: ['quick'] },
+    { key: 'final', label: 'Kiểm tra cuối bài', emoji: '🎓', color: 'red', sources: ['final'] }
   ];
 
   // Ket qua cua 1 phan tu cac nguon diem da luu: {scored, correct, total, pct} hoac {done} hoac null
@@ -12837,6 +13118,12 @@
     $('#vocabBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
+    });
+    $('#fqBack').addEventListener('click', function () {
+      pathState = null;
+      updatePathBar();
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
       else showDashboard();
     });
     $('#rvBack').addEventListener('click', function () {

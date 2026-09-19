@@ -91,6 +91,7 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .vc-py{color:var(--py);font-size:0.88rem;letter-spacing:1px;margin-top:4px;}
 .vc-vn{color:var(--mid);font-size:0.9rem;padding-top:10px;margin-top:10px;border-top:1px dashed var(--border);display:none;line-height:1.6;}
 .vocab-card.flipped .vc-vn{display:block;}
+.vc-hv{font-size:0.82rem;color:var(--gold,#8a5a0f);margin-top:2px;}
 .vc-ex{margin-top:10px;padding:10px 12px;background:#f6efe6;border-radius:8px;display:none;font-size:0.85rem;}
 .vocab-card.flipped .vc-ex{display:block;}
 .vc-ex-label{font-size:0.72rem;font-weight:700;letter-spacing:0.5px;color:var(--sky-d);margin-bottom:8px;text-transform:uppercase;}

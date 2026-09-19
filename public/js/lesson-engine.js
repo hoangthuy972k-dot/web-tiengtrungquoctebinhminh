@@ -247,6 +247,7 @@ function buildVocab(){
         '<span class="vc-pos-badge" style="'+(posStyle[v.pos]||'')+'">'+v.pos+'</span>'+
       '</div>'+
       '<div class="vc-py">'+v.py+'</div>'+
+      (v.hv?'<div class="vc-hv">Hán Việt: <b>'+v.hv+'</b></div>':'')+
       '<div class="vc-vn">→ <strong>'+v.vn+'</strong></div>'+
       '<div class="vc-ex"><div class="vc-ex-label">📝 Ví dụ mở rộng</div>'+exs+'</div>'+
       (hzs?'<div class="vc-hz"><div class="vc-ex-label">🀄 Hán tự ('+v.hanzi.length+' chữ)</div><div class="hz-panel open" id="hzp'+vi+'">'+hzs+'</div></div>':'')+

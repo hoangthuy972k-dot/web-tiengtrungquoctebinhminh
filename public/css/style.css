@@ -1036,6 +1036,216 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   }
 }
 
+/* ---------- Lo trinh bai hoc 7 buoc ---------- */
+.lesson-path {
+  list-style: none;
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* duong noi cac buoc */
+.lesson-path::before {
+  content: '';
+  position: absolute;
+  left: 33px;
+  top: 30px;
+  bottom: 30px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--color-gray-200);
+}
+.lp-step { position: relative; }
+.lp-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 72px;
+  padding: 12px 16px 12px 14px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.lp-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px -12px rgba(31, 26, 23, 0.35); }
+.lp-btn:focus-visible { outline: 2px solid var(--color-red-500); outline-offset: 2px; }
+.lp-node {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid var(--color-gray-200);
+  background: #fff;
+  font-weight: 800;
+  color: var(--color-gray-500);
+  font-variant-numeric: tabular-nums;
+}
+.lp-body { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.lp-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.lp-top b { font-size: 1rem; }
+.lp-stage {
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--color-gray-100);
+  font-family: var(--font-hanzi-display);
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+}
+.lp-min { margin-left: auto; font-size: 0.8rem; font-weight: 700; color: var(--color-gray-500); }
+.lp-desc { font-size: 0.86rem; color: var(--color-gray-600); }
+.lp-badge { font-size: 0.76rem; font-weight: 700; color: var(--color-gray-500); }
+.lp-go { flex-shrink: 0; font-weight: 800; font-size: 0.9rem; color: var(--color-gray-400); }
+.lp-step.is-done .lp-node { background: var(--color-green-600); border-color: var(--color-green-600); color: #fff; }
+.lp-step.is-done .lp-badge { color: var(--color-green-600); }
+.lp-step.is-current .lp-btn { border: 2px solid var(--color-red-600); background: #fff; box-shadow: 0 10px 28px -14px rgba(200, 55, 45, 0.55); }
+.lp-step.is-current .lp-node { background: var(--color-red-600); border-color: var(--color-red-600); color: #fff; }
+.lp-step.is-current .lp-stage { background: var(--color-red-50); color: var(--color-red-700); }
+.lp-step.is-current .lp-badge { color: var(--color-red-600); }
+.lp-step.is-current .lp-go { color: #fff; background: var(--color-red-600); padding: 8px 12px; border-radius: var(--radius-pill); }
+.lp-step.is-later .lp-btn { background: rgba(250, 249, 246, 0.95); }
+.lp-step.is-later .lp-top b { color: var(--color-gray-700); }
+.lp-extra { margin: 0 0 var(--space-5); }
+.lp-extra-title { margin: 0 0 8px; font-size: 0.85rem; font-weight: 700; color: var(--color-gray-600); }
+.lp-extra-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.lp-extra-btn {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.92);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+.lp-extra-btn:hover { border-color: var(--color-gray-400); }
+.lp-foot { display: flex; flex-direction: column; gap: 12px; }
+.lp-teacher { text-align: center; font-size: 0.88rem; font-weight: 600; color: var(--color-gray-600); }
+@media (max-width: 560px) {
+  .lp-go { display: none; }
+  .lp-step.is-current .lp-go { display: none; }
+  .lesson-path::before { left: 31px; }
+}
+
+/* Thanh "Tiep tuc" co dinh o duoi khi dang lam 1 buoc */
+.path-bar {
+  position: fixed;
+  left: calc(var(--sidebar-w) + 24px);
+  right: 110px;
+  bottom: 16px;
+  z-index: 140;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px 10px 16px;
+  border-radius: 16px;
+  background: rgba(31, 26, 23, 0.94);
+  color: #fff;
+  box-shadow: 0 14px 34px rgba(31, 26, 23, 0.35);
+}
+.path-bar[hidden] { display: none; }
+@media (max-width: 1079px) {
+  .path-bar { left: 12px; right: 92px; bottom: calc(var(--bottom-nav-h) + 12px); }
+}
+body.has-path-bar .dash-section { padding-bottom: 96px; }
+.pb-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1; }
+.pb-step { font-size: 0.9rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pb-step em { font-style: normal; color: #7ee0a4; font-weight: 700; }
+.pb-track { display: flex; gap: 4px; }
+.pb-track i { flex: 1; max-width: 34px; height: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.22); }
+.pb-track i.is-done { background: #7ee0a4; }
+.pb-track i.is-here { outline: 2px solid #ffe19a; outline-offset: 1px; }
+.pb-hint { font-size: 0.74rem; color: rgba(255, 255, 255, 0.7); }
+.pb-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.pb-map, .pb-next {
+  min-height: 44px;
+  padding: 0 14px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.pb-map { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.pb-next { background: var(--color-red-600); color: #fff; white-space: nowrap; }
+.pb-short { display: none; }
+@media (max-width: 560px) {
+  .pb-long { display: none; }
+  .pb-short { display: inline; }
+}
+.pb-next:hover { background: var(--color-red-500); }
+.pb-map:focus-visible, .pb-next:focus-visible { outline: 2px solid #ffe19a; outline-offset: 2px; }
+@media (max-width: 560px) {
+  .path-bar { flex-direction: column; align-items: stretch; gap: 8px; right: 84px; }
+  .pb-hint { display: none; }
+  .pb-actions { justify-content: space-between; }
+  .pb-next { flex: 1; }
+}
+
+/* Kiem tra cuoi bai + chung nhan */
+.fq-zh { font-size: 2.4rem; font-family: var(--font-hanzi-display); font-weight: 700; }
+.fq-py { color: var(--color-gray-600); font-weight: 600; }
+.fq-q { font-size: 1.15rem; line-height: 1.6; }
+.fq-result { text-align: center; margin: var(--space-4) 0; }
+.fq-score { font-size: 3.4rem; font-weight: 800; color: var(--color-red-600); font-variant-numeric: tabular-nums; }
+.fq-score span { font-size: 1.6rem; color: var(--color-gray-500); }
+.fq-msg { margin: 4px 0; font-size: 1.05rem; font-weight: 700; }
+.fq-stars { margin: 0; font-size: 0.85rem; color: var(--color-gray-500); }
+.fq-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: var(--space-5); }
+.cert {
+  position: relative;
+  max-width: 560px;
+  margin: var(--space-5) auto 0;
+  padding: 32px 28px 22px;
+  border: 3px double var(--color-gold-600);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(242, 191, 107, 0.18), transparent 60%),
+    #fffaf0;
+  text-align: center;
+  box-shadow: 0 16px 40px -18px rgba(90, 20, 14, 0.4);
+}
+.cert-seal {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  background: var(--color-red-600);
+  color: #fff4dc;
+  font-family: var(--font-hanzi-display);
+  font-weight: 700;
+  transform: rotate(-6deg);
+}
+.cert-eyebrow { margin: 0; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-gold-700); }
+.cert-name { margin: 10px 0 6px; font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--color-red-700); }
+.cert-text { margin: 0 0 18px; line-height: 1.7; color: var(--color-gray-700); }
+.cert-foot { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid rgba(183, 121, 31, 0.3); font-size: 0.82rem; color: var(--color-gray-600); }
+@media print {
+  body.print-cert * { visibility: hidden; }
+  body.print-cert .cert, body.print-cert .cert * { visibility: visible; }
+  body.print-cert .cert { position: absolute; left: 0; right: 0; top: 40px; margin: 0 auto; box-shadow: none; }
+}
+
+/* Am Han Viet tren the tu */
+.vp-word-hv, .fc-hv { font-size: 0.85rem; color: var(--color-gold-700); }
+.fc-hv { display: block; }
+
 /* ---------- Nhiem vu hom nay (trong the do) ---------- */
 .task-goal {
   display: flex;

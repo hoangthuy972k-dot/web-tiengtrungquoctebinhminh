@@ -220,8 +220,24 @@
         <span class="hub-progress-pct" id="hubProgressPct">0%</span>
       </div>
       <div id="hubQuickWrap"></div>
+      <ol class="lesson-path" id="lessonPath" hidden></ol>
       <div class="hub-tile-grid" id="hubTileGrid"></div>
       <div id="hubCtaWrap"></div>
+    </section>
+
+    <section class="dash-section" id="finalPractice" hidden>
+      <button type="button" class="level-detail-back" id="fqBack">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Quay lại lộ trình bài học
+      </button>
+      <div class="vp-header">
+        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-red-600),var(--color-red-800))">🎓</div>
+        <div>
+          <h1>Kiểm tra cuối bài</h1>
+          <p id="fqSubtitle">10 câu trộn từ cả bài · đạt 7/10 để nhận chứng nhận</p>
+        </div>
+      </div>
+      <div id="fqContent"></div>
     </section>
 
     <section class="dash-section" id="warmupPractice" hidden>
@@ -450,6 +466,8 @@
     </footer>
   </main>
 </div>
+
+<div class="path-bar" id="pathBar" hidden role="region" aria-label="Lộ trình bài học"></div>
 
 <nav class="app-bottom-nav" aria-label="Điều hướng nhanh">
   <a href="#home" class="bn-item is-active" data-nav="home">

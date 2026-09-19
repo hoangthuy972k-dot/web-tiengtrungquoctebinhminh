@@ -1161,6 +1161,20 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   margin: 0 0 var(--space-1);
 }
 
+/* Dong gioi thieu co giao: bam vao mo thang Zalo. */
+.footer-zalo {
+  display: inline-block;
+  padding: var(--space-1) 0;
+  color: var(--color-red-700);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-zalo:hover {
+  color: var(--color-red-800);
+}
+
 /* ---------- Sections ---------- */
 .section {
   padding: var(--space-8) 0;

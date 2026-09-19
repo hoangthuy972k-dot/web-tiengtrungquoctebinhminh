@@ -12,6 +12,8 @@
   --font-hanzi-display:'Noto Serif SC','Noto Sans SC','PingFang SC',serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:112.5%;}
+@media (max-width:640px){html{font-size:106.25%;}}
 body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;}
 
 /* HEADER */

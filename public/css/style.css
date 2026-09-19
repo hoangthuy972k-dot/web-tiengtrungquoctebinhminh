@@ -105,10 +105,13 @@
   display: none !important;
 }
 
+/* Co chu goc lon hon cho de doc: moi co chu rem tren web deu to theo */
 html {
+  font-size: 112.5%;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
 }
+@media (max-width: 640px) { html { font-size: 106.25%; } }
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -129,7 +132,7 @@ body {
   font-family: var(--font-latin);
   color: var(--color-gray-900);
   background: var(--color-bg);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;

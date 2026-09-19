@@ -871,3 +871,195 @@
     starVisit();
   });
 })();
+
+// ================================================================
+// NGU PHAP "VI DU TRUOC — QUY TAC SAU" (quy nap), dung chung cho
+// trang bai hoc (lesson-engine) va muc Ngu phap trong app.
+// points: [{title, sub, ruleHtml, rows:[{zh,py,vn}]}]
+//  1. Quan sat: doc cac cau vi du, chu trong tam duoc to mau
+//  2. Bam "Xem quy tac": hien cau truc + cach dung
+//  3. Thu ngay: 1 cau dien tu (hoac chon nghia) — dung +1 sao
+// ================================================================
+(function () {
+  'use strict';
+  if (window.hwGrammarDiscover) return;
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  var HAN = /[㐀-鿿]+/g;
+  // Cac tu thay cho nhau ma cau van dung -> khong dua vao lam phuong an nhieu
+  var SWAP_GROUPS = [['吗', '吧', '呢', '啊'], ['请', '让', '叫'], ['很', '也', '都', '还', '就', '才', '再', '又', '不', '没', '太', '真'], ['了', '过', '着'], ['二', '两'], ['和', '跟'], ['在', '从']];
+  var POOL = ['了', '吗', '的', '呢', '吧', '在', '是', '很', '都', '也', '不', '没', '和', '有', '给', '跟', '就', '才', '还', '再', '又', '得', '地', '把', '被', '比', '着', '过'];
+
+  function tokensOf(p) {
+    var src = (p.ruleHtml || '').replace(/<[^>]+>/g, ' ');
+    var quoted = (p.title || '').match(/[“"「]([^”"」]+)[”"」]/g) || [];
+    var list = (src.match(HAN) || []).concat(quoted.join(' ').match(HAN) || []);
+    var seen = {}, out = [];
+    list.forEach(function (t) { if (!seen[t]) { seen[t] = 1; out.push(t); } });
+    // chi giu chu thuc su xuat hien trong cau vi du
+    out = out.filter(function (t) { return p.rows.some(function (r) { return r.zh.indexOf(t) !== -1; }); });
+    return out.sort(function (a, b) { return b.length - a.length; });
+  }
+
+  function highlight(zh, toks) {
+    if (!toks.length) return esc(zh);
+    var re = new RegExp('(' + toks.join('|') + ')', 'g');
+    return zh.split(re).map(function (part, i) {
+      return i % 2 ? '<mark class="gd-key">' + esc(part) + '</mark>' : esc(part);
+    }).join('');
+  }
+
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+
+  function hitOf(row, toks) {
+    return toks.filter(function (t) { return row.zh.indexOf(t) !== -1; })[0];
+  }
+
+  function buildQuiz(p, idx, all, toks) {
+    var rows = p.rows.filter(function (r) { return r.zh; });
+    if (!rows.length) return null;
+    var withTok = rows.filter(function (r) { return hitOf(r, toks); });
+    var row = withTok.length ? withTok[withTok.length - 1] : rows[rows.length - 1];
+    var hit = hitOf(row, toks);
+    if (hit) {
+      var banned = {};
+      toks.forEach(function (t) { banned[t] = 1; });
+      SWAP_GROUPS.forEach(function (g) { if (g.indexOf(hit) !== -1) g.forEach(function (x) { banned[x] = 1; }); });
+      var cands = [];
+      all.forEach(function (q, qi) { if (qi !== idx) tokensOf(q).forEach(function (t) { cands.push(t); }); });
+      cands = shuffle(cands).concat(shuffle(POOL.slice()));
+      // Dai tu / chi dinh tu gan nhu cau nao cung dien vua -> khong dung lam phuong an nhieu
+      ['我', '你', '他', '她', '它', '我们', '你们', '他们', '这', '那', '这儿', '那儿', '这个', '那个'].forEach(function (x) { banned[x] = 1; });
+      var opts = [], seen = {};
+      [1, 99].forEach(function (maxDiff) {
+        cands.forEach(function (t) {
+          if (opts.length >= 3 || banned[t] || seen[t] || row.zh.indexOf(t) !== -1) return;
+          if (Math.abs(t.length - hit.length) > maxDiff) return;
+          seen[t] = 1; opts.push(t);
+        });
+      });
+      var at = row.zh.indexOf(hit);
+      if (opts.length >= 2) return {
+        type: 'fill', row: row, answer: hit,
+        prompt: esc(row.zh.slice(0, at)) + '<span class="gd-blank">＿＿</span>' + esc(row.zh.slice(at + hit.length)),
+        opts: shuffle(opts.concat([hit]))
+      };
+    }
+    if (!row.vn) row = rows.filter(function (r) { return r.vn; }).pop() || row;
+    // Khong co chu trong tam -> chon nghia dung cua cau
+    var others = [], seenVn = {};
+    all.forEach(function (q) { q.rows.forEach(function (r) { if (r.vn && r.vn !== row.vn && !seenVn[r.vn]) { seenVn[r.vn] = 1; others.push(r.vn); } }); });
+    others = shuffle(others).slice(0, 3);
+    if (!others.length || !row.vn) return null;
+    return { type: 'meaning', row: row, answer: row.vn, prompt: esc(row.zh), opts: shuffle(others.concat([row.vn])) };
+  }
+
+  function renderPoint(p, i, all) {
+    var toks = tokensOf(p);
+    var rows = p.rows.filter(function (r) { return r.zh; });
+    var quiz = buildQuiz(p, i, all, toks);
+    // Con >= 2 cau de quan sat thi giu lai cau cua bai "Thu ngay"
+    var shown = (quiz && rows.length >= 3) ? rows.filter(function (r) { return r !== quiz.row; }) : rows;
+    var exHtml = shown.map(function (r) {
+      return '<div class="gd-ex">' +
+        '<div class="gd-ex-zh">' + highlight(r.zh, toks) +
+        ' <button type="button" class="gd-say" data-say="' + esc(r.zh) + '" aria-label="Nghe câu này">🔊</button></div>' +
+        (r.py ? '<div class="gd-ex-py">' + esc(r.py) + '</div>' : '') +
+        (r.vn ? '<div class="gd-ex-vn">' + esc(r.vn) + '</div>' : '') +
+      '</div>';
+    }).join('');
+    var quizHtml = '';
+    if (quiz) {
+      quizHtml = '<div class="gd-try">' +
+        '<div class="gd-step-h"><span class="gd-step-n">3</span>Thử ngay</div>' +
+        '<div class="gd-try-q">' + (quiz.type === 'fill' ? 'Chọn chữ đúng để điền vào chỗ trống:' : 'Câu này có nghĩa là gì?') + '</div>' +
+        '<div class="gd-try-zh">' + quiz.prompt + '</div>' +
+        (quiz.type === 'fill' && quiz.row.vn ? '<div class="gd-ex-vn">' + esc(quiz.row.vn) + '</div>' : '') +
+        '<div class="gd-opts">' + quiz.opts.map(function (o) {
+          return '<button type="button" class="gd-opt' + (quiz.type === 'meaning' ? ' is-vn' : '') + '" data-ok="' + (o === quiz.answer ? 1 : 0) + '">' + esc(o) + '</button>';
+        }).join('') + '</div>' +
+        '<div class="gd-fb" aria-live="polite"></div>' +
+      '</div>';
+    }
+    return '<div class="gd-point" data-gd="' + i + '"' + (quiz ? ' data-full="' + esc(quiz.row.zh) + '"' : '') + '>' +
+      '<div class="gd-title"><span class="gd-num">' + (i + 1) + '</span><span>' + esc(p.title) + '</span></div>' +
+      '<div class="gd-step-h"><span class="gd-step-n">1</span>Quan sát ví dụ</div>' +
+      '<div class="gd-ask">Đọc các câu dưới đây. Các câu này giống nhau ở điểm nào?' +
+        (toks.length ? ' Chú ý <mark class="gd-key">chữ được tô màu</mark>: nó đứng ở đâu trong câu, đi cùng loại từ nào?' : ' Để ý trật tự các thành phần trong câu.') + '</div>' +
+      '<div class="gd-exs">' + exHtml + '</div>' +
+      '<button type="button" class="gd-reveal">💡 Mình đoán xong rồi, xem quy tắc</button>' +
+      '<div class="gd-after" hidden>' +
+        '<div class="gd-step-h"><span class="gd-step-n">2</span>Quy tắc</div>' +
+        (p.ruleHtml ? '<div class="gd-rule">' + p.ruleHtml + '</div>' : '') +
+        (p.sub ? '<div class="gd-sub">' + esc(p.sub) + '</div>' : '') +
+        quizHtml +
+      '</div>' +
+    '</div>';
+  }
+
+  function onClick(e) {
+    var root = e.currentTarget, opts = root.__gdOpts || {};
+    var speak = opts.speak || function () {};
+    var say = e.target.closest('.gd-say');
+    if (say) { speak(say.getAttribute('data-say')); return; }
+    var rv = e.target.closest('.gd-reveal');
+    if (rv) {
+      rv.closest('.gd-point').querySelector('.gd-after').hidden = false;
+      rv.hidden = true;
+      return;
+    }
+    var op = e.target.closest('.gd-opt');
+    if (!op || op.disabled) return;
+    var point = op.closest('.gd-point');
+    var fb = point.querySelector('.gd-fb');
+    if (op.getAttribute('data-ok') === '1') {
+      point.querySelectorAll('.gd-opt').forEach(function (b) { b.disabled = true; });
+      op.classList.add('is-ok');
+      var blank = point.querySelector('.gd-blank');
+      if (blank) { blank.textContent = op.textContent; blank.classList.add('is-filled'); }
+      fb.className = 'gd-fb is-ok';
+      fb.textContent = 'Chính xác! Em đã vận dụng đúng quy tắc.';
+      var full = point.getAttribute('data-full');
+      if (full) speak(full);
+      if (window.hwStarAnswer && opts.key) window.hwStarAnswer(opts.key + '|gr|' + point.getAttribute('data-gd'));
+    } else {
+      op.classList.add('is-no');
+      op.disabled = true;
+      fb.className = 'gd-fb is-no';
+      fb.textContent = 'Chưa đúng. Xem lại quy tắc ở trên rồi chọn lại nhé.';
+    }
+  }
+
+  window.hwGrammarDiscover = {
+    // Doc diem ngu phap tu cac .grammar-card co san trong HTML bai hoc
+    parse: function (section) {
+      return Array.prototype.map.call(section.querySelectorAll('.grammar-card'), function (card) {
+        var titleEl = card.querySelector('.g-title');
+        var numEl = titleEl && titleEl.querySelector('.g-num');
+        var title = titleEl ? titleEl.textContent.replace(numEl ? numEl.textContent : '', '').trim() : '';
+        return {
+          title: title,
+          sub: card.querySelector('.g-sub') ? card.querySelector('.g-sub').textContent.trim() : '',
+          ruleHtml: card.querySelector('.g-rule') ? card.querySelector('.g-rule').innerHTML.trim() : '',
+          rows: Array.prototype.map.call(card.querySelectorAll('.g-table tbody tr'), function (tr) {
+            var td = tr.querySelectorAll('td');
+            return { zh: td[0] ? td[0].textContent.trim() : '', py: td[1] ? td[1].textContent.trim() : '', vn: td[2] ? td[2].textContent.trim() : '' };
+          })
+        };
+      });
+    },
+    // opts: { key: duong dan bai (khoa sao), speak: function(zh) }
+    render: function (container, points, opts) {
+      container.__gdOpts = opts || {};
+      container.innerHTML = '<div class="gd-intro">🔍 <b>Tự khám phá ngữ pháp:</b> xem ví dụ trước, tự đoán quy tắc, rồi thử ngay một câu.</div>' +
+        points.map(function (p, i) { return renderPoint(p, i, points); }).join('');
+      if (!container.__gdBound) { container.__gdBound = true; container.addEventListener('click', onClick); }
+    }
+  };
+})();

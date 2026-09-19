@@ -9484,6 +9484,14 @@
       wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có nội dung ngữ pháp.</p>';
       return;
     }
+    // Vi du truoc — quy tac sau (renderer dung chung trong widgets.js)
+    if (window.hwGrammarDiscover) {
+      window.hwGrammarDiscover.render(wrap, grPoints, {
+        key: currentHubLesson ? currentHubLesson.fullPageUrl : location.pathname,
+        speak: vpSpeak
+      });
+      return;
+    }
     wrap.innerHTML = grPoints.map(function (p, i) {
       var examplesHtml = p.rows.map(function (row) {
         return '<div class="gr-example-item"><div class="gr-example-zh hanzi">' + row.zh +

@@ -1175,3 +1175,19 @@ if(typeof errorFixData!=='undefined')buildErrorFix();
   var btn=document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
   if(btn) btn.click();
 })();
+
+// ══════════════════════════════════════════
+// NGỮ PHÁP: VÍ DỤ TRƯỚC — QUY TẮC SAU (renderer dùng chung trong widgets.js)
+// ══════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',function(){
+  var sec=document.getElementById('grammar');
+  if(!sec||!window.hwGrammarDiscover) return;
+  var cards=sec.querySelectorAll('.grammar-card');
+  if(!cards.length) return;
+  var points=window.hwGrammarDiscover.parse(sec);
+  var box=document.createElement('div');
+  box.className='gd-wrap';
+  cards[0].parentNode.insertBefore(box,cards[0]);
+  cards.forEach(function(c){c.remove();});
+  window.hwGrammarDiscover.render(box,points,{key:location.pathname,speak:function(t){if(typeof speakZh==='function')speakZh(t);}});
+});

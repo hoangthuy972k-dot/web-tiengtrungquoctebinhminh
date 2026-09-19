@@ -570,7 +570,15 @@ function mClickL(i){
 function mClickR(i){
   if(mSel===null){document.getElementById('m-fb').innerHTML='<span style="color:var(--warm)">← Chọn vế trái trước</span>';return;}
   if(mDone.has('R'+i))return;
-  const c=mSel===i;
+  let c=mSel===i;
+  // Cap trung chu (vd 下雨 / 下雪 co 2 o "下"): ghep dung noi dung thi van tinh dung —
+  // doi vai 2 o trai de cap con lai van khop.
+  if(!c&&!mDone.has('L'+i)&&(matchData[mSel].left===matchData[i].left||matchData[mSel].right===matchData[i].right)){
+    const ea=document.getElementById('ml'+mSel),eb=document.getElementById('ml'+i),a=mSel;
+    ea.id='ml'+i;eb.id='ml'+a;
+    ea.onclick=function(){mClickL(i);};eb.onclick=function(){mClickL(a);};
+    mSel=i;c=true;
+  }
   if(c){
     document.getElementById('ml'+mSel).classList.remove('sel');
     document.getElementById('ml'+mSel).classList.add('m-ok');

@@ -11614,7 +11614,7 @@
       item.className = 'mg-item' + gmSizeClass(pair.left);
       item.textContent = pair.left;
       item.setAttribute('data-li', i);
-      item.addEventListener('click', function () { gmClickLeft(i); });
+      item.addEventListener('click', function () { gmClickLeft(parseInt(item.getAttribute('data-li'), 10)); });
       leftWrap.appendChild(item);
     });
     gmOrder.forEach(function (ri) {
@@ -11661,6 +11661,16 @@
     }
     if (gmDone.has('R' + ri)) return;
     var isCorrect = gmSel === ri;
+    // Cap trung chu (vd 下雨 / 下雪 co 2 o "下"): ghep dung noi dung thi van tinh dung —
+    // doi vai 2 o trai de cap con lai van khop.
+    if (!isCorrect && !gmDone.has('L' + ri) && (data[gmSel].left === data[ri].left || data[gmSel].right === data[ri].right)) {
+      var selEl = $('.mg-item[data-li="' + gmSel + '"]');
+      var otherEl = $('.mg-item[data-li="' + ri + '"]');
+      selEl.setAttribute('data-li', ri);
+      otherEl.setAttribute('data-li', gmSel);
+      gmSel = ri;
+      isCorrect = true;
+    }
     var leftEl = $('.mg-item[data-li="' + gmSel + '"]');
     var rightEl = $('.mg-item[data-ri="' + ri + '"]');
     if (isCorrect) {

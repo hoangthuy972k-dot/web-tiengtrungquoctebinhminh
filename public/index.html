@@ -111,6 +111,26 @@
         <h1 id="homeGreeting">Chào bạn 👋</h1>
       </div>
 
+      <section class="welcome" id="welcome" hidden aria-labelledby="welcomeTitle">
+        <button type="button" class="welcome-close" id="welcomeClose" aria-label="Ẩn phần giới thiệu">Để sau ✕</button>
+        <div class="welcome-main">
+          <p class="welcome-eyebrow">Học tiếng Trung cùng cô Hoàng Thùy</p>
+          <h2 id="welcomeTitle">Học tiếng Trung mỗi ngày 15 phút, nhớ lâu nhờ âm Hán Việt</h2>
+          <p class="welcome-sub">Hi Hán là trang học tiếng Trung của <b>cô Hoàng Thùy</b> — Thạc sĩ chuyên ngành Giáo dục Hán ngữ Quốc tế tại Trung Quốc — dành cho người Việt. Học thử miễn phí, không cần đăng ký.</p>
+          <div class="welcome-actions">
+            <button type="button" class="btn btn-primary" id="welcomeQuiz">🧭 Mình nên học cấp nào?</button>
+            <button type="button" class="btn btn-ghost" id="welcomeTry">Học thử HSK 1 · bài 1</button>
+          </div>
+        </div>
+        <ul class="welcome-points">
+          <li><span aria-hidden="true">🀄</span><b>Âm Hán Việt cho từng từ</b><small>Hơn 1.900 từ có âm Hán Việt — cách nhớ chữ Hán nhanh nhất cho người Việt.</small></li>
+          <li><span aria-hidden="true">🧭</span><b>Mỗi bài một lộ trình 7 bước</b><small>Khởi động → từ mới → hội thoại → ngữ pháp → luyện tập → nói → kiểm tra.</small></li>
+          <li><span aria-hidden="true">🧠</span><b>Ôn đúng lúc sắp quên</b><small>Ôn tập ngắt quãng nhắc lại từ cũ đúng hạn, học ít mà nhớ lâu.</small></li>
+          <li><span aria-hidden="true">📚</span><b>HSK 3.0 mới, HSK 1–4 và YCT</b><small>Theo giáo trình thi HSK từ 07/2026 và chương trình thiếu nhi.</small></li>
+        </ul>
+        <a class="welcome-zalo" href="https://zalo.me/0377527486" target="_blank" rel="noopener">💬 Muốn học lớp cùng cô? Nhắn Zalo để được tư vấn</a>
+      </section>
+
       <div class="dash-row">
         <div class="dash-cta-card" id="continueCard">
           <div class="dash-cta-text">
@@ -155,9 +175,12 @@
         </div>
       </div>
 
-      <div class="home-section-head" id="levelsHead">
-        <h2>Chọn cấp độ</h2>
-        <p>Chọn giáo trình bạn đang học. Thanh màu cho biết bạn đã học bao nhiêu bài.</p>
+      <div class="home-section-head levels-head" id="levelsHead">
+        <div>
+          <h2>Chọn cấp độ</h2>
+          <p>Chọn giáo trình bạn đang học. Thanh màu cho biết bạn đã học bao nhiêu bài.</p>
+        </div>
+        <button type="button" class="levels-quiz-btn" id="levelQuizBtn">🧭 Mình nên học cấp nào?</button>
       </div>
       <div class="level-grid" id="levelGrid"></div>
 

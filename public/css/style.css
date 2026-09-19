@@ -1036,6 +1036,109 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   }
 }
 
+/* Khoi gioi thieu cho khach lan dau */
+.welcome {
+  position: relative;
+  margin: 0 0 var(--space-5);
+  padding: 24px 24px 18px;
+  border: 1px solid rgba(31, 111, 92, 0.22);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(242, 191, 107, 0.2), transparent 60%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px -18px rgba(31, 111, 92, 0.4);
+}
+.welcome[hidden] { display: none; }
+.welcome-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-gray-500);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.welcome-close:hover { background: var(--color-gray-100); }
+.welcome-eyebrow { margin: 0 0 6px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #1f6f5c; }
+.welcome h2 { margin: 0 0 8px; max-width: 30ch; font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.3; color: var(--color-gray-900); }
+.welcome-sub { margin: 0 0 16px; max-width: 62ch; color: var(--color-gray-700); line-height: 1.6; }
+.welcome-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.welcome-points { list-style: none; margin: 0 0 12px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.welcome-points li { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; padding: 12px; border-radius: 12px; background: #f3f9f6; }
+.welcome-points span { grid-row: span 2; font-size: 1.5rem; line-height: 1; }
+.welcome-points b { font-size: 0.92rem; color: #154f41; }
+.welcome-points small { font-size: 0.8rem; color: var(--color-gray-600); line-height: 1.5; }
+.welcome-zalo { display: inline-block; font-size: 0.88rem; font-weight: 700; color: #1f6f5c; }
+@media (max-width: 560px) { .welcome { padding: 44px 16px 16px; } .welcome-actions .btn { flex: 1 1 100%; } }
+
+/* "Minh nen hoc cap nao?" */
+.levels-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.levels-quiz-btn {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(31, 111, 92, 0.35);
+  border-radius: var(--radius-pill);
+  background: #e7f3ee;
+  color: #154f41;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.levels-quiz-btn:hover { background: #d7ebe3; }
+.level-who { display: block; margin-top: 4px; font-size: 0.74rem; line-height: 1.4; color: var(--color-gray-500); }
+.level-card.is-picked { box-shadow: 0 0 0 2px #1f6f5c, 0 10px 24px -14px rgba(31, 111, 92, 0.6); }
+.level-tag.level-tag-pick { background: #1f6f5c; color: #fff; }
+.lq-dialog { padding: 28px 22px 22px; max-width: 520px; }
+.lq-step { margin: 0 0 6px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #1f6f5c; }
+.lq-q { margin: 0 0 14px; font-size: 1.3rem; }
+.lq-opts { display: flex; flex-direction: column; gap: 8px; }
+.lq-opt {
+  min-height: 52px;
+  padding: 10px 16px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+}
+.lq-opt:hover, .lq-opt:focus-visible { border-color: #1f6f5c; background: #f3f9f6; outline: none; }
+.lq-back { margin-top: 12px; padding: 8px 0; border: none; background: none; font: inherit; font-size: 0.85rem; color: var(--color-gray-500); cursor: pointer; }
+.lq-result { margin: 0 0 8px; font-size: 1.8rem; color: var(--color-red-700); }
+.lq-why { margin: 0 0 6px; line-height: 1.6; }
+.lq-meta { margin: 0 0 16px; font-size: 0.85rem; color: var(--color-gray-500); }
+.lq-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Loi moi hoc lop cung co */
+.class-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 560px;
+  margin: var(--space-5) auto 0;
+  padding: 12px 16px;
+  border: 1px solid rgba(31, 111, 92, 0.3);
+  border-radius: var(--radius-lg);
+  background: #f3f9f6;
+  color: inherit;
+  text-decoration: none;
+}
+.class-cta:hover { background: #e7f3ee; }
+.class-cta-ic { font-size: 1.8rem; }
+.class-cta-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.class-cta-body b { color: #154f41; }
+.class-cta-body small { font-size: 0.82rem; color: var(--color-gray-600); }
+.class-cta-go { flex-shrink: 0; font-weight: 800; font-size: 0.88rem; color: #1f6f5c; }
+@media (max-width: 560px) { .class-cta { flex-wrap: wrap; } }
+
 /* Chung nhan hoan thanh cap (dau danh sach bai) */
 .lc-card {
   display: flex;

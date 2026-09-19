@@ -523,9 +523,24 @@
     return { total: lessons.length, done: done };
   }
 
+  // Moi cap danh cho ai — de nguoi moi chon dung ngay tu dau
+  var LEVEL_AUDIENCE = {
+    yct: 'Trẻ em 6–12 tuổi · học qua tranh và trò chơi',
+    hsk1v3: 'Người mới bắt đầu · giáo trình HSK 3.0 (thi từ 07/2026)',
+    hsk2v3: 'Đã xong HSK 1 · giáo trình HSK 3.0',
+    hsk1: 'Người mới bắt đầu · giáo trình HSK cũ',
+    hsk2: 'Đã xong HSK 1 · giáo trình HSK cũ',
+    hsk3: 'Đã xong HSK 2 · giao tiếp hằng ngày',
+    hsk4: 'Đã xong HSK 3 · giao tiếp khá, đọc hiểu',
+    hsk5: 'Đã xong HSK 4 · trình độ cao cấp'
+  };
+  var LEVEL_PICK_KEY = 'hyv_level_pick';
+
   function renderLevelCards() {
     var grid = $('#levelGrid');
     grid.innerHTML = '';
+    var pick = readJSON(LEVEL_PICK_KEY, null);
+    var pickId = pick && pick.id;
     DASHBOARD_LEVEL_IDS.forEach(function (id) {
       var level = APP_DATA.levels.find(function (l) { return l.id === id; });
       if (!level) return;
@@ -541,12 +556,15 @@
       card.className = 'level-card is-' + (LEVEL_COLOR[id] || 'red') + (isReady ? '' : ' is-disabled');
       card.setAttribute('data-level', id);
       card.setAttribute('aria-label', (LEVEL_CARD_NAME[id] || level.name) + ', ' + sub);
+      if (id === pickId) card.className += ' is-picked';
       card.innerHTML =
-        (id === 'hsk1v3' || id === 'hsk2v3' ? '<span class="level-tag">Mới</span>' : '') +
+        (id === pickId ? '<span class="level-tag level-tag-pick">✓ Gợi ý cho bạn</span>'
+          : (id === 'hsk1v3' || id === 'hsk2v3' ? '<span class="level-tag">Mới</span>' : '')) +
         '<span class="level-mark" aria-hidden="true"><span class="level-mark-top">' + mark[0] + '</span><span class="level-mark-num">' + mark[1] + '</span></span>' +
         '<span class="level-card-body">' +
           '<span class="level-card-title">' + (LEVEL_CARD_NAME[id] || level.name) + '</span>' +
           '<span class="level-sub">' + sub + '</span>' +
+          (LEVEL_AUDIENCE[id] ? '<span class="level-who">' + LEVEL_AUDIENCE[id] + '</span>' : '') +
         '</span>' +
         (isReady ? '<span class="level-meter" aria-hidden="true"><span style="width:' + pct + '%"></span></span>' : '');
       card.addEventListener('click', function () {
@@ -558,6 +576,133 @@
       });
       grid.appendChild(card);
     });
+  }
+
+  /* ---------------- "Minh nen hoc cap nao?" — 3 cau hoi → goi y cap do ---------------- */
+
+  var LEVEL_QUIZ = [
+    { key: 'age', q: 'Người học bao nhiêu tuổi?', opts: [
+      { v: 'kid', label: '👧 Dưới 12 tuổi' },
+      { v: 'adult', label: '🧑 Từ 12 tuổi trở lên' }] },
+    { key: 'know', q: 'Bạn đã biết tiếng Trung đến đâu?', opts: [
+      { v: 0, label: 'Chưa học bao giờ' },
+      { v: 1, label: 'Chào hỏi, giới thiệu bản thân (đã xong HSK 1, ~150 từ)' },
+      { v: 2, label: 'Giao tiếp đơn giản hằng ngày (đã xong HSK 2, ~300 từ)' },
+      { v: 3, label: 'Giao tiếp khá, đọc được đoạn ngắn (đã xong HSK 3, ~600 từ)' }] },
+    { key: 'goal', q: 'Bạn học để làm gì?', opts: [
+      { v: 'new', label: '📝 Thi HSK theo đề mới (HSK 3.0, từ 07/2026)' },
+      { v: 'old', label: '📄 Thi HSK theo đề cũ' },
+      { v: 'talk', label: '💬 Giao tiếp, du lịch, công việc' }] }
+  ];
+
+  function levelQuizResult(a) {
+    if (a.age === 'kid' && a.know === 0) return { id: 'yct', why: 'YCT dành riêng cho thiếu nhi: từ vựng gần gũi, nhiều trò chơi, bài ngắn vừa sức.' };
+    if (a.know >= 3) return { id: 'hsk4', why: 'Bạn đã vững nền tảng — HSK 4 giúp giao tiếp tự nhiên và đọc hiểu văn bản dài hơn.' };
+    if (a.know === 2) return { id: 'hsk3', why: 'Bạn đã giao tiếp được đơn giản — HSK 3 mở rộng lên khoảng 600 từ cho các chủ đề hằng ngày.' };
+    var oldBook = a.goal === 'old';
+    if (a.know === 1) return oldBook
+      ? { id: 'hsk2', why: 'Bạn đã xong HSK 1 và ôn theo đề cũ — HSK 2 (giáo trình cũ) là bước tiếp theo.' }
+      : { id: 'hsk2v3', why: 'Bạn đã xong HSK 1 — HSK 2 theo giáo trình 3.0 mới, đúng với kỳ thi từ 07/2026.' };
+    return oldBook
+      ? { id: 'hsk1', why: 'Bạn mới bắt đầu và ôn theo đề cũ — HSK 1 (giáo trình cũ) đi từ chào hỏi, đếm số.' }
+      : { id: 'hsk1v3', why: 'Bạn mới bắt đầu — HSK 1 theo giáo trình 3.0 mới là lựa chọn tốt nhất, học từ phát âm và chào hỏi.' };
+  }
+
+  function openLevelQuiz() {
+    var answers = {}, step = 0;
+    var ov = document.createElement('div');
+    ov.className = 'idiom-overlay';
+    ov.setAttribute('role', 'dialog');
+    ov.setAttribute('aria-modal', 'true');
+    ov.setAttribute('aria-label', 'Mình nên học cấp nào?');
+    document.body.appendChild(ov);
+    document.body.classList.add('idiom-open');
+    function close() { ov.remove(); document.body.classList.remove('idiom-open'); }
+    function render() {
+      var html = '<div class="idiom-dialog lq-dialog"><button type="button" class="idiom-close" data-lq-close aria-label="Đóng">✕</button>';
+      if (step < LEVEL_QUIZ.length) {
+        var q = LEVEL_QUIZ[step];
+        html += '<p class="lq-step">Câu ' + (step + 1) + '/' + LEVEL_QUIZ.length + '</p>' +
+          '<h2 class="lq-q">' + q.q + '</h2><div class="lq-opts">' +
+          q.opts.map(function (o, i) { return '<button type="button" class="lq-opt" data-lq-i="' + i + '">' + o.label + '</button>'; }).join('') +
+          '</div>' + (step ? '<button type="button" class="lq-back" data-lq-back>← Câu trước</button>' : '');
+      } else {
+        var r = levelQuizResult(answers);
+        writeJSON(LEVEL_PICK_KEY, { id: r.id, at: Date.now() });
+        var lessons = (APP_DATA.lessons && APP_DATA.lessons[r.id]) || [];
+        var words = lessons.reduce(function (s, l) { return s + (l.vocabCount || 0); }, 0);
+        html += '<p class="lq-step">Gợi ý cho bạn</p>' +
+          '<h2 class="lq-result">' + (PRACTICE_LEVEL_LABEL[r.id] || r.id) + '</h2>' +
+          '<p class="lq-why">' + r.why + '</p>' +
+          '<p class="lq-meta">' + lessons.length + ' bài · ' + words + ' từ vựng · mỗi bài khoảng 30 phút theo lộ trình 7 bước</p>' +
+          '<div class="lq-actions"><button type="button" class="btn btn-primary" data-lq-go>Học thử bài 1 ngay</button>' +
+          '<button type="button" class="btn btn-ghost" data-lq-list>Xem danh sách bài</button></div>' +
+          '<button type="button" class="lq-back" data-lq-redo>↻ Trả lời lại</button>';
+      }
+      ov.innerHTML = html + '</div>';
+      var f = ov.querySelector('.lq-opt, [data-lq-go]');
+      if (f) f.focus();
+    }
+    ov.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t === ov || t.closest('[data-lq-close]')) { close(); return; }
+      var opt = t.closest('[data-lq-i]');
+      if (opt) { var q = LEVEL_QUIZ[step]; answers[q.key] = q.opts[parseInt(opt.getAttribute('data-lq-i'), 10)].v; step++; render(); return; }
+      if (t.closest('[data-lq-back]')) { step = Math.max(0, step - 1); render(); return; }
+      if (t.closest('[data-lq-redo]')) { answers = {}; step = 0; render(); return; }
+      var r = levelQuizResult(answers);
+      if (t.closest('[data-lq-go]')) { close(); startFirstLesson(r.id); return; }
+      if (t.closest('[data-lq-list]')) { close(); renderLevelCards(); selectLevel(r.id); }
+    });
+    document.addEventListener('keydown', function esc(e) {
+      if (e.key === 'Escape' && document.body.contains(ov)) { close(); document.removeEventListener('keydown', esc); }
+    });
+    render();
+  }
+
+  // Khoi gioi thieu: chi cho khach lan dau (chua dang nhap, chua hoc bai nao, chua an)
+  var WELCOME_KEY = 'hyv_welcome_hidden';
+  function renderWelcome() {
+    var box = $('#welcome');
+    if (!box) return;
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var studied = Object.keys(readJSON(STORAGE_KEYS.lessonScores, {})).length > 0 || !!getLastLesson();
+    box.hidden = !!(auth && auth.token) || studied || !!readJSON(WELCOME_KEY, false);
+    var pick = readJSON(LEVEL_PICK_KEY, null);
+    var tryId = pick && READY_LEVELS[pick.id] ? pick.id : 'hsk1v3';
+    $('#welcomeTry').textContent = 'Học thử ' + (PRACTICE_LEVEL_LABEL[tryId] || tryId) + ' · bài 1';
+  }
+  function initWelcome() {
+    if (!$('#welcome')) return;
+    $('#welcomeClose').addEventListener('click', function () { writeJSON(WELCOME_KEY, true); renderWelcome(); });
+    $('#welcomeQuiz').addEventListener('click', openLevelQuiz);
+    $('#welcomeTry').addEventListener('click', function () {
+      var pick = readJSON(LEVEL_PICK_KEY, null);
+      startFirstLesson(pick && READY_LEVELS[pick.id] ? pick.id : 'hsk1v3');
+    });
+    $('#levelQuizBtn').addEventListener('click', openLevelQuiz);
+    renderWelcome();
+  }
+
+  // Loi moi hoc lop cung co (cuoi bai kiem tra / ket qua) — dung luc hoc sinh vua thay "minh hoc duoc"
+  function classCtaHtml() {
+    return '<a class="class-cta" href="https://zalo.me/0377527486" target="_blank" rel="noopener">' +
+      '<span class="class-cta-ic" aria-hidden="true">👩‍🏫</span>' +
+      '<span class="class-cta-body"><b>Muốn học cùng cô Hoàng Thùy?</b>' +
+      '<small>Nhắn Zalo cho cô để được tư vấn lớp học phù hợp với trình độ và mục tiêu của bạn.</small></span>' +
+      '<span class="class-cta-go" aria-hidden="true">Nhắn Zalo →</span></a>';
+  }
+
+  // Mo thang lo trinh bai 1 cua cap do (hoc thu, khong can dang ky)
+  function startFirstLesson(levelId) {
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[levelId]) || [];
+    var first = lessons.slice().sort(function (a, b) { return a.number - b.number; })[0];
+    if (!first) { selectLevel(levelId); return; }
+    practiceLevel = levelId;
+    currentLevelId = levelId;
+    renderLevelSubmenu();
+    showLessonHub(levelId, first);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   /* ---------------- Trang chu: loi chao + the "Tiep tuc hoc" ---------------- */
@@ -1129,6 +1274,7 @@
     renderLevelCards();
     renderStatTiles();
     renderStarLeaderboard(); // vua hoc xong quay ve: bang sao cap nhat ngay
+    renderWelcome();
   }
 
   function showLevelDetail(id) {
@@ -1846,6 +1992,7 @@
             '<div class="cert-foot"><span>Ngày ' + dateTxt + '</span><span>Cô Hoàng Thùy · Hi Hán 喜汉</span></div>' +
           '</div>'
         : '') +
+      classCtaHtml() +
       '<div class="fq-actions">' +
         '<button type="button" class="btn btn-ghost" id="fqRetry">↻ Làm lại</button>' +
         (pass ? '<button type="button" class="btn btn-ghost" id="fqPrint">🖨️ In / lưu chứng nhận</button>' : '') +
@@ -11841,6 +11988,7 @@
         rowsHtml +
       '</div>' +
       statsHtml +
+      classCtaHtml() +
       '<button type="button" class="btn btn-primary rp-cta" id="rpGoReview">↻ Đi tới Ôn tập</button>';
 
     $('#rpGoReview').addEventListener('click', showDashboard);
@@ -13446,6 +13594,7 @@
     renderHomeHead();
     renderContinueCard();
     renderIdiomOfDay();
+    initWelcome();
     renderLevelCards();
     renderLevelSubmenu();
     renderStreak();

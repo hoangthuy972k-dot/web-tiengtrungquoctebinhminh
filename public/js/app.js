@@ -2346,6 +2346,10 @@
     var st = pgbState[id];
     if (!st) return;
     sfxQueue(isCorrect ? 'correct' : 'wrong');
+    // +1 sao ngay khi dung (moi o cau cua moi bai chi duoc thuong lan dau)
+    if (isCorrect && window.hwStarAnswer) {
+      window.hwStarAnswer((currentHubLesson ? currentHubLesson.fullPageUrl : location.pathname) + '|' + id + '|' + index);
+    }
     st.results[index] = isCorrect;
     if (isCorrect) st.streak++; else st.streak = 0;
     pgbPaint(id);

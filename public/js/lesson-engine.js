@@ -98,6 +98,11 @@ function savePageScore(key,val){
     localStorage.setItem('hyv_lesson_scores',JSON.stringify(all));
   }catch(e){/* localStorage unavailable */}
 }
+// +1 sao ngay khi tra loi dung 1 cau (widgets.js gui len may chu; moi cau chi
+// duoc thuong lan dau dung). Khoa = trang + phan + so thu tu cau.
+function starAnswer(key){
+  try{ if(window.hwStarAnswer) window.hwStarAnswer(location.pathname+'|page-'+key); }catch(e){}
+}
 // Moi lan mot bai tap ghi vao exerciseScores thi luu luon
 ['collocation','listen','fill','sort','errorfix','mc'].forEach(function(k){
   var v=window.exerciseScores[k];
@@ -166,6 +171,7 @@ function selectWuOpt(letter){
     cardEl.style.borderColor='';
     optEl.classList.add('sel-ok');
     wuDone.add(wuCardSel);wuDone.add('O'+letter);
+    starAnswer('warmup|'+wuCardSel);
     document.getElementById('wu-fb').innerHTML='<span style="color:var(--green)">✓ Đúng rồi!</span>';
     if(wuDone.size===wuData.length*2){
       const sb=document.getElementById('wu-score');
@@ -449,7 +455,7 @@ function checkFill(){
     inp.className='q-inp '+(c?'ok':'err');
     fb.className='q-fb '+(c?'ok':'err');
     fb.textContent=c?'✓ Đúng rồi!':'✗ Đáp án：「'+q.ans+'」— '+q.exp;
-    if(c)ok++;
+    if(c){ok++;starAnswer('fill|'+i);}
   });
   const pct=Math.round(ok/fillData.length*100);
   const sb=document.getElementById('fill-score');sb.style.display='flex';
@@ -515,7 +521,7 @@ function checkSort(){
     az.classList.remove('ok-z','err-z');az.classList.add(c?'ok-z':'err-z');
     fb.className='q-fb '+(c?'ok':'err');
     fb.textContent=c?'✓ Đúng!':'✗ Đáp án：「'+s.ans+'」';
-    if(c)ok++;
+    if(c){ok++;starAnswer('sort|'+i);}
   });
   const pct=Math.round(ok/sortData.length*100);
   const sb=document.getElementById('sort-score');sb.style.display='flex';
@@ -569,6 +575,7 @@ function mClickR(i){
     document.getElementById('ml'+mSel).classList.add('m-ok');
     document.getElementById('mr'+i).classList.add('m-ok');
     mDone.add('L'+mSel);mDone.add('R'+i);
+    starAnswer('match|'+mSel);
     document.getElementById('m-fb').innerHTML='<span style="color:var(--green)">✓ Đúng rồi!</span>';
     window.exerciseScores.collocation={correct:mDone.size/2,total:matchData.length};
     if(mDone.size===matchData.length*2)setTimeout(function(){document.getElementById('m-fb').innerHTML='<span style="color:var(--sky-d);font-weight:700">🎉 Hoàn thành! Xuất sắc!</span>';},300);
@@ -607,6 +614,7 @@ function buildMC(){
 function checkMC(qi,chosen){
   if(mcAns[qi])return;mcAns[qi]=true;
   const q=mcData[qi],c=chosen===q.ans;
+  if(c)starAnswer('mc|'+qi);
   const fb=document.getElementById('mf'+qi);
   q.opts.forEach(function(_,j){
     const b=document.getElementById('mo'+qi+'_'+j);
@@ -842,6 +850,7 @@ function checkListenAnswer(gi,qi,chosen){
   if(fb.dataset.done)return;
   fb.dataset.done='1';
   const c=chosen===q.ans;
+  if(c)starAnswer('listen|'+idKey);
   q.opts.forEach(function(_,ci){
     const b=document.getElementById('lo'+gi+'_'+qi+'_'+ci);
     b.style.pointerEvents='none';
@@ -978,6 +987,7 @@ function checkListenMC(i,ci){
   fb.dataset.done='1';
   const item=listenData.mc[i];
   const c=ci===item.ans;
+  if(c)starAnswer('listenmc|'+i);
   item.options.forEach(function(_,j){
     const b=document.getElementById('mco'+i+'_'+j);
     b.style.pointerEvents='none';
@@ -1028,6 +1038,7 @@ function buildErrorFix(){
 function checkErrorFix(qi,chosen){
   if(errAns[qi])return;errAns[qi]=true;
   const q=errorFixData[qi],c=chosen===q.ans;
+  if(c)starAnswer('errfix|'+qi);
   const fb=document.getElementById('ef'+qi);
   q.opts.forEach(function(_,j){
     const b=document.getElementById('eo'+qi+'_'+j);

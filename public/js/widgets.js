@@ -760,47 +760,33 @@
   function starVisit() {
     if (!auth()) { star.ready = false; renderStar(); return; }
     renderStar();
-    answerSent = countCorrect();
-    postJSON('/api/stars/visit', { totalCorrect: answerSent }).then(function (d) { applyStar(d, 'visit'); }).catch(function () { /* ignore */ });
+    postJSON('/api/stars/visit', {}).then(function (d) { applyStar(d, 'visit'); }).catch(function () { /* ignore */ });
   }
 
-  // +1 sao moi cau dung: dem tong so cau dung da luu cua moi phan, moi bai
-  // (trong app lan tren trang bai hoc — cung mot kho hyv_lesson_scores). Khi
-  // tong tang thi bao may chu; may chu chi cong phan vuot qua moc cao nhat.
-  var answerSent = 0, lastScoresRaw = null;
-  function countCorrect() {
-    var all;
-    try { all = JSON.parse(localStorage.getItem('hyv_lesson_scores') || '{}') || {}; } catch (e) { return 0; }
-    var sum = 0;
-    function add(v) { if (v && typeof v.total === 'number' && v.total > 0) sum += Math.max(0, Math.min(v.total, Number(v.correct) || 0)); }
-    Object.keys(all).forEach(function (url) {
-      var ls = all[url] || {};
-      Object.keys(ls).forEach(function (k) {
-        if (k === 'game') Object.keys(ls.game || {}).forEach(function (g) { add(ls.game[g]); });
-        else add(ls[k]);
-      });
-    });
-    return sum;
-  }
-  function checkAnswers() {
-    if (!auth() || !star.ready) return;
-    var raw;
-    try { raw = localStorage.getItem('hyv_lesson_scores') || ''; } catch (e) { return; }
-    if (raw === lastScoresRaw) return;
-    lastScoresRaw = raw;
-    var total = countCorrect();
-    if (total <= answerSent) return;
-    answerSent = total;
-    postJSON('/api/stars/answers', { totalCorrect: total }).then(function (d) {
+  // +1 sao ngay khi tra loi dung 1 cau. Cac bai tap (trong app va tren trang
+  // bai hoc) goi window.hwStarAnswer(khoa-cau); gom cac cau dung trong 0,4 giay
+  // roi gui 1 lan. May chu chi thuong cau nao dung LAN DAU (lam lai khong tinh).
+  var answerQueue = [], answerTimer = null;
+  window.hwStarAnswer = function (key) {
+    if (!auth() || typeof key !== 'string' || !key) return;
+    answerQueue.push(key.slice(0, 160));
+    clearTimeout(answerTimer);
+    answerTimer = setTimeout(flushAnswers, 400);
+  };
+  function flushAnswers() {
+    if (!answerQueue.length) return;
+    var keys = answerQueue.splice(0, 50);
+    postJSON('/api/stars/correct', { keys: keys }).then(function (d) {
       var n = d.answerAwarded || 0;
       applyStar(d, 'answer');
       if (n > 0) {
         starEl.classList.remove('is-pop');
         void starEl.offsetWidth;
         starEl.classList.add('is-pop');
-        showToast('<b>+' + n + ' ⭐</b> ' + (n === 1 ? 'Trả lời đúng 1 câu!' : 'Trả lời đúng ' + n + ' câu!'), 'is-gold');
+        showToast('<b>+' + n + ' ⭐</b> ' + (n === 1 ? 'Trả lời đúng rồi!' : 'Trả lời đúng ' + n + ' câu!'), 'is-gold');
       }
-    }).catch(function () { answerSent = 0; lastScoresRaw = null; });
+      if (answerQueue.length) flushAnswers();
+    }).catch(function () { /* mat mang: bo qua, lan tra loi sau van tinh */ });
   }
   function starTick() {
     if (!auth() || !star.ready || !starActive() || star.capped) return;
@@ -812,7 +798,6 @@
     // Vua dang nhap / dang xuat ngay trong tab nay (khong co su kien storage)
     var tok = (auth() || {}).token || '';
     if (tok !== starToken) { starToken = tok; star.ready = false; starVisit(); }
-    checkAnswers();
     if (!auth() || !star.ready || !starActive() || star.capped) return;
     if (star.secToNext > 1) star.secToNext--;
     if (star.secToNext <= 60 && !starNudged) {

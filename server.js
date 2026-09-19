@@ -775,11 +775,12 @@ const STAR_BLOCK_SEC = 300;    // moi 5 phut hoc...
 const STAR_PER_BLOCK = 5;      // ...duoc 5 sao
 const STAR_DAY_CAP = 120;      // toi da 120 sao / ngay tu gio hoc (= 2 tieng)
 const STAR_TICK_MAX_SEC = 90;  // moi lan client bao toi da 90 giay
-// +1 sao cho moi cau tra loi dung MOI: chi tinh phan vuot qua moc cao nhat
-// tung dat (answerPeak), nen lam lai bai cu khong duoc cong lai; gioi han/ngay
-// chan viec sua tay so cau dung.
+// +1 sao ngay khi tra loi dung 1 cau. Moi cau co 1 khoa (bai + phan + so thu
+// tu); may chu ghi nho khoa da thuong nen lam lai cau cu khong duoc them sao.
+// Gioi han/ngay chan viec tu che khoa gia.
 const STAR_ANSWER_DAY_CAP = 300;
-const STAR_ANSWER_REQ_CAP = 100;
+const STAR_ANSWERS_FILE = path.join(DATA_DIR, 'star_answers.json');
+const STAR_KEY_RE = /^[\w\/.:|-]{3,160}$/;
 
 async function initStarsTable() {
   if (!USE_DB) return;
@@ -793,6 +794,14 @@ async function initStarsTable() {
       'day_stars INT NOT NULL DEFAULT 0, ' +
       'last_tick_ms BIGINT NOT NULL DEFAULT 0, ' +
       'updated_ms BIGINT NOT NULL, ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS star_answers (' +
+      'user_id VARCHAR(36) NOT NULL, ' +
+      'qkey VARCHAR(160) NOT NULL, ' +
+      'PRIMARY KEY (user_id, qkey), ' +
       'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
     ')'
   );
@@ -852,11 +861,6 @@ function rollStarDay(s) {
 function starsToday(s) {
   return s.dayStars + (s.dayAnswer || 0) + (s.dayVisit ? STAR_VISIT : 0);
 }
-// So cau dung client gui len: so nguyen khong am, bo qua gia tri la
-function cleanCorrect(v) {
-  const n = Math.round(Number(v));
-  return Number.isFinite(n) && n >= 0 ? n : null;
-}
 function starView(s, awarded, answerAwarded) {
   return {
     total: s.total,
@@ -883,32 +887,46 @@ app.post('/api/stars/visit', requireAuth, asyncRoute(async (req, res) => {
   let awarded = 0;
   if (!s.dayVisit) { s.dayVisit = 1; s.total += STAR_VISIT; awarded = STAR_VISIT; }
   s.lastTickMs = Date.now();
-  // Lan dau: lay so cau dung hien co lam moc (bai lam tu truoc khong doi thanh sao)
-  const correct = cleanCorrect(req.body?.totalCorrect);
-  if (s.answerPeak == null && correct != null) s.answerPeak = correct;
   await saveStar(req.user.id, s);
   res.json(starView(s, awarded));
 }));
 
-// Hoc sinh vua tra loi dung them cau: client gui tong so cau dung hien tai
-// (cong tu diem moi phan cua moi bai), may chu cong +1 sao cho moi cau vuot moc.
-app.post('/api/stars/answers', requireAuth, asyncRoute(async (req, res) => {
+// Ghi cac khoa cau moi dung; tra ve so khoa CHUA tung duoc thuong.
+async function addStarAnswerKeys(userId, keys) {
+  if (!keys.length) return 0;
+  if (!USE_DB) {
+    const all = readJsonFile(STAR_ANSWERS_FILE) || {};
+    const mine = all[userId] || (all[userId] = {});
+    let fresh = 0;
+    keys.forEach((k) => { if (!mine[k]) { mine[k] = 1; fresh++; } });
+    if (fresh) writeJsonFile(STAR_ANSWERS_FILE, all);
+    return fresh;
+  }
+  const [r] = await dbPool.query(
+    'INSERT IGNORE INTO star_answers (user_id, qkey) VALUES ' + keys.map(() => '(?,?)').join(','),
+    keys.flatMap((k) => [userId, k])
+  );
+  return r.affectedRows || 0;
+}
+
+// Hoc sinh vua tra loi dung: +1 sao cho moi cau dung lan dau.
+app.post('/api/stars/correct', requireAuth, asyncRoute(async (req, res) => {
+  const keys = Array.from(new Set(
+    (Array.isArray(req.body?.keys) ? req.body.keys : [])
+      .filter((k) => typeof k === 'string' && STAR_KEY_RE.test(k))
+  )).slice(0, 50);
   const s = await loadStar(req.user.id);
   rollStarDay(s);
-  const correct = cleanCorrect(req.body?.totalCorrect);
+  const room = Math.max(0, STAR_ANSWER_DAY_CAP - (s.dayAnswer || 0));
   let gained = 0;
-  if (correct != null) {
-    if (s.answerPeak == null) {
-      s.answerPeak = correct;
-    } else if (correct > s.answerPeak) {
-      const room = Math.max(0, STAR_ANSWER_DAY_CAP - (s.dayAnswer || 0));
-      gained = Math.min(correct - s.answerPeak, STAR_ANSWER_REQ_CAP, room);
-      s.answerPeak = correct;
-      s.total += gained;
-      s.dayAnswer = (s.dayAnswer || 0) + gained;
-    }
+  if (room > 0 && keys.length) {
+    // Da het han muc trong ngay thi khong ghi khoa, de hom sau lam lai van duoc sao
+    const fresh = await addStarAnswerKeys(req.user.id, keys.slice(0, room));
+    gained = Math.min(fresh, room);
+    s.total += gained;
+    s.dayAnswer = (s.dayAnswer || 0) + gained;
+    if (gained) await saveStar(req.user.id, s);
   }
-  await saveStar(req.user.id, s);
   res.json(starView(s, 0, gained));
 }));
 

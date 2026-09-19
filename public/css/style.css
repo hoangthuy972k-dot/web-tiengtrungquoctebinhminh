@@ -135,6 +135,90 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Tranh son thuy nen (anh Gemini) tach thanh 3 lop: nui/ho o xa, cay hoa + dinh
+   ben trai, truc ben phai. scene.js dich cac lop lech nhau theo chuot va khi
+   cuon de tao chieu sau. Lop co dinh sau noi dung; khong dung
+   background-attachment: fixed vi iPhone bo qua va bi giat khi cuon. */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #eef4ef;
+}
+.scene-layer {
+  position: absolute;
+  /* Tran ra ngoai man hinh mot chut de khi dich lop khong lo mep trong. */
+  inset: -18px;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  will-change: transform;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.scene-far  { background-image: url('/images/bg/son-thuy.jpg'); }
+.scene-tree { background-image: url('/images/bg/lop-cay.webp'); }
+.scene-bamboo { background-image: url('/images/bg/lop-truc.webp'); }
+@media (max-width: 720px) {
+  .scene-far { background-image: url('/images/bg/son-thuy-sm.jpg'); }
+  /* Man doc: canh lop theo ben trai de cay hoa va dinh van nam trong khung. */
+  .scene-layer { background-position: 18% bottom; }
+}
+/* Suong mong troi ngang qua chan nui. */
+.scene-mist {
+  position: absolute;
+  left: -30%;
+  right: -30%;
+  top: 42%;
+  height: 34%;
+  background:
+    radial-gradient(ellipse 30% 45% at 30% 50%, rgba(255, 255, 255, 0.4), transparent 70%),
+    radial-gradient(ellipse 26% 40% at 72% 55%, rgba(255, 255, 255, 0.3), transparent 70%);
+  animation: scene-mist 38s ease-in-out infinite alternate;
+}
+@keyframes scene-mist {
+  from { transform: translateX(-6%); }
+  to   { transform: translateX(6%); }
+}
+/* Lop kem phu len tranh de chu va the van doc ro, dam hon o phia tren noi co chu. */
+.scene-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(250, 250, 247, 0.3) 0%, rgba(250, 250, 247, 0.08) 40%, rgba(250, 250, 247, 0) 70%);
+}
+.scene-petals {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-layer { transition: none; }
+  .scene-mist { animation: none; }
+  .scene-petals { display: none; }
+}
+
+/* The noi dung tren nen tranh: trang hoi trong + lam mo phia sau, vien xanh ngoc nhat. */
+.dash-auth-banner,
+.dash-streak-card,
+.stat-tile,
+.level-card,
+.lesson-card-link {
+  background: rgba(255, 255, 255, 0.84);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  backdrop-filter: blur(10px) saturate(1.1);
+  border-color: rgba(95, 150, 128, 0.22);
+  box-shadow: 0 1px 2px rgba(40, 70, 60, 0.05), 0 8px 24px -12px rgba(40, 80, 65, 0.22);
+}
+/* Chu dat thang len tranh (loi chao, tieu de muc) duoc mot quang sang mo de noi len. */
+.home-head h1,
+.home-head p,
+.home-section-head h2,
+.home-section-head p {
+  text-shadow: 0 0 18px rgba(250, 250, 247, 0.95), 0 0 2px rgba(250, 250, 247, 0.9);
+}
+
 h1, h2, h3 {
   text-wrap: balance;
 }
@@ -297,7 +381,10 @@ button {
   width: var(--sidebar-w);
   display: flex;
   flex-direction: column;
-  background: var(--color-surface);
+  /* Hoi trong de tranh nen (cay hoa ben trai) lo qua, lam mo cho chu menu van ro. */
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-right: 1px solid var(--color-border);
   padding: var(--space-4) var(--space-3);
   position: fixed;

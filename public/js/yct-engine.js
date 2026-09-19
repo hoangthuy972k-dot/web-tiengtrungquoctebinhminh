@@ -571,7 +571,11 @@
     });
     var slideBtn = document.getElementById('yk-slide-btn');
     if (slideBtn) slideBtn.addEventListener('click', function () { window.print(); });
-    showTab('tuvung');
+    // Mo tu trang tong quan bai (vd /lessons/yct-bai-1.html#nghe) thi vao thang phan do
+    var fromHash = (location.hash || '').slice(1);
+    var start = TAB_RENDERERS[fromHash] ? fromHash : 'tuvung';
+    showTab(start);
+    if (start === 'diem') paintScore();
   }
 
   window.initYctLesson = initYctLesson;

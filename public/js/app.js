@@ -11363,6 +11363,71 @@
       });
   }
 
+  /* ---------------- Bang sao cham chi (trang chu) ---------------- */
+  // Top 10 hoc sinh nhieu sao nhat (tong tu truoc toi nay). Tai lai khi minh
+  // vua duoc cong sao (widgets.js phat hw:stars) de thay thu hang doi ngay.
+
+  var sbLastTotal = null;
+  var sbTimer = null;
+
+  function sbRowHtml(row) {
+    return '<li class="sb-row' + (row.isMe ? ' is-me' : '') + (row.rank <= 3 ? ' is-top' + row.rank : '') + '">' +
+      '<span class="sb-rank">' + (row.rank <= 3 ? ['🥇', '🥈', '🥉'][row.rank - 1] : row.rank) + '</span>' +
+      '<span class="sb-avatar" aria-hidden="true">' + lbEsc(hbInitial(row.name)) + '</span>' +
+      '<span class="sb-name">' + lbEsc(row.name) + (row.isMe ? ' <span class="sb-me">Bạn</span>' : '') +
+        (row.rank === 1 ? '<span class="sb-crown">👑 Chăm chỉ nhất</span>' : '') + '</span>' +
+      '<span class="sb-today">' + (row.today > 0 ? 'hôm nay +' + row.today : '') + '</span>' +
+      '<span class="sb-total"><b>' + Number(row.total).toLocaleString('vi-VN') + '</b> ⭐</span>' +
+    '</li>';
+  }
+
+  function renderStarLeaderboard() {
+    var content = $('#starLbContent');
+    if (!content) return;
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var loggedIn = !!(auth && auth.token);
+    fetch('/api/leaderboard/stars', { headers: loggedIn ? { 'Authorization': 'Bearer ' + auth.token } : {} })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (data) {
+        var rows = (data.rows || []).slice(0, 10);
+        if (!rows.length) {
+          content.innerHTML = '<div class="sb-empty"><p>Chưa ai tích được ngôi sao nào.</p><p>' +
+            (loggedIn ? 'Học 5 phút là bạn có ngay 5 sao và đứng đầu bảng!' : 'Đăng nhập rồi học 5 phút để trở thành người chăm chỉ đầu tiên!') + '</p></div>';
+          return;
+        }
+        var html = '<ol class="sb-list">' + rows.map(sbRowHtml).join('') + '</ol>';
+        if (data.me && data.me.rank > 10) {
+          html += '<p class="sb-me-label">Vị trí của bạn</p><ol class="sb-list">' + sbRowHtml(data.me) + '</ol>';
+        } else if (!data.me) {
+          html += '<p class="sb-foot">' + (loggedIn ? 'Bạn chưa có sao nào — học 5 phút để có tên trên bảng!' : '<button type="button" class="sb-login" data-sb-login>Đăng nhập</button> để tích sao và có tên trên bảng.') + '</p>';
+        }
+        content.innerHTML = html;
+        var loginBtn = content.querySelector('[data-sb-login]');
+        if (loginBtn) loginBtn.addEventListener('click', function () { var b = $('#authBannerLogin') || $('#sidebarUserBtn'); if (b) b.click(); });
+      })
+      .catch(function () {
+        content.innerHTML = '<p class="sb-loading">Không tải được bảng sao. <button type="button" class="sb-login" id="sbRetry">Thử lại</button></p>';
+        var b = $('#sbRetry');
+        if (b) b.addEventListener('click', renderStarLeaderboard);
+      });
+  }
+
+  function initStarLeaderboard() {
+    if (!$('#starLbCard')) return;
+    renderStarLeaderboard();
+    $('#sbAll').addEventListener('click', function () { lbTab = 'stars'; showLeaderboard(); });
+    window.addEventListener('hw:stars', function (e) {
+      var d = e.detail || {};
+      if (!d.ready) return;
+      if (sbLastTotal !== null && d.total !== sbLastTotal && !$('#home').hidden) renderStarLeaderboard();
+      sbLastTotal = d.total;
+    });
+    // Nguoi khac cung dang tich sao: lam moi moi 2 phut khi dang xem trang chu
+    sbTimer = setInterval(function () {
+      if (!document.hidden && !$('#home').hidden) renderStarLeaderboard();
+    }, 120000);
+  }
+
   /* ---------------- Streak (based on real lesson visits recorded in localStorage) ---------------- */
 
   var WEEKDAY_LABELS = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
@@ -12490,6 +12555,7 @@
     refreshProgressFromServer();
     initAnalytics();
     initStarRow();
+    initStarLeaderboard();
     initPinyinToggle();
     initAnswerSounds();
     initShellNav();

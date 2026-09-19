@@ -10026,6 +10026,29 @@
     return out;
   }
 
+  // Luu ket qua nhap vai vao diem bai hoc (giao vien xem trong bao cao):
+  // giu lan tot nhat cua tung doan + vai, tong hop thanh so cau noi dat / tong cau.
+  function rpRecord(scene, idx, st) {
+    if (!currentHubLesson) return;
+    var mine = scene.lines.filter(function (l) { return (l.sp || 0) === st.role; }).length;
+    var passed = 0, sum = 0;
+    scene.lines.forEach(function (l, li) {
+      if ((l.sp || 0) !== st.role) return;
+      var sc = st.results[li] || 0;
+      sum += sc;
+      if (sc >= RP_PASS) passed++;
+    });
+    var prev = (getLessonScores(currentHubLesson) || {}).roleplay || {};
+    var parts = Object.assign({}, prev.parts || {});
+    var key = idx + '-' + st.role;
+    if (!parts[key] || passed > parts[key].c || (passed === parts[key].c && sum / mine > parts[key].avg)) {
+      parts[key] = { c: passed, t: mine, avg: Math.round(sum / Math.max(1, mine)) };
+    }
+    var correct = 0, total = 0;
+    Object.keys(parts).forEach(function (k) { correct += parts[k].c; total += parts[k].t; });
+    recordLessonScore(currentHubLesson, 'roleplay', { correct: correct, total: total, parts: parts });
+  }
+
   function rpMount(body, scene, idx) {
     if (!rpEnabled()) return;
     var speakers = rpSpeakers(scene);
@@ -10167,7 +10190,7 @@
       rpStopRec();
       if (window.speechSynthesis) window.speechSynthesis.cancel();
       st.step++; st.heard = null; st.showHint = false;
-      if (st.step >= lines.length) st.phase = 'done';
+      if (st.step >= lines.length) { st.phase = 'done'; rpRecord(scene, idx, st); }
       rpRender(host, scene, idx);
     }
     var nextBtn = $('#rpNext', host);

@@ -2072,6 +2072,74 @@ app.get('/api/admin/stats', requireAdmin, asyncRoute(async (req, res) => {
   });
 }));
 
+// Bao cao hoc tap cho giao vien: moi hoc sinh kem diem tung bai, sao, ngay hoc,
+// phut hoc 30 ngay gan nhat, bai thi thu va tu can on. Chi tra cac truong can
+// thiet (khong tra mat khau / salt).
+app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
+  const users = await loadUsers();
+  const scores = await loadScores();
+  const studyTime = loadStudyTime();
+  const starById = {};
+  (await loadAllStars()).forEach((s) => { starById[s.userId] = s; });
+  let attempts = [];
+  try { attempts = await listRankedExamAttempts({}); } catch (err) { attempts = []; }
+  const examTitle = {};
+  function titleOf(id) {
+    if (!(id in examTitle)) {
+      let t = id;
+      try { const def = loadExamDef(id); if (def && def.title) t = def.title; } catch (err) { /* giu id */ }
+      examTitle[id] = t;
+    }
+    return examTitle[id];
+  }
+  const today = vnDayKey();
+  const week = vnWeekKey();
+  const days30 = [];
+  for (let i = 29; i >= 0; i--) days30.push(new Date(Date.now() - i * 86400000).toISOString().slice(0, 10));
+  const students = users.map((u) => {
+    const sc = scores[u.id] || {};
+    const st = studyTime['u:' + u.id] || {};
+    const s = starById[u.id];
+    const daily = st.daily || {};
+    const minutes30 = {};
+    days30.forEach((d) => { if (daily[d]) minutes30[d] = Math.round(daily[d]); });
+    const srs = sc.srs || {};
+    const srsKeys = Object.keys(srs);
+    const wrong = new Set();
+    Object.values(sc.reviewWrongWords || {}).forEach((arr) => (arr || []).forEach((w) => wrong.add(w)));
+    const updatedIso = sc.updatedAt ? new Date(sc.updatedAt).toISOString() : null;
+    const lastActive = [st.lastActive || null, updatedIso].filter(Boolean).sort().pop() || null;
+    return {
+      id: u.id,
+      name: u.name,
+      email: u.email,
+      level: u.level,
+      createdAt: u.createdAt,
+      lastActive,
+      totalMinutes: Math.round(st.totalMinutes || 0),
+      minutes30,
+      studyDays: (sc.studyDays || []).slice(-120),
+      streak: sc.streak || 0,
+      totalCorrect: sc.totalCorrect || 0,
+      totalQuestions: sc.totalQuestions || 0,
+      lessonScores: sc.lessonScores || {},
+      wrongWords: Array.from(wrong).slice(0, 60),
+      srsTotal: srsKeys.length,
+      srsDue: srsKeys.filter((k) => srs[k].due <= today).length,
+      stars: s ? {
+        total: s.total || 0,
+        week: s.week === week ? (s.weekStars || 0) : 0,
+        today: s.day === today ? starsToday(s) : 0,
+      } : { total: 0, week: 0, today: 0 },
+      exams: attempts.filter((a) => a.userId === u.id && a.submittedMs).map((a) => ({
+        examId: a.examId, title: titleOf(a.examId), level: a.level, score: a.score, maxScore: a.maxScore,
+        correct: a.correct, total: a.total, usedSec: a.usedSec, submittedMs: a.submittedMs,
+      })).sort((a, b) => b.submittedMs - a.submittedMs),
+    };
+  });
+  res.json({ generatedAt: Date.now(), today, students });
+}));
+
 // Proxies Google Cloud Text-to-Speech so the API key never reaches the
 // browser. Client sends { text }, gets back { audioContent } (base64 MP3).
 app.post('/api/tts', async (req, res) => {

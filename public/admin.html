@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quản trị · Hi Hán 喜汉</title>
+<title>Báo cáo học tập · Hi Hán 喜汉</title>
 <meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Newsreader:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
@@ -14,7 +14,7 @@
 <div id="adminGate" class="admin-gate">
   <div class="admin-gate-card">
     <div class="admin-gate-title">🔐 Trang quản trị</div>
-    <div class="admin-gate-sub">Nhập mật khẩu quản trị để xem thống kê truy cập &amp; thời gian học của học sinh.</div>
+    <div class="admin-gate-sub">Nhập mật khẩu quản trị để xem báo cáo học tập của học sinh.</div>
     <form id="adminLoginForm">
       <input type="password" id="adminPasswordInput" placeholder="Mật khẩu quản trị" autocomplete="current-password" required>
       <button type="submit" class="btn btn-primary">Đăng nhập</button>
@@ -26,39 +26,76 @@
 <div id="adminDash" class="admin-dash" hidden>
   <header class="admin-header">
     <div>
-      <div class="admin-header-title">📊 Thống kê truy cập</div>
+      <div class="admin-header-title">📊 Báo cáo học tập</div>
       <div class="admin-header-sub">Hi Hán 喜汉 · Cập nhật lúc <span id="adminUpdatedAt">—</span></div>
     </div>
     <div class="admin-header-actions">
+      <button type="button" class="btn btn-outline" id="adminCsv">⬇ Tải bảng (CSV)</button>
       <button type="button" class="btn btn-outline" id="adminRefresh">🔄 Làm mới</button>
       <button type="button" class="btn btn-outline" id="adminLogout">Đăng xuất</button>
     </div>
   </header>
 
-  <section class="admin-cards" id="adminTrafficCards"></section>
+  <!-- Danh sach lop -->
+  <div id="trClass">
+    <section class="admin-cards" id="trSummary"></section>
 
-  <section class="admin-section">
-    <div class="admin-section-title">👩‍🎓 Học sinh đã đăng ký</div>
-    <div class="admin-table-wrap">
-      <table class="admin-table" id="adminStudentTable">
-        <thead>
-          <tr>
-            <th>Tên</th>
-            <th>Email</th>
-            <th>Cấp độ</th>
-            <th>Thời gian học</th>
-            <th>Hoạt động gần nhất</th>
-            <th>Chuỗi ngày</th>
-            <th>Đúng / Tổng câu</th>
-          </tr>
-        </thead>
-        <tbody id="adminStudentBody"></tbody>
-      </table>
-      <p class="admin-empty" id="adminStudentEmpty" hidden>Chưa có học sinh nào đăng ký tài khoản.</p>
-    </div>
-  </section>
+    <section class="admin-section tr-attn-wrap" id="trAttnWrap" hidden>
+      <div class="admin-section-title">⚠️ Cần quan tâm</div>
+      <div class="tr-attn" id="trAttn"></div>
+    </section>
+
+    <section class="admin-section">
+      <div class="tr-toolbar">
+        <div class="admin-section-title">👩‍🎓 Học sinh</div>
+        <div class="tr-filters">
+          <label class="tr-field"><span class="sr-only">Tìm học sinh</span>
+            <input type="search" id="trSearch" placeholder="Tìm tên hoặc email…"></label>
+          <label class="tr-field"><span class="sr-only">Lọc theo cấp</span>
+            <select id="trLevel"><option value="">Tất cả cấp</option></select></label>
+          <label class="tr-field"><span class="sr-only">Sắp xếp</span>
+            <select id="trSort">
+              <option value="active">Học gần đây nhất</option>
+              <option value="inactive">Lâu chưa học nhất</option>
+              <option value="week">Sao tuần này</option>
+              <option value="minutes">Phút học 7 ngày</option>
+              <option value="acc">Độ chính xác thấp nhất</option>
+              <option value="name">Tên A–Z</option>
+            </select></label>
+        </div>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table tr-table">
+          <thead>
+            <tr>
+              <th>Học sinh</th>
+              <th>Cấp</th>
+              <th>Học gần nhất</th>
+              <th>7 ngày qua</th>
+              <th>Bài đã học</th>
+              <th>Độ chính xác</th>
+              <th>Sao tuần / tổng</th>
+              <th>Chuỗi</th>
+            </tr>
+          </thead>
+          <tbody id="trBody"></tbody>
+        </table>
+        <p class="admin-empty" id="trEmpty" hidden>Chưa có học sinh nào.</p>
+      </div>
+      <p class="tr-hint">Bấm vào một học sinh để xem chi tiết từng bài.</p>
+    </section>
+
+    <section class="admin-section">
+      <div class="admin-section-title">🌐 Lượt truy cập</div>
+      <div class="admin-cards" id="adminTrafficCards"></div>
+    </section>
+  </div>
+
+  <!-- Chi tiet 1 hoc sinh -->
+  <div id="trDetail" hidden></div>
 </div>
 
+<script src="/js/data.js"></script>
 <script src="/js/admin.js"></script>
 </body>
 </html>

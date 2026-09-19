@@ -1275,6 +1275,7 @@
     renderStatTiles();
     renderStarLeaderboard(); // vua hoc xong quay ve: bang sao cap nhat ngay
     renderWelcome();
+    loadAssignments();
   }
 
   function showLevelDetail(id) {
@@ -13819,6 +13820,7 @@
       renderAuthBanner();
       if (progress) mergeProgressFromServer(progress);
       syncProgressToServer();
+      loadAssignments();
     }
 
     function setFormError(form, message) {
@@ -13888,6 +13890,8 @@
         localStorage.removeItem(STORAGE_KEYS.auth);
         renderUserChip();
         renderAuthBanner();
+        assignState = null;
+        renderAssignCard();
         showToast('Đã đăng xuất.');
       } else {
         openModal('login');
@@ -13908,6 +13912,155 @@
     }
   }
 
+  /* ---------------- Lop hoc & bai tap duoc giao ----------------
+     Hoc sinh nhap ma lop 1 lan; trang chu hien cac bai giao vien giao kem han nop
+     va trang thai. "Da lam" = da lam Kiem tra cuoi cua bai (may chu ghi thoi diem
+     khi dong bo diem; trong luc cho dong bo thi doc diem tren may de hien ngay). */
+  var assignState = null;     // { class, assignments } tu /api/class/me
+  var assignJoinOpen = false; // dang mo o nhap ma lop (khi da co lop va muon doi lop)
+  var assignShowDone = false;
+
+  function assignEsc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function lessonByUrl(url) {
+    var all = (APP_DATA && APP_DATA.lessons) || {};
+    for (var lv in all) {
+      var hit = (all[lv] || []).filter(function (l) { return l.fullPageUrl === url; })[0];
+      if (hit) return { levelId: lv, lesson: hit };
+    }
+    return null;
+  }
+  function levelLabel(id) {
+    var l = (APP_DATA.levels || []).filter(function (x) { return x.id === id; })[0];
+    return l ? l.name : id;
+  }
+  function loadAssignments() {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    if (!auth || !auth.token) { assignState = null; renderAssignCard(); return; }
+    fetch('/api/class/me', { headers: { 'Authorization': 'Bearer ' + auth.token } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d) { assignState = d; renderAssignCard(); } })
+      .catch(function () {});
+  }
+  // Trang thai hien thi: neu may nay da co diem Kiem tra cuoi ma may chu chua kip ghi thi coi nhu da lam
+  function assignStatus(a) {
+    if (a.status === 'done' || a.status === 'late') return a;
+    var f = (getLessonScores({ fullPageUrl: a.lessonUrl }) || {}).final;
+    if (f && f.total > 0) return Object.assign({}, a, { status: Date.now() <= a.dueMs ? 'done' : 'late', correct: f.correct, total: f.total });
+    return a;
+  }
+  function dueText(a) {
+    var d = new Date(a.dueMs).toLocaleDateString('vi-VN', { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'Asia/Ho_Chi_Minh' });
+    if (a.status === 'done' || a.status === 'late') return 'Hạn ' + d;
+    // so ngay lich (gio VN) giua hom nay va ngay het han
+    var vnDay = function (ms) { return Math.floor((ms + 7 * 3600000) / 86400000); };
+    var days = vnDay(a.dueMs) - vnDay(Date.now());
+    if (a.dueMs < Date.now()) return 'Hạn ' + d + ' · quá hạn ' + Math.max(1, -days) + ' ngày';
+    if (days === 0) return 'Hạn hôm nay · còn ' + Math.max(1, Math.floor((a.dueMs - Date.now()) / 3600000)) + ' giờ';
+    if (days === 1) return 'Hạn ngày mai (' + d + ')';
+    return 'Hạn ' + d + ' · còn ' + days + ' ngày';
+  }
+  var ASSIGN_CHIP = {
+    todo: ['is-todo', '⏳ Chưa làm'],
+    overdue: ['is-overdue', '⚠️ Quá hạn'],
+    done: ['is-done', '✅ Đã làm'],
+    late: ['is-late', '🕘 Nộp muộn']
+  };
+
+  function joinFormHtml(hasClass) {
+    return '<form class="assign-join" id="assignJoinForm">' +
+      '<label for="assignCode">' + (hasClass ? 'Nhập mã lớp mới để đổi lớp' : 'Mã lớp') + '</label>' +
+      '<div class="assign-join-row"><input id="assignCode" autocomplete="off" autocapitalize="characters" maxlength="12" placeholder="VD: K7M2QX" required>' +
+      '<button type="submit" class="btn btn-primary">Vào lớp</button>' +
+      (hasClass ? '<button type="button" class="btn btn-ghost" id="assignJoinCancel">Huỷ</button>' : '') + '</div>' +
+      '<p class="assign-join-err" id="assignJoinErr" hidden></p></form>';
+  }
+
+  function renderAssignCard() {
+    var box = $('#assignCard');
+    if (!box) return;
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    if (!auth || !auth.token || !assignState) { box.hidden = true; return; }
+    box.hidden = false;
+    if (!assignState.class) {
+      box.innerHTML = '<div class="assign-head"><div><h2>🏫 Em học lớp của thầy cô?</h2>' +
+        '<p>Nhập mã lớp thầy cô đưa để nhận bài tập được giao và hạn nộp.</p></div></div>' + joinFormHtml(false);
+      bindJoin(box);
+      return;
+    }
+    var list = assignState.assignments.map(assignStatus);
+    var open = list.filter(function (a) { return a.status === 'todo' || a.status === 'overdue'; })
+      .sort(function (a, b) { return a.dueMs - b.dueMs; });
+    var finished = list.filter(function (a) { return a.status === 'done' || a.status === 'late'; })
+      .sort(function (a, b) { return b.dueMs - a.dueMs; });
+    function item(a) {
+      var info = lessonByUrl(a.lessonUrl);
+      var chip = ASSIGN_CHIP[a.status] || ASSIGN_CHIP.todo;
+      var isDone = a.status === 'done' || a.status === 'late';
+      return '<li class="assign-item ' + chip[0] + '">' +
+        '<div class="assign-item-main">' +
+          '<div class="assign-item-top"><span class="assign-chip ' + chip[0] + '">' + chip[1] + '</span>' +
+            '<span class="assign-due">' + dueText(a) + '</span></div>' +
+          '<div class="assign-title">' + (info ? assignEsc(levelLabel(info.levelId)) + ' · <b>Bài ' + info.lesson.number + ':</b> ' + assignEsc(info.lesson.title) : assignEsc(a.lessonUrl)) + '</div>' +
+          (a.note ? '<div class="assign-note">📝 ' + assignEsc(a.note) + '</div>' : '') +
+          (isDone && a.total ? '<div class="assign-score">Kiểm tra cuối: <b>' + a.correct + '/' + a.total + '</b></div>' : '') +
+        '</div>' +
+        (info ? '<button type="button" class="btn ' + (isDone ? 'btn-ghost' : 'btn-primary') + ' assign-go" data-url="' + assignEsc(a.lessonUrl) + '">' + (isDone ? 'Xem lại' : 'Làm bài →') + '</button>' : '') +
+      '</li>';
+    }
+    box.innerHTML =
+      '<div class="assign-head"><div><h2>📌 Bài tập lớp ' + assignEsc(assignState.class.name) + '</h2>' +
+        '<p>' + (open.length ? 'Còn <b>' + open.length + '</b> bài chưa làm. Bài được tính là xong khi em làm <b>Bước 7 · Kiểm tra cuối bài</b>.'
+          : (list.length ? 'Em đã làm hết bài được giao. Giỏi lắm! 🎉' : 'Thầy cô chưa giao bài nào.')) + '</p></div>' +
+        '<button type="button" class="assign-switch" id="assignSwitch">Đổi lớp</button></div>' +
+      (assignJoinOpen ? joinFormHtml(true) : '') +
+      (open.length ? '<ol class="assign-list">' + open.map(item).join('') + '</ol>' : '') +
+      (finished.length ? '<button type="button" class="assign-more" id="assignMore" aria-expanded="' + assignShowDone + '">' +
+        (assignShowDone ? '▾' : '▸') + ' Đã làm (' + finished.length + ')</button>' +
+        (assignShowDone ? '<ol class="assign-list is-done">' + finished.map(item).join('') + '</ol>' : '') : '');
+    $all('.assign-go', box).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var info = lessonByUrl(b.getAttribute('data-url'));
+        if (info) showLessonHub(info.levelId, info.lesson);
+      });
+    });
+    var more = $('#assignMore', box);
+    if (more) more.addEventListener('click', function () { assignShowDone = !assignShowDone; renderAssignCard(); });
+    $('#assignSwitch', box).addEventListener('click', function () { assignJoinOpen = !assignJoinOpen; renderAssignCard(); });
+    if (assignJoinOpen) bindJoin(box);
+  }
+
+  function bindJoin(box) {
+    var form = $('#assignJoinForm', box);
+    if (!form) return;
+    var cancel = $('#assignJoinCancel', box);
+    if (cancel) cancel.addEventListener('click', function () { assignJoinOpen = false; renderAssignCard(); });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var auth = readJSON(STORAGE_KEYS.auth, null);
+      if (!auth || !auth.token) return;
+      var err = $('#assignJoinErr', box);
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      fetch('/api/class/join', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
+        body: JSON.stringify({ code: $('#assignCode', box).value })
+      }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+        .then(function (res) {
+          btn.disabled = false;
+          if (!res.ok) { err.textContent = res.d.error || 'Không vào được lớp.'; err.hidden = false; return; }
+          assignJoinOpen = false;
+          showToast('🎉 Đã vào lớp ' + res.d.class.name + '!');
+          loadAssignments();
+        })
+        .catch(function () { btn.disabled = false; err.textContent = 'Không kết nối được máy chủ, thử lại sau.'; err.hidden = false; });
+    });
+  }
+
   /* ---------------- Init ---------------- */
 
   function init() {
@@ -13918,6 +14071,7 @@
     if (last) practiceLevel = last.levelId;
     renderHomeHead();
     renderContinueCard();
+    loadAssignments();
     renderIdiomOfDay();
     initWelcome();
     renderLevelCards();

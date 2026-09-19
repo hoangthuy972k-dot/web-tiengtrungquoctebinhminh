@@ -36,6 +36,11 @@
     </div>
   </header>
 
+  <nav class="tr-tabs" role="tablist" aria-label="Báo cáo">
+    <button type="button" class="tr-tab active" data-tab="students" role="tab" aria-selected="true">👩‍🎓 Học sinh</button>
+    <button type="button" class="tr-tab" data-tab="classes" role="tab" aria-selected="false">🏫 Lớp &amp; bài giao</button>
+  </nav>
+
   <!-- Danh sach lop -->
   <div id="trClass">
     <section class="admin-cards" id="trSummary"></section>
@@ -51,6 +56,8 @@
         <div class="tr-filters">
           <label class="tr-field"><span class="sr-only">Tìm học sinh</span>
             <input type="search" id="trSearch" placeholder="Tìm tên hoặc email…"></label>
+          <label class="tr-field"><span class="sr-only">Lọc theo lớp</span>
+            <select id="trClassFilter"><option value="">Tất cả lớp</option></select></label>
           <label class="tr-field"><span class="sr-only">Lọc theo cấp</span>
             <select id="trLevel"><option value="">Tất cả cấp</option></select></label>
           <label class="tr-field"><span class="sr-only">Sắp xếp</span>
@@ -93,9 +100,13 @@
 
   <!-- Chi tiet 1 hoc sinh -->
   <div id="trDetail" hidden></div>
+
+  <!-- Lop hoc & bai giao -->
+  <div id="trClasses" hidden></div>
 </div>
 
 <script src="/js/data.js"></script>
 <script src="/js/admin.js"></script>
+<script src="/js/admin-classes.js"></script>
 </body>
 </html>

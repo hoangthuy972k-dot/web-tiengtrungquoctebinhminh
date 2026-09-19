@@ -247,6 +247,7 @@ async function initDb() {
   await initResumeTable();
   await initChatTables();
   await initStarsTable();
+  await initClassTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
   await migrateJsonToDbIfNeeded();
 }
@@ -559,6 +560,8 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
     updatedAt: new Date().toISOString(),
   };
   await saveScores(scores);
+  // Bai nao da lam Kiem tra cuoi -> ghi thoi diem (de biet bai giao dung han hay nop muon)
+  try { await recordLessonDone(req.user.id, mergedLessonScores); } catch (err) { console.error('recordLessonDone', err.message); }
   res.json({ ok: true, progress: await userProgress(req.user.id) });
 }));
 
@@ -2072,6 +2075,320 @@ app.get('/api/admin/stats', requireAdmin, asyncRoute(async (req, res) => {
   });
 }));
 
+// ================================================================
+// LOP HOC + BAI GIAO
+// - Moi lop co 1 ma lop; hoc sinh nhap ma 1 lan la vao lop (moi hoc sinh 1 lop).
+// - Giao vien (trang quan tri) giao bai: 1 bai hoc + han nop cho 1 hoac nhieu lop.
+// - "Da lam" = da lam bai Kiem tra cuoi (phan "final") cua bai do. Thoi diem lam
+//   lan dau duoc ghi lai (lesson_done) khi dong bo diem -> biet dung han hay nop muon.
+// ================================================================
+const CLASSES_FILE = path.join(DATA_DIR, 'classes.json');
+const CLASS_CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // bo O/0/I/1 de khoi doc nham
+const LESSON_URL_RE = /^\/lessons\/[a-z0-9-]+\.html$/;
+
+function newClassCode() {
+  let s = '';
+  for (let i = 0; i < 6; i++) s += CLASS_CODE_CHARS[crypto.randomInt(CLASS_CODE_CHARS.length)];
+  return s;
+}
+function newShortId() { return crypto.randomBytes(6).toString('hex'); }
+
+async function initClassTables() {
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS classes (' +
+      'id VARCHAR(16) PRIMARY KEY, name VARCHAR(100) NOT NULL, code VARCHAR(12) NOT NULL UNIQUE, created_ms BIGINT NOT NULL' +
+    ')'
+  );
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS class_members (' +
+      'user_id VARCHAR(36) PRIMARY KEY, class_id VARCHAR(16) NOT NULL, joined_ms BIGINT NOT NULL, ' +
+      'INDEX idx_class (class_id), ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS assignments (' +
+      'id VARCHAR(16) PRIMARY KEY, class_id VARCHAR(16) NOT NULL, lesson_url VARCHAR(120) NOT NULL, ' +
+      'note VARCHAR(300) NULL, due_ms BIGINT NOT NULL, created_ms BIGINT NOT NULL, INDEX idx_class (class_id)' +
+    ')'
+  );
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS lesson_done (' +
+      'user_id VARCHAR(36) NOT NULL, lesson_url VARCHAR(120) NOT NULL, first_ms BIGINT NOT NULL, ' +
+      'correct INT NOT NULL DEFAULT 0, total INT NOT NULL DEFAULT 0, last_ms BIGINT NOT NULL, ' +
+      'PRIMARY KEY (user_id, lesson_url), ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+}
+
+function readClassFile() {
+  const d = readJsonFile(CLASSES_FILE) || {};
+  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], done: d.done || {} };
+}
+
+// Toan bo trang thai lop (du nho: vai lop, vai tram hoc sinh)
+async function loadClassState() {
+  if (!USE_DB) return readClassFile();
+  const [c] = await dbPool.query('SELECT * FROM classes ORDER BY created_ms');
+  const [m] = await dbPool.query('SELECT * FROM class_members');
+  const [a] = await dbPool.query('SELECT * FROM assignments ORDER BY due_ms');
+  const members = {};
+  m.forEach((r) => { members[r.user_id] = { classId: r.class_id, joinedMs: Number(r.joined_ms) }; });
+  return {
+    classes: c.map((r) => ({ id: r.id, name: r.name, code: r.code, createdMs: Number(r.created_ms) })),
+    members,
+    assignments: a.map((r) => ({ id: r.id, classId: r.class_id, lessonUrl: r.lesson_url, note: r.note || '', dueMs: Number(r.due_ms), createdMs: Number(r.created_ms) })),
+  };
+}
+async function loadLessonDone(userIds) {
+  if (!USE_DB) {
+    const all = readClassFile().done;
+    const out = {};
+    (userIds || Object.keys(all)).forEach((id) => { if (all[id]) out[id] = all[id]; });
+    return out;
+  }
+  let rows;
+  if (userIds) {
+    if (!userIds.length) return {};
+    [rows] = await dbPool.query('SELECT * FROM lesson_done WHERE user_id IN (?)', [userIds]);
+  } else {
+    [rows] = await dbPool.query('SELECT * FROM lesson_done');
+  }
+  const out = {};
+  rows.forEach((r) => {
+    (out[r.user_id] = out[r.user_id] || {})[r.lesson_url] = { firstMs: Number(r.first_ms), correct: r.correct, total: r.total, lastMs: Number(r.last_ms) };
+  });
+  return out;
+}
+
+// Goi khi dong bo diem: bai nao co diem Kiem tra cuoi thi ghi lai (lan dau + diem moi nhat)
+async function recordLessonDone(userId, lessonScores) {
+  const now = Date.now();
+  const items = [];
+  Object.keys(lessonScores || {}).forEach((url) => {
+    if (!LESSON_URL_RE.test(url)) return;
+    const f = lessonScores[url] && lessonScores[url].final;
+    if (!f || typeof f.total !== 'number' || f.total <= 0) return;
+    items.push({ url, correct: Math.max(0, Math.round(Number(f.correct) || 0)), total: Math.round(f.total) });
+  });
+  if (!items.length) return;
+  if (!USE_DB) {
+    const d = readClassFile();
+    const mine = d.done[userId] || (d.done[userId] = {});
+    let changed = false;
+    items.forEach((it) => {
+      const cur = mine[it.url];
+      if (!cur) { mine[it.url] = { firstMs: now, correct: it.correct, total: it.total, lastMs: now }; changed = true; }
+      else if (cur.correct !== it.correct || cur.total !== it.total) { cur.correct = it.correct; cur.total = it.total; cur.lastMs = now; changed = true; }
+    });
+    if (changed) writeJsonFile(CLASSES_FILE, d);
+    return;
+  }
+  for (const it of items) {
+    await dbPool.query(
+      'INSERT INTO lesson_done (user_id, lesson_url, first_ms, correct, total, last_ms) VALUES (?,?,?,?,?,?) ' +
+        'ON DUPLICATE KEY UPDATE last_ms = IF(correct <> VALUES(correct) OR total <> VALUES(total), VALUES(last_ms), last_ms), ' +
+        'correct = VALUES(correct), total = VALUES(total)',
+      [userId, it.url, now, it.correct, it.total, now]
+    );
+  }
+}
+
+// Trang thai 1 bai giao voi 1 hoc sinh
+function assignmentStatus(a, done, now) {
+  if (done) return { status: done.firstMs <= a.dueMs ? 'done' : 'late', correct: done.correct, total: done.total, doneMs: done.firstMs };
+  return { status: now > a.dueMs ? 'overdue' : 'todo' };
+}
+
+// Han nop: het ngay YYYY-MM-DD (23:59:59 gio VN)
+function dueMsFromDate(s) {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
+  const ms = Date.parse(s + 'T23:59:59Z') - VN_OFFSET_MS;
+  return Number.isFinite(ms) ? ms : null;
+}
+
+// ---------- Phia hoc sinh ----------
+const joinAttempts = new Map(); // userId -> [ms...] chong do ma lop
+
+app.get('/api/class/me', requireAuth, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const mem = st.members[req.user.id];
+  const cls = mem && st.classes.find((c) => c.id === mem.classId);
+  if (!cls) return res.json({ class: null, assignments: [] });
+  const done = (await loadLessonDone([req.user.id]))[req.user.id] || {};
+  const now = Date.now();
+  const list = st.assignments.filter((a) => a.classId === cls.id).map((a) => Object.assign({
+    id: a.id, lessonUrl: a.lessonUrl, note: a.note, dueMs: a.dueMs, createdMs: a.createdMs,
+  }, assignmentStatus(a, done[a.lessonUrl], now)));
+  res.json({ class: { id: cls.id, name: cls.name }, assignments: list });
+}));
+
+app.post('/api/class/join', requireAuth, asyncRoute(async (req, res) => {
+  const now = Date.now();
+  const recent = (joinAttempts.get(req.user.id) || []).filter((t) => now - t < 10 * 60 * 1000);
+  if (recent.length >= 10) return res.status(429).json({ error: 'Bạn nhập sai mã quá nhiều lần. Đợi 10 phút rồi thử lại nhé.' });
+  const code = String(req.body?.code || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+  const st = await loadClassState();
+  const cls = code && st.classes.find((c) => c.code === code);
+  if (!cls) {
+    recent.push(now);
+    joinAttempts.set(req.user.id, recent);
+    return res.status(404).json({ error: 'Không tìm thấy lớp có mã này. Kiểm tra lại mã thầy cô đưa nhé.' });
+  }
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.members[req.user.id] = { classId: cls.id, joinedMs: now };
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('INSERT INTO class_members (user_id, class_id, joined_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE class_id = VALUES(class_id), joined_ms = VALUES(joined_ms)',
+      [req.user.id, cls.id, now]);
+  }
+  res.json({ ok: true, class: { id: cls.id, name: cls.name } });
+}));
+
+// ---------- Phia giao vien (trang quan tri) ----------
+app.get('/api/admin/classes', requireAdmin, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const done = await loadLessonDone(Object.keys(st.members));
+  res.json(Object.assign({}, st, { done, now: Date.now() }));
+}));
+
+app.post('/api/admin/classes', requireAdmin, asyncRoute(async (req, res) => {
+  const name = String(req.body?.name || '').trim().slice(0, 100);
+  if (!name) return res.status(400).json({ error: 'Nhập tên lớp.' });
+  const st = await loadClassState();
+  const used = new Set(st.classes.map((c) => c.code));
+  let code = newClassCode();
+  while (used.has(code)) code = newClassCode();
+  const cls = { id: newShortId(), name, code, createdMs: Date.now() };
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.classes.push(cls);
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('INSERT INTO classes (id, name, code, created_ms) VALUES (?,?,?,?)', [cls.id, cls.name, cls.code, cls.createdMs]);
+  }
+  res.json({ ok: true, class: cls });
+}));
+
+// Doi ten / tao ma moi
+app.post('/api/admin/classes/:id', requireAdmin, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const cls = st.classes.find((c) => c.id === req.params.id);
+  if (!cls) return res.status(404).json({ error: 'Không tìm thấy lớp.' });
+  const name = req.body?.name != null ? String(req.body.name).trim().slice(0, 100) : cls.name;
+  if (!name) return res.status(400).json({ error: 'Tên lớp không được để trống.' });
+  let code = cls.code;
+  if (req.body?.newCode) {
+    const used = new Set(st.classes.map((c) => c.code));
+    do { code = newClassCode(); } while (used.has(code));
+  }
+  if (!USE_DB) {
+    const d = readClassFile();
+    const c = d.classes.find((x) => x.id === cls.id);
+    c.name = name; c.code = code;
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('UPDATE classes SET name = ?, code = ? WHERE id = ?', [name, code, cls.id]);
+  }
+  res.json({ ok: true, class: Object.assign({}, cls, { name, code }) });
+}));
+
+// Xoa lop: xoa ca bai giao cua lop; hoc sinh trong lop tro ve "chua vao lop"
+app.delete('/api/admin/classes/:id', requireAdmin, asyncRoute(async (req, res) => {
+  const id = req.params.id;
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.classes = d.classes.filter((c) => c.id !== id);
+    d.assignments = d.assignments.filter((a) => a.classId !== id);
+    Object.keys(d.members).forEach((u) => { if (d.members[u].classId === id) delete d.members[u]; });
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('DELETE FROM assignments WHERE class_id = ?', [id]);
+    await dbPool.query('DELETE FROM class_members WHERE class_id = ?', [id]);
+    await dbPool.query('DELETE FROM classes WHERE id = ?', [id]);
+  }
+  res.json({ ok: true });
+}));
+
+// Chuyen hoc sinh sang lop khac (classId) hoac cho ra khoi lop (classId rong)
+app.post('/api/admin/members', requireAdmin, asyncRoute(async (req, res) => {
+  const userId = String(req.body?.userId || '');
+  const classId = req.body?.classId ? String(req.body.classId) : '';
+  const users = await loadUsers();
+  if (!users.some((u) => u.id === userId)) return res.status(404).json({ error: 'Không tìm thấy học sinh.' });
+  const st = await loadClassState();
+  if (classId && !st.classes.some((c) => c.id === classId)) return res.status(404).json({ error: 'Không tìm thấy lớp.' });
+  if (!USE_DB) {
+    const d = readClassFile();
+    if (classId) d.members[userId] = { classId, joinedMs: Date.now() };
+    else delete d.members[userId];
+    writeJsonFile(CLASSES_FILE, d);
+  } else if (classId) {
+    await dbPool.query('INSERT INTO class_members (user_id, class_id, joined_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE class_id = VALUES(class_id)', [userId, classId, Date.now()]);
+  } else {
+    await dbPool.query('DELETE FROM class_members WHERE user_id = ?', [userId]);
+  }
+  res.json({ ok: true });
+}));
+
+// Giao 1 bai cho 1 hoac nhieu lop
+app.post('/api/admin/assignments', requireAdmin, asyncRoute(async (req, res) => {
+  const classIds = Array.isArray(req.body?.classIds) ? req.body.classIds.map(String).slice(0, 50) : [];
+  const lessonUrl = String(req.body?.lessonUrl || '');
+  const dueMs = dueMsFromDate(req.body?.dueDate);
+  const note = String(req.body?.note || '').trim().slice(0, 300);
+  if (!LESSON_URL_RE.test(lessonUrl)) return res.status(400).json({ error: 'Chọn bài học cần giao.' });
+  if (!dueMs) return res.status(400).json({ error: 'Chọn hạn nộp.' });
+  const st = await loadClassState();
+  const valid = classIds.filter((id) => st.classes.some((c) => c.id === id));
+  if (!valid.length) return res.status(400).json({ error: 'Chọn ít nhất 1 lớp.' });
+  const now = Date.now();
+  const created = valid.map((classId) => ({ id: newShortId(), classId, lessonUrl, note, dueMs, createdMs: now }));
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.assignments = d.assignments.concat(created);
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    for (const a of created) {
+      await dbPool.query('INSERT INTO assignments (id, class_id, lesson_url, note, due_ms, created_ms) VALUES (?,?,?,?,?,?)',
+        [a.id, a.classId, a.lessonUrl, a.note || null, a.dueMs, a.createdMs]);
+    }
+  }
+  res.json({ ok: true, assignments: created });
+}));
+
+// Sua han nop / ghi chu
+app.post('/api/admin/assignments/:id', requireAdmin, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const a = st.assignments.find((x) => x.id === req.params.id);
+  if (!a) return res.status(404).json({ error: 'Không tìm thấy bài giao.' });
+  const dueMs = req.body?.dueDate != null ? dueMsFromDate(req.body.dueDate) : a.dueMs;
+  if (!dueMs) return res.status(400).json({ error: 'Hạn nộp không hợp lệ.' });
+  const note = req.body?.note != null ? String(req.body.note).trim().slice(0, 300) : a.note;
+  if (!USE_DB) {
+    const d = readClassFile();
+    const x = d.assignments.find((y) => y.id === a.id);
+    x.dueMs = dueMs; x.note = note;
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('UPDATE assignments SET due_ms = ?, note = ? WHERE id = ?', [dueMs, note || null, a.id]);
+  }
+  res.json({ ok: true });
+}));
+
+app.delete('/api/admin/assignments/:id', requireAdmin, asyncRoute(async (req, res) => {
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.assignments = d.assignments.filter((a) => a.id !== req.params.id);
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('DELETE FROM assignments WHERE id = ?', [req.params.id]);
+  }
+  res.json({ ok: true });
+}));
+
 // Bao cao hoc tap cho giao vien: moi hoc sinh kem diem tung bai, sao, ngay hoc,
 // phut hoc 30 ngay gan nhat, bai thi thu va tu can on. Chi tra cac truong can
 // thiet (khong tra mat khau / salt).
@@ -2092,6 +2409,7 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
     }
     return examTitle[id];
   }
+  const classSt = await loadClassState();
   const today = vnDayKey();
   const week = vnWeekKey();
   const days30 = [];
@@ -2114,6 +2432,7 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
       name: u.name,
       email: u.email,
       level: u.level,
+      classId: classSt.members[u.id] ? classSt.members[u.id].classId : null,
       createdAt: u.createdAt,
       lastActive,
       totalMinutes: Math.round(st.totalMinutes || 0),

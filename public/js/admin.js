@@ -155,17 +155,28 @@
     return r.json();
   }
 
+  var CLASSES = null; // { classes, members, assignments, done, now } tu /api/admin/classes
+
+  function className(id) {
+    var c = CLASSES && CLASSES.classes.filter(function (x) { return x.id === id; })[0];
+    return c ? c.name : '';
+  }
+
   function load() {
     Promise.all([
       adminFetch('/api/admin/report').then(handle),
-      adminFetch('/api/admin/stats').then(handle).catch(function () { return null; })
+      adminFetch('/api/admin/stats').then(handle).catch(function () { return null; }),
+      adminFetch('/api/admin/classes').then(handle).catch(function () { return null; })
     ]).then(function (res) {
       if (!res[0]) return;
       DATA = res[0];
       DATA.students.forEach(summarize);
       TRAFFIC = res[1] && res[1].traffic;
+      CLASSES = res[2] || { classes: [], members: {}, assignments: [], done: {}, now: Date.now() };
       fillLevelFilter();
+      fillClassFilter();
       renderClass();
+      if (window.__trClasses) window.__trClasses.render();
       $('#adminUpdatedAt').textContent = new Date().toLocaleTimeString('vi-VN');
       showDash();
       var hash = location.hash.replace('#hs-', '');
@@ -184,6 +195,15 @@
       return '<option value="' + esc(id) + '">' + esc(levelName(id)) + '</option>';
     }).join('');
     sel.value = used[cur] ? cur : '';
+  }
+
+  function fillClassFilter() {
+    var sel = $('#trClassFilter');
+    var cur = sel.value;
+    sel.innerHTML = '<option value="">Tất cả lớp</option>' + CLASSES.classes.map(function (c) {
+      return '<option value="' + esc(c.id) + '">' + esc(c.name) + '</option>';
+    }).join('') + '<option value="none">Chưa vào lớp</option>';
+    sel.value = cur && (cur === 'none' || CLASSES.classes.some(function (c) { return c.id === cur; })) ? cur : '';
   }
 
   // ---------- Man hinh ca lop ----------
@@ -237,9 +257,12 @@
   function currentList() {
     var q = ($('#trSearch').value || '').trim().toLowerCase();
     var lv = $('#trLevel').value;
+    var cl = $('#trClassFilter').value;
     var sort = $('#trSort').value;
     var list = DATA.students.filter(function (s) {
       if (lv && s.level !== lv) return false;
+      if (cl === 'none' && s.classId) return false;
+      if (cl && cl !== 'none' && s.classId !== cl) return false;
       if (q && (s.name || '').toLowerCase().indexOf(q) === -1 && (s.email || '').toLowerCase().indexOf(q) === -1) return false;
       return true;
     });
@@ -269,7 +292,8 @@
     $('#trBody').innerHTML = list.map(function (s) {
       var stale = s._since == null || s._since >= INACTIVE_DAYS;
       return '<tr class="tr-row" tabindex="0" data-id="' + esc(s.id) + '">' +
-        '<td><div class="admin-name">' + esc(s.name) + '</div><div class="tr-email">' + esc(s.email) + '</div></td>' +
+        '<td><div class="admin-name">' + esc(s.name) + '</div><div class="tr-email">' + esc(s.email) + '</div>' +
+          (s.classId && className(s.classId) ? '<div class="tr-class-tag">🏫 ' + esc(className(s.classId)) + '</div>' : '') + '</td>' +
         '<td>' + esc(levelName(s.level)) + '</td>' +
         '<td><span class="tr-chip ' + (stale ? 'is-stale' : 'is-fresh') + '">' + relTime(s._since, s.lastActive) + '</span></td>' +
         '<td><div class="tr-week">' + weekBars(s._week) + '<span>' + fmtMin(s._min7) + '</span></div></td>' +
@@ -392,7 +416,7 @@
       : '<p class="tr-muted">Không có từ nào đang sai.</p>';
     return '<button type="button" class="btn btn-outline tr-back" id="trBack">← Quay lại cả lớp</button>' +
       '<div class="tr-d-head"><div><div class="tr-d-name">' + esc(s.name) + '</div>' +
-        '<div class="tr-muted">' + esc(s.email) + ' · ' + esc(levelName(s.level)) + ' · tham gia ' + (s.createdAt ? new Date(s.createdAt).toLocaleDateString('vi-VN') : '—') + '</div></div>' +
+        '<div class="tr-muted">' + esc(s.email) + ' · ' + esc(levelName(s.level)) + ' · ' + (s.classId && className(s.classId) ? '🏫 ' + esc(className(s.classId)) : 'chưa vào lớp') + ' · tham gia ' + (s.createdAt ? new Date(s.createdAt).toLocaleDateString('vi-VN') : '—') + '</div></div>' +
         (needsAttention(s) ? '<span class="tr-chip is-stale">⚠ ' + esc(attentionReason(s)) + '</span>' : '') + '</div>' +
       '<section class="admin-cards">' + tiles.map(function (c) {
         return '<div class="admin-card"><div class="admin-card-label">' + c.label + '</div><div class="admin-card-value is-sm">' + c.value + '</div>' +
@@ -457,7 +481,32 @@
     closeStudent();
     showGate('');
   });
-  ['#trSearch', '#trLevel', '#trSort'].forEach(function (sel) {
+  // Tab "Hoc sinh" / "Lop & bai giao"
+  function showTab(name) {
+    $all('.tr-tab').forEach(function (b) {
+      var on = b.getAttribute('data-tab') === name;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    var classes = name === 'classes';
+    $('#trClasses').hidden = !classes;
+    if (classes) { $('#trClass').hidden = true; $('#trDetail').hidden = true; }
+    else { closeStudent(); }
+  }
+  $all('.tr-tab').forEach(function (b) {
+    b.addEventListener('click', function () { showTab(b.getAttribute('data-tab')); });
+  });
+
+  // Dung chung voi admin-classes.js
+  window.__tr = {
+    $: $, $all: $all, esc: esc, levelName: levelName, LEVELS: LEVELS, LESSON_BY_URL: LESSON_BY_URL,
+    adminFetch: adminFetch, reload: load,
+    data: function () { return DATA; },
+    classes: function () { return CLASSES; },
+    openStudent: function (id) { showTab('students'); openStudent(id); }
+  };
+
+  ['#trSearch', '#trLevel', '#trClassFilter', '#trSort'].forEach(function (sel) {
     $(sel).addEventListener(sel === '#trSearch' ? 'input' : 'change', function () { if (DATA) renderTable(); });
   });
 

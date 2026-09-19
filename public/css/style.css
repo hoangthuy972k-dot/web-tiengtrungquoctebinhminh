@@ -7624,3 +7624,36 @@ body.pinyin-hidden .py-inline {
   .rp-box{padding:var(--space-4);}
   .rp-bub{max-width:85%;}
 }
+
+/* ===== Bai tap duoc giao (trang chu) ===== */
+.assign-card { background: var(--color-white); border: 1.5px solid var(--color-red-100); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: var(--space-5); margin-bottom: var(--space-5); }
+.assign-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); }
+.assign-head h2 { font-size: 1.2rem; margin: 0 0 4px; color: var(--color-gray-900); }
+.assign-head p { margin: 0; color: var(--color-gray-600); font-size: 0.92rem; }
+.assign-switch { flex-shrink: 0; border: none; background: none; color: var(--color-gray-500); font: inherit; font-size: 0.85rem; text-decoration: underline; cursor: pointer; padding: 6px; }
+.assign-join { margin-top: var(--space-4); }
+.assign-join label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; }
+.assign-join-row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.assign-join input { flex: 1 1 160px; max-width: 240px; min-height: 44px; padding: 8px 14px; border: 1.5px solid var(--color-gray-200, #e6e2da); border-radius: var(--radius-md); font: inherit; font-size: 1.05rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.assign-join input:focus { outline: 2px solid var(--color-gold-500); outline-offset: 1px; }
+.assign-join-err { color: var(--color-red-600); font-size: 0.88rem; margin: 6px 0 0; }
+.assign-list { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; gap: var(--space-2); }
+.assign-item { display: flex; align-items: center; gap: var(--space-3); border: 1px solid var(--color-gray-100); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); background: var(--color-gray-50); }
+.assign-item.is-overdue { background: var(--color-red-50); border-color: var(--color-red-100); }
+.assign-item-main { flex: 1; min-width: 0; }
+.assign-item-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-bottom: 4px; }
+.assign-chip { font-size: 0.78rem; font-weight: 700; border-radius: var(--radius-pill); padding: 2px 10px; white-space: nowrap; }
+.assign-chip.is-todo { background: var(--color-gold-50); color: var(--color-gold-600); }
+.assign-chip.is-overdue { background: var(--color-red-600); color: #fff; }
+.assign-chip.is-done { background: var(--color-green-50); color: var(--color-green-600); }
+.assign-chip.is-late { background: var(--color-orange-50); color: var(--color-orange-600); }
+.assign-due { font-size: 0.82rem; color: var(--color-gray-600); }
+.assign-title { font-size: 0.98rem; color: var(--color-gray-900); }
+.assign-note, .assign-score { font-size: 0.85rem; color: var(--color-gray-600); margin-top: 2px; }
+.assign-go { flex-shrink: 0; min-height: 44px; }
+.assign-more { margin-top: var(--space-3); border: none; background: none; font: inherit; font-weight: 600; color: var(--color-gray-600); cursor: pointer; padding: 6px 0; }
+@media (max-width: 640px) {
+  .assign-card { padding: var(--space-4); }
+  .assign-item { flex-direction: column; align-items: stretch; }
+  .assign-go { width: 100%; }
+}

@@ -9803,6 +9803,8 @@
       var parts = (scene.scene || '').split('·');
       btn.textContent = (i + 1) + ' · ' + (parts[1] || parts[0] || '').trim();
       btn.addEventListener('click', function () {
+        rpStopRec();
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
         dpIndex = i;
         renderDialogueTabs();
         renderDialogueScene();
@@ -9921,6 +9923,7 @@
       }
     }
     body.innerHTML = quizHtml + linesHtml;
+    if (state.revealed) rpMount(body, scene, dpIndex);
     if (dpTotalQuiz > 0) pgbPaint('dpq');
 
     var vnToggle = $('#dpVnToggle', wrap);
@@ -9959,6 +9962,287 @@
       if (skipBtn) skipBtn.addEventListener('click', function () { state.revealed = true; renderDialogueScene(); dpSave(); });
     }
   }
+
+  /* ---------------- Nhap vai hoi thoai (thu nghiem: HSK2 3.0 bai 1) ----------------
+     Hoc sinh chon 1 vai trong doan hoi thoai. May doc loi vai con lai (giong doc
+     tieng Trung cua trinh duyet); den luot minh thi hoc sinh noi vao micro, trinh
+     duyet nhan dien giong noi (zh-CN) roi so tung chu voi cau goc -> diem %.
+     Cau dat >= 70% duoc +1 sao (moi cau 1 lan). */
+  var RP_LESSONS = /\/hsk2v3-bai-1\.html$/;
+  var RP_PASS = 70;
+  var rpStates = {};   // dpIndex -> { phase, role, hint, step, results, heard, showHint }
+  var rpRec = null;
+
+  function rpEnabled() {
+    return !!(currentHubLesson && RP_LESSONS.test(currentHubLesson.fullPageUrl || ''));
+  }
+  function rpClean(s) { return String(s || '').replace(/[^㐀-鿿A-Za-z0-9]/g, ''); }
+  // So chu theo day con chung dai nhat: tra ve diem % va danh dau chu nao da noi dung
+  function rpCompare(target, heard) {
+    var a = rpClean(target), b = rpClean(heard);
+    var n = a.length, m = b.length, i, j;
+    if (!n) return { score: 0, hit: [] };
+    var dp = [];
+    for (i = 0; i <= n; i++) { dp.push(new Array(m + 1).fill(0)); }
+    for (i = n - 1; i >= 0; i--) for (j = m - 1; j >= 0; j--) {
+      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    }
+    var hit = new Array(n).fill(false);
+    i = 0; j = 0;
+    while (i < n && j < m) {
+      if (a[i] === b[j]) { hit[i] = true; i++; j++; }
+      else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+      else j++;
+    }
+    var extra = Math.max(0, m - dp[0][0]);
+    var score = Math.round(100 * dp[0][0] / (n + extra * 0.5));
+    return { score: Math.max(0, Math.min(100, score)), hit: hit, chars: a };
+  }
+  function rpSay(text, onEnd) {
+    if (!window.speechSynthesis) { if (onEnd) onEnd(); return; }
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    u.rate = 0.9;
+    if (!vpZhVoice) vpZhVoice = vpPickZhVoice();
+    if (vpZhVoice) u.voice = vpZhVoice;
+    var done = false;
+    function fin() { if (done) return; done = true; if (onEnd) onEnd(); }
+    u.onend = fin;
+    u.onerror = fin;
+    // phong khi trinh duyet khong bao onend
+    setTimeout(fin, 1200 + text.length * 420);
+    window.speechSynthesis.speak(u);
+  }
+  function rpStopRec() {
+    if (rpRec) { try { rpRec.abort(); } catch (e) { /* bo qua */ } rpRec = null; }
+  }
+  function rpSpeakers(scene) {
+    var seen = {}, out = [];
+    scene.lines.forEach(function (l) {
+      var sp = typeof l.sp === 'number' ? l.sp : 0;
+      if (!seen[sp]) { seen[sp] = 1; out.push(sp); }
+    });
+    return out;
+  }
+
+  function rpMount(body, scene, idx) {
+    if (!rpEnabled()) return;
+    var speakers = rpSpeakers(scene);
+    if (speakers.length < 2) return;
+    var host = document.createElement('div');
+    host.className = 'rp-box';
+    host.id = 'rpBox';
+    body.appendChild(host);
+    if (!rpStates[idx]) rpStates[idx] = { phase: 'pick', role: speakers[0], hint: 'full', step: 0, results: {} };
+    rpRender(host, scene, idx);
+  }
+
+  function rpRender(host, scene, idx) {
+    var st = rpStates[idx];
+    var letter = function (sp) { return 'ABCD'.charAt(sp) || 'A'; };
+    var html = '<div class="rp-head"><span class="rp-badge">Mới · thử nghiệm</span><div class="rp-title">🎭 Nhập vai hội thoại</div>' +
+      '<div class="rp-sub">Em đóng một vai, máy đóng vai còn lại. Đến lượt em thì bấm micro và nói câu của mình bằng tiếng Trung.</div></div>';
+
+    if (st.phase === 'pick') {
+      html += '<div class="rp-label">1. Chọn vai của em</div><div class="rp-roles">' +
+        rpSpeakers(scene).map(function (sp) {
+          var mine = scene.lines.filter(function (l) { return (l.sp || 0) === sp; });
+          return '<button type="button" class="rp-role' + (st.role === sp ? ' active' : '') + '" data-role="' + sp + '">' +
+            '<span class="rp-av dp-sp' + sp + '">' + letter(sp) + '</span>' +
+            '<span class="rp-role-txt"><b>Vai ' + letter(sp) + '</b> · ' + mine.length + ' câu<br><span class="rp-role-first hanzi">「' + mine[0].zh + '」</span></span></button>';
+        }).join('') + '</div>' +
+        '<div class="rp-label">2. Mức gợi ý</div><div class="rp-hints">' +
+          '<button type="button" class="rp-hint' + (st.hint === 'full' ? ' active' : '') + '" data-hint="full"><b>Dễ</b> · thấy chữ Hán + pinyin</button>' +
+          '<button type="button" class="rp-hint' + (st.hint === 'vn' ? ' active' : '') + '" data-hint="vn"><b>Khó</b> · chỉ thấy nghĩa tiếng Việt</button>' +
+        '</div>' +
+        '<button type="button" class="rp-start" id="rpStart">▶ Bắt đầu nhập vai</button>';
+      host.innerHTML = html;
+      $all('.rp-role', host).forEach(function (b) {
+        b.addEventListener('click', function () { st.role = parseInt(b.getAttribute('data-role'), 10); rpRender(host, scene, idx); });
+      });
+      $all('.rp-hint', host).forEach(function (b) {
+        b.addEventListener('click', function () { st.hint = b.getAttribute('data-hint'); rpRender(host, scene, idx); });
+      });
+      $('#rpStart', host).addEventListener('click', function () {
+        st.phase = 'play'; st.step = 0; st.results = {}; st.heard = null; st.showHint = false;
+        rpRender(host, scene, idx);
+        host.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      return;
+    }
+
+    if (st.phase === 'done') {
+      var mineIdx = [];
+      scene.lines.forEach(function (l, li) { if ((l.sp || 0) === st.role) mineIdx.push(li); });
+      var scored = mineIdx.filter(function (li) { return typeof st.results[li] === 'number'; });
+      // cau bo qua tinh 0 diem; khong cham duoc cau nao (trinh duyet khong nhan giong) thi chi bao hoan thanh
+      var avg = scored.length ? Math.round(mineIdx.reduce(function (s, li) { return s + (st.results[li] || 0); }, 0) / mineIdx.length) : null;
+      var passed = scored.filter(function (li) { return st.results[li] >= RP_PASS; }).length;
+      html += '<div class="rp-done">' +
+        '<div class="rp-done-big">' + (avg == null ? '👏' : avg + '%') + '</div>' +
+        '<div class="rp-done-txt">' + (avg == null
+          ? 'Em đã hoàn thành vai ' + letter(st.role) + '.'
+          : 'Em đã đóng vai ' + letter(st.role) + ': nói đạt ' + passed + '/' + mineIdx.length + ' câu.' + (avg >= 85 ? ' Tuyệt vời!' : avg >= RP_PASS ? ' Tốt lắm!' : ' Luyện thêm một lượt nữa nhé!')) + '</div>' +
+        '<div class="rp-done-list">' + mineIdx.map(function (li) {
+          var sc = st.results[li];
+          return '<div class="rp-done-row"><span class="hanzi">' + scene.lines[li].zh + '</span><span class="rp-score ' + (typeof sc !== 'number' ? 'is-skip' : sc >= RP_PASS ? 'is-ok' : 'is-low') + '">' + (typeof sc === 'number' ? sc + '%' : 'bỏ qua') + '</span></div>';
+        }).join('') + '</div>' +
+        '<div class="rp-actions"><button type="button" class="rp-btn" id="rpAgain">↻ Làm lại vai này</button>' +
+        '<button type="button" class="rp-btn is-main" id="rpSwap">⇄ Đổi vai</button></div>' +
+      '</div>';
+      host.innerHTML = html;
+      $('#rpAgain', host).addEventListener('click', function () { st.phase = 'play'; st.step = 0; st.results = {}; st.heard = null; st.showHint = false; rpRender(host, scene, idx); });
+      $('#rpSwap', host).addEventListener('click', function () {
+        var sps = rpSpeakers(scene);
+        st.role = sps[(sps.indexOf(st.role) + 1) % sps.length];
+        st.phase = 'pick';
+        rpRender(host, scene, idx);
+      });
+      return;
+    }
+
+    // phase === 'play'
+    var lines = scene.lines;
+    var cur = lines[st.step];
+    var isMine = (cur.sp || 0) === st.role;
+    var conv = lines.slice(0, st.step).map(function (l, li) {
+      var sp = l.sp || 0, mine = sp === st.role;
+      var sc = st.results[li];
+      return '<div class="rp-line' + (sp % 2 ? ' is-b' : '') + (mine ? ' is-me' : '') + '">' +
+        '<span class="rp-av dp-sp' + sp + '">' + letter(sp) + '</span>' +
+        '<div class="rp-bub"><div class="hanzi rp-zh">' + l.zh + '</div><div class="rp-py">' + l.py + '</div>' +
+        (mine && typeof sc === 'number' ? '<span class="rp-score ' + (sc >= RP_PASS ? 'is-ok' : 'is-low') + '">' + sc + '%</span>' : '') +
+        '</div></div>';
+    }).join('');
+    html += '<div class="rp-progress">Câu ' + (st.step + 1) + '/' + lines.length + ' · Em là <b>vai ' + letter(st.role) + '</b></div>' +
+      '<div class="rp-conv">' + conv + '</div>';
+
+    if (!isMine) {
+      html += '<div class="rp-line' + ((cur.sp || 0) % 2 ? ' is-b' : '') + ' is-now">' +
+        '<span class="rp-av dp-sp' + (cur.sp || 0) + '">' + letter(cur.sp || 0) + '</span>' +
+        '<div class="rp-bub"><div class="rp-speaking">🔊 Vai ' + letter(cur.sp || 0) + ' đang nói…</div>' +
+        '<div class="hanzi rp-zh">' + cur.zh + '</div><div class="rp-py">' + cur.py + '</div><div class="rp-vn">' + cur.vn + '</div></div></div>' +
+        '<div class="rp-actions"><button type="button" class="rp-btn" id="rpReplay">🔊 Nghe lại</button>' +
+        '<button type="button" class="rp-btn is-main" id="rpNext">Tiếp →</button></div>';
+    } else {
+      var res = st.heard;
+      var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      var showZh = st.hint === 'full' || st.showHint || res;
+      var targetHtml = cur.zh;
+      if (res && res.cmp) {
+        // to mau tung chu: xanh = da noi dung, do = thieu/sai
+        var k = 0;
+        targetHtml = cur.zh.split('').map(function (ch) {
+          if (!/[㐀-鿿A-Za-z0-9]/.test(ch)) return ch;
+          var ok = res.cmp.hit[k++];
+          return '<span class="' + (ok ? 'rp-ch-ok' : 'rp-ch-miss') + '">' + ch + '</span>';
+        }).join('');
+      }
+      html += '<div class="rp-turn">' +
+        '<div class="rp-turn-h">🎤 Đến lượt em (vai ' + letter(st.role) + ')</div>' +
+        '<div class="rp-vn-big">' + cur.vn + '</div>' +
+        (showZh
+          ? '<div class="hanzi rp-zh-big">' + targetHtml + '</div><div class="rp-py">' + cur.py + '</div>'
+          : '<button type="button" class="rp-link" id="rpShowHint">💡 Quên rồi? Xem gợi ý chữ Hán</button>') +
+        (res ? (res.cmp
+            ? '<div class="rp-heard">Máy nghe được: <span class="hanzi">「' + (res.text || '…') + '」</span></div>' +
+              '<div class="rp-result ' + (res.cmp.score >= RP_PASS ? 'is-ok' : 'is-low') + '"><b>' + res.cmp.score + '%</b> · ' +
+                (res.cmp.score >= 90 ? 'Xuất sắc! Nói rất chuẩn.' : res.cmp.score >= RP_PASS ? 'Tốt! Chữ màu đỏ là chỗ máy chưa nghe rõ.' : 'Chưa rõ lắm. Nghe mẫu rồi nói lại nhé — chữ màu đỏ là chỗ còn thiếu.') + '</div>'
+            : '<div class="rp-result is-skip">' + res.text + '</div>')
+          : '') +
+        '<div class="rp-status" id="rpStatus"></div>' +
+        '<div class="rp-actions">' +
+          (SR ? '<button type="button" class="rp-btn is-mic" id="rpMic">🎙️ ' + (res ? 'Nói lại' : 'Bấm để nói') + '</button>' : '') +
+          '<button type="button" class="rp-btn" id="rpModel">🔊 Nghe mẫu</button>' +
+          (res || !SR ? '<button type="button" class="rp-btn is-main" id="rpNext">' + (SR ? 'Tiếp →' : 'Mình đã nói xong →') + '</button>'
+                      : '<button type="button" class="rp-btn is-ghost" id="rpSkip">Bỏ qua</button>') +
+        '</div>' +
+        (!SR ? '<div class="rp-note">Trình duyệt này chưa hỗ trợ nhận giọng nói — em hãy đọc to câu trên, rồi bấm "Mình đã nói xong". (Dùng Chrome hoặc Edge để được chấm điểm.)</div>' : '') +
+      '</div>';
+    }
+    host.innerHTML = html;
+
+    function next() {
+      rpStopRec();
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      st.step++; st.heard = null; st.showHint = false;
+      if (st.step >= lines.length) st.phase = 'done';
+      rpRender(host, scene, idx);
+    }
+    var nextBtn = $('#rpNext', host);
+    if (nextBtn) nextBtn.addEventListener('click', next);
+    var skipB = $('#rpSkip', host);
+    if (skipB) skipB.addEventListener('click', next);
+    var hintB = $('#rpShowHint', host);
+    if (hintB) hintB.addEventListener('click', function () { st.showHint = true; rpRender(host, scene, idx); });
+    var modelB = $('#rpModel', host);
+    if (modelB) modelB.addEventListener('click', function () { rpSay(cur.zh); });
+    var replayB = $('#rpReplay', host);
+    if (replayB) replayB.addEventListener('click', function () { rpSay(cur.zh); });
+
+    if (!isMine) {
+      // May tu doc loi vai kia, doc xong thi tu chuyen sang cau tiep theo
+      var myStep = st.step;
+      rpSay(cur.zh, function () {
+        setTimeout(function () {
+          if (rpStates[idx] === st && st.phase === 'play' && st.step === myStep && document.body.contains(host)) next();
+        }, 700);
+      });
+      return;
+    }
+
+    var micB = $('#rpMic', host);
+    if (micB) micB.addEventListener('click', function () {
+      if (rpRec) { try { rpRec.stop(); } catch (e) { /* bo qua */ } return; }
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+      var SRc = window.SpeechRecognition || window.webkitSpeechRecognition;
+      var rec;
+      try { rec = new SRc(); } catch (e) { return; }
+      rec.lang = 'zh-CN';
+      rec.continuous = false;
+      rec.interimResults = true;
+      rec.maxAlternatives = 1;
+      var finalText = '', interim = '';
+      var statusEl = $('#rpStatus', host);
+      rec.onresult = function (e) {
+        interim = '';
+        for (var k = e.resultIndex; k < e.results.length; k++) {
+          if (e.results[k].isFinal) finalText += e.results[k][0].transcript;
+          else interim += e.results[k][0].transcript;
+        }
+        if (statusEl) statusEl.innerHTML = '👂 <span class="hanzi">' + (finalText + interim) + '</span>';
+      };
+      rec.onerror = function (e) {
+        if (e && (e.error === 'not-allowed' || e.error === 'service-not-allowed')) {
+          st.heard = { text: 'Chưa có quyền dùng micro — hãy cho phép micro cho trang này rồi thử lại.' };
+        }
+      };
+      rec.onend = function () {
+        rpRec = null;
+        if (rpStates[idx] !== st || !document.body.contains(host)) return;
+        var said = finalText || interim;
+        if (said) {
+          var cmp = rpCompare(cur.zh, said);
+          st.heard = { text: said, cmp: cmp };
+          var best = st.results[st.step];
+          if (typeof best !== 'number' || cmp.score > best) st.results[st.step] = cmp.score;
+          if (cmp.score >= RP_PASS && window.hwStarAnswer) {
+            window.hwStarAnswer(currentHubLesson.fullPageUrl + '|rp|' + idx + '|' + st.step);
+          }
+        } else if (!st.heard || st.heard.cmp) {
+          st.heard = { text: 'Máy chưa nghe thấy gì. Em bấm micro rồi nói to, rõ hơn nhé.' };
+        }
+        rpRender(host, scene, idx);
+      };
+      try { rec.start(); } catch (e) { return; }
+      rpRec = rec;
+      micB.textContent = '⏹ Nói xong';
+      micB.classList.add('is-rec');
+      if (statusEl) statusEl.innerHTML = '<span class="rp-rec-dot"></span> Đang nghe… em hãy nói câu của mình';
+    });
+  }
+
 
   /* ---------------- Listen practice (Luyen nghe: chon nghia / chon chu Han / hoi thoai) ---------------- */
 

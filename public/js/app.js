@@ -570,7 +570,7 @@
 
   function lessonProgressPct(levelId, lesson) {
     var tabIds = LEVEL_HUB_TABS[levelId] || [];
-    if (!tabIds.length || levelId === 'yct') return 0;
+    if (!tabIds.length) return 0;
     var done = tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
     return Math.round((done / tabIds.length) * 100);
   }
@@ -855,20 +855,7 @@
     hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
     hsk4: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
-    // YCT dung trang bai rieng (yct-engine.js): moi o mo thang trang bai tai dung phan do
-    yct: ['tuvung', 'vietchu', 'flashcard', 'noitu', 'ghepcap', 'dientu', 'dich', 'nghe', 'luyentap', 'diem']
-  };
-  var YCT_HUB_TAB_DEFS = {
-    tuvung: { label: 'Từ vựng', emoji: '📖', color: 'red' },
-    vietchu: { label: 'Viết chữ', emoji: '🔤', color: 'orange' },
-    flashcard: { label: 'Flashcard', emoji: '🃏', color: 'gold' },
-    noitu: { label: 'Nối từ', emoji: '🔗', color: 'green' },
-    ghepcap: { label: 'Ghép cặp', emoji: '🧠', color: 'teal' },
-    dientu: { label: 'Điền từ', emoji: '✏️', color: 'blue' },
-    dich: { label: 'Dịch', emoji: '✍️', color: 'indigo' },
-    nghe: { label: 'Nghe', emoji: '🎧', color: 'purple' },
-    luyentap: { label: 'Luyện tập', emoji: '📝', color: 'pink' },
-    diem: { label: 'Điểm', emoji: '📊', color: 'gold' }
+    yct: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate']
   };
 
   var currentHubLevelId = null;
@@ -911,8 +898,7 @@
     $('#lessonHubTitle').textContent = 'Bài ' + lesson.number + (lesson.titleHanzi ? ': ' + lesson.titleHanzi : '') + ' – ' + lesson.title;
 
     var tabIds = LEVEL_HUB_TABS[levelId] || [];
-    var isYct = levelId === 'yct';
-    var doneCount = isYct ? 0 : tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
+    var doneCount = tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
     var pct = tabIds.length ? Math.round((doneCount / tabIds.length) * 100) : 0;
     $('#hubProgressFill').style.width = pct + '%';
     $('#hubProgressPct').textContent = pct + '%';
@@ -925,25 +911,6 @@
 
     var grid = $('#hubTileGrid');
     grid.innerHTML = '';
-    if (isYct) {
-      // Trang YCT tu cham diem trong tab "Diem" nen o day khong co dau "da lam"
-      $('#hubProgressFill').parentNode.parentNode.hidden = true;
-      tabIds.forEach(function (tabId) {
-        var def = YCT_HUB_TAB_DEFS[tabId];
-        var tile = document.createElement('a');
-        tile.className = 'hub-tile';
-        tile.href = lesson.fullPageUrl + '#' + tabId;
-        tile.innerHTML =
-          '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
-          '<span class="hub-tile-label">' + def.label + '</span>' +
-          '<svg class="icon hub-tile-arrow" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg>';
-        grid.appendChild(tile);
-      });
-      $('#hubCtaWrap').innerHTML = '<a class="hub-cta" href="' + lesson.fullPageUrl + '">📖 Mở toàn bộ bài học</a>';
-      $('#lessonHub').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
-    }
-    $('#hubProgressFill').parentNode.parentNode.hidden = false;
     tabIds.forEach(function (tabId) {
       var def = HUB_TAB_DEFS[tabId];
       if (!def) return;

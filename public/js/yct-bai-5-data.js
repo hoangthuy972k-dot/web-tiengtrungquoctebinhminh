@@ -44,6 +44,64 @@ var vocabData = [
    ]},
 ];
 
+var wuData = [
+  {img:'🎂',label:'岁',py:'suì',letter:'A'},
+  {img:'📏',label:'大',py:'dà',letter:'B'},
+  {img:'➕',label:'也',py:'yě',letter:'C'},
+  {img:'🔢',label:'几岁',py:'jǐ suì',letter:'D'},
+  {img:'❓',label:'多大',py:'duō dà',letter:'E'},
+  {img:'📊',label:'多',py:'duō',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'Hỏi tuổi bạn nhỏ',
+   lines:[
+     {sp:0,zh:'乐乐，你几岁？',py:'Lèle, nǐ jǐ suì?',vn:'Lạc Lạc, bạn mấy tuổi?'},
+     {sp:1,zh:'我六岁。',py:'Wǒ liù suì.',vn:'Mình sáu tuổi.'},
+   ]},
+  {scene:'Hỏi tuổi anh trai',
+   lines:[
+     {sp:0,zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'},
+     {sp:1,zh:'他也六岁。',py:'Tā yě liù suì.',vn:'Anh ấy cũng sáu tuổi.'},
+   ]},
+  {scene:'So sánh tuổi với bạn mới',
+   lines:[
+     {sp:0,zh:'你几岁？',py:'Nǐ jǐ suì?',vn:'Bạn mấy tuổi?'},
+     {sp:1,zh:'我七岁。',py:'Wǒ qī suì.',vn:'Mình bảy tuổi.'},
+     {sp:0,zh:'我也七岁！',py:'Wǒ yě qī suì!',vn:'Mình cũng bảy tuổi!'},
+   ]},
+];
+
+// Điền từ — tình huống hỏi tuổi
+var fillData = [
+  {pre:'Con hỏi tuổi bạn nhỏ: “你',blank:'几',post:'岁？”',hint:'(mấy — hỏi trẻ em)',ans:'几'},
+  {pre:'Con nói tuổi mình: “我六',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁'},
+  {pre:'Con hỏi tuổi anh trai bạn: “你哥哥',blank:'多',post:'大？”',hint:'(bao nhiêu — hỏi người lớn hơn)',ans:'多'},
+  {pre:'Con nói ai đó cũng bằng tuổi mình: “他',blank:'也',post:'六岁。”',hint:'(cũng)',ans:'也'},
+  {pre:'Con hỏi tuổi bố: “你爸爸',blank:'多',post:'大？”',hint:'(bao nhiêu)',ans:'多'},
+  {pre:'Con so sánh: “妹妹小，哥哥',blank:'大',post:'。”',hint:'(to, lớn)',ans:'大'},
+  {pre:'Con xác nhận tuổi mình: “我七',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁'},
+  {pre:'Con nói mình giống bạn: “我',blank:'也',post:'七岁。”',hint:'(cũng)',ans:'也'},
+];
+
+// Sắp xếp — câu hỏi tuổi
+var sortData = [
+  {words:['你','几','岁','？'],ans:'你几岁？',audio:'你几岁？'},
+  {words:['我','六','岁','。'],ans:'我六岁。',audio:'我六岁。'},
+  {words:['你','哥哥','多','大','？'],ans:'你哥哥多大？',audio:'你哥哥多大？'},
+  {words:['他','也','六','岁','。'],ans:'他也六岁。',audio:'他也六岁。'},
+  {words:['我','七','岁','。'],ans:'我七岁。',audio:'我七岁。'},
+  {words:['我','也','七','岁','！'],ans:'我也七岁！',audio:'我也七岁！'},
+];
+
+var matchData = [
+  {left:'你几岁？',right:'我六岁。'},
+  {left:'你哥哥多大？',right:'他也六岁。'},
+  {left:'你妹妹几岁？',right:'她三岁。'},
+  {left:'你几岁？',right:'我七岁。'},
+  {left:'你也七岁吗？',right:'我也七岁。'},
+];
+
 // Trắc nghiệm — không audio
 var mcData = [
   {q:'你＿＿岁？(hỏi tuổi trẻ em)',opts:['几','多','哪','什么'],ans:0},
@@ -63,14 +121,63 @@ var mcData = [
   {q:'Câu nào ĐÚNG khi nói "Bạn mấy tuổi?"?',opts:['你几岁？','你多岁？','几你岁？','岁你几？'],ans:0},
 ];
 
-// Điền từ — tình huống hỏi tuổi
-var fillData = [
-  {pre:'Con hỏi tuổi bạn nhỏ: “你',blank:'几',post:'岁？”',hint:'(mấy — hỏi trẻ em)',ans:'几'},
-  {pre:'Con nói tuổi mình: “我六',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁'},
-  {pre:'Con hỏi tuổi anh trai bạn: “你哥哥',blank:'多',post:'大？”',hint:'(bao nhiêu — hỏi người lớn hơn)',ans:'多'},
-  {pre:'Con nói ai đó cũng bằng tuổi mình: “他',blank:'也',post:'六岁。”',hint:'(cũng)',ans:'也'},
-  {pre:'Con hỏi tuổi bố: “你爸爸',blank:'多',post:'大？”',hint:'(bao nhiêu)',ans:'多'},
-  {pre:'Con so sánh: “妹妹小，哥哥',blank:'大',post:'。”',hint:'(to, lớn)',ans:'大'},
-  {pre:'Con xác nhận tuổi mình: “我七',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁'},
-  {pre:'Con nói mình giống bạn: “我',blank:'也',post:'七岁。”',hint:'(cũng)',ans:'也'},
+var speakingData = {
+  t1:{
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    models:[
+      {zh:'你几岁？',py:'Nǐ jǐ suì?',vn:'Bạn mấy tuổi?'},
+      {zh:'我六岁。',py:'Wǒ liù suì.',vn:'Mình sáu tuổi.'},
+      {zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'},
+      {zh:'他也六岁。',py:'Tā yě liù suì.',vn:'Anh ấy cũng sáu tuổi.'},
+      {zh:'我也七岁！',py:'Wǒ yě qī suì!',vn:'Mình cũng bảy tuổi!'},
+    ],
+  },
+  t2:{
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    drills:[
+      {frame:'我＿＿岁。',frame_py:'Wǒ ___ suì.',vn:'Mình ＿＿ tuổi.',options:['六','七','八'],samples:['我六岁。','我七岁。','我八岁。']},
+    ],
+  },
+  t3:{
+    intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
+    tasks:[
+      {role:'🎂 Tình huống 1 — Hỏi tuổi bạn cùng lớp',
+       guide:'Con muốn biết bạn cùng lớp mấy tuổi.',
+       structure:['你几岁？','我＿＿岁。'],
+       sample:'你几岁？我六岁。',
+       sample_vn:'Bạn mấy tuổi? Mình sáu tuổi.',
+       note:'几岁 dùng để hỏi tuổi TRẺ EM (số nhỏ) — khi lớn lên các con sẽ học cách hỏi tuổi người lớn bằng 多大.'},
+      {role:'👨‍👦 Tình huống 2 — Hỏi tuổi anh trai của bạn',
+       guide:'Con hỏi bạn mình xem anh trai bạn ấy bao nhiêu tuổi.',
+       structure:['你哥哥多大？','他也＿＿岁。'],
+       sample:'你哥哥多大？他也六岁。',
+       sample_vn:'Anh trai bạn bao nhiêu tuổi? Anh ấy cũng sáu tuổi.',
+       note:'也 dùng khi hai người CÙNG chung một đặc điểm — ở đây là cùng tuổi.'},
+      {role:'🙋 Tình huống 3 — So sánh tuổi với bạn mới quen',
+       guide:'Con và bạn mới quen cùng nói tuổi của mình và nhận ra mình bằng tuổi nhau.',
+       structure:['你几岁？','我七岁。','我也七岁！'],
+       sample:'你几岁？我七岁。我也七岁！',
+       sample_vn:'Bạn mấy tuổi? Mình bảy tuổi. Mình cũng bảy tuổi!',
+       note:'Khi phát hiện mình giống bạn (cùng tuổi, cùng sở thích...), dùng 也 để nói "mình cũng vậy" — một cách kết bạn rất tự nhiên.'},
+    ],
+  },
+};
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:"Bạn mấy tuổi?", zh:"你几岁？", py:"Nǐ jǐ suì?"},
+  {vi:"Mình sáu tuổi.", zh:"我六岁。", py:"Wǒ liù suì."},
+  {vi:"Anh trai bạn bao nhiêu tuổi?", zh:"你哥哥多大？", py:"Nǐ gēge duō dà?"},
+  {vi:"Anh ấy cũng sáu tuổi.", zh:"他也六岁。", py:"Tā yě liù suì."},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:"Lạc Lạc, bạn mấy tuổi?", zh:"乐乐，你几岁？", py:"Lèle, nǐ jǐ suì?"},
+  {vi:"Mình bảy tuổi.", zh:"我七岁。", py:"Wǒ qī suì."},
+  {vi:"Mình cũng bảy tuổi!", zh:"我也七岁！", py:"Wǒ yě qī suì!"},
 ];

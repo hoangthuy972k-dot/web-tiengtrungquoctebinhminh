@@ -85,6 +85,64 @@ var vocabData = [
    ]},
 ];
 
+var wuData = [
+  {img:'🙋',label:'我',py:'wǒ',letter:'A'},
+  {img:'📛',label:'叫',py:'jiào',letter:'B'},
+  {img:'🤝',label:'认识',py:'rènshi',letter:'C'},
+  {img:'😄',label:'高兴',py:'gāoxìng',letter:'D'},
+  {img:'👧',label:'她',py:'tā',letter:'E'},
+  {img:'🚫',label:'不',py:'bù',letter:'F'},
+];
+
+var dialogData = [
+  {scene:'Làm quen bạn mới',
+   lines:[
+     {sp:0,zh:'你好！我叫乐乐，你叫什么？',py:'Nǐ hǎo! Wǒ jiào Lèle, nǐ jiào shénme?',vn:'Chào bạn! Mình tên là Lạc Lạc, bạn tên gì?'},
+     {sp:1,zh:'我叫甜甜。',py:'Wǒ jiào Tiántian.',vn:'Mình tên là Điềm Điềm.'},
+     {sp:0,zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'},
+   ]},
+  {scene:'Hỏi về một bạn khác',
+   lines:[
+     {sp:1,zh:'你认识她吗？',py:'Nǐ rènshi tā ma?',vn:'Bạn có quen cô ấy không?'},
+     {sp:0,zh:'不认识。',py:'Bú rènshi.',vn:'Mình không quen.'},
+   ]},
+  {scene:'Giới thiệu bạn thân',
+   lines:[
+     {sp:0,zh:'我叫甜甜。你叫什么？',py:'Wǒ jiào Tiántian. Nǐ jiào shénme?',vn:'Mình tên Điềm Điềm. Bạn tên gì?'},
+     {sp:1,zh:'我叫明明。认识你很高兴！',py:'Wǒ jiào Míngming. Rènshi nǐ hěn gāoxìng!',vn:'Mình tên Minh Minh. Quen được bạn mình rất vui!'},
+   ]},
+];
+
+// Điền từ — tình huống làm quen bạn mới
+var fillData = [
+  {pre:'Con hỏi tên bạn mới: “你',blank:'叫',post:'什么？”',hint:'(gọi, tên là)',ans:'叫'},
+  {pre:'Con giới thiệu tên mình: “',blank:'我',post:'叫甜甜。”',hint:'(tôi, tớ)',ans:'我'},
+  {pre:'Con nói vui khi quen bạn mới: “认识你，',blank:'很',post:'高兴！”',hint:'(rất)',ans:'很'},
+  {pre:'Con nói mình rất vui: “我很',blank:'高兴',post:'！”',hint:'(vui, phấn khởi)',ans:'高兴'},
+  {pre:'Con hỏi có quen một bạn nữ không: “你认识',blank:'她',post:'吗？”',hint:'(cô ấy, bạn ấy)',ans:'她'},
+  {pre:'Con tạo câu hỏi Có/Không: “你叫乐乐',blank:'吗',post:'？”',hint:'(trợ từ hỏi)',ans:'吗'},
+  {pre:'Con phủ định là không quen: “',blank:'不',post:'认识。”',hint:'(không, chẳng)',ans:'不'},
+  {pre:'Con xác nhận là mình quen: “我',blank:'认识',post:'她。”',hint:'(quen, biết)',ans:'认识'},
+];
+
+// Sắp xếp — câu làm quen & hỏi thăm
+var sortData = [
+  {words:['我','叫','乐乐','。'],ans:'我叫乐乐。',audio:'我叫乐乐。'},
+  {words:['你','叫','什么','？'],ans:'你叫什么？',audio:'你叫什么？'},
+  {words:['认识','你','，','很','高兴','！'],ans:'认识你，很高兴！',audio:'认识你，很高兴！'},
+  {words:['你','认识','她','吗','？'],ans:'你认识她吗？',audio:'你认识她吗？'},
+  {words:['我','不','认识','。'],ans:'我不认识。',audio:'我不认识。'},
+  {words:['我','叫','甜甜','，','你','叫','什么','？'],ans:'我叫甜甜，你叫什么？',audio:'我叫甜甜，你叫什么？'},
+];
+
+var matchData = [
+  {left:'你好！我叫乐乐，你叫什么？',right:'我叫甜甜。'},
+  {left:'认识你，很高兴！',right:'认识你，我很高兴！'},
+  {left:'你认识她吗？',right:'不认识。'},
+  {left:'你好吗？',right:'我很好！'},
+  {left:'你叫什么？',right:'我叫明明。'},
+];
+
 // Trắc nghiệm — không audio
 var mcData = [
   {q:'你＿＿什么？(hỏi tên)',opts:['叫','是','有','在'],ans:0},
@@ -104,14 +162,65 @@ var mcData = [
   {q:'Muốn nói vui khi quen ai đó, con dùng câu nào?',opts:['认识你，很高兴！','你好吗？','你叫什么？','你认识她吗？'],ans:0},
 ];
 
-// Điền từ — tình huống làm quen bạn mới
-var fillData = [
-  {pre:'Con hỏi tên bạn mới: “你',blank:'叫',post:'什么？”',hint:'(gọi, tên là)',ans:'叫'},
-  {pre:'Con giới thiệu tên mình: “',blank:'我',post:'叫甜甜。”',hint:'(tôi, tớ)',ans:'我'},
-  {pre:'Con nói vui khi quen bạn mới: “认识你，',blank:'很',post:'高兴！”',hint:'(rất)',ans:'很'},
-  {pre:'Con nói mình rất vui: “我很',blank:'高兴',post:'！”',hint:'(vui, phấn khởi)',ans:'高兴'},
-  {pre:'Con hỏi có quen một bạn nữ không: “你认识',blank:'她',post:'吗？”',hint:'(cô ấy, bạn ấy)',ans:'她'},
-  {pre:'Con tạo câu hỏi Có/Không: “你叫乐乐',blank:'吗',post:'？”',hint:'(trợ từ hỏi)',ans:'吗'},
-  {pre:'Con phủ định là không quen: “',blank:'不',post:'认识。”',hint:'(không, chẳng)',ans:'不'},
-  {pre:'Con xác nhận là mình quen: “我',blank:'认识',post:'她。”',hint:'(quen, biết)',ans:'认识'},
+var speakingData = {
+  t1:{
+    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    models:[
+      {zh:'你好！我叫乐乐，你叫什么？',py:'Nǐ hǎo! Wǒ jiào Lèle, nǐ jiào shénme?',vn:'Chào bạn! Mình tên là Lạc Lạc, bạn tên gì?'},
+      {zh:'我叫甜甜。',py:'Wǒ jiào Tiántian.',vn:'Mình tên là Điềm Điềm.'},
+      {zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'},
+      {zh:'你认识她吗？',py:'Nǐ rènshi tā ma?',vn:'Bạn có quen cô ấy không?'},
+      {zh:'不认识。',py:'Bú rènshi.',vn:'Mình không quen.'},
+    ],
+  },
+  t2:{
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    drills:[
+      {frame:'我叫＿＿。',frame_py:'Wǒ jiào ___.',vn:'Mình tên là ＿＿.',options:['乐乐','甜甜','明明'],samples:['我叫乐乐。','我叫甜甜。','我叫明明。']},
+    ],
+  },
+  t3:{
+    intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
+    tasks:[
+      {role:'🙋 Tình huống 1 — Làm quen bạn mới trong lớp',
+       guide:'Con gặp một bạn mới trong lớp, hãy hỏi tên bạn và giới thiệu tên mình.',
+       structure:['你好！我叫＿＿，你叫什么？','我叫＿＿。'],
+       sample:'你好！我叫乐乐，你叫什么？我叫甜甜。',
+       sample_vn:'Chào bạn! Mình tên là Lạc Lạc, bạn tên gì? Mình tên là Điềm Điềm.',
+       note:'Khi làm quen, con nên nói tên mình trước rồi mới hỏi tên bạn — đây là cách làm quen lịch sự và tự nhiên.'},
+      {role:'😄 Tình huống 2 — Bày tỏ niềm vui khi quen bạn mới',
+       guide:'Sau khi biết tên bạn mới, hãy nói con rất vui vì được quen bạn ấy.',
+       structure:['认识你，很高兴！'],
+       sample:'认识你，很高兴！',
+       sample_vn:'Quen được bạn, mình vui lắm!',
+       note:'认识你，很高兴！ là câu nói RẤT PHỔ BIẾN khi làm quen ai đó lần đầu — con nên thuộc lòng câu này.'},
+      {role:'❓ Tình huống 3 — Hỏi thăm xem có quen ai đó không',
+       guide:'Con muốn biết bạn mình có quen một bạn nữ khác trong lớp không.',
+       structure:['你认识她吗？','不认识。'],
+       sample:'你认识她吗？不认识。',
+       sample_vn:'Bạn có quen cô ấy không? Mình không quen.',
+       note:'Thêm 吗 vào cuối câu là cách đơn giản nhất để biến một câu nói thành câu HỎI Có/Không.'},
+    ],
+  },
+};
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
+// ══════════════════════════════════════════
+var translateData = [
+  {vi:"Mình tên là Lạc Lạc.", zh:"我叫乐乐。", py:"Wǒ jiào Lèle."},
+  {vi:"Bạn tên gì?", zh:"你叫什么？", py:"Nǐ jiào shénme?"},
+  {vi:"Quen được bạn, mình vui lắm!", zh:"认识你，很高兴！", py:"Rènshi nǐ, hěn gāoxìng!"},
+  {vi:"Bạn có quen cô ấy không?", zh:"你认识她吗？", py:"Nǐ rènshi tā ma?"},
+  {vi:"Mình không quen.", zh:"不认识。", py:"Bú rènshi."},
+];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
+// ══════════════════════════════════════════
+var translateDataRev = [
+  {vi:"Chào bạn! Mình tên là Lạc Lạc, bạn tên gì?", zh:"你好！我叫乐乐，你叫什么？", py:"Nǐ hǎo! Wǒ jiào Lèle, nǐ jiào shénme?"},
+  {vi:"Mình tên là Điềm Điềm.", zh:"我叫甜甜。", py:"Wǒ jiào Tiántian."},
+  {vi:"Mình tên Điềm Điềm. Bạn tên gì?", zh:"我叫甜甜。你叫什么？", py:"Wǒ jiào Tiántian. Nǐ jiào shénme?"},
+  {vi:"Mình tên Minh Minh. Quen được bạn mình rất vui!", zh:"我叫明明。认识你很高兴！", py:"Wǒ jiào Míngming. Rènshi nǐ hěn gāoxìng!"},
 ];

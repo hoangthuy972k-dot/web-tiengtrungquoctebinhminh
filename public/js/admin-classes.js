@@ -54,12 +54,31 @@
       .sort(function (a, b) { return (a.name || '').localeCompare(b.name || '', 'vi'); });
   }
   // Trang thai cua 1 bai giao voi tung hoc sinh trong lop
+  function rosterOf(classId) {
+    return (T.classes().roster || []).filter(function (r) { return r.classId === classId; })
+      .sort(function (a, b) { return a.sort - b.sort; });
+  }
+  // Moi dong = 1 hoc sinh cua lop: theo danh sach lop (ke ca em chua vao lop),
+  // cong them tai khoan da vao lop nhung chua gan ten trong danh sach.
+  function classRows(classId) {
+    var C = T.classes();
+    var byId = studentsById();
+    var rows = [];
+    var linked = {};
+    rosterOf(classId).forEach(function (r) {
+      var s = r.userId && byId[r.userId] && C.members[r.userId] && C.members[r.userId].classId === classId ? byId[r.userId] : null;
+      if (r.userId) linked[r.userId] = 1;
+      rows.push({ name: r.name, r: r, s: s });
+    });
+    membersOf(classId).forEach(function (s) { if (!linked[s.id]) rows.push({ name: s.name, r: null, s: s, extra: true }); });
+    return rows;
+  }
   function assignRows(a) {
     var C = T.classes();
-    return membersOf(a.classId).map(function (s) {
-      var d = (C.done[s.id] || {})[a.lessonUrl];
-      var status = d ? (d.firstMs <= a.dueMs ? 'done' : 'late') : (C.now > a.dueMs ? 'overdue' : 'todo');
-      return { s: s, d: d, status: status };
+    return classRows(a.classId).map(function (row) {
+      var d = row.s ? (C.done[row.s.id] || {})[a.lessonUrl] : null;
+      var status = d ? (d.firstMs <= a.dueMs ? 'done' : 'late') : (!row.s ? 'nojoin' : C.now > a.dueMs ? 'overdue' : 'todo');
+      return { name: row.name, s: row.s, d: d, status: status };
     });
   }
 
@@ -76,7 +95,7 @@
 
   function classesSection(C) {
     var cards = C.classes.map(function (c) {
-      var n = membersOf(c.id).length;
+      var n = classRows(c.id).length;
       var na = C.assignments.filter(function (a) { return a.classId === c.id; }).length;
       return '<div class="tc-card' + (c.id === selClass ? ' is-sel' : '') + '">' +
         '<div class="tc-card-top"><button type="button" class="tc-name" data-sel="' + esc(c.id) + '">' + esc(c.name) + '</button>' +
@@ -121,7 +140,7 @@
   }
 
   function tally(rows) {
-    var t = { done: 0, late: 0, todo: 0, overdue: 0 };
+    var t = { done: 0, late: 0, todo: 0, overdue: 0, nojoin: 0 };
     rows.forEach(function (r) { t[r.status]++; });
     return t;
   }
@@ -130,8 +149,11 @@
     var tabs = C.classes.map(function (c) {
       return '<button type="button" class="tc-ctab' + (c.id === selClass ? ' active' : '') + '" data-sel="' + esc(c.id) + '">' + esc(c.name) + '</button>';
     }).join('');
-    var list = C.assignments.filter(function (a) { return a.classId === selClass; })
-      .sort(function (a, b) { return b.dueMs - a.dueMs; });
+    var ordered = C.assignments.filter(function (a) { return a.classId === selClass; })
+      .sort(function (a, b) { return a.createdMs - b.createdMs || a.dueMs - b.dueMs; });
+    var sessionOf = {};
+    ordered.forEach(function (a, n) { sessionOf[a.id] = n + 1; });
+    var list = ordered.slice().reverse();
     var body = list.length ? list.map(function (a) {
       var rows = assignRows(a);
       var t = tally(rows);
@@ -140,13 +162,13 @@
       var isOpen = openAssign === a.id;
       return '<div class="tc-as' + (isOpen ? ' is-open' : '') + '">' +
         '<div class="tc-as-head">' +
-          '<div class="tc-as-info"><div class="tc-as-title">' + esc(lessonLabel(a.lessonUrl)) + '</div>' +
+          '<div class="tc-as-info"><div class="tc-as-title"><span class="tc-session">Buổi ' + sessionOf[a.id] + '</span> ' + esc(lessonLabel(a.lessonUrl)) + '</div>' +
             '<div class="tr-muted">Hạn ' + vnDate(a.dueMs, true) + (past ? ' · <b class="tc-past">đã hết hạn</b>' : '') + (a.note ? ' · 📝 ' + esc(a.note) : '') + '</div></div>' +
           '<div class="tc-as-stat"><b>' + (t.done + t.late) + '/' + rows.length + '</b> đã làm</div>' +
         '</div>' +
         '<div class="tc-bar" aria-hidden="true"><i class="is-done" style="width:' + (100 * t.done / n) + '%"></i><i class="is-late" style="width:' + (100 * t.late / n) + '%"></i></div>' +
         '<div class="tc-legend"><span class="tc-dot is-done"></span>Đúng hạn ' + t.done + ' <span class="tc-dot is-late"></span>Nộp muộn ' + t.late +
-          ' <span class="tc-dot is-todo"></span>' + (past ? 'Không làm ' : 'Chưa làm ') + (t.todo + t.overdue) + '</div>' +
+          ' <span class="tc-dot is-todo"></span>' + (past ? 'Không làm ' : 'Chưa làm ') + (t.todo + t.overdue + t.nojoin) + (t.nojoin ? ' <span class="tr-muted">(' + t.nojoin + ' em chưa vào lớp)</span>' : '') + '</div>' +
         '<div class="tc-as-actions">' +
           '<button type="button" class="tc-mini" data-open="' + esc(a.id) + '">' + (isOpen ? 'Ẩn danh sách' : 'Xem từng em') + '</button>' +
           '<button type="button" class="tc-mini" data-csv="' + esc(a.id) + '">⬇ CSV</button>' +
@@ -164,6 +186,7 @@
     var groups = [
       { key: 'todo', label: '⏳ Chưa làm (còn hạn)' },
       { key: 'overdue', label: '⚠️ Quá hạn chưa làm' },
+      { key: 'nojoin', label: '🚪 Chưa vào lớp trên web' },
       { key: 'late', label: '🕘 Nộp muộn' },
       { key: 'done', label: '✅ Đúng hạn' }
     ];
@@ -174,7 +197,7 @@
       return '<div class="tc-group"><div class="tc-group-h">' + g.label + ' · ' + list.length + '</div><ul>' +
         list.map(function (r) {
           var sc = r.d && r.d.total ? Math.round(100 * r.d.correct / r.d.total) : null;
-          return '<li><button type="button" class="tc-stu" data-stu="' + esc(r.s.id) + '">' + esc(r.s.name) + '</button>' +
+          return '<li>' + (r.s ? '<button type="button" class="tc-stu" data-stu="' + esc(r.s.id) + '">' + esc(r.name) + '</button>' : '<span class="tc-stu is-out">' + esc(r.name) + '</span>') +
             (r.d ? ' <span class="tc-score ' + (sc >= 80 ? 'is-good' : sc >= 60 ? 'is-mid' : 'is-low') + '">' + r.d.correct + '/' + r.d.total + '</span>' +
               ' <span class="tr-muted">' + vnDate(r.d.firstMs) + '</span>' : '') + '</li>';
         }).join('') + '</ul></div>';
@@ -183,7 +206,10 @@
 
   function membersSection(C) {
     var cls = C.classes.filter(function (c) { return c.id === selClass; })[0];
-    var mem = membersOf(selClass);
+    var roster = rosterOf(selClass);
+    var rows = classRows(selClass);
+    var joined = rows.filter(function (r) { return r.s; }).length;
+    var freeNames = roster.filter(function (r) { return !r.userId; });
     var none = (T.data().students || []).filter(function (s) { return !C.members[s.id]; })
       .sort(function (a, b) { return (a.name || '').localeCompare(b.name || '', 'vi'); });
     function moveSel(s, cur) {
@@ -192,17 +218,44 @@
         C.classes.filter(function (c) { return c.id !== cur; }).map(function (c) { return '<option value="' + esc(c.id) + '">' + esc(c.name) + '</option>'; }).join('') +
         (cur ? '<option value="__out">Cho ra khỏi lớp</option>' : '') + '</select>';
     }
-    return '<section class="admin-section"><div class="admin-section-title">👥 Học sinh lớp ' + esc(cls ? cls.name : '') + ' · ' + mem.length + '</div>' +
-      (mem.length ? '<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Học sinh</th><th>Vào lớp</th><th>Học gần nhất</th><th></th></tr></thead><tbody>' +
-        mem.map(function (s) {
-          var j = C.members[s.id];
-          return '<tr><td><button type="button" class="tc-stu" data-stu="' + esc(s.id) + '">' + esc(s.name) + '</button><div class="tr-email">' + esc(s.email) + '</div></td>' +
-            '<td>' + (j ? vnDate(j.joinedMs) : '—') + '</td>' +
-            '<td>' + (s.lastActive ? vnDate(new Date(s.lastActive).getTime()) : 'Chưa học') + '</td>' +
-            '<td>' + moveSel(s, selClass) + '</td></tr>';
+    // Tai khoan da vao lop ma chua gan ten -> giao vien chon ten cho em do
+    function linkSel(s) {
+      if (!freeNames.length) return '';
+      return '<select class="tc-link" data-user="' + esc(s.id) + '" aria-label="Gắn tên cho ' + esc(s.name) + '">' +
+        '<option value="">Gắn với tên trong danh sách…</option>' +
+        freeNames.map(function (r) { return '<option value="' + esc(r.id) + '">' + esc(r.name) + '</option>'; }).join('') + '</select>';
+    }
+    var table = rows.length
+      ? '<div class="admin-table-wrap"><table class="admin-table tc-roster"><thead><tr><th>#</th><th>Học sinh</th><th>Tài khoản trên web</th><th>Học gần nhất</th><th></th></tr></thead><tbody>' +
+        rows.map(function (row, i) {
+          var s = row.s;
+          var acc = s
+            ? '<button type="button" class="tc-stu" data-stu="' + esc(s.id) + '">✅ ' + esc(s.name) + '</button><div class="tr-email">' + esc(s.email) + '</div>'
+            : '<span class="tc-nojoin">Chưa vào lớp</span>';
+          var actions = [];
+          if (row.r) {
+            actions.push('<button type="button" class="tc-mini" data-rn="' + esc(row.r.id) + '">Sửa tên</button>');
+            if (row.r.userId) actions.push('<button type="button" class="tc-mini" data-unlink="' + esc(row.r.id) + '">Gỡ tài khoản</button>');
+            actions.push('<button type="button" class="tc-mini is-danger" data-delr="' + esc(row.r.id) + '">Xoá tên</button>');
+          }
+          if (s) actions.push(moveSel(s, selClass));
+          if (row.extra) actions.push(linkSel(s));
+          return '<tr class="' + (s ? '' : 'is-out') + (row.extra ? ' is-extra' : '') + '"><td class="tr-muted">' + (i + 1) + '</td>' +
+            '<td><b>' + esc(row.name) + '</b>' + (row.extra ? ' <span class="tc-extra">chưa có trong danh sách</span>' : '') + '</td>' +
+            '<td>' + acc + '</td>' +
+            '<td>' + (s && s.lastActive ? vnDate(new Date(s.lastActive).getTime()) : '—') + '</td>' +
+            '<td><div class="tc-row-actions">' + actions.join('') + '</div></td></tr>';
         }).join('') + '</tbody></table></div>'
-        : '<p class="tr-muted">Chưa có học sinh nào vào lớp này. Đưa mã lớp <b>' + esc(cls ? cls.code : '') + '</b> cho học sinh nhé.</p>') +
-      (none.length ? '<details class="tc-none"><summary>Học sinh chưa vào lớp nào (' + none.length + ')</summary><ul>' +
+      : '<p class="tr-muted">Lớp chưa có ai. Dán danh sách lớp ở dưới, rồi đưa mã lớp <b>' + esc(cls ? cls.code : '') + '</b> cho học sinh.</p>';
+    return '<section class="admin-section"><div class="admin-section-title">👥 Danh sách lớp ' + esc(cls ? cls.name : '') +
+        ' · <span class="' + (joined < rows.length ? 'tc-past' : '') + '">' + joined + '/' + rows.length + ' em đã vào lớp</span></div>' +
+      (roster.length ? '<p class="tr-hint">Khi nhập mã lớp, học sinh chọn đúng tên mình trong danh sách này. Em nào chọn nhầm tên: bấm <b>Gỡ tài khoản</b> ở tên đó.</p>' : '') +
+      table +
+      '<details class="tc-none tc-paste"' + (roster.length ? '' : ' open') + '><summary>📋 ' + (roster.length ? 'Thêm tên vào danh sách lớp' : 'Dán danh sách lớp') + '</summary>' +
+        '<p class="tr-hint">Mỗi dòng 1 học sinh. Copy thẳng từ Excel cũng được (cột STT, lớp… tự bỏ). Tên viết HOA sẽ tự đổi thành "Nguyễn Văn An". Tên đã có sẽ bỏ qua.</p>' +
+        '<textarea id="tcRosterText" rows="8" placeholder="1. Lương Kim Chi&#10;2. Phan Minh Thông&#10;…"></textarea>' +
+        '<button type="button" class="btn btn-primary" id="tcRosterAdd">Thêm vào danh sách</button></details>' +
+      (none.length ? '<details class="tc-none"><summary>Tài khoản chưa vào lớp nào (' + none.length + ')</summary><ul>' +
         none.map(function (s) { return '<li><span>' + esc(s.name) + ' <span class="tr-muted">' + esc(s.email) + '</span></span>' + moveSel(s, null) + '</li>'; }).join('') +
         '</ul></details>' : '') +
     '</section>';
@@ -316,6 +369,38 @@
     $all('[data-stu]', box).forEach(function (b) {
       b.addEventListener('click', function () { T.openStudent(b.getAttribute('data-stu')); });
     });
+    var addBtn = $('#tcRosterAdd', box);
+    if (addBtn) addBtn.addEventListener('click', function () {
+      var text = $('#tcRosterText', box).value;
+      if (!text.trim() || busy) return;
+      run(api('POST', '/api/admin/roster', { classId: selClass, text: text })).then(function (d) {
+        if (d && d.ok) alert('Đã thêm ' + d.added + ' tên vào danh sách lớp.' + (d.skipped.length ? ' Bỏ qua ' + d.skipped.length + ' tên đã có: ' + d.skipped.join(', ') : ''));
+      });
+    });
+    $all('[data-rn]', box).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var r = (C.roster || []).filter(function (x) { return x.id === b.getAttribute('data-rn'); })[0];
+        var name = window.prompt('Sửa tên học sinh:', r.name);
+        if (name && name.trim() && name.trim() !== r.name) run(api('POST', '/api/admin/roster/' + r.id, { name: name.trim() }));
+      });
+    });
+    $all('[data-unlink]', box).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (window.confirm('Gỡ tài khoản khỏi tên này? Học sinh đó sẽ phải chọn lại tên khi vào trang chủ.')) {
+          run(api('POST', '/api/admin/roster/' + b.getAttribute('data-unlink'), { unlink: true }));
+        }
+      });
+    });
+    $all('[data-delr]', box).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (window.confirm('Xoá tên này khỏi danh sách lớp?')) run(api('DELETE', '/api/admin/roster/' + b.getAttribute('data-delr')));
+      });
+    });
+    $all('.tc-link', box).forEach(function (sel) {
+      sel.addEventListener('change', function () {
+        if (sel.value) run(api('POST', '/api/admin/roster/' + sel.value, { userId: sel.getAttribute('data-user') }));
+      });
+    });
     $all('.tc-move', box).forEach(function (sel) {
       sel.addEventListener('change', function () {
         var v = sel.value;
@@ -326,10 +411,10 @@
   }
 
   function csvAssign(a) {
-    var STATUS = { done: 'Đúng hạn', late: 'Nộp muộn', todo: 'Chưa làm', overdue: 'Quá hạn chưa làm' };
+    var STATUS = { done: 'Đúng hạn', late: 'Nộp muộn', todo: 'Chưa làm', overdue: 'Quá hạn chưa làm', nojoin: 'Chưa vào lớp trên web' };
     var rows = [['Học sinh', 'Email', 'Trạng thái', 'Điểm Kiểm tra cuối', 'Ngày làm']];
     assignRows(a).forEach(function (r) {
-      rows.push([r.s.name, r.s.email, STATUS[r.status], r.d ? r.d.correct + '/' + r.d.total : '', r.d ? vnDate(r.d.firstMs) : '']);
+      rows.push([r.name, r.s ? r.s.email : '', STATUS[r.status], r.d ? r.d.correct + '/' + r.d.total : '', r.d ? vnDate(r.d.firstMs) : '']);
     });
     var text = '﻿' + lessonLabel(a.lessonUrl) + ' · hạn ' + vnDate(a.dueMs) + '\n' + rows.map(function (r) {
       return r.map(function (v) { v = String(v == null ? '' : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',');

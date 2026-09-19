@@ -2095,6 +2095,12 @@ function newShortId() { return crypto.randomBytes(6).toString('hex'); }
 
 async function initClassTables() {
   await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS class_roster (' +
+      'id VARCHAR(16) PRIMARY KEY, class_id VARCHAR(16) NOT NULL, name VARCHAR(100) NOT NULL, ' +
+      'user_id VARCHAR(36) NULL, sort INT NOT NULL DEFAULT 0, INDEX idx_class (class_id), INDEX idx_user (user_id)' +
+    ')'
+  );
+  await dbPool.query(
     'CREATE TABLE IF NOT EXISTS classes (' +
       'id VARCHAR(16) PRIMARY KEY, name VARCHAR(100) NOT NULL, code VARCHAR(12) NOT NULL UNIQUE, created_ms BIGINT NOT NULL' +
     ')'
@@ -2124,7 +2130,7 @@ async function initClassTables() {
 
 function readClassFile() {
   const d = readJsonFile(CLASSES_FILE) || {};
-  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], done: d.done || {} };
+  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {} };
 }
 
 // Toan bo trang thai lop (du nho: vai lop, vai tram hoc sinh)
@@ -2133,12 +2139,14 @@ async function loadClassState() {
   const [c] = await dbPool.query('SELECT * FROM classes ORDER BY created_ms');
   const [m] = await dbPool.query('SELECT * FROM class_members');
   const [a] = await dbPool.query('SELECT * FROM assignments ORDER BY due_ms');
+  const [ro] = await dbPool.query('SELECT * FROM class_roster ORDER BY sort');
   const members = {};
   m.forEach((r) => { members[r.user_id] = { classId: r.class_id, joinedMs: Number(r.joined_ms) }; });
   return {
     classes: c.map((r) => ({ id: r.id, name: r.name, code: r.code, createdMs: Number(r.created_ms) })),
     members,
     assignments: a.map((r) => ({ id: r.id, classId: r.class_id, lessonUrl: r.lesson_url, note: r.note || '', dueMs: Number(r.due_ms), createdMs: Number(r.created_ms) })),
+    roster: ro.map((r) => ({ id: r.id, classId: r.class_id, name: r.name, userId: r.user_id || null, sort: r.sort })),
   };
 }
 async function loadLessonDone(userIds) {
@@ -2211,6 +2219,43 @@ function dueMsFromDate(s) {
 // ---------- Phia hoc sinh ----------
 const joinAttempts = new Map(); // userId -> [ms...] chong do ma lop
 
+// Buoi 1, 2, 3... = thu tu giao bai cua lop
+function numberedAssignments(st, classId) {
+  return st.assignments.filter((a) => a.classId === classId)
+    .sort((a, b) => a.createdMs - b.createdMs || a.dueMs - b.dueMs)
+    .map((a, i) => Object.assign({ session: i + 1 }, a));
+}
+
+// Bang lop cho hoc sinh: danh sach lop (theo thu tu giao vien dan) + ai da lam bai nao.
+// Chi tra ten va trang thai (khong tra email / diem cua ban khac).
+async function classBoard(st, classId, meId) {
+  const list = numberedAssignments(st, classId);
+  const roster = st.roster.filter((r) => r.classId === classId).sort((a, b) => a.sort - b.sort);
+  const memberIds = Object.keys(st.members).filter((u) => st.members[u].classId === classId);
+  const linked = new Set(roster.map((r) => r.userId).filter(Boolean));
+  const users = await loadUsers();
+  const nameById = {};
+  users.forEach((u) => { nameById[u.id] = u.name; });
+  const done = await loadLessonDone(memberIds);
+  const now = Date.now();
+  function marks(userId) {
+    if (!userId || !st.members[userId] || st.members[userId].classId !== classId) return null;
+    const d = done[userId] || {};
+    return list.map((a) => {
+      const x = d[a.lessonUrl];
+      return x ? (x.firstMs <= a.dueMs ? 'done' : 'late') : (now > a.dueMs ? 'overdue' : 'todo');
+    });
+  }
+  const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId) }));
+  // Hoc sinh da vao lop nhung chua co ten trong danh sach (hoac lop chua co danh sach)
+  memberIds.filter((u) => !linked.has(u) && nameById[u]).sort((a, b) => nameById[a].localeCompare(nameById[b], 'vi'))
+    .forEach((u) => rows.push({ name: nameById[u], me: u === meId, joined: true, extra: roster.length > 0, marks: marks(u) }));
+  return {
+    sessions: list.map((a) => ({ id: a.id, session: a.session, lessonUrl: a.lessonUrl, dueMs: a.dueMs })),
+    rows,
+  };
+}
+
 app.get('/api/class/me', requireAuth, asyncRoute(async (req, res) => {
   const st = await loadClassState();
   const mem = st.members[req.user.id];
@@ -2218,12 +2263,54 @@ app.get('/api/class/me', requireAuth, asyncRoute(async (req, res) => {
   if (!cls) return res.json({ class: null, assignments: [] });
   const done = (await loadLessonDone([req.user.id]))[req.user.id] || {};
   const now = Date.now();
-  const list = st.assignments.filter((a) => a.classId === cls.id).map((a) => Object.assign({
-    id: a.id, lessonUrl: a.lessonUrl, note: a.note, dueMs: a.dueMs, createdMs: a.createdMs,
+  const list = numberedAssignments(st, cls.id).map((a) => Object.assign({
+    id: a.id, session: a.session, lessonUrl: a.lessonUrl, note: a.note, dueMs: a.dueMs, createdMs: a.createdMs,
   }, assignmentStatus(a, done[a.lessonUrl], now)));
-  res.json({ class: { id: cls.id, name: cls.name }, assignments: list });
+  const roster = st.roster.filter((r) => r.classId === cls.id);
+  const mine = roster.find((r) => r.userId === req.user.id);
+  const out = { class: { id: cls.id, name: cls.name }, assignments: list, board: await classBoard(st, cls.id, req.user.id) };
+  // Lop co danh sach ma em chua chon ten minh -> hien o chon ten
+  if (roster.length && !mine) {
+    out.needPick = true;
+    out.roster = roster.sort((a, b) => a.sort - b.sort).map((r) => ({ id: r.id, name: r.name, taken: !!r.userId }));
+  }
+  res.json(out);
 }));
 
+// Gan 1 ten trong danh sach lop cho tai khoan (ten da co nguoi chon thi khong chon duoc)
+async function claimRoster(st, userId, classId, rosterId) {
+  const r = st.roster.find((x) => x.id === rosterId && x.classId === classId);
+  if (!r) return 'Không tìm thấy tên này trong danh sách lớp.';
+  if (r.userId && r.userId !== userId) return 'Tên này đã có bạn khác chọn. Nếu đó là tên của em, báo thầy cô để gỡ nhé.';
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.roster.forEach((x) => { if (x.userId === userId) x.userId = null; });
+    d.roster.find((x) => x.id === rosterId).userId = userId;
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('UPDATE class_roster SET user_id = NULL WHERE user_id = ?', [userId]);
+    const [r2] = await dbPool.query('UPDATE class_roster SET user_id = ? WHERE id = ? AND (user_id IS NULL OR user_id = ?)', [userId, rosterId, userId]);
+    if (!r2.affectedRows) return 'Tên này vừa có bạn khác chọn.';
+  }
+  return null;
+}
+
+async function setMember(userId, classId) {
+  const now = Date.now();
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.members[userId] = { classId, joinedMs: now };
+    d.roster.forEach((x) => { if (x.userId === userId && x.classId !== classId) x.userId = null; });
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('INSERT INTO class_members (user_id, class_id, joined_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE class_id = VALUES(class_id), joined_ms = VALUES(joined_ms)',
+      [userId, classId, now]);
+    await dbPool.query('UPDATE class_roster SET user_id = NULL WHERE user_id = ? AND class_id <> ?', [userId, classId]);
+  }
+}
+
+// B1: gui { code } -> lop co danh sach thi tra ve danh sach de chon ten (chua vao lop).
+// B2: gui { code, rosterId } -> chon ten + vao lop. Lop khong co danh sach thi vao luon o B1.
 app.post('/api/class/join', requireAuth, asyncRoute(async (req, res) => {
   const now = Date.now();
   const recent = (joinAttempts.get(req.user.id) || []).filter((t) => now - t < 10 * 60 * 1000);
@@ -2236,15 +2323,113 @@ app.post('/api/class/join', requireAuth, asyncRoute(async (req, res) => {
     joinAttempts.set(req.user.id, recent);
     return res.status(404).json({ error: 'Không tìm thấy lớp có mã này. Kiểm tra lại mã thầy cô đưa nhé.' });
   }
+  const roster = st.roster.filter((r) => r.classId === cls.id).sort((a, b) => a.sort - b.sort);
+  const rosterId = req.body?.rosterId ? String(req.body.rosterId) : '';
+  if (roster.length && !rosterId) {
+    return res.json({ needPick: true, class: { id: cls.id, name: cls.name },
+      roster: roster.map((r) => ({ id: r.id, name: r.name, taken: !!r.userId && r.userId !== req.user.id })) });
+  }
+  if (roster.length) {
+    const err = await claimRoster(st, req.user.id, cls.id, rosterId);
+    if (err) return res.status(409).json({ error: err });
+  }
+  await setMember(req.user.id, cls.id);
+  res.json({ ok: true, class: { id: cls.id, name: cls.name } });
+}));
+
+// Hoc sinh da o trong lop nhung chua chon ten (lop them danh sach sau)
+app.post('/api/class/claim', requireAuth, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const mem = st.members[req.user.id];
+  if (!mem) return res.status(400).json({ error: 'Em chưa vào lớp nào.' });
+  const err = await claimRoster(st, req.user.id, mem.classId, String(req.body?.rosterId || ''));
+  if (err) return res.status(409).json({ error: err });
+  res.json({ ok: true });
+}));
+
+// ---------- Danh sach lop (giao vien dan tu Excel / Word) ----------
+// Bo so thu tu, cot rong; dong copy tu Excel co nhieu cot thi lay cot dai nhat khong phai so.
+function cleanRosterNames(raw) {
+  const out = [];
+  String(raw || '').split(/\r?\n/).forEach((line) => {
+    const cells = line.split('\t').map((c) => c.trim()).filter(Boolean);
+    let name = cells.length > 1
+      ? cells.filter((c) => !/^[\d.,/\-\s]+$/.test(c) && !/@/.test(c)).sort((a, b) => b.length - a.length)[0] || ''
+      : (cells[0] || '');
+    name = name.replace(/^\s*\d+\s*[.)\-:]\s*/, '').replace(/\s+/g, ' ').trim().slice(0, 100);
+    // Ten viet HOA toan bo (hay gap khi copy tu so diem) -> "Luong Kim Chi"
+    if (name && name === name.toLocaleUpperCase('vi') && /[A-ZÀ-Ỹ]/.test(name)) {
+      name = name.toLocaleLowerCase('vi').replace(/(^|\s)(\S)/g, (m, sp, ch) => sp + ch.toLocaleUpperCase('vi'));
+    }
+    if (name && !/^(stt|họ và tên|họ tên|ho va ten|tên|name)$/i.test(name)) out.push(name);
+  });
+  return out.slice(0, 300);
+}
+
+app.post('/api/admin/roster', requireAdmin, asyncRoute(async (req, res) => {
+  const classId = String(req.body?.classId || '');
+  const st = await loadClassState();
+  if (!st.classes.some((c) => c.id === classId)) return res.status(404).json({ error: 'Không tìm thấy lớp.' });
+  const names = cleanRosterNames(req.body?.text);
+  if (!names.length) return res.status(400).json({ error: 'Không đọc được tên nào. Mỗi dòng 1 học sinh nhé.' });
+  const existing = st.roster.filter((r) => r.classId === classId);
+  const have = new Set(existing.map((r) => r.name.toLowerCase()));
+  let sort = existing.reduce((m, r) => Math.max(m, r.sort), 0);
+  const added = [];
+  const skipped = [];
+  names.forEach((n) => {
+    if (have.has(n.toLowerCase())) { skipped.push(n); return; }
+    have.add(n.toLowerCase());
+    added.push({ id: newShortId(), classId, name: n, userId: null, sort: ++sort });
+  });
   if (!USE_DB) {
     const d = readClassFile();
-    d.members[req.user.id] = { classId: cls.id, joinedMs: now };
+    d.roster = d.roster.concat(added);
     writeJsonFile(CLASSES_FILE, d);
   } else {
-    await dbPool.query('INSERT INTO class_members (user_id, class_id, joined_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE class_id = VALUES(class_id), joined_ms = VALUES(joined_ms)',
-      [req.user.id, cls.id, now]);
+    for (const r of added) {
+      await dbPool.query('INSERT INTO class_roster (id, class_id, name, user_id, sort) VALUES (?,?,?,?,?)', [r.id, r.classId, r.name, null, r.sort]);
+    }
   }
-  res.json({ ok: true, class: { id: cls.id, name: cls.name } });
+  res.json({ ok: true, added: added.length, skipped });
+}));
+
+// Sua ten / go lien ket tai khoan
+app.post('/api/admin/roster/:id', requireAdmin, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const r = st.roster.find((x) => x.id === req.params.id);
+  if (!r) return res.status(404).json({ error: 'Không tìm thấy tên này.' });
+  const name = req.body?.name != null ? String(req.body.name).replace(/\s+/g, ' ').trim().slice(0, 100) : r.name;
+  if (!name) return res.status(400).json({ error: 'Tên không được để trống.' });
+  let userId = req.body?.unlink ? null : r.userId;
+  if (req.body?.userId) {
+    const users = await loadUsers();
+    if (!users.some((u) => u.id === String(req.body.userId))) return res.status(404).json({ error: 'Không tìm thấy tài khoản.' });
+    userId = String(req.body.userId);
+    const other = st.roster.find((x) => x.userId === userId && x.id !== r.id);
+    if (other) return res.status(409).json({ error: 'Tài khoản này đang gắn với tên "' + other.name + '". Gỡ ở đó trước nhé.' });
+    await setMember(userId, r.classId);
+  }
+  if (!USE_DB) {
+    const d = readClassFile();
+    const x = d.roster.find((y) => y.id === r.id);
+    x.name = name; x.userId = userId;
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('UPDATE class_roster SET name = ?, user_id = ? WHERE id = ?', [name, userId, r.id]);
+  }
+  res.json({ ok: true });
+}));
+
+app.delete('/api/admin/roster/:id', requireAdmin, asyncRoute(async (req, res) => {
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.roster = d.roster.filter((x) => x.id !== req.params.id);
+    writeJsonFile(CLASSES_FILE, d);
+  } else {
+    await dbPool.query('DELETE FROM class_roster WHERE id = ?', [req.params.id]);
+  }
+  res.json({ ok: true });
 }));
 
 // ---------- Phia giao vien (trang quan tri) ----------
@@ -2302,10 +2487,12 @@ app.delete('/api/admin/classes/:id', requireAdmin, asyncRoute(async (req, res) =
     const d = readClassFile();
     d.classes = d.classes.filter((c) => c.id !== id);
     d.assignments = d.assignments.filter((a) => a.classId !== id);
+    d.roster = d.roster.filter((x) => x.classId !== id);
     Object.keys(d.members).forEach((u) => { if (d.members[u].classId === id) delete d.members[u]; });
     writeJsonFile(CLASSES_FILE, d);
   } else {
     await dbPool.query('DELETE FROM assignments WHERE class_id = ?', [id]);
+    await dbPool.query('DELETE FROM class_roster WHERE class_id = ?', [id]);
     await dbPool.query('DELETE FROM class_members WHERE class_id = ?', [id]);
     await dbPool.query('DELETE FROM classes WHERE id = ?', [id]);
   }
@@ -2320,15 +2507,16 @@ app.post('/api/admin/members', requireAdmin, asyncRoute(async (req, res) => {
   if (!users.some((u) => u.id === userId)) return res.status(404).json({ error: 'Không tìm thấy học sinh.' });
   const st = await loadClassState();
   if (classId && !st.classes.some((c) => c.id === classId)) return res.status(404).json({ error: 'Không tìm thấy lớp.' });
-  if (!USE_DB) {
+  if (classId) {
+    await setMember(userId, classId);
+  } else if (!USE_DB) {
     const d = readClassFile();
-    if (classId) d.members[userId] = { classId, joinedMs: Date.now() };
-    else delete d.members[userId];
+    delete d.members[userId];
+    d.roster.forEach((x) => { if (x.userId === userId) x.userId = null; });
     writeJsonFile(CLASSES_FILE, d);
-  } else if (classId) {
-    await dbPool.query('INSERT INTO class_members (user_id, class_id, joined_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE class_id = VALUES(class_id)', [userId, classId, Date.now()]);
   } else {
     await dbPool.query('DELETE FROM class_members WHERE user_id = ?', [userId]);
+    await dbPool.query('UPDATE class_roster SET user_id = NULL WHERE user_id = ?', [userId]);
   }
   res.json({ ok: true });
 }));

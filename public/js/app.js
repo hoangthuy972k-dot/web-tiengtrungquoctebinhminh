@@ -13891,6 +13891,7 @@
         renderUserChip();
         renderAuthBanner();
         assignState = null;
+        assignPick = null;
         renderAssignCard();
         showToast('Đã đăng xuất.');
       } else {
@@ -13979,12 +13980,127 @@
       '<p class="assign-join-err" id="assignJoinErr" hidden></p></form>';
   }
 
+  var assignView = 'mine';  // 'mine' = bai cua em, 'board' = bang lop
+  var assignPick = null;    // { mode: 'join'|'claim', code, cls, roster } khi dang chon ten trong danh sach lop
+  var assignPickFilter = '';
+
+  function assignAuth() {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    return auth && auth.token ? auth : null;
+  }
+  function assignPost(url, body) {
+    var auth = assignAuth();
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + (auth ? auth.token : '') },
+      body: JSON.stringify(body)
+    }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); });
+  }
+  // Bo dau de tim ten khong can go dau
+  function foldVn(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase(); }
+
+  function pickHtml() {
+    var p = assignPick;
+    var q = foldVn(assignPickFilter);
+    var list = p.roster.filter(function (r) { return !q || foldVn(r.name).indexOf(q) !== -1; });
+    return '<div class="assign-head"><div><h2>👋 Em là ai trong lớp ' + assignEsc(p.cls.name) + '?</h2>' +
+        '<p>Chọn đúng <b>tên của em</b> trong danh sách lớp. Thầy cô sẽ biết em đã vào lớp.</p></div>' +
+        (p.mode === 'join' ? '<button type="button" class="assign-switch" id="assignPickCancel">Huỷ</button>' : '') + '</div>' +
+      '<input type="search" class="assign-pick-search" id="assignPickSearch" placeholder="Gõ tên để tìm nhanh…" value="' + assignEsc(assignPickFilter) + '" aria-label="Tìm tên">' +
+      '<ul class="assign-pick">' + list.map(function (r) {
+        return '<li><button type="button" class="assign-pick-btn" data-rid="' + assignEsc(r.id) + '"' + (r.taken ? ' disabled' : '') + '>' +
+          assignEsc(r.name) + (r.taken ? ' <small>· đã có bạn chọn</small>' : '') + '</button></li>';
+      }).join('') + (list.length ? '' : '<li class="assign-pick-empty">Không thấy tên em? Báo thầy cô thêm vào danh sách nhé.</li>') + '</ul>' +
+      '<p class="assign-join-err" id="assignJoinErr" hidden></p>';
+  }
+
+  function bindPick(box) {
+    var cancel = $('#assignPickCancel', box);
+    if (cancel) cancel.addEventListener('click', function () { assignPick = null; renderAssignCard(); });
+    var search = $('#assignPickSearch', box);
+    search.addEventListener('input', function () {
+      assignPickFilter = search.value;
+      var pos = search.selectionStart;
+      renderAssignCard();
+      var s2 = $('#assignPickSearch', box);
+      s2.focus();
+      try { s2.setSelectionRange(pos, pos); } catch (e) { /* bo qua */ }
+    });
+    $all('.assign-pick-btn', box).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var p = assignPick;
+        var name = b.textContent;
+        if (!window.confirm('Em là "' + name + '" đúng không?')) return;
+        b.disabled = true;
+        var req = p.mode === 'join'
+          ? assignPost('/api/class/join', { code: p.code, rosterId: b.getAttribute('data-rid') })
+          : assignPost('/api/class/claim', { rosterId: b.getAttribute('data-rid') });
+        req.then(function (res) {
+          if (!res.ok) {
+            var err = $('#assignJoinErr', box);
+            err.textContent = res.d.error || 'Không chọn được tên này.';
+            err.hidden = false;
+            b.disabled = false;
+            return;
+          }
+          assignPick = null;
+          assignPickFilter = '';
+          showToast('🎉 Chào ' + name + '! Em đã vào lớp ' + p.cls.name + '.');
+          loadAssignments();
+        }).catch(function () { b.disabled = false; });
+      });
+    });
+  }
+
+  var BOARD_MARK = {
+    done: ['is-done', '✓', 'Đã làm'],
+    late: ['is-late', '✓', 'Nộp muộn'],
+    overdue: ['is-miss', '', 'Chưa làm (quá hạn)'],
+    todo: ['is-todo', '', 'Chưa làm']
+  };
+
+  function boardHtml() {
+    var b = assignState.board || { sessions: [], rows: [] };
+    if (!b.rows.length) return '<p class="assign-empty">Lớp chưa có danh sách.</p>';
+    var ses = b.sessions;
+    var counts = ses.map(function (_, i) {
+      return b.rows.filter(function (r) { return r.marks && (r.marks[i] === 'done' || r.marks[i] === 'late'); }).length;
+    });
+    var joined = b.rows.filter(function (r) { return r.joined; }).length;
+    var head = '<tr><th class="ab-name">Học sinh <small>(' + joined + '/' + b.rows.length + ' đã vào lớp)</small></th>' +
+      ses.map(function (s, i) {
+        var info = lessonByUrl(s.lessonUrl);
+        return '<th title="' + assignEsc(info ? 'Bài ' + info.lesson.number + ': ' + info.lesson.title : '') + '">Buổi ' + s.session +
+          '<small>' + counts[i] + '/' + b.rows.length + '</small></th>';
+      }).join('') + '</tr>';
+    var body = b.rows.map(function (r, ri) {
+      return '<tr class="' + (r.me ? 'is-me' : '') + (r.joined ? '' : ' is-out') + '">' +
+        '<td class="ab-name"><span class="ab-no">' + (ri + 1) + '</span>' + assignEsc(r.name) + (r.me ? ' <b class="ab-me">(em)</b>' : '') +
+          (!r.joined ? ' <small class="ab-out">chưa vào lớp</small>' : '') + '</td>' +
+        ses.map(function (_, i) {
+          var m = r.marks ? BOARD_MARK[r.marks[i]] : null;
+          return m ? '<td class="ab-c ' + m[0] + '" title="' + m[2] + '">' + m[1] + '</td>' : '<td class="ab-c is-out"></td>';
+        }).join('') + '</tr>';
+    }).join('');
+    return (ses.length ? '' : '<p class="assign-empty">Thầy cô chưa giao bài nào. Khi có bài, cột Buổi 1, Buổi 2… sẽ hiện ở đây.</p>') +
+      '<div class="ab-wrap"><table class="ab-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
+      '<p class="ab-legend"><span class="ab-c is-done">✓</span> Đã làm <span class="ab-c is-late">✓</span> Nộp muộn · Ô trống: chưa làm</p>';
+  }
+
   function renderAssignCard() {
     var box = $('#assignCard');
     if (!box) return;
-    var auth = readJSON(STORAGE_KEYS.auth, null);
-    if (!auth || !auth.token || !assignState) { box.hidden = true; return; }
+    if (!assignAuth() || !assignState) { box.hidden = true; return; }
     box.hidden = false;
+    // Lop co danh sach ma em chua chon ten minh
+    if (!assignPick && assignState.class && assignState.needPick) {
+      assignPick = { mode: 'claim', cls: assignState.class, roster: assignState.roster || [] };
+    }
+    if (assignPick) {
+      box.innerHTML = pickHtml();
+      bindPick(box);
+      return;
+    }
     if (!assignState.class) {
       box.innerHTML = '<div class="assign-head"><div><h2>🏫 Em học lớp của thầy cô?</h2>' +
         '<p>Nhập mã lớp thầy cô đưa để nhận bài tập được giao và hạn nộp.</p></div></div>' + joinFormHtml(false);
@@ -14002,7 +14118,7 @@
       var isDone = a.status === 'done' || a.status === 'late';
       return '<li class="assign-item ' + chip[0] + '">' +
         '<div class="assign-item-main">' +
-          '<div class="assign-item-top"><span class="assign-chip ' + chip[0] + '">' + chip[1] + '</span>' +
+          '<div class="assign-item-top"><span class="assign-session">Buổi ' + a.session + '</span><span class="assign-chip ' + chip[0] + '">' + chip[1] + '</span>' +
             '<span class="assign-due">' + dueText(a) + '</span></div>' +
           '<div class="assign-title">' + (info ? assignEsc(levelLabel(info.levelId)) + ' · <b>Bài ' + info.lesson.number + ':</b> ' + assignEsc(info.lesson.title) : assignEsc(a.lessonUrl)) + '</div>' +
           (a.note ? '<div class="assign-note">📝 ' + assignEsc(a.note) + '</div>' : '') +
@@ -14011,16 +14127,24 @@
         (info ? '<button type="button" class="btn ' + (isDone ? 'btn-ghost' : 'btn-primary') + ' assign-go" data-url="' + assignEsc(a.lessonUrl) + '">' + (isDone ? 'Xem lại' : 'Làm bài →') + '</button>' : '') +
       '</li>';
     }
+    var mine = (open.length ? '<ol class="assign-list">' + open.map(item).join('') + '</ol>' : '') +
+      (finished.length ? '<button type="button" class="assign-more" id="assignMore" aria-expanded="' + assignShowDone + '">' +
+        (assignShowDone ? '▾' : '▸') + ' Đã làm (' + finished.length + ')</button>' +
+        (assignShowDone ? '<ol class="assign-list is-done">' + finished.map(item).join('') + '</ol>' : '') : '');
     box.innerHTML =
-      '<div class="assign-head"><div><h2>📌 Bài tập lớp ' + assignEsc(assignState.class.name) + '</h2>' +
+      '<div class="assign-head"><div><h2>📌 Lớp ' + assignEsc(assignState.class.name) + '</h2>' +
         '<p>' + (open.length ? 'Còn <b>' + open.length + '</b> bài chưa làm. Bài được tính là xong khi em làm <b>Bước 7 · Kiểm tra cuối bài</b>.'
           : (list.length ? 'Em đã làm hết bài được giao. Giỏi lắm! 🎉' : 'Thầy cô chưa giao bài nào.')) + '</p></div>' +
         '<button type="button" class="assign-switch" id="assignSwitch">Đổi lớp</button></div>' +
       (assignJoinOpen ? joinFormHtml(true) : '') +
-      (open.length ? '<ol class="assign-list">' + open.map(item).join('') + '</ol>' : '') +
-      (finished.length ? '<button type="button" class="assign-more" id="assignMore" aria-expanded="' + assignShowDone + '">' +
-        (assignShowDone ? '▾' : '▸') + ' Đã làm (' + finished.length + ')</button>' +
-        (assignShowDone ? '<ol class="assign-list is-done">' + finished.map(item).join('') + '</ol>' : '') : '');
+      '<div class="assign-tabs" role="tablist">' +
+        '<button type="button" role="tab" class="assign-tab' + (assignView === 'mine' ? ' active' : '') + '" data-view="mine" aria-selected="' + (assignView === 'mine') + '">📌 Bài tập của em</button>' +
+        '<button type="button" role="tab" class="assign-tab' + (assignView === 'board' ? ' active' : '') + '" data-view="board" aria-selected="' + (assignView === 'board') + '">📋 Bảng lớp</button>' +
+      '</div>' +
+      (assignView === 'board' ? boardHtml() : mine);
+    $all('.assign-tab', box).forEach(function (b) {
+      b.addEventListener('click', function () { assignView = b.getAttribute('data-view'); renderAssignCard(); });
+    });
     $all('.assign-go', box).forEach(function (b) {
       b.addEventListener('click', function () {
         var info = lessonByUrl(b.getAttribute('data-url'));
@@ -14040,24 +14164,24 @@
     if (cancel) cancel.addEventListener('click', function () { assignJoinOpen = false; renderAssignCard(); });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var auth = readJSON(STORAGE_KEYS.auth, null);
-      if (!auth || !auth.token) return;
+      if (!assignAuth()) return;
       var err = $('#assignJoinErr', box);
       var btn = form.querySelector('button[type="submit"]');
+      var code = $('#assignCode', box).value;
       btn.disabled = true;
-      fetch('/api/class/join', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
-        body: JSON.stringify({ code: $('#assignCode', box).value })
-      }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
-        .then(function (res) {
-          btn.disabled = false;
-          if (!res.ok) { err.textContent = res.d.error || 'Không vào được lớp.'; err.hidden = false; return; }
-          assignJoinOpen = false;
-          showToast('🎉 Đã vào lớp ' + res.d.class.name + '!');
-          loadAssignments();
-        })
-        .catch(function () { btn.disabled = false; err.textContent = 'Không kết nối được máy chủ, thử lại sau.'; err.hidden = false; });
+      assignPost('/api/class/join', { code: code }).then(function (res) {
+        btn.disabled = false;
+        if (!res.ok) { err.textContent = res.d.error || 'Không vào được lớp.'; err.hidden = false; return; }
+        assignJoinOpen = false;
+        if (res.d.needPick) {
+          assignPick = { mode: 'join', code: code, cls: res.d.class, roster: res.d.roster || [] };
+          assignPickFilter = '';
+          renderAssignCard();
+          return;
+        }
+        showToast('🎉 Đã vào lớp ' + res.d.class.name + '!');
+        loadAssignments();
+      }).catch(function () { btn.disabled = false; err.textContent = 'Không kết nối được máy chủ, thử lại sau.'; err.hidden = false; });
     });
   }
 

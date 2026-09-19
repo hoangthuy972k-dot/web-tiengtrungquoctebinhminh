@@ -302,3 +302,14 @@
   .tc-as-head { flex-direction: column; }
   .tc-assign { padding: var(--space-4); }
 }
+.tc-roster td { vertical-align: middle; }
+.tc-roster tr.is-out td { background: var(--color-gray-50); }
+.tc-roster tr.is-extra td { background: var(--color-gold-50); }
+.tc-nojoin { color: var(--color-red-600); font-weight: 600; font-size: 0.85rem; }
+.tc-extra { font-size: 0.75rem; color: var(--color-gold-600); }
+.tc-row-actions { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.tc-link { min-height: 32px; border: 1px solid var(--color-gold-500); border-radius: var(--radius-sm); font: inherit; font-size: 0.82rem; background: var(--color-white); padding: 3px 6px; }
+.tc-stu.is-out { color: var(--color-gray-500); cursor: default; font-weight: 400; }
+.tc-paste textarea { width: 100%; margin: var(--space-2) 0; padding: 10px 12px; border: 1px solid var(--color-gray-200, #e6e2da); border-radius: var(--radius-md); font: inherit; font-size: 0.92rem; resize: vertical; }
+.tc-paste[open] summary { margin-bottom: var(--space-2); }
+.tc-session { display: inline-block; font-size: 0.78rem; font-weight: 800; color: #fff; background: var(--color-red-600); border-radius: var(--radius-pill); padding: 1px 9px; margin-right: 4px; vertical-align: middle; }

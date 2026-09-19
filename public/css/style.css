@@ -157,11 +157,12 @@ body {
   will-change: transform;
   transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.scene-far  { background-image: url('/images/bg/son-thuy.jpg'); }
+/* Anh nen de dang .webp: CDN cua Hostinger thu nho .jpg xuong 1600px lam tranh mo, .webp thi giu nguyen. */
+.scene-far  { background-image: url('/images/bg/son-thuy.webp'); }
 .scene-tree { background-image: url('/images/bg/lop-cay.webp'); }
 .scene-bamboo { background-image: url('/images/bg/lop-truc.webp'); }
 @media (max-width: 720px) {
-  .scene-far { background-image: url('/images/bg/son-thuy-sm.jpg'); }
+  .scene-far { background-image: url('/images/bg/son-thuy-sm.webp'); }
   /* Man doc: canh lop theo ben trai de cay hoa va dinh van nam trong khung. */
   .scene-layer { background-position: 18% bottom; }
 }

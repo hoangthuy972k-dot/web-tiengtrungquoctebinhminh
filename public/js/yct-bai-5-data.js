@@ -19,16 +19,20 @@ var vocabData = [
    exList:[{zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'}],
    hanzi:[]},
   {n:4,zh:'多',py:'duō',pos:'Phó từ',vn:'nhiều, bao nhiêu', hv: 'đa',em:'📊',lesson:2,
-   ex_zh:'你哥哥多大？',ex_py:'Nǐ gēge duō dà?',ex_vn:'Anh trai bạn bao nhiêu tuổi?',
-   exList:[{zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'}],
+   ex_zh:'你爸爸多大？',ex_py:'Nǐ bàba duō dà?',ex_vn:'Bố bạn bao nhiêu tuổi?',
+   exList:[
+     {zh:'你爸爸多大？',py:'Nǐ bàba duō dà?',vn:'Bố bạn bao nhiêu tuổi?'},
+   ],
    hanzi:[
      {c:'多',p:'duō',type:'上下结构 · Trên-dưới',st:6,ord:'夕(tịch) trên → 夕(tịch) dưới',rad:'夕 (tịch – buổi tối)',mean:'nhiều, bao nhiêu',
       tip:'Hai chữ 夕(buổi tối) chồng lên nhau → NHIỀU đêm trôi qua = NHIỀU, BAO NHIÊU.',
       cf:'夜 (yè – "đêm")',w:'多大'},
    ]},
   {n:5,zh:'大',py:'dà',pos:'Tính từ',vn:'to, lớn', hv: 'đại',em:'📏',lesson:2,
-   ex_zh:'你哥哥多大？',ex_py:'Nǐ gēge duō dà?',ex_vn:'Anh trai bạn bao nhiêu tuổi?',
-   exList:[{zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'}],
+   ex_zh:'我家很大。',ex_py:'Wǒ jiā hěn dà.',ex_vn:'Nhà mình rất to.',
+   exList:[
+     {zh:'我家很大。',py:'Wǒ jiā hěn dà.',vn:'Nhà mình rất to.'},
+   ],
    hanzi:[
      {c:'大',p:'dà',type:'独体字 · Tượng hình',st:3,ord:'一→ノ→㇏',rad:'大 (đại – tự thành bộ)',mean:'to, lớn',
       tip:'Hình người dang rộng tay chân → TO LỚN.',

@@ -1036,6 +1036,81 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   }
 }
 
+/* Chung nhan hoan thanh cap (dau danh sach bai) */
+.lc-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 var(--space-5);
+  padding: 14px 16px;
+  border: 1px solid rgba(183, 121, 31, 0.3);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, #fffaf0, #fff3dc);
+}
+.lc-card.is-full { border-color: var(--color-gold-500); box-shadow: 0 10px 26px -14px rgba(183, 121, 31, 0.6); }
+.lc-icon { font-size: 2rem; }
+.lc-body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.lc-body b { font-size: 1rem; color: var(--color-gold-700); }
+.lc-body span { font-size: 0.85rem; color: var(--color-gray-600); }
+.lc-bar { height: 7px; border-radius: 4px; background: rgba(183, 121, 31, 0.15); overflow: hidden; }
+.lc-bar i { display: block; height: 100%; background: var(--color-gold-500); }
+.lc-btn { flex-shrink: 0; }
+.lc-dialog { padding: 24px 18px 20px; }
+@media (max-width: 560px) { .lc-card { flex-wrap: wrap; } .lc-btn { width: 100%; } }
+
+/* Huy hieu */
+.badge-row { margin-top: var(--space-4); }
+.badge-title { margin: 0 0 8px; font-weight: 800; font-size: 0.95rem; }
+.badge-title span { font-weight: 700; color: var(--color-gray-500); font-size: 0.85rem; }
+.badge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 6px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+.badge-ic { font-size: 1.7rem; filter: grayscale(1); opacity: 0.45; }
+.badge-name { font-size: 0.78rem; font-weight: 700; color: var(--color-gray-500); line-height: 1.3; }
+.badge-hint { font-size: 0.7rem; color: var(--color-gray-400); }
+.badge.is-on { border-color: rgba(183, 121, 31, 0.45); background: linear-gradient(180deg, #fffaf0, #fff1d2); }
+.badge.is-on .badge-ic { filter: none; opacity: 1; }
+.badge.is-on .badge-name { color: var(--color-gold-700); }
+.badge.is-on .badge-hint { color: var(--color-green-600); font-weight: 700; }
+
+/* On tap ngat quang */
+.srs-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.88rem; font-weight: 700; color: var(--color-gray-600); }
+.srs-box { padding: 2px 10px; border-radius: var(--radius-pill); background: #e7f3ee; color: #154f41; }
+.srs-bar { height: 6px; border-radius: 3px; background: var(--color-gray-100); overflow: hidden; margin-bottom: var(--space-4); }
+.srs-bar i { display: block; height: 100%; background: #1f6f5c; transition: width 0.3s ease; }
+.srs-fb { min-height: 1.6em; margin-top: 12px; text-align: center; font-size: 0.95rem; color: var(--color-gray-700); }
+.srs-summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 520px; margin: var(--space-4) auto 0; }
+.srs-summary div { display: flex; flex-direction: column; align-items: center; padding: 12px 8px; border-radius: 12px; background: rgba(255, 255, 255, 0.9); border: 1px solid var(--color-gray-200); text-align: center; }
+.srs-summary b { font-size: 1.5rem; color: #1f6f5c; font-variant-numeric: tabular-nums; }
+.srs-summary span { font-size: 0.8rem; color: var(--color-gray-600); }
+
+/* Nut chuyen "Tuan nay / Tu truoc toi nay" cua bang sao */
+.star-period { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0 0 12px; }
+.sp-btn {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-gray-600);
+  cursor: pointer;
+}
+.sp-btn.is-on { background: var(--sb-jade, #1f6f5c); border-color: var(--sb-jade, #1f6f5c); color: #fff; }
+.sp-btn:focus-visible { outline: 2px solid var(--color-gold-500); outline-offset: 2px; }
+.sp-reset { margin-left: auto; font-size: 0.78rem; color: var(--color-gray-500); }
+
 /* ---------- Lo trinh bai hoc 7 buoc ---------- */
 .lesson-path {
   list-style: none;

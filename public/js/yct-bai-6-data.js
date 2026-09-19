@@ -14,8 +14,10 @@ var vocabData = [
       cf:'友 (yǒu – "bạn bè")',w:'头发'},
    ]},
   {n:2,zh:'长',py:'cháng',pos:'Tính từ',vn:'dài', hv: 'trường',em:'📏',lesson:1,
-   ex_zh:'妹妹的头发不长。',ex_py:'Mèimei de tóufa bù cháng.',ex_vn:'Tóc em gái mình không dài.',
-   exList:[{zh:'妹妹的头发不长。',py:'Mèimei de tóufa bù cháng.',vn:'Tóc em gái mình không dài.'}],
+   ex_zh:'姐姐的头发很长。',ex_py:'Jiějie de tóufa hěn cháng.',ex_vn:'Tóc chị gái mình rất dài.',
+   exList:[
+     {zh:'姐姐的头发很长。',py:'Jiějie de tóufa hěn cháng.',vn:'Tóc chị gái mình rất dài.'},
+   ],
    hanzi:[
      {c:'长',p:'cháng',type:'独体字 · Tượng hình',st:4,ord:'丿→𠃌→一→乚',rad:'长 (trường – tự thành bộ)',mean:'dài',
       tip:'Hình mái tóc dài bay trong gió (chữ cổ) → DÀI.',
@@ -55,16 +57,20 @@ var vocabData = [
       cf:'晴 (qíng – "trời quang")',w:'眼睛'},
    ]},
   {n:6,zh:'小',py:'xiǎo',pos:'Tính từ',vn:'nhỏ, bé', hv: 'tiểu',em:'🔹',lesson:1,
-   ex_zh:'妹妹的眼睛很小。',ex_py:'Mèimei de yǎnjing hěn xiǎo.',ex_vn:'Mắt em gái mình rất nhỏ.',
-   exList:[{zh:'妹妹的眼睛很小。',py:'Mèimei de yǎnjing hěn xiǎo.',vn:'Mắt em gái mình rất nhỏ.'}],
+   ex_zh:'我的手很小。',ex_py:'Wǒ de shǒu hěn xiǎo.',ex_vn:'Tay mình rất nhỏ.',
+   exList:[
+     {zh:'我的手很小。',py:'Wǒ de shǒu hěn xiǎo.',vn:'Tay mình rất nhỏ.'},
+   ],
    hanzi:[
      {c:'小',p:'xiǎo',type:'独体字 · Tượng hình',st:3,ord:'丨→𠂇→丶',rad:'小 (tiểu – tự thành bộ)',mean:'nhỏ, bé',
       tip:'Hình ba hạt cát nhỏ li ti → NHỎ, BÉ.',
       cf:'少 (shǎo – "ít")',w:'眼睛小'},
    ]},
   {n:7,zh:'大',py:'dà',pos:'Tính từ',vn:'to, lớn', hv: 'đại',em:'📐',lesson:2,
-   ex_zh:'我的手不大。',ex_py:'Wǒ de shǒu bú dà.',ex_vn:'Tay mình không to.',
-   exList:[{zh:'我的手不大。',py:'Wǒ de shǒu bú dà.',vn:'Tay mình không to.'}],
+   ex_zh:'爸爸的手很大。',ex_py:'Bàba de shǒu hěn dà.',ex_vn:'Tay bố rất to.',
+   exList:[
+     {zh:'爸爸的手很大。',py:'Bàba de shǒu hěn dà.',vn:'Tay bố rất to.'},
+   ],
    hanzi:[]},
   {n:8,zh:'手',py:'shǒu',pos:'Danh từ',vn:'tay', hv: 'thủ',em:'✋',lesson:2,
    ex_zh:'我的手不大。',ex_py:'Wǒ de shǒu bú dà.',ex_vn:'Tay mình không to.',
@@ -75,8 +81,10 @@ var vocabData = [
       cf:'毛 (máo – "lông")',w:'手不大'},
    ]},
   {n:9,zh:'的',py:'de',pos:'Trợ từ',vn:'trợ từ sở hữu (của)', hv: 'đích',em:'🔗',lesson:2,
-   ex_zh:'你的个子真高！',ex_py:'Nǐ de gèzi zhēn gāo!',ex_vn:'Vóc dáng bạn cao thật!',
-   exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
+   ex_zh:'我的老师是中国人。',ex_py:'Wǒ de lǎoshī shì Zhōngguó rén.',ex_vn:'Cô giáo của mình là người Trung Quốc.',
+   exList:[
+     {zh:'我的老师是中国人。',py:'Wǒ de lǎoshī shì Zhōngguó rén.',vn:'Cô giáo của mình là người Trung Quốc.'},
+   ],
    hanzi:[
      {c:'的',p:'de',type:'左右结构 · Trái-phải',st:8,ord:'白(bạch) trái → 勺(chước) phải',rad:'白 (bạch – trắng)',mean:'trợ từ sở hữu (của)',
       tip:'白(rõ ràng, sáng tỏ) → làm rõ mối quan hệ SỞ HỮU giữa hai danh từ.',
@@ -87,16 +95,20 @@ var vocabData = [
    exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
    hanzi:[]},
   {n:11,zh:'真',py:'zhēn',pos:'Phó từ',vn:'thật, thật là', hv: 'chân',em:'❗',lesson:2,
-   ex_zh:'你的个子真高！',ex_py:'Nǐ de gèzi zhēn gāo!',ex_vn:'Vóc dáng bạn cao thật!',
-   exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
+   ex_zh:'你的眼睛真大！',ex_py:'Nǐ de yǎnjing zhēn dà!',ex_vn:'Mắt bạn to thật!',
+   exList:[
+     {zh:'你的眼睛真大！',py:'Nǐ de yǎnjing zhēn dà!',vn:'Mắt bạn to thật!'},
+   ],
    hanzi:[
      {c:'真',p:'zhēn',type:'独体字 · Chữ đơn',st:10,ord:'十→目→一→八(biến thể)',rad:'目 (mục, phần giữa)',mean:'thật, thật là',
       tip:'Hình con mắt nhìn thẳng không dối trá → THẬT, CHÂN THẬT.',
       cf:'直 (zhí – "thẳng")',w:'个子真高'},
    ]},
   {n:12,zh:'高',py:'gāo',pos:'Tính từ',vn:'cao', hv: 'cao',em:'📶',lesson:2,
-   ex_zh:'你的个子真高！',ex_py:'Nǐ de gèzi zhēn gāo!',ex_vn:'Vóc dáng bạn cao thật!',
-   exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
+   ex_zh:'哥哥很高。',ex_py:'Gēge hěn gāo.',ex_vn:'Anh trai rất cao.',
+   exList:[
+     {zh:'哥哥很高。',py:'Gēge hěn gāo.',vn:'Anh trai rất cao.'},
+   ],
    hanzi:[]},
 ];
 
@@ -150,7 +162,7 @@ var sortData = [
 ];
 
 var matchData = [
-  {left:'妹妹的眼睛大吗？',right:'妹妹的眼睛很小。'},
+  {left:'妹妹的眼睛大吗？',right:'不大，很小。'},
   {left:'你的个子真高！',right:'你的鼻子真长！'},
   {left:'你的手大吗？',right:'我的手不大。'},
   {left:'妹妹的头发长吗？',right:'不长。'},

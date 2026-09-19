@@ -55,16 +55,20 @@ var vocabData = [
       cf:'猫 (māo – "mèo", cùng bộ 犭)',w:'那是狗'},
    ]},
   {n:8,zh:'鱼',py:'yú',pos:'Danh từ',vn:'con cá', hv: 'ngư',em:'🐟',lesson:2,
-   ex_zh:'这儿有鱼。',ex_py:'Zhèr yǒu yú.',ex_vn:'Ở đây có cá.',
-   exList:[{zh:'这儿有鱼。',py:'Zhèr yǒu yú.',vn:'Ở đây có cá.'}],
+   ex_zh:'你看，那是鱼。',ex_py:'Nǐ kàn, nà shì yú.',ex_vn:'Bạn nhìn kìa, đó là con cá.',
+   exList:[
+     {zh:'你看，那是鱼。',py:'Nǐ kàn, nà shì yú.',vn:'Bạn nhìn kìa, đó là con cá.'},
+   ],
    hanzi:[
      {c:'鱼',p:'yú',type:'独体字 · Tượng hình',st:8,ord:'𠂊(đầu) → 田(thân) → 一(đuôi)',rad:'鱼 (ngư – tự thành bộ)',mean:'con cá',
       tip:'Hình vẽ con cá: phần đầu, thân có vảy hình ô vuông 田 và đuôi xoè bên dưới → CÁ.',
       cf:'鸟 (niǎo – "chim", hình dáng gần giống)',w:'看鱼'},
    ]},
   {n:9,zh:'鸟',py:'niǎo',pos:'Danh từ',vn:'con chim', hv: 'điểu',em:'🐦',lesson:2,
-   ex_zh:'那儿有鸟。',ex_py:'Nàr yǒu niǎo.',ex_vn:'Ở đó có chim.',
-   exList:[{zh:'那儿有鸟。',py:'Nàr yǒu niǎo.',vn:'Ở đó có chim.'}],
+   ex_zh:'鸟真小！',ex_py:'Niǎo zhēn xiǎo!',ex_vn:'Con chim nhỏ thật!',
+   exList:[
+     {zh:'鸟真小！',py:'Niǎo zhēn xiǎo!',vn:'Con chim nhỏ thật!'},
+   ],
    hanzi:[
      {c:'鸟',p:'niǎo',type:'独体字 · Tượng hình',st:5,ord:'𠂉(đầu, mỏ) → 鸟(thân có chấm mắt) → 一(chân đáy)',rad:'鸟 (điểu – tự thành bộ)',mean:'con chim',
       tip:'Hình vẽ giản lược một con chim: đầu nhỏ có mắt, thân tròn và chân bên dưới → CHIM.',

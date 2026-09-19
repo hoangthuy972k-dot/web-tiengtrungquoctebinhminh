@@ -118,7 +118,8 @@
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + auth.token },
       body: JSON.stringify({
         totalCorrect: totalCorrect, totalQuestions: totalQuestions, streak: streak, lessonsDone: lessonsDone,
-        studyDays: studyDays, lessonScores: allScores, reviewWrongWords: reviewWrongWords
+        studyDays: studyDays, lessonScores: allScores, reviewWrongWords: reviewWrongWords,
+        srs: srsForSync()
       })
     }).catch(function () {});
   }
@@ -149,6 +150,7 @@
     writeJSON(STORAGE_KEYS.reviewWrongWords, mergedReviewWords);
 
     rsMergeFromServer(progress.resumeState);
+    srsMergeFromServer(progress.srs);
 
     renderStreak();
     renderStatTiles();
@@ -647,9 +649,14 @@
     var target = nextLearnTarget();
     var levelName = last ? (PRACTICE_LEVEL_LABEL[last.levelId] || last.levelId.toUpperCase()) : '';
 
+    var srs = srsStats();
+    var reviewItem = srs.total >= 4
+      ? { key: 'review', num: '①', title: srs.due ? 'Ôn ' + Math.min(srs.due, 15) + ' từ đến hạn hôm nay' : 'Ôn nhanh 10 từ', time: '3 phút',
+          sub: srs.due ? 'Ôn đúng lúc sắp quên để nhớ lâu · ' + srs.known + '/' + srs.total + ' từ đã thuộc' : 'Hôm nay không có từ đến hạn 🎉 · ' + srs.known + '/' + srs.total + ' từ đã thuộc' }
+      : { key: 'review', num: '①', title: 'Ôn 10 từ cũ', time: '2 phút',
+          sub: last ? 'Từ vựng ' + levelName + ' bạn đã học' : 'Học bài đầu tiên trước, rồi ôn từ ở đây' };
     var items = [
-      { key: 'review', num: '①', title: 'Ôn 10 từ cũ', time: '2 phút',
-        sub: last ? 'Từ vựng ' + levelName + ' bạn đã học' : 'Học bài đầu tiên trước, rồi ôn từ ở đây' },
+      reviewItem,
       { key: 'learn', num: '②', title: target
           ? (target.finished ? 'Ôn lại bài ' + target.lesson.number : (target.isNext ? 'Học bài ' + target.lesson.number + ': ' + target.lesson.title : 'Học tiếp: Bước ' + target.stepNo + ' · ' + target.step.title))
           : 'Học bài đầu tiên', time: target && target.step ? target.step.min + ' phút' : '8 phút',
@@ -702,6 +709,7 @@
   function runTask(key) {
     var last = getLastLesson();
     if (key === 'review') {
+      if (srsStats().total >= 4) { showSrsPractice(); return; }
       if (!last) { var head = $('#levelsHead'); if (head) head.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
       showDailyReview(last.levelId, last.lesson);
       return;
@@ -721,6 +729,183 @@
       var d = idiomOfToday();
       if (d) openIdiomDetail(d);
     }
+  }
+
+  /* ---------------- On tap ngat quang (spaced repetition) ----------------
+     Moi tu da hoc nam trong 1 "hop nho" 1-6. Dung -> len hop, lan on sau cach xa dan
+     (1, 2, 4, 7, 15, 30 ngay); sai -> ve hop 1, on lai ngay mai. Tu vao lich on khi
+     hoc sinh mo Tu vung / Flashcard cua bai. Luu localStorage hyv_srs, dong bo len
+     tai khoan (may chu chi giu url/box/due/at; pinyin & nghia lay lai tu du lieu bai). */
+
+  var SRS_KEY = 'hyv_srs';
+  var SRS_INTERVALS = [1, 1, 2, 4, 7, 15, 30]; // theo hop 0..6 (ngay)
+  var SRS_SESSION = 10;
+
+  function srsAll() { return readJSON(SRS_KEY, {}); }
+  function srsDayAfter(n) { return dateKey(new Date(Date.now() + n * 86400000)); }
+
+  function srsEnroll(lesson, vocab) {
+    if (!lesson || !vocab || !vocab.length) return;
+    var all = srsAll(), changed = false;
+    vocab.forEach(function (v) {
+      if (!v.zh || v.zh.length > 12) return;
+      var e = all[v.zh];
+      if (!e) { all[v.zh] = { url: lesson.fullPageUrl, box: 0, due: srsDayAfter(1), at: Date.now(), py: v.py, vn: v.vn, hv: v.hv || '' }; changed = true; }
+      else if (!e.vn) { e.py = v.py; e.vn = v.vn; e.hv = v.hv || ''; changed = true; }
+    });
+    if (changed) { writeJSON(SRS_KEY, all); syncProgressToServer(); if (!$('#home').hidden) renderTaskCard(); }
+  }
+
+  function srsAnswer(zh, ok) {
+    var all = srsAll(), e = all[zh];
+    if (!e) return;
+    e.box = ok ? Math.min(6, (e.box || 0) + 1) : 1;
+    e.due = srsDayAfter(SRS_INTERVALS[e.box]);
+    e.at = Date.now();
+    writeJSON(SRS_KEY, all);
+    syncProgressToServer();
+  }
+
+  function srsStats() {
+    var all = srsAll(), today = dateKey(new Date());
+    var keys = Object.keys(all);
+    var due = keys.filter(function (k) { return all[k].due <= today; });
+    return { total: keys.length, due: due.length, known: keys.filter(function (k) { return all[k].box >= 4; }).length };
+  }
+
+  function srsForSync() {
+    var all = srsAll(), out = {};
+    Object.keys(all).forEach(function (k) { var e = all[k]; out[k] = { url: e.url, box: e.box, due: e.due, at: e.at }; });
+    return out;
+  }
+
+  function srsMergeFromServer(remote) {
+    if (!remote || typeof remote !== 'object') return;
+    var all = srsAll(), changed = false;
+    Object.keys(remote).forEach(function (k) {
+      var r = remote[k], l = all[k];
+      if (!l || (l.at || 0) < (r.at || 0)) {
+        all[k] = { url: r.url, box: r.box, due: r.due, at: r.at, py: l && l.py, vn: l && l.vn, hv: l && l.hv };
+        changed = true;
+      }
+    });
+    if (changed) writeJSON(SRS_KEY, all);
+  }
+
+  // Tu tu bai khac duoc dong bo ve (chua co pinyin/nghia tren may nay): tai lai tu du lieu bai
+  function srsFillDetails(words) {
+    var all = srsAll();
+    var urls = {};
+    words.forEach(function (w) { if (!all[w].vn && all[w].url) urls[all[w].url] = 1; });
+    var lessons = [];
+    Object.keys(READY_LEVELS).forEach(function (id) {
+      ((APP_DATA.lessons && APP_DATA.lessons[id]) || []).forEach(function (l) { if (urls[l.fullPageUrl]) lessons.push(l); });
+    });
+    return Promise.all(lessons.map(function (l) {
+      return loadLessonRawData(l).then(function (d) {
+        var a = srsAll();
+        (d.vocabData || []).forEach(function (v) { if (a[v.zh] && !a[v.zh].vn) { a[v.zh].py = v.py; a[v.zh].vn = v.vn; a[v.zh].hv = v.hv || ''; } });
+        writeJSON(SRS_KEY, a);
+      }).catch(function () { /* bo qua bai loi */ });
+    }));
+  }
+
+  var srsState = null;
+  function showSrsPractice() {
+    $all('#main > .dash-section').forEach(function (s) { s.hidden = s.id !== 'srsPractice'; });
+    var wrap = $('#srsContent');
+    wrap.innerHTML = '<p style="color:var(--color-gray-500);">Đang chuẩn bị từ cần ôn…</p>';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    var all = srsAll(), today = dateKey(new Date());
+    var keys = Object.keys(all);
+    // Tu den han truoc (cu nhat, hop thap nhat), thieu thi bu tu hop thap nhat cho du 10
+    var due = keys.filter(function (k) { return all[k].due <= today; })
+      .sort(function (a, b) { return all[a].due < all[b].due ? -1 : all[a].due > all[b].due ? 1 : all[a].box - all[b].box; });
+    var pick = due.slice(0, 15);
+    if (pick.length < SRS_SESSION) {
+      keys.filter(function (k) { return pick.indexOf(k) === -1; })
+        .sort(function (a, b) { return all[a].box - all[b].box || (all[a].due < all[b].due ? -1 : 1); })
+        .slice(0, SRS_SESSION - pick.length).forEach(function (k) { pick.push(k); });
+    }
+    srsFillDetails(keys).then(function () {
+      var a = srsAll();
+      var items = shuffle(pick.filter(function (k) { return a[k] && a[k].vn; }));
+      var pool = keys.filter(function (k) { return a[k] && a[k].vn; });
+      if (items.length < 1 || pool.length < 4) {
+        wrap.innerHTML = '<p>Bạn cần học ít nhất 4 từ (mở phần Học từ của một bài) để bắt đầu ôn tập ngắt quãng.</p>';
+        return;
+      }
+      srsState = { items: items, baseLen: items.length, pool: pool, pos: 0, score: 0, dueCount: Math.min(due.length, 15), up: 0, retry: [], today: today };
+      srsRender();
+    });
+  }
+
+  function srsRender() {
+    var st = srsState, wrap = $('#srsContent'), a = srsAll();
+    if (st.pos >= st.items.length) { srsFinish(); return; }
+    var zh = st.items[st.pos], w = a[zh];
+    var reverse = st.pos % 2 === 1; // xen ke: Trung → Viet, Viet → Trung
+    var opts = shuffle([zh].concat(shuffle(st.pool.filter(function (k) { return k !== zh; })).slice(0, 3)));
+    var isRetry = st.pos >= st.baseLen;
+    wrap.innerHTML =
+      '<div class="srs-top"><span>Câu ' + (st.pos + 1) + '/' + st.items.length + (isRetry ? ' · làm lại câu sai' : '') + '</span>' +
+        '<span class="srs-box">Hộp nhớ ' + (w.box || 0) + '/6</span></div>' +
+      '<div class="srs-bar"><i style="width:' + Math.round(st.pos / st.items.length * 100) + '%"></i></div>' +
+      '<div class="vp-quiz-card"><div class="vp-quiz-prompt">' +
+        (reverse
+          ? '<div class="fq-q">Chữ Hán nào nghĩa là: <b>' + w.vn + '</b></div>'
+          : '<div class="fq-zh hanzi">' + zh + '</div><div class="fq-py">' + (w.py || '') + '</div>' +
+            '<button type="button" class="vp-speak-btn" data-speak="' + zh + '">🔊</button>') +
+      '</div><div class="vp-quiz-options">' + opts.map(function (k, i) {
+        return '<button type="button" class="vp-option-btn' + (reverse ? ' hanzi' : '') + '" data-i="' + i + '">' + (reverse ? k : a[k].vn) + '</button>';
+      }).join('') + '</div>' +
+      '<div class="srs-fb" id="srsFb" aria-live="polite"></div></div>';
+    $all('[data-speak]', wrap).forEach(function (b) { b.addEventListener('click', function () { vpSpeak(b.getAttribute('data-speak')); }); });
+    $all('.vp-option-btn', wrap).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var ok = opts[parseInt(btn.getAttribute('data-i'), 10)] === zh;
+        $all('.vp-option-btn', wrap).forEach(function (b, j) {
+          b.disabled = true;
+          if (opts[j] === zh) b.classList.add('is-correct');
+          else if (b === btn) b.classList.add('is-wrong');
+        });
+        if (typeof sfxQueue === 'function') sfxQueue(ok ? 'correct' : 'wrong');
+        var fb = $('#srsFb');
+        fb.innerHTML = '<b class="hanzi">' + zh + '</b> ' + (w.py || '') + (w.hv ? ' · Hán Việt: ' + w.hv : '') + ' — ' + w.vn;
+        if (!isRetry) {
+          var before = w.box || 0;
+          srsAnswer(zh, ok);
+          if (ok) {
+            st.score++;
+            if (before < 6) st.up++;
+            // moi lan on dung 1 tu den han = +1 sao (khoa theo ngay den han)
+            if (window.hwStarAnswer) window.hwStarAnswer('/srs|' + zh + '|' + st.today);
+          } else if (st.retry.indexOf(zh) === -1) { st.retry.push(zh); st.items.push(zh); }
+        }
+        setTimeout(function () { st.pos++; srsRender(); }, ok ? 900 : 1800);
+      });
+    });
+  }
+
+  function srsFinish() {
+    var st = srsState, wrap = $('#srsContent');
+    taskMark('review');
+    var s = srsStats();
+    var tomorrow = srsDayAfter(1), a = srsAll();
+    var dueTomorrow = Object.keys(a).filter(function (k) { return a[k].due <= tomorrow; }).length;
+    wrap.innerHTML =
+      '<div class="fq-result">' +
+        '<div class="fq-score">' + st.score + '<span>/' + st.baseLen + '</span></div>' +
+        '<p class="fq-msg">' + (st.score === st.baseLen ? 'Tuyệt vời! Nhớ hết rồi 🎉' : 'Làm tốt lắm! Những từ sai sẽ quay lại vào ngày mai.') + '</p>' +
+        '<p class="fq-stars">' + st.up + ' từ lên hộp nhớ mới · mỗi từ ôn đúng +1 ⭐</p>' +
+      '</div>' +
+      '<div class="srs-summary">' +
+        '<div><b>' + s.total + '</b><span>từ trong lịch ôn</span></div>' +
+        '<div><b>' + s.known + '</b><span>từ đã thuộc (hộp 4+)</span></div>' +
+        '<div><b>' + dueTomorrow + '</b><span>từ cần ôn ngày mai</span></div>' +
+      '</div>' +
+      '<div class="fq-actions"><button type="button" class="btn btn-primary" id="srsHome">Về trang chủ</button></div>';
+    $('#srsHome').addEventListener('click', function () { showDashboard(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
   }
 
   // On 10 tu cu: lay tu cua bai gan nhat va 2 bai truoc no, uu tien tu da tra loi sai
@@ -942,6 +1127,8 @@
     renderHomeHead();
     renderContinueCard();
     renderLevelCards();
+    renderStatTiles();
+    renderStarLeaderboard(); // vua hoc xong quay ve: bang sao cap nhat ngay
   }
 
   function showLevelDetail(id) {
@@ -996,7 +1183,121 @@
     hsk2v3: rvBuildGroups(15)
   };
 
+  /* ---------------- Chung nhan hoan thanh cap + huy hieu ---------------- */
+
+  // Bai "da qua" = kiem tra cuoi bai dat tu 7/10
+  function lessonPassed(lesson) {
+    var f = getLessonScores(lesson).final;
+    return !!(f && f.total > 0 && f.correct / f.total >= 0.7);
+  }
+  function levelFinalStatus(levelId) {
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[levelId]) || [];
+    return { done: lessons.filter(lessonPassed).length, total: lessons.length };
+  }
+
+  function renderLevelCert(levelId) {
+    var box = $('#levelCert');
+    if (!box) return;
+    var st = levelFinalStatus(levelId);
+    if (!st.total) { box.innerHTML = ''; return; }
+    var name = PRACTICE_LEVEL_LABEL[levelId] || levelId;
+    var pct = Math.round(st.done / st.total * 100);
+    var full = st.done >= st.total;
+    box.innerHTML =
+      '<div class="lc-card' + (full ? ' is-full' : '') + '">' +
+        '<span class="lc-icon" aria-hidden="true">' + (full ? '🏆' : '🎓') + '</span>' +
+        '<div class="lc-body">' +
+          '<b>' + (full ? 'Bạn đã hoàn thành ' + name + '!' : 'Chứng nhận hoàn thành ' + name) + '</b>' +
+          '<span>' + st.done + '/' + st.total + ' bài đã qua kiểm tra cuối bài (đạt từ 7/10)' + (full ? '' : ' · qua hết để nhận chứng nhận') + '</span>' +
+          '<div class="lc-bar"><i style="width:' + pct + '%"></i></div>' +
+        '</div>' +
+        (full ? '<button type="button" class="btn btn-primary lc-btn" id="lcOpen">Nhận chứng nhận</button>' : '') +
+      '</div>';
+    if (full) $('#lcOpen').addEventListener('click', function () { openLevelCert(levelId); });
+  }
+
+  function openLevelCert(levelId) {
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var who = auth && auth.user && auth.user.name ? auth.user.name : 'Học viên Hi Hán';
+    var st = levelFinalStatus(levelId);
+    var d = new Date();
+    var dateTxt = String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0') + '/' + d.getFullYear();
+    var words = ((APP_DATA.lessons && APP_DATA.lessons[levelId]) || []).reduce(function (s, l) { return s + (l.vocabCount || 0); }, 0);
+    var ov = document.createElement('div');
+    ov.className = 'idiom-overlay';
+    ov.setAttribute('role', 'dialog');
+    ov.setAttribute('aria-modal', 'true');
+    ov.setAttribute('aria-label', 'Chứng nhận hoàn thành cấp');
+    ov.innerHTML =
+      '<div class="idiom-dialog lc-dialog">' +
+        '<button type="button" class="idiom-close" data-lc-close aria-label="Đóng">✕</button>' +
+        '<div class="cert cert-level">' +
+          '<div class="cert-seal">喜汉</div>' +
+          '<p class="cert-eyebrow">Chứng nhận hoàn thành cấp độ</p>' +
+          '<p class="cert-name">' + idiomEsc(who) + '</p>' +
+          '<p class="cert-text">đã hoàn thành toàn bộ chương trình <b>' + idiomEsc(PRACTICE_LEVEL_LABEL[levelId] || levelId) + '</b><br>' +
+            st.total + ' bài học · ' + words + ' từ vựng · qua tất cả bài kiểm tra cuối bài</p>' +
+          '<div class="cert-foot"><span>Ngày ' + dateTxt + '</span><span>Cô Hoàng Thùy · Hi Hán 喜汉</span></div>' +
+        '</div>' +
+        '<div class="fq-actions"><button type="button" class="btn btn-ghost" data-lc-print>🖨️ In / lưu chứng nhận</button>' +
+        '<button type="button" class="btn btn-primary" data-lc-close>Đóng</button></div>' +
+      '</div>';
+    document.body.appendChild(ov);
+    document.body.classList.add('idiom-open');
+    function close() { ov.remove(); document.body.classList.remove('idiom-open'); }
+    ov.addEventListener('click', function (e) {
+      if (e.target === ov || e.target.closest('[data-lc-close]')) close();
+      if (e.target.closest('[data-lc-print]')) {
+        document.body.classList.add('print-cert');
+        window.print();
+        setTimeout(function () { document.body.classList.remove('print-cert'); }, 500);
+      }
+    });
+    ov.querySelector('.idiom-close').focus();
+  }
+
+  // Huy hieu: tinh tu du lieu that cua hoc sinh; chua dat thi xam + ghi con thieu bao nhieu
+  function computeBadges() {
+    var stats = computeProgressStats();
+    var srs = srsStats();
+    var passed = 0, levelsDone = [];
+    Object.keys(READY_LEVELS).forEach(function (id) {
+      var st = levelFinalStatus(id);
+      passed += st.done;
+      if (st.total && st.done >= st.total) levelsDone.push(PRACTICE_LEVEL_LABEL[id] || id);
+    });
+    var stars = stats.stars || 0;
+    function b(icon, name, have, need, unit) {
+      return { icon: icon, name: name, ok: have >= need, hint: have >= need ? 'Đã đạt' : 'Còn ' + (need - have) + ' ' + unit };
+    }
+    return [
+      b('🌱', 'Bài học đầu tiên', stats.lessons, 1, 'bài'),
+      b('🎓', 'Qua kiểm tra cuối bài', passed, 1, 'bài'),
+      b('📚', '100 từ đã học', stats.words, 100, 'từ'),
+      b('📖', '500 từ đã học', stats.words, 500, 'từ'),
+      b('🧠', 'Thuộc 50 từ', srs.known, 50, 'từ'),
+      b('🔥', '7 ngày liên tiếp', stats.streak, 7, 'ngày'),
+      b('💎', '30 ngày liên tiếp', stats.streak, 30, 'ngày'),
+      b('⭐', '500 sao chăm chỉ', stars, 500, 'sao'),
+      { icon: '🏆', name: levelsDone.length ? 'Hoàn thành ' + levelsDone[0] : 'Hoàn thành 1 cấp độ', ok: levelsDone.length > 0, hint: levelsDone.length ? 'Đã đạt' : 'Qua hết bài của 1 cấp' }
+    ];
+  }
+
+  function renderBadges() {
+    var wrap = $('#badgeRow');
+    if (!wrap) return;
+    var list = computeBadges();
+    var got = list.filter(function (x) { return x.ok; }).length;
+    wrap.innerHTML = '<p class="badge-title">Huy hiệu <span>' + got + '/' + list.length + '</span></p><div class="badge-grid">' +
+      list.map(function (x) {
+        return '<div class="badge' + (x.ok ? ' is-on' : '') + '" title="' + x.name + ' — ' + x.hint + '">' +
+          '<span class="badge-ic" aria-hidden="true">' + x.icon + '</span>' +
+          '<span class="badge-name">' + x.name + '</span><span class="badge-hint">' + x.hint + '</span></div>';
+      }).join('') + '</div>';
+  }
+
   function renderLessonList(id) {
+    renderLevelCert(id);
     var wrap = $('#levelDetailList');
     if (!wrap) return;
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[id]) || [];
@@ -1425,11 +1726,13 @@
     new MutationObserver(function () {
       // Man "Kiem tra cuoi bai" moi: cac ham show* cu khong biet de an no —
       // hoc sinh sang man khac (menu, trang chu...) thi tu an
-      var fq = document.getElementById('finalPractice');
-      if (fq && !fq.hidden) {
-        var others = $all('#main > .dash-section').filter(function (s) { return s !== fq && !s.hidden; });
-        if (others.length) fq.hidden = true;
-      }
+      ['finalPractice', 'srsPractice'].forEach(function (id) {
+        var fq = document.getElementById(id);
+        if (fq && !fq.hidden) {
+          var others = $all('#main > .dash-section').filter(function (s) { return s !== fq && !s.hidden; });
+          if (others.length) fq.hidden = true;
+        }
+      });
       updatePathBar();
     }).observe(main, { attributes: true, attributeFilter: ['hidden'], subtree: true });
   })();
@@ -1519,7 +1822,9 @@
   function fqFinish() {
     var st = fqState, wrap = $('#fqContent');
     var total = st.items.length;
-    recordLessonScore(st.lesson, 'final', { correct: st.score, total: total });
+    // Giu diem cao nhat (lam lai te hon khong lam mat bai da qua)
+    var prevFinal = getLessonScores(st.lesson).final;
+    if (!prevFinal || st.score >= (prevFinal.correct || 0)) recordLessonScore(st.lesson, 'final', { correct: st.score, total: total });
     var pass = st.score >= 7;
     var auth = readJSON(STORAGE_KEYS.auth, null);
     var name = auth && auth.user && auth.user.name ? auth.user.name : 'Học viên Hi Hán';
@@ -2337,7 +2642,10 @@
   }
 
   function loadLessonVocab(lesson) {
-    return loadLessonRawData(lesson).then(function (data) { return data.vocabData; });
+    return loadLessonRawData(lesson).then(function (data) {
+      srsEnroll(lesson, data.vocabData); // hoc sinh vua mo tu vung bai nay -> dua vao lich on
+      return data.vocabData;
+    });
   }
 
   function loadLessonWarmup(lesson) {
@@ -11723,30 +12031,57 @@
     '</div>';
   }
 
+  // Bang sao: "Tuan nay" (mac dinh — ai cung co co hoi moi tuan) hoac "Tu truoc toi nay"
+  var starPeriod = 'week';
+  try { starPeriod = sessionStorage.getItem('hyv_star_period') || 'week'; } catch (e) { /* ignore */ }
+  function starPeriodHtml(data) {
+    var reset = '';
+    if (starPeriod === 'week' && data && data.resetInSec != null) {
+      var d = Math.floor(data.resetInSec / 86400), h = Math.floor(data.resetInSec % 86400 / 3600);
+      reset = '<span class="sp-reset">Làm mới sau ' + (d ? d + ' ngày ' : '') + h + ' giờ</span>';
+    }
+    return '<div class="star-period" role="group" aria-label="Khoảng thời gian">' +
+      '<button type="button" class="sp-btn' + (starPeriod === 'week' ? ' is-on' : '') + '" data-star-period="week" aria-pressed="' + (starPeriod === 'week') + '">📅 Tuần này</button>' +
+      '<button type="button" class="sp-btn' + (starPeriod === 'all' ? ' is-on' : '') + '" data-star-period="all" aria-pressed="' + (starPeriod === 'all') + '">🏆 Từ trước tới nay</button>' +
+      reset + '</div>';
+  }
+  function bindStarPeriod(wrap, rerender) {
+    $all('[data-star-period]', wrap).forEach(function (b) {
+      b.addEventListener('click', function () {
+        starPeriod = b.getAttribute('data-star-period');
+        try { sessionStorage.setItem('hyv_star_period', starPeriod); } catch (e) { /* ignore */ }
+        rerender();
+      });
+    });
+  }
+  function starLbUrl() { return '/api/leaderboard/stars' + (starPeriod === 'week' ? '?period=week' : ''); }
+
   function loadStarLeaderboard() {
     var content = $('#leaderboardContent');
     var auth = readJSON(STORAGE_KEYS.auth, null);
     var headers = auth && auth.token ? { 'Authorization': 'Bearer ' + auth.token } : {};
     content.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải bảng xếp hạng...</p>';
-    fetch('/api/leaderboard/stars', { headers: headers })
+    fetch(starLbUrl(), { headers: headers })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (data) {
         if (lbTab !== 'stars') return;
         if (!data.rows.length) {
-          content.innerHTML =
+          content.innerHTML = starPeriodHtml(data) +
             '<div class="lb-empty">' +
-              '<p>Chưa có ai tích được ngôi sao nào.</p>' +
+              '<p>' + (starPeriod === 'week' ? 'Tuần này chưa ai tích được sao.' : 'Chưa có ai tích được ngôi sao nào.') + '</p>' +
               '<p style="color:var(--color-gray-500);font-size:0.9rem;">Đăng nhập rồi học 5 phút để trở thành người chăm chỉ đầu tiên!</p>' +
             '</div>';
+          bindStarPeriod(content, loadStarLeaderboard);
           return;
         }
-        var html = '<div class="lb-list">' + data.rows.map(starLbRowHtml).join('') + '</div>';
+        var html = starPeriodHtml(data) + '<div class="lb-list">' + data.rows.map(starLbRowHtml).join('') + '</div>';
         if (data.me && !data.rows.some(function (r) { return r.isMe; })) {
           html += '<p class="lb-me-label">Vị trí của bạn</p><div class="lb-list">' + starLbRowHtml(data.me) + '</div>';
         } else if (!data.me) {
-          html += '<p class="lb-me-label">' + (auth && auth.token ? 'Bạn chưa có ngôi sao nào — học 5 phút là có ngay!' : 'Đăng nhập để bắt đầu tích sao và có tên trên bảng.') + '</p>';
+          html += '<p class="lb-me-label">' + (auth && auth.token ? 'Bạn chưa có ngôi sao nào' + (starPeriod === 'week' ? ' tuần này' : '') + ' — học 5 phút là có ngay!' : 'Đăng nhập để bắt đầu tích sao và có tên trên bảng.') + '</p>';
         }
         content.innerHTML = html;
+        bindStarPeriod(content, loadStarLeaderboard);
       })
       .catch(function () {
         content.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được bảng xếp hạng, thử lại sau.</p>';
@@ -11946,22 +12281,24 @@
     if (!content) return;
     var auth = readJSON(STORAGE_KEYS.auth, null);
     var loggedIn = !!(auth && auth.token);
-    fetch('/api/leaderboard/stars', { headers: loggedIn ? { 'Authorization': 'Bearer ' + auth.token } : {} })
+    fetch(starLbUrl(), { headers: loggedIn ? { 'Authorization': 'Bearer ' + auth.token } : {} })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (data) {
         var rows = (data.rows || []).slice(0, 10);
         if (!rows.length) {
-          content.innerHTML = '<div class="sb-empty"><p>Chưa ai tích được ngôi sao nào.</p><p>' +
+          content.innerHTML = starPeriodHtml(data) + '<div class="sb-empty"><p>' + (starPeriod === 'week' ? 'Tuần này chưa ai tích được sao.' : 'Chưa ai tích được ngôi sao nào.') + '</p><p>' +
             (loggedIn ? 'Học 5 phút là bạn có ngay 5 sao và đứng đầu bảng!' : 'Đăng nhập rồi học 5 phút để trở thành người chăm chỉ đầu tiên!') + '</p></div>';
+          bindStarPeriod(content, renderStarLeaderboard);
           return;
         }
-        var html = '<ol class="sb-list">' + rows.map(sbRowHtml).join('') + '</ol>';
+        var html = starPeriodHtml(data) + '<ol class="sb-list">' + rows.map(sbRowHtml).join('') + '</ol>';
         if (data.me && data.me.rank > 10) {
           html += '<p class="sb-me-label">Vị trí của bạn</p><ol class="sb-list">' + sbRowHtml(data.me) + '</ol>';
         } else if (!data.me) {
           html += '<p class="sb-foot">' + (loggedIn ? 'Bạn chưa có sao nào — học 5 phút để có tên trên bảng!' : '<button type="button" class="sb-login" data-sb-login>Đăng nhập</button> để tích sao và có tên trên bảng.') + '</p>';
         }
         content.innerHTML = html;
+        bindStarPeriod(content, renderStarLeaderboard);
         var loginBtn = content.querySelector('[data-sb-login]');
         if (loginBtn) loginBtn.addEventListener('click', function () { var b = $('#authBannerLogin') || $('#sidebarUserBtn'); if (b) b.click(); });
       })
@@ -12915,6 +13252,7 @@
         '<div><strong>' + (typeof v === 'number' ? v.toLocaleString('vi-VN') : v) + '</strong><span>' + label + '</span></div>';
       wrap.appendChild(tile);
     });
+    renderBadges();
   }
 
   /* ---------------- Auth (tai khoan that, phien luu trong localStorage) ---------------- */
@@ -13159,6 +13497,7 @@
       else if (currentLevelId) showLevelDetail(currentLevelId);
       else showDashboard();
     });
+    $('#srsBack').addEventListener('click', function () { showDashboard(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     $('#fqBack').addEventListener('click', function () {
       pathState = null;
       updatePathBar();

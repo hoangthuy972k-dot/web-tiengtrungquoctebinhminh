@@ -22,8 +22,10 @@ var vocabData = [
       cf:'用 (yòng – "dùng")',w:'五月'},
    ]},
   {n:3,zh:'号',py:'hào',pos:'Lượng từ',vn:'ngày (số ngày trong tháng)', hv: 'hiệu',em:'📅',lesson:1,
-   ex_zh:'五月一号',ex_py:'wǔ yuè yī hào',ex_vn:'ngày 1 tháng 5',
-   exList:[{zh:'我的生日是五月一号。',py:'Wǒ de shēngrì shì wǔ yuè yī hào.',vn:'Sinh nhật mình là ngày 1 tháng 5.'}],
+   ex_zh:'明天是四号。',ex_py:'Míngtiān shì sì hào.',ex_vn:'Ngày mai là mùng 4.',
+   exList:[
+     {zh:'明天是四号。',py:'Míngtiān shì sì hào.',vn:'Ngày mai là mùng 4.'},
+   ],
    hanzi:[
      {c:'号',p:'hào',type:'上下结构 · Trên-dưới',st:5,ord:'口(khẩu) trên → 丂(giản lược) dưới',rad:'口 (khẩu – miệng)',mean:'số, ngày',
       tip:'Miệng 口 hô lên một con số để gọi tên ngày trong tháng → SỐ, NGÀY.',

@@ -46,8 +46,10 @@ var vocabData = [
       cf:'大 (dà – "to, lớn", đã học ở Bài 5)',w:'太好了'},
    ]},
   {n:6,zh:'了',py:'le',pos:'Trợ từ',vn:'(trợ từ nhấn mạnh)', hv: 'liễu',em:'✅',lesson:2,
-   ex_zh:'太好了！',ex_py:'Tài hǎo le!',ex_vn:'Tốt quá!',
-   exList:[{zh:'太好了！',py:'Tài hǎo le!',vn:'Tốt quá!'}],
+   ex_zh:'太早了！',ex_py:'Tài zǎo le!',ex_vn:'Sớm quá!',
+   exList:[
+     {zh:'太早了！',py:'Tài zǎo le!',vn:'Sớm quá!'},
+   ],
    hanzi:[
      {c:'了',p:'le',type:'独体字 · Chữ đơn',st:2,ord:'㇖ → 乚',rad:'乙 (ất)',mean:'trợ từ',
       tip:'Nét móc đơn giản, đặt cuối câu để nhấn mạnh trạng thái vừa xảy ra hoặc thay đổi, như trong 太好了.',

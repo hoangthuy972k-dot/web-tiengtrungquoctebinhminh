@@ -11,8 +11,10 @@ var vocabData = [
       cf:'找 (zhǎo – "tìm")',w:'我叫 / 我是'},
    ]},
   {n:2,zh:'叫',py:'jiào',pos:'Động từ',vn:'gọi, tên là', hv: 'khiếu',em:'📛',lesson:1,
-   ex_zh:'你叫什么？',ex_py:'Nǐ jiào shénme?',ex_vn:'Bạn tên gì?',
-   exList:[{zh:'你叫什么？',py:'Nǐ jiào shénme?',vn:'Bạn tên gì?'}],
+   ex_zh:'她叫甜甜。',ex_py:'Tā jiào Tiántian.',ex_vn:'Bạn ấy tên là Điềm Điềm.',
+   exList:[
+     {zh:'她叫甜甜。',py:'Tā jiào Tiántian.',vn:'Bạn ấy tên là Điềm Điềm.'},
+   ],
    hanzi:[
      {c:'叫',p:'jiào',type:'左右结构 · Trái-phải',st:5,ord:'口(khẩu) trái → 니(biến thể) phải',rad:'口 (khẩu – miệng)',mean:'gọi, tên là',
       tip:'口(miệng) dùng để GỌI TÊN ai đó.',
@@ -41,16 +43,20 @@ var vocabData = [
       cf:'职 (zhí – "chức vụ")',w:'认识'},
    ]},
   {n:5,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất', hv: 'ngận',em:'📈',lesson:1,
-   ex_zh:'认识你，很高兴！',ex_py:'Rènshi nǐ, hěn gāoxìng!',ex_vn:'Quen được bạn, mình vui lắm!',
-   exList:[{zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'}],
+   ex_zh:'我很好。',ex_py:'Wǒ hěn hǎo.',ex_vn:'Mình rất khỏe.',
+   exList:[
+     {zh:'我很好。',py:'Wǒ hěn hǎo.',vn:'Mình rất khỏe.'},
+   ],
    hanzi:[
      {c:'很',p:'hěn',type:'左右结构 · Trái-phải',st:9,ord:'彳(sách) trái → 艮(cấn) phải',rad:'彳 (sách – bước ngắn)',mean:'rất',
       tip:'彳(bước đi) + 艮(dừng lại, cứng) → nhấn mạnh mức độ = RẤT.',
       cf:'狠 (hěn – "hung dữ")',w:'很高兴'},
    ]},
   {n:6,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui, phấn khởi', hv: 'cao hứng',em:'😄',lesson:1,
-   ex_zh:'认识你，很高兴！',ex_py:'Rènshi nǐ, hěn gāoxìng!',ex_vn:'Quen được bạn, mình vui lắm!',
-   exList:[{zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'}],
+   ex_zh:'我很高兴！',ex_py:'Wǒ hěn gāoxìng!',ex_vn:'Mình rất vui!',
+   exList:[
+     {zh:'我很高兴！',py:'Wǒ hěn gāoxìng!',vn:'Mình rất vui!'},
+   ],
    hanzi:[
      {c:'高',p:'gāo',type:'独体字 · Tượng hình',st:10,ord:'亠→口→冂→口',rad:'高 (cao – tự thành bộ)',mean:'cao',
       tip:'Hình một toà lầu nhiều tầng cao vút → CAO; 高兴 = "hứng thú dâng cao" = VUI.',
@@ -60,8 +66,10 @@ var vocabData = [
       cf:'共 (gòng – "cùng")',w:'高兴'},
    ]},
   {n:7,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, bạn ấy', hv: 'tha',em:'👧',lesson:2,
-   ex_zh:'你认识她吗？',ex_py:'Nǐ rènshi tā ma?',ex_vn:'Bạn có quen cô ấy không?',
-   exList:[{zh:'你认识她吗？',py:'Nǐ rènshi tā ma?',vn:'Bạn có quen cô ấy không?'}],
+   ex_zh:'她叫什么？',ex_py:'Tā jiào shénme?',ex_vn:'Bạn ấy tên là gì?',
+   exList:[
+     {zh:'她叫什么？',py:'Tā jiào shénme?',vn:'Bạn ấy tên là gì?'},
+   ],
    hanzi:[
      {c:'她',p:'tā',type:'左右结构 · Trái-phải',st:6,ord:'女(nữ) trái → 也(dã) phải',rad:'女 (nữ – con gái)',mean:'cô ấy, bạn ấy',
       tip:'女(nữ giới) + 也(đại từ cổ) → chỉ NGƯỜI NỮ đang được nhắc đến.',

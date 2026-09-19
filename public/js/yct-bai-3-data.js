@@ -11,16 +11,20 @@ var vocabData = [
       cf:'她 (tā – "cô ấy", cùng phần 也")',w:'他是谁'},
    ]},
   {n:2,zh:'是',py:'shì',pos:'Động từ',vn:'là', hv: 'thị',em:'✅',lesson:1,
-   ex_zh:'他是中国人。',ex_py:'Tā shì Zhōngguó rén.',ex_vn:'Bạn ấy là người Trung Quốc.',
-   exList:[{zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'}],
+   ex_zh:'我是乐乐。',ex_py:'Wǒ shì Lèle.',ex_vn:'Mình là Lạc Lạc.',
+   exList:[
+     {zh:'我是乐乐。',py:'Wǒ shì Lèle.',vn:'Mình là Lạc Lạc.'},
+   ],
    hanzi:[
      {c:'是',p:'shì',type:'上下结构 · Trên-dưới',st:9,ord:'日(nhật) trên → 正(biến thể) dưới',rad:'日 (nhật – mặt trời)',mean:'là',
       tip:'日(mặt trời) đứng CHÍNH GIỮA bầu trời → biểu thị điều ĐÚNG, khẳng định LÀ.',
       cf:'量 (liàng – "đo lường")',w:'他是谁'},
    ]},
   {n:3,zh:'谁',py:'shéi',pos:'Đại từ',vn:'ai', hv: 'thùy',em:'❓',lesson:1,
-   ex_zh:'他是谁？',ex_py:'Tā shì shéi?',ex_vn:'Anh ấy là ai vậy?',
-   exList:[{zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai vậy?'}],
+   ex_zh:'她是谁？',ex_py:'Tā shì shéi?',ex_vn:'Bạn ấy là ai?',
+   exList:[
+     {zh:'她是谁？',py:'Tā shì shéi?',vn:'Bạn ấy là ai?'},
+   ],
    hanzi:[
      {c:'谁',p:'shéi',type:'左右结构 · Trái-phải',st:10,ord:'讠(ngôn) trái → 隹(chuy) phải',rad:'讠 (ngôn – lời nói)',mean:'ai',
       tip:'讠(lời nói) dùng để cất tiếng HỎI xem người đó là ai.',
@@ -35,16 +39,20 @@ var vocabData = [
       cf:'那 (nà – "kia, đó")',w:'哪国人'},
    ]},
   {n:5,zh:'国',py:'guó',pos:'Danh từ',vn:'nước, quốc gia', hv: 'quốc',em:'🌍',lesson:2,
-   ex_zh:'明明是哪国人？',ex_py:'Míngming shì nǎ guó rén?',ex_vn:'Minh Minh là người nước nào?',
-   exList:[{zh:'明明是哪国人？',py:'Míngming shì nǎ guó rén?',vn:'Minh Minh là người nước nào?'}],
+   ex_zh:'你是哪国人？',ex_py:'Nǐ shì nǎ guó rén?',ex_vn:'Bạn là người nước nào?',
+   exList:[
+     {zh:'你是哪国人？',py:'Nǐ shì nǎ guó rén?',vn:'Bạn là người nước nào?'},
+   ],
    hanzi:[
      {c:'国',p:'guó',type:'全包围结构 · Bao vây hoàn toàn',st:8,ord:'囗(vi) ngoài → 玉(biến thể) trong',rad:'囗 (vi – vây quanh)',mean:'nước, quốc gia',
       tip:'囗(tường thành bao quanh) + 玉(ngọc quý bên trong) → lãnh thổ có biên giới bảo vệ báu vật = ĐẤT NƯỚC.',
       cf:'固 (gù – "vững chắc")',w:'哪国人 / 中国'},
    ]},
   {n:6,zh:'人',py:'rén',pos:'Danh từ',vn:'người', hv: 'nhân',em:'🧍',lesson:2,
-   ex_zh:'他是中国人。',ex_py:'Tā shì Zhōngguó rén.',ex_vn:'Bạn ấy là người Trung Quốc.',
-   exList:[{zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'}],
+   ex_zh:'她是中国人吗？',ex_py:'Tā shì Zhōngguó rén ma?',ex_vn:'Bạn ấy là người Trung Quốc phải không?',
+   exList:[
+     {zh:'她是中国人吗？',py:'Tā shì Zhōngguó rén ma?',vn:'Bạn ấy là người Trung Quốc phải không?'},
+   ],
    hanzi:[
      {c:'人',p:'rén',type:'独体字 · Tượng hình',st:2,ord:'丿→㇏',rad:'人 (nhân – tự thành bộ)',mean:'người',
       tip:'Hình dáng một người đang đứng nghiêng, hai chân chống đỡ → NGƯỜI.',
@@ -116,7 +124,7 @@ var matchData = [
   {left:'明明是哪国人？',right:'他是中国人。'},
   {left:'她是谁？',right:'她是甜甜。'},
   {left:'你是中国人吗？',right:'我是中国人。'},
-  {left:'谁是中国人？',right:'我是中国人。'},
+  {left:'谁是中国人？',right:'明明是中国人。'},
 ];
 
 // Trắc nghiệm — không audio

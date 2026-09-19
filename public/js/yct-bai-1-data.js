@@ -13,9 +13,8 @@ var vocabData = [
       cf:'休 (xiū – "nghỉ ngơi")',w:'你好'},
    ]},
   {n:2,zh:'好',py:'hǎo',pos:'Tính từ',vn:'tốt, khỏe', hv: 'hảo',em:'👍',lesson:1,
-   ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn!',
+   ex_zh:'老师好！',ex_py:'Lǎoshī hǎo!',ex_vn:'Con chào cô ạ!',
    exList:[
-     {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
      {zh:'老师好！',py:'Lǎoshī hǎo!',vn:'Con chào cô ạ!'},
    ],
    hanzi:[
@@ -24,9 +23,9 @@ var vocabData = [
       cf:'如 (rú – "như")',w:'你好 / 老师好'},
    ]},
   {n:3,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy giáo, cô giáo', hv: 'lão sư',em:'👩‍🏫',lesson:1,
-   ex_zh:'老师好！',ex_py:'Lǎoshī hǎo!',ex_vn:'Con chào cô ạ!',
+   ex_zh:'老师，再见！',ex_py:'Lǎoshī, zàijiàn!',ex_vn:'Con chào cô, con về ạ!',
    exList:[
-     {zh:'老师好！',py:'Lǎoshī hǎo!',vn:'Con chào cô ạ!'},
+     {zh:'老师，再见！',py:'Lǎoshī, zàijiàn!',vn:'Con chào cô, con về ạ!'},
    ],
    hanzi:[
      {c:'老',p:'lǎo',type:'独体字 · Chữ đơn',st:6,ord:'土→耂→匕(biến thể)',rad:'老 (lão – tự thành bộ)',mean:'già, đáng kính',
@@ -37,9 +36,9 @@ var vocabData = [
       cf:'帅 (shuài – "chỉ huy")',w:'老师'},
    ]},
   {n:4,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt', hv: 'tái kiến',em:'👋',lesson:1,
-   ex_zh:'老师，再见！',ex_py:'Lǎoshī, zàijiàn!',ex_vn:'Con chào cô, con về ạ!',
+   ex_zh:'再见，再见！',ex_py:'Zàijiàn, zàijiàn!',ex_vn:'Tạm biệt, tạm biệt!',
    exList:[
-     {zh:'老师，再见！',py:'Lǎoshī, zàijiàn!',vn:'Con chào cô, con về ạ!'},
+     {zh:'再见，再见！',py:'Zàijiàn, zàijiàn!',vn:'Tạm biệt, tạm biệt!'},
    ],
    hanzi:[
      {c:'再',p:'zài',type:'独体字 · Chữ đơn',st:6,ord:'一→冂→土(biến thể)',rad:'冂 (biến thể)',mean:'lại, lần nữa',
@@ -58,16 +57,20 @@ var vocabData = [
       cf:'二 (èr – "hai")',w:'一，二，三'},
    ]},
   {n:6,zh:'二',py:'èr',pos:'Số từ',vn:'hai', hv: 'nhị',em:'2️⃣',lesson:2,
-   ex_zh:'一，二，三！',ex_py:'Yī, èr, sān!',ex_vn:'Một, hai, ba!',
-   exList:[{zh:'一，二，三！',py:'Yī, èr, sān!',vn:'Một, hai, ba!'}],
+   ex_zh:'二，四，六，八，十！',ex_py:'Èr, sì, liù, bā, shí!',ex_vn:'Hai, bốn, sáu, tám, mười!',
+   exList:[
+     {zh:'二，四，六，八，十！',py:'Èr, sì, liù, bā, shí!',vn:'Hai, bốn, sáu, tám, mười!'},
+   ],
    hanzi:[
      {c:'二',p:'èr',type:'独体字 · Chữ đơn',st:2,ord:'一→一',rad:'二 (nhị – tự thành bộ)',mean:'hai',
       tip:'Hai nét ngang xếp chồng → số HAI.',
       cf:'一 (yī – "một")',w:'一，二，三'},
    ]},
   {n:7,zh:'三',py:'sān',pos:'Số từ',vn:'ba', hv: 'tam',em:'3️⃣',lesson:2,
-   ex_zh:'一，二，三！',ex_py:'Yī, èr, sān!',ex_vn:'Một, hai, ba!',
-   exList:[{zh:'一，二，三！',py:'Yī, èr, sān!',vn:'Một, hai, ba!'}],
+   ex_zh:'三，二，一！',ex_py:'Sān, èr, yī!',ex_vn:'Ba, hai, một!',
+   exList:[
+     {zh:'三，二，一！',py:'Sān, èr, yī!',vn:'Ba, hai, một!'},
+   ],
    hanzi:[
      {c:'三',p:'sān',type:'独体字 · Chữ đơn',st:3,ord:'一→一→一',rad:'一 (nhất, biến thể)',mean:'ba',
       tip:'Ba nét ngang xếp chồng → số BA.',
@@ -82,16 +85,20 @@ var vocabData = [
       cf:'因 (yīn – "vì, do")',w:'四，五，六'},
    ]},
   {n:9,zh:'五',py:'wǔ',pos:'Số từ',vn:'năm', hv: 'ngũ',em:'5️⃣',lesson:2,
-   ex_zh:'四，五，六！',ex_py:'Sì, wǔ, liù!',ex_vn:'Bốn, năm, sáu!',
-   exList:[{zh:'四，五，六！',py:'Sì, wǔ, liù!',vn:'Bốn, năm, sáu!'}],
+   ex_zh:'五，四，三，二，一！',ex_py:'Wǔ, sì, sān, èr, yī!',ex_vn:'Năm, bốn, ba, hai, một!',
+   exList:[
+     {zh:'五，四，三，二，一！',py:'Wǔ, sì, sān, èr, yī!',vn:'Năm, bốn, ba, hai, một!'},
+   ],
    hanzi:[
      {c:'五',p:'wǔ',type:'独体字 · Chữ đơn',st:4,ord:'一→𠃌→乂(biến thể)→一',rad:'一 (nhất, biến thể)',mean:'năm (số)',
       tip:'Hai nét chéo giao nhau giữa hai đường ngang → số NĂM.',
       cf:'吾 (wú – "ta, tôi")',w:'四，五，六'},
    ]},
   {n:10,zh:'六',py:'liù',pos:'Số từ',vn:'sáu', hv: 'lục',em:'6️⃣',lesson:2,
-   ex_zh:'四，五，六！',ex_py:'Sì, wǔ, liù!',ex_vn:'Bốn, năm, sáu!',
-   exList:[{zh:'四，五，六！',py:'Sì, wǔ, liù!',vn:'Bốn, năm, sáu!'}],
+   ex_zh:'六，七，八！',ex_py:'Liù, qī, bā!',ex_vn:'Sáu, bảy, tám!',
+   exList:[
+     {zh:'六，七，八！',py:'Liù, qī, bā!',vn:'Sáu, bảy, tám!'},
+   ],
    hanzi:[
      {c:'六',p:'liù',type:'上下结构 · Trên-dưới',st:4,ord:'亠 trên → 八(biến thể) dưới',rad:'八 (bát, biến thể)',mean:'sáu',
       tip:'亠(mái nhà) trên 八(chia) → số SÁU.',
@@ -106,24 +113,30 @@ var vocabData = [
       cf:'切 (qiè – "cắt")',w:'七，八，九'},
    ]},
   {n:12,zh:'八',py:'bā',pos:'Số từ',vn:'tám', hv: 'bát',em:'8️⃣',lesson:2,
-   ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
-   exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
+   ex_zh:'八，九，十！',ex_py:'Bā, jiǔ, shí!',ex_vn:'Tám, chín, mười!',
+   exList:[
+     {zh:'八，九，十！',py:'Bā, jiǔ, shí!',vn:'Tám, chín, mười!'},
+   ],
    hanzi:[
      {c:'八',p:'bā',type:'独体字 · Tượng hình',st:2,ord:'丿→㇏',rad:'八 (bát – tự thành bộ)',mean:'tám',
       tip:'Hai nét chéo tách ra hai bên → hình ảnh CHIA TÁCH, số TÁM.',
       cf:'人 (rén – "người")',w:'七，八，九'},
    ]},
   {n:13,zh:'九',py:'jiǔ',pos:'Số từ',vn:'chín', hv: 'cửu',em:'9️⃣',lesson:2,
-   ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
-   exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
+   ex_zh:'九，七，五，三，一！',ex_py:'Jiǔ, qī, wǔ, sān, yī!',ex_vn:'Chín, bảy, năm, ba, một!',
+   exList:[
+     {zh:'九，七，五，三，一！',py:'Jiǔ, qī, wǔ, sān, yī!',vn:'Chín, bảy, năm, ba, một!'},
+   ],
    hanzi:[
      {c:'九',p:'jiǔ',type:'独体字 · Chữ đơn',st:2,ord:'ノ→乙(biến thể)',rad:'乙 (ất, biến thể)',mean:'chín',
       tip:'Hình móc câu uốn cong → số CHÍN, gần đủ một chục.',
       cf:'几 (jǐ – "mấy")',w:'七，八，九'},
    ]},
   {n:14,zh:'十',py:'shí',pos:'Số từ',vn:'mười', hv: 'thập',em:'🔟',lesson:2,
-   ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
-   exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
+   ex_zh:'十，九，八，七，六！',ex_py:'Shí, jiǔ, bā, qī, liù!',ex_vn:'Mười, chín, tám, bảy, sáu!',
+   exList:[
+     {zh:'十，九，八，七，六！',py:'Shí, jiǔ, bā, qī, liù!',vn:'Mười, chín, tám, bảy, sáu!'},
+   ],
    hanzi:[
      {c:'十',p:'shí',type:'独体字 · Chữ đơn',st:2,ord:'一→丨',rad:'十 (thập – tự thành bộ)',mean:'mười',
       tip:'Một nét ngang cắt một nét dọc thành hình chữ thập → số MƯỜI, đủ một chục.',

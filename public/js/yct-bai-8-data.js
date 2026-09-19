@@ -22,8 +22,10 @@ var vocabData = [
       cf:'再 (zài – "lại, nữa", đồng âm khác chữ)',w:'我在学校'},
    ]},
   {n:3,zh:'去',py:'qù',pos:'Động từ',vn:'đi', hv: 'khứ',em:'🚶',lesson:1,
-   ex_zh:'我去商店。',ex_py:'Wǒ qù shāngdiàn.',ex_vn:'Mình đi cửa hàng.',
-   exList:[{zh:'我去商店。',py:'Wǒ qù shāngdiàn.',vn:'Mình đi cửa hàng.'}],
+   ex_zh:'我们去学校。',ex_py:'Wǒmen qù xuéxiào.',ex_vn:'Chúng mình đi đến trường.',
+   exList:[
+     {zh:'我们去学校。',py:'Wǒmen qù xuéxiào.',vn:'Chúng mình đi đến trường.'},
+   ],
    hanzi:[]},
   {n:4,zh:'哪儿',py:'nǎr',pos:'Đại từ',vn:'ở đâu', hv: 'na nhi',em:'❓',lesson:1,
    ex_zh:'你去哪儿？',ex_py:'Nǐ qù nǎr?',ex_vn:'Bạn đi đâu?',

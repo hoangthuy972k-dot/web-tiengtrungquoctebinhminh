@@ -237,6 +237,11 @@ async function initDb() {
   } catch (err) {
     if (err.code !== 'ER_DUP_FIELDNAME') throw err;
   }
+  try {
+    await dbPool.query('ALTER TABLE scores ADD COLUMN srs LONGTEXT');
+  } catch (err) {
+    if (err.code !== 'ER_DUP_FIELDNAME') throw err;
+  }
   await initExamAttemptsTable();
   await initDailyPointsTable();
   await initResumeTable();
@@ -348,6 +353,7 @@ async function loadScores() {
       studyDays: JSON.parse(r.study_days || '[]'),
       lessonScores: JSON.parse(r.lesson_scores || '{}'),
       reviewWrongWords: JSON.parse(r.review_wrong_words || '{}'),
+      srs: JSON.parse(r.srs || '{}'),
       peakCorrect: r.peak_correct == null ? null : r.peak_correct,
       updatedAt: r.updated_at,
     };
@@ -359,13 +365,14 @@ async function saveScores(scores) {
   for (const userId of Object.keys(scores)) {
     const s = scores[userId];
     await dbPool.query(
-      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,review_wrong_words,peak_correct,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ' +
+      'INSERT INTO scores (user_id,name,level,total_correct,total_questions,streak,lessons_done,study_days,lesson_scores,review_wrong_words,srs,peak_correct,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
         'ON DUPLICATE KEY UPDATE name=VALUES(name), level=VALUES(level), total_correct=VALUES(total_correct), ' +
         'total_questions=VALUES(total_questions), streak=VALUES(streak), lessons_done=VALUES(lessons_done), ' +
-        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), review_wrong_words=VALUES(review_wrong_words), peak_correct=VALUES(peak_correct), updated_at=VALUES(updated_at)',
+        'study_days=VALUES(study_days), lesson_scores=VALUES(lesson_scores), review_wrong_words=VALUES(review_wrong_words), srs=VALUES(srs), peak_correct=VALUES(peak_correct), updated_at=VALUES(updated_at)',
       [
         userId, s.name, s.level, s.totalCorrect, s.totalQuestions, s.streak, s.lessonsDone,
-        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), JSON.stringify(s.reviewWrongWords || {}), s.peakCorrect == null ? null : s.peakCorrect, s.updatedAt,
+        JSON.stringify(s.studyDays || []), JSON.stringify(s.lessonScores || {}), JSON.stringify(s.reviewWrongWords || {}), JSON.stringify(s.srs || {}),
+        s.peakCorrect == null ? null : s.peakCorrect, s.updatedAt,
       ]
     );
   }
@@ -410,12 +417,13 @@ async function userProgress(userId) {
   const scores = await loadScores();
   const sc = scores[userId];
   const resumeState = await loadResume(userId);
-  if (!sc) return { studyDays: [], lessonScores: {}, reviewWrongWords: {}, resumeState, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
+  if (!sc) return { studyDays: [], lessonScores: {}, reviewWrongWords: {}, srs: {}, resumeState, streak: 0, totalCorrect: 0, totalQuestions: 0, lessonsDone: 0 };
   return {
     resumeState,
     studyDays: sc.studyDays || [],
     lessonScores: sc.lessonScores || {},
     reviewWrongWords: sc.reviewWrongWords || {},
+    srs: sc.srs || {},
     streak: sc.streak || 0,
     totalCorrect: sc.totalCorrect || 0,
     totalQuestions: sc.totalQuestions || 0,
@@ -504,9 +512,25 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
       incomingReviewWrongWords[key] = val.filter((w) => typeof w === 'string' && w.length <= 40).slice(0, 500);
     });
   }
+  // Lich on tap ngat quang: { "<chu Han>": { url, box, due, at } } — moi tu lay ban co "at" moi hon
+  const incomingSrs = {};
+  const srsIn = req.body?.srs;
+  if (srsIn && typeof srsIn === 'object' && !Array.isArray(srsIn)) {
+    Object.keys(srsIn).slice(0, 5000).forEach((k) => {
+      const e = srsIn[k];
+      if (typeof k !== 'string' || k.length > 24 || !e || typeof e !== 'object') return;
+      const box = Math.max(0, Math.min(6, Math.round(Number(e.box) || 0)));
+      const due = typeof e.due === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(e.due) ? e.due : null;
+      const at = Math.round(Number(e.at) || 0);
+      if (!due || !at) return;
+      incomingSrs[k] = { url: typeof e.url === 'string' ? e.url.slice(0, 80) : '', box, due, at };
+    });
+  }
   const scores = await loadScores();
   const hadRecord = !!scores[req.user.id];
   const existing = scores[req.user.id] || {};
+  const mergedSrs = Object.assign({}, existing.srs || {});
+  Object.keys(incomingSrs).forEach((k) => { if (!mergedSrs[k] || (mergedSrs[k].at || 0) < incomingSrs[k].at) mergedSrs[k] = incomingSrs[k]; });
   // Diem "hom nay" = so cau dung vuot qua MUC CAO NHAT tung dat (peakCorrect),
   // nen lam lai 1 bai cho diem tut roi lam lai cho diem len khong duoc cong 2 lan.
   // Lan dong bo dau tien cua tai khoan chi lay moc (tien do cu tu truoc khi dang
@@ -530,6 +554,7 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
     studyDays: mergedDays,
     lessonScores: mergedLessonScores,
     reviewWrongWords: mergedReviewWrongWords,
+    srs: mergedSrs,
     peakCorrect: newPeak,
     updatedAt: new Date().toISOString(),
   };
@@ -781,7 +806,7 @@ const STAR_TICK_MAX_SEC = 90;  // moi lan client bao toi da 90 giay
 const STAR_ANSWER_DAY_CAP = 300;
 const STAR_TASKS = 10;         // sao khi xong ca 3 "nhiem vu hom nay" (1 lan / ngay)
 const STAR_ANSWERS_FILE = path.join(DATA_DIR, 'star_answers.json');
-const STAR_KEY_RE = /^[\w\/.:|-]{3,160}$/;
+const STAR_KEY_RE = /^[\w\/.:|㐀-鿿-]{3,160}$/u;
 
 async function initStarsTable() {
   if (!USE_DB) return;
@@ -806,7 +831,8 @@ async function initStarsTable() {
       'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
     ')'
   );
-  for (const col of ['answer_peak INT NULL', 'day_answer INT NOT NULL DEFAULT 0', 'day_tasks TINYINT NOT NULL DEFAULT 0', 'day_sec INT NOT NULL DEFAULT 0']) {
+  for (const col of ['answer_peak INT NULL', 'day_answer INT NOT NULL DEFAULT 0', 'day_tasks TINYINT NOT NULL DEFAULT 0', 'day_sec INT NOT NULL DEFAULT 0',
+    'week CHAR(10) NULL', 'week_stars INT NOT NULL DEFAULT 0']) {
     try {
       await dbPool.query('ALTER TABLE stars ADD COLUMN ' + col);
     } catch (err) {
@@ -815,7 +841,7 @@ async function initStarsTable() {
   }
 }
 function blankStar() {
-  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, dayTasks: 0, daySec: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
+  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, dayTasks: 0, daySec: 0, week: '', weekStars: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
 }
 async function loadStar(userId) {
   if (!USE_DB) {
@@ -827,7 +853,8 @@ async function loadStar(userId) {
   const r = rows[0];
   return {
     total: r.total, carrySec: r.carry_sec, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars,
-    dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, daySec: r.day_sec || 0, answerPeak: r.answer_peak == null ? null : r.answer_peak,
+    dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, daySec: r.day_sec || 0, week: r.week || '', weekStars: r.week_stars || 0,
+    answerPeak: r.answer_peak == null ? null : r.answer_peak,
     lastTickMs: Number(r.last_tick_ms), updatedMs: Number(r.updated_ms),
   };
 }
@@ -840,10 +867,12 @@ async function saveStar(userId, s) {
     return;
   }
   await dbPool.query(
-    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,day_tasks,day_sec,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ' +
+    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,day_tasks,day_sec,week,week_stars,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ' +
       'ON DUPLICATE KEY UPDATE total=VALUES(total), carry_sec=VALUES(carry_sec), day=VALUES(day), day_visit=VALUES(day_visit), ' +
-      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), day_tasks=VALUES(day_tasks), day_sec=VALUES(day_sec), answer_peak=VALUES(answer_peak), last_tick_ms=VALUES(last_tick_ms), updated_ms=VALUES(updated_ms)',
-    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.dayTasks || 0, s.daySec || 0, s.answerPeak == null ? null : s.answerPeak, s.lastTickMs, s.updatedMs]
+      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), day_tasks=VALUES(day_tasks), day_sec=VALUES(day_sec), week=VALUES(week), week_stars=VALUES(week_stars), ' +
+      'answer_peak=VALUES(answer_peak), last_tick_ms=VALUES(last_tick_ms), updated_ms=VALUES(updated_ms)',
+    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.dayTasks || 0, s.daySec || 0, s.week || null, s.weekStars || 0,
+      s.answerPeak == null ? null : s.answerPeak, s.lastTickMs, s.updatedMs]
   );
 }
 async function loadAllStars() {
@@ -851,13 +880,31 @@ async function loadAllStars() {
     const all = readJsonFile(STARS_FILE) || {};
     return Object.keys(all).map((id) => Object.assign({ userId: id }, blankStar(), all[id]));
   }
-  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, day_tasks, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 200');
-  return rows.map((r) => ({ userId: r.user_id, total: r.total, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, updatedMs: Number(r.updated_ms) }));
+  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, day_tasks, week, week_stars, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 2000');
+  return rows.map((r) => ({ userId: r.user_id, total: r.total, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, dayAnswer: r.day_answer || 0,
+    dayTasks: r.day_tasks || 0, week: r.week || '', weekStars: r.week_stars || 0, updatedMs: Number(r.updated_ms) }));
 }
-// Sang ngay moi (gio VN) thi dat lai phan "hom nay"
+// Tuan tinh tu thu Hai (gio VN); khoa = ngay thu Hai dau tuan
+function vnWeekKey(ms) {
+  const d = new Date((ms || Date.now()) + VN_OFFSET_MS);
+  const dow = (d.getUTCDay() + 6) % 7; // 0 = thu Hai
+  return new Date(d.getTime() - dow * 86400000).toISOString().slice(0, 10);
+}
+function secondsToVnWeekEnd() {
+  const monday = Date.parse(vnWeekKey() + 'T00:00:00Z') - VN_OFFSET_MS;
+  return Math.max(0, Math.round((monday + 7 * 86400000 - Date.now()) / 1000));
+}
+// Sang ngay / tuan moi (gio VN) thi dat lai phan "hom nay" / "tuan nay"
 function rollStarDay(s) {
   const day = vnDayKey();
   if (s.day !== day) { s.day = day; s.dayVisit = 0; s.dayStars = 0; s.dayAnswer = 0; s.dayTasks = 0; s.daySec = 0; }
+  const week = vnWeekKey();
+  if (s.week !== week) { s.week = week; s.weekStars = 0; }
+}
+// Moi lan cong sao deu cong ca vao tong va vao "tuan nay"
+function addStars(s, n) {
+  s.total += n;
+  s.weekStars = (s.weekStars || 0) + n;
 }
 function starsToday(s) {
   return s.dayStars + (s.dayAnswer || 0) + (s.dayVisit ? STAR_VISIT : 0) + (s.dayTasks ? STAR_TASKS : 0);
@@ -889,7 +936,7 @@ app.post('/api/stars/visit', requireAuth, asyncRoute(async (req, res) => {
   const s = await loadStar(req.user.id);
   rollStarDay(s);
   let awarded = 0;
-  if (!s.dayVisit) { s.dayVisit = 1; s.total += STAR_VISIT; awarded = STAR_VISIT; }
+  if (!s.dayVisit) { s.dayVisit = 1; addStars(s, STAR_VISIT); awarded = STAR_VISIT; }
   s.lastTickMs = Date.now();
   await saveStar(req.user.id, s);
   res.json(starView(s, awarded));
@@ -927,7 +974,7 @@ app.post('/api/stars/correct', requireAuth, asyncRoute(async (req, res) => {
     // Da het han muc trong ngay thi khong ghi khoa, de hom sau lam lai van duoc sao
     const fresh = await addStarAnswerKeys(req.user.id, keys.slice(0, room));
     gained = Math.min(fresh, room);
-    s.total += gained;
+    addStars(s, gained);
     s.dayAnswer = (s.dayAnswer || 0) + gained;
     if (gained) await saveStar(req.user.id, s);
   }
@@ -939,7 +986,7 @@ app.post('/api/stars/tasks', requireAuth, asyncRoute(async (req, res) => {
   const s = await loadStar(req.user.id);
   rollStarDay(s);
   let awarded = 0;
-  if (!s.dayTasks) { s.dayTasks = 1; s.total += STAR_TASKS; awarded = STAR_TASKS; await saveStar(req.user.id, s); }
+  if (!s.dayTasks) { s.dayTasks = 1; addStars(s, STAR_TASKS); awarded = STAR_TASKS; await saveStar(req.user.id, s); }
   res.json(starView(s, awarded));
 }));
 
@@ -958,7 +1005,7 @@ app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
     s.carrySec += sec;
     while (s.carrySec >= STAR_BLOCK_SEC && s.dayStars < STAR_DAY_CAP) {
       s.carrySec -= STAR_BLOCK_SEC;
-      s.total += STAR_PER_BLOCK;
+      addStars(s, STAR_PER_BLOCK);
       s.dayStars += STAR_PER_BLOCK;
       awarded += STAR_PER_BLOCK;
     }
@@ -975,15 +1022,22 @@ app.get('/api/leaderboard/stars', asyncRoute(async (req, res) => {
   const byId = {};
   users.forEach((u) => { byId[u.id] = u; });
   const today = vnDayKey();
+  // ?period=week: chi tinh sao kiem duoc trong tuan nay (thu Hai → Chu nhat, gio VN)
+  const weekly = req.query.period === 'week';
+  const thisWeek = vnWeekKey();
+  const score = (s) => (weekly ? (s.week === thisWeek ? s.weekStars || 0 : 0) : s.total);
   const board = all
-    .filter((s) => byId[s.userId] && s.total > 0)
-    .sort((a, b) => b.total - a.total || a.updatedMs - b.updatedMs);
+    .filter((s) => byId[s.userId] && score(s) > 0)
+    .sort((a, b) => score(b) - score(a) || a.updatedMs - b.updatedMs);
   const toRow = (s, i) => ({
-    rank: i + 1, name: byId[s.userId].name, level: byId[s.userId].level, total: s.total,
+    rank: i + 1, name: byId[s.userId].name, level: byId[s.userId].level, total: score(s),
     today: s.day === today ? starsToday(s) : 0, isMe: s.userId === meId,
   });
   const meIdx = meId ? board.findIndex((s) => s.userId === meId) : -1;
-  res.json({ rows: board.slice(0, 50).map(toRow), me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null, count: board.length });
+  res.json({
+    period: weekly ? 'week' : 'all', week: thisWeek, resetInSec: weekly ? secondsToVnWeekEnd() : null,
+    rows: board.slice(0, 50).map(toRow), me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null, count: board.length,
+  });
 }));
 
 // ══════════════════════════════════════════════════════════════════

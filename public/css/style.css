@@ -5579,6 +5579,11 @@ body.pinyin-hidden .py-inline {
 .rp-row-icon.is-blue { background: var(--color-blue-50); }
 .rp-row-icon.is-indigo { background: var(--color-indigo-50); }
 .rp-row-icon.is-green { background: var(--color-green-50, #e8f7ee); }
+.rp-row-icon.is-gold { background: var(--color-gold-50); }
+.rp-row-icon.is-teal { background: var(--color-teal-50); }
+.rp-row-icon.is-purple { background: var(--color-purple-50); }
+.rp-row-icon.is-orange { background: var(--color-orange-50); }
+.rp-row-icon.is-pink { background: var(--color-pink-50); }
 
 .rp-row-label {
   font-weight: 600;
@@ -5604,6 +5609,11 @@ body.pinyin-hidden .py-inline {
 .rp-row-bar-fill.is-blue { background: var(--color-blue-600, #2563eb); }
 .rp-row-bar-fill.is-indigo { background: var(--color-indigo-600); }
 .rp-row-bar-fill.is-green { background: var(--color-green-600); }
+.rp-row-bar-fill.is-gold { background: var(--color-gold-500); }
+.rp-row-bar-fill.is-teal { background: var(--color-teal-600); }
+.rp-row-bar-fill.is-purple { background: var(--color-purple-600); }
+.rp-row-bar-fill.is-orange { background: var(--color-orange-600); }
+.rp-row-bar-fill.is-pink { background: var(--color-pink-600); }
 
 .rp-row-pct {
   font-weight: 700;

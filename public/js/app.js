@@ -10828,12 +10828,47 @@
 
   /* ---------------- Results (Ket qua cuoi bai) — tong hop diem THAT tu cac phan da lam ---------------- */
 
+  // Moi phan hoc sinh co the lam, trong app LAN tren trang bai hoc day du.
+  // sources: cac khoa diem trong hyv_lesson_scores cung la mot phan
+  // ('game.x' = tro choi con trong Game on tap; 'page-x' = trang bai hoc day du).
+  // Lam o nhieu noi thi lay ket qua tot nhat.
   var RESULT_SECTION_DEFS = [
-    { key: 'vocab', label: 'Từ vựng', emoji: '📖', color: 'red' },
-    { key: 'grammar', label: 'Ngữ pháp', emoji: '🎓', color: 'blue' },
-    { key: 'game', label: 'Game ôn tập', emoji: '🎮', color: 'indigo' },
-    { key: 'dialog', label: 'Hội thoại · Shadowing', emoji: '🗣️', color: 'green' }
+    { key: 'warmup', label: 'Khởi động', emoji: '🎯', color: 'orange', sources: ['warmup', 'page-warmup'] },
+    { key: 'vocab', label: 'Từ vựng', emoji: '📖', color: 'red', sources: ['vocab'] },
+    { key: 'flash', label: 'Thẻ nhớ', emoji: '🃏', color: 'gold', sources: ['flash'] },
+    { key: 'grammar', label: 'Ngữ pháp', emoji: '🎓', color: 'blue', sources: ['grammar'] },
+    { key: 'dialog', label: 'Hội thoại · Shadowing', emoji: '🗣️', color: 'green', sources: ['dialog', 'page-dialog'] },
+    { key: 'listen', label: 'Luyện nghe', emoji: '🎧', color: 'purple', sources: ['listen', 'page-listen'] },
+    { key: 'match', label: 'Nối câu', emoji: '🔗', color: 'teal', sources: ['game.match', 'page-match'] },
+    { key: 'fill', label: 'Điền từ', emoji: '✏️', color: 'indigo', sources: ['game.fill', 'page-fill'] },
+    { key: 'sort', label: 'Sắp xếp câu', emoji: '🧩', color: 'orange', sources: ['game.sort', 'page-sort'] },
+    { key: 'mc', label: 'Trắc nghiệm', emoji: '✅', color: 'blue', sources: ['game.mc', 'page-mc'] },
+    { key: 'errfix', label: 'Sửa lỗi sai', emoji: '🔍', color: 'pink', sources: ['game.errfix', 'page-errorfix'] },
+    { key: 'speak', label: 'Luyện nói', emoji: '🎤', color: 'green', sources: ['speak', 'page-speak'] },
+    { key: 'translate', label: 'Luyện dịch', emoji: '🔄', color: 'teal', sources: ['translate'] },
+    { key: 'workbook', label: 'Sách bài tập', emoji: '📘', color: 'indigo', sources: ['workbook-mocktest'] },
+    { key: 'quick', label: 'Ôn nhanh', emoji: '⚡', color: 'gold', sources: ['quick'] }
   ];
+
+  // Ket qua cua 1 phan tu cac nguon diem da luu: {scored, correct, total, pct} hoac {done} hoac null
+  function resultForSection(scores, def) {
+    var best = null;
+    def.sources.forEach(function (src) {
+      var raw = src.indexOf('game.') === 0 ? (scores.game || {})[src.slice(5)] : scores[src];
+      if (!raw) return;
+      var r = null;
+      if (typeof raw.total === 'number' && raw.total > 0) {
+        var correct = Math.max(0, Math.min(raw.total, Number(raw.correct) || 0));
+        r = { def: def, scored: true, correct: correct, total: raw.total, pct: Math.round(correct / raw.total * 100) };
+      } else if (raw.done) {
+        r = { def: def, scored: false, done: true };
+      }
+      if (!r) return;
+      // uu tien ket qua co diem, roi diem cao hon
+      if (!best || (r.scored && (!best.scored || r.pct > best.pct))) best = r;
+    });
+    return best;
+  }
 
   function showResultsPractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -10865,23 +10900,11 @@
     var wrap = $('#rpContent');
 
     var sectionResults = RESULT_SECTION_DEFS.map(function (def) {
-      var raw = scores[def.key];
-      if (!raw) return null;
-      if (def.key === 'game') {
-        var correct = 0, total = 0;
-        Object.keys(raw).forEach(function (k) { correct += raw[k].correct; total += raw[k].total; });
-        if (!total) return null;
-        return { def: def, scored: true, correct: correct, total: total, pct: Math.round(correct / total * 100) };
-      }
-      if (raw.done) return { def: def, scored: false, done: true };
-      if (typeof raw.total === 'number' && raw.total > 0) {
-        return { def: def, scored: true, correct: raw.correct, total: raw.total, pct: Math.round(raw.correct / raw.total * 100) };
-      }
-      return null;
+      return resultForSection(scores, def);
     }).filter(Boolean);
 
     if (!sectionResults.length) {
-      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bạn chưa hoàn thành phần nào của bài học này. Hãy làm Từ vựng, Ngữ pháp, Game ôn tập hoặc Hội thoại trước, rồi quay lại đây xem kết quả nhé!</p>';
+      wrap.innerHTML = '<p style="color:var(--color-gray-500);">Bạn chưa làm phần nào của bài học này. Làm bất kỳ phần nào (Từ vựng, Hội thoại, Nối câu, Điền từ, Trắc nghiệm…) rồi quay lại đây xem kết quả nhé!</p>';
       return;
     }
 

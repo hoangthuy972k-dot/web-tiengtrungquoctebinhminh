@@ -85,6 +85,29 @@ function fetchAudioParts(base,prefix,container,onFound){
 // ══════════════════════════════════════════
 window.exerciseScores = { collocation:null, listen:null, fill:null, sort:null, errorfix:null, speak:null };
 
+// Luu diem tung bai tap cua trang nay vao hyv_lesson_scores (cung cho voi diem
+// lam trong app), khoa "page-..." — de man "Ket qua cuoi bai" hien moi phan hoc
+// sinh da lam, du lam trong app hay tren trang bai hoc day du. Trang chu se dong
+// bo len may chu o lan mo tiep theo.
+function savePageScore(key,val){
+  try{
+    var all=JSON.parse(localStorage.getItem('hyv_lesson_scores')||'{}');
+    var ls=all[location.pathname]||{};
+    ls['page-'+key]=val;
+    all[location.pathname]=ls;
+    localStorage.setItem('hyv_lesson_scores',JSON.stringify(all));
+  }catch(e){/* localStorage unavailable */}
+}
+// Moi lan mot bai tap ghi vao exerciseScores thi luu luon
+['collocation','listen','fill','sort','errorfix','mc'].forEach(function(k){
+  var v=window.exerciseScores[k];
+  Object.defineProperty(window.exerciseScores,k,{
+    enumerable:true,configurable:true,
+    get:function(){return v;},
+    set:function(nv){v=nv;if(nv&&nv.total)savePageScore(k==='collocation'?'match':k,{correct:nv.correct,total:nv.total});}
+  });
+});
+
 // ══════════════════════════════════════════
 // NAV
 // ══════════════════════════════════════════
@@ -94,6 +117,7 @@ function showTab(id,btn){
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
   if(id==='tongket' && typeof buildSummary==='function') buildSummary();
+  if(id==='dialog'){ var a=document.querySelector('.dlg-tb.active'); markDlgViewed(a?parseInt(a.dataset.idx,10)||0:0); }
 }
 
 // ══════════════════════════════════════════
@@ -147,6 +171,7 @@ function selectWuOpt(letter){
       const sb=document.getElementById('wu-score');
       sb.style.display='flex';
       document.getElementById('wu-score-n').textContent=wuData.length+'/'+wuData.length;
+      savePageScore('warmup',{correct:wuData.length,total:wuData.length});
       document.getElementById('wu-score-m').textContent='🎉 Hoàn hảo! Bạn đã ghép đúng tất cả!';
     }
   } else {
@@ -388,6 +413,14 @@ function showDlg(i,btn){
   document.querySelectorAll('.dlg-tb').forEach(function(b){b.classList.remove('active');});
   document.getElementById('dlg'+i).classList.add('active');
   btn.classList.add('active');
+  markDlgViewed(i);
+}
+// Doc het cac doan hoi thoai = hoan thanh phan Hoi thoai
+var dlgViewed={};
+function markDlgViewed(i){
+  if(typeof dialogData==='undefined')return;
+  dlgViewed[i]=true;
+  if(Object.keys(dlgViewed).length>=dialogData.length)savePageScore('dialog',{done:true});
 }
 
 // ══════════════════════════════════════════
@@ -706,6 +739,7 @@ function recStart(i){
       stream.getTracks().forEach(function(t){t.stop();});
       const blob=new Blob(chunks,{type:mr.mimeType||'audio/webm'});
       recState[i]={blob:blob,url:URL.createObjectURL(blob)};
+      savePageScore('speak',{done:true});
       document.getElementById('rec-status'+i).textContent='✓ Đã ghi âm xong. Nghe lại hoặc gửi chấm điểm.';
       document.querySelector('#rec'+i+' .rec-play').disabled=false;
       document.querySelector('#rec'+i+' .rec-submit').disabled=false;

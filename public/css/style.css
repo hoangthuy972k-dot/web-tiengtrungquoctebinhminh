@@ -4102,8 +4102,8 @@ body.idiom-open { overflow: hidden; }
 
 .lp-wb-audio-pin {
   position: sticky;
-  top: 0;
-  z-index: 20;
+  top: calc(var(--header-h) + 6px);
+  z-index: 50;
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-lg);
@@ -5219,10 +5219,12 @@ body.idiom-open { overflow: hidden; }
 }
 
 /* ---------- Workbook practice (Luyen tap sach bai tap) ---------- */
+/* Ghim ngay DUOI thanh tren cung (cung dinh o top 0, cao --header-h) — de top 0
+   thi thanh tren che mat trinh phat khi hoc sinh keo xuong lam cau duoi. */
 .wb-audio-box {
   position: sticky;
-  top: 0;
-  z-index: 20;
+  top: calc(var(--header-h) + 6px);
+  z-index: 50;
   background: var(--color-green-50);
   border: 1px solid var(--color-green-600);
   border-radius: var(--radius-md);

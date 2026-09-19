@@ -144,6 +144,10 @@
           </div>
           <div class="dash-streak-days" id="streakDays"></div>
           <div class="dash-streak-badge" id="streakBadge"></div>
+          <button type="button" class="dash-star-row" id="starRow" title="Xem bảng xếp hạng người chăm chỉ">
+            <span class="dash-star-icon" aria-hidden="true">⭐</span>
+            <span class="dash-star-text"><strong id="starTotal">Tích sao chăm chỉ</strong><span id="starHint">Đăng nhập để bắt đầu tích sao</span></span>
+          </button>
           <button class="btn btn-dark btn-block" id="ctaStreak" type="button">Học ngay hôm nay</button>
         </div>
       </div>
@@ -416,6 +420,7 @@
       <div class="lb-tabs" role="tablist" aria-label="Loại bảng xếp hạng">
         <button type="button" class="lb-tab is-active" role="tab" aria-selected="true" data-lb-tab="study">📚 Học tập</button>
         <button type="button" class="lb-tab" role="tab" aria-selected="false" data-lb-tab="exam">📝 Thi thử HSK</button>
+        <button type="button" class="lb-tab" role="tab" aria-selected="false" data-lb-tab="stars">⭐ Chăm chỉ</button>
       </div>
       <div class="lb-exam-bar" id="lbExamBar" hidden>
         <label for="lbExamSelect">Xem bảng</label>

@@ -241,6 +241,7 @@ async function initDb() {
   await initDailyPointsTable();
   await initResumeTable();
   await initChatTables();
+  await initStarsTable();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
   await migrateJsonToDbIfNeeded();
 }
@@ -760,6 +761,147 @@ app.get('/api/leaderboard/today', asyncRoute(async (req, res) => {
     // so diem con thieu de chen vao top 5 (neu minh dang dung ngoai top 5)
     toTop5: meIdx >= 5 && fifth ? fifth.points - board[meIdx].points + 1 : null,
   });
+}));
+
+// ══════════════════════════════════════════════════════════════════
+// Ngoi sao cham chi: +5 sao lan dau mo web moi ngay, +5 sao cho moi 5 phut
+// hoc that (tab dang mo va co thao tac). May chu tu dem gio theo thoi gian
+// thuc troi qua giua 2 lan client bao, nen khong gui gia gio hoc len duoc;
+// mo 2 tab cung luc cung khong duoc tinh gap doi.
+// ══════════════════════════════════════════════════════════════════
+const STARS_FILE = path.join(DATA_DIR, 'stars.json');
+const STAR_VISIT = 5;          // sao khi mo web, 1 lan / ngay (gio VN)
+const STAR_BLOCK_SEC = 300;    // moi 5 phut hoc...
+const STAR_PER_BLOCK = 5;      // ...duoc 5 sao
+const STAR_DAY_CAP = 120;      // toi da 120 sao / ngay tu gio hoc (= 2 tieng)
+const STAR_TICK_MAX_SEC = 90;  // moi lan client bao toi da 90 giay
+
+async function initStarsTable() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS stars (' +
+      'user_id VARCHAR(36) PRIMARY KEY, ' +
+      'total INT NOT NULL DEFAULT 0, ' +
+      'carry_sec INT NOT NULL DEFAULT 0, ' +
+      'day CHAR(10), ' +
+      'day_visit TINYINT NOT NULL DEFAULT 0, ' +
+      'day_stars INT NOT NULL DEFAULT 0, ' +
+      'last_tick_ms BIGINT NOT NULL DEFAULT 0, ' +
+      'updated_ms BIGINT NOT NULL, ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+}
+function blankStar() {
+  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, lastTickMs: 0, updatedMs: 0 };
+}
+async function loadStar(userId) {
+  if (!USE_DB) {
+    const all = readJsonFile(STARS_FILE) || {};
+    return Object.assign(blankStar(), all[userId] || {});
+  }
+  const [rows] = await dbPool.query('SELECT * FROM stars WHERE user_id = ?', [userId]);
+  if (!rows.length) return blankStar();
+  const r = rows[0];
+  return { total: r.total, carrySec: r.carry_sec, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, lastTickMs: Number(r.last_tick_ms), updatedMs: Number(r.updated_ms) };
+}
+async function saveStar(userId, s) {
+  s.updatedMs = Date.now();
+  if (!USE_DB) {
+    const all = readJsonFile(STARS_FILE) || {};
+    all[userId] = s;
+    writeJsonFile(STARS_FILE, all);
+    return;
+  }
+  await dbPool.query(
+    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?) ' +
+      'ON DUPLICATE KEY UPDATE total=VALUES(total), carry_sec=VALUES(carry_sec), day=VALUES(day), day_visit=VALUES(day_visit), ' +
+      'day_stars=VALUES(day_stars), last_tick_ms=VALUES(last_tick_ms), updated_ms=VALUES(updated_ms)',
+    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.lastTickMs, s.updatedMs]
+  );
+}
+async function loadAllStars() {
+  if (!USE_DB) {
+    const all = readJsonFile(STARS_FILE) || {};
+    return Object.keys(all).map((id) => Object.assign({ userId: id }, blankStar(), all[id]));
+  }
+  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 200');
+  return rows.map((r) => ({ userId: r.user_id, total: r.total, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, updatedMs: Number(r.updated_ms) }));
+}
+// Sang ngay moi (gio VN) thi dat lai phan "hom nay"
+function rollStarDay(s) {
+  const day = vnDayKey();
+  if (s.day !== day) { s.day = day; s.dayVisit = 0; s.dayStars = 0; }
+}
+function starView(s, awarded) {
+  return {
+    total: s.total,
+    secToNext: STAR_BLOCK_SEC - s.carrySec,
+    today: s.dayStars + (s.dayVisit ? STAR_VISIT : 0),
+    capped: s.dayStars >= STAR_DAY_CAP,
+    awarded: awarded || 0,
+    blockSec: STAR_BLOCK_SEC,
+    perBlock: STAR_PER_BLOCK,
+  };
+}
+
+app.get('/api/stars/me', requireAuth, asyncRoute(async (req, res) => {
+  const s = await loadStar(req.user.id);
+  rollStarDay(s);
+  res.json(starView(s, 0));
+}));
+
+// Mo web: cong sao lan dau trong ngay, va lay moc bat dau dem gio cho phien nay.
+app.post('/api/stars/visit', requireAuth, asyncRoute(async (req, res) => {
+  const s = await loadStar(req.user.id);
+  rollStarDay(s);
+  let awarded = 0;
+  if (!s.dayVisit) { s.dayVisit = 1; s.total += STAR_VISIT; awarded = STAR_VISIT; }
+  s.lastTickMs = Date.now();
+  await saveStar(req.user.id, s);
+  res.json(starView(s, awarded));
+}));
+
+// Client bao "toi vua hoc them N giay" (chi khi tab dang mo va co thao tac).
+app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
+  const s = await loadStar(req.user.id);
+  rollStarDay(s);
+  const now = Date.now();
+  let sec = Math.min(STAR_TICK_MAX_SEC, Math.max(0, Math.round(Number(req.body?.seconds) || 0)));
+  // Khong tin so giay client gui: toi da bang thoi gian thuc troi qua tu lan bao truoc.
+  if (s.lastTickMs) sec = Math.min(sec, Math.floor((now - s.lastTickMs) / 1000));
+  s.lastTickMs = now;
+  let awarded = 0;
+  if (sec > 0 && s.dayStars < STAR_DAY_CAP) {
+    s.carrySec += sec;
+    while (s.carrySec >= STAR_BLOCK_SEC && s.dayStars < STAR_DAY_CAP) {
+      s.carrySec -= STAR_BLOCK_SEC;
+      s.total += STAR_PER_BLOCK;
+      s.dayStars += STAR_PER_BLOCK;
+      awarded += STAR_PER_BLOCK;
+    }
+    if (s.dayStars >= STAR_DAY_CAP) s.carrySec = 0;
+  }
+  await saveStar(req.user.id, s);
+  res.json(starView(s, awarded));
+}));
+
+// Bang xep hang "nguoi cham chi nhat": tong sao, kem so sao hom nay.
+app.get('/api/leaderboard/stars', asyncRoute(async (req, res) => {
+  const meId = await optionalUserId(req);
+  const [all, users] = await Promise.all([loadAllStars(), loadUsers()]);
+  const byId = {};
+  users.forEach((u) => { byId[u.id] = u; });
+  const today = vnDayKey();
+  const board = all
+    .filter((s) => byId[s.userId] && s.total > 0)
+    .sort((a, b) => b.total - a.total || a.updatedMs - b.updatedMs);
+  const toRow = (s, i) => ({
+    rank: i + 1, name: byId[s.userId].name, level: byId[s.userId].level, total: s.total,
+    today: s.day === today ? s.dayStars + (s.dayVisit ? STAR_VISIT : 0) : 0, isMe: s.userId === meId,
+  });
+  const meIdx = meId ? board.findIndex((s) => s.userId === meId) : -1;
+  res.json({ rows: board.slice(0, 50).map(toRow), me: meIdx >= 0 ? toRow(board[meIdx], meIdx) : null, count: board.length });
 }));
 
 // ══════════════════════════════════════════════════════════════════

@@ -130,6 +130,11 @@
   root.className = 'hw-root';
   root.innerHTML =
     '<div class="hw-fab-stack">' +
+      '<a class="hw-star" id="hwStar" href="/#dang-nhap" title="Đăng nhập để tích ngôi sao chăm chỉ">' +
+        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>' +
+        '<span class="hw-star-num" id="hwStarNum">Tích sao</span>' +
+        '<span class="hw-star-bar" id="hwStarBar" hidden><i id="hwStarFill"></i></span>' +
+      '</a>' +
       '<div class="hw-mascot-wrap" id="hwMascotWrap">' +
         '<button type="button" class="hw-mascot" id="hwAiBtn" aria-label="Mở Trợ lý AI" aria-expanded="false" aria-controls="hwAiPanel">' + I.lantern() + '</button>' +
         '<button type="button" class="hw-mascot-hide" id="hwAiHide" aria-label="Ẩn Trợ lý AI">' + I.x + '</button>' +
@@ -158,7 +163,8 @@
       '</form>' +
     '</section>' +
 
-    '<section class="hw-panel" id="hwChatPanel" role="dialog" aria-labelledby="hwChatTitle" hidden></section>';
+    '<section class="hw-panel" id="hwChatPanel" role="dialog" aria-labelledby="hwChatTitle" hidden></section>' +
+    '<div class="hw-toast" id="hwToast" role="status" aria-live="polite" hidden></div>';
   document.body.appendChild(root);
 
   var aiBtn = $('#hwAiBtn', root), chatBtn = $('#hwChatBtn', root);
@@ -676,6 +682,108 @@
       });
   }
 
+  // ============================================================
+  // 3) NGOI SAO CHAM CHI — +5 sao lan dau mo web moi ngay, +5 sao moi 5 phut
+  //    hoc that. May chu giu so sao; o day chi bao "dang hoc" moi 30 giay khi
+  //    tab dang mo va hoc sinh co thao tac (2 phut khong dong gi = dang nghi).
+  // ============================================================
+  var starEl = $('#hwStar', root), starNum = $('#hwStarNum', root), starBar = $('#hwStarBar', root), starFill = $('#hwStarFill', root);
+  var toastEl = $('#hwToast', root), toastTimer = null;
+  var star = { total: 0, secToNext: 300, blockSec: 300, perBlock: 5, capped: false, ready: false };
+  var STAR_TICK_SEC = 30, STAR_IDLE_MS = 120000;
+  var lastActive = Date.now(), starNudged = false;
+
+  function touchActive() { lastActive = Date.now(); }
+  ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'wheel', 'scroll'].forEach(function (ev) {
+    document.addEventListener(ev, touchActive, { passive: true, capture: true });
+  });
+  // Dang nghe audio (hoi thoai, tu vung) cung la dang hoc
+  document.addEventListener('play', touchActive, true);
+  document.addEventListener('timeupdate', touchActive, true);
+  function starActive() { return !document.hidden && Date.now() - lastActive < STAR_IDLE_MS; }
+
+  function showToast(html, cls) {
+    clearTimeout(toastTimer);
+    toastEl.className = 'hw-toast' + (cls ? ' ' + cls : '');
+    toastEl.innerHTML = html;
+    toastEl.hidden = false;
+    // ep chay lai animation
+    void toastEl.offsetWidth;
+    toastEl.classList.add('is-in');
+    toastTimer = setTimeout(function () { toastEl.hidden = true; toastEl.classList.remove('is-in'); }, 4500);
+  }
+
+  function fmtSec(s) {
+    var m = Math.floor(s / 60), r = s % 60;
+    return m + ':' + (r < 10 ? '0' : '') + r;
+  }
+  function renderStar() {
+    if (!auth()) {
+      starEl.href = '/#dang-nhap';
+      starEl.title = 'Đăng nhập để tích ngôi sao chăm chỉ';
+      starNum.textContent = 'Tích sao';
+      starBar.hidden = true;
+      starEl.classList.remove('is-on');
+    } else {
+      starEl.href = '/#xep-hang-sao';
+      starEl.classList.add('is-on');
+      starNum.textContent = star.ready ? star.total.toLocaleString('vi-VN') : '…';
+      starBar.hidden = !star.ready;
+      var pct = star.capped ? 100 : Math.max(0, Math.min(100, Math.round((1 - star.secToNext / star.blockSec) * 100)));
+      starFill.style.width = pct + '%';
+      starEl.title = !star.ready ? 'Đang tải số sao…'
+        : star.capped ? 'Hôm nay bạn đã đạt mức sao tối đa từ giờ học, mai học tiếp nhé!'
+        : 'Còn ' + fmtSec(star.secToNext) + ' học nữa là được +' + star.perBlock + ' sao';
+    }
+    try {
+      window.dispatchEvent(new CustomEvent('hw:stars', { detail: { loggedIn: !!auth(), ready: star.ready, total: star.total, secToNext: star.secToNext, blockSec: star.blockSec, perBlock: star.perBlock, capped: star.capped } }));
+    } catch (e) { /* ignore */ }
+  }
+  function applyStar(d, kind) {
+    star.total = d.total || 0;
+    star.secToNext = typeof d.secToNext === 'number' ? d.secToNext : star.blockSec;
+    star.blockSec = d.blockSec || 300;
+    star.perBlock = d.perBlock || 5;
+    star.capped = !!d.capped;
+    star.ready = true;
+    if (d.awarded > 0) {
+      starNudged = false;
+      starEl.classList.remove('is-pop');
+      void starEl.offsetWidth;
+      starEl.classList.add('is-pop');
+      showToast(kind === 'visit'
+        ? '<b>+' + d.awarded + ' ⭐</b> Chào mừng bạn quay lại học hôm nay!'
+        : '<b>+' + d.awarded + ' ⭐</b> Tuyệt vời! Bạn vừa học chăm chỉ thêm 5 phút.', 'is-gold');
+    }
+    renderStar();
+  }
+  function starVisit() {
+    if (!auth()) { star.ready = false; renderStar(); return; }
+    renderStar();
+    postJSON('/api/stars/visit', {}).then(function (d) { applyStar(d, 'visit'); }).catch(function () { /* ignore */ });
+  }
+  function starTick() {
+    if (!auth() || !star.ready || !starActive() || star.capped) return;
+    postJSON('/api/stars/tick', { seconds: STAR_TICK_SEC }).then(function (d) { applyStar(d, 'tick'); }).catch(function () { /* ignore */ });
+  }
+  // Dem nguoc tai cho giua 2 lan bao de thanh sao chay muot, va nhac truoc khi dat moc
+  var starToken = (auth() || {}).token || '';
+  setInterval(function () {
+    // Vua dang nhap / dang xuat ngay trong tab nay (khong co su kien storage)
+    var tok = (auth() || {}).token || '';
+    if (tok !== starToken) { starToken = tok; star.ready = false; starVisit(); }
+    if (!auth() || !star.ready || !starActive() || star.capped) return;
+    if (star.secToNext > 1) star.secToNext--;
+    if (star.secToNext <= 60 && !starNudged) {
+      starNudged = true;
+      showToast('💪 Cố lên! Còn 1 phút nữa là bạn nhận thêm <b>+' + star.perBlock + ' ⭐</b>');
+    }
+    renderStar();
+  }, 1000);
+  setInterval(starTick, STAR_TICK_SEC * 1000);
+  starVisit();
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) touchActive(); });
+
   // ---------- Chay nen: trang thai truc tuyen + so tin chua doc ----------
   function heartbeat() {
     if (!auth() || document.hidden) return;
@@ -698,5 +806,6 @@
     if (!aiPanel.hidden) loadQuota();
     heartbeat(); pollBadge();
     if (!auth()) $('#hwChatBadge', root).hidden = true;
+    starVisit();
   });
 })();

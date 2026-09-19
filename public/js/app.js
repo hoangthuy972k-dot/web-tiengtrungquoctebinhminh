@@ -10998,6 +10998,11 @@
       loadExamLeaderboard();
       return;
     }
+    if (lbTab === 'stars') {
+      $('#lbTrail').textContent = 'Người chăm chỉ nhất: +5 sao mỗi ngày mở web, +5 sao cho mỗi 5 phút học. Sao được cộng khi bạn đã đăng nhập.';
+      loadStarLeaderboard();
+      return;
+    }
     $('#lbTrail').textContent = 'Xếp hạng thật giữa các học sinh đã đăng ký, theo tổng số câu trả lời đúng.';
     var content = $('#leaderboardContent');
     content.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải bảng xếp hạng...</p>';
@@ -11111,6 +11116,85 @@
         '</div>';
       }).join('') +
       '</div>';
+  }
+
+  /* ---------------- Bang xep hang "Cham chi" (ngoi sao) ---------------- */
+
+  function starLbRowHtml(row) {
+    return '<div class="lb-row' + (row.isMe ? ' is-me' : '') + '">' +
+      '<span class="lb-rank">' + medalFor(row.rank) + '</span>' +
+      '<span class="lb-name">' + lbEsc(row.name) + (row.isMe ? ' <em>(bạn)</em>' : '') + '</span>' +
+      (row.rank === 1 ? '<span class="lb-level lb-crown">👑 Chăm chỉ nhất</span>' : '<span class="lb-level">' + (row.level || '').toUpperCase() + '</span>') +
+      '<span class="lb-today">' + (row.today > 0 ? 'hôm nay +' + row.today : '') + '</span>' +
+      '<span class="lb-score lb-stars">⭐ ' + Number(row.total).toLocaleString('vi-VN') + '</span>' +
+    '</div>';
+  }
+
+  function loadStarLeaderboard() {
+    var content = $('#leaderboardContent');
+    var auth = readJSON(STORAGE_KEYS.auth, null);
+    var headers = auth && auth.token ? { 'Authorization': 'Bearer ' + auth.token } : {};
+    content.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải bảng xếp hạng...</p>';
+    fetch('/api/leaderboard/stars', { headers: headers })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (data) {
+        if (lbTab !== 'stars') return;
+        if (!data.rows.length) {
+          content.innerHTML =
+            '<div class="lb-empty">' +
+              '<p>Chưa có ai tích được ngôi sao nào.</p>' +
+              '<p style="color:var(--color-gray-500);font-size:0.9rem;">Đăng nhập rồi học 5 phút để trở thành người chăm chỉ đầu tiên!</p>' +
+            '</div>';
+          return;
+        }
+        var html = '<div class="lb-list">' + data.rows.map(starLbRowHtml).join('') + '</div>';
+        if (data.me && !data.rows.some(function (r) { return r.isMe; })) {
+          html += '<p class="lb-me-label">Vị trí của bạn</p><div class="lb-list">' + starLbRowHtml(data.me) + '</div>';
+        } else if (!data.me) {
+          html += '<p class="lb-me-label">' + (auth && auth.token ? 'Bạn chưa có ngôi sao nào — học 5 phút là có ngay!' : 'Đăng nhập để bắt đầu tích sao và có tên trên bảng.') + '</p>';
+        }
+        content.innerHTML = html;
+      })
+      .catch(function () {
+        content.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được bảng xếp hạng, thử lại sau.</p>';
+      });
+  }
+
+  // Dong "sao cham chi" trong the chuoi ngay hoc: so sao do widgets.js (chay
+  // tren moi trang) phat qua su kien hw:stars; o day chi hien thi.
+  function initStarRow() {
+    var row = $('#starRow');
+    if (!row) return;
+    var totalEl = $('#starTotal'), hintEl = $('#starHint');
+    var loggedIn = false;
+    window.addEventListener('hw:stars', function (e) {
+      var d = e.detail || {};
+      loggedIn = !!d.loggedIn;
+      if (!loggedIn) {
+        totalEl.textContent = 'Tích sao chăm chỉ';
+        hintEl.textContent = 'Đăng nhập để bắt đầu tích sao';
+        return;
+      }
+      if (!d.ready) { totalEl.textContent = '…'; hintEl.textContent = 'Đang tải số sao'; return; }
+      totalEl.textContent = Number(d.total).toLocaleString('vi-VN') + ' sao';
+      var m = Math.floor(d.secToNext / 60), s = d.secToNext % 60;
+      hintEl.textContent = d.capped ? 'Hôm nay đã đạt mức tối đa, mai học tiếp nhé!'
+        : 'Còn ' + m + ':' + (s < 10 ? '0' : '') + s + ' học nữa là +' + d.perBlock + ' sao';
+    });
+    row.addEventListener('click', function () {
+      if (!loggedIn) { location.hash = '#dang-nhap'; return; }
+      lbTab = 'stars';
+      showLeaderboard();
+    });
+    // Link ⭐ o goc man hinh cac trang bai hoc dan ve day
+    function openStarsFromHash() {
+      if (location.hash !== '#xep-hang-sao') return;
+      try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* ignore */ }
+      lbTab = 'stars';
+      showLeaderboard();
+    }
+    openStarsFromHash();
+    window.addEventListener('hashchange', openStarsFromHash);
   }
 
   /* ---------------- Bang xep hang "hom nay" tren trang chu ---------------- */
@@ -12372,6 +12456,7 @@
     renderAuthBanner();
     refreshProgressFromServer();
     initAnalytics();
+    initStarRow();
     initPinyinToggle();
     initAnswerSounds();
     initShellNav();

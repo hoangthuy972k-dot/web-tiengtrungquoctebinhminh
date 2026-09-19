@@ -28,6 +28,78 @@
 .hw-root [hidden] { display: none !important; }
 .hw-root button { font-family: inherit; }
 
+/* ---------- Ngoi sao cham chi ---------- */
+.hw-star {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: #8a5a0f;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--hw-gold), 0 10px 24px rgba(168, 62, 40, 0.22);
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+.hw-star:hover { transform: translateY(-2px); }
+.hw-star svg { width: 22px; height: 22px; fill: #f2bf6b; stroke: #d9971f; stroke-width: 1.2; flex-shrink: 0; }
+.hw-star.is-on { background: linear-gradient(180deg, #fff9ec, #fff1d2); }
+.hw-star-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hw-star:not(.is-on) .hw-star-num { font-size: 13px; font-weight: 700; }
+.hw-star-bar {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 3px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(217, 151, 31, 0.18);
+  overflow: hidden;
+}
+.hw-star-bar i { display: block; height: 100%; width: 0; border-radius: 3px; background: linear-gradient(90deg, #f2bf6b, #e9a23b); transition: width 0.9s linear; }
+.hw-star.is-pop { animation: hwStarPop 0.7s cubic-bezier(0.2, 1.4, 0.4, 1); }
+@keyframes hwStarPop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.22) rotate(-4deg); box-shadow: 0 0 0 2px #fff, 0 0 0 6px #f2bf6b, 0 0 40px 8px rgba(242, 191, 107, 0.7); }
+  100% { transform: scale(1); }
+}
+
+/* Thong bao nho phia tren, dung chung cho +sao va loi nhac */
+.hw-toast {
+  position: fixed;
+  left: 50%;
+  top: 14px;
+  z-index: 950;
+  max-width: min(92vw, 420px);
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: var(--hw-ink);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  box-shadow: 0 12px 32px rgba(31, 26, 23, 0.28);
+  transform: translate(-50%, -20px);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.3s ease;
+  pointer-events: none;
+  text-align: center;
+}
+.hw-toast.is-in { transform: translate(-50%, 0); opacity: 1; }
+.hw-toast b { color: #ffd98a; font-weight: 800; }
+.hw-toast.is-gold { background: linear-gradient(135deg, #b7791f, #8a5a0f); }
+.hw-toast.is-gold b { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .hw-star.is-pop { animation: none; }
+  .hw-toast { transition: none; }
+}
+
 /* ---------- Nut noi ---------- */
 .hw-fab-stack {
   position: fixed;

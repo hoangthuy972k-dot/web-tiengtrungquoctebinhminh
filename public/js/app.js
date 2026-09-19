@@ -600,18 +600,132 @@
       $('#ctaProgressFill').style.width = pct + '%';
       $('#ctaProgressPct').textContent = pct + '%';
       $('#ctaStartLabel').textContent = pct >= 100 ? 'Ôn lại bài này' : 'Học tiếp';
-      $('#ctaHanzi').textContent = lesson.titleHanzi ? lesson.titleHanzi.replace(/[，。？！、,.?!\s]/g, '').slice(0, 2) : '学习';
-      $('#ctaPinyin').textContent = lesson.titleHanzi ? 'Bài ' + lesson.number : 'xuéxí';
     } else {
       $('#ctaEyebrow').textContent = 'Bắt đầu hành trình';
       $('#ctaTitle').textContent = 'Học bài đầu tiên chỉ trong 15 phút';
       $('#ctaSub').textContent = 'Mỗi bài có từ vựng, ngữ pháp, hội thoại, luyện nghe, luyện nói và game ôn tập.';
       $('#ctaProgress').hidden = true;
       $('#ctaStartLabel').textContent = 'Chọn cấp độ';
-      $('#ctaHanzi').textContent = '学习';
-      $('#ctaPinyin').textContent = 'xuéxí';
     }
   }
+
+  /* ---------------- Moi ngay 1 thanh ngu (the do tren trang chu) ---------------- */
+  // Xoay vong theo ngay gio Viet Nam: moi hoc sinh cung thay 1 cau trong ngay,
+  // het danh sach (IDIOMS trong /js/idioms.js) moi quay lai tu dau.
+
+  function idiomEsc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function idiomOfToday() {
+    if (typeof IDIOMS === 'undefined' || !IDIOMS.length) return null;
+    var vnDay = Math.floor((Date.now() + 7 * 3600 * 1000) / 86400000);
+    return IDIOMS[((vnDay % IDIOMS.length) + IDIOMS.length) % IDIOMS.length];
+  }
+
+  // Hinh minh hoa: cac bieu tuong cua cau chuyen dat tren nen tranh thuy mac,
+  // chu thanh ngu mo phia sau nhu con dau.
+  function idiomSceneHtml(d, big) {
+    var icons = (d.scene || []).map(function (s, i) {
+      return '<span class="idiom-scene-i idiom-scene-i' + i + '">' + s + '</span>';
+    }).join('');
+    return '<div class="idiom-scene' + (big ? ' is-big' : '') + '" aria-hidden="true">' +
+      '<span class="idiom-scene-mount"></span><span class="idiom-scene-sun"></span>' +
+      '<span class="idiom-scene-wm">' + idiomEsc(d.zh) + '</span>' + icons + '</div>';
+  }
+
+  function renderIdiomOfDay() {
+    var box = $('#idiomToday');
+    if (!box) return;
+    var d = idiomOfToday();
+    if (!d) { box.hidden = true; return; }
+    box.innerHTML =
+      '<p class="idiom-eyebrow"><span class="idiom-seal">每日成语</span>Mỗi ngày học 1 thành ngữ</p>' +
+      idiomSceneHtml(d, false) +
+      '<div class="idiom-zh-row"><span class="idiom-zh">' + idiomEsc(d.zh) + '</span>' +
+        '<button type="button" class="idiom-speak" data-idiom-speak="' + idiomEsc(d.zh) + '" aria-label="Nghe đọc ' + idiomEsc(d.zh) + '">🔊</button></div>' +
+      '<p class="idiom-py">' + idiomEsc(d.py) + '</p>' +
+      '<p class="idiom-vn">' + idiomEsc(d.tv || d.vn) + '</p>' +
+      '<button type="button" class="idiom-more" id="idiomMore">Bấm vào xem giải thích chi tiết</button>';
+    $('#idiomMore').addEventListener('click', function () { openIdiomDetail(d); });
+  }
+
+  var idiomLastFocus = null;
+  function openIdiomDetail(d) {
+    var ov = $('#idiomModal');
+    if (!ov) {
+      ov = document.createElement('div');
+      ov.id = 'idiomModal';
+      ov.className = 'idiom-overlay';
+      ov.setAttribute('role', 'dialog');
+      ov.setAttribute('aria-modal', 'true');
+      ov.setAttribute('aria-labelledby', 'idiomModalTitle');
+      document.body.appendChild(ov);
+      ov.addEventListener('click', function (e) {
+        if (e.target === ov || e.target.closest('[data-idiom-close]')) closeIdiomDetail();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !ov.hidden) closeIdiomDetail();
+      });
+    }
+    var video = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(d.zh + ' 成语故事');
+    var sp = function (zh) { return '<button type="button" class="idiom-speak sm" data-idiom-speak="' + idiomEsc(zh) + '" aria-label="Nghe đọc">🔊</button>'; };
+    ov.innerHTML =
+      '<div class="idiom-dialog">' +
+        '<button type="button" class="idiom-close" data-idiom-close aria-label="Đóng">✕</button>' +
+        idiomSceneHtml(d, true) +
+        '<header class="idiom-d-head">' +
+          '<p class="idiom-eyebrow dark"><span class="idiom-seal">每日成语</span>Thành ngữ hôm nay</p>' +
+          '<h2 id="idiomModalTitle" class="idiom-d-zh">' + idiomEsc(d.zh) + sp(d.zh) + '</h2>' +
+          '<p class="idiom-d-py">' + idiomEsc(d.py) + '</p>' +
+          '<p class="idiom-d-hv">Hán Việt: <b>' + idiomEsc(d.hv) + '</b></p>' +
+        '</header>' +
+        '<section class="idiom-d-sec"><h3>Nghĩa</h3>' +
+          '<p class="idiom-d-lead">' + idiomEsc(d.vn) + '</p>' +
+          '<p>' + idiomEsc(d.mean) + '</p>' +
+          (d.tv ? '<p class="idiom-d-tv">Tiếng Việt tương đương: <b>' + idiomEsc(d.tv) + '</b></p>' : '') +
+        '</section>' +
+        '<section class="idiom-d-sec"><h3>Cách dùng</h3><p>' + idiomEsc(d.use) + '</p></section>' +
+        '<section class="idiom-d-sec"><h3>Ví dụ</h3><ol class="idiom-d-ex">' +
+          d.ex.map(function (e) {
+            return '<li><div class="idiom-d-ex-zh">' + idiomEsc(e.zh) + sp(e.zh) + '</div>' +
+              '<div class="idiom-d-ex-py">' + idiomEsc(e.py) + '</div>' +
+              '<div class="idiom-d-ex-vn">' + idiomEsc(e.vn) + '</div></li>';
+          }).join('') +
+        '</ol></section>' +
+        '<section class="idiom-d-sec idiom-d-story"><h3>Nguồn gốc &amp; câu chuyện</h3>' +
+          '<p class="idiom-d-src">Xuất xứ: ' + idiomEsc(d.src) + '</p>' +
+          '<div class="idiom-d-storyzh"><span class="idiom-d-tag">故事</span>' + idiomEsc(d.storyZh) + sp(d.storyZh) + '</div>' +
+          '<p>' + idiomEsc(d.story) + '</p>' +
+        '</section>' +
+        '<a class="idiom-video" href="' + video + '" target="_blank" rel="noopener">▶ Xem video kể chuyện “' + idiomEsc(d.zh) + '” trên YouTube</a>' +
+        '<p class="idiom-d-note">Mở YouTube ở tab mới với các video kể chuyện thành ngữ này (tiếng Trung).</p>' +
+      '</div>';
+    idiomLastFocus = document.activeElement;
+    ov.hidden = false;
+    document.body.classList.add('idiom-open');
+    var c = ov.querySelector('.idiom-close');
+    if (c) c.focus();
+  }
+
+  function closeIdiomDetail() {
+    var ov = $('#idiomModal');
+    if (!ov) return;
+    ov.hidden = true;
+    document.body.classList.remove('idiom-open');
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (idiomLastFocus && idiomLastFocus.focus) idiomLastFocus.focus();
+  }
+
+  // Nut loa trong the va trong hop giai thich
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-idiom-speak]');
+    if (!b) return;
+    e.preventDefault();
+    vpSpeak(b.getAttribute('data-idiom-speak'));
+  });
 
   // Nut "Hoc tiep": mo lai bai gan nhat, chua co thi dua toi danh sach cap do
   function continueLearning() {
@@ -12535,6 +12649,7 @@
     if (last) practiceLevel = last.levelId;
     renderHomeHead();
     renderContinueCard();
+    renderIdiomOfDay();
     renderLevelCards();
     renderLevelSubmenu();
     renderStreak();

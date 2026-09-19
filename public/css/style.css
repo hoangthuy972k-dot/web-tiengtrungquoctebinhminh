@@ -1108,6 +1108,8 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 .lp-go { flex-shrink: 0; font-weight: 800; font-size: 0.9rem; color: var(--color-gray-400); }
 .lp-step.is-done .lp-node { background: var(--color-green-600); border-color: var(--color-green-600); color: #fff; }
 .lp-step.is-done .lp-badge { color: var(--color-green-600); }
+.lp-step.is-skipped .lp-node { background: var(--color-gray-300); border-color: var(--color-gray-300); }
+.lp-step.is-skipped .lp-badge { color: var(--color-gray-500); }
 .lp-step.is-current .lp-btn { border: 2px solid var(--color-red-600); background: #fff; box-shadow: 0 10px 28px -14px rgba(200, 55, 45, 0.55); }
 .lp-step.is-current .lp-node { background: var(--color-red-600); border-color: var(--color-red-600); color: #fff; }
 .lp-step.is-current .lp-stage { background: var(--color-red-50); color: var(--color-red-700); }

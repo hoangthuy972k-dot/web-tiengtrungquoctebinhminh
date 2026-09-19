@@ -573,6 +573,10 @@
   }
 
   function lessonProgressPct(levelId, lesson) {
+    if (pathEnabled(lesson)) {
+      var steps = PATH_STEPS.filter(function (s) { return pathStepDone(lesson, s); }).length;
+      return Math.round(steps / PATH_STEPS.length * 100);
+    }
     var tabIds = LEVEL_HUB_TABS[levelId] || [];
     if (!tabIds.length) return 0;
     var done = tabIds.filter(function (t) { return isHubTileDone(lesson, t); }).length;
@@ -626,14 +630,13 @@
   function nextLearnTarget() {
     var last = getLastLesson();
     if (!last) return null;
-    var tabs = LEVEL_HUB_TABS[last.levelId] || [];
-    var next = null;
-    tabs.forEach(function (t) { if (!next && !isHubTileDone(last.lesson, t)) next = t; });
-    if (next) return { levelId: last.levelId, lesson: last.lesson, tab: next };
+    // Theo thu tu lo trinh 7 buoc: buoc dau tien chua xong cua bai dang hoc
+    var i = pathCurrentIndex(last.lesson);
+    if (i < PATH_STEPS.length) return { levelId: last.levelId, lesson: last.lesson, step: PATH_STEPS[i], stepNo: i + 1 };
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[last.levelId]) || [];
     var after = lessons.filter(function (l) { return l.number > last.lesson.number; }).sort(function (a, b) { return a.number - b.number; })[0];
-    if (after) return { levelId: last.levelId, lesson: after, tab: tabs[0] || null, isNext: true };
-    return { levelId: last.levelId, lesson: last.lesson, tab: null, finished: true };
+    if (after) return { levelId: last.levelId, lesson: after, step: PATH_STEPS[0], stepNo: 1, isNext: true };
+    return { levelId: last.levelId, lesson: last.lesson, step: null, finished: true };
   }
 
   function renderTaskCard() {
@@ -648,8 +651,8 @@
       { key: 'review', num: '①', title: 'Ôn 10 từ cũ', time: '2 phút',
         sub: last ? 'Từ vựng ' + levelName + ' bạn đã học' : 'Học bài đầu tiên trước, rồi ôn từ ở đây' },
       { key: 'learn', num: '②', title: target
-          ? (target.finished ? 'Ôn lại bài ' + target.lesson.number : (target.isNext ? 'Học bài ' + target.lesson.number + ': ' + target.lesson.title : 'Học tiếp: ' + ((HUB_TAB_DEFS[target.tab] || {}).label || 'phần tiếp theo')))
-          : 'Học bài đầu tiên', time: '8 phút',
+          ? (target.finished ? 'Ôn lại bài ' + target.lesson.number : (target.isNext ? 'Học bài ' + target.lesson.number + ': ' + target.lesson.title : 'Học tiếp: Bước ' + target.stepNo + ' · ' + target.step.title))
+          : 'Học bài đầu tiên', time: target && target.step ? target.step.min + ' phút' : '8 phút',
         sub: target ? 'Bài ' + target.lesson.number + ' · ' + levelName : 'Chọn cấp độ phù hợp với bạn' },
       { key: 'idiom', num: '③', title: 'Đọc thành ngữ hôm nay', time: '1 phút', sub: 'Bấm để đọc nghĩa và câu chuyện' }
     ];
@@ -709,6 +712,7 @@
       practiceLevel = target.levelId;
       currentLevelId = target.levelId;
       renderLevelSubmenu();
+      // Vao thang lo trinh bai hoc (hoc sinh thay buoc tiep theo dang duoc to do)
       showLessonHub(target.levelId, target.lesson);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -1081,7 +1085,8 @@
     hsk2v3: ['match', 'fill', 'sort', 'mc'],
     hsk2: ['match', 'fill', 'sort', 'errfix'],
     hsk3: ['match', 'fill', 'sort', 'errfix'],
-    hsk4: ['match', 'fill', 'sort', 'errfix']
+    hsk4: ['match', 'fill', 'sort', 'errfix'],
+    yct: ['match', 'fill', 'sort', 'mc']
   };
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
@@ -1254,8 +1259,8 @@
      验 kiem tra) thay cho luoi o ngang hang. Buoc sau khong bi khoa, chi duoc goi y.
      Thanh "Tiep tuc →" (#pathBar) hien o duoi man hinh khi dang lam 1 buoc. */
 
-  var PATH_LESSON_RE = /\/lessons\/hsk2v3-bai-1\.html$/;
-  function pathEnabled(lesson) { return !!(lesson && PATH_LESSON_RE.test(lesson.fullPageUrl || '')); }
+  // Ap dung cho moi bai cua moi cap co trang bai hoc (HSK 1-4, HSK 3.0, YCT)
+  function pathEnabled(lesson) { return !!(lesson && /\/lessons\/[\w-]*bai-\d+\.html$/.test(lesson.fullPageUrl || '')); }
 
   var PATH_STEPS = [
     { key: 'warmup', title: 'Khởi động', stage: '引', desc: 'Nhìn tranh, đoán nghĩa từ mới', min: 2, icon: '🎯', section: 'warmupPractice',
@@ -1273,9 +1278,18 @@
     { key: 'final', title: 'Kiểm tra cuối bài', stage: '验', desc: '10 câu trộn → điểm, sao và chứng nhận', min: 3, icon: '🎓', section: 'finalPractice',
       open: function (l, s) { showFinalPractice(l, s); } }
   ];
-  var PATH_EXTRA = ['flash', 'listen', 'translate'];
+  // Luyen them = cac o cua cap do khong nam trong 7 buoc (flash, nghe, dich, sach bai tap...)
+  function pathExtras(levelId) {
+    var inPath = PATH_STEPS.map(function (s) { return s.key; });
+    return (LEVEL_HUB_TABS[levelId] || []).filter(function (k) { return inPath.indexOf(k) === -1 && HUB_TAB_DEFS[k]; });
+  }
+
+  // Buoc ma bai khong co noi dung (vd HSK 1 (3.0) bai 1 la bai mo dau, khong co ngu phap)
+  var pathSkipped = {};
+  function pathStepSkipped(lesson, step) { return !!pathSkipped[lesson.fullPageUrl + '|' + step.key]; }
 
   function pathStepDone(lesson, step) {
+    if (pathStepSkipped(lesson, step)) return true;
     if (step.key === 'final') {
       var f = getLessonScores(lesson).final;
       return !!(f && f.total > 0);
@@ -1295,12 +1309,24 @@
     $('#hubProgressFill').style.width = pct + '%';
     $('#hubProgressPct').textContent = pct + '%';
 
+    // Bai khong co ngu phap: danh dau bo qua roi ve lai (chi kiem tra 1 lan / bai)
+    var gKey = lesson.fullPageUrl + '|grammar';
+    if (!(gKey in pathSkipped)) {
+      pathSkipped[gKey] = false;
+      loadLessonGrammar(lesson).then(function (points) {
+        if (points && points.length) return;
+        pathSkipped[gKey] = true;
+        if (!$('#lessonHub').hidden && currentHubLesson === lesson) renderLessonPath(levelId, lesson);
+      }).catch(function () { /* ignore */ });
+    }
+
     var list = $('#lessonPath');
     list.hidden = false;
     list.innerHTML = PATH_STEPS.map(function (s, i) {
       var done = pathStepDone(lesson, s);
-      var state = done ? 'is-done' : (i === cur ? 'is-current' : (i > cur ? 'is-later' : 'is-open'));
-      var badge = done ? '✓ Đã xong' : (i === cur ? 'Bắt đầu ở đây' : (i > cur ? 'Gợi ý: làm bước ' + (cur + 1) + ' trước' : ''));
+      var skipped = pathStepSkipped(lesson, s);
+      var state = done ? 'is-done' + (skipped ? ' is-skipped' : '') : (i === cur ? 'is-current' : (i > cur ? 'is-later' : 'is-open'));
+      var badge = skipped ? 'Bài mở đầu — không có phần này, bỏ qua' : done ? '✓ Đã xong' : (i === cur ? 'Bắt đầu ở đây' : (i > cur ? 'Gợi ý: làm bước ' + (cur + 1) + ' trước' : ''));
       return '<li class="lp-step ' + state + '">' +
         '<button type="button" class="lp-btn" data-path-step="' + i + '">' +
           '<span class="lp-node" aria-hidden="true">' + (done ? '✓' : (i + 1)) + '</span>' +
@@ -1317,7 +1343,7 @@
     });
 
     // Luyen them + che do giao vien + ket qua
-    var extra = PATH_EXTRA.map(function (k) {
+    var extra = pathExtras(levelId).map(function (k) {
       var d = HUB_TAB_DEFS[k];
       return '<button type="button" class="lp-extra-btn" data-path-extra="' + k + '">' + d.emoji + ' ' + d.label + (isHubTileDone(lesson, k) ? ' ✓' : '') + '</button>';
     }).join('');
@@ -1336,6 +1362,7 @@
         if (k === 'flash') showFlashcardPractice(levelId, lesson);
         else if (k === 'listen') showListenPractice(levelId, lesson);
         else if (k === 'translate') showTranslatePractice(levelId, lesson);
+        else if (k === 'workbook') showWorkbookPractice(levelId, lesson);
       });
     });
   }
@@ -1437,6 +1464,18 @@
     shuffle((data.mcData || []).slice()).slice(0, 5).forEach(function (q) {
       items.push({ kind: 'Trắc nghiệm', prompt: '<div class="fq-q hanzi">' + q.q + '</div>', opts: q.opts.slice(), ans: q.ans, zhOpts: true });
     });
+    // Bai khong co trac nghiem (HSK 2 cu, HSK 3, HSK 4): dung cau "Sua loi sai" / "Chon tu"
+    var wordChoice = data.errorFixMode === 'wordchoice';
+    shuffle((data.errorFixData || []).filter(function (q) { return q.opts && typeof q.ans === 'number'; }))
+      .slice(0, Math.max(0, 5 - Math.min(5, (data.mcData || []).length))).forEach(function (q) {
+        items.push({
+          kind: wordChoice ? 'Chọn từ' : 'Sửa lỗi sai',
+          prompt: wordChoice
+            ? '<div class="fq-q hanzi">' + q.wrong + '</div>'
+            : '<div class="fq-q">Câu sai: <span class="hanzi">' + q.wrong + '</span><br><small>Chọn câu đúng:</small></div>',
+          opts: q.opts.slice(), ans: q.ans, zhOpts: true
+        });
+      });
     var used = {};
     items.forEach(function (it) { if (it.speak) used[it.speak] = 1; });
     shuffle(vocab.filter(function (v) { return !used[v.zh]; })).forEach(function (v) {

@@ -206,6 +206,12 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .speak-mini:hover{background:var(--sky);color:#fff;}
 .audio-hint{font-size:0.78rem;color:var(--soft);width:100%;}
 .audio-box.real-box{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-color:#86efac;}
+/* Ghim audio hoi thoai ngay duoi thanh tab khi keo xuong doc/nghe */
+.audio-box.real-box{position:sticky;top:66px;z-index:90;box-shadow:0 6px 16px rgba(31,26,23,0.10);}
+@media (max-width:640px){
+  .audio-box.real-box{top:55px;padding:8px 12px;gap:6px;}
+  .audio-box.real-box .audio-hint{display:none;}
+}
 .real-audio{height:38px;flex:1 1 220px;max-width:320px;}
 .audio-missing{font-size:0.82rem;color:var(--soft);font-style:italic;}
 .vocab-audio-list{display:flex;flex-direction:column;gap:8px;width:100%;}

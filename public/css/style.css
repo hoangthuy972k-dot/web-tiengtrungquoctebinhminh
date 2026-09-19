@@ -3785,6 +3785,11 @@ body.idiom-open { overflow: hidden; }
 
 /* ---------- Dialogue practice (Hoi thoai) ---------- */
 .dp-audio-box {
+  /* Ghim duoi thanh tren cung: keo xuong lam cau hoi van thay audio */
+  position: sticky;
+  top: calc(var(--header-h) + 6px);
+  z-index: 50;
+  box-shadow: 0 6px 16px rgba(31, 26, 23, 0.10);
   background: linear-gradient(135deg, var(--color-green-50), #eafaf1);
   border: 1.5px solid #a7e3c3;
   border-radius: var(--radius-lg);

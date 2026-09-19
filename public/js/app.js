@@ -11022,7 +11022,7 @@
       return;
     }
     if (lbTab === 'stars') {
-      $('#lbTrail').textContent = 'Người chăm chỉ nhất: +5 sao mỗi ngày mở web, +5 sao cho mỗi 5 phút học. Sao được cộng khi bạn đã đăng nhập.';
+      $('#lbTrail').textContent = 'Người chăm chỉ nhất: +1 sao mỗi câu trả lời đúng, +5 sao cho mỗi 5 phút học, +5 sao mỗi ngày mở web. Sao được cộng khi bạn đã đăng nhập.';
       loadStarLeaderboard();
       return;
     }

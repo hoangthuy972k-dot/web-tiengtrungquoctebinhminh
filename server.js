@@ -779,6 +779,7 @@ const STAR_TICK_MAX_SEC = 90;  // moi lan client bao toi da 90 giay
 // tu); may chu ghi nho khoa da thuong nen lam lai cau cu khong duoc them sao.
 // Gioi han/ngay chan viec tu che khoa gia.
 const STAR_ANSWER_DAY_CAP = 300;
+const STAR_TASKS = 10;         // sao khi xong ca 3 "nhiem vu hom nay" (1 lan / ngay)
 const STAR_ANSWERS_FILE = path.join(DATA_DIR, 'star_answers.json');
 const STAR_KEY_RE = /^[\w\/.:|-]{3,160}$/;
 
@@ -805,7 +806,7 @@ async function initStarsTable() {
       'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
     ')'
   );
-  for (const col of ['answer_peak INT NULL', 'day_answer INT NOT NULL DEFAULT 0']) {
+  for (const col of ['answer_peak INT NULL', 'day_answer INT NOT NULL DEFAULT 0', 'day_tasks TINYINT NOT NULL DEFAULT 0', 'day_sec INT NOT NULL DEFAULT 0']) {
     try {
       await dbPool.query('ALTER TABLE stars ADD COLUMN ' + col);
     } catch (err) {
@@ -814,7 +815,7 @@ async function initStarsTable() {
   }
 }
 function blankStar() {
-  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
+  return { total: 0, carrySec: 0, day: '', dayVisit: 0, dayStars: 0, dayAnswer: 0, dayTasks: 0, daySec: 0, answerPeak: null, lastTickMs: 0, updatedMs: 0 };
 }
 async function loadStar(userId) {
   if (!USE_DB) {
@@ -826,7 +827,7 @@ async function loadStar(userId) {
   const r = rows[0];
   return {
     total: r.total, carrySec: r.carry_sec, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars,
-    dayAnswer: r.day_answer || 0, answerPeak: r.answer_peak == null ? null : r.answer_peak,
+    dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, daySec: r.day_sec || 0, answerPeak: r.answer_peak == null ? null : r.answer_peak,
     lastTickMs: Number(r.last_tick_ms), updatedMs: Number(r.updated_ms),
   };
 }
@@ -839,10 +840,10 @@ async function saveStar(userId, s) {
     return;
   }
   await dbPool.query(
-    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?) ' +
+    'INSERT INTO stars (user_id,total,carry_sec,day,day_visit,day_stars,day_answer,day_tasks,day_sec,answer_peak,last_tick_ms,updated_ms) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ' +
       'ON DUPLICATE KEY UPDATE total=VALUES(total), carry_sec=VALUES(carry_sec), day=VALUES(day), day_visit=VALUES(day_visit), ' +
-      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), answer_peak=VALUES(answer_peak), last_tick_ms=VALUES(last_tick_ms), updated_ms=VALUES(updated_ms)',
-    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.answerPeak == null ? null : s.answerPeak, s.lastTickMs, s.updatedMs]
+      'day_stars=VALUES(day_stars), day_answer=VALUES(day_answer), day_tasks=VALUES(day_tasks), day_sec=VALUES(day_sec), answer_peak=VALUES(answer_peak), last_tick_ms=VALUES(last_tick_ms), updated_ms=VALUES(updated_ms)',
+    [userId, s.total, s.carrySec, s.day, s.dayVisit, s.dayStars, s.dayAnswer || 0, s.dayTasks || 0, s.daySec || 0, s.answerPeak == null ? null : s.answerPeak, s.lastTickMs, s.updatedMs]
   );
 }
 async function loadAllStars() {
@@ -850,22 +851,25 @@ async function loadAllStars() {
     const all = readJsonFile(STARS_FILE) || {};
     return Object.keys(all).map((id) => Object.assign({ userId: id }, blankStar(), all[id]));
   }
-  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 200');
-  return rows.map((r) => ({ userId: r.user_id, total: r.total, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, dayAnswer: r.day_answer || 0, updatedMs: Number(r.updated_ms) }));
+  const [rows] = await dbPool.query('SELECT user_id, total, day, day_visit, day_stars, day_answer, day_tasks, updated_ms FROM stars WHERE total > 0 ORDER BY total DESC, updated_ms ASC LIMIT 200');
+  return rows.map((r) => ({ userId: r.user_id, total: r.total, day: r.day || '', dayVisit: r.day_visit, dayStars: r.day_stars, dayAnswer: r.day_answer || 0, dayTasks: r.day_tasks || 0, updatedMs: Number(r.updated_ms) }));
 }
 // Sang ngay moi (gio VN) thi dat lai phan "hom nay"
 function rollStarDay(s) {
   const day = vnDayKey();
-  if (s.day !== day) { s.day = day; s.dayVisit = 0; s.dayStars = 0; s.dayAnswer = 0; }
+  if (s.day !== day) { s.day = day; s.dayVisit = 0; s.dayStars = 0; s.dayAnswer = 0; s.dayTasks = 0; s.daySec = 0; }
 }
 function starsToday(s) {
-  return s.dayStars + (s.dayAnswer || 0) + (s.dayVisit ? STAR_VISIT : 0);
+  return s.dayStars + (s.dayAnswer || 0) + (s.dayVisit ? STAR_VISIT : 0) + (s.dayTasks ? STAR_TASKS : 0);
 }
 function starView(s, awarded, answerAwarded) {
   return {
     total: s.total,
     secToNext: STAR_BLOCK_SEC - s.carrySec,
     today: starsToday(s),
+    todayMin: Math.floor((s.daySec || 0) / 60),
+    tasksDone: !!s.dayTasks,
+    tasksStars: STAR_TASKS,
     answerAwarded: answerAwarded || 0,
     capped: s.dayStars >= STAR_DAY_CAP,
     awarded: awarded || 0,
@@ -930,6 +934,15 @@ app.post('/api/stars/correct', requireAuth, asyncRoute(async (req, res) => {
   res.json(starView(s, 0, gained));
 }));
 
+// Xong ca 3 "nhiem vu hom nay" (on tu cu + hoc tiep + doc thanh ngu): +10 sao, 1 lan / ngay.
+app.post('/api/stars/tasks', requireAuth, asyncRoute(async (req, res) => {
+  const s = await loadStar(req.user.id);
+  rollStarDay(s);
+  let awarded = 0;
+  if (!s.dayTasks) { s.dayTasks = 1; s.total += STAR_TASKS; awarded = STAR_TASKS; await saveStar(req.user.id, s); }
+  res.json(starView(s, awarded));
+}));
+
 // Client bao "toi vua hoc them N giay" (chi khi tab dang mo va co thao tac).
 app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
   const s = await loadStar(req.user.id);
@@ -940,6 +953,7 @@ app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
   if (s.lastTickMs) sec = Math.min(sec, Math.floor((now - s.lastTickMs) / 1000));
   s.lastTickMs = now;
   let awarded = 0;
+  if (sec > 0) s.daySec = (s.daySec || 0) + sec;
   if (sec > 0 && s.dayStars < STAR_DAY_CAP) {
     s.carrySec += sec;
     while (s.carrySec >= STAR_BLOCK_SEC && s.dayStars < STAR_DAY_CAP) {

@@ -689,7 +689,7 @@
   // ============================================================
   var starEl = $('#hwStar', root), starNum = $('#hwStarNum', root), starBar = $('#hwStarBar', root), starFill = $('#hwStarFill', root);
   var toastEl = $('#hwToast', root), toastTimer = null;
-  var star = { total: 0, secToNext: 300, blockSec: 300, perBlock: 5, capped: false, ready: false };
+  var star = { total: 0, secToNext: 300, blockSec: 300, perBlock: 5, capped: false, ready: false, tasksDone: false, tasksStars: 10 };
   var STAR_TICK_SEC = 30, STAR_IDLE_MS = 120000;
   var lastActive = Date.now(), starNudged = false;
 
@@ -736,7 +736,11 @@
         : 'Còn ' + fmtSec(star.secToNext) + ' học nữa là được +' + star.perBlock + ' sao';
     }
     try {
-      window.dispatchEvent(new CustomEvent('hw:stars', { detail: { loggedIn: !!auth(), ready: star.ready, total: star.total, secToNext: star.secToNext, blockSec: star.blockSec, perBlock: star.perBlock, capped: star.capped } }));
+      window.dispatchEvent(new CustomEvent('hw:stars', { detail: {
+        loggedIn: !!auth(), ready: star.ready, total: star.total, secToNext: star.secToNext, blockSec: star.blockSec,
+        perBlock: star.perBlock, capped: star.capped, todayMin: dayMinutes(), goalMin: DAY_GOAL_MIN,
+        tasksDone: star.tasksDone, tasksStars: star.tasksStars,
+      } }));
     } catch (e) { /* ignore */ }
   }
   function applyStar(d, kind) {
@@ -745,18 +749,50 @@
     star.blockSec = d.blockSec || 300;
     star.perBlock = d.perBlock || 5;
     star.capped = !!d.capped;
+    star.tasksDone = !!d.tasksDone;
+    star.tasksStars = d.tasksStars || 10;
     star.ready = true;
+    // May chu dem phut hoc hom nay theo tai khoan (dung tren nhieu thiet bi) — lay so lon hon
+    if (typeof d.todayMin === 'number' && d.todayMin * 60 > dayLocal.sec) { dayLocal.sec = d.todayMin * 60; saveDayLocal(); }
     if (d.awarded > 0) {
       starNudged = false;
       starEl.classList.remove('is-pop');
       void starEl.offsetWidth;
       starEl.classList.add('is-pop');
-      showToast(kind === 'visit'
-        ? '<b>+' + d.awarded + ' ⭐</b> Chào mừng bạn quay lại học hôm nay!'
+      showToast(kind === 'visit' ? '<b>+' + d.awarded + ' ⭐</b> Chào mừng bạn quay lại học hôm nay!'
+        : kind === 'tasks' ? '<b>+' + d.awarded + ' ⭐</b> Hoàn thành nhiệm vụ hôm nay! 🎉'
         : '<b>+' + d.awarded + ' ⭐</b> Tuyệt vời! Bạn vừa học chăm chỉ thêm 5 phút.', 'is-gold');
     }
     renderStar();
   }
+  // Trang chu goi khi hoc sinh xong ca 3 nhiem vu trong ngay
+  window.hwStarTasks = function () {
+    if (!auth()) return;
+    postJSON('/api/stars/tasks', {}).then(function (d) { applyStar(d, 'tasks'); }).catch(function () { /* ignore */ });
+  };
+
+  // Muc tieu moi ngay: 15 phut hoc (tab mo + co thao tac). Dem tai may cho ca
+  // khach chua dang nhap; nguoi da dang nhap con duoc may chu dem theo tai khoan.
+  var DAY_GOAL_MIN = 15;
+  function todayKey() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+  var dayLocal = (function () {
+    try { var v = JSON.parse(localStorage.getItem('hyv_day_sec') || 'null'); if (v && v.day === todayKey()) return v; } catch (e) { /* ignore */ }
+    return { day: todayKey(), sec: 0, goalShown: false };
+  })();
+  function saveDayLocal() { try { localStorage.setItem('hyv_day_sec', JSON.stringify(dayLocal)); } catch (e) { /* ignore */ } }
+  function dayMinutes() { return Math.floor(dayLocal.sec / 60); }
+  window.hwDayMinutes = function () { return { min: dayMinutes(), goal: DAY_GOAL_MIN }; };
+  setInterval(function () {
+    if (dayLocal.day !== todayKey()) { dayLocal = { day: todayKey(), sec: 0, goalShown: false }; saveDayLocal(); renderStar(); }
+    if (!starActive()) return;
+    dayLocal.sec++;
+    if (dayLocal.sec % 10 === 0) saveDayLocal();
+    if (dayLocal.sec % 60 === 0) renderStar();
+    if (!dayLocal.goalShown && dayLocal.sec >= DAY_GOAL_MIN * 60) {
+      dayLocal.goalShown = true; saveDayLocal();
+      showToast('🎯 Đạt mục tiêu <b>' + DAY_GOAL_MIN + ' phút</b> học hôm nay! Giỏi lắm!', 'is-gold');
+    }
+  }, 1000);
   function starVisit() {
     if (!auth()) { star.ready = false; renderStar(); return; }
     renderStar();

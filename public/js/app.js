@@ -22,6 +22,7 @@
     all[lesson.fullPageUrl] = ls;
     writeJSON(STORAGE_KEYS.lessonScores, all);
     syncProgressToServer();
+    taskMark('learn'); // xong 1 phan bai hoc = viec (2) cua nhiem vu hom nay
   }
 
   function recordGameScore(lesson, subtype, correct, total) {
@@ -33,6 +34,7 @@
     all[lesson.fullPageUrl] = ls;
     writeJSON(STORAGE_KEYS.lessonScores, all);
     syncProgressToServer();
+    taskMark('learn');
   }
 
   function getLessonScores(lesson) {
@@ -587,27 +589,145 @@
     if (greet) greet.textContent = part + (name ? ', ' + name : '') + ' 👋';
   }
 
-  function renderContinueCard() {
-    if (!$('#continueCard')) return;
+  /* ---------------- Nhiem vu hom nay (the do tren trang chu) ----------------
+     3 viec nho moi ngay: (1) on 10 tu cu, (2) hoc tiep phan dang do, (3) doc thanh
+     ngu hom nay. Xong ca 3: +10 sao (may chu, 1 lan/ngay) va giu chuoi ngay hoc.
+     Trang thai luu theo ngay trong localStorage (hyv_daily_tasks). */
+
+  var TASK_KEY = 'hyv_daily_tasks';
+  var lastStarDetail = null;
+
+  function taskLog() {
+    var t = readJSON(TASK_KEY, null);
+    var today = dateKey(new Date());
+    if (!t || t.day !== today) t = { day: today, review: false, learn: false, idiom: false, rewarded: false };
+    return t;
+  }
+
+  function taskMark(key) {
+    var t = taskLog();
+    if (t[key]) return;
+    t[key] = true;
+    writeJSON(TASK_KEY, t);
+    markStudyDay();
+    if (t.review && t.learn && t.idiom && !t.rewarded) {
+      t.rewarded = true;
+      writeJSON(TASK_KEY, t);
+      var auth = readJSON(STORAGE_KEYS.auth, null);
+      if (auth && auth.token && window.hwStarTasks) window.hwStarTasks();
+      else showToast('🎉 Xong nhiệm vụ hôm nay! Đăng nhập để nhận +10 ⭐ mỗi ngày.');
+    }
+    renderTaskCard();
+  }
+
+  // Bai va phan nen hoc tiep: phan chua lam cua bai gan nhat; het thi sang bai sau
+  function nextLearnTarget() {
     var last = getLastLesson();
-    if (last) {
-      var lesson = last.lesson;
-      var pct = lessonProgressPct(last.levelId, lesson);
-      $('#ctaEyebrow').textContent = 'Tiếp tục học · ' + (PRACTICE_LEVEL_LABEL[last.levelId] || last.levelId.toUpperCase());
-      $('#ctaTitle').textContent = 'Bài ' + lesson.number + ': ' + lesson.title;
-      $('#ctaSub').textContent = lesson.topic || 'Học tiếp phần còn dang dở của bài này.';
-      $('#ctaProgress').hidden = false;
-      $('#ctaProgressFill').style.width = pct + '%';
-      $('#ctaProgressPct').textContent = pct + '%';
-      $('#ctaStartLabel').textContent = pct >= 100 ? 'Ôn lại bài này' : 'Học tiếp';
-    } else {
-      $('#ctaEyebrow').textContent = 'Bắt đầu hành trình';
-      $('#ctaTitle').textContent = 'Học bài đầu tiên chỉ trong 15 phút';
-      $('#ctaSub').textContent = 'Mỗi bài có từ vựng, ngữ pháp, hội thoại, luyện nghe, luyện nói và game ôn tập.';
-      $('#ctaProgress').hidden = true;
-      $('#ctaStartLabel').textContent = 'Chọn cấp độ';
+    if (!last) return null;
+    var tabs = LEVEL_HUB_TABS[last.levelId] || [];
+    var next = null;
+    tabs.forEach(function (t) { if (!next && !isHubTileDone(last.lesson, t)) next = t; });
+    if (next) return { levelId: last.levelId, lesson: last.lesson, tab: next };
+    var lessons = (APP_DATA.lessons && APP_DATA.lessons[last.levelId]) || [];
+    var after = lessons.filter(function (l) { return l.number > last.lesson.number; }).sort(function (a, b) { return a.number - b.number; })[0];
+    if (after) return { levelId: last.levelId, lesson: after, tab: tabs[0] || null, isNext: true };
+    return { levelId: last.levelId, lesson: last.lesson, tab: null, finished: true };
+  }
+
+  function renderTaskCard() {
+    var list = $('#taskList');
+    if (!list) return;
+    var t = taskLog();
+    var last = getLastLesson();
+    var target = nextLearnTarget();
+    var levelName = last ? (PRACTICE_LEVEL_LABEL[last.levelId] || last.levelId.toUpperCase()) : '';
+
+    var items = [
+      { key: 'review', num: '①', title: 'Ôn 10 từ cũ', time: '2 phút',
+        sub: last ? 'Từ vựng ' + levelName + ' bạn đã học' : 'Học bài đầu tiên trước, rồi ôn từ ở đây' },
+      { key: 'learn', num: '②', title: target
+          ? (target.finished ? 'Ôn lại bài ' + target.lesson.number : (target.isNext ? 'Học bài ' + target.lesson.number + ': ' + target.lesson.title : 'Học tiếp: ' + ((HUB_TAB_DEFS[target.tab] || {}).label || 'phần tiếp theo')))
+          : 'Học bài đầu tiên', time: '8 phút',
+        sub: target ? 'Bài ' + target.lesson.number + ' · ' + levelName : 'Chọn cấp độ phù hợp với bạn' },
+      { key: 'idiom', num: '③', title: 'Đọc thành ngữ hôm nay', time: '1 phút', sub: 'Bấm để đọc nghĩa và câu chuyện' }
+    ];
+    list.innerHTML = items.map(function (it) {
+      var done = !!t[it.key];
+      return '<li class="task-item' + (done ? ' is-done' : '') + '">' +
+        '<button type="button" class="task-btn" data-task="' + it.key + '"' + (done ? ' aria-pressed="true"' : '') + '>' +
+          '<span class="task-check" aria-hidden="true">' + (done ? '✓' : it.num) + '</span>' +
+          '<span class="task-body"><b>' + it.title + '</b><small>' + it.time + ' · ' + it.sub + '</small></span>' +
+          '<span class="task-arrow" aria-hidden="true">' + (done ? 'Xong' : '→') + '</span>' +
+        '</button></li>';
+    }).join('');
+    $all('[data-task]', list).forEach(function (btn) {
+      btn.addEventListener('click', function () { runTask(btn.getAttribute('data-task')); });
+    });
+
+    var doneCount = ['review', 'learn', 'idiom'].filter(function (k) { return t[k]; }).length;
+    var title = $('#taskTitle');
+    if (doneCount === 3) title.textContent = '🎉 Xong nhiệm vụ hôm nay!';
+    else if (doneCount > 0) title.textContent = 'Còn ' + (3 - doneCount) + ' việc nữa thôi';
+    else title.textContent = '3 việc nhỏ · khoảng 11 phút';
+    var reward = $('#taskReward');
+    if (reward) {
+      var auth = readJSON(STORAGE_KEYS.auth, null);
+      reward.innerHTML = doneCount === 3
+        ? (auth && auth.token ? 'Đã nhận <b>+10 ⭐</b> · chuỗi ngày học được giữ 🔥 · Mai gặp lại nhé!' : 'Chuỗi ngày học được giữ 🔥 · <b>Đăng nhập</b> để nhận +10 ⭐ mỗi ngày')
+        : 'Làm xong cả 3 việc: <b>+10 ⭐</b> và giữ chuỗi ngày học 🔥';
+    }
+    renderTaskGoal();
+  }
+
+  // "Hom nay: 12/15 phut" — so phut do widgets.js dem (hw:stars / hwDayMinutes)
+  function renderTaskGoal() {
+    var text = $('#taskGoalText');
+    if (!text) return;
+    var d = lastStarDetail;
+    var min = d && typeof d.todayMin === 'number' ? d.todayMin : (window.hwDayMinutes ? window.hwDayMinutes().min : 0);
+    var goal = d && d.goalMin ? d.goalMin : 15;
+    var pct = Math.max(0, Math.min(100, Math.round(min / goal * 100)));
+    text.textContent = 'Hôm nay: ' + min + '/' + goal + ' phút';
+    $('#taskGoalFill').style.width = pct + '%';
+    var hint = $('#taskGoalHint');
+    if (hint) hint.textContent = min >= goal ? '🎯 Đã đạt mục tiêu hôm nay!' : 'Mục tiêu ' + goal + ' phút mỗi ngày · tính khi bạn đang học';
+    $('#taskGoal').classList.toggle('is-reached', min >= goal);
+  }
+
+  function runTask(key) {
+    var last = getLastLesson();
+    if (key === 'review') {
+      if (!last) { var head = $('#levelsHead'); if (head) head.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+      showDailyReview(last.levelId, last.lesson);
+      return;
+    }
+    if (key === 'learn') {
+      var target = nextLearnTarget();
+      if (!target) { continueLearning(); return; }
+      practiceLevel = target.levelId;
+      currentLevelId = target.levelId;
+      renderLevelSubmenu();
+      showLessonHub(target.levelId, target.lesson);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (key === 'idiom') {
+      var d = idiomOfToday();
+      if (d) openIdiomDetail(d);
     }
   }
+
+  // On 10 tu cu: lay tu cua bai gan nhat va 2 bai truoc no, uu tien tu da tra loi sai
+  var rvDaily = false;
+  var RV_DAILY_LIMIT = 10;
+  function showDailyReview(levelId, lesson) {
+    var nums = [];
+    for (var n = Math.max(1, lesson.number - 2); n <= lesson.number; n++) nums.push(n);
+    rvDaily = true;
+    showReviewPractice(levelId, nums, '⚡ Ôn 10 từ cũ hôm nay', 'Bài ' + nums.join(', ') + ' · ' + (PRACTICE_LEVEL_LABEL[levelId] || levelId) + ' — ưu tiên những từ bạn từng làm sai.');
+  }
+
+  function renderContinueCard() { renderTaskCard(); }
 
   /* ---------------- Moi ngay 1 thanh ngu (the do tren trang chu) ---------------- */
   // Xoay vong theo ngay gio Viet Nam: moi hoc sinh cung thay 1 cau trong ngay,
@@ -654,6 +774,7 @@
 
   var idiomLastFocus = null;
   function openIdiomDetail(d) {
+    taskMark('idiom');
     var ov = $('#idiomModal');
     if (!ov) {
       ov = document.createElement('div');
@@ -2540,6 +2661,8 @@
     var wrap = $('#rvContent');
     var total = state.items.length;
     if (state.pos >= total) {
+      // Xong luot "On 10 tu cu" cua nhiem vu hom nay
+      if (rvDaily && pgbId === 'rvqmeaning' && total > 0) taskMark('review');
       wrap.innerHTML = '<div class="vp-quiz-done"><strong>' + state.score + '/' + total + '</strong>' +
         '<p style="color:var(--color-gray-600);margin-bottom:var(--space-5);">Bạn đã hoàn thành lượt ôn tập này.</p>' +
         '<button type="button" class="btn btn-primary" id="rvRetryBtn">Luyện lại</button></div>';
@@ -2608,8 +2731,15 @@
     });
   }
 
+  // On hang ngay: chi 10 tu, tu tung sai xep truoc
+  function rvDailyItems() {
+    var wrong = shuffle(rvVocab.filter(function (w) { return rvWrongWords.has(w.zh); }));
+    var rest = shuffle(rvVocab.filter(function (w) { return !rvWrongWords.has(w.zh); }));
+    return wrong.concat(rest).slice(0, RV_DAILY_LIMIT);
+  }
+
   function rvRenderMeaningQuiz() {
-    if (!rvQuiz.meaning) { rvQuiz.meaning = { items: shuffle(rvVocab), pos: 0, score: 0 }; pgbInit('rvqmeaning', rvQuiz.meaning.items.length); }
+    if (!rvQuiz.meaning) { rvQuiz.meaning = { items: rvDaily ? rvDailyItems() : shuffle(rvVocab), pos: 0, score: 0 }; pgbInit('rvqmeaning', rvQuiz.meaning.items.length); }
     rvQuizStep('rvqmeaning', rvQuiz.meaning,
       function (item) { return item; },
       function (item) { return rvWordPromptHtml(item.zh, item.py); },
@@ -2728,6 +2858,8 @@
   }
 
   function showReviewPractice(levelId, lessonNumbers, title, subtitle) {
+    // Mo tu danh sach bai (khong phai tu "Nhiem vu hom nay") thi on du bo tu
+    if (!(title && title.indexOf('Ôn 10 từ cũ') !== -1)) rvDaily = false;
     currentHubLevelId = levelId;
     currentHubLesson = null;
     $('#home').hidden = true;
@@ -11610,33 +11742,32 @@
     }
   }
 
-  /* ---------------- Stat tiles (real progress recorded from lesson pages) ---------------- */
+  /* ---------------- "Ban da hoc duoc": so lieu cua chinh hoc sinh ---------------- */
 
   var STAT_TILE_DEFS = [
-    { key: 'levels', label: 'Cấp độ', icon: 'is-red', svg: '<path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>' },
-    { key: 'lessons', label: 'Bài học', icon: 'is-gold', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
-    { key: 'vocab', label: 'Từ vựng', icon: 'is-green', svg: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>' },
-    { key: 'dialogues', label: 'Hội thoại', icon: 'is-blue', svg: '<polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>' }
+    { key: 'words', label: 'từ đã học', icon: 'is-red', svg: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>' },
+    { key: 'lessons', label: 'bài đã học', icon: 'is-gold', svg: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' },
+    { key: 'streak', label: 'ngày liên tiếp', icon: 'is-green', svg: '<path d="M12 2c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 1-3s1 2 2 2c0-4 1-7 2-10z"/>' },
+    { key: 'stars', label: 'sao chăm chỉ', icon: 'is-blue', svg: '<path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/>' }
   ];
 
-  // Tong noi dung THAT cua toan bo nen tang (khong phai so bai nguoi dung da xem) —
-  // tinh truc tiep tu du lieu that: HSK1 15 bai (164 tu, 182 vi du) + HSK2 15 bai
-  // (172 tu, 516 vi du) + YCT 11 bai (100 tu, 101 vi du). Cap nhat lai neu them noi dung.
-  var PLATFORM_TOTALS = { levels: 5, lessons: 48, vocab: 572, examples: 1003 };
-
+  // Tu da hoc = tong tu moi cua nhung bai hoc sinh da lam it nhat 1 phan
   function computeProgressStats() {
-    var totals = { levels: 0, lessons: 0, vocab: 0, dialogues: 0 };
+    var words = 0, lessonsDone = 0;
     Object.keys(READY_LEVELS).forEach(function (id) {
-      var lessons = (APP_DATA.lessons && APP_DATA.lessons[id]) || [];
-      if (!lessons.length) return;
-      totals.levels++;
-      totals.lessons += lessons.length;
-      lessons.forEach(function (l) {
-        totals.vocab += l.vocabCount || 0;
-        totals.dialogues += l.dialogueCount || 0;
+      ((APP_DATA.lessons && APP_DATA.lessons[id]) || []).forEach(function (l) {
+        if (!lessonHasAnyProgress(l)) return;
+        lessonsDone++;
+        words += l.vocabCount || 0;
       });
     });
-    return totals.lessons ? totals : PLATFORM_TOTALS;
+    var d = lastStarDetail;
+    return {
+      words: words,
+      lessons: lessonsDone,
+      streak: computeStreak(readJSON(STORAGE_KEYS.studyDays, [])),
+      stars: d && d.loggedIn && d.ready ? d.total : null,
+    };
   }
 
   /* ---------------- Global pinyin toggle (persists across every screen) ---------------- */
@@ -12456,9 +12587,12 @@
     STAT_TILE_DEFS.forEach(function (def) {
       var tile = document.createElement('div');
       tile.className = 'stat-tile';
+      var v = stats[def.key];
+      var label = def.label;
+      if (def.key === 'stars' && v === null) { v = '—'; label = 'đăng nhập để tích sao'; }
       tile.innerHTML =
         '<div class="stat-tile-icon ' + def.icon + '"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">' + def.svg + '</svg></div>' +
-        '<div><strong>' + Number(stats[def.key] || 0).toLocaleString('vi-VN') + '</strong><span>' + def.label + '</span></div>';
+        '<div><strong>' + (typeof v === 'number' ? v.toLocaleString('vi-VN') : v) + '</strong><span>' + label + '</span></div>';
       wrap.appendChild(tile);
     });
   }
@@ -12706,6 +12840,7 @@
       else showDashboard();
     });
     $('#rvBack').addEventListener('click', function () {
+      if (rvDaily) { rvDaily = false; showDashboard(); window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
       if (currentHubLevelId) showLevelDetail(currentHubLevelId);
       else showDashboard();
     });
@@ -12778,8 +12913,32 @@
       e.preventDefault();
       showLeaderboard();
     });
-    $('#ctaStart').addEventListener('click', continueLearning);
     $('#ctaStreak').addEventListener('click', continueLearning);
+    // Bang vang hom nay / Sao cham chi: mot khoi, hai tab
+    $all('[data-board]').forEach(function (btn) {
+      btn.addEventListener('click', function () { showBoard(btn.getAttribute('data-board')); });
+    });
+    showBoard(sessionStorage.getItem('hyv_board') || 'today');
+    var statSig = '';
+    window.addEventListener('hw:stars', function (e) {
+      lastStarDetail = e.detail || null;
+      renderTaskGoal();
+      // chi ve lai o "sao" khi so sao / trang thai dang nhap doi (su kien nay ban moi giay)
+      var d = lastStarDetail || {};
+      var sig = [d.loggedIn, d.ready, d.total].join('|');
+      if (sig !== statSig) { statSig = sig; renderStatTiles(); }
+    });
+  }
+
+  function showBoard(which) {
+    $('#todayLbCard').hidden = which !== 'today';
+    $('#starLbCard').hidden = which !== 'stars';
+    $all('[data-board]').forEach(function (b) {
+      var on = b.getAttribute('data-board') === which;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    try { sessionStorage.setItem('hyv_board', which); } catch (e) { /* ignore */ }
   }
 
   document.addEventListener('DOMContentLoaded', init);

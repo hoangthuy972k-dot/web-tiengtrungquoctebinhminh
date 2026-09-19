@@ -114,17 +114,14 @@
       <div class="dash-row">
         <div class="dash-cta-card" id="continueCard">
           <div class="dash-cta-text">
-            <p class="dash-cta-eyebrow" id="ctaEyebrow">Bắt đầu hành trình</p>
-            <h2 id="ctaTitle">Chọn một cấp độ để học bài đầu tiên</h2>
-            <p class="dash-cta-sub" id="ctaSub">Mỗi bài có từ vựng, ngữ pháp, hội thoại, luyện nghe, nói và game ôn tập.</p>
-            <div class="dash-cta-progress" id="ctaProgress" hidden>
-              <div class="dash-cta-progress-bar"><span id="ctaProgressFill" style="width:0%"></span></div>
-              <span id="ctaProgressPct">0%</span>
+            <p class="dash-cta-eyebrow">Nhiệm vụ hôm nay</p>
+            <h2 id="taskTitle">3 việc nhỏ · khoảng 11 phút</h2>
+            <div class="task-goal" id="taskGoal">
+              <span class="task-goal-label"><b id="taskGoalText">Hôm nay: 0/15 phút</b><small id="taskGoalHint">Mục tiêu 15 phút mỗi ngày</small></span>
+              <div class="task-goal-bar"><span id="taskGoalFill" style="width:0%"></span></div>
             </div>
-            <button class="btn btn-white" id="ctaStart" type="button">
-              <span id="ctaStartLabel">Bắt đầu học</span>
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
+            <ol class="task-list" id="taskList"></ol>
+            <p class="task-reward" id="taskReward">Làm xong cả 3 việc: <b>+10 ⭐</b> và giữ chuỗi ngày học 🔥</p>
           </div>
           <div class="idiom-today" id="idiomToday" aria-label="Mỗi ngày học 1 thành ngữ"></div>
         </div>
@@ -164,8 +161,16 @@
       </div>
       <div class="level-grid" id="levelGrid"></div>
 
+      <div class="home-section-head home-section-head-sm" id="statsHead">
+        <h2>Bạn đã học được</h2>
+      </div>
       <div class="dash-stat-tiles" id="statTiles"></div>
 
+      <section class="home-boards" id="homeBoards" aria-label="Bảng xếp hạng">
+      <div class="boards-tabs" role="tablist" aria-label="Chọn bảng xếp hạng">
+        <button type="button" class="boards-tab is-active" role="tab" aria-selected="true" data-board="today">🏅 Bảng vàng hôm nay</button>
+        <button type="button" class="boards-tab" role="tab" aria-selected="false" data-board="stars">⭐ Sao chăm chỉ</button>
+      </div>
       <section class="hb" id="todayLbCard" aria-labelledby="hbTitle">
         <div class="hb-head">
           <div class="hb-seal" aria-hidden="true">金榜</div>
@@ -179,7 +184,7 @@
         <div id="todayLbContent"><p class="hb-loading">Đang tải bảng vàng…</p></div>
       </section>
 
-      <section class="sb" id="starLbCard" aria-labelledby="sbTitle">
+      <section class="sb" id="starLbCard" aria-labelledby="sbTitle" hidden>
         <div class="sb-head">
           <div class="sb-seal" aria-hidden="true">勤</div>
           <div class="sb-titles">
@@ -190,6 +195,7 @@
           <button type="button" class="sb-all" id="sbAll">Xem tất cả</button>
         </div>
         <div id="starLbContent"><p class="sb-loading">Đang tải bảng sao…</p></div>
+      </section>
       </section>
     </section>
 

@@ -2133,8 +2133,48 @@ function readClassFile() {
   return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {} };
 }
 
+// Moi hoc sinh mo trang chu deu goi /api/class/me; 6 lop x 50 em co the doc lien
+// tuc nen giu ket qua trong bo nho vai giay. Moi thay doi (tao lop, giao bai, vao
+// lop, sua danh sach...) deu goi classChanged() nen giao vien bam xong la thay ngay.
+const CLASS_CACHE_MS = 5000;
+let classCache = null;
+let classCacheAt = 0;
+let userNameCache = null;
+let userNameCacheAt = 0;
+function classChanged() { classCache = null; }
+function writeClassFile(d) {
+  writeJsonFile(CLASSES_FILE, d);
+  classChanged();
+}
+// Chi can id + ten de hien bang lop (khong doc ca bang users kem mat khau ma hoa)
+async function loadUserNames() {
+  if (userNameCache && Date.now() - userNameCacheAt < 60000) return userNameCache;
+  const map = {};
+  if (!USE_DB) (await loadUsers()).forEach((u) => { map[u.id] = u.name; });
+  else {
+    const [rows] = await dbPool.query('SELECT id, name FROM users');
+    rows.forEach((r) => { map[r.id] = r.name; });
+  }
+  userNameCache = map;
+  userNameCacheAt = Date.now();
+  return map;
+}
+
+async function classDbWrite(sql, params) {
+  const r = await dbPool.query(sql, params);
+  classChanged();
+  return r;
+}
+
 // Toan bo trang thai lop (du nho: vai lop, vai tram hoc sinh)
 async function loadClassState() {
+  if (classCache && Date.now() - classCacheAt < CLASS_CACHE_MS) return classCache;
+  const st = await readClassState();
+  classCache = st;
+  classCacheAt = Date.now();
+  return st;
+}
+async function readClassState() {
   if (!USE_DB) return readClassFile();
   const [c] = await dbPool.query('SELECT * FROM classes ORDER BY created_ms');
   const [m] = await dbPool.query('SELECT * FROM class_members');
@@ -2190,7 +2230,7 @@ async function recordLessonDone(userId, lessonScores) {
       if (!cur) { mine[it.url] = { firstMs: now, correct: it.correct, total: it.total, lastMs: now }; changed = true; }
       else if (cur.correct !== it.correct || cur.total !== it.total) { cur.correct = it.correct; cur.total = it.total; cur.lastMs = now; changed = true; }
     });
-    if (changed) writeJsonFile(CLASSES_FILE, d);
+    if (changed) writeClassFile(d);
     return;
   }
   for (const it of items) {
@@ -2233,9 +2273,7 @@ async function classBoard(st, classId, meId) {
   const roster = st.roster.filter((r) => r.classId === classId).sort((a, b) => a.sort - b.sort);
   const memberIds = Object.keys(st.members).filter((u) => st.members[u].classId === classId);
   const linked = new Set(roster.map((r) => r.userId).filter(Boolean));
-  const users = await loadUsers();
-  const nameById = {};
-  users.forEach((u) => { nameById[u.id] = u.name; });
+  const nameById = await loadUserNames();
   const done = await loadLessonDone(memberIds);
   const now = Date.now();
   function marks(userId) {
@@ -2286,10 +2324,10 @@ async function claimRoster(st, userId, classId, rosterId) {
     const d = readClassFile();
     d.roster.forEach((x) => { if (x.userId === userId) x.userId = null; });
     d.roster.find((x) => x.id === rosterId).userId = userId;
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('UPDATE class_roster SET user_id = NULL WHERE user_id = ?', [userId]);
-    const [r2] = await dbPool.query('UPDATE class_roster SET user_id = ? WHERE id = ? AND (user_id IS NULL OR user_id = ?)', [userId, rosterId, userId]);
+    await classDbWrite('UPDATE class_roster SET user_id = NULL WHERE user_id = ?', [userId]);
+    const [r2] = await classDbWrite('UPDATE class_roster SET user_id = ? WHERE id = ? AND (user_id IS NULL OR user_id = ?)', [userId, rosterId, userId]);
     if (!r2.affectedRows) return 'Tên này vừa có bạn khác chọn.';
   }
   return null;
@@ -2301,11 +2339,11 @@ async function setMember(userId, classId) {
     const d = readClassFile();
     d.members[userId] = { classId, joinedMs: now };
     d.roster.forEach((x) => { if (x.userId === userId && x.classId !== classId) x.userId = null; });
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('INSERT INTO class_members (user_id, class_id, joined_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE class_id = VALUES(class_id), joined_ms = VALUES(joined_ms)',
+    await classDbWrite('INSERT INTO class_members (user_id, class_id, joined_ms) VALUES (?,?,?) ON DUPLICATE KEY UPDATE class_id = VALUES(class_id), joined_ms = VALUES(joined_ms)',
       [userId, classId, now]);
-    await dbPool.query('UPDATE class_roster SET user_id = NULL WHERE user_id = ? AND class_id <> ?', [userId, classId]);
+    await classDbWrite('UPDATE class_roster SET user_id = NULL WHERE user_id = ? AND class_id <> ?', [userId, classId]);
   }
 }
 
@@ -2385,10 +2423,10 @@ app.post('/api/admin/roster', requireAdmin, asyncRoute(async (req, res) => {
   if (!USE_DB) {
     const d = readClassFile();
     d.roster = d.roster.concat(added);
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
     for (const r of added) {
-      await dbPool.query('INSERT INTO class_roster (id, class_id, name, user_id, sort) VALUES (?,?,?,?,?)', [r.id, r.classId, r.name, null, r.sort]);
+      await classDbWrite('INSERT INTO class_roster (id, class_id, name, user_id, sort) VALUES (?,?,?,?,?)', [r.id, r.classId, r.name, null, r.sort]);
     }
   }
   res.json({ ok: true, added: added.length, skipped });
@@ -2414,9 +2452,9 @@ app.post('/api/admin/roster/:id', requireAdmin, asyncRoute(async (req, res) => {
     const d = readClassFile();
     const x = d.roster.find((y) => y.id === r.id);
     x.name = name; x.userId = userId;
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('UPDATE class_roster SET name = ?, user_id = ? WHERE id = ?', [name, userId, r.id]);
+    await classDbWrite('UPDATE class_roster SET name = ?, user_id = ? WHERE id = ?', [name, userId, r.id]);
   }
   res.json({ ok: true });
 }));
@@ -2425,9 +2463,9 @@ app.delete('/api/admin/roster/:id', requireAdmin, asyncRoute(async (req, res) =>
   if (!USE_DB) {
     const d = readClassFile();
     d.roster = d.roster.filter((x) => x.id !== req.params.id);
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('DELETE FROM class_roster WHERE id = ?', [req.params.id]);
+    await classDbWrite('DELETE FROM class_roster WHERE id = ?', [req.params.id]);
   }
   res.json({ ok: true });
 }));
@@ -2450,9 +2488,9 @@ app.post('/api/admin/classes', requireAdmin, asyncRoute(async (req, res) => {
   if (!USE_DB) {
     const d = readClassFile();
     d.classes.push(cls);
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('INSERT INTO classes (id, name, code, created_ms) VALUES (?,?,?,?)', [cls.id, cls.name, cls.code, cls.createdMs]);
+    await classDbWrite('INSERT INTO classes (id, name, code, created_ms) VALUES (?,?,?,?)', [cls.id, cls.name, cls.code, cls.createdMs]);
   }
   res.json({ ok: true, class: cls });
 }));
@@ -2473,9 +2511,9 @@ app.post('/api/admin/classes/:id', requireAdmin, asyncRoute(async (req, res) => 
     const d = readClassFile();
     const c = d.classes.find((x) => x.id === cls.id);
     c.name = name; c.code = code;
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('UPDATE classes SET name = ?, code = ? WHERE id = ?', [name, code, cls.id]);
+    await classDbWrite('UPDATE classes SET name = ?, code = ? WHERE id = ?', [name, code, cls.id]);
   }
   res.json({ ok: true, class: Object.assign({}, cls, { name, code }) });
 }));
@@ -2489,12 +2527,12 @@ app.delete('/api/admin/classes/:id', requireAdmin, asyncRoute(async (req, res) =
     d.assignments = d.assignments.filter((a) => a.classId !== id);
     d.roster = d.roster.filter((x) => x.classId !== id);
     Object.keys(d.members).forEach((u) => { if (d.members[u].classId === id) delete d.members[u]; });
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('DELETE FROM assignments WHERE class_id = ?', [id]);
-    await dbPool.query('DELETE FROM class_roster WHERE class_id = ?', [id]);
-    await dbPool.query('DELETE FROM class_members WHERE class_id = ?', [id]);
-    await dbPool.query('DELETE FROM classes WHERE id = ?', [id]);
+    await classDbWrite('DELETE FROM assignments WHERE class_id = ?', [id]);
+    await classDbWrite('DELETE FROM class_roster WHERE class_id = ?', [id]);
+    await classDbWrite('DELETE FROM class_members WHERE class_id = ?', [id]);
+    await classDbWrite('DELETE FROM classes WHERE id = ?', [id]);
   }
   res.json({ ok: true });
 }));
@@ -2513,10 +2551,10 @@ app.post('/api/admin/members', requireAdmin, asyncRoute(async (req, res) => {
     const d = readClassFile();
     delete d.members[userId];
     d.roster.forEach((x) => { if (x.userId === userId) x.userId = null; });
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('DELETE FROM class_members WHERE user_id = ?', [userId]);
-    await dbPool.query('UPDATE class_roster SET user_id = NULL WHERE user_id = ?', [userId]);
+    await classDbWrite('DELETE FROM class_members WHERE user_id = ?', [userId]);
+    await classDbWrite('UPDATE class_roster SET user_id = NULL WHERE user_id = ?', [userId]);
   }
   res.json({ ok: true });
 }));
@@ -2537,10 +2575,10 @@ app.post('/api/admin/assignments', requireAdmin, asyncRoute(async (req, res) => 
   if (!USE_DB) {
     const d = readClassFile();
     d.assignments = d.assignments.concat(created);
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
     for (const a of created) {
-      await dbPool.query('INSERT INTO assignments (id, class_id, lesson_url, note, due_ms, created_ms) VALUES (?,?,?,?,?,?)',
+      await classDbWrite('INSERT INTO assignments (id, class_id, lesson_url, note, due_ms, created_ms) VALUES (?,?,?,?,?,?)',
         [a.id, a.classId, a.lessonUrl, a.note || null, a.dueMs, a.createdMs]);
     }
   }
@@ -2559,9 +2597,9 @@ app.post('/api/admin/assignments/:id', requireAdmin, asyncRoute(async (req, res)
     const d = readClassFile();
     const x = d.assignments.find((y) => y.id === a.id);
     x.dueMs = dueMs; x.note = note;
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('UPDATE assignments SET due_ms = ?, note = ? WHERE id = ?', [dueMs, note || null, a.id]);
+    await classDbWrite('UPDATE assignments SET due_ms = ?, note = ? WHERE id = ?', [dueMs, note || null, a.id]);
   }
   res.json({ ok: true });
 }));
@@ -2570,9 +2608,9 @@ app.delete('/api/admin/assignments/:id', requireAdmin, asyncRoute(async (req, re
   if (!USE_DB) {
     const d = readClassFile();
     d.assignments = d.assignments.filter((a) => a.id !== req.params.id);
-    writeJsonFile(CLASSES_FILE, d);
+    writeClassFile(d);
   } else {
-    await dbPool.query('DELETE FROM assignments WHERE id = ?', [req.params.id]);
+    await classDbWrite('DELETE FROM assignments WHERE id = ?', [req.params.id]);
   }
   res.json({ ok: true });
 }));

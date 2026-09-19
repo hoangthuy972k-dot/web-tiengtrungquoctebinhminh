@@ -9963,12 +9963,12 @@
     }
   }
 
-  /* ---------------- Nhap vai hoi thoai (thu nghiem: HSK2 3.0 bai 1) ----------------
+  /* ---------------- Nhap vai hoi thoai (moi bai HSK 1-4 va YCT) ----------------
      Hoc sinh chon 1 vai trong doan hoi thoai. May doc loi vai con lai (giong doc
      tieng Trung cua trinh duyet); den luot minh thi hoc sinh noi vao micro, trinh
      duyet nhan dien giong noi (zh-CN) roi so tung chu voi cau goc -> diem %.
      Cau dat >= 70% duoc +1 sao (moi cau 1 lan). */
-  var RP_LESSONS = /\/hsk2v3-bai-1\.html$/;
+  var RP_LESSONS = /\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk3-|hsk4-|yct-)?bai-\d+\.html$/;
   var RP_PASS = 70;
   var rpStates = {};   // dpIndex -> { phase, role, hint, step, results, heard, showHint }
   var rpRec = null;
@@ -10041,7 +10041,7 @@
   function rpRender(host, scene, idx) {
     var st = rpStates[idx];
     var letter = function (sp) { return 'ABCD'.charAt(sp) || 'A'; };
-    var html = '<div class="rp-head"><span class="rp-badge">Mới · thử nghiệm</span><div class="rp-title">🎭 Nhập vai hội thoại</div>' +
+    var html = '<div class="rp-head"><span class="rp-badge">Mới</span><div class="rp-title">🎭 Nhập vai hội thoại</div>' +
       '<div class="rp-sub">Em đóng một vai, máy đóng vai còn lại. Đến lượt em thì bấm micro và nói câu của mình bằng tiếng Trung.</div></div>';
 
     if (st.phase === 'pick') {

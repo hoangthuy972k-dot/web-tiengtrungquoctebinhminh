@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'留学',py:'liú xué',pos:'Động từ',vn:'du học',em:'🎓',lesson:1,
+  {n:1,zh:'留学',py:'liú xué',pos:'Động từ',vn:'du học', hv: 'lưu học',em:'🎓',lesson:1,
    explain:['Đi học ở nước ngoài để nâng cao trình độ.'],
    usage:'Động từ ly hợp; đi cùng khoảng thời gian: 留学两年.',
    collo:['去留学','留学两年','留学生活'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:2,zh:'水平',py:'shuǐpíng',pos:'Danh từ',vn:'trình độ',em:'📊',lesson:1,
+  {n:2,zh:'水平',py:'shuǐpíng',pos:'Danh từ',vn:'trình độ', hv: 'thủy bình',em:'📊',lesson:1,
    explain:['Mức độ năng lực, khả năng của một người trong một lĩnh vực.'],
    usage:'Danh từ; đi cùng động từ 提高: 提高水平.',
    collo:['汉语水平','提高水平','水平不错'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'提高',py:'tí gāo',pos:'Động từ',vn:'nâng cao, tiến bộ',em:'📈',lesson:1,
+  {n:3,zh:'提高',py:'tí gāo',pos:'Động từ',vn:'nâng cao, tiến bộ', hv: 'đề cao',em:'📈',lesson:1,
    explain:['Làm cho mức độ, trình độ trở nên cao hơn trước.'],
    usage:'Động từ, mang tân ngữ là danh từ trừu tượng: 提高水平.',
    collo:['提高水平','提高得快','越提高越好'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:4,zh:'练习',py:'liànxí',pos:'Danh từ',vn:'bài tập',em:'📝',lesson:1,
+  {n:4,zh:'练习',py:'liànxí',pos:'Danh từ',vn:'bài tập', hv: 'luyện tập',em:'📝',lesson:1,
    explain:['Bài luyện tập nhằm củng cố kiến thức, kỹ năng.'],
    usage:'Danh từ; đi cùng động từ 做: 做练习. Cũng có thể làm động từ nghĩa "luyện tập".',
    collo:['做练习','练习汉语','努力练习'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'完成',py:'wán chéng',pos:'Động từ',vn:'hoàn thành',em:'✅',lesson:1,
+  {n:5,zh:'完成',py:'wán chéng',pos:'Động từ',vn:'hoàn thành', hv: 'hoàn thành',em:'✅',lesson:1,
    explain:['Làm xong một công việc, nhiệm vụ nào đó.'],
    usage:'Động từ, mang tân ngữ là danh từ chỉ công việc: 完成作业.',
    collo:['完成作业','完成任务','按时完成'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:6,zh:'句子',py:'jùzi',pos:'Danh từ',vn:'câu',em:'📄',lesson:1,
+  {n:6,zh:'句子',py:'jùzi',pos:'Danh từ',vn:'câu', hv: 'cú tử',em:'📄',lesson:1,
    explain:['Đơn vị ngôn ngữ diễn đạt một ý hoàn chỉnh.'],
    usage:'Danh từ; đi cùng động từ 写/说: 写句子.',
    collo:['这个句子','写句子','句子的意思'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'其他',py:'qítā',pos:'Đại từ',vn:'cái khác',em:'➕',lesson:1,
+  {n:7,zh:'其他',py:'qítā',pos:'Đại từ',vn:'cái khác', hv: 'kỳ tha',em:'➕',lesson:1,
    explain:['Chỉ những sự vật, người khác ngoài cái đã được nhắc đến.'],
    usage:'Đại từ, làm định ngữ hoặc chủ ngữ: 其他 + N; 其他都….',
    collo:['其他人','其他问题','其他都没什么'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:8,zh:'发',py:'fā',pos:'Động từ',vn:'gửi, gửi đi',em:'📧',lesson:1,
+  {n:8,zh:'发',py:'fā',pos:'Động từ',vn:'gửi, gửi đi', hv: 'phát',em:'📧',lesson:1,
    explain:['Chuyển, gửi thông tin, đồ vật đến người khác.'],
    usage:'Động từ, mang tân ngữ: 发电子邮件, 发短信.',
    collo:['发电子邮件','发短信','用手机发'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'要求',py:'yāoqiú',pos:'Danh từ',vn:'yêu cầu',em:'📋',lesson:2,
+  {n:9,zh:'要求',py:'yāoqiú',pos:'Danh từ',vn:'yêu cầu', hv: 'yếu cầu',em:'📋',lesson:2,
    explain:['Điều đòi hỏi, mong muốn người khác phải đạt được.'],
    usage:'Danh từ; đi cùng động từ 讲/有: 讲要求.',
    collo:['比赛的要求','有要求','满足要求'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:10,zh:'注意',py:'zhù yì',pos:'Động từ',vn:'chú ý',em:'⚠️',lesson:2,
+  {n:10,zh:'注意',py:'zhù yì',pos:'Động từ',vn:'chú ý', hv: 'chú ý',em:'⚠️',lesson:2,
    explain:['Tập trung tâm trí, cẩn thận với một điều gì đó.'],
    usage:'Động từ, mang tân ngữ: 注意 + [việc/vấn đề]; hoặc làm định ngữ 需要注意的地方.',
    collo:['需要注意的地方','注意安全','请注意'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:11,zh:'上网',py:'shàng wǎng',pos:'Động từ',vn:'lên mạng',em:'🌐',lesson:3,
+  {n:11,zh:'上网',py:'shàng wǎng',pos:'Động từ',vn:'lên mạng', hv: 'thượng võng',em:'🌐',lesson:3,
    explain:['Kết nối và sử dụng mạng internet.'],
    usage:'Động từ ly hợp: 上 + 网; đi cùng 用: 用电脑上网.',
    collo:['用电脑上网','在网上','上网真方便'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'除了',py:'chúle',pos:'Giới từ',vn:'ngoài...ra',em:'🚫',lesson:3,
+  {n:12,zh:'除了',py:'chúle',pos:'Giới từ',vn:'ngoài...ra', hv: 'trừ liễu',em:'🚫',lesson:3,
    explain:['Loại trừ một thành phần, thường đi cùng 以外.'],
    usage:'除了 + [A] + 以外，都/还/也……',
    collo:['除了……以外','除了……都','除了……还'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'除了……还…… diễn tả bổ sung thêm điều khác.'},
    ]},
 
-  {n:13,zh:'新闻',py:'xīnwén',pos:'Danh từ',vn:'tin tức',em:'📰',lesson:3,
+  {n:13,zh:'新闻',py:'xīnwén',pos:'Danh từ',vn:'tin tức', hv: 'tân văn',em:'📰',lesson:3,
    explain:['Thông tin về những sự việc mới xảy ra.'],
    usage:'Danh từ; đi cùng động từ 看: 看新闻.',
    collo:['看新闻','听新闻','有意思的新闻'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'除了……还…… diễn tả bổ sung thêm điều khác.'},
    ]},
 
-  {n:14,zh:'花',py:'huā',pos:'Động từ',vn:'tốn, tiêu tốn',em:'💸',lesson:3,
+  {n:14,zh:'花',py:'huā',pos:'Động từ',vn:'tốn, tiêu tốn', hv: 'hoa',em:'💸',lesson:3,
    explain:['Tiêu tốn tiền bạc hoặc thời gian.'],
    usage:'Động từ, mang tân ngữ là 钱/时间: 花钱, 花时间.',
    collo:['花钱','花时间','不用花钱'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 其他 đã học trong bài này).'},
    ]},
 
-  {n:15,zh:'极(了)',py:'jí (le)',pos:'Phó từ',vn:'hết sức, cực kỳ',em:'💯',lesson:3,
+  {n:15,zh:'极(了)',py:'jí (le)',pos:'Phó từ',vn:'hết sức, cực kỳ', hv: 'cực liễu',em:'💯',lesson:3,
    explain:['Đứng sau tính từ/động từ tâm lý để diễn tả mức độ cao nhất.'],
    usage:'[Adj/động từ tâm lý] + 极了.',
    collo:['满意极了','可爱极了','好极了'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'Adj + 极了 diễn tả mức độ cao nhất.'},
    ]},
 
-  {n:16,zh:'节日',py:'jiérì',pos:'Danh từ',vn:'ngày lễ',em:'🎉',lesson:4,
+  {n:16,zh:'节日',py:'jiérì',pos:'Danh từ',vn:'ngày lễ', hv: 'tiết nhật',em:'🎉',lesson:4,
    explain:['Ngày đặc biệt được tổ chức để kỷ niệm, ăn mừng.'],
    usage:'Danh từ; đi cùng tính từ 重要: 重要的节日.',
    collo:['重要的节日','过节日','啤酒节'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'除了……还…… diễn tả bổ sung thêm điều khác.'},
    ]},
 
-  {n:17,zh:'举行',py:'jǔxíng',pos:'Động từ',vn:'tổ chức (hội họp, thi đấu...)',em:'🎪',lesson:4,
+  {n:17,zh:'举行',py:'jǔxíng',pos:'Động từ',vn:'tổ chức (hội họp, thi đấu...)', hv: 'cử hành',em:'🎪',lesson:4,
    explain:['Thực hiện một sự kiện, hoạt động có quy mô.'],
    usage:'Động từ, mang tân ngữ là danh từ chỉ sự kiện: 举行比赛, 举行节日.',
    collo:['举行比赛','举行啤酒节','举行会议'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:18,zh:'世界',py:'shìjiè',pos:'Danh từ',vn:'thế giới',em:'🌍',lesson:4,
+  {n:18,zh:'世界',py:'shìjiè',pos:'Danh từ',vn:'thế giới', hv: 'thế giới',em:'🌍',lesson:4,
    explain:['Toàn bộ trái đất và mọi quốc gia, con người trên đó.'],
    usage:'Danh từ; đi cùng 上: 世界上.',
    collo:['世界上','了解世界','世界各地'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 应该 đã học ở Bài 13).'},
    ]},
 
-  {n:19,zh:'街道',py:'jiēdào',pos:'Danh từ',vn:'đường, đường phố',em:'🛣️',lesson:4,
+  {n:19,zh:'街道',py:'jiēdào',pos:'Danh từ',vn:'đường, đường phố', hv: 'nhai đạo',em:'🛣️',lesson:4,
    explain:['Con đường trong khu vực đô thị, có nhà cửa hai bên.'],
    usage:'Danh từ; đi cùng 两边: 街道两边.',
    collo:['街道两边','干净的街道','那条街道'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'又……又…… diễn tả hai đặc điểm cùng tồn tại.'},
    ]},
 
-  {n:20,zh:'各',py:'gè',pos:'Đại từ',vn:'mỗi',em:'🔢',lesson:4,
+  {n:20,zh:'各',py:'gè',pos:'Đại từ',vn:'mỗi', hv: 'các',em:'🔢',lesson:4,
    explain:['Chỉ từng cái một trong một tập hợp, không sót cái nào.'],
    usage:'各 + [lượng từ] + N: 各个地方, 各种.',
    collo:['各个地方','各种','世界各地'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:21,zh:'文化',py:'wénhuà',pos:'Danh từ',vn:'văn hóa',em:'🏛️',lesson:4,
+  {n:21,zh:'文化',py:'wénhuà',pos:'Danh từ',vn:'văn hóa', hv: 'văn hóa',em:'🏛️',lesson:4,
    explain:['Toàn bộ giá trị vật chất, tinh thần do con người tạo ra trong lịch sử.'],
    usage:'Danh từ; đi cùng động từ 了解: 了解文化.',
    collo:['了解文化','啤酒文化','中国文化'],

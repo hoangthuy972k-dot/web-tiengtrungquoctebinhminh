@@ -1,5 +1,5 @@
 var vocabData = [
-  {n:1,zh:'生病',py:'shēngbìng',pos:'Động từ',vn:'bị bệnh, sinh bệnh',em:'🤒',lesson:1,
+  {n:1,zh:'生病',py:'shēngbìng',pos:'Động từ',vn:'bị bệnh, sinh bệnh', hv: 'sinh bệnh',em:'🤒',lesson:1,
    ex_zh:'他生病了，今天没有去上班。',ex_py:'Tā shēngbìng le, jīntiān méiyǒu qù shàngbān.',ex_vn:'Anh ấy bị bệnh rồi, hôm nay không đi làm.',
    exList:[
      {zh:'他生病了，今天没有去上班。',py:'Tā shēngbìng le, jīntiān méiyǒu qù shàngbān.',vn:'Anh ấy bị bệnh rồi, hôm nay không đi làm.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Bộ 疒 = hình người nằm trên giường bệnh. Thấy 疒 → nghĩ ngay tới ỐM ĐAU.',
       cf:'痛 (tòng – cùng bộ 疒)',w:'生病 / 看病 / 病人'},
    ]},
-  {n:2,zh:'每',py:'měi',pos:'Đại từ',vn:'mỗi',em:'🔁',lesson:1,
+  {n:2,zh:'每',py:'měi',pos:'Đại từ',vn:'mỗi', hv: 'mỗi',em:'🔁',lesson:1,
    ex_zh:'我每天都学习中文。',ex_py:'Wǒ měitiān dōu xuéxí Zhōngwén.',ex_vn:'Mỗi ngày tôi đều học tiếng Trung.',
    exList:[
      {zh:'我每天都学习中文。',py:'Wǒ měitiān dōu xuéxí Zhōngwén.',vn:'Mỗi ngày tôi đều học tiếng Trung.'},
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Gần giống chữ 母 (mẹ) thêm 1 nét trên đầu — mỗi bà mẹ đều có quy tắc riêng, hãy nhớ 每 hay đi cùng 都.',
       cf:'母 (mǔ – "mẹ", thiếu 1 nét)',w:'每天 / 每个 / 每次'},
    ]},
-  {n:3,zh:'早上',py:'zǎoshang',pos:'Danh từ',vn:'buổi sáng',em:'🌅',lesson:1,
+  {n:3,zh:'早上',py:'zǎoshang',pos:'Danh từ',vn:'buổi sáng', hv: 'tảo thượng',em:'🌅',lesson:1,
    ex_zh:'早上的天气很冷。',ex_py:'Zǎoshang de tiānqì hěn lěng.',ex_vn:'Thời tiết buổi sáng rất lạnh.',
    exList:[
      {zh:'早上的天气很冷。',py:'Zǎoshang de tiānqì hěn lěng.',vn:'Thời tiết buổi sáng rất lạnh.'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'Một nét ngắn phía TRÊN một nét ngang dài → chỉ hướng lên trên. 早上 = phần sớm của ngày.',
       cf:'下 (xià – trái nghĩa)',w:'早上 / 上班 / 上课'},
    ]},
-  {n:4,zh:'跑步',py:'pǎobù',pos:'Động từ',vn:'chạy bộ',em:'🏃',lesson:1,
+  {n:4,zh:'跑步',py:'pǎobù',pos:'Động từ',vn:'chạy bộ', hv: 'bào bộ',em:'🏃',lesson:1,
    ex_zh:'我去操场跑步。',ex_py:'Wǒ qù cāochǎng pǎobù.',ex_vn:'Tôi đi sân tập chạy bộ.',
    exList:[
      {zh:'我去操场跑步。',py:'Wǒ qù cāochǎng pǎobù.',vn:'Tôi đi sân tập chạy bộ.'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Hai bàn chân nối tiếp nhau tạo thành BƯỚC đi.',
       cf:'涉 (shè – thêm bộ 氵)',w:'跑步 / 一步 / 步行'},
    ]},
-  {n:5,zh:'起床',py:'qǐchuáng',pos:'Động từ',vn:'thức dậy',em:'⏰',lesson:1,
+  {n:5,zh:'起床',py:'qǐchuáng',pos:'Động từ',vn:'thức dậy', hv: 'khởi sàng',em:'⏰',lesson:1,
    ex_zh:'你每天几点起床？',ex_py:'Nǐ měitiān jǐ diǎn qǐchuáng?',ex_vn:'Mỗi ngày bạn thức dậy lúc mấy giờ?',
    exList:[
      {zh:'你每天几点起床？',py:'Nǐ měitiān jǐ diǎn qǐchuáng?',vn:'Mỗi ngày bạn thức dậy lúc mấy giờ?'},
@@ -71,7 +71,7 @@ var vocabData = [
       tip:'Mái nhà 广 che phía trên khung gỗ 木 → cái GIƯỜNG ở trong nhà.',
       cf:'庄 (zhuāng – "trang trại")',w:'起床 / 床上 / 一张床'},
    ]},
-  {n:6,zh:'药',py:'yào',pos:'Danh từ',vn:'thuốc',em:'💊',lesson:2,
+  {n:6,zh:'药',py:'yào',pos:'Danh từ',vn:'thuốc', hv: 'dược',em:'💊',lesson:2,
    ex_zh:'吃药以后要喝水。',ex_py:'Chī yào yǐhòu yào hē shuǐ.',ex_vn:'Sau khi uống thuốc phải uống nước.',
    exList:[
      {zh:'吃药以后要喝水。',py:'Chī yào yǐhòu yào hē shuǐ.',vn:'Sau khi uống thuốc phải uống nước.'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Bộ 艹 (cỏ) ở trên → thuốc xưa làm từ cây cỏ, thảo dược. Thấy 艹 → nghĩ tới cây cỏ/thuốc men.',
       cf:'约 (yuē – "hẹn", thiếu 艹)',w:'吃药 / 买药 / 中药'},
    ]},
-  {n:7,zh:'身体',py:'shēntǐ',pos:'Danh từ',vn:'cơ thể, sức khỏe',em:'💪',lesson:2,
+  {n:7,zh:'身体',py:'shēntǐ',pos:'Danh từ',vn:'cơ thể, sức khỏe', hv: 'thân thể',em:'💪',lesson:2,
    ex_zh:'爸爸的身体很好。',ex_py:'Bàba de shēntǐ hěn hǎo.',ex_vn:'Sức khỏe của bố rất tốt.',
    exList:[
      {zh:'爸爸的身体很好。',py:'Bàba de shēntǐ hěn hǎo.',vn:'Sức khỏe của bố rất tốt.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'Người 亻 + 本 (gốc rễ) → cái GỐC của một con người = cơ thể.',
       cf:'休 (xiū – khác phần phải)',w:'身体 / 体育 / 体重'},
    ]},
-  {n:8,zh:'出院',py:'chūyuàn',pos:'Động từ',vn:'xuất viện',em:'🚪',lesson:2,
+  {n:8,zh:'出院',py:'chūyuàn',pos:'Động từ',vn:'xuất viện', hv: 'xuất viện',em:'🚪',lesson:2,
    ex_zh:'他明天就可以出院了。',ex_py:'Tā míngtiān jiù kěyǐ chūyuàn le.',ex_vn:'Ngày mai anh ấy có thể xuất viện rồi.',
    exList:[
      {zh:'他明天就可以出院了。',py:'Tā míngtiān jiù kěyǐ chūyuàn le.',vn:'Ngày mai anh ấy có thể xuất viện rồi.'},
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'Bộ 阝 (khu vực có tường bao) + 完 → một khuôn viên khép kín = VIỆN (bệnh viện, học viện...).',
       cf:'完 (wán – thiếu bộ 阝)',w:'出院 / 医院 / 学院'},
    ]},
-  {n:9,zh:'高',py:'gāo',pos:'Tính từ',vn:'cao',em:'📏',lesson:3,
+  {n:9,zh:'高',py:'gāo',pos:'Tính từ',vn:'cao', hv: 'cao',em:'📏',lesson:3,
    ex_zh:'他比我高一点儿。',ex_py:'Tā bǐ wǒ gāo yìdiǎnr.',ex_vn:'Anh ấy cao hơn tôi một chút.',
    exList:[
      {zh:'他比我高一点儿。',py:'Tā bǐ wǒ gāo yìdiǎnr.',vn:'Anh ấy cao hơn tôi một chút.'},
@@ -125,7 +125,7 @@ var vocabData = [
       tip:'Hình vẽ một tòa tháp nhiều tầng nhìn từ xa → "CAO". Nhớ theo hình dáng tháp canh cổ.',
       cf:'亭 (tíng – "đình", có 丁 dưới)',w:'高兴 / 高大 / 多高'},
    ]},
-  {n:10,zh:'米',py:'mǐ',pos:'Lượng từ',vn:'mét',em:'📐',lesson:3,
+  {n:10,zh:'米',py:'mǐ',pos:'Lượng từ',vn:'mét', hv: 'mễ',em:'📐',lesson:3,
    ex_zh:'他高一米八。',ex_py:'Tā gāo yì mǐ bā.',ex_vn:'Anh ấy cao 1 mét 8.',
    exList:[
      {zh:'他高一米八。',py:'Tā gāo yì mǐ bā.',vn:'Anh ấy cao 1 mét 8.'},
@@ -137,7 +137,7 @@ var vocabData = [
       tip:'Hình các hạt gạo tách ra từ bông lúa → nghĩa gốc là "GẠO". Do phiên âm gần giống "mètre" nên mượn làm đơn vị đo "MÉT".',
       cf:'来 (lái – gần giống nét trên)',w:'一米 / 大米 / 米饭'},
    ]},
-  {n:11,zh:'知道',py:'zhīdào',pos:'Động từ',vn:'biết',em:'💡',lesson:3,
+  {n:11,zh:'知道',py:'zhīdào',pos:'Động từ',vn:'biết', hv: 'tri đạo',em:'💡',lesson:3,
    ex_zh:'我知道这件事。',ex_py:'Wǒ zhīdào zhè jiàn shì.',ex_vn:'Tôi biết chuyện này.',
    exList:[
      {zh:'我知道这件事。',py:'Wǒ zhīdào zhè jiàn shì.',vn:'Tôi biết chuyện này.'},
@@ -152,7 +152,7 @@ var vocabData = [
       tip:'首 (đầu, hướng đi) + 辶 (đi) → con ĐƯỜNG dẫn tới đích. 知 + 道 = biết rõ đường đi = BIẾT.',
       cf:'导 (dǎo – "dẫn dắt")',w:'知道 / 道路 / 味道'},
    ]},
-  {n:12,zh:'休息',py:'xiūxi',pos:'Động từ',vn:'nghỉ ngơi',em:'😴',lesson:3,
+  {n:12,zh:'休息',py:'xiūxi',pos:'Động từ',vn:'nghỉ ngơi', hv: 'hưu tức',em:'😴',lesson:3,
    ex_zh:'累了就休息一下吧。',ex_py:'Lèi le jiù xiūxi yíxià ba.',ex_vn:'Mệt thì nghỉ ngơi một chút đi.',
    exList:[
      {zh:'累了就休息一下吧。',py:'Lèi le jiù xiūxi yíxià ba.',vn:'Mệt thì nghỉ ngơi một chút đi.'},
@@ -167,7 +167,7 @@ var vocabData = [
       tip:'自 (mũi) trên 心 (tim) → hơi thở ra vào từ tim/mũi → nghĩa "thở, nghỉ".',
       cf:'鼻 (bí – "mũi")',w:'休息 / 消息 / 信息'},
    ]},
-  {n:13,zh:'忙',py:'máng',pos:'Tính từ',vn:'bận',em:'😅',lesson:3,
+  {n:13,zh:'忙',py:'máng',pos:'Tính từ',vn:'bận', hv: 'mang',em:'😅',lesson:3,
    ex_zh:'老师最近很忙。',ex_py:'Lǎoshī zuìjìn hěn máng.',ex_vn:'Dạo này giáo viên rất bận.',
    exList:[
      {zh:'老师最近很忙。',py:'Lǎoshī zuìjìn hěn máng.',vn:'Dạo này giáo viên rất bận.'},
@@ -179,7 +179,7 @@ var vocabData = [
       tip:'Trái tim 忄 + 亡 (mất, quên) → bận đến mức như "mất cả tâm trí", quay cuồng.',
       cf:'忘 (wàng – "quên", 忄 ở dưới)',w:'忙不忙 / 帮忙 / 很忙'},
    ]},
-  {n:14,zh:'时间',py:'shíjiān',pos:'Danh từ',vn:'thời gian',em:'⏳',lesson:3,
+  {n:14,zh:'时间',py:'shíjiān',pos:'Danh từ',vn:'thời gian', hv: 'thời gian',em:'⏳',lesson:3,
    ex_zh:'我没有时间去玩。',ex_py:'Wǒ méiyǒu shíjiān qù wán.',ex_vn:'Tôi không có thời gian đi chơi.',
    exList:[
      {zh:'我没有时间去玩。',py:'Wǒ méiyǒu shíjiān qù wán.',vn:'Tôi không có thời gian đi chơi.'},
@@ -194,7 +194,7 @@ var vocabData = [
       tip:'Ánh mặt trời 日 lọt qua khe cửa 门 → khoảng KHÔNG GIAN/THỜI GIAN ở giữa.',
       cf:'问 (wèn – thay 日 bằng 口)',w:'时间 / 中间 / 房间'},
    ]},
-  {n:15,zh:'累',py:'lèi',pos:'Tính từ',vn:'mệt',em:'😩',lesson:3,
+  {n:15,zh:'累',py:'lèi',pos:'Tính từ',vn:'mệt', hv: 'lụy',em:'😩',lesson:3,
    ex_zh:'工作一天，我很累。',ex_py:'Gōngzuò yìtiān, wǒ hěn lèi.',ex_vn:'Làm việc một ngày, tôi rất mệt.',
    exList:[
      {zh:'工作一天，我很累。',py:'Gōngzuò yìtiān, wǒ hěn lèi.',vn:'Làm việc một ngày, tôi rất mệt.'},

@@ -2,7 +2,7 @@
 // DATA — YCT Bài 1: 你好！
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'你',py:'nǐ',pos:'Đại từ',vn:'bạn, con, em',em:'🧒',lesson:1,
+  {n:1,zh:'你',py:'nǐ',pos:'Đại từ',vn:'bạn, con, em', hv: 'nhĩ',em:'🧒',lesson:1,
    ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn!',
    exList:[
      {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
@@ -12,7 +12,7 @@ var vocabData = [
       tip:'亻(người) đứng cạnh 尔(âm cổ) → dùng gọi NGƯỜI đang nói chuyện cùng mình.',
       cf:'休 (xiū – "nghỉ ngơi")',w:'你好'},
    ]},
-  {n:2,zh:'好',py:'hǎo',pos:'Tính từ',vn:'tốt, khỏe',em:'👍',lesson:1,
+  {n:2,zh:'好',py:'hǎo',pos:'Tính từ',vn:'tốt, khỏe', hv: 'hảo',em:'👍',lesson:1,
    ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn!',
    exList:[
      {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
@@ -23,7 +23,7 @@ var vocabData = [
       tip:'女(mẹ) đứng cạnh 子(con) → hình ảnh MẸ CON vui vẻ = TỐT ĐẸP.',
       cf:'如 (rú – "như")',w:'你好 / 老师好'},
    ]},
-  {n:3,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy giáo, cô giáo',em:'👩‍🏫',lesson:1,
+  {n:3,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy giáo, cô giáo', hv: 'lão sư',em:'👩‍🏫',lesson:1,
    ex_zh:'老师好！',ex_py:'Lǎoshī hǎo!',ex_vn:'Con chào cô ạ!',
    exList:[
      {zh:'老师好！',py:'Lǎoshī hǎo!',vn:'Con chào cô ạ!'},
@@ -36,7 +36,7 @@ var vocabData = [
       tip:'Người dẫn dắt, chỉ dạy người khác → THẦY; ghép với 老 = "người thầy đáng kính".',
       cf:'帅 (shuài – "chỉ huy")',w:'老师'},
    ]},
-  {n:4,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt',em:'👋',lesson:1,
+  {n:4,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt', hv: 'tái kiến',em:'👋',lesson:1,
    ex_zh:'老师，再见！',ex_py:'Lǎoshī, zàijiàn!',ex_vn:'Con chào cô, con về ạ!',
    exList:[
      {zh:'老师，再见！',py:'Lǎoshī, zàijiàn!',vn:'Con chào cô, con về ạ!'},
@@ -49,7 +49,7 @@ var vocabData = [
       tip:'Hình con mắt trên đôi chân bước tới → NHÌN THẤY, GẶP GỠ.',
       cf:'贝 (bèi – "vật báu")',w:'再见'},
    ]},
-  {n:5,zh:'一',py:'yī',pos:'Số từ',vn:'một',em:'1️⃣',lesson:2,
+  {n:5,zh:'一',py:'yī',pos:'Số từ',vn:'một', hv: 'nhất',em:'1️⃣',lesson:2,
    ex_zh:'一，二，三！',ex_py:'Yī, èr, sān!',ex_vn:'Một, hai, ba!',
    exList:[{zh:'一，二，三！',py:'Yī, èr, sān!',vn:'Một, hai, ba!'}],
    hanzi:[
@@ -57,7 +57,7 @@ var vocabData = [
       tip:'Một nét ngang duy nhất → biểu thị số MỘT, số đầu tiên.',
       cf:'二 (èr – "hai")',w:'一，二，三'},
    ]},
-  {n:6,zh:'二',py:'èr',pos:'Số từ',vn:'hai',em:'2️⃣',lesson:2,
+  {n:6,zh:'二',py:'èr',pos:'Số từ',vn:'hai', hv: 'nhị',em:'2️⃣',lesson:2,
    ex_zh:'一，二，三！',ex_py:'Yī, èr, sān!',ex_vn:'Một, hai, ba!',
    exList:[{zh:'一，二，三！',py:'Yī, èr, sān!',vn:'Một, hai, ba!'}],
    hanzi:[
@@ -65,7 +65,7 @@ var vocabData = [
       tip:'Hai nét ngang xếp chồng → số HAI.',
       cf:'一 (yī – "một")',w:'一，二，三'},
    ]},
-  {n:7,zh:'三',py:'sān',pos:'Số từ',vn:'ba',em:'3️⃣',lesson:2,
+  {n:7,zh:'三',py:'sān',pos:'Số từ',vn:'ba', hv: 'tam',em:'3️⃣',lesson:2,
    ex_zh:'一，二，三！',ex_py:'Yī, èr, sān!',ex_vn:'Một, hai, ba!',
    exList:[{zh:'一，二，三！',py:'Yī, èr, sān!',vn:'Một, hai, ba!'}],
    hanzi:[
@@ -73,7 +73,7 @@ var vocabData = [
       tip:'Ba nét ngang xếp chồng → số BA.',
       cf:'王 (wáng – "vua", thêm nét dọc")',w:'一，二，三'},
    ]},
-  {n:8,zh:'四',py:'sì',pos:'Số từ',vn:'bốn',em:'4️⃣',lesson:2,
+  {n:8,zh:'四',py:'sì',pos:'Số từ',vn:'bốn', hv: 'tứ',em:'4️⃣',lesson:2,
    ex_zh:'四，五，六！',ex_py:'Sì, wǔ, liù!',ex_vn:'Bốn, năm, sáu!',
    exList:[{zh:'四，五，六！',py:'Sì, wǔ, liù!',vn:'Bốn, năm, sáu!'}],
    hanzi:[
@@ -81,7 +81,7 @@ var vocabData = [
       tip:'Hình khung vuông chứa số đếm bên trong (chữ cổ) → số BỐN.',
       cf:'因 (yīn – "vì, do")',w:'四，五，六'},
    ]},
-  {n:9,zh:'五',py:'wǔ',pos:'Số từ',vn:'năm',em:'5️⃣',lesson:2,
+  {n:9,zh:'五',py:'wǔ',pos:'Số từ',vn:'năm', hv: 'ngũ',em:'5️⃣',lesson:2,
    ex_zh:'四，五，六！',ex_py:'Sì, wǔ, liù!',ex_vn:'Bốn, năm, sáu!',
    exList:[{zh:'四，五，六！',py:'Sì, wǔ, liù!',vn:'Bốn, năm, sáu!'}],
    hanzi:[
@@ -89,7 +89,7 @@ var vocabData = [
       tip:'Hai nét chéo giao nhau giữa hai đường ngang → số NĂM.',
       cf:'吾 (wú – "ta, tôi")',w:'四，五，六'},
    ]},
-  {n:10,zh:'六',py:'liù',pos:'Số từ',vn:'sáu',em:'6️⃣',lesson:2,
+  {n:10,zh:'六',py:'liù',pos:'Số từ',vn:'sáu', hv: 'lục',em:'6️⃣',lesson:2,
    ex_zh:'四，五，六！',ex_py:'Sì, wǔ, liù!',ex_vn:'Bốn, năm, sáu!',
    exList:[{zh:'四，五，六！',py:'Sì, wǔ, liù!',vn:'Bốn, năm, sáu!'}],
    hanzi:[
@@ -97,7 +97,7 @@ var vocabData = [
       tip:'亠(mái nhà) trên 八(chia) → số SÁU.',
       cf:'交 (jiāo – "giao")',w:'四，五，六'},
    ]},
-  {n:11,zh:'七',py:'qī',pos:'Số từ',vn:'bảy',em:'7️⃣',lesson:2,
+  {n:11,zh:'七',py:'qī',pos:'Số từ',vn:'bảy', hv: 'thất',em:'7️⃣',lesson:2,
    ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
    exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
    hanzi:[
@@ -105,7 +105,7 @@ var vocabData = [
       tip:'Một nét ngang cắt một nét sổ cong → số BẢY.',
       cf:'切 (qiè – "cắt")',w:'七，八，九'},
    ]},
-  {n:12,zh:'八',py:'bā',pos:'Số từ',vn:'tám',em:'8️⃣',lesson:2,
+  {n:12,zh:'八',py:'bā',pos:'Số từ',vn:'tám', hv: 'bát',em:'8️⃣',lesson:2,
    ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
    exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
    hanzi:[
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'Hai nét chéo tách ra hai bên → hình ảnh CHIA TÁCH, số TÁM.',
       cf:'人 (rén – "người")',w:'七，八，九'},
    ]},
-  {n:13,zh:'九',py:'jiǔ',pos:'Số từ',vn:'chín',em:'9️⃣',lesson:2,
+  {n:13,zh:'九',py:'jiǔ',pos:'Số từ',vn:'chín', hv: 'cửu',em:'9️⃣',lesson:2,
    ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
    exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
    hanzi:[
@@ -121,7 +121,7 @@ var vocabData = [
       tip:'Hình móc câu uốn cong → số CHÍN, gần đủ một chục.',
       cf:'几 (jǐ – "mấy")',w:'七，八，九'},
    ]},
-  {n:14,zh:'十',py:'shí',pos:'Số từ',vn:'mười',em:'🔟',lesson:2,
+  {n:14,zh:'十',py:'shí',pos:'Số từ',vn:'mười', hv: 'thập',em:'🔟',lesson:2,
    ex_zh:'七，八，九，十！',ex_py:'Qī, bā, jiǔ, shí!',ex_vn:'Bảy, tám, chín, mười!',
    exList:[{zh:'七，八，九，十！',py:'Qī, bā, jiǔ, shí!',vn:'Bảy, tám, chín, mười!'}],
    hanzi:[

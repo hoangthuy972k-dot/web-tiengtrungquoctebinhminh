@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 10: 我能坐这儿吗?
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'桌子',py:'zhuōzi',pos:'Danh từ',vn:'cái bàn',em:'🍽️',lesson:1,
+  {n:1,zh:'桌子',py:'zhuōzi',pos:'Danh từ',vn:'cái bàn', hv: 'trác tử',em:'🍽️',lesson:1,
    ex_zh:'桌子上有什么？',ex_py:'Zhuōzi shang yǒu shénme?',ex_vn:'Trên bàn có gì vậy?',
    exList:[
      {zh:'桌子上有什么？',py:'Zhuōzi shang yǒu shénme?',vn:'Trên bàn có gì vậy?'},
@@ -12,7 +12,7 @@ var vocabData = [
       tip:'占(cao lên) trên 木(gỗ) → vật bằng gỗ có mặt cao để dùng = BÀN.',
       cf:'桌 dễ nhầm 卓 (zhuó – "xuất sắc")',w:'桌子'},
    ]},
-  {n:2,zh:'上',py:'shang',pos:'Danh từ',vn:'trên, phía trên',em:'⬆️',lesson:1,
+  {n:2,zh:'上',py:'shang',pos:'Danh từ',vn:'trên, phía trên', hv: 'thượng',em:'⬆️',lesson:1,
    ex_zh:'桌子上有什么？',ex_py:'Zhuōzi shang yǒu shénme?',ex_vn:'Trên bàn có gì vậy?',
    exList:[
      {zh:'桌子上有什么？',py:'Zhuōzi shang yǒu shénme?',vn:'Trên bàn có gì vậy?'},
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'Một điểm nằm TRÊN đường ngang → chỉ vị trí PHÍA TRÊN (ngược với 下 đã học Bài 8).',
       cf:'下 (xià – "dưới", đã học Bài 8")',w:'桌子上 / 上午'},
    ]},
-  {n:3,zh:'电脑',py:'diànnǎo',pos:'Danh từ',vn:'máy vi tính',em:'🖥️',lesson:1,
+  {n:3,zh:'电脑',py:'diànnǎo',pos:'Danh từ',vn:'máy vi tính', hv: 'điện não',em:'🖥️',lesson:1,
    ex_zh:'桌子上有一个电脑和一本书。',ex_py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.',ex_vn:'Có một chiếc máy vi tính và một quyển sách.',
    exList:[
      {zh:'桌子上有一个电脑和一本书。',py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.',vn:'Có một chiếc máy vi tính và một quyển sách.'},
@@ -35,7 +35,7 @@ var vocabData = [
       tip:'月(bộ phận cơ thể) + phần biểu thị hộp sọ → NÃO BỘ; 电脑 = "não điện tử" = MÁY VI TÍNH.',
       cf:'恼 (nǎo – "buồn phiền")',w:'电脑'},
    ]},
-  {n:4,zh:'和',py:'hé',pos:'Liên từ',vn:'và',em:'➕',lesson:1,
+  {n:4,zh:'和',py:'hé',pos:'Liên từ',vn:'và', hv: 'hòa',em:'➕',lesson:1,
    ex_zh:'桌子上有一个电脑和一本书。',ex_py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.',ex_vn:'Có một chiếc máy vi tính và một quyển sách.',
    exList:[
      {zh:'桌子上有一个电脑和一本书。',py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.',vn:'Có một chiếc máy vi tính và một quyển sách.'},
@@ -45,7 +45,7 @@ var vocabData = [
       tip:'禾(lúa, no đủ) + 口(miệng ăn) → mọi người hoà thuận, ghép nối các thứ VÀ nhau.',
       cf:'合 (hé – "hợp", nghĩa gần giống")',w:'电脑和书'},
    ]},
-  {n:5,zh:'本',py:'běn',pos:'Lượng từ',vn:'cuốn, quyển (lượng từ dùng cho sách, vở)',em:'📕',lesson:1,
+  {n:5,zh:'本',py:'běn',pos:'Lượng từ',vn:'cuốn, quyển (lượng từ dùng cho sách, vở)', hv: 'bản',em:'📕',lesson:1,
    ex_zh:'桌子上有一本书。',ex_py:'Zhuōzi shang yǒu yì běn shū.',ex_vn:'Trên bàn có một quyển sách.',
    exList:[
      {zh:'桌子上有一本书。',py:'Zhuōzi shang yǒu yì běn shū.',vn:'Trên bàn có một quyển sách.'},
@@ -55,7 +55,7 @@ var vocabData = [
       tip:'木(cây) thêm nét chỉ GỐC RỄ → cuốn sách được ví như "gốc" tri thức.',
       cf:'木 (mù – "cây, gỗ")',w:'一本书'},
    ]},
-  {n:6,zh:'里',py:'li',pos:'Danh từ',vn:'trong, bên trong',em:'📦',lesson:1,
+  {n:6,zh:'里',py:'li',pos:'Danh từ',vn:'trong, bên trong', hv: 'lí',em:'📦',lesson:1,
    ex_zh:'杯子在桌子里。',ex_py:'Bēizi zài zhuōzi li.',ex_vn:'Cái ly ở trong bàn.',
    exList:[
      {zh:'杯子在桌子里。',py:'Bēizi zài zhuōzi li.',vn:'Cái ly ở trong bàn.'},
@@ -65,7 +65,7 @@ var vocabData = [
       tip:'Hình ruộng 田 trên đất 土 → nơi ở bên trong làng xóm, mở rộng nghĩa "TRONG".',
       cf:'理 (lǐ – "lý lẽ")',w:'桌子里'},
    ]},
-  {n:7,zh:'前面',py:'qiánmiàn',pos:'Danh từ',vn:'phía trước',em:'👉',lesson:2,
+  {n:7,zh:'前面',py:'qiánmiàn',pos:'Danh từ',vn:'phía trước', hv: 'tiền diện',em:'👉',lesson:2,
    ex_zh:'前面那个人叫什么名字？',ex_py:'Qiánmiàn nàge rén jiào shénme míngzi?',ex_vn:'Người ở phía trước tên gì vậy?',
    exList:[
      {zh:'前面那个人叫什么名字？',py:'Qiánmiàn nàge rén jiào shénme míngzi?',vn:'Người ở phía trước tên gì vậy?'},
@@ -75,7 +75,7 @@ var vocabData = [
       tip:'Hình chiếc thuyền tiến về phía trước → TRƯỚC, PHÍA TRƯỚC. (面 đã học ở Bài 9)',
       cf:'煎 (jiān – "chiên, rán")',w:'前面 / 以前'},
    ]},
-  {n:8,zh:'后面',py:'hòumiàn',pos:'Danh từ',vn:'phía sau',em:'👈',lesson:2,
+  {n:8,zh:'后面',py:'hòumiàn',pos:'Danh từ',vn:'phía sau', hv: 'hậu diện',em:'👈',lesson:2,
    ex_zh:'后面那个人呢？',ex_py:'Hòumiàn nàge rén ne?',ex_vn:'Còn người ở phía sau?',
    exList:[
      {zh:'后面那个人呢？',py:'Hòumiàn nàge rén ne?',vn:'Còn người ở phía sau?'},
@@ -85,13 +85,13 @@ var vocabData = [
       tip:'Hình người đứng sau ra lệnh → chỉ vị trí PHÍA SAU, thời gian SAU. (面 đã học ở Bài 9)',
       cf:'厚 (hòu – "dày")',w:'后面 / 以后'},
    ]},
-  {n:9,zh:'这儿',py:'zhèr',pos:'Đại từ',vn:'chỗ này, ở đây',em:'📍',lesson:3,
+  {n:9,zh:'这儿',py:'zhèr',pos:'Đại từ',vn:'chỗ này, ở đây', hv: 'giá nhi',em:'📍',lesson:3,
    ex_zh:'我能坐这儿吗？',ex_py:'Wǒ néng zuò zhèr ma?',ex_vn:'Tôi có thể ngồi ở đây được không?',
    exList:[
      {zh:'我能坐这儿吗？',py:'Wǒ néng zuò zhèr ma?',vn:'Tôi có thể ngồi ở đây được không?'},
    ],
    hanzi:[]},
-  {n:10,zh:'没有',py:'méiyǒu',pos:'Phó từ',vn:'không có',em:'🚫',lesson:3,
+  {n:10,zh:'没有',py:'méiyǒu',pos:'Phó từ',vn:'không có', hv: 'một hữu',em:'🚫',lesson:3,
    ex_zh:'这儿有人吗？没有。',ex_py:'Zhèr yǒu rén ma? Méiyǒu.',ex_vn:'Chỗ này có ai ngồi chưa? Chưa.',
    exList:[
      {zh:'这儿有人吗？没有。',py:'Zhèr yǒu rén ma? Méiyǒu.',vn:'Chỗ này có ai ngồi chưa? Chưa.'},
@@ -101,7 +101,7 @@ var vocabData = [
       tip:'氵(nước) dâng lên che lấp mọi thứ → mang nghĩa KHÔNG CÒN, KHÔNG CÓ. (有 đã học ở Bài 5)',
       cf:'汉 (hàn – "Hán", cũng có bộ 氵")',w:'没有 / 没关系'},
    ]},
-  {n:11,zh:'能',py:'néng',pos:'Động từ năng nguyện',vn:'có thể',em:'✅',lesson:3,
+  {n:11,zh:'能',py:'néng',pos:'Động từ năng nguyện',vn:'có thể', hv: 'năng',em:'✅',lesson:3,
    ex_zh:'我能坐这儿吗？',ex_py:'Wǒ néng zuò zhèr ma?',ex_vn:'Tôi có thể ngồi ở đây được không?',
    exList:[
      {zh:'我能坐这儿吗？',py:'Wǒ néng zuò zhèr ma?',vn:'Tôi có thể ngồi ở đây được không?'},
@@ -111,7 +111,7 @@ var vocabData = [
       tip:'Hình con gấu mạnh mẽ (chữ cổ) → biểu tượng NĂNG LỰC, khả năng làm được việc gì = CÓ THỂ.',
       cf:'熊 (xióng – "con gấu", cùng gốc")',w:'我能坐这儿吗'},
    ]},
-  {n:12,zh:'坐',py:'zuò',pos:'Động từ',vn:'ngồi',em:'🪑',lesson:3,
+  {n:12,zh:'坐',py:'zuò',pos:'Động từ',vn:'ngồi', hv: 'tọa',em:'🪑',lesson:3,
    ex_zh:'请坐。',ex_py:'Qǐng zuò.',ex_vn:'Mời ngồi.',
    exList:[
      {zh:'请坐。',py:'Qǐng zuò.',vn:'Mời ngồi.'},

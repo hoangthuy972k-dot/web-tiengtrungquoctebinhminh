@@ -2,7 +2,7 @@
 // DATA — Bài 8: 让我想想再告诉你
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'让',py:'ràng',pos:'Động từ',vn:'để, bảo, cho phép',em:'🙏',lesson:1,
+  {n:1,zh:'让',py:'ràng',pos:'Động từ',vn:'để, bảo, cho phép', hv: 'nhượng',em:'🙏',lesson:1,
    ex_zh:'让我想想。',ex_py:'Ràng wǒ xiǎngxiang.',ex_vn:'Để tôi suy nghĩ một chút.',
    exList:[
      {zh:'让我想想。',py:'Ràng wǒ xiǎngxiang.',vn:'Để tôi suy nghĩ một chút.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Bộ 讠(lời nói) → dùng lời nói khiến người khác làm gì, hoặc NHƯỜNG cho ai đó.',
       cf:'样 (yàng, kiểu dáng)',w:'让我 / 让开 / 谦让'},
    ]},
-  {n:2,zh:'告诉',py:'gàosu',pos:'Động từ',vn:'nói cho biết, mách',em:'💬',lesson:1,
+  {n:2,zh:'告诉',py:'gàosu',pos:'Động từ',vn:'nói cho biết, mách', hv: 'cáo tố',em:'💬',lesson:1,
    ex_zh:'再告诉你。',ex_py:'Zài gàosu nǐ.',ex_vn:'Rồi nói cho bạn biết sau.',
    exList:[
      {zh:'再告诉你。',py:'Zài gàosu nǐ.',vn:'Rồi nói cho bạn biết sau.'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Bộ 讠(lời nói) → 告 + 诉 = nói ra cho ai đó biết = MÁCH, NÓI CHO BIẾT.',
       cf:'折 (zhé, gãy, bộ 扌)',w:'告诉 / 诉说'},
    ]},
-  {n:3,zh:'等',py:'děng',pos:'Động từ',vn:'chờ, đợi',em:'⏳',lesson:2,
+  {n:3,zh:'等',py:'děng',pos:'Động từ',vn:'chờ, đợi', hv: 'đẳng',em:'⏳',lesson:2,
    ex_zh:'你等等我好吗？',ex_py:'Nǐ děngděng wǒ hǎoma?',ex_vn:'Bạn đợi tôi một chút được không?',
    exList:[
      {zh:'你等等我好吗？',py:'Nǐ děngděng wǒ hǎoma?',vn:'Bạn đợi tôi một chút được không?'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'Xưa dùng thẻ tre 竹 xếp hàng theo thứ tự tại 寺 (nha môn) → phải CHỜ ĐỢI đến lượt.',
       cf:'待 (dài, chờ đợi, bộ 彳)',w:'等等 / 等一下 / 平等'},
    ]},
-  {n:4,zh:'找',py:'zhǎo',pos:'Động từ',vn:'tìm, kiếm',em:'🔍',lesson:2,
+  {n:4,zh:'找',py:'zhǎo',pos:'Động từ',vn:'tìm, kiếm', hv: 'trảo',em:'🔍',lesson:2,
    ex_zh:'我想找时间去看看。',ex_py:'Wǒ xiǎng zhǎo shíjiān qù kànkan.',ex_vn:'Tôi muốn tìm thời gian ghé thăm cậu ấy.',
    exList:[
      {zh:'我想找时间去看看。',py:'Wǒ xiǎng zhǎo shíjiān qù kànkan.',vn:'Tôi muốn tìm thời gian ghé thăm cậu ấy.'},
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'Bộ 扌(tay) → dùng tay lục lọi, TÌM KIẾM vật gì đó.',
       cf:'我 (wǒ, tôi, cùng chứa 戈)',w:'找到 / 找工作 / 找时间'},
    ]},
-  {n:5,zh:'事情',py:'shìqing',pos:'Danh từ',vn:'sự việc, việc, chuyện',em:'📋',lesson:2,
+  {n:5,zh:'事情',py:'shìqing',pos:'Danh từ',vn:'sự việc, việc, chuyện', hv: 'sự tình',em:'📋',lesson:2,
    ex_zh:'大卫有什么事情吗？',ex_py:'Dàwèi yǒu shénme shìqing ma?',ex_vn:'David có chuyện gì vậy?',
    exList:[
      {zh:'大卫有什么事情吗？',py:'Dàwèi yǒu shénme shìqing ma?',vn:'David có chuyện gì vậy?'},
@@ -68,7 +68,7 @@ var vocabData = [
       tip:'Bộ 忄(tâm) → 事 + 情 = việc liên quan tới cảm xúc/tình huống cụ thể = SỰ VIỆC.',
       cf:'请 (qǐng, mời, bộ 讠)',w:'事情 / 心情 / 事情多'},
    ]},
-  {n:6,zh:'服务员',py:'fúwùyuán',pos:'Danh từ',vn:'nhân viên phục vụ',em:'🛎️',lesson:3,
+  {n:6,zh:'服务员',py:'fúwùyuán',pos:'Danh từ',vn:'nhân viên phục vụ', hv: 'phục vụ viên',em:'🛎️',lesson:3,
    ex_zh:'服务员，门打不开了。',ex_py:'Fúwùyuán, mén dǎ bù kāi le.',ex_vn:'Lễ tân ơi, cửa không mở được rồi.',
    exList:[
      {zh:'服务员，门打不开了。',py:'Fúwùyuán, mén dǎ bù kāi le.',vn:'Lễ tân ơi, cửa không mở được rồi.'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Bộ 力(sức lực) → dồn sức làm CÔNG VIỆC, nhiệm vụ.',
       cf:'雾 (wù, sương mù, bộ 雨)',w:'服务 / 任务 / 事务'},
    ]},
-  {n:7,zh:'白',py:'bái',pos:'Tính từ',vn:'trắng, màu trắng',em:'⚪',lesson:4,
+  {n:7,zh:'白',py:'bái',pos:'Tính từ',vn:'trắng, màu trắng', hv: 'bạch',em:'⚪',lesson:4,
    ex_zh:'这件白的有点儿长。',ex_py:'Zhè jiàn bái de yǒudiǎnr cháng.',ex_vn:'Chiếc màu trắng này hơi dài một chút.',
    exList:[
      {zh:'这件白的有点儿长。',py:'Zhè jiàn bái de yǒudiǎnr cháng.',vn:'Chiếc màu trắng này hơi dài một chút.'},
@@ -95,7 +95,7 @@ var vocabData = [
       tip:'Hình ánh mặt trời/hạt gạo trắng cách điệu → "TRẮNG".',
       cf:'百 (bǎi, trăm, thêm nét)',w:'白色 / 白天 / 明白'},
    ]},
-  {n:8,zh:'黑',py:'hēi',pos:'Tính từ',vn:'đen, màu đen',em:'⚫',lesson:4,
+  {n:8,zh:'黑',py:'hēi',pos:'Tính từ',vn:'đen, màu đen', hv: 'hắc',em:'⚫',lesson:4,
    ex_zh:'那件黑的有点儿贵。',ex_py:'Nà jiàn hēi de yǒudiǎnr guì.',ex_vn:'Chiếc màu đen kia thì hơi đắt.',
    exList:[
      {zh:'那件黑的有点儿贵。',py:'Nà jiàn hēi de yǒudiǎnr guì.',vn:'Chiếc màu đen kia thì hơi đắt.'},
@@ -107,7 +107,7 @@ var vocabData = [
       tip:'Hình ống khói ám khói đen 灬 phía dưới → "ĐEN, TỐI".',
       cf:'墨 (mò, mực đen, thêm bộ 土)',w:'黑色 / 黑板 / 天黑了'},
    ]},
-  {n:9,zh:'贵',py:'guì',pos:'Tính từ',vn:'đắt, sang trọng',em:'💎',lesson:4,
+  {n:9,zh:'贵',py:'guì',pos:'Tính từ',vn:'đắt, sang trọng', hv: 'quý',em:'💎',lesson:4,
    ex_zh:'他的自行车很贵。',ex_py:'Tā de zìxíngchē hěn guì.',ex_vn:'Xe đạp của anh ấy rất đắt.',
    exList:[
      {zh:'他的自行车很贵。',py:'Tā de zìxíngchē hěn guì.',vn:'Xe đạp của anh ấy rất đắt.'},

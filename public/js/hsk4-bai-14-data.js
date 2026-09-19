@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'出差',py:'chū chāi',pos:'Động từ',vn:'đi công tác',em:'✈️',lesson:1,
+  {n:1,zh:'出差',py:'chū chāi',pos:'Động từ',vn:'đi công tác', hv: 'xuất sai',em:'✈️',lesson:1,
    explain:['Đi làm việc ở nơi khác theo yêu cầu của cơ quan/công ty. Động từ ly hợp: 出了一次差, 出差三天.'],
    usage:'去上海出差, 出差三天, 明天要出差.',
    collo:['明天出差','去北京出差','出差回来'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'大概 ôn lại ngữ pháp Bài 13 + 才 (Bài 3).'},
    ]},
 
-  {n:2,zh:'毛巾',py:'máojīn',pos:'Danh từ',vn:'khăn lau, khăn mặt',em:'🧻',lesson:1,
+  {n:2,zh:'毛巾',py:'máojīn',pos:'Danh từ',vn:'khăn lau, khăn mặt', hv: 'mao cân',em:'🧻',lesson:1,
    explain:['Khăn bằng vải bông dùng để lau mặt, lau tay, lau người.'],
    usage:'一条毛巾, 用毛巾擦脸, 带毛巾.',
    collo:['一条毛巾','带毛巾','用毛巾擦'],
@@ -45,7 +45,7 @@ var vocabData = [
       note:'Câu chữ 把 + 到 (ôn lại Bài 2).'},
    ]},
 
-  {n:3,zh:'牙膏',py:'yágāo',pos:'Danh từ',vn:'kem đánh răng',em:'🪥',lesson:1,
+  {n:3,zh:'牙膏',py:'yágāo',pos:'Danh từ',vn:'kem đánh răng', hv: 'nha cao',em:'🪥',lesson:1,
    explain:['Kem dùng để đánh răng. 牙 = răng, 膏 = kem, cao.'],
    usage:'一支牙膏, 买牙膏, 牙膏用完了.',
    collo:['一支牙膏','牙膏和牙刷','牙膏用完了'],
@@ -65,7 +65,7 @@ var vocabData = [
       note:'顺便 ôn lại ngữ pháp Bài 4.'},
    ]},
 
-  {n:4,zh:'重',py:'zhòng',pos:'Tính từ',vn:'nặng',em:'🏋️',lesson:1,
+  {n:4,zh:'重',py:'zhòng',pos:'Tính từ',vn:'nặng', hv: 'trọng',em:'🏋️',lesson:1,
    explain:['Có trọng lượng lớn; cũng chỉ mức độ nghiêm trọng (严重). Chú ý đọc chóng = lặp lại (重新, Bài 8).'],
    usage:'箱子很重, 够重的了, 太重了.',
    collo:['箱子很重','够重的了','越来越重'],
@@ -87,7 +87,7 @@ var vocabData = [
       note:'按照 (Bài 4), 规定/全部 (Bài 12), 部分 (Bài 13).'},
    ]},
 
-  {n:5,zh:'行',py:'xíng',pos:'Động từ',vn:'được, đồng ý',em:'👌',lesson:1,
+  {n:5,zh:'行',py:'xíng',pos:'Động từ',vn:'được, đồng ý', hv: 'hành',em:'👌',lesson:1,
    explain:['Dùng để đồng ý, chấp nhận (= 可以, 好的). Phủ định: 不行 = không được. 还行 = tạm được.'],
    usage:'行，没问题, 不行, 还行.',
    collo:['行，没问题','这样不行','还行'],
@@ -107,7 +107,7 @@ var vocabData = [
       note:'只要……就 ôn lại Bài 8.'},
    ]},
 
-  {n:6,zh:'省',py:'shěng',pos:'Động từ',vn:'tiết kiệm',em:'💰',lesson:1,
+  {n:6,zh:'省',py:'shěng',pos:'Động từ',vn:'tiết kiệm', hv: 'tỉnh',em:'💰',lesson:1,
    explain:['Dùng ít, tiết kiệm (tiền, thời gian, sức lực). Danh từ 省 = tỉnh (广东省, Bài 13).'],
    usage:'省油钱, 省时间, 省力气.',
    collo:['省油钱','省时间','省力气'],
@@ -129,7 +129,7 @@ var vocabData = [
       note:'既……又 (Bài 7), 力气 (Bài 12).'},
    ]},
 
-  {n:7,zh:'污染',py:'wūrǎn',pos:'Động từ',vn:'làm ô nhiễm',em:'🏭',lesson:1,
+  {n:7,zh:'污染',py:'wūrǎn',pos:'Động từ',vn:'làm ô nhiễm', hv: 'ô nhiễm',em:'🏭',lesson:1,
    explain:['Làm bẩn môi trường (không khí, nước). Cũng dùng như danh từ: 环境污染, 空气污染.'],
    usage:'污染空气, 环境污染, 减少污染.',
    collo:['污染空气','环境污染','减少污染'],
@@ -154,7 +154,7 @@ var vocabData = [
       note:'只有……才 ôn lại Bài 9, 共同 (Bài 10).'},
    ]},
 
-  {n:8,zh:'卫生间',py:'wèishēngjiān',pos:'Danh từ',vn:'nhà vệ sinh',em:'🚻',lesson:2,
+  {n:8,zh:'卫生间',py:'wèishēngjiān',pos:'Danh từ',vn:'nhà vệ sinh', hv: 'vệ sinh gian',em:'🚻',lesson:2,
    explain:['Phòng vệ sinh, toilet. 卫生 = vệ sinh, 间 = phòng.'],
    usage:'打扫卫生间, 卫生间很脏, 去卫生间.',
    collo:['打扫卫生间','卫生间很脏','去一下卫生间'],
@@ -174,7 +174,7 @@ var vocabData = [
       note:'来得及 ôn lại Bài 4, 打扫 (Bài 7).'},
    ]},
 
-  {n:9,zh:'脏',py:'zāng',pos:'Tính từ',vn:'bẩn, bẩn thỉu',em:'🧹',lesson:2,
+  {n:9,zh:'脏',py:'zāng',pos:'Tính từ',vn:'bẩn, bẩn thỉu', hv: 'tạng',em:'🧹',lesson:2,
    explain:['Không sạch, dơ. Trái nghĩa: 干净.'],
    usage:'很脏, 弄脏了, 又脏又乱.',
    collo:['卫生间很脏','衣服弄脏了','又脏又乱'],
@@ -194,7 +194,7 @@ var vocabData = [
       note:'弄 + bổ ngữ kết quả ôn lại Bài 5.'},
    ]},
 
-  {n:10,zh:'抱歉',py:'bàoqiàn',pos:'Động từ',vn:'xin lỗi, áy náy',em:'🙇',lesson:2,
+  {n:10,zh:'抱歉',py:'bàoqiàn',pos:'Động từ',vn:'xin lỗi, áy náy', hv: 'bão khiểm',em:'🙇',lesson:2,
    explain:['Cảm thấy có lỗi, xin lỗi (trang trọng hơn 对不起). Thường: 实在抱歉, 真抱歉, 很抱歉.'],
    usage:'实在抱歉, 真抱歉, 感到抱歉.',
    collo:['实在抱歉','真抱歉','对……感到抱歉'],
@@ -214,7 +214,7 @@ var vocabData = [
       note:'实在 ôn lại ngữ pháp Bài 11.'},
    ]},
 
-  {n:11,zh:'空',py:'kōng',pos:'Tính từ',vn:'trống, rỗng, không',em:'🫙',lesson:2,
+  {n:11,zh:'空',py:'kōng',pos:'Tính từ',vn:'trống, rỗng, không', hv: 'không',em:'🫙',lesson:2,
    explain:['Không có gì bên trong. Chú ý đọc kòng = thời gian rảnh (有空).'],
    usage:'空瓶子, 空盒子, 房间是空的.',
    collo:['空饮料瓶子','空盒子','空房间'],
@@ -234,7 +234,7 @@ var vocabData = [
       note:'别 + động từ (ôn lại Bài 1).'},
    ]},
 
-  {n:12,zh:'盒子',py:'hézi',pos:'Danh từ',vn:'hộp',em:'📦',lesson:2,
+  {n:12,zh:'盒子',py:'hézi',pos:'Danh từ',vn:'hộp', hv: 'hạp tử',em:'📦',lesson:2,
    explain:['Vật đựng có nắp, thường nhỏ. Lượng từ: 个. 一盒 cũng dùng làm lượng từ (一盒巧克力).'],
    usage:'纸盒子, 一个盒子, 打开盒子.',
    collo:['纸盒子','打开盒子','空盒子'],
@@ -254,7 +254,7 @@ var vocabData = [
       note:'Bổ ngữ kết quả 打开 (ôn lại Bài 2).'},
    ]},
 
-  {n:13,zh:'扔',py:'rēng',pos:'Động từ',vn:'vứt bỏ, ném',em:'🗑️',lesson:2,
+  {n:13,zh:'扔',py:'rēng',pos:'Động từ',vn:'vứt bỏ, ném', hv: 'nhưng',em:'🗑️',lesson:2,
    explain:['Vứt đi, ném đi. 扔掉 = vứt bỏ hẳn; 乱扔 = vứt bừa bãi.'],
    usage:'扔掉, 乱扔垃圾, 扔进垃圾桶.',
    collo:['扔掉','乱扔垃圾','把……扔掉'],
@@ -276,7 +276,7 @@ var vocabData = [
       note:'……之一 ôn lại Bài 10.'},
    ]},
 
-  {n:14,zh:'以',py:'yǐ',pos:'Giới từ',vn:'dựa vào, bằng',em:'🔧',lesson:2,
+  {n:14,zh:'以',py:'yǐ',pos:'Giới từ',vn:'dựa vào, bằng', hv: 'dĩ',em:'🔧',lesson:2,
    explain:['Giới từ: dùng, bằng (以……+动词). 以……为…… = lấy … làm …. Liên từ: để, nhằm (chỉ mục đích).'],
    usage:'以最快的速度, 以……为……, ……，以表示……',
    collo:['以最快的速度完成','以严格的标准要求自己','以……为镜子'],
@@ -298,7 +298,7 @@ var vocabData = [
       note:'只有……才 (Bài 9), 严格 (Bài 12), 标准/优秀 (Bài 10).'},
    ]},
 
-  {n:15,zh:'速度',py:'sùdù',pos:'Danh từ',vn:'tốc độ',em:'⚡',lesson:2,
+  {n:15,zh:'速度',py:'sùdù',pos:'Danh từ',vn:'tốc độ', hv: 'tốc độ',em:'⚡',lesson:2,
    explain:['Mức độ nhanh chậm. 度 còn có trong 温度 (nhiệt độ), 态度 (thái độ).'],
    usage:'速度很快, 以最快的速度, 按照现在的速度.',
    collo:['以最快的速度','火车的速度','速度非常快'],
@@ -318,7 +318,7 @@ var vocabData = [
       note:'按照 (Bài 4), 规定 (Bài 12), 好像 (Bài 6).'},
    ]},
 
-  {n:16,zh:'地球',py:'dìqiú',pos:'Danh từ',vn:'trái đất',em:'🌍',lesson:3,
+  {n:16,zh:'地球',py:'dìqiú',pos:'Danh từ',vn:'trái đất', hv: 'địa cầu',em:'🌍',lesson:3,
    explain:['Hành tinh chúng ta đang sống. 地球一小时 = Giờ Trái đất.'],
    usage:'保护地球, 地球环境, 地球是我们共同的家.',
    collo:['保护地球','地球环境','地球一小时'],
@@ -338,7 +338,7 @@ var vocabData = [
       note:'并不 ôn lại Bài 4, 保护 (Bài 12).'},
    ]},
 
-  {n:17,zh:'既然',py:'jìrán',pos:'Liên từ',vn:'vì, đã… thì…',em:'🔗',lesson:3,
+  {n:17,zh:'既然',py:'jìrán',pos:'Liên từ',vn:'vì, đã… thì…', hv: 'ký nhiên',em:'🔗',lesson:3,
    explain:['Dùng ở vế đầu, nêu sự thật đã có, vế sau (就/也/还/那么) rút ra kết luận. Ngữ pháp trọng tâm.'],
    usage:'既然……，就/那么……',
    collo:['既然这样，就……','既然不愿意……，为什么还……','既然明天……，那么……'],
@@ -360,7 +360,7 @@ var vocabData = [
       note:'通过 ôn lại Bài 9.'},
    ]},
 
-  {n:18,zh:'停',py:'tíng',pos:'Động từ',vn:'ngừng, cúp, cắt',em:'⏸️',lesson:3,
+  {n:18,zh:'停',py:'tíng',pos:'Động từ',vn:'ngừng, cúp, cắt', hv: 'đình',em:'⏸️',lesson:3,
    explain:['Dừng lại, ngừng (停电 cúp điện, 停车 đỗ xe, 停止 dừng lại). 不停地 = không ngừng.'],
    usage:'停电, 停车, 不停地.',
    collo:['关灯停电','停车','不停地变化'],
@@ -380,7 +380,7 @@ var vocabData = [
       note:'把 + 到 + 去 (ôn lại Bài 2).'},
    ]},
 
-  {n:19,zh:'得意',py:'déyì',pos:'Tính từ',vn:'hể hả, đắc chí',em:'😏',lesson:3,
+  {n:19,zh:'得意',py:'déyì',pos:'Tính từ',vn:'hể hả, đắc chí', hv: 'đắc ý',em:'😏',lesson:3,
    explain:['Vui vẻ tự mãn vì đạt được điều gì. Thường: 得意的样子, 因……而得意.'],
    usage:'看你得意的样子, 因一时的成功而得意.',
    collo:['得意的样子','别太得意','因成功而得意'],
@@ -400,7 +400,7 @@ var vocabData = [
       note:'成功/失败 ôn lại Bài 9, 伤心 (Bài 8).'},
    ]},
 
-  {n:20,zh:'目的',py:'mùdì',pos:'Danh từ',vn:'mục đích',em:'🎯',lesson:3,
+  {n:20,zh:'目的',py:'mùdì',pos:'Danh từ',vn:'mục đích', hv: 'mục đích',em:'🎯',lesson:3,
    explain:['Điều muốn đạt được. 目的是……, 达到目的, 目的很简单.'],
    usage:'目的是……, 达到目的, 主要目的.',
    collo:['目的挺简单','达到目的','活动的目的'],
@@ -420,7 +420,7 @@ var vocabData = [
       note:'达到 (Bài 12), 坚持 (Bài 9).'},
    ]},
 
-  {n:21,zh:'暖',py:'nuǎn',pos:'Tính từ',vn:'ấm, ấm áp',em:'☀️',lesson:3,
+  {n:21,zh:'暖',py:'nuǎn',pos:'Tính từ',vn:'ấm, ấm áp', hv: 'noãn',em:'☀️',lesson:3,
    explain:['Ấm (không lạnh). 暖和 = ấm áp, 变暖 = ấm lên, 气候变暖 = khí hậu nóng lên.'],
    usage:'气候变暖, 天气暖和, 暖气.',
    collo:['气候变暖','天气变暖','暖和'],
@@ -440,7 +440,7 @@ var vocabData = [
       note:'随着 ôn lại ngữ pháp Bài 13, 气候 (Bài 9).'},
    ]},
 
-  {n:22,zh:'塑料袋',py:'sùliàodài',pos:'Danh từ',vn:'túi nilông, túi nhựa',em:'🛍️',lesson:4,
+  {n:22,zh:'塑料袋',py:'sùliàodài',pos:'Danh từ',vn:'túi nilông, túi nhựa', hv: 'tố liệu đại',em:'🛍️',lesson:4,
    explain:['Túi làm bằng nhựa. 塑料 = nhựa, 袋 = túi (纸袋 túi giấy, Bài 13).'],
    usage:'使用塑料袋, 免费塑料袋, 拒绝使用塑料袋.',
    collo:['节约使用塑料袋','免费塑料袋','拒绝使用塑料袋'],
@@ -463,7 +463,7 @@ var vocabData = [
       note:'规定 (Bài 12), 顾客/提供 (Bài 6), 免费 (Bài 5).'},
    ]},
 
-  {n:23,zh:'于是',py:'yúshì',pos:'Liên từ',vn:'thế là',em:'➡️',lesson:4,
+  {n:23,zh:'于是',py:'yúshì',pos:'Liên từ',vn:'thế là', hv: 'vu thị',em:'➡️',lesson:4,
    explain:['Dùng ở vế sau, sự việc sau xảy ra ngay tiếp theo sự việc trước (quan hệ tiếp nối). So sánh 因此 (nhấn mạnh nhân-quả).'],
    usage:'……，于是……',
    collo:['于是我爸妈就……','于是就有了……','于是，一些国家规定……'],
@@ -483,7 +483,7 @@ var vocabData = [
       note:'讨论 ôn lại Bài 13.'},
    ]},
 
-  {n:24,zh:'鼓励',py:'gǔlì',pos:'Động từ',vn:'khuyến khích',em:'📣',lesson:4,
+  {n:24,zh:'鼓励',py:'gǔlì',pos:'Động từ',vn:'khuyến khích', hv: 'cổ lệ',em:'📣',lesson:4,
    explain:['Cổ vũ, động viên ai làm việc gì. 鼓励 + người + làm gì.'],
    usage:'鼓励大家……, 受到鼓励, 老师的鼓励.',
    collo:['鼓励大家购买','鼓励孩子','老师的鼓励'],
@@ -503,7 +503,7 @@ var vocabData = [
       note:'而不是 (Bài 8), 批评 (Bài 6).'},
    ]},
 
-  {n:25,zh:'拒绝',py:'jùjué',pos:'Động từ',vn:'từ chối',em:'🙅',lesson:4,
+  {n:25,zh:'拒绝',py:'jùjué',pos:'Động từ',vn:'từ chối', hv: 'cự tuyệt',em:'🙅',lesson:4,
    explain:['Không nhận, không đồng ý. Trái nghĩa: 接受 (Bài 6).'],
    usage:'拒绝使用……, 拒绝朋友的要求, 被拒绝.',
    collo:['拒绝使用塑料袋','拒绝别人的要求','不好意思拒绝'],
@@ -528,7 +528,7 @@ var vocabData = [
       note:'申请 (Bài 13), 可惜 (Bài 12), câu chữ 被.'},
    ]},
 
-  {n:26,zh:'减少',py:'jiǎnshǎo',pos:'Động từ',vn:'giảm bớt',em:'📉',lesson:4,
+  {n:26,zh:'减少',py:'jiǎnshǎo',pos:'Động từ',vn:'giảm bớt', hv: 'giảm thiểu',em:'📉',lesson:4,
    explain:['Làm ít đi. Trái nghĩa: 增加 (Bài 9). 减少污染, 减少数量.'],
    usage:'减少污染, 减少使用数量, 大大减少.',
    collo:['减少污染','减少塑料袋的使用数量','减少压力'],
@@ -548,7 +548,7 @@ var vocabData = [
       note:'作用/使用 ôn lại Bài 12.'},
    ]},
 
-  {n:27,zh:'数量',py:'shùliàng',pos:'Danh từ',vn:'số lượng',em:'🔢',lesson:4,
+  {n:27,zh:'数量',py:'shùliàng',pos:'Danh từ',vn:'số lượng', hv: 'số lượng',em:'🔢',lesson:4,
    explain:['Lượng nhiều hay ít của sự vật. 数量 (số lượng) vs 质量 (chất lượng, Bài 6).'],
    usage:'使用数量, 数量很多, 减少数量.',
    collo:['塑料袋的使用数量','数量不多','增加数量'],
@@ -568,7 +568,7 @@ var vocabData = [
       note:'随着 (Bài 13), 增加 (Bài 9).'},
    ]},
 
-  {n:28,zh:'温度',py:'wēndù',pos:'Danh từ',vn:'nhiệt độ',em:'🌡️',lesson:5,
+  {n:28,zh:'温度',py:'wēndù',pos:'Danh từ',vn:'nhiệt độ', hv: 'ôn độ',em:'🌡️',lesson:5,
    explain:['Mức nóng lạnh. 温度高/低, 空调的温度, 温度较低.'],
    usage:'温度很高, 把温度开得高一些, 温度较低.',
    collo:['空调的温度','温度比较低','温度上升'],
@@ -590,7 +590,7 @@ var vocabData = [
       note:'提前 (Bài 4), 厚 (Bài 13).'},
    ]},
 
-  {n:29,zh:'乘坐',py:'chéngzuò',pos:'Động từ',vn:'đi, đáp (xe buýt, máy bay…)',em:'🚌',lesson:5,
+  {n:29,zh:'乘坐',py:'chéngzuò',pos:'Động từ',vn:'đi, đáp (xe buýt, máy bay…)', hv: 'thừa tọa',em:'🚌',lesson:5,
    explain:['Đi bằng phương tiện (văn viết, trang trọng hơn 坐). 乘坐地铁/飞机/火车.'],
    usage:'乘坐地铁, 乘坐飞机, 乘坐公共汽车.',
    collo:['乘坐地铁','乘坐飞机','乘坐火车'],
@@ -610,7 +610,7 @@ var vocabData = [
       note:'降低 ôn lại Bài 10.'},
    ]},
 
-  {n:30,zh:'丢',py:'diū',pos:'Động từ',vn:'ném, vứt; mất',em:'🔑',lesson:5,
+  {n:30,zh:'丢',py:'diū',pos:'Động từ',vn:'ném, vứt; mất', hv: 'đâu',em:'🔑',lesson:5,
    explain:['(1) Vứt, ném (把垃圾丢进垃圾桶). (2) Đánh mất (钥匙丢了, 丢东西).'],
    usage:'把垃圾丢进垃圾桶, 钥匙丢了, 丢东西.',
    collo:['丢进垃圾桶','钥匙丢了','别丢了'],
@@ -630,7 +630,7 @@ var vocabData = [
       note:'Bổ ngữ khả năng 进不了 (Bài 5), 钥匙 (Bài 3).'},
    ]},
 
-  {n:31,zh:'垃圾桶',py:'lājītǒng',pos:'Danh từ',vn:'thùng rác',em:'🗑️',lesson:5,
+  {n:31,zh:'垃圾桶',py:'lājītǒng',pos:'Danh từ',vn:'thùng rác', hv: 'lạp ngập dũng',em:'🗑️',lesson:5,
    explain:['Thùng đựng rác. 垃圾 = rác (Bài 11), 桶 = thùng. 垃圾箱 cũng dùng.'],
    usage:'丢进垃圾桶, 垃圾桶满了, 倒垃圾.',
    collo:['丢进垃圾桶','垃圾桶又满了','找垃圾桶'],
@@ -650,7 +650,7 @@ var vocabData = [
       note:'又 + 了 (ôn lại Bài 1), 满 (Bài 11).'},
    ]},
 
-  {n:32,zh:'美丽',py:'měilì',pos:'Tính từ',vn:'đẹp',em:'🌸',lesson:5,
+  {n:32,zh:'美丽',py:'měilì',pos:'Tính từ',vn:'đẹp', hv: 'mỹ lệ',em:'🌸',lesson:5,
    explain:['Đẹp (thường dùng cho cảnh vật, thiên nhiên, văn viết). So với 漂亮 (khẩu ngữ, người/đồ vật).'],
    usage:'美丽的家, 变得更美丽, 美丽的风景.',
    collo:['变得更美丽','美丽的地球','美丽的风景'],

@@ -2,7 +2,7 @@
 // DATA — YCT Bài 10: 现在几点？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'现在',py:'xiànzài',pos:'Danh từ',vn:'bây giờ',em:'🕐',lesson:1,
+  {n:1,zh:'现在',py:'xiànzài',pos:'Danh từ',vn:'bây giờ', hv: 'hiện tại',em:'🕐',lesson:1,
    ex_zh:'现在几点？',ex_py:'Xiànzài jǐ diǎn?',ex_vn:'Bây giờ là mấy giờ?',
    exList:[{zh:'现在几点？',py:'Xiànzài jǐ diǎn?',vn:'Bây giờ là mấy giờ?'}],
    hanzi:[
@@ -10,7 +10,7 @@ var vocabData = [
       tip:'Bộ 王 (ngọc quý) ghép với 见 (nhìn thấy) → thứ nhìn thấy NGAY trước mắt lúc này → HIỆN TẠI, BÂY GIỜ.',
       cf:'玩 (wán – "chơi", cùng bộ 王)',w:'现在'},
    ]},
-  {n:2,zh:'点',py:'diǎn',pos:'Lượng từ',vn:'giờ',em:'⏰',lesson:1,
+  {n:2,zh:'点',py:'diǎn',pos:'Lượng từ',vn:'giờ', hv: 'điểm',em:'⏰',lesson:1,
    ex_zh:'现在八点。',ex_py:'Xiànzài bā diǎn.',ex_vn:'Bây giờ là 8 giờ.',
    exList:[{zh:'现在八点。',py:'Xiànzài bā diǎn.',vn:'Bây giờ là 8 giờ.'}],
    hanzi:[
@@ -18,7 +18,7 @@ var vocabData = [
       tip:'Bốn chấm lửa nhỏ 灬 tượng trưng những ĐIỂM nhỏ; dùng làm lượng từ để đếm GIỜ.',
       cf:'店 (diàn – "cửa hàng", đã học ở Bài 8)',w:'八点'},
    ]},
-  {n:3,zh:'分',py:'fēn',pos:'Lượng từ',vn:'phút',em:'⏱️',lesson:1,
+  {n:3,zh:'分',py:'fēn',pos:'Lượng từ',vn:'phút', hv: 'phân',em:'⏱️',lesson:1,
    ex_zh:'八点十分',ex_py:'bā diǎn shí fēn',ex_vn:'8 giờ 10 phút',
    exList:[{zh:'现在八点十分。',py:'Xiànzài bā diǎn shí fēn.',vn:'Bây giờ là 8 giờ 10 phút.'}],
    hanzi:[
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Trên là 八 (chia làm hai), dưới là 刀 (dao) dùng để CHIA nhỏ ra — mỗi phần nhỏ của giờ gọi là PHÚT.',
       cf:'今 (jīn – "nay", đã học ở Bài 9)',w:'十分'},
    ]},
-  {n:4,zh:'早上',py:'zǎoshang',pos:'Danh từ',vn:'buổi sáng',em:'🌄',lesson:2,
+  {n:4,zh:'早上',py:'zǎoshang',pos:'Danh từ',vn:'buổi sáng', hv: 'tảo thượng',em:'🌄',lesson:2,
    ex_zh:'早上好！',ex_py:'Zǎoshang hǎo!',ex_vn:'Chào buổi sáng!',
    exList:[{zh:'早上好！',py:'Zǎoshang hǎo!',vn:'Chào buổi sáng!'}],
    hanzi:[
@@ -37,7 +37,7 @@ var vocabData = [
       tip:'Một nét ngang dài là mặt đất, một nét ngắn phía trên → chỉ vị trí Ở TRÊN.',
       cf:'下 (xià – "dưới")',w:'早上'},
    ]},
-  {n:5,zh:'太',py:'tài',pos:'Phó từ',vn:'quá, rất',em:'❗',lesson:2,
+  {n:5,zh:'太',py:'tài',pos:'Phó từ',vn:'quá, rất', hv: 'thái',em:'❗',lesson:2,
    ex_zh:'太好了！',ex_py:'Tài hǎo le!',ex_vn:'Tốt quá!',
    exList:[{zh:'太好了！',py:'Tài hǎo le!',vn:'Tốt quá!'}],
    hanzi:[
@@ -45,7 +45,7 @@ var vocabData = [
       tip:'Thêm một chấm nhỏ vào chữ 大 (to lớn) như phóng đại thêm nữa → QUÁ, RẤT.',
       cf:'大 (dà – "to, lớn", đã học ở Bài 5)',w:'太好了'},
    ]},
-  {n:6,zh:'了',py:'le',pos:'Trợ từ',vn:'(trợ từ nhấn mạnh)',em:'✅',lesson:2,
+  {n:6,zh:'了',py:'le',pos:'Trợ từ',vn:'(trợ từ nhấn mạnh)', hv: 'liễu',em:'✅',lesson:2,
    ex_zh:'太好了！',ex_py:'Tài hǎo le!',ex_vn:'Tốt quá!',
    exList:[{zh:'太好了！',py:'Tài hǎo le!',vn:'Tốt quá!'}],
    hanzi:[
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'Nét móc đơn giản, đặt cuối câu để nhấn mạnh trạng thái vừa xảy ra hoặc thay đổi, như trong 太好了.',
       cf:'子 (zǐ – "con")',w:'太好了'},
    ]},
-  {n:7,zh:'明天见',py:'míngtiān jiàn',pos:'Cụm từ',vn:'hẹn ngày mai gặp lại',em:'🤝',lesson:2,
+  {n:7,zh:'明天见',py:'míngtiān jiàn',pos:'Cụm từ',vn:'hẹn ngày mai gặp lại', hv: 'minh thiên kiến',em:'🤝',lesson:2,
    ex_zh:'明天见！',ex_py:'Míngtiān jiàn!',ex_vn:'Hẹn ngày mai gặp lại!',
    exList:[{zh:'明天见！',py:'Míngtiān jiàn!',vn:'Hẹn ngày mai gặp lại!'}],
    hanzi:[]},

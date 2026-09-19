@@ -2,7 +2,7 @@
 // DATA — Bài 6: 你怎么不吃了？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'门',py:'mén',pos:'Danh từ',vn:'cửa',em:'🚪',lesson:1,
+  {n:1,zh:'门',py:'mén',pos:'Danh từ',vn:'cửa', hv: 'môn',em:'🚪',lesson:1,
    ex_zh:'我在门外看见他的自行车了。',ex_py:'Wǒ zài mén wài kànjiàn tā de zìxíngchē le.',ex_vn:'Tôi nhìn thấy xe đạp của cậu ấy ở ngoài cửa rồi.',
    exList:[
      {zh:'我在门外看见他的自行车了。',py:'Wǒ zài mén wài kànjiàn tā de zìxíngchē le.',vn:'Tôi nhìn thấy xe đạp của cậu ấy ở ngoài cửa rồi.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Hình hai cánh cửa gỗ ghép lại → "CỬA". Là bộ thủ của nhiều chữ liên quan không gian: 问, 间.',
       cf:'们 (men – hậu tố số nhiều, thêm bộ 亻)',w:'门口 / 出门 / 大门'},
    ]},
-  {n:2,zh:'外',py:'wài',pos:'Danh từ',vn:'ngoài, bên ngoài',em:'🌤️',lesson:1,
+  {n:2,zh:'外',py:'wài',pos:'Danh từ',vn:'ngoài, bên ngoài', hv: 'ngoại',em:'🌤️',lesson:1,
    ex_zh:'门外有一个人。',ex_py:'Mén wài yǒu yí ge rén.',ex_vn:'Ngoài cửa có một người.',
    exList:[
      {zh:'门外有一个人。',py:'Mén wài yǒu yí ge rén.',vn:'Ngoài cửa có một người.'},
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Đã học ở Bài 5 (外面) — chữ đơn 外 dùng khi ghép trực tiếp: 门外, 外国.',
       cf:'处 (chù)',w:'门外 / 外国 / 外面'},
    ]},
-  {n:3,zh:'自行车',py:'zìxíngchē',pos:'Danh từ',vn:'xe đạp',em:'🚲',lesson:1,
+  {n:3,zh:'自行车',py:'zìxíngchē',pos:'Danh từ',vn:'xe đạp', hv: 'tự hành xa',em:'🚲',lesson:1,
    ex_zh:'他的自行车是红色的。',ex_py:'Tā de zìxíngchē shì hóngsè de.',ex_vn:'Xe đạp của anh ấy màu đỏ.',
    exList:[
      {zh:'他的自行车是红色的。',py:'Tā de zìxíngchē shì hóngsè de.',vn:'Xe đạp của anh ấy màu đỏ.'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'Hình ngã tư đường cách điệu → nghĩa "ĐI LẠI, di chuyển". 自行 = tự di chuyển = xe đạp.',
       cf:'往 (wǎng – "đi tới")',w:'自行车 / 行不行 / 银行'},
    ]},
-  {n:4,zh:'羊肉',py:'yángròu',pos:'Danh từ',vn:'thịt dê, thịt cừu',em:'🍖',lesson:2,
+  {n:4,zh:'羊肉',py:'yángròu',pos:'Danh từ',vn:'thịt dê, thịt cừu', hv: 'dương nhục',em:'🍖',lesson:2,
    ex_zh:'今天的羊肉很好吃。',ex_py:'Jīntiān de yángròu hěn hǎochī.',ex_vn:'Thịt dê hôm nay ngon thế.',
    exList:[
      {zh:'今天的羊肉很好吃。',py:'Jīntiān de yángròu hěn hǎochī.',vn:'Thịt dê hôm nay ngon thế.'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Hình miếng thịt có vân thớ cách điệu → "THỊT". 羊 + 肉 = thịt dê.',
       cf:'内 (nèi – "bên trong", thiếu nét)',w:'羊肉 / 牛肉 / 肉包'},
    ]},
-  {n:5,zh:'好吃',py:'hǎochī',pos:'Tính từ',vn:'ngon',em:'😋',lesson:2,
+  {n:5,zh:'好吃',py:'hǎochī',pos:'Tính từ',vn:'ngon', hv: 'hảo ngật',em:'😋',lesson:2,
    ex_zh:'妈妈做的饭很好吃。',ex_py:'Māma zuò de fàn hěn hǎochī.',ex_vn:'Cơm mẹ nấu rất ngon.',
    exList:[
      {zh:'妈妈做的饭很好吃。',py:'Māma zuò de fàn hěn hǎochī.',vn:'Cơm mẹ nấu rất ngon.'},
@@ -71,7 +71,7 @@ var vocabData = [
       tip:'Bộ 口 (miệng) → hành động ĂN dùng miệng.',
       cf:'吗 (ma – trợ từ nghi vấn)',w:'好吃 / 吃饭 / 吃药'},
    ]},
-  {n:6,zh:'面条',py:'miàntiáo',pos:'Danh từ',vn:'mì, mì sợi',em:'🍜',lesson:2,
+  {n:6,zh:'面条',py:'miàntiáo',pos:'Danh từ',vn:'mì, mì sợi', hv: 'diện điều',em:'🍜',lesson:2,
    ex_zh:'来一点儿面条吧。',ex_py:'Lái yìdiǎnr miàntiáo ba.',ex_vn:'Cho một ít mì sợi đi.',
    exList:[
      {zh:'来一点儿面条吧。',py:'Lái yìdiǎnr miàntiáo ba.',vn:'Cho một ít mì sợi đi.'},
@@ -86,7 +86,7 @@ var vocabData = [
       tip:'Cành cây dài mảnh 木 → lượng từ cho vật DÀI, SỢI: 面条, 一条鱼.',
       cf:'各 (gè)',w:'面条 / 一条 / 条件'},
    ]},
-  {n:7,zh:'打篮球',py:'dǎ lánqiú',pos:'Động từ',vn:'chơi bóng rổ',em:'🏀',lesson:3,
+  {n:7,zh:'打篮球',py:'dǎ lánqiú',pos:'Động từ',vn:'chơi bóng rổ', hv: 'đả lam cầu',em:'🏀',lesson:3,
    ex_zh:'昨天你们怎么都没去打篮球？',ex_py:'Zuótiān nǐmen zěnme dōu méi qù dǎ lánqiú?',ex_vn:'Hôm qua sao các bạn đều không đi chơi bóng rổ thế?',
    exList:[
      {zh:'昨天你们怎么都没去打篮球？',py:'Zuótiān nǐmen zěnme dōu méi qù dǎ lánqiú?',vn:'Hôm qua sao các bạn đều không đi chơi bóng rổ thế?'},
@@ -101,7 +101,7 @@ var vocabData = [
       tip:'Bộ ⺮(tre) → giỏ đan bằng tre, chỉ cái RỔ (đựng bóng vào rổ).',
       cf:'蓝 (lán – "màu xanh lam", bộ 艹)',w:'篮球 / 打篮球 / 篮子'},
    ]},
-  {n:8,zh:'因为',py:'yīnwèi',pos:'Liên từ',vn:'bởi vì, vì',em:'🔗',lesson:3,
+  {n:8,zh:'因为',py:'yīnwèi',pos:'Liên từ',vn:'bởi vì, vì', hv: 'nhân vị',em:'🔗',lesson:3,
    ex_zh:'因为下雨了，所以天气很冷。',ex_py:'Yīnwèi xià yǔ le, suǒyǐ tiānqì hěn lěng.',ex_vn:'Vì trời mưa nên thời tiết rất lạnh.',
    exList:[
      {zh:'因为下雨了，所以天气很冷。',py:'Yīnwèi xià yǔ le, suǒyǐ tiānqì hěn lěng.',vn:'Vì trời mưa nên thời tiết rất lạnh.'},
@@ -116,7 +116,7 @@ var vocabData = [
       tip:'因 (nguyên nhân) + 为 (vì) = VÌ, BỞI VÌ.',
       cf:'办 (bàn – "làm việc")',w:'因为 / 为什么 / 以为'},
    ]},
-  {n:9,zh:'所以',py:'suǒyǐ',pos:'Liên từ',vn:'cho nên, nên',em:'➡️',lesson:3,
+  {n:9,zh:'所以',py:'suǒyǐ',pos:'Liên từ',vn:'cho nên, nên', hv: 'sở dĩ',em:'➡️',lesson:3,
    ex_zh:'因为生病，所以没上课。',ex_py:'Yīnwèi shēngbìng, suǒyǐ méi shàngkè.',ex_vn:'Vì bị ốm nên không lên lớp.',
    exList:[
      {zh:'因为生病，所以没上课。',py:'Yīnwèi shēngbìng, suǒyǐ méi shàngkè.',vn:'Vì bị ốm nên không lên lớp.'},
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'Đã học ở Bài 5 (可以, 以后) — 所 + 以 = CHO NÊN, do đó.',
       cf:'已 (yǐ)',w:'所以 / 可以 / 以后'},
    ]},
-  {n:10,zh:'游泳',py:'yóuyǒng',pos:'Động từ',vn:'bơi lội',em:'🏊',lesson:3,
+  {n:10,zh:'游泳',py:'yóuyǒng',pos:'Động từ',vn:'bơi lội', hv: 'du vịnh',em:'🏊',lesson:3,
    ex_zh:'我这个月天天游泳。',ex_py:'Wǒ zhège yuè tiāntiān yóuyǒng.',ex_vn:'Tháng này ngày nào tôi cũng đi bơi.',
    exList:[
      {zh:'我这个月天天游泳。',py:'Wǒ zhège yuè tiāntiān yóuyǒng.',vn:'Tháng này ngày nào tôi cũng đi bơi.'},
@@ -146,7 +146,7 @@ var vocabData = [
       tip:'Cũng mang bộ 氵(nước) → 游 + 泳 cùng nghĩa BƠI, ghép đôi nhấn mạnh.',
       cf:'永 (yǒng – "vĩnh viễn", thiếu bộ 氵)',w:'游泳 / 泳衣 / 游泳池'},
    ]},
-  {n:11,zh:'经常',py:'jīngcháng',pos:'Phó từ',vn:'thường xuyên',em:'🔁',lesson:4,
+  {n:11,zh:'经常',py:'jīngcháng',pos:'Phó từ',vn:'thường xuyên', hv: 'kinh thường',em:'🔁',lesson:4,
    ex_zh:'你经常游泳吗？',ex_py:'Nǐ jīngcháng yóuyǒng ma?',ex_vn:'Bạn có thường xuyên đi bơi không?',
    exList:[
      {zh:'你经常游泳吗？',py:'Nǐ jīngcháng yóuyǒng ma?',vn:'Bạn có thường xuyên đi bơi không?'},
@@ -161,7 +161,7 @@ var vocabData = [
       tip:'Đã học ở Bài 4 (非常). Đứng riêng/ghép với 经 đều mang nghĩa THƯỜNG XUYÊN.',
       cf:'尝 (cháng)',w:'经常 / 非常 / 常常'},
    ]},
-  {n:12,zh:'公斤',py:'gōngjīn',pos:'Lượng từ',vn:'ki-lô-gam',em:'⚖️',lesson:4,
+  {n:12,zh:'公斤',py:'gōngjīn',pos:'Lượng từ',vn:'ki-lô-gam', hv: 'công cân',em:'⚖️',lesson:4,
    ex_zh:'我现在70公斤了。',ex_py:'Wǒ xiànzài qīshí gōngjīn le.',ex_vn:'Bây giờ tôi được 70 kg rồi đấy.',
    exList:[
      {zh:'我现在70公斤了。',py:'Wǒ xiànzài qīshí gōngjīn le.',vn:'Bây giờ tôi được 70 kg rồi đấy.'},
@@ -176,7 +176,7 @@ var vocabData = [
       tip:'Hình chiếc rìu cách điệu, xưa cũng là đơn vị cân trọng lượng → dùng đo KHỐI LƯỢNG.',
       cf:'欣 (xīn – "vui mừng")',w:'公斤 / 斤两'},
    ]},
-  {n:13,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái',em:'👩',lesson:4,
+  {n:13,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái', hv: 'thư thư',em:'👩',lesson:4,
    ex_zh:'他去北京看他姐姐。',ex_py:'Tā qù Běijīng kàn tā jiějie.',ex_vn:'Anh ấy đi Bắc Kinh thăm chị gái.',
    exList:[
      {zh:'他去北京看他姐姐。',py:'Tā qù Běijīng kàn tā jiějie.',vn:'Anh ấy đi Bắc Kinh thăm chị gái.'},

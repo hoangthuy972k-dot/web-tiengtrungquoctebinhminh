@@ -2,7 +2,7 @@
 // DATA — Bài 13: 门开着呢
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'着',py:'zhe',pos:'Trợ từ động thái',vn:'đang, duy trì trạng thái',em:'🔄',lesson:1,
+  {n:1,zh:'着',py:'zhe',pos:'Trợ từ động thái',vn:'đang, duy trì trạng thái', hv: 'trứ',em:'🔄',lesson:1,
    ex_zh:'门开着呢。',ex_py:'Mén kāizhe ne.',ex_vn:'Cửa đang mở đấy.',
    exList:[
      {zh:'门开着呢。',py:'Mén kāizhe ne.',vn:'Cửa đang mở đấy.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Đọc nhẹ "zhe" khi đứng sau động từ, biểu thị hành động/trạng thái đang được DUY TRÌ.',
       cf:'差 (chà – "kém, thiếu")',w:'开着 / 拿着 / 看着'},
    ]},
-  {n:2,zh:'手',py:'shǒu',pos:'Danh từ',vn:'tay, bàn tay',em:'✋',lesson:2,
+  {n:2,zh:'手',py:'shǒu',pos:'Danh từ',vn:'tay, bàn tay', hv: 'thủ',em:'✋',lesson:2,
    ex_zh:'手里拿着铅笔。',ex_py:'Shǒu lǐ názhe qiānbǐ.',ex_vn:'Tay cầm bút chì.',
    exList:[
      {zh:'手里拿着铅笔。',py:'Shǒu lǐ názhe qiānbǐ.',vn:'Tay cầm bút chì.'},
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Hình bàn tay xoè năm ngón cách điệu → "TAY". Đã gặp trong 手机 (Bài 10).',
       cf:'毛 (máo – "lông")',w:'手里 / 手机 / 洗手'},
    ]},
-  {n:3,zh:'拿',py:'ná',pos:'Động từ',vn:'cầm, nắm, xách',em:'🤲',lesson:2,
+  {n:3,zh:'拿',py:'ná',pos:'Động từ',vn:'cầm, nắm, xách', hv: 'nã',em:'🤲',lesson:2,
    ex_zh:'那个手里拿着铅笔的呢？',ex_py:'Nàge shǒu lǐ názhe qiānbǐ de ne?',ex_vn:'Thế còn người tay cầm bút chì đằng kia thì sao?',
    exList:[
      {zh:'那个手里拿着铅笔的呢？',py:'Nàge shǒu lǐ názhe qiānbǐ de ne?',vn:'Thế còn người tay cầm bút chì đằng kia thì sao?'},
@@ -38,7 +38,7 @@ var vocabData = [
       tip:'合 (khép lại) + 手 (tay) → khép bàn tay lại để CẦM, NẮM đồ vật.',
       cf:'合 (hé – "hợp", thiếu bộ 手")',w:'拿着 / 拿书 / 拿走'},
    ]},
-  {n:4,zh:'铅笔',py:'qiānbǐ',pos:'Danh từ',vn:'bút chì',em:'✏️',lesson:2,
+  {n:4,zh:'铅笔',py:'qiānbǐ',pos:'Danh từ',vn:'bút chì', hv: 'duyên bút',em:'✏️',lesson:2,
    ex_zh:'手里拿着铅笔。',ex_py:'Shǒu lǐ názhe qiānbǐ.',ex_vn:'Tay đang cầm bút chì.',
    exList:[
      {zh:'手里拿着铅笔。',py:'Shǒu lǐ názhe qiānbǐ.',vn:'Tay đang cầm bút chì.'},
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'Bộ 竹 (tre, thân bút) + 毛 (lông, đầu bút lông) → cây BÚT truyền thống.',
       cf:'毛 (máo – "lông")',w:'铅笔 / 毛笔 / 用笔'},
    ]},
-  {n:5,zh:'班',py:'bān',pos:'Danh từ',vn:'lớp học, lớp',em:'🏫',lesson:3,
+  {n:5,zh:'班',py:'bān',pos:'Danh từ',vn:'lớp học, lớp', hv: 'ban',em:'🏫',lesson:3,
    ex_zh:'就是我们班那个女孩。',ex_py:'Jiùshì wǒmen bān nàge nǚhái.',ex_vn:'Chính là cô gái ở lớp chúng mình.',
    exList:[
      {zh:'就是我们班那个女孩。',py:'Jiùshì wǒmen bān nàge nǚhái.',vn:'Chính là cô gái ở lớp chúng mình.'},
@@ -65,7 +65,7 @@ var vocabData = [
       tip:'Đã học ở Bài 9 (上班) — hai miếng ngọc bị dao tách ra thành từng NHÓM/LỚP.',
       cf:'斑 (bān – "vết đốm")',w:'我们班 / 上班 / 班长'},
    ]},
-  {n:6,zh:'长',py:'zhǎng',pos:'Động từ',vn:'mọc, sinh trưởng, lớn',em:'👁️',lesson:3,
+  {n:6,zh:'长',py:'zhǎng',pos:'Động từ',vn:'mọc, sinh trưởng, lớn', hv: 'trưởng',em:'👁️',lesson:3,
    ex_zh:'长着两个大眼睛。',ex_py:'Zhǎngzhe liǎng ge dà yǎnjing.',ex_vn:'Có đôi mắt to (mọc hai con mắt to).',
    exList:[
      {zh:'长着两个大眼睛。',py:'Zhǎngzhe liǎng ge dà yǎnjing.',vn:'Có đôi mắt to.'},
@@ -77,7 +77,7 @@ var vocabData = [
       tip:'Đã học ở Bài 4 với âm "cháng" (dài); cùng chữ này đọc "zhǎng" khi nghĩa MỌC, LỚN LÊN, trưởng thành.',
       cf:'常 (cháng – "thường xuyên")',w:'长着 / 长大 / 校长'},
    ]},
-  {n:7,zh:'笑',py:'xiào',pos:'Động từ / Tính từ',vn:'cười',em:'😄',lesson:3,
+  {n:7,zh:'笑',py:'xiào',pos:'Động từ / Tính từ',vn:'cười', hv: 'tiếu',em:'😄',lesson:3,
    ex_zh:'非常爱笑的女孩。',ex_py:'Fēicháng ài xiào de nǚhái.',ex_vn:'Cô gái rất hay cười.',
    exList:[
      {zh:'非常爱笑的女孩。',py:'Fēicháng ài xiào de nǚhái.',vn:'Cô gái rất hay cười.'},
@@ -89,7 +89,7 @@ var vocabData = [
       tip:'Tre 竹 nghiêng ngả trong gió như dáng người CƯỜI nghiêng ngả.',
       cf:'笔 (bǐ – "bút")',w:'笑了 / 爱笑 / 微笑'},
    ]},
-  {n:8,zh:'宾馆',py:'bīnguǎn',pos:'Danh từ',vn:'khách sạn, nhà khách',em:'🏨',lesson:4,
+  {n:8,zh:'宾馆',py:'bīnguǎn',pos:'Danh từ',vn:'khách sạn, nhà khách', hv: 'tân quán',em:'🏨',lesson:4,
    ex_zh:'这离新宾馆远吗？',ex_py:'Zhè lí xīn bīnguǎn yuǎn ma?',ex_vn:'Ở đây cách khách sạn mới có xa không?',
    exList:[
      {zh:'这离新宾馆远吗？',py:'Zhè lí xīn bīnguǎn yuǎn ma?',vn:'Ở đây cách khách sạn mới có xa không?'},
@@ -104,7 +104,7 @@ var vocabData = [
       tip:'Bộ 饣(ăn uống) → nơi cung cấp ăn ở cho khách = QUÁN, KHÁCH SẠN.',
       cf:'管 (guǎn – "quản lý", bộ 竹")',w:'宾馆 / 图书馆 / 饭馆'},
    ]},
-  {n:9,zh:'一直',py:'yīzhí',pos:'Phó từ',vn:'đi thẳng, luôn luôn',em:'➡️',lesson:4,
+  {n:9,zh:'一直',py:'yīzhí',pos:'Phó từ',vn:'đi thẳng, luôn luôn', hv: 'nhất trực',em:'➡️',lesson:4,
    ex_zh:'从这一直往前走。',ex_py:'Cóng zhè yìzhí wǎng qián zǒu.',ex_vn:'Từ đây đi thẳng về phía trước.',
    exList:[
      {zh:'从这一直往前走。',py:'Cóng zhè yìzhí wǎng qián zǒu.',vn:'Từ đây đi thẳng về phía trước.'},
@@ -119,7 +119,7 @@ var vocabData = [
       tip:'Mắt 目 nhìn theo một đường thẳng không lệch → THẲNG.',
       cf:'真 (zhēn – "thật")',w:'一直 / 直走 / 直接'},
    ]},
-  {n:10,zh:'往',py:'wǎng',pos:'Giới từ',vn:'hướng về, về phía',em:'🧭',lesson:4,
+  {n:10,zh:'往',py:'wǎng',pos:'Giới từ',vn:'hướng về, về phía', hv: 'vãng',em:'🧭',lesson:4,
    ex_zh:'往前走。',ex_py:'Wǎng qián zǒu.',ex_vn:'Đi về phía trước.',
    exList:[
      {zh:'往前走。',py:'Wǎng qián zǒu.',vn:'Đi về phía trước.'},
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'Bộ 彳(đi) + 主 (hướng chính) → bước đi THEO HƯỚNG nhất định.',
       cf:'住 (zhù – "ở", bộ 亻")',w:'往前 / 往右 / 往那儿'},
    ]},
-  {n:11,zh:'路口',py:'lùkǒu',pos:'Danh từ',vn:'giao lộ, ngã tư, lối rẽ',em:'🚦',lesson:4,
+  {n:11,zh:'路口',py:'lùkǒu',pos:'Danh từ',vn:'giao lộ, ngã tư, lối rẽ', hv: 'lộ khẩu',em:'🚦',lesson:4,
    ex_zh:'到了前面的路口。',ex_py:'Dàole qiánmiàn de lùkǒu.',ex_vn:'Đến ngã tư phía trước.',
    exList:[
      {zh:'到了前面的路口。',py:'Dàole qiánmiàn de lùkǒu.',vn:'Đến ngã tư phía trước.'},

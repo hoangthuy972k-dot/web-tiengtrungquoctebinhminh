@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 11: 现在几点?
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'现在',py:'xiànzài',pos:'Danh từ',vn:'bây giờ, hiện nay',em:'⏰',lesson:1,
+  {n:1,zh:'现在',py:'xiànzài',pos:'Danh từ',vn:'bây giờ, hiện nay', hv: 'hiện tại',em:'⏰',lesson:1,
    ex_zh:'现在几点？',ex_py:'Xiànzài jǐ diǎn?',ex_vn:'Bây giờ là mấy giờ rồi?',
    exList:[
      {zh:'现在几点？',py:'Xiànzài jǐ diǎn?',vn:'Bây giờ là mấy giờ rồi?'},
@@ -12,7 +12,7 @@ var vocabData = [
       tip:'王(ngọc quý) + 见(nhìn thấy) → thứ nhìn thấy được ngay trước mắt = HIỆN TẠI.',
       cf:'规 (guī – "quy tắc")',w:'现在'},
    ]},
-  {n:2,zh:'点',py:'diǎn',pos:'Lượng từ',vn:'giờ',em:'🕐',lesson:1,
+  {n:2,zh:'点',py:'diǎn',pos:'Lượng từ',vn:'giờ', hv: 'điểm',em:'🕐',lesson:1,
    ex_zh:'现在十点十分。',ex_py:'Xiànzài shí diǎn shí fēn.',ex_vn:'Bây giờ là 10 giờ 10 phút.',
    exList:[
      {zh:'现在十点十分。',py:'Xiànzài shí diǎn shí fēn.',vn:'Bây giờ là 10 giờ 10 phút.'},
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'占(vị trí xác định) + 灬(lửa, ánh sáng nhỏ) → một ĐIỂM cụ thể, mở rộng dùng đếm GIỜ.',
       cf:'店 (diàn – "cửa hàng", đã học Bài 8")',w:'十点 / 几点'},
    ]},
-  {n:3,zh:'分',py:'fēn',pos:'Lượng từ',vn:'phút',em:'⏱️',lesson:1,
+  {n:3,zh:'分',py:'fēn',pos:'Lượng từ',vn:'phút', hv: 'phân',em:'⏱️',lesson:1,
    ex_zh:'现在十点十分。',ex_py:'Xiànzài shí diǎn shí fēn.',ex_vn:'Bây giờ là 10 giờ 10 phút.',
    exList:[
      {zh:'现在十点十分。',py:'Xiànzài shí diǎn shí fēn.',vn:'Bây giờ là 10 giờ 10 phút.'},
@@ -32,19 +32,19 @@ var vocabData = [
       tip:'八(chia ra) + 刀(dao cắt) → chia nhỏ ra, dùng đếm PHÚT (đơn vị nhỏ của giờ).',
       cf:'份 (fèn – "phần")',w:'十分 / 分钟'},
    ]},
-  {n:4,zh:'中午',py:'zhōngwǔ',pos:'Danh từ',vn:'buổi trưa',em:'🌞',lesson:1,
+  {n:4,zh:'中午',py:'zhōngwǔ',pos:'Danh từ',vn:'buổi trưa', hv: 'trung ngọ',em:'🌞',lesson:1,
    ex_zh:'中午几点吃饭？',ex_py:'Zhōngwǔ jǐ diǎn chī fàn?',ex_vn:'Mấy giờ thì ăn cơm trưa vậy?',
    exList:[
      {zh:'中午几点吃饭？',py:'Zhōngwǔ jǐ diǎn chī fàn?',vn:'Mấy giờ thì ăn cơm trưa vậy?'},
    ],
    hanzi:[]},
-  {n:5,zh:'吃饭',py:'chī fàn',pos:'Động từ',vn:'ăn cơm',em:'🍚',lesson:1,
+  {n:5,zh:'吃饭',py:'chī fàn',pos:'Động từ',vn:'ăn cơm', hv: 'ngật phạn',em:'🍚',lesson:1,
    ex_zh:'十二点吃饭。',ex_py:'Shí\'èr diǎn chī fàn.',ex_vn:'12 giờ ăn cơm.',
    exList:[
      {zh:'十二点吃饭。',py:'Shí\'èr diǎn chī fàn.',vn:'12 giờ ăn cơm.'},
    ],
    hanzi:[]},
-  {n:6,zh:'时候',py:'shíhou',pos:'Danh từ',vn:'thời gian, lúc, khi',em:'⏳',lesson:2,
+  {n:6,zh:'时候',py:'shíhou',pos:'Danh từ',vn:'thời gian, lúc, khi', hv: 'thời hậu',em:'⏳',lesson:2,
    ex_zh:'爸爸什么时候回家？',ex_py:'Bàba shénme shíhou huí jiā?',ex_vn:'Chừng nào cha mới về đến nhà?',
    exList:[
      {zh:'爸爸什么时候回家？',py:'Bàba shénme shíhou huí jiā?',vn:'Chừng nào cha mới về đến nhà?'},
@@ -57,7 +57,7 @@ var vocabData = [
       tip:'亻(người) đứng chờ, đo THỜI GIAN trôi qua.',
       cf:'猴 (hóu – "con khỉ")',w:'时候 / 等候'},
    ]},
-  {n:7,zh:'回',py:'huí',pos:'Động từ',vn:'trở về, về',em:'🔙',lesson:2,
+  {n:7,zh:'回',py:'huí',pos:'Động từ',vn:'trở về, về', hv: 'hồi',em:'🔙',lesson:2,
    ex_zh:'爸爸什么时候回家？',ex_py:'Bàba shénme shíhou huí jiā?',ex_vn:'Chừng nào cha mới về đến nhà?',
    exList:[
      {zh:'爸爸什么时候回家？',py:'Bàba shénme shíhou huí jiā?',vn:'Chừng nào cha mới về đến nhà?'},
@@ -67,13 +67,13 @@ var vocabData = [
       tip:'Hình vòng xoáy đi rồi lại vòng về điểm cũ → TRỞ VỀ.',
       cf:'回 dễ nhầm 囘 (dị thể cổ)',w:'回家 / 回来'},
    ]},
-  {n:8,zh:'我们',py:'wǒmen',pos:'Đại từ',vn:'chúng tôi, chúng ta',em:'👥',lesson:2,
+  {n:8,zh:'我们',py:'wǒmen',pos:'Đại từ',vn:'chúng tôi, chúng ta', hv: 'ngã môn',em:'👥',lesson:2,
    ex_zh:'我们什么时候去看电影？',ex_py:'Wǒmen shénme shíhou qù kàn diànyǐng?',ex_vn:'Khi nào chúng ta đi xem phim?',
    exList:[
      {zh:'我们什么时候去看电影？',py:'Wǒmen shénme shíhou qù kàn diànyǐng?',vn:'Khi nào chúng ta đi xem phim?'},
    ],
    hanzi:[]},
-  {n:9,zh:'电影',py:'diànyǐng',pos:'Danh từ',vn:'phim, điện ảnh',em:'🎬',lesson:2,
+  {n:9,zh:'电影',py:'diànyǐng',pos:'Danh từ',vn:'phim, điện ảnh', hv: 'điện ảnh',em:'🎬',lesson:2,
    ex_zh:'我们什么时候去看电影？',ex_py:'Wǒmen shénme shíhou qù kàn diànyǐng?',ex_vn:'Khi nào chúng ta đi xem phim?',
    exList:[
      {zh:'我们什么时候去看电影？',py:'Wǒmen shénme shíhou qù kàn diànyǐng?',vn:'Khi nào chúng ta đi xem phim?'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'景(phong cảnh, ánh sáng) + 彡(những tia sáng) → BÓNG, HÌNH ẢNH do ánh sáng chiếu ra = PHIM ẢNH.',
       cf:'景 (jǐng – "cảnh")',w:'电影'},
    ]},
-  {n:10,zh:'住',py:'zhù',pos:'Động từ',vn:'ở, trú ngụ',em:'🏠',lesson:3,
+  {n:10,zh:'住',py:'zhù',pos:'Động từ',vn:'ở, trú ngụ', hv: 'trú',em:'🏠',lesson:3,
    ex_zh:'你想在北京住几天？',ex_py:'Nǐ xiǎng zài Běijīng zhù jǐ tiān?',ex_vn:'Anh định ở Bắc Kinh mấy ngày?',
    exList:[
      {zh:'你想在北京住几天？',py:'Nǐ xiǎng zài Běijīng zhù jǐ tiān?',vn:'Anh định ở Bắc Kinh mấy ngày?'},
@@ -93,7 +93,7 @@ var vocabData = [
       tip:'亻(người) + 主(làm chủ) → người làm chủ một nơi để Ở, TRÚ NGỤ.',
       cf:'往 (wǎng – "hướng về", cùng phần phải")',w:'住三天 / 住在'},
    ]},
-  {n:11,zh:'前',py:'qián',pos:'Danh từ',vn:'trước, trước khi',em:'⏮️',lesson:3,
+  {n:11,zh:'前',py:'qián',pos:'Danh từ',vn:'trước, trước khi', hv: 'tiền',em:'⏮️',lesson:3,
    ex_zh:'星期五前能回家吗？',ex_py:'Xīngqī wǔ qián néng huí jiā ma?',ex_vn:'Anh có thể về nhà trước thứ sáu được không?',
    exList:[
      {zh:'星期五前能回家吗？',py:'Xīngqī wǔ qián néng huí jiā ma?',vn:'Anh có thể về nhà trước thứ sáu được không?'},

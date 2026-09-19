@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'提',py:'tí',pos:'Động từ',vn:'nhắc đến',em:'🗣️',lesson:1,
+  {n:1,zh:'提',py:'tí',pos:'Động từ',vn:'nhắc đến', hv: 'đề',em:'🗣️',lesson:1,
    explain:['Nhắc đến, đề cập đến một chuyện gì đó (thường trong lời nói).'],
    usage:'Động từ; thường đi với 别提了 (đừng nhắc đến nữa — thán từ tỏ ý chán nản).',
    collo:['别提了','提工作','提这件事'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'提过 — đã từng nhắc đến, ôn lại trợ từ 过.'},
    ]},
 
-  {n:2,zh:'以为',py:'yǐwéi',pos:'Động từ',vn:'cho rằng, tưởng là',em:'🤔',lesson:1,
+  {n:2,zh:'以为',py:'yǐwéi',pos:'Động từ',vn:'cho rằng, tưởng là', hv: 'dĩ vi',em:'🤔',lesson:1,
    explain:['Diễn tả điều người nói cho là đúng nhưng thực tế không phải như vậy (khác với thực tế).'],
    usage:'Động từ, mang mệnh đề làm tân ngữ: 以为 + mệnh đề, thường đi cùng 没想到/其实/原来 ở vế sau để chỉ ra sự thật khác với suy nghĩ ban đầu.',
    collo:['我以为','以为……没想到……','还以为'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'以为……其实……并不…… kết hợp 并, ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:3,zh:'份',py:'fèn',pos:'Lượng từ',vn:'tờ, bản, phần (việc)',em:'📋',lesson:1,
+  {n:3,zh:'份',py:'fèn',pos:'Lượng từ',vn:'tờ, bản, phần (việc)', hv: 'phần',em:'📋',lesson:1,
    explain:['Lượng từ dùng cho công việc, báo chí, tài liệu, quà tặng...'],
    usage:'Lượng từ; đi với 工作/报纸/礼物: 一份工作, 那份材料.',
    collo:['一份工作','那份材料','这份调查'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'按 + 原来的计划 — ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:4,zh:'完全',py:'wánquán',pos:'Phó từ',vn:'hoàn toàn',em:'💯',lesson:1,
+  {n:4,zh:'完全',py:'wánquán',pos:'Phó từ',vn:'hoàn toàn', hv: 'hoàn toàn',em:'💯',lesson:1,
    explain:['Diễn tả mức độ trọn vẹn, đầy đủ, không thiếu sót.'],
    usage:'Phó từ, đứng trước động từ/tính từ: 完全适应, 完全不一样.',
    collo:['完全适应','完全不一样','完全明白'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'以为……没想到……完全…… — kết hợp nhiều từ vựng của bài.'},
    ]},
 
-  {n:5,zh:'赚',py:'zhuàn',pos:'Động từ',vn:'kiếm (tiền)',em:'💵',lesson:1,
+  {n:5,zh:'赚',py:'zhuàn',pos:'Động từ',vn:'kiếm (tiền)', hv: 'trám',em:'💵',lesson:1,
    explain:['Thu được lợi nhuận, kiếm được tiền từ công việc/kinh doanh.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 赚钱, 太着急赚钱.',
    collo:['赚钱','太着急赚钱','赚钱越来越难'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'本来以为……没想到……完全…… kết hợp nhiều từ vựng.'},
    ]},
 
-  {n:6,zh:'调查',py:'diàochá',pos:'Động từ',vn:'điều tra, khảo sát',em:'🔍',lesson:2,
+  {n:6,zh:'调查',py:'diàochá',pos:'Động từ',vn:'điều tra, khảo sát', hv: 'điều tra',em:'🔍',lesson:2,
    explain:['Thu thập thông tin, tìm hiểu kỹ về một vấn đề/sự việc.'],
    usage:'Động từ/danh từ; thường đi với 那份调查, 做调查.',
    collo:['那份调查','做调查','调查完成'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'根据调查 — theo điều tra.'},
    ]},
 
-  {n:7,zh:'原来',py:'yuánlái',pos:'Danh từ/Tính từ/Phó từ',vn:'ban đầu, trước đây; nguyên bản; hóa ra là',em:'⏮️',lesson:2,
+  {n:7,zh:'原来',py:'yuánlái',pos:'Danh từ/Tính từ/Phó từ',vn:'ban đầu, trước đây; nguyên bản; hóa ra là', hv: 'nguyên lai',em:'⏮️',lesson:2,
    explain:['1. (Danh từ) Ban đầu, trước đây — nêu tình huống khác với hiện tại.','2. (Tính từ) Nguyên bản, không thay đổi — không đứng một mình làm vị ngữ, bổ nghĩa danh từ phải có 的.','3. (Phó từ) Chỉ khoảng thời gian trước đây (khác hiện tại), hoặc diễn tả phát hiện ra điều trước đây không biết — đứng trước/sau chủ ngữ đều được.'],
    usage:'按原来的计划 (tính từ + 的); 原来是……(phó từ, phát hiện sự thật); 原来 + mệnh đề (danh từ, thời điểm ban đầu).',
    collo:['原来的计划','原来是你啊','原来最快'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'原来 (phó từ) — phát hiện sự thật trước đây không biết.'},
    ]},
 
-  {n:8,zh:'计划',py:'jìhuà',pos:'Danh từ/Động từ',vn:'kế hoạch; vạch kế hoạch',em:'📅',lesson:2,
+  {n:8,zh:'计划',py:'jìhuà',pos:'Danh từ/Động từ',vn:'kế hoạch; vạch kế hoạch', hv: 'kế hoạch',em:'📅',lesson:2,
    explain:['1. (Danh từ) Bản dự định công việc theo trình tự thời gian.','2. (Động từ) Lập dự định, sắp xếp trước cho việc gì.'],
    usage:'Danh từ: 原来的计划, 当天计划; động từ: 计划要做的事情.',
    collo:['原来的计划','当天计划','工作计划'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'对计划做出改变 — điều chỉnh kế hoạch.'},
    ]},
 
-  {n:9,zh:'提前',py:'tíqián',pos:'Động từ',vn:'làm sớm hơn dự định, trước thời hạn',em:'⏩',lesson:2,
+  {n:9,zh:'提前',py:'tíqián',pos:'Động từ',vn:'làm sớm hơn dự định, trước thời hạn', hv: 'đề tiền',em:'⏩',lesson:2,
    explain:['Làm việc gì đó sớm hơn so với thời gian đã định trước.'],
    usage:'Động từ; thường đi với 提前完成, 提前一个小时.',
    collo:['提前完成','提前到','提前一个小时'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'保证……提前…… kết hợp từ vựng của bài.'},
    ]},
 
-  {n:10,zh:'保证',py:'bǎozhèng',pos:'Động từ',vn:'cam đoan, bảo đảm',em:'🤝',lesson:2,
+  {n:10,zh:'保证',py:'bǎozhèng',pos:'Động từ',vn:'cam đoan, bảo đảm', hv: 'bảo chứng',em:'🤝',lesson:2,
    explain:['Cam kết chắc chắn sẽ thực hiện đúng điều gì đó.'],
    usage:'Động từ, mang mệnh đề làm tân ngữ: 保证做完, 我保证.',
    collo:['保证做完','我保证','周末保证'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'一切 + 都 — tất cả đều.'},
    ]},
 
-  {n:11,zh:'提醒',py:'tíxǐng',pos:'Động từ',vn:'nhắc nhở',em:'🔔',lesson:2,
+  {n:11,zh:'提醒',py:'tíxǐng',pos:'Động từ',vn:'nhắc nhở', hv: 'đề tỉnh',em:'🔔',lesson:2,
    explain:['Nói cho ai đó nhớ lại hoặc chú ý đến điều gì.'],
    usage:'Động từ, mang tân ngữ kép: 提醒 + Người + Nội dung.',
    collo:['提醒自己','谢谢提醒','提醒安排时间'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'提醒 + 完全 — kết hợp từ vựng của bài.'},
    ]},
 
-  {n:12,zh:'乱',py:'luàn',pos:'Tính từ',vn:'lộn xộn, lúng túng',em:'😵',lesson:2,
+  {n:12,zh:'乱',py:'luàn',pos:'Tính từ',vn:'lộn xộn, lúng túng', hv: 'loạn',em:'😵',lesson:2,
    explain:['Trạng thái không có trật tự, rối loạn; hoặc tâm trạng bối rối, mất bình tĩnh.'],
    usage:'Tính từ; thường đi trong cụm 手忙脚乱 (tay chân luống cuống).',
    collo:['手忙脚乱','很乱','别乱'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'手忙脚乱 — cụm cố định, tay chân luống cuống.'},
    ]},
 
-  {n:13,zh:'生意',py:'shēngyi',pos:'Danh từ',vn:'việc kinh doanh, buôn bán',em:'💼',lesson:3,
+  {n:13,zh:'生意',py:'shēngyi',pos:'Danh từ',vn:'việc kinh doanh, buôn bán', hv: 'sinh ý',em:'💼',lesson:3,
    explain:['Hoạt động buôn bán, kinh doanh để kiếm lời.'],
    usage:'Danh từ; thường đi với 做生意, 生意谈成.',
    collo:['做生意','谈生意','生意好'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'越做越大 — càng làm càng lớn.'},
    ]},
 
-  {n:14,zh:'谈',py:'tán',pos:'Động từ',vn:'nói chuyện, thảo luận',em:'💬',lesson:3,
+  {n:14,zh:'谈',py:'tán',pos:'Động từ',vn:'nói chuyện, thảo luận', hv: 'đàm',em:'💬',lesson:3,
    explain:['Trao đổi, bàn bạc về một vấn đề nào đó.'],
    usage:'Động từ; thường đi với 谈生意, 谈成, 谈工作.',
    collo:['谈生意','谈成了','谈工作'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'什么事让你这么…… — điều gì khiến bạn….'},
    ]},
 
-  {n:15,zh:'并',py:'bìng',pos:'Phó từ',vn:'(nhấn mạnh phủ định)',em:'❗',lesson:3,
+  {n:15,zh:'并',py:'bìng',pos:'Phó từ',vn:'(nhấn mạnh phủ định)', hv: 'tịnh',em:'❗',lesson:3,
    explain:['Đứng trước từ phủ định 不/没(有) để tăng cường ngữ khí phủ định, thường dùng trong câu tỏ ý chuyển ngoặt, phủ định một cách nhìn nào đó và giải thích tình hình thực tế.'],
    usage:'并 + 不/没(有) + V/Adj: 并不容易, 并没有.',
    collo:['并不容易','并没有','并不是'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'并不是这样 — không hề như vậy.'},
    ]},
 
-  {n:16,zh:'积累',py:'jīlěi',pos:'Động từ',vn:'tích lũy',em:'📈',lesson:3,
+  {n:16,zh:'积累',py:'jīlěi',pos:'Động từ',vn:'tích lũy', hv: 'tích lụy',em:'📈',lesson:3,
    explain:['Tích góp dần dần theo thời gian (kinh nghiệm, kiến thức, tiền bạc...).'],
    usage:'Động từ, mang tân ngữ trực tiếp: 积累经验, 积累知识.',
    collo:['积累经验','积累知识','多积累'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'最重要的是……而不是…… — quan trọng nhất là … chứ không phải….'},
    ]},
 
-  {n:17,zh:'经验',py:'jīngyàn',pos:'Danh từ',vn:'kinh nghiệm',em:'🎓',lesson:3,
+  {n:17,zh:'经验',py:'jīngyàn',pos:'Danh từ',vn:'kinh nghiệm', hv: 'kinh nghiệm',em:'🎓',lesson:3,
    explain:['Những điều học được, tích lũy được qua thực tế làm việc/trải nghiệm.'],
    usage:'Danh từ; thường đi với 积累经验, 工作经验.',
    collo:['积累经验','工作经验','有经验'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'不管……如果……也很难…… kết hợp nhiều cấu trúc.'},
    ]},
 
-  {n:18,zh:'一切',py:'yíqiè',pos:'Đại từ',vn:'tất cả',em:'🌐',lesson:3,
+  {n:18,zh:'一切',py:'yíqiè',pos:'Đại từ',vn:'tất cả', hv: 'nhất thiết',em:'🌐',lesson:3,
    explain:['Đại từ chỉ toàn bộ sự vật/sự việc, không sót cái nào.'],
    usage:'Đại từ, làm chủ ngữ/định ngữ: 一切都会好的, 一切安排好了.',
    collo:['一切都会好的','一切顺利','一切安排好了'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'一切 + danh từ + 都 — mọi … đều.'},
    ]},
 
-  {n:19,zh:'按照',py:'ànzhào',pos:'Giới từ',vn:'theo, dựa vào',em:'📐',lesson:4,
+  {n:19,zh:'按照',py:'ànzhào',pos:'Giới từ',vn:'theo, dựa vào', hv: 'án chiếu',em:'📐',lesson:4,
    explain:['Dựa theo, căn cứ vào một tiêu chuẩn/quy định/kế hoạch nào đó.'],
    usage:'Giới từ, đứng trước danh từ: 按照计划, 按照要求.',
    collo:['按照计划','按照要求','按照经验'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'如果不按照……可能…… — kết hợp cấu trúc giả thiết.'},
    ]},
 
-  {n:20,zh:'成功',py:'chénggōng',pos:'Tính từ/Động từ',vn:'thành công',em:'🏆',lesson:4,
+  {n:20,zh:'成功',py:'chénggōng',pos:'Tính từ/Động từ',vn:'thành công', hv: 'thành công',em:'🏆',lesson:4,
    explain:['Đạt được kết quả mong muốn, hoàn thành tốt đẹp việc gì đó.'],
    usage:'Tính từ/động từ; thường đi với 成功地解决, 谈成功.',
    collo:['成功地解决','谈成功','取得成功'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'首先……其次…… ôn lại điểm ngữ pháp Bài 3.'},
    ]},
 
-  {n:21,zh:'顺利',py:'shùnlì',pos:'Tính từ',vn:'thuận lợi, suôn sẻ',em:'✅',lesson:4,
+  {n:21,zh:'顺利',py:'shùnlì',pos:'Tính từ',vn:'thuận lợi, suôn sẻ', hv: 'thuận lợi',em:'✅',lesson:4,
    explain:['Diễn ra thuận lợi, không gặp trở ngại.'],
    usage:'Tính từ; thường đi với 顺利地完成, 一切顺利.',
    collo:['顺利地完成','一切顺利','很顺利'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'如果一切都……我们可以…… kết hợp nhiều từ vựng của bài.'},
    ]},
 
-  {n:22,zh:'感谢',py:'gǎnxiè',pos:'Động từ',vn:'cảm ơn',em:'🙏',lesson:4,
+  {n:22,zh:'感谢',py:'gǎnxiè',pos:'Động từ',vn:'cảm ơn', hv: 'cảm tạ',em:'🙏',lesson:4,
    explain:['Bày tỏ lòng biết ơn với ai đó vì đã giúp đỡ.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 感谢大家, 非常感谢.',
    collo:['非常感谢','感谢大家','感谢帮助'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'感谢……的所有人 — cảm ơn tất cả những người….'},
    ]},
 
-  {n:23,zh:'消息',py:'xiāoxi',pos:'Danh từ',vn:'tin tức',em:'📰',lesson:4,
+  {n:23,zh:'消息',py:'xiāoxi',pos:'Danh từ',vn:'tin tức', hv: 'tiêu tức',em:'📰',lesson:4,
    explain:['Thông tin mới được truyền đạt về một sự việc nào đó.'],
    usage:'Danh từ; thường đi với 好消息, 告诉……消息.',
    collo:['好消息','告诉消息','听到消息'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'听到……的消息 — nghe được tin….'},
    ]},
 
-  {n:24,zh:'按时',py:'ànshí',pos:'Phó từ',vn:'đúng hạn',em:'⏰',lesson:4,
+  {n:24,zh:'按时',py:'ànshí',pos:'Phó từ',vn:'đúng hạn', hv: 'án thời',em:'⏰',lesson:4,
    explain:['Đúng theo thời gian đã quy định, không sớm không muộn.'],
    usage:'Phó từ, đứng trước động từ: 按时完成, 按时到.',
    collo:['按时完成','按时到','按时起飞'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'按时 + động từ — đúng giờ làm gì.'},
    ]},
 
-  {n:25,zh:'奖金',py:'jiǎngjīn',pos:'Danh từ',vn:'tiền thưởng',em:'💰',lesson:4,
+  {n:25,zh:'奖金',py:'jiǎngjīn',pos:'Danh từ',vn:'tiền thưởng', hv: 'tưởng kim',em:'💰',lesson:4,
    explain:['Số tiền công ty/tổ chức thưởng thêm cho nhân viên khi làm tốt.'],
    usage:'Danh từ; thường đi với 发奖金, 多发奖金.',
    collo:['发奖金','多发奖金','三千元奖金'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'感谢……发奖金 — kết hợp từ vựng của bài.'},
    ]},
 
-  {n:26,zh:'工资',py:'gōngzī',pos:'Danh từ',vn:'tiền lương',em:'💵',lesson:5,
+  {n:26,zh:'工资',py:'gōngzī',pos:'Danh từ',vn:'tiền lương', hv: 'công tư',em:'💵',lesson:5,
    explain:['Số tiền được trả định kỳ cho công việc đã làm.'],
    usage:'Danh từ; thường đi với 工资和奖金, 工资比较低.',
    collo:['工资和奖金','工资比较低','眼睛里只有工资'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'尽管……也不会…… ôn lại cấu trúc HSK4.'},
    ]},
 
-  {n:27,zh:'方法',py:'fāngfǎ',pos:'Danh từ',vn:'phương pháp, cách thức',em:'🧭',lesson:5,
+  {n:27,zh:'方法',py:'fāngfǎ',pos:'Danh từ',vn:'phương pháp, cách thức', hv: 'phương pháp',em:'🧭',lesson:5,
    explain:['Cách thức, biện pháp để làm việc gì đó.'],
    usage:'Danh từ; thường đi với 交流的方法, 找方法.',
    collo:['交流的方法','找方法','好方法'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'法律 (cùng chữ 法 với 方法), ôn lại từ vựng Bài 3.'},
    ]},
 
-  {n:28,zh:'知识',py:'zhīshi',pos:'Danh từ',vn:'kiến thức',em:'📚',lesson:5,
+  {n:28,zh:'知识',py:'zhīshi',pos:'Danh từ',vn:'kiến thức', hv: 'tri thức',em:'📚',lesson:5,
    explain:['Những điều hiểu biết, học được qua học tập/trải nghiệm.'],
    usage:'Danh từ; thường đi với 专业知识, 积累知识.',
    collo:['专业知识','积累知识','学到知识'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'不管……也需要…… kết hợp nhiều từ vựng của bài.'},
    ]},
 
-  {n:29,zh:'不得不',py:'bùdébù',pos:'Phó từ',vn:'phải, không thể không',em:'😤',lesson:5,
+  {n:29,zh:'不得不',py:'bùdébù',pos:'Phó từ',vn:'phải, không thể không', hv: 'bất đắc bất',em:'😤',lesson:5,
    explain:['Diễn tả việc bắt buộc phải làm điều gì đó dù không muốn, không còn lựa chọn khác.'],
    usage:'Phó từ, đứng trước động từ: 不得不去做, 不得不换工作.',
    collo:['不得不去做','不得不换','不得不接受'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'尽管……也不得不…… ôn lại cấu trúc HSK4.'},
    ]},
 
-  {n:30,zh:'甚至',py:'shènzhì',pos:'Liên từ',vn:'thậm chí',em:'‼️',lesson:5,
+  {n:30,zh:'甚至',py:'shènzhì',pos:'Liên từ',vn:'thậm chí', hv: 'thậm chí',em:'‼️',lesson:5,
    explain:['Nhấn mạnh một trường hợp nổi bật, đặt trước ví dụ cuối cùng của danh từ/động từ/vế câu song song để làm nổi bật mục này.'],
    usage:'甚至 + (是) + trường hợp nổi bật; có thể kết hợp 甚至连……都/也.',
    collo:['甚至可以','甚至是','甚至会'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'甚至 nhấn mạnh trường hợp bất ngờ/nổi bật.'},
    ]},
 
-  {n:31,zh:'责任',py:'zérèn',pos:'Danh từ',vn:'trách nhiệm',em:'🎯',lesson:5,
+  {n:31,zh:'责任',py:'zérèn',pos:'Danh từ',vn:'trách nhiệm', hv: 'trách nhiệm',em:'🎯',lesson:5,
    explain:['Nghĩa vụ phải hoàn thành, phải chịu trách nhiệm về việc gì đó.'],
    usage:'Danh từ; thường đi với 责任心, 有责任.',
    collo:['责任心','有责任','没有责任心'],
@@ -685,7 +685,7 @@ var vocabData = [
       note:'对……有责任感 — có trách nhiệm với….'},
    ]},
 
-  {n:32,zh:'王',py:'Wáng',pos:'Danh từ riêng',vn:'Vương (họ)',em:'🧑‍💼',lesson:2,
+  {n:32,zh:'王',py:'Wáng',pos:'Danh từ riêng',vn:'Vương (họ)', hv: 'Vương',em:'🧑‍💼',lesson:2,
    explain:['Họ của nhân vật 王经理 trong hội thoại 2 và 3.'],
    usage:'Danh từ riêng chỉ họ người, thường ghép với 经理 thành 王经理.',
    collo:['王经理','王经理说'],
@@ -694,7 +694,7 @@ var vocabData = [
      {zh:'王经理和小李在说工作。',py:'Wáng jīnglǐ hé Xiǎo Lǐ zài shuō gōngzuò.',vn:'Giám đốc Vương và Tiểu Lý đang nói chuyện công việc.'},
    ]},
 
-  {n:33,zh:'马',py:'Mǎ',pos:'Danh từ riêng',vn:'Mã (họ)',em:'🧑‍💻',lesson:3,
+  {n:33,zh:'马',py:'Mǎ',pos:'Danh từ riêng',vn:'Mã (họ)', hv: 'Mã',em:'🧑‍💻',lesson:3,
    explain:['Họ của nhân vật 马经理 trong hội thoại 3 và bài khoá 4.'],
    usage:'Danh từ riêng chỉ họ người, thường ghép với 经理 thành 马经理.',
    collo:['马经理','马经理说'],
@@ -703,7 +703,7 @@ var vocabData = [
      {zh:'王经理和马经理在说工作。',py:'Wáng jīnglǐ hé Mǎ jīnglǐ zài shuō gōngzuò.',vn:'Giám đốc Vương và giám đốc Mã đang nói chuyện công việc.'},
    ]},
 
-  {n:34,zh:'王红',py:'Wáng Hóng',pos:'Danh từ riêng',vn:'Vương Hồng (tên người)',em:'👩',lesson:2,
+  {n:34,zh:'王红',py:'Wáng Hóng',pos:'Danh từ riêng',vn:'Vương Hồng (tên người)', hv: 'Vương Hồng',em:'👩',lesson:2,
    explain:['Tên riêng nhắc đến trong bài tập luyện 甚至/提醒 (bạn của người nói).'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['王红的生日'],

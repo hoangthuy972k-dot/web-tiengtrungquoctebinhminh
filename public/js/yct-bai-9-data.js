@@ -2,7 +2,7 @@
 // DATA — YCT Bài 9: 你的生日是几月几号？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'生日',py:'shēngrì',pos:'Danh từ',vn:'sinh nhật',em:'🎂',lesson:1,
+  {n:1,zh:'生日',py:'shēngrì',pos:'Danh từ',vn:'sinh nhật', hv: 'sinh nhật',em:'🎂',lesson:1,
    ex_zh:'你的生日是几月几号？',ex_py:'Nǐ de shēngrì shì jǐ yuè jǐ hào?',ex_vn:'Sinh nhật bạn là ngày mấy tháng mấy?',
    exList:[{zh:'你的生日是几月几号？',py:'Nǐ de shēngrì shì jǐ yuè jǐ hào?',vn:'Sinh nhật bạn là ngày mấy tháng mấy?'}],
    hanzi:[
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'Hình vẽ mặt trời tròn với một vạch ngang ở giữa → NGÀY, MẶT TRỜI.',
       cf:'目 (mù – "mắt", hình dáng gần giống nhưng dài hơn)',w:'生日'},
    ]},
-  {n:2,zh:'月',py:'yuè',pos:'Danh từ',vn:'tháng',em:'🌙',lesson:1,
+  {n:2,zh:'月',py:'yuè',pos:'Danh từ',vn:'tháng', hv: 'nguyệt',em:'🌙',lesson:1,
    ex_zh:'五月',ex_py:'wǔ yuè',ex_vn:'tháng năm',
    exList:[{zh:'我的生日是五月一号。',py:'Wǒ de shēngrì shì wǔ yuè yī hào.',vn:'Sinh nhật mình là ngày 1 tháng 5.'}],
    hanzi:[
@@ -21,7 +21,7 @@ var vocabData = [
       tip:'Hình vẽ mặt trăng khuyết → THÁNG, MẶT TRĂNG.',
       cf:'用 (yòng – "dùng")',w:'五月'},
    ]},
-  {n:3,zh:'号',py:'hào',pos:'Lượng từ',vn:'ngày (số ngày trong tháng)',em:'📅',lesson:1,
+  {n:3,zh:'号',py:'hào',pos:'Lượng từ',vn:'ngày (số ngày trong tháng)', hv: 'hiệu',em:'📅',lesson:1,
    ex_zh:'五月一号',ex_py:'wǔ yuè yī hào',ex_vn:'ngày 1 tháng 5',
    exList:[{zh:'我的生日是五月一号。',py:'Wǒ de shēngrì shì wǔ yuè yī hào.',vn:'Sinh nhật mình là ngày 1 tháng 5.'}],
    hanzi:[
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Miệng 口 hô lên một con số để gọi tên ngày trong tháng → SỐ, NGÀY.',
       cf:'叫 (jiào – "gọi tên", đã học ở Bài 2)',w:'五月一号'},
    ]},
-  {n:4,zh:'今天',py:'jīntiān',pos:'Danh từ',vn:'hôm nay',em:'📆',lesson:1,
+  {n:4,zh:'今天',py:'jīntiān',pos:'Danh từ',vn:'hôm nay', hv: 'kim thiên',em:'📆',lesson:1,
    ex_zh:'今天是三号。',ex_py:'Jīntiān shì sān hào.',ex_vn:'Hôm nay là ngày 3.',
    exList:[{zh:'今天是三号。',py:'Jīntiān shì sān hào.',vn:'Hôm nay là ngày 3.'}],
    hanzi:[
@@ -40,7 +40,7 @@ var vocabData = [
       tip:'Trên chữ 大 (người dang tay chân) thêm một nét ngang chỉ khoảng không phía trên đầu → TRỜI, rồi mở rộng thành NGÀY.',
       cf:'夫 (fū – "chồng, người đàn ông")',w:'今天 / 明天'},
    ]},
-  {n:5,zh:'明天',py:'míngtiān',pos:'Danh từ',vn:'ngày mai',em:'🌅',lesson:2,
+  {n:5,zh:'明天',py:'míngtiān',pos:'Danh từ',vn:'ngày mai', hv: 'minh thiên',em:'🌅',lesson:2,
    ex_zh:'明天是你的生日吗？',ex_py:'Míngtiān shì nǐ de shēngrì ma?',ex_vn:'Ngày mai là sinh nhật bạn à?',
    exList:[{zh:'明天是你的生日吗？',py:'Míngtiān shì nǐ de shēngrì ma?',vn:'Ngày mai là sinh nhật bạn à?'}],
    hanzi:[
@@ -48,7 +48,7 @@ var vocabData = [
       tip:'Mặt trời 日 và mặt trăng 月 cùng chiếu sáng → SÁNG, RÕ; 明天 nghĩa đen là "ngày mặt trời mọc lại" → NGÀY MAI.',
       cf:'朋 (péng – "bạn", cũng ghép 2 bộ trông giống)',w:'明天'},
    ]},
-  {n:6,zh:'星期',py:'xīngqī',pos:'Danh từ',vn:'tuần',em:'🗓️',lesson:2,
+  {n:6,zh:'星期',py:'xīngqī',pos:'Danh từ',vn:'tuần', hv: 'tinh kỳ',em:'🗓️',lesson:2,
    ex_zh:'一个星期',ex_py:'yí ge xīngqī',ex_vn:'một tuần',
    exList:[{zh:'一个星期',py:'yí ge xīngqī',vn:'một tuần'}],
    hanzi:[
@@ -59,7 +59,7 @@ var vocabData = [
       tip:'Ghép với 月 (chu kỳ mặt trăng) để chỉ một khoảng thời gian định kỳ → KỲ HẠN; 星期 = TUẦN.',
       cf:'欺 (qī – "lừa dối")',w:'星期'},
    ]},
-  {n:7,zh:'喜欢',py:'xǐhuan',pos:'Động từ',vn:'thích',em:'😍',lesson:2,
+  {n:7,zh:'喜欢',py:'xǐhuan',pos:'Động từ',vn:'thích', hv: 'hỉ hoan',em:'😍',lesson:2,
    ex_zh:'我喜欢猫。',ex_py:'Wǒ xǐhuan māo.',ex_vn:'Mình thích mèo.',
    exList:[{zh:'我喜欢猫。',py:'Wǒ xǐhuan māo.',vn:'Mình thích mèo.'}],
    hanzi:[

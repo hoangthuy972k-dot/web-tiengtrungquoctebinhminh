@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'京剧',py:'jīngjù',pos:'Danh từ',vn:'Kinh kịch',em:'🎭',lesson:1,
+  {n:1,zh:'京剧',py:'jīngjù',pos:'Danh từ',vn:'Kinh kịch', hv: 'kinh kịch',em:'🎭',lesson:1,
    explain:['Loại hình sân khấu truyền thống nổi tiếng của Trung Quốc, kết hợp hát, nói, diễn, võ.'],
    usage:'唱京剧, 看京剧, 京剧演员.',
    collo:['京剧唱得真专业','听京剧','京剧演员'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'竟然 (Bài 6) + 连……也 (Bài 11) + 厉害 (Bài 11).'},
    ]},
 
-  {n:2,zh:'演员',py:'yǎnyuán',pos:'Danh từ',vn:'diễn viên',em:'🎬',lesson:1,
+  {n:2,zh:'演员',py:'yǎnyuán',pos:'Danh từ',vn:'diễn viên', hv: 'diễn viên',em:'🎬',lesson:1,
    explain:['Người biểu diễn trong phim, kịch, sân khấu.'],
    usage:'京剧演员, 专业的演员, 当演员.',
    collo:['京剧演员','专业的演员','有名的演员'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'不过 ôn lại ngữ pháp Bài 10.'},
    ]},
 
-  {n:3,zh:'观众',py:'guānzhòng',pos:'Danh từ',vn:'khán giả',em:'👥',lesson:1,
+  {n:3,zh:'观众',py:'guānzhòng',pos:'Danh từ',vn:'khán giả', hv: 'quan chúng',em:'👥',lesson:1,
    explain:['Người xem biểu diễn, phim, thi đấu.'],
    usage:'深受观众的喜爱, 吸引观众, 不同年龄的观众.',
    collo:['深受观众们的喜爱','吸引了不少观众','不同年龄的观众'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'适应 ôn lại từ vựng Bài 8.'},
    ]},
 
-  {n:4,zh:'厚',py:'hòu',pos:'Tính từ',vn:'dày; sâu nặng (tình cảm)',em:'📚',lesson:1,
+  {n:4,zh:'厚',py:'hòu',pos:'Tính từ',vn:'dày; sâu nặng (tình cảm)', hv: 'hậu',em:'📚',lesson:1,
    explain:['1. Dày (đối lập 薄).','2. Sâu đậm (tình cảm): 深厚的感情.'],
    usage:'这本书很厚; 深厚的感情; 厚厚的.',
    collo:['很深厚的感情','这本小说这么厚','厚衣服'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'有着 — 着 chỉ trạng thái kéo dài.'},
    ]},
 
-  {n:5,zh:'演出',py:'yǎnchū',pos:'Động từ/Danh từ',vn:'biểu diễn; buổi biểu diễn',em:'🎪',lesson:1,
+  {n:5,zh:'演出',py:'yǎnchū',pos:'Động từ/Danh từ',vn:'biểu diễn; buổi biểu diễn', hv: 'diễn xuất',em:'🎪',lesson:1,
    explain:['Biểu diễn trước khán giả; hoặc buổi biểu diễn.'],
    usage:'上台演出; 看他的演出; 演出很成功.',
    collo:['上台演出','看他的演出','这次演出举办得很成功'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'给……讲 — kể cho ai.'},
    ]},
 
-  {n:6,zh:'大概',py:'dàgài',pos:'Phó từ/Tính từ',vn:'khoảng chừng, có lẽ; đại khái',em:'🤔',lesson:1,
+  {n:6,zh:'大概',py:'dàgài',pos:'Phó từ/Tính từ',vn:'khoảng chừng, có lẽ; đại khái', hv: 'đại khái',em:'🤔',lesson:1,
    explain:['1. (Phó từ) Ước lượng gần đúng về số lượng/thời gian; hoặc suy đoán tình huống với khả năng cao.','2. (Tính từ) Không chính xác lắm, chung chung: 大概的想法/内容.'],
    usage:'大概 + số lượng; 大概 + mệnh đề; 大概的 + danh từ.',
    collo:['大概唱了60多年','大概会同意','大概的想法'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'大概的 (tính từ) + 详细 (Bài 12).'},
    ]},
 
-  {n:7,zh:'来自',py:'láizì',pos:'Động từ',vn:'đến từ',em:'🌍',lesson:2,
+  {n:7,zh:'来自',py:'láizì',pos:'Động từ',vn:'đến từ', hv: 'lai tự',em:'🌍',lesson:2,
    explain:['Xuất phát từ (nơi chốn, nguồn gốc).'],
    usage:'来自 + nơi: 来自美国, 来自不同的国家.',
    collo:['来自美国的留学生','来自不同的国家','来自生活'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'让 ôn lại Bài 8.'},
    ]},
 
-  {n:8,zh:'遍',py:'biàn',pos:'Lượng từ',vn:'lần, lượt (từ đầu đến cuối)',em:'🔁',lesson:2,
+  {n:8,zh:'遍',py:'biàn',pos:'Lượng từ',vn:'lần, lượt (từ đầu đến cuối)', hv: 'biến',em:'🔁',lesson:2,
    explain:['Lượng từ động lượng, chỉ một hành động trọn vẹn từ đầu đến cuối.'],
    usage:'V + 一遍/几遍: 练习一遍, 检查一遍, 一遍一遍地.',
    collo:['一遍一遍地练习','再检查一遍','看了好几遍'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'偶尔 — ngữ pháp của bài.'},
    ]},
 
-  {n:9,zh:'偶尔',py:'ǒu\'ěr',pos:'Phó từ',vn:'thỉnh thoảng',em:'🕰️',lesson:2,
+  {n:9,zh:'偶尔',py:'ǒu\'ěr',pos:'Phó từ',vn:'thỉnh thoảng', hv: 'ngẫu nhĩ',em:'🕰️',lesson:2,
    explain:['Tình huống xảy ra với tần suất rất thấp.'],
    usage:'偶尔 + động từ: 偶尔跟……一起, 偶尔加班.',
    collo:['偶尔跟中国人一起唱','偶尔加班','偶尔也会出现'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'Bài luyện tập SGK (3).'},
    ]},
 
-  {n:10,zh:'吃惊',py:'chī jīng',pos:'Động từ',vn:'kinh ngạc',em:'😲',lesson:2,
+  {n:10,zh:'吃惊',py:'chī jīng',pos:'Động từ',vn:'kinh ngạc', hv: 'ngật kinh',em:'😲',lesson:2,
    explain:['Ngạc nhiên, giật mình vì điều bất ngờ (động từ li hợp).'],
    usage:'别吃惊; 大吃一惊; 让人吃惊.',
    collo:['别吃惊','大吃一惊','让人吃惊的消息'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'基础 — từ mới của bài; 过 chỉ kinh nghiệm.'},
    ]},
 
-  {n:11,zh:'基础',py:'jīchǔ',pos:'Danh từ',vn:'nền tảng, căn bản',em:'🧱',lesson:2,
+  {n:11,zh:'基础',py:'jīchǔ',pos:'Danh từ',vn:'nền tảng, căn bản', hv: 'cơ sở',em:'🧱',lesson:2,
    explain:['Cái gốc, phần cơ sở để phát triển lên.'],
    usage:'有……基础; 打好基础; 基础知识.',
    collo:['有一些音乐基础','打好基础','基础知识'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'首先 (Bài 3) + 否则 (Bài 11) + 语法 (Bài 11).'},
    ]},
 
-  {n:12,zh:'表演',py:'biǎoyǎn',pos:'Động từ/Danh từ',vn:'biểu diễn, trình diễn',em:'🎤',lesson:2,
+  {n:12,zh:'表演',py:'biǎoyǎn',pos:'Động từ/Danh từ',vn:'biểu diễn, trình diễn', hv: 'biểu diễn',em:'🎤',lesson:2,
    explain:['Diễn (kịch, múa, võ…) trước người xem; hoặc màn trình diễn.'],
    usage:'表演艺术; 表演中国功夫; 精彩的表演.',
    collo:['京剧这种表演艺术','表演的中国功夫','精彩的表演'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'对……感兴趣 — ôn lại.'},
    ]},
 
-  {n:13,zh:'正常',py:'zhèngcháng',pos:'Tính từ',vn:'bình thường, thông thường',em:'✅',lesson:3,
+  {n:13,zh:'正常',py:'zhèngcháng',pos:'Tính từ',vn:'bình thường, thông thường', hv: 'chính thường',em:'✅',lesson:3,
    explain:['Phù hợp với quy luật/tình trạng thông thường, không bất thường.'],
    usage:'正常交流; 很正常; 不正常.',
    collo:['正常交流','很正常','身体正常'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'甚至 (Bài 4) + 引起/误会 (Bài 12).'},
    ]},
 
-  {n:14,zh:'申请',py:'shēnqǐng',pos:'Động từ',vn:'xin, đăng ký (chính thức)',em:'📝',lesson:3,
+  {n:14,zh:'申请',py:'shēnqǐng',pos:'Động từ',vn:'xin, đăng ký (chính thức)', hv: 'thân thỉnh',em:'📝',lesson:3,
    explain:['Đề nghị chính thức với cấp trên/cơ quan để được chấp thuận.'],
    usage:'申请举办活动; 申请去国外留学; 申请学校.',
    collo:['申请举办一次活动','申请去国外留学','申请国外学校'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'举办 (Bài 6) + 让 (Bài 8).'},
    ]},
 
-  {n:15,zh:'有趣',py:'yǒuqù',pos:'Tính từ',vn:'thú vị, lý thú',em:'😄',lesson:3,
+  {n:15,zh:'有趣',py:'yǒuqù',pos:'Tính từ',vn:'thú vị, lý thú', hv: 'hữu thú',em:'😄',lesson:3,
    explain:['Gây hứng thú, hấp dẫn.'],
    usage:'办得非常有趣; 有趣的故事; 很有趣.',
    collo:['办得非常有趣','有趣的故事','觉得很有趣'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'既……又 (Bài 7) + 因此 (Bài 8).'},
    ]},
 
-  {n:16,zh:'开心',py:'kāixīn',pos:'Tính từ',vn:'vui vẻ',em:'😊',lesson:3,
+  {n:16,zh:'开心',py:'kāixīn',pos:'Tính từ',vn:'vui vẻ', hv: 'khai tâm',em:'😊',lesson:3,
    explain:['Tâm trạng vui vẻ, thoải mái.'],
    usage:'玩儿得很开心; 很开心; 开心地笑.',
    collo:['玩儿得很开心','过得很开心','开心地笑'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'由 — ngữ pháp của bài; 负责 (Bài 4).'},
    ]},
 
-  {n:17,zh:'继续',py:'jìxù',pos:'Động từ',vn:'tiếp tục',em:'▶️',lesson:3,
+  {n:17,zh:'继续',py:'jìxù',pos:'Động từ',vn:'tiếp tục', hv: 'kế tục',em:'▶️',lesson:3,
    explain:['Tiếp diễn hoạt động đang làm, không dừng lại.'],
    usage:'继续 + động từ: 继续进行, 继续由你负责, 继续读书.',
    collo:['继续由你负责','会议继续进行','继续留在北京'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'商量 ôn lại từ vựng Bài 12.'},
    ]},
 
-  {n:18,zh:'由',py:'yóu',pos:'Giới từ',vn:'do (ai phụ trách/thực hiện)',em:'👤',lesson:3,
+  {n:18,zh:'由',py:'yóu',pos:'Giới từ',vn:'do (ai phụ trách/thực hiện)', hv: 'do',em:'👤',lesson:3,
    explain:['Giới từ dẫn ra người chịu trách nhiệm/thực hiện việc gì.'],
    usage:'由 + người + 负责/翻译/组织.',
    collo:['由你负责','由王大夫负责','由林语堂先生翻译'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'Bài luyện tập SGK (1); 专门 (Bài 9).'},
    ]},
 
-  {n:19,zh:'讨论',py:'tǎolùn',pos:'Động từ',vn:'thảo luận, bàn bạc',em:'💬',lesson:3,
+  {n:19,zh:'讨论',py:'tǎolùn',pos:'Động từ',vn:'thảo luận, bàn bạc', hv: 'thảo luận',em:'💬',lesson:3,
    explain:['Trao đổi ý kiến để làm rõ vấn đề.'],
    usage:'开会讨论; 讨论问题; 讨论一下.',
    collo:['开会讨论','讨论这个问题','跟大家讨论'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'遍 (từ mới) + 达到 (Bài 12) + 可是 (Bài 9).'},
    ]},
 
-  {n:20,zh:'大约',py:'dàyuē',pos:'Phó từ',vn:'khoảng chừng, ước chừng',em:'≈',lesson:4,
+  {n:20,zh:'大约',py:'dàyuē',pos:'Phó từ',vn:'khoảng chừng, ước chừng', hv: 'đại ước',em:'≈',lesson:4,
    explain:['Ước lượng gần đúng về số lượng/thời gian (tương tự 大概 nghĩa 1).'],
    usage:'大约 + số lượng: 大约3000多年, 大约20%.',
    collo:['大约已经有3000多年','大约20%的人','大约半个小时'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'其中 (Bài 6) + 百分之 (Bài 6) + 申请 (từ mới).'},
    ]},
 
-  {n:21,zh:'餐厅',py:'cāntīng',pos:'Danh từ',vn:'nhà hàng',em:'🍽️',lesson:4,
+  {n:21,zh:'餐厅',py:'cāntīng',pos:'Danh từ',vn:'nhà hàng', hv: 'xan sảnh',em:'🍽️',lesson:4,
    explain:['Nơi phục vụ ăn uống.'],
    usage:'中国餐厅; 在餐厅吃饭; 一家餐厅.',
    collo:['国外的中国餐厅','在餐厅吃饭','一家餐厅'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'提供 (Bài 8) + 使用/详细 (Bài 12).'},
    ]},
 
-  {n:22,zh:'纸袋',py:'zhǐdài',pos:'Danh từ',vn:'túi giấy',em:'🛍️',lesson:4,
+  {n:22,zh:'纸袋',py:'zhǐdài',pos:'Danh từ',vn:'túi giấy', hv: 'chỉ đại',em:'🛍️',lesson:4,
    explain:['Túi làm bằng giấy; 袋(子) = túi nói chung.'],
    usage:'放筷子的纸袋; 一个纸袋; 袋子.',
    collo:['放筷子的纸袋','一个纸袋','塑料袋'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'Câu chữ 把 + 放进.'},
    ]},
 
-  {n:23,zh:'互联网',py:'hùliánwǎng',pos:'Danh từ',vn:'mạng Internet',em:'🌐',lesson:4,
+  {n:23,zh:'互联网',py:'hùliánwǎng',pos:'Danh từ',vn:'mạng Internet', hv: 'hỗ liên võng',em:'🌐',lesson:4,
    explain:['Mạng máy tính toàn cầu.'],
    usage:'在互联网上; 通过互联网; 互联网的发展.',
    collo:['在互联网上进行调查','通过互联网','互联网的发展'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'通过 ôn lại ngữ pháp Bài 9.'},
    ]},
 
-  {n:24,zh:'进行',py:'jìnxíng',pos:'Động từ',vn:'tiến hành, thực hiện',em:'⚙️',lesson:4,
+  {n:24,zh:'进行',py:'jìnxíng',pos:'Động từ',vn:'tiến hành, thực hiện', hv: 'tiến hành',em:'⚙️',lesson:4,
    explain:['Thực hiện hoạt động/công việc nào đó; thường đứng trước động từ hai âm tiết mang tính chính thức (调查, 讨论, 交流…).'],
    usage:'进行 + 调查/讨论/交流/研究; 会议继续进行.',
    collo:['进行过调查','继续进行','进行交流'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'往往 (Bài 8) + 并且 (Bài 12).'},
    ]},
 
-  {n:25,zh:'错误',py:'cuòwù',pos:'Tính từ/Danh từ',vn:'sai; sai lầm',em:'❌',lesson:4,
+  {n:25,zh:'错误',py:'cuòwù',pos:'Tính từ/Danh từ',vn:'sai; sai lầm', hv: 'thác ngộ',em:'❌',lesson:4,
    explain:['Không đúng; hoặc lỗi sai.'],
    usage:'方法是错误的; 错误的选择; 犯错误.',
    collo:['使用筷子的方法是错误的','错误的选择','改正错误'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'正确 (Bài 9) + 使用 (Bài 12).'},
    ]},
 
-  {n:26,zh:'随着',py:'suízhe',pos:'Giới từ',vn:'cùng với, theo (sự thay đổi của…)',em:'📈',lesson:5,
+  {n:26,zh:'随着',py:'suízhe',pos:'Giới từ',vn:'cùng với, theo (sự thay đổi của…)', hv: 'tùy trứ',em:'📈',lesson:5,
    explain:['Chỉ một sự việc là điều kiện để sự việc khác xảy ra; sau 随着 thường là động từ hai âm tiết có bổ nghĩa (……的发展/增长/加深).'],
    usage:'随着 + ……的发展/加深/增长，……',
    collo:['随着社会的发展','随着人们对茶的认识的加深','随着年龄的增长'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'Bài luyện tập SGK (3); 往往 (Bài 8), 理想 (Bài 9).'},
    ]},
 
-  {n:27,zh:'十分',py:'shífēn',pos:'Phó từ',vn:'rất, vô cùng',em:'💯',lesson:5,
+  {n:27,zh:'十分',py:'shífēn',pos:'Phó từ',vn:'rất, vô cùng', hv: 'thập phân',em:'💯',lesson:5,
    explain:['Mức độ cao, tương đương 非常.'],
    usage:'十分 + tính từ: 十分普遍, 十分重要, 十分满意.',
    collo:['十分普遍','十分重要','十分满意'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'养成/阅读 ôn lại từ vựng Bài 11.'},
    ]},
 
-  {n:28,zh:'普遍',py:'pǔbiàn',pos:'Tính từ',vn:'phổ biến',em:'🌏',lesson:5,
+  {n:28,zh:'普遍',py:'pǔbiàn',pos:'Tính từ',vn:'phổ biến', hv: 'phổ biến',em:'🌏',lesson:5,
    explain:['Tồn tại rộng rãi, ở đâu cũng có.'],
    usage:'十分普遍的习惯; 越来越普遍; 普遍现象.',
    collo:['十分普遍的生活习惯','越来越普遍','普遍的现象'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'已经……了 chỉ sự thay đổi.'},
    ]},
 
-  {n:29,zh:'部分',py:'bùfen',pos:'Danh từ',vn:'phần, bộ phận',em:'🧩',lesson:5,
+  {n:29,zh:'部分',py:'bùfen',pos:'Danh từ',vn:'phần, bộ phận', hv: 'bộ phận',em:'🧩',lesson:5,
    explain:['Một phần của toàn thể.'],
    usage:'不可缺少的一部分; 前一部分; 大部分.',
    collo:['生活中不可缺少的一部分','前一部分','大部分人'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'Bài luyện tập 由 SGK (2); 文章 (Bài 11).'},
    ]},
 
-  {n:30,zh:'稍微',py:'shāowēi',pos:'Phó từ',vn:'hơi, một chút',em:'🤏',lesson:5,
+  {n:30,zh:'稍微',py:'shāowēi',pos:'Phó từ',vn:'hơi, một chút', hv: 'sảo vi',em:'🤏',lesson:5,
    explain:['Mức độ nhẹ, số lượng ít.'],
    usage:'稍微 + 有点儿/一点儿: 稍微有点儿苦, 稍微休息一下.',
    collo:['稍微有点儿苦','稍微休息一下','稍微等一会儿'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'仔细 ôn lại từ vựng Bài 12.'},
    ]},
 
-  {n:31,zh:'苦',py:'kǔ',pos:'Tính từ',vn:'đắng; khổ',em:'☕',lesson:5,
+  {n:31,zh:'苦',py:'kǔ',pos:'Tính từ',vn:'đắng; khổ', hv: 'khổ',em:'☕',lesson:5,
    explain:['1. Vị đắng.','2. Khổ cực (辛苦, 吃苦).'],
    usage:'味道有点儿苦; 苦药; 很苦.',
    collo:['味道稍微有点儿苦','凉茶虽然味道苦','良药苦口'],
@@ -685,7 +685,7 @@ var vocabData = [
       note:'糖 ôn lại từ vựng Bài 10.'},
    ]},
 
-  {n:32,zh:'省',py:'shěng',pos:'Danh từ',vn:'tỉnh',em:'🗺️',lesson:5,
+  {n:32,zh:'省',py:'shěng',pos:'Danh từ',vn:'tỉnh', hv: 'tỉnh',em:'🗺️',lesson:5,
    explain:['Đơn vị hành chính cấp cao nhất dưới quốc gia ở Trung Quốc.'],
    usage:'广东省; 一个省; 省会.',
    collo:['广东省','这个省','省会城市'],
@@ -707,7 +707,7 @@ var vocabData = [
       note:'来自 — từ mới của bài.'},
    ]},
 
-  {n:33,zh:'广东省',py:'Guǎngdōng Shěng',pos:'Danh từ riêng',vn:'tỉnh Quảng Đông (Trung Quốc)',em:'📍',lesson:5,
+  {n:33,zh:'广东省',py:'Guǎngdōng Shěng',pos:'Danh từ riêng',vn:'tỉnh Quảng Đông (Trung Quốc)', hv: 'Quảng Đông Tỉnh',em:'📍',lesson:5,
    explain:['Tỉnh ở miền nam Trung Quốc, nổi tiếng với "凉茶" (trà mát) và ẩm thực Quảng Đông.'],
    usage:'Danh từ riêng chỉ địa danh.',
    collo:['广东省的人','广东省的凉茶'],

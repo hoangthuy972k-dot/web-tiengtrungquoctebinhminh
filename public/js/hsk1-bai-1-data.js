@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 1: 你好!
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'你',py:'nǐ',pos:'Đại từ',vn:'anh, chị, bạn (ngôi thứ hai số ít)',em:'👉',lesson:1,
+  {n:1,zh:'你',py:'nǐ',pos:'Đại từ',vn:'anh, chị, bạn (ngôi thứ hai số ít)', hv: 'nhĩ',em:'👉',lesson:1,
    ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn!',
    exList:[
      {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'亻(người) đứng cạnh 尔(âm cổ chỉ "ngươi") → dùng để gọi NGƯỜI ĐANG NÓI CHUYỆN với mình.',
       cf:'休 (xiū – "nghỉ ngơi", cũng có bộ 亻)',w:'你好 / 你们 / 你是'},
    ]},
-  {n:2,zh:'好',py:'hǎo',pos:'Tính từ',vn:'khỏe, tốt',em:'👍',lesson:1,
+  {n:2,zh:'好',py:'hǎo',pos:'Tính từ',vn:'khỏe, tốt', hv: 'hảo',em:'👍',lesson:1,
    ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn! (bạn khỏe không / chào)',
    exList:[
      {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
@@ -25,7 +25,7 @@ var vocabData = [
       tip:'女(mẹ) đứng cạnh 子(con) → hình ảnh MẸ CON sum vầy = TỐT ĐẸP.',
       cf:'如 (rú – "như", cũng có bộ 女")',w:'你好 / 您好 / 你们好'},
    ]},
-  {n:3,zh:'您',py:'nín',pos:'Đại từ',vn:'ông, bà, ngài (kính trọng)',em:'🙇',lesson:1,
+  {n:3,zh:'您',py:'nín',pos:'Đại từ',vn:'ông, bà, ngài (kính trọng)', hv: 'nâm',em:'🙇',lesson:1,
    ex_zh:'您好！',ex_py:'Nín hǎo!',ex_vn:'Chào ngài!',
    exList:[
      {zh:'您好！',py:'Nín hǎo!',vn:'Chào ngài!'},
@@ -35,7 +35,7 @@ var vocabData = [
       tip:'Thêm bộ 心(trái tim) xuống dưới chữ 你 → dùng CẢ TẤM LÒNG để bày tỏ sự TÔN KÍNH khi xưng hô.',
       cf:'念 (niàn – "tưởng nhớ", cũng có bộ 心")',w:'您好 / 谢谢您'},
    ]},
-  {n:4,zh:'你们',py:'nǐmen',pos:'Đại từ',vn:'các anh, các chị, các bạn (số nhiều)',em:'👥',lesson:1,
+  {n:4,zh:'你们',py:'nǐmen',pos:'Đại từ',vn:'các anh, các chị, các bạn (số nhiều)', hv: 'nhĩ môn',em:'👥',lesson:1,
    ex_zh:'你们好！',ex_py:'Nǐmen hǎo!',ex_vn:'Chào các anh/chị!',
    exList:[
      {zh:'你们好！',py:'Nǐmen hǎo!',vn:'Chào các anh/chị!'},
@@ -45,7 +45,7 @@ var vocabData = [
       tip:'亻(người) đứng cạnh 门(cửa) → nhiều người cùng qua MỘT CÁNH CỬA = biểu thị SỐ NHIỀU.',
       cf:'门 (mén – "cửa")',w:'你们好'},
    ]},
-  {n:5,zh:'对不起',py:'duìbuqǐ',pos:'Động từ',vn:'xin lỗi',em:'🙏',lesson:2,
+  {n:5,zh:'对不起',py:'duìbuqǐ',pos:'Động từ',vn:'xin lỗi', hv: 'đối bất khởi',em:'🙏',lesson:2,
    ex_zh:'对不起！',ex_py:'Duìbuqǐ!',ex_vn:'Xin lỗi!',
    exList:[
      {zh:'对不起！',py:'Duìbuqǐ!',vn:'Xin lỗi!'},
@@ -61,7 +61,7 @@ var vocabData = [
       tip:'走(đi) + 己(bản thân) → tự mình đứng dậy; ở đây ghép với 对不 thành cụm từ cố định XIN LỖI.',
       cf:'己 (jǐ – "bản thân")',w:'对不起'},
    ]},
-  {n:6,zh:'没关系',py:'méi guānxi',pos:'Cụm từ',vn:'không sao đâu, không có vấn đề gì',em:'🤝',lesson:2,
+  {n:6,zh:'没关系',py:'méi guānxi',pos:'Cụm từ',vn:'không sao đâu, không có vấn đề gì', hv: 'một quan hệ',em:'🤝',lesson:2,
    ex_zh:'没关系！',ex_py:'Méi guānxi!',ex_vn:'Không sao đâu!',
    exList:[
      {zh:'没关系！',py:'Méi guānxi!',vn:'Không sao đâu!'},

@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '开学', py: 'kāixué', pos: 'Động từ', vn: 'khai giảng, vào năm học', em: '🏫', img: '/images/hsk2v3-bai-10/kaixue.jpg', lesson: 1,
+    n: 1, zh: '开学', py: 'kāixué', pos: 'Động từ', vn: 'khai giảng, vào năm học', hv: 'khai học', em: '🏫', img: '/images/hsk2v3-bai-10/kaixue.jpg', lesson: 1,
     ex_zh: '小明，你们明天开学，你准备好了吗？', ex_py: 'Xiǎomíng, nǐmen míngtiān kāixué, nǐ zhǔnbèi hǎo le ma?', ex_vn: 'Tiểu Minh, ngày mai khai giảng rồi, con đã chuẩn bị xong chưa?',
     exList: [
       { zh: '小明，你们明天开学，你准备好了吗？', py: 'Xiǎomíng, nǐmen míngtiān kāixué, nǐ zhǔnbèi hǎo le ma?', vn: 'Tiểu Minh, ngày mai khai giảng rồi, con đã chuẩn bị xong chưa?' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '学', p: 'xué', type: '会意字 · Chữ hội ý', st: 8, ord: '⺍ → 冖 → 子', rad: '子 (tử – con)', mean: 'học', tip: '开学 = mở đầu năm học; 上学 = đi học.', cf: '', w: '开学 / 上学 / 学生' }]
   },
   {
-    n: 2, zh: '门', py: 'mén', pos: 'Danh từ', vn: 'cửa', em: '🚪', img: '/images/hsk2v3-bai-10/men.jpg', lesson: 1,
+    n: 2, zh: '门', py: 'mén', pos: 'Danh từ', vn: 'cửa', hv: 'môn', em: '🚪', img: '/images/hsk2v3-bai-10/men.jpg', lesson: 1,
     ex_zh: '书包在门后面。', ex_py: 'Shūbāo zài mén hòumiàn.', ex_vn: 'Nó ở phía sau cửa.',
     exList: [
       { zh: '书包在门后面。', py: 'Shūbāo zài mén hòumiàn.', vn: 'Nó ở phía sau cửa.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '门', p: 'mén', type: '象形字 · Chữ tượng hình', st: 3, ord: '丶 → 丨 → 乛', rad: '门 (môn – cửa)', mean: 'cửa', tip: 'Ôn lại 门口 (bài 9): chỗ cửa ra vào.', cf: '', w: '门 / 门口 / 开门' }]
   },
   {
-    n: 3, zh: '后面', py: 'hòumiàn', pos: 'Danh từ', vn: 'phía sau, đằng sau', em: '⬇️', img: '/images/hsk2v3-bai-10/houmian.jpg', lesson: 1,
+    n: 3, zh: '后面', py: 'hòumiàn', pos: 'Danh từ', vn: 'phía sau, đằng sau', hv: 'hậu diện', em: '⬇️', img: '/images/hsk2v3-bai-10/houmian.jpg', lesson: 1,
     ex_zh: '书包在门后面。', ex_py: 'Shūbāo zài mén hòumiàn.', ex_vn: 'Cặp sách ở phía sau cửa.',
     exList: [
       { zh: '书包在门后面。', py: 'Shūbāo zài mén hòumiàn.', vn: 'Cặp sách ở phía sau cửa.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '后', p: 'hòu', type: '会意字 · Chữ hội ý', st: 6, ord: '厂 → 一 → 口', rad: '口 (khẩu)', mean: 'sau', tip: 'Cùng nhóm phương vị với 旁边 (bài 9), 左边/右边 (bài 8).', cf: '前面 (qiánmiàn – phía trước)', w: '后面 / 以后 / 后边' }]
   },
   {
-    n: 4, zh: '笔', py: 'bǐ', pos: 'Danh từ', vn: 'bút, cây viết', em: '🖊️', img: '/images/hsk2v3-bai-10/bi.jpg', lesson: 1,
+    n: 4, zh: '笔', py: 'bǐ', pos: 'Danh từ', vn: 'bút, cây viết', hv: 'bút', em: '🖊️', img: '/images/hsk2v3-bai-10/bi.jpg', lesson: 1,
     ex_zh: '书在床上，笔在桌子上。', ex_py: 'Shū zài chuáng shang, bǐ zài zhuōzi shang.', ex_vn: 'Sách ở trên giường, bút ở trên bàn.',
     exList: [
       { zh: '书在床上，笔在桌子上。', py: 'Shū zài chuáng shang, bǐ zài zhuōzi shang.', vn: 'Sách ở trên giường, bút ở trên bàn.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '笔', p: 'bǐ', type: '会意字 · Chữ hội ý', st: 10, ord: '⺮ → 毛', rad: '⺮ (trúc – tre)', mean: 'bút', tip: 'Ôn lại 画笔 (bài 6) — bút vẽ.', cf: '', w: '笔 / 画笔 / 铅笔' }]
   },
   {
-    n: 5, zh: '帮', py: 'bāng', pos: 'Động từ', vn: 'giúp, giúp đỡ', em: '🤝', img: '/images/hsk2v3-bai-10/bang.jpg', lesson: 1,
+    n: 5, zh: '帮', py: 'bāng', pos: 'Động từ', vn: 'giúp, giúp đỡ', hv: 'bang', em: '🤝', img: '/images/hsk2v3-bai-10/bang.jpg', lesson: 1,
     ex_zh: '这次爸爸帮你，下次你自己准备，好不好？', ex_py: 'Zhè cì bàba bāng nǐ, xià cì nǐ zìjǐ zhǔnbèi, hǎo bu hǎo?', ex_vn: 'Lần này bố đã giúp con. Lần sau con phải tự chuẩn bị nhé, được không?',
     exList: [
       { zh: '这次爸爸帮你，下次你自己准备，好不好？', py: 'Zhè cì bàba bāng nǐ, xià cì nǐ zìjǐ zhǔnbèi, hǎo bu hǎo?', vn: 'Lần này bố đã giúp con. Lần sau con phải tự chuẩn bị nhé, được không?' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '帮', p: 'bāng', type: '形声字 · Chữ hình thanh', st: 9, ord: '邦 → 巾', rad: '巾 (cân – khăn)', mean: 'giúp đỡ', tip: '帮 + người + làm việc gì: 帮我买、帮他准备.', cf: '', w: '帮 / 帮我 / 帮助' }]
   },
   {
-    n: 6, zh: '考试', py: 'kǎoshì', pos: 'Động từ / Danh từ', vn: 'thi, kiểm tra; kỳ thi', em: '📝', img: '/images/hsk2v3-bai-10/kaoshi.jpg', lesson: 2,
+    n: 6, zh: '考试', py: 'kǎoshì', pos: 'Động từ / Danh từ', vn: 'thi, kiểm tra; kỳ thi', hv: 'khảo thí', em: '📝', img: '/images/hsk2v3-bai-10/kaoshi.jpg', lesson: 2,
     ex_zh: '明天考试，我在看书呢。', ex_py: 'Míngtiān kǎoshì, wǒ zài kàn shū ne.', ex_vn: 'Ngày mai con thi, nên con đang học bài.',
     exList: [
       { zh: '明天考试，我在看书呢。', py: 'Míngtiān kǎoshì, wǒ zài kàn shū ne.', vn: 'Ngày mai con thi, nên con đang học bài.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '试', p: 'shì', type: '形声字 · Chữ hình thanh', st: 8, ord: '讠 → 式', rad: '讠 (ngôn – lời nói)', mean: 'thử; thi', tip: '考试 vừa là động từ vừa là danh từ; 试 cũng có trong 试试 (thử).', cf: '', w: '考试 / 准备考试 / 试试' }]
   },
   {
-    n: 7, zh: '词', py: 'cí', pos: 'Danh từ', vn: 'từ (từ vựng)', em: '🔤', img: '/images/hsk2v3-bai-10/ci.jpg', lesson: 2,
+    n: 7, zh: '词', py: 'cí', pos: 'Danh từ', vn: 'từ (từ vựng)', hv: 'từ', em: '🔤', img: '/images/hsk2v3-bai-10/ci.jpg', lesson: 2,
     ex_zh: '这些词要好好看看。', ex_py: 'Zhèxiē cí yào hǎohāo kànkan.', ex_vn: 'Con nên xem lại những từ này thật kỹ nhé.',
     exList: [
       { zh: '这些词要好好看看。', py: 'Zhèxiē cí yào hǎohāo kànkan.', vn: 'Con nên xem lại những từ này thật kỹ nhé.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '词', p: 'cí', type: '形声字 · Chữ hình thanh', st: 7, ord: '讠 → 司', rad: '讠 (ngôn – lời nói)', mean: 'từ, lời', tip: '生词 = từ mới — chính là phần 生词 trong sách.', cf: '', w: '词 / 生词 / 词语' }]
   },
   {
-    n: 8, zh: '本子', py: 'běnzi', pos: 'Danh từ', vn: 'vở, tập ghi chép', em: '📓', img: '/images/hsk2v3-bai-10/benzi.jpg', lesson: 2,
+    n: 8, zh: '本子', py: 'běnzi', pos: 'Danh từ', vn: 'vở, tập ghi chép', hv: 'bản tử', em: '📓', img: '/images/hsk2v3-bai-10/benzi.jpg', lesson: 2,
     ex_zh: '你的本子呢？本子上做错的题也要看一看。', ex_py: 'Nǐ de běnzi ne? Běnzi shang zuòcuò de tí yě yào kàn yi kàn.', ex_vn: 'Vở của con đâu? Những câu làm sai trong vở con cũng cần xem lại nhé.',
     exList: [
       { zh: '你的本子呢？本子上做错的题也要看一看。', py: 'Nǐ de běnzi ne? Běnzi shang zuòcuò de tí yě yào kàn yi kàn.', vn: 'Vở của con đâu? Những câu làm sai trong vở con cũng cần xem lại nhé.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '本', p: 'běn', type: '指事字 · Chữ chỉ sự', st: 5, ord: '木 → 一', rad: '木 (mộc – cây)', mean: 'gốc; quyển', tip: '本 cũng là lượng từ của sách: 一本书.', cf: '', w: '本子 / 一本书 / 课本' }]
   },
   {
-    n: 9, zh: '错', py: 'cuò', pos: 'Tính từ', vn: 'sai, nhầm', em: '❌', img: '/images/hsk2v3-bai-10/cuo.jpg', lesson: 2,
+    n: 9, zh: '错', py: 'cuò', pos: 'Tính từ', vn: 'sai, nhầm', hv: 'thác', em: '❌', img: '/images/hsk2v3-bai-10/cuo.jpg', lesson: 2,
     ex_zh: '本子上做错的题也要看一看。', ex_py: 'Běnzi shang zuòcuò de tí yě yào kàn yi kàn.', ex_vn: 'Những câu làm sai trong vở cũng cần xem lại.',
     exList: [
       { zh: '本子上做错的题也要看一看。', py: 'Běnzi shang zuòcuò de tí yě yào kàn yi kàn.', vn: 'Những câu làm sai trong vở cũng cần xem lại.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '错', p: 'cuò', type: '形声字 · Chữ hình thanh', st: 13, ord: '钅 → 昔', rad: '钅 (kim – kim loại)', mean: 'sai, nhầm', tip: '不错 nghĩa là "khá tốt", không phải "không sai".', cf: '对 (duì – đúng)', w: '错 / 做错 / 写错 / 不错' }]
   },
   {
-    n: 10, zh: '题', py: 'tí', pos: 'Danh từ', vn: 'câu hỏi, bài tập, đề', em: '❓', img: '/images/hsk2v3-bai-10/ti.jpg', lesson: 2,
+    n: 10, zh: '题', py: 'tí', pos: 'Danh từ', vn: 'câu hỏi, bài tập, đề', hv: 'đề', em: '❓', img: '/images/hsk2v3-bai-10/ti.jpg', lesson: 2,
     ex_zh: '本子上做错的题也要看一看。', ex_py: 'Běnzi shang zuòcuò de tí yě yào kàn yi kàn.', ex_vn: 'Những câu làm sai trong vở cũng cần xem lại.',
     exList: [
       { zh: '本子上做错的题也要看一看。', py: 'Běnzi shang zuòcuò de tí yě yào kàn yi kàn.', vn: 'Những câu làm sai trong vở cũng cần xem lại.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '题', p: 'tí', type: '形声字 · Chữ hình thanh', st: 15, ord: '是 → 页', rad: '页 (hiệt – đầu)', mean: 'đề, câu hỏi', tip: '做题 = làm bài tập; 做错题 = làm sai bài.', cf: '', w: '题 / 做题 / 问题' }]
   },
   {
-    n: 11, zh: '还是', py: 'háishi', pos: 'Liên từ', vn: 'hay, hay là (trong câu hỏi lựa chọn)', em: '🔀', lesson: 2,
+    n: 11, zh: '还是', py: 'háishi', pos: 'Liên từ', vn: 'hay, hay là (trong câu hỏi lựa chọn)', hv: 'hoàn thị', em: '🔀', lesson: 2,
     ex_zh: '妈妈，是您准备考试还是我准备考试？', ex_py: 'Māma, shì nín zhǔnbèi kǎoshì háishi wǒ zhǔnbèi kǎoshì?', ex_vn: 'Mẹ ơi, là mẹ chuẩn bị thi hay là con chuẩn bị thi vậy?',
     exList: [
       { zh: '妈妈，是您准备考试还是我准备考试？', py: 'Māma, shì nín zhǔnbèi kǎoshì háishi wǒ zhǔnbèi kǎoshì?', vn: 'Mẹ ơi, là mẹ chuẩn bị thi hay là con chuẩn bị thi vậy?' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '还', p: 'hái', type: '形声字 · Chữ hình thanh', st: 7, ord: '不 → 辶', rad: '辶 (sước – đi)', mean: 'còn, vẫn; hay là', tip: '还是 trong câu hỏi = "hay là"; trong câu trần thuật = "vẫn nên".', cf: '或者 (huòzhě – hoặc, dùng trong câu trần thuật)', w: '还是 / A还是B / 还有' }]
   },
   {
-    n: 12, zh: '考', py: 'kǎo', pos: 'Động từ', vn: 'thi, kiểm tra', em: '✏️', img: '/images/hsk2v3-bai-10/kao.jpg', lesson: 3,
+    n: 12, zh: '考', py: 'kǎo', pos: 'Động từ', vn: 'thi, kiểm tra', hv: 'khảo', em: '✏️', img: '/images/hsk2v3-bai-10/kao.jpg', lesson: 3,
     ex_zh: '今天考试考得怎么样？', ex_py: 'Jīntiān kǎoshì kǎo de zěnmeyàng?', ex_vn: 'Hôm nay con thi thế nào?',
     exList: [
       { zh: '今天考试考得怎么样？', py: 'Jīntiān kǎoshì kǎo de zěnmeyàng?', vn: 'Hôm nay con thi thế nào?' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '考', p: 'kǎo', type: '形声字 · Chữ hình thanh', st: 6, ord: '土 → 丿 → 万', rad: '耂 (lão)', mean: 'thi, khảo', tip: '考试 là từ li hợp: 考试考得怎么样 (ôn bài 7).', cf: '', w: '考 / 考试 / 考得好' }]
   },
   {
-    n: 13, zh: '快要', py: 'kuàiyào', pos: 'Phó từ', vn: 'sắp, chuẩn bị', em: '⏳', lesson: 3,
+    n: 13, zh: '快要', py: 'kuàiyào', pos: 'Phó từ', vn: 'sắp, chuẩn bị', hv: 'khoái yếu', em: '⏳', lesson: 3,
     ex_zh: '饭菜快要做好了。', ex_py: 'Fàncài kuàiyào zuòhǎo le.', ex_vn: 'Cơm sắp nấu xong rồi.',
     exList: [
       { zh: '饭菜快要做好了。', py: 'Fàncài kuàiyào zuòhǎo le.', vn: 'Cơm sắp nấu xong rồi.' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '快', p: 'kuài', type: '形声字 · Chữ hình thanh', st: 7, ord: '忄 → 夬', rad: '忄 (tâm)', mean: 'nhanh; sắp', tip: '快要……了 / 就要……了 — luôn có 了 ở cuối câu.', cf: '就要 (jiù yào)', w: '快要 / 快要……了 / 很快' }]
   },
   {
-    n: 14, zh: '笑', py: 'xiào', pos: 'Động từ', vn: 'cười', em: '😄', img: '/images/hsk2v3-bai-10/xiao.jpg', lesson: 4,
+    n: 14, zh: '笑', py: 'xiào', pos: 'Động từ', vn: 'cười', hv: 'tiếu', em: '😄', img: '/images/hsk2v3-bai-10/xiao.jpg', lesson: 4,
     ex_zh: '我问完，他们都笑了。', ex_py: 'Wǒ wènwán, tāmen dōu xiào le.', ex_vn: 'Tôi hỏi xong, cả hai đều bật cười.',
     exList: [
       { zh: '我问完，他们都笑了。', py: 'Wǒ wènwán, tāmen dōu xiào le.', vn: 'Tôi hỏi xong, cả hai đều bật cười.' },

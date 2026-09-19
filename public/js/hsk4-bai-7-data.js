@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'流血',py:'liúxiě',pos:'Động từ',vn:'chảy máu',em:'🩸',lesson:1,
+  {n:1,zh:'流血',py:'liúxiě',pos:'Động từ',vn:'chảy máu', hv: 'lưu huyết',em:'🩸',lesson:1,
    explain:['Máu chảy ra khỏi cơ thể do vết thương hoặc nguyên nhân khác.'],
    usage:'Động từ ly hợp; thường đi với 鼻子流血了, 流了很多血.',
    collo:['鼻子流血了','流血了','流了很多血'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'还在流血 — vẫn đang chảy máu.'},
    ]},
 
-  {n:2,zh:'擦',py:'cā',pos:'Động từ',vn:'lau, chùi',em:'🧻',lesson:1,
+  {n:2,zh:'擦',py:'cā',pos:'Động từ',vn:'lau, chùi', hv: 'sát',em:'🧻',lesson:1,
    explain:['Dùng vật gì đó chà xát để làm sạch/khô một bề mặt.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 用纸擦擦, 擦干净.',
    collo:['用纸擦擦','擦干净','擦桌子'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'擦干净 kết hợp 窗户, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:3,zh:'气候',py:'qìhòu',pos:'Danh từ',vn:'khí hậu',em:'🌤️',lesson:1,
+  {n:3,zh:'气候',py:'qìhòu',pos:'Danh từ',vn:'khí hậu', hv: 'khí hậu',em:'🌤️',lesson:1,
    explain:['Điều kiện thời tiết đặc trưng của một vùng trong thời gian dài.'],
    usage:'Danh từ; thường đi với 不习惯……气候, 气候变化.',
    collo:['不习惯气候','北方的气候','气候变化'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'气候变化 — biến đổi khí hậu.'},
    ]},
 
-  {n:4,zh:'估计',py:'gūjì',pos:'Động từ',vn:'đoán chừng, dự đoán',em:'🤔',lesson:1,
+  {n:4,zh:'估计',py:'gūjì',pos:'Động từ',vn:'đoán chừng, dự đoán', hv: 'cổ kế',em:'🤔',lesson:1,
    explain:['Đưa ra suy đoán chung chung về sự vật dựa vào những điều kiện nào đó.'],
    usage:'Động từ, có thể làm vị ngữ trực tiếp, mang động từ/mệnh đề: 估计是……, 估计他……',
    collo:['估计是','估计他','估计不错'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'估计 + thời gian + 才能到 — đoán chừng đến mấy giờ mới đến.'},
    ]},
 
-  {n:5,zh:'咳嗽',py:'késou',pos:'Động từ',vn:'ho',em:'🤧',lesson:1,
+  {n:5,zh:'咳嗽',py:'késou',pos:'Động từ',vn:'ho', hv: 'khái thấu',em:'🤧',lesson:1,
    explain:['Hành động ho do bệnh đường hô hấp.'],
    usage:'Động từ; thường đi với 咳嗽好点儿了吗, 我只是咳嗽.',
    collo:['咳嗽好点儿了吗','只是咳嗽','一直咳嗽'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'总是咳嗽 — cứ ho mãi.'},
    ]},
 
-  {n:6,zh:'严重',py:'yánzhòng',pos:'Tính từ',vn:'nghiêm trọng',em:'⚠️',lesson:1,
+  {n:6,zh:'严重',py:'yánzhòng',pos:'Tính từ',vn:'nghiêm trọng', hv: 'nghiêm trọng',em:'⚠️',lesson:1,
    explain:['Ở mức độ nặng, đáng lo ngại.'],
    usage:'Tính từ; thường đi với 不严重, 严重的问题.',
    collo:['不严重','很严重','严重的问题'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'变得严重 — trở nên nghiêm trọng.'},
    ]},
 
-  {n:7,zh:'窗户',py:'chuānghu',pos:'Danh từ',vn:'cửa sổ',em:'🪟',lesson:1,
+  {n:7,zh:'窗户',py:'chuānghu',pos:'Danh từ',vn:'cửa sổ', hv: 'song hộ',em:'🪟',lesson:1,
    explain:['Bộ phận trên tường để lấy ánh sáng/thông gió.'],
    usage:'Danh từ; thường đi với 打开窗户, 换换空气.',
    collo:['打开窗户','关窗户','窗户换换空气'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'把窗户打开 — mở cửa sổ ra.'},
    ]},
 
-  {n:8,zh:'空气',py:'kōngqì',pos:'Danh từ',vn:'không khí',em:'💨',lesson:1,
+  {n:8,zh:'空气',py:'kōngqì',pos:'Danh từ',vn:'không khí', hv: 'không khí',em:'💨',lesson:1,
    explain:['Chất khí bao quanh trái đất, cần thiết cho hô hấp.'],
    usage:'Danh từ; thường đi với 换换空气, 空气好.',
    collo:['换换空气','空气好','空气新鲜'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'气候/空气 kết hợp nhiều từ vựng của bài.'},
    ]},
 
-  {n:9,zh:'抽烟',py:'chōuyān',pos:'Động từ',vn:'hút thuốc',em:'🚬',lesson:2,
+  {n:9,zh:'抽烟',py:'chōuyān',pos:'Động từ',vn:'hút thuốc', hv: 'trừu yên',em:'🚬',lesson:2,
    explain:['Hành động hút thuốc lá.'],
    usage:'Động từ ly hợp; thường đi với 不要再抽烟了, 抽烟这个动作.',
    collo:['不要再抽烟了','抽烟对身体','别再抽了'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'反对……抽烟 kết hợp 反对, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:10,zh:'动作',py:'dòngzuò',pos:'Danh từ',vn:'động tác, hành động',em:'🤸',lesson:2,
+  {n:10,zh:'动作',py:'dòngzuò',pos:'Danh từ',vn:'động tác, hành động', hv: 'động tác',em:'🤸',lesson:2,
    explain:['Cử chỉ/hành vi của cơ thể.'],
    usage:'Danh từ; thường đi với 这个动作, 每个动作.',
    collo:['这个动作','每个动作','动作看上去'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'每个动作都做好 — mỗi động tác đều làm tốt.'},
    ]},
 
-  {n:11,zh:'帅',py:'shuài',pos:'Tính từ',vn:'đẹp trai, ngầu',em:'😎',lesson:2,
+  {n:11,zh:'帅',py:'shuài',pos:'Tính từ',vn:'đẹp trai, ngầu', hv: 'soái',em:'😎',lesson:2,
    explain:['Vẻ ngoài/phong thái đẹp, cuốn hút.'],
    usage:'Tính từ; thường đi với 看上去很帅, 长得帅.',
    collo:['看上去很帅','长得帅','很帅气'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'看上去很帅 kết hợp 动作, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:12,zh:'出现',py:'chūxiàn',pos:'Động từ',vn:'xuất hiện, nảy sinh',em:'✨',lesson:2,
+  {n:12,zh:'出现',py:'chūxiàn',pos:'Động từ',vn:'xuất hiện, nảy sinh', hv: 'xuất hiện',em:'✨',lesson:2,
    explain:['Bắt đầu tồn tại, hiện ra.'],
    usage:'Động từ; thường đi với 出现问题, 出现在.',
    collo:['出现问题','身体出现问题','出现情况'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'出现问题 kết hợp 任何, ôn lại từ vựng Bài 5.'},
    ]},
 
-  {n:13,zh:'后悔',py:'hòuhuǐ',pos:'Động từ',vn:'ân hận, hối hận',em:'😔',lesson:2,
+  {n:13,zh:'后悔',py:'hòuhuǐ',pos:'Động từ',vn:'ân hận, hối hận', hv: 'hậu hối',em:'😔',lesson:2,
    explain:['Cảm giác tiếc nuối về việc đã làm/không làm trước đó.'],
    usage:'Động từ; thường đi với 后悔就来不及了, 让你后悔.',
    collo:['后悔就来不及了','让你后悔','别后悔'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'以免……后悔 — để tránh hối hận sau này.'},
    ]},
 
-  {n:14,zh:'来不及',py:'láibují',pos:'Động từ',vn:'không kịp',em:'⏰',lesson:2,
+  {n:14,zh:'来不及',py:'láibují',pos:'Động từ',vn:'không kịp', hv: 'lai bất cập',em:'⏰',lesson:2,
    explain:['Diễn tả việc vì thời gian ngắn nên không kịp làm gì đó. Có thể dùng độc lập hoặc mang động từ theo sau.'],
    usage:'来不及 (đứng một mình); 来不及 + động từ.',
    collo:['来不及了','来不及开会','来不及做'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'等……才……就来不及了 kết hợp 严重, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:15,zh:'反对',py:'fǎnduì',pos:'Động từ',vn:'phản đối',em:'🙅‍♂️',lesson:2,
+  {n:15,zh:'反对',py:'fǎnduì',pos:'Động từ',vn:'phản đối', hv: 'phản đối',em:'🙅‍♂️',lesson:2,
    explain:['Không đồng ý, phản kháng lại một ý kiến/hành động.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 反对我抽烟, 反对这个计划.',
    collo:['反对我抽烟','一直反对','反对这个计划'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'本来以为……没想到……支持 kết hợp 以为/支持, ôn lại nhiều từ vựng Bài 4/6.'},
    ]},
 
-  {n:16,zh:'大夫',py:'dàifu',pos:'Danh từ',vn:'bác sĩ',em:'👨‍⚕️',lesson:3,
+  {n:16,zh:'大夫',py:'dàifu',pos:'Danh từ',vn:'bác sĩ', hv: 'đại phu',em:'👨‍⚕️',lesson:3,
    explain:['Người khám chữa bệnh (cách gọi khẩu ngữ của 医生).'],
    usage:'Danh từ; thường đi với 大夫说, 看大夫.',
    collo:['大夫说','看大夫','大夫告诉我'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'大夫说不严重 kết hợp 严重, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:17,zh:'植物',py:'zhíwù',pos:'Danh từ',vn:'thực vật',em:'🌿',lesson:3,
+  {n:17,zh:'植物',py:'zhíwù',pos:'Danh từ',vn:'thực vật', hv: 'thực vật',em:'🌿',lesson:3,
    explain:['Sinh vật sống bằng quang hợp như cây cối, hoa cỏ.'],
    usage:'Danh từ; thường đi với 绿色的植物, 看看植物.',
    collo:['绿色的植物','多看看植物','养植物'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'养植物 — trồng cây cảnh.'},
    ]},
 
-  {n:18,zh:'研究',py:'yánjiū',pos:'Động từ',vn:'nghiên cứu',em:'🔬',lesson:3,
+  {n:18,zh:'研究',py:'yánjiū',pos:'Động từ',vn:'nghiên cứu', hv: 'nghiên cứu',em:'🔬',lesson:3,
    explain:['Tìm hiểu sâu, khảo sát một vấn đề khoa học.'],
    usage:'Động từ/danh từ; thường đi với 研究发现, 做研究.',
    collo:['研究发现','做研究','研究显示'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'读研究生 kết hợp 考虑, ôn lại từ vựng Bài 5.'},
    ]},
 
-  {n:19,zh:'超过',py:'chāoguò',pos:'Động từ',vn:'vượt quá',em:'📈',lesson:3,
+  {n:19,zh:'超过',py:'chāoguò',pos:'Động từ',vn:'vượt quá', hv: 'siêu quá',em:'📈',lesson:3,
    explain:['Vượt lên trên một mức/giới hạn nào đó.'],
    usage:'Động từ, mang số lượng làm tân ngữ: 超过6小时, 超过一半.',
    collo:['超过6小时','超过一半','超过三分之二'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'超过了三分之二 — vượt quá hai phần ba.'},
    ]},
 
-  {n:20,zh:'散步',py:'sànbù',pos:'Động từ',vn:'đi dạo',em:'🚶',lesson:3,
+  {n:20,zh:'散步',py:'sànbù',pos:'Động từ',vn:'đi dạo', hv: 'tán bộ',em:'🚶',lesson:3,
    explain:['Đi bộ thong thả, thư giãn.'],
    usage:'Động từ ly hợp, hay dùng dạng lặp AAB: 散散步.',
    collo:['去散散步','散散步吧','出去散步'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'既可以……又可以…… — ôn lại điểm ngữ pháp của bài, kết hợp 减肥.'},
    ]},
 
-  {n:21,zh:'指',py:'zhǐ',pos:'Động từ',vn:'chỉ về, nói đến',em:'👉',lesson:4,
+  {n:21,zh:'指',py:'zhǐ',pos:'Động từ',vn:'chỉ về, nói đến', hv: 'chỉ',em:'👉',lesson:4,
    explain:['Chỉ đến, đề cập đến một điều gì đó cụ thể.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 是指, 还指.',
    collo:['是指','还指','指的是'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'是指…… — là chỉ về…, ôn lại từ vựng 浪费 Bài 5.'},
    ]},
 
-  {n:22,zh:'精神',py:'jīngshén',pos:'Danh từ',vn:'tinh thần',em:'🧠',lesson:4,
+  {n:22,zh:'精神',py:'jīngshén',pos:'Danh từ',vn:'tinh thần', hv: 'tinh thần',em:'🧠',lesson:4,
    explain:['Trạng thái tâm lý, ý chí của con người (đối lập với thể xác).'],
    usage:'Danh từ; thường đi với 精神上的健康, 精神状态.',
    collo:['精神上的健康','精神状态','精神愉快'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'精神好多了 kết hợp 散步, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:23,zh:'教授',py:'jiàoshòu',pos:'Danh từ',vn:'giáo sư',em:'🎓',lesson:4,
+  {n:23,zh:'教授',py:'jiàoshòu',pos:'Danh từ',vn:'giáo sư', hv: 'giáo thụ',em:'🎓',lesson:4,
    explain:['Học hàm cao nhất trong hệ thống giảng dạy đại học.'],
    usage:'Danh từ; thường đi với 一位教授, 教授说.',
    collo:['一位教授','教授用数字','王教授'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'一位教授 kết hợp 精神, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:24,zh:'数字',py:'shùzì',pos:'Danh từ',vn:'con số',em:'🔢',lesson:4,
+  {n:24,zh:'数字',py:'shùzì',pos:'Danh từ',vn:'con số', hv: 'số tự',em:'🔢',lesson:4,
    explain:['Ký hiệu biểu thị số lượng.'],
    usage:'Danh từ; thường đi với 用数字, 这个数字.',
    collo:['用数字','这个数字','数字说明'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'数字说明了…… kết hợp 说明/严重, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:25,zh:'说明',py:'shuōmíng',pos:'Động từ',vn:'giải thích rõ, nói rõ',em:'📢',lesson:4,
+  {n:25,zh:'说明',py:'shuōmíng',pos:'Động từ',vn:'giải thích rõ, nói rõ', hv: 'thuyết minh',em:'📢',lesson:4,
    explain:['Trình bày, làm rõ ý nghĩa của một vấn đề.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 用……来说明, 说明问题.',
    collo:['用数字来说明','说明问题','说明情况'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'说明情况 kết hợp 情况, ôn lại từ vựng Bài 6.'},
    ]},
 
-  {n:26,zh:'要是',py:'yàoshi',pos:'Liên từ',vn:'nếu như, nếu',em:'❓',lesson:4,
+  {n:26,zh:'要是',py:'yàoshi',pos:'Liên từ',vn:'nếu như, nếu', hv: 'yếu thị',em:'❓',lesson:4,
    explain:['Diễn tả giả thiết, thường dùng cấu trúc "要是……(的话)，就……". Vế 要是 nêu giả thiết, vế 就 nêu hành động/kết quả xảy ra trong tình huống giả thiết đó.'],
    usage:'要是 + giả thiết + (的话)，就 + kết quả.',
    collo:['要是……就……','要是……的话','要是有时间'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'要是……的话，那么……也…… kết hợp 值得, ôn lại từ vựng Bài 6.'},
    ]},
 
-  {n:27,zh:'既',py:'jì',pos:'Phó từ',vn:'vừa… (kết hợp với 又/也/还)',em:'➕',lesson:5,
+  {n:27,zh:'既',py:'jì',pos:'Phó từ',vn:'vừa… (kết hợp với 又/也/还)', hv: 'ký',em:'➕',lesson:5,
    explain:['Phó từ dùng kết hợp với 又/也/还 để nối hai cấu trúc động từ/tính từ, diễn tả hai tình huống cùng tồn tại (đều tích cực hoặc đều tiêu cực).'],
    usage:'既 + cấu trúc 1，又/也/还 + cấu trúc 2 (giống nhau về hình thức).',
    collo:['既可以……又可以……','既……也……','既……还……'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'既……又…… kết hợp 责任, ôn lại từ vựng Bài 3.'},
    ]},
 
-  {n:28,zh:'减肥',py:'jiǎnféi',pos:'Động từ',vn:'giảm cân',em:'⚖️',lesson:5,
+  {n:28,zh:'减肥',py:'jiǎnféi',pos:'Động từ',vn:'giảm cân', hv: 'giảm phì',em:'⚖️',lesson:5,
    explain:['Làm giảm trọng lượng cơ thể.'],
    usage:'Động từ ly hợp; thường đi với 可以减肥, 减肥的目的.',
    collo:['可以减肥','减肥的目的','变瘦了'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'目的是减肥 — mục đích là giảm cân.'},
    ]},
 
-  {n:29,zh:'辛苦',py:'xīnkǔ',pos:'Tính từ',vn:'vất vả, cực nhọc',em:'😓',lesson:5,
+  {n:29,zh:'辛苦',py:'xīnkǔ',pos:'Tính từ',vn:'vất vả, cực nhọc', hv: 'tân khổ',em:'😓',lesson:5,
    explain:['Mất nhiều công sức, mệt mỏi khi làm việc gì.'],
    usage:'Tính từ; thường đi với 不会像……那样辛苦, 辛苦了.',
    collo:['不会像……那样辛苦','辛苦了','工作辛苦'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'辛苦 + động từ — vất vả làm gì.'},
    ]},
 
-  {n:30,zh:'肚子',py:'dùzi',pos:'Danh từ',vn:'bụng',em:'🤰',lesson:5,
+  {n:30,zh:'肚子',py:'dùzi',pos:'Danh từ',vn:'bụng', hv: 'đỗ tử',em:'🤰',lesson:5,
    explain:['Bộ phận cơ thể chứa dạ dày, ruột.'],
    usage:'Danh từ; thường đi với 肚子吃饱了, 肚子疼.',
    collo:['肚子吃饱了','肚子疼','肚子饿'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'肚子有点儿疼 — bụng hơi đau.'},
    ]},
 
-  {n:31,zh:'感情',py:'gǎnqíng',pos:'Danh từ',vn:'tình cảm',em:'❤️',lesson:5,
+  {n:31,zh:'感情',py:'gǎnqíng',pos:'Danh từ',vn:'tình cảm', hv: 'cảm tình',em:'❤️',lesson:5,
    explain:['Cảm xúc gắn bó giữa người với người.'],
    usage:'Danh từ; thường đi với 加深感情, 有感情.',
    collo:['加深感情','夫妻感情','有感情'],
@@ -685,7 +685,7 @@ var vocabData = [
       note:'感情会更好 — tình cảm sẽ tốt hơn.'},
    ]},
 
-  {n:32,zh:'烦恼',py:'fánnǎo',pos:'Tính từ',vn:'phiền muộn, buồn phiền',em:'😣',lesson:5,
+  {n:32,zh:'烦恼',py:'fánnǎo',pos:'Tính từ',vn:'phiền muộn, buồn phiền', hv: 'phiền não',em:'😣',lesson:5,
    explain:['Trạng thái tâm lý lo lắng, bực bội vì gặp chuyện không vui.'],
    usage:'Tính từ/danh từ; thường đi với 一天的烦恼, 没有烦恼.',
    collo:['一天的烦恼','没有烦恼','很烦恼'],
@@ -707,7 +707,7 @@ var vocabData = [
       note:'减少……烦恼 kết hợp 散步, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:33,zh:'掉',py:'diào',pos:'Động từ',vn:'mất, đi, hết (bổ ngữ kết quả)',em:'💨',lesson:5,
+  {n:33,zh:'掉',py:'diào',pos:'Động từ',vn:'mất, đi, hết (bổ ngữ kết quả)', hv: 'điệu',em:'💨',lesson:5,
    explain:['Dùng sau một số động từ để chỉ kết quả biến mất/không còn nữa.'],
    usage:'Động từ + 掉: 跑掉了, 忘掉, 扔掉.',
    collo:['跑掉了','忘掉','扔掉'],

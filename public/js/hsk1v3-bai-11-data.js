@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'时候',py:'shíhou',pos:'Danh từ',vn:'lúc, khi',em:'⏳',lesson:1,
+  {n:1,zh:'时候',py:'shíhou',pos:'Danh từ',vn:'lúc, khi', hv: 'thời hậu',em:'⏳',lesson:1,
    ex_zh:'喂，李文，你什么时候能到饭店？',ex_py:'Wèi, Lǐ Wén, nǐ shénme shíhou néng dào fàndiàn?',ex_vn:'A lô, Lý Văn à, khi nào em có thể đến nhà hàng?',
    exList:[{zh:'喂，李文，你什么时候能到饭店？',py:'Wèi, Lǐ Wén, nǐ shénme shíhou néng dào fàndiàn?',vn:'A lô, Lý Văn à, khi nào em có thể đến nhà hàng?'}],
    hanzi:[
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'亻(người) đứng cạnh 侯(âm gợi "hầu") → NGƯỜI đứng đợi tại một THỜI ĐIỂM nào đó = CHỜ ĐỢI, LÚC.',
       cf:'侯 (hóu – "hầu tước", thiếu bộ 亻 bên trái)',w:'时候 / 问候 / 有时候'},
    ]},
-  {n:2,zh:'饭店',py:'fàndiàn',pos:'Danh từ',vn:'nhà hàng, khách sạn',em:'🍽️',lesson:1,
+  {n:2,zh:'饭店',py:'fàndiàn',pos:'Danh từ',vn:'nhà hàng, khách sạn', hv: 'phạn điếm',em:'🍽️',lesson:1,
    ex_zh:'你什么时候能到饭店？',ex_py:'Nǐ shénme shíhou néng dào fàndiàn?',ex_vn:'Khi nào em có thể đến nhà hàng?',
    exList:[{zh:'你什么时候能到饭店？',py:'Nǐ shénme shíhou néng dào fàndiàn?',vn:'Khi nào em có thể đến nhà hàng?'}],
    hanzi:[
@@ -25,7 +25,7 @@ var vocabData = [
       tip:'广(mái nhà che) + 占(chiếm giữ một chỗ) → CHIẾM một khoảng dưới MÁI NHÀ để buôn bán = CỬA HÀNG.',
       cf:'占 (zhàn – "chiếm giữ", thiếu bộ 广 phía trên)',w:'饭店 / 商店 / 书店'},
    ]},
-  {n:3,zh:'知道',py:'zhīdào',pos:'Động từ',vn:'biết, nhận ra',em:'💡',lesson:1,
+  {n:3,zh:'知道',py:'zhīdào',pos:'Động từ',vn:'biết, nhận ra', hv: 'tri đạo',em:'💡',lesson:1,
    ex_zh:'还不知道，正在找呢。',ex_py:'Hái bù zhīdào, zhèngzài zhǎo ne.',ex_vn:'Cũng không biết ạ, em đang tìm đây.',
    exList:[{zh:'还不知道，正在找呢。',py:'Hái bù zhīdào, zhèngzài zhǎo ne.',vn:'Cũng không biết ạ, em đang tìm đây.'}],
    hanzi:[
@@ -36,7 +36,7 @@ var vocabData = [
       tip:'首(cái đầu, hướng) + 辶(bước đi) → đi theo hướng ĐẦU dẫn tới = con ĐƯỜNG, ĐẠO LÝ, và cũng là BIẾT rõ đường đi.',
       cf:'到 (dào – "đến", cùng âm nhưng khác bộ 刂)',w:'知道 / 道理 / 味道'},
    ]},
-  {n:4,zh:'正在',py:'zhèngzài',pos:'Phó từ',vn:'đang (làm gì)',em:'⏱️',lesson:1,
+  {n:4,zh:'正在',py:'zhèngzài',pos:'Phó từ',vn:'đang (làm gì)', hv: 'chính tại',em:'⏱️',lesson:1,
    ex_zh:'还不知道，正在找呢。',ex_py:'Hái bù zhīdào, zhèngzài zhǎo ne.',ex_vn:'Cũng không biết ạ, em đang tìm đây.',
    exList:[{zh:'还不知道，正在找呢。',py:'Hái bù zhīdào, zhèngzài zhǎo ne.',vn:'Cũng không biết ạ, em đang tìm đây.'}],
    hanzi:[
@@ -47,7 +47,7 @@ var vocabData = [
       tip:'Mái che nghiêng (ナ) phủ trên chữ 土(đất) → nơi có ĐẤT có mái che là nơi con người sinh sống, tồn tại = Ở, TẠI, ĐANG.',
       cf:'左 (zuǒ – "bên trái", phần trên viết gần giống nhưng dưới là 工)',w:'正在 / 在家 / 你在哪里'},
    ]},
-  {n:5,zh:'找',py:'zhǎo',pos:'Động từ',vn:'tìm, kiếm',em:'🔍',lesson:1,
+  {n:5,zh:'找',py:'zhǎo',pos:'Động từ',vn:'tìm, kiếm', hv: 'trảo',em:'🔍',lesson:1,
    ex_zh:'还不知道，正在找呢。',ex_py:'Hái bù zhīdào, zhèngzài zhǎo ne.',ex_vn:'Cũng không biết ạ, em đang tìm đây.',
    exList:[{zh:'还不知道，正在找呢。',py:'Hái bù zhīdào, zhèngzài zhǎo ne.',vn:'Cũng không biết ạ, em đang tìm đây.'}],
    hanzi:[
@@ -55,7 +55,7 @@ var vocabData = [
       tip:'Bộ 扌(tay) → dùng tay lục lọi, TÌM KIẾM vật gì đó.',
       cf:'我 (wǒ – "tôi", cùng chứa 戈)',w:'找到 / 正在找'},
    ]},
-  {n:6,zh:'开车',py:'kāichē',pos:'Động từ',vn:'lái xe (ô tô)',em:'🚗',lesson:1,
+  {n:6,zh:'开车',py:'kāichē',pos:'Động từ',vn:'lái xe (ô tô)', hv: 'khai xa',em:'🚗',lesson:1,
    ex_zh:'你开车没开车？',ex_py:'Nǐ kāichē méi kāichē?',ex_vn:'Em có lái xe không?',
    exList:[{zh:'你开车没开车？',py:'Nǐ kāichē méi kāichē?',vn:'Em có lái xe không?'}],
    hanzi:[
@@ -66,7 +66,7 @@ var vocabData = [
       tip:'Hình bánh xe nhìn từ trên xuống → XE.',
       cf:'东 (dōng – "phía đông", hình dạng gần giống")',w:'开车 / 坐车'},
    ]},
-  {n:7,zh:'车',py:'chē',pos:'Danh từ',vn:'xe',em:'🚙',lesson:1,
+  {n:7,zh:'车',py:'chē',pos:'Danh từ',vn:'xe', hv: 'xa',em:'🚙',lesson:1,
    ex_zh:'我没开车，坐车呢。',ex_py:'Wǒ méi kāichē, zuò chē ne.',ex_vn:'Em không lái xe, đang đi taxi đây.',
    exList:[{zh:'我没开车，坐车呢。',py:'Wǒ méi kāichē, zuò chē ne.',vn:'Em không lái xe, đang đi taxi đây.'}],
    hanzi:[
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'Hình bánh xe nhìn từ trên xuống → XE.',
       cf:'东 (dōng – "phía đông", hình dạng gần giống")',w:'开车 / 坐车'},
    ]},
-  {n:8,zh:'在',py:'zài',pos:'Phó từ',vn:'đang',em:'⏳',lesson:2,
+  {n:8,zh:'在',py:'zài',pos:'Phó từ',vn:'đang', hv: 'tại',em:'⏳',lesson:2,
    ex_zh:'你还在读大学吗？',ex_py:'Nǐ hái zài dú dàxué ma?',ex_vn:'Em vẫn đang học đại học à?',
    exList:[{zh:'你还在读大学吗？',py:'Nǐ hái zài dú dàxué ma?',vn:'Em vẫn đang học đại học à?'}],
    hanzi:[
@@ -82,7 +82,7 @@ var vocabData = [
       tip:'Mái che nghiêng (ナ) phủ trên chữ 土(đất) → nơi có ĐẤT có mái che là nơi con người sinh sống, tồn tại = Ở, TẠI, ĐANG.',
       cf:'左 (zuǒ – "bên trái", phần trên viết gần giống nhưng dưới là 工)',w:'正在 / 在家 / 你在哪里'},
    ]},
-  {n:9,zh:'读',py:'dú',pos:'Động từ',vn:'học, đọc',em:'📖',lesson:2,
+  {n:9,zh:'读',py:'dú',pos:'Động từ',vn:'học, đọc', hv: 'độc',em:'📖',lesson:2,
    ex_zh:'你还在读大学吗？',ex_py:'Nǐ hái zài dú dàxué ma?',ex_vn:'Em vẫn đang học đại học à?',
    exList:[{zh:'你还在读大学吗？',py:'Nǐ hái zài dú dàxué ma?',vn:'Em vẫn đang học đại học à?'}],
    hanzi:[
@@ -90,7 +90,7 @@ var vocabData = [
       tip:'讠(lời nói) + 卖(phát ra, bán) → phát ra tiếng từ chữ viết = ĐỌC.',
       cf:'卖 (mài – "bán")',w:'读大学 / 读书'},
    ]},
-  {n:10,zh:'大学',py:'dàxué',pos:'Danh từ',vn:'đại học',em:'🎓',lesson:2,
+  {n:10,zh:'大学',py:'dàxué',pos:'Danh từ',vn:'đại học', hv: 'đại học',em:'🎓',lesson:2,
    ex_zh:'对，我读大学呢，还是大学生。',ex_py:'Duì, wǒ dú dàxué ne, hái shì dàxuéshēng.',ex_vn:'Đúng vậy, em đang học đại học, vẫn đang là sinh viên.',
    exList:[{zh:'对，我读大学呢，还是大学生。',py:'Duì, wǒ dú dàxué ne, hái shì dàxuéshēng.',vn:'Đúng vậy, em đang học đại học, vẫn đang là sinh viên.'}],
    hanzi:[
@@ -101,7 +101,7 @@ var vocabData = [
       tip:'Trên là hình hai tay bắt chước, dưới là 子(đứa trẻ) → đứa trẻ dưới MÁI NHÀ được dạy dỗ, bắt chước làm theo = HỌC.',
       cf:'字 (zì – "chữ viết", cũng có 子 nhưng bộ trên là 宀)',w:'大学 / 大学生 / 学习'},
    ]},
-  {n:11,zh:'大学生',py:'dàxuéshēng',pos:'Danh từ',vn:'sinh viên',em:'🧑‍🎓',lesson:2,
+  {n:11,zh:'大学生',py:'dàxuéshēng',pos:'Danh từ',vn:'sinh viên', hv: 'đại học sinh',em:'🧑‍🎓',lesson:2,
    ex_zh:'对，我读大学呢，还是大学生。',ex_py:'Duì, wǒ dú dàxué ne, hái shì dàxuéshēng.',ex_vn:'Đúng vậy, em đang học đại học, vẫn đang là sinh viên.',
    exList:[{zh:'对，我读大学呢，还是大学生。',py:'Duì, wǒ dú dàxué ne, hái shì dàxuéshēng.',vn:'Đúng vậy, em đang học đại học, vẫn đang là sinh viên.'}],
    hanzi:[
@@ -115,7 +115,7 @@ var vocabData = [
       tip:'Hình cây non mọc lên khỏi mặt đất → biểu thị SINH RA, SỐNG.',
       cf:'主 (zhǔ – "chủ", hình dạng phần trên gần giống)',w:'大学生 / 学生 / 医生'},
    ]},
-  {n:12,zh:'学',py:'xué',pos:'Động từ',vn:'học',em:'📝',lesson:2,
+  {n:12,zh:'学',py:'xué',pos:'Động từ',vn:'học', hv: 'học',em:'📝',lesson:2,
    ex_zh:'非常忙，我学医，我们的课很多。',ex_py:'Fēicháng máng, wǒ xué yī, wǒmen de kè hěn duō.',ex_vn:'Bận lắm ạ, em học ngành y, chúng em có rất nhiều môn học.',
    exList:[{zh:'非常忙，我学医，我们的课很多。',py:'Fēicháng máng, wǒ xué yī, wǒmen de kè hěn duō.',vn:'Bận lắm ạ, em học ngành y, chúng em có rất nhiều môn học.'}],
    hanzi:[
@@ -123,7 +123,7 @@ var vocabData = [
       tip:'Trên là hình hai tay bắt chước, dưới là 子(đứa trẻ) → đứa trẻ dưới MÁI NHÀ được dạy dỗ, bắt chước làm theo = HỌC.',
       cf:'字 (zì – "chữ viết", cũng có 子 nhưng bộ trên là 宀)',w:'学习 / 大学 / 学生'},
    ]},
-  {n:13,zh:'医',py:'yī',pos:'Danh từ',vn:'y, y học, y khoa',em:'⚕️',lesson:2,
+  {n:13,zh:'医',py:'yī',pos:'Danh từ',vn:'y, y học, y khoa', hv: 'y',em:'⚕️',lesson:2,
    ex_zh:'非常忙，我学医，我们的课很多。',ex_py:'Fēicháng máng, wǒ xué yī, wǒmen de kè hěn duō.',ex_vn:'Bận lắm ạ, em học ngành y, chúng em có rất nhiều môn học.',
    exList:[{zh:'非常忙，我学医，我们的课很多。',py:'Fēicháng máng, wǒ xué yī, wǒmen de kè hěn duō.',vn:'Bận lắm ạ, em học ngành y, chúng em có rất nhiều môn học.'}],
    hanzi:[
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'匚(hộp đựng dụng cụ) + 矢(mũi tên, dụng cụ y tế thời xưa) → hộp đựng DỤNG CỤ chữa bệnh = Y HỌC.',
       cf:'区 (qū – "khu vực", cũng có bộ 匚)',w:'医生 / 学医 / 医院'},
    ]},
-  {n:14,zh:'弟弟',py:'dìdi',pos:'Danh từ',vn:'em trai',em:'👦',lesson:3,
+  {n:14,zh:'弟弟',py:'dìdi',pos:'Danh từ',vn:'em trai', hv: 'đệ đệ',em:'👦',lesson:3,
    ex_zh:'弟弟起床没起床呢？',ex_py:'Dìdi qǐchuáng méi qǐchuáng ne?',ex_vn:'Em trai đã thức dậy chưa?',
    exList:[{zh:'弟弟起床没起床呢？',py:'Dìdi qǐchuáng méi qǐchuáng ne?',vn:'Em trai đã thức dậy chưa?'}],
    hanzi:[
@@ -139,7 +139,7 @@ var vocabData = [
       tip:'Hình sợi dây quấn quanh cây cung theo thứ tự trước sau, tượng trưng cho thứ bậc dưới trong nhà = EM TRAI.',
       cf:'第 (dì – "thứ tự", thêm bộ 竹 phía trên)',w:'弟弟 / 兄弟 / 弟子'},
    ]},
-  {n:15,zh:'起床',py:'qǐchuáng',pos:'Động từ',vn:'thức dậy, ngủ dậy, dậy',em:'🛏️',lesson:3,
+  {n:15,zh:'起床',py:'qǐchuáng',pos:'Động từ',vn:'thức dậy, ngủ dậy, dậy', hv: 'khởi sàng',em:'🛏️',lesson:3,
    ex_zh:'弟弟起床没起床呢？',ex_py:'Dìdi qǐchuáng méi qǐchuáng ne?',ex_vn:'Em trai đã thức dậy chưa?',
    exList:[{zh:'弟弟起床没起床呢？',py:'Dìdi qǐchuáng méi qǐchuáng ne?',vn:'Em trai đã thức dậy chưa?'}],
    hanzi:[
@@ -150,7 +150,7 @@ var vocabData = [
       tip:'广(mái nhà) + 木(gỗ) → đồ vật bằng GỖ đặt dưới MÁI NHÀ để nằm ngủ = GIƯỜNG.',
       cf:'庆 (qìng – "chúc mừng", cũng có bộ 广)',w:'起床 / 床上'},
    ]},
-  {n:16,zh:'睡觉',py:'shuìjiào',pos:'Động từ',vn:'ngủ',em:'😴',lesson:3,
+  {n:16,zh:'睡觉',py:'shuìjiào',pos:'Động từ',vn:'ngủ', hv: 'thụy giác',em:'😴',lesson:3,
    ex_zh:'没起床呢，还在睡觉。',ex_py:'Méi qǐchuáng ne, hái zài shuìjiào.',ex_vn:'Chưa thức dậy ạ, em vẫn còn đang ngủ.',
    exList:[{zh:'没起床呢，还在睡觉。',py:'Méi qǐchuáng ne, hái zài shuìjiào.',vn:'Chưa thức dậy ạ, em vẫn còn đang ngủ.'}],
    hanzi:[
@@ -161,7 +161,7 @@ var vocabData = [
       tip:'Trên là hình con mắt lim dim, dưới là 见(nhìn thấy) → khi mắt khép lại không còn NHÌN THẤY gì nữa là lúc đi NGỦ.',
       cf:'学 (xué – "học", phần trên gần giống nhưng dưới là 子)',w:'睡觉 / 觉得 / 感觉'},
    ]},
-  {n:17,zh:'睡',py:'shuì',pos:'Động từ',vn:'ngủ',em:'💤',lesson:3,
+  {n:17,zh:'睡',py:'shuì',pos:'Động từ',vn:'ngủ', hv: 'thụy',em:'💤',lesson:3,
    ex_zh:'还睡呢？他今天去不去那里？',ex_py:'Hái shuì ne? Tā jīntiān qù bu qù nàlǐ?',ex_vn:'Vẫn còn ngủ à? Hôm nay em có đi đến đó không?',
    exList:[{zh:'还睡呢？他今天去不去那里？',py:'Hái shuì ne? Tā jīntiān qù bu qù nàlǐ?',vn:'Vẫn còn ngủ à? Hôm nay em có đi đến đó không?'}],
    hanzi:[
@@ -169,7 +169,7 @@ var vocabData = [
       tip:'目(mắt) + 垂(rủ xuống) → mắt rủ xuống khép lại = NGỦ.',
       cf:'垂 (chuí – "rủ xuống")',w:'睡觉 / 午睡'},
    ]},
-  {n:18,zh:'那里',py:'nàlǐ',pos:'Đại từ',vn:'ở kia, chỗ đó',em:'👉',lesson:3,
+  {n:18,zh:'那里',py:'nàlǐ',pos:'Đại từ',vn:'ở kia, chỗ đó', hv: 'na lí',em:'👉',lesson:3,
    ex_zh:'他今天去不去那里？',ex_py:'Tā jīntiān qù bu qù nàlǐ?',ex_vn:'Hôm nay em có đi đến đó không?',
    exList:[{zh:'他今天去不去那里？',py:'Tā jīntiān qù bu qù nàlǐ?',vn:'Hôm nay em có đi đến đó không?'}],
    hanzi:[
@@ -180,7 +180,7 @@ var vocabData = [
       tip:'田(ruộng) trên 土(đất) dưới → nơi có ruộng đất là một chốn ở BÊN TRONG cộng đồng = NƠI, BÊN TRONG.',
       cf:'理 (lǐ – "lý lẽ", thêm bộ 王 bên trái)',w:'那里 / 哪里 / 里边'},
    ]},
-  {n:19,zh:'哪里',py:'nǎlǐ',pos:'Đại từ',vn:'đâu, chỗ nào, nơi nào',em:'❓',lesson:3,
+  {n:19,zh:'哪里',py:'nǎlǐ',pos:'Đại từ',vn:'đâu, chỗ nào, nơi nào', hv: 'na lí',em:'❓',lesson:3,
    ex_zh:'去哪里？',ex_py:'Qù nǎlǐ?',ex_vn:'Đi đâu ạ?',
    exList:[{zh:'去哪里？',py:'Qù nǎlǐ?',vn:'Đi đâu ạ?'}],
    hanzi:[
@@ -191,7 +191,7 @@ var vocabData = [
       tip:'田(ruộng) trên 土(đất) dưới → nơi có ruộng đất là một chốn ở BÊN TRONG cộng đồng = NƠI, BÊN TRONG.',
       cf:'理 (lǐ – "lý lẽ", thêm bộ 王 bên trái)',w:'哪里 / 那里 / 里边'},
    ]},
-  {n:20,zh:'昨天',py:'zuótiān',pos:'Danh từ',vn:'hôm qua',em:'📅',lesson:3,
+  {n:20,zh:'昨天',py:'zuótiān',pos:'Danh từ',vn:'hôm qua', hv: 'tạc thiên',em:'📅',lesson:3,
    ex_zh:'我昨天问他，他对我说，他不去。',ex_py:'Wǒ zuótiān wèn tā, tā duì wǒ shuō, tā bú qù.',ex_vn:'Hôm qua con hỏi em rồi, em nói với con là em không đi.',
    exList:[{zh:'我昨天问他，他对我说，他不去。',py:'Wǒ zuótiān wèn tā, tā duì wǒ shuō, tā bú qù.',vn:'Hôm qua con hỏi em rồi, em nói với con là em không đi.'}],
    hanzi:[
@@ -202,7 +202,7 @@ var vocabData = [
       tip:'一(vạch chỉ khoảng không phía trên) + 大(người dang tay to lớn) → khoảng không bao la trên đầu người = TRỜI.',
       cf:'夫 (fū – "chồng, đàn ông", nét ngang cắt qua vị trí khác)',w:'昨天 / 天气 / 明天'},
    ]},
-  {n:21,zh:'问',py:'wèn',pos:'Động từ',vn:'hỏi',em:'❔',lesson:3,
+  {n:21,zh:'问',py:'wèn',pos:'Động từ',vn:'hỏi', hv: 'vấn',em:'❔',lesson:3,
    ex_zh:'我昨天问他，他对我说，他不去。',ex_py:'Wǒ zuótiān wèn tā, tā duì wǒ shuō, tā bú qù.',ex_vn:'Hôm qua con hỏi em rồi, em nói với con là em không đi.',
    exList:[{zh:'我昨天问他，他对我说，他不去。',py:'Wǒ zuótiān wèn tā, tā duì wǒ shuō, tā bú qù.',vn:'Hôm qua con hỏi em rồi, em nói với con là em không đi.'}],
    hanzi:[
@@ -210,7 +210,7 @@ var vocabData = [
       tip:'门(cửa) + 口(miệng) → đứng trước cửa cất tiếng HỎI.',
       cf:'间 (jiān – "khoảng giữa")',w:'我问他 / 请问'},
    ]},
-  {n:22,zh:'对',py:'duì',pos:'Giới từ',vn:'với, đối với',em:'↔️',lesson:3,
+  {n:22,zh:'对',py:'duì',pos:'Giới từ',vn:'với, đối với', hv: 'đối',em:'↔️',lesson:3,
    ex_zh:'他对我说，他不去。',ex_py:'Tā duì wǒ shuō, tā bú qù.',ex_vn:'Em nói với con là em không đi.',
    exList:[{zh:'他对我说，他不去。',py:'Tā duì wǒ shuō, tā bú qù.',vn:'Em nói với con là em không đi.'}],
    hanzi:[
@@ -218,7 +218,7 @@ var vocabData = [
       tip:'Bên trái là hai bên đối diện nhau, bên phải 寸(quy tắc, chuẩn mực) → hai bên khớp ĐÚNG theo chuẩn mực = ĐÚNG, ĐỐI VỚI.',
       cf:'讨 (tǎo – "bàn luận, đòi", bộ 讠thay vì 又)',w:'对不起 / 他对我说 / 不对'},
    ]},
-  {n:23,zh:'说',py:'shuō',pos:'Động từ',vn:'nói',em:'💬',lesson:3,
+  {n:23,zh:'说',py:'shuō',pos:'Động từ',vn:'nói', hv: 'thuyết',em:'💬',lesson:3,
    ex_zh:'他对我说，他不去。',ex_py:'Tā duì wǒ shuō, tā bú qù.',ex_vn:'Em nói với con là em không đi.',
    exList:[{zh:'他对我说，他不去。',py:'Tā duì wǒ shuō, tā bú qù.',vn:'Em nói với con là em không đi.'}],
    hanzi:[
@@ -226,7 +226,7 @@ var vocabData = [
       tip:'Bộ 讠(lời nói) → hành động dùng miệng phát ra lời = NÓI.',
       cf:'脱 (tuō – "cởi", bộ 月)',w:'他对我说 / 说汉语'},
    ]},
-  {n:24,zh:'要',py:'yào',pos:'Động từ năng nguyện',vn:'cần, muốn, phải',em:'🙋',lesson:3,
+  {n:24,zh:'要',py:'yào',pos:'Động từ năng nguyện',vn:'cần, muốn, phải', hv: 'yếu',em:'🙋',lesson:3,
    ex_zh:'他今天要和小朋友玩。',ex_py:'Tā jīntiān yào hé xiǎopéngyǒu wán.',ex_vn:'Hôm nay em muốn chơi với các bạn.',
    exList:[{zh:'他今天要和小朋友玩。',py:'Tā jīntiān yào hé xiǎopéngyǒu wán.',vn:'Hôm nay em muốn chơi với các bạn.'}],
    hanzi:[
@@ -234,7 +234,7 @@ var vocabData = [
       tip:'Chữ cổ vốn là hình dáng cái lưng người phụ nữ chống nạnh, nay dùng làm trợ động từ MUỐN, CẦN.',
       cf:'腰 (yāo – "thắt lưng")',w:'要去 / 要不要'},
    ]},
-  {n:25,zh:'小朋友',py:'xiǎopéngyǒu',pos:'Danh từ',vn:'bạn nhỏ',em:'🧒',lesson:3,
+  {n:25,zh:'小朋友',py:'xiǎopéngyǒu',pos:'Danh từ',vn:'bạn nhỏ', hv: 'tiểu bằng hữu',em:'🧒',lesson:3,
    ex_zh:'他今天要和小朋友玩。',ex_py:'Tā jīntiān yào hé xiǎopéngyǒu wán.',ex_vn:'Hôm nay em muốn chơi với các bạn.',
    exList:[{zh:'他今天要和小朋友玩。',py:'Tā jīntiān yào hé xiǎopéngyǒu wán.',vn:'Hôm nay em muốn chơi với các bạn.'}],
    hanzi:[

@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'图书馆',py:'túshūguǎn',pos:'Danh từ',vn:'thư viện',em:'📚',lesson:1,
+  {n:1,zh:'图书馆',py:'túshūguǎn',pos:'Danh từ',vn:'thư viện', hv: 'đồ thư quán',em:'📚',lesson:1,
    explain:['Nơi lưu trữ và cho mượn sách, tài liệu để đọc, học tập.'],
    usage:'Danh từ; đi cùng động từ 去: 去图书馆.',
    collo:['去图书馆','在图书馆','图书馆借书'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 词典 sẽ học ngay bên dưới).'},
    ]},
 
-  {n:2,zh:'借',py:'jiè',pos:'Động từ',vn:'mượn, vay',em:'📖',lesson:1,
+  {n:2,zh:'借',py:'jiè',pos:'Động từ',vn:'mượn, vay', hv: 'tá',em:'📖',lesson:1,
    explain:['Sử dụng tạm thời vật của người khác, hoặc cho người khác mượn.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 借 + [vật] (借书, 借钱).',
    collo:['借书','借钱','借用'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'词典',py:'cídiǎn',pos:'Danh từ',vn:'từ điển',em:'📕',lesson:1,
+  {n:3,zh:'词典',py:'cídiǎn',pos:'Danh từ',vn:'từ điển', hv: 'từ điển',em:'📕',lesson:1,
    explain:['Sách tra cứu nghĩa, cách dùng của từ ngữ.'],
    usage:'Danh từ; lượng từ đi kèm là 本: 一本词典.',
    collo:['一本词典','借词典','还词典'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 图书馆 vừa học trong bài này).'},
    ]},
 
-  {n:4,zh:'还',py:'huán',pos:'Động từ',vn:'trả',em:'↩️',lesson:1,
+  {n:4,zh:'还',py:'huán',pos:'Động từ',vn:'trả', hv: 'hoàn',em:'↩️',lesson:1,
    explain:['Đưa lại vật đã mượn cho chủ sở hữu.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 还 + [vật] (还书, 还钱); thường dùng trong 把字句: 把……还了.',
    collo:['还书','还钱','把……还了'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 图书馆 vừa học trong bài này).'},
    ]},
 
-  {n:5,zh:'灯',py:'dēng',pos:'Danh từ',vn:'đèn',em:'💡',lesson:1,
+  {n:5,zh:'灯',py:'dēng',pos:'Danh từ',vn:'đèn', hv: 'đăng',em:'💡',lesson:1,
    explain:['Vật dụng phát sáng dùng để chiếu sáng.'],
    usage:'Danh từ; đi cùng động từ 关/开: 关灯, 开灯.',
    collo:['开灯','关灯','一盏灯'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 会议/结束 sẽ học ngay bên dưới).'},
    ]},
 
-  {n:6,zh:'会议',py:'huìyì',pos:'Danh từ',vn:'hội nghị, cuộc họp',em:'💼',lesson:2,
+  {n:6,zh:'会议',py:'huìyì',pos:'Danh từ',vn:'hội nghị, cuộc họp', hv: 'hội nghị',em:'💼',lesson:2,
    explain:['Buổi tập hợp để thảo luận, quyết định vấn đề chung.'],
    usage:'Danh từ; đi cùng động từ 开: 开会议; hoặc 会议 + 结束.',
    collo:['开会议','会议结束','参加会议'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 参加 đã học ở Bài 9).'},
    ]},
 
-  {n:7,zh:'结束',py:'jiéshù',pos:'Động từ',vn:'kết thúc, chấm dứt',em:'🏁',lesson:2,
+  {n:7,zh:'结束',py:'jiéshù',pos:'Động từ',vn:'kết thúc, chấm dứt', hv: 'kết thúc',em:'🏁',lesson:2,
    explain:['Hoạt động, sự việc đi đến hồi cuối.'],
    usage:'Động từ, đứng độc lập hoặc mang tân ngữ: 结束了, 会议结束.',
    collo:['会议结束','结束了','还没结束'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 会议 vừa học trong bài này).'},
    ]},
 
-  {n:8,zh:'忘记',py:'wàngjì',pos:'Động từ',vn:'quên',em:'🤔',lesson:2,
+  {n:8,zh:'忘记',py:'wàngjì',pos:'Động từ',vn:'quên', hv: 'vong ký',em:'🤔',lesson:2,
    explain:['Không còn nhớ, để mất khỏi trí nhớ.'],
    usage:'Động từ, mang tân ngữ trực tiếp hoặc dùng trong 把字句: 别忘记 + V, 把……忘记了.',
    collo:['别忘记','忘记了','把……忘了'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'把字句 diễn tả sự việc bị quên.'},
    ]},
 
-  {n:9,zh:'空调',py:'kōngtiáo',pos:'Danh từ',vn:'máy điều hòa không khí',em:'❄️',lesson:2,
+  {n:9,zh:'空调',py:'kōngtiáo',pos:'Danh từ',vn:'máy điều hòa không khí', hv: 'không điều',em:'❄️',lesson:2,
    explain:['Thiết bị điều chỉnh nhiệt độ không khí trong phòng.'],
    usage:'Danh từ; đi cùng động từ 开/关: 开空调, 关空调.',
    collo:['开空调','关空调','空调坏了'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:10,zh:'关',py:'guān',pos:'Động từ',vn:'tắt, đóng',em:'🔴',lesson:2,
+  {n:10,zh:'关',py:'guān',pos:'Động từ',vn:'tắt, đóng', hv: 'quan',em:'🔴',lesson:2,
    explain:['Ngừng hoạt động một thiết bị, hoặc đóng lại một vật.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 关 + [vật] (关灯, 关空调); thường dùng trong 把字句.',
    collo:['关灯','关空调','关门'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 空调 vừa học trong bài này).'},
    ]},
 
-  {n:11,zh:'地铁',py:'dìtiě',pos:'Danh từ',vn:'tàu điện ngầm',em:'🚇',lesson:2,
+  {n:11,zh:'地铁',py:'dìtiě',pos:'Danh từ',vn:'tàu điện ngầm', hv: 'địa thiết',em:'🚇',lesson:2,
    explain:['Phương tiện giao thông công cộng chạy dưới lòng đất.'],
    usage:'Danh từ; đi cùng động từ 坐: 坐地铁.',
    collo:['坐地铁','地铁站','地铁上'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 附近/方便 đã học ở Bài 10).'},
    ]},
 
-  {n:12,zh:'双',py:'shuāng',pos:'Lượng từ',vn:'đôi',em:'👞',lesson:3,
+  {n:12,zh:'双',py:'shuāng',pos:'Lượng từ',vn:'đôi', hv: 'song',em:'👞',lesson:3,
    explain:['Đơn vị đếm các vật đi thành cặp như đũa, giày.'],
    usage:'Lượng từ, đứng sau số từ: [số từ] + 双 + [danh từ] (一双筷子).',
    collo:['一双筷子','一双鞋','两双'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:13,zh:'筷子',py:'kuàizi',pos:'Danh từ',vn:'đũa',em:'🥢',lesson:3,
+  {n:13,zh:'筷子',py:'kuàizi',pos:'Danh từ',vn:'đũa', hv: 'khoái tử',em:'🥢',lesson:3,
    explain:['Dụng cụ ăn cơm truyền thống gồm hai que.'],
    usage:'Danh từ; lượng từ đi kèm là 双: 一双筷子.',
    collo:['一双筷子','用筷子','拿筷子'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 差 đã học ở Bài 7).'},
    ]},
 
-  {n:14,zh:'啤酒',py:'píjiǔ',pos:'Danh từ',vn:'bia, rượu bia',em:'🍺',lesson:3,
+  {n:14,zh:'啤酒',py:'píjiǔ',pos:'Danh từ',vn:'bia, rượu bia', hv: 'bì tửu',em:'🍺',lesson:3,
    explain:['Loại đồ uống có cồn, lên men từ lúa mạch.'],
    usage:'Danh từ; đi cùng động từ 喝: 喝啤酒.',
    collo:['喝啤酒','一瓶啤酒','买啤酒'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 饿 đã học ở Bài 4).'},
    ]},
 
-  {n:15,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'miếng, ngụm, hớp',em:'👄',lesson:3,
+  {n:15,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'miếng, ngụm, hớp', hv: 'khẩu',em:'👄',lesson:3,
    explain:['Đơn vị đếm số lần ăn/uống bằng miệng.'],
    usage:'Lượng từ, đứng sau số từ: [số từ] + 口 + [danh từ] (一口水, 一口酒).',
    collo:['一口水','一口酒','喝一口'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 甜 đã học ở Bài 3).'},
    ]},
 
-  {n:16,zh:'瓶子',py:'píngzi',pos:'Danh từ',vn:'lọ, bình',em:'🍾',lesson:3,
+  {n:16,zh:'瓶子',py:'píngzi',pos:'Danh từ',vn:'lọ, bình', hv: 'bình tử',em:'🍾',lesson:3,
    explain:['Vật dụng có cổ nhỏ dùng để đựng chất lỏng.'],
    usage:'Danh từ; cũng dùng làm lượng từ 瓶ế: 一瓶 (một chai/lọ).',
    collo:['酒瓶子','一个瓶子','空瓶子'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'因为……所以…… kết hợp 把字句 (ôn lại 啤酒 vừa học trong bài này).'},
    ]},
 
-  {n:17,zh:'笔记本(电脑)',py:'bǐjìběn (diànnǎo)',pos:'Danh từ',vn:'máy tính xách tay',em:'💻',lesson:4,
+  {n:17,zh:'笔记本(电脑)',py:'bǐjìběn (diànnǎo)',pos:'Danh từ',vn:'máy tính xách tay', hv: 'bút ký bản điện não',em:'💻',lesson:4,
    explain:['Loại máy tính nhỏ gọn, dễ mang theo.'],
    usage:'Danh từ; lượng từ đi kèm là 个/台: 一个笔记本电脑.',
    collo:['一个笔记本电脑','买笔记本电脑','换笔记本电脑'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 换 đã học ở Bài 10).'},
    ]},
 
-  {n:18,zh:'电子邮件',py:'diànzǐ yóujiàn',pos:'Danh từ',vn:'email',em:'📧',lesson:4,
+  {n:18,zh:'电子邮件',py:'diànzǐ yóujiàn',pos:'Danh từ',vn:'email', hv: 'điện tử bưu kiện',em:'📧',lesson:4,
    explain:['Thư điện tử gửi qua mạng Internet.'],
    usage:'Danh từ; đi cùng động từ 看/发: 看电子邮件, 发电子邮件.',
    collo:['看电子邮件','发电子邮件','收电子邮件'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:19,zh:'习惯',py:'xíguàn',pos:'Động từ/Danh từ',vn:'quen; thói quen',em:'🔁',lesson:4,
+  {n:19,zh:'习惯',py:'xíguàn',pos:'Động từ/Danh từ',vn:'quen; thói quen', hv: 'tập quán',em:'🔁',lesson:4,
    explain:['Đã trở nên quen thuộc với điều gì đó, hoặc bản thân điều lặp lại đã thành thói quen.'],
    usage:'Động từ: 习惯 + V (习惯用电脑); Danh từ: 好习惯, 有习惯.',
    collo:['习惯用','好习惯','还没习惯'],

@@ -2,7 +2,7 @@
 // DATA — Bài 9: 题太多，我没做完
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'错',py:'cuò',pos:'Tính từ',vn:'sai, nhầm',em:'❌',lesson:1,
+  {n:1,zh:'错',py:'cuò',pos:'Tính từ',vn:'sai, nhầm', hv: 'thác',em:'❌',lesson:1,
    ex_zh:'你打错了。',ex_py:'Nǐ dǎ cuò le.',ex_vn:'Bạn gọi nhầm số rồi.',
    exList:[
      {zh:'你打错了。',py:'Nǐ dǎ cuò le.',vn:'Bạn gọi nhầm số rồi.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Đã gặp trong 不错 (Bài 5) — 钅 xưa liên quan tới việc mài giũa, sai lệch trong chế tác kim loại.',
       cf:'措 (cuò – "biện pháp")',w:'打错 / 不错 / 错了'},
    ]},
-  {n:2,zh:'从',py:'cóng',pos:'Giới từ',vn:'từ (mốc thời gian, địa điểm)',em:'🚩',lesson:2,
+  {n:2,zh:'从',py:'cóng',pos:'Giới từ',vn:'từ (mốc thời gian, địa điểm)', hv: 'tòng',em:'🚩',lesson:2,
    ex_zh:'从什么时候开始？',ex_py:'Cóng shénme shíhou kāishǐ?',ex_vn:'Bắt đầu từ khi nào?',
    exList:[
      {zh:'从什么时候开始？',py:'Cóng shénme shíhou kāishǐ?',vn:'Bắt đầu từ khi nào?'},
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Hình hai người nối đuôi nhau đi cùng hướng → nghĩa "ĐI THEO, xuất phát TỪ".',
       cf:'丛 (cóng – "bụi cây", thêm nét dưới)',w:'从…开始 / 从来 / 自从'},
    ]},
-  {n:3,zh:'跳舞',py:'tiàowǔ',pos:'Động từ',vn:'nhảy múa, khiêu vũ',em:'💃',lesson:2,
+  {n:3,zh:'跳舞',py:'tiàowǔ',pos:'Động từ',vn:'nhảy múa, khiêu vũ', hv: 'khiêu vũ',em:'💃',lesson:2,
    ex_zh:'我第一次跳舞是在七岁的时候。',ex_py:'Wǒ dì yī cì tiàowǔ shì zài qī suì de shíhou.',ex_vn:'Lần đầu tiên tôi múa là lúc 7 tuổi.',
    exList:[
      {zh:'我第一次跳舞是在七岁的时候。',py:'Wǒ dì yī cì tiàowǔ shì zài qī suì de shíhou.',vn:'Lần đầu tiên tôi múa là lúc 7 tuổi.'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'Hình người dang tay múa với dải lụa cách điệu → "MÚA".',
       cf:'午 (wǔ – "buổi trưa", ít nét hơn)',w:'跳舞 / 舞蹈'},
    ]},
-  {n:4,zh:'第一',py:'dì-yī',pos:'Số từ',vn:'đầu tiên, thứ nhất',em:'🥇',lesson:2,
+  {n:4,zh:'第一',py:'dì-yī',pos:'Số từ',vn:'đầu tiên, thứ nhất', hv: 'đệ nhất',em:'🥇',lesson:2,
    ex_zh:'这是他的第一个工作。',ex_py:'Zhè shì tā de dì yī ge gōngzuò.',ex_vn:'Đây là công việc đầu tiên của cậu ấy.',
    exList:[
      {zh:'这是他的第一个工作。',py:'Zhè shì tā de dì yī ge gōngzuò.',vn:'Đây là công việc đầu tiên của cậu ấy.'},
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'Xưa khắc thứ tự lên thẻ tre 竹 → 第 + số = biểu thị THỨ TỰ.',
       cf:'弟 (dì – "em trai", thiếu bộ 竹)',w:'第一 / 第二 / 第几'},
    ]},
-  {n:5,zh:'希望',py:'xīwàng',pos:'Động từ',vn:'hy vọng',em:'🌠',lesson:3,
+  {n:5,zh:'希望',py:'xīwàng',pos:'Động từ',vn:'hy vọng', hv: 'hi vọng',em:'🌠',lesson:3,
    ex_zh:'希望他能喜欢。',ex_py:'Xīwàng tā néng xǐhuan.',ex_vn:'Hy vọng cậu ấy sẽ thích nó.',
    exList:[
      {zh:'希望他能喜欢。',py:'Xīwàng tā néng xǐhuan.',vn:'Hy vọng cậu ấy sẽ thích nó.'},
@@ -68,7 +68,7 @@ var vocabData = [
       tip:'Người đứng nhìn 月 (trăng) từ xa → ánh mắt TRÔNG MONG, hy vọng.',
       cf:'忘 (wàng – "quên", bộ 心)',w:'希望 / 看望 / 望远镜'},
    ]},
-  {n:6,zh:'问题',py:'wèntí',pos:'Danh từ',vn:'câu hỏi, vấn đề',em:'❓',lesson:3,
+  {n:6,zh:'问题',py:'wèntí',pos:'Danh từ',vn:'câu hỏi, vấn đề', hv: 'vấn đề',em:'❓',lesson:3,
    ex_zh:'没问题！',ex_py:'Méi wèntí!',ex_vn:'Không thành vấn đề!',
    exList:[
      {zh:'没问题！',py:'Méi wèntí!',vn:'Không thành vấn đề!'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Bộ 页 (trang giấy/tiêu đề) → phần đầu trang nêu ra ĐỀ BÀI, chủ đề.',
       cf:'提 (tí – "đề xuất", bộ 扌)',w:'问题 / 题目 / 考题'},
    ]},
-  {n:7,zh:'欢迎',py:'huānyíng',pos:'Động từ',vn:'chào mừng, hoan nghênh',em:'🎉',lesson:3,
+  {n:7,zh:'欢迎',py:'huānyíng',pos:'Động từ',vn:'chào mừng, hoan nghênh', hv: 'hoan nghênh',em:'🎉',lesson:3,
    ex_zh:'非常欢迎。',ex_py:'Fēicháng huānyíng.',ex_vn:'Vô cùng hoan nghênh.',
    exList:[
      {zh:'非常欢迎。',py:'Fēicháng huānyíng.',vn:'Vô cùng hoan nghênh.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'Bộ 辶 (đi) → ra tận nơi để ĐÓN CHÀO ai đó.',
       cf:'仰 (yǎng – "ngửa lên")',w:'欢迎 / 迎接'},
    ]},
-  {n:8,zh:'上班',py:'shàngbān',pos:'Động từ',vn:'đi làm, vào ca',em:'💼',lesson:3,
+  {n:8,zh:'上班',py:'shàngbān',pos:'Động từ',vn:'đi làm, vào ca', hv: 'thượng ban',em:'💼',lesson:3,
    ex_zh:'他从下个星期一开始上班。',ex_py:'Tā cóng xià ge xīngqīyī kāishǐ shàngbān.',ex_vn:'Cậu ấy bắt đầu đi làm từ thứ Hai tuần sau.',
    exList:[
      {zh:'他从下个星期一开始上班。',py:'Tā cóng xià ge xīngqīyī kāishǐ shàngbān.',vn:'Cậu ấy bắt đầu đi làm từ thứ Hai tuần sau.'},
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'Hai miếng ngọc 王 được tách ra bởi dao 刂 → phân chia thành từng NHÓM/CA làm việc.',
       cf:'斑 (bān – "vết đốm")',w:'上班 / 班长 / 一班'},
    ]},
-  {n:9,zh:'懂',py:'dǒng',pos:'Động từ',vn:'hiểu',em:'💡',lesson:4,
+  {n:9,zh:'懂',py:'dǒng',pos:'Động từ',vn:'hiểu', hv: 'đổng',em:'💡',lesson:4,
    ex_zh:'你听懂了吗？',ex_py:'Nǐ tīng dǒng le ma?',ex_vn:'Bạn nghe có hiểu không?',
    exList:[
      {zh:'你听懂了吗？',py:'Nǐ tīng dǒng le ma?',vn:'Bạn nghe có hiểu không?'},
@@ -125,7 +125,7 @@ var vocabData = [
       tip:'Bộ 忄(tâm/trí) → dùng đầu óc nắm rõ được ý nghĩa = HIỂU.',
       cf:'董 (dǒng – "giám sát", thiếu bộ 忄)',w:'听懂 / 看懂 / 不懂'},
    ]},
-  {n:10,zh:'完',py:'wán',pos:'Động từ',vn:'xong, hết',em:'✅',lesson:4,
+  {n:10,zh:'完',py:'wán',pos:'Động từ',vn:'xong, hết', hv: 'hoàn',em:'✅',lesson:4,
    ex_zh:'题太多，我没做完。',ex_py:'Tí tài duō, wǒ méi zuò wán.',ex_vn:'Đề nhiều quá, tôi làm chưa xong.',
    exList:[
      {zh:'题太多，我没做完。',py:'Tí tài duō, wǒ méi zuò wán.',vn:'Đề nhiều quá, tôi làm chưa xong.'},
@@ -137,7 +137,7 @@ var vocabData = [
       tip:'Mái nhà 宀 che kín trọn vẹn 元 (đầu tiên/vẹn toàn) → mọi thứ đã trọn vẹn = XONG, HẾT.',
       cf:'院 (yuàn – đã học ở Bài 2, khác bộ)',w:'做完 / 吃完 / 用完'},
    ]},
-  {n:11,zh:'题',py:'tí',pos:'Danh từ',vn:'câu hỏi, đề bài',em:'📄',lesson:4,
+  {n:11,zh:'题',py:'tí',pos:'Danh từ',vn:'câu hỏi, đề bài', hv: 'đề',em:'📄',lesson:4,
    ex_zh:'昨天的考试题很难。',ex_py:'Zuótiān de kǎoshì tí hěn nán.',ex_vn:'Đề thi hôm qua rất khó.',
    exList:[
      {zh:'昨天的考试题很难。',py:'Zuótiān de kǎoshì tí hěn nán.',vn:'Đề thi hôm qua rất khó.'},

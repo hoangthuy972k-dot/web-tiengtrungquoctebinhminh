@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'个子',py:'gèzi',pos:'Danh từ',vn:'vóc dáng, thân hình',em:'📏',lesson:1,
+  {n:1,zh:'个子',py:'gèzi',pos:'Danh từ',vn:'vóc dáng, thân hình', hv: 'cá tử',em:'📏',lesson:1,
    explain:['Chiều cao và hình dáng cơ thể một người.'],
    usage:'Danh từ; thường đi cùng tính từ 高/矮: 个子高, 个子矮.',
    collo:['个子高','个子矮','大个子'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'十七八岁 = số ước lượng ghép hai số liên tiếp (điểm ngữ pháp bài này).'},
    ]},
 
-  {n:2,zh:'矮',py:'ǎi',pos:'Tính từ',vn:'thấp',em:'📉',lesson:1,
+  {n:2,zh:'矮',py:'ǎi',pos:'Tính từ',vn:'thấp', hv: 'ải',em:'📉',lesson:1,
    explain:['Có chiều cao thấp, trái nghĩa với 高.'],
    usage:'Tính từ, làm vị ngữ với 很/比: 很矮, A比B矮.',
    collo:['比……矮','矮一点儿','个子矮'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'历史',py:'lìshǐ',pos:'Danh từ',vn:'môn Lịch Sử',em:'📜',lesson:2,
+  {n:3,zh:'历史',py:'lìshǐ',pos:'Danh từ',vn:'môn Lịch Sử', hv: 'lịch sử',em:'📜',lesson:2,
    explain:['Môn học nghiên cứu các sự kiện đã xảy ra trong quá khứ.'],
    usage:'Danh từ; đi cùng 课/学: 历史课, 学历史.',
    collo:['历史课','学历史','中国历史'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:4,zh:'体育',py:'tǐyù',pos:'Danh từ',vn:'môn Thể Dục',em:'⚽',lesson:2,
+  {n:4,zh:'体育',py:'tǐyù',pos:'Danh từ',vn:'môn Thể Dục', hv: 'thể dục',em:'⚽',lesson:2,
    explain:['Môn học và hoạt động rèn luyện thể chất.'],
    usage:'Danh từ; đi cùng 课: 体育课.',
    collo:['体育课','喜欢体育','体育比赛'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'只要……就…… (ở đây rút gọn) diễn tả điều kiện đủ.'},
    ]},
 
-  {n:5,zh:'数学',py:'shùxué',pos:'Danh từ',vn:'môn Toán',em:'🔢',lesson:2,
+  {n:5,zh:'数学',py:'shùxué',pos:'Danh từ',vn:'môn Toán', hv: 'số học',em:'🔢',lesson:2,
    explain:['Môn học về số, phép tính và các quy luật liên quan.'],
    usage:'Danh từ; đi cùng 课/学: 数学课, 学数学.',
    collo:['数学课','学数学','数学老师'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 担心 đã học ở Bài 9).'},
    ]},
 
-  {n:6,zh:'方便',py:'fāngbiàn',pos:'Tính từ',vn:'thuận tiện',em:'👍',lesson:3,
+  {n:6,zh:'方便',py:'fāngbiàn',pos:'Tính từ',vn:'thuận tiện', hv: 'phương tiện',em:'👍',lesson:3,
    explain:['Dễ dàng, không gặp trở ngại khi làm việc gì đó.'],
    usage:'Tính từ, làm vị ngữ với 很/更: 很方便, A比B方便.',
    collo:['很方便','比较方便','不方便'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 附近 sẽ học ngay bên dưới).'},
    ]},
 
-  {n:7,zh:'自行车',py:'zìxíngchē',pos:'Danh từ',vn:'xe đạp',em:'🚲',lesson:3,
+  {n:7,zh:'自行车',py:'zìxíngchē',pos:'Danh từ',vn:'xe đạp', hv: 'tự hành xa',em:'🚲',lesson:3,
    explain:['Phương tiện hai bánh di chuyển bằng cách đạp.'],
    usage:'Danh từ; lượng từ đi kèm là 辆: 一辆自行车.',
    collo:['一辆自行车','骑自行车','买自行车'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:8,zh:'骑',py:'qí',pos:'Động từ',vn:'cưỡi, đi (xe)',em:'🚴',lesson:3,
+  {n:8,zh:'骑',py:'qí',pos:'Động từ',vn:'cưỡi, đi (xe)', hv: 'kỵ',em:'🚴',lesson:3,
    explain:['Ngồi lên và điều khiển một phương tiện hai bánh hoặc động vật.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 骑 + [xe/ngựa] (骑自行车, 骑车).',
    collo:['骑自行车','骑车','骑马'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… (ở đây rút gọn) diễn tả giả thiết.'},
    ]},
 
-  {n:9,zh:'旧',py:'jiù',pos:'Tính từ',vn:'cũ',em:'📦',lesson:3,
+  {n:9,zh:'旧',py:'jiù',pos:'Tính từ',vn:'cũ', hv: 'cựu',em:'📦',lesson:3,
    explain:['Đã qua sử dụng lâu, không còn mới, trái nghĩa với 新.'],
    usage:'Tính từ, làm vị ngữ hoặc định ngữ: 很旧, 旧车.',
    collo:['太旧了','旧车','旧衣服'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:10,zh:'换',py:'huàn',pos:'Động từ',vn:'đổi, thay thế',em:'🔄',lesson:3,
+  {n:10,zh:'换',py:'huàn',pos:'Động từ',vn:'đổi, thay thế', hv: 'hoán',em:'🔄',lesson:3,
    explain:['Thay thế vật này bằng vật khác.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 换 + [vật] (换一辆, 换车).',
    collo:['换一辆','换车','换钱'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'地方',py:'dìfang',pos:'Danh từ',vn:'chỗ, nơi',em:'📍',lesson:4,
+  {n:11,zh:'地方',py:'dìfang',pos:'Danh từ',vn:'chỗ, nơi', hv: 'địa phương',em:'📍',lesson:4,
    explain:['Vị trí, khu vực cụ thể nào đó.'],
    usage:'Danh từ; làm định ngữ hoặc đứng độc lập: 这个地方, 找地方.',
    collo:['这个地方','找地方','安静的地方'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 安静 đã học ở Bài 8).'},
    ]},
 
-  {n:12,zh:'中介',py:'zhōngjiè',pos:'Danh từ',vn:'môi giới',em:'🤝',lesson:4,
+  {n:12,zh:'中介',py:'zhōngjiè',pos:'Danh từ',vn:'môi giới', hv: 'trung giới',em:'🤝',lesson:4,
    explain:['Người/tổ chức đứng giữa kết nối hai bên, thường dùng cho môi giới nhà đất.'],
    usage:'Danh từ, làm chủ ngữ hoặc tân ngữ trong câu.',
    collo:['房屋中介','中介公司','找中介'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'主要',py:'zhǔyào',pos:'Tính từ',vn:'chủ yếu',em:'⭐',lesson:4,
+  {n:13,zh:'主要',py:'zhǔyào',pos:'Tính từ',vn:'chủ yếu', hv: 'chủ yếu',em:'⭐',lesson:4,
    explain:['Quan trọng nhất, đóng vai trò chính.'],
    usage:'Tính từ/phó từ, thường đứng đầu vị ngữ: 主要是 + [lý do chính].',
    collo:['主要是','主要原因','最主要'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:14,zh:'环境',py:'huánjìng',pos:'Danh từ',vn:'môi trường',em:'🌳',lesson:4,
+  {n:14,zh:'环境',py:'huánjìng',pos:'Danh từ',vn:'môi trường', hv: 'hoàn cảnh',em:'🌳',lesson:4,
    explain:['Điều kiện xung quanh nơi sinh sống hoặc làm việc.'],
    usage:'Danh từ; làm chủ ngữ hoặc tân ngữ: 环境好, 环境安静.',
    collo:['环境好','环境安静','学校环境'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:15,zh:'附近',py:'fùjìn',pos:'Danh từ',vn:'vùng lân cận',em:'🗺️',lesson:4,
+  {n:15,zh:'附近',py:'fùjìn',pos:'Danh từ',vn:'vùng lân cận', hv: 'phụ cận',em:'🗺️',lesson:4,
    explain:['Khu vực gần một địa điểm nào đó.'],
    usage:'Danh từ chỉ nơi chốn; đứng độc lập hoặc làm định ngữ: 附近有, 学校附近.',
    collo:['附近有','学校附近','附近的超市'],

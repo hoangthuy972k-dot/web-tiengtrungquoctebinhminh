@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'规定',py:'guīdìng',pos:'Danh từ/Động từ',vn:'quy định',em:'📜',lesson:1,
+  {n:1,zh:'规定',py:'guīdìng',pos:'Danh từ/Động từ',vn:'quy định', hv: 'quy định',em:'📜',lesson:1,
    explain:['Điều được đặt ra để mọi người tuân theo; hoặc hành động đặt ra điều đó.'],
    usage:'Danh từ: 公司的规定, 按照规定; động từ: 规定……',
    collo:['规定和经验','按照规定','公司规定'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'否则 ôn lại ngữ pháp Bài 11.'},
    ]},
 
-  {n:2,zh:'死',py:'sǐ',pos:'Tính từ',vn:'cố định, cứng nhắc',em:'🧱',lesson:1,
+  {n:2,zh:'死',py:'sǐ',pos:'Tính từ',vn:'cố định, cứng nhắc', hv: 'tử',em:'🧱',lesson:1,
    explain:['Nghĩa mở rộng: cứng nhắc, không linh hoạt (đối lập với 活 – linh hoạt); nghĩa gốc là chết.'],
    usage:'……是死的，……是活的; 死记硬背.',
    collo:['规定是死的','人是活的','死记'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'可是 ôn lại ngữ pháp Bài 9.'},
    ]},
 
-  {n:3,zh:'可惜',py:'kěxī',pos:'Tính từ',vn:'đáng tiếc',em:'😔',lesson:1,
+  {n:3,zh:'可惜',py:'kěxī',pos:'Tính từ',vn:'đáng tiếc', hv: 'khả tích',em:'😔',lesson:1,
    explain:['Cảm thấy tiếc nuối vì điều gì đó không như mong muốn.'],
    usage:'可惜，……; 觉得很可惜; 真可惜.',
    collo:['可惜，经验不是全部都是对的','觉得很可惜','太可惜了'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'表示 (Bài 11) + 放弃 (Bài 9).'},
    ]},
 
-  {n:4,zh:'全部',py:'quánbù',pos:'Danh từ',vn:'toàn bộ, tất cả',em:'💯',lesson:1,
+  {n:4,zh:'全部',py:'quánbù',pos:'Danh từ',vn:'toàn bộ, tất cả', hv: 'toàn bộ',em:'💯',lesson:1,
    explain:['Tất cả, không thiếu phần nào.'],
    usage:'全部 + 都: 全部都是对的; 全部完成.',
    collo:['不是全部都是对的','全部完成','全部的时间'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'内容/看法 ôn lại từ vựng Bài 11.'},
    ]},
 
-  {n:5,zh:'也许',py:'yěxǔ',pos:'Phó từ',vn:'có lẽ, may ra',em:'🤷',lesson:1,
+  {n:5,zh:'也许',py:'yěxǔ',pos:'Phó từ',vn:'có lẽ, may ra', hv: 'dã hứa',em:'🤷',lesson:1,
    explain:['Diễn tả sự phỏng đoán, không chắc chắn.'],
    usage:'也许 + động từ/mệnh đề: 也许这样就能……',
    collo:['也许这样就能','也许会','也许很有效'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'由于 ôn lại ngữ pháp Bài 10.'},
    ]},
 
-  {n:6,zh:'商量',py:'shāngliang',pos:'Động từ',vn:'thương lượng, bàn bạc',em:'🗣️',lesson:1,
+  {n:6,zh:'商量',py:'shāngliang',pos:'Động từ',vn:'thương lượng, bàn bạc', hv: 'thương lượng',em:'🗣️',lesson:1,
    explain:['Trao đổi ý kiến với người khác để đi đến quyết định.'],
    usage:'跟/和 + người + 商量; lặp 商量商量.',
    collo:['跟同事商量商量','商量一下','商量晚会的事情'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'内容 (Bài 11) + 详细 (từ mới); động từ lặp ABAB.'},
    ]},
 
-  {n:7,zh:'并且',py:'bìngqiě',pos:'Liên từ',vn:'đồng thời, và, hơn nữa',em:'➕',lesson:1,
+  {n:7,zh:'并且',py:'bìngqiě',pos:'Liên từ',vn:'đồng thời, và, hơn nữa', hv: 'tịnh thả',em:'➕',lesson:1,
    explain:['Nối động từ/tính từ song song (vài hành động/tính chất cùng lúc), hoặc nối câu diễn tả ý tiến thêm một bước.'],
    usage:'A，并且 B; 并且 + động từ/tính từ.',
    collo:['并且准确地找到','并且有丰富的经验','并且价格也便宜'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'值得 ôn lại ngữ pháp Bài 6.'},
    ]},
 
-  {n:8,zh:'盐',py:'yán',pos:'Danh từ',vn:'muối',em:'🧂',lesson:2,
+  {n:8,zh:'盐',py:'yán',pos:'Danh từ',vn:'muối', hv: 'diêm',em:'🧂',lesson:2,
    explain:['Gia vị mặn màu trắng dùng trong nấu ăn.'],
    usage:'加点儿盐, 放盐, 勺盐, 盐水.',
    collo:['在水里加点儿盐','放盐','用盐水来洗'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'加点儿盐 — thêm chút muối.'},
    ]},
 
-  {n:9,zh:'勺子',py:'sháozi',pos:'Danh từ',vn:'cái muôi, cái thìa',em:'🥄',lesson:2,
+  {n:9,zh:'勺子',py:'sháozi',pos:'Danh từ',vn:'cái muôi, cái thìa', hv: 'chước tử',em:'🥄',lesson:2,
    explain:['Dụng cụ múc/xúc thức ăn; 勺 cũng dùng làm lượng từ (một thìa).'],
    usage:'一把勺子; lượng từ: 加勺盐.',
    collo:['在水里加勺盐','一把勺子','用勺子'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'勺 làm lượng từ.'},
    ]},
 
-  {n:10,zh:'保护',py:'bǎohù',pos:'Động từ',vn:'bảo vệ',em:'🛡️',lesson:2,
+  {n:10,zh:'保护',py:'bǎohù',pos:'Động từ',vn:'bảo vệ', hv: 'bảo hộ',em:'🛡️',lesson:2,
    explain:['Giữ gìn, che chở để không bị tổn hại.'],
    usage:'保护 + tân ngữ: 保护衣服颜色, 保护环境.',
    collo:['保护衣服颜色','保护环境','保护自己'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'保护……的作用 kết hợp 作用 (từ mới).'},
    ]},
 
-  {n:11,zh:'作用',py:'zuòyòng',pos:'Danh từ',vn:'tác dụng',em:'⚙️',lesson:2,
+  {n:11,zh:'作用',py:'zuòyòng',pos:'Danh từ',vn:'tác dụng', hv: 'tác dụng',em:'⚙️',lesson:2,
    explain:['Ảnh hưởng, hiệu quả mà sự vật tạo ra.'],
    usage:'有……的作用; 作用越来越大; 起作用.',
    collo:['有保护衣服颜色的作用','作用越来越大','起作用'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'阅读/增加 ôn lại từ vựng Bài 11.'},
    ]},
 
-  {n:12,zh:'无法',py:'wúfǎ',pos:'Động từ',vn:'không thể, không có cách gì',em:'🚫',lesson:2,
+  {n:12,zh:'无法',py:'wúfǎ',pos:'Động từ',vn:'không thể, không có cách gì', hv: 'vô pháp',em:'🚫',lesson:2,
    explain:['Không có cách nào để làm được.'],
    usage:'无法 + động từ: 无法学到, 无法改变.',
    collo:['课本上无法学到的知识','无法改变','无法解决'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'由于 ôn lại ngữ pháp Bài 10.'},
    ]},
 
-  {n:13,zh:'节',py:'jié',pos:'Lượng từ',vn:'tiết (học)',em:'🔔',lesson:3,
+  {n:13,zh:'节',py:'jié',pos:'Lượng từ',vn:'tiết (học)', hv: 'tiết',em:'🔔',lesson:3,
    explain:['Lượng từ cho tiết học, đoạn (bài giảng).'],
    usage:'Số + 节 + 课: 一节课, 这节课.',
    collo:['这节课','一节课','每天四节课'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'受欢迎 — được yêu thích.'},
    ]},
 
-  {n:14,zh:'详细',py:'xiángxì',pos:'Tính từ',vn:'chi tiết, tỉ mỉ',em:'🔍',lesson:3,
+  {n:14,zh:'详细',py:'xiángxì',pos:'Tính từ',vn:'chi tiết, tỉ mỉ', hv: 'tường tế',em:'🔍',lesson:3,
    explain:['Đầy đủ, cụ thể từng chi tiết.'],
    usage:'详细谈谈; 不够详细; 详细的计划.',
    collo:['详细谈谈','不够详细','详细地解释'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'比如 ôn lại ngữ pháp Bài 10.'},
    ]},
 
-  {n:15,zh:'解释',py:'jiěshì',pos:'Động từ',vn:'giải thích',em:'💡',lesson:3,
+  {n:15,zh:'解释',py:'jiěshì',pos:'Động từ',vn:'giải thích', hv: 'giải thích',em:'💡',lesson:3,
    explain:['Nói rõ nguyên nhân, ý nghĩa để người khác hiểu.'],
    usage:'把……解释清楚; 向……解释; 解释一下.',
    collo:['把复杂的问题解释清楚','向顾客解释','解释一下'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'Câu chữ 把 + 让 (Bài 8).'},
    ]},
 
-  {n:16,zh:'对于',py:'duìyú',pos:'Giới từ',vn:'đối với',em:'🎯',lesson:3,
+  {n:16,zh:'对于',py:'duìyú',pos:'Giới từ',vn:'đối với', hv: 'đối vu',em:'🎯',lesson:3,
    explain:['Nêu đối tượng mà thái độ/tình huống đề cập tới; có thể đứng trước hoặc sau chủ ngữ.'],
    usage:'对于 + đối tượng，……; 对于……来说.',
    collo:['对于老师来说','对于这件事','对于自然环境'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'Bài 做一做 SGK (1) — 对于/关于 đều dùng được.'},
    ]},
 
-  {n:17,zh:'叶子',py:'yèzi',pos:'Danh từ',vn:'lá cây',em:'🍃',lesson:3,
+  {n:17,zh:'叶子',py:'yèzi',pos:'Danh từ',vn:'lá cây', hv: 'diệp tử',em:'🍃',lesson:3,
    explain:['Bộ phận của cây mọc trên cành, thường màu xanh.'],
    usage:'一片叶子; 相同的叶子; 叶子红了.',
    collo:['完全相同的叶子','一片叶子','叶子红了'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'变 + tính từ + 了 — chỉ sự thay đổi.'},
    ]},
 
-  {n:18,zh:'教育',py:'jiàoyù',pos:'Động từ/Danh từ',vn:'giáo dục, dạy dỗ',em:'🎓',lesson:3,
+  {n:18,zh:'教育',py:'jiàoyù',pos:'Động từ/Danh từ',vn:'giáo dục, dạy dỗ', hv: 'giáo dục',em:'🎓',lesson:3,
    explain:['Dạy dỗ, bồi dưỡng; hoặc sự nghiệp giáo dục.'],
    usage:'教育学生/孩子; 教育方法; 受教育.',
    collo:['在教育学生时','教育方法','教育孩子'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'根据 — căn cứ vào.'},
    ]},
 
-  {n:19,zh:'使用',py:'shǐyòng',pos:'Động từ',vn:'sử dụng',em:'🔧',lesson:4,
+  {n:19,zh:'使用',py:'shǐyòng',pos:'Động từ',vn:'sử dụng', hv: 'sử dụng',em:'🔧',lesson:4,
    explain:['Dùng (công cụ, ngôn ngữ, phương pháp…).'],
    usage:'使用 + tân ngữ: 使用语言, 使用正确的方法.',
    collo:['使用语言','使用正确的方法','使用以前的办法'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'人人 (lặp danh từ) + 却 (Bài 2).'},
    ]},
 
-  {n:20,zh:'语言',py:'yǔyán',pos:'Danh từ',vn:'ngôn ngữ',em:'🗨️',lesson:4,
+  {n:20,zh:'语言',py:'yǔyán',pos:'Danh từ',vn:'ngôn ngữ', hv: 'ngữ ngôn',em:'🗨️',lesson:4,
    explain:['Hệ thống lời nói/chữ viết dùng để giao tiếp.'],
    usage:'使用语言; 语言幽默; 几种语言.',
    collo:['使用语言','语言幽默','翻译成好几种语言'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'坚持 ôn lại Bài 9.'},
    ]},
 
-  {n:21,zh:'直接',py:'zhíjiē',pos:'Tính từ',vn:'trực tiếp, thẳng',em:'➡️',lesson:4,
+  {n:21,zh:'直接',py:'zhíjiē',pos:'Tính từ',vn:'trực tiếp, thẳng', hv: 'trực tiếp',em:'➡️',lesson:4,
    explain:['Không qua trung gian; thẳng thắn.'],
    usage:'直接说出来; 直接指出来; 直接跟……联系.',
    collo:['直接说出来','直接指出来','直接跟他联系'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'Câu chữ 把 + 发到.'},
    ]},
 
-  {n:22,zh:'引起',py:'yǐnqǐ',pos:'Động từ',vn:'gây ra, dẫn đến',em:'⚡',lesson:4,
+  {n:22,zh:'引起',py:'yǐnqǐ',pos:'Động từ',vn:'gây ra, dẫn đến', hv: 'dẫn khởi',em:'⚡',lesson:4,
    explain:['Làm nảy sinh (hậu quả, phản ứng, sự chú ý…).'],
    usage:'引起 + tân ngữ: 引起误会, 引起注意, 引起一定的结果.',
    collo:['引起别人的误会','引起注意','引起一定的结果'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'直接/误会 — từ mới của bài.'},
    ]},
 
-  {n:23,zh:'误会',py:'wùhuì',pos:'Danh từ/Động từ',vn:'sự hiểu lầm; hiểu lầm',em:'❓',lesson:4,
+  {n:23,zh:'误会',py:'wùhuì',pos:'Danh từ/Động từ',vn:'sự hiểu lầm; hiểu lầm', hv: 'ngộ hội',em:'❓',lesson:4,
    explain:['Hiểu sai ý người khác.'],
    usage:'引起误会; 产生误会; 误会了.',
    collo:['引起别人的误会','产生误会','你误会我了'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'只有……才 ôn lại; 之间 (Bài 11).'},
    ]},
 
-  {n:24,zh:'友好',py:'yǒuhǎo',pos:'Tính từ',vn:'thân thiện',em:'🤝',lesson:4,
+  {n:24,zh:'友好',py:'yǒuhǎo',pos:'Tính từ',vn:'thân thiện', hv: 'hữu hảo',em:'🤝',lesson:4,
    explain:['Tỏ ra thiện chí, hòa nhã với người khác.'],
    usage:'觉得更友好; 友好的态度; 对……很友好.',
    collo:['让人觉得更友好','友好的态度','对客人很友好'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'让 ôn lại Bài 8.'},
    ]},
 
-  {n:25,zh:'事半功倍',py:'shì bàn gōng bèi',pos:'Thành ngữ',vn:'làm ít được nhiều (nửa công gấp đôi hiệu quả)',em:'🚀',lesson:5,
+  {n:25,zh:'事半功倍',py:'shì bàn gōng bèi',pos:'Thành ngữ',vn:'làm ít được nhiều (nửa công gấp đôi hiệu quả)', hv: 'sự bán công bội',em:'🚀',lesson:5,
    explain:['Tốn ít công sức mà đạt hiệu quả gấp đôi; đối lập với 事倍功半 (tốn gấp đôi công mà chỉ được một nửa).'],
    usage:'能事半功倍; 事半功倍的方法.',
    collo:['做起事来能事半功倍','事半功倍的方法','变成了事倍功半'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'正确 ôn lại Bài 9.'},
    ]},
 
-  {n:26,zh:'节约',py:'jiéyuē',pos:'Động từ',vn:'tiết kiệm',em:'💰',lesson:5,
+  {n:26,zh:'节约',py:'jiéyuē',pos:'Động từ',vn:'tiết kiệm', hv: 'tiết ước',em:'💰',lesson:5,
    explain:['Dùng ít, không lãng phí (thời gian, tiền bạc, nước…).'],
    usage:'节约 + tân ngữ: 节约时间/用水/用电.',
    collo:['节约时间','节约用水','节约力气'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'保护 — từ mới của bài.'},
    ]},
 
-  {n:27,zh:'力气',py:'lìqi',pos:'Danh từ',vn:'sức lực, hơi sức',em:'💪',lesson:5,
+  {n:27,zh:'力气',py:'lìqi',pos:'Danh từ',vn:'sức lực, hơi sức', hv: 'lực khí',em:'💪',lesson:5,
    explain:['Sức mạnh cơ thể; công sức.'],
    usage:'用较少的力气; 没力气; 花力气.',
    collo:['用较少的力气','没力气爬了','花很多力气'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'Câu chữ 把 + bổ ngữ xu hướng 上楼.'},
    ]},
 
-  {n:28,zh:'相反',py:'xiāngfǎn',pos:'Liên từ/Tính từ',vn:'trái lại, ngược lại; trái ngược',em:'🔄',lesson:5,
+  {n:28,zh:'相反',py:'xiāngfǎn',pos:'Liên từ/Tính từ',vn:'trái lại, ngược lại; trái ngược', hv: 'tương phản',em:'🔄',lesson:5,
    explain:['1. (Liên từ) Đứng đầu/giữa vế sau, chỉ chuyển ý hoặc tăng tiến.','2. (Tính từ) Hai mặt đối lập nhau; khi bổ nghĩa danh từ phải có 的.'],
    usage:'……。相反，……; 完全相反; 相反的方向.',
    collo:['相反，如果方法不对','几乎完全相反','相反的方向'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'本来 (Bài 3) + 以为 (Bài 4) + 正好 (Bài 2) + 方向/发展 (Bài 10).'},
    ]},
 
-  {n:29,zh:'任务',py:'rènwu',pos:'Danh từ',vn:'nhiệm vụ',em:'📋',lesson:5,
+  {n:29,zh:'任务',py:'rènwu',pos:'Danh từ',vn:'nhiệm vụ', hv: 'nhiệm vụ',em:'📋',lesson:5,
    explain:['Công việc được giao phải hoàn thành.'],
    usage:'完成任务; 一项任务; 任务很重.',
    collo:['完成任务','按时完成任务','任务顺利完成'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'全部 — từ mới của bài.'},
    ]},
 
-  {n:30,zh:'意见',py:'yìjiàn',pos:'Danh từ',vn:'ý kiến',em:'💭',lesson:5,
+  {n:30,zh:'意见',py:'yìjiàn',pos:'Danh từ',vn:'ý kiến', hv: 'ý kiến',em:'💭',lesson:5,
    explain:['Cách nhìn, suy nghĩ về việc gì; cũng có nghĩa là sự không hài lòng.'],
    usage:'听取别人的意见; 提意见; 有意见.',
    collo:['听取别人的意见','看法或者意见','提意见'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'在……的同时 ôn lại ngữ pháp Bài 11.'},
    ]},
 
-  {n:31,zh:'仔细',py:'zǐxì',pos:'Tính từ',vn:'thận trọng, kỹ lưỡng',em:'🧐',lesson:5,
+  {n:31,zh:'仔细',py:'zǐxì',pos:'Tính từ',vn:'thận trọng, kỹ lưỡng', hv: 'tử tế',em:'🧐',lesson:5,
    explain:['Cẩn thận, chú ý từng chi tiết.'],
    usage:'仔细考虑; 仔细看; 仔细听.',
    collo:['仔细考虑一下','仔细看看','仔细听'],
@@ -685,7 +685,7 @@ var vocabData = [
       note:'否则 ôn lại ngữ pháp Bài 11.'},
    ]},
 
-  {n:32,zh:'达到',py:'dádào',pos:'Động từ',vn:'đạt được',em:'🏁',lesson:5,
+  {n:32,zh:'达到',py:'dádào',pos:'Động từ',vn:'đạt được', hv: 'đạt đáo',em:'🏁',lesson:5,
    explain:['Đạt tới (mục tiêu, mức độ, hiệu quả).'],
    usage:'达到 + tân ngữ: 达到效果/目的/水平.',
    collo:['达到最好的效果','达到目的','达到要求'],
@@ -707,7 +707,7 @@ var vocabData = [
       note:'效果 ôn lại Bài 9.'},
    ]},
 
-  {n:33,zh:'无',py:'wú',pos:'Động từ',vn:'không có, không',em:'⭕',lesson:2,
+  {n:33,zh:'无',py:'wú',pos:'Động từ',vn:'không có, không', hv: 'vô',em:'⭕',lesson:2,
    explain:['Dạng văn viết của 没有/不: 无法, 无论, 无处不在.'],
    usage:'无 + danh từ/động từ: 无法, 无论, 无人.',
    collo:['无法','无论','无处不在'],

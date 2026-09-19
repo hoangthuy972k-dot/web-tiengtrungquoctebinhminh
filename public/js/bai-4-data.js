@@ -2,7 +2,7 @@
 // DATA — Bài 4: 这个工作是他帮我介绍的
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'生日',py:'shēngrì',pos:'Danh từ',vn:'sinh nhật',em:'🎂',lesson:1,
+  {n:1,zh:'生日',py:'shēngrì',pos:'Danh từ',vn:'sinh nhật', hv: 'sinh nhật',em:'🎂',lesson:1,
    ex_zh:'生日快乐！',ex_py:'Shēngrì kuàilè!',ex_vn:'Chúc mừng sinh nhật!',
    exList:[
      {zh:'生日快乐！',py:'Shēngrì kuàilè!',vn:'Chúc mừng sinh nhật!'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'Hình vuông có chấm ở giữa mô phỏng mặt trời → "ngày, mặt trời".',
       cf:'目 (mù – "mắt", dài hơn)',w:'生日 / 今天 / 日子'},
    ]},
-  {n:2,zh:'快乐',py:'kuàilè',pos:'Tính từ',vn:'vui vẻ, hạnh phúc',em:'😄',lesson:1,
+  {n:2,zh:'快乐',py:'kuàilè',pos:'Tính từ',vn:'vui vẻ, hạnh phúc', hv: 'khoái lạc',em:'😄',lesson:1,
    ex_zh:'祝你天天快乐。',ex_py:'Zhù nǐ tiāntiān kuàilè.',ex_vn:'Chúc bạn ngày nào cũng vui vẻ.',
    exList:[
      {zh:'祝你天天快乐。',py:'Zhù nǐ tiāntiān kuàilè.',vn:'Chúc bạn ngày nào cũng vui vẻ.'},
@@ -32,7 +32,7 @@ var vocabData = [
       tip:'Hình chiếc trống có dùi gõ cách điệu → thời xưa nghe nhạc là niềm VUI.',
       cf:'东 (dōng – "phía đông")',w:'快乐 / 音乐 / 乐意'},
    ]},
-  {n:3,zh:'给',py:'gěi',pos:'Giới từ / Động từ',vn:'cho, tặng',em:'🎁',lesson:1,
+  {n:3,zh:'给',py:'gěi',pos:'Giới từ / Động từ',vn:'cho, tặng', hv: 'cấp',em:'🎁',lesson:1,
    ex_zh:'这是送给你的。',ex_py:'Zhè shì sòng gěi nǐ de.',ex_vn:'Đây là quà tặng bạn.',
    exList:[
      {zh:'这是送给你的。',py:'Zhè shì sòng gěi nǐ de.',vn:'Đây là quà tặng bạn.'},
@@ -44,7 +44,7 @@ var vocabData = [
       tip:'Bộ 纟(tơ lụa) — xưa tặng nhau tơ lụa quý giá, sau mở rộng nghĩa "CHO, TẶNG" nói chung.',
       cf:'合 (hé – "hợp", thiếu bộ 纟)',w:'给你 / 送给 / 给我'},
    ]},
-  {n:4,zh:'接',py:'jiē',pos:'Động từ',vn:'nhận, đón, nghe máy',em:'📞',lesson:2,
+  {n:4,zh:'接',py:'jiē',pos:'Động từ',vn:'nhận, đón, nghe máy', hv: 'tiếp',em:'📞',lesson:2,
    ex_zh:'电话是儿子接的。',ex_py:'Diànhuà shì érzi jiē de.',ex_vn:'Điện thoại là con trai nghe máy.',
    exList:[
      {zh:'电话是儿子接的。',py:'Diànhuà shì érzi jiē de.',vn:'Điện thoại là con trai nghe máy.'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Bộ 扌(tay) → dùng tay đưa ra ĐÓN NHẬN người/vật/cuộc gọi.',
       cf:'椄 (jiē – "ghép cây", bộ 木)',w:'接电话 / 接人 / 迎接'},
    ]},
-  {n:5,zh:'晚上',py:'wǎnshang',pos:'Danh từ',vn:'buổi tối',em:'🌙',lesson:2,
+  {n:5,zh:'晚上',py:'wǎnshang',pos:'Danh từ',vn:'buổi tối', hv: 'vãn thượng',em:'🌙',lesson:2,
    ex_zh:'晚上我问一下儿子。',ex_py:'Wǎnshang wǒ wèn yíxià érzi.',ex_vn:'Tối nay tôi sẽ hỏi con trai một chút.',
    exList:[
      {zh:'晚上我问一下儿子。',py:'Wǎnshang wǒ wèn yíxià érzi.',vn:'Tối nay tôi sẽ hỏi con trai một chút.'},
@@ -71,7 +71,7 @@ var vocabData = [
       tip:'Đã học ở Bài 3 (早上) — nét ngắn phía trên nét ngang dài = hướng lên trên.',
       cf:'下 (xià)',w:'晚上 / 早上 / 上班'},
    ]},
-  {n:6,zh:'问',py:'wèn',pos:'Động từ',vn:'hỏi',em:'❔',lesson:2,
+  {n:6,zh:'问',py:'wèn',pos:'Động từ',vn:'hỏi', hv: 'vấn',em:'❔',lesson:2,
    ex_zh:'晚上我问一下儿子。',ex_py:'Wǎnshang wǒ wèn yíxià érzi.',ex_vn:'Tối nay tôi sẽ hỏi con trai một chút.',
    exList:[
      {zh:'晚上我问一下儿子。',py:'Wǎnshang wǒ wèn yíxià érzi.',vn:'Tối nay tôi sẽ hỏi con trai một chút.'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Miệng 口 đứng ở cửa 门 cất tiếng gọi/HỎI vào trong.',
       cf:'间 (jiān – thay 口 bằng 日, đã học ở Bài 2)',w:'问一下 / 问题 / 请问'},
    ]},
-  {n:7,zh:'非常',py:'fēicháng',pos:'Phó từ',vn:'vô cùng, cực kỳ',em:'❗',lesson:3,
+  {n:7,zh:'非常',py:'fēicháng',pos:'Phó từ',vn:'vô cùng, cực kỳ', hv: 'phi thường',em:'❗',lesson:3,
    ex_zh:'非常喜欢。',ex_py:'Fēicháng xǐhuan.',ex_vn:'Cực kỳ thích luôn.',
    exList:[
      {zh:'非常喜欢。',py:'Fēicháng xǐhuan.',vn:'Cực kỳ thích luôn.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'非 + 常 = mức độ vượt ra ngoài cái "thường" = VÔ CÙNG.',
       cf:'尝 (cháng – "nếm", phần dưới khác)',w:'非常 / 经常 / 常常'},
    ]},
-  {n:8,zh:'开始',py:'kāishǐ',pos:'Động từ',vn:'bắt đầu',em:'🚦',lesson:3,
+  {n:8,zh:'开始',py:'kāishǐ',pos:'Động từ',vn:'bắt đầu', hv: 'khai thủy',em:'🚦',lesson:3,
    ex_zh:'你是什么时候开始踢足球的？',ex_py:'Nǐ shì shénme shíhou kāishǐ tī zúqiú de?',ex_vn:'Bạn bắt đầu đá bóng từ khi nào thế?',
    exList:[
      {zh:'你是什么时候开始踢足球的？',py:'Nǐ shì shénme shíhou kāishǐ tī zúqiú de?',vn:'Bạn bắt đầu đá bóng từ khi nào thế?'},
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'开 (mở ra) + 始 (khởi thủy) = mở ra điểm khởi đầu = BẮT ĐẦU.',
       cf:'治 (zhì – "trị", bộ 氵)',w:'开始 / 始终'},
    ]},
-  {n:9,zh:'已经',py:'yǐjīng',pos:'Phó từ',vn:'đã',em:'✅',lesson:4,
+  {n:9,zh:'已经',py:'yǐjīng',pos:'Phó từ',vn:'đã', hv: 'dĩ kinh',em:'✅',lesson:4,
    ex_zh:'已经两年多了。',ex_py:'Yǐjīng liǎng nián duō le.',ex_vn:'Đã hơn hai năm rồi.',
    exList:[
      {zh:'已经两年多了。',py:'Yǐjīng liǎng nián duō le.',vn:'Đã hơn hai năm rồi.'},
@@ -128,7 +128,7 @@ var vocabData = [
       tip:'已 (xong) + 经 (trải qua) = việc đã trải qua = ĐÃ (xong rồi).',
       cf:'径 (jìng – "con đường", bộ 彳)',w:'已经 / 经常 / 经理'},
    ]},
-  {n:10,zh:'长',py:'cháng',pos:'Tính từ',vn:'dài, lâu',em:'📏',lesson:4,
+  {n:10,zh:'长',py:'cháng',pos:'Tính từ',vn:'dài, lâu', hv: 'trường',em:'📏',lesson:4,
    ex_zh:'你在这里工作多长时间了？',ex_py:'Nǐ zài zhèlǐ gōngzuò duō cháng shíjiān le?',ex_vn:'Bạn làm việc ở đây được bao lâu rồi?',
    exList:[
      {zh:'你在这里工作多长时间了？',py:'Nǐ zài zhèlǐ gōngzuò duō cháng shíjiān le?',vn:'Bạn làm việc ở đây được bao lâu rồi?'},
@@ -140,7 +140,7 @@ var vocabData = [
       tip:'Hình mái tóc dài được vẽ cách điệu → nghĩa gốc "DÀI". Đọc zhǎng khi nghĩa "trưởng thành, cấp trên".',
       cf:'K không có',w:'多长时间 / 长大 / 校长'},
    ]},
-  {n:11,zh:'两',py:'liǎng',pos:'Số từ',vn:'hai (dùng trước lượng từ)',em:'2️⃣',lesson:4,
+  {n:11,zh:'两',py:'liǎng',pos:'Số từ',vn:'hai (dùng trước lượng từ)', hv: 'lưỡng',em:'2️⃣',lesson:4,
    ex_zh:'已经两年多了。',ex_py:'Yǐjīng liǎng nián duō le.',ex_vn:'Đã hơn hai năm rồi.',
    exList:[
      {zh:'已经两年多了。',py:'Yǐjīng liǎng nián duō le.',vn:'Đã hơn hai năm rồi.'},
@@ -152,7 +152,7 @@ var vocabData = [
       tip:'Khác với 二 (số 2 khi đếm), 两 dùng khi đi kèm LƯỢNG TỪ: 两个, 两年, 两块.',
       cf:'辆 (liàng – "lượng từ xe", bộ 车)',w:'两年 / 两个 / 两天'},
    ]},
-  {n:12,zh:'帮',py:'bāng',pos:'Động từ',vn:'giúp, giúp đỡ',em:'🤝',lesson:4,
+  {n:12,zh:'帮',py:'bāng',pos:'Động từ',vn:'giúp, giúp đỡ', hv: 'bang',em:'🤝',lesson:4,
    ex_zh:'这个工作是他帮我介绍的。',ex_py:'Zhège gōngzuò shì tā bāng wǒ jièshào de.',ex_vn:'Công việc này là do anh ấy giới thiệu cho tôi đấy.',
    exList:[
      {zh:'这个工作是他帮我介绍的。',py:'Zhège gōngzuò shì tā bāng wǒ jièshào de.',vn:'Công việc này là do anh ấy giới thiệu cho tôi đấy.'},
@@ -164,7 +164,7 @@ var vocabData = [
       tip:'Nghĩa gốc liên quan tới "đoàn thể, phe nhóm" (邦), sau mở rộng thành "cùng nhau GIÚP ĐỠ".',
       cf:'邦 (bāng – "quốc gia")',w:'帮忙 / 帮助 / 帮我'},
    ]},
-  {n:13,zh:'介绍',py:'jièshào',pos:'Động từ',vn:'giới thiệu',em:'🙋',lesson:4,
+  {n:13,zh:'介绍',py:'jièshào',pos:'Động từ',vn:'giới thiệu', hv: 'giới thiệu',em:'🙋',lesson:4,
    ex_zh:'我来介绍一下。',ex_py:'Wǒ lái jièshào yíxià.',ex_vn:'Để tôi giới thiệu một chút.',
    exList:[
      {zh:'我来介绍一下。',py:'Wǒ lái jièshào yíxià.',vn:'Để tôi giới thiệu một chút.'},

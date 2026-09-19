@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'家具',py:'jiājù',pos:'Danh từ',vn:'đồ dùng trong nhà',em:'🛋️',lesson:1,
+  {n:1,zh:'家具',py:'jiājù',pos:'Danh từ',vn:'đồ dùng trong nhà', hv: 'gia cụ',em:'🛋️',lesson:1,
    explain:['Đồ vật dùng để trang trí/sử dụng trong nhà như bàn ghế, tủ, giường...'],
    usage:'Danh từ; thường đi với 买家具, 家具店.',
    collo:['买家具','家具店','这些家具'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'质量/价格 — ôn lại từ vựng của bài.'},
    ]},
 
-  {n:2,zh:'沙发',py:'shāfā',pos:'Danh từ',vn:'ghế sô pha',em:'🛋️',lesson:1,
+  {n:2,zh:'沙发',py:'shāfā',pos:'Danh từ',vn:'ghế sô pha', hv: 'sa phát',em:'🛋️',lesson:1,
    explain:['Loại ghế ngồi/nằm êm, có đệm, thường đặt trong phòng khách.'],
    usage:'Danh từ; thường đi với 买沙发, 这个沙发.',
    collo:['买沙发','这个沙发','沙发的颜色'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'光……就…… — chỉ riêng … đã….'},
    ]},
 
-  {n:3,zh:'打折',py:'dǎzhé',pos:'Động từ',vn:'giảm giá',em:'🏷️',lesson:1,
+  {n:3,zh:'打折',py:'dǎzhé',pos:'Động từ',vn:'giảm giá', hv: 'đả chiết',em:'🏷️',lesson:1,
    explain:['Bán hàng với giá thấp hơn giá gốc theo một tỷ lệ phần trăm.'],
    usage:'Động từ ly hợp; thường đi với 正在打折, 商场打折.',
    collo:['正在打折','商场打折','质量打折'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'正是……都在打折 — đúng lúc … đều đang giảm giá.'},
    ]},
 
-  {n:4,zh:'价格',py:'jiàgé',pos:'Danh từ',vn:'giá cả',em:'🏷️',lesson:1,
+  {n:4,zh:'价格',py:'jiàgé',pos:'Danh từ',vn:'giá cả', hv: 'giá cách',em:'🏷️',lesson:1,
    explain:['Số tiền cần trả để mua một món hàng.'],
    usage:'Danh từ; thường đi với 价格还可以, 价格合适.',
    collo:['价格还可以','价格合适','价格太高'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'对……来说 ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:5,zh:'质量',py:'zhìliàng',pos:'Danh từ',vn:'chất lượng',em:'✅',lesson:1,
+  {n:5,zh:'质量',py:'zhìliàng',pos:'Danh từ',vn:'chất lượng', hv: 'chất lượng',em:'✅',lesson:1,
    explain:['Mức độ tốt/xấu của một sản phẩm hoặc dịch vụ.'],
    usage:'Danh từ; thường đi với 质量有保证, 质量好.',
    collo:['质量有保证','质量好','质量不好'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'肯定 + 保证 kết hợp 流行/样子, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:6,zh:'肯定',py:'kěndìng',pos:'Phó từ/Tính từ',vn:'chắc chắn, nhất định; xác định, thừa nhận',em:'👍',lesson:1,
+  {n:6,zh:'肯定',py:'kěndìng',pos:'Phó từ/Tính từ',vn:'chắc chắn, nhất định; xác định, thừa nhận', hv: 'khẳng định',em:'👍',lesson:1,
    explain:['1. (Phó từ) Diễn tả sự chắc chắn, không nghi ngờ.','2. (Tính từ) Xác định, rõ ràng; hoặc thừa nhận, tích cực (đối lập với phủ định).'],
    usage:'Phó từ: 肯定 + động từ/tính từ (肯定不好); tính từ: 肯定的 + danh từ, hoặc 是肯定的.',
    collo:['肯定不好','肯定的事','回答是肯定的'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'肯定 (phó từ) + 不会……的 — chắc chắn sẽ không….'},
    ]},
 
-  {n:7,zh:'流行',py:'liúxíng',pos:'Động từ/Tính từ',vn:'được nhiều người ưa chuộng, thịnh hành',em:'✨',lesson:1,
+  {n:7,zh:'流行',py:'liúxíng',pos:'Động từ/Tính từ',vn:'được nhiều người ưa chuộng, thịnh hành', hv: 'lưu hành',em:'✨',lesson:1,
    explain:['Được nhiều người yêu thích, sử dụng rộng rãi trong một khoảng thời gian.'],
    usage:'Động từ/tính từ; thường đi với 最流行, 流行不流行.',
    collo:['最流行','流行的样子','越来越流行'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'对……来说 ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:8,zh:'顺便',py:'shùnbiàn',pos:'Phó từ',vn:'nhân tiện',em:'👉',lesson:2,
+  {n:8,zh:'顺便',py:'shùnbiàn',pos:'Phó từ',vn:'nhân tiện', hv: 'thuận tiện',em:'👉',lesson:2,
    explain:['Nhân lúc làm việc gì đó, tiện thể làm thêm việc khác.'],
    usage:'Phó từ, đứng trước động từ: 顺便买, 顺便看看.',
    collo:['顺便买','顺便看看','顺便问一下'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'正好……顺便…… — kết hợp cấu trúc câu.'},
    ]},
 
-  {n:9,zh:'台',py:'tái',pos:'Lượng từ',vn:'cái, chiếc (máy móc)',em:'💻',lesson:2,
+  {n:9,zh:'台',py:'tái',pos:'Lượng từ',vn:'cái, chiếc (máy móc)', hv: 'đài',em:'💻',lesson:2,
    explain:['Lượng từ dùng cho máy móc, thiết bị điện tử như tủ lạnh, máy tính, tivi...'],
    usage:'Lượng từ; đi với danh từ máy móc: 一台冰箱, 一台电脑.',
    collo:['一台冰箱','一台电脑','买一台'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'一台 + 电脑 — lượng từ máy móc.'},
    ]},
 
-  {n:10,zh:'光',py:'guāng',pos:'Phó từ',vn:'chỉ (riêng)',em:'☝️',lesson:2,
+  {n:10,zh:'光',py:'guāng',pos:'Phó từ',vn:'chỉ (riêng)', hv: 'quang',em:'☝️',lesson:2,
    explain:['Chỉ, riêng một việc/khoản nào đó (không tính những cái khác), thường kết hợp 就 ở vế sau.'],
    usage:'光 + danh từ/động từ + 就……: 光买沙发就花了两千多.',
    collo:['光买沙发就','光……就','光是'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'光 + động từ — chỉ làm một việc (không đủ).'},
    ]},
 
-  {n:11,zh:'实在',py:'shízài',pos:'Phó từ',vn:'kỳ thực, quả thực',em:'💯',lesson:2,
+  {n:11,zh:'实在',py:'shízài',pos:'Phó từ',vn:'kỳ thực, quả thực', hv: 'thực tại',em:'💯',lesson:2,
    explain:['Diễn tả mức độ thực sự, đúng như vậy, nhấn mạnh tính chân thực.'],
    usage:'Phó từ, đứng trước tính từ: 实在太旧了, 实在不容易.',
    collo:['实在太旧了','实在不容易','实在对不起'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'实在 + 不像……那么…… kết hợp 原来, ôn lại điểm ngữ pháp Bài 4.'},
    ]},
 
-  {n:12,zh:'制冷',py:'zhìlěng',pos:'Động từ',vn:'làm lạnh, ướp lạnh',em:'❄️',lesson:2,
+  {n:12,zh:'制冷',py:'zhìlěng',pos:'Động từ',vn:'làm lạnh, ướp lạnh', hv: 'chế lãnh',em:'❄️',lesson:2,
    explain:['Làm cho nhiệt độ giảm xuống, tạo môi trường lạnh (thường nói về thiết bị điện lạnh).'],
    usage:'Động từ; thường đi với 制冷效果.',
    collo:['制冷效果','制冷好不好'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'制冷效果 — hiệu quả làm lạnh.'},
    ]},
 
-  {n:13,zh:'效果',py:'xiàoguǒ',pos:'Danh từ',vn:'hiệu quả',em:'📊',lesson:2,
+  {n:13,zh:'效果',py:'xiàoguǒ',pos:'Danh từ',vn:'hiệu quả', hv: 'hiệu quả',em:'📊',lesson:2,
    explain:['Kết quả đạt được sau khi thực hiện một hành động/biện pháp.'],
    usage:'Danh từ; thường đi với 制冷效果, 效果不错.',
    collo:['制冷效果','效果不错','广告效果'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'质量/效果 kết hợp nhiều từ vựng của bài.'},
    ]},
 
-  {n:14,zh:'现金',py:'xiànjīn',pos:'Danh từ',vn:'tiền mặt',em:'💵',lesson:2,
+  {n:14,zh:'现金',py:'xiànjīn',pos:'Danh từ',vn:'tiền mặt', hv: 'hiện kim',em:'💵',lesson:2,
    explain:['Tiền dùng để thanh toán trực tiếp, không qua thẻ hay chuyển khoản.'],
    usage:'Danh từ; thường đi với 带现金, 现金不够.',
    collo:['带现金','现金不够','用现金'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'不收现金 — không nhận tiền mặt.'},
    ]},
 
-  {n:15,zh:'邀请',py:'yāoqǐng',pos:'Động từ',vn:'mời',em:'✉️',lesson:3,
+  {n:15,zh:'邀请',py:'yāoqǐng',pos:'Động từ',vn:'mời', hv: 'yêu thỉnh',em:'✉️',lesson:3,
    explain:['Mời ai đó đến tham gia một hoạt động/sự kiện.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 邀请咱们, 邀请去做客.',
    collo:['邀请咱们','邀请去做客','受到邀请'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'邀请……做客 kết hợp 咱们, ôn lại từ vựng Bài 3.'},
    ]},
 
-  {n:16,zh:'葡萄',py:'pútao',pos:'Danh từ',vn:'quả nho',em:'🍇',lesson:3,
+  {n:16,zh:'葡萄',py:'pútao',pos:'Danh từ',vn:'quả nho', hv: 'bồ đào',em:'🍇',lesson:3,
    explain:['Loại quả nhỏ, mọc thành chùm, thường dùng để ăn hoặc làm rượu vang.'],
    usage:'Danh từ; thường đi với 葡萄酒 (rượu vang).',
    collo:['葡萄酒','两瓶葡萄酒','吃葡萄'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'对身体有好处 — có lợi cho sức khỏe.'},
    ]},
 
-  {n:17,zh:'艺术',py:'yìshù',pos:'Danh từ/Tính từ',vn:'nghệ thuật; có tính nghệ thuật',em:'🎨',lesson:3,
+  {n:17,zh:'艺术',py:'yìshù',pos:'Danh từ/Tính từ',vn:'nghệ thuật; có tính nghệ thuật', hv: 'nghệ thuật',em:'🎨',lesson:3,
    explain:['1. (Danh từ) Lĩnh vực sáng tạo cái đẹp (hội họa, âm nhạc, điêu khắc...).','2. (Tính từ) Có tính thẩm mỹ, được làm khéo léo, đẹp mắt.'],
    usage:'Danh từ: 艺术品; tính từ: 做得都这么艺术.',
    collo:['很艺术','艺术品','这么艺术'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'设计得很艺术 kết hợp 流行, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:18,zh:'广告',py:'guǎnggào',pos:'Danh từ',vn:'quảng cáo',em:'📢',lesson:3,
+  {n:18,zh:'广告',py:'guǎnggào',pos:'Danh từ',vn:'quảng cáo', hv: 'quảng cáo',em:'📢',lesson:3,
    explain:['Thông tin quảng bá về sản phẩm/dịch vụ nhằm thu hút khách hàng.'],
    usage:'Danh từ; thường đi với 电视上的广告, 相信广告.',
    collo:['电视上的广告','相信广告','广告的影响'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'受到……的影响 — chịu ảnh hưởng từ….'},
    ]},
 
-  {n:19,zh:'味道',py:'wèidào',pos:'Danh từ',vn:'mùi vị',em:'😋',lesson:3,
+  {n:19,zh:'味道',py:'wèidào',pos:'Danh từ',vn:'mùi vị', hv: 'vị đạo',em:'😋',lesson:3,
    explain:['Cảm nhận về hương vị của đồ ăn/thức uống.'],
    usage:'Danh từ; thường đi với 味道不错, 味道应该不错.',
    collo:['味道不错','味道很好','味道怎么样'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'不要只相信广告 kết hợp 实际, ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:20,zh:'优点',py:'yōudiǎn',pos:'Danh từ',vn:'ưu điểm',em:'👍',lesson:3,
+  {n:20,zh:'优点',py:'yōudiǎn',pos:'Danh từ',vn:'ưu điểm', hv: 'ưu điểm',em:'👍',lesson:3,
    explain:['Điểm tốt, điểm mạnh của một người/sự vật.'],
    usage:'Danh từ; thường đi với 介绍优点, 有优点.',
    collo:['介绍优点','有优点','优点和缺点'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'优点是……价格/质量 kết hợp nhiều từ vựng của bài.'},
    ]},
 
-  {n:21,zh:'实际',py:'shíjì',pos:'Danh từ/Tính từ',vn:'thực tế',em:'📌',lesson:3,
+  {n:21,zh:'实际',py:'shíjì',pos:'Danh từ/Tính từ',vn:'thực tế', hv: 'thực tế',em:'📌',lesson:3,
    explain:['1. (Danh từ) Sự vật/tình huống tồn tại khách quan.','2. (Tính từ) Chân thực, cụ thể.','3. (实际上, phó từ) Trong thực tế, thường mang ý chuyển ngoặt.'],
    usage:'实际上 + mệnh đề (phó từ, thường chuyển ý); 联系实际 (danh từ); 实际工作 (tính từ).',
    collo:['实际上','联系实际','实际工作'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'联系实际 — gắn liền với thực tế.'},
    ]},
 
-  {n:22,zh:'考虑',py:'kǎolǜ',pos:'Động từ',vn:'suy xét, cân nhắc',em:'🤔',lesson:4,
+  {n:22,zh:'考虑',py:'kǎolǜ',pos:'Động từ',vn:'suy xét, cân nhắc', hv: 'khảo lự',em:'🤔',lesson:4,
    explain:['Suy nghĩ kỹ trước khi đưa ra quyết định.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 只考虑价格, 认真考虑.',
    collo:['只考虑价格','认真考虑','考虑一下'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'认真考虑了……最后决定…… — suy xét kỹ rồi quyết định.'},
    ]},
 
-  {n:23,zh:'标准',py:'biāozhǔn',pos:'Danh từ',vn:'tiêu chuẩn, chuẩn mực',em:'📏',lesson:4,
+  {n:23,zh:'标准',py:'biāozhǔn',pos:'Danh từ',vn:'tiêu chuẩn, chuẩn mực', hv: 'tiêu chuẩn',em:'📏',lesson:4,
    explain:['Chuẩn mực dùng để đánh giá/lựa chọn theo một mức độ nhất định.'],
    usage:'Danh từ; thường đi với 买衣服的标准, 幸福的标准.',
    collo:['买衣服的标准','幸福的标准','标准是……'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'对……来说 ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:24,zh:'样子',py:'yàngzi',pos:'Danh từ',vn:'kiểu dáng',em:'👗',lesson:4,
+  {n:24,zh:'样子',py:'yàngzi',pos:'Danh từ',vn:'kiểu dáng', hv: 'dạng tử',em:'👗',lesson:4,
    explain:['Hình dáng, kiểu cách bên ngoài của một vật.'],
    usage:'Danh từ; thường đi với 衣服的样子, 样子流行.',
    collo:['衣服的样子','样子流行','这个样子'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'样子很流行 kết hợp 价格, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:25,zh:'年龄',py:'niánlíng',pos:'Danh từ',vn:'tuổi',em:'🎂',lesson:4,
+  {n:25,zh:'年龄',py:'niánlíng',pos:'Danh từ',vn:'tuổi', hv: 'niên linh',em:'🎂',lesson:4,
    explain:['Số tuổi của một người.'],
    usage:'Danh từ; thường đi với 年龄大, 不同年龄.',
    collo:['年龄大','不同年龄','年龄大的人'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'不同年龄 kết hợp 标准, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:26,zh:'浪费',py:'làngfèi',pos:'Động từ',vn:'lãng phí, hoang phí',em:'🗑️',lesson:4,
+  {n:26,zh:'浪费',py:'làngfèi',pos:'Động từ',vn:'lãng phí, hoang phí', hv: 'lãng phí',em:'🗑️',lesson:4,
    explain:['Sử dụng tiền bạc/thời gian/tài nguyên không hợp lý, gây hao tổn không cần thiết.'],
    usage:'Động từ/danh từ; thường đi với 是一种浪费, 浪费钱.',
    collo:['是一种浪费','浪费钱','浪费时间'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'考虑得不多……真是浪费 kết hợp 考虑, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:27,zh:'购物',py:'gòuwù',pos:'Động từ',vn:'mua sắm, mua hàng',em:'🛍️',lesson:5,
+  {n:27,zh:'购物',py:'gòuwù',pos:'Động từ',vn:'mua sắm, mua hàng', hv: 'cấu vật',em:'🛍️',lesson:5,
    explain:['Đi mua đồ, mua sắm hàng hóa.'],
    usage:'Động từ ly hợp; thường đi với 网上购物, 购物变得流行.',
    collo:['网上购物','购物变得流行','喜欢购物'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'受到……的喜爱 — được yêu thích bởi….'},
    ]},
 
-  {n:28,zh:'尤其',py:'yóuqí',pos:'Phó từ',vn:'đặc biệt là, nhất là',em:'⭐',lesson:5,
+  {n:28,zh:'尤其',py:'yóuqí',pos:'Phó từ',vn:'đặc biệt là, nhất là', hv: 'vưu kỳ',em:'⭐',lesson:5,
    explain:['Diễn tả khía cạnh nổi bật nhất trong một tình huống tổng thể, thường đứng ở vế câu thứ hai sau khi vế đầu nêu tình huống chung.'],
    usage:'Phó từ, đứng đầu vế sau: ……，尤其(是) + khía cạnh nổi bật nhất.',
    collo:['尤其喜欢','尤其是','尤其是那些'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'尤其是……的时候 kết hợp 方法, ôn lại từ vựng Bài 4.'},
    ]},
 
-  {n:29,zh:'受到',py:'shòudào',pos:'Động từ',vn:'nhận được, chịu (ảnh hưởng)',em:'📥',lesson:5,
+  {n:29,zh:'受到',py:'shòudào',pos:'Động từ',vn:'nhận được, chịu (ảnh hưởng)', hv: 'thụ đáo',em:'📥',lesson:5,
    explain:['Tiếp nhận, chịu tác động từ bên ngoài (ảnh hưởng, sự yêu thích, sự giúp đỡ...).'],
    usage:'Động từ, mang tân ngữ trực tiếp: 受到喜爱, 受到影响.',
    collo:['受到喜爱','受到影响','受到欢迎'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'受到……的影响 kết hợp 广告, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:30,zh:'任何',py:'rènhé',pos:'Đại từ',vn:'bất cứ, bất kỳ',em:'🔘',lesson:5,
+  {n:30,zh:'任何',py:'rènhé',pos:'Đại từ',vn:'bất cứ, bất kỳ', hv: 'nhiệm hà',em:'🔘',lesson:5,
    explain:['Đại từ chỉ định bất kỳ đối tượng nào, không có ngoại lệ.'],
    usage:'Đại từ, đứng trước danh từ: 任何时间, 任何问题.',
    collo:['任何时间','任何问题','任何东西'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'任何 + 问题 + 都可以…… — bất kỳ … đều có thể….'},
    ]},
 
-  {n:31,zh:'寄',py:'jì',pos:'Động từ',vn:'gửi',em:'📦',lesson:5,
+  {n:31,zh:'寄',py:'jì',pos:'Động từ',vn:'gửi', hv: 'ký',em:'📦',lesson:5,
    explain:['Chuyển đồ vật/thư từ đến một địa điểm khác thông qua bưu điện/dịch vụ vận chuyển.'],
    usage:'Động từ, mang tân ngữ + 到 + địa điểm: 寄到办公室.',
    collo:['寄到办公室','寄到家里','寄快递'],
@@ -685,7 +685,7 @@ var vocabData = [
       note:'寄到……办公室 — gửi đến văn phòng.'},
    ]},
 
-  {n:32,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tĩnh (tên người)',em:'👩',lesson:1,
+  {n:32,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tĩnh (tên người)', hv: 'Vương Tĩnh',em:'👩',lesson:1,
    explain:['Tên riêng của nhân vật nữ chính trong các hội thoại của bài.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['王静说','王静和李进'],
@@ -694,7 +694,7 @@ var vocabData = [
      {zh:'王静在家具店买沙发。',py:'Wáng Jìng zài jiājùdiàn mǎi shāfā.',vn:'Vương Tĩnh mua ghế sô pha ở cửa hàng nội thất.'},
    ]},
 
-  {n:33,zh:'李进',py:'Lǐ Jìn',pos:'Danh từ riêng',vn:'Lý Tiến (tên người)',em:'🧑',lesson:2,
+  {n:33,zh:'李进',py:'Lǐ Jìn',pos:'Danh từ riêng',vn:'Lý Tiến (tên người)', hv: 'Lý Tiến',em:'🧑',lesson:2,
    explain:['Tên riêng của chồng/bạn王静 trong hội thoại 2 và 3.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['李进说','王静和李进'],

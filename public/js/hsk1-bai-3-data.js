@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 3: 你叫什么名字?
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'叫',py:'jiào',pos:'Động từ',vn:'tên là, gọi là',em:'📛',lesson:1,
+  {n:1,zh:'叫',py:'jiào',pos:'Động từ',vn:'tên là, gọi là', hv: 'khiếu',em:'📛',lesson:1,
    ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
    exList:[
      {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'口(miệng) dùng để GỌI TÊN ai đó.',
       cf:'纠 (jiū – "vướng, rối")',w:'你叫什么名字'},
    ]},
-  {n:2,zh:'什么',py:'shénme',pos:'Đại từ',vn:'cái gì, gì',em:'❓',lesson:1,
+  {n:2,zh:'什么',py:'shénme',pos:'Đại từ',vn:'cái gì, gì', hv: 'thập ma',em:'❓',lesson:1,
    ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
    exList:[
      {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Thường ghép sau 什 để tạo thành từ hỏi CÁI GÌ.',
       cf:'幺 (yāo – "nhỏ, non")',w:'什么 / 怎么'},
    ]},
-  {n:3,zh:'名字',py:'míngzi',pos:'Danh từ',vn:'tên',em:'🏷️',lesson:1,
+  {n:3,zh:'名字',py:'míngzi',pos:'Danh từ',vn:'tên', hv: 'danh tự',em:'🏷️',lesson:1,
    ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
    exList:[
      {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
@@ -39,7 +39,7 @@ var vocabData = [
       tip:'宀(mái nhà) + 子(con) → con cái sinh ra trong nhà được đặt CHỮ, TÊN.',
       cf:'子 (zǐ – "con")',w:'名字 / 汉字'},
    ]},
-  {n:4,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, ta, mình',em:'👤',lesson:1,
+  {n:4,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, ta, mình', hv: 'ngã',em:'👤',lesson:1,
    ex_zh:'我叫王芳。',ex_py:'Wǒ jiào Wáng Fāng.',ex_vn:'Tôi tên là Vương Phương.',
    exList:[
      {zh:'我叫王芳。',py:'Wǒ jiào Wáng Fāng.',vn:'Tôi tên là Vương Phương.'},
@@ -50,7 +50,7 @@ var vocabData = [
       tip:'Chữ cổ vốn là hình vũ khí có răng cưa, người cầm nó tự XƯNG mình là chủ → TÔI.',
       cf:'找 (zhǎo – "tìm")',w:'我 / 我们 / 我是'},
    ]},
-  {n:5,zh:'是',py:'shì',pos:'Động từ',vn:'là',em:'✅',lesson:2,
+  {n:5,zh:'是',py:'shì',pos:'Động từ',vn:'là', hv: 'thị',em:'✅',lesson:2,
    ex_zh:'我是学生。',ex_py:'Wǒ shì xuésheng.',ex_vn:'Tôi là học sinh.',
    exList:[
      {zh:'我是学生。',py:'Wǒ shì xuésheng.',vn:'Tôi là học sinh.'},
@@ -61,7 +61,7 @@ var vocabData = [
       tip:'日(mặt trời) đứng CHÍNH GIỮA bầu trời → biểu thị điều ĐÚNG, khẳng định LÀ.',
       cf:'量 (liàng – "đo lường")',w:'我是 / 不是 / 是吗'},
    ]},
-  {n:6,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy cô giáo',em:'👩‍🏫',lesson:2,
+  {n:6,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy cô giáo', hv: 'lão sư',em:'👩‍🏫',lesson:2,
    ex_zh:'你是老师吗？',ex_py:'Nǐ shì lǎoshī ma?',ex_vn:'Bạn là giáo viên phải không?',
    exList:[
      {zh:'你是老师吗？',py:'Nǐ shì lǎoshī ma?',vn:'Bạn là giáo viên phải không?'},
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'Người dẫn dắt, chỉ dạy người khác → THẦY, hợp với 老 thành "người thầy đáng kính".',
       cf:'帅 (shuài – "soái, chỉ huy")',w:'老师'},
    ]},
-  {n:7,zh:'吗',py:'ma',pos:'Trợ từ',vn:'đặt cuối câu tạo câu hỏi Có/Không',em:'❔',lesson:2,
+  {n:7,zh:'吗',py:'ma',pos:'Trợ từ',vn:'đặt cuối câu tạo câu hỏi Có/Không', hv: 'ma',em:'❔',lesson:2,
    ex_zh:'你是老师吗？',ex_py:'Nǐ shì lǎoshī ma?',ex_vn:'Bạn là giáo viên phải không?',
    exList:[
      {zh:'你是老师吗？',py:'Nǐ shì lǎoshī ma?',vn:'Bạn là giáo viên phải không?'},
@@ -85,7 +85,7 @@ var vocabData = [
       tip:'口(miệng) phát ra âm hỏi, mượn âm của 马(ngựa) làm ký hiệu ngữ âm — không liên quan tới nghĩa "ngựa".',
       cf:'妈 (mā – "mẹ", cũng mượn âm 马")',w:'是吗 / 你好吗'},
    ]},
-  {n:8,zh:'学生',py:'xuésheng',pos:'Danh từ',vn:'học sinh',em:'🎒',lesson:2,
+  {n:8,zh:'学生',py:'xuésheng',pos:'Danh từ',vn:'học sinh', hv: 'học sinh',em:'🎒',lesson:2,
    ex_zh:'我不是老师，我是学生。',ex_py:'Wǒ bú shì lǎoshī, wǒ shì xuésheng.',ex_vn:'Tôi không phải giáo viên, tôi là học sinh.',
    exList:[
      {zh:'我不是老师，我是学生。',py:'Wǒ bú shì lǎoshī, wǒ shì xuésheng.',vn:'Tôi không phải giáo viên, tôi là học sinh.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'Hình cây cỏ mọc lên khỏi mặt đất → SINH RA, SỐNG; 学生 nghĩa là người đang "sinh trưởng" tri thức.',
       cf:'姓 (xìng – "họ")',w:'学生 / 医生 / 先生'},
    ]},
-  {n:9,zh:'人',py:'rén',pos:'Danh từ',vn:'người',em:'🧍',lesson:2,
+  {n:9,zh:'人',py:'rén',pos:'Danh từ',vn:'người', hv: 'nhân',em:'🧍',lesson:2,
    ex_zh:'我不是中国人，我是美国人。',ex_py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',ex_vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.',
    exList:[
      {zh:'我不是中国人，我是美国人。',py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.'},
@@ -108,7 +108,7 @@ var vocabData = [
       tip:'Hình dáng một người đang đứng nghiêng, hai chân chống đỡ → NGƯỜI.',
       cf:'入 (rù – "vào")',w:'中国人 / 美国人 / 学生'},
    ]},
-  {n:10,zh:'中国',py:'Zhōngguó',pos:'Danh từ riêng',vn:'Trung Quốc',em:'🇨🇳',lesson:2,
+  {n:10,zh:'中国',py:'Zhōngguó',pos:'Danh từ riêng',vn:'Trung Quốc', hv: 'Trung Quốc',em:'🇨🇳',lesson:2,
    ex_zh:'你是中国人吗？',ex_py:'Nǐ shì Zhōngguó rén ma?',ex_vn:'Bạn là người Trung Quốc phải không?',
    exList:[
      {zh:'你是中国人吗？',py:'Nǐ shì Zhōngguó rén ma?',vn:'Bạn là người Trung Quốc phải không?'},
@@ -121,7 +121,7 @@ var vocabData = [
       tip:'囗(tường thành bao quanh) + 玉(ngọc quý bên trong) → lãnh thổ có biên giới bảo vệ báu vật = ĐẤT NƯỚC.',
       cf:'固 (gù – "vững chắc")',w:'中国 / 美国 / 哪国'},
    ]},
-  {n:11,zh:'美国',py:'Měiguó',pos:'Danh từ riêng',vn:'nước Mỹ',em:'🇺🇸',lesson:2,
+  {n:11,zh:'美国',py:'Měiguó',pos:'Danh từ riêng',vn:'nước Mỹ', hv: 'Mỹ Quốc',em:'🇺🇸',lesson:2,
    ex_zh:'我不是中国人，我是美国人。',ex_py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',ex_vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.',
    exList:[
      {zh:'我不是中国人，我是美国人。',py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.'},

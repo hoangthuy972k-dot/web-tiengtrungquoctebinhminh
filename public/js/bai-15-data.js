@@ -2,7 +2,7 @@
 // DATA — Bài 15: 新年就要到了
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'新年',py:'xīnnián',pos:'Danh từ',vn:'năm mới',em:'🎉',lesson:1,
+  {n:1,zh:'新年',py:'xīnnián',pos:'Danh từ',vn:'năm mới', hv: 'tân niên',em:'🎉',lesson:1,
    ex_zh:'新年就要到了，你有什么计划？',ex_py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',ex_vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?',
    exList:[
      {zh:'新年就要到了，你有什么计划？',py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'Hình người vác bó lúa sau vụ mùa → mỗi vụ mùa là một chu kỳ = NĂM.',
       cf:'午 (wǔ – "buổi trưa")',w:'新年 / 今年 / 去年'},
    ]},
-  {n:2,zh:'票',py:'piào',pos:'Danh từ',vn:'vé',em:'🎫',lesson:1,
+  {n:2,zh:'票',py:'piào',pos:'Danh từ',vn:'vé', hv: 'phiếu',em:'🎫',lesson:1,
    ex_zh:'票已经买好了。',ex_py:'Piào yǐjīng mǎihǎo le.',ex_vn:'Vé đã mua xong rồi.',
    exList:[
      {zh:'票已经买好了。',py:'Piào yǐjīng mǎihǎo le.',vn:'Vé đã mua xong rồi.'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Phần trên giống 覀(che phủ), dưới 示(tờ giấy chỉ ra) → tờ giấy làm bằng chứng = VÉ.',
       cf:'漂 (piāo – "trôi nổi")',w:'火车票 / 电影票 / 买票'},
    ]},
-  {n:3,zh:'火车站',py:'huǒchēzhàn',pos:'Danh từ',vn:'ga tàu hoả',em:'🚉',lesson:1,
+  {n:3,zh:'火车站',py:'huǒchēzhàn',pos:'Danh từ',vn:'ga tàu hoả', hv: 'hỏa xa trạm',em:'🚉',lesson:1,
    ex_zh:'火车站人多不多？',ex_py:'Huǒchēzhàn rén duō bu duō?',ex_vn:'Ga tàu có đông người không?',
    exList:[
      {zh:'火车站人多不多？',py:'Huǒchēzhàn rén duō bu duō?',vn:'Ga tàu có đông người không?'},
@@ -44,7 +44,7 @@ var vocabData = [
       tip:'立(đứng) + 占(chiếm chỗ) → nơi đứng lại chờ = TRẠM, GA.',
       cf:'古 (gǔ – "cổ xưa")',w:'火车站 / 车站 / 站着'},
    ]},
-  {n:4,zh:'大家',py:'dàjiā',pos:'Đại từ',vn:'mọi người',em:'👨‍👩‍👧‍👦',lesson:2,
+  {n:4,zh:'大家',py:'dàjiā',pos:'Đại từ',vn:'mọi người', hv: 'đại gia',em:'👨‍👩‍👧‍👦',lesson:2,
    ex_zh:'大家都在准备回家。',ex_py:'Dàjiā dōu zài zhǔnbèi huíjiā.',ex_vn:'Mọi người đều đang chuẩn bị về nhà.',
    exList:[
      {zh:'大家都在准备回家。',py:'Dàjiā dōu zài zhǔnbèi huíjiā.',vn:'Mọi người đều đang chuẩn bị về nhà.'},
@@ -59,7 +59,7 @@ var vocabData = [
       tip:'Mái nhà 宀 có con lợn 豕 bên dưới — thời xưa nuôi lợn dưới nhà sàn → biểu tượng của NHÀ.',
       cf:'豪 (háo – "hào hiệp")',w:'大家 / 回家 / 家人'},
    ]},
-  {n:5,zh:'更',py:'gèng',pos:'Phó từ',vn:'càng, hơn',em:'📈',lesson:2,
+  {n:5,zh:'更',py:'gèng',pos:'Phó từ',vn:'càng, hơn', hv: 'cánh',em:'📈',lesson:2,
    ex_zh:'今天阴，比昨天更冷。',ex_py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',ex_vn:'Hôm nay âm u, lạnh hơn hôm qua.',
    exList:[
      {zh:'今天阴，比昨天更冷。',py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',vn:'Hôm nay âm u, lạnh hơn hôm qua.'},
@@ -71,7 +71,7 @@ var vocabData = [
       tip:'Ghi nhớ qua cụm 比……更…… (so sánh hơn nữa) — mức độ tăng thêm so với gốc.',
       cf:'夏 (xià – "mùa hè")',w:'更冷 / 更好 / 更热闹'},
    ]},
-  {n:6,zh:'妹妹',py:'mèimei',pos:'Danh từ',vn:'em gái',em:'👧',lesson:3,
+  {n:6,zh:'妹妹',py:'mèimei',pos:'Danh từ',vn:'em gái', hv: 'muội muội',em:'👧',lesson:3,
    ex_zh:'你妹妹呢？',ex_py:'Nǐ mèimei ne?',ex_vn:'Em gái bạn đâu rồi?',
    exList:[
      {zh:'你妹妹呢？',py:'Nǐ mèimei ne?',vn:'Em gái bạn đâu rồi?'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'女(con gái) + 未(chưa) → người con gái CHƯA lớn bằng chị = EM GÁI.',
       cf:'妈 (mā – "mẹ")',w:'妹妹 / 姐妹'},
    ]},
-  {n:7,zh:'阴',py:'yīn',pos:'Tính từ',vn:'âm u, râm mát',em:'☁️',lesson:3,
+  {n:7,zh:'阴',py:'yīn',pos:'Tính từ',vn:'âm u, râm mát', hv: 'âm',em:'☁️',lesson:3,
    ex_zh:'今天阴，比昨天更冷。',ex_py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',ex_vn:'Hôm nay âm u, lạnh hơn hôm qua.',
    exList:[
      {zh:'今天阴，比昨天更冷。',py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',vn:'Hôm nay âm u, lạnh hơn hôm qua.'},
@@ -95,7 +95,7 @@ var vocabData = [
       tip:'阝(sườn đồi) + 月(trăng, chỉ bóng tối) → phía khuất ánh nắng của quả đồi = ÂM U.',
       cf:'阳 (yáng – "nắng, dương")',w:'阴天 / 阴转晴'},
    ]},
-  {n:8,zh:'公共汽车',py:'gōnggòngqìchē',pos:'Danh từ',vn:'xe buýt',em:'🚌',lesson:3,
+  {n:8,zh:'公共汽车',py:'gōnggòngqìchē',pos:'Danh từ',vn:'xe buýt', hv: 'công cộng khí xa',em:'🚌',lesson:3,
    ex_zh:'她坐公共汽车去火车站。',ex_py:'Tā zuò gōnggòngqìchē qù huǒchēzhàn.',ex_vn:'Cô ấy đi xe buýt đến ga tàu.',
    exList:[
      {zh:'她坐公共汽车去火车站。',py:'Tā zuò gōnggòngqìchē qù huǒchēzhàn.',vn:'Cô ấy đi xe buýt đến ga tàu.'},

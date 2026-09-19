@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'周末',py:'zhōumò',pos:'Danh từ',vn:'cuối tuần',em:'📅',lesson:1,
+  {n:1,zh:'周末',py:'zhōumò',pos:'Danh từ',vn:'cuối tuần', hv: 'chu mạt',em:'📅',lesson:1,
    explain:['Hai ngày thứ Bảy và Chủ nhật, khoảng thời gian nghỉ ngơi sau một tuần làm việc/học tập.'],
    usage:'Danh từ chỉ thời gian; thường đứng ĐẦU CÂU hoặc ngay SAU chủ ngữ làm trạng ngữ: 周末 + Chủ ngữ + Vị ngữ.',
    collo:['周末愉快','这个周末','周末计划'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:2,zh:'打算',py:'dǎsuàn',pos:'Danh từ/Động từ',vn:'kế hoạch; dự định',em:'📝',lesson:1,
+  {n:2,zh:'打算',py:'dǎsuàn',pos:'Danh từ/Động từ',vn:'kế hoạch; dự định', hv: 'đả toán',em:'📝',lesson:1,
    explain:['1. (Danh từ) Kế hoạch, ý định đã nghĩ đến cho việc gì đó.','2. (Động từ) Có ý định làm gì, dự định làm gì.'],
    usage:'Khi làm động từ: 打算 + Động từ khác (打算去旅游); khi làm danh từ: 有/没有 + 打算 (有什么打算).',
    collo:['有什么打算','打算去旅游','早就打算好了'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'啊',py:'a',pos:'Trợ từ',vn:'à, đấy, nhé (trợ từ cuối câu)',em:'💬',lesson:1,
+  {n:3,zh:'啊',py:'a',pos:'Trợ từ',vn:'à, đấy, nhé (trợ từ cuối câu)', hv: 'a',em:'💬',lesson:1,
    explain:['Trợ từ ngữ khí đứng cuối câu, dùng để khẳng định, xác nhận hoặc biện minh cho điều vừa nói, giúp lời nói mềm mại, tự nhiên hơn.'],
    usage:'Đứng ở CUỐI CÂU trần thuật hoặc câu hỏi: [câu] + 啊. Không mang nghĩa từ vựng riêng, chỉ thêm sắc thái ngữ khí.',
    collo:['是啊','好啊','是啊，我已经……'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'好啊 = đồng ý một cách vui vẻ, tự nhiên.'},
    ]},
 
-  {n:4,zh:'跟',py:'gēn',pos:'Giới từ',vn:'cùng, với',em:'🤝',lesson:1,
+  {n:4,zh:'跟',py:'gēn',pos:'Giới từ',vn:'cùng, với', hv: 'cân',em:'🤝',lesson:1,
    explain:['Giới từ chỉ đối tượng cùng tham gia một hành động với chủ ngữ.'],
    usage:'Đứng TRƯỚC đối tượng, tạo thành cụm giới từ làm trạng ngữ: 跟 + [người] + Động từ (跟你去, 跟我一起玩儿).',
    collo:['跟你去','跟我一起','跟朋友聊天'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:5,zh:'一直',py:'yìzhí',pos:'Phó từ',vn:'suốt, liên tục',em:'➡️',lesson:2,
+  {n:5,zh:'一直',py:'yìzhí',pos:'Phó từ',vn:'suốt, liên tục', hv: 'nhất trực',em:'➡️',lesson:2,
    explain:['Diễn tả một hành động hoặc trạng thái kéo dài không ngừng, không thay đổi.'],
    usage:'Phó từ, đứng TRƯỚC động từ/tính từ mà nó bổ nghĩa: 一直 + V/Adj (一直玩儿, 一直想).',
    collo:['一直玩儿','一直想去','一直没有'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:6,zh:'游戏',py:'yóuxì',pos:'Danh từ',vn:'trò chơi',em:'🎮',lesson:2,
+  {n:6,zh:'游戏',py:'yóuxì',pos:'Danh từ',vn:'trò chơi', hv: 'du hí',em:'🎮',lesson:2,
    explain:['Hoạt động giải trí, thường chỉ trò chơi điện tử/máy tính trong ngữ cảnh hiện đại.'],
    usage:'Danh từ; thường kết hợp với động từ 玩儿 (chơi): 玩儿 + 游戏.',
    collo:['玩儿游戏','电脑游戏','手机游戏'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:7,zh:'作业',py:'zuòyè',pos:'Danh từ',vn:'bài tập về nhà',em:'📓',lesson:2,
+  {n:7,zh:'作业',py:'zuòyè',pos:'Danh từ',vn:'bài tập về nhà', hv: 'tác nghiệp',em:'📓',lesson:2,
    explain:['Bài tập giáo viên giao cho học sinh làm ở nhà.'],
    usage:'Danh từ; thường kết hợp với động từ 写 (viết/làm) hoặc 做 (làm): 写作业, 做作业.',
    collo:['写作业','做作业','作业写完了'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:8,zh:'着急',py:'zháojí',pos:'Tính từ',vn:'lo lắng, sốt ruột',em:'😟',lesson:2,
+  {n:8,zh:'着急',py:'zháojí',pos:'Tính từ',vn:'lo lắng, sốt ruột', hv: 'trước cấp',em:'😟',lesson:2,
    explain:['Cảm giác không yên tâm, muốn giải quyết ngay một việc gì đó gấp gáp.'],
    usage:'Tính từ, làm vị ngữ với 很/别/一点儿也不: 很着急, 别着急 (đừng lo), 一点儿也不着急 (không lo chút nào).',
    collo:['别着急','很着急','一点儿也不着急'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:9,zh:'复习',py:'fùxí',pos:'Động từ',vn:'ôn tập',em:'📖',lesson:2,
+  {n:9,zh:'复习',py:'fùxí',pos:'Động từ',vn:'ôn tập', hv: 'phục tập',em:'📖',lesson:2,
    explain:['Xem lại, học lại những kiến thức đã học để ghi nhớ kỹ hơn.'],
    usage:'Động từ, có thể theo sau bởi tân ngữ (复习课文) hoặc kết quả bổ ngữ 好 (复习好了 = ôn xong và tốt).',
    collo:['复习好了','复习课文','早就复习了'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:10,zh:'南方',py:'nánfāng',pos:'Danh từ',vn:'phía nam, miền Nam',em:'🧭',lesson:3,
+  {n:10,zh:'南方',py:'nánfāng',pos:'Danh từ',vn:'phía nam, miền Nam', hv: 'nam phương',em:'🧭',lesson:3,
    explain:['Khu vực phía nam của một quốc gia/vùng đất, thường được nói tắt là 南.'],
    usage:'Danh từ chỉ phương hướng/khu vực; đối lập với 北方 (miền Bắc). Có thể dùng 南 độc lập hoặc 南方 đầy đủ.',
    collo:['去南方','南方人','南方天气'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:11,zh:'北方',py:'běifāng',pos:'Danh từ',vn:'phía bắc, miền Bắc',em:'🧭',lesson:3,
+  {n:11,zh:'北方',py:'běifāng',pos:'Danh từ',vn:'phía bắc, miền Bắc', hv: 'bắc phương',em:'🧭',lesson:3,
    explain:['Khu vực phía bắc của một quốc gia/vùng đất, đối lập với 南方 (miền Nam).'],
    usage:'Danh từ chỉ phương hướng/khu vực, cách dùng tương tự 南方.',
    collo:['北方人','北方好一些','去北方'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:12,zh:'面包',py:'miànbāo',pos:'Danh từ',vn:'bánh mì',em:'🍞',lesson:4,
+  {n:12,zh:'面包',py:'miànbāo',pos:'Danh từ',vn:'bánh mì', hv: 'diện bao',em:'🍞',lesson:4,
    explain:['Loại thực phẩm làm từ bột mì nướng lên, dùng để ăn sáng hoặc ăn nhẹ.'],
    usage:'Danh từ; lượng từ đi kèm là 个 hoặc 块: 一个面包, 一块面包.',
    collo:['买面包','一个面包','面包便宜'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'带',py:'dài',pos:'Động từ',vn:'mang theo',em:'🎒',lesson:4,
+  {n:13,zh:'带',py:'dài',pos:'Động từ',vn:'mang theo', hv: 'đái',em:'🎒',lesson:4,
    explain:['Cầm, đem theo một vật gì đó khi di chuyển từ nơi này đến nơi khác.'],
    usage:'Động từ, theo sau là tân ngữ chỉ vật được mang theo: 带 + [vật] (带地图, 带钱).',
    collo:['带地图','带钱','多带几件'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:14,zh:'地图',py:'dìtú',pos:'Danh từ',vn:'bản đồ',em:'🗺️',lesson:4,
+  {n:14,zh:'地图',py:'dìtú',pos:'Danh từ',vn:'bản đồ', hv: 'địa đồ',em:'🗺️',lesson:4,
    explain:['Bản vẽ thể hiện vị trí địa lý, đường xá, khu vực... dùng để tìm đường.'],
    usage:'Danh từ; lượng từ đi kèm là 张 (tấm): 一张地图.',
    collo:['一张地图','带地图','看地图'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:15,zh:'搬',py:'bān',pos:'Động từ',vn:'dọn, dời, chuyển (nhà/đồ)',em:'📦',lesson:4,
+  {n:15,zh:'搬',py:'bān',pos:'Động từ',vn:'dọn, dời, chuyển (nhà/đồ)', hv: 'ban',em:'📦',lesson:4,
    explain:['Di chuyển một vật (thường nặng/cồng kềnh) hoặc chuyển nơi ở từ chỗ này sang chỗ khác.'],
    usage:'Động từ, có thể đi với tân ngữ 家 (搬家 = chuyển nhà) hoặc vật cụ thể (搬东西 = khuân đồ).',
    collo:['搬家','搬东西','不是搬家'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:16,zh:'小丽',py:'Xiǎolì',pos:'Danh từ riêng',vn:'chị Lệ (tên người)',em:'👧',lesson:1,
+  {n:16,zh:'小丽',py:'Xiǎolì',pos:'Danh từ riêng',vn:'chị Lệ (tên người)', hv: 'Tiểu Lệ',em:'👧',lesson:1,
    explain:['Tên riêng của một nhân vật nữ trong bài hội thoại (nhân vật xuất hiện xuyên suốt các bài tiếp theo).'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    collo:['小丽说','跟小丽一起','小丽的打算'],
@@ -343,7 +343,7 @@ var vocabData = [
      {zh:'小丽，周末你有什么打算？',py:'Xiǎolì, zhōumò nǐ yǒu shénme dǎsuàn?',vn:'Chị Lệ ơi, cuối tuần chị có kế hoạch gì không?'},
    ]},
 
-  {n:17,zh:'小刚',py:'Xiǎogāng',pos:'Danh từ riêng',vn:'anh Cương (tên người)',em:'🧑',lesson:1,
+  {n:17,zh:'小刚',py:'Xiǎogāng',pos:'Danh từ riêng',vn:'anh Cương (tên người)', hv: 'Tiểu Cương',em:'🧑',lesson:1,
    explain:['Tên riêng của một nhân vật nam trong bài hội thoại (nhân vật xuất hiện xuyên suốt các bài tiếp theo).'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    collo:['小刚说','跟小刚一起','小刚的打算'],

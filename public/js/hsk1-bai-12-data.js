@@ -2,13 +2,13 @@
 // DATA — HSK1 Bài 12: 明天天气怎么样?
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'天气',py:'tiānqì',pos:'Danh từ',vn:'thời tiết',em:'🌦️',lesson:1,
+  {n:1,zh:'天气',py:'tiānqì',pos:'Danh từ',vn:'thời tiết', hv: 'thiên khí',em:'🌦️',lesson:1,
    ex_zh:'今天天气怎么样？',ex_py:'Jīntiān tiānqì zěnmeyàng?',ex_vn:'Hôm nay thời tiết thế nào?',
    exList:[
      {zh:'今天天气怎么样？',py:'Jīntiān tiānqì zěnmeyàng?',vn:'Hôm nay thời tiết thế nào?'},
    ],
    hanzi:[]},
-  {n:2,zh:'怎么样',py:'zěnmeyàng',pos:'Đại từ',vn:'thế nào, như thế nào',em:'🤔',lesson:1,
+  {n:2,zh:'怎么样',py:'zěnmeyàng',pos:'Đại từ',vn:'thế nào, như thế nào', hv: 'chẩm ma dạng',em:'🤔',lesson:1,
    ex_zh:'昨天北京的天气怎么样？',ex_py:'Zuótiān Běijīng de tiānqì zěnmeyàng?',ex_vn:'Hôm qua thời tiết ở Bắc Kinh thế nào?',
    exList:[
      {zh:'昨天北京的天气怎么样？',py:'Zuótiān Běijīng de tiānqì zěnmeyàng?',vn:'Hôm qua thời tiết ở Bắc Kinh thế nào?'},
@@ -18,7 +18,7 @@ var vocabData = [
       tip:'木(khuôn mẫu bằng gỗ) + 羊(mượn âm) → KIỂU DÁNG, dùng hỏi tình trạng "như thế nào". (怎/么 đã học ở Bài 6, Bài 3)',
       cf:'洋 (yáng – "đại dương", cùng phần phải")',w:'怎么样'},
    ]},
-  {n:3,zh:'太',py:'tài',pos:'Phó từ',vn:'quá, lắm',em:'❗',lesson:1,
+  {n:3,zh:'太',py:'tài',pos:'Phó từ',vn:'quá, lắm', hv: 'thái',em:'❗',lesson:1,
    ex_zh:'太热了。',ex_py:'Tài rè le.',ex_vn:'Nóng lắm.',
    exList:[
      {zh:'太热了。',py:'Tài rè le.',vn:'Nóng lắm.'},
@@ -28,7 +28,7 @@ var vocabData = [
       tip:'大(lớn) thêm một chấm nhỏ → LỚN HƠN NỮA, mức độ VƯỢT QUÁ. (大 đã học ở Bài 5)',
       cf:'大 (dà – "to, lớn")',w:'太热了 / 太好了'},
    ]},
-  {n:4,zh:'热',py:'rè',pos:'Tính từ',vn:'nóng',em:'🥵',lesson:1,
+  {n:4,zh:'热',py:'rè',pos:'Tính từ',vn:'nóng', hv: 'nhiệt',em:'🥵',lesson:1,
    ex_zh:'太热了。',ex_py:'Tài rè le.',ex_vn:'Nóng lắm.',
    exList:[
      {zh:'太热了。',py:'Tài rè le.',vn:'Nóng lắm.'},
@@ -38,7 +38,7 @@ var vocabData = [
       tip:'执(cầm nắm) + 灬(lửa) → cầm phải vật có lửa → NÓNG.',
       cf:'势 (shì – "thế lực")',w:'太热了 / 天气很热'},
    ]},
-  {n:5,zh:'冷',py:'lěng',pos:'Tính từ',vn:'lạnh',em:'🥶',lesson:1,
+  {n:5,zh:'冷',py:'lěng',pos:'Tính từ',vn:'lạnh', hv: 'lãnh',em:'🥶',lesson:1,
    ex_zh:'不冷不热。',ex_py:'Bù lěng bú rè.',ex_vn:'Không lạnh cũng không nóng.',
    exList:[
      {zh:'不冷不热。',py:'Bù lěng bú rè.',vn:'Không lạnh cũng không nóng.'},
@@ -48,7 +48,7 @@ var vocabData = [
       tip:'冫(băng giá) + 令(mượn âm) → LẠNH.',
       cf:'令 (lìng – "ra lệnh")',w:'天气很冷'},
    ]},
-  {n:6,zh:'下雨',py:'xià yǔ',pos:'Động từ',vn:'đổ mưa, có mưa',em:'🌧️',lesson:2,
+  {n:6,zh:'下雨',py:'xià yǔ',pos:'Động từ',vn:'đổ mưa, có mưa', hv: 'hạ vũ',em:'🌧️',lesson:2,
    ex_zh:'今天会下雨吗？',ex_py:'Jīntiān huì xià yǔ ma?',ex_vn:'Hôm nay có mưa không nhỉ?',
    exList:[
      {zh:'今天会下雨吗？',py:'Jīntiān huì xià yǔ ma?',vn:'Hôm nay có mưa không nhỉ?'},
@@ -58,7 +58,7 @@ var vocabData = [
       tip:'Hình những giọt nước rơi từ đám mây → MƯA. (下 đã học ở Bài 8)',
       cf:'雪 (xuě – "tuyết")',w:'下雨'},
    ]},
-  {n:7,zh:'小姐',py:'xiǎojiě',pos:'Danh từ',vn:'cô, tiểu thư',em:'👩',lesson:2,
+  {n:7,zh:'小姐',py:'xiǎojiě',pos:'Danh từ',vn:'cô, tiểu thư', hv: 'tiểu thư',em:'👩',lesson:2,
    ex_zh:'王小姐今天会来吗？',ex_py:'Wáng xiǎojiě jīntiān huì lái ma?',ex_vn:'Hôm nay cô Vương có đến không nhỉ?',
    exList:[
      {zh:'王小姐今天会来吗？',py:'Wáng xiǎojiě jīntiān huì lái ma?',vn:'Hôm nay cô Vương có đến không nhỉ?'},
@@ -68,7 +68,7 @@ var vocabData = [
       tip:'女(nữ giới) + 且(hơn nữa) → người con gái lớn hơn trong nhà = CHỊ; 小姐 là cách gọi lịch sự phụ nữ trẻ. (小 đã học ở Bài 9)',
       cf:'组 (zǔ – "tổ, nhóm")',w:'小姐'},
    ]},
-  {n:8,zh:'来',py:'lái',pos:'Động từ',vn:'đến, tới',em:'🚶‍♀️',lesson:2,
+  {n:8,zh:'来',py:'lái',pos:'Động từ',vn:'đến, tới', hv: 'lai',em:'🚶‍♀️',lesson:2,
    ex_zh:'王小姐今天会来吗？',ex_py:'Wáng xiǎojiě jīntiān huì lái ma?',ex_vn:'Hôm nay cô Vương có đến không nhỉ?',
    exList:[
      {zh:'王小姐今天会来吗？',py:'Wáng xiǎojiě jīntiān huì lái ma?',vn:'Hôm nay cô Vương có đến không nhỉ?'},
@@ -78,7 +78,7 @@ var vocabData = [
       tip:'Hình bông lúa mạch từ xa mang ĐẾN → ĐẾN, TỚI.',
       cf:'米 (mǐ – "gạo", đã học Bài 8")',w:'今天会来吗'},
    ]},
-  {n:9,zh:'身体',py:'shēntǐ',pos:'Danh từ',vn:'sức khỏe, cơ thể',em:'🧍',lesson:3,
+  {n:9,zh:'身体',py:'shēntǐ',pos:'Danh từ',vn:'sức khỏe, cơ thể', hv: 'thân thể',em:'🧍',lesson:3,
    ex_zh:'你身体怎么样？',ex_py:'Nǐ shēntǐ zěnmeyàng?',ex_vn:'Sức khỏe của anh thế nào?',
    exList:[
      {zh:'你身体怎么样？',py:'Nǐ shēntǐ zěnmeyàng?',vn:'Sức khỏe của anh thế nào?'},
@@ -91,7 +91,7 @@ var vocabData = [
       tip:'亻(người) + 本(gốc rễ) → phần gốc của con người = CƠ THỂ. (本 đã học ở Bài 10)',
       cf:'本 (běn – "gốc, quyển")',w:'身体'},
    ]},
-  {n:10,zh:'爱',py:'ài',pos:'Động từ',vn:'yêu, thích, muốn',em:'❤️',lesson:3,
+  {n:10,zh:'爱',py:'ài',pos:'Động từ',vn:'yêu, thích, muốn', hv: 'ái',em:'❤️',lesson:3,
    ex_zh:'不爱吃饭。',ex_py:'Bú ài chī fàn.',ex_vn:'Chẳng muốn ăn cơm.',
    exList:[
      {zh:'不爱吃饭。',py:'Bú ài chī fàn.',vn:'Chẳng muốn ăn cơm.'},
@@ -101,7 +101,7 @@ var vocabData = [
       tip:'Hình bàn tay ôm lấy trái tim (chữ phồn thể 愛 có 心) → YÊU THƯƠNG.',
       cf:'受 (shòu – "nhận, chịu")',w:'爱吃饭 / 我爱你'},
    ]},
-  {n:11,zh:'些',py:'xiē',pos:'Lượng từ',vn:'một ít, một vài',em:'➕',lesson:3,
+  {n:11,zh:'些',py:'xiē',pos:'Lượng từ',vn:'một ít, một vài', hv: 'ta',em:'➕',lesson:3,
    ex_zh:'你多吃些水果。',ex_py:'Nǐ duō chī xiē shuǐguǒ.',ex_vn:'Anh hãy ăn thêm một ít trái cây.',
    exList:[
      {zh:'你多吃些水果。',py:'Nǐ duō chī xiē shuǐguǒ.',vn:'Anh hãy ăn thêm một ít trái cây.'},
@@ -111,7 +111,7 @@ var vocabData = [
       tip:'此(này) + phần dưới chỉ số lượng nhỏ → MỘT VÀI, MỘT ÍT (cái này).',
       cf:'此 (cǐ – "này")',w:'多吃些水果'},
    ]},
-  {n:12,zh:'水果',py:'shuǐguǒ',pos:'Danh từ',vn:'trái cây, hoa quả',em:'🍎',lesson:3,
+  {n:12,zh:'水果',py:'shuǐguǒ',pos:'Danh từ',vn:'trái cây, hoa quả', hv: 'thủy quả',em:'🍎',lesson:3,
    ex_zh:'你多吃些水果。',ex_py:'Nǐ duō chī xiē shuǐguǒ.',ex_vn:'Anh hãy ăn thêm một ít trái cây.',
    exList:[
      {zh:'你多吃些水果。',py:'Nǐ duō chī xiē shuǐguǒ.',vn:'Anh hãy ăn thêm một ít trái cây.'},
@@ -124,7 +124,7 @@ var vocabData = [
       tip:'田(hình quả tròn) trên 木(cây) → QUẢ mọc trên cây = TRÁI CÂY.',
       cf:'课 (kè – "bài học")',w:'水果'},
    ]},
-  {n:13,zh:'水',py:'shuǐ',pos:'Danh từ',vn:'nước',em:'💧',lesson:3,
+  {n:13,zh:'水',py:'shuǐ',pos:'Danh từ',vn:'nước', hv: 'thủy',em:'💧',lesson:3,
    ex_zh:'多喝水。',ex_py:'Duō hē shuǐ.',ex_vn:'Uống thêm nước nhé.',
    exList:[
      {zh:'多喝水。',py:'Duō hē shuǐ.',vn:'Uống thêm nước nhé.'},

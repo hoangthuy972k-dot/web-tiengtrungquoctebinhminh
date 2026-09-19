@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'太阳',py:'tàiyáng',pos:'Danh từ',vn:'mặt trời',em:'☀️',lesson:1,
+  {n:1,zh:'太阳',py:'tàiyáng',pos:'Danh từ',vn:'mặt trời', hv: 'thái dương',em:'☀️',lesson:1,
    explain:['Ngôi sao trung tâm hệ mặt trời, mang lại ánh sáng và nhiệt cho Trái Đất.'],
    usage:'Danh từ; thường xuất hiện trong thành ngữ "太阳从西边出来" (mặt trời mọc từ hướng tây) diễn tả điều bất ngờ, khó tin.',
    collo:['太阳出来了','晒太阳','太阳从西边出来'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'才 diễn tả hành động xảy ra muộn/chậm (điểm ngữ pháp bài này).'},
    ]},
 
-  {n:2,zh:'西',py:'xī',pos:'Danh từ',vn:'phía tây, hướng tây',em:'🧭',lesson:1,
+  {n:2,zh:'西',py:'xī',pos:'Danh từ',vn:'phía tây, hướng tây', hv: 'tây',em:'🧭',lesson:1,
    explain:['Một trong bốn hướng chính, hướng mặt trời lặn.'],
    usage:'Danh từ chỉ phương hướng; thường ghép với 边/门: 西边, 西门.',
    collo:['西边','西门','从西边'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'就 diễn tả hành động sẽ xảy ra nhanh chóng, thuận lợi.'},
    ]},
 
-  {n:3,zh:'生气',py:'shēngqì',pos:'Động từ',vn:'giận, tức giận',em:'😠',lesson:1,
+  {n:3,zh:'生气',py:'shēngqì',pos:'Động từ',vn:'giận, tức giận', hv: 'sinh khí',em:'😠',lesson:1,
    explain:['Cảm thấy tức giận, không hài lòng về điều gì đó.'],
    usage:'Động từ ly hợp; thường dùng ở dạng mệnh lệnh: 别生气.',
    collo:['很生气','别生气','经理生气了'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 迟到 đã học ở Bài 7).'},
    ]},
 
-  {n:4,zh:'行李箱',py:'xínglixiāng',pos:'Danh từ',vn:'hành lý, vali',em:'🧳',lesson:2,
+  {n:4,zh:'行李箱',py:'xínglixiāng',pos:'Danh từ',vn:'hành lý, vali', hv: 'hành lý tương',em:'🧳',lesson:2,
    explain:['Vật dụng dùng để đựng đồ khi đi du lịch, công tác.'],
    usage:'Danh từ; đi cùng động từ 放/拿: 放行李箱, 拿行李箱.',
    collo:['放到行李箱里','拿行李箱','一个行李箱'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'自己',py:'zìjǐ',pos:'Đại từ',vn:'tự mình, bản thân',em:'🙋',lesson:2,
+  {n:5,zh:'自己',py:'zìjǐ',pos:'Đại từ',vn:'tự mình, bản thân', hv: 'tự kỷ',em:'🙋',lesson:2,
    explain:['Chỉ chính bản thân người nói hoặc người được nhắc đến.'],
    usage:'Đại từ phản thân, đứng trước động từ hoặc sau danh từ: 自己 + V, [người] + 自己.',
    collo:['自己照顾自己','自己去','靠自己'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'包',py:'bāo',pos:'Danh từ',vn:'cặp, túi',em:'👜',lesson:2,
+  {n:6,zh:'包',py:'bāo',pos:'Danh từ',vn:'cặp, túi', hv: 'bao',em:'👜',lesson:2,
    explain:['Vật dụng dùng để đựng, mang theo đồ cá nhân.'],
    usage:'Danh từ; đi cùng động từ 放/拿: 放在包里.',
    collo:['放在包里','一个包','我的包'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 找不到 đã học ở Bài 6).'},
    ]},
 
-  {n:7,zh:'发现',py:'fāxiàn',pos:'Động từ',vn:'phát hiện',em:'🔍',lesson:3,
+  {n:7,zh:'发现',py:'fāxiàn',pos:'Động từ',vn:'phát hiện', hv: 'phát hiện',em:'🔍',lesson:3,
    explain:['Nhận ra, tìm thấy điều gì đó chưa biết trước đó.'],
    usage:'Động từ, mang tân ngữ là mệnh đề hoặc danh từ: 发现 + [sự việc]; thường đi cùng 才.',
    collo:['才发现','发现问题','没有发现'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:8,zh:'护照',py:'hùzhào',pos:'Danh từ',vn:'hộ chiếu',em:'📔',lesson:3,
+  {n:8,zh:'护照',py:'hùzhào',pos:'Danh từ',vn:'hộ chiếu', hv: 'hộ chiếu',em:'📔',lesson:3,
    explain:['Giấy tờ tùy thân dùng khi xuất nhập cảnh.'],
    usage:'Danh từ; đi cùng động từ 带/办: 带护照, 办护照.',
    collo:['带护照','办护照','忘带护照'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'起飞',py:'qǐfēi',pos:'Động từ',vn:'cất cánh (máy bay)',em:'🛫',lesson:3,
+  {n:9,zh:'起飞',py:'qǐfēi',pos:'Động từ',vn:'cất cánh (máy bay)', hv: 'khởi phi',em:'🛫',lesson:3,
    explain:['Máy bay rời khỏi mặt đất bay lên.'],
    usage:'Động từ, thường đi cùng chủ ngữ 飞机: 飞机起飞了.',
    collo:['飞机起飞','就要起飞','马上起飞'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:10,zh:'司机',py:'sījī',pos:'Danh từ',vn:'tài xế',em:'🚕',lesson:3,
+  {n:10,zh:'司机',py:'sījī',pos:'Danh từ',vn:'tài xế', hv: 'ti cơ',em:'🚕',lesson:3,
    explain:['Người điều khiển phương tiện giao thông.'],
    usage:'Danh từ; đứng làm chủ ngữ hoặc tân ngữ trong câu.',
    collo:['出租车司机','当司机','司机把我送到'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 自己 vừa học trong bài này).'},
    ]},
 
-  {n:11,zh:'教',py:'jiāo',pos:'Động từ',vn:'dạy',em:'👩‍🏫',lesson:4,
+  {n:11,zh:'教',py:'jiāo',pos:'Động từ',vn:'dạy', hv: 'giáo',em:'👩‍🏫',lesson:4,
    explain:['Truyền đạt kiến thức, kỹ năng cho người khác.'],
    usage:'Động từ, mang hai tân ngữ: 教 + [người] + [môn/kỹ năng] (教学生画画儿).',
    collo:['教学生','教画画儿','教了十年'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'画',py:'huà',pos:'Động từ',vn:'vẽ; tranh',em:'🎨',lesson:4,
+  {n:12,zh:'画',py:'huà',pos:'Động từ',vn:'vẽ; tranh', hv: 'họa',em:'🎨',lesson:4,
    explain:['Dùng bút vẽ nên hình ảnh; cũng dùng làm danh từ chỉ bức tranh.'],
    usage:'Động từ: 画 + [đối tượng] (画画儿); Danh từ: 一张画.',
    collo:['画画儿','一张画','画得好'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'画 vừa làm danh từ (这张画) vừa làm động từ (画得好看).'},
    ]},
 
-  {n:13,zh:'需要',py:'xūyào',pos:'Động từ',vn:'cần',em:'✅',lesson:4,
+  {n:13,zh:'需要',py:'xūyào',pos:'Động từ',vn:'cần', hv: 'nhu yếu',em:'✅',lesson:4,
    explain:['Có nhu cầu, đòi hỏi điều gì đó.'],
    usage:'Động từ, mang tân ngữ là danh từ hoặc động từ: 需要 + [vật/việc] (需要带的东西, 需要休息).',
    collo:['需要带','需要休息','不需要'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 帮忙 đã học ở Bài 6).'},
    ]},
 
-  {n:14,zh:'黑板',py:'hēibǎn',pos:'Danh từ',vn:'bảng đen',em:'⬛',lesson:4,
+  {n:14,zh:'黑板',py:'hēibǎn',pos:'Danh từ',vn:'bảng đen', hv: 'hắc bản',em:'⬛',lesson:4,
    explain:['Tấm bảng dùng để viết phấn trong lớp học.'],
    usage:'Danh từ; đi cùng động từ 写: 写在黑板上.',
    collo:['黑板上','写在黑板上','擦黑板'],

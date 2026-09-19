@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'眼镜',py:'yǎnjìng',pos:'Danh từ',vn:'mắt kính',em:'👓',lesson:1,
+  {n:1,zh:'眼镜',py:'yǎnjìng',pos:'Danh từ',vn:'mắt kính', hv: 'nhãn kính',em:'👓',lesson:1,
    explain:['Dụng cụ đeo trên mắt giúp nhìn rõ hơn.'],
    usage:'Danh từ; lượng từ đi kèm là 副: 一副眼镜.',
    collo:['一副眼镜','戴眼镜','找眼镜'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'看不清楚 = bổ ngữ khả năng dạng phủ định.'},
    ]},
 
-  {n:2,zh:'突然',py:'tūrán',pos:'Phó từ',vn:'bỗng nhiên, bỗng dưng',em:'⚡',lesson:1,
+  {n:2,zh:'突然',py:'tūrán',pos:'Phó từ',vn:'bỗng nhiên, bỗng dưng', hv: 'đột nhiên',em:'⚡',lesson:1,
    explain:['Xảy ra bất ngờ, không có dấu hiệu báo trước.'],
    usage:'Phó từ, đứng trước động từ/tính từ: 突然 + V/Adj.',
    collo:['突然找不到','突然不下了','突然生病'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'离开',py:'líkāi',pos:'Động từ',vn:'rời khỏi, tách khỏi',em:'🚶',lesson:1,
+  {n:3,zh:'离开',py:'líkāi',pos:'Động từ',vn:'rời khỏi, tách khỏi', hv: 'li khai',em:'🚶',lesson:1,
    explain:['Rời xa một người, nơi chốn hoặc vật gì đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 离开 + [người/nơi chốn]; thường dùng dạng phủ định khả năng 离不开 (không thể rời khỏi).',
    collo:['离不开','离开家','离开学校'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:4,zh:'清楚',py:'qīngchu',pos:'Tính từ',vn:'rõ ràng',em:'🔍',lesson:1,
+  {n:4,zh:'清楚',py:'qīngchu',pos:'Tính từ',vn:'rõ ràng', hv: 'thanh sở',em:'🔍',lesson:1,
    explain:['Nhìn/nghe/hiểu một cách rõ ràng, không mơ hồ.'],
    usage:'Tính từ, thường làm bổ ngữ khả năng sau động từ: 看得/不清楚, 说得/不清楚.',
    collo:['看得清楚','看不清楚','说清楚'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:5,zh:'刚才',py:'gāngcái',pos:'Danh từ',vn:'lúc nãy',em:'⏱️',lesson:1,
+  {n:5,zh:'刚才',py:'gāngcái',pos:'Danh từ',vn:'lúc nãy', hv: 'cương tài',em:'⏱️',lesson:1,
    explain:['Khoảng thời gian vài phút trước hiện tại.'],
    usage:'Danh từ, có thể đứng đầu câu hoặc trước động từ: 刚才 + [câu], khác với 刚 (phó từ, chỉ đứng trước động từ).',
    collo:['刚才说什么','刚才还在','刚才放在'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'找不到 = bổ ngữ khả năng phủ định (ôn lại 姐姐).'},
    ]},
 
-  {n:6,zh:'帮忙',py:'bāngmáng',pos:'Động từ',vn:'giúp, giúp đỡ',em:'🤝',lesson:1,
+  {n:6,zh:'帮忙',py:'bāngmáng',pos:'Động từ',vn:'giúp, giúp đỡ', hv: 'bang mang',em:'🤝',lesson:1,
    explain:['Trợ giúp người khác làm việc gì đó.'],
    usage:'Động từ ly hợp; không mang tân ngữ trực tiếp, muốn nói "giúp ai" phải dùng 帮 + người + 忙 hoặc 帮 + người + V.',
    collo:['帮个忙','过来帮忙','请你帮忙'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 找不到 vừa học trong bài này).'},
    ]},
 
-  {n:7,zh:'特别',py:'tèbié',pos:'Phó từ',vn:'vô cùng, rất',em:'❗',lesson:2,
+  {n:7,zh:'特别',py:'tèbié',pos:'Phó từ',vn:'vô cùng, rất', hv: 'đặc biệt',em:'❗',lesson:2,
    explain:['Mức độ cao hơn bình thường, nhấn mạnh hơn 很.'],
    usage:'Phó từ, đứng trước tính từ: 特别 + Adj (特别难, 特别高兴).',
    collo:['特别难','特别高兴','特别喜欢'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'特别 + động từ tâm lý diễn tả mức độ cao.'},
    ]},
 
-  {n:8,zh:'讲',py:'jiǎng',pos:'Động từ',vn:'giải thích, nói',em:'🗣️',lesson:2,
+  {n:8,zh:'讲',py:'jiǎng',pos:'Động từ',vn:'giải thích, nói', hv: 'giảng',em:'🗣️',lesson:2,
    explain:['Nói, giải thích một vấn đề cho người khác hiểu.'],
    usage:'Động từ, thường đi cùng bổ ngữ khả năng: 讲得/不明白.',
    collo:['讲明白','讲不明白','给你讲讲'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:9,zh:'明白',py:'míngbai',pos:'Tính từ',vn:'rõ ràng, dễ hiểu',em:'💡',lesson:2,
+  {n:9,zh:'明白',py:'míngbai',pos:'Tính từ',vn:'rõ ràng, dễ hiểu', hv: 'minh bạch',em:'💡',lesson:2,
    explain:['Hiểu rõ, không còn thắc mắc; cũng dùng làm động từ nghĩa "hiểu".'],
    usage:'Tính từ/động từ; thường làm bổ ngữ khả năng: 讲得/不明白, 听得/不明白.',
    collo:['听明白','讲不明白','我明白了'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'才 diễn tả phải sau nhiều lần mới đạt được kết quả.'},
    ]},
 
-  {n:10,zh:'锻炼',py:'duànliàn',pos:'Động từ',vn:'tập thể dục',em:'🏃',lesson:2,
+  {n:10,zh:'锻炼',py:'duànliàn',pos:'Động từ',vn:'tập thể dục', hv: 'đoán luyện',em:'🏃',lesson:2,
    explain:['Rèn luyện cơ thể thông qua vận động thể chất.'],
    usage:'Động từ, có thể mang tân ngữ 身体: 锻炼身体.',
    collo:['锻炼身体','去锻炼','锻炼完了'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 更 sẽ học ngay bên dưới trong bài này).'},
    ]},
 
-  {n:11,zh:'音乐',py:'yīnyuè',pos:'Danh từ',vn:'âm nhạc',em:'🎵',lesson:3,
+  {n:11,zh:'音乐',py:'yīnyuè',pos:'Danh từ',vn:'âm nhạc', hv: 'âm nhạc',em:'🎵',lesson:3,
    explain:['Nghệ thuật âm thanh, giai điệu.'],
    usage:'Danh từ; đi cùng động từ 听 (nghe): 听音乐.',
    collo:['听音乐','音乐会','喜欢音乐'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'公园',py:'gōngyuán',pos:'Danh từ',vn:'công viên',em:'🏞️',lesson:3,
+  {n:12,zh:'公园',py:'gōngyuán',pos:'Danh từ',vn:'công viên', hv: 'công viên',em:'🏞️',lesson:3,
    explain:['Khu vực công cộng có cây xanh, dùng để nghỉ ngơi, giải trí.'],
    usage:'Danh từ; đi cùng động từ 去 (đi): 去公园.',
    collo:['去公园','公园里','公园走走'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:13,zh:'聊天(儿)',py:'liáotiān(r)',pos:'Động từ',vn:'tán gẫu',em:'💬',lesson:3,
+  {n:13,zh:'聊天(儿)',py:'liáotiān(r)',pos:'Động từ',vn:'tán gẫu', hv: 'liêu thiên nhi',em:'💬',lesson:3,
    explain:['Nói chuyện phiếm, trò chuyện thoải mái không có chủ đề cố định.'],
    usage:'Động từ ly hợp; thường đi cùng 跟/和 + người: 跟朋友聊天儿.',
    collo:['跟朋友聊天儿','聊聊天儿','正在聊天儿'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'跟 + người + 聊天儿 diễn tả trò chuyện cùng ai.'},
    ]},
 
-  {n:14,zh:'睡着',py:'shuìzháo',pos:'Động từ',vn:'ngủ được',em:'😴',lesson:4,
+  {n:14,zh:'睡着',py:'shuìzháo',pos:'Động từ',vn:'ngủ được', hv: 'thụy trước',em:'😴',lesson:4,
    explain:['Chìm vào giấc ngủ thành công; thường dùng ở dạng phủ định 睡不着 (không ngủ được).'],
    usage:'Bổ ngữ khả năng: 睡+得/不+着.',
    collo:['睡不着','睡不着觉','睡得着'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'更 + tính từ diễn tả mức độ tăng thêm (ôn lại 更 vừa học trong bài này).'},
    ]},
 
-  {n:15,zh:'更',py:'gèng',pos:'Phó từ',vn:'càng, hơn nữa',em:'📊',lesson:4,
+  {n:15,zh:'更',py:'gèng',pos:'Phó từ',vn:'càng, hơn nữa', hv: 'cánh',em:'📊',lesson:4,
    explain:['Diễn tả mức độ tăng thêm so với một mức đã có.'],
    usage:'Phó từ, đứng trước tính từ/động từ: 更 + Adj/V (更好, 更喜欢).',
    collo:['更好','更漂亮','更喜欢'],

@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'杯子',py:'bēizi',pos:'Danh từ',vn:'cốc, ly',em:'☕',lesson:1,
+  {n:1,zh:'杯子',py:'bēizi',pos:'Danh từ',vn:'cốc, ly', hv: 'bôi tử',em:'☕',lesson:1,
    ex_zh:'请问，有杯子吗？',ex_py:'Qǐngwèn, yǒu bēizi ma?',ex_vn:'Xin hỏi, ở đây có bán cốc không?',
    exList:[{zh:'请问，有杯子吗？',py:'Qǐngwèn, yǒu bēizi ma?',vn:'Xin hỏi, ở đây có bán cốc không?'}],
    hanzi:[
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Hình đứa TRẺ sơ sinh đầu to, hai tay đưa lên, chân quấn tã → CON; khi đọc nhẹ (zi) thường làm hậu tố danh từ như 杯子, 桌子.',
       cf:'孑 (jié – "cô độc, lẻ loi", thiếu nét móc dưới)',w:'儿子 / 杯子 / 桌子'},
    ]},
-  {n:2,zh:'售货员',py:'shòuhuòyuán',pos:'Danh từ',vn:'nhân viên bán hàng',em:'🧑‍💼',lesson:1,
+  {n:2,zh:'售货员',py:'shòuhuòyuán',pos:'Danh từ',vn:'nhân viên bán hàng', hv: 'thụ hóa viên',em:'🧑‍💼',lesson:1,
    ex_zh:'有，杯子在这边。',ex_py:'Yǒu, bēizi zài zhèbiān.',ex_vn:'Có ạ, cốc ở phía bên này.',
    exList:[{zh:'有，杯子在这边。',py:'Yǒu, bēizi zài zhèbiān.',vn:'Có ạ, cốc ở phía bên này.'}],
    hanzi:[
@@ -28,7 +28,7 @@ var vocabData = [
       tip:'口(miệng, đại diện con người) + 贝(tiền, việc buôn bán) → NGƯỜI làm một công việc, nhân viên.',
       cf:'贝 (bèi – "vỏ sò, tiền cổ", thiếu 口 ở trên)',w:'售货员 / 服务员 / 演员'},
    ]},
-  {n:3,zh:'这边',py:'zhèbiān',pos:'Danh từ',vn:'bên này, phía này',em:'👈',lesson:1,
+  {n:3,zh:'这边',py:'zhèbiān',pos:'Danh từ',vn:'bên này, phía này', hv: 'giá biên',em:'👈',lesson:1,
    ex_zh:'有，杯子在这边。',ex_py:'Yǒu, bēizi zài zhèbiān.',ex_vn:'Có ạ, cốc ở phía bên này.',
    exList:[{zh:'有，杯子在这边。',py:'Yǒu, bēizi zài zhèbiān.',vn:'Có ạ, cốc ở phía bên này.'}],
    hanzi:[
@@ -39,7 +39,7 @@ var vocabData = [
       tip:'辶(đi dọc theo) + phần trên như đường viền/ranh giới → đi dọc theo MÉP, RANH GIỚI → BÊN, PHÍA.',
       cf:'这 (zhè – "này", cũng bộ 辶")',w:'这边 / 那边 / 旁边'},
    ]},
-  {n:4,zh:'钱',py:'qián',pos:'Danh từ',vn:'tiền',em:'💰',lesson:1,
+  {n:4,zh:'钱',py:'qián',pos:'Danh từ',vn:'tiền', hv: 'tiền',em:'💰',lesson:1,
    ex_zh:'多少钱一个？',ex_py:'Duōshao qián yí gè?',ex_vn:'Bao nhiêu tiền một chiếc vậy?',
    exList:[{zh:'多少钱一个？',py:'Duōshao qián yí gè?',vn:'Bao nhiêu tiền một chiếc vậy?'}],
    hanzi:[
@@ -47,7 +47,7 @@ var vocabData = [
       tip:'钅(kim loại, đúc tiền xu) → TIỀN.',
       cf:'浅 (qiǎn – "nông, cạn")',w:'多少钱 / 花钱'},
    ]},
-  {n:5,zh:'这些',py:'zhèxiē',pos:'Đại từ',vn:'những cái này',em:'👉',lesson:1,
+  {n:5,zh:'这些',py:'zhèxiē',pos:'Đại từ',vn:'những cái này', hv: 'giá ta',em:'👉',lesson:1,
    ex_zh:'这些五块钱一个，那些十块钱一个。',ex_py:'Zhèxiē wǔ kuài qián yí gè, nàxiē shí kuài qián yí gè.',ex_vn:'Những chiếc này 5 đồng một chiếc, còn những chiếc kia 10 đồng một chiếc.',
    exList:[{zh:'这些五块钱一个，那些十块钱一个。',py:'Zhèxiē wǔ kuài qián yí gè, nàxiē shí kuài qián yí gè.',vn:'Những chiếc này 5 đồng một chiếc, còn những chiếc kia 10 đồng một chiếc.'}],
    hanzi:[
@@ -58,7 +58,7 @@ var vocabData = [
       tip:'此(cái này) + 二(số nhiều, hơn một) → chỉ MỘT SỐ, VÀI cái không xác định số lượng chính xác.',
       cf:'此 (cǐ – "này, đây", thiếu 二 ở dưới)',w:'这些 / 那些 / 有些'},
    ]},
-  {n:6,zh:'块',py:'kuài',pos:'Lượng từ',vn:'đồng (đơn vị tiền tệ)',em:'🪙',lesson:1,
+  {n:6,zh:'块',py:'kuài',pos:'Lượng từ',vn:'đồng (đơn vị tiền tệ)', hv: 'khối',em:'🪙',lesson:1,
    ex_zh:'这些五块钱一个。',ex_py:'Zhèxiē wǔ kuài qián yí gè.',ex_vn:'Những chiếc này 5 đồng một chiếc.',
    exList:[{zh:'这些五块钱一个。',py:'Zhèxiē wǔ kuài qián yí gè.',vn:'Những chiếc này 5 đồng một chiếc.'}],
    hanzi:[
@@ -66,7 +66,7 @@ var vocabData = [
       tip:'土(đất, vật rắn) + 夬(quyết định, dứt khoát cắt ra) → một CỤC, MIẾNG cắt ra từ khối lớn → đơn vị đếm tiền, vật.',
       cf:'快 (kuài – "nhanh", bộ 忄 thay vì 土")',w:'一块钱 / 一块蛋糕 / 三块'},
    ]},
-  {n:7,zh:'那些',py:'nàxiē',pos:'Đại từ',vn:'những cái kia',em:'👉',lesson:1,
+  {n:7,zh:'那些',py:'nàxiē',pos:'Đại từ',vn:'những cái kia', hv: 'na ta',em:'👉',lesson:1,
    ex_zh:'那些十块钱一个。',ex_py:'Nàxiē shí kuài qián yí gè.',ex_vn:'Những chiếc kia 10 đồng một chiếc.',
    exList:[{zh:'那些十块钱一个。',py:'Nàxiē shí kuài qián yí gè.',vn:'Những chiếc kia 10 đồng một chiếc.'}],
    hanzi:[
@@ -77,7 +77,7 @@ var vocabData = [
       tip:'此(cái này) + 二(số nhiều, hơn một) → chỉ MỘT SỐ, VÀI cái không xác định số lượng chính xác.',
       cf:'此 (cǐ – "này, đây", thiếu 二 ở dưới)',w:'那些 / 这些 / 有些'},
    ]},
-  {n:8,zh:'这儿',py:'zhèr',pos:'Đại từ',vn:'ở đây, chỗ này',em:'📍',lesson:2,
+  {n:8,zh:'这儿',py:'zhèr',pos:'Đại từ',vn:'ở đây, chỗ này', hv: 'giá nhi',em:'📍',lesson:2,
    ex_zh:'这儿的水果真不少！',ex_py:'Zhèr de shuǐguǒ zhēn bù shǎo!',ex_vn:'Hoa quả ở đây nhiều nhỉ!',
    exList:[
      {zh:'这儿的水果真不少！',py:'Zhèr de shuǐguǒ zhēn bù shǎo!',vn:'Hoa quả ở đây nhiều nhỉ!'},
@@ -91,7 +91,7 @@ var vocabData = [
       tip:'Hình đôi CHÂN của một đứa trẻ đang đứng → liên quan tới TRẺ EM; khi ghép sau 这/那 tạo âm uốn lưỡi "er" chỉ ĐỊA ĐIỂM (这儿, 那儿).',
       cf:'几 (jǐ – "mấy, bao nhiêu", hình dạng gần giống)',w:'这儿 / 那儿 / 儿子'},
    ]},
-  {n:9,zh:'水果',py:'shuǐguǒ',pos:'Danh từ',vn:'hoa quả, trái cây',em:'🍇',lesson:2,
+  {n:9,zh:'水果',py:'shuǐguǒ',pos:'Danh từ',vn:'hoa quả, trái cây', hv: 'thủy quả',em:'🍇',lesson:2,
    ex_zh:'这儿的水果真不少！',ex_py:'Zhèr de shuǐguǒ zhēn bù shǎo!',ex_vn:'Hoa quả ở đây nhiều nhỉ!',
    exList:[{zh:'这儿的水果真不少！',py:'Zhèr de shuǐguǒ zhēn bù shǎo!',vn:'Hoa quả ở đây nhiều nhỉ!'}],
    hanzi:[
@@ -102,7 +102,7 @@ var vocabData = [
       tip:'Hình quả 田(tròn, giống trái cây) mọc trên cây 木 → QUẢ, TRÁI CÂY.',
       cf:'采 (cǎi – "hái, thu hái", trên là 爪 thay vì 田")',w:'水果 / 苹果 / 结果'},
    ]},
-  {n:10,zh:'少',py:'shǎo',pos:'Tính từ',vn:'ít',em:'➖',lesson:2,
+  {n:10,zh:'少',py:'shǎo',pos:'Tính từ',vn:'ít', hv: 'thiểu',em:'➖',lesson:2,
    ex_zh:'这儿的水果真不少！',ex_py:'Zhèr de shuǐguǒ zhēn bù shǎo!',ex_vn:'Hoa quả ở đây nhiều nhỉ!',
    exList:[{zh:'这儿的水果真不少！',py:'Zhèr de shuǐguǒ zhēn bù shǎo!',vn:'Hoa quả ở đây nhiều nhỉ!'}],
    hanzi:[
@@ -110,7 +110,7 @@ var vocabData = [
       tip:'小(nhỏ) thêm một nét phẩy → càng NHỎ, ÍT hơn nữa; ghép với 多(nhiều) để hỏi SỐ LƯỢNG.',
       cf:'小 (xiǎo – "nhỏ")',w:'不少 / 多少'},
    ]},
-  {n:11,zh:'斤',py:'jīn',pos:'Lượng từ',vn:'cân (đơn vị đo lường của Trung Quốc, 1 cân = 0,5 kg)',em:'⚖️',lesson:2,
+  {n:11,zh:'斤',py:'jīn',pos:'Lượng từ',vn:'cân (đơn vị đo lường của Trung Quốc, 1 cân = 0,5 kg)', hv: 'cân',em:'⚖️',lesson:2,
    ex_zh:'我想买两斤苹果。',ex_py:'Wǒ xiǎng mǎi liǎng jīn píngguǒ.',ex_vn:'Tôi muốn mua hai cân táo.',
    exList:[{zh:'我想买两斤苹果。',py:'Wǒ xiǎng mǎi liǎng jīn píngguǒ.',vn:'Tôi muốn mua hai cân táo.'}],
    hanzi:[
@@ -118,7 +118,7 @@ var vocabData = [
       tip:'Hình cái RÌU thời cổ (lưỡi rìu và cán) → mượn làm đơn vị đo trọng lượng CÂN.',
       cf:'斥 (chì – "trách mắng, xua đuổi", thêm một chấm")',w:'一斤 / 半斤 / 公斤'},
    ]},
-  {n:12,zh:'苹果',py:'píngguǒ',pos:'Danh từ',vn:'táo',em:'🍎',lesson:2,
+  {n:12,zh:'苹果',py:'píngguǒ',pos:'Danh từ',vn:'táo', hv: 'bình quả',em:'🍎',lesson:2,
    ex_zh:'我想买两斤苹果。',ex_py:'Wǒ xiǎng mǎi liǎng jīn píngguǒ.',ex_vn:'Tôi muốn mua hai cân táo.',
    exList:[{zh:'我想买两斤苹果。',py:'Wǒ xiǎng mǎi liǎng jīn píngguǒ.',vn:'Tôi muốn mua hai cân táo.'}],
    hanzi:[
@@ -129,7 +129,7 @@ var vocabData = [
       tip:'Hình quả 田(tròn, giống trái cây) mọc trên cây 木 → QUẢ, TRÁI CÂY.',
       cf:'采 (cǎi – "hái, thu hái", trên là 爪 thay vì 田")',w:'苹果 / 水果 / 结果'},
    ]},
-  {n:13,zh:'便宜',py:'piányi',pos:'Tính từ',vn:'rẻ',em:'🏷️',lesson:2,
+  {n:13,zh:'便宜',py:'piányi',pos:'Tính từ',vn:'rẻ', hv: 'tiện nghi',em:'🏷️',lesson:2,
    ex_zh:'这儿的苹果真便宜！',ex_py:'Zhèr de píngguǒ zhēn piányi!',ex_vn:'Táo ở đây rẻ thật!',
    exList:[{zh:'这儿的苹果真便宜！',py:'Zhèr de píngguǒ zhēn piányi!',vn:'Táo ở đây rẻ thật!'}],
    hanzi:[
@@ -140,7 +140,7 @@ var vocabData = [
       tip:'宀(mái nhà, sự ổn định) + 且(thêm nữa, tích luỹ) → những gì THÍCH HỢP, vừa phải trong nhà → mở rộng thành RẺ, phải chăng.',
       cf:'且 (qiě – "hơn nữa, vả lại", thiếu bộ 宀 ở trên)',w:'便宜 / 适宜 / 不宜'},
    ]},
-  {n:14,zh:'商店',py:'shāngdiàn',pos:'Danh từ',vn:'cửa hàng',em:'🏬',lesson:3,
+  {n:14,zh:'商店',py:'shāngdiàn',pos:'Danh từ',vn:'cửa hàng', hv: 'thương điếm',em:'🏬',lesson:3,
    ex_zh:'这家商店衣服真多！',ex_py:'Zhè jiā shāngdiàn yīfu zhēn duō!',ex_vn:'Cửa hàng này nhiều quần áo thật đấy!',
    exList:[{zh:'这家商店衣服真多！',py:'Zhè jiā shāngdiàn yīfu zhēn duō!',vn:'Cửa hàng này nhiều quần áo thật đấy!'}],
    hanzi:[
@@ -151,7 +151,7 @@ var vocabData = [
       tip:'Phần trên tượng trưng cửa hiệu nhiều tầng mái che, dưới cùng là 口(miệng, rao mời khách) → nơi diễn ra hoạt động BUÔN BÁN, THƯƠNG MẠI.',
       cf:'高 (gāo – "cao", cũng có 口 ở dưới, dễ nhầm phần trên)',w:'商店 / 商人 / 商量'},
    ]},
-  {n:15,zh:'衣服',py:'yīfu',pos:'Danh từ',vn:'quần áo',em:'👕',lesson:3,
+  {n:15,zh:'衣服',py:'yīfu',pos:'Danh từ',vn:'quần áo', hv: 'y phục',em:'👕',lesson:3,
    ex_zh:'这家商店衣服真多！',ex_py:'Zhè jiā shāngdiàn yīfu zhēn duō!',ex_vn:'Cửa hàng này nhiều quần áo thật đấy!',
    exList:[{zh:'这家商店衣服真多！',py:'Zhè jiā shāngdiàn yīfu zhēn duō!',vn:'Cửa hàng này nhiều quần áo thật đấy!'}],
    hanzi:[
@@ -162,7 +162,7 @@ var vocabData = [
       tip:'月(biến thể của 舟-thuyền) + phần phải tượng trưng bàn tay điều khiển → gốc nghĩa "chèo lái", mượn chỉ thứ khoác lên người → QUẦN ÁO.',
       cf:'报 (bào – "báo, báo cáo", dễ nhầm phần bên phải)',w:'衣服 / 校服 / 舒服'},
    ]},
-  {n:16,zh:'件',py:'jiàn',pos:'Lượng từ',vn:'chiếc, cái (dùng cho quần áo)',em:'👔',lesson:3,
+  {n:16,zh:'件',py:'jiàn',pos:'Lượng từ',vn:'chiếc, cái (dùng cho quần áo)', hv: 'kiện',em:'👔',lesson:3,
    ex_zh:'这件一百元，怎么样？',ex_py:'Zhè jiàn yìbǎi yuán, zěnmeyàng?',ex_vn:'Chiếc này 100 đồng, anh thấy thế nào?',
    exList:[{zh:'这件一百元，怎么样？',py:'Zhè jiàn yìbǎi yuán, zěnmeyàng?',vn:'Chiếc này 100 đồng, anh thấy thế nào?'}],
    hanzi:[
@@ -170,7 +170,7 @@ var vocabData = [
       tip:'亻(người) + 牛(trâu bò, vật có giá trị) → người phân chia trâu bò thành từng PHẦN riêng lẻ → lượng từ đếm đồ vật, sự việc.',
       cf:'伟 (wěi – "vĩ đại", phải là 韦 thay vì 牛")',w:'一件衣服 / 一件事 / 件数'},
    ]},
-  {n:17,zh:'元',py:'yuán',pos:'Lượng từ',vn:'đồng (nhân dân tệ)',em:'💴',lesson:3,
+  {n:17,zh:'元',py:'yuán',pos:'Lượng từ',vn:'đồng (nhân dân tệ)', hv: 'nguyên',em:'💴',lesson:3,
    ex_zh:'这件一百元，怎么样？',ex_py:'Zhè jiàn yìbǎi yuán, zěnmeyàng?',ex_vn:'Chiếc này 100 đồng, anh thấy thế nào?',
    exList:[{zh:'这件一百元，怎么样？',py:'Zhè jiàn yìbǎi yuán, zěnmeyàng?',vn:'Chiếc này 100 đồng, anh thấy thế nào?'}],
    hanzi:[
@@ -178,7 +178,7 @@ var vocabData = [
       tip:'二(số hai, tượng trưng phần trên) + 儿(người) → phần ĐẦU của con người, khởi đầu → nghĩa gốc "đầu tiên", mượn làm đơn vị tiền ĐỒNG (nhân dân tệ).',
       cf:'无 (wú – "không có", trên cũng có nét ngang dễ nhầm)',w:'一元 / 元旦 / 美元'},
    ]},
-  {n:18,zh:'怎么样',py:'zěnmeyàng',pos:'Đại từ',vn:'thế nào, như thế nào',em:'❓',lesson:3,
+  {n:18,zh:'怎么样',py:'zěnmeyàng',pos:'Đại từ',vn:'thế nào, như thế nào', hv: 'chẩm ma dạng',em:'❓',lesson:3,
    ex_zh:'这件一百元，怎么样？',ex_py:'Zhè jiàn yìbǎi yuán, zěnmeyàng?',ex_vn:'Chiếc này 100 đồng, anh thấy thế nào?',
    exList:[{zh:'这件一百元，怎么样？',py:'Zhè jiàn yìbǎi yuán, zěnmeyàng?',vn:'Chiếc này 100 đồng, anh thấy thế nào?'}],
    hanzi:[
@@ -192,7 +192,7 @@ var vocabData = [
       tip:'木(gỗ, dùng làm khuôn) + 羊(dê, âm đọc) → khuôn mẫu bằng gỗ để tạo hình → DÁNG VẺ, KIỂU CÁCH.',
       cf:'洋 (yáng – "đại dương", bộ 氵 thay vì 木")',w:'怎么样 / 一样 / 样子'},
    ]},
-  {n:19,zh:'贵',py:'guì',pos:'Tính từ',vn:'đắt',em:'💎',lesson:3,
+  {n:19,zh:'贵',py:'guì',pos:'Tính từ',vn:'đắt', hv: 'quý',em:'💎',lesson:3,
    ex_zh:'好看，也不贵。',ex_py:'Hǎokàn, yě bú guì.',ex_vn:'Đẹp đấy, mà cũng không đắt.',
    exList:[{zh:'好看，也不贵。',py:'Hǎokàn, yě bú guì.',vn:'Đẹp đấy, mà cũng không đắt.'}],
    hanzi:[
@@ -200,7 +200,7 @@ var vocabData = [
       tip:'Bộ 贝(tiền tệ cổ) → liên quan tới giá trị lớn = ĐẮT, QUÝ GIÁ.',
       cf:'柜 (guì – "tủ", bộ 木)',w:'很贵 / 不贵'},
    ]},
-  {n:20,zh:'穿',py:'chuān',pos:'Động từ',vn:'mặc',em:'🧥',lesson:3,
+  {n:20,zh:'穿',py:'chuān',pos:'Động từ',vn:'mặc', hv: 'xuyên',em:'🧥',lesson:3,
    ex_zh:'小雪能穿，买一件吧。',ex_py:'Xiǎoxuě néng chuān, mǎi yí jiàn ba.',ex_vn:'Tiểu Tuyết mặc được đấy, mua một chiếc nhé.',
    exList:[{zh:'小雪能穿，买一件吧。',py:'Xiǎoxuě néng chuān, mǎi yí jiàn ba.',vn:'Tiểu Tuyết mặc được đấy, mua một chiếc nhé.'}],
    hanzi:[
@@ -208,7 +208,7 @@ var vocabData = [
       tip:'穴(lỗ) + 牙(răng, vật nhọn) → xỏ vật nhọn XUYÊN QUA lỗ → MẶC, ĐI (giày/quần áo).',
       cf:'空 (kōng – "trống rỗng")',w:'能穿 / 穿衣服'},
    ]},
-  {n:21,zh:'女',py:'nǚ',pos:'Tính từ',vn:'nữ, con gái',em:'👧',lesson:3,
+  {n:21,zh:'女',py:'nǚ',pos:'Tính từ',vn:'nữ, con gái', hv: 'nữ',em:'👧',lesson:3,
    ex_zh:'这些是女孩子穿的衣服。',ex_py:'Zhèxiē shì nǚ háizi chuān de yīfu.',ex_vn:'Những cái này là quần áo dành cho bé gái.',
    exList:[{zh:'这些是女孩子穿的衣服。',py:'Zhèxiē shì nǚ háizi chuān de yīfu.',vn:'Những cái này là quần áo dành cho bé gái.'}],
    hanzi:[
@@ -216,7 +216,7 @@ var vocabData = [
       tip:'Hình người phụ nữ thời xưa quỳ, hai tay khoanh trước ngực, dáng vẻ dịu dàng → NỮ, CON GÁI.',
       cf:'母 (mǔ – "mẹ", thêm hai chấm bên trong)',w:'女孩子 / 女儿 / 妇女'},
    ]},
-  {n:22,zh:'男',py:'nán',pos:'Tính từ',vn:'nam, con trai',em:'👦',lesson:3,
+  {n:22,zh:'男',py:'nán',pos:'Tính từ',vn:'nam, con trai', hv: 'nam',em:'👦',lesson:3,
    ex_zh:'男孩子的衣服在那儿。',ex_py:'Nán háizi de yīfu zài nàr.',ex_vn:'Quần áo dành cho bé trai ở đằng kia cơ.',
    exList:[{zh:'男孩子的衣服在那儿。',py:'Nán háizi de yīfu zài nàr.',vn:'Quần áo dành cho bé trai ở đằng kia cơ.'}],
    hanzi:[
@@ -224,7 +224,7 @@ var vocabData = [
       tip:'田(ruộng) + 力(sức lực, cái cày) → người dùng SỨC LỰC cày RUỘNG → chỉ đàn ông, NAM GIỚI.',
       cf:'田 (tián – "ruộng", thiếu bộ 力 ở dưới)',w:'男孩子 / 男人 / 男朋友'},
    ]},
-  {n:23,zh:'那儿',py:'nàr',pos:'Đại từ',vn:'ở kia, chỗ đó',em:'👉',lesson:3,
+  {n:23,zh:'那儿',py:'nàr',pos:'Đại từ',vn:'ở kia, chỗ đó', hv: 'na nhi',em:'👉',lesson:3,
    ex_zh:'男孩子的衣服在那儿。',ex_py:'Nán háizi de yīfu zài nàr.',ex_vn:'Quần áo dành cho bé trai ở đằng kia cơ.',
    exList:[{zh:'男孩子的衣服在那儿。',py:'Nán háizi de yīfu zài nàr.',vn:'Quần áo dành cho bé trai ở đằng kia cơ.'}],
    hanzi:[

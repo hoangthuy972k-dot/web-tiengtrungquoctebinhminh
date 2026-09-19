@@ -2,7 +2,7 @@
 // DATA — YCT Bài 4: 你家有几口人？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'有',py:'yǒu',pos:'Động từ',vn:'có',em:'✅',lesson:1,
+  {n:1,zh:'有',py:'yǒu',pos:'Động từ',vn:'có', hv: 'hữu',em:'✅',lesson:1,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà bạn có mấy người?',
    exList:[{zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'}],
    hanzi:[
@@ -10,7 +10,7 @@ var vocabData = [
       tip:'Bàn tay (ナ) cầm miếng thịt (月) → sở hữu, CÓ trong tay.',
       cf:'肯 (kěn – "bằng lòng")',w:'你家有几口人'},
    ]},
-  {n:2,zh:'几',py:'jǐ',pos:'Đại từ',vn:'mấy (hỏi số lượng dưới 10)',em:'🔢',lesson:1,
+  {n:2,zh:'几',py:'jǐ',pos:'Đại từ',vn:'mấy (hỏi số lượng dưới 10)', hv: 'kỉ',em:'🔢',lesson:1,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà bạn có mấy người?',
    exList:[{zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'}],
    hanzi:[
@@ -18,7 +18,7 @@ var vocabData = [
       tip:'Hình cái ghế nhỏ thời cổ, mượn âm làm từ hỏi số lượng ÍT, dưới 10.',
       cf:'九 (jiǔ – "chín")',w:'几口人'},
    ]},
-  {n:3,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'lượng từ đếm người trong nhà',em:'👄',lesson:1,
+  {n:3,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'lượng từ đếm người trong nhà', hv: 'khẩu',em:'👄',lesson:1,
    ex_zh:'四口人，爸爸、妈妈、哥哥和我。',ex_py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',ex_vn:'Bốn người, bố, mẹ, anh trai và mình.',
    exList:[{zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'}],
    hanzi:[
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Hình cái miệng cách điệu → MIỆNG; dùng làm lượng từ đếm số người ăn chung một nhà.',
       cf:'日 (rì – "mặt trời")',w:'几口人'},
    ]},
-  {n:4,zh:'和',py:'hé',pos:'Liên từ',vn:'và',em:'➕',lesson:1,
+  {n:4,zh:'和',py:'hé',pos:'Liên từ',vn:'và', hv: 'hòa',em:'➕',lesson:1,
    ex_zh:'四口人，爸爸、妈妈、哥哥和我。',ex_py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',ex_vn:'Bốn người, bố, mẹ, anh trai và mình.',
    exList:[{zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'}],
    hanzi:[
@@ -34,7 +34,7 @@ var vocabData = [
       tip:'禾(lúa, no đủ) + 口(miệng ăn) → mọi người hoà thuận, ghép nối VÀ nhau.',
       cf:'合 (hé – "hợp")',w:'爸爸和妈妈'},
    ]},
-  {n:5,zh:'没有',py:'méiyǒu',pos:'Động từ',vn:'không có',em:'🚫',lesson:2,
+  {n:5,zh:'没有',py:'méiyǒu',pos:'Động từ',vn:'không có', hv: 'một hữu',em:'🚫',lesson:2,
    ex_zh:'没有。我有一个妹妹。',ex_py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',ex_vn:'Không có. Mình có một em gái.',
    exList:[{zh:'没有。我有一个妹妹。',py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',vn:'Không có. Mình có một em gái.'}],
    hanzi:[
@@ -42,7 +42,7 @@ var vocabData = [
       tip:'氵(nước) dâng lên che lấp mọi thứ → mang nghĩa KHÔNG CÒN, KHÔNG CÓ. (有 đã học ở trên)',
       cf:'汉 (hàn – "Hán")',w:'没有'},
    ]},
-  {n:6,zh:'个',py:'ge',pos:'Lượng từ',vn:'cái, con (lượng từ dùng chung)',em:'🔘',lesson:2,
+  {n:6,zh:'个',py:'ge',pos:'Lượng từ',vn:'cái, con (lượng từ dùng chung)', hv: 'cá',em:'🔘',lesson:2,
    ex_zh:'我有一个妹妹。',ex_py:'Wǒ yǒu yí ge mèimei.',ex_vn:'Mình có một em gái.',
    exList:[{zh:'我有一个妹妹。',py:'Wǒ yǒu yí ge mèimei.',vn:'Mình có một em gái.'}],
    hanzi:[
@@ -50,7 +50,7 @@ var vocabData = [
       tip:'Hình đơn giản một cá thể đứng riêng lẻ → lượng từ dùng CHUNG.',
       cf:'介 (jiè – "giới thiệu")',w:'一个妹妹'},
    ]},
-  {n:7,zh:'爸爸',py:'bàba',pos:'Danh từ',vn:'bố',em:'👨',lesson:2,
+  {n:7,zh:'爸爸',py:'bàba',pos:'Danh từ',vn:'bố', hv: 'ba ba',em:'👨',lesson:2,
    ex_zh:'四口人，爸爸、妈妈、哥哥和我。',ex_py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',ex_vn:'Bốn người, bố, mẹ, anh trai và mình.',
    exList:[{zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'}],
    hanzi:[
@@ -58,7 +58,7 @@ var vocabData = [
       tip:'父(bàn tay cầm roi dạy dỗ, biểu tượng người cha) + 巴(mượn âm) → tiếng gọi CHA, BỐ.',
       cf:'吧 (ba – "trợ từ ngữ khí")',w:'爸爸'},
    ]},
-  {n:8,zh:'妈妈',py:'māma',pos:'Danh từ',vn:'mẹ',em:'👩',lesson:2,
+  {n:8,zh:'妈妈',py:'māma',pos:'Danh từ',vn:'mẹ', hv: 'ma ma',em:'👩',lesson:2,
    ex_zh:'四口人，爸爸、妈妈、哥哥和我。',ex_py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',ex_vn:'Bốn người, bố, mẹ, anh trai và mình.',
    exList:[{zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'}],
    hanzi:[
@@ -66,7 +66,7 @@ var vocabData = [
       tip:'女(nữ giới) + 马(mượn âm) → tiếng gọi thân thương dành cho MẸ.',
       cf:'吗 (ma – "trợ từ hỏi")',w:'妈妈'},
    ]},
-  {n:9,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai',em:'👦',lesson:2,
+  {n:9,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai', hv: 'ca ca',em:'👦',lesson:2,
    ex_zh:'四口人，爸爸、妈妈、哥哥和我。',ex_py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',ex_vn:'Bốn người, bố, mẹ, anh trai và mình.',
    exList:[{zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'}],
    hanzi:[
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'Hai chữ 口(miệng) chồng lên nhau → hai anh em cùng cất tiếng gọi, người lớn hơn là ANH.',
       cf:'歌 (gē – "bài hát", cùng phần trên")',w:'哥哥'},
    ]},
-  {n:10,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái',em:'👧',lesson:2,
+  {n:10,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái', hv: 'thư thư',em:'👧',lesson:2,
    ex_zh:'你有姐姐吗？',ex_py:'Nǐ yǒu jiějie ma?',ex_vn:'Bạn có chị gái không?',
    exList:[{zh:'你有姐姐吗？',py:'Nǐ yǒu jiějie ma?',vn:'Bạn có chị gái không?'}],
    hanzi:[
@@ -82,7 +82,7 @@ var vocabData = [
       tip:'女(nữ giới) + 且(hơn nữa) → người con gái LỚN HƠN trong nhà = CHỊ.',
       cf:'组 (zǔ – "tổ, nhóm")',w:'姐姐'},
    ]},
-  {n:11,zh:'妹妹',py:'mèimei',pos:'Danh từ',vn:'em gái',em:'👶',lesson:2,
+  {n:11,zh:'妹妹',py:'mèimei',pos:'Danh từ',vn:'em gái', hv: 'muội muội',em:'👶',lesson:2,
    ex_zh:'我有一个妹妹。',ex_py:'Wǒ yǒu yí ge mèimei.',ex_vn:'Mình có một em gái.',
    exList:[{zh:'我有一个妹妹。',py:'Wǒ yǒu yí ge mèimei.',vn:'Mình có một em gái.'}],
    hanzi:[
@@ -90,7 +90,7 @@ var vocabData = [
       tip:'女(nữ giới) + 未(chưa) → người con gái CHƯA lớn bằng chị = EM GÁI.',
       cf:'妈 (mā – "mẹ")',w:'妹妹'},
    ]},
-  {n:12,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà, gia đình',em:'🏠',lesson:1,
+  {n:12,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà, gia đình', hv: 'gia',em:'🏠',lesson:1,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà bạn có mấy người?',
    exList:[{zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'}],
    hanzi:[

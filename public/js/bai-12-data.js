@@ -2,7 +2,7 @@
 // DATA — Bài 12: 你穿得太少了
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'得',py:'de',pos:'Trợ từ kết cấu',vn:'dùng sau động từ để nối bổ ngữ trạng thái',em:'🔗',lesson:1,
+  {n:1,zh:'得',py:'de',pos:'Trợ từ kết cấu',vn:'dùng sau động từ để nối bổ ngữ trạng thái', hv: 'đắc',em:'🔗',lesson:1,
    ex_zh:'你吃得太少了。',ex_py:'Nǐ chī de tài shǎo le.',ex_vn:'Bạn ăn ít quá.',
    exList:[
      {zh:'你吃得太少了。',py:'Nǐ chī de tài shǎo le.',vn:'Bạn ăn ít quá.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Bộ 彳(bước đi) → trên đường đi mà ĐẠT ĐƯỢC điều gì; đọc "de" khi nối động từ với phần miêu tả.',
       cf:'德 (dé – "đạo đức")',w:'V + 得 + Tính từ / 得到 / 觉得'},
    ]},
-  {n:2,zh:'妻子',py:'qīzi',pos:'Danh từ',vn:'vợ',em:'👰',lesson:2,
+  {n:2,zh:'妻子',py:'qīzi',pos:'Danh từ',vn:'vợ', hv: 'thê tử',em:'👰',lesson:2,
    ex_zh:'我妻子比我做得好。',ex_py:'Wǒ qīzi bǐ wǒ zuò de hǎo.',ex_vn:'Vợ tớ nấu ngon hơn tớ nhiều.',
    exList:[
      {zh:'我妻子比我做得好。',py:'Wǒ qīzi bǐ wǒ zuò de hǎo.',vn:'Vợ tớ nấu ngon hơn tớ nhiều.'},
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Bộ 女 (phụ nữ) ở dưới → người phụ nữ trong nhà = VỢ.',
       cf:'妾 (qiè – "thiếp")',w:'妻子 / 夫妻'},
    ]},
-  {n:3,zh:'雪',py:'xuě',pos:'Danh từ',vn:'tuyết',em:'❄️',lesson:3,
+  {n:3,zh:'雪',py:'xuě',pos:'Danh từ',vn:'tuyết', hv: 'tuyết',em:'❄️',lesson:3,
    ex_zh:'下雪了，今天真冷。',ex_py:'Xià xuě le, jīntiān zhēn lěng.',ex_vn:'Tuyết rơi rồi, hôm nay lạnh thật.',
    exList:[
      {zh:'下雪了，今天真冷。',py:'Xià xuě le, jīntiān zhēn lěng.',vn:'Tuyết rơi rồi, hôm nay lạnh thật.'},
@@ -38,7 +38,7 @@ var vocabData = [
       tip:'Bộ 雨 (mưa) ở trên → trời lạnh khiến mưa đóng băng thành TUYẾT.',
       cf:'雨 (yǔ – "mưa", thiếu phần dưới)',w:'下雪 / 大雪 / 雪天'},
    ]},
-  {n:4,zh:'零',py:'líng',pos:'Số từ',vn:'không, số không',em:'0️⃣',lesson:3,
+  {n:4,zh:'零',py:'líng',pos:'Số từ',vn:'không, số không', hv: 'linh',em:'0️⃣',lesson:3,
    ex_zh:'有零下十度吧。',ex_py:'Yǒu líng xià shí dù ba.',ex_vn:'Phải âm 10 độ ấy nhỉ.',
    exList:[
      {zh:'有零下十度吧。',py:'Yǒu líng xià shí dù ba.',vn:'Phải âm 10 độ ấy nhỉ.'},
@@ -50,7 +50,7 @@ var vocabData = [
       tip:'Bộ 雨 (mưa) → mưa nhỏ giọt lẻ tẻ, dần hết → nghĩa "KHÔNG, số 0".',
       cf:'铃 (líng – "chuông", bộ 钅)',w:'零下 / 零钱 / 三十零五'},
    ]},
-  {n:5,zh:'度',py:'dù',pos:'Lượng từ',vn:'độ (nhiệt độ)',em:'🌡️',lesson:3,
+  {n:5,zh:'度',py:'dù',pos:'Lượng từ',vn:'độ (nhiệt độ)', hv: 'độ',em:'🌡️',lesson:3,
    ex_zh:'零下十度',ex_py:'líng xià shí dù',ex_vn:'âm 10 độ',
    exList:[
      {zh:'今天三十五度，太热了。',py:'Jīntiān sānshíwǔ dù, tài rè le.',vn:'Hôm nay 35 độ, nóng quá.'},
@@ -62,7 +62,7 @@ var vocabData = [
       tip:'Mái nhà 广 che một khoảng đo lường → đơn vị đo MỨC ĐỘ (nhiệt độ, góc độ).',
       cf:'渡 (dù – "vượt qua", bộ 氵)',w:'度 / 温度 / 态度'},
    ]},
-  {n:6,zh:'穿',py:'chuān',pos:'Động từ',vn:'mặc (quần áo), đi (giày)',em:'👔',lesson:3,
+  {n:6,zh:'穿',py:'chuān',pos:'Động từ',vn:'mặc (quần áo), đi (giày)', hv: 'xuyên',em:'👔',lesson:3,
    ex_zh:'你穿得太少了。',ex_py:'Nǐ chuān de tài shǎo le.',ex_vn:'Bạn mặc ít quá.',
    exList:[
      {zh:'你穿得太少了。',py:'Nǐ chuān de tài shǎo le.',vn:'Bạn mặc ít quá.'},
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'穴 (lỗ) + 牙 (răng, vật nhọn) → xỏ vật nhọn XUYÊN QUA lỗ → MẶC, ĐI (giày/quần áo).',
       cf:'空 (kōng – "trống rỗng")',w:'穿衣服 / 穿鞋 / 穿得多'},
    ]},
-  {n:7,zh:'进',py:'jìn',pos:'Động từ',vn:'vào, đi vào',em:'🚪',lesson:3,
+  {n:7,zh:'进',py:'jìn',pos:'Động từ',vn:'vào, đi vào', hv: 'tiến',em:'🚪',lesson:3,
    ex_zh:'我们进房间吧。',ex_py:'Wǒmen jìn fángjiān ba.',ex_vn:'Chúng ta vào phòng đi.',
    exList:[
      {zh:'我们进房间吧。',py:'Wǒmen jìn fángjiān ba.',vn:'Chúng ta vào phòng đi.'},
@@ -86,7 +86,7 @@ var vocabData = [
       tip:'Bộ 辶 (đi) + 井 (giếng, lối vào) → bước chân TIẾN VÀO một không gian.',
       cf:'出 (chū – "ra", trái nghĩa, đã học Bài 2)',w:'进来 / 进房间 / 请进'},
    ]},
-  {n:8,zh:'弟弟',py:'dìdi',pos:'Danh từ',vn:'em trai',em:'👦',lesson:4,
+  {n:8,zh:'弟弟',py:'dìdi',pos:'Danh từ',vn:'em trai', hv: 'đệ đệ',em:'👦',lesson:4,
    ex_zh:'我弟弟让我帮他找个房子。',ex_py:'Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi.',ex_vn:'Em trai tớ nhờ tớ tìm giúp nó một căn nhà.',
    exList:[
      {zh:'我弟弟让我帮他找个房子。',py:'Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi.',vn:'Em trai tớ nhờ tớ tìm giúp nó một căn nhà.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'Hình sợi dây quấn quanh cây gậy theo thứ tự dưới lên → chỉ THỨ BẬC dưới trong nhà = em trai.',
       cf:'第 (dì – "thứ tự", đã học Bài 9)',w:'弟弟 / 兄弟'},
    ]},
-  {n:9,zh:'近',py:'jìn',pos:'Tính từ',vn:'gần',em:'📍',lesson:4,
+  {n:9,zh:'近',py:'jìn',pos:'Tính từ',vn:'gần', hv: 'cận',em:'📍',lesson:4,
    ex_zh:'他也希望能住得近一点儿。',ex_py:'Tā yě xīwàng néng zhù de jìn yìdiǎnr.',ex_vn:'Nó cũng hy vọng có thể ở gần hơn một chút.',
    exList:[
      {zh:'他也希望能住得近一点儿。',py:'Tā yě xīwàng néng zhù de jìn yìdiǎnr.',vn:'Nó cũng hy vọng có thể ở gần hơn một chút.'},

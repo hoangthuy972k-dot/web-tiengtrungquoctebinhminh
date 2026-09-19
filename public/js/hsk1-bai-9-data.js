@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 9: 你儿子在哪儿工作?
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'小',py:'xiǎo',pos:'Tính từ',vn:'nhỏ, bé',em:'🔹',lesson:1,
+  {n:1,zh:'小',py:'xiǎo',pos:'Tính từ',vn:'nhỏ, bé', hv: 'tiểu',em:'🔹',lesson:1,
    ex_zh:'小猫在哪儿？',ex_py:'Xiǎo māo zài nǎr?',ex_vn:'Con mèo đâu rồi?',
    exList:[
      {zh:'小猫在哪儿？',py:'Xiǎo māo zài nǎr?',vn:'Con mèo đâu rồi?'},
@@ -12,7 +12,7 @@ var vocabData = [
       tip:'Hình ba hạt cát nhỏ li ti → NHỎ, BÉ.',
       cf:'少 (shǎo – "ít", đã học Bài 8")',w:'小猫 / 小狗'},
    ]},
-  {n:2,zh:'猫',py:'māo',pos:'Danh từ',vn:'con mèo',em:'🐱',lesson:1,
+  {n:2,zh:'猫',py:'māo',pos:'Danh từ',vn:'con mèo', hv: 'miêu',em:'🐱',lesson:1,
    ex_zh:'小猫在那儿。',ex_py:'Xiǎo māo zài nàr.',ex_vn:'Con mèo ở đó kìa.',
    exList:[
      {zh:'小猫在那儿。',py:'Xiǎo māo zài nàr.',vn:'Con mèo ở đó kìa.'},
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'犭(loài thú) + 苗(mượn âm) → CON MÈO.',
       cf:'描 (miáo – "miêu tả")',w:'小猫'},
    ]},
-  {n:3,zh:'在',py:'zài',pos:'Động từ',vn:'ở (ở vị trí nào đó)',em:'📍',lesson:1,
+  {n:3,zh:'在',py:'zài',pos:'Động từ',vn:'ở (ở vị trí nào đó)', hv: 'tại',em:'📍',lesson:1,
    ex_zh:'小猫在哪儿？',ex_py:'Xiǎo māo zài nǎr?',ex_vn:'Con mèo đâu rồi?',
    exList:[
      {zh:'小猫在哪儿？',py:'Xiǎo māo zài nǎr?',vn:'Con mèo đâu rồi?'},
@@ -33,13 +33,13 @@ var vocabData = [
       tip:'ナ(che chắn) + 土(đất, nơi chốn) → đang tồn tại Ở một vị trí.',
       cf:'存 (cún – "tồn tại", nghĩa gần giống")',w:'小猫在哪儿 / 我在学校'},
    ]},
-  {n:4,zh:'那儿',py:'nàr',pos:'Đại từ',vn:'đằng kia, ở đó',em:'📌',lesson:1,
+  {n:4,zh:'那儿',py:'nàr',pos:'Đại từ',vn:'đằng kia, ở đó', hv: 'na nhi',em:'📌',lesson:1,
    ex_zh:'小猫在那儿。',ex_py:'Xiǎo māo zài nàr.',ex_vn:'Con mèo ở đó kìa.',
    exList:[
      {zh:'小猫在那儿。',py:'Xiǎo māo zài nàr.',vn:'Con mèo ở đó kìa.'},
    ],
    hanzi:[]},
-  {n:5,zh:'狗',py:'gǒu',pos:'Danh từ',vn:'con chó',em:'🐶',lesson:1,
+  {n:5,zh:'狗',py:'gǒu',pos:'Danh từ',vn:'con chó', hv: 'cẩu',em:'🐶',lesson:1,
    ex_zh:'小狗在椅子下面。',ex_py:'Xiǎo gǒu zài yǐzi xiàmiàn.',ex_vn:'Con chó ở dưới ghế dựa.',
    exList:[
      {zh:'小狗在椅子下面。',py:'Xiǎo gǒu zài yǐzi xiàmiàn.',vn:'Con chó ở dưới ghế dựa.'},
@@ -49,7 +49,7 @@ var vocabData = [
       tip:'犭(loài thú) + 句(mượn âm) → CON CHÓ.',
       cf:'苟 (gǒu – "cẩu thả", cùng phần 句")',w:'小狗'},
    ]},
-  {n:6,zh:'椅子',py:'yǐzi',pos:'Danh từ',vn:'ghế dựa',em:'🪑',lesson:1,
+  {n:6,zh:'椅子',py:'yǐzi',pos:'Danh từ',vn:'ghế dựa', hv: 'ỷ tử',em:'🪑',lesson:1,
    ex_zh:'小狗在椅子下面。',ex_py:'Xiǎo gǒu zài yǐzi xiàmiàn.',ex_vn:'Con chó ở dưới ghế dựa.',
    exList:[
      {zh:'小狗在椅子下面。',py:'Xiǎo gǒu zài yǐzi xiàmiàn.',vn:'Con chó ở dưới ghế dựa.'},
@@ -59,7 +59,7 @@ var vocabData = [
       tip:'木(gỗ) + 奇(đặc biệt) → đồ gỗ đặc biệt để ngồi tựa lưng = GHẾ. (子 đã học ở Bài 8)',
       cf:'倚 (yǐ – "dựa vào")',w:'椅子'},
    ]},
-  {n:7,zh:'下面',py:'xiàmiàn',pos:'Danh từ',vn:'bên dưới, phía dưới',em:'⬇️',lesson:2,
+  {n:7,zh:'下面',py:'xiàmiàn',pos:'Danh từ',vn:'bên dưới, phía dưới', hv: 'hạ diện',em:'⬇️',lesson:2,
    ex_zh:'小狗在椅子下面。',ex_py:'Xiǎo gǒu zài yǐzi xiàmiàn.',ex_vn:'Con chó ở dưới ghế dựa.',
    exList:[
      {zh:'小狗在椅子下面。',py:'Xiǎo gǒu zài yǐzi xiàmiàn.',vn:'Con chó ở dưới ghế dựa.'},
@@ -69,19 +69,19 @@ var vocabData = [
       tip:'Hình khuôn mặt người cách điệu → MẶT, mở rộng chỉ PHÍA, BÊN (下面 = phía dưới). (下 đã học ở Bài 8)',
       cf:'面 dễ nhầm 而 (ér – "mà")',w:'下面 / 后面'},
    ]},
-  {n:8,zh:'在',py:'zài',pos:'Giới từ',vn:'ở, tại (trước nơi chốn)',em:'📍',lesson:2,
+  {n:8,zh:'在',py:'zài',pos:'Giới từ',vn:'ở, tại (trước nơi chốn)', hv: 'tại',em:'📍',lesson:2,
    ex_zh:'我在学校工作。',ex_py:'Wǒ zài xuéxiào gōngzuò.',ex_vn:'Tôi làm việc ở trường học.',
    exList:[
      {zh:'我在学校工作。',py:'Wǒ zài xuéxiào gōngzuò.',vn:'Tôi làm việc ở trường học.'},
    ],
    hanzi:[]},
-  {n:9,zh:'哪儿',py:'nǎr',pos:'Đại từ',vn:'ở đâu, chỗ nào',em:'❓',lesson:2,
+  {n:9,zh:'哪儿',py:'nǎr',pos:'Đại từ',vn:'ở đâu, chỗ nào', hv: 'na nhi',em:'❓',lesson:2,
    ex_zh:'你在哪儿工作？',ex_py:'Nǐ zài nǎr gōngzuò?',ex_vn:'Anh làm việc ở đâu?',
    exList:[
      {zh:'你在哪儿工作？',py:'Nǐ zài nǎr gōngzuò?',vn:'Anh làm việc ở đâu?'},
    ],
    hanzi:[]},
-  {n:10,zh:'工作',py:'gōngzuò',pos:'Động từ / Danh từ',vn:'làm việc; công việc',em:'💼',lesson:2,
+  {n:10,zh:'工作',py:'gōngzuò',pos:'Động từ / Danh từ',vn:'làm việc; công việc', hv: 'công tác',em:'💼',lesson:2,
    ex_zh:'我在学校工作。',ex_py:'Wǒ zài xuéxiào gōngzuò.',ex_vn:'Tôi làm việc ở trường học.',
    exList:[
      {zh:'我在学校工作。',py:'Wǒ zài xuéxiào gōngzuò.',vn:'Tôi làm việc ở trường học.'},
@@ -94,13 +94,13 @@ var vocabData = [
       tip:'亻(người) + 乍(vừa mới bắt đầu) → người bắt tay vào LÀM việc.',
       cf:'做 (zuò – "làm", đã học Bài 6, nghĩa gần giống")',w:'工作'},
    ]},
-  {n:11,zh:'儿子',py:'érzi',pos:'Danh từ',vn:'con trai',em:'👦',lesson:2,
+  {n:11,zh:'儿子',py:'érzi',pos:'Danh từ',vn:'con trai', hv: 'nhi tử',em:'👦',lesson:2,
    ex_zh:'我儿子在医院工作。',ex_py:'Wǒ érzi zài yīyuàn gōngzuò.',ex_vn:'Con trai tôi làm việc ở bệnh viện.',
    exList:[
      {zh:'我儿子在医院工作。',py:'Wǒ érzi zài yīyuàn gōngzuò.',vn:'Con trai tôi làm việc ở bệnh viện.'},
    ],
    hanzi:[]},
-  {n:12,zh:'医院',py:'yīyuàn',pos:'Danh từ',vn:'bệnh viện',em:'🏥',lesson:2,
+  {n:12,zh:'医院',py:'yīyuàn',pos:'Danh từ',vn:'bệnh viện', hv: 'y viện',em:'🏥',lesson:2,
    ex_zh:'我儿子在医院工作，他是医生。',ex_py:'Wǒ érzi zài yīyuàn gōngzuò, tā shì yīshēng.',ex_vn:'Con trai tôi làm việc ở bệnh viện, nó là bác sĩ.',
    exList:[
      {zh:'我儿子在医院工作，他是医生。',py:'Wǒ érzi zài yīyuàn gōngzuò, tā shì yīshēng.',vn:'Con trai tôi làm việc ở bệnh viện, nó là bác sĩ.'},
@@ -113,13 +113,13 @@ var vocabData = [
       tip:'阝(tường bao quanh) + 完(hoàn chỉnh) → khuôn viên có tường bao đầy đủ chức năng = VIỆN.',
       cf:'完 (wán – "hoàn thành")',w:'医院 / 学院'},
    ]},
-  {n:13,zh:'医生',py:'yīshēng',pos:'Danh từ',vn:'bác sĩ',em:'👨‍⚕️',lesson:2,
+  {n:13,zh:'医生',py:'yīshēng',pos:'Danh từ',vn:'bác sĩ', hv: 'y sinh',em:'👨‍⚕️',lesson:2,
    ex_zh:'他是医生。',ex_py:'Tā shì yīshēng.',ex_vn:'Nó là bác sĩ.',
    exList:[
      {zh:'他是医生。',py:'Tā shì yīshēng.',vn:'Nó là bác sĩ.'},
    ],
    hanzi:[]},
-  {n:14,zh:'爸爸',py:'bàba',pos:'Danh từ',vn:'cha, bố',em:'👨',lesson:3,
+  {n:14,zh:'爸爸',py:'bàba',pos:'Danh từ',vn:'cha, bố', hv: 'ba ba',em:'👨',lesson:3,
    ex_zh:'你爸爸在家吗？',ex_py:'Nǐ bàba zài jiā ma?',ex_vn:'Cha cô có ở nhà không?',
    exList:[
      {zh:'你爸爸在家吗？',py:'Nǐ bàba zài jiā ma?',vn:'Cha cô có ở nhà không?'},

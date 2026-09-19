@@ -2,7 +2,7 @@
 // DATA — Bài 10: 别找了，手机在桌子上呢
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'课',py:'kè',pos:'Danh từ',vn:'bài học, tiết học, môn học',em:'📖',lesson:1,
+  {n:1,zh:'课',py:'kè',pos:'Danh từ',vn:'bài học, tiết học, môn học', hv: 'khóa',em:'📖',lesson:1,
    ex_zh:'我们下课了。',ex_py:'Wǒmen xiàkè le.',ex_vn:'Chúng tôi tan học rồi.',
    exList:[
      {zh:'我们下课了。',py:'Wǒmen xiàkè le.',vn:'Chúng tôi tan học rồi. (下课 — tan học)'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Bộ 讠(lời nói/giảng dạy) + 果 (kết quả) → lời giảng mang lại KẾT QUẢ học tập = BÀI HỌC.',
       cf:'棵 (kē – lượng từ cây)',w:'汉语课 / 上课 / 下课'},
    ]},
-  {n:2,zh:'帮助',py:'bāngzhù',pos:'Động từ / Danh từ',vn:'giúp đỡ, có ích',em:'🤝',lesson:1,
+  {n:2,zh:'帮助',py:'bāngzhù',pos:'Động từ / Danh từ',vn:'giúp đỡ, có ích', hv: 'bang trợ',em:'🤝',lesson:1,
    ex_zh:'他常常帮助同学。',ex_py:'Tā chángcháng bāngzhù tóngxué.',ex_vn:'Anh ấy thường xuyên giúp đỡ bạn học.',
    exList:[
      {zh:'他常常帮助同学。',py:'Tā chángcháng bāngzhù tóngxué.',vn:'Anh ấy thường xuyên giúp đỡ bạn học. (帮助 + người)'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Bộ 力 (sức lực) → góp thêm sức để TRỢ GIÚP người khác.',
       cf:'昨 (zuó – khác bộ trái)',w:'帮助 / 助手 / 互助'},
    ]},
-  {n:3,zh:'别',py:'bié',pos:'Phó từ',vn:'đừng',em:'🚫',lesson:2,
+  {n:3,zh:'别',py:'bié',pos:'Phó từ',vn:'đừng', hv: 'biệt',em:'🚫',lesson:2,
    ex_zh:'别看电视了。',ex_py:'Bié kàn diànshì le.',ex_vn:'Đừng xem tivi nữa.',
    exList:[
      {zh:'别看电视了。',py:'Bié kàn diànshì le.',vn:'Đừng xem tivi nữa. (别 + Động từ + 了)'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'Bộ 刂(dao) cắt lìa, tách biệt → dùng để NGĂN CẢN, bảo "đừng" làm nữa.',
       cf:'列 (liè – "hàng, dãy")',w:'别…了 / 别的 / 特别'},
    ]},
-  {n:4,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai',em:'👨',lesson:3,
+  {n:4,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai', hv: 'ca ca',em:'👨',lesson:3,
    ex_zh:'哥哥今天中午回来吃饭。',ex_py:'Gēge jīntiān zhōngwǔ huílái chīfàn.',ex_vn:'Trưa nay anh trai về ăn cơm.',
    exList:[
      {zh:'哥哥今天中午回来吃饭。',py:'Gēge jīntiān zhōngwǔ huílái chīfàn.',vn:'Trưa nay anh trai về ăn cơm.'},
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'Hai chữ 可 (đồng ý) chồng lên nhau → hình ảnh người anh luôn gật đầu chỉ bảo em.',
       cf:'歌 (gē – "bài hát")',w:'哥哥 / 大哥'},
    ]},
-  {n:5,zh:'鸡蛋',py:'jīdàn',pos:'Danh từ',vn:'trứng gà',em:'🥚',lesson:3,
+  {n:5,zh:'鸡蛋',py:'jīdàn',pos:'Danh từ',vn:'trứng gà', hv: 'kê đản',em:'🥚',lesson:3,
    ex_zh:'我今天早上吃了一个鸡蛋。',ex_py:'Wǒ jīntiān zǎoshang chīle yí ge jīdàn.',ex_vn:'Sáng nay tôi đã ăn một quả trứng gà.',
    exList:[
      {zh:'我今天早上吃了一个鸡蛋。',py:'Wǒ jīntiān zǎoshang chīle yí ge jīdàn.',vn:'Sáng nay tôi đã ăn một quả trứng gà.'},
@@ -68,7 +68,7 @@ var vocabData = [
       tip:'Hình quả trứng cách điệu bên trên phần thân → nghĩa "TRỨNG" nói chung.',
       cf:'蜑 (dàn – ít dùng)',w:'鸡蛋 / 鸭蛋'},
    ]},
-  {n:6,zh:'西瓜',py:'xīguā',pos:'Danh từ',vn:'dưa hấu',em:'🍉',lesson:3,
+  {n:6,zh:'西瓜',py:'xīguā',pos:'Danh từ',vn:'dưa hấu', hv: 'tây qua',em:'🍉',lesson:3,
    ex_zh:'我买了一点儿西瓜。',ex_py:'Wǒ mǎile yìdiǎnr xīguā.',ex_vn:'Tôi đã mua một ít dưa hấu.',
    exList:[
      {zh:'我买了一点儿西瓜。',py:'Wǒ mǎile yìdiǎnr xīguā.',vn:'Tôi đã mua một ít dưa hấu. (买西瓜 — mua dưa hấu)'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Hình quả dưa lủng lẳng trên dây leo → "DƯA".',
       cf:'爪 (zhǎo – "móng vuốt")',w:'西瓜 / 木瓜 / 黄瓜'},
    ]},
-  {n:7,zh:'正在',py:'zhèngzài',pos:'Phó từ',vn:'đang',em:'⏳',lesson:3,
+  {n:7,zh:'正在',py:'zhèngzài',pos:'Phó từ',vn:'đang', hv: 'chính tại',em:'⏳',lesson:3,
    ex_zh:'妈妈正在准备午饭呢。',ex_py:'Māma zhèngzài zhǔnbèi wǔfàn ne.',ex_vn:'Mẹ đang chuẩn bị bữa trưa kìa.',
    exList:[
      {zh:'妈妈正在准备午饭呢。',py:'Māma zhèngzài zhǔnbèi wǔfàn ne.',vn:'Mẹ đang chuẩn bị bữa trưa kìa.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'Đã học nhiều lần — chỉ vị trí/trạng thái đang diễn ra.',
       cf:'再 (zài – "lại")',w:'正在 / 在家 / 现在'},
    ]},
-  {n:8,zh:'手机',py:'shǒujī',pos:'Danh từ',vn:'điện thoại di động',em:'📱',lesson:4,
+  {n:8,zh:'手机',py:'shǒujī',pos:'Danh từ',vn:'điện thoại di động', hv: 'thủ cơ',em:'📱',lesson:4,
    ex_zh:'手机在桌子上呢。',ex_py:'Shǒujī zài zhuōzi shang ne.',ex_vn:'Điện thoại ở trên bàn kìa.',
    exList:[
      {zh:'手机在桌子上呢。',py:'Shǒujī zài zhuōzi shang ne.',vn:'Điện thoại ở trên bàn kìa.'},
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'Bộ 木 (gỗ) — máy móc xưa làm từ khung gỗ → nghĩa mở rộng "MÁY".',
       cf:'几 (jǐ – "mấy")',w:'手机 / 飞机 / 机场'},
    ]},
-  {n:9,zh:'洗',py:'xǐ',pos:'Động từ',vn:'rửa, giặt',em:'🧼',lesson:4,
+  {n:9,zh:'洗',py:'xǐ',pos:'Động từ',vn:'rửa, giặt', hv: 'tẩy',em:'🧼',lesson:4,
    ex_zh:'那件衣服我帮你洗了。',ex_py:'Nà jiàn yīfu wǒ bāng nǐ xǐ le.',ex_vn:'Chiếc áo đó tớ giặt giúp bạn rồi.',
    exList:[
      {zh:'那件衣服我帮你洗了。',py:'Nà jiàn yīfu wǒ bāng nǐ xǐ le.',vn:'Chiếc áo đó tớ giặt giúp bạn rồi.'},

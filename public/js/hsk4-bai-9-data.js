@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'饼干',py:'bǐnggān',pos:'Danh từ',vn:'bánh quy',em:'🍪',lesson:1,
+  {n:1,zh:'饼干',py:'bǐnggān',pos:'Danh từ',vn:'bánh quy', hv: 'bính can',em:'🍪',lesson:1,
    explain:['Loại bánh giòn, nướng khô.'],
    usage:'Danh từ; thường đi với 买饼干, 一块饼干.',
    collo:['买饼干','一块饼干','饼干和巧克力'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'饼干 — bánh quy.'},
    ]},
 
-  {n:2,zh:'难道',py:'nándào',pos:'Phó từ',vn:'chẳng lẽ, lẽ nào',em:'❓',lesson:1,
+  {n:2,zh:'难道',py:'nándào',pos:'Phó từ',vn:'chẳng lẽ, lẽ nào', hv: 'nan đạo',em:'❓',lesson:1,
    explain:['Phó từ tăng cường ngữ khí phản vấn. Dùng trong câu hỏi phản vấn khẳng định thì diễn tả ý phủ định; dùng trong câu hỏi phản vấn phủ định thì diễn tả ý khẳng định.'],
    usage:'难道 + mệnh đề + 吗？',
    collo:['难道你不……了','难道你没……','难道……吗'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'难道……吗 kết hợp 咳嗽, ôn lại từ vựng Bài 7.'},
    ]},
 
-  {n:3,zh:'得',py:'děi',pos:'Động từ năng nguyện',vn:'phải',em:'✅',lesson:1,
+  {n:3,zh:'得',py:'děi',pos:'Động từ năng nguyện',vn:'phải', hv: 'đắc',em:'✅',lesson:1,
    explain:['Diễn tả sự cần thiết phải làm việc gì đó (khẩu ngữ).'],
    usage:'得 + động từ: 就得少吃东西.',
    collo:['就得少吃','还得去','我得在……之前'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'得 + động từ kết hợp 大使馆, ôn lại từ vựng Bài 8.'},
    ]},
 
-  {n:4,zh:'坚持',py:'jiānchí',pos:'Động từ',vn:'kiên trì, khăng khăng giữ',em:'💪',lesson:1,
+  {n:4,zh:'坚持',py:'jiānchí',pos:'Động từ',vn:'kiên trì, khăng khăng giữ', hv: 'kiên trì',em:'💪',lesson:1,
    explain:['Duy trì một hành động/quan điểm mà không từ bỏ dù gặp khó khăn.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 只能坚持, 坚持练习.',
    collo:['只能坚持','坚持练习','坚持自己的选择'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'坚持自己的选择 — kiên trì giữ vững lựa chọn của mình.'},
    ]},
 
-  {n:5,zh:'放弃',py:'fàngqì',pos:'Động từ',vn:'từ bỏ, bỏ',em:'🙅',lesson:1,
+  {n:5,zh:'放弃',py:'fàngqì',pos:'Động từ',vn:'từ bỏ, bỏ', hv: 'phóng khí',em:'🙅',lesson:1,
    explain:['Ngừng theo đuổi, buông bỏ một việc/mục tiêu nào đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 打算放弃, 放弃……的工作.',
    collo:['打算放弃了','放弃律师的工作','放弃是一种聪明的选择'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'放弃……值得的 kết hợp 理想/值得, ôn lại từ vựng Bài 6.'},
    ]},
 
-  {n:6,zh:'主意',py:'zhǔyi',pos:'Danh từ',vn:'ý định, ý kiến',em:'💡',lesson:1,
+  {n:6,zh:'主意',py:'zhǔyi',pos:'Danh từ',vn:'ý định, ý kiến', hv: 'chủ ý',em:'💡',lesson:1,
    explain:['Ý tưởng/quyết định về việc nên làm gì.'],
    usage:'Danh từ; thường đi với 改变主意, 有主意.',
    collo:['改变主意','拿主意','有个好主意'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'想个好主意 — nghĩ ra một ý hay.'},
    ]},
 
-  {n:7,zh:'网球',py:'wǎngqiú',pos:'Danh từ',vn:'quần vợt',em:'🎾',lesson:2,
+  {n:7,zh:'网球',py:'wǎngqiú',pos:'Danh từ',vn:'quần vợt', hv: 'võng cầu',em:'🎾',lesson:2,
    explain:['Môn thể thao dùng vợt đánh bóng qua lưới.'],
    usage:'Danh từ; thường đi với 打网球, 网球打得真好.',
    collo:['打网球','网球打得真好','对网球感兴趣'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'对网球感兴趣 kết hợp 国际, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:8,zh:'国际',py:'guójì',pos:'Danh từ',vn:'quốc tế',em:'🌐',lesson:2,
+  {n:8,zh:'国际',py:'guójì',pos:'Danh từ',vn:'quốc tế', hv: 'quốc tế',em:'🌐',lesson:2,
    explain:['Liên quan đến nhiều quốc gia trên thế giới.'],
    usage:'Danh từ, làm định ngữ: 国际大奖, 国际比赛.',
    collo:['国际大奖','国际比赛','国际学生'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'国际大奖 kết hợp 坚持/获得, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:9,zh:'轻松',py:'qīngsōng',pos:'Tính từ',vn:'nhẹ nhàng, dễ dàng',em:'😌',lesson:2,
+  {n:9,zh:'轻松',py:'qīngsōng',pos:'Tính từ',vn:'nhẹ nhàng, dễ dàng', hv: 'khinh tùng',em:'😌',lesson:2,
    explain:['Không tốn nhiều công sức, thoải mái.'],
    usage:'Tính từ, dạng lặp AABB: 轻轻松松.',
    collo:['轻轻松松就赢了','感觉很轻松','轻松地完成'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'轻轻松松就成功 kết hợp 任何, ôn lại từ vựng Bài 5.'},
    ]},
 
-  {n:10,zh:'赢',py:'yíng',pos:'Động từ',vn:'thắng',em:'🏆',lesson:2,
+  {n:10,zh:'赢',py:'yíng',pos:'Động từ',vn:'thắng', hv: 'doanh',em:'🏆',lesson:2,
    explain:['Giành được chiến thắng trong thi đấu/cạnh tranh.'],
    usage:'Động từ; thường đi với 就赢了, 赢比赛.',
    collo:['就赢了','赢比赛','赢得比赛'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'赢得比赛 kết hợp 坚持, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:11,zh:'随便',py:'suíbiàn',pos:'Tính từ',vn:'tình cờ, tùy tiện',em:'🤷',lesson:2,
+  {n:11,zh:'随便',py:'suíbiàn',pos:'Tính từ',vn:'tình cờ, tùy tiện', hv: 'tùy tiện',em:'🤷',lesson:2,
    explain:['Làm việc gì đó một cách qua loa, không nghiêm túc/cẩn thận, hoặc không có sự chuẩn bị/nỗ lực đặc biệt.'],
    usage:'Tính từ, dạng lặp AABB: 随随便便.',
    collo:['随随便便就能成功','随便说说','随便看看'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'不能随便决定 — không thể quyết định tùy tiện.'},
    ]},
 
-  {n:12,zh:'汗',py:'hàn',pos:'Danh từ',vn:'mồ hôi',em:'💦',lesson:2,
+  {n:12,zh:'汗',py:'hàn',pos:'Danh từ',vn:'mồ hôi', hv: 'hãn',em:'💦',lesson:2,
    explain:['Chất lỏng tiết ra từ da khi vận động/nóng.'],
    usage:'Danh từ; thường đi với 流下的汗水, 满头大汗.',
    collo:['流下的汗水','满头大汗','出汗'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'满头大汗 — mồ hôi đầy đầu.'},
    ]},
 
-  {n:13,zh:'通过',py:'tōngguò',pos:'Giới từ/Động từ',vn:'qua, nhờ vào; thông qua; đạt tiêu chuẩn',em:'✅',lesson:2,
+  {n:13,zh:'通过',py:'tōngguò',pos:'Giới từ/Động từ',vn:'qua, nhờ vào; thông qua; đạt tiêu chuẩn', hv: 'thông quá',em:'✅',lesson:2,
    explain:['1. (Giới từ) Đạt được mục đích nhờ người/phương tiện/cách thức nào đó.','2. (Động từ) Đi qua, xuyên qua từ đầu này đến đầu kia.','3. (Động từ) Phù hợp với một tiêu chuẩn/đạt được yêu cầu nào đó.'],
    usage:'通过 + phương tiện/cách thức + động từ (giới từ); 通过 + địa điểm (động từ, xuyên qua); 通过 + kỳ thi/kiểm tra (động từ, đạt chuẩn).',
    collo:['通过努力','这条街只能步行通过','通过那家公司的面试'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'通过……活动 kết hợp 活动, ôn lại từ vựng Bài 8.'},
    ]},
 
-  {n:14,zh:'篇',py:'piān',pos:'Lượng từ',vn:'bài, tờ (bài văn, giấy...)',em:'📄',lesson:3,
+  {n:14,zh:'篇',py:'piān',pos:'Lượng từ',vn:'bài, tờ (bài văn, giấy...)', hv: 'thiên',em:'📄',lesson:3,
    explain:['Lượng từ dùng cho bài văn, bài báo.'],
    usage:'Lượng từ; đi với danh từ chỉ văn bản: 一篇新闻, 一篇文章.',
    collo:['一篇新闻','一篇文章','一篇报道'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'一篇文章 — một bài văn.'},
    ]},
 
-  {n:15,zh:'作家',py:'zuòjiā',pos:'Danh từ',vn:'nhà văn',em:'✍️',lesson:3,
+  {n:15,zh:'作家',py:'zuòjiā',pos:'Danh từ',vn:'nhà văn', hv: 'tác gia',em:'✍️',lesson:3,
    explain:['Người sáng tác văn học chuyên nghiệp.'],
    usage:'Danh từ; thường đi với 有名的作家, 成为作家.',
    collo:['有名的作家','成为作家','当作家'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'成为一名作家 — trở thành một nhà văn.'},
    ]},
 
-  {n:16,zh:'当时',py:'dāngshí',pos:'Danh từ',vn:'lúc đó',em:'🕰️',lesson:3,
+  {n:16,zh:'当时',py:'dāngshí',pos:'Danh từ',vn:'lúc đó', hv: 'đương thời',em:'🕰️',lesson:3,
    explain:['Thời điểm được nhắc đến trong quá khứ.'],
    usage:'Danh từ, làm trạng ngữ chỉ thời gian: 当时她的父母.',
    collo:['当时她的父母','当时的情况','在当时'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'当时的情况 — tình huống lúc đó.'},
    ]},
 
-  {n:17,zh:'可是',py:'kěshì',pos:'Liên từ',vn:'nhưng',em:'↩️',lesson:3,
+  {n:17,zh:'可是',py:'kěshì',pos:'Liên từ',vn:'nhưng', hv: 'khả thị',em:'↩️',lesson:3,
    explain:['Liên từ dùng ở vế sau của câu phức, biểu thị sự chuyển ý. Vế trước thường có 虽然 kết hợp.'],
    usage:'虽然……，可是……',
    collo:['虽然……可是……','当时……可是……','可是她坚持'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'可是……成为 kết hợp 放弃/成为/作家, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:18,zh:'正确',py:'zhèngquè',pos:'Tính từ',vn:'đúng, chính xác',em:'✅',lesson:3,
+  {n:18,zh:'正确',py:'zhèngquè',pos:'Tính từ',vn:'đúng, chính xác', hv: 'chính xác',em:'✅',lesson:3,
    explain:['Phù hợp với sự thật/lẽ phải, không sai.'],
    usage:'Tính từ; thường đi với 选择是正确的, 正确的方法.',
    collo:['选择是正确的','正确的方法','正确回答'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'正确的方法 kết hợp 肚子, ôn lại từ vựng Bài 7.'},
    ]},
 
-  {n:19,zh:'理想',py:'lǐxiǎng',pos:'Danh từ/Tính từ',vn:'lý tưởng',em:'🌟',lesson:3,
+  {n:19,zh:'理想',py:'lǐxiǎng',pos:'Danh từ/Tính từ',vn:'lý tưởng', hv: 'lý tưởng',em:'🌟',lesson:3,
    explain:['1. (Danh từ) Mục tiêu/ước mơ cao đẹp mà một người theo đuổi.','2. (Tính từ) Đạt mức mong muốn, hoàn hảo như ý.'],
    usage:'Danh từ: 为了自己的理想; tính từ: 考得不太理想.',
    collo:['为了自己的理想','考得不太理想','实现理想'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'理想 (tính từ) kết hợp 结果, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:20,zh:'勇敢',py:'yǒnggǎn',pos:'Tính từ',vn:'dũng cảm, gan dạ',em:'🦁',lesson:4,
+  {n:20,zh:'勇敢',py:'yǒnggǎn',pos:'Tính từ',vn:'dũng cảm, gan dạ', hv: 'dũng cảm',em:'🦁',lesson:4,
    explain:['Không sợ hãi, dám đối mặt với khó khăn/nguy hiểm.'],
    usage:'Tính từ; thường đi với 勇敢地去做, 勇敢地面对.',
    collo:['勇敢地去做','勇敢地面对困难','很勇敢'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'勇敢地面对 kết hợp 面对, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:21,zh:'结果',py:'jiéguǒ',pos:'Danh từ/Liên từ',vn:'kết quả; rốt cuộc thì',em:'🎯',lesson:4,
+  {n:21,zh:'结果',py:'jiéguǒ',pos:'Danh từ/Liên từ',vn:'kết quả; rốt cuộc thì', hv: 'kết quả',em:'🎯',lesson:4,
    explain:['1. (Danh từ) Trạng thái cuối cùng mà sự việc phát triển đạt tới.','2. (Liên từ) Diễn tả quan hệ nhân quả, dùng ở vế sau của câu phức để chỉ kết quả cuối cùng.'],
    usage:'Danh từ: 担心结果, 调查结果; liên từ: ……结果……(kết quả bất ngờ).',
    collo:['担心结果','调查结果交上来','结果竟然'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'结果 kết hợp 随便, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:22,zh:'失败',py:'shībài',pos:'Động từ',vn:'thất bại',em:'😞',lesson:4,
+  {n:22,zh:'失败',py:'shībài',pos:'Động từ',vn:'thất bại', hv: 'thất bại',em:'😞',lesson:4,
    explain:['Không đạt được kết quả mong muốn, không thành công.'],
    usage:'Động từ; thường đi với 会不会失败, 失败中总结经验.',
    collo:['会不会失败','即使最后失败了','从失败中总结'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'经历过许多失败 kết hợp 往往/经历/许多/区别/坚持, ôn lại nhiều từ vựng.'},
    ]},
 
-  {n:23,zh:'过程',py:'guòchéng',pos:'Danh từ',vn:'quá trình',em:'🔄',lesson:4,
+  {n:23,zh:'过程',py:'guòchéng',pos:'Danh từ',vn:'quá trình', hv: 'quá trình',em:'🔄',lesson:4,
    explain:['Diễn biến từ đầu đến cuối của một sự việc.'],
    usage:'Danh từ; thường đi với 做事情的过程, 努力的过程.',
    collo:['做事情的过程','努力的过程','成长的过程'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'努力的过程中 kết hợp 失败, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:24,zh:'至少',py:'zhìshǎo',pos:'Phó từ',vn:'ít nhất',em:'➖',lesson:4,
+  {n:24,zh:'至少',py:'zhìshǎo',pos:'Phó từ',vn:'ít nhất', hv: 'chí thiểu',em:'➖',lesson:4,
    explain:['Diễn tả mức tối thiểu của một điều gì đó.'],
    usage:'Phó từ, đứng trước động từ/mệnh đề: 至少你已经努力过.',
    collo:['至少你已经努力过','走路至少要','至少睡7个小时'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'至少要坚持 kết hợp 坚持, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:25,zh:'总结',py:'zǒngjié',pos:'Động từ',vn:'tổng kết',em:'📋',lesson:4,
+  {n:25,zh:'总结',py:'zǒngjié',pos:'Động từ',vn:'tổng kết', hv: 'tổng kết',em:'📋',lesson:4,
    explain:['Rút ra kết luận/kinh nghiệm chung sau khi xem xét toàn bộ sự việc.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 总结出有用的经验, 总结经验.',
    collo:['总结出有用的经验','总结经验','做一个总结'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'总结……经验 — tổng kết kinh nghiệm.'},
    ]},
 
-  {n:26,zh:'取',py:'qǔ',pos:'Động từ',vn:'đạt được, lấy',em:'🏆',lesson:5,
+  {n:26,zh:'取',py:'qǔ',pos:'Động từ',vn:'đạt được, lấy', hv: 'thủ',em:'🏆',lesson:5,
    explain:['Đạt được, giành lấy (thành công, kết quả).'],
    usage:'Động từ; thường đi với 取得成功, 去取行李箱.',
    collo:['取得成功','取行李箱','取得好成绩'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'去取行李箱 kết hợp 得, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:27,zh:'经历',py:'jīnglì',pos:'Động từ',vn:'trải qua',em:'📖',lesson:5,
+  {n:27,zh:'经历',py:'jīnglì',pos:'Động từ',vn:'trải qua', hv: 'kinh lịch',em:'📖',lesson:5,
    explain:['Đã từng trải qua một sự việc/giai đoạn nào đó trong đời.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 经历过许多失败.',
    collo:['经历过许多失败','成功经历','经历过困难'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'成功经历 — trải nghiệm thành công.'},
    ]},
 
-  {n:28,zh:'许多',py:'xǔduō',pos:'Số từ',vn:'rất nhiều',em:'🔢',lesson:5,
+  {n:28,zh:'许多',py:'xǔduō',pos:'Số từ',vn:'rất nhiều', hv: 'hứa đa',em:'🔢',lesson:5,
    explain:['Diễn tả số lượng lớn.'],
    usage:'Số từ, đứng trước danh từ: 许多失败, 许多困难.',
    collo:['经历过许多失败','许多困难','许多东西'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'许多……东西 kết hợp 过程, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:29,zh:'区别',py:'qūbié',pos:'Danh từ',vn:'sự khác biệt',em:'🔀',lesson:5,
+  {n:29,zh:'区别',py:'qūbié',pos:'Danh từ',vn:'sự khác biệt', hv: 'khu biệt',em:'🔀',lesson:5,
    explain:['Điểm không giống nhau giữa hai hay nhiều đối tượng.'],
    usage:'Danh từ; thường đi với 有什么区别, ……的区别就是.',
    collo:['有什么区别','……的区别就是','区分区别'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'有什么区别 kết hợp 理想, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:30,zh:'暂时',py:'zànshí',pos:'Danh từ',vn:'tạm thời, nhất thời',em:'⏳',lesson:5,
+  {n:30,zh:'暂时',py:'zànshí',pos:'Danh từ',vn:'tạm thời, nhất thời', hv: 'tạm thời',em:'⏳',lesson:5,
    explain:['Trong khoảng thời gian ngắn, không lâu dài.'],
    usage:'Danh từ, làm định ngữ: 困难只是暂时的.',
    collo:['困难只是暂时的','暂时不能','暂时的问题'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'暂时的问题……勇敢地面对 kết hợp 勇敢/面对, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:31,zh:'面对',py:'miànduì',pos:'Động từ',vn:'đương đầu, đối mặt',em:'😤',lesson:5,
+  {n:31,zh:'面对',py:'miànduì',pos:'Động từ',vn:'đương đầu, đối mặt', hv: 'diện đối',em:'😤',lesson:5,
    explain:['Trực tiếp đương đầu với một tình huống/vấn đề, không né tránh.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 面对困难.',
    collo:['勇敢地面对困难','面对失败','面对问题'],
@@ -685,7 +685,7 @@ var vocabData = [
       note:'暂时……勇敢地面对 kết hợp 暂时/勇敢, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:32,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)',em:'👩',lesson:1,
+  {n:32,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)', hv: 'Tôn Nguyệt',em:'👩',lesson:1,
    explain:['Tên riêng của nhân vật nữ, xuất hiện lại từ Bài 2.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['孙月说','王静和孙月'],
@@ -694,7 +694,7 @@ var vocabData = [
      {zh:'王静和孙月聊孙月减肥的事情。',py:'Wáng Jìng hé Sūn Yuè liáo Sūn Yuè jiǎn féi de shìqing.',vn:'Vương Tĩnh và Tôn Nguyệt nói chuyện về việc giảm cân của Tôn Nguyệt.'},
    ]},
 
-  {n:33,zh:'王红',py:'Wáng Hóng',pos:'Danh từ riêng',vn:'Vương Hồng (tên người)',em:'👩',lesson:3,
+  {n:33,zh:'王红',py:'Wáng Hóng',pos:'Danh từ riêng',vn:'Vương Hồng (tên người)', hv: 'Vương Hồng',em:'👩',lesson:3,
    explain:['Tên riêng của nhân vật nữ, nhà văn, xuất hiện lại từ Bài 4.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['王红的成功经历','记得王红吗'],
@@ -703,7 +703,7 @@ var vocabData = [
      {zh:'小林和小李谈王红的成功经历。',py:'Xiǎo Lín hé Xiǎo Lǐ tán Wáng Hóng de chénggōng jīnglì.',vn:'Tiểu Lâm và Tiểu Lý nói chuyện về trải nghiệm thành công của Vương Hồng.'},
    ]},
 
-  {n:34,zh:'爱迪生',py:'Àidíshēng',pos:'Danh từ riêng',vn:'Edison (nhà phát minh)',em:'💡',lesson:5,
+  {n:34,zh:'爱迪生',py:'Àidíshēng',pos:'Danh từ riêng',vn:'Edison (nhà phát minh)', hv: 'Ái Địch Sinh',em:'💡',lesson:5,
    explain:['Thomas Alva Edison (1847-1931), nhà phát minh nổi tiếng người Mỹ.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['爱迪生就是','爱迪生发明电灯'],

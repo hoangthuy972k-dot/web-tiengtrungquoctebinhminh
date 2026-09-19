@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'又',py:'yòu',pos:'Phó từ',vn:'lại',em:'🔁',lesson:1,
+  {n:1,zh:'又',py:'yòu',pos:'Phó từ',vn:'lại', hv: 'hựu',em:'🔁',lesson:1,
    explain:['Diễn tả một hành động/tình huống ĐÃ lặp lại (khác với 再 dùng cho việc chưa xảy ra).'],
    usage:'Phó từ, đứng trước động từ: 又 + V, chỉ dùng cho việc đã xảy ra rồi.',
    collo:['又去看了','又迟到了','又下雨了'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 层/害怕 sẽ học ngay bên dưới).'},
    ]},
 
-  {n:2,zh:'满意',py:'mǎnyì',pos:'Động từ',vn:'hài lòng, vừa ý',em:'😊',lesson:1,
+  {n:2,zh:'满意',py:'mǎnyì',pos:'Động từ',vn:'hài lòng, vừa ý', hv: 'mãn ý',em:'😊',lesson:1,
    explain:['Cảm thấy thỏa mãn, đúng như mong muốn.'],
    usage:'Động từ, thường đi cùng 对: 对……满意.',
    collo:['很满意','不满意','对……满意'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'电梯',py:'diàntī',pos:'Danh từ',vn:'thang máy',em:'🛗',lesson:1,
+  {n:3,zh:'电梯',py:'diàntī',pos:'Danh từ',vn:'thang máy', hv: 'điện thê',em:'🛗',lesson:1,
    explain:['Thiết bị chở người/hàng lên xuống giữa các tầng nhà.'],
    usage:'Danh từ; đi cùng động từ 坐/等: 坐电梯, 等电梯.',
    collo:['坐电梯','没有电梯','等电梯'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:4,zh:'层',py:'céng',pos:'Lượng từ',vn:'tầng',em:'🏢',lesson:1,
+  {n:4,zh:'层',py:'céng',pos:'Lượng từ',vn:'tầng', hv: 'tầng',em:'🏢',lesson:1,
    explain:['Đơn vị chỉ một tầng của tòa nhà.'],
    usage:'Lượng từ, đứng sau số từ: [số từ] + 层 (二十层 = tầng 20).',
    collo:['二十层','一层','六层'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 电梯 vừa học trong bài này).'},
    ]},
 
-  {n:5,zh:'害怕',py:'hàipà',pos:'Động từ',vn:'sợ',em:'😨',lesson:1,
+  {n:5,zh:'害怕',py:'hàipà',pos:'Động từ',vn:'sợ', hv: 'hại phạ',em:'😨',lesson:1,
    explain:['Cảm thấy sợ hãi, lo lắng trước điều gì đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp hoặc đứng độc lập: 害怕 + [đối tượng]; phủ định: 不害怕.',
    collo:['很害怕','不害怕','别害怕'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 层 vừa học trong bài này).'},
    ]},
 
-  {n:6,zh:'熊猫',py:'xióngmāo',pos:'Danh từ',vn:'gấu trúc, panda',em:'🐼',lesson:2,
+  {n:6,zh:'熊猫',py:'xióngmāo',pos:'Danh từ',vn:'gấu trúc, panda', hv: 'hùng miêu',em:'🐼',lesson:2,
    explain:['Loài động vật đặc trưng của Trung Quốc, lông đen trắng.'],
    usage:'Danh từ; lượng từ đi kèm là 只: 一只熊猫.',
    collo:['大熊猫','小熊猫','看熊猫'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:7,zh:'见面',py:'jiànmiàn',pos:'Động từ',vn:'gặp, gặp nhau',em:'🤝',lesson:2,
+  {n:7,zh:'见面',py:'jiànmiàn',pos:'Động từ',vn:'gặp, gặp nhau', hv: 'kiến diện',em:'🤝',lesson:2,
    explain:['Hai người trực tiếp gặp mặt nhau.'],
    usage:'Động từ ly hợp; không mang tân ngữ trực tiếp, muốn nói "gặp ai" phải dùng 跟/和 + người + 见面.',
    collo:['再见面','跟朋友见面','见个面'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:8,zh:'安静',py:'ānjìng',pos:'Tính từ',vn:'yên tĩnh',em:'🤫',lesson:3,
+  {n:8,zh:'安静',py:'ānjìng',pos:'Tính từ',vn:'yên tĩnh', hv: 'an tĩnh',em:'🤫',lesson:3,
    explain:['Không có tiếng ồn, trạng thái tĩnh lặng.'],
    usage:'Tính từ, làm vị ngữ với 很: 很安静; hoặc định ngữ: 安静的地方.',
    collo:['很安静','安静的地方','喜欢安静'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'可乐',py:'kělè',pos:'Danh từ',vn:'coca-cola',em:'🥤',lesson:3,
+  {n:9,zh:'可乐',py:'kělè',pos:'Danh từ',vn:'coca-cola', hv: 'khả lạc',em:'🥤',lesson:3,
    explain:['Loại nước ngọt có ga phổ biến.'],
    usage:'Danh từ; đi cùng động từ 喝: 喝可乐.',
    collo:['喝可乐','一杯可乐','冰可乐'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 睡不着 đã học ở Bài 6).'},
    ]},
 
-  {n:10,zh:'一会儿',py:'yíhuìr',pos:'Danh từ',vn:'chốc lát, một lát',em:'⏲️',lesson:3,
+  {n:10,zh:'一会儿',py:'yíhuìr',pos:'Danh từ',vn:'chốc lát, một lát', hv: 'nhất hội nhi',em:'⏲️',lesson:3,
    explain:['Khoảng thời gian ngắn.'],
    usage:'Danh từ; làm bổ ngữ thời lượng sau động từ: 等 + 一会儿; hoặc đứng đầu câu diễn tả "một lát nữa": 一会儿 + [câu].',
    collo:['等一会儿','一会儿就','看一会儿'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:11,zh:'马上',py:'mǎshàng',pos:'Phó từ',vn:'liền, ngay lập tức',em:'⚡',lesson:3,
+  {n:11,zh:'马上',py:'mǎshàng',pos:'Phó từ',vn:'liền, ngay lập tức', hv: 'mã thượng',em:'⚡',lesson:3,
    explain:['Diễn tả hành động sẽ xảy ra ngay sau đó, không trì hoãn.'],
    usage:'Phó từ, đứng trước động từ: 马上 + V.',
    collo:['马上回来','马上就到','马上好'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'洗手间',py:'xǐshǒujiān',pos:'Danh từ',vn:'nhà vệ sinh',em:'🚻',lesson:3,
+  {n:12,zh:'洗手间',py:'xǐshǒujiān',pos:'Danh từ',vn:'nhà vệ sinh', hv: 'tẩy thủ gian',em:'🚻',lesson:3,
    explain:['Phòng dùng để rửa tay, đi vệ sinh.'],
    usage:'Danh từ; đi cùng động từ 去: 去洗手间.',
    collo:['去洗手间','在洗手间','洗手间在哪儿'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:13,zh:'老',py:'lǎo',pos:'Tính từ',vn:'già, cũ',em:'👴',lesson:4,
+  {n:13,zh:'老',py:'lǎo',pos:'Tính từ',vn:'già, cũ', hv: 'lão',em:'👴',lesson:4,
    explain:['Có tuổi cao, hoặc đã quen biết lâu (老同学 = bạn học cũ).'],
    usage:'Tính từ; làm định ngữ trước danh từ chỉ mối quan hệ lâu năm: 老同学, 老朋友.',
    collo:['老同学','老朋友','变老了'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'几乎+phủ định diễn tả gần như không (ôn lại 同事 đã học ở Bài 7, đây là 同学).'},
    ]},
 
-  {n:14,zh:'几乎',py:'jīhū',pos:'Phó từ',vn:'hầu như, gần như',em:'📏',lesson:4,
+  {n:14,zh:'几乎',py:'jīhū',pos:'Phó từ',vn:'hầu như, gần như', hv: 'cơ hồ',em:'📏',lesson:4,
    explain:['Gần đạt đến mức độ nào đó nhưng chưa hoàn toàn.'],
    usage:'Phó từ, đứng trước động từ/tính từ: 几乎 + V/Adj, thường đi cùng phủ định: 几乎没.',
    collo:['几乎没','几乎都','几乎不'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 以前 đã học ở Bài 7).'},
    ]},
 
-  {n:15,zh:'变化',py:'biànhuà',pos:'Động từ',vn:'thay đổi',em:'🔄',lesson:4,
+  {n:15,zh:'变化',py:'biànhuà',pos:'Động từ',vn:'thay đổi', hv: 'biến hóa',em:'🔄',lesson:4,
    explain:['Trở nên khác so với trước, có sự biến đổi.'],
    usage:'Động từ, cũng dùng như danh từ: 有变化, 没变化.',
    collo:['没变化','变化很大','变化太快'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 努力 đã học ở Bài 4).'},
    ]},
 
-  {n:16,zh:'健康',py:'jiànkāng',pos:'Tính từ',vn:'khỏe mạnh',em:'💪',lesson:4,
+  {n:16,zh:'健康',py:'jiànkāng',pos:'Tính từ',vn:'khỏe mạnh', hv: 'kiện khang',em:'💪',lesson:4,
    explain:['Trạng thái cơ thể tốt, không bệnh tật.'],
    usage:'Tính từ, làm vị ngữ với 很: 很健康; cũng dùng như danh từ: 身体健康.',
    collo:['很健康','身体健康','健康最重要'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:17,zh:'重要',py:'zhòngyào',pos:'Tính từ',vn:'quan trọng',em:'⭐',lesson:4,
+  {n:17,zh:'重要',py:'zhòngyào',pos:'Tính từ',vn:'quan trọng', hv: 'trọng yếu',em:'⭐',lesson:4,
    explain:['Có giá trị lớn, cần được ưu tiên.'],
    usage:'Tính từ, làm vị ngữ với 很/最: 很重要, 最重要.',
    collo:['最重要','很重要','重要的事'],

@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'爱',py:'ài',pos:'Động từ',vn:'thích, yêu thích',em:'❤️',lesson:1,
+  {n:1,zh:'爱',py:'ài',pos:'Động từ',vn:'thích, yêu thích', hv: 'ái',em:'❤️',lesson:1,
    ex_zh:'你们爱吃哪个菜？',ex_py:'Nǐmen ài chī nǎge cài?',ex_vn:'Các bạn thích món ăn nào?',
    exList:[{zh:'你们爱吃哪个菜？',py:'Nǐmen ài chī nǎge cài?',vn:'Các bạn thích món ăn nào?'}],
    hanzi:[
@@ -11,7 +11,7 @@ var vocabData = [
       tip:'Hình bàn tay ôm lấy trái tim (chữ phồn thể 愛 có 心) → YÊU THƯƠNG.',
       cf:'受 (shòu – "nhận, chịu")',w:'爱吃 / 我爱你'},
    ]},
-  {n:2,zh:'哪个',py:'nǎge',pos:'Đại từ',vn:'cái nào, nào',em:'❓',lesson:1,
+  {n:2,zh:'哪个',py:'nǎge',pos:'Đại từ',vn:'cái nào, nào', hv: 'na cá',em:'❓',lesson:1,
    ex_zh:'你们爱吃哪个菜？',ex_py:'Nǐmen ài chī nǎge cài?',ex_vn:'Các bạn thích món ăn nào?',
    exList:[{zh:'你们爱吃哪个菜？',py:'Nǐmen ài chī nǎge cài?',vn:'Các bạn thích món ăn nào?'}],
    hanzi:[
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'Chữ 人(người) thêm một nét sổ 丨 ở giữa như một que tính đếm → dùng làm LƯỢNG TỪ đếm người/vật chung chung.',
       cf:'介 (jiè – "giới thiệu", hình dáng gần giống")',w:'个人 / 一个 / 哪个'},
    ]},
-  {n:3,zh:'去年',py:'qùnián',pos:'Danh từ',vn:'năm ngoái',em:'📅',lesson:2,
+  {n:3,zh:'去年',py:'qùnián',pos:'Danh từ',vn:'năm ngoái', hv: 'khứ niên',em:'📅',lesson:2,
    ex_zh:'去年我和男朋友去了西安，今年我想去北京。',ex_py:'Qùnián wǒ hé nánpéngyou qùle Xī’ān, jīnnián wǒ xiǎng qù Běijīng.',ex_vn:'Năm ngoái mình và bạn trai đã đi Tây An, năm nay mình muốn đi Bắc Kinh.',
    exList:[{zh:'去年我和男朋友去了西安，今年我想去北京。',py:'Qùnián wǒ hé nánpéngyou qùle Xī’ān, jīnnián wǒ xiǎng qù Běijīng.',vn:'Năm ngoái mình và bạn trai đã đi Tây An, năm nay mình muốn đi Bắc Kinh.'}],
    hanzi:[
@@ -33,7 +33,7 @@ var vocabData = [
       tip:'Hình bó lúa chín được gánh trên vai → mỗi mùa lúa chín là một NĂM.',
       cf:'午 (wǔ – "buổi trưa")',w:'去年 / 今年 / 明年'},
    ]},
-  {n:4,zh:'男朋友',py:'nánpéngyou',pos:'Danh từ',vn:'bạn trai, người yêu',em:'💑',lesson:2,
+  {n:4,zh:'男朋友',py:'nánpéngyou',pos:'Danh từ',vn:'bạn trai, người yêu', hv: 'nam bằng hữu',em:'💑',lesson:2,
    ex_zh:'去年我和男朋友去了西安，今年我想去北京。',ex_py:'Qùnián wǒ hé nánpéngyou qùle Xī’ān, jīnnián wǒ xiǎng qù Běijīng.',ex_vn:'Năm ngoái mình và bạn trai đã đi Tây An, năm nay mình muốn đi Bắc Kinh.',
    exList:[{zh:'去年我和男朋友去了西安，今年我想去北京。',py:'Qùnián wǒ hé nánpéngyou qùle Xī’ān, jīnnián wǒ xiǎng qù Běijīng.',vn:'Năm ngoái mình và bạn trai đã đi Tây An, năm nay mình muốn đi Bắc Kinh.'}],
    hanzi:[
@@ -47,7 +47,7 @@ var vocabData = [
       tip:'Hai bộ phận đều tượng hình bàn TAY nắm lấy nhau → hai người BẮT TAY nhau kết thành BẠN.',
       cf:'反 (fǎn – "trái, phản", cũng có 又ở dưới")',w:'朋友 / 友好 / 男朋友'},
    ]},
-  {n:5,zh:'几',py:'jǐ',pos:'Số từ',vn:'vài, mấy',em:'🔢',lesson:2,
+  {n:5,zh:'几',py:'jǐ',pos:'Số từ',vn:'vài, mấy', hv: 'kỉ',em:'🔢',lesson:2,
    ex_zh:'前几年我去了西安，非常好玩儿。',ex_py:'Qián jǐ nián wǒ qùle Xī’ān, fēicháng hǎowánr.',ex_vn:'Mấy năm trước mình đã đi Tây An, rất vui.',
    exList:[{zh:'前几年我去了西安，非常好玩儿。',py:'Qián jǐ nián wǒ qùle Xī’ān, fēicháng hǎowánr.',vn:'Mấy năm trước mình đã đi Tây An, rất vui.'}],
    hanzi:[
@@ -55,7 +55,7 @@ var vocabData = [
       tip:'Hình cái BÀN/GHẾ nhỏ có chân cong, mượn hình để hỏi số lượng còn chưa rõ, ước chừng ít → MẤY, VÀI.',
       cf:'儿 (ér – "con, trẻ con", hình gần giống nhưng nét cong khác hướng")',w:'几个 / 几点 / 好几'},
    ]},
-  {n:6,zh:'年',py:'nián',pos:'Danh từ',vn:'năm',em:'🗓️',lesson:2,
+  {n:6,zh:'年',py:'nián',pos:'Danh từ',vn:'năm', hv: 'niên',em:'🗓️',lesson:2,
    ex_zh:'前几年我去了西安，非常好玩儿。',ex_py:'Qián jǐ nián wǒ qùle Xī’ān, fēicháng hǎowánr.',ex_vn:'Mấy năm trước mình đã đi Tây An, rất vui.',
    exList:[{zh:'前几年我去了西安，非常好玩儿。',py:'Qián jǐ nián wǒ qùle Xī’ān, fēicháng hǎowánr.',vn:'Mấy năm trước mình đã đi Tây An, rất vui.'}],
    hanzi:[
@@ -63,7 +63,7 @@ var vocabData = [
       tip:'Hình bó lúa chín được gánh trên vai → mỗi mùa lúa chín là một NĂM.',
       cf:'午 (wǔ – "buổi trưa")',w:'去年 / 今年 / 明年'},
    ]},
-  {n:7,zh:'好玩儿',py:'hǎowánr',pos:'Tính từ',vn:'vui, thích, thú vị',em:'🎉',lesson:2,
+  {n:7,zh:'好玩儿',py:'hǎowánr',pos:'Tính từ',vn:'vui, thích, thú vị', hv: 'hảo ngoạn nhi',em:'🎉',lesson:2,
    ex_zh:'前几年我去了西安，非常好玩儿。',ex_py:'Qián jǐ nián wǒ qùle Xī’ān, fēicháng hǎowánr.',ex_vn:'Mấy năm trước mình đã đi Tây An, rất vui.',
    exList:[{zh:'前几年我去了西安，非常好玩儿。',py:'Qián jǐ nián wǒ qùle Xī’ān, fēicháng hǎowánr.',vn:'Mấy năm trước mình đã đi Tây An, rất vui.'}],
    hanzi:[
@@ -77,7 +77,7 @@ var vocabData = [
       tip:'Hình đôi CHÂN NGƯỜI đang bước, vốn tượng trưng cho TRẺ CON; khi đứng sau âm tiết khác (như 玩儿) chỉ làm hậu tố uốn lưỡi, không mang nghĩa riêng.',
       cf:'几 (jǐ – "mấy", hình gần giống nhưng nét cong ngược hướng")',w:'好玩儿 / 儿子 / 女儿'},
    ]},
-  {n:8,zh:'西安',py:'Xī’ān',pos:'Danh từ riêng',vn:'Tây An',em:'🏯',lesson:2,
+  {n:8,zh:'西安',py:'Xī’ān',pos:'Danh từ riêng',vn:'Tây An', hv: 'Tây an',em:'🏯',lesson:2,
    ex_zh:'去年我和男朋友去了西安，今年我想去北京。',ex_py:'Qùnián wǒ hé nánpéngyou qùle Xī’ān, jīnnián wǒ xiǎng qù Běijīng.',ex_vn:'Năm ngoái mình và bạn trai đã đi Tây An, năm nay mình muốn đi Bắc Kinh.',
    exList:[{zh:'去年我和男朋友去了西安，今年我想去北京。',py:'Qùnián wǒ hé nánpéngyou qùle Xī’ān, jīnnián wǒ xiǎng qù Běijīng.',vn:'Năm ngoái mình và bạn trai đã đi Tây An, năm nay mình muốn đi Bắc Kinh.'}],
    hanzi:[
@@ -88,7 +88,7 @@ var vocabData = [
       tip:'Người phụ nữ (女) ở trong nhà (宀) thì AN TOÀN, YÊN ỔN.',
       cf:'宁 (níng – "yên tĩnh", cũng có bộ 宀")',w:'西安 / 安全 / 平安'},
    ]},
-  {n:9,zh:'北京',py:'Běijīng',pos:'Danh từ riêng',vn:'Bắc Kinh',em:'🏙️',lesson:2,
+  {n:9,zh:'北京',py:'Běijīng',pos:'Danh từ riêng',vn:'Bắc Kinh', hv: 'Bắc Kinh',em:'🏙️',lesson:2,
    ex_zh:'我和王老师都是北京人，北京非常漂亮。',ex_py:'Wǒ hé Wáng lǎoshī dōu shì Běijīng rén, Běijīng fēicháng piàoliang.',ex_vn:'Mình và cô Vương đều là người Bắc Kinh, Bắc Kinh rất đẹp.',
    exList:[{zh:'我和王老师都是北京人，北京非常漂亮。',py:'Wǒ hé Wáng lǎoshī dōu shì Běijīng rén, Běijīng fēicháng piàoliang.',vn:'Mình và cô Vương đều là người Bắc Kinh, Bắc Kinh rất đẹp.'}],
    hanzi:[
@@ -99,7 +99,7 @@ var vocabData = [
       tip:'Hình ngôi lầu cao xây trên nền đất vững (tượng hình kinh đô cổ) → nơi vua ở, KINH ĐÔ, thủ đô.',
       cf:'亮 (liàng – "sáng", cũng có 亠 trên và nét dưới phức tạp")',w:'北京 / 京剧 / 南京'},
    ]},
-  {n:10,zh:'飞机',py:'fēijī',pos:'Danh từ',vn:'máy bay',em:'✈️',lesson:3,
+  {n:10,zh:'飞机',py:'fēijī',pos:'Danh từ',vn:'máy bay', hv: 'phi cơ',em:'✈️',lesson:3,
    ex_zh:'你们的飞机到北京要几个小时？',ex_py:'Nǐmen de fēijī dào Běijīng yào jǐ gè xiǎoshí?',ex_vn:'Chuyến bay của các em đến Bắc Kinh mất mấy tiếng?',
    exList:[{zh:'你们的飞机到北京要几个小时？',py:'Nǐmen de fēijī dào Běijīng yào jǐ gè xiǎoshí?',vn:'Chuyến bay của các em đến Bắc Kinh mất mấy tiếng?'}],
    hanzi:[
@@ -110,7 +110,7 @@ var vocabData = [
       tip:'木(gỗ, vật liệu chế tạo máy móc thời xưa) + 几(mượn âm) → MÁY MÓC; 飞机 = "máy biết bay" = MÁY BAY.',
       cf:'几 (jǐ – "mấy")',w:'飞机 / 机场'},
    ]},
-  {n:11,zh:'要',py:'yào',pos:'Động từ',vn:'cần, mất (thời gian)',em:'⏳',lesson:3,
+  {n:11,zh:'要',py:'yào',pos:'Động từ',vn:'cần, mất (thời gian)', hv: 'yếu',em:'⏳',lesson:3,
    ex_zh:'你们的飞机到北京要几个小时？',ex_py:'Nǐmen de fēijī dào Běijīng yào jǐ gè xiǎoshí?',ex_vn:'Chuyến bay của các em đến Bắc Kinh mất mấy tiếng?',
    exList:[{zh:'你们的飞机到北京要几个小时？',py:'Nǐmen de fēijī dào Běijīng yào jǐ gè xiǎoshí?',vn:'Chuyến bay của các em đến Bắc Kinh mất mấy tiếng?'}],
    hanzi:[
@@ -118,7 +118,7 @@ var vocabData = [
       tip:'Phần trên giống 西(cái giỏ đội đầu), phần dưới 女(người phụ nữ) đội giỏ lên đầu vì đó là thứ mình CẦN, MUỐN mang theo.',
       cf:'票 (piào – "vé, phiếu", phần trên cũng có nét giống 覀")',w:'要几个小时 / 不要 / 想要'},
    ]},
-  {n:12,zh:'小时',py:'xiǎoshí',pos:'Danh từ',vn:'tiếng đồng hồ, giờ',em:'⏰',lesson:3,
+  {n:12,zh:'小时',py:'xiǎoshí',pos:'Danh từ',vn:'tiếng đồng hồ, giờ', hv: 'tiểu thời',em:'⏰',lesson:3,
    ex_zh:'九个小时。',ex_py:'Jiǔ gè xiǎoshí.',ex_vn:'9 tiếng ạ.',
    exList:[{zh:'九个小时。',py:'Jiǔ gè xiǎoshí.',vn:'9 tiếng ạ.'}],
    hanzi:[
@@ -129,7 +129,7 @@ var vocabData = [
       tip:'日(mặt trời, biểu tượng thời gian trôi) + 寺(âm đọc, gốc nghĩa "cầm giữ") → chỉ THỜI GIAN, GIỜ khắc.',
       cf:'待 (dāi – "chờ đợi", cùng có 寺 bên phải")',w:'小时 / 时间 / 有时候'},
    ]},
-  {n:13,zh:'家人',py:'jiārén',pos:'Danh từ',vn:'người nhà',em:'👨‍👩‍👧',lesson:3,
+  {n:13,zh:'家人',py:'jiārén',pos:'Danh từ',vn:'người nhà', hv: 'gia nhân',em:'👨‍👩‍👧',lesson:3,
    ex_zh:'我家人都在北京。',ex_py:'Wǒ jiārén dōu zài Běijīng.',ex_vn:'Người nhà cô đều ở Bắc Kinh.',
    exList:[{zh:'我家人都在北京。',py:'Wǒ jiārén dōu zài Běijīng.',vn:'Người nhà cô đều ở Bắc Kinh.'}],
    hanzi:[
@@ -140,7 +140,7 @@ var vocabData = [
       tip:'Hình dáng một NGƯỜI đang đứng nghiêng, dang hai chân → NGƯỜI.',
       cf:'入 (rù – "vào", hình gần giống nhưng nét đầu ngắn và giao nhau khác vị trí")',w:'家人 / 中国人 / 大人'},
    ]},
-  {n:14,zh:'时间',py:'shíjiān',pos:'Danh từ',vn:'thời gian',em:'🕐',lesson:3,
+  {n:14,zh:'时间',py:'shíjiān',pos:'Danh từ',vn:'thời gian', hv: 'thời gian',em:'🕐',lesson:3,
    ex_zh:'星期天我姐姐也有时间，她可以去机场接你们。',ex_py:'Xīngqītiān wǒ jiějie yě yǒu shíjiān, tā kěyǐ qù jīchǎng jiē nǐmen.',ex_vn:'Chủ nhật chị gái cô cũng có thời gian, chị ấy có thể đi sân bay đón các em.',
    exList:[{zh:'星期天我姐姐也有时间，她可以去机场接你们。',py:'Xīngqītiān wǒ jiějie yě yǒu shíjiān, tā kěyǐ qù jīchǎng jiē nǐmen.',vn:'Chủ nhật chị gái cô cũng có thời gian, chị ấy có thể đi sân bay đón các em.'}],
    hanzi:[
@@ -151,7 +151,7 @@ var vocabData = [
       tip:'Ánh mặt trời 日 lọt qua khe CỬA 门 → khoảng KHÔNG GIAN/THỜI GIAN ở GIỮA.',
       cf:'问 (wèn – "hỏi", cũng có bộ 门 nhưng bên trong là 口")',w:'时间 / 中间 / 房间'},
    ]},
-  {n:15,zh:'机场',py:'jīchǎng',pos:'Danh từ',vn:'sân bay',em:'🛫',lesson:3,
+  {n:15,zh:'机场',py:'jīchǎng',pos:'Danh từ',vn:'sân bay', hv: 'cơ trường',em:'🛫',lesson:3,
    ex_zh:'她可以去机场接你们，你们也可以住我家。',ex_py:'Tā kěyǐ qù jīchǎng jiē nǐmen, nǐmen yě kěyǐ zhù wǒ jiā.',ex_vn:'Chị ấy có thể đi sân bay đón các em, các em cũng có thể ở nhà cô.',
    exList:[{zh:'她可以去机场接你们，你们也可以住我家。',py:'Tā kěyǐ qù jīchǎng jiē nǐmen, nǐmen yě kěyǐ zhù wǒ jiā.',vn:'Chị ấy có thể đi sân bay đón các em, các em cũng có thể ở nhà cô.'}],
    hanzi:[
@@ -162,7 +162,7 @@ var vocabData = [
       tip:'Bộ Đất 土(mặt đất bằng phẳng) + phần bên phải (biến thể của 昜, chỉ ánh nắng rực rỡ) → khoảng ĐẤT trống rộng lớn, BÃI, SÂN, TRƯỜNG.',
       cf:'扬 (yáng – "giương lên", bộ 扌 nhưng phần phải giống hệt")',w:'机场 / 场地 / 市场'},
    ]},
-  {n:16,zh:'接',py:'jiē',pos:'Động từ',vn:'đón, tiếp đón',em:'🤝',lesson:3,
+  {n:16,zh:'接',py:'jiē',pos:'Động từ',vn:'đón, tiếp đón', hv: 'tiếp',em:'🤝',lesson:3,
    ex_zh:'她可以去机场接你们。',ex_py:'Tā kěyǐ qù jīchǎng jiē nǐmen.',ex_vn:'Chị ấy có thể đi sân bay đón các em.',
    exList:[{zh:'她可以去机场接你们。',py:'Tā kěyǐ qù jīchǎng jiē nǐmen.',vn:'Chị ấy có thể đi sân bay đón các em.'}],
    hanzi:[
@@ -170,7 +170,7 @@ var vocabData = [
       tip:'Bộ 扌(tay) → dùng tay đưa ra ĐÓN NHẬN người/vật.',
       cf:'椄 (jiē – "ghép cây", bộ 木)',w:'接你们 / 接电话'},
    ]},
-  {n:17,zh:'住',py:'zhù',pos:'Động từ',vn:'ở',em:'🏠',lesson:3,
+  {n:17,zh:'住',py:'zhù',pos:'Động từ',vn:'ở', hv: 'trú',em:'🏠',lesson:3,
    ex_zh:'你们也可以住我家。',ex_py:'Nǐmen yě kěyǐ zhù wǒ jiā.',ex_vn:'Các em cũng có thể ở nhà cô.',
    exList:[{zh:'你们也可以住我家。',py:'Nǐmen yě kěyǐ zhù wǒ jiā.',vn:'Các em cũng có thể ở nhà cô.'}],
    hanzi:[
@@ -178,7 +178,7 @@ var vocabData = [
       tip:'亻(người) + 主(làm chủ) → người làm chủ một nơi để Ở, TRÚ NGỤ.',
       cf:'往 (wǎng – "hướng về")',w:'住我家 / 住在'},
    ]},
-  {n:18,zh:'早',py:'zǎo',pos:'Tính từ',vn:'sớm',em:'🌅',lesson:3,
+  {n:18,zh:'早',py:'zǎo',pos:'Tính từ',vn:'sớm', hv: 'tảo',em:'🌅',lesson:3,
    ex_zh:'我们星期日早上八点到大兴机场，早不早？',ex_py:'Wǒmen xīngqīrì zǎoshang bā diǎn dào Dàxīng Jīchǎng, zǎo bu zǎo?',ex_vn:'8 giờ sáng Chủ nhật chúng em đã đến sân bay Đại Hưng, có sớm không cô?',
    exList:[{zh:'我们星期日早上八点到大兴机场，早不早？',py:'Wǒmen xīngqīrì zǎoshang bā diǎn dào Dàxīng Jīchǎng, zǎo bu zǎo?',vn:'8 giờ sáng Chủ nhật chúng em đã đến sân bay Đại Hưng, có sớm không cô?'}],
    hanzi:[
@@ -186,7 +186,7 @@ var vocabData = [
       tip:'Mặt trời 日 mới nhô lên trên cây/giá 十 → trời còn SỚM.',
       cf:'旱 (hàn – "hạn hán")',w:'早不早 / 早上'},
    ]},
-  {n:19,zh:'那',py:'nà',pos:'Liên từ',vn:'vậy thì, thế thì',em:'➡️',lesson:3,
+  {n:19,zh:'那',py:'nà',pos:'Liên từ',vn:'vậy thì, thế thì', hv: 'na',em:'➡️',lesson:3,
    ex_zh:'谢谢老师！那我们和您姐姐在大兴机场见！',ex_py:'Xièxie lǎoshī! Nà wǒmen hé nín jiějie zài Dàxīng Jīchǎng jiàn!',ex_vn:'Cảm ơn cô ạ! Vậy chúng em hẹn gặp chị cô ở sân bay Đại Hưng nhé!',
    exList:[{zh:'谢谢老师！那我们和您姐姐在大兴机场见！',py:'Xièxie lǎoshī! Nà wǒmen hé nín jiějie zài Dàxīng Jīchǎng jiàn!',vn:'Cảm ơn cô ạ! Vậy chúng em hẹn gặp chị cô ở sân bay Đại Hưng nhé!'}],
    hanzi:[
@@ -194,7 +194,7 @@ var vocabData = [
       tip:'Bộ 阝(邑 – vùng đất) bên phải chỉ một nơi chốn ở xa → dùng để chỉ cái ĐÓ, KIA (xa người nói); đứng đầu câu thì chuyển thành liên từ "VẬY THÌ".',
       cf:'哪 (nǎ – "nào", thêm bộ 口 bên trái, dùng để hỏi thay vì chỉ định")',w:'那个 / 那里 / 那我们'},
    ]},
-  {n:20,zh:'大兴机场',py:'Dàxīng Jīchǎng',pos:'Danh từ riêng',vn:'sân bay Đại Hưng',em:'🛬',lesson:3,
+  {n:20,zh:'大兴机场',py:'Dàxīng Jīchǎng',pos:'Danh từ riêng',vn:'sân bay Đại Hưng', hv: 'Đại Hưng Cơ Trường',em:'🛬',lesson:3,
    ex_zh:'那我们和您姐姐在大兴机场见！',ex_py:'Nà wǒmen hé nín jiějie zài Dàxīng Jīchǎng jiàn!',ex_vn:'Vậy chúng em hẹn gặp chị cô ở sân bay Đại Hưng nhé!',
    exList:[{zh:'那我们和您姐姐在大兴机场见！',py:'Nà wǒmen hé nín jiějie zài Dàxīng Jīchǎng jiàn!',vn:'Vậy chúng em hẹn gặp chị cô ở sân bay Đại Hưng nhé!'}],
    hanzi:[

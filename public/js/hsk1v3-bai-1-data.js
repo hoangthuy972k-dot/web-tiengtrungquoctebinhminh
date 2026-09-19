@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'你好',py:'nǐ hǎo',pos:'',vn:'xin chào, chào bạn',em:'👋',lesson:1,
+  {n:1,zh:'你好',py:'nǐ hǎo',pos:'',vn:'xin chào, chào bạn', hv: 'nhĩ hảo',em:'👋',lesson:1,
    ex_zh:'AI小语，你好！',ex_py:'AI Xiǎoyǔ, nǐ hǎo!',ex_vn:'Chào cậu, AI Tiểu Ngữ!',
    exList:[
      {zh:'AI小语，你好！',py:'AI Xiǎoyǔ, nǐ hǎo!',vn:'Chào cậu, AI Tiểu Ngữ!'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'女(mẹ) + 子(con) → mẹ bồng con là hình ảnh TỐT ĐẸP nhất → nghĩa TỐT.',
       cf:'她 (tā – "cô ấy", cũng bộ 女")',w:'你好 / 好吗 / 很好'},
    ]},
-  {n:2,zh:'大家',py:'dàjiā',pos:'Đại từ',vn:'mọi người',em:'👥',lesson:1,
+  {n:2,zh:'大家',py:'dàjiā',pos:'Đại từ',vn:'mọi người', hv: 'đại gia',em:'👥',lesson:1,
    ex_zh:'大家好！',ex_py:'Dàjiā hǎo!',ex_vn:'Chào mọi người!',
    exList:[
      {zh:'大家好！',py:'Dàjiā hǎo!',vn:'Chào mọi người!'},
@@ -30,7 +30,7 @@ var vocabData = [
       tip:'宀(mái nhà) + 豕(con lợn) → thời xưa nuôi lợn dưới nhà sàn, biểu tượng của NHÀ.',
       cf:'豪 (háo – "hào hiệp")',w:'我家 / 家人'},
    ]},
-  {n:3,zh:'好',py:'hǎo',pos:'Tính từ',vn:'tốt, khoẻ',em:'👍',lesson:1,
+  {n:3,zh:'好',py:'hǎo',pos:'Tính từ',vn:'tốt, khoẻ', hv: 'hảo',em:'👍',lesson:1,
    ex_zh:'老师，您好！',ex_py:'Lǎoshī, nín hǎo!',ex_vn:'Chào cô ạ!',
    exList:[
      {zh:'老师，您好！',py:'Lǎoshī, nín hǎo!',vn:'Chào cô ạ!'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'女(mẹ) + 子(con) → mẹ bồng con là hình ảnh TỐT ĐẸP nhất → nghĩa TỐT.',
       cf:'她 (tā – "cô ấy", cũng bộ 女")',w:'你好 / 好吗 / 很好'},
    ]},
-  {n:4,zh:'学生',py:'xuésheng',pos:'Danh từ',vn:'học sinh, sinh viên',em:'🎓',lesson:2,
+  {n:4,zh:'学生',py:'xuésheng',pos:'Danh từ',vn:'học sinh, sinh viên', hv: 'học sinh',em:'🎓',lesson:2,
    ex_zh:'学生们学习打招呼用语。',ex_py:'Xuéshengmen xuéxí dǎzhāohu yòngyǔ.',ex_vn:'Các bạn học sinh học cách chào hỏi.',
    exList:[
      {zh:'学生们学习打招呼用语。',py:'Xuéshengmen xuéxí dǎzhāohu yòngyǔ.',vn:'Các bạn học sinh học cách chào hỏi.'},
@@ -54,7 +54,7 @@ var vocabData = [
       tip:'Hình cây cỏ mọc lên khỏi mặt đất → SINH RA, SỐNG; 学生 nghĩa là người đang "sinh trưởng" tri thức.',
       cf:'姓 (xìng – "họ")',w:'学生 / 医生 / 先生'},
    ]},
-  {n:5,zh:'们',py:'men',pos:'Hậu tố',vn:'(dùng sau đại từ/danh từ chỉ số nhiều)',em:'👨‍👩‍👧‍👦',lesson:2,
+  {n:5,zh:'们',py:'men',pos:'Hậu tố',vn:'(dùng sau đại từ/danh từ chỉ số nhiều)', hv: 'môn',em:'👨‍👩‍👧‍👦',lesson:2,
    ex_zh:'学生们',ex_py:'xuéshengmen',ex_vn:'các bạn học sinh',
    exList:[
      {zh:'学生们',py:'xuéshengmen',vn:'các bạn học sinh'},
@@ -65,7 +65,7 @@ var vocabData = [
       tip:'亻(người) đứng cạnh 门(cửa) → nhiều người cùng qua MỘT CÁNH CỬA = biểu thị SỐ NHIỀU.',
       cf:'门 (mén – "cửa")',w:'你们好'},
    ]},
-  {n:6,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy giáo, cô giáo, giáo viên',em:'🧑‍🏫',lesson:2,
+  {n:6,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy giáo, cô giáo, giáo viên', hv: 'lão sư',em:'🧑‍🏫',lesson:2,
    ex_zh:'老师，您好！',ex_py:'Lǎoshī, nín hǎo!',ex_vn:'Chào cô ạ!',
    exList:[
      {zh:'老师，您好！',py:'Lǎoshī, nín hǎo!',vn:'Chào cô ạ!'},
@@ -79,7 +79,7 @@ var vocabData = [
       tip:'Hình ảnh người truyền đạt kiến thức một cách có hệ thống → THẦY, SƯ PHỤ.',
       cf:'帅 (shuài – "đẹp trai")',w:'老师 / 律师'},
    ]},
-  {n:7,zh:'您',py:'nín',pos:'Đại từ',vn:'ngài, ông, bà (kính ngữ)',em:'🙇',lesson:2,
+  {n:7,zh:'您',py:'nín',pos:'Đại từ',vn:'ngài, ông, bà (kính ngữ)', hv: 'nâm',em:'🙇',lesson:2,
    ex_zh:'老师，您好！',ex_py:'Lǎoshī, nín hǎo!',ex_vn:'Chào cô ạ!',
    exList:[
      {zh:'老师，您好！',py:'Lǎoshī, nín hǎo!',vn:'Chào cô ạ!'},
@@ -89,7 +89,7 @@ var vocabData = [
       tip:'你(bạn) trên 心(tấm lòng) → dùng cả TẤM LÒNG kính trọng khi xưng hô = kính ngữ NGÀI.',
       cf:'你 (nǐ – "bạn", không trang trọng)',w:'您好 / 您们(ít dùng)'},
    ]},
-  {n:8,zh:'你们',py:'nǐmen',pos:'Đại từ',vn:'các bạn, các anh, các chị',em:'🫂',lesson:2,
+  {n:8,zh:'你们',py:'nǐmen',pos:'Đại từ',vn:'các bạn, các anh, các chị', hv: 'nhĩ môn',em:'🫂',lesson:2,
    ex_zh:'你们好！',ex_py:'Nǐmen hǎo!',ex_vn:'Chào các bạn!',
    exList:[
      {zh:'你们好！',py:'Nǐmen hǎo!',vn:'Chào các bạn!'},
@@ -103,7 +103,7 @@ var vocabData = [
       tip:'亻(người) đứng cạnh 门(cửa) → nhiều người cùng qua MỘT CÁNH CỬA = biểu thị SỐ NHIỀU.',
       cf:'门 (mén – "cửa")',w:'你们好'},
    ]},
-  {n:9,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn',em:'🙏',lesson:3,
+  {n:9,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn', hv: 'tạ tạ',em:'🙏',lesson:3,
    ex_zh:'谢谢！',ex_py:'Xièxie!',ex_vn:'Cảm ơn!',
    exList:[
      {zh:'谢谢！',py:'Xièxie!',vn:'Cảm ơn!'},
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'讠(lời nói) + 射(bắn ra) → LỜI NÓI bày tỏ lòng biết ơn được gửi ra ngoài.',
       cf:'榭 (xiè – "nhà thuỷ tạ")',w:'谢谢 / 不谢'},
    ]},
-  {n:10,zh:'不客气',py:'bú kèqi',pos:'Cụm từ',vn:'đừng khách sáo, không cần khách khí',em:'😊',lesson:3,
+  {n:10,zh:'不客气',py:'bú kèqi',pos:'Cụm từ',vn:'đừng khách sáo, không cần khách khí', hv: 'bất khách khí',em:'😊',lesson:3,
    ex_zh:'不客气！',ex_py:'Bú kèqi!',ex_vn:'Đừng khách sáo!',
    exList:[
      {zh:'不客气！',py:'Bú kèqi!',vn:'Đừng khách sáo!'},
@@ -129,7 +129,7 @@ var vocabData = [
       tip:'Hình dáng luồng khí đang bay lượn → KHÍ; ghép với 客 thành "khách khí" nghĩa là giữ ý tứ, khách sáo.',
       cf:'汽 (qì – "hơi nước", thêm bộ 氵")',w:'客气 / 不客气'},
    ]},
-  {n:11,zh:'同学',py:'tóngxué',pos:'Danh từ',vn:'bạn học',em:'🧑‍🎓',lesson:3,
+  {n:11,zh:'同学',py:'tóngxué',pos:'Danh từ',vn:'bạn học', hv: 'đồng học',em:'🧑‍🎓',lesson:3,
    ex_zh:'同学们，再见！',ex_py:'Tóngxuémen, zàijiàn!',ex_vn:'Tạm biệt các em!',
    exList:[
      {zh:'同学们，再见！',py:'Tóngxuémen, zàijiàn!',vn:'Tạm biệt các em!'},
@@ -142,7 +142,7 @@ var vocabData = [
       tip:'Đứa trẻ 子 ngồi dưới mái nhà 冖 để tiếp thu kiến thức → HỌC.',
       cf:'字 (zì – "chữ", cũng có 子")',w:'学生 / 学习'},
    ]},
-  {n:12,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt',em:'👋',lesson:3,
+  {n:12,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt', hv: 'tái kiến',em:'👋',lesson:3,
    ex_zh:'老师，再见！',ex_py:'Lǎoshī, zàijiàn!',ex_vn:'Tạm biệt cô ạ!',
    exList:[
      {zh:'老师，再见！',py:'Lǎoshī, zàijiàn!',vn:'Tạm biệt cô ạ!'},
@@ -155,7 +155,7 @@ var vocabData = [
       tip:'Hình con mắt trên đôi chân đang bước tới → NHÌN THẤY, GẶP GỠ.',
       cf:'贝 (bèi – "vật báu")',w:'再见'},
    ]},
-  {n:13,zh:'王老师',py:'Wáng lǎoshī',pos:'Danh từ riêng',vn:'cô/thầy Vương',em:'🧑‍🏫',lesson:1,
+  {n:13,zh:'王老师',py:'Wáng lǎoshī',pos:'Danh từ riêng',vn:'cô/thầy Vương', hv: 'Vương lão sư',em:'🧑‍🏫',lesson:1,
    ex_zh:'AI小语，你好！——王老师，你好！',ex_py:'AI Xiǎoyǔ, nǐ hǎo! — Wáng lǎoshī, nǐ hǎo!',ex_vn:'Chào cậu, AI Tiểu Ngữ! — Chào cô Vương!',
    exList:[
      {zh:'AI小语，你好！——王老师，你好！',py:'AI Xiǎoyǔ, nǐ hǎo! — Wáng lǎoshī, nǐ hǎo!',vn:'Chào cậu, AI Tiểu Ngữ! — Chào cô Vương!'},

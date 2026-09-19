@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'比赛',py:'bǐsài',pos:'Danh từ',vn:'cuộc thi đấu',em:'🏆',lesson:1,
+  {n:1,zh:'比赛',py:'bǐsài',pos:'Danh từ',vn:'cuộc thi đấu', hv: 'tỉ tái',em:'🏆',lesson:1,
    explain:['Hoạt động thi đấu giữa hai hay nhiều bên để phân định thắng thua, thường dùng cho thể thao.'],
    usage:'Danh từ, thường đi cùng động từ 看/参加/去: 看比赛, 参加比赛; làm định ngữ: 比赛的照片.',
    collo:['看比赛','参加比赛','篮球比赛'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:2,zh:'照片',py:'zhàopiàn',pos:'Danh từ',vn:'bức ảnh',em:'📷',lesson:1,
+  {n:2,zh:'照片',py:'zhàopiàn',pos:'Danh từ',vn:'bức ảnh', hv: 'chiếu phiến',em:'📷',lesson:1,
    explain:['Hình chụp lại một người, cảnh vật hoặc sự việc bằng máy ảnh.'],
    usage:'Danh từ; lượng từ đi kèm là 张: 一张照片. Đi cùng động từ 照/照相 (chụp ảnh), 看 (xem).',
    collo:['一张照片','照照片','看照片'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'年级',py:'niánjí',pos:'Danh từ',vn:'lớp, khối (niên khoá)',em:'🏫',lesson:1,
+  {n:3,zh:'年级',py:'niánjí',pos:'Danh từ',vn:'lớp, khối (niên khoá)', hv: 'niên cấp',em:'🏫',lesson:1,
    explain:['Bậc học được chia theo năm học trong trường phổ thông.'],
    usage:'Danh từ; đứng sau số từ để chỉ khối lớp: [số từ] + 年级 (二年级 = lớp hai), có thể thêm 上/高/低 chỉ mức độ.',
    collo:['一年级','二年级','高年级'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 作业 đã học ở Bài 1).'},
    ]},
 
-  {n:4,zh:'又',py:'yòu',pos:'Phó từ',vn:'vừa (trong 又…又…)',em:'🔁',lesson:1,
+  {n:4,zh:'又',py:'yòu',pos:'Phó từ',vn:'vừa (trong 又…又…)', hv: 'hựu',em:'🔁',lesson:1,
    explain:['Phó từ dùng lặp lại trong cấu trúc 又……又…… để diễn tả hai đặc điểm/tính chất cùng tồn tại ở một người hoặc vật.'],
    usage:'Cấu trúc: 又 + tính từ 1 + 又 + tính từ 2, đặt ngay trước mỗi tính từ được liệt kê.',
    collo:['又高又漂亮','又聪明又热情','又便宜又好吃'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'聪明',py:'cōngming',pos:'Tính từ',vn:'thông minh',em:'🧠',lesson:2,
+  {n:5,zh:'聪明',py:'cōngming',pos:'Tính từ',vn:'thông minh', hv: 'thông minh',em:'🧠',lesson:2,
    explain:['Khả năng tư duy nhanh nhạy, tiếp thu và hiểu vấn đề tốt.'],
    usage:'Tính từ, làm vị ngữ với 很/真: 很聪明; thường xuất hiện trong cấu trúc 又聪明又…….',
    collo:['很聪明','又聪明又热情','聪明的孩子'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:6,zh:'热情',py:'rèqíng',pos:'Tính từ',vn:'nhiệt tình',em:'🔥',lesson:2,
+  {n:6,zh:'热情',py:'rèqíng',pos:'Tính từ',vn:'nhiệt tình', hv: 'nhiệt tình',em:'🔥',lesson:2,
    explain:['Thái độ nồng nhiệt, sẵn lòng quan tâm và giúp đỡ người khác.'],
    usage:'Tính từ, làm vị ngữ với 很/真: 很热情; thường mô tả thái độ phục vụ, làm việc.',
    collo:['很热情','对人热情','热情地帮助'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'努力',py:'nǔlì',pos:'Tính từ',vn:'chăm chỉ, cố gắng',em:'💪',lesson:2,
+  {n:7,zh:'努力',py:'nǔlì',pos:'Tính từ',vn:'chăm chỉ, cố gắng', hv: 'nỗ lực',em:'💪',lesson:2,
    explain:['Dồn hết sức lực và tinh thần vào việc gì đó để đạt kết quả tốt.'],
    usage:'Tính từ/động từ, làm vị ngữ với 很: 很努力; hoặc đứng trước động từ như phó từ: 努力 + V (努力学习).',
    collo:['很努力','努力学习','努力工作'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 复习/难 đã học ở Bài 1-2).'},
    ]},
 
-  {n:8,zh:'总是',py:'zǒngshì',pos:'Phó từ',vn:'luôn luôn',em:'🔄',lesson:2,
+  {n:8,zh:'总是',py:'zǒngshì',pos:'Phó từ',vn:'luôn luôn', hv: 'tổng thị',em:'🔄',lesson:2,
    explain:['Luôn luôn, lúc nào cũng vậy, diễn tả một hành động/trạng thái lặp lại đều đặn.'],
    usage:'Phó từ, đứng trước động từ/tính từ mà nó bổ nghĩa: 总是 + V (总是笑着).',
    collo:['总是笑着','总是帮助人','总是忘记'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 带/记得 đã học ở Bài 1-3).'},
    ]},
 
-  {n:9,zh:'回答',py:'huídá',pos:'Động từ',vn:'trả lời',em:'💬',lesson:2,
+  {n:9,zh:'回答',py:'huídá',pos:'Động từ',vn:'trả lời', hv: 'hồi đáp',em:'💬',lesson:2,
    explain:['Nói lại nội dung để giải đáp một câu hỏi.'],
    usage:'Động từ, có thể mang tân ngữ trực tiếp: 回答 + [câu hỏi/vấn đề] (回答问题).',
    collo:['回答问题','认真回答','不回答'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:10,zh:'站',py:'zhàn',pos:'Động từ',vn:'đứng',em:'🧍',lesson:3,
+  {n:10,zh:'站',py:'zhàn',pos:'Động từ',vn:'đứng', hv: 'trạm',em:'🧍',lesson:3,
    explain:['Ở tư thế thẳng người, hai chân chạm đất, không ngồi hoặc nằm.'],
    usage:'Động từ, thường đi cùng trợ từ 着 diễn tả trạng thái đang đứng: 站着; hoặc kèm nơi chốn: 站在 + [nơi chốn].',
    collo:['站着','站在门口','站起来'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 脚 đã học ở Bài 2).'},
    ]},
 
-  {n:11,zh:'饿',py:'è',pos:'Tính từ',vn:'đói',em:'🍽️',lesson:3,
+  {n:11,zh:'饿',py:'è',pos:'Tính từ',vn:'đói', hv: 'ngạ',em:'🍽️',lesson:3,
    explain:['Cảm giác cần ăn vì bụng trống, chưa được ăn.'],
    usage:'Tính từ, làm vị ngữ với 很/有点儿: 很饿, 有点儿饿了.',
    collo:['很饿','有点儿饿','饿了'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'超市',py:'chāoshì',pos:'Danh từ',vn:'siêu thị',em:'🏪',lesson:3,
+  {n:12,zh:'超市',py:'chāoshì',pos:'Danh từ',vn:'siêu thị', hv: 'siêu thị',em:'🏪',lesson:3,
    explain:['Cửa hàng lớn bán nhiều loại hàng hoá, khách tự chọn đồ rồi thanh toán.'],
    usage:'Danh từ; đi cùng động từ 去/进: 去超市, 进超市.',
    collo:['去超市','进超市','超市门口'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:13,zh:'蛋糕',py:'dàngāo',pos:'Danh từ',vn:'bánh kem',em:'🎂',lesson:3,
+  {n:13,zh:'蛋糕',py:'dàngāo',pos:'Danh từ',vn:'bánh kem', hv: 'đản cao',em:'🎂',lesson:3,
    explain:['Món bánh ngọt làm từ bột, trứng, sữa, thường có kem trang trí bên ngoài.'],
    usage:'Danh từ; lượng từ đi kèm là 块 (miếng): 一块蛋糕.',
    collo:['一块蛋糕','吃蛋糕','买蛋糕'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'V1着+V2 diễn tả hai hành động đồng thời (điểm ngữ pháp bài này).'},
    ]},
 
-  {n:14,zh:'年轻',py:'niánqīng',pos:'Tính từ',vn:'trẻ tuổi',em:'🧑',lesson:4,
+  {n:14,zh:'年轻',py:'niánqīng',pos:'Tính từ',vn:'trẻ tuổi', hv: 'niên khinh',em:'🧑',lesson:4,
    explain:['Còn ít tuổi, chưa già.'],
    usage:'Tính từ, làm vị ngữ hoặc định ngữ: 很年轻, 年轻的服务员.',
    collo:['很年轻','年轻人','年轻的服务员'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:15,zh:'认真',py:'rènzhēn',pos:'Tính từ',vn:'nghiêm túc, chăm chỉ',em:'✍️',lesson:4,
+  {n:15,zh:'认真',py:'rènzhēn',pos:'Tính từ',vn:'nghiêm túc, chăm chỉ', hv: 'nhận chân',em:'✍️',lesson:4,
    explain:['Làm việc cẩn thận, chú tâm, không qua loa.'],
    usage:'Tính từ, làm vị ngữ với 很: 很认真; hoặc làm phó từ trước động từ: 认真 + V (认真写).',
    collo:['很认真','认真工作','认真写'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:16,zh:'客人',py:'kèrén',pos:'Danh từ',vn:'khách, khách hàng',em:'🙋',lesson:4,
+  {n:16,zh:'客人',py:'kèrén',pos:'Danh từ',vn:'khách, khách hàng', hv: 'khách nhân',em:'🙋',lesson:4,
    explain:['Người từ nơi khác đến, được đón tiếp hoặc phục vụ.'],
    usage:'Danh từ; đi cùng động từ 请/等/跟: 请客人, 等客人, 跟客人说话.',
    collo:['请客人','等客人','跟客人说话'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:17,zh:'小明',py:'Xiǎomíng',pos:'Danh từ riêng',vn:'bạn Minh (tên người)',em:'🧑',lesson:1,
+  {n:17,zh:'小明',py:'Xiǎomíng',pos:'Danh từ riêng',vn:'bạn Minh (tên người)', hv: 'Tiểu Minh',em:'🧑',lesson:1,
    explain:['Tên riêng của một nhân vật nam trong bài hội thoại.'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    collo:['小明说','跟小明一起','小明的照片'],
@@ -376,7 +376,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:18,zh:'马可',py:'Mǎkě',pos:'Danh từ riêng',vn:'Marco (tên người)',em:'🧑‍🎓',lesson:1,
+  {n:18,zh:'马可',py:'Mǎkě',pos:'Danh từ riêng',vn:'Marco (tên người)', hv: 'Mã Khả',em:'🧑‍🎓',lesson:1,
    explain:['Tên riêng phiên âm của một nhân vật nam người nước ngoài trong bài hội thoại.'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    collo:['马可说','跟马可一起','马可的照片'],
@@ -397,7 +397,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 年级 vừa học trong bài này).'},
    ]},
 
-  {n:19,zh:'李小美',py:'Lǐ Xiǎoměi',pos:'Danh từ riêng',vn:'Lý Tiểu Mỹ (tên người)',em:'👩',lesson:4,
+  {n:19,zh:'李小美',py:'Lǐ Xiǎoměi',pos:'Danh từ riêng',vn:'Lý Tiểu Mỹ (tên người)', hv: 'Lý Tiểu Mỹ',em:'👩',lesson:4,
    explain:['Tên riêng của nhân vật nữ phục vụ được nhắc đến ở cuối bài hội thoại 4.'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    collo:['李小美说','认识李小美','是李小美'],

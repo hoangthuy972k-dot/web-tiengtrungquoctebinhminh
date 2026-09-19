@@ -2,7 +2,7 @@
 // DATA — YCT Bài 8: 我去学校
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'学校',py:'xuéxiào',pos:'Danh từ',vn:'trường học',em:'🏫',lesson:1,
+  {n:1,zh:'学校',py:'xuéxiào',pos:'Danh từ',vn:'trường học', hv: 'học hiệu',em:'🏫',lesson:1,
    ex_zh:'我去学校。',ex_py:'Wǒ qù xuéxiào.',ex_vn:'Mình đi trường học.',
    exList:[{zh:'我去学校。',py:'Wǒ qù xuéxiào.',vn:'Mình đi trường học.'}],
    hanzi:[
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'Ngôi trường được dựng bằng gỗ 木, là nơi mọi người giao lưu học hỏi 交 → TRƯỜNG.',
       cf:'交 (jiāo – "giao")',w:'学校'},
    ]},
-  {n:2,zh:'在',py:'zài',pos:'Động từ/Giới từ',vn:'ở, tại',em:'📍',lesson:1,
+  {n:2,zh:'在',py:'zài',pos:'Động từ/Giới từ',vn:'ở, tại', hv: 'tại',em:'📍',lesson:1,
    ex_zh:'我在学校。',ex_py:'Wǒ zài xuéxiào.',ex_vn:'Mình đang ở trường.',
    exList:[{zh:'我在学校。',py:'Wǒ zài xuéxiào.',vn:'Mình đang ở trường.'}],
    hanzi:[
@@ -21,15 +21,15 @@ var vocabData = [
       tip:'Đứng vững trên nền đất 土, được che chắn xung quanh → chỉ vị trí đang Ở, TẠI đâu đó.',
       cf:'再 (zài – "lại, nữa", đồng âm khác chữ)',w:'我在学校'},
    ]},
-  {n:3,zh:'去',py:'qù',pos:'Động từ',vn:'đi',em:'🚶',lesson:1,
+  {n:3,zh:'去',py:'qù',pos:'Động từ',vn:'đi', hv: 'khứ',em:'🚶',lesson:1,
    ex_zh:'我去商店。',ex_py:'Wǒ qù shāngdiàn.',ex_vn:'Mình đi cửa hàng.',
    exList:[{zh:'我去商店。',py:'Wǒ qù shāngdiàn.',vn:'Mình đi cửa hàng.'}],
    hanzi:[]},
-  {n:4,zh:'哪儿',py:'nǎr',pos:'Đại từ',vn:'ở đâu',em:'❓',lesson:1,
+  {n:4,zh:'哪儿',py:'nǎr',pos:'Đại từ',vn:'ở đâu', hv: 'na nhi',em:'❓',lesson:1,
    ex_zh:'你去哪儿？',ex_py:'Nǐ qù nǎr?',ex_vn:'Bạn đi đâu?',
    exList:[{zh:'你去哪儿？',py:'Nǐ qù nǎr?',vn:'Bạn đi đâu?'}],
    hanzi:[]},
-  {n:5,zh:'你们',py:'nǐmen',pos:'Đại từ',vn:'các bạn (số nhiều)',em:'🧑‍🤝‍🧑',lesson:2,
+  {n:5,zh:'你们',py:'nǐmen',pos:'Đại từ',vn:'các bạn (số nhiều)', hv: 'nhĩ môn',em:'🧑‍🤝‍🧑',lesson:2,
    ex_zh:'你们在学校吗？',ex_py:'Nǐmen zài xuéxiào ma?',ex_vn:'Các bạn đang ở trường à?',
    exList:[{zh:'你们在学校吗？',py:'Nǐmen zài xuéxiào ma?',vn:'Các bạn đang ở trường à?'}],
    hanzi:[
@@ -37,11 +37,11 @@ var vocabData = [
       tip:'Thêm 亻 (người) vào từ chỉ người để biến thành SỐ NHIỀU: 你们, 我们, 他们.',
       cf:'门 (mén – "cửa")',w:'你们 / 我们'},
    ]},
-  {n:6,zh:'我们',py:'wǒmen',pos:'Đại từ',vn:'chúng ta, chúng mình',em:'👨‍👩‍👧',lesson:2,
+  {n:6,zh:'我们',py:'wǒmen',pos:'Đại từ',vn:'chúng ta, chúng mình', hv: 'ngã môn',em:'👨‍👩‍👧',lesson:2,
    ex_zh:'我们在学校。',ex_py:'Wǒmen zài xuéxiào.',ex_vn:'Chúng mình đang ở trường.',
    exList:[{zh:'我们在学校。',py:'Wǒmen zài xuéxiào.',vn:'Chúng mình đang ở trường.'}],
    hanzi:[]},
-  {n:7,zh:'商店',py:'shāngdiàn',pos:'Danh từ',vn:'cửa hàng',em:'🏪',lesson:2,
+  {n:7,zh:'商店',py:'shāngdiàn',pos:'Danh từ',vn:'cửa hàng', hv: 'thương điếm',em:'🏪',lesson:2,
    ex_zh:'我去商店。',ex_py:'Wǒ qù shāngdiàn.',ex_vn:'Mình đi cửa hàng.',
    exList:[{zh:'我去商店。',py:'Wǒ qù shāngdiàn.',vn:'Mình đi cửa hàng.'}],
    hanzi:[
@@ -52,7 +52,7 @@ var vocabData = [
       tip:'Mái nhà 广 che một nơi được chiếm giữ 占 để bày bán hàng hoá → CỬA HÀNG.',
       cf:'占 (zhàn – "chiếm")',w:'商店'},
    ]},
-  {n:8,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn',em:'🙏',lesson:2,
+  {n:8,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn', hv: 'tạ tạ',em:'🙏',lesson:2,
    ex_zh:'谢谢你！',ex_py:'Xièxie nǐ!',ex_vn:'Cảm ơn bạn!',
    exList:[{zh:'谢谢你！',py:'Xièxie nǐ!',vn:'Cảm ơn bạn!'}],
    hanzi:[

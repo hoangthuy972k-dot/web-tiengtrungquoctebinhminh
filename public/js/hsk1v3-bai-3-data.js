@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'人',py:'rén',pos:'Danh từ',vn:'người',em:'🧑',lesson:1,
+  {n:1,zh:'人',py:'rén',pos:'Danh từ',vn:'người', hv: 'nhân',em:'🧑',lesson:1,
    ex_zh:'我是中国人。',ex_py:'Wǒ shì Zhōngguó rén.',ex_vn:'Tôi là người Trung Quốc.',
    exList:[
      {zh:'我是中国人。',py:'Wǒ shì Zhōngguó rén.',vn:'Tôi là người Trung Quốc.'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'Hình dáng giống một người đang bước đi, hai nét tượng trưng cho hai chân.',
       cf:'入 (rù – "vào", dễ nhầm vì nét gần giống nhưng phẩy dài hơn)',w:'中国人 / 法国人'},
    ]},
-  {n:2,zh:'的',py:'de',pos:'Trợ từ',vn:'của',em:'🔗',lesson:1,
+  {n:2,zh:'的',py:'de',pos:'Trợ từ',vn:'của', hv: 'đích',em:'🔗',lesson:1,
    ex_zh:'我的中文老师也是中国人。',ex_py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',ex_vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.',
    exList:[
      {zh:'我的中文老师也是中国人。',py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.'},
@@ -23,7 +23,7 @@ var vocabData = [
       tip:'白(rõ ràng, sáng tỏ) + 勺(cái muỗng, mượn âm đọc gần "de") → mượn âm 勺 ghép với 白 để tạo trợ từ chỉ SỞ HỮU, nghĩa gốc không còn liên quan.',
       cf:'得 (dé/děi – "được, phải", cũng đọc "de" nhẹ trong một số trường hợp, dễ nhầm chức năng ngữ pháp)',w:'我的 / 你的 / 老师的'},
    ]},
-  {n:3,zh:'这',py:'zhè',pos:'Đại từ',vn:'này, đây',em:'👆',lesson:2,
+  {n:3,zh:'这',py:'zhè',pos:'Đại từ',vn:'này, đây', hv: 'giá',em:'👆',lesson:2,
    ex_zh:'这是谁？',ex_py:'Zhè shì shéi?',ex_vn:'Đây là ai?',
    exList:[
      {zh:'这是谁？',py:'Zhè shì shéi?',vn:'Đây là ai?'},
@@ -34,7 +34,7 @@ var vocabData = [
       tip:'辶(đi, di chuyển tới) bao quanh 文(sự việc, văn bản) → bước tới chỉ ngay vào một thứ đang ở GẦN mình, nghĩa là "THIS, ĐÂY".',
       cf:'边 (biān – "bên cạnh", cũng có bộ 辶 nhưng bên trong là 边")',w:'这是 / 这个 / 这里'},
    ]},
-  {n:4,zh:'谁',py:'shéi/shuí',pos:'Đại từ',vn:'ai',em:'❓',lesson:2,
+  {n:4,zh:'谁',py:'shéi/shuí',pos:'Đại từ',vn:'ai', hv: 'thùy',em:'❓',lesson:2,
    ex_zh:'这是谁？',ex_py:'Zhè shì shéi?',ex_vn:'Đây là ai?',
    exList:[
      {zh:'这是谁？',py:'Zhè shì shéi?',vn:'Đây là ai?'},
@@ -44,7 +44,7 @@ var vocabData = [
       tip:'讠(lời nói) + 隹(chim) → dùng lời để hỏi xem đó là AI, giống tiếng chim hỏi han.',
       cf:'难 (nán – "khó", cũng có 隹")',w:'这是谁 / 谁是老师'},
    ]},
-  {n:5,zh:'女朋友',py:'nǚpéngyou',pos:'Danh từ',vn:'bạn gái, người yêu',em:'💑',lesson:2,
+  {n:5,zh:'女朋友',py:'nǚpéngyou',pos:'Danh từ',vn:'bạn gái, người yêu', hv: 'nữ bằng hữu',em:'💑',lesson:2,
    ex_zh:'这是我女朋友。',ex_py:'Zhè shì wǒ nǚpéngyou.',ex_vn:'Đây là bạn gái tôi.',
    exList:[
      {zh:'这是我女朋友。',py:'Zhè shì wǒ nǚpéngyou.',vn:'Đây là bạn gái tôi.'},
@@ -60,7 +60,7 @@ var vocabData = [
       tip:'Hai bộ phận đều là hình biến thể của BÀN TAY (𠂇 trên, 又 dưới) nắm chặt lấy nhau → hai tay nắm nhau biểu thị tình BẠN BÈ thân thiết.',
       cf:'反 (fǎn – "trái, ngược lại", cũng có 又 ở dưới nhưng trên là 厂")',w:'朋友 / 友好 / 女朋友'},
    ]},
-  {n:6,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào',em:'🌍',lesson:2,
+  {n:6,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào', hv: 'na',em:'🌍',lesson:2,
    ex_zh:'你女朋友是哪国人？',ex_py:'Nǐ nǚpéngyou shì nǎ guó rén?',ex_vn:'Bạn gái của bạn là người nước nào?',
    exList:[
      {zh:'你女朋友是哪国人？',py:'Nǐ nǚpéngyou shì nǎ guó rén?',vn:'Bạn gái của bạn là người nước nào?'},
@@ -70,7 +70,7 @@ var vocabData = [
       tip:'口(miệng, dùng để hỏi) + 那(kia, đó) → dùng MIỆNG hỏi xem đó là cái "kia" NÀO, tạo thành từ nghi vấn "哪".',
       cf:'那 (nà – "đó, kia", chỉ khác là thiếu bộ 口 bên trái)',w:'哪国 / 哪里 / 哪个'},
    ]},
-  {n:7,zh:'国',py:'guó',pos:'Danh từ',vn:'quốc gia, đất nước',em:'🏳️',lesson:2,
+  {n:7,zh:'国',py:'guó',pos:'Danh từ',vn:'quốc gia, đất nước', hv: 'quốc',em:'🏳️',lesson:2,
    ex_zh:'你女朋友是哪国人？',ex_py:'Nǐ nǚpéngyou shì nǎ guó rén?',ex_vn:'Bạn gái của bạn là người nước nào?',
    exList:[
      {zh:'你女朋友是哪国人？',py:'Nǐ nǚpéngyou shì nǎ guó rén?',vn:'Bạn gái của bạn là người nước nào?'},
@@ -80,7 +80,7 @@ var vocabData = [
       tip:'囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.',
       cf:'固 (gù – "vững chắc", cũng có 囗 bao ngoài nhưng bên trong là 古")',w:'中国 / 法国 / 泰国'},
    ]},
-  {n:8,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, chị ấy, bạn ấy',em:'👩',lesson:2,
+  {n:8,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, chị ấy, bạn ấy', hv: 'tha',em:'👩',lesson:2,
    ex_zh:'她也是泰国人。',ex_py:'Tā yě shì Tàiguó rén.',ex_vn:'Cô ấy cũng là người Thái Lan.',
    exList:[
      {zh:'她也是泰国人。',py:'Tā yě shì Tàiguó rén.',vn:'Cô ấy cũng là người Thái Lan.'},
@@ -90,7 +90,7 @@ var vocabData = [
       tip:'女(phụ nữ) + 也(cũng, mượn âm đọc gần "tā") → mượn âm 也 ghép với bộ 女 để tạo đại từ ngôi thứ ba riêng cho NỮ GIỚI.',
       cf:'他 (tā – "anh ấy, ông ấy", cùng âm đọc nhưng dùng bộ 亻cho nam giới)',w:'她是 / 她的 / 她也'},
    ]},
-  {n:9,zh:'喂',py:'wèi',pos:'Thán từ',vn:'a lô',em:'📞',lesson:3,
+  {n:9,zh:'喂',py:'wèi',pos:'Thán từ',vn:'a lô', hv: 'úy',em:'📞',lesson:3,
    ex_zh:'喂，一飞！',ex_py:'Wèi, Yīfēi!',ex_vn:'A lô, Nhất Phi à!',
    exList:[
      {zh:'喂，一飞！',py:'Wèi, Yīfēi!',vn:'A lô, Nhất Phi à!'},
@@ -100,7 +100,7 @@ var vocabData = [
       tip:'口(miệng, phát ra tiếng) + 畏(e dè, thận trọng) → cất tiếng gọi một cách nhẹ nhàng để gây chú ý, giống tiếng "A LÔ" khi bắt đầu cuộc gọi.',
       cf:'猥 (wěi – "bỉ ổi", cũng có 畏 nhưng bộ 犭 bên trái)',w:'喂，你好 / 喂？'},
    ]},
-  {n:10,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái',em:'👧',lesson:3,
+  {n:10,zh:'姐姐',py:'jiějie',pos:'Danh từ',vn:'chị gái', hv: 'thư thư',em:'👧',lesson:3,
    ex_zh:'姐姐！',ex_py:'Jiějie!',ex_vn:'Chị ơi!',
    exList:[
      {zh:'姐姐！',py:'Jiějie!',vn:'Chị ơi!'},
@@ -110,7 +110,7 @@ var vocabData = [
       tip:'女(phụ nữ) + 且(thêm nữa, hình các lớp chồng lên nhau) → người phụ nữ sinh ra TRƯỚC, đứng ở bậc trên trong nhà, tức là CHỊ GÁI.',
       cf:'组 (zǔ – "tổ, nhóm", bộ 纟 bên trái thay vì 女")',w:'姐姐 / 姐妹'},
    ]},
-  {n:11,zh:'工作',py:'gōngzuò',pos:'Danh từ',vn:'công việc',em:'💼',lesson:3,
+  {n:11,zh:'工作',py:'gōngzuò',pos:'Danh từ',vn:'công việc', hv: 'công tác',em:'💼',lesson:3,
    ex_zh:'你工作还忙吗？',ex_py:'Nǐ gōngzuò hái máng ma?',ex_vn:'Công việc của em vẫn bận chứ?',
    exList:[
      {zh:'你工作还忙吗？',py:'Nǐ gōngzuò hái máng ma?',vn:'Công việc của em vẫn bận chứ?'},
@@ -123,7 +123,7 @@ var vocabData = [
       tip:'亻(người) + 乍(bỗng nhiên, vừa mới) → người bắt tay vào LÀM một việc ngay khi vừa nghĩ ra.',
       cf:'昨 (zuó – "hôm qua", cũng có 乍 nhưng bộ 日 bên trái)',w:'工作 / 作业'},
    ]},
-  {n:12,zh:'还',py:'hái',pos:'Phó từ',vn:'vẫn',em:'🔁',lesson:3,
+  {n:12,zh:'还',py:'hái',pos:'Phó từ',vn:'vẫn', hv: 'hoàn',em:'🔁',lesson:3,
    ex_zh:'对，还很忙。',ex_py:'Duì, hái hěn máng.',ex_vn:'Vâng, vẫn rất bận.',
    exList:[
      {zh:'对，还很忙。',py:'Duì, hái hěn máng.',vn:'Vâng, vẫn rất bận.'},
@@ -133,7 +133,7 @@ var vocabData = [
       tip:'不(chưa, không) + 辶(di chuyển, tiếp diễn) → việc CHƯA xong nhưng vẫn tiếp tục DI CHUYỂN/duy trì, nghĩa là "VẪN CÒN".',
       cf:'达 (dá – "đạt tới", cũng có bộ 辶 nhưng bên trong là 大")',w:'还忙 / 还是 / 还有'},
    ]},
-  {n:13,zh:'忙',py:'máng',pos:'Tính từ',vn:'bận, bận rộn',em:'😰',lesson:3,
+  {n:13,zh:'忙',py:'máng',pos:'Tính từ',vn:'bận, bận rộn', hv: 'mang',em:'😰',lesson:3,
    ex_zh:'你也很忙吗？',ex_py:'Nǐ yě hěn máng ma?',ex_vn:'Chị cũng bận lắm phải không?',
    exList:[
      {zh:'你也很忙吗？',py:'Nǐ yě hěn máng ma?',vn:'Chị cũng bận lắm phải không?'},
@@ -143,7 +143,7 @@ var vocabData = [
       tip:'忄(tâm/lòng dạ) + 亡(mất) → trong lòng cảm thấy như MẤT thời gian vì quá BẬN RỘN.',
       cf:'忘 (wàng – "quên", cũng có 亡" nhưng ở trên)',w:'很忙 / 工作忙'},
    ]},
-  {n:14,zh:'吗',py:'ma',pos:'Trợ từ',vn:'…phải không? (dùng ở cuối câu để hỏi)',em:'❔',lesson:3,
+  {n:14,zh:'吗',py:'ma',pos:'Trợ từ',vn:'…phải không? (dùng ở cuối câu để hỏi)', hv: 'ma',em:'❔',lesson:3,
    ex_zh:'你工作还忙吗？',ex_py:'Nǐ gōngzuò hái máng ma?',ex_vn:'Công việc của em vẫn bận chứ?',
    exList:[
      {zh:'你工作还忙吗？',py:'Nǐ gōngzuò hái máng ma?',vn:'Công việc của em vẫn bận chứ?'},
@@ -153,7 +153,7 @@ var vocabData = [
       tip:'口(miệng, lời nói) + 马(con ngựa, mượn âm đọc gần "ma") → mượn âm của 马 ghép bộ 口 để tạo trợ từ hỏi cuối câu, không liên quan nghĩa "ngựa".',
       cf:'妈 (mā – "mẹ", cũng có 马 nhưng bộ 女 bên trái)',w:'忙吗 / 你好吗 / 是吗'},
    ]},
-  {n:15,zh:'对',py:'duì',pos:'Tính từ',vn:'đúng',em:'✔️',lesson:3,
+  {n:15,zh:'对',py:'duì',pos:'Tính từ',vn:'đúng', hv: 'đối',em:'✔️',lesson:3,
    ex_zh:'对，还很忙。',ex_py:'Duì, hái hěn máng.',ex_vn:'Vâng, vẫn rất bận.',
    exList:[
      {zh:'对，还很忙。',py:'Duì, hái hěn máng.',vn:'Vâng, vẫn rất bận.'},
@@ -163,7 +163,7 @@ var vocabData = [
       tip:'Bên trái là hình rút gọn tượng trưng lời nói/ý kiến, bên phải là 寸(chuẩn mực) → so ý kiến với CHUẨN MỰC thấy khớp thì là ĐÚNG.',
       cf:'付 (fù – "trả (tiền)", cũng có 寸 bên phải nhưng bộ 亻bên trái)',w:'对，还很忙 / 对不起 / 不对'},
    ]},
-  {n:16,zh:'太',py:'tài',pos:'Phó từ',vn:'quá, lắm',em:'⚡',lesson:3,
+  {n:16,zh:'太',py:'tài',pos:'Phó từ',vn:'quá, lắm', hv: 'thái',em:'⚡',lesson:3,
    ex_zh:'我不太忙。',ex_py:'Wǒ bú tài máng.',ex_vn:'Tôi không bận lắm.',
    exList:[
      {zh:'我不太忙。',py:'Wǒ bú tài máng.',vn:'Tôi không bận lắm.'},
@@ -173,7 +173,7 @@ var vocabData = [
       tip:'大(to lớn) thêm một dấu CHẤM nhỏ bên dưới như phóng đại thêm nữa → "to đến mức QUÁ, LẮM".',
       cf:'大 (dà – "to, lớn", thiếu dấu chấm so với 太")',w:'太忙 / 太好了 / 不太'},
    ]},
-  {n:17,zh:'我们',py:'wǒmen',pos:'Đại từ',vn:'chúng tôi, chúng ta',em:'🙋‍♀️🙋',lesson:3,
+  {n:17,zh:'我们',py:'wǒmen',pos:'Đại từ',vn:'chúng tôi, chúng ta', hv: 'ngã môn',em:'🙋‍♀️🙋',lesson:3,
    ex_zh:'我们很想你。',ex_py:'Wǒmen hěn xiǎng nǐ.',ex_vn:'Chúng tôi rất nhớ em.',
    exList:[
      {zh:'我们很想你。',py:'Wǒmen hěn xiǎng nǐ.',vn:'Chúng tôi rất nhớ em.'},
@@ -186,7 +186,7 @@ var vocabData = [
       tip:'亻(người) + 门(cái cửa, mượn âm đọc gần "men") → như mở CỬA đón nhiều NGƯỜI vào, biểu thị số NHIỀU cho đại từ chỉ người.',
       cf:'门 (mén – "cửa", thiếu bộ 亻bên trái)',w:'我们 / 你们 / 他们'},
    ]},
-  {n:18,zh:'想',py:'xiǎng',pos:'Động từ',vn:'nhớ',em:'💭',lesson:3,
+  {n:18,zh:'想',py:'xiǎng',pos:'Động từ',vn:'nhớ', hv: 'tưởng',em:'💭',lesson:3,
    ex_zh:'我也想你们。',ex_py:'Wǒ yě xiǎng nǐmen.',ex_vn:'Em cũng nhớ mọi người.',
    exList:[
      {zh:'我也想你们。',py:'Wǒ yě xiǎng nǐmen.',vn:'Em cũng nhớ mọi người.'},
@@ -196,7 +196,7 @@ var vocabData = [
       tip:'相(nhìn nhau) + 心(trái tim) → trong TIM luôn hướng về hình ảnh người kia = NHỚ, NGHĨ tới.',
       cf:'相 (xiāng – "lẫn nhau", phần trên của 想")',w:'想你 / 我想'},
    ]},
-  {n:19,zh:'中国',py:'Zhōngguó',pos:'Danh từ riêng',vn:'Trung Quốc',em:'🇨🇳',lesson:1,
+  {n:19,zh:'中国',py:'Zhōngguó',pos:'Danh từ riêng',vn:'Trung Quốc', hv: 'Trung Quốc',em:'🇨🇳',lesson:1,
    ex_zh:'我是中国人。',ex_py:'Wǒ shì Zhōngguó rén.',ex_vn:'Tôi là người Trung Quốc.',
    exList:[
      {zh:'我是中国人。',py:'Wǒ shì Zhōngguó rén.',vn:'Tôi là người Trung Quốc.'},
@@ -209,7 +209,7 @@ var vocabData = [
       tip:'囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.',
       cf:'固 (gù – "vững chắc", cũng có 囗 bao ngoài nhưng bên trong là 古")',w:'中国 / 法国 / 泰国'},
    ]},
-  {n:20,zh:'法国',py:'Fǎguó',pos:'Danh từ riêng',vn:'Pháp',em:'🇫🇷',lesson:1,
+  {n:20,zh:'法国',py:'Fǎguó',pos:'Danh từ riêng',vn:'Pháp', hv: 'Pháp Quốc',em:'🇫🇷',lesson:1,
    ex_zh:'我是法国人。',ex_py:'Wǒ shì Fǎguó rén.',ex_vn:'Tôi là người Pháp.',
    exList:[
      {zh:'我是法国人。',py:'Wǒ shì Fǎguó rén.',vn:'Tôi là người Pháp.'},
@@ -222,7 +222,7 @@ var vocabData = [
       tip:'囗(đường biên giới bao quanh) + 玉(ngọc quý) → một vùng đất có ĐƯỜNG BIÊN bao bọc lấy báu vật (ngọc) bên trong, tượng trưng cho một QUỐC GIA.',
       cf:'固 (gù – "vững chắc", cũng có 囗 bao ngoài nhưng bên trong là 古")',w:'中国 / 法国 / 泰国'},
    ]},
-  {n:21,zh:'中文',py:'Zhōngwén',pos:'Danh từ riêng',vn:'tiếng Trung Quốc',em:'🈶',lesson:1,
+  {n:21,zh:'中文',py:'Zhōngwén',pos:'Danh từ riêng',vn:'tiếng Trung Quốc', hv: 'Trung Văn',em:'🈶',lesson:1,
    ex_zh:'我的中文老师也是中国人。',ex_py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',ex_vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.',
    exList:[
      {zh:'我的中文老师也是中国人。',py:'Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.',vn:'Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.'},
@@ -235,7 +235,7 @@ var vocabData = [
       tip:'Chữ tượng hình cổ mô phỏng hoạ tiết đan xen trên thân người/đồ vật thời xưa → dần mang nghĩa CHỮ VIẾT, VĂN CHƯƠNG.',
       cf:'父 (fù – "cha", hai nét đầu là hai phẩy chéo thay vì chấm + ngang)',w:'中文 / 文化 / 文字'},
    ]},
-  {n:22,zh:'泰国',py:'Tàiguó',pos:'Danh từ riêng',vn:'Thái Lan',em:'🇹🇭',lesson:2,
+  {n:22,zh:'泰国',py:'Tàiguó',pos:'Danh từ riêng',vn:'Thái Lan', hv: 'Thái Quốc',em:'🇹🇭',lesson:2,
    ex_zh:'她也是泰国人。',ex_py:'Tā yě shì Tàiguó rén.',ex_vn:'Cô ấy cũng là người Thái Lan.',
    exList:[
      {zh:'她也是泰国人。',py:'Tā yě shì Tàiguó rén.',vn:'Cô ấy cũng là người Thái Lan.'},

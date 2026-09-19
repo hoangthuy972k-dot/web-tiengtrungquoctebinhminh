@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'有',py:'yǒu',pos:'Động từ',vn:'có',em:'✋',lesson:1,
+  {n:1,zh:'有',py:'yǒu',pos:'Động từ',vn:'có', hv: 'hữu',em:'✋',lesson:1,
    ex_zh:'她有二十个学生。',ex_py:'Tā yǒu èrshí gè xuésheng.',ex_vn:'Cô ấy có hai mươi học sinh.',
    exList:[
      {zh:'她有二十个学生。',py:'Tā yǒu èrshí gè xuésheng.',vn:'Cô ấy có hai mươi học sinh.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Bàn tay ナ cầm miếng thịt 月 → sở hữu vật gì đó = CÓ.',
       cf:'冇 (mǎo – phương ngữ "không có")',w:'有学生 / 没有'},
    ]},
-  {n:2,zh:'多少',py:'duōshao',pos:'Đại từ',vn:'bao nhiêu',em:'❓',lesson:1,
+  {n:2,zh:'多少',py:'duōshao',pos:'Đại từ',vn:'bao nhiêu', hv: 'đa thiểu',em:'❓',lesson:1,
    ex_zh:'她有多少个学生？',ex_py:'Tā yǒu duōshao gè xuésheng?',ex_vn:'Cô ấy có bao nhiêu học sinh?',
    exList:[
      {zh:'她有多少个学生？',py:'Tā yǒu duōshao gè xuésheng?',vn:'Cô ấy có bao nhiêu học sinh?'},
@@ -27,7 +27,7 @@ var vocabData = [
       tip:'Từ chữ 小 (nhỏ) thêm một nét phẩy khiến số lượng còn nhỏ hơn nữa → ÍT.',
       cf:'小 (xiǎo – "nhỏ", chỉ khác chữ 少 đúng một nét)',w:'多少 / 不少 / 少了'},
    ]},
-  {n:3,zh:'个',py:'gè',pos:'Lượng từ',vn:'(dùng chung cho nhiều danh từ)',em:'🔢',lesson:1,
+  {n:3,zh:'个',py:'gè',pos:'Lượng từ',vn:'(dùng chung cho nhiều danh từ)', hv: 'cá',em:'🔢',lesson:1,
    ex_zh:'她有二十个学生。',ex_py:'Tā yǒu èrshí gè xuésheng.',ex_vn:'Cô ấy có hai mươi học sinh.',
    exList:[
      {zh:'她有二十个学生。',py:'Tā yǒu èrshí gè xuésheng.',vn:'Cô ấy có hai mươi học sinh.'},
@@ -38,7 +38,7 @@ var vocabData = [
       tip:'Hình dáng giống một NGƯỜI 人 đứng thẳng có thêm một nét sổ như cây que đếm — dùng để ĐẾM người, đồ vật chung chung.',
       cf:'介 (jiè – "giới thiệu", phía trên có bộ 八")',w:'一个 / 几个 / 个子'},
    ]},
-  {n:4,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai',em:'👦',lesson:2,
+  {n:4,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai', hv: 'ca ca',em:'👦',lesson:2,
    ex_zh:'我有两个哥哥，你呢？',ex_py:'Wǒ yǒu liǎng gè gēge, nǐ ne?',ex_vn:'Chị có hai anh trai, em thì sao?',
    exList:[
      {zh:'我有两个哥哥，你呢？',py:'Wǒ yǒu liǎng gè gēge, nǐ ne?',vn:'Chị có hai anh trai, em thì sao?'},
@@ -49,7 +49,7 @@ var vocabData = [
       tip:'Hai chữ 可 (khả – có thể) xếp chồng lên nhau, như hai MIỆNG 口 gọi nhau, réo nhau — hình ảnh ANH TRAI luôn gọi bảo, chăm em.',
       cf:'歌 (gē – "hát", thêm bộ 欠" bên phải)',w:'哥哥 / 大哥'},
    ]},
-  {n:5,zh:'呢',py:'ne',pos:'Trợ từ',vn:'thì sao (dùng ở cuối câu hỏi)',em:'❔',lesson:2,
+  {n:5,zh:'呢',py:'ne',pos:'Trợ từ',vn:'thì sao (dùng ở cuối câu hỏi)', hv: 'ni',em:'❔',lesson:2,
    ex_zh:'我有两个哥哥，你呢？',ex_py:'Wǒ yǒu liǎng gè gēge, nǐ ne?',ex_vn:'Chị có hai anh trai, em thì sao?',
    exList:[
      {zh:'我有两个哥哥，你呢？',py:'Wǒ yǒu liǎng gè gēge, nǐ ne?',vn:'Chị có hai anh trai, em thì sao?'},
@@ -60,7 +60,7 @@ var vocabData = [
       tip:'Bộ Miệng 口 bên trái + 尼 (âm "ni") bên phải — dùng MIỆNG hỏi lại "còn... thì sao?" ở cuối câu hỏi.',
       cf:'尼 (ní – "ni cô", thiếu bộ 口" bên trái)',w:'你呢 / 他呢 / 我呢'},
    ]},
-  {n:6,zh:'没有',py:'méiyǒu',pos:'Động từ',vn:'không có',em:'🚫',lesson:2,
+  {n:6,zh:'没有',py:'méiyǒu',pos:'Động từ',vn:'không có', hv: 'một hữu',em:'🚫',lesson:2,
    ex_zh:'我没有哥哥。',ex_py:'Wǒ méiyǒu gēge.',ex_vn:'Em không có anh trai.',
    exList:[
      {zh:'我没有哥哥。',py:'Wǒ méiyǒu gēge.',vn:'Em không có anh trai.'},
@@ -73,7 +73,7 @@ var vocabData = [
       tip:'Bàn tay ナ cầm miếng thịt 月 → sở hữu vật gì đó = CÓ.',
       cf:'冇 (mǎo – phương ngữ "không có")',w:'有学生 / 没有'},
    ]},
-  {n:7,zh:'家',py:'jiā',pos:'Danh từ',vn:'gia đình, nhà',em:'🏠',lesson:2,
+  {n:7,zh:'家',py:'jiā',pos:'Danh từ',vn:'gia đình, nhà', hv: 'gia',em:'🏠',lesson:2,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà em có mấy người?',
    exList:[
      {zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà em có mấy người?'},
@@ -84,7 +84,7 @@ var vocabData = [
       tip:'Mái nhà 宀 + 豕(con lợn) → thời xưa nuôi lợn dưới nhà là dấu hiệu có một GIA ĐÌNH ổn định.',
       cf:'豪 (háo – "hào kiệt", cũng có 豕")',w:'我家 / 家人'},
    ]},
-  {n:8,zh:'几',py:'jǐ',pos:'Đại từ',vn:'mấy',em:'🔟',lesson:2,
+  {n:8,zh:'几',py:'jǐ',pos:'Đại từ',vn:'mấy', hv: 'kỉ',em:'🔟',lesson:2,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà em có mấy người?',
    exList:[
      {zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà em có mấy người?'},
@@ -95,7 +95,7 @@ var vocabData = [
       tip:'Hình dáng giống một CHIẾC BÀN NHỎ có chân cong thời xưa — mượn nghĩa hỏi "có MẤY cái", tức hỏi một số lượng nhỏ.',
       cf:'儿 (ér – "con", hai nét khá giống nhưng nét cuối khác hướng)',w:'几口人 / 几岁 / 几个'},
    ]},
-  {n:9,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'(đếm người trong gia đình)',em:'👪',lesson:2,
+  {n:9,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'(đếm người trong gia đình)', hv: 'khẩu',em:'👪',lesson:2,
    ex_zh:'我家有四口人。',ex_py:'Wǒ jiā yǒu sì kǒu rén.',ex_vn:'Nhà em có bốn người.',
    exList:[
      {zh:'我家有四口人。',py:'Wǒ jiā yǒu sì kǒu rén.',vn:'Nhà em có bốn người.'},
@@ -105,7 +105,7 @@ var vocabData = [
       tip:'Hình vuông giống hình dạng cái MIỆNG đang mở — mượn nghĩa "miệng ăn" trong nhà để đếm số NGƯỜI trong gia đình.',
       cf:'日 (rì – "mặt trời, ngày", có thêm một nét ngang ở giữa)',w:'一口人 / 几口人 / 人口'},
    ]},
-  {n:10,zh:'爸爸',py:'bàba',pos:'Danh từ',vn:'bố, ba',em:'👨',lesson:2,
+  {n:10,zh:'爸爸',py:'bàba',pos:'Danh từ',vn:'bố, ba', hv: 'ba ba',em:'👨',lesson:2,
    ex_zh:'我家有四口人，爸爸、妈妈、妹妹和我。',ex_py:'Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.',ex_vn:'Nhà em có bốn người: bố, mẹ, em gái và em.',
    exList:[
      {zh:'我家有四口人，爸爸、妈妈、妹妹和我。',py:'Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.',vn:'Nhà em có bốn người: bố, mẹ, em gái và em.'},
@@ -115,7 +115,7 @@ var vocabData = [
       tip:'Bộ Cha 父 ở trên + 巴 (âm "ba") ở dưới — ghép nghĩa CHA với âm đọc "ba" tạo thành tiếng gọi thân mật BỐ.',
       cf:'巴 (bā – "bám lấy", thiếu bộ 父" phía trên)',w:'爸爸 / 爸妈'},
    ]},
-  {n:11,zh:'妈妈',py:'māma',pos:'Danh từ',vn:'mẹ',em:'👩',lesson:2,
+  {n:11,zh:'妈妈',py:'māma',pos:'Danh từ',vn:'mẹ', hv: 'ma ma',em:'👩',lesson:2,
    ex_zh:'我家有四口人，爸爸、妈妈、妹妹和我。',ex_py:'Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.',ex_vn:'Nhà em có bốn người: bố, mẹ, em gái và em.',
    exList:[
      {zh:'我家有四口人，爸爸、妈妈、妹妹和我。',py:'Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.',vn:'Nhà em có bốn người: bố, mẹ, em gái và em.'},
@@ -125,7 +125,7 @@ var vocabData = [
       tip:'Bộ Nữ 女 (phụ nữ) + 马 (âm gần giống "ma/má") — người PHỤ NỮ sinh ra ta, gọi thân mật là MẸ.',
       cf:'骂 (mà – "mắng", cũng có 马" nhưng thêm 口口 phía trên)',w:'妈妈 / 爸妈'},
    ]},
-  {n:12,zh:'妹妹',py:'mèimei',pos:'Danh từ',vn:'em gái',em:'👧',lesson:2,
+  {n:12,zh:'妹妹',py:'mèimei',pos:'Danh từ',vn:'em gái', hv: 'muội muội',em:'👧',lesson:2,
    ex_zh:'我家有四口人，爸爸、妈妈、妹妹和我。',ex_py:'Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.',ex_vn:'Nhà em có bốn người: bố, mẹ, em gái và em.',
    exList:[
      {zh:'我家有四口人，爸爸、妈妈、妹妹和我。',py:'Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.',vn:'Nhà em có bốn người: bố, mẹ, em gái và em.'},
@@ -135,7 +135,7 @@ var vocabData = [
       tip:'Bộ Nữ 女 + 未 (vị – "chưa tới") — người con gái CHƯA trưởng thành bằng chị/anh trong nhà = EM GÁI.',
       cf:'味 (wèi – "vị, mùi", cũng có 未" nhưng bộ 口")',w:'妹妹 / 姐妹'},
    ]},
-  {n:13,zh:'和',py:'hé',pos:'Liên từ',vn:'và',em:'➕',lesson:2,
+  {n:13,zh:'和',py:'hé',pos:'Liên từ',vn:'và', hv: 'hòa',em:'➕',lesson:2,
    ex_zh:'爸爸、妈妈、妹妹和我。',ex_py:'Bàba, māma, mèimei hé wǒ.',ex_vn:'Bố, mẹ, em gái và em.',
    exList:[
      {zh:'爸爸、妈妈、妹妹和我。',py:'Bàba, māma, mèimei hé wǒ.',vn:'Bố, mẹ, em gái và em.'},
@@ -145,7 +145,7 @@ var vocabData = [
       tip:'Bộ Lúa 禾 (lương thực) + 口 (miệng, người ăn) — có LÚA để mọi MIỆNG cùng no đủ, sống HOÀ HỢP; dùng để nối các thứ với nhau = VÀ.',
       cf:'合 (hé – "hợp lại", đồng âm nhưng khác chữ, không có bộ 禾")',w:'和我 / 你和他 / 和平'},
    ]},
-  {n:14,zh:'儿子',py:'érzi',pos:'Danh từ',vn:'con trai',em:'👦',lesson:3,
+  {n:14,zh:'儿子',py:'érzi',pos:'Danh từ',vn:'con trai', hv: 'nhi tử',em:'👦',lesson:3,
    ex_zh:'我有两个孩子，一个儿子，一个女儿。',ex_py:'Wǒ yǒu liǎng gè háizi, yí gè érzi, yí gè nǚ\'ér.',ex_vn:'Tôi có hai con, một con trai, một con gái.',
    exList:[
      {zh:'我有两个孩子，一个儿子，一个女儿。',py:'Wǒ yǒu liǎng gè háizi, yí gè érzi, yí gè nǚ\'ér.',vn:'Tôi có hai con, một con trai, một con gái.'},
@@ -159,7 +159,7 @@ var vocabData = [
       tip:'Hình ảnh một ĐỨA TRẺ sơ sinh quấn tã, hai tay dang ra — gốc nghĩa là CON, sau này dùng làm hậu tố danh từ (儿子, 孩子…).',
       cf:'孑 (jié – "cô độc", thiếu nét ngang bên phải")',w:'儿子 / 孩子 / 桌子'},
    ]},
-  {n:15,zh:'孩子',py:'háizi',pos:'Danh từ',vn:'con, trẻ con',em:'🧒',lesson:3,
+  {n:15,zh:'孩子',py:'háizi',pos:'Danh từ',vn:'con, trẻ con', hv: 'hài tử',em:'🧒',lesson:3,
    ex_zh:'我有两个孩子。',ex_py:'Wǒ yǒu liǎng gè háizi.',ex_vn:'Tôi có hai con.',
    exList:[
      {zh:'我有两个孩子。',py:'Wǒ yǒu liǎng gè háizi.',vn:'Tôi có hai con.'},
@@ -172,7 +172,7 @@ var vocabData = [
       tip:'Hình ảnh một ĐỨA TRẺ sơ sinh quấn tã, hai tay dang ra — gốc nghĩa là CON, sau này dùng làm hậu tố danh từ (儿子, 孩子…).',
       cf:'孑 (jié – "cô độc", thiếu nét ngang bên phải")',w:'孩子 / 儿子 / 桌子'},
    ]},
-  {n:16,zh:'女儿',py:'nǚ\'ér',pos:'Danh từ',vn:'con gái',em:'👧',lesson:3,
+  {n:16,zh:'女儿',py:'nǚ\'ér',pos:'Danh từ',vn:'con gái', hv: 'nữ nhi',em:'👧',lesson:3,
    ex_zh:'您女儿多大？',ex_py:'Nín nǚ\'ér duō dà?',ex_vn:'Con gái chị bao nhiêu tuổi?',
    exList:[
      {zh:'您女儿多大？',py:'Nín nǚ\'ér duō dà?',vn:'Con gái chị bao nhiêu tuổi?'},
@@ -185,7 +185,7 @@ var vocabData = [
       tip:'Hình dáng giống đôi CHÂN của một đứa trẻ đang đứng — tượng trưng cho CON, TRẺ NHỎ.',
       cf:'几 (jǐ – "mấy", nét đầu viết theo hướng khác)',w:'女儿 / 儿子 / 儿童'},
    ]},
-  {n:17,zh:'岁',py:'suì',pos:'Lượng từ',vn:'tuổi',em:'🎂',lesson:3,
+  {n:17,zh:'岁',py:'suì',pos:'Lượng từ',vn:'tuổi', hv: 'tuế',em:'🎂',lesson:3,
    ex_zh:'他今年五岁。',ex_py:'Tā jīnnián wǔ suì.',ex_vn:'Cháu năm nay năm tuổi.',
    exList:[
      {zh:'他今年五岁。',py:'Tā jīnnián wǔ suì.',vn:'Cháu năm nay năm tuổi.'},
@@ -196,7 +196,7 @@ var vocabData = [
       tip:'Phần trên giống hình NÚI 山 vững chãi, phần dưới là 夕 (năm tháng trôi qua) — mỗi năm tháng qua đi tích thành TUỔI như núi cao dần.',
       cf:'岂 (qǐ – "lẽ nào", phần trên cũng giống 山")',w:'岁 / 几岁 / 多大'},
    ]},
-  {n:18,zh:'他',py:'tā',pos:'Đại từ',vn:'anh ấy, cậu ấy, ông ấy',em:'👨',lesson:3,
+  {n:18,zh:'他',py:'tā',pos:'Đại từ',vn:'anh ấy, cậu ấy, ông ấy', hv: 'tha',em:'👨',lesson:3,
    ex_zh:'他今年五岁。',ex_py:'Tā jīnnián wǔ suì.',ex_vn:'Cháu năm nay năm tuổi.',
    exList:[
      {zh:'他今年五岁。',py:'Tā jīnnián wǔ suì.',vn:'Cháu năm nay năm tuổi.'},
@@ -206,7 +206,7 @@ var vocabData = [
       tip:'Bộ Người 亻 + 也 (âm "dã", cũng nghĩa "cũng") — chỉ một NGƯỜI KHÁC ngoài mình đang được nhắc tới = ANH ẤY.',
       cf:'她 (tā – "cô ấy", cùng âm nhưng đổi bộ 女")',w:'他是 / 他的 / 他们'},
    ]},
-  {n:19,zh:'今年',py:'jīnnián',pos:'Danh từ',vn:'năm nay',em:'📅',lesson:3,
+  {n:19,zh:'今年',py:'jīnnián',pos:'Danh từ',vn:'năm nay', hv: 'kim niên',em:'📅',lesson:3,
    ex_zh:'他今年五岁。',ex_py:'Tā jīnnián wǔ suì.',ex_vn:'Cháu năm nay năm tuổi.',
    exList:[
      {zh:'他今年五岁。',py:'Tā jīnnián wǔ suì.',vn:'Cháu năm nay năm tuổi.'},
@@ -220,7 +220,7 @@ var vocabData = [
       tip:'Chữ tượng hình cách điệu từ hình ảnh người vác bó lúa — mỗi vụ MÙA LÚA thu hoạch xong tương ứng với một NĂM trôi qua.',
       cf:'午 (wǔ – "giữa trưa", thiếu một nét ngang so với 年")',w:'今年 / 明年 / 去年'},
    ]},
-  {n:20,zh:'多',py:'duō',pos:'Đại từ',vn:'bao nhiêu (phó từ chỉ mức độ)',em:'📏',lesson:3,
+  {n:20,zh:'多',py:'duō',pos:'Đại từ',vn:'bao nhiêu (phó từ chỉ mức độ)', hv: 'đa',em:'📏',lesson:3,
    ex_zh:'您女儿多大？',ex_py:'Nín nǚ\'ér duō dà?',ex_vn:'Con gái chị bao nhiêu tuổi?',
    exList:[
      {zh:'您女儿多大？',py:'Nín nǚ\'ér duō dà?',vn:'Con gái chị bao nhiêu tuổi?'},
@@ -230,7 +230,7 @@ var vocabData = [
       tip:'Hai chữ 夕 (buổi tối) chồng lên nhau — trải qua NHIỀU đêm mới thành số lượng lớn = NHIỀU.',
       cf:'夕 (xī – "buổi tối", chỉ bằng một nửa chữ 多")',w:'多大 / 多少 / 很多'},
    ]},
-  {n:21,zh:'大',py:'dà',pos:'Tính từ',vn:'lớn (chỉ tuổi tác)',em:'📈',lesson:3,
+  {n:21,zh:'大',py:'dà',pos:'Tính từ',vn:'lớn (chỉ tuổi tác)', hv: 'đại',em:'📈',lesson:3,
    ex_zh:'您女儿多大？',ex_py:'Nín nǚ\'ér duō dà?',ex_vn:'Con gái chị bao nhiêu tuổi?',
    exList:[
      {zh:'您女儿多大？',py:'Nín nǚ\'ér duō dà?',vn:'Con gái chị bao nhiêu tuổi? (dùng 多大 để hỏi tuổi người trên 10 tuổi, khác 几岁 dùng cho trẻ dưới 10 tuổi)'},

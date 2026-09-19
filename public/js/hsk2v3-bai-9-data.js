@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '坏', py: 'huài', pos: 'Tính từ', vn: 'hỏng; xấu', em: '💥', img: '/images/hsk2v3-bai-9/huai.jpg', lesson: 1,
+    n: 1, zh: '坏', py: 'huài', pos: 'Tính từ', vn: 'hỏng; xấu', hv: 'hoại', em: '💥', img: '/images/hsk2v3-bai-9/huai.jpg', lesson: 1,
     ex_zh: '儿子的裤子坏了，我们给他买条新的吧。', ex_py: 'Érzi de kùzi huài le, wǒmen gěi tā mǎi tiáo xīn de ba.', ex_vn: 'Quần của con trai bị rách rồi, chúng ta mua cho con một chiếc mới đi.',
     exList: [
       { zh: '儿子的裤子坏了，我们给他买条新的吧。', py: 'Érzi de kùzi huài le, wǒmen gěi tā mǎi tiáo xīn de ba.', vn: 'Quần của con trai bị rách rồi, chúng ta mua cho con một chiếc mới đi.' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '坏', p: 'huài', type: '形声字 · Chữ hình thanh', st: 7, ord: '土 → 不', rad: '土 (thổ – đất)', mean: 'hỏng, xấu', tip: '坏了 = đã hỏng; trái nghĩa với 好.', cf: '好 (hǎo – tốt)', w: '坏了 / 坏人 / 弄坏' }]
   },
   {
-    n: 2, zh: '旁边', py: 'pángbiān', pos: 'Danh từ', vn: 'bên cạnh', em: '↔️', img: '/images/hsk2v3-bai-9/pangbian.jpg', lesson: 1,
+    n: 2, zh: '旁边', py: 'pángbiān', pos: 'Danh từ', vn: 'bên cạnh', hv: 'bàng biên', em: '↔️', img: '/images/hsk2v3-bai-9/pangbian.jpg', lesson: 1,
     ex_zh: '旁边那个男孩儿就穿了这样的裤子。', ex_py: 'Pángbiān nàge nánháir jiù chuānle zhèyàng de kùzi.', ex_vn: 'Cậu bé bên cạnh đang mặc kiểu quần này đấy.',
     exList: [
       { zh: '旁边那个男孩儿就穿了这样的裤子。', py: 'Pángbiān nàge nánháir jiù chuānle zhèyàng de kùzi.', vn: 'Cậu bé bên cạnh đang mặc kiểu quần này đấy.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '旁', p: 'páng', type: '形声字 · Chữ hình thanh', st: 10, ord: '亠 → 丷 → 冖 → 方', rad: '方 (phương)', mean: 'bên cạnh', tip: 'Cùng nhóm với 左边、右边、上边、下边 (bài 8).', cf: '', w: '旁边 / 在……旁边' }]
   },
   {
-    n: 3, zh: '男孩儿', py: 'nánháir', pos: 'Danh từ', vn: 'con trai, cậu bé', em: '👦', img: '/images/hsk2v3-bai-9/nanhair.jpg', lesson: 1,
+    n: 3, zh: '男孩儿', py: 'nánháir', pos: 'Danh từ', vn: 'con trai, cậu bé', hv: 'nam hài nhi', em: '👦', img: '/images/hsk2v3-bai-9/nanhair.jpg', lesson: 1,
     ex_zh: '旁边那个男孩儿就穿了这样的裤子。', ex_py: 'Pángbiān nàge nánháir jiù chuānle zhèyàng de kùzi.', ex_vn: 'Cậu bé bên cạnh đang mặc kiểu quần này đấy.',
     exList: [
       { zh: '旁边那个男孩儿就穿了这样的裤子。', py: 'Pángbiān nàge nánháir jiù chuānle zhèyàng de kùzi.', vn: 'Cậu bé bên cạnh đang mặc kiểu quần này đấy.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '男', p: 'nán', type: '会意字 · Chữ hội ý', st: 7, ord: '田 → 力', rad: '田 (điền – ruộng)', mean: 'nam, con trai', tip: '田 (ruộng) + 力 (sức): người làm ruộng — nghĩa "nam".', cf: '女孩儿 (nǚháir – bé gái)', w: '男孩儿 / 男人 / 男的' }]
   },
   {
-    n: 4, zh: '这样', py: 'zhèyàng', pos: 'Đại từ', vn: 'như thế này, kiểu này', em: '👆', lesson: 1,
+    n: 4, zh: '这样', py: 'zhèyàng', pos: 'Đại từ', vn: 'như thế này, kiểu này', hv: 'giá dạng', em: '👆', lesson: 1,
     ex_zh: '他就穿了这样的裤子，我觉得很好看啊！', ex_py: 'Tā jiù chuānle zhèyàng de kùzi, wǒ juéde hěn hǎokàn a!', ex_vn: 'Cậu ấy mặc kiểu quần này đấy, em thấy rất đẹp mà!',
     exList: [
       { zh: '他就穿了这样的裤子，我觉得很好看啊！', py: 'Tā jiù chuānle zhèyàng de kùzi, wǒ juéde hěn hǎokàn a!', vn: 'Cậu ấy mặc kiểu quần này đấy, em thấy rất đẹp mà!' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '样', p: 'yàng', type: '形声字 · Chữ hình thanh', st: 10, ord: '木 → 羊', rad: '木 (mộc – cây)', mean: 'dáng vẻ, kiểu', tip: '这样 ↔ 那样; cùng chữ 样 trong 怎么样.', cf: '那样 (nàyàng)', w: '这样 / 那样 / 怎么样' }]
   },
   {
-    n: 5, zh: '个子', py: 'gèzi', pos: 'Danh từ', vn: 'chiều cao, vóc người', em: '📐', img: '/images/hsk2v3-bai-9/gezi.jpg', lesson: 1,
+    n: 5, zh: '个子', py: 'gèzi', pos: 'Danh từ', vn: 'chiều cao, vóc người', hv: 'cá tử', em: '📐', img: '/images/hsk2v3-bai-9/gezi.jpg', lesson: 1,
     ex_zh: '儿子的个子没有他那么高。', ex_py: 'Érzi de gèzi méiyǒu tā nàme gāo.', ex_vn: 'Con trai chúng ta không cao bằng cậu bé đó.',
     exList: [
       { zh: '儿子的个子没有他那么高。', py: 'Érzi de gèzi méiyǒu tā nàme gāo.', vn: 'Con trai chúng ta không cao bằng cậu bé đó.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '个', p: 'gè', type: '象形字 · Chữ tượng hình', st: 3, ord: '人 → 丨', rad: '人 (nhân)', mean: 'cái, chiếc; vóc người', tip: '个子高 / 个子不高 — nói về chiều cao của người.', cf: '', w: '个子 / 一个 / 个子高' }]
   },
   {
-    n: 6, zh: '那么', py: 'nàme', pos: 'Đại từ', vn: 'như thế, đến thế', em: '💭', lesson: 1,
+    n: 6, zh: '那么', py: 'nàme', pos: 'Đại từ', vn: 'như thế, đến thế', hv: 'na ma', em: '💭', lesson: 1,
     ex_zh: '儿子的个子没有他那么高。', ex_py: 'Érzi de gèzi méiyǒu tā nàme gāo.', ex_vn: 'Con trai chúng ta không cao bằng cậu bé đó.',
     exList: [
       { zh: '儿子的个子没有他那么高。', py: 'Érzi de gèzi méiyǒu tā nàme gāo.', vn: 'Con trai chúng ta không cao bằng cậu bé đó.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '那', p: 'nà', type: '形声字 · Chữ hình thanh', st: 6, ord: '⺄ → 二 → 阝', rad: '阝 (ấp)', mean: 'kia, đó', tip: '没有 + B + 这么/那么 + tính từ — nhấn mức độ của B.', cf: '这么 (zhème)', w: '那么 / 这么 / 那么高' }]
   },
   {
-    n: 7, zh: '高', py: 'gāo', pos: 'Tính từ', vn: 'cao', em: '📏', img: '/images/hsk2v3-bai-9/gao.jpg', lesson: 1,
+    n: 7, zh: '高', py: 'gāo', pos: 'Tính từ', vn: 'cao', hv: 'cao', em: '📏', img: '/images/hsk2v3-bai-9/gao.jpg', lesson: 1,
     ex_zh: '妹妹有姐姐高吗？', ex_py: 'Mèimei yǒu jiějie gāo ma?', ex_vn: 'Em gái có cao bằng chị gái không?',
     exList: [
       { zh: '妹妹有姐姐高吗？', py: 'Mèimei yǒu jiějie gāo ma?', vn: 'Em gái có cao bằng chị gái không?' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '高', p: 'gāo', type: '象形字 · Chữ tượng hình', st: 10, ord: '亠 → 口 → 冂 → 口', rad: '高 (cao)', mean: 'cao', tip: 'Vốn là hình ngôi nhà tầng cao.', cf: '矮 (ǎi – thấp)', w: '高 / 个子高 / 高兴' }]
   },
   {
-    n: 8, zh: '门口', py: 'ménkǒu', pos: 'Danh từ', vn: 'cửa ra vào, cổng', em: '🚪', img: '/images/hsk2v3-bai-9/menkou.jpg', lesson: 2,
+    n: 8, zh: '门口', py: 'ménkǒu', pos: 'Danh từ', vn: 'cửa ra vào, cổng', hv: 'môn khẩu', em: '🚪', img: '/images/hsk2v3-bai-9/menkou.jpg', lesson: 2,
     ex_zh: '门口有家奶茶店。', ex_py: 'Ménkǒu yǒu jiā nǎichádiàn.', ex_vn: 'Trước cửa có quán trà sữa.',
     exList: [
       { zh: '门口有家奶茶店。', py: 'Ménkǒu yǒu jiā nǎichádiàn.', vn: 'Trước cửa có quán trà sữa.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '门', p: 'mén', type: '象形字 · Chữ tượng hình', st: 3, ord: '丶 → 丨 → 乛', rad: '门 (môn – cửa)', mean: 'cửa', tip: 'Hình hai cánh cửa; 门口 = chỗ cửa ra vào.', cf: '', w: '门口 / 开门 / 大门' }]
   },
   {
-    n: 9, zh: '咖啡', py: 'kāfēi', pos: 'Danh từ', vn: 'cà phê', em: '☕', img: '/images/hsk2v3-bai-9/kafei.jpg', lesson: 2,
+    n: 9, zh: '咖啡', py: 'kāfēi', pos: 'Danh từ', vn: 'cà phê', hv: 'ca phê', em: '☕', img: '/images/hsk2v3-bai-9/kafei.jpg', lesson: 2,
     ex_zh: '我想喝咖啡，还是去咖啡店吧。', ex_py: 'Wǒ xiǎng hē kāfēi, háishi qù kāfēidiàn ba.', ex_vn: 'Anh muốn uống cà phê, hay là đến quán cà phê đi.',
     exList: [
       { zh: '我想喝咖啡，还是去咖啡店吧。', py: 'Wǒ xiǎng hē kāfēi, háishi qù kāfēidiàn ba.', vn: 'Anh muốn uống cà phê, hay là đến quán cà phê đi.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '咖', p: 'kā', type: '形声字 · Chữ hình thanh', st: 8, ord: '口 → 加', rad: '口 (khẩu – miệng)', mean: 'cà (phiên âm)', tip: '咖啡 là từ phiên âm, cả hai chữ đều mang bộ 口.', cf: '', w: '咖啡 / 咖啡店 / 喝咖啡' }]
   },
   {
-    n: 10, zh: '离', py: 'lí', pos: 'Động từ', vn: 'cách, cách xa', em: '📍', lesson: 2,
+    n: 10, zh: '离', py: 'lí', pos: 'Động từ', vn: 'cách, cách xa', hv: 'li', em: '📍', lesson: 2,
     ex_zh: '咖啡店离这儿有点儿远。', ex_py: 'Kāfēidiàn lí zhèr yǒudiǎnr yuǎn.', ex_vn: 'Quán cà phê cách chỗ này hơi xa.',
     exList: [
       { zh: '咖啡店离这儿有点儿远。', py: 'Kāfēidiàn lí zhèr yǒudiǎnr yuǎn.', vn: 'Quán cà phê cách chỗ này hơi xa.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '离', p: 'lí', type: '形声字 · Chữ hình thanh', st: 10, ord: '亠 → 凶 → 禸', rad: '亠 (đầu)', mean: 'rời, cách', tip: 'A 离 B + 远/近 — nói khoảng cách nơi chốn hoặc thời gian.', cf: '从 (cóng – từ, bài 7)', w: '离 / 离这儿很近 / 离开' }]
   },
   {
-    n: 11, zh: '近', py: 'jìn', pos: 'Tính từ', vn: 'gần', em: '📌', img: '/images/hsk2v3-bai-9/jin.jpg', lesson: 3,
+    n: 11, zh: '近', py: 'jìn', pos: 'Tính từ', vn: 'gần', hv: 'cận', em: '📌', img: '/images/hsk2v3-bai-9/jin.jpg', lesson: 3,
     ex_zh: '这里离家很近，还是走路吧。', ex_py: 'Zhèlǐ lí jiā hěn jìn, háishi zǒulù ba.', ex_vn: 'Chỗ này cách nhà mình rất gần, hay là đi bộ về đi.',
     exList: [
       { zh: '这里离家很近，还是走路吧。', py: 'Zhèlǐ lí jiā hěn jìn, háishi zǒulù ba.', vn: 'Chỗ này cách nhà mình rất gần, hay là đi bộ về đi.' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '近', p: 'jìn', type: '形声字 · Chữ hình thanh', st: 7, ord: '斤 → 辶', rad: '辶 (sước – đi)', mean: 'gần', tip: 'Thường đi với 离: A 离 B 很近 / 不远.', cf: '远 (yuǎn – xa)', w: '近 / 很近 / 附近' }]
   },
   {
-    n: 12, zh: '走路', py: 'zǒulù', pos: 'Động từ', vn: 'đi bộ', em: '🚶', img: '/images/hsk2v3-bai-9/zoulu.jpg', lesson: 3,
+    n: 12, zh: '走路', py: 'zǒulù', pos: 'Động từ', vn: 'đi bộ', hv: 'tẩu lộ', em: '🚶', img: '/images/hsk2v3-bai-9/zoulu.jpg', lesson: 3,
     ex_zh: '这里离家很近，还是走路吧。', ex_py: 'Zhèlǐ lí jiā hěn jìn, háishi zǒulù ba.', ex_vn: 'Chỗ này cách nhà mình rất gần, hay là đi bộ về đi.',
     exList: [
       { zh: '这里离家很近，还是走路吧。', py: 'Zhèlǐ lí jiā hěn jìn, háishi zǒulù ba.', vn: 'Chỗ này cách nhà mình rất gần, hay là đi bộ về đi.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '路', p: 'lù', type: '形声字 · Chữ hình thanh', st: 13, ord: '⻊ → 各', rad: '⻊ (túc – chân)', mean: 'đường', tip: '走路 là từ li hợp: 走了半个小时的路.', cf: '打车 (dǎchē – bắt taxi)', w: '走路 / 路上 / 一路' }]
   },
   {
-    n: 13, zh: '周', py: 'zhōu', pos: 'Danh từ', vn: 'tuần', em: '🗓️', img: '/images/hsk2v3-bai-9/zhou.jpg', lesson: 4,
+    n: 13, zh: '周', py: 'zhōu', pos: 'Danh từ', vn: 'tuần', hv: 'chu', em: '🗓️', img: '/images/hsk2v3-bai-9/zhou.jpg', lesson: 4,
     ex_zh: '这周刘明休息，我下班后跟他去了一家商店。', ex_py: 'Zhè zhōu Liú Míng xiūxi, wǒ xiàbān hòu gēn tā qùle yì jiā shāngdiàn.', ex_vn: 'Tuần này Lưu Minh được nghỉ, sau giờ làm tôi đã đi cùng anh ấy đến một cửa hàng.',
     exList: [
       { zh: '这周刘明休息，我下班后跟他去了一家商店。', py: 'Zhè zhōu Liú Míng xiūxi, wǒ xiàbān hòu gēn tā qùle yì jiā shāngdiàn.', vn: 'Tuần này Lưu Minh được nghỉ, sau giờ làm tôi đã đi cùng anh ấy đến một cửa hàng.' },

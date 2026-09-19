@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '生日', py: 'shēngrì', pos: 'Danh từ', vn: 'sinh nhật', em: '🎂', img: '/images/hsk2v3-bai-6/shengri.jpg', lesson: 1,
+    n: 1, zh: '生日', py: 'shēngrì', pos: 'Danh từ', vn: 'sinh nhật', hv: 'sinh nhật', em: '🎂', img: '/images/hsk2v3-bai-6/shengri.jpg', lesson: 1,
     ex_zh: '明天就是女儿的生日了。', ex_py: 'Míngtiān jiù shì nǚ’ér de shēngrì le.', ex_vn: 'Ngày mai là sinh nhật con gái rồi.',
     exList: [
       { zh: '明天就是女儿的生日了。', py: 'Míngtiān jiù shì nǚ’ér de shēngrì le.', vn: 'Ngày mai là sinh nhật con gái rồi.' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '生', p: 'shēng', type: '象形字 · Chữ tượng hình', st: 5, ord: '丿 → 一 → 一 → 丨 → 一', rad: '生 (sinh)', mean: 'sinh, sống', tip: 'Hình cây non mọc lên khỏi mặt đất — nghĩa "sinh ra".', cf: '', w: '生日 / 学生 / 生病' }]
   },
   {
-    n: 2, zh: '忘', py: 'wàng', pos: 'Động từ', vn: 'quên', em: '🤦', img: '/images/hsk2v3-bai-6/wang.jpg', lesson: 1,
+    n: 2, zh: '忘', py: 'wàng', pos: 'Động từ', vn: 'quên', hv: 'vong', em: '🤦', img: '/images/hsk2v3-bai-6/wang.jpg', lesson: 1,
     ex_zh: '你不说，我还真忘了。', ex_py: 'Nǐ bù shuō, wǒ hái zhēn wàng le.', ex_vn: 'Nếu em không nhắc thì anh đã quên mất rồi.',
     exList: [
       { zh: '你不说，我还真忘了。', py: 'Nǐ bù shuō, wǒ hái zhēn wàng le.', vn: 'Nếu em không nhắc thì anh đã quên mất rồi.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '忘', p: 'wàng', type: '形声字 · Chữ hình thanh', st: 7, ord: '亡 → 心', rad: '心 (tâm – trái tim)', mean: 'quên', tip: '亡 (mất) + 心 (tim): điều rơi khỏi trái tim — tức là quên.', cf: '', w: '忘了 / 别忘 / 忘记' }]
   },
   {
-    n: 3, zh: '画', py: 'huà', pos: 'Động từ / Danh từ', vn: 'vẽ; bức tranh', em: '🎨', img: '/images/hsk2v3-bai-6/hua.jpg', lesson: 1,
+    n: 3, zh: '画', py: 'huà', pos: 'Động từ / Danh từ', vn: 'vẽ; bức tranh', hv: 'họa', em: '🎨', img: '/images/hsk2v3-bai-6/hua.jpg', lesson: 1,
     ex_zh: '她喜欢画画。', ex_py: 'Tā xǐhuan huà huà.', ex_vn: 'Con bé thích vẽ tranh.',
     exList: [
       { zh: '她喜欢画画。', py: 'Tā xǐhuan huà huà.', vn: 'Con bé thích vẽ tranh.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '画', p: 'huà', type: '会意字 · Chữ hội ý', st: 8, ord: '一 → 田 → 凵', rad: '田 (điền – ruộng)', mean: 'vẽ, tranh', tip: 'Vốn là hình cây bút vạch ranh giới thửa ruộng.', cf: '', w: '画画 / 画笔 / 一张画' }]
   },
   {
-    n: 4, zh: '画笔', py: 'huàbǐ', pos: 'Danh từ', vn: 'bút vẽ, bút màu', em: '🖍️', img: '/images/hsk2v3-bai-6/huabi.jpg', lesson: 1,
+    n: 4, zh: '画笔', py: 'huàbǐ', pos: 'Danh từ', vn: 'bút vẽ, bút màu', hv: 'họa bút', em: '🖍️', img: '/images/hsk2v3-bai-6/huabi.jpg', lesson: 1,
     ex_zh: '你觉得画笔怎么样？', ex_py: 'Nǐ juéde huàbǐ zěnmeyàng?', ex_vn: 'Anh thấy tặng bút vẽ màu có được không?',
     exList: [
       { zh: '你觉得画笔怎么样？', py: 'Nǐ juéde huàbǐ zěnmeyàng?', vn: 'Anh thấy tặng bút vẽ màu có được không?' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '笔', p: 'bǐ', type: '会意字 · Chữ hội ý', st: 10, ord: '⺮ → 毛', rad: '⺮ (trúc – tre)', mean: 'bút', tip: '竹 (tre) + 毛 (lông): bút lông cán tre.', cf: '', w: '画笔 / 铅笔 / 笔记本' }]
   },
   {
-    n: 5, zh: '蛋糕', py: 'dàngāo', pos: 'Danh từ', vn: 'bánh kem, bánh ga tô', em: '🍰', img: '/images/hsk2v3-bai-6/dangao.jpg', lesson: 1,
+    n: 5, zh: '蛋糕', py: 'dàngāo', pos: 'Danh từ', vn: 'bánh kem, bánh ga tô', hv: 'đản cao', em: '🍰', img: '/images/hsk2v3-bai-6/dangao.jpg', lesson: 1,
     ex_zh: '我再给她买个大大的生日蛋糕。', ex_py: 'Wǒ zài gěi tā mǎi ge dàdà de shēngrì dàngāo.', ex_vn: 'Anh cũng sẽ mua thêm cho con một chiếc bánh sinh nhật to.',
     exList: [
       { zh: '我再给她买个大大的生日蛋糕。', py: 'Wǒ zài gěi tā mǎi ge dàdà de shēngrì dàngāo.', vn: 'Anh cũng sẽ mua thêm cho con một chiếc bánh sinh nhật to.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '蛋', p: 'dàn', type: '形声字 · Chữ hình thanh', st: 11, ord: '疋 → 虫', rad: '虫 (trùng)', mean: 'trứng', tip: '蛋糕 = bánh làm từ trứng.', cf: '', w: '蛋糕 / 鸡蛋' }]
   },
   {
-    n: 6, zh: '快乐', py: 'kuàilè', pos: 'Tính từ', vn: 'vui vẻ', em: '😄', img: '/images/hsk2v3-bai-6/kuaile.jpg', lesson: 2,
+    n: 6, zh: '快乐', py: 'kuàilè', pos: 'Tính từ', vn: 'vui vẻ', hv: 'khoái lạc', em: '😄', img: '/images/hsk2v3-bai-6/kuaile.jpg', lesson: 2,
     ex_zh: '小雪，生日快乐！', ex_py: 'Xiǎoxuě, shēngrì kuàilè!', ex_vn: 'Tiểu Tuyết, chúc mừng sinh nhật!',
     exList: [
       { zh: '小雪，生日快乐！', py: 'Xiǎoxuě, shēngrì kuàilè!', vn: 'Tiểu Tuyết, chúc mừng sinh nhật!' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '乐', p: 'lè', type: '象形字 · Chữ tượng hình', st: 5, ord: '丿 → 乛 → 小', rad: '丿 (phiệt)', mean: 'vui; (yuè) nhạc', tip: 'Đọc lè = vui; đọc yuè = âm nhạc (音乐).', cf: '', w: '快乐 / 生日快乐 / 音乐 (yuè)' }]
   },
   {
-    n: 7, zh: '打开', py: 'dǎkāi', pos: 'Động từ', vn: 'mở ra, bóc ra', em: '📂', img: '/images/hsk2v3-bai-6/dakai.jpg', lesson: 2,
+    n: 7, zh: '打开', py: 'dǎkāi', pos: 'Động từ', vn: 'mở ra, bóc ra', hv: 'đả khai', em: '📂', img: '/images/hsk2v3-bai-6/dakai.jpg', lesson: 2,
     ex_zh: '你打开看看喜欢不喜欢。', ex_py: 'Nǐ dǎkāi kànkan xǐhuan bu xǐhuan.', ex_vn: 'Con mở ra xem có thích không.',
     exList: [
       { zh: '你打开看看喜欢不喜欢。', py: 'Nǐ dǎkāi kànkan xǐhuan bu xǐhuan.', vn: 'Con mở ra xem có thích không.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '开', p: 'kāi', type: '会意字 · Chữ hội ý', st: 4, ord: '一 → 丌', rad: '廾 (củng)', mean: 'mở; lái; bật', tip: '打开 = mở ra (hộp, sách, cửa, đèn).', cf: '关 (guān – đóng, tắt)', w: '打开 / 开门 / 开车' }]
   },
   {
-    n: 8, zh: '长', py: 'cháng', pos: 'Tính từ', vn: 'dài', em: '📏', img: '/images/hsk2v3-bai-6/chang.jpg', lesson: 3,
+    n: 8, zh: '长', py: 'cháng', pos: 'Tính từ', vn: 'dài', hv: 'trường', em: '📏', img: '/images/hsk2v3-bai-6/chang.jpg', lesson: 3,
     ex_zh: '长长的面条儿。', ex_py: 'Chángcháng de miàntiáor.', ex_vn: 'Mì sợi dài.',
     exList: [
       { zh: '长长的面条儿。', py: 'Chángcháng de miàntiáor.', vn: 'Mì sợi dài.' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '长', p: 'cháng', type: '象形字 · Chữ tượng hình', st: 4, ord: '丿 → 一 → 丨 → 乀', rad: '长 (trường)', mean: 'dài; (zhǎng) lớn lên', tip: 'Đọc cháng = dài; đọc zhǎng = lớn lên, trưởng (校长).', cf: '短 (duǎn – ngắn)', w: '长长的 / 很长 / 校长 (zhǎng)' }]
   },
   {
-    n: 9, zh: '鱼', py: 'yú', pos: 'Danh từ', vn: 'cá', em: '🐟', img: '/images/hsk2v3-bai-6/yu.jpg', lesson: 3,
+    n: 9, zh: '鱼', py: 'yú', pos: 'Danh từ', vn: 'cá', hv: 'ngư', em: '🐟', img: '/images/hsk2v3-bai-6/yu.jpg', lesson: 3,
     ex_zh: '你看，还有鱼啊肉啊什么的。', ex_py: 'Nǐ kàn, hái yǒu yú a ròu a shénmede.', ex_vn: 'Con nhìn xem, còn có cá, thịt và những món khác nữa.',
     exList: [
       { zh: '你看，还有鱼啊肉啊什么的。', py: 'Nǐ kàn, hái yǒu yú a ròu a shénmede.', vn: 'Con nhìn xem, còn có cá, thịt và những món khác nữa.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '鱼', p: 'yú', type: '象形字 · Chữ tượng hình', st: 8, ord: '⺈ → 田 → 一', rad: '鱼 (ngư – cá)', mean: 'cá', tip: 'Vốn là hình con cá với đầu, thân, đuôi.', cf: '', w: '鱼 / 吃鱼 / 小鱼' }]
   },
   {
-    n: 10, zh: '肉', py: 'ròu', pos: 'Danh từ', vn: 'thịt', em: '🥩', img: '/images/hsk2v3-bai-6/rou.jpg', lesson: 3,
+    n: 10, zh: '肉', py: 'ròu', pos: 'Danh từ', vn: 'thịt', hv: 'nhục', em: '🥩', img: '/images/hsk2v3-bai-6/rou.jpg', lesson: 3,
     ex_zh: '还有鱼啊肉啊什么的。', ex_py: 'Hái yǒu yú a ròu a shénmede.', ex_vn: 'Còn có cá, thịt và những món khác.',
     exList: [
       { zh: '还有鱼啊肉啊什么的。', py: 'Hái yǒu yú a ròu a shénmede.', vn: 'Còn có cá, thịt và những món khác.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '肉', p: 'ròu', type: '象形字 · Chữ tượng hình', st: 6, ord: '冂 → 人 → 人', rad: '肉 (nhục – thịt)', mean: 'thịt', tip: 'Làm bộ thủ thường viết 月 (nguyệt thịt): 脸、脚、胖.', cf: '', w: '肉 / 羊肉 / 牛肉' }]
   },
   {
-    n: 11, zh: '过', py: 'guò', pos: 'Động từ', vn: 'trải qua, đón (sinh nhật, Tết)', em: '🎉', img: '/images/hsk2v3-bai-6/guo.jpg', lesson: 3,
+    n: 11, zh: '过', py: 'guò', pos: 'Động từ', vn: 'trải qua, đón (sinh nhật, Tết)', hv: 'quá', em: '🎉', img: '/images/hsk2v3-bai-6/guo.jpg', lesson: 3,
     ex_zh: '过生日真好啊！', ex_py: 'Guò shēngrì zhēn hǎo a!', ex_vn: 'Sinh nhật thật tuyệt!',
     exList: [
       { zh: '过生日真好啊！', py: 'Guò shēngrì zhēn hǎo a!', vn: 'Sinh nhật thật tuyệt!' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '过', p: 'guò', type: '形声字 · Chữ hình thanh', st: 6, ord: '寸 → 辶', rad: '辶 (sước – đi)', mean: 'qua; đón, trải qua', tip: '过生日 = đón sinh nhật; 过年 = đón năm mới.', cf: '', w: '过生日 / 过年 / 过去' }]
   },
   {
-    n: 12, zh: '地', py: 'de', pos: 'Trợ từ', vn: 'trợ từ nối trạng ngữ với động từ', em: '🔗', lesson: 3,
+    n: 12, zh: '地', py: 'de', pos: 'Trợ từ', vn: 'trợ từ nối trạng ngữ với động từ', hv: 'địa', em: '🔗', lesson: 3,
     ex_zh: '还要高高兴兴地玩。', ex_py: 'Hái yào gāogāoxìngxìng de wán.', ex_vn: 'Còn phải chơi thật vui nữa.',
     exList: [
       { zh: '还要高高兴兴地玩。', py: 'Hái yào gāogāoxìngxìng de wán.', vn: 'Còn phải chơi thật vui nữa.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '地', p: 'de', type: '形声字 · Chữ hình thanh', st: 6, ord: '土 → 也', rad: '土 (thổ – đất)', mean: 'đất; (de) trợ từ', tip: 'Đọc dì = đất (地方); đọc de khi làm trợ từ trạng ngữ.', cf: '的 (de) · 得 (de)', w: '高兴地玩 / 早早地到 / 地方 (dì)' }]
   },
   {
-    n: 13, zh: '床', py: 'chuáng', pos: 'Danh từ', vn: 'giường', em: '🛏️', img: '/images/hsk2v3-bai-6/chuang.jpg', lesson: 4,
+    n: 13, zh: '床', py: 'chuáng', pos: 'Danh từ', vn: 'giường', hv: 'sàng', em: '🛏️', img: '/images/hsk2v3-bai-6/chuang.jpg', lesson: 4,
     ex_zh: '孩子们早早地就上床了。', ex_py: 'Háizimen zǎozǎo de jiù shàng chuáng le.', ex_vn: 'Bọn trẻ đi ngủ sớm.',
     exList: [
       { zh: '孩子们早早地就上床了。', py: 'Háizimen zǎozǎo de jiù shàng chuáng le.', vn: 'Bọn trẻ đi ngủ sớm.' },
@@ -120,7 +120,7 @@ var vocabData = [
     hanzi: [{ c: '床', p: 'chuáng', type: '会意字 · Chữ hội ý', st: 7, ord: '广 → 木', rad: '广 (nghiễm – mái nhà)', mean: 'giường', tip: '广 (mái nhà) + 木 (gỗ): đồ gỗ trong nhà để nằm.', cf: '', w: '床 / 上床 / 起床' }]
   },
   {
-    n: 14, zh: '舒服', py: 'shūfu', pos: 'Tính từ', vn: 'thoải mái, dễ chịu', em: '😌', img: '/images/hsk2v3-bai-6/shufu.jpg', lesson: 4,
+    n: 14, zh: '舒服', py: 'shūfu', pos: 'Tính từ', vn: 'thoải mái, dễ chịu', hv: 'thư phục', em: '😌', img: '/images/hsk2v3-bai-6/shufu.jpg', lesson: 4,
     ex_zh: '他们说要舒舒服服地睡一觉。', ex_py: 'Tāmen shuō yào shūshūfúfú de shuì yí jiào.', ex_vn: 'Chúng nói muốn ngủ một giấc thật thoải mái.',
     exList: [
       { zh: '他们说要舒舒服服地睡一觉。', py: 'Tāmen shuō yào shūshūfúfú de shuì yí jiào.', vn: 'Chúng nói muốn ngủ một giấc thật thoải mái.' },

@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'降落',py:'jiàngluò',pos:'Động từ',vn:'đáp xuống, hạ cánh',em:'🛬',lesson:1,
+  {n:1,zh:'降落',py:'jiàngluò',pos:'Động từ',vn:'đáp xuống, hạ cánh', hv: 'giáng lạc',em:'🛬',lesson:1,
    explain:['Máy bay hạ cánh. Trái nghĩa: 起飞 (cất cánh, Bài 4). 降 = giảm (降低 Bài 10).'],
    usage:'飞机降落, 起飞和降落, 降落在机场.',
    collo:['飞机是怎么起飞和降落的','降落在北京首都国际机场','安全降落'],
@@ -23,7 +23,7 @@ var vocabData = [
       note:'由于 (Bài 10), 推迟 (Bài 4), 才 (Bài 3).'},
    ]},
 
-  {n:2,zh:'火',py:'huǒ',pos:'Tính từ',vn:'chạy, đắt hàng, được ưa chuộng',em:'🔥',lesson:1,
+  {n:2,zh:'火',py:'huǒ',pos:'Tính từ',vn:'chạy, đắt hàng, được ưa chuộng', hv: 'hỏa',em:'🔥',lesson:1,
    explain:['Nghĩa gốc: lửa. Nghĩa mở rộng khẩu ngữ: rất hot, bán chạy, nổi tiếng. 卖得很火, 这个歌手很火.'],
    usage:'卖得非常火, 生意很火, 很火的节目.',
    collo:['卖得非常火','生意很火','最近很火'],
@@ -43,7 +43,7 @@ var vocabData = [
       note:'餐厅 (Bài 13), 排队 (Bài 17), 着 (Bài 2).'},
    ]},
 
-  {n:3,zh:'作者',py:'zuòzhě',pos:'Danh từ',vn:'tác giả',em:'✍️',lesson:1,
+  {n:3,zh:'作者',py:'zuòzhě',pos:'Danh từ',vn:'tác giả', hv: 'tác giả',em:'✍️',lesson:1,
    explain:['Người viết sách/bài. 者 = người (记者 Bài 16, 读者).'],
    usage:'作者是谁, 这本书的作者, 著名作者.',
    collo:['作者是谁啊','作者的名字','小说的作者'],
@@ -63,7 +63,7 @@ var vocabData = [
       note:'吃惊 (Bài 13), 竟然 (Bài 6).'},
    ]},
 
-  {n:4,zh:'交通',py:'jiāotōng',pos:'Danh từ',vn:'giao thông',em:'🚦',lesson:1,
+  {n:4,zh:'交通',py:'jiāotōng',pos:'Danh từ',vn:'giao thông', hv: 'giao thông',em:'🚦',lesson:1,
    explain:['Sự đi lại, vận chuyển. 交通方便, 交通工具, 交通问题.'],
    usage:'交通方便, 交通工具, 交通很堵.',
    collo:['地球、动物、植物、交通','交通方便','公共交通'],
@@ -83,7 +83,7 @@ var vocabData = [
       note:'趟 (Bài 17), 好几 (Bài 11).'},
    ]},
 
-  {n:5,zh:'技术',py:'jìshù',pos:'Danh từ',vn:'kỹ thuật, công nghệ',em:'💻',lesson:1,
+  {n:5,zh:'技术',py:'jìshù',pos:'Danh từ',vn:'kỹ thuật, công nghệ', hv: 'kỹ thuật',em:'💻',lesson:1,
    explain:['Công nghệ, kỹ năng chuyên môn. 科学技术, 互联网技术, 技术的发展.'],
    usage:'科学技术, 技术的发展, 技术很好.',
    collo:['科学技术','电脑和互联网技术的发展','理发师技术不错'],
@@ -106,7 +106,7 @@ var vocabData = [
       note:'发展 (Bài 10), 让, 越来越 (Bài 1).'},
    ]},
 
-  {n:6,zh:'是否',py:'shìfǒu',pos:'Phó từ',vn:'hay không',em:'❔',lesson:1,
+  {n:6,zh:'是否',py:'shìfǒu',pos:'Phó từ',vn:'hay không', hv: 'thị phủ',em:'❔',lesson:1,
    explain:['= 是不是, dùng trong văn viết. 是否能读懂, 是否幸福, 是否喜欢. Ngữ pháp trọng tâm.'],
    usage:'是否能……, 是否喜欢, 是否有.',
    collo:['她是否能读懂','婚姻是否幸福','是否喜欢这份工作'],
@@ -128,7 +128,7 @@ var vocabData = [
       note:'主要 (Bài 6), lượng từ 份 (Bài 10).'},
    ]},
 
-  {n:7,zh:'秒',py:'miǎo',pos:'Lượng từ',vn:'giây',em:'⏱️',lesson:2,
+  {n:7,zh:'秒',py:'miǎo',pos:'Lượng từ',vn:'giây', hv: 'miểu',em:'⏱️',lesson:2,
    explain:['Đơn vị thời gian, 1/60 phút. 几秒钟, 一秒, 十秒.'],
    usage:'几秒钟, 一秒也不能等, 30秒.',
    collo:['几秒钟就解决了','等几秒','跑了十秒'],
@@ -148,7 +148,7 @@ var vocabData = [
       note:'比……多了 (Bài 8), 米 (Bài 2).'},
    ]},
 
-  {n:8,zh:'方式',py:'fāngshì',pos:'Danh từ',vn:'phương thức, cách thức',em:'🔀',lesson:2,
+  {n:8,zh:'方式',py:'fāngshì',pos:'Danh từ',vn:'phương thức, cách thức', hv: 'phương thức',em:'🔀',lesson:2,
    explain:['Cách làm, lối (sống, học). 学习方式, 生活方式, 联系方式. So sánh 方法 (Bài 3).'],
    usage:'学习方式, 生活方式, 教育方式.',
    collo:['学习方式发生了变化','生活方式','教育方式'],
@@ -168,7 +168,7 @@ var vocabData = [
       note:'锻炼 (Bài 7), định ngữ với 的.'},
    ]},
 
-  {n:9,zh:'受不了',py:'shòubuliǎo',pos:'Cụm động từ',vn:'chịu không nổi, chịu không được',em:'😫',lesson:2,
+  {n:9,zh:'受不了',py:'shòubuliǎo',pos:'Cụm động từ',vn:'chịu không nổi, chịu không được', hv: 'thụ bất liễu',em:'😫',lesson:2,
    explain:['Không thể chịu đựng (đau, áp lực, thái độ…). Đứng trước danh từ/cụm danh từ: 受不了你, 眼睛受不了. Ngữ pháp trọng tâm.'],
    usage:'眼睛实在受不了, 受不了这样的老师, 真受不了.',
    collo:['眼睛实在受不了','受不了你了','真受不了这样的老师'],
@@ -190,7 +190,7 @@ var vocabData = [
       note:'严格 (Bài 17), 基础 (Bài 13).'},
    ]},
 
-  {n:10,zh:'日记',py:'rìjì',pos:'Danh từ',vn:'nhật ký',em:'📔',lesson:2,
+  {n:10,zh:'日记',py:'rìjì',pos:'Danh từ',vn:'nhật ký', hv: 'nhật ký',em:'📔',lesson:2,
    explain:['Ghi chép hằng ngày. 写日记, 网上日记, 一本日记.'],
    usage:'写日记, 在网上写日记, 看日记.',
    collo:['在网上写日记','给日记加密码','我的日记'],
@@ -210,7 +210,7 @@ var vocabData = [
       note:'养成 (Bài 7), 从……就.'},
    ]},
 
-  {n:11,zh:'安全',py:'ānquán',pos:'Tính từ',vn:'an toàn',em:'🔒',lesson:2,
+  {n:11,zh:'安全',py:'ānquán',pos:'Tính từ',vn:'an toàn', hv: 'an toàn',em:'🔒',lesson:2,
    explain:['Không nguy hiểm. Trái nghĩa: 危险. 不安全, 安全第一, 注意安全.'],
    usage:'多不安全啊, 注意安全, 安全降落.',
    collo:['多不安全啊','注意安全','这样做很不安全'],
@@ -230,7 +230,7 @@ var vocabData = [
       note:'直接 (Bài 12), 拿……做 (Bài 16), 密码 (từ mới).'},
    ]},
 
-  {n:12,zh:'密码',py:'mìmǎ',pos:'Danh từ',vn:'mật mã, mật khẩu',em:'🔑',lesson:2,
+  {n:12,zh:'密码',py:'mìmǎ',pos:'Danh từ',vn:'mật mã, mật khẩu', hv: 'mật mã',em:'🔑',lesson:2,
    explain:['Mã bí mật để bảo vệ. 加密码, 输入密码, 忘记密码.'],
    usage:'给……加密码, 输入密码, 银行卡的密码.',
    collo:['给网上的日记加密码','忘了密码','信用卡的密码'],
@@ -250,7 +250,7 @@ var vocabData = [
       note:'糟糕 (Bài 5), câu chữ 把.'},
    ]},
 
-  {n:13,zh:'允许',py:'yǔnxǔ',pos:'Động từ',vn:'cho phép',em:'✅',lesson:2,
+  {n:13,zh:'允许',py:'yǔnxǔ',pos:'Động từ',vn:'cho phép', hv: 'doãn hứa',em:'✅',lesson:2,
    explain:['Đồng ý cho làm gì. 得到允许, 允许某人做某事, 不允许.'],
    usage:'得到允许, 允许我……, 不允许吸烟.',
    collo:['只有得到了允许','父母不允许','允许学生……'],
@@ -273,7 +273,7 @@ var vocabData = [
       note:'Câu kiêm ngữ 允许 + người + động từ; 危险 (từ mới).'},
    ]},
 
-  {n:14,zh:'座',py:'zuò',pos:'Lượng từ',vn:'tòa, hòn, cây (cầu, núi, cao ốc…)',em:'🏔️',lesson:3,
+  {n:14,zh:'座',py:'zuò',pos:'Lượng từ',vn:'tòa, hòn, cây (cầu, núi, cao ốc…)', hv: 'tọa',em:'🏔️',lesson:3,
    explain:['Lượng từ cho vật lớn cố định: 一座桥, 一座山, 一座城市, 一座楼. Cũng có trong 座位 (Bài 3).'],
    usage:'一座桥, 一座山, 一座城市.',
    collo:['一座桥','一座山','一座大楼'],
@@ -293,7 +293,7 @@ var vocabData = [
       note:'香山 (Bài 17), 满 (Bài 11).'},
    ]},
 
-  {n:15,zh:'桥',py:'qiáo',pos:'Danh từ',vn:'cầu',em:'🌉',lesson:3,
+  {n:15,zh:'桥',py:'qiáo',pos:'Danh từ',vn:'cầu', hv: 'kiều',em:'🌉',lesson:3,
    explain:['Công trình bắc qua sông. 一座桥, 过桥, 桥上.'],
    usage:'一座桥, 在桥上走, 过桥.',
    collo:['在一座桥上走','过桥','桥下面'],
@@ -313,7 +313,7 @@ var vocabData = [
       note:'左右 (Bài 15), 往 (Bài 2).'},
    ]},
 
-  {n:16,zh:'危险',py:'wēixiǎn',pos:'Tính từ',vn:'nguy hiểm',em:'⚠️',lesson:3,
+  {n:16,zh:'危险',py:'wēixiǎn',pos:'Tính từ',vn:'nguy hiểm', hv: 'nguy hiểm',em:'⚠️',lesson:3,
    explain:['Có thể gây hại. Trái nghĩa: 安全. 非常危险, 太危险了, 极其危险.'],
    usage:'非常危险, 太危险了, 危险的地方.',
    collo:['非常危险','极其危险的','太危险了'],
@@ -336,7 +336,7 @@ var vocabData = [
       note:'无论……都 (Bài 11), 对……来说 (Bài 5).'},
    ]},
 
-  {n:17,zh:'接着',py:'jiēzhe',pos:'Phó từ',vn:'ngay sau đó, tiếp theo',em:'⏭️',lesson:3,
+  {n:17,zh:'接着',py:'jiēzhe',pos:'Phó từ',vn:'ngay sau đó, tiếp theo', hv: 'tiếp trứ',em:'⏭️',lesson:3,
    explain:['Sự việc khác xảy ra ngay sau sự việc trước (về thời gian). Cũng nghĩa "tiếp tục": 接着看, 接着说. Ngữ pháp trọng tâm: 接着 vs 然后.'],
    usage:'接着又……, 接着说, 我接着看.',
    collo:['接着又梦见','你接着说吧','我接着看'],
@@ -356,7 +356,7 @@ var vocabData = [
       note:'有趣 (Bài 13), 还 (huán, Bài 4).'},
    ]},
 
-  {n:18,zh:'警察',py:'jǐngchá',pos:'Danh từ',vn:'cảnh sát',em:'👮',lesson:3,
+  {n:18,zh:'警察',py:'jǐngchá',pos:'Danh từ',vn:'cảnh sát', hv: 'cảnh sát',em:'👮',lesson:3,
    explain:['Người giữ trật tự, an ninh. 一位警察, 当警察, 找警察.'],
    usage:'跟警察一起, 当警察, 报警.',
    collo:['跟警察一起抓坏人','当警察','交通警察'],
@@ -376,7 +376,7 @@ var vocabData = [
       note:'当 (Bài 10), 保护 (Bài 12), 安全 (từ mới).'},
    ]},
 
-  {n:19,zh:'抓',py:'zhuā',pos:'Động từ',vn:'bắt, túm',em:'✊',lesson:3,
+  {n:19,zh:'抓',py:'zhuā',pos:'Động từ',vn:'bắt, túm', hv: 'trảo',em:'✊',lesson:3,
    explain:['Nắm lấy, bắt giữ. 抓住 = bắt được; 抓紧 = nắm chặt/tranh thủ; 抓住机会.'],
    usage:'抓住坏人, 抓住机会, 抓紧时间.',
    collo:['抓住了一个坏人','抓住机会','抓紧时间'],
@@ -396,7 +396,7 @@ var vocabData = [
       note:'否则 (Bài 11), 后悔 (Bài 9).'},
    ]},
 
-  {n:20,zh:'咸',py:'xián',pos:'Tính từ',vn:'mặn',em:'🧂',lesson:3,
+  {n:20,zh:'咸',py:'xián',pos:'Tính từ',vn:'mặn', hv: 'hàm',em:'🧂',lesson:3,
    explain:['Vị mặn (nhiều muối). 太咸, 有点儿咸, 咸的菜.'],
    usage:'太咸了, 有点儿咸, 吃得太咸.',
    collo:['晚饭吃得太咸','稍微有点儿咸','咸的'],
@@ -416,7 +416,7 @@ var vocabData = [
       note:'稍微 (Bài 13), 盐 (Bài 12), 香 (Bài 7).'},
    ]},
 
-  {n:21,zh:'矿泉水',py:'kuàngquánshuǐ',pos:'Danh từ',vn:'nước suối, nước khoáng',em:'💧',lesson:3,
+  {n:21,zh:'矿泉水',py:'kuàngquánshuǐ',pos:'Danh từ',vn:'nước suối, nước khoáng', hv: 'khoáng tuyền thủy',em:'💧',lesson:3,
    explain:['Nước khoáng đóng chai. 一瓶矿泉水, 买矿泉水.'],
    usage:'买矿泉水, 一瓶矿泉水, 喝矿泉水.',
    collo:['到处找商店买矿泉水','一瓶矿泉水','矿泉水、果汁什么的'],
@@ -439,7 +439,7 @@ var vocabData = [
       note:'记得 + động từ, lượng từ 瓶.'},
    ]},
 
-  {n:22,zh:'付款',py:'fù kuǎn',pos:'Động từ',vn:'trả tiền',em:'💳',lesson:4,
+  {n:22,zh:'付款',py:'fù kuǎn',pos:'Động từ',vn:'trả tiền', hv: 'phó khoản',em:'💳',lesson:4,
    explain:['Thanh toán tiền. Động từ ly hợp: 付了款. 付款购物, 用手机付款, 付现金 (Bài 5).'],
    usage:'付款购物, 用手机付款, 在线付款.',
    collo:['付款购物','用手机付款','付完款'],
@@ -459,7 +459,7 @@ var vocabData = [
       note:'现金 (Bài 5), 不用……了.'},
    ]},
 
-  {n:23,zh:'举',py:'jǔ',pos:'Động từ',vn:'nêu, đưa ra; giơ',em:'🙋',lesson:4,
+  {n:23,zh:'举',py:'jǔ',pos:'Động từ',vn:'nêu, đưa ra; giơ', hv: 'cử',em:'🙋',lesson:4,
    explain:['(1) Nêu ra: 举一个例子, 举例说明. (2) Giơ lên: 举手, 举起. 举办 (Bài 11) = tổ chức.'],
    usage:'举一个例子, 举例, 举手.',
    collo:['举一个例子','举例说明','举手回答'],
@@ -479,7 +479,7 @@ var vocabData = [
       note:'发生 (Bài 7), 说明 (Bài 10).'},
    ]},
 
-  {n:24,zh:'迷路',py:'mí lù',pos:'Động từ',vn:'lạc đường',em:'🧭',lesson:4,
+  {n:24,zh:'迷路',py:'mí lù',pos:'Động từ',vn:'lạc đường', hv: 'mê lộ',em:'🧭',lesson:4,
    explain:['Không tìm được đường. Động từ ly hợp: 迷了路. 迷路时, 好像迷路了.'],
    usage:'迷路时, 好像迷路了, 怕迷路.',
    collo:['迷路时','咱们好像迷路了','在森林里迷路'],
@@ -499,7 +499,7 @@ var vocabData = [
       note:'好像 (Bài 6), 路口 (Bài 2), 转 (Bài 2).'},
    ]},
 
-  {n:25,zh:'地址',py:'dìzhǐ',pos:'Danh từ',vn:'địa chỉ',em:'📍',lesson:4,
+  {n:25,zh:'地址',py:'dìzhǐ',pos:'Danh từ',vn:'địa chỉ', hv: 'địa chỉ',em:'📍',lesson:4,
    explain:['Nơi ở/nơi liên hệ. 查地址, 邮箱地址, 家庭地址.'],
    usage:'查一下地址, 邮箱地址, 写地址.',
    collo:['用手机地图查一下地址','邮箱地址','把地址告诉我'],
@@ -519,7 +519,7 @@ var vocabData = [
       note:'整理 (Bài 15), câu chữ 把.'},
    ]},
 
-  {n:26,zh:'地点',py:'dìdiǎn',pos:'Danh từ',vn:'địa điểm, nơi',em:'🗺️',lesson:4,
+  {n:26,zh:'地点',py:'dìdiǎn',pos:'Danh từ',vn:'địa điểm, nơi', hv: 'địa điểm',em:'🗺️',lesson:4,
    explain:['Nơi chốn cụ thể (họp, hẹn). 那个地点, 会议地点, 集合地点. Phân biệt 地址 (địa chỉ ghi).'],
    usage:'会议地点, 集合地点, 改地点.',
    collo:['怎么去那个地点','会议地点改到……','地点改在西门了'],
@@ -539,7 +539,7 @@ var vocabData = [
       note:'整理 (Bài 15), 出发 (Bài 2).'},
    ]},
 
-  {n:27,zh:'世纪',py:'shìjì',pos:'Danh từ',vn:'thế kỷ',em:'📅',lesson:5,
+  {n:27,zh:'世纪',py:'shìjì',pos:'Danh từ',vn:'thế kỷ', hv: 'thế kỷ',em:'📅',lesson:5,
    explain:['100 năm. 21世纪, 上个世纪, 半个世纪.'],
    usage:'21世纪, 上个世纪, 一个世纪.',
    collo:['21世纪','上个世纪','半个世纪以前'],
@@ -559,7 +559,7 @@ var vocabData = [
       note:'发生 (Bài 7), 变化 (Bài 8).'},
    ]},
 
-  {n:28,zh:'邮局',py:'yóujú',pos:'Danh từ',vn:'bưu điện',em:'🏤',lesson:5,
+  {n:28,zh:'邮局',py:'yóujú',pos:'Danh từ',vn:'bưu điện', hv: 'bưu cục',em:'🏤',lesson:5,
    explain:['Nơi gửi thư, bưu phẩm. 去邮局, 邮局寄信. 邮箱 = hộp thư.'],
    usage:'去邮局, 在邮局寄信, 连邮局都不用去.',
    collo:['连邮局都不用去','去邮局寄信','邮局旁边'],
@@ -582,7 +582,7 @@ var vocabData = [
       note:'连……都 (Bài 11), 只要 (Bài 8).'},
    ]},
 
-  {n:29,zh:'收',py:'shōu',pos:'Động từ',vn:'nhận',em:'📥',lesson:5,
+  {n:29,zh:'收',py:'shōu',pos:'Động từ',vn:'nhận', hv: 'thu',em:'📥',lesson:5,
    explain:['Nhận (thư, tiền, quà). 收到 = nhận được; 收信; 收入 (Bài 10) = thu nhập; 收拾 = dọn dẹp.'],
    usage:'收到, 收信, 收礼物.',
    collo:['远处的朋友就能收到','很难收回','收到了通知'],
@@ -602,7 +602,7 @@ var vocabData = [
       note:'因此 (Bài 8), 随便 (Bài 7).'},
    ]},
 
-  {n:30,zh:'信封',py:'xìnfēng',pos:'Danh từ',vn:'phong thư, bì thư',em:'✉️',lesson:5,
+  {n:30,zh:'信封',py:'xìnfēng',pos:'Danh từ',vn:'phong thư, bì thư', hv: 'tín phong',em:'✉️',lesson:5,
    explain:['Bì đựng thư. 写信封, 一个信封, 信封上.'],
    usage:'写信封, 信封上的地址, 一个信封.',
    collo:['比写信封用的时间都短','在信封上写地址','一个信封'],
@@ -622,7 +622,7 @@ var vocabData = [
       note:'地址 (từ mới), bổ ngữ kết quả 写清楚.'},
    ]},
 
-  {n:31,zh:'网站',py:'wǎngzhàn',pos:'Danh từ',vn:'trang web',em:'🌐',lesson:5,
+  {n:31,zh:'网站',py:'wǎngzhàn',pos:'Danh từ',vn:'trang web', hv: 'võng trạm',em:'🌐',lesson:5,
    explain:['Website. 打开网站, 购物网站, 新闻网站.'],
    usage:'打开网站, 购物网站, 学校的网站.',
    collo:['只要打开网站','购物网站','这个网站'],
@@ -642,7 +642,7 @@ var vocabData = [
       note:'报名 (Bài 16), 详细 (Bài 12), 信息 (từ mới).'},
    ]},
 
-  {n:32,zh:'信息',py:'xìnxī',pos:'Danh từ',vn:'tin tức, thông tin',em:'📨',lesson:5,
+  {n:32,zh:'信息',py:'xìnxī',pos:'Danh từ',vn:'tin tức, thông tin', hv: 'tín tức',em:'📨',lesson:5,
    explain:['Thông tin. 获得信息, 任何信息, 详细信息. So sánh 消息 (Bài 9: tin tức sự kiện).'],
    usage:'获得信息, 任何信息, 查信息.',
    collo:['任何信息都可以获得','详细信息','发信息'],

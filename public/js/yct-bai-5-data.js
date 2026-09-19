@@ -2,11 +2,11 @@
 // DATA — YCT Bài 5: 你几岁？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'几岁',py:'jǐ suì',pos:'Cụm từ',vn:'mấy tuổi (hỏi trẻ em)',em:'🔢',lesson:1,
+  {n:1,zh:'几岁',py:'jǐ suì',pos:'Cụm từ',vn:'mấy tuổi (hỏi trẻ em)', hv: 'kỉ tuế',em:'🔢',lesson:1,
    ex_zh:'你几岁？',ex_py:'Nǐ jǐ suì?',ex_vn:'Bạn mấy tuổi?',
    exList:[{zh:'你几岁？',py:'Nǐ jǐ suì?',vn:'Bạn mấy tuổi?'}],
    hanzi:[]},
-  {n:2,zh:'岁',py:'suì',pos:'Lượng từ',vn:'tuổi',em:'🎂',lesson:1,
+  {n:2,zh:'岁',py:'suì',pos:'Lượng từ',vn:'tuổi', hv: 'tuế',em:'🎂',lesson:1,
    ex_zh:'我六岁。',ex_py:'Wǒ liù suì.',ex_vn:'Mình sáu tuổi.',
    exList:[{zh:'我六岁。',py:'Wǒ liù suì.',vn:'Mình sáu tuổi.'}],
    hanzi:[
@@ -14,11 +14,11 @@ var vocabData = [
       tip:'Xưa dùng để đếm số mùa/năm đã trải qua như ngọn núi tích tuổi theo thời gian → TUỔI.',
       cf:'出 (chū – "ra")',w:'几岁 / 六岁'},
    ]},
-  {n:3,zh:'多大',py:'duō dà',pos:'Cụm từ',vn:'bao nhiêu tuổi (hỏi người lớn hơn)',em:'❓',lesson:2,
+  {n:3,zh:'多大',py:'duō dà',pos:'Cụm từ',vn:'bao nhiêu tuổi (hỏi người lớn hơn)', hv: 'đa đại',em:'❓',lesson:2,
    ex_zh:'你哥哥多大？',ex_py:'Nǐ gēge duō dà?',ex_vn:'Anh trai bạn bao nhiêu tuổi?',
    exList:[{zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'}],
    hanzi:[]},
-  {n:4,zh:'多',py:'duō',pos:'Phó từ',vn:'nhiều, bao nhiêu',em:'📊',lesson:2,
+  {n:4,zh:'多',py:'duō',pos:'Phó từ',vn:'nhiều, bao nhiêu', hv: 'đa',em:'📊',lesson:2,
    ex_zh:'你哥哥多大？',ex_py:'Nǐ gēge duō dà?',ex_vn:'Anh trai bạn bao nhiêu tuổi?',
    exList:[{zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'}],
    hanzi:[
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Hai chữ 夕(buổi tối) chồng lên nhau → NHIỀU đêm trôi qua = NHIỀU, BAO NHIÊU.',
       cf:'夜 (yè – "đêm")',w:'多大'},
    ]},
-  {n:5,zh:'大',py:'dà',pos:'Tính từ',vn:'to, lớn',em:'📏',lesson:2,
+  {n:5,zh:'大',py:'dà',pos:'Tính từ',vn:'to, lớn', hv: 'đại',em:'📏',lesson:2,
    ex_zh:'你哥哥多大？',ex_py:'Nǐ gēge duō dà?',ex_vn:'Anh trai bạn bao nhiêu tuổi?',
    exList:[{zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'}],
    hanzi:[
@@ -34,7 +34,7 @@ var vocabData = [
       tip:'Hình người dang rộng tay chân → TO LỚN.',
       cf:'太 (tài – "quá")',w:'多大'},
    ]},
-  {n:6,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng',em:'➕',lesson:1,
+  {n:6,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng', hv: 'dã',em:'➕',lesson:1,
    ex_zh:'他也六岁。',ex_py:'Tā yě liù suì.',ex_vn:'Anh ấy cũng sáu tuổi.',
    exList:[{zh:'他也六岁。',py:'Tā yě liù suì.',vn:'Anh ấy cũng sáu tuổi.'}],
    hanzi:[

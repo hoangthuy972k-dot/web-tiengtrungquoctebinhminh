@@ -3,7 +3,7 @@
 
 var vocabData = [
   {
-    n: 1, zh: '头', py: 'tóu', pos: 'Danh từ', vn: 'đầu', em: '🙆', img: '/images/hsk2v3-bai-11/tou.jpg', lesson: 1,
+    n: 1, zh: '头', py: 'tóu', pos: 'Danh từ', vn: 'đầu', hv: 'đầu', em: '🙆', img: '/images/hsk2v3-bai-11/tou.jpg', lesson: 1,
     ex_zh: '我头疼，不太舒服。', ex_py: 'Wǒ tóu téng, bú tài shūfu.', ex_vn: 'Em bị đau đầu, không được khoẻ lắm.',
     exList: [
       { zh: '我头疼，不太舒服。', py: 'Wǒ tóu téng, bú tài shūfu.', vn: 'Em bị đau đầu, không được khoẻ lắm.' },
@@ -12,7 +12,7 @@ var vocabData = [
     hanzi: [{ c: '头', p: 'tóu', type: '象形字 · Chữ tượng hình', st: 5, ord: '丶 → 丶 → 大', rad: '大 (đại)', mean: 'đầu', tip: '头疼 là câu có cụm chủ vị làm vị ngữ (ôn bài 10): 我头疼。', cf: '', w: '头 / 头疼 / 一头' }]
   },
   {
-    n: 2, zh: '疼', py: 'téng', pos: 'Tính từ', vn: 'đau, nhức', em: '🤕', img: '/images/hsk2v3-bai-11/teng.jpg', lesson: 1,
+    n: 2, zh: '疼', py: 'téng', pos: 'Tính từ', vn: 'đau, nhức', hv: 'đông', em: '🤕', img: '/images/hsk2v3-bai-11/teng.jpg', lesson: 1,
     ex_zh: '现在不能动，一动就疼。', ex_py: 'Xiànzài bù néng dòng, yí dòng jiù téng.', ex_vn: 'Bây giờ không cử động được, cứ động là đau.',
     exList: [
       { zh: '现在不能动，一动就疼。', py: 'Xiànzài bù néng dòng, yí dòng jiù téng.', vn: 'Bây giờ không cử động được, cứ động là đau.' },
@@ -21,7 +21,7 @@ var vocabData = [
     hanzi: [{ c: '疼', p: 'téng', type: '形声字 · Chữ hình thanh', st: 10, ord: '疒 → 冬', rad: '疒 (nạch – bệnh)', mean: 'đau', tip: 'Bộ 疒 gợi bệnh tật: 疼、病、瘦.', cf: '', w: '疼 / 头疼 / 不疼了' }]
   },
   {
-    n: 3, zh: '经常', py: 'jīngcháng', pos: 'Phó từ', vn: 'thường xuyên', em: '🔁', lesson: 1,
+    n: 3, zh: '经常', py: 'jīngcháng', pos: 'Phó từ', vn: 'thường xuyên', hv: 'kinh thường', em: '🔁', lesson: 1,
     ex_zh: '你这几天经常头疼，去医院看看吧。', ex_py: 'Nǐ zhè jǐ tiān jīngcháng tóu téng, qù yīyuàn kànkan ba.', ex_vn: 'Mấy ngày nay em thường xuyên đau đầu, hay là đi bệnh viện khám thử xem.',
     exList: [
       { zh: '你这几天经常头疼，去医院看看吧。', py: 'Nǐ zhè jǐ tiān jīngcháng tóu téng, qù yīyuàn kànkan ba.', vn: 'Mấy ngày nay em thường xuyên đau đầu, hay là đi bệnh viện khám thử xem.' },
@@ -30,7 +30,7 @@ var vocabData = [
     hanzi: [{ c: '常', p: 'cháng', type: '形声字 · Chữ hình thanh', st: 11, ord: '⺌ → 冖 → 口 → 巾', rad: '巾 (cân – khăn)', mean: 'thường, luôn', tip: 'Cùng chữ 常 trong 非常 (rất, phi thường).', cf: '非常 (fēicháng)', w: '经常 / 常常 / 非常' }]
   },
   {
-    n: 4, zh: '动', py: 'dòng', pos: 'Động từ', vn: 'cử động, di chuyển', em: '🤸', img: '/images/hsk2v3-bai-11/dong.jpg', lesson: 1,
+    n: 4, zh: '动', py: 'dòng', pos: 'Động từ', vn: 'cử động, di chuyển', hv: 'động', em: '🤸', img: '/images/hsk2v3-bai-11/dong.jpg', lesson: 1,
     ex_zh: '现在不能动，一动就疼。', ex_py: 'Xiànzài bù néng dòng, yí dòng jiù téng.', ex_vn: 'Bây giờ không cử động được, cứ động là đau.',
     exList: [
       { zh: '现在不能动，一动就疼。', py: 'Xiànzài bù néng dòng, yí dòng jiù téng.', vn: 'Bây giờ không cử động được, cứ động là đau.' },
@@ -39,7 +39,7 @@ var vocabData = [
     hanzi: [{ c: '动', p: 'dòng', type: '形声字 · Chữ hình thanh', st: 6, ord: '云 → 力', rad: '力 (lực – sức)', mean: 'động, cử động', tip: 'Ôn 一……就…… (bài 7): 一动就疼。', cf: '', w: '动 / 运动 / 不能动' }]
   },
   {
-    n: 5, zh: '着', py: 'zhe', pos: 'Trợ từ', vn: 'trợ từ chỉ sự duy trì của động tác/trạng thái', em: '⏸️', lesson: 1,
+    n: 5, zh: '着', py: 'zhe', pos: 'Trợ từ', vn: 'trợ từ chỉ sự duy trì của động tác/trạng thái', hv: 'trứ', em: '⏸️', lesson: 1,
     ex_zh: '那你在这儿坐着，我去开车。', ex_py: 'Nà nǐ zài zhèr zuòzhe, wǒ qù kāichē.', ex_vn: 'Vậy em cứ ngồi ở đây nhé, cô đi lấy xe.',
     exList: [
       { zh: '那你在这儿坐着，我去开车。', py: 'Nà nǐ zài zhèr zuòzhe, wǒ qù kāichē.', vn: 'Vậy em cứ ngồi ở đây nhé, cô đi lấy xe.' },
@@ -48,7 +48,7 @@ var vocabData = [
     hanzi: [{ c: '着', p: 'zhe', type: '形声字 · Chữ hình thanh', st: 11, ord: '⺷ → 目', rad: '目 (mục – mắt)', mean: 'trợ từ động thái', tip: '了 (hoàn thành) · 过 (từng) · 着 (đang duy trì).', cf: '了 (le) · 过 (guo)', w: '坐着 / 开着 / 下着雪' }]
   },
   {
-    n: 6, zh: '路上', py: 'lùshang', pos: 'Danh từ', vn: 'trên đường', em: '🛣️', img: '/images/hsk2v3-bai-11/lushang.jpg', lesson: 2,
+    n: 6, zh: '路上', py: 'lùshang', pos: 'Danh từ', vn: 'trên đường', hv: 'lộ thượng', em: '🛣️', img: '/images/hsk2v3-bai-11/lushang.jpg', lesson: 2,
     ex_zh: '现在路上车多，还下着雪，我开慢一点儿。', ex_py: 'Xiànzài lùshang chē duō, hái xiàzhe xuě, wǒ kāi màn yìdiǎnr.', ex_vn: 'Bây giờ rất nhiều xe cộ trên đường, lại còn đang có tuyết rơi nên cô lái chậm một chút.',
     exList: [
       { zh: '现在路上车多，还下着雪，我开慢一点儿。', py: 'Xiànzài lùshang chē duō, hái xiàzhe xuě, wǒ kāi màn yìdiǎnr.', vn: 'Bây giờ rất nhiều xe cộ trên đường, lại còn đang có tuyết rơi nên cô lái chậm một chút.' },
@@ -57,7 +57,7 @@ var vocabData = [
     hanzi: [{ c: '路', p: 'lù', type: '形声字 · Chữ hình thanh', st: 13, ord: '⻊ → 各', rad: '⻊ (túc – chân)', mean: 'đường', tip: 'Ôn 走路 (bài 9) — đi bộ.', cf: '', w: '路上 / 走路 / 路口' }]
   },
   {
-    n: 7, zh: '慢', py: 'màn', pos: 'Tính từ', vn: 'chậm', em: '🐢', img: '/images/hsk2v3-bai-11/man.jpg', lesson: 2,
+    n: 7, zh: '慢', py: 'màn', pos: 'Tính từ', vn: 'chậm', hv: 'mạn', em: '🐢', img: '/images/hsk2v3-bai-11/man.jpg', lesson: 2,
     ex_zh: '我开慢一点儿。', ex_py: 'Wǒ kāi màn yìdiǎnr.', ex_vn: 'Cô lái chậm một chút.',
     exList: [
       { zh: '我开慢一点儿。', py: 'Wǒ kāi màn yìdiǎnr.', vn: 'Cô lái chậm một chút.' },
@@ -66,7 +66,7 @@ var vocabData = [
     hanzi: [{ c: '慢', p: 'màn', type: '形声字 · Chữ hình thanh', st: 14, ord: '忄 → 曼', rad: '忄 (tâm)', mean: 'chậm', tip: 'Trái nghĩa với 快 (kuài); 慢一点儿 = chậm một chút.', cf: '快 (kuài – nhanh)', w: '慢 / 慢一点儿 / 很慢' }]
   },
   {
-    n: 8, zh: '进', py: 'jìn', pos: 'Động từ', vn: 'vào', em: '🚶‍♂️', img: '/images/hsk2v3-bai-11/jin.jpg', lesson: 3,
+    n: 8, zh: '进', py: 'jìn', pos: 'Động từ', vn: 'vào', hv: 'tiến', em: '🚶‍♂️', img: '/images/hsk2v3-bai-11/jin.jpg', lesson: 3,
     ex_zh: '李文，快请进！', ex_py: 'Lǐ Wén, kuài qǐng jìn!', ex_vn: 'Lý Văn, mau vào đi!',
     exList: [
       { zh: '李文，快请进！', py: 'Lǐ Wén, kuài qǐng jìn!', vn: 'Lý Văn, mau vào đi!' },
@@ -75,7 +75,7 @@ var vocabData = [
     hanzi: [{ c: '进', p: 'jìn', type: '形声字 · Chữ hình thanh', st: 7, ord: '井 → 辶', rad: '辶 (sước – đi)', mean: 'vào, tiến vào', tip: 'Ôn bổ ngữ xu hướng (bài 5): 进来 / 进去.', cf: '出 (chū – ra)', w: '进 / 请进 / 进来' }]
   },
   {
-    n: 9, zh: '药', py: 'yào', pos: 'Danh từ', vn: 'thuốc', em: '💊', img: '/images/hsk2v3-bai-11/yao.jpg', lesson: 3,
+    n: 9, zh: '药', py: 'yào', pos: 'Danh từ', vn: 'thuốc', hv: 'dược', em: '💊', img: '/images/hsk2v3-bai-11/yao.jpg', lesson: 3,
     ex_zh: '医生开了一些药，吃完就好多了。', ex_py: 'Yīshēng kāile yìxiē yào, chīwán jiù hǎoduō le.', ex_vn: 'Bác sĩ đã kê một ít thuốc, uống xong thấy khoẻ hơn nhiều rồi.',
     exList: [
       { zh: '医生开了一些药，吃完就好多了。', py: 'Yīshēng kāile yìxiē yào, chīwán jiù hǎoduō le.', vn: 'Bác sĩ đã kê một ít thuốc, uống xong thấy khoẻ hơn nhiều rồi.' },
@@ -84,7 +84,7 @@ var vocabData = [
     hanzi: [{ c: '药', p: 'yào', type: '形声字 · Chữ hình thanh', st: 9, ord: '艹 → 约', rad: '艹 (thảo – cỏ)', mean: 'thuốc', tip: 'Ở đây 开 nghĩa là "kê (đơn thuốc)": 开药.', cf: '', w: '药 / 吃药 / 药店' }]
   },
   {
-    n: 10, zh: '身体', py: 'shēntǐ', pos: 'Danh từ', vn: 'cơ thể, sức khoẻ', em: '💪', img: '/images/hsk2v3-bai-11/shenti.jpg', lesson: 3,
+    n: 10, zh: '身体', py: 'shēntǐ', pos: 'Danh từ', vn: 'cơ thể, sức khoẻ', hv: 'thân thể', em: '💪', img: '/images/hsk2v3-bai-11/shenti.jpg', lesson: 3,
     ex_zh: '身体不舒服时更要好好吃饭。', ex_py: 'Shēntǐ bù shūfu shí gèng yào hǎohāo chīfàn.', ex_vn: 'Khi cơ thể không khoẻ thì càng phải ăn uống đầy đủ.',
     exList: [
       { zh: '身体不舒服时更要好好吃饭。', py: 'Shēntǐ bù shūfu shí gèng yào hǎohāo chīfàn.', vn: 'Khi cơ thể không khoẻ thì càng phải ăn uống đầy đủ.' },
@@ -93,7 +93,7 @@ var vocabData = [
     hanzi: [{ c: '身', p: 'shēn', type: '象形字 · Chữ tượng hình', st: 7, ord: '丿 → 冂 → 三 → 丿', rad: '身 (thân)', mean: 'thân thể', tip: 'Ôn 舒服 (bài 6): 身体不舒服 = người không khoẻ.', cf: '', w: '身体 / 身体好 / 身上' }]
   },
   {
-    n: 11, zh: '时', py: 'shí', pos: 'Danh từ', vn: 'khi, lúc', em: '🕐', lesson: 3,
+    n: 11, zh: '时', py: 'shí', pos: 'Danh từ', vn: 'khi, lúc', hv: 'thời', em: '🕐', lesson: 3,
     ex_zh: '身体不舒服时更要好好吃饭。', ex_py: 'Shēntǐ bù shūfu shí gèng yào hǎohāo chīfàn.', ex_vn: 'Khi cơ thể không khoẻ thì càng phải ăn uống đầy đủ.',
     exList: [
       { zh: '身体不舒服时更要好好吃饭。', py: 'Shēntǐ bù shūfu shí gèng yào hǎohāo chīfàn.', vn: 'Khi cơ thể không khoẻ thì càng phải ăn uống đầy đủ.' },
@@ -102,7 +102,7 @@ var vocabData = [
     hanzi: [{ c: '时', p: 'shí', type: '形声字 · Chữ hình thanh', st: 7, ord: '日 → 寸', rad: '日 (nhật – mặt trời)', mean: 'thời, lúc', tip: '……时 là cách nói gọn của ……的时候.', cf: '的时候 (de shíhou)', w: '时 / 时间 / 小时' }]
   },
   {
-    n: 12, zh: '最', py: 'zuì', pos: 'Phó từ', vn: 'nhất', em: '🥇', lesson: 3,
+    n: 12, zh: '最', py: 'zuì', pos: 'Phó từ', vn: 'nhất', hv: 'tối', em: '🥇', lesson: 3,
     ex_zh: '你最喜欢吃中国菜，我做几个中国菜吧。', ex_py: 'Nǐ zuì xǐhuan chī Zhōngguó cài, wǒ zuò jǐ ge Zhōngguó cài ba.', ex_vn: 'Em thích ăn món Trung Quốc nhất, cô nấu mấy món Trung Quốc nhé.',
     exList: [
       { zh: '你最喜欢吃中国菜，我做几个中国菜吧。', py: 'Nǐ zuì xǐhuan chī Zhōngguó cài, wǒ zuò jǐ ge Zhōngguó cài ba.', vn: 'Em thích ăn món Trung Quốc nhất, cô nấu mấy món Trung Quốc nhé.' },
@@ -111,7 +111,7 @@ var vocabData = [
     hanzi: [{ c: '最', p: 'zuì', type: '会意字 · Chữ hội ý', st: 12, ord: '曰 → 取', rad: '曰 (viết)', mean: 'nhất', tip: '最 đứng trước tính từ hoặc động từ chỉ tâm lý: 最高、最喜欢.', cf: '更 (gèng – hơn)', w: '最 / 最好 / 最喜欢' }]
   },
   {
-    n: 13, zh: '药店', py: 'yàodiàn', pos: 'Danh từ', vn: 'hiệu thuốc, nhà thuốc', em: '🏥', img: '/images/hsk2v3-bai-11/yaodian.jpg', lesson: 4,
+    n: 13, zh: '药店', py: 'yàodiàn', pos: 'Danh từ', vn: 'hiệu thuốc, nhà thuốc', hv: 'dược điếm', em: '🏥', img: '/images/hsk2v3-bai-11/yaodian.jpg', lesson: 4,
     ex_zh: '从药店买了点儿药，没去医院。', ex_py: 'Cóng yàodiàn mǎile diǎnr yào, méi qù yīyuàn.', ex_vn: 'Tôi mua một ít thuốc ở hiệu thuốc, không đi bệnh viện.',
     exList: [
       { zh: '从药店买了点儿药，没去医院。', py: 'Cóng yàodiàn mǎile diǎnr yào, méi qù yīyuàn.', vn: 'Tôi mua một ít thuốc ở hiệu thuốc, không đi bệnh viện.' },

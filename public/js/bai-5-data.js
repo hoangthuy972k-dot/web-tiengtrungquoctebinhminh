@@ -2,7 +2,7 @@
 // DATA — Bài 5: 就买这件吧
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'外面',py:'wàimian',pos:'Danh từ',vn:'bên ngoài',em:'🌳',lesson:1,
+  {n:1,zh:'外面',py:'wàimian',pos:'Danh từ',vn:'bên ngoài', hv: 'ngoại diện',em:'🌳',lesson:1,
    ex_zh:'我不想去外面吃。',ex_py:'Wǒ bù xiǎng qù wàimian chī.',ex_vn:'Tôi không muốn ra ngoài ăn.',
    exList:[
      {zh:'我不想去外面吃。',py:'Wǒ bù xiǎng qù wàimian chī.',vn:'Tôi không muốn ra ngoài ăn.'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'Hình khuôn mặt cách điệu → nghĩa "MẶT, bề mặt". 外 + 面 = mặt phía ngoài.',
       cf:'画 (huà – "vẽ")',w:'外面 / 里面 / 面条'},
    ]},
-  {n:2,zh:'准备',py:'zhǔnbèi',pos:'Động từ',vn:'chuẩn bị',em:'📝',lesson:1,
+  {n:2,zh:'准备',py:'zhǔnbèi',pos:'Động từ',vn:'chuẩn bị', hv: 'chuẩn bị',em:'📝',lesson:1,
    ex_zh:'你准备做什么呢？',ex_py:'Nǐ zhǔnbèi zuò shénme ne?',ex_vn:'Bạn chuẩn bị làm gì vậy?',
    exList:[
      {zh:'你准备做什么呢？',py:'Nǐ zhǔnbèi zuò shénme ne?',vn:'Bạn chuẩn bị làm gì vậy?'},
@@ -32,7 +32,7 @@ var vocabData = [
       tip:'准 (chuẩn xác) + 备 (đầy đủ) = sắp xếp đầy đủ, sẵn sàng = CHUẨN BỊ.',
       cf:'各 (gè – "mỗi")',w:'准备 / 设备 / 备用'},
    ]},
-  {n:3,zh:'就',py:'jiù',pos:'Phó từ',vn:'thì, liền, chính',em:'👉',lesson:1,
+  {n:3,zh:'就',py:'jiù',pos:'Phó từ',vn:'thì, liền, chính', hv: 'tựu',em:'👉',lesson:1,
    ex_zh:'就做你爱吃的鱼吧。',ex_py:'Jiù zuò nǐ ài chī de yú ba.',ex_vn:'Vậy thì làm món cá anh thích ăn nhất đi.',
    exList:[
      {zh:'就做你爱吃的鱼吧。',py:'Jiù zuò nǐ ài chī de yú ba.',vn:'Vậy thì làm món cá anh thích ăn nhất đi.'},
@@ -44,7 +44,7 @@ var vocabData = [
       tip:'京 (nơi cao lớn) + 尤 (đặc biệt) → tiến gần tới, hoàn thành NGAY, dùng để nối ý quyết định nhanh.',
       cf:'鹫 (jiù – "chim ưng")',w:'就是 / 就去 / 那就'},
    ]},
-  {n:4,zh:'鱼',py:'yú',pos:'Danh từ',vn:'cá',em:'🐟',lesson:1,
+  {n:4,zh:'鱼',py:'yú',pos:'Danh từ',vn:'cá', hv: 'ngư',em:'🐟',lesson:1,
    ex_zh:'我最喜欢吃鱼。',ex_py:'Wǒ zuì xǐhuan chī yú.',ex_vn:'Tôi thích ăn cá nhất.',
    exList:[
      {zh:'我最喜欢吃鱼。',py:'Wǒ zuì xǐhuan chī yú.',vn:'Tôi thích ăn cá nhất.'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Hình con cá với đầu, thân vảy và đuôi cách điệu → "CÁ".',
       cf:'渔 (yú – "đánh cá", thêm bộ 氵)',w:'吃鱼 / 鱼肉 / 金鱼'},
    ]},
-  {n:5,zh:'件',py:'jiàn',pos:'Lượng từ',vn:'chiếc, cái, kiện (quần áo)',em:'👕',lesson:2,
+  {n:5,zh:'件',py:'jiàn',pos:'Lượng từ',vn:'chiếc, cái, kiện (quần áo)', hv: 'kiện',em:'👕',lesson:2,
    ex_zh:'这件衣服很漂亮。',ex_py:'Zhè jiàn yīfu hěn piàoliang.',ex_vn:'Chiếc áo này rất đẹp.',
    exList:[
      {zh:'这件衣服很漂亮。',py:'Zhè jiàn yīfu hěn piàoliang.',vn:'Chiếc áo này rất đẹp.'},
@@ -68,7 +68,7 @@ var vocabData = [
       tip:'Người 亻 đứng cạnh con bò 牛 (vật có giá trị) → đơn vị đếm từng "KIỆN, CHIẾC" riêng lẻ.',
       cf:'伴 (bàn – "bạn đồng hành")',w:'一件 / 这件 / 件件'},
    ]},
-  {n:6,zh:'还',py:'hái',pos:'Phó từ',vn:'vẫn, còn; tạm được',em:'👌',lesson:2,
+  {n:6,zh:'还',py:'hái',pos:'Phó từ',vn:'vẫn, còn; tạm được', hv: 'hoàn',em:'👌',lesson:2,
    ex_zh:'颜色还可以。',ex_py:'Yánsè hái kěyǐ.',ex_vn:'Màu sắc cũng được.',
    exList:[
      {zh:'颜色还可以。',py:'Yánsè hái kěyǐ.',vn:'Màu sắc cũng được.'},
@@ -80,7 +80,7 @@ var vocabData = [
       tip:'Bộ 辶 (đi) + 不 → ý "đi mà chưa dứt hẳn" = VẪN CÒN tiếp diễn.',
       cf:'环 (huán – "vòng", bộ 王)',w:'还可以 / 还是 / 还有'},
    ]},
-  {n:7,zh:'可以',py:'kěyǐ',pos:'Tính từ / Trợ động từ',vn:'tạm được, có thể',em:'👍',lesson:2,
+  {n:7,zh:'可以',py:'kěyǐ',pos:'Tính từ / Trợ động từ',vn:'tạm được, có thể', hv: 'khả dĩ',em:'👍',lesson:2,
    ex_zh:'听和说还可以。',ex_py:'Tīng hé shuō hái kěyǐ.',ex_vn:'Nghe và nói cũng tạm được.',
    exList:[
      {zh:'听和说还可以。',py:'Tīng hé shuō hái kěyǐ.',vn:'Nghe và nói cũng tạm được.'},
@@ -95,7 +95,7 @@ var vocabData = [
       tip:'可 (được phép) + 以 (dùng để) = được phép DÙNG ĐỂ làm gì = CÓ THỂ.',
       cf:'已 (yǐ – "đã", đã học ở Bài 4)',w:'可以 / 以后 / 以前'},
    ]},
-  {n:8,zh:'不错',py:'búcuò',pos:'Tính từ',vn:'không tồi, khá tốt',em:'👏',lesson:2,
+  {n:8,zh:'不错',py:'búcuò',pos:'Tính từ',vn:'không tồi, khá tốt', hv: 'bất thác',em:'👏',lesson:2,
    ex_zh:'这件不错，就买这件吧。',ex_py:'Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.',ex_vn:'Chiếc này đẹp đấy, quyết định mua chiếc này đi.',
    exList:[
      {zh:'这件不错，就买这件吧。',py:'Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.',vn:'Chiếc này đẹp đấy, quyết định mua chiếc này đi.'},
@@ -110,7 +110,7 @@ var vocabData = [
       tip:'不 (không) + 错 (sai) = KHÔNG SAI = khá tốt, không tồi.',
       cf:'措 (cuò – "biện pháp", bộ 扌)',w:'不错 / 错了 / 对错'},
    ]},
-  {n:9,zh:'考试',py:'kǎoshì',pos:'Danh từ / Động từ',vn:'kỳ thi, thi',em:'📝',lesson:3,
+  {n:9,zh:'考试',py:'kǎoshì',pos:'Danh từ / Động từ',vn:'kỳ thi, thi', hv: 'khảo thí',em:'📝',lesson:3,
    ex_zh:'是在想昨天的考试吗？',ex_py:'Shì zài xiǎng zuótiān de kǎoshì ma?',ex_vn:'Có phải đang nghĩ về kỳ thi hôm qua không?',
    exList:[
      {zh:'是在想昨天的考试吗？',py:'Shì zài xiǎng zuótiān de kǎoshì ma?',vn:'Có phải đang nghĩ về kỳ thi hôm qua không?'},
@@ -125,7 +125,7 @@ var vocabData = [
       tip:'考 (kiểm tra) + 试 (thử) = kiểm tra thử năng lực = THI.',
       cf:'式 (shì – "kiểu, thức")',w:'考试 / 试一下 / 试穿'},
    ]},
-  {n:10,zh:'意思',py:'yìsi',pos:'Danh từ',vn:'ý nghĩa, ý tứ',em:'💭',lesson:3,
+  {n:10,zh:'意思',py:'yìsi',pos:'Danh từ',vn:'ý nghĩa, ý tứ', hv: 'ý tư',em:'💭',lesson:3,
    ex_zh:'很多字我都不知道是什么意思。',ex_py:'Hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.',ex_vn:'Nhiều chữ tôi còn chẳng biết nghĩa là gì.',
    exList:[
      {zh:'很多字我都不知道是什么意思。',py:'Hěn duō zì wǒ dōu bù zhīdào shì shénme yìsi.',vn:'Nhiều chữ tôi còn chẳng biết nghĩa là gì.'},
@@ -140,7 +140,7 @@ var vocabData = [
       tip:'田 (ruộng, đầu óc) trên 心 (tim) → dùng đầu và tim để SUY NGHĨ.',
       cf:'田 (tián – "ruộng")',w:'意思 / 思考 / 意思意思'},
    ]},
-  {n:11,zh:'咖啡',py:'kāfēi',pos:'Danh từ',vn:'cà phê',em:'☕',lesson:4,
+  {n:11,zh:'咖啡',py:'kāfēi',pos:'Danh từ',vn:'cà phê', hv: 'ca phê',em:'☕',lesson:4,
    ex_zh:'喝咖啡吗？',ex_py:'Hē kāfēi ma?',ex_vn:'Bạn uống cà phê không?',
    exList:[
      {zh:'喝咖啡吗？',py:'Hē kāfēi ma?',vn:'Bạn uống cà phê không?'},
@@ -155,7 +155,7 @@ var vocabData = [
       tip:'咖 + 啡 = phiên âm mượn từ "coffee" — cả hai đều có bộ 口 vì liên quan tới miệng (uống).',
       cf:'非 (fēi – đã học ở Bài 4: 非常)',w:'咖啡'},
    ]},
-  {n:12,zh:'对',py:'duì',pos:'Giới từ',vn:'đối với',em:'🎯',lesson:4,
+  {n:12,zh:'对',py:'duì',pos:'Giới từ',vn:'đối với', hv: 'đối',em:'🎯',lesson:4,
    ex_zh:'咖啡喝多了对身体不好。',ex_py:'Kāfēi hē duō le duì shēntǐ bù hǎo.',ex_vn:'Uống nhiều cà phê không tốt cho sức khỏe.',
    exList:[
      {zh:'咖啡喝多了对身体不好。',py:'Kāfēi hē duō le duì shēntǐ bù hǎo.',vn:'Uống nhiều cà phê không tốt cho sức khỏe.'},
@@ -167,7 +167,7 @@ var vocabData = [
       tip:'Hai nửa đối xứng ghép khớp với nhau → nghĩa "ĐÚNG, phù hợp, hướng về phía".',
       cf:'又 (yòu – "lại, và")',w:'对不对 / 对身体好 / 对不起'},
    ]},
-  {n:13,zh:'以后',py:'yǐhòu',pos:'Danh từ chỉ thời gian',vn:'sau này, sau khi',em:'⏭️',lesson:4,
+  {n:13,zh:'以后',py:'yǐhòu',pos:'Danh từ chỉ thời gian',vn:'sau này, sau khi', hv: 'dĩ hậu',em:'⏭️',lesson:4,
    ex_zh:'以后我少喝一点儿。',ex_py:'Yǐhòu wǒ shǎo hē yìdiǎnr.',ex_vn:'Sau này tôi sẽ uống ít lại.',
    exList:[
      {zh:'以后我少喝一点儿。',py:'Yǐhòu wǒ shǎo hē yìdiǎnr.',vn:'Sau này tôi sẽ uống ít lại.'},

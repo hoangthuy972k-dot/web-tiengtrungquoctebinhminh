@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'礼拜天',py:'lǐbàitiān',pos:'Danh từ',vn:'chủ nhật',em:'📅',lesson:1,
+  {n:1,zh:'礼拜天',py:'lǐbàitiān',pos:'Danh từ',vn:'chủ nhật', hv: 'lễ bái thiên',em:'📅',lesson:1,
    explain:['Ngày cuối cùng trong tuần, ngày nghỉ (cách gọi khác của 星期天).'],
    usage:'Danh từ; thường đi với 礼拜天有空儿吗.',
    collo:['礼拜天有空儿吗','礼拜天陪我','这个礼拜天'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'礼拜天 — chủ nhật.'},
    ]},
 
-  {n:2,zh:'空儿',py:'kòngr',pos:'Danh từ',vn:'thời gian rảnh',em:'🕐',lesson:1,
+  {n:2,zh:'空儿',py:'kòngr',pos:'Danh từ',vn:'thời gian rảnh', hv: 'khống nhi',em:'🕐',lesson:1,
    explain:['Khoảng thời gian rảnh rỗi, không bận việc.'],
    usage:'Danh từ; thường đi với 有空儿吗, 哪天有空儿.',
    collo:['有空儿吗','哪天有空儿','没空儿'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'没空儿 — không rảnh.'},
    ]},
 
-  {n:3,zh:'母亲',py:'mǔqīn',pos:'Danh từ',vn:'mẹ',em:'👩',lesson:1,
+  {n:3,zh:'母亲',py:'mǔqīn',pos:'Danh từ',vn:'mẹ', hv: 'mẫu thân',em:'👩',lesson:1,
    explain:['Cách gọi trang trọng của người mẹ.'],
    usage:'Danh từ; thường đi với 需要照顾, 在母亲面前.',
    collo:['母亲和儿子','在母亲面前','照顾母亲'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'在母亲面前 — trước mặt mẹ.'},
    ]},
 
-  {n:4,zh:'不过',py:'búguò',pos:'Liên từ/Phó từ',vn:'nhưng, song; chỉ, chưa quá',em:'↩️',lesson:1,
+  {n:4,zh:'不过',py:'búguò',pos:'Liên từ/Phó từ',vn:'nhưng, song; chỉ, chưa quá', hv: 'bất quá',em:'↩️',lesson:1,
    explain:['1. (Liên từ) Đứng ở đầu vế câu sau, diễn tả sự chuyển ý, bổ sung/điều chỉnh ý của vế câu trước.','2. (Phó từ) Diễn tả "chỉ, chưa quá", nhấn mạnh số lượng/phạm vi nhỏ, thường đi với con số.'],
    usage:'Liên từ: ……不过……(bổ sung, điều chỉnh); phó từ: 不过 + số lượng.',
    collo:['不过现在我很幸福','不过是给了些建议','不过50公斤'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'不过 (phó từ) + số lượng — chỉ, chưa quá.'},
    ]},
 
-  {n:5,zh:'永远',py:'yǒngyuǎn',pos:'Phó từ',vn:'vĩnh viễn, mãi mãi',em:'♾️',lesson:1,
+  {n:5,zh:'永远',py:'yǒngyuǎn',pos:'Phó từ',vn:'vĩnh viễn, mãi mãi', hv: 'vĩnh viễn',em:'♾️',lesson:1,
    explain:['Diễn tả trạng thái không thay đổi, kéo dài mãi mãi.'],
    usage:'Phó từ, đứng trước động từ/tính từ: 永远长不大, 永远不为……烦恼.',
    collo:['永远长不大的孩子','永远不为……担心','永远都不会想要'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'永远不为……烦恼 kết hợp 烦恼, ôn lại từ vựng Bài 7.'},
    ]},
 
-  {n:6,zh:'方向',py:'fāngxiàng',pos:'Danh từ',vn:'phương hướng, sự định hướng',em:'🧭',lesson:1,
+  {n:6,zh:'方向',py:'fāngxiàng',pos:'Danh từ',vn:'phương hướng, sự định hướng', hv: 'phương hướng',em:'🧭',lesson:1,
    explain:['Hướng đi/mục tiêu mà một người/sự việc hướng tới.'],
    usage:'Danh từ; thường đi với 努力的方向, 有了方向.',
    collo:['努力的方向','有了方向','正确的方向'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'正确的方向 kết hợp 正确, ôn lại từ vựng Bài 9.'},
    ]},
 
-  {n:7,zh:'优秀',py:'yōuxiù',pos:'Tính từ',vn:'xuất sắc, ưu tú',em:'🌟',lesson:2,
+  {n:7,zh:'优秀',py:'yōuxiù',pos:'Tính từ',vn:'xuất sắc, ưu tú', hv: 'ưu tú',em:'🌟',lesson:2,
    explain:['Nổi trội, giỏi giang hơn mức bình thường.'],
    usage:'Tính từ; thường đi với 那么优秀, 优秀的学生.',
    collo:['那么优秀','优秀的学生','非常优秀'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'优秀的翻译 kết hợp 翻译, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:8,zh:'硕士',py:'shuòshì',pos:'Danh từ',vn:'thạc sĩ',em:'🎓',lesson:2,
+  {n:8,zh:'硕士',py:'shuòshì',pos:'Danh từ',vn:'thạc sĩ', hv: 'thạc sĩ',em:'🎓',lesson:2,
    explain:['Học vị sau đại học, trước tiến sĩ.'],
    usage:'Danh từ; thường đi với 硕士毕业, 读硕士.',
    collo:['硕士毕业','读硕士','硕士学位'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'Ôn lại cấu trúc câu hỏi phản vấn.'},
    ]},
 
-  {n:9,zh:'翻译',py:'fānyì',pos:'Danh từ/Động từ',vn:'phiên dịch viên; dịch',em:'🗣️',lesson:2,
+  {n:9,zh:'翻译',py:'fānyì',pos:'Danh từ/Động từ',vn:'phiên dịch viên; dịch', hv: 'phiên dịch',em:'🗣️',lesson:2,
    explain:['1. (Danh từ) Người làm nghề chuyển đổi ngôn ngữ.','2. (Động từ) Chuyển đổi văn bản/lời nói từ ngôn ngữ này sang ngôn ngữ khác.'],
    usage:'Danh từ: 当了翻译; động từ: 翻译成中文.',
    collo:['当了翻译','翻译成中文','做翻译工作'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'翻译成中文 — dịch sang tiếng Trung.'},
    ]},
 
-  {n:10,zh:'确实',py:'quèshí',pos:'Phó từ',vn:'thực sự, quả thực',em:'✅',lesson:2,
+  {n:10,zh:'确实',py:'quèshí',pos:'Phó từ',vn:'thực sự, quả thực', hv: 'xác thực',em:'✅',lesson:2,
    explain:['Diễn tả sự khẳng định tính chân thực của một tình huống khách quan.'],
    usage:'Phó từ, đứng trước tính từ/động từ: 确实不错, 确实是……的重要原因.',
    collo:['确实不错','确实是……原因','确实比以前更……'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'确实不错 kết hợp 硕士, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:11,zh:'兴奋',py:'xīngfèn',pos:'Tính từ',vn:'hăng hái, phấn khởi',em:'🤩',lesson:2,
+  {n:11,zh:'兴奋',py:'xīngfèn',pos:'Tính từ',vn:'hăng hái, phấn khởi', hv: 'hưng phấn',em:'🤩',lesson:2,
    explain:['Trạng thái tâm lý vui mừng, phấn khích cao độ.'],
    usage:'Tính từ; thường đi với 兴奋地拉着, 感到兴奋.',
    collo:['兴奋地拉着','感到很兴奋','兴奋得睡不着'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'兴奋地拉着 kết hợp 购物, ôn lại từ vựng Bài 5.'},
    ]},
 
-  {n:12,zh:'拉',py:'lā',pos:'Động từ',vn:'kéo, lôi, dắt',em:'🤝',lesson:2,
+  {n:12,zh:'拉',py:'lā',pos:'Động từ',vn:'kéo, lôi, dắt', hv: 'lạp',em:'🤝',lesson:2,
    explain:['Dùng tay kéo/dắt một vật/người theo một hướng.'],
    usage:'Động từ; thường đi với 拉着我, 拉近距离.',
    collo:['兴奋地拉着我','拉近了距离','拉着手'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'兴奋地拉着 kết hợp 兴奋/购物, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:13,zh:'建议',py:'jiànyì',pos:'Danh từ/Động từ',vn:'kiến nghị, sự đề nghị',em:'💬',lesson:3,
+  {n:13,zh:'建议',py:'jiànyì',pos:'Danh từ/Động từ',vn:'kiến nghị, sự đề nghị', hv: 'kiến nghị',em:'💬',lesson:3,
    explain:['1. (Động từ) Đưa ra ý kiến/đề xuất cho ai đó.','2. (Danh từ) Ý kiến/đề xuất đã đưa ra.'],
    usage:'Động từ: 建议我平时多开车; danh từ: 听听你的建议.',
    collo:['听听你的建议','有什么建议','建议做……'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'建议 + đối tượng + động từ — đề nghị ai đó làm gì.'},
    ]},
 
-  {n:14,zh:'职业',py:'zhíyè',pos:'Danh từ',vn:'nghề nghiệp',em:'💼',lesson:3,
+  {n:14,zh:'职业',py:'zhíyè',pos:'Danh từ',vn:'nghề nghiệp', hv: 'chức nghiệp',em:'💼',lesson:3,
    explain:['Công việc mà một người làm để kiếm sống.'],
    usage:'Danh từ; thường đi với 选择职业, 职业时.',
    collo:['选择职业','在选择职业时','对……的职业'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'每种职业 kết hợp 优点, ôn lại từ vựng Bài 5.'},
    ]},
 
-  {n:15,zh:'关键',py:'guānjiàn',pos:'Danh từ',vn:'điều quan trọng, điểm mấu chốt',em:'🔑',lesson:3,
+  {n:15,zh:'关键',py:'guānjiàn',pos:'Danh từ',vn:'điều quan trọng, điểm mấu chốt', hv: 'quan kiện',em:'🔑',lesson:3,
    explain:['Yếu tố quyết định, quan trọng nhất trong một vấn đề.'],
    usage:'Danh từ; thường đi với 兴趣才是关键, 关键是.',
    collo:['兴趣才是关键','关键是……','是……的关键'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'……的关键是坚持 kết hợp 坚持, ôn lại từ vựng Bài 9.'},
    ]},
 
-  {n:16,zh:'将来',py:'jiānglái',pos:'Danh từ',vn:'tương lai',em:'🔮',lesson:3,
+  {n:16,zh:'将来',py:'jiānglái',pos:'Danh từ',vn:'tương lai', hv: 'tương lai',em:'🔮',lesson:3,
    explain:['Khoảng thời gian sắp tới, chưa xảy ra.'],
    usage:'Danh từ; thường đi với 将来也会, 将来的发展.',
    collo:['将来也会有更好的发展','对将来','将来的打算'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'对将来有什么打算 kết hợp 职业, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:17,zh:'发展',py:'fāzhǎn',pos:'Động từ',vn:'phát triển',em:'📈',lesson:3,
+  {n:17,zh:'发展',py:'fāzhǎn',pos:'Động từ',vn:'phát triển', hv: 'phát triển',em:'📈',lesson:3,
    explain:['Mở rộng, tiến bộ theo hướng tốt hơn.'],
    usage:'Động từ; thường đi với 更好的发展, 发展自己.',
    collo:['更好的发展','发展自己','公司的发展'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'更好的发展 kết hợp 方向/正确, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:18,zh:'躺',py:'tǎng',pos:'Động từ',vn:'nằm',em:'🛌',lesson:3,
+  {n:18,zh:'躺',py:'tǎng',pos:'Động từ',vn:'nằm', hv: 'thảng',em:'🛌',lesson:3,
    explain:['Đặt thân thể ở tư thế nằm ngang.'],
    usage:'Động từ; thường đi với 躺在床上, 躺着.',
    collo:['躺在床上','躺在沙发上','本来躺在……'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'Ôn lại cấu trúc câu hỏi hoàn cảnh.'},
    ]},
 
-  {n:19,zh:'困',py:'kùn',pos:'Tính từ',vn:'buồn ngủ',em:'😴',lesson:3,
+  {n:19,zh:'困',py:'kùn',pos:'Tính từ',vn:'buồn ngủ', hv: 'khốn',em:'😴',lesson:3,
    explain:['Cảm thấy mệt mỏi, muốn ngủ.'],
    usage:'Tính từ; thường đi với 困了睡睡觉, 觉得很困.',
    collo:['困了睡睡觉','觉得很困','困的时候'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'困……躺在床上 kết hợp 躺, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:20,zh:'经济',py:'jīngjì',pos:'Danh từ',vn:'kinh tế',em:'💹',lesson:4,
+  {n:20,zh:'经济',py:'jīngjì',pos:'Danh từ',vn:'kinh tế', hv: 'kinh tế',em:'💹',lesson:4,
    explain:['Hoạt động sản xuất, trao đổi, tiêu dùng của xã hội; điều kiện tài chính.'],
    usage:'Danh từ; thường đi với 经济条件, 经济越好.',
    collo:['经济条件越好','经济发展','经济压力'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'经济发展 kết hợp 发展, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:21,zh:'条件',py:'tiáojiàn',pos:'Danh từ',vn:'điều kiện',em:'📋',lesson:4,
+  {n:21,zh:'条件',py:'tiáojiàn',pos:'Danh từ',vn:'điều kiện', hv: 'điều kiện',em:'📋',lesson:4,
    explain:['Yếu tố cần có để một việc xảy ra/tồn tại.'],
    usage:'Danh từ; thường đi với 经济条件, 条件越好.',
    collo:['经济条件','条件越好','工作条件'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'经济条件 kết hợp 经济, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:22,zh:'富',py:'fù',pos:'Tính từ',vn:'giàu',em:'💰',lesson:4,
+  {n:22,zh:'富',py:'fù',pos:'Tính từ',vn:'giàu', hv: 'phú',em:'💰',lesson:4,
    explain:['Có nhiều tiền của, sung túc về vật chất.'],
    usage:'Tính từ; thường đi với 富人, 过得并不愉快.',
    collo:['富人','有很多富人','富有的人'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'虽然富……缺少 kết hợp 缺少, ôn lại từ vựng Bài 8.'},
    ]},
 
-  {n:23,zh:'穷',py:'qióng',pos:'Tính từ',vn:'nghèo',em:'😔',lesson:4,
+  {n:23,zh:'穷',py:'qióng',pos:'Tính từ',vn:'nghèo', hv: 'cùng',em:'😔',lesson:4,
    explain:['Thiếu thốn về tiền của, vật chất.'],
    usage:'Tính từ; thường đi với 有些穷人, 过得很快乐.',
    collo:['有些穷人','穷人却过得很快乐','家里很穷'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'穷……成为……成功 kết hợp 成为, ôn lại từ vựng Bài 8.'},
    ]},
 
-  {n:24,zh:'等',py:'děng',pos:'Trợ từ',vn:'vân vân',em:'➕',lesson:4,
+  {n:24,zh:'等',py:'děng',pos:'Trợ từ',vn:'vân vân', hv: 'đẳng',em:'➕',lesson:4,
    explain:['Trợ từ đặt cuối câu liệt kê, diễn tả còn nhiều điều khác chưa nêu hết.'],
    usage:'A、B、C 等: liệt kê + 等.',
    collo:['时间、感情、生活经历等','等等','这些东西等'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'例如……等 kết hợp 材料/现金, ôn lại từ vựng Bài 4/5.'},
    ]},
 
-  {n:25,zh:'由于',py:'yóuyú',pos:'Liên từ/Giới từ',vn:'vì, bởi vì',em:'📌',lesson:4,
+  {n:25,zh:'由于',py:'yóuyú',pos:'Liên từ/Giới từ',vn:'vì, bởi vì', hv: 'do vu',em:'📌',lesson:4,
    explain:['1. (Liên từ) Diễn tả nguyên nhân, theo sau là một mệnh đề, thường đứng ở vế đầu của câu.','2. (Giới từ) Cũng diễn tả nguyên nhân, theo sau là cụm danh từ.'],
    usage:'由于 + mệnh đề (liên từ), ……; 由于 + cụm danh từ (giới từ), ……',
    collo:['由于缺钱','由于种种原因','由于工作的需要'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'由于……保证……幸福 kết hợp 保证, ôn lại từ vựng Bài 4.'},
    ]},
 
-  {n:26,zh:'比如',py:'bǐrú',pos:'Động từ',vn:'ví dụ, chẳng hạn',em:'💡',lesson:5,
+  {n:26,zh:'比如',py:'bǐrú',pos:'Động từ',vn:'ví dụ, chẳng hạn', hv: 'tỉ như',em:'💡',lesson:5,
    explain:['Đưa ra ví dụ để minh họa/giải thích cho một sự vật/tình huống.'],
    usage:'Động từ, đứng đầu vế câu ví dụ: 比如一块橡皮.',
    collo:['比如一块橡皮','比如说','比如作家爱写小说'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'比如 kết hợp 质量/打折, ôn lại từ vựng Bài 6.'},
    ]},
 
-  {n:27,zh:'橡皮',py:'xiàngpí',pos:'Danh từ',vn:'cục gôm, tẩy',em:'🧼',lesson:5,
+  {n:27,zh:'橡皮',py:'xiàngpí',pos:'Danh từ',vn:'cục gôm, tẩy', hv: 'tượng bì',em:'🧼',lesson:5,
    explain:['Dụng cụ dùng để tẩy xóa chữ viết bằng bút chì.'],
    usage:'Danh từ; thường đi với 一块橡皮.',
    collo:['一块橡皮','买块橡皮','一块糖'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'忘带橡皮 — quên mang tẩy.'},
    ]},
 
-  {n:28,zh:'糖',py:'táng',pos:'Danh từ',vn:'kẹo',em:'🍬',lesson:5,
+  {n:28,zh:'糖',py:'táng',pos:'Danh từ',vn:'kẹo', hv: 'đường',em:'🍬',lesson:5,
    explain:['Đồ ăn ngọt, hoặc chất tạo vị ngọt.'],
    usage:'Danh từ; thường đi với 一块糖, 吃糖.',
    collo:['一块糖','吃糖','买糖'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'一块糖 — một viên kẹo.'},
    ]},
 
-  {n:29,zh:'低',py:'dī',pos:'Tính từ',vn:'thấp',em:'⬇️',lesson:5,
+  {n:29,zh:'低',py:'dī',pos:'Tính từ',vn:'thấp', hv: 'đê',em:'⬇️',lesson:5,
    explain:['Ở mức độ/chiều cao dưới mức trung bình, đối lập với 高.'],
    usage:'Tính từ; thường đi với 分出高低, 幸福感的高低.',
    collo:['分出高低','幸福感的高低','工资低'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'幸福感的高低 kết hợp 态度, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:30,zh:'答案',py:'dá\'àn',pos:'Danh từ',vn:'đáp án, câu trả lời, lời giải',em:'✅',lesson:5,
+  {n:30,zh:'答案',py:'dá\'àn',pos:'Danh từ',vn:'đáp án, câu trả lời, lời giải', hv: 'đáp án',em:'✅',lesson:5,
    explain:['Câu trả lời/kết quả cho một câu hỏi/vấn đề.'],
    usage:'Danh từ; thường đi với 一个标准答案, 正确答案.',
    collo:['一个标准答案','没有标准答案','正确的答案'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'写答案 kết hợp 提, ôn lại từ vựng Bài 4.'},
    ]},
 
-  {n:31,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)',em:'👩',lesson:1,
+  {n:31,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)', hv: 'Tôn Nguyệt',em:'👩',lesson:1,
    explain:['Tên riêng của nhân vật nữ, xuất hiện lại từ Bài 2 và Bài 9.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['孙月说','孙月和王静'],
@@ -672,7 +672,7 @@ var vocabData = [
      {zh:'孙月和王静聊王静的生活情况。',py:'Sūn Yuè hé Wáng Jìng liáo Wáng Jìng de shēnghuó qíngkuàng.',vn:'Tôn Nguyệt và Vương Tĩnh nói chuyện về tình hình cuộc sống của Vương Tĩnh.'},
    ]},
 
-  {n:32,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tĩnh (tên người)',em:'👩',lesson:1,
+  {n:32,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tĩnh (tên người)', hv: 'Vương Tĩnh',em:'👩',lesson:1,
    explain:['Tên riêng của nhân vật nữ, xuất hiện lại từ Bài 5 và Bài 6.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['王静说','孙月和王静'],

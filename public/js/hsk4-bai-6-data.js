@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'果汁',py:'guǒzhī',pos:'Danh từ',vn:'nước trái cây',em:'🧃',lesson:1,
+  {n:1,zh:'果汁',py:'guǒzhī',pos:'Danh từ',vn:'nước trái cây', hv: 'quả trấp',em:'🧃',lesson:1,
    explain:['Nước ép từ hoa quả tươi.'],
    usage:'Danh từ; thường đi với 买果汁, 喝果汁.',
    collo:['买果汁','喝果汁','一瓶果汁'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'用不了……那么长时间 — không cần nhiều thời gian đến thế.'},
    ]},
 
-  {n:2,zh:'售货员',py:'shòuhuòyuán',pos:'Danh từ',vn:'nhân viên bán hàng',em:'🧑‍💼',lesson:1,
+  {n:2,zh:'售货员',py:'shòuhuòyuán',pos:'Danh từ',vn:'nhân viên bán hàng', hv: 'thụ hóa viên',em:'🧑‍💼',lesson:1,
    explain:['Người làm công việc bán hàng tại cửa hàng/siêu thị.'],
    usage:'Danh từ; thường đi với 售货员就……, 售货员说.',
    collo:['售货员就','售货员介绍','售货员说'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'不希望被……打扰 — không muốn bị làm phiền.'},
    ]},
 
-  {n:3,zh:'袜子',py:'wàzi',pos:'Danh từ',vn:'tất, vớ',em:'🧦',lesson:1,
+  {n:3,zh:'袜子',py:'wàzi',pos:'Danh từ',vn:'tất, vớ', hv: 'miệt tử',em:'🧦',lesson:1,
    explain:['Đồ mặc bọc chân, đi bên trong giày.'],
    usage:'Danh từ; thường đi với 两双袜子, 买袜子.',
    collo:['两双袜子','买袜子','一双袜子'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'满 + số tiền — đạt đủ mức, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:4,zh:'打扰',py:'dǎrǎo',pos:'Động từ',vn:'quấy rầy, làm phiền',em:'🙅',lesson:1,
+  {n:4,zh:'打扰',py:'dǎrǎo',pos:'Động từ',vn:'quấy rầy, làm phiền', hv: 'đả nhiễu',em:'🙅',lesson:1,
    explain:['Gây ảnh hưởng/phiền toái đến hoạt động của người khác.'],
    usage:'Động từ, thường dùng bị động: 被……打扰, 不希望被打扰.',
    collo:['被打扰','不希望被打扰','打扰您了'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'不好意思打扰你 — xin lỗi làm phiền bạn.'},
    ]},
 
-  {n:5,zh:'竟然',py:'jìngrán',pos:'Phó từ',vn:'không ngờ, mà vậy',em:'😲',lesson:1,
+  {n:5,zh:'竟然',py:'jìngrán',pos:'Phó từ',vn:'không ngờ, mà vậy', hv: 'cánh nhiên',em:'😲',lesson:1,
    explain:['Diễn tả sự việc nằm ngoài dự đoán, gây ngạc nhiên.'],
    usage:'Phó từ, đứng trước động từ/tính từ: 竟然忘了, 竟然没听过.',
    collo:['竟然忘了','竟然没听过','竟然这么多'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'竟然 diễn tả sự ngạc nhiên, ngoài dự đoán.'},
    ]},
 
-  {n:6,zh:'西红柿',py:'xīhóngshì',pos:'Danh từ',vn:'cà chua',em:'🍅',lesson:2,
+  {n:6,zh:'西红柿',py:'xīhóngshì',pos:'Danh từ',vn:'cà chua', hv: 'tây hồng thị',em:'🍅',lesson:2,
    explain:['Loại quả màu đỏ, dùng làm rau ăn, giàu vitamin.'],
    usage:'Danh từ; thường đi với 买西红柿, 西红柿新鲜.',
    collo:['买西红柿','西红柿新鲜','两斤西红柿'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'对……有好处 kết hợp 皮肤, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:7,zh:'百分之',py:'bǎifēnzhī',pos:'Danh từ',vn:'phần trăm',em:'💯',lesson:2,
+  {n:7,zh:'百分之',py:'bǎifēnzhī',pos:'Danh từ',vn:'phần trăm', hv: 'bách phân chi',em:'💯',lesson:2,
    explain:['Cách diễn đạt tỷ lệ theo phần trăm (%).'],
    usage:'百分之 + số: 百分之百 (100%), 百分之七十五 (75%).',
    collo:['百分之百','百分之七十五','百分之六十四'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'百分之六十 kết hợp 顾客/价格, ôn lại nhiều từ vựng.'},
    ]},
 
-  {n:8,zh:'倍',py:'bèi',pos:'Lượng từ',vn:'lần (bội số)',em:'✖️',lesson:2,
+  {n:8,zh:'倍',py:'bèi',pos:'Lượng từ',vn:'lần (bội số)', hv: 'bội',em:'✖️',lesson:2,
    explain:['Lượng từ chỉ số lần tăng gấp, thường không đi kèm danh từ phía sau.'],
    usage:'Lượng từ độc lập: 是……的两倍, 提高了一倍.',
    collo:['两倍','三倍','提高了一倍'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'今天的价格是昨天的两倍 kết hợp 价格, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:9,zh:'皮肤',py:'pífū',pos:'Danh từ',vn:'da',em:'🧴',lesson:2,
+  {n:9,zh:'皮肤',py:'pífū',pos:'Danh từ',vn:'da', hv: 'bì phu',em:'🧴',lesson:2,
    explain:['Lớp bao phủ bên ngoài cơ thể người.'],
    usage:'Danh từ; thường đi với 对皮肤有好处, 皮肤好.',
    collo:['对皮肤有好处','皮肤好','皮肤白'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'保护皮肤 — bảo vệ da.'},
    ]},
 
-  {n:10,zh:'好处',py:'hǎochù',pos:'Danh từ',vn:'lợi ích, điều tốt',em:'👍',lesson:2,
+  {n:10,zh:'好处',py:'hǎochù',pos:'Danh từ',vn:'lợi ích, điều tốt', hv: 'hảo xứ',em:'👍',lesson:2,
    explain:['Điều có lợi, mang lại kết quả tốt.'],
    usage:'Danh từ; thường đi với 对……有好处.',
    collo:['对皮肤有好处','有好处','没有好处'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'对……有好处 kết hợp 积累/经验, ôn lại từ vựng Bài 4.'},
    ]},
 
-  {n:11,zh:'尝',py:'cháng',pos:'Động từ',vn:'nếm thử, thưởng thức',em:'😋',lesson:2,
+  {n:11,zh:'尝',py:'cháng',pos:'Động từ',vn:'nếm thử, thưởng thức', hv: 'thường',em:'😋',lesson:2,
    explain:['Ăn/uống một lượng nhỏ để cảm nhận vị.'],
    usage:'Động từ, thường lặp lại: 尝尝, 先买几个尝尝.',
    collo:['尝尝','先买几个尝尝','尝一下'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'尝尝 + danh từ — nếm thử cái gì.'},
    ]},
 
-  {n:12,zh:'轻',py:'qīng',pos:'Tính từ',vn:'nhẹ',em:'🪶',lesson:3,
+  {n:12,zh:'轻',py:'qīng',pos:'Tính từ',vn:'nhẹ', hv: 'khinh',em:'🪶',lesson:3,
    explain:['Có trọng lượng nhỏ, không nặng.'],
    usage:'Tính từ; thường đi với 轻一点儿的, 搬得轻一点儿.',
    collo:['轻一点儿的','搬得轻一点儿','又轻又好'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'不管从……看，还是从……看 kết hợp 值得/考虑, ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:13,zh:'方面',py:'fāngmiàn',pos:'Danh từ',vn:'khía cạnh, phương diện',em:'📐',lesson:3,
+  {n:13,zh:'方面',py:'fāngmiàn',pos:'Danh từ',vn:'khía cạnh, phương diện', hv: 'phương diện',em:'📐',lesson:3,
    explain:['Một mặt/góc độ nào đó của sự vật, sự việc.'],
    usage:'Danh từ; thường đi với 从……方面看, 各方面.',
    collo:['从价格方面看','各方面','这方面'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'各方面 kết hợp 各, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:14,zh:'值得',py:'zhídé',pos:'Động từ',vn:'đáng (giá)',em:'✅',lesson:3,
+  {n:14,zh:'值得',py:'zhídé',pos:'Động từ',vn:'đáng (giá)', hv: 'trị đắc',em:'✅',lesson:3,
    explain:['Diễn tả việc gì đó có giá trị, đáng làm, mang lại kết quả tốt.'],
    usage:'Động từ, mang động từ/cụm động từ làm tân ngữ: 值得考虑, 值得学习.',
    collo:['值得考虑','值得买','值得学习'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'更值得……去学习 — càng đáng để … học hỏi, ôn lại từ vựng 优点 Bài 5.'},
    ]},
 
-  {n:15,zh:'活动',py:'huódòng',pos:'Danh từ',vn:'hoạt động',em:'🎉',lesson:3,
+  {n:15,zh:'活动',py:'huódòng',pos:'Danh từ',vn:'hoạt động', hv: 'hoạt động',em:'🎉',lesson:3,
    explain:['Chương trình/sự kiện được tổ chức nhằm một mục đích nào đó.'],
    usage:'Danh từ; thường đi với 打折活动, 举办活动.',
    collo:['打折活动','举办活动','参加活动'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'一到……也会 kết hợp 降低/举办/各, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:16,zh:'内',py:'nèi',pos:'Danh từ',vn:'(bên) trong, trong vòng',em:'📥',lesson:3,
+  {n:16,zh:'内',py:'nèi',pos:'Danh từ',vn:'(bên) trong, trong vòng', hv: 'nội',em:'📥',lesson:3,
    explain:['Chỉ phạm vi bên trong (không gian hoặc thời gian).'],
    usage:'Danh từ, thường kết hợp: 一年内, 三日内.',
    collo:['一年内','三日内','范围内'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'三日内 — trong vòng ba ngày.'},
    ]},
 
-  {n:17,zh:'免费',py:'miǎnfèi',pos:'Động từ',vn:'miễn phí',em:'🆓',lesson:3,
+  {n:17,zh:'免费',py:'miǎnfèi',pos:'Động từ',vn:'miễn phí', hv: 'miễn phí',em:'🆓',lesson:3,
    explain:['Không phải trả tiền cho dịch vụ/sản phẩm.'],
    usage:'Động từ ly hợp; thường đi với 免费修理, 免费办卡.',
    collo:['免费修理','免费办卡','免费送货'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'免费送货上门 — giao hàng miễn phí tận nhà.'},
    ]},
 
-  {n:18,zh:'修理',py:'xiūlǐ',pos:'Động từ',vn:'sửa chữa',em:'🔧',lesson:3,
+  {n:18,zh:'修理',py:'xiūlǐ',pos:'Động từ',vn:'sửa chữa', hv: 'tu lý',em:'🔧',lesson:3,
    explain:['Sửa lại đồ vật bị hỏng để dùng được bình thường.'],
    usage:'Động từ; thường đi với 免费修理, 修理好.',
    collo:['免费修理','修理好','修理东西'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'找师傅来修理 — tìm thợ đến sửa.'},
    ]},
 
-  {n:19,zh:'支持',py:'zhīchí',pos:'Động từ',vn:'ủng hộ',em:'🤝',lesson:4,
+  {n:19,zh:'支持',py:'zhīchí',pos:'Động từ',vn:'ủng hộ', hv: 'chi trì',em:'🤝',lesson:4,
    explain:['Đồng tình, giúp đỡ, ủng hộ một ai đó/việc gì đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 支持大家, 感谢支持.',
    collo:['感谢支持','支持大家','得到支持'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'为了感谢……的支持 kết hợp 顾客/活动, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:20,zh:'举行',py:'jǔxíng',pos:'Động từ',vn:'tổ chức (hội họp, thi đấu...)',em:'🎪',lesson:4,
+  {n:20,zh:'举行',py:'jǔxíng',pos:'Động từ',vn:'tổ chức (hội họp, thi đấu...)', hv: 'cử hành',em:'🎪',lesson:4,
    explain:['Tổ chức một sự kiện/hoạt động (thường trang trọng, quy mô).'],
    usage:'Động từ, mang tân ngữ trực tiếp: 举行活动, 举行会议.',
    collo:['举行活动','举行会议','举行比赛'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'一到……也会举行 kết hợp 各/活动, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:21,zh:'满',py:'mǎn',pos:'Động từ',vn:'đạt đến, đầy, đủ',em:'💯',lesson:4,
+  {n:21,zh:'满',py:'mǎn',pos:'Động từ',vn:'đạt đến, đầy, đủ', hv: 'mãn',em:'💯',lesson:4,
    explain:['Đạt đến một mức/chỉ tiêu/giới hạn nào đó.'],
    usage:'Động từ, mang số lượng làm tân ngữ: 满100元, 购书满500元.',
    collo:['满100元','购书满500元','满四百元'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'满 + số tiền — đủ mức tiền, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:22,zh:'其中',py:'qízhōng',pos:'Danh từ',vn:'trong đó',em:'📍',lesson:4,
+  {n:22,zh:'其中',py:'qízhōng',pos:'Danh từ',vn:'trong đó', hv: 'kỳ trung',em:'📍',lesson:4,
    explain:['Chỉ phạm vi/vị trí bên trong một tập hợp/nhóm đã nêu.'],
    usage:'Danh từ, thường đứng đầu câu bổ sung chi tiết: 其中，……',
    collo:['其中','其中，……','乐在其中'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'其中 + mệnh đề bổ sung — trong đó….'},
    ]},
 
-  {n:23,zh:'小说',py:'xiǎoshuō',pos:'Danh từ',vn:'tiểu thuyết',em:'📖',lesson:4,
+  {n:23,zh:'小说',py:'xiǎoshuō',pos:'Danh từ',vn:'tiểu thuyết', hv: 'tiểu thuyết',em:'📖',lesson:4,
    explain:['Tác phẩm văn học kể chuyện dưới dạng văn xuôi.'],
    usage:'Danh từ; thường đi với 一本小说, 小说7.5折.',
    collo:['一本小说','小说7.5折','看小说'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'小说讲了……故事 — tiểu thuyết kể câu chuyện….'},
    ]},
 
-  {n:24,zh:'所有',py:'suǒyǒu',pos:'Tính từ',vn:'tất cả, toàn bộ',em:'🌐',lesson:4,
+  {n:24,zh:'所有',py:'suǒyǒu',pos:'Tính từ',vn:'tất cả, toàn bộ', hv: 'sở hữu',em:'🌐',lesson:4,
    explain:['Toàn bộ, không sót một cái nào.'],
    usage:'Tính từ, làm định ngữ: 所有的小朋友, 所有人.',
    collo:['所有的小朋友','所有人','所有东西'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'所有 + danh từ (2 lần) — tất cả.'},
    ]},
 
-  {n:25,zh:'获得',py:'huòdé',pos:'Động từ',vn:'được, giành được',em:'🎁',lesson:4,
+  {n:25,zh:'获得',py:'huòdé',pos:'Động từ',vn:'được, giành được', hv: 'hoạch đắc',em:'🎁',lesson:4,
    explain:['Nhận được, đạt được điều gì đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 获得礼物, 获得成功.',
    collo:['获得礼物','获得成功','免费获得'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'获得成功 kết hợp 所有, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:26,zh:'情况',py:'qíngkuàng',pos:'Danh từ',vn:'tình hình, tình huống',em:'📋',lesson:5,
+  {n:26,zh:'情况',py:'qíngkuàng',pos:'Danh từ',vn:'tình hình, tình huống', hv: 'tình huống',em:'📋',lesson:5,
    explain:['Trạng thái/diễn biến của một sự việc tại một thời điểm.'],
    usage:'Danh từ; thường đi với 一般情况下, 什么情况.',
    collo:['一般情况下','什么情况','了解情况'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'根据……情况 kết hợp 另外/方法, ôn lại nhiều từ vựng.'},
    ]},
 
-  {n:27,zh:'例如',py:'lìrú',pos:'Động từ',vn:'lấy ví dụ, ví dụ như',em:'📝',lesson:5,
+  {n:27,zh:'例如',py:'lìrú',pos:'Động từ',vn:'lấy ví dụ, ví dụ như', hv: 'lệ như',em:'📝',lesson:5,
    explain:['Dùng để đưa ra một ví dụ minh họa cho điều vừa nói.'],
    usage:'Động từ, đứng đầu câu ví dụ: 例如，……',
    collo:['例如','比如例如','举例如下'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'例如 mở đầu câu ví dụ.'},
    ]},
 
-  {n:28,zh:'举办',py:'jǔbàn',pos:'Động từ',vn:'tổ chức, tiến hành',em:'🎪',lesson:5,
+  {n:28,zh:'举办',py:'jǔbàn',pos:'Động từ',vn:'tổ chức, tiến hành', hv: 'cử biện',em:'🎪',lesson:5,
    explain:['Tổ chức, tiến hành một hoạt động/sự kiện (nghĩa gần với 举行).'],
    usage:'Động từ, mang tân ngữ trực tiếp: 举办活动.',
    collo:['举办活动','举办比赛','举办展览'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'举办 + 活动 — tổ chức hoạt động.'},
    ]},
 
-  {n:29,zh:'各',py:'gè',pos:'Đại từ',vn:'các, mỗi',em:'🔘',lesson:5,
+  {n:29,zh:'各',py:'gè',pos:'Đại từ',vn:'các, mỗi', hv: 'các',em:'🔘',lesson:5,
    explain:['Đại từ chỉ mỗi cái/mỗi người trong một tập hợp, không sót cái nào.'],
    usage:'Đại từ, đứng trước danh từ: 各方面, 各种各样.',
    collo:['各方面','各种各样','各位'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'各方面 kết hợp 方面, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:30,zh:'降低',py:'jiàngdī',pos:'Động từ',vn:'giảm, hạ',em:'📉',lesson:5,
+  {n:30,zh:'降低',py:'jiàngdī',pos:'Động từ',vn:'giảm, hạ', hv: 'giáng đê',em:'📉',lesson:5,
    explain:['Làm cho mức độ/giá trị/số lượng giảm xuống thấp hơn.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 降低价格, 降低标准.',
    collo:['降低价格','降低标准','价格降低'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'降低……标准 kết hợp 标准, ôn lại từ vựng Bài 5.'},
    ]},
 
-  {n:31,zh:'张远',py:'Zhāng Yuǎn',pos:'Danh từ riêng',vn:'Trương Viễn (tên người)',em:'🧑',lesson:1,
+  {n:31,zh:'张远',py:'Zhāng Yuǎn',pos:'Danh từ riêng',vn:'Trương Viễn (tên người)', hv: 'Trương Viễn',em:'🧑',lesson:1,
    explain:['Tên riêng của nhân vật nam, bạn của Lý Tiến, xuất hiện lại từ Bài 2.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['张远说','张远和李进'],
@@ -672,7 +672,7 @@ var vocabData = [
      {zh:'张远和李进聊李进昨晚的购物经历。',py:'Zhāng Yuǎn hé Lǐ Jìn liáo Lǐ Jìn zuówǎn de gòuwù jīnglì.',vn:'Trương Viễn và Lý Tiến nói chuyện về trải nghiệm mua sắm tối qua của Lý Tiến.'},
    ]},
 
-  {n:32,zh:'李进',py:'Lǐ Jìn',pos:'Danh từ riêng',vn:'Lý Tiến (tên người)',em:'🧑',lesson:1,
+  {n:32,zh:'李进',py:'Lǐ Jìn',pos:'Danh từ riêng',vn:'Lý Tiến (tên người)', hv: 'Lý Tiến',em:'🧑',lesson:1,
    explain:['Tên riêng của chồng王静, xuất hiện lại từ Bài 5.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['李进说','王静和李进'],
@@ -681,7 +681,7 @@ var vocabData = [
      {zh:'李进在商场买行李箱。',py:'Lǐ Jìn zài shāngchǎng mǎi xínglixiāng.',vn:'Lý Tiến mua vali ở trung tâm mua sắm.'},
    ]},
 
-  {n:33,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tĩnh (tên người)',em:'👩',lesson:2,
+  {n:33,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tĩnh (tên người)', hv: 'Vương Tĩnh',em:'👩',lesson:2,
    explain:['Tên riêng của vợ李进, xuất hiện lại từ Bài 5.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['王静说','王静在商店'],

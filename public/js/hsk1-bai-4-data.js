@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 4: 她是我的汉语老师。
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, bà ấy',em:'👩',lesson:1,
+  {n:1,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, bà ấy', hv: 'tha',em:'👩',lesson:1,
    ex_zh:'她是谁？',ex_py:'Tā shì shéi?',ex_vn:'Cô ấy là ai vậy?',
    exList:[
      {zh:'她是谁？',py:'Tā shì shéi?',vn:'Cô ấy là ai vậy?'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'女(nữ giới) + 也(đại từ cổ) → đại từ chỉ NGƯỜI NỮ đang được nhắc đến.',
       cf:'姐 (jiě – "chị gái")',w:'她是我朋友'},
    ]},
-  {n:2,zh:'谁',py:'shéi',pos:'Đại từ',vn:'ai',em:'❓',lesson:1,
+  {n:2,zh:'谁',py:'shéi',pos:'Đại từ',vn:'ai', hv: 'thùy',em:'❓',lesson:1,
    ex_zh:'她是谁？',ex_py:'Tā shì shéi?',ex_vn:'Cô ấy là ai vậy?',
    exList:[
      {zh:'她是谁？',py:'Tā shì shéi?',vn:'Cô ấy là ai vậy?'},
@@ -24,7 +24,7 @@ var vocabData = [
       tip:'讠(lời nói) dùng để cất tiếng HỎI xem người đó là ai.',
       cf:'唯 (wéi – "duy nhất", cũng có 隹")',w:'她是谁 / 他是谁'},
    ]},
-  {n:3,zh:'的',py:'de',pos:'Trợ từ',vn:'trợ từ kết cấu, biểu thị sở hữu',em:'🔗',lesson:1,
+  {n:3,zh:'的',py:'de',pos:'Trợ từ',vn:'trợ từ kết cấu, biểu thị sở hữu', hv: 'đích',em:'🔗',lesson:1,
    ex_zh:'她是我的汉语老师。',ex_py:'Tā shì wǒ de Hànyǔ lǎoshī.',ex_vn:'Cô ấy là cô giáo dạy tôi tiếng Trung Quốc.',
    exList:[
      {zh:'她是我的汉语老师。',py:'Tā shì wǒ de Hànyǔ lǎoshī.',vn:'Cô ấy là cô giáo dạy tôi tiếng Trung Quốc.'},
@@ -34,7 +34,7 @@ var vocabData = [
       tip:'白(rõ ràng, sáng tỏ) → làm RÕ mối quan hệ SỞ HỮU giữa hai danh từ.',
       cf:'白 (bái – "màu trắng")',w:'我的 / 你的 / 汉语老师的'},
    ]},
-  {n:4,zh:'汉语',py:'Hànyǔ',pos:'Danh từ',vn:'tiếng Trung Quốc',em:'🈶',lesson:1,
+  {n:4,zh:'汉语',py:'Hànyǔ',pos:'Danh từ',vn:'tiếng Trung Quốc', hv: 'Hán Ngữ',em:'🈶',lesson:1,
    ex_zh:'她是我的汉语老师。',ex_py:'Tā shì wǒ de Hànyǔ lǎoshī.',ex_vn:'Cô ấy là cô giáo dạy tôi tiếng Trung Quốc.',
    exList:[
      {zh:'她是我的汉语老师。',py:'Tā shì wǒ de Hànyǔ lǎoshī.',vn:'Cô ấy là cô giáo dạy tôi tiếng Trung Quốc.'},
@@ -47,7 +47,7 @@ var vocabData = [
       tip:'讠(lời nói) + 吾(ta, tôi) → LỜI NÓI của con người = NGÔN NGỮ.',
       cf:'悟 (wù – "tỉnh ngộ")',w:'汉语'},
    ]},
-  {n:5,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào, cái nào',em:'🧭',lesson:2,
+  {n:5,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào, cái nào', hv: 'na',em:'🧭',lesson:2,
    ex_zh:'你是哪国人？',ex_py:'Nǐ shì nǎ guó rén?',ex_vn:'Anh là người nước nào vậy?',
    exList:[
      {zh:'你是哪国人？',py:'Nǐ shì nǎ guó rén?',vn:'Anh là người nước nào vậy?'},
@@ -57,7 +57,7 @@ var vocabData = [
       tip:'口(miệng hỏi) + 那(kia) → hỏi xem là CÁI NÀO trong số đó.',
       cf:'那 (nà – "kia, đó")',w:'哪国人 / 哪儿'},
    ]},
-  {n:6,zh:'呢',py:'ne',pos:'Trợ từ',vn:'đặt cuối câu hỏi tỉnh lược',em:'↩️',lesson:2,
+  {n:6,zh:'呢',py:'ne',pos:'Trợ từ',vn:'đặt cuối câu hỏi tỉnh lược', hv: 'ni',em:'↩️',lesson:2,
    ex_zh:'我是美国人。你呢？',ex_py:'Wǒ shì Měiguó rén. Nǐ ne?',ex_vn:'Tôi là người Mỹ, còn bạn?',
    exList:[
      {zh:'我是美国人。你呢？',py:'Wǒ shì Měiguó rén. Nǐ ne?',vn:'Tôi là người Mỹ, còn bạn?'},
@@ -67,7 +67,7 @@ var vocabData = [
       tip:'口(miệng) mượn âm 尼 tạo thành trợ từ hỏi lại "còn ... thì sao?".',
       cf:'尼 (ní – "ni cô")',w:'你呢 / 她呢'},
    ]},
-  {n:7,zh:'他',py:'tā',pos:'Đại từ',vn:'anh ấy, ông ấy',em:'👨',lesson:2,
+  {n:7,zh:'他',py:'tā',pos:'Đại từ',vn:'anh ấy, ông ấy', hv: 'tha',em:'👨',lesson:2,
    ex_zh:'他是谁？',ex_py:'Tā shì shéi?',ex_vn:'Anh ấy là ai thế?',
    exList:[
      {zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai thế?'},
@@ -78,7 +78,7 @@ var vocabData = [
       tip:'亻(người nam) + 也(đại từ cổ) → đại từ chỉ NGƯỜI NAM đang được nhắc đến.',
       cf:'她 (tā – "cô ấy", cùng phần 也")',w:'他是谁 / 他的'},
    ]},
-  {n:8,zh:'同学',py:'tóngxué',pos:'Danh từ',vn:'bạn cùng lớp',em:'👬',lesson:2,
+  {n:8,zh:'同学',py:'tóngxué',pos:'Danh từ',vn:'bạn cùng lớp', hv: 'đồng học',em:'👬',lesson:2,
    ex_zh:'他是我同学。',ex_py:'Tā shì wǒ tóngxué.',ex_vn:'Đó là bạn cùng lớp của tôi.',
    exList:[
      {zh:'他是我同学。',py:'Tā shì wǒ tóngxué.',vn:'Đó là bạn cùng lớp của tôi.'},
@@ -89,7 +89,7 @@ var vocabData = [
       tip:'Nhiều miệng 口 nói CÙNG một tiếng dưới một mái che → ĐỒNG NHẤT, CÙNG NHAU.',
       cf:'洞 (dòng – "hang động")',w:'同学 / 同事'},
    ]},
-  {n:9,zh:'朋友',py:'péngyou',pos:'Danh từ',vn:'bạn bè',em:'🧑‍🤝‍🧑',lesson:2,
+  {n:9,zh:'朋友',py:'péngyou',pos:'Danh từ',vn:'bạn bè', hv: 'bằng hữu',em:'🧑‍🤝‍🧑',lesson:2,
    ex_zh:'她不是我同学，她是我朋友。',ex_py:'Tā bú shì wǒ tóngxué, tā shì wǒ péngyou.',ex_vn:'Cô ấy không phải bạn cùng lớp, cô ấy là bạn tôi.',
    exList:[
      {zh:'她不是我同学，她是我朋友。',py:'Tā bú shì wǒ tóngxué, tā shì wǒ péngyou.',vn:'Cô ấy không phải bạn cùng lớp, cô ấy là bạn tôi.'},

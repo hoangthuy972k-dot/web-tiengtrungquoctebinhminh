@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'城市',py:'chéngshì',pos:'Danh từ',vn:'thành phố',em:'🏙️',lesson:1,
+  {n:1,zh:'城市',py:'chéngshì',pos:'Danh từ',vn:'thành phố', hv: 'thành thị',em:'🏙️',lesson:1,
    explain:['Khu vực đô thị lớn, tập trung dân cư và cơ sở hạ tầng.'],
    usage:'Danh từ; đi cùng động từ 住/去: 住在城市, 去其他城市.',
    collo:['大城市','住在城市','其他城市'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).'},
    ]},
 
-  {n:2,zh:'如果',py:'rúguǒ',pos:'Liên từ',vn:'nếu',em:'🔀',lesson:1,
+  {n:2,zh:'如果',py:'rúguǒ',pos:'Liên từ',vn:'nếu', hv: 'như quả',em:'🔀',lesson:1,
    explain:['Dùng để nêu một giả thiết, điều kiện.'],
    usage:'如果 + [giả thiết]，(chủ ngữ) + 就 + [kết quả].',
    collo:['如果……就……','如果有钱','如果不舒服'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:3,zh:'认为',py:'rènwéi',pos:'Động từ',vn:'cho rằng',em:'💭',lesson:1,
+  {n:3,zh:'认为',py:'rènwéi',pos:'Động từ',vn:'cho rằng', hv: 'nhận vi',em:'💭',lesson:1,
    explain:['Diễn tả quan điểm, ý kiến cá nhân về một vấn đề.'],
    usage:'Động từ, mang tân ngữ là mệnh đề: 认为 + [ý kiến].',
    collo:['我认为','大家都认为','认为不可能'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:4,zh:'皮鞋',py:'píxié',pos:'Danh từ',vn:'giày da',em:'👞',lesson:2,
+  {n:4,zh:'皮鞋',py:'píxié',pos:'Danh từ',vn:'giày da', hv: 'bì hài',em:'👞',lesson:2,
    explain:['Loại giày làm từ chất liệu da.'],
    usage:'Danh từ; đi cùng động từ 送/买: 送皮鞋.',
    collo:['小皮鞋','买皮鞋','一双皮鞋'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'帽子',py:'màozi',pos:'Danh từ',vn:'mũ, nón',em:'🎩',lesson:2,
+  {n:5,zh:'帽子',py:'màozi',pos:'Danh từ',vn:'mũ, nón', hv: 'mạo tử',em:'🎩',lesson:2,
    explain:['Vật đội trên đầu để che nắng, giữ ấm hoặc làm đẹp.'],
    usage:'Danh từ; đi cùng động từ 戴/送: 戴帽子.',
    collo:['小帽子','戴帽子','买帽子'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'长',py:'zhǎng',pos:'Động từ',vn:'trưởng thành, lớn lên',em:'📏',lesson:2,
+  {n:6,zh:'长',py:'zhǎng',pos:'Động từ',vn:'trưởng thành, lớn lên', hv: 'trưởng',em:'📏',lesson:2,
    explain:['Phát triển về kích thước, tuổi tác theo thời gian.'],
    usage:'Động từ, thường đi cùng bổ ngữ trạng thái: 长得 + [tính từ].',
    collo:['长得可爱','长高了','长大了'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 了解 đã học ở Bài 15).'},
    ]},
 
-  {n:7,zh:'可爱',py:'kě\'ài',pos:'Tính từ',vn:'đáng yêu, dễ thương',em:'🥰',lesson:2,
+  {n:7,zh:'可爱',py:'kě\'ài',pos:'Tính từ',vn:'đáng yêu, dễ thương', hv: 'khả ái',em:'🥰',lesson:2,
    explain:['Có vẻ ngoài hoặc tính cách khiến người khác yêu thích.'],
    usage:'Tính từ, làm vị ngữ: 真可爱.',
    collo:['真可爱','可爱极了','长得可爱'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:8,zh:'米',py:'mǐ',pos:'Danh từ',vn:'mét',em:'📐',lesson:2,
+  {n:8,zh:'米',py:'mǐ',pos:'Danh từ',vn:'mét', hv: 'mễ',em:'📐',lesson:2,
    explain:['Đơn vị đo chiều dài trong hệ mét.'],
    usage:'Danh từ đơn vị, đi sau con số: 一米, 快1米了.',
    collo:['1米','两米','一千米'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'公斤',py:'gōngjīn',pos:'Danh từ',vn:'kilôgram',em:'⚖️',lesson:2,
+  {n:9,zh:'公斤',py:'gōngjīn',pos:'Danh từ',vn:'kilôgram', hv: 'công cân',em:'⚖️',lesson:2,
    explain:['Đơn vị đo khối lượng trong hệ mét.'],
    usage:'Danh từ đơn vị, đi sau con số: 25公斤.',
    collo:['25公斤','瘦得只有40公斤','四公斤'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 长 vừa học trong bài này).'},
    ]},
 
-  {n:10,zh:'鼻子',py:'bízi',pos:'Danh từ',vn:'mũi',em:'👃',lesson:2,
+  {n:10,zh:'鼻子',py:'bízi',pos:'Danh từ',vn:'mũi', hv: 'tị tử',em:'👃',lesson:2,
    explain:['Bộ phận trên khuôn mặt dùng để thở và ngửi.'],
    usage:'Danh từ; thường đi cùng tính từ lặp: 鼻子小小的.',
    collo:['鼻子小小的','高高的鼻子','鼻子像爸爸'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'头发',py:'tóufa',pos:'Danh từ',vn:'tóc',em:'💇',lesson:2,
+  {n:11,zh:'头发',py:'tóufa',pos:'Danh từ',vn:'tóc', hv: 'đầu phát',em:'💇',lesson:2,
    explain:['Sợi mọc trên đầu người.'],
    usage:'Danh từ; thường đi cùng tính từ lặp: 头发黑黑的.',
    collo:['头发黑黑的','长头发','头发长长的'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'检查',py:'jiǎnchá',pos:'Động từ',vn:'kiểm tra, khám',em:'🔍',lesson:3,
+  {n:12,zh:'检查',py:'jiǎnchá',pos:'Động từ',vn:'kiểm tra, khám', hv: 'kiểm tra',em:'🔍',lesson:3,
    explain:['Xem xét kỹ để phát hiện vấn đề.'],
    usage:'Động từ, mang tân ngữ: 检查牙, 检查身体.',
    collo:['去医院检查','检查一下','检查好几次'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'刷牙',py:'shuā yá',pos:'Động từ',vn:'chải răng',em:'🪥',lesson:3,
+  {n:13,zh:'刷牙',py:'shuā yá',pos:'Động từ',vn:'chải răng', hv: 'loát nha',em:'🪥',lesson:3,
    explain:['Dùng bàn chải làm sạch răng.'],
    usage:'Động từ ly hợp: 刷 + 牙; thường đi cùng 好好儿: 好好儿刷牙.',
    collo:['好好儿刷牙','早上刷牙','刷牙、洗脸'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:14,zh:'关系',py:'guānxi',pos:'Danh từ',vn:'quan hệ',em:'🤝',lesson:4,
+  {n:14,zh:'关系',py:'guānxi',pos:'Danh từ',vn:'quan hệ', hv: 'quan hệ',em:'🤝',lesson:4,
    explain:['Mối liên hệ, tương tác giữa người với người hoặc sự vật.'],
    usage:'Danh từ; đi cùng động từ 变得: 关系变得更好.',
    collo:['人和人的关系','关系冷冷的','关系变得更好'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 愿意 đã học ở Bài 13).'},
    ]},
 
-  {n:15,zh:'别人',py:'biérén',pos:'Danh từ',vn:'người khác',em:'👥',lesson:4,
+  {n:15,zh:'别人',py:'biérén',pos:'Danh từ',vn:'người khác', hv: 'biệt nhân',em:'👥',lesson:4,
    explain:['Chỉ những người khác, không phải người nói.'],
    usage:'Danh từ, thường làm tân ngữ hoặc định ngữ: 对别人, 别人的.',
    collo:['对别人','别人的关系','跟别人见面'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:16,zh:'词语',py:'cíyǔ',pos:'Danh từ',vn:'từ ngữ',em:'📖',lesson:4,
+  {n:16,zh:'词语',py:'cíyǔ',pos:'Danh từ',vn:'từ ngữ', hv: 'từ ngữ',em:'📖',lesson:4,
    explain:['Từ và cụm từ trong ngôn ngữ.'],
    usage:'Danh từ; đi cùng động từ 用: 用词语.',
    collo:['用词语','这样的词语','写对词语'],

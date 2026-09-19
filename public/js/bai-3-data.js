@@ -2,7 +2,7 @@
 // DATA — Bài 3: 左边那个红色的是我的
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'块',py:'kuài',pos:'Lượng từ',vn:'đồng (tiền); miếng',em:'💰',lesson:1,
+  {n:1,zh:'块',py:'kuài',pos:'Lượng từ',vn:'đồng (tiền); miếng', hv: 'khối',em:'💰',lesson:1,
    ex_zh:'这块手表花了三千多块。',ex_py:'Zhè kuài shǒubiǎo huāle sānqiān duō kuài.',ex_vn:'Chiếc đồng hồ này tốn hơn 3000 tệ.',
    exList:[
      {zh:'这块手表花了三千多块。',py:'Zhè kuài shǒubiǎo huāle sānqiān duō kuài.',vn:'Chiếc đồng hồ này tốn hơn 3000 tệ.'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Đất 土 + 夬 (tách rời) → một MIẾNG đất tách riêng ra. Dùng đếm vật rời rạc và tiền tệ (khẩu ngữ của 元).',
       cf:'快 (kuài – nhanh, bộ 忄)',w:'一块 / 三千块 / 块钱'},
    ]},
-  {n:2,zh:'手表',py:'shǒubiǎo',pos:'Danh từ',vn:'đồng hồ đeo tay',em:'⌚',lesson:1,
+  {n:2,zh:'手表',py:'shǒubiǎo',pos:'Danh từ',vn:'đồng hồ đeo tay', hv: 'thủ biểu',em:'⌚',lesson:1,
    ex_zh:'这块手表是你的吗？',ex_py:'Zhè kuài shǒubiǎo shì nǐ de ma?',ex_vn:'Chiếc đồng hồ này có phải của bạn không?',
    exList:[
      {zh:'这块手表是你的吗？',py:'Zhè kuài shǒubiǎo shì nǐ de ma?',vn:'Chiếc đồng hồ này có phải của bạn không?'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Liên quan tới bộ 衣 (áo) — cái gì lộ ra bên ngoài, phần mặt ngoài. Sau dùng chỉ mặt đồng hồ đeo TAY.',
       cf:'衣 (yī – "áo", thiếu nét trên)',w:'手表 / 表哥 / 表示'},
    ]},
-  {n:3,zh:'钱',py:'qián',pos:'Danh từ',vn:'tiền',em:'💵',lesson:1,
+  {n:3,zh:'钱',py:'qián',pos:'Danh từ',vn:'tiền', hv: 'tiền',em:'💵',lesson:1,
    ex_zh:'多少钱买的？',ex_py:'Duōshao qián mǎi de?',ex_vn:'Mua hết bao nhiêu tiền?',
    exList:[
      {zh:'多少钱买的？',py:'Duōshao qián mǎi de?',vn:'Mua hết bao nhiêu tiền?'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'Bộ 钅(kim loại) bên trái → tiền xưa được đúc bằng kim loại (đồng, bạc).',
       cf:'浅 (qiǎn – "nông, cạn", bộ 氵)',w:'多少钱 / 有钱 / 花钱'},
    ]},
-  {n:4,zh:'买',py:'mǎi',pos:'Động từ',vn:'mua',em:'🛍️',lesson:1,
+  {n:4,zh:'买',py:'mǎi',pos:'Động từ',vn:'mua', hv: 'mãi',em:'🛍️',lesson:1,
    ex_zh:'我想买一块新手表。',ex_py:'Wǒ xiǎng mǎi yí kuài xīn shǒubiǎo.',ex_vn:'Tôi muốn mua một chiếc đồng hồ mới.',
    exList:[
      {zh:'我想买一块新手表。',py:'Wǒ xiǎng mǎi yí kuài xīn shǒubiǎo.',vn:'Tôi muốn mua một chiếc đồng hồ mới.'},
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'Không có nét sĩ 士 trên đầu — phân biệt với 卖 (bán, có thêm nét trên đầu). Nhớ theo cặp: 买 (mua) ↔ 卖 (bán).',
       cf:'卖 (mài – "bán", thêm nét trên đầu)',w:'买东西 / 买菜 / 买卖'},
    ]},
-  {n:5,zh:'报纸',py:'bàozhǐ',pos:'Danh từ',vn:'báo, tờ báo',em:'📰',lesson:2,
+  {n:5,zh:'报纸',py:'bàozhǐ',pos:'Danh từ',vn:'báo, tờ báo', hv: 'báo chỉ',em:'📰',lesson:2,
    ex_zh:'这是今天早上的报纸吗？',ex_py:'Zhè shì jīntiān zǎoshang de bàozhǐ ma?',ex_vn:'Đây là tờ báo sáng nay phải không?',
    exList:[
      {zh:'这是今天早上的报纸吗？',py:'Zhè shì jīntiān zǎoshang de bàozhǐ ma?',vn:'Đây là tờ báo sáng nay phải không?'},
@@ -68,7 +68,7 @@ var vocabData = [
       tip:'Bộ 纟(tơ) → giấy cổ đại làm từ xơ vải, tơ lụa nghiền ra.',
       cf:'低 (dī – "thấp", bộ 亻)',w:'报纸 / 纸张 / 一张纸'},
    ]},
-  {n:6,zh:'昨天',py:'zuótiān',pos:'Danh từ',vn:'hôm qua',em:'📅',lesson:2,
+  {n:6,zh:'昨天',py:'zuótiān',pos:'Danh từ',vn:'hôm qua', hv: 'tạc thiên',em:'📅',lesson:2,
    ex_zh:'不是，是昨天的。',ex_py:'Bú shì, shì zuótiān de.',ex_vn:'Không phải, là báo ngày hôm qua.',
    exList:[
      {zh:'不是，是昨天的。',py:'Bú shì, shì zuótiān de.',vn:'Không phải, là báo ngày hôm qua.'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Đã học ở bài trước — nét ngang trên chữ 大 = bầu trời, cũng dùng đếm NGÀY.',
       cf:'夫 (fū)',w:'昨天 / 今天 / 明天'},
    ]},
-  {n:7,zh:'送',py:'sòng',pos:'Động từ',vn:'đưa, giao, tặng',em:'🚚',lesson:2,
+  {n:7,zh:'送',py:'sòng',pos:'Động từ',vn:'đưa, giao, tặng', hv: 'tống',em:'🚚',lesson:2,
    ex_zh:'是不是送报纸的来了？',ex_py:'Shìbushì sòng bàozhǐ de lái le?',ex_vn:'Có phải người đưa báo đến rồi không?',
    exList:[
      {zh:'是不是送报纸的来了？',py:'Shìbushì sòng bàozhǐ de lái le?',vn:'Có phải người đưa báo đến rồi không?'},
@@ -95,7 +95,7 @@ var vocabData = [
       tip:'Bộ 辶 (đi) → mang một thứ gì đó ĐI đến chỗ người khác = đưa, giao, tặng.',
       cf:'关 (guān – "đóng, liên quan")',w:'送报纸 / 送礼物 / 送人'},
    ]},
-  {n:8,zh:'牛奶',py:'niúnǎi',pos:'Danh từ',vn:'sữa (bò)',em:'🥛',lesson:2,
+  {n:8,zh:'牛奶',py:'niúnǎi',pos:'Danh từ',vn:'sữa (bò)', hv: 'ngưu nãi',em:'🥛',lesson:2,
    ex_zh:'不是，是送牛奶的。',ex_py:'Bú shì, shì sòng niúnǎi de.',ex_vn:'Không phải, là người giao sữa.',
    exList:[
      {zh:'不是，是送牛奶的。',py:'Bú shì, shì sòng niúnǎi de.',vn:'Không phải, là người giao sữa.'},
@@ -110,7 +110,7 @@ var vocabData = [
       tip:'Bộ 女 (người mẹ) → liên tưởng người mẹ cho con bú = SỮA.',
       cf:'奴 (nú – "nô lệ", phần phải khác)',w:'牛奶 / 奶奶 / 喝奶'},
    ]},
-  {n:9,zh:'谁',py:'shéi',pos:'Đại từ',vn:'ai',em:'❓',lesson:3,
+  {n:9,zh:'谁',py:'shéi',pos:'Đại từ',vn:'ai', hv: 'thùy',em:'❓',lesson:3,
    ex_zh:'这是谁的房间？',ex_py:'Zhè shì shéi de fángjiān?',ex_vn:'Đây là phòng của ai vậy?',
    exList:[
      {zh:'这是谁的房间？',py:'Zhè shì shéi de fángjiān?',vn:'Đây là phòng của ai vậy?'},
@@ -122,7 +122,7 @@ var vocabData = [
       tip:'Bộ 讠(lời nói) + 隹 (chim) → cất lời hỏi xem AI đang ở đó.',
       cf:'难 (nán – "khó", cùng phần phải)',w:'谁的 / 是谁 / 谁知道'},
    ]},
-  {n:10,zh:'房间',py:'fángjiān',pos:'Danh từ',vn:'phòng',em:'🚪',lesson:3,
+  {n:10,zh:'房间',py:'fángjiān',pos:'Danh từ',vn:'phòng', hv: 'phòng gian',em:'🚪',lesson:3,
    ex_zh:'这是谁的房间？',ex_py:'Zhè shì shéi de fángjiān?',ex_vn:'Đây là phòng của ai vậy?',
    exList:[
      {zh:'这是谁的房间？',py:'Zhè shì shéi de fángjiān?',vn:'Đây là phòng của ai vậy?'},
@@ -137,7 +137,7 @@ var vocabData = [
       tip:'Đã học ở bài trước — ánh nắng 日 lọt qua khe cửa 门 → khoảng không gian ở giữa.',
       cf:'问 (wèn – thay 日 bằng 口)',w:'房间 / 时间 / 中间'},
    ]},
-  {n:11,zh:'丈夫',py:'zhàngfu',pos:'Danh từ',vn:'chồng',em:'🤵',lesson:3,
+  {n:11,zh:'丈夫',py:'zhàngfu',pos:'Danh từ',vn:'chồng', hv: 'trượng phu',em:'🤵',lesson:3,
    ex_zh:'这是我和我丈夫的。',ex_py:'Zhè shì wǒ hé wǒ zhàngfu de.',ex_vn:'Đây là phòng của tôi và chồng tôi.',
    exList:[
      {zh:'这是我和我丈夫的。',py:'Zhè shì wǒ hé wǒ zhàngfu de.',vn:'Đây là phòng của tôi và chồng tôi.'},
@@ -152,7 +152,7 @@ var vocabData = [
       tip:'Hình người 大 cài thêm một trâm cài đầu (một nét ngang) → người đàn ông đã trưởng thành, có gia đình.',
       cf:'天 (tiān – nét ngang ở vị trí khác)',w:'丈夫 / 夫妻 / 农夫'},
    ]},
-  {n:12,zh:'旁边',py:'pángbiān',pos:'Danh từ',vn:'bên cạnh',em:'↔️',lesson:3,
+  {n:12,zh:'旁边',py:'pángbiān',pos:'Danh từ',vn:'bên cạnh', hv: 'bàng biên',em:'↔️',lesson:3,
    ex_zh:'旁边那个小的房间是我女儿的。',ex_py:'Pángbiān nàge xiǎo de fángjiān shì wǒ nǚ\'ér de.',ex_vn:'Căn phòng nhỏ bên cạnh là của con gái tôi.',
    exList:[
      {zh:'旁边那个小的房间是我女儿的。',py:'Pángbiān nàge xiǎo de fángjiān shì wǒ nǚ\'ér de.',vn:'Căn phòng nhỏ bên cạnh là của con gái tôi.'},
@@ -167,7 +167,7 @@ var vocabData = [
       tip:'Bộ 辶 (đi dọc theo) → đi men theo mép, rìa của vật gì đó = BÊN, CẠNH.',
       cf:'力 (lì – "sức lực")',w:'旁边 / 左边 / 右边'},
    ]},
-  {n:13,zh:'女儿',py:'nǚ\'ér',pos:'Danh từ',vn:'con gái',em:'👧',lesson:3,
+  {n:13,zh:'女儿',py:'nǚ\'ér',pos:'Danh từ',vn:'con gái', hv: 'nữ nhi',em:'👧',lesson:3,
    ex_zh:'粉色是我女儿最喜欢的颜色。',ex_py:'Fěnsè shì wǒ nǚ\'ér zuì xǐhuan de yánsè.',ex_vn:'Màu hồng là màu con gái tôi thích nhất.',
    exList:[
      {zh:'粉色是我女儿最喜欢的颜色。',py:'Fěnsè shì wǒ nǚ\'ér zuì xǐhuan de yánsè.',vn:'Màu hồng là màu con gái tôi thích nhất.'},
@@ -182,7 +182,7 @@ var vocabData = [
       tip:'Hình đứa trẻ với đôi chân đang co lại → "CON, TRẺ EM". Kết hợp 女+儿 = con gái.',
       cf:'几 (jǐ – "mấy", khác nét)',w:'女儿 / 儿子 / 儿童'},
    ]},
-  {n:14,zh:'漂亮',py:'piàoliang',pos:'Tính từ',vn:'đẹp',em:'✨',lesson:3,
+  {n:14,zh:'漂亮',py:'piàoliang',pos:'Tính từ',vn:'đẹp', hv: 'phiêu lượng',em:'✨',lesson:3,
    ex_zh:'你女儿的房间真漂亮，都是粉色的。',ex_py:'Nǐ nǚ\'ér de fángjiān zhēn piàoliang, dōu shì fěnsè de.',ex_vn:'Phòng con gái bạn đẹp thật đấy, toàn là màu hồng.',
    exList:[
      {zh:'你女儿的房间真漂亮，都是粉色的。',py:'Nǐ nǚ\'ér de fángjiān zhēn piàoliang, dōu shì fěnsè de.',vn:'Phòng con gái bạn đẹp thật đấy, toàn là màu hồng.'},
@@ -197,7 +197,7 @@ var vocabData = [
       tip:'Hình ánh sáng phát ra từ trên cao → "SÁNG". 漂 + 亮 = sáng đẹp, nổi bật.',
       cf:'京 (jīng – "kinh đô", phần dưới khác)',w:'漂亮 / 明亮 / 天亮'},
    ]},
-  {n:15,zh:'颜色',py:'yánsè',pos:'Danh từ',vn:'màu sắc',em:'🎨',lesson:3,
+  {n:15,zh:'颜色',py:'yánsè',pos:'Danh từ',vn:'màu sắc', hv: 'nhan sắc',em:'🎨',lesson:3,
    ex_zh:'粉色是我女儿最喜欢的颜色。',ex_py:'Fěnsè shì wǒ nǚ\'ér zuì xǐhuan de yánsè.',ex_vn:'Màu hồng là màu con gái tôi thích nhất.',
    exList:[
      {zh:'粉色是我女儿最喜欢的颜色。',py:'Fěnsè shì wǒ nǚ\'ér zuì xǐhuan de yánsè.',vn:'Màu hồng là màu con gái tôi thích nhất.'},

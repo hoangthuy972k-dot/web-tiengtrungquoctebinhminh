@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'博士',py:'bóshì',pos:'Danh từ',vn:'tiến sĩ',em:'🎓',lesson:1,
+  {n:1,zh:'博士',py:'bóshì',pos:'Danh từ',vn:'tiến sĩ', hv: 'bác sĩ',em:'🎓',lesson:1,
    explain:['Học vị cao nhất. 读博士 = học tiến sĩ; 硕士 (Bài 9) = thạc sĩ.'],
    usage:'读博士, 博士毕业, 博士生.',
    collo:['出国读博士','博士毕业','读博士的机会'],
@@ -23,7 +23,7 @@ var vocabData = [
       note:'同时 (Bài 11), 通过 (Bài 9), 面试 (Bài 10).'},
    ]},
 
-  {n:2,zh:'签证',py:'qiānzhèng',pos:'Danh từ',vn:'thị thực, visa',em:'🛂',lesson:1,
+  {n:2,zh:'签证',py:'qiānzhèng',pos:'Danh từ',vn:'thị thực, visa', hv: 'thiêm chứng',em:'🛂',lesson:1,
    explain:['Giấy phép nhập cảnh. 办签证 = làm visa; 签证材料.'],
    usage:'办签证, 签证材料, 申请签证.',
    collo:['办签证','签证需要的材料','去使馆办签证'],
@@ -43,7 +43,7 @@ var vocabData = [
       note:'大概 (Bài 13), 左右 (Bài 15), 申请 (Bài 13).'},
    ]},
 
-  {n:3,zh:'报名',py:'bào míng',pos:'Động từ',vn:'ghi danh, đăng ký',em:'📝',lesson:1,
+  {n:3,zh:'报名',py:'bào míng',pos:'Động từ',vn:'ghi danh, đăng ký', hv: 'báo danh',em:'📝',lesson:1,
    explain:['Đăng ký tham gia. Động từ ly hợp: 报了名, 报名参加. 报名表格 = phiếu đăng ký.'],
    usage:'报名参加, 填写报名表格, 报名的最后一天.',
    collo:['报名表格','报名参加比赛','报名的最后一天'],
@@ -63,7 +63,7 @@ var vocabData = [
       note:'到底 (ngữ pháp bài) + câu hỏi chính phản.'},
    ]},
 
-  {n:4,zh:'表格',py:'biǎogé',pos:'Danh từ',vn:'bản kê khai, mẫu đơn',em:'📄',lesson:1,
+  {n:4,zh:'表格',py:'biǎogé',pos:'Danh từ',vn:'bản kê khai, mẫu đơn', hv: 'biểu cách',em:'📄',lesson:1,
    explain:['Mẫu đơn, biểu mẫu cần điền. 填写表格 = điền mẫu đơn; 报名表格.'],
    usage:'填写表格, 报名表格, 一张表格.',
    collo:['填写报名表格','把表格填好','一张表格'],
@@ -83,7 +83,7 @@ var vocabData = [
       note:'千万别 ôn lại Bài 15, 填写.'},
    ]},
 
-  {n:5,zh:'传真',py:'chuánzhēn',pos:'Động từ',vn:'gửi fax',em:'📠',lesson:1,
+  {n:5,zh:'传真',py:'chuánzhēn',pos:'Động từ',vn:'gửi fax', hv: 'truyền chân',em:'📠',lesson:1,
    explain:['Gửi tài liệu qua máy fax. Cũng làm danh từ: 一份传真, 发传真.'],
    usage:'把……传真给……, 发传真, 收到传真.',
    collo:['把邀请信传真给你','发传真','收到传真'],
@@ -103,7 +103,7 @@ var vocabData = [
       note:'把……传真给 (câu chữ 把, Bài 2), 邀请 (Bài 6).'},
    ]},
 
-  {n:6,zh:'号码',py:'hàomǎ',pos:'Danh từ',vn:'số',em:'🔢',lesson:1,
+  {n:6,zh:'号码',py:'hàomǎ',pos:'Danh từ',vn:'số', hv: 'hiệu mã',em:'🔢',lesson:1,
    explain:['Số (điện thoại, phòng, xe…). 电话号码, 手机号码, 房间号码.'],
    usage:'电话号码, 查号码, 记号码.',
    collo:['学校的电话号码','手机号码','写下号码'],
@@ -123,7 +123,7 @@ var vocabData = [
       note:'教授 (Bài 12), câu chữ 把.'},
    ]},
 
-  {n:7,zh:'参观',py:'cānguān',pos:'Động từ',vn:'tham quan, đi thăm',em:'🏛️',lesson:2,
+  {n:7,zh:'参观',py:'cānguān',pos:'Động từ',vn:'tham quan, đi thăm', hv: 'tham quan',em:'🏛️',lesson:2,
    explain:['Đi xem (công ty, bảo tàng, trường học…). Phân biệt 旅游 (du lịch), 访问 (thăm hỏi).'],
    usage:'参观公司, 参观博物馆, 带……参观.',
    collo:['带我参观您的公司','参观博物馆','参观过程中'],
@@ -143,7 +143,7 @@ var vocabData = [
       note:'由 (Bài 13), 美丽 (Bài 14), 着 (Bài 2).'},
    ]},
 
-  {n:8,zh:'激动',py:'jīdòng',pos:'Tính từ',vn:'cảm động, xúc động',em:'🤩',lesson:2,
+  {n:8,zh:'激动',py:'jīdòng',pos:'Tính từ',vn:'cảm động, xúc động', hv: 'kích động',em:'🤩',lesson:2,
    explain:['Tâm trạng bị kích động mạnh (vui, hồi hộp). 很激动, 激动得……, 激动的心情.'],
    usage:'很激动, 激动得哭了, 激动的样子.',
    collo:['我很激动','大家都很激动','激动得哭了'],
@@ -163,7 +163,7 @@ var vocabData = [
       note:'起来 (Bài 15), 面试 (Bài 10), bổ ngữ trạng thái 得.'},
    ]},
 
-  {n:9,zh:'小伙子',py:'xiǎohuǒzi',pos:'Danh từ',vn:'chàng trai',em:'👨',lesson:2,
+  {n:9,zh:'小伙子',py:'xiǎohuǒzi',pos:'Danh từ',vn:'chàng trai', hv: 'tiểu hỏa tử',em:'👨',lesson:2,
    explain:['Cách gọi thân mật người thanh niên nam. Nữ: 姑娘 (Bài 3).'],
    usage:'小伙子, 这个小伙子, 好小伙子.',
    collo:['好啊！小伙子','一个年轻的小伙子','这个小伙子很能干'],
@@ -183,7 +183,7 @@ var vocabData = [
       note:'既……又 (Bài 7), 诚实 (Bài 10).'},
    ]},
 
-  {n:10,zh:'记者',py:'jìzhě',pos:'Danh từ',vn:'phóng viên, nhà báo',em:'📰',lesson:2,
+  {n:10,zh:'记者',py:'jìzhě',pos:'Danh từ',vn:'phóng viên, nhà báo', hv: 'ký giả',em:'📰',lesson:2,
    explain:['Người đưa tin, viết báo. 当记者 = làm phóng viên; 一位记者.'],
    usage:'一个记者, 当记者, 记者问过我.',
    collo:['一个记者问过我','当记者','著名的记者'],
@@ -203,7 +203,7 @@ var vocabData = [
       note:'用……来 (Bài 15), 到处 (Bài 8), 调查 (Bài 6).'},
    ]},
 
-  {n:11,zh:'代表',py:'dàibiǎo',pos:'Động từ',vn:'đại diện, thay mặt',em:'🎗️',lesson:2,
+  {n:11,zh:'代表',py:'dàibiǎo',pos:'Động từ',vn:'đại diện, thay mặt', hv: 'đại biểu',em:'🎗️',lesson:2,
    explain:['(1) Thay mặt, tượng trưng cho: A 代表 B. (2) Danh từ: người đại diện.'],
    usage:'用……代表……, 代表公司, 代表大家.',
    collo:['用西瓜的大小代表钱的多少','代表公司','代表大家发言'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'感谢 (Bài 6), 支持 (Bài 11).'},
    ]},
 
-  {n:12,zh:'恐怕',py:'kǒngpà',pos:'Phó từ',vn:'e rằng, có lẽ',em:'😟',lesson:2,
+  {n:12,zh:'恐怕',py:'kǒngpà',pos:'Phó từ',vn:'e rằng, có lẽ', hv: 'khủng phạ',em:'😟',lesson:2,
    explain:['(1) Động từ: lo lắng (= 担心). (2) Phó từ: ước đoán kèm chút lo (e là) hoặc phỏng đoán (có lẽ = 大概/也许). Ngữ pháp trọng tâm: 恐怕 vs 怕.'],
    usage:'恐怕不行, 恐怕……了, 恐怕来不及.',
    collo:['恐怕你已经知道','恐怕不行','恐怕来不及了'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'够 (Bài 14), 座位 (Bài 3), 还是……吧 (Bài 1).'},
    ]},
 
-  {n:13,zh:'失望',py:'shīwàng',pos:'Động từ',vn:'thất vọng',em:'😞',lesson:3,
+  {n:13,zh:'失望',py:'shīwàng',pos:'Động từ',vn:'thất vọng', hv: 'thất vọng',em:'😞',lesson:3,
    explain:['Mất hy vọng, buồn vì không được như mong đợi. 对……失望, 让……失望.'],
    usage:'父母又要失望了, 对……失望, 别让我失望.',
    collo:['父母又要失望了','对他很失望','让人失望'],
@@ -265,7 +265,7 @@ var vocabData = [
       note:'重视 (từ mới), 竟然 (Bài 6), 放弃 (Bài 9).'},
    ]},
 
-  {n:14,zh:'郊区',py:'jiāoqū',pos:'Danh từ',vn:'vùng ngoại ô',em:'🏡',lesson:3,
+  {n:14,zh:'郊区',py:'jiāoqū',pos:'Danh từ',vn:'vùng ngoại ô', hv: 'giao khu',em:'🏡',lesson:3,
    explain:['Khu vực ngoài thành phố. 去郊区, 住在郊区, 郊区的房子.'],
    usage:'去郊区住, 到郊区过周末, 郊区的空气.',
    collo:['去郊区住一个月','到郊区过周末','郊区的房子'],
@@ -285,7 +285,7 @@ var vocabData = [
       note:'越来越 (Bài 1), 周末.'},
    ]},
 
-  {n:15,zh:'到底',py:'dàodǐ',pos:'Phó từ',vn:'rốt cuộc',em:'❓',lesson:3,
+  {n:15,zh:'到底',py:'dàodǐ',pos:'Phó từ',vn:'rốt cuộc', hv: 'đáo để',em:'❓',lesson:3,
    explain:['(1) Động từ: đến cùng (坚持到底, 逛到底). (2) Phó từ trong câu hỏi có đại từ nghi vấn: rốt cuộc (không dùng với 吗). Ngữ pháp trọng tâm.'],
    usage:'到底怎么……？, 到底是谁？, 坚持到底.',
    collo:['你到底怎么打算的','到底是怎么回事','坚持到底'],
@@ -305,7 +305,7 @@ var vocabData = [
       note:'好几 (Bài 11), 接 (Bài 4), 怎么回事.'},
    ]},
 
-  {n:16,zh:'呀',py:'ya',pos:'Trợ từ',vn:'à, nhỉ (biến thể của 啊)',em:'💬',lesson:3,
+  {n:16,zh:'呀',py:'ya',pos:'Trợ từ',vn:'à, nhỉ (biến thể của 啊)', hv: 'nha',em:'💬',lesson:3,
    explain:['Biến thể của thán từ 啊 sau âm a, e, i, o, ü; dùng cuối câu hỏi để giọng điệu nhẹ nhàng hơn.'],
    usage:'……的呀？, 是谁呀？, 好呀！',
    collo:['怎么打算的呀','是谁呀','快来呀'],
@@ -325,7 +325,7 @@ var vocabData = [
       note:'呀 sau 儿 (âm r/i).'},
    ]},
 
-  {n:17,zh:'导游',py:'dǎoyóu',pos:'Danh từ',vn:'hướng dẫn viên du lịch',em:'🧭',lesson:3,
+  {n:17,zh:'导游',py:'dǎoyóu',pos:'Danh từ',vn:'hướng dẫn viên du lịch', hv: 'đạo du',em:'🧭',lesson:3,
    explain:['Người dẫn đoàn du lịch. 当导游 = làm hướng dẫn viên.'],
    usage:'当导游, 一位导游, 让我当导游.',
    collo:['让我当导游','当导游','导游带着大家参观'],
@@ -345,7 +345,7 @@ var vocabData = [
       note:'Câu kiêm ngữ 让 + 当 (Bài 10).'},
    ]},
 
-  {n:18,zh:'礼貌',py:'lǐmào',pos:'Tính từ',vn:'lễ phép, lịch sự',em:'🙏',lesson:3,
+  {n:18,zh:'礼貌',py:'lǐmào',pos:'Tính từ',vn:'lễ phép, lịch sự', hv: 'lễ mạo',em:'🙏',lesson:3,
    explain:['Có phép tắc, lịch sự. Cũng làm danh từ: 有礼貌, 对客人的尊重和礼貌.'],
    usage:'有礼貌, 礼貌的方法, 没礼貌.',
    collo:['既合适又礼貌的方法','有礼貌','很没礼貌'],
@@ -365,7 +365,7 @@ var vocabData = [
       note:'既……又 (Bài 7), 合适 (Bài 15), 一定 (Bài 15).'},
    ]},
 
-  {n:19,zh:'原谅',py:'yuánliàng',pos:'Động từ',vn:'tha thứ',em:'🤝',lesson:3,
+  {n:19,zh:'原谅',py:'yuánliàng',pos:'Động từ',vn:'tha thứ', hv: 'nguyên lượng',em:'🤝',lesson:3,
    explain:['Bỏ qua lỗi của người khác. 原谅我, 请原谅, 得到原谅.'],
    usage:'原谅你, 请原谅, 得到别人的原谅.',
    collo:['他一定会原谅你的','请原谅我','得到原谅'],
@@ -385,7 +385,7 @@ var vocabData = [
       note:'重新 (Bài 8), 却 (Bài 2), 相信 (Bài 4).'},
    ]},
 
-  {n:20,zh:'挂',py:'guà',pos:'Động từ',vn:'treo, móc',em:'🖼️',lesson:4,
+  {n:20,zh:'挂',py:'guà',pos:'Động từ',vn:'treo, móc', hv: 'quải',em:'🖼️',lesson:4,
    explain:['Treo lên. 挂在墙上, 挂在嘴边 (luôn nói đến), 挂电话 (cúp máy).'],
    usage:'把……挂在嘴边, 挂在墙上, 挂电话.',
    collo:['把"明天"挂在嘴边','挂在墙上','先别挂电话'],
@@ -405,7 +405,7 @@ var vocabData = [
       note:'把……挂在 (câu chữ 把 + 在), 客厅 (Bài 11).'},
    ]},
 
-  {n:21,zh:'同情',py:'tóngqíng',pos:'Động từ',vn:'thông cảm, đồng tình',em:'💗',lesson:4,
+  {n:21,zh:'同情',py:'tóngqíng',pos:'Động từ',vn:'thông cảm, đồng tình', hv: 'đồng tình',em:'💗',lesson:4,
    explain:['Thương cảm, cảm thông với người gặp khó khăn. 同情心 = lòng thương người; 得到同情.'],
    usage:'同情他, 得不到别人的同情, 有同情心.',
    collo:['得不到别人的同情','同情心','值得同情'],
@@ -425,7 +425,7 @@ var vocabData = [
       note:'批评 (Bài 15), 受欢迎 (Bài 8).'},
    ]},
 
-  {n:22,zh:'推',py:'tuī',pos:'Động từ',vn:'hoãn lại, đẩy, triển khai',em:'🚪',lesson:4,
+  {n:22,zh:'推',py:'tuī',pos:'Động từ',vn:'hoãn lại, đẩy, triển khai', hv: 'thôi',em:'🚪',lesson:4,
    explain:['(1) Đẩy (推门, 推车) — trái nghĩa 拉. (2) Hoãn: 推到明天. (3) Đưa ra: 推出活动.'],
    usage:'推到明天, 推出活动, 推门.',
    collo:['把事情推到"明天"','推出了……的活动','推开门'],
@@ -445,7 +445,7 @@ var vocabData = [
       note:'什么……都 (Bài 3), 一切 (Bài 11), 从……做起 (Bài 14).'},
    ]},
 
-  {n:23,zh:'预习',py:'yùxí',pos:'Động từ',vn:'chuẩn bị bài',em:'📖',lesson:4,
+  {n:23,zh:'预习',py:'yùxí',pos:'Động từ',vn:'chuẩn bị bài', hv: 'dự tập',em:'📖',lesson:4,
    explain:['Xem bài trước khi lên lớp. Trái với 复习 (ôn tập). 课前预习.'],
    usage:'课前预习, 预习课文, 预习的习惯.',
    collo:['注意课前预习','预习完课文','有预习的习惯'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'等……再 (Bài 3), 陪 (Bài 3), 游戏 (Bài 6).'},
    ]},
 
-  {n:24,zh:'重点',py:'zhòngdiǎn',pos:'Danh từ',vn:'trọng điểm, trọng tâm',em:'🎯',lesson:4,
+  {n:24,zh:'重点',py:'zhòngdiǎn',pos:'Danh từ',vn:'trọng điểm, trọng tâm', hv: 'trọng điểm',em:'🎯',lesson:4,
    explain:['Phần quan trọng nhất. 找出重点, 讲重点, 重点内容.'],
    usage:'找出重点, 先讲重点, 学习的重点.',
    collo:['找出第二天要学习的重点','讲话应先讲重点','重点内容'],
@@ -485,7 +485,7 @@ var vocabData = [
       note:'使 (Bài 10), 了解 (Bài 3), 才能.'},
    ]},
 
-  {n:25,zh:'马虎',py:'mǎhu',pos:'Tính từ',vn:'cẩu thả, lơ đễnh',em:'🙃',lesson:4,
+  {n:25,zh:'马虎',py:'mǎhu',pos:'Tính từ',vn:'cẩu thả, lơ đễnh', hv: 'mã hổ',em:'🙃',lesson:4,
    explain:['Qua loa, không cẩn thận (≈ 粗心 Bài 15). 不能马虎, 马马虎虎 = tàm tạm.'],
    usage:'不能马虎, 太马虎了, 马马虎虎.',
    collo:['上课时不能马虎','做事太马虎','马马虎虎'],
@@ -505,7 +505,7 @@ var vocabData = [
       note:'千万不能 (Bài 15), 材料 (Bài 4), 麻烦 (Bài 3).'},
    ]},
 
-  {n:26,zh:'自信',py:'zìxìn',pos:'Tính từ',vn:'tự tin',em:'💪',lesson:4,
+  {n:26,zh:'自信',py:'zìxìn',pos:'Tính từ',vn:'tự tin', hv: 'tự tín',em:'💪',lesson:4,
    explain:['Tin vào bản thân. 很自信, 越说越自信, 有自信. Danh từ 信心 (Bài 9).'],
    usage:'越说越自信, 很自信, 自信的人.',
    collo:['越说越自信','自信的年轻人','对自己有自信'],
@@ -525,7 +525,7 @@ var vocabData = [
       note:'面试 (Bài 10), 害羞 (Bài 15).'},
    ]},
 
-  {n:27,zh:'冷静',py:'lěngjìng',pos:'Tính từ',vn:'bình tĩnh, điềm tĩnh',em:'🧊',lesson:5,
+  {n:27,zh:'冷静',py:'lěngjìng',pos:'Tính từ',vn:'bình tĩnh, điềm tĩnh', hv: 'lãnh tĩnh',em:'🧊',lesson:5,
    explain:['Không nóng vội, giữ được lý trí. 要冷静, 冷静下来, 冷静地.'],
    usage:'千万要冷静, 冷静下来, 冷静地考虑.',
    collo:['千万要冷静','冷静下来','冷静地处理'],
@@ -545,7 +545,7 @@ var vocabData = [
       note:'下来 (bổ ngữ xu hướng), 先……然后 (Bài 3), 解决 (Bài 3).'},
    ]},
 
-  {n:28,zh:'输',py:'shū',pos:'Động từ',vn:'thua',em:'🏳️',lesson:5,
+  {n:28,zh:'输',py:'shū',pos:'Động từ',vn:'thua', hv: 'thâu',em:'🏳️',lesson:5,
    explain:['Thất bại trong thi đấu/cá cược. Trái nghĩa: 赢 (Bài 9). 输了比赛, 输给他.'],
    usage:'输了, 输给……, 不管是输是赢.',
    collo:['没有人会永远输','输给对手','不管输赢'],
@@ -565,7 +565,7 @@ var vocabData = [
       note:'只要 (Bài 8), 不管……都 (Bài 3), 精彩 (Bài 11).'},
    ]},
 
-  {n:29,zh:'重视',py:'zhòngshì',pos:'Động từ',vn:'xem trọng, chú trọng',em:'⭐',lesson:5,
+  {n:29,zh:'重视',py:'zhòngshì',pos:'Động từ',vn:'xem trọng, chú trọng', hv: 'trọng thị',em:'⭐',lesson:5,
    explain:['Coi là quan trọng. 重视平时的积累, 重视教育, 引起重视.'],
    usage:'重视……, 引起重视, 很重视这个机会.',
    collo:['重视平时的积累','引起重视','很重视教育'],
@@ -585,7 +585,7 @@ var vocabData = [
       note:'看起来 (Bài 15), 引起 (Bài 12), 发展 (Bài 10).'},
    ]},
 
-  {n:30,zh:'敢',py:'gǎn',pos:'Động từ năng nguyện',vn:'dám',em:'🦁',lesson:5,
+  {n:30,zh:'敢',py:'gǎn',pos:'Động từ năng nguyện',vn:'dám', hv: 'cảm',em:'🦁',lesson:5,
    explain:['Có gan làm gì. 敢说真话, 不敢 + động từ. Ngữ pháp trọng tâm.'],
    usage:'敢说真话, 不敢再……, 敢不敢？',
    collo:['敢说真话的人','不敢再躺着看书','你敢不敢'],
@@ -605,7 +605,7 @@ var vocabData = [
       note:'不敢再 + 躺着 (Bài 7, 着 Bài 2).'},
    ]},
 
-  {n:31,zh:'尊重',py:'zūnzhòng',pos:'Động từ',vn:'tôn trọng',em:'🙇‍♂️',lesson:5,
+  {n:31,zh:'尊重',py:'zūnzhòng',pos:'Động từ',vn:'tôn trọng', hv: 'tôn trọng',em:'🙇‍♂️',lesson:5,
    explain:['Coi trọng, kính trọng người khác. 尊重别人, 得到尊重, 对客人的尊重.'],
    usage:'尊重别人, 得到别人的尊重, 互相尊重.',
    collo:['得到别人的尊重','尊重别人的意见','互相尊重'],

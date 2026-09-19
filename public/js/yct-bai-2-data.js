@@ -2,7 +2,7 @@
 // DATA — YCT Bài 2: 你叫什么？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, tớ, mình',em:'🙋',lesson:1,
+  {n:1,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, tớ, mình', hv: 'ngã',em:'🙋',lesson:1,
    ex_zh:'我叫乐乐。',ex_py:'Wǒ jiào Lèle.',ex_vn:'Mình tên là Lạc Lạc.',
    exList:[{zh:'我叫乐乐。',py:'Wǒ jiào Lèle.',vn:'Mình tên là Lạc Lạc.'}],
    hanzi:[
@@ -10,7 +10,7 @@ var vocabData = [
       tip:'Chữ cổ là hình vũ khí có răng cưa, người cầm nó tự xưng mình là chủ → TÔI.',
       cf:'找 (zhǎo – "tìm")',w:'我叫 / 我是'},
    ]},
-  {n:2,zh:'叫',py:'jiào',pos:'Động từ',vn:'gọi, tên là',em:'📛',lesson:1,
+  {n:2,zh:'叫',py:'jiào',pos:'Động từ',vn:'gọi, tên là', hv: 'khiếu',em:'📛',lesson:1,
    ex_zh:'你叫什么？',ex_py:'Nǐ jiào shénme?',ex_vn:'Bạn tên gì?',
    exList:[{zh:'你叫什么？',py:'Nǐ jiào shénme?',vn:'Bạn tên gì?'}],
    hanzi:[
@@ -18,7 +18,7 @@ var vocabData = [
       tip:'口(miệng) dùng để GỌI TÊN ai đó.',
       cf:'纠 (jiū – "vướng, rối")',w:'我叫'},
    ]},
-  {n:3,zh:'什么',py:'shénme',pos:'Đại từ',vn:'cái gì, gì',em:'❓',lesson:1,
+  {n:3,zh:'什么',py:'shénme',pos:'Đại từ',vn:'cái gì, gì', hv: 'thập ma',em:'❓',lesson:1,
    ex_zh:'你叫什么？',ex_py:'Nǐ jiào shénme?',ex_vn:'Bạn tên gì?',
    exList:[{zh:'你叫什么？',py:'Nǐ jiào shénme?',vn:'Bạn tên gì?'}],
    hanzi:[
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Ghép sau 什 để tạo thành từ hỏi CÁI GÌ.',
       cf:'幺 (yāo – "nhỏ, non")',w:'什么'},
    ]},
-  {n:4,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen, biết',em:'🤝',lesson:1,
+  {n:4,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen, biết', hv: 'nhận thức',em:'🤝',lesson:1,
    ex_zh:'认识你，很高兴！',ex_py:'Rènshi nǐ, hěn gāoxìng!',ex_vn:'Quen được bạn, mình vui lắm!',
    exList:[{zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'}],
    hanzi:[
@@ -40,7 +40,7 @@ var vocabData = [
       tip:'讠(lời nói) + 只(phân biệt) → dùng lời PHÂN BIỆT, HIỂU BIẾT.',
       cf:'职 (zhí – "chức vụ")',w:'认识'},
    ]},
-  {n:5,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất',em:'📈',lesson:1,
+  {n:5,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất', hv: 'ngận',em:'📈',lesson:1,
    ex_zh:'认识你，很高兴！',ex_py:'Rènshi nǐ, hěn gāoxìng!',ex_vn:'Quen được bạn, mình vui lắm!',
    exList:[{zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'}],
    hanzi:[
@@ -48,7 +48,7 @@ var vocabData = [
       tip:'彳(bước đi) + 艮(dừng lại, cứng) → nhấn mạnh mức độ = RẤT.',
       cf:'狠 (hěn – "hung dữ")',w:'很高兴'},
    ]},
-  {n:6,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui, phấn khởi',em:'😄',lesson:1,
+  {n:6,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui, phấn khởi', hv: 'cao hứng',em:'😄',lesson:1,
    ex_zh:'认识你，很高兴！',ex_py:'Rènshi nǐ, hěn gāoxìng!',ex_vn:'Quen được bạn, mình vui lắm!',
    exList:[{zh:'认识你，很高兴！',py:'Rènshi nǐ, hěn gāoxìng!',vn:'Quen được bạn, mình vui lắm!'}],
    hanzi:[
@@ -59,7 +59,7 @@ var vocabData = [
       tip:'Hình nhiều bàn tay cùng nâng một vật lên → cùng nhau PHẤN KHỞI.',
       cf:'共 (gòng – "cùng")',w:'高兴'},
    ]},
-  {n:7,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, bạn ấy',em:'👧',lesson:2,
+  {n:7,zh:'她',py:'tā',pos:'Đại từ',vn:'cô ấy, bạn ấy', hv: 'tha',em:'👧',lesson:2,
    ex_zh:'你认识她吗？',ex_py:'Nǐ rènshi tā ma?',ex_vn:'Bạn có quen cô ấy không?',
    exList:[{zh:'你认识她吗？',py:'Nǐ rènshi tā ma?',vn:'Bạn có quen cô ấy không?'}],
    hanzi:[
@@ -67,7 +67,7 @@ var vocabData = [
       tip:'女(nữ giới) + 也(đại từ cổ) → chỉ NGƯỜI NỮ đang được nhắc đến.',
       cf:'姐 (jiě – "chị gái")',w:'她是谁'},
    ]},
-  {n:8,zh:'吗',py:'ma',pos:'Trợ từ',vn:'trợ từ tạo câu hỏi Có/Không',em:'❔',lesson:2,
+  {n:8,zh:'吗',py:'ma',pos:'Trợ từ',vn:'trợ từ tạo câu hỏi Có/Không', hv: 'ma',em:'❔',lesson:2,
    ex_zh:'你认识她吗？',ex_py:'Nǐ rènshi tā ma?',ex_vn:'Bạn có quen cô ấy không?',
    exList:[{zh:'你认识她吗？',py:'Nǐ rènshi tā ma?',vn:'Bạn có quen cô ấy không?'}],
    hanzi:[
@@ -75,7 +75,7 @@ var vocabData = [
       tip:'口(miệng) phát âm hỏi, mượn âm 马(ngựa) làm ký hiệu ngữ âm.',
       cf:'妈 (mā – "mẹ")',w:'你认识她吗'},
    ]},
-  {n:9,zh:'不',py:'bù',pos:'Phó từ',vn:'không, chẳng',em:'🚫',lesson:2,
+  {n:9,zh:'不',py:'bù',pos:'Phó từ',vn:'không, chẳng', hv: 'bất',em:'🚫',lesson:2,
    ex_zh:'不认识。',ex_py:'Bú rènshi.',ex_vn:'Mình không quen.',
    exList:[{zh:'不认识。',py:'Bú rènshi.',vn:'Mình không quen.'}],
    hanzi:[

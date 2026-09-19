@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 7: 今天几号?
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'请',py:'qǐng',pos:'Động từ',vn:'mời, xin (lịch sự)',em:'🙏',lesson:1,
+  {n:1,zh:'请',py:'qǐng',pos:'Động từ',vn:'mời, xin (lịch sự)', hv: 'thỉnh',em:'🙏',lesson:1,
    ex_zh:'请问，今天几号？',ex_py:'Qǐngwèn, jīntiān jǐ hào?',ex_vn:'Xin hỏi hôm nay là ngày mấy?',
    exList:[
      {zh:'请问，今天几号？',py:'Qǐngwèn, jīntiān jǐ hào?',vn:'Xin hỏi hôm nay là ngày mấy?'},
@@ -12,7 +12,7 @@ var vocabData = [
       tip:'讠(lời nói) + 青(trong sáng, thanh nhã) → lời MỜI trang trọng, lịch sự.',
       cf:'情 (qíng – "tình cảm")',w:'请问 / 请坐'},
    ]},
-  {n:2,zh:'问',py:'wèn',pos:'Động từ',vn:'hỏi',em:'❓',lesson:1,
+  {n:2,zh:'问',py:'wèn',pos:'Động từ',vn:'hỏi', hv: 'vấn',em:'❓',lesson:1,
    ex_zh:'请问，今天几号？',ex_py:'Qǐngwèn, jīntiān jǐ hào?',ex_vn:'Xin hỏi hôm nay là ngày mấy?',
    exList:[
      {zh:'请问，今天几号？',py:'Qǐngwèn, jīntiān jǐ hào?',vn:'Xin hỏi hôm nay là ngày mấy?'},
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'门(cửa) + 口(miệng) → đứng trước cửa cất tiếng HỎI.',
       cf:'间 (jiān – "khoảng giữa")',w:'请问 / 问题'},
    ]},
-  {n:3,zh:'今天',py:'jīntiān',pos:'Danh từ',vn:'hôm nay',em:'📆',lesson:1,
+  {n:3,zh:'今天',py:'jīntiān',pos:'Danh từ',vn:'hôm nay', hv: 'kim thiên',em:'📆',lesson:1,
    ex_zh:'今天9月1号。',ex_py:'Jīntiān jiǔ yuè yī hào.',ex_vn:'Hôm nay ngày 1 tháng 9.',
    exList:[
      {zh:'今天9月1号。',py:'Jīntiān jiǔ yuè yī hào.',vn:'Hôm nay ngày 1 tháng 9.'},
@@ -32,7 +32,7 @@ var vocabData = [
       tip:'一(nét ngang chỉ bầu trời) trên đầu người 大(lớn) → khoảng không rộng lớn trên đầu = TRỜI, NGÀY.',
       cf:'夫 (fū – "chồng, đàn ông")',w:'今天 / 明天 / 昨天'},
    ]},
-  {n:4,zh:'号',py:'hào',pos:'Danh từ',vn:'ngày, mồng (khẩu ngữ)',em:'🔢',lesson:1,
+  {n:4,zh:'号',py:'hào',pos:'Danh từ',vn:'ngày, mồng (khẩu ngữ)', hv: 'hiệu',em:'🔢',lesson:1,
    ex_zh:'今天9月1号。',ex_py:'Jīntiān jiǔ yuè yī hào.',ex_vn:'Hôm nay ngày 1 tháng 9.',
    exList:[
      {zh:'今天9月1号。',py:'Jīntiān jiǔ yuè yī hào.',vn:'Hôm nay ngày 1 tháng 9.'},
@@ -42,7 +42,7 @@ var vocabData = [
       tip:'口(miệng hô to) + 万(số lớn) → hô SỐ để gọi tên, đánh dấu NGÀY, SỐ HIỆU.',
       cf:'另 (lìng – "khác")',w:'9月1号'},
    ]},
-  {n:5,zh:'月',py:'yuè',pos:'Danh từ',vn:'tháng',em:'🌙',lesson:1,
+  {n:5,zh:'月',py:'yuè',pos:'Danh từ',vn:'tháng', hv: 'nguyệt',em:'🌙',lesson:1,
    ex_zh:'今天9月1号。',ex_py:'Jīntiān jiǔ yuè yī hào.',ex_vn:'Hôm nay ngày 1 tháng 9.',
    exList:[
      {zh:'今天9月1号。',py:'Jīntiān jiǔ yuè yī hào.',vn:'Hôm nay ngày 1 tháng 9.'},
@@ -52,7 +52,7 @@ var vocabData = [
       tip:'Hình mặt trăng khuyết → chu kỳ trăng tròn khuyết đánh dấu một THÁNG.',
       cf:'肉 (ròu – "thịt", bộ 月 dạng thịt dễ nhầm")',w:'9月 / 月亮'},
    ]},
-  {n:6,zh:'星期',py:'xīngqī',pos:'Danh từ',vn:'tuần, thứ',em:'📆',lesson:2,
+  {n:6,zh:'星期',py:'xīngqī',pos:'Danh từ',vn:'tuần, thứ', hv: 'tinh kỳ',em:'📆',lesson:2,
    ex_zh:'今天星期几？',ex_py:'Jīntiān xīngqī jǐ?',ex_vn:'Hôm nay là thứ mấy?',
    exList:[
      {zh:'今天星期几？',py:'Jīntiān xīngqī jǐ?',vn:'Hôm nay là thứ mấy?'},
@@ -65,7 +65,7 @@ var vocabData = [
       tip:'其(khung định sẵn) + 月(chu kỳ trăng) → một CHU KỲ THỜI GIAN nhất định.',
       cf:'欺 (qī – "lừa dối")',w:'星期 / 学期'},
    ]},
-  {n:7,zh:'昨天',py:'zuótiān',pos:'Danh từ',vn:'hôm qua',em:'⏮️',lesson:2,
+  {n:7,zh:'昨天',py:'zuótiān',pos:'Danh từ',vn:'hôm qua', hv: 'tạc thiên',em:'⏮️',lesson:2,
    ex_zh:'昨天是8月31号，星期二。',ex_py:'Zuótiān shì bā yuè sānshíyī hào, xīngqī èr.',ex_vn:'Hôm qua là thứ ba, ngày 31 tháng 8.',
    exList:[
      {zh:'昨天是8月31号，星期二。',py:'Zuótiān shì bā yuè sānshíyī hào, xīngqī èr.',vn:'Hôm qua là thứ ba, ngày 31 tháng 8.'},
@@ -75,7 +75,7 @@ var vocabData = [
       tip:'日(mặt trời) + 乍(vừa mới) → mặt trời của ngày vừa qua = HÔM QUA.',
       cf:'作 (zuò – "làm", cùng phần 乍")',w:'昨天'},
    ]},
-  {n:8,zh:'明天',py:'míngtiān',pos:'Danh từ',vn:'ngày mai',em:'⏭️',lesson:2,
+  {n:8,zh:'明天',py:'míngtiān',pos:'Danh từ',vn:'ngày mai', hv: 'minh thiên',em:'⏭️',lesson:2,
    ex_zh:'明天是9月2号，星期四。',ex_py:'Míngtiān shì jiǔ yuè èr hào, xīngqī sì.',ex_vn:'Ngày mai là thứ năm, ngày 2 tháng 9.',
    exList:[
      {zh:'明天是9月2号，星期四。',py:'Míngtiān shì jiǔ yuè èr hào, xīngqī sì.',vn:'Ngày mai là thứ năm, ngày 2 tháng 9.'},
@@ -85,7 +85,7 @@ var vocabData = [
       tip:'日(mặt trời) + 月(mặt trăng) → hai ánh sáng cùng chiếu → SÁNG RÕ, và "ngày kế tiếp" = NGÀY MAI.',
       cf:'朋 (péng – "bạn bè", cùng bộ 月")',w:'明天'},
    ]},
-  {n:9,zh:'去',py:'qù',pos:'Động từ',vn:'đi, đi đến',em:'🚶',lesson:3,
+  {n:9,zh:'去',py:'qù',pos:'Động từ',vn:'đi, đi đến', hv: 'khứ',em:'🚶',lesson:3,
    ex_zh:'我去学校。',ex_py:'Wǒ qù xuéxiào.',ex_vn:'Tôi đến trường.',
    exList:[
      {zh:'我去学校。',py:'Wǒ qù xuéxiào.',vn:'Tôi đến trường.'},
@@ -95,7 +95,7 @@ var vocabData = [
       tip:'土(mặt đất, nơi đứng) rời khỏi để ĐI đến nơi khác.',
       cf:'丢 (diū – "đánh mất")',w:'去学校 / 去哪儿'},
    ]},
-  {n:10,zh:'学校',py:'xuéxiào',pos:'Danh từ',vn:'trường học',em:'🏫',lesson:3,
+  {n:10,zh:'学校',py:'xuéxiào',pos:'Danh từ',vn:'trường học', hv: 'học hiệu',em:'🏫',lesson:3,
    ex_zh:'我去学校看书。',ex_py:'Wǒ qù xuéxiào kàn shū.',ex_vn:'Tôi đến trường đọc sách.',
    exList:[
      {zh:'我去学校看书。',py:'Wǒ qù xuéxiào kàn shū.',vn:'Tôi đến trường đọc sách.'},
@@ -105,7 +105,7 @@ var vocabData = [
       tip:'木(gỗ, xây trường) + 交(giao lưu, gặp gỡ) → nơi mọi người gặp gỡ để học = TRƯỜNG. (学 đã học ở Bài 3)',
       cf:'较 (jiào – "so sánh")',w:'学校'},
    ]},
-  {n:11,zh:'看',py:'kàn',pos:'Động từ',vn:'nhìn, xem, đọc',em:'👀',lesson:3,
+  {n:11,zh:'看',py:'kàn',pos:'Động từ',vn:'nhìn, xem, đọc', hv: 'khán',em:'👀',lesson:3,
    ex_zh:'我去学校看书。',ex_py:'Wǒ qù xuéxiào kàn shū.',ex_vn:'Tôi đến trường đọc sách.',
    exList:[
      {zh:'我去学校看书。',py:'Wǒ qù xuéxiào kàn shū.',vn:'Tôi đến trường đọc sách.'},
@@ -115,7 +115,7 @@ var vocabData = [
       tip:'手(bàn tay) che trên 目(mắt) để NHÌN xa hơn, rõ hơn.',
       cf:'着 (zhe – "trợ từ động thái")',w:'看书 / 看电视'},
    ]},
-  {n:12,zh:'书',py:'shū',pos:'Danh từ',vn:'sách',em:'📚',lesson:3,
+  {n:12,zh:'书',py:'shū',pos:'Danh từ',vn:'sách', hv: 'thư',em:'📚',lesson:3,
    ex_zh:'我去学校看书。',ex_py:'Wǒ qù xuéxiào kàn shū.',ex_vn:'Tôi đến trường đọc sách.',
    exList:[
      {zh:'我去学校看书。',py:'Wǒ qù xuéxiào kàn shū.',vn:'Tôi đến trường đọc sách.'},

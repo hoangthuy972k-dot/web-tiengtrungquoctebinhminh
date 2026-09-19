@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'弹钢琴',py:'tán gāngqín',pos:'Cụm động từ',vn:'chơi đàn dương cầm',em:'🎹',lesson:1,
+  {n:1,zh:'弹钢琴',py:'tán gāngqín',pos:'Cụm động từ',vn:'chơi đàn dương cầm', hv: 'đàn cương cầm',em:'🎹',lesson:1,
    explain:['弹 = gảy, chơi (nhạc cụ dây/phím); 钢琴 = piano. 弹吉他 = chơi ghi-ta.'],
    usage:'弹钢琴, 练习弹钢琴, 一边弹钢琴一边唱歌.',
    collo:['一边弹钢琴一边唱歌','练习弹钢琴','弹得很好'],
@@ -26,7 +26,7 @@ var vocabData = [
       note:'一边……一边 ôn lại Bài 2, 表演 (Bài 13).'},
    ]},
 
-  {n:2,zh:'棒',py:'bàng',pos:'Tính từ',vn:'xuất sắc, hay, giỏi',em:'👍',lesson:1,
+  {n:2,zh:'棒',py:'bàng',pos:'Tính từ',vn:'xuất sắc, hay, giỏi', hv: 'bổng',em:'👍',lesson:1,
    explain:['Khẩu ngữ khen ngợi: giỏi, tuyệt (= 好, 优秀). 真棒, 太棒了, 表演得真棒.'],
    usage:'真棒, 太棒了, 唱得真棒.',
    collo:['表演得真棒','太棒了','你真棒'],
@@ -46,7 +46,7 @@ var vocabData = [
       note:'既然 ôn lại ngữ pháp Bài 14.'},
    ]},
 
-  {n:3,zh:'孙子',py:'sūnzi',pos:'Danh từ',vn:'cháu nội trai',em:'👦',lesson:1,
+  {n:3,zh:'孙子',py:'sūnzi',pos:'Danh từ',vn:'cháu nội trai', hv: 'tôn tử',em:'👦',lesson:1,
    explain:['Con trai của con trai. 孙女 = cháu nội gái; 外孙 = cháu ngoại.'],
    usage:'我孙子, 爷爷的孙子, 孙子和孙女.',
    collo:['我孙子','两个孙子','孙子孙女'],
@@ -66,7 +66,7 @@ var vocabData = [
       note:'优秀 (Bài 10), 教育 (Bài 12), bổ ngữ trạng thái 得.'},
    ]},
 
-  {n:4,zh:'寒假',py:'hánjià',pos:'Danh từ',vn:'kỳ nghỉ đông',em:'❄️',lesson:1,
+  {n:4,zh:'寒假',py:'hánjià',pos:'Danh từ',vn:'kỳ nghỉ đông', hv: 'hàn giá',em:'❄️',lesson:1,
    explain:['Kỳ nghỉ mùa đông (quanh Tết). 暑假 = nghỉ hè (Bài 1). 放寒假 = được nghỉ đông.'],
    usage:'放寒假, 寒假去旅行, 寒假前.',
    collo:['放寒假了','寒假去旅行','寒假前的晚会'],
@@ -86,7 +86,7 @@ var vocabData = [
       note:'肯定 ôn lại Bài 5.'},
    ]},
 
-  {n:5,zh:'父亲',py:'fùqīn',pos:'Danh từ',vn:'cha, bố',em:'👨',lesson:1,
+  {n:5,zh:'父亲',py:'fùqīn',pos:'Danh từ',vn:'cha, bố', hv: 'phụ thân',em:'👨',lesson:1,
    explain:['Cách gọi trang trọng của 爸爸. 母亲 = mẹ. 父母 = cha mẹ.'],
    usage:'优秀的父亲, 我父亲, 父亲或者母亲.',
    collo:['一位优秀的父亲','我父亲','父亲和母亲'],
@@ -106,7 +106,7 @@ var vocabData = [
       note:'如果……就 (Bài 1), 成为 (Bài 8), 优秀 (Bài 10).'},
    ]},
 
-  {n:6,zh:'闹钟',py:'nàozhōng',pos:'Danh từ',vn:'đồng hồ báo thức',em:'⏰',lesson:2,
+  {n:6,zh:'闹钟',py:'nàozhōng',pos:'Danh từ',vn:'đồng hồ báo thức', hv: 'náo chung',em:'⏰',lesson:2,
    explain:['Đồng hồ kêu để đánh thức. 闹钟响了 = chuông báo thức reo. 定闹钟 = đặt báo thức.'],
    usage:'闹钟响了, 定闹钟, 关闹钟.',
    collo:['闹钟响了','定一个闹钟','听不见闹钟'],
@@ -126,7 +126,7 @@ var vocabData = [
       note:'遍 (Bài 13), 好几 (Bài 11).'},
    ]},
 
-  {n:7,zh:'响',py:'xiǎng',pos:'Động từ',vn:'reo, vang lên',em:'🔔',lesson:2,
+  {n:7,zh:'响',py:'xiǎng',pos:'Động từ',vn:'reo, vang lên', hv: 'hưởng',em:'🔔',lesson:2,
    explain:['Phát ra âm thanh: chuông, điện thoại, sấm… Cũng là tính từ: 声音很响 (to, vang).'],
    usage:'闹钟响了, 手机一直在响, 声音很响.',
    collo:['闹钟响了','电话响了','一直在响'],
@@ -146,7 +146,7 @@ var vocabData = [
       note:'一直 (Bài 3), định ngữ dài + 的.'},
    ]},
 
-  {n:8,zh:'醒',py:'xǐng',pos:'Động từ',vn:'thức dậy, tỉnh dậy',em:'🌅',lesson:2,
+  {n:8,zh:'醒',py:'xǐng',pos:'Động từ',vn:'thức dậy, tỉnh dậy', hv: 'tỉnh',em:'🌅',lesson:2,
    explain:['Tỉnh giấc, hết mê. 睡醒 = ngủ dậy; 醒来 = tỉnh dậy; 叫醒 = gọi dậy.'],
    usage:'醒了, 叫醒, 睡醒.',
    collo:['闹钟响了她不醒','把他叫醒','刚睡醒'],
@@ -166,7 +166,7 @@ var vocabData = [
       note:'Câu chữ 把 + bổ ngữ kết quả 醒; 赶 từ mới.'},
    ]},
 
-  {n:9,zh:'赶',py:'gǎn',pos:'Động từ',vn:'vội, gấp rút; đuổi kịp',em:'🏃',lesson:2,
+  {n:9,zh:'赶',py:'gǎn',pos:'Động từ',vn:'vội, gấp rút; đuổi kịp', hv: 'cản',em:'🏃',lesson:2,
    explain:['(1) Vội vàng làm kịp: 赶时间, 赶飞机, 赶火车. (2) Đuổi theo, kịp: 赶上, 赶回来.'],
    usage:'赶时间, 赶飞机, 赶回来.',
    collo:['赶时间','赶飞机','专门赶回来'],
@@ -186,7 +186,7 @@ var vocabData = [
       note:'大约 (Bài 13), 专门 (Bài 9), bổ ngữ xu hướng 回来.'},
    ]},
 
-  {n:10,zh:'厕所',py:'cèsuǒ',pos:'Danh từ',vn:'nhà vệ sinh',em:'🚽',lesson:2,
+  {n:10,zh:'厕所',py:'cèsuǒ',pos:'Danh từ',vn:'nhà vệ sinh', hv: 'xí sở',em:'🚽',lesson:2,
    explain:['Nhà vệ sinh (khẩu ngữ hơn 卫生间 Bài 14). 上厕所 = đi vệ sinh.'],
    usage:'上厕所, 公共厕所, 厕所在哪儿.',
    collo:['急着上厕所','公共厕所','找厕所'],
@@ -206,7 +206,7 @@ var vocabData = [
       note:'出发 (Bài 2), 先 (Bài 3).'},
    ]},
 
-  {n:11,zh:'批评',py:'pīpíng',pos:'Động từ',vn:'phê bình',em:'😠',lesson:2,
+  {n:11,zh:'批评',py:'pīpíng',pos:'Động từ',vn:'phê bình', hv: 'phê bình',em:'😠',lesson:2,
    explain:['Chỉ ra lỗi sai, trách mắng. Trái nghĩa: 表扬 (khen ngợi). 受到批评 = bị phê bình.'],
    usage:'批评孩子, 受到批评, 不得不批评.',
    collo:['因为小事批评她','受到批评','不要用……批评他'],
@@ -229,7 +229,7 @@ var vocabData = [
       note:'不得不 (Bài 10), 态度 (Bài 8), 友好 (Bài 12).'},
    ]},
 
-  {n:12,zh:'弄',py:'nòng',pos:'Động từ',vn:'làm',em:'🔨',lesson:2,
+  {n:12,zh:'弄',py:'nòng',pos:'Động từ',vn:'làm', hv: 'lộng',em:'🔨',lesson:2,
    explain:['Động từ khẩu ngữ nghĩa "làm", thay thế nhiều động từ khác (准备, 碰, 批评…). 弄好 = làm xong; 弄坏 = làm hỏng; 弄得……= khiến cho….'],
    usage:'弄好了, 弄坏了, 弄得……, 弄清楚.',
    collo:['弄得心情不好','别弄坏了','弄清楚'],
@@ -249,7 +249,7 @@ var vocabData = [
       note:'弄 + bổ ngữ kết quả 坏; 沙发 (Bài 11).'},
    ]},
 
-  {n:13,zh:'管理',py:'guǎnlǐ',pos:'Động từ',vn:'quản lý',em:'📋',lesson:2,
+  {n:13,zh:'管理',py:'guǎnlǐ',pos:'Động từ',vn:'quản lý', hv: 'quản lý',em:'📋',lesson:2,
    explain:['Sắp xếp, điều hành (thời gian, công ty, con người). 管理时间, 管理公司.'],
    usage:'管理时间, 学会管理, 管理公司.',
    collo:['学会管理时间','管理公司','管理专业'],
@@ -269,7 +269,7 @@ var vocabData = [
       note:'Câu kiêm ngữ 让 + 学会 (bổ ngữ kết quả).'},
    ]},
 
-  {n:14,zh:'打针',py:'dǎ zhēn',pos:'Động từ',vn:'tiêm, chích',em:'💉',lesson:3,
+  {n:14,zh:'打针',py:'dǎ zhēn',pos:'Động từ',vn:'tiêm, chích', hv: 'đả châm',em:'💉',lesson:3,
    explain:['Tiêm thuốc. Động từ ly hợp: 打了一针, 打过针. 怕打针 = sợ tiêm.'],
    usage:'去医院打针, 怕打针, 打了一针.',
    collo:['去医院打针','害怕打针','不怕打针'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'一……就 (Bài 2), 害怕 (Bài 9).'},
    ]},
 
-  {n:15,zh:'护士',py:'hùshi',pos:'Danh từ',vn:'y tá',em:'👩‍⚕️',lesson:3,
+  {n:15,zh:'护士',py:'hùshi',pos:'Danh từ',vn:'y tá', hv: 'hộ sĩ',em:'👩‍⚕️',lesson:3,
    explain:['Người chăm sóc bệnh nhân trong bệnh viện. 护 còn trong 护照 (Bài 4), 保护 (Bài 12).'],
    usage:'一位护士, 和护士说, 当护士.',
    collo:['和护士说','一名护士','护士和医生'],
@@ -309,7 +309,7 @@ var vocabData = [
       note:'竟然 (Bài 6), 成为 (Bài 8).'},
    ]},
 
-  {n:16,zh:'表扬',py:'biǎoyáng',pos:'Động từ',vn:'khen ngợi, biểu dương',em:'🌟',lesson:3,
+  {n:16,zh:'表扬',py:'biǎoyáng',pos:'Động từ',vn:'khen ngợi, biểu dương', hv: 'biểu dương',em:'🌟',lesson:3,
    explain:['Khen ngợi công khai. Trái nghĩa: 批评. 受到表扬 = được khen. Cũng làm danh từ: 过多的表扬.'],
    usage:'表扬孩子, 受到表扬, 表扬要及时.',
    collo:['鼓励和表扬','受到表扬','过多的表扬'],
@@ -331,7 +331,7 @@ var vocabData = [
       note:'受到 (Bài 8), 往往 (Bài 8), 信心 (Bài 9).'},
    ]},
 
-  {n:17,zh:'千万',py:'qiānwàn',pos:'Phó từ',vn:'nhất thiết phải, tuyệt đối',em:'⚠️',lesson:3,
+  {n:17,zh:'千万',py:'qiānwàn',pos:'Phó từ',vn:'nhất thiết phải, tuyệt đối', hv: 'thiên vạn',em:'⚠️',lesson:3,
    explain:['Nhấn mạnh dặn dò (务必, 一定), thường đi với phủ định: 千万别, 千万不要, 千万不能. Ngữ pháp trọng tâm.'],
    usage:'千万别……, 千万不要……, 千万不能……',
    collo:['千万不要太多','千万别告诉她','千万别喝酒'],
@@ -353,7 +353,7 @@ var vocabData = [
       note:'坚持/放弃 ôn lại Bài 9.'},
    ]},
 
-  {n:18,zh:'怀疑',py:'huáiyí',pos:'Động từ',vn:'nghi ngờ, hoài nghi',em:'🤔',lesson:3,
+  {n:18,zh:'怀疑',py:'huáiyí',pos:'Động từ',vn:'nghi ngờ, hoài nghi', hv: 'hoài nghi',em:'🤔',lesson:3,
    explain:['Không tin, ngờ vực. 怀疑自己的能力 = nghi ngờ năng lực bản thân. 毫不怀疑 = không chút nghi ngờ.'],
    usage:'怀疑自己, 怀疑……的能力, 让人怀疑.',
    collo:['怀疑自己的能力','让孩子怀疑','不要怀疑'],
@@ -373,7 +373,7 @@ var vocabData = [
       note:'坚持下去 (bổ ngữ xu hướng, Bài 9), 一定 vs 千万 (ngữ pháp bài).'},
    ]},
 
-  {n:19,zh:'故意',py:'gùyì',pos:'Phó từ',vn:'cố tình, cố ý',em:'😈',lesson:4,
+  {n:19,zh:'故意',py:'gùyì',pos:'Phó từ',vn:'cố tình, cố ý', hv: 'cố ý',em:'😈',lesson:4,
    explain:['Làm có chủ ý, cố tình. 故意敲打, 故意迟到, 不是故意的.'],
    usage:'故意敲打, 不是故意的, 故意不说.',
    collo:['故意敲打','不是故意的','故意让他生气'],
@@ -393,7 +393,7 @@ var vocabData = [
       note:'解释 (Bài 12), 理解 (Bài 8).'},
    ]},
 
-  {n:20,zh:'敲',py:'qiāo',pos:'Động từ',vn:'gõ, khua',em:'🚪',lesson:4,
+  {n:20,zh:'敲',py:'qiāo',pos:'Động từ',vn:'gõ, khua', hv: 'xao',em:'🚪',lesson:4,
    explain:['Gõ (cửa), đập. 敲门 = gõ cửa; 敲打 = gõ đập.'],
    usage:'敲门, 敲打, 敲桌子.',
    collo:['敲门','故意敲打','敲了三下'],
@@ -413,7 +413,7 @@ var vocabData = [
       note:'之前 (Bài 11), 礼貌 (Bài 3).'},
    ]},
 
-  {n:21,zh:'整理',py:'zhěnglǐ',pos:'Động từ',vn:'thu dọn, dọn dẹp, sắp xếp',em:'🧺',lesson:4,
+  {n:21,zh:'整理',py:'zhěnglǐ',pos:'Động từ',vn:'thu dọn, dọn dẹp, sắp xếp', hv: 'chỉnh lý',em:'🧺',lesson:4,
    explain:['Sắp xếp cho gọn gàng: 整理东西, 整理房间, 整理材料 (tài liệu).'],
    usage:'整理东西, 整理房间, 整理材料.',
    collo:['整理整理东西','整理房间','整理材料'],
@@ -433,7 +433,7 @@ var vocabData = [
       note:'分之 (Bài 6), 来得及 (Bài 4).'},
    ]},
 
-  {n:22,zh:'合适',py:'héshì',pos:'Tính từ',vn:'thích hợp',em:'✅',lesson:4,
+  {n:22,zh:'合适',py:'héshì',pos:'Tính từ',vn:'thích hợp', hv: 'hợp thích',em:'✅',lesson:4,
    explain:['Phù hợp với yêu cầu/tình huống. 合适的方法, 合适的公司. Phân biệt 适合 (động từ, Bài 8): 适合我 / 对我很合适.'],
    usage:'合适的教育方法, 找到合适的公司, 很合适.',
    collo:['合适的教育方法','合适的公司','不太合适'],
@@ -453,7 +453,7 @@ var vocabData = [
       note:'招聘 (Bài 10), 提供 (Bài 6).'},
    ]},
 
-  {n:23,zh:'骗',py:'piàn',pos:'Động từ',vn:'lừa gạt',em:'🤥',lesson:4,
+  {n:23,zh:'骗',py:'piàn',pos:'Động từ',vn:'lừa gạt', hv: 'biển',em:'🤥',lesson:4,
    explain:['Nói dối để lừa. 骗人 = lừa người; 骗孩子; 被骗 = bị lừa.'],
    usage:'骗孩子, 骗人, 被骗了.',
    collo:['骗孩子','看到父母骗人','别骗我'],
@@ -473,7 +473,7 @@ var vocabData = [
       note:'千万别 (ngữ pháp bài) + câu chữ 被.'},
    ]},
 
-  {n:24,zh:'儿童',py:'értóng',pos:'Danh từ',vn:'trẻ em',em:'🧒',lesson:4,
+  {n:24,zh:'儿童',py:'értóng',pos:'Danh từ',vn:'trẻ em', hv: 'nhi đồng',em:'🧒',lesson:4,
    explain:['Trẻ em nói chung (văn viết, trang trọng hơn 孩子). 儿童节 = Tết thiếu nhi.'],
    usage:'儿童缺少……, 七岁左右的儿童, 教儿童的老师.',
    collo:['儿童缺少判断能力','七岁左右的儿童','儿童节'],
@@ -493,7 +493,7 @@ var vocabData = [
       note:'左右 (ngữ pháp bài), 普遍 (Bài 13), bổ ngữ khả năng 坐不住.'},
    ]},
 
-  {n:25,zh:'假',py:'jiǎ',pos:'Tính từ',vn:'giả dối, không thật',em:'🎭',lesson:4,
+  {n:25,zh:'假',py:'jiǎ',pos:'Tính từ',vn:'giả dối, không thật', hv: 'giả',em:'🎭',lesson:4,
    explain:['Không thật. 假话 = lời nói dối; 假的 = đồ giả. Trái nghĩa: 真. Chú ý đọc jià = kỳ nghỉ (寒假, 暑假).'],
    usage:'说假话, 假的, 真假.',
    collo:['说假话','是假的','真的还是假的'],
@@ -513,7 +513,7 @@ var vocabData = [
       note:'消息 (Bài 9), 相信 (Bài 4), 千万别.'},
    ]},
 
-  {n:26,zh:'左右',py:'zuǒyòu',pos:'Danh từ',vn:'khoảng, khoảng chừng',em:'↔️',lesson:5,
+  {n:26,zh:'左右',py:'zuǒyòu',pos:'Danh từ',vn:'khoảng, khoảng chừng', hv: 'tả hữu',em:'↔️',lesson:5,
    explain:['Đứng sau số lượng, chỉ "khoảng, xấp xỉ" (nhiều hơn hoặc ít hơn chút). 三天左右, 七岁左右, 500米左右. Ngữ pháp trọng tâm.'],
    usage:'Số lượng + 左右',
    collo:['七岁左右','三天左右','500米左右'],
@@ -535,7 +535,7 @@ var vocabData = [
       note:'出差 (Bài 14), 月底 (Bài 11).'},
    ]},
 
-  {n:27,zh:'懒',py:'lǎn',pos:'Tính từ',vn:'lười, lười nhác',em:'😴',lesson:5,
+  {n:27,zh:'懒',py:'lǎn',pos:'Tính từ',vn:'lười, lười nhác', hv: 'lãn',em:'😴',lesson:5,
    explain:['Không thích làm việc, lười biếng. 太懒了, 懒得 + động từ = lười (làm gì).'],
    usage:'很懒, 太懒了, 懒得出门.',
    collo:['用"懒"批评他','太懒了','懒得做饭'],
@@ -555,7 +555,7 @@ var vocabData = [
       note:'才 (Bài 3) + 醒 (từ mới).'},
    ]},
 
-  {n:28,zh:'笨',py:'bèn',pos:'Tính từ',vn:'đần, ngốc',em:'🙈',lesson:5,
+  {n:28,zh:'笨',py:'bèn',pos:'Tính từ',vn:'đần, ngốc', hv: 'bổn',em:'🙈',lesson:5,
    explain:['Kém thông minh, chậm hiểu. Trái nghĩa: 聪明. 笨蛋 = đồ ngốc (xúc phạm).'],
    usage:'太笨了, 不笨, 笨办法.',
    collo:['用"笨"批评他','并不笨','笨办法'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'并不 (Bài 4), 只是 (Bài 6).'},
    ]},
 
-  {n:29,zh:'粗心',py:'cūxīn',pos:'Tính từ',vn:'cẩu thả',em:'🙄',lesson:5,
+  {n:29,zh:'粗心',py:'cūxīn',pos:'Tính từ',vn:'cẩu thả', hv: 'thô tâm',em:'🙄',lesson:5,
    explain:['Không cẩn thận, bất cẩn. Trái nghĩa: 仔细/细心 (Bài 12). 太粗心了, 粗心大意.'],
    usage:'太粗心了, 粗心的人, 因为粗心.',
    collo:['用"粗心"批评他','太粗心了','粗心大意'],
@@ -595,7 +595,7 @@ var vocabData = [
       note:'优点 (Bài 8), 诚实 (Bài 10), 适合 (Bài 8).'},
    ]},
 
-  {n:30,zh:'骄傲',py:'jiāo\'ào',pos:'Tính từ',vn:'kiêu ngạo',em:'😤',lesson:5,
+  {n:30,zh:'骄傲',py:'jiāo\'ào',pos:'Tính từ',vn:'kiêu ngạo', hv: 'kiêu ngạo',em:'😤',lesson:5,
    explain:['(1) Tự cao, coi thường người khác (nghĩa xấu). (2) Tự hào (为……骄傲, nghĩa tốt).'],
    usage:'比较骄傲, 别骄傲, 为……感到骄傲.',
    collo:['孩子比较骄傲','取得成绩别骄傲','为你骄傲'],
@@ -618,7 +618,7 @@ var vocabData = [
       note:'取得 (Bài 9), 否则 (Bài 11), 千万别.'},
    ]},
 
-  {n:31,zh:'害羞',py:'hàixiū',pos:'Động từ',vn:'ngượng ngùng, thẹn thùng',em:'😳',lesson:5,
+  {n:31,zh:'害羞',py:'hàixiū',pos:'Động từ',vn:'ngượng ngùng, thẹn thùng', hv: 'hại tu',em:'😳',lesson:5,
    explain:['Xấu hổ, e thẹn khi gặp người lạ hoặc bị chú ý. 有点儿害羞, 性格害羞.'],
    usage:'有点儿害羞, 性格有些害羞, 害羞得脸红.',
    collo:['性格有些害羞','有点儿害羞','害羞的孩子'],

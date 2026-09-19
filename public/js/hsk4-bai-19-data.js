@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'学期',py:'xuéqī',pos:'Danh từ',vn:'học kỳ',em:'📚',lesson:1,
+  {n:1,zh:'学期',py:'xuéqī',pos:'Danh từ',vn:'học kỳ', hv: 'học kỳ',em:'📚',lesson:1,
    explain:['Một kỳ học. 下个学期, 这个学期, 上学期.'],
    usage:'下个学期, 这个学期, 一个学期.',
    collo:['下个学期','这个学期','新学期'],
@@ -23,7 +23,7 @@ var vocabData = [
       note:'继续 (Bài 13), 重新 (Bài 8), 申请 (Bài 13).'},
    ]},
 
-  {n:2,zh:'出生',py:'chūshēng',pos:'Động từ',vn:'ra đời, sinh ra',em:'👶',lesson:1,
+  {n:2,zh:'出生',py:'chūshēng',pos:'Động từ',vn:'ra đời, sinh ra', hv: 'xuất sinh',em:'👶',lesson:1,
    explain:['Sinh ra. 出生年月 = ngày tháng năm sinh; 出生在……; 出生那天.'],
    usage:'出生年月, 出生在北京, 出生那天.',
    collo:['出生年月','同一天出生','出生地'],
@@ -43,7 +43,7 @@ var vocabData = [
       note:'护照 (Bài 4), 号码 (Bài 16), 性别 (từ mới).'},
    ]},
 
-  {n:3,zh:'性别',py:'xìngbié',pos:'Danh từ',vn:'giới tính',em:'⚧️',lesson:1,
+  {n:3,zh:'性别',py:'xìngbié',pos:'Danh từ',vn:'giới tính', hv: 'tính biệt',em:'⚧️',lesson:1,
    explain:['Nam hay nữ. 填性别, 性别：男/女. 性 trong 性格 (Bài 8).'],
    usage:'填性别, 性别：男, 不分性别.',
    collo:['出生年月、性别','填好姓名、性别','不管性别'],
@@ -63,7 +63,7 @@ var vocabData = [
       note:'表格/传真 (Bài 16), 职业 (Bài 10), 年龄 (Bài 5).'},
    ]},
 
-  {n:4,zh:'道歉',py:'dào qiàn',pos:'Động từ',vn:'xin lỗi',em:'🙏',lesson:1,
+  {n:4,zh:'道歉',py:'dào qiàn',pos:'Động từ',vn:'xin lỗi', hv: 'đạo khiểm',em:'🙏',lesson:1,
    explain:['Nhận lỗi, xin lỗi (trang trọng). Động từ ly hợp: 向……道歉, 道个歉. So sánh 抱歉 (Bài 14: áy náy).'],
    usage:'向他道歉, 不用道歉, 道个歉.',
    collo:['不用道歉','向您道歉','主动向他道歉'],
@@ -83,7 +83,7 @@ var vocabData = [
       note:'既然……就 (Bài 14), 主动 (Bài 8), 向 (Bài 2).'},
    ]},
 
-  {n:5,zh:'打印',py:'dǎyìn',pos:'Động từ',vn:'in',em:'🖨️',lesson:1,
+  {n:5,zh:'打印',py:'dǎyìn',pos:'Động từ',vn:'in', hv: 'đả ấn',em:'🖨️',lesson:1,
    explain:['In ra giấy từ máy tính. 打印一份, 打印材料, 打印机.'],
    usage:'重新打印一份, 打印材料, 负责打印.',
    collo:['重新打印一份','负责打印会议材料','打印出来'],
@@ -103,7 +103,7 @@ var vocabData = [
       note:'Câu chữ 被, 重新 (Bài 8), lượng từ 份 (Bài 10).'},
    ]},
 
-  {n:6,zh:'复印',py:'fùyìn',pos:'Động từ',vn:'photocopy, sao chụp',em:'📄',lesson:1,
+  {n:6,zh:'复印',py:'fùyìn',pos:'Động từ',vn:'photocopy, sao chụp', hv: 'phục ấn',em:'📄',lesson:1,
    explain:['Sao chụp tài liệu. 复印护照, 复印一下, 复印件.'],
    usage:'把护照复印一下, 复印材料, 复印件.',
    collo:['把护照复印一下','复印一份','复印店'],
@@ -123,7 +123,7 @@ var vocabData = [
       note:'签证 (Bài 16), 证明 (Bài 4).'},
    ]},
 
-  {n:7,zh:'饺子',py:'jiǎozi',pos:'Danh từ',vn:'bánh chẻo, sủi cảo',em:'🥟',lesson:2,
+  {n:7,zh:'饺子',py:'jiǎozi',pos:'Danh từ',vn:'bánh chẻo, sủi cảo', hv: 'giảo tử',em:'🥟',lesson:2,
    explain:['Món ăn truyền thống. 包饺子 (Bài 3), 羊肉饺子, 吃饺子.'],
    usage:'包饺子, 羊肉饺子, 吃饺子.',
    collo:['做羊肉饺子','包饺子','吃不上饺子'],
@@ -143,7 +143,7 @@ var vocabData = [
       note:'吃不上 (ngữ pháp 上 của bài), 看来 (Bài 8).'},
    ]},
 
-  {n:8,zh:'刀',py:'dāo',pos:'Danh từ',vn:'con dao',em:'🔪',lesson:2,
+  {n:8,zh:'刀',py:'dāo',pos:'Danh từ',vn:'con dao', hv: 'đao',em:'🔪',lesson:2,
    explain:['Dụng cụ cắt. 一把刀, 用刀切, 刀子.'],
    usage:'用刀切肉, 一把刀, 小心刀.',
    collo:['用刀切肉','一把刀','刀很快'],
@@ -163,7 +163,7 @@ var vocabData = [
       note:'Lượng từ 把, 千万 (Bài 15).'},
    ]},
 
-  {n:9,zh:'破',py:'pò',pos:'Tính từ',vn:'bị đứt, bị thủng, rách',em:'🩹',lesson:2,
+  {n:9,zh:'破',py:'pò',pos:'Tính từ',vn:'bị đứt, bị thủng, rách', hv: 'phá',em:'🩹',lesson:2,
    explain:['Rách, vỡ, đứt. Thường làm bổ ngữ kết quả: 弄破, 撞破, 破了.'],
    usage:'把手弄破了, 衣服破了, 破了一个洞.',
    collo:['把手弄破了','衣服破了','杯子打破了'],
@@ -183,7 +183,7 @@ var vocabData = [
       note:'把 + bổ ngữ kết quả 破.'},
    ]},
 
-  {n:10,zh:'脱',py:'tuō',pos:'Động từ',vn:'cởi ra',em:'👕',lesson:2,
+  {n:10,zh:'脱',py:'tuō',pos:'Động từ',vn:'cởi ra', hv: 'thoát',em:'👕',lesson:2,
    explain:['Cởi (quần áo, giày). Trái nghĩa: 穿. 脱衣服, 脱鞋, 脱下来.'],
    usage:'把衣服脱下来, 脱鞋, 脱掉一件.',
    collo:['把衣服脱下来','脱掉一件','脱鞋'],
@@ -203,7 +203,7 @@ var vocabData = [
       note:'把 + 下来 (bổ ngữ xu hướng), 血 (Bài 7).'},
    ]},
 
-  {n:11,zh:'理发',py:'lǐ fà',pos:'Động từ',vn:'cắt tóc',em:'💇',lesson:2,
+  {n:11,zh:'理发',py:'lǐ fà',pos:'Động từ',vn:'cắt tóc', hv: 'lý phát',em:'💇',lesson:2,
    explain:['Cắt/làm tóc. Động từ ly hợp: 理了发, 该理发了. 理发店, 理发师.'],
    usage:'理发店, 该理发了, 去理发.',
    collo:['我常去的那家理发店','该理发了','理发师技术不错'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'会员卡 (Bài 5), 可……了 (Bài 16), 节约 (Bài 12).'},
    ]},
 
-  {n:12,zh:'包子',py:'bāozi',pos:'Danh từ',vn:'bánh bao',em:'🥟',lesson:2,
+  {n:12,zh:'包子',py:'bāozi',pos:'Danh từ',vn:'bánh bao', hv: 'bao tử',em:'🥟',lesson:2,
    explain:['Bánh hấp có nhân. 买包子, 一个包子, 肉包子.'],
    usage:'买包子, 包子很好吃, 一屉包子.',
    collo:['那里的包子很好吃','买包子','肉包子'],
@@ -243,7 +243,7 @@ var vocabData = [
       note:'够 (Bài 14), 零钱 (từ mới), 袋 (Bài 14).'},
    ]},
 
-  {n:13,zh:'零钱',py:'língqián',pos:'Danh từ',vn:'tiền lẻ',em:'🪙',lesson:2,
+  {n:13,zh:'零钱',py:'língqián',pos:'Danh từ',vn:'tiền lẻ', hv: 'linh tiền',em:'🪙',lesson:2,
    explain:['Tiền mệnh giá nhỏ. 零 = số không, lẻ. 带零钱, 换零钱, 十几块零钱.'],
    usage:'带的零钱, 换零钱, 没有零钱.',
    collo:['十几块零钱','带的零钱应该够','换点儿零钱'],
@@ -263,7 +263,7 @@ var vocabData = [
       note:'现金/刷卡 (Bài 5), 够 (Bài 14).'},
    ]},
 
-  {n:14,zh:'打招呼',py:'dǎ zhāohu',pos:'Cụm động từ',vn:'chào hỏi, chào',em:'👋',lesson:3,
+  {n:14,zh:'打招呼',py:'dǎ zhāohu',pos:'Cụm động từ',vn:'chào hỏi, chào', hv: 'đả chiêu hô',em:'👋',lesson:3,
    explain:['Chào khi gặp. 跟/和……打招呼, 打个招呼. 招呼 cũng nghĩa "báo trước".'],
    usage:'跟你打招呼, 打个招呼, 主动打招呼.',
    collo:['跟你打招呼','多和周围的人打招呼','打个招呼'],
@@ -286,7 +286,7 @@ var vocabData = [
       note:'碰见 (Bài 11), 想不到.'},
    ]},
 
-  {n:15,zh:'戴',py:'dài',pos:'Động từ',vn:'đeo, mang',em:'👓',lesson:3,
+  {n:15,zh:'戴',py:'dài',pos:'Động từ',vn:'đeo, mang', hv: 'đái',em:'👓',lesson:3,
    explain:['Đeo (kính, đồng hồ, mũ, khăn). Khác 穿 (mặc áo, đi giày). 戴眼镜, 戴帽子, 戴手表.'],
    usage:'戴眼镜, 戴帽子, 忘戴了.',
    collo:['忘戴眼镜了','戴眼镜','戴帽子'],
@@ -306,7 +306,7 @@ var vocabData = [
       note:'Bổ ngữ khả năng 看不清楚 (Bài 5).'},
    ]},
 
-  {n:16,zh:'眼镜',py:'yǎnjìng',pos:'Danh từ',vn:'mắt kính',em:'👓',lesson:3,
+  {n:16,zh:'眼镜',py:'yǎnjìng',pos:'Danh từ',vn:'mắt kính', hv: 'nhãn kính',em:'👓',lesson:3,
    explain:['Kính đeo mắt. 戴眼镜, 一副眼镜, 太阳眼镜. Chú ý 镜 ≠ 睛 (眼睛 = con mắt).'],
    usage:'戴眼镜, 一副眼镜, 摘眼镜.',
    collo:['忘戴眼镜了','一副眼镜','戴眼镜的人'],
@@ -326,7 +326,7 @@ var vocabData = [
       note:'不得不 (Bài 10), 对着 (Bài 18).'},
    ]},
 
-  {n:17,zh:'舞蹈',py:'wǔdǎo',pos:'Danh từ',vn:'điệu múa',em:'💃',lesson:3,
+  {n:17,zh:'舞蹈',py:'wǔdǎo',pos:'Danh từ',vn:'điệu múa', hv: 'vũ đạo',em:'💃',lesson:3,
    explain:['Nghệ thuật múa (trang trọng hơn 跳舞). 中国舞蹈, 舞蹈动作, 学舞蹈.'],
    usage:'中国舞蹈, 舞蹈动作, 学过舞蹈.',
    collo:['学过中国舞蹈','舞蹈动作','舞蹈是一门艺术'],
@@ -346,7 +346,7 @@ var vocabData = [
       note:'不仅……也 (Bài 6), 门 lượng từ (Bài 13), 艺术 (Bài 13), 语言 (Bài 12).'},
    ]},
 
-  {n:18,zh:'国籍',py:'guójí',pos:'Danh từ',vn:'quốc tịch',em:'🌍',lesson:3,
+  {n:18,zh:'国籍',py:'guójí',pos:'Danh từ',vn:'quốc tịch', hv: 'quốc tịch',em:'🌍',lesson:3,
    explain:['Tư cách công dân của nước nào. 与国籍无关, 中国国籍, 填国籍.'],
    usage:'与国籍无关, 什么国籍, 填写国籍.',
    collo:['与国籍无关','你的国籍','不同国籍的人'],
@@ -366,7 +366,7 @@ var vocabData = [
       note:'来自 (Bài 13), 十几个.'},
    ]},
 
-  {n:19,zh:'抬',py:'tái',pos:'Động từ',vn:'giơ lên, đưa lên; khiêng',em:'🙆',lesson:3,
+  {n:19,zh:'抬',py:'tái',pos:'Động từ',vn:'giơ lên, đưa lên; khiêng', hv: 'đài',em:'🙆',lesson:3,
    explain:['(1) Nâng lên: 抬胳膊, 抬头, 抬腿. (2) Khiêng (nhiều người): 抬沙发, 抬不动 (Bài 11).'],
    usage:'抬胳膊, 抬头, 抬沙发.',
    collo:['先抬胳膊，然后抬腿','抬起头','一起抬'],
@@ -386,7 +386,7 @@ var vocabData = [
       note:'不管……都 (Bài 3), 勇敢 (Bài 9).'},
    ]},
 
-  {n:20,zh:'胳膊',py:'gēbo',pos:'Danh từ',vn:'cánh tay',em:'💪',lesson:3,
+  {n:20,zh:'胳膊',py:'gēbo',pos:'Danh từ',vn:'cánh tay', hv: 'các bác',em:'💪',lesson:3,
    explain:['Phần tay từ vai đến cổ tay. 抬胳膊, 胳膊疼, 两只胳膊.'],
    usage:'抬胳膊, 胳膊疼, 伸胳膊.',
    collo:['先抬胳膊','胳膊很疼','两只胳膊'],
@@ -406,7 +406,7 @@ var vocabData = [
       note:'Bổ ngữ khả năng 抬不起来 (Bài 15), 网球 (Bài 7).'},
    ]},
 
-  {n:21,zh:'转',py:'zhuǎn',pos:'Động từ',vn:'quay, xoay',em:'🔄',lesson:3,
+  {n:21,zh:'转',py:'zhuǎn',pos:'Động từ',vn:'quay, xoay', hv: 'chuyển',em:'🔄',lesson:3,
    explain:['Xoay hướng. 向右转, 转身, 左转 (Bài 2). Đọc zhuàn = quay tròn (转圈).'],
    usage:'向右转, 左转, 转身.',
    collo:['头再向右转一下','前面路口左转','转过身'],
@@ -426,7 +426,7 @@ var vocabData = [
       note:'转过身 (bổ ngữ xu hướng), 发现 (Bài 3).'},
    ]},
 
-  {n:22,zh:'租',py:'zū',pos:'Động từ',vn:'thuê, cho thuê',em:'🏠',lesson:4,
+  {n:22,zh:'租',py:'zū',pos:'Động từ',vn:'thuê, cho thuê', hv: 'tô',em:'🏠',lesson:4,
    explain:['Thuê (nhà, xe). 租房子, 租车, 出租 (cho thuê), 出租车.'],
    usage:'租房子, 租的房子, 租一个月.',
    collo:['去年租的房子','租房子的广告','租一辆车'],
@@ -446,7 +446,7 @@ var vocabData = [
       note:'广告 (Bài 6), 小区.'},
    ]},
 
-  {n:23,zh:'吵',py:'chǎo',pos:'Tính từ',vn:'ồn ào',em:'📢',lesson:4,
+  {n:23,zh:'吵',py:'chǎo',pos:'Tính từ',vn:'ồn ào', hv: 'sảo',em:'📢',lesson:4,
    explain:['Ồn, náo động. Cũng là động từ: 吵架 (cãi nhau, Bài 8), 吵了起来.'],
    usage:'环境非常吵, 太吵了, 别吵.',
    collo:['周围环境非常吵','这个小区太吵了','吵得睡不着'],
@@ -466,7 +466,7 @@ var vocabData = [
       note:'怕 (Bài 16), 影响 (Bài 4).'},
    ]},
 
-  {n:24,zh:'厨房',py:'chúfáng',pos:'Danh từ',vn:'nhà bếp',em:'🍳',lesson:4,
+  {n:24,zh:'厨房',py:'chúfáng',pos:'Danh từ',vn:'nhà bếp', hv: 'trù phòng',em:'🍳',lesson:4,
    explain:['Phòng nấu ăn. 厨房很大, 在厨房做饭, 厨师 = đầu bếp.'],
    usage:'厨房很大, 在厨房做饭, 打扫厨房.',
    collo:['厨房很大','在厨房里','厨房和卫生间'],
@@ -486,7 +486,7 @@ var vocabData = [
       note:'套 (Bài 12), 卧室/客厅 (Bài 11).'},
    ]},
 
-  {n:25,zh:'房东',py:'fángdōng',pos:'Danh từ',vn:'chủ nhà (nhà cho thuê)',em:'🔑',lesson:4,
+  {n:25,zh:'房东',py:'fángdōng',pos:'Danh từ',vn:'chủ nhà (nhà cho thuê)', hv: 'phòng đông',em:'🔑',lesson:4,
    explain:['Người cho thuê nhà. 房东的电话, 联系房东, 找房东.'],
    usage:'房东的手机号码, 联系房东, 房东很好.',
    collo:['记下了房东的手机号码','联系不上房东','我的房东'],
@@ -506,7 +506,7 @@ var vocabData = [
       note:'总的来说 (ngữ pháp bài), 于是 (Bài 14), 号码 (Bài 16).'},
    ]},
 
-  {n:26,zh:'占线',py:'zhànxiàn',pos:'Động từ',vn:'(đường dây điện thoại) bận',em:'📵',lesson:4,
+  {n:26,zh:'占线',py:'zhànxiàn',pos:'Động từ',vn:'(đường dây điện thoại) bận', hv: 'chiếm tuyến',em:'📵',lesson:4,
    explain:['Máy bận khi gọi. 电话占线, 一直占线, 总是占线.'],
    usage:'电话占线, 一直占线, 总是占线.',
    collo:['电话总是占线','一直占线','打不通，占线'],
@@ -529,7 +529,7 @@ var vocabData = [
       note:'敲 (Bài 15), 半天 (Bài 7).'},
    ]},
 
-  {n:27,zh:'功夫',py:'gōngfu',pos:'Danh từ',vn:'võ thuật, môn võ kung fu',em:'🥋',lesson:5,
+  {n:27,zh:'功夫',py:'gōngfu',pos:'Danh từ',vn:'võ thuật, môn võ kung fu', hv: 'công phu',em:'🥋',lesson:5,
    explain:['Võ thuật Trung Quốc. Cũng nghĩa "công phu, thời gian và công sức". 中国功夫, 会功夫, 下功夫.'],
    usage:'中国功夫, 会功夫, 练功夫.',
    collo:['所有中国人都会功夫','中国功夫很厉害','练功夫'],
@@ -549,7 +549,7 @@ var vocabData = [
       note:'厉害 (Bài 11), 京剧 (Bài 13), 特点 (Bài 18).'},
    ]},
 
-  {n:28,zh:'乒乓球',py:'pīngpāngqiú',pos:'Danh từ',vn:'bóng bàn',em:'🏓',lesson:5,
+  {n:28,zh:'乒乓球',py:'pīngpāngqiú',pos:'Danh từ',vn:'bóng bàn', hv: 'binh bàng cầu',em:'🏓',lesson:5,
    explain:['Môn thể thao quốc gia của Trung Quốc. 打乒乓球, 乒乓球桌, 乒乓球比赛.'],
    usage:'打乒乓球, 乒乓球桌, 乒乓球比赛.',
    collo:['特别喜欢打乒乓球','到处都有乒乓球桌','看乒乓球比赛'],
@@ -569,7 +569,7 @@ var vocabData = [
       note:'尤其 (Bài 7), 观众 (Bài 13), 安静 (Bài 2).'},
    ]},
 
-  {n:29,zh:'羽毛球',py:'yǔmáoqiú',pos:'Danh từ',vn:'cầu lông',em:'🏸',lesson:5,
+  {n:29,zh:'羽毛球',py:'yǔmáoqiú',pos:'Danh từ',vn:'cầu lông', hv: 'vũ mao cầu',em:'🏸',lesson:5,
    explain:['Môn cầu lông. 羽毛 = lông vũ. 打羽毛球, 羽毛球比赛.'],
    usage:'打羽毛球, 羽毛球比赛, 羽毛球拍.',
    collo:['像乒乓球、羽毛球、跑步等运动','打羽毛球','羽毛球比赛'],
@@ -589,7 +589,7 @@ var vocabData = [
       note:'体育馆 (Bài 15).'},
    ]},
 
-  {n:30,zh:'场',py:'chǎng',pos:'Lượng từ',vn:'trận (thể thao, giải trí…)',em:'🎫',lesson:5,
+  {n:30,zh:'场',py:'chǎng',pos:'Lượng từ',vn:'trận (thể thao, giải trí…)', hv: 'trường',em:'🎫',lesson:5,
    explain:['Lượng từ cho thi đấu, biểu diễn, phim, mưa: 一场比赛, 一场演出, 一场电影, 一场雪. Cũng là danh từ: 停车场, 广场.'],
    usage:'打几场球, 一场演出, 一场雪.',
    collo:['打几场球','最后一场演出','下了一场大雪'],
@@ -609,7 +609,7 @@ var vocabData = [
       note:'京剧/演出 (Bài 13), 一直 (Bài 3).'},
    ]},
 
-  {n:31,zh:'禁止',py:'jìnzhǐ',pos:'Động từ',vn:'cấm',em:'🚫',lesson:5,
+  {n:31,zh:'禁止',py:'jìnzhǐ',pos:'Động từ',vn:'cấm', hv: 'cấm chỉ',em:'🚫',lesson:5,
    explain:['Không cho phép (chính thức). 禁止吸烟, 禁止大声讲话, 禁止停车. Trái nghĩa: 允许 (Bài 18).'],
    usage:'禁止吸烟, 禁止大声讲话, 禁止停车.',
    collo:['禁止大声讲话','禁止抽烟','禁止停车'],
@@ -632,7 +632,7 @@ var vocabData = [
       note:'加油站 (Bài 2), 危险 (Bài 18), 因此 (Bài 8), 抽烟 (Bài 7).'},
    ]},
 
-  {n:32,zh:'座位',py:'zuòwèi',pos:'Danh từ',vn:'chỗ ngồi',em:'💺',lesson:5,
+  {n:32,zh:'座位',py:'zuòwèi',pos:'Danh từ',vn:'chỗ ngồi', hv: 'tọa vị',em:'💺',lesson:5,
    explain:['Chỗ ngồi. 离开座位, 找个座位, 座位不够. 座 (Bài 18) lượng từ.'],
    usage:'离开座位, 找个座位, 座位不够.',
    collo:['离开座位随便走动','找个安静点儿的座位','座位恐怕不够'],

@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'终于',py:'zhōngyú',pos:'Phó từ',vn:'cuối cùng',em:'🏁',lesson:1,
+  {n:1,zh:'终于',py:'zhōngyú',pos:'Phó từ',vn:'cuối cùng', hv: 'chung vu',em:'🏁',lesson:1,
    explain:['Diễn tả sau một thời gian dài chờ đợi, sự việc cuối cùng cũng xảy ra.'],
    usage:'Phó từ, đứng trước động từ hoặc tính từ: 终于 + V/Adj.',
    collo:['终于回来了','终于到了','终于成功了'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:2,zh:'爷爷',py:'yéye',pos:'Danh từ',vn:'ông nội',em:'👴',lesson:1,
+  {n:2,zh:'爷爷',py:'yéye',pos:'Danh từ',vn:'ông nội', hv: 'gia gia',em:'👴',lesson:1,
    explain:['Cách gọi cha của cha (ông nội) trong gia đình.'],
    usage:'Danh từ xưng hô; thường đi cùng 奶奶 thành cặp.',
    collo:['爷爷奶奶','看看爷爷','爷爷的礼物'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:3,zh:'礼物',py:'lǐwù',pos:'Danh từ',vn:'quà biếu, quà tặng',em:'🎁',lesson:1,
+  {n:3,zh:'礼物',py:'lǐwù',pos:'Danh từ',vn:'quà biếu, quà tặng', hv: 'lễ vật',em:'🎁',lesson:1,
    explain:['Vật dùng để tặng, biếu người khác thể hiện tình cảm.'],
    usage:'Danh từ; đi cùng động từ 送/买/给: 送礼物, 买礼物.',
    collo:['送礼物','买礼物','爷爷的礼物'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:4,zh:'奶奶',py:'nǎinai',pos:'Danh từ',vn:'bà nội',em:'👵',lesson:1,
+  {n:4,zh:'奶奶',py:'nǎinai',pos:'Danh từ',vn:'bà nội', hv: 'nãi nãi',em:'👵',lesson:1,
    explain:['Cách gọi mẹ của cha (bà nội) trong gia đình.'],
    usage:'Danh từ xưng hô; thường đi cùng 爷爷 thành cặp.',
    collo:['爷爷奶奶','看看奶奶','奶奶做的菜'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:5,zh:'遇到',py:'yùdào',pos:'Động từ',vn:'tình cờ gặp',em:'🤝',lesson:2,
+  {n:5,zh:'遇到',py:'yùdào',pos:'Động từ',vn:'tình cờ gặp', hv: 'ngộ đáo',em:'🤝',lesson:2,
    explain:['Bất ngờ gặp một người hoặc sự việc nào đó, không hẹn trước.'],
    usage:'Động từ, mang tân ngữ là người hoặc sự việc: 遇到 + [người/vấn đề].',
    collo:['在路上遇到','遇到问题','遇到老同学'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'一边',py:'yìbiān',pos:'Phó từ',vn:'vừa (dùng để liên kết hai hành động xảy ra cùng lúc)',em:'🔀',lesson:2,
+  {n:6,zh:'一边',py:'yìbiān',pos:'Phó từ',vn:'vừa (dùng để liên kết hai hành động xảy ra cùng lúc)', hv: 'nhất biên',em:'🔀',lesson:2,
    explain:['Dùng thành cặp 一边……一边…… để diễn tả hai hành động xảy ra đồng thời.'],
    usage:'一边 + V1 + 一边 + V2; có thể lược bỏ 一 thành 边……边……',
    collo:['一边喝咖啡一边聊天儿','一边吃一边看','边说边笑'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'边……边…… là dạng lược bỏ 一 của 一边……一边…….'},
    ]},
 
-  {n:7,zh:'过去',py:'guòqù',pos:'Danh từ',vn:'quá khứ',em:'⏳',lesson:2,
+  {n:7,zh:'过去',py:'guòqù',pos:'Danh từ',vn:'quá khứ', hv: 'quá khứ',em:'⏳',lesson:2,
    explain:['Khoảng thời gian đã trôi qua, trước hiện tại.'],
    usage:'Danh từ, thường làm định ngữ: 过去的事; cũng dùng làm trạng ngữ chỉ thời gian trước đây.',
    collo:['过去的事','过去的时候','说过去的事'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:8,zh:'一般',py:'yìbān',pos:'Tính từ',vn:'thông thường',em:'📅',lesson:3,
+  {n:8,zh:'一般',py:'yìbān',pos:'Tính từ',vn:'thông thường', hv: 'nhất ban',em:'📅',lesson:3,
    explain:['Diễn tả tình trạng bình thường, như thường lệ.'],
    usage:'Tính từ, thường làm trạng ngữ đứng trước động từ: 一般 + V.',
    collo:['一般来说','周末一般','一般在家'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'愿意',py:'yuànyì',pos:'Động từ',vn:'muốn',em:'💭',lesson:3,
+  {n:9,zh:'愿意',py:'yuànyì',pos:'Động từ',vn:'muốn', hv: 'nguyện ý',em:'💭',lesson:3,
    explain:['Trong lòng mong muốn làm một việc gì đó, sẵn lòng.'],
    usage:'Động từ năng nguyện, đứng trước động từ khác: 愿意 + V.',
    collo:['更愿意','愿意帮忙','不愿意'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:10,zh:'起来',py:'qǐlai',pos:'Động từ',vn:'(chỉ sự di chuyển hướng lên) lên',em:'⬆️',lesson:3,
+  {n:10,zh:'起来',py:'qǐlai',pos:'Động từ',vn:'(chỉ sự di chuyển hướng lên) lên', hv: 'khởi lai',em:'⬆️',lesson:3,
    explain:['Bổ ngữ xu hướng kép diễn tả động tác hướng lên trên hoặc bắt đầu một hành động.'],
    usage:'Động từ + 起来: 站起来, 坐起来; cũng dùng để diễn tả bắt đầu một trạng thái.',
    collo:['站起来','坐久了','站起来休息'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'自己 diễn tả tự bản thân (ôn lại đã học ở Bài 12).'},
    ]},
 
-  {n:11,zh:'应该',py:'yīnggāi',pos:'Động từ',vn:'nên, cần phải',em:'👍',lesson:3,
+  {n:11,zh:'应该',py:'yīnggāi',pos:'Động từ',vn:'nên, cần phải', hv: 'ưng cai',em:'👍',lesson:3,
    explain:['Diễn tả điều nên làm theo lẽ thường hoặc lời khuyên.'],
    usage:'Động từ năng nguyện, đứng trước động từ khác: 应该 + V.',
    collo:['应该多出去','应该休息','不应该'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'生活',py:'shēnghuó',pos:'Danh từ',vn:'đời sống, cuộc sống',em:'🌱',lesson:3,
+  {n:12,zh:'生活',py:'shēnghuó',pos:'Danh từ',vn:'đời sống, cuộc sống', hv: 'sinh hoạt',em:'🌱',lesson:3,
    explain:['Toàn bộ những hoạt động diễn ra trong cuộc đời một người.'],
    usage:'Danh từ; cũng có thể làm động từ nghĩa "sinh sống".',
    collo:['生活很有意思','生活习惯','美好的生活'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'有……在 diễn tả sự hiện diện của ai đó.'},
    ]},
 
-  {n:13,zh:'校长',py:'xiàozhǎng',pos:'Danh từ',vn:'hiệu trưởng',em:'🏫',lesson:4,
+  {n:13,zh:'校长',py:'xiàozhǎng',pos:'Danh từ',vn:'hiệu trưởng', hv: 'hiệu trưởng',em:'🏫',lesson:4,
    explain:['Người đứng đầu quản lý một trường học.'],
    usage:'Danh từ; thường dùng làm chức danh trước tên riêng: 方校长.',
    collo:['方校长','当校长','校长的办公室'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:14,zh:'坏',py:'huài',pos:'Tính từ',vn:'quá, quá mức',em:'😫',lesson:4,
+  {n:14,zh:'坏',py:'huài',pos:'Tính từ',vn:'quá, quá mức', hv: 'hoại',em:'😫',lesson:4,
    explain:['Đứng sau tính từ/động từ làm bổ ngữ, diễn tả mức độ nghiêm trọng, quá mức.'],
    usage:'Tính từ/bổ ngữ mức độ: [Adj/V] + 坏了, diễn tả mức độ cao (累坏了, 忙坏了).',
    collo:['累坏了','忙坏了','坏了'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'所以 nêu kết quả từ nguyên nhân phía trước.'},
    ]},
 
-  {n:15,zh:'经常',py:'jīngcháng',pos:'Phó từ',vn:'thường xuyên',em:'🔁',lesson:4,
+  {n:15,zh:'经常',py:'jīngcháng',pos:'Phó từ',vn:'thường xuyên', hv: 'kinh thường',em:'🔁',lesson:4,
    explain:['Diễn tả tần suất cao, việc xảy ra nhiều lần, đều đặn.'],
    usage:'Phó từ, đứng trước động từ: 经常 + V.',
    collo:['经常来','经常锻炼','经常在一起'],

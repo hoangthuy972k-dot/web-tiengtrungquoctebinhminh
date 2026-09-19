@@ -2,7 +2,7 @@
 // DATA — Bài 11: 他比我大三岁
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'唱歌',py:'chàng gē',pos:'Động từ',vn:'hát, ca hát',em:'🎤',lesson:1,
+  {n:1,zh:'唱歌',py:'chàng gē',pos:'Động từ',vn:'hát, ca hát', hv: 'xướng ca',em:'🎤',lesson:1,
    ex_zh:'昨天和你一起唱歌的人是谁？',ex_py:'Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',ex_vn:'Người hôm qua cùng hát karaoke với bạn là ai thế?',
    exList:[
      {zh:'昨天和你一起唱歌的人是谁？',py:'Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',vn:'Người hôm qua cùng hát karaoke với bạn là ai thế?'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'哥 (âm thanh lặp) + 欠 (miệng mở ra) → cất tiếng ngân nga = BÀI HÁT.',
       cf:'哥 (gē – "anh trai", đã học Bài 10)',w:'唱歌 / 一首歌'},
    ]},
-  {n:2,zh:'男',py:'nán',pos:'Danh từ / Tính từ',vn:'nam, con trai, bạn trai',em:'👦',lesson:1,
+  {n:2,zh:'男',py:'nán',pos:'Danh từ / Tính từ',vn:'nam, con trai, bạn trai', hv: 'nam',em:'👦',lesson:1,
    ex_zh:'是不是男朋友？',ex_py:'Shìbushì nán péngyou?',ex_vn:'Có phải bạn trai không?',
    exList:[
      {zh:'是不是男朋友？',py:'Shìbushì nán péngyou?',vn:'Có phải bạn trai không?'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Ruộng 田 + sức lực 力 → người đàn ông ra đồng dùng sức cày cấy = NAM GIỚI.',
       cf:'画 (huà – "vẽ")',w:'男朋友 / 男人 / 男生'},
    ]},
-  {n:3,zh:'女',py:'nǚ',pos:'Danh từ / Tính từ',vn:'nữ, con gái',em:'👧',lesson:2,
+  {n:3,zh:'女',py:'nǚ',pos:'Danh từ / Tính từ',vn:'nữ, con gái', hv: 'nữ',em:'👧',lesson:2,
    ex_zh:'左边这个看报纸的女孩子是你姐姐吗？',ex_py:'Zuǒbiān zhège kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',ex_vn:'Cô gái xem báo ở bên trái có phải chị gái bạn không?',
    exList:[
      {zh:'左边这个看报纸的女孩子是你姐姐吗？',py:'Zuǒbiān zhège kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',vn:'Cô gái xem báo ở bên trái có phải chị gái bạn không?'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'Hình người phụ nữ ngồi quỳ khoanh tay cách điệu → "NỮ".',
       cf:'安 (ān – "an", thêm mái nhà)',w:'女孩子 / 女儿 / 女朋友'},
    ]},
-  {n:4,zh:'孩子',py:'háizi',pos:'Danh từ',vn:'trẻ em, đứa con',em:'🧒',lesson:2,
+  {n:4,zh:'孩子',py:'háizi',pos:'Danh từ',vn:'trẻ em, đứa con', hv: 'hài tử',em:'🧒',lesson:2,
    ex_zh:'那个看报纸的女孩子是你姐姐吗？',ex_py:'Nàge kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',ex_vn:'Cô gái xem báo kia có phải chị gái bạn không?',
    exList:[
      {zh:'那个看报纸的女孩子是你姐姐吗？',py:'Nàge kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',vn:'Cô gái xem báo kia có phải chị gái bạn không?'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Hình đứa trẻ quấn tã → "CON". Cũng dùng làm hậu tố danh từ: 桌子, 儿子.',
       cf:'孑 (jié – thiếu 1 nét)',w:'孩子 / 儿子 / 桌子'},
    ]},
-  {n:5,zh:'右边',py:'yòubian',pos:'Danh từ chỉ phương vị',vn:'bên phải',em:'👉',lesson:2,
+  {n:5,zh:'右边',py:'yòubian',pos:'Danh từ chỉ phương vị',vn:'bên phải', hv: 'hữu biên',em:'👉',lesson:2,
    ex_zh:'右边写字的那个人是我哥哥。',ex_py:'Yòubian xiě zì de nàge rén shì wǒ gēge.',ex_vn:'Người viết chữ bên phải là anh trai tớ.',
    exList:[
      {zh:'右边写字的那个人是我哥哥。',py:'Yòubian xiě zì de nàge rén shì wǒ gēge.',vn:'Người viết chữ bên phải là anh trai tớ.'},
@@ -71,7 +71,7 @@ var vocabData = [
       tip:'Đã học ở Bài 2 (旁边) — chỉ vị trí ở một BÊN nào đó.',
       cf:'力 (lì – "sức lực")',w:'右边 / 左边 / 旁边'},
    ]},
-  {n:6,zh:'比',py:'bǐ',pos:'Giới từ',vn:'so với',em:'⚖️',lesson:2,
+  {n:6,zh:'比',py:'bǐ',pos:'Giới từ',vn:'so với', hv: 'tỉ',em:'⚖️',lesson:2,
    ex_zh:'他比我大三岁。',ex_py:'Tā bǐ wǒ dà sān suì.',ex_vn:'Anh ấy lớn hơn tớ 3 tuổi.',
    exList:[
      {zh:'他比我大三岁。',py:'Tā bǐ wǒ dà sān suì.',vn:'Anh ấy lớn hơn tớ 3 tuổi.'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Hai người đứng cạnh nhau quay cùng hướng → đặt cạnh nhau để SO SÁNH.',
       cf:'北 (běi – "phía Bắc", hai người quay lưng)',w:'比较 / A比B / 对比'},
    ]},
-  {n:7,zh:'便宜',py:'piányi',pos:'Tính từ',vn:'rẻ',em:'💰',lesson:3,
+  {n:7,zh:'便宜',py:'piányi',pos:'Tính từ',vn:'rẻ', hv: 'tiện nghi',em:'💰',lesson:3,
    ex_zh:'西瓜比昨天便宜。',ex_py:'Xīguā bǐ zuótiān piányi.',ex_vn:'Dưa hấu rẻ hơn hôm qua.',
    exList:[
      {zh:'西瓜比昨天便宜。',py:'Xīguā bǐ zuótiān piányi.',vn:'Dưa hấu rẻ hơn hôm qua.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'便 + 宜 = vừa tiện lợi vừa hợp túi tiền = RẺ.',
       cf:'宣 (xuān – "tuyên bố")',w:'便宜 / 适宜'},
    ]},
-  {n:8,zh:'说话',py:'shuōhuà',pos:'Động từ',vn:'nói chuyện',em:'💬',lesson:4,
+  {n:8,zh:'说话',py:'shuōhuà',pos:'Động từ',vn:'nói chuyện', hv: 'thuyết thoại',em:'💬',lesson:4,
    ex_zh:'前面说话的那个人就是我的汉语老师。',ex_py:'Qiánmiàn shuōhuà de nàge rén jiùshì wǒ de Hànyǔ lǎoshī.',ex_vn:'Người nói chuyện phía trước chính là giáo viên tiếng Trung của chúng tớ.',
    exList:[
      {zh:'前面说话的那个人就是我的汉语老师。',py:'Qiánmiàn shuōhuà de nàge rén jiùshì wǒ de Hànyǔ lǎoshī.',vn:'Người nói chuyện phía trước chính là giáo viên tiếng Trung của chúng tớ.'},
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'Lời nói 讠 phát ra từ lưỡi 舌 → LỜI NÓI, câu chuyện.',
       cf:'活 (huó – "sống", bộ 氵)',w:'说话 / 电话 / 对话'},
    ]},
-  {n:9,zh:'可能',py:'kěnéng',pos:'Trợ động từ',vn:'có thể, có lẽ',em:'🤔',lesson:4,
+  {n:9,zh:'可能',py:'kěnéng',pos:'Trợ động từ',vn:'có thể, có lẽ', hv: 'khả năng',em:'🤔',lesson:4,
    ex_zh:'你可能不认识他。',ex_py:'Nǐ kěnéng bú rènshi tā.',ex_vn:'Có thể bạn không quen thầy ấy đâu.',
    exList:[
      {zh:'你可能不认识他。',py:'Nǐ kěnéng bú rènshi tā.',vn:'Có thể bạn không quen thầy ấy đâu.'},
@@ -128,7 +128,7 @@ var vocabData = [
       tip:'可 (được phép) + 能 (năng lực) = có KHẢ NĂNG xảy ra = CÓ THỂ, CÓ LẼ.',
       cf:'态 (tài – "thái độ")',w:'可能 / 能不能 / 可能性'},
    ]},
-  {n:10,zh:'去年',py:'qùnián',pos:'Danh từ chỉ thời gian',vn:'năm ngoái',em:'📅',lesson:4,
+  {n:10,zh:'去年',py:'qùnián',pos:'Danh từ chỉ thời gian',vn:'năm ngoái', hv: 'khứ niên',em:'📅',lesson:4,
    ex_zh:'是去年来的。',ex_py:'Shì qùnián lái de.',ex_vn:'Đến từ năm ngoái.',
    exList:[
      {zh:'是去年来的。',py:'Shì qùnián lái de.',vn:'Đến từ năm ngoái.'},
@@ -143,7 +143,7 @@ var vocabData = [
       tip:'Hình bó lúa chín được gánh trên vai → mỗi mùa lúa chín là một NĂM.',
       cf:'午 (wǔ – "buổi trưa")',w:'去年 / 今年 / 明年'},
    ]},
-  {n:11,zh:'姓',py:'xìng',pos:'Động từ / Danh từ',vn:'họ, mang họ',em:'🪪',lesson:4,
+  {n:11,zh:'姓',py:'xìng',pos:'Động từ / Danh từ',vn:'họ, mang họ', hv: 'tính',em:'🪪',lesson:4,
    ex_zh:'他姓王。',ex_py:'Tā xìng Wáng.',ex_vn:'Thầy ấy họ Vương.',
    exList:[
      {zh:'他姓王。',py:'Tā xìng Wáng.',vn:'Thầy ấy họ Vương.'},

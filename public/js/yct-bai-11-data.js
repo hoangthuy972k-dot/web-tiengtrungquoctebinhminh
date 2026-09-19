@@ -2,7 +2,7 @@
 // DATA — YCT Bài 11: 我爱吃蛋糕
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm',em:'🍚',lesson:1,
+  {n:1,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm', hv: 'mễ phạn',em:'🍚',lesson:1,
    ex_zh:'我吃米饭。',ex_py:'Wǒ chī mǐfàn.',ex_vn:'Mình ăn cơm.',
    exList:[{zh:'我吃米饭。',py:'Wǒ chī mǐfàn.',vn:'Mình ăn cơm.'}],
    hanzi:[
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'Bộ 饣 chỉ đồ ĂN, ghép với 反 (đọc gần "fan") → CƠM.',
       cf:'反 (fǎn – "trái lại")',w:'米饭'},
    ]},
-  {n:2,zh:'面条',py:'miàntiáo',pos:'Danh từ',vn:'mì, bún',em:'🍜',lesson:1,
+  {n:2,zh:'面条',py:'miàntiáo',pos:'Danh từ',vn:'mì, bún', hv: 'diện điều',em:'🍜',lesson:1,
    ex_zh:'我也吃面条。',ex_py:'Wǒ yě chī miàntiáo.',ex_vn:'Mình cũng ăn mì.',
    exList:[{zh:'我也吃面条。',py:'Wǒ yě chī miàntiáo.',vn:'Mình cũng ăn mì.'}],
    hanzi:[
@@ -24,7 +24,7 @@ var vocabData = [
       tip:'Phía dưới có 木 (cành cây dài mảnh) → chỉ vật DÀI như SỢI mì.',
       cf:'各 (gè – "mỗi")',w:'面条'},
    ]},
-  {n:3,zh:'苹果',py:'píngguǒ',pos:'Danh từ',vn:'táo',em:'🍎',lesson:1,
+  {n:3,zh:'苹果',py:'píngguǒ',pos:'Danh từ',vn:'táo', hv: 'bình quả',em:'🍎',lesson:1,
    ex_zh:'我也爱吃苹果。',ex_py:'Wǒ yě ài chī píngguǒ.',ex_vn:'Mình cũng rất thích ăn táo.',
    exList:[{zh:'我也爱吃苹果。',py:'Wǒ yě ài chī píngguǒ.',vn:'Mình cũng rất thích ăn táo.'}],
    hanzi:[
@@ -35,7 +35,7 @@ var vocabData = [
       tip:'Hình một quả tròn 田 mọc trên cây 木 → QUẢ, TRÁI CÂY.',
       cf:'里 (lǐ – "bên trong")',w:'苹果'},
    ]},
-  {n:4,zh:'牛奶',py:'niúnǎi',pos:'Danh từ',vn:'sữa',em:'🥛',lesson:1,
+  {n:4,zh:'牛奶',py:'niúnǎi',pos:'Danh từ',vn:'sữa', hv: 'ngưu nãi',em:'🥛',lesson:1,
    ex_zh:'我喝牛奶。',ex_py:'Wǒ hē niúnǎi.',ex_vn:'Mình uống sữa.',
    exList:[{zh:'我喝牛奶。',py:'Wǒ hē niúnǎi.',vn:'Mình uống sữa.'}],
    hanzi:[
@@ -46,7 +46,7 @@ var vocabData = [
       tip:'Bộ 女 (mẹ) bên trái, chỉ nguồn sữa nuôi con → SỮA.',
       cf:'奴 (nú – "nô lệ")',w:'牛奶'},
    ]},
-  {n:5,zh:'水',py:'shuǐ',pos:'Danh từ',vn:'nước',em:'💧',lesson:1,
+  {n:5,zh:'水',py:'shuǐ',pos:'Danh từ',vn:'nước', hv: 'thủy',em:'💧',lesson:1,
    ex_zh:'我也喝水。',ex_py:'Wǒ yě hē shuǐ.',ex_vn:'Mình cũng uống nước.',
    exList:[{zh:'我也喝水。',py:'Wǒ yě hē shuǐ.',vn:'Mình cũng uống nước.'}],
    hanzi:[
@@ -54,7 +54,7 @@ var vocabData = [
       tip:'Hình vẽ dòng nước đang chảy với các nhánh rẽ hai bên → NƯỚC.',
       cf:'冰 (bīng – "băng")',w:'喝水'},
    ]},
-  {n:6,zh:'吃',py:'chī',pos:'Động từ',vn:'ăn',em:'🍽️',lesson:2,
+  {n:6,zh:'吃',py:'chī',pos:'Động từ',vn:'ăn', hv: 'ngật',em:'🍽️',lesson:2,
    ex_zh:'你吃米饭吗？',ex_py:'Nǐ chī mǐfàn ma?',ex_vn:'Bạn ăn cơm không?',
    exList:[{zh:'你吃米饭吗？',py:'Nǐ chī mǐfàn ma?',vn:'Bạn ăn cơm không?'}],
    hanzi:[
@@ -62,7 +62,7 @@ var vocabData = [
       tip:'Bộ 口 (miệng) bên trái, ghép với 乞 (âm gần "chi") → dùng miệng để ĂN.',
       cf:'吧 (ba – trợ từ)',w:'吃米饭'},
    ]},
-  {n:7,zh:'喝',py:'hē',pos:'Động từ',vn:'uống',em:'🥤',lesson:2,
+  {n:7,zh:'喝',py:'hē',pos:'Động từ',vn:'uống', hv: 'hát',em:'🥤',lesson:2,
    ex_zh:'你喝牛奶吗？',ex_py:'Nǐ hē niúnǎi ma?',ex_vn:'Bạn uống sữa không?',
    exList:[{zh:'你喝牛奶吗？',py:'Nǐ hē niúnǎi ma?',vn:'Bạn uống sữa không?'}],
    hanzi:[
@@ -70,7 +70,7 @@ var vocabData = [
       tip:'Bộ 口 (miệng) bên trái, ghép với 曷 chỉ hành động đưa nước vào miệng → UỐNG.',
       cf:'渴 (kě – "khát", dùng bộ 氵thay vì 口)',w:'喝牛奶'},
    ]},
-  {n:8,zh:'爱',py:'ài',pos:'Động từ',vn:'yêu, rất thích',em:'❤️',lesson:2,
+  {n:8,zh:'爱',py:'ài',pos:'Động từ',vn:'yêu, rất thích', hv: 'ái',em:'❤️',lesson:2,
    ex_zh:'我爱吃蛋糕！',ex_py:'Wǒ ài chī dàngāo!',ex_vn:'Mình rất thích ăn bánh kem!',
    exList:[{zh:'我爱吃蛋糕！',py:'Wǒ ài chī dàngāo!',vn:'Mình rất thích ăn bánh kem!'}],
    hanzi:[
@@ -78,7 +78,7 @@ var vocabData = [
       tip:'Bàn tay 爫 nâng niu, ôm giữ điều mình trân trọng (友 – bạn) → YÊU, RẤT THÍCH.',
       cf:'受 (shòu – "nhận")',w:'我爱吃苹果'},
    ]},
-  {n:9,zh:'蛋糕',py:'dàngāo',pos:'Danh từ',vn:'bánh kem',em:'🎂',lesson:2,
+  {n:9,zh:'蛋糕',py:'dàngāo',pos:'Danh từ',vn:'bánh kem', hv: 'đản cao',em:'🎂',lesson:2,
    ex_zh:'今天是我的生日，我爱吃蛋糕！',ex_py:'Jīntiān shì wǒ de shēngrì, wǒ ài chī dàngāo!',ex_vn:'Hôm nay là sinh nhật mình, mình rất thích ăn bánh kem!',
    exList:[{zh:'今天是我的生日，我爱吃蛋糕！',py:'Jīntiān shì wǒ de shēngrì, wǒ ài chī dàngāo!',vn:'Hôm nay là sinh nhật mình, mình rất thích ăn bánh kem!'}],
    hanzi:[

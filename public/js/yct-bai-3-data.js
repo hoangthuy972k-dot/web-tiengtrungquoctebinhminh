@@ -2,7 +2,7 @@
 // DATA — YCT Bài 3: 他是谁？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'他',py:'tā',pos:'Đại từ',vn:'anh ấy, bạn ấy',em:'👦',lesson:1,
+  {n:1,zh:'他',py:'tā',pos:'Đại từ',vn:'anh ấy, bạn ấy', hv: 'tha',em:'👦',lesson:1,
    ex_zh:'他是谁？',ex_py:'Tā shì shéi?',ex_vn:'Anh ấy là ai vậy?',
    exList:[{zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai vậy?'}],
    hanzi:[
@@ -10,7 +10,7 @@ var vocabData = [
       tip:'亻(người nam) + 也(đại từ cổ) → chỉ NGƯỜI NAM đang được nhắc đến.',
       cf:'她 (tā – "cô ấy", cùng phần 也")',w:'他是谁'},
    ]},
-  {n:2,zh:'是',py:'shì',pos:'Động từ',vn:'là',em:'✅',lesson:1,
+  {n:2,zh:'是',py:'shì',pos:'Động từ',vn:'là', hv: 'thị',em:'✅',lesson:1,
    ex_zh:'他是中国人。',ex_py:'Tā shì Zhōngguó rén.',ex_vn:'Bạn ấy là người Trung Quốc.',
    exList:[{zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'}],
    hanzi:[
@@ -18,7 +18,7 @@ var vocabData = [
       tip:'日(mặt trời) đứng CHÍNH GIỮA bầu trời → biểu thị điều ĐÚNG, khẳng định LÀ.',
       cf:'量 (liàng – "đo lường")',w:'他是谁'},
    ]},
-  {n:3,zh:'谁',py:'shéi',pos:'Đại từ',vn:'ai',em:'❓',lesson:1,
+  {n:3,zh:'谁',py:'shéi',pos:'Đại từ',vn:'ai', hv: 'thùy',em:'❓',lesson:1,
    ex_zh:'他是谁？',ex_py:'Tā shì shéi?',ex_vn:'Anh ấy là ai vậy?',
    exList:[{zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai vậy?'}],
    hanzi:[
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'讠(lời nói) dùng để cất tiếng HỎI xem người đó là ai.',
       cf:'唯 (wéi – "duy nhất")',w:'他是谁'},
    ]},
-  {n:4,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào, cái nào',em:'🧭',lesson:2,
+  {n:4,zh:'哪',py:'nǎ',pos:'Đại từ',vn:'nào, cái nào', hv: 'na',em:'🧭',lesson:2,
    ex_zh:'明明是哪国人？',ex_py:'Míngming shì nǎ guó rén?',ex_vn:'Minh Minh là người nước nào?',
    exList:[{zh:'明明是哪国人？',py:'Míngming shì nǎ guó rén?',vn:'Minh Minh là người nước nào?'}],
    hanzi:[
@@ -34,7 +34,7 @@ var vocabData = [
       tip:'口(miệng hỏi) + 那(kia) → hỏi xem là CÁI NÀO trong số đó.',
       cf:'那 (nà – "kia, đó")',w:'哪国人'},
    ]},
-  {n:5,zh:'国',py:'guó',pos:'Danh từ',vn:'nước, quốc gia',em:'🌍',lesson:2,
+  {n:5,zh:'国',py:'guó',pos:'Danh từ',vn:'nước, quốc gia', hv: 'quốc',em:'🌍',lesson:2,
    ex_zh:'明明是哪国人？',ex_py:'Míngming shì nǎ guó rén?',ex_vn:'Minh Minh là người nước nào?',
    exList:[{zh:'明明是哪国人？',py:'Míngming shì nǎ guó rén?',vn:'Minh Minh là người nước nào?'}],
    hanzi:[
@@ -42,7 +42,7 @@ var vocabData = [
       tip:'囗(tường thành bao quanh) + 玉(ngọc quý bên trong) → lãnh thổ có biên giới bảo vệ báu vật = ĐẤT NƯỚC.',
       cf:'固 (gù – "vững chắc")',w:'哪国人 / 中国'},
    ]},
-  {n:6,zh:'人',py:'rén',pos:'Danh từ',vn:'người',em:'🧍',lesson:2,
+  {n:6,zh:'人',py:'rén',pos:'Danh từ',vn:'người', hv: 'nhân',em:'🧍',lesson:2,
    ex_zh:'他是中国人。',ex_py:'Tā shì Zhōngguó rén.',ex_vn:'Bạn ấy là người Trung Quốc.',
    exList:[{zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'}],
    hanzi:[
@@ -50,7 +50,7 @@ var vocabData = [
       tip:'Hình dáng một người đang đứng nghiêng, hai chân chống đỡ → NGƯỜI.',
       cf:'入 (rù – "vào")',w:'中国人'},
    ]},
-  {n:7,zh:'中国人',py:'Zhōngguó rén',pos:'Danh từ',vn:'người Trung Quốc',em:'🇨🇳',lesson:2,
+  {n:7,zh:'中国人',py:'Zhōngguó rén',pos:'Danh từ',vn:'người Trung Quốc', hv: 'Trung Quốc nhân',em:'🇨🇳',lesson:2,
    ex_zh:'他是中国人。',ex_py:'Tā shì Zhōngguó rén.',ex_vn:'Bạn ấy là người Trung Quốc.',
    exList:[{zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'}],
    hanzi:[

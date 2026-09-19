@@ -3,7 +3,7 @@
 // Nguồn: PPT gốc HSK3 第2课《他什么时候回来》【Lucy制作】
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'腿',py:'tuǐ',pos:'Danh từ',vn:'chân, đùi',em:'🦵',lesson:1,
+  {n:1,zh:'腿',py:'tuǐ',pos:'Danh từ',vn:'chân, đùi', hv: 'thối',em:'🦵',lesson:1,
    explain:['Bộ phận cơ thể tính từ hông đến bàn chân (gồm đùi và cẳng chân), dùng để đứng và di chuyển.'],
    usage:'Danh từ chỉ bộ phận cơ thể, làm chủ ngữ hoặc định ngữ. Muốn nói bộ phận đó bị đau thì đặt 腿 TRƯỚC tính từ 疼: 腿 + 疼.',
    collo:['长腿','短腿','腿疼','我的腿'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:2,zh:'疼',py:'téng',pos:'Tính từ',vn:'đau, đau đớn',em:'🤕',lesson:1,
+  {n:2,zh:'疼',py:'téng',pos:'Tính từ',vn:'đau, đau đớn', hv: 'đông',em:'🤕',lesson:1,
    explain:['Cảm giác khó chịu, nhức nhối ở một bộ phận cơ thể do bị thương, bệnh, hoặc mệt mỏi.'],
    usage:'Tính từ chỉ cảm giác, luôn đứng SAU danh từ chỉ bộ phận cơ thể: [bộ phận cơ thể] + 疼 (không đảo ngược thứ tự).',
    collo:['头疼','腿疼','肚子疼','脚疼'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'脚',py:'jiǎo',pos:'Danh từ',vn:'chân, bàn chân',em:'🦶',lesson:1,
+  {n:3,zh:'脚',py:'jiǎo',pos:'Danh từ',vn:'chân, bàn chân', hv: 'cước',em:'🦶',lesson:1,
    explain:['Phần dưới cùng của chân, tiếp xúc trực tiếp với mặt đất khi đứng/đi — khác với 腿 (chỉ toàn bộ chân từ hông trở xuống).'],
    usage:'Danh từ chỉ bộ phận cơ thể; lượng từ đi kèm là 只 (một chiếc) hoặc 双 (một đôi): 一只脚 / 一双脚.',
    collo:['左脚','右脚','一双脚','脚疼'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:4,zh:'树',py:'shù',pos:'Danh từ',vn:'cây',em:'🌳',lesson:1,
+  {n:4,zh:'树',py:'shù',pos:'Danh từ',vn:'cây', hv: 'thụ',em:'🌳',lesson:1,
    explain:['Loài thực vật thân gỗ, có rễ, thân, cành, lá — thường mọc cao lớn ngoài trời.'],
    usage:'Danh từ; lượng từ CHUYÊN DÙNG là 棵 (không dùng 个): 一棵树, không nói 一个树.',
    collo:['大树','小树','一棵树','种树'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'容易',py:'róngyì',pos:'Tính từ',vn:'dễ, dễ dàng',em:'✅',lesson:1,
+  {n:5,zh:'容易',py:'róngyì',pos:'Tính từ',vn:'dễ, dễ dàng', hv: 'dung dị',em:'✅',lesson:1,
    explain:['Không tốn nhiều công sức, thời gian hay khó khăn để thực hiện hoặc hiểu.'],
    usage:'Tính từ song âm tiết. Khi làm vị ngữ cần có phó từ mức độ (很/太) đứng TRƯỚC: 很容易 (không nói trơn 容易). Khi bổ nghĩa cho động từ: 容易 + V = dễ làm gì (容易学).',
    collo:['很容易','太容易了','容易学','容易做'],
@@ -116,7 +116,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:6,zh:'难',py:'nán',pos:'Tính từ',vn:'khó',em:'❌',lesson:1,
+  {n:6,zh:'难',py:'nán',pos:'Tính từ',vn:'khó', hv: 'nan',em:'❌',lesson:1,
    explain:['Cần nhiều công sức, khó thực hiện hoặc khó hiểu — trái nghĩa với 容易.'],
    usage:'Tính từ, cách dùng đối xứng với 容易: 很难 (làm vị ngữ); 难 + V = khó làm gì (难写, 难学).',
    collo:['很难','难写','难学','难做'],
@@ -138,7 +138,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'太太',py:'tàitai',pos:'Danh từ',vn:'bà, vợ, phu nhân',em:'👩',lesson:2,
+  {n:7,zh:'太太',py:'tàitai',pos:'Danh từ',vn:'bà, vợ, phu nhân', hv: 'thái thái',em:'👩',lesson:2,
    explain:['1. Người vợ (cách nói lịch sự, trang trọng).','2. Cách xưng hô lịch sự với phụ nữ đã có chồng, đi kèm họ.'],
    usage:'Danh từ. Khi dùng làm cách xưng hô lịch sự, đặt SAU họ của người đó: Họ + 太太 (周太太 = bà Chu).',
    collo:['我太太','他太太','周太太','李太太'],
@@ -160,7 +160,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:8,zh:'秘书',py:'mìshū',pos:'Danh từ',vn:'thư ký',em:'📋',lesson:2,
+  {n:8,zh:'秘书',py:'mìshū',pos:'Danh từ',vn:'thư ký', hv: 'bí thư',em:'📋',lesson:2,
    explain:['Người phụ trách công việc văn phòng, giấy tờ, sắp xếp lịch làm việc cho cấp trên.'],
    usage:'Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 秘书 (王秘书 = thư ký Vương).',
    collo:['王秘书','我的秘书','秘书处'],
@@ -182,7 +182,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'经理',py:'jīnglǐ',pos:'Danh từ',vn:'giám đốc, quản lý',em:'👔',lesson:2,
+  {n:9,zh:'经理',py:'jīnglǐ',pos:'Danh từ',vn:'giám đốc, quản lý', hv: 'kinh lý',em:'👔',lesson:2,
    explain:['Người đứng đầu, phụ trách quản lý, điều hành công việc của một công ty/bộ phận.'],
    usage:'Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 经理 (张经理, 李经理).',
    collo:['张经理','李经理','总经理'],
@@ -207,7 +207,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:10,zh:'办公室',py:'bàngōngshì',pos:'Danh từ',vn:'văn phòng',em:'🏢',lesson:2,
+  {n:10,zh:'办公室',py:'bàngōngshì',pos:'Danh từ',vn:'văn phòng', hv: 'biện công thất',em:'🏢',lesson:2,
    explain:['Căn phòng dùng để làm việc, xử lý công việc hành chính, giấy tờ.'],
    usage:'Danh từ chỉ nơi chốn; thường đi cùng giới từ 在 khi nói làm gì TẠI văn phòng: 在 + 办公室 + Động từ.',
    collo:['在办公室','我的办公室','办公室主任'],
@@ -232,7 +232,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'周',py:'Zhōu',pos:'Danh từ riêng',vn:'họ Chu',em:'👨',lesson:2,
+  {n:11,zh:'周',py:'Zhōu',pos:'Danh từ riêng',vn:'họ Chu', hv: 'Chu',em:'👨',lesson:2,
    explain:['Một họ (tên riêng) của người Trung Quốc, tương đương họ "Chu" trong tiếng Việt.'],
    usage:'Danh từ riêng, dùng làm họ đứng TRƯỚC tên hoặc chức danh: 周 + tên (周明) hoặc 周 + chức danh (周经理).',
    collo:['周明','周经理','周太太'],
@@ -247,7 +247,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'周明',py:'Zhōu Míng',pos:'Danh từ riêng',vn:'tên người (Chu Minh)',em:'🙋',lesson:2,
+  {n:12,zh:'周明',py:'Zhōu Míng',pos:'Danh từ riêng',vn:'tên người (Chu Minh)', hv: 'Chu Minh',em:'🙋',lesson:2,
    explain:['Tên đầy đủ (họ + tên) của một nhân vật trong bài hội thoại.'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    ex_zh:'周经理出去了，不在办公室。',ex_py:'Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.',ex_vn:'Giám đốc Chu ra ngoài rồi, không có ở văn phòng.',
@@ -261,7 +261,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'辆',py:'liàng',pos:'Lượng từ',vn:'chiếc (xe cộ)',em:'🚗',lesson:3,
+  {n:13,zh:'辆',py:'liàng',pos:'Lượng từ',vn:'chiếc (xe cộ)', hv: 'lượng',em:'🚗',lesson:3,
    explain:['Lượng từ chuyên dùng để đếm số lượng xe cộ (ô tô, xe buýt, taxi...).'],
    usage:'Lượng từ, đứng giữa SỐ TỪ và DANH TỪ chỉ xe: [số từ] + 辆 + [xe] (一辆车, 几辆公共汽车).',
    collo:['一辆车','两辆','几辆','一辆出租车'],
@@ -283,7 +283,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:14,zh:'楼',py:'lóu',pos:'Danh từ',vn:'lầu, tòa nhà',em:'🏬',lesson:3,
+  {n:14,zh:'楼',py:'lóu',pos:'Danh từ',vn:'lầu, tòa nhà', hv: 'lâu',em:'🏬',lesson:3,
    explain:['1. Tòa nhà nhiều tầng.','2. Tầng (lầu) trong một tòa nhà.'],
    usage:'Danh từ. Hỏi số tòa nhà dùng 几号楼; chỉ hướng lên/xuống tầng dùng 上楼/下楼, 楼上/楼下.',
    collo:['大楼','几号楼','上楼','下楼','楼上','楼下'],
@@ -305,7 +305,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:15,zh:'拿',py:'ná',pos:'Động từ',vn:'cầm, lấy',em:'🤲',lesson:3,
+  {n:15,zh:'拿',py:'ná',pos:'Động từ',vn:'cầm, lấy', hv: 'nã',em:'🤲',lesson:3,
    explain:['Dùng tay giữ hoặc mang lấy một vật gì đó.'],
    usage:'Động từ, theo sau là tân ngữ chỉ vật được cầm/lấy: 拿 + [vật] (拿书, 拿钱, 拿伞).',
    collo:['拿书','拿钱','拿伞','拿东西'],
@@ -327,7 +327,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:16,zh:'把',py:'bǎ',pos:'Lượng từ',vn:'cái, chiếc (đồ có tay cầm)',em:'🖐️',lesson:3,
+  {n:16,zh:'把',py:'bǎ',pos:'Lượng từ',vn:'cái, chiếc (đồ có tay cầm)', hv: 'bả',em:'🖐️',lesson:3,
    explain:['Lượng từ dùng cho các đồ vật có tay cầm hoặc dùng bằng tay (ô, dao, ghế, quạt...).'],
    usage:'Lượng từ, đứng giữa SỐ TỪ và DANH TỪ: [số từ] + 把 + [đồ vật] (一把伞, 一把椅子).',
    collo:['一把伞','一把椅子','一把刀','一把扇子'],
@@ -349,7 +349,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:17,zh:'伞',py:'sǎn',pos:'Danh từ',vn:'cái ô, dù',em:'☂️',lesson:3,
+  {n:17,zh:'伞',py:'sǎn',pos:'Danh từ',vn:'cái ô, dù', hv: 'tản',em:'☂️',lesson:3,
    explain:['Vật dụng có cán và phần vải xòe tròn, dùng để che mưa hoặc che nắng.'],
    usage:'Danh từ; lượng từ đi kèm là 把: 一把伞. Phân biệt 雨伞 (ô che mưa) và 太阳伞 (ô che nắng).',
    collo:['雨伞','太阳伞','一把伞'],
@@ -371,7 +371,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:18,zh:'胖',py:'pàng',pos:'Tính từ',vn:'béo, mập',em:'🐷',lesson:4,
+  {n:18,zh:'胖',py:'pàng',pos:'Tính từ',vn:'béo, mập', hv: 'bàn',em:'🐷',lesson:4,
    explain:['Có nhiều thịt/mỡ trên cơ thể, thân hình to lớn — trái nghĩa với 瘦 (gầy).'],
    usage:'Tính từ; làm vị ngữ với 很 (很胖); nói mức độ tăng cân dùng 胖 + 了 + số lượng: 胖了5公斤.',
    collo:['很胖','胖了','这么胖'],
@@ -393,7 +393,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:19,zh:'其实',py:'qíshí',pos:'Phó từ',vn:'thực ra, thật ra',em:'💬',lesson:4,
+  {n:19,zh:'其实',py:'qíshí',pos:'Phó từ',vn:'thực ra, thật ra', hv: 'kỳ thực',em:'💬',lesson:4,
    explain:['Dùng để đính chính, bổ sung một sự thật khác với điều vừa nói/nghĩ trước đó.'],
    usage:'Phó từ, đứng ở ĐẦU CÂU hoặc NGAY SAU chủ ngữ, TRƯỚC động từ/tính từ: 其实 + [câu], hoặc [Chủ ngữ] + 其实 + [vị ngữ].',
    collo:['其实……','他其实……','其实很容易'],
@@ -418,7 +418,7 @@ var vocabData = [
       note:'V起来 + tính từ = nhìn/thấy có vẻ như thế nào; 但其实…… đính chính lại.'},
    ]},
 
-  {n:20,zh:'瘦',py:'shòu',pos:'Tính từ',vn:'gầy, ốm',em:'📉',lesson:4,
+  {n:20,zh:'瘦',py:'shòu',pos:'Tính từ',vn:'gầy, ốm', hv: 'sấu',em:'📉',lesson:4,
    explain:['1. Ít thịt/mỡ trên cơ thể, thân hình nhỏ, mảnh — trái nghĩa 胖.','2. Quần áo bó sát, chật.'],
    usage:'Tính từ; làm vị ngữ với 很/有点儿: 很瘦, 有点儿瘦; nói mức độ giảm cân dùng 瘦 + 了: 瘦了.',
    collo:['很瘦','瘦了','有点儿瘦'],

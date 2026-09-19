@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'法律',py:'fǎlǜ',pos:'Danh từ',vn:'pháp luật, luật',em:'⚖️',lesson:1,
+  {n:1,zh:'法律',py:'fǎlǜ',pos:'Danh từ',vn:'pháp luật, luật', hv: 'pháp luật',em:'⚖️',lesson:1,
    explain:['Hệ thống quy tắc do nhà nước ban hành, mọi người phải tuân theo.'],
    usage:'Danh từ; thường đi với động từ 学/懂/了解: 学法律, 懂法律.',
    collo:['学法律','懂法律','法律专业'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'Câu so sánh song song đơn giản, ôn lại cấu trúc HSK2-3.'},
    ]},
 
-  {n:2,zh:'俩',py:'liǎ',pos:'Số từ',vn:'hai (người)',em:'👫',lesson:1,
+  {n:2,zh:'俩',py:'liǎ',pos:'Số từ',vn:'hai (người)', hv: 'lưỡng',em:'👫',lesson:1,
    explain:['= 两个, thường đi kèm đại từ nhân xưng (我们俩, 你们俩, 他们俩), không dùng thêm lượng từ 个 sau nó.'],
    usage:'Đại từ + 俩: 我们俩, 你们俩, 他们俩 — KHÔNG nói 我们俩个.',
    collo:['我们俩','你们俩','他们俩'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'从来 + 没…过 — từ trước đến giờ chưa từng.'},
    ]},
 
-  {n:3,zh:'印象',py:'yìnxiàng',pos:'Danh từ',vn:'ấn tượng',em:'💭',lesson:1,
+  {n:3,zh:'印象',py:'yìnxiàng',pos:'Danh từ',vn:'ấn tượng', hv: 'ấn tượng',em:'💭',lesson:1,
    explain:['Cảm nhận, hình ảnh còn đọng lại trong đầu về một người/sự việc sau khi tiếp xúc.'],
    usage:'Danh từ; thường đi với 对…印象(很)深/好/不错: 对他印象很深.',
    collo:['印象很深','第一印象','对……印象不错'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'给……留下印象 — để lại ấn tượng cho ai.'},
    ]},
 
-  {n:4,zh:'深',py:'shēn',pos:'Tính từ',vn:'sâu sắc',em:'🌊',lesson:1,
+  {n:4,zh:'深',py:'shēn',pos:'Tính từ',vn:'sâu sắc', hv: 'thâm',em:'🌊',lesson:1,
    explain:['Mức độ lớn, mạnh của cảm xúc/ấn tượng; nghĩa gốc chỉ độ sâu vật lý.'],
    usage:'Tính từ; thường đi sau 很/印象: 印象很深, 爱得很深.',
    collo:['印象很深','很深的感情','水很深'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'(在)……上/里 — chỉ phạm vi (在我心里 = trong lòng tôi).'},
    ]},
 
-  {n:5,zh:'熟悉',py:'shúxi',pos:'Động từ',vn:'hiểu rõ',em:'🤝',lesson:1,
+  {n:5,zh:'熟悉',py:'shúxi',pos:'Động từ',vn:'hiểu rõ', hv: 'thục tất',em:'🤝',lesson:1,
    explain:['Biết rõ, quen thuộc với một người/sự việc/nơi chốn do đã tiếp xúc nhiều lần.'],
    usage:'Động từ; có thể dùng làm tính từ bổ nghĩa: 熟悉 + Đối tượng, hoặc 对……很熟悉.',
    collo:['慢慢熟悉','对环境熟悉','熟悉起来'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'即使……也…… — nhấn mạnh việc dù điều kiện lớn (20 năm) vẫn chưa đạt kết quả.'},
    ]},
 
-  {n:6,zh:'不仅',py:'bùjǐn',pos:'Liên từ',vn:'không những, chẳng những',em:'➕',lesson:1,
+  {n:6,zh:'不仅',py:'bùjǐn',pos:'Liên từ',vn:'không những, chẳng những', hv: 'bất cận',em:'➕',lesson:1,
    explain:['Liên từ dùng ở vế câu thứ nhất, vế câu thứ hai thường dùng 也/还/而且 hô ứng, diễn tả ngoài điều vừa nêu còn có thêm ý khác.'],
    usage:'Khi chủ ngữ hai vế giống nhau: Chủ ngữ + 不仅 + VP1，也/还/而且 + VP2. Khi chủ ngữ khác nhau: 不仅 đứng trước chủ ngữ.',
    collo:['不仅……也……','不仅……还……','不仅……而且……'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'不仅……也…… — chủ ngữ khác nhau, 不仅 đứng trước chủ ngữ của vế 1.'},
    ]},
 
-  {n:7,zh:'性格',py:'xìnggé',pos:'Danh từ',vn:'tính cách, tính nết',em:'🧩',lesson:1,
+  {n:7,zh:'性格',py:'xìnggé',pos:'Danh từ',vn:'tính cách, tính nết', hv: 'tính cách',em:'🧩',lesson:1,
    explain:['Đặc điểm tâm lý ổn định của một người, thể hiện qua cách ứng xử, suy nghĩ.'],
    usage:'Danh từ; thường đi với 好/不错/合得来: 性格好, 性格上互相吸引.',
    collo:['性格好','性格上','性格合得来'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'从来 + 都/不/没 — từ trước đến nay luôn/chưa từng.'},
    ]},
 
-  {n:8,zh:'开玩笑',py:'kāi wánxiào',pos:'Cụm động từ',vn:'nói đùa, đùa',em:'😄',lesson:1,
+  {n:8,zh:'开玩笑',py:'kāi wánxiào',pos:'Cụm động từ',vn:'nói đùa, đùa', hv: 'khai ngoạn tiếu',em:'😄',lesson:1,
    explain:['Nói/làm gì đó không nghiêm túc, cho vui, không có ý thật.'],
    usage:'Cụm động từ; thường ở dạng nghi vấn 是不是/是在开玩笑吧, hoặc phủ định 别跟我开玩笑.',
    collo:['开玩笑吧','跟……开玩笑','爱开玩笑'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … cũng không nên ….'},
    ]},
 
-  {n:9,zh:'从来',py:'cónglái',pos:'Phó từ',vn:'từ trước đến nay, từ trước đến giờ',em:'⏳',lesson:1,
+  {n:9,zh:'从来',py:'cónglái',pos:'Phó từ',vn:'từ trước đến nay, từ trước đến giờ', hv: 'tòng lai',em:'⏳',lesson:1,
    explain:['Diễn tả từ quá khứ đến hiện tại luôn luôn như vậy, thường dùng trong câu phủ định.'],
    usage:'Phó từ; đứng trước 不/没: 从来不……, 从来没……过.',
    collo:['从来不','从来没……过','从来都'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'从来都 + tính từ — nhấn mạnh tính ổn định lâu dài.'},
    ]},
 
-  {n:10,zh:'最好',py:'zuìhǎo',pos:'Phó từ',vn:'tốt nhất',em:'👍',lesson:1,
+  {n:10,zh:'最好',py:'zuìhǎo',pos:'Phó từ',vn:'tốt nhất', hv: 'tối hảo',em:'👍',lesson:1,
    explain:['Diễn tả lựa chọn/đề nghị tốt nhất trong hoàn cảnh hiện tại, thường dùng để khuyên nhủ.'],
    usage:'Phó từ; đứng đầu câu hoặc trước động từ: 最好 + V, mang tính đề nghị nhẹ nhàng.',
    collo:['最好能……','最好先……','最好去医院'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'在……上 — về phương diện, vấn đề nào đó.'},
    ]},
 
-  {n:11,zh:'共同',py:'gòngtóng',pos:'Tính từ',vn:'chung, cùng',em:'🤲',lesson:1,
+  {n:11,zh:'共同',py:'gòngtóng',pos:'Tính từ',vn:'chung, cùng', hv: 'cộng đồng',em:'🤲',lesson:1,
    explain:['Cùng nhau có/làm, thuộc về nhiều người/vật cùng lúc, không của riêng ai.'],
    usage:'Tính từ, thường làm định ngữ: 共同的爱好, 共同生活, 共同努力.',
    collo:['共同的爱好','共同生活','共同努力'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'在……上 — về phương diện công việc.'},
    ]},
 
-  {n:12,zh:'适合',py:'shìhé',pos:'Động từ',vn:'phù hợp',em:'✅',lesson:1,
+  {n:12,zh:'适合',py:'shìhé',pos:'Động từ',vn:'phù hợp', hv: 'thích hợp',em:'✅',lesson:1,
    explain:['Phù hợp, thích hợp với điều kiện/hoàn cảnh/con người nào đó.'],
    usage:'Động từ, có thể trực tiếp mang tân ngữ: 适合 + Đối tượng, không cần giới từ.',
    collo:['适合你的人','适合自己','适合工作'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'从来 + 没……过/没 — chưa từng.'},
    ]},
 
-  {n:13,zh:'幸福',py:'xìngfú',pos:'Tính từ',vn:'hạnh phúc',em:'💖',lesson:1,
+  {n:13,zh:'幸福',py:'xìngfú',pos:'Tính từ',vn:'hạnh phúc', hv: 'hạnh phúc',em:'💖',lesson:1,
    explain:['Trạng thái cảm thấy hài lòng, vui vẻ, mãn nguyện trong cuộc sống.'],
    usage:'Tính từ, có thể làm vị ngữ hoặc danh từ: 祝你们幸福！, 幸福的生活.',
    collo:['祝你们幸福','幸福的生活','觉得很幸福'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'在……上 — về phương diện tình cảm.'},
    ]},
 
-  {n:14,zh:'生活',py:'shēnghuó',pos:'Danh từ/Động từ',vn:'cuộc sống; sống',em:'🏡',lesson:1,
+  {n:14,zh:'生活',py:'shēnghuó',pos:'Danh từ/Động từ',vn:'cuộc sống; sống', hv: 'sinh hoạt',em:'🏡',lesson:1,
    explain:['1. (Danh từ) Toàn bộ những hoạt động, sinh hoạt hằng ngày của con người.','2. (Động từ) Sinh sống, tồn tại theo một cách nào đó.'],
    usage:'Khi làm động từ: 生活 + trạng ngữ (共同生活, 幸福地生活); khi làm danh từ: 我们的生活.',
    collo:['我们的生活','共同生活','生活得怎么样'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'在……上 — về phương diện cuộc sống.'},
    ]},
 
-  {n:15,zh:'刚',py:'gāng',pos:'Phó từ',vn:'vừa, vừa mới',em:'🕐',lesson:1,
+  {n:15,zh:'刚',py:'gāng',pos:'Phó từ',vn:'vừa, vừa mới', hv: 'cương',em:'🕐',lesson:1,
    explain:['Diễn tả hành động/tình huống xảy ra cách đây không lâu, đứng sau chủ ngữ, trước động từ.'],
    usage:'Phó từ: Chủ ngữ + 刚 + Động từ. So với 刚才 (danh từ chỉ thời gian): 刚 KHÔNG thể đứng đầu câu, không dùng phủ định phía sau, có thể có thời lượng phía sau động từ.',
    collo:['刚认识','刚结婚','刚搬来'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'即使……也…… kết hợp với 刚.'},
    ]},
 
-  {n:16,zh:'浪漫',py:'làngmàn',pos:'Tính từ',vn:'lãng mạn',em:'🌹',lesson:1,
+  {n:16,zh:'浪漫',py:'làngmàn',pos:'Tính từ',vn:'lãng mạn', hv: 'lãng mạn',em:'🌹',lesson:1,
    explain:['Đầy cảm xúc, mộng mơ, khác biệt với sự thực dụng thông thường.'],
    usage:'Tính từ; thường đi với 爱情/生活: 浪漫的爱情.',
    collo:['浪漫的爱情','很浪漫','羨慕浪漫'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:17,zh:'够',py:'gòu',pos:'Động từ',vn:'đủ',em:'🆗',lesson:1,
+  {n:17,zh:'够',py:'gòu',pos:'Động từ',vn:'đủ', hv: 'cú',em:'🆗',lesson:1,
    explain:['Đạt đến mức cần thiết, không thiếu.'],
    usage:'Động từ, thường dùng với 不够 (không đủ): 是不够的.',
    collo:['不够的','够了','够用'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'在……上 — về phương diện tiền bạc.'},
    ]},
 
-  {n:18,zh:'缺点',py:'quēdiǎn',pos:'Danh từ',vn:'khuyết điểm, thiếu sót',em:'⚠️',lesson:1,
+  {n:18,zh:'缺点',py:'quēdiǎn',pos:'Danh từ',vn:'khuyết điểm, thiếu sót', hv: 'khuyết điểm',em:'⚠️',lesson:1,
    explain:['Điểm chưa tốt, hạn chế của một người/sự vật, trái nghĩa với 优点.'],
    usage:'Danh từ; thường đi với 接受/看到: 接受他的缺点.',
    collo:['他的缺点','接受缺点','看到缺点'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'从来 + 没……过 — chưa từng.'},
    ]},
 
-  {n:19,zh:'接受',py:'jiēshòu',pos:'Động từ',vn:'chấp nhận',em:'🤗',lesson:1,
+  {n:19,zh:'接受',py:'jiēshòu',pos:'Động từ',vn:'chấp nhận', hv: 'tiếp thụ',em:'🤗',lesson:1,
    explain:['Đồng ý nhận lấy, thừa nhận điều gì đó (thường là điều không hoàn hảo hoặc khó khăn).'],
    usage:'Động từ, mang tân ngữ trực tiếp: 接受 + Đối tượng (接受缺点, 接受意见).',
    collo:['接受缺点','接受意见','不能接受'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:20,zh:'羡慕',py:'xiànmù',pos:'Động từ',vn:'ước ao, ngưỡng mộ',em:'😍',lesson:2,
+  {n:20,zh:'羡慕',py:'xiànmù',pos:'Động từ',vn:'ước ao, ngưỡng mộ', hv: 'tiện mộ',em:'😍',lesson:2,
    explain:['Mong muốn có được điều tốt đẹp mà người khác đang có.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 羡慕 + Đối tượng/Người.',
    collo:['羡慕浪漫的爱情','很羡慕','让人羡慕'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'在……上 — về phương diện tình cảm.'},
    ]},
 
-  {n:21,zh:'爱情',py:'àiqíng',pos:'Danh từ',vn:'tình yêu (giữa nam và nữ)',em:'❤️',lesson:2,
+  {n:21,zh:'爱情',py:'àiqíng',pos:'Danh từ',vn:'tình yêu (giữa nam và nữ)', hv: 'ái tình',em:'❤️',lesson:2,
    explain:['Tình cảm yêu thương sâu sắc giữa hai người yêu nhau, khác với 爱 (yêu nói chung) và 友谊 (tình bạn).'],
    usage:'Danh từ; thường đi với 浪漫的爱情, 简单的爱情, 爱情故事.',
    collo:['浪漫的爱情','简单的爱情','爱情故事'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:22,zh:'星星',py:'xīngxing',pos:'Danh từ',vn:'ngôi sao',em:'⭐',lesson:2,
+  {n:22,zh:'星星',py:'xīngxing',pos:'Danh từ',vn:'ngôi sao', hv: 'tinh tinh',em:'⭐',lesson:2,
    explain:['Thiên thể phát sáng trên bầu trời đêm; trong bài dùng ẩn dụ cho món quà xa vời, không thực tế.'],
    usage:'Danh từ; thường xuất hiện trong thành ngữ, câu ví von: 想要月亮/星星.',
    collo:['想要星星','天上的星星','数星星'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'在……上 — về phương diện, khía cạnh.'},
    ]},
 
-  {n:23,zh:'即使',py:'jíshǐ',pos:'Liên từ',vn:'cho dù',em:'🔀',lesson:2,
+  {n:23,zh:'即使',py:'jíshǐ',pos:'Liên từ',vn:'cho dù', hv: 'tức sử',em:'🔀',lesson:2,
    explain:['Liên từ dùng ở vế câu thứ nhất, vế câu thứ hai thường dùng 也 hô ứng, diễn tả quan hệ nhượng bộ giả thiết hoặc điều đã xảy ra/tồn tại.'],
    usage:'即使 có thể đứng trước hoặc sau chủ ngữ của vế câu thứ nhất: 即使 + Chủ ngữ + VP1，Chủ ngữ + 也 + VP2.',
    collo:['即使……也……','即使只是……','即使晚上……也……'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:24,zh:'加班',py:'jiā bān',pos:'Cụm động từ',vn:'tăng ca, làm thêm giờ',em:'💼',lesson:2,
+  {n:24,zh:'加班',py:'jiā bān',pos:'Cụm động từ',vn:'tăng ca, làm thêm giờ', hv: 'gia ban',em:'💼',lesson:2,
    explain:['Làm việc thêm ngoài giờ quy định.'],
    usage:'Cụm động từ ly hợp (离合词): có thể chèn thời lượng/bổ ngữ ở giữa 加 và 班: 加了一天班.',
    collo:['晚上加班','加班到……','不用加班'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'在……上 — về phương diện công việc.'},
    ]},
 
-  {n:25,zh:'亮',py:'liàng',pos:'Động từ',vn:'chiếu sáng, tỏa sáng',em:'💡',lesson:2,
+  {n:25,zh:'亮',py:'liàng',pos:'Động từ',vn:'chiếu sáng, tỏa sáng', hv: 'lượng',em:'💡',lesson:2,
    explain:['Phát ra ánh sáng; cũng dùng làm tính từ chỉ độ sáng.'],
    usage:'Động từ/Tính từ: 灯还亮着 (đèn vẫn đang sáng), 天亮了 (trời sáng rồi).',
    collo:['灯亮着','天亮了','很亮'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'从来 — từ trước đến nay (nhấn mạnh thói quen lâu dài).'},
    ]},
 
-  {n:26,zh:'感动',py:'gǎndòng',pos:'Động từ',vn:'cảm động, làm xúc động',em:'🥹',lesson:2,
+  {n:26,zh:'感动',py:'gǎndòng',pos:'Động từ',vn:'cảm động, làm xúc động', hv: 'cảm động',em:'🥹',lesson:2,
    explain:['Cảm xúc dâng trào, xúc động khi tiếp xúc với điều gì đó tốt đẹp/ý nghĩa.'],
    usage:'Động từ; có thể dùng bị động 被……感动, hoặc làm 让/使 người khác cảm động.',
    collo:['让人感动','很感动','被……感动'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:27,zh:'自然',py:'zìrán',pos:'Phó từ',vn:'đương nhiên, hiển nhiên',em:'🌿',lesson:2,
+  {n:27,zh:'自然',py:'zìrán',pos:'Phó từ',vn:'đương nhiên, hiển nhiên', hv: 'tự nhiên',em:'🌿',lesson:2,
    explain:['Diễn tả điều xảy ra một cách hợp lý, không cần cố gắng, đương nhiên là vậy.'],
    usage:'Phó từ, đứng trước động từ: 会很自然地 + V.',
    collo:['很自然地','自然想起','大自然'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'在……上 — về phương diện.'},
    ]},
 
-  {n:28,zh:'原因',py:'yuányīn',pos:'Danh từ',vn:'nguyên nhân',em:'❓',lesson:2,
+  {n:28,zh:'原因',py:'yuányīn',pos:'Danh từ',vn:'nguyên nhân', hv: 'nguyên nhân',em:'❓',lesson:2,
    explain:['Điều dẫn đến một kết quả, sự việc nào đó.'],
    usage:'Danh từ; thường đi với 重要原因, 主要原因.',
    collo:['重要原因','主要原因','原因是……'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:29,zh:'互相',py:'hùxiāng',pos:'Phó từ',vn:'lẫn nhau, qua lại',em:'🔄',lesson:2,
+  {n:29,zh:'互相',py:'hùxiāng',pos:'Phó từ',vn:'lẫn nhau, qua lại', hv: 'hỗ tương',em:'🔄',lesson:2,
    explain:['Diễn tả hành động qua lại giữa hai bên, cả hai bên cùng làm với nhau.'],
    usage:'Phó từ, đứng trước động từ: 互相 + V (互相理解, 互相关心, 互相吸引).',
    collo:['互相理解','互相关心','互相吸引'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'在……上 — về phương diện tính cách.'},
    ]},
 
-  {n:30,zh:'吸引',py:'xīyǐn',pos:'Động từ',vn:'hấp dẫn, thu hút',em:'🧲',lesson:2,
+  {n:30,zh:'吸引',py:'xīyǐn',pos:'Động từ',vn:'hấp dẫn, thu hút', hv: 'hấp dẫn',em:'🧲',lesson:2,
    explain:['Làm cho người khác chú ý đến, muốn tiếp cận vì có sức hút.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 吸引 + Đối tượng.',
    collo:['互相吸引','很吸引人','吸引游客'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'即使……也…… kết hợp với câu bị động 被.'},
    ]},
 
-  {n:31,zh:'幽默',py:'yōumò',pos:'Tính từ',vn:'hóm hỉnh, khôi hài',em:'😂',lesson:2,
+  {n:31,zh:'幽默',py:'yōumò',pos:'Tính từ',vn:'hóm hỉnh, khôi hài', hv: 'u mặc',em:'😂',lesson:2,
    explain:['Có khả năng nói/làm cho người khác thấy vui, buồn cười một cách nhẹ nhàng, thông minh.'],
    usage:'Tính từ; thường đi với 很幽默的人, 幽默感.',
    collo:['很幽默','幽默的人','有幽默感'],
@@ -685,7 +685,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:32,zh:'脾气',py:'píqi',pos:'Danh từ',vn:'tính tình, tính khí',em:'😤',lesson:2,
+  {n:32,zh:'脾气',py:'píqi',pos:'Danh từ',vn:'tính tình, tính khí', hv: 'tì khí',em:'😤',lesson:2,
    explain:['Tính cách, thói quen phản ứng cảm xúc của một người, đặc biệt là dễ/khó nổi giận.'],
    usage:'Danh từ; thường đi với 脾气好/不错/大: 脾气也不错.',
    collo:['脾气不错','发脾气','脾气好'],
@@ -707,7 +707,7 @@ var vocabData = [
       note:'即使……也…… — cho dù … vẫn ….'},
    ]},
 
-  {n:33,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)',em:'👩',lesson:1,
+  {n:33,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)', hv: 'Tôn Nguyệt',em:'👩',lesson:1,
    explain:['Tên riêng của một nhân vật nữ trong bài hội thoại 1.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['孙月说','跟孙月聊天'],
@@ -716,7 +716,7 @@ var vocabData = [
      {zh:'孙月：听说你男朋友李进跟你是一个学校的，是你同学吗？',py:'Sūn Yuè: Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de, shì nǐ tóngxué ma?',vn:'Tôn Nguyệt: Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu, có phải là bạn học của cậu không?'},
    ]},
 
-  {n:34,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tịnh (tên người)',em:'👩',lesson:1,
+  {n:34,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tịnh (tên người)', hv: 'Vương Tĩnh',em:'👩',lesson:1,
    explain:['Tên riêng của nhân vật nữ chính, xuất hiện xuyên suốt cả 3 đoạn hội thoại của bài.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['王静说','王静跟李进'],
@@ -725,7 +725,7 @@ var vocabData = [
      {zh:'王静：是的，他学的是新闻，我学的是法律。',py:'Wáng Jìng: Shì de, tā xué de shì xīnwén, wǒ xué de shì fǎlǜ.',vn:'Vương Tịnh: Đúng vậy, anh ấy học báo chí, mình học luật.'},
    ]},
 
-  {n:35,zh:'李进',py:'Lǐ Jìn',pos:'Danh từ riêng',vn:'Lý Tiến (tên người)',em:'🧑',lesson:1,
+  {n:35,zh:'李进',py:'Lǐ Jìn',pos:'Danh từ riêng',vn:'Lý Tiến (tên người)', hv: 'Lý Tiến',em:'🧑',lesson:1,
    explain:['Tên riêng của bạn trai Vương Tịnh, nhân vật được nhắc đến trong hội thoại 1 và 2.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['李进跟你','认识李进'],
@@ -734,7 +734,7 @@ var vocabData = [
      {zh:'听说你男朋友李进跟你是一个学校的。',py:'Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de.',vn:'Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu.'},
    ]},
 
-  {n:36,zh:'李',py:'Lǐ',pos:'Danh từ riêng',vn:'Lý (họ)',em:'🧑‍🏫',lesson:1,
+  {n:36,zh:'李',py:'Lǐ',pos:'Danh từ riêng',vn:'Lý (họ)', hv: 'Lý',em:'🧑‍🏫',lesson:1,
    explain:['Họ của giáo viên (李老师) và cũng của李进; trong bài dùng làm 李老师 — cô/thầy giáo Lý.'],
    usage:'Danh từ riêng chỉ họ người, thường ghép với 老师 thành 李老师.',
    collo:['李老师','李老师说'],
@@ -743,7 +743,7 @@ var vocabData = [
      {zh:'王静跟李老师聊她要结婚的事情。',py:'Wáng Jìng gēn Lǐ lǎoshī liáo tā yào jié hūn de shìqing.',vn:'Vương Tịnh nói chuyện với cô Lý về việc mình sắp kết hôn.'},
    ]},
 
-  {n:37,zh:'高',py:'Gāo',pos:'Danh từ riêng',vn:'Cao (họ)',em:'🧑‍🏫',lesson:1,
+  {n:37,zh:'高',py:'Gāo',pos:'Danh từ riêng',vn:'Cao (họ)', hv: 'Cao',em:'🧑‍🏫',lesson:1,
    explain:['Họ của nhân vật 高老师 trong hội thoại 3, nói chuyện với 李老师 về cuộc sống sau khi kết hôn.'],
    usage:'Danh từ riêng chỉ họ người, thường ghép với 老师 thành 高老师.',
    collo:['高老师','高老师问'],

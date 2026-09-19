@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'还是',py:'háishi',pos:'Liên từ',vn:'hay, hay là',em:'🔀',lesson:1,
+  {n:1,zh:'还是',py:'háishi',pos:'Liên từ',vn:'hay, hay là', hv: 'hoàn thị',em:'🔀',lesson:1,
    explain:['Dùng để nêu ra sự lựa chọn giữa hai (hay nhiều) khả năng, thường dùng trong câu hỏi lựa chọn.'],
    usage:'Đứng giữa hai vế lựa chọn: A + 还是 + B? Nếu vế lựa chọn tự nó là một câu hỏi thì bắt buộc dùng 还是, không được dùng 或者.',
    collo:['喝咖啡还是喝茶','去还是不去','红的还是绿的'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'还是 vẫn dùng được trong câu trần thuật khi diễn tả sự không chắc chắn giữa 2 khả năng.'},
    ]},
 
-  {n:2,zh:'爬山',py:'pá shān',pos:'Động từ',vn:'leo núi',em:'⛰️',lesson:1,
+  {n:2,zh:'爬山',py:'pá shān',pos:'Động từ',vn:'leo núi', hv: 'ba sơn',em:'⛰️',lesson:1,
    explain:['Hoạt động leo lên núi, thường để tập thể dục hoặc ngắm cảnh.'],
    usage:'Động từ ly hợp (V+O): 爬 (leo) + 山 (núi), có thể tách ra khi thêm bổ ngữ: 爬了三个小时的山.',
    collo:['去爬山','爬山的时候','喜欢爬山'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 腿/疼 đã học ở Bài 2).'},
    ]},
 
-  {n:3,zh:'小心',py:'xiǎoxīn',pos:'Tính từ',vn:'cẩn thận',em:'⚠️',lesson:1,
+  {n:3,zh:'小心',py:'xiǎoxīn',pos:'Tính từ',vn:'cẩn thận', hv: 'tiểu tâm',em:'⚠️',lesson:1,
    explain:['Chú ý, thận trọng khi làm việc gì để tránh xảy ra chuyện không hay.'],
    usage:'Có thể làm vị ngữ (要小心) hoặc phó từ đứng trước động từ (小心地 + V); thường dùng ở dạng mệnh lệnh 小心 + danh từ (小心车).',
    collo:['要小心','小心点儿','小心车'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 容易 đã học ở Bài 2).'},
    ]},
 
-  {n:4,zh:'条',py:'tiáo',pos:'Lượng từ',vn:'cái, chiếc (dùng cho vật dài)',em:'👖',lesson:2,
+  {n:4,zh:'条',py:'tiáo',pos:'Lượng từ',vn:'cái, chiếc (dùng cho vật dài)', hv: 'điều',em:'👖',lesson:2,
    explain:['Lượng từ dùng cho các vật có hình dạng dài như quần, đường, con sông, con cá.'],
    usage:'Lượng từ, đứng giữa SỐ TỪ (hoặc chỉ thị từ 这/那) và DANH TỪ: [số từ/这/那] + 条 + [danh từ] (一条裤子, 这条路).',
    collo:['一条裤子','这条路','两条鱼'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:5,zh:'裤子',py:'kùzi',pos:'Danh từ',vn:'quần',em:'👖',lesson:2,
+  {n:5,zh:'裤子',py:'kùzi',pos:'Danh từ',vn:'quần', hv: 'khố tử',em:'👖',lesson:2,
    explain:['Trang phục mặc ở phần dưới cơ thể, che từ thắt lưng đến chân.'],
    usage:'Danh từ; lượng từ đi kèm là 条: 一条裤子. Thường xuất hiện cùng động từ 穿 (mặc), 买 (mua), 洗 (giặt).',
    collo:['穿裤子','买裤子','洗裤子'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'记得',py:'jìde',pos:'Động từ',vn:'nhớ, còn nhớ',em:'🧠',lesson:2,
+  {n:6,zh:'记得',py:'jìde',pos:'Động từ',vn:'nhớ, còn nhớ', hv: 'ký đắc',em:'🧠',lesson:2,
    explain:['Còn lưu giữ trong trí nhớ, không quên.'],
    usage:'Động từ, phủ định là 不记得 (không nhớ); có thể theo sau bởi một mệnh đề: 记得 + [sự việc].',
    collo:['不记得','记得带钱','还记得吗'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'衬衫',py:'chènshān',pos:'Danh từ',vn:'áo sơ mi',em:'👔',lesson:2,
+  {n:7,zh:'衬衫',py:'chènshān',pos:'Danh từ',vn:'áo sơ mi', hv: 'sấn sam',em:'👔',lesson:2,
    explain:['Loại áo có cổ và cúc cài phía trước, thường mặc đi làm/dự tiệc.'],
    usage:'Danh từ; lượng từ đi kèm là 件: 一件衬衫.',
    collo:['一件衬衫','穿衬衫','洗衬衫'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:8,zh:'元',py:'yuán',pos:'Lượng từ',vn:'đồng (đơn vị tiền tệ)',em:'💴',lesson:2,
+  {n:8,zh:'元',py:'yuán',pos:'Lượng từ',vn:'đồng (đơn vị tiền tệ)', hv: 'nguyên',em:'💴',lesson:2,
    explain:['Đơn vị tiền tệ của Trung Quốc (nhân dân tệ).'],
    usage:'Lượng từ, đứng ngay sau SỐ TỪ: [số từ] + 元 (320元). Trong khẩu ngữ thường nói 块 thay cho 元.',
    collo:['320元','多少元','一元'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'新鲜',py:'xīnxiān',pos:'Tính từ',vn:'tươi',em:'🍎',lesson:3,
+  {n:9,zh:'新鲜',py:'xīnxiān',pos:'Tính từ',vn:'tươi', hv: 'tân tiên',em:'🍎',lesson:3,
    explain:['Vừa mới, chưa để lâu, còn giữ được chất lượng ban đầu (thường dùng cho đồ ăn).'],
    usage:'Tính từ, làm vị ngữ với 很/真: 很新鲜, hoặc làm định ngữ: 新鲜的鱼.',
    collo:['很新鲜','新鲜的鱼','不新鲜'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:10,zh:'甜',py:'tián',pos:'Tính từ',vn:'ngọt',em:'🍬',lesson:3,
+  {n:10,zh:'甜',py:'tián',pos:'Tính từ',vn:'ngọt', hv: 'điềm',em:'🍬',lesson:3,
    explain:['Có vị ngọt như đường, mật.'],
    usage:'Tính từ, làm vị ngữ với 很/不: 很甜, 不甜; thường xuất hiện trong câu điều kiện quảng cáo "不甜不要钱".',
    collo:['很甜','不甜','有点儿甜'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'只',py:'zhǐ',pos:'Phó từ',vn:'chỉ',em:'☝️',lesson:3,
+  {n:11,zh:'只',py:'zhǐ',pos:'Phó từ',vn:'chỉ', hv: 'chỉ',em:'☝️',lesson:3,
    explain:['Giới hạn phạm vi, số lượng hoặc phạm vi hành động ở mức duy nhất được nêu.'],
    usage:'Phó từ, đứng TRƯỚC động từ/tính từ mà nó bổ nghĩa: 只 + V/Adj (只吃水果, 只要200元).',
    collo:['只吃水果','只要','只学汉语'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'放',py:'fàng',pos:'Động từ',vn:'đặt, để',em:'📥',lesson:4,
+  {n:12,zh:'放',py:'fàng',pos:'Động từ',vn:'đặt, để', hv: 'phóng',em:'📥',lesson:4,
    explain:['Đặt một vật vào một vị trí nào đó.'],
    usage:'Động từ, thường đi cùng trợ từ 着 trong câu tồn tại: [nơi chốn] + 放着 + [vật] (桌子上放着很多饮料).',
    collo:['放在桌子上','放着','没放着'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 记得 vừa học).'},
    ]},
 
-  {n:13,zh:'饮料',py:'yǐnliào',pos:'Danh từ',vn:'đồ uống, thức uống',em:'🥤',lesson:4,
+  {n:13,zh:'饮料',py:'yǐnliào',pos:'Danh từ',vn:'đồ uống, thức uống', hv: 'ẩm liệu',em:'🥤',lesson:4,
    explain:['Chất lỏng dùng để uống nói chung (nước ngọt, trà, cà phê...).'],
    usage:'Danh từ; lượng từ đi kèm là 杯 (ly) hoặc 瓶 (chai): 一杯饮料, 一瓶饮料.',
    collo:['喝饮料','买饮料','水果饮料'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 甜 vừa học).'},
    ]},
 
-  {n:14,zh:'或者',py:'huòzhě',pos:'Liên từ',vn:'hoặc',em:'🔁',lesson:4,
+  {n:14,zh:'或者',py:'huòzhě',pos:'Liên từ',vn:'hoặc', hv: 'hoặc giả',em:'🔁',lesson:4,
    explain:['Dùng để nêu ra sự lựa chọn giữa hai (hay nhiều) khả năng, thường dùng trong câu trần thuật.'],
    usage:'Đứng giữa hai vế lựa chọn trong câu KHẲNG ĐỊNH (không phải câu hỏi): A + 或者 + B, đều được/đều có thể.',
    collo:['茶或者咖啡','或者工作累了','看书或者听音乐'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:15,zh:'舒服',py:'shūfu',pos:'Tính từ',vn:'dễ chịu, thoải mái',em:'😌',lesson:4,
+  {n:15,zh:'舒服',py:'shūfu',pos:'Tính từ',vn:'dễ chịu, thoải mái', hv: 'thư phục',em:'😌',lesson:4,
    explain:['Cảm giác thoải mái, khoan khoái về thể chất hoặc tinh thần.'],
    usage:'Tính từ, làm vị ngữ với 很/会: 很舒服, 会很舒服; phủ định 不舒服 còn có nghĩa "khó ở, không khỏe".',
    collo:['很舒服','不舒服','觉得舒服'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:16,zh:'花',py:'huā',pos:'Danh từ',vn:'hoa',em:'🌸',lesson:4,
+  {n:16,zh:'花',py:'huā',pos:'Danh từ',vn:'hoa', hv: 'hoa',em:'🌸',lesson:4,
    explain:['Bộ phận sinh sản của cây, thường có màu sắc và hương thơm; ở đây dùng trong từ 花茶 (trà hoa/trà ướp hoa).'],
    usage:'Danh từ; làm định ngữ tạo từ ghép: 花 + danh từ (花茶 = trà hoa).',
    collo:['花茶','买花','很多花'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'不管……都…… diễn tả dù trong trường hợp nào kết quả cũng không đổi.'},
    ]},
 
-  {n:17,zh:'绿',py:'lǜ',pos:'Tính từ',vn:'xanh (lá cây)',em:'💚',lesson:4,
+  {n:17,zh:'绿',py:'lǜ',pos:'Tính từ',vn:'xanh (lá cây)', hv: 'lục',em:'💚',lesson:4,
    explain:['Màu xanh lá cây, màu của cây cỏ.'],
    usage:'Tính từ chỉ màu sắc, làm định ngữ trực tiếp trước danh từ: 绿 + danh từ (绿茶), hoặc làm vị ngữ với 很: 很绿.',
    collo:['绿茶','绿色','很绿'],

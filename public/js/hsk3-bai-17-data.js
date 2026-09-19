@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'请假',py:'qǐng jià',pos:'Động từ',vn:'xin nghỉ phép',em:'📝',lesson:1,
+  {n:1,zh:'请假',py:'qǐng jià',pos:'Động từ',vn:'xin nghỉ phép', hv: 'thỉnh giá',em:'📝',lesson:1,
    explain:['Xin phép nghỉ, không đi làm hoặc đi học trong một khoảng thời gian.'],
    usage:'Động từ ly hợp: 请 + 假; đi cùng số ngày: 请几天假.',
    collo:['请几天假','请病假','请事假'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
    ]},
 
-  {n:2,zh:'一共',py:'yígòng',pos:'Phó từ',vn:'tổng cộng',em:'🔢',lesson:1,
+  {n:2,zh:'一共',py:'yígòng',pos:'Phó từ',vn:'tổng cộng', hv: 'nhất cộng',em:'🔢',lesson:1,
    explain:['Diễn tả tổng số lượng khi cộng gộp lại.'],
    usage:'Phó từ, đứng trước động từ hoặc số lượng: 一共 + [số lượng/động từ].',
    collo:['一共想请几天','一共21个学生','一共写100个'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'邻居',py:'línjū',pos:'Danh từ',vn:'láng giềng',em:'🏘️',lesson:2,
+  {n:3,zh:'邻居',py:'línjū',pos:'Danh từ',vn:'láng giềng', hv: 'lân cư',em:'🏘️',lesson:2,
    explain:['Người sống gần nhà, cùng khu vực.'],
    usage:'Danh từ; đi cùng động từ 是: 是邻居.',
    collo:['是邻居','新邻居','过去是邻居'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:4,zh:'后来',py:'hòulái',pos:'Danh từ',vn:'sau này, sau đó',em:'⏭️',lesson:2,
+  {n:4,zh:'后来',py:'hòulái',pos:'Danh từ',vn:'sau này, sau đó', hv: 'hậu lai',em:'⏭️',lesson:2,
    explain:['Chỉ khoảng thời gian tiếp theo sau một sự việc đã xảy ra.'],
    usage:'Danh từ chỉ thời gian, thường đứng đầu câu hoặc sau chủ ngữ.',
    collo:['后来是','后来发现','后来儿子生病了'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'爱好',py:'àihào',pos:'Danh từ',vn:'sở thích',em:'❤️',lesson:2,
+  {n:5,zh:'爱好',py:'àihào',pos:'Danh từ',vn:'sở thích', hv: 'ái hiếu',em:'❤️',lesson:2,
    explain:['Điều mà một người thích làm, quan tâm thường xuyên.'],
    usage:'Danh từ; đi cùng động từ 有: 有很多爱好.',
    collo:['很多爱好','我的爱好','有兴趣的爱好'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:6,zh:'办法',py:'bànfǎ',pos:'Danh từ',vn:'cách, biện pháp',em:'💡',lesson:3,
+  {n:6,zh:'办法',py:'bànfǎ',pos:'Danh từ',vn:'cách, biện pháp', hv: 'biện pháp',em:'💡',lesson:3,
    explain:['Cách thức, phương pháp để giải quyết một việc.'],
    usage:'Danh từ; đi cùng động từ 有/想: 有办法, 想办法.',
    collo:['有办法','想办法','没办法'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'饱',py:'bǎo',pos:'Tính từ',vn:'no',em:'🍚',lesson:3,
+  {n:7,zh:'饱',py:'bǎo',pos:'Tính từ',vn:'no', hv: 'bão',em:'🍚',lesson:3,
    explain:['Trạng thái ăn đủ, không còn đói.'],
    usage:'Tính từ, làm bổ ngữ sau động từ 吃: 吃饱了.',
    collo:['吃饱','吃不饱','吃饱了就睡'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:8,zh:'为了',py:'wèile',pos:'Giới từ',vn:'để, vì',em:'🎯',lesson:3,
+  {n:8,zh:'为了',py:'wèile',pos:'Giới từ',vn:'để, vì', hv: 'vị liễu',em:'🎯',lesson:3,
    explain:['Nêu mục đích của một hành động.'],
    usage:'为了 + [mục đích]，[hành động].',
    collo:['为了健康','为了瘦一点儿','为了照顾他'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'为了 + mục đích, 决定 + hành động (ôn lại 提高/水平 đã học ở Bài 15).'},
    ]},
 
-  {n:9,zh:'决定',py:'juédìng',pos:'Động từ',vn:'quyết định',em:'✅',lesson:3,
+  {n:9,zh:'决定',py:'juédìng',pos:'Động từ',vn:'quyết định', hv: 'quyết định',em:'✅',lesson:3,
    explain:['Đưa ra lựa chọn cuối cùng sau khi suy nghĩ.'],
    usage:'Động từ, mang tân ngữ là mệnh đề: 决定 + [việc].',
    collo:['决定每天','做决定','自己决定'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:10,zh:'选择',py:'xuǎnzé',pos:'Động từ',vn:'lựa chọn',em:'☑️',lesson:4,
+  {n:10,zh:'选择',py:'xuǎnzé',pos:'Động từ',vn:'lựa chọn', hv: 'tuyển trạch',em:'☑️',lesson:4,
    explain:['Chọn ra một trong nhiều khả năng.'],
    usage:'Động từ, mang tân ngữ: 选择 + [đối tượng].',
    collo:['选择时间','选择地点','做选择'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'冬(天)',py:'dōng(tiān)',pos:'Danh từ',vn:'(mùa) đông',em:'❄️',lesson:4,
+  {n:11,zh:'冬(天)',py:'dōng(tiān)',pos:'Danh từ',vn:'(mùa) đông', hv: 'đông thiên',em:'❄️',lesson:4,
    explain:['Mùa lạnh nhất trong năm.'],
    usage:'Danh từ chỉ mùa; đi cùng động từ 要: 冬天要再晚一些.',
    collo:['冬天','今年冬天','冬天特别长'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'必须',py:'bìxū',pos:'Phó từ',vn:'cần phải',em:'❗',lesson:4,
+  {n:12,zh:'必须',py:'bìxū',pos:'Phó từ',vn:'cần phải', hv: 'tất tu',em:'❗',lesson:4,
    explain:['Diễn tả sự bắt buộc, không thể thiếu.'],
    usage:'Phó từ, đứng trước động từ: 必须 + V.',
    collo:['必须要','必须少吃','必须根据'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'根据',py:'gēnjù',pos:'Giới từ',vn:'căn cứ vào, dựa vào',em:'📊',lesson:4,
+  {n:13,zh:'根据',py:'gēnjù',pos:'Giới từ',vn:'căn cứ vào, dựa vào', hv: 'căn cứ',em:'📊',lesson:4,
    explain:['Nêu cơ sở, căn cứ để làm một việc gì đó.'],
    usage:'根据 + [căn cứ]，[hành động].',
    collo:['根据情况','根据要求','根据自己的健康'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:14,zh:'情况',py:'qíngkuàng',pos:'Danh từ',vn:'tình hình, tình trạng',em:'📋',lesson:4,
+  {n:14,zh:'情况',py:'qíngkuàng',pos:'Danh từ',vn:'tình hình, tình trạng', hv: 'tình huống',em:'📋',lesson:4,
    explain:['Trạng thái, hoàn cảnh của một sự việc tại một thời điểm.'],
    usage:'Danh từ; đi cùng tính từ sở hữu: 健康情况.',
    collo:['健康情况','根据情况','生活情况'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:15,zh:'口',py:'kǒu',pos:'Danh từ',vn:'miệng',em:'👄',lesson:4,
+  {n:15,zh:'口',py:'kǒu',pos:'Danh từ',vn:'miệng', hv: 'khẩu',em:'👄',lesson:4,
    explain:['Bộ phận trên cơ thể dùng để ăn, nói.'],
    usage:'Danh từ; thường ghép với tính từ: 口渴.',
    collo:['口渴','刚运动完口渴','一口'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:16,zh:'渴',py:'kě',pos:'Tính từ',vn:'khát',em:'🥤',lesson:4,
+  {n:16,zh:'渴',py:'kě',pos:'Tính từ',vn:'khát', hv: 'khát',em:'🥤',lesson:4,
    explain:['Trạng thái muốn uống nước do thiếu nước.'],
    usage:'Tính từ; thường ghép với 口: 口渴, hoặc đứng độc lập: 渴了.',
    collo:['口渴','渴了','很渴'],

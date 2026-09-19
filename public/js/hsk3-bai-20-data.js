@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'照相机',py:'zhàoxiàngjī',pos:'Danh từ',vn:'máy chụp ảnh',em:'📷',lesson:1,
+  {n:1,zh:'照相机',py:'zhàoxiàngjī',pos:'Danh từ',vn:'máy chụp ảnh', hv: 'chiếu tướng cơ',em:'📷',lesson:1,
    explain:['Thiết bị dùng để chụp ảnh.'],
    usage:'Danh từ; đi cùng động từ 拿走/带: 照相机被拿走了.',
    collo:['照相机被拿走','带照相机','新买的照相机'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
    ]},
 
-  {n:2,zh:'被',py:'bèi',pos:'Giới từ',vn:'bị (dùng để chỉ thể bị động)',em:'🔄',lesson:1,
+  {n:2,zh:'被',py:'bèi',pos:'Giới từ',vn:'bị (dùng để chỉ thể bị động)', hv: 'bị',em:'🔄',lesson:1,
    explain:['Nêu chủ ngữ là đối tượng chịu tác động của hành động.'],
    usage:'Chủ ngữ + 被 + [chủ thể hành động] + động từ + thành phần khác.',
    collo:['被拿走','被影响','被认错'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'Phó từ phủ định (没有) đặt TRƯỚC 被.'},
    ]},
 
-  {n:3,zh:'难过',py:'nánguò',pos:'Tính từ',vn:'buồn',em:'😢',lesson:1,
+  {n:3,zh:'难过',py:'nánguò',pos:'Tính từ',vn:'buồn', hv: 'nan quá',em:'😢',lesson:1,
    explain:['Cảm thấy đau lòng, không vui.'],
    usage:'Tính từ, làm vị ngữ: 别难过.',
    collo:['别难过','很难过','怎么这么难过'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:4,zh:'东',py:'dōng',pos:'Danh từ',vn:'phía đông',em:'🧭',lesson:1,
+  {n:4,zh:'东',py:'dōng',pos:'Danh từ',vn:'phía đông', hv: 'đông',em:'🧭',lesson:1,
    explain:['Một trong bốn hướng chính, hướng mặt trời mọc.'],
    usage:'Danh từ chỉ phương hướng; đi cùng 门/边: 东门, 东边.',
    collo:['东门','往东走','东边'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'信用卡',py:'xìnyòngkǎ',pos:'Danh từ',vn:'thẻ tín dụng',em:'💳',lesson:1,
+  {n:5,zh:'信用卡',py:'xìnyòngkǎ',pos:'Danh từ',vn:'thẻ tín dụng', hv: 'tín dụng tạp',em:'💳',lesson:1,
    explain:['Loại thẻ ngân hàng dùng để thanh toán, có thể chi tiêu trước trả sau.'],
    usage:'Danh từ; đi cùng động từ 用/花: 用信用卡.',
    collo:['信用卡里的钱','用信用卡','这张信用卡'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'关心',py:'guānxīn',pos:'Động từ',vn:'quan tâm, chú ý',em:'💗',lesson:2,
+  {n:6,zh:'关心',py:'guānxīn',pos:'Động từ',vn:'quan tâm, chú ý', hv: 'quan tâm',em:'💗',lesson:2,
    explain:['Để tâm, lo lắng cho ai đó hoặc việc gì đó.'],
    usage:'Động từ, mang tân ngữ: 关心 + [người/việc].',
    collo:['关心体育','关心学生','不关心'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'只有……才……',py:'zhǐyǒu……cái……',pos:'Liên từ',vn:'chỉ có... (thì) mới...',em:'🔑',lesson:2,
+  {n:7,zh:'只有……才……',py:'zhǐyǒu……cái……',pos:'Liên từ',vn:'chỉ có... (thì) mới...', hv: 'chỉ hữu tài',em:'🔑',lesson:2,
    explain:['Diễn tả điều kiện duy nhất để có kết quả nào đó.'],
    usage:'只有 + [điều kiện duy nhất]，才 + [kết quả].',
    collo:['只有爱，才能……','只有真正……才能……','只有你们……才能……'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'只有……才…… diễn tả điều kiện duy nhất.'},
    ]},
 
-  {n:8,zh:'成绩',py:'chéngjì',pos:'Danh từ',vn:'thành tích, kết quả (công tác, học tập)',em:'📊',lesson:2,
+  {n:8,zh:'成绩',py:'chéngjì',pos:'Danh từ',vn:'thành tích, kết quả (công tác, học tập)', hv: 'thành tích',em:'📊',lesson:2,
    explain:['Kết quả đạt được qua học tập hoặc công việc.'],
    usage:'Danh từ; đi cùng tính từ: 成绩差/好.',
    collo:['成绩差','考试成绩','数学成绩'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'碗',py:'wǎn',pos:'Danh từ',vn:'bát',em:'🥣',lesson:3,
+  {n:9,zh:'碗',py:'wǎn',pos:'Danh từ',vn:'bát', hv: 'oản',em:'🥣',lesson:3,
    explain:['Vật dụng hình tròn dùng để đựng cơm, canh.'],
    usage:'Danh từ; đi cùng động từ 拿着/洗: 拿着碗.',
    collo:['拿着碗','洗碗','一个碗'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:10,zh:'分',py:'fēn',pos:'Động từ',vn:'phân biệt',em:'✂️',lesson:3,
+  {n:10,zh:'分',py:'fēn',pos:'Động từ',vn:'phân biệt', hv: 'phân',em:'✂️',lesson:3,
    explain:['Chia tách, nhận biết sự khác nhau giữa các đối tượng.'],
    usage:'Động từ, thường đi cùng bổ ngữ 出来: 分出来.',
    collo:['分出来','分不清','分开'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'解决',py:'jiějué',pos:'Động từ',vn:'giải quyết',em:'✅',lesson:4,
+  {n:11,zh:'解决',py:'jiějué',pos:'Động từ',vn:'giải quyết', hv: 'giải quyết',em:'✅',lesson:4,
    explain:['Xử lý, tìm ra cách khắc phục vấn đề.'],
    usage:'Động từ, mang tân ngữ: 解决问题.',
    collo:['解决问题','解决办法','被解决'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'试',py:'shì',pos:'Động từ',vn:'thử',em:'🧪',lesson:4,
+  {n:12,zh:'试',py:'shì',pos:'Động từ',vn:'thử', hv: 'thí',em:'🧪',lesson:4,
    explain:['Làm thử để xem kết quả hoặc kiểm tra.'],
    usage:'Động từ; thường đi cùng 着: 试着做.',
    collo:['试着做','试一试','试试看'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'真正',py:'zhēnzhèng',pos:'Phó từ',vn:'thật sự',em:'💯',lesson:4,
+  {n:13,zh:'真正',py:'zhēnzhèng',pos:'Phó từ',vn:'thật sự', hv: 'chân chính',em:'💯',lesson:4,
    explain:['Diễn tả tính chất chân thực, không giả tạo.'],
    usage:'Phó từ, đứng trước động từ/danh từ: 真正做事情.',
    collo:['真正做事情','真正的朋友','真正了解'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'只有……才…… diễn tả điều kiện duy nhất.'},
    ]},
 
-  {n:14,zh:'多么',py:'duōme',pos:'Phó từ',vn:'(mức độ tương đối cao) mấy, bao nhiêu',em:'❗',lesson:4,
+  {n:14,zh:'多么',py:'duōme',pos:'Phó từ',vn:'(mức độ tương đối cao) mấy, bao nhiêu', hv: 'đa ma',em:'❗',lesson:4,
    explain:['Nhấn mạnh mức độ cao trong câu cảm thán hoặc câu điều kiện.'],
    usage:'多么 + [Adj]，都/也……: diễn tả bất kể mức độ cao đến đâu.',
    collo:['多么难的问题','多么漂亮','多么希望'],

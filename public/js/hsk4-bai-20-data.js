@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'加油站',py:'jiāyóuzhàn',pos:'Danh từ',vn:'trạm xăng dầu',em:'⛽',lesson:1,
+  {n:1,zh:'加油站',py:'jiāyóuzhàn',pos:'Danh từ',vn:'trạm xăng dầu', hv: 'gia du trạm',em:'⛽',lesson:1,
    explain:['Nơi đổ xăng. 加油 = đổ xăng / cố lên; 站 = trạm (网站 Bài 18).'],
    usage:'去加油站, 路上有加油站吗, 在加油站抽烟.',
    collo:['去机场的路上有加油站吗','在加油站抽烟很危险','找加油站'],
@@ -23,7 +23,7 @@ var vocabData = [
       note:'该……了 (Bài 7).'},
    ]},
 
-  {n:2,zh:'航班',py:'hángbān',pos:'Danh từ',vn:'chuyến bay',em:'✈️',lesson:1,
+  {n:2,zh:'航班',py:'hángbān',pos:'Danh từ',vn:'chuyến bay', hv: 'hàng ban',em:'✈️',lesson:1,
    explain:['Chuyến bay theo lịch. 航班号, 几点的航班, 航班推迟了.'],
    usage:'几点的航班, 航班推迟, 改签航班.',
    collo:['你去北京的航班是几点的','航班推迟了一个小时','改签到后天的同一航班'],
@@ -43,7 +43,7 @@ var vocabData = [
       note:'本来 (Bài 10), 网站 (Bài 18), 通知 (Bài 4).'},
    ]},
 
-  {n:3,zh:'推迟',py:'tuīchí',pos:'Động từ',vn:'hoãn lại',em:'⏳',lesson:1,
+  {n:3,zh:'推迟',py:'tuīchí',pos:'Động từ',vn:'hoãn lại', hv: 'thôi trì',em:'⏳',lesson:1,
    explain:['Lùi thời gian. 推 (Bài 16) + 迟. 推迟一个小时, 推迟起飞, 推迟到下周.'],
    usage:'推迟了一个小时, 推迟起飞, 推迟到……',
    collo:['通知推迟了一个小时','推迟起飞','出国的时间推迟了'],
@@ -63,7 +63,7 @@ var vocabData = [
       note:'签证 (Bài 16), 大概 (Bài 13), 月底 (Bài 11), 才 (Bài 3).'},
    ]},
 
-  {n:4,zh:'高速公路',py:'gāosù gōnglù',pos:'Danh từ',vn:'đường cao tốc',em:'🛣️',lesson:1,
+  {n:4,zh:'高速公路',py:'gāosù gōnglù',pos:'Danh từ',vn:'đường cao tốc', hv: 'cao tốc công lộ',em:'🛣️',lesson:1,
    explain:['Đường tốc độ cao. 高速 = tốc độ cao (速度 Bài 14); 公路 = đường bộ. 上高速公路, 走高速公路.'],
    usage:'上高速公路, 走高速公路, 高速公路上.',
    collo:['往西走五百米就能上高速公路','走高速公路大约半个小时','高速公路上不能停车'],
@@ -83,7 +83,7 @@ var vocabData = [
       note:'往 (Bài 2), 大约 (Bài 13), 米 (Bài 2).'},
    ]},
 
-  {n:5,zh:'登机牌',py:'dēngjīpái',pos:'Danh từ',vn:'thẻ lên máy bay',em:'🎫',lesson:1,
+  {n:5,zh:'登机牌',py:'dēngjīpái',pos:'Danh từ',vn:'thẻ lên máy bay', hv: 'đăng cơ bài',em:'🎫',lesson:1,
    explain:['Boarding pass. 登机 = lên máy bay; 牌 = thẻ, biển. 换登机牌 = làm thủ tục lấy thẻ.'],
    usage:'换登机牌, 拿着登机牌, 登机牌上.',
    collo:['进去换登机牌','拿好登机牌','登机牌上的座位号'],
@@ -106,7 +106,7 @@ var vocabData = [
       note:'换 (Bài 5), 不用……了.'},
    ]},
 
-  {n:6,zh:'首都',py:'shǒudū',pos:'Danh từ',vn:'thủ đô',em:'🏛️',lesson:1,
+  {n:6,zh:'首都',py:'shǒudū',pos:'Danh từ',vn:'thủ đô', hv: 'thủ đô',em:'🏛️',lesson:1,
    explain:['Thành phố chính của một nước. 首都机场 = sân bay Thủ Đô (Bắc Kinh). 首 = đầu (首先 Bài 10).'],
    usage:'首都机场, 中国的首都, 首都北京.',
    collo:['首都机场','中国的首都是北京','越南的首都'],
@@ -126,7 +126,7 @@ var vocabData = [
       note:'座 (Bài 18), 着 (Bài 2).'},
    ]},
 
-  {n:7,zh:'旅行',py:'lǚxíng',pos:'Động từ',vn:'du lịch',em:'🧳',lesson:2,
+  {n:7,zh:'旅行',py:'lǚxíng',pos:'Động từ',vn:'du lịch', hv: 'lữ hành',em:'🧳',lesson:2,
    explain:['Đi chơi xa. So sánh 旅游 (Bài 1): 旅行 nhấn mạnh hành trình, cũng làm danh từ (一次旅行).'],
    usage:'去旅行, 旅行方式, 一次愉快的旅行.',
    collo:['总是说想去旅行','旅行中有任何事','一次愉快的旅行'],
@@ -146,7 +146,7 @@ var vocabData = [
       note:'不仅……而且 (Bài 6), 丰富 (Bài 8), 经历 (Bài 9), 压力 (Bài 5).'},
    ]},
 
-  {n:8,zh:'怪',py:'guài',pos:'Phó từ',vn:'rất, vô cùng',em:'❗',lesson:2,
+  {n:8,zh:'怪',py:'guài',pos:'Phó từ',vn:'rất, vô cùng', hv: 'quái',em:'❗',lesson:2,
    explain:['Phó từ khẩu ngữ: 怪 + tính từ + 的 = rất, khá (怪可怜的, 怪不好意思的). Cũng là tính từ "kỳ lạ" (奇怪 Bài 5) và động từ "trách" (怪我).'],
    usage:'怪可怜的, 怪不好意思的, 怪冷的.',
    collo:['怪可怜的','怪不好意思的','怪累的'],
@@ -166,7 +166,7 @@ var vocabData = [
       note:'专门 (Bài 9), 趟 (Bài 17), 怪……的.'},
    ]},
 
-  {n:9,zh:'可怜',py:'kělián',pos:'Tính từ',vn:'đáng thương, tội nghiệp',em:'🥺',lesson:2,
+  {n:9,zh:'可怜',py:'kělián',pos:'Tính từ',vn:'đáng thương, tội nghiệp', hv: 'khả liên',em:'🥺',lesson:2,
    explain:['Đáng thương. 怪可怜的, 可怜的小狗. Cũng là động từ: 可怜他 (thương hại).'],
    usage:'怪可怜的, 可怜的小狗, 真可怜.',
    collo:['怪可怜的','一只可怜的小狗','太可怜了'],
@@ -186,7 +186,7 @@ var vocabData = [
       note:'突然 (Bài 8), 抱 (Bài 17), 把……回.'},
    ]},
 
-  {n:10,zh:'对面',py:'duìmiàn',pos:'Danh từ',vn:'đối diện, trước mặt',em:'↔️',lesson:2,
+  {n:10,zh:'对面',py:'duìmiàn',pos:'Danh từ',vn:'đối diện, trước mặt', hv: 'đối diện',em:'↔️',lesson:2,
    explain:['Phía bên kia, trước mặt. 对面的饭店, 坐在对面, 马路对面.'],
    usage:'对面的饭店, 马路对面, 坐在我对面.',
    collo:['去对面的饭店','马路对面','对面那条街'],
@@ -206,7 +206,7 @@ var vocabData = [
       note:'理发 (Bài 19), lượng từ 条/家.'},
    ]},
 
-  {n:11,zh:'烤鸭',py:'kǎoyā',pos:'Danh từ',vn:'vịt quay',em:'🦆',lesson:2,
+  {n:11,zh:'烤鸭',py:'kǎoyā',pos:'Danh từ',vn:'vịt quay', hv: 'khảo áp',em:'🦆',lesson:2,
    explain:['Món ăn nổi tiếng Bắc Kinh. 北京烤鸭, 吃烤鸭, 一只烤鸭.'],
    usage:'吃烤鸭, 北京烤鸭, 一只烤鸭.',
    collo:['去饭店吃烤鸭','北京烤鸭','烤鸭很有名'],
@@ -229,7 +229,7 @@ var vocabData = [
       note:'尝 (Bài 7), động từ lặp 尝一尝.'},
    ]},
 
-  {n:12,zh:'祝贺',py:'zhùhè',pos:'Động từ',vn:'chúc mừng',em:'🎉',lesson:2,
+  {n:12,zh:'祝贺',py:'zhùhè',pos:'Động từ',vn:'chúc mừng', hv: 'chúc hạ',em:'🎉',lesson:2,
    explain:['Chúc mừng thành công/việc vui. 祝贺你, 祝贺她考试合格. So sánh 祝 (chúc) + 贺 (mừng).'],
    usage:'祝贺你, 祝贺她……, 表示祝贺.',
    collo:['祝贺她考试成绩都合格','祝贺你们','向他表示祝贺'],
@@ -249,7 +249,7 @@ var vocabData = [
       note:'辛苦 (Bài 4), 干杯 (từ mới).'},
    ]},
 
-  {n:13,zh:'合格',py:'hégé',pos:'Tính từ',vn:'đạt tiêu chuẩn, đạt yêu cầu',em:'✅',lesson:2,
+  {n:13,zh:'合格',py:'hégé',pos:'Tính từ',vn:'đạt tiêu chuẩn, đạt yêu cầu', hv: 'hợp cách',em:'✅',lesson:2,
    explain:['Đạt yêu cầu (thi, sản phẩm, con người). 考试合格, 合格的产品, 一个合格的现代人.'],
    usage:'考试成绩合格, 合格的产品, 合格的现代人.',
    collo:['考试成绩都合格','成绩都合格','做一个合格的现代人'],
@@ -269,7 +269,7 @@ var vocabData = [
       note:'只要……就 (Bài 8), 成绩 (Bài 2).'},
    ]},
 
-  {n:14,zh:'干杯',py:'gān bēi',pos:'Động từ',vn:'cạn ly',em:'🥂',lesson:3,
+  {n:14,zh:'干杯',py:'gān bēi',pos:'Động từ',vn:'cạn ly', hv: 'can bôi',em:'🥂',lesson:3,
    explain:['Uống cạn để chúc mừng. Động từ ly hợp: 干一杯, 和……干杯. 干 (gān) = khô (Bài 17).'],
    usage:'干杯, 干一杯, 和你干杯的那个人.',
    collo:['和你干杯的那个人','来，干一杯','为……干杯'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'为 (Bài 4), 友谊 (Bài 11).'},
    ]},
 
-  {n:15,zh:'民族',py:'mínzú',pos:'Danh từ',vn:'dân tộc',em:'🎎',lesson:3,
+  {n:15,zh:'民族',py:'mínzú',pos:'Danh từ',vn:'dân tộc', hv: 'dân tộc',em:'🎎',lesson:3,
    explain:['Cộng đồng người có chung văn hóa. 少数民族 = dân tộc thiểu số; 56个民族; 汉族.'],
    usage:'少数民族, 56个民族, 民族服装.',
    collo:['少数民族','中国有56个民族','民族文化'],
@@ -309,7 +309,7 @@ var vocabData = [
       note:'传统 (Bài 9).'},
    ]},
 
-  {n:16,zh:'打扮',py:'dǎban',pos:'Động từ',vn:'trang điểm, ăn diện',em:'💄',lesson:3,
+  {n:16,zh:'打扮',py:'dǎban',pos:'Động từ',vn:'trang điểm, ăn diện', hv: 'đả ban',em:'💄',lesson:3,
    explain:['Ăn mặc, trang điểm. 打扮得真漂亮, 爱打扮. Cũng là danh từ: 这种打扮.'],
    usage:'打扮得很漂亮, 爱打扮, 这种打扮.',
    collo:['打扮得真漂亮','打扮一下','这种打扮不太合适'],
@@ -329,7 +329,7 @@ var vocabData = [
       note:'正式 (Bài 6), 合适 (Bài 15), 流行 (Bài 5).'},
    ]},
 
-  {n:17,zh:'笑话',py:'xiàohua',pos:'Danh từ',vn:'truyện cười',em:'😂',lesson:3,
+  {n:17,zh:'笑话',py:'xiàohua',pos:'Danh từ',vn:'truyện cười', hv: 'tiếu thoại',em:'😂',lesson:3,
    explain:['Chuyện gây cười. 讲笑话, 有趣的笑话, 一肚子的笑话. Cũng là động từ: 笑话别人 (chê cười).'],
    usage:'讲笑话, 有趣的笑话, 别笑话我.',
    collo:['讲了很多有趣的笑话','一肚子的笑话','别笑话我'],
@@ -349,7 +349,7 @@ var vocabData = [
       note:'肚子 (Bài 7), 网站 (Bài 18), 有趣 (Bài 13).'},
    ]},
 
-  {n:18,zh:'存',py:'cún',pos:'Động từ',vn:'gửi',em:'🏦',lesson:3,
+  {n:18,zh:'存',py:'cún',pos:'Động từ',vn:'gửi', hv: 'tồn',em:'🏦',lesson:3,
    explain:['Gửi (đồ, tiền) để giữ. 存包 = gửi túi; 存钱 = gửi tiền; 存在 = tồn tại.'],
    usage:'存包, 存钱, 把行李存在……',
    collo:['存包的钥匙','存钱','把包存在这里'],
@@ -369,7 +369,7 @@ var vocabData = [
       note:'部分 (Bài 13), 工资 (Bài 10), 把……进.'},
    ]},
 
-  {n:19,zh:'钥匙',py:'yàoshi',pos:'Danh từ',vn:'chìa khóa',em:'🔑',lesson:3,
+  {n:19,zh:'钥匙',py:'yàoshi',pos:'Danh từ',vn:'chìa khóa', hv: 'thược thi',em:'🔑',lesson:3,
    explain:['Dụng cụ mở khóa. 一把钥匙, 钥匙丢了, 房间的钥匙.'],
    usage:'一把钥匙, 钥匙丢了, 存包的钥匙.',
    collo:['存包的钥匙','钥匙丢了','找到钥匙'],
@@ -392,7 +392,7 @@ var vocabData = [
       note:'丢 (Bài 14), 还是 (Bài 1), 把……了.'},
    ]},
 
-  {n:20,zh:'究竟',py:'jiūjìng',pos:'Phó từ',vn:'rốt cuộc (nhấn mạnh trong câu hỏi)',em:'❓',lesson:3,
+  {n:20,zh:'究竟',py:'jiūjìng',pos:'Phó từ',vn:'rốt cuộc (nhấn mạnh trong câu hỏi)', hv: 'cứu cánh',em:'❓',lesson:3,
    explain:['Nhấn mạnh truy vấn trong câu hỏi hoặc câu có đại từ nghi vấn (= 到底 Bài 16), thiên về văn viết. Chủ ngữ là đại từ nghi vấn → 究竟 đứng trước. Ngữ pháp trọng tâm: 究竟 vs 到底.'],
    usage:'究竟哪个……？, 究竟是怎么回事, 究竟什么是……？',
    collo:['究竟哪个季节去比较好','究竟是怎么回事','究竟从哪里来'],
@@ -417,7 +417,7 @@ var vocabData = [
       note:'究竟 đứng trước đại từ nghi vấn làm chủ ngữ; 季节 (Bài 7).'},
    ]},
 
-  {n:21,zh:'棵',py:'kē',pos:'Lượng từ',vn:'cây, ngọn (dùng cho thực vật)',em:'🌳',lesson:4,
+  {n:21,zh:'棵',py:'kē',pos:'Lượng từ',vn:'cây, ngọn (dùng cho thực vật)', hv: 'khỏa',em:'🌳',lesson:4,
    explain:['Lượng từ cho cây cối: 一棵树, 一棵草, 两棵植物. Phân biệt 颗 (kē – hạt nhỏ, viên).'],
    usage:'一棵树, 一棵一棵地, 两棵植物.',
    collo:['窗外的树一棵一棵地变绿','一棵大树','两棵不同的植物'],
@@ -437,7 +437,7 @@ var vocabData = [
       note:'植物 (Bài 12), 到底 (Bài 16), 区别 (Bài 8).'},
    ]},
 
-  {n:22,zh:'汤',py:'tāng',pos:'Danh từ',vn:'canh, súp',em:'🍲',lesson:4,
+  {n:22,zh:'汤',py:'tāng',pos:'Danh từ',vn:'canh, súp', hv: 'thang',em:'🍲',lesson:4,
    explain:['Món nước. 鸡蛋汤, 喝汤, 一碗汤. 汤 vs 场 (chǎng).'],
    usage:'喝汤, 鸡蛋汤, 一碗汤.',
    collo:['特别是汤','鸡蛋汤','喝一碗汤'],
@@ -457,7 +457,7 @@ var vocabData = [
       note:'特点 (Bài 18), 味道 (Bài 7).'},
    ]},
 
-  {n:23,zh:'对话',py:'duìhuà',pos:'Động từ',vn:'đối thoại, tiếp xúc',em:'💬',lesson:4,
+  {n:23,zh:'对话',py:'duìhuà',pos:'Động từ',vn:'đối thoại, tiếp xúc', hv: 'đối thoại',em:'💬',lesson:4,
    explain:['Nói chuyện qua lại. 跟……对话, 一段对话, 完成对话.'],
    usage:'跟上海人对话, 一段对话, 对话练习.',
    collo:['跟上海人对话时','完成对话','一段对话'],
@@ -477,7 +477,7 @@ var vocabData = [
       note:'听起来 (ngữ pháp bài), 像……一样 (Bài 6).'},
    ]},
 
-  {n:24,zh:'普通话',py:'pǔtōnghuà',pos:'Danh từ',vn:'tiếng phổ thông, tiếng Quan thoại',em:'🗣️',lesson:4,
+  {n:24,zh:'普通话',py:'pǔtōnghuà',pos:'Danh từ',vn:'tiếng phổ thông, tiếng Quan thoại', hv: 'phổ thông thoại',em:'🗣️',lesson:4,
    explain:['Tiếng Trung chuẩn. 普通 (Bài 12) = phổ thông. 讲普通话, 普通话水平考试.'],
    usage:'讲普通话, 普通话水平考试, 说普通话.',
    collo:['上海人也会讲普通话','普通话水平考试','普通话说得很标准'],
@@ -497,7 +497,7 @@ var vocabData = [
       note:'错过 (Bài 4), 报名 (Bài 16).'},
    ]},
 
-  {n:25,zh:'小吃',py:'xiǎochī',pos:'Danh từ',vn:'món ăn vặt',em:'🍢',lesson:5,
+  {n:25,zh:'小吃',py:'xiǎochī',pos:'Danh từ',vn:'món ăn vặt', hv: 'tiểu ngật',em:'🍢',lesson:5,
    explain:['Món ăn nhẹ đặc sản. 有名的小吃, 各地的小吃, 小吃街.'],
    usage:'有名的小吃, 各地的小吃, 尝小吃.',
    collo:['尝到各地有名的小吃','美食小吃','小吃街'],
@@ -517,7 +517,7 @@ var vocabData = [
       note:'对……来说 (Bài 5), 尝 (Bài 7), 各地.'},
    ]},
 
-  {n:26,zh:'收拾',py:'shōushi',pos:'Động từ',vn:'thu dọn, thu xếp',em:'🧹',lesson:5,
+  {n:26,zh:'收拾',py:'shōushi',pos:'Động từ',vn:'thu dọn, thu xếp', hv: 'thu thập',em:'🧹',lesson:5,
    explain:['Dọn dẹp, sắp xếp (≈ 整理 Bài 15). 收拾行李, 收拾房间, 收拾好.'],
    usage:'收拾行李, 收拾房间, 收拾一下.',
    collo:['收拾好行李','收拾房间','抽时间收拾一下'],
@@ -537,7 +537,7 @@ var vocabData = [
       note:'什么的 (Bài 14), 扔 (Bài 14), 乱 (Bài 14), 抽 (Bài 7).'},
    ]},
 
-  {n:27,zh:'出发',py:'chūfā',pos:'Động từ',vn:'xuất phát, khởi hành',em:'🚀',lesson:5,
+  {n:27,zh:'出发',py:'chūfā',pos:'Động từ',vn:'xuất phát, khởi hành', hv: 'xuất phát',em:'🚀',lesson:5,
    explain:['Bắt đầu đi. 向……出发, 几点出发, 马上出发. Trái với 到达.'],
    usage:'向目的地出发, 几点出发, 一放假就出发.',
    collo:['向目的地出发','马上出发','一放假就出发'],
@@ -557,7 +557,7 @@ var vocabData = [
       note:'地点 (Bài 18), 整理 (Bài 15).'},
    ]},
 
-  {n:28,zh:'辣',py:'là',pos:'Tính từ',vn:'cay',em:'🌶️',lesson:5,
+  {n:28,zh:'辣',py:'là',pos:'Tính từ',vn:'cay', hv: 'lạt',em:'🌶️',lesson:5,
    explain:['Vị cay. 太辣了, 咸辣, 香辣, 酸辣. 湖南菜的特点就是辣.'],
    usage:'很辣, 太辣了, 又辣又香.',
    collo:['湖南菜的特点就是辣','咸辣、香辣和酸辣','不能吃辣'],
@@ -577,7 +577,7 @@ var vocabData = [
       note:'一……就 (ngữ pháp bài), 咳嗽 (Bài 7).'},
    ]},
 
-  {n:29,zh:'香',py:'xiāng',pos:'Tính từ',vn:'thơm',em:'🌸',lesson:5,
+  {n:29,zh:'香',py:'xiāng',pos:'Tính từ',vn:'thơm', hv: 'hương',em:'🌸',lesson:5,
    explain:['Mùi/vị thơm ngon. 很香, 香辣, 饺子很香, 睡得很香 (ngủ ngon).'],
    usage:'很香, 香辣, 饭菜很香.',
    collo:['香辣','饺子很香','花很香'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'饺子 (Bài 19), 稍微 (Bài 13), 咸 (Bài 18).'},
    ]},
 
-  {n:30,zh:'酸',py:'suān',pos:'Tính từ',vn:'chua',em:'🍋',lesson:5,
+  {n:30,zh:'酸',py:'suān',pos:'Tính từ',vn:'chua', hv: 'toan',em:'🍋',lesson:5,
    explain:['Vị chua. 酸辣, 太酸了, 又酸又甜. Cũng nghĩa "mỏi": 腿酸.'],
    usage:'很酸, 酸辣, 又酸又甜.',
    collo:['酸辣','又酸又甜','太酸了'],

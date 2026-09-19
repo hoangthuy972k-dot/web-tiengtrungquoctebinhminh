@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'凉快',py:'liángkuai',pos:'Tính từ',vn:'mát mẻ',em:'🍃',lesson:1,
+  {n:1,zh:'凉快',py:'liángkuai',pos:'Tính từ',vn:'mát mẻ', hv: 'lương khoái',em:'🍃',lesson:1,
    explain:['Mát (thời tiết). 天气凉快, 凉快多了. So sánh 凉 (mát, lạnh): 凉茶 (Bài 13).'],
    usage:'天气凉快, 凉快多了, 越来越凉快.',
    collo:['越来越凉快','凉快多了','这儿很凉快'],
@@ -23,7 +23,7 @@ var vocabData = [
       note:'Tính từ + 多了 (Bài 8), 实在 (Bài 11).'},
    ]},
 
-  {n:2,zh:'热闹',py:'rènao',pos:'Tính từ',vn:'náo nhiệt',em:'🎉',lesson:1,
+  {n:2,zh:'热闹',py:'rènao',pos:'Tính từ',vn:'náo nhiệt', hv: 'nhiệt náo',em:'🎉',lesson:1,
    explain:['Đông vui, nhộn nhịp. 热闹极了, 特别热闹, 不喜欢热闹.'],
    usage:'特别热闹, 热闹极了, 喜欢热闹.',
    collo:['香山特别热闹','动物园里热闹极了','不太喜欢热闹'],
@@ -43,7 +43,7 @@ var vocabData = [
       note:'极了 (Bài 4), 入口/排队 (từ mới).'},
    ]},
 
-  {n:3,zh:'云',py:'yún',pos:'Danh từ',vn:'mây',em:'☁️',lesson:1,
+  {n:3,zh:'云',py:'yún',pos:'Danh từ',vn:'mây', hv: 'vân',em:'☁️',lesson:1,
    explain:['Mây trên trời. 天上的云, 一朵云, 白云.'],
    usage:'天上的云, 白云, 云很多.',
    collo:['天上的云','一朵白云','云越来越厚'],
@@ -63,7 +63,7 @@ var vocabData = [
       note:'厚 (Bài 13), 恐怕 (Bài 16), 要……了.'},
    ]},
 
-  {n:4,zh:'广播',py:'guǎngbō',pos:'Danh từ',vn:'chương trình phát thanh/truyền hình',em:'📻',lesson:1,
+  {n:4,zh:'广播',py:'guǎngbō',pos:'Danh từ',vn:'chương trình phát thanh/truyền hình', hv: 'quảng bá',em:'📻',lesson:1,
    explain:['Phát thanh, chương trình phát trên đài. 听广播, 广播里说, 广播说.'],
    usage:'听广播, 广播里说, 广播说明天……',
    collo:['广播里说','刚才听广播说','学校广播'],
@@ -83,7 +83,7 @@ var vocabData = [
       note:'恐怕 (Bài 16), 推迟 (Bài 4).'},
    ]},
 
-  {n:5,zh:'照',py:'zhào',pos:'Động từ',vn:'chụp (ảnh); chiếu',em:'📷',lesson:1,
+  {n:5,zh:'照',py:'zhào',pos:'Động từ',vn:'chụp (ảnh); chiếu', hv: 'chiếu',em:'📷',lesson:1,
    explain:['(1) Chụp ảnh: 照相, 照照片. (2) Chiếu sáng: 灯光照到, 阳光照在.'],
    usage:'照照片, 照相, 照到.',
    collo:['多照点儿照片','给它们照照片','灯光照到'],
@@ -103,7 +103,7 @@ var vocabData = [
       note:'可惜 (Bài 12), 多 + động từ + 点儿.'},
    ]},
 
-  {n:6,zh:'倒',py:'dào',pos:'Phó từ',vn:'nhưng, lại (chỉ sự tương phản)',em:'🔄',lesson:1,
+  {n:6,zh:'倒',py:'dào',pos:'Phó từ',vn:'nhưng, lại (chỉ sự tương phản)', hv: 'đảo',em:'🔄',lesson:1,
    explain:['Phó từ: trái với dự đoán, ngữ khí trách móc hoặc nhượng bộ (倒是). Động từ: đổ, rót (倒水, 倒茶). Ngữ pháp trọng tâm.'],
    usage:'倒是……，就是……; 倒比……还……; 倒杯水.',
    collo:['倒是一个好主意','倒比骑车还慢','给我倒杯水'],
@@ -125,7 +125,7 @@ var vocabData = [
       note:'困 (Bài 4), 死 (Bài 12) làm bổ ngữ mức độ.'},
    ]},
 
-  {n:7,zh:'毛',py:'máo',pos:'Danh từ',vn:'lông',em:'🐕',lesson:2,
+  {n:7,zh:'毛',py:'máo',pos:'Danh từ',vn:'lông', hv: 'mao',em:'🐕',lesson:2,
    explain:['Lông động vật, tóc (头发 = 毛发). 毛巾 (Bài 14) = khăn bông; 毛 cũng là đơn vị tiền (一毛钱).'],
    usage:'狗毛, 毛很漂亮, 动物的皮毛.',
    collo:['毛真漂亮','狗毛','用动物的皮毛做的衣服'],
@@ -145,7 +145,7 @@ var vocabData = [
       note:'又……又 (Bài 1), 起来 (Bài 15).'},
    ]},
 
-  {n:8,zh:'抱',py:'bào',pos:'Động từ',vn:'bế, bồng, ôm',em:'🤗',lesson:2,
+  {n:8,zh:'抱',py:'bào',pos:'Động từ',vn:'bế, bồng, ôm', hv: 'bão',em:'🤗',lesson:2,
    explain:['Ôm vào lòng. 抱一抱, 抱着孩子, 抱歉 (Bài 14) = ôm nỗi áy náy.'],
    usage:'抱一抱, 抱着, 抱孩子.',
    collo:['想抱一抱它','抱着孩子','紧紧地抱住'],
@@ -165,7 +165,7 @@ var vocabData = [
       note:'激动 (Bài 16), 地 (trạng ngữ).'},
    ]},
 
-  {n:9,zh:'干',py:'gàn',pos:'Động từ',vn:'làm',em:'🛠️',lesson:2,
+  {n:9,zh:'干',py:'gàn',pos:'Động từ',vn:'làm', hv: 'cán',em:'🛠️',lesson:2,
    explain:['Làm (việc, sự nghiệp) — khẩu ngữ. 干什么, 干工作, 好好儿干. Đọc gān = khô (擦干, 牛肉干). Ngữ pháp trọng tâm.'],
    usage:'干什么, 好好儿干, 干活儿.',
    collo:['让它干什么','好好儿干','干工作'],
@@ -187,7 +187,7 @@ var vocabData = [
       note:'仔细 (Bài 12), 否则 (Bài 11).'},
    ]},
 
-  {n:10,zh:'严格',py:'yángé',pos:'Tính từ',vn:'nghiêm khắc, nghiêm ngặt',em:'📏',lesson:2,
+  {n:10,zh:'严格',py:'yángé',pos:'Tính từ',vn:'nghiêm khắc, nghiêm ngặt', hv: 'nghiêm cách',em:'📏',lesson:2,
    explain:['Yêu cầu chặt chẽ, không dễ dãi. 严格按照, 严格要求, 对……很严格.'],
    usage:'严格按照要求, 严格要求自己, 对学生很严格.',
    collo:['严格按照你的要求','严格要求自己','老师很严格'],
@@ -207,7 +207,7 @@ var vocabData = [
       note:'对……严格, 尊重 (Bài 16).'},
    ]},
 
-  {n:11,zh:'难受',py:'nánshòu',pos:'Tính từ',vn:'bực bội, buồn rầu; khó chịu',em:'😣',lesson:2,
+  {n:11,zh:'难受',py:'nánshòu',pos:'Tính từ',vn:'bực bội, buồn rầu; khó chịu', hv: 'nan thụ',em:'😣',lesson:2,
    explain:['(1) Trong lòng buồn, khó chịu: 心里难受. (2) Cơ thể khó chịu: 头疼得难受. Trái nghĩa: 舒服.'],
    usage:'心里难受, 有些难受, 难受极了.',
    collo:['在你心里难受的时候','坐久了有些难受','难受得吃不下饭'],
@@ -227,7 +227,7 @@ var vocabData = [
       note:'确实 (Bài 9), 有些 (Bài 4).'},
    ]},
 
-  {n:12,zh:'趟',py:'tàng',pos:'Lượng từ',vn:'lần, chuyến (số lần đi lại)',em:'🚶',lesson:3,
+  {n:12,zh:'趟',py:'tàng',pos:'Lượng từ',vn:'lần, chuyến (số lần đi lại)', hv: 'thảng',em:'🚶',lesson:3,
    explain:['Lượng từ động lượng cho hành động đi–về: 去一趟, 回一趟家, 出趟差. Cũng dùng cho chuyến xe/tàu (好几趟公共汽车). Ngữ pháp trọng tâm: 趟 vs 次.'],
    usage:'去了趟……, 回一趟家, 出趟差.',
    collo:['去了趟北京动物园','回一趟家','出趟差'],
@@ -249,7 +249,7 @@ var vocabData = [
       note:'先……然后 (Bài 3), 研究生 (Bài 9).'},
    ]},
 
-  {n:13,zh:'放暑假',py:'fàng shǔjià',pos:'Cụm động từ',vn:'nghỉ hè',em:'🏖️',lesson:3,
+  {n:13,zh:'放暑假',py:'fàng shǔjià',pos:'Cụm động từ',vn:'nghỉ hè', hv: 'phóng thử giá',em:'🏖️',lesson:3,
    explain:['Được nghỉ hè. 暑假 = kỳ nghỉ hè (Bài 1); 放寒假 (Bài 15) = nghỉ đông.'],
    usage:'放暑假的时候, 马上就要放暑假了, 放暑假了.',
    collo:['去年放暑假的时候','马上就要放暑假了','放暑假回家'],
@@ -269,7 +269,7 @@ var vocabData = [
       note:'就要……了 (Bài 2), 安排 (Bài 6).'},
    ]},
 
-  {n:14,zh:'老虎',py:'lǎohǔ',pos:'Danh từ',vn:'hổ, cọp',em:'🐯',lesson:3,
+  {n:14,zh:'老虎',py:'lǎohǔ',pos:'Danh từ',vn:'hổ, cọp', hv: 'lão hổ',em:'🐯',lesson:3,
    explain:['Con hổ. Lượng từ: 只. 马虎 (Bài 16) có chữ 虎.'],
    usage:'一只老虎, 看老虎, 老虎很厉害.',
    collo:['一只老虎','动物园里的老虎','老虎和熊猫'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'……之一 (Bài 10), 厉害 (Bài 11), 森林 (từ mới).'},
    ]},
 
-  {n:15,zh:'入口',py:'rùkǒu',pos:'Danh từ',vn:'cổng vào, lối vào',em:'🚪',lesson:3,
+  {n:15,zh:'入口',py:'rùkǒu',pos:'Danh từ',vn:'cổng vào, lối vào', hv: 'nhập khẩu',em:'🚪',lesson:3,
    explain:['Lối vào. Trái nghĩa: 出口 (lối ra). 入口处 = chỗ cổng vào.'],
    usage:'入口处, 在入口等你, 动物园的入口.',
    collo:['入口处排队','在入口等','找到入口'],
@@ -309,7 +309,7 @@ var vocabData = [
       note:'博物馆 (Bài 16 chữ 博), 见面.'},
    ]},
 
-  {n:16,zh:'排队',py:'pái duì',pos:'Động từ',vn:'xếp hàng',em:'🧍‍♂️🧍‍♀️',lesson:3,
+  {n:16,zh:'排队',py:'pái duì',pos:'Động từ',vn:'xếp hàng', hv: 'bài đội',em:'🧍‍♂️🧍‍♀️',lesson:3,
    explain:['Đứng thành hàng chờ. Động từ ly hợp: 排了很长的队, 排队买票.'],
    usage:'排队买票, 排队的人很多, 排了很长时间的队.',
    collo:['排队的人很多','排队买票','排很长的队'],
@@ -332,7 +332,7 @@ var vocabData = [
       note:'为了 (Bài 4), 演出 (Bài 13), ly hợp 排……队.'},
    ]},
 
-  {n:17,zh:'活泼',py:'huópō',pos:'Tính từ',vn:'hoạt bát, nhanh nhẹn',em:'🐼',lesson:3,
+  {n:17,zh:'活泼',py:'huópō',pos:'Tính từ',vn:'hoạt bát, nhanh nhẹn', hv: 'hoạt bát',em:'🐼',lesson:3,
    explain:['Nhanh nhẹn, sinh động (người, động vật, không khí). 活泼可爱, 性格活泼.'],
    usage:'性格活泼, 活泼可爱, 变得活泼.',
    collo:['变得特别活泼','活泼可爱的女孩子','性格活泼'],
@@ -352,7 +352,7 @@ var vocabData = [
       note:'可爱 (Bài 15), 条件 (Bài 6).'},
    ]},
 
-  {n:18,zh:'社会',py:'shèhuì',pos:'Danh từ',vn:'xã hội',em:'🏙️',lesson:4,
+  {n:18,zh:'社会',py:'shèhuì',pos:'Danh từ',vn:'xã hội', hv: 'xã hội',em:'🏙️',lesson:4,
    explain:['Cộng đồng người. 社会上, 社会的发展, 进入社会.'],
    usage:'社会上的人, 随着社会的发展, 社会问题.',
    collo:['社会上的人与人之间','社会的发展','进入社会'],
@@ -372,7 +372,7 @@ var vocabData = [
       note:'毕业 (Bài 9), 才 (Bài 3).'},
    ]},
 
-  {n:19,zh:'竞争',py:'jìngzhēng',pos:'Động từ',vn:'cạnh tranh',em:'🏁',lesson:4,
+  {n:19,zh:'竞争',py:'jìngzhēng',pos:'Động từ',vn:'cạnh tranh', hv: 'cạnh tranh',em:'🏁',lesson:4,
    explain:['Ganh đua để giành phần hơn. Cũng làm danh từ: 有竞争, 竞争很激烈.'],
    usage:'为了……而竞争, 有竞争, 竞争激烈.',
    collo:['为了阳光、空气和水而竞争','人与人之间有竞争','竞争很激烈'],
@@ -395,7 +395,7 @@ var vocabData = [
       note:'重视/积累 (Bài 16), 越来越 (Bài 1).'},
    ]},
 
-  {n:20,zh:'森林',py:'sēnlín',pos:'Danh từ',vn:'rừng rậm',em:'🌲',lesson:4,
+  {n:20,zh:'森林',py:'sēnlín',pos:'Danh từ',vn:'rừng rậm', hv: 'sâm lâm',em:'🌲',lesson:4,
    explain:['Rừng lớn nhiều cây. 森林里的植物, 保护森林.'],
    usage:'森林里, 保护森林, 一片森林.',
    collo:['森林里的各种植物','保护森林','如果没有森林'],
@@ -415,7 +415,7 @@ var vocabData = [
       note:'地球 (Bài 14), 责任 (Bài 10), 保护 (Bài 12).'},
    ]},
 
-  {n:21,zh:'剩',py:'shèng',pos:'Động từ',vn:'còn lại, thừa',em:'🍚',lesson:4,
+  {n:21,zh:'剩',py:'shèng',pos:'Động từ',vn:'còn lại, thừa', hv: 'thặng',em:'🍚',lesson:4,
    explain:['Còn dư lại sau khi dùng. 剩下, 剩下的, 还剩……'],
    usage:'剩下的植物, 还剩十几页, 剩了很多菜.',
    collo:['剩下的一些植物','就剩十几页了','剩了很多'],
@@ -435,7 +435,7 @@ var vocabData = [
       note:'页 (Bài 11), 到底 (Bài 16).'},
    ]},
 
-  {n:22,zh:'暖和',py:'nuǎnhuo',pos:'Tính từ',vn:'ấm áp',em:'🌤️',lesson:4,
+  {n:22,zh:'暖和',py:'nuǎnhuo',pos:'Tính từ',vn:'ấm áp', hv: 'noãn hòa',em:'🌤️',lesson:4,
    explain:['Ấm (thời tiết, nơi chốn, quần áo). 暖 (Bài 14) + 和. 天气暖和, 屋里很暖和.'],
    usage:'天气暖和, 暖和的地方, 越来越暖和.',
    collo:['在暖和、水分比较多的地方','那儿非常暖和','越来越暖和'],
@@ -455,7 +455,7 @@ var vocabData = [
       note:'一点儿也不 (Bài 6), 不用.'},
    ]},
 
-  {n:23,zh:'海洋',py:'hǎiyáng',pos:'Danh từ',vn:'biển, đại dương',em:'🌊',lesson:5,
+  {n:23,zh:'海洋',py:'hǎiyáng',pos:'Danh từ',vn:'biển, đại dương', hv: 'hải dương',em:'🌊',lesson:5,
    explain:['Biển lớn, đại dương. 海洋底部, 蓝色的海洋, 海洋动物.'],
    usage:'蓝色的海洋, 海洋底部, 保护海洋.',
    collo:['蓝色的海洋','海洋底部','海洋跟我们的生活'],
@@ -475,7 +475,7 @@ var vocabData = [
       note:'然而 (Bài 11), 却 (Bài 2), 一点儿也没有.'},
    ]},
 
-  {n:24,zh:'底',py:'dǐ',pos:'Danh từ',vn:'đáy',em:'⬇️',lesson:5,
+  {n:24,zh:'底',py:'dǐ',pos:'Danh từ',vn:'đáy', hv: 'để',em:'⬇️',lesson:5,
    explain:['Phần thấp nhất. 海底, 底部, 底下; cũng là "cuối": 月底 (Bài 11), 年底; 到底 (Bài 16).'],
    usage:'海底, 底部, 年底.',
    collo:['海底世界','海洋底部','桌子底下'],
@@ -495,7 +495,7 @@ var vocabData = [
       note:'掉 (Bài 5), 沙发 (Bài 11), động từ lặp + 看.'},
    ]},
 
-  {n:25,zh:'美人鱼',py:'Měirényú',pos:'Danh từ',vn:'người cá',em:'🧜‍♀️',lesson:5,
+  {n:25,zh:'美人鱼',py:'Měirényú',pos:'Danh từ',vn:'người cá', hv: 'Mỹ Nhân Ngư',em:'🧜‍♀️',lesson:5,
    explain:['Nhân vật trong truyện cổ tích Andersen. 美人鱼的故事.'],
    usage:'美人鱼的故事, 听过美人鱼.',
    collo:['美人鱼的故事','听过美人鱼','像美人鱼一样'],
@@ -515,7 +515,7 @@ var vocabData = [
       note:'著名 (Bài 10), 童 (Bài 15).'},
    ]},
 
-  {n:26,zh:'公里',py:'gōnglǐ',pos:'Lượng từ',vn:'kilômét',em:'📏',lesson:5,
+  {n:26,zh:'公里',py:'gōnglǐ',pos:'Lượng từ',vn:'kilômét', hv: 'công lí',em:'📏',lesson:5,
    explain:['Đơn vị chiều dài = 1000 mét. 几公里深, 三公里远, 每小时100公里.'],
    usage:'几公里深, 离这儿三公里, 一万米 = 10公里.',
    collo:['几公里深的海底','离学校两公里','每小时120公里'],
@@ -535,7 +535,7 @@ var vocabData = [
       note:'大约 (Bài 13), 左右 (Bài 15).'},
    ]},
 
-  {n:27,zh:'仍然',py:'réngrán',pos:'Phó từ',vn:'vẫn',em:'♾️',lesson:5,
+  {n:27,zh:'仍然',py:'réngrán',pos:'Phó từ',vn:'vẫn', hv: 'nhưng nhiên',em:'♾️',lesson:5,
    explain:['Tình huống như cũ, không thay đổi (= 还是). Ngữ pháp trọng tâm. Cùng nhóm 然: 既然 (Bài 14), 竟然 (Bài 6), 突然 (Bài 8).'],
    usage:'仍然能……, 仍然是……, 仍然觉得.',
    collo:['仍然能看到东西','仍然有很多值得学习的地方','仍然是0比0'],
@@ -557,7 +557,7 @@ var vocabData = [
       note:'按照 (Bài 4), 规定 (Bài 12), 进行 (Bài 13), 来 (Bài 15), 输/赢 (Bài 16, 9).'},
    ]},
 
-  {n:28,zh:'排列',py:'páiliè',pos:'Động từ',vn:'sắp xếp (theo thứ tự)',em:'🔢',lesson:5,
+  {n:28,zh:'排列',py:'páiliè',pos:'Động từ',vn:'sắp xếp (theo thứ tự)', hv: 'bài liệt',em:'🔢',lesson:5,
    explain:['Xếp theo thứ tự, hàng lối. 排列起来, 按……排列, 排列整齐.'],
    usage:'排列起来, 按大小排列, 排列得很整齐.',
    collo:['像一个个排列起来的灯','按顺序排列','排列整齐'],
@@ -577,7 +577,7 @@ var vocabData = [
       note:'把 + 按照 (Bài 4) + bổ ngữ 好.'},
    ]},
 
-  {n:29,zh:'梦',py:'mèng',pos:'Danh từ',vn:'giấc mơ',em:'💭',lesson:5,
+  {n:29,zh:'梦',py:'mèng',pos:'Danh từ',vn:'giấc mơ', hv: 'mộng',em:'💭',lesson:5,
    explain:['Giấc mơ khi ngủ; ước mơ. 做梦 = nằm mơ; 在梦里; 有梦的老人 = người có ước mơ.'],
    usage:'做梦, 在梦里, 有梦.',
    collo:['就像在梦里一样','做了一个梦','有梦的老人'],

@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'可以',py:'kěyǐ',pos:'Động từ năng nguyện',vn:'có thể, được (cho phép làm gì)',em:'👍',lesson:1,
+  {n:1,zh:'可以',py:'kěyǐ',pos:'Động từ năng nguyện',vn:'có thể, được (cho phép làm gì)', hv: 'khả dĩ',em:'👍',lesson:1,
    ex_zh:'王老师，我可以再问您一个问题吗？',ex_py:'Wáng lǎoshī, wǒ kěyǐ zài wèn nín yí gè wèntí ma?',ex_vn:'Thưa cô Vương, em có thể hỏi thêm cô một câu nữa không ạ?',
    exList:[{zh:'王老师，我可以再问您一个问题吗？',py:'Wáng lǎoshī, wǒ kěyǐ zài wèn nín yí gè wèntí ma?',vn:'Thưa cô Vương, em có thể hỏi thêm cô một câu nữa không ạ?'}],
    hanzi:[
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'亻(người) cầm công cụ (nét chấm-phẩy bên trái) để làm việc gì → nghĩa DÙNG, mở rộng thành ĐỂ, BẰNG.',
       cf:'似 (sì – "giống như", chính là 亻 + 以 ghép lại")',w:'可以 / 所以 / 以为'},
    ]},
-  {n:2,zh:'再',py:'zài',pos:'Phó từ',vn:'lại, thêm lần nữa',em:'🔁',lesson:1,
+  {n:2,zh:'再',py:'zài',pos:'Phó từ',vn:'lại, thêm lần nữa', hv: 'tái',em:'🔁',lesson:1,
    ex_zh:'王老师，我可以再问您一个问题吗？',ex_py:'Wáng lǎoshī, wǒ kěyǐ zài wèn nín yí gè wèntí ma?',ex_vn:'Thưa cô Vương, em có thể hỏi thêm cô một câu nữa không ạ?',
    exList:[{zh:'王老师，我可以再问您一个问题吗？',py:'Wáng lǎoshī, wǒ kěyǐ zài wèn nín yí gè wèntí ma?',vn:'Thưa cô Vương, em có thể hỏi thêm cô một câu nữa không ạ?'}],
    hanzi:[
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'Hình ảnh một vật được xếp CHỒNG thêm một lớp nữa lên trên lớp cũ → biểu thị lặp LẠI, làm THÊM một lần nữa.',
       cf:'冉 (rǎn – ít dùng, thiếu nét ngang trên đầu")',w:'再见 / 再问 / 再来'},
    ]},
-  {n:3,zh:'问题',py:'wèntí',pos:'Danh từ',vn:'câu hỏi, vấn đề',em:'❓',lesson:1,
+  {n:3,zh:'问题',py:'wèntí',pos:'Danh từ',vn:'câu hỏi, vấn đề', hv: 'vấn đề',em:'❓',lesson:1,
    ex_zh:'可以。你有什么问题？',ex_py:'Kěyǐ. Nǐ yǒu shénme wèntí?',ex_vn:'Được chứ. Em có vấn đề gì nào?',
    exList:[{zh:'可以。你有什么问题？',py:'Kěyǐ. Nǐ yǒu shénme wèntí?',vn:'Được chứ. Em có vấn đề gì nào?'}],
    hanzi:[
@@ -33,7 +33,7 @@ var vocabData = [
       tip:'页(cái đầu/trang giấy) đi cùng 是(là, khẳng định) → nội dung được ghi ra để hỏi "là" gì, tức ĐỀ BÀI, VẤN ĐỀ.',
       cf:'提 (tí – "nêu ra", bộ 扌thay vì 页")',w:'问题 / 题目'},
    ]},
-  {n:4,zh:'卖',py:'mài',pos:'Động từ',vn:'bán',em:'🏪',lesson:1,
+  {n:4,zh:'卖',py:'mài',pos:'Động từ',vn:'bán', hv: 'mại',em:'🏪',lesson:1,
    ex_zh:'那个小店卖不卖手机？',ex_py:'Nàge xiǎo diàn mài bu mài shǒujī?',ex_vn:'Cửa hàng nhỏ kia có bán điện thoại di động không ạ?',
    exList:[{zh:'那个小店卖不卖手机？',py:'Nàge xiǎo diàn mài bu mài shǒujī?',vn:'Cửa hàng nhỏ kia có bán điện thoại di động không ạ?'}],
    hanzi:[
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'十(nhiều, đầy đủ) trên + 买(mua) dưới → có nhiều hàng đưa ra cho người MUA, tức là BÁN.',
       cf:'买 (mǎi – "mua", nghĩa ngược lại, thiếu nét 十 ở trên")',w:'卖不卖 / 买卖'},
    ]},
-  {n:5,zh:'打电话',py:'dǎ diànhuà',pos:'Cụm động từ',vn:'gọi điện thoại',em:'📞',lesson:1,
+  {n:5,zh:'打电话',py:'dǎ diànhuà',pos:'Cụm động từ',vn:'gọi điện thoại', hv: 'đả điện thoại',em:'📞',lesson:1,
    ex_zh:'我不知道。你可以打电话问一下。',ex_py:'Wǒ bù zhīdào. Nǐ kěyǐ dǎ diànhuà wèn yíxià.',ex_vn:'Cô không biết. Em có thể gọi điện thoại hỏi xem.',
    exList:[{zh:'我不知道。你可以打电话问一下。',py:'Wǒ bù zhīdào. Nǐ kěyǐ dǎ diànhuà wèn yíxià.',vn:'Cô không biết. Em có thể gọi điện thoại hỏi xem.'}],
    hanzi:[
@@ -55,7 +55,7 @@ var vocabData = [
       tip:'讠(lời nói) + 舌(cái lưỡi) → dùng LƯỠI để NÓI CHUYỆN, phát ra LỜI.',
       cf:'活 (huó – "sống", bộ 氵thay vì 讠")',w:'电话 / 说话 / 汉语'},
    ]},
-  {n:6,zh:'一下',py:'yíxià',pos:'Số lượng từ',vn:'một chút, thử (dùng sau động từ, biểu thị hành động xảy ra nhanh hoặc thử làm)',em:'⏱️',lesson:1,
+  {n:6,zh:'一下',py:'yíxià',pos:'Số lượng từ',vn:'một chút, thử (dùng sau động từ, biểu thị hành động xảy ra nhanh hoặc thử làm)', hv: 'nhất hạ',em:'⏱️',lesson:1,
    ex_zh:'我不知道。你可以打电话问一下。',ex_py:'Wǒ bù zhīdào. Nǐ kěyǐ dǎ diànhuà wèn yíxià.',ex_vn:'Cô không biết. Em có thể gọi điện thoại hỏi xem.',
    exList:[{zh:'我不知道。你可以打电话问一下。',py:'Wǒ bù zhīdào. Nǐ kěyǐ dǎ diànhuà wèn yíxià.',vn:'Cô không biết. Em có thể gọi điện thoại hỏi xem.'}],
    hanzi:[
@@ -66,7 +66,7 @@ var vocabData = [
       tip:'Một nét NGANG làm mốc, nét chấm/móc bên dưới chỉ vị trí THẤP hơn mốc đó → nghĩa DƯỚI, XUỐNG.',
       cf:'卡 (kǎ – "thẻ", ghép 上 + 下")',w:'一下 / 下午 / 楼下'},
    ]},
-  {n:7,zh:'服务员',py:'fúwùyuán',pos:'Danh từ',vn:'nhân viên phục vụ, người phục vụ',em:'🧑‍🍳',lesson:2,
+  {n:7,zh:'服务员',py:'fúwùyuán',pos:'Danh từ',vn:'nhân viên phục vụ, người phục vụ', hv: 'phục vụ viên',em:'🧑‍🍳',lesson:2,
    ex_zh:'女士，请坐！您喝什么？',ex_py:'Nǚshì, qǐng zuò! Nín hē shénme?',ex_vn:'Mời cô ngồi! Cô uống gì ạ?',
    exList:[{zh:'女士，请坐！您喝什么？',py:'Nǚshì, qǐng zuò! Nín hē shénme?',vn:'Mời cô ngồi! Cô uống gì ạ?'}],
    hanzi:[
@@ -80,7 +80,7 @@ var vocabData = [
       tip:'口(miệng, chỉ số đếm người) trên 贝(tiền của, công ty) dưới → chỉ một THÀNH VIÊN, NHÂN VIÊN làm việc hưởng lương.',
       cf:'贝 (bèi – "vật báu, tiền", thiếu phần 口 phía trên")',w:'服务员 / 学员 / 演员'},
    ]},
-  {n:8,zh:'女士',py:'nǚshì',pos:'Danh từ',vn:'bà, cô, quý bà, quý cô',em:'👩',lesson:2,
+  {n:8,zh:'女士',py:'nǚshì',pos:'Danh từ',vn:'bà, cô, quý bà, quý cô', hv: 'nữ sĩ',em:'👩',lesson:2,
    ex_zh:'女士，请坐！您喝什么？',ex_py:'Nǚshì, qǐng zuò! Nín hē shénme?',ex_vn:'Mời cô ngồi! Cô uống gì ạ?',
    exList:[{zh:'女士，请坐！您喝什么？',py:'Nǚshì, qǐng zuò! Nín hē shénme?',vn:'Mời cô ngồi! Cô uống gì ạ?'}],
    hanzi:[
@@ -91,7 +91,7 @@ var vocabData = [
       tip:'Nét ngang trên DÀI hơn nét dưới, tượng trưng người có ĐỊA VỊ vững vàng, đứng thẳng → dùng làm kính ngữ như trong 女士, tương tự 先生.',
       cf:'土 (tǔ – "đất", nét ngang trên NGẮN hơn nét dưới, ngược với 士")',w:'女士 / 士兵 / 博士'},
    ]},
-  {n:9,zh:'请',py:'qǐng',pos:'Động từ',vn:'mời, xin, hãy',em:'🙏',lesson:2,
+  {n:9,zh:'请',py:'qǐng',pos:'Động từ',vn:'mời, xin, hãy', hv: 'thỉnh',em:'🙏',lesson:2,
    ex_zh:'女士，请坐！您喝什么？',ex_py:'Nǚshì, qǐng zuò! Nín hē shénme?',ex_vn:'Mời cô ngồi! Cô uống gì ạ?',
    exList:[{zh:'女士，请坐！您喝什么？',py:'Nǚshì, qǐng zuò! Nín hē shénme?',vn:'Mời cô ngồi! Cô uống gì ạ?'}],
    hanzi:[
@@ -99,7 +99,7 @@ var vocabData = [
       tip:'讠(lời nói) + 青(trong sáng, thanh nhã) → lời MỜI trang trọng, lịch sự.',
       cf:'情 (qíng – "tình cảm")',w:'请坐 / 请问'},
    ]},
-  {n:10,zh:'坐',py:'zuò',pos:'Động từ',vn:'ngồi',em:'🪑',lesson:2,
+  {n:10,zh:'坐',py:'zuò',pos:'Động từ',vn:'ngồi', hv: 'tọa',em:'🪑',lesson:2,
    ex_zh:'女士，请坐！您喝什么？',ex_py:'Nǚshì, qǐng zuò! Nín hē shénme?',ex_vn:'Mời cô ngồi! Cô uống gì ạ?',
    exList:[{zh:'女士，请坐！您喝什么？',py:'Nǚshì, qǐng zuò! Nín hē shénme?',vn:'Mời cô ngồi! Cô uống gì ạ?'}],
    hanzi:[
@@ -107,7 +107,7 @@ var vocabData = [
       tip:'从(hai người) ngồi trên 土(đất/ghế) → NGỒI.',
       cf:'座 (zuò – "chỗ ngồi")',w:'请坐 / 坐这儿'},
    ]},
-  {n:11,zh:'给',py:'gěi',pos:'Động từ',vn:'đưa cho, cho',em:'🤲',lesson:2,
+  {n:11,zh:'给',py:'gěi',pos:'Động từ',vn:'đưa cho, cho', hv: 'cấp',em:'🤲',lesson:2,
    ex_zh:'我看一下。请给我一杯牛奶。',ex_py:'Wǒ kàn yíxià. Qǐng gěi wǒ yì bēi niúnǎi.',ex_vn:'Để tôi xem một chút. Cho tôi một cốc sữa.',
    exList:[{zh:'我看一下。请给我一杯牛奶。',py:'Wǒ kàn yíxià. Qǐng gěi wǒ yì bēi niúnǎi.',vn:'Để tôi xem một chút. Cho tôi một cốc sữa.'}],
    hanzi:[
@@ -115,7 +115,7 @@ var vocabData = [
       tip:'Bộ 纟(tơ lụa) — xưa tặng nhau tơ lụa quý giá, sau mở rộng nghĩa CHO, TẶNG nói chung.',
       cf:'合 (hé – "hợp", thiếu bộ 纟)',w:'给我 / 请给我'},
    ]},
-  {n:12,zh:'杯',py:'bēi',pos:'Danh từ',vn:'ly, cốc, tách',em:'🥛',lesson:2,
+  {n:12,zh:'杯',py:'bēi',pos:'Danh từ',vn:'ly, cốc, tách', hv: 'bôi',em:'🥛',lesson:2,
    ex_zh:'我看一下。请给我一杯牛奶。',ex_py:'Wǒ kàn yíxià. Qǐng gěi wǒ yì bēi niúnǎi.',ex_vn:'Để tôi xem một chút. Cho tôi một cốc sữa.',
    exList:[{zh:'我看一下。请给我一杯牛奶。',py:'Wǒ kàn yíxià. Qǐng gěi wǒ yì bēi niúnǎi.',vn:'Để tôi xem một chút. Cho tôi một cốc sữa.'}],
    hanzi:[
@@ -123,7 +123,7 @@ var vocabData = [
       tip:'木(gỗ, vật liệu làm đồ đựng thời xưa) + 不(gợi âm đọc "bēi") → dụng cụ đựng nước làm từ gỗ/sứ: CÁI CỐC.',
       cf:'杜 (dù – "họ Đỗ; ngăn chặn", phải là 土 chứ không phải 不")',w:'一杯 / 杯子 / 茶杯'},
    ]},
-  {n:13,zh:'要',py:'yào',pos:'Động từ',vn:'cần, muốn',em:'🙋',lesson:2,
+  {n:13,zh:'要',py:'yào',pos:'Động từ',vn:'cần, muốn', hv: 'yếu',em:'🙋',lesson:2,
    ex_zh:'好的。您还要什么？',ex_py:'Hǎo de. Nín hái yào shénme?',ex_vn:'Vâng. Cô còn dùng thêm gì nữa không?',
    exList:[{zh:'好的。您还要什么？',py:'Hǎo de. Nín hái yào shénme?',vn:'Vâng. Cô còn dùng thêm gì nữa không?'}],
    hanzi:[
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'覀(giống mái che/nắp đậy) trên 女(người) dưới — hình ảnh gợi điều gì đó được che chở, giữ gìn cẩn thận vì QUAN TRỌNG → mở rộng thành CẦN, MUỐN có được.',
       cf:'腰 (yāo – "eo lưng", thêm bộ 月")',w:'要什么 / 不要 / 要是'},
    ]},
-  {n:14,zh:'早饭',py:'zǎofàn',pos:'Danh từ',vn:'bữa sáng',em:'🍳',lesson:2,
+  {n:14,zh:'早饭',py:'zǎofàn',pos:'Danh từ',vn:'bữa sáng', hv: 'tảo phạn',em:'🍳',lesson:2,
    ex_zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',ex_py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',ex_vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.',
    exList:[{zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.'}],
    hanzi:[
@@ -142,7 +142,7 @@ var vocabData = [
       tip:'饣(bộ ăn uống) + 反(gợi âm đọc "fàn") → chỉ CƠM, bữa ĂN nói chung.',
       cf:'饱 (bǎo – "no", bộ 饣+ 包")',w:'早饭 / 米饭 / 吃饭'},
    ]},
-  {n:15,zh:'这个',py:'zhège',pos:'Đại từ',vn:'cái này',em:'👉',lesson:2,
+  {n:15,zh:'这个',py:'zhège',pos:'Đại từ',vn:'cái này', hv: 'giá cá',em:'👉',lesson:2,
    ex_zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',ex_py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',ex_vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.',
    exList:[{zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.'}],
    hanzi:[
@@ -153,7 +153,7 @@ var vocabData = [
       tip:'Hình dáng giống một NGƯỜI (𠆢) đứng cùng một nét thẳng đứng — dùng làm LƯỢNG TỪ đếm đồ vật/người phổ biến nhất trong tiếng Hán.',
       cf:'介 (jiè – "giới thiệu", thêm hai nét 丿丶 ở giữa")',w:'这个 / 一个 / 那个'},
    ]},
-  {n:16,zh:'面包',py:'miànbāo',pos:'Danh từ',vn:'bánh mì',em:'🍞',lesson:2,
+  {n:16,zh:'面包',py:'miànbāo',pos:'Danh từ',vn:'bánh mì', hv: 'diện bao',em:'🍞',lesson:2,
    ex_zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',ex_py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',ex_vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.',
    exList:[{zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.'}],
    hanzi:[
@@ -164,7 +164,7 @@ var vocabData = [
       tip:'勹(hình người cúi khom ôm bọc) ôm lấy 巳(vật nhỏ bên trong) → nghĩa BỌC, GÓI lại; mở rộng chỉ bánh mì/bánh BAO.',
       cf:'饱 (bǎo – "no", thêm bộ 饣")',w:'面包 / 书包 / 包子'},
    ]},
-  {n:17,zh:'鸡蛋',py:'jīdàn',pos:'Danh từ',vn:'trứng gà',em:'🥚',lesson:2,
+  {n:17,zh:'鸡蛋',py:'jīdàn',pos:'Danh từ',vn:'trứng gà', hv: 'kê đản',em:'🥚',lesson:2,
    ex_zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',ex_py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',ex_vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.',
    exList:[{zh:'我还没吃早饭，再要这个面包和鸡蛋吧。',py:'Wǒ hái méi chī zǎofàn, zài yào zhège miànbāo hé jīdàn ba.',vn:'Tôi vẫn chưa ăn sáng, cho tôi cái bánh mì này và trứng nhé.'}],
    hanzi:[
@@ -175,7 +175,7 @@ var vocabData = [
       tip:'鸟(bộ chim) bên phải cho biết đây là loài CHIM; phần trái 又 là ký hiệu giản hoá từ chữ phồn thể (gợi âm đọc "jī") → chỉ con GÀ.',
       cf:'鸦 (yā – "quạ", cũng có bộ 鸟")',w:'鸡蛋 / 公鸡 / 小鸡'},
    ]},
-  {n:18,zh:'先生',py:'xiānsheng',pos:'Danh từ',vn:'anh, ông, ngài, quý ông',em:'🤵',lesson:3,
+  {n:18,zh:'先生',py:'xiānsheng',pos:'Danh từ',vn:'anh, ông, ngài, quý ông', hv: 'tiên sinh',em:'🤵',lesson:3,
    ex_zh:'先生，请坐！您要什么？',ex_py:'Xiānsheng, qǐng zuò! Nín yào shénme?',ex_vn:'Mời anh ngồi! Anh cần gì ạ?',
    exList:[{zh:'先生，请坐！您要什么？',py:'Xiānsheng, qǐng zuò! Nín yào shénme?',vn:'Mời anh ngồi! Anh cần gì ạ?'}],
    hanzi:[
@@ -186,7 +186,7 @@ var vocabData = [
       tip:'Hình mầm cây (丿) nhú lên khỏi mặt ĐẤT (土) → nghĩa SINH RA, sự SỐNG; 先生 nghĩa gốc "người sinh trước", dùng làm kính ngữ.',
       cf:'牛 (niú – "con bò", thiếu nét sổ xuyên suốt phía trên")',w:'先生 / 学生 / 生日'},
    ]},
-  {n:19,zh:'饺子',py:'jiǎozi',pos:'Danh từ',vn:'sủi cảo, bánh chẻo',em:'🥟',lesson:3,
+  {n:19,zh:'饺子',py:'jiǎozi',pos:'Danh từ',vn:'sủi cảo, bánh chẻo', hv: 'giảo tử',em:'🥟',lesson:3,
    ex_zh:'我要一斤饺子。',ex_py:'Wǒ yào yì jīn jiǎozi.',ex_vn:'Cho tôi một cân sủi cảo.',
    exList:[{zh:'我要一斤饺子。',py:'Wǒ yào yì jīn jiǎozi.',vn:'Cho tôi một cân sủi cảo.'}],
    hanzi:[
@@ -197,7 +197,7 @@ var vocabData = [
       tip:'Hình tượng một ĐỨA TRẺ SƠ SINH quấn tã, đầu to, tay dang ngang → nghĩa CON; khi làm hậu tố (như 饺子, 桌子) mất nghĩa gốc, chỉ đọc nhẹ "zi".',
       cf:'孑 (jié – "cô độc", thiếu một nét ngang bên phải")',w:'饺子 / 儿子 / 桌子'},
    ]},
-  {n:20,zh:'一半',py:'yíbàn',pos:'Số từ',vn:'một nửa',em:'➗',lesson:3,
+  {n:20,zh:'一半',py:'yíbàn',pos:'Số từ',vn:'một nửa', hv: 'nhất bán',em:'➗',lesson:3,
    ex_zh:'四十个太多了，我要一半吧。',ex_py:'Sìshí gè tài duō le, wǒ yào yíbàn ba.',ex_vn:'40 cái thì nhiều quá, tôi lấy nửa cân thôi nhé.',
    exList:[{zh:'四十个太多了，我要一半吧。',py:'Sìshí gè tài duō le, wǒ yào yíbàn ba.',vn:'40 cái thì nhiều quá, tôi lấy nửa cân thôi nhé.'}],
    hanzi:[
@@ -208,7 +208,7 @@ var vocabData = [
       tip:'八(chia làm đôi) trên vật được một nét sổ dọc xuyên suốt cắt đôi ở giữa → nghĩa MỘT NỬA.',
       cf:'华 (huá – "hoa lệ, Trung Hoa", có 十 ở giữa nhưng thêm nét khác")',w:'一半 / 半年 / 半个'},
    ]},
-  {n:21,zh:'茶',py:'chá',pos:'Danh từ',vn:'trà, chè',em:'🍵',lesson:3,
+  {n:21,zh:'茶',py:'chá',pos:'Danh từ',vn:'trà, chè', hv: 'trà',em:'🍵',lesson:3,
    ex_zh:'请给我一杯茶吧。',ex_py:'Qǐng gěi wǒ yì bēi chá ba.',ex_vn:'Cho tôi một cốc trà nhé.',
    exList:[{zh:'请给我一杯茶吧。',py:'Qǐng gěi wǒ yì bēi chá ba.',vn:'Cho tôi một cốc trà nhé.'}],
    hanzi:[

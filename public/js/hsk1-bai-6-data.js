@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 6: 我会说汉语
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'会',py:'huì',pos:'Động từ năng nguyện',vn:'biết (qua học tập, rèn luyện)',em:'🧠',lesson:1,
+  {n:1,zh:'会',py:'huì',pos:'Động từ năng nguyện',vn:'biết (qua học tập, rèn luyện)', hv: 'hội',em:'🧠',lesson:1,
    ex_zh:'我会说汉语。',ex_py:'Wǒ huì shuō Hànyǔ.',ex_vn:'Tôi biết nói tiếng Trung.',
    exList:[
      {zh:'我会说汉语。',py:'Wǒ huì shuō Hànyǔ.',vn:'Tôi biết nói tiếng Trung.'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'人(người) hội tụ đủ kiến thức → NGƯỜI đã học và nắm được kỹ năng.',
       cf:'云 (yún – "mây")',w:'我会说汉语'},
    ]},
-  {n:2,zh:'说',py:'shuō',pos:'Động từ',vn:'nói',em:'🗣️',lesson:1,
+  {n:2,zh:'说',py:'shuō',pos:'Động từ',vn:'nói', hv: 'thuyết',em:'🗣️',lesson:1,
    ex_zh:'我会说汉语。',ex_py:'Wǒ huì shuō Hànyǔ.',ex_vn:'Tôi biết nói tiếng Trung.',
    exList:[
      {zh:'我会说汉语。',py:'Wǒ huì shuō Hànyǔ.',vn:'Tôi biết nói tiếng Trung.'},
@@ -23,7 +23,7 @@ var vocabData = [
       tip:'讠(lời nói) + 兑(trao đổi, vui vẻ) → dùng LỜI để trao đổi, NÓI CHUYỆN.',
       cf:'脱 (tuō – "cởi ra")',w:'说汉语 / 会说'},
    ]},
-  {n:3,zh:'妈妈',py:'māma',pos:'Danh từ',vn:'mẹ',em:'👩‍👦',lesson:1,
+  {n:3,zh:'妈妈',py:'māma',pos:'Danh từ',vn:'mẹ', hv: 'ma ma',em:'👩‍👦',lesson:1,
    ex_zh:'你妈妈会说汉语吗？',ex_py:'Nǐ māma huì shuō Hànyǔ ma?',ex_vn:'Mẹ em biết nói tiếng Trung Quốc không?',
    exList:[
      {zh:'你妈妈会说汉语吗？',py:'Nǐ māma huì shuō Hànyǔ ma?',vn:'Mẹ em biết nói tiếng Trung Quốc không?'},
@@ -33,7 +33,7 @@ var vocabData = [
       tip:'女(nữ giới) + 马(mượn âm) → tiếng gọi thân thương dành cho MẸ.',
       cf:'吗 (ma – "trợ từ hỏi", cũng mượn âm 马")',w:'妈妈'},
    ]},
-  {n:4,zh:'菜',py:'cài',pos:'Danh từ',vn:'món ăn, rau, thức ăn',em:'🥘',lesson:2,
+  {n:4,zh:'菜',py:'cài',pos:'Danh từ',vn:'món ăn, rau, thức ăn', hv: 'thái',em:'🥘',lesson:2,
    ex_zh:'中国菜很好吃。',ex_py:'Zhōngguó cài hěn hǎochī.',ex_vn:'Món ăn Trung Quốc rất ngon.',
    exList:[
      {zh:'中国菜很好吃。',py:'Zhōngguó cài hěn hǎochī.',vn:'Món ăn Trung Quốc rất ngon.'},
@@ -43,7 +43,7 @@ var vocabData = [
       tip:'艹(cây cỏ) + 采(hái) → RAU CỎ được hái về chế biến thành MÓN ĂN.',
       cf:'踩 (cǎi – "giẫm đạp", cũng có 采")',w:'中国菜 / 好吃'},
    ]},
-  {n:5,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất',em:'📈',lesson:2,
+  {n:5,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất', hv: 'ngận',em:'📈',lesson:2,
    ex_zh:'中国菜很好吃。',ex_py:'Zhōngguó cài hěn hǎochī.',ex_vn:'Món ăn Trung Quốc rất ngon.',
    exList:[
      {zh:'中国菜很好吃。',py:'Zhōngguó cài hěn hǎochī.',vn:'Món ăn Trung Quốc rất ngon.'},
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'彳(bước đi) + 艮(dừng lại, cứng) → nhấn mạnh mức độ, đi ĐẾN CÙNG = RẤT.',
       cf:'狠 (hěn – "hung dữ", cũng có 艮")',w:'很好吃 / 很好'},
    ]},
-  {n:6,zh:'好吃',py:'hǎochī',pos:'Tính từ',vn:'ngon',em:'😋',lesson:2,
+  {n:6,zh:'好吃',py:'hǎochī',pos:'Tính từ',vn:'ngon', hv: 'hảo ngật',em:'😋',lesson:2,
    ex_zh:'中国菜很好吃。',ex_py:'Zhōngguó cài hěn hǎochī.',ex_vn:'Món ăn Trung Quốc rất ngon.',
    exList:[
      {zh:'中国菜很好吃。',py:'Zhōngguó cài hěn hǎochī.',vn:'Món ăn Trung Quốc rất ngon.'},
@@ -63,7 +63,7 @@ var vocabData = [
       tip:'口(miệng) + 乞(xin, cầu) → dùng MIỆNG để ĂN, thoả mãn nhu cầu. (好 đã học ở Bài 1)',
       cf:'吸 (xī – "hít vào")',w:'好吃 / 吃饭'},
    ]},
-  {n:7,zh:'做',py:'zuò',pos:'Động từ',vn:'làm, chế biến, nấu',em:'👩‍🍳',lesson:2,
+  {n:7,zh:'做',py:'zuò',pos:'Động từ',vn:'làm, chế biến, nấu', hv: 'tố',em:'👩‍🍳',lesson:2,
    ex_zh:'你会做中国菜吗？',ex_py:'Nǐ huì zuò Zhōngguó cài ma?',ex_vn:'Anh có biết nấu món Trung Quốc không?',
    exList:[
      {zh:'你会做中国菜吗？',py:'Nǐ huì zuò Zhōngguó cài ma?',vn:'Anh có biết nấu món Trung Quốc không?'},
@@ -73,7 +73,7 @@ var vocabData = [
       tip:'亻(người) đứng ra LÀM một việc gì đó cụ thể.',
       cf:'作 (zuò – "làm", nghĩa gần giống")',w:'做菜 / 做什么'},
    ]},
-  {n:8,zh:'写',py:'xiě',pos:'Động từ',vn:'viết',em:'✍️',lesson:3,
+  {n:8,zh:'写',py:'xiě',pos:'Động từ',vn:'viết', hv: 'tả',em:'✍️',lesson:3,
    ex_zh:'你会写汉字吗？',ex_py:'Nǐ huì xiě Hànzì ma?',ex_vn:'Anh có biết viết chữ Hán không?',
    exList:[
      {zh:'你会写汉字吗？',py:'Nǐ huì xiě Hànzì ma?',vn:'Anh có biết viết chữ Hán không?'},
@@ -83,19 +83,19 @@ var vocabData = [
       tip:'冖(gói ghém ý tưởng) → dùng bút để VIẾT ra thành chữ.',
       cf:'冠 (guān – "vương miện")',w:'写汉字 / 会写'},
    ]},
-  {n:9,zh:'汉字',py:'Hànzì',pos:'Danh từ',vn:'chữ Hán',em:'🈴',lesson:3,
+  {n:9,zh:'汉字',py:'Hànzì',pos:'Danh từ',vn:'chữ Hán', hv: 'Hán Tự',em:'🈴',lesson:3,
    ex_zh:'你会写汉字吗？',ex_py:'Nǐ huì xiě Hànzì ma?',ex_vn:'Anh có biết viết chữ Hán không?',
    exList:[
      {zh:'你会写汉字吗？',py:'Nǐ huì xiě Hànzì ma?',vn:'Anh có biết viết chữ Hán không?'},
    ],
    hanzi:[]},
-  {n:10,zh:'字',py:'zì',pos:'Danh từ',vn:'chữ, ký tự',em:'🔤',lesson:3,
+  {n:10,zh:'字',py:'zì',pos:'Danh từ',vn:'chữ, ký tự', hv: 'tự',em:'🔤',lesson:3,
    ex_zh:'这个字怎么写？',ex_py:'Zhège zì zěnme xiě?',ex_vn:'Vậy chữ này anh viết thế nào?',
    exList:[
      {zh:'这个字怎么写？',py:'Zhège zì zěnme xiě?',vn:'Vậy chữ này anh viết thế nào?'},
    ],
    hanzi:[]},
-  {n:11,zh:'怎么',py:'zěnme',pos:'Đại từ',vn:'như thế nào (hỏi cách thức)',em:'🤔',lesson:3,
+  {n:11,zh:'怎么',py:'zěnme',pos:'Đại từ',vn:'như thế nào (hỏi cách thức)', hv: 'chẩm ma',em:'🤔',lesson:3,
    ex_zh:'这个字怎么写？',ex_py:'Zhège zì zěnme xiě?',ex_vn:'Vậy chữ này anh viết thế nào?',
    exList:[
      {zh:'这个字怎么写？',py:'Zhège zì zěnme xiě?',vn:'Vậy chữ này anh viết thế nào?'},
@@ -105,7 +105,7 @@ var vocabData = [
       tip:'心(tâm trí) băn khoăn không biết làm THẾ NÀO. (么 đã học ở Bài 3)',
       cf:'作 (zuò – "làm", cùng phần 乍")',w:'怎么写 / 怎么样'},
    ]},
-  {n:12,zh:'读',py:'dú',pos:'Động từ',vn:'đọc',em:'📖',lesson:3,
+  {n:12,zh:'读',py:'dú',pos:'Động từ',vn:'đọc', hv: 'độc',em:'📖',lesson:3,
    ex_zh:'这个字我会读，不会写。',ex_py:'Zhège zì wǒ huì dú, bú huì xiě.',ex_vn:'Chữ này tôi biết đọc chứ không biết viết.',
    exList:[
      {zh:'这个字我会读，不会写。',py:'Zhège zì wǒ huì dú, bú huì xiě.',vn:'Chữ này tôi biết đọc chứ không biết viết.'},

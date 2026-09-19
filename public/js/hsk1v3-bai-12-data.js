@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'天气',py:'tiānqì',pos:'Danh từ',vn:'thời tiết',em:'🌦️',lesson:1,
+  {n:1,zh:'天气',py:'tiānqì',pos:'Danh từ',vn:'thời tiết', hv: 'thiên khí',em:'🌦️',lesson:1,
    ex_zh:'今天天气怎么样？',ex_py:'Jīntiān tiānqì zěnmeyàng?',ex_vn:'Hôm nay thời tiết thế nào?',
    exList:[{zh:'今天天气怎么样？',py:'Jīntiān tiānqì zěnmeyàng?',vn:'Hôm nay thời tiết thế nào?'}],
    hanzi:[
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Hình những làn hơi/mây bốc lên uốn lượn trong không trung → KHÍ, HƠI.',
       cf:'汽 (qì – "hơi nước, xe hơi", thêm bộ 氵")',w:'天气 / 空气 / 客气'},
    ]},
-  {n:2,zh:'这里',py:'zhèlǐ',pos:'Đại từ',vn:'ở đây, chỗ này',em:'📍',lesson:1,
+  {n:2,zh:'这里',py:'zhèlǐ',pos:'Đại từ',vn:'ở đây, chỗ này', hv: 'giá lí',em:'📍',lesson:1,
    ex_zh:'这里的天不太好，下雨了。',ex_py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',ex_vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.',
    exList:[{zh:'这里的天不太好，下雨了。',py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.'}],
    hanzi:[
@@ -25,7 +25,7 @@ var vocabData = [
       tip:'田(ruộng) ở trên 土(đất) → nơi con người sinh sống, quây quần BÊN TRONG làng xóm → BÊN TRONG.',
       cf:'理 (lǐ – "lý lẽ, đạo lý", thêm bộ 王 bên trái)',w:'这里 / 哪里 / 里边'},
    ]},
-  {n:3,zh:'天',py:'tiān',pos:'Danh từ',vn:'thời tiết, trời',em:'☁️',lesson:1,
+  {n:3,zh:'天',py:'tiān',pos:'Danh từ',vn:'thời tiết, trời', hv: 'thiên',em:'☁️',lesson:1,
    ex_zh:'这里的天不太好，下雨了。',ex_py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',ex_vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.',
    exList:[{zh:'这里的天不太好，下雨了。',py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.'}],
    hanzi:[
@@ -33,7 +33,7 @@ var vocabData = [
       tip:'Nét ngang trên cùng tượng trưng bầu TRỜI, đặt trên 大(người dang tay) → khoảng không cao nhất trên đầu người → TRỜI, THỜI TIẾT (trời như thế nào).',
       cf:'太 (tài – "quá, thái", cũng từ 大 thêm dấu chấm)',w:'天气 / 今天天不好 / 明天'},
    ]},
-  {n:4,zh:'下雨',py:'xià yǔ',pos:'Động từ',vn:'mưa, mưa rơi',em:'🌧️',lesson:1,
+  {n:4,zh:'下雨',py:'xià yǔ',pos:'Động từ',vn:'mưa, mưa rơi', hv: 'hạ vũ',em:'🌧️',lesson:1,
    ex_zh:'这里的天不太好，下雨了。',ex_py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',ex_vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.',
    exList:[{zh:'这里的天不太好，下雨了。',py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.'}],
    hanzi:[
@@ -44,7 +44,7 @@ var vocabData = [
       tip:'Một nét ngắn nằm DƯỚI một đường ngang dài → chỉ vị trí ở phía DƯỚI → DƯỚI, RƠI XUỐNG.',
       cf:'上 (shàng – "trên", đối lập vị trí với 下)',w:'下雨 / 下雪 / 下班'},
    ]},
-  {n:5,zh:'了',py:'le',pos:'Trợ từ',vn:'(dùng cuối câu chỉ sự thay đổi tình hình hoặc trạng thái)',em:'❕',lesson:1,
+  {n:5,zh:'了',py:'le',pos:'Trợ từ',vn:'(dùng cuối câu chỉ sự thay đổi tình hình hoặc trạng thái)', hv: 'liễu',em:'❕',lesson:1,
    ex_zh:'这里的天不太好，下雨了。',ex_py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',ex_vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.',
    exList:[{zh:'这里的天不太好，下雨了。',py:'Zhèlǐ de tiān bú tài hǎo, xià yǔ le.',vn:'Thời tiết ở đây không ổn lắm, mưa rồi ạ.'}],
    hanzi:[
@@ -52,7 +52,7 @@ var vocabData = [
       tip:'Hình dáng đơn giản như đứa trẻ mới sinh co tay chân (gốc tượng hình) → mượn âm làm TRỢ TỪ đặt cuối câu để báo hiệu việc đã XONG hoặc vừa THAY ĐỔI.',
       cf:'子 (zǐ – "con, con cái", cùng gốc hình đứa trẻ)',w:'下雨了 / 太冷了 / 好了'},
    ]},
-  {n:6,zh:'雨',py:'yǔ',pos:'Danh từ',vn:'mưa',em:'☔',lesson:1,
+  {n:6,zh:'雨',py:'yǔ',pos:'Danh từ',vn:'mưa', hv: 'vũ',em:'☔',lesson:1,
    ex_zh:'雨大吗？',ex_py:'Yǔ dà ma?',ex_vn:'Mưa to không?',
    exList:[{zh:'雨大吗？',py:'Yǔ dà ma?',vn:'Mưa to không?'}],
    hanzi:[
@@ -60,7 +60,7 @@ var vocabData = [
       tip:'Hình những giọt nước rơi từ đám mây → MƯA.',
       cf:'雪 (xuě – "tuyết")',w:'下雨 / 大雨 / 小雨'},
    ]},
-  {n:7,zh:'有点儿',py:'yǒudiǎnr',pos:'Phó từ',vn:'hơi, hơi... một chút',em:'📏',lesson:1,
+  {n:7,zh:'有点儿',py:'yǒudiǎnr',pos:'Phó từ',vn:'hơi, hơi... một chút', hv: 'hữu điểm nhi',em:'📏',lesson:1,
    ex_zh:'有点儿大，我觉得很冷。',ex_py:'Yǒudiǎnr dà, wǒ juéde hěn lěng.',ex_vn:'Hơi to ạ, em cảm thấy rất lạnh.',
    exList:[{zh:'有点儿大，我觉得很冷。',py:'Yǒudiǎnr dà, wǒ juéde hěn lěng.',vn:'Hơi to ạ, em cảm thấy rất lạnh.'}],
    hanzi:[
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'Hình người đang bước đi bằng hai chân (biến thể của 人) → dùng chỉ CON, TRẺ NHỎ; khi đứng sau âm tiết khác thì đọc lướt thành âm "-r".',
       cf:'几 (jǐ – "mấy, bao nhiêu", hình dáng gần giống)',w:'有点儿 / 一点儿 / 儿子'},
    ]},
-  {n:8,zh:'觉得',py:'juéde',pos:'Động từ',vn:'cảm thấy',em:'💭',lesson:1,
+  {n:8,zh:'觉得',py:'juéde',pos:'Động từ',vn:'cảm thấy', hv: 'giác đắc',em:'💭',lesson:1,
    ex_zh:'有点儿大，我觉得很冷。',ex_py:'Yǒudiǎnr dà, wǒ juéde hěn lěng.',ex_vn:'Hơi to ạ, em cảm thấy rất lạnh.',
    exList:[{zh:'有点儿大，我觉得很冷。',py:'Yǒudiǎnr dà, wǒ juéde hěn lěng.',vn:'Hơi to ạ, em cảm thấy rất lạnh.'}],
    hanzi:[
@@ -85,7 +85,7 @@ var vocabData = [
       tip:'彳(bước chân đi tìm) + 寸(bàn tay, nắm giữ/đo lường) → đi tìm và NẮM ĐƯỢC điều mình muốn → ĐƯỢC, ĐẠT ĐƯỢC.',
       cf:'待 (dài – "chờ, đợi", cũng có bộ 彳 bên trái)',w:'觉得 / 得到 / 记得'},
    ]},
-  {n:9,zh:'冷',py:'lěng',pos:'Tính từ',vn:'lạnh',em:'🥶',lesson:1,
+  {n:9,zh:'冷',py:'lěng',pos:'Tính từ',vn:'lạnh', hv: 'lãnh',em:'🥶',lesson:1,
    ex_zh:'有点儿大，我觉得很冷。',ex_py:'Yǒudiǎnr dà, wǒ juéde hěn lěng.',ex_vn:'Hơi to ạ, em cảm thấy rất lạnh.',
    exList:[
      {zh:'有点儿大，我觉得很冷。',py:'Yǒudiǎnr dà, wǒ juéde hěn lěng.',vn:'Hơi to ạ, em cảm thấy rất lạnh.'},
@@ -96,7 +96,7 @@ var vocabData = [
       tip:'冫(băng giá) + 令(mượn âm) → LẠNH.',
       cf:'令 (lìng – "ra lệnh")',w:'太冷了 / 很冷'},
    ]},
-  {n:10,zh:'下',py:'xià',pos:'Động từ',vn:'(mưa, tuyết...) rơi',em:'🌨️',lesson:2,
+  {n:10,zh:'下',py:'xià',pos:'Động từ',vn:'(mưa, tuyết...) rơi', hv: 'hạ',em:'🌨️',lesson:2,
    ex_zh:'昨天下雪了。',ex_py:'Zuótiān xià xuě le.',ex_vn:'Hôm qua tuyết rơi rồi.',
    exList:[{zh:'昨天下雪了。',py:'Zuótiān xià xuě le.',vn:'Hôm qua tuyết rơi rồi.'}],
    hanzi:[
@@ -104,7 +104,7 @@ var vocabData = [
       tip:'Một nét ngắn nằm DƯỚI đường ngang dài → chỉ vị trí ở phía DƯỚI, sự vật từ trên RƠI XUỐNG dưới → DƯỚI, RƠI.',
       cf:'上 (shàng – "trên", đối lập vị trí với 下)',w:'下雪 / 下雨 / 下班'},
    ]},
-  {n:11,zh:'雪',py:'xuě',pos:'Danh từ',vn:'tuyết',em:'❄️',lesson:2,
+  {n:11,zh:'雪',py:'xuě',pos:'Danh từ',vn:'tuyết', hv: 'tuyết',em:'❄️',lesson:2,
    ex_zh:'昨天下雪了。',ex_py:'Zuótiān xià xuě le.',ex_vn:'Hôm qua tuyết rơi rồi.',
    exList:[{zh:'昨天下雪了。',py:'Zuótiān xià xuě le.',vn:'Hôm qua tuyết rơi rồi.'}],
    hanzi:[
@@ -112,7 +112,7 @@ var vocabData = [
       tip:'Bộ 雨(mưa) ở trên → trời lạnh khiến mưa đóng băng thành TUYẾT.',
       cf:'雨 (yǔ – "mưa", thiếu phần dưới)',w:'下雪'},
    ]},
-  {n:12,zh:'来',py:'lái',pos:'Động từ',vn:'đến',em:'🚶',lesson:2,
+  {n:12,zh:'来',py:'lái',pos:'Động từ',vn:'đến', hv: 'lai',em:'🚶',lesson:2,
    ex_zh:'你昨天没来公司，生病了？',ex_py:'Nǐ zuótiān méi lái gōngsī, shēngbìng le?',ex_vn:'Hôm qua bạn không đến công ty, bị ốm à?',
    exList:[{zh:'你昨天没来公司，生病了？',py:'Nǐ zuótiān méi lái gōngsī, shēngbìng le?',vn:'Hôm qua bạn không đến công ty, bị ốm à?'}],
    hanzi:[
@@ -120,7 +120,7 @@ var vocabData = [
       tip:'Hình bông lúa mạch từ xa mang ĐẾN → ĐẾN, TỚI.',
       cf:'米 (mǐ – "gạo")',w:'来公司 / 回来'},
    ]},
-  {n:13,zh:'公司',py:'gōngsī',pos:'Danh từ',vn:'công ty',em:'🏢',lesson:2,
+  {n:13,zh:'公司',py:'gōngsī',pos:'Danh từ',vn:'công ty', hv: 'công ti',em:'🏢',lesson:2,
    ex_zh:'你昨天没来公司，生病了？',ex_py:'Nǐ zuótiān méi lái gōngsī, shēngbìng le?',ex_vn:'Hôm qua bạn không đến công ty, bị ốm à?',
    exList:[{zh:'你昨天没来公司，生病了？',py:'Nǐ zuótiān méi lái gōngsī, shēngbìng le?',vn:'Hôm qua bạn không đến công ty, bị ốm à?'}],
    hanzi:[
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'Hình người đứng trên cao dùng 口(miệng) ra lệnh, điều hành công việc → QUẢN LÝ, ĐIỀU HÀNH; ghép với 公 thành "công ty" – nơi được điều hành chung.',
       cf:'同 (tóng – "giống nhau", khung ngoài gần giống nhưng khác phần trong")',w:'公司 / 司机 / 上司'},
    ]},
-  {n:14,zh:'生病',py:'shēngbìng',pos:'Động từ',vn:'ốm, bị ốm, bị bệnh',em:'🤒',lesson:2,
+  {n:14,zh:'生病',py:'shēngbìng',pos:'Động từ',vn:'ốm, bị ốm, bị bệnh', hv: 'sinh bệnh',em:'🤒',lesson:2,
    ex_zh:'你昨天没来公司，生病了？',ex_py:'Nǐ zuótiān méi lái gōngsī, shēngbìng le?',ex_vn:'Hôm qua bạn không đến công ty, bị ốm à?',
    exList:[{zh:'你昨天没来公司，生病了？',py:'Nǐ zuótiān méi lái gōngsī, shēngbìng le?',vn:'Hôm qua bạn không đến công ty, bị ốm à?'}],
    hanzi:[
@@ -142,7 +142,7 @@ var vocabData = [
       tip:'Hình mầm cây (屮) đang mọc lên khỏi mặt đất (一) → SINH RA, SỐNG, MỌC LÊN; "生病" nghĩa là "sinh ra bệnh" → bị ốm.',
       cf:'牛 (niú – "con bò", hình dáng gần giống nhưng thiếu nét ngang trên đầu)',w:'生病 / 学生 / 先生'},
    ]},
-  {n:15,zh:'看病',py:'kànbìng',pos:'Động từ',vn:'khám bệnh',em:'🏥',lesson:2,
+  {n:15,zh:'看病',py:'kànbìng',pos:'Động từ',vn:'khám bệnh', hv: 'khán bệnh',em:'🏥',lesson:2,
    ex_zh:'对，我昨天去医院看病了。',ex_py:'Duì, wǒ zuótiān qù yīyuàn kànbìng le.',ex_vn:'Đúng vậy, hôm qua em đi bệnh viện khám bệnh.',
    exList:[{zh:'对，我昨天去医院看病了。',py:'Duì, wǒ zuótiān qù yīyuàn kànbìng le.',vn:'Đúng vậy, hôm qua em đi bệnh viện khám bệnh.'}],
    hanzi:[
@@ -153,7 +153,7 @@ var vocabData = [
       tip:'Bộ 疒 = hình người nằm trên giường bệnh. Thấy 疒 → nghĩ ngay tới ỐM ĐAU.',
       cf:'痛 (tòng – cùng bộ 疒)',w:'看病 / 生病 / 看医生'},
    ]},
-  {n:16,zh:'病',py:'bìng',pos:'Động từ',vn:'ốm, bị ốm, bị bệnh',em:'🤢',lesson:3,
+  {n:16,zh:'病',py:'bìng',pos:'Động từ',vn:'ốm, bị ốm, bị bệnh', hv: 'bệnh',em:'🤢',lesson:3,
    ex_zh:'医生，我病了。',ex_py:'Yīshēng, wǒ bìng le.',ex_vn:'Thưa bác sĩ, tôi bị ốm rồi.',
    exList:[{zh:'医生，我病了。',py:'Yīshēng, wǒ bìng le.',vn:'Thưa bác sĩ, tôi bị ốm rồi.'}],
    hanzi:[
@@ -161,7 +161,7 @@ var vocabData = [
       tip:'Bộ 疒 = hình người nằm trên giường bệnh. Thấy 疒 → nghĩ ngay tới ỐM ĐAU.',
       cf:'痛 (tòng – cùng bộ 疒)',w:'病了 / 生病 / 看病'},
    ]},
-  {n:17,zh:'一点儿',py:'yìdiǎnr',pos:'Số lượng từ',vn:'một chút, một ít',em:'🤏',lesson:3,
+  {n:17,zh:'一点儿',py:'yìdiǎnr',pos:'Số lượng từ',vn:'một chút, một ít', hv: 'nhất điểm nhi',em:'🤏',lesson:3,
    ex_zh:'好的，吃一点儿药，今天休息半天吧。',ex_py:'Hǎo de, chī yìdiǎnr yào, jīntiān xiūxi bàn tiān ba.',ex_vn:'Được rồi, uống một ít thuốc nhé, hôm nay nghỉ ngơi nửa ngày nhé.',
    exList:[{zh:'好的，吃一点儿药，今天休息半天吧。',py:'Hǎo de, chī yìdiǎnr yào, jīntiān xiūxi bàn tiān ba.',vn:'Được rồi, uống một ít thuốc nhé, hôm nay nghỉ ngơi nửa ngày nhé.'}],
    hanzi:[
@@ -175,7 +175,7 @@ var vocabData = [
       tip:'Hình người đang bước đi bằng hai chân (biến thể của 人) → dùng chỉ CON, TRẺ NHỎ; khi đứng sau âm tiết khác thì đọc lướt thành âm "-r".',
       cf:'几 (jǐ – "mấy, bao nhiêu", hình dáng gần giống)',w:'一点儿 / 有点儿 / 儿子'},
    ]},
-  {n:18,zh:'药',py:'yào',pos:'Danh từ',vn:'thuốc',em:'💊',lesson:3,
+  {n:18,zh:'药',py:'yào',pos:'Danh từ',vn:'thuốc', hv: 'dược',em:'💊',lesson:3,
    ex_zh:'好的，吃一点儿药，今天休息半天吧。',ex_py:'Hǎo de, chī yìdiǎnr yào, jīntiān xiūxi bàn tiān ba.',ex_vn:'Được rồi, uống một ít thuốc nhé, hôm nay nghỉ ngơi nửa ngày nhé.',
    exList:[{zh:'好的，吃一点儿药，今天休息半天吧。',py:'Hǎo de, chī yìdiǎnr yào, jīntiān xiūxi bàn tiān ba.',vn:'Được rồi, uống một ít thuốc nhé, hôm nay nghỉ ngơi nửa ngày nhé.'}],
    hanzi:[
@@ -183,7 +183,7 @@ var vocabData = [
       tip:'Bộ 艹(cỏ) ở trên → thuốc xưa làm từ cây cỏ, thảo dược.',
       cf:'约 (yuē – "hẹn", thiếu 艹)',w:'吃药 / 一点儿药'},
    ]},
-  {n:19,zh:'天',py:'tiān',pos:'Lượng từ',vn:'ngày',em:'📆',lesson:3,
+  {n:19,zh:'天',py:'tiān',pos:'Lượng từ',vn:'ngày', hv: 'thiên',em:'📆',lesson:3,
    ex_zh:'今天休息半天吧。',ex_py:'Jīntiān xiūxi bàn tiān ba.',ex_vn:'Hôm nay nghỉ ngơi nửa ngày nhé.',
    exList:[{zh:'今天休息半天吧。',py:'Jīntiān xiūxi bàn tiān ba.',vn:'Hôm nay nghỉ ngơi nửa ngày nhé.'}],
    hanzi:[
@@ -191,7 +191,7 @@ var vocabData = [
       tip:'Nét ngang trên cùng tượng trưng bầu TRỜI, đặt trên 大(người dang tay) → một vòng mặt trời mọc-lặn trên bầu trời tính là một NGÀY.',
       cf:'太 (tài – "quá, thái", cũng từ 大 thêm dấu chấm)',w:'半天 / 今天 / 明天'},
    ]},
-  {n:20,zh:'回',py:'huí',pos:'Động từ',vn:'về, quay về',em:'🏠',lesson:3,
+  {n:20,zh:'回',py:'huí',pos:'Động từ',vn:'về, quay về', hv: 'hồi',em:'🏠',lesson:3,
    ex_zh:'回家后再喝些热水。',ex_py:'Huí jiā hòu zài hē xiē rè shuǐ.',ex_vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.',
    exList:[{zh:'回家后再喝些热水。',py:'Huí jiā hòu zài hē xiē rè shuǐ.',vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.'}],
    hanzi:[
@@ -199,7 +199,7 @@ var vocabData = [
       tip:'Hình vòng xoáy đi rồi lại vòng về điểm cũ → TRỞ VỀ.',
       cf:'回 dễ nhầm 囘 (dị thể cổ)',w:'回家 / 回来'},
    ]},
-  {n:21,zh:'再',py:'zài',pos:'Phó từ',vn:'sau đó, mới (chỉ trình tự)',em:'➡️',lesson:3,
+  {n:21,zh:'再',py:'zài',pos:'Phó từ',vn:'sau đó, mới (chỉ trình tự)', hv: 'tái',em:'➡️',lesson:3,
    ex_zh:'回家后再喝些热水。',ex_py:'Huí jiā hòu zài hē xiē rè shuǐ.',ex_vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.',
    exList:[{zh:'回家后再喝些热水。',py:'Huí jiā hòu zài hē xiē rè shuǐ.',vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.'}],
    hanzi:[
@@ -207,7 +207,7 @@ var vocabData = [
       tip:'Một lớp KHUNG 冂 bao thêm bên ngoài, bên trong lại có thêm nét → ý LẶP LẠI, THÊM MỘT LẦN NỮA → LẠI, SAU ĐÓ.',
       cf:'冉 (rǎn – "dần dần", thiếu nét ngang trên cùng so với 再")',w:'再见 / 再来 / 回家后再'},
    ]},
-  {n:22,zh:'喝',py:'hē',pos:'Động từ',vn:'uống',em:'🥤',lesson:3,
+  {n:22,zh:'喝',py:'hē',pos:'Động từ',vn:'uống', hv: 'hát',em:'🥤',lesson:3,
    ex_zh:'回家后再喝些热水。',ex_py:'Huí jiā hòu zài hē xiē rè shuǐ.',ex_vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.',
    exList:[{zh:'回家后再喝些热水。',py:'Huí jiā hòu zài hē xiē rè shuǐ.',vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.'}],
    hanzi:[
@@ -215,7 +215,7 @@ var vocabData = [
       tip:'口(miệng) dùng để UỐNG chất lỏng.',
       cf:'渴 (kě – "khát", cũng có 曷")',w:'喝水 / 喝热水'},
    ]},
-  {n:23,zh:'热',py:'rè',pos:'Tính từ',vn:'nóng, ấm',em:'🔥',lesson:3,
+  {n:23,zh:'热',py:'rè',pos:'Tính từ',vn:'nóng, ấm', hv: 'nhiệt',em:'🔥',lesson:3,
    ex_zh:'回家后再喝些热水。',ex_py:'Huí jiā hòu zài hē xiē rè shuǐ.',ex_vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.',
    exList:[{zh:'回家后再喝些热水。',py:'Huí jiā hòu zài hē xiē rè shuǐ.',vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.'}],
    hanzi:[
@@ -223,7 +223,7 @@ var vocabData = [
       tip:'执(cầm nắm) + 灬(lửa) → cầm phải vật có lửa → NÓNG.',
       cf:'势 (shì – "thế lực")',w:'热水 / 太热了'},
    ]},
-  {n:24,zh:'水',py:'shuǐ',pos:'Danh từ',vn:'nước',em:'💧',lesson:3,
+  {n:24,zh:'水',py:'shuǐ',pos:'Danh từ',vn:'nước', hv: 'thủy',em:'💧',lesson:3,
    ex_zh:'回家后再喝些热水。',ex_py:'Huí jiā hòu zài hē xiē rè shuǐ.',ex_vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.',
    exList:[{zh:'回家后再喝些热水。',py:'Huí jiā hòu zài hē xiē rè shuǐ.',vn:'Sau khi về nhà nhớ uống thêm ít nước ấm nhé.'}],
    hanzi:[

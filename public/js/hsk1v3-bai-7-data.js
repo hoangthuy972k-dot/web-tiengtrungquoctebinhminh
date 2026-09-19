@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'现在',py:'xiànzài',pos:'Đại từ',vn:'bây giờ, hiện tại',em:'⏰',lesson:1,
+  {n:1,zh:'现在',py:'xiànzài',pos:'Đại từ',vn:'bây giờ, hiện tại', hv: 'hiện tại',em:'⏰',lesson:1,
    ex_zh:'现在几点？',ex_py:'Xiànzài jǐ diǎn?',ex_vn:'Bây giờ mấy giờ rồi?',
    exList:[{zh:'现在几点？',py:'Xiànzài jǐ diǎn?',vn:'Bây giờ mấy giờ rồi?'}],
    hanzi:[
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Phần bao ngoài như mái che nghiêng, bên trong là chữ 土(ĐẤT) → một vật đang ở trên mặt ĐẤT, tức đang tồn TẠI, ở một nơi nào đó.',
       cf:'存 (cún – "tồn tại, lưu trữ", nghĩa gần giống nhưng cấu trúc khác)',w:'现在 / 在家 / 在哪儿'},
    ]},
-  {n:2,zh:'点',py:'diǎn',pos:'Lượng từ',vn:'giờ',em:'🕐',lesson:1,
+  {n:2,zh:'点',py:'diǎn',pos:'Lượng từ',vn:'giờ', hv: 'điểm',em:'🕐',lesson:1,
    ex_zh:'早上八点四十。',ex_py:'Zǎoshang bā diǎn sìshí.',ex_vn:'8 giờ 40 sáng.',
    exList:[{zh:'早上八点四十。',py:'Zǎoshang bā diǎn sìshí.',vn:'8 giờ 40 sáng.'}],
    hanzi:[
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'占(chiếm giữ một vị trí) + 灬(bốn đốm lửa nhỏ) → như những đốm lửa nhỏ CHIẾM lấy từng ĐIỂM trên mặt đồng hồ để chỉ giờ.',
       cf:'店 (diàn – "cửa hàng", cũng có 占 nhưng bộ 广)',w:'点 / 几点 / 一点'},
    ]},
-  {n:3,zh:'早上',py:'zǎoshang',pos:'Đại từ',vn:'buổi sáng, sáng sớm',em:'🌅',lesson:1,
+  {n:3,zh:'早上',py:'zǎoshang',pos:'Đại từ',vn:'buổi sáng, sáng sớm', hv: 'tảo thượng',em:'🌅',lesson:1,
    ex_zh:'早上八点四十。',ex_py:'Zǎoshang bā diǎn sìshí.',ex_vn:'8 giờ 40 sáng.',
    exList:[{zh:'早上八点四十。',py:'Zǎoshang bā diǎn sìshí.',vn:'8 giờ 40 sáng.'}],
    hanzi:[
@@ -33,7 +33,7 @@ var vocabData = [
       tip:'Một vạch ngang dài tượng trưng mặt đất, với một nét vươn LÊN phía TRÊN nó → chỉ vị trí TRÊN, hướng đi LÊN.',
       cf:'下 (xià – "dưới", ngược nghĩa, hình dạng gần như đối xứng)',w:'早上 / 上午 / 上课'},
    ]},
-  {n:4,zh:'上午',py:'shàngwǔ',pos:'Đại từ',vn:'buổi sáng',em:'🌤️',lesson:1,
+  {n:4,zh:'上午',py:'shàngwǔ',pos:'Đại từ',vn:'buổi sáng', hv: 'thượng ngọ',em:'🌤️',lesson:1,
    ex_zh:'我上午十点十分有课。',ex_py:'Wǒ shàngwǔ shí diǎn shí fēn yǒu kè.',ex_vn:'Sáng nay mình có tiết học lúc 10 giờ 10 phút.',
    exList:[{zh:'我上午十点十分有课。',py:'Wǒ shàngwǔ shí diǎn shí fēn yǒu kè.',vn:'Sáng nay mình có tiết học lúc 10 giờ 10 phút.'}],
    hanzi:[
@@ -44,7 +44,7 @@ var vocabData = [
       tip:'Hình dáng như một cây gậy đứng thẳng khi mặt trời ở đỉnh đầu, bóng gậy ngắn nhất → chỉ giờ NGỌ, giữa buổi TRƯA.',
       cf:'牛 (niú – "con bò", rất giống 午 nhưng có thêm nét phẩy nhô lên phía trên-trái)',w:'上午 / 下午 / 中午'},
    ]},
-  {n:5,zh:'分',py:'fēn',pos:'Lượng từ',vn:'phút',em:'⏱️',lesson:1,
+  {n:5,zh:'分',py:'fēn',pos:'Lượng từ',vn:'phút', hv: 'phân',em:'⏱️',lesson:1,
    ex_zh:'我上午十点十分有课。',ex_py:'Wǒ shàngwǔ shí diǎn shí fēn yǒu kè.',ex_vn:'Sáng nay mình có tiết học lúc 10 giờ 10 phút.',
    exList:[{zh:'我上午十点十分有课。',py:'Wǒ shàngwǔ shí diǎn shí fēn yǒu kè.',vn:'Sáng nay mình có tiết học lúc 10 giờ 10 phút.'}],
    hanzi:[
@@ -52,7 +52,7 @@ var vocabData = [
       tip:'八(tách ra hai bên) + 刀(con dao) → dùng DAO CHIA tách một vật ra làm đôi → nghĩa CHIA, PHÂN, cũng dùng để chỉ đơn vị PHÚT nhỏ trong giờ.',
       cf:'今 (jīn – "hôm nay", nét trên gần giống 八 nhưng phần dưới khác hẳn)',w:'分钟 / 一分 / 十分'},
    ]},
-  {n:6,zh:'课',py:'kè',pos:'Danh từ',vn:'tiết học, giờ học',em:'📖',lesson:1,
+  {n:6,zh:'课',py:'kè',pos:'Danh từ',vn:'tiết học, giờ học', hv: 'khóa',em:'📖',lesson:1,
    ex_zh:'我上午十点十分有课。',ex_py:'Wǒ shàngwǔ shí diǎn shí fēn yǒu kè.',ex_vn:'Sáng nay mình có tiết học lúc 10 giờ 10 phút.',
    exList:[{zh:'我上午十点十分有课。',py:'Wǒ shàngwǔ shí diǎn shí fēn yǒu kè.',vn:'Sáng nay mình có tiết học lúc 10 giờ 10 phút.'}],
    hanzi:[
@@ -60,7 +60,7 @@ var vocabData = [
       tip:'讠(lời nói, giảng dạy) + 果(quả, kết quả) → dùng LỜI NÓI giảng dạy để đạt được KẾT QUẢ học tập, đó là một TIẾT HỌC.',
       cf:'果 (guǒ – "quả, trái cây", là thành phần bên phải của 课 nhưng đứng riêng có nghĩa khác)',w:'上课 / 下课 / 课本'},
    ]},
-  {n:7,zh:'下午',py:'xiàwǔ',pos:'Danh từ',vn:'buổi chiều',em:'🌇',lesson:1,
+  {n:7,zh:'下午',py:'xiàwǔ',pos:'Danh từ',vn:'buổi chiều', hv: 'hạ ngọ',em:'🌇',lesson:1,
    ex_zh:'我们下午两点见吧。',ex_py:'Wǒmen xiàwǔ liǎng diǎn jiàn ba.',ex_vn:'Chúng ta hẹn gặp lúc 2 giờ chiều nhé.',
    exList:[
      {zh:'我们下午两点见吧。',py:'Wǒmen xiàwǔ liǎng diǎn jiàn ba.',vn:'Chúng ta hẹn gặp lúc 2 giờ chiều nhé.'},
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'Hình dáng như một cây gậy đứng thẳng khi mặt trời ở đỉnh đầu, bóng gậy ngắn nhất → chỉ giờ NGỌ, giữa buổi TRƯA.',
       cf:'牛 (niú – "con bò", rất giống 午 nhưng có thêm nét phẩy nhô lên phía trên-trái)',w:'上午 / 下午 / 中午'},
    ]},
-  {n:8,zh:'见',py:'jiàn',pos:'Động từ',vn:'gặp, gặp mặt',em:'🤝',lesson:1,
+  {n:8,zh:'见',py:'jiàn',pos:'Động từ',vn:'gặp, gặp mặt', hv: 'kiến',em:'🤝',lesson:1,
    ex_zh:'我们下午两点见吧。',ex_py:'Wǒmen xiàwǔ liǎng diǎn jiàn ba.',ex_vn:'Chúng ta hẹn gặp lúc 2 giờ chiều nhé.',
    exList:[{zh:'我们下午两点见吧。',py:'Wǒmen xiàwǔ liǎng diǎn jiàn ba.',vn:'Chúng ta hẹn gặp lúc 2 giờ chiều nhé.'}],
    hanzi:[
@@ -82,7 +82,7 @@ var vocabData = [
       tip:'Hình chữ giống con mắt 目 trên đôi chân 儿 → dùng MẮT để trông thấy, GẶP ai đó.',
       cf:'贝 (bèi – "vỏ sò", gần giống về nét nhưng nghĩa khác hẳn)',w:'见面 / 再见'},
    ]},
-  {n:9,zh:'吧',py:'ba',pos:'Trợ từ',vn:'nhé (dùng cuối câu để đề nghị, gợi ý)',em:'💬',lesson:1,
+  {n:9,zh:'吧',py:'ba',pos:'Trợ từ',vn:'nhé (dùng cuối câu để đề nghị, gợi ý)', hv: 'ba',em:'💬',lesson:1,
    ex_zh:'我们下午两点见吧。',ex_py:'Wǒmen xiàwǔ liǎng diǎn jiàn ba.',ex_vn:'Chúng ta hẹn gặp lúc 2 giờ chiều nhé.',
    exList:[{zh:'我们下午两点见吧。',py:'Wǒmen xiàwǔ liǎng diǎn jiàn ba.',vn:'Chúng ta hẹn gặp lúc 2 giờ chiều nhé.'}],
    hanzi:[
@@ -90,7 +90,7 @@ var vocabData = [
       tip:'口(miệng, lời nói) + 巴(âm gợi đọc "ba") → buông nhẹ tiếng "ba" từ MIỆNG ở cuối câu để ĐỀ NGHỊ, giống như đang thuyết phục nhẹ nhàng.',
       cf:'巴 (bā – "mong, bám", là thành phần bên phải của 吧 nhưng đứng riêng)',w:'好吧 / 走吧 / 是吧'},
    ]},
-  {n:10,zh:'电影院',py:'diànyǐngyuàn',pos:'Danh từ',vn:'rạp chiếu phim',em:'🎬',lesson:2,
+  {n:10,zh:'电影院',py:'diànyǐngyuàn',pos:'Danh từ',vn:'rạp chiếu phim', hv: 'điện ảnh viện',em:'🎬',lesson:2,
    ex_zh:'下午我想去电影院看电影。',ex_py:'Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng.',ex_vn:'Chiều nay mình muốn đi rạp xem phim.',
    exList:[{zh:'下午我想去电影院看电影。',py:'Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng.',vn:'Chiều nay mình muốn đi rạp xem phim.'}],
    hanzi:[
@@ -104,7 +104,7 @@ var vocabData = [
       tip:'阝(gò đất, tường bao quanh) + 完(hoàn thành, đầy đủ) → một khu đất được bao kín, có ĐẦY ĐỦ công trình bên trong → tạo thành một VIỆN.',
       cf:'完 (wán – "hoàn thành, xong", là thành phần bên phải của 院 nhưng đứng riêng)',w:'电影院 / 医院 / 院子'},
    ]},
-  {n:11,zh:'看',py:'kàn',pos:'Động từ',vn:'xem, nhìn, đọc',em:'👀',lesson:2,
+  {n:11,zh:'看',py:'kàn',pos:'Động từ',vn:'xem, nhìn, đọc', hv: 'khán',em:'👀',lesson:2,
    ex_zh:'下午我想去电影院看电影。',ex_py:'Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng.',ex_vn:'Chiều nay mình muốn đi rạp xem phim.',
    exList:[{zh:'下午我想去电影院看电影。',py:'Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng.',vn:'Chiều nay mình muốn đi rạp xem phim.'}],
    hanzi:[
@@ -112,7 +112,7 @@ var vocabData = [
       tip:'Bàn TAY (手) đặt che phía trên con MẮT (目) như đang che nắng để NHÌN xa hơn, XEM rõ hơn.',
       cf:'着 (zhe/zháo – trợ từ, cũng có 目 ở dưới nhưng phần trên khác)',w:'看电影 / 看书 / 看见'},
    ]},
-  {n:12,zh:'电影',py:'diànyǐng',pos:'Danh từ',vn:'phim, điện ảnh',em:'🎞️',lesson:2,
+  {n:12,zh:'电影',py:'diànyǐng',pos:'Danh từ',vn:'phim, điện ảnh', hv: 'điện ảnh',em:'🎞️',lesson:2,
    ex_zh:'下午我想去电影院看电影。',ex_py:'Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng.',ex_vn:'Chiều nay mình muốn đi rạp xem phim.',
    exList:[{zh:'下午我想去电影院看电影。',py:'Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng.',vn:'Chiều nay mình muốn đi rạp xem phim.'}],
    hanzi:[
@@ -123,7 +123,7 @@ var vocabData = [
       tip:'景(phong cảnh, ánh sáng) + 彡(ba nét vệt tượng trưng ánh sáng) → ánh sáng chiếu lên CẢNH vật tạo ra BÓNG, HÌNH ẢNH — cũng là nghĩa gốc của "phim".',
       cf:'景 (jǐng – "phong cảnh", là thành phần bên trái của 影 nhưng đứng riêng)',w:'电影 / 电影院 / 影子'},
    ]},
-  {n:13,zh:'事',py:'shì',pos:'Danh từ',vn:'việc, sự việc',em:'📋',lesson:2,
+  {n:13,zh:'事',py:'shì',pos:'Danh từ',vn:'việc, sự việc', hv: 'sự',em:'📋',lesson:2,
    ex_zh:'我不想去，下午还有事。',ex_py:'Wǒ bù xiǎng qù, xiàwǔ hái yǒu shì.',ex_vn:'Mình không muốn đi, chiều nay còn có việc.',
    exList:[{zh:'我不想去，下午还有事。',py:'Wǒ bù xiǎng qù, xiàwǔ hái yǒu shì.',vn:'Mình không muốn đi, chiều nay còn có việc.'}],
    hanzi:[
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'Hình ảnh như một bàn tay cầm bút ghi chép, nét sổ dài xuyên suốt tượng trưng dòng chữ ghi lại từng SỰ VIỆC, công VIỆC hằng ngày.',
       cf:'争 (zhēng – "tranh giành", hình dáng tổng thể khá giống 事 nhưng không có 口 ở giữa)',w:'事情 / 有事 / 没事'},
    ]},
-  {n:14,zh:'上课',py:'shàngkè',pos:'Động từ',vn:'lên lớp, đi học',em:'🏫',lesson:2,
+  {n:14,zh:'上课',py:'shàngkè',pos:'Động từ',vn:'lên lớp, đi học', hv: 'thượng khóa',em:'🏫',lesson:2,
    ex_zh:'我明天下午两点还上课呢。',ex_py:'Wǒ míngtiān xiàwǔ liǎng diǎn hái shàngkè ne.',ex_vn:'Chiều mai mình vẫn còn tiết học lúc 2 giờ.',
    exList:[{zh:'我明天下午两点还上课呢。',py:'Wǒ míngtiān xiàwǔ liǎng diǎn hái shàngkè ne.',vn:'Chiều mai mình vẫn còn tiết học lúc 2 giờ.'}],
    hanzi:[
@@ -142,7 +142,7 @@ var vocabData = [
       tip:'讠(lời nói, giảng dạy) + 果(quả, kết quả) → dùng LỜI NÓI giảng dạy để đạt được KẾT QUẢ học tập, đó là một TIẾT HỌC.',
       cf:'果 (guǒ – "quả, trái cây", là thành phần bên phải của 课 nhưng đứng riêng có nghĩa khác)',w:'上课 / 下课 / 课本'},
    ]},
-  {n:15,zh:'呢',py:'ne',pos:'Trợ từ',vn:'(đặt cuối câu, nhấn mạnh/duy trì ngữ khí trần thuật hoặc câu hỏi)',em:'❕',lesson:2,
+  {n:15,zh:'呢',py:'ne',pos:'Trợ từ',vn:'(đặt cuối câu, nhấn mạnh/duy trì ngữ khí trần thuật hoặc câu hỏi)', hv: 'ni',em:'❕',lesson:2,
    ex_zh:'我明天下午两点还上课呢。',ex_py:'Wǒ míngtiān xiàwǔ liǎng diǎn hái shàngkè ne.',ex_vn:'Chiều mai mình vẫn còn tiết học lúc 2 giờ.',
    exList:[{zh:'我明天下午两点还上课呢。',py:'Wǒ míngtiān xiàwǔ liǎng diǎn hái shàngkè ne.',vn:'Chiều mai mình vẫn còn tiết học lúc 2 giờ.'}],
    hanzi:[
@@ -150,7 +150,7 @@ var vocabData = [
       tip:'口(miệng, phát ra âm) + 尼(âm gợi đọc "ni/ne") → tiếng "ne" buông nhẹ từ MIỆNG ở cuối câu để hỏi hoặc nhấn mạnh.',
       cf:'尼 (ní – âm trong "尼龙 ni lông", là thành phần bên phải của 呢 nhưng đứng riêng)',w:'你呢 / 好呢 / 干什么呢'},
    ]},
-  {n:16,zh:'半',py:'bàn',pos:'Số từ',vn:'một nửa, rưỡi',em:'🕧',lesson:2,
+  {n:16,zh:'半',py:'bàn',pos:'Số từ',vn:'một nửa, rưỡi', hv: 'bán',em:'🕧',lesson:2,
    ex_zh:'四点半下课。',ex_py:'Sì diǎn bàn xiàkè.',ex_vn:'4 giờ rưỡi tan học.',
    exList:[
      {zh:'四点半下课。',py:'Sì diǎn bàn xiàkè.',vn:'4 giờ rưỡi tan học.'},
@@ -161,7 +161,7 @@ var vocabData = [
       tip:'Chữ 八 (chia làm hai) phía trên trùm lên chữ 十 (số mười) bị chia đôi bởi một nét ngang → hình ảnh một vật được chia làm hai phần bằng nhau, tức MỘT NỬA.',
       cf:'平 (píng – "bằng phẳng, hòa bình", hình dáng gần giống 半 nhưng không có nét xuyên chia đôi)',w:'一半 / 点半 / 半年'},
    ]},
-  {n:17,zh:'下课',py:'xiàkè',pos:'Động từ',vn:'tan học',em:'🔔',lesson:2,
+  {n:17,zh:'下课',py:'xiàkè',pos:'Động từ',vn:'tan học', hv: 'hạ khóa',em:'🔔',lesson:2,
    ex_zh:'四点半下课。',ex_py:'Sì diǎn bàn xiàkè.',ex_vn:'4 giờ rưỡi tan học.',
    exList:[{zh:'四点半下课。',py:'Sì diǎn bàn xiàkè.',vn:'4 giờ rưỡi tan học.'}],
    hanzi:[
@@ -172,7 +172,7 @@ var vocabData = [
       tip:'讠(lời nói, giảng dạy) + 果(quả, kết quả) → dùng LỜI NÓI giảng dạy để đạt được KẾT QUẢ học tập, đó là một TIẾT HỌC.',
       cf:'果 (guǒ – "quả, trái cây", là thành phần bên phải của 课 nhưng đứng riêng có nghĩa khác)',w:'下课 / 上课 / 课本'},
    ]},
-  {n:18,zh:'在',py:'zài',pos:'Động từ',vn:'ở, tại',em:'📍',lesson:3,
+  {n:18,zh:'在',py:'zài',pos:'Động từ',vn:'ở, tại', hv: 'tại',em:'📍',lesson:3,
    ex_zh:'我在家里呢。',ex_py:'Wǒ zài jiā li ne.',ex_vn:'Mình đang ở nhà.',
    exList:[{zh:'我在家里呢。',py:'Wǒ zài jiā li ne.',vn:'Mình đang ở nhà.'}],
    hanzi:[
@@ -180,7 +180,7 @@ var vocabData = [
       tip:'Phần bao ngoài như mái che nghiêng, bên trong là chữ 土(ĐẤT) → một vật đang ở trên mặt ĐẤT, tức đang tồn TẠI, ở một nơi nào đó.',
       cf:'存 (cún – "tồn tại, lưu trữ", nghĩa gần giống nhưng cấu trúc khác)',w:'在家 / 现在 / 在哪儿'},
    ]},
-  {n:19,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà',em:'🏠',lesson:3,
+  {n:19,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà', hv: 'gia',em:'🏠',lesson:3,
    ex_zh:'我在家里呢。',ex_py:'Wǒ zài jiā li ne.',ex_vn:'Mình đang ở nhà.',
    exList:[{zh:'我在家里呢。',py:'Wǒ zài jiā li ne.',vn:'Mình đang ở nhà.'}],
    hanzi:[
@@ -188,7 +188,7 @@ var vocabData = [
       tip:'宀(mái nhà) + 豕(con lợn) → thời xưa nuôi lợn dưới mái nhà, tượng trưng cho một GIA ĐÌNH, một NHÀ.',
       cf:'豪 (háo – "hào phóng", cũng có 豕")',w:'我家 / 在家'},
    ]},
-  {n:20,zh:'里',py:'li/lǐ',pos:'Danh từ',vn:'trong, bên trong',em:'📦',lesson:3,
+  {n:20,zh:'里',py:'li/lǐ',pos:'Danh từ',vn:'trong, bên trong', hv: 'lí',em:'📦',lesson:3,
    ex_zh:'我在家里呢。',ex_py:'Wǒ zài jiā li ne.',ex_vn:'Mình đang ở nhà.',
    exList:[{zh:'我在家里呢。',py:'Wǒ zài jiā li ne.',vn:'Mình đang ở nhà.'}],
    hanzi:[
@@ -196,7 +196,7 @@ var vocabData = [
       tip:'Hình ảnh một thửa RUỘNG (田) nằm trên nền ĐẤT (土) trong một xóm làng → biểu thị không gian BÊN TRONG một khu vực, một làng quê.',
       cf:'厘 (lí – "đơn vị đo lường nhỏ", chứa 里 bên trong nhưng thêm bộ 厂 phía ngoài)',w:'家里 / 哪里 / 这里'},
    ]},
-  {n:21,zh:'晚上',py:'wǎnshang',pos:'Danh từ',vn:'buổi tối',em:'🌙',lesson:3,
+  {n:21,zh:'晚上',py:'wǎnshang',pos:'Danh từ',vn:'buổi tối', hv: 'vãn thượng',em:'🌙',lesson:3,
    ex_zh:'我晚上六点半下班。',ex_py:'Wǒ wǎnshang liù diǎn bàn xiàbān.',ex_vn:'Tối nay mình 6 giờ rưỡi tan làm.',
    exList:[{zh:'我晚上六点半下班。',py:'Wǒ wǎnshang liù diǎn bàn xiàbān.',vn:'Tối nay mình 6 giờ rưỡi tan làm.'}],
    hanzi:[
@@ -207,7 +207,7 @@ var vocabData = [
       tip:'Một vạch ngang dài tượng trưng mặt đất, với một nét vươn LÊN phía TRÊN nó → chỉ vị trí TRÊN, hướng đi LÊN.',
       cf:'下 (xià – "dưới", ngược nghĩa, hình dạng gần như đối xứng)',w:'晚上 / 早上 / 上午'},
    ]},
-  {n:22,zh:'医院',py:'yīyuàn',pos:'Danh từ',vn:'bệnh viện',em:'🏥',lesson:3,
+  {n:22,zh:'医院',py:'yīyuàn',pos:'Danh từ',vn:'bệnh viện', hv: 'y viện',em:'🏥',lesson:3,
    ex_zh:'我八点去医院上班。',ex_py:'Wǒ bā diǎn qù yīyuàn shàngbān.',ex_vn:'Mình 8 giờ đến bệnh viện làm việc.',
    exList:[{zh:'我八点去医院上班。',py:'Wǒ bā diǎn qù yīyuàn shàngbān.',vn:'Mình 8 giờ đến bệnh viện làm việc.'}],
    hanzi:[
@@ -218,7 +218,7 @@ var vocabData = [
       tip:'阝(gò đất, tường bao quanh) + 完(hoàn thành, đầy đủ) → một khu đất được bao kín, có ĐẦY ĐỦ công trình bên trong → tạo thành một VIỆN.',
       cf:'完 (wán – "hoàn thành, xong", là thành phần bên phải của 院 nhưng đứng riêng)',w:'医院 / 电影院 / 院子'},
    ]},
-  {n:23,zh:'上班',py:'shàngbān',pos:'Động từ',vn:'đi làm, vào ca',em:'💼',lesson:3,
+  {n:23,zh:'上班',py:'shàngbān',pos:'Động từ',vn:'đi làm, vào ca', hv: 'thượng ban',em:'💼',lesson:3,
    ex_zh:'我八点去医院上班。',ex_py:'Wǒ bā diǎn qù yīyuàn shàngbān.',ex_vn:'Mình 8 giờ đến bệnh viện làm việc.',
    exList:[
      {zh:'我八点去医院上班。',py:'Wǒ bā diǎn qù yīyuàn shàngbān.',vn:'Mình 8 giờ đến bệnh viện làm việc.'},
@@ -232,7 +232,7 @@ var vocabData = [
       tip:'Hai miếng NGỌC (王) được DAO (刂) cắt tách ra thành hai phần bằng nhau → chia thành từng NHÓM, từng CA làm việc, từng LỚP học.',
       cf:'斑 (bān – "đốm, vệt", gần đồng âm và rất giống hình, khác ở phần trên bên phải là 文 thay vì 刂+王)',w:'上班 / 下班 / 班车'},
    ]},
-  {n:24,zh:'店',py:'diàn',pos:'Danh từ',vn:'cửa hàng, cửa tiệm',em:'🏪',lesson:3,
+  {n:24,zh:'店',py:'diàn',pos:'Danh từ',vn:'cửa hàng, cửa tiệm', hv: 'điếm',em:'🏪',lesson:3,
    ex_zh:'你去店里买些菜吧。',ex_py:'Nǐ qù diàn li mǎi xiē cài ba.',ex_vn:'Bạn ra cửa hàng mua ít thức ăn nhé.',
    exList:[{zh:'你去店里买些菜吧。',py:'Nǐ qù diàn li mǎi xiē cài ba.',vn:'Bạn ra cửa hàng mua ít thức ăn nhé.'}],
    hanzi:[
@@ -240,7 +240,7 @@ var vocabData = [
       tip:'广(mái nhà, mái che) + 占(chiếm giữ một chỗ) → một mái nhà được dùng để CHIẾM một vị trí kinh doanh, tức là một CỬA HÀNG.',
       cf:'点 (diǎn – "điểm, giờ", cũng chứa 占 nhưng bộ 灬 ở dưới thay vì 广 bao ngoài)',w:'商店 / 店里 / 饭店'},
    ]},
-  {n:25,zh:'菜',py:'cài',pos:'Danh từ',vn:'thức ăn, món ăn, rau',em:'🥬',lesson:3,
+  {n:25,zh:'菜',py:'cài',pos:'Danh từ',vn:'thức ăn, món ăn, rau', hv: 'thái',em:'🥬',lesson:3,
    ex_zh:'你去店里买些菜吧。',ex_py:'Nǐ qù diàn li mǎi xiē cài ba.',ex_vn:'Bạn ra cửa hàng mua ít thức ăn nhé.',
    exList:[{zh:'你去店里买些菜吧。',py:'Nǐ qù diàn li mǎi xiē cài ba.',vn:'Bạn ra cửa hàng mua ít thức ăn nhé.'}],
    hanzi:[
@@ -248,7 +248,7 @@ var vocabData = [
       tip:'艹(cây cỏ) + 采(hái, thu hoạch bằng tay) → hành động HÁI những cây CỎ, rau quả để làm thành món ăn, tức là RAU, THỨC ĂN.',
       cf:'采 (cǎi – "hái, thu thập", là thành phần dưới của 菜 nhưng đứng riêng không có 艹)',w:'菜店 / 买菜 / 做菜'},
    ]},
-  {n:26,zh:'分钟',py:'fēnzhōng',pos:'Lượng từ',vn:'phút',em:'⏲️',lesson:3,
+  {n:26,zh:'分钟',py:'fēnzhōng',pos:'Lượng từ',vn:'phút', hv: 'phân chung',em:'⏲️',lesson:3,
    ex_zh:'我十分钟后去。',ex_py:'Wǒ shí fēnzhōng hòu qù.',ex_vn:'10 phút nữa mình đi.',
    exList:[{zh:'我十分钟后去。',py:'Wǒ shí fēnzhōng hòu qù.',vn:'10 phút nữa mình đi.'}],
    hanzi:[
@@ -259,7 +259,7 @@ var vocabData = [
       tip:'钅(kim loại) + 中(ở giữa, trung tâm) → một vật bằng KIM LOẠI đặt Ở GIỮA phòng để báo giờ, đó là chiếc ĐỒNG HỒ, CHUÔNG.',
       cf:'种 (zhǒng/zhòng – "loại; trồng", rất giống 钟 nhưng bộ 禾(hoà – lúa) thay vì 钅(kim))',w:'分钟 / 钟表 / 一分钟'},
    ]},
-  {n:27,zh:'后',py:'hòu',pos:'Danh từ',vn:'sau, sau đó',em:'⏭️',lesson:3,
+  {n:27,zh:'后',py:'hòu',pos:'Danh từ',vn:'sau, sau đó', hv: 'hậu',em:'⏭️',lesson:3,
    ex_zh:'我十分钟后去。',ex_py:'Wǒ shí fēnzhōng hòu qù.',ex_vn:'10 phút nữa mình đi.',
    exList:[{zh:'我十分钟后去。',py:'Wǒ shí fēnzhōng hòu qù.',vn:'10 phút nữa mình đi.'}],
    hanzi:[

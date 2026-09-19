@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'发烧',py:'fā shāo',pos:'Động từ',vn:'sốt',em:'🤒',lesson:1,
+  {n:1,zh:'发烧',py:'fā shāo',pos:'Động từ',vn:'sốt', hv: 'phát thiêu',em:'🤒',lesson:1,
    explain:['Thân nhiệt cơ thể tăng cao hơn bình thường, thường là dấu hiệu của bệnh.'],
    usage:'Động từ ly hợp; thường đi cùng 有点儿/一点儿: 有点儿发烧.',
    collo:['有点儿发烧','发高烧','退烧'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 带 đã học ở Bài 1).'},
    ]},
 
-  {n:2,zh:'为',py:'wèi',pos:'Giới từ',vn:'cho, vì',em:'🎁',lesson:1,
+  {n:2,zh:'为',py:'wèi',pos:'Giới từ',vn:'cho, vì', hv: 'vị',em:'🎁',lesson:1,
    explain:['Giới từ chỉ đối tượng hưởng lợi hoặc mục đích của hành động.'],
    usage:'Giới từ, đứng trước đối tượng: 为 + [đối tượng] + động từ (为你买).',
    collo:['为你买','为朋友准备','为孩子做饭'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'只要……就…… (ở đây dùng 都) diễn tả điều kiện đủ.'},
    ]},
 
-  {n:3,zh:'照顾',py:'zhàogù',pos:'Động từ',vn:'chăm sóc',em:'🤲',lesson:2,
+  {n:3,zh:'照顾',py:'zhàogù',pos:'Động từ',vn:'chăm sóc', hv: 'chiếu cố',em:'🤲',lesson:2,
    explain:['Quan tâm, trông nom, giúp đỡ ai đó, thường dùng khi người đó ốm đau hoặc còn nhỏ.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 照顾 + [người] (照顾他).',
    collo:['照顾他','在家照顾','互相照顾'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 把 đã học ở Bài 2).'},
    ]},
 
-  {n:4,zh:'用',py:'yòng',pos:'Động từ',vn:'cần, dùng',em:'❓',lesson:2,
+  {n:4,zh:'用',py:'yòng',pos:'Động từ',vn:'cần, dùng', hv: 'dụng',em:'❓',lesson:2,
    explain:['Cần thiết phải làm gì; thường dùng ở dạng phủ định 不用 (không cần).'],
    usage:'Động từ; 不用 + V = không cần làm gì.',
    collo:['不用','不用去','有用'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 疼 đã học ở Bài 2).'},
    ]},
 
-  {n:5,zh:'感冒',py:'gǎnmào',pos:'Động từ',vn:'bị cảm',em:'🤧',lesson:2,
+  {n:5,zh:'感冒',py:'gǎnmào',pos:'Động từ',vn:'bị cảm', hv: 'cảm mạo',em:'🤧',lesson:2,
    explain:['Bệnh cảm cúm thông thường, do nhiễm lạnh hoặc vi rút.'],
    usage:'Động từ ly hợp; cũng dùng làm danh từ trong 感冒药 (thuốc cảm).',
    collo:['感冒药','感冒了','没感冒'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:6,zh:'季节',py:'jìjié',pos:'Danh từ',vn:'mùa',em:'🍂',lesson:3,
+  {n:6,zh:'季节',py:'jìjié',pos:'Danh từ',vn:'mùa', hv: 'quý tiết',em:'🍂',lesson:3,
    explain:['Khoảng thời gian trong năm có đặc điểm khí hậu riêng (xuân, hạ, thu, đông).'],
    usage:'Danh từ; thường hỏi bằng 哪个季节 (mùa nào).',
    collo:['哪个季节','四个季节','最喜欢的季节'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'每……都…… diễn tả tính phổ quát.'},
    ]},
 
-  {n:7,zh:'当然',py:'dāngrán',pos:'Phó từ',vn:'đương nhiên, dĩ nhiên',em:'👍',lesson:3,
+  {n:7,zh:'当然',py:'dāngrán',pos:'Phó từ',vn:'đương nhiên, dĩ nhiên', hv: 'đương nhiên',em:'👍',lesson:3,
    explain:['Điều hiển nhiên, không cần nghi ngờ.'],
    usage:'Phó từ, thường đứng đầu câu trả lời hoặc trước 是: 当然 + 是 + [câu trả lời].',
    collo:['当然是','当然可以','当然好'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'如果……就/会…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:8,zh:'春(天)',py:'chūn(tiān)',pos:'Danh từ',vn:'mùa xuân',em:'🌸',lesson:3,
+  {n:8,zh:'春(天)',py:'chūn(tiān)',pos:'Danh từ',vn:'mùa xuân', hv: 'xuân thiên',em:'🌸',lesson:3,
    explain:['Mùa đầu tiên trong năm, sau mùa đông, thời tiết ấm dần, cây cối đâm chồi.'],
    usage:'Danh từ; thường nói 春天 (đầy đủ) hoặc 春 (trong từ ghép/thơ).',
    collo:['春天到了','喜欢春天','春天的花'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:9,zh:'草',py:'cǎo',pos:'Danh từ',vn:'cỏ',em:'🌿',lesson:3,
+  {n:9,zh:'草',py:'cǎo',pos:'Danh từ',vn:'cỏ', hv: 'thảo',em:'🌿',lesson:3,
    explain:['Loài thực vật thân mềm, mọc thấp, thường phủ xanh mặt đất.'],
    usage:'Danh từ; thường xuất hiện cùng 树 (cây), 绿 (xanh): 草和树都绿了.',
    collo:['草地','草和树','绿草'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:10,zh:'夏(天)',py:'xià(tiān)',pos:'Danh từ',vn:'mùa hè',em:'☀️',lesson:3,
+  {n:10,zh:'夏(天)',py:'xià(tiān)',pos:'Danh từ',vn:'mùa hè', hv: 'hạ thiên',em:'☀️',lesson:3,
    explain:['Mùa thứ hai trong năm, sau mùa xuân, thời tiết nóng nhất trong năm.'],
    usage:'Danh từ; thường nói 夏天 (đầy đủ) hoặc 夏 (trong từ ghép).',
    collo:['喜欢夏天','夏天热','夏天到了'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:11,zh:'裙子',py:'qúnzi',pos:'Danh từ',vn:'váy',em:'👗',lesson:3,
+  {n:11,zh:'裙子',py:'qúnzi',pos:'Danh từ',vn:'váy', hv: 'quần tử',em:'👗',lesson:3,
    explain:['Trang phục nữ mặc ở phần dưới cơ thể, thường liền một mảnh.'],
    usage:'Danh từ; lượng từ đi kèm là 条: 一条裙子.',
    collo:['一条裙子','穿裙子','漂亮的裙子'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 条 đã học ở Bài 2).'},
    ]},
 
-  {n:12,zh:'最近',py:'zuìjìn',pos:'Phó từ',vn:'gần đây, dạo này',em:'🕐',lesson:4,
+  {n:12,zh:'最近',py:'zuìjìn',pos:'Phó từ',vn:'gần đây, dạo này', hv: 'tối cận',em:'🕐',lesson:4,
    explain:['Khoảng thời gian gần với hiện tại, vừa mới qua hoặc đang diễn ra.'],
    usage:'Phó từ, thường đứng đầu câu hoặc sau chủ ngữ: 最近 + [tình huống] (最近越来越胖).',
    collo:['最近怎么样','我最近','最近越来越'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:13,zh:'越',py:'yuè',pos:'Phó từ',vn:'càng',em:'📈',lesson:4,
+  {n:13,zh:'越',py:'yuè',pos:'Phó từ',vn:'càng', hv: 'việt',em:'📈',lesson:4,
    explain:['Phó từ dùng lặp lại trong cấu trúc 越来越 hoặc 越……越…… để diễn tả mức độ tăng dần theo thời gian/điều kiện.'],
    usage:'Cấu trúc: 越来越 + tính từ/động từ tâm lý (越来越漂亮), không thêm phó từ mức độ (很/非常) phía trước.',
    collo:['越来越漂亮','越来越好吃','越来越难'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'因为……所以…… kết hợp 越来越 diễn tả nguyên nhân — kết quả theo thời gian.'},
    ]},
 
-  {n:14,zh:'张',py:'Zhāng',pos:'Danh từ riêng',vn:'Trương (họ)',em:'👩',lesson:2,
+  {n:14,zh:'张',py:'Zhāng',pos:'Danh từ riêng',vn:'Trương (họ)', hv: 'Trương',em:'👩',lesson:2,
    explain:['Họ Trương, một họ phổ biến ở Trung Quốc; ở đây là 张太太 (bà Trương), bạn của 周太太.'],
    usage:'Danh từ riêng chỉ họ người, đứng trước 太太/先生/小姐: 张太太.',
    collo:['张太太','姓张','张先生'],

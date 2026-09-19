@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 13: 他在学做中国菜呢。
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'喂',py:'wèi',pos:'Cảm thán từ',vn:'a lô, này',em:'📞',lesson:1,
+  {n:1,zh:'喂',py:'wèi',pos:'Cảm thán từ',vn:'a lô, này', hv: 'úy',em:'📞',lesson:1,
    ex_zh:'喂，你在做什么呢？',ex_py:'Wèi, nǐ zài zuò shénme ne?',ex_vn:'A lô, anh đang làm gì vậy?',
    exList:[
      {zh:'喂，你在做什么呢？',py:'Wèi, nǐ zài zuò shénme ne?',vn:'A lô, anh đang làm gì vậy?'},
@@ -12,7 +12,7 @@ var vocabData = [
       tip:'口(miệng) mượn âm 畏 → thán từ dùng để GỌI, đặc biệt khi nghe điện thoại.',
       cf:'畏 (wèi – "sợ hãi")',w:'喂，你好'},
    ]},
-  {n:2,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng',em:'➕',lesson:1,
+  {n:2,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng', hv: 'dã',em:'➕',lesson:1,
    ex_zh:'大卫也在看书吗？',ex_py:'Dàwèi yě zài kàn shū ma?',ex_vn:'David cũng đang đọc sách à?',
    exList:[
      {zh:'大卫也在看书吗？',py:'Dàwèi yě zài kàn shū ma?',vn:'David cũng đang đọc sách à?'},
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'Chữ cổ vốn chỉ hình cái bình đựng nước, nay dùng làm phó từ "CŨNG".',
       cf:'心 (xīn – "tim")',w:'也在看书 / 我也是'},
    ]},
-  {n:3,zh:'学习',py:'xuéxí',pos:'Động từ',vn:'học, học tập',em:'📖',lesson:1,
+  {n:3,zh:'学习',py:'xuéxí',pos:'Động từ',vn:'học, học tập', hv: 'học tập',em:'📖',lesson:1,
    ex_zh:'我在学习汉语。',ex_py:'Wǒ zài xuéxí Hànyǔ.',ex_vn:'Tôi đang học tiếng Trung.',
    exList:[
      {zh:'我在学习汉语。',py:'Wǒ zài xuéxí Hànyǔ.',vn:'Tôi đang học tiếng Trung.'},
@@ -32,13 +32,13 @@ var vocabData = [
       tip:'Hình đôi cánh chim non tập bay lặp đi lặp lại → LUYỆN TẬP, HỌC TẬP. (学 đã học ở Bài 3)',
       cf:'羽 (yǔ – "lông vũ", chữ gốc")',w:'学习汉语'},
    ]},
-  {n:4,zh:'上午',py:'shàngwǔ',pos:'Danh từ',vn:'buổi sáng',em:'🌅',lesson:1,
+  {n:4,zh:'上午',py:'shàngwǔ',pos:'Danh từ',vn:'buổi sáng', hv: 'thượng ngọ',em:'🌅',lesson:1,
    ex_zh:'昨天上午你在做什么呢？',ex_py:'Zuótiān shàngwǔ nǐ zài zuò shénme ne?',ex_vn:'Chị làm gì vào sáng hôm qua vậy?',
    exList:[
      {zh:'昨天上午你在做什么呢？',py:'Zuótiān shàngwǔ nǐ zài zuò shénme ne?',vn:'Chị làm gì vào sáng hôm qua vậy?'},
    ],
    hanzi:[]},
-  {n:5,zh:'睡觉',py:'shuì jiào',pos:'Động từ',vn:'ngủ',em:'😴',lesson:2,
+  {n:5,zh:'睡觉',py:'shuì jiào',pos:'Động từ',vn:'ngủ', hv: 'thụy giác',em:'😴',lesson:2,
    ex_zh:'我在睡觉呢。',ex_py:'Wǒ zài shuì jiào ne.',ex_vn:'Tôi đang ngủ.',
    exList:[
      {zh:'我在睡觉呢。',py:'Wǒ zài shuì jiào ne.',vn:'Tôi đang ngủ.'},
@@ -51,7 +51,7 @@ var vocabData = [
       tip:'冖(nhắm mắt che lại) + 见(nhìn) → khi ngủ mắt nhắm lại không còn nhìn thấy gì.',
       cf:'学 (xué – "học", đã học Bài 3, phần trên gần giống")',w:'睡觉'},
    ]},
-  {n:6,zh:'电视',py:'diànshì',pos:'Danh từ',vn:'tivi',em:'📺',lesson:2,
+  {n:6,zh:'电视',py:'diànshì',pos:'Danh từ',vn:'tivi', hv: 'điện thị',em:'📺',lesson:2,
    ex_zh:'我在家看电视呢。',ex_py:'Wǒ zài jiā kàn diànshì ne.',ex_vn:'Tôi xem tivi ở nhà.',
    exList:[
      {zh:'我在家看电视呢。',py:'Wǒ zài jiā kàn diànshì ne.',vn:'Tôi xem tivi ở nhà.'},
@@ -61,7 +61,7 @@ var vocabData = [
       tip:'礻(biểu thị điều thiêng liêng) + 见(nhìn) → chăm chú NHÌN, XEM. (电 đã học ở Bài 10)',
       cf:'现 (xiàn – "hiện tại", đã học Bài 11")',w:'电视 / 看电视'},
    ]},
-  {n:7,zh:'喜欢',py:'xǐhuan',pos:'Động từ',vn:'thích, ưa thích',em:'😊',lesson:2,
+  {n:7,zh:'喜欢',py:'xǐhuan',pos:'Động từ',vn:'thích, ưa thích', hv: 'hỉ hoan',em:'😊',lesson:2,
    ex_zh:'你喜欢看电视吗？',ex_py:'Nǐ xǐhuan kàn diànshì ma?',ex_vn:'Chị có thích xem tivi không?',
    exList:[
      {zh:'你喜欢看电视吗？',py:'Nǐ xǐhuan kàn diànshì ma?',vn:'Chị có thích xem tivi không?'},
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'又(bàn tay, lặp lại) + 欠(mở miệng) → cười nói VUI VẺ.',
       cf:'次 (cì – "lần")',w:'喜欢'},
    ]},
-  {n:8,zh:'给',py:'gěi',pos:'Giới từ',vn:'cho, hướng về',em:'🎁',lesson:3,
+  {n:8,zh:'给',py:'gěi',pos:'Giới từ',vn:'cho, hướng về', hv: 'cấp',em:'🎁',lesson:3,
    ex_zh:'我现在给她打电话。',ex_py:'Wǒ xiànzài gěi tā dǎ diànhuà.',ex_vn:'Bây giờ tôi gọi điện cho cô ấy đây.',
    exList:[
      {zh:'我现在给她打电话。',py:'Wǒ xiànzài gěi tā dǎ diànhuà.',vn:'Bây giờ tôi gọi điện cho cô ấy đây.'},
@@ -84,7 +84,7 @@ var vocabData = [
       tip:'纟(sợi tơ, buộc quà) + 合(hợp lại, trao) → trao CHO, dành CHO ai đó.',
       cf:'合 (hé – "hợp")',w:'给她打电话'},
    ]},
-  {n:9,zh:'打电话',py:'dǎ diànhuà',pos:'Động từ',vn:'gọi điện thoại',em:'☎️',lesson:3,
+  {n:9,zh:'打电话',py:'dǎ diànhuà',pos:'Động từ',vn:'gọi điện thoại', hv: 'đả điện thoại',em:'☎️',lesson:3,
    ex_zh:'我现在给她打电话。',ex_py:'Wǒ xiànzài gěi tā dǎ diànhuà.',ex_vn:'Bây giờ tôi gọi điện cho cô ấy đây.',
    exList:[
      {zh:'我现在给她打电话。',py:'Wǒ xiànzài gěi tā dǎ diànhuà.',vn:'Bây giờ tôi gọi điện cho cô ấy đây.'},
@@ -97,7 +97,7 @@ var vocabData = [
       tip:'讠(lời nói) + 舌(lưỡi, cơ quan phát âm) → LỜI NÓI, câu CHUYỆN.',
       cf:'活 (huó – "sống")',w:'电话 / 打电话'},
    ]},
-  {n:10,zh:'吧',py:'ba',pos:'Trợ từ',vn:'trợ từ ngữ khí (làm dịu giọng, đề nghị)',em:'💬',lesson:3,
+  {n:10,zh:'吧',py:'ba',pos:'Trợ từ',vn:'trợ từ ngữ khí (làm dịu giọng, đề nghị)', hv: 'ba',em:'💬',lesson:3,
    ex_zh:'你下午打吧。',ex_py:'Nǐ xiàwǔ dǎ ba.',ex_vn:'Buổi chiều anh hãy gọi.',
    exList:[
      {zh:'你下午打吧。',py:'Nǐ xiàwǔ dǎ ba.',vn:'Buổi chiều anh hãy gọi.'},

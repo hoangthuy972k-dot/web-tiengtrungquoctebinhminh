@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'流利',py:'liúlì',pos:'Tính từ',vn:'lưu loát, trôi chảy',em:'🗣️',lesson:1,
+  {n:1,zh:'流利',py:'liúlì',pos:'Tính từ',vn:'lưu loát, trôi chảy', hv: 'lưu lợi',em:'🗣️',lesson:1,
    explain:['Diễn tả ngôn ngữ nói/đọc trôi chảy, không vấp váp.'],
    usage:'Tính từ; thường đi với 说得流利, 汉语说得流利.',
    collo:['说得这么流利','汉语流利','读得很流利'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'只要……坚持 kết hợp 坚持, ôn lại từ vựng Bài 9.'},
    ]},
 
-  {n:2,zh:'厉害',py:'lìhai',pos:'Tính từ',vn:'lợi hại, giỏi giang',em:'💪',lesson:1,
+  {n:2,zh:'厉害',py:'lìhai',pos:'Tính từ',vn:'lợi hại, giỏi giang', hv: 'lệ hại',em:'💪',lesson:1,
    explain:['Diễn tả năng lực/mức độ vượt trội, đáng nể.'],
    usage:'Tính từ; thường đi với 真厉害, 疼得厉害.',
    collo:['真厉害','疼得厉害','厉害的人'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'疼得厉害 — đau dữ dội.'},
    ]},
 
-  {n:3,zh:'语法',py:'yǔfǎ',pos:'Danh từ',vn:'ngữ pháp',em:'📖',lesson:1,
+  {n:3,zh:'语法',py:'yǔfǎ',pos:'Danh từ',vn:'ngữ pháp', hv: 'ngữ pháp',em:'📖',lesson:1,
    explain:['Quy tắc cấu trúc câu, cách kết hợp từ ngữ của một ngôn ngữ.'],
    usage:'Danh từ; thường đi với 语法不太好, 学习语法.',
    collo:['语法不太好','学习语法','语法知识'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'语法……复杂……坚持练习 kết hợp 复杂/坚持, ôn lại nhiều từ vựng.'},
    ]},
 
-  {n:4,zh:'准确',py:'zhǔnquè',pos:'Tính từ',vn:'chính xác, đúng',em:'🎯',lesson:1,
+  {n:4,zh:'准确',py:'zhǔnquè',pos:'Tính từ',vn:'chính xác, đúng', hv: 'chuẩn xác',em:'🎯',lesson:1,
    explain:['Diễn tả sự đúng đắn, không sai lệch.'],
    usage:'Tính từ; thường đi với 说得不太准确, 准确的方法.',
    collo:['说得不太准确','准确的答案','消息准确吗'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'准确 kết hợp 难道, ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:5,zh:'词语',py:'cíyǔ',pos:'Danh từ',vn:'từ ngữ, cách diễn đạt',em:'📝',lesson:1,
+  {n:5,zh:'词语',py:'cíyǔ',pos:'Danh từ',vn:'từ ngữ, cách diễn đạt', hv: 'từ ngữ',em:'📝',lesson:1,
    explain:['Từ và cụm từ trong ngôn ngữ.'],
    usage:'Danh từ; thường đi với 学到很多新词语, 选择合适的词语.',
    collo:['新词语','词语增加了','简单的词语'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'词语 kết hợp 厉害, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:6,zh:'连',py:'lián',pos:'Giới từ',vn:'ngay cả (nhấn mạnh)',em:'🔗',lesson:1,
+  {n:6,zh:'连',py:'lián',pos:'Giới từ',vn:'ngay cả (nhấn mạnh)', hv: 'liên',em:'🔗',lesson:1,
    explain:['Giới từ nhấn mạnh, thường dùng cấu trúc "连……也/都……". Người nói thông qua nhấn mạnh một ví dụ cực đoan để nói rõ một tình huống khác.'],
    usage:'连 + Chủ ngữ/Tân ngữ (đặt trước) + 也/都 + Vị ngữ.',
    collo:['连……都……','连中文报纸都看得懂','连我住的楼'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'连……都…… — ngay cả … cũng.'},
    ]},
 
-  {n:7,zh:'阅读',py:'yuèdú',pos:'Động từ',vn:'đọc (sách báo)',em:'📚',lesson:2,
+  {n:7,zh:'阅读',py:'yuèdú',pos:'Động từ',vn:'đọc (sách báo)', hv: 'duyệt độc',em:'📚',lesson:2,
    explain:['Hoạt động đọc, thường dùng cho việc đọc sách/tài liệu nghiêm túc.'],
    usage:'Động từ; thường đi với 坚持阅读, 阅读能力.',
    collo:['坚持阅读','阅读考试','阅读能力'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'阅读 kết hợp 增加, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:8,zh:'来得及',py:'láidejí',pos:'Động từ',vn:'kịp, còn kịp',em:'⏰',lesson:2,
+  {n:8,zh:'来得及',py:'láidejí',pos:'Động từ',vn:'kịp, còn kịp', hv: 'lai đắc cập',em:'⏰',lesson:2,
    explain:['Còn đủ thời gian để làm việc gì đó.'],
    usage:'Động từ; thường đi với 应该来得及吧, 时间来不及 (dạng phủ định).',
    collo:['来得及吧','时间来不及','来不及做'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'来不及 — không kịp.'},
    ]},
 
-  {n:9,zh:'复杂',py:'fùzá',pos:'Tính từ',vn:'phức tạp, rắc rối',em:'🧩',lesson:2,
+  {n:9,zh:'复杂',py:'fùzá',pos:'Tính từ',vn:'phức tạp, rắc rối', hv: 'phục tạp',em:'🧩',lesson:2,
    explain:['Diễn tả sự việc có nhiều yếu tố, khó hiểu/khó giải quyết.'],
    usage:'Tính từ; thường đi với 比较复杂的题, 有点儿复杂.',
    collo:['比较复杂的题','这个问题有点儿复杂','复杂的生活'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'复杂 kết hợp 连, ôn lại điểm ngữ pháp của bài.'},
    ]},
 
-  {n:10,zh:'只好',py:'zhǐhǎo',pos:'Phó từ',vn:'đành phải, buộc phải',em:'😔',lesson:2,
+  {n:10,zh:'只好',py:'zhǐhǎo',pos:'Phó từ',vn:'đành phải, buộc phải', hv: 'chỉ hảo',em:'😔',lesson:2,
    explain:['Diễn tả việc không còn lựa chọn nào khác, đành phải làm theo cách đó.'],
    usage:'Phó từ, đứng trước động từ: 最后只好放弃了.',
    collo:['最后只好放弃了','只好这样了','只好等待'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'只好 — đành phải.'},
    ]},
 
-  {n:11,zh:'填空',py:'tiánkòng',pos:'Động từ',vn:'điền vào chỗ trống',em:'✍️',lesson:2,
+  {n:11,zh:'填空',py:'tiánkòng',pos:'Động từ',vn:'điền vào chỗ trống', hv: 'điền khống',em:'✍️',lesson:2,
    explain:['Loại bài tập yêu cầu điền từ/nội dung vào phần để trống.'],
    usage:'Động từ ly hợp; thường đi với 填空题, 有几个填空题.',
    collo:['填空题','有几个填空题不会做','选词填空'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'填空 kết hợp 语法/准确, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:12,zh:'猜',py:'cāi',pos:'Động từ',vn:'đoán',em:'🤔',lesson:2,
+  {n:12,zh:'猜',py:'cāi',pos:'Động từ',vn:'đoán', hv: 'sai',em:'🤔',lesson:2,
    explain:['Suy đoán khi không chắc chắn về câu trả lời.'],
    usage:'Động từ; thường đi với 随便猜了一个, 猜对了.',
    collo:['随便猜了一个答案','一个都没猜对','猜猜看'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'猜 kết hợp 词语/语法, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:13,zh:'否则',py:'fǒuzé',pos:'Liên từ',vn:'nếu không thì, bằng không',em:'⚠️',lesson:2,
+  {n:13,zh:'否则',py:'fǒuzé',pos:'Liên từ',vn:'nếu không thì, bằng không', hv: 'phủ tắc',em:'⚠️',lesson:2,
    explain:['Diễn tả "nếu không phải như vậy". Câu theo sau 否则 chỉ kết quả được suy ra từ câu phía trước, hoặc đưa ra một lựa chọn khác.'],
    usage:'Vế 1，否则 + Vế 2 (kết quả nếu không làm theo vế 1).',
    collo:['否则会……','否则就……','否则不会……'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'否则 kết hợp 肯定, ôn lại ngữ pháp Bài 5.'},
    ]},
 
-  {n:14,zh:'客厅',py:'kètīng',pos:'Danh từ',vn:'phòng khách',em:'🛋️',lesson:3,
+  {n:14,zh:'客厅',py:'kètīng',pos:'Danh từ',vn:'phòng khách', hv: 'khách sảnh',em:'🛋️',lesson:3,
    explain:['Căn phòng trong nhà dùng để tiếp khách, sinh hoạt chung.'],
    usage:'Danh từ; thường đi với 客厅里, 在客厅.',
    collo:['客厅里到处是书','在客厅看电视','客厅很大'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'本来……结果…… ôn lại ngữ pháp Bài 3 và Bài 9.'},
    ]},
 
-  {n:15,zh:'无论',py:'wúlùn',pos:'Liên từ',vn:'bất kể, dù … (cũng)',em:'♾️',lesson:3,
+  {n:15,zh:'无论',py:'wúlùn',pos:'Liên từ',vn:'bất kể, dù … (cũng)', hv: 'vô luận',em:'♾️',lesson:3,
    explain:['Diễn tả trong bất kỳ điều kiện nào kết quả/kết luận cũng không thay đổi; thường dùng cấu trúc 无论……都/也……. Sau 无论 là thành phần lựa chọn (A还是B) hoặc đại từ nghi vấn phiếm chỉ (什么/怎么样).'],
    usage:'无论 + A还是B / đại từ nghi vấn，……都/也……',
    collo:['无论是……还是……','无论怎么样','无论如何'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'无论……还是……都 kết hợp 在……看来, ôn lại ngữ pháp Bài 10.'},
    ]},
 
-  {n:16,zh:'杂志',py:'zázhì',pos:'Danh từ',vn:'tạp chí',em:'📰',lesson:3,
+  {n:16,zh:'杂志',py:'zázhì',pos:'Danh từ',vn:'tạp chí', hv: 'tạp chí',em:'📰',lesson:3,
    explain:['Ấn phẩm định kỳ gồm nhiều bài viết, hình ảnh về một hoặc nhiều chủ đề.'],
    usage:'Danh từ; thường đi với 看杂志, 一本杂志.',
    collo:['普通杂志','看杂志','一本杂志'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'通过……来…… ôn lại ngữ pháp Bài 9.'},
    ]},
 
-  {n:17,zh:'著名',py:'zhùmíng',pos:'Tính từ',vn:'nổi tiếng',em:'🌟',lesson:3,
+  {n:17,zh:'著名',py:'zhùmíng',pos:'Tính từ',vn:'nổi tiếng', hv: 'trứ danh',em:'🌟',lesson:3,
    explain:['Được nhiều người biết đến; danh tiếng lớn (thường dùng cho tác phẩm, nhân vật, địa danh).'],
    usage:'Tính từ, thường làm định ngữ: 著名的小说/作家/大学.',
    collo:['著名小说','著名的作家','世界上著名的'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'竟然 ôn lại ngữ pháp Bài 6.'},
    ]},
 
-  {n:18,zh:'页',py:'yè',pos:'Lượng từ',vn:'trang (sách)',em:'📄',lesson:3,
+  {n:18,zh:'页',py:'yè',pos:'Lượng từ',vn:'trang (sách)', hv: 'hiệt',em:'📄',lesson:3,
    explain:['Lượng từ chỉ trang sách, trang giấy.'],
    usage:'Số + 页: 一页书, 读10页, 第几页.',
    collo:['读一页书','读10页','第五页'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'只要……就 ôn lại ngữ pháp Bài 8.'},
    ]},
 
-  {n:19,zh:'增加',py:'zēngjiā',pos:'Động từ',vn:'tăng thêm',em:'📈',lesson:3,
+  {n:19,zh:'增加',py:'zēngjiā',pos:'Động từ',vn:'tăng thêm', hv: 'tăng gia',em:'📈',lesson:3,
    explain:['Làm cho nhiều hơn, lớn hơn về số lượng/mức độ.'],
    usage:'Động từ: 增加知识, 增加了不少烦恼, 增加收入.',
    collo:['增加知识','增加了不少烦恼','增加收入'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'倍 ôn lại ngữ pháp Bài 6.'},
    ]},
 
-  {n:20,zh:'文章',py:'wénzhāng',pos:'Danh từ',vn:'bài văn, bài báo',em:'📃',lesson:4,
+  {n:20,zh:'文章',py:'wénzhāng',pos:'Danh từ',vn:'bài văn, bài báo', hv: 'văn chương',em:'📃',lesson:4,
    explain:['Bài viết hoàn chỉnh (bài văn, bài báo, bài luận).'],
    usage:'Danh từ; lượng từ 篇: 一篇文章, 看完一篇文章.',
    collo:['一篇文章','看完一篇文章','写文章'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'把……写下来 kết hợp 内容, ôn lại câu chữ 把.'},
    ]},
 
-  {n:21,zh:'之',py:'zhī',pos:'Trợ từ',vn:'của (nối từ bổ nghĩa và từ được bổ nghĩa)',em:'🔗',lesson:4,
+  {n:21,zh:'之',py:'zhī',pos:'Trợ từ',vn:'của (nối từ bổ nghĩa và từ được bổ nghĩa)', hv: 'chi',em:'🔗',lesson:4,
    explain:['Trợ từ kết cấu mang màu sắc văn viết, nối định ngữ với trung tâm ngữ, tương đương 的: 之后, 之前, 之间, 之一.'],
    usage:'……之后 / 之前 / 之间 / 之一 / 之中.',
    collo:['之后','之一','之间'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'之后 kết hợp 本来 (Bài 3), 结果 (Bài 9), 却 (Bài 2).'},
    ]},
 
-  {n:22,zh:'内容',py:'nèiróng',pos:'Danh từ',vn:'nội dung',em:'📋',lesson:4,
+  {n:22,zh:'内容',py:'nèiróng',pos:'Danh từ',vn:'nội dung', hv: 'nội dung',em:'📋',lesson:4,
    explain:['Những gì được chứa đựng, trình bày trong bài viết, sách, cuộc nói chuyện…'],
    usage:'Danh từ: 主要内容, 书本上的内容, 内容丰富.',
    collo:['主要内容','内容丰富','复习重要内容'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'对……来说 ôn lại ngữ pháp Bài 5, kết hợp 复杂.'},
    ]},
 
-  {n:23,zh:'然而',py:'rán\'ér',pos:'Liên từ',vn:'nhưng, song, tuy nhiên',em:'↩️',lesson:4,
+  {n:23,zh:'然而',py:'rán\'ér',pos:'Liên từ',vn:'nhưng, song, tuy nhiên', hv: 'nhiên nhi',em:'↩️',lesson:4,
    explain:['Liên từ chỉ sự chuyển ý, đứng đầu vế sau, thường dùng trong văn viết; sau 然而 có thể có dấu phẩy để ngắt.'],
    usage:'Vế 1。然而(，) + Vế 2 (văn viết).',
    collo:['然而，……','然而一直没有放弃','然而看法不同'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'然而 kết hợp 由于 (Bài 10) và 只好 (từ mới của bài).'},
    ]},
 
-  {n:24,zh:'看法',py:'kànfǎ',pos:'Danh từ',vn:'quan điểm, cách nhìn',em:'👁️',lesson:4,
+  {n:24,zh:'看法',py:'kànfǎ',pos:'Danh từ',vn:'quan điểm, cách nhìn', hv: 'khán pháp',em:'👁️',lesson:4,
    explain:['Ý kiến, cách nhìn nhận của một người về sự việc nào đó.'],
    usage:'Danh từ: 自己的看法, 对……的看法, 看法不同.',
    collo:['自己的看法','对……的看法','看法不同'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'以为 + 原来 ôn lại ngữ pháp Bài 4.'},
    ]},
 
-  {n:25,zh:'相同',py:'xiāngtóng',pos:'Tính từ',vn:'giống nhau, như nhau',em:'🟰',lesson:5,
+  {n:25,zh:'相同',py:'xiāngtóng',pos:'Tính từ',vn:'giống nhau, như nhau', hv: 'tương đồng',em:'🟰',lesson:5,
    explain:['Hoàn toàn giống nhau, không có điểm khác biệt.'],
    usage:'Tính từ: 相同的汉字, 看法相同, 跟……相同.',
    collo:['三个相同的汉字','看法不完全相同','相同年龄'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'几乎 ôn lại ngữ pháp Bài 2.'},
    ]},
 
-  {n:26,zh:'顺序',py:'shùnxù',pos:'Danh từ',vn:'trật tự, thứ tự',em:'🔢',lesson:5,
+  {n:26,zh:'顺序',py:'shùnxù',pos:'Danh từ',vn:'trật tự, thứ tự', hv: 'thuận tự',em:'🔢',lesson:5,
    explain:['Thứ tự sắp xếp trước sau của sự vật, hành động.'],
    usage:'Danh từ: 不同的顺序, 按照……的顺序, 顺序不对.',
    collo:['不同的顺序','按照顺序','先下后上的顺序'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'首先……其次……最后 ôn lại ngữ pháp Bài 3.'},
    ]},
 
-  {n:27,zh:'表示',py:'biǎoshì',pos:'Động từ',vn:'biểu thị, có ý nghĩa; bày tỏ',em:'💬',lesson:5,
+  {n:27,zh:'表示',py:'biǎoshì',pos:'Động từ',vn:'biểu thị, có ý nghĩa; bày tỏ', hv: 'biểu thị',em:'💬',lesson:5,
    explain:['1. Biểu thị, mang ý nghĩa (từ ngữ/ký hiệu biểu thị điều gì).','2. Bày tỏ (thái độ, cảm xúc) bằng lời nói/hành động.'],
    usage:'表示 + ý nghĩa/thái độ: 表示不同的意思, 表示感谢, 表示同意.',
    collo:['表示了不同的意思','表示感谢','表示同意'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'表示 kết hợp 相同/顺序 — từ mới của bài, cùng 却 (Bài 2).'},
    ]},
 
-  {n:28,zh:'养成',py:'yǎngchéng',pos:'Động từ',vn:'hình thành, tạo (thói quen)',em:'🌱',lesson:5,
+  {n:28,zh:'养成',py:'yǎngchéng',pos:'Động từ',vn:'hình thành, tạo (thói quen)', hv: 'dưỡng thành',em:'🌱',lesson:5,
    explain:['Dần dần hình thành (thói quen, tính cách) qua thời gian.'],
    usage:'养成 + 习惯: 养成阅读的习惯, 养成好习惯.',
    collo:['养成阅读的习惯','养成好习惯','从小养成'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'只要……就 ôn lại ngữ pháp Bài 8.'},
    ]},
 
-  {n:29,zh:'同时',py:'tóngshí',pos:'Liên từ/Danh từ',vn:'đồng thời, hơn nữa; cùng lúc',em:'⏱️',lesson:5,
+  {n:29,zh:'同时',py:'tóngshí',pos:'Liên từ/Danh từ',vn:'đồng thời, hơn nữa; cùng lúc', hv: 'đồng thời',em:'⏱️',lesson:5,
    explain:['1. (Liên từ) Nghĩa "hơn nữa", tiến thêm một bước, thường đi với 又/也/还.','2. (Danh từ) Chỉ hành động xảy ra cùng lúc, dùng trong cấu trúc 在……(的)同时.'],
    usage:'Vế 1。同时，……也/还……(liên từ) | 在……(的)同时，……(danh từ)',
    collo:['同时，……也','在……的同时','同时还'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'同时……也 kết hợp 著名 (từ mới) và 母亲 (Bài 10).'},
    ]},
 
-  {n:30,zh:'精彩',py:'jīngcǎi',pos:'Tính từ',vn:'tuyệt vời, xuất sắc, đặc sắc',em:'✨',lesson:5,
+  {n:30,zh:'精彩',py:'jīngcǎi',pos:'Tính từ',vn:'tuyệt vời, xuất sắc, đặc sắc', hv: 'tinh thái',em:'✨',lesson:5,
    explain:['Đặc sắc, hấp dẫn, xuất sắc (biểu diễn, trận đấu, cuộc sống…).'],
    usage:'Tính từ: 生活更精彩, 精彩的比赛, 表演很精彩.',
    collo:['生活更精彩','精彩的比赛','表演很精彩'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'使 + 因此 ôn lại ngữ pháp Bài 8.'},
    ]},
 
-  {n:31,zh:'大卫',py:'Dàwèi',pos:'Danh từ riêng',vn:'David (tên người)',em:'👨',lesson:1,
+  {n:31,zh:'大卫',py:'Dàwèi',pos:'Danh từ riêng',vn:'David (tên người)', hv: 'Đại Vệ',em:'👨',lesson:1,
    explain:['Tên riêng của nhân vật nam (người nước ngoài), bạn của Mã Khắc.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['大卫说','大卫和马克'],

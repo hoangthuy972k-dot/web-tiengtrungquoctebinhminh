@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'前边',py:'qiánbian',pos:'Danh từ',vn:'phía trước',em:'👉',lesson:1,
+  {n:1,zh:'前边',py:'qiánbian',pos:'Danh từ',vn:'phía trước', hv: 'tiền biên',em:'👉',lesson:1,
    ex_zh:'学校前边有一家电影院。',ex_py:'Xuéxiào qiánbian yǒu yì jiā diànyǐngyuàn.',ex_vn:'Phía trước trường học có một rạp chiếu phim.',
    exList:[{zh:'学校前边有一家电影院。',py:'Xuéxiào qiánbian yǒu yì jiā diànyǐngyuàn.',vn:'Phía trước trường học có một rạp chiếu phim.'}],
    hanzi:[
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'辶(đi, chuyển động) bao lấy 力(sức lực) → đi tới BÊN CẠNH, ranh giới một khu vực = BÊN, PHÍA.',
       cf:'达 (dá – "đạt tới", cũng có bộ 辶")',w:'前边 / 外边 / 里边'},
    ]},
-  {n:2,zh:'边',py:'bian',pos:'Hậu tố',vn:'phía, bên',em:'📐',lesson:1,
+  {n:2,zh:'边',py:'bian',pos:'Hậu tố',vn:'phía, bên', hv: 'biên',em:'📐',lesson:1,
    ex_zh:'我们七点在电影院外边见，好吗？',ex_py:'Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn, hǎo ma?',ex_vn:'Chúng mình gặp nhau lúc 7 giờ ở bên ngoài rạp chiếu phim, được không?',
    exList:[{zh:'我们七点在电影院外边见，好吗？',py:'Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn, hǎo ma?',vn:'Chúng mình gặp nhau lúc 7 giờ ở bên ngoài rạp chiếu phim, được không?'}],
    hanzi:[
@@ -22,7 +22,7 @@ var vocabData = [
       tip:'辶(đi, chuyển động) bao lấy 力(sức lực) → đi tới BÊN CẠNH, ranh giới một khu vực = BÊN, PHÍA.',
       cf:'达 (dá – "đạt tới", cũng có bộ 辶")',w:'外边 / 里边 / 那边'},
    ]},
-  {n:3,zh:'家',py:'jiā',pos:'Lượng từ',vn:'cái, chiếc (dùng cho cửa hàng, cơ quan, doanh nghiệp)',em:'🏢',lesson:1,
+  {n:3,zh:'家',py:'jiā',pos:'Lượng từ',vn:'cái, chiếc (dùng cho cửa hàng, cơ quan, doanh nghiệp)', hv: 'gia',em:'🏢',lesson:1,
    ex_zh:'学校前边有一家电影院。',ex_py:'Xuéxiào qiánbian yǒu yì jiā diànyǐngyuàn.',ex_vn:'Phía trước trường học có một rạp chiếu phim.',
    exList:[{zh:'学校前边有一家电影院。',py:'Xuéxiào qiánbian yǒu yì jiā diànyǐngyuàn.',vn:'Phía trước trường học có một rạp chiếu phim.'}],
    hanzi:[
@@ -30,7 +30,7 @@ var vocabData = [
       tip:'宀(mái nhà) + 豕(con lợn) → thời xưa nuôi lợn dưới nhà sàn, biểu tượng của NHÀ; mượn nghĩa để đếm các "cơ sở" như cửa hàng, công ty.',
       cf:'豪 (háo – "hào hiệp")',w:'一家电影院 / 我家'},
    ]},
-  {n:4,zh:'那个',py:'nàge',pos:'Đại từ',vn:'đó, cái đó',em:'👆',lesson:1,
+  {n:4,zh:'那个',py:'nàge',pos:'Đại từ',vn:'đó, cái đó', hv: 'na cá',em:'👆',lesson:1,
    ex_zh:'我们晚上去那个电影院看电影吧。',ex_py:'Wǒmen wǎnshang qù nàge diànyǐngyuàn kàn diànyǐng ba.',ex_vn:'Tối chúng mình đến rạp chiếu phim đó xem phim nhé.',
    exList:[{zh:'我们晚上去那个电影院看电影吧。',py:'Wǒmen wǎnshang qù nàge diànyǐngyuàn kàn diànyǐng ba.',vn:'Tối chúng mình đến rạp chiếu phim đó xem phim nhé.'}],
    hanzi:[
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'亻Người (人) đứng trên một nét sổ thẳng (丨) tượng trưng một CÁ THỂ đơn lẻ → dùng làm lượng từ đếm CÁI, CHIẾC chung chung.',
       cf:'介 (jiè – "giới thiệu", hình dạng gần giống")',w:'那个 / 一个 / 几个'},
    ]},
-  {n:5,zh:'外边',py:'wàibian',pos:'Danh từ',vn:'phía ngoài, bên ngoài',em:'🌳',lesson:1,
+  {n:5,zh:'外边',py:'wàibian',pos:'Danh từ',vn:'phía ngoài, bên ngoài', hv: 'ngoại biên',em:'🌳',lesson:1,
    ex_zh:'我们七点在电影院外边见，好吗？',ex_py:'Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn, hǎo ma?',ex_vn:'Chúng mình gặp nhau lúc 7 giờ ở bên ngoài rạp chiếu phim, được không?',
    exList:[{zh:'我们七点在电影院外边见，好吗？',py:'Wǒmen qī diǎn zài diànyǐngyuàn wàibian jiàn, hǎo ma?',vn:'Chúng mình gặp nhau lúc 7 giờ ở bên ngoài rạp chiếu phim, được không?'}],
    hanzi:[
@@ -52,7 +52,7 @@ var vocabData = [
       tip:'辶(đi, chuyển động) bao lấy 力(sức lực) → đi tới BÊN CẠNH, ranh giới một khu vực = BÊN, PHÍA.',
       cf:'达 (dá – "đạt tới", cũng có bộ 辶")',w:'外边 / 前边 / 里边'},
    ]},
-  {n:6,zh:'椅子',py:'yǐzi',pos:'Danh từ',vn:'ghế',em:'🪑',lesson:2,
+  {n:6,zh:'椅子',py:'yǐzi',pos:'Danh từ',vn:'ghế', hv: 'ỷ tử',em:'🪑',lesson:2,
    ex_zh:'椅子上有一本中文书，那是谁的书？',ex_py:'Yǐzi shang yǒu yì běn Zhōngwén shū, nà shì shéi de shū?',ex_vn:'Trên ghế có một quyển sách tiếng Trung, đó là sách của ai?',
    exList:[{zh:'椅子上有一本中文书，那是谁的书？',py:'Yǐzi shang yǒu yì běn Zhōngwén shū, nà shì shéi de shū?',vn:'Trên ghế có một quyển sách tiếng Trung, đó là sách của ai?'}],
    hanzi:[
@@ -63,7 +63,7 @@ var vocabData = [
       tip:'Hình vẽ đứa TRẺ sơ sinh quấn tã, hai tay dang ra → nghĩa gốc là CON; thường làm hậu tố danh từ không mang nghĩa riêng (như 椅子, 桌子).',
       cf:'孑 (jié – "cô độc", thiếu một nét móc so với 子")',w:'椅子 / 儿子 / 孩子'},
    ]},
-  {n:7,zh:'上',py:'shang',pos:'Danh từ',vn:'trên, phía trên (dùng sau danh từ để chỉ vị trí)',em:'⬆️',lesson:2,
+  {n:7,zh:'上',py:'shang',pos:'Danh từ',vn:'trên, phía trên (dùng sau danh từ để chỉ vị trí)', hv: 'thượng',em:'⬆️',lesson:2,
    ex_zh:'椅子上有一本中文书。',ex_py:'Yǐzi shang yǒu yì běn Zhōngwén shū.',ex_vn:'Trên ghế có một quyển sách tiếng Trung.',
    exList:[{zh:'椅子上有一本中文书。',py:'Yǐzi shang yǒu yì běn Zhōngwén shū.',vn:'Trên ghế có một quyển sách tiếng Trung.'}],
    hanzi:[
@@ -71,7 +71,7 @@ var vocabData = [
       tip:'Một vạch ngắn đặt PHÍA TRÊN một đường ngang dài (đường chuẩn/mặt đất) → chỉ vị trí Ở TRÊN.',
       cf:'下 (xià – "dưới", ngược nghĩa, hình gần đối xứng")',w:'椅子上 / 上午 / 上课'},
    ]},
-  {n:8,zh:'本',py:'běn',pos:'Lượng từ',vn:'quyển, cuốn',em:'📖',lesson:2,
+  {n:8,zh:'本',py:'běn',pos:'Lượng từ',vn:'quyển, cuốn', hv: 'bản',em:'📖',lesson:2,
    ex_zh:'这是我的第二本中文书。',ex_py:'Zhè shì wǒ de dì-èr běn Zhōngwén shū.',ex_vn:'Đây là quyển sách tiếng Trung thứ hai của mình.',
    exList:[{zh:'这是我的第二本中文书。',py:'Zhè shì wǒ de dì-èr běn Zhōngwén shū.',vn:'Đây là quyển sách tiếng Trung thứ hai của mình.'}],
    hanzi:[
@@ -79,7 +79,7 @@ var vocabData = [
       tip:'Thêm một nét ngang vào phần GỐC của chữ 木(cây) để chỉ rõ vị trí RỄ CÂY → nghĩa GỐC, CĂN BẢN; mượn làm lượng từ đếm sách.',
       cf:'未 (wèi – "chưa", nét ngang ngắn ở TRÊN thay vì dưới")',w:'一本书 / 课本 / 本子'},
    ]},
-  {n:9,zh:'书',py:'shū',pos:'Danh từ',vn:'sách',em:'📚',lesson:2,
+  {n:9,zh:'书',py:'shū',pos:'Danh từ',vn:'sách', hv: 'thư',em:'📚',lesson:2,
    ex_zh:'那是谁的书？',ex_py:'Nà shì shéi de shū?',ex_vn:'Đó là sách của ai?',
    exList:[{zh:'那是谁的书？',py:'Nà shì shéi de shū?',vn:'Đó là sách của ai?'}],
    hanzi:[
@@ -87,7 +87,7 @@ var vocabData = [
       tip:'Hình cuộn giấy/thẻ tre buộc lại thời cổ → SÁCH.',
       cf:'与 (yǔ – "và, cho")',w:'一本书 / 中文书'},
    ]},
-  {n:10,zh:'那',py:'nà',pos:'Đại từ',vn:'kia, đó',em:'👉',lesson:2,
+  {n:10,zh:'那',py:'nà',pos:'Đại từ',vn:'kia, đó', hv: 'na',em:'👉',lesson:2,
    ex_zh:'那是谁的书？',ex_py:'Nà shì shéi de shū?',ex_vn:'Đó là sách của ai?',
    exList:[{zh:'那是谁的书？',py:'Nà shì shéi de shū?',vn:'Đó là sách của ai?'}],
    hanzi:[
@@ -95,7 +95,7 @@ var vocabData = [
       tip:'阝(biến thể của 邑 - vùng đất) chỉ một nơi, phần bên trái mượn âm đọc → chỉ vật/nơi ở KIA, ĐÓ (xa người nói).',
       cf:'哪 (nǎ – "nào?", thêm bộ 口, dùng để hỏi thay vì chỉ định")',w:'那是 / 那个 / 那里'},
    ]},
-  {n:11,zh:'第',py:'dì',pos:'Tiền tố',vn:'thứ (dùng biểu thị số thứ tự)',em:'🔢',lesson:2,
+  {n:11,zh:'第',py:'dì',pos:'Tiền tố',vn:'thứ (dùng biểu thị số thứ tự)', hv: 'đệ',em:'🔢',lesson:2,
    ex_zh:'这是我的第二本中文书。',ex_py:'Zhè shì wǒ de dì-èr běn Zhōngwén shū.',ex_vn:'Đây là quyển sách tiếng Trung thứ hai của mình.',
    exList:[{zh:'这是我的第二本中文书。',py:'Zhè shì wǒ de dì-èr běn Zhōngwén shū.',vn:'Đây là quyển sách tiếng Trung thứ hai của mình.'}],
    hanzi:[
@@ -103,7 +103,7 @@ var vocabData = [
       tip:'⺮(tre, dùng làm thẻ tre đánh số thời xưa) + 弟(em, chỉ thứ bậc trong nhà) → ghi THỨ TỰ trên thẻ tre = THỨ.',
       cf:'弟 (dì – "em trai", thiếu bộ ⺮ trên đầu")',w:'第一 / 第二本 / 第几'},
    ]},
-  {n:12,zh:'学习',py:'xuéxí',pos:'Động từ',vn:'học, học tập',em:'📝',lesson:2,
+  {n:12,zh:'学习',py:'xuéxí',pos:'Động từ',vn:'học, học tập', hv: 'học tập',em:'📝',lesson:2,
    ex_zh:'我明天上午在学校学习。',ex_py:'Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.',ex_vn:'Sáng mai mình học ở trường.',
    exList:[{zh:'我明天上午在学校学习。',py:'Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí.',vn:'Sáng mai mình học ở trường.'}],
    hanzi:[
@@ -114,7 +114,7 @@ var vocabData = [
       tip:'Chữ giản thể lược từ 習 (trên là 羽-lông chim non tập bay, dưới là 白-tổ/mặt trời) → chim non vỗ cánh LUYỆN TẬP bay mỗi ngày = HỌC, LUYỆN TẬP.',
       cf:'刁 (diāo – "xảo trá", hình gần giống 习")',w:'学习 / 习惯 / 复习'},
    ]},
-  {n:13,zh:'做',py:'zuò',pos:'Động từ',vn:'làm',em:'🔧',lesson:3,
+  {n:13,zh:'做',py:'zuò',pos:'Động từ',vn:'làm', hv: 'tố',em:'🔧',lesson:3,
    ex_zh:'明天星期六，你做什么？',ex_py:'Míngtiān xīngqīliù, nǐ zuò shénme?',ex_vn:'Mai là thứ Bảy rồi, em định làm gì?',
    exList:[
      {zh:'明天星期六，你做什么？',py:'Míngtiān xīngqīliù, nǐ zuò shénme?',vn:'Mai là thứ Bảy rồi, em định làm gì?'},
@@ -125,7 +125,7 @@ var vocabData = [
       tip:'亻(người) đứng ra LÀM một việc gì đó cụ thể.',
       cf:'作 (zuò – "làm", nghĩa gần giống")',w:'做什么 / 做饭'},
    ]},
-  {n:14,zh:'白天',py:'báitiān',pos:'Danh từ',vn:'ban ngày',em:'☀️',lesson:3,
+  {n:14,zh:'白天',py:'báitiān',pos:'Danh từ',vn:'ban ngày', hv: 'bạch thiên',em:'☀️',lesson:3,
    ex_zh:'我白天在家里读书，晚上和朋友们去外边唱歌。',ex_py:'Wǒ báitiān zài jiā li dúshū, wǎnshang hé péngyoumen qù wàibian chàng gē.',ex_vn:'Ban ngày em sẽ ở nhà đọc sách, buổi tối sẽ ra ngoài hát cùng bạn bè.',
    exList:[{zh:'我白天在家里读书，晚上和朋友们去外边唱歌。',py:'Wǒ báitiān zài jiā li dúshū, wǎnshang hé péngyoumen qù wàibian chàng gē.',vn:'Ban ngày em sẽ ở nhà đọc sách, buổi tối sẽ ra ngoài hát cùng bạn bè.'}],
    hanzi:[
@@ -136,7 +136,7 @@ var vocabData = [
       tip:'一(một vạch ngang chỉ khoảng KHÔNG bao la) đặt trên chữ 大(người dang rộng tay chân) → người đứng dưới bầu TRỜI rộng lớn = TRỜI; cũng dùng chỉ một NGÀY.',
       cf:'夭 (yāo – "chết yểu", nét 丿kéo dài lệch khác 天")',w:'白天 / 明天 / 天气'},
    ]},
-  {n:15,zh:'读书',py:'dúshū',pos:'Động từ',vn:'đọc sách, xem sách',em:'📖',lesson:3,
+  {n:15,zh:'读书',py:'dúshū',pos:'Động từ',vn:'đọc sách, xem sách', hv: 'độc thư',em:'📖',lesson:3,
    ex_zh:'我白天在家里读书。',ex_py:'Wǒ báitiān zài jiā li dúshū.',ex_vn:'Ban ngày em sẽ ở nhà đọc sách.',
    exList:[{zh:'我白天在家里读书。',py:'Wǒ báitiān zài jiā li dúshū.',vn:'Ban ngày em sẽ ở nhà đọc sách.'}],
    hanzi:[
@@ -147,7 +147,7 @@ var vocabData = [
       tip:'Hình cuộn giấy/thẻ tre buộc lại thời cổ → SÁCH.',
       cf:'与 (yǔ – "và, cho")',w:'读书 / 一本书 / 中文书'},
    ]},
-  {n:16,zh:'和',py:'hé',pos:'Giới từ',vn:'với, cùng',em:'🤝',lesson:3,
+  {n:16,zh:'和',py:'hé',pos:'Giới từ',vn:'với, cùng', hv: 'hòa',em:'🤝',lesson:3,
    ex_zh:'晚上和朋友们去外边唱歌。',ex_py:'Wǎnshang hé péngyoumen qù wàibian chàng gē.',ex_vn:'Buổi tối sẽ ra ngoài hát cùng bạn bè.',
    exList:[{zh:'晚上和朋友们去外边唱歌。',py:'Wǎnshang hé péngyoumen qù wàibian chàng gē.',vn:'Buổi tối sẽ ra ngoài hát cùng bạn bè.'}],
    hanzi:[
@@ -155,7 +155,7 @@ var vocabData = [
       tip:'禾(lúa, no đủ) + 口(miệng ăn) → mọi người hoà thuận, ghép nối các thứ VÀ, CÙNG nhau.',
       cf:'合 (hé – "hợp", nghĩa gần giống")',w:'我和朋友 / 爸爸和妈妈'},
    ]},
-  {n:17,zh:'朋友',py:'péngyou',pos:'Danh từ',vn:'bạn, bạn bè',em:'🫂',lesson:3,
+  {n:17,zh:'朋友',py:'péngyou',pos:'Danh từ',vn:'bạn, bạn bè', hv: 'bằng hữu',em:'🫂',lesson:3,
    ex_zh:'晚上和朋友们去外边唱歌。',ex_py:'Wǎnshang hé péngyoumen qù wàibian chàng gē.',ex_vn:'Buổi tối sẽ ra ngoài hát cùng bạn bè.',
    exList:[{zh:'晚上和朋友们去外边唱歌。',py:'Wǎnshang hé péngyoumen qù wàibian chàng gē.',vn:'Buổi tối sẽ ra ngoài hát cùng bạn bè.'}],
    hanzi:[
@@ -166,7 +166,7 @@ var vocabData = [
       tip:'Hai bàn tay 又 nắm lấy nhau → tình BẠN gắn kết.',
       cf:'反 (fǎn – "trái lại")',w:'朋友 / 女朋友'},
    ]},
-  {n:18,zh:'唱',py:'chàng',pos:'Động từ',vn:'hát',em:'🎤',lesson:3,
+  {n:18,zh:'唱',py:'chàng',pos:'Động từ',vn:'hát', hv: 'xướng',em:'🎤',lesson:3,
    ex_zh:'你唱歌很好听。',ex_py:'Nǐ chàng gē hěn hǎotīng.',ex_vn:'Bạn hát rất hay.',
    exList:[{zh:'你唱歌很好听。',py:'Nǐ chàng gē hěn hǎotīng.',vn:'Bạn hát rất hay.'}],
    hanzi:[
@@ -174,7 +174,7 @@ var vocabData = [
       tip:'口(miệng) + 昌(hưng thịnh, sáng rực, gồm hai chữ 日) → dùng MIỆNG cất lên tiếng vang rực rỡ = HÁT.',
       cf:'唯 (wéi – "chỉ, duy", cùng bộ 口 bên trái")',w:'唱歌 / 演唱'},
    ]},
-  {n:19,zh:'歌',py:'gē',pos:'Danh từ',vn:'bài hát',em:'🎵',lesson:3,
+  {n:19,zh:'歌',py:'gē',pos:'Danh từ',vn:'bài hát', hv: 'ca',em:'🎵',lesson:3,
    ex_zh:'你唱歌很好听。',ex_py:'Nǐ chàng gē hěn hǎotīng.',ex_vn:'Bạn hát rất hay.',
    exList:[{zh:'你唱歌很好听。',py:'Nǐ chàng gē hěn hǎotīng.',vn:'Bạn hát rất hay.'}],
    hanzi:[
@@ -182,7 +182,7 @@ var vocabData = [
       tip:'哥(âm "ca", anh trai) + 欠(mở miệng thở ra, hà hơi) → mở miệng cất tiếng ngân nga = BÀI HÁT.',
       cf:'哥 (gē – "anh trai", thiếu bộ 欠 bên phải")',w:'唱歌 / 歌曲'},
    ]},
-  {n:20,zh:'好听',py:'hǎotīng',pos:'Tính từ',vn:'hay, nghe hay',em:'👂',lesson:3,
+  {n:20,zh:'好听',py:'hǎotīng',pos:'Tính từ',vn:'hay, nghe hay', hv: 'hảo thính',em:'👂',lesson:3,
    ex_zh:'你唱歌很好听。',ex_py:'Nǐ chàng gē hěn hǎotīng.',ex_vn:'Bạn hát rất hay.',
    exList:[{zh:'你唱歌很好听。',py:'Nǐ chàng gē hěn hǎotīng.',vn:'Bạn hát rất hay.'}],
    hanzi:[
@@ -193,7 +193,7 @@ var vocabData = [
       tip:'口(miệng, nơi phát ra tiếng nói) + 斤(mượn âm, gần đọc "tīng") → tai lắng NGHE âm thanh phát ra từ miệng.',
       cf:'斤 (jīn – "cân, đơn vị khối lượng", thiếu bộ 口")',w:'好听 / 听说 / 听音乐'},
    ]},
-  {n:21,zh:'电视',py:'diànshì',pos:'Danh từ',vn:'ti vi',em:'📺',lesson:3,
+  {n:21,zh:'电视',py:'diànshì',pos:'Danh từ',vn:'ti vi', hv: 'điện thị',em:'📺',lesson:3,
    ex_zh:'我在家里做饭、看电视，和孩子们、小狗玩。',ex_py:'Wǒ zài jiā li zuò fàn, kàn diànshì, hé háizimen, xiǎo gǒu wán.',ex_vn:'Em ở nhà nấu ăn, xem ti vi, chơi với các con và con chó nhỏ.',
    exList:[{zh:'我在家里做饭、看电视，和孩子们、小狗玩。',py:'Wǒ zài jiā li zuò fàn, kàn diànshì, hé háizimen, xiǎo gǒu wán.',vn:'Em ở nhà nấu ăn, xem ti vi, chơi với các con và con chó nhỏ.'}],
    hanzi:[
@@ -204,7 +204,7 @@ var vocabData = [
       tip:'示(bày ra, phát âm gần "shì") + 见(nhìn thấy, mang nghĩa) → bộ 见 cho biết chữ này liên quan THỊ GIÁC, NHÌN, XEM.',
       cf:'祝 (zhù – "chúc", cùng có phần 礻bên trái nhưng khác bộ nghĩa")',w:'电视 / 视力'},
    ]},
-  {n:22,zh:'狗',py:'gǒu',pos:'Danh từ',vn:'chó',em:'🐶',lesson:3,
+  {n:22,zh:'狗',py:'gǒu',pos:'Danh từ',vn:'chó', hv: 'cẩu',em:'🐶',lesson:3,
    ex_zh:'我也有一只小狗。',ex_py:'Wǒ yě yǒu yì zhī xiǎo gǒu.',ex_vn:'Em cũng có một con chó nhỏ.',
    exList:[
      {zh:'我在家里做饭、看电视，和孩子们、小狗玩。',py:'Wǒ zài jiā li zuò fàn, kàn diànshì, hé háizimen, xiǎo gǒu wán.',vn:'Em ở nhà nấu ăn, xem ti vi, chơi với các con và con chó nhỏ.'},
@@ -215,7 +215,7 @@ var vocabData = [
       tip:'犭(loài thú) + 句(mượn âm) → CON CHÓ.',
       cf:'苟 (gǒu – "cẩu thả", cùng phần 句")',w:'小狗'},
    ]},
-  {n:23,zh:'玩',py:'wán',pos:'Động từ',vn:'chơi',em:'🎮',lesson:3,
+  {n:23,zh:'玩',py:'wán',pos:'Động từ',vn:'chơi', hv: 'ngoạn',em:'🎮',lesson:3,
    ex_zh:'我在家里做饭、看电视，和孩子们、小狗玩。',ex_py:'Wǒ zài jiā li zuò fàn, kàn diànshì, hé háizimen, xiǎo gǒu wán.',ex_vn:'Em ở nhà nấu ăn, xem ti vi, chơi với các con và con chó nhỏ.',
    exList:[{zh:'我在家里做饭、看电视，和孩子们、小狗玩。',py:'Wǒ zài jiā li zuò fàn, kàn diànshì, hé háizimen, xiǎo gǒu wán.',vn:'Em ở nhà nấu ăn, xem ti vi, chơi với các con và con chó nhỏ.'}],
    hanzi:[

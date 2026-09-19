@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'向',py:'xiàng',pos:'Giới từ',vn:'đối với, về phía (chỉ hướng của hành động)',em:'➡️',lesson:1,
+  {n:1,zh:'向',py:'xiàng',pos:'Giới từ',vn:'đối với, về phía (chỉ hướng của hành động)', hv: 'hướng',em:'➡️',lesson:1,
    explain:['Chỉ đối tượng hoặc hướng của một hành động.'],
    usage:'向 + [đối tượng] + [động từ]: 向你借钱.',
    collo:['向你借钱','向左走','向别人问路'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
    ]},
 
-  {n:2,zh:'万',py:'wàn',pos:'Số từ',vn:'vạn, mười nghìn',em:'🔢',lesson:1,
+  {n:2,zh:'万',py:'wàn',pos:'Số từ',vn:'vạn, mười nghìn', hv: 'vạn',em:'🔢',lesson:1,
    explain:['Đơn vị số đếm bằng 10.000.'],
    usage:'Số từ, đi trước lượng từ/danh từ: 5万块.',
    collo:['5万块钱','三万块','一万米'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'只',py:'zhī',pos:'Lượng từ',vn:'con (dùng cho động vật)',em:'🐾',lesson:2,
+  {n:3,zh:'只',py:'zhī',pos:'Lượng từ',vn:'con (dùng cho động vật)', hv: 'chích',em:'🐾',lesson:2,
    explain:['Lượng từ dùng để đếm động vật, cũng dùng cho một số vật thành đôi.'],
    usage:'一 + 只 + [động vật]: 一只狗.',
    collo:['一只狗','那只狗','一只猫'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:4,zh:'嘴',py:'zuǐ',pos:'Danh từ',vn:'miệng',em:'👄',lesson:2,
+  {n:4,zh:'嘴',py:'zuǐ',pos:'Danh từ',vn:'miệng', hv: 'chủy',em:'👄',lesson:2,
    explain:['Bộ phận trên khuôn mặt dùng để ăn, nói.'],
    usage:'Danh từ; thường đi cùng tính từ lặp: 嘴小小的.',
    collo:['嘴小小的','他的嘴','嘴像爸爸'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'动物',py:'dòngwù',pos:'Danh từ',vn:'động vật, loài vật',em:'🐾',lesson:2,
+  {n:5,zh:'动物',py:'dòngwù',pos:'Danh từ',vn:'động vật, loài vật', hv: 'động vật',em:'🐾',lesson:2,
    explain:['Sinh vật có khả năng di chuyển, khác với thực vật.'],
    usage:'Danh từ; đi cùng tính từ 小: 小动物.',
    collo:['小动物','动物园','喜欢动物'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'段',py:'duàn',pos:'Lượng từ',vn:'khoảng, quãng',em:'📏',lesson:2,
+  {n:6,zh:'段',py:'duàn',pos:'Lượng từ',vn:'khoảng, quãng', hv: 'đoạn',em:'📏',lesson:2,
    explain:['Lượng từ dùng cho khoảng thời gian hoặc đoạn đường.'],
    usage:'一 + 段 + [时间/路]: 一段时间.',
    collo:['这段时间','一段时间','一段路'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'不但……而且……',py:'búdàn……érqiě……',pos:'Liên từ',vn:'không những... mà còn...',em:'➕',lesson:3,
+  {n:7,zh:'不但……而且……',py:'búdàn……érqiě……',pos:'Liên từ',vn:'không những... mà còn...', hv: 'bất đãn nhi thả',em:'➕',lesson:3,
    explain:['Diễn tả sự bổ sung tăng tiến, vế sau có mức độ cao hơn hoặc bổ sung thêm vế trước.'],
    usage:'不但 + [A]，而且 + [B].',
    collo:['不但很有名，而且……','不但环境好，而且……'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'不但……而且…… diễn tả sự bổ sung tăng tiến.'},
    ]},
 
-  {n:8,zh:'有名',py:'yǒumíng',pos:'Tính từ',vn:'có tiếng, nổi tiếng',em:'⭐',lesson:3,
+  {n:8,zh:'有名',py:'yǒumíng',pos:'Tính từ',vn:'có tiếng, nổi tiếng', hv: 'hữu danh',em:'⭐',lesson:3,
    explain:['Được nhiều người biết đến vì có đặc điểm nổi bật.'],
    usage:'Tính từ, làm vị ngữ: 很有名.',
    collo:['很有名','非常有名','公司很有名'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'同意',py:'tóngyì',pos:'Động từ',vn:'đồng ý, tán thành',em:'✅',lesson:3,
+  {n:9,zh:'同意',py:'tóngyì',pos:'Động từ',vn:'đồng ý, tán thành', hv: 'đồng ý',em:'✅',lesson:3,
    explain:['Chấp nhận, tán thành với ý kiến hoặc đề nghị.'],
    usage:'Động từ, mang tân ngữ: 同意 + [việc]; hoặc đứng độc lập.',
    collo:['你家人同意吗','同意帮忙','不同意'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 留学 đã học ở Bài 15).'},
    ]},
 
-  {n:10,zh:'相信',py:'xiāngxìn',pos:'Động từ',vn:'tin, tin tưởng',em:'🤝',lesson:3,
+  {n:10,zh:'相信',py:'xiāngxìn',pos:'Động từ',vn:'tin, tin tưởng', hv: 'tương tín',em:'🤝',lesson:3,
    explain:['Tin rằng điều gì đó là đúng, đáng tin cậy.'],
    usage:'Động từ, mang tân ngữ là mệnh đề: 相信 + [việc].',
    collo:['我相信','相信自己','没办法相信'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'关于',py:'guānyú',pos:'Giới từ',vn:'về',em:'📌',lesson:3,
+  {n:11,zh:'关于',py:'guānyú',pos:'Giới từ',vn:'về', hv: 'quan vu',em:'📌',lesson:3,
    explain:['Nêu chủ đề, đối tượng mà nội dung sau đó liên quan đến.'],
    usage:'关于 + [chủ đề]，[nội dung].',
    collo:['关于这个工作','关于这件事','关于中国文化'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'机会',py:'jīhuì',pos:'Danh từ',vn:'cơ hội',em:'🎯',lesson:3,
+  {n:12,zh:'机会',py:'jīhuì',pos:'Danh từ',vn:'cơ hội', hv: 'cơ hội',em:'🎯',lesson:3,
    explain:['Thời điểm hoặc điều kiện thuận lợi để làm việc gì đó.'],
    usage:'Danh từ; đi cùng động từ 有/给: 有机会, 给机会.',
    collo:['这个机会','有机会','给我机会'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'国家',py:'guójiā',pos:'Danh từ',vn:'đất nước, quốc gia',em:'🇻🇳',lesson:4,
+  {n:13,zh:'国家',py:'guójiā',pos:'Danh từ',vn:'đất nước, quốc gia', hv: 'quốc gia',em:'🇻🇳',lesson:4,
    explain:['Một lãnh thổ có chủ quyền, chính phủ riêng.'],
    usage:'Danh từ; đi cùng tính từ 不同: 不同的国家.',
    collo:['不同的国家','哪个国家','国家的文化'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 世界 đã học ở Bài 15).'},
    ]},
 
-  {n:14,zh:'种',py:'zhǒng',pos:'Lượng từ',vn:'loại',em:'📦',lesson:4,
+  {n:14,zh:'种',py:'zhǒng',pos:'Lượng từ',vn:'loại', hv: 'chủng',em:'📦',lesson:4,
    explain:['Lượng từ dùng để phân loại sự vật.'],
    usage:'一 + 种 + [danh từ]: 一种文化.',
    collo:['每种文化','一种药','哪种茶'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:15,zh:'特点',py:'tèdiǎn',pos:'Danh từ',vn:'đặc điểm',em:'🔖',lesson:4,
+  {n:15,zh:'特点',py:'tèdiǎn',pos:'Danh từ',vn:'đặc điểm', hv: 'đặc điểm',em:'🔖',lesson:4,
    explain:['Nét riêng, điểm nổi bật của một sự vật, hiện tượng.'],
    usage:'Danh từ; đi cùng động từ 有: 有特点.',
    collo:['自己的特点','有特点','文化的特点'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:16,zh:'奇怪',py:'qíguài',pos:'Tính từ',vn:'kỳ lạ, lạ lùng',em:'❓',lesson:4,
+  {n:16,zh:'奇怪',py:'qíguài',pos:'Tính từ',vn:'kỳ lạ, lạ lùng', hv: 'kỳ quái',em:'❓',lesson:4,
    explain:['Khác thường, khó hiểu, làm người ta ngạc nhiên.'],
    usage:'Tính từ, làm vị ngữ hoặc trạng ngữ: 觉得奇怪.',
    collo:['有点儿奇怪','真奇怪','觉得奇怪'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:17,zh:'地',py:'de',pos:'Trợ từ',vn:'(dùng để nối trạng ngữ với động từ mà nó bổ nghĩa)',em:'🔗',lesson:4,
+  {n:17,zh:'地',py:'de',pos:'Trợ từ',vn:'(dùng để nối trạng ngữ với động từ mà nó bổ nghĩa)', hv: 'địa',em:'🔗',lesson:4,
    explain:['Trợ từ kết cấu, đứng sau trạng ngữ (thường là tính từ), trước động từ.'],
    usage:'[Trạng ngữ] + 地 + [động từ].',
    collo:['慢慢地','认真地','奇怪地'],

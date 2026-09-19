@@ -2,7 +2,7 @@
 // DATA — YCT Bài 6: 我的头发很长
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'头发',py:'tóufa',pos:'Danh từ',vn:'tóc',em:'💇',lesson:1,
+  {n:1,zh:'头发',py:'tóufa',pos:'Danh từ',vn:'tóc', hv: 'đầu phát',em:'💇',lesson:1,
    ex_zh:'妹妹的头发不长。',ex_py:'Mèimei de tóufa bù cháng.',ex_vn:'Tóc em gái mình không dài.',
    exList:[{zh:'妹妹的头发不长。',py:'Mèimei de tóufa bù cháng.',vn:'Tóc em gái mình không dài.'}],
    hanzi:[
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'Hình bàn tay vuốt mái tóc → TÓC.',
       cf:'友 (yǒu – "bạn bè")',w:'头发'},
    ]},
-  {n:2,zh:'长',py:'cháng',pos:'Tính từ',vn:'dài',em:'📏',lesson:1,
+  {n:2,zh:'长',py:'cháng',pos:'Tính từ',vn:'dài', hv: 'trường',em:'📏',lesson:1,
    ex_zh:'妹妹的头发不长。',ex_py:'Mèimei de tóufa bù cháng.',ex_vn:'Tóc em gái mình không dài.',
    exList:[{zh:'妹妹的头发不长。',py:'Mèimei de tóufa bù cháng.',vn:'Tóc em gái mình không dài.'}],
    hanzi:[
@@ -21,7 +21,7 @@ var vocabData = [
       tip:'Hình mái tóc dài bay trong gió (chữ cổ) → DÀI.',
       cf:'常 (cháng – "thường xuyên")',w:'头发长'},
    ]},
-  {n:3,zh:'鼻子',py:'bízi',pos:'Danh từ',vn:'mũi',em:'👃',lesson:1,
+  {n:3,zh:'鼻子',py:'bízi',pos:'Danh từ',vn:'mũi', hv: 'tị tử',em:'👃',lesson:1,
    ex_zh:'你的鼻子真长！',ex_py:'Nǐ de bízi zhēn cháng!',ex_vn:'Mũi bạn dài thật!',
    exList:[{zh:'你的鼻子真长！',py:'Nǐ de bízi zhēn cháng!',vn:'Mũi bạn dài thật!'}],
    hanzi:[
@@ -32,7 +32,7 @@ var vocabData = [
       tip:'Hình đứa trẻ mới sinh → CON; dùng làm hậu tố cho nhiều danh từ (鼻子, 个子...).',
       cf:'孑 (jié – "cô độc")',w:'鼻子 / 个子'},
    ]},
-  {n:4,zh:'耳朵',py:'ěrduo',pos:'Danh từ',vn:'tai',em:'👂',lesson:1,
+  {n:4,zh:'耳朵',py:'ěrduo',pos:'Danh từ',vn:'tai', hv: 'nhĩ đóa',em:'👂',lesson:1,
    ex_zh:'妹妹的耳朵很小。',ex_py:'Mèimei de ěrduo hěn xiǎo.',ex_vn:'Tai em gái mình rất nhỏ.',
    exList:[{zh:'妹妹的耳朵很小。',py:'Mèimei de ěrduo hěn xiǎo.',vn:'Tai em gái mình rất nhỏ.'}],
    hanzi:[
@@ -43,7 +43,7 @@ var vocabData = [
       tip:'Hình bông hoa trên cành cây → ĐOÁ HOA; ghép với 耳 chỉ hình dáng TAI như đoá hoa.',
       cf:'杂 (zá – "tạp, lẫn")',w:'耳朵'},
    ]},
-  {n:5,zh:'眼睛',py:'yǎnjing',pos:'Danh từ',vn:'mắt',em:'👀',lesson:1,
+  {n:5,zh:'眼睛',py:'yǎnjing',pos:'Danh từ',vn:'mắt', hv: 'nhãn tình',em:'👀',lesson:1,
    ex_zh:'妹妹的眼睛很小。',ex_py:'Mèimei de yǎnjing hěn xiǎo.',ex_vn:'Mắt em gái mình rất nhỏ.',
    exList:[{zh:'妹妹的眼睛很小。',py:'Mèimei de yǎnjing hěn xiǎo.',vn:'Mắt em gái mình rất nhỏ.'}],
    hanzi:[
@@ -54,7 +54,7 @@ var vocabData = [
       tip:'目(mắt) + 青(xanh trong) → tròng mắt trong xanh = CON NGƯƠI.',
       cf:'晴 (qíng – "trời quang")',w:'眼睛'},
    ]},
-  {n:6,zh:'小',py:'xiǎo',pos:'Tính từ',vn:'nhỏ, bé',em:'🔹',lesson:1,
+  {n:6,zh:'小',py:'xiǎo',pos:'Tính từ',vn:'nhỏ, bé', hv: 'tiểu',em:'🔹',lesson:1,
    ex_zh:'妹妹的眼睛很小。',ex_py:'Mèimei de yǎnjing hěn xiǎo.',ex_vn:'Mắt em gái mình rất nhỏ.',
    exList:[{zh:'妹妹的眼睛很小。',py:'Mèimei de yǎnjing hěn xiǎo.',vn:'Mắt em gái mình rất nhỏ.'}],
    hanzi:[
@@ -62,11 +62,11 @@ var vocabData = [
       tip:'Hình ba hạt cát nhỏ li ti → NHỎ, BÉ.',
       cf:'少 (shǎo – "ít")',w:'眼睛小'},
    ]},
-  {n:7,zh:'大',py:'dà',pos:'Tính từ',vn:'to, lớn',em:'📐',lesson:2,
+  {n:7,zh:'大',py:'dà',pos:'Tính từ',vn:'to, lớn', hv: 'đại',em:'📐',lesson:2,
    ex_zh:'我的手不大。',ex_py:'Wǒ de shǒu bú dà.',ex_vn:'Tay mình không to.',
    exList:[{zh:'我的手不大。',py:'Wǒ de shǒu bú dà.',vn:'Tay mình không to.'}],
    hanzi:[]},
-  {n:8,zh:'手',py:'shǒu',pos:'Danh từ',vn:'tay',em:'✋',lesson:2,
+  {n:8,zh:'手',py:'shǒu',pos:'Danh từ',vn:'tay', hv: 'thủ',em:'✋',lesson:2,
    ex_zh:'我的手不大。',ex_py:'Wǒ de shǒu bú dà.',ex_vn:'Tay mình không to.',
    exList:[{zh:'我的手不大。',py:'Wǒ de shǒu bú dà.',vn:'Tay mình không to.'}],
    hanzi:[
@@ -74,7 +74,7 @@ var vocabData = [
       tip:'Hình bàn tay xoè năm ngón cách điệu → TAY.',
       cf:'毛 (máo – "lông")',w:'手不大'},
    ]},
-  {n:9,zh:'的',py:'de',pos:'Trợ từ',vn:'trợ từ sở hữu (của)',em:'🔗',lesson:2,
+  {n:9,zh:'的',py:'de',pos:'Trợ từ',vn:'trợ từ sở hữu (của)', hv: 'đích',em:'🔗',lesson:2,
    ex_zh:'你的个子真高！',ex_py:'Nǐ de gèzi zhēn gāo!',ex_vn:'Vóc dáng bạn cao thật!',
    exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
    hanzi:[
@@ -82,11 +82,11 @@ var vocabData = [
       tip:'白(rõ ràng, sáng tỏ) → làm rõ mối quan hệ SỞ HỮU giữa hai danh từ.',
       cf:'白 (bái – "màu trắng")',w:'你的个子'},
    ]},
-  {n:10,zh:'个子',py:'gèzi',pos:'Danh từ',vn:'vóc dáng, chiều cao',em:'📏',lesson:2,
+  {n:10,zh:'个子',py:'gèzi',pos:'Danh từ',vn:'vóc dáng, chiều cao', hv: 'cá tử',em:'📏',lesson:2,
    ex_zh:'你的个子真高！',ex_py:'Nǐ de gèzi zhēn gāo!',ex_vn:'Vóc dáng bạn cao thật!',
    exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
    hanzi:[]},
-  {n:11,zh:'真',py:'zhēn',pos:'Phó từ',vn:'thật, thật là',em:'❗',lesson:2,
+  {n:11,zh:'真',py:'zhēn',pos:'Phó từ',vn:'thật, thật là', hv: 'chân',em:'❗',lesson:2,
    ex_zh:'你的个子真高！',ex_py:'Nǐ de gèzi zhēn gāo!',ex_vn:'Vóc dáng bạn cao thật!',
    exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
    hanzi:[
@@ -94,7 +94,7 @@ var vocabData = [
       tip:'Hình con mắt nhìn thẳng không dối trá → THẬT, CHÂN THẬT.',
       cf:'直 (zhí – "thẳng")',w:'个子真高'},
    ]},
-  {n:12,zh:'高',py:'gāo',pos:'Tính từ',vn:'cao',em:'📶',lesson:2,
+  {n:12,zh:'高',py:'gāo',pos:'Tính từ',vn:'cao', hv: 'cao',em:'📶',lesson:2,
    ex_zh:'你的个子真高！',ex_py:'Nǐ de gèzi zhēn gāo!',ex_vn:'Vóc dáng bạn cao thật!',
    exList:[{zh:'你的个子真高！',py:'Nǐ de gèzi zhēn gāo!',vn:'Vóc dáng bạn cao thật!'}],
    hanzi:[]},

@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 5: 她女儿今年二十岁。
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà, gia đình',em:'🏠',lesson:1,
+  {n:1,zh:'家',py:'jiā',pos:'Danh từ',vn:'nhà, gia đình', hv: 'gia',em:'🏠',lesson:1,
    ex_zh:'你家有几口人？',ex_py:'Nǐ jiā yǒu jǐ kǒu rén?',ex_vn:'Nhà anh có mấy người vậy?',
    exList:[
      {zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà anh có mấy người vậy?'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'宀(mái nhà) + 豕(con lợn) → thời xưa nuôi lợn dưới nhà sàn, biểu tượng của NHÀ.',
       cf:'豪 (háo – "hào hiệp")',w:'我家 / 家人'},
    ]},
-  {n:2,zh:'有',py:'yǒu',pos:'Động từ',vn:'có',em:'✅',lesson:1,
+  {n:2,zh:'有',py:'yǒu',pos:'Động từ',vn:'có', hv: 'hữu',em:'✅',lesson:1,
    ex_zh:'我家有三口人。',ex_py:'Wǒ jiā yǒu sān kǒu rén.',ex_vn:'Nhà tôi có ba người.',
    exList:[
      {zh:'我家有三口人。',py:'Wǒ jiā yǒu sān kǒu rén.',vn:'Nhà tôi có ba người.'},
@@ -23,7 +23,7 @@ var vocabData = [
       tip:'Bàn tay (ナ) cầm miếng thịt (月) → sở hữu, CÓ trong tay.',
       cf:'肯 (kěn – "bằng lòng")',w:'我家有 / 有没有'},
    ]},
-  {n:3,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'lượng từ chỉ số thành viên gia đình',em:'👄',lesson:1,
+  {n:3,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'lượng từ chỉ số thành viên gia đình', hv: 'khẩu',em:'👄',lesson:1,
    ex_zh:'我家有三口人。',ex_py:'Wǒ jiā yǒu sān kǒu rén.',ex_vn:'Nhà tôi có ba người.',
    exList:[
      {zh:'我家有三口人。',py:'Wǒ jiā yǒu sān kǒu rén.',vn:'Nhà tôi có ba người.'},
@@ -33,7 +33,7 @@ var vocabData = [
       tip:'Hình cái miệng cách điệu → MIỆNG; dùng làm lượng từ đếm số người ăn chung một nhà (khẩu phần).',
       cf:'日 (rì – "mặt trời")',w:'三口人'},
    ]},
-  {n:4,zh:'女儿',py:"nǚ'ér",pos:'Danh từ',vn:'con gái',em:'👧',lesson:1,
+  {n:4,zh:'女儿',py:"nǚ'ér",pos:'Danh từ',vn:'con gái', hv: 'nữ nhi',em:'👧',lesson:1,
    ex_zh:'你女儿几岁了？',ex_py:"Nǐ nǚ'ér jǐ suì le?",ex_vn:'Con gái của cô mấy tuổi rồi?',
    exList:[
      {zh:'你女儿几岁了？',py:"Nǐ nǚ'ér jǐ suì le?",vn:'Con gái của cô mấy tuổi rồi?'},
@@ -46,7 +46,7 @@ var vocabData = [
       tip:'Hình đứa trẻ với đôi chân còn yếu → CON, TRẺ NHỎ.',
       cf:'几 (jǐ – "mấy", dễ nhầm hình dạng")',w:'女儿 / 儿子'},
    ]},
-  {n:5,zh:'几',py:'jǐ',pos:'Đại từ',vn:'mấy (hỏi số lượng dưới 10)',em:'🔢',lesson:2,
+  {n:5,zh:'几',py:'jǐ',pos:'Đại từ',vn:'mấy (hỏi số lượng dưới 10)', hv: 'kỉ',em:'🔢',lesson:2,
    ex_zh:'你女儿几岁了？',ex_py:"Nǐ nǚ'ér jǐ suì le?",ex_vn:'Con gái của cô mấy tuổi rồi?',
    exList:[
      {zh:'你女儿几岁了？',py:"Nǐ nǚ'ér jǐ suì le?",vn:'Con gái của cô mấy tuổi rồi?'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Hình cái ghế nhỏ/bàn thấp thời cổ, mượn âm làm từ hỏi số lượng ÍT, dưới 10.',
       cf:'儿 (ér – "con", dễ nhầm hình dạng")',w:'几岁 / 几口人'},
    ]},
-  {n:6,zh:'岁',py:'suì',pos:'Lượng từ',vn:'tuổi',em:'🎂',lesson:2,
+  {n:6,zh:'岁',py:'suì',pos:'Lượng từ',vn:'tuổi', hv: 'tuế',em:'🎂',lesson:2,
    ex_zh:'她今年四岁了。',ex_py:'Tā jīnnián sì suì le.',ex_vn:'Năm nay cháu được bốn tuổi rồi.',
    exList:[
      {zh:'她今年四岁了。',py:'Tā jīnnián sì suì le.',vn:'Năm nay cháu được bốn tuổi rồi.'},
@@ -67,7 +67,7 @@ var vocabData = [
       tip:'Xưa dùng để đếm số mùa/năm đã trải qua như ngọn núi tích tuổi theo thời gian → TUỔI.',
       cf:'出 (chū – "ra")',w:'几岁 / 二十岁'},
    ]},
-  {n:7,zh:'了',py:'le',pos:'Trợ từ',vn:'trợ từ biểu thị sự thay đổi hoặc tình huống mới',em:'🔄',lesson:2,
+  {n:7,zh:'了',py:'le',pos:'Trợ từ',vn:'trợ từ biểu thị sự thay đổi hoặc tình huống mới', hv: 'liễu',em:'🔄',lesson:2,
    ex_zh:'她今年50岁了。',ex_py:'Tā jīnnián wǔshí suì le.',ex_vn:'Năm nay cô ấy 50 tuổi rồi.',
    exList:[
      {zh:'她今年50岁了。',py:'Tā jīnnián wǔshí suì le.',vn:'Năm nay cô ấy 50 tuổi rồi.'},
@@ -77,7 +77,7 @@ var vocabData = [
       tip:'Hình dáng đơn giản như một cái móc, biểu thị việc vừa "chốt xong" — một sự thay đổi hoặc kết thúc.',
       cf:'子 (zǐ – "con", nét cuối tương tự")',w:'50岁了 / 我吃了'},
    ]},
-  {n:8,zh:'今年',py:'jīnnián',pos:'Danh từ',vn:'năm nay',em:'📅',lesson:2,
+  {n:8,zh:'今年',py:'jīnnián',pos:'Danh từ',vn:'năm nay', hv: 'kim niên',em:'📅',lesson:2,
    ex_zh:'她女儿今年20岁。',ex_py:"Tā nǚ'ér jīnnián èrshí suì.",ex_vn:'Con gái cô ấy năm nay 20 tuổi.',
    exList:[
      {zh:'她女儿今年20岁。',py:"Tā nǚ'ér jīnnián èrshí suì.",vn:'Con gái cô ấy năm nay 20 tuổi.'},
@@ -90,7 +90,7 @@ var vocabData = [
       tip:'Hình người vác bó lúa sau vụ mùa → mỗi vụ mùa là một chu kỳ = NĂM.',
       cf:'午 (wǔ – "buổi trưa")',w:'今年 / 去年 / 明年'},
    ]},
-  {n:9,zh:'多',py:'duō',pos:'Phó từ',vn:'bao nhiêu (chỉ mức độ)',em:'❔',lesson:2,
+  {n:9,zh:'多',py:'duō',pos:'Phó từ',vn:'bao nhiêu (chỉ mức độ)', hv: 'đa',em:'❔',lesson:2,
    ex_zh:'李老师多大了？',ex_py:'Lǐ lǎoshī duō dà le?',ex_vn:'Cô Lý bao nhiêu tuổi rồi?',
    exList:[
      {zh:'李老师多大了？',py:'Lǐ lǎoshī duō dà le?',vn:'Cô Lý bao nhiêu tuổi rồi?'},
@@ -100,7 +100,7 @@ var vocabData = [
       tip:'Hai chữ 夕(buổi tối) chồng lên nhau → NHIỀU đêm trôi qua = NHIỀU, BAO NHIÊU.',
       cf:'夜 (yè – "đêm")',w:'多大 / 多少'},
    ]},
-  {n:10,zh:'大',py:'dà',pos:'Tính từ',vn:'lớn, to',em:'📏',lesson:2,
+  {n:10,zh:'大',py:'dà',pos:'Tính từ',vn:'lớn, to', hv: 'đại',em:'📏',lesson:2,
    ex_zh:'李老师多大了？',ex_py:'Lǐ lǎoshī duō dà le?',ex_vn:'Cô Lý bao nhiêu tuổi rồi?',
    exList:[
      {zh:'李老师多大了？',py:'Lǐ lǎoshī duō dà le?',vn:'Cô Lý bao nhiêu tuổi rồi?'},

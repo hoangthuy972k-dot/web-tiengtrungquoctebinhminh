@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'巧克力',py:'qiǎokèlì',pos:'Danh từ',vn:'sô cô la',em:'🍫',lesson:1,
+  {n:1,zh:'巧克力',py:'qiǎokèlì',pos:'Danh từ',vn:'sô cô la', hv: 'xảo khắc lực',em:'🍫',lesson:1,
    explain:['Loại thực phẩm ngọt làm từ ca cao.'],
    usage:'Danh từ; thường đi với 吃巧克力, 一块儿巧克力.',
    collo:['吃巧克力','一块儿巧克力','喜欢吃巧克力'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'送给……巧克力 — tặng ai đó sô cô la.'},
    ]},
 
-  {n:2,zh:'亲戚',py:'qīnqi',pos:'Danh từ',vn:'họ hàng thân thích',em:'👪',lesson:1,
+  {n:2,zh:'亲戚',py:'qīnqi',pos:'Danh từ',vn:'họ hàng thân thích', hv: 'thân thích',em:'👪',lesson:1,
    explain:['Người có quan hệ huyết thống/hôn nhân trong gia đình mở rộng.'],
    usage:'Danh từ; thường đi với 送给亲戚朋友, 亲戚家.',
    collo:['送给亲戚朋友','亲戚家','走亲戚'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'远房亲戚 — họ hàng xa.'},
    ]},
 
-  {n:3,zh:'伤心',py:'shāngxīn',pos:'Tính từ',vn:'đau lòng',em:'💔',lesson:1,
+  {n:3,zh:'伤心',py:'shāngxīn',pos:'Tính từ',vn:'đau lòng', hv: 'thương tâm',em:'💔',lesson:1,
    explain:['Cảm giác buồn bã, đau khổ trong lòng.'],
    usage:'Tính từ; thường đi với 伤心难过, 感到伤心.',
    collo:['伤心难过','感到伤心','伤心地哭了'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'让人感到伤心 — khiến người ta cảm thấy buồn.'},
    ]},
 
-  {n:4,zh:'使',py:'shǐ',pos:'Động từ',vn:'khiến cho, làm cho',em:'➡️',lesson:1,
+  {n:4,zh:'使',py:'shǐ',pos:'Động từ',vn:'khiến cho, làm cho', hv: 'sử',em:'➡️',lesson:1,
    explain:['Diễn tả nguyên nhân dẫn đến một kết quả/trạng thái nào đó (tương tự 让, dùng trong văn viết).'],
    usage:'Động từ, mang tân ngữ + động từ/tính từ (kết quả): 使人的心情变得愉快.',
    collo:['使人变得愉快','使她喜欢我','使他有了新想法'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'使我……明白了 — khiến tôi hiểu ra….'},
    ]},
 
-  {n:5,zh:'心情',py:'xīnqíng',pos:'Danh từ',vn:'tâm trạng',em:'😊',lesson:1,
+  {n:5,zh:'心情',py:'xīnqíng',pos:'Danh từ',vn:'tâm trạng', hv: 'tâm tình',em:'😊',lesson:1,
    explain:['Trạng thái cảm xúc của một người tại một thời điểm.'],
    usage:'Danh từ; thường đi với 心情变得愉快, 心情好.',
    collo:['心情变得愉快','心情好','心情不好'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'改变自己的心情 kết hợp 堵车, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:6,zh:'愉快',py:'yúkuài',pos:'Tính từ',vn:'vui vẻ',em:'😄',lesson:1,
+  {n:6,zh:'愉快',py:'yúkuài',pos:'Tính từ',vn:'vui vẻ', hv: 'du khoái',em:'😄',lesson:1,
    explain:['Trạng thái tâm lý dễ chịu, thoải mái, vui vẻ.'],
    usage:'Tính từ; thường đi với 心情变得愉快, 感觉愉快.',
    collo:['心情变得愉快','感觉愉快','愉快的歌'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'使……心情……愉快 kết hợp 使/心情/巧克力, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:7,zh:'景色',py:'jǐngsè',pos:'Danh từ',vn:'phong cảnh, cảnh vật',em:'🏞️',lesson:2,
+  {n:7,zh:'景色',py:'jǐngsè',pos:'Danh từ',vn:'phong cảnh, cảnh vật', hv: 'cảnh sắc',em:'🏞️',lesson:2,
    explain:['Cảnh quan thiên nhiên của một nơi.'],
    usage:'Danh từ; thường đi với 景色真美, 看景色.',
    collo:['景色真美','这里的景色','看景色'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'看……景色……心情 kết hợp 心情, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:8,zh:'放松',py:'fàngsōng',pos:'Động từ',vn:'thả lỏng, thư giãn',em:'😌',lesson:2,
+  {n:8,zh:'放松',py:'fàngsōng',pos:'Động từ',vn:'thả lỏng, thư giãn', hv: 'phóng tùng',em:'😌',lesson:2,
    explain:['Làm cho cơ thể/tinh thần bớt căng thẳng.'],
    usage:'Động từ; thường đi với 这么放松, 放松心情.',
    collo:['好久没这么放松了','放松心情','放松一下'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'放松心情 kết hợp 散步, ôn lại từ vựng Bài 7.'},
    ]},
 
-  {n:9,zh:'压力',py:'yālì',pos:'Danh từ',vn:'áp lực',em:'😰',lesson:2,
+  {n:9,zh:'压力',py:'yālì',pos:'Danh từ',vn:'áp lực', hv: 'áp lực',em:'😰',lesson:2,
    explain:['Sức ép về tâm lý/công việc khiến người ta căng thẳng.'],
    usage:'Danh từ; thường đi với 有压力, 不要有压力.',
    collo:['有压力','不要有压力','工作压力'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'压力很大……放松 kết hợp 放松, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:10,zh:'回忆',py:'huíyì',pos:'Động từ',vn:'nhớ lại, hồi tưởng',em:'💭',lesson:2,
+  {n:10,zh:'回忆',py:'huíyì',pos:'Động từ',vn:'nhớ lại, hồi tưởng', hv: 'hồi ức',em:'💭',lesson:2,
    explain:['Nhớ lại những sự việc đã qua.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 回忆那次比赛.',
    collo:['回忆那次比赛','回忆过去','美好的回忆'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'回忆起 — nhớ lại.'},
    ]},
 
-  {n:11,zh:'发生',py:'fāshēng',pos:'Động từ',vn:'xảy ra',em:'⚡',lesson:2,
+  {n:11,zh:'发生',py:'fāshēng',pos:'Động từ',vn:'xảy ra', hv: 'phát sinh',em:'⚡',lesson:2,
    explain:['Việc gì đó bắt đầu tồn tại, diễn ra.'],
    usage:'Động từ; thường đi với 事情已经发生了, 发生什么事情.',
    collo:['事情已经发生了','发生什么事情','发生变化'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'会发生什么事 — sẽ xảy ra chuyện gì.'},
    ]},
 
-  {n:12,zh:'成为',py:'chéngwéi',pos:'Động từ',vn:'trở thành',em:'🌟',lesson:2,
+  {n:12,zh:'成为',py:'chéngwéi',pos:'Động từ',vn:'trở thành', hv: 'thành vi',em:'🌟',lesson:2,
    explain:['Trở nên là (một thân phận/trạng thái mới).'],
    usage:'Động từ, mang tân ngữ trực tiếp: 成为过去, 成为律师.',
    collo:['成为过去','成为律师','成为好朋友'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'只要……就……成为…… kết hợp 只要, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:13,zh:'只要',py:'zhǐyào',pos:'Liên từ',vn:'chỉ cần, miễn là',em:'✅',lesson:2,
+  {n:13,zh:'只要',py:'zhǐyào',pos:'Liên từ',vn:'chỉ cần, miễn là', hv: 'chỉ yếu',em:'✅',lesson:2,
    explain:['Nêu ra điều kiện cần thiết duy nhất để đạt được kết quả, thường đi cùng 就 ở vế sau.'],
    usage:'只要 + điều kiện cần thiết，就 + kết quả.',
    collo:['只要……就……','只要你好好儿准备','只要有心'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'只要……就一定会…… — chỉ cần … thì nhất định sẽ….'},
    ]},
 
-  {n:14,zh:'师傅',py:'shīfu',pos:'Danh từ',vn:'sư phụ (cách gọi kính trọng)',em:'🧑‍✈️',lesson:3,
+  {n:14,zh:'师傅',py:'shīfu',pos:'Danh từ',vn:'sư phụ (cách gọi kính trọng)', hv: 'sư phó',em:'🧑‍✈️',lesson:3,
    explain:['Cách gọi kính trọng dành cho những người có tay nghề (tài xế, thợ...).'],
    usage:'Danh từ, dùng để gọi trực tiếp: 师傅，我去….',
    collo:['师傅，我去','可不是，师傅','谢谢师傅'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'谢谢师傅 — cảm ơn bác tài.'},
    ]},
 
-  {n:15,zh:'大使馆',py:'dàshǐguǎn',pos:'Danh từ',vn:'đại sứ quán',em:'🏛️',lesson:3,
+  {n:15,zh:'大使馆',py:'dàshǐguǎn',pos:'Danh từ',vn:'đại sứ quán', hv: 'đại sử quán',em:'🏛️',lesson:3,
    explain:['Cơ quan đại diện ngoại giao của một quốc gia đặt tại nước khác.'],
    usage:'Danh từ; thường đi với 去大使馆.',
    collo:['去大使馆','大使馆的工作人员','中国大使馆'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'师傅……堵车……另外……大使馆 kết hợp nhiều từ vựng của bài.'},
    ]},
 
-  {n:16,zh:'堵车',py:'dǔchē',pos:'Động từ',vn:'kẹt xe',em:'🚗',lesson:3,
+  {n:16,zh:'堵车',py:'dǔchē',pos:'Động từ',vn:'kẹt xe', hv: 'đổ xa',em:'🚗',lesson:3,
    explain:['Tình trạng xe cộ ùn tắc không di chuyển được.'],
    usage:'Động từ ly hợp; thường đi với 遇到堵车, 前面有点儿堵车.',
    collo:['遇到堵车','前面有点儿堵车','堵车浪费时间'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'要想不遇到堵车，还真难 — muốn không gặp kẹt xe, thật khó.'},
    ]},
 
-  {n:17,zh:'距离',py:'jùlí',pos:'Danh từ',vn:'khoảng cách',em:'📏',lesson:3,
+  {n:17,zh:'距离',py:'jùlí',pos:'Danh từ',vn:'khoảng cách', hv: 'cự li',em:'📏',lesson:3,
    explain:['Khoảng không gian giữa hai điểm/địa điểm.'],
    usage:'Danh từ; thường đi với 距离差不多, 距离很远.',
    collo:['距离差不多','距离很远','拉近距离'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'距离 kết hợp 大使馆, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:18,zh:'耐心',py:'nàixīn',pos:'Danh từ/Tính từ',vn:'lòng kiên nhẫn, sự nhẫn nại',em:'🧘',lesson:3,
+  {n:18,zh:'耐心',py:'nàixīn',pos:'Danh từ/Tính từ',vn:'lòng kiên nhẫn, sự nhẫn nại', hv: 'nại tâm',em:'🧘',lesson:3,
    explain:['Khả năng chịu đựng, không nóng vội khi chờ đợi/xử lý việc gì.'],
    usage:'Danh từ: 没有耐心, 变得没有耐心; tính từ: 很耐心.',
    collo:['没有耐心','变得没有耐心','耐心等消息'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'耐心等消息 — kiên nhẫn chờ tin.'},
    ]},
 
-  {n:19,zh:'生命',py:'shēngmìng',pos:'Danh từ',vn:'sự sống, tính mệnh',em:'🌱',lesson:4,
+  {n:19,zh:'生命',py:'shēngmìng',pos:'Danh từ',vn:'sự sống, tính mệnh', hv: 'sinh mệnh',em:'🌱',lesson:4,
    explain:['Sự tồn tại sống của sinh vật.'],
    usage:'Danh từ; thường đi với 生命的颜色, 生命危险.',
    collo:['生命的颜色','热爱生命','生命危险'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'珍惜生命 — trân trọng sự sống.'},
    ]},
 
-  {n:20,zh:'缺少',py:'quēshǎo',pos:'Động từ',vn:'thiếu',em:'❗',lesson:4,
+  {n:20,zh:'缺少',py:'quēshǎo',pos:'Động từ',vn:'thiếu', hv: 'khuyết thiểu',em:'❗',lesson:4,
    explain:['Không có đủ, thiếu hụt một điều gì đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 生活中不缺少美, 缺少什么.',
    collo:['生活中不缺少美','缺少的是','缺少锻炼'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'缺少……材料 kết hợp 材料, ôn lại từ vựng Bài 4.'},
    ]},
 
-  {n:21,zh:'到处',py:'dàochù',pos:'Phó từ',vn:'khắp nơi, đâu đâu',em:'🌍',lesson:4,
+  {n:21,zh:'到处',py:'dàochù',pos:'Phó từ',vn:'khắp nơi, đâu đâu', hv: 'đáo xứ',em:'🌍',lesson:4,
    explain:['Ở mọi nơi, không chỉ giới hạn một chỗ.'],
    usage:'Phó từ, đứng trước động từ/vị ngữ: 到处都是, 到处乱放.',
    collo:['到处都是','到处乱放','到处旅游'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'到处乱放 — vứt bừa khắp nơi.'},
    ]},
 
-  {n:22,zh:'态度',py:'tàidù',pos:'Danh từ',vn:'thái độ',em:'🙂',lesson:4,
+  {n:22,zh:'态度',py:'tàidù',pos:'Danh từ',vn:'thái độ', hv: 'thái độ',em:'🙂',lesson:4,
    explain:['Cách nhìn nhận, cư xử của một người trước sự việc.'],
    usage:'Danh từ; thường đi với 生活的态度, 态度积极.',
    collo:['生活的态度','态度积极','选对态度'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'态度积极……特点 kết hợp 积极/特点, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:23,zh:'因此',py:'yīncǐ',pos:'Liên từ',vn:'do đó, vì vậy',em:'➡️',lesson:4,
+  {n:23,zh:'因此',py:'yīncǐ',pos:'Liên từ',vn:'do đó, vì vậy', hv: 'nhân thử',em:'➡️',lesson:4,
    explain:['Diễn tả kết quả từ nguyên nhân vừa nêu, nghĩa gần giống 所以, nhưng không dùng kết hợp với 因为.'],
    usage:'Nguyên nhân，因此，kết quả.',
    collo:['因此，……','很了解……因此','因此我们'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'因此 mở đầu vế kết quả.'},
    ]},
 
-  {n:24,zh:'科学',py:'kēxué',pos:'Danh từ',vn:'khoa học',em:'🔬',lesson:5,
+  {n:24,zh:'科学',py:'kēxué',pos:'Danh từ',vn:'khoa học', hv: 'khoa học',em:'🔬',lesson:5,
    explain:['Hệ thống tri thức được nghiên cứu, chứng minh có hệ thống.'],
    usage:'Danh từ; thường đi với 科学研究证明.',
    collo:['科学研究证明','科学发展','学习科学'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'科学……成为 kết hợp 成为, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:25,zh:'证明',py:'zhèngmíng',pos:'Động từ',vn:'chứng minh',em:'✅',lesson:5,
+  {n:25,zh:'证明',py:'zhèngmíng',pos:'Động từ',vn:'chứng minh', hv: 'chứng minh',em:'✅',lesson:5,
    explain:['Đưa ra bằng chứng để khẳng định một điều gì đó là đúng.'],
    usage:'Động từ, mang tân ngữ trực tiếp/mệnh đề: 研究证明, 证明自己的选择.',
    collo:['科学研究证明','证明自己的选择','向所有人证明'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'向……证明 — chứng minh cho ai đó thấy.'},
    ]},
 
-  {n:26,zh:'往往',py:'wǎngwǎng',pos:'Phó từ',vn:'thường thường',em:'🔁',lesson:5,
+  {n:26,zh:'往往',py:'wǎngwǎng',pos:'Phó từ',vn:'thường thường', hv: 'vãng vãng',em:'🔁',lesson:5,
    explain:['Diễn tả tình huống thường xảy ra theo một quy luật nhất định, dựa trên kinh nghiệm trong quá khứ.'],
    usage:'Phó từ, đứng trước động từ: 往往与……有关, 往往只叫.',
    collo:['往往与……有关','往往只叫','往往对道路熟悉'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'往往就可能发生 kết hợp 缺少/说明/发生, ôn lại nhiều từ vựng của bài.'},
    ]},
 
-  {n:27,zh:'阳光',py:'yángguāng',pos:'Tính từ',vn:'lạc quan, vui vẻ',em:'☀️',lesson:5,
+  {n:27,zh:'阳光',py:'yángguāng',pos:'Tính từ',vn:'lạc quan, vui vẻ', hv: 'dương quang',em:'☀️',lesson:5,
    explain:['Tính cách tươi sáng, lạc quan, tích cực (nghĩa mở rộng từ "ánh nắng mặt trời").'],
    usage:'Tính từ; thường đi với 性格比较阳光, 阳光的人.',
    collo:['性格比较阳光','阳光的人','阳光女孩'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'性格很阳光……愉快 kết hợp 愉快, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:28,zh:'积极',py:'jījí',pos:'Tính từ',vn:'tích cực',em:'💪',lesson:5,
+  {n:28,zh:'积极',py:'jījí',pos:'Tính từ',vn:'tích cực', hv: 'tích cực',em:'💪',lesson:5,
    explain:['Có thái độ chủ động, hướng đến kết quả tốt.'],
    usage:'Tính từ; thường đi với 态度积极, 积极参加.',
    collo:['态度积极','积极参加','积极向上'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'积极的态度……阳光 kết hợp 态度/阳光, ôn lại từ vựng của bài.'},
    ]},
 
-  {n:29,zh:'特点',py:'tèdiǎn',pos:'Danh từ',vn:'đặc điểm',em:'🔑',lesson:5,
+  {n:29,zh:'特点',py:'tèdiǎn',pos:'Danh từ',vn:'đặc điểm', hv: 'đặc điểm',em:'🔑',lesson:5,
    explain:['Tính chất riêng biệt, nổi bật của sự vật/con người.'],
    usage:'Danh từ; thường đi với 共同特点, 根据……特点.',
    collo:['共同特点','根据学生的特点','有什么特点'],

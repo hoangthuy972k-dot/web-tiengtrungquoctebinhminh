@@ -2,7 +2,7 @@
 // DATA — Bài 14: 你看过那个电影吗？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'过',py:'guo',pos:'Trợ từ động thái',vn:'đã từng (kinh nghiệm)',em:'✅',lesson:1,
+  {n:1,zh:'过',py:'guo',pos:'Trợ từ động thái',vn:'đã từng (kinh nghiệm)', hv: 'quá',em:'✅',lesson:1,
    ex_zh:'你看过那个电影吗？',ex_py:'Nǐ kànguo nàge diànyǐng ma?',ex_vn:'Bạn đã từng xem bộ phim đó chưa?',
    exList:[
      {zh:'你看过那个电影吗？',py:'Nǐ kànguo nàge diànyǐng ma?',vn:'Bạn đã từng xem bộ phim đó chưa?'},
@@ -14,7 +14,7 @@ var vocabData = [
       tip:'Bộ 辶(đi) → đã ĐI QUA một việc gì đó = có kinh nghiệm về việc đó. Đã gặp nghĩa "đi qua" ở Bài 7 (走过).',
       cf:'边 (biān – "bên cạnh")',w:'看过 / 去过 / 吃过'},
    ]},
-  {n:2,zh:'有意思',py:'yǒuyìsi',pos:'Tính từ',vn:'thú vị, hay',em:'😊',lesson:1,
+  {n:2,zh:'有意思',py:'yǒuyìsi',pos:'Tính từ',vn:'thú vị, hay', hv: 'hữu ý tư',em:'😊',lesson:1,
    ex_zh:'看过，很有意思。',ex_py:'Kànguo, hěn yǒuyìsi.',ex_vn:'Đã xem rồi, rất thú vị.',
    exList:[
      {zh:'看过，很有意思。',py:'Kànguo, hěn yǒuyìsi.',vn:'Đã xem rồi, rất thú vị.'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'田(ruộng, tượng trưng đầu óc) trên 心(tim) → SUY NGHĨ bằng cả đầu và tim.',
       cf:'田 (tián – "ruộng")',w:'意思 / 思考 / 有意思'},
    ]},
-  {n:3,zh:'但是',py:'dànshì',pos:'Liên từ',vn:'nhưng',em:'🔀',lesson:2,
+  {n:3,zh:'但是',py:'dànshì',pos:'Liên từ',vn:'nhưng', hv: 'đãn thị',em:'🔀',lesson:2,
    ex_zh:'可以，但是我女朋友也想一起去。',ex_py:'Kěyǐ, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.',ex_vn:'Được, nhưng bạn gái tôi cũng muốn đi cùng.',
    exList:[
      {zh:'可以，但是我女朋友也想一起去。',py:'Kěyǐ, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.',vn:'Được, nhưng bạn gái tôi cũng muốn đi cùng.'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'亻(người) + 旦(bình minh) → người đứng lúc bình minh chỉ có MỘT MÌNH, ý "chỉ, nhưng".',
       cf:'担 (dān – "gánh vác")',w:'但是 / 不但'},
    ]},
-  {n:4,zh:'虽然',py:'suīrán',pos:'Liên từ',vn:'mặc dù, tuy',em:'⚖️',lesson:2,
+  {n:4,zh:'虽然',py:'suīrán',pos:'Liên từ',vn:'mặc dù, tuy', hv: 'tuy nhiên',em:'⚖️',lesson:2,
    ex_zh:'虽然北京很远，但是你一定要去看看。',ex_py:'Suīrán Běijīng hěn yuǎn, dànshì nǐ yídìng yào qù kànkan.',ex_vn:'Mặc dù Bắc Kinh xa, nhưng bạn nhất định phải đến xem thử.',
    exList:[
      {zh:'虽然北京很远，但是你一定要去看看。',py:'Suīrán Běijīng hěn yuǎn, dànshì nǐ yídìng yào qù kànkan.',vn:'Mặc dù Bắc Kinh xa, nhưng bạn nhất định phải đến xem thử.'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Kết hợp thịt 月 + chó 犬 + lửa 灬 (nướng) → nghĩa gốc "đốt", nay dùng làm hậu tố "NHƯ VẬY".',
       cf:'燃 (rán – "đốt cháy")',w:'虽然 / 当然 / 自然'},
    ]},
-  {n:5,zh:'次',py:'cì',pos:'Lượng từ',vn:'lần, lượt',em:'🔢',lesson:2,
+  {n:5,zh:'次',py:'cì',pos:'Lượng từ',vn:'lần, lượt', hv: 'thứ',em:'🔢',lesson:2,
    ex_zh:'我们今天晚上再去看一次，怎么样？',ex_py:'Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?',ex_vn:'Tối nay chúng ta đi xem thêm một lần nữa, được không?',
    exList:[
      {zh:'我们今天晚上再去看一次，怎么样？',py:'Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?',vn:'Tối nay chúng ta đi xem thêm một lần nữa, được không?'},
@@ -68,7 +68,7 @@ var vocabData = [
       tip:'Bộ 冫(băng) + 欠(thiếu, ngáp) → dùng đếm số LẦN lặp lại của một hành động.',
       cf:'冷 (lěng – "lạnh")',w:'一次 / 再次 / 这次'},
    ]},
-  {n:6,zh:'玩儿',py:'wánr',pos:'Động từ',vn:'chơi, chơi đùa',em:'🎮',lesson:3,
+  {n:6,zh:'玩儿',py:'wánr',pos:'Động từ',vn:'chơi, chơi đùa', hv: 'ngoạn nhi',em:'🎮',lesson:3,
    ex_zh:'我想去公园玩儿。',ex_py:'Wǒ xiǎng qù gōngyuán wánr.',ex_vn:'Tôi muốn đi công viên chơi.',
    exList:[
      {zh:'我想去公园玩儿。',py:'Wǒ xiǎng qù gōngyuán wánr.',vn:'Tôi muốn đi công viên chơi.'},
@@ -80,7 +80,7 @@ var vocabData = [
       tip:'Bộ 王(ngọc) + 元(gốc, ban đầu) → thời xưa nghịch ngọc quý để giải trí = CHƠI.',
       cf:'现 (xiàn – "hiện tại", cũng bộ 王")',w:'玩儿 / 好玩儿'},
    ]},
-  {n:7,zh:'晴',py:'qíng',pos:'Tính từ',vn:'trời quang, nắng đẹp',em:'☀️',lesson:3,
+  {n:7,zh:'晴',py:'qíng',pos:'Tính từ',vn:'trời quang, nắng đẹp', hv: 'tình',em:'☀️',lesson:3,
    ex_zh:'今天天气很晴。',ex_py:'Jīntiān tiānqì hěn qíng.',ex_vn:'Hôm nay trời rất quang đãng.',
    exList:[
      {zh:'今天天气很晴。',py:'Jīntiān tiānqì hěn qíng.',vn:'Hôm nay trời rất quang đãng.'},
@@ -92,7 +92,7 @@ var vocabData = [
       tip:'Bộ 日(mặt trời) + 青(xanh trong) → bầu trời XANH TRONG có nắng = QUANG ĐÃNG.',
       cf:'情 (qíng – "tình cảm", bộ 忄")',w:'晴天 / 天晴了'},
    ]},
-  {n:8,zh:'百',py:'bǎi',pos:'Số từ',vn:'trăm',em:'💯',lesson:3,
+  {n:8,zh:'百',py:'bǎi',pos:'Số từ',vn:'trăm', hv: 'bách',em:'💯',lesson:3,
    ex_zh:'我学了大概一百个小时了。',ex_py:'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le.',ex_vn:'Tôi đã học được khoảng một trăm tiếng rồi.',
    exList:[
      {zh:'我学了大概一百个小时了。',py:'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le.',vn:'Tôi đã học được khoảng một trăm tiếng rồi.'},

@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 14: 她买了不少衣服。
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'东西',py:'dōngxi',pos:'Danh từ',vn:'đồ đạc, đồ dùng, hàng hóa',em:'🛍️',lesson:1,
+  {n:1,zh:'东西',py:'dōngxi',pos:'Danh từ',vn:'đồ đạc, đồ dùng, hàng hóa', hv: 'đông tây',em:'🛍️',lesson:1,
    ex_zh:'我去商店买东西了。',ex_py:'Wǒ qù shāngdiàn mǎi dōngxi le.',ex_vn:'Mình đến cửa hàng để mua đồ.',
    exList:[
      {zh:'我去商店买东西了。',py:'Wǒ qù shāngdiàn mǎi dōngxi le.',vn:'Mình đến cửa hàng để mua đồ.'},
@@ -15,13 +15,13 @@ var vocabData = [
       tip:'Hình cái tổ chim lúc mặt trời lặn phía Tây → HƯỚNG TÂY.',
       cf:'酉 (yǒu – "chi dậu")',w:'东西'},
    ]},
-  {n:2,zh:'一点儿',py:'yìdiǎnr',pos:'Số lượng từ',vn:'một ít, một chút',em:'🤏',lesson:1,
+  {n:2,zh:'一点儿',py:'yìdiǎnr',pos:'Số lượng từ',vn:'một ít, một chút', hv: 'nhất điểm nhi',em:'🤏',lesson:1,
    ex_zh:'我买了一点儿苹果。',ex_py:'Wǒ mǎile yìdiǎnr píngguǒ.',ex_vn:'Mình mua một ít táo.',
    exList:[
      {zh:'我买了一点儿苹果。',py:'Wǒ mǎile yìdiǎnr píngguǒ.',vn:'Mình mua một ít táo.'},
    ],
    hanzi:[]},
-  {n:3,zh:'苹果',py:'píngguǒ',pos:'Danh từ',vn:'quả táo',em:'🍎',lesson:1,
+  {n:3,zh:'苹果',py:'píngguǒ',pos:'Danh từ',vn:'quả táo', hv: 'bình quả',em:'🍎',lesson:1,
    ex_zh:'我买了一点儿苹果。',ex_py:'Wǒ mǎile yìdiǎnr píngguǒ.',ex_vn:'Mình mua một ít táo.',
    exList:[
      {zh:'我买了一点儿苹果。',py:'Wǒ mǎile yìdiǎnr píngguǒ.',vn:'Mình mua một ít táo.'},
@@ -31,13 +31,13 @@ var vocabData = [
       tip:'艹(cây) + 平(mượn âm) → chỉ dùng riêng trong từ TÁO. (果 đã học ở Bài 12)',
       cf:'平 (píng – "bằng phẳng")',w:'苹果'},
    ]},
-  {n:4,zh:'看见',py:'kànjiàn',pos:'Động từ',vn:'nhìn thấy, trông thấy',em:'👁️',lesson:1,
+  {n:4,zh:'看见',py:'kànjiàn',pos:'Động từ',vn:'nhìn thấy, trông thấy', hv: 'khán kiến',em:'👁️',lesson:1,
    ex_zh:'你看见张先生了吗？',ex_py:'Nǐ kànjiàn Zhāng xiānsheng le ma?',ex_vn:'Anh có thấy ông Trương không?',
    exList:[
      {zh:'你看见张先生了吗？',py:'Nǐ kànjiàn Zhāng xiānsheng le ma?',vn:'Anh có thấy ông Trương không?'},
    ],
    hanzi:[]},
-  {n:5,zh:'先生',py:'xiānsheng',pos:'Danh từ',vn:'ông, ngài',em:'🤵',lesson:2,
+  {n:5,zh:'先生',py:'xiānsheng',pos:'Danh từ',vn:'ông, ngài', hv: 'tiên sinh',em:'🤵',lesson:2,
    ex_zh:'你看见张先生了吗？',ex_py:'Nǐ kànjiàn Zhāng xiānsheng le ma?',ex_vn:'Anh có thấy ông Trương không?',
    exList:[
      {zh:'你看见张先生了吗？',py:'Nǐ kànjiàn Zhāng xiānsheng le ma?',vn:'Anh có thấy ông Trương không?'},
@@ -47,7 +47,7 @@ var vocabData = [
       tip:'Hình người bước ra TRƯỚC tiên → ĐẦU TIÊN; 先生 vốn nghĩa "người sinh ra trước", dùng gọi ÔNG một cách kính trọng.',
       cf:'洗 (xǐ – "rửa")',w:'先生 / 首先'},
    ]},
-  {n:6,zh:'开',py:'kāi',pos:'Động từ',vn:'lái (xe), mở, vận hành',em:'🚦',lesson:2,
+  {n:6,zh:'开',py:'kāi',pos:'Động từ',vn:'lái (xe), mở, vận hành', hv: 'khai',em:'🚦',lesson:2,
    ex_zh:'他去学开车了。',ex_py:'Tā qù xué kāi chē le.',ex_vn:'Ông ấy đi học lái xe rồi.',
    exList:[
      {zh:'他去学开车了。',py:'Tā qù xué kāi chē le.',vn:'Ông ấy đi học lái xe rồi.'},
@@ -57,7 +57,7 @@ var vocabData = [
       tip:'Hình hai tay 廾 kéo then cửa → MỞ; mở rộng nghĩa "vận hành, lái (xe)".',
       cf:'关 (guān – "đóng, liên quan", đã học Bài 1")',w:'开车'},
    ]},
-  {n:7,zh:'车',py:'chē',pos:'Danh từ',vn:'xe, phương tiện giao thông đường bộ',em:'🚗',lesson:2,
+  {n:7,zh:'车',py:'chē',pos:'Danh từ',vn:'xe, phương tiện giao thông đường bộ', hv: 'xa',em:'🚗',lesson:2,
    ex_zh:'他去学开车了。',ex_py:'Tā qù xué kāi chē le.',ex_vn:'Ông ấy đi học lái xe rồi.',
    exList:[
      {zh:'他去学开车了。',py:'Tā qù xué kāi chē le.',vn:'Ông ấy đi học lái xe rồi.'},
@@ -67,13 +67,13 @@ var vocabData = [
       tip:'Hình bánh xe nhìn từ trên xuống → XE.',
       cf:'东 (dōng – "phía đông", hình dạng gần giống")',w:'开车 / 汽车'},
    ]},
-  {n:8,zh:'回来',py:'huílai',pos:'Động từ',vn:'quay về, trở lại',em:'↩️',lesson:2,
+  {n:8,zh:'回来',py:'huílai',pos:'Động từ',vn:'quay về, trở lại', hv: 'hồi lai',em:'↩️',lesson:2,
    ex_zh:'40分钟后回来。',ex_py:'Sìshí fēnzhōng hòu huílai.',ex_vn:'40 phút nữa quay lại.',
    exList:[
      {zh:'40分钟后回来。',py:'Sìshí fēnzhōng hòu huílai.',vn:'40 phút nữa quay lại.'},
    ],
    hanzi:[]},
-  {n:9,zh:'分钟',py:'fēnzhōng',pos:'Danh từ',vn:'phút (thời lượng)',em:'⏱️',lesson:2,
+  {n:9,zh:'分钟',py:'fēnzhōng',pos:'Danh từ',vn:'phút (thời lượng)', hv: 'phân chung',em:'⏱️',lesson:2,
    ex_zh:'40分钟后回来。',ex_py:'Sìshí fēnzhōng hòu huílai.',ex_vn:'40 phút nữa quay lại.',
    exList:[
      {zh:'40分钟后回来。',py:'Sìshí fēnzhōng hòu huílai.',vn:'40 phút nữa quay lại.'},
@@ -83,13 +83,13 @@ var vocabData = [
       tip:'钅(kim loại, làm chuông đồng hồ) + 中(đúng giờ) → ĐỒNG HỒ, đếm THỜI LƯỢNG. (分 đã học ở Bài 11)',
       cf:'种 (zhǒng – "loại, giống")',w:'分钟 / 钟表'},
    ]},
-  {n:10,zh:'后',py:'hòu',pos:'Danh từ',vn:'sau, sau khi',em:'⏭️',lesson:2,
+  {n:10,zh:'后',py:'hòu',pos:'Danh từ',vn:'sau, sau khi', hv: 'hậu',em:'⏭️',lesson:2,
    ex_zh:'40分钟后回来。',ex_py:'Sìshí fēnzhōng hòu huílai.',ex_vn:'40 phút nữa quay lại.',
    exList:[
      {zh:'40分钟后回来。',py:'Sìshí fēnzhōng hòu huílai.',vn:'40 phút nữa quay lại.'},
    ],
    hanzi:[]},
-  {n:11,zh:'衣服',py:'yīfu',pos:'Danh từ',vn:'quần áo',em:'👗',lesson:3,
+  {n:11,zh:'衣服',py:'yīfu',pos:'Danh từ',vn:'quần áo', hv: 'y phục',em:'👗',lesson:3,
    ex_zh:'王方的衣服太漂亮了！',ex_py:'Wáng Fāng de yīfu tài piàoliang le!',ex_vn:'Quần áo của Vương Phương đẹp quá!',
    exList:[
      {zh:'王方的衣服太漂亮了！',py:'Wáng Fāng de yīfu tài piàoliang le!',vn:'Quần áo của Vương Phương đẹp quá!'},
@@ -102,7 +102,7 @@ var vocabData = [
       tip:'月(thân thể) + phần biểu thị "khoác vào" → thứ khoác lên thân thể = QUẦN ÁO.',
       cf:'报 (bào – "báo cáo")',w:'衣服'},
    ]},
-  {n:12,zh:'漂亮',py:'piàoliang',pos:'Tính từ',vn:'đẹp, xinh đẹp',em:'✨',lesson:3,
+  {n:12,zh:'漂亮',py:'piàoliang',pos:'Tính từ',vn:'đẹp, xinh đẹp', hv: 'phiêu lượng',em:'✨',lesson:3,
    ex_zh:'王方的衣服太漂亮了！',ex_py:'Wáng Fāng de yīfu tài piàoliang le!',ex_vn:'Quần áo của Vương Phương đẹp quá!',
    exList:[
      {zh:'王方的衣服太漂亮了！',py:'Wáng Fāng de yīfu tài piàoliang le!',vn:'Quần áo của Vương Phương đẹp quá!'},
@@ -115,7 +115,7 @@ var vocabData = [
       tip:'Hình ánh sáng toả ra từ trên cao → SÁNG SỦA, đẹp rạng ngời.',
       cf:'京 (jīng – "kinh đô", đã học Bài 11")',w:'漂亮'},
    ]},
-  {n:13,zh:'啊',py:'a',pos:'Trợ từ',vn:'trợ từ ngữ khí cuối câu để khẳng định',em:'💬',lesson:3,
+  {n:13,zh:'啊',py:'a',pos:'Trợ từ',vn:'trợ từ ngữ khí cuối câu để khẳng định', hv: 'a',em:'💬',lesson:3,
    ex_zh:'是啊，她买了不少衣服。',ex_py:'Shì a, tā mǎile bùshǎo yīfu.',ex_vn:'Đúng vậy. Cô ấy mua nhiều quần áo lắm.',
    exList:[
      {zh:'是啊，她买了不少衣服。',py:'Shì a, tā mǎile bùshǎo yīfu.',vn:'Đúng vậy. Cô ấy mua nhiều quần áo lắm.'},
@@ -125,19 +125,19 @@ var vocabData = [
       tip:'口(miệng) mượn âm 阿 → tiếng thốt ra cuối câu để tăng cảm xúc, khẳng định.',
       cf:'阿 (ā – "tiền tố thân mật")',w:'是啊 / 好啊'},
    ]},
-  {n:14,zh:'少',py:'shǎo',pos:'Tính từ',vn:'ít (不少: nhiều, khá nhiều)',em:'➖',lesson:3,
+  {n:14,zh:'少',py:'shǎo',pos:'Tính từ',vn:'ít (不少: nhiều, khá nhiều)', hv: 'thiểu',em:'➖',lesson:3,
    ex_zh:'她买了不少衣服。',ex_py:'Tā mǎile bùshǎo yīfu.',ex_vn:'Cô ấy mua nhiều quần áo lắm.',
    exList:[
      {zh:'她买了不少衣服。',py:'Tā mǎile bùshǎo yīfu.',vn:'Cô ấy mua nhiều quần áo lắm.'},
    ],
    hanzi:[]},
-  {n:15,zh:'这些',py:'zhèxiē',pos:'Đại từ',vn:'những cái này, những thứ này',em:'📦',lesson:3,
+  {n:15,zh:'这些',py:'zhèxiē',pos:'Đại từ',vn:'những cái này, những thứ này', hv: 'giá ta',em:'📦',lesson:3,
    ex_zh:'这些都是王方的东西。',ex_py:'Zhèxiē dōu shì Wáng Fāng de dōngxi.',ex_vn:'Những thứ này đều là đồ của Vương Phương.',
    exList:[
      {zh:'这些都是王方的东西。',py:'Zhèxiē dōu shì Wáng Fāng de dōngxi.',vn:'Những thứ này đều là đồ của Vương Phương.'},
    ],
    hanzi:[]},
-  {n:16,zh:'都',py:'dōu',pos:'Phó từ',vn:'đều',em:'🟰',lesson:3,
+  {n:16,zh:'都',py:'dōu',pos:'Phó từ',vn:'đều', hv: 'đô',em:'🟰',lesson:3,
    ex_zh:'这些都是王方的东西。',ex_py:'Zhèxiē dōu shì Wáng Fāng de dōngxi.',ex_vn:'Những thứ này đều là đồ của Vương Phương.',
    exList:[
      {zh:'这些都是王方的东西。',py:'Zhèxiē dōu shì Wáng Fāng de dōngxi.',vn:'Những thứ này đều là đồ của Vương Phương.'},

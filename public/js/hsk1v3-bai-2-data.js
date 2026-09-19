@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'请问',py:'qǐngwèn',pos:'Động từ',vn:'xin hỏi',em:'🙋',lesson:1,
+  {n:1,zh:'请问',py:'qǐngwèn',pos:'Động từ',vn:'xin hỏi', hv: 'thỉnh vấn',em:'🙋',lesson:1,
    ex_zh:'请问，你叫什么名字？',ex_py:'Qǐngwèn, nǐ jiào shénme míngzi?',ex_vn:'Xin hỏi, bạn tên là gì?',
    exList:[
      {zh:'请问，你叫什么名字？',py:'Qǐngwèn, nǐ jiào shénme míngzi?',vn:'Xin hỏi, bạn tên là gì?'},
@@ -16,7 +16,7 @@ var vocabData = [
       tip:'门(cửa) + 口(miệng) → đứng ở CỬA dùng MIỆNG để cất tiếng HỎI thăm.',
       cf:'间 (jiān – "khoảng, gian", cũng bộ 门")',w:'请问 / 问题 / 问好'},
    ]},
-  {n:2,zh:'你',py:'nǐ',pos:'Đại từ',vn:'bạn, anh, chị, em',em:'👉',lesson:1,
+  {n:2,zh:'你',py:'nǐ',pos:'Đại từ',vn:'bạn, anh, chị, em', hv: 'nhĩ',em:'👉',lesson:1,
    ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
    exList:[
      {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
@@ -27,7 +27,7 @@ var vocabData = [
       tip:'亻(người) + 尔(cách gọi thân mật thời cổ) → chỉ NGƯỜI đang nói chuyện đối diện mình = BẠN.',
       cf:'您 (nín – "ngài", cách gọi kính trọng, cũng có 亻/尔")',w:'你好 / 你们 / 你是'},
    ]},
-  {n:3,zh:'叫',py:'jiào',pos:'Động từ',vn:'gọi là, tên là',em:'📛',lesson:1,
+  {n:3,zh:'叫',py:'jiào',pos:'Động từ',vn:'gọi là, tên là', hv: 'khiếu',em:'📛',lesson:1,
    ex_zh:'我叫陈天中。',ex_py:'Wǒ jiào Chén Tiānzhōng.',ex_vn:'Tôi tên là Trần Thiên Trung.',
    exList:[
      {zh:'我叫陈天中。',py:'Wǒ jiào Chén Tiānzhōng.',vn:'Tôi tên là Trần Thiên Trung.'},
@@ -38,7 +38,7 @@ var vocabData = [
       tip:'Bộ 口(miệng) → hành động phát ra tiếng để GỌI TÊN ai đó.',
       cf:'叶 (yè – "lá cây", cũng bộ 口")',w:'叫什么 / 叫做'},
    ]},
-  {n:4,zh:'什么',py:'shénme',pos:'Đại từ',vn:'gì, cái gì',em:'❓',lesson:1,
+  {n:4,zh:'什么',py:'shénme',pos:'Đại từ',vn:'gì, cái gì', hv: 'thập ma',em:'❓',lesson:1,
    ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
    exList:[
      {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
@@ -51,7 +51,7 @@ var vocabData = [
       tip:'么 là chữ giản thể của 麼, nét viết đơn giản, ĐỨNG MỘT MÌNH không mang nghĩa riêng mà chỉ làm trợ từ nghi vấn trong 什么, 怎么.',
       cf:'乡 (xiāng – "quê hương", hình dáng nét gần giống)',w:'什么 / 怎么 / 那么'},
    ]},
-  {n:5,zh:'名字',py:'míngzi',pos:'Danh từ',vn:'tên',em:'🏷️',lesson:1,
+  {n:5,zh:'名字',py:'míngzi',pos:'Danh từ',vn:'tên', hv: 'danh tự',em:'🏷️',lesson:1,
    ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
    exList:[
      {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
@@ -64,7 +64,7 @@ var vocabData = [
       tip:'宀(mái nhà) + 子(con) → đứa CON sinh ra trong nhà được đặt TÊN, nghĩa mở rộng thành CHỮ VIẾT.',
       cf:'学 (xué – "học", phần trên cũng dễ nhầm với 宀")',w:'名字 / 汉字 / 写字'},
    ]},
-  {n:6,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, mình',em:'🙋‍♂️',lesson:1,
+  {n:6,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, mình', hv: 'ngã',em:'🙋‍♂️',lesson:1,
    ex_zh:'我叫陈天中。',ex_py:'Wǒ jiào Chén Tiānzhōng.',ex_vn:'Tôi tên là Trần Thiên Trung.',
    exList:[
      {zh:'我叫陈天中。',py:'Wǒ jiào Chén Tiānzhōng.',vn:'Tôi tên là Trần Thiên Trung.'},
@@ -75,7 +75,7 @@ var vocabData = [
       tip:'Chữ 我 vốn là hình người TỰ cầm 戈(vũ khí) bảo vệ bản thân → mở rộng thành đại từ ngôi thứ nhất TÔI, MÌNH.',
       cf:'找 (zhǎo – "tìm", cũng có bộ 戈")',w:'我们 / 我是 / 我叫'},
    ]},
-  {n:7,zh:'不',py:'bù',pos:'Phó từ',vn:'không',em:'🚫',lesson:2,
+  {n:7,zh:'不',py:'bù',pos:'Phó từ',vn:'không', hv: 'bất',em:'🚫',lesson:2,
    ex_zh:'我不是安妮。',ex_py:'Wǒ bú shì Ānnī.',ex_vn:'Tôi không phải là Annie.',
    exList:[
      {zh:'我不是安妮。',py:'Wǒ bú shì Ānnī.',vn:'Tôi không phải là Annie.'},
@@ -85,7 +85,7 @@ var vocabData = [
       tip:'Hình ảnh cành cây bị chặt NGỌN, chặn không cho mọc thêm lên trên → biểu thị sự PHỦ ĐỊNH, KHÔNG.',
       cf:'木 (mù – "cây gỗ", hình dáng gần giống nhưng đủ 4 nét cân đối)',w:'不是 / 不好 / 不对'},
    ]},
-  {n:8,zh:'是',py:'shì',pos:'Động từ',vn:'là',em:'✅',lesson:2,
+  {n:8,zh:'是',py:'shì',pos:'Động từ',vn:'là', hv: 'thị',em:'✅',lesson:2,
    ex_zh:'我是白家月。',ex_py:'Wǒ shì Bái Jiāyuè.',ex_vn:'Tôi là Bạch Gia Nguyệt.',
    exList:[
      {zh:'我是白家月。',py:'Wǒ shì Bái Jiāyuè.',vn:'Tôi là Bạch Gia Nguyệt.'},
@@ -96,7 +96,7 @@ var vocabData = [
       tip:'日(mặt trời) luôn ĐÚNG giờ mọc → mở rộng thành nghĩa "ĐÚNG, LÀ".',
       cf:'定 (dìng – "quyết định")',w:'是学生 / 不是'},
    ]},
-  {n:9,zh:'对不起',py:'duìbuqǐ',pos:'Động từ',vn:'xin lỗi',em:'🙇',lesson:2,
+  {n:9,zh:'对不起',py:'duìbuqǐ',pos:'Động từ',vn:'xin lỗi', hv: 'đối bất khởi',em:'🙇',lesson:2,
    ex_zh:'对不起！',ex_py:'Duìbuqǐ!',ex_vn:'Xin lỗi!',
    exList:[
      {zh:'对不起！',py:'Duìbuqǐ!',vn:'Xin lỗi!'},
@@ -112,7 +112,7 @@ var vocabData = [
       tip:'走(đi, chạy) + 己(bản thân) → tự BẢN THÂN đứng DẬY để bước ĐI, mở rộng thành KHỞI ĐẦU.',
       cf:'记 (jì – "ghi nhớ", cũng có phần 己")',w:'对不起 / 起来 / 一起'},
    ]},
-  {n:10,zh:'没关系',py:'méi guānxi',pos:'Cụm từ',vn:'không sao, không có gì',em:'🤝',lesson:2,
+  {n:10,zh:'没关系',py:'méi guānxi',pos:'Cụm từ',vn:'không sao, không có gì', hv: 'một quan hệ',em:'🤝',lesson:2,
    ex_zh:'没关系！',ex_py:'Méi guānxi!',ex_vn:'Không sao!',
    exList:[
      {zh:'没关系！',py:'Méi guānxi!',vn:'Không sao!'},
@@ -128,7 +128,7 @@ var vocabData = [
       tip:'Hình bàn tay (丿biến thể) nắm lấy các SỢI TƠ (糸) buộc chúng lại với nhau → LIÊN QUAN, HỆ THỐNG.',
       cf:'紧 (jǐn – "khẩn cấp, chặt", cũng có 糸 ở dưới)',w:'关系 / 系统 / 联系'},
    ]},
-  {n:11,zh:'没事',py:'méishì',pos:'Động từ',vn:'không sao, không có gì',em:'👌',lesson:2,
+  {n:11,zh:'没事',py:'méishì',pos:'Động từ',vn:'không sao, không có gì', hv: 'một sự',em:'👌',lesson:2,
    ex_zh:'没事！没事！',ex_py:'Méishì! Méishì!',ex_vn:'Không sao đâu! Không sao đâu!',
    exList:[
      {zh:'没事！没事！',py:'Méishì! Méishì!',vn:'Không sao đâu! Không sao đâu!'},
@@ -141,7 +141,7 @@ var vocabData = [
       tip:'Hình ảnh bàn tay cầm cây bút/cờ hiệu ghi chép công VIỆC của quan lại thời xưa → mở rộng thành VIỆC, SỰ VIỆC.',
       cf:'争 (zhēng – "tranh giành", phần trên hình dáng gần giống)',w:'没事 / 事情 / 有事'},
    ]},
-  {n:12,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất',em:'💯',lesson:3,
+  {n:12,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất', hv: 'ngận',em:'💯',lesson:3,
    ex_zh:'很高兴认识你。',ex_py:'Hěn gāoxìng rènshi nǐ.',ex_vn:'Rất vui được làm quen với bạn.',
    exList:[
      {zh:'很高兴认识你。',py:'Hěn gāoxìng rènshi nǐ.',vn:'Rất vui được làm quen với bạn.'},
@@ -151,7 +151,7 @@ var vocabData = [
       tip:'彳(bước đi) + 艮(cứng, kiên định, khó lay chuyển) → đi theo mức độ KIÊN ĐỊNH cao, mở rộng thành RẤT.',
       cf:'恨 (hèn – "hận, ghét", cũng có 艮 nhưng bộ 忄")',w:'很好 / 很高兴 / 非常'},
    ]},
-  {n:13,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui, vui vẻ',em:'😄',lesson:3,
+  {n:13,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui, vui vẻ', hv: 'cao hứng',em:'😄',lesson:3,
    ex_zh:'很高兴认识你。',ex_py:'Hěn gāoxìng rènshi nǐ.',ex_vn:'Rất vui được làm quen với bạn.',
    exList:[
      {zh:'很高兴认识你。',py:'Hěn gāoxìng rènshi nǐ.',vn:'Rất vui được làm quen với bạn.'},
@@ -164,7 +164,7 @@ var vocabData = [
       tip:'Hình ảnh một tòa lầu nhiều tầng với mái, cửa sổ, nền móng xếp chồng lên nhau → biểu thị CAO.',
       cf:'亮 (liàng – "sáng", cấu trúc trên-dưới gần giống)',w:'高兴 / 高大 / 很高'},
    ]},
-  {n:14,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen, làm quen, nhận biết',em:'🤗',lesson:3,
+  {n:14,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen, làm quen, nhận biết', hv: 'nhận thức',em:'🤗',lesson:3,
    ex_zh:'认识你我也很高兴。',ex_py:'Rènshi nǐ wǒ yě hěn gāoxìng.',ex_vn:'Quen biết bạn tôi cũng rất vui.',
    exList:[
      {zh:'认识你我也很高兴。',py:'Rènshi nǐ wǒ yě hěn gāoxìng.',vn:'Quen biết bạn tôi cũng rất vui.'},
@@ -177,7 +177,7 @@ var vocabData = [
       tip:'讠(lời nói) + 只(chỉ ra, duy nhất) → dùng LỜI để chỉ rõ, phân biệt sự vật → BIẾT, NHẬN THỨC.',
       cf:'织 (zhī – "dệt", phần phải gần giống nhưng bộ 纟")',w:'认识 / 知识 / 常识'},
    ]},
-  {n:15,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng',em:'➕',lesson:3,
+  {n:15,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng', hv: 'dã',em:'➕',lesson:3,
    ex_zh:'认识你我也很高兴。',ex_py:'Rènshi nǐ wǒ yě hěn gāoxìng.',ex_vn:'Quen biết bạn tôi cũng rất vui.',
    exList:[
      {zh:'认识你我也很高兴。',py:'Rènshi nǐ wǒ yě hěn gāoxìng.',vn:'Quen biết bạn tôi cũng rất vui.'},

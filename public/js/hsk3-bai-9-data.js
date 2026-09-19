@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'中文',py:'Zhōngwén',pos:'Danh từ',vn:'tiếng Trung Quốc',em:'🇨🇳',lesson:1,
+  {n:1,zh:'中文',py:'Zhōngwén',pos:'Danh từ',vn:'tiếng Trung Quốc', hv: 'Trung Văn',em:'🇨🇳',lesson:1,
    explain:['Ngôn ngữ và chữ viết của Trung Quốc, đồng nghĩa gần với 汉语.'],
    usage:'Danh từ; thường dùng với 说/学: 说中文, 学中文.',
    collo:['说中文','学中文','中文老师'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 努力 đã học ở Bài 4).'},
    ]},
 
-  {n:2,zh:'班',py:'bān',pos:'Danh từ',vn:'lớp',em:'🏫',lesson:1,
+  {n:2,zh:'班',py:'bān',pos:'Danh từ',vn:'lớp', hv: 'ban',em:'🏫',lesson:1,
    explain:['Nhóm học sinh học cùng nhau trong một lớp học.'],
    usage:'Danh từ; đi cùng số từ + 班: 我们班 (lớp chúng tôi), 一班 (lớp 1).',
    collo:['我们班','一班','同班'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 认真 đã học ở Bài 4).'},
    ]},
 
-  {n:3,zh:'一样',py:'yíyàng',pos:'Tính từ',vn:'giống nhau, như nhau',em:'⚖️',lesson:1,
+  {n:3,zh:'一样',py:'yíyàng',pos:'Tính từ',vn:'giống nhau, như nhau', hv: 'nhất dạng',em:'⚖️',lesson:1,
    explain:['Không có sự khác biệt giữa hai đối tượng khi so sánh.'],
    usage:'Cấu trúc so sánh bằng: A + 跟 + B + 一样 (+ tính từ); phủ định: A + 跟 + B + 不一样.',
    collo:['跟……一样','不一样','一样好'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 衬衫 đã học ở Bài 3).'},
    ]},
 
-  {n:4,zh:'最后',py:'zuìhòu',pos:'Danh từ',vn:'cuối cùng',em:'🏁',lesson:2,
+  {n:4,zh:'最后',py:'zuìhòu',pos:'Danh từ',vn:'cuối cùng', hv: 'tối hậu',em:'🏁',lesson:2,
    explain:['Thời điểm hoặc vị trí sau chót, không còn gì tiếp theo.'],
    usage:'Danh từ, làm định ngữ trước danh từ: 最后 + [danh từ] (最后一块).',
    collo:['最后一块','最后一次','到最后'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 努力 đã học ở Bài 4).'},
    ]},
 
-  {n:5,zh:'放心',py:'fàngxīn',pos:'Động từ',vn:'yên tâm',em:'😌',lesson:2,
+  {n:5,zh:'放心',py:'fàngxīn',pos:'Động từ',vn:'yên tâm', hv: 'phóng tâm',em:'😌',lesson:2,
    explain:['Không còn lo lắng, cảm thấy an tâm.'],
    usage:'Động từ ly hợp; thường dùng ở dạng mệnh lệnh: 放心吧, 你放心.',
    collo:['你放心','放心吧','不放心'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 健康 đã học ở Bài 8).'},
    ]},
 
-  {n:6,zh:'一定',py:'yídìng',pos:'Phó từ',vn:'nhất định, chắc chắn',em:'✅',lesson:2,
+  {n:6,zh:'一定',py:'yídìng',pos:'Phó từ',vn:'nhất định, chắc chắn', hv: 'nhất định',em:'✅',lesson:2,
    explain:['Diễn tả sự khẳng định chắc chắn về một việc.'],
    usage:'Phó từ, đứng trước động từ: 一定 + V.',
    collo:['一定会','一定能','一定不会'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'担心',py:'dānxīn',pos:'Động từ',vn:'lo lắng',em:'😟',lesson:3,
+  {n:7,zh:'担心',py:'dānxīn',pos:'Động từ',vn:'lo lắng', hv: 'đảm tâm',em:'😟',lesson:3,
    explain:['Cảm thấy bất an, lo ngại về điều gì đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp hoặc đứng độc lập; thường dùng dạng phủ định mệnh lệnh: 不用担心, 别担心.',
    collo:['不用担心','别担心','担心你'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:8,zh:'比较',py:'bǐjiào',pos:'Phó từ',vn:'tương đối, khá',em:'📊',lesson:3,
+  {n:8,zh:'比较',py:'bǐjiào',pos:'Phó từ',vn:'tương đối, khá', hv: 'tỉ giảo',em:'📊',lesson:3,
    explain:['Diễn tả mức độ tương đối, không phải cực đoan nhất.'],
    usage:'Phó từ, đứng trước tính từ/động từ: 比较 + Adj/V (比较了解, 比较难).',
    collo:['比较了解','比较难','比较喜欢'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 中间 sẽ học ngay bên dưới).'},
    ]},
 
-  {n:9,zh:'了解',py:'liǎojiě',pos:'Động từ',vn:'hiểu rõ',em:'📖',lesson:3,
+  {n:9,zh:'了解',py:'liǎojiě',pos:'Động từ',vn:'hiểu rõ', hv: 'liễu giải',em:'📖',lesson:3,
    explain:['Biết rõ, nắm vững thông tin về ai/việc gì đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp hoặc đi cùng 对: 对……了解.',
    collo:['比较了解','了解情况','不了解'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 担心 vừa học trong bài này).'},
    ]},
 
-  {n:10,zh:'先',py:'xiān',pos:'Phó từ',vn:'trước, trước hết',em:'1️⃣',lesson:3,
+  {n:10,zh:'先',py:'xiān',pos:'Phó từ',vn:'trước, trước hết', hv: 'tiên',em:'1️⃣',lesson:3,
    explain:['Làm việc gì đó trước các việc khác về mặt thời gian hoặc thứ tự.'],
    usage:'Phó từ, đứng trước động từ: 先 + V, thường đi cùng 再 diễn tả thứ tự: 先……再……',
    collo:['先休息','先……再……','先看看'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'中间',py:'zhōngjiān',pos:'Danh từ',vn:'giữa, chính giữa',em:'↔️',lesson:3,
+  {n:11,zh:'中间',py:'zhōngjiān',pos:'Danh từ',vn:'giữa, chính giữa', hv: 'trung gian',em:'↔️',lesson:3,
    explain:['Vị trí ở giữa hai điểm hoặc trong một khoảng không gian/thời gian.'],
    usage:'Danh từ chỉ nơi chốn; đứng độc lập hoặc làm định ngữ: 中间这条路.',
    collo:['从中间','中间这个','在中间'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản (ôn lại 比较 vừa học trong bài này).'},
    ]},
 
-  {n:12,zh:'参加',py:'cānjiā',pos:'Động từ',vn:'tham gia',em:'🙋',lesson:4,
+  {n:12,zh:'参加',py:'cānjiā',pos:'Động từ',vn:'tham gia', hv: 'tham gia',em:'🙋',lesson:4,
    explain:['Cùng góp mặt, tham dự vào một hoạt động.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 参加 + [hoạt động] (参加比赛).',
    collo:['参加比赛','参加考试','不能参加'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'一定 + V diễn tả sự chắc chắn (ôn lại 一定 vừa học trong bài này).'},
    ]},
 
-  {n:13,zh:'影响',py:'yǐngxiǎng',pos:'Danh từ',vn:'ảnh hưởng',em:'📉',lesson:4,
+  {n:13,zh:'影响',py:'yǐngxiǎng',pos:'Danh từ',vn:'ảnh hưởng', hv: 'ảnh hưởng',em:'📉',lesson:4,
    explain:['Tác động làm thay đổi điều gì đó; cũng dùng như động từ.'],
    usage:'Danh từ/động từ; thường dùng dạng phủ định: 没有影响, 一点儿影响也没有.',
    collo:['有影响','没有影响','影响很大'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 比赛 đã học ở Bài 4).'},
    ]},
 
-  {n:14,zh:'大山',py:'Dàshān',pos:'Danh từ riêng',vn:'Đại Sơn (tên người)',em:'🧑',lesson:1,
+  {n:14,zh:'大山',py:'Dàshān',pos:'Danh từ riêng',vn:'Đại Sơn (tên người)', hv: 'Đại Sơn',em:'🧑',lesson:1,
    explain:['Tên riêng của một nhân vật nam trong bài hội thoại.'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    collo:['大山说','跟大山一起','大山问'],
@@ -310,7 +310,7 @@ var vocabData = [
       note:'V+过 diễn tả kinh nghiệm (ở đây dạng phủ định 没……过).'},
    ]},
 
-  {n:15,zh:'李静',py:'Lǐ Jìng',pos:'Danh từ riêng',vn:'Lý Tĩnh (tên người)',em:'👩‍🏫',lesson:1,
+  {n:15,zh:'李静',py:'Lǐ Jìng',pos:'Danh từ riêng',vn:'Lý Tĩnh (tên người)', hv: 'Lý Tĩnh',em:'👩‍🏫',lesson:1,
    explain:['Tên riêng của giáo viên tiếng Trung được nhắc đến trong bài hội thoại.'],
    usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
    collo:['李静老师','是李静','李静说'],

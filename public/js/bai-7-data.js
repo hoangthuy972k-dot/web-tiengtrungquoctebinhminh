@@ -2,7 +2,7 @@
 // DATA — Bài 7: 你家离公司远吗？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'教室',py:'jiàoshì',pos:'Danh từ',vn:'phòng học, lớp học',em:'🏫',lesson:1,
+  {n:1,zh:'教室',py:'jiàoshì',pos:'Danh từ',vn:'phòng học, lớp học', hv: 'giáo thất',em:'🏫',lesson:1,
    ex_zh:'他还在教室学习呢。',ex_py:'Tā hái zài jiàoshì xuéxí ne.',ex_vn:'Cậu ấy vẫn còn đang học ở trên lớp kìa.',
    exList:[
      {zh:'他还在教室学习呢。',py:'Tā hái zài jiàoshì xuéxí ne.',vn:'Cậu ấy vẫn còn đang học ở trên lớp kìa.'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'Mái nhà 宀 trên 至 (đến, tới) → nơi mọi người tới, một căn PHÒNG.',
       cf:'到 (dào, sẽ học ở cuối bài này)',w:'教室 / 房室 / 卧室'},
    ]},
-  {n:2,zh:'机场',py:'jīchǎng',pos:'Danh từ',vn:'sân bay',em:'✈️',lesson:2,
+  {n:2,zh:'机场',py:'jīchǎng',pos:'Danh từ',vn:'sân bay', hv: 'cơ trường',em:'✈️',lesson:2,
    ex_zh:'我在去机场的路上。',ex_py:'Wǒ zài qù jīchǎng de lùshang.',ex_vn:'Tôi đang trên đường ra sân bay.',
    exList:[
      {zh:'我在去机场的路上。',py:'Wǒ zài qù jīchǎng de lùshang.',vn:'Tôi đang trên đường ra sân bay.'},
@@ -32,7 +32,7 @@ var vocabData = [
       tip:'Bộ 土 (đất) → khoảnh đất rộng dùng làm SÂN, BÃI.',
       cf:'汤 (tāng, canh, bộ 氵)',w:'机场 / 操场 / 广场'},
    ]},
-  {n:3,zh:'路',py:'lù',pos:'Danh từ',vn:'đường, tuyến đường',em:'🛣️',lesson:2,
+  {n:3,zh:'路',py:'lù',pos:'Danh từ',vn:'đường, tuyến đường', hv: 'lộ',em:'🛣️',lesson:2,
    ex_zh:'去机场的路上。',ex_py:'Qù jīchǎng de lùshang.',ex_vn:'Trên đường đi sân bay.',
    exList:[
      {zh:'去机场的路上。',py:'Qù jīchǎng de lùshang.',vn:'Trên đường đi sân bay.'},
@@ -44,7 +44,7 @@ var vocabData = [
       tip:'Bộ ⻊(chân) → nơi đôi chân đi qua = ĐƯỜNG.',
       cf:'露 (lù, sương, bộ 雨)',w:'路上 / 走路 / 马路'},
    ]},
-  {n:4,zh:'离',py:'lí',pos:'Giới từ',vn:'cách (khoảng cách)',em:'📏',lesson:3,
+  {n:4,zh:'离',py:'lí',pos:'Giới từ',vn:'cách (khoảng cách)', hv: 'li',em:'📏',lesson:3,
    ex_zh:'你家离公司远吗？',ex_py:'Nǐ jiā lí gōngsī yuǎn ma?',ex_vn:'Nhà bạn cách công ty có xa không?',
    exList:[
      {zh:'你家离公司远吗？',py:'Nǐ jiā lí gōngsī yuǎn ma?',vn:'Nhà bạn cách công ty có xa không?'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'Nghĩa gốc là "chia lìa, rời xa" → mở rộng thành giới từ chỉ KHOẢNG CÁCH giữa 2 điểm.',
       cf:'难 (nán, khó)',w:'离公司 / 离家 / 离开'},
    ]},
-  {n:5,zh:'公司',py:'gōngsī',pos:'Danh từ',vn:'công ty',em:'🏢',lesson:3,
+  {n:5,zh:'公司',py:'gōngsī',pos:'Danh từ',vn:'công ty', hv: 'công ti',em:'🏢',lesson:3,
    ex_zh:'你家离公司远吗？',ex_py:'Nǐ jiā lí gōngsī yuǎn ma?',ex_vn:'Nhà bạn cách công ty có xa không?',
    exList:[
      {zh:'你家离公司远吗？',py:'Nǐ jiā lí gōngsī yuǎn ma?',vn:'Nhà bạn cách công ty có xa không?'},
@@ -71,7 +71,7 @@ var vocabData = [
       tip:'Bộ 口 (miệng ra lệnh) → nơi có người QUẢN LÝ, điều hành.',
       cf:'同 (tóng, giống nhau)',w:'公司 / 司机'},
    ]},
-  {n:6,zh:'远',py:'yuǎn',pos:'Tính từ',vn:'xa',em:'🏞️',lesson:3,
+  {n:6,zh:'远',py:'yuǎn',pos:'Tính từ',vn:'xa', hv: 'viễn',em:'🏞️',lesson:3,
    ex_zh:'你家离公司远吗？',ex_py:'Nǐ jiā lí gōngsī yuǎn ma?',ex_vn:'Nhà bạn cách công ty có xa không?',
    exList:[
      {zh:'你家离公司远吗？',py:'Nǐ jiā lí gōngsī yuǎn ma?',vn:'Nhà bạn cách công ty có xa không?'},
@@ -83,7 +83,7 @@ var vocabData = [
       tip:'Bộ 辶 (đi) + 元 → phải đi một quãng dài, xuất phát ban đầu (元) đã lùi XA.',
       cf:'园 (yuán, vườn, bộ 囗)',w:'远吗 / 很远 / 不远'},
    ]},
-  {n:7,zh:'公共汽车',py:'gōnggòng qìchē',pos:'Danh từ',vn:'xe buýt công cộng',em:'🚌',lesson:3,
+  {n:7,zh:'公共汽车',py:'gōnggòng qìchē',pos:'Danh từ',vn:'xe buýt công cộng', hv: 'công cộng khí xa',em:'🚌',lesson:3,
    ex_zh:'坐公共汽车要一个多小时呢。',ex_py:'Zuò gōnggòng qìchē yào yí ge duō xiǎoshí ne.',ex_vn:'Đi xe buýt mất hơn một tiếng đồng hồ cơ đấy.',
    exList:[
      {zh:'坐公共汽车要一个多小时呢。',py:'Zuò gōnggòng qìchē yào yí ge duō xiǎoshí ne.',vn:'Đi xe buýt mất hơn một tiếng đồng hồ cơ đấy.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'Nước 氵 bốc hơi 气 → động cơ hơi nước xưa, nay chỉ chung XE Ô TÔ.',
       cf:'气 (qì, khí, thiếu bộ 氵)',w:'汽车 / 汽水'},
    ]},
-  {n:8,zh:'小时',py:'xiǎoshí',pos:'Danh từ',vn:'tiếng đồng hồ',em:'⏰',lesson:3,
+  {n:8,zh:'小时',py:'xiǎoshí',pos:'Danh từ',vn:'tiếng đồng hồ', hv: 'tiểu thời',em:'⏰',lesson:3,
    ex_zh:'坐公共汽车要一个多小时呢。',ex_py:'Zuò gōnggòng qìchē yào yí ge duō xiǎoshí ne.',ex_vn:'Đi xe buýt mất hơn một tiếng đồng hồ cơ đấy.',
    exList:[
      {zh:'坐公共汽车要一个多小时呢。',py:'Zuò gōnggòng qìchē yào yí ge duō xiǎoshí ne.',vn:'Đi xe buýt mất hơn một tiếng đồng hồ cơ đấy.'},
@@ -113,7 +113,7 @@ var vocabData = [
       tip:'Đã học ở Bài 2 (时间) — 小 + 时 = đơn vị GIỜ.',
       cf:'待 (dài, chờ đợi)',w:'小时 / 时间 / 有时'},
    ]},
-  {n:9,zh:'慢',py:'màn',pos:'Tính từ',vn:'chậm',em:'🐢',lesson:3,
+  {n:9,zh:'慢',py:'màn',pos:'Tính từ',vn:'chậm', hv: 'mạn',em:'🐢',lesson:3,
    ex_zh:'坐公共汽车太慢了。',ex_py:'Zuò gōnggòng qìchē tài màn le.',ex_vn:'Đi xe buýt chậm quá.',
    exList:[
      {zh:'坐公共汽车太慢了。',py:'Zuò gōnggòng qìchē tài màn le.',vn:'Đi xe buýt chậm quá.'},
@@ -125,7 +125,7 @@ var vocabData = [
       tip:'Bộ 忄(tâm lý) → tâm trạng thong thả, không vội = CHẬM. Trái nghĩa 快.',
       cf:'漫 (màn, tràn lan, bộ 氵)',w:'太慢了 / 慢慢 / 走慢'},
    ]},
-  {n:10,zh:'快',py:'kuài',pos:'Tính từ',vn:'nhanh',em:'⚡',lesson:3,
+  {n:10,zh:'快',py:'kuài',pos:'Tính từ',vn:'nhanh', hv: 'khoái',em:'⚡',lesson:3,
    ex_zh:'开车也不快。',ex_py:'Kāi chē yě bú kuài.',ex_vn:'Lái xe cũng chẳng nhanh hơn đâu.',
    exList:[
      {zh:'开车也不快。',py:'Kāi chē yě bú kuài.',vn:'Lái xe cũng chẳng nhanh hơn đâu.'},
@@ -137,7 +137,7 @@ var vocabData = [
       tip:'Đã học trong 快乐 ở Bài 4 — 忄(tâm) nhẹ nhõm, dứt khoát = NHANH. Trái nghĩa 慢.',
       cf:'块 (kuài, đơn vị tiền, bộ 土, Bài 3)',w:'很快 / 快乐 / 快来'},
    ]},
-  {n:11,zh:'过',py:'guò',pos:'Động từ',vn:'đón, trải qua (ngày lễ, sinh nhật)',em:'🎉',lesson:4,
+  {n:11,zh:'过',py:'guò',pos:'Động từ',vn:'đón, trải qua (ngày lễ, sinh nhật)', hv: 'quá',em:'🎉',lesson:4,
    ex_zh:'今天给你过生日。',ex_py:'Jīntiān gěi nǐ guò shēngrì.',ex_vn:'Hôm nay chúc mừng sinh nhật bạn.',
    exList:[
      {zh:'今天给你过生日。',py:'Jīntiān gěi nǐ guò shēngrì.',vn:'Hôm nay chúc mừng sinh nhật bạn.'},
@@ -149,7 +149,7 @@ var vocabData = [
       tip:'Bộ 辶 (đi) → thời gian/sự việc TRÔI QUA, cũng dùng cho việc "đón" một ngày lễ.',
       cf:'边 (biān, bên, Bài 3)',w:'过生日 / 过年 / 经过'},
    ]},
-  {n:12,zh:'走',py:'zǒu',pos:'Động từ',vn:'đi, đi bộ',em:'🚶',lesson:4,
+  {n:12,zh:'走',py:'zǒu',pos:'Động từ',vn:'đi, đi bộ', hv: 'tẩu',em:'🚶',lesson:4,
    ex_zh:'走几分钟就到了。',ex_py:'Zǒu jǐ fēnzhōng jiù dào le.',ex_vn:'Đi bộ vài phút là tới rồi.',
    exList:[
      {zh:'走几分钟就到了。',py:'Zǒu jǐ fēnzhōng jiù dào le.',vn:'Đi bộ vài phút là tới rồi.'},
@@ -161,7 +161,7 @@ var vocabData = [
       tip:'Hình người vung tay bước đi cách điệu → "ĐI".',
       cf:'足 (zú, chân)',w:'走路 / 走了 / 快走'},
    ]},
-  {n:13,zh:'到',py:'dào',pos:'Động từ',vn:'đến, tới nơi',em:'📍',lesson:4,
+  {n:13,zh:'到',py:'dào',pos:'Động từ',vn:'đến, tới nơi', hv: 'đáo',em:'📍',lesson:4,
    ex_zh:'20分钟就到。',ex_py:'Èrshí fēnzhōng jiù dào.',ex_vn:'20 phút nữa là tới liền.',
    exList:[
      {zh:'20分钟就到。',py:'Èrshí fēnzhōng jiù dào.',vn:'20 phút nữa là tới liền.'},

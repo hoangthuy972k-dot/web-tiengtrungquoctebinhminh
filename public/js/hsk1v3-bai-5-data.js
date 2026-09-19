@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'今天',py:'jīntiān',pos:'Danh từ',vn:'hôm nay',em:'📅',lesson:1,
+  {n:1,zh:'今天',py:'jīntiān',pos:'Danh từ',vn:'hôm nay', hv: 'kim thiên',em:'📅',lesson:1,
    ex_zh:'今天几号？',ex_py:'Jīntiān jǐ hào?',ex_vn:'Hôm nay ngày mấy?',
    exList:[
      {zh:'今天几号？',py:'Jīntiān jǐ hào?',vn:'Hôm nay ngày mấy?'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'Một nét NGANG (一) đặt trên chữ 大 (người dang rộng hai tay, nghĩa "to lớn") → người đứng dưới bầu TRỜI rộng lớn → nghĩa TRỜI, mở rộng thành NGÀY.',
       cf:'夫 (fū – "chồng, đàn ông", cũng gồm 大 và một nét ngang nhưng vị trí nét ngang khác)',w:'今天 / 明天 / 星期天'},
    ]},
-  {n:2,zh:'号',py:'hào',pos:'Lượng từ',vn:'ngày, mùng',em:'🔢',lesson:1,
+  {n:2,zh:'号',py:'hào',pos:'Lượng từ',vn:'ngày, mùng', hv: 'hiệu',em:'🔢',lesson:1,
    ex_zh:'今天9月8号。',ex_py:'Jīntiān jiǔ yuè bā hào.',ex_vn:'Hôm nay là ngày 8 tháng 9.',
    exList:[
      {zh:'今天9月8号。',py:'Jīntiān jiǔ yuè bā hào.',vn:'Hôm nay là ngày 8 tháng 9.'},
@@ -27,7 +27,7 @@ var vocabData = [
       tip:'口 (miệng) hô to phía trên, 丂 (hơi vang) phía dưới → hình ảnh miệng HÔ, GỌI to số hiệu → nghĩa SỐ, NGÀY, TÊN HIỆU.',
       cf:'亏 (kuī – "thiệt hại, thua lỗ", phần dưới giống nhau nhưng không có bộ 口 phía trên)',w:'号码 / 几号 / 8号'},
    ]},
-  {n:3,zh:'月',py:'yuè',pos:'Danh từ',vn:'tháng',em:'🌙',lesson:1,
+  {n:3,zh:'月',py:'yuè',pos:'Danh từ',vn:'tháng', hv: 'nguyệt',em:'🌙',lesson:1,
    ex_zh:'今天9月8号。',ex_py:'Jīntiān jiǔ yuè bā hào.',ex_vn:'Hôm nay là ngày 8 tháng 9.',
    exList:[
      {zh:'今天9月8号。',py:'Jīntiān jiǔ yuè bā hào.',vn:'Hôm nay là ngày 8 tháng 9.'},
@@ -37,7 +37,7 @@ var vocabData = [
       tip:'Hình vẽ mặt trăng khuyết → NGUYỆT (mặt trăng), mở rộng nghĩa thành THÁNG (chu kỳ mặt trăng).',
       cf:'肉 (ròu – "thịt", dễ nhầm bộ 月 dạng nhục)',w:'九月 / 月亮'},
    ]},
-  {n:4,zh:'日',py:'rì',pos:'Lượng từ',vn:'ngày',em:'☀️',lesson:1,
+  {n:4,zh:'日',py:'rì',pos:'Lượng từ',vn:'ngày', hv: 'nhật',em:'☀️',lesson:1,
    ex_zh:'星期日',ex_py:'Xīngqīrì',ex_vn:'Chủ nhật',
    exList:[
      {zh:'星期日',py:'Xīngqīrì',vn:'Chủ nhật'},
@@ -47,7 +47,7 @@ var vocabData = [
       tip:'Hình vuông có một nét ngang ở giữa, mô phỏng hình MẶT TRỜI nhìn từ xa (hình tròn được vuông hoá) → nghĩa MẶT TRỜI, mở rộng thành NGÀY.',
       cf:'曰 (yuē – "nói rằng", hình dẹt hơn, nét ngang không chạm hai bên)',w:'生日 / 星期日 / 日子'},
    ]},
-  {n:5,zh:'星期',py:'xīngqī',pos:'Danh từ',vn:'thứ, tuần',em:'📆',lesson:1,
+  {n:5,zh:'星期',py:'xīngqī',pos:'Danh từ',vn:'thứ, tuần', hv: 'tinh kỳ',em:'📆',lesson:1,
    ex_zh:'星期几？',ex_py:'Xīngqī jǐ?',ex_vn:'Hôm nay thứ mấy?',
    exList:[
      {zh:'星期几？',py:'Xīngqī jǐ?',vn:'Hôm nay thứ mấy?'},
@@ -60,7 +60,7 @@ var vocabData = [
       tip:'其 (đó, ấy - biểu âm) đứng cạnh 月 (mặt trăng, biểu thị chu kỳ thời gian) → một chu kỳ MẶT TRĂNG lặp lại → nghĩa KỲ HẠN, TUẦN.',
       cf:'欺 (qī – "lừa dối", cũng có 其ở trái nhưng bên phải là 欠 chứ không phải 月)',w:'星期 / 学期 / 期末'},
    ]},
-  {n:6,zh:'星期日',py:'Xīngqīrì',pos:'Danh từ',vn:'Chủ nhật',em:'🌞',lesson:1,
+  {n:6,zh:'星期日',py:'Xīngqīrì',pos:'Danh từ',vn:'Chủ nhật', hv: 'Tinh Kỳ Nhật',em:'🌞',lesson:1,
    ex_zh:'星期日。今天我休息。',ex_py:'Xīngqīrì. Jīntiān wǒ xiūxi.',ex_vn:'Chủ nhật. Hôm nay anh được nghỉ.',
    exList:[
      {zh:'星期日。今天我休息。',py:'Xīngqīrì. Jīntiān wǒ xiūxi.',vn:'Chủ nhật. Hôm nay anh được nghỉ.'},
@@ -76,7 +76,7 @@ var vocabData = [
       tip:'Hình vuông có một nét ngang ở giữa, mô phỏng hình MẶT TRỜI nhìn từ xa → nghĩa MẶT TRỜI, mở rộng thành NGÀY; 星期日 nghĩa đen là "ngày của mặt trời" (Chủ nhật).',
       cf:'曰 (yuē – "nói rằng", hình dẹt hơn, nét ngang không chạm hai bên)',w:'星期日 / 生日 / 日子'},
    ]},
-  {n:7,zh:'星期天',py:'Xīngqītiān',pos:'Danh từ',vn:'Chủ nhật',em:'🌞',lesson:2,
+  {n:7,zh:'星期天',py:'Xīngqītiān',pos:'Danh từ',vn:'Chủ nhật', hv: 'Tinh Kỳ Thiên',em:'🌞',lesson:2,
    ex_zh:'星期天我也做饭。',ex_py:'Xīngqītiān wǒ yě zuò fàn.',ex_vn:'Chủ nhật tôi cũng nấu ăn.',
    exList:[
      {zh:'星期天我也做饭。',py:'Xīngqītiān wǒ yě zuò fàn.',vn:'Chủ nhật tôi cũng nấu ăn.'},
@@ -92,7 +92,7 @@ var vocabData = [
       tip:'Một nét NGANG (一) đặt trên chữ 大 (người dang rộng hai tay) → người đứng dưới bầu TRỜI rộng lớn → nghĩa TRỜI, mở rộng thành NGÀY; 星期天 nghĩa đen là "ngày trời" (Chủ nhật).',
       cf:'夫 (fū – "chồng, đàn ông", cũng gồm 大 và một nét ngang nhưng vị trí khác)',w:'星期天 / 今天 / 明天'},
    ]},
-  {n:8,zh:'休息',py:'xiūxi',pos:'Động từ',vn:'nghỉ, nghỉ ngơi',em:'😴',lesson:1,
+  {n:8,zh:'休息',py:'xiūxi',pos:'Động từ',vn:'nghỉ, nghỉ ngơi', hv: 'hưu tức',em:'😴',lesson:1,
    ex_zh:'今天我休息。',ex_py:'Jīntiān wǒ xiūxi.',ex_vn:'Hôm nay anh được nghỉ.',
    exList:[
      {zh:'今天我休息。',py:'Jīntiān wǒ xiūxi.',vn:'Hôm nay anh được nghỉ.'},
@@ -105,7 +105,7 @@ var vocabData = [
       tip:'自 (chỉ cái MŨI, nơi hít thở) đặt trên 心 (trái tim) → hơi thở đi từ mũi xuống tim, nhịp thở đều đặn khi NGHỈ NGƠI → nghĩa NGHỈ, HƠI THỞ.',
       cf:'自 (zì – "tự, bản thân", chính là phần trên của 息 nhưng đứng riêng lẻ mang nghĩa khác)',w:'休息 / 消息 / 信息'},
    ]},
-  {n:9,zh:'会',py:'huì',pos:'Động từ năng nguyện',vn:'biết, có thể',em:'✅',lesson:2,
+  {n:9,zh:'会',py:'huì',pos:'Động từ năng nguyện',vn:'biết, có thể', hv: 'hội',em:'✅',lesson:2,
    ex_zh:'你会做饭吗？',ex_py:'Nǐ huì zuò fàn ma?',ex_vn:'Em có biết nấu ăn không?',
    exList:[
      {zh:'你会做饭吗？',py:'Nǐ huì zuò fàn ma?',vn:'Em có biết nấu ăn không?'},
@@ -116,7 +116,7 @@ var vocabData = [
       tip:'𠆢(người) đứng trên phần dưới giống mây 云 (tụ hội lại) → nhiều người TỤ HỘI, học hỏi lẫn nhau nên BIẾT làm việc gì đó → nghĩa BIẾT, CÓ THỂ, HỘI.',
       cf:'云 (yún – "mây, nói rằng", là phần dưới của 会 nhưng đứng riêng mang nghĩa khác)',w:'会说 / 开会 / 机会'},
    ]},
-  {n:10,zh:'做饭',py:'zuò fàn',pos:'Cụm từ',vn:'nấu ăn',em:'🍳',lesson:2,
+  {n:10,zh:'做饭',py:'zuò fàn',pos:'Cụm từ',vn:'nấu ăn', hv: 'tố phạn',em:'🍳',lesson:2,
    ex_zh:'你会做饭吗？',ex_py:'Nǐ huì zuò fàn ma?',ex_vn:'Em có biết nấu ăn không?',
    exList:[
      {zh:'你会做饭吗？',py:'Nǐ huì zuò fàn ma?',vn:'Em có biết nấu ăn không?'},
@@ -130,7 +130,7 @@ var vocabData = [
       tip:'饣(bộ ăn) đứng cạnh 反 (lật qua lật lại, biểu âm "fàn") → hành động XỚI, LẬT cơm trong bát khi ăn → nghĩa CƠM, BỮA ĂN.',
       cf:'饱 (bǎo – "no bụng", cũng bộ 饣, thêm phần 包)',w:'做饭 / 吃饭 / 米饭'},
    ]},
-  {n:11,zh:'做',py:'zuò',pos:'Động từ',vn:'làm, nấu',em:'👨‍🍳',lesson:2,
+  {n:11,zh:'做',py:'zuò',pos:'Động từ',vn:'làm, nấu', hv: 'tố',em:'👨‍🍳',lesson:2,
    ex_zh:'你会做什么？',ex_py:'Nǐ huì zuò shénme?',ex_vn:'Em biết nấu món gì?',
    exList:[
      {zh:'你会做什么？',py:'Nǐ huì zuò shénme?',vn:'Em biết nấu món gì?'},
@@ -140,7 +140,7 @@ var vocabData = [
       tip:'亻(người) đứng cạnh 故 (việc, công việc) → người bắt tay vào công việc, tự tay LÀM ra thứ gì đó → nghĩa LÀM, thường dùng cho 做饭, 做菜.',
       cf:'作 (zuò – cùng âm "làm", cũng bộ 亻, nhưng phải là 乍; 做 dùng cho hành động cụ thể như nấu ăn, 作 dùng trừu tượng hơn như sáng tác)',w:'做饭 / 做菜 / 做作业'},
    ]},
-  {n:12,zh:'面条儿',py:'miàntiáor',pos:'Danh từ',vn:'mì, mì sợi',em:'🍜',lesson:2,
+  {n:12,zh:'面条儿',py:'miàntiáor',pos:'Danh từ',vn:'mì, mì sợi', hv: 'diện điều nhi',em:'🍜',lesson:2,
    ex_zh:'我会做面条儿、饺子。',ex_py:'Wǒ huì zuò miàntiáor, jiǎozi.',ex_vn:'Em biết nấu mì, sủi cảo.',
    exList:[
      {zh:'我会做面条儿、饺子。',py:'Wǒ huì zuò miàntiáor, jiǎozi.',vn:'Em biết nấu mì, sủi cảo.'},
@@ -156,7 +156,7 @@ var vocabData = [
       tip:'Hình vẽ đôi CHÂN của một đứa trẻ đang đi → nghĩa CON, TRẺ NHỎ; khi đứng sau âm tiết khác như 条, nó chỉ còn giữ lại âm cuốn lưỡi "r" gọi là nhi hoá, không tách thành âm tiết riêng (miàn-tiáor).',
       cf:'几 (jǐ – "mấy, bao nhiêu", hình dáng gần giống nhưng nét trên cong ở vị trí khác)',w:'面条儿 / 儿子 / 女儿'},
    ]},
-  {n:13,zh:'饺子',py:'jiǎozi',pos:'Danh từ',vn:'sủi cảo',em:'🥟',lesson:2,
+  {n:13,zh:'饺子',py:'jiǎozi',pos:'Danh từ',vn:'sủi cảo', hv: 'giảo tử',em:'🥟',lesson:2,
    ex_zh:'我会做面条儿、饺子。',ex_py:'Wǒ huì zuò miàntiáor, jiǎozi.',ex_vn:'Em biết nấu mì, sủi cảo.',
    exList:[
      {zh:'我会做面条儿、饺子。',py:'Wǒ huì zuò miàntiáor, jiǎozi.',vn:'Em biết nấu mì, sủi cảo.'},
@@ -169,7 +169,7 @@ var vocabData = [
       tip:'Hình vẽ đứa TRẺ SƠ SINH quấn tã, hai tay dang ra → nghĩa CON, CON CÁI; khi đọc nhẹ (轻声), đứng sau danh từ chỉ là hậu tố không mang nghĩa riêng, như 饺子, 儿子.',
       cf:'了 (le – trợ từ hoàn thành, hình gần giống phần trên của 子 nhưng thiếu nét ngang)',w:'饺子 / 儿子 / 桌子'},
    ]},
-  {n:14,zh:'一些',py:'yìxiē',pos:'Số lượng từ',vn:'một số, một vài',em:'🔸',lesson:2,
+  {n:14,zh:'一些',py:'yìxiē',pos:'Số lượng từ',vn:'một số, một vài', hv: 'nhất ta',em:'🔸',lesson:2,
    ex_zh:'也会做一些菜。',ex_py:'Yě huì zuò yìxiē cài.',ex_vn:'Cũng biết chế biến một số món ăn khác.',
    exList:[
      {zh:'也会做一些菜。',py:'Yě huì zuò yìxiē cài.',vn:'Cũng biết chế biến một số món ăn khác.'},
@@ -182,7 +182,7 @@ var vocabData = [
       tip:'此 (này, chỉ định) đặt trên 二 (số hai, tượng trưng số nhiều hơn một) → chỉ "những cái NÀY" với số lượng nhiều hơn một → nghĩa MỘT VÀI, MỘT SỐ.',
       cf:'此 (cǐ – "này, đây", chính là phần trên của 些 nhưng đứng riêng, không có 二 bên dưới)',w:'一些 / 这些 / 那些'},
    ]},
-  {n:15,zh:'菜',py:'cài',pos:'Danh từ',vn:'món ăn, rau',em:'🥘',lesson:2,
+  {n:15,zh:'菜',py:'cài',pos:'Danh từ',vn:'món ăn, rau', hv: 'thái',em:'🥘',lesson:2,
    ex_zh:'也会做一些菜。',ex_py:'Yě huì zuò yìxiē cài.',ex_vn:'Cũng biết chế biến một số món ăn khác.',
    exList:[
      {zh:'也会做一些菜。',py:'Yě huì zuò yìxiē cài.',vn:'Cũng biết chế biến một số món ăn khác.'},
@@ -193,7 +193,7 @@ var vocabData = [
       tip:'艹(cỏ cây) phía trên chữ 采 (hái, thu hoạch bằng tay từ cây) → hành động HÁI RAU CỎ từ cây → nghĩa RAU, mở rộng thành MÓN ĂN nói chung.',
       cf:'采 (cǎi – "hái, thu thập", chính là phần dưới của 菜 nhưng không có bộ 艹 phía trên)',w:'青菜 / 做菜 / 菜单'},
    ]},
-  {n:16,zh:'下班',py:'xiàbān',pos:'Động từ',vn:'tan làm, tan ca',em:'🏁',lesson:3,
+  {n:16,zh:'下班',py:'xiàbān',pos:'Động từ',vn:'tan làm, tan ca', hv: 'hạ ban',em:'🏁',lesson:3,
    ex_zh:'同乐，下班吗？',ex_py:'Tónglè, xiàbān ma?',ex_vn:'Đồng Lạc, tan làm chưa?',
    exList:[
      {zh:'同乐，下班吗？',py:'Tónglè, xiàbān ma?',vn:'Đồng Lạc, tan làm chưa?'},
@@ -207,7 +207,7 @@ var vocabData = [
       tip:'Hai chữ 王 (viên ngọc quý) đặt hai bên, ở giữa là 刂(con dao) dùng để CẮT, PHÂN CHIA ngọc thành từng phần đều nhau → nghĩa PHÂN thành từng NHÓM, từng CA làm việc, từng LỚP học.',
       cf:'斑 (bān – "đốm, vết", cũng có hai chữ 王 nhưng ở giữa là 文 chứ không phải 刂)',w:'下班 / 上班 / 班级'},
    ]},
-  {n:17,zh:'新',py:'xīn',pos:'Tính từ',vn:'mới',em:'✨',lesson:3,
+  {n:17,zh:'新',py:'xīn',pos:'Tính từ',vn:'mới', hv: 'tân',em:'✨',lesson:3,
    ex_zh:'这是你的新电脑吗？',ex_py:'Zhè shì nǐ de xīn diànnǎo ma?',ex_vn:'Đây là máy tính mới của em à?',
    exList:[
      {zh:'这是你的新电脑吗？',py:'Zhè shì nǐ de xīn diànnǎo ma?',vn:'Đây là máy tính mới của em à?'},
@@ -217,7 +217,7 @@ var vocabData = [
       tip:'亲 (cây non mới trồng, gần gũi) đứng cạnh 斤 (cái rìu, dùng để chặt, đẽo gỗ) → dùng rìu đẽo gỗ MỚI, tạo ra vật dụng MỚI → nghĩa MỚI.',
       cf:'亲 (qīn – "thân thiết, cha mẹ", chính là phần trái của 新 nhưng đứng riêng không có bộ 斤)',w:'新电脑 / 新年 / 新的'},
    ]},
-  {n:18,zh:'电脑',py:'diànnǎo',pos:'Danh từ',vn:'máy tính, máy vi tính',em:'💻',lesson:3,
+  {n:18,zh:'电脑',py:'diànnǎo',pos:'Danh từ',vn:'máy tính, máy vi tính', hv: 'điện não',em:'💻',lesson:3,
    ex_zh:'这是你的新电脑吗？',ex_py:'Zhè shì nǐ de xīn diànnǎo ma?',ex_vn:'Đây là máy tính mới của em à?',
    exList:[
      {zh:'这是你的新电脑吗？',py:'Zhè shì nǐ de xīn diànnǎo ma?',vn:'Đây là máy tính mới của em à?'},
@@ -230,7 +230,7 @@ var vocabData = [
       tip:'Hình ảnh cách điệu của một TIA CHỚP xẹt ngang qua bầu trời (từ chữ 申 - tia sét) → nghĩa ĐIỆN; 电脑 (máy tính) nghĩa đen là "não điện".',
       cf:'由 (yóu – "từ, do", hình dáng gần giống nhưng nét sổ xuyên thẳng ra ngoài phía trên thay vì móc câu phía dưới)',w:'电脑 / 电话 / 电视'},
    ]},
-  {n:19,zh:'真',py:'zhēn',pos:'Phó từ',vn:'thật, thực sự',em:'💯',lesson:3,
+  {n:19,zh:'真',py:'zhēn',pos:'Phó từ',vn:'thật, thực sự', hv: 'chân',em:'💯',lesson:3,
    ex_zh:'真好看！',ex_py:'Zhēn hǎokàn!',ex_vn:'Đẹp thật đấy!',
    exList:[
      {zh:'真好看！',py:'Zhēn hǎokàn!',vn:'Đẹp thật đấy!'},
@@ -240,7 +240,7 @@ var vocabData = [
       tip:'Bên trong có chữ 目 (con mắt) nhìn thẳng, phía trên có nét 十 như đang tập trung quan sát, phía dưới có 八 như đôi chân trụ vững → MẮT NHÌN THẬT KỸ, đứng vững để thấy điều CHÂN THẬT → nghĩa THẬT.',
       cf:'直 (zhí – "thẳng", cũng chứa 目 ở giữa nhưng phần dưới là 十, không có 八 tách hai bên)',w:'真好看 / 真的 / 认真'},
    ]},
-  {n:20,zh:'好看',py:'hǎokàn',pos:'Tính từ',vn:'đẹp',em:'😍',lesson:3,
+  {n:20,zh:'好看',py:'hǎokàn',pos:'Tính từ',vn:'đẹp', hv: 'hảo khán',em:'😍',lesson:3,
    ex_zh:'真好看！',ex_py:'Zhēn hǎokàn!',ex_vn:'Đẹp thật đấy!',
    exList:[
      {zh:'真好看！',py:'Zhēn hǎokàn!',vn:'Đẹp thật đấy!'},
@@ -253,7 +253,7 @@ var vocabData = [
       tip:'Bàn TAY (手) che phía trên con MẮT (目) → động tác lấy tay che nắng để NHÌN XA cho rõ → nghĩa XEM, NHÌN.',
       cf:'着 (zhe/zháo – trợ từ/"chạm", phần trên cũng giống 手 biến thể nhưng bên dưới nối liền khác cấu trúc, dễ nhầm khi viết nhanh)',w:'好看 / 看书 / 看见'},
    ]},
-  {n:21,zh:'喜欢',py:'xǐhuan',pos:'Động từ',vn:'thích',em:'😊',lesson:3,
+  {n:21,zh:'喜欢',py:'xǐhuan',pos:'Động từ',vn:'thích', hv: 'hỉ hoan',em:'😊',lesson:3,
    ex_zh:'我也很喜欢它。',ex_py:'Wǒ yě hěn xǐhuan tā.',ex_vn:'Em cũng rất thích nó.',
    exList:[
      {zh:'我也很喜欢它。',py:'Wǒ yě hěn xǐhuan tā.',vn:'Em cũng rất thích nó.'},
@@ -266,7 +266,7 @@ var vocabData = [
       tip:'又 (bàn tay, lặp lại động tác) đứng cạnh 欠 (miệng mở to như hà hơi, reo hò) → vỗ tay REO HÒ VUI VẺ → nghĩa VUI, dùng trong 喜欢 (thích).',
       cf:'汉 (hàn – "người Hán, chữ Hán", cũng có 又 bên phải nhưng bộ 氵bên trái thay vì 欠)',w:'喜欢 / 欢迎 / 欢乐'},
    ]},
-  {n:22,zh:'它',py:'tā',pos:'Đại từ',vn:'nó',em:'📦',lesson:3,
+  {n:22,zh:'它',py:'tā',pos:'Đại từ',vn:'nó', hv: 'tha',em:'📦',lesson:3,
    ex_zh:'我也很喜欢它。',ex_py:'Wǒ yě hěn xǐhuan tā.',ex_vn:'Em cũng rất thích nó.',
    exList:[
      {zh:'我也很喜欢它。',py:'Wǒ yě hěn xǐhuan tā.',vn:'Em cũng rất thích nó.'},

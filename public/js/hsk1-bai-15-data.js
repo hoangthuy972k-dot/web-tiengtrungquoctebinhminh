@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 15: 我是坐飞机来的。
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen biết, hiểu biết',em:'🤝',lesson:1,
+  {n:1,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen biết, hiểu biết', hv: 'nhận thức',em:'🤝',lesson:1,
    ex_zh:'你和李小姐是什么时候认识的？',ex_py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',ex_vn:'Cô và cô Lý quen nhau khi nào vậy?',
    exList:[
      {zh:'你和李小姐是什么时候认识的？',py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',vn:'Cô và cô Lý quen nhau khi nào vậy?'},
@@ -15,25 +15,25 @@ var vocabData = [
       tip:'讠(lời nói) + 只(phân biệt) → dùng lời PHÂN BIỆT, HIỂU BIẾT về sự vật.',
       cf:'职 (zhí – "chức vụ")',w:'认识'},
    ]},
-  {n:2,zh:'年',py:'nián',pos:'Danh từ',vn:'năm',em:'📅',lesson:1,
+  {n:2,zh:'年',py:'nián',pos:'Danh từ',vn:'năm', hv: 'niên',em:'📅',lesson:1,
    ex_zh:'我们是2011年9月认识的。',ex_py:'Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.',ex_vn:'Chúng tôi quen nhau vào tháng 9 năm 2011.',
    exList:[
      {zh:'我们是2011年9月认识的。',py:'Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.',vn:'Chúng tôi quen nhau vào tháng 9 năm 2011.'},
    ],
    hanzi:[]},
-  {n:3,zh:'大学',py:'dàxué',pos:'Danh từ',vn:'trường đại học',em:'🎓',lesson:1,
+  {n:3,zh:'大学',py:'dàxué',pos:'Danh từ',vn:'trường đại học', hv: 'đại học',em:'🎓',lesson:1,
    ex_zh:'她是我大学同学。',ex_py:'Tā shì wǒ dàxué tóngxué.',ex_vn:'Cô ấy là bạn học cùng lớp đại học của tôi.',
    exList:[
      {zh:'她是我大学同学。',py:'Tā shì wǒ dàxué tóngxué.',vn:'Cô ấy là bạn học cùng lớp đại học của tôi.'},
    ],
    hanzi:[]},
-  {n:4,zh:'饭店',py:'fàndiàn',pos:'Danh từ',vn:'khách sạn, nhà hàng ăn uống',em:'🏨',lesson:2,
+  {n:4,zh:'饭店',py:'fàndiàn',pos:'Danh từ',vn:'khách sạn, nhà hàng ăn uống', hv: 'phạn điếm',em:'🏨',lesson:2,
    ex_zh:'你们是怎么来饭店的？',ex_py:'Nǐmen shì zěnme lái fàndiàn de?',ex_vn:'Anh chị đến khách sạn bằng cách nào?',
    exList:[
      {zh:'你们是怎么来饭店的？',py:'Nǐmen shì zěnme lái fàndiàn de?',vn:'Anh chị đến khách sạn bằng cách nào?'},
    ],
    hanzi:[]},
-  {n:5,zh:'出租车',py:'chūzūchē',pos:'Danh từ',vn:'xe taxi',em:'🚕',lesson:2,
+  {n:5,zh:'出租车',py:'chūzūchē',pos:'Danh từ',vn:'xe taxi', hv: 'xuất tô xa',em:'🚕',lesson:2,
    ex_zh:'我们是坐出租车来的。',ex_py:'Wǒmen shì zuò chūzūchē lái de.',ex_vn:'Chúng tôi đi xe taxi đến.',
    exList:[
      {zh:'我们是坐出租车来的。',py:'Wǒmen shì zuò chūzūchē lái de.',vn:'Chúng tôi đi xe taxi đến.'},
@@ -46,7 +46,7 @@ var vocabData = [
       tip:'禾(lúa, hoa màu nộp tô) + 且(hơn nữa) → nộp lúa để THUÊ đất, mở rộng nghĩa THUÊ, CHO THUÊ. (车 đã học ở Bài 14)',
       cf:'祖 (zǔ – "tổ tiên")',w:'出租车'},
    ]},
-  {n:6,zh:'一起',py:'yìqǐ',pos:'Phó từ',vn:'cùng nhau, đồng hành',em:'🧑‍🤝‍🧑',lesson:2,
+  {n:6,zh:'一起',py:'yìqǐ',pos:'Phó từ',vn:'cùng nhau, đồng hành', hv: 'nhất khởi',em:'🧑‍🤝‍🧑',lesson:2,
    ex_zh:'他是和朋友一起开车来的。',ex_py:'Tā shì hé péngyou yìqǐ kāi chē lái de.',ex_vn:'Cậu ấy lái xe cùng với bạn đến đây.',
    exList:[
      {zh:'他是和朋友一起开车来的。',py:'Tā shì hé péngyou yìqǐ kāi chē lái de.',vn:'Cậu ấy lái xe cùng với bạn đến đây.'},
@@ -56,7 +56,7 @@ var vocabData = [
       tip:'走(đi) + 己(bản thân) → tự mình đứng dậy đi; ghép với 一 thành CÙNG NHAU.',
       cf:'己 (jǐ – "bản thân")',w:'一起 / 起来'},
    ]},
-  {n:7,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui mừng, phấn khởi',em:'😄',lesson:3,
+  {n:7,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui mừng, phấn khởi', hv: 'cao hứng',em:'😄',lesson:3,
    ex_zh:'很高兴认识您！',ex_py:'Hěn gāoxìng rènshi nín!',ex_vn:'Rất vui được biết ngài!',
    exList:[
      {zh:'很高兴认识您！',py:'Hěn gāoxìng rènshi nín!',vn:'Rất vui được biết ngài!'},
@@ -69,7 +69,7 @@ var vocabData = [
       tip:'Hình nhiều bàn tay cùng nâng một vật lên → cùng nhau PHẤN KHỞI, HỨNG THÚ.',
       cf:'共 (gòng – "cùng")',w:'高兴'},
    ]},
-  {n:8,zh:'听',py:'tīng',pos:'Động từ',vn:'nghe, nghe thấy',em:'👂',lesson:3,
+  {n:8,zh:'听',py:'tīng',pos:'Động từ',vn:'nghe, nghe thấy', hv: 'thính',em:'👂',lesson:3,
    ex_zh:'听张先生说，您是坐飞机来北京的？',ex_py:'Tīng Zhāng xiānsheng shuō, nín shì zuò fēijī lái Běijīng de?',ex_vn:'Nghe ông Trương nói cô đáp máy bay đến Bắc Kinh, có phải không?',
    exList:[
      {zh:'听张先生说，您是坐飞机来北京的？',py:'Tīng Zhāng xiānsheng shuō, nín shì zuò fēijī lái Běijīng de?',vn:'Nghe ông Trương nói cô đáp máy bay đến Bắc Kinh, có phải không?'},
@@ -79,7 +79,7 @@ var vocabData = [
       tip:'口(miệng nói) được tai TIẾP NHẬN → NGHE.',
       cf:'厅 (tīng – "sảnh, phòng")',w:'听说 / 听音乐'},
    ]},
-  {n:9,zh:'飞机',py:'fēijī',pos:'Danh từ',vn:'máy bay',em:'✈️',lesson:3,
+  {n:9,zh:'飞机',py:'fēijī',pos:'Danh từ',vn:'máy bay', hv: 'phi cơ',em:'✈️',lesson:3,
    ex_zh:'您是坐飞机来北京的？',ex_py:'Nín shì zuò fēijī lái Běijīng de?',ex_vn:'Cô đáp máy bay đến Bắc Kinh phải không?',
    exList:[
      {zh:'您是坐飞机来北京的？',py:'Nín shì zuò fēijī lái Běijīng de?',vn:'Cô đáp máy bay đến Bắc Kinh phải không?'},

@@ -2,7 +2,7 @@
 // DATA — Bài 1: 九月去北京旅游最好
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'旅游',py:'lǚyóu',pos:'Động từ / Danh từ',vn:'du lịch, đi chơi',em:'🧳',lesson:1,
+  {n:1,zh:'旅游',py:'lǚyóu',pos:'Động từ / Danh từ',vn:'du lịch, đi chơi', hv: 'lữ du',em:'🧳',lesson:1,
    ex_zh:'我要去北京旅游。',ex_py:'Wǒ yào qù Běijīng lǚyóu.',ex_vn:'Tôi muốn đi Bắc Kinh du lịch.',
    exList:[
      {zh:'我要去北京旅游。',py:'Wǒ yào qù Běijīng lǚyóu.',vn:'Tôi muốn đi Bắc Kinh du lịch.'},
@@ -17,7 +17,7 @@ var vocabData = [
       tip:'氵(nước) + 斿(cờ phất trong gió) → đi trên nước có cờ dẫn đường = DU NGOẠN.',
       cf:'油 (yóu – "dầu")',w:'旅游 / 游泳'},
    ]},
-  {n:2,zh:'觉得',py:'juéde',pos:'Động từ',vn:'cảm thấy, cho rằng',em:'💭',lesson:1,
+  {n:2,zh:'觉得',py:'juéde',pos:'Động từ',vn:'cảm thấy, cho rằng', hv: 'giác đắc',em:'💭',lesson:1,
    ex_zh:'你觉得什么时候去最好？',ex_py:'Nǐ juéde shénme shíhou qù zuì hǎo?',ex_vn:'Bạn nghĩ đi vào thời gian nào là tốt nhất?',
    exList:[
      {zh:'你觉得什么时候去最好？',py:'Nǐ juéde shénme shíhou qù zuì hǎo?',vn:'Bạn nghĩ đi vào thời gian nào là tốt nhất?'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'Phần trên gần giống 学(học), dưới là 见(nhìn thấy) → "nhìn ra, tỉnh ngộ" = CẢM THẤY.',
       cf:'学 (xué – "học")',w:'觉得 / 睡觉'},
    ]},
-  {n:3,zh:'最',py:'zuì',pos:'Phó từ',vn:'nhất',em:'🏆',lesson:1,
+  {n:3,zh:'最',py:'zuì',pos:'Phó từ',vn:'nhất', hv: 'tối',em:'🏆',lesson:1,
    ex_zh:'九月去北京旅游最好。',ex_py:'Jiǔyuè qù Běijīng lǚyóu zuì hǎo.',ex_vn:'Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất.',
    exList:[
      {zh:'九月去北京旅游最好。',py:'Jiǔyuè qù Běijīng lǚyóu zuì hǎo.',vn:'Đi Bắc Kinh du lịch vào tháng 9 là tốt nhất.'},
@@ -41,7 +41,7 @@ var vocabData = [
       tip:'曰(nói) trên 取(lấy) → lấy phần cao nhất trong tất cả = NHẤT.',
       cf:'取 (qǔ – "lấy")',w:'最好 / 最喜欢 / 最漂亮'},
    ]},
-  {n:4,zh:'为什么',py:'wèi shénme',pos:'Đại từ nghi vấn',vn:'tại sao, vì sao',em:'❓',lesson:1,
+  {n:4,zh:'为什么',py:'wèi shénme',pos:'Đại từ nghi vấn',vn:'tại sao, vì sao', hv: 'vị thập ma',em:'❓',lesson:1,
    ex_zh:'为什么？',ex_py:'Wèi shénme?',ex_vn:'Tại sao thế?',
    exList:[
      {zh:'为什么？',py:'Wèi shénme?',vn:'Tại sao thế?'},
@@ -53,7 +53,7 @@ var vocabData = [
       tip:'Dạng giản thể của 爲 (gốc là hình con voi giúp việc) → nay dùng làm "VÌ, ĐỂ, LÀM".',
       cf:'办 (bàn – "làm, xử lý")',w:'为什么 / 因为'},
    ]},
-  {n:5,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng',em:'➕',lesson:1,
+  {n:5,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng', hv: 'dã',em:'➕',lesson:1,
    ex_zh:'九月的北京天气不冷也不热。',ex_py:'Jiǔyuè de Běijīng tiānqì bù lěng yě bú rè.',ex_vn:'Thời tiết Bắc Kinh vào tháng 9 không lạnh cũng không nóng.',
    exList:[
      {zh:'九月的北京天气不冷也不热。',py:'Jiǔyuè de Běijīng tiānqì bù lěng yě bú rè.',vn:'Thời tiết Bắc Kinh vào tháng 9 không lạnh cũng không nóng.'},
@@ -65,7 +65,7 @@ var vocabData = [
       tip:'Chữ cổ vốn chỉ hình cái bình đựng nước, nay dùng làm phó từ "CŨNG".',
       cf:'心 (xīn – "tim")',w:'也是 / 也不 / 也很'},
    ]},
-  {n:6,zh:'运动',py:'yùndòng',pos:'Danh từ / Động từ',vn:'vận động, thể thao',em:'🏃',lesson:2,
+  {n:6,zh:'运动',py:'yùndòng',pos:'Danh từ / Động từ',vn:'vận động, thể thao', hv: 'vận động',em:'🏃',lesson:2,
    ex_zh:'你喜欢什么运动？',ex_py:'Nǐ xǐhuan shénme yùndòng?',ex_vn:'Bạn thích môn thể thao nào?',
    exList:[
      {zh:'你喜欢什么运动？',py:'Nǐ xǐhuan shénme yùndòng?',vn:'Bạn thích môn thể thao nào?'},
@@ -80,7 +80,7 @@ var vocabData = [
       tip:'云(biến thể) + 力(sức) → dùng sức để chuyển động = ĐỘNG, CỬ ĐỘNG.',
       cf:'助 (zhù – "giúp đỡ")',w:'运动 / 动作 / 不动'},
    ]},
-  {n:7,zh:'踢',py:'tī',pos:'Động từ',vn:'đá',em:'🦵',lesson:2,
+  {n:7,zh:'踢',py:'tī',pos:'Động từ',vn:'đá', hv: 'thích',em:'🦵',lesson:2,
    ex_zh:'我最喜欢踢足球。',ex_py:'Wǒ zuì xǐhuan tī zúqiú.',ex_vn:'Tôi thích đá bóng nhất.',
    exList:[
      {zh:'我最喜欢踢足球。',py:'Wǒ zuì xǐhuan tī zúqiú.',vn:'Tôi thích đá bóng nhất.'},
@@ -92,7 +92,7 @@ var vocabData = [
       tip:'足(chân) + 易(dễ dàng) → dùng chân hất dễ dàng = ĐÁ.',
       cf:'惕 (tì – "cảnh giác")',w:'踢足球 / 踢球'},
    ]},
-  {n:8,zh:'足球',py:'zúqiú',pos:'Danh từ',vn:'quả bóng đá, môn bóng đá',em:'⚽',lesson:2,
+  {n:8,zh:'足球',py:'zúqiú',pos:'Danh từ',vn:'quả bóng đá, môn bóng đá', hv: 'túc cầu',em:'⚽',lesson:2,
    ex_zh:'我最喜欢踢足球。',ex_py:'Wǒ zuì xǐhuan tī zúqiú.',ex_vn:'Tôi thích đá bóng nhất.',
    exList:[
      {zh:'我最喜欢踢足球。',py:'Wǒ zuì xǐhuan tī zúqiú.',vn:'Tôi thích đá bóng nhất.'},
@@ -107,7 +107,7 @@ var vocabData = [
       tip:'王(ngọc) + 求(tìm) → vật hình tròn quý như ngọc = QUẢ BÓNG.',
       cf:'救 (jiù – "cứu giúp")',w:'足球 / 篮球 / 打球'},
    ]},
-  {n:9,zh:'一起',py:'yìqǐ',pos:'Phó từ',vn:'cùng nhau',em:'🤝',lesson:2,
+  {n:9,zh:'一起',py:'yìqǐ',pos:'Phó từ',vn:'cùng nhau', hv: 'nhất khởi',em:'🤝',lesson:2,
    ex_zh:'下午我们一起去踢足球吧。',ex_py:'Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.',ex_vn:'Chiều nay chúng ta cùng nhau đi đá bóng đi.',
    exList:[
      {zh:'下午我们一起去踢足球吧。',py:'Xiàwǔ wǒmen yìqǐ qù tī zúqiú ba.',vn:'Chiều nay chúng ta cùng nhau đi đá bóng đi.'},
@@ -119,7 +119,7 @@ var vocabData = [
       tip:'走(biến thể) + 己(bản thân) → tự mình đứng dậy đi = DẬY, BẮT ĐẦU. Ghép với 一 = CÙNG NHAU.',
       cf:'己 (jǐ – "bản thân")',w:'一起 / 起来 / 早起'},
    ]},
-  {n:10,zh:'要',py:'yào',pos:'Trợ động từ',vn:'muốn, cần, sẽ',em:'🎯',lesson:3,
+  {n:10,zh:'要',py:'yào',pos:'Trợ động từ',vn:'muốn, cần, sẽ', hv: 'yếu',em:'🎯',lesson:3,
    ex_zh:'我要去北京旅游。',ex_py:'Wǒ yào qù Běijīng lǚyóu.',ex_vn:'Tôi muốn đi Bắc Kinh du lịch.',
    exList:[
      {zh:'我要去北京旅游。',py:'Wǒ yào qù Běijīng lǚyóu.',vn:'Tôi muốn đi Bắc Kinh du lịch.'},
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'Chữ cổ vốn là hình dáng cái lưng người phụ nữ chống nạnh, nay dùng làm trợ động từ "MUỐN, CẦN".',
       cf:'腰 (yāo – "thắt lưng")',w:'要去 / 要不要 / 不想'},
    ]},
-  {n:11,zh:'新',py:'xīn',pos:'Tính từ',vn:'mới',em:'✨',lesson:3,
+  {n:11,zh:'新',py:'xīn',pos:'Tính từ',vn:'mới', hv: 'tân',em:'✨',lesson:3,
    ex_zh:'我们要不要买几个新的椅子？',ex_py:'Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?',ex_vn:'Chúng ta có cần mua vài chiếc ghế mới không?',
    exList:[
      {zh:'我们要不要买几个新的椅子？',py:'Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?',vn:'Chúng ta có cần mua vài chiếc ghế mới không?'},
@@ -143,7 +143,7 @@ var vocabData = [
       tip:'斤(rìu) chặt 木(cây) 立(dựng) lên → tạo ra vật MỚI.',
       cf:'亲 (qīn – "thân thiết")',w:'新的 / 新年 / 更新'},
    ]},
-  {n:12,zh:'椅子',py:'yǐzi',pos:'Danh từ',vn:'cái ghế',em:'🪑',lesson:3,
+  {n:12,zh:'椅子',py:'yǐzi',pos:'Danh từ',vn:'cái ghế', hv: 'ỷ tử',em:'🪑',lesson:3,
    ex_zh:'我们要不要买几个新的椅子？',ex_py:'Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?',ex_vn:'Chúng ta có cần mua vài chiếc ghế mới không?',
    exList:[
      {zh:'我们要不要买几个新的椅子？',py:'Wǒmen yào bu yào mǎi jǐ ge xīn de yǐzi?',vn:'Chúng ta có cần mua vài chiếc ghế mới không?'},
@@ -155,7 +155,7 @@ var vocabData = [
       tip:'木(gỗ) + 奇(đặc biệt) → đồ gỗ đặc biệt để ngồi tựa lưng = GHẾ.',
       cf:'倚 (yǐ – "dựa vào")',w:'椅子 / 一把椅子'},
    ]},
-  {n:13,zh:'它',py:'tā',pos:'Đại từ',vn:'nó (chỉ con vật, đồ vật)',em:'🐾',lesson:4,
+  {n:13,zh:'它',py:'tā',pos:'Đại từ',vn:'nó (chỉ con vật, đồ vật)', hv: 'tha',em:'🐾',lesson:4,
    ex_zh:'那是我的猫，它叫花花。',ex_py:'Nà shì wǒ de māo, tā jiào Huāhua.',ex_vn:'Đó là con mèo của tôi, nó tên là Hoa Hoa.',
    exList:[
      {zh:'那是我的猫，它叫花花。',py:'Nà shì wǒ de māo, tā jiào Huāhua.',vn:'Đó là con mèo của tôi, nó tên là Hoa Hoa.'},
@@ -167,7 +167,7 @@ var vocabData = [
       tip:'Chữ cổ vốn là hình con vật dưới mái nhà, nay dùng làm đại từ "NÓ" (chỉ vật, con vật).',
       cf:'他 (tā – "anh ấy", chỉ người)',w:'它叫 / 它是 / 它的'},
    ]},
-  {n:14,zh:'眼睛',py:'yǎnjing',pos:'Danh từ',vn:'mắt, đôi mắt',em:'👀',lesson:4,
+  {n:14,zh:'眼睛',py:'yǎnjing',pos:'Danh từ',vn:'mắt, đôi mắt', hv: 'nhãn tình',em:'👀',lesson:4,
    ex_zh:'我觉得它的眼睛最漂亮。',ex_py:'Wǒ juéde tā de yǎnjing zuì piàoliang.',ex_vn:'Tôi thấy đôi mắt của nó là đẹp nhất.',
    exList:[
      {zh:'我觉得它的眼睛最漂亮。',py:'Wǒ juéde tā de yǎnjing zuì piàoliang.',vn:'Tôi thấy đôi mắt của nó là đẹp nhất.'},

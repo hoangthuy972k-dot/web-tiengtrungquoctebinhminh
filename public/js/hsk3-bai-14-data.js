@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'打扫',py:'dǎsǎo',pos:'Động từ',vn:'quét dọn',em:'🧹',lesson:1,
+  {n:1,zh:'打扫',py:'dǎsǎo',pos:'Động từ',vn:'quét dọn', hv: 'đả tảo',em:'🧹',lesson:1,
    explain:['Làm cho một nơi trở nên sạch sẽ, gọn gàng bằng cách quét, lau chùi.'],
    usage:'Động từ, mang tân ngữ là danh từ chỉ nơi chốn: 打扫 + [phòng/nhà].',
    collo:['打扫房间','打扫办公室','打扫干净'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 应该 đã học ở Bài 13).'},
    ]},
 
-  {n:2,zh:'干净',py:'gānjìng',pos:'Tính từ',vn:'sạch sẽ',em:'✨',lesson:1,
+  {n:2,zh:'干净',py:'gānjìng',pos:'Tính từ',vn:'sạch sẽ', hv: 'can tịnh',em:'✨',lesson:1,
    explain:['Không có bụi bẩn, gọn gàng, trong sạch.'],
    usage:'Tính từ; thường làm bổ ngữ kết quả sau động từ: 打扫干净, 洗干净.',
    collo:['打扫干净','洗干净','很干净'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ.'},
    ]},
 
-  {n:3,zh:'然后',py:'ránhòu',pos:'Liên từ',vn:'sau đó',em:'➡️',lesson:1,
+  {n:3,zh:'然后',py:'ránhòu',pos:'Liên từ',vn:'sau đó', hv: 'nhiên hậu',em:'➡️',lesson:1,
    explain:['Nối hai hành động, diễn tả hành động thứ hai xảy ra sau hành động thứ nhất.'],
    usage:'Liên từ, thường đi cùng 先: 先……，然后……',
    collo:['先……然后……','然后再','然后才'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:4,zh:'冰箱',py:'bīngxiāng',pos:'Danh từ',vn:'tủ lạnh',em:'❄️',lesson:1,
+  {n:4,zh:'冰箱',py:'bīngxiāng',pos:'Danh từ',vn:'tủ lạnh', hv: 'băng tương',em:'❄️',lesson:1,
    explain:['Thiết bị dùng để bảo quản thực phẩm ở nhiệt độ thấp.'],
    usage:'Danh từ; đi cùng giới từ 从/在: 从冰箱里, 在冰箱里.',
    collo:['冰箱里','从冰箱里拿出来','打开冰箱'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'洗澡',py:'xǐzǎo',pos:'Động từ',vn:'tắm, tắm rửa',em:'🚿',lesson:2,
+  {n:5,zh:'洗澡',py:'xǐzǎo',pos:'Động từ',vn:'tắm, tắm rửa', hv: 'tẩy tảo',em:'🚿',lesson:2,
    explain:['Rửa sạch cơ thể bằng nước.'],
    usage:'Động từ ly hợp; có thể chèn thành phần khác vào giữa: 洗了个澡.',
    collo:['洗澡','洗了个澡','去洗澡'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'节目',py:'jiémù',pos:'Danh từ',vn:'chương trình (truyền hình)',em:'📺',lesson:2,
+  {n:6,zh:'节目',py:'jiémù',pos:'Danh từ',vn:'chương trình (truyền hình)', hv: 'tiết mục',em:'📺',lesson:2,
    explain:['Nội dung được phát sóng trên tivi, đài phát thanh.'],
    usage:'Danh từ; đi cùng động từ 看: 看节目.',
    collo:['电视节目','看节目','节目开始'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'月亮',py:'yuèliang',pos:'Danh từ',vn:'mặt trăng',em:'🌙',lesson:3,
+  {n:7,zh:'月亮',py:'yuèliang',pos:'Danh từ',vn:'mặt trăng', hv: 'nguyệt lượng',em:'🌙',lesson:3,
    explain:['Vệ tinh tự nhiên của Trái Đất, xuất hiện vào ban đêm.'],
    usage:'Danh từ; thường làm chủ ngữ hoặc tân ngữ: 看月亮.',
    collo:['看月亮','今晚的月亮','月亮真漂亮'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:8,zh:'像',py:'xiàng',pos:'Động từ',vn:'giống',em:'🪞',lesson:3,
+  {n:8,zh:'像',py:'xiàng',pos:'Động từ',vn:'giống', hv: 'tượng',em:'🪞',lesson:3,
    explain:['Diễn tả sự giống nhau về hình dáng, tính cách giữa hai đối tượng.'],
    usage:'Động từ, thường đi cùng 一样: A + 像 + B + 一样.',
    collo:['像……一样','很像','长得像'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:9,zh:'盘子',py:'pánzi',pos:'Danh từ',vn:'đĩa, mâm',em:'🍽️',lesson:3,
+  {n:9,zh:'盘子',py:'pánzi',pos:'Danh từ',vn:'đĩa, mâm', hv: 'bàn tử',em:'🍽️',lesson:3,
    explain:['Vật dụng hình tròn, phẳng dùng để đựng thức ăn.'],
    usage:'Danh từ; đi cùng động từ 洗: 洗盘子.',
    collo:['洗盘子','一个盘子','白色的盘子'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'先……然后再…… diễn tả trình tự hành động (điểm ngữ pháp trọng tâm bài này).'},
    ]},
 
-  {n:10,zh:'刮风',py:'guā fēng',pos:'Động từ',vn:'nổi gió',em:'💨',lesson:3,
+  {n:10,zh:'刮风',py:'guā fēng',pos:'Động từ',vn:'nổi gió', hv: 'quát phong',em:'💨',lesson:3,
    explain:['Diễn tả hiện tượng gió thổi mạnh.'],
    usage:'Động từ ly hợp: 刮 + 风; có thể thêm mức độ: 刮大风.',
    collo:['刮风','刮大风','不刮风'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'叔叔',py:'shūshu',pos:'Danh từ',vn:'chú',em:'👨',lesson:3,
+  {n:11,zh:'叔叔',py:'shūshu',pos:'Danh từ',vn:'chú', hv: 'thúc thúc',em:'👨',lesson:3,
    explain:['Cách gọi em trai của cha, hoặc người đàn ông trẻ hơn cha mẹ.'],
    usage:'Danh từ xưng hô; thường đi cùng 阿姨 thành cặp.',
    collo:['叔叔阿姨','方叔叔','听叔叔讲故事'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 愿意 đã học ở Bài 13).'},
    ]},
 
-  {n:12,zh:'阿姨',py:'āyí',pos:'Danh từ',vn:'dì, cô',em:'👩',lesson:3,
+  {n:12,zh:'阿姨',py:'āyí',pos:'Danh từ',vn:'dì, cô', hv: 'a di',em:'👩',lesson:3,
    explain:['Cách gọi em/chị gái của mẹ, hoặc người phụ nữ trẻ hơn cha mẹ.'],
    usage:'Danh từ xưng hô; thường đi cùng 叔叔 thành cặp.',
    collo:['叔叔阿姨','常阿姨','白阿姨'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:13,zh:'故事',py:'gùshi',pos:'Danh từ',vn:'truyện, câu chuyện',em:'📖',lesson:3,
+  {n:13,zh:'故事',py:'gùshi',pos:'Danh từ',vn:'truyện, câu chuyện', hv: 'cố sự',em:'📖',lesson:3,
    explain:['Một chuỗi sự việc được kể lại, có tính giải trí hoặc giáo dục.'],
    usage:'Danh từ; đi cùng động từ 讲/听: 讲故事, 听故事.',
    collo:['讲故事','听故事','年轻时候的故事'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:14,zh:'声音',py:'shēngyīn',pos:'Danh từ',vn:'âm thanh, tiếng',em:'🔊',lesson:3,
+  {n:14,zh:'声音',py:'shēngyīn',pos:'Danh từ',vn:'âm thanh, tiếng', hv: 'thanh âm',em:'🔊',lesson:3,
    explain:['Âm phát ra mà tai người có thể nghe được.'],
    usage:'Danh từ; đi cùng động từ 听/开: 听声音, 把声音开大.',
    collo:['声音很大','把声音开大','听外边的声音'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'像……一样 diễn tả sự giống nhau (ôn lại đã học trong bài này).'},
    ]},
 
-  {n:15,zh:'菜单',py:'càidān',pos:'Danh từ',vn:'thực đơn',em:'📋',lesson:4,
+  {n:15,zh:'菜单',py:'càidān',pos:'Danh từ',vn:'thực đơn', hv: 'thái đơn',em:'📋',lesson:4,
    explain:['Danh sách các món ăn có trong nhà hàng.'],
    usage:'Danh từ; đi cùng động từ 看: 看菜单.',
    collo:['看菜单','菜单上','点菜单'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:16,zh:'简单',py:'jiǎndān',pos:'Tính từ',vn:'đơn giản',em:'✅',lesson:4,
+  {n:16,zh:'简单',py:'jiǎndān',pos:'Tính từ',vn:'đơn giản', hv: 'giản đơn',em:'✅',lesson:4,
    explain:['Không phức tạp, dễ hiểu, dễ làm.'],
    usage:'Tính từ; đứng làm vị ngữ hoặc định ngữ: 很简单.',
    collo:['很简单','简单的问题','做起来简单'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:17,zh:'香蕉',py:'xiāngjiāo',pos:'Danh từ',vn:'chuối tiêu',em:'🍌',lesson:4,
+  {n:17,zh:'香蕉',py:'xiāngjiāo',pos:'Danh từ',vn:'chuối tiêu', hv: 'hương tiêu',em:'🍌',lesson:4,
    explain:['Một loại trái cây có vỏ vàng, hình cong dài.'],
    usage:'Danh từ; đi cùng động từ 买/吃: 买香蕉, 香蕉饭.',
    collo:['买香蕉','香蕉饭','新鲜的香蕉'],

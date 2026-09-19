@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'适应',py:'shìyìng',pos:'Động từ',vn:'thích nghi',em:'🔄',lesson:1,
+  {n:1,zh:'适应',py:'shìyìng',pos:'Động từ',vn:'thích nghi', hv: 'thích ứng',em:'🔄',lesson:1,
    explain:['Điều chỉnh bản thân cho phù hợp với hoàn cảnh/môi trường mới.'],
    usage:'Động từ; thường đi với 对……适应 hoặc 适应 + môi trường: 适应这儿的生活.',
    collo:['适应生活','慢慢适应','不适应'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'So sánh với 比, ôn lại cấu trúc HSK3.'},
    ]},
 
-  {n:2,zh:'交',py:'jiāo',pos:'Động từ',vn:'kết giao',em:'🤝',lesson:1,
+  {n:2,zh:'交',py:'jiāo',pos:'Động từ',vn:'kết giao', hv: 'giao',em:'🤝',lesson:1,
    explain:['Kết bạn, quen biết và trở nên thân thiết với ai đó.'],
    usage:'Động từ; thường mang tân ngữ 朋友: 交朋友, 交了一个朋友.',
    collo:['交朋友','交了一个朋友','新交的朋友'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'只要……就…… ôn lại cấu trúc HSK3.'},
    ]},
 
-  {n:3,zh:'平时',py:'píngshí',pos:'Danh từ',vn:'lúc thường, ngày thường',em:'📆',lesson:1,
+  {n:3,zh:'平时',py:'píngshí',pos:'Danh từ',vn:'lúc thường, ngày thường', hv: 'bình thời',em:'📆',lesson:1,
    explain:['Khoảng thời gian bình thường, không phải dịp đặc biệt.'],
    usage:'Danh từ chỉ thời gian, thường đứng đầu câu hoặc sau chủ ngữ: 平时我们常常……',
    collo:['平时我们','平时哪能','平时工作'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'平时 làm trạng ngữ đầu câu.'},
    ]},
 
-  {n:4,zh:'逛',py:'guàng',pos:'Động từ',vn:'đi dạo',em:'🚶',lesson:1,
+  {n:4,zh:'逛',py:'guàng',pos:'Động từ',vn:'đi dạo', hv: 'cuống',em:'🚶',lesson:1,
    explain:['Đi lại nhàn nhã, thong thả để ngắm cảnh/mua sắm, không có mục đích cụ thể.'],
    usage:'Động từ; thường đi với 街/公园: 逛街, 逛公园.',
    collo:['逛街','逛公园','逛商场'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'平时 kết hợp động từ 逛, ôn lại từ vựng bài học.'},
    ]},
 
-  {n:5,zh:'短信',py:'duǎnxìn',pos:'Danh từ',vn:'tin nhắn',em:'💬',lesson:1,
+  {n:5,zh:'短信',py:'duǎnxìn',pos:'Danh từ',vn:'tin nhắn', hv: 'đoản tín',em:'💬',lesson:1,
    explain:['Tin nhắn văn bản gửi qua điện thoại di động.'],
    usage:'Danh từ; thường đi với 发/收: 发短信, 收到短信.',
    collo:['发短信','幽默短信','收到短信'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'尽管……还是…… — mặc dù … vẫn ….'},
    ]},
 
-  {n:6,zh:'正好',py:'zhènghǎo',pos:'Phó từ/Tính từ',vn:'đúng lúc, gặp dịp',em:'👌',lesson:1,
+  {n:6,zh:'正好',py:'zhènghǎo',pos:'Phó từ/Tính từ',vn:'đúng lúc, gặp dịp', hv: 'chính hảo',em:'👌',lesson:1,
    explain:['1. (Tính từ) Vừa vặn, thỏa mãn điều kiện nào đó (không sớm không muộn, không lớn không nhỏ...).','2. (Phó từ) Đúng lúc, gặp dịp để làm việc gì đó.'],
    usage:'Làm tính từ: Chủ ngữ + 正好 (苹果八块五，西瓜十一块五，正好二十块); làm phó từ: 正好 + V (正好一起去吧).',
    collo:['正好一起去','来得正好','正好二十块'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'正好 (phó từ) — đúng dịp, gặp dịp làm gì.'},
    ]},
 
-  {n:7,zh:'聚会',py:'jùhuì',pos:'Động từ/Danh từ',vn:'gặp gỡ; cuộc họp mặt',em:'🎉',lesson:2,
+  {n:7,zh:'聚会',py:'jùhuì',pos:'Động từ/Danh từ',vn:'gặp gỡ; cuộc họp mặt', hv: 'tụ hội',em:'🎉',lesson:2,
    explain:['1. (Động từ) Tụ họp, gặp mặt nhiều người cùng lúc.','2. (Danh từ) Buổi họp mặt, buổi tụ tập.'],
    usage:'Danh từ: 同学聚会, 参加聚会; động từ: 聚会就在……',
    collo:['同学聚会','参加聚会','聚会就在'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'就在 + địa điểm — nhấn mạnh vị trí chính xác.'},
    ]},
 
-  {n:8,zh:'联系',py:'liánxì',pos:'Động từ',vn:'liên hệ',em:'📞',lesson:2,
+  {n:8,zh:'联系',py:'liánxì',pos:'Động từ',vn:'liên hệ', hv: 'liên hệ',em:'📞',lesson:2,
    explain:['Giữ mối liên lạc, trao đổi thông tin với ai đó.'],
    usage:'Động từ; có thể mang tân ngữ trực tiếp hoặc dùng với 跟: 联系她, 跟她联系.',
    collo:['联系一下','跟她联系','没联系了'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'尽管……还是…… — mặc dù … vẫn ….'},
    ]},
 
-  {n:9,zh:'差不多',py:'chàbuduō',pos:'Phó từ/Tính từ',vn:'gần như, hầu như',em:'≈',lesson:2,
+  {n:9,zh:'差不多',py:'chàbuduō',pos:'Phó từ/Tính từ',vn:'gần như, hầu như', hv: 'sai bất đa',em:'≈',lesson:2,
    explain:['1. (Tính từ) Rất giống nhau, không khác biệt nhiều.','2. (Phó từ) Xấp xỉ, gần như (về mức độ, phạm vi, thời gian, khoảng cách, số lượng).'],
    usage:'Làm phó từ có thể đứng trước tính từ đơn âm tiết (差不多高) hoặc trước số lượng (差不多一半); làm tính từ làm vị ngữ (性格差不多).',
    collo:['差不多一半','差不多高','性格差不多'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'差不多 (phó từ) trước động từ — suýt nữa, gần như.'},
    ]},
 
-  {n:10,zh:'专门',py:'zhuānmén',pos:'Phó từ',vn:'đặc biệt, riêng biệt',em:'🎯',lesson:2,
+  {n:10,zh:'专门',py:'zhuānmén',pos:'Phó từ',vn:'đặc biệt, riêng biệt', hv: 'chuyên môn',em:'🎯',lesson:2,
    explain:['Làm riêng, dành riêng cho một mục đích cụ thể, không phải tiện thể.'],
    usage:'Phó từ, đứng trước động từ: 专门 + V (专门从国外飞回来).',
    collo:['专门从……回来','专门为你','专门去做'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'尽管……还是…… — mặc dù … vẫn ….'},
    ]},
 
-  {n:11,zh:'毕业',py:'bì yè',pos:'Cụm động từ',vn:'tốt nghiệp',em:'🎓',lesson:2,
+  {n:11,zh:'毕业',py:'bì yè',pos:'Cụm động từ',vn:'tốt nghiệp', hv: 'tất nghiệp',em:'🎓',lesson:2,
    explain:['Hoàn thành chương trình học và rời khỏi trường.'],
    usage:'Cụm động từ ly hợp (离合词): 毕业后, 毕业了, 毕业十年了 (thời lượng chen vào giữa).',
    collo:['毕业后','毕业十年了','刚毕业'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'又……又…… — vừa … vừa …, ôn lại cấu trúc HSK2.'},
    ]},
 
-  {n:12,zh:'麻烦',py:'máfan',pos:'Động từ/Tính từ',vn:'làm phiền; phiền phức',em:'🙏',lesson:2,
+  {n:12,zh:'麻烦',py:'máfan',pos:'Động từ/Tính từ',vn:'làm phiền; phiền phức', hv: 'ma phiền',em:'🙏',lesson:2,
    explain:['1. (Động từ) Làm phiền ai đó, nhờ vả gây bất tiện.','2. (Tính từ) Phức tạp, rắc rối, khó xử lý.'],
    usage:'Động từ lịch sự: 麻烦你 + V (麻烦你跟她联系一下); tính từ: 这件事很麻烦.',
    collo:['麻烦你','不麻烦你了','很麻烦'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'差不多 kết hợp 谁都, ôn lại từ vựng bài học.'},
    ]},
 
-  {n:13,zh:'好像',py:'hǎoxiàng',pos:'Phó từ',vn:'giống như, dường như',em:'🌫️',lesson:3,
+  {n:13,zh:'好像',py:'hǎoxiàng',pos:'Phó từ',vn:'giống như, dường như', hv: 'hảo tượng',em:'🌫️',lesson:3,
    explain:['Diễn tả sự phỏng đoán, cảm giác giống với điều gì đó nhưng không chắc chắn hoàn toàn.'],
    usage:'Phó từ, đứng trước động từ/tính từ: 好像 + V/Adj.',
    collo:['好像重新回到','好像在哪儿见过','好像不认识'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'好像 + phủ định — phỏng đoán một điều không chắc chắn.'},
    ]},
 
-  {n:14,zh:'重新',py:'chóngxīn',pos:'Phó từ',vn:'lần nữa, lại một lần nữa',em:'🔁',lesson:3,
+  {n:14,zh:'重新',py:'chóngxīn',pos:'Phó từ',vn:'lần nữa, lại một lần nữa', hv: 'trùng tân',em:'🔁',lesson:3,
    explain:['Làm lại từ đầu, quay lại trạng thái/hành động trước đó.'],
    usage:'Phó từ, đứng trước động từ: 重新 + V (重新回到, 重新开始).',
    collo:['重新回到','重新开始','重新考虑'],
@@ -311,7 +311,7 @@ var vocabData = [
       note:'如果……就…… ôn lại cấu trúc HSK2-3.'},
    ]},
 
-  {n:15,zh:'尽管',py:'jǐnguǎn',pos:'Liên từ',vn:'cho dù, mặc dù',em:'📌',lesson:3,
+  {n:15,zh:'尽管',py:'jǐnguǎn',pos:'Liên từ',vn:'cho dù, mặc dù', hv: 'tận quản',em:'📌',lesson:3,
    explain:['Liên từ dùng ở vế câu thứ nhất, nêu một sự thật; vế câu thứ hai nêu kết quả (thường không như dự đoán thông thường), hay đi cùng 但是/可是/却/还是.'],
    usage:'尽管 + sự thật，但是/可是/却/还是 + kết quả.',
    collo:['尽管……但是……','尽管……可是……','尽管……还是……'],
@@ -333,7 +333,7 @@ var vocabData = [
       note:'尽管……但……还是…… — cấu trúc tương phản đầy đủ.'},
    ]},
 
-  {n:16,zh:'真正',py:'zhēnzhèng',pos:'Tính từ',vn:'chân chính, thật sự',em:'✅',lesson:3,
+  {n:16,zh:'真正',py:'zhēnzhèng',pos:'Tính từ',vn:'chân chính, thật sự', hv: 'chân chính',em:'✅',lesson:3,
    explain:['Đích thực, không giả tạo, đúng bản chất.'],
    usage:'Tính từ, làm định ngữ: 真正的朋友, 真正的友谊.',
    collo:['真正的朋友','真正的友谊','真正了解'],
@@ -355,7 +355,7 @@ var vocabData = [
       note:'当/在……的时候 — khi….'},
    ]},
 
-  {n:17,zh:'友谊',py:'yǒuyì',pos:'Danh từ',vn:'tình bạn',em:'🫱🏻‍🫲🏼',lesson:3,
+  {n:17,zh:'友谊',py:'yǒuyì',pos:'Danh từ',vn:'tình bạn', hv: 'hữu nghị',em:'🫱🏻‍🫲🏼',lesson:3,
    explain:['Tình cảm gắn bó, thân thiết giữa những người bạn.'],
    usage:'Danh từ; thường đi với 真正的友谊, 一段友谊.',
    collo:['真正的友谊','一段友谊','珍惜友谊'],
@@ -377,7 +377,7 @@ var vocabData = [
       note:'珍惜 + danh từ — trân trọng….'},
    ]},
 
-  {n:18,zh:'丰富',py:'fēngfù',pos:'Động từ/Tính từ',vn:'làm phong phú; phong phú',em:'🌈',lesson:4,
+  {n:18,zh:'丰富',py:'fēngfù',pos:'Động từ/Tính từ',vn:'làm phong phú; phong phú', hv: 'phong phú',em:'🌈',lesson:4,
    explain:['1. (Động từ) Làm cho thêm nhiều, đa dạng hơn.','2. (Tính từ) Đa dạng, nhiều về số lượng/chủng loại.'],
    usage:'Động từ mang tân ngữ: 丰富我们的生活; tính từ: 经验很丰富.',
    collo:['丰富我们的生活','经验丰富','内容丰富'],
@@ -399,7 +399,7 @@ var vocabData = [
       note:'尽管……还是…… — mặc dù … vẫn ….'},
    ]},
 
-  {n:19,zh:'无聊',py:'wúliáo',pos:'Tính từ',vn:'vô vị, nhàm chán',em:'😑',lesson:4,
+  {n:19,zh:'无聊',py:'wúliáo',pos:'Tính từ',vn:'vô vị, nhàm chán', hv: 'vô liêu',em:'😑',lesson:4,
    explain:['Không có gì thú vị, không có việc gì làm khiến cảm thấy chán.'],
    usage:'Tính từ, làm vị ngữ: 生活很无聊, 太无聊了.',
    collo:['很无聊','太无聊了','觉得无聊'],
@@ -421,7 +421,7 @@ var vocabData = [
       note:'如果……会…… — nếu … sẽ ….'},
    ]},
 
-  {n:20,zh:'讨厌',py:'tǎoyàn',pos:'Động từ',vn:'ghét, không thích',em:'😒',lesson:4,
+  {n:20,zh:'讨厌',py:'tǎoyàn',pos:'Động từ',vn:'ghét, không thích', hv: 'thảo yếm',em:'😒',lesson:4,
    explain:['Cảm thấy khó chịu, không ưa một người/sự việc nào đó.'],
    usage:'Động từ, mang tân ngữ trực tiếp: 讨厌 + Đối tượng.',
    collo:['让人讨厌','很讨厌','讨厌他'],
@@ -443,7 +443,7 @@ var vocabData = [
       note:'虽然……但…… ôn lại cấu trúc HSK3.'},
    ]},
 
-  {n:21,zh:'却',py:'què',pos:'Phó từ',vn:'lại, nhưng mà',em:'↩️',lesson:4,
+  {n:21,zh:'却',py:'què',pos:'Phó từ',vn:'lại, nhưng mà', hv: 'khước',em:'↩️',lesson:4,
    explain:['Phó từ chỉ sự chuyển ý, tương phản nhẹ nhàng, đứng sau chủ ngữ, trước động từ.'],
    usage:'Chủ ngữ + 却 + Vị ngữ; thường dùng cùng 虽然/但是 để tăng sắc thái tương phản.',
    collo:['但是却','有人却','却很难'],
@@ -465,7 +465,7 @@ var vocabData = [
       note:'但……却…… — nhưng lại….'},
    ]},
 
-  {n:22,zh:'周围',py:'zhōuwéi',pos:'Danh từ',vn:'xung quanh',em:'⭕',lesson:4,
+  {n:22,zh:'周围',py:'zhōuwéi',pos:'Danh từ',vn:'xung quanh', hv: 'chu vi',em:'⭕',lesson:4,
    explain:['Khu vực bao quanh một vị trí/người nào đó.'],
    usage:'Danh từ; thường đi với 周围的人/环境: 跟周围的人交流.',
    collo:['周围的人','周围的环境','在……周围'],
@@ -487,7 +487,7 @@ var vocabData = [
       note:'danh từ + 周围 — khu vực xung quanh (danh từ đó).'},
    ]},
 
-  {n:23,zh:'交流',py:'jiāoliú',pos:'Động từ',vn:'giao lưu, trao đổi',em:'🔀',lesson:4,
+  {n:23,zh:'交流',py:'jiāoliú',pos:'Động từ',vn:'giao lưu, trao đổi', hv: 'giao lưu',em:'🔀',lesson:4,
    explain:['Trao đổi thông tin, ý kiến, tình cảm qua lại giữa hai bên.'],
    usage:'Động từ; thường đi với 跟……交流: 跟周围的人交流.',
    collo:['跟……交流','互相交流','交流经验'],
@@ -509,7 +509,7 @@ var vocabData = [
       note:'能让……(互相了解) — có thể khiến … (hiểu nhau).'},
    ]},
 
-  {n:24,zh:'理解',py:'lǐjiě',pos:'Động từ',vn:'hiểu',em:'💡',lesson:5,
+  {n:24,zh:'理解',py:'lǐjiě',pos:'Động từ',vn:'hiểu', hv: 'lý giải',em:'💡',lesson:5,
    explain:['Nắm được ý nghĩa, cảm thông với suy nghĩ/tình cảm của ai đó hoặc sự việc nào đó.'],
    usage:'Động từ, có thể mang tân ngữ trực tiếp hoặc làm danh từ: 理解朋友, 不同的理解.',
    collo:['不同的理解','互相理解','理解你'],
@@ -531,7 +531,7 @@ var vocabData = [
       note:'那才是…… — đó mới là ….'},
    ]},
 
-  {n:25,zh:'镜子',py:'jìngzi',pos:'Danh từ',vn:'gương, gương soi',em:'🪞',lesson:5,
+  {n:25,zh:'镜子',py:'jìngzi',pos:'Danh từ',vn:'gương, gương soi', hv: 'kính tử',em:'🪞',lesson:5,
    explain:['Vật dụng để phản chiếu hình ảnh, dùng để soi.'],
    usage:'Danh từ; thường dùng làm hình ảnh ẩn dụ: 朋友像镜子.',
    collo:['像镜子','照镜子','一面镜子'],
@@ -553,7 +553,7 @@ var vocabData = [
       note:'V前 — trước khi làm gì, ôn lại cấu trúc HSK2.'},
    ]},
 
-  {n:26,zh:'而',py:'ér',pos:'Liên từ',vn:'(chỉ sự tương phản) trong khi đó, mà',em:'🔗',lesson:5,
+  {n:26,zh:'而',py:'ér',pos:'Liên từ',vn:'(chỉ sự tương phản) trong khi đó, mà', hv: 'nhi',em:'🔗',lesson:5,
    explain:['Liên từ dùng trong câu phức, nối hai vế câu, có thể biểu thị quan hệ đồng đẳng hoặc chuyển ý (tương phản).'],
    usage:'Vế 1 + 而 + Vế 2 (đồng đẳng: liệt kê song song; chuyển ý: tương phản nhẹ).',
    collo:['而我','而不要','而女人'],
@@ -575,7 +575,7 @@ var vocabData = [
       note:'而不是…… — mà không phải là ….'},
    ]},
 
-  {n:27,zh:'当',py:'dāng',pos:'Giới từ',vn:'khi',em:'⏰',lesson:5,
+  {n:27,zh:'当',py:'dāng',pos:'Giới từ',vn:'khi', hv: 'đương',em:'⏰',lesson:5,
    explain:['Giới từ chỉ thời điểm xảy ra sự việc, thường đi cùng ……的时候.'],
    usage:'当 + Mệnh đề + 的时候: 当你遇到困难的时候.',
    collo:['当你……的时候','当……时','当我们'],
@@ -597,7 +597,7 @@ var vocabData = [
       note:'当……时 (dạng ngắn của 当……的时候) kết hợp 只要……就….'},
    ]},
 
-  {n:28,zh:'困难',py:'kùnnan',pos:'Danh từ/Tính từ',vn:'khó khăn',em:'😣',lesson:5,
+  {n:28,zh:'困难',py:'kùnnan',pos:'Danh từ/Tính từ',vn:'khó khăn', hv: 'khốn nan',em:'😣',lesson:5,
    explain:['1. (Danh từ) Việc/hoàn cảnh gây trở ngại, khó giải quyết.','2. (Tính từ) Khó, không dễ dàng.'],
    usage:'Danh từ: 遇到困难; tính từ: 生活很困难.',
    collo:['遇到困难','有困难','解决困难'],
@@ -619,7 +619,7 @@ var vocabData = [
       note:'当……的时候 kết hợp 及时, ôn lại từ vựng bài học.'},
    ]},
 
-  {n:29,zh:'及时',py:'jíshí',pos:'Phó từ',vn:'đúng lúc, kịp thời',em:'⏱️',lesson:5,
+  {n:29,zh:'及时',py:'jíshí',pos:'Phó từ',vn:'đúng lúc, kịp thời', hv: 'cập thời',em:'⏱️',lesson:5,
    explain:['Không chậm trễ, làm đúng vào lúc cần thiết.'],
    usage:'Phó từ, đứng trước động từ: 及时 + V (及时给你帮助, 及时去改).',
    collo:['及时帮助','及时给你','及时去医院'],
@@ -641,7 +641,7 @@ var vocabData = [
       note:'只要……就…… ôn lại cấu trúc HSK3.'},
    ]},
 
-  {n:30,zh:'陪',py:'péi',pos:'Động từ',vn:'đi cùng, ở bên cạnh',em:'🫂',lesson:5,
+  {n:30,zh:'陪',py:'péi',pos:'Động từ',vn:'đi cùng, ở bên cạnh', hv: 'bồi',em:'🫂',lesson:5,
    explain:['Cùng đi, cùng ở bên với ai đó để làm bạn.'],
    usage:'Động từ, mang tân ngữ trực tiếp là người: 陪你, 陪在你身边.',
    collo:['陪在你身边','陪你去','陪着你'],
@@ -663,7 +663,7 @@ var vocabData = [
       note:'麻烦你陪我…… — cách nhờ vả lịch sự, ôn lại từ vựng bài học.'},
    ]},
 
-  {n:31,zh:'夏',py:'Xià',pos:'Danh từ riêng',vn:'Hạ (họ)',em:'🧑',lesson:1,
+  {n:31,zh:'夏',py:'Xià',pos:'Danh từ riêng',vn:'Hạ (họ)', hv: 'Hạ',em:'🧑',lesson:1,
    explain:['Họ của nhân vật 小夏 trong hội thoại 1.'],
    usage:'Danh từ riêng chỉ họ người.',
    collo:['小夏说','小夏问'],
@@ -672,7 +672,7 @@ var vocabData = [
      {zh:'小夏和马克聊马克的中国朋友。',py:'Xiǎo Xià hé Mǎkè liáo Mǎkè de Zhōngguó péngyou.',vn:'Tiểu Hạ và Mark nói chuyện về người bạn Trung Quốc của Mark.'},
    ]},
 
-  {n:32,zh:'马克',py:'Mǎkè',pos:'Danh từ riêng',vn:'Mark (tên người)',em:'🧑',lesson:1,
+  {n:32,zh:'马克',py:'Mǎkè',pos:'Danh từ riêng',vn:'Mark (tên người)', hv: 'Mã Khắc',em:'🧑',lesson:1,
    explain:['Tên riêng của nhân vật nam (người nước ngoài) trong hội thoại 1.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['马克说','马克新交的朋友'],
@@ -681,7 +681,7 @@ var vocabData = [
      {zh:'来中国快一年了，你适应这儿的生活了吗？',py:'Lái Zhōngguó kuài yì nián le, nǐ shìyìng zhèr de shēnghuó le ma?',vn:'Đến Trung Quốc gần một năm rồi, bạn thích nghi với cuộc sống ở đây chưa?'},
    ]},
 
-  {n:33,zh:'林',py:'Lín',pos:'Danh từ riêng',vn:'Lâm (họ)',em:'🧑',lesson:1,
+  {n:33,zh:'林',py:'Lín',pos:'Danh từ riêng',vn:'Lâm (họ)', hv: 'Lâm',em:'🧑',lesson:1,
    explain:['Họ của nhân vật 小林 trong hội thoại 2.'],
    usage:'Danh từ riêng chỉ họ người.',
    collo:['小林说','小林问'],
@@ -690,7 +690,7 @@ var vocabData = [
      {zh:'小李和小林聊同学聚会的事情。',py:'Xiǎo Lǐ hé Xiǎo Lín liáo tóngxué jùhuì de shìqing.',vn:'Tiểu Lý và Tiểu Lâm nói chuyện về việc họp lớp.'},
    ]},
 
-  {n:34,zh:'张远',py:'Zhāng Yuǎn',pos:'Danh từ riêng',vn:'Trương Viễn (tên người)',em:'🧑',lesson:1,
+  {n:34,zh:'张远',py:'Zhāng Yuǎn',pos:'Danh từ riêng',vn:'Trương Viễn (tên người)', hv: 'Trương Viễn',em:'🧑',lesson:1,
    explain:['Tên riêng của một bạn học được nhắc đến trong hội thoại 2.'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['张远还专门'],
@@ -699,7 +699,7 @@ var vocabData = [
      {zh:'差不多一半儿吧，张远还专门从国外飞回来呢。',py:'Chàbuduō yíbànr ba, Zhāng Yuǎn hái zhuānmén cóng guówài fēi huilai ne.',vn:'Gần được một nửa rồi, Trương Viễn còn đặc biệt bay từ nước ngoài về nữa.'},
    ]},
 
-  {n:35,zh:'上海',py:'Shànghǎi',pos:'Danh từ riêng',vn:'Thượng Hải (thành phố của Trung Quốc)',em:'🏙️',lesson:1,
+  {n:35,zh:'上海',py:'Shànghǎi',pos:'Danh từ riêng',vn:'Thượng Hải (thành phố của Trung Quốc)', hv: 'Thượng Hải',em:'🏙️',lesson:1,
    explain:['Tên một thành phố lớn của Trung Quốc, được nhắc đến trong hội thoại 2.'],
    usage:'Danh từ riêng chỉ địa danh.',
    collo:['去上海','去上海工作'],
@@ -708,7 +708,7 @@ var vocabData = [
      {zh:'她毕业后就去上海工作了。',py:'Tā bì yè hòu jiù qù Shànghǎi gōngzuò le.',vn:'Cô ấy tốt nghiệp xong thì đi Thượng Hải làm việc.'},
    ]},
 
-  {n:36,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)',em:'👩',lesson:1,
+  {n:36,zh:'孙月',py:'Sūn Yuè',pos:'Danh từ riêng',vn:'Tôn Nguyệt (tên người)', hv: 'Tôn Nguyệt',em:'👩',lesson:1,
    explain:['Tên riêng của nhân vật nữ xuất hiện lại trong hội thoại 3 (đã gặp ở Bài 1).'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['孙月说','孙月和王静'],
@@ -717,7 +717,7 @@ var vocabData = [
      {zh:'孙月和王静聊她们的朋友。',py:'Sūn Yuè hé Wáng Jìng liáo tāmen de péngyou.',vn:'Tôn Nguyệt và Vương Tịnh nói chuyện về bạn bè của họ.'},
    ]},
 
-  {n:37,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tịnh (tên người)',em:'👩',lesson:1,
+  {n:37,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tịnh (tên người)', hv: 'Vương Tĩnh',em:'👩',lesson:1,
    explain:['Nhân vật nữ chính xuất hiện lại trong hội thoại 3 (đã gặp ở Bài 1).'],
    usage:'Danh từ riêng chỉ tên người.',
    collo:['王静说','跟王静聊'],

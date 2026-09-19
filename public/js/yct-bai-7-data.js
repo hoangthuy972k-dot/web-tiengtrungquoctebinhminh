@@ -2,7 +2,7 @@
 // DATA — YCT Bài 7: 这是猫
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'这',py:'zhè',pos:'Đại từ',vn:'này, đây (vật gần)',em:'👉',lesson:1,
+  {n:1,zh:'这',py:'zhè',pos:'Đại từ',vn:'này, đây (vật gần)', hv: 'giá',em:'👉',lesson:1,
    ex_zh:'这是猫。',ex_py:'Zhè shì māo.',ex_vn:'Đây là con mèo.',
    exList:[{zh:'这是猫。',py:'Zhè shì māo.',vn:'Đây là con mèo.'}],
    hanzi:[
@@ -10,7 +10,7 @@ var vocabData = [
       tip:'Bộ 辶 mang nghĩa "đi tới", chỉ vật ở NGAY gần chỗ mình đang đứng → NÀY, ĐÂY.',
       cf:'达 (dá – "đạt tới", cùng bộ 辶)',w:'这是猫 / 这儿'},
    ]},
-  {n:2,zh:'那',py:'nà',pos:'Đại từ',vn:'đó, kia (vật xa)',em:'👈',lesson:1,
+  {n:2,zh:'那',py:'nà',pos:'Đại từ',vn:'đó, kia (vật xa)', hv: 'na',em:'👈',lesson:1,
    ex_zh:'那是狗。',ex_py:'Nà shì gǒu.',ex_vn:'Đó là con chó.',
    exList:[{zh:'那是狗。',py:'Nà shì gǒu.',vn:'Đó là con chó.'}],
    hanzi:[
@@ -18,7 +18,7 @@ var vocabData = [
       tip:'Bộ 阝 bên phải như hình một người đứng XA mình → dùng để chỉ vật ở ĐẰNG XA → ĐÓ, KIA.',
       cf:'哪 (nǎ – "nào?", thêm bộ 口)',w:'那是狗 / 那儿'},
    ]},
-  {n:3,zh:'看',py:'kàn',pos:'Động từ',vn:'nhìn, xem',em:'👀',lesson:1,
+  {n:3,zh:'看',py:'kàn',pos:'Động từ',vn:'nhìn, xem', hv: 'khán',em:'👀',lesson:1,
    ex_zh:'你看，这是鱼。',ex_py:'Nǐ kàn, zhè shì yú.',ex_vn:'Bạn xem, đây là con cá.',
    exList:[{zh:'你看，这是鱼。',py:'Nǐ kàn, zhè shì yú.',vn:'Bạn xem, đây là con cá.'}],
    hanzi:[
@@ -26,7 +26,7 @@ var vocabData = [
       tip:'Bàn tay đặt ngang trên mắt 目 như che nắng để nhìn xa hơn → NHÌN, XEM.',
       cf:'着 (zhe – trợ từ, gần hình)',w:'你看'},
    ]},
-  {n:4,zh:'这儿',py:'zhèr',pos:'Cụm từ',vn:'ở đây',em:'📍',lesson:1,
+  {n:4,zh:'这儿',py:'zhèr',pos:'Cụm từ',vn:'ở đây', hv: 'giá nhi',em:'📍',lesson:1,
    ex_zh:'这儿有鱼。',ex_py:'Zhèr yǒu yú.',ex_vn:'Ở đây có cá.',
    exList:[{zh:'这儿有鱼。',py:'Zhèr yǒu yú.',vn:'Ở đây có cá.'}],
    hanzi:[
@@ -34,11 +34,11 @@ var vocabData = [
       tip:'Hình hai chân người đang đứng; ghép sau 这/那 tạo thành từ chỉ NƠI CHỐN: 这儿 = ở đây.',
       cf:'几 (jǐ – "mấy")',w:'这儿 / 那儿'},
    ]},
-  {n:5,zh:'那儿',py:'nàr',pos:'Cụm từ',vn:'ở đó, ở kia',em:'📌',lesson:1,
+  {n:5,zh:'那儿',py:'nàr',pos:'Cụm từ',vn:'ở đó, ở kia', hv: 'na nhi',em:'📌',lesson:1,
    ex_zh:'那儿有鸟。',ex_py:'Nàr yǒu niǎo.',ex_vn:'Ở đó có chim.',
    exList:[{zh:'那儿有鸟。',py:'Nàr yǒu niǎo.',vn:'Ở đó có chim.'}],
    hanzi:[]},
-  {n:6,zh:'猫',py:'māo',pos:'Danh từ',vn:'con mèo',em:'🐱',lesson:2,
+  {n:6,zh:'猫',py:'māo',pos:'Danh từ',vn:'con mèo', hv: 'miêu',em:'🐱',lesson:2,
    ex_zh:'猫真小。',ex_py:'Māo zhēn xiǎo.',ex_vn:'Con mèo nhỏ thật.',
    exList:[{zh:'猫真小。',py:'Māo zhēn xiǎo.',vn:'Con mèo nhỏ thật.'}],
    hanzi:[
@@ -46,7 +46,7 @@ var vocabData = [
       tip:'Bộ 犭 chỉ loài thú, ghép với 苗 đọc gần giống "meo" → tiếng MÈO kêu.',
       cf:'猜 (cāi – "đoán", cùng bộ 犭)',w:'我的猫'},
    ]},
-  {n:7,zh:'狗',py:'gǒu',pos:'Danh từ',vn:'con chó',em:'🐶',lesson:2,
+  {n:7,zh:'狗',py:'gǒu',pos:'Danh từ',vn:'con chó', hv: 'cẩu',em:'🐶',lesson:2,
    ex_zh:'狗真大。',ex_py:'Gǒu zhēn dà.',ex_vn:'Con chó to thật.',
    exList:[{zh:'狗真大。',py:'Gǒu zhēn dà.',vn:'Con chó to thật.'}],
    hanzi:[
@@ -54,7 +54,7 @@ var vocabData = [
       tip:'Bộ 犭 chỉ loài thú, ghép với 句 gần âm "gâu" → tiếng CHÓ sủa.',
       cf:'猫 (māo – "mèo", cùng bộ 犭)',w:'那是狗'},
    ]},
-  {n:8,zh:'鱼',py:'yú',pos:'Danh từ',vn:'con cá',em:'🐟',lesson:2,
+  {n:8,zh:'鱼',py:'yú',pos:'Danh từ',vn:'con cá', hv: 'ngư',em:'🐟',lesson:2,
    ex_zh:'这儿有鱼。',ex_py:'Zhèr yǒu yú.',ex_vn:'Ở đây có cá.',
    exList:[{zh:'这儿有鱼。',py:'Zhèr yǒu yú.',vn:'Ở đây có cá.'}],
    hanzi:[
@@ -62,7 +62,7 @@ var vocabData = [
       tip:'Hình vẽ con cá: phần đầu, thân có vảy hình ô vuông 田 và đuôi xoè bên dưới → CÁ.',
       cf:'鸟 (niǎo – "chim", hình dáng gần giống)',w:'看鱼'},
    ]},
-  {n:9,zh:'鸟',py:'niǎo',pos:'Danh từ',vn:'con chim',em:'🐦',lesson:2,
+  {n:9,zh:'鸟',py:'niǎo',pos:'Danh từ',vn:'con chim', hv: 'điểu',em:'🐦',lesson:2,
    ex_zh:'那儿有鸟。',ex_py:'Nàr yǒu niǎo.',ex_vn:'Ở đó có chim.',
    exList:[{zh:'那儿有鸟。',py:'Nàr yǒu niǎo.',vn:'Ở đó có chim.'}],
    hanzi:[

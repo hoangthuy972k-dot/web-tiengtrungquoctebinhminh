@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 2: 谢谢你!
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn',em:'🙏',lesson:1,
+  {n:1,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn', hv: 'tạ tạ',em:'🙏',lesson:1,
    ex_zh:'谢谢！',ex_py:'Xièxie!',ex_vn:'Cảm ơn!',
    exList:[
      {zh:'谢谢！',py:'Xièxie!',vn:'Cảm ơn!'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'讠(lời nói) + 射(bắn ra) → LỜI NÓI bày tỏ lòng biết ơn được gửi ra ngoài.',
       cf:'榭 (xiè – "nhà thuỷ tạ")',w:'谢谢 / 不谢'},
    ]},
-  {n:2,zh:'不',py:'bù / bú',pos:'Phó từ',vn:'không cần, không, đừng',em:'🚫',lesson:1,
+  {n:2,zh:'不',py:'bù / bú',pos:'Phó từ',vn:'không cần, không, đừng', hv: 'bất',em:'🚫',lesson:1,
    ex_zh:'不谢！',ex_py:'Bú xiè!',ex_vn:'Không cần cảm ơn đâu!',
    exList:[
      {zh:'不谢！',py:'Bú xiè!',vn:'Không cần cảm ơn đâu!'},
@@ -24,7 +24,7 @@ var vocabData = [
       tip:'Nét ngang trên cùng như một bức tường CHẶN LẠI → mang nghĩa PHỦ ĐỊNH. Đổi sang thanh 2 (bú) khi đứng trước âm tiết mang thanh 4.',
       cf:'布 (bù – "vải")',w:'不谢 / 不客气 / 不是'},
    ]},
-  {n:3,zh:'不客气',py:'bú kèqi',pos:'Cụm từ',vn:'đừng khách sáo, không có gì',em:'😊',lesson:1,
+  {n:3,zh:'不客气',py:'bú kèqi',pos:'Cụm từ',vn:'đừng khách sáo, không có gì', hv: 'bất khách khí',em:'😊',lesson:1,
    ex_zh:'不客气！',ex_py:'Bú kèqi!',ex_vn:'Đừng khách sáo!',
    exList:[
      {zh:'不客气！',py:'Bú kèqi!',vn:'Đừng khách sáo!'},
@@ -37,7 +37,7 @@ var vocabData = [
       tip:'Hình dáng luồng khí đang bay lượn → KHÍ; ghép với 客 thành "khách khí" nghĩa là giữ ý tứ, khách sáo.',
       cf:'汽 (qì – "hơi nước", thêm bộ 氵")',w:'客气 / 不客气'},
    ]},
-  {n:4,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt',em:'👋',lesson:1,
+  {n:4,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt', hv: 'tái kiến',em:'👋',lesson:1,
    ex_zh:'再见！',ex_py:'Zàijiàn!',ex_vn:'Tạm biệt!',
    exList:[
      {zh:'再见！',py:'Zàijiàn!',vn:'Tạm biệt!'},

@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'同事',py:'tóngshì',pos:'Danh từ',vn:'đồng nghiệp',em:'👔',lesson:1,
+  {n:1,zh:'同事',py:'tóngshì',pos:'Danh từ',vn:'đồng nghiệp', hv: 'đồng sự',em:'👔',lesson:1,
    explain:['Người cùng làm việc trong một cơ quan, công ty.'],
    usage:'Danh từ; làm định ngữ với 的 hoặc trực tiếp trước danh từ khác: 新同事.',
    collo:['新同事','老同事','我的同事'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'因为……所以…… nêu nguyên nhân — kết quả.'},
    ]},
 
-  {n:2,zh:'以前',py:'yǐqián',pos:'Danh từ',vn:'trước đây, trước kia',em:'⏳',lesson:1,
+  {n:2,zh:'以前',py:'yǐqián',pos:'Danh từ',vn:'trước đây, trước kia', hv: 'dĩ tiền',em:'⏳',lesson:1,
    explain:['Khoảng thời gian đã qua so với hiện tại.'],
    usage:'Danh từ, thường đứng đầu câu hoặc trước động từ: 以前 + [câu].',
    collo:['以前工作','以前在哪儿','以前没有'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'虽然……但是…… diễn tả sự tương phản.'},
    ]},
 
-  {n:3,zh:'银行',py:'yínháng',pos:'Danh từ',vn:'ngân hàng',em:'🏦',lesson:1,
+  {n:3,zh:'银行',py:'yínháng',pos:'Danh từ',vn:'ngân hàng', hv: 'ngân hàng',em:'🏦',lesson:1,
    explain:['Tổ chức tài chính nhận gửi tiền, cho vay và các dịch vụ liên quan.'],
    usage:'Danh từ; đi cùng động từ 在/去: 在银行工作, 去银行.',
    collo:['在银行工作','去银行','银行经理'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'以前 diễn tả thời điểm trong quá khứ (ôn lại 同事/以前 vừa học trong bài này).'},
    ]},
 
-  {n:4,zh:'久',py:'jiǔ',pos:'Tính từ',vn:'lâu, lâu dài',em:'⏱️',lesson:2,
+  {n:4,zh:'久',py:'jiǔ',pos:'Tính từ',vn:'lâu, lâu dài', hv: 'cửu',em:'⏱️',lesson:2,
    explain:['Khoảng thời gian dài.'],
    usage:'Tính từ, thường dùng trong câu hỏi 多久 (bao lâu) hoặc 很久 (rất lâu).',
    collo:['多久','很久','等了很久'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'很久了 diễn tả khoảng thời gian dài (ôn lại 银行 đã học trong bài này).'},
    ]},
 
-  {n:5,zh:'感兴趣',py:'gǎn xìngqù',pos:'Cụm động từ',vn:'có hứng thú, thích',em:'✨',lesson:2,
+  {n:5,zh:'感兴趣',py:'gǎn xìngqù',pos:'Cụm động từ',vn:'có hứng thú, thích', hv: 'cảm hứng thú',em:'✨',lesson:2,
    explain:['Cảm thấy hứng thú, quan tâm đến điều gì đó.'],
    usage:'Cấu trúc: 对 + [đối tượng] + (phó từ mức độ) + 感兴趣; phủ định: 对……不感兴趣.',
    collo:['对……感兴趣','很感兴趣','不感兴趣'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 音乐会 đã học ở Bài 6).'},
    ]},
 
-  {n:6,zh:'结婚',py:'jiéhūn',pos:'Động từ',vn:'kết hôn, cưới',em:'💍',lesson:3,
+  {n:6,zh:'结婚',py:'jiéhūn',pos:'Động từ',vn:'kết hôn, cưới', hv: 'kết hôn',em:'💍',lesson:3,
    explain:['Nam nữ chính thức trở thành vợ chồng.'],
    usage:'Động từ ly hợp; thường đi cùng 跟/和 + người: 跟她结婚.',
    collo:['跟她结婚','下个月结婚','结婚了'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'认识……了才…… diễn tả phải sau một khoảng thời gian mới xảy ra việc gì (ôn lại 妻子 đã học ở Bài 6).'},
    ]},
 
-  {n:7,zh:'欢迎',py:'huānyíng',pos:'Động từ',vn:'hoan nghênh, chào mừng',em:'🎉',lesson:3,
+  {n:7,zh:'欢迎',py:'huānyíng',pos:'Động từ',vn:'hoan nghênh, chào mừng', hv: 'hoan nghênh',em:'🎉',lesson:3,
    explain:['Vui vẻ đón tiếp, mời gọi ai đó đến.'],
    usage:'Động từ, mang tân ngữ trực tiếp là người hoặc mệnh đề: 欢迎 + [người] + [V].',
    collo:['欢迎你来','欢迎光临','受欢迎'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'受欢迎 = được yêu mến, hoan nghênh (ôn lại 同事 vừa học trong bài này).'},
    ]},
 
-  {n:8,zh:'迟到',py:'chídào',pos:'Động từ',vn:'đến muộn',em:'⏰',lesson:4,
+  {n:8,zh:'迟到',py:'chídào',pos:'Động từ',vn:'đến muộn', hv: 'trì đáo',em:'⏰',lesson:4,
    explain:['Đến trễ hơn thời gian đã hẹn hoặc quy định.'],
    usage:'Động từ ly hợp, thường đi cùng 了 hoặc thời lượng: 迟到了, 迟到了一刻钟.',
    collo:['迟到了','没迟到','怎么迟到了'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'只要……就…… diễn tả điều kiện đủ (ôn lại 刻 sẽ học ngay bên dưới trong bài này).'},
    ]},
 
-  {n:9,zh:'半',py:'bàn',pos:'Số từ',vn:'một nửa, rưỡi',em:'🕧',lesson:4,
+  {n:9,zh:'半',py:'bàn',pos:'Số từ',vn:'một nửa, rưỡi', hv: 'bán',em:'🕧',lesson:4,
    explain:['Một nửa của một đơn vị; dùng trong giờ để chỉ 30 phút.'],
    usage:'Số từ, đứng sau giờ để chỉ 30 phút: [giờ] + 半 (七点半 = 7 giờ rưỡi); hoặc trước lượng từ: 半个小时.',
    collo:['七点半','半个小时','一半'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'半个小时 = nửa tiếng, làm bổ ngữ thời lượng.'},
    ]},
 
-  {n:10,zh:'接',py:'jiē',pos:'Động từ',vn:'đón',em:'🚗',lesson:4,
+  {n:10,zh:'接',py:'jiē',pos:'Động từ',vn:'đón', hv: 'tiếp',em:'🚗',lesson:4,
    explain:['Ra đón ai đó đến một nơi.'],
    usage:'Động từ, mang tân ngữ trực tiếp là người: 接 + [người] (接我, 接你).',
    collo:['来接我','接人','去接'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 迟到 vừa học trong bài này).'},
    ]},
 
-  {n:11,zh:'刻',py:'kè',pos:'Lượng từ',vn:'mười lăm phút',em:'🕒',lesson:4,
+  {n:11,zh:'刻',py:'kè',pos:'Lượng từ',vn:'mười lăm phút', hv: 'khắc',em:'🕒',lesson:4,
    explain:['Đơn vị thời gian bằng 15 phút, dùng để nói giờ hoặc khoảng thời gian.'],
    usage:'Lượng từ; đứng sau số từ: 一刻 (15 phút), 三刻 (45 phút); 一刻钟 là cách nói đầy đủ chỉ khoảng thời gian.',
    collo:['一刻钟','三刻','差一刻'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'唱了+thời lượng+歌 diễn tả khoảng thời gian hành động kéo dài.'},
    ]},
 
-  {n:12,zh:'差',py:'chà',pos:'Động từ',vn:'kém, thiếu',em:'➖',lesson:4,
+  {n:12,zh:'差',py:'chà',pos:'Động từ',vn:'kém, thiếu', hv: 'sai',em:'➖',lesson:4,
    explain:['Còn thiếu, chưa đủ; dùng trong cách nói giờ để chỉ "còn thiếu bao nhiêu phút nữa đến giờ tròn".'],
    usage:'Động từ; cấu trúc nói giờ: 差 + [khoảng thời gian] + [giờ] (差一刻八点 = 7:45).',
    collo:['差一刻','差五分','差不多'],

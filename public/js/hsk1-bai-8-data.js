@@ -2,7 +2,7 @@
 // DATA — HSK1 Bài 8: 我想喝茶
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'想',py:'xiǎng',pos:'Động từ năng nguyện',vn:'muốn, dự định làm gì',em:'💭',lesson:1,
+  {n:1,zh:'想',py:'xiǎng',pos:'Động từ năng nguyện',vn:'muốn, dự định làm gì', hv: 'tưởng',em:'💭',lesson:1,
    ex_zh:'我想喝茶。',ex_py:'Wǒ xiǎng hē chá.',ex_vn:'Tôi muốn uống trà.',
    exList:[
      {zh:'我想喝茶。',py:'Wǒ xiǎng hē chá.',vn:'Tôi muốn uống trà.'},
@@ -13,7 +13,7 @@ var vocabData = [
       tip:'相(nhìn nhau, quan sát) + 心(tâm trí) → trong lòng suy nghĩ, mong MUỐN điều gì.',
       cf:'相 (xiāng – "lẫn nhau")',w:'我想 / 你想'},
    ]},
-  {n:2,zh:'喝',py:'hē',pos:'Động từ',vn:'uống',em:'🥤',lesson:1,
+  {n:2,zh:'喝',py:'hē',pos:'Động từ',vn:'uống', hv: 'hát',em:'🥤',lesson:1,
    ex_zh:'我想喝茶。',ex_py:'Wǒ xiǎng hē chá.',ex_vn:'Tôi muốn uống trà.',
    exList:[
      {zh:'我想喝茶。',py:'Wǒ xiǎng hē chá.',vn:'Tôi muốn uống trà.'},
@@ -23,7 +23,7 @@ var vocabData = [
       tip:'口(miệng) dùng để UỐNG chất lỏng.',
       cf:'渴 (kě – "khát", cũng có 曷")',w:'喝茶 / 喝水'},
    ]},
-  {n:3,zh:'茶',py:'chá',pos:'Danh từ',vn:'trà',em:'🍵',lesson:1,
+  {n:3,zh:'茶',py:'chá',pos:'Danh từ',vn:'trà', hv: 'trà',em:'🍵',lesson:1,
    ex_zh:'我想喝茶。',ex_py:'Wǒ xiǎng hē chá.',ex_vn:'Tôi muốn uống trà.',
    exList:[
      {zh:'我想喝茶。',py:'Wǒ xiǎng hē chá.',vn:'Tôi muốn uống trà.'},
@@ -33,13 +33,13 @@ var vocabData = [
       tip:'艹(lá cây) pha thành thức uống → TRÀ.',
       cf:'茶 dễ nhầm 荼 (tú – "cỏ đắng")',w:'喝茶'},
    ]},
-  {n:4,zh:'吃',py:'chī',pos:'Động từ',vn:'ăn',em:'🍽️',lesson:1,
+  {n:4,zh:'吃',py:'chī',pos:'Động từ',vn:'ăn', hv: 'ngật',em:'🍽️',lesson:1,
    ex_zh:'我想吃米饭。',ex_py:'Wǒ xiǎng chī mǐfàn.',ex_vn:'Tôi muốn ăn cơm.',
    exList:[
      {zh:'我想吃米饭。',py:'Wǒ xiǎng chī mǐfàn.',vn:'Tôi muốn ăn cơm.'},
    ],
    hanzi:[]},
-  {n:5,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm',em:'🍚',lesson:1,
+  {n:5,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm', hv: 'mễ phạn',em:'🍚',lesson:1,
    ex_zh:'我想吃米饭。',ex_py:'Wǒ xiǎng chī mǐfàn.',ex_vn:'Tôi muốn ăn cơm.',
    exList:[
      {zh:'我想吃米饭。',py:'Wǒ xiǎng chī mǐfàn.',vn:'Tôi muốn ăn cơm.'},
@@ -52,7 +52,7 @@ var vocabData = [
       tip:'饣(bộ ăn uống) + 反(lật qua lật lại, xới cơm) → CƠM.',
       cf:'饱 (bǎo – "no")',w:'米饭'},
    ]},
-  {n:6,zh:'下午',py:'xiàwǔ',pos:'Danh từ',vn:'buổi chiều',em:'🌇',lesson:2,
+  {n:6,zh:'下午',py:'xiàwǔ',pos:'Danh từ',vn:'buổi chiều', hv: 'hạ ngọ',em:'🌇',lesson:2,
    ex_zh:'下午你想做什么？',ex_py:'Xiàwǔ nǐ xiǎng zuò shénme?',ex_vn:'Buổi chiều bạn muốn làm gì?',
    exList:[
      {zh:'下午你想做什么？',py:'Xiàwǔ nǐ xiǎng zuò shénme?',vn:'Buổi chiều bạn muốn làm gì?'},
@@ -65,7 +65,7 @@ var vocabData = [
       tip:'Hình cái chày giã gạo lúc giữa trưa → BUỔI TRƯA.',
       cf:'牛 (niú – "con trâu")',w:'下午 / 中午'},
    ]},
-  {n:7,zh:'商店',py:'shāngdiàn',pos:'Danh từ',vn:'cửa hàng, tiệm',em:'🏪',lesson:2,
+  {n:7,zh:'商店',py:'shāngdiàn',pos:'Danh từ',vn:'cửa hàng, tiệm', hv: 'thương điếm',em:'🏪',lesson:2,
    ex_zh:'下午我想去商店。',ex_py:'Xiàwǔ wǒ xiǎng qù shāngdiàn.',ex_vn:'Chiều nay mình muốn đến cửa hàng.',
    exList:[
      {zh:'下午我想去商店。',py:'Xiàwǔ wǒ xiǎng qù shāngdiàn.',vn:'Chiều nay mình muốn đến cửa hàng.'},
@@ -78,7 +78,7 @@ var vocabData = [
       tip:'广(mái nhà lớn) + 占(bày bán) → nơi bày bán hàng hoá = CỬA HÀNG.',
       cf:'点 (diǎn – "điểm, giờ")',w:'商店'},
    ]},
-  {n:8,zh:'买',py:'mǎi',pos:'Động từ',vn:'mua',em:'🛒',lesson:2,
+  {n:8,zh:'买',py:'mǎi',pos:'Động từ',vn:'mua', hv: 'mãi',em:'🛒',lesson:2,
    ex_zh:'你想买什么？',ex_py:'Nǐ xiǎng mǎi shénme?',ex_vn:'Bạn muốn mua gì vậy?',
    exList:[
      {zh:'你想买什么？',py:'Nǐ xiǎng mǎi shénme?',vn:'Bạn muốn mua gì vậy?'},
@@ -88,7 +88,7 @@ var vocabData = [
       tip:'Hình dáng cầm vật phẩm trao đổi → MUA.',
       cf:'卖 (mài – "bán", thêm nét trên đầu")',w:'买东西 / 买杯子'},
    ]},
-  {n:9,zh:'个',py:'gè',pos:'Lượng từ',vn:'cái, chiếc (lượng từ dùng chung)',em:'🔘',lesson:2,
+  {n:9,zh:'个',py:'gè',pos:'Lượng từ',vn:'cái, chiếc (lượng từ dùng chung)', hv: 'cá',em:'🔘',lesson:2,
    ex_zh:'我想买一个杯子。',ex_py:'Wǒ xiǎng mǎi yí ge bēizi.',ex_vn:'Mình muốn mua một cái ly.',
    exList:[
      {zh:'我想买一个杯子。',py:'Wǒ xiǎng mǎi yí ge bēizi.',vn:'Mình muốn mua một cái ly.'},
@@ -98,7 +98,7 @@ var vocabData = [
       tip:'Hình đơn giản một cá thể đứng riêng lẻ → lượng từ dùng CHUNG cho hầu hết danh từ.',
       cf:'介 (jiè – "giới thiệu")',w:'一个 / 这个 / 那个'},
    ]},
-  {n:10,zh:'杯子',py:'bēizi',pos:'Danh từ',vn:'cốc, ly, tách',em:'☕',lesson:2,
+  {n:10,zh:'杯子',py:'bēizi',pos:'Danh từ',vn:'cốc, ly, tách', hv: 'bôi tử',em:'☕',lesson:2,
    ex_zh:'我想买一个杯子。',ex_py:'Wǒ xiǎng mǎi yí ge bēizi.',ex_vn:'Mình muốn mua một cái ly.',
    exList:[
      {zh:'我想买一个杯子。',py:'Wǒ xiǎng mǎi yí ge bēizi.',vn:'Mình muốn mua một cái ly.'},
@@ -111,7 +111,7 @@ var vocabData = [
       tip:'Hình đứa trẻ mới sinh, tay chân còn quấn tã → CON; dùng làm hậu tố cho nhiều danh từ (杯子, 椅子...).',
       cf:'孑 (jié – "cô độc")',w:'杯子 / 儿子'},
    ]},
-  {n:11,zh:'这',py:'zhè',pos:'Đại từ',vn:'đây, này',em:'👇',lesson:3,
+  {n:11,zh:'这',py:'zhè',pos:'Đại từ',vn:'đây, này', hv: 'giá',em:'👇',lesson:3,
    ex_zh:'这个杯子多少钱？',ex_py:'Zhège bēizi duōshao qián?',ex_vn:'Cái ly này bao nhiêu tiền?',
    exList:[
      {zh:'这个杯子多少钱？',py:'Zhège bēizi duōshao qián?',vn:'Cái ly này bao nhiêu tiền?'},
@@ -121,7 +121,7 @@ var vocabData = [
       tip:'辶(đi tới gần) → chỉ vật/việc GẦN người nói = NÀY, ĐÂY.',
       cf:'达 (dá – "đạt tới")',w:'这个 / 这是'},
    ]},
-  {n:12,zh:'多少',py:'duōshao',pos:'Đại từ',vn:'bao nhiêu (hỏi số lượng thường lớn hơn 10)',em:'❔',lesson:3,
+  {n:12,zh:'多少',py:'duōshao',pos:'Đại từ',vn:'bao nhiêu (hỏi số lượng thường lớn hơn 10)', hv: 'đa thiểu',em:'❔',lesson:3,
    ex_zh:'这个杯子多少钱？',ex_py:'Zhège bēizi duōshao qián?',ex_vn:'Cái ly này bao nhiêu tiền?',
    exList:[
      {zh:'这个杯子多少钱？',py:'Zhège bēizi duōshao qián?',vn:'Cái ly này bao nhiêu tiền?'},
@@ -131,7 +131,7 @@ var vocabData = [
       tip:'小(nhỏ) thêm một nét phẩy → càng NHỎ, ÍT hơn nữa; ghép với 多(nhiều) để hỏi SỐ LƯỢNG.',
       cf:'小 (xiǎo – "nhỏ")',w:'多少钱 / 多少人'},
    ]},
-  {n:13,zh:'钱',py:'qián',pos:'Danh từ',vn:'tiền',em:'💰',lesson:3,
+  {n:13,zh:'钱',py:'qián',pos:'Danh từ',vn:'tiền', hv: 'tiền',em:'💰',lesson:3,
    ex_zh:'这个杯子多少钱？',ex_py:'Zhège bēizi duōshao qián?',ex_vn:'Cái ly này bao nhiêu tiền?',
    exList:[
      {zh:'这个杯子多少钱？',py:'Zhège bēizi duōshao qián?',vn:'Cái ly này bao nhiêu tiền?'},
@@ -141,7 +141,7 @@ var vocabData = [
       tip:'钅(kim loại, đúc tiền xu) → TIỀN.',
       cf:'浅 (qiǎn – "nông, cạn")',w:'多少钱 / 花钱'},
    ]},
-  {n:14,zh:'块',py:'kuài',pos:'Lượng từ',vn:'đồng (đơn vị tiền tệ khẩu ngữ)',em:'💵',lesson:3,
+  {n:14,zh:'块',py:'kuài',pos:'Lượng từ',vn:'đồng (đơn vị tiền tệ khẩu ngữ)', hv: 'khối',em:'💵',lesson:3,
    ex_zh:'28块。',ex_py:'Èrshíbā kuài.',ex_vn:'28 đồng.',
    exList:[
      {zh:'28块。',py:'Èrshíbā kuài.',vn:'28 đồng.'},
@@ -151,7 +151,7 @@ var vocabData = [
       tip:'土(đất nặn thành cục) → mở rộng dùng để đếm ĐỒNG TIỀN, MIẾNG.',
       cf:'快 (kuài – "nhanh", cùng phần 夬")',w:'28块 / 一块钱'},
    ]},
-  {n:15,zh:'那',py:'nà',pos:'Đại từ',vn:'kia, đó',em:'👉',lesson:3,
+  {n:15,zh:'那',py:'nà',pos:'Đại từ',vn:'kia, đó', hv: 'na',em:'👉',lesson:3,
    ex_zh:'那个杯子18块钱。',ex_py:'Nàge bēizi shíbā kuài qián.',ex_vn:'Ly đó 18 đồng.',
    exList:[
      {zh:'那个杯子18块钱。',py:'Nàge bēizi shíbā kuài qián.',vn:'Ly đó 18 đồng.'},

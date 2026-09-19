@@ -3,7 +3,7 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'手机',py:'shǒujī',pos:'Danh từ',vn:'điện thoại di động',em:'📱',lesson:1,
+  {n:1,zh:'手机',py:'shǒujī',pos:'Danh từ',vn:'điện thoại di động', hv: 'thủ cơ',em:'📱',lesson:1,
    ex_zh:'你的手机号是多少？',ex_py:'Nǐ de shǒujīhào shì duōshao?',ex_vn:'Số điện thoại di động của bạn là bao nhiêu?',
    exList:[
      {zh:'你的手机号是多少？',py:'Nǐ de shǒujīhào shì duōshao?',vn:'Số điện thoại di động của bạn là bao nhiêu?'},
@@ -16,7 +16,7 @@ var vocabData = [
       tip:'木(gỗ, vật liệu làm máy móc xưa) + 几(cái bàn nhỏ, hình công cụ) → ghép thành MÁY MÓC.',
       cf:'几 (jǐ – "mấy, bao nhiêu", chính là phần bên phải của 机")',w:'手机 / 飞机 / 机场'},
    ]},
-  {n:2,zh:'电话',py:'diànhuà',pos:'Danh từ',vn:'điện thoại (máy cố định)',em:'☎️',lesson:1,
+  {n:2,zh:'电话',py:'diànhuà',pos:'Danh từ',vn:'điện thoại (máy cố định)', hv: 'điện thoại',em:'☎️',lesson:1,
    ex_zh:'现在人们有时也用电话指代手机。',ex_py:'Xiànzài rénmen yǒushí yě yòng diànhuà zhǐdài shǒujī.',ex_vn:'Hiện nay, đôi khi người ta cũng dùng từ điện thoại để thay cho điện thoại di động.',
    exList:[
      {zh:'现在人们有时也用电话指代手机。',py:'Xiànzài rénmen yǒushí yě yòng diànhuà zhǐdài shǒujī.',vn:'Hiện nay, đôi khi người ta cũng dùng từ điện thoại để thay cho điện thoại di động.'},
@@ -29,7 +29,7 @@ var vocabData = [
       tip:'讠(lời nói) + 舌(cái lưỡi, dùng để nói) → LỜI NÓI, câu chuyện.',
       cf:'活 (huó – "sống", bộ 氵thay vì 讠")',w:'电话 / 说话 / 汉语'},
    ]},
-  {n:3,zh:'号',py:'hào',pos:'Danh từ',vn:'số',em:'🔢',lesson:1,
+  {n:3,zh:'号',py:'hào',pos:'Danh từ',vn:'số', hv: 'hiệu',em:'🔢',lesson:1,
    ex_zh:'我的手机号是+86 13552721160。',ex_py:'Wǒ de shǒujīhào shì +86 13552721160.',ex_vn:'Số điện thoại di động của tôi là +86 13552721160.',
    exList:[
      {zh:'我的手机号是+86 13552721160。',py:'Wǒ de shǒujīhào shì +86 13552721160.',vn:'Số điện thoại di động của tôi là +86 13552721160.'},
@@ -39,7 +39,7 @@ var vocabData = [
       tip:'口(miệng hô hào, gọi to) → mở rộng nghĩa thành SỐ HIỆU (số để gọi tên/định danh).',
       cf:'亏 (kuī – "thiếu hụt")',w:'手机号 / 几号'},
    ]},
-  {n:4,zh:'明天',py:'míngtiān',pos:'Danh từ',vn:'ngày mai',em:'🌅',lesson:2,
+  {n:4,zh:'明天',py:'míngtiān',pos:'Danh từ',vn:'ngày mai', hv: 'minh thiên',em:'🌅',lesson:2,
    ex_zh:'家月，明天你去哪儿？',ex_py:'Jiāyuè, míngtiān nǐ qù nǎr?',ex_vn:'Gia Nguyệt, ngày mai bạn đi đâu?',
    exList:[
      {zh:'家月，明天你去哪儿？',py:'Jiāyuè, míngtiān nǐ qù nǎr?',vn:'Gia Nguyệt, ngày mai bạn đi đâu?'},
@@ -52,7 +52,7 @@ var vocabData = [
       tip:'一(nét ngang, biểu thị bầu trời) trên đầu chữ 大(người dang tay đứng) → cái ở TRÊN ĐẦU người chính là TRỜI.',
       cf:'夫 (fū – "chồng, đàn ông", nét ngang trên ở vị trí khác)',w:'明天 / 今天 / 天气'},
    ]},
-  {n:5,zh:'去',py:'qù',pos:'Động từ',vn:'đi',em:'🚶',lesson:2,
+  {n:5,zh:'去',py:'qù',pos:'Động từ',vn:'đi', hv: 'khứ',em:'🚶',lesson:2,
    ex_zh:'我想去超市买东西。',ex_py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',ex_vn:'Mình muốn đi siêu thị mua đồ.',
    exList:[
      {zh:'我想去超市买东西。',py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',vn:'Mình muốn đi siêu thị mua đồ.'},
@@ -62,7 +62,7 @@ var vocabData = [
       tip:'土(mặt đất) trên + 厶(người khom mình bước) dưới → hình ảnh rời mặt đất bước ĐI.',
       cf:'云 (yún – "mây", cũng có 厶 dưới nhưng phần trên khác)',w:'去超市 / 回去 / 出去'},
    ]},
-  {n:6,zh:'哪儿',py:'nǎr',pos:'Đại từ',vn:'đâu, chỗ nào, nơi nào',em:'❓',lesson:2,
+  {n:6,zh:'哪儿',py:'nǎr',pos:'Đại từ',vn:'đâu, chỗ nào, nơi nào', hv: 'na nhi',em:'❓',lesson:2,
    ex_zh:'明天你去哪儿？',ex_py:'Míngtiān nǐ qù nǎr?',ex_vn:'Ngày mai bạn đi đâu?',
    exList:[
      {zh:'明天你去哪儿？',py:'Míngtiān nǐ qù nǎr?',vn:'Ngày mai bạn đi đâu?'},
@@ -75,7 +75,7 @@ var vocabData = [
       tip:'儿 vẽ hình đôi CHÂN người đang bước, tượng trưng cho TRẺ NHỎ; khi ghép cuối từ tạo âm uốn lưỡi "nhi hoá".',
       cf:'几 (jǐ – "mấy, bao nhiêu", nét trên khác)',w:'哪儿 / 儿子 / 女儿'},
    ]},
-  {n:7,zh:'想',py:'xiǎng',pos:'Động từ năng nguyện',vn:'muốn',em:'💭',lesson:2,
+  {n:7,zh:'想',py:'xiǎng',pos:'Động từ năng nguyện',vn:'muốn', hv: 'tưởng',em:'💭',lesson:2,
    ex_zh:'我想去超市买东西。',ex_py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',ex_vn:'Mình muốn đi siêu thị mua đồ.',
    exList:[
      {zh:'我想去超市买东西。',py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',vn:'Mình muốn đi siêu thị mua đồ.'},
@@ -86,7 +86,7 @@ var vocabData = [
       tip:'相(nhìn, quan sát) trên + 心(trái tim) dưới → trong LÒNG suy NGHĨ, tưởng tượng, từ đó thành MUỐN.',
       cf:'相 (xiāng – "lẫn nhau", thiếu bộ 心 phía dưới)',w:'想去 / 我想 / 理想'},
    ]},
-  {n:8,zh:'超市',py:'chāoshì',pos:'Danh từ',vn:'siêu thị',em:'🏪',lesson:2,
+  {n:8,zh:'超市',py:'chāoshì',pos:'Danh từ',vn:'siêu thị', hv: 'siêu thị',em:'🏪',lesson:2,
    ex_zh:'我想去超市买东西。',ex_py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',ex_vn:'Mình muốn đi siêu thị mua đồ.',
    exList:[
      {zh:'我想去超市买东西。',py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',vn:'Mình muốn đi siêu thị mua đồ.'},
@@ -99,7 +99,7 @@ var vocabData = [
       tip:'亠(mái che) trên + 巾(vải, hàng hoá) dưới → nơi bày VẢI VÓC hàng hoá để buôn bán, tức CHỢ.',
       cf:'布 (bù – "vải", cũng có bộ 巾 nhưng phần trên là 十")',w:'超市 / 市场 / 城市'},
    ]},
-  {n:9,zh:'买',py:'mǎi',pos:'Động từ',vn:'mua',em:'🛒',lesson:2,
+  {n:9,zh:'买',py:'mǎi',pos:'Động từ',vn:'mua', hv: 'mãi',em:'🛒',lesson:2,
    ex_zh:'你去超市买什么？',ex_py:'Nǐ qù chāoshì mǎi shénme?',ex_vn:'Bạn đi siêu thị mua gì vậy?',
    exList:[
      {zh:'你去超市买什么？',py:'Nǐ qù chāoshì mǎi shénme?',vn:'Bạn đi siêu thị mua gì vậy?'},
@@ -110,7 +110,7 @@ var vocabData = [
       tip:'买 là chữ giản thể của 買 (网+贝, lưới chụp lấy tiền), giữ lại nét trên như cái LƯỚI hạ xuống để THU vào → nghĩa MUA.',
       cf:'卖 (mài – "bán", thêm nét 十 trên đầu, rất dễ nhầm vì hình gần giống)',w:'买东西 / 买菜 / 买卖'},
    ]},
-  {n:10,zh:'东西',py:'dōngxi',pos:'Danh từ',vn:'đồ, đồ đạc',em:'📦',lesson:2,
+  {n:10,zh:'东西',py:'dōngxi',pos:'Danh từ',vn:'đồ, đồ đạc', hv: 'đông tây',em:'📦',lesson:2,
    ex_zh:'我想去超市买东西。',ex_py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',ex_vn:'Mình muốn đi siêu thị mua đồ.',
    exList:[
      {zh:'我想去超市买东西。',py:'Wǒ xiǎng qù chāoshì mǎi dōngxi.',vn:'Mình muốn đi siêu thị mua đồ.'},
@@ -123,7 +123,7 @@ var vocabData = [
       tip:'西 vẽ hình một CHIẾC TỔ CHIM trên cành lúc mặt trời lặn về hướng TÂY, chim bay về tổ trú ngụ.',
       cf:'酉 (yǒu – "chi Dậu", hình gần giống nhưng có thêm nét ngang giữa)',w:'东西 / 西安 / 西边'},
    ]},
-  {n:11,zh:'些',py:'xiē',pos:'Lượng từ',vn:'một ít, một vài',em:'🔸',lesson:2,
+  {n:11,zh:'些',py:'xiē',pos:'Lượng từ',vn:'một ít, một vài', hv: 'ta',em:'🔸',lesson:2,
    ex_zh:'我想买些牛奶。',ex_py:'Wǒ xiǎng mǎi xiē niúnǎi.',ex_vn:'Mình muốn mua ít sữa.',
    exList:[
      {zh:'我想买些牛奶。',py:'Wǒ xiǎng mǎi xiē niúnǎi.',vn:'Mình muốn mua ít sữa.'},
@@ -133,7 +133,7 @@ var vocabData = [
       tip:'此(cái này, ở đây) trên + 二(hai, số lượng nhỏ) dưới → chỉ MỘT VÀI cái ở ngay đây.',
       cf:'此 (cǐ – "này, đây", không có bộ 二 phía dưới)',w:'一些 / 有些 / 这些'},
    ]},
-  {n:12,zh:'牛奶',py:'niúnǎi',pos:'Danh từ',vn:'sữa (bò)',em:'🥛',lesson:2,
+  {n:12,zh:'牛奶',py:'niúnǎi',pos:'Danh từ',vn:'sữa (bò)', hv: 'ngưu nãi',em:'🥛',lesson:2,
    ex_zh:'我想买些牛奶。',ex_py:'Wǒ xiǎng mǎi xiē niúnǎi.',ex_vn:'Mình muốn mua ít sữa.',
    exList:[
      {zh:'我想买些牛奶。',py:'Wǒ xiǎng mǎi xiē niúnǎi.',vn:'Mình muốn mua ít sữa.'},
@@ -146,7 +146,7 @@ var vocabData = [
       tip:'女(người mẹ) + 乃(cho, ban cho) → người mẹ CHO con bú, nghĩa là SỮA.',
       cf:'奴 (nú – "nô lệ", cũng bộ 女 trái nhưng phải là 又")',w:'牛奶 / 奶奶 / 奶茶'},
    ]},
-  {n:13,zh:'吃',py:'chī',pos:'Động từ',vn:'ăn',em:'🍽️',lesson:3,
+  {n:13,zh:'吃',py:'chī',pos:'Động từ',vn:'ăn', hv: 'ngật',em:'🍽️',lesson:3,
    ex_zh:'星期天我们去哪儿吃晚饭？',ex_py:'Xīngqītiān wǒmen qù nǎr chī wǎnfàn?',ex_vn:'Chủ nhật này nhà mình đi đâu ăn tối nhỉ?',
    exList:[
      {zh:'星期天我们去哪儿吃晚饭？',py:'Xīngqītiān wǒmen qù nǎr chī wǎnfàn?',vn:'Chủ nhật này nhà mình đi đâu ăn tối nhỉ?'},
@@ -156,7 +156,7 @@ var vocabData = [
       tip:'口(miệng) + 乞(xin, cầu xin) → dùng MIỆNG để xin thức ĂN, nghĩa là ĂN.',
       cf:'吗 (ma – trợ từ nghi vấn, cũng bộ 口 trái nhưng phải là 马")',w:'吃饭 / 好吃 / 吃包子'},
    ]},
-  {n:14,zh:'晚饭',py:'wǎnfàn',pos:'Danh từ',vn:'bữa tối',em:'🌃',lesson:3,
+  {n:14,zh:'晚饭',py:'wǎnfàn',pos:'Danh từ',vn:'bữa tối', hv: 'vãn phạn',em:'🌃',lesson:3,
    ex_zh:'星期天我们去哪儿吃晚饭？',ex_py:'Xīngqītiān wǒmen qù nǎr chī wǎnfàn?',ex_vn:'Chủ nhật này nhà mình đi đâu ăn tối nhỉ?',
    exList:[
      {zh:'星期天我们去哪儿吃晚饭？',py:'Xīngqītiān wǒmen qù nǎr chī wǎnfàn?',vn:'Chủ nhật này nhà mình đi đâu ăn tối nhỉ?'},
@@ -169,7 +169,7 @@ var vocabData = [
       tip:'饣(bộ ăn/thức ăn) + 反(lật qua lật lại) → hành động XỚI CƠM qua lại trong bát, nghĩa là CƠM.',
       cf:'反 (fǎn – "trái lại", thiếu bộ 饣 bên trái)',w:'晚饭 / 米饭 / 吃饭'},
    ]},
-  {n:15,zh:'那边',py:'nàbiān',pos:'Đại từ',vn:'bên kia, chỗ đó',em:'👉',lesson:3,
+  {n:15,zh:'那边',py:'nàbiān',pos:'Đại từ',vn:'bên kia, chỗ đó', hv: 'na biên',em:'👉',lesson:3,
    ex_zh:'那边的包子非常好吃。',ex_py:'Nàbiān de bāozi fēicháng hǎochī.',ex_vn:'Bánh bao ở đó rất ngon.',
    exList:[
      {zh:'那边的包子非常好吃。',py:'Nàbiān de bāozi fēicháng hǎochī.',vn:'Bánh bao ở đó rất ngon.'},
@@ -182,7 +182,7 @@ var vocabData = [
       tip:'辶(đi, di chuyển) bao lấy phần trong → đi dọc theo RÌA, CẠNH của một khu vực, nghĩa là BÊN, PHÍA.',
       cf:'力 (lì – "sức lực", thành phần bên trong của 边 nhưng đứng độc lập)',w:'那边 / 边 / 旁边'},
    ]},
-  {n:16,zh:'包子',py:'bāozi',pos:'Danh từ',vn:'bánh bao (có nhân)',em:'🥟',lesson:3,
+  {n:16,zh:'包子',py:'bāozi',pos:'Danh từ',vn:'bánh bao (có nhân)', hv: 'bao tử',em:'🥟',lesson:3,
    ex_zh:'我想吃包子。',ex_py:'Wǒ xiǎng chī bāozi.',ex_vn:'Con muốn ăn bánh bao.',
    exList:[
      {zh:'我想吃包子。',py:'Wǒ xiǎng chī bāozi.',vn:'Con muốn ăn bánh bao.'},
@@ -195,7 +195,7 @@ var vocabData = [
       tip:'子 vẽ hình một ĐỨA TRẺ SƠ SINH đầu to, hai tay dang ra, được quấn trong khăn.',
       cf:'孑 (jié – "cô độc", thiếu một nét so với 子")',w:'包子 / 儿子 / 孩子'},
    ]},
-  {n:17,zh:'非常',py:'fēicháng',pos:'Phó từ',vn:'rất, vô cùng, cực kỳ',em:'💯',lesson:3,
+  {n:17,zh:'非常',py:'fēicháng',pos:'Phó từ',vn:'rất, vô cùng, cực kỳ', hv: 'phi thường',em:'💯',lesson:3,
    ex_zh:'那边的包子非常好吃。',ex_py:'Nàbiān de bāozi fēicháng hǎochī.',ex_vn:'Bánh bao ở đó rất ngon.',
    exList:[
      {zh:'那边的包子非常好吃。',py:'Nàbiān de bāozi fēicháng hǎochī.',vn:'Bánh bao ở đó rất ngon.'},
@@ -208,7 +208,7 @@ var vocabData = [
       tip:'尚(còn, vẫn) trên + 巾(vải, dùng may y phục) dưới → y phục vẫn mặc THƯỜNG NGÀY, nghĩa là THƯỜNG XUYÊN.',
       cf:'堂 (táng – "nhà, sảnh đường", phần trên giống nhưng dưới là 土")',w:'非常 / 常常 / 平常'},
    ]},
-  {n:18,zh:'好吃',py:'hǎochī',pos:'Tính từ',vn:'ngon',em:'😋',lesson:3,
+  {n:18,zh:'好吃',py:'hǎochī',pos:'Tính từ',vn:'ngon', hv: 'hảo ngật',em:'😋',lesson:3,
    ex_zh:'那边的包子非常好吃。',ex_py:'Nàbiān de bāozi fēicháng hǎochī.',ex_vn:'Bánh bao ở đó rất ngon.',
    exList:[
      {zh:'那边的包子非常好吃。',py:'Nàbiān de bāozi fēicháng hǎochī.',vn:'Bánh bao ở đó rất ngon.'},
@@ -221,7 +221,7 @@ var vocabData = [
       tip:'口(miệng) + 乞(xin, cầu xin) → dùng MIỆNG để xin thức ĂN, nghĩa là ĂN.',
       cf:'吗 (ma – trợ từ nghi vấn, cũng bộ 口 trái nhưng phải là 马")',w:'好吃 / 吃饭 / 吃包子'},
    ]},
-  {n:19,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm (cơm trắng)',em:'🍚',lesson:3,
+  {n:19,zh:'米饭',py:'mǐfàn',pos:'Danh từ',vn:'cơm (cơm trắng)', hv: 'mễ phạn',em:'🍚',lesson:3,
    ex_zh:'妈妈，我想吃米饭，不想吃包子。',ex_py:'Māma, wǒ xiǎng chī mǐfàn, bù xiǎng chī bāozi.',ex_vn:'Mẹ ơi, con muốn ăn cơm, không muốn ăn bánh bao đâu.',
    exList:[
      {zh:'妈妈，我想吃米饭，不想吃包子。',py:'Māma, wǒ xiǎng chī mǐfàn, bù xiǎng chī bāozi.',vn:'Mẹ ơi, con muốn ăn cơm, không muốn ăn bánh bao đâu.'},
@@ -234,7 +234,7 @@ var vocabData = [
       tip:'饣(bộ ăn/thức ăn) + 反(lật qua lật lại) → hành động XỚI CƠM qua lại trong bát, nghĩa là CƠM.',
       cf:'反 (fǎn – "trái lại", thiếu bộ 饣 bên trái)',w:'米饭 / 晚饭 / 吃饭'},
    ]},
-  {n:20,zh:'怎么',py:'zěnme',pos:'Đại từ',vn:'thế nào, bằng cách nào',em:'🤔',lesson:3,
+  {n:20,zh:'怎么',py:'zěnme',pos:'Đại từ',vn:'thế nào, bằng cách nào', hv: 'chẩm ma',em:'🤔',lesson:3,
    ex_zh:'我们怎么去？',ex_py:'Wǒmen zěnme qù?',ex_vn:'Chúng ta đi thế nào nhỉ?',
    exList:[
      {zh:'我们怎么去？',py:'Wǒmen zěnme qù?',vn:'Chúng ta đi thế nào nhỉ?'},
@@ -247,7 +247,7 @@ var vocabData = [
       tip:'么 là chữ nhẹ, thường đứng sau các từ hỏi như 怎么, 什么 để tạo thành TỪ NGHI VẤN, bản thân không mang nghĩa cụ thể.',
       cf:'幺 (yāo – "nhỏ, số 1 khi đọc số điện thoại", hình gần giống nhưng thêm nét)',w:'怎么 / 什么 / 那么'},
    ]},
-  {n:21,zh:'坐',py:'zuò',pos:'Động từ',vn:'ngồi, đi (xe, tàu...)',em:'🚕',lesson:3,
+  {n:21,zh:'坐',py:'zuò',pos:'Động từ',vn:'ngồi, đi (xe, tàu...)', hv: 'tọa',em:'🚕',lesson:3,
    ex_zh:'坐出租车去。',ex_py:'Zuò chūzūchē qù.',ex_vn:'Đi taxi nhé.',
    exList:[
      {zh:'坐出租车去。',py:'Zuò chūzūchē qù.',vn:'Đi taxi nhé.'},
@@ -257,7 +257,7 @@ var vocabData = [
       tip:'从(hai NGƯỜI) trên + 土(mặt ĐẤT) dưới → hình ảnh hai người NGỒI trên mặt đất.',
       cf:'座 (zuò – "chỗ ngồi, toà" (danh từ), thêm bộ 广 bao ngoài)',w:'坐出租车 / 坐下 / 请坐'},
    ]},
-  {n:22,zh:'出租车',py:'chūzūchē',pos:'Danh từ',vn:'xe taxi',em:'🚖',lesson:3,
+  {n:22,zh:'出租车',py:'chūzūchē',pos:'Danh từ',vn:'xe taxi', hv: 'xuất tô xa',em:'🚖',lesson:3,
    ex_zh:'坐出租车去。',ex_py:'Zuò chūzūchē qù.',ex_vn:'Đi taxi nhé.',
    exList:[
      {zh:'坐出租车去。',py:'Zuò chūzūchē qù.',vn:'Đi taxi nhé.'},
@@ -273,7 +273,7 @@ var vocabData = [
       tip:'车 là hình giản lược của một chiếc XE nhìn từ trên xuống với khung và trục bánh xe.',
       cf:'东 (dōng – "hướng đông", khung hình gần giống)',w:'出租车 / 汽车 / 公交车'},
    ]},
-  {n:23,zh:'西安饭店',py:'Xī\'ān Fàndiàn',pos:'Danh từ riêng',vn:'nhà hàng Tây An',em:'🏮',lesson:3,
+  {n:23,zh:'西安饭店',py:'Xī\'ān Fàndiàn',pos:'Danh từ riêng',vn:'nhà hàng Tây An', hv: 'Tây an Phạn Điếm',em:'🏮',lesson:3,
    ex_zh:'我还想去西安饭店。',ex_py:'Wǒ hái xiǎng qù Xī\'ān Fàndiàn.',ex_vn:'Bố vẫn muốn đến nhà hàng Tây An.',
    exList:[
      {zh:'我还想去西安饭店。',py:'Wǒ hái xiǎng qù Xī\'ān Fàndiàn.',vn:'Bố vẫn muốn đến nhà hàng Tây An.'},

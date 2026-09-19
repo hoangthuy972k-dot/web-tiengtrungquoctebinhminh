@@ -3,7 +3,7 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'耳朵',py:'ěrduo',pos:'Danh từ',vn:'tai',em:'👂',lesson:1,
+  {n:1,zh:'耳朵',py:'ěrduo',pos:'Danh từ',vn:'tai', hv: 'nhĩ đóa',em:'👂',lesson:1,
    explain:['Bộ phận trên đầu dùng để nghe.'],
    usage:'Danh từ; đi cùng động từ 放/看: 把头发放在耳朵后面.',
    collo:['耳朵后面','耳朵疼','看一下耳朵'],
@@ -25,7 +25,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
    ]},
 
-  {n:2,zh:'脸',py:'liǎn',pos:'Danh từ',vn:'mặt, khuôn mặt',em:'😊',lesson:1,
+  {n:2,zh:'脸',py:'liǎn',pos:'Danh từ',vn:'mặt, khuôn mặt', hv: 'kiểm',em:'😊',lesson:1,
    explain:['Phần trước của đầu, từ trán đến cằm.'],
    usage:'Danh từ; đi cùng động từ 看上去: 脸看上去漂亮.',
    collo:['脸看上去','脸色','洗脸'],
@@ -47,7 +47,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:3,zh:'短',py:'duǎn',pos:'Tính từ',vn:'ngắn',em:'📏',lesson:1,
+  {n:3,zh:'短',py:'duǎn',pos:'Tính từ',vn:'ngắn', hv: 'đoản',em:'📏',lesson:1,
    explain:['Có độ dài nhỏ, trái nghĩa với 长.'],
    usage:'Tính từ, làm định ngữ hoặc vị ngữ: 短头发.',
    collo:['短头发','短一些','变短'],
@@ -69,7 +69,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:4,zh:'马',py:'mǎ',pos:'Danh từ',vn:'ngựa',em:'🐴',lesson:2,
+  {n:4,zh:'马',py:'mǎ',pos:'Danh từ',vn:'ngựa', hv: 'mã',em:'🐴',lesson:2,
    explain:['Loài động vật bốn chân, dùng để cưỡi, kéo xe.'],
    usage:'Danh từ; đi cùng động từ 骑: 骑马.',
    collo:['骑马','骑马比赛','喜欢骑马'],
@@ -91,7 +91,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:5,zh:'张',py:'zhāng',pos:'Lượng từ',vn:'tờ, tấm',em:'📄',lesson:2,
+  {n:5,zh:'张',py:'zhāng',pos:'Lượng từ',vn:'tờ, tấm', hv: 'trương',em:'📄',lesson:2,
    explain:['Lượng từ dùng cho vật phẳng như giấy, bức ảnh.'],
    usage:'一 + 张 + [danh từ phẳng]: 一张照片.',
    collo:['一张照片','几张纸','这张画儿'],
@@ -113,7 +113,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:6,zh:'位',py:'wèi',pos:'Lượng từ',vn:'vị (dùng cho người, hàm ý kính trọng)',em:'🙋',lesson:2,
+  {n:6,zh:'位',py:'wèi',pos:'Lượng từ',vn:'vị (dùng cho người, hàm ý kính trọng)', hv: 'vị',em:'🙋',lesson:2,
    explain:['Lượng từ dùng cho người, thể hiện sự tôn trọng.'],
    usage:'一 + 位 + [người]: 这位.',
    collo:['这位','一位老师','哪位'],
@@ -135,7 +135,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:7,zh:'蓝',py:'lán',pos:'Tính từ',vn:'có màu xanh da trời',em:'🔵',lesson:2,
+  {n:7,zh:'蓝',py:'lán',pos:'Tính từ',vn:'có màu xanh da trời', hv: 'lam',em:'🔵',lesson:2,
    explain:['Màu của bầu trời trong, biển cả.'],
    usage:'Tính từ; đi cùng danh từ: 蓝西服.',
    collo:['蓝西服','蓝色','天蓝蓝的'],
@@ -157,7 +157,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:8,zh:'秋(天)',py:'qiū(tiān)',pos:'Danh từ',vn:'mùa thu',em:'🍂',lesson:3,
+  {n:8,zh:'秋(天)',py:'qiū(tiān)',pos:'Danh từ',vn:'mùa thu', hv: 'thu thiên',em:'🍂',lesson:3,
    explain:['Mùa chuyển tiếp giữa hè và đông.'],
    usage:'Danh từ chỉ mùa; đi cùng động từ 出生: 秋天出生的.',
    collo:['去年秋天','秋天出生','这个秋天'],
@@ -179,7 +179,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:9,zh:'过',py:'guò',pos:'Động từ',vn:'ăn (mừng), trải qua',em:'🎂',lesson:3,
+  {n:9,zh:'过',py:'guò',pos:'Động từ',vn:'ăn (mừng), trải qua', hv: 'quá',em:'🎂',lesson:3,
    explain:['Kỷ niệm một dịp đặc biệt, hoặc trải qua khoảng thời gian.'],
    usage:'Động từ, mang tân ngữ: 过生日, 过年.',
    collo:['过生日','过年','过节'],
@@ -201,7 +201,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:10,zh:'鸟',py:'niǎo',pos:'Danh từ',vn:'chim',em:'🐦',lesson:3,
+  {n:10,zh:'鸟',py:'niǎo',pos:'Danh từ',vn:'chim', hv: 'điểu',em:'🐦',lesson:3,
    explain:['Loài động vật có cánh, biết bay và hót.'],
    usage:'Danh từ; đi cùng động từ 叫: 鸟叫.',
    collo:['鸟叫','小鸟','什么鸟'],
@@ -223,7 +223,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:11,zh:'哭',py:'kū',pos:'Động từ',vn:'khóc',em:'😢',lesson:3,
+  {n:11,zh:'哭',py:'kū',pos:'Động từ',vn:'khóc', hv: 'khốc',em:'😢',lesson:3,
    explain:['Biểu lộ cảm xúc buồn, đau bằng nước mắt.'],
    usage:'Động từ; đi cùng 的时候: 哭的时候.',
    collo:['哭的时候','一直哭','别哭'],
@@ -245,7 +245,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:12,zh:'黄河',py:'Huáng Hé',pos:'Danh từ riêng',vn:'Hoàng Hà',em:'🏞️',lesson:4,
+  {n:12,zh:'黄河',py:'Huáng Hé',pos:'Danh từ riêng',vn:'Hoàng Hà', hv: 'Hoàng Hà',em:'🏞️',lesson:4,
    explain:['Con sông lớn thứ hai ở Trung Quốc, được coi là cái nôi của văn minh Trung Hoa.'],
    usage:'Danh từ riêng; đi cùng động từ 看/去: 去看黄河.',
    collo:['黄河边上','看黄河','中国有名的大河'],
@@ -267,7 +267,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:13,zh:'船',py:'chuán',pos:'Danh từ',vn:'thuyền, tàu',em:'🚢',lesson:4,
+  {n:13,zh:'船',py:'chuán',pos:'Danh từ',vn:'thuyền, tàu', hv: 'thuyền',em:'🚢',lesson:4,
    explain:['Phương tiện di chuyển trên mặt nước.'],
    usage:'Danh từ; đi cùng động từ 坐: 坐船.',
    collo:['坐船','坐在船上','船票'],
@@ -289,7 +289,7 @@ var vocabData = [
       note:'如果……就…… diễn tả giả thiết — kết quả.'},
    ]},
 
-  {n:14,zh:'经过',py:'jīngguò',pos:'Động từ',vn:'đi ngang qua',em:'🛣️',lesson:4,
+  {n:14,zh:'经过',py:'jīngguò',pos:'Động từ',vn:'đi ngang qua', hv: 'kinh quá',em:'🛣️',lesson:4,
    explain:['Đi qua một nơi hoặc trải qua một quá trình.'],
    usage:'Động từ, mang tân ngữ là nơi chốn hoặc thời gian: 经过很多地方.',
    collo:['经过很多地方','经过这条街','经过一段时间'],

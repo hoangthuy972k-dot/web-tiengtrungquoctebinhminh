@@ -290,6 +290,64 @@
     });
   }
 
+  /* ---------------- tu vung cua cac bai da chon ----------------
+     Moi trang bai hoc co file /js/<bai>-data.js khai bao bien toan cuc vocabData.
+     Nap trong iframe an de cac bai khong ghi de len nhau.                        */
+  var vocabCache = {};
+  function loadVocabOf(url) {
+    if (vocabCache[url]) return Promise.resolve(vocabCache[url]);
+    var src = url.replace('/lessons/', '/js/').replace('.html', '-data.js');
+    return new Promise(function (resolve) {
+      var ifr = document.createElement('iframe');
+      ifr.style.display = 'none';
+      document.body.appendChild(ifr);
+      var doc = ifr.contentDocument;
+      doc.open(); doc.write('<!doctype html><html><body></body></html>'); doc.close();
+      function done(list) {
+        vocabCache[url] = list;
+        try { document.body.removeChild(ifr); } catch (e) { /* bo qua */ }
+        resolve(list);
+      }
+      var sc = doc.createElement('script');
+      sc.src = src;
+      sc.onload = function () {
+        var raw = ifr.contentWindow.vocabData || [];
+        done(raw.filter(function (v) { return v && v.zh && v.vn; }).map(function (v) {
+          return { zh: v.zh, py: v.py || '', vn: v.vn, hv: v.hv || '', em: v.em || v.img || '', pos: v.pos || '' };
+        }));
+      };
+      sc.onerror = function () { done([]); };
+      doc.body.appendChild(sc);
+    });
+  }
+  function loadPickedVocab() {
+    var urls = state.lessons.filter(function (l) { return state.picked[l.url]; })
+      .map(function (l) { return l.url; });
+    return Promise.all(urls.map(loadVocabOf)).then(function (lists) {
+      var out = [], seen = {};
+      lists.forEach(function (list) {
+        list.forEach(function (v) {
+          if (seen[v.zh]) return;
+          seen[v.zh] = 1;
+          out.push(v);
+        });
+      });
+      return out;
+    });
+  }
+
+  // Doc chu Han bang giong may — de goi tu trong tro Bingo
+  function speakZh(text) {
+    try {
+      if (!window.speechSynthesis) return;
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'zh-CN';
+      u.rate = 0.85;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    } catch (e) { /* bo qua */ }
+  }
+
   /* ---------------- bang diem to ---------------- */
   function resetScores() {
     state.scores = [];
@@ -562,6 +620,131 @@
     resetTimer();
   }
 
+  /* ---------------- tro: Bingo 3x3 ---------------- */
+  function startBingo(vocab) {
+    state.bingoWords = shuffle(vocab).slice(0, 15);
+    state.bingoCalled = [];
+    state.bingoPhase = 'write';
+    renderBingo();
+  }
+
+  function renderBingo() {
+    if (state.bingoPhase === 'write') {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-head"><span>Bước 1 · Mỗi em kẻ lưới <b>3×3</b> trong vở rồi chọn <b>9</b> trong ' +
+          state.bingoWords.length + ' từ dưới đây để điền vào</span>' +
+          (state.bingoWords.length < 13
+            ? '<span class="lop-point">⚠️ Ít từ quá — nên chọn thêm bài để có từ 15 từ trở lên</span>'
+            : '') +
+        '</div>' +
+        '<div class="lop-bingo-list">' + state.bingoWords.map(function (v, i) {
+          return '<div class="lop-bingo-word"><span class="lop-bingo-no">' + (i + 1) + '</span>' +
+            '<span class="lop-bingo-zh">' + esc(v.zh) + '</span>' +
+            '<span class="lop-bingo-py">' + esc(v.py) + '</span></div>';
+        }).join('') + '</div>' +
+        '<div class="lop-stage-actions">' +
+          '<button type="button" class="lop-act" id="lopBingoGo">Cả lớp viết xong → Bắt đầu gọi từ</button>' +
+        '</div>';
+      $('#lopBingoGo').addEventListener('click', function () {
+        state.bingoPhase = 'call';
+        state.bingoPool = shuffle(state.bingoWords.slice());
+        renderBingo();
+        callBingo();
+      });
+      return;
+    }
+
+    var cur = state.bingoCalled[state.bingoCalled.length - 1];
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head"><span>Bước 2 · Nghe nghĩa, ai có từ đó thì gạch. Đủ 3 ô thẳng hàng thì hô <b>中了!</b></span>' +
+        '<span class="lop-point">Đã gọi ' + state.bingoCalled.length + '/' + state.bingoWords.length + '</span></div>' +
+      (cur
+        ? '<div class="lop-bingo-call">' +
+            '<div class="lop-bingo-vn">' + esc(cur.vn) + '</div>' +
+            '<div class="lop-bingo-reveal" id="lopBingoReveal" hidden>' +
+              '<span class="lop-bingo-big">' + esc(cur.zh) + '</span>' +
+              '<span class="lop-bingo-bigpy">' + esc(cur.py) + '</span>' +
+            '</div>' +
+          '</div>'
+        : '<div class="lop-bingo-call"><div class="lop-bingo-vn">Bấm “Gọi từ” để bắt đầu</div></div>') +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopBingoNext">Gọi từ tiếp theo (Space)</button>' +
+        (cur ? '<button type="button" class="lop-act ghost" id="lopBingoShow">Hiện chữ Hán</button>' : '') +
+        '<button type="button" class="lop-act ghost" id="lopBingoRestart">Ván mới</button>' +
+      '</div>' +
+      (state.bingoCalled.length
+        ? '<div class="lop-bingo-done">Đã gọi: ' + state.bingoCalled.map(function (v) {
+            return '<span>' + esc(v.zh) + '</span>';
+          }).join('') + '</div>'
+        : '');
+
+    $('#lopBingoNext').addEventListener('click', callBingo);
+    var showBtn = $('#lopBingoShow');
+    if (showBtn) showBtn.addEventListener('click', function () {
+      var r = $('#lopBingoReveal');
+      if (r) r.hidden = false;
+      if (cur) speakZh(cur.zh);
+    });
+    $('#lopBingoRestart').addEventListener('click', function () {
+      startBingo(state.vocab || []);
+    });
+  }
+
+  function callBingo() {
+    if (state.bingoPhase !== 'call') return;
+    if (!state.bingoPool || !state.bingoPool.length) return;
+    var v = state.bingoPool.shift();
+    state.bingoCalled.push(v);
+    renderBingo();
+    speakZh(v.zh);
+  }
+
+  /* ---------------- tro: nhin hinh doan chu ---------------- */
+  function dealGuess(vocab) {
+    state.deck = shuffle(vocab.filter(function (v) { return v.em; }));
+    state.pos = 0;
+    state.guessShown = false;
+  }
+
+  function renderGuess() {
+    var v = state.deck[state.pos];
+    if (!v) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNewRound">Bộ từ mới →</button></div>';
+      $('#lopNewRound').addEventListener('click', function () { dealGuess(state.vocab || []); renderGuess(); });
+      return;
+    }
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head"><span>Từ ' + (state.pos + 1) + '/' + state.deck.length + ' · tổ nào đoán được chữ Hán và pinyin thì giơ tay</span></div>' +
+      '<div class="lop-guess-em">' + esc(v.em) + '</div>' +
+      '<div class="lop-guess-answer" id="lopGuessAns" hidden>' +
+        '<div class="lop-guess-zh">' + esc(v.zh) + '</div>' +
+        '<div class="lop-guess-py">' + esc(v.py) + '</div>' +
+        '<div class="lop-guess-vn">' + esc(v.vn) + '</div>' +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopGuessReveal">Lật đáp án (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopGuessNext">Từ tiếp theo →</button>' +
+      '</div>';
+    $('#lopGuessReveal').addEventListener('click', revealGuess);
+    $('#lopGuessNext').addEventListener('click', nextGuess);
+    state.guessShown = false;
+  }
+  function revealGuess() {
+    if (state.guessShown) return;
+    state.guessShown = true;
+    var el = $('#lopGuessAns');
+    if (el) el.hidden = false;
+    var v = state.deck[state.pos];
+    if (v) speakZh(v.zh);
+  }
+  function nextGuess() {
+    if (state.pos < state.deck.length - 1) state.pos++;
+    else dealGuess(state.vocab || []);
+    renderGuess();
+    resetTimer();
+  }
+
   /* ---------------- quay so bao danh ---------------- */
   var rollTimer = null;
   function openRoll() {
@@ -590,12 +773,19 @@
     hsk3: 'HSK 3', hsk4: 'HSK 4', yct: 'YCT'
   };
 
-  var GAME_TITLE = { errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C', sort: 'Xếp câu bằng người' };
-  var GAME_SECS = { errfix: 30, abc: 10, sort: 60 };
+  var GAME_TITLE = {
+    errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C', sort: 'Xếp câu bằng người',
+    bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ'
+  };
+  var GAME_SECS = { errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20 };
+  var VOCAB_GAMES = { bingo: 1, guess: 1 };
 
   function startGame(game) {
-    var n = game === 'abc' ? pickedMcs().length : game === 'sort' ? pickedSorts().length : pickedJudges().length;
-    if (!n || (game === 'errfix' && n < 3)) return;
+    if (!VOCAB_GAMES[game]) {
+      var n = game === 'abc' ? pickedMcs().length : game === 'sort' ? pickedSorts().length : pickedJudges().length;
+      if (!n || (game === 'errfix' && n < 3)) return;
+    } else if (!pickedLabel()) return;
+
     state.game = game;
     $('#lopTitle').textContent = GAME_TITLE[game];
     $('#lopSub').textContent = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
@@ -603,12 +793,27 @@
     renderScorebar();
     // Moi tro mot nhip: gio the tra loi nhanh, xep cau can thoi gian len bang
     state.timer.secs = GAME_SECS[game] || 30;
-    if (game === 'abc') { dealAbc(); renderAbc(); }
-    else if (game === 'sort') { dealSort(); renderSort(); }
-    else { dealRows(); renderErrfix(); }
     resetTimer();
     $('#lopSetup').hidden = true;
     $('#lopPlay').hidden = false;
+
+    if (VOCAB_GAMES[game]) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Đang tải từ vựng của các bài đã chọn…</span></div>';
+      loadPickedVocab().then(function (vocab) {
+        state.vocab = vocab;
+        if (!vocab.length) {
+          $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Các bài này chưa có dữ liệu từ vựng.</span></div>';
+          return;
+        }
+        if (game === 'bingo') startBingo(vocab);
+        else { dealGuess(vocab); renderGuess(); }
+      });
+      return;
+    }
+
+    if (game === 'abc') { dealAbc(); renderAbc(); }
+    else if (game === 'sort') { dealSort(); renderSort(); }
+    else { dealRows(); renderErrfix(); }
   }
   function exitGame() {
     clearInterval(state.timer.id);
@@ -661,17 +866,25 @@
       var g = state.game;
       if (e.code === 'Space') {
         e.preventDefault();
-        if (g === 'abc') revealAbc(); else if (g === 'sort') revealSort(); else revealAll();
+        if (g === 'abc') revealAbc();
+        else if (g === 'sort') revealSort();
+        else if (g === 'bingo') callBingo();
+        else if (g === 'guess') revealGuess();
+        else revealAll();
         return;
       }
       if (e.code === 'ArrowRight' || e.code === 'Enter') {
         if (g === 'abc') { e.preventDefault(); nextAbc(); }
         else if (g === 'sort') { e.preventDefault(); nextSort(); }
+        else if (g === 'guess') { e.preventDefault(); nextGuess(); }
+        else if (g === 'bingo') { e.preventDefault(); callBingo(); }
         return;
       }
       if (e.key === 'n' || e.key === 'N') {
         if (g === 'abc') { dealAbc(); renderAbc(); }
         else if (g === 'sort') { dealSort(); renderSort(); }
+        else if (g === 'guess') { dealGuess(state.vocab || []); renderGuess(); }
+        else if (g === 'bingo') { startBingo(state.vocab || []); }
         else { dealRows(); renderErrfix(); }
         resetTimer(); return;
       }

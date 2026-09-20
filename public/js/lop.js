@@ -322,10 +322,18 @@
             };
           }),
           translate: (w.translateData || []).filter(function (t) { return t && t.vi && t.zh; })
-            .map(function (t) { return { vi: t.vi, zh: t.zh, py: t.py || '' }; })
+            .map(function (t) { return { vi: t.vi, zh: t.zh, py: t.py || '' }; }),
+          dialogs: (w.dialogData || []).filter(function (d) { return d && Array.isArray(d.lines) && d.lines.length >= 4; })
+            .map(function (d) {
+              return {
+                scene: d.scene || '',
+                lines: d.lines.filter(function (l) { return l && l.zh; })
+                  .map(function (l) { return { sp: l.sp || 0, zh: l.zh, py: l.py || '', vn: l.vn || '' }; })
+              };
+            })
         });
       };
-      sc.onerror = function () { done({ vocab: [], translate: [] }); };
+      sc.onerror = function () { done({ vocab: [], translate: [], dialogs: [] }); };
       doc.body.appendChild(sc);
     });
   }
@@ -333,7 +341,7 @@
     var urls = state.lessons.filter(function (l) { return state.picked[l.url]; })
       .map(function (l) { return l.url; });
     return Promise.all(urls.map(loadVocabOf)).then(function (parts) {
-      var vocab = [], trans = [], seen = {}, seenT = {};
+      var vocab = [], trans = [], dialogs = [], seen = {}, seenT = {};
       parts.forEach(function (p) {
         (p.vocab || []).forEach(function (v) {
           if (seen[v.zh]) return;
@@ -345,8 +353,10 @@
           seenT[t.zh] = 1;
           trans.push(t);
         });
+        dialogs = dialogs.concat(p.dialogs || []);
       });
       state.trans = trans;
+      state.dialogs = dialogs;
       return vocab;
     });
   }
@@ -1023,6 +1033,192 @@
     resetTimer();
   }
 
+  /* ---------------- tro: dong vai hoi thoai ---------------- */
+  function dealRole() {
+    var ds = state.dialogs || [];
+    state.role = { d: ds.length ? shuffle(ds)[0] : null, hide: 1, shown: {} };
+  }
+
+  function renderRole() {
+    var r = state.role;
+    if (!r || !r.d) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-head"><span>Các bài đã chọn chưa có bài khoá hội thoại. Chọn thêm bài khác nhé.</span></div>';
+      return;
+    }
+    var d = r.d;
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>' + esc(d.scene || 'Bài khoá') + ' · hai em lên đóng vai, em giữ <b>vai ' + (r.hide === 1 ? 'B' : 'A') + '</b> phải tự nói lời bị che</span>' +
+      '</div>' +
+      '<div class="lop-role-lines">' + d.lines.map(function (l, i) {
+        var hidden = (l.sp === r.hide) && !r.shown[i];
+        return '<div class="lop-role-line' + (l.sp === r.hide ? ' is-b' : '') + '" data-i="' + i + '">' +
+          '<span class="lop-role-who">' + (l.sp === r.hide ? 'B' : 'A') + '</span>' +
+          (hidden
+            ? '<span class="lop-role-hidden">' + (l.vn ? esc(l.vn) : '（ … ）') + '</span>'
+            : '<span class="lop-role-zh">' + esc(l.zh) + '</span>') +
+        '</div>';
+      }).join('') + '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopRoleReveal">Hiện hết lời bị che (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopRoleSwap">Đổi vai che</button>' +
+        '<button type="button" class="lop-act ghost" id="lopRoleNext">Bài khoá khác →</button>' +
+      '</div>';
+
+    $all('#lopStage .lop-role-line').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var i = parseInt(el.getAttribute('data-i'), 10);
+        r.shown[i] = 1;
+        renderRole();
+        var l = d.lines[i];
+        if (l) speakZh(l.zh);
+      });
+    });
+    $('#lopRoleReveal').addEventListener('click', revealRole);
+    $('#lopRoleSwap').addEventListener('click', function () {
+      r.hide = r.hide === 1 ? 0 : 1;
+      r.shown = {};
+      renderRole();
+    });
+    $('#lopRoleNext').addEventListener('click', function () { dealRole(); renderRole(); resetTimer(); });
+  }
+  function revealRole() {
+    var r = state.role;
+    if (!r || !r.d) return;
+    r.d.lines.forEach(function (_, i) { r.shown[i] = 1; });
+    renderRole();
+  }
+
+  /* ---------------- tro: am Han Viet doan chu ---------------- */
+  function dealHv(vocab) {
+    state.deck = shuffle(vocab.filter(function (v) { return v.hv; }));
+    state.pos = 0;
+    state.hvShown = false;
+  }
+
+  function renderHv() {
+    var v = state.deck[state.pos];
+    if (!v) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-head"><span>Các bài đã chọn chưa có âm Hán–Việt. Chọn thêm bài khác nhé.</span></div>';
+      return;
+    }
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Từ ' + (state.pos + 1) + '/' + state.deck.length + ' · nghe âm Hán–Việt, đoán xem chữ Hán viết thế nào</span>' +
+      '</div>' +
+      '<div class="lop-hv-card">' +
+        '<div class="lop-hv-am">' + esc(v.hv) + '</div>' +
+        // Nhieu tu Han-Viet trung luon voi nghia tieng Viet (giai quyet, hoc sinh…) —
+        // hien lai lan nua thi thua, nen chi hien khi khac nhau.
+        (v.vn.trim().toLowerCase() !== v.hv.trim().toLowerCase()
+          ? '<div class="lop-hv-vn">' + esc(v.vn) + '</div>' : '') +
+      '</div>' +
+      '<div class="lop-hv-answer" id="lopHvAns" hidden>' +
+        '<div class="lop-hv-zh">' + esc(v.zh) + '</div>' +
+        '<div class="lop-hv-py">' + esc(v.py) + '</div>' +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopHvReveal">Lật đáp án (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopHvNext">Từ tiếp theo →</button>' +
+      '</div>';
+    $('#lopHvReveal').addEventListener('click', revealHv);
+    $('#lopHvNext').addEventListener('click', nextHv);
+    state.hvShown = false;
+  }
+  function revealHv() {
+    if (state.hvShown) return;
+    state.hvShown = true;
+    var el = $('#lopHvAns');
+    if (el) el.hidden = false;
+    var v = state.deck[state.pos];
+    if (v) speakZh(v.zh);
+  }
+  function nextHv() {
+    if (state.pos < state.deck.length - 1) state.pos++;
+    else dealHv(state.vocab || []);
+    renderHv();
+    resetTimer();
+  }
+
+  /* ---------------- tro: noi nghia nhanh ---------------- */
+  function dealMatch(vocab) {
+    var pick = shuffle(vocab).slice(0, 6);
+    state.matchZh = pick;
+    state.matchVn = shuffle(pick.slice());
+    state.matchSel = null;
+    state.matchDone = {};
+  }
+
+  function renderMatch() {
+    var LETTER = ['A', 'B', 'C', 'D', 'E', 'F'];
+    if (!state.matchZh || !state.matchZh.length) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa có từ để chơi.</span></div>';
+      return;
+    }
+    var left = state.matchZh.map(function (v, i) {
+      var done = state.matchDone[v.zh];
+      return '<button type="button" class="lop-match-cell' + (done ? ' is-done' : '') +
+        (state.matchSel === i ? ' is-sel' : '') + '" data-side="zh" data-i="' + i + '">' +
+        '<span class="lop-match-no">' + (i + 1) + '</span>' +
+        '<span class="lop-match-zh">' + esc(v.zh) + '</span></button>';
+    }).join('');
+    var right = state.matchVn.map(function (v, i) {
+      var done = state.matchDone[v.zh];
+      return '<button type="button" class="lop-match-cell' + (done ? ' is-done' : '') +
+        '" data-side="vn" data-i="' + i + '">' +
+        '<span class="lop-match-no">' + LETTER[i] + '</span>' +
+        '<span class="lop-match-vn">' + esc(v.vn) + '</span></button>';
+    }).join('');
+
+    var left2 = Object.keys(state.matchDone).length;
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Tổ đọc từng cặp, ví dụ <b>1 – C</b>. Thầy/cô bấm chữ Hán rồi bấm nghĩa để kiểm tra.</span>' +
+        '<span class="lop-point">Đã nối ' + left2 + '/' + state.matchZh.length + '</span>' +
+      '</div>' +
+      '<div class="lop-match-wrap"><div class="lop-match-col">' + left + '</div>' +
+      '<div class="lop-match-col">' + right + '</div></div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopMatchReveal">Nối hết (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopMatchNext">Bộ từ khác →</button>' +
+      '</div>';
+
+    $all('#lopStage .lop-match-cell').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var side = btn.getAttribute('data-side');
+        var i = parseInt(btn.getAttribute('data-i'), 10);
+        if (side === 'zh') {
+          if (state.matchDone[state.matchZh[i].zh]) return;
+          state.matchSel = (state.matchSel === i) ? null : i;
+          renderMatch();
+          return;
+        }
+        if (state.matchSel === null) return;
+        var a = state.matchZh[state.matchSel], b = state.matchVn[i];
+        if (a.zh === b.zh) {
+          state.matchDone[a.zh] = 1;
+          state.matchSel = null;
+          renderMatch();
+          speakZh(a.zh);
+          flashNote('✓ ' + a.zh + ' — ' + a.vn);
+        } else {
+          btn.classList.add('is-wrong');
+          setTimeout(function () { btn.classList.remove('is-wrong'); }, 600);
+        }
+      });
+    });
+    $('#lopMatchReveal').addEventListener('click', function () {
+      state.matchZh.forEach(function (v) { state.matchDone[v.zh] = 1; });
+      state.matchSel = null;
+      renderMatch();
+    });
+    $('#lopMatchNext').addEventListener('click', function () {
+      dealMatch(state.vocab || []); renderMatch(); resetTimer();
+    });
+  }
+
   /* ---------------- quay so bao danh ---------------- */
   var rollTimer = null;
   function openRoll() {
@@ -1054,13 +1250,17 @@
   var GAME_TITLE = {
     errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C', sort: 'Xếp câu bằng người',
     bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ', tiles: 'Lật ô đoán chữ', taboo: 'Bạn nói tôi đoán',
-    trans: 'Dịch nhanh Việt → Trung', listen: 'Nghe nhanh chỉ chữ', hanzi: 'Đoán chữ qua bộ thủ'
+    trans: 'Dịch nhanh Việt → Trung', listen: 'Nghe nhanh chỉ chữ', hanzi: 'Đoán chữ qua bộ thủ',
+    role: 'Đóng vai bài khoá', hv: 'Âm Hán–Việt đoán chữ', match: 'Nối nghĩa nhanh'
   };
   var GAME_SECS = {
     errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20, tiles: 30, taboo: 60,
-    trans: 60, listen: 15, hanzi: 30
+    trans: 60, listen: 15, hanzi: 30, role: 90, hv: 20, match: 45
   };
-  var VOCAB_GAMES = { bingo: 1, guess: 1, tiles: 1, taboo: 1, trans: 1, listen: 1, hanzi: 1 };
+  var VOCAB_GAMES = {
+    bingo: 1, guess: 1, tiles: 1, taboo: 1, trans: 1, listen: 1, hanzi: 1,
+    role: 1, hv: 1, match: 1
+  };
 
   function startGame(game) {
     if (!VOCAB_GAMES[game]) {
@@ -1093,6 +1293,9 @@
         else if (game === 'trans') { dealTrans(); renderTrans(); }
         else if (game === 'listen') { dealListen(vocab); renderListen(); }
         else if (game === 'hanzi') { dealHanzi(vocab); renderHanzi(); }
+        else if (game === 'role') { dealRole(); renderRole(); }
+        else if (game === 'hv') { dealHv(vocab); renderHv(); }
+        else if (game === 'match') { dealMatch(vocab); renderMatch(); }
         else { dealGuess(vocab); renderGuess(); }
       });
       return;
@@ -1162,6 +1365,12 @@
         else if (g === 'trans') revealTrans();
         else if (g === 'hanzi') revealHanzi();
         else if (g === 'listen') { if (state.listenTarget) speakZh(state.listenTarget.zh); }
+        else if (g === 'role') revealRole();
+        else if (g === 'hv') revealHv();
+        else if (g === 'match') {
+          state.matchZh.forEach(function (v) { state.matchDone[v.zh] = 1; });
+          state.matchSel = null; renderMatch();
+        }
         else revealAll();
         return;
       }
@@ -1175,6 +1384,9 @@
         else if (g === 'trans') { e.preventDefault(); nextTrans(); }
         else if (g === 'hanzi') { e.preventDefault(); nextHanzi(); }
         else if (g === 'listen') { e.preventDefault(); dealListen(state.vocab || []); renderListen(); resetTimer(); }
+        else if (g === 'hv') { e.preventDefault(); nextHv(); }
+        else if (g === 'match') { e.preventDefault(); dealMatch(state.vocab || []); renderMatch(); resetTimer(); }
+        else if (g === 'role') { e.preventDefault(); dealRole(); renderRole(); resetTimer(); }
         return;
       }
       if (e.key === 'n' || e.key === 'N') {
@@ -1187,6 +1399,9 @@
         else if (g === 'trans') { dealTrans(); renderTrans(); }
         else if (g === 'listen') { dealListen(state.vocab || []); renderListen(); }
         else if (g === 'hanzi') { dealHanzi(state.vocab || []); renderHanzi(); }
+        else if (g === 'role') { dealRole(); renderRole(); }
+        else if (g === 'hv') { dealHv(state.vocab || []); renderHv(); }
+        else if (g === 'match') { dealMatch(state.vocab || []); renderMatch(); }
         else { dealRows(); renderErrfix(); }
         resetTimer(); return;
       }

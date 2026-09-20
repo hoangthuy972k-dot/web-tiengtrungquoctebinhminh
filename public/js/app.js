@@ -9552,7 +9552,8 @@
   // Bai tap ngu phap soan rieng cho tung cap — chi tai khi hoc sinh mo phan Ngu phap
   var GRAMMAR_FILES = {
     hsk1: '/js/grammar-hsk1.js', hsk1v3: '/js/grammar-hsk1v3.js', hsk2: '/js/hsk2-grammar-exercises.js',
-    hsk2v3: '/js/grammar-hsk2v3.js', hsk3: '/js/grammar-hsk3.js'
+    hsk2v3: '/js/grammar-hsk2v3.js', hsk3: '/js/grammar-hsk3.js',
+    hsk4: '/js/grammar-hsk4.js', yct: '/js/grammar-yct.js'
   };
   var grammarFileState = {};
   function ensureGrammarFile(levelId) {

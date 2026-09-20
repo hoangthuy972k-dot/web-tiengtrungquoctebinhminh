@@ -429,9 +429,9 @@
     $('#lopTimerToggle').textContent = t.running ? '⏸ Dừng' : '▶ Bắt đầu';
     $('#lopTimerSet').textContent = t.secs + 's';
   }
-  function toggleTimer() {
+  function startTimer() {
     var t = state.timer;
-    if (t.running) { clearInterval(t.id); t.running = false; paintTimer(); return; }
+    if (t.running) return;
     if (t.left <= 0) t.left = t.secs;
     t.running = true;
     t.id = setInterval(function () {
@@ -448,15 +448,30 @@
     }, 1000);
     paintTimer();
   }
-  function resetTimer() {
+  function stopTimer() {
+    clearInterval(state.timer.id);
+    state.timer.running = false;
+    paintTimer();
+  }
+  function toggleTimer() {
+    if (state.timer.running) stopTimer(); else startTimer();
+  }
+  // Vao tro moi hay sang cau moi la dong ho chay ngay — khong phai voi tay bam
+  // "Bat dau". Goi resetTimer(false) khi chi muon dat lai ma chua chay.
+  function resetTimer(auto) {
     var t = state.timer;
-    clearInterval(t.id); t.running = false; t.left = t.secs; paintTimer();
+    clearInterval(t.id);
+    t.running = false;
+    t.left = t.secs;
+    paintTimer();
+    if (auto !== false) startTimer();
   }
   function cycleTimerSecs() {
     var opts = [15, 30, 45, 60, 90];
     var i = opts.indexOf(state.timer.secs);
+    var dangChay = state.timer.running;
     state.timer.secs = opts[(i + 1) % opts.length];
-    resetTimer();
+    resetTimer(dangChay);
     save();
   }
   /* ---------------- am thanh lop hoc ----------------
@@ -1964,6 +1979,7 @@
       }
       dealDict(vocab);
       renderDict();
+      resetTimer();
     });
   }
 
@@ -2028,6 +2044,7 @@
         else if (game === 'chain') { dealChain(vocab); renderChain(); }
         else if (game === 'write') { dealWrite(vocab); renderWrite(); }
         else { dealGuess(vocab); renderGuess(); }
+        resetTimer();
       });
       return;
     }

@@ -8,8 +8,20 @@ const ROOT = path.join(__dirname, '..');
 const level = process.argv[2];
 if (!level) { console.error('Thieu ten cap, vi du: node tools/build-grammar.js hsk1v3'); process.exit(1); }
 
-const src = path.join(ROOT, 'data-grammar', level + '.json');
-const data = JSON.parse(fs.readFileSync(src, 'utf8'));
+// Noi dung soan co the nam trong 1 file <cap>.json hoac nhieu file trong thu muc <cap>/
+const dir = path.join(ROOT, 'data-grammar', level);
+const one = path.join(ROOT, 'data-grammar', level + '.json');
+const data = {};
+function merge(file) {
+  const part = JSON.parse(fs.readFileSync(file, 'utf8'));
+  Object.keys(part).forEach(function (url) {
+    if (!data[url]) data[url] = { points: [] };
+    data[url].points = data[url].points.concat(part[url].points || []);
+  });
+}
+if (fs.existsSync(one)) merge(one);
+if (fs.existsSync(dir)) fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort().forEach((f) => merge(path.join(dir, f)));
+if (!Object.keys(data).length) { console.error('Khong co noi dung cho cap ' + level); process.exit(1); }
 const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 function errorsHtml(errors) {

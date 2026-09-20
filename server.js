@@ -561,7 +561,7 @@ app.post('/api/scores/sync', requireAuth, asyncRoute(async (req, res) => {
   };
   await saveScores(scores);
   // Bai nao da lam Kiem tra cuoi -> ghi thoi diem (de biet bai giao dung han hay nop muon)
-  try { await recordLessonDone(req.user.id, mergedLessonScores); } catch (err) { console.error('recordLessonDone', err.message); }
+  try { await recordPartsDone(req.user.id, mergedLessonScores); } catch (err) { console.error('recordLessonDone', err.message); }
   res.json({ ok: true, progress: await userProgress(req.user.id) });
 }));
 
@@ -2119,6 +2119,24 @@ async function initClassTables() {
     ')'
   );
   await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS part_done (' +
+      'user_id VARCHAR(36) NOT NULL, lesson_url VARCHAR(120) NOT NULL, part VARCHAR(20) NOT NULL, ' +
+      'first_ms BIGINT NOT NULL, correct INT NOT NULL DEFAULT 0, total INT NOT NULL DEFAULT 0, last_ms BIGINT NOT NULL, ' +
+      'PRIMARY KEY (user_id, lesson_url, part), ' +
+      'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
+    ')'
+  );
+  // Bai da lam truoc khi co tinh nang giao theo phan: giu nguyen moc thoi gian
+  await dbPool.query(
+    "INSERT IGNORE INTO part_done (user_id, lesson_url, part, first_ms, correct, total, last_ms) " +
+      "SELECT user_id, lesson_url, 'final', first_ms, correct, total, last_ms FROM lesson_done"
+  );
+  try {
+    await dbPool.query('ALTER TABLE assignments ADD COLUMN parts VARCHAR(200) NULL');
+  } catch (err) {
+    if (err.code !== 'ER_DUP_FIELDNAME') throw err;
+  }
+  await dbPool.query(
     'CREATE TABLE IF NOT EXISTS lesson_done (' +
       'user_id VARCHAR(36) NOT NULL, lesson_url VARCHAR(120) NOT NULL, first_ms BIGINT NOT NULL, ' +
       'correct INT NOT NULL DEFAULT 0, total INT NOT NULL DEFAULT 0, last_ms BIGINT NOT NULL, ' +
@@ -2185,11 +2203,46 @@ async function readClassState() {
   return {
     classes: c.map((r) => ({ id: r.id, name: r.name, code: r.code, createdMs: Number(r.created_ms) })),
     members,
-    assignments: a.map((r) => ({ id: r.id, classId: r.class_id, lessonUrl: r.lesson_url, note: r.note || '', dueMs: Number(r.due_ms), createdMs: Number(r.created_ms) })),
+    assignments: a.map((r) => ({ id: r.id, classId: r.class_id, lessonUrl: r.lesson_url, note: r.note || '', parts: r.parts ? String(r.parts).split(',') : [], dueMs: Number(r.due_ms), createdMs: Number(r.created_ms) })),
     roster: ro.map((r) => ({ id: r.id, classId: r.class_id, name: r.name, userId: r.user_id || null, sort: r.sort })),
   };
 }
-async function loadLessonDone(userIds) {
+// Cac phan cua 1 bai hoc ma giao vien co the giao rieng (khoa = ten phan trong
+// lessonScores cua hoc sinh). Giao "ca bai" = chi can lam Kiem tra cuoi ('final').
+const LESSON_PARTS = ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'roleplay', 'listen', 'game', 'speak', 'translate', 'workbook', 'page', 'final'];
+
+// 1 muc diem cua 1 phan -> { correct, total } hay null (phan chi danh dau da xem)
+function partScore(v) {
+  if (!v || typeof v !== 'object') return null;
+  if (typeof v.correct === 'number' && typeof v.total === 'number') return { correct: v.correct, total: v.total };
+  if (v.done) return { correct: 0, total: 0 };
+  let c = 0, t = 0, any = false;
+  Object.keys(v).forEach((k) => {
+    const x = partScore(v[k]);
+    if (!x) return;
+    any = true; c += x.correct; t += x.total;
+  });
+  return any ? { correct: c, total: t } : null;
+}
+// Diem 1 bai cua hoc sinh -> { vocab: {correct,total}, game: {...}, ... }
+function partsOfLesson(scores) {
+  const out = {};
+  Object.keys(scores || {}).forEach((k) => {
+    let key = k;
+    if (k.indexOf('page-') === 0) key = 'page';
+    else if (k.indexOf('workbook') === 0) key = 'workbook';
+    else if (k === 'quiz' || k === 'quick') key = 'final';
+    if (LESSON_PARTS.indexOf(key) === -1) return;
+    const x = partScore(scores[k]);
+    if (!x) return;
+    const cur = out[key];
+    out[key] = cur ? { correct: cur.correct + x.correct, total: cur.total + x.total } : x;
+  });
+  return out;
+}
+
+// Hoc sinh da lam nhung phan nao, lan dau luc nao (de biet dung han hay nop muon)
+async function loadPartDone(userIds) {
   if (!USE_DB) {
     const all = readClassFile().done;
     const out = {};
@@ -2199,26 +2252,34 @@ async function loadLessonDone(userIds) {
   let rows;
   if (userIds) {
     if (!userIds.length) return {};
-    [rows] = await dbPool.query('SELECT * FROM lesson_done WHERE user_id IN (?)', [userIds]);
+    [rows] = await dbPool.query('SELECT * FROM part_done WHERE user_id IN (?)', [userIds]);
   } else {
-    [rows] = await dbPool.query('SELECT * FROM lesson_done');
+    [rows] = await dbPool.query('SELECT * FROM part_done');
   }
   const out = {};
   rows.forEach((r) => {
-    (out[r.user_id] = out[r.user_id] || {})[r.lesson_url] = { firstMs: Number(r.first_ms), correct: r.correct, total: r.total, lastMs: Number(r.last_ms) };
+    const byUrl = out[r.user_id] = out[r.user_id] || {};
+    (byUrl[r.lesson_url] = byUrl[r.lesson_url] || {})[r.part] = {
+      firstMs: Number(r.first_ms), correct: r.correct, total: r.total, lastMs: Number(r.last_ms),
+    };
   });
   return out;
 }
 
-// Goi khi dong bo diem: bai nao co diem Kiem tra cuoi thi ghi lai (lan dau + diem moi nhat)
-async function recordLessonDone(userId, lessonScores) {
+// Goi khi dong bo diem: ghi lai tung phan hoc sinh da lam (lan dau + diem moi nhat)
+async function recordPartsDone(userId, lessonScores) {
   const now = Date.now();
   const items = [];
   Object.keys(lessonScores || {}).forEach((url) => {
     if (!LESSON_URL_RE.test(url)) return;
-    const f = lessonScores[url] && lessonScores[url].final;
-    if (!f || typeof f.total !== 'number' || f.total <= 0) return;
-    items.push({ url, correct: Math.max(0, Math.round(Number(f.correct) || 0)), total: Math.round(f.total) });
+    const parts = partsOfLesson(lessonScores[url]);
+    Object.keys(parts).forEach((part) => {
+      items.push({
+        url, part,
+        correct: Math.max(0, Math.round(parts[part].correct || 0)),
+        total: Math.max(0, Math.round(parts[part].total || 0)),
+      });
+    });
   });
   if (!items.length) return;
   if (!USE_DB) {
@@ -2226,8 +2287,9 @@ async function recordLessonDone(userId, lessonScores) {
     const mine = d.done[userId] || (d.done[userId] = {});
     let changed = false;
     items.forEach((it) => {
-      const cur = mine[it.url];
-      if (!cur) { mine[it.url] = { firstMs: now, correct: it.correct, total: it.total, lastMs: now }; changed = true; }
+      const byUrl = mine[it.url] = mine[it.url] || {};
+      const cur = byUrl[it.part];
+      if (!cur) { byUrl[it.part] = { firstMs: now, correct: it.correct, total: it.total, lastMs: now }; changed = true; }
       else if (cur.correct !== it.correct || cur.total !== it.total) { cur.correct = it.correct; cur.total = it.total; cur.lastMs = now; changed = true; }
     });
     if (changed) writeClassFile(d);
@@ -2235,18 +2297,31 @@ async function recordLessonDone(userId, lessonScores) {
   }
   for (const it of items) {
     await dbPool.query(
-      'INSERT INTO lesson_done (user_id, lesson_url, first_ms, correct, total, last_ms) VALUES (?,?,?,?,?,?) ' +
+      'INSERT INTO part_done (user_id, lesson_url, part, first_ms, correct, total, last_ms) VALUES (?,?,?,?,?,?,?) ' +
         'ON DUPLICATE KEY UPDATE last_ms = IF(correct <> VALUES(correct) OR total <> VALUES(total), VALUES(last_ms), last_ms), ' +
         'correct = VALUES(correct), total = VALUES(total)',
-      [userId, it.url, now, it.correct, it.total, now]
+      [userId, it.url, it.part, now, it.correct, it.total, now]
     );
   }
 }
 
-// Trang thai 1 bai giao voi 1 hoc sinh
-function assignmentStatus(a, done, now) {
-  if (done) return { status: done.firstMs <= a.dueMs ? 'done' : 'late', correct: done.correct, total: done.total, doneMs: done.firstMs };
-  return { status: now > a.dueMs ? 'overdue' : 'todo' };
+// Trang thai 1 bai giao voi 1 hoc sinh.
+// a.parts rong = giao ca bai (chi tinh Kiem tra cuoi); co parts = phai lam du cac phan do.
+function assignmentStatus(a, doneOfLesson, now) {
+  const need = a.parts && a.parts.length ? a.parts : ['final'];
+  const have = need.filter((p) => doneOfLesson && doneOfLesson[p]);
+  const info = { need: need.length, doneParts: have.length };
+  if (have.length < need.length) {
+    return Object.assign(info, { status: now > a.dueMs ? 'overdue' : 'todo' });
+  }
+  // xong phan cuoi cung luc nao -> so voi han nop
+  const doneMs = Math.max.apply(null, have.map((p) => doneOfLesson[p].firstMs));
+  let correct = 0, total = 0;
+  have.forEach((p) => { correct += doneOfLesson[p].correct || 0; total += doneOfLesson[p].total || 0; });
+  return Object.assign(info, {
+    status: doneMs <= a.dueMs ? 'done' : 'late',
+    correct, total, doneMs,
+  });
 }
 
 // Han nop: het ngay YYYY-MM-DD (23:59:59 gio VN)
@@ -2274,15 +2349,12 @@ async function classBoard(st, classId, meId) {
   const memberIds = Object.keys(st.members).filter((u) => st.members[u].classId === classId);
   const linked = new Set(roster.map((r) => r.userId).filter(Boolean));
   const nameById = await loadUserNames();
-  const done = await loadLessonDone(memberIds);
+  const done = await loadPartDone(memberIds);
   const now = Date.now();
   function marks(userId) {
     if (!userId || !st.members[userId] || st.members[userId].classId !== classId) return null;
     const d = done[userId] || {};
-    return list.map((a) => {
-      const x = d[a.lessonUrl];
-      return x ? (x.firstMs <= a.dueMs ? 'done' : 'late') : (now > a.dueMs ? 'overdue' : 'todo');
-    });
+    return list.map((a) => assignmentStatus(a, d[a.lessonUrl], now).status);
   }
   const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId) }));
   // Hoc sinh da vao lop nhung chua co ten trong danh sach (hoac lop chua co danh sach)
@@ -2299,10 +2371,10 @@ app.get('/api/class/me', requireAuth, asyncRoute(async (req, res) => {
   const mem = st.members[req.user.id];
   const cls = mem && st.classes.find((c) => c.id === mem.classId);
   if (!cls) return res.json({ class: null, assignments: [] });
-  const done = (await loadLessonDone([req.user.id]))[req.user.id] || {};
+  const done = (await loadPartDone([req.user.id]))[req.user.id] || {};
   const now = Date.now();
   const list = numberedAssignments(st, cls.id).map((a) => Object.assign({
-    id: a.id, session: a.session, lessonUrl: a.lessonUrl, note: a.note, dueMs: a.dueMs, createdMs: a.createdMs,
+    id: a.id, session: a.session, lessonUrl: a.lessonUrl, note: a.note, parts: a.parts || [], dueMs: a.dueMs, createdMs: a.createdMs,
   }, assignmentStatus(a, done[a.lessonUrl], now)));
   const roster = st.roster.filter((r) => r.classId === cls.id);
   const mine = roster.find((r) => r.userId === req.user.id);
@@ -2473,7 +2545,7 @@ app.delete('/api/admin/roster/:id', requireAdmin, asyncRoute(async (req, res) =>
 // ---------- Phia giao vien (trang quan tri) ----------
 app.get('/api/admin/classes', requireAdmin, asyncRoute(async (req, res) => {
   const st = await loadClassState();
-  const done = await loadLessonDone(Object.keys(st.members));
+  const done = await loadPartDone(Object.keys(st.members));
   res.json(Object.assign({}, st, { done, now: Date.now() }));
 }));
 
@@ -2559,27 +2631,39 @@ app.post('/api/admin/members', requireAdmin, asyncRoute(async (req, res) => {
   res.json({ ok: true });
 }));
 
+// Chi nhan ten phan co that trong bai; rong = giao ca bai (Kiem tra cuoi)
+function cleanParts(v) {
+  if (!Array.isArray(v)) return [];
+  const out = [];
+  v.slice(0, 20).forEach((p) => {
+    const k = String(p);
+    if (LESSON_PARTS.indexOf(k) !== -1 && out.indexOf(k) === -1) out.push(k);
+  });
+  return out.length === 1 && out[0] === 'final' ? [] : out;
+}
+
 // Giao 1 bai cho 1 hoac nhieu lop
 app.post('/api/admin/assignments', requireAdmin, asyncRoute(async (req, res) => {
   const classIds = Array.isArray(req.body?.classIds) ? req.body.classIds.map(String).slice(0, 50) : [];
   const lessonUrl = String(req.body?.lessonUrl || '');
   const dueMs = dueMsFromDate(req.body?.dueDate);
   const note = String(req.body?.note || '').trim().slice(0, 300);
+  const parts = cleanParts(req.body?.parts);
   if (!LESSON_URL_RE.test(lessonUrl)) return res.status(400).json({ error: 'Chọn bài học cần giao.' });
   if (!dueMs) return res.status(400).json({ error: 'Chọn hạn nộp.' });
   const st = await loadClassState();
   const valid = classIds.filter((id) => st.classes.some((c) => c.id === id));
   if (!valid.length) return res.status(400).json({ error: 'Chọn ít nhất 1 lớp.' });
   const now = Date.now();
-  const created = valid.map((classId) => ({ id: newShortId(), classId, lessonUrl, note, dueMs, createdMs: now }));
+  const created = valid.map((classId) => ({ id: newShortId(), classId, lessonUrl, note, parts, dueMs, createdMs: now }));
   if (!USE_DB) {
     const d = readClassFile();
     d.assignments = d.assignments.concat(created);
     writeClassFile(d);
   } else {
     for (const a of created) {
-      await classDbWrite('INSERT INTO assignments (id, class_id, lesson_url, note, due_ms, created_ms) VALUES (?,?,?,?,?,?)',
-        [a.id, a.classId, a.lessonUrl, a.note || null, a.dueMs, a.createdMs]);
+      await classDbWrite('INSERT INTO assignments (id, class_id, lesson_url, note, parts, due_ms, created_ms) VALUES (?,?,?,?,?,?,?)',
+        [a.id, a.classId, a.lessonUrl, a.note || null, a.parts.length ? a.parts.join(',') : null, a.dueMs, a.createdMs]);
     }
   }
   res.json({ ok: true, assignments: created });
@@ -2593,13 +2677,14 @@ app.post('/api/admin/assignments/:id', requireAdmin, asyncRoute(async (req, res)
   const dueMs = req.body?.dueDate != null ? dueMsFromDate(req.body.dueDate) : a.dueMs;
   if (!dueMs) return res.status(400).json({ error: 'Hạn nộp không hợp lệ.' });
   const note = req.body?.note != null ? String(req.body.note).trim().slice(0, 300) : a.note;
+  const parts = req.body?.parts != null ? cleanParts(req.body.parts) : a.parts;
   if (!USE_DB) {
     const d = readClassFile();
     const x = d.assignments.find((y) => y.id === a.id);
-    x.dueMs = dueMs; x.note = note;
+    x.dueMs = dueMs; x.note = note; x.parts = parts;
     writeClassFile(d);
   } else {
-    await classDbWrite('UPDATE assignments SET due_ms = ?, note = ? WHERE id = ?', [dueMs, note || null, a.id]);
+    await classDbWrite('UPDATE assignments SET due_ms = ?, note = ?, parts = ? WHERE id = ?', [dueMs, note || null, parts.length ? parts.join(',') : null, a.id]);
   }
   res.json({ ok: true });
 }));

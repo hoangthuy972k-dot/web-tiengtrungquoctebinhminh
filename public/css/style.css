@@ -7693,3 +7693,6 @@ body.pinyin-hidden .py-inline {
 .ab-table td.ab-c.is-late { color: #fff; background: var(--color-gold-500); }
 .ab-table td.ab-c.is-miss { background: var(--color-red-50); }
 .ab-table tr.is-me td.ab-name { font-weight: 700; }
+.assign-parts { font-size: 0.85rem; color: var(--color-gray-600); margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.assign-part { display: inline-block; font-size: 0.8rem; background: var(--color-gray-100); color: var(--color-gray-600); border-radius: var(--radius-pill); padding: 1px 9px; }
+.assign-part.is-ok { background: var(--color-green-50); color: var(--color-green-600); font-weight: 600; }

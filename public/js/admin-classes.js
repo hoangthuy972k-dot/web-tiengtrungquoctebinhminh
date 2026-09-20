@@ -6,6 +6,18 @@
   if (!T) return;
   var $ = T.$, $all = T.$all, esc = T.esc;
 
+  // Cac phan cua 1 bai — giao vien co the giao ca bai hoac chi vai phan
+  var PARTS = [
+    { k: 'warmup', t: 'Khởi động' }, { k: 'vocab', t: 'Từ vựng' }, { k: 'flash', t: 'Thẻ nhớ' },
+    { k: 'grammar', t: 'Ngữ pháp' }, { k: 'dialog', t: 'Hội thoại' }, { k: 'roleplay', t: 'Nhập vai' },
+    { k: 'listen', t: 'Nghe' }, { k: 'game', t: 'Luyện tập (trò chơi)' }, { k: 'speak', t: 'Nói' },
+    { k: 'translate', t: 'Dịch' }, { k: 'workbook', t: 'Sách bài tập' }, { k: 'final', t: 'Kiểm tra cuối' }
+  ];
+  function partLabel(k) { var p = PARTS.filter(function (x) { return x.k === k; })[0]; return p ? p.t : k; }
+  function partsText(a) {
+    return a.parts && a.parts.length ? a.parts.map(partLabel).join(' · ') : 'Cả bài (Kiểm tra cuối)';
+  }
+
   var selClass = null;   // lop dang xem o phan "Bai da giao" / "Hoc sinh trong lop"
   var openAssign = null; // bai giao dang mo chi tiet
   var busy = false;
@@ -73,12 +85,24 @@
     membersOf(classId).forEach(function (s) { if (!linked[s.id]) rows.push({ name: s.name, r: null, s: s, extra: true }); });
     return rows;
   }
+  // Xong = da lam du cac phan duoc giao (khong giao phan nao = ca bai, tinh Kiem tra cuoi)
+  function statusOf(a, doneOfLesson, now) {
+    var need = a.parts && a.parts.length ? a.parts : ['final'];
+    var have = need.filter(function (p) { return doneOfLesson && doneOfLesson[p]; });
+    if (have.length < need.length) {
+      return { status: now > a.dueMs ? 'overdue' : 'todo', doneParts: have.length, need: need.length };
+    }
+    var doneMs = Math.max.apply(null, have.map(function (p) { return doneOfLesson[p].firstMs; }));
+    var c = 0, t = 0;
+    have.forEach(function (p) { c += doneOfLesson[p].correct || 0; t += doneOfLesson[p].total || 0; });
+    return { status: doneMs <= a.dueMs ? 'done' : 'late', doneParts: need.length, need: need.length, correct: c, total: t, doneMs: doneMs };
+  }
   function assignRows(a) {
     var C = T.classes();
     return classRows(a.classId).map(function (row) {
-      var d = row.s ? (C.done[row.s.id] || {})[a.lessonUrl] : null;
-      var status = d ? (d.firstMs <= a.dueMs ? 'done' : 'late') : (!row.s ? 'nojoin' : C.now > a.dueMs ? 'overdue' : 'todo');
-      return { name: row.name, s: row.s, d: d, status: status };
+      if (!row.s) return { name: row.name, s: null, status: 'nojoin', doneParts: 0, need: (a.parts && a.parts.length) || 1 };
+      var st = statusOf(a, (C.done[row.s.id] || {})[a.lessonUrl], C.now);
+      return Object.assign({ name: row.name, s: row.s }, st);
     });
   }
 
@@ -133,8 +157,17 @@
           '<label class="tc-lbl tc-grow">Bài học<select id="tcLesson"></select></label>' +
           '<label class="tc-lbl">Hạn nộp (hết ngày)<input type="date" id="tcDue" value="' + due + '" required></label>' +
         '</div>' +
-        '<label class="tc-lbl">Ghi chú cho học sinh (không bắt buộc)<input id="tcNote" maxlength="300" placeholder="VD: Làm kỹ phần Ngữ pháp và Nhập vai trước khi làm Kiểm tra cuối"></label>' +
-        '<p class="tr-hint">Học sinh được tính <b>Đã làm</b> khi làm xong <b>Bước 7 · Kiểm tra cuối bài</b>. Làm sau hạn vẫn được, thống kê ghi <b>Nộp muộn</b>.</p>' +
+        '<fieldset class="tc-fs"><legend>Yêu cầu học sinh làm</legend>' +
+          '<label class="tc-check"><input type="radio" name="scope" value="all" checked> Cả bài <span class="tr-muted">(xong khi làm Kiểm tra cuối)</span></label> ' +
+          '<label class="tc-check"><input type="radio" name="scope" value="parts"> Chỉ một số phần</label>' +
+          '<div class="tc-checks tc-parts" id="tcParts" hidden>' +
+            PARTS.map(function (p) {
+              return '<label class="tc-check"><input type="checkbox" name="part" value="' + esc(p.k) + '"> ' + esc(p.t) + '</label>';
+            }).join('') +
+          '</div>' +
+        '</fieldset>' +
+        '<label class="tc-lbl">Ghi chú cho học sinh (không bắt buộc)<input id="tcNote" maxlength="300" placeholder="VD: Làm kỹ phần Ngữ pháp trước khi làm bài tập"></label>' +
+        '<p class="tr-hint">Học sinh được tính <b>Đã làm</b> khi làm xong <b>tất cả các phần được giao</b>. Làm sau hạn vẫn được, thống kê ghi <b>Nộp muộn</b>.</p>' +
         '<button type="submit" class="btn btn-primary">📤 Giao bài</button>' +
       '</form></section>';
   }
@@ -163,7 +196,7 @@
       return '<div class="tc-as' + (isOpen ? ' is-open' : '') + '">' +
         '<div class="tc-as-head">' +
           '<div class="tc-as-info"><div class="tc-as-title"><span class="tc-session">Buổi ' + sessionOf[a.id] + '</span> ' + esc(lessonLabel(a.lessonUrl)) + '</div>' +
-            '<div class="tr-muted">Hạn ' + vnDate(a.dueMs, true) + (past ? ' · <b class="tc-past">đã hết hạn</b>' : '') + (a.note ? ' · 📝 ' + esc(a.note) : '') + '</div></div>' +
+            '<div class="tr-muted">📚 ' + esc(partsText(a)) + ' · Hạn ' + vnDate(a.dueMs, true) + (past ? ' · <b class="tc-past">đã hết hạn</b>' : '') + (a.note ? ' · 📝 ' + esc(a.note) : '') + '</div></div>' +
           '<div class="tc-as-stat"><b>' + (t.done + t.late) + '/' + rows.length + '</b> đã làm</div>' +
         '</div>' +
         '<div class="tc-bar" aria-hidden="true"><i class="is-done" style="width:' + (100 * t.done / n) + '%"></i><i class="is-late" style="width:' + (100 * t.late / n) + '%"></i></div>' +
@@ -196,10 +229,11 @@
       if (!list.length) return '';
       return '<div class="tc-group"><div class="tc-group-h">' + g.label + ' · ' + list.length + '</div><ul>' +
         list.map(function (r) {
-          var sc = r.d && r.d.total ? Math.round(100 * r.d.correct / r.d.total) : null;
+          var sc = r.total ? Math.round(100 * r.correct / r.total) : null;
+          var doneAll = r.status === 'done' || r.status === 'late';
           return '<li>' + (r.s ? '<button type="button" class="tc-stu" data-stu="' + esc(r.s.id) + '">' + esc(r.name) + '</button>' : '<span class="tc-stu is-out">' + esc(r.name) + '</span>') +
-            (r.d ? ' <span class="tc-score ' + (sc >= 80 ? 'is-good' : sc >= 60 ? 'is-mid' : 'is-low') + '">' + r.d.correct + '/' + r.d.total + '</span>' +
-              ' <span class="tr-muted">' + vnDate(r.d.firstMs) + '</span>' : '') + '</li>';
+            (doneAll && r.total ? ' <span class="tc-score ' + (sc >= 80 ? 'is-good' : sc >= 60 ? 'is-mid' : 'is-low') + '">' + r.correct + '/' + r.total + '</span>' : '') +
+            (doneAll ? ' <span class="tr-muted">' + vnDate(r.doneMs) + '</span>' : (r.need > 1 && r.s ? ' <span class="tr-muted">đã làm ' + r.doneParts + '/' + r.need + ' phần</span>' : '')) + '</li>';
         }).join('') + '</ul></div>';
     }).join('') + '</div>';
   }
@@ -286,6 +320,12 @@
       }
       lvSel.addEventListener('change', function () { fillLessons(box); });
     }
+    // chon 'Chỉ một số phần' thi hien danh sach phan
+    $all('input[name="scope"]', box).forEach(function (rb) {
+      rb.addEventListener('change', function () {
+        $('#tcParts', box).hidden = $('input[name="scope"]:checked', box).value !== 'parts';
+      });
+    });
     $all('[data-sel]', box).forEach(function (b) {
       b.addEventListener('click', function () { selClass = b.getAttribute('data-sel'); openAssign = null; render(); });
     });
@@ -334,8 +374,11 @@
       if (busy) return;
       var ids = $all('input[name="cls"]:checked', aForm).map(function (i) { return i.value; });
       if (!ids.length) { alert('Chọn ít nhất 1 lớp để giao bài.'); return; }
+      var scope = $('input[name="scope"]:checked', aForm).value;
+      if (scope === 'parts' && !$all('input[name="part"]:checked', aForm).length) { alert('Chọn ít nhất 1 phần, hoặc chọn "Cả bài".'); return; }
       run(api('POST', '/api/admin/assignments', {
-        classIds: ids, lessonUrl: $('#tcLesson', box).value, dueDate: $('#tcDue', box).value, note: $('#tcNote', box).value
+        classIds: ids, lessonUrl: $('#tcLesson', box).value, dueDate: $('#tcDue', box).value, note: $('#tcNote', box).value,
+        parts: $('input[name="scope"]:checked', aForm).value === 'parts' ? $all('input[name="part"]:checked', aForm).map(function (i) { return i.value; }) : []
       })).then(function (d) { if (d && d.ok) alert('Đã giao bài cho ' + ids.length + ' lớp.'); });
     });
     $all('[data-open]', box).forEach(function (b) {
@@ -412,11 +455,12 @@
 
   function csvAssign(a) {
     var STATUS = { done: 'Đúng hạn', late: 'Nộp muộn', todo: 'Chưa làm', overdue: 'Quá hạn chưa làm', nojoin: 'Chưa vào lớp trên web' };
-    var rows = [['Học sinh', 'Email', 'Trạng thái', 'Điểm Kiểm tra cuối', 'Ngày làm']];
+    var rows = [['Học sinh', 'Email', 'Trạng thái', 'Số phần đã làm', 'Số câu đúng', 'Ngày làm']];
     assignRows(a).forEach(function (r) {
-      rows.push([r.name, r.s ? r.s.email : '', STATUS[r.status], r.d ? r.d.correct + '/' + r.d.total : '', r.d ? vnDate(r.d.firstMs) : '']);
+      var doneAll = r.status === 'done' || r.status === 'late';
+      rows.push([r.name, r.s ? r.s.email : '', STATUS[r.status], r.doneParts + '/' + r.need, doneAll && r.total ? r.correct + '/' + r.total : '', doneAll ? vnDate(r.doneMs) : '']);
     });
-    var text = '﻿' + lessonLabel(a.lessonUrl) + ' · hạn ' + vnDate(a.dueMs) + '\n' + rows.map(function (r) {
+    var text = '﻿' + lessonLabel(a.lessonUrl) + ' · ' + partsText(a) + ' · hạn ' + vnDate(a.dueMs) + '\n' + rows.map(function (r) {
       return r.map(function (v) { v = String(v == null ? '' : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',');
     }).join('\n');
     var link = document.createElement('a');

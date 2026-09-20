@@ -313,3 +313,5 @@
 .tc-paste textarea { width: 100%; margin: var(--space-2) 0; padding: 10px 12px; border: 1px solid var(--color-gray-200, #e6e2da); border-radius: var(--radius-md); font: inherit; font-size: 0.92rem; resize: vertical; }
 .tc-paste[open] summary { margin-bottom: var(--space-2); }
 .tc-session { display: inline-block; font-size: 0.78rem; font-weight: 800; color: #fff; background: var(--color-red-600); border-radius: var(--radius-pill); padding: 1px 9px; margin-right: 4px; vertical-align: middle; }
+.tc-parts { margin-top: var(--space-2); padding-top: var(--space-2); border-top: 1px dashed var(--color-gray-100); }
+.tc-check input[type="radio"] { width: auto; min-height: 0; accent-color: var(--color-red-600); }

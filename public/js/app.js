@@ -13947,11 +13947,35 @@
       .catch(function () {});
   }
   // Trang thai hien thi: neu may nay da co diem Kiem tra cuoi ma may chu chua kip ghi thi coi nhu da lam
+  // Ten cac phan cua bai (giong khoa diem trong lessonScores)
+  var ASSIGN_PART_LABEL = {
+    warmup: 'Khởi động', vocab: 'Từ vựng', flash: 'Thẻ nhớ', grammar: 'Ngữ pháp', dialog: 'Hội thoại',
+    roleplay: 'Nhập vai', listen: 'Nghe', game: 'Luyện tập', speak: 'Nói', translate: 'Dịch',
+    workbook: 'Sách bài tập', page: 'Trang bài', final: 'Kiểm tra cuối'
+  };
+  function assignParts(a) { return a.parts && a.parts.length ? a.parts : ['final']; }
+  // Phan nay da lam chua — doc diem luu tren may (may chu cap nhat sau khi dong bo)
+  function partDoneLocal(scores, part) {
+    var v = null;
+    if (part === 'workbook') {
+      Object.keys(scores).forEach(function (k) { if (k.indexOf('workbook') === 0) v = v || scores[k]; });
+    } else if (part === 'page') {
+      Object.keys(scores).forEach(function (k) { if (k.indexOf('page-') === 0) v = v || scores[k]; });
+    } else {
+      v = scores[part];
+    }
+    if (!v) return false;
+    if (v.done) return true;
+    if (typeof v.total === 'number') return v.total > 0;
+    return Object.keys(v).length > 0; // vd game: { match: {...} }
+  }
   function assignStatus(a) {
     if (a.status === 'done' || a.status === 'late') return a;
-    var f = (getLessonScores({ fullPageUrl: a.lessonUrl }) || {}).final;
-    if (f && f.total > 0) return Object.assign({}, a, { status: Date.now() <= a.dueMs ? 'done' : 'late', correct: f.correct, total: f.total });
-    return a;
+    var scores = getLessonScores({ fullPageUrl: a.lessonUrl }) || {};
+    var need = assignParts(a);
+    var have = need.filter(function (p) { return partDoneLocal(scores, p); });
+    if (have.length < need.length) return Object.assign({}, a, { doneParts: Math.max(a.doneParts || 0, have.length), need: need.length });
+    return Object.assign({}, a, { status: Date.now() <= a.dueMs ? 'done' : 'late', doneParts: need.length, need: need.length });
   }
   function dueText(a) {
     var d = new Date(a.dueMs).toLocaleDateString('vi-VN', { weekday: 'short', day: '2-digit', month: '2-digit', timeZone: 'Asia/Ho_Chi_Minh' });
@@ -13964,6 +13988,21 @@
     if (days === 1) return 'Hạn ngày mai (' + d + ')';
     return 'Hạn ' + d + ' · còn ' + days + ' ngày';
   }
+  // "Cần làm: Từ vựng · Luyện tập" — phan nao xong thi co dau tich
+  function partsHtml(a, isDone) {
+    var scores = getLessonScores({ fullPageUrl: a.lessonUrl }) || {};
+    var need = assignParts(a);
+    if (need.length === 1 && need[0] === 'final') {
+      return isDone ? '' : '<div class="assign-parts">Cần làm: <b>cả bài</b> — xong khi làm <b>Bước 7 · Kiểm tra cuối bài</b></div>';
+    }
+    var done = need.filter(function (p) { return partDoneLocal(scores, p); }).length;
+    return '<div class="assign-parts">Cần làm <b>' + done + '/' + need.length + ' phần</b>: ' +
+      need.map(function (p) {
+        var ok = partDoneLocal(scores, p);
+        return '<span class="assign-part' + (ok ? ' is-ok' : '') + '">' + (ok ? '✓ ' : '') + assignEsc(ASSIGN_PART_LABEL[p] || p) + '</span>';
+      }).join('') + '</div>';
+  }
+
   var ASSIGN_CHIP = {
     todo: ['is-todo', '⏳ Chưa làm'],
     overdue: ['is-overdue', '⚠️ Quá hạn'],
@@ -14122,7 +14161,8 @@
             '<span class="assign-due">' + dueText(a) + '</span></div>' +
           '<div class="assign-title">' + (info ? assignEsc(levelLabel(info.levelId)) + ' · <b>Bài ' + info.lesson.number + ':</b> ' + assignEsc(info.lesson.title) : assignEsc(a.lessonUrl)) + '</div>' +
           (a.note ? '<div class="assign-note">📝 ' + assignEsc(a.note) + '</div>' : '') +
-          (isDone && a.total ? '<div class="assign-score">Kiểm tra cuối: <b>' + a.correct + '/' + a.total + '</b></div>' : '') +
+          partsHtml(a, isDone) +
+          (isDone && a.total ? '<div class="assign-score">Kết quả: <b>' + a.correct + '/' + a.total + '</b> câu đúng</div>' : '') +
         '</div>' +
         (info ? '<button type="button" class="btn ' + (isDone ? 'btn-ghost' : 'btn-primary') + ' assign-go" data-url="' + assignEsc(a.lessonUrl) + '">' + (isDone ? 'Xem lại' : 'Làm bài →') + '</button>' : '') +
       '</li>';
@@ -14133,7 +14173,7 @@
         (assignShowDone ? '<ol class="assign-list is-done">' + finished.map(item).join('') + '</ol>' : '') : '');
     box.innerHTML =
       '<div class="assign-head"><div><h2>📌 Lớp ' + assignEsc(assignState.class.name) + '</h2>' +
-        '<p>' + (open.length ? 'Còn <b>' + open.length + '</b> bài chưa làm. Bài được tính là xong khi em làm <b>Bước 7 · Kiểm tra cuối bài</b>.'
+        '<p>' + (open.length ? 'Còn <b>' + open.length + '</b> bài chưa làm. Mỗi bài ghi rõ em cần làm những phần nào.'
           : (list.length ? 'Em đã làm hết bài được giao. Giỏi lắm! 🎉' : 'Thầy cô chưa giao bài nào.')) + '</p></div>' +
         '<button type="button" class="assign-switch" id="assignSwitch">Đổi lớp</button></div>' +
       (assignJoinOpen ? joinFormHtml(true) : '') +

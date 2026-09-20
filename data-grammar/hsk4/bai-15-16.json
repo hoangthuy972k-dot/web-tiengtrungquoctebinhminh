@@ -1,0 +1,250 @@
+{
+ "/lessons/hsk4-bai-15.html": {
+  "points": [
+   {
+    "title": "「想起来」 — nhớ ra",
+    "errors": [
+     { "wrong": "我想出来他的名字了。", "why": "“nhớ ra” là 想起来, không phải 想出来.", "right": "我想起来他的名字了。" },
+     { "wrong": "我想起来一件事来。", "why": "tân ngữ đặt GIỮA 起 và 来, không lặp 来.", "right": "我想起一件事来。" },
+     { "wrong": "我不想起来他的名字。", "why": "phủ định dạng bổ ngữ khả năng là 想不起来.", "right": "我想不起来他的名字。" }
+    ],
+    "items": [
+     { "context": "“Tôi nhớ ra tên anh ấy rồi.”", "pre": "我", "blank": "想起来他的名字了", "post": "。", "options": ["想起来他的名字了", "想出来他的名字了", "想起来了他的名字来"], "answer": 0, "explanation": "想起来 = nhớ ra." },
+     { "context": "Tân ngữ đặt GIỮA 起 và 来.", "pre": "我", "blank": "想起一件事来", "post": "。", "options": ["想起一件事来", "想起来一件事来", "想一件事起来"], "answer": 0, "explanation": "想起 + tân ngữ + 来." },
+     { "context": "Phủ định: “Tôi không nhớ ra được.”", "pre": "我", "blank": "想不起来", "post": "了。", "options": ["想不起来", "不想起来", "想起不来"], "answer": 0, "explanation": "Bổ ngữ khả năng phủ định: 想不起来." },
+     { "context": "起来 nghĩa gốc: từ dưới lên trên.", "pre": "他", "blank": "站起来", "post": "了。", "options": ["站起来", "起来站", "站起了来"], "answer": 0, "explanation": "站起来 = đứng dậy." },
+     { "context": "“Nhìn thấy tấm ảnh, tôi nhớ lại thời thơ ấu.”", "pre": "看到照片，我", "blank": "想起了小时候", "post": "。", "options": ["想起了小时候", "想出了小时候", "想小时候起了"], "answer": 0, "explanation": "想起 + tân ngữ." },
+     { "context": "Câu hỏi: “Bạn nhớ ra chưa?”", "pre": "你", "blank": "想起来了吗", "post": "？", "options": ["想起来了吗", "想起来吗了", "想不起来了吗不"], "answer": 0, "explanation": "想起来了吗？" },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我想起来他的名字了。", "isCorrect": true, "explanation": "想起来 = nhớ ra — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我想出来他的名字了。", "isCorrect": false, "correctVersion": "我想起来他的名字了。", "explanation": "Nhớ ra là 想起来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我不想起来他的名字。", "isCorrect": false, "correctVersion": "我想不起来他的名字。", "explanation": "Phủ định là 想不起来." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi nhớ ra tên anh ấy rồi.”", "words": ["我", "想", "起来", "他", "的", "名字", "了", "。"], "answer": "我想起来他的名字了。", "explanation": "想起来 + tân ngữ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi chợt nhớ ra một chuyện.”", "words": ["我", "想", "起", "一", "件", "事", "来", "。"], "answer": "我想起一件事来。", "explanation": "想起……来." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không nhớ ra được nữa.”", "words": ["我", "想", "不", "起来", "了", "。"], "answer": "我想不起来了。", "explanation": "想不起来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 想起来.", "promptLang": "vi", "prompt": "Tôi nhớ ra tên anh ấy rồi.", "answer": "我想起来他的名字了。", "answerPy": "Wǒ xiǎng qǐlái tā de míngzi le.", "explanation": "想起来 = nhớ ra." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 想不起来.", "promptLang": "vi", "prompt": "Tôi không nhớ ra được nữa.", "answer": "我想不起来了。", "answerPy": "Wǒ xiǎng bù qǐlái le.", "explanation": "Phủ định bổ ngữ khả năng." }
+    ]
+   },
+   {
+    "title": "「弄」 — làm (khẩu ngữ)",
+    "errors": [
+     { "wrong": "我弄了电脑坏。", "why": "bổ ngữ kết quả đứng NGAY sau 弄: 弄坏.", "right": "我把电脑弄坏了。" },
+     { "wrong": "他弄我很生气。", "why": "“khiến cho” dùng 弄得 + kết quả.", "right": "他弄得我很生气。" },
+     { "wrong": "你弄这个问题清楚吗？", "why": "弄清楚 đi liền nhau; tân ngữ dùng 把 đưa lên trước.", "right": "你把这个问题弄清楚了吗？" }
+    ],
+    "items": [
+     { "context": "弄 + bổ ngữ kết quả 坏.", "pre": "我", "blank": "把电脑弄坏了", "post": "。", "options": ["把电脑弄坏了", "弄了电脑坏", "弄坏把电脑了"], "answer": 0, "explanation": "把 + O + 弄 + bổ ngữ." },
+     { "context": "弄得 + kết quả (khiến cho).", "pre": "他", "blank": "弄得我很生气", "post": "。", "options": ["弄得我很生气", "弄我很生气", "弄得很生气我"], "answer": 0, "explanation": "弄得 + đối tượng + trạng thái." },
+     { "context": "弄清楚 = làm rõ.", "pre": "你", "blank": "把这个问题弄清楚了吗", "post": "？", "options": ["把这个问题弄清楚了吗", "弄这个问题清楚吗", "弄清楚把这个问题吗"], "answer": 0, "explanation": "把……弄清楚." },
+     { "context": "弄好 = làm xong/sửa xong.", "pre": "电脑", "blank": "弄好了", "post": "。", "options": ["弄好了", "好弄了", "弄了好"], "answer": 0, "explanation": "弄好 = làm xong." },
+     { "context": "“Đừng làm bẩn quần áo.”", "pre": "别", "blank": "把衣服弄脏了", "post": "。", "options": ["把衣服弄脏了", "弄脏把衣服了", "弄衣服脏了"], "answer": 0, "explanation": "把 + O + 弄脏." },
+     { "context": "弄 thay cho động từ cụ thể trong KHẨU NGỮ.", "pre": "你去", "blank": "弄点儿吃的", "post": "吧。", "options": ["弄点儿吃的", "弄吃的点儿", "点儿弄吃的"], "answer": 0, "explanation": "弄 = kiếm/chuẩn bị." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我把电脑弄坏了。", "isCorrect": true, "explanation": "把 + O + 弄坏 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他弄我很生气。", "isCorrect": false, "correctVersion": "他弄得我很生气。", "explanation": "“Khiến cho” dùng 弄得." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你弄这个问题清楚吗？", "isCorrect": false, "correctVersion": "你把这个问题弄清楚了吗？", "explanation": "弄清楚 đi liền, tân ngữ dùng 把." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi làm hỏng máy tính rồi.”", "words": ["我", "把", "电脑", "弄", "坏", "了", "。"], "answer": "我把电脑弄坏了。", "explanation": "把电脑弄坏了." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy làm tôi rất tức giận.”", "words": ["他", "弄", "得", "我", "很", "生气", "。"], "answer": "他弄得我很生气。", "explanation": "弄得我很生气." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đã làm rõ vấn đề này chưa?”", "words": ["你", "把", "这个", "问题", "弄", "清楚", "了", "吗", "？"], "answer": "你把这个问题弄清楚了吗？", "explanation": "把……弄清楚." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 弄.", "promptLang": "vi", "prompt": "Tôi làm hỏng máy tính rồi.", "answer": "我把电脑弄坏了。", "answerPy": "Wǒ bǎ diànnǎo nòng huài le.", "explanation": "把 + O + 弄坏." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 弄得.", "promptLang": "vi", "prompt": "Anh ấy làm tôi rất tức giận.", "answer": "他弄得我很生气。", "answerPy": "Tā nòng de wǒ hěn shēngqì.", "explanation": "弄得 + kết quả." }
+    ]
+   },
+   {
+    "title": "「千万」 so sánh với 「一定」",
+    "errors": [
+     { "wrong": "你千万要来。", "why": "千万 chủ yếu dùng trong câu PHỦ ĐỊNH (千万别/不要); khẳng định dùng 一定.", "right": "你一定要来。" },
+     { "wrong": "你一定别忘了。", "why": "khuyên răn phủ định mạnh thì dùng 千万别.", "right": "你千万别忘了。" },
+     { "wrong": "他千万会来。", "why": "phán đoán chắc chắn dùng 一定.", "right": "他一定会来。" }
+    ],
+    "items": [
+     { "context": "Khuyên răn PHỦ ĐỊNH mạnh → 千万.", "pre": "你", "blank": "千万别忘了", "post": "。", "options": ["千万别忘了", "一定别忘了", "千万忘了别"], "answer": 0, "explanation": "千万 + 别/不要." },
+     { "context": "Yêu cầu KHẲNG ĐỊNH → 一定.", "pre": "你", "blank": "一定要来", "post": "。", "options": ["一定要来", "千万要来", "千万来要"], "answer": 0, "explanation": "一定 + 要/能/会." },
+     { "context": "Phán đoán chắc chắn → 一定.", "pre": "他", "blank": "一定会来", "post": "。", "options": ["一定会来", "千万会来", "千万一定会来"], "answer": 0, "explanation": "一定会 = chắc chắn sẽ." },
+     { "context": "“Nhất định đừng nói cho anh ấy biết.”", "pre": "", "blank": "千万不要告诉他", "post": "。", "options": ["千万不要告诉他", "一定不要告诉他吗", "千万告诉他不要"], "answer": 0, "explanation": "千万不要 + động từ." },
+     { "context": "不一定 = không nhất thiết.", "pre": "他", "blank": "不一定来", "post": "。", "options": ["不一定来", "不千万来", "千万不来"], "answer": 0, "explanation": "不一定 = chưa chắc." },
+     { "context": "一定 làm tính từ: 一定的 + danh từ.", "pre": "这有", "blank": "一定的道理", "post": "。", "options": ["一定的道理", "千万的道理", "一定道理的"], "answer": 0, "explanation": "一定的 = nhất định, nào đó." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你千万别忘了。", "isCorrect": true, "explanation": "千万 + 别 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你千万要来。", "isCorrect": false, "correctVersion": "你一定要来。", "explanation": "Khẳng định dùng 一定." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他千万会来。", "isCorrect": false, "correctVersion": "他一定会来。", "explanation": "Phán đoán dùng 一定." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn nhất định đừng quên nhé.”", "words": ["你", "千万", "别", "忘", "了", "。"], "answer": "你千万别忘了。", "explanation": "千万别忘了." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn nhất định phải đến.”", "words": ["你", "一定", "要", "来", "。"], "answer": "你一定要来。", "explanation": "一定要来." },
+     { "type": "sort", "context": "Sắp xếp: “Nhất định đừng nói cho anh ấy biết.”", "words": ["千万", "不要", "告诉", "他", "。"], "answer": "千万不要告诉他。", "explanation": "千万不要 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 千万 hay 一定.", "promptLang": "vi", "prompt": "Bạn nhất định đừng quên nhé.", "answer": "你千万别忘了。", "answerPy": "Nǐ qiānwàn bié wàng le.", "explanation": "Phủ định mạnh → 千万别." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 千万 hay 一定.", "promptLang": "vi", "prompt": "Anh ấy chắc chắn sẽ đến.", "answer": "他一定会来。", "answerPy": "Tā yídìng huì lái.", "explanation": "Phán đoán → 一定." }
+    ]
+   },
+   {
+    "title": "「来」 — để tôi làm / dùng A để B",
+    "errors": [
+     { "wrong": "我帮来你。", "why": "来 đứng TRƯỚC động từ chính.", "right": "我来帮你。" },
+     { "wrong": "来我帮你。", "why": "来 đứng sau chủ ngữ.", "right": "我来帮你。" },
+     { "wrong": "用这个办法解决来问题。", "why": "来 đứng ngay trước động từ mục đích: 用……来 + động từ.", "right": "用这个办法来解决问题。" }
+    ],
+    "items": [
+     { "context": "“Để tôi giúp bạn.”", "pre": "", "blank": "我来帮你", "post": "。", "options": ["我来帮你", "来我帮你", "我帮来你"], "answer": 0, "explanation": "Chủ ngữ + 来 + động từ." },
+     { "context": "“Để anh ấy phụ trách.”", "pre": "让", "blank": "他来负责", "post": "。", "options": ["他来负责", "来他负责", "他负责来"], "answer": 0, "explanation": "让 + người + 来 + động từ." },
+     { "context": "用 A 来 B.", "pre": "", "blank": "用这个办法来解决问题", "post": "。", "options": ["用这个办法来解决问题", "用这个办法解决来问题", "来用这个办法解决问题"], "answer": 0, "explanation": "用 + cách thức + 来 + động từ." },
+     { "context": "通过 A 来 B.", "pre": "", "blank": "通过练习来提高水平", "post": "。", "options": ["通过练习来提高水平", "通过练习提高来水平", "来通过练习提高水平"], "answer": 0, "explanation": "通过 + cách thức + 来 + động từ." },
+     { "context": "Bỏ 来 nghĩa không đổi.", "pre": "", "blank": "我帮你", "post": "。", "options": ["我帮你", "帮来我你", "来帮你我"], "answer": 0, "explanation": "我来帮你 = 我帮你." },
+     { "context": "“Để tôi giới thiệu một chút.”", "pre": "", "blank": "我来介绍一下", "post": "。", "options": ["我来介绍一下", "来我介绍一下", "我介绍来一下"], "answer": 0, "explanation": "我来 + động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我来帮你。", "isCorrect": true, "explanation": "Chủ ngữ + 来 + động từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我帮来你。", "isCorrect": false, "correctVersion": "我来帮你。", "explanation": "来 đứng trước động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "用这个办法来解决问题。", "isCorrect": true, "explanation": "用 A 来 B — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Để tôi giúp bạn.”", "words": ["我", "来", "帮", "你", "。"], "answer": "我来帮你。", "explanation": "我来帮你." },
+     { "type": "sort", "context": "Sắp xếp: “Để anh ấy phụ trách việc này.”", "words": ["让", "他", "来", "负责", "这", "件", "事", "。"], "answer": "让他来负责这件事。", "explanation": "让他来负责." },
+     { "type": "sort", "context": "Sắp xếp: “Dùng cách này để giải quyết vấn đề.”", "words": ["用", "这个", "办法", "来", "解决", "问题", "。"], "answer": "用这个办法来解决问题。", "explanation": "用……来……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 来.", "promptLang": "vi", "prompt": "Để tôi giúp bạn.", "answer": "我来帮你。", "answerPy": "Wǒ lái bāng nǐ.", "explanation": "我来 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 用……来…….", "promptLang": "vi", "prompt": "Dùng cách này để giải quyết vấn đề.", "answer": "用这个办法来解决问题。", "answerPy": "Yòng zhège bànfǎ lái jiějué wèntí.", "explanation": "用 A 来 B." }
+    ]
+   },
+   {
+    "title": "「左右」 — khoảng (đứng sau số lượng)",
+    "errors": [
+     { "wrong": "左右三天", "why": "左右 đứng SAU cụm số lượng.", "right": "三天左右" },
+     { "wrong": "三天多左右", "why": "不 dùng 多 và 左右 cùng lúc.", "right": "三天左右" },
+     { "wrong": "大约左右三天", "why": "大约 đứng trước số, 左右 đứng sau: 大约三天左右.", "right": "大约三天左右" }
+    ],
+    "items": [
+     { "context": "左右 đứng SAU cụm số lượng.", "pre": "我在那儿住了", "blank": "三天左右", "post": "。", "options": ["三天左右", "左右三天", "三左右天"], "answer": 0, "explanation": "Số + lượng từ + 左右." },
+     { "context": "“Cậu bé khoảng bảy tuổi.”", "pre": "那个孩子", "blank": "七岁左右", "post": "。", "options": ["七岁左右", "左右七岁", "七左右岁"], "answer": 0, "explanation": "七岁左右." },
+     { "context": "大概 đứng TRƯỚC số, 左右 đứng SAU.", "pre": "", "blank": "大概三天左右", "post": "", "options": ["大概三天左右", "大概左右三天", "三天大概左右"], "answer": 0, "explanation": "Có thể kết hợp 大概……左右." },
+     { "context": "Không dùng 多 cùng 左右.", "pre": "这儿离学校", "blank": "五百米左右", "post": "。", "options": ["五百米左右", "五百多米左右", "左右五百米"], "answer": 0, "explanation": "Chọn 多 hoặc 左右." },
+     { "context": "“Khoảng hai giờ chiều.”", "pre": "", "blank": "下午两点左右", "post": "", "options": ["下午两点左右", "左右下午两点", "下午左右两点"], "answer": 0, "explanation": "Thời điểm + 左右." },
+     { "context": "“Khoảng ba mươi người tham gia.”", "pre": "", "blank": "三十个人左右", "post": "参加了。", "options": ["三十个人左右", "左右三十个人", "三十左右个人"], "answer": 0, "explanation": "三十个人左右." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我在那儿住了三天左右。", "isCorrect": true, "explanation": "左右 sau số lượng — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我在那儿住了左右三天。", "isCorrect": false, "correctVersion": "我在那儿住了三天左右。", "explanation": "左右 đứng sau." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这儿离学校五百多米左右。", "isCorrect": false, "correctVersion": "这儿离学校五百米左右。", "explanation": "Không dùng 多 và 左右 cùng lúc." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ở đó khoảng ba ngày.”", "words": ["我", "在", "那儿", "住", "了", "三", "天", "左右", "。"], "answer": "我在那儿住了三天左右。", "explanation": "三天左右." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu bé đó khoảng bảy tuổi.”", "words": ["那个", "孩子", "七", "岁", "左右", "。"], "answer": "那个孩子七岁左右。", "explanation": "七岁左右." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta gặp nhau khoảng hai giờ chiều nhé.”", "words": ["我们", "下午", "两点", "左右", "见", "吧", "。"], "answer": "我们下午两点左右见吧。", "explanation": "两点左右." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 左右.", "promptLang": "vi", "prompt": "Tôi ở đó khoảng ba ngày.", "answer": "我在那儿住了三天左右。", "answerPy": "Wǒ zài nàr zhù le sān tiān zuǒyòu.", "explanation": "三天左右." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 左右.", "promptLang": "vi", "prompt": "Cậu bé đó khoảng bảy tuổi.", "answer": "那个孩子七岁左右。", "answerPy": "Nàge háizi qī suì zuǒyòu.", "explanation": "七岁左右." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk4-bai-16.html": {
+  "points": [
+   {
+    "title": "「可」 — nhấn mạnh (khẩu ngữ)",
+    "errors": [
+     { "wrong": "这可是很个大问题。", "why": "可是 + cụm danh từ; không chen 很 vào giữa lượng từ.", "right": "这可是个大问题。" },
+     { "wrong": "可这怎么办？", "why": "可 đứng SAU chủ ngữ 这.", "right": "这可怎么办？" },
+     { "wrong": "可节约不少钱。", "why": "可 + động từ nhấn mạnh thường kèm 了 ở cuối.", "right": "可节约了不少钱。" }
+    ],
+    "items": [
+     { "context": "可 + 是 + danh từ.", "pre": "这", "blank": "可是个大问题", "post": "。", "options": ["可是个大问题", "可是很个大问题", "是可个大问题"], "answer": 0, "explanation": "可是 nhấn mạnh: đúng là." },
+     { "context": "可 + động từ + 了.", "pre": "这样做", "blank": "可节约了不少钱", "post": "。", "options": ["可节约了不少钱", "可节约不少钱", "节约可了不少钱"], "answer": 0, "explanation": "可 + động từ + 了." },
+     { "context": "可 trong câu hỏi, tăng ngữ khí.", "pre": "这", "blank": "可怎么办", "post": "？", "options": ["可怎么办", "怎么可办", "可怎么办吗"], "answer": 0, "explanation": "这可怎么办？= biết làm sao đây?" },
+     { "context": "“Hôm nay đúng là lạnh thật.”", "pre": "今天", "blank": "可真冷", "post": "。", "options": ["可真冷", "真可冷", "可冷真"], "answer": 0, "explanation": "可真 + tính từ." },
+     { "context": "可 nhấn mạnh phủ định.", "pre": "我", "blank": "可没说过这样的话", "post": "。", "options": ["可没说过这样的话", "没可说过这样的话", "可说过没这样的话"], "answer": 0, "explanation": "可 + 没/不 + động từ." },
+     { "context": "“Cái này đúng là không dễ.”", "pre": "这", "blank": "可不容易", "post": "。", "options": ["可不容易", "不可容易", "可容易不"], "answer": 0, "explanation": "可不 + tính từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这可是个大问题。", "isCorrect": true, "explanation": "可是 + cụm danh từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "可这怎么办？", "isCorrect": false, "correctVersion": "这可怎么办？", "explanation": "可 đứng sau chủ ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "今天可真冷。", "isCorrect": true, "explanation": "可真 + tính từ — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Đây đúng là một vấn đề lớn.”", "words": ["这", "可", "是", "个", "大", "问题", "。"], "answer": "这可是个大问题。", "explanation": "可是个大问题." },
+     { "type": "sort", "context": "Sắp xếp: “Thế này biết làm sao đây?”", "words": ["这", "可", "怎么", "办", "？"], "answer": "这可怎么办？", "explanation": "这可怎么办？" },
+     { "type": "sort", "context": "Sắp xếp: “Làm vậy tiết kiệm được không ít tiền đấy.”", "words": ["这样", "做", "可", "节约", "了", "不少", "钱", "。"], "answer": "这样做可节约了不少钱。", "explanation": "可节约了……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 可 nhấn mạnh.", "promptLang": "vi", "prompt": "Đây đúng là một vấn đề lớn.", "answer": "这可是个大问题。", "answerPy": "Zhè kě shì ge dà wèntí.", "explanation": "可是 + cụm danh từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 可.", "promptLang": "vi", "prompt": "Thế này biết làm sao đây?", "answer": "这可怎么办？", "answerPy": "Zhè kě zěnme bàn?", "explanation": "这可怎么办？" }
+    ]
+   },
+   {
+    "title": "「恐怕」 so sánh với 「怕」",
+    "errors": [
+     { "wrong": "我恐怕狗。", "why": "“sợ (cái gì)” là 怕, không phải 恐怕.", "right": "我怕狗。" },
+     { "wrong": "他怕不会来了。（phỏng đoán）", "why": "phỏng đoán điều không hay thì dùng 恐怕.", "right": "他恐怕不会来了。" },
+     { "wrong": "恐怕的他不来。", "why": "恐怕 là phó từ, không thêm 的.", "right": "恐怕他不来。" }
+    ],
+    "items": [
+     { "context": "PHỎNG ĐOÁN điều không hay → 恐怕.", "pre": "他", "blank": "恐怕不会来了", "post": "。", "options": ["恐怕不会来了", "怕不会来了", "恐怕的不会来了"], "answer": 0, "explanation": "恐怕 = e rằng." },
+     { "context": "“Sợ” một thứ cụ thể → 怕.", "pre": "我", "blank": "怕狗", "post": "。", "options": ["怕狗", "恐怕狗", "恐怕的狗"], "answer": 0, "explanation": "怕 + danh từ." },
+     { "context": "恐怕 đứng được TRƯỚC chủ ngữ.", "pre": "", "blank": "恐怕他不来了", "post": "。", "options": ["恐怕他不来了", "怕他不来了的", "恐怕的他不来了"], "answer": 0, "explanation": "恐怕 + mệnh đề." },
+     { "context": "“Tôi sợ đi muộn.” (sợ làm gì)", "pre": "我", "blank": "怕迟到", "post": "。", "options": ["怕迟到", "恐怕迟到", "恐怕的迟到"], "answer": 0, "explanation": "怕 + động từ (nỗi sợ chủ quan)." },
+     { "context": "“E là ngày mai trời mưa.”", "pre": "明天", "blank": "恐怕要下雨", "post": "。", "options": ["恐怕要下雨", "怕要下雨", "恐怕的要下雨"], "answer": 0, "explanation": "恐怕 phỏng đoán." },
+     { "context": "恐怕 ≈ 也许/大概 nhưng thiên về điều KHÔNG HAY.", "pre": "这件事", "blank": "恐怕很难办", "post": "。", "options": ["恐怕很难办", "怕很难办", "恐怕的很难办"], "answer": 0, "explanation": "恐怕 + kết quả không mong muốn." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他恐怕不会来了。", "isCorrect": true, "explanation": "恐怕 phỏng đoán — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我恐怕狗。", "isCorrect": false, "correctVersion": "我怕狗。", "explanation": "Sợ cái gì thì dùng 怕." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "恐怕的他不来。", "isCorrect": false, "correctVersion": "恐怕他不来。", "explanation": "恐怕 không thêm 的." },
+     { "type": "sort", "context": "Sắp xếp: “E là anh ấy không đến nữa rồi.”", "words": ["他", "恐怕", "不", "会", "来", "了", "。"], "answer": "他恐怕不会来了。", "explanation": "恐怕不会来了." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi sợ chó.”", "words": ["我", "怕", "狗", "。"], "answer": "我怕狗。", "explanation": "怕 + danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “E là ngày mai trời mưa.”", "words": ["明天", "恐怕", "要", "下雨", "。"], "answer": "明天恐怕要下雨。", "explanation": "恐怕要下雨." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 恐怕 hay 怕.", "promptLang": "vi", "prompt": "E là anh ấy không đến nữa rồi.", "answer": "他恐怕不会来了。", "answerPy": "Tā kǒngpà bú huì lái le.", "explanation": "Phỏng đoán → 恐怕." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 恐怕 hay 怕.", "promptLang": "vi", "prompt": "Tôi sợ chó.", "answer": "我怕狗。", "answerPy": "Wǒ pà gǒu.", "explanation": "Sợ cái gì → 怕." }
+    ]
+   },
+   {
+    "title": "「到底」 — rốt cuộc",
+    "errors": [
+     { "wrong": "你到底去吗？", "why": "到底 KHÔNG dùng trong câu hỏi có 吗.", "right": "你到底去不去？" },
+     { "wrong": "谁到底来了？", "why": "chủ ngữ là đại từ nghi vấn thì 到底 đứng TRƯỚC chủ ngữ.", "right": "到底谁来了？" },
+     { "wrong": "我到底知道了。", "why": "到底 (phó từ) dùng trong câu HỎI truy vấn; câu kể thì dùng 终于.", "right": "我终于知道了。" }
+    ],
+    "items": [
+     { "context": "到底 KHÔNG đi với 吗.", "pre": "你", "blank": "到底去不去", "post": "？", "options": ["到底去不去", "到底去吗", "去到底吗"], "answer": 0, "explanation": "到底 + dạng chính-phản." },
+     { "context": "Chủ ngữ là ĐẠI TỪ NGHI VẤN → 到底 đứng trước.", "pre": "", "blank": "到底谁来了", "post": "？", "options": ["到底谁来了", "谁到底来了", "谁来了到底"], "answer": 0, "explanation": "到底 + 谁/什么……？" },
+     { "context": "“Rốt cuộc bạn muốn làm gì?”", "pre": "你", "blank": "到底想做什么", "post": "？", "options": ["到底想做什么", "到底想做什么吗", "想做到底什么"], "answer": 0, "explanation": "Chủ ngữ + 到底 + ……什么？" },
+     { "context": "到底 làm ĐỘNG TỪ: đến cùng.", "pre": "我们要", "blank": "坚持到底", "post": "。", "options": ["坚持到底", "到底坚持", "坚持到底吗"], "answer": 0, "explanation": "动词 + 到底." },
+     { "context": "Câu kể “cuối cùng” thì dùng 终于.", "pre": "我", "blank": "终于明白了", "post": "。", "options": ["终于明白了", "到底明白了", "到底终于明白了"], "answer": 0, "explanation": "到底 (phó từ) dùng để truy hỏi." },
+     { "context": "“Rốt cuộc chuyện này là thế nào?”", "pre": "这件事", "blank": "到底是怎么回事", "post": "？", "options": ["到底是怎么回事", "到底是怎么回事吗", "是怎么回事到底"], "answer": 0, "explanation": "到底 + 是怎么回事？" },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你到底去不去？", "isCorrect": true, "explanation": "到底 + chính-phản — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你到底去吗？", "isCorrect": false, "correctVersion": "你到底去不去？", "explanation": "到底 không đi với 吗." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "谁到底来了？", "isCorrect": false, "correctVersion": "到底谁来了？", "explanation": "Đại từ nghi vấn làm chủ ngữ thì 到底 đứng trước." },
+     { "type": "sort", "context": "Sắp xếp: “Rốt cuộc bạn có đi hay không?”", "words": ["你", "到底", "去", "不", "去", "？"], "answer": "你到底去不去？", "explanation": "到底去不去？" },
+     { "type": "sort", "context": "Sắp xếp: “Rốt cuộc ai đã đến?”", "words": ["到底", "谁", "来", "了", "？"], "answer": "到底谁来了？", "explanation": "到底谁……？" },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta phải kiên trì đến cùng.”", "words": ["我们", "要", "坚持", "到底", "。"], "answer": "我们要坚持到底。", "explanation": "坚持到底." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 到底.", "promptLang": "vi", "prompt": "Rốt cuộc bạn có đi hay không?", "answer": "你到底去不去？", "answerPy": "Nǐ dàodǐ qù bu qù?", "explanation": "到底 + chính-phản." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 到底.", "promptLang": "vi", "prompt": "Rốt cuộc ai đã đến?", "answer": "到底谁来了？", "answerPy": "Dàodǐ shéi lái le?", "explanation": "到底 trước đại từ nghi vấn." }
+    ]
+   },
+   {
+    "title": "「拿……来说」 — lấy … mà nói",
+    "errors": [
+     { "wrong": "拿我说，这个办法不错。", "why": "thiếu 来; cấu trúc là 拿……来说.", "right": "拿我来说，这个办法不错。" },
+     { "wrong": "拿来说我，这个办法不错。", "why": "ví dụ đứng giữa 拿 và 来说.", "right": "拿我来说，这个办法不错。" },
+     { "wrong": "对北京来说，冬天很冷。（đưa ví dụ）", "why": "đưa VÍ DỤ thì dùng 拿……来说; 对……来说 nêu góc nhìn của ai.", "right": "拿北京来说，冬天很冷。" }
+    ],
+    "items": [
+     { "context": "Đưa VÍ DỤ → 拿……来说.", "pre": "", "blank": "拿北京来说", "post": "，冬天很冷。", "options": ["拿北京来说", "对北京来说", "拿来说北京"], "answer": 0, "explanation": "拿 + ví dụ + 来说." },
+     { "context": "Thường có 就 phía trước.", "pre": "", "blank": "就拿我来说吧", "post": "，我每天都学汉语。", "options": ["就拿我来说吧", "拿就我来说吧", "就拿来说我吧"], "answer": 0, "explanation": "就拿……来说吧." },
+     { "context": "Nêu GÓC NHÌN của ai → 对……来说.", "pre": "", "blank": "对我来说", "post": "，这不难。", "options": ["对我来说", "拿我来说", "拿来说我"], "answer": 0, "explanation": "对……来说 (đối với) ≠ 拿……来说 (ví dụ)." },
+     { "context": "“Lấy việc học tiếng Trung mà nói, luyện nghe rất quan trọng.”", "pre": "", "blank": "拿学汉语来说", "post": "，听力很重要。", "options": ["拿学汉语来说", "拿来说学汉语", "拿学汉语说"], "answer": 0, "explanation": "拿 + cụm động từ + 来说." },
+     { "context": "“Lấy lớp chúng tôi mà nói, ai cũng thích thể thao.”", "pre": "", "blank": "拿我们班来说", "post": "，人人都喜欢运动。", "options": ["拿我们班来说", "对我们班来说吧", "拿来说我们班"], "answer": 0, "explanation": "拿我们班来说." },
+     { "context": "“Lấy giá cả mà nói, cái này rẻ hơn.”", "pre": "", "blank": "拿价格来说", "post": "，这个更便宜。", "options": ["拿价格来说", "拿来说价格", "价格拿来说"], "answer": 0, "explanation": "拿价格来说." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "拿北京来说，冬天很冷。", "isCorrect": true, "explanation": "拿……来说 đưa ví dụ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "拿我说，这个办法不错。", "isCorrect": false, "correctVersion": "拿我来说，这个办法不错。", "explanation": "Thiếu 来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "就拿我来说吧，我每天都学汉语。", "isCorrect": true, "explanation": "就拿……来说吧 — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Lấy Bắc Kinh mà nói, mùa đông rất lạnh.”", "words": ["拿", "北京", "来说", "，", "冬天", "很", "冷", "。"], "answer": "拿北京来说，冬天很冷。", "explanation": "拿北京来说." },
+     { "type": "sort", "context": "Sắp xếp: “Cứ lấy tôi mà nói, ngày nào tôi cũng học tiếng Trung.”", "words": ["就", "拿", "我", "来说", "吧", "，", "我", "每天", "都", "学", "汉语", "。"], "answer": "就拿我来说吧，我每天都学汉语。", "explanation": "就拿我来说吧." },
+     { "type": "sort", "context": "Sắp xếp: “Lấy giá cả mà nói, cái này rẻ hơn.”", "words": ["拿", "价格", "来说", "，", "这个", "更", "便宜", "。"], "answer": "拿价格来说，这个更便宜。", "explanation": "拿价格来说." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 拿……来说.", "promptLang": "vi", "prompt": "Lấy Bắc Kinh mà nói, mùa đông rất lạnh.", "answer": "拿北京来说，冬天很冷。", "answerPy": "Ná Běijīng lái shuō, dōngtiān hěn lěng.", "explanation": "拿 + ví dụ + 来说." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 就拿……来说吧.", "promptLang": "vi", "prompt": "Cứ lấy tôi mà nói, ngày nào tôi cũng học tiếng Trung.", "answer": "就拿我来说吧，我每天都学汉语。", "answerPy": "Jiù ná wǒ lái shuō ba, wǒ měi tiān dōu xué Hànyǔ.", "explanation": "就拿……来说吧." }
+    ]
+   },
+   {
+    "title": "「敢」 — dám",
+    "errors": [
+     { "wrong": "我说敢真话。", "why": "敢 là động từ năng nguyện, đứng TRƯỚC động từ.", "right": "我敢说真话。" },
+     { "wrong": "我没敢去。（thói quen/hiện tại）", "why": "phủ định của 敢 thông thường là 不敢.", "right": "我不敢去。" },
+     { "wrong": "你敢不敢去吗？", "why": "không trộn 吗 với dạng chính-phản.", "right": "你敢不敢去？／你敢去吗？" }
+    ],
+    "items": [
+     { "context": "“Tôi dám nói thật.”", "pre": "我", "blank": "敢说真话", "post": "。", "options": ["敢说真话", "说敢真话", "敢的说真话"], "answer": 0, "explanation": "敢 + động từ." },
+     { "context": "Phủ định: “Tôi không dám đi.”", "pre": "我", "blank": "不敢去", "post": "。", "options": ["不敢去", "敢不去", "没敢去了吗"], "answer": 0, "explanation": "不敢 + động từ." },
+     { "context": "Câu hỏi chính-phản.", "pre": "你", "blank": "敢不敢去", "post": "？", "options": ["敢不敢去", "敢不敢去吗", "敢去不敢吗"], "answer": 0, "explanation": "敢不敢 + động từ？" },
+     { "context": "Câu hỏi với 吗.", "pre": "你", "blank": "敢试试吗", "post": "？", "options": ["敢试试吗", "敢不敢试试吗", "试试敢吗"], "answer": 0, "explanation": "敢 + động từ + 吗？" },
+     { "context": "“Cậu ấy không dám đi muộn nữa.”", "pre": "他", "blank": "不敢再迟到了", "post": "。", "options": ["不敢再迟到了", "再不敢迟到了", "不再敢迟到了"], "answer": 0, "explanation": "不敢再 + động từ." },
+     { "context": "“Tôi không dám tin đây là sự thật.”", "pre": "我", "blank": "不敢相信这是真的", "post": "。", "options": ["不敢相信这是真的", "敢不相信这是真的", "相信不敢这是真的"], "answer": 0, "explanation": "不敢相信." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我敢说真话。", "isCorrect": true, "explanation": "敢 + động từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我说敢真话。", "isCorrect": false, "correctVersion": "我敢说真话。", "explanation": "敢 đứng trước động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你敢不敢去吗？", "isCorrect": false, "correctVersion": "你敢不敢去？", "explanation": "Không trộn 吗 với chính-phản." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi dám nói thật.”", "words": ["我", "敢", "说", "真话", "。"], "answer": "我敢说真话。", "explanation": "敢说真话." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có dám thử không?”", "words": ["你", "敢", "不", "敢", "试试", "？"], "answer": "你敢不敢试试？", "explanation": "敢不敢试试？" },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy không dám đi muộn nữa.”", "words": ["他", "不", "敢", "再", "迟到", "了", "。"], "answer": "他不敢再迟到了。", "explanation": "不敢再迟到了." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 敢.", "promptLang": "vi", "prompt": "Tôi dám nói thật.", "answer": "我敢说真话。", "answerPy": "Wǒ gǎn shuō zhēnhuà.", "explanation": "敢 + động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 不敢.", "promptLang": "vi", "prompt": "Cậu ấy không dám đi muộn nữa.", "answer": "他不敢再迟到了。", "answerPy": "Tā bù gǎn zài chídào le.", "explanation": "不敢再 + động từ." }
+    ]
+   }
+  ]
+ }
+}

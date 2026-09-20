@@ -552,6 +552,95 @@
 .lop-guess-py { color: var(--color-gray-600); font-size: clamp(1.1rem, 2vw, 1.7rem); }
 .lop-guess-vn { color: var(--color-gray-700); font-size: clamp(1rem, 1.6vw, 1.4rem); margin-top: 4px; }
 
+/* ---------- Lat o doan chu ---------- */
+.lop-tiles-wrap {
+  position: relative;
+  align-self: center;
+  width: clamp(280px, 42vh, 440px);
+  height: clamp(280px, 42vh, 440px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: #fff;
+}
+.lop-tiles-pic {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font-size: clamp(7rem, 26vh, 13rem);
+  line-height: 1;
+  font-family: 'Noto Serif SC', serif;
+  color: var(--color-gray-900);
+}
+.lop-tiles-grid {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 3px;
+}
+.lop-tile {
+  border: none;
+  background: var(--color-red-600);
+  color: #fff;
+  font-size: clamp(1.6rem, 4vh, 2.6rem);
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .25s;
+}
+.lop-tile:hover { background: var(--color-red-500); }
+.lop-tile.is-open {
+  background: transparent;
+  cursor: default;
+  pointer-events: none;
+  font-size: clamp(1.2rem, 3vh, 2rem);
+  align-self: start;
+  justify-self: end;
+  padding: 4px 6px;
+}
+
+.lop-flash {
+  position: fixed;
+  left: 50%; top: 42%;
+  transform: translate(-50%, -50%);
+  background: var(--color-gold-500);
+  color: #fff;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 700;
+  padding: 18px 34px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-lg);
+  z-index: 70;
+  transition: opacity .5s;
+}
+.lop-flash.out { opacity: 0; }
+
+/* ---------- Ban noi toi doan ---------- */
+.lop-taboo-card {
+  align-self: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 3px solid var(--color-red-500);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(24px, 4vw, 54px) clamp(34px, 7vw, 100px);
+}
+.lop-taboo-zh {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  line-height: 1.15;
+  color: var(--color-red-700);
+}
+.lop-taboo-py { color: var(--color-gray-600); font-size: clamp(1.2rem, 2.4vw, 2rem); }
+.lop-taboo-vn { color: var(--color-gray-700); font-size: clamp(1rem, 1.8vw, 1.5rem); margin-top: 6px; }
+.lop-taboo-done {
+  align-self: center;
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  color: var(--color-gray-700);
+}
+.lop-taboo-done b { color: var(--color-red-600); font-size: 1.4em; }
+
 .lop-stage-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
 .lop-act {
   background: var(--color-red-600);

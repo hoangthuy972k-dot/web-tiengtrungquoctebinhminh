@@ -745,6 +745,118 @@
     resetTimer();
   }
 
+  /* ---------------- tro: lat o doan chu ---------------- */
+  // 9 o che hinh. Hai o thuong (+1 diem), mot o mat luot — dat ngau nhien.
+  function dealTiles(vocab) {
+    var pool = vocab.filter(function (v) { return v.em; });
+    state.tileWord = shuffle(pool.length ? pool : vocab)[0];
+    var marks = shuffle([1, 1, 1, 1, 1, 1, 'bonus', 'bonus', 'skip'].map(function (x, i) { return x; }));
+    state.tiles = marks.map(function (m) { return { open: false, mark: m }; });
+    state.tileShown = false;
+  }
+
+  function renderTiles() {
+    var v = state.tileWord;
+    if (!v) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa có từ để chơi.</span></div>';
+      return;
+    }
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Mỗi tổ lần lượt chọn mở <b>một ô</b> rồi đoán. Có ô <b>thưởng +1</b> và ô <b>mất lượt</b>.</span>' +
+      '</div>' +
+      '<div class="lop-tiles-wrap">' +
+        '<div class="lop-tiles-pic">' + esc(v.em || v.zh) + '</div>' +
+        '<div class="lop-tiles-grid">' + state.tiles.map(function (t, i) {
+          return '<button type="button" class="lop-tile' + (t.open ? ' is-open' : '') + '" data-i="' + i + '">' +
+            (t.open ? (t.mark === 'bonus' ? '⭐' : t.mark === 'skip' ? '⛔' : '') : (i + 1)) +
+          '</button>';
+        }).join('') + '</div>' +
+      '</div>' +
+      '<div class="lop-guess-answer" id="lopTileAns"' + (state.tileShown ? '' : ' hidden') + '>' +
+        '<div class="lop-guess-zh">' + esc(v.zh) + '</div>' +
+        '<div class="lop-guess-py">' + esc(v.py) + '</div>' +
+        '<div class="lop-guess-vn">' + esc(v.vn) + '</div>' +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopTileReveal">Lật đáp án (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopTileNext">Từ tiếp theo →</button>' +
+      '</div>';
+
+    $all('#lopStage .lop-tile').forEach(function (btn) {
+      btn.addEventListener('click', function () { openTile(parseInt(btn.getAttribute('data-i'), 10)); });
+    });
+    $('#lopTileReveal').addEventListener('click', revealTiles);
+    $('#lopTileNext').addEventListener('click', function () {
+      dealTiles(state.vocab || []); renderTiles(); resetTimer();
+    });
+  }
+
+  function openTile(i) {
+    var t = state.tiles[i];
+    if (!t || t.open) return;
+    t.open = true;
+    renderTiles();
+    if (t.mark === 'bonus') flashNote('⭐ Ô thưởng! Tổ vừa chọn được +1 điểm');
+    else if (t.mark === 'skip') flashNote('⛔ Ô mất lượt! Chuyển sang tổ kế tiếp');
+  }
+  function revealTiles() {
+    state.tiles.forEach(function (t) { t.open = true; });
+    state.tileShown = true;
+    renderTiles();
+    if (state.tileWord) speakZh(state.tileWord.zh);
+  }
+
+  // Bao nhanh giua man hinh, tu tat sau vai giay
+  function flashNote(text) {
+    var el = document.createElement('div');
+    el.className = 'lop-flash';
+    el.textContent = text;
+    document.body.appendChild(el);
+    setTimeout(function () { el.classList.add('out'); }, 1500);
+    setTimeout(function () { try { document.body.removeChild(el); } catch (e) { /* bo qua */ } }, 2100);
+  }
+
+  /* ---------------- tro: ban noi toi doan ---------------- */
+  function dealTaboo(vocab) {
+    state.deck = shuffle(vocab);
+    state.pos = 0;
+    state.tabooGot = 0;
+    state.tabooSkip = 0;
+  }
+
+  function renderTaboo() {
+    var v = state.deck[state.pos];
+    if (!v) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-taboo-done">Hết từ · đoán được <b>' + state.tabooGot + '</b> từ</div>' +
+        '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNewRound">Lượt mới →</button></div>';
+      $('#lopNewRound').addEventListener('click', function () { dealTaboo(state.vocab || []); renderTaboo(); resetTimer(); });
+      return;
+    }
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Em đoán <b>quay lưng</b> với màn hình · tổ mô tả bằng tiếng Trung, <b>cấm nói chính từ này</b></span>' +
+        '<span class="lop-point">Đoán được: ' + state.tabooGot + ' · bỏ qua: ' + state.tabooSkip + '</span>' +
+      '</div>' +
+      '<div class="lop-taboo-card">' +
+        '<div class="lop-taboo-zh">' + esc(v.zh) + '</div>' +
+        '<div class="lop-taboo-py">' + esc(v.py) + '</div>' +
+        '<div class="lop-taboo-vn">' + esc(v.vn) + '</div>' +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopTabooOk">✓ Đoán đúng (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopTabooSkip">↷ Bỏ qua</button>' +
+      '</div>';
+    $('#lopTabooOk').addEventListener('click', function () { tabooNext(true); });
+    $('#lopTabooSkip').addEventListener('click', function () { tabooNext(false); });
+  }
+  function tabooNext(got) {
+    if (got) state.tabooGot++; else state.tabooSkip++;
+    state.pos++;
+    renderTaboo();
+  }
+
   /* ---------------- quay so bao danh ---------------- */
   var rollTimer = null;
   function openRoll() {
@@ -775,10 +887,10 @@
 
   var GAME_TITLE = {
     errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C', sort: 'Xếp câu bằng người',
-    bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ'
+    bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ', tiles: 'Lật ô đoán chữ', taboo: 'Bạn nói tôi đoán'
   };
-  var GAME_SECS = { errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20 };
-  var VOCAB_GAMES = { bingo: 1, guess: 1 };
+  var GAME_SECS = { errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20, tiles: 30, taboo: 60 };
+  var VOCAB_GAMES = { bingo: 1, guess: 1, tiles: 1, taboo: 1 };
 
   function startGame(game) {
     if (!VOCAB_GAMES[game]) {
@@ -806,6 +918,8 @@
           return;
         }
         if (game === 'bingo') startBingo(vocab);
+        else if (game === 'tiles') { dealTiles(vocab); renderTiles(); }
+        else if (game === 'taboo') { dealTaboo(vocab); renderTaboo(); }
         else { dealGuess(vocab); renderGuess(); }
       });
       return;
@@ -870,6 +984,8 @@
         else if (g === 'sort') revealSort();
         else if (g === 'bingo') callBingo();
         else if (g === 'guess') revealGuess();
+        else if (g === 'tiles') revealTiles();
+        else if (g === 'taboo') tabooNext(true);
         else revealAll();
         return;
       }
@@ -878,6 +994,8 @@
         else if (g === 'sort') { e.preventDefault(); nextSort(); }
         else if (g === 'guess') { e.preventDefault(); nextGuess(); }
         else if (g === 'bingo') { e.preventDefault(); callBingo(); }
+        else if (g === 'taboo') { e.preventDefault(); tabooNext(false); }
+        else if (g === 'tiles') { e.preventDefault(); dealTiles(state.vocab || []); renderTiles(); resetTimer(); }
         return;
       }
       if (e.key === 'n' || e.key === 'N') {
@@ -885,6 +1003,8 @@
         else if (g === 'sort') { dealSort(); renderSort(); }
         else if (g === 'guess') { dealGuess(state.vocab || []); renderGuess(); }
         else if (g === 'bingo') { startBingo(state.vocab || []); }
+        else if (g === 'tiles') { dealTiles(state.vocab || []); renderTiles(); }
+        else if (g === 'taboo') { dealTaboo(state.vocab || []); renderTaboo(); }
         else { dealRows(); renderErrfix(); }
         resetTimer(); return;
       }

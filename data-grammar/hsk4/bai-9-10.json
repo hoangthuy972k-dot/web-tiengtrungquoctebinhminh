@@ -1,0 +1,250 @@
+{
+ "/lessons/hsk4-bai-9.html": {
+  "points": [
+   {
+    "title": "「难道」 — chẳng lẽ (câu phản vấn)",
+    "errors": [
+     { "wrong": "难道你不知道。", "why": "câu phản vấn với 难道 thường kết thúc bằng 吗 và dấu hỏi.", "right": "难道你不知道吗？" },
+     { "wrong": "你难道不知道吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你难道不知道吗？" },
+     { "wrong": "难道他很高兴吗？（muốn nói anh ấy rất vui）", "why": "难道 + khẳng định mang hàm ý PHỦ ĐỊNH.", "right": "他很高兴。" }
+    ],
+    "items": [
+     { "context": "“Chẳng lẽ bạn không biết sao?” (hàm ý: chắc chắn bạn biết)", "pre": "", "blank": "难道你不知道吗", "post": "？", "options": ["难道你不知道吗", "难道你不知道", "难道你不知道吗不"], "answer": 0, "explanation": "难道 + phủ định + 吗？→ hàm ý khẳng định." },
+     { "context": "难道 cũng đứng SAU chủ ngữ được.", "pre": "你", "blank": "难道不知道吗", "post": "？", "options": ["难道不知道吗", "难道不知道吗不", "不难道知道吗"], "answer": 0, "explanation": "Chủ ngữ + 难道 + vị ngữ + 吗？" },
+     { "context": "难道 + KHẲNG ĐỊNH → hàm ý phủ định.", "pre": "", "blank": "难道这样做是对的吗", "post": "？", "options": ["难道这样做是对的吗", "难道这样做是对的", "这样做难道是对的吗不"], "answer": 0, "explanation": "Hàm ý: làm như vậy là KHÔNG đúng." },
+     { "context": "“Chẳng lẽ tiếng Trung khó đến thế sao?”", "pre": "", "blank": "难道汉语真的这么难吗", "post": "？", "options": ["难道汉语真的这么难吗", "难道汉语真的这么难", "汉语难道这么难吗不"], "answer": 0, "explanation": "Hàm ý: tiếng Trung không khó đến vậy." },
+     { "context": "Câu hỏi BÌNH THƯỜNG thì không dùng 难道.", "pre": "", "blank": "你知道吗", "post": "？", "options": ["你知道吗", "难道你知道吗不", "你难道知道"], "answer": 0, "explanation": "难道 chỉ dùng trong câu phản vấn." },
+     { "context": "“Chẳng lẽ anh ấy không đến sao?”", "pre": "", "blank": "难道他不来了吗", "post": "？", "options": ["难道他不来了吗", "难道他不来了", "他不来了难道吗不"], "answer": 0, "explanation": "难道……吗？" },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "难道你不知道吗？", "isCorrect": true, "explanation": "难道 + phủ định + 吗？— đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "难道你不知道。", "isCorrect": false, "correctVersion": "难道你不知道吗？", "explanation": "Câu phản vấn cần 吗 và dấu hỏi." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "你难道不知道吗不？", "isCorrect": false, "correctVersion": "你难道不知道吗？", "explanation": "Không trộn 吗 với dạng chính-phản." },
+     { "type": "sort", "context": "Sắp xếp: “Chẳng lẽ bạn không biết sao?”", "words": ["难道", "你", "不", "知道", "吗", "？"], "answer": "难道你不知道吗？", "explanation": "难道……吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Chẳng lẽ tiếng Trung khó đến thế sao?”", "words": ["难道", "汉语", "真的", "这么", "难", "吗", "？"], "answer": "难道汉语真的这么难吗？", "explanation": "难道 + 这么 + tính từ + 吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Chẳng lẽ anh ấy không đến nữa sao?”", "words": ["难道", "他", "不", "来", "了", "吗", "？"], "answer": "难道他不来了吗？", "explanation": "难道他不来了吗？" },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 难道.", "promptLang": "vi", "prompt": "Chẳng lẽ bạn không biết sao?", "answer": "难道你不知道吗？", "answerPy": "Nándào nǐ bù zhīdào ma?", "explanation": "难道 + phủ định + 吗？" },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 难道.", "promptLang": "vi", "prompt": "Chẳng lẽ tiếng Trung thật sự khó đến thế sao?", "answer": "难道汉语真的这么难吗？", "answerPy": "Nándào Hànyǔ zhēn de zhème nán ma?", "explanation": "Hàm ý phủ định." }
+    ]
+   },
+   {
+    "title": "「通过」 so sánh với 「经过」",
+    "errors": [
+     { "wrong": "通过三年的努力，他终于成功了。（nhấn mạnh quá trình）", "why": "nhấn mạnh QUÁ TRÌNH kéo dài thì dùng 经过.", "right": "经过三年的努力，他终于成功了。" },
+     { "wrong": "经过努力学习，我提高了汉语水平。（nhấn mạnh cách thức）", "why": "nhấn mạnh CÁCH THỨC, phương tiện thì dùng 通过.", "right": "通过努力学习，我提高了汉语水平。" },
+     { "wrong": "事情的通过是这样的。", "why": "chỉ 经过 mới làm danh từ (diễn biến sự việc).", "right": "事情的经过是这样的。" }
+    ],
+    "items": [
+     { "context": "Nhấn mạnh CÁCH THỨC, phương tiện → 通过.", "pre": "", "blank": "通过努力学习", "post": "，我提高了汉语水平。", "options": ["通过努力学习", "经过努力学习", "通过的努力学习"], "answer": 0, "explanation": "通过 = thông qua (cách thức)." },
+     { "context": "Nhấn mạnh QUÁ TRÌNH kéo dài → 经过.", "pre": "", "blank": "经过三年的努力", "post": "，他终于成功了。", "options": ["经过三年的努力", "通过三年的努力", "经过的三年努力"], "answer": 0, "explanation": "经过 = trải qua (quá trình)." },
+     { "context": "经过 làm DANH TỪ.", "pre": "事情的", "blank": "经过", "post": "是这样的。", "options": ["经过", "通过", "通过的经过"], "answer": 0, "explanation": "通过 không làm danh từ." },
+     { "context": "通过 làm ĐỘNG TỪ: đi xuyên qua.", "pre": "火车", "blank": "通过了隧道", "post": "。", "options": ["通过了隧道", "经过了隧道里面穿", "通过的隧道了"], "answer": 0, "explanation": "通过 = xuyên qua." },
+     { "context": "经过 làm ĐỘNG TỪ: đi ngang qua.", "pre": "我每天上学都", "blank": "经过那家书店", "post": "。", "options": ["经过那家书店", "通过那家书店", "经过的那家书店"], "answer": 0, "explanation": "经过 = đi ngang qua." },
+     { "context": "“Nhờ sự giúp đỡ của bạn bè, tôi đã tìm được việc.”", "pre": "", "blank": "通过朋友的帮助", "post": "，我找到了工作。", "options": ["通过朋友的帮助", "经过朋友的帮助的", "通过的朋友帮助"], "answer": 0, "explanation": "通过 + phương tiện/người trung gian." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "通过努力学习，我提高了汉语水平。", "isCorrect": true, "explanation": "通过 nhấn mạnh cách thức — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "事情的通过是这样的。", "isCorrect": false, "correctVersion": "事情的经过是这样的。", "explanation": "Chỉ 经过 làm danh từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我每天上学都经过那家书店。", "isCorrect": true, "explanation": "经过 = đi ngang qua — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Nhờ học tập chăm chỉ, tôi đã nâng cao trình độ tiếng Trung.”", "words": ["通过", "努力", "学习", "，", "我", "提高", "了", "汉语", "水平", "。"], "answer": "通过努力学习，我提高了汉语水平。", "explanation": "通过 + cách thức." },
+     { "type": "sort", "context": "Sắp xếp: “Sau ba năm nỗ lực, cuối cùng anh ấy đã thành công.”", "words": ["经过", "三", "年", "的", "努力", "，", "他", "终于", "成功", "了", "。"], "answer": "经过三年的努力，他终于成功了。", "explanation": "经过 + quá trình." },
+     { "type": "sort", "context": "Sắp xếp: “Mỗi ngày đi học tôi đều đi ngang hiệu sách đó.”", "words": ["我", "每天", "上学", "都", "经过", "那", "家", "书店", "。"], "answer": "我每天上学都经过那家书店。", "explanation": "经过 = đi ngang qua." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 通过 hay 经过.", "promptLang": "vi", "prompt": "Nhờ học tập chăm chỉ, tôi đã nâng cao trình độ tiếng Trung.", "answer": "通过努力学习，我提高了汉语水平。", "answerPy": "Tōngguò nǔlì xuéxí, wǒ tígāo le Hànyǔ shuǐpíng.", "explanation": "Cách thức → 通过." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, chọn 通过 hay 经过.", "promptLang": "vi", "prompt": "Sau ba năm nỗ lực, cuối cùng anh ấy đã thành công.", "answer": "经过三年的努力，他终于成功了。", "answerPy": "Jīngguò sān nián de nǔlì, tā zhōngyú chénggōng le.", "explanation": "Quá trình → 经过." }
+    ]
+   },
+   {
+    "title": "「可是」 — nhưng",
+    "errors": [
+     { "wrong": "虽然他很累，所以可是还在工作。", "why": "虽然 hô ứng với 但是/可是, không đi với 所以.", "right": "虽然他很累，可是还在工作。" },
+     { "wrong": "可是虽然他很累，还在工作。", "why": "可是 đứng ở vế SAU, 虽然 ở vế trước.", "right": "虽然他很累，可是还在工作。" },
+     { "wrong": "他很累，可是但是还在工作。", "why": "可是 và 但是 không dùng chồng lên nhau.", "right": "他很累，可是还在工作。" }
+    ],
+    "items": [
+     { "context": "“Tuy anh ấy rất mệt nhưng vẫn đang làm việc.”", "pre": "虽然他很累，", "blank": "可是还在工作", "post": "。", "options": ["可是还在工作", "所以还在工作", "可是但是还在工作"], "answer": 0, "explanation": "虽然 hô ứng với 可是/但是." },
+     { "context": "可是 đứng ở vế SAU.", "pre": "这个菜很好吃，", "blank": "可是有点儿贵", "post": "。", "options": ["可是有点儿贵", "可是很好吃", "虽然有点儿贵"], "answer": 0, "explanation": "可是 mở đầu vế chuyển ý." },
+     { "context": "Ngữ khí NHẸ NHÀNG hơn khi từ chối.", "pre": "谢谢你，", "blank": "不过我已经有了", "post": "。", "options": ["不过我已经有了", "但是我已经有了呢吗", "可是但是我已经有了"], "answer": 0, "explanation": "不过 nhẹ nhàng hơn 但是/可是." },
+     { "context": "“Tôi muốn đi nhưng không có thời gian.”", "pre": "我想去，", "blank": "可是没有时间", "post": "。", "options": ["可是没有时间", "所以没有时间", "因为没有时间"], "answer": 0, "explanation": "可是 nêu ý ngược lại." },
+     { "context": "Nêu KẾT QUẢ thì dùng 所以.", "pre": "因为下雨，", "blank": "所以我们没去", "post": "。", "options": ["所以我们没去", "可是我们没去", "虽然我们没去"], "answer": 0, "explanation": "Phân biệt quan hệ nhân quả và chuyển ý." },
+     { "context": "“Tuy đắt nhưng chất lượng rất tốt.”", "pre": "虽然贵，", "blank": "可是质量很好", "post": "。", "options": ["可是质量很好", "所以质量很好", "因为质量很好"], "answer": 0, "explanation": "虽然……可是……." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "虽然他很累，可是还在工作。", "isCorrect": true, "explanation": "虽然……可是…… — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他很累，可是但是还在工作。", "isCorrect": false, "correctVersion": "他很累，可是还在工作。", "explanation": "可是 và 但是 không dùng chồng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "虽然他很累，所以还在工作。", "isCorrect": false, "correctVersion": "虽然他很累，可是还在工作。", "explanation": "虽然 hô ứng với 可是/但是." },
+     { "type": "sort", "context": "Sắp xếp: “Tuy anh ấy rất mệt nhưng vẫn đang làm việc.”", "words": ["虽然", "他", "很", "累", "，", "可是", "还", "在", "工作", "。"], "answer": "虽然他很累，可是还在工作。", "explanation": "虽然……可是……." },
+     { "type": "sort", "context": "Sắp xếp: “Món này rất ngon nhưng hơi đắt.”", "words": ["这个", "菜", "很", "好吃", "，", "可是", "有点儿", "贵", "。"], "answer": "这个菜很好吃，可是有点儿贵。", "explanation": "可是有点儿贵." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi muốn đi nhưng không có thời gian.”", "words": ["我", "想", "去", "，", "可是", "没有", "时间", "。"], "answer": "我想去，可是没有时间。", "explanation": "可是没有时间." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 可是.", "promptLang": "vi", "prompt": "Món này rất ngon nhưng hơi đắt.", "answer": "这个菜很好吃，可是有点儿贵。", "answerPy": "Zhège cài hěn hǎochī, kěshì yǒudiǎnr guì.", "explanation": "可是 mở đầu vế chuyển ý." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 虽然……可是…….", "promptLang": "vi", "prompt": "Tuy anh ấy rất mệt nhưng vẫn đang làm việc.", "answer": "虽然他很累，可是还在工作。", "answerPy": "Suīrán tā hěn lèi, kěshì hái zài gōngzuò.", "explanation": "虽然……可是……." }
+    ]
+   },
+   {
+    "title": "「结果」 — kết quả / rốt cuộc",
+    "errors": [
+     { "wrong": "结果他迟到了，我们等了很久。", "why": "结果 đứng ở vế SAU, nêu kết quả cuối cùng.", "right": "我们等了很久，结果他迟到了。" },
+     { "wrong": "考试的结果很好的。", "why": "thừa 的 ở cuối.", "right": "考试的结果很好。" },
+     { "wrong": "因为下雨，结果我们没去。", "why": "因为 hô ứng với 所以; 结果 dùng một mình.", "right": "下雨了，结果我们没去。" }
+    ],
+    "items": [
+     { "context": "结果 làm LIÊN TỪ, mở đầu vế kết quả.", "pre": "我们等了很久，", "blank": "结果他还是没来", "post": "。", "options": ["结果他还是没来", "他结果还是没来吗", "结果的他还是没来"], "answer": 0, "explanation": "结果 đứng đầu vế sau." },
+     { "context": "结果 làm DANH TỪ.", "pre": "", "blank": "考试的结果", "post": "很好。", "options": ["考试的结果", "考试结果的很好", "结果的考试"], "answer": 0, "explanation": "……的结果 = kết quả của…" },
+     { "context": "结果 thường nêu điều BẤT NGỜ.", "pre": "我以为很容易，", "blank": "结果很难", "post": "。", "options": ["结果很难", "结果很容易", "所以很难"], "answer": 0, "explanation": "结果 nêu kết quả ngoài dự tính." },
+     { "context": "Không dùng 结果 cùng 因为.", "pre": "下雨了，", "blank": "结果我们没去", "post": "。", "options": ["结果我们没去", "因为结果我们没去", "因为下雨结果我们没去"], "answer": 0, "explanation": "结果 dùng một mình." },
+     { "context": "“Cậu ấy học rất chăm, kết quả thi rất tốt.”", "pre": "他学习很努力，", "blank": "结果考得很好", "post": "。", "options": ["结果考得很好", "结果考很好得", "所以结果考得很好"], "answer": 0, "explanation": "结果 + vế kết quả." },
+     { "context": "“Kết quả thế nào rồi?”", "pre": "", "blank": "结果怎么样", "post": "？", "options": ["结果怎么样", "结果怎么样吗", "怎么样结果的"], "answer": 0, "explanation": "结果 làm danh từ, chủ ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我们等了很久，结果他还是没来。", "isCorrect": true, "explanation": "结果 đứng đầu vế kết quả — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "结果他迟到了，我们等了很久。", "isCorrect": false, "correctVersion": "我们等了很久，结果他迟到了。", "explanation": "结果 nêu kết quả, phải ở vế sau." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "因为下雨，结果我们没去。", "isCorrect": false, "correctVersion": "下雨了，结果我们没去。", "explanation": "结果 dùng một mình, không đi với 因为." },
+     { "type": "sort", "context": "Sắp xếp: “Chúng tôi đợi rất lâu, rốt cuộc anh ấy vẫn không đến.”", "words": ["我们", "等", "了", "很久", "，", "结果", "他", "还是", "没", "来", "。"], "answer": "我们等了很久，结果他还是没来。", "explanation": "结果 + vế kết quả." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi tưởng rất dễ, rốt cuộc lại rất khó.”", "words": ["我", "以为", "很", "容易", "，", "结果", "很", "难", "。"], "answer": "我以为很容易，结果很难。", "explanation": "以为……结果……." },
+     { "type": "sort", "context": "Sắp xếp: “Kết quả thi rất tốt.”", "words": ["考试", "的", "结果", "很", "好", "。"], "answer": "考试的结果很好。", "explanation": "结果 làm danh từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 结果 (liên từ).", "promptLang": "vi", "prompt": "Chúng tôi đợi rất lâu, rốt cuộc anh ấy vẫn không đến.", "answer": "我们等了很久，结果他还是没来。", "answerPy": "Wǒmen děng le hěn jiǔ, jiéguǒ tā háishi méi lái.", "explanation": "结果 mở đầu vế kết quả." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 结果 (danh từ).", "promptLang": "vi", "prompt": "Kết quả thi rất tốt.", "answer": "考试的结果很好。", "answerPy": "Kǎoshì de jiéguǒ hěn hǎo.", "explanation": "……的结果." }
+    ]
+   },
+   {
+    "title": "Động từ 「上」 — đạt đến (số lượng)",
+    "errors": [
+     { "wrong": "这里上人很多。", "why": "上 (đạt đến) phải mang tân ngữ chỉ SỐ LƯỢNG.", "right": "这里的人上千。" },
+     { "wrong": "他每天上跑步。", "why": "上 ở nghĩa này chỉ đi với số lượng, không đi với động từ.", "right": "他每天跑上五公里。" },
+     { "wrong": "参加的人上了一百个人上。", "why": "上 chỉ dùng một lần.", "right": "参加的人上了一百。" }
+    ],
+    "items": [
+     { "context": "上 + số lượng LỚN.", "pre": "这里的人", "blank": "上千", "post": "。", "options": ["上千", "上人", "千上"], "answer": 0, "explanation": "上 + 百/千/万." },
+     { "context": "“Số người tham gia lên tới một trăm.”", "pre": "参加的人", "blank": "上了一百", "post": "。", "options": ["上了一百", "一百上了", "上了一百个人上"], "answer": 0, "explanation": "上 + 了 + số lượng." },
+     { "context": "“Mỗi ngày anh ấy chạy được năm cây số.”", "pre": "他每天", "blank": "跑上五公里", "post": "。", "options": ["跑上五公里", "上跑五公里", "跑五公里上上"], "answer": 0, "explanation": "Động từ + 上 + số lượng." },
+     { "context": "“Quyển sách này bán được hàng vạn bản.”", "pre": "这本书", "blank": "卖了上万本", "post": "。", "options": ["卖了上万本", "上卖了万本", "卖上了本万"], "answer": 0, "explanation": "上万 = hàng vạn." },
+     { "context": "上 nghĩa gốc là “lên trên”.", "pre": "他", "blank": "上楼去", "post": "了。", "options": ["上楼去", "上去楼", "楼上去"], "answer": 0, "explanation": "Cùng chữ, nghĩa khác." },
+     { "context": "“Có tới hàng trăm người đến.”", "pre": "来了", "blank": "上百人", "post": "。", "options": ["上百人", "百上人", "上人百"], "answer": 0, "explanation": "上百 = hàng trăm." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这里的人上千。", "isCorrect": true, "explanation": "上 + số lượng lớn — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "这里上人很多。", "isCorrect": false, "correctVersion": "这里的人上千。", "explanation": "上 phải mang tân ngữ chỉ số lượng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他每天跑上五公里。", "isCorrect": true, "explanation": "Động từ + 上 + số lượng — đúng." },
+     { "type": "sort", "context": "Sắp xếp: “Số người ở đây lên tới hàng nghìn.”", "words": ["这里", "的", "人", "上", "千", "。"], "answer": "这里的人上千。", "explanation": "上千." },
+     { "type": "sort", "context": "Sắp xếp: “Mỗi ngày anh ấy chạy được năm cây số.”", "words": ["他", "每天", "跑", "上", "五", "公里", "。"], "answer": "他每天跑上五公里。", "explanation": "跑上五公里." },
+     { "type": "sort", "context": "Sắp xếp: “Quyển sách này bán được hàng vạn bản.”", "words": ["这", "本", "书", "卖", "了", "上万", "本", "。"], "answer": "这本书卖了上万本。", "explanation": "上万本." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 上 chỉ số lượng.", "promptLang": "vi", "prompt": "Số người ở đây lên tới hàng nghìn.", "answer": "这里的人上千。", "answerPy": "Zhèlǐ de rén shàng qiān.", "explanation": "上千." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 上 chỉ số lượng.", "promptLang": "vi", "prompt": "Mỗi ngày anh ấy chạy được năm cây số.", "answer": "他每天跑上五公里。", "answerPy": "Tā měi tiān pǎo shàng wǔ gōnglǐ.", "explanation": "跑上五公里." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk4-bai-10.html": {
+  "points": [
+   {
+    "title": "「不过」 so sánh với 「但是」",
+    "errors": [
+     { "wrong": "不过但是我已经有了。", "why": "不过 và 但是 không dùng chồng lên nhau.", "right": "不过我已经有了。" },
+     { "wrong": "但是十分钟就到了。", "why": "nghĩa “chỉ” là của phó từ 不过.", "right": "不过十分钟就到了。" },
+     { "wrong": "我想去，不过但是没时间。", "why": "cùng lỗi dùng chồng hai liên từ.", "right": "我想去，不过没时间。" }
+    ],
+    "items": [
+     { "context": "Từ chối NHẸ NHÀNG, lịch sự.", "pre": "谢谢你，", "blank": "不过我已经有了", "post": "。", "options": ["不过我已经有了", "但是我已经有了吧吗", "不过但是我已经有了"], "answer": 0, "explanation": "不过 nhẹ nhàng hơn 但是." },
+     { "context": "不过 làm PHÓ TỪ, nghĩa “chỉ”.", "pre": "", "blank": "不过十分钟", "post": "就到了。", "options": ["不过十分钟", "但是十分钟", "不过但是十分钟"], "answer": 0, "explanation": "不过 + số lượng = chỉ." },
+     { "context": "Ngữ khí MẠNH hơn thì dùng 但是.", "pre": "我很想去，", "blank": "但是实在没时间", "post": "。", "options": ["但是实在没时间", "不过实在没时间吗不", "但是不过实在没时间"], "answer": 0, "explanation": "但是 nhấn mạnh hơn." },
+     { "context": "“Cái này tốt, chỉ có điều hơi đắt.”", "pre": "这个很好，", "blank": "不过有点儿贵", "post": "。", "options": ["不过有点儿贵", "所以有点儿贵", "不过但是有点儿贵"], "answer": 0, "explanation": "不过 nêu ý điều chỉnh nhẹ." },
+     { "context": "“Cậu ấy mới có hai mươi tuổi.”", "pre": "他", "blank": "不过二十岁", "post": "。", "options": ["不过二十岁", "但是二十岁", "不过的二十岁"], "answer": 0, "explanation": "不过 = chỉ, mới." },
+     { "context": "Nêu quan hệ NHÂN QUẢ thì dùng 所以.", "pre": "因为下雨，", "blank": "所以我们没去", "post": "。", "options": ["所以我们没去", "不过我们没去", "但是不过我们没去"], "answer": 0, "explanation": "Phân biệt chuyển ý và nhân quả." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "谢谢你，不过我已经有了。", "isCorrect": true, "explanation": "不过 từ chối nhẹ nhàng — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "但是十分钟就到了。", "isCorrect": false, "correctVersion": "不过十分钟就到了。", "explanation": "Nghĩa “chỉ” là của 不过." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我想去，不过但是没时间。", "isCorrect": false, "correctVersion": "我想去，不过没时间。", "explanation": "Không dùng chồng hai liên từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cảm ơn bạn, có điều mình đã có rồi.”", "words": ["谢谢", "你", "，", "不过", "我", "已经", "有", "了", "。"], "answer": "谢谢你，不过我已经有了。", "explanation": "不过 + lời từ chối." },
+     { "type": "sort", "context": "Sắp xếp: “Chỉ mười phút là tới rồi.”", "words": ["不过", "十", "分钟", "就", "到", "了", "。"], "answer": "不过十分钟就到了。", "explanation": "不过 + số lượng." },
+     { "type": "sort", "context": "Sắp xếp: “Cái này rất tốt, chỉ có điều hơi đắt.”", "words": ["这个", "很", "好", "，", "不过", "有点儿", "贵", "。"], "answer": "这个很好，不过有点儿贵。", "explanation": "不过有点儿贵." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 不过 (liên từ).", "promptLang": "vi", "prompt": "Cái này rất tốt, chỉ có điều hơi đắt.", "answer": "这个很好，不过有点儿贵。", "answerPy": "Zhège hěn hǎo, búguò yǒudiǎnr guì.", "explanation": "不过 nêu ý điều chỉnh nhẹ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 不过 (phó từ).", "promptLang": "vi", "prompt": "Chỉ mười phút là tới rồi.", "answer": "不过十分钟就到了。", "answerPy": "Búguò shí fēnzhōng jiù dào le.", "explanation": "不过 + số lượng = chỉ." }
+    ]
+   },
+   {
+    "title": "「确实」 — quả thực",
+    "errors": [
+     { "wrong": "确实他很努力。", "why": "确实 là phó từ, đứng SAU chủ ngữ.", "right": "他确实很努力。" },
+     { "wrong": "他确实的很努力。", "why": "确实 là phó từ, không thêm 的.", "right": "他确实很努力。" },
+     { "wrong": "他确实不很努力。", "why": "phủ định là 确实不 + tính từ, không chen 很.", "right": "他确实不努力。" }
+    ],
+    "items": [
+     { "context": "“Anh ấy quả thực rất chăm chỉ.”", "pre": "他", "blank": "确实很努力", "post": "。", "options": ["确实很努力", "确实的很努力", "确实他很努力"], "answer": 0, "explanation": "Chủ ngữ + 确实 + tính từ." },
+     { "context": "“Chuyện này quả thực rất khó.”", "pre": "这件事", "blank": "确实很难", "post": "。", "options": ["确实很难", "确实的很难", "很确实难"], "answer": 0, "explanation": "确实 + 很 + tính từ." },
+     { "context": "Phủ định.", "pre": "他", "blank": "确实不知道", "post": "。", "options": ["确实不知道", "不确实知道", "确实的不知道"], "answer": 0, "explanation": "确实 đứng trước từ phủ định." },
+     { "context": "“Tôi quả thực đã nói như vậy.”", "pre": "我", "blank": "确实这么说过", "post": "。", "options": ["确实这么说过", "确实的这么说过", "这么说过确实"], "answer": 0, "explanation": "确实 + cụm động từ." },
+     { "context": "Từ gần nghĩa dùng trong khẩu ngữ.", "pre": "这个菜", "blank": "真的很好吃", "post": "。", "options": ["真的很好吃", "确实的很好吃", "确实真的很好吃"], "answer": 0, "explanation": "真的 ≈ 确实 (khẩu ngữ)." },
+     { "context": "“Hôm nay quả thực rất nóng.”", "pre": "今天", "blank": "确实很热", "post": "。", "options": ["确实很热", "确实的很热", "很确实热"], "answer": 0, "explanation": "确实很热." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他确实很努力。", "isCorrect": true, "explanation": "Chủ ngữ + 确实 + tính từ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "确实他很努力。", "isCorrect": false, "correctVersion": "他确实很努力。", "explanation": "确实 là phó từ, đứng sau chủ ngữ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "他确实的很努力。", "isCorrect": false, "correctVersion": "他确实很努力。", "explanation": "Phó từ 确实 không thêm 的." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy quả thực rất chăm chỉ.”", "words": ["他", "确实", "很", "努力", "。"], "answer": "他确实很努力。", "explanation": "确实很努力." },
+     { "type": "sort", "context": "Sắp xếp: “Chuyện này quả thực rất khó.”", "words": ["这", "件", "事", "确实", "很", "难", "。"], "answer": "这件事确实很难。", "explanation": "确实很难." },
+     { "type": "sort", "context": "Sắp xếp: “Anh ấy quả thực không biết.”", "words": ["他", "确实", "不", "知道", "。"], "answer": "他确实不知道。", "explanation": "确实不知道." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 确实.", "promptLang": "vi", "prompt": "Anh ấy quả thực rất chăm chỉ.", "answer": "他确实很努力。", "answerPy": "Tā quèshí hěn nǔlì.", "explanation": "Chủ ngữ + 确实 + tính từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 确实.", "promptLang": "vi", "prompt": "Chuyện này quả thực rất khó.", "answer": "这件事确实很难。", "answerPy": "Zhè jiàn shì quèshí hěn nán.", "explanation": "确实很难." }
+    ]
+   },
+   {
+    "title": "「在……看来」 — theo cách nhìn của ai đó",
+    "errors": [
+     { "wrong": "在我看，这样做不对。", "why": "thiếu 来; cấu trúc là 在……看来.", "right": "在我看来，这样做不对。" },
+     { "wrong": "在看来我，这样做不对。", "why": "đối tượng đứng giữa 在 và 看来.", "right": "在我看来，这样做不对。" },
+     { "wrong": "在我看来，你觉得怎么样？", "why": "在……看来 nêu ý kiến của CHÍNH người đó, không dùng để hỏi ý người khác.", "right": "你觉得怎么样？" }
+    ],
+    "items": [
+     { "context": "“Theo tôi thì làm vậy không đúng.”", "pre": "", "blank": "在我看来", "post": "，这样做不对。", "options": ["在我看来", "在我看", "在看来我"], "answer": 0, "explanation": "在 + người + 看来." },
+     { "context": "“Theo các bạn học sinh thì bài thi này không khó.”", "pre": "", "blank": "在学生们看来", "post": "，这次考试不难。", "options": ["在学生们看来", "在看来学生们", "学生们在看"], "answer": 0, "explanation": "在 + nhóm người + 看来." },
+     { "context": "Nêu GÓC NHÌN thì dùng 对……来说.", "pre": "", "blank": "对我来说", "post": "，这不难。", "options": ["对我来说", "在我来说", "在我看"], "answer": 0, "explanation": "对……来说 (ảnh hưởng) vs 在……看来 (ý kiến)." },
+     { "context": "“Theo anh ấy thì cách này rất tốt.”", "pre": "", "blank": "在他看来", "post": "，这个办法很好。", "options": ["在他看来", "在看来他", "他在看来的"], "answer": 0, "explanation": "在他看来." },
+     { "context": "Hỏi ý người khác thì không dùng 在我看来.", "pre": "", "blank": "你觉得怎么样", "post": "？", "options": ["你觉得怎么样", "在我看来你觉得怎么样", "在你看来觉得怎么样吗"], "answer": 0, "explanation": "在……看来 nêu ý kiến của chính người đó." },
+     { "context": "“Theo nhiều người thì đây là một cơ hội tốt.”", "pre": "", "blank": "在很多人看来", "post": "，这是个好机会。", "options": ["在很多人看来", "在看来很多人", "很多人在看的"], "answer": 0, "explanation": "在很多人看来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "在我看来，这样做不对。", "isCorrect": true, "explanation": "在 + người + 看来 — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "在我看，这样做不对。", "isCorrect": false, "correctVersion": "在我看来，这样做不对。", "explanation": "Thiếu 来." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "在看来我，这样做不对。", "isCorrect": false, "correctVersion": "在我看来，这样做不对。", "explanation": "Đối tượng đứng giữa 在 và 看来." },
+     { "type": "sort", "context": "Sắp xếp: “Theo tôi thì làm như vậy không đúng.”", "words": ["在", "我", "看来", "，", "这样", "做", "不", "对", "。"], "answer": "在我看来，这样做不对。", "explanation": "在我看来." },
+     { "type": "sort", "context": "Sắp xếp: “Theo anh ấy thì cách này rất tốt.”", "words": ["在", "他", "看来", "，", "这个", "办法", "很", "好", "。"], "answer": "在他看来，这个办法很好。", "explanation": "在他看来." },
+     { "type": "sort", "context": "Sắp xếp: “Theo nhiều người thì đây là một cơ hội tốt.”", "words": ["在", "很多", "人", "看来", "，", "这", "是", "个", "好", "机会", "。"], "answer": "在很多人看来，这是个好机会。", "explanation": "在很多人看来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 在……看来.", "promptLang": "vi", "prompt": "Theo tôi thì làm như vậy không đúng.", "answer": "在我看来，这样做不对。", "answerPy": "Zài wǒ kàn lái, zhèyàng zuò bú duì.", "explanation": "在我看来." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 在……看来.", "promptLang": "vi", "prompt": "Theo anh ấy thì cách này rất tốt.", "answer": "在他看来，这个办法很好。", "answerPy": "Zài tā kàn lái, zhège bànfǎ hěn hǎo.", "explanation": "在他看来." }
+    ]
+   },
+   {
+    "title": "「由于」 — do, bởi vì",
+    "errors": [
+     { "wrong": "我没去，由于下雨。", "why": "由于 thường đứng ở vế ĐẦU, nêu nguyên nhân.", "right": "由于下雨，我没去。" },
+     { "wrong": "由于下雨，因为我没去。", "why": "由于 hô ứng với 所以/因此, không đi với 因为.", "right": "由于下雨，所以我没去。" },
+     { "wrong": "为什么没去？由于下雨。", "why": "trả lời câu hỏi 为什么 thường dùng 因为.", "right": "为什么没去？因为下雨。" }
+    ],
+    "items": [
+     { "context": "由于 đứng ở vế ĐẦU, nêu nguyên nhân.", "pre": "", "blank": "由于下雨", "post": "，我们没去。", "options": ["由于下雨", "因为由于下雨", "所以下雨"], "answer": 0, "explanation": "由于 + nguyên nhân." },
+     { "context": "由于 hô ứng với 所以/因此.", "pre": "由于天气不好，", "blank": "所以比赛取消了", "post": "。", "options": ["所以比赛取消了", "因为比赛取消了", "由于比赛取消了"], "answer": 0, "explanation": "由于……，所以/因此……." },
+     { "context": "由于 làm GIỚI TỪ + cụm danh từ.", "pre": "", "blank": "由于工作的原因", "post": "，他搬到了上海。", "options": ["由于工作的原因", "由于工作原因的说", "因为由于工作的原因"], "answer": 0, "explanation": "由于 + cụm danh từ." },
+     { "context": "Trả lời câu hỏi 为什么 thì dùng 因为.", "pre": "A: 你为什么没来？B: ", "blank": "因为我生病了。", "post": "", "options": ["因为我生病了。", "由于我生病了。", "所以我生病了。"], "answer": 0, "explanation": "由于 ít dùng để trả lời trực tiếp." },
+     { "context": "由于 thiên về VĂN VIẾT.", "pre": "", "blank": "由于种种原因", "post": "，这个计划没有实现。", "options": ["由于种种原因", "因为种种的原因说", "由于的种种原因"], "answer": 0, "explanation": "由于 dùng trong văn viết." },
+     { "context": "“Do trời mưa nên trận đấu bị hoãn.”", "pre": "", "blank": "由于下雨，比赛推迟了", "post": "。", "options": ["由于下雨，比赛推迟了", "比赛推迟了，由于下雨", "因为由于下雨，比赛推迟了"], "answer": 0, "explanation": "由于 ở vế đầu." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "由于下雨，我们没去。", "isCorrect": true, "explanation": "由于 + nguyên nhân ở vế đầu — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我没去，由于下雨。", "isCorrect": false, "correctVersion": "由于下雨，我没去。", "explanation": "由于 đứng ở vế đầu." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "由于下雨，因为我没去。", "isCorrect": false, "correctVersion": "由于下雨，所以我没去。", "explanation": "由于 hô ứng với 所以/因此." },
+     { "type": "sort", "context": "Sắp xếp: “Do trời mưa nên chúng tôi không đi.”", "words": ["由于", "下雨", "，", "所以", "我们", "没", "去", "。"], "answer": "由于下雨，所以我们没去。", "explanation": "由于……所以……." },
+     { "type": "sort", "context": "Sắp xếp: “Do lý do công việc, anh ấy chuyển đến Thượng Hải.”", "words": ["由于", "工作", "的", "原因", "，", "他", "搬", "到", "了", "上海", "。"], "answer": "由于工作的原因，他搬到了上海。", "explanation": "由于 + cụm danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Do thời tiết xấu, trận đấu bị hủy.”", "words": ["由于", "天气", "不", "好", "，", "比赛", "取消", "了", "。"], "answer": "由于天气不好，比赛取消了。", "explanation": "由于 + nguyên nhân." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 由于.", "promptLang": "vi", "prompt": "Do trời mưa nên chúng tôi không đi.", "answer": "由于下雨，所以我们没去。", "answerPy": "Yóuyú xiàyǔ, suǒyǐ wǒmen méi qù.", "explanation": "由于……所以……." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 由于.", "promptLang": "vi", "prompt": "Do lý do công việc, anh ấy đã chuyển đến Thượng Hải.", "answer": "由于工作的原因，他搬到了上海。", "answerPy": "Yóuyú gōngzuò de yuányīn, tā bān dào le Shànghǎi.", "explanation": "由于 + cụm danh từ." }
+    ]
+   },
+   {
+    "title": "「比如」 — ví dụ như",
+    "errors": [
+     { "wrong": "比如我喜欢很多运动。", "why": "比如 dẫn VÍ DỤ, phải đứng sau nội dung chung.", "right": "我喜欢很多运动，比如足球、篮球。" },
+     { "wrong": "我喜欢很多运动比如。", "why": "比如 đứng TRƯỚC ví dụ, không đứng cuối câu.", "right": "我喜欢很多运动，比如足球。" },
+     { "wrong": "比如说比如足球。", "why": "比如 và 比如说 chỉ dùng một trong hai.", "right": "比如说足球。" }
+    ],
+    "items": [
+     { "context": "比如 dẫn ví dụ, đứng SAU nội dung chung.", "pre": "我喜欢很多运动，", "blank": "比如足球、篮球", "post": "。", "options": ["比如足球、篮球", "足球、篮球比如", "比如说比如足球"], "answer": 0, "explanation": "Nội dung chung，比如 + ví dụ." },
+     { "context": "Dạng đầy đủ hơn.", "pre": "我喜欢很多运动，", "blank": "比如说足球", "post": "。", "options": ["比如说足球", "比如比如说足球", "说比如足球"], "answer": 0, "explanation": "比如说 = 比如." },
+     { "context": "“Trung Quốc có nhiều thành phố lớn, ví dụ như Bắc Kinh, Thượng Hải.”", "pre": "中国有很多大城市，", "blank": "比如北京、上海", "post": "。", "options": ["比如北京、上海", "北京、上海比如", "比如说比如北京"], "answer": 0, "explanation": "比如 + dãy ví dụ." },
+     { "context": "比如 KHÔNG đứng đầu khi chưa nêu nội dung chung.", "pre": "", "blank": "我喜欢很多运动", "post": "，比如足球。", "options": ["我喜欢很多运动", "比如我喜欢很多运动", "比如说我喜欢运动很多"], "answer": 0, "explanation": "Nêu nội dung chung trước." },
+     { "context": "Có thể thêm 等 ở cuối dãy ví dụ.", "pre": "我喜欢水果，比如苹果、香蕉", "blank": "等", "post": "。", "options": ["等", "比如", "等比如说"], "answer": 0, "explanation": "……等 = vân vân." },
+     { "context": "“Có rất nhiều cách học tiếng Trung, ví dụ như xem phim.”", "pre": "学汉语有很多方法，", "blank": "比如看电影", "post": "。", "options": ["比如看电影", "看电影比如", "比如说比如看电影"], "answer": 0, "explanation": "比如 + cụm động từ." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我喜欢很多运动，比如足球、篮球。", "isCorrect": true, "explanation": "比如 dẫn ví dụ — đúng." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "比如我喜欢很多运动。", "isCorrect": false, "correctVersion": "我喜欢很多运动，比如足球。", "explanation": "比如 phải đứng sau nội dung chung." },
+     { "type": "judge", "context": "Xét câu sau đúng hay sai.", "sentence": "我喜欢很多运动比如。", "isCorrect": false, "correctVersion": "我喜欢很多运动，比如足球。", "explanation": "比如 đứng trước ví dụ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi thích nhiều môn thể thao, ví dụ như bóng đá, bóng rổ.”", "words": ["我", "喜欢", "很多", "运动", "，", "比如", "足球", "、", "篮球", "。"], "answer": "我喜欢很多运动，比如足球、篮球。", "explanation": "比如 + ví dụ." },
+     { "type": "sort", "context": "Sắp xếp: “Trung Quốc có nhiều thành phố lớn, ví dụ như Bắc Kinh, Thượng Hải.”", "words": ["中国", "有", "很多", "大", "城市", "，", "比如", "北京", "、", "上海", "。"], "answer": "中国有很多大城市，比如北京、上海。", "explanation": "比如北京、上海." },
+     { "type": "sort", "context": "Sắp xếp: “Có nhiều cách học tiếng Trung, ví dụ như xem phim.”", "words": ["学", "汉语", "有", "很多", "方法", "，", "比如", "看", "电影", "。"], "answer": "学汉语有很多方法，比如看电影。", "explanation": "比如 + cụm động từ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 比如.", "promptLang": "vi", "prompt": "Tôi thích nhiều môn thể thao, ví dụ như bóng đá, bóng rổ.", "answer": "我喜欢很多运动，比如足球、篮球。", "answerPy": "Wǒ xǐhuan hěn duō yùndòng, bǐrú zúqiú, lánqiú.", "explanation": "比如 dẫn ví dụ." },
+     { "type": "translate", "context": "Dịch sang tiếng Trung, dùng 比如.", "promptLang": "vi", "prompt": "Có nhiều cách học tiếng Trung, ví dụ như xem phim.", "answer": "学汉语有很多方法，比如看电影。", "answerPy": "Xué Hànyǔ yǒu hěn duō fāngfǎ, bǐrú kàn diànyǐng.", "explanation": "比如 + cụm động từ." }
+    ]
+   }
+  ]
+ }
+}

@@ -13996,7 +13996,7 @@
       return isDone ? '' : '<div class="assign-parts">Cần làm: <b>cả bài</b> — xong khi làm <b>Bước 7 · Kiểm tra cuối bài</b></div>';
     }
     var done = need.filter(function (p) { return partDoneLocal(scores, p); }).length;
-    return '<div class="assign-parts">Cần làm <b>' + done + '/' + need.length + ' phần</b>: ' +
+    return '<div class="assign-parts"><span class="assign-parts-label">Cần làm <b>' + done + '/' + need.length + ' phần</b>:</span>' +
       need.map(function (p) {
         var ok = partDoneLocal(scores, p);
         return '<span class="assign-part' + (ok ? ' is-ok' : '') + '">' + (ok ? '✓ ' : '') + assignEsc(ASSIGN_PART_LABEL[p] || p) + '</span>';
@@ -14123,6 +14123,7 @@
     }).join('');
     return (ses.length ? '' : '<p class="assign-empty">Thầy cô chưa giao bài nào. Khi có bài, cột Buổi 1, Buổi 2… sẽ hiện ở đây.</p>') +
       '<div class="ab-wrap"><table class="ab-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
+      '<p class="ab-hint">↔ Kéo ngang bảng để xem các buổi khác.</p>' +
       '<p class="ab-legend"><span class="ab-c is-done">✓</span> Đã làm <span class="ab-c is-late">✓</span> Nộp muộn · Ô trống: chưa làm</p>';
   }
 

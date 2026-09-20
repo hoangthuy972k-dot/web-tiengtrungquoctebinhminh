@@ -7696,3 +7696,15 @@ body.pinyin-hidden .py-inline {
 .assign-parts { font-size: 0.85rem; color: var(--color-gray-600); margin-top: 4px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
 .assign-part { display: inline-block; font-size: 0.8rem; background: var(--color-gray-100); color: var(--color-gray-600); border-radius: var(--radius-pill); padding: 1px 9px; }
 .assign-part.is-ok { background: var(--color-green-50); color: var(--color-green-600); font-weight: 600; }
+.assign-parts-label { white-space: nowrap; }
+/* Dien thoai: thu gon bang lop de thay duoc ca cot "Buoi" chu khong chi cot ten */
+@media (max-width: 640px) {
+  .ab-table { font-size: 0.85rem; }
+  .ab-table th, .ab-table td { padding: 6px 7px; }
+  .ab-table .ab-name { min-width: 124px; max-width: 150px; white-space: normal; line-height: 1.35; }
+  .ab-no { min-width: 1.4em; }
+  .ab-c { min-width: 46px; }
+  .ab-table thead th { font-size: 0.76rem; }
+  .ab-hint { display: block; }
+}
+.ab-hint { display: none; font-size: 0.8rem; color: var(--color-gray-500); margin-top: var(--space-2); }

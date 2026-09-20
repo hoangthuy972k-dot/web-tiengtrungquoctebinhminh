@@ -82,15 +82,17 @@ function fetchAudioParts(base,prefix,container,onFound,onEmpty){
   })();
 }
 
-// Bai chua co audio goc thi bo luon cac khung audio trong phan bai khoa
+// Doan nao chua co file ghi am thi bo khung audio cua rieng doan do,
+// khong de lai trinh phat bam vao khong keu.
 function hideDialogAudioIfMissing(){
   if(!AUDIO_BASE) return;
-  fetch(AUDIO_BASE+'/dlg-1.mp3',{method:'HEAD'}).then(function(r){
-    const ct=r&&r.headers.get('content-type')||'';
-    if(r&&r.ok&&/audio/i.test(ct)) return;
-    document.querySelectorAll('#dlg-wrap .audio-box').forEach(function(b){b.remove();});
-  }).catch(function(){
-    document.querySelectorAll('#dlg-wrap .audio-box').forEach(function(b){b.remove();});
+  document.querySelectorAll('#dlg-wrap .dlg-card').forEach(function(card,i){
+    var box=card.querySelector('.audio-box');
+    if(!box) return;
+    fetch(AUDIO_BASE+'/dlg-'+(i+1)+'.mp3',{method:'HEAD'}).then(function(r){
+      const ct=r&&r.headers.get('content-type')||'';
+      if(!(r&&r.ok&&/audio/i.test(ct))) box.remove();
+    }).catch(function(){ box.remove(); });
   });
 }
 

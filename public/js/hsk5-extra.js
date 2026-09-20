@@ -185,6 +185,20 @@
     });
   }
 
+  /* ---------- Ghi chu cho ban ghi am cua giao trinh ----------
+     File nghe cua 标准教程 doc LIEN MOT MACH ca bai, khong cat theo tung doan.
+     Engine gan no vao doan dau, nen phai noi ro keo hoc sinh tuong chi doan 1. */
+  function labelFullTextAudio() {
+    var first = document.querySelector('#dlg-wrap .dlg-card .audio-box .audio-hint');
+    if (!first) return;
+    if (document.querySelectorAll('#dlg-wrap .dlg-card').length < 2) return;
+    first.textContent = 'Bản ghi âm gốc đọc liền TOÀN BÀI (không cắt theo đoạn) — ' +
+      'nghe hết một lượt trước, rồi quay lại đọc từng đoạn bên dưới.';
+  }
+  // Engine do file bang fetch nen khung audio xuat hien muon hon mot nhip
+  setTimeout(labelFullTextAudio, 900);
+  setTimeout(labelFullTextAudio, 2500);
+
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-h5-say]');
     if (b) say(b.getAttribute('data-h5-say'));

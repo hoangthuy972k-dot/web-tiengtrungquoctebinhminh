@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chế độ lớp học · Hi Hán 喜汉</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/lop.css">
+</head>
+<body class="lop-body">
+
+<!-- ================= MAN HINH CHUAN BI ================= -->
+<div id="lopSetup" class="lop-setup">
+  <div class="lop-setup-card">
+    <div class="lop-setup-head">
+      <div class="lop-logo">喜汉</div>
+      <div>
+        <h1>Chế độ lớp học</h1>
+        <p>Trò chơi đầu giờ để chiếu lên lớp · ôn lại bài đã học</p>
+      </div>
+    </div>
+
+    <div class="lop-field">
+      <label for="lopLevel">1 · Cấp độ</label>
+      <select id="lopLevel">
+        <option value="hsk1">HSK 1 (giáo trình cũ)</option>
+        <option value="hsk1v3">HSK 1 · 3.0</option>
+        <option value="hsk2">HSK 2 (giáo trình cũ)</option>
+        <option value="hsk2v3">HSK 2 · 3.0</option>
+        <option value="hsk3" selected>HSK 3</option>
+        <option value="hsk4">HSK 4</option>
+        <option value="yct">YCT · Thiếu nhi</option>
+      </select>
+    </div>
+
+    <div class="lop-field">
+      <label>2 · Chọn bài đã học để ôn</label>
+      <div class="lop-lesson-tools">
+        <button type="button" class="lop-mini-btn" id="lopPickAll">Chọn tất cả</button>
+        <button type="button" class="lop-mini-btn" id="lopPickNone">Bỏ chọn</button>
+        <button type="button" class="lop-mini-btn" id="lopPickRandom">🎲 Quay ngẫu nhiên 1 bài</button>
+      </div>
+      <div id="lopLessons" class="lop-lessons">Đang tải…</div>
+    </div>
+
+    <div class="lop-field">
+      <label>3 · Số tổ</label>
+      <div class="lop-team-pick" id="lopTeamPick">
+        <button type="button" data-n="2">2 tổ</button>
+        <button type="button" data-n="4" class="active">4 tổ</button>
+        <button type="button" data-n="6">6 tổ</button>
+      </div>
+    </div>
+
+    <div class="lop-field">
+      <label>4 · Chọn trò chơi</label>
+      <div class="lop-games">
+        <button type="button" class="lop-game-card" data-game="errfix">
+          <span class="lop-game-emoji">🔍</span>
+          <span class="lop-game-name">Bắt lỗi sai tiếp sức</span>
+          <span class="lop-game-desc">Chiếu 5 câu, có câu sai. Mỗi tổ cử 1 em lên bảng khoanh câu sai và viết lại câu đúng.</span>
+          <span class="lop-game-count" id="lopCountErrfix">—</span>
+        </button>
+      </div>
+    </div>
+
+    <p class="lop-note">💡 Mẹo: bấm <b>F11</b> để chiếu toàn màn hình. Trong lúc chơi dùng phím <b>Space</b> để lật đáp án, phím <b>1…6</b> để cộng điểm cho tổ.</p>
+  </div>
+</div>
+
+<!-- ================= MAN HINH CHOI ================= -->
+<div id="lopPlay" class="lop-play" hidden>
+  <header class="lop-bar">
+    <button type="button" class="lop-bar-btn" id="lopExit">← Đổi bài / đổi trò</button>
+    <div class="lop-bar-title" id="lopTitle">Bắt lỗi sai tiếp sức</div>
+    <div class="lop-bar-right">
+      <div class="lop-timer" id="lopTimer">00:30</div>
+      <button type="button" class="lop-bar-btn" id="lopTimerToggle">▶ Bắt đầu</button>
+      <button type="button" class="lop-bar-btn" id="lopTimerSet" title="Đổi thời gian">30s</button>
+      <button type="button" class="lop-bar-btn" id="lopRoll">🎲 Gọi số</button>
+    </div>
+  </header>
+
+  <main class="lop-stage" id="lopStage"></main>
+
+  <footer class="lop-scorebar" id="lopScorebar"></footer>
+</div>
+
+<!-- Hop thoai quay so bao danh -->
+<div id="lopRollBox" class="lop-roll-box" hidden>
+  <div class="lop-roll-card">
+    <div class="lop-roll-label">Số báo danh</div>
+    <div class="lop-roll-number" id="lopRollNumber">–</div>
+    <div class="lop-roll-actions">
+      <label>Sĩ số <input type="number" id="lopClassSize" min="2" max="99" value="50"></label>
+      <button type="button" class="btn btn-primary" id="lopRollAgain">Quay lại</button>
+      <button type="button" class="lop-mini-btn" id="lopRollClose">Đóng</button>
+    </div>
+    <div class="lop-roll-hint" id="lopRollHint"></div>
+  </div>
+</div>
+
+<script src="/js/lop.js"></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+/* ============================================================
+   Che do lop hoc — man hinh chieu len lop, chu rat to
+   ============================================================ */
+
+.lop-body {
+  margin: 0;
+  background: #14110f;
+  color: #f5f1ea;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* ---------- Man hinh chuan bi ---------- */
+.lop-setup {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px 56px;
+  background:
+    radial-gradient(1000px 500px at 50% -10%, rgba(200, 55, 45, 0.18), transparent 70%),
+    #14110f;
+}
+.lop-setup-card {
+  width: min(880px, 100%);
+  background: #1e1a17;
+  border: 1px solid #332c26;
+  border-radius: 20px;
+  padding: 28px;
+}
+.lop-setup-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.lop-logo {
+  width: 58px; height: 58px;
+  display: grid; place-items: center;
+  background: var(--color-red-600, #c8372d);
+  border-radius: 16px;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #fff;
+  flex: none;
+}
+.lop-setup-head h1 { margin: 0; font-size: 1.5rem; color: #fff; }
+.lop-setup-head p { margin: 4px 0 0; color: #a99e94; font-size: 0.92rem; }
+
+.lop-field { margin-bottom: 24px; }
+.lop-field > label {
+  display: block;
+  font-weight: 700;
+  color: var(--color-gold-400, #f2bf6b);
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.lop-field select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #3d352e;
+  background: #14110f;
+  color: #f5f1ea;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.lop-lesson-tools { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.lop-mini-btn {
+  background: #2a2420;
+  border: 1px solid #3d352e;
+  color: #d8cec4;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.lop-mini-btn:hover { background: #352d27; color: #fff; }
+
+.lop-lessons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 210px;
+  overflow-y: auto;
+  padding: 4px;
+}
+.lop-lesson-chip {
+  background: #14110f;
+  border: 1px solid #3d352e;
+  color: #b8ada2;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.lop-lesson-chip.on {
+  background: var(--color-red-600, #c8372d);
+  border-color: var(--color-red-500, #dc4b3e);
+  color: #fff;
+  font-weight: 600;
+}
+
+.lop-team-pick { display: flex; gap: 10px; }
+.lop-team-pick button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #3d352e;
+  background: #14110f;
+  color: #b8ada2;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.lop-team-pick button.active {
+  background: var(--color-gold-600, #b7791f);
+  border-color: var(--color-gold-500, #e9a23b);
+  color: #fff;
+  font-weight: 700;
+}
+
+.lop-games { display: grid; gap: 12px; }
+.lop-game-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 4px 16px;
+  align-items: center;
+  text-align: left;
+  background: #14110f;
+  border: 1px solid #3d352e;
+  border-radius: 16px;
+  padding: 18px 20px;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+.lop-game-card:hover { border-color: var(--color-red-500, #dc4b3e); background: #1a1512; }
+.lop-game-card[disabled] { opacity: 0.45; cursor: not-allowed; }
+.lop-game-emoji { grid-row: 1 / 3; font-size: 2.1rem; text-align: center; }
+.lop-game-name { font-size: 1.12rem; font-weight: 700; color: #fff; }
+.lop-game-desc { grid-column: 2; color: #a99e94; font-size: 0.88rem; line-height: 1.5; }
+.lop-game-count {
+  grid-row: 1 / 3;
+  background: #2a2420;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: var(--color-gold-400, #f2bf6b);
+  white-space: nowrap;
+}
+
+.lop-note {
+  color: #8d8279;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  margin: 8px 0 0;
+  border-top: 1px solid #2a2420;
+  padding-top: 16px;
+}
+.lop-note b { color: #d8cec4; }
+
+/* ---------- Man hinh choi ---------- */
+.lop-play { min-height: 100vh; display: flex; flex-direction: column; }
+
+.lop-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+  background: #1e1a17;
+  border-bottom: 1px solid #332c26;
+  flex: none;
+}
+.lop-bar-title { font-weight: 700; color: #fff; font-size: 1.05rem; }
+.lop-bar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.lop-bar-btn {
+  background: #2a2420;
+  border: 1px solid #3d352e;
+  color: #d8cec4;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.lop-bar-btn:hover { background: #352d27; color: #fff; }
+.lop-timer {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-gold-400, #f2bf6b);
+  min-width: 98px;
+  text-align: center;
+}
+.lop-timer.is-low { color: #ff6b5e; animation: lopPulse 1s infinite; }
+@keyframes lopPulse { 50% { opacity: 0.35; } }
+
+/* San khau — noi chieu cau hoi */
+.lop-stage {
+  flex: 1;
+  padding: 26px clamp(16px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.lop-stage-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: #a99e94;
+  font-size: 1rem;
+}
+.lop-stage-head .lop-point {
+  background: rgba(200, 55, 45, 0.16);
+  border: 1px solid rgba(220, 75, 62, 0.4);
+  color: #ffb3a8;
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: 0.92rem;
+}
+
+/* Danh sach 5 cau */
+.lop-rows { display: grid; gap: 12px; }
+.lop-row {
+  display: grid;
+  grid-template-columns: 62px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  background: #1e1a17;
+  border: 2px solid #332c26;
+  border-radius: 16px;
+  padding: clamp(12px, 1.6vw, 20px) clamp(14px, 2vw, 26px);
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.lop-row:hover { border-color: #55493f; }
+.lop-row-num {
+  width: 46px; height: 46px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: #2a2420;
+  color: var(--color-gold-400, #f2bf6b);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.lop-row-zh {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.7rem, 3.6vw, 3rem);
+  line-height: 1.45;
+  color: #fff;
+}
+.lop-row-note {
+  display: block;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+  color: #9b9088;
+  margin-top: 4px;
+}
+.lop-row-mark { font-size: clamp(1.6rem, 3vw, 2.4rem); width: 52px; text-align: center; }
+
+.lop-row.revealed-ok { border-color: #3f8f5a; background: rgba(63, 143, 90, 0.12); }
+.lop-row.revealed-bad { border-color: var(--color-red-500, #dc4b3e); background: rgba(220, 75, 62, 0.12); }
+.lop-row-fix {
+  grid-column: 2 / 4;
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px dashed #4a4038;
+}
+.lop-row-fix .fix-zh {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  color: #8ee0a5;
+  line-height: 1.45;
+}
+.lop-row-fix .fix-why {
+  color: #c4b8ac;
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.lop-stage-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
+.lop-act {
+  background: var(--color-red-600, #c8372d);
+  border: none;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 30px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+.lop-act.ghost { background: #2a2420; border: 1px solid #3d352e; color: #d8cec4; }
+.lop-act:hover { filter: brightness(1.1); }
+
+/* Bang diem to */
+.lop-scorebar {
+  display: flex;
+  gap: 12px;
+  padding: 12px 18px 16px;
+  background: #1e1a17;
+  border-top: 1px solid #332c26;
+  flex: none;
+  flex-wrap: wrap;
+}
+.lop-team {
+  flex: 1 1 150px;
+  background: #14110f;
+  border: 2px solid #332c26;
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lop-team.lead { border-color: var(--color-gold-500, #e9a23b); }
+.lop-team-name { font-weight: 700; color: #d8cec4; font-size: 0.95rem; }
+.lop-team-score {
+  margin-left: auto;
+  font-size: 1.9rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  min-width: 46px;
+  text-align: right;
+}
+.lop-team-btns { display: flex; flex-direction: column; gap: 4px; }
+.lop-team-btns button {
+  width: 30px; height: 24px;
+  border-radius: 7px;
+  border: 1px solid #3d352e;
+  background: #2a2420;
+  color: #d8cec4;
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  font-family: inherit;
+}
+.lop-team-btns button:hover { background: var(--color-red-600, #c8372d); color: #fff; border-color: transparent; }
+
+/* Quay so bao danh */
+.lop-roll-box {
+  position: fixed; inset: 0;
+  background: rgba(10, 8, 7, 0.86);
+  display: grid; place-items: center;
+  z-index: 60;
+}
+.lop-roll-card {
+  background: #1e1a17;
+  border: 1px solid #3d352e;
+  border-radius: 20px;
+  padding: 34px 44px;
+  text-align: center;
+  min-width: min(420px, 90vw);
+}
+.lop-roll-label { color: #a99e94; font-size: 1rem; }
+.lop-roll-number {
+  font-size: clamp(5rem, 16vw, 11rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-gold-400, #f2bf6b);
+  font-variant-numeric: tabular-nums;
+  margin: 8px 0 18px;
+}
+.lop-roll-actions { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.lop-roll-actions label { color: #a99e94; font-size: 0.9rem; }
+.lop-roll-actions input {
+  width: 66px;
+  padding: 8px;
+  border-radius: 9px;
+  border: 1px solid #3d352e;
+  background: #14110f;
+  color: #f5f1ea;
+  font-family: inherit;
+  text-align: center;
+}
+.lop-roll-hint { color: #8d8279; font-size: 0.84rem; margin-top: 14px; min-height: 1.2em; }
+
+@media (max-width: 720px) {
+  .lop-row { grid-template-columns: 46px 1fr auto; gap: 12px; }
+  .lop-row-num { width: 36px; height: 36px; font-size: 1.05rem; }
+  .lop-bar { flex-wrap: wrap; }
+  .lop-bar-right { width: 100%; justify-content: space-between; }
+}

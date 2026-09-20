@@ -67,6 +67,7 @@ function stripOld(html) {
 }
 
 const exercises = {};
+const mistakes = {};
 const report = [];
 Object.keys(data).forEach((url) => {
   const lesson = data[url];
@@ -93,6 +94,11 @@ Object.keys(data).forEach((url) => {
   }
   lesson.points.forEach((p) => {
     if (p.items && p.items.length) (exercises[url] = exercises[url] || []).push({ point: p.title, items: p.items });
+    // Khoi "Loi hoc sinh Viet hay mac" cung duoc xuat rieng — Che do lop hoc dung
+    // lam de cho tro "Bat loi sai" o nhung cap khong co cau Dung/Sai.
+    (p.errors || []).forEach((e) => {
+      if (e.wrong && e.right) (mistakes[url] = mistakes[url] || []).push({ point: p.title, wrong: e.wrong, right: e.right, why: e.why || '' });
+    });
   });
 
   const open = (html.match(/<div\b/g) || []).length;
@@ -108,8 +114,14 @@ const js = '// Bai tap ngu phap ' + level + ' — soan rieng theo trinh do (sinh
   'window.GRAMMAR_EXTRA = Object.assign(window.GRAMMAR_EXTRA || {}, ' + JSON.stringify(exercises) + ');\n';
 fs.writeFileSync(out, js);
 
+const outErr = path.join(ROOT, 'public', 'js', 'grammar-errors-' + level + '.js');
+const jsErr = '// Loi hoc sinh Viet hay mac — ' + level + ' (sinh tu data-grammar/' + level + '/).\n' +
+  'window.GRAMMAR_ERRORS = Object.assign(window.GRAMMAR_ERRORS || {}, ' + JSON.stringify(mistakes) + ');\n';
+fs.writeFileSync(outErr, jsErr);
+
 report.forEach((r) => console.log(r));
 const total = Object.values(exercises).reduce((s, gs) => s + gs.reduce((x, g) => x + g.items.length, 0), 0);
 console.log('---');
 console.log('Bai hoc:', Object.keys(exercises).length, '| diem ngu phap:', Object.values(exercises).reduce((s, g) => s + g.length, 0),
   '| cau bai tap:', total, '| file:', Math.round(js.length / 1024) + ' KB');
+console.log('Loi hay mac:', Object.values(mistakes).reduce((s, a) => s + a.length, 0), '| file:', Math.round(jsErr.length / 1024) + ' KB');

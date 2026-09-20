@@ -77,7 +77,8 @@ const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css|exa
 // nen khong phai sua tung file bai hoc. Bo qua phong thi HSK (/exam/test/) de hoc
 // sinh khong hoi AI trong luc thi, va bo qua trang quan tri.
 const WIDGET_TAGS = '<link rel="stylesheet" href="/css/widgets.css" />\n<script src="/js/widgets.js" defer></script>\n';
-const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html)$/;
+// Trang lop.html la man hinh chieu len lop — khong gan nut noi cho do roi mat.
+const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html)$/;
 
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');

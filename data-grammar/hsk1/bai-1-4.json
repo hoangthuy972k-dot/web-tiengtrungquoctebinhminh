@@ -1,0 +1,248 @@
+{
+ "/lessons/hsk1-bai-1.html": {
+  "points": [
+   {
+    "title": "Biến điệu của hai thanh 3 liền nhau",
+    "errors": [
+     { "wrong": "你好 đọc là nǐ hǎo (hai thanh 3)", "why": "hai thanh 3 liền nhau thì thanh 3 ĐẦU đổi thành thanh 2.", "right": "你好 đọc là ní hǎo (viết vẫn là nǐ hǎo)" },
+     { "wrong": "我很好 đọc là wǒ hěn hǎo (ba thanh 3 giữ nguyên)", "why": "ba thanh 3 liền nhau: hai âm đầu đọc thành thanh 2.", "right": "我很好 đọc là wó hén hǎo" },
+     { "wrong": "老师 đọc là láo shī", "why": "老师 chỉ có MỘT thanh 3, không có biến điệu.", "right": "老师 đọc là lǎoshī" }
+    ],
+    "items": [
+     { "context": "「你好」 gồm hai thanh 3 liền nhau. Khi đọc thực tế:", "pre": "你好 đọc thành ", "blank": "ní hǎo", "post": "", "options": ["ní hǎo", "nǐ háo", "nǐ hǎo"], "answer": 0, "explanation": "Thanh 3 ĐẦU đổi thành thanh 2, thanh 3 sau giữ nguyên." },
+     { "context": "「我很好」 có ba thanh 3 liền nhau.", "pre": "我很好 đọc thành ", "blank": "wó hén hǎo", "post": "", "options": ["wó hén hǎo", "wǒ hěn háo", "wǒ hén háo"], "answer": 0, "explanation": "Hai âm đầu đổi thành thanh 2, âm cuối giữ thanh 3." },
+     { "context": "「很好」 — hai thanh 3.", "pre": "很好 đọc thành ", "blank": "hén hǎo", "post": "", "options": ["hén hǎo", "hěn háo", "hěn hǎo"], "answer": 0, "explanation": "Thanh 3 trước → thanh 2." },
+     { "context": "「老师」 chỉ có một thanh 3 (lǎo) đi với thanh 1 (shī).", "pre": "老师 đọc là ", "blank": "lǎoshī", "post": "", "options": ["lǎoshī", "láoshī", "lǎoshí"], "answer": 0, "explanation": "Không có hai thanh 3 liền nhau nên KHÔNG biến điệu." },
+     { "context": "「你们」 — thanh 3 + thanh nhẹ.", "pre": "你们 đọc là ", "blank": "nǐmen", "post": "", "options": ["nǐmen", "nímen", "nìmen"], "answer": 0, "explanation": "Thanh 3 + thanh nhẹ thì KHÔNG biến điệu." },
+     { "context": "Khi VIẾT phiên âm, biến điệu có được ghi lại không?", "pre": "Phiên âm của 你好 vẫn viết là ", "blank": "nǐ hǎo", "post": "", "options": ["nǐ hǎo", "ní hǎo", "ni hǎo"], "answer": 0, "explanation": "Biến điệu chỉ xảy ra khi ĐỌC, phiên âm viết vẫn giữ thanh 3." },
+     { "type": "sort", "context": "Sắp xếp: “Xin chào!”", "words": ["你", "好", "！"], "answer": "你好！", "explanation": "你好 = lời chào cơ bản." },
+     { "type": "sort", "context": "Sắp xếp: “Các bạn chào!”", "words": ["你们", "好", "！"], "answer": "你们好！", "explanation": "你们好 = chào nhiều người." },
+     { "type": "sort", "context": "Sắp xếp: “Thầy/cô chào ạ!”", "words": ["老师", "好", "！"], "answer": "老师好！", "explanation": "Gọi tên/chức danh + 好." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi rất tốt.”", "words": ["我", "很", "好", "。"], "answer": "我很好。", "explanation": "Vị ngữ tính từ cần 很." },
+     { "context": "Tình huống: Bạn gặp thầy giáo buổi sáng, bạn nói:", "pre": "", "blank": "老师好！", "post": "", "options": ["老师好！", "老师什么？", "老师不好。"], "answer": 0, "explanation": "Chào bằng chức danh + 好." },
+     { "context": "Tình huống: Có người hỏi 「你好吗？」, bạn đang khỏe. Bạn trả lời:", "pre": "", "blank": "我很好。", "post": "", "options": ["我很好。", "我好。", "我很好吗？"], "answer": 0, "explanation": "Vị ngữ tính từ phải có 很." },
+     { "context": "Tình huống: Bạn muốn chào cả lớp. Bạn nói:", "pre": "", "blank": "你们好！", "post": "", "options": ["你们好！", "你好们！", "好你们！"], "answer": 0, "explanation": "你们 = các bạn (số nhiều)." }
+    ]
+   },
+   {
+    "title": "Mẫu câu giao tiếp cơ bản: Chào hỏi & Xin lỗi",
+    "errors": [
+     { "wrong": "好你！", "why": "sai trật tự; lời chào là 你好.", "right": "你好！" },
+     { "wrong": "对不起，不客气。", "why": "对不起 phải đáp lại bằng 没关系, không phải 不客气.", "right": "对不起。— 没关系。" },
+     { "wrong": "你好吗，我很好。", "why": "câu hỏi và câu trả lời phải của hai người khác nhau.", "right": "你好吗？— 我很好。" }
+    ],
+    "items": [
+     { "context": "Lời chào cơ bản.", "pre": "", "blank": "你好", "post": "！", "options": ["你好", "好你", "你很好吗"], "answer": 0, "explanation": "你好 = xin chào." },
+     { "context": "“Bạn có khỏe không?”", "pre": "你", "blank": "好吗", "post": "？", "options": ["好吗", "很好吗不", "吗好"], "answer": 0, "explanation": "你好吗？= câu hỏi thăm." },
+     { "context": "“Xin lỗi.”", "pre": "", "blank": "对不起", "post": "。", "options": ["对不起", "不对起", "对起不"], "answer": 0, "explanation": "对不起 = xin lỗi." },
+     { "context": "Đáp lại 「对不起」.", "pre": "", "blank": "没关系", "post": "。", "options": ["没关系", "不客气", "对不起"], "answer": 0, "explanation": "没关系 = không sao đâu." },
+     { "context": "“Tạm biệt.”", "pre": "", "blank": "再见", "post": "！", "options": ["再见", "见再", "再见吗"], "answer": 0, "explanation": "再见 = tạm biệt." },
+     { "context": "“Tôi cũng rất tốt.”", "pre": "我", "blank": "也很好", "post": "。", "options": ["也很好", "很也好", "也好很"], "answer": 0, "explanation": "也 đứng trước 很." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có khỏe không?”", "words": ["你", "好", "吗", "？"], "answer": "你好吗？", "explanation": "你好吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi cũng rất tốt.”", "words": ["我", "也", "很", "好", "。"], "answer": "我也很好。", "explanation": "也很好." },
+     { "type": "sort", "context": "Sắp xếp: “Xin lỗi, không sao đâu.”", "words": ["对不起", "，", "没关系", "。"], "answer": "对不起，没关系。", "explanation": "对不起 → 没关系." },
+     { "type": "sort", "context": "Sắp xếp: “Thầy ạ, tạm biệt!”", "words": ["老师", "，", "再见", "！"], "answer": "老师，再见！", "explanation": "Gọi + 再见." },
+     { "context": "Tình huống: Bạn đi muộn vào lớp. Bạn nói với thầy:", "pre": "", "blank": "老师，对不起。", "post": "", "options": ["老师，对不起。", "老师，没关系。", "老师，再见。"], "answer": 0, "explanation": "Người mắc lỗi nói 对不起." },
+     { "context": "Tình huống: Bạn cùng lớp làm rơi bút của bạn và xin lỗi. Bạn đáp:", "pre": "", "blank": "没关系。", "post": "", "options": ["没关系。", "对不起。", "你好吗？"], "answer": 0, "explanation": "没关系 = không sao." },
+     { "context": "Tình huống: Hết giờ học, bạn chào thầy ra về:", "pre": "", "blank": "老师，再见！", "post": "", "options": ["老师，再见！", "老师，你好吗？", "老师，对不起。"], "answer": 0, "explanation": "再见 dùng khi chia tay." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1-bai-2.html": {
+  "points": [
+   {
+    "title": "Cách nói cảm ơn & đáp từ",
+    "errors": [
+     { "wrong": "谢谢，没关系。", "why": "谢谢 phải đáp lại bằng 不客气, không phải 没关系.", "right": "谢谢。— 不客气。" },
+     { "wrong": "谢谢你很。", "why": "sai trật tự; 谢谢 + người.", "right": "谢谢你。" },
+     { "wrong": "不客谢气。", "why": "viết sai cụm; đúng là 不客气.", "right": "不客气。" }
+    ],
+    "items": [
+     { "context": "“Cảm ơn bạn.”", "pre": "", "blank": "谢谢你", "post": "。", "options": ["谢谢你", "你谢谢", "谢谢你很"], "answer": 0, "explanation": "谢谢 + người được cảm ơn." },
+     { "context": "Đáp lại 「谢谢」.", "pre": "", "blank": "不客气", "post": "。", "options": ["不客气", "没关系", "对不起"], "answer": 0, "explanation": "不客气 = không có gì." },
+     { "context": "Đáp lại 「对不起」.", "pre": "", "blank": "没关系", "post": "。", "options": ["没关系", "不客气", "谢谢"], "answer": 0, "explanation": "Phân biệt: 谢谢→不客气; 对不起→没关系." },
+     { "context": "“Cảm ơn thầy.”", "pre": "", "blank": "谢谢老师", "post": "。", "options": ["谢谢老师", "老师谢谢很", "谢老师谢"], "answer": 0, "explanation": "谢谢 + chức danh." },
+     { "context": "Cách nói lịch sự hơn của 不客气.", "pre": "", "blank": "不用谢", "post": "。", "options": ["不用谢", "谢不用", "用不谢"], "answer": 0, "explanation": "不用谢 = không cần cảm ơn." },
+     { "context": "“Tôi cũng cảm ơn bạn.”", "pre": "我", "blank": "也谢谢你", "post": "。", "options": ["也谢谢你", "谢谢也你", "也你谢谢"], "answer": 0, "explanation": "也 đứng trước động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cảm ơn bạn.”", "words": ["谢谢", "你", "。"], "answer": "谢谢你。", "explanation": "谢谢 + 你." },
+     { "type": "sort", "context": "Sắp xếp: “Cảm ơn, không có gì.”", "words": ["谢谢", "，", "不客气", "。"], "answer": "谢谢，不客气。", "explanation": "谢谢 → 不客气." },
+     { "type": "sort", "context": "Sắp xếp: “Cảm ơn thầy ạ.”", "words": ["谢谢", "老师", "。"], "answer": "谢谢老师。", "explanation": "谢谢 + chức danh." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi cũng cảm ơn bạn.”", "words": ["我", "也", "谢谢", "你", "。"], "answer": "我也谢谢你。", "explanation": "也 trước động từ." },
+     { "context": "Tình huống: Thầy đưa cho bạn một quyển sách. Bạn nói:", "pre": "", "blank": "谢谢老师。", "post": "", "options": ["谢谢老师。", "没关系，老师。", "对不起，老师。"], "answer": 0, "explanation": "Nhận sự giúp đỡ thì cảm ơn." },
+     { "context": "Tình huống: Bạn giúp bạn cùng lớp, bạn ấy nói 「谢谢」. Bạn đáp:", "pre": "", "blank": "不客气。", "post": "", "options": ["不客气。", "没关系。", "谢谢你。"], "answer": 0, "explanation": "谢谢 → 不客气." },
+     { "context": "Tình huống: Bạn vô tình chạm vào người khác, bạn nói:", "pre": "", "blank": "对不起。", "post": "", "options": ["对不起。", "谢谢。", "不客气。"], "answer": 0, "explanation": "Mắc lỗi thì xin lỗi." }
+    ]
+   },
+   {
+    "title": "Biến điệu của phó từ phủ định 「不」 (bù)",
+    "errors": [
+     { "wrong": "不是 đọc là bù shì", "why": "不 đứng trước thanh 4 thì đọc thành thanh 2 (bú).", "right": "不是 đọc là bú shì" },
+     { "wrong": "不好 đọc là bú hǎo", "why": "不 đứng trước thanh 1/2/3 vẫn giữ thanh 4 (bù).", "right": "不好 đọc là bù hǎo" },
+     { "wrong": "我不很忙。", "why": "câu phủ định không dùng 很; 不 đứng ngay trước tính từ.", "right": "我不忙。" }
+    ],
+    "items": [
+     { "context": "「不是」— 是 là thanh 4.", "pre": "不是 đọc thành ", "blank": "bú shì", "post": "", "options": ["bú shì", "bù shì", "bǔ shì"], "answer": 0, "explanation": "不 + thanh 4 → đọc thành thanh 2 (bú)." },
+     { "context": "「不好」— 好 là thanh 3.", "pre": "不好 đọc thành ", "blank": "bù hǎo", "post": "", "options": ["bù hǎo", "bú hǎo", "bu hǎo"], "answer": 0, "explanation": "不 + thanh 1/2/3 → giữ nguyên thanh 4." },
+     { "context": "「不忙」— 忙 là thanh 2.", "pre": "不忙 đọc thành ", "blank": "bù máng", "post": "", "options": ["bù máng", "bú máng", "bǔ máng"], "answer": 0, "explanation": "Trước thanh 2 thì 不 giữ thanh 4." },
+     { "context": "「不去」— 去 là thanh 4.", "pre": "不去 đọc thành ", "blank": "bú qù", "post": "", "options": ["bú qù", "bù qù", "bǔ qù"], "answer": 0, "explanation": "不 + thanh 4 → bú." },
+     { "context": "“Tôi không bận.”", "pre": "我", "blank": "不忙", "post": "。", "options": ["不忙", "不很忙", "很不忙"], "answer": 0, "explanation": "Câu phủ định không dùng 很." },
+     { "context": "“Tôi không phải là học sinh.”", "pre": "我", "blank": "不是学生", "post": "。", "options": ["不是学生", "是不学生", "不学生是"], "answer": 0, "explanation": "不 đứng trước 是." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không bận.”", "words": ["我", "不", "忙", "。"], "answer": "我不忙。", "explanation": "不 + tính từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không phải là học sinh.”", "words": ["我", "不", "是", "学生", "。"], "answer": "我不是学生。", "explanation": "不是 + danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cũng không bận.”", "words": ["他", "也", "不", "忙", "。"], "answer": "他也不忙。", "explanation": "也 đứng trước 不." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi rất tốt, cảm ơn bạn.”", "words": ["我", "很", "好", "，", "谢谢", "你", "。"], "answer": "我很好，谢谢你。", "explanation": "Ôn lại 很好 và 谢谢." },
+     { "context": "Tình huống: Có người hỏi 「你忙吗？」, bạn KHÔNG bận. Bạn trả lời:", "pre": "", "blank": "我不忙。", "post": "", "options": ["我不忙。", "我不很忙。", "我很不忙。"], "answer": 0, "explanation": "Phủ định: 不 + tính từ, không dùng 很." },
+     { "context": "Tình huống: Có người tưởng bạn là thầy giáo. Bạn nói:", "pre": "", "blank": "我不是老师。", "post": "", "options": ["我不是老师。", "我是不老师。", "我不老师是。"], "answer": 0, "explanation": "不是 + danh từ." },
+     { "context": "Tình huống: Bạn muốn nói “Cậu ấy cũng không phải học sinh.”", "pre": "", "blank": "他也不是学生。", "post": "", "options": ["他也不是学生。", "他不也是学生。", "他也是不学生。"], "answer": 0, "explanation": "也 + 不是 + danh từ." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1-bai-3.html": {
+  "points": [
+   {
+    "title": "Đại từ nghi vấn 「什么」 (Cái gì)",
+    "errors": [
+     { "wrong": "你叫什么名字吗？", "why": "câu hỏi đã có 什么 thì KHÔNG dùng 吗.", "right": "你叫什么名字？" },
+     { "wrong": "什么你叫名字？", "why": "什么 đứng ở vị trí của thông tin cần hỏi.", "right": "你叫什么名字？" },
+     { "wrong": "这是什么吗？", "why": "cùng lỗi: có 什么 rồi thì bỏ 吗.", "right": "这是什么？" }
+    ],
+    "items": [
+     { "context": "“Bạn tên là gì?”", "pre": "你叫", "blank": "什么名字", "post": "？", "options": ["什么名字", "什么名字吗", "名字什么"], "answer": 0, "explanation": "Có 什么 thì không dùng 吗." },
+     { "context": "“Đây là cái gì?”", "pre": "这是", "blank": "什么", "post": "？", "options": ["什么", "什么吗", "吗什么"], "answer": 0, "explanation": "什么 ở vị trí tân ngữ." },
+     { "context": "“Bạn ăn gì?”", "pre": "你吃", "blank": "什么", "post": "？", "options": ["什么", "什么吗", "什么的"], "answer": 0, "explanation": "什么 thay cho thứ cần hỏi." },
+     { "context": "“Cái này tiếng Trung gọi là gì?”", "pre": "这个汉语叫", "blank": "什么", "post": "？", "options": ["什么", "什么吗", "什么了"], "answer": 0, "explanation": "叫什么 = gọi là gì." },
+     { "context": "Trả lời câu hỏi 「你叫什么名字？」", "pre": "我叫", "blank": "李明", "post": "。", "options": ["李明", "什么李明", "李明吗"], "answer": 0, "explanation": "Thay 什么 bằng thông tin thật." },
+     { "context": "什么 + danh từ.", "pre": "你学", "blank": "什么", "post": "？", "options": ["什么", "什么吗", "吗什么"], "answer": 0, "explanation": "学什么 = học gì." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn tên là gì?”", "words": ["你", "叫", "什么", "名字", "？"], "answer": "你叫什么名字？", "explanation": "叫什么名字？" },
+     { "type": "sort", "context": "Sắp xếp: “Đây là cái gì?”", "words": ["这", "是", "什么", "？"], "answer": "这是什么？", "explanation": "是什么？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi tên là Lý Minh.”", "words": ["我", "叫", "李明", "。"], "answer": "我叫李明。", "explanation": "叫 + tên." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn ăn gì?”", "words": ["你", "吃", "什么", "？"], "answer": "你吃什么？", "explanation": "吃什么？" },
+     { "context": "Tình huống: Bạn muốn biết tên người mới gặp. Bạn hỏi:", "pre": "", "blank": "你叫什么名字？", "post": "", "options": ["你叫什么名字？", "你叫什么名字吗？", "什么你叫名字？"], "answer": 0, "explanation": "Có 什么 thì bỏ 吗." },
+     { "context": "Tình huống: Bạn thấy một vật lạ trên bàn. Bạn hỏi:", "pre": "", "blank": "这是什么？", "post": "", "options": ["这是什么？", "这是什么吗？", "什么这是？"], "answer": 0, "explanation": "这是什么？" },
+     { "context": "Tình huống: Có người hỏi 「你叫什么名字？」. Bạn trả lời:", "pre": "", "blank": "我叫李明。", "post": "", "options": ["我叫李明。", "我叫什么李明。", "我什么叫李明。"], "answer": 0, "explanation": "Thay 什么 bằng tên thật." }
+    ]
+   },
+   {
+    "title": "Câu chữ 「是」 (Là)",
+    "errors": [
+     { "wrong": "我学生。", "why": "nối hai danh từ phải có 是.", "right": "我是学生。" },
+     { "wrong": "我是很学生。", "why": "是 + danh từ, không thêm 很.", "right": "我是学生。" },
+     { "wrong": "我没是学生。", "why": "phủ định của 是 là 不是.", "right": "我不是学生。" }
+    ],
+    "items": [
+     { "context": "“Tôi là học sinh.”", "pre": "我", "blank": "是学生", "post": "。", "options": ["是学生", "学生", "是很学生"], "answer": 0, "explanation": "Danh từ + 是 + danh từ." },
+     { "context": "Phủ định: “Tôi không phải là học sinh.”", "pre": "我", "blank": "不是学生", "post": "。", "options": ["不是学生", "没是学生", "是不学生"], "answer": 0, "explanation": "Phủ định của 是 là 不是." },
+     { "context": "“Cậu ấy là người Trung Quốc.”", "pre": "他", "blank": "是中国人", "post": "。", "options": ["是中国人", "中国人", "是很中国人"], "answer": 0, "explanation": "是 + quốc tịch." },
+     { "context": "“Đây là thầy của tôi.”", "pre": "这", "blank": "是我的老师", "post": "。", "options": ["是我的老师", "我的老师", "是很我的老师"], "answer": 0, "explanation": "这是 + cụm danh từ." },
+     { "context": "Vị ngữ TÍNH TỪ thì KHÔNG dùng 是.", "pre": "我", "blank": "很忙", "post": "。", "options": ["很忙", "是很忙", "是忙"], "answer": 0, "explanation": "Tính từ làm vị ngữ chỉ cần 很." },
+     { "context": "“Cậu ấy cũng là học sinh.”", "pre": "他", "blank": "也是学生", "post": "。", "options": ["也是学生", "是也学生", "也学生是"], "answer": 0, "explanation": "也 đứng trước 是." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi là học sinh.”", "words": ["我", "是", "学生", "。"], "answer": "我是学生。", "explanation": "我是学生." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy không phải là thầy giáo.”", "words": ["他", "不", "是", "老师", "。"], "answer": "他不是老师。", "explanation": "不是 + danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Đây là thầy của tôi.”", "words": ["这", "是", "我", "的", "老师", "。"], "answer": "这是我的老师。", "explanation": "这是 + cụm danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cũng là người Trung Quốc.”", "words": ["他", "也", "是", "中国人", "。"], "answer": "他也是中国人。", "explanation": "也是 + danh từ." },
+     { "context": "Tình huống: Bạn giới thiệu bản thân là học sinh. Bạn nói:", "pre": "", "blank": "我是学生。", "post": "", "options": ["我是学生。", "我学生。", "我是很学生。"], "answer": 0, "explanation": "Nối hai danh từ cần 是." },
+     { "context": "Tình huống: Bạn muốn nói mình rất bận. Bạn nói:", "pre": "", "blank": "我很忙。", "post": "", "options": ["我很忙。", "我是很忙。", "我是忙。"], "answer": 0, "explanation": "Vị ngữ tính từ không dùng 是." },
+     { "context": "Tình huống: Có người tưởng bạn cùng lớp là thầy giáo. Bạn nói:", "pre": "", "blank": "他不是老师。", "post": "", "options": ["他不是老师。", "他没是老师。", "他是不老师。"], "answer": 0, "explanation": "不是 = không phải là." }
+    ]
+   },
+   {
+    "title": "Câu nghi vấn dùng trợ từ 「吗」",
+    "errors": [
+     { "wrong": "你是学生什么吗？", "why": "không dùng cùng lúc 什么 và 吗.", "right": "你是学生吗？" },
+     { "wrong": "吗你是学生？", "why": "吗 đứng ở CUỐI câu.", "right": "你是学生吗？" },
+     { "wrong": "你好吗不好？", "why": "không trộn 吗 với dạng hỏi chính-phản.", "right": "你好吗？／你好不好？" }
+    ],
+    "items": [
+     { "context": "“Bạn là học sinh phải không?”", "pre": "你是学生", "blank": "吗", "post": "？", "options": ["吗", "什么", "呢"], "answer": 0, "explanation": "吗 ở cuối câu để tạo câu hỏi." },
+     { "context": "“Bạn có bận không?”", "pre": "你", "blank": "忙吗", "post": "？", "options": ["忙吗", "很忙吗不", "吗忙"], "answer": 0, "explanation": "Tính từ + 吗？(không cần 很)." },
+     { "context": "“Cậu ấy là người Trung Quốc phải không?”", "pre": "他是中国人", "blank": "吗", "post": "？", "options": ["吗", "什么", "的"], "answer": 0, "explanation": "吗 ở cuối câu." },
+     { "context": "Trả lời khẳng định cho 「你是学生吗？」", "pre": "", "blank": "我是学生", "post": "。", "options": ["我是学生", "我是学生吗", "是我学生"], "answer": 0, "explanation": "Câu trả lời bỏ 吗." },
+     { "context": "Trả lời phủ định cho 「你忙吗？」", "pre": "", "blank": "我不忙", "post": "。", "options": ["我不忙", "我不忙吗", "我不很忙"], "answer": 0, "explanation": "不 + tính từ." },
+     { "context": "Không dùng 吗 khi câu đã có từ nghi vấn.", "pre": "这是", "blank": "什么", "post": "？", "options": ["什么", "什么吗", "吗什么"], "answer": 0, "explanation": "什么 và 吗 không đi cùng nhau." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn là học sinh phải không?”", "words": ["你", "是", "学生", "吗", "？"], "answer": "你是学生吗？", "explanation": "吗 ở cuối câu." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn có bận không?”", "words": ["你", "忙", "吗", "？"], "answer": "你忙吗？", "explanation": "Tính từ + 吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy là thầy giáo phải không?”", "words": ["他", "是", "老师", "吗", "？"], "answer": "他是老师吗？", "explanation": "吗 ở cuối câu." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không bận, cảm ơn bạn.”", "words": ["我", "不", "忙", "，", "谢谢", "你", "。"], "answer": "我不忙，谢谢你。", "explanation": "Ôn lại 不忙 và 谢谢你." },
+     { "context": "Tình huống: Bạn muốn biết người kia có phải học sinh không. Bạn hỏi:", "pre": "", "blank": "你是学生吗？", "post": "", "options": ["你是学生吗？", "你是学生什么吗？", "吗你是学生？"], "answer": 0, "explanation": "吗 ở cuối câu." },
+     { "context": "Tình huống: Có người hỏi 「你忙吗？」, bạn đang bận. Bạn trả lời:", "pre": "", "blank": "我很忙。", "post": "", "options": ["我很忙。", "我忙。", "我很忙吗。"], "answer": 0, "explanation": "Câu trả lời khẳng định cần 很, bỏ 吗." },
+     { "context": "Tình huống: Bạn muốn hỏi tên một vật. Bạn hỏi:", "pre": "", "blank": "这是什么？", "post": "", "options": ["这是什么？", "这是什么吗？", "这是吗什么？"], "answer": 0, "explanation": "什么 và 吗 không dùng cùng nhau." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1-bai-4.html": {
+  "points": [
+   {
+    "title": "Đại từ nghi vấn 「谁」 (Ai) và 「哪」 (Nào)",
+    "errors": [
+     { "wrong": "他是谁吗？", "why": "câu đã có 谁 thì không dùng 吗.", "right": "他是谁？" },
+     { "wrong": "你是哪人？", "why": "哪 phải đi với lượng từ hoặc danh từ: 哪国人.", "right": "你是哪国人？" },
+     { "wrong": "谁他是？", "why": "谁 đứng ở vị trí của thông tin cần hỏi.", "right": "他是谁？" }
+    ],
+    "items": [
+     { "context": "“Cậu ấy là ai?”", "pre": "他是", "blank": "谁", "post": "？", "options": ["谁", "谁吗", "吗谁"], "answer": 0, "explanation": "谁 ở vị trí tân ngữ, không dùng 吗." },
+     { "context": "“Bạn là người nước nào?”", "pre": "你是", "blank": "哪国人", "post": "？", "options": ["哪国人", "哪人", "哪国人吗"], "answer": 0, "explanation": "哪 + 国 + 人." },
+     { "context": "“Ai là thầy của bạn?”", "pre": "", "blank": "谁是你的老师", "post": "？", "options": ["谁是你的老师", "谁是你的老师吗", "你的老师谁是"], "answer": 0, "explanation": "谁 cũng làm chủ ngữ được." },
+     { "context": "“Đây là quyển sách nào?”", "pre": "这是", "blank": "哪本书", "post": "？", "options": ["哪本书", "哪书", "哪本书吗"], "answer": 0, "explanation": "哪 + lượng từ + danh từ." },
+     { "context": "Trả lời 「他是谁？」", "pre": "他是", "blank": "我的老师", "post": "。", "options": ["我的老师", "谁我的老师", "我的老师吗"], "answer": 0, "explanation": "Thay 谁 bằng thông tin thật." },
+     { "context": "Trả lời 「你是哪国人？」", "pre": "我是", "blank": "越南人", "post": "。", "options": ["越南人", "哪越南人", "越南人吗"], "answer": 0, "explanation": "Thay 哪国 bằng tên nước." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy là ai?”", "words": ["他", "是", "谁", "？"], "answer": "他是谁？", "explanation": "是谁？" },
+     { "type": "sort", "context": "Sắp xếp: “Bạn là người nước nào?”", "words": ["你", "是", "哪", "国", "人", "？"], "answer": "你是哪国人？", "explanation": "哪国人？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi là người Việt Nam.”", "words": ["我", "是", "越南人", "。"], "answer": "我是越南人。", "explanation": "是 + quốc tịch." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy là thầy của tôi.”", "words": ["他", "是", "我", "的", "老师", "。"], "answer": "他是我的老师。", "explanation": "我的老师." },
+     { "context": "Tình huống: Bạn thấy một người lạ cùng thầy. Bạn hỏi:", "pre": "", "blank": "他是谁？", "post": "", "options": ["他是谁？", "他是谁吗？", "谁他是？"], "answer": 0, "explanation": "谁 không đi cùng 吗." },
+     { "context": "Tình huống: Bạn muốn biết quốc tịch của bạn mới. Bạn hỏi:", "pre": "", "blank": "你是哪国人？", "post": "", "options": ["你是哪国人？", "你是哪人？", "你是哪国人吗？"], "answer": 0, "explanation": "哪国人 = người nước nào." },
+     { "context": "Tình huống: Có người hỏi 「你是哪国人？」. Bạn trả lời:", "pre": "", "blank": "我是越南人。", "post": "", "options": ["我是越南人。", "我是哪越南人。", "我越南人。"], "answer": 0, "explanation": "是 + quốc tịch." }
+    ]
+   },
+   {
+    "title": "Trợ từ kết cấu 「的」",
+    "errors": [
+     { "wrong": "我老师", "why": "giữa người sở hữu và vật phải có 的 (trừ quan hệ thân thuộc gần).", "right": "我的老师" },
+     { "wrong": "的我老师", "why": "的 đứng SAU người sở hữu.", "right": "我的老师" },
+     { "wrong": "我的的书", "why": "的 chỉ dùng một lần.", "right": "我的书" }
+    ],
+    "items": [
+     { "context": "“thầy của tôi”", "pre": "", "blank": "我的老师", "post": "", "options": ["我的老师", "我老师的", "的我老师"], "answer": 0, "explanation": "Người sở hữu + 的 + danh từ." },
+     { "context": "“quyển sách của cậu ấy”", "pre": "", "blank": "他的书", "post": "", "options": ["他的书", "书的他", "的他书"], "answer": 0, "explanation": "他 + 的 + 书." },
+     { "context": "Quan hệ thân thuộc gần có thể LƯỢC 的.", "pre": "", "blank": "我妈妈", "post": "", "options": ["我妈妈", "妈妈我的", "的我妈妈"], "answer": 0, "explanation": "我妈妈 = 我的妈妈 (đều đúng)." },
+     { "context": "“Đây là sách của tôi.”", "pre": "这是", "blank": "我的书", "post": "。", "options": ["我的书", "我书的", "的我书"], "answer": 0, "explanation": "这是 + 我的书." },
+     { "context": "“Cái này là của bạn.” (的 thay cho danh từ)", "pre": "这是", "blank": "你的", "post": "。", "options": ["你的", "的你", "你"], "answer": 0, "explanation": "你的 = cái của bạn." },
+     { "context": "“bạn của tôi”", "pre": "", "blank": "我的朋友", "post": "", "options": ["我的朋友", "朋友的我", "的我朋友"], "answer": 0, "explanation": "我的 + 朋友." },
+     { "type": "sort", "context": "Sắp xếp: “Đây là sách của tôi.”", "words": ["这", "是", "我", "的", "书", "。"], "answer": "这是我的书。", "explanation": "我的书." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy là bạn của tôi.”", "words": ["他", "是", "我", "的", "朋友", "。"], "answer": "他是我的朋友。", "explanation": "我的朋友." },
+     { "type": "sort", "context": "Sắp xếp: “Cái này là của bạn.”", "words": ["这", "是", "你", "的", "。"], "answer": "这是你的。", "explanation": "你的 thay cho danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Mẹ tôi là thầy giáo.”", "words": ["我", "妈妈", "是", "老师", "。"], "answer": "我妈妈是老师。", "explanation": "Quan hệ thân thuộc lược 的." },
+     { "context": "Tình huống: Bạn chỉ vào quyển sách của mình và nói:", "pre": "", "blank": "这是我的书。", "post": "", "options": ["这是我的书。", "这是我书。", "这是的我书。"], "answer": 0, "explanation": "我的 + 书." },
+     { "context": "Tình huống: Bạn giới thiệu người bạn của mình:", "pre": "", "blank": "他是我的朋友。", "post": "", "options": ["他是我的朋友。", "他是我朋友的。", "他是的我朋友。"], "answer": 0, "explanation": "我的朋友." },
+     { "context": "Tình huống: Bạn đưa lại bút cho bạn cùng lớp và nói:", "pre": "", "blank": "这是你的。", "post": "", "options": ["这是你的。", "这是的你。", "这是你。"], "answer": 0, "explanation": "你的 = cái của bạn." }
+    ]
+   },
+   {
+    "title": "Trợ từ nghi vấn 「呢」 (1) — hỏi lại cùng nội dung",
+    "errors": [
+     { "wrong": "我很好，你呢吗？", "why": "không dùng cùng lúc 呢 và 吗.", "right": "我很好，你呢？" },
+     { "wrong": "我很好，呢你？", "why": "呢 đứng SAU đối tượng được hỏi lại.", "right": "我很好，你呢？" },
+     { "wrong": "你呢很好？", "why": "呢 đứng ngay sau danh từ/đại từ, cuối câu.", "right": "你呢？" }
+    ],
+    "items": [
+     { "context": "“Tôi rất tốt, còn bạn?”", "pre": "我很好，", "blank": "你呢", "post": "？", "options": ["你呢", "你呢吗", "呢你"], "answer": 0, "explanation": "呢 đứng sau đối tượng, cuối câu." },
+     { "context": "“Tôi là học sinh, còn cậu ấy?”", "pre": "我是学生，", "blank": "他呢", "post": "？", "options": ["他呢", "呢他", "他呢吗"], "answer": 0, "explanation": "呢 hỏi lại cùng nội dung." },
+     { "context": "“Tôi không bận, còn bạn?”", "pre": "我不忙，", "blank": "你呢", "post": "？", "options": ["你呢", "你吗", "呢你"], "answer": 0, "explanation": "呢 = còn… thì sao?" },
+     { "context": "“Sách của tôi ở đây, còn sách của bạn?”", "pre": "我的书在这儿，", "blank": "你的呢", "post": "？", "options": ["你的呢", "呢你的", "你的吗呢"], "answer": 0, "explanation": "Cụm 的 + 呢." },
+     { "context": "Không dùng 呢 cùng 吗.", "pre": "你", "blank": "呢", "post": "？", "options": ["呢", "呢吗", "吗呢"], "answer": 0, "explanation": "Chọn một trong hai trợ từ." },
+     { "context": "“Tôi là người Việt Nam, còn bạn?”", "pre": "我是越南人，", "blank": "你呢", "post": "？", "options": ["你呢", "你呢吗", "呢你"], "answer": 0, "explanation": "呢 sau đại từ 你." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi rất tốt, còn bạn?”", "words": ["我", "很", "好", "，", "你", "呢", "？"], "answer": "我很好，你呢？", "explanation": "你呢？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi là học sinh, còn cậu ấy?”", "words": ["我", "是", "学生", "，", "他", "呢", "？"], "answer": "我是学生，他呢？", "explanation": "他呢？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không bận, còn bạn?”", "words": ["我", "不", "忙", "，", "你", "呢", "？"], "answer": "我不忙，你呢？", "explanation": "你呢？" },
+     { "type": "sort", "context": "Sắp xếp: “Đây là sách của tôi, còn của bạn?”", "words": ["这", "是", "我", "的", "书", "，", "你", "的", "呢", "？"], "answer": "这是我的书，你的呢？", "explanation": "你的呢？" },
+     { "context": "Tình huống: Bạn vừa trả lời 「我很好」, muốn hỏi lại người kia. Bạn nói:", "pre": "", "blank": "你呢？", "post": "", "options": ["你呢？", "你呢吗？", "呢你？"], "answer": 0, "explanation": "呢 hỏi lại cùng nội dung." },
+     { "context": "Tình huống: Bạn nói mình là người Việt Nam, rồi hỏi lại:", "pre": "我是越南人，", "blank": "你呢？", "post": "", "options": ["你呢？", "你吗？", "呢你？"], "answer": 0, "explanation": "你呢？= còn bạn?" },
+     { "context": "Tình huống: Bạn để sách lên bàn, muốn hỏi sách của bạn ấy đâu:", "pre": "我的书在这儿，", "blank": "你的呢？", "post": "", "options": ["你的呢？", "呢你的？", "你的吗呢？"], "answer": 0, "explanation": "Cụm 的 + 呢." }
+    ]
+   }
+  ]
+ }
+}

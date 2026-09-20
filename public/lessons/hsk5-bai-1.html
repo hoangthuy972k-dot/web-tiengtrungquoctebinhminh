@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSK5 · Bài 1 · 爱的细节</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/lesson-template.css">
+<link rel="stylesheet" href="/css/hsk5.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="back-link" href="/">← Về trang chủ Hi Hán 喜汉</a>
+  <div class="header-badge">HSK5 · Bài 1</div>
+  <div class="header-zh">爱的细节</div>
+  <div class="header-py">Ài de xìjié</div>
+  <div class="header-vn">Chi tiết của tình yêu</div>
+  <div class="header-meta">
+    <span class="h-chip">🏠 Unit 1 了解生活 · Hôn nhân &amp; tình cảm vợ chồng</span>
+    <span class="h-chip">📚 38 từ mới</span>
+    <span class="h-chip">📖 6 đoạn bài đọc</span>
+    <span class="h-chip">📐 3 điểm ngữ pháp</span>
+    <span class="h-chip">🔍 3 cặp từ gần nghĩa</span>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" data-action="show-tab" data-tab="vocab">📚 Từ mới</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="hanviet">🌉 Hán–Việt</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="flash">🃏 Thẻ nhớ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="grammar">📐 Ngữ pháp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="synonym">🔍 Phân biệt từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="dialog">📖 Bài đọc</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="match">1️⃣ Ghép cụm</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="fill">2️⃣ Điền từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="sort">2️⃣ Sắp xếp</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="errfix">2️⃣ Chọn từ</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="writing">✍️ Viết đoạn</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="speak">4️⃣ Luyện nói</button>
+  <button class="tab-btn" data-action="show-tab" data-tab="tongket">5️⃣ Tổng kết</button>
+</nav>
+
+<div class="main">
+
+<div id="vocab" class="section active">
+  <div class="sec-head">
+    <div class="sec-title">📚 Từ mới <span class="sec-badge">38 từ</span></div>
+    <div class="sec-sub">👆 Bấm thẻ để xem nghĩa, cách dùng &amp; ví dụ mở rộng — lấy đúng bảng 词汇拓展 của giáo trình</div>
+  </div>
+  <div class="flip-tip">👆 Bấm thẻ để lật xem nghĩa &amp; ví dụ · Bên dưới mỗi thẻ có khung luyện dịch riêng</div>
+  <div class="vocab-grid" id="vocab-grid"></div>
+</div>
+
+<div id="hanviet" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🌉 Bắc cầu Hán–Việt <span class="sec-badge">汉越词</span></div>
+    <div class="sec-sub">Lợi thế riêng của người Việt — và những từ bẫy giống chữ mà khác nghĩa</div>
+  </div>
+  <div id="hanviet-wrap"></div>
+</div>
+
+<div id="flash" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🃏 Thẻ nhớ <span class="sec-badge">闪卡</span></div>
+    <div class="sec-sub">Bấm thẻ để lật · dùng để ôn nhanh trước giờ kiểm tra</div>
+  </div>
+  <div class="flash-nav">
+    <button class="flash-btn" data-action="flash-prev">←</button>
+    <span class="flash-ctr" id="flash-ctr">1 / 38</span>
+    <button class="flash-btn" data-action="flash-next">→</button>
+  </div>
+  <div class="flash-wrap">
+    <div class="flash-outer" id="flash-card" data-action="flash-flip">
+      <div class="flash-face f-front">
+        <div class="f-emoji" id="ff-em"></div>
+        <div class="f-zh" id="ff-zh"></div>
+        <div class="f-py" id="ff-py"></div>
+        <div class="f-hint">Bấm để xem nghĩa</div>
+      </div>
+      <div class="flash-face f-back">
+        <div class="f-vn" id="fb-vn"></div>
+        <div class="f-py" id="fb-py" style="color:var(--teal)"></div>
+        <div class="f-ex" id="fb-ex"></div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:14px;">
+    <button class="btn-s" data-action="flash-shuffle">🔀 Xáo trộn</button>
+  </div>
+</div>
+
+<div id="grammar" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📐 Ngữ pháp <span class="sec-badge">3 điểm</span></div>
+    <div class="sec-sub">Ba điểm ngôn ngữ trọng tâm của bài, theo đúng phần 词语例释 của giáo trình</div>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">1</span>「如何」</div>
+    <div class="g-sub">如何 là đại từ, dùng để hỏi CÁCH THỨC, nghĩa gần với 怎么 / 怎么样 nhưng thiên về VĂN VIẾT. Ngoài ra 如何 còn đặt ở CUỐI câu để hỏi tình hình hoặc xin ý kiến — vị trí mà 怎么 không dùng được.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> ① (该) <strong style="color:var(--sky-d)">如何</strong> + Động từ　② …… <strong style="color:var(--sky-d)">如何</strong>？(cuối câu)</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">我们明天举行会议，讨论这个问题该如何解决。</td><td style="color:var(--soft);font-size:0.82rem">Wǒmen míngtiān jǔxíng huìyì, tǎolùn zhège wèntí gāi rúhé jiějué.</td><td style="color:var(--mid);font-size:0.85rem">Ngày mai chúng ta họp, bàn xem vấn đề này nên giải quyết như thế nào.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">评委叫第一对夫妻说说他俩是如何恩爱的。</td><td style="color:var(--soft);font-size:0.82rem">Píngwěi jiào dì-yī duì fūqī shuōshuo tā liǎ shì rúhé ēn'ài de.</td><td style="color:var(--mid);font-size:0.85rem">Giám khảo bảo cặp thứ nhất kể xem hai người đằm thắm ra sao.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">最近身体如何？</td><td style="color:var(--soft);font-size:0.82rem">Zuìjìn shēntǐ rúhé?</td><td style="color:var(--mid);font-size:0.85rem">Dạo này sức khoẻ ra sao?</td></tr>
+      </tbody>
+    </table>
+    <div class="g-errors">
+      <div class="g-errors-title">⚠️ Lỗi học sinh Việt hay mắc</div>
+      <div class="g-err"><div class="g-err-wrong">✗ 今天如何这么冷？</div><div class="g-err-why">如何 KHÔNG dùng để hỏi nguyên nhân, chỉ hỏi cách thức.</div><div class="g-err-right">✓ 今天怎么这么冷？</div></div>
+      <div class="g-err"><div class="g-err-wrong">✗ 最近身体怎么？</div><div class="g-err-why">怎么 không đứng cuối câu để hỏi tình hình — vị trí này phải dùng 如何.</div><div class="g-err-right">✓ 最近身体如何？</div></div>
+    </div>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">2</span>「靠」</div>
+    <div class="g-sub">靠 là động từ, nghĩa gốc: để một phần cơ thể tì lên người hoặc vật khác. Nghĩa mở rộng: nhờ vào, dựa vào ai đó.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> <strong style="color:var(--sky-d)">靠着 / 靠在</strong> + nơi chốn　|　<strong style="color:var(--sky-d)">靠</strong> + người (dựa vào)</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">王老师喜欢靠着桌子讲课。</td><td style="color:var(--soft);font-size:0.82rem">Wáng lǎoshī xǐhuan kàozhe zhuōzi jiǎngkè.</td><td style="color:var(--mid);font-size:0.85rem">Thầy Vương thích tựa vào bàn để giảng bài.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">男人的头靠在女人的肩膀上，睡着了。</td><td style="color:var(--soft);font-size:0.82rem">Nánrén de tóu kào zài nǚrén de jiānbǎng shang, shuìzháo le.</td><td style="color:var(--mid);font-size:0.85rem">Đầu người đàn ông tựa lên vai người phụ nữ, ngủ thiếp đi.</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">在家靠父母，出门靠朋友。</td><td style="color:var(--soft);font-size:0.82rem">Zài jiā kào fùmǔ, chūmén kào péngyou.</td><td style="color:var(--mid);font-size:0.85rem">Ở nhà nhờ cha mẹ, ra ngoài nhờ bạn bè.</td></tr>
+      </tbody>
+    </table>
+    <div class="g-errors">
+      <div class="g-errors-title">⚠️ Lỗi học sinh Việt hay mắc</div>
+      <div class="g-err"><div class="g-err-wrong">✗ 他的头靠女人的肩膀。</div><div class="g-err-why">thiếu 在……上 — chỉ vị trí tì lên phải có kết cấu đầy đủ.</div><div class="g-err-right">✓ 他的头靠在女人的肩膀上。</div></div>
+    </div>
+  </div>
+
+  <div class="grammar-card">
+    <div class="g-title"><span class="g-num">3</span>「居然」</div>
+    <div class="g-sub">居然 là phó từ, biểu thị việc xảy ra NGOÀI DỰ LIỆU, không ngờ tới. Đứng sau chủ ngữ và trước động từ. Sắc thái ngạc nhiên mạnh hơn 竟然 trong khẩu ngữ.</div>
+    <div class="g-rule"><strong>Cấu trúc：</strong> Chủ ngữ + <strong style="color:var(--sky-d)">居然</strong> + Động từ / Cụm động từ</div>
+    <table class="g-table">
+      <thead><tr><th>Câu tiếng Trung</th><th>Phiên âm</th><th>Nghĩa tiếng Việt</th></tr></thead>
+      <tbody>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">这么简单的题，你居然也不会做？</td><td style="color:var(--soft);font-size:0.82rem">Zhème jiǎndān de tí, nǐ jūrán yě bú huì zuò?</td><td style="color:var(--mid);font-size:0.85rem">Bài dễ thế này mà bạn lại không làm được à?</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">这个女人为了不影响丈夫睡觉，居然放弃这次机会！</td><td style="color:var(--soft);font-size:0.82rem">Zhège nǚrén wèile bù yǐngxiǎng zhàngfu shuìjiào, jūrán fàngqì zhè cì jīhuì!</td><td style="color:var(--mid);font-size:0.85rem">Người phụ nữ này vì không muốn ảnh hưởng giấc ngủ của chồng mà lại từ bỏ cơ hội này!</td></tr>
+        <tr><td style="font-family:'Noto Serif SC',serif;color:var(--sky-d)">她每天都努力复习，居然没有通过考试。</td><td style="color:var(--soft);font-size:0.82rem">Tā měi tiān dōu nǔlì fùxí, jūrán méiyǒu tōngguò kǎoshì.</td><td style="color:var(--mid);font-size:0.85rem">Cô ấy ngày nào cũng ôn chăm chỉ, vậy mà lại không qua được kỳ thi.</td></tr>
+      </tbody>
+    </table>
+    <div class="g-errors">
+      <div class="g-errors-title">⚠️ Lỗi học sinh Việt hay mắc</div>
+      <div class="g-err"><div class="g-err-wrong">✗ 居然他放弃了这次机会。</div><div class="g-err-why">居然 là phó từ, phải đứng SAU chủ ngữ.</div><div class="g-err-right">✓ 他居然放弃了这次机会。</div></div>
+      <div class="g-err"><div class="g-err-wrong">✗ 今天天气很好，我居然去公园了。</div><div class="g-err-why">việc đi công viên khi trời đẹp là chuyện bình thường, không có gì bất ngờ — 居然 phải dùng cho việc TRÁI với dự đoán.</div><div class="g-err-right">✓ 今天下大雨，他居然还去公园了。</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="synonym" class="section">
+  <div class="sec-head">
+    <div class="sec-title">🔍 Phân biệt từ gần nghĩa <span class="sec-badge">词语辨析</span></div>
+    <div class="sec-sub">Lên HSK 5, cái khó không còn là cấu trúc mà là <b>chọn đúng từ trong mấy từ cùng nghĩa</b>. Đọc phần khác nhau rồi làm bài ngay bên dưới.</div>
+  </div>
+  <div id="synonym-wrap"></div>
+</div>
+
+<div id="dialog" class="section">
+  <div class="sec-head">
+    <div class="sec-title">📖 Bài đọc <span class="sec-badge">课文 · 6 đoạn</span></div>
+    <div class="sec-sub">Trả lời câu hỏi TRƯỚC khi đọc lời dịch — đề HSK 5 không cho đủ thời gian để dịch từng chữ, phải tập đoán ý.</div>
+  </div>
+  <div id="dlg-wrap"></div>
+</div>
+
+<div id="match" class="section">
+  <div class="sec-head">
+    <div class="sec-title">1️⃣ Ghép cụm từ <span class="sec-badge">词语搭配</span></div>
+    <div class="sec-sub">Bấm một ô bên trái rồi bấm ô bên phải để ghép thành cụm đúng — lấy từ bảng 搭配 của giáo trình</div>
+  </div>
+  <div class="match-wrap">
+    <div class="m-col" id="m-left"></div>
+    <div class="m-col" id="m-right"></div>
+  </div>
+  <div id="m-fb" style="min-height:26px;text-align:center;margin-top:10px;"></div>
+</div>
+
+<div id="fill" class="section">
+  <div class="sec-head">
+    <div class="sec-title">2️⃣ Điền từ vào chỗ trống <span class="sec-badge">填空</span></div>
+    <div class="sec-sub">Gõ từ còn thiếu vào ô — gợi ý nghĩa tiếng Việt nằm ngay bên cạnh</div>
+  </div>
+  <div id="fill-list"></div>
+  <div id="fill-prog"></div>
+  <div class="score-box" id="fill-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="fill-sn"></div></div>
+    <div class="score-m" id="fill-sm"></div>
+  </div>
+</div>
+
+<div id="sort" class="section">
+  <div class="sec-head">
+    <div class="sec-title">2️⃣ Sắp xếp thành câu <span class="sec-badge">连词成句</span></div>
+    <div class="sec-sub">Bấm lần lượt các thẻ từ theo đúng thứ tự để tạo thành câu hoàn chỉnh</div>
+  </div>
+  <div id="sort-list"></div>
+  <div class="score-box" id="sort-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="sort-sn"></div></div>
+    <div class="score-m" id="sort-sm"></div>
+  </div>
+</div>
+
+<div id="errfix" class="section">
+  <div class="sec-head">
+    <div class="sec-title">2️⃣ Chọn từ phù hợp <span class="sec-badge">选词填空</span></div>
+    <div class="sec-sub">Đọc kỹ nghĩa của câu rồi chọn từ phù hợp — phần lớn câu ở đây đánh vào chỗ dễ nhầm giữa các từ gần nghĩa.</div>
+  </div>
+  <div id="errfix-list"></div>
+  <div class="score-box" id="errfix-score">
+    <div><div style="font-size:0.78rem;color:var(--mid)">Điểm số</div><div class="score-n" id="errfix-sn"></div></div>
+    <div class="score-m" id="errfix-sm"></div>
+  </div>
+</div>
+
+<div id="writing" class="section">
+  <div class="sec-head">
+    <div class="sec-title">✍️ Viết đoạn 80 chữ <span class="sec-badge">书写 · 第二部分</span></div>
+    <div class="sec-sub">Đúng dạng đề thi HSK 5 phần viết: cho 5 từ, viết một đoạn khoảng 80 chữ. Bài làm tự lưu trong máy, thầy/cô chấm sau.</div>
+  </div>
+  <div id="writing-wrap"></div>
+</div>
+
+<div id="speak" class="section">
+  <div class="sec-head">
+    <div class="sec-title">4️⃣ Luyện nói phản xạ</div>
+    <div class="sec-sub">Nhấn 🔊 nghe câu hỏi, rồi <strong style="color:var(--teal)">tự ghi âm câu trả lời của bạn</strong> — không đọc theo câu mẫu.</div>
+  </div>
+  <div id="speak-wrap"></div>
+</div>
+
+<div id="tongket" class="section">
+  <div class="sec-head">
+    <div class="sec-title">5️⃣ Tổng kết bài học <span class="sec-badge">总结</span></div>
+    <div class="sec-sub">Điểm tổng hợp từ các phần bài tập bên trên — hoàn thành hết rồi quay lại đây để xem điểm chính xác nhất!</div>
+  </div>
+  <div id="summary-wrap"></div>
+</div>
+
+</div>
+
+<script src="/js/hsk5-bai-1-data.js"></script>
+<script src="/js/lesson-engine.js"></script>
+<script src="/js/hsk5-extra.js"></script>
+<link rel="stylesheet" href="/css/widgets.css" />
+<script src="/js/widgets.js" defer></script>
+</body>
+</html>

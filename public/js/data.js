@@ -63,7 +63,8 @@ const APP_DATA = {
       name: 'HSK 5',
       subtitle: 'Cao cấp 1',
       description: 'Đọc báo, xem phim, phát biểu tương đối hoàn chỉnh bằng tiếng Trung.',
-      totalLessons: 18,
+      // HSK标准教程5 gom hai quyen: 上 bai 1-18, 下 bai 19-36
+      totalLessons: 36,
       totalVocab: 2500,
       color: 'red'
     },
@@ -1356,6 +1357,20 @@ const APP_DATA = {
         dialogueCount: 4,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk2v3-bai-15.html'
+      }
+    ],
+    hsk5: [
+      {
+        id: 'hsk5-l1',
+        number: 1,
+        title: 'Chi tiết của tình yêu',
+        titleHanzi: '爱的细节',
+        titlePinyin: 'Ài de xìjié',
+        topic: 'Unit 1 了解生活 · Hôn nhân, tình cảm vợ chồng & những chi tiết nhỏ',
+        vocabCount: 38,
+        dialogueCount: 6,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-1.html'
       }
     ],
     yct: [

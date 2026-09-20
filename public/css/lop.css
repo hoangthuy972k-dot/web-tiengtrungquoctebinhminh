@@ -315,6 +315,82 @@
   line-height: 1.6;
 }
 
+/* ---------- Tro gio the A/B/C ---------- */
+.lop-abc-context {
+  background: var(--color-gold-50);
+  border-left: 4px solid var(--color-gold-500);
+  border-radius: var(--radius-lg);
+  padding: 12px 20px;
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  color: var(--color-gray-700);
+  align-self: center;
+  max-width: 1100px;
+}
+.lop-abc-sentence {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.4;
+  text-align: center;
+  color: var(--color-gray-900);
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: clamp(16px, 2.4vw, 32px) clamp(18px, 3vw, 40px);
+}
+.lop-blank { color: var(--color-red-600); letter-spacing: 2px; }
+
+.lop-abc-opts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.lop-abc-opt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: clamp(12px, 1.6vw, 18px) clamp(14px, 2vw, 22px);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: border-color .15s, opacity .2s, background .2s;
+}
+.lop-abc-opt:hover { border-color: var(--color-gold-400); }
+.lop-abc-key {
+  width: 46px; height: 46px; flex: none;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: var(--color-red-600);
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+.lop-abc-text {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+  line-height: 1.35;
+  color: var(--color-gray-900);
+}
+.lop-abc-opt.is-right {
+  border-color: var(--color-green-500);
+  background: var(--color-green-50);
+}
+.lop-abc-opt.is-right .lop-abc-key { background: var(--color-green-600); }
+.lop-abc-opt.is-dim { opacity: 0.38; }
+.lop-abc-why {
+  text-align: center;
+  color: var(--color-gray-700);
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  background: var(--color-gold-50);
+  border-radius: var(--radius-lg);
+  padding: 12px 20px;
+  max-width: 1100px;
+  align-self: center;
+}
+
 .lop-stage-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
 .lop-act {
   background: var(--color-red-600);

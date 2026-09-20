@@ -92,9 +92,18 @@ function sendVersionedHtml(res, filePath) {
   res.type('html').send(html);
 }
 
+// CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
+// qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
+// dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
+const CLEAN_PAGES = { '/lop': 'lop.html', '/bao-cao': 'admin.html' };
+
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next();
   let p = decodeURIComponent(req.path);
+  if (CLEAN_PAGES[p]) {
+    const f = path.join(PUBLIC_DIR, CLEAN_PAGES[p]);
+    if (fs.existsSync(f)) return sendVersionedHtml(res, f);
+  }
   if (p.endsWith('/')) p += 'index.html';
   if (!p.endsWith('.html')) return next();
   const filePath = path.join(PUBLIC_DIR, p);

@@ -139,7 +139,27 @@
           judges.push({ sentence: r.text, note: r.note, isCorrect: true, fix: '', why: '', point: e.point || '' });
         }
       });
-      if (judges.length) out.push({ n: parseInt(def.re.exec(url)[1], 10), url: url, judges: judges });
+
+      // Cau dien tu — dung cho tro gio the A/B/C
+      var mcs = [], seenMc = {};
+      (bank[url] || []).forEach(function (g) {
+        (g.items || []).forEach(function (q) {
+          if (q.type && q.type !== 'mc') return;
+          if (!q.options || q.options.length < 2 || typeof q.answer !== 'number') return;
+          var key = (q.pre || '') + '|' + (q.blank || '') + '|' + (q.post || '');
+          if (seenMc[key]) return;
+          seenMc[key] = 1;
+          mcs.push({
+            pre: q.pre || '', post: q.post || '',
+            options: q.options.slice(0, 3), answer: q.answer,
+            context: q.context || '', why: q.explanation || '', point: g.point || ''
+          });
+        });
+      });
+
+      if (judges.length || mcs.length) {
+        out.push({ n: parseInt(def.re.exec(url)[1], 10), url: url, judges: judges, mcs: mcs });
+      }
     });
     out.sort(function (a, b) { return a.n - b.n; });
     return out;
@@ -175,6 +195,13 @@
     });
     return out;
   }
+  function pickedMcs() {
+    var out = [];
+    state.lessons.forEach(function (l) {
+      if (state.picked[l.url]) out = out.concat(l.mcs || []);
+    });
+    return out;
+  }
 
   // Ten cac bai dang chon, vi du "Bài 1" hoac "Bài 1, 3, 7"
   function pickedLabel() {
@@ -187,9 +214,12 @@
 
   function updateCount() {
     var n = pickedJudges().length;
+    var m = pickedMcs().length;
     var label = pickedLabel();
     $('#lopCountErrfix').textContent = n ? n + ' câu' : 'chọn bài';
     $('.lop-game-card[data-game="errfix"]').disabled = n < 3;
+    $('#lopCountAbc').textContent = m ? m + ' câu' : 'chọn bài';
+    $('.lop-game-card[data-game="abc"]').disabled = m < 1;
     var st = $('#lopPickState');
     if (st) {
       st.textContent = label
@@ -354,6 +384,75 @@
     state.rows.forEach(function (_, i) { revealRow(i); });
   }
 
+  /* ---------------- tro: gio the A/B/C ---------------- */
+  var ABC = ['A', 'B', 'C', 'D'];
+
+  function dealAbc() {
+    state.deck = shuffle(pickedMcs());
+    state.pos = 0;
+    state.abcShown = false;
+  }
+
+  function renderAbc() {
+    var q = state.deck[state.pos];
+    if (!q) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNewRound">Bộ câu mới →</button></div>';
+      $('#lopNewRound').addEventListener('click', function () { dealAbc(); renderAbc(); resetTimer(); });
+      return;
+    }
+    // Dap an trong du lieu luon o vi tri dau — phai tron lai
+    if (!q._order) {
+      q._order = shuffle(q.options.map(function (_, i) { return i; }));
+      q._ans = q._order.indexOf(q.answer);
+    }
+
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Câu ' + (state.pos + 1) + '/' + state.deck.length + ' · cả lớp giơ thẻ <b>A</b> / <b>B</b> / <b>C</b></span>' +
+        (q.point ? '<span class="lop-point">📐 ' + esc(q.point) + '</span>' : '') +
+      '</div>' +
+      (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
+      '<div class="lop-abc-sentence">' + esc(q.pre) + '<span class="lop-blank">＿＿</span>' + esc(q.post) + '</div>' +
+      '<div class="lop-abc-opts">' + q._order.map(function (oi, i) {
+        return '<div class="lop-abc-opt" data-i="' + i + '">' +
+          '<span class="lop-abc-key">' + ABC[i] + '</span>' +
+          '<span class="lop-abc-text">' + esc(q.options[oi]) + '</span>' +
+        '</div>';
+      }).join('') + '</div>' +
+      '<div id="lopAbcWhy" class="lop-abc-why" hidden></div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopAbcReveal">Lật đáp án (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopAbcNext">Câu tiếp theo →</button>' +
+      '</div>';
+
+    $('#lopAbcReveal').addEventListener('click', revealAbc);
+    $('#lopAbcNext').addEventListener('click', nextAbc);
+    $all('#lopStage .lop-abc-opt').forEach(function (el) { el.addEventListener('click', revealAbc); });
+    state.abcShown = false;
+  }
+
+  function revealAbc() {
+    if (state.abcShown) return;
+    var q = state.deck[state.pos];
+    if (!q) return;
+    state.abcShown = true;
+    $all('#lopStage .lop-abc-opt').forEach(function (el, i) {
+      el.classList.add(i === q._ans ? 'is-right' : 'is-dim');
+    });
+    if (q.why) {
+      var w = $('#lopAbcWhy');
+      w.hidden = false;
+      w.textContent = '💡 ' + q.why;
+    }
+  }
+  function nextAbc() {
+    if (state.pos < state.deck.length - 1) state.pos++;
+    else { dealAbc(); }
+    renderAbc();
+    resetTimer();
+  }
+
   /* ---------------- quay so bao danh ---------------- */
   var rollTimer = null;
   function openRoll() {
@@ -382,13 +481,19 @@
     hsk3: 'HSK 3', hsk4: 'HSK 4', yct: 'YCT'
   };
 
-  function startGame() {
-    if (pickedJudges().length < 3) return;
+  var GAME_TITLE = { errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C' };
+
+  function startGame(game) {
+    if (game === 'abc' ? !pickedMcs().length : pickedJudges().length < 3) return;
+    state.game = game;
+    $('#lopTitle').textContent = GAME_TITLE[game];
     $('#lopSub').textContent = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
     resetScores();
     renderScorebar();
-    dealRows();
-    renderErrfix();
+    // Moi tro mot nhip: gio the tra loi nhanh, bat loi sai can thoi gian len bang
+    state.timer.secs = (game === 'abc') ? 10 : 30;
+    if (game === 'abc') { dealAbc(); renderAbc(); }
+    else { dealRows(); renderErrfix(); }
     resetTimer();
     $('#lopSetup').hidden = true;
     $('#lopPlay').hidden = false;
@@ -428,7 +533,9 @@
       renderLessons();
     });
 
-    $('.lop-game-card[data-game="errfix"]').addEventListener('click', startGame);
+    $all('.lop-game-card').forEach(function (c) {
+      c.addEventListener('click', function () { startGame(c.getAttribute('data-game')); });
+    });
     $('#lopExit').addEventListener('click', exitGame);
     $('#lopTimerToggle').addEventListener('click', toggleTimer);
     $('#lopTimerSet').addEventListener('click', cycleTimerSecs);
@@ -439,8 +546,13 @@
     document.addEventListener('keydown', function (e) {
       if ($('#lopPlay').hidden) return;
       if (e.target && /input|select|textarea/i.test(e.target.tagName)) return;
-      if (e.code === 'Space') { e.preventDefault(); revealAll(); return; }
-      if (e.key === 'n' || e.key === 'N') { dealRows(); renderErrfix(); resetTimer(); return; }
+      var abc = state.game === 'abc';
+      if (e.code === 'Space') { e.preventDefault(); if (abc) revealAbc(); else revealAll(); return; }
+      if (e.code === 'ArrowRight' || e.code === 'Enter') { if (abc) { e.preventDefault(); nextAbc(); } return; }
+      if (e.key === 'n' || e.key === 'N') {
+        if (abc) { dealAbc(); renderAbc(); } else { dealRows(); renderErrfix(); }
+        resetTimer(); return;
+      }
       if (e.key === 't' || e.key === 'T') { toggleTimer(); return; }
       if (e.key === 'r' || e.key === 'R') { openRoll(); return; }
       if (/^[1-6]$/.test(e.key)) { addScore(parseInt(e.key, 10) - 1, 1); }

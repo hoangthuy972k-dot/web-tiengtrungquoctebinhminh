@@ -774,9 +774,12 @@
   /* ---------------- tro: lat o doan chu ---------------- */
   // 9 o che hinh. Hai o thuong (+1 diem), mot o mat luot — dat ngau nhien.
   function dealTiles(vocab) {
-    var pool = vocab.filter(function (v) { return v.em; });
+    if (!state.tileFace) state.tileFace = 'zh';   // mac dinh che CHU HAN
+    var pool = state.tileFace === 'em'
+      ? vocab.filter(function (v) { return v.em; })
+      : vocab.filter(function (v) { return /^[一-鿿]{1,4}$/.test(v.zh); });
     state.tileWord = shuffle(pool.length ? pool : vocab)[0];
-    var marks = shuffle([1, 1, 1, 1, 1, 1, 'bonus', 'bonus', 'skip'].map(function (x, i) { return x; }));
+    var marks = shuffle([1, 1, 1, 1, 1, 1, 'bonus', 'bonus', 'skip']);
     state.tiles = marks.map(function (m) { return { open: false, mark: m }; });
     state.tileShown = false;
   }
@@ -787,12 +790,18 @@
       $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa có từ để chơi.</span></div>';
       return;
     }
+    var face = state.tileFace === 'em' ? (v.em || v.zh) : v.zh;
+    var isZh = state.tileFace !== 'em';
+    // Tu cang dai thi chu cang phai nho de van nam gon trong o vuong
+    var sizeClass = isZh ? ' len-' + Math.min(4, (v.zh || '').length) : '';
+
     $('#lopStage').innerHTML =
       '<div class="lop-stage-head">' +
         '<span>Mỗi tổ lần lượt chọn mở <b>một ô</b> rồi đoán. Có ô <b>thưởng +1</b> và ô <b>mất lượt</b>.</span>' +
+        '<span class="lop-point">Đang che: ' + (isZh ? 'chữ Hán' : 'hình minh hoạ') + '</span>' +
       '</div>' +
       '<div class="lop-tiles-wrap">' +
-        '<div class="lop-tiles-pic">' + esc(v.em || v.zh) + '</div>' +
+        '<div class="lop-tiles-pic' + (isZh ? ' is-zh' : '') + sizeClass + '">' + esc(face) + '</div>' +
         '<div class="lop-tiles-grid">' + state.tiles.map(function (t, i) {
           return '<button type="button" class="lop-tile' + (t.open ? ' is-open' : '') + '" data-i="' + i + '">' +
             (t.open ? (t.mark === 'bonus' ? '⭐' : t.mark === 'skip' ? '⛔' : '') : (i + 1)) +
@@ -807,6 +816,7 @@
       '<div class="lop-stage-actions">' +
         '<button type="button" class="lop-act" id="lopTileReveal">Lật đáp án (Space)</button>' +
         '<button type="button" class="lop-act ghost" id="lopTileNext">Từ tiếp theo →</button>' +
+        '<button type="button" class="lop-act ghost" id="lopTileFace">Che ' + (isZh ? 'hình minh hoạ' : 'chữ Hán') + '</button>' +
       '</div>';
 
     $all('#lopStage .lop-tile').forEach(function (btn) {
@@ -814,6 +824,10 @@
     });
     $('#lopTileReveal').addEventListener('click', revealTiles);
     $('#lopTileNext').addEventListener('click', function () {
+      dealTiles(state.vocab || []); renderTiles(); resetTimer();
+    });
+    $('#lopTileFace').addEventListener('click', function () {
+      state.tileFace = isZh ? 'em' : 'zh';
       dealTiles(state.vocab || []); renderTiles(); resetTimer();
     });
   }

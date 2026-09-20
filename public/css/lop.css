@@ -570,7 +570,15 @@
   line-height: 1;
   font-family: 'Noto Serif SC', serif;
   color: var(--color-gray-900);
+  text-align: center;
+  padding: 6px;
 }
+/* Che chu Han: chu phai day net va tran gan het o de mo vai o la doan duoc */
+.lop-tiles-pic.is-zh { font-weight: 700; color: #16120f; }
+.lop-tiles-pic.is-zh.len-1 { font-size: clamp(9rem, 34vh, 17rem); }
+.lop-tiles-pic.is-zh.len-2 { font-size: clamp(5rem, 18vh, 9rem); line-height: 1.05; }
+.lop-tiles-pic.is-zh.len-3 { font-size: clamp(3.4rem, 12vh, 6rem); line-height: 1.1; }
+.lop-tiles-pic.is-zh.len-4 { font-size: clamp(2.8rem, 10vh, 5rem); line-height: 1.12; }
 .lop-tiles-grid {
   position: absolute; inset: 0;
   display: grid;

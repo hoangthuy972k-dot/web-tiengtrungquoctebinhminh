@@ -1,0 +1,194 @@
+{
+ "/lessons/hsk1-bai-9.html": {
+  "points": [
+   {
+    "title": "Động từ 「在」 — ở đâu",
+    "errors": [
+     { "wrong": "我是在学校。", "why": "在 đã là động từ, không cần thêm 是.", "right": "我在学校。" },
+     { "wrong": "我学校在。", "why": "在 đứng TRƯỚC nơi chốn.", "right": "我在学校。" },
+     { "wrong": "我没在学校吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你在学校吗？" }
+    ],
+    "items": [
+     { "context": "“Tôi ở trường.”", "pre": "我", "blank": "在学校", "post": "。", "options": ["在学校", "是在学校", "学校在"], "answer": 0, "explanation": "在 là động từ, không cần 是." },
+     { "context": "Phủ định: “Tôi không ở nhà.”", "pre": "我", "blank": "不在家", "post": "。", "options": ["不在家", "没在家吗", "在不家"], "answer": 0, "explanation": "不 đứng trước 在." },
+     { "context": "“Quyển sách ở trên bàn.”", "pre": "书", "blank": "在桌子上", "post": "。", "options": ["在桌子上", "桌子上在", "是在桌子上"], "answer": 0, "explanation": "在 + nơi chốn." },
+     { "context": "Câu hỏi: “Thầy có ở đây không?”", "pre": "老师", "blank": "在这儿吗", "post": "？", "options": ["在这儿吗", "在这儿吗不", "这儿在吗"], "answer": 0, "explanation": "在 + nơi chốn + 吗？" },
+     { "context": "“Cậu ấy cũng ở trường.”", "pre": "他", "blank": "也在学校", "post": "。", "options": ["也在学校", "在也学校", "也学校在"], "answer": 0, "explanation": "也 đứng trước 在." },
+     { "context": "“Mẹ tôi ở bệnh viện.”", "pre": "我妈妈", "blank": "在医院", "post": "。", "options": ["在医院", "是在医院", "医院在"], "answer": 0, "explanation": "在 + nơi chốn." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ở trường.”", "words": ["我", "在", "学校", "。"], "answer": "我在学校。", "explanation": "在学校." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không ở nhà.”", "words": ["我", "不", "在", "家", "。"], "answer": "我不在家。", "explanation": "不在家." },
+     { "type": "sort", "context": "Sắp xếp: “Quyển sách ở trên bàn.”", "words": ["书", "在", "桌子", "上", "。"], "answer": "书在桌子上。", "explanation": "在桌子上." },
+     { "type": "sort", "context": "Sắp xếp: “Thầy có ở đây không?”", "words": ["老师", "在", "这儿", "吗", "？"], "answer": "老师在这儿吗？", "explanation": "在这儿吗？" },
+     { "context": "Tình huống: Có người gọi điện hỏi bạn đang ở đâu, bạn ở trường. Bạn nói:", "pre": "", "blank": "我在学校。", "post": "", "options": ["我在学校。", "我是在学校。", "我学校在。"], "answer": 0, "explanation": "在 là động từ." },
+     { "context": "Tình huống: Bạn tìm quyển sách, nó nằm trên bàn. Bạn nói:", "pre": "", "blank": "书在桌子上。", "post": "", "options": ["书在桌子上。", "书是在桌子上。", "桌子上书在。"], "answer": 0, "explanation": "在 + nơi chốn." },
+     { "context": "Tình huống: Bạn muốn hỏi thầy có ở đây không:", "pre": "", "blank": "老师在这儿吗？", "post": "", "options": ["老师在这儿吗？", "老师这儿在吗？", "老师在这儿吗不？"], "answer": 0, "explanation": "在 + nơi chốn + 吗？" }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn 「哪儿」 — ở đâu",
+    "errors": [
+     { "wrong": "你在哪儿吗？", "why": "câu đã có 哪儿 thì không dùng 吗.", "right": "你在哪儿？" },
+     { "wrong": "哪儿你在？", "why": "哪儿 đứng ở vị trí của nơi chốn cần hỏi.", "right": "你在哪儿？" },
+     { "wrong": "你在哪？", "why": "khẩu ngữ phương Bắc dùng 哪儿; 哪 phải đi với lượng từ.", "right": "你在哪儿？" }
+    ],
+    "items": [
+     { "context": "“Bạn đang ở đâu?”", "pre": "你", "blank": "在哪儿", "post": "？", "options": ["在哪儿", "在哪儿吗", "哪儿在"], "answer": 0, "explanation": "哪儿 ở vị trí nơi chốn; không dùng 吗." },
+     { "context": "“Quyển sách ở đâu?”", "pre": "书", "blank": "在哪儿", "post": "？", "options": ["在哪儿", "哪儿在", "在哪儿吗"], "answer": 0, "explanation": "在哪儿？= ở đâu?" },
+     { "context": "“Bạn đi đâu?”", "pre": "你", "blank": "去哪儿", "post": "？", "options": ["去哪儿", "哪儿去", "去哪儿吗"], "answer": 0, "explanation": "去哪儿？= đi đâu?" },
+     { "context": "Trả lời 「你在哪儿？」", "pre": "我", "blank": "在学校", "post": "。", "options": ["在学校", "在哪儿学校", "学校在"], "answer": 0, "explanation": "Thay 哪儿 bằng nơi chốn thật." },
+     { "context": "“Nhà bạn ở đâu?”", "pre": "你家", "blank": "在哪儿", "post": "？", "options": ["在哪儿", "在哪儿吗", "哪儿在"], "answer": 0, "explanation": "在哪儿？" },
+     { "context": "Không dùng 哪儿 cùng 吗.", "pre": "老师", "blank": "在哪儿", "post": "？", "options": ["在哪儿", "在哪儿吗", "哪儿在吗"], "answer": 0, "explanation": "Có từ nghi vấn thì bỏ 吗." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đang ở đâu?”", "words": ["你", "在", "哪儿", "？"], "answer": "你在哪儿？", "explanation": "在哪儿？" },
+     { "type": "sort", "context": "Sắp xếp: “Quyển sách ở đâu?”", "words": ["书", "在", "哪儿", "？"], "answer": "书在哪儿？", "explanation": "在哪儿？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ở trường.”", "words": ["我", "在", "学校", "。"], "answer": "我在学校。", "explanation": "Trả lời cho 在哪儿？" },
+     { "type": "sort", "context": "Sắp xếp: “Nhà bạn ở đâu?”", "words": ["你", "家", "在", "哪儿", "？"], "answer": "你家在哪儿？", "explanation": "家在哪儿？" },
+     { "context": "Tình huống: Bạn gọi điện muốn biết bạn mình đang ở đâu. Bạn hỏi:", "pre": "", "blank": "你在哪儿？", "post": "", "options": ["你在哪儿？", "你在哪儿吗？", "哪儿你在？"], "answer": 0, "explanation": "哪儿 không đi với 吗." },
+     { "context": "Tình huống: Bạn không tìm thấy quyển sách. Bạn hỏi:", "pre": "", "blank": "书在哪儿？", "post": "", "options": ["书在哪儿？", "书在哪儿吗？", "书哪儿在？"], "answer": 0, "explanation": "在哪儿？" },
+     { "context": "Tình huống: Có người hỏi 「你在哪儿？」, bạn đang ở trường. Bạn đáp:", "pre": "", "blank": "我在学校。", "post": "", "options": ["我在学校。", "我在哪儿学校。", "我学校在。"], "answer": 0, "explanation": "Thay 哪儿 bằng nơi thật." }
+    ]
+   },
+   {
+    "title": "Giới từ 「在」 — 「在 + địa điểm + động từ」",
+    "errors": [
+     { "wrong": "我学习在学校。", "why": "cụm 在 + địa điểm phải đứng TRƯỚC động từ.", "right": "我在学校学习。" },
+     { "wrong": "我在学习学校。", "why": "địa điểm đứng ngay sau 在.", "right": "我在学校学习。" },
+     { "wrong": "我不在学校学习吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你在学校学习吗？" }
+    ],
+    "items": [
+     { "context": "“Tôi học ở trường.”", "pre": "我", "blank": "在学校学习", "post": "。", "options": ["在学校学习", "学习在学校", "在学习学校"], "answer": 0, "explanation": "在 + địa điểm + động từ." },
+     { "context": "“Tôi ăn cơm ở nhà.”", "pre": "我", "blank": "在家吃饭", "post": "。", "options": ["在家吃饭", "吃饭在家", "在吃饭家"], "answer": 0, "explanation": "在家 + 吃饭." },
+     { "context": "Phủ định đứng TRƯỚC 在.", "pre": "我", "blank": "不在家吃饭", "post": "。", "options": ["不在家吃饭", "在家不吃饭吗", "在不家吃饭"], "answer": 0, "explanation": "不 đứng trước cụm giới từ." },
+     { "context": "“Cậu ấy làm việc ở bệnh viện.”", "pre": "他", "blank": "在医院工作", "post": "。", "options": ["在医院工作", "工作在医院", "在工作医院"], "answer": 0, "explanation": "在医院 + 工作." },
+     { "context": "“Bạn học ở đâu?”", "pre": "你", "blank": "在哪儿学习", "post": "？", "options": ["在哪儿学习", "学习在哪儿", "在学习哪儿"], "answer": 0, "explanation": "在哪儿 + động từ？" },
+     { "context": "So sánh: 「我在学校。」và 「我在学校学习。」", "pre": "我", "blank": "在学校", "post": "。", "options": ["在学校", "在学校学习吗不", "学校在"], "answer": 0, "explanation": "Không có động từ sau thì 在 là ĐỘNG TỪ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi học ở trường.”", "words": ["我", "在", "学校", "学习", "。"], "answer": "我在学校学习。", "explanation": "在学校学习." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi ăn cơm ở nhà.”", "words": ["我", "在", "家", "吃", "饭", "。"], "answer": "我在家吃饭。", "explanation": "在家吃饭." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy làm việc ở bệnh viện.”", "words": ["他", "在", "医院", "工作", "。"], "answer": "他在医院工作。", "explanation": "在医院工作." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn học ở đâu?”", "words": ["你", "在", "哪儿", "学习", "？"], "answer": "你在哪儿学习？", "explanation": "在哪儿学习？" },
+     { "context": "Tình huống: Bạn muốn nói mình học ở trường. Bạn nói:", "pre": "", "blank": "我在学校学习。", "post": "", "options": ["我在学校学习。", "我学习在学校。", "我在学习学校。"], "answer": 0, "explanation": "在 + địa điểm + động từ." },
+     { "context": "Tình huống: Hôm nay bạn không ăn cơm ở nhà. Bạn nói:", "pre": "", "blank": "我不在家吃饭。", "post": "", "options": ["我不在家吃饭。", "我在家不吃饭吗。", "我在不家吃饭。"], "answer": 0, "explanation": "不 trước cụm giới từ." },
+     { "context": "Tình huống: Bạn muốn biết bạn mình học ở đâu. Bạn hỏi:", "pre": "", "blank": "你在哪儿学习？", "post": "", "options": ["你在哪儿学习？", "你学习在哪儿吗？", "你在学习哪儿？"], "answer": 0, "explanation": "在哪儿 + động từ？" }
+    ]
+   },
+   {
+    "title": "Trợ từ nghi vấn 「呢」 (2) — hỏi nhanh vị trí",
+    "errors": [
+     { "wrong": "我的书呢吗？", "why": "không dùng cùng lúc 呢 và 吗.", "right": "我的书呢？" },
+     { "wrong": "呢我的书？", "why": "呢 đứng SAU đối tượng, ở cuối câu.", "right": "我的书呢？" },
+     { "wrong": "老师呢在哪儿？", "why": "呢 và 在哪儿 là hai cách hỏi khác nhau, không dùng chung.", "right": "老师呢？／老师在哪儿？" }
+    ],
+    "items": [
+     { "context": "“Sách của tôi đâu rồi?”", "pre": "我的书", "blank": "呢", "post": "？", "options": ["呢", "呢吗", "吗呢"], "answer": 0, "explanation": "Đối tượng + 呢？= … đâu rồi?" },
+     { "context": "“Thầy đâu rồi?”", "pre": "老师", "blank": "呢", "post": "？", "options": ["呢", "呢在哪儿", "吗"], "answer": 0, "explanation": "呢 hỏi nhanh vị trí." },
+     { "context": "Cách hỏi đầy đủ hơn cùng nghĩa.", "pre": "老师", "blank": "在哪儿", "post": "？", "options": ["在哪儿", "呢在哪儿", "在哪儿呢吗"], "answer": 0, "explanation": "老师呢？= 老师在哪儿？" },
+     { "context": "“Điện thoại của bạn đâu?”", "pre": "你的手机", "blank": "呢", "post": "？", "options": ["呢", "呢吗", "在呢"], "answer": 0, "explanation": "Cụm 的 + 呢？" },
+     { "context": "呢 (1) hỏi lại cùng nội dung.", "pre": "我很好，", "blank": "你呢", "post": "？", "options": ["你呢", "你呢吗", "呢你"], "answer": 0, "explanation": "Ôn lại: 呢 hỏi lại cùng nội dung." },
+     { "context": "“Bạn ấy đâu rồi?”", "pre": "他", "blank": "呢", "post": "？", "options": ["呢", "吗呢", "呢在哪儿吗"], "answer": 0, "explanation": "他呢？= cậu ấy đâu?" },
+     { "type": "sort", "context": "Sắp xếp: “Sách của tôi đâu rồi?”", "words": ["我", "的", "书", "呢", "？"], "answer": "我的书呢？", "explanation": "我的书呢？" },
+     { "type": "sort", "context": "Sắp xếp: “Thầy đâu rồi?”", "words": ["老师", "呢", "？"], "answer": "老师呢？", "explanation": "老师呢？" },
+     { "type": "sort", "context": "Sắp xếp: “Thầy ở đâu?”", "words": ["老师", "在", "哪儿", "？"], "answer": "老师在哪儿？", "explanation": "在哪儿？" },
+     { "type": "sort", "context": "Sắp xếp: “Điện thoại của bạn đâu?”", "words": ["你", "的", "手机", "呢", "？"], "answer": "你的手机呢？", "explanation": "你的手机呢？" },
+     { "context": "Tình huống: Bạn để sách trên bàn nhưng giờ không thấy. Bạn hỏi:", "pre": "", "blank": "我的书呢？", "post": "", "options": ["我的书呢？", "我的书呢吗？", "呢我的书？"], "answer": 0, "explanation": "Đối tượng + 呢？" },
+     { "context": "Tình huống: Cả lớp đã vào nhưng chưa thấy thầy. Bạn hỏi:", "pre": "", "blank": "老师呢？", "post": "", "options": ["老师呢？", "老师呢在哪儿？", "呢老师？"], "answer": 0, "explanation": "呢 hỏi nhanh vị trí." },
+     { "context": "Tình huống: Bạn vừa nói mình rất tốt, muốn hỏi lại người kia:", "pre": "", "blank": "你呢？", "post": "", "options": ["你呢？", "你呢吗？", "呢你？"], "answer": 0, "explanation": "呢 hỏi lại cùng nội dung." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1-bai-10.html": {
+  "points": [
+   {
+    "title": "Câu chữ 「有」 diễn tả sự tồn tại",
+    "errors": [
+     { "wrong": "桌子上不有书。", "why": "phủ định của 有 là 没有.", "right": "桌子上没有书。" },
+     { "wrong": "书有桌子上。", "why": "nơi chốn đứng ĐẦU câu, vật đứng sau 有.", "right": "桌子上有书。" },
+     { "wrong": "桌子上有书吗没有？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "桌子上有书吗？／桌子上有没有书？" }
+    ],
+    "items": [
+     { "context": "“Trên bàn có sách.”", "pre": "桌子上", "blank": "有书", "post": "。", "options": ["有书", "书有", "是有书"], "answer": 0, "explanation": "Nơi chốn + 有 + vật." },
+     { "context": "Phủ định: “Trên bàn không có sách.”", "pre": "桌子上", "blank": "没有书", "post": "。", "options": ["没有书", "不有书", "有不书"], "answer": 0, "explanation": "Phủ định của 有 là 没有." },
+     { "context": "“Trong lớp có mấy người?”", "pre": "教室里", "blank": "有几个人", "post": "？", "options": ["有几个人", "几个人有", "有几个人吗"], "answer": 0, "explanation": "有 + 几 + lượng từ + danh từ." },
+     { "context": "Câu hỏi với 吗.", "pre": "你家", "blank": "有电脑吗", "post": "？", "options": ["有电脑吗", "有电脑吗没有", "电脑有吗"], "answer": 0, "explanation": "有 + vật + 吗？" },
+     { "context": "Dạng hỏi chính-phản.", "pre": "你家", "blank": "有没有电脑", "post": "？", "options": ["有没有电脑", "有电脑没有吗", "没有有电脑"], "answer": 0, "explanation": "有没有 + danh từ？" },
+     { "context": "“Nhà tôi có bốn người.” (有 chỉ sở hữu)", "pre": "我家", "blank": "有四口人", "post": "。", "options": ["有四口人", "是四口人", "四口人有"], "answer": 0, "explanation": "有 cũng dùng để chỉ sở hữu." },
+     { "type": "sort", "context": "Sắp xếp: “Trên bàn có sách.”", "words": ["桌子", "上", "有", "书", "。"], "answer": "桌子上有书。", "explanation": "Nơi chốn + 有 + vật." },
+     { "type": "sort", "context": "Sắp xếp: “Trên bàn không có sách.”", "words": ["桌子", "上", "没有", "书", "。"], "answer": "桌子上没有书。", "explanation": "没有 = không có." },
+     { "type": "sort", "context": "Sắp xếp: “Trong lớp có mấy người?”", "words": ["教室", "里", "有", "几", "个", "人", "？"], "answer": "教室里有几个人？", "explanation": "有几个人？" },
+     { "type": "sort", "context": "Sắp xếp: “Nhà bạn có máy tính không?”", "words": ["你", "家", "有", "电脑", "吗", "？"], "answer": "你家有电脑吗？", "explanation": "有 + vật + 吗？" },
+     { "context": "Tình huống: Bạn muốn nói trên bàn không có gì. Bạn nói:", "pre": "", "blank": "桌子上没有书。", "post": "", "options": ["桌子上没有书。", "桌子上不有书。", "书没有桌子上。"], "answer": 0, "explanation": "没有 = không có." },
+     { "context": "Tình huống: Bạn muốn hỏi nhà bạn ấy có máy tính không:", "pre": "", "blank": "你家有电脑吗？", "post": "", "options": ["你家有电脑吗？", "你家有电脑吗没有？", "你家电脑有吗？"], "answer": 0, "explanation": "Chọn 吗 hoặc 有没有, không dùng cả hai." },
+     { "context": "Tình huống: Nhà bạn có 4 người. Bạn nói:", "pre": "", "blank": "我家有四口人。", "post": "", "options": ["我家有四口人。", "我家是四口人。", "我家四口人有。"], "answer": 0, "explanation": "有 + số lượng + người." }
+    ]
+   },
+   {
+    "title": "Liên từ 「和」 (Và)",
+    "errors": [
+     { "wrong": "我和他很忙和。", "why": "和 chỉ dùng một lần, ở GIỮA hai thành phần.", "right": "我和他很忙。" },
+     { "wrong": "我吃饭和看书。", "why": "和 nối DANH TỪ, không nối hai cụm động từ.", "right": "我吃饭，也看书。" },
+     { "wrong": "和我他是学生。", "why": "和 đứng giữa hai danh từ.", "right": "我和他是学生。" }
+    ],
+    "items": [
+     { "context": "“Tôi và cậu ấy đều là học sinh.”", "pre": "", "blank": "我和他", "post": "都是学生。", "options": ["我和他", "和我他", "我他和"], "answer": 0, "explanation": "和 đứng giữa hai danh từ/đại từ." },
+     { "context": "“Tôi mua sách và bút.”", "pre": "我买", "blank": "书和笔", "post": "。", "options": ["书和笔", "和书笔", "书笔和"], "answer": 0, "explanation": "和 nối hai danh từ." },
+     { "context": "和 KHÔNG nối hai cụm động từ.", "pre": "我吃饭，", "blank": "也看书", "post": "。", "options": ["也看书", "和看书", "和也看书"], "answer": 0, "explanation": "Hai hành động thì dùng 也, không dùng 和." },
+     { "context": "“Thầy và học sinh đều ở trường.”", "pre": "", "blank": "老师和学生", "post": "都在学校。", "options": ["老师和学生", "和老师学生", "老师学生和"], "answer": 0, "explanation": "和 giữa hai danh từ." },
+     { "context": "Nhiều hơn hai thành phần thì 和 đứng trước thành phần CUỐI.", "pre": "我买了书、笔", "blank": "和本子", "post": "。", "options": ["和本子", "本子和", "和本子和"], "answer": 0, "explanation": "A、B 和 C." },
+     { "context": "“Bố và mẹ tôi đều là thầy giáo.”", "pre": "", "blank": "我爸爸和妈妈", "post": "都是老师。", "options": ["我爸爸和妈妈", "和我爸爸妈妈", "我爸爸妈妈和"], "answer": 0, "explanation": "和 nối hai danh từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi và cậu ấy đều là học sinh.”", "words": ["我", "和", "他", "都", "是", "学生", "。"], "answer": "我和他都是学生。", "explanation": "我和他 + 都是." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi mua sách và bút.”", "words": ["我", "买", "书", "和", "笔", "。"], "answer": "我买书和笔。", "explanation": "书和笔." },
+     { "type": "sort", "context": "Sắp xếp: “Thầy và học sinh đều ở trường.”", "words": ["老师", "和", "学生", "都", "在", "学校", "。"], "answer": "老师和学生都在学校。", "explanation": "和 + 都." },
+     { "type": "sort", "context": "Sắp xếp: “Bố và mẹ tôi đều là thầy giáo.”", "words": ["我", "爸爸", "和", "妈妈", "都", "是", "老师", "。"], "answer": "我爸爸和妈妈都是老师。", "explanation": "爸爸和妈妈." },
+     { "context": "Tình huống: Bạn giới thiệu bạn và bạn cùng lớp đều là học sinh:", "pre": "", "blank": "我和他都是学生。", "post": "", "options": ["我和他都是学生。", "和我他都是学生。", "我他和都是学生。"], "answer": 0, "explanation": "和 giữa hai đại từ." },
+     { "context": "Tình huống: Bạn muốn nói mình vừa ăn cơm vừa đọc sách (hai việc):", "pre": "", "blank": "我吃饭，也看书。", "post": "", "options": ["我吃饭，也看书。", "我吃饭和看书。", "我和吃饭看书。"], "answer": 0, "explanation": "和 không nối hai cụm động từ." },
+     { "context": "Tình huống: Bạn mua sách, bút và vở. Bạn nói:", "pre": "", "blank": "我买了书、笔和本子。", "post": "", "options": ["我买了书、笔和本子。", "我买了书和笔和本子。", "我买了和书笔本子。"], "answer": 0, "explanation": "A、B 和 C." }
+    ]
+   },
+   {
+    "title": "Động từ năng nguyện 「能」 (Có thể)",
+    "errors": [
+     { "wrong": "我没能去。", "why": "phủ định của 能 là 不能.", "right": "我不能去。" },
+     { "wrong": "我去能。", "why": "能 đứng TRƯỚC động từ.", "right": "我能去。" },
+     { "wrong": "你能帮我吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你能帮我吗？／你能不能帮我？" }
+    ],
+    "items": [
+     { "context": "“Tôi có thể đi.”", "pre": "我", "blank": "能去", "post": "。", "options": ["能去", "去能", "能去吗不"], "answer": 0, "explanation": "能 + động từ." },
+     { "context": "Phủ định: “Tôi không thể đi.”", "pre": "我", "blank": "不能去", "post": "。", "options": ["不能去", "没能去", "能不去吗"], "answer": 0, "explanation": "Phủ định của 能 là 不能." },
+     { "context": "Lời thỉnh cầu lịch sự: “Bạn giúp tôi được không?”", "pre": "你", "blank": "能帮我吗", "post": "？", "options": ["能帮我吗", "能帮我吗不", "帮能我吗"], "answer": 0, "explanation": "能……吗？= lời đề nghị lịch sự." },
+     { "context": "Dạng hỏi chính-phản.", "pre": "你", "blank": "能不能帮我", "post": "？", "options": ["能不能帮我", "能帮我不能吗", "不能能帮我"], "answer": 0, "explanation": "能不能 + động từ？" },
+     { "context": "So sánh: 会 = biết (do học); 能 = có thể (điều kiện cho phép).", "pre": "今天我很忙，", "blank": "不能去", "post": "。", "options": ["不能去", "不会去", "没能去"], "answer": 0, "explanation": "Bận nên không đi được → 不能." },
+     { "context": "“Bạn nói lại một lần được không?”", "pre": "你", "blank": "能再说一次吗", "post": "？", "options": ["能再说一次吗", "能再说一次吗不", "再说能一次吗"], "answer": 0, "explanation": "能 + cụm động từ + 吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi có thể đi.”", "words": ["我", "能", "去", "。"], "answer": "我能去。", "explanation": "能去." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay tôi không thể đi.”", "words": ["今天", "我", "不", "能", "去", "。"], "answer": "今天我不能去。", "explanation": "不能去." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn giúp tôi được không?”", "words": ["你", "能", "帮", "我", "吗", "？"], "answer": "你能帮我吗？", "explanation": "能帮我吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Bạn nói lại một lần được không?”", "words": ["你", "能", "再", "说", "一", "次", "吗", "？"], "answer": "你能再说一次吗？", "explanation": "能再说一次吗？" },
+     { "context": "Tình huống: Bạn muốn nhờ bạn cùng lớp giúp. Bạn nói:", "pre": "", "blank": "你能帮我吗？", "post": "", "options": ["你能帮我吗？", "你会帮我吗？", "你能帮我吗不？"], "answer": 0, "explanation": "能……吗？là lời nhờ lịch sự." },
+     { "context": "Tình huống: Hôm nay bạn bận nên không đi được. Bạn nói:", "pre": "", "blank": "今天我不能去。", "post": "", "options": ["今天我不能去。", "今天我没能去。", "今天我不会去。"], "answer": 0, "explanation": "不能 = không thể (do điều kiện)." },
+     { "context": "Tình huống: Bạn nghe chưa rõ, muốn nhờ nói lại. Bạn nói:", "pre": "", "blank": "你能再说一次吗？", "post": "", "options": ["你能再说一次吗？", "你会再说一次吗？", "你能再说一次吗不？"], "answer": 0, "explanation": "能 + cụm động từ + 吗？" }
+    ]
+   },
+   {
+    "title": "Câu cầu khiến dùng động từ 「请」",
+    "errors": [
+     { "wrong": "请你坐吗？", "why": "câu đề nghị dùng 请 thì KHÔNG cần 吗.", "right": "请坐。／请你坐。" },
+     { "wrong": "坐请。", "why": "请 đứng ĐẦU câu, trước động từ.", "right": "请坐。" },
+     { "wrong": "请不进来。", "why": "cấm đoán dùng 别, không dùng 请不.", "right": "请进来。／别进来。" }
+    ],
+    "items": [
+     { "context": "“Mời ngồi.”", "pre": "", "blank": "请坐", "post": "。", "options": ["请坐", "坐请", "请坐吗"], "answer": 0, "explanation": "请 + động từ; không cần 吗." },
+     { "context": "“Mời vào.”", "pre": "", "blank": "请进", "post": "。", "options": ["请进", "进请", "请进吗"], "answer": 0, "explanation": "请进 = mời vào." },
+     { "context": "“Mời bạn nói lại một lần.”", "pre": "", "blank": "请你再说一次", "post": "。", "options": ["请你再说一次", "你请再说一次吗", "再说一次请你"], "answer": 0, "explanation": "请 + người + động từ." },
+     { "context": "“Xin hỏi, nhà vệ sinh ở đâu?”", "pre": "", "blank": "请问", "post": "，洗手间在哪儿？", "options": ["请问", "问请", "请问吗"], "answer": 0, "explanation": "请问 = xin hỏi (mở đầu lịch sự)." },
+     { "context": "“Mời uống trà.”", "pre": "", "blank": "请喝茶", "post": "。", "options": ["请喝茶", "喝茶请", "请喝茶吗"], "answer": 0, "explanation": "请 + động từ + tân ngữ." },
+     { "context": "Đáp lại 「谢谢」.", "pre": "", "blank": "不客气", "post": "。", "options": ["不客气", "没关系", "请坐"], "answer": 0, "explanation": "Ôn lại: 谢谢 → 不客气." },
+     { "type": "sort", "context": "Sắp xếp: “Mời ngồi.”", "words": ["请", "坐", "。"], "answer": "请坐。", "explanation": "请坐." },
+     { "type": "sort", "context": "Sắp xếp: “Mời bạn nói lại một lần.”", "words": ["请", "你", "再", "说", "一", "次", "。"], "answer": "请你再说一次。", "explanation": "请 + người + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Xin hỏi, nhà vệ sinh ở đâu?”", "words": ["请问", "，", "洗手间", "在", "哪儿", "？"], "answer": "请问，洗手间在哪儿？", "explanation": "请问 mở đầu câu hỏi." },
+     { "type": "sort", "context": "Sắp xếp: “Mời uống trà.”", "words": ["请", "喝", "茶", "。"], "answer": "请喝茶。", "explanation": "请喝茶." },
+     { "context": "Tình huống: Khách đến nhà bạn. Bạn mời họ ngồi:", "pre": "", "blank": "请坐。", "post": "", "options": ["请坐。", "请坐吗？", "坐请。"], "answer": 0, "explanation": "请 + động từ, không cần 吗." },
+     { "context": "Tình huống: Bạn muốn hỏi đường một người lạ. Bạn mở đầu:", "pre": "", "blank": "请问，……", "post": "", "options": ["请问，……", "问请，……", "请问吗，……"], "answer": 0, "explanation": "请问 = xin hỏi." },
+     { "context": "Tình huống: Bạn mời thầy uống trà. Bạn nói:", "pre": "", "blank": "老师，请喝茶。", "post": "", "options": ["老师，请喝茶。", "老师，喝茶请。", "老师，请喝茶吗？"], "answer": 0, "explanation": "请 + động từ + tân ngữ." }
+    ]
+   }
+  ]
+ }
+}

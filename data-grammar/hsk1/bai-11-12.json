@@ -1,0 +1,171 @@
+{
+ "/lessons/hsk1-bai-11.html": {
+  "points": [
+   {
+    "title": "Cách biểu thị thời gian (点 / 分)",
+    "errors": [
+     { "wrong": "二点三十分", "why": "“2 giờ” đọc là 两点, không dùng 二点.", "right": "两点三十分" },
+     { "wrong": "三十分两点", "why": "trật tự từ lớn đến nhỏ: giờ trước phút.", "right": "两点三十分" },
+     { "wrong": "现在是几点吗？", "why": "câu đã có 几 thì không dùng 吗.", "right": "现在几点？" }
+    ],
+    "items": [
+     { "context": "“2 giờ” nói là:", "pre": "", "blank": "两点", "post": "", "options": ["两点", "二点", "点两"], "answer": 0, "explanation": "Giờ số 2 dùng 两, không dùng 二." },
+     { "context": "“2 giờ 30 phút”", "pre": "", "blank": "两点三十分", "post": "", "options": ["两点三十分", "三十分两点", "二点三十分"], "answer": 0, "explanation": "Giờ → phút (lớn đến nhỏ)." },
+     { "context": "“8 giờ 15 phút”", "pre": "", "blank": "八点十五分", "post": "", "options": ["八点十五分", "十五分八点", "八点十五"], "answer": 0, "explanation": "点 + 分." },
+     { "context": "“Bây giờ mấy giờ?”", "pre": "现在", "blank": "几点", "post": "？", "options": ["几点", "几点吗", "点几"], "answer": 0, "explanation": "几点？không dùng 吗." },
+     { "context": "“2 giờ rưỡi” còn nói là:", "pre": "", "blank": "两点半", "post": "", "options": ["两点半", "半两点", "二点半"], "answer": 0, "explanation": "半 = rưỡi (30 phút)." },
+     { "context": "“Bây giờ là 8 giờ.” (vị ngữ danh từ)", "pre": "现在", "blank": "八点", "post": "。", "options": ["八点", "是八点吗", "八点吗"], "answer": 0, "explanation": "Câu giờ lược 是." },
+     { "type": "sort", "context": "Sắp xếp: “Bây giờ là hai giờ rưỡi.”", "words": ["现在", "两点", "半", "。"], "answer": "现在两点半。", "explanation": "两点半." },
+     { "type": "sort", "context": "Sắp xếp: “Bây giờ mấy giờ?”", "words": ["现在", "几", "点", "？"], "answer": "现在几点？", "explanation": "几点？" },
+     { "type": "sort", "context": "Sắp xếp: “Bây giờ là tám giờ mười lăm phút.”", "words": ["现在", "八点", "十五", "分", "。"], "answer": "现在八点十五分。", "explanation": "点 + 分." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi hai giờ đi học.”", "words": ["我", "两点", "去", "学校", "。"], "answer": "我两点去学校。", "explanation": "Thời gian trước động từ." },
+     { "context": "Tình huống: Bây giờ là 2 giờ 30. Bạn nói:", "pre": "", "blank": "现在两点半。", "post": "", "options": ["现在两点半。", "现在二点半。", "现在半两点。"], "answer": 0, "explanation": "两点半." },
+     { "context": "Tình huống: Bạn muốn hỏi giờ. Bạn hỏi:", "pre": "", "blank": "现在几点？", "post": "", "options": ["现在几点？", "现在几点吗？", "现在点几？"], "answer": 0, "explanation": "几点？không dùng 吗." },
+     { "context": "Tình huống: Bạn đi học lúc 2 giờ. Bạn nói:", "pre": "", "blank": "我两点去学校。", "post": "", "options": ["我两点去学校。", "我去学校两点。", "我二点去学校。"], "answer": 0, "explanation": "Thời gian đứng trước động từ." }
+    ]
+   },
+   {
+    "title": "Trạng ngữ chỉ thời gian",
+    "errors": [
+     { "wrong": "我去学校八点。", "why": "từ chỉ thời gian đứng TRƯỚC động từ.", "right": "我八点去学校。" },
+     { "wrong": "八点我去学校吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你八点去学校吗？" },
+     { "wrong": "我在八点去学校。", "why": "thời gian không cần giới từ 在 ở vị trí này.", "right": "我八点去学校。" }
+    ],
+    "items": [
+     { "context": "“Tôi 8 giờ đi học.”", "pre": "我", "blank": "八点去学校", "post": "。", "options": ["八点去学校", "去学校八点", "在八点去学校"], "answer": 0, "explanation": "Thời gian đứng trước động từ." },
+     { "context": "Thời gian cũng đứng được ở ĐẦU câu.", "pre": "", "blank": "今天我很忙", "post": "。", "options": ["今天我很忙", "我很忙今天", "我今天很忙吗不"], "answer": 0, "explanation": "Trạng ngữ thời gian ở đầu câu hoặc sau chủ ngữ." },
+     { "context": "“Ngày mai tôi không đi học.”", "pre": "", "blank": "明天我不去学校", "post": "。", "options": ["明天我不去学校", "我不去学校明天", "我明天不去学校吗不"], "answer": 0, "explanation": "明天 + chủ ngữ + vị ngữ." },
+     { "context": "Thời gian đứng TRƯỚC nơi chốn.", "pre": "我", "blank": "明天在家吃饭", "post": "。", "options": ["明天在家吃饭", "在家明天吃饭", "吃饭明天在家"], "answer": 0, "explanation": "Thời gian → nơi chốn → động từ." },
+     { "context": "“Cậu ấy mấy giờ đến?”", "pre": "他", "blank": "几点来", "post": "？", "options": ["几点来", "来几点", "几点来吗"], "answer": 0, "explanation": "几点 + động từ？" },
+     { "context": "“Tôi buổi sáng đi học.”", "pre": "我", "blank": "早上去学校", "post": "。", "options": ["早上去学校", "去学校早上", "在早上去学校吗"], "answer": 0, "explanation": "早上 đứng trước động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi tám giờ đi học.”", "words": ["我", "八点", "去", "学校", "。"], "answer": "我八点去学校。", "explanation": "Thời gian trước động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày mai tôi không đi học.”", "words": ["明天", "我", "不", "去", "学校", "。"], "answer": "明天我不去学校。", "explanation": "Thời gian ở đầu câu." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày mai tôi ăn cơm ở nhà.”", "words": ["我", "明天", "在", "家", "吃", "饭", "。"], "answer": "我明天在家吃饭。", "explanation": "Thời gian → nơi chốn → động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy mấy giờ đến?”", "words": ["他", "几点", "来", "？"], "answer": "他几点来？", "explanation": "几点来？" },
+     { "context": "Tình huống: Bạn đi học lúc 8 giờ. Bạn nói:", "pre": "", "blank": "我八点去学校。", "post": "", "options": ["我八点去学校。", "我去学校八点。", "我在八点去学校。"], "answer": 0, "explanation": "Thời gian trước động từ." },
+     { "context": "Tình huống: Ngày mai bạn ăn cơm ở nhà. Bạn nói:", "pre": "", "blank": "我明天在家吃饭。", "post": "", "options": ["我明天在家吃饭。", "我在家明天吃饭。", "我吃饭明天在家。"], "answer": 0, "explanation": "Thời gian đứng trước nơi chốn." },
+     { "context": "Tình huống: Bạn muốn biết bạn mình mấy giờ đến:", "pre": "", "blank": "你几点来？", "post": "", "options": ["你几点来？", "你来几点？", "你几点来吗？"], "answer": 0, "explanation": "几点 + động từ？" }
+    ]
+   },
+   {
+    "title": "Danh từ 「前」 — trước một mốc thời gian",
+    "errors": [
+     { "wrong": "前三天", "why": "“ba ngày trước” là 三天前; 前 đứng SAU khoảng thời gian.", "right": "三天前" },
+     { "wrong": "睡觉前前", "why": "前 chỉ dùng một lần.", "right": "睡觉前" },
+     { "wrong": "前我吃饭。", "why": "cụm thời gian đứng trước chủ ngữ hoặc sau chủ ngữ, không đứng trơ.", "right": "吃饭前，我洗手。" }
+    ],
+    "items": [
+     { "context": "“ba ngày trước”", "pre": "", "blank": "三天前", "post": "", "options": ["三天前", "前三天", "三前天"], "answer": 0, "explanation": "Khoảng thời gian + 前." },
+     { "context": "“trước khi đi ngủ”", "pre": "", "blank": "睡觉前", "post": "", "options": ["睡觉前", "前睡觉", "睡前觉"], "answer": 0, "explanation": "Việc làm + 前." },
+     { "context": "“Trước khi ăn cơm tôi rửa tay.”", "pre": "", "blank": "吃饭前", "post": "，我洗手。", "options": ["吃饭前", "前吃饭", "吃前饭"], "answer": 0, "explanation": "吃饭前 = trước khi ăn cơm." },
+     { "context": "“một năm trước”", "pre": "", "blank": "一年前", "post": "", "options": ["一年前", "前一年", "一前年"], "answer": 0, "explanation": "一年 + 前." },
+     { "context": "“trước 8 giờ”", "pre": "", "blank": "八点前", "post": "", "options": ["八点前", "前八点", "八前点"], "answer": 0, "explanation": "Mốc giờ + 前." },
+     { "context": "“Trước khi đi ngủ tôi đọc sách.”", "pre": "睡觉前，我", "blank": "看书", "post": "。", "options": ["看书", "前看书", "看书前"], "answer": 0, "explanation": "Vế sau là việc làm." },
+     { "type": "sort", "context": "Sắp xếp: “Ba ngày trước tôi đến Bắc Kinh.”", "words": ["三", "天", "前", "，", "我", "去", "北京", "了", "。"], "answer": "三天前，我去北京了。", "explanation": "三天前 + câu." },
+     { "type": "sort", "context": "Sắp xếp: “Trước khi ăn cơm tôi rửa tay.”", "words": ["吃饭", "前", "，", "我", "洗手", "。"], "answer": "吃饭前，我洗手。", "explanation": "吃饭前." },
+     { "type": "sort", "context": "Sắp xếp: “Trước khi đi ngủ tôi đọc sách.”", "words": ["睡觉", "前", "，", "我", "看书", "。"], "answer": "睡觉前，我看书。", "explanation": "睡觉前." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đến trước tám giờ.”", "words": ["我", "八点", "前", "来", "。"], "answer": "我八点前来。", "explanation": "八点前." },
+     { "context": "Tình huống: Bạn đến Bắc Kinh cách đây 3 ngày. Bạn nói:", "pre": "", "blank": "三天前我去北京了。", "post": "", "options": ["三天前我去北京了。", "前三天我去北京了。", "我去北京三前天了。"], "answer": 0, "explanation": "三天前 = ba ngày trước." },
+     { "context": "Tình huống: Bạn luôn rửa tay trước khi ăn. Bạn nói:", "pre": "", "blank": "吃饭前，我洗手。", "post": "", "options": ["吃饭前，我洗手。", "前吃饭，我洗手。", "我洗手前吃饭。"], "answer": 0, "explanation": "Việc làm + 前." },
+     { "context": "Tình huống: Bạn sẽ đến trước 8 giờ. Bạn nói:", "pre": "", "blank": "我八点前来。", "post": "", "options": ["我八点前来。", "我前八点来。", "我来八点前吗。"], "answer": 0, "explanation": "Mốc giờ + 前." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1-bai-12.html": {
+  "points": [
+   {
+    "title": "Đại từ nghi vấn 「怎么样」 — thế nào",
+    "errors": [
+     { "wrong": "这个菜怎么样吗？", "why": "câu đã có 怎么样 thì không dùng 吗.", "right": "这个菜怎么样？" },
+     { "wrong": "怎么样这个菜？", "why": "怎么样 đứng ở CUỐI câu, sau chủ ngữ.", "right": "这个菜怎么样？" },
+     { "wrong": "这个菜是怎么样？", "why": "không cần 是 trước 怎么样.", "right": "这个菜怎么样？" }
+    ],
+    "items": [
+     { "context": "“Món này thế nào?”", "pre": "这个菜", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么样吗", "是怎么样"], "answer": 0, "explanation": "Chủ ngữ + 怎么样？" },
+     { "context": "“Hôm nay thời tiết thế nào?”", "pre": "今天天气", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么样吗", "怎么"], "answer": 0, "explanation": "怎么样 hỏi tình trạng." },
+     { "context": "Phân biệt: 怎么 hỏi CÁCH THỨC.", "pre": "这个字", "blank": "怎么写", "post": "？", "options": ["怎么写", "怎么样写", "怎么样"], "answer": 0, "explanation": "怎么 + động từ = làm thế nào." },
+     { "context": "“Tiếng Trung của bạn thế nào?”", "pre": "你的汉语", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么", "怎么样吗"], "answer": 0, "explanation": "Cụm danh từ + 怎么样？" },
+     { "context": "Dùng 怎么样 để ĐỀ NGHỊ.", "pre": "我们明天去，", "blank": "怎么样", "post": "？", "options": ["怎么样", "怎么", "怎么样吗"], "answer": 0, "explanation": "……，怎么样？= …, được không?" },
+     { "context": "Trả lời 「这个菜怎么样？」", "pre": "", "blank": "很好吃", "post": "。", "options": ["很好吃", "怎么样好吃", "好吃吗"], "answer": 0, "explanation": "Trả lời bằng tính từ + 很." },
+     { "type": "sort", "context": "Sắp xếp: “Món này thế nào?”", "words": ["这个", "菜", "怎么样", "？"], "answer": "这个菜怎么样？", "explanation": "怎么样？" },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay thời tiết thế nào?”", "words": ["今天", "天气", "怎么样", "？"], "answer": "今天天气怎么样？", "explanation": "天气怎么样？" },
+     { "type": "sort", "context": "Sắp xếp: “Chúng ta đi ngày mai, được không?”", "words": ["我们", "明天", "去", "，", "怎么样", "？"], "answer": "我们明天去，怎么样？", "explanation": "Đề nghị + 怎么样？" },
+     { "type": "sort", "context": "Sắp xếp: “Món này rất ngon.”", "words": ["这个", "菜", "很", "好吃", "。"], "answer": "这个菜很好吃。", "explanation": "很好吃." },
+     { "context": "Tình huống: Bạn muốn hỏi ý kiến về món ăn. Bạn hỏi:", "pre": "", "blank": "这个菜怎么样？", "post": "", "options": ["这个菜怎么样？", "这个菜怎么样吗？", "这个菜是怎么样？"], "answer": 0, "explanation": "怎么样 không đi với 吗." },
+     { "context": "Tình huống: Bạn đề nghị cùng đi vào ngày mai. Bạn nói:", "pre": "", "blank": "我们明天去，怎么样？", "post": "", "options": ["我们明天去，怎么样？", "我们明天去，怎么？", "我们明天去，怎么样吗？"], "answer": 0, "explanation": "怎么样？= được không?" },
+     { "context": "Tình huống: Bạn không biết viết một chữ, hỏi cách viết:", "pre": "", "blank": "这个字怎么写？", "post": "", "options": ["这个字怎么写？", "这个字怎么样写？", "这个字怎么样？"], "answer": 0, "explanation": "怎么 hỏi cách thức." }
+    ]
+   },
+   {
+    "title": "Câu vị ngữ chủ-vị",
+    "errors": [
+     { "wrong": "他是身体很好。", "why": "vị ngữ là cụm chủ-vị, không dùng 是.", "right": "他身体很好。" },
+     { "wrong": "身体他很好。", "why": "chủ ngữ lớn đứng ĐẦU câu.", "right": "他身体很好。" },
+     { "wrong": "他身体好。", "why": "vị ngữ tính từ cần bổ ngữ trình độ 很.", "right": "他身体很好。" }
+    ],
+    "items": [
+     { "context": "“Cậu ấy sức khỏe rất tốt.”", "pre": "他", "blank": "身体很好", "post": "。", "options": ["身体很好", "是身体很好", "身体好"], "answer": 0, "explanation": "Chủ ngữ lớn + [chủ ngữ nhỏ + vị ngữ]." },
+     { "context": "“Món này mùi vị rất ngon.”", "pre": "这个菜", "blank": "味道很好", "post": "。", "options": ["味道很好", "很好味道", "是味道很好"], "answer": 0, "explanation": "这个菜 + 味道很好." },
+     { "context": "Phủ định nằm trong vị ngữ nhỏ.", "pre": "他", "blank": "身体不太好", "post": "。", "options": ["身体不太好", "不身体太好", "身体太不好吗"], "answer": 0, "explanation": "不 đứng trong cụm chủ-vị." },
+     { "context": "“Lớp chúng tôi học sinh rất nhiều.”", "pre": "我们班", "blank": "学生很多", "post": "。", "options": ["学生很多", "很多学生", "是学生很多"], "answer": 0, "explanation": "我们班 + 学生很多." },
+     { "context": "“Tiếng Trung của cậu ấy rất giỏi.”", "pre": "他", "blank": "汉语很好", "post": "。", "options": ["汉语很好", "是汉语很好", "汉语好"], "answer": 0, "explanation": "他 + 汉语很好." },
+     { "context": "Câu hỏi: “Sức khỏe bạn thế nào?”", "pre": "你", "blank": "身体怎么样", "post": "？", "options": ["身体怎么样", "身体怎么样吗", "是身体怎么样"], "answer": 0, "explanation": "怎么样 hỏi tình trạng." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy sức khỏe rất tốt.”", "words": ["他", "身体", "很", "好", "。"], "answer": "他身体很好。", "explanation": "他 + 身体很好." },
+     { "type": "sort", "context": "Sắp xếp: “Món này mùi vị rất ngon.”", "words": ["这个", "菜", "味道", "很", "好", "。"], "answer": "这个菜味道很好。", "explanation": "味道很好." },
+     { "type": "sort", "context": "Sắp xếp: “Lớp chúng tôi học sinh rất nhiều.”", "words": ["我们", "班", "学生", "很", "多", "。"], "answer": "我们班学生很多。", "explanation": "学生很多." },
+     { "type": "sort", "context": "Sắp xếp: “Sức khỏe bạn thế nào?”", "words": ["你", "身体", "怎么样", "？"], "answer": "你身体怎么样？", "explanation": "身体怎么样？" },
+     { "context": "Tình huống: Bạn khen sức khỏe của bạn mình. Bạn nói:", "pre": "", "blank": "你身体很好。", "post": "", "options": ["你身体很好。", "你是身体很好。", "身体你很好。"], "answer": 0, "explanation": "Chủ ngữ lớn đứng đầu, không dùng 是." },
+     { "context": "Tình huống: Sức khỏe cậu ấy không được tốt lắm. Bạn nói:", "pre": "", "blank": "他身体不太好。", "post": "", "options": ["他身体不太好。", "他不身体太好。", "他是身体不太好。"], "answer": 0, "explanation": "不太 + tính từ." },
+     { "context": "Tình huống: Bạn muốn hỏi thăm sức khỏe. Bạn hỏi:", "pre": "", "blank": "你身体怎么样？", "post": "", "options": ["你身体怎么样？", "你身体怎么样吗？", "你是身体怎么样？"], "answer": 0, "explanation": "怎么样 không đi với 吗." }
+    ]
+   },
+   {
+    "title": "Phó từ chỉ mức độ 「太」",
+    "errors": [
+     { "wrong": "太好。", "why": "khẳng định với 太 phải có 了 ở cuối.", "right": "太好了。" },
+     { "wrong": "不太好了。", "why": "phủ định 不太 KHÔNG dùng 了.", "right": "不太好。" },
+     { "wrong": "好太了。", "why": "太 đứng TRƯỚC tính từ.", "right": "太好了。" }
+    ],
+    "items": [
+     { "context": "“Tốt quá!”", "pre": "", "blank": "太好了", "post": "！", "options": ["太好了", "太好", "好太了"], "answer": 0, "explanation": "太 + tính từ + 了." },
+     { "context": "Phủ định: “Không tốt lắm.”", "pre": "", "blank": "不太好", "post": "。", "options": ["不太好", "不太好了", "太不好了"], "answer": 0, "explanation": "不太 + tính từ, KHÔNG dùng 了." },
+     { "context": "“Đắt quá!”", "pre": "", "blank": "太贵了", "post": "！", "options": ["太贵了", "太贵", "贵太了"], "answer": 0, "explanation": "太贵了！" },
+     { "context": "“Món này không ngon lắm.”", "pre": "这个菜", "blank": "不太好吃", "post": "。", "options": ["不太好吃", "不太好吃了", "太不好吃了"], "answer": 0, "explanation": "不太 + tính từ." },
+     { "context": "“Hôm nay nóng quá!”", "pre": "今天", "blank": "太热了", "post": "！", "options": ["太热了", "太热", "热太了"], "answer": 0, "explanation": "太热了！" },
+     { "context": "So sánh: 很 (rất) — 太……了 (quá).", "pre": "这个菜", "blank": "很好吃", "post": "。", "options": ["很好吃", "太好吃", "好吃很"], "answer": 0, "explanation": "很 dùng cho mức độ bình thường." },
+     { "type": "sort", "context": "Sắp xếp: “Tốt quá!”", "words": ["太", "好", "了", "！"], "answer": "太好了！", "explanation": "太……了." },
+     { "type": "sort", "context": "Sắp xếp: “Cái này đắt quá!”", "words": ["这个", "太", "贵", "了", "！"], "answer": "这个太贵了！", "explanation": "太贵了." },
+     { "type": "sort", "context": "Sắp xếp: “Món này không ngon lắm.”", "words": ["这个", "菜", "不", "太", "好吃", "。"], "answer": "这个菜不太好吃。", "explanation": "不太好吃 (không có 了)." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay nóng quá!”", "words": ["今天", "太", "热", "了", "！"], "answer": "今天太热了！", "explanation": "太热了." },
+     { "context": "Tình huống: Bạn thấy giá quá cao. Bạn nói:", "pre": "", "blank": "太贵了！", "post": "", "options": ["太贵了！", "太贵！", "贵太了！"], "answer": 0, "explanation": "太 + tính từ + 了." },
+     { "context": "Tình huống: Món ăn chỉ tạm được, không ngon lắm. Bạn nói:", "pre": "", "blank": "不太好吃。", "post": "", "options": ["不太好吃。", "不太好吃了。", "太不好吃了。"], "answer": 0, "explanation": "不太 không dùng 了." },
+     { "context": "Tình huống: Bạn nghe tin vui. Bạn nói:", "pre": "", "blank": "太好了！", "post": "", "options": ["太好了！", "很好了！", "太好！"], "answer": 0, "explanation": "太好了！= tuyệt quá!" }
+    ]
+   },
+   {
+    "title": "Động từ năng nguyện 「会」 (2) — khả năng xảy ra",
+    "errors": [
+     { "wrong": "明天没会下雨。", "why": "phủ định của 会 là 不会.", "right": "明天不会下雨。" },
+     { "wrong": "明天下雨会。", "why": "会 đứng TRƯỚC động từ.", "right": "明天会下雨。" },
+     { "wrong": "明天会下雨吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "明天会下雨吗？" }
+    ],
+    "items": [
+     { "context": "“Ngày mai sẽ mưa.”", "pre": "明天", "blank": "会下雨", "post": "。", "options": ["会下雨", "下雨会", "会下雨吗不"], "answer": 0, "explanation": "会 + động từ = khả năng xảy ra." },
+     { "context": "Phủ định: “Ngày mai sẽ không mưa.”", "pre": "明天", "blank": "不会下雨", "post": "。", "options": ["不会下雨", "没会下雨", "会不下雨吗"], "answer": 0, "explanation": "Phủ định của 会 là 不会." },
+     { "context": "Câu hỏi: “Ngày mai sẽ mưa không?”", "pre": "明天", "blank": "会下雨吗", "post": "？", "options": ["会下雨吗", "会下雨吗不", "下雨会吗"], "answer": 0, "explanation": "会 + động từ + 吗？" },
+     { "context": "“Cậu ấy sẽ đến.”", "pre": "他", "blank": "会来", "post": "的。", "options": ["会来", "来会", "会来吗"], "answer": 0, "explanation": "会……的 = chắc chắn sẽ…" },
+     { "context": "会 (1) là “biết làm do học”.", "pre": "我", "blank": "会说汉语", "post": "。", "options": ["会说汉语", "会下雨汉语", "说会汉语"], "answer": 0, "explanation": "Ôn lại: 会 còn nghĩa là biết làm." },
+     { "context": "“Hôm nay cậu ấy sẽ không đến.”", "pre": "今天他", "blank": "不会来", "post": "。", "options": ["不会来", "没会来", "会不来吗"], "answer": 0, "explanation": "不会 + động từ." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày mai sẽ mưa.”", "words": ["明天", "会", "下雨", "。"], "answer": "明天会下雨。", "explanation": "会下雨." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày mai sẽ không mưa.”", "words": ["明天", "不", "会", "下雨", "。"], "answer": "明天不会下雨。", "explanation": "不会下雨." },
+     { "type": "sort", "context": "Sắp xếp: “Ngày mai sẽ mưa không?”", "words": ["明天", "会", "下雨", "吗", "？"], "answer": "明天会下雨吗？", "explanation": "会……吗？" },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay cậu ấy sẽ không đến.”", "words": ["今天", "他", "不", "会", "来", "。"], "answer": "今天他不会来。", "explanation": "不会来." },
+     { "context": "Tình huống: Bạn dự đoán trời sẽ mưa. Bạn nói:", "pre": "", "blank": "明天会下雨。", "post": "", "options": ["明天会下雨。", "明天下雨会。", "明天能下雨。"], "answer": 0, "explanation": "会 chỉ khả năng xảy ra." },
+     { "context": "Tình huống: Bạn chắc chắn cậu ấy hôm nay không đến. Bạn nói:", "pre": "", "blank": "今天他不会来。", "post": "", "options": ["今天他不会来。", "今天他没会来。", "今天他会不来吗。"], "answer": 0, "explanation": "不会 = sẽ không." },
+     { "context": "Tình huống: Bạn muốn hỏi ngày mai có mưa không:", "pre": "", "blank": "明天会下雨吗？", "post": "", "options": ["明天会下雨吗？", "明天会下雨吗不？", "明天下雨会吗？"], "answer": 0, "explanation": "会 + động từ + 吗？" }
+    ]
+   }
+  ]
+ }
+}

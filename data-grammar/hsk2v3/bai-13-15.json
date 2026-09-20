@@ -1,0 +1,1676 @@
+{
+ "/lessons/hsk2v3-bai-13.html": {
+  "points": [
+   {
+    "title": "Câu có hai tân ngữ (2) — 「động từ + 给 + người + vật」",
+    "errors": [
+     {
+      "wrong": "我送给一本书他。",
+      "why": "người nhận đứng ngay sau 给, trước sự vật.",
+      "right": "我送给他一本书。"
+     },
+     {
+      "wrong": "我给送他一本书。",
+      "why": "给 đứng SAU động từ.",
+      "right": "我送给他一本书。"
+     },
+     {
+      "wrong": "老师教给汉语我们。",
+      "why": "cùng lỗi: người đứng trước sự vật.",
+      "right": "老师教给我们汉语。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Tôi tặng cậu ấy một quyển sách.”",
+      "pre": "我",
+      "blank": "送给他一本书",
+      "post": "。",
+      "options": [
+       "送给他一本书",
+       "送给一本书他",
+       "给送他一本书"
+      ],
+      "answer": 0,
+      "explanation": "Động từ + 给 + người + sự vật."
+     },
+     {
+      "context": "“Bạn đưa tôi cốc nước đó nhé.”",
+      "pre": "你",
+      "blank": "拿给我那杯水",
+      "post": "吧。",
+      "options": [
+       "拿给我那杯水",
+       "拿给那杯水我",
+       "给拿我那杯水"
+      ],
+      "answer": 0,
+      "explanation": "拿给 + người + sự vật."
+     },
+     {
+      "context": "“Thầy dạy chúng tôi tiếng Trung.”",
+      "pre": "老师",
+      "blank": "教给我们汉语",
+      "post": "。",
+      "options": [
+       "教给我们汉语",
+       "教给汉语我们",
+       "给教我们汉语"
+      ],
+      "answer": 0,
+      "explanation": "教给 + người + môn học."
+     },
+     {
+      "context": "“Cậu ấy bán cho tôi chiếc xe đạp đó.”",
+      "pre": "他",
+      "blank": "卖给我那辆自行车",
+      "post": "了。",
+      "options": [
+       "卖给我那辆自行车",
+       "卖给那辆自行车我",
+       "给卖我那辆自行车"
+      ],
+      "answer": 0,
+      "explanation": "卖给 + người + sự vật."
+     },
+     {
+      "context": "“Cậu ấy nói với tôi một chuyện.”",
+      "pre": "他",
+      "blank": "告诉我一件事",
+      "post": "。",
+      "options": [
+       "告诉我一件事",
+       "告诉一件事我",
+       "给告诉我一件事"
+      ],
+      "answer": 0,
+      "explanation": "告诉 không cần 给."
+     },
+     {
+      "context": "Phủ định đứng TRƯỚC động từ.",
+      "pre": "我",
+      "blank": "没送给他礼物",
+      "post": "。",
+      "options": [
+       "没送给他礼物",
+       "送给他没礼物",
+       "送没给他礼物"
+      ],
+      "answer": 0,
+      "explanation": "没 đứng trước động từ."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我送给他一本书。",
+      "isCorrect": true,
+      "explanation": "送给 + người + sự vật — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "老师教给汉语我们。",
+      "isCorrect": false,
+      "correctVersion": "老师教给我们汉语。",
+      "explanation": "Người nhận đứng trước sự vật."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi tặng cậu ấy một quyển sách.”",
+      "words": [
+       "我",
+       "送",
+       "给",
+       "他",
+       "一",
+       "本",
+       "书",
+       "。"
+      ],
+      "answer": "我送给他一本书。",
+      "explanation": "送给他一本书."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Thầy dạy chúng tôi tiếng Trung.”",
+      "words": [
+       "老师",
+       "教",
+       "给",
+       "我们",
+       "汉语",
+       "。"
+      ],
+      "answer": "老师教给我们汉语。",
+      "explanation": "教给我们汉语."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy nói với tôi một chuyện.”",
+      "words": [
+       "他",
+       "告诉",
+       "我",
+       "一",
+       "件",
+       "事",
+       "。"
+      ],
+      "answer": "他告诉我一件事。",
+      "explanation": "告诉 + người + việc."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn đưa tôi cốc nước đó nhé.”",
+      "words": [
+       "你",
+       "拿",
+       "给",
+       "我",
+       "那",
+       "杯",
+       "水",
+       "吧",
+       "。"
+      ],
+      "answer": "你拿给我那杯水吧。",
+      "explanation": "拿给我 + sự vật."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng động từ + 给 + người + vật.",
+      "promptLang": "vi",
+      "prompt": "Tôi tặng cậu ấy một quyển sách.",
+      "answer": "我送给他一本书。",
+      "answerPy": "Wǒ sòng gěi tā yì běn shū.",
+      "explanation": "送给 + người + sự vật."
+     }
+    ]
+   },
+   {
+    "title": "Câu so sánh với 「比」 (7) — chênh lệch bằng cụm số lượng",
+    "errors": [
+     {
+      "wrong": "他比我三岁大。",
+      "why": "cụm số lượng đứng SAU tính từ.",
+      "right": "他比我大三岁。"
+     },
+     {
+      "wrong": "他比我很大三岁。",
+      "why": "câu 比 không dùng 很.",
+      "right": "他比我大三岁。"
+     },
+     {
+      "wrong": "他比我大得三岁。",
+      "why": "không chen 得 vào trước cụm số lượng.",
+      "right": "他比我大三岁。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cậu ấy hơn tôi ba tuổi.”",
+      "pre": "他",
+      "blank": "比我大三岁",
+      "post": "。",
+      "options": [
+       "比我大三岁",
+       "比我三岁大",
+       "比我大得三岁"
+      ],
+      "answer": 0,
+      "explanation": "比 + B + tính từ + cụm số lượng."
+     },
+     {
+      "context": "“Chiếc áo này đắt hơn chiếc kia hai mươi tệ.”",
+      "pre": "这件",
+      "blank": "比那件贵二十块",
+      "post": "。",
+      "options": [
+       "比那件贵二十块",
+       "比那件二十块贵",
+       "比那件很贵二十块"
+      ],
+      "answer": 0,
+      "explanation": "贵 + số tiền."
+     },
+     {
+      "context": "“Cậu ấy cao hơn tôi năm xăng-ti-mét.”",
+      "pre": "他",
+      "blank": "比我高五厘米",
+      "post": "。",
+      "options": [
+       "比我高五厘米",
+       "比我五厘米高",
+       "比我高得五厘米"
+      ],
+      "answer": 0,
+      "explanation": "高 + cụm số lượng."
+     },
+     {
+      "context": "“Tôi đến sớm hơn cậu ấy mười phút.”",
+      "pre": "我",
+      "blank": "比他早来十分钟",
+      "post": "。",
+      "options": [
+       "比他早来十分钟",
+       "比他来早十分钟",
+       "比他十分钟早来"
+      ],
+      "answer": 0,
+      "explanation": "早来 + thời lượng."
+     },
+     {
+      "context": "“Lớp chúng tôi nhiều hơn lớp họ năm học sinh.”",
+      "pre": "我们班",
+      "blank": "比他们班多五个学生",
+      "post": "。",
+      "options": [
+       "比他们班多五个学生",
+       "比他们班五个学生多",
+       "比他们班很多五个学生"
+      ],
+      "answer": 0,
+      "explanation": "多 + cụm số lượng."
+     },
+     {
+      "context": "Không dùng 很 trong câu 比.",
+      "pre": "他",
+      "blank": "比我重三公斤",
+      "post": "。",
+      "options": [
+       "比我重三公斤",
+       "比我很重三公斤",
+       "比我三公斤重"
+      ],
+      "answer": 0,
+      "explanation": "重 + cụm số lượng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他比我大三岁。",
+      "isCorrect": true,
+      "explanation": "比 + B + tính từ + cụm số lượng — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他比我三岁大。",
+      "isCorrect": false,
+      "correctVersion": "他比我大三岁。",
+      "explanation": "Cụm số lượng đứng sau tính từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy hơn tôi ba tuổi.”",
+      "words": [
+       "他",
+       "比",
+       "我",
+       "大",
+       "三",
+       "岁",
+       "。"
+      ],
+      "answer": "他比我大三岁。",
+      "explanation": "大三岁."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiếc áo này đắt hơn chiếc kia hai mươi tệ.”",
+      "words": [
+       "这",
+       "件",
+       "比",
+       "那",
+       "件",
+       "贵",
+       "二十",
+       "块",
+       "。"
+      ],
+      "answer": "这件比那件贵二十块。",
+      "explanation": "贵二十块."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy cao hơn tôi năm xăng-ti-mét.”",
+      "words": [
+       "他",
+       "比",
+       "我",
+       "高",
+       "五",
+       "厘米",
+       "。"
+      ],
+      "answer": "他比我高五厘米。",
+      "explanation": "高五厘米."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Lớp chúng tôi nhiều hơn lớp họ năm học sinh.”",
+      "words": [
+       "我们",
+       "班",
+       "比",
+       "他们",
+       "班",
+       "多",
+       "五",
+       "个",
+       "学生",
+       "。"
+      ],
+      "answer": "我们班比他们班多五个学生。",
+      "explanation": "多五个学生."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 比 với cụm số lượng.",
+      "promptLang": "vi",
+      "prompt": "Cậu ấy hơn tôi ba tuổi.",
+      "answer": "他比我大三岁。",
+      "answerPy": "Tā bǐ wǒ dà sān suì.",
+      "explanation": "比我大三岁."
+     }
+    ]
+   },
+   {
+    "title": "Câu so sánh với 「比」 (8) — 「一点儿 / 一些」",
+    "errors": [
+     {
+      "wrong": "他比我一点儿高。",
+      "why": "一点儿 đứng SAU tính từ.",
+      "right": "他比我高一点儿。"
+     },
+     {
+      "wrong": "他比我高一点儿多了。",
+      "why": "không dùng đồng thời hai mức chênh lệch.",
+      "right": "他比我高一点儿。"
+     },
+     {
+      "wrong": "他比我很高一些。",
+      "why": "câu 比 không dùng 很.",
+      "right": "他比我高一些。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cậu ấy cao hơn tôi một chút.”",
+      "pre": "他",
+      "blank": "比我高一点儿",
+      "post": "。",
+      "options": [
+       "比我高一点儿",
+       "比我一点儿高",
+       "比我很高一点儿"
+      ],
+      "answer": 0,
+      "explanation": "比 + B + tính từ + 一点儿."
+     },
+     {
+      "context": "一些 cùng nghĩa với 一点儿.",
+      "pre": "这件",
+      "blank": "比那件便宜一些",
+      "post": "。",
+      "options": [
+       "比那件便宜一些",
+       "比那件一些便宜",
+       "比那件很便宜一些"
+      ],
+      "answer": 0,
+      "explanation": "便宜一些 = rẻ hơn một chút."
+     },
+     {
+      "context": "Chênh lệch LỚN thì dùng 多了/得多.",
+      "pre": "他",
+      "blank": "比我高多了",
+      "post": "。",
+      "options": [
+       "比我高多了",
+       "比我高一点儿多了",
+       "比我多了高"
+      ],
+      "answer": 0,
+      "explanation": "一点儿 (nhỏ) vs 多了 (lớn)."
+     },
+     {
+      "context": "“Hôm nay nóng hơn hôm qua một chút.”",
+      "pre": "今天",
+      "blank": "比昨天热一点儿",
+      "post": "。",
+      "options": [
+       "比昨天热一点儿",
+       "比昨天一点儿热",
+       "比昨天很热一点儿"
+      ],
+      "answer": 0,
+      "explanation": "热一点儿."
+     },
+     {
+      "context": "“Cậu ấy đến sớm hơn tôi một chút.”",
+      "pre": "他",
+      "blank": "比我来得早一点儿",
+      "post": "。",
+      "options": [
+       "比我来得早一点儿",
+       "比我一点儿来得早",
+       "比我来得很早一点儿"
+      ],
+      "answer": 0,
+      "explanation": "来得早 + 一点儿."
+     },
+     {
+      "context": "“Món này ngon hơn món kia một chút.”",
+      "pre": "这个菜",
+      "blank": "比那个好吃一些",
+      "post": "。",
+      "options": [
+       "比那个好吃一些",
+       "比那个一些好吃",
+       "比那个很好吃一些"
+      ],
+      "answer": 0,
+      "explanation": "好吃一些."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他比我高一点儿。",
+      "isCorrect": true,
+      "explanation": "比 + B + tính từ + 一点儿 — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他比我一点儿高。",
+      "isCorrect": false,
+      "correctVersion": "他比我高一点儿。",
+      "explanation": "一点儿 đứng sau tính từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy cao hơn tôi một chút.”",
+      "words": [
+       "他",
+       "比",
+       "我",
+       "高",
+       "一点儿",
+       "。"
+      ],
+      "answer": "他比我高一点儿。",
+      "explanation": "高一点儿."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiếc này rẻ hơn chiếc kia một chút.”",
+      "words": [
+       "这",
+       "件",
+       "比",
+       "那",
+       "件",
+       "便宜",
+       "一些",
+       "。"
+      ],
+      "answer": "这件比那件便宜一些。",
+      "explanation": "便宜一些."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay nóng hơn hôm qua một chút.”",
+      "words": [
+       "今天",
+       "比",
+       "昨天",
+       "热",
+       "一点儿",
+       "。"
+      ],
+      "answer": "今天比昨天热一点儿。",
+      "explanation": "热一点儿."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Món này ngon hơn món kia một chút.”",
+      "words": [
+       "这个",
+       "菜",
+       "比",
+       "那个",
+       "好吃",
+       "一些",
+       "。"
+      ],
+      "answer": "这个菜比那个好吃一些。",
+      "explanation": "好吃一些."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 比 với 一点儿.",
+      "promptLang": "vi",
+      "prompt": "Hôm nay nóng hơn hôm qua một chút.",
+      "answer": "今天比昨天热一点儿。",
+      "answerPy": "Jīntiān bǐ zuótiān rè yìdiǎnr.",
+      "explanation": "热一点儿."
+     }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk2v3-bai-14.html": {
+  "points": [
+   {
+    "title": "Câu tồn hiện (2) — 「nơi chốn + động từ + 着 + người/vật」",
+    "errors": [
+     {
+      "wrong": "一本书放着桌子上。",
+      "why": "nơi chốn đứng ĐẦU câu, sự vật đứng cuối.",
+      "right": "桌子上放着一本书。"
+     },
+     {
+      "wrong": "桌子上放一本书着。",
+      "why": "着 đứng ngay sau động từ, trước sự vật.",
+      "right": "桌子上放着一本书。"
+     },
+     {
+      "wrong": "桌子上放着那本书。",
+      "why": "sự vật trong câu tồn hiện là KHÔNG xác định, không dùng 那/这.",
+      "right": "桌子上放着一本书。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Trên bàn đặt một quyển sách.”",
+      "pre": "桌子上",
+      "blank": "放着一本书",
+      "post": "。",
+      "options": [
+       "放着一本书",
+       "放一本书着",
+       "着放一本书"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn + động từ + 着 + sự vật."
+     },
+     {
+      "context": "“Trước cửa đứng một người.”",
+      "pre": "门前",
+      "blank": "站着一个人",
+      "post": "。",
+      "options": [
+       "站着一个人",
+       "站一个人着",
+       "一个人站着"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn + 站着 + người."
+     },
+     {
+      "context": "Sự vật phải là KHÔNG xác định.",
+      "pre": "墙上",
+      "blank": "挂着一张照片",
+      "post": "。",
+      "options": [
+       "挂着一张照片",
+       "挂着那张照片",
+       "挂着照片着"
+      ],
+      "answer": 0,
+      "explanation": "Không dùng 那/这 cho sự vật trong câu tồn hiện."
+     },
+     {
+      "context": "“Trên giường đang nằm một con mèo.”",
+      "pre": "床上",
+      "blank": "躺着一只猫",
+      "post": "。",
+      "options": [
+       "躺着一只猫",
+       "躺一只猫着",
+       "一只猫躺着床上"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn + 躺着 + con vật."
+     },
+     {
+      "context": "Nếu sự vật XÁC ĐỊNH thì đổi trật tự.",
+      "pre": "那本书",
+      "blank": "在桌子上",
+      "post": "。",
+      "options": [
+       "在桌子上",
+       "放着桌子上",
+       "桌子上放着"
+      ],
+      "answer": 0,
+      "explanation": "Sự vật xác định + 在 + nơi chốn."
+     },
+     {
+      "context": "“Trong phòng ngồi mấy học sinh.”",
+      "pre": "房间里",
+      "blank": "坐着几个学生",
+      "post": "。",
+      "options": [
+       "坐着几个学生",
+       "坐几个学生着",
+       "几个学生坐着房间里"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn + 坐着 + người."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "桌子上放着一本书。",
+      "isCorrect": true,
+      "explanation": "Nơi chốn + V + 着 + sự vật — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "一本书放着桌子上。",
+      "isCorrect": false,
+      "correctVersion": "桌子上放着一本书。",
+      "explanation": "Nơi chốn đứng đầu câu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trên bàn đặt một quyển sách.”",
+      "words": [
+       "桌子",
+       "上",
+       "放",
+       "着",
+       "一",
+       "本",
+       "书",
+       "。"
+      ],
+      "answer": "桌子上放着一本书。",
+      "explanation": "放着一本书."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trước cửa đứng một người.”",
+      "words": [
+       "门",
+       "前",
+       "站",
+       "着",
+       "一",
+       "个",
+       "人",
+       "。"
+      ],
+      "answer": "门前站着一个人。",
+      "explanation": "站着一个人."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trên tường treo một tấm ảnh.”",
+      "words": [
+       "墙",
+       "上",
+       "挂",
+       "着",
+       "一",
+       "张",
+       "照片",
+       "。"
+      ],
+      "answer": "墙上挂着一张照片。",
+      "explanation": "挂着一张照片."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Trong phòng ngồi mấy học sinh.”",
+      "words": [
+       "房间",
+       "里",
+       "坐",
+       "着",
+       "几",
+       "个",
+       "学生",
+       "。"
+      ],
+      "answer": "房间里坐着几个学生。",
+      "explanation": "坐着几个学生."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng câu tồn hiện với 着.",
+      "promptLang": "vi",
+      "prompt": "Trên tường treo một tấm ảnh.",
+      "answer": "墙上挂着一张照片。",
+      "answerPy": "Qiáng shàng guà zhe yì zhāng zhàopiàn.",
+      "explanation": "Nơi chốn + 挂着 + sự vật."
+     }
+    ]
+   },
+   {
+    "title": "Phó từ chỉ mức độ 「多」 — câu cảm thán 「多……啊！」",
+    "errors": [
+     {
+      "wrong": "多很漂亮啊！",
+      "why": "多 đã nêu mức độ, không thêm 很.",
+      "right": "多漂亮啊！"
+     },
+     {
+      "wrong": "漂亮多啊！",
+      "why": "多 đứng TRƯỚC tính từ.",
+      "right": "多漂亮啊！"
+     },
+     {
+      "wrong": "多漂亮吗！",
+      "why": "câu cảm thán dùng 啊, không dùng 吗.",
+      "right": "多漂亮啊！"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Đẹp quá!”",
+      "pre": "",
+      "blank": "多漂亮啊",
+      "post": "！",
+      "options": [
+       "多漂亮啊",
+       "多很漂亮啊",
+       "漂亮多啊"
+      ],
+      "answer": 0,
+      "explanation": "多 + tính từ + 啊！"
+     },
+     {
+      "context": "“Món này ngon quá!”",
+      "pre": "这个菜",
+      "blank": "多好吃啊",
+      "post": "！",
+      "options": [
+       "多好吃啊",
+       "多好吃吗",
+       "好吃多啊"
+      ],
+      "answer": 0,
+      "explanation": "Câu cảm thán dùng 啊."
+     },
+     {
+      "context": "“Hôm nay nóng quá!”",
+      "pre": "今天",
+      "blank": "多热啊",
+      "post": "！",
+      "options": [
+       "多热啊",
+       "多很热啊",
+       "热多啊"
+      ],
+      "answer": 0,
+      "explanation": "多 + 热 + 啊."
+     },
+     {
+      "context": "“Cậu ấy vui quá!”",
+      "pre": "他",
+      "blank": "多高兴啊",
+      "post": "！",
+      "options": [
+       "多高兴啊",
+       "高兴多啊",
+       "多高兴吗"
+      ],
+      "answer": 0,
+      "explanation": "多高兴啊！"
+     },
+     {
+      "context": "多 dùng để HỎI mức độ thì không có 啊.",
+      "pre": "你",
+      "blank": "多大",
+      "post": "了？",
+      "options": [
+       "多大",
+       "多大啊",
+       "很多大"
+      ],
+      "answer": 0,
+      "explanation": "多大 = bao nhiêu tuổi (câu hỏi)."
+     },
+     {
+      "context": "“Quyển sách này thú vị quá!”",
+      "pre": "这本书",
+      "blank": "多有意思啊",
+      "post": "！",
+      "options": [
+       "多有意思啊",
+       "多很有意思啊",
+       "有意思多啊"
+      ],
+      "answer": 0,
+      "explanation": "多 + cụm tính từ + 啊."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个菜多好吃啊！",
+      "isCorrect": true,
+      "explanation": "多 + tính từ + 啊 — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "多很漂亮啊！",
+      "isCorrect": false,
+      "correctVersion": "多漂亮啊！",
+      "explanation": "多 không đi cùng 很."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Đẹp quá!”",
+      "words": [
+       "多",
+       "漂亮",
+       "啊",
+       "！"
+      ],
+      "answer": "多漂亮啊！",
+      "explanation": "多漂亮啊！"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Món này ngon quá!”",
+      "words": [
+       "这个",
+       "菜",
+       "多",
+       "好吃",
+       "啊",
+       "！"
+      ],
+      "answer": "这个菜多好吃啊！",
+      "explanation": "多好吃啊！"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Hôm nay nóng quá!”",
+      "words": [
+       "今天",
+       "多",
+       "热",
+       "啊",
+       "！"
+      ],
+      "answer": "今天多热啊！",
+      "explanation": "多热啊！"
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Quyển sách này thú vị quá!”",
+      "words": [
+       "这",
+       "本",
+       "书",
+       "多",
+       "有意思",
+       "啊",
+       "！"
+      ],
+      "answer": "这本书多有意思啊！",
+      "explanation": "多有意思啊！"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 多……啊！",
+      "promptLang": "vi",
+      "prompt": "Món này ngon quá!",
+      "answer": "这个菜多好吃啊！",
+      "answerPy": "Zhège cài duō hǎochī a!",
+      "explanation": "多 + tính từ + 啊！"
+     }
+    ]
+   },
+   {
+    "title": "Bổ ngữ xu hướng kép (复合趋向补语)",
+    "errors": [
+     {
+      "wrong": "他走进来教室了。",
+      "why": "tân ngữ chỉ NƠI CHỐN phải đứng trước 来/去.",
+      "right": "他走进教室来了。"
+     },
+     {
+      "wrong": "他拿来出一本书。",
+      "why": "tách đôi 出来 và chen 来 vào giữa.",
+      "right": "他拿出一本书来。"
+     },
+     {
+      "wrong": "他上来楼了。",
+      "why": "楼 là nơi chốn, phải đứng trước 来.",
+      "right": "他上楼来了。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Cậu ấy đi vào lớp.” (người nói ở trong lớp)",
+      "pre": "他走",
+      "blank": "进教室来",
+      "post": "了。",
+      "options": [
+       "进教室来",
+       "进来教室",
+       "来进教室"
+      ],
+      "answer": 0,
+      "explanation": "V + 进 + nơi chốn + 来."
+     },
+     {
+      "context": "“Cậu ấy lấy ra một quyển sách.”",
+      "pre": "他",
+      "blank": "拿出一本书来",
+      "post": "。",
+      "options": [
+       "拿出一本书来",
+       "拿来出一本书",
+       "拿一本书来出"
+      ],
+      "answer": 0,
+      "explanation": "Tân ngữ sự vật giữa 出 và 来."
+     },
+     {
+      "context": "Tân ngữ sự vật cũng đặt được SAU 出来.",
+      "pre": "他",
+      "blank": "拿出来一本书",
+      "post": "。",
+      "options": [
+       "拿出来一本书",
+       "拿一本书出来了来",
+       "出来拿一本书"
+      ],
+      "answer": 0,
+      "explanation": "Cả hai vị trí đều đúng với tân ngữ sự vật."
+     },
+     {
+      "context": "“Cậu ấy lên gác.” (người nói ở trên)",
+      "pre": "他",
+      "blank": "上楼来",
+      "post": "了。",
+      "options": [
+       "上楼来",
+       "上来楼",
+       "来上楼"
+      ],
+      "answer": 0,
+      "explanation": "Nơi chốn trước 来."
+     },
+     {
+      "context": "“Mời bạn vào đây.”",
+      "pre": "请",
+      "blank": "进来",
+      "post": "吧。",
+      "options": [
+       "进来",
+       "来进",
+       "进去来"
+      ],
+      "answer": 0,
+      "explanation": "进来 = vào đây."
+     },
+     {
+      "context": "“Cậu ấy chạy ra khỏi nhà.” (người nói ở trong)",
+      "pre": "他",
+      "blank": "跑出家去",
+      "post": "了。",
+      "options": [
+       "跑出家去",
+       "跑出去家",
+       "跑去出家"
+      ],
+      "answer": 0,
+      "explanation": "Ra xa người nói → 去; nơi chốn trước 去."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他走进教室来了。",
+      "isCorrect": true,
+      "explanation": "Nơi chốn trước 来 — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他上来楼了。",
+      "isCorrect": false,
+      "correctVersion": "他上楼来了。",
+      "explanation": "楼 là nơi chốn, đứng trước 来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy đi vào lớp rồi.”",
+      "words": [
+       "他",
+       "走",
+       "进",
+       "教室",
+       "来",
+       "了",
+       "。"
+      ],
+      "answer": "他走进教室来了。",
+      "explanation": "走进教室来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy lấy ra một quyển sách.”",
+      "words": [
+       "他",
+       "拿",
+       "出",
+       "一",
+       "本",
+       "书",
+       "来",
+       "。"
+      ],
+      "answer": "他拿出一本书来。",
+      "explanation": "拿出……来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy lên gác rồi.”",
+      "words": [
+       "他",
+       "上",
+       "楼",
+       "来",
+       "了",
+       "。"
+      ],
+      "answer": "他上楼来了。",
+      "explanation": "上楼来."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy chạy ra khỏi nhà rồi.”",
+      "words": [
+       "他",
+       "跑",
+       "出",
+       "家",
+       "去",
+       "了",
+       "。"
+      ],
+      "answer": "他跑出家去了。",
+      "explanation": "跑出家去."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng bổ ngữ xu hướng kép.",
+      "promptLang": "vi",
+      "prompt": "Cậu ấy lấy ra một quyển sách.",
+      "answer": "他拿出一本书来。",
+      "answerPy": "Tā ná chū yì běn shū lái.",
+      "explanation": "拿出……来."
+     }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk2v3-bai-15.html": {
+  "points": [
+   {
+    "title": "Bổ ngữ động lượng (1) — làm bao nhiêu lần",
+    "errors": [
+     {
+      "wrong": "我三次去过北京。",
+      "why": "bổ ngữ động lượng đứng SAU động từ.",
+      "right": "我去过三次北京。"
+     },
+     {
+      "wrong": "我去北京过三次。",
+      "why": "过 đứng ngay sau động từ.",
+      "right": "我去过三次北京。"
+     },
+     {
+      "wrong": "我看了那个电影三次了吗？",
+      "why": "trộn 了 và 吗 không đúng chỗ.",
+      "right": "那个电影我看了三次。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Tôi đã đến Bắc Kinh ba lần.”",
+      "pre": "我",
+      "blank": "去过三次北京",
+      "post": "。",
+      "options": [
+       "去过三次北京",
+       "三次去过北京",
+       "去北京过三次"
+      ],
+      "answer": 0,
+      "explanation": "Động từ + 过 + số + 次 + tân ngữ."
+     },
+     {
+      "context": "“Tôi đã đọc quyển sách này hai lần.”",
+      "pre": "这本书我",
+      "blank": "看了两次",
+      "post": "。",
+      "options": [
+       "看了两次",
+       "两次看了",
+       "看两次了吗"
+      ],
+      "answer": 0,
+      "explanation": "Động từ + 了 + số + 次."
+     },
+     {
+      "context": "“Bạn hãy nói lại một lần nữa.”",
+      "pre": "你",
+      "blank": "再说一次",
+      "post": "。",
+      "options": [
+       "再说一次",
+       "一次再说",
+       "说再一次吗"
+      ],
+      "answer": 0,
+      "explanation": "再 + động từ + 一次."
+     },
+     {
+      "context": "“Tôi đã gọi cho cậu ấy ba lần.”",
+      "pre": "我",
+      "blank": "给他打了三次电话",
+      "post": "。",
+      "options": [
+       "给他打了三次电话",
+       "给他三次打了电话",
+       "给他打电话了三次"
+      ],
+      "answer": 0,
+      "explanation": "打了三次 + 电话."
+     },
+     {
+      "context": "“Mỗi tuần tôi đi thư viện hai lần.”",
+      "pre": "我每个星期",
+      "blank": "去两次图书馆",
+      "post": "。",
+      "options": [
+       "去两次图书馆",
+       "两次去图书馆",
+       "去图书馆两次的"
+      ],
+      "answer": 0,
+      "explanation": "去 + 两次 + tân ngữ."
+     },
+     {
+      "context": "“Tôi chưa từng đến đó lần nào.”",
+      "pre": "我",
+      "blank": "一次也没去过",
+      "post": "。",
+      "options": [
+       "一次也没去过",
+       "没去过一次也",
+       "也一次没去过吗"
+      ],
+      "answer": 0,
+      "explanation": "一次也没 + V + 过."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我去过三次北京。",
+      "isCorrect": true,
+      "explanation": "V + 过 + số + 次 + tân ngữ — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我三次去过北京。",
+      "isCorrect": false,
+      "correctVersion": "我去过三次北京。",
+      "explanation": "Bổ ngữ động lượng đứng sau động từ."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã đến Bắc Kinh ba lần.”",
+      "words": [
+       "我",
+       "去",
+       "过",
+       "三",
+       "次",
+       "北京",
+       "。"
+      ],
+      "answer": "我去过三次北京。",
+      "explanation": "去过三次北京."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Quyển sách này tôi đã đọc hai lần.”",
+      "words": [
+       "这",
+       "本",
+       "书",
+       "我",
+       "看",
+       "了",
+       "两",
+       "次",
+       "。"
+      ],
+      "answer": "这本书我看了两次。",
+      "explanation": "看了两次."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bạn hãy nói lại một lần nữa.”",
+      "words": [
+       "你",
+       "再",
+       "说",
+       "一",
+       "次",
+       "。"
+      ],
+      "answer": "你再说一次。",
+      "explanation": "再说一次."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã gọi cho cậu ấy ba lần.”",
+      "words": [
+       "我",
+       "给",
+       "他",
+       "打",
+       "了",
+       "三",
+       "次",
+       "电话",
+       "。"
+      ],
+      "answer": "我给他打了三次电话。",
+      "explanation": "打了三次电话."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng bổ ngữ động lượng.",
+      "promptLang": "vi",
+      "prompt": "Tôi đã đến Bắc Kinh ba lần.",
+      "answer": "我去过三次北京。",
+      "answerPy": "Wǒ qù guo sān cì Běijīng.",
+      "explanation": "去过三次北京."
+     }
+    ]
+   },
+   {
+    "title": "Bổ ngữ động lượng (2) — vị trí của tân ngữ",
+    "errors": [
+     {
+      "wrong": "我三次见过他。",
+      "why": "cụm động lượng đứng SAU động từ, không đứng trước.",
+      "right": "我见过他三次。"
+     },
+     {
+      "wrong": "我见过三次他。",
+      "why": "tân ngữ là đại từ (他) phải đứng trước 三次.",
+      "right": "我见过他三次。"
+     },
+     {
+      "wrong": "我去过北京三次了吗？",
+      "why": "trộn 了 và 吗; hơn nữa tân ngữ là địa danh nên đứng sau 三次.",
+      "right": "我去过三次北京。"
+     }
+    ],
+    "items": [
+     {
+      "context": "Tân ngữ là ĐẠI TỪ: đứng TRƯỚC cụm động lượng.",
+      "pre": "我",
+      "blank": "见过他三次",
+      "post": "。",
+      "options": [
+       "见过他三次",
+       "见过三次他",
+       "三次见过他"
+      ],
+      "answer": 0,
+      "explanation": "V + 过 + đại từ + số + 次."
+     },
+     {
+      "context": "Tân ngữ là DANH TỪ thường: đứng SAU cụm động lượng.",
+      "pre": "我",
+      "blank": "去过三次北京",
+      "post": "。",
+      "options": [
+       "去过三次北京",
+       "去过北京三次",
+       "三次去过北京"
+      ],
+      "answer": 0,
+      "explanation": "V + 过 + số + 次 + danh từ."
+     },
+     {
+      "context": "“Tôi đã gặp cô ấy hai lần.”",
+      "pre": "我",
+      "blank": "见过她两次",
+      "post": "。",
+      "options": [
+       "见过她两次",
+       "见过两次她",
+       "两次见过她"
+      ],
+      "answer": 0,
+      "explanation": "Đại từ 她 trước 两次."
+     },
+     {
+      "context": "“Tôi đã tìm cậu ấy ba lần.”",
+      "pre": "我",
+      "blank": "找过他三次",
+      "post": "。",
+      "options": [
+       "找过他三次",
+       "找过三次他",
+       "三次找过他"
+      ],
+      "answer": 0,
+      "explanation": "Đại từ + cụm động lượng."
+     },
+     {
+      "context": "“Tôi đã xem bộ phim đó hai lần.” (tân ngữ xác định lên đầu)",
+      "pre": "那个电影我",
+      "blank": "看了两次",
+      "post": "。",
+      "options": [
+       "看了两次",
+       "两次看了",
+       "看两次了那个"
+      ],
+      "answer": 0,
+      "explanation": "Tân ngữ xác định đưa lên đầu câu."
+     },
+     {
+      "context": "“Tôi đã ăn món này một lần.”",
+      "pre": "这个菜我",
+      "blank": "吃过一次",
+      "post": "。",
+      "options": [
+       "吃过一次",
+       "一次吃过",
+       "吃一次过"
+      ],
+      "answer": 0,
+      "explanation": "Tân ngữ xác định lên đầu, cụm động lượng ở cuối."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我见过他三次。",
+      "isCorrect": true,
+      "explanation": "Đại từ đứng trước cụm động lượng — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "我见过三次他。",
+      "isCorrect": false,
+      "correctVersion": "我见过他三次。",
+      "explanation": "Tân ngữ là đại từ thì đứng trước 三次."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã gặp cô ấy hai lần.”",
+      "words": [
+       "我",
+       "见",
+       "过",
+       "她",
+       "两",
+       "次",
+       "。"
+      ],
+      "answer": "我见过她两次。",
+      "explanation": "见过她两次."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã đến Bắc Kinh ba lần.”",
+      "words": [
+       "我",
+       "去",
+       "过",
+       "三",
+       "次",
+       "北京",
+       "。"
+      ],
+      "answer": "我去过三次北京。",
+      "explanation": "去过三次北京."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Bộ phim đó tôi đã xem hai lần.”",
+      "words": [
+       "那个",
+       "电影",
+       "我",
+       "看",
+       "了",
+       "两",
+       "次",
+       "。"
+      ],
+      "answer": "那个电影我看了两次。",
+      "explanation": "Tân ngữ xác định lên đầu."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Tôi đã tìm cậu ấy ba lần.”",
+      "words": [
+       "我",
+       "找",
+       "过",
+       "他",
+       "三",
+       "次",
+       "。"
+      ],
+      "answer": "我找过他三次。",
+      "explanation": "找过他三次."
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, chú ý vị trí tân ngữ.",
+      "promptLang": "vi",
+      "prompt": "Tôi đã gặp cô ấy hai lần.",
+      "answer": "我见过她两次。",
+      "answerPy": "Wǒ jiàn guo tā liǎng cì.",
+      "explanation": "Đại từ đứng trước cụm động lượng."
+     }
+    ]
+   },
+   {
+    "title": "Câu chữ 「有」 (2) — 「有 + cụm số lượng」",
+    "errors": [
+     {
+      "wrong": "这个桌子有一米长有。",
+      "why": "有 chỉ dùng MỘT lần, ở trước cụm số lượng.",
+      "right": "这个桌子有一米长。"
+     },
+     {
+      "wrong": "这个桌子一米长有。",
+      "why": "有 đứng TRƯỚC cụm số lượng.",
+      "right": "这个桌子有一米长。"
+     },
+     {
+      "wrong": "他不有一米八高。",
+      "why": "phủ định của 有 là 没有.",
+      "right": "他没有一米八高。"
+     }
+    ],
+    "items": [
+     {
+      "context": "“Chiếc bàn này dài một mét.”",
+      "pre": "这个桌子",
+      "blank": "有一米长",
+      "post": "。",
+      "options": [
+       "有一米长",
+       "一米长有",
+       "有长一米"
+      ],
+      "answer": 0,
+      "explanation": "有 + cụm số lượng + tính từ."
+     },
+     {
+      "context": "“Cậu ấy cao một mét tám.”",
+      "pre": "他",
+      "blank": "有一米八高",
+      "post": "。",
+      "options": [
+       "有一米八高",
+       "一米八有高",
+       "有高一米八"
+      ],
+      "answer": 0,
+      "explanation": "有 + chiều cao + 高."
+     },
+     {
+      "context": "Phủ định: “Cậu ấy không cao đến một mét tám.”",
+      "pre": "他",
+      "blank": "没有一米八高",
+      "post": "。",
+      "options": [
+       "没有一米八高",
+       "不有一米八高",
+       "没一米八有高"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định của 有 là 没有."
+     },
+     {
+      "context": "“Con đường này rộng mười mét.”",
+      "pre": "这条路",
+      "blank": "有十米宽",
+      "post": "。",
+      "options": [
+       "有十米宽",
+       "十米宽有",
+       "有宽十米"
+      ],
+      "answer": 0,
+      "explanation": "有十米宽."
+     },
+     {
+      "context": "“Cậu ấy nặng sáu mươi ki-lô-gam.”",
+      "pre": "他",
+      "blank": "有六十公斤重",
+      "post": "。",
+      "options": [
+       "有六十公斤重",
+       "六十公斤有重",
+       "有重六十公斤"
+      ],
+      "answer": 0,
+      "explanation": "有 + trọng lượng + 重."
+     },
+     {
+      "context": "Câu hỏi: “Chiếc bàn này dài bao nhiêu?”",
+      "pre": "这个桌子",
+      "blank": "有多长",
+      "post": "？",
+      "options": [
+       "有多长",
+       "多长有",
+       "有长多"
+      ],
+      "answer": 0,
+      "explanation": "有多 + tính từ？"
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "这个桌子有一米长。",
+      "isCorrect": true,
+      "explanation": "有 + cụm số lượng + tính từ — đúng."
+     },
+     {
+      "type": "judge",
+      "context": "Xét câu sau đúng hay sai.",
+      "sentence": "他不有一米八高。",
+      "isCorrect": false,
+      "correctVersion": "他没有一米八高。",
+      "explanation": "Phủ định của 有 là 没有."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiếc bàn này dài một mét.”",
+      "words": [
+       "这个",
+       "桌子",
+       "有",
+       "一",
+       "米",
+       "长",
+       "。"
+      ],
+      "answer": "这个桌子有一米长。",
+      "explanation": "有一米长."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Cậu ấy cao một mét tám.”",
+      "words": [
+       "他",
+       "有",
+       "一米八",
+       "高",
+       "。"
+      ],
+      "answer": "他有一米八高。",
+      "explanation": "有一米八高."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Con đường này rộng mười mét.”",
+      "words": [
+       "这",
+       "条",
+       "路",
+       "有",
+       "十",
+       "米",
+       "宽",
+       "。"
+      ],
+      "answer": "这条路有十米宽。",
+      "explanation": "有十米宽."
+     },
+     {
+      "type": "sort",
+      "context": "Sắp xếp: “Chiếc bàn này dài bao nhiêu?”",
+      "words": [
+       "这个",
+       "桌子",
+       "有",
+       "多",
+       "长",
+       "？"
+      ],
+      "answer": "这个桌子有多长？",
+      "explanation": "有多长？"
+     },
+     {
+      "type": "translate",
+      "context": "Dịch sang tiếng Trung, dùng 有 + cụm số lượng.",
+      "promptLang": "vi",
+      "prompt": "Cậu ấy cao một mét tám.",
+      "answer": "他有一米八高。",
+      "answerPy": "Tā yǒu yì mǐ bā gāo.",
+      "explanation": "有 + chiều cao + 高."
+     }
+    ]
+   }
+  ]
+ }
+}

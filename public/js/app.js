@@ -9537,7 +9537,12 @@
               vn: tds[2] ? tds[2].textContent.trim() : ''
             };
           });
-          return { title: title, sub: sub, ruleHtml: ruleHtml, rows: rows };
+          // Loi hoc sinh Viet hay mac (tai lieu ngu phap cua giao vien)
+          var errors = $all('.g-err', card).map(function (er) {
+            var q = function (sel) { var el = er.querySelector(sel); return el ? el.textContent.trim().replace(/^[✗✓]s*/, '') : ''; };
+            return { wrong: q('.g-err-wrong'), why: q('.g-err-why'), right: q('.g-err-right') };
+          });
+          return { title: title, sub: sub, ruleHtml: ruleHtml, rows: rows, errors: errors };
         }) : [];
         grammarCache[lesson.fullPageUrl] = cards;
         return cards;
@@ -9602,7 +9607,15 @@
   // cho tung diem (hien tai la HSK3). Phat hien dang bang cach xem phan tu
   // dau tien co field "items" (mang) hay khong.
   function grRawExercises() {
-    return GRAMMAR_EXERCISES[currentHubLesson.fullPageUrl] || [];
+    var url = currentHubLesson.fullPageUrl;
+    var own = GRAMMAR_EXERCISES[url] || [];
+    // HSK 2: bai tap sinh tu tai lieu tong hop ngu phap cua giao vien (moi diem 1 nhom),
+    // xep truoc; bai tap cu cua web giu lai thanh 1 nhom 'Bai tap them'.
+    var doc = window.HSK2_GRAMMAR_EXERCISES ? window.HSK2_GRAMMAR_EXERCISES[url] : null;
+    if (!doc || !doc.length) return own;
+    var groups = doc.slice();
+    if (own.length) groups = groups.concat(grIsGrouped(own) ? own : [{ point: 'Bài tập thêm của web', items: own }]);
+    return groups;
   }
   function grIsGrouped(raw) {
     return raw.length > 0 && raw[0] && Array.isArray(raw[0].items);
@@ -9635,6 +9648,7 @@
         btn.type = 'button';
         btn.className = 'vp-tab' + (grMode === modeId ? ' active' : '');
         btn.textContent = 'Bài tập ' + (gi + 1);
+        if (g.point) btn.title = g.point;
         btn.addEventListener('click', function () { grMode = modeId; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', grMode === 'lesson' ? null : grMode); renderGrTabs(); renderGrammarContent(); });
         wrap.appendChild(btn);
       });

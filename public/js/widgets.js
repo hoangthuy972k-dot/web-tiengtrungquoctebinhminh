@@ -960,6 +960,18 @@
     return { type: 'meaning', row: row, answer: row.vn, prompt: esc(row.zh), opts: shuffle(others.concat([row.vn])) };
   }
 
+  // Loi hoc sinh Viet hay mac (lay tu tai lieu ngu phap cua giao vien)
+  function errorsHtml(p) {
+    var list = (p.errors || []).filter(function (e) { return e.wrong && e.right; });
+    if (!list.length) return '';
+    return '<div class="gd-errs"><div class="gd-errs-h">⚠️ Lỗi hay mắc — tránh nhé!</div>' +
+      list.map(function (e) {
+        return '<div class="gd-err"><div class="gd-err-bad">✗ ' + esc(e.wrong) + '</div>' +
+          (e.why ? '<div class="gd-err-why">' + esc(e.why) + '</div>' : '') +
+          '<div class="gd-err-ok">✓ ' + esc(e.right) + '</div></div>';
+      }).join('') + '</div>';
+  }
+
   function renderPoint(p, i, all) {
     var toks = tokensOf(p);
     var rows = p.rows.filter(function (r) { return r.zh; });
@@ -998,6 +1010,7 @@
         '<div class="gd-step-h"><span class="gd-step-n">2</span>Quy tắc</div>' +
         (p.ruleHtml ? '<div class="gd-rule">' + p.ruleHtml + '</div>' : '') +
         (p.sub ? '<div class="gd-sub">' + esc(p.sub) + '</div>' : '') +
+        errorsHtml(p) +
         quizHtml +
       '</div>' +
     '</div>';
@@ -1047,6 +1060,10 @@
           title: title,
           sub: card.querySelector('.g-sub') ? card.querySelector('.g-sub').textContent.trim() : '',
           ruleHtml: card.querySelector('.g-rule') ? card.querySelector('.g-rule').innerHTML.trim() : '',
+          errors: Array.prototype.map.call(card.querySelectorAll('.g-err'), function (er) {
+            var q = function (sel) { var el = er.querySelector(sel); return el ? el.textContent.trim().replace(/^[✗✓]s*/, '') : ''; };
+            return { wrong: q('.g-err-wrong'), why: q('.g-err-why'), right: q('.g-err-right') };
+          }),
           rows: Array.prototype.map.call(card.querySelectorAll('.g-table tbody tr'), function (tr) {
             var td = tr.querySelectorAll('td');
             return { zh: td[0] ? td[0].textContent.trim() : '', py: td[1] ? td[1].textContent.trim() : '', vn: td[2] ? td[2].textContent.trim() : '' };

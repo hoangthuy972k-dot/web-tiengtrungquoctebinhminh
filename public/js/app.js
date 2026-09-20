@@ -1913,11 +1913,8 @@
 
   // Lay toi da 3 cau dien tu cua phan Ngu phap bai nay, tron lai thu tu phuong an
   function fqGrammarItems() {
-    var raw;
-    try { raw = grRawExercises(); } catch (e) { return []; }
-    var flat = grIsGrouped(raw)
-      ? raw.reduce(function (a, g) { return a.concat(g.items || []); }, [])
-      : (raw || []);
+    var flat;
+    try { flat = grAllItems(); } catch (e) { return []; }
     return shuffle(flat.filter(function (q) {
       return (!q.type || q.type === 'mc') && Array.isArray(q.options) && typeof q.answer === 'number';
     })).slice(0, 3).map(function (q) {
@@ -9628,12 +9625,9 @@
     grQuiz = null;
     rsHideNotice('#grContent');
     var savedGrMode = rsGet('grammar:mode');
-    if (savedGrMode) {
-      var grRaw = grRawExercises();
-      var grOk = grIsGrouped(grRaw)
-        ? (/^exercise_\d+$/.test(savedGrMode) && !!grRaw[parseInt(savedGrMode.slice(9), 10)])
-        : (savedGrMode === 'exercise' && grRaw.length > 0);
-      if (grOk) grMode = savedGrMode;
+    if (savedGrMode && /^ex_\w+$/.test(savedGrMode)) {
+      var savedType = savedGrMode.slice(3);
+      if (grTypeGroups().some(function (g) { return g.type === savedType; })) grMode = savedGrMode;
     }
     renderGrTabs();
 
@@ -9654,28 +9648,70 @@
   // (moi phan tu co {point, items}) — dung khi 1 bai hoc muon tach rieng tab
   // cho tung diem (hien tai la HSK3). Phat hien dang bang cach xem phan tu
   // dau tien co field "items" (mang) hay khong.
-  function grRawExercises() {
-    var url = currentHubLesson.fullPageUrl;
-    var own = GRAMMAR_EXERCISES[url] || [];
-    // HSK 2: bai tap sinh tu tai lieu tong hop ngu phap cua giao vien (moi diem 1 nhom),
-    // xep truoc; bai tap cu cua web giu lai thanh 1 nhom 'Bai tap them'.
-    var doc = (window.GRAMMAR_EXTRA && window.GRAMMAR_EXTRA[url]) ||
-      (window.HSK2_GRAMMAR_EXERCISES && window.HSK2_GRAMMAR_EXERCISES[url]) || null;
-    if (!doc || !doc.length) return own;
-    var groups = doc.slice();
-    if (own.length) groups = groups.concat(grIsGrouped(own) ? own : [{ point: 'Bài tập thêm của web', items: own }]);
-    return groups;
-  }
   function grIsGrouped(raw) {
     return raw.length > 0 && raw[0] && Array.isArray(raw[0].items);
   }
-  function grCurrentItems() {
-    var raw = grRawExercises();
-    if (grIsGrouped(raw)) {
-      var idx = (typeof grMode === 'string' && grMode.indexOf('exercise_') === 0) ? parseInt(grMode.slice(9), 10) : 0;
-      return (raw[idx] && raw[idx].items) || [];
+
+  // Khoa nhan dang 1 cau bai tap — de bo cac cau trung nhau giua bo soan moi va bo cu
+  function grItemKey(q) {
+    var t = q.type || 'mc';
+    if (t === 'sort') return 'sort|' + (q.answer || '');
+    if (t === 'judge') return 'judge|' + (q.sentence || '');
+    if (t === 'translate') return 'translate|' + (q.prompt || '') + '|' + (q.answer || '');
+    return 'mc|' + (q.pre || '') + '|' + (q.blank || '') + '|' + (q.post || '');
+  }
+
+  // Tat ca cau bai tap ngu phap cua bai, da go trung va gan ten diem ngu phap (_point)
+  function grAllItems() {
+    var url = currentHubLesson.fullPageUrl;
+    var own = GRAMMAR_EXERCISES[url] || [];
+    var doc = (window.GRAMMAR_EXTRA && window.GRAMMAR_EXTRA[url]) ||
+      (window.HSK2_GRAMMAR_EXERCISES && window.HSK2_GRAMMAR_EXERCISES[url]) || null;
+    var out = [], seen = {};
+    function push(list, point) {
+      (list || []).forEach(function (q) {
+        var key = grItemKey(q);
+        if (seen[key]) return;
+        seen[key] = 1;
+        var copy = {};
+        for (var k in q) if (Object.prototype.hasOwnProperty.call(q, k)) copy[k] = q[k];
+        copy._point = point || '';
+        out.push(copy);
+      });
     }
-    return raw;
+    function eat(src) {
+      if (!src || !src.length) return;
+      if (grIsGrouped(src)) src.forEach(function (g) { push(g.items, g.point); });
+      else push(src, 'Tổng hợp cả bài');   // bo cu khong chia theo diem
+    }
+    eat(doc);   // bo soan theo giao trinh — uu tien, giu ten diem ngu phap
+    eat(own);   // bo cu cua web — chi giu nhung cau chua co
+    return out;
+  }
+
+  // Gom bai tap theo DANG (dien tu / sap xep / dung sai / dich) thay vi theo tung diem
+  var GR_TYPE_ORDER = ['mc', 'sort', 'judge', 'translate'];
+  function grTypeGroups() {
+    var all = grAllItems();
+    var by = {};
+    all.forEach(function (q) {
+      var t = q.type || 'mc';
+      if (GR_TYPE_ORDER.indexOf(t) < 0) t = 'mc';
+      (by[t] = by[t] || []).push(q);
+    });
+    return GR_TYPE_ORDER.filter(function (t) { return by[t] && by[t].length; })
+      .map(function (t) { return { type: t, label: GR_TYPE_LABEL[t], items: by[t] }; });
+  }
+  function grCurrentGroup() {
+    var groups = grTypeGroups();
+    if (!groups.length) return null;
+    var t = (typeof grMode === 'string' && grMode.indexOf('ex_') === 0) ? grMode.slice(3) : null;
+    for (var i = 0; i < groups.length; i++) if (groups[i].type === t) return groups[i];
+    return groups[0];
+  }
+  function grCurrentItems() {
+    var g = grCurrentGroup();
+    return g ? g.items : [];
   }
 
   function renderGrTabs() {
@@ -9686,29 +9722,18 @@
     lessonBtn.type = 'button';
     lessonBtn.className = 'vp-tab' + (grMode === 'lesson' ? ' active' : '');
     lessonBtn.textContent = 'Bài học';
-    lessonBtn.addEventListener('click', function () { grMode = 'lesson'; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', grMode === 'lesson' ? null : grMode); renderGrTabs(); renderGrammarContent(); });
+    lessonBtn.addEventListener('click', function () { grMode = 'lesson'; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', null); renderGrTabs(); renderGrammarContent(); });
     wrap.appendChild(lessonBtn);
 
-    var raw = grRawExercises();
-    if (grIsGrouped(raw)) {
-      raw.forEach(function (g, gi) {
-        var modeId = 'exercise_' + gi;
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'vp-tab' + (grMode === modeId ? ' active' : '');
-        btn.textContent = 'Bài tập ' + (gi + 1);
-        if (g.point) btn.title = g.point;
-        btn.addEventListener('click', function () { grMode = modeId; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', grMode === 'lesson' ? null : grMode); renderGrTabs(); renderGrammarContent(); });
-        wrap.appendChild(btn);
-      });
-    } else if (raw.length) {
-      var btn2 = document.createElement('button');
-      btn2.type = 'button';
-      btn2.className = 'vp-tab' + (grMode === 'exercise' ? ' active' : '');
-      btn2.textContent = 'Bài tập';
-      btn2.addEventListener('click', function () { grMode = 'exercise'; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', grMode === 'lesson' ? null : grMode); renderGrTabs(); renderGrammarContent(); });
-      wrap.appendChild(btn2);
-    }
+    grTypeGroups().forEach(function (g) {
+      var modeId = 'ex_' + g.type;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'vp-tab' + (grMode === modeId ? ' active' : '');
+      btn.textContent = g.label + ' (' + g.items.length + ')';
+      btn.addEventListener('click', function () { grMode = modeId; grQuiz = null; rsHideNotice('#grContent'); rsSet('grammar:mode', modeId); renderGrTabs(); renderGrammarContent(); });
+      wrap.appendChild(btn);
+    });
   }
 
   function renderGrammarContent() {
@@ -9754,14 +9779,11 @@
 
   function renderGrammarExercise() {
     var wrap = $('#grContent');
-    var raw = grRawExercises();
-    var items = grCurrentItems();
-    var groupTitle = null;
-    if (grIsGrouped(raw) && grMode.indexOf('exercise_') === 0) {
-      var gidx = parseInt(grMode.slice(9), 10);
-      groupTitle = raw[gidx] && raw[gidx].point;
-    }
-    var groupTitleHtml = groupTitle ? '<div class="gr-group-title">📐 ' + groupTitle + '</div>' : '';
+    var group = grCurrentGroup();
+    var items = group ? group.items : [];
+    var groupTitleHtml = group
+      ? '<div class="gr-group-title">' + group.label + ' · ' + items.length + ' câu</div>'
+      : '';
     if (!items.length) {
       wrap.innerHTML = groupTitleHtml + '<p style="color:var(--color-gray-500);">Bài học này chưa có bài tập ngữ pháp.</p>';
       return;
@@ -9805,6 +9827,7 @@
       pgbHtml('grq', total) +
       '<div class="vp-quiz-counter">Câu ' + (grQuiz.pos + 1) + '/' + total + ' <span class="gr-type-badge">' + GR_TYPE_LABEL[type] + '</span></div>' +
       '<div class="vp-quiz-card" id="grCard">' +
+        (q._point ? '<div class="gr-point-tag">📐 Ôn ngữ pháp: <b>' + q._point + '</b></div>' : '') +
         (q.context ? '<div class="gr-exercise-context">🗣️ ' + q.context + '</div>' : '') +
         '<div id="grBody"></div>' +
         '<div id="grExplain" style="margin-top:var(--space-4);font-size:0.9rem;color:var(--color-gray-600);"></div>' +

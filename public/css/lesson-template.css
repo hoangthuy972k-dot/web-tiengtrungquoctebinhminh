@@ -40,6 +40,29 @@ body{font-family:'Be Vietnam Pro','Noto Sans SC',sans-serif;background:var(--bg)
 .tab-btn{flex-shrink:0;min-height:48px;padding:12px 16px;background:none;border:none;font-family:'Be Vietnam Pro',sans-serif;font-size:0.88rem;font-weight:600;color:var(--mid);cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;display:flex;align-items:center;gap:6px;}
 .tab-btn:hover{color:var(--sky);}
 .tab-btn.active{color:var(--sky);border-bottom-color:var(--sky);}
+/* Man hinh du rong thi cho thanh the XUONG HANG, dung cuon ngang.
+   Bai HSK 5 co 13 the — cuon ngang lam ba the cuoi bi cat mat ma khong
+   co dau hieu gi, giao vien tuong web thieu chuc nang.                */
+@media (min-width:900px){
+  .tab-nav{flex-wrap:wrap;overflow-x:visible;}
+}
+/* Man hinh hep van cuon ngang, nhung bot dem cho lot duoc nhieu the hon,
+   va them vet mo o mep de biet con the phia sau — vet nay tu bien mat
+   khi da cuon het ve mot ben.                                          */
+@media (max-width:899px){
+  .tab-btn{padding:12px 11px;font-size:0.83rem;gap:4px;}
+  .tab-nav{
+    background-image:
+      linear-gradient(to right,rgba(255,255,255,0.97),rgba(255,255,255,0)),
+      linear-gradient(to left,rgba(255,255,255,0.97),rgba(255,255,255,0)),
+      linear-gradient(to right,rgba(31,26,23,0.18),rgba(31,26,23,0)),
+      linear-gradient(to left,rgba(31,26,23,0.18),rgba(31,26,23,0));
+    background-position:left center,right center,left center,right center;
+    background-repeat:no-repeat;
+    background-size:26px 100%,26px 100%,12px 100%,12px 100%;
+    background-attachment:local,local,scroll,scroll;
+  }
+}
 
 /* MAIN */
 .main{max-width:1264px;margin:0 auto;padding:28px 32px 96px;}

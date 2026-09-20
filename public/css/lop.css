@@ -996,42 +996,50 @@
 /* Bang diem to */
 .lop-scorebar {
   display: flex;
-  gap: 12px;
-  padding: 12px 18px 16px;
+  gap: clamp(10px, 1.2vw, 18px);
+  padding: clamp(10px, 1.4vh, 18px) clamp(14px, 1.6vw, 26px) clamp(12px, 1.8vh, 22px);
   background: rgba(255, 255, 255, 0.95);
   border-top: 1px solid var(--color-gray-200);
   flex: none;
   flex-wrap: wrap;
 }
 .lop-team {
-  flex: 1 1 150px;
+  flex: 1 1 190px;
   background: #fff;
-  border: 2px solid var(--color-gray-200);
-  border-radius: 14px;
-  padding: 10px 14px;
+  border: 3px solid var(--color-gray-200);
+  border-radius: 16px;
+  padding: clamp(10px, 1.4vh, 18px) clamp(14px, 1.4vw, 22px);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(10px, 1.2vw, 18px);
+  box-shadow: var(--shadow-md);
 }
 .lop-team.lead { border-color: var(--color-gold-500); background: var(--color-gold-50); }
-.lop-team-name { font-weight: 700; color: var(--color-gray-700); font-size: 0.95rem; }
+.lop-team-name {
+  font-weight: 700;
+  color: var(--color-gray-700);
+  font-size: clamp(1.05rem, 1.9vh, 1.6rem);
+  white-space: nowrap;
+}
 .lop-team-score {
   margin-left: auto;
-  font-size: 1.9rem;
+  font-size: clamp(2.6rem, 6vh, 4.6rem);
   font-weight: 700;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
   color: var(--color-red-700);
-  min-width: 46px;
+  min-width: 1.6em;
   text-align: right;
 }
-.lop-team-btns { display: flex; flex-direction: column; gap: 4px; }
+.lop-team-btns { display: flex; flex-direction: column; gap: 5px; }
 .lop-team-btns button {
-  width: 30px; height: 24px;
-  border-radius: 7px;
+  width: clamp(38px, 3.4vw, 52px);
+  height: clamp(28px, 3vh, 38px);
+  border-radius: 9px;
   border: 1px solid var(--color-gray-200);
   background: var(--color-gray-100);
   color: var(--color-gray-700);
-  font-size: 0.85rem;
+  font-size: clamp(1rem, 1.8vh, 1.4rem);
   line-height: 1;
   cursor: pointer;
   font-family: inherit;

@@ -311,28 +311,43 @@
       var sc = doc.createElement('script');
       sc.src = src;
       sc.onload = function () {
-        var raw = ifr.contentWindow.vocabData || [];
-        done(raw.filter(function (v) { return v && v.zh && v.vn; }).map(function (v) {
-          return { zh: v.zh, py: v.py || '', vn: v.vn, hv: v.hv || '', em: v.em || v.img || '', pos: v.pos || '' };
-        }));
+        var w = ifr.contentWindow;
+        var raw = w.vocabData || [];
+        done({
+          vocab: raw.filter(function (v) { return v && v.zh && v.vn; }).map(function (v) {
+            return {
+              zh: v.zh, py: v.py || '', vn: v.vn, hv: v.hv || '',
+              em: v.em || v.img || '', pos: v.pos || '',
+              hanzi: Array.isArray(v.hanzi) ? v.hanzi : []
+            };
+          }),
+          translate: (w.translateData || []).filter(function (t) { return t && t.vi && t.zh; })
+            .map(function (t) { return { vi: t.vi, zh: t.zh, py: t.py || '' }; })
+        });
       };
-      sc.onerror = function () { done([]); };
+      sc.onerror = function () { done({ vocab: [], translate: [] }); };
       doc.body.appendChild(sc);
     });
   }
   function loadPickedVocab() {
     var urls = state.lessons.filter(function (l) { return state.picked[l.url]; })
       .map(function (l) { return l.url; });
-    return Promise.all(urls.map(loadVocabOf)).then(function (lists) {
-      var out = [], seen = {};
-      lists.forEach(function (list) {
-        list.forEach(function (v) {
+    return Promise.all(urls.map(loadVocabOf)).then(function (parts) {
+      var vocab = [], trans = [], seen = {}, seenT = {};
+      parts.forEach(function (p) {
+        (p.vocab || []).forEach(function (v) {
           if (seen[v.zh]) return;
           seen[v.zh] = 1;
-          out.push(v);
+          vocab.push(v);
+        });
+        (p.translate || []).forEach(function (t) {
+          if (seenT[t.zh]) return;
+          seenT[t.zh] = 1;
+          trans.push(t);
         });
       });
-      return out;
+      state.trans = trans;
+      return vocab;
     });
   }
 
@@ -857,6 +872,157 @@
     renderTaboo();
   }
 
+  /* ---------------- tro: dich nhanh Viet -> Trung ---------------- */
+  function dealTrans() {
+    state.deck = shuffle(state.trans || []);
+    state.pos = 0;
+    state.transShown = false;
+  }
+
+  function renderTrans() {
+    var t = state.deck[state.pos];
+    if (!t) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-head"><span>Các bài đã chọn chưa có câu dịch. Chọn thêm bài khác nhé.</span></div>';
+      return;
+    }
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Câu ' + (state.pos + 1) + '/' + state.deck.length + ' · mỗi tổ cử 1 em lên bảng viết câu tiếng Trung</span>' +
+      '</div>' +
+      '<div class="lop-trans-vi">' + esc(t.vi) + '</div>' +
+      '<div class="lop-trans-answer" id="lopTransAns" hidden>' +
+        '<div class="lop-trans-zh">' + esc(t.zh) + '</div>' +
+        (t.py ? '<div class="lop-trans-py">' + esc(t.py) + '</div>' : '') +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopTransReveal">Lật đáp án (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopTransNext">Câu tiếp theo →</button>' +
+      '</div>';
+    $('#lopTransReveal').addEventListener('click', revealTrans);
+    $('#lopTransNext').addEventListener('click', nextTrans);
+    state.transShown = false;
+  }
+  function revealTrans() {
+    if (state.transShown) return;
+    state.transShown = true;
+    var el = $('#lopTransAns');
+    if (el) el.hidden = false;
+    var t = state.deck[state.pos];
+    if (t) speakZh(t.zh);
+  }
+  function nextTrans() {
+    if (state.pos < state.deck.length - 1) state.pos++;
+    else dealTrans();
+    renderTrans();
+    resetTimer();
+  }
+
+  /* ---------------- tro: nghe nhanh chi chu ---------------- */
+  function dealListen(vocab) {
+    var pool = shuffle(vocab).slice(0, 9);
+    state.listenGrid = shuffle(pool);
+    state.listenTarget = state.listenGrid[Math.floor(Math.random() * state.listenGrid.length)];
+    state.listenPicked = {};
+  }
+
+  function renderListen() {
+    var t = state.listenTarget;
+    if (!t) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa có từ để chơi.</span></div>';
+      return;
+    }
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Hai tổ cử một em lên bảng · nghe xong, ai <b>chỉ đúng chữ</b> trước thì thắng</span>' +
+      '</div>' +
+      '<div class="lop-listen-grid">' + state.listenGrid.map(function (v, i) {
+        var st = state.listenPicked[i];
+        return '<button type="button" class="lop-listen-cell' + (st ? ' ' + st : '') + '" data-i="' + i + '">' +
+          esc(v.zh) + '</button>';
+      }).join('') + '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopListenPlay">🔊 Đọc từ (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopListenNext">Từ khác →</button>' +
+      '</div>';
+
+    $all('#lopStage .lop-listen-cell').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var i = parseInt(btn.getAttribute('data-i'), 10);
+        if (state.listenPicked[i]) return;
+        state.listenPicked[i] = (state.listenGrid[i] === state.listenTarget) ? 'is-right' : 'is-wrong';
+        renderListen();
+        if (state.listenGrid[i] === state.listenTarget) flashNote('✓ Đúng rồi — ' + state.listenTarget.vn);
+      });
+    });
+    $('#lopListenPlay').addEventListener('click', function () { speakZh(t.zh); });
+    $('#lopListenNext').addEventListener('click', function () {
+      dealListen(state.vocab || []); renderListen(); resetTimer(); speakZh(state.listenTarget.zh);
+    });
+    speakZh(t.zh);
+  }
+
+  /* ---------------- tro: doan chu qua bo thu ---------------- */
+  function dealHanzi(vocab) {
+    var pool = [];
+    vocab.forEach(function (v) {
+      (v.hanzi || []).forEach(function (h) {
+        if (h && h.c && (h.rad || h.tip)) pool.push({ h: h, vn: v.vn });
+      });
+    });
+    state.deck = shuffle(pool);
+    state.pos = 0;
+    state.hanziShown = false;
+  }
+
+  function renderHanzi() {
+    var item = state.deck[state.pos];
+    if (!item) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-head"><span>Các bài đã chọn chưa có dữ liệu chiết tự. Chọn thêm bài khác nhé.</span></div>';
+      return;
+    }
+    var h = item.h;
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Chữ ' + (state.pos + 1) + '/' + state.deck.length + ' · nghe manh mối rồi đoán xem là chữ gì</span>' +
+      '</div>' +
+      '<div class="lop-hz-clues">' +
+        (h.rad ? '<div class="lop-hz-clue"><span>Bộ thủ</span><b>' + esc(h.rad) + '</b></div>' : '') +
+        (h.st ? '<div class="lop-hz-clue"><span>Số nét</span><b>' + esc(h.st) + '</b></div>' : '') +
+        (h.type ? '<div class="lop-hz-clue"><span>Cấu tạo</span><b>' + esc(h.type) + '</b></div>' : '') +
+        (h.mean ? '<div class="lop-hz-clue"><span>Nghĩa</span><b>' + esc(h.mean) + '</b></div>' : '') +
+      '</div>' +
+      (h.tip ? '<div class="lop-hz-tip">💡 ' + esc(h.tip) + '</div>' : '') +
+      '<div class="lop-hz-answer" id="lopHzAns" hidden>' +
+        '<div class="lop-hz-char">' + esc(h.c) + '</div>' +
+        '<div class="lop-hz-py">' + esc(h.p || '') + '</div>' +
+        (h.w ? '<div class="lop-hz-words">' + esc(h.w) + '</div>' : '') +
+        (h.cf ? '<div class="lop-hz-cf">Dễ nhầm với: ' + esc(h.cf) + '</div>' : '') +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopHzReveal">Lật đáp án (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopHzNext">Chữ tiếp theo →</button>' +
+      '</div>';
+    $('#lopHzReveal').addEventListener('click', revealHanzi);
+    $('#lopHzNext').addEventListener('click', nextHanzi);
+    state.hanziShown = false;
+  }
+  function revealHanzi() {
+    if (state.hanziShown) return;
+    state.hanziShown = true;
+    var el = $('#lopHzAns');
+    if (el) el.hidden = false;
+    var item = state.deck[state.pos];
+    if (item) speakZh(item.h.c);
+  }
+  function nextHanzi() {
+    if (state.pos < state.deck.length - 1) state.pos++;
+    else dealHanzi(state.vocab || []);
+    renderHanzi();
+    resetTimer();
+  }
+
   /* ---------------- quay so bao danh ---------------- */
   var rollTimer = null;
   function openRoll() {
@@ -887,10 +1053,14 @@
 
   var GAME_TITLE = {
     errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C', sort: 'Xếp câu bằng người',
-    bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ', tiles: 'Lật ô đoán chữ', taboo: 'Bạn nói tôi đoán'
+    bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ', tiles: 'Lật ô đoán chữ', taboo: 'Bạn nói tôi đoán',
+    trans: 'Dịch nhanh Việt → Trung', listen: 'Nghe nhanh chỉ chữ', hanzi: 'Đoán chữ qua bộ thủ'
   };
-  var GAME_SECS = { errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20, tiles: 30, taboo: 60 };
-  var VOCAB_GAMES = { bingo: 1, guess: 1, tiles: 1, taboo: 1 };
+  var GAME_SECS = {
+    errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20, tiles: 30, taboo: 60,
+    trans: 60, listen: 15, hanzi: 30
+  };
+  var VOCAB_GAMES = { bingo: 1, guess: 1, tiles: 1, taboo: 1, trans: 1, listen: 1, hanzi: 1 };
 
   function startGame(game) {
     if (!VOCAB_GAMES[game]) {
@@ -920,6 +1090,9 @@
         if (game === 'bingo') startBingo(vocab);
         else if (game === 'tiles') { dealTiles(vocab); renderTiles(); }
         else if (game === 'taboo') { dealTaboo(vocab); renderTaboo(); }
+        else if (game === 'trans') { dealTrans(); renderTrans(); }
+        else if (game === 'listen') { dealListen(vocab); renderListen(); }
+        else if (game === 'hanzi') { dealHanzi(vocab); renderHanzi(); }
         else { dealGuess(vocab); renderGuess(); }
       });
       return;
@@ -986,6 +1159,9 @@
         else if (g === 'guess') revealGuess();
         else if (g === 'tiles') revealTiles();
         else if (g === 'taboo') tabooNext(true);
+        else if (g === 'trans') revealTrans();
+        else if (g === 'hanzi') revealHanzi();
+        else if (g === 'listen') { if (state.listenTarget) speakZh(state.listenTarget.zh); }
         else revealAll();
         return;
       }
@@ -996,6 +1172,9 @@
         else if (g === 'bingo') { e.preventDefault(); callBingo(); }
         else if (g === 'taboo') { e.preventDefault(); tabooNext(false); }
         else if (g === 'tiles') { e.preventDefault(); dealTiles(state.vocab || []); renderTiles(); resetTimer(); }
+        else if (g === 'trans') { e.preventDefault(); nextTrans(); }
+        else if (g === 'hanzi') { e.preventDefault(); nextHanzi(); }
+        else if (g === 'listen') { e.preventDefault(); dealListen(state.vocab || []); renderListen(); resetTimer(); }
         return;
       }
       if (e.key === 'n' || e.key === 'N') {
@@ -1005,6 +1184,9 @@
         else if (g === 'bingo') { startBingo(state.vocab || []); }
         else if (g === 'tiles') { dealTiles(state.vocab || []); renderTiles(); }
         else if (g === 'taboo') { dealTaboo(state.vocab || []); renderTaboo(); }
+        else if (g === 'trans') { dealTrans(); renderTrans(); }
+        else if (g === 'listen') { dealListen(state.vocab || []); renderListen(); }
+        else if (g === 'hanzi') { dealHanzi(state.vocab || []); renderHanzi(); }
         else { dealRows(); renderErrfix(); }
         resetTimer(); return;
       }

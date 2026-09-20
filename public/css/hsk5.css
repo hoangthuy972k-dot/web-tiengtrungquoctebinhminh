@@ -3,16 +3,6 @@
    Dùng lại biến màu của lesson-template.css
    ══════════════════════════════════════════ */
 
-.h5-spk {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 0.95em;
-  padding: 0 2px;
-  opacity: 0.55;
-}
-.h5-spk:hover { opacity: 1; }
-
 /* ---------- Phân biệt từ gần nghĩa ---------- */
 .h5-card {
   background: #fff;
@@ -117,47 +107,6 @@
   padding: 9px 13px;
   line-height: 1.6;
 }
-
-/* ---------- Bắc cầu Hán–Việt ---------- */
-.h5-hv-intro {
-  background: var(--paper, #faf7f2);
-  border-radius: 14px;
-  padding: 16px 20px;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: var(--mid, #5b5249);
-  margin-bottom: 20px;
-}
-.h5-block { margin-bottom: 24px; }
-.h5-block-title {
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--line, #e6e0d8);
-}
-.h5-block-title.ok { color: #1f8a4c; border-color: #b8e0c8; }
-.h5-block-title.warn { color: #c0392b; border-color: #f2c4bd; }
-
-.h5-hv {
-  display: grid;
-  grid-template-columns: minmax(110px, auto) minmax(190px, auto) 1fr;
-  gap: 8px 20px;
-  align-items: baseline;
-  border: 1px solid var(--line, #e6e0d8);
-  border-radius: 12px;
-  padding: 12px 18px;
-  margin-bottom: 8px;
-  background: #fff;
-}
-.h5-hv.trap { background: #fffaf9; border-color: #f2c4bd; }
-.h5-hv-zh { font-family: 'Noto Serif SC', serif; font-size: 1.35rem; color: var(--sky-d, #1f6f8b); }
-.h5-hv-mid { font-size: 0.92rem; }
-.h5-hv-hv { color: var(--gold-d, #8a5a0f); font-weight: 600; font-style: italic; }
-.h5-hv-arrow { margin: 0 8px; color: var(--soft, #8d8279); }
-.h5-hv-vn { color: var(--ink, #2b2b2b); font-weight: 600; }
-.h5-hv-note { font-size: 0.85rem; color: var(--mid, #5b5249); line-height: 1.6; }
-.h5-hv.trap .h5-hv-note { color: #c0392b; }
 
 /* ---------- Viết đoạn ---------- */
 .h5-w-label {

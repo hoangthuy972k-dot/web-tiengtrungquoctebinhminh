@@ -206,6 +206,81 @@ function selectWuOpt(letter){
 }
 
 // ══════════════════════════════════════════
+// BAC CAU HAN–VIET — dung chung cho moi bai
+// Nguoi Viet co san mot kho tu Han-Viet. Voi nhieu chu Han, doc am Han-Viet
+// len la ra nghia luon; nhung cung khong it chu ma am Han-Viet KHONG giup gi,
+// tham chi danh lac huong. Tach doi ra de hoc sinh biet chu nao duoc phep
+// doan, chu nao bat buoc phai nho rieng.
+// Bai nao tu khai bao hvBridgeData (HSK 5) thi dung ban soan tay.
+// ══════════════════════════════════════════
+function hvNorm(s){
+  return String(s==null?'':s).toLowerCase()
+    .replace(/[（(][^）)]*[）)]/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+// Am Han-Viet co "goi" ra duoc nghia tieng Viet khong?
+function hvHelps(hv,vn){
+  var h=hvNorm(hv);
+  if(!h) return false;
+  var parts=hvNorm(vn).split(/[,;/]/).map(function(x){return x.trim();}).filter(Boolean);
+  return parts.some(function(p){
+    return p===h || p.indexOf(h)>=0 || (h.length>3 && h.indexOf(p)>=0);
+  });
+}
+function hvSpeakBtn(t){
+  return '<button type="button" class="h5-spk" data-hv-say="'+String(t).replace(/"/g,'&quot;')+'">🔊</button>';
+}
+function hvRow(x,warn){
+  return '<div class="h5-hv'+(warn?' trap':'')+'">'+
+    '<div class="h5-hv-zh">'+x.zh+' '+hvSpeakBtn(x.zh)+'</div>'+
+    '<div class="h5-hv-mid"><span class="h5-hv-hv">'+(x.hv||'—')+'</span>'+
+      '<span class="h5-hv-arrow">→</span><span class="h5-hv-vn">'+x.vn+'</span></div>'+
+    '<div class="h5-hv-note">'+(warn?(x.warn||''):(x.note||''))+'</div>'+
+  '</div>';
+}
+function buildHanViet(){
+  var box=document.getElementById('hanviet-wrap');
+  if(!box) return;
+
+  // Ban soan tay (co loi canh bao rieng cho tung tu)
+  if(typeof hvBridgeData!=='undefined' && hvBridgeData){
+    var d=hvBridgeData;
+    box.innerHTML=
+      '<div class="h5-hv-intro">Người Việt có sẵn một kho từ Hán–Việt khổng lồ. Nhiều từ chỉ cần đọc âm Hán–Việt là hiểu ngay, '+
+        'nhớ được cả cụm chứ không phải từng từ một. Nhưng cũng có những từ <b>giống chữ mà khác nghĩa</b> — chính chúng gây lỗi nhiều nhất.</div>'+
+      '<div class="h5-block"><div class="h5-block-title ok">✅ Đọc âm Hán–Việt là đoán ra nghĩa</div>'+
+        d.easy.map(function(x){return hvRow(x,false);}).join('')+'</div>'+
+      (d.idiom&&d.idiom.length?'<div class="h5-block"><div class="h5-block-title ok">🏮 Thành ngữ tiếng Việt cũng dùng y nguyên</div>'+
+        d.idiom.map(function(x){return hvRow(x,false);}).join('')+'</div>':'')+
+      '<div class="h5-block"><div class="h5-block-title warn">⚠️ Từ bẫy — giống chữ nhưng ĐỪNG hiểu theo tiếng Việt</div>'+
+        d.trap.map(function(x){return hvRow(x,true);}).join('')+'</div>';
+    return;
+  }
+
+  // Tu dong tao tu vocabData cua bai
+  if(typeof vocabData==='undefined' || !vocabData.length){ box.innerHTML=''; return; }
+  var giup=[],phaiNho=[];
+  vocabData.forEach(function(v){
+    if(!v.hv) return;
+    (hvHelps(v.hv,v.vn)?giup:phaiNho).push({zh:v.zh,hv:v.hv,vn:v.vn,py:v.py});
+  });
+  if(!giup.length && !phaiNho.length){ box.innerHTML=''; return; }
+
+  box.innerHTML=
+    '<div class="h5-hv-intro">Mỗi chữ Hán đều có một <b>âm Hán–Việt</b>. Với nhiều từ, đọc âm đó lên là ra nghĩa ngay — '+
+      'đây là lợi thế mà người học nước khác không có. Nhưng cũng có những từ âm Hán–Việt <b>không giúp được gì</b>, '+
+      'thậm chí đánh lạc hướng. Hai bảng dưới đây tách rõ hai loại đó.</div>'+
+    (giup.length?'<div class="h5-block"><div class="h5-block-title ok">✅ Đoán được — âm Hán–Việt đã gần nghĩa ('+giup.length+' từ)</div>'+
+      giup.map(function(x){return hvRow(x,false);}).join('')+'</div>':'')+
+    (phaiNho.length?'<div class="h5-block"><div class="h5-block-title warn">⚠️ Phải nhớ riêng — âm Hán–Việt không gợi ra nghĩa ('+phaiNho.length+' từ)</div>'+
+      phaiNho.map(function(x){return hvRow(x,true);}).join('')+'</div>':'');
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('[data-hv-say]');
+  if(b && typeof speakZh==='function') speakZh(b.getAttribute('data-hv-say'));
+});
+
+// ══════════════════════════════════════════
 // VOCAB
 // ══════════════════════════════════════════
 const posStyle={'Danh từ':'background:#dbeafe;color:#1d4ed8','Động từ':'background:#dcfce7;color:#16a34a','Tính từ':'background:#fef9c3;color:#b45309','Đại từ':'background:#fce7f3;color:#be185d','Lượng từ':'background:#f0fdf4;color:#15803d'};
@@ -1164,6 +1239,7 @@ document.addEventListener('click', function(e){
 // ══════════════════════════════════════════
 if(typeof wuData!=='undefined')buildWarmup();
 if(typeof vocabData!=='undefined')buildVocab();
+buildHanViet();
 if(typeof vocabData!=='undefined')updateFlash();
 if(typeof dialogData!=='undefined'){buildDialogs();hideDialogAudioIfMissing();}
 if(typeof fillData!=='undefined')buildFill();

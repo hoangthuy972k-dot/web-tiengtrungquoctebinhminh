@@ -3,7 +3,9 @@
    nen de mot cho de sau nay sua mot lan la ca 36 bai cung doi.
 
    Cach dung:  node tools/build-hsk5-page.js <so-bai>
-               node tools/build-hsk5-page.js all                              */
+               node tools/build-hsk5-page.js all
+   Sinh xong PHAI chay tiep:  node tools/stamp-assets.js --that
+   (dong dau phien ban len CSS/JS, khong co dau thi trinh duyet giu ban cu)  */
 const fs = require('fs');
 const path = require('path');
 

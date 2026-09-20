@@ -80,42 +80,7 @@
     });
   }
 
-  /* ---------- 2. Bắc cầu Hán–Việt ---------- */
-  function buildHanViet() {
-    var box = document.getElementById('hanviet-wrap');
-    if (!box || typeof hvBridgeData === 'undefined') return;
-    var d = hvBridgeData;
-
-    function row(x, warn) {
-      return '<div class="h5-hv' + (warn ? ' trap' : '') + '">' +
-        '<div class="h5-hv-zh">' + esc(x.zh) + ' ' + spk(x.zh) + '</div>' +
-        '<div class="h5-hv-mid"><span class="h5-hv-hv">' + esc(x.hv) + '</span>' +
-          '<span class="h5-hv-arrow">→</span><span class="h5-hv-vn">' + esc(x.vn) + '</span></div>' +
-        '<div class="h5-hv-note">' + esc(warn ? x.warn : x.note) + '</div>' +
-      '</div>';
-    }
-
-    box.innerHTML =
-      '<div class="h5-hv-intro">Người Việt có sẵn một kho từ Hán–Việt khổng lồ. Lên HSK 5 kho đó mới thật sự phát huy: ' +
-        'nhiều từ chỉ cần đọc âm Hán–Việt là hiểu ngay, nhớ được cả cụm chứ không phải từng từ một. ' +
-        'Nhưng cũng có những từ <b>giống chữ mà khác nghĩa</b> — chính chúng gây lỗi nhiều nhất ở trình độ cao.</div>' +
-
-      '<div class="h5-block">' +
-        '<div class="h5-block-title ok">✅ Đọc âm Hán–Việt là đoán ra nghĩa</div>' +
-        d.easy.map(function (x) { return row(x, false); }).join('') +
-      '</div>' +
-
-      (d.idiom && d.idiom.length ?
-      '<div class="h5-block">' +
-        '<div class="h5-block-title ok">🏮 Thành ngữ tiếng Việt cũng dùng y nguyên</div>' +
-        d.idiom.map(function (x) { return row(x, false); }).join('') +
-      '</div>' : '') +
-
-      '<div class="h5-block">' +
-        '<div class="h5-block-title warn">⚠️ Từ bẫy — giống chữ nhưng ĐỪNG hiểu theo tiếng Việt</div>' +
-        d.trap.map(function (x) { return row(x, true); }).join('') +
-      '</div>';
-  }
+  /* Bac cau Han-Viet gio nam trong lesson-engine.js — dung chung cho moi bai */
 
   /* ---------- 3. Viết đoạn 80 chữ ---------- */
   function buildWriting() {
@@ -205,6 +170,5 @@
   });
 
   buildSynonym();
-  buildHanViet();
   buildWriting();
 })();

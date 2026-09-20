@@ -542,6 +542,21 @@
     hsk4: 'Đã xong HSK 3 · giao tiếp khá, đọc hiểu',
     hsk5: 'Đã xong HSK 4 · trình độ cao cấp'
   };
+  /* Trang bai hoc co duoi .html nen CDN phuc vu thang, khong qua Node va
+     KHONG co header cache — trinh duyet giu ban cu hang ngay troi. Gan them
+     dau phien ban cua lan trien khai vao duong dan de moi lan deploy la hoc
+     sinh nhan duoc trang moi. Chi gan vao LIEN KET, khong doi fullPageUrl
+     goc vi no con dung lam khoa luu tien do.                              */
+  var ASSET_V = (function () {
+    var s = document.querySelector('script[src*="/js/app.js"]');
+    var m = s && s.src && s.src.match(/[?&]v=([^&]+)/);
+    return m ? m[1] : '';
+  })();
+  function lessonHref(url) {
+    if (!url || !ASSET_V) return url;
+    return url + (url.indexOf('?') < 0 ? '?' : '&') + 'v=' + ASSET_V;
+  }
+
   var LEVEL_PICK_KEY = 'hyv_level_pick';
 
   function renderLevelCards() {
@@ -1464,7 +1479,7 @@
       var isDone = !!visited[lesson.fullPageUrl] || lessonHasAnyProgress(lesson);
       var card = document.createElement('a');
       card.className = 'lesson-card-link';
-      card.href = lesson.fullPageUrl;
+      card.href = lessonHref(lesson.fullPageUrl);
 
       card.innerHTML =
         '<span class="lesson-card-num">' + String(lesson.number).padStart(2, '0') + '</span>' +

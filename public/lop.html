@@ -32,7 +32,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <div class="lop-logo">喜汉</div>
       <div>
         <h1>Chế độ lớp học</h1>
-        <p>Trò chơi đầu giờ để chiếu lên lớp · ôn lại bài đã học</p>
+        <p>Kiểm tra đầu giờ &amp; trò chơi ôn bài — chiếu thẳng lên lớp</p>
       </div>
     </div>
 
@@ -70,7 +70,31 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
     </div>
 
     <div class="lop-field">
-      <label>4 · Chọn trò chơi</label>
+      <label>4 · Kiểm tra đầu giờ (có chấm điểm)</label>
+      <div class="lop-tests">
+        <button type="button" class="lop-test-card" data-test="dictation">
+          <span class="lop-game-emoji">✍️</span>
+          <span class="lop-game-name">Đọc chính tả Hán tự 听写</span>
+          <span class="lop-game-desc">Máy đọc từng từ và hiện nghĩa tiếng Việt, cả lớp viết chữ Hán + phiên âm vào vở. Đọc xong hiện bảng đáp án để đổi vở chấm chéo.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
+        <button type="button" class="lop-test-card" data-test="quiz">
+          <span class="lop-game-emoji">⚡</span>
+          <span class="lop-game-name">Kiểm tra nhanh 10 câu</span>
+          <span class="lop-game-desc">Chiếu lần lượt 10 câu trắc nghiệm, học sinh ghi A/B/C vào vở. Hết giờ hiện cả bảng đáp án — chấm chéo lấy điểm miệng.</span>
+          <span class="lop-game-count" id="lopCountQuiz">—</span>
+        </button>
+        <button type="button" class="lop-test-card" data-test="paper">
+          <span class="lop-game-emoji">📄</span>
+          <span class="lop-game-name">Đề giấy — in ra, 4 mã đề</span>
+          <span class="lop-game-desc">Tự ra đề 5–10 câu từ các bài đã chọn, in 4 mã đề khác thứ tự để hai em ngồi cạnh không chép được nhau. Có sẵn bảng đáp án cho thầy/cô.</span>
+          <span class="lop-game-count" id="lopCountPaper">—</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="lop-field">
+      <label>5 · Trò chơi khởi động</label>
       <div class="lop-games">
         <button type="button" class="lop-game-card" data-game="errfix">
           <span class="lop-game-emoji">🔍</span>
@@ -237,6 +261,33 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <div class="lop-call-hint" id="lopCallHint"></div>
     </div>
   </div>
+</div>
+
+<!-- De giay in ra — 4 ma de + bang dap an -->
+<div id="lopPaper" class="lop-paper-wrap" hidden>
+  <div class="lop-paper-bar">
+    <button type="button" class="lop-mini-btn" id="lopPaperClose">← Quay lại</button>
+    <div class="lop-paper-opts">
+      <label>Số câu mỗi đề
+        <select id="lopPaperN">
+          <option value="5">5 câu</option>
+          <option value="8" selected>8 câu</option>
+          <option value="10">10 câu</option>
+        </select>
+      </label>
+      <label>Số mã đề
+        <select id="lopPaperV">
+          <option value="2">2 mã đề</option>
+          <option value="4" selected>4 mã đề</option>
+        </select>
+      </label>
+      <label class="lop-paper-check"><input type="checkbox" id="lopPaperKey" checked> In kèm bảng đáp án</label>
+      <label class="lop-paper-check"><input type="checkbox" id="lopPaperHard"> Ẩn gợi ý ngữ pháp (đề khó hơn)</label>
+    </div>
+    <button type="button" class="lop-mini-btn" id="lopPaperAgain">🎲 Ra đề khác</button>
+    <button type="button" class="lop-act" id="lopPaperPrint">🖨️ In ra</button>
+  </div>
+  <div class="lop-paper-sheets" id="lopPaperSheets"></div>
 </div>
 
 <script src="/js/lop.js"></script>

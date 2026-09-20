@@ -268,6 +268,14 @@
     var s = pickedSorts().length;
     $('#lopCountSort').textContent = s ? s + ' câu' : 'chọn bài';
     $('.lop-game-card[data-game="sort"]').disabled = s < 1;
+    // Kiem tra dau gio
+    var total = m + s + n;
+    $('#lopCountQuiz').textContent = m ? Math.min(10, m) + ' câu' : 'chọn bài';
+    $('.lop-test-card[data-test="quiz"]').disabled = m < 1;
+    $('#lopCountPaper').textContent = total ? total + ' câu' : 'chọn bài';
+    $('.lop-test-card[data-test="paper"]').disabled = total < 1;
+    $('.lop-test-card[data-test="dictation"]').disabled = !label;
+
     var st = $('#lopPickState');
     if (st) {
       st.textContent = label
@@ -1556,6 +1564,348 @@
       .catch(function (e) { $('#lopCallHint').textContent = e.message; });
   }
 
+  /* ================= KIEM TRA DAU GIO =================
+     Khac voi tro choi o cho CA LOP cung lam va co diem: hoc sinh viet vao vo
+     (hoac lam de giay), xong thi chieu bang dap an len de doi vo cham cheo.  */
+
+  var TEST_TITLE = {
+    dictation: 'Đọc chính tả Hán tự 听写',
+    quiz: 'Kiểm tra nhanh 10 câu',
+    paper: 'Đề giấy in ra'
+  };
+
+  /* ---- 1. Doc chinh ta 听写 ---- */
+  function dealDict(vocab) {
+    var sents = vocab.filter(function (v) { return v.ex_zh; });
+    var pool = state.dictMode === 'sentence' && sents.length ? sents : vocab;
+    state.dict = { deck: shuffle(pool).slice(0, state.dictN || 10), pos: 0, key: false };
+  }
+
+  function dictPart(v) {
+    var s = state.dictMode === 'sentence';
+    return { zh: s ? v.ex_zh : v.zh, py: s ? v.ex_py : v.py, vn: s ? v.ex_vn : v.vn };
+  }
+
+  function renderDict() {
+    var d = state.dict;
+    if (!d || !d.deck.length) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Các bài này chưa có từ vựng để đọc chính tả.</span></div>';
+      return;
+    }
+    if (d.key) return renderDictKey();
+
+    var p = dictPart(d.deck[d.pos]);
+    var sentence = state.dictMode === 'sentence';
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>' + (sentence ? 'Câu' : 'Từ') + ' số <b>' + (d.pos + 1) + '</b> / ' + d.deck.length +
+        ' · nghe rồi viết <b>chữ Hán</b> và <b>phiên âm</b> vào vở</span>' +
+      '</div>' +
+      '<div class="lop-dict-box">' +
+        '<div class="lop-dict-no">' + (d.pos + 1) + '</div>' +
+        (state.dictHideVn ? '<div class="lop-dict-vn muted">(đã ẩn nghĩa — chỉ nghe)</div>'
+                          : '<div class="lop-dict-vn">' + esc(p.vn || '') + '</div>') +
+        '<button type="button" class="lop-write-play" id="lopDictPlay">🔊 Đọc lại</button>' +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act ghost" id="lopDictPrev">← Quay lại</button>' +
+        '<button type="button" class="lop-act" id="lopDictNext">' +
+          (d.pos === d.deck.length - 1 ? 'Đọc xong — hiện đáp án' : (sentence ? 'Câu' : 'Từ') + ' tiếp theo →') +
+        '</button>' +
+        '<button type="button" class="lop-act ghost" id="lopDictVn">' +
+          (state.dictHideVn ? 'Hiện nghĩa tiếng Việt' : 'Ẩn nghĩa (khó hơn)') + '</button>' +
+        '<button type="button" class="lop-act ghost" id="lopDictMode">' +
+          (sentence ? 'Chuyển sang đọc từ' : 'Chuyển sang đọc câu') + '</button>' +
+      '</div>';
+
+    $('#lopDictPlay').addEventListener('click', function () { speakZh(p.zh); });
+    $('#lopDictPrev').addEventListener('click', function () {
+      if (d.pos > 0) { d.pos--; renderDict(); resetTimer(); }
+    });
+    $('#lopDictNext').addEventListener('click', function () {
+      if (d.pos < d.deck.length - 1) { d.pos++; renderDict(); resetTimer(); }
+      else { d.key = true; renderDictKey(); }
+    });
+    $('#lopDictVn').addEventListener('click', function () {
+      state.dictHideVn = !state.dictHideVn;
+      renderDict();
+    });
+    $('#lopDictMode').addEventListener('click', function () {
+      state.dictMode = sentence ? 'word' : 'sentence';
+      dealDict(state.vocab || []);
+      renderDict();
+      resetTimer();
+    });
+    speakZh(p.zh);
+  }
+
+  function renderDictKey() {
+    var d = state.dict;
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Bảng đáp án — <b>đổi vở chấm chéo</b>, mỗi câu đúng cả chữ Hán lẫn phiên âm được <b>1 điểm</b></span>' +
+        '<span class="lop-point">Tổng ' + d.deck.length + ' điểm</span>' +
+      '</div>' +
+      '<div class="lop-key-grid">' + d.deck.map(function (v, i) {
+        var p = dictPart(v);
+        return '<div class="lop-key-item">' +
+          '<div class="lop-key-no">' + (i + 1) + '</div>' +
+          '<div class="lop-key-main">' +
+            '<div class="lop-key-zh">' + esc(p.zh) + '</div>' +
+            '<div class="lop-key-py">' + esc(p.py || '') + '</div>' +
+            '<div class="lop-key-vn">' + esc(p.vn || '') + '</div>' +
+          '</div></div>';
+      }).join('') + '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act ghost" id="lopDictBack">← Xem lại bài đọc</button>' +
+        '<button type="button" class="lop-act" id="lopDictNew">🎲 Bộ từ mới</button>' +
+      '</div>';
+
+    $('#lopDictBack').addEventListener('click', function () { d.key = false; renderDict(); });
+    $('#lopDictNew').addEventListener('click', function () {
+      dealDict(state.vocab || []);
+      renderDict();
+      resetTimer();
+    });
+  }
+
+  /* ---- 2. Kiem tra nhanh 10 cau ---- */
+  function dealQuiz() {
+    var deck = shuffle(pickedMcs()).slice(0, 10).map(function (q) {
+      var order = shuffle(q.options.map(function (_, i) { return i; }));
+      return { q: q, order: order, ans: order.indexOf(q.answer) };
+    });
+    state.quiz = { deck: deck, pos: 0, key: false };
+  }
+
+  function renderQuiz() {
+    var z = state.quiz;
+    if (!z || !z.deck.length) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Các bài này chưa có câu trắc nghiệm.</span></div>';
+      return;
+    }
+    if (z.key) return renderQuizKey();
+
+    var it = z.deck[z.pos], q = it.q;
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Câu <b>' + (z.pos + 1) + '</b> / ' + z.deck.length + ' · ghi <b>A</b>, <b>B</b> hoặc <b>C</b> vào vở</span>' +
+        (q.point ? '<span class="lop-point">📐 ' + esc(q.point) + '</span>' : '') +
+      '</div>' +
+      (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
+      '<div class="lop-abc-sentence">' + esc(q.pre) + '<span class="lop-blank">＿＿</span>' + esc(q.post) + '</div>' +
+      '<div class="lop-abc-opts">' + it.order.map(function (oi, i) {
+        return '<div class="lop-abc-opt">' +
+          '<span class="lop-abc-key">' + ABC[i] + '</span>' +
+          '<span class="lop-abc-text">' + esc(q.options[oi]) + '</span>' +
+        '</div>';
+      }).join('') + '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act ghost" id="lopQuizPrev">← Quay lại</button>' +
+        '<button type="button" class="lop-act" id="lopQuizNext">' +
+          (z.pos === z.deck.length - 1 ? 'Hết giờ — hiện bảng đáp án' : 'Câu tiếp theo →') + '</button>' +
+      '</div>';
+
+    $('#lopQuizPrev').addEventListener('click', function () {
+      if (z.pos > 0) { z.pos--; renderQuiz(); resetTimer(); }
+    });
+    $('#lopQuizNext').addEventListener('click', function () {
+      if (z.pos < z.deck.length - 1) { z.pos++; renderQuiz(); resetTimer(); }
+      else { z.key = true; renderQuizKey(); }
+    });
+  }
+
+  function renderQuizKey() {
+    var z = state.quiz;
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Bảng đáp án — <b>đổi vở chấm chéo</b>, mỗi câu đúng <b>1 điểm</b></span>' +
+        '<span class="lop-point">Tổng ' + z.deck.length + ' điểm</span>' +
+      '</div>' +
+      '<div class="lop-key-grid quiz">' + z.deck.map(function (it, i) {
+        var q = it.q;
+        return '<div class="lop-key-item">' +
+          '<div class="lop-key-no">' + (i + 1) + '</div>' +
+          '<div class="lop-key-main">' +
+            '<div class="lop-key-letter">' + ABC[it.ans] + '</div>' +
+            '<div class="lop-key-zh small">' + esc(q.pre) +
+              '<b>' + esc(q.options[q.answer]) + '</b>' + esc(q.post) + '</div>' +
+          '</div></div>';
+      }).join('') + '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act ghost" id="lopQuizBack">← Xem lại đề</button>' +
+        '<button type="button" class="lop-act" id="lopQuizNew">🎲 Bộ câu mới</button>' +
+      '</div>';
+
+    $('#lopQuizBack').addEventListener('click', function () { z.key = false; z.pos = 0; renderQuiz(); });
+    $('#lopQuizNew').addEventListener('click', function () { dealQuiz(); renderQuiz(); resetTimer(); });
+  }
+
+  /* ---- 3. De giay in ra — nhieu ma de ---- */
+  function paperDeal() {
+    var n = parseInt($('#lopPaperN').value, 10) || 8;
+    var nv = parseInt($('#lopPaperV').value, 10) || 4;
+    var mcs = shuffle(pickedMcs()), sorts = shuffle(pickedSorts()), judges = shuffle(pickedJudges());
+
+    // Uu tien trac nghiem cho de cham, them chut xep cau va dung/sai cho du dang
+    var nSort = Math.min(sorts.length, Math.round(n * 0.25));
+    var nJudge = Math.min(judges.length, Math.round(n * 0.25));
+    var nMc = Math.min(mcs.length, n - nSort - nJudge);
+
+    // Cau nay khong duoc lo dap an cho cau kia: sau khi chon xong phan trac nghiem,
+    // bo nhung cau Dung/Sai hay xep tu co cung noi dung voi cau da chon.
+    var used = {};
+    mcs.slice(0, nMc).forEach(function (q) {
+      used[String((q.pre || '') + q.options[q.answer] + (q.post || '')).replace(/\s/g, '')] = 1;
+    });
+    function fresh(text) { return !used[String(text || '').replace(/\s/g, '')]; }
+    sorts = sorts.filter(function (q) { return fresh(q.answer); });
+    judges = judges.filter(function (q) { return fresh(q.sentence) && fresh(q.fix); });
+    nSort = Math.min(sorts.length, nSort);
+    nJudge = Math.min(judges.length, nJudge);
+    // Thieu ben nao thi bu bang ben con du
+    var missing = n - nMc - nSort - nJudge;
+    while (missing > 0) {
+      if (nSort < sorts.length) { nSort++; missing--; continue; }
+      if (nJudge < judges.length) { nJudge++; missing--; continue; }
+      break;
+    }
+
+    var base = mcs.slice(0, nMc).map(function (q) { return { t: 'mc', q: q }; })
+      .concat(sorts.slice(0, nSort).map(function (q) { return { t: 'sort', q: q }; }))
+      .concat(judges.slice(0, nJudge).map(function (q) { return { t: 'judge', q: q }; }));
+
+    var versions = [];
+    for (var v = 0; v < nv; v++) {
+      versions.push({
+        code: 101 + v,
+        items: shuffle(base).map(function (it) {
+          if (it.t === 'sort') return { t: 'sort', q: it.q, words: shuffle(it.q.words) };
+          if (it.t === 'judge') return { t: 'judge', q: it.q };
+          var order = shuffle(it.q.options.map(function (_, i) { return i; }));
+          return { t: 'mc', q: it.q, order: order, ans: order.indexOf(it.q.answer) };
+        })
+      });
+    }
+    state.paper = { versions: versions, total: base.length };
+  }
+
+  // Mot so cau co dong goi y noi thang quy tac ("Nhan manh viec xay ra MUON thi dung 才").
+  // Khi thay/co muon ra de kho hon thi bo cac dong do di — nhan ra bang cach:
+  // goi y co chu Han ma chu do lai nam trong chinh cac phuong an tra loi.
+  function paperCtx(it) {
+    var c = it.q.context || '';
+    if (!c || !$('#lopPaperHard') || !$('#lopPaperHard').checked) return c;
+    if (it.t !== 'mc') return c;
+    var han = c.match(/[一-鿿]/g) || [];
+    var opts = it.q.options.join('');
+    for (var k = 0; k < han.length; k++) if (opts.indexOf(han[k]) >= 0) return '';
+    return c;
+  }
+
+  function paperQuestion(it, i) {
+    var q = it.q, ctx = paperCtx(it), body;
+    if (it.t === 'mc') {
+      body = '<div class="ps-zh">' + esc(q.pre) + '<span class="ps-blank">＿＿＿</span>' + esc(q.post) + '</div>' +
+        '<div class="ps-opts">' + it.order.map(function (oi, k) {
+          return '<span class="ps-opt"><b>' + ABC[k] + '.</b> ' + esc(q.options[oi]) + '</span>';
+        }).join('') + '</div>';
+    } else if (it.t === 'sort') {
+      body = '<div class="ps-cards">' + it.words.map(function (w) {
+        return '<span class="ps-card">' + esc(w) + '</span>';
+      }).join('') + '</div>' +
+      '<div class="ps-line">→ ________________________________________</div>';
+    } else {
+      body = '<div class="ps-zh">' + esc(q.sentence) + '</div>' +
+        '<div class="ps-judge">Đúng ☐　Sai ☐　—　nếu sai, sửa lại: ______________________</div>';
+    }
+    return '<div class="ps-q">' +
+      '<div class="ps-no">' + (i + 1) + '.</div>' +
+      '<div class="ps-body">' + (ctx ? '<div class="ps-ctx">' + esc(ctx) + '</div>' : '') + body + '</div>' +
+    '</div>';
+  }
+
+  function paperRender() {
+    var sub = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
+    var html = state.paper.versions.map(function (ver) {
+      return '<section class="lop-sheet">' +
+        '<div class="ps-head">' +
+          '<div class="ps-school">KIỂM TRA ĐẦU GIỜ · TIẾNG TRUNG</div>' +
+          '<div class="ps-code">Mã đề ' + ver.code + '</div>' +
+        '</div>' +
+        '<div class="ps-meta">' + esc(sub) + ' · thời gian 10 phút</div>' +
+        '<div class="ps-fields">' +
+          '<span>Họ và tên: ..................................................</span>' +
+          '<span>Lớp: ..................</span>' +
+          '<span class="ps-mark">Điểm: ..........</span>' +
+        '</div>' +
+        ver.items.map(paperQuestion).join('') +
+      '</section>';
+    }).join('');
+
+    if ($('#lopPaperKey').checked) {
+      html += '<section class="lop-sheet ps-key">' +
+        '<div class="ps-head"><div class="ps-school">BẢNG ĐÁP ÁN — dành cho giáo viên</div></div>' +
+        '<div class="ps-meta">' + esc(sub) + ' · ' + state.paper.total + ' câu mỗi đề</div>' +
+        state.paper.versions.map(function (ver) {
+          return '<div class="ps-keyblock">' +
+            '<div class="ps-keycode">Mã đề ' + ver.code + '</div>' +
+            '<ol class="ps-keylist">' + ver.items.map(function (it) {
+              if (it.t === 'mc') return '<li><b>' + ABC[it.ans] + '</b> — ' + esc(it.q.options[it.q.answer]) + '</li>';
+              if (it.t === 'sort') return '<li>' + esc(it.q.answer) + '</li>';
+              return '<li>' + (it.q.isCorrect ? 'Đúng' : 'Sai → ' + esc(it.q.fix || '')) + '</li>';
+            }).join('') + '</ol>' +
+          '</div>';
+        }).join('') +
+      '</section>';
+    }
+    $('#lopPaperSheets').innerHTML = html;
+  }
+
+  function openPaper() {
+    if (!pickedLabel()) return;
+    $('#lopSetup').hidden = true;
+    $('#lopPaper').hidden = false;
+    paperDeal();
+    paperRender();
+    window.scrollTo(0, 0);
+  }
+  function closePaper() {
+    $('#lopPaper').hidden = true;
+    $('#lopSetup').hidden = false;
+  }
+
+  /* ---- mo mot dang kiem tra ---- */
+  function startTest(kind) {
+    if (kind === 'paper') return openPaper();
+    if (!pickedLabel()) return;
+    if (kind === 'quiz' && !pickedMcs().length) return;
+
+    state.game = kind;
+    $('#lopTitle').textContent = TEST_TITLE[kind];
+    $('#lopSub').textContent = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
+    resetScores();
+    renderScorebar();
+    state.timer.secs = kind === 'dictation' ? 30 : 45;
+    $('#lopScorebar').hidden = true;
+    resetTimer();
+    $('#lopSetup').hidden = true;
+    $('#lopPlay').hidden = false;
+
+    if (kind === 'quiz') { dealQuiz(); renderQuiz(); return; }
+
+    $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Đang tải từ vựng của các bài đã chọn…</span></div>';
+    loadPickedVocab().then(function (vocab) {
+      state.vocab = vocab;
+      if (!vocab.length) {
+        $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Các bài này chưa có dữ liệu từ vựng.</span></div>';
+        return;
+      }
+      dealDict(vocab);
+      renderDict();
+    });
+  }
+
   /* ---------------- chuyen man hinh ---------------- */
   var LEVEL_NAME = {
     hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2: 'HSK 2', hsk2v3: 'HSK 2 · 3.0',
@@ -1591,6 +1941,7 @@
     resetScores();
     renderScorebar();
     // Moi tro mot nhip: gio the tra loi nhanh, xep cau can thoi gian len bang
+    $('#lopScorebar').hidden = false;
     state.timer.secs = GAME_SECS[game] || 30;
     resetTimer();
     $('#lopSetup').hidden = true;
@@ -1662,6 +2013,17 @@
     $all('.lop-game-card').forEach(function (c) {
       c.addEventListener('click', function () { startGame(c.getAttribute('data-game')); });
     });
+    $all('.lop-test-card').forEach(function (c) {
+      c.addEventListener('click', function () { startTest(c.getAttribute('data-test')); });
+    });
+    $('#lopPaperClose').addEventListener('click', closePaper);
+    $('#lopPaperAgain').addEventListener('click', function () { paperDeal(); paperRender(); });
+    $('#lopPaperPrint').addEventListener('click', function () { window.print(); });
+    ['#lopPaperN', '#lopPaperV'].forEach(function (id) {
+      $(id).addEventListener('change', function () { paperDeal(); paperRender(); });
+    });
+    $('#lopPaperKey').addEventListener('change', paperRender);
+    $('#lopPaperHard').addEventListener('change', paperRender);
     $('#lopExit').addEventListener('click', exitGame);
     $('#lopTimerToggle').addEventListener('click', toggleTimer);
     $('#lopTimerSet').addEventListener('click', cycleTimerSecs);
@@ -1716,6 +2078,8 @@
           state.matchSel = null; renderMatch();
         }
         else if (g === 'chain') { var b = $('#lopChainPick'); if (b) b.hidden = false; }
+        else if (g === 'dictation') { var dp = $('#lopDictPlay'); if (dp) dp.click(); }
+        else if (g === 'quiz') { var qn = $('#lopQuizNext'); if (qn) qn.click(); }
         else if (g === 'write') revealWrite();
         else revealAll();
         return;
@@ -1734,6 +2098,8 @@
         else if (g === 'match') { e.preventDefault(); dealMatch(state.vocab || []); renderMatch(); resetTimer(); }
         else if (g === 'role') { e.preventDefault(); dealRole(); renderRole(); resetTimer(); }
         else if (g === 'write') { e.preventDefault(); nextWrite(); }
+        else if (g === 'dictation') { e.preventDefault(); var dn = $('#lopDictNext'); if (dn) dn.click(); }
+        else if (g === 'quiz') { e.preventDefault(); var qx = $('#lopQuizNext'); if (qx) qx.click(); }
         else if (g === 'chain') { e.preventDefault(); dealChain(state.vocab || []); renderChain(); resetTimer(); }
         return;
       }

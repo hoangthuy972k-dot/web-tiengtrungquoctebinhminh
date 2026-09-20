@@ -1173,3 +1173,217 @@
   .lop-bar-sub { display: none; }
   .lop-bar-right { width: 100%; justify-content: space-between; }
 }
+
+/* ============================================================
+   KIEM TRA DAU GIO — the chon, man chieu va de giay in ra
+   ============================================================ */
+
+/* ---------- The chon tren man hinh chuan bi ---------- */
+.lop-tests { display: grid; gap: 12px; }
+.lop-test-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 4px 16px;
+  align-items: center;
+  text-align: left;
+  background: var(--color-gold-50);
+  border: 1px solid var(--color-gold-400);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.lop-test-card:hover { border-color: var(--color-red-500); }
+.lop-test-card[disabled] { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+/* Dat o luoi ro rang, khong de trinh duyet tu xep */
+.lop-test-card .lop-game-emoji { grid-column: 1; grid-row: 1 / 3; }
+.lop-test-card .lop-game-name  { grid-column: 2; grid-row: 1; }
+.lop-test-card .lop-game-desc  { grid-column: 2; grid-row: 2; }
+.lop-test-card .lop-game-count { grid-column: 3; grid-row: 1 / 3; background: #fff; }
+
+/* ---------- Doc chinh ta 听写 ---------- */
+.lop-dict-box {
+  align-self: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px dashed var(--color-gold-400);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: clamp(20px, 3.4vh, 44px) clamp(30px, 6vw, 96px);
+}
+.lop-dict-no {
+  font-size: clamp(2.6rem, 7vh, 5.2rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-gold-700);
+}
+.lop-dict-vn {
+  font-size: clamp(1.4rem, 3.4vh, 2.6rem);
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin: 10px 0 18px;
+}
+.lop-dict-vn.muted { color: var(--color-gray-500); font-weight: 400; font-size: clamp(1rem, 2vh, 1.4rem); }
+
+/* ---------- Bang dap an chieu len de cham cheo ---------- */
+.lop-key-grid {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(210px, 20vw, 300px), 1fr));
+  gap: clamp(8px, 1.2vh, 16px);
+  align-content: start;
+}
+.lop-key-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  background: var(--color-green-50);
+  border: 2px solid var(--color-green-500);
+  border-radius: 14px;
+  padding: clamp(8px, 1.2vh, 16px) clamp(12px, 1.2vw, 20px);
+}
+.lop-key-no {
+  width: clamp(30px, 3.4vh, 44px);
+  height: clamp(30px, 3.4vh, 44px);
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--color-green-500);
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.9vh, 1.3rem);
+  flex: none;
+}
+.lop-key-zh {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.5rem, 3.6vh, 2.8rem);
+  line-height: 1.25;
+  color: var(--color-green-600);
+}
+.lop-key-zh.small { font-size: clamp(1rem, 2.1vh, 1.5rem); color: var(--color-gray-700); }
+.lop-key-zh.small b { color: var(--color-green-600); }
+.lop-key-py { color: var(--color-gray-600); font-size: clamp(0.85rem, 1.6vh, 1.15rem); }
+.lop-key-vn { color: var(--color-gray-500); font-size: clamp(0.8rem, 1.5vh, 1.05rem); }
+.lop-key-letter {
+  font-size: clamp(1.6rem, 3.8vh, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-green-600);
+}
+.lop-key-grid.quiz .lop-key-item { align-items: center; }
+
+/* ---------- De giay in ra ---------- */
+.lop-paper-wrap {
+  min-height: 100vh;
+  background: var(--color-gray-100);
+  padding-bottom: 60px;
+}
+.lop-paper-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--color-gray-200);
+  box-shadow: var(--shadow-sm);
+}
+.lop-paper-bar .lop-act { padding: 10px 24px; font-size: 1rem; }
+.lop-paper-opts { display: flex; gap: 16px; flex-wrap: wrap; margin-left: auto; align-items: center; }
+.lop-paper-opts label { font-size: 0.88rem; color: var(--color-gray-700); display: flex; align-items: center; gap: 6px; }
+.lop-paper-opts select {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-gray-200);
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+.lop-paper-check input { width: 16px; height: 16px; }
+
+.lop-paper-sheets { padding: 24px 16px; display: grid; gap: 24px; justify-items: center; }
+.lop-sheet {
+  width: 21cm;
+  max-width: 100%;
+  min-height: 27cm;
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  box-shadow: var(--shadow-md);
+  padding: 1.6cm 1.6cm 2cm;
+  color: #1a1a1a;
+  font-size: 12.5pt;
+  line-height: 1.5;
+}
+.ps-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 8px;
+}
+.ps-school { font-weight: 700; letter-spacing: 0.02em; }
+.ps-code { font-weight: 700; }
+.ps-meta { color: #555; font-size: 11pt; margin-top: 6px; }
+.ps-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin: 14px 0 18px;
+  font-size: 11.5pt;
+}
+.ps-mark { margin-left: auto; font-weight: 600; }
+
+.ps-q { display: grid; grid-template-columns: 30px 1fr; gap: 8px; margin-bottom: 16px; break-inside: avoid; }
+.ps-no { font-weight: 700; }
+.ps-ctx { color: #666; font-size: 10.5pt; font-style: italic; margin-bottom: 3px; }
+.ps-zh { font-family: 'Noto Serif SC', serif; font-size: 15pt; line-height: 1.6; }
+.ps-blank { letter-spacing: 0.1em; }
+.ps-opts { display: flex; flex-wrap: wrap; gap: 6px 28px; margin-top: 5px; font-family: 'Noto Serif SC', serif; font-size: 13pt; }
+.ps-cards { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 8px; }
+.ps-card {
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  padding: 3px 12px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 13pt;
+}
+.ps-line { color: #444; letter-spacing: 0.04em; }
+.ps-judge { margin-top: 5px; font-size: 11pt; color: #333; }
+
+.ps-key .ps-keyblock { margin-top: 16px; break-inside: avoid; }
+.ps-keycode { font-weight: 700; border-bottom: 1px solid #999; padding-bottom: 3px; margin-bottom: 6px; }
+.ps-keylist { margin: 0; padding-left: 26px; columns: 2; column-gap: 32px; font-size: 11.5pt; }
+.ps-keylist li { margin-bottom: 3px; break-inside: avoid; font-family: 'Noto Serif SC', serif; }
+
+/* Khi in: chi con to de, moi ma de mot trang */
+@media print {
+  .scene, .lop-setup, .lop-play, .lop-roll-box, .lop-paper-bar { display: none !important; }
+  .lop-body { background: #fff; }
+  .lop-paper-wrap { background: #fff; padding: 0; }
+  .lop-paper-sheets { padding: 0; display: block; }
+  .lop-sheet {
+    width: auto;
+    min-height: 0;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    break-after: page;
+    page-break-after: always;
+  }
+  .lop-sheet:last-child { break-after: auto; page-break-after: auto; }
+}
+@page { size: A4; margin: 1.5cm; }
+
+@media (max-width: 720px) {
+  .lop-paper-opts { margin-left: 0; }
+  .lop-sheet { padding: 20px 16px; font-size: 11pt; }
+}

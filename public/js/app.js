@@ -1769,7 +1769,7 @@
     var gKey = lesson.fullPageUrl + '|grammar';
     if (!(gKey in pathSkipped)) {
       pathSkipped[gKey] = false;
-      loadLessonGrammar(lesson).then(function (points) {
+      ensureGrammarFile(levelId).then(function () { return loadLessonGrammar(lesson); }).then(function (points) {
         if (points && points.length) return;
         pathSkipped[gKey] = true;
         if (!$('#lessonHub').hidden && currentHubLesson === lesson) renderLessonPath(levelId, lesson);
@@ -9549,6 +9549,26 @@
       });
   }
 
+  // Bai tap ngu phap soan rieng cho tung cap — chi tai khi hoc sinh mo phan Ngu phap
+  var GRAMMAR_FILES = {
+    hsk1: '/js/grammar-hsk1.js', hsk1v3: '/js/grammar-hsk1v3.js', hsk2: '/js/hsk2-grammar-exercises.js',
+    hsk2v3: '/js/grammar-hsk2v3.js', hsk3: '/js/grammar-hsk3.js'
+  };
+  var grammarFileState = {};
+  function ensureGrammarFile(levelId) {
+    var src = GRAMMAR_FILES[levelId];
+    if (!src) return Promise.resolve();
+    if (grammarFileState[levelId]) return grammarFileState[levelId];
+    grammarFileState[levelId] = new Promise(function (resolve) {
+      var el = document.createElement('script');
+      el.src = src + '?v=' + (window.__assetVersion || '1');
+      el.onload = resolve;
+      el.onerror = function () { resolve(); };   // chua co file cho cap nay thi bo qua
+      document.head.appendChild(el);
+    });
+    return grammarFileState[levelId];
+  }
+
   var grMode = 'lesson';
   var grPoints = [];
   var grQuiz = null;
@@ -9611,7 +9631,8 @@
     var own = GRAMMAR_EXERCISES[url] || [];
     // HSK 2: bai tap sinh tu tai lieu tong hop ngu phap cua giao vien (moi diem 1 nhom),
     // xep truoc; bai tap cu cua web giu lai thanh 1 nhom 'Bai tap them'.
-    var doc = window.HSK2_GRAMMAR_EXERCISES ? window.HSK2_GRAMMAR_EXERCISES[url] : null;
+    var doc = (window.GRAMMAR_EXTRA && window.GRAMMAR_EXTRA[url]) ||
+      (window.HSK2_GRAMMAR_EXERCISES && window.HSK2_GRAMMAR_EXERCISES[url]) || null;
     if (!doc || !doc.length) return own;
     var groups = doc.slice();
     if (own.length) groups = groups.concat(grIsGrouped(own) ? own : [{ point: 'Bài tập thêm của web', items: own }]);

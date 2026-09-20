@@ -275,6 +275,10 @@
     $('#lopCountPaper').textContent = total ? total + ' câu' : 'chọn bài';
     $('.lop-test-card[data-test="paper"]').disabled = total < 1;
     $('.lop-test-card[data-test="dictation"]').disabled = !label;
+    // Cac tro dung tu vung: chua chon bai thi khoa lai cho de hieu
+    $all('.lop-game-card').forEach(function (c) {
+      if (c.querySelector('.lop-count-vocab')) c.disabled = !label;
+    });
 
     var st = $('#lopPickState');
     if (st) {
@@ -291,8 +295,7 @@
     $('#lopLessons').textContent = 'Đang tải…';
     loadLevel(level).then(function () {
       state.lessons = collectLessons(level);
-      // mac dinh: chon tat ca cac bai
-      state.lessons.forEach(function (l) { state.picked[l.url] = true; });
+      // Khong tu tich san bai nao — thay/co bam bai nao thi ra bai do
       renderLessons();
       save();
     });

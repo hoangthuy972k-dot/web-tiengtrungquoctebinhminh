@@ -520,7 +520,7 @@
   // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
   var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], yct: ['YCT', '1'] };
   var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT Thiếu nhi' };
-  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk2: true, hsk3: true, hsk4: true, yct: true };
+  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, yct: true };
   var practiceLevel = 'hsk2';
 
   // Dem so bai da hoc (da mo hoac co diem) trong 1 cap do

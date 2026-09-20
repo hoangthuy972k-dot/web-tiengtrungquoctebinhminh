@@ -7708,3 +7708,20 @@ body.pinyin-hidden .py-inline {
   .ab-hint { display: block; }
 }
 .ab-hint { display: none; font-size: 0.8rem; color: var(--color-gray-500); margin-top: var(--space-2); }
+.assign-part { border: 1px solid transparent; font: inherit; cursor: pointer; }
+.assign-part:hover { border-color: var(--color-red-500); color: var(--color-red-600); }
+.assign-part.is-ok:hover { border-color: var(--color-green-600); color: var(--color-green-600); }
+
+/* ===== Tien do sach bai tap ===== */
+.wb-progress { position: sticky; top: calc(var(--header-h) + 6px); z-index: 45; background: var(--color-white); border: 1.5px solid var(--color-green-50); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 10px 14px; margin-bottom: var(--space-3); }
+.wb-prog-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); font-size: 0.92rem; }
+.wb-prog-correct { color: var(--color-green-600); font-weight: 600; }
+.wb-prog-done { color: var(--color-green-600); font-weight: 700; }
+.wb-prog-next { margin-left: auto; border: 1px solid var(--color-gold-500); background: var(--color-gold-50); color: var(--color-gold-600); border-radius: var(--radius-pill); font: inherit; font-size: 0.85rem; font-weight: 600; padding: 5px 12px; min-height: 34px; cursor: pointer; }
+.wb-prog-next:hover { background: var(--color-gold-500); color: #fff; }
+.wb-prog-bar { height: 8px; border-radius: 999px; background: var(--color-gray-100); margin-top: 8px; overflow: hidden; }
+.wb-prog-bar i { display: block; height: 100%; background: var(--color-green-600); transition: width 0.3s; }
+.wb-drill-input.is-ok { border-color: var(--color-green-600) !important; background: var(--color-green-50); color: var(--color-green-600); font-weight: 700; }
+.wb-drill-input.is-no { border-color: var(--color-red-500) !important; background: var(--color-red-50); color: var(--color-red-600); }
+.wb-hl { outline: 3px solid var(--color-gold-500); outline-offset: 3px; border-radius: 8px; }
+@media (max-width: 640px) { .wb-prog-next { margin-left: 0; } }

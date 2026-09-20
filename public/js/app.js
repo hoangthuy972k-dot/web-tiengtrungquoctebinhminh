@@ -58,6 +58,14 @@
       var gameRaw = scores.game;
       return !!(gameRaw && Object.keys(gameRaw).length);
     }
+    // Sach bai tap co the ghi diem duoi 'workbook' (lam het cac cau) hoac
+    // 'workbook-mocktest' (nop de thi thu) — co cai nao cung tinh la da lam.
+    if (tabId === 'workbook') {
+      return Object.keys(scores).some(function (k) {
+        var v = scores[k];
+        return k.indexOf('workbook') === 0 && v && (v.done || (typeof v.total === 'number' && v.total > 0));
+      });
+    }
     var key = HUB_TAB_SCORE_KEY[tabId] || tabId;
     var raw = scores[key];
     if (!raw) return false;
@@ -2205,11 +2213,14 @@
         $('#wbContent').innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có nội dung sách bài tập.</p>';
         return;
       }
+      wbLoadAnswers();
+      wbBuildQuestions();
       wbSaved = rsGet('workbook') || { tab: 0, secs: {} };
       if (!wbSaved.secs || typeof wbSaved.secs !== 'object') wbSaved.secs = {};
       if (wbSaved.tab > 0 && wbSaved.tab < wbSections.length) wbActiveIdx = wbSaved.tab;
       renderWbTabs();
       renderWbContent();
+      wbRenderProgress();
       var hasWork = Object.keys(wbSaved.secs).some(function (k) { return wbSnapHasWork(wbSaved.secs[k]); });
       if (hasWork) {
         rsNotice('#wbContent', 'Đã khôi phục bài làm dở trong sách bài tập (' + wbSections[wbActiveIdx].title + ').', function () {
@@ -2223,6 +2234,142 @@
 
     $('#workbookPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  /* ---------------- Tien do sach bai tap ----------------
+     Dem tung cau cua CA bai (moi phan / moi tab): dien tu, chon dap an, noi
+     pinyin, de thi thu. Lam dung 1 cau = +1 sao (moi cau 1 lan). Lam het cac
+     cau thi tu dong tinh la "da lam xong" phan Sach bai tap. */
+  var WB_ANSWER_KEY = 'hyv_wb_answers';   // { "<url>": { "<qid>": 0|1 } }
+  var wbAnswers = {};                     // cau da lam cua bai dang mo
+  var wbQuestionList = [];                // [{ qid, sec }] moi cau cham diem duoc
+
+  function wbUrl() { return currentHubLesson ? currentHubLesson.fullPageUrl : ''; }
+  function wbLoadAnswers() {
+    wbAnswers = (readJSON(WB_ANSWER_KEY, {}) || {})[wbUrl()] || {};
+  }
+  function wbStoreAnswers() {
+    var all = readJSON(WB_ANSWER_KEY, {}) || {};
+    all[wbUrl()] = wbAnswers;
+    writeJSON(WB_ANSWER_KEY, all);
+  }
+  // Danh sach cau cham diem duoc cua ca bai (qid on dinh theo vi tri trong du lieu)
+  function wbBuildQuestions() {
+    wbQuestionList = [];
+    wbSections.forEach(function (sec, si) {
+      (sec.blocks || []).forEach(function (block, bi) {
+        var n = 0;
+        if (block.type === 'blankdrill' || block.type === 'tonemc' || block.type === 'pymatch') n = (block.items || []).length;
+        else if (block.type === 'mocktest') n = block.listening.concat(block.reading).filter(function (q) { return q.answer; }).length;
+        for (var i = 0; i < n; i++) wbQuestionList.push({ qid: 's' + si + 'b' + bi + 'i' + i, sec: si });
+      });
+    });
+  }
+  function wbQid(si, bi, i) { return 's' + si + 'b' + bi + 'i' + i; }
+
+  // Ghi 1 cau vua lam: correct = dung hay sai. Cham sao + cap nhat thanh tien do.
+  function wbAnswer(qid, correct) {
+    if (!qid || wbAnswers[qid] !== undefined) { wbRenderProgress(); return; }
+    wbAnswers[qid] = correct ? 1 : 0;
+    wbStoreAnswers();
+    if (correct && window.hwStarAnswer && wbUrl()) window.hwStarAnswer(wbUrl() + '|wb|' + qid);
+    wbRenderProgress();
+    wbCheckFinished();
+  }
+  function wbStats() {
+    var done = 0, correct = 0;
+    wbQuestionList.forEach(function (q) {
+      if (wbAnswers[q.qid] === undefined) return;
+      done++;
+      if (wbAnswers[q.qid]) correct++;
+    });
+    return { done: done, correct: correct, total: wbQuestionList.length };
+  }
+  // Lam het cac cau -> ghi diem phan "Sach bai tap" (thay cho viec phai nop bai)
+  function wbCheckFinished() {
+    var st = wbStats();
+    if (!st.total || st.done < st.total || !currentHubLesson) return;
+    var prev = (getLessonScores(currentHubLesson) || {}).workbook;
+    if (prev && prev.total === st.total && prev.correct >= st.correct) return;
+    recordLessonScore(currentHubLesson, 'workbook', { correct: st.correct, total: st.total });
+    if (!prev) showToast('🎉 Xong sách bài tập! Đúng ' + st.correct + '/' + st.total + ' câu.');
+  }
+
+  // O dien tu: go xong (roi khoi o hoac dung 1 giay) la tu cham dung/sai
+  function wbBindDrillCheck(wrap) {
+    $all('.wb-drill-input', wrap).forEach(function (inp) {
+      if (inp.__wbBound) return;
+      inp.__wbBound = true;
+      var check = function () {
+        var qid = inp.getAttribute('data-wbq');
+        var v = wbNorm(inp.value);
+        if (!v) { inp.classList.remove('is-ok', 'is-no'); return; }
+        var ok = v === wbNorm(inp.getAttribute('data-wbans'));
+        inp.classList.toggle('is-ok', ok);
+        inp.classList.toggle('is-no', !ok);
+        wbAnswer(qid, ok);
+      };
+      inp.addEventListener('blur', check);
+      inp.addEventListener('input', function () {
+        clearTimeout(inp.__wbT);
+        inp.__wbT = setTimeout(check, 900);
+      });
+      inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') check(); });
+    });
+  }
+
+  // Mo lai bai: hien lai mau dung/sai cua cac cau da lam lan truoc
+  function wbMarkAnswered(wrap) {
+    $all('[data-wbq]', wrap).forEach(function (el) {
+      var v = wbAnswers[el.getAttribute('data-wbq')];
+      if (v === undefined) return;
+      if (el.classList.contains('wb-drill-input')) el.classList.add(v ? 'is-ok' : 'is-no');
+      else el.classList.add('wb-answered');
+    });
+  }
+
+  function wbRenderProgress() {
+    var bar = $('#wbProgress');
+    if (!bar) return;
+    var st = wbStats();
+    if (!st.total) { bar.hidden = true; return; }
+    bar.hidden = false;
+    var left = st.total - st.done;
+    var pct = Math.round(100 * st.done / st.total);
+    bar.innerHTML =
+      '<div class="wb-prog-top"><b>Đã làm ' + st.done + '/' + st.total + ' câu</b>' +
+        (st.done ? '<span class="wb-prog-correct">✓ đúng ' + st.correct + '</span>' : '') +
+        (left ? '<button type="button" class="wb-prog-next" id="wbNext">Còn ' + left + ' câu chưa làm →</button>'
+              : '<span class="wb-prog-done">🎉 Đã làm xong cả phần này</span>') + '</div>' +
+      '<div class="wb-prog-bar"><i style="width:' + pct + '%"></i></div>';
+    var next = $('#wbNext', bar);
+    if (next) next.addEventListener('click', wbGoNextUnanswered);
+  }
+
+  // Nhay toi cau chua lam dau tien (doi tab neu cau do o phan khac)
+  function wbGoNextUnanswered() {
+    var q = wbQuestionList.filter(function (x) { return wbAnswers[x.qid] === undefined; })[0];
+    if (!q) return;
+    function focusIt() {
+      var el = $('[data-wbq="' + q.qid + '"]', $('#wbContent'));
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('wb-hl');
+      setTimeout(function () { el.classList.remove('wb-hl'); }, 2000);
+      if (el.tagName === 'INPUT') setTimeout(function () { el.focus(); }, 400);
+    }
+    if (q.sec !== wbActiveIdx) {
+      wbSaveCurrent();
+      wbActiveIdx = q.sec;
+      wbSaved.tab = wbActiveIdx;
+      wbPersist();
+      renderWbTabs();
+      renderWbContent();
+      setTimeout(focusIt, 120);
+    } else focusIt();
+  }
+
+  // So sanh dap an dien tay: bo dau cach, khong phan biet hoa thuong
+  function wbNorm(s) { return String(s == null ? '' : s).trim().toLowerCase().replace(/\s+/g, ''); }
 
   function renderWbTabs() {
     var wrap = $('#wbTabs');
@@ -2375,15 +2522,15 @@
   }
 
   var wbBlockSeq = 0;
-  function wbRenderBlankdrill(block) {
+  function wbRenderBlankdrill(block, si, bi) {
     var blockId = 'wbdrill-' + (wbBlockSeq++);
     return '<div class="wb-block" id="' + blockId + '">' +
       (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
       '<p class="wb-note">Nghe audio phía trên, điền trực tiếp vào ô trống rồi bấm "Xem đáp án" để đối chiếu.</p>' +
       '<div class="wb-drill-chips">' +
-      block.items.map(function (it) {
+      block.items.map(function (it, ii) {
         return '<span class="wb-drill-chip">' + it.before +
-          '<input type="text" class="wb-drill-input" maxlength="6" autocomplete="off" spellcheck="false">' +
+          '<input type="text" class="wb-drill-input" maxlength="6" autocomplete="off" spellcheck="false" data-wbq="' + wbQid(si, bi, ii) + '" data-wbans="' + String(it.answer).replace(/"/g, '&quot;') + '">' +
           it.after +
           '<span class="wb-drill-answer">→ ' + it.answer + '</span></span>';
       }).join('') +
@@ -2392,14 +2539,14 @@
       '</div>';
   }
 
-  function wbRenderTonemc(block) {
+  function wbRenderTonemc(block, si, bi) {
     return '<div class="wb-block">' +
       (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
       '<p class="wb-note">Nghe audio phía trên, bấm chọn đáp án đúng.</p>' +
       '<div class="wb-tonemc-list">' +
       block.items.map(function (it, i) {
         var blankHtml = block.noBlank ? '' : '<span class="wb-tonemc-blank">？</span>';
-        return '<div class="wb-tonemc-item">' +
+        return '<div class="wb-tonemc-item" data-wbq="' + wbQid(si, bi, i) + '">' +
           '<span class="wb-tonemc-prompt' + (block.noBlank ? ' hanzi' : '') + '">' + it.before + blankHtml + it.after + '</span>' +
           '<div class="wb-tonemc-opts">' +
           it.options.map(function (opt) {
@@ -2428,7 +2575,7 @@
   var wbMatchSelMap = {};
   var wbMatchDoneMap = {};
 
-  function wbRenderPyMatch(block) {
+  function wbRenderPyMatch(block, si, bi) {
     var blockId = 'wbmatch-' + (wbBlockSeq++);
     var order = shuffle(block.items.map(function (_, i) { return i; }));
     // Dung lai dung thu tu cot phai cua lan lam truoc (neu con khop so cap)
@@ -2437,13 +2584,13 @@
         savedOrder.slice().sort(function (a, b) { return a - b; }).every(function (v, i) { return v === i; })) {
       order = savedOrder.slice();
     }
-    return '<div class="wb-block" id="' + blockId + '">' +
+    return '<div class="wb-block" id="' + blockId + '" data-wbq-base="' + wbQid(si, bi, '') + '">' +
       (block.caption ? '<div class="wb-block-caption">' + block.caption + '</div>' : '') +
       '<p class="wb-note">Nghe audio phía trên, bấm 1 pinyin bên trái rồi bấm hán tự tương ứng bên phải.</p>' +
       '<div class="mg-wrap wb-pymatch-wrap" data-wb-match-id="' + blockId + '">' +
         '<div class="mg-col"><div class="mg-col-label">Pinyin</div><div class="wb-pymatch-left">' +
           block.items.map(function (it, i) {
-            return '<button type="button" class="mg-item" data-wpy-li="' + i + '">' + it.py + '</button>';
+            return '<button type="button" class="mg-item" data-wpy-li="' + i + '" data-wbq="' + wbQid(si, bi, i) + '">' + it.py + '</button>';
           }).join('') +
         '</div></div>' +
         '<div class="mg-col"><div class="mg-col-label">Hán tự</div><div class="wb-pymatch-right">' +
@@ -2480,6 +2627,7 @@
       leftEl.classList.add('is-correct');
       rightEl.classList.add('is-correct');
       wbMatchDoneMap[blockId].add(sel);
+      wbAnswer(blockEl.getAttribute('data-wbq-base') ? blockEl.getAttribute('data-wbq-base') + sel : null, true);
       fb.innerHTML = '<span style="color:var(--color-green-600);">✓ Đúng rồi!</span>';
       if (wbMatchDoneMap[blockId].size === block.items.length) {
         fb.innerHTML = '<span style="color:var(--color-red-600);font-weight:700;">🎉 Hoàn thành! Ghép đúng tất cả!</span>';
@@ -2520,11 +2668,11 @@
       '</div></div>';
   }
 
-  function wbRenderMockTest(block) {
+  function wbRenderMockTest(block, si, bi) {
     var listeningHtml = block.listening.map(function (q) { return mtQuestionHtml(q, 'L' + q.n); }).join('');
     var readingHtml = block.reading.map(function (q) { return mtQuestionHtml(q, 'R' + q.n); }).join('');
     var hasPending = block.listening.concat(block.reading).some(function (q) { return !q.answer; });
-    return '<div class="wb-block mt-wrap">' +
+    return '<div class="wb-block mt-wrap" data-wbq-base="' + wbQid(si, bi, '') + '">' +
       '<div class="mt-part-title">🎧 Nghe (câu 1–10)</div>' +
       (hasPending ? '<p class="wb-note">Phần này chưa có đáp án chính thức từ sách, tạm thời chưa chấm điểm — vẫn có thể chọn để luyện tập.</p>' : '') +
       '<div class="mt-q-list">' + listeningHtml + '</div>' +
@@ -2584,16 +2732,16 @@
     var audioHtml = section.audio
       ? '<div class="wb-audio-box"><div class="wb-audio-label">🎧 Audio gốc sách bài tập</div><audio controls preload="none" src="' + section.audio + '"></audio></div>'
       : '';
-    var blocksHtml = (section.blocks || []).map(function (block) {
+    var blocksHtml = (section.blocks || []).map(function (block, bi) {
       if (block.type === 'table') return wbRenderTable(block);
       if (block.type === 'photos') return wbRenderPhotos(block);
       if (block.type === 'tones') return wbRenderTones();
-      if (block.type === 'blankdrill') return wbRenderBlankdrill(block);
-      if (block.type === 'tonemc') return wbRenderTonemc(block);
+      if (block.type === 'blankdrill') return wbRenderBlankdrill(block, wbActiveIdx, bi);
+      if (block.type === 'tonemc') return wbRenderTonemc(block, wbActiveIdx, bi);
       if (block.type === 'dialoguepics') return wbRenderDialoguePics(block);
       if (block.type === 'wordlist') return wbRenderWordlist(block);
-      if (block.type === 'pymatch') return wbRenderPyMatch(block);
-      if (block.type === 'mocktest') return wbRenderMockTest(block);
+      if (block.type === 'pymatch') return wbRenderPyMatch(block, wbActiveIdx, bi);
+      if (block.type === 'mocktest') return wbRenderMockTest(block, wbActiveIdx, bi);
       return '';
     }).join('');
     wrap.innerHTML = audioHtml + blocksHtml;
@@ -2645,6 +2793,15 @@
           bar.hidden = false;
           bar.innerHTML = '🎯 Bạn làm đúng <strong>' + result.correct + '/' + result.total + '</strong> câu.';
           recordLessonScore(currentHubLesson, 'workbook-mocktest', { correct: result.correct, total: result.total });
+          // ghi tung cau vao tien do chung cua sach bai tap (+ sao cho cau dung)
+          var mtBase = $('.mt-wrap', wrap) ? $('.mt-wrap', wrap).getAttribute('data-wbq-base') : null;
+          if (mtBase) {
+            mockTestBlock.listening.concat(mockTestBlock.reading).filter(function (q) { return q.answer; })
+              .forEach(function (q, qi) {
+                var key = (mockTestBlock.listening.indexOf(q) > -1 ? 'L' : 'R') + q.n;
+                wbAnswer(mtBase + qi, mtAnswers[key] === q.answer);
+              });
+          }
           submitBtn.textContent = '🔄 Làm lại';
         });
       }
@@ -2661,6 +2818,7 @@
         });
         if (!correct) btn.classList.add('is-wrong');
         item.classList.add('is-done');
+        wbAnswer(item.getAttribute('data-wbq'), correct);
       });
     });
     $all('.wb-reveal-btn', wrap).forEach(function (btn) {
@@ -2671,6 +2829,22 @@
         btn.textContent = revealed ? '🙈 Ẩn đáp án' : '👁️ Xem đáp án';
       });
     });
+    // gan qid cho tung cau de thi thu (theo thu tu cac cau co dap an)
+    if (mockTestBlock) {
+      var mtWrap = $('.mt-wrap', wrap);
+      var base = mtWrap && mtWrap.getAttribute('data-wbq-base');
+      var gi = 0;
+      mockTestBlock.listening.concat(mockTestBlock.reading).forEach(function (q) {
+        if (!q.answer) return;
+        var key = (mockTestBlock.listening.indexOf(q) > -1 ? 'L' : 'R') + q.n;
+        var qEl = $('.mt-q[data-mt-qkey="' + key + '"]', wrap);
+        if (qEl && base) qEl.setAttribute('data-wbq', base + (gi));
+        gi++;
+      });
+    }
+    wbBindDrillCheck(wrap);
+    wbMarkAnswered(wrap);
+    wbRenderProgress();
     wbRestoreOrders = null;
     if (snap) wbApplySnapshot(snap);
   }
@@ -12196,7 +12370,7 @@
     { key: 'errfix', label: 'Sửa lỗi sai', emoji: '🔍', color: 'pink', sources: ['game.errfix', 'page-errorfix'] },
     { key: 'speak', label: 'Luyện nói', emoji: '🎤', color: 'green', sources: ['speak', 'page-speak'] },
     { key: 'translate', label: 'Luyện dịch', emoji: '🔄', color: 'teal', sources: ['translate'] },
-    { key: 'workbook', label: 'Sách bài tập', emoji: '📘', color: 'indigo', sources: ['workbook-mocktest'] },
+    { key: 'workbook', label: 'Sách bài tập', emoji: '📘', color: 'indigo', sources: ['workbook', 'workbook-mocktest'] },
     { key: 'quick', label: 'Ôn nhanh', emoji: '⚡', color: 'gold', sources: ['quick'] },
     { key: 'final', label: 'Kiểm tra cuối bài', emoji: '🎓', color: 'red', sources: ['final'] }
   ];
@@ -13954,6 +14128,38 @@
     workbook: 'Sách bài tập', page: 'Trang bài', final: 'Kiểm tra cuối'
   };
   function assignParts(a) { return a.parts && a.parts.length ? a.parts : ['final']; }
+  // Bam vao bai duoc giao -> mo thang phan do (khong phai vao muc luc bai roi tu tim)
+  var ASSIGN_PART_OPEN = {
+    warmup: function (l, s) { showWarmupPractice(l, s); },
+    vocab: function (l, s) { showVocabPractice(l, s); },
+    flash: function (l, s) { showFlashcardPractice(l, s); },
+    grammar: function (l, s) { showGrammarPractice(l, s); },
+    dialog: function (l, s) { showDialoguePractice(l, s); },
+    roleplay: function (l, s) { showDialoguePractice(l, s); },
+    listen: function (l, s) { showListenPractice(l, s); },
+    game: function (l, s) { showGamePractice(l, s); },
+    speak: function (l, s) { showSpeakPractice(l, s); },
+    translate: function (l, s) { showTranslatePractice(l, s); },
+    workbook: function (l, s) { showWorkbookPractice(l, s); },
+    final: function (l, s) { showFinalPractice(l, s); }
+  };
+  // Mo phan chua lam dau tien cua bai duoc giao; het roi thi ve muc luc bai
+  function openAssignment(a) {
+    var info = lessonByUrl(a.lessonUrl);
+    if (!info) return;
+    var scores = getLessonScores({ fullPageUrl: a.lessonUrl }) || {};
+    var need = assignParts(a).filter(function (p) { return ASSIGN_PART_OPEN[p]; });
+    var next = need.filter(function (p) { return !partDoneLocal(scores, p); })[0] || need[0];
+    if (next && (need.length > 1 || next !== 'final' || a.parts && a.parts.length)) {
+      pathState = null;
+      currentHubLevelId = info.levelId;
+      currentHubLesson = info.lesson;
+      writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl });
+      ASSIGN_PART_OPEN[next](info.levelId, info.lesson);
+      return;
+    }
+    showLessonHub(info.levelId, info.lesson);
+  }
   // Phan nay da lam chua — doc diem luu tren may (may chu cap nhat sau khi dong bo)
   function partDoneLocal(scores, part) {
     var v = null;
@@ -13999,7 +14205,7 @@
     return '<div class="assign-parts"><span class="assign-parts-label">Cần làm <b>' + done + '/' + need.length + ' phần</b>:</span>' +
       need.map(function (p) {
         var ok = partDoneLocal(scores, p);
-        return '<span class="assign-part' + (ok ? ' is-ok' : '') + '">' + (ok ? '✓ ' : '') + assignEsc(ASSIGN_PART_LABEL[p] || p) + '</span>';
+        return '<button type="button" class="assign-part' + (ok ? ' is-ok' : '') + '" data-part="' + assignEsc(p) + '" data-part-url="' + assignEsc(a.lessonUrl) + '">' + (ok ? '✓ ' : '') + assignEsc(ASSIGN_PART_LABEL[p] || p) + '</button>';
       }).join('') + '</div>';
   }
 
@@ -14148,6 +14354,7 @@
       return;
     }
     var list = assignState.assignments.map(assignStatus);
+    var openList = list;
     var open = list.filter(function (a) { return a.status === 'todo' || a.status === 'overdue'; })
       .sort(function (a, b) { return a.dueMs - b.dueMs; });
     var finished = list.filter(function (a) { return a.status === 'done' || a.status === 'late'; })
@@ -14186,10 +14393,23 @@
     $all('.assign-tab', box).forEach(function (b) {
       b.addEventListener('click', function () { assignView = b.getAttribute('data-view'); renderAssignCard(); });
     });
+    // bam vao ten 1 phan -> mo thang phan do
+    $all('.assign-part', box).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var info = lessonByUrl(b.getAttribute('data-part-url'));
+        var part = b.getAttribute('data-part');
+        if (!info || !ASSIGN_PART_OPEN[part]) return;
+        pathState = null;
+        currentHubLevelId = info.levelId;
+        currentHubLesson = info.lesson;
+        writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl });
+        ASSIGN_PART_OPEN[part](info.levelId, info.lesson);
+      });
+    });
     $all('.assign-go', box).forEach(function (b) {
       b.addEventListener('click', function () {
-        var info = lessonByUrl(b.getAttribute('data-url'));
-        if (info) showLessonHub(info.levelId, info.lesson);
+        var a = openList.filter(function (x) { return x.lessonUrl === b.getAttribute('data-url'); })[0];
+        if (a) openAssignment(a);
       });
     });
     var more = $('#assignMore', box);

@@ -62,8 +62,10 @@ const AUDIO_BASE=(function(){var m=location.pathname.match(/\/(?:([a-z0-9]+)-)?b
 function audioLoadError(el){el.outerHTML='<span class="audio-missing">⚠️ Chưa có file audio gốc cho phần này.</span>';}
 // Dò tìm tuần tự base/prefix-1.mp3, prefix-2.mp3... (dừng khi không còn file/không phải audio),
 // dùng chung cho các phần có SỐ LƯỢNG track thay đổi theo từng bài (từ mới, nghe bổ sung...).
-function fetchAudioParts(base,prefix,container,onFound){
+function fetchAudioParts(base,prefix,container,onFound,onEmpty){
   let idx=1;
+  // Bai nao chua co file audio thi goi onEmpty de go han khung di,
+  // khong de lai mot o trong hua hen co audio ma bam vao khong co gi.
   (function tryNext(){
     if(idx>20) return;
     fetch(base+'/'+prefix+'-'+idx+'.mp3',{method:'HEAD'}).then(function(r){
@@ -75,9 +77,21 @@ function fetchAudioParts(base,prefix,container,onFound){
           '<audio class="real-audio" controls preload="none" src="'+base+'/'+prefix+'-'+idx+'.mp3" onerror="audioLoadError(this)"></audio></div>');
         idx++;
         tryNext();
-      }
-    }).catch(function(){});
+      } else if(idx===1 && onEmpty){ onEmpty(); }
+    }).catch(function(){ if(idx===1 && onEmpty) onEmpty(); });
   })();
+}
+
+// Bai chua co audio goc thi bo luon cac khung audio trong phan bai khoa
+function hideDialogAudioIfMissing(){
+  if(!AUDIO_BASE) return;
+  fetch(AUDIO_BASE+'/dlg-1.mp3',{method:'HEAD'}).then(function(r){
+    const ct=r&&r.headers.get('content-type')||'';
+    if(r&&r.ok&&/audio/i.test(ct)) return;
+    document.querySelectorAll('#dlg-wrap .audio-box').forEach(function(b){b.remove();});
+  }).catch(function(){
+    document.querySelectorAll('#dlg-wrap .audio-box').forEach(function(b){b.remove();});
+  });
 }
 
 // ══════════════════════════════════════════
@@ -202,7 +216,10 @@ function buildVocab(){
       '<div class="vocab-audio-list" id="vocab-audio-list"></div>'+
       '<div class="audio-hint">Nghe cách đọc từ mới và câu ví dụ, đúng theo bản ghi âm gốc của giáo trình.</div>'+
       '</div>');
-    fetchAudioParts(AUDIO_BASE,'vocab',document.getElementById('vocab-audio-list'));
+    fetchAudioParts(AUDIO_BASE,'vocab',document.getElementById('vocab-audio-list'),null,function(){
+      var box=document.getElementById('vocab-audio-box');
+      if(box) box.remove();
+    });
   }
   g.innerHTML='';
   vocabData.forEach(function(v,vi){
@@ -1146,7 +1163,7 @@ document.addEventListener('click', function(e){
 if(typeof wuData!=='undefined')buildWarmup();
 if(typeof vocabData!=='undefined')buildVocab();
 if(typeof vocabData!=='undefined')updateFlash();
-if(typeof dialogData!=='undefined')buildDialogs();
+if(typeof dialogData!=='undefined'){buildDialogs();hideDialogAudioIfMissing();}
 if(typeof fillData!=='undefined')buildFill();
 if(typeof sortData!=='undefined')buildSort();
 if(typeof matchData!=='undefined')buildMatch();

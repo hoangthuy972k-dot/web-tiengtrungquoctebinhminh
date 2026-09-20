@@ -318,7 +318,8 @@
             return {
               zh: v.zh, py: v.py || '', vn: v.vn, hv: v.hv || '',
               em: v.em || v.img || '', pos: v.pos || '',
-              hanzi: Array.isArray(v.hanzi) ? v.hanzi : []
+              hanzi: Array.isArray(v.hanzi) ? v.hanzi : [],
+              ex_zh: v.ex_zh || '', ex_py: v.ex_py || '', ex_vn: v.ex_vn || ''
             };
           }),
           translate: (w.translateData || []).filter(function (t) { return t && t.vi && t.zh; })
@@ -1219,6 +1220,186 @@
     });
   }
 
+  /* ---------------- tro: noi tu 接龙 ----------------
+     Web lam trong tai: giu chuoi tu, hien chu can noi, va tra trong kho tu vung
+     cua cac bai da chon xem con tu nao noi duoc. Thay/co chi bam, khong phai go. */
+  // Von tu HSK khong du day cho luat 接龙 chat (chu dau = chu cuoi) — chuoi dut ngay.
+  // Nen: uu tien chu cuoi, het duong thi lay chu khac trong tu vua noi; het han
+  // thi noi long thanh "tu co CHUA chu do".
+  // Chi dung tu thuan chu Han — mot so muc co ngoac hoac dau (笔记本(电脑), 聊天(儿))
+  // se lam chu noi thanh dau ngoac.
+  function chainClean(v) { return /^[一-鿿]{2,4}$/.test(v.zh); }
+  function chainPool(ch, mode) {
+    var used = {};
+    (state.chain ? state.chain.list : []).forEach(function (v) { used[v.zh] = 1; });
+    return (state.vocab || []).filter(function (v) {
+      if (used[v.zh] || !chainClean(v)) return false;
+      return mode === 'strict' ? v.zh.charAt(0) === ch : v.zh.indexOf(ch) >= 0;
+    });
+  }
+  function chainHasWay(ch) {
+    return chainPool(ch, 'strict').length > 0 || chainPool(ch, 'loose').length > 0;
+  }
+  // Chon chu tiep theo tu tu vua noi: thu chu cuoi truoc, roi den cac chu con lai.
+  // Tranh giu nguyen chu cu, neu khong chuoi cu quan quanh mot chu (子 → 裤子 → 裙子…).
+  function chainPickChar(word, avoid) {
+    var chars = word.split('');
+    var order = [chars[chars.length - 1]].concat(chars.slice(0, -1).reverse());
+    var fresh = order.filter(function (c) { return c !== avoid; });
+    for (var i = 0; i < fresh.length; i++) if (chainHasWay(fresh[i])) return fresh[i];
+    for (var j = 0; j < order.length; j++) if (chainHasWay(order[j])) return order[j];
+    return order[0];
+  }
+
+  function dealChain(vocab) {
+    state.chain = { list: [], char: '' };
+    // Bat dau bang tu ma chu cuoi con nhieu duong di nhat
+    var cands = shuffle(vocab.filter(chainClean)).slice(0, 60);
+    var best = null, bestN = -1;
+    cands.forEach(function (v) {
+      var ch = v.zh.charAt(v.zh.length - 1);
+      var n = (state.vocab || []).filter(function (x) {
+        return x.zh !== v.zh && chainClean(x) && x.zh.indexOf(ch) >= 0;
+      }).length;
+      if (n > bestN) { bestN = n; best = v; }
+    });
+    var start = best || cands[0] || vocab[0];
+    if (start) {
+      state.chain.list = [start];
+      state.chain.char = chainPickChar(start.zh);
+    }
+  }
+
+  function chainLastChar() {
+    return state.chain ? state.chain.char : '';
+  }
+  function chainOptions() {
+    var ch = chainLastChar();
+    if (!ch) return { list: [], loose: false };
+    var strict = chainPool(ch, 'strict');
+    if (strict.length) return { list: strict, loose: false };
+    return { list: chainPool(ch, 'loose'), loose: true };
+  }
+
+  function renderChain() {
+    var c = state.chain;
+    if (!c || !c.list.length) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa có từ để chơi.</span></div>';
+      return;
+    }
+    var ch = chainLastChar();
+    var opt = chainOptions();
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Tổ nào nói được từ ' + (opt.loose ? '<b>có chứa</b>' : '<b>bắt đầu bằng</b>') +
+          ' chữ này thì được điểm' + (opt.loose ? ' · đã hết từ nối đầu nên nới lỏng luật' : '') + '</span>' +
+        '<span class="lop-point">Chuỗi dài ' + c.list.length + ' từ</span>' +
+      '</div>' +
+      '<div class="lop-chain-char">' + esc(ch) + '</div>' +
+      '<div class="lop-chain-list">' + c.list.map(function (v, i) {
+        return '<span class="lop-chain-word' + (i === c.list.length - 1 ? ' is-last' : '') + '">' + esc(v.zh) + '</span>';
+      }).join('<span class="lop-chain-arrow">→</span>') + '</div>' +
+      '<div class="lop-chain-pick" id="lopChainPick" hidden>' +
+        (opt.list.length
+          ? '<div class="lop-chain-hint">Bấm vào từ học sinh vừa nói để nối tiếp · còn ' + opt.list.length + ' từ nối được</div>' +
+            '<div class="lop-chain-opts">' + opt.list.slice(0, 24).map(function (v, i) {
+              return '<button type="button" class="lop-chain-opt" data-i="' + i + '">' +
+                esc(v.zh) + '<small>' + esc(v.py) + '</small></button>';
+            }).join('') + '</div>'
+          : '<div class="lop-chain-hint">Hết từ nối được trong các bài đã chọn — bấm “Chữ khác” để sang lượt mới.</div>') +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopChainShow">Xem các từ nối được (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopChainNew">Chuỗi mới →</button>' +
+      '</div>';
+
+    $('#lopChainShow').addEventListener('click', function () {
+      var box = $('#lopChainPick');
+      if (box) box.hidden = false;
+    });
+    $('#lopChainNew').addEventListener('click', function () {
+      dealChain(state.vocab || []); renderChain(); resetTimer();
+    });
+    $all('#lopStage .lop-chain-opt').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var v = opt.list[parseInt(btn.getAttribute('data-i'), 10)];
+        if (!v) return;
+        state.chain.list.push(v);
+        state.chain.char = chainPickChar(v.zh, state.chain.char);
+        renderChain();
+        speakZh(v.zh);
+        resetTimer();
+      });
+    });
+    speakZh(ch);
+  }
+
+  /* ---------------- tro: thi viet bang nhanh ---------------- */
+  function dealWrite(vocab) {
+    var words = vocab.slice();
+    var sents = vocab.filter(function (v) { return v.ex_zh; });
+    state.writeMode = state.writeMode || 'word';
+    state.deck = shuffle(state.writeMode === 'sentence' && sents.length ? sents : words);
+    state.pos = 0;
+    state.writeShown = false;
+  }
+
+  function renderWrite() {
+    var v = state.deck[state.pos];
+    if (!v) {
+      $('#lopStage').innerHTML = '<div class="lop-stage-head"><span>Chưa có nội dung để chơi.</span></div>';
+      return;
+    }
+    var sentence = state.writeMode === 'sentence';
+    var zh = sentence ? v.ex_zh : v.zh;
+    var py = sentence ? v.ex_py : v.py;
+    var vn = sentence ? v.ex_vn : v.vn;
+
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>' + (state.pos + 1) + '/' + state.deck.length + ' · nghe rồi viết lên bảng — <b>' +
+          (sentence ? 'cả câu' : 'một từ') + '</b></span>' +
+        '<span class="lop-point">Nghĩa: ' + esc(vn) + '</span>' +
+      '</div>' +
+      '<div class="lop-write-box">' +
+        '<button type="button" class="lop-write-play" id="lopWritePlay">🔊 Nghe lại</button>' +
+        '<div class="lop-write-hint">Máy đọc ' + (sentence ? 'câu' : 'từ') + ' này — các tổ viết chữ Hán lên bảng</div>' +
+      '</div>' +
+      '<div class="lop-write-answer" id="lopWriteAns" hidden>' +
+        '<div class="lop-write-zh">' + esc(zh) + '</div>' +
+        (py ? '<div class="lop-write-py">' + esc(py) + '</div>' : '') +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopWriteReveal">Lật đáp án để chấm (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopWriteNext">Câu tiếp theo →</button>' +
+        '<button type="button" class="lop-act ghost" id="lopWriteMode">Chuyển sang ' + (sentence ? 'viết từ' : 'viết câu') + '</button>' +
+      '</div>';
+
+    $('#lopWritePlay').addEventListener('click', function () { speakZh(zh); });
+    $('#lopWriteReveal').addEventListener('click', revealWrite);
+    $('#lopWriteNext').addEventListener('click', nextWrite);
+    $('#lopWriteMode').addEventListener('click', function () {
+      state.writeMode = sentence ? 'word' : 'sentence';
+      dealWrite(state.vocab || []);
+      renderWrite();
+      resetTimer();
+    });
+    state.writeShown = false;
+    speakZh(zh);
+  }
+  function revealWrite() {
+    if (state.writeShown) return;
+    state.writeShown = true;
+    var el = $('#lopWriteAns');
+    if (el) el.hidden = false;
+  }
+  function nextWrite() {
+    if (state.pos < state.deck.length - 1) state.pos++;
+    else dealWrite(state.vocab || []);
+    renderWrite();
+    resetTimer();
+  }
+
   /* ---------------- quay so bao danh ---------------- */
   var rollTimer = null;
   function openRoll() {
@@ -1251,15 +1432,17 @@
     errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C', sort: 'Xếp câu bằng người',
     bingo: 'Bingo 3×3', guess: 'Nhìn hình đoán chữ', tiles: 'Lật ô đoán chữ', taboo: 'Bạn nói tôi đoán',
     trans: 'Dịch nhanh Việt → Trung', listen: 'Nghe nhanh chỉ chữ', hanzi: 'Đoán chữ qua bộ thủ',
-    role: 'Đóng vai bài khoá', hv: 'Âm Hán–Việt đoán chữ', match: 'Nối nghĩa nhanh'
+    role: 'Đóng vai bài khoá', hv: 'Âm Hán–Việt đoán chữ', match: 'Nối nghĩa nhanh',
+    chain: 'Nối từ 接龙', write: 'Thi viết bảng nhanh'
   };
   var GAME_SECS = {
     errfix: 30, abc: 10, sort: 60, bingo: 30, guess: 20, tiles: 30, taboo: 60,
-    trans: 60, listen: 15, hanzi: 30, role: 90, hv: 20, match: 45
+    trans: 60, listen: 15, hanzi: 30, role: 90, hv: 20, match: 45,
+    chain: 20, write: 30
   };
   var VOCAB_GAMES = {
     bingo: 1, guess: 1, tiles: 1, taboo: 1, trans: 1, listen: 1, hanzi: 1,
-    role: 1, hv: 1, match: 1
+    role: 1, hv: 1, match: 1, chain: 1, write: 1
   };
 
   function startGame(game) {
@@ -1296,6 +1479,8 @@
         else if (game === 'role') { dealRole(); renderRole(); }
         else if (game === 'hv') { dealHv(vocab); renderHv(); }
         else if (game === 'match') { dealMatch(vocab); renderMatch(); }
+        else if (game === 'chain') { dealChain(vocab); renderChain(); }
+        else if (game === 'write') { dealWrite(vocab); renderWrite(); }
         else { dealGuess(vocab); renderGuess(); }
       });
       return;
@@ -1371,6 +1556,8 @@
           state.matchZh.forEach(function (v) { state.matchDone[v.zh] = 1; });
           state.matchSel = null; renderMatch();
         }
+        else if (g === 'chain') { var b = $('#lopChainPick'); if (b) b.hidden = false; }
+        else if (g === 'write') revealWrite();
         else revealAll();
         return;
       }
@@ -1387,6 +1574,8 @@
         else if (g === 'hv') { e.preventDefault(); nextHv(); }
         else if (g === 'match') { e.preventDefault(); dealMatch(state.vocab || []); renderMatch(); resetTimer(); }
         else if (g === 'role') { e.preventDefault(); dealRole(); renderRole(); resetTimer(); }
+        else if (g === 'write') { e.preventDefault(); nextWrite(); }
+        else if (g === 'chain') { e.preventDefault(); dealChain(state.vocab || []); renderChain(); resetTimer(); }
         return;
       }
       if (e.key === 'n' || e.key === 'N') {
@@ -1402,6 +1591,8 @@
         else if (g === 'role') { dealRole(); renderRole(); }
         else if (g === 'hv') { dealHv(state.vocab || []); renderHv(); }
         else if (g === 'match') { dealMatch(state.vocab || []); renderMatch(); }
+        else if (g === 'chain') { dealChain(state.vocab || []); renderChain(); }
+        else if (g === 'write') { dealWrite(state.vocab || []); renderWrite(); }
         else { dealRows(); renderErrfix(); }
         resetTimer(); return;
       }

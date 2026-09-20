@@ -1545,7 +1545,10 @@
     game: { label: 'Game ôn tập', emoji: '🎮', color: 'indigo' },
     speak: { label: 'Luyện nói', emoji: '🗣️', color: 'purple' },
     translate: { label: 'Luyện dịch', emoji: '🔄', color: 'pink' },
-    workbook: { label: 'Luyện tập sách bài tập', emoji: '📓', color: 'green' }
+    workbook: { label: 'Luyện tập sách bài tập', emoji: '📓', color: 'green' },
+    hanviet: { label: 'Bắc cầu Hán–Việt', emoji: '🌉', color: 'gold' },
+    synonym: { label: 'Phân biệt từ gần nghĩa', emoji: '🔍', color: 'blue' },
+    writing: { label: 'Viết đoạn', emoji: '✍️', color: 'purple' }
   };
 
   // match/fill/sort/errfix/mc gop chung vao 1 o "Game on tap" tren giao dien chinh
@@ -1562,13 +1565,14 @@
 
   // Danh sách tab thật theo đúng thứ tự hiển thị trên từng loại trang bài học.
   var LEVEL_HUB_TABS = {
-    hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
-    hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook'],
-    hsk2v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate'],
-    hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
-    hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
-    hsk4: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate'],
-    yct: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate']
+    hsk1: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'hanviet'],
+    hsk1v3: ['warmup', 'vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'workbook', 'hanviet'],
+    hsk2v3: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'hanviet'],
+    hsk2: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
+    hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
+    hsk4: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
+    yct: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'hanviet'],
+    hsk5: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'speak', 'translate', 'hanviet', 'synonym', 'writing']
   };
 
   var currentHubLevelId = null;
@@ -1639,7 +1643,7 @@
       var done = isHubTileDone(lesson, tabId);
       var tile = document.createElement('a');
       tile.className = 'hub-tile' + (done ? ' is-done' : '');
-      tile.href = lesson.fullPageUrl + '#' + tabId;
+      tile.href = lessonHref(lesson.fullPageUrl) + '#' + tabId;
       tile.innerHTML =
         '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
         '<span class="hub-tile-label">' + def.label + '</span>' +
@@ -1823,7 +1827,7 @@
       '<div class="lp-extra"><p class="lp-extra-title">Luyện thêm (không bắt buộc)</p><div class="lp-extra-row">' + extra + '</div></div>' +
       '<div class="lp-foot">' +
         '<button type="button" class="hub-cta" id="lpResults">🏆 Xem kết quả cuối bài</button>' +
-        '<a class="lp-teacher" href="' + lesson.fullPageUrl + '" target="_blank" rel="noopener">🖥️ Chế độ giáo viên / trình chiếu (toàn bộ bài trên 1 trang)</a>' +
+        '<a class="lp-teacher" href="' + lessonHref(lesson.fullPageUrl) + '" target="_blank" rel="noopener">🖥️ Chế độ giáo viên / trình chiếu (toàn bộ bài trên 1 trang)</a>' +
       '</div>';
     $('#lpResults').addEventListener('click', function () { showResultsPractice(levelId, lesson); });
     $all('[data-path-extra]', cta).forEach(function (btn) {
@@ -1834,6 +1838,8 @@
         else if (k === 'listen') showListenPractice(levelId, lesson);
         else if (k === 'translate') showTranslatePractice(levelId, lesson);
         else if (k === 'workbook') showWorkbookPractice(levelId, lesson);
+        // Ba phan nay nam o trang bai hoc day du — mo thang den dung the
+        else if (HUB_TAB_DEFS[k]) window.location.href = lessonHref(lesson.fullPageUrl) + '#' + k;
       });
     });
   }

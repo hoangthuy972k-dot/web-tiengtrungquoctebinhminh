@@ -90,6 +90,30 @@
     return { text: s, note: note };
   }
 
+  // Ghep dan cac the tu dau cau dap an. The dai thu truoc de khong khop nham
+  // (vi du "你" va "你们"); dau cau khong co the rieng thi bo qua.
+  // Tra ve mang thu tu dung cua tung the, hoac null neu bo the khong khop dap an.
+  function sortOrder(words, answer) {
+    var pool = words.map(function (w, i) { return { w: w, i: i, used: false }; })
+      .sort(function (a, b) { return b.w.length - a.w.length; });
+    var rest = answer, rank = 0, out = [];
+    while (rest.length) {
+      var found = null;
+      for (var k = 0; k < pool.length; k++) {
+        if (!pool[k].used && rest.indexOf(pool[k].w) === 0) { found = pool[k]; break; }
+      }
+      if (!found) {
+        if (/^[。！？，、；：“”"'（）]/.test(rest)) { rest = rest.slice(1); continue; }
+        return null;
+      }
+      found.used = true;
+      out[found.i] = ++rank;
+      rest = rest.slice(found.w.length);
+    }
+    return pool.every(function (p) { return p.used; }) ? out : null;
+  }
+  function sortUsable(words, answer) { return !!sortOrder(words, answer); }
+
   // Moi bai gom hai nguon cau cho tro "Bat loi sai":
   //  1) cau Dung/Sai san co trong bai tap ngu phap (HSK 2 3.0, HSK 3, HSK 4)
   //  2) khoi "Loi hoc sinh Viet hay mac" — co o MOI cap, moi loi cho 1 cau sai va 1 cau dung
@@ -142,23 +166,37 @@
 
       // Cau dien tu — dung cho tro gio the A/B/C
       var mcs = [], seenMc = {};
+      // Cau sap xep — dung cho tro xep cau bang nguoi
+      var sorts = [], seenSort = {};
       (bank[url] || []).forEach(function (g) {
         (g.items || []).forEach(function (q) {
-          if (q.type && q.type !== 'mc') return;
-          if (!q.options || q.options.length < 2 || typeof q.answer !== 'number') return;
-          var key = (q.pre || '') + '|' + (q.blank || '') + '|' + (q.post || '');
-          if (seenMc[key]) return;
-          seenMc[key] = 1;
-          mcs.push({
-            pre: q.pre || '', post: q.post || '',
-            options: q.options.slice(0, 3), answer: q.answer,
-            context: q.context || '', why: q.explanation || '', point: g.point || ''
-          });
+          if (!q.type || q.type === 'mc') {
+            if (!q.options || q.options.length < 2 || typeof q.answer !== 'number') return;
+            var key = (q.pre || '') + '|' + (q.blank || '') + '|' + (q.post || '');
+            if (seenMc[key]) return;
+            seenMc[key] = 1;
+            mcs.push({
+              pre: q.pre || '', post: q.post || '',
+              options: q.options.slice(0, 3), answer: q.answer,
+              context: q.context || '', why: q.explanation || '', point: g.point || ''
+            });
+            return;
+          }
+          if (q.type === 'sort' && Array.isArray(q.words) && q.words.length >= 3 && q.answer) {
+            // Mot so cau cu co hai dap an ngan boi ／ — chi lay ve dau
+            var ans = String(q.answer).split('／')[0].trim();
+            if (seenSort[ans] || !sortUsable(q.words, ans)) return;
+            seenSort[ans] = 1;
+            sorts.push({
+              words: q.words.slice(), answer: ans,
+              context: q.context || '', why: q.explanation || '', point: g.point || ''
+            });
+          }
         });
       });
 
-      if (judges.length || mcs.length) {
-        out.push({ n: parseInt(def.re.exec(url)[1], 10), url: url, judges: judges, mcs: mcs });
+      if (judges.length || mcs.length || sorts.length) {
+        out.push({ n: parseInt(def.re.exec(url)[1], 10), url: url, judges: judges, mcs: mcs, sorts: sorts });
       }
     });
     out.sort(function (a, b) { return a.n - b.n; });
@@ -202,6 +240,13 @@
     });
     return out;
   }
+  function pickedSorts() {
+    var out = [];
+    state.lessons.forEach(function (l) {
+      if (state.picked[l.url]) out = out.concat(l.sorts || []);
+    });
+    return out;
+  }
 
   // Ten cac bai dang chon, vi du "Bài 1" hoac "Bài 1, 3, 7"
   function pickedLabel() {
@@ -220,6 +265,9 @@
     $('.lop-game-card[data-game="errfix"]').disabled = n < 3;
     $('#lopCountAbc').textContent = m ? m + ' câu' : 'chọn bài';
     $('.lop-game-card[data-game="abc"]').disabled = m < 1;
+    var s = pickedSorts().length;
+    $('#lopCountSort').textContent = s ? s + ' câu' : 'chọn bài';
+    $('.lop-game-card[data-game="sort"]').disabled = s < 1;
     var st = $('#lopPickState');
     if (st) {
       st.textContent = label
@@ -453,6 +501,67 @@
     resetTimer();
   }
 
+  /* ---------------- tro: xep cau bang nguoi ---------------- */
+  function dealSort() {
+    state.deck = shuffle(pickedSorts());
+    state.pos = 0;
+    state.sortShown = false;
+  }
+
+  function renderSort() {
+    var q = state.deck[state.pos];
+    if (!q) {
+      $('#lopStage').innerHTML =
+        '<div class="lop-stage-actions"><button type="button" class="lop-act" id="lopNewRound">Bộ câu mới →</button></div>';
+      $('#lopNewRound').addEventListener('click', function () { dealSort(); renderSort(); resetTimer(); });
+      return;
+    }
+    if (!q._mix) q._mix = shuffle(q.words);
+
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head">' +
+        '<span>Câu ' + (state.pos + 1) + '/' + state.deck.length + ' · mỗi tổ cử <b>' + q._mix.length + ' em</b> lên bảng, mỗi em cầm một thẻ</span>' +
+        (q.point ? '<span class="lop-point">📐 ' + esc(q.point) + '</span>' : '') +
+      '</div>' +
+      (q.context ? '<div class="lop-abc-context">🗣️ ' + esc(q.context) + '</div>' : '') +
+      '<div class="lop-sort-cards">' + q._mix.map(function (w, i) {
+        return '<div class="lop-sort-card"><span class="lop-sort-no">' + (i + 1) + '</span>' +
+          '<span class="lop-sort-w">' + esc(w) + '</span></div>';
+      }).join('') + '</div>' +
+      '<div id="lopSortAns" class="lop-sort-answer" hidden></div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopSortReveal">Lật đáp án (Space)</button>' +
+        '<button type="button" class="lop-act ghost" id="lopSortNext">Câu tiếp theo →</button>' +
+      '</div>';
+
+    $('#lopSortReveal').addEventListener('click', revealSort);
+    $('#lopSortNext').addEventListener('click', nextSort);
+    state.sortShown = false;
+  }
+
+  function revealSort() {
+    if (state.sortShown) return;
+    var q = state.deck[state.pos];
+    if (!q) return;
+    state.sortShown = true;
+    // Danh lai so thu tu dung cho tung the — de hoc sinh biet minh phai dung o dau
+    var order = sortOrder(q._mix, q.answer);
+    var cards = $all('#lopStage .lop-sort-card');
+    if (order) order.forEach(function (rank, i) {
+      if (cards[i]) $('.lop-sort-no', cards[i]).textContent = rank;
+    });
+    var box = $('#lopSortAns');
+    box.hidden = false;
+    box.innerHTML = '<div class="lop-sort-zh">✓ ' + esc(q.answer) + '</div>' +
+      (q.why ? '<div class="lop-sort-why">💡 ' + esc(q.why) + '</div>' : '');
+  }
+  function nextSort() {
+    if (state.pos < state.deck.length - 1) state.pos++;
+    else dealSort();
+    renderSort();
+    resetTimer();
+  }
+
   /* ---------------- quay so bao danh ---------------- */
   var rollTimer = null;
   function openRoll() {
@@ -481,18 +590,21 @@
     hsk3: 'HSK 3', hsk4: 'HSK 4', yct: 'YCT'
   };
 
-  var GAME_TITLE = { errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C' };
+  var GAME_TITLE = { errfix: 'Bắt lỗi sai tiếp sức', abc: 'Giơ thẻ A / B / C', sort: 'Xếp câu bằng người' };
+  var GAME_SECS = { errfix: 30, abc: 10, sort: 60 };
 
   function startGame(game) {
-    if (game === 'abc' ? !pickedMcs().length : pickedJudges().length < 3) return;
+    var n = game === 'abc' ? pickedMcs().length : game === 'sort' ? pickedSorts().length : pickedJudges().length;
+    if (!n || (game === 'errfix' && n < 3)) return;
     state.game = game;
     $('#lopTitle').textContent = GAME_TITLE[game];
     $('#lopSub').textContent = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
     resetScores();
     renderScorebar();
-    // Moi tro mot nhip: gio the tra loi nhanh, bat loi sai can thoi gian len bang
-    state.timer.secs = (game === 'abc') ? 10 : 30;
+    // Moi tro mot nhip: gio the tra loi nhanh, xep cau can thoi gian len bang
+    state.timer.secs = GAME_SECS[game] || 30;
     if (game === 'abc') { dealAbc(); renderAbc(); }
+    else if (game === 'sort') { dealSort(); renderSort(); }
     else { dealRows(); renderErrfix(); }
     resetTimer();
     $('#lopSetup').hidden = true;
@@ -546,11 +658,21 @@
     document.addEventListener('keydown', function (e) {
       if ($('#lopPlay').hidden) return;
       if (e.target && /input|select|textarea/i.test(e.target.tagName)) return;
-      var abc = state.game === 'abc';
-      if (e.code === 'Space') { e.preventDefault(); if (abc) revealAbc(); else revealAll(); return; }
-      if (e.code === 'ArrowRight' || e.code === 'Enter') { if (abc) { e.preventDefault(); nextAbc(); } return; }
+      var g = state.game;
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (g === 'abc') revealAbc(); else if (g === 'sort') revealSort(); else revealAll();
+        return;
+      }
+      if (e.code === 'ArrowRight' || e.code === 'Enter') {
+        if (g === 'abc') { e.preventDefault(); nextAbc(); }
+        else if (g === 'sort') { e.preventDefault(); nextSort(); }
+        return;
+      }
       if (e.key === 'n' || e.key === 'N') {
-        if (abc) { dealAbc(); renderAbc(); } else { dealRows(); renderErrfix(); }
+        if (g === 'abc') { dealAbc(); renderAbc(); }
+        else if (g === 'sort') { dealSort(); renderSort(); }
+        else { dealRows(); renderErrfix(); }
         resetTimer(); return;
       }
       if (e.key === 't' || e.key === 'T') { toggleTimer(); return; }

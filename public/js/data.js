@@ -1371,6 +1371,18 @@ const APP_DATA = {
         dialogueCount: 6,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-1.html'
+      },
+      {
+        id: 'hsk5-l2',
+        number: 2,
+        title: 'Để lại cho bố mẹ một chùm chìa khoá',
+        titleHanzi: '留串钥匙给父母',
+        titlePinyin: 'Liú chuàn yàoshi gěi fùmǔ',
+        topic: 'Unit 1 了解生活 · Cha mẹ, con cái & hơi ấm gia đình',
+        vocabCount: 38,
+        dialogueCount: 5,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-2.html'
       }
     ],
     yct: [

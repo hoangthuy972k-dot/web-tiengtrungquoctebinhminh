@@ -1,12 +1,14 @@
 /* ============================================================
-   Che do lop hoc — man hinh chieu len lop, chu rat to
+   Che do lop hoc — man hinh chieu len lop.
+   Dung dung bang mau + nen tranh son thuy cua web chinh (style.css),
+   chu co lon de hoc sinh ngoi cuoi lop van doc duoc.
    ============================================================ */
 
 .lop-body {
   margin: 0;
-  background: #14110f;
-  color: #f5f1ea;
-  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-gray-900);
+  font-family: var(--font-latin), 'Be Vietnam Pro', system-ui, sans-serif;
   min-height: 100vh;
 }
 
@@ -17,91 +19,101 @@
   align-items: flex-start;
   justify-content: center;
   padding: 32px 16px 56px;
-  background:
-    radial-gradient(1000px 500px at 50% -10%, rgba(200, 55, 45, 0.18), transparent 70%),
-    #14110f;
 }
 .lop-setup-card {
   width: min(880px, 100%);
-  background: #1e1a17;
-  border: 1px solid #332c26;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
   padding: 28px;
 }
 .lop-setup-head {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-gray-200);
 }
 .lop-logo {
   width: 58px; height: 58px;
   display: grid; place-items: center;
-  background: var(--color-red-600, #c8372d);
-  border-radius: 16px;
+  background: var(--color-red-600);
+  border-radius: var(--radius-lg);
   font-family: 'Noto Serif SC', serif;
   font-weight: 900;
   font-size: 1.4rem;
   color: #fff;
   flex: none;
+  box-shadow: var(--shadow-md);
 }
-.lop-setup-head h1 { margin: 0; font-size: 1.5rem; color: #fff; }
-.lop-setup-head p { margin: 4px 0 0; color: #a99e94; font-size: 0.92rem; }
+.lop-setup-head h1 { margin: 0; font-size: 1.5rem; color: var(--color-red-700); }
+.lop-setup-head p { margin: 4px 0 0; color: var(--color-gray-600); font-size: 0.92rem; }
 
-.lop-field { margin-bottom: 24px; }
+.lop-field { margin-bottom: 22px; }
 .lop-field > label {
   display: block;
   font-weight: 700;
-  color: var(--color-gold-400, #f2bf6b);
+  color: var(--color-red-700);
   margin-bottom: 10px;
   font-size: 0.95rem;
 }
 .lop-field select {
   width: 100%;
   padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px solid #3d352e;
-  background: #14110f;
-  color: #f5f1ea;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  background: #fff;
+  color: var(--color-gray-900);
   font-size: 1rem;
   font-family: inherit;
 }
 
 .lop-lesson-tools { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
 .lop-mini-btn {
-  background: #2a2420;
-  border: 1px solid #3d352e;
-  color: #d8cec4;
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  color: var(--color-gray-700);
   border-radius: 999px;
   padding: 6px 14px;
   font-size: 0.85rem;
   font-family: inherit;
   cursor: pointer;
 }
-.lop-mini-btn:hover { background: #352d27; color: #fff; }
+.lop-mini-btn:hover { background: var(--color-gold-50); border-color: var(--color-gold-400); }
+
+.lop-pick-state {
+  font-size: 0.9rem;
+  color: var(--color-green-600);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.lop-pick-state.none { color: var(--color-gray-500); font-weight: 400; }
 
 .lop-lessons {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  max-height: 210px;
+  max-height: 208px;
   overflow-y: auto;
   padding: 4px;
 }
 .lop-lesson-chip {
-  background: #14110f;
-  border: 1px solid #3d352e;
-  color: #b8ada2;
-  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  color: var(--color-gray-600);
+  border-radius: 12px;
   padding: 8px 14px;
   font-size: 0.9rem;
   font-family: inherit;
   cursor: pointer;
   white-space: nowrap;
 }
+.lop-lesson-chip:hover { border-color: var(--color-red-500); }
 .lop-lesson-chip.on {
-  background: var(--color-red-600, #c8372d);
-  border-color: var(--color-red-500, #dc4b3e);
+  background: var(--color-red-600);
+  border-color: var(--color-red-600);
   color: #fff;
   font-weight: 600;
 }
@@ -110,17 +122,17 @@
 .lop-team-pick button {
   flex: 1;
   padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #3d352e;
-  background: #14110f;
-  color: #b8ada2;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  background: #fff;
+  color: var(--color-gray-600);
   font-size: 1rem;
   font-family: inherit;
   cursor: pointer;
 }
 .lop-team-pick button.active {
-  background: var(--color-gold-600, #b7791f);
-  border-color: var(--color-gold-500, #e9a23b);
+  background: var(--color-gold-500);
+  border-color: var(--color-gold-600);
   color: #fff;
   font-weight: 700;
 }
@@ -133,38 +145,41 @@
   gap: 4px 16px;
   align-items: center;
   text-align: left;
-  background: #14110f;
-  border: 1px solid #3d352e;
-  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
   padding: 18px 20px;
   color: inherit;
   font-family: inherit;
   cursor: pointer;
+  box-shadow: var(--shadow-md);
 }
-.lop-game-card:hover { border-color: var(--color-red-500, #dc4b3e); background: #1a1512; }
-.lop-game-card[disabled] { opacity: 0.45; cursor: not-allowed; }
+.lop-game-card:hover { border-color: var(--color-red-500); }
+.lop-game-card[disabled] { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
 .lop-game-emoji { grid-row: 1 / 3; font-size: 2.1rem; text-align: center; }
-.lop-game-name { font-size: 1.12rem; font-weight: 700; color: #fff; }
-.lop-game-desc { grid-column: 2; color: #a99e94; font-size: 0.88rem; line-height: 1.5; }
+.lop-game-name { font-size: 1.12rem; font-weight: 700; color: var(--color-gray-900); }
+.lop-game-desc { grid-column: 2; color: var(--color-gray-600); font-size: 0.88rem; line-height: 1.5; }
 .lop-game-count {
   grid-row: 1 / 3;
-  background: #2a2420;
+  background: var(--color-gold-50);
+  border: 1px solid var(--color-gold-400);
   border-radius: 999px;
   padding: 6px 14px;
   font-size: 0.85rem;
-  color: var(--color-gold-400, #f2bf6b);
+  color: var(--color-gold-700);
+  font-weight: 600;
   white-space: nowrap;
 }
 
 .lop-note {
-  color: #8d8279;
+  color: var(--color-gray-500);
   font-size: 0.86rem;
   line-height: 1.6;
   margin: 8px 0 0;
-  border-top: 1px solid #2a2420;
+  border-top: 1px solid var(--color-gray-200);
   padding-top: 16px;
 }
-.lop-note b { color: #d8cec4; }
+.lop-note b { color: var(--color-gray-700); }
 
 /* ---------- Man hinh choi ---------- */
 .lop-play { min-height: 100vh; display: flex; flex-direction: column; }
@@ -174,56 +189,63 @@
   align-items: center;
   gap: 14px;
   padding: 10px 18px;
-  background: #1e1a17;
-  border-bottom: 1px solid #332c26;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--color-gray-200);
+  box-shadow: var(--shadow-md);
   flex: none;
 }
-.lop-bar-title { font-weight: 700; color: #fff; font-size: 1.05rem; }
+.lop-bar-title { font-weight: 700; color: var(--color-red-700); font-size: 1.05rem; }
+.lop-bar-sub {
+  color: var(--color-gray-500);
+  font-size: 0.88rem;
+  padding-left: 12px;
+  border-left: 1px solid var(--color-gray-200);
+}
 .lop-bar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 .lop-bar-btn {
-  background: #2a2420;
-  border: 1px solid #3d352e;
-  color: #d8cec4;
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  color: var(--color-gray-700);
   border-radius: 10px;
   padding: 8px 14px;
   font-size: 0.9rem;
   font-family: inherit;
   cursor: pointer;
 }
-.lop-bar-btn:hover { background: #352d27; color: #fff; }
+.lop-bar-btn:hover { background: var(--color-gold-50); border-color: var(--color-gold-400); }
 .lop-timer {
   font-size: 1.6rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: var(--color-gold-400, #f2bf6b);
+  color: var(--color-gold-700);
   min-width: 98px;
   text-align: center;
 }
-.lop-timer.is-low { color: #ff6b5e; animation: lopPulse 1s infinite; }
-@keyframes lopPulse { 50% { opacity: 0.35; } }
+.lop-timer.is-low { color: var(--color-red-600); animation: lopPulse 1s infinite; }
+@keyframes lopPulse { 50% { opacity: 0.3; } }
 
 /* San khau — noi chieu cau hoi */
 .lop-stage {
   flex: 1;
-  padding: 26px clamp(16px, 4vw, 56px);
+  padding: 22px clamp(16px, 4vw, 56px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .lop-stage-head {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
-  color: #a99e94;
+  color: var(--color-gray-600);
   font-size: 1rem;
 }
 .lop-stage-head .lop-point {
-  background: rgba(200, 55, 45, 0.16);
-  border: 1px solid rgba(220, 75, 62, 0.4);
-  color: #ffb3a8;
+  background: var(--color-red-50);
+  border: 1px solid var(--color-red-100);
+  color: var(--color-red-700);
   border-radius: 999px;
   padding: 5px 16px;
   font-size: 0.92rem;
@@ -236,20 +258,22 @@
   grid-template-columns: 62px 1fr auto;
   align-items: center;
   gap: 18px;
-  background: #1e1a17;
-  border: 2px solid #332c26;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
   padding: clamp(12px, 1.6vw, 20px) clamp(14px, 2vw, 26px);
+  box-shadow: var(--shadow-md);
   cursor: pointer;
   transition: border-color .15s, background .15s;
 }
-.lop-row:hover { border-color: #55493f; }
+.lop-row:hover { border-color: var(--color-gold-400); }
 .lop-row-num {
   width: 46px; height: 46px;
   display: grid; place-items: center;
   border-radius: 12px;
-  background: #2a2420;
-  color: var(--color-gold-400, #f2bf6b);
+  background: var(--color-gold-50);
+  border: 1px solid var(--color-gold-400);
+  color: var(--color-gold-700);
   font-size: 1.3rem;
   font-weight: 700;
 }
@@ -257,33 +281,35 @@
   font-family: 'Noto Serif SC', serif;
   font-size: clamp(1.7rem, 3.6vw, 3rem);
   line-height: 1.45;
-  color: #fff;
+  color: var(--color-gray-900);
 }
 .lop-row-note {
   display: block;
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: var(--font-latin), sans-serif;
   font-size: clamp(0.85rem, 1.2vw, 1.05rem);
-  color: #9b9088;
+  color: var(--color-gray-500);
   margin-top: 4px;
 }
 .lop-row-mark { font-size: clamp(1.6rem, 3vw, 2.4rem); width: 52px; text-align: center; }
 
-.lop-row.revealed-ok { border-color: #3f8f5a; background: rgba(63, 143, 90, 0.12); }
-.lop-row.revealed-bad { border-color: var(--color-red-500, #dc4b3e); background: rgba(220, 75, 62, 0.12); }
+.lop-row.revealed-ok { border-color: var(--color-green-500); background: var(--color-green-50); }
+.lop-row.revealed-ok .lop-row-mark { color: var(--color-green-600); }
+.lop-row.revealed-bad { border-color: var(--color-red-500); background: var(--color-red-50); }
+.lop-row.revealed-bad .lop-row-mark { color: var(--color-red-600); }
 .lop-row-fix {
   grid-column: 2 / 4;
   margin-top: 10px;
   padding-top: 12px;
-  border-top: 1px dashed #4a4038;
+  border-top: 1px dashed var(--color-gray-200);
 }
 .lop-row-fix .fix-zh {
   font-family: 'Noto Serif SC', serif;
   font-size: clamp(1.4rem, 2.6vw, 2.2rem);
-  color: #8ee0a5;
+  color: var(--color-green-600);
   line-height: 1.45;
 }
 .lop-row-fix .fix-why {
-  color: #c4b8ac;
+  color: var(--color-gray-700);
   font-size: clamp(0.95rem, 1.4vw, 1.2rem);
   margin-top: 8px;
   line-height: 1.6;
@@ -291,7 +317,7 @@
 
 .lop-stage-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
 .lop-act {
-  background: var(--color-red-600, #c8372d);
+  background: var(--color-red-600);
   border: none;
   color: #fff;
   border-radius: 12px;
@@ -300,38 +326,39 @@
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
+  box-shadow: var(--shadow-md);
 }
-.lop-act.ghost { background: #2a2420; border: 1px solid #3d352e; color: #d8cec4; }
-.lop-act:hover { filter: brightness(1.1); }
+.lop-act.ghost { background: #fff; border: 1px solid var(--color-gray-200); color: var(--color-gray-700); }
+.lop-act:hover { filter: brightness(1.06); }
 
 /* Bang diem to */
 .lop-scorebar {
   display: flex;
   gap: 12px;
   padding: 12px 18px 16px;
-  background: #1e1a17;
-  border-top: 1px solid #332c26;
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid var(--color-gray-200);
   flex: none;
   flex-wrap: wrap;
 }
 .lop-team {
   flex: 1 1 150px;
-  background: #14110f;
-  border: 2px solid #332c26;
+  background: #fff;
+  border: 2px solid var(--color-gray-200);
   border-radius: 14px;
   padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.lop-team.lead { border-color: var(--color-gold-500, #e9a23b); }
-.lop-team-name { font-weight: 700; color: #d8cec4; font-size: 0.95rem; }
+.lop-team.lead { border-color: var(--color-gold-500); background: var(--color-gold-50); }
+.lop-team-name { font-weight: 700; color: var(--color-gray-700); font-size: 0.95rem; }
 .lop-team-score {
   margin-left: auto;
   font-size: 1.9rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  color: #fff;
+  color: var(--color-red-700);
   min-width: 46px;
   text-align: right;
 }
@@ -339,57 +366,60 @@
 .lop-team-btns button {
   width: 30px; height: 24px;
   border-radius: 7px;
-  border: 1px solid #3d352e;
-  background: #2a2420;
-  color: #d8cec4;
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
   font-size: 0.85rem;
   line-height: 1;
   cursor: pointer;
   font-family: inherit;
 }
-.lop-team-btns button:hover { background: var(--color-red-600, #c8372d); color: #fff; border-color: transparent; }
+.lop-team-btns button:hover { background: var(--color-red-600); color: #fff; border-color: transparent; }
 
 /* Quay so bao danh */
 .lop-roll-box {
   position: fixed; inset: 0;
-  background: rgba(10, 8, 7, 0.86);
+  background: rgba(31, 26, 23, 0.5);
+  backdrop-filter: blur(3px);
   display: grid; place-items: center;
   z-index: 60;
 }
 .lop-roll-card {
-  background: #1e1a17;
-  border: 1px solid #3d352e;
-  border-radius: 20px;
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
   padding: 34px 44px;
   text-align: center;
   min-width: min(420px, 90vw);
 }
-.lop-roll-label { color: #a99e94; font-size: 1rem; }
+.lop-roll-label { color: var(--color-gray-500); font-size: 1rem; }
 .lop-roll-number {
   font-size: clamp(5rem, 16vw, 11rem);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--color-gold-400, #f2bf6b);
+  color: var(--color-red-600);
   font-variant-numeric: tabular-nums;
   margin: 8px 0 18px;
 }
 .lop-roll-actions { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
-.lop-roll-actions label { color: #a99e94; font-size: 0.9rem; }
+.lop-roll-actions label { color: var(--color-gray-600); font-size: 0.9rem; }
 .lop-roll-actions input {
   width: 66px;
   padding: 8px;
   border-radius: 9px;
-  border: 1px solid #3d352e;
-  background: #14110f;
-  color: #f5f1ea;
+  border: 1px solid var(--color-gray-200);
+  background: #fff;
+  color: var(--color-gray-900);
   font-family: inherit;
   text-align: center;
 }
-.lop-roll-hint { color: #8d8279; font-size: 0.84rem; margin-top: 14px; min-height: 1.2em; }
+.lop-roll-hint { color: var(--color-gray-500); font-size: 0.84rem; margin-top: 14px; min-height: 1.2em; }
 
 @media (max-width: 720px) {
   .lop-row { grid-template-columns: 46px 1fr auto; gap: 12px; }
   .lop-row-num { width: 36px; height: 36px; font-size: 1.05rem; }
   .lop-bar { flex-wrap: wrap; }
+  .lop-bar-sub { display: none; }
   .lop-bar-right { width: 100%; justify-content: space-between; }
 }

@@ -176,10 +176,27 @@
     return out;
   }
 
+  // Ten cac bai dang chon, vi du "Bài 1" hoac "Bài 1, 3, 7"
+  function pickedLabel() {
+    var ns = state.lessons.filter(function (l) { return state.picked[l.url]; }).map(function (l) { return l.n; });
+    if (!ns.length) return '';
+    if (ns.length === state.lessons.length) return 'Tất cả ' + ns.length + ' bài';
+    if (ns.length > 6) return ns.length + ' bài';
+    return 'Bài ' + ns.join(', ');
+  }
+
   function updateCount() {
     var n = pickedJudges().length;
+    var label = pickedLabel();
     $('#lopCountErrfix').textContent = n ? n + ' câu' : 'chọn bài';
     $('.lop-game-card[data-game="errfix"]').disabled = n < 3;
+    var st = $('#lopPickState');
+    if (st) {
+      st.textContent = label
+        ? '✓ Đang chọn: ' + label + ' · ' + n + ' câu'
+        : 'Chưa chọn bài nào — bấm vào số bài bên dưới để chọn.';
+      st.classList.toggle('none', !label);
+    }
   }
 
   function switchLevel(level) {
@@ -360,8 +377,14 @@
   }
 
   /* ---------------- chuyen man hinh ---------------- */
+  var LEVEL_NAME = {
+    hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2: 'HSK 2', hsk2v3: 'HSK 2 · 3.0',
+    hsk3: 'HSK 3', hsk4: 'HSK 4', yct: 'YCT'
+  };
+
   function startGame() {
     if (pickedJudges().length < 3) return;
+    $('#lopSub').textContent = (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel();
     resetScores();
     renderScorebar();
     dealRows();

@@ -11,6 +11,15 @@
 </head>
 <body class="lop-body">
 
+<!-- Tranh son thuy nen — dung chung voi trang chinh -->
+<div class="scene" aria-hidden="true">
+  <div class="scene-layer scene-far"></div>
+  <div class="scene-mist"></div>
+  <div class="scene-layer scene-tree"></div>
+  <div class="scene-layer scene-bamboo"></div>
+  <div class="scene-veil"></div>
+</div>
+
 <!-- ================= MAN HINH CHUAN BI ================= -->
 <div id="lopSetup" class="lop-setup">
   <div class="lop-setup-card">
@@ -42,6 +51,7 @@
         <button type="button" class="lop-mini-btn" id="lopPickNone">Bỏ chọn</button>
         <button type="button" class="lop-mini-btn" id="lopPickRandom">🎲 Quay ngẫu nhiên 1 bài</button>
       </div>
+      <div id="lopPickState" class="lop-pick-state"></div>
       <div id="lopLessons" class="lop-lessons">Đang tải…</div>
     </div>
 
@@ -75,6 +85,7 @@
   <header class="lop-bar">
     <button type="button" class="lop-bar-btn" id="lopExit">← Đổi bài / đổi trò</button>
     <div class="lop-bar-title" id="lopTitle">Bắt lỗi sai tiếp sức</div>
+    <div class="lop-bar-sub" id="lopSub"></div>
     <div class="lop-bar-right">
       <div class="lop-timer" id="lopTimer">00:30</div>
       <button type="button" class="lop-bar-btn" id="lopTimerToggle">▶ Bắt đầu</button>

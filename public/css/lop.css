@@ -1387,3 +1387,7 @@
   .lop-paper-opts { margin-left: 0; }
   .lop-sheet { padding: 20px 16px; font-size: 11pt; }
 }
+
+/* Nut bat/tat tieng tren thanh cong cu khi dang chieu */
+.lop-bar-icon { min-width: 0; padding-left: clamp(10px, 1.1vw, 16px); padding-right: clamp(10px, 1.1vw, 16px); }
+.lop-bar-icon.is-off { opacity: 0.45; }

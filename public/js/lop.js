@@ -45,7 +45,7 @@
   }
   function save() {
     try {
-      localStorage.setItem('hyv_lop', JSON.stringify({ level: state.level, teams: state.teams, secs: state.timer.secs }));
+      localStorage.setItem('hyv_lop', JSON.stringify({ level: state.level, teams: state.teams, secs: state.timer.secs, sound: audio.on }));
     } catch (e) { /* bo qua */ }
   }
   function restore() {
@@ -54,6 +54,7 @@
       if (d.level && LEVELS[d.level]) state.level = d.level;
       if (d.teams) state.teams = d.teams;
       if (d.secs) { state.timer.secs = d.secs; state.timer.left = d.secs; }
+      if (d.sound === false) audio.on = false;
     } catch (e) { /* bo qua */ }
   }
 
@@ -412,7 +413,9 @@
   }
   function addScore(i, d) {
     if (i < 0 || i >= state.scores.length) return;
-    state.scores[i] = Math.max(0, state.scores[i] + d);
+    var truoc = state.scores[i];
+    state.scores[i] = Math.max(0, truoc + d);
+    if (state.scores[i] !== truoc) { try { d > 0 ? sndUp() : sndDown(); } catch (e) { /* bo qua */ } }
     renderScorebar();
   }
 
@@ -437,7 +440,9 @@
         t.left = 0;
         clearInterval(t.id);
         t.running = false;
-        try { beep(); } catch (e) { /* bo qua */ }
+        try { sndEnd(); } catch (e) { /* bo qua */ }
+      } else {
+        try { sndTick(t.left <= 5); } catch (e) { /* bo qua */ }
       }
       paintTimer();
     }, 1000);
@@ -454,14 +459,67 @@
     resetTimer();
     save();
   }
-  function beep() {
-    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+  /* ---------------- am thanh lop hoc ----------------
+     Tu tao bang Web Audio, khong can tai file nao. Trinh duyet chi cho phat
+     tieng sau khi nguoi dung bam chuot mot lan — tren lop luon bam nut truoc
+     khi bam dong ho nen khong sao.                                          */
+  var audio = { ctx: null, on: true };
+  function audioCtx() {
+    if (!audio.on) return null;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    if (!audio.ctx) audio.ctx = new AC();
+    if (audio.ctx.state === 'suspended') audio.ctx.resume();
+    return audio.ctx;
+  }
+  // Mot tieng don: cao do, do dai, dang song, do to, cho bao lau moi keu, cao do cuoi
+  function tone(freq, dur, type, vol, delay, endFreq) {
+    var ctx = audioCtx();
+    if (!ctx) return;
+    var t0 = ctx.currentTime + (delay || 0);
     var o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type || 'sine';
+    o.frequency.setValueAtTime(freq, t0);
+    if (endFreq) o.frequency.exponentialRampToValueAtTime(endFreq, t0 + dur);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(vol, t0 + 0.006);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
     o.connect(g); g.connect(ctx.destination);
-    o.frequency.value = 880; o.type = 'sine';
-    g.gain.setValueAtTime(0.18, ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
-    o.start(); o.stop(ctx.currentTime + 0.6);
+    o.start(t0); o.stop(t0 + dur + 0.03);
+  }
+
+  function sndTick(urgent) {
+    // Tich… tac… — nam giay cuoi keu cao hon va to hon cho hoc sinh giat minh
+    tone(urgent ? 1560 : 1040, 0.04, 'square', urgent ? 0.13 : 0.045);
+  }
+  function sndUp() {
+    tone(880, 0.09, 'triangle', 0.24);
+    tone(1320, 0.17, 'triangle', 0.20, 0.07);
+  }
+  function sndDown() {
+    tone(430, 0.18, 'triangle', 0.16, 0, 250);
+  }
+  function sndEnd() {
+    // Ba tieng chuong het gio + duoi ngan vang lai
+    [0, 0.22, 0.44].forEach(function (d) {
+      tone(1175, 0.20, 'sine', 0.30, d);
+      tone(1568, 0.16, 'sine', 0.14, d);
+    });
+    tone(784, 1.5, 'sine', 0.22, 0.66);
+    tone(1175, 1.2, 'sine', 0.10, 0.66);
+  }
+  function toggleSound() {
+    audio.on = !audio.on;
+    if (audio.on) { audioCtx(); sndUp(); }
+    paintSound();
+    save();
+  }
+  function paintSound() {
+    var b = $('#lopSound');
+    if (!b) return;
+    b.textContent = audio.on ? '🔊' : '🔇';
+    b.title = audio.on ? 'Đang bật tiếng — bấm để tắt' : 'Đang tắt tiếng — bấm để bật';
+    b.classList.toggle('is-off', !audio.on);
   }
 
   /* ---------------- tro: bat loi sai tiep suc ---------------- */
@@ -2030,6 +2088,7 @@
     $('#lopExit').addEventListener('click', exitGame);
     $('#lopTimerToggle').addEventListener('click', toggleTimer);
     $('#lopTimerSet').addEventListener('click', cycleTimerSecs);
+    $('#lopSound').addEventListener('click', toggleSound);
     $('#lopRoll').addEventListener('click', openRoll);
     $('#lopCall').addEventListener('click', openCall);
     $('#lopCallClose').addEventListener('click', function () { $('#lopCallBox').hidden = true; });
@@ -2131,6 +2190,7 @@
 
     switchLevel(state.level);
     paintTimer();
+    paintSound();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

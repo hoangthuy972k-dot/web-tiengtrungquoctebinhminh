@@ -1901,8 +1901,9 @@
     $all('#main > .dash-section').forEach(function (sec) { sec.hidden = sec.id !== 'finalPractice'; });
     var wrap = $('#fqContent');
     wrap.innerHTML = '<p style="color:var(--color-gray-500);">Đang chuẩn bị đề…</p>';
-    loadLessonRawData(lesson).then(function (data) {
-      fqState = { lesson: lesson, levelId: levelId, items: fqBuild(data), pos: 0, score: 0 };
+    Promise.all([loadLessonRawData(lesson), ensureGrammarFile(levelId)]).then(function (res) {
+      var data = res[0];
+      fqState = { lesson: lesson, levelId: levelId, items: fqBuild(data, fqGrammarItems()), pos: 0, score: 0 };
       pgbInit('fq', fqState.items.length);
       fqRender();
     }).catch(function () {
@@ -1910,22 +1911,48 @@
     });
   }
 
-  // 5 cau nghia tu vung + 5 cau trac nghiem cua bai (thieu thi bu bang tu vung Viet → Trung)
-  function fqBuild(data) {
+  // Lay toi da 3 cau dien tu cua phan Ngu phap bai nay, tron lai thu tu phuong an
+  function fqGrammarItems() {
+    var raw;
+    try { raw = grRawExercises(); } catch (e) { return []; }
+    var flat = grIsGrouped(raw)
+      ? raw.reduce(function (a, g) { return a.concat(g.items || []); }, [])
+      : (raw || []);
+    return shuffle(flat.filter(function (q) {
+      return (!q.type || q.type === 'mc') && Array.isArray(q.options) && typeof q.answer === 'number';
+    })).slice(0, 3).map(function (q) {
+      var order = shuffle(q.options.map(function (_, i) { return i; }));
+      return {
+        kind: 'Ngữ pháp',
+        prompt: (q.context ? '<div class="gr-exercise-context">🗣️ ' + q.context + '</div>' : '') +
+          '<div class="gr-exercise-sentence hanzi">' + q.pre + '<span class="blank">___</span>' + q.post + '</div>',
+        opts: order.map(function (oi) { return q.options[oi]; }),
+        ans: order.indexOf(q.answer),
+        zhOpts: true
+      };
+    });
+  }
+
+  // 10 cau tron: tu vung + ngu phap + trac nghiem cua bai (thieu thi bu bang tu vung Viet → Trung)
+  function fqBuild(data, gramItems) {
     var vocab = (data.vocabData || []).filter(function (v) { return v.zh && v.vn; });
     var items = [];
-    shuffle(vocab).slice(0, 5).forEach(function (v) {
+    var gram = (gramItems || []).slice(0, 3);
+    var vocabQuota = gram.length ? 4 : 5;
+    var mcQuota = 10 - vocabQuota - gram.length;
+    shuffle(vocab).slice(0, vocabQuota).forEach(function (v) {
       var opts = shuffle([v].concat(shuffle(vocab.filter(function (x) { return x !== v; })).slice(0, 3)));
       items.push({ kind: 'Từ vựng', prompt: '<div class="fq-zh hanzi">' + v.zh + '</div><div class="fq-py">' + v.py + '</div>', speak: v.zh,
         opts: opts.map(function (o) { return o.vn; }), ans: opts.indexOf(v), zhOpts: false });
     });
-    shuffle((data.mcData || []).slice()).slice(0, 5).forEach(function (q) {
+    shuffle((data.mcData || []).slice()).slice(0, mcQuota).forEach(function (q) {
       items.push({ kind: 'Trắc nghiệm', prompt: '<div class="fq-q hanzi">' + q.q + '</div>', opts: q.opts.slice(), ans: q.ans, zhOpts: true });
     });
+    items = items.concat(gram);
     // Bai khong co trac nghiem (HSK 2 cu, HSK 3, HSK 4): dung cau "Sua loi sai" / "Chon tu"
     var wordChoice = data.errorFixMode === 'wordchoice';
     shuffle((data.errorFixData || []).filter(function (q) { return q.opts && typeof q.ans === 'number'; }))
-      .slice(0, Math.max(0, 5 - Math.min(5, (data.mcData || []).length))).forEach(function (q) {
+      .slice(0, Math.max(0, mcQuota - Math.min(mcQuota, (data.mcData || []).length))).forEach(function (q) {
         items.push({
           kind: wordChoice ? 'Chọn từ' : 'Sửa lỗi sai',
           prompt: wordChoice
@@ -9811,8 +9838,12 @@
 
   function renderGrMC(q) {
     var body = $('#grBody');
-    var optionsHtml = q.options.map(function (opt, i) {
-      return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + opt + '</button>';
+    // Trong du lieu soan san, dap an dung gan nhu luon nam o vi tri dau tien.
+    // Phai tron lai moi lan hien thi, neu khong hoc sinh chi can bam nut dau la dung.
+    var order = shuffle(q.options.map(function (_, i) { return i; }));
+    var answerPos = order.indexOf(q.answer);
+    var optionsHtml = order.map(function (oi, i) {
+      return '<button type="button" class="vp-option-btn" data-idx="' + i + '">' + q.options[oi] + '</button>';
     }).join('');
     body.innerHTML =
       '<div class="gr-exercise-sentence hanzi">' + q.pre + '<span class="blank">___</span>' + q.post + '</div>' +
@@ -9820,10 +9851,10 @@
 
     $all('.vp-option-btn', body).forEach(function (btn, i) {
       btn.addEventListener('click', function () {
-        var isCorrect = i === q.answer;
+        var isCorrect = i === answerPos;
         $all('.vp-option-btn', body).forEach(function (b, j) {
           b.disabled = true;
-          if (j === q.answer) b.classList.add('is-correct');
+          if (j === answerPos) b.classList.add('is-correct');
           else if (j === i) b.classList.add('is-wrong');
         });
         grFinishQuestion(isCorrect, q.explanation);

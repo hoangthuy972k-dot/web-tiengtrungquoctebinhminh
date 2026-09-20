@@ -1,0 +1,171 @@
+{
+ "/lessons/hsk1-bai-7.html": {
+  "points": [
+   {
+    "title": "Diễn đạt ngày tháng",
+    "errors": [
+     { "wrong": "五号八月", "why": "tiếng Trung nói từ đơn vị LỚN đến nhỏ: tháng trước ngày.", "right": "八月五号" },
+     { "wrong": "八月五号星期一吗？（muốn hỏi thứ mấy）", "why": "hỏi thứ mấy thì dùng 星期几, không dùng 吗.", "right": "今天星期几？" },
+     { "wrong": "八月五日号", "why": "日 và 号 cùng nghĩa, chỉ dùng một trong hai.", "right": "八月五号 ／ 八月五日" }
+    ],
+    "items": [
+     { "context": "“ngày 5 tháng 8”", "pre": "", "blank": "八月五号", "post": "", "options": ["八月五号", "五号八月", "八月五日号"], "answer": 0, "explanation": "Tháng → ngày (lớn đến nhỏ)." },
+     { "context": "Trong khẩu ngữ dùng chữ nào cho “ngày”?", "pre": "八月五", "blank": "号", "post": "", "options": ["号", "日号", "星期"], "answer": 0, "explanation": "Khẩu ngữ dùng 号, văn viết dùng 日." },
+     { "context": "“Hôm nay là thứ mấy?”", "pre": "今天", "blank": "星期几", "post": "？", "options": ["星期几", "几星期", "星期几吗"], "answer": 0, "explanation": "星期几 = thứ mấy." },
+     { "context": "“Hôm nay là thứ Hai.”", "pre": "今天", "blank": "星期一", "post": "。", "options": ["星期一", "一星期", "是星期一吗"], "answer": 0, "explanation": "星期一 = thứ Hai." },
+     { "context": "“Hôm nay là ngày mấy?”", "pre": "今天", "blank": "几月几号", "post": "？", "options": ["几月几号", "几号几月", "几月几号吗"], "answer": 0, "explanation": "几月几号 = ngày mấy tháng mấy." },
+     { "context": "Trật tự đúng khi nói cả tháng, ngày và thứ.", "pre": "今天是", "blank": "八月五号星期一", "post": "。", "options": ["八月五号星期一", "星期一八月五号", "五号八月星期一"], "answer": 0, "explanation": "月 → 号 → 星期." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay là ngày 5 tháng 8.”", "words": ["今天", "八月", "五号", "。"], "answer": "今天八月五号。", "explanation": "Vị ngữ danh từ, không cần 是." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay là thứ mấy?”", "words": ["今天", "星期", "几", "？"], "answer": "今天星期几？", "explanation": "星期几？" },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay là thứ Hai.”", "words": ["今天", "星期一", "。"], "answer": "今天星期一。", "explanation": "星期一." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay là ngày mấy tháng mấy?”", "words": ["今天", "几", "月", "几", "号", "？"], "answer": "今天几月几号？", "explanation": "几月几号？" },
+     { "context": "Tình huống: Bạn muốn biết hôm nay ngày bao nhiêu. Bạn hỏi:", "pre": "", "blank": "今天几月几号？", "post": "", "options": ["今天几月几号？", "今天几号几月？", "今天几月几号吗？"], "answer": 0, "explanation": "Lớn đến nhỏ, không dùng 吗." },
+     { "context": "Tình huống: Hôm nay là ngày 5 tháng 8. Bạn nói:", "pre": "", "blank": "今天八月五号。", "post": "", "options": ["今天八月五号。", "今天五号八月。", "今天八月五日号。"], "answer": 0, "explanation": "八月五号." },
+     { "context": "Tình huống: Bạn muốn biết hôm nay thứ mấy. Bạn hỏi:", "pre": "", "blank": "今天星期几？", "post": "", "options": ["今天星期几？", "今天几星期？", "今天星期几吗？"], "answer": 0, "explanation": "星期几？" }
+    ]
+   },
+   {
+    "title": "Câu vị ngữ danh từ",
+    "errors": [
+     { "wrong": "今天是八月五号。（trong khẩu ngữ thường bỏ 是）", "why": "vị ngữ chỉ ngày tháng, tuổi, giờ thường LƯỢC 是.", "right": "今天八月五号。" },
+     { "wrong": "我不十八岁。", "why": "câu vị ngữ danh từ phủ định BẮT BUỘC dùng 不是.", "right": "我不是十八岁。" },
+     { "wrong": "现在是几点吗？", "why": "có từ nghi vấn 几 thì không dùng 吗.", "right": "现在几点？" }
+    ],
+    "items": [
+     { "context": "“Hôm nay là ngày 5 tháng 8.” (khẩu ngữ)", "pre": "今天", "blank": "八月五号", "post": "。", "options": ["八月五号", "是八月五号吗", "八月五号了吗"], "answer": 0, "explanation": "Vị ngữ danh từ chỉ ngày tháng lược 是." },
+     { "context": "“Tôi 18 tuổi.”", "pre": "我", "blank": "十八岁", "post": "。", "options": ["十八岁", "是十八岁", "十八岁吗"], "answer": 0, "explanation": "Câu tuổi lược 是." },
+     { "context": "“Bây giờ là 8 giờ.”", "pre": "现在", "blank": "八点", "post": "。", "options": ["八点", "是八点吗", "八点吗"], "answer": 0, "explanation": "Câu giờ lược 是." },
+     { "context": "Phủ định BẮT BUỘC dùng 不是.", "pre": "今天", "blank": "不是星期一", "post": "。", "options": ["不是星期一", "不星期一", "没是星期一"], "answer": 0, "explanation": "Phủ định phải có 是." },
+     { "context": "“Cậu ấy là người Trung Quốc.” (vị ngữ danh từ chỉ danh tính thì cần 是)", "pre": "他", "blank": "是中国人", "post": "。", "options": ["是中国人", "中国人", "是中国人吗吧"], "answer": 0, "explanation": "Danh tính, quốc tịch vẫn cần 是." },
+     { "context": "“Hôm nay thứ Hai phải không?”", "pre": "今天", "blank": "星期一吗", "post": "？", "options": ["星期一吗", "是星期一吗不", "几星期一吗"], "answer": 0, "explanation": "Thêm 吗 để hỏi." },
+     { "type": "sort", "context": "Sắp xếp: “Bây giờ là tám giờ.”", "words": ["现在", "八", "点", "。"], "answer": "现在八点。", "explanation": "Lược 是." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay không phải thứ Hai.”", "words": ["今天", "不是", "星期一", "。"], "answer": "今天不是星期一。", "explanation": "Phủ định cần 不是." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi mười tám tuổi.”", "words": ["我", "十八", "岁", "。"], "answer": "我十八岁。", "explanation": "Lược 是." },
+     { "type": "sort", "context": "Sắp xếp: “Hôm nay thứ Hai phải không?”", "words": ["今天", "星期一", "吗", "？"], "answer": "今天星期一吗？", "explanation": "吗 ở cuối câu." },
+     { "context": "Tình huống: Bây giờ là 8 giờ, bạn nói:", "pre": "", "blank": "现在八点。", "post": "", "options": ["现在八点。", "现在是八点吗。", "现在八点吗。"], "answer": 0, "explanation": "Câu giờ lược 是." },
+     { "context": "Tình huống: Hôm nay KHÔNG phải thứ Hai. Bạn nói:", "pre": "", "blank": "今天不是星期一。", "post": "", "options": ["今天不是星期一。", "今天不星期一。", "今天没是星期一。"], "answer": 0, "explanation": "Phủ định bắt buộc dùng 不是." },
+     { "context": "Tình huống: Bạn muốn xác nhận hôm nay là thứ Hai. Bạn hỏi:", "pre": "", "blank": "今天星期一吗？", "post": "", "options": ["今天星期一吗？", "今天是星期一吗不？", "今天星期几吗？"], "answer": 0, "explanation": "吗 ở cuối câu." }
+    ]
+   },
+   {
+    "title": "Câu liên động với 「去」 (1) — đi đâu làm gì",
+    "errors": [
+     { "wrong": "我去吃饭饭馆。", "why": "nơi chốn phải đứng NGAY sau 去, trước động từ thứ hai.", "right": "我去饭馆吃饭。" },
+     { "wrong": "我饭馆去吃饭。", "why": "去 đứng trước nơi chốn.", "right": "我去饭馆吃饭。" },
+     { "wrong": "我没去学校学习吗？", "why": "trộn phủ định với câu hỏi 吗 không đúng ngữ cảnh.", "right": "你去学校学习吗？" }
+    ],
+    "items": [
+     { "context": "“Tôi đi nhà hàng ăn cơm.”", "pre": "我", "blank": "去饭馆吃饭", "post": "。", "options": ["去饭馆吃饭", "去吃饭饭馆", "饭馆去吃饭"], "answer": 0, "explanation": "去 + nơi chốn + động từ 2 + tân ngữ." },
+     { "context": "“Tôi đến trường học bài.”", "pre": "我", "blank": "去学校学习", "post": "。", "options": ["去学校学习", "去学习学校", "学校去学习"], "answer": 0, "explanation": "去学校 + 学习." },
+     { "context": "“Cậu ấy đi bệnh viện xem bệnh.”", "pre": "他", "blank": "去医院看病", "post": "。", "options": ["去医院看病", "去看病医院", "医院去看病"], "answer": 0, "explanation": "去医院 + 看病." },
+     { "context": "Phủ định đứng TRƯỚC 去.", "pre": "我", "blank": "不去学校", "post": "。", "options": ["不去学校", "去不学校", "去学校不"], "answer": 0, "explanation": "不 đứng trước 去." },
+     { "context": "“Bạn đi đâu?”", "pre": "你", "blank": "去哪儿", "post": "？", "options": ["去哪儿", "哪儿去", "去哪儿吗"], "answer": 0, "explanation": "去哪儿？= đi đâu?" },
+     { "context": "“Tôi muốn đi Bắc Kinh du lịch.”", "pre": "我想", "blank": "去北京旅游", "post": "。", "options": ["去北京旅游", "去旅游北京", "北京去旅游"], "answer": 0, "explanation": "想 + 去 + nơi chốn + động từ 2." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đi nhà hàng ăn cơm.”", "words": ["我", "去", "饭馆", "吃", "饭", "。"], "answer": "我去饭馆吃饭。", "explanation": "去饭馆吃饭." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi đến trường học bài.”", "words": ["我", "去", "学校", "学习", "。"], "answer": "我去学校学习。", "explanation": "去学校学习." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn đi đâu?”", "words": ["你", "去", "哪儿", "？"], "answer": "你去哪儿？", "explanation": "去哪儿？" },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không đi bệnh viện.”", "words": ["我", "不", "去", "医院", "。"], "answer": "我不去医院。", "explanation": "不去." },
+     { "context": "Tình huống: Bạn muốn nói mình đến trường để học. Bạn nói:", "pre": "", "blank": "我去学校学习。", "post": "", "options": ["我去学校学习。", "我去学习学校。", "我学校去学习。"], "answer": 0, "explanation": "去 + nơi chốn + việc làm." },
+     { "context": "Tình huống: Bạn muốn biết bạn mình đi đâu. Bạn hỏi:", "pre": "", "blank": "你去哪儿？", "post": "", "options": ["你去哪儿？", "你哪儿去？", "你去哪儿吗？"], "answer": 0, "explanation": "去哪儿？không dùng 吗." },
+     { "context": "Tình huống: Bạn bị bệnh và định đi bệnh viện. Bạn nói:", "pre": "", "blank": "我想去医院看病。", "post": "", "options": ["我想去医院看病。", "我想去看病医院。", "我想医院去看病。"], "answer": 0, "explanation": "想 + 去 + nơi chốn + động từ 2." }
+    ]
+   }
+  ]
+ },
+ "/lessons/hsk1-bai-8.html": {
+  "points": [
+   {
+    "title": "Động từ năng nguyện 「想」 — muốn làm gì",
+    "errors": [
+     { "wrong": "我没想去中国。", "why": "phủ định của 想 là 不想.", "right": "我不想去中国。" },
+     { "wrong": "我去想中国。", "why": "想 đứng TRƯỚC động từ.", "right": "我想去中国。" },
+     { "wrong": "我想去中国吗不？", "why": "trộn 吗 với dạng hỏi chính-phản.", "right": "你想去中国吗？" }
+    ],
+    "items": [
+     { "context": "“Tôi muốn đi Trung Quốc.”", "pre": "我", "blank": "想去中国", "post": "。", "options": ["想去中国", "去想中国", "想中国去"], "answer": 0, "explanation": "想 + động từ + tân ngữ." },
+     { "context": "Phủ định: “Tôi không muốn đi.”", "pre": "我", "blank": "不想去", "post": "。", "options": ["不想去", "没想去", "想不去了吗"], "answer": 0, "explanation": "Phủ định của 想 là 不想." },
+     { "context": "Câu hỏi: “Bạn muốn ăn gì?”", "pre": "你", "blank": "想吃什么", "post": "？", "options": ["想吃什么", "吃想什么", "想吃什么吗"], "answer": 0, "explanation": "想 + động từ + 什么？" },
+     { "context": "“Tôi muốn mua một quyển sách.”", "pre": "我", "blank": "想买一本书", "post": "。", "options": ["想买一本书", "买想一本书", "想一本书买"], "answer": 0, "explanation": "想 + 买 + tân ngữ." },
+     { "context": "“Cậu ấy cũng muốn học tiếng Trung.”", "pre": "他", "blank": "也想学汉语", "post": "。", "options": ["也想学汉语", "想也学汉语", "也学想汉语"], "answer": 0, "explanation": "也 đứng trước 想." },
+     { "context": "So sánh: 会 = biết làm; 想 = muốn làm.", "pre": "我", "blank": "想学汉语", "post": "。", "options": ["想学汉语", "会想学汉语", "想会学汉语"], "answer": 0, "explanation": "想 biểu đạt nguyện vọng." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi muốn đi Trung Quốc.”", "words": ["我", "想", "去", "中国", "。"], "answer": "我想去中国。", "explanation": "想去中国." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi không muốn ăn cơm.”", "words": ["我", "不", "想", "吃", "饭", "。"], "answer": "我不想吃饭。", "explanation": "不想吃饭." },
+     { "type": "sort", "context": "Sắp xếp: “Bạn muốn ăn gì?”", "words": ["你", "想", "吃", "什么", "？"], "answer": "你想吃什么？", "explanation": "想吃什么？" },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy cũng muốn học tiếng Trung.”", "words": ["他", "也", "想", "学", "汉语", "。"], "answer": "他也想学汉语。", "explanation": "也想学." },
+     { "context": "Tình huống: Bạn có nguyện vọng đi Trung Quốc. Bạn nói:", "pre": "", "blank": "我想去中国。", "post": "", "options": ["我想去中国。", "我去想中国。", "我会去中国。"], "answer": 0, "explanation": "想 = muốn." },
+     { "context": "Tình huống: Bạn không muốn ăn cơm bây giờ. Bạn nói:", "pre": "", "blank": "我不想吃饭。", "post": "", "options": ["我不想吃饭。", "我没想吃饭。", "我想不吃饭吗。"], "answer": 0, "explanation": "不想 = không muốn." },
+     { "context": "Tình huống: Bạn muốn hỏi bạn mình muốn ăn gì:", "pre": "", "blank": "你想吃什么？", "post": "", "options": ["你想吃什么？", "你想吃什么吗？", "你吃想什么？"], "answer": 0, "explanation": "什么 không đi với 吗." }
+    ]
+   },
+   {
+    "title": "Đại từ nghi vấn 「多少」 (Bao nhiêu)",
+    "errors": [
+     { "wrong": "这个多少钱吗？", "why": "câu đã có 多少 thì không dùng 吗.", "right": "这个多少钱？" },
+     { "wrong": "你们班有多少个学生个？", "why": "lặp lượng từ; 多少 thường không cần lượng từ.", "right": "你们班有多少学生？" },
+     { "wrong": "这个钱多少？", "why": "多少 đứng TRƯỚC danh từ.", "right": "这个多少钱？" }
+    ],
+    "items": [
+     { "context": "“Cái này bao nhiêu tiền?”", "pre": "这个", "blank": "多少钱", "post": "？", "options": ["多少钱", "钱多少", "多少钱吗"], "answer": 0, "explanation": "多少 + 钱; không dùng 吗." },
+     { "context": "“Lớp bạn có bao nhiêu học sinh?”", "pre": "你们班有", "blank": "多少学生", "post": "？", "options": ["多少学生", "多少个学生个", "学生多少"], "answer": 0, "explanation": "多少 thường không cần lượng từ." },
+     { "context": "Hỏi số lượng NHỎ (dưới 10) thì dùng 几.", "pre": "你家有", "blank": "几口人", "post": "？", "options": ["几口人", "多少口人", "几多少口人"], "answer": 0, "explanation": "几 cho số nhỏ; 多少 cho số lớn." },
+     { "context": "“Số điện thoại của bạn là bao nhiêu?”", "pre": "你的电话是", "blank": "多少", "post": "？", "options": ["多少", "多少吗", "几"], "answer": 0, "explanation": "Số điện thoại dùng 多少." },
+     { "context": "Trả lời “Cái này bao nhiêu tiền?”", "pre": "这个", "blank": "二十块", "post": "。", "options": ["二十块", "多少二十块", "二十块吗"], "answer": 0, "explanation": "Thay 多少 bằng con số." },
+     { "context": "“Quyển sách này bao nhiêu tiền?”", "pre": "这本书", "blank": "多少钱", "post": "？", "options": ["多少钱", "钱多少", "多少钱吗"], "answer": 0, "explanation": "多少钱？= bao nhiêu tiền?" },
+     { "type": "sort", "context": "Sắp xếp: “Cái này bao nhiêu tiền?”", "words": ["这个", "多少", "钱", "？"], "answer": "这个多少钱？", "explanation": "多少钱？" },
+     { "type": "sort", "context": "Sắp xếp: “Lớp bạn có bao nhiêu học sinh?”", "words": ["你们", "班", "有", "多少", "学生", "？"], "answer": "你们班有多少学生？", "explanation": "多少学生？" },
+     { "type": "sort", "context": "Sắp xếp: “Quyển sách này hai mươi tệ.”", "words": ["这", "本", "书", "二十", "块", "。"], "answer": "这本书二十块。", "explanation": "Vị ngữ danh từ chỉ giá tiền." },
+     { "type": "sort", "context": "Sắp xếp: “Nhà bạn có mấy người?”", "words": ["你", "家", "有", "几", "口", "人", "？"], "answer": "你家有几口人？", "explanation": "几 cho số nhỏ." },
+     { "context": "Tình huống: Bạn muốn hỏi giá một món đồ. Bạn hỏi:", "pre": "", "blank": "这个多少钱？", "post": "", "options": ["这个多少钱？", "这个多少钱吗？", "这个钱多少？"], "answer": 0, "explanation": "多少钱？không dùng 吗." },
+     { "context": "Tình huống: Bạn muốn biết lớp có bao nhiêu học sinh (khoảng 30). Bạn hỏi:", "pre": "", "blank": "你们班有多少学生？", "post": "", "options": ["你们班有多少学生？", "你们班有几学生？", "你们班有多少学生吗？"], "answer": 0, "explanation": "Số lớn dùng 多少." },
+     { "context": "Tình huống: Bạn muốn biết nhà bạn ấy có mấy người (số nhỏ). Bạn hỏi:", "pre": "", "blank": "你家有几口人？", "post": "", "options": ["你家有几口人？", "你家有多少口人？", "你家有几人？"], "answer": 0, "explanation": "几 + lượng từ 口." }
+    ]
+   },
+   {
+    "title": "Lượng từ 「个」 và 「口」",
+    "errors": [
+     { "wrong": "我家有四个人。（khi nói thành viên gia đình）", "why": "đếm thành viên trong gia đình dùng 口.", "right": "我家有四口人。" },
+     { "wrong": "教室里有五口人。", "why": "口 chỉ dùng cho người trong GIA ĐÌNH; người nói chung dùng 个.", "right": "教室里有五个人。" },
+     { "wrong": "我买了三书。", "why": "thiếu lượng từ giữa số và danh từ.", "right": "我买了三本书。" }
+    ],
+    "items": [
+     { "context": "“Nhà tôi có bốn người.”", "pre": "我家有", "blank": "四口人", "post": "。", "options": ["四口人", "四个人", "四人"], "answer": 0, "explanation": "Thành viên gia đình dùng 口." },
+     { "context": "“Trong lớp có năm người.”", "pre": "教室里有", "blank": "五个人", "post": "。", "options": ["五个人", "五口人", "五人"], "answer": 0, "explanation": "Người nói chung dùng 个." },
+     { "context": "“ba quyển sách”", "pre": "", "blank": "三本书", "post": "", "options": ["三本书", "三书", "三个书"], "answer": 0, "explanation": "Sách dùng lượng từ 本." },
+     { "context": "“một học sinh”", "pre": "", "blank": "一个学生", "post": "", "options": ["一个学生", "一口学生", "一学生"], "answer": 0, "explanation": "个 là lượng từ thông dụng nhất." },
+     { "context": "Số 2 trước lượng từ dùng 两.", "pre": "", "blank": "两个人", "post": "", "options": ["两个人", "二个人", "两人个"], "answer": 0, "explanation": "两 + lượng từ." },
+     { "context": "“Bạn mua mấy cái?”", "pre": "你买", "blank": "几个", "post": "？", "options": ["几个", "几", "多少个吗"], "answer": 0, "explanation": "几 + lượng từ." },
+     { "type": "sort", "context": "Sắp xếp: “Nhà tôi có bốn người.”", "words": ["我", "家", "有", "四", "口", "人", "。"], "answer": "我家有四口人。", "explanation": "四口人." },
+     { "type": "sort", "context": "Sắp xếp: “Trong lớp có năm người.”", "words": ["教室", "里", "有", "五", "个", "人", "。"], "answer": "教室里有五个人。", "explanation": "五个人." },
+     { "type": "sort", "context": "Sắp xếp: “Tôi mua ba quyển sách.”", "words": ["我", "买", "三", "本", "书", "。"], "answer": "我买三本书。", "explanation": "三本书." },
+     { "type": "sort", "context": "Sắp xếp: “Cậu ấy là một học sinh.”", "words": ["他", "是", "一", "个", "学生", "。"], "answer": "他是一个学生。", "explanation": "一个学生." },
+     { "context": "Tình huống: Gia đình bạn có 4 người. Bạn nói:", "pre": "", "blank": "我家有四口人。", "post": "", "options": ["我家有四口人。", "我家有四个人。", "我家有四人。"], "answer": 0, "explanation": "Gia đình dùng 口." },
+     { "context": "Tình huống: Trong lớp có 5 người. Bạn nói:", "pre": "", "blank": "教室里有五个人。", "post": "", "options": ["教室里有五个人。", "教室里有五口人。", "教室里有五人。"], "answer": 0, "explanation": "Người nói chung dùng 个." },
+     { "context": "Tình huống: Bạn muốn mua 2 cái. Bạn nói:", "pre": "", "blank": "我买两个。", "post": "", "options": ["我买两个。", "我买二个。", "我买两。"], "answer": 0, "explanation": "两 + lượng từ 个." }
+    ]
+   },
+   {
+    "title": "Cách đọc số tiền",
+    "errors": [
+     { "wrong": "二十元块", "why": "元 và 块 cùng nghĩa, chỉ dùng một trong hai.", "right": "二十块 ／ 二十元" },
+     { "wrong": "这个是二十块。", "why": "câu nói giá tiền thường LƯỢC 是.", "right": "这个二十块。" },
+     { "wrong": "二块五毛钱毛", "why": "lặp đơn vị 毛.", "right": "两块五毛钱" }
+    ],
+    "items": [
+     { "context": "Trong văn NÓI, đơn vị tiền là:", "pre": "二十", "blank": "块", "post": "", "options": ["块", "元块", "毛块"], "answer": 0, "explanation": "Khẩu ngữ dùng 块, văn viết dùng 元." },
+     { "context": "“20 tệ” trong văn VIẾT.", "pre": "二十", "blank": "元", "post": "", "options": ["元", "块元", "毛"], "answer": 0, "explanation": "元 dùng trong văn viết, hóa đơn." },
+     { "context": "“2 tệ 5 hào”", "pre": "", "blank": "两块五毛", "post": "", "options": ["两块五毛", "二块五毛钱毛", "五毛两块"], "answer": 0, "explanation": "块 → 毛 (lớn đến nhỏ)." },
+     { "context": "“Cái này 20 tệ.”", "pre": "这个", "blank": "二十块", "post": "。", "options": ["二十块", "是二十块", "二十块吗"], "answer": 0, "explanation": "Câu giá tiền lược 是." },
+     { "context": "Hỏi giá.", "pre": "这个", "blank": "多少钱", "post": "？", "options": ["多少钱", "几钱", "多少钱吗"], "answer": 0, "explanation": "多少钱？= bao nhiêu tiền?" },
+     { "context": "“Tổng cộng bao nhiêu tiền?”", "pre": "", "blank": "一共多少钱", "post": "？", "options": ["一共多少钱", "多少钱一共吗", "一共几钱"], "answer": 0, "explanation": "一共 = tổng cộng." },
+     { "type": "sort", "context": "Sắp xếp: “Cái này hai mươi tệ.”", "words": ["这个", "二十", "块", "。"], "answer": "这个二十块。", "explanation": "Lược 是." },
+     { "type": "sort", "context": "Sắp xếp: “Cái này bao nhiêu tiền?”", "words": ["这个", "多少", "钱", "？"], "answer": "这个多少钱？", "explanation": "多少钱？" },
+     { "type": "sort", "context": "Sắp xếp: “Tổng cộng bao nhiêu tiền?”", "words": ["一共", "多少", "钱", "？"], "answer": "一共多少钱？", "explanation": "一共多少钱？" },
+     { "type": "sort", "context": "Sắp xếp: “Quyển sách này hai tệ năm hào.”", "words": ["这", "本", "书", "两", "块", "五", "毛", "。"], "answer": "这本书两块五毛。", "explanation": "块 → 毛." },
+     { "context": "Tình huống: Bạn mua hàng và muốn hỏi giá. Bạn nói:", "pre": "", "blank": "这个多少钱？", "post": "", "options": ["这个多少钱？", "这个几钱？", "这个多少钱吗？"], "answer": 0, "explanation": "多少钱？" },
+     { "context": "Tình huống: Người bán nói giá 20 tệ bằng khẩu ngữ:", "pre": "", "blank": "二十块。", "post": "", "options": ["二十块。", "二十元块。", "二十毛。"], "answer": 0, "explanation": "Khẩu ngữ dùng 块." },
+     { "context": "Tình huống: Bạn muốn biết tổng số tiền phải trả. Bạn hỏi:", "pre": "", "blank": "一共多少钱？", "post": "", "options": ["一共多少钱？", "多少钱一共吗？", "一共几钱？"], "answer": 0, "explanation": "一共多少钱？" }
+    ]
+   }
+  ]
+ }
+}

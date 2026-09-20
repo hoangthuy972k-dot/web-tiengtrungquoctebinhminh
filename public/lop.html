@@ -180,6 +180,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <button type="button" class="lop-bar-btn" id="lopTimerToggle">▶ Bắt đầu</button>
       <button type="button" class="lop-bar-btn" id="lopTimerSet" title="Đổi thời gian">30s</button>
       <button type="button" class="lop-bar-btn" id="lopRoll">🎲 Gọi số</button>
+      <button type="button" class="lop-bar-btn" id="lopCall">🙋 Gọi tên</button>
     </div>
   </header>
 
@@ -199,6 +200,42 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <button type="button" class="lop-mini-btn" id="lopRollClose">Đóng</button>
     </div>
     <div class="lop-roll-hint" id="lopRollHint"></div>
+  </div>
+</div>
+
+<!-- Goi ten hoc sinh len bang · uu tien em lau chua duoc goi -->
+<div id="lopCallBox" class="lop-roll-box" hidden>
+  <div class="lop-call-card">
+    <div class="lop-call-head">
+      <span>Kiểm tra đầu giờ</span>
+      <select id="lopCallClass" class="lop-call-class"></select>
+      <button type="button" class="lop-mini-btn" id="lopCallClose">Đóng</button>
+    </div>
+
+    <div id="lopCallGate" class="lop-call-gate" hidden>
+      <p>Nhập mật khẩu quản trị để lấy danh sách lớp.</p>
+      <form id="lopCallLogin">
+        <input type="password" id="lopCallPw" placeholder="Mật khẩu quản trị" autocomplete="current-password">
+        <button type="submit" class="btn btn-primary">Mở danh sách</button>
+      </form>
+      <p class="lop-call-err" id="lopCallErr" hidden></p>
+    </div>
+
+    <div id="lopCallMain" hidden>
+      <div class="lop-call-name" id="lopCallName">—</div>
+      <div class="lop-call-meta" id="lopCallMeta"></div>
+
+      <div class="lop-call-score" id="lopCallScore" hidden>
+        <span>Chấm điểm:</span>
+        <div class="lop-call-nums" id="lopCallNums"></div>
+        <button type="button" class="lop-mini-btn" id="lopCallSkip">Vắng / bỏ qua</button>
+      </div>
+
+      <div class="lop-call-actions">
+        <button type="button" class="lop-act" id="lopCallPick">🙋 Gọi em tiếp theo</button>
+      </div>
+      <div class="lop-call-hint" id="lopCallHint"></div>
+    </div>
   </div>
 </div>
 

@@ -2154,11 +2154,19 @@ async function initClassTables() {
       'FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE' +
     ')'
   );
+  // Kiem tra mieng dau gio: moi lan goi 1 em len bang ghi 1 dong
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS oral_checks (' +
+      'id VARCHAR(16) PRIMARY KEY, class_id VARCHAR(16) NOT NULL, roster_id VARCHAR(16) NOT NULL, ' +
+      'ms BIGINT NOT NULL, score INT NULL, ' +
+      'INDEX idx_class (class_id), INDEX idx_roster (roster_id)' +
+    ')'
+  );
 }
 
 function readClassFile() {
   const d = readJsonFile(CLASSES_FILE) || {};
-  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {} };
+  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {}, oral: d.oral || [] };
 }
 
 // Moi hoc sinh mo trang chu deu goi /api/class/me; 6 lop x 50 em co the doc lien
@@ -2653,6 +2661,59 @@ function cleanParts(v) {
 }
 
 // Giao 1 bai cho 1 hoac nhieu lop
+/* ---------- Kiem tra mieng dau gio ----------
+   Che do lop hoc goi hai API nay: doc danh sach kem lan goi gan nhat de quay
+   ten cong bang (uu tien em lau chua goi), va ghi diem ngay sau khi em tra loi. */
+async function readOralChecks() {
+  if (!USE_DB) return readClassFile().oral || [];
+  const [rows] = await dbPool.query('SELECT * FROM oral_checks ORDER BY ms');
+  return rows.map((r) => ({ id: r.id, classId: r.class_id, rosterId: r.roster_id, ms: Number(r.ms), score: r.score == null ? null : Number(r.score) }));
+}
+
+app.get('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const checks = await readOralChecks();
+  const classId = String(req.query.classId || '');
+  const byRoster = {};
+  checks.forEach((c) => {
+    const k = byRoster[c.rosterId] || (byRoster[c.rosterId] = { times: 0, lastMs: 0, lastScore: null, scores: [] });
+    k.times++;
+    if (c.ms >= k.lastMs) { k.lastMs = c.ms; k.lastScore = c.score; }
+    if (typeof c.score === 'number') k.scores.push(c.score);
+  });
+  const classes = st.classes.map((c) => ({ id: c.id, name: c.name, size: st.roster.filter((r) => r.classId === c.id).length }));
+  const roster = !classId ? [] : st.roster
+    .filter((r) => r.classId === classId)
+    .sort((a, b) => a.sort - b.sort)
+    .map((r) => {
+      const k = byRoster[r.id] || { times: 0, lastMs: 0, lastScore: null, scores: [] };
+      const avg = k.scores.length ? Math.round((k.scores.reduce((s, x) => s + x, 0) / k.scores.length) * 10) / 10 : null;
+      return { id: r.id, name: r.name, no: r.sort, times: k.times, lastMs: k.lastMs, lastScore: k.lastScore, avg: avg };
+    });
+  res.json({ classes, roster });
+}));
+
+app.post('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
+  const classId = String(req.body?.classId || '');
+  const rosterId = String(req.body?.rosterId || '');
+  const raw = req.body?.score;
+  const score = raw === null || raw === undefined || raw === '' ? null : Math.max(0, Math.min(10, Math.round(Number(raw))));
+  if (score !== null && !Number.isFinite(score)) return res.status(400).json({ error: 'Điểm không hợp lệ.' });
+  const st = await loadClassState();
+  const r = st.roster.find((x) => x.id === rosterId && x.classId === classId);
+  if (!r) return res.status(404).json({ error: 'Không tìm thấy học sinh trong lớp này.' });
+  const row = { id: newShortId(), classId, rosterId, ms: Date.now(), score };
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.oral = (d.oral || []).concat(row);
+    writeClassFile(d);
+  } else {
+    await classDbWrite('INSERT INTO oral_checks (id, class_id, roster_id, ms, score) VALUES (?,?,?,?,?)',
+      [row.id, row.classId, row.rosterId, row.ms, row.score]);
+  }
+  res.json({ ok: true });
+}));
+
 app.post('/api/admin/assignments', requireAdmin, asyncRoute(async (req, res) => {
   const classIds = Array.isArray(req.body?.classIds) ? req.body.classIds.map(String).slice(0, 50) : [];
   const lessonUrl = String(req.body?.lessonUrl || '');

@@ -726,3 +726,200 @@ var speakingData = {
 // Khi nào có file mp3 thì khai báo listenData ở đây theo đúng khuôn của
 // lesson-engine.js ({dictation, mc, audioParts}), rồi mở lại thẻ "Nghe"
 // trong hsk5-bai-1.html. Hiện chưa có file nên thẻ này tạm ẩn.
+
+// ══════════════════════════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 5 — 听力 第一/第二部分
+// Nguyên văn hội thoại lấy từ sách bài tập 《HSK标准教程5上·练习册》bài 1.
+// Bốn lựa chọn do soạn lại cho khớp nguyên văn (sách chỉ in chữ cái đáp án).
+// Mục tiêu: nghe TRƯỚC khi nhìn chữ — đúng như phòng thi.
+// ══════════════════════════════════════════════════════════════
+var listenExamData = {
+  intro: 'Đề HSK 5 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm 🔊 nghe, ' +
+         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Nguyên văn: 《HSK标准教程5上·练习册》第1课 听力',
+  items: [
+    {n:1,
+     lines:[{sp:'女',zh:'你怎么这么累？昨天晚上太热了没睡好吧？'},
+            {sp:'男',zh:'不是，半夜我被蚊子叮醒了，我怕我老婆再被吵醒，所以后半夜就在为她赶蚊子。'}],
+     q:'男的昨晚为什么没睡好？',qvn:'Vì sao tối qua người đàn ông ngủ không ngon?',
+     opts:['天气太热','在为老婆赶蚊子','孩子生病了','加班到很晚'],ans:1,
+     why:'Người đàn ông nói rõ 后半夜就在为她赶蚊子 — nửa đêm về sáng ngồi đuổi muỗi cho vợ. Đáp án 天气太热 là điều người phụ nữ ĐOÁN, và đã bị phủ định bằng 不是.',
+     words:['蚊子','叮','吵','老婆','半夜']},
+
+    {n:2,
+     lines:[{sp:'女',zh:'听说你们昨天大学同学聚会了？又见到陈兰了？'},
+            {sp:'男',zh:'是啊。虽说离婚已经两年了，可是一见面，心里还是有种说不出的感觉……'}],
+     q:'男的跟陈兰是什么关系？',qvn:'Người đàn ông và Trần Lan có quan hệ gì?',
+     opts:['同事','前妻','妹妹','邻居'],ans:1,
+     why:'Từ khoá là 离婚已经两年了 — đã ly hôn hai năm. Vậy Trần Lan là vợ cũ. Bẫy ở chỗ câu đầu nhắc 大学同学聚会, dễ chọn nhầm "bạn học".',
+     words:['离婚']},
+
+    {n:3,
+     lines:[{sp:'男',zh:'今天菜怎么这么咸啊？'},
+            {sp:'女',zh:'你每天回家就吃，什么家务活儿也不干，还说菜咸？'}],
+     q:'女的是什么语气？',qvn:'Người phụ nữ nói với giọng điệu thế nào?',
+     opts:['高兴','抱怨','害怕','吃惊'],ans:1,
+     why:'Câu 什么家务活儿也不干，还说…… là mẫu câu TRÁCH MÓC điển hình. Dạng câu hỏi 语气 (giọng điệu) rất hay gặp ở HSK 5 — phải nghe THÁI ĐỘ chứ không chỉ nghe nội dung.',
+     words:['抱怨']},
+
+    {n:4,
+     lines:[{sp:'女',zh:'大夫，你为什么要检查我的肩膀和胳膊呢？'},
+            {sp:'男',zh:'手指麻木，不一定就是手指的问题，有关的部位都要检查。'}],
+     q:'女的哪个地方不舒服？',qvn:'Người phụ nữ khó chịu ở chỗ nào?',
+     opts:['肩膀','胳膊','手指','脖子'],ans:2,
+     why:'Bác sĩ nói 手指麻木 — tê NGÓN TAY. Vai và cánh tay chỉ là chỗ bác sĩ kiểm tra THÊM. Đây là bẫy kinh điển: chỗ được nhắc nhiều nhất chưa chắc là đáp án.',
+     words:['肩膀','手指']},
+
+    {n:5,
+     lines:[{sp:'男',zh:'高女士，请您简单地叙述一下以前的工作经历。'},
+            {sp:'女',zh:'好的，我之前在一家电台工作……'}],
+     q:'他们最有可能在干什么？',qvn:'Hai người nhiều khả năng đang làm gì?',
+     opts:['看病','面试','上课','购物'],ans:1,
+     why:'请您叙述一下以前的工作经历 = mời bà kể lại kinh nghiệm làm việc — đây là câu hỏi trong PHỎNG VẤN XIN VIỆC. Cách gọi 高女士 cũng cho thấy hoàn cảnh trang trọng.',
+     words:['女士','叙述','电台']},
+
+    {n:6,
+     lines:[{sp:'女',zh:'你今天下午几点开会？'},
+            {sp:'男',zh:'3点。'},
+            {sp:'女',zh:'3点？现在都已经3点半了啊！'},
+            {sp:'男',zh:'啊？我居然看错表了！'}],
+     q:'男的怎么了？',qvn:'Người đàn ông bị sao?',
+     opts:['忘了开会','看错时间了','走错地方了','没带手表'],ans:1,
+     why:'我居然看错表了 — nhìn nhầm đồng hồ. 居然 ở đây lộ rõ thái độ NGOÀI DỰ LIỆU, đúng điểm ngữ pháp của bài.',
+     words:['居然']},
+
+    {n:7,
+     lines:[{sp:'男',zh:'你觉得这两个哪个更好一些？'},
+            {sp:'女',zh:'都挺好的，各有特点。'},
+            {sp:'男',zh:'是啊，要是只有一个能得奖，就太可惜了。'},
+            {sp:'女',zh:'我觉得我们可以建议增加一个奖项。'}],
+     q:'女的是什么意思？',qvn:'Ý người phụ nữ là gì?',
+     opts:['选第一个','选第二个','多设一个奖','取消比赛'],ans:2,
+     why:'建议增加一个奖项 = đề nghị thêm một hạng mục giải. Giống hệt kết bài đọc: 电台增加了两项奖项. Lượng từ 项 là từ mới của bài.',
+     words:['项']},
+
+    {n:8,
+     lines:[{sp:'女',zh:'小刚，你打算什么时候带我回家见你父母？'},
+            {sp:'男',zh:'我觉得现在还不是时候，过一段再说吧。'},
+            {sp:'女',zh:'你想等到什么时候啊？我们交往也有大半年了……'},
+            {sp:'男',zh:'你别烦我了！你知道我最近很忙，哪儿有时间静下心来想我们的事？'}],
+     q:'说话的两个人是什么关系？',qvn:'Hai người đang nói chuyện có quan hệ gì?',
+     opts:['同事','男女朋友','兄妹','师生'],ans:1,
+     why:'带我回家见你父母 + 我们交往也有大半年了 — đang yêu nhau, chưa cưới. Nếu đã là vợ chồng thì không nói 交往.',
+     words:['等待']}
+  ]
+};
+
+// ══════════════════════════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// Dạng được xếp ưu tiên CAO NHẤT cho luyện từ vựng: có ngữ cảnh thật,
+// đáp án không cố định nhưng bị ràng buộc bởi yêu cầu.
+// ══════════════════════════════════════════════════════════════
+var situationData = {
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
+         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  items: [
+    {scene:'Sáng đến lớp, bạn thấy em mặt mũi phờ phạc.',
+     a:{sp:'Bạn',zh:'你今天怎么这么累？',vn:'Hôm nay sao cậu mệt thế?'},
+     need:['Dùng 居然','Nói một lý do CỤ THỂ, đừng nói chung chung'],
+     sample:'昨晚半夜我居然被蚊子叮醒了，后半夜一直没睡好。',
+     samplePy:'Zuó wǎn bànyè wǒ jūrán bèi wénzi dīngxǐng le, hòu bànyè yìzhí méi shuìhǎo.',
+     sampleVn:'Nửa đêm qua tôi lại bị muỗi đốt cho tỉnh dậy, nửa đêm về sáng không ngủ được nữa.',
+     tip:'居然 phải đứng SAU chủ ngữ. Nhiều bạn viết 居然我被蚊子叮醒了 — sai vị trí.'},
+
+    {scene:'Cô giáo hỏi em về một cặp vợ chồng em quen.',
+     a:{sp:'Cô',zh:'你觉得他们俩是什么样的夫妻？',vn:'Em thấy hai người họ là cặp vợ chồng thế nào?'},
+     need:['Dùng 恩爱 hoặc 相敬如宾','Nêu một CHI TIẾT chứng minh'],
+     sample:'他们很恩爱。丈夫每天早上都为妻子做早饭，几年如一日，从不抱怨。',
+     samplePy:'Tāmen hěn ēn\'ài. Zhàngfu měi tiān zǎoshang dōu wèi qīzi zuò zǎofàn, jǐ nián rú yí rì, cóng bù bàoyuàn.',
+     sampleVn:'Họ rất đằm thắm. Người chồng sáng nào cũng nấu bữa sáng cho vợ, mấy năm như một ngày, chưa bao giờ than phiền.',
+     tip:'Nêu nhận xét rồi phải có DẪN CHỨNG — đây là thói quen bắt buộc ở HSK 5, cả phần nói lẫn phần viết.'},
+
+    {scene:'Em đi phỏng vấn xin việc, nhà tuyển dụng hỏi.',
+     a:{sp:'Nhà tuyển dụng',zh:'请您简单地叙述一下以前的工作经历。',vn:'Mời bạn kể sơ qua kinh nghiệm làm việc trước đây.'},
+     need:['Dùng 叙述 hoặc 之前','Giữ giọng TRANG TRỌNG, đừng dùng khẩu ngữ'],
+     sample:'好的。我之前在一家电台工作了三年，主要负责新闻采访。',
+     samplePy:'Hǎo de. Wǒ zhīqián zài yì jiā diàntái gōngzuòle sān nián, zhǔyào fùzé xīnwén cǎifǎng.',
+     sampleVn:'Vâng. Trước đây tôi làm ba năm ở một đài phát thanh, chủ yếu phụ trách phỏng vấn tin tức.',
+     tip:'Hoàn cảnh trang trọng thì xưng 我 và dùng từ văn viết. Tránh 老婆, 脑袋 kiểu khẩu ngữ ở đây.'},
+
+    {scene:'Bạn kể chuyện một người vợ bỏ cuộc thi để chồng được ngủ.',
+     a:{sp:'Bạn',zh:'她为了不吵醒丈夫，放弃了比赛，你怎么看？',vn:'Cô ấy vì không muốn đánh thức chồng mà bỏ cuộc thi, cậu nghĩ sao?'},
+     need:['Dùng 细节','Nêu rõ ý kiến của mình'],
+     sample:'我觉得真正的爱情就在这些小细节里，比说一百句"我爱你"更有说服力。',
+     samplePy:'Wǒ juéde zhēnzhèng de àiqíng jiù zài zhèxiē xiǎo xìjié li, bǐ shuō yì bǎi jù "wǒ ài nǐ" gèng yǒu shuōfúlì.',
+     sampleVn:'Tôi thấy tình yêu thật sự nằm ngay trong những chi tiết nhỏ ấy, có sức thuyết phục hơn nói trăm câu "anh yêu em".',
+     tip:'Câu hỏi 你怎么看 bắt buộc phải NÊU Ý KIẾN. Trả lời "cũng được" là mất điểm.'},
+
+    {scene:'Em đến muộn, cả nhóm đã chờ rất lâu.',
+     a:{sp:'Bạn',zh:'我们等了你快一个小时了！',vn:'Bọn tớ chờ cậu gần một tiếng rồi đấy!'},
+     need:['Xin lỗi','Dùng 不耐烦 hoặc 等待 đúng chỗ'],
+     sample:'真对不起，让你们等得这么不耐烦。路上堵车，我下次一定早点儿出发。',
+     samplePy:'Zhēn duìbuqǐ, ràng nǐmen děng de zhème bú nàifán. Lù shang dǔchē, wǒ xià cì yídìng zǎo diǎnr chūfā.',
+     sampleVn:'Thật xin lỗi, để mọi người chờ đến sốt ruột. Đường tắc, lần sau tôi nhất định đi sớm hơn.',
+     tip:'不耐烦 tả TRẠNG THÁI của người chờ. Không nói 我不耐烦你们 — nó không mang tân ngữ kiểu đó.'}
+  ]
+};
+
+// ══════════════════════════════════════════════════════════════
+// 🎯 NÓI SAO CHO HAY — 得体 / 语体 (đặc trưng riêng của HSK 5)
+// Lên HSK 5, bài tập không còn hỏi "câu nào ĐÚNG" mà hỏi
+// "câu nào PHÙ HỢP HƠN với hoàn cảnh này". Cả hai câu đều đúng ngữ pháp.
+// ══════════════════════════════════════════════════════════════
+var registerData = {
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
+         'Đây chính là chỗ HSK 5 khác hẳn HSK 3–4: không còn là đúng/sai, mà là hay/dở.',
+  items: [
+    {scene:'Em viết báo cáo nộp cho giám đốc.',
+     a:'这个问题该如何解决？',b:'这个问题该怎么解决？',better:'a',
+     why:'Văn bản công ty là VĂN VIẾT. 如何 trang trọng, hợp với báo cáo. 怎么 không sai nhưng nghe như đang nói chuyện.'},
+
+    {scene:'Em nhắn tin hỏi thăm bạn thân.',
+     a:'最近身体如何？',b:'最近身体怎么样？',better:'b',
+     why:'Nhắn cho bạn thân mà dùng 如何 thì nghe khách sáo, xa cách. Khẩu ngữ thân mật dùng 怎么样.'},
+
+    {scene:'Em giới thiệu vợ mình với đối tác trong buổi họp.',
+     a:'这是我老婆。',b:'这是我妻子。',better:'b',
+     why:'老婆 là cách gọi THÂN MẬT trong nhà. Trước đối tác phải dùng 妻子. Đây là lỗi người Việt hay mắc vì sách dạy 老婆 trước.'},
+
+    {scene:'Em kể chuyện vui với bạn cùng phòng.',
+     a:'我老婆昨天又忘带钥匙了。',b:'我妻子昨天又忘带钥匙了。',better:'a',
+     why:'Ngược lại: chuyện phiếm với bạn mà dùng 妻子 thì cứng nhắc. 老婆 mới tự nhiên.'},
+
+    {scene:'Em viết một đoạn văn nộp cho cô giáo.',
+     a:'他的脑袋靠在她肩膀上。',b:'他的头靠在她肩膀上。',better:'b',
+     why:'脑袋 là khẩu ngữ. Bài viết nộp cô nên dùng 头. Hai từ cùng nghĩa nhưng khác NGỮ THỂ.'},
+
+    {scene:'Em xin phép sếp nghỉ một buổi.',
+     a:'我明天有事，不来了。',b:'不好意思，我明天有点儿事，想请一天假。',better:'b',
+     why:'Câu a đúng ngữ pháp nhưng THIẾU LỄ ĐỘ — báo chứ không xin. Với cấp trên phải có 不好意思 + 想请假. HSK 5 chấm cả thái độ giao tiếp.'},
+
+    {scene:'Cô giáo hỏi tình hình ôn thi của cả lớp trong cuộc họp phụ huynh.',
+     a:'同学们最近复习得怎么样？',b:'同学们近期的复习情况如何？',better:'b',
+     why:'Họp phụ huynh là hoàn cảnh trang trọng: 近期 + 情况如何 hợp hơn 最近 + 怎么样.'}
+  ]
+};
+
+// ══════════════════════════════════════════════════════════════
+// 🗣️ KỂ LẠI BÀI ĐỌC 复述 (Cấp 3 · 交际性练习)
+// Bài tập cuối của giáo trình: 用自己的话，复述课文内容
+// ══════════════════════════════════════════════════════════════
+var retellData = {
+  intro: 'Đây là bài tập cuối trong giáo trình: <b>用自己的话，复述课文内容</b> — kể lại bài đọc bằng lời của chính em, ' +
+         'KHÔNG đọc thuộc lòng. Nhìn dàn ý và các từ khoá bên dưới, bấm ghi âm rồi kể một mạch khoảng 1 phút.',
+  outline: [
+    {step:'Mở', cue:'电台要选…… 有三对夫妻……', words:['电台','恩爱','对比','入围']},
+    {step:'Cặp 1', cue:'妻子全身…… 丈夫一直……', words:['瘫痪','离婚','抱怨','爱护']},
+    {step:'Cặp 2', cue:'十几年的婚姻生活中，他们从来……', words:['婚姻','吵架','相敬如宾','暗暗']},
+    {step:'Cặp 3', cue:'轮到第三对时，评委们看到……', words:['轮','不耐烦','靠','肩膀','递']},
+    {step:'Bất ngờ', cue:'原来男人昨晚……', words:['居然','蚊子','叮','老婆','吵']},
+    {step:'Kết', cue:'最后电台增加了……', words:['项','患难与共']}
+  ],
+  checklist: [
+    'Kể đủ sáu ý trên chưa, hay bỏ mất cặp nào?',
+    'Có dùng được ít nhất 10 từ mới của bài không?',
+    'Có dùng 居然 ở đúng chỗ bất ngờ không?',
+    'Nói liền mạch khoảng 1 phút, hay còn ngắt quãng nhiều?',
+    'Có kể bằng LỜI MÌNH, hay đang đọc thuộc nguyên văn?'
+  ]
+};

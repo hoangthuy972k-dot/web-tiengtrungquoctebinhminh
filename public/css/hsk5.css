@@ -193,3 +193,112 @@
   .h5-cols { grid-template-columns: 1fr; }
   .h5-hv { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* ---------- Nghe theo dạng đề ---------- */
+.h5-src { font-size: 0.82rem; color: var(--soft, #8d8279); margin-top: 8px; font-style: italic; }
+.h5-play {
+  background: var(--sky-d, #1f6f8b);
+  border: none; color: #fff; border-radius: 999px;
+  padding: 9px 22px; font-family: inherit; font-size: 0.95rem;
+  font-weight: 600; cursor: pointer;
+}
+.h5-play:hover { filter: brightness(1.08); }
+.h5-le-q { font-family: 'Noto Serif SC', serif; font-size: 1.15rem; color: var(--ink, #2b2b2b); margin: 4px 0 12px; }
+.h5-le-qvn { display: block; font-family: inherit; font-size: 0.85rem; color: var(--soft, #8d8279); margin-top: 3px; }
+.h5-small { padding: 8px 18px; font-size: 0.88rem; margin: 12px 0 0; }
+.h5-le-script {
+  margin-top: 12px; background: var(--paper, #faf7f2);
+  border-radius: 12px; padding: 14px 16px;
+}
+.h5-le-line { display: flex; gap: 10px; align-items: baseline; margin-bottom: 8px; }
+.h5-le-sp {
+  flex: none; width: 28px; height: 28px; display: grid; place-items: center;
+  border-radius: 999px; background: var(--sky-d, #1f6f8b); color: #fff; font-size: 0.85rem;
+}
+.h5-le-zh { font-family: 'Noto Serif SC', serif; font-size: 1.05rem; line-height: 1.7; color: var(--ink, #2b2b2b); }
+.h5-le-words { font-size: 0.85rem; color: var(--mid, #5b5249); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line, #e6e0d8); }
+.h5-le-words b { color: var(--gold-d, #8a5a0f); font-family: 'Noto Serif SC', serif; }
+
+/* ---------- Tình huống ---------- */
+.h5-si-scene { font-size: 0.95rem; color: var(--mid, #5b5249); font-style: italic; margin-bottom: 12px; }
+.h5-si-a { background: var(--paper, #faf7f2); border-radius: 12px; padding: 12px 16px; display: flex; gap: 10px; flex-wrap: wrap; align-items: baseline; }
+.h5-si-sp { flex: none; font-size: 0.82rem; color: var(--soft, #8d8279); font-weight: 700; }
+.h5-si-need { margin: 12px 0 8px; font-size: 0.88rem; color: var(--mid, #5b5249); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.h5-si-box {
+  width: 100%; box-sizing: border-box; border: 1px solid var(--line, #e6e0d8);
+  border-radius: 10px; padding: 12px 14px;
+  font-family: 'Noto Serif SC', serif; font-size: 1.1rem; line-height: 1.9;
+  color: var(--ink, #2b2b2b); resize: vertical;
+}
+.h5-si-box:focus { outline: 2px solid var(--sky-d, #1f6f8b); outline-offset: 1px; }
+.h5-si-sample { background: var(--green-50, #e8f6ee); border-radius: 12px; padding: 14px 16px; margin-top: 10px; }
+.h5-si-tip { font-size: 0.86rem; color: var(--mid, #5b5249); margin-top: 10px; line-height: 1.6; }
+
+/* ---------- Nói sao cho hay ---------- */
+.h5-rg-pair { display: grid; gap: 10px; }
+.h5-rg-opt {
+  display: flex; gap: 12px; align-items: baseline; text-align: left;
+  border: 1px solid var(--line, #e6e0d8); background: #fff;
+  border-radius: 12px; padding: 14px 18px; cursor: pointer; font-family: inherit;
+}
+.h5-rg-opt:hover:not([disabled]) { border-color: var(--sky-d, #1f6f8b); }
+.h5-rg-opt[disabled] { cursor: default; }
+.h5-rg-key { flex: none; font-weight: 700; color: var(--soft, #8d8279); }
+.h5-rg-opt.is-right { background: #e8f6ee; border-color: #1f8a4c; }
+.h5-rg-opt.is-right .h5-rg-key { color: #1f8a4c; }
+.h5-rg-opt.is-wrong { background: #fdecea; border-color: #c0392b; }
+
+/* ---------- Kể lại bài đọc ---------- */
+.h5-rt-grid { display: grid; gap: 10px; margin-bottom: 18px; }
+.h5-rt-step { display: grid; grid-template-columns: auto 1fr; gap: 14px; background: #fff; border: 1px solid var(--line, #e6e0d8); border-radius: 12px; padding: 14px 18px; }
+.h5-rt-no { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 999px; background: var(--gold-50, #fdf6e6); border: 1px solid var(--gold-400, #e3b768); color: var(--gold-d, #8a5a0f); font-weight: 700; }
+.h5-rt-name { font-weight: 700; color: var(--ink, #2b2b2b); margin-bottom: 4px; }
+.h5-rt-cue { font-family: 'Noto Serif SC', serif; font-size: 1.02rem; color: var(--sky-d, #1f6f8b); margin-bottom: 8px; }
+.h5-rt-words { display: flex; gap: 6px; flex-wrap: wrap; }
+.h5-rt-w { background: var(--paper, #faf7f2); border-radius: 999px; padding: 3px 12px; font-family: 'Noto Serif SC', serif; font-size: 0.95rem; color: var(--mid, #5b5249); }
+
+@media (max-width: 720px) {
+  .h5-rt-step { grid-template-columns: 1fr; }
+}
+
+/* ---------- Lộ trình tự ôn ---------- */
+.h5-road {
+  background: #fff;
+  border: 1px solid var(--line, #e6e0d8);
+  border-radius: 18px;
+  padding: 20px 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+.h5-road-head {
+  font-weight: 700; font-size: 1.05rem; color: var(--ink, #2b2b2b);
+  padding-bottom: 14px; margin-bottom: 4px;
+  border-bottom: 1px solid var(--line, #e6e0d8);
+}
+.h5-road-head span { font-weight: 400; font-size: 0.85rem; color: var(--soft, #8d8279); margin-left: 8px; }
+.h5-road-stage { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px dashed var(--line, #e6e0d8); }
+.h5-road-stage:last-child { border-bottom: none; padding-bottom: 4px; }
+.h5-road-no { text-align: center; flex: none; }
+.h5-road-no b {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  border-radius: 14px; background: var(--sky-l, #fdefec); color: var(--sky-d, #a82d24);
+  font-family: 'Noto Serif SC', serif; font-size: 1.4rem; font-weight: 700;
+}
+.h5-road-no span { display: block; font-size: 0.72rem; color: var(--soft, #8d8279); margin-top: 5px; }
+.h5-road-name { font-weight: 700; color: var(--ink, #2b2b2b); font-size: 0.98rem; }
+.h5-road-name i { font-weight: 400; font-style: normal; color: var(--soft, #8d8279); font-size: 0.85rem; }
+.h5-road-desc { font-size: 0.87rem; color: var(--mid, #5b5249); margin: 3px 0 10px; line-height: 1.6; }
+.h5-road-tabs { display: flex; gap: 7px; flex-wrap: wrap; }
+.h5-road-tab {
+  background: var(--paper, #faf7f2); border: 1px solid var(--line, #e6e0d8);
+  border-radius: 999px; padding: 6px 14px;
+  font-family: inherit; font-size: 0.84rem; color: var(--mid, #5b5249); cursor: pointer;
+}
+.h5-road-tab:hover { border-color: var(--sky, #c8372d); color: var(--sky, #c8372d); }
+
+@media (max-width: 720px) {
+  .h5-road { padding: 16px; }
+  .h5-road-stage { grid-template-columns: 1fr; gap: 10px; }
+  .h5-road-no { display: flex; align-items: center; gap: 10px; text-align: left; }
+  .h5-road-no span { margin-top: 0; }
+}

@@ -35,15 +35,77 @@ function grammarCard(n, g) {
     '  </div>';
 }
 
+function sectionBlock(id, title, badge, sub) {
+  return '\n<div id="' + id + '" class="section">\n' +
+    '  <div class="sec-head">\n' +
+    '    <div class="sec-title">' + title + ' <span class="sec-badge">' + badge + '</span></div>\n' +
+    '    <div class="sec-sub">' + sub + '</div>\n' +
+    '  </div>\n' +
+    '  <div id="' + id + '-wrap"></div>\n' +
+    '</div>\n';
+}
+
+/* Lo trinh tu on — hoc sinh tu hoc can biet LAM GI TRUOC, LAM GI SAU.
+   Ba chang theo dung 懂 → 会 → 用 cua giao hoc phap doi ngoai Han ngu. */
+function roadmap(m) {
+  const has = (k) => m.has && m.has.indexOf(k) >= 0;
+  const stages = [
+    {n: 1, zh: '懂', name: 'HIỂU ĐÃ', min: 20,
+     desc: 'Nạp từ và nắm nội dung. Chưa cần nhớ hết — hiểu là được.',
+     tabs: [['vocab', '📚 Từ mới'], ['hanviet', '🌉 Hán–Việt'], ['dialog', '📖 Bài đọc']]
+       .concat(has('listenexam') ? [['listenexam', '🎧 Nghe']] : [])},
+    {n: 2, zh: '会', name: 'NẮM CHO CHẮC', min: 20,
+     desc: 'Phân biệt chỗ dễ nhầm. Đây là phần quyết định điểm HSK 5.',
+     tabs: [['grammar', '📐 Ngữ pháp'], ['synonym', '🔍 Phân biệt từ']]
+       .concat(has('register') ? [['register', '🎯 Nói sao cho hay']] : [])},
+    {n: 3, zh: '用', name: 'DÙNG ĐƯỢC', min: 35,
+     desc: 'Tự sản sinh ra câu. Không làm phần này thì hôm sau quên sạch.',
+     tabs: [['flash', '🃏 Thẻ nhớ'], ['match', '1️⃣ Ghép cụm'], ['fill', '2️⃣ Điền từ'],
+            ['sort', '2️⃣ Sắp xếp'], ['errfix', '2️⃣ Chọn từ']]
+       .concat(has('situation') ? [['situation', '💬 Tình huống']] : [])
+       .concat([['writing', '✍️ Viết đoạn']])
+       .concat(has('retell') ? [['retell', '🗣️ Kể lại bài']] : [])
+       .concat([['speak', '4️⃣ Luyện nói']])}
+  ];
+  return '<div class="h5-road">\n' +
+    '  <div class="h5-road-head">🧭 Lộ trình tự ôn bài này <span>khoảng 75 phút · chia 2–3 buổi cũng được</span></div>\n' +
+    stages.map((s) =>
+      '  <div class="h5-road-stage">\n' +
+      '    <div class="h5-road-no"><b>' + s.zh + '</b><span>Chặng ' + s.n + '</span></div>\n' +
+      '    <div class="h5-road-body">\n' +
+      '      <div class="h5-road-name">' + s.name + ' <i>· ' + s.min + ' phút</i></div>\n' +
+      '      <div class="h5-road-desc">' + s.desc + '</div>\n' +
+      '      <div class="h5-road-tabs">' + s.tabs.map((t) =>
+              '<button type="button" class="h5-road-tab" data-action="show-tab" data-tab="' + t[0] + '">' + t[1] + '</button>').join('') +
+      '</div>\n    </div>\n  </div>\n').join('') +
+    '</div>';
+}
+
 function page(m) {
+  const has = (k) => m.has && m.has.indexOf(k) >= 0;
   const tabs = [
-    ['vocab', '📚 Từ mới'], ['hanviet', '🌉 Hán–Việt'], ['flash', '🃏 Thẻ nhớ'],
-    ['grammar', '📐 Ngữ pháp'], ['synonym', '🔍 Phân biệt từ'], ['dialog', '📖 Bài đọc'],
-    ['match', '1️⃣ Ghép cụm'], ['fill', '2️⃣ Điền từ'], ['sort', '2️⃣ Sắp xếp'],
-    ['errfix', '2️⃣ Chọn từ'], ['writing', '✍️ Viết đoạn'], ['speak', '4️⃣ Luyện nói'],
-    ['tongket', '5️⃣ Tổng kết']
-  ].map((t, i) => '  <button class="tab-btn' + (i === 0 ? ' active' : '') +
+    ['vocab', '📚 Từ mới'], ['hanviet', '🌉 Hán–Việt'], ['dialog', '📖 Bài đọc']]
+    .concat(has('listenexam') ? [['listenexam', '🎧 Nghe']] : [])
+    .concat([['grammar', '📐 Ngữ pháp'], ['synonym', '🔍 Phân biệt từ']])
+    .concat(has('register') ? [['register', '🎯 Nói sao cho hay']] : [])
+    .concat([['flash', '🃏 Thẻ nhớ'], ['match', '1️⃣ Ghép cụm'], ['fill', '2️⃣ Điền từ'],
+             ['sort', '2️⃣ Sắp xếp'], ['errfix', '2️⃣ Chọn từ']])
+    .concat(has('situation') ? [['situation', '💬 Tình huống']] : [])
+    .concat([['writing', '✍️ Viết đoạn']])
+    .concat(has('retell') ? [['retell', '🗣️ Kể lại bài']] : [])
+    .concat([['speak', '4️⃣ Luyện nói'], ['tongket', '5️⃣ Tổng kết']])
+    .map((t, i) => '  <button class="tab-btn' + (i === 0 ? ' active' : '') +
     '" data-action="show-tab" data-tab="' + t[0] + '">' + t[1] + '</button>').join('\n');
+
+  const extraSections =
+    (has('listenexam') ? sectionBlock('listenexam', '🎧 Nghe theo dạng đề', '听力',
+      'Nghe một lượt rồi trả lời ngay — đúng như phòng thi. Nguyên văn mở sau.') : '') +
+    (has('register') ? sectionBlock('register', '🎯 Nói sao cho hay', '得体',
+      'Cả hai câu đều đúng ngữ pháp. Chọn câu <b>phù hợp hơn</b> với hoàn cảnh — đây là chỗ HSK 5 khác HSK 3–4.') : '') +
+    (has('situation') ? sectionBlock('situation', '💬 Tình huống', '半交际性练习',
+      'Cho sẵn lời người kia, em viết lời đáp của mình theo đúng yêu cầu. Viết xong mới mở câu mẫu.') : '') +
+    (has('retell') ? sectionBlock('retell', '🗣️ Kể lại bài đọc', '复述',
+      'Bài tập cuối của giáo trình: kể lại nội dung bằng lời của chính em, không đọc thuộc.') : '');
 
   return `<!DOCTYPE html>
 <html lang="vi">
@@ -77,6 +139,8 @@ ${tabs}
 </nav>
 
 <div class="main">
+
+${roadmap(m)}
 
 <div id="vocab" class="section active">
   <div class="sec-head">
@@ -215,6 +279,7 @@ ${m.grammar.map((g, i) => grammarCard(i + 1, g)).join('\n\n')}
   <div id="speak-wrap"></div>
 </div>
 
+${extraSections}
 <div id="tongket" class="section">
   <div class="sec-head">
     <div class="sec-title">5️⃣ Tổng kết bài học <span class="sec-badge">总结</span></div>

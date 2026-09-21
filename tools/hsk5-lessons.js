@@ -5,6 +5,7 @@ module.exports = {
     zh: '爱的细节', py: 'Ài de xìjié', vn: 'Chi tiết của tình yêu',
     topic: 'Unit 1 了解生活 · Hôn nhân &amp; tình cảm vợ chồng',
     vocabCount: 38, dialogueCount: 6, synonymCount: 3,
+    has: ['listenexam', 'register', 'situation', 'retell'],
     grammar: [
       {point: '如何',
        explain: '如何 là đại từ, dùng để hỏi CÁCH THỨC, nghĩa gần với 怎么 / 怎么样 nhưng thiên về VĂN VIẾT. Ngoài ra 如何 còn đặt ở CUỐI câu để hỏi tình hình hoặc xin ý kiến — vị trí mà 怎么 không dùng được.',

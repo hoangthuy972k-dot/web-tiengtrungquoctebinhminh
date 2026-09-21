@@ -150,6 +150,200 @@
     });
   }
 
+
+  /* ══════════════════════════════════════════════════════════
+     🎧 NGHE THEO DẠNG ĐỀ — nghe trước, nhìn chữ sau
+     ══════════════════════════════════════════════════════════ */
+  function buildListenExam() {
+    var box = document.getElementById('listenexam-wrap');
+    if (!box || typeof listenExamData === 'undefined') return;
+    var d = listenExamData;
+
+    box.innerHTML =
+      '<div class="h5-hv-intro">' + d.intro + '<div class="h5-src">' + esc(d.source) + '</div></div>' +
+      d.items.map(function (it, i) {
+        return '<div class="h5-card h5-le" data-i="' + i + '">' +
+          '<div class="h5-card-head"><span class="h5-num">' + it.n + '</span>' +
+            '<button type="button" class="h5-play" data-le-play="' + i + '">🔊 Nghe đoạn hội thoại</button>' +
+          '</div>' +
+          '<div class="h5-le-q">' + esc(it.q) + '<span class="h5-le-qvn">' + esc(it.qvn) + '</span></div>' +
+          '<div class="h5-q-opts">' + it.opts.map(function (o, oi) {
+            return '<button type="button" class="h5-opt" data-le-opt="' + i + '_' + oi + '">' +
+              '<b>' + 'ABCD'.charAt(oi) + '.</b> ' + esc(o) + '</button>';
+          }).join('') + '</div>' +
+          '<div class="h5-q-why" hidden></div>' +
+          '<button type="button" class="h5-w-toggle h5-small" data-le-script="' + i + '">Xem nguyên văn ▾</button>' +
+          '<div class="h5-le-script" hidden>' +
+            it.lines.map(function (l) {
+              return '<div class="h5-le-line"><span class="h5-le-sp">' + l.sp + '</span>' +
+                '<span class="h5-le-zh">' + esc(l.zh) + '</span> ' + spk(l.zh) + '</div>';
+            }).join('') +
+            '<div class="h5-le-words">Từ của bài xuất hiện ở đây: ' +
+              it.words.map(function (w) { return '<b>' + esc(w) + '</b>'; }).join(' · ') + '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+    function playItem(i) {
+      var it = d.items[i], k = 0;
+      (function next() {
+        if (k >= it.lines.length) return;
+        var line = it.lines[k++];
+        say(line.zh);
+        // Cho moi luot doc xong roi moi doc tiep — uoc theo do dai cau
+        setTimeout(next, 900 + line.zh.length * 210);
+      })();
+    }
+
+    box.addEventListener('click', function (e) {
+      var p = e.target.closest('[data-le-play]');
+      if (p) { playItem(+p.getAttribute('data-le-play')); return; }
+
+      var s = e.target.closest('[data-le-script]');
+      if (s) {
+        var card = s.closest('.h5-le');
+        var sc = card.querySelector('.h5-le-script');
+        sc.hidden = !sc.hidden;
+        s.textContent = sc.hidden ? 'Xem nguyên văn ▾' : 'Ẩn nguyên văn ▴';
+        return;
+      }
+
+      var o = e.target.closest('[data-le-opt]');
+      if (!o) return;
+      var parts = o.getAttribute('data-le-opt').split('_');
+      var it = d.items[+parts[0]], pick = +parts[1];
+      var card2 = o.closest('.h5-le');
+      card2.querySelectorAll('.h5-opt').forEach(function (b, bi) {
+        b.classList.toggle('is-right', bi === it.ans);
+        b.disabled = true;
+      });
+      if (pick !== it.ans) o.classList.add('is-wrong');
+      var why = card2.querySelector('.h5-q-why');
+      why.hidden = false;
+      why.innerHTML = (pick === it.ans ? '✅ Đúng. ' : '❌ Chưa đúng. ') + esc(it.why);
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     💬 TÌNH HUỐNG — hoàn thành hội thoại (Cấp 2)
+     ══════════════════════════════════════════════════════════ */
+  function buildSituation() {
+    var box = document.getElementById('situation-wrap');
+    if (!box || typeof situationData === 'undefined') return;
+    var d = situationData;
+    var KEY = 'hyv_situ_' + location.pathname;
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+
+    box.innerHTML =
+      '<div class="h5-hv-intro">' + d.intro + '</div>' +
+      d.items.map(function (it, i) {
+        return '<div class="h5-card h5-si">' +
+          '<div class="h5-si-scene">🎬 ' + esc(it.scene) + '</div>' +
+          '<div class="h5-si-a"><span class="h5-si-sp">' + esc(it.a.sp) + '</span>' +
+            '<span class="h5-le-zh">' + esc(it.a.zh) + '</span> ' + spk(it.a.zh) +
+            '<div class="h5-ex-vn">' + esc(it.a.vn) + '</div></div>' +
+          '<div class="h5-si-need">Yêu cầu: ' + it.need.map(function (n) {
+            return '<span class="task-chip">' + esc(n) + '</span>';
+          }).join('') + '</div>' +
+          '<textarea class="h5-si-box" data-si="' + i + '" rows="2" placeholder="Lời đáp của em…"></textarea>' +
+          '<button type="button" class="h5-w-toggle h5-small" data-si-show="' + i + '">Xem câu mẫu ▾</button>' +
+          '<div class="h5-si-sample" hidden>' +
+            '<div class="h5-le-zh">' + esc(it.sample) + ' ' + spk(it.sample) + '</div>' +
+            '<div class="h5-w-model-py">' + esc(it.samplePy) + '</div>' +
+            '<div class="h5-ex-vn">' + esc(it.sampleVn) + '</div>' +
+            '<div class="h5-si-tip"><b>💡 Lưu ý:</b> ' + esc(it.tip) + '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+    box.querySelectorAll('[data-si]').forEach(function (ta) {
+      var i = ta.getAttribute('data-si');
+      if (saved[i]) ta.value = saved[i];
+      ta.addEventListener('input', function () {
+        saved[i] = ta.value;
+        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) { /* bo qua */ }
+      });
+    });
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-si-show]');
+      if (!b) return;
+      var s = b.nextElementSibling;
+      s.hidden = !s.hidden;
+      b.textContent = s.hidden ? 'Xem câu mẫu ▾' : 'Ẩn câu mẫu ▴';
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     🎯 NÓI SAO CHO HAY — 得体 / 语体
+     ══════════════════════════════════════════════════════════ */
+  function buildRegister() {
+    var box = document.getElementById('register-wrap');
+    if (!box || typeof registerData === 'undefined') return;
+    var d = registerData;
+
+    box.innerHTML =
+      '<div class="h5-hv-intro">' + d.intro + '</div>' +
+      d.items.map(function (it, i) {
+        return '<div class="h5-card h5-rg">' +
+          '<div class="h5-si-scene">🎬 ' + esc(it.scene) + '</div>' +
+          '<div class="h5-rg-pair">' +
+            ['a', 'b'].map(function (k) {
+              return '<button type="button" class="h5-rg-opt" data-rg="' + i + '_' + k + '">' +
+                '<span class="h5-rg-key">' + k.toUpperCase() + '</span>' +
+                '<span class="h5-le-zh">' + esc(it[k]) + '</span></button>';
+            }).join('') +
+          '</div>' +
+          '<div class="h5-q-why" hidden></div>' +
+        '</div>';
+      }).join('');
+
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-rg]');
+      if (!b) return;
+      var parts = b.getAttribute('data-rg').split('_');
+      var it = d.items[+parts[0]], pick = parts[1];
+      var card = b.closest('.h5-rg');
+      card.querySelectorAll('.h5-rg-opt').forEach(function (x) {
+        var k = x.getAttribute('data-rg').split('_')[1];
+        x.classList.toggle('is-right', k === it.better);
+        x.disabled = true;
+      });
+      if (pick !== it.better) b.classList.add('is-wrong');
+      var why = card.querySelector('.h5-q-why');
+      why.hidden = false;
+      why.innerHTML = (pick === it.better ? '✅ Chọn chuẩn. ' : '❌ Câu kia phù hợp hơn. ') + esc(it.why);
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     🗣️ KỂ LẠI BÀI ĐỌC 复述 (Cấp 3)
+     ══════════════════════════════════════════════════════════ */
+  function buildRetell() {
+    var box = document.getElementById('retell-wrap');
+    if (!box || typeof retellData === 'undefined') return;
+    var d = retellData;
+
+    box.innerHTML =
+      '<div class="h5-hv-intro">' + d.intro + '</div>' +
+      '<div class="h5-rt-grid">' + d.outline.map(function (o, i) {
+        return '<div class="h5-rt-step">' +
+          '<div class="h5-rt-no">' + (i + 1) + '</div>' +
+          '<div class="h5-rt-body">' +
+            '<div class="h5-rt-name">' + esc(o.step) + '</div>' +
+            '<div class="h5-rt-cue">' + esc(o.cue) + '</div>' +
+            '<div class="h5-rt-words">' + o.words.map(function (w) {
+              return '<span class="h5-rt-w">' + esc(w) + '</span>';
+            }).join('') + '</div>' +
+          '</div></div>';
+      }).join('') + '</div>' +
+      '<div class="h5-w-check"><div class="h5-w-label">Kể xong tự chấm</div>' +
+        d.checklist.map(function (c, i) {
+          return '<label class="h5-w-item"><input type="checkbox" data-rt="' + i + '"> ' + esc(c) + '</label>';
+        }).join('') +
+      '</div>';
+  }
+
   /* ---------- Ghi chu cho ban ghi am cua giao trinh ----------
      File nghe cua 标准教程 doc LIEN MOT MACH ca bai, khong cat theo tung doan.
      Engine gan no vao doan dau, nen phai noi ro keo hoc sinh tuong chi doan 1. */
@@ -170,5 +364,9 @@
   });
 
   buildSynonym();
+  buildListenExam();
+  buildSituation();
+  buildRegister();
+  buildRetell();
   buildWriting();
 })();

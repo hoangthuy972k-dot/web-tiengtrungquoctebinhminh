@@ -113,8 +113,79 @@
     if (!C || !box) return;
     if (selClass && !C.classes.some(function (c) { return c.id === selClass; })) selClass = null;
     if (!selClass && C.classes.length) selClass = C.classes[0].id;
-    box.innerHTML = classesSection(C) + (C.classes.length ? assignFormSection(C) + assignedSection(C) + membersSection(C) : '');
+    box.innerHTML = classesSection(C) + (C.classes.length ? assignFormSection(C) + assignedSection(C) + diemSection(C) + membersSection(C) : '');
     bind(box);
+  }
+
+  /* ---------------- So diem lop ----------------
+     Bon cot: chuyen can (tu dong theo bai da lam), xay dung bai (cong o che do
+     lop hoc), giua ki va cuoi ki (thay/co nhap o day).                      */
+  var diemData = null;      // { classId, sessions, roster }
+  var diemDangTai = false;
+
+  function taiDiem(classId) {
+    if (diemDangTai) return;
+    diemDangTai = true;
+    api('GET', '/api/admin/points?classId=' + encodeURIComponent(classId))
+      .then(function (d) { diemDangTai = false; diemData = d; render(); })
+      .catch(function () { diemDangTai = false; });
+  }
+
+  function diemSection(C) {
+    if (!selClass) return '';
+    if (!diemData || diemData.classId !== selClass) {
+      taiDiem(selClass);
+      return '<section class="admin-section"><div class="admin-section-title">🎒 Sổ điểm lớp</div>' +
+        '<p class="assign-empty">Đang tải sổ điểm…</p></section>';
+    }
+    var r = diemData.roster;
+    if (!r.length) {
+      return '<section class="admin-section"><div class="admin-section-title">🎒 Sổ điểm lớp</div>' +
+        '<p class="assign-empty">Lớp này chưa có danh sách học sinh.</p></section>';
+    }
+    var rows = r.map(function (s) {
+      return '<tr>' +
+        '<td class="dm-no">' + s.no + '</td>' +
+        '<td class="dm-name">' + esc(s.name) + (s.joined ? '' : ' <small class="dm-out">chưa vào lớp</small>') + '</td>' +
+        '<td class="dm-auto">' + s.chuyenCan + '<i>/' + s.tongBai + '</i></td>' +
+        '<td class="dm-auto' + (s.build > 0 ? ' is-plus' : '') + '">' + (s.build > 0 ? '+' + s.build : '—') + '</td>' +
+        '<td><input type="number" class="dm-in" min="0" max="10" data-diem="mid" data-id="' + esc(s.id) + '" value="' + (s.mid == null ? '' : s.mid) + '" placeholder="—"></td>' +
+        '<td><input type="number" class="dm-in" min="0" max="10" data-diem="final" data-id="' + esc(s.id) + '" value="' + (s.final == null ? '' : s.final) + '" placeholder="—"></td>' +
+      '</tr>';
+    }).join('');
+
+    return '<section class="admin-section">' +
+      '<div class="admin-section-title">🎒 Sổ điểm lớp</div>' +
+      '<p class="tc-hint"><b>Chuyên cần</b> và <b>Xây dựng bài</b> máy tự tính — chuyên cần +1 mỗi bài tập em làm xong, ' +
+        'xây dựng bài cộng ở <a href="/lop" target="_blank" rel="noopener">Chế độ lớp học</a> khi em giơ tay. ' +
+        'Hai cột kiểm tra thì thầy/cô gõ vào đây, gõ xong bấm ra ngoài là tự lưu.</p>' +
+      '<div class="admin-table-wrap"><table class="admin-table dm-table">' +
+        '<thead><tr><th>#</th><th>Học sinh</th><th>Chuyên cần</th><th>Xây dựng</th><th>Giữa kì</th><th>Cuối kì</th></tr></thead>' +
+        '<tbody>' + rows + '</tbody>' +
+      '</table></div>' +
+      '<p class="tc-hint" id="dmSaved"></p>' +
+    '</section>';
+  }
+
+  function luuDiem(el) {
+    var kind = el.getAttribute('data-diem');
+    var id = el.getAttribute('data-id');
+    var v = el.value.trim();
+    if (v === '') return;                       // de trong = chua cham, khong ghi gi
+    var n = Math.max(0, Math.min(10, Math.round(Number(v))));
+    if (!Number.isFinite(n)) { el.value = ''; return; }
+    el.value = n;
+    api('POST', '/api/admin/points', { classId: selClass, rosterId: id, kind: kind, value: n })
+      .then(function () {
+        var s = diemData && diemData.roster.filter(function (x) { return x.id === id; })[0];
+        if (s) s[kind] = n;
+        var note = document.getElementById('dmSaved');
+        if (note) {
+          note.textContent = '✓ Đã lưu lúc ' + new Date().toLocaleTimeString('vi-VN');
+          note.style.color = 'var(--color-green-600)';
+        }
+      })
+      .catch(function (e) { alert(e.message); });
   }
 
   function classesSection(C) {
@@ -306,6 +377,11 @@
 
   function bind(box) {
     var C = T.classes();
+    // O nhap diem giua ki / cuoi ki: go xong bam ra ngoai (hoac Enter) la luu
+    $all('.dm-in', box).forEach(function (el) {
+      el.addEventListener('change', function () { luuDiem(el); });
+      el.addEventListener('keydown', function (e) { if (e.key === 'Enter') el.blur(); });
+    });
     var lvSel = $('#tcLevel', box);
     if (lvSel) {
       // mac dinh: cap + bai ke tiep cua bai giao gan nhat cho lop dang chon

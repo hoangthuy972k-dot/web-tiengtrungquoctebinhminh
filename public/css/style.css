@@ -7745,3 +7745,19 @@ body.pinyin-hidden .py-inline {
 @media (max-width: 640px) {
   .ab-c.has-score { min-width: 56px; font-size: 0.8rem; }
 }
+
+/* Bốn cột tổng kết ở cuối bảng lớp: chuyên cần · xây dựng · giữa kì · cuối kì */
+.ab-table th.ab-sep, .ab-table td.ab-s:first-of-type { border-left: 2px solid var(--color-gray-300); }
+.ab-s {
+  text-align: center; min-width: 74px; font-weight: 800;
+  color: var(--color-gray-400); background: var(--color-gray-50);
+}
+.ab-s i { font-style: normal; font-weight: 600; font-size: 0.78em; opacity: 0.7; }
+/* Hang cua chinh em duoc to vang de de tim, nhung mau bon cot diem van phai
+   thang — chinh em la nguoi can nhin mau nhat.                              */
+.ab-table td.ab-s.is-ok, .ab-table tr.is-me td.ab-s.is-ok { color: var(--color-green-600); background: var(--color-green-50); }
+.ab-table td.ab-s.is-plus, .ab-table tr.is-me td.ab-s.is-plus { color: #fff; background: var(--color-gold-500); }
+.ab-table td.ab-s.is-exam, .ab-table tr.is-me td.ab-s.is-exam { color: var(--color-red-700); background: var(--color-red-50); }
+@media (max-width: 640px) {
+  .ab-s { min-width: 56px; font-size: 0.85rem; }
+}

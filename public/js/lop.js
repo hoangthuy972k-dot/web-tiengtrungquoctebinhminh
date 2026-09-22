@@ -1498,26 +1498,90 @@
     resetTimer();
   }
 
-  /* ---------------- quay so bao danh ---------------- */
-  var rollTimer = null;
-  function openRoll() {
-    $('#lopRollBox').hidden = false;
-    doRoll();
+  /* ---------------- cong diem xay dung bai ----------------
+     Em nao gio tay tra loi thi bam mot cai la cong ngay 1 diem. Diem nay
+     hien luon o Bang lop cua hoc sinh nen cac em thay minh duoc bao nhieu.
+     Bam nham thi co nut − de tru lai.                                     */
+  var build = { classes: [], roster: [], classId: '', loc: '' };
+
+  function openBuild() {
+    $('#lopBuildBox').hidden = false;
+    if (!adminPw()) {
+      $('#lopBuildGate').hidden = false;
+      $('#lopBuildMain').hidden = true;
+      return;
+    }
+    loadBuild();
   }
-  function doRoll() {
-    var size = Math.max(2, Math.min(99, parseInt($('#lopClassSize').value, 10) || 50));
-    $('#lopClassSize').value = size;
-    var el = $('#lopRollNumber');
-    var ticks = 18;
-    clearInterval(rollTimer);
-    rollTimer = setInterval(function () {
-      el.textContent = 1 + Math.floor(Math.random() * size);
-      if (--ticks <= 0) {
-        clearInterval(rollTimer);
-        $('#lopRollHint').textContent = 'Mời em số ' + el.textContent + ' lên bảng.';
-      }
-    }, 60);
-    $('#lopRollHint').textContent = '';
+  function loadBuild() {
+    $('#lopBuildGate').hidden = true;
+    $('#lopBuildMain').hidden = false;
+    $('#lopBuildHint').textContent = 'Đang tải danh sách…';
+    return apiAdmin('/api/admin/points?classId=' + encodeURIComponent(build.classId))
+      .then(function (d) {
+        build.classes = d.classes || [];
+        build.roster = d.roster || [];
+        var sel = $('#lopBuildClass');
+        sel.innerHTML = build.classes.map(function (c) {
+          return '<option value="' + c.id + '"' + (c.id === build.classId ? ' selected' : '') + '>' +
+            esc(c.name) + ' (' + c.size + ')</option>';
+        }).join('');
+        if (!build.classId && build.classes.length) {
+          build.classId = build.classes[0].id;
+          sel.value = build.classId;
+          return loadBuild();
+        }
+        renderBuild();
+      })
+      .catch(function (e) {
+        $('#lopBuildGate').hidden = false;
+        $('#lopBuildMain').hidden = true;
+        $('#lopBuildErr').hidden = false;
+        $('#lopBuildErr').textContent = e.message;
+      });
+  }
+
+  function renderBuild() {
+    var q = build.loc.trim().toLowerCase();
+    var ds = build.roster.filter(function (r) {
+      return !q || r.name.toLowerCase().indexOf(q) >= 0 || String(r.no) === q;
+    });
+    if (!build.roster.length) {
+      $('#lopBuildList').innerHTML = '';
+      $('#lopBuildHint').textContent = 'Lớp này chưa có danh sách. Vào trang Báo cáo → Lớp & bài giao để dán danh sách.';
+      return;
+    }
+    $('#lopBuildList').innerHTML = ds.map(function (r) {
+      return '<div class="lop-build-row' + (r.build > 0 ? ' has' : '') + '" data-id="' + r.id + '">' +
+        '<span class="lop-build-no">' + r.no + '</span>' +
+        '<span class="lop-build-name">' + esc(r.name) + '</span>' +
+        '<span class="lop-build-sum">' + (r.build > 0 ? '+' + r.build : '') + '</span>' +
+        '<button type="button" class="lop-build-minus" data-d="-1" title="Trừ 1 điểm">−</button>' +
+        '<button type="button" class="lop-build-plus" data-d="1">+1</button>' +
+      '</div>';
+    }).join('');
+    var tong = build.roster.reduce(function (a, r) { return a + (r.build || 0); }, 0);
+    $('#lopBuildHint').textContent = build.roster.length + ' học sinh · cả lớp đã được cộng ' + tong + ' điểm';
+  }
+
+  function chamBuild(rosterId, d) {
+    var r = build.roster.find(function (x) { return x.id === rosterId; });
+    if (!r) return;
+    if (d < 0 && !r.build) return;              // chua co diem thi khong tru xuong am
+    var truoc = r.build;
+    r.build = Math.max(0, r.build + d);         // hien ngay, khong cho may chu
+    renderBuild();
+    flashNote((d > 0 ? '✋ +1 · ' : '− 1 · ') + r.name + ' — tổng ' + r.build);
+    apiAdmin('/api/admin/points', {
+      method: 'POST',
+      body: JSON.stringify({ classId: build.classId, rosterId: rosterId, kind: 'build', value: d })
+    }).then(function (res) {
+      if (res && typeof res.build === 'number') { r.build = res.build; renderBuild(); }
+    }).catch(function (e) {
+      r.build = truoc;                          // may chu tu choi thi tra lai nhu cu
+      renderBuild();
+      $('#lopBuildHint').textContent = e.message;
+    });
   }
 
   /* ---------------- goi ten hoc sinh len bang ----------------
@@ -2106,7 +2170,7 @@
     $('#lopTimerToggle').addEventListener('click', toggleTimer);
     $('#lopTimerSet').addEventListener('click', cycleTimerSecs);
     $('#lopSound').addEventListener('click', toggleSound);
-    $('#lopRoll').addEventListener('click', openRoll);
+    $('#lopBuild').addEventListener('click', openBuild);
     $('#lopCall').addEventListener('click', openCall);
     $('#lopCallClose').addEventListener('click', function () { $('#lopCallBox').hidden = true; });
     $('#lopCallClass').addEventListener('change', function () {
@@ -2132,8 +2196,22 @@
       $('#lopCallErr').hidden = true;
       loadCallRoster();
     });
-    $('#lopRollAgain').addEventListener('click', doRoll);
-    $('#lopRollClose').addEventListener('click', function () { clearInterval(rollTimer); $('#lopRollBox').hidden = true; });
+    $('#lopBuildClose').addEventListener('click', function () { $('#lopBuildBox').hidden = true; });
+    $('#lopBuildClass').addEventListener('change', function () { build.classId = this.value; loadBuild(); });
+    $('#lopBuildFind').addEventListener('input', function () { build.loc = this.value; renderBuild(); });
+    $('#lopBuildLogin').addEventListener('submit', function (e) {
+      e.preventDefault();
+      call.pw = $('#lopBuildPw').value;
+      try { sessionStorage.setItem('hyv_admin_pw', call.pw); } catch (err) { /* bo qua */ }
+      $('#lopBuildErr').hidden = true;
+      loadBuild();
+    });
+    $('#lopBuildList').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-d]');
+      if (!b) return;
+      var row = b.closest('.lop-build-row');
+      chamBuild(row.getAttribute('data-id'), parseInt(b.getAttribute('data-d'), 10));
+    });
 
     document.addEventListener('keydown', function (e) {
       if ($('#lopPlay').hidden) return;
@@ -2201,7 +2279,7 @@
         resetTimer(); return;
       }
       if (e.key === 't' || e.key === 'T') { toggleTimer(); return; }
-      if (e.key === 'r' || e.key === 'R') { openRoll(); return; }
+      if (e.key === 'r' || e.key === 'R') { openBuild(); return; }
       if (/^[1-6]$/.test(e.key)) { addScore(parseInt(e.key, 10) - 1, 1); }
     });
 

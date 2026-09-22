@@ -2165,11 +2165,21 @@ async function initClassTables() {
       'INDEX idx_class (class_id), INDEX idx_roster (roster_id)' +
     ')'
   );
+  // So diem thay/co cham tay: xay dung bai (cong tung diem mot khi em gio tay),
+  // diem giua ki va cuoi ki. Diem chuyen can KHONG luu o day — no duoc tinh tu
+  // so bai tap da hoan thanh nen luon tu khop voi thuc te.
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS class_points (' +
+      'id VARCHAR(16) PRIMARY KEY, class_id VARCHAR(16) NOT NULL, roster_id VARCHAR(16) NOT NULL, ' +
+      'kind VARCHAR(12) NOT NULL, value INT NOT NULL, ms BIGINT NOT NULL, note VARCHAR(200) NULL, ' +
+      'INDEX idx_class (class_id), INDEX idx_roster (roster_id), INDEX idx_kind (kind)' +
+    ')'
+  );
 }
 
 function readClassFile() {
   const d = readJsonFile(CLASSES_FILE) || {};
-  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {}, oral: d.oral || [] };
+  return { classes: d.classes || [], members: d.members || {}, assignments: d.assignments || [], roster: d.roster || [], done: d.done || {}, oral: d.oral || [], points: d.points || [] };
 }
 
 // Moi hoc sinh mo trang chu deu goi /api/class/me; 6 lop x 50 em co the doc lien
@@ -2382,10 +2392,27 @@ async function classBoard(st, classId, meId) {
       return { s: s.status, c: s.correct || 0, t: s.total || 0 };
     });
   }
-  const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId) }));
+  // So diem cua lop — de hoc sinh thay minh duoc cong bao nhieu
+  const tongDiem = sumPoints(await readClassPoints(), classId);
+  function diem(r) {
+    const m = marks(r.userId);
+    // Chuyen can = so bai tap da lam xong; tinh thang tu marks nen luon khop bang tren
+    const chuyenCan = m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0;
+    const p = tongDiem[r.id] || { build: 0, mid: null, final: null };
+    return { chuyenCan, build: p.build, mid: p.mid, final: p.final };
+  }
+  const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId), diem: diem(r) }));
   // Hoc sinh da vao lop nhung chua co ten trong danh sach (hoac lop chua co danh sach)
   memberIds.filter((u) => !linked.has(u) && nameById[u]).sort((a, b) => nameById[a].localeCompare(nameById[b], 'vi'))
-    .forEach((u) => rows.push({ name: nameById[u], me: u === meId, joined: true, extra: roster.length > 0, marks: marks(u) }));
+    .forEach((u) => {
+      const m = marks(u);
+      // Em nay chua co ten trong danh sach nen khong co so diem cham tay,
+      // nhung chuyen can van tinh duoc tu bai da lam.
+      rows.push({
+        name: nameById[u], me: u === meId, joined: true, extra: roster.length > 0, marks: m,
+        diem: { chuyenCan: m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0, build: 0, mid: null, final: null }
+      });
+    });
   return {
     sessions: list.map((a) => ({ id: a.id, session: a.session, lessonUrl: a.lessonUrl, dueMs: a.dueMs })),
     rows,
@@ -2678,6 +2705,32 @@ async function readOralChecks() {
   return rows.map((r) => ({ id: r.id, classId: r.class_id, rosterId: r.roster_id, ms: Number(r.ms), score: r.score == null ? null : Number(r.score) }));
 }
 
+// ---------------- So diem cua lop ----------------
+// build = xay dung bai (cong 1 diem moi lan gio tay), mid = giua ki, final = cuoi ki
+const POINT_KINDS = ['build', 'mid', 'final'];
+
+async function readClassPoints() {
+  if (!USE_DB) return readClassFile().points || [];
+  const [rows] = await dbPool.query('SELECT * FROM class_points ORDER BY ms');
+  return rows.map((r) => ({
+    id: r.id, classId: r.class_id, rosterId: r.roster_id,
+    kind: r.kind, value: Number(r.value), ms: Number(r.ms), note: r.note || ''
+  }));
+}
+
+// Gop so diem cua ca lop lai: { rosterId: {build, mid, final} }
+// build cong don; mid/final lay ban ghi MOI NHAT vi thay/co co the sua lai diem.
+function sumPoints(points, classId) {
+  const out = {};
+  points.filter((p) => p.classId === classId).forEach((p) => {
+    const e = out[p.rosterId] = out[p.rosterId] || { build: 0, mid: null, final: null, midMs: 0, finalMs: 0 };
+    if (p.kind === 'build') e.build += p.value;
+    else if (p.kind === 'mid' && p.ms >= e.midMs) { e.mid = p.value; e.midMs = p.ms; }
+    else if (p.kind === 'final' && p.ms >= e.finalMs) { e.final = p.value; e.finalMs = p.ms; }
+  });
+  return out;
+}
+
 // ---------------- Kiem tra khoa AI (chi quan tri) ----------------
 // De thay/co tu biet khoa con dung duoc khong, khong phai doan qua thong bao
 // hien cho hoc sinh. KHONG bao gio tra ve gia tri khoa.
@@ -2760,6 +2813,91 @@ app.post('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
       [row.id, row.classId, row.rosterId, row.ms, row.score]);
   }
   res.json({ ok: true });
+}));
+
+// ---------------- So diem lop (chi quan tri) ----------------
+// Bon cot diem:
+//   chuyenCan — TU DONG: moi bai tap duoc giao ma em hoan thanh = +1
+//   build     — thay/co bam cong tay khi em gio tay xay dung bai
+//   mid/final — diem kiem tra giua ki / cuoi ki, thay/co nhap
+app.get('/api/admin/points', requireAdmin, asyncRoute(async (req, res) => {
+  const st = await loadClassState();
+  const classId = String(req.query.classId || (st.classes[0] && st.classes[0].id) || '');
+  const classes = st.classes.map((c) => ({
+    id: c.id, name: c.name,
+    size: st.roster.filter((r) => r.classId === c.id).length
+  }));
+  if (!classId) return res.json({ classes, classId: '', sessions: 0, roster: [] });
+
+  const list = numberedAssignments(st, classId);
+  const roster = st.roster.filter((r) => r.classId === classId).sort((a, b) => a.sort - b.sort);
+  const memberIds = Object.keys(st.members).filter((u) => st.members[u].classId === classId);
+  const done = await loadPartDone(memberIds);
+  const points = await readClassPoints();
+  const tong = sumPoints(points, classId);
+  const now = Date.now();
+
+  const out = roster.map((r, i) => {
+    const d = (r.userId && st.members[r.userId] && st.members[r.userId].classId === classId)
+      ? (done[r.userId] || {}) : null;
+    // Chuyen can = so bai tap da lam xong (dung han hoac muon deu tinh)
+    let chuyenCan = 0;
+    if (d) {
+      list.forEach((a) => {
+        const s = assignmentStatus(a, d[a.lessonUrl], now).status;
+        if (s === 'done' || s === 'late') chuyenCan++;
+      });
+    }
+    const p = tong[r.id] || { build: 0, mid: null, final: null };
+    return {
+      id: r.id, no: i + 1, name: r.name,
+      joined: !!d,
+      chuyenCan, tongBai: list.length,
+      build: p.build, mid: p.mid, final: p.final
+    };
+  });
+  res.json({ classes, classId, sessions: list.length, roster: out });
+}));
+
+app.post('/api/admin/points', requireAdmin, asyncRoute(async (req, res) => {
+  const classId = String(req.body?.classId || '');
+  const rosterId = String(req.body?.rosterId || '');
+  const kind = String(req.body?.kind || '');
+  if (POINT_KINDS.indexOf(kind) < 0) return res.status(400).json({ error: 'Loại điểm không hợp lệ.' });
+
+  const st = await loadClassState();
+  const r = st.roster.find((x) => x.id === rosterId && x.classId === classId);
+  if (!r) return res.status(404).json({ error: 'Không tìm thấy học sinh trong lớp này.' });
+
+  let value;
+  if (kind === 'build') {
+    // Cong (hoac tru) diem xay dung bai — moi lan ghi mot dong de con xem lai duoc
+    value = Math.round(Number(req.body?.value));
+    if (!Number.isFinite(value) || value === 0) value = 1;
+    value = Math.max(-5, Math.min(5, value));
+  } else {
+    value = Math.round(Number(req.body?.value));
+    if (!Number.isFinite(value)) return res.status(400).json({ error: 'Điểm không hợp lệ.' });
+    value = Math.max(0, Math.min(10, value));
+  }
+
+  const row = {
+    id: newShortId(), classId, rosterId, kind, value, ms: Date.now(),
+    note: String(req.body?.note || '').trim().slice(0, 200)
+  };
+  if (!USE_DB) {
+    const d = readClassFile();
+    d.points = (d.points || []).concat(row);
+    writeClassFile(d);
+  } else {
+    await classDbWrite(
+      'INSERT INTO class_points (id, class_id, roster_id, kind, value, ms, note) VALUES (?,?,?,?,?,?,?)',
+      [row.id, row.classId, row.rosterId, row.kind, row.value, row.ms, row.note]
+    );
+  }
+  // Tra ve tong moi de giao dien cap nhat ngay, khong phai goi lai ca bang
+  const tong = sumPoints(await readClassPoints(), classId)[rosterId] || { build: 0, mid: null, final: null };
+  res.json({ ok: true, build: tong.build, mid: tong.mid, final: tong.final });
 }));
 
 app.post('/api/admin/assignments', requireAdmin, asyncRoute(async (req, res) => {

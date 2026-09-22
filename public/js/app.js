@@ -14415,6 +14415,22 @@
     todo: ['is-todo', '', 'Chưa làm']
   };
 
+  /* Bon cot tong ket cuoi bang lop.
+     Chuyen can tu dong theo so bai da lam; Xay dung do thay/co cong tay o
+     che do lop hoc; Giua ki / Cuoi ki do thay/co nhap o trang bao cao. */
+  function boardScoreCells(r, soBuoi) {
+    var d = r.diem || {};
+    var cc = d.chuyenCan || 0;
+    var xd = d.build || 0;
+    function o(noiDung, cls, title) {
+      return '<td class="ab-s' + (cls ? ' ' + cls : '') + '"' + (title ? ' title="' + title + '"' : '') + '>' + noiDung + '</td>';
+    }
+    return o(soBuoi ? cc + '<i>/' + soBuoi + '</i>' : '—', cc > 0 ? 'is-ok' : '', 'Đã hoàn thành ' + cc + '/' + soBuoi + ' bài được giao') +
+      o(xd > 0 ? '+' + xd : '—', xd > 0 ? 'is-plus' : '', xd > 0 ? 'Được cộng ' + xd + ' điểm xây dựng bài' : 'Chưa có điểm xây dựng bài') +
+      o(d.mid == null ? '—' : d.mid, d.mid != null ? 'is-exam' : '', 'Điểm kiểm tra giữa kì') +
+      o(d.final == null ? '—' : d.final, d.final != null ? 'is-exam' : '', 'Điểm kiểm tra cuối kì');
+  }
+
   function boardHtml() {
     var b = assignState.board || { sessions: [], rows: [] };
     if (!b.rows.length) return '<p class="assign-empty">Lớp chưa có danh sách.</p>';
@@ -14428,7 +14444,12 @@
         var info = lessonByUrl(s.lessonUrl);
         return '<th title="' + assignEsc(info ? 'Bài ' + info.lesson.number + ': ' + info.lesson.title : '') + '">Buổi ' + s.session +
           '<small>' + counts[i] + '/' + b.rows.length + '</small></th>';
-      }).join('') + '</tr>';
+      }).join('') +
+      '<th class="ab-sep" title="Mỗi bài tập làm xong được +1">Chuyên cần<small>/' + ses.length + '</small></th>' +
+      '<th title="Thầy/cô cộng khi em giơ tay xây dựng bài">Xây dựng<small>điểm</small></th>' +
+      '<th>Giữa kì<small>/10</small></th>' +
+      '<th>Cuối kì<small>/10</small></th>' +
+      '</tr>';
     var body = b.rows.map(function (r, ri) {
       return '<tr class="' + (r.me ? 'is-me' : '') + (r.joined ? '' : ' is-out') + '">' +
         '<td class="ab-name"><span class="ab-no">' + (ri + 1) + '</span>' + assignEsc(r.name) + (r.me ? ' <b class="ab-me">(em)</b>' : '') +
@@ -14443,7 +14464,7 @@
           var nhan = diem || m[1];
           var chuThich = m[2] + (diem ? ' · đúng ' + diem + ' câu' : '');
           return '<td class="ab-c ' + m[0] + (diem ? ' has-score' : '') + '" title="' + chuThich + '">' + nhan + '</td>';
-        }).join('') + '</tr>';
+        }).join('') + boardScoreCells(r, ses.length) + '</tr>';
     }).join('');
     return (ses.length ? '' : '<p class="assign-empty">Thầy cô chưa giao bài nào. Khi có bài, cột Buổi 1, Buổi 2… sẽ hiện ở đây.</p>') +
       '<div class="ab-wrap"><table class="ab-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +

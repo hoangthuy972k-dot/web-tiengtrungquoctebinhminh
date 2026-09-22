@@ -204,7 +204,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       <button type="button" class="lop-bar-btn" id="lopTimerToggle">▶ Bắt đầu</button>
       <button type="button" class="lop-bar-btn" id="lopTimerSet" title="Đổi thời gian">30s</button>
       <button type="button" class="lop-bar-btn lop-bar-icon" id="lopSound" title="Bật/tắt tiếng">🔊</button>
-      <button type="button" class="lop-bar-btn" id="lopRoll">🎲 Gọi số</button>
+      <button type="button" class="lop-bar-btn" id="lopBuild">✋ Xây dựng bài</button>
       <button type="button" class="lop-bar-btn" id="lopCall">🙋 Gọi tên</button>
     </div>
   </header>
@@ -214,17 +214,29 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
   <footer class="lop-scorebar" id="lopScorebar"></footer>
 </div>
 
-<!-- Hop thoai quay so bao danh -->
-<div id="lopRollBox" class="lop-roll-box" hidden>
-  <div class="lop-roll-card">
-    <div class="lop-roll-label">Số báo danh</div>
-    <div class="lop-roll-number" id="lopRollNumber">–</div>
-    <div class="lop-roll-actions">
-      <label>Sĩ số <input type="number" id="lopClassSize" min="2" max="99" value="50"></label>
-      <button type="button" class="btn btn-primary" id="lopRollAgain">Quay lại</button>
-      <button type="button" class="lop-mini-btn" id="lopRollClose">Đóng</button>
+<!-- Cong diem xay dung bai · em nao gio tay thi bam cong ngay tren lop -->
+<div id="lopBuildBox" class="lop-roll-box" hidden>
+  <div class="lop-call-card lop-build-card">
+    <div class="lop-call-head">
+      <span>✋ Xây dựng bài</span>
+      <select id="lopBuildClass" class="lop-call-class"></select>
+      <button type="button" class="lop-mini-btn" id="lopBuildClose">Đóng</button>
     </div>
-    <div class="lop-roll-hint" id="lopRollHint"></div>
+
+    <div id="lopBuildGate" class="lop-call-gate" hidden>
+      <p>Nhập mật khẩu quản trị để lấy danh sách lớp.</p>
+      <form id="lopBuildLogin">
+        <input type="password" id="lopBuildPw" placeholder="Mật khẩu quản trị" autocomplete="current-password">
+        <button type="submit" class="btn btn-primary">Mở danh sách</button>
+      </form>
+      <p class="lop-call-err" id="lopBuildErr" hidden></p>
+    </div>
+
+    <div id="lopBuildMain" hidden>
+      <input type="search" id="lopBuildFind" class="lop-build-find" placeholder="Gõ tên để tìm nhanh…">
+      <div id="lopBuildList" class="lop-build-list"></div>
+      <div class="lop-call-hint" id="lopBuildHint"></div>
+    </div>
   </div>
 </div>
 

@@ -2375,7 +2375,12 @@ async function classBoard(st, classId, meId) {
   function marks(userId) {
     if (!userId || !st.members[userId] || st.members[userId].classId !== classId) return null;
     const d = done[userId] || {};
-    return list.map((a) => assignmentStatus(a, d[a.lessonUrl], now).status);
+    // Tra ca SO CAU DUNG de bang lop hien duoc diem, khong chi hien dau tick.
+    // Van khong tra email hay bat cu gi khac cua ban khac.
+    return list.map((a) => {
+      const s = assignmentStatus(a, d[a.lessonUrl], now);
+      return { s: s.status, c: s.correct || 0, t: s.total || 0 };
+    });
   }
   const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId) }));
   // Hoc sinh da vao lop nhung chua co ten trong danh sach (hoac lop chua co danh sach)

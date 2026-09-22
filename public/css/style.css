@@ -7739,3 +7739,9 @@ body.pinyin-hidden .py-inline {
 .wb-drill-input.is-no { border-color: var(--color-red-500) !important; background: var(--color-red-50); color: var(--color-red-600); }
 .wb-hl { outline: 3px solid var(--color-gold-500); outline-offset: 3px; border-radius: 8px; }
 @media (max-width: 640px) { .wb-prog-next { margin-left: 0; } }
+
+/* O bang lop co diem: chu nho hon dau tick cho vua so "8/10" */
+.ab-c.has-score { font-size: 0.86rem; font-weight: 700; letter-spacing: -0.01em; min-width: 72px; }
+@media (max-width: 640px) {
+  .ab-c.has-score { min-width: 56px; font-size: 0.8rem; }
+}

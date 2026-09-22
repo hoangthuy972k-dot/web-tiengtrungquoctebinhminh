@@ -14434,14 +14434,22 @@
         '<td class="ab-name"><span class="ab-no">' + (ri + 1) + '</span>' + assignEsc(r.name) + (r.me ? ' <b class="ab-me">(em)</b>' : '') +
           (!r.joined ? ' <small class="ab-out">chưa vào lớp</small>' : '') + '</td>' +
         ses.map(function (_, i) {
-          var m = r.marks ? BOARD_MARK[r.marks[i]] : null;
-          return m ? '<td class="ab-c ' + m[0] + '" title="' + m[2] + '">' + m[1] + '</td>' : '<td class="ab-c is-out"></td>';
+          var cell = r.marks ? r.marks[i] : null;
+          // May chu tra ve {s, c, t}; ban cu chi tra ve chuoi trang thai
+          var st = cell && typeof cell === 'object' ? cell.s : cell;
+          var m = BOARD_MARK[st];
+          if (!m) return '<td class="ab-c is-out"></td>';
+          var diem = cell && typeof cell === 'object' && cell.t > 0 ? cell.c + '/' + cell.t : '';
+          var nhan = diem || m[1];
+          var chuThich = m[2] + (diem ? ' · đúng ' + diem + ' câu' : '');
+          return '<td class="ab-c ' + m[0] + (diem ? ' has-score' : '') + '" title="' + chuThich + '">' + nhan + '</td>';
         }).join('') + '</tr>';
     }).join('');
     return (ses.length ? '' : '<p class="assign-empty">Thầy cô chưa giao bài nào. Khi có bài, cột Buổi 1, Buổi 2… sẽ hiện ở đây.</p>') +
       '<div class="ab-wrap"><table class="ab-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div>' +
       '<p class="ab-hint">↔ Kéo ngang bảng để xem các buổi khác.</p>' +
-      '<p class="ab-legend"><span class="ab-c is-done">✓</span> Đã làm <span class="ab-c is-late">✓</span> Nộp muộn · Ô trống: chưa làm</p>';
+      '<p class="ab-legend"><span class="ab-c is-done">✓</span> Đã làm <span class="ab-c is-late">✓</span> Nộp muộn · Ô trống: chưa làm · ' +
+        'Số trong ô là <b>số câu đúng / tổng số câu</b></p>';
   }
 
   function renderAssignCard() {

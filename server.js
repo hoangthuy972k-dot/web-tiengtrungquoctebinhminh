@@ -1671,9 +1671,12 @@ app.post('/api/ai/chat', asyncRoute(async (req, res) => {
 
   if (!clientGone && lastErr) {
     if (!wroteText) refund();
+    // Phan biet ro tung loai loi — neu khong, thay/co cu doi mai ma khong biet
+    // la khoa API het han muc chu khong phai may chu ban.
     let msg = 'Trợ lý AI đang bận, bạn thử lại sau ít phút nhé.';
     if (lastErr.status === 429) msg = 'Trợ lý AI đã dùng hết lượt miễn phí hoặc đang quá tải, bạn thử lại sau nhé.';
-    else if (lastErr.status === 401 || lastErr.status === 403) msg = 'Trợ lý AI chưa được cấu hình đúng trên máy chủ.';
+    else if (lastErr.status === 402) msg = 'Khoá AI của website đã hết hạn mức sử dụng. Báo thầy/cô nạp thêm hoặc đổi khoá mới nhé!';
+    else if (lastErr.status === 401 || lastErr.status === 403) msg = 'Khoá AI của website chưa đúng hoặc đã bị thu hồi. Báo thầy/cô kiểm tra lại nhé!';
     res.write((wroteText ? '\n\n' : '') + '⚠️ ' + msg);
   }
   res.end();
@@ -2669,6 +2672,46 @@ async function readOralChecks() {
   const [rows] = await dbPool.query('SELECT * FROM oral_checks ORDER BY ms');
   return rows.map((r) => ({ id: r.id, classId: r.class_id, rosterId: r.roster_id, ms: Number(r.ms), score: r.score == null ? null : Number(r.score) }));
 }
+
+// ---------------- Kiem tra khoa AI (chi quan tri) ----------------
+// De thay/co tu biet khoa con dung duoc khong, khong phai doan qua thong bao
+// hien cho hoc sinh. KHONG bao gio tra ve gia tri khoa.
+app.get('/api/admin/ai-status', requireAdmin, asyncRoute(async (req, res) => {
+  const cauHinh = {
+    groq: !!GROQ_API_KEY,
+    gemini: !!GEMINI_API_KEY,
+    anthropic: !!anthropic
+  };
+  const dangDung = aiProviders().map((p) => p.name);
+  if (!dangDung.length) {
+    return res.json({
+      ok: false,
+      cauHinh,
+      dangDung,
+      ketLuan: 'Chua co khoa AI nao tren may chu. Them GROQ_API_KEY (hoac GEMINI_API_KEY) vao bien moi truong roi khoi dong lai.'
+    });
+  }
+  // Goi thu mot cau that ngan de biet khoa con han muc khong
+  let ok = false; let loi = null;
+  const thu = { write() {}, end() {}, headersSent: true };
+  try {
+    await aiProviders()[0].stream(thu, [{ role: 'user', content: 'ping' }]);
+    ok = true;
+  } catch (e) {
+    loi = { status: e.status || null, message: String(e.message || e).slice(0, 300) };
+  }
+  res.json({
+    ok,
+    cauHinh,
+    dangDung,
+    loi,
+    ketLuan: ok
+      ? 'Khoa AI dang hoat dong binh thuong (' + dangDung[0] + ').'
+      : (loi && loi.status === 402 ? 'Khoa ' + dangDung[0] + ' da HET TIN DUNG — can nap them hoac doi khoa khac.'
+        : loi && (loi.status === 401 || loi.status === 403) ? 'Khoa ' + dangDung[0] + ' KHONG HOP LE hoac da bi thu hoi.'
+        : 'Khoa ' + dangDung[0] + ' goi thu bi loi — xem phan loi ben duoi.')
+  });
+}));
 
 app.get('/api/admin/oral', requireAdmin, asyncRoute(async (req, res) => {
   const st = await loadClassState();

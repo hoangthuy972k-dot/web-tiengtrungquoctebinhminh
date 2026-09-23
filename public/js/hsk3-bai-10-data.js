@@ -3,335 +3,1622 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'个子',py:'gèzi',pos:'Danh từ',vn:'vóc dáng, thân hình', hv: 'cá tử',em:'📏',lesson:1,
-   explain:['Chiều cao và hình dáng cơ thể một người.'],
-   usage:'Danh từ; thường đi cùng tính từ 高/矮: 个子高, 个子矮.',
-   collo:['个子高','个子矮','大个子'],
-   ex_zh:'大山，你和马可谁个子高？',ex_py:'Dàshān, nǐ hé Mǎkě shéi gèzi gāo?',ex_vn:'Đại Sơn, giữa bạn và Marco ai cao hơn?',
-   exList:[
-     {zh:'大山，你和马可谁个子高？',py:'Dàshān, nǐ hé Mǎkě shéi gèzi gāo?',vn:'Đại Sơn, giữa bạn và Marco ai cao hơn?'},
-     {zh:'她个子真高，讲得怎么样？',py:'Tā gèzi zhēn gāo, jiǎng de zěnmeyàng?',vn:'Cô ấy cao thật đấy, giảng thế nào?'},
-     {zh:'你女儿个子真高，比你高多了吧？',py:'Nǐ nǚ\'ér gèzi zhēn gāo, bǐ nǐ gāo duō le ba?',vn:'Con gái bạn cao thật đấy, cao hơn bạn nhiều nhỉ?'},
-   ],
-   hanzi:[
-     {c:'个',p:'gè',type:'独体字 · Chữ đơn',st:3,ord:'nét liền',rad:'人 (nhân – người)',mean:'cái, chiếc (lượng từ)',
-      tip:'Chữ tượng hình mô phỏng hình một người/vật đơn lẻ → LƯỢNG TỪ đếm đơn vị; 个子 = "cái khung" của thân thể = VÓC DÁNG.',
-      cf:'介 (jiè – "giới thiệu, ở giữa", nét gần giống")',w:'个子 / 一个 / 那个'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Marco cao hơn mình một chút.',answer:'马可比我高一点儿。',answerPy:'Mǎkě bǐ wǒ gāo yìdiǎnr.',
-      note:'A比B+tính từ+一点儿 diễn tả mức chênh lệch nhỏ (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Con trai tôi cao hơn tôi rồi, thật ra nó chỉ mười bảy mười tám tuổi thôi.',answer:'我儿子比我高了，其实他才十七八岁。',answerPy:'Wǒ érzi bǐ wǒ gāo le, qíshí tā cái shíqī-bā suì.',
-      note:'十七八岁 = số ước lượng ghép hai số liên tiếp (điểm ngữ pháp bài này).'},
-   ]},
-
-  {n:2,zh:'矮',py:'ǎi',pos:'Tính từ',vn:'thấp', hv: 'ải',em:'📉',lesson:1,
-   explain:['Có chiều cao thấp, trái nghĩa với 高.'],
-   usage:'Tính từ, làm vị ngữ với 很/比: 很矮, A比B矮.',
-   collo:['比……矮','矮一点儿','个子矮'],
-   ex_zh:'马可比我高，我比马可矮一点儿。',ex_py:'Mǎkě bǐ wǒ gāo, wǒ bǐ Mǎkě ǎi yìdiǎnr.',ex_vn:'Marco cao hơn mình, mình thấp hơn Marco một chút.',
-   exList:[
-     {zh:'马可比我高，我比马可矮一点儿。',py:'Mǎkě bǐ wǒ gāo, wǒ bǐ Mǎkě ǎi yìdiǎnr.',vn:'Marco cao hơn mình, mình thấp hơn Marco một chút.'},
-     {zh:'他个子也不高，只比我高一点儿。',py:'Tā gèzi yě bù gāo, zhǐ bǐ wǒ gāo yìdiǎnr.',vn:'Vóc dáng cậu ấy cũng không cao, chỉ cao hơn mình một chút.'},
-     {zh:'我比马可大两岁。',py:'Wǒ bǐ Mǎkě dà liǎng suì.',vn:'Mình lớn hơn Marco hai tuổi.'},
-   ],
-   hanzi:[
-     {c:'矮',p:'ǎi',type:'左右结构 · Trái-phải',st:13,ord:'矢 trái → 委 phải',rad:'矢 (thỉ – mũi tên)',mean:'thấp',
-      tip:'矢(mũi tên, vật ngắn) + 委(cong xuống) → hình ảnh vật NGẮN, CONG THẤP xuống = THẤP.',
-      cf:'委 (wěi – "giao phó, ủy thác", không có bộ 矢")',w:'矮 / 很矮 / 比较矮'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy cậu ấy thấp hơn tôi nhưng chạy rất nhanh.',answer:'虽然他比我矮，但是跑得很快。',answerPy:'Suīrán tā bǐ wǒ ǎi, dànshì pǎo de hěn kuài.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-     {promptLang:'vi',prompt:'Nếu bạn thấp hơn tôi thì đứng phía trước đi.',answer:'如果你比我矮，就站在前边吧。',answerPy:'Rúguǒ nǐ bǐ wǒ ǎi, jiù zhàn zài qiánbian ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'历史',py:'lìshǐ',pos:'Danh từ',vn:'môn Lịch Sử', hv: 'lịch sử',em:'📜',lesson:2,
-   explain:['Môn học nghiên cứu các sự kiện đã xảy ra trong quá khứ.'],
-   usage:'Danh từ; đi cùng 课/学: 历史课, 学历史.',
-   collo:['历史课','学历史','中国历史'],
-   ex_zh:'我喜欢历史课、体育课，不喜欢数学课。',ex_py:'Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.',ex_vn:'Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán.',
-   exList:[
-     {zh:'我喜欢历史课、体育课，不喜欢数学课。',py:'Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.',vn:'Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán.'},
-     {zh:'我觉得数学比历史难多了，我听不懂。',py:'Wǒ juéde shùxué bǐ lìshǐ nánduō le, wǒ tīng bu dǒng.',vn:'Mình thấy môn Toán khó hơn Lịch Sử nhiều, mình nghe không hiểu.'},
-     {zh:'今年十九了，正在国外学习，学历史和数学。',py:'Jīnnián shíjiǔ le, zhèngzài guówài xuéxí, xué lìshǐ hé shùxué.',vn:'Năm nay 19 tuổi rồi, đang học ở nước ngoài, học Lịch Sử và Toán.'},
-   ],
-   hanzi:[
-     {c:'史',p:'shǐ',type:'独体字 · Chữ đơn',st:5,ord:'nét liền',rad:'口 (khẩu – miệng)',mean:'lịch sử, sử sách',
-      tip:'Chữ cổ mô phỏng người cầm bút ghi chép → người chép SỬ, mở rộng thành LỊCH SỬ.',
-      cf:'吏 (lì – "quan lại", gần giống nhưng khác nét trên")',w:'历史 / 史书'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mình thấy môn Toán khó hơn Lịch Sử nhiều.',answer:'我觉得数学比历史难多了。',answerPy:'Wǒ juéde shùxué bǐ lìshǐ nánduō le.',
-      note:'A比B+tính từ+多了 diễn tả mức chênh lệch lớn (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Vì môn Toán khó hơn Lịch Sử nhiều nên mình nghe không hiểu.',answer:'因为数学比历史难多了，所以我听不懂。',answerPy:'Yīnwèi shùxué bǐ lìshǐ nánduō le, suǒyǐ wǒ tīng bu dǒng.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:4,zh:'体育',py:'tǐyù',pos:'Danh từ',vn:'môn Thể Dục', hv: 'thể dục',em:'⚽',lesson:2,
-   explain:['Môn học và hoạt động rèn luyện thể chất.'],
-   usage:'Danh từ; đi cùng 课: 体育课.',
-   collo:['体育课','喜欢体育','体育比赛'],
-   ex_zh:'我喜欢历史课、体育课，不喜欢数学课。',ex_py:'Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.',ex_vn:'Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán.',
-   exList:[
-     {zh:'我喜欢历史课、体育课，不喜欢数学课。',py:'Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.',vn:'Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán.'},
-     {zh:'那么多人踢足球，他们在比赛吗？不是，他们在上体育课呢。',py:'Nàme duō rén tī zúqiú, tāmen zài bǐsài ma? Bú shì, tāmen zài shàng tǐyù kè ne.',vn:'Nhiều người đá bóng thế, họ đang thi đấu à? Không phải, họ đang học thể dục đấy.'},
-     {zh:'数学也很有意思啊。',py:'Shùxué yě hěn yǒu yìsi a.',vn:'Môn Toán cũng thú vị mà.'},
-   ],
-   hanzi:[
-     {c:'育',p:'yù',type:'上下结构 · Trên-dưới',st:8,ord:'亠+厶 trên → 月 dưới',rad:'月 (nhục – thịt, thân thể)',mean:'nuôi dưỡng, giáo dục',
-      tip:'Hình ảnh đứa trẻ được sinh ra và NUÔI DƯỠNG → GIÁO DỤC; 体育 = rèn luyện THÂN THỂ.',
-      cf:'脊 (jǐ – "xương sống", có bộ 月 tương tự")',w:'体育 / 教育 / 体育课'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Con trai tôi thích nhất là môn Thể Dục.',answer:'我儿子最喜欢体育课。',answerPy:'Wǒ érzi zuì xǐhuan tǐyù kè.',
-      note:'最 + động từ diễn tả mức độ cao nhất.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn thích môn Thể Dục thì mỗi ngày đều sẽ rất vui.',answer:'只要你喜欢体育课，每天都会很高兴。',answerPy:'Zhǐyào nǐ xǐhuan tǐyù kè, měitiān dōu huì hěn gāoxìng.',
-      note:'只要……就…… (ở đây rút gọn) diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:5,zh:'数学',py:'shùxué',pos:'Danh từ',vn:'môn Toán', hv: 'số học',em:'🔢',lesson:2,
-   explain:['Môn học về số, phép tính và các quy luật liên quan.'],
-   usage:'Danh từ; đi cùng 课/学: 数学课, 学数学.',
-   collo:['数学课','学数学','数学老师'],
-   ex_zh:'我觉得数学比历史难多了，我听不懂。',ex_py:'Wǒ juéde shùxué bǐ lìshǐ nánduō le, wǒ tīng bu dǒng.',ex_vn:'Mình thấy môn Toán khó hơn Lịch Sử nhiều, mình nghe không hiểu.',
-   exList:[
-     {zh:'我觉得数学比历史难多了，我听不懂。',py:'Wǒ juéde shùxué bǐ lìshǐ nánduō le, wǒ tīng bu dǒng.',vn:'Mình thấy môn Toán khó hơn Lịch Sử nhiều, mình nghe không hiểu.'},
-     {zh:'给笑笑讲题的那个就是我们班数学老师。',py:'Gěi Xiàoxiao jiǎng tí de nàge jiùshì wǒmen bān shùxué lǎoshī.',vn:'Người đang giảng bài cho Tiếu Tiếu chính là giáo viên Toán lớp mình đấy.'},
-     {zh:'我儿子的学习比以前好多了，主要是他有兴趣了。',py:'Wǒ érzi de xuéxí bǐ yǐqián hǎoduō le, zhǔyào shì tā yǒu xìngqù le.',vn:'Việc học của con trai tôi tốt hơn trước nhiều, chủ yếu là vì nó có hứng thú rồi.'},
-   ],
-   hanzi:[
-     {c:'数',p:'shù',type:'左右结构 · Trái-phải',st:13,ord:'娄 trái → 攵 phải',rad:'攵 (phốc – gõ nhẹ)',mean:'số, đếm',
-      tip:'娄(chuỗi hạt xâu liên tiếp) + 攵(hành động) → hành động ĐẾM từng hạt → SỐ, ĐẾM; 数学 = môn học về SỐ.',
-      cf:'楼 (lóu – "lầu, tòa nhà", có bộ 木")',w:'数学 / 数字 / 数一数'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mỗi ngày chúng ta học một hai tiếng thôi.',answer:'我们每天学一两个小时吧。',answerPy:'Wǒmen měitiān xué yì-liǎng ge xiǎoshí ba.',
-      note:'一两个 = số ước lượng ghép hai số liên tiếp (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn thấy môn Toán khó thì mình có thể giúp bạn.',answer:'如果你觉得数学难，我就可以帮你。',answerPy:'Rúguǒ nǐ juéde shùxué nán, wǒ jiù kěyǐ bāng nǐ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 担心 đã học ở Bài 9).'},
-   ]},
-
-  {n:6,zh:'方便',py:'fāngbiàn',pos:'Tính từ',vn:'thuận tiện', hv: 'phương tiện',em:'👍',lesson:3,
-   explain:['Dễ dàng, không gặp trở ngại khi làm việc gì đó.'],
-   usage:'Tính từ, làm vị ngữ với 很/更: 很方便, A比B方便.',
-   collo:['很方便','比较方便','不方便'],
-   ex_zh:'那很方便啊。',ex_py:'Nà hěn fāngbiàn a.',ex_vn:'Vậy tiện quá.',
-   exList:[
-     {zh:'那很方便啊。',py:'Nà hěn fāngbiàn a.',vn:'Vậy tiện quá.'},
-     {zh:'哪个方便一些呢？',py:'Nǎge fāngbiàn yìxiē ne?',vn:'Chỗ nào tiện hơn một chút?'},
-     {zh:'学校里边比学校外边方便，附近有三四个车站。',py:'Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.',vn:'Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe.'},
-   ],
-   hanzi:[
-     {c:'便',p:'biàn',type:'左右结构 · Trái-phải',st:9,ord:'亻 trái → 更 phải',rad:'亻 (nhân – người)',mean:'tiện lợi',
-      tip:'亻(người) + 更(thay đổi, cải tiến) → người CẢI TIẾN cách làm để dễ dàng hơn = TIỆN LỢI.',
-      cf:'更 (gèng – "càng, hơn nữa", không có bộ 亻")',w:'方便 / 便宜 (pián) / 随便'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đi xe đạp bảy tám phút là đến được.',answer:'骑车七八分钟就能到。',answerPy:'Qí chē qī-bā fēnzhōng jiù néng dào.',
-      note:'七八分钟 = số ước lượng (ôn lại 骑 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Chỉ cần gần đó có trạm xe thì sẽ rất tiện.',answer:'只要附近有车站，就会很方便。',answerPy:'Zhǐyào fùjìn yǒu chēzhàn, jiù huì hěn fāngbiàn.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 附近 sẽ học ngay bên dưới).'},
-   ]},
-
-  {n:7,zh:'自行车',py:'zìxíngchē',pos:'Danh từ',vn:'xe đạp', hv: 'tự hành xa',em:'🚲',lesson:3,
-   explain:['Phương tiện hai bánh di chuyển bằng cách đạp.'],
-   usage:'Danh từ; lượng từ đi kèm là 辆: 一辆自行车.',
-   collo:['一辆自行车','骑自行车','买自行车'],
-   ex_zh:'我还打算买辆自行车，骑车七八分钟就能到。',ex_py:'Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.',ex_vn:'Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được.',
-   exList:[
-     {zh:'我还打算买辆自行车，骑车七八分钟就能到。',py:'Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.',vn:'Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được.'},
-     {zh:'那辆太旧了，要换一辆，很便宜，两三百块钱。',py:'Nà liàng tài jiù le, yào huàn yí liàng, hěn piányi, liǎng-sān bǎi kuài qián.',vn:'Chiếc đó cũ quá rồi, phải đổi cái khác, rất rẻ, chỉ hai ba trăm đồng thôi.'},
-     {zh:'一百多？自行车啊！',py:'Yìbǎi duō? Zìxíngchē a!',vn:'Hơn một trăm á? Xe đạp cơ đấy!'},
-   ],
-   hanzi:[
-     {c:'骑',p:'qí',type:'左右结构 · Trái-phải',st:11,ord:'马 trái → 奇 phải',rad:'马 (mã – ngựa)',mean:'cưỡi, đi (xe)',
-      tip:'马(ngựa) + 奇(kỳ lạ, đơn lẻ) → ngồi một mình trên NGỰA = CƯỠI, mở rộng nghĩa ĐI (xe đạp, xe máy).',
-      cf:'寄 (jì – "gửi", có bộ 宀")',w:'自行车 / 骑自行车'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chiếc xe đạp đó cũ quá rồi, phải đổi cái khác.',answer:'那辆自行车太旧了，要换一辆。',answerPy:'Nà liàng zìxíngchē tài jiù le, yào huàn yí liàng.',
-      note:'太……了 diễn tả mức độ quá mức (ôn lại 旧/换 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Tuy chiếc xe đạp đó cũ nhưng đi vẫn được.',answer:'虽然那辆自行车很旧，但是骑起来还可以。',answerPy:'Suīrán nà liàng zìxíngchē hěn jiù, dànshì qí qǐlai hái kěyǐ.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:8,zh:'骑',py:'qí',pos:'Động từ',vn:'cưỡi, đi (xe)', hv: 'kỵ',em:'🚴',lesson:3,
-   explain:['Ngồi lên và điều khiển một phương tiện hai bánh hoặc động vật.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 骑 + [xe/ngựa] (骑自行车, 骑车).',
-   collo:['骑自行车','骑车','骑马'],
-   ex_zh:'我还打算买辆自行车，骑车七八分钟就能到。',ex_py:'Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.',ex_vn:'Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được.',
-   exList:[
-     {zh:'我还打算买辆自行车，骑车七八分钟就能到。',py:'Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.',vn:'Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được.'},
-     {zh:'这个时间，骑车比坐公共汽车快得多。',py:'Zhège shíjiān, qí chē bǐ zuò gōnggòngqìchē kuài de duō.',vn:'Giờ này, đi xe đạp nhanh hơn nhiều so với đi xe buýt.'},
-     {zh:'去中山南路骑自行车快还是坐公共汽车快？',py:'Qù Zhōngshān nánlù qí zìxíngchē kuài háishi zuò gōnggòngqìchē kuài?',vn:'Đi đường Trung Sơn Nam đi xe đạp nhanh hay đi xe buýt nhanh?'},
-   ],
-   hanzi:[
-     {c:'骑',p:'qí',type:'左右结构 · Trái-phải',st:11,ord:'马 trái → 奇 phải',rad:'马 (mã – ngựa)',mean:'cưỡi, đi (xe)',
-      tip:'马(ngựa) + 奇(đơn lẻ) → ngồi một mình trên NGỰA = CƯỠI, mở rộng nghĩa ĐI (xe đạp, xe máy).',
-      cf:'崎 (qí – "gập ghềnh", có bộ 山")',w:'骑车 / 骑自行车 / 骑马'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Buổi sáng sớm, đi xe đạp nhanh hơn đi bộ nhiều.',answer:'早上，骑自行车比走路快得多。',answerPy:'Zǎoshang, qí zìxíngchē bǐ zǒulù kuài de duō.',
-      note:'A比B+tính từ+得多 diễn tả mức chênh lệch lớn (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu trời không mưa thì tôi thích đi xe đạp đi làm.',answer:'如果不下雨，我喜欢骑自行车上班。',answerPy:'Rúguǒ bú xiàyǔ, wǒ xǐhuan qí zìxíngchē shàngbān.',
-      note:'如果……就…… (ở đây rút gọn) diễn tả giả thiết.'},
-   ]},
-
-  {n:9,zh:'旧',py:'jiù',pos:'Tính từ',vn:'cũ', hv: 'cựu',em:'📦',lesson:3,
-   explain:['Đã qua sử dụng lâu, không còn mới, trái nghĩa với 新.'],
-   usage:'Tính từ, làm vị ngữ hoặc định ngữ: 很旧, 旧车.',
-   collo:['太旧了','旧车','旧衣服'],
-   ex_zh:'那辆太旧了，要换一辆。',ex_py:'Nà liàng tài jiù le, yào huàn yí liàng.',ex_vn:'Chiếc đó cũ quá rồi, phải đổi cái khác.',
-   exList:[
-     {zh:'那辆太旧了，要换一辆。',py:'Nà liàng tài jiù le, yào huàn yí liàng.',vn:'Chiếc đó cũ quá rồi, phải đổi cái khác.'},
-     {zh:'听说你们店可以用旧车换新车？',py:'Tīngshuō nǐmen diàn kěyǐ yòng jiù chē huàn xīn chē?',vn:'Nghe nói cửa hàng các bạn có thể dùng xe cũ đổi xe mới à?'},
-     {zh:'我那辆旧车送给你吧。',py:'Wǒ nà liàng jiù chē sòng gěi nǐ ba.',vn:'Chiếc xe cũ đó của tôi tặng bạn luôn nhé.'},
-   ],
-   hanzi:[
-     {c:'旧',p:'jiù',type:'半包围结构 · Bán bao vây',st:5,ord:'日 trên → 一+丨 dưới',rad:'日 (nhật)',mean:'cũ',
-      tip:'Chữ giản thể mô phỏng hình chiếc lồng đèn cũ (biến thể từ chữ phồn thể 舊) → CŨ, trái nghĩa với 新.',
-      cf:'日 (rì – "mặt trời, ngày", không có nét dưới")',w:'旧车 / 很旧 / 新旧'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chiếc xe này rẻ hơn chiếc kia hai ba trăm đồng, vì nó hơi cũ.',answer:'这辆车比那辆便宜两三百块钱，因为它有点儿旧。',answerPy:'Zhè liàng chē bǐ nà liàng piányi liǎng-sān bǎi kuài qián, yīnwèi tā yǒudiǎnr jiù.',
-      note:'A比B便宜+số tiền diễn tả mức chênh lệch cụ thể.'},
-     {promptLang:'vi',prompt:'Tuy chiếc áo này cũ nhưng tôi vẫn rất thích.',answer:'虽然这件衣服旧了，但是我还是很喜欢。',answerPy:'Suīrán zhè jiàn yīfu jiù le, dànshì wǒ háishi hěn xǐhuan.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:10,zh:'换',py:'huàn',pos:'Động từ',vn:'đổi, thay thế', hv: 'hoán',em:'🔄',lesson:3,
-   explain:['Thay thế vật này bằng vật khác.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 换 + [vật] (换一辆, 换车).',
-   collo:['换一辆','换车','换钱'],
-   ex_zh:'那辆太旧了，要换一辆。',ex_py:'Nà liàng tài jiù le, yào huàn yí liàng.',ex_vn:'Chiếc đó cũ quá rồi, phải đổi cái khác.',
-   exList:[
-     {zh:'那辆太旧了，要换一辆。',py:'Nà liàng tài jiù le, yào huàn yí liàng.',vn:'Chiếc đó cũ quá rồi, phải đổi cái khác.'},
-     {zh:'听说你们店可以用旧车换新车？',py:'Tīngshuō nǐmen diàn kěyǐ yòng jiù chē huàn xīn chē?',vn:'Nghe nói cửa hàng các bạn có thể dùng xe cũ đổi xe mới à?'},
-     {zh:'又换了？你已经换了四五辆了吧？',py:'Yòu huàn le? Nǐ yǐjīng huànle sì-wǔ liàng le ba?',vn:'Lại đổi nữa à? Bạn đổi bốn năm chiếc rồi nhỉ?'},
-   ],
-   hanzi:[
-     {c:'换',p:'huàn',type:'左右结构 · Trái-phải',st:10,ord:'扌 trái → 奂 phải',rad:'扌 (thủ – tay)',mean:'đổi, thay thế',
-      tip:'扌(tay) + 奂(sáng sủa, mới mẻ) → dùng TAY thay đổi để có cái MỚI hơn = ĐỔI.',
-      cf:'唤 (huàn – "gọi", có bộ 口")',w:'换车 / 换钱 / 交换'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn đổi bốn năm chiếc điện thoại rồi nhỉ?',answer:'你已经换了四五个手机了吧？',answerPy:'Nǐ yǐjīng huànle sì-wǔ ge shǒujī le ba?',
-      note:'四五个 = số ước lượng (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu chiếc xe này hỏng thì bạn nên đổi cái mới đi.',answer:'如果这辆车坏了，你就应该换一辆新的。',answerPy:'Rúguǒ zhè liàng chē huài le, nǐ jiù yīnggāi huàn yí liàng xīn de.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'地方',py:'dìfang',pos:'Danh từ',vn:'chỗ, nơi', hv: 'địa phương',em:'📍',lesson:4,
-   explain:['Vị trí, khu vực cụ thể nào đó.'],
-   usage:'Danh từ; làm định ngữ hoặc đứng độc lập: 这个地方, 找地方.',
-   collo:['这个地方','找地方','安静的地方'],
-   ex_zh:'这两个地方的房子一样吗？',ex_py:'Zhè liǎng ge dìfang de fángzi yíyàng ma?',ex_vn:'Nhà ở hai chỗ này có giống nhau không?',
-   exList:[
-     {zh:'这两个地方的房子一样吗？',py:'Zhè liǎng ge dìfang de fángzi yíyàng ma?',vn:'Nhà ở hai chỗ này có giống nhau không?'},
-     {zh:'走，找个环境好的地方，我早就想跟你聊聊了。',py:'Zǒu, zhǎo ge huánjìng hǎo de dìfang, wǒ zǎo jiù xiǎng gēn nǐ liáoliao le.',vn:'Đi nào, tìm chỗ nào môi trường tốt, mình muốn nói chuyện với bạn từ lâu rồi.'},
-     {zh:'我很高兴你们喜欢这个地方，下次我们再来。',py:'Wǒ hěn gāoxìng nǐmen xǐhuan zhège dìfang, xià cì wǒmen zài lái.',vn:'Tôi rất vui vì các bạn thích chỗ này, lần sau chúng ta lại đến.'},
-   ],
-   hanzi:[
-     {c:'方',p:'fāng',type:'独体字 · Chữ đơn',st:4,ord:'nét liền',rad:'方 (phương)',mean:'phương hướng, vuông',
-      tip:'Chữ tượng hình mô phỏng hai chiếc thuyền buộc nhau (hoặc lưỡi cày) → PHƯƠNG HƯỚNG; 地方 = "khoảnh đất theo hướng nào đó" = NƠI, CHỖ.',
-      cf:'放 (fàng – "đặt, thả", có bộ 攵")',w:'地方 / 方便 / 四方'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ngôi nhà đó môi trường rất tốt, chủ yếu là yên tĩnh.',answer:'那个地方环境很好，主要是很安静。',answerPy:'Nàge dìfang huánjìng hěn hǎo, zhǔyào shì hěn ānjìng.',
-      note:'主要是 diễn tả lý do chính (ôn lại 环境/主要 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Nếu bạn tìm được chỗ yên tĩnh thì báo cho tôi biết nhé.',answer:'如果你找到安静的地方，就告诉我吧。',answerPy:'Rúguǒ nǐ zhǎodào ānjìng de dìfang, jiù gàosu wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 安静 đã học ở Bài 8).'},
-   ]},
-
-  {n:12,zh:'中介',py:'zhōngjiè',pos:'Danh từ',vn:'môi giới', hv: 'trung giới',em:'🤝',lesson:4,
-   explain:['Người/tổ chức đứng giữa kết nối hai bên, thường dùng cho môi giới nhà đất.'],
-   usage:'Danh từ, làm chủ ngữ hoặc tân ngữ trong câu.',
-   collo:['房屋中介','中介公司','找中介'],
-   ex_zh:'这两个地方的房子一样吗？不一样。',ex_py:'Zhè liǎng ge dìfang de fángzi yíyàng ma? Bù yíyàng.',ex_vn:'Nhà ở hai chỗ này có giống nhau không? Không giống.',
-   exList:[
-     {zh:'这两个地方的房子一样吗？不一样。',py:'Zhè liǎng ge dìfang de fángzi yíyàng ma? Bù yíyàng.',vn:'Nhà ở hai chỗ này có giống nhau không? Không giống.'},
-     {zh:'您看，学校外边的房子比学校里边的大一些。',py:'Nín kàn, xuéxiào wàibian de fángzi bǐ xuéxiào lǐbian de dà yìxiē.',vn:'Anh xem, nhà bên ngoài trường to hơn nhà bên trong trường một chút.'},
-     {zh:'学校里边比学校外边方便，附近有三四个车站。',py:'Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.',vn:'Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe.'},
-   ],
-   hanzi:[
-     {c:'介',p:'jiè',type:'独体字 · Chữ đơn',st:4,ord:'nét liền',rad:'人 (nhân – người)',mean:'ở giữa, giới thiệu',
-      tip:'Chữ tượng hình mô phỏng người đứng GIỮA hai bên → mở rộng nghĩa GIỚI THIỆU, MÔI GIỚI.',
-      cf:'个 (gè – lượng từ, nét gần giống")',w:'中介 / 介绍'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Người môi giới nói nhà bên ngoài trường to hơn nhà bên trong trường một chút.',answer:'中介说学校外边的房子比学校里边的大一些。',answerPy:'Zhōngjiè shuō xuéxiào wàibian de fángzi bǐ xuéxiào lǐbian de dà yìxiē.',
-      note:'A比B+tính từ+一些 diễn tả mức chênh lệch nhỏ.'},
-     {promptLang:'vi',prompt:'Nếu bạn muốn thuê nhà thì nên hỏi người môi giới.',answer:'如果你想租房子，就应该问问中介。',answerPy:'Rúguǒ nǐ xiǎng zū fángzi, jiù yīnggāi wènwen zhōngjiè.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'主要',py:'zhǔyào',pos:'Tính từ',vn:'chủ yếu', hv: 'chủ yếu',em:'⭐',lesson:4,
-   explain:['Quan trọng nhất, đóng vai trò chính.'],
-   usage:'Tính từ/phó từ, thường đứng đầu vị ngữ: 主要是 + [lý do chính].',
-   collo:['主要是','主要原因','最主要'],
-   ex_zh:'大小没关系，主要是环境，哪个更安静？',ex_py:'Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?',ex_vn:'To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?',
-   exList:[
-     {zh:'大小没关系，主要是环境，哪个更安静？',py:'Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?',vn:'To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?'},
-     {zh:'我爸爸身体那么好，主要是因为每天锻炼。',py:'Wǒ bàba shēntǐ nàme hǎo, zhǔyào shì yīnwèi měitiān duànliàn.',vn:'Bố tôi sức khỏe tốt thế, chủ yếu là vì mỗi ngày đều tập thể dục.'},
-     {zh:'我儿子的学习比以前好多了，主要是他有兴趣了。',py:'Wǒ érzi de xuéxí bǐ yǐqián hǎoduō le, zhǔyào shì tā yǒu xìngqù le.',vn:'Việc học của con trai tôi tốt hơn trước nhiều, chủ yếu là vì nó có hứng thú rồi.'},
-   ],
-   hanzi:[
-     {c:'要',p:'yào',type:'上下结构 · Trên-dưới',st:9,ord:'覀 trên → 女 dưới',rad:'覀 (á)',mean:'cần, quan trọng',
-      tip:'Chữ cổ mô phỏng người phụ nữ chống hai tay vào eo (điểm mấu chốt cơ thể) → nghĩa ĐIỂM MẤU CHỐT, mở rộng thành QUAN TRỌNG, CẦN.',
-      cf:'腰 (yāo – "cái eo", có bộ 月")',w:'主要 / 要求 / 需要'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'To nhỏ không quan trọng, chủ yếu là môi trường.',answer:'大小没关系，主要是环境。',answerPy:'Dàxiǎo méi guānxi, zhǔyào shì huánjìng.',
-      note:'主要是 giới thiệu lý do/yếu tố chính (ôn lại 环境 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Vì chủ yếu là môi trường yên tĩnh nên tôi thích căn nhà đó.',answer:'因为主要是环境安静，所以我喜欢那个房子。',answerPy:'Yīnwèi zhǔyào shì huánjìng ānjìng, suǒyǐ wǒ xǐhuan nàge fángzi.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:14,zh:'环境',py:'huánjìng',pos:'Danh từ',vn:'môi trường', hv: 'hoàn cảnh',em:'🌳',lesson:4,
-   explain:['Điều kiện xung quanh nơi sinh sống hoặc làm việc.'],
-   usage:'Danh từ; làm chủ ngữ hoặc tân ngữ: 环境好, 环境安静.',
-   collo:['环境好','环境安静','学校环境'],
-   ex_zh:'大小没关系，主要是环境，哪个更安静？',ex_py:'Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?',ex_vn:'To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?',
-   exList:[
-     {zh:'大小没关系，主要是环境，哪个更安静？',py:'Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?',vn:'To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?'},
-     {zh:'走，找个环境好的地方，我早就想跟你聊聊了。',py:'Zǒu, zhǎo ge huánjìng hǎo de dìfang, wǒ zǎo jiù xiǎng gēn nǐ liáoliao le.',vn:'Đi nào, tìm chỗ nào môi trường tốt, mình muốn nói chuyện với bạn từ lâu rồi.'},
-     {zh:'这家饭馆的环境真好，菜也很好吃。',py:'Zhè jiā fànguǎn de huánjìng zhēn hǎo, cài yě hěn hǎochī.',vn:'Quán ăn này môi trường đẹp thật, đồ ăn cũng ngon.'},
-   ],
-   hanzi:[
-     {c:'境',p:'jìng',type:'左右结构 · Trái-phải',st:14,ord:'土 trái → 竟 phải',rad:'土 (thổ – đất)',mean:'cảnh, biên giới',
-      tip:'土(đất) + 竟(cuối cùng, hết) → RANH GIỚI của một vùng đất, mở rộng nghĩa MÔI TRƯỜNG, HOÀN CẢNH.',
-      cf:'镜 (jìng – "gương, kính", có bộ 钅")',w:'环境 / 边境 / 环境好'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bên trong trường không yên tĩnh bằng bên ngoài trường.',answer:'学校里边的没有学校外边的那么安静。',answerPy:'Xuéxiào lǐbian de méiyǒu xuéxiào wàibian de nàme ānjìng.',
-      note:'A没有B那么+tính từ diễn tả phủ định của so sánh (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu môi trường yên tĩnh thì tôi sẽ thuê căn nhà đó.',answer:'如果环境安静，我就租那个房子。',answerPy:'Rúguǒ huánjìng ānjìng, wǒ jiù zū nàge fángzi.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:15,zh:'附近',py:'fùjìn',pos:'Danh từ',vn:'vùng lân cận', hv: 'phụ cận',em:'🗺️',lesson:4,
-   explain:['Khu vực gần một địa điểm nào đó.'],
-   usage:'Danh từ chỉ nơi chốn; đứng độc lập hoặc làm định ngữ: 附近有, 学校附近.',
-   collo:['附近有','学校附近','附近的超市'],
-   ex_zh:'学校里边比学校外边方便，附近有三四个车站。',ex_py:'Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.',ex_vn:'Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe.',
-   exList:[
-     {zh:'学校里边比学校外边方便，附近有三四个车站。',py:'Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.',vn:'Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe.'},
-     {zh:'这儿附近有没有安静点儿的咖啡店？',py:'Zhèr fùjìn yǒu méiyǒu ānjìng diǎnr de kāfēidiàn?',vn:'Gần đây có quán cà phê nào yên tĩnh hơn không?'},
-     {zh:'楼上有个咖啡店，比这儿安静得多。',py:'Lóushàng yǒu ge kāfēidiàn, bǐ zhèr ānjìng de duō.',vn:'Trên lầu có một quán cà phê, yên tĩnh hơn ở đây nhiều.'},
-   ],
-   hanzi:[
-     {c:'附',p:'fù',type:'左右结构 · Trái-phải',st:7,ord:'阝 trái → 付 phải',rad:'阝 (phụ – gò đất)',mean:'gần kề, phụ thuộc',
-      tip:'阝(gò đất) + 付(giao cho, gắn liền) → mảnh đất GẮN LIỀN kề bên = GẦN KỀ; 附近 = vùng đất gần đó.',
-      cf:'付 (fù – "trả tiền", không có bộ 阝")',w:'附近 / 附近的超市'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Gần đó có ba bốn trạm xe.',answer:'附近有三四个车站。',answerPy:'Fùjìn yǒu sān-sì ge chēzhàn.',
-      note:'三四个 = số ước lượng ghép hai số liên tiếp (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu gần đây có siêu thị thì sẽ rất tiện.',answer:'如果附近有超市，就会很方便。',answerPy:'Rúguǒ fùjìn yǒu chāoshì, jiù huì hěn fāngbiàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 超市 đã học ở Bài 4).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "个子",
+    "py": "gèzi",
+    "pos": "Danh từ",
+    "vn": "vóc dáng, thân hình",
+    "hv": "cá tử",
+    "em": "📏",
+    "lesson": 1,
+    "explain": [
+      "Chiều cao và hình dáng cơ thể một người."
+    ],
+    "usage": "Danh từ; thường đi cùng tính từ 高/矮: 个子高, 个子矮.",
+    "collo": [
+      "个子高",
+      "个子矮",
+      "大个子"
+    ],
+    "ex_zh": "大山，你和马可谁个子高？",
+    "ex_py": "Dàshān, nǐ hé Mǎkě shéi gèzi gāo?",
+    "ex_vn": "Đại Sơn, giữa bạn và Marco ai cao hơn?",
+    "exList": [
+      {
+        "zh": "大山，你和马可谁个子高？",
+        "py": "Dàshān, nǐ hé Mǎkě shéi gèzi gāo?",
+        "vn": "Đại Sơn, giữa bạn và Marco ai cao hơn?"
+      },
+      {
+        "zh": "她个子真高，讲得怎么样？",
+        "py": "Tā gèzi zhēn gāo, jiǎng de zěnmeyàng?",
+        "vn": "Cô ấy cao thật đấy, giảng thế nào?"
+      },
+      {
+        "zh": "你女儿个子真高，比你高多了吧？",
+        "py": "Nǐ nǚ'ér gèzi zhēn gāo, bǐ nǐ gāo duō le ba?",
+        "vn": "Con gái bạn cao thật đấy, cao hơn bạn nhiều nhỉ?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "个",
+        "p": "gè",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "人 (nhân – người)",
+        "mean": "cái, chiếc (lượng từ)",
+        "tip": "Chữ tượng hình mô phỏng hình một người/vật đơn lẻ → LƯỢNG TỪ đếm đơn vị; 个子 = \"cái khung\" của thân thể = VÓC DÁNG.",
+        "cf": "介 (jiè – \"giới thiệu, ở giữa\", nét gần giống\")",
+        "w": "个子 / 一个 / 那个"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Marco tuy cao hơn tôi một chút, nhưng chơi bóng rổ không giỏi bằng tôi.",
+        "answer": "马可虽然比我高一点儿，但是打篮球没有我好。",
+        "answerPy": "Mǎkě suīrán bǐ wǒ gāo yìdiǎnr, dànshì dǎ lánqiú méiyǒu wǒ hǎo.",
+        "note": "A 没有 B + Adj — A không bằng B; 个子高 chứ không nói 很高个子.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Con trai tôi cao hơn tôi rồi, thật ra nó chỉ mười bảy mười tám tuổi thôi.",
+        "answer": "我儿子比我高了，其实他才十七八岁。",
+        "answerPy": "Wǒ érzi bǐ wǒ gāo le, qíshí tā cái shíqī-bā suì.",
+        "note": "十七八岁 = số ước lượng ghép hai số liên tiếp (điểm ngữ pháp bài này).",
+        "pair": "……，才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "个子高",
+        "py": "gèzi gāo",
+        "vn": "dáng cao"
+      },
+      {
+        "zh": "个子矮",
+        "py": "gèzi ǎi",
+        "vn": "dáng thấp"
+      },
+      {
+        "zh": "大个子",
+        "py": "dà gèzi",
+        "vn": "người cao lớn"
+      },
+      {
+        "zh": "个子一样高",
+        "py": "gèzi yíyàng gāo",
+        "vn": "cao bằng nhau"
+      },
+      {
+        "zh": "他个子很高",
+        "py": "tā gèzi hěn gāo",
+        "vn": "anh ấy rất cao"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 个子 + 高 / 矮",
+        "m": "Ai đó cao / thấp"
+      },
+      {
+        "s": "✗ 他很高个子 → ✓ 他个子很高"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "矮",
+    "py": "ǎi",
+    "pos": "Tính từ",
+    "vn": "thấp",
+    "hv": "ải",
+    "em": "📉",
+    "lesson": 1,
+    "explain": [
+      "Có chiều cao thấp, trái nghĩa với 高."
+    ],
+    "usage": "Tính từ, làm vị ngữ với 很/比: 很矮, A比B矮.",
+    "collo": [
+      "比……矮",
+      "矮一点儿",
+      "个子矮"
+    ],
+    "ex_zh": "马可比我高，我比马可矮一点儿。",
+    "ex_py": "Mǎkě bǐ wǒ gāo, wǒ bǐ Mǎkě ǎi yìdiǎnr.",
+    "ex_vn": "Marco cao hơn mình, mình thấp hơn Marco một chút.",
+    "exList": [
+      {
+        "zh": "马可比我高，我比马可矮一点儿。",
+        "py": "Mǎkě bǐ wǒ gāo, wǒ bǐ Mǎkě ǎi yìdiǎnr.",
+        "vn": "Marco cao hơn mình, mình thấp hơn Marco một chút."
+      },
+      {
+        "zh": "他个子也不高，只比我高一点儿。",
+        "py": "Tā gèzi yě bù gāo, zhǐ bǐ wǒ gāo yìdiǎnr.",
+        "vn": "Vóc dáng cậu ấy cũng không cao, chỉ cao hơn mình một chút."
+      },
+      {
+        "zh": "我比马可大两岁。",
+        "py": "Wǒ bǐ Mǎkě dà liǎng suì.",
+        "vn": "Mình lớn hơn Marco hai tuổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "矮",
+        "p": "ǎi",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "矢 trái → 委 phải",
+        "rad": "矢 (thỉ – mũi tên)",
+        "mean": "thấp",
+        "tip": "矢(mũi tên, vật ngắn) + 委(cong xuống) → hình ảnh vật NGẮN, CONG THẤP xuống = THẤP.",
+        "cf": "委 (wěi – \"giao phó, ủy thác\", không có bộ 矢\")",
+        "w": "矮 / 很矮 / 比较矮"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy cậu ấy thấp hơn tôi nhưng chạy rất nhanh.",
+        "answer": "虽然他比我矮，但是跑得很快。",
+        "answerPy": "Suīrán tā bǐ wǒ ǎi, dànshì pǎo de hěn kuài.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thấp hơn tôi thì đứng phía trước đi.",
+        "answer": "如果你比我矮，就站在前边吧。",
+        "answerPy": "Rúguǒ nǐ bǐ wǒ ǎi, jiù zhàn zài qiánbian ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "比他矮",
+        "py": "bǐ tā ǎi",
+        "vn": "thấp hơn anh ấy"
+      },
+      {
+        "zh": "矮一点儿",
+        "py": "ǎi yìdiǎnr",
+        "vn": "thấp hơn chút"
+      },
+      {
+        "zh": "个子矮",
+        "py": "gèzi ǎi",
+        "vn": "dáng thấp"
+      },
+      {
+        "zh": "很矮",
+        "py": "hěn ǎi",
+        "vn": "rất thấp"
+      },
+      {
+        "zh": "矮的桌子",
+        "py": "ǎi de zhuōzi",
+        "vn": "cái bàn thấp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A 比 B 矮",
+        "m": "A thấp hơn B"
+      },
+      {
+        "s": "矮 ↔ 高",
+        "m": "Thấp ↔ cao — dùng cho người và đồ vật"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "历史",
+    "py": "lìshǐ",
+    "pos": "Danh từ",
+    "vn": "môn Lịch Sử",
+    "hv": "lịch sử",
+    "em": "📜",
+    "lesson": 2,
+    "explain": [
+      "Môn học nghiên cứu các sự kiện đã xảy ra trong quá khứ."
+    ],
+    "usage": "Danh từ; đi cùng 课/学: 历史课, 学历史.",
+    "collo": [
+      "历史课",
+      "学历史",
+      "中国历史"
+    ],
+    "ex_zh": "我喜欢历史课、体育课，不喜欢数学课。",
+    "ex_py": "Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.",
+    "ex_vn": "Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán.",
+    "exList": [
+      {
+        "zh": "我喜欢历史课、体育课，不喜欢数学课。",
+        "py": "Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.",
+        "vn": "Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán."
+      },
+      {
+        "zh": "我觉得数学比历史难多了，我听不懂。",
+        "py": "Wǒ juéde shùxué bǐ lìshǐ nánduō le, wǒ tīng bu dǒng.",
+        "vn": "Mình thấy môn Toán khó hơn Lịch Sử nhiều, mình nghe không hiểu."
+      },
+      {
+        "zh": "今年十九了，正在国外学习，学历史和数学。",
+        "py": "Jīnnián shíjiǔ le, zhèngzài guówài xuéxí, xué lìshǐ hé shùxué.",
+        "vn": "Năm nay 19 tuổi rồi, đang học ở nước ngoài, học Lịch Sử và Toán."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "史",
+        "p": "shǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "lịch sử, sử sách",
+        "tip": "Chữ cổ mô phỏng người cầm bút ghi chép → người chép SỬ, mở rộng thành LỊCH SỬ.",
+        "cf": "吏 (lì – \"quan lại\", gần giống nhưng khác nét trên\")",
+        "w": "历史 / 史书"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thấy Toán khó hơn Lịch sử nhiều, nên mỗi ngày phải học thêm một chút.",
+        "answer": "因为我觉得数学比历史难多了，所以每天要多学一点儿。",
+        "answerPy": "Yīnwèi wǒ juéde shùxué bǐ lìshǐ nán duō le, suǒyǐ měi tiān yào duō xué yìdiǎnr.",
+        "note": "A 比 B + Adj + 多了 — hơn hẳn.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì môn Toán khó hơn Lịch Sử nhiều nên mình nghe không hiểu.",
+        "answer": "因为数学比历史难多了，所以我听不懂。",
+        "answerPy": "Yīnwèi shùxué bǐ lìshǐ nánduō le, suǒyǐ wǒ tīng bu dǒng.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "历史课",
+        "py": "lìshǐ kè",
+        "vn": "môn Lịch sử"
+      },
+      {
+        "zh": "学历史",
+        "py": "xué lìshǐ",
+        "vn": "học Lịch sử"
+      },
+      {
+        "zh": "中国历史",
+        "py": "Zhōngguó lìshǐ",
+        "vn": "lịch sử Trung Quốc"
+      },
+      {
+        "zh": "历史老师",
+        "py": "lìshǐ lǎoshī",
+        "vn": "giáo viên Lịch sử"
+      },
+      {
+        "zh": "历史很有意思",
+        "py": "lìshǐ hěn yǒuyìsi",
+        "vn": "Lịch sử rất thú vị"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "môn học + 课",
+        "m": "历史课, 体育课, 数学课"
+      },
+      {
+        "s": "历 + 史",
+        "m": "Ghi chép (史) những gì đã qua (历)"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "体育",
+    "py": "tǐyù",
+    "pos": "Danh từ",
+    "vn": "môn Thể Dục",
+    "hv": "thể dục",
+    "em": "⚽",
+    "lesson": 2,
+    "explain": [
+      "Môn học và hoạt động rèn luyện thể chất."
+    ],
+    "usage": "Danh từ; đi cùng 课: 体育课.",
+    "collo": [
+      "体育课",
+      "喜欢体育",
+      "体育比赛"
+    ],
+    "ex_zh": "我喜欢历史课、体育课，不喜欢数学课。",
+    "ex_py": "Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.",
+    "ex_vn": "Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán.",
+    "exList": [
+      {
+        "zh": "我喜欢历史课、体育课，不喜欢数学课。",
+        "py": "Wǒ xǐhuan lìshǐ kè, tǐyù kè, bù xǐhuan shùxué kè.",
+        "vn": "Mình thích môn Lịch Sử, môn Thể Dục, không thích môn Toán."
+      },
+      {
+        "zh": "那么多人踢足球，他们在比赛吗？不是，他们在上体育课呢。",
+        "py": "Nàme duō rén tī zúqiú, tāmen zài bǐsài ma? Bú shì, tāmen zài shàng tǐyù kè ne.",
+        "vn": "Nhiều người đá bóng thế, họ đang thi đấu à? Không phải, họ đang học thể dục đấy."
+      },
+      {
+        "zh": "数学也很有意思啊。",
+        "py": "Shùxué yě hěn yǒu yìsi a.",
+        "vn": "Môn Toán cũng thú vị mà."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "育",
+        "p": "yù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "亠+厶 trên → 月 dưới",
+        "rad": "月 (nhục – thịt, thân thể)",
+        "mean": "nuôi dưỡng, giáo dục",
+        "tip": "Hình ảnh đứa trẻ được sinh ra và NUÔI DƯỠNG → GIÁO DỤC; 体育 = rèn luyện THÂN THỂ.",
+        "cf": "脊 (jǐ – \"xương sống\", có bộ 月 tương tự\")",
+        "w": "体育 / 教育 / 体育课"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con trai tôi thích nhất môn Thể dục, vì cháu vừa thích chạy vừa thích chơi bóng.",
+        "answer": "我儿子最喜欢体育课，因为他又喜欢跑步又喜欢打球。",
+        "answerPy": "Wǒ érzi zuì xǐhuan tǐyù kè, yīnwèi tā yòu xǐhuan pǎobù yòu xǐhuan dǎqiú.",
+        "note": "上体育课 — học tiết Thể dục.",
+        "pair": "又……又……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn thích môn Thể Dục thì mỗi ngày đều sẽ rất vui.",
+        "answer": "只要你喜欢体育课，每天都会很高兴。",
+        "answerPy": "Zhǐyào nǐ xǐhuan tǐyù kè, měitiān dōu huì hěn gāoxìng.",
+        "note": "只要……就…… (ở đây rút gọn) diễn tả điều kiện đủ.",
+        "pair": "只要……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "体育课",
+        "py": "tǐyù kè",
+        "vn": "môn Thể dục"
+      },
+      {
+        "zh": "喜欢体育",
+        "py": "xǐhuan tǐyù",
+        "vn": "thích thể thao"
+      },
+      {
+        "zh": "体育比赛",
+        "py": "tǐyù bǐsài",
+        "vn": "thi đấu thể thao"
+      },
+      {
+        "zh": "体育老师",
+        "py": "tǐyù lǎoshī",
+        "vn": "giáo viên Thể dục"
+      },
+      {
+        "zh": "上体育课",
+        "py": "shàng tǐyù kè",
+        "vn": "học tiết Thể dục"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "上 + 体育课",
+        "m": "Học tiết Thể dục"
+      },
+      {
+        "s": "体育 (môn học, thể thao) ≠ 运动 (hoạt động vận động)"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "数学",
+    "py": "shùxué",
+    "pos": "Danh từ",
+    "vn": "môn Toán",
+    "hv": "số học",
+    "em": "🔢",
+    "lesson": 2,
+    "explain": [
+      "Môn học về số, phép tính và các quy luật liên quan."
+    ],
+    "usage": "Danh từ; đi cùng 课/学: 数学课, 学数学.",
+    "collo": [
+      "数学课",
+      "学数学",
+      "数学老师"
+    ],
+    "ex_zh": "我觉得数学比历史难多了，我听不懂。",
+    "ex_py": "Wǒ juéde shùxué bǐ lìshǐ nánduō le, wǒ tīng bu dǒng.",
+    "ex_vn": "Mình thấy môn Toán khó hơn Lịch Sử nhiều, mình nghe không hiểu.",
+    "exList": [
+      {
+        "zh": "我觉得数学比历史难多了，我听不懂。",
+        "py": "Wǒ juéde shùxué bǐ lìshǐ nánduō le, wǒ tīng bu dǒng.",
+        "vn": "Mình thấy môn Toán khó hơn Lịch Sử nhiều, mình nghe không hiểu."
+      },
+      {
+        "zh": "给笑笑讲题的那个就是我们班数学老师。",
+        "py": "Gěi Xiàoxiao jiǎng tí de nàge jiùshì wǒmen bān shùxué lǎoshī.",
+        "vn": "Người đang giảng bài cho Tiếu Tiếu chính là giáo viên Toán lớp mình đấy."
+      },
+      {
+        "zh": "我儿子的学习比以前好多了，主要是他有兴趣了。",
+        "py": "Wǒ érzi de xuéxí bǐ yǐqián hǎoduō le, zhǔyào shì tā yǒu xìngqù le.",
+        "vn": "Việc học của con trai tôi tốt hơn trước nhiều, chủ yếu là vì nó có hứng thú rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "数",
+        "p": "shù",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "娄 trái → 攵 phải",
+        "rad": "攵 (phốc – gõ nhẹ)",
+        "mean": "số, đếm",
+        "tip": "娄(chuỗi hạt xâu liên tiếp) + 攵(hành động) → hành động ĐẾM từng hạt → SỐ, ĐẾM; 数学 = môn học về SỐ.",
+        "cf": "楼 (lóu – \"lầu, tòa nhà\", có bộ 木\")",
+        "w": "数学 / 数字 / 数一数"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần mỗi ngày học một hai tiếng là môn Toán sẽ tiến bộ.",
+        "answer": "只要我们每天学一两个小时，数学就会有进步。",
+        "answerPy": "Zhǐyào wǒmen měi tiān xué yì-liǎng ge xiǎoshí, shùxué jiù huì yǒu jìnbù.",
+        "note": "一两个 — khoảng một hai, hai số liền nhau chỉ ước lượng.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thấy môn Toán khó thì mình có thể giúp bạn.",
+        "answer": "如果你觉得数学难，我就可以帮你。",
+        "answerPy": "Rúguǒ nǐ juéde shùxué nán, wǒ jiù kěyǐ bāng nǐ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 担心 đã học ở Bài 9).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "数学课",
+        "py": "shùxué kè",
+        "vn": "môn Toán"
+      },
+      {
+        "zh": "学数学",
+        "py": "xué shùxué",
+        "vn": "học Toán"
+      },
+      {
+        "zh": "数学老师",
+        "py": "shùxué lǎoshī",
+        "vn": "giáo viên Toán"
+      },
+      {
+        "zh": "数学很难",
+        "py": "shùxué hěn nán",
+        "vn": "Toán rất khó"
+      },
+      {
+        "zh": "数学作业",
+        "py": "shùxué zuòyè",
+        "vn": "bài tập Toán"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "数学 + 课 / 老师 / 作业",
+        "m": "Môn, thầy, bài tập Toán"
+      },
+      {
+        "s": "数 + 学",
+        "m": "Môn học (学) về số (数)"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "方便",
+    "py": "fāngbiàn",
+    "pos": "Tính từ",
+    "vn": "thuận tiện",
+    "hv": "phương tiện",
+    "em": "👍",
+    "lesson": 3,
+    "explain": [
+      "Dễ dàng, không gặp trở ngại khi làm việc gì đó."
+    ],
+    "usage": "Tính từ, làm vị ngữ với 很/更: 很方便, A比B方便.",
+    "collo": [
+      "很方便",
+      "比较方便",
+      "不方便"
+    ],
+    "ex_zh": "那很方便啊。",
+    "ex_py": "Nà hěn fāngbiàn a.",
+    "ex_vn": "Vậy tiện quá.",
+    "exList": [
+      {
+        "zh": "那很方便啊。",
+        "py": "Nà hěn fāngbiàn a.",
+        "vn": "Vậy tiện quá."
+      },
+      {
+        "zh": "哪个方便一些呢？",
+        "py": "Nǎge fāngbiàn yìxiē ne?",
+        "vn": "Chỗ nào tiện hơn một chút?"
+      },
+      {
+        "zh": "学校里边比学校外边方便，附近有三四个车站。",
+        "py": "Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.",
+        "vn": "Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "便",
+        "p": "biàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "亻 trái → 更 phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "tiện lợi",
+        "tip": "亻(người) + 更(thay đổi, cải tiến) → người CẢI TIẾN cách làm để dễ dàng hơn = TIỆN LỢI.",
+        "cf": "更 (gèng – \"càng, hơn nữa\", không có bộ 亻\")",
+        "w": "方便 / 便宜 (pián) / 随便"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nơi này rất tiện, vì đạp xe bảy tám phút là tới.",
+        "answer": "这个地方很方便，因为骑车七八分钟就能到。",
+        "answerPy": "Zhège dìfang hěn fāngbiàn, yīnwèi qíchē qī-bā fēnzhōng jiù néng dào.",
+        "note": "骑 dùng cho xe đạp và ngựa, 坐 dùng cho ô tô, tàu.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần gần đó có trạm xe thì sẽ rất tiện.",
+        "answer": "只要附近有车站，就会很方便。",
+        "answerPy": "Zhǐyào fùjìn yǒu chēzhàn, jiù huì hěn fāngbiàn.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 附近 sẽ học ngay bên dưới).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很方便",
+        "py": "hěn fāngbiàn",
+        "vn": "rất tiện"
+      },
+      {
+        "zh": "比较方便",
+        "py": "bǐjiào fāngbiàn",
+        "vn": "khá tiện"
+      },
+      {
+        "zh": "不方便",
+        "py": "bù fāngbiàn",
+        "vn": "bất tiện"
+      },
+      {
+        "zh": "方便的时候",
+        "py": "fāngbiàn de shíhou",
+        "vn": "lúc tiện"
+      },
+      {
+        "zh": "交通方便",
+        "py": "jiāotōng fāngbiàn",
+        "vn": "giao thông thuận tiện"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 + 方便",
+        "m": "Cái gì đó rất tiện"
+      },
+      {
+        "s": "方便 ↔ 麻烦",
+        "m": "Tiện lợi ↔ phiền phức"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "自行车",
+    "py": "zìxíngchē",
+    "pos": "Danh từ",
+    "vn": "xe đạp",
+    "hv": "tự hành xa",
+    "em": "🚲",
+    "lesson": 3,
+    "explain": [
+      "Phương tiện hai bánh di chuyển bằng cách đạp."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 辆: 一辆自行车.",
+    "collo": [
+      "一辆自行车",
+      "骑自行车",
+      "买自行车"
+    ],
+    "ex_zh": "我还打算买辆自行车，骑车七八分钟就能到。",
+    "ex_py": "Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.",
+    "ex_vn": "Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được.",
+    "exList": [
+      {
+        "zh": "我还打算买辆自行车，骑车七八分钟就能到。",
+        "py": "Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.",
+        "vn": "Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được."
+      },
+      {
+        "zh": "那辆太旧了，要换一辆，很便宜，两三百块钱。",
+        "py": "Nà liàng tài jiù le, yào huàn yí liàng, hěn piányi, liǎng-sān bǎi kuài qián.",
+        "vn": "Chiếc đó cũ quá rồi, phải đổi cái khác, rất rẻ, chỉ hai ba trăm đồng thôi."
+      },
+      {
+        "zh": "一百多？自行车啊！",
+        "py": "Yìbǎi duō? Zìxíngchē a!",
+        "vn": "Hơn một trăm á? Xe đạp cơ đấy!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "骑",
+        "p": "qí",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "马 trái → 奇 phải",
+        "rad": "马 (mã – ngựa)",
+        "mean": "cưỡi, đi (xe)",
+        "tip": "马(ngựa) + 奇(kỳ lạ, đơn lẻ) → ngồi một mình trên NGỰA = CƯỠI, mở rộng nghĩa ĐI (xe đạp, xe máy).",
+        "cf": "寄 (jì – \"gửi\", có bộ 宀\")",
+        "w": "自行车 / 骑自行车"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc xe đạp đó cũ quá rồi, nếu có tiền thì đổi cái mới đi.",
+        "answer": "那辆自行车太旧了，如果有钱，就换一辆新的吧。",
+        "answerPy": "Nà liàng zìxíngchē tài jiù le, rúguǒ yǒu qián, jiù huàn yí liàng xīn de ba.",
+        "note": "一辆自行车 — lượng từ 辆; 旧 dùng cho đồ vật, 老 cho người.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy chiếc xe đạp đó cũ nhưng đi vẫn được.",
+        "answer": "虽然那辆自行车很旧，但是骑起来还可以。",
+        "answerPy": "Suīrán nà liàng zìxíngchē hěn jiù, dànshì qí qǐlai hái kěyǐ.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一辆自行车",
+        "py": "yí liàng zìxíngchē",
+        "vn": "một chiếc xe đạp"
+      },
+      {
+        "zh": "骑自行车",
+        "py": "qí zìxíngchē",
+        "vn": "đi xe đạp"
+      },
+      {
+        "zh": "买自行车",
+        "py": "mǎi zìxíngchē",
+        "vn": "mua xe đạp"
+      },
+      {
+        "zh": "旧自行车",
+        "py": "jiù zìxíngchē",
+        "vn": "xe đạp cũ"
+      },
+      {
+        "zh": "自行车坏了",
+        "py": "zìxíngchē huài le",
+        "vn": "xe đạp hỏng rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 辆 + 自行车",
+        "m": "Lượng từ 辆 (bài 2) cho xe cộ"
+      },
+      {
+        "s": "自行 + 车",
+        "m": "Xe (车) tự (自) chạy (行)"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "骑",
+    "py": "qí",
+    "pos": "Động từ",
+    "vn": "cưỡi, đi (xe)",
+    "hv": "kỵ",
+    "em": "🚴",
+    "lesson": 3,
+    "explain": [
+      "Ngồi lên và điều khiển một phương tiện hai bánh hoặc động vật."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 骑 + [xe/ngựa] (骑自行车, 骑车).",
+    "collo": [
+      "骑自行车",
+      "骑车",
+      "骑马"
+    ],
+    "ex_zh": "我还打算买辆自行车，骑车七八分钟就能到。",
+    "ex_py": "Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.",
+    "ex_vn": "Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được.",
+    "exList": [
+      {
+        "zh": "我还打算买辆自行车，骑车七八分钟就能到。",
+        "py": "Wǒ hái dǎsuàn mǎi liàng zìxíngchē, qí chē qī-bā fēnzhōng jiù néng dào.",
+        "vn": "Mình còn định mua một chiếc xe đạp, đi xe bảy tám phút là đến được."
+      },
+      {
+        "zh": "这个时间，骑车比坐公共汽车快得多。",
+        "py": "Zhège shíjiān, qí chē bǐ zuò gōnggòngqìchē kuài de duō.",
+        "vn": "Giờ này, đi xe đạp nhanh hơn nhiều so với đi xe buýt."
+      },
+      {
+        "zh": "去中山南路骑自行车快还是坐公共汽车快？",
+        "py": "Qù Zhōngshān nánlù qí zìxíngchē kuài háishi zuò gōnggòngqìchē kuài?",
+        "vn": "Đi đường Trung Sơn Nam đi xe đạp nhanh hay đi xe buýt nhanh?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "骑",
+        "p": "qí",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "马 trái → 奇 phải",
+        "rad": "马 (mã – ngựa)",
+        "mean": "cưỡi, đi (xe)",
+        "tip": "马(ngựa) + 奇(đơn lẻ) → ngồi một mình trên NGỰA = CƯỠI, mở rộng nghĩa ĐI (xe đạp, xe máy).",
+        "cf": "崎 (qí – \"gập ghềnh\", có bộ 山\")",
+        "w": "骑车 / 骑自行车 / 骑马"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Buổi sáng sớm, đi xe đạp nhanh hơn đi bộ nhiều.",
+        "answer": "早上，骑自行车比走路快得多。",
+        "answerPy": "Zǎoshang, qí zìxíngchē bǐ zǒulù kuài de duō.",
+        "note": "A比B+tính từ+得多 diễn tả mức chênh lệch lớn (điểm ngữ pháp bài này).",
+        "pair": "比……得多……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu trời không mưa thì tôi thích đi xe đạp đi làm.",
+        "answer": "如果不下雨，我喜欢骑自行车上班。",
+        "answerPy": "Rúguǒ bú xiàyǔ, wǒ xǐhuan qí zìxíngchē shàngbān.",
+        "note": "如果……就…… (ở đây rút gọn) diễn tả giả thiết.",
+        "pair": "如果……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "骑自行车",
+        "py": "qí zìxíngchē",
+        "vn": "đi xe đạp"
+      },
+      {
+        "zh": "骑车",
+        "py": "qí chē",
+        "vn": "đạp xe"
+      },
+      {
+        "zh": "骑马",
+        "py": "qí mǎ",
+        "vn": "cưỡi ngựa"
+      },
+      {
+        "zh": "骑车去",
+        "py": "qí chē qù",
+        "vn": "đạp xe đi"
+      },
+      {
+        "zh": "骑了半个小时",
+        "py": "qí le bàn gè xiǎoshí",
+        "vn": "đạp xe nửa tiếng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "骑 + 自行车 / 马",
+        "m": "Dùng cho phương tiện NGỒI DẠNG CHÂN HAI BÊN"
+      },
+      {
+        "s": "骑 (xe đạp, ngựa) ≠ 坐 (ô tô, tàu, máy bay)"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "旧",
+    "py": "jiù",
+    "pos": "Tính từ",
+    "vn": "cũ",
+    "hv": "cựu",
+    "em": "📦",
+    "lesson": 3,
+    "explain": [
+      "Đã qua sử dụng lâu, không còn mới, trái nghĩa với 新."
+    ],
+    "usage": "Tính từ, làm vị ngữ hoặc định ngữ: 很旧, 旧车.",
+    "collo": [
+      "太旧了",
+      "旧车",
+      "旧衣服"
+    ],
+    "ex_zh": "那辆太旧了，要换一辆。",
+    "ex_py": "Nà liàng tài jiù le, yào huàn yí liàng.",
+    "ex_vn": "Chiếc đó cũ quá rồi, phải đổi cái khác.",
+    "exList": [
+      {
+        "zh": "那辆太旧了，要换一辆。",
+        "py": "Nà liàng tài jiù le, yào huàn yí liàng.",
+        "vn": "Chiếc đó cũ quá rồi, phải đổi cái khác."
+      },
+      {
+        "zh": "听说你们店可以用旧车换新车？",
+        "py": "Tīngshuō nǐmen diàn kěyǐ yòng jiù chē huàn xīn chē?",
+        "vn": "Nghe nói cửa hàng các bạn có thể dùng xe cũ đổi xe mới à?"
+      },
+      {
+        "zh": "我那辆旧车送给你吧。",
+        "py": "Wǒ nà liàng jiù chē sòng gěi nǐ ba.",
+        "vn": "Chiếc xe cũ đó của tôi tặng bạn luôn nhé."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "旧",
+        "p": "jiù",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "日 trên → 一+丨 dưới",
+        "rad": "日 (nhật)",
+        "mean": "cũ",
+        "tip": "Chữ giản thể mô phỏng hình chiếc lồng đèn cũ (biến thể từ chữ phồn thể 舊) → CŨ, trái nghĩa với 新.",
+        "cf": "日 (rì – \"mặt trời, ngày\", không có nét dưới\")",
+        "w": "旧车 / 很旧 / 新旧"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc xe này rẻ hơn chiếc kia hai ba trăm đồng, vì nó hơi cũ.",
+        "answer": "这辆车比那辆便宜两三百块钱，因为它有点儿旧。",
+        "answerPy": "Zhè liàng chē bǐ nà liàng piányi liǎng-sān bǎi kuài qián, yīnwèi tā yǒudiǎnr jiù.",
+        "note": "A比B便宜+số tiền diễn tả mức chênh lệch cụ thể.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy chiếc áo này cũ nhưng tôi vẫn rất thích.",
+        "answer": "虽然这件衣服旧了，但是我还是很喜欢。",
+        "answerPy": "Suīrán zhè jiàn yīfu jiù le, dànshì wǒ háishi hěn xǐhuan.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "太旧了",
+        "py": "tài jiù le",
+        "vn": "cũ quá rồi"
+      },
+      {
+        "zh": "旧车",
+        "py": "jiù chē",
+        "vn": "xe cũ"
+      },
+      {
+        "zh": "旧衣服",
+        "py": "jiù yīfu",
+        "vn": "quần áo cũ"
+      },
+      {
+        "zh": "又旧又小",
+        "py": "yòu jiù yòu xiǎo",
+        "vn": "vừa cũ vừa nhỏ"
+      },
+      {
+        "zh": "旧的换新的",
+        "py": "jiù de huàn xīn de",
+        "vn": "đổi cũ lấy mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 太旧了",
+        "m": "Cái gì đó cũ quá rồi"
+      },
+      {
+        "s": "旧 ↔ 新",
+        "m": "Cũ ↔ mới — 旧 dùng cho ĐỒ VẬT, 老 cho người"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "换",
+    "py": "huàn",
+    "pos": "Động từ",
+    "vn": "đổi, thay thế",
+    "hv": "hoán",
+    "em": "🔄",
+    "lesson": 3,
+    "explain": [
+      "Thay thế vật này bằng vật khác."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 换 + [vật] (换一辆, 换车).",
+    "collo": [
+      "换一辆",
+      "换车",
+      "换钱"
+    ],
+    "ex_zh": "那辆太旧了，要换一辆。",
+    "ex_py": "Nà liàng tài jiù le, yào huàn yí liàng.",
+    "ex_vn": "Chiếc đó cũ quá rồi, phải đổi cái khác.",
+    "exList": [
+      {
+        "zh": "那辆太旧了，要换一辆。",
+        "py": "Nà liàng tài jiù le, yào huàn yí liàng.",
+        "vn": "Chiếc đó cũ quá rồi, phải đổi cái khác."
+      },
+      {
+        "zh": "听说你们店可以用旧车换新车？",
+        "py": "Tīngshuō nǐmen diàn kěyǐ yòng jiù chē huàn xīn chē?",
+        "vn": "Nghe nói cửa hàng các bạn có thể dùng xe cũ đổi xe mới à?"
+      },
+      {
+        "zh": "又换了？你已经换了四五辆了吧？",
+        "py": "Yòu huàn le? Nǐ yǐjīng huànle sì-wǔ liàng le ba?",
+        "vn": "Lại đổi nữa à? Bạn đổi bốn năm chiếc rồi nhỉ?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "换",
+        "p": "huàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "扌 trái → 奂 phải",
+        "rad": "扌 (thủ – tay)",
+        "mean": "đổi, thay thế",
+        "tip": "扌(tay) + 奂(sáng sủa, mới mẻ) → dùng TAY thay đổi để có cái MỚI hơn = ĐỔI.",
+        "cf": "唤 (huàn – \"gọi\", có bộ 口\")",
+        "w": "换车 / 换钱 / 交换"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn đổi bốn năm cái điện thoại rồi phải không? Đổi nhiều thế thì tốn tiền lắm.",
+        "answer": "你已经换了四五个手机了吧？换这么多，太花钱了。",
+        "answerPy": "Nǐ yǐjīng huànle sì-wǔ ge shǒujī le ba? Huàn zhème duō, tài huāqián le.",
+        "note": "四五个 — khoảng bốn năm cái.",
+        "pair": "……吧？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu chiếc xe này hỏng thì bạn nên đổi cái mới đi.",
+        "answer": "如果这辆车坏了，你就应该换一辆新的。",
+        "answerPy": "Rúguǒ zhè liàng chē huài le, nǐ jiù yīnggāi huàn yí liàng xīn de.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "换一辆",
+        "py": "huàn yí liàng",
+        "vn": "đổi chiếc khác"
+      },
+      {
+        "zh": "换车",
+        "py": "huàn chē",
+        "vn": "đổi xe"
+      },
+      {
+        "zh": "换钱",
+        "py": "huàn qián",
+        "vn": "đổi tiền"
+      },
+      {
+        "zh": "换新的",
+        "py": "huàn xīn de",
+        "vn": "đổi cái mới"
+      },
+      {
+        "zh": "换个地方",
+        "py": "huàn gè dìfang",
+        "vn": "đổi chỗ khác"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "换 + 一 + lượng từ",
+        "m": "Đổi lấy một cái khác"
+      },
+      {
+        "s": "把 + N + 换成 + N",
+        "m": "Đổi cái này thành cái kia"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "地方",
+    "py": "dìfang",
+    "pos": "Danh từ",
+    "vn": "chỗ, nơi",
+    "hv": "địa phương",
+    "em": "📍",
+    "lesson": 4,
+    "explain": [
+      "Vị trí, khu vực cụ thể nào đó."
+    ],
+    "usage": "Danh từ; làm định ngữ hoặc đứng độc lập: 这个地方, 找地方.",
+    "collo": [
+      "这个地方",
+      "找地方",
+      "安静的地方"
+    ],
+    "ex_zh": "这两个地方的房子一样吗？",
+    "ex_py": "Zhè liǎng ge dìfang de fángzi yíyàng ma?",
+    "ex_vn": "Nhà ở hai chỗ này có giống nhau không?",
+    "exList": [
+      {
+        "zh": "这两个地方的房子一样吗？",
+        "py": "Zhè liǎng ge dìfang de fángzi yíyàng ma?",
+        "vn": "Nhà ở hai chỗ này có giống nhau không?"
+      },
+      {
+        "zh": "走，找个环境好的地方，我早就想跟你聊聊了。",
+        "py": "Zǒu, zhǎo ge huánjìng hǎo de dìfang, wǒ zǎo jiù xiǎng gēn nǐ liáoliao le.",
+        "vn": "Đi nào, tìm chỗ nào môi trường tốt, mình muốn nói chuyện với bạn từ lâu rồi."
+      },
+      {
+        "zh": "我很高兴你们喜欢这个地方，下次我们再来。",
+        "py": "Wǒ hěn gāoxìng nǐmen xǐhuan zhège dìfang, xià cì wǒmen zài lái.",
+        "vn": "Tôi rất vui vì các bạn thích chỗ này, lần sau chúng ta lại đến."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "方",
+        "p": "fāng",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "方 (phương)",
+        "mean": "phương hướng, vuông",
+        "tip": "Chữ tượng hình mô phỏng hai chiếc thuyền buộc nhau (hoặc lưỡi cày) → PHƯƠNG HƯỚNG; 地方 = \"khoảnh đất theo hướng nào đó\" = NƠI, CHỖ.",
+        "cf": "放 (fàng – \"đặt, thả\", có bộ 攵\")",
+        "w": "地方 / 方便 / 四方"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngôi nhà đó môi trường rất tốt, chủ yếu là yên tĩnh.",
+        "answer": "那个地方环境很好，主要是很安静。",
+        "answerPy": "Nàge dìfang huánjìng hěn hǎo, zhǔyào shì hěn ānjìng.",
+        "note": "主要是 diễn tả lý do chính (ôn lại 环境/主要 sẽ học ngay bên dưới).",
+        "pair": "要是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn tìm được chỗ yên tĩnh thì báo cho tôi biết nhé.",
+        "answer": "如果你找到安静的地方，就告诉我吧。",
+        "answerPy": "Rúguǒ nǐ zhǎodào ānjìng de dìfang, jiù gàosu wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 安静 đã học ở Bài 8).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "这个地方",
+        "py": "zhège dìfang",
+        "vn": "chỗ này"
+      },
+      {
+        "zh": "找地方",
+        "py": "zhǎo dìfang",
+        "vn": "tìm chỗ"
+      },
+      {
+        "zh": "安静的地方",
+        "py": "ānjìng de dìfang",
+        "vn": "nơi yên tĩnh"
+      },
+      {
+        "zh": "什么地方",
+        "py": "shénme dìfang",
+        "vn": "chỗ nào"
+      },
+      {
+        "zh": "好地方",
+        "py": "hǎo dìfang",
+        "vn": "chỗ tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 的 + 地方",
+        "m": "Nơi thế nào: 安静的地方"
+      },
+      {
+        "s": "地方 (nơi chốn) — 方 đọc nhẹ: dìfang"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "中介",
+    "py": "zhōngjiè",
+    "pos": "Danh từ",
+    "vn": "môi giới",
+    "hv": "trung giới",
+    "em": "🤝",
+    "lesson": 4,
+    "explain": [
+      "Người/tổ chức đứng giữa kết nối hai bên, thường dùng cho môi giới nhà đất."
+    ],
+    "usage": "Danh từ, làm chủ ngữ hoặc tân ngữ trong câu.",
+    "collo": [
+      "房屋中介",
+      "中介公司",
+      "找中介"
+    ],
+    "ex_zh": "这两个地方的房子一样吗？不一样。",
+    "ex_py": "Zhè liǎng ge dìfang de fángzi yíyàng ma? Bù yíyàng.",
+    "ex_vn": "Nhà ở hai chỗ này có giống nhau không? Không giống.",
+    "exList": [
+      {
+        "zh": "这两个地方的房子一样吗？不一样。",
+        "py": "Zhè liǎng ge dìfang de fángzi yíyàng ma? Bù yíyàng.",
+        "vn": "Nhà ở hai chỗ này có giống nhau không? Không giống."
+      },
+      {
+        "zh": "您看，学校外边的房子比学校里边的大一些。",
+        "py": "Nín kàn, xuéxiào wàibian de fángzi bǐ xuéxiào lǐbian de dà yìxiē.",
+        "vn": "Anh xem, nhà bên ngoài trường to hơn nhà bên trong trường một chút."
+      },
+      {
+        "zh": "学校里边比学校外边方便，附近有三四个车站。",
+        "py": "Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.",
+        "vn": "Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "介",
+        "p": "jiè",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "人 (nhân – người)",
+        "mean": "ở giữa, giới thiệu",
+        "tip": "Chữ tượng hình mô phỏng người đứng GIỮA hai bên → mở rộng nghĩa GIỚI THIỆU, MÔI GIỚI.",
+        "cf": "个 (gè – lượng từ, nét gần giống\")",
+        "w": "中介 / 介绍"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bên môi giới nói nhà ngoài trường tuy to hơn, nhưng đi lại không tiện bằng.",
+        "answer": "中介说学校外边的房子虽然比学校里边的大一些，但是没有里边的方便。",
+        "answerPy": "Zhōngjiè shuō xuéxiào wàibian de fángzi suīrán bǐ xuéxiào lǐbian de dà yìxiē, dànshì méiyǒu lǐbian de fāngbiàn.",
+        "note": "A 比 B + Adj + 一些 — hơn một chút.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn thuê nhà thì nên hỏi người môi giới.",
+        "answer": "如果你想租房子，就应该问问中介。",
+        "answerPy": "Rúguǒ nǐ xiǎng zū fángzi, jiù yīnggāi wènwen zhōngjiè.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "房屋中介",
+        "py": "fáng wū zhōngjiè",
+        "vn": "môi giới nhà đất"
+      },
+      {
+        "zh": "中介公司",
+        "py": "zhōngjiè gōngsī",
+        "vn": "công ty môi giới"
+      },
+      {
+        "zh": "找中介",
+        "py": "zhǎo zhōngjiè",
+        "vn": "tìm môi giới"
+      },
+      {
+        "zh": "中介说",
+        "py": "zhōngjiè shuō",
+        "vn": "bên môi giới nói"
+      },
+      {
+        "zh": "通过中介",
+        "py": "tōngguò zhōngjiè",
+        "vn": "qua môi giới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "找 + 中介",
+        "m": "Tìm bên môi giới"
+      },
+      {
+        "s": "中 + 介",
+        "m": "Người đứng giữa (中) giới thiệu (介)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "主要",
+    "py": "zhǔyào",
+    "pos": "Tính từ",
+    "vn": "chủ yếu",
+    "hv": "chủ yếu",
+    "em": "⭐",
+    "lesson": 4,
+    "explain": [
+      "Quan trọng nhất, đóng vai trò chính."
+    ],
+    "usage": "Tính từ/phó từ, thường đứng đầu vị ngữ: 主要是 + [lý do chính].",
+    "collo": [
+      "主要是",
+      "主要原因",
+      "最主要"
+    ],
+    "ex_zh": "大小没关系，主要是环境，哪个更安静？",
+    "ex_py": "Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?",
+    "ex_vn": "To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?",
+    "exList": [
+      {
+        "zh": "大小没关系，主要是环境，哪个更安静？",
+        "py": "Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?",
+        "vn": "To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?"
+      },
+      {
+        "zh": "我爸爸身体那么好，主要是因为每天锻炼。",
+        "py": "Wǒ bàba shēntǐ nàme hǎo, zhǔyào shì yīnwèi měitiān duànliàn.",
+        "vn": "Bố tôi sức khỏe tốt thế, chủ yếu là vì mỗi ngày đều tập thể dục."
+      },
+      {
+        "zh": "我儿子的学习比以前好多了，主要是他有兴趣了。",
+        "py": "Wǒ érzi de xuéxí bǐ yǐqián hǎoduō le, zhǔyào shì tā yǒu xìngqù le.",
+        "vn": "Việc học của con trai tôi tốt hơn trước nhiều, chủ yếu là vì nó có hứng thú rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "要",
+        "p": "yào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "覀 trên → 女 dưới",
+        "rad": "覀 (á)",
+        "mean": "cần, quan trọng",
+        "tip": "Chữ cổ mô phỏng người phụ nữ chống hai tay vào eo (điểm mấu chốt cơ thể) → nghĩa ĐIỂM MẤU CHỐT, mở rộng thành QUAN TRỌNG, CẦN.",
+        "cf": "腰 (yāo – \"cái eo\", có bộ 月\")",
+        "w": "主要 / 要求 / 需要"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "To nhỏ không quan trọng, chủ yếu là môi trường.",
+        "answer": "大小没关系，主要是环境。",
+        "answerPy": "Dàxiǎo méi guānxi, zhǔyào shì huánjìng.",
+        "note": "主要是 giới thiệu lý do/yếu tố chính (ôn lại 环境 vừa học trong bài này).",
+        "pair": "要是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì chủ yếu là môi trường yên tĩnh nên tôi thích căn nhà đó.",
+        "answer": "因为主要是环境安静，所以我喜欢那个房子。",
+        "answerPy": "Yīnwèi zhǔyào shì huánjìng ānjìng, suǒyǐ wǒ xǐhuan nàge fángzi.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "主要是",
+        "py": "zhǔyào shì",
+        "vn": "chủ yếu là"
+      },
+      {
+        "zh": "主要原因",
+        "py": "zhǔyào yuányīn",
+        "vn": "nguyên nhân chính"
+      },
+      {
+        "zh": "最主要",
+        "py": "zuì zhǔyào",
+        "vn": "chủ yếu nhất"
+      },
+      {
+        "zh": "主要问题",
+        "py": "zhǔyào wèntí",
+        "vn": "vấn đề chính"
+      },
+      {
+        "zh": "主要看环境",
+        "py": "zhǔyào kàn huánjìng",
+        "vn": "chủ yếu xem môi trường"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "主要 + 是 + …",
+        "m": "Chủ yếu là …"
+      },
+      {
+        "s": "主要的 + N",
+        "m": "Cái chính: 主要原因, 主要问题"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "环境",
+    "py": "huánjìng",
+    "pos": "Danh từ",
+    "vn": "môi trường",
+    "hv": "hoàn cảnh",
+    "em": "🌳",
+    "lesson": 4,
+    "explain": [
+      "Điều kiện xung quanh nơi sinh sống hoặc làm việc."
+    ],
+    "usage": "Danh từ; làm chủ ngữ hoặc tân ngữ: 环境好, 环境安静.",
+    "collo": [
+      "环境好",
+      "环境安静",
+      "学校环境"
+    ],
+    "ex_zh": "大小没关系，主要是环境，哪个更安静？",
+    "ex_py": "Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?",
+    "ex_vn": "To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?",
+    "exList": [
+      {
+        "zh": "大小没关系，主要是环境，哪个更安静？",
+        "py": "Dàxiǎo méi guānxi, zhǔyào shì huánjìng, nǎge gèng ānjìng?",
+        "vn": "To nhỏ không quan trọng, chủ yếu là môi trường, chỗ nào yên tĩnh hơn?"
+      },
+      {
+        "zh": "走，找个环境好的地方，我早就想跟你聊聊了。",
+        "py": "Zǒu, zhǎo ge huánjìng hǎo de dìfang, wǒ zǎo jiù xiǎng gēn nǐ liáoliao le.",
+        "vn": "Đi nào, tìm chỗ nào môi trường tốt, mình muốn nói chuyện với bạn từ lâu rồi."
+      },
+      {
+        "zh": "这家饭馆的环境真好，菜也很好吃。",
+        "py": "Zhè jiā fànguǎn de huánjìng zhēn hǎo, cài yě hěn hǎochī.",
+        "vn": "Quán ăn này môi trường đẹp thật, đồ ăn cũng ngon."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "境",
+        "p": "jìng",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "土 trái → 竟 phải",
+        "rad": "土 (thổ – đất)",
+        "mean": "cảnh, biên giới",
+        "tip": "土(đất) + 竟(cuối cùng, hết) → RANH GIỚI của một vùng đất, mở rộng nghĩa MÔI TRƯỜNG, HOÀN CẢNH.",
+        "cf": "镜 (jìng – \"gương, kính\", có bộ 钅\")",
+        "w": "环境 / 边境 / 环境好"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bên trong trường không yên tĩnh bằng bên ngoài, cho nên tôi muốn thuê nhà bên ngoài.",
+        "answer": "因为学校里边的没有学校外边的那么安静，所以我想租外边的房子。",
+        "answerPy": "Yīnwèi xuéxiào lǐbian de méiyǒu xuéxiào wàibian de nàme ānjìng, suǒyǐ wǒ xiǎng zū wàibian de fángzi.",
+        "note": "A 没有 B 那么 + Adj — A không bằng B đến mức đó.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu môi trường yên tĩnh thì tôi sẽ thuê căn nhà đó.",
+        "answer": "如果环境安静，我就租那个房子。",
+        "answerPy": "Rúguǒ huánjìng ānjìng, wǒ jiù zū nàge fángzi.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "环境好",
+        "py": "huánjìng hǎo",
+        "vn": "môi trường tốt"
+      },
+      {
+        "zh": "环境安静",
+        "py": "huánjìng ānjìng",
+        "vn": "môi trường yên tĩnh"
+      },
+      {
+        "zh": "学校环境",
+        "py": "xuéxiào huánjìng",
+        "vn": "môi trường trường học"
+      },
+      {
+        "zh": "学习环境",
+        "py": "xuéxí huánjìng",
+        "vn": "môi trường học tập"
+      },
+      {
+        "zh": "环境不太好",
+        "py": "huánjìng bú tài hǎo",
+        "vn": "môi trường không tốt lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "环境 + 好 / 安静",
+        "m": "Môi trường tốt, yên tĩnh"
+      },
+      {
+        "s": "环 + 境",
+        "m": "Khung cảnh (境) bao quanh (环)"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "附近",
+    "py": "fùjìn",
+    "pos": "Danh từ",
+    "vn": "vùng lân cận",
+    "hv": "phụ cận",
+    "em": "🗺️",
+    "lesson": 4,
+    "explain": [
+      "Khu vực gần một địa điểm nào đó."
+    ],
+    "usage": "Danh từ chỉ nơi chốn; đứng độc lập hoặc làm định ngữ: 附近有, 学校附近.",
+    "collo": [
+      "附近有",
+      "学校附近",
+      "附近的超市"
+    ],
+    "ex_zh": "学校里边比学校外边方便，附近有三四个车站。",
+    "ex_py": "Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.",
+    "ex_vn": "Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe.",
+    "exList": [
+      {
+        "zh": "学校里边比学校外边方便，附近有三四个车站。",
+        "py": "Xuéxiào lǐbian bǐ xuéxiào wàibian fāngbiàn, fùjìn yǒu sān-sì ge chēzhàn.",
+        "vn": "Bên trong trường tiện hơn bên ngoài trường, gần đó có ba bốn trạm xe."
+      },
+      {
+        "zh": "这儿附近有没有安静点儿的咖啡店？",
+        "py": "Zhèr fùjìn yǒu méiyǒu ānjìng diǎnr de kāfēidiàn?",
+        "vn": "Gần đây có quán cà phê nào yên tĩnh hơn không?"
+      },
+      {
+        "zh": "楼上有个咖啡店，比这儿安静得多。",
+        "py": "Lóushàng yǒu ge kāfēidiàn, bǐ zhèr ānjìng de duō.",
+        "vn": "Trên lầu có một quán cà phê, yên tĩnh hơn ở đây nhiều."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "附",
+        "p": "fù",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "阝 trái → 付 phải",
+        "rad": "阝 (phụ – gò đất)",
+        "mean": "gần kề, phụ thuộc",
+        "tip": "阝(gò đất) + 付(giao cho, gắn liền) → mảnh đất GẮN LIỀN kề bên = GẦN KỀ; 附近 = vùng đất gần đó.",
+        "cf": "付 (fù – \"trả tiền\", không có bộ 阝\")",
+        "w": "附近 / 附近的超市"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Gần đó có ba bốn trạm xe, nên đi đâu cũng rất tiện.",
+        "answer": "因为附近有三四个车站，所以去哪儿都很方便。",
+        "answerPy": "Yīnwèi fùjìn yǒu sān-sì ge chēzhàn, suǒyǐ qù nǎr dōu hěn fāngbiàn.",
+        "note": "nơi chốn + 附近 — 附近 đứng sau.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu gần đây có siêu thị thì sẽ rất tiện.",
+        "answer": "如果附近有超市，就会很方便。",
+        "answerPy": "Rúguǒ fùjìn yǒu chāoshì, jiù huì hěn fāngbiàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 超市 đã học ở Bài 4).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "附近有",
+        "py": "fùjìn yǒu",
+        "vn": "gần đây có"
+      },
+      {
+        "zh": "学校附近",
+        "py": "xuéxiào fùjìn",
+        "vn": "gần trường"
+      },
+      {
+        "zh": "附近的超市",
+        "py": "fùjìn de chāoshì",
+        "vn": "siêu thị gần đó"
+      },
+      {
+        "zh": "住在附近",
+        "py": "zhù zài fùjìn",
+        "vn": "sống gần đây"
+      },
+      {
+        "zh": "附近很方便",
+        "py": "fùjìn hěn fāngbiàn",
+        "vn": "quanh đây rất tiện"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "nơi chốn + 附近",
+        "m": "Gần nơi nào — 附近 đứng SAU"
+      },
+      {
+        "s": "附近 + 有 + N",
+        "m": "Gần đây có cái gì"
+      }
+    ]
+  }
 ];
 
 const wuData = [

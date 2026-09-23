@@ -3,423 +3,2054 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'图书馆',py:'túshūguǎn',pos:'Danh từ',vn:'thư viện', hv: 'đồ thư quán',em:'📚',lesson:1,
-   explain:['Nơi lưu trữ và cho mượn sách, tài liệu để đọc, học tập.'],
-   usage:'Danh từ; đi cùng động từ 去: 去图书馆.',
-   collo:['去图书馆','在图书馆','图书馆借书'],
-   ex_zh:'我去图书馆借本书。',ex_py:'Wǒ qù túshūguǎn jiè běn shū.',ex_vn:'Mình đi thư viện mượn một quyển sách.',
-   exList:[
-     {zh:'我去图书馆借本书。',py:'Wǒ qù túshūguǎn jiè běn shū.',vn:'Mình đi thư viện mượn một quyển sách.'},
-     {zh:'教室里人太多了，我们去图书馆学习吧，那儿比较安静。',py:'Jiàoshì lǐ rén tài duō le, wǒmen qù túshūguǎn xuéxí ba, nàr bǐjiào ānjìng.',vn:'Trong lớp học đông người quá, chúng ta đi thư viện học đi, ở đó khá yên tĩnh.'},
-     {zh:'你昨天让我去图书馆把书还了，你忘了？',py:'Nǐ zuótiān ràng wǒ qù túshūguǎn bǎ shū huán le, nǐ wàng le?',vn:'Hôm qua bạn bảo mình đi thư viện trả sách rồi, bạn quên à?'},
-   ],
-   hanzi:[
-     {c:'馆',p:'guǎn',type:'左右结构 · Trái-phải',st:11,ord:'饣 trái → 官 phải',rad:'饣 (thực – ăn uống)',mean:'quán, tòa nhà công cộng',
-      tip:'饣(ăn uống, ý chỉ nơi tiếp đãi) + 官(quan, cơ quan) → tòa nhà công cộng để phục vụ/lưu trữ = QUÁN, THƯ VIỆN.',
-      cf:'官 (guān – "quan chức", không có bộ 饣")',w:'图书馆 / 博物馆 / 饭馆'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn đi thư viện thì giúp mình trả quyển sách này nhé.',answer:'如果你去图书馆，就帮我把这本书还了吧。',answerPy:'Rúguǒ nǐ qù túshūguǎn, jiù bāng wǒ bǎ zhè běn shū huán le ba.',
-      note:'把字句 (把+B+động từ) diễn tả sự xử lý sự vật xác định (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn đi thư viện thì có thể mượn quyển từ điển đó.',answer:'只要你去图书馆，就可以借那本词典。',answerPy:'Zhǐyào nǐ qù túshūguǎn, jiù kěyǐ jiè nà běn cídiǎn.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 词典 sẽ học ngay bên dưới).'},
-   ]},
-
-  {n:2,zh:'借',py:'jiè',pos:'Động từ',vn:'mượn, vay', hv: 'tá',em:'📖',lesson:1,
-   explain:['Sử dụng tạm thời vật của người khác, hoặc cho người khác mượn.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 借 + [vật] (借书, 借钱).',
-   collo:['借书','借钱','借用'],
-   ex_zh:'我去图书馆借本书。',ex_py:'Wǒ qù túshūguǎn jiè běn shū.',ex_vn:'Mình đi thư viện mượn một quyển sách.',
-   exList:[
-     {zh:'我去图书馆借本书。',py:'Wǒ qù túshūguǎn jiè běn shū.',vn:'Mình đi thư viện mượn một quyển sách.'},
-     {zh:'方便的时候再借我用用。',py:'Fāngbiàn de shíhou zài jiè wǒ yòngyong.',vn:'Lúc nào tiện thì cho mình mượn dùng tiếp nhé.'},
-     {zh:'把词典还我吧，我要用一下。',py:'Bǎ cídiǎn huán wǒ ba, wǒ yào yòng yíxià.',vn:'Trả từ điển cho mình đi, mình cần dùng chút.'},
-   ],
-   hanzi:[
-     {c:'借',p:'jiè',type:'左右结构 · Trái-phải',st:10,ord:'亻 trái → 昔 phải',rad:'亻 (nhân – người)',mean:'mượn, vay',
-      tip:'亻(người) + 昔(ngày xưa, ý chỉ đã lâu) → người CHO/NHẬN vật trong một khoảng thời gian = MƯỢN, VAY.',
-      cf:'惜 (xī – "tiếc nuối", có bộ 忄")',w:'借书 / 借钱 / 借用'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đừng quên mang theo từ điển khi đi học.',answer:'上课的时候别忘了带词典。',answerPy:'Shàngkè de shíhou bié wàngle dài cídiǎn.',
-      note:'别忘了 + V diễn tả lời nhắc nhở (ôn lại 带 đã học ở Bài 1).'},
-     {promptLang:'vi',prompt:'Nếu bạn cần tiền thì có thể mượn tôi một ít.',answer:'如果你需要钱，就可以借我一些。',answerPy:'Rúguǒ nǐ xūyào qián, jiù kěyǐ jiè wǒ yìxiē.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'词典',py:'cídiǎn',pos:'Danh từ',vn:'từ điển', hv: 'từ điển',em:'📕',lesson:1,
-   explain:['Sách tra cứu nghĩa, cách dùng của từ ngữ.'],
-   usage:'Danh từ; lượng từ đi kèm là 本: 一本词典.',
-   collo:['一本词典','借词典','还词典'],
-   ex_zh:'帮我把这本词典还了吧。',ex_py:'Bāng wǒ bǎ zhè běn cídiǎn huánle ba.',ex_vn:'Giúp mình trả quyển từ điển này nhé.',
-   exList:[
-     {zh:'帮我把这本词典还了吧。',py:'Bāng wǒ bǎ zhè běn cídiǎn huánle ba.',vn:'Giúp mình trả quyển từ điển này nhé.'},
-     {zh:'把词典还我吧，我要用一下。',py:'Bǎ cídiǎn huán wǒ ba, wǒ yào yòng yíxià.',vn:'Trả từ điển cho mình đi, mình cần dùng chút.'},
-     {zh:'这本词典是我朋友的，不是我的。',py:'Zhè běn cídiǎn shì wǒ péngyou de, bú shì wǒ de.',vn:'Quyển từ điển này là của bạn tôi, không phải của tôi.'},
-   ],
-   hanzi:[
-     {c:'典',p:'diǎn',type:'上下结构 · Trên-dưới',st:8,ord:'曲(biến thể) trên → 八 dưới',rad:'八 (bát)',mean:'kinh điển, sách chuẩn mực',
-      tip:'Chữ cổ mô phỏng hai tay nâng cuốn sách quý trên giá đỡ → SÁCH CHUẨN MỰC, mở rộng thành TỪ ĐIỂN.',
-      cf:'点 (diǎn – "điểm", không liên quan nghĩa")',w:'词典 / 字典 / 经典'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Quyển từ điển này là của thư viện, không phải tôi mua.',answer:'这本词典是图书馆的，不是我买的。',answerPy:'Zhè běn cídiǎn shì túshūguǎn de, bú shì wǒ mǎi de.',
-      note:'是……的 diễn tả sở hữu.'},
-     {promptLang:'vi',prompt:'Vì tôi cần dùng từ điển nên tôi mượn thư viện một quyển.',answer:'因为我需要用词典，所以我在图书馆借了一本。',answerPy:'Yīnwèi wǒ xūyào yòng cídiǎn, suǒyǐ wǒ zài túshūguǎn jièle yì běn.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 图书馆 vừa học trong bài này).'},
-   ]},
-
-  {n:4,zh:'还',py:'huán',pos:'Động từ',vn:'trả', hv: 'hoàn',em:'↩️',lesson:1,
-   explain:['Đưa lại vật đã mượn cho chủ sở hữu.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 还 + [vật] (还书, 还钱); thường dùng trong 把字句: 把……还了.',
-   collo:['还书','还钱','把……还了'],
-   ex_zh:'帮我把这本词典还了吧。',ex_py:'Bāng wǒ bǎ zhè běn cídiǎn huánle ba.',ex_vn:'Giúp mình trả quyển từ điển này nhé.',
-   exList:[
-     {zh:'帮我把这本词典还了吧。',py:'Bāng wǒ bǎ zhè běn cídiǎn huánle ba.',vn:'Giúp mình trả quyển từ điển này nhé.'},
-     {zh:'把词典还我吧，我要用一下。',py:'Bǎ cídiǎn huán wǒ ba, wǒ yào yòng yíxià.',vn:'Trả từ điển cho mình đi, mình cần dùng chút.'},
-     {zh:'你昨天让我去图书馆把书还了，你忘了？',py:'Nǐ zuótiān ràng wǒ qù túshūguǎn bǎ shū huán le, nǐ wàng le?',vn:'Hôm qua bạn bảo mình đi thư viện trả sách rồi, bạn quên à?'},
-   ],
-   hanzi:[
-     {c:'还',p:'huán',type:'半包围结构 · Bán bao vây',st:7,ord:'辶 bao ngoài → 不(biến thể) trong',rad:'辶 (sước – đi)',mean:'trả lại, quay về',
-      tip:'辶(đi) → mang vật ĐI TRỞ LẠI nơi cũ = TRẢ LẠI (đọc "huán"); cùng chữ này đọc "hái" thì mang nghĩa "vẫn, còn".',
-      cf:'环 (huán – "vòng tròn", có bộ 王")',w:'还书 / 还钱 / 归还'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Xin lỗi, tôi quên mất chuyện trả sách rồi.',answer:'对不起，我把还书的事忘了。',answerPy:'Duìbuqǐ, wǒ bǎ huánshū de shì wàng le.',
-      note:'把字句 diễn tả việc bị quên (ôn lại 忘记 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Nếu bạn không trả sách thì thư viện sẽ gọi điện nhắc bạn.',answer:'如果你不还书，图书馆就会打电话提醒你。',answerPy:'Rúguǒ nǐ bù huán shū, túshūguǎn jiù huì dǎ diànhuà tíxǐng nǐ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 图书馆 vừa học trong bài này).'},
-   ]},
-
-  {n:5,zh:'灯',py:'dēng',pos:'Danh từ',vn:'đèn', hv: 'đăng',em:'💡',lesson:1,
-   explain:['Vật dụng phát sáng dùng để chiếu sáng.'],
-   usage:'Danh từ; đi cùng động từ 关/开: 关灯, 开灯.',
-   collo:['开灯','关灯','一盏灯'],
-   ex_zh:'记得把灯关了。',ex_py:'Jìde bǎ dēng guān le.',ex_vn:'Nhớ tắt đèn nhé.',
-   exList:[
-     {zh:'记得把灯关了。',py:'Jìde bǎ dēng guān le.',vn:'Nhớ tắt đèn nhé.'},
-     {zh:'会议结束后，你记得把空调和灯都关了。',py:'Huìyì jiéshù hòu, nǐ jìde bǎ kōngtiáo hé dēng dōu guān le.',vn:'Sau khi họp xong, bạn nhớ tắt cả máy điều hòa và đèn nhé.'},
-     {zh:'你的电脑关了没有？',py:'Nǐ de diànnǎo guānle méiyǒu?',vn:'Máy tính của bạn tắt chưa?'},
-   ],
-   hanzi:[
-     {c:'灯',p:'dēng',type:'左右结构 · Trái-phải',st:6,ord:'火 trái → 丁 phải',rad:'火 (hỏa – lửa)',mean:'đèn',
-      tip:'火(lửa, ánh sáng) + 丁(âm đọc, ý chỉ vật nhỏ cố định) → vật phát ra ÁNH SÁNG = ĐÈN.',
-      cf:'钉 (dīng – "cái đinh", có bộ 钅")',w:'开灯 / 关灯 / 一盏灯'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lát nữa khi bạn rời khỏi lớp học, nhớ tắt đèn nhé.',answer:'等一会儿你离开教室的时候，记得把灯关了。',answerPy:'Děng yíhuìr nǐ líkāi jiàoshì de shíhou, jìde bǎ dēng guān le.',
-      note:'把字句 diễn tả hành động xử lý sự vật (灯) theo yêu cầu.'},
-     {promptLang:'vi',prompt:'Tuy cuộc họp đã kết thúc nhưng anh ấy quên tắt đèn.',answer:'虽然会议结束了，但是他忘了把灯关了。',answerPy:'Suīrán huìyì jiéshù le, dànshì tā wàngle bǎ dēng guān le.',
-      note:'虽然……但是…… diễn tả sự tương phản (ôn lại 会议/结束 sẽ học ngay bên dưới).'},
-   ]},
-
-  {n:6,zh:'会议',py:'huìyì',pos:'Danh từ',vn:'hội nghị, cuộc họp', hv: 'hội nghị',em:'💼',lesson:2,
-   explain:['Buổi tập hợp để thảo luận, quyết định vấn đề chung.'],
-   usage:'Danh từ; đi cùng động từ 开: 开会议; hoặc 会议 + 结束.',
-   collo:['开会议','会议结束','参加会议'],
-   ex_zh:'会议结束后，别忘记把空调关了。',ex_py:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.',ex_vn:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.',
-   exList:[
-     {zh:'会议结束后，别忘记把空调关了。',py:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.',vn:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.'},
-     {zh:'会议结束后，你记得把空调和灯都关了。',py:'Huìyì jiéshù hòu, nǐ jìde bǎ kōngtiáo hé dēng dōu guān le.',vn:'Sau khi họp xong, bạn nhớ tắt cả máy điều hòa và đèn nhé.'},
-     {zh:'我明天出去开会，你能帮我照顾一下小雨吗？',py:'Wǒ míngtiān chūqu kāihuì, nǐ néng bāng wǒ zhàogù yíxià Xiǎoyǔ ma?',vn:'Ngày mai tôi ra ngoài họp, bạn có thể giúp tôi trông Tiểu Vũ một chút không?'},
-   ],
-   hanzi:[
-     {c:'议',p:'yì',type:'左右结构 · Trái-phải',st:5,ord:'讠 trái → 义 phải',rad:'讠 (ngôn – lời nói)',mean:'bàn bạc, nghị luận',
-      tip:'讠(lời nói) + 义(chính nghĩa, lẽ phải) → nói ra để bàn về LẼ PHẢI = BÀN BẠC; 会议 = cuộc họp bàn bạc.',
-      cf:'仪 (yí – "nghi thức", có 亻 thay vì 讠")',w:'会议 / 开会 / 议论'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trước khi cuộc họp bắt đầu, làm ơn tắt điện thoại đi.',answer:'会议开始前，请把手机关了。',answerPy:'Huìyì kāishǐ qián, qǐng bǎ shǒujī guān le.',
-      note:'把字句 diễn tả hành động xử lý sự vật xác định (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn tham gia cuộc họp thì nhớ mang theo laptop nhé.',answer:'如果你参加会议，就记得带笔记本电脑。',answerPy:'Rúguǒ nǐ cānjiā huìyì, jiù jìde dài bǐjìběn diànnǎo.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 参加 đã học ở Bài 9).'},
-   ]},
-
-  {n:7,zh:'结束',py:'jiéshù',pos:'Động từ',vn:'kết thúc, chấm dứt', hv: 'kết thúc',em:'🏁',lesson:2,
-   explain:['Hoạt động, sự việc đi đến hồi cuối.'],
-   usage:'Động từ, đứng độc lập hoặc mang tân ngữ: 结束了, 会议结束.',
-   collo:['会议结束','结束了','还没结束'],
-   ex_zh:'会议结束后，别忘记把空调关了。',ex_py:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.',ex_vn:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.',
-   exList:[
-     {zh:'会议结束后，别忘记把空调关了。',py:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.',vn:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.'},
-     {zh:'运动会什么时候结束？五点左右吧。',py:'Yùndònghuì shénme shíhou jiéshù? Wǔ diǎn zuǒyòu ba.',vn:'Hội thao khi nào kết thúc? Khoảng 5 giờ thôi.'},
-     {zh:'结束一天的工作以后，你和家人一起吃晚饭。',py:'Jiéshù yìtiān de gōngzuò yǐhòu, nǐ hé jiārén yìqǐ chī wǎnfàn.',vn:'Kết thúc một ngày làm việc, bạn cùng gia đình ăn tối.'},
-   ],
-   hanzi:[
-     {c:'束',p:'shù',type:'独体字 · Chữ đơn',st:7,ord:'木+口(biến thể)',rad:'木 (mộc – cây)',mean:'bó, buộc',
-      tip:'Chữ tượng hình mô phỏng một bó cây bị BUỘC lại → BÓ, mở rộng nghĩa "đóng lại, chấm dứt" = KẾT THÚC.',
-      cf:'速 (sù – "nhanh chóng", có bộ 辶")',w:'结束 / 一束花'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Phim chừng nào kết thúc?',answer:'电影什么时候结束？',answerPy:'Diànyǐng shénme shíhou jiéshù?',
-      note:'什么时候 hỏi thời gian.'},
-     {promptLang:'vi',prompt:'Chỉ cần cuộc họp kết thúc thì chúng ta có thể đi ăn cơm.',answer:'只要会议结束，我们就可以去吃饭。',answerPy:'Zhǐyào huìyì jiéshù, wǒmen jiù kěyǐ qù chīfàn.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 会议 vừa học trong bài này).'},
-   ]},
-
-  {n:8,zh:'忘记',py:'wàngjì',pos:'Động từ',vn:'quên', hv: 'vong ký',em:'🤔',lesson:2,
-   explain:['Không còn nhớ, để mất khỏi trí nhớ.'],
-   usage:'Động từ, mang tân ngữ trực tiếp hoặc dùng trong 把字句: 别忘记 + V, 把……忘记了.',
-   collo:['别忘记','忘记了','把……忘了'],
-   ex_zh:'会议结束后，别忘记把空调关了。',ex_py:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.',ex_vn:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.',
-   exList:[
-     {zh:'会议结束后，别忘记把空调关了。',py:'Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.',vn:'Sau khi họp xong, đừng quên tắt máy điều hòa nhé.'},
-     {zh:'我把爸爸的生日忘了。',py:'Wǒ bǎ bàba de shēngrì wàng le.',vn:'Con quên mất sinh nhật bố rồi.'},
-     {zh:'你昨天让我去图书馆把书还了，你忘了？',py:'Nǐ zuótiān ràng wǒ qù túshūguǎn bǎ shū huán le, nǐ wàng le?',vn:'Hôm qua bạn bảo mình đi thư viện trả sách rồi, bạn quên à?'},
-   ],
-   hanzi:[
-     {c:'忘',p:'wàng',type:'上下结构 · Trên-dưới',st:7,ord:'亡 trên → 心 dưới',rad:'心 (tâm – tim, tâm trí)',mean:'quên',
-      tip:'亡(mất đi) + 心(tâm trí) → điều gì đó MẤT ĐI khỏi TÂM TRÍ = QUÊN.',
-      cf:'忙 (máng – "bận rộn", có 忄 thay vì 心")',w:'忘记 / 忘了 / 别忘了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi quên mất bài tập cô giáo giao rồi.',answer:'我把老师说的作业忘了。',answerPy:'Wǒ bǎ lǎoshī shuō de zuòyè wàng le.',
-      note:'把字句: 把+B(作业)+忘了 diễn tả sự việc bị quên.'},
-     {promptLang:'vi',prompt:'Xin lỗi, tôi quên mất chuyện đó rồi.',answer:'对不起，我把那件事忘了。',answerPy:'Duìbuqǐ, wǒ bǎ nà jiàn shì wàng le.',
-      note:'把字句 diễn tả sự việc bị quên.'},
-   ]},
-
-  {n:9,zh:'空调',py:'kōngtiáo',pos:'Danh từ',vn:'máy điều hòa không khí', hv: 'không điều',em:'❄️',lesson:2,
-   explain:['Thiết bị điều chỉnh nhiệt độ không khí trong phòng.'],
-   usage:'Danh từ; đi cùng động từ 开/关: 开空调, 关空调.',
-   collo:['开空调','关空调','空调坏了'],
-   ex_zh:'别忘记把空调关了。',ex_py:'Bié wàngjì bǎ kōngtiáo guān le.',ex_vn:'Đừng quên tắt máy điều hòa nhé.',
-   exList:[
-     {zh:'别忘记把空调关了。',py:'Bié wàngjì bǎ kōngtiáo guān le.',vn:'Đừng quên tắt máy điều hòa nhé.'},
-     {zh:'空调下面怎么这么多水？',py:'Kōngtiáo xiàmian zěnme zhème duō shuǐ?',vn:'Sao dưới máy điều hòa nhiều nước thế?'},
-     {zh:'你记得把空调和灯都关了。',py:'Nǐ jìde bǎ kōngtiáo hé dēng dōu guān le.',vn:'Bạn nhớ tắt cả máy điều hòa và đèn nhé.'},
-   ],
-   hanzi:[
-     {c:'调',p:'tiáo',type:'左右结构 · Trái-phải',st:10,ord:'讠 trái → 周 phải',rad:'讠 (ngôn – lời nói)',mean:'điều chỉnh',
-      tip:'讠(nói, ý chỉ hòa hợp) + 周(khắp, đều) → làm cho MỌI THỨ hòa hợp đều đặn = ĐIỀU CHỈNH; 空调 = điều chỉnh không khí.',
-      cf:'周 (zhōu – "vòng, tuần", không có bộ 讠")',w:'空调 / 调整'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đừng quên khóa cửa nhé.',answer:'别忘记把门锁了。',answerPy:'Bié wàngjì bǎ mén suǒ le.',
-      note:'别 + V diễn tả lời nhắc nhở/mệnh lệnh, kết hợp 把字句.'},
-     {promptLang:'vi',prompt:'Nếu trời nóng thì bạn mở máy điều hòa lên đi.',answer:'如果天气热，你就开空调吧。',answerPy:'Rúguǒ tiānqì rè, nǐ jiù kāi kōngtiáo ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:10,zh:'关',py:'guān',pos:'Động từ',vn:'tắt, đóng', hv: 'quan',em:'🔴',lesson:2,
-   explain:['Ngừng hoạt động một thiết bị, hoặc đóng lại một vật.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 关 + [vật] (关灯, 关空调); thường dùng trong 把字句.',
-   collo:['关灯','关空调','关门'],
-   ex_zh:'别忘记把空调关了。',ex_py:'Bié wàngjì bǎ kōngtiáo guān le.',ex_vn:'Đừng quên tắt máy điều hòa nhé.',
-   exList:[
-     {zh:'别忘记把空调关了。',py:'Bié wàngjì bǎ kōngtiáo guān le.',vn:'Đừng quên tắt máy điều hòa nhé.'},
-     {zh:'记得把灯关了。',py:'Jìde bǎ dēng guān le.',vn:'Nhớ tắt đèn nhé.'},
-     {zh:'饭菜都做好了，把电脑关了吧？先吃饭。',py:'Fàncài dōu zuòhǎo le, bǎ diànnǎo guān le ba? Xiān chīfàn.',vn:'Cơm nước xong hết rồi, tắt máy tính đi nhé? Ăn cơm trước đã.'},
-   ],
-   hanzi:[
-     {c:'关',p:'guān',type:'独体字 · Chữ đơn',st:6,ord:'nét liền',rad:'冫(băng)',mean:'đóng, tắt; liên quan',
-      tip:'Chữ giản thể mô phỏng cánh cửa được ĐÓNG LẠI → ĐÓNG, TẮT; mở rộng nghĩa LIÊN QUAN (关系).',
-      cf:'并 (bìng – "cùng, và", hình dáng khác hẳn")',w:'关灯 / 关门 / 关系'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cửa lớp học đóng chưa?',answer:'教室的门关了没有？',answerPy:'Jiàoshì de mén guānle méiyǒu?',
-      note:'V+了+没有 hỏi hành động đã hoàn thành chưa.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn tắt máy điều hòa thì phòng sẽ không lạnh nữa.',answer:'只要你把空调关了，房间就不会冷了。',answerPy:'Zhǐyào nǐ bǎ kōngtiáo guān le, fángjiān jiù bú huì lěng le.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 空调 vừa học trong bài này).'},
-   ]},
-
-  {n:11,zh:'地铁',py:'dìtiě',pos:'Danh từ',vn:'tàu điện ngầm', hv: 'địa thiết',em:'🚇',lesson:2,
-   explain:['Phương tiện giao thông công cộng chạy dưới lòng đất.'],
-   usage:'Danh từ; đi cùng động từ 坐: 坐地铁.',
-   collo:['坐地铁','地铁站','地铁上'],
-   ex_zh:'他正坐地铁来我们公司呢。',ex_py:'Tā zhèng zuò dìtiě lái wǒmen gōngsī ne.',ex_vn:'Ông ấy đang đi tàu điện ngầm đến công ty mình đấy.',
-   exList:[
-     {zh:'他正坐地铁来我们公司呢。',py:'Tā zhèng zuò dìtiě lái wǒmen gōngsī ne.',vn:'Ông ấy đang đi tàu điện ngầm đến công ty mình đấy.'},
-     {zh:'上下班都不用坐地铁了，骑自行车就可以。',py:'Shàng-xiàbān dōu búyòng zuò dìtiě le, qí zìxíngchē jiù kěyǐ.',vn:'Đi làm về đều không cần đi tàu điện ngầm nữa, đi xe đạp là được.'},
-     {zh:'这儿附近有眼镜店吗？地铁站旁边有一个。',py:'Zhèr fùjìn yǒu yǎnjìngdiàn ma? Dìtiě zhàn pángbiān yǒu yí ge.',vn:'Gần đây có cửa hàng kính không? Bên cạnh ga tàu điện ngầm có một cái.'},
-   ],
-   hanzi:[
-     {c:'铁',p:'tiě',type:'左右结构 · Trái-phải',st:10,ord:'钅 trái → 失 phải',rad:'钅 (kim – kim loại)',mean:'sắt',
-      tip:'钅(kim loại) + 失(mất, ý chỉ màu đen xỉn) → kim loại màu ĐEN XỈN = SẮT; 地铁 = "đường sắt dưới đất" = TÀU ĐIỆN NGẦM.',
-      cf:'跌 (diē – "ngã", có bộ 足")',w:'地铁 / 铁路 / 地铁站'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Giám đốc Chu khoảng 3 giờ sẽ đến công ty bằng tàu điện ngầm.',answer:'周经理三点左右会坐地铁到公司。',answerPy:'Zhōu jīnglǐ sān diǎn zuǒyòu huì zuò dìtiě dào gōngsī.',
-      note:'三点左右 = số ước lượng (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu gần nhà bạn có ga tàu điện ngầm thì sẽ rất tiện.',answer:'如果你家附近有地铁站，就会很方便。',answerPy:'Rúguǒ nǐ jiā fùjìn yǒu dìtiě zhàn, jiù huì hěn fāngbiàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 附近/方便 đã học ở Bài 10).'},
-   ]},
-
-  {n:12,zh:'双',py:'shuāng',pos:'Lượng từ',vn:'đôi', hv: 'song',em:'👞',lesson:3,
-   explain:['Đơn vị đếm các vật đi thành cặp như đũa, giày.'],
-   usage:'Lượng từ, đứng sau số từ: [số từ] + 双 + [danh từ] (一双筷子).',
-   collo:['一双筷子','一双鞋','两双'],
-   ex_zh:'还差一双筷子，你去拿一下。',ex_py:'Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.',ex_vn:'Còn thiếu một đôi đũa, con lấy giúp mẹ đi.',
-   exList:[
-     {zh:'还差一双筷子，你去拿一下。',py:'Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.',vn:'Còn thiếu một đôi đũa, con lấy giúp mẹ đi.'},
-     {zh:'服务员，这儿只有一双筷子，请再给我们拿一双。',py:'Fúwùyuán, zhèr zhǐ yǒu yì shuāng kuàizi, qǐng zài gěi wǒmen ná yì shuāng.',vn:'Phục vụ ơi, ở đây chỉ có một đôi đũa, làm ơn lấy thêm cho chúng tôi một đôi.'},
-     {zh:'拿两双筷子就可以了，今天爸爸不回来吃晚饭。',py:'Ná liǎng shuāng kuàizi jiù kěyǐ le, jīntiān bàba bù huílai chī wǎnfàn.',vn:'Lấy hai đôi đũa là được rồi, hôm nay bố không về ăn tối.'},
-   ],
-   hanzi:[
-     {c:'双',p:'shuāng',type:'左右结构 · Trái-phải',st:4,ord:'又+又 (kết hợp)',rad:'又 (hựu)',mean:'đôi, cặp',
-      tip:'Chữ giản thể mô phỏng HAI bàn tay (又+又) chụm lại → ĐÔI, CẶP.',
-      cf:'反 (fǎn – "trái ngược", chỉ có 1 chữ 又")',w:'一双筷子 / 一双鞋'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mẹ mua hai đôi giày thể thao cho hai anh em chúng tôi.',answer:'妈妈买了两双运动鞋给我们兄弟俩。',answerPy:'Māma mǎile liǎng shuāng yùndòngxié gěi wǒmen xiōngdì liǎ.',
-      note:'两双 + danh từ (运动鞋) đếm vật theo đôi.'},
-     {promptLang:'vi',prompt:'Chỉ cần lấy hai đôi đũa là đủ rồi.',answer:'只要拿两双筷子就够了。',answerPy:'Zhǐyào ná liǎng shuāng kuàizi jiù gòu le.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:13,zh:'筷子',py:'kuàizi',pos:'Danh từ',vn:'đũa', hv: 'khoái tử',em:'🥢',lesson:3,
-   explain:['Dụng cụ ăn cơm truyền thống gồm hai que.'],
-   usage:'Danh từ; lượng từ đi kèm là 双: 一双筷子.',
-   collo:['一双筷子','用筷子','拿筷子'],
-   ex_zh:'还差一双筷子，你去拿一下。',ex_py:'Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.',ex_vn:'Còn thiếu một đôi đũa, con lấy giúp mẹ đi.',
-   exList:[
-     {zh:'还差一双筷子，你去拿一下。',py:'Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.',vn:'Còn thiếu một đôi đũa, con lấy giúp mẹ đi.'},
-     {zh:'服务员，这儿只有一双筷子，请再给我们拿一双。',py:'Fúwùyuán, zhèr zhǐ yǒu yì shuāng kuàizi, qǐng zài gěi wǒmen ná yì shuāng.',vn:'Phục vụ ơi, ở đây chỉ có một đôi đũa, làm ơn lấy thêm cho chúng tôi một đôi.'},
-     {zh:'拿两双筷子就可以了，今天爸爸不回来吃晚饭。',py:'Ná liǎng shuāng kuàizi jiù kěyǐ le, jīntiān bàba bù huílai chī wǎnfàn.',vn:'Lấy hai đôi đũa là được rồi, hôm nay bố không về ăn tối.'},
-   ],
-   hanzi:[
-     {c:'筷',p:'kuài',type:'上下结构 · Trên-dưới',st:13,ord:'⺮ trên → 快 dưới',rad:'⺮ (trúc – tre)',mean:'đũa',
-      tip:'⺮(tre, vật liệu làm đũa) + 快(nhanh) → dụng cụ bằng TRE giúp gắp thức ăn NHANH = ĐŨA.',
-      cf:'快 (kuài – "nhanh", không có bộ ⺮")',w:'筷子 / 一双筷子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Phục vụ ơi, làm ơn lấy thêm cho chúng tôi một đôi đũa.',answer:'服务员，请再给我们拿一双筷子。',answerPy:'Fúwùyuán, qǐng zài gěi wǒmen ná yì shuāng kuàizi.',
-      note:'请 + V diễn tả lời yêu cầu lịch sự (ôn lại 服务员 đã học ở Bài 4).'},
-     {promptLang:'vi',prompt:'Nếu thiếu đũa thì bạn đi lấy thêm một đôi đi.',answer:'如果差筷子，你就再去拿一双吧。',answerPy:'Rúguǒ chà kuàizi, nǐ jiù zài qù ná yì shuāng ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 差 đã học ở Bài 7).'},
-   ]},
-
-  {n:14,zh:'啤酒',py:'píjiǔ',pos:'Danh từ',vn:'bia, rượu bia', hv: 'bì tửu',em:'🍺',lesson:3,
-   explain:['Loại đồ uống có cồn, lên men từ lúa mạch.'],
-   usage:'Danh từ; đi cùng động từ 喝: 喝啤酒.',
-   collo:['喝啤酒','一瓶啤酒','买啤酒'],
-   ex_zh:'那我们今天喝点儿啤酒吧。',ex_py:'Nà wǒmen jīntiān hē diǎnr píjiǔ ba.',ex_vn:'Vậy hôm nay chúng ta uống chút bia đi.',
-   exList:[
-     {zh:'那我们今天喝点儿啤酒吧。',py:'Nà wǒmen jīntiān hē diǎnr píjiǔ ba.',vn:'Vậy hôm nay chúng ta uống chút bia đi.'},
-     {zh:'你去楼下买几瓶啤酒吧。',py:'Nǐ qù lóuxià mǎi jǐ píng píjiǔ ba.',vn:'Bạn xuống dưới lầu mua vài chai bia đi.'},
-     {zh:'医生说你爸爸一口酒都不能喝。',py:'Yīshēng shuō nǐ bàba yì kǒu jiǔ dōu bù néng hē.',vn:'Bác sĩ nói bố con không được uống một ngụm rượu nào cả.'},
-   ],
-   hanzi:[
-     {c:'啤',p:'pí',type:'左右结构 · Trái-phải',st:11,ord:'口 trái → 卑 phải',rad:'口 (khẩu – miệng)',mean:'bia (phiên âm)',
-      tip:'口(miệng, ý chỉ đồ uống) + 卑(âm đọc mượn từ "beer") → chữ tạo ra để PHIÊN ÂM từ "bia" của phương Tây.',
-      cf:'脾 (pí – "lá lách", có bộ 月")',w:'啤酒 / 喝啤酒'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bố con không được uống một ngụm rượu nào cả.',answer:'你爸爸一口酒都不能喝。',answerPy:'Nǐ bàba yì kǒu jiǔ dōu bù néng hē.',
-      note:'一口……都不能 diễn tả sự cấm đoán tuyệt đối (ôn lại 口 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Nếu bạn đói thì chúng ta uống chút bia trước rồi ăn cơm.',answer:'如果你饿了，我们就先喝点儿啤酒再吃饭。',answerPy:'Rúguǒ nǐ è le, wǒmen jiù xiān hē diǎnr píjiǔ zài chīfàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 饿 đã học ở Bài 4).'},
-   ]},
-
-  {n:15,zh:'口',py:'kǒu',pos:'Lượng từ',vn:'miếng, ngụm, hớp', hv: 'khẩu',em:'👄',lesson:3,
-   explain:['Đơn vị đếm số lần ăn/uống bằng miệng.'],
-   usage:'Lượng từ, đứng sau số từ: [số từ] + 口 + [danh từ] (一口水, 一口酒).',
-   collo:['一口水','一口酒','喝一口'],
-   ex_zh:'医生说你爸爸一口酒都不能喝。',ex_py:'Yīshēng shuō nǐ bàba yì kǒu jiǔ dōu bù néng hē.',ex_vn:'Bác sĩ nói bố con không được uống một ngụm rượu nào cả.',
-   exList:[
-     {zh:'医生说你爸爸一口酒都不能喝。',py:'Yīshēng shuō nǐ bàba yì kǒu jiǔ dōu bù néng hē.',vn:'Bác sĩ nói bố con không được uống một ngụm rượu nào cả.'},
-     {zh:'这种咖啡特别好喝，你快来喝一口吧。',py:'Zhè zhǒng kāfēi tèbié hǎohē, nǐ kuài lái hē yì kǒu ba.',vn:'Loại cà phê này ngon lắm, bạn mau đến uống một ngụm đi.'},
-     {zh:'吃几口饭就饱了。',py:'Chī jǐ kǒu fàn jiù bǎo le.',vn:'Ăn mấy miếng cơm là no rồi.'},
-   ],
-   hanzi:[
-     {c:'口',p:'kǒu',type:'独体字 · Chữ đơn (tượng hình)',st:3,ord:'nét liền, hình cái miệng',rad:'口 (khẩu)',mean:'miệng',
-      tip:'Chữ tượng hình mô phỏng hình cái MIỆNG đang mở → MIỆNG, mở rộng làm lượng từ đếm miếng/ngụm.',
-      cf:'囗 (wéi – bộ "vi", nét vuông đơn giản hơn")',w:'一口 / 口水 / 门口'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Loại cà phê này ngon lắm, bạn thử uống một ngụm đi.',answer:'这种咖啡特别好喝，你尝一口吧。',answerPy:'Zhè zhǒng kāfēi tèbié hǎohē, nǐ cháng yì kǒu ba.',
-      note:'一口 làm bổ ngữ số lượng cho hành động uống thử.'},
-     {promptLang:'vi',prompt:'Chỉ cần uống một ngụm là biết ngay có ngọt hay không.',answer:'只要喝一口，就知道甜不甜了。',answerPy:'Zhǐyào hē yì kǒu, jiù zhīdào tián bù tián le.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 甜 đã học ở Bài 3).'},
-   ]},
-
-  {n:16,zh:'瓶子',py:'píngzi',pos:'Danh từ',vn:'lọ, bình', hv: 'bình tử',em:'🍾',lesson:3,
-   explain:['Vật dụng có cổ nhỏ dùng để đựng chất lỏng.'],
-   usage:'Danh từ; cũng dùng làm lượng từ 瓶ế: 一瓶 (một chai/lọ).',
-   collo:['酒瓶子','一个瓶子','空瓶子'],
-   ex_zh:'别让他看见酒瓶子。',ex_py:'Bié ràng tā kànjiàn jiǔ píngzi.',ex_vn:'Đừng để ông ấy nhìn thấy chai rượu.',
-   exList:[
-     {zh:'别让他看见酒瓶子。',py:'Bié ràng tā kànjiàn jiǔ píngzi.',vn:'Đừng để ông ấy nhìn thấy chai rượu.'},
-     {zh:'桌子上有一个瓶子，是谁的？',py:'Zhuōzi shang yǒu yí ge píngzi, shì shéi de?',vn:'Trên bàn có một cái lọ, của ai vậy?'},
-     {zh:'你去楼下买几瓶啤酒吧。',py:'Nǐ qù lóuxià mǎi jǐ píng píjiǔ ba.',vn:'Bạn xuống dưới lầu mua vài chai bia đi.'},
-   ],
-   hanzi:[
-     {c:'瓶',p:'píng',type:'上下结构 · Trên-dưới',st:10,ord:'并 trên → 瓦 dưới',rad:'瓦 (ngõa – ngói, gốm)',mean:'chai, lọ',
-      tip:'并(kết hợp, gộp lại) + 瓦(đồ gốm) → đồ GỐM có hình dáng để ĐỰNG chất lỏng = CHAI, LỌ.',
-      cf:'并 (bìng – "cùng, và", không có bộ 瓦")',w:'瓶子 / 一瓶 / 花瓶'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mẹ bảo tôi lấy giúp mẹ một cái lọ.',answer:'妈妈让我去拿一个瓶子。',answerPy:'Māma ràng wǒ qù ná yí ge píngzi.',
-      note:'让 + người + V diễn tả sai khiến.'},
-     {promptLang:'vi',prompt:'Vì bố không được uống rượu nên mẹ giấu hết chai rượu đi.',answer:'因为爸爸不能喝酒，所以妈妈把酒瓶子都藏起来了。',answerPy:'Yīnwèi bàba bù néng hē jiǔ, suǒyǐ māma bǎ jiǔ píngzi dōu cáng qǐlai le.',
-      note:'因为……所以…… kết hợp 把字句 (ôn lại 啤酒 vừa học trong bài này).'},
-   ]},
-
-  {n:17,zh:'笔记本(电脑)',py:'bǐjìběn (diànnǎo)',pos:'Danh từ',vn:'máy tính xách tay', hv: 'bút ký bản điện não',em:'💻',lesson:4,
-   explain:['Loại máy tính nhỏ gọn, dễ mang theo.'],
-   usage:'Danh từ; lượng từ đi kèm là 个/台: 一个笔记本电脑.',
-   collo:['一个笔记本电脑','买笔记本电脑','换笔记本电脑'],
-   ex_zh:'这个笔记本电脑我去年买的时候要五千块左右。',ex_py:'Zhège bǐjìběn diànnǎo wǒ qùnián mǎi de shíhou yào wǔqiān kuài zuǒyòu.',ex_vn:'Chiếc máy tính xách tay này khi tôi mua năm ngoái giá khoảng năm nghìn đồng.',
-   exList:[
-     {zh:'这个笔记本电脑我去年买的时候要五千块左右。',py:'Zhège bǐjìběn diànnǎo wǒ qùnián mǎi de shíhou yào wǔqiān kuài zuǒyòu.',vn:'Chiếc máy tính xách tay này khi tôi mua năm ngoái giá khoảng năm nghìn đồng.'},
-     {zh:'我的笔记本电脑太旧了，我想换一个。',py:'Wǒ de bǐjìběn diànnǎo tài jiù le, wǒ xiǎng huàn yí ge.',vn:'Máy tính xách tay của tôi cũ quá rồi, tôi muốn đổi một cái khác.'},
-     {zh:'小周，你帮我看一下笔记本电脑吧。',py:'Xiǎo Zhōu, nǐ bāng wǒ kàn yíxià bǐjìběn diànnǎo ba.',vn:'Tiểu Chu, bạn giúp tôi xem qua máy tính xách tay chút đi.'},
-   ],
-   hanzi:[
-     {c:'脑',p:'nǎo',type:'左右结构 · Trái-phải',st:10,ord:'月 trái → 甾(biến thể) phải',rad:'月 (nhục – thân thể)',mean:'não, bộ óc',
-      tip:'月(bộ phận cơ thể) + phần còn lại (hình ảnh bộ não) → NÃO; 电脑 = "não điện" = MÁY TÍNH.',
-      cf:'恼 (nǎo – "phiền não", có bộ 忄")',w:'电脑 / 笔记本电脑 / 头脑'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chiếc máy tính xách tay đó cô ấy mua năm ngoái với giá khoảng tám nghìn đồng.',answer:'那个笔记本电脑她去年买的时候要八千块左右。',answerPy:'Nàge bǐjìběn diànnǎo tā qùnián mǎi de shíhou yào bāqiān kuài zuǒyòu.',
-      note:'八千块左右 = số ước lượng (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn muốn đổi máy tính mới thì tôi có thể giúp bạn xem qua.',answer:'如果你想换新笔记本电脑，我就可以帮你看看。',answerPy:'Rúguǒ nǐ xiǎng huàn xīn bǐjìběn diànnǎo, wǒ jiù kěyǐ bāng nǐ kànkan.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 换 đã học ở Bài 10).'},
-   ]},
-
-  {n:18,zh:'电子邮件',py:'diànzǐ yóujiàn',pos:'Danh từ',vn:'email', hv: 'điện tử bưu kiện',em:'📧',lesson:4,
-   explain:['Thư điện tử gửi qua mạng Internet.'],
-   usage:'Danh từ; đi cùng động từ 看/发: 看电子邮件, 发电子邮件.',
-   collo:['看电子邮件','发电子邮件','收电子邮件'],
-   ex_zh:'现在我每天起床后的第一件事就是打开电脑，看电子邮件。',ex_py:'Xiànzài wǒ měitiān qǐchuáng hòu de dì-yī jiàn shì jiùshì dǎkāi diànnǎo, kàn diànzǐ yóujiàn.',ex_vn:'Bây giờ mỗi ngày sau khi thức dậy việc đầu tiên tôi làm là mở máy tính, xem email.',
-   exList:[
-     {zh:'现在我每天起床后的第一件事就是打开电脑，看电子邮件。',py:'Xiànzài wǒ měitiān qǐchuáng hòu de dì-yī jiàn shì jiùshì dǎkāi diànnǎo, kàn diànzǐ yóujiàn.',vn:'Bây giờ mỗi ngày sau khi thức dậy việc đầu tiên tôi làm là mở máy tính, xem email.'},
-     {zh:'昨天我还能看电子邮件，今天突然就打不开了。',py:'Zuótiān wǒ hái néng kàn diànzǐ yóujiàn, jīntiān tūrán jiù dǎ bu kāi le.',vn:'Hôm qua tôi vẫn xem email được, hôm nay đột nhiên không mở được nữa.'},
-     {zh:'我已经很少写信了。',py:'Wǒ yǐjīng hěn shǎo xiě xìn le.',vn:'Tôi đã rất ít viết thư rồi.'},
-   ],
-   hanzi:[
-     {c:'邮',p:'yóu',type:'左右结构 · Trái-phải',st:7,ord:'由 trái → 阝 phải',rad:'阝 (ấp – vùng đất)',mean:'bưu chính, gửi thư',
-      tip:'由(từ, nguồn gốc) + 阝(vùng đất, trạm dịch) → nơi TRUNG CHUYỂN thư từ = BƯU CHÍNH; 邮件 = thư từ, 电子邮件 = thư điện tử.',
-      cf:'油 (yóu – "dầu", có bộ 氵")',w:'电子邮件 / 邮件 / 邮局'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Việc đầu tiên tôi làm mỗi sáng là mở máy tính xem email.',answer:'我每天早上第一件事就是打开电脑看电子邮件。',answerPy:'Wǒ měitiān zǎoshang dì-yī jiàn shì jiùshì dǎkāi diànnǎo kàn diànzǐ yóujiàn.',
-      note:'第一件事就是 + V diễn tả việc làm đầu tiên.'},
-     {promptLang:'vi',prompt:'Nếu bạn có việc gì thì gửi email cho tôi nhé.',answer:'如果你有事，就给我发电子邮件吧。',answerPy:'Rúguǒ nǐ yǒu shì, jiù gěi wǒ fā diànzǐ yóujiàn ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:19,zh:'习惯',py:'xíguàn',pos:'Động từ/Danh từ',vn:'quen; thói quen', hv: 'tập quán',em:'🔁',lesson:4,
-   explain:['Đã trở nên quen thuộc với điều gì đó, hoặc bản thân điều lặp lại đã thành thói quen.'],
-   usage:'Động từ: 习惯 + V (习惯用电脑); Danh từ: 好习惯, 有习惯.',
-   collo:['习惯用','好习惯','还没习惯'],
-   ex_zh:'已经习惯用电脑来学习和工作了。',ex_py:'Yǐjīng xíguàn yòng diànnǎo lái xuéxí hé gōngzuò le.',ex_vn:'Đã quen dùng máy tính để học tập và làm việc rồi.',
-   exList:[
-     {zh:'已经习惯用电脑来学习和工作了。',py:'Yǐjīng xíguàn yòng diànnǎo lái xuéxí hé gōngzuò le.',vn:'Đã quen dùng máy tính để học tập và làm việc rồi.',},
-     {zh:'我已经很少写信，也很少用笔写字，已经习惯用电脑了。',py:'Wǒ yǐjīng hěn shǎo xiě xìn, yě hěn shǎo yòng bǐ xiě zì, yǐjīng xíguàn yòng diànnǎo le.',vn:'Tôi đã rất ít viết thư, cũng rất ít dùng bút viết chữ, đã quen dùng máy tính rồi.'},
-     {zh:'哪一天突然没有了电脑，我们怎么办呢？',py:'Nǎ yì tiān tūrán méiyǒule diànnǎo, wǒmen zěnme bàn ne?',vn:'Nếu một ngày nào đó bỗng nhiên không có máy tính nữa, chúng ta phải làm sao đây?'},
-   ],
-   hanzi:[
-     {c:'惯',p:'guàn',type:'左右结构 · Trái-phải',st:11,ord:'忄 trái → 贯 phải',rad:'忄 (tâm – tim, tâm trí)',mean:'quen thuộc',
-      tip:'忄(tâm trí) + 贯(xuyên suốt, liên tục) → điều gì đó LẶP LẠI LIÊN TỤC trong tâm trí = QUEN THUỘC.',
-      cf:'贯 (guàn – "xuyên suốt", không có bộ 忄")',w:'习惯 / 不习惯 / 好习惯'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi đã quen dùng máy tính để học tập và làm việc rồi.',answer:'我已经习惯用电脑来学习和工作了。',answerPy:'Wǒ yǐjīng xíguàn yòng diànnǎo lái xuéxí hé gōngzuò le.',
-      note:'习惯 + V diễn tả thói quen (ôn lại 电脑 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn quen dùng máy tính thì sẽ tiện hơn nhiều.',answer:'只要你习惯用电脑，就会方便多了。',answerPy:'Zhǐyào nǐ xíguàn yòng diànnǎo, jiù huì fāngbiàn duō le.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 方便 đã học ở Bài 10).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "图书馆",
+    "py": "túshūguǎn",
+    "pos": "Danh từ",
+    "vn": "thư viện",
+    "hv": "đồ thư quán",
+    "em": "📚",
+    "lesson": 1,
+    "explain": [
+      "Nơi lưu trữ và cho mượn sách, tài liệu để đọc, học tập."
+    ],
+    "usage": "Danh từ; đi cùng động từ 去: 去图书馆.",
+    "collo": [
+      "去图书馆",
+      "在图书馆",
+      "图书馆借书"
+    ],
+    "ex_zh": "我去图书馆借本书。",
+    "ex_py": "Wǒ qù túshūguǎn jiè běn shū.",
+    "ex_vn": "Mình đi thư viện mượn một quyển sách.",
+    "exList": [
+      {
+        "zh": "我去图书馆借本书。",
+        "py": "Wǒ qù túshūguǎn jiè běn shū.",
+        "vn": "Mình đi thư viện mượn một quyển sách."
+      },
+      {
+        "zh": "教室里人太多了，我们去图书馆学习吧，那儿比较安静。",
+        "py": "Jiàoshì lǐ rén tài duō le, wǒmen qù túshūguǎn xuéxí ba, nàr bǐjiào ānjìng.",
+        "vn": "Trong lớp học đông người quá, chúng ta đi thư viện học đi, ở đó khá yên tĩnh."
+      },
+      {
+        "zh": "你昨天让我去图书馆把书还了，你忘了？",
+        "py": "Nǐ zuótiān ràng wǒ qù túshūguǎn bǎ shū huán le, nǐ wàng le?",
+        "vn": "Hôm qua bạn bảo mình đi thư viện trả sách rồi, bạn quên à?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "馆",
+        "p": "guǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "饣 trái → 官 phải",
+        "rad": "饣 (thực – ăn uống)",
+        "mean": "quán, tòa nhà công cộng",
+        "tip": "饣(ăn uống, ý chỉ nơi tiếp đãi) + 官(quan, cơ quan) → tòa nhà công cộng để phục vụ/lưu trữ = QUÁN, THƯ VIỆN.",
+        "cf": "官 (guān – \"quan chức\", không có bộ 饣\")",
+        "w": "图书馆 / 博物馆 / 饭馆"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đi thư viện thì giúp mình trả quyển sách này nhé.",
+        "answer": "如果你去图书馆，就帮我把这本书还了吧。",
+        "answerPy": "Rúguǒ nǐ qù túshūguǎn, jiù bāng wǒ bǎ zhè běn shū huán le ba.",
+        "note": "把字句 (把+B+động từ) diễn tả sự xử lý sự vật xác định (điểm ngữ pháp bài này).",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn đi thư viện thì có thể mượn quyển từ điển đó.",
+        "answer": "只要你去图书馆，就可以借那本词典。",
+        "answerPy": "Zhǐyào nǐ qù túshūguǎn, jiù kěyǐ jiè nà běn cídiǎn.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 词典 sẽ học ngay bên dưới).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去图书馆",
+        "py": "qù túshūguǎn",
+        "vn": "đi thư viện"
+      },
+      {
+        "zh": "在图书馆看书",
+        "py": "zài túshūguǎn kàn shū",
+        "vn": "đọc sách ở thư viện"
+      },
+      {
+        "zh": "图书馆借书",
+        "py": "túshūguǎn jiè shū",
+        "vn": "mượn sách ở thư viện"
+      },
+      {
+        "zh": "学校图书馆",
+        "py": "xuéxiào túshūguǎn",
+        "vn": "thư viện trường"
+      },
+      {
+        "zh": "图书馆很安静",
+        "py": "túshūguǎn hěn ānjìng",
+        "vn": "thư viện rất yên tĩnh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 图书馆 + V",
+        "m": "Làm gì ở thư viện"
+      },
+      {
+        "s": "图书 + 馆",
+        "m": "Nhà (馆) chứa sách (图书)"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "借",
+    "py": "jiè",
+    "pos": "Động từ",
+    "vn": "mượn, vay",
+    "hv": "tá",
+    "em": "📖",
+    "lesson": 1,
+    "explain": [
+      "Sử dụng tạm thời vật của người khác, hoặc cho người khác mượn."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 借 + [vật] (借书, 借钱).",
+    "collo": [
+      "借书",
+      "借钱",
+      "借用"
+    ],
+    "ex_zh": "我去图书馆借本书。",
+    "ex_py": "Wǒ qù túshūguǎn jiè běn shū.",
+    "ex_vn": "Mình đi thư viện mượn một quyển sách.",
+    "exList": [
+      {
+        "zh": "我去图书馆借本书。",
+        "py": "Wǒ qù túshūguǎn jiè běn shū.",
+        "vn": "Mình đi thư viện mượn một quyển sách."
+      },
+      {
+        "zh": "方便的时候再借我用用。",
+        "py": "Fāngbiàn de shíhou zài jiè wǒ yòngyong.",
+        "vn": "Lúc nào tiện thì cho mình mượn dùng tiếp nhé."
+      },
+      {
+        "zh": "把词典还我吧，我要用一下。",
+        "py": "Bǎ cídiǎn huán wǒ ba, wǒ yào yòng yíxià.",
+        "vn": "Trả từ điển cho mình đi, mình cần dùng chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "借",
+        "p": "jiè",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "亻 trái → 昔 phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "mượn, vay",
+        "tip": "亻(người) + 昔(ngày xưa, ý chỉ đã lâu) → người CHO/NHẬN vật trong một khoảng thời gian = MƯỢN, VAY.",
+        "cf": "惜 (xī – \"tiếc nuối\", có bộ 忄\")",
+        "w": "借书 / 借钱 / 借用"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Khi đi học đừng quên mang từ điển, nếu không có thì mượn ở thư viện.",
+        "answer": "上课的时候别忘了带词典，如果没有，就去图书馆借。",
+        "answerPy": "Shàngkè de shíhou bié wàngle dài cídiǎn, rúguǒ méiyǒu, jiù qù túshūguǎn jiè.",
+        "note": "跟 + ai + 借 — mượn của ai; 借给 + ai — cho ai mượn.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn cần tiền thì có thể mượn tôi một ít.",
+        "answer": "如果你需要钱，就可以借我一些。",
+        "answerPy": "Rúguǒ nǐ xūyào qián, jiù kěyǐ jiè wǒ yìxiē.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "借书",
+        "py": "jiè shū",
+        "vn": "mượn sách"
+      },
+      {
+        "zh": "借钱",
+        "py": "jiè qián",
+        "vn": "vay tiền"
+      },
+      {
+        "zh": "借给他",
+        "py": "jiè gěi tā",
+        "vn": "cho anh ấy mượn"
+      },
+      {
+        "zh": "跟他借",
+        "py": "gēn tā jiè",
+        "vn": "mượn của anh ấy"
+      },
+      {
+        "zh": "借一下",
+        "py": "jiè yíxià",
+        "vn": "mượn một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 借 + N",
+        "m": "Mượn của ai cái gì"
+      },
+      {
+        "s": "借给 + ai + N",
+        "m": "Cho ai mượn — 借 vừa là mượn vừa là cho mượn"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "词典",
+    "py": "cídiǎn",
+    "pos": "Danh từ",
+    "vn": "từ điển",
+    "hv": "từ điển",
+    "em": "📕",
+    "lesson": 1,
+    "explain": [
+      "Sách tra cứu nghĩa, cách dùng của từ ngữ."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 本: 一本词典.",
+    "collo": [
+      "一本词典",
+      "借词典",
+      "还词典"
+    ],
+    "ex_zh": "帮我把这本词典还了吧。",
+    "ex_py": "Bāng wǒ bǎ zhè běn cídiǎn huánle ba.",
+    "ex_vn": "Giúp mình trả quyển từ điển này nhé.",
+    "exList": [
+      {
+        "zh": "帮我把这本词典还了吧。",
+        "py": "Bāng wǒ bǎ zhè běn cídiǎn huánle ba.",
+        "vn": "Giúp mình trả quyển từ điển này nhé."
+      },
+      {
+        "zh": "把词典还我吧，我要用一下。",
+        "py": "Bǎ cídiǎn huán wǒ ba, wǒ yào yòng yíxià.",
+        "vn": "Trả từ điển cho mình đi, mình cần dùng chút."
+      },
+      {
+        "zh": "这本词典是我朋友的，不是我的。",
+        "py": "Zhè běn cídiǎn shì wǒ péngyou de, bú shì wǒ de.",
+        "vn": "Quyển từ điển này là của bạn tôi, không phải của tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "典",
+        "p": "diǎn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "曲(biến thể) trên → 八 dưới",
+        "rad": "八 (bát)",
+        "mean": "kinh điển, sách chuẩn mực",
+        "tip": "Chữ cổ mô phỏng hai tay nâng cuốn sách quý trên giá đỡ → SÁCH CHUẨN MỰC, mở rộng thành TỪ ĐIỂN.",
+        "cf": "点 (diǎn – \"điểm\", không liên quan nghĩa\")",
+        "w": "词典 / 字典 / 经典"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Quyển từ điển này không phải tôi mua, mà là mượn của thư viện.",
+        "answer": "这本词典不是我买的，是图书馆借的。",
+        "answerPy": "Zhè běn cídiǎn bú shì wǒ mǎi de, shì túshūguǎn jiè de.",
+        "note": "一本词典 — lượng từ 本 cho sách.",
+        "pair": "不是……是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi cần dùng từ điển nên tôi mượn thư viện một quyển.",
+        "answer": "因为我需要用词典，所以我在图书馆借了一本。",
+        "answerPy": "Yīnwèi wǒ xūyào yòng cídiǎn, suǒyǐ wǒ zài túshūguǎn jièle yì běn.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả (ôn lại 图书馆 vừa học trong bài này).",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一本词典",
+        "py": "yì běn cídiǎn",
+        "vn": "một quyển từ điển"
+      },
+      {
+        "zh": "借词典",
+        "py": "jiè cídiǎn",
+        "vn": "mượn từ điển"
+      },
+      {
+        "zh": "查词典",
+        "py": "chá cídiǎn",
+        "vn": "tra từ điển"
+      },
+      {
+        "zh": "还词典",
+        "py": "hái cídiǎn",
+        "vn": "trả từ điển"
+      },
+      {
+        "zh": "汉语词典",
+        "py": "Hànyǔ cídiǎn",
+        "vn": "từ điển tiếng Trung"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 本 + 词典",
+        "m": "Lượng từ 本 cho sách vở"
+      },
+      {
+        "s": "查 + 词典",
+        "m": "Tra từ điển"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "还",
+    "py": "huán",
+    "pos": "Động từ",
+    "vn": "trả",
+    "hv": "hoàn",
+    "em": "↩️",
+    "lesson": 1,
+    "explain": [
+      "Đưa lại vật đã mượn cho chủ sở hữu."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 还 + [vật] (还书, 还钱); thường dùng trong 把字句: 把……还了.",
+    "collo": [
+      "还书",
+      "还钱",
+      "把……还了"
+    ],
+    "ex_zh": "帮我把这本词典还了吧。",
+    "ex_py": "Bāng wǒ bǎ zhè běn cídiǎn huánle ba.",
+    "ex_vn": "Giúp mình trả quyển từ điển này nhé.",
+    "exList": [
+      {
+        "zh": "帮我把这本词典还了吧。",
+        "py": "Bāng wǒ bǎ zhè běn cídiǎn huánle ba.",
+        "vn": "Giúp mình trả quyển từ điển này nhé."
+      },
+      {
+        "zh": "把词典还我吧，我要用一下。",
+        "py": "Bǎ cídiǎn huán wǒ ba, wǒ yào yòng yíxià.",
+        "vn": "Trả từ điển cho mình đi, mình cần dùng chút."
+      },
+      {
+        "zh": "你昨天让我去图书馆把书还了，你忘了？",
+        "py": "Nǐ zuótiān ràng wǒ qù túshūguǎn bǎ shū huán le, nǐ wàng le?",
+        "vn": "Hôm qua bạn bảo mình đi thư viện trả sách rồi, bạn quên à?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "还",
+        "p": "huán",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "辶 bao ngoài → 不(biến thể) trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "trả lại, quay về",
+        "tip": "辶(đi) → mang vật ĐI TRỞ LẠI nơi cũ = TRẢ LẠI (đọc \"huán\"); cùng chữ này đọc \"hái\" thì mang nghĩa \"vẫn, còn\".",
+        "cf": "环 (huán – \"vòng tròn\", có bộ 王\")",
+        "w": "还书 / 还钱 / 归还"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin lỗi, vì mấy hôm nay bận quá nên tôi quên mất chuyện trả sách.",
+        "answer": "对不起，因为这几天太忙了，所以我把还书的事忘了。",
+        "answerPy": "Duìbuqǐ, yīnwèi zhè jǐ tiān tài máng le, suǒyǐ wǒ bǎ huán shū de shì wàng le.",
+        "note": "还 (huán, trả) khác 还 (hái, vẫn); câu chữ 把 + 忘了.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không trả sách thì thư viện sẽ gọi điện nhắc bạn.",
+        "answer": "如果你不还书，图书馆就会打电话提醒你。",
+        "answerPy": "Rúguǒ nǐ bù huán shū, túshūguǎn jiù huì dǎ diànhuà tíxǐng nǐ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 图书馆 vừa học trong bài này).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "还书",
+        "py": "hái shū",
+        "vn": "trả sách"
+      },
+      {
+        "zh": "还钱",
+        "py": "hái qián",
+        "vn": "trả tiền"
+      },
+      {
+        "zh": "把书还了",
+        "py": "bǎ shū hái le",
+        "vn": "trả sách rồi"
+      },
+      {
+        "zh": "还给他",
+        "py": "hái gěi tā",
+        "vn": "trả lại cho anh ấy"
+      },
+      {
+        "zh": "忘了还",
+        "py": "wàng le hái",
+        "vn": "quên trả"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 还给 + ai",
+        "m": "Trả lại cái gì cho ai"
+      },
+      {
+        "s": "还 (huán, trả) ≠ 还 (hái, vẫn còn) — cùng chữ, khác âm"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "灯",
+    "py": "dēng",
+    "pos": "Danh từ",
+    "vn": "đèn",
+    "hv": "đăng",
+    "em": "💡",
+    "lesson": 1,
+    "explain": [
+      "Vật dụng phát sáng dùng để chiếu sáng."
+    ],
+    "usage": "Danh từ; đi cùng động từ 关/开: 关灯, 开灯.",
+    "collo": [
+      "开灯",
+      "关灯",
+      "一盏灯"
+    ],
+    "ex_zh": "记得把灯关了。",
+    "ex_py": "Jìde bǎ dēng guān le.",
+    "ex_vn": "Nhớ tắt đèn nhé.",
+    "exList": [
+      {
+        "zh": "记得把灯关了。",
+        "py": "Jìde bǎ dēng guān le.",
+        "vn": "Nhớ tắt đèn nhé."
+      },
+      {
+        "zh": "会议结束后，你记得把空调和灯都关了。",
+        "py": "Huìyì jiéshù hòu, nǐ jìde bǎ kōngtiáo hé dēng dōu guān le.",
+        "vn": "Sau khi họp xong, bạn nhớ tắt cả máy điều hòa và đèn nhé."
+      },
+      {
+        "zh": "你的电脑关了没有？",
+        "py": "Nǐ de diànnǎo guānle méiyǒu?",
+        "vn": "Máy tính của bạn tắt chưa?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "灯",
+        "p": "dēng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "火 trái → 丁 phải",
+        "rad": "火 (hỏa – lửa)",
+        "mean": "đèn",
+        "tip": "火(lửa, ánh sáng) + 丁(âm đọc, ý chỉ vật nhỏ cố định) → vật phát ra ÁNH SÁNG = ĐÈN.",
+        "cf": "钉 (dīng – \"cái đinh\", có bộ 钅\")",
+        "w": "开灯 / 关灯 / 一盏灯"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lát nữa rời lớp học thì nhớ tắt đèn, nếu không lại tốn điện.",
+        "answer": "等一会儿你离开教室的时候，记得把灯关了，不然就太费电了。",
+        "answerPy": "Děng yíhuìr nǐ líkāi jiàoshì de shíhou, jìde bǎ dēng guān le, bùrán jiù tài fèi diàn le.",
+        "note": "离开 là từ bài 6, 一会儿 là từ bài 8; 开 ↔ 关.",
+        "pair": "不然……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy cuộc họp đã kết thúc nhưng anh ấy quên tắt đèn.",
+        "answer": "虽然会议结束了，但是他忘了把灯关了。",
+        "answerPy": "Suīrán huìyì jiéshù le, dànshì tā wàngle bǎ dēng guān le.",
+        "note": "虽然……但是…… diễn tả sự tương phản (ôn lại 会议/结束 sẽ học ngay bên dưới).",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "开灯",
+        "py": "kāi dēng",
+        "vn": "bật đèn"
+      },
+      {
+        "zh": "关灯",
+        "py": "guān dēng",
+        "vn": "tắt đèn"
+      },
+      {
+        "zh": "一盏灯",
+        "py": "yì zhǎn dēng",
+        "vn": "một ngọn đèn"
+      },
+      {
+        "zh": "灯很亮",
+        "py": "dēng hěn liàng",
+        "vn": "đèn rất sáng"
+      },
+      {
+        "zh": "忘了关灯",
+        "py": "wàng le guān dēng",
+        "vn": "quên tắt đèn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "开 / 关 + 灯",
+        "m": "Bật / tắt đèn"
+      },
+      {
+        "s": "开 ↔ 关",
+        "m": "Mở, bật ↔ đóng, tắt"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "会议",
+    "py": "huìyì",
+    "pos": "Danh từ",
+    "vn": "hội nghị, cuộc họp",
+    "hv": "hội nghị",
+    "em": "💼",
+    "lesson": 2,
+    "explain": [
+      "Buổi tập hợp để thảo luận, quyết định vấn đề chung."
+    ],
+    "usage": "Danh từ; đi cùng động từ 开: 开会议; hoặc 会议 + 结束.",
+    "collo": [
+      "开会议",
+      "会议结束",
+      "参加会议"
+    ],
+    "ex_zh": "会议结束后，别忘记把空调关了。",
+    "ex_py": "Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.",
+    "ex_vn": "Sau khi họp xong, đừng quên tắt máy điều hòa nhé.",
+    "exList": [
+      {
+        "zh": "会议结束后，别忘记把空调关了。",
+        "py": "Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.",
+        "vn": "Sau khi họp xong, đừng quên tắt máy điều hòa nhé."
+      },
+      {
+        "zh": "会议结束后，你记得把空调和灯都关了。",
+        "py": "Huìyì jiéshù hòu, nǐ jìde bǎ kōngtiáo hé dēng dōu guān le.",
+        "vn": "Sau khi họp xong, bạn nhớ tắt cả máy điều hòa và đèn nhé."
+      },
+      {
+        "zh": "我明天出去开会，你能帮我照顾一下小雨吗？",
+        "py": "Wǒ míngtiān chūqu kāihuì, nǐ néng bāng wǒ zhàogù yíxià Xiǎoyǔ ma?",
+        "vn": "Ngày mai tôi ra ngoài họp, bạn có thể giúp tôi trông Tiểu Vũ một chút không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "议",
+        "p": "yì",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "讠 trái → 义 phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "bàn bạc, nghị luận",
+        "tip": "讠(lời nói) + 义(chính nghĩa, lẽ phải) → nói ra để bàn về LẼ PHẢI = BÀN BẠC; 会议 = cuộc họp bàn bạc.",
+        "cf": "仪 (yí – \"nghi thức\", có 亻 thay vì 讠\")",
+        "w": "会议 / 开会 / 议论"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trước khi cuộc họp bắt đầu, xin mọi người tắt điện thoại đi.",
+        "answer": "会议开始以前，请大家把手机关了。",
+        "answerPy": "Huìyì kāishǐ yǐqián, qǐng dàjiā bǎ shǒujī guān le.",
+        "note": "V + 以前 — trước khi làm gì, 以前 đứng SAU.",
+        "pair": "……以前……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn tham gia cuộc họp thì nhớ mang theo laptop nhé.",
+        "answer": "如果你参加会议，就记得带笔记本电脑。",
+        "answerPy": "Rúguǒ nǐ cānjiā huìyì, jiù jìde dài bǐjìběn diànnǎo.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 参加 đã học ở Bài 9).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "开会议",
+        "py": "kāi huìyì",
+        "vn": "họp"
+      },
+      {
+        "zh": "参加会议",
+        "py": "cānjiā huìyì",
+        "vn": "dự họp"
+      },
+      {
+        "zh": "会议结束",
+        "py": "huìyì jiéshù",
+        "vn": "cuộc họp kết thúc"
+      },
+      {
+        "zh": "会议室",
+        "py": "huìyìshì",
+        "vn": "phòng họp"
+      },
+      {
+        "zh": "会议什么时候开始",
+        "py": "huìyì shénme shíhou kāishǐ",
+        "vn": "cuộc họp bắt đầu khi nào"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "参加 + 会议",
+        "m": "Dự cuộc họp — 参加 là từ bài 9"
+      },
+      {
+        "s": "会 + 议",
+        "m": "Họp (会) bàn (议)"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "结束",
+    "py": "jiéshù",
+    "pos": "Động từ",
+    "vn": "kết thúc, chấm dứt",
+    "hv": "kết thúc",
+    "em": "🏁",
+    "lesson": 2,
+    "explain": [
+      "Hoạt động, sự việc đi đến hồi cuối."
+    ],
+    "usage": "Động từ, đứng độc lập hoặc mang tân ngữ: 结束了, 会议结束.",
+    "collo": [
+      "会议结束",
+      "结束了",
+      "还没结束"
+    ],
+    "ex_zh": "会议结束后，别忘记把空调关了。",
+    "ex_py": "Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.",
+    "ex_vn": "Sau khi họp xong, đừng quên tắt máy điều hòa nhé.",
+    "exList": [
+      {
+        "zh": "会议结束后，别忘记把空调关了。",
+        "py": "Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.",
+        "vn": "Sau khi họp xong, đừng quên tắt máy điều hòa nhé."
+      },
+      {
+        "zh": "运动会什么时候结束？五点左右吧。",
+        "py": "Yùndònghuì shénme shíhou jiéshù? Wǔ diǎn zuǒyòu ba.",
+        "vn": "Hội thao khi nào kết thúc? Khoảng 5 giờ thôi."
+      },
+      {
+        "zh": "结束一天的工作以后，你和家人一起吃晚饭。",
+        "py": "Jiéshù yìtiān de gōngzuò yǐhòu, nǐ hé jiārén yìqǐ chī wǎnfàn.",
+        "vn": "Kết thúc một ngày làm việc, bạn cùng gia đình ăn tối."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "束",
+        "p": "shù",
+        "type": "独体字 · Chữ đơn",
+        "st": 7,
+        "ord": "木+口(biến thể)",
+        "rad": "木 (mộc – cây)",
+        "mean": "bó, buộc",
+        "tip": "Chữ tượng hình mô phỏng một bó cây bị BUỘC lại → BÓ, mở rộng nghĩa \"đóng lại, chấm dứt\" = KẾT THÚC.",
+        "cf": "速 (sù – \"nhanh chóng\", có bộ 辶\")",
+        "w": "结束 / 一束花"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Phim mấy giờ kết thúc? Nếu xong sớm thì chúng ta đi ăn chút gì.",
+        "answer": "电影什么时候结束？如果结束得早，我们就去吃点儿东西。",
+        "answerPy": "Diànyǐng shénme shíhou jiéshù? Rúguǒ jiéshù de zǎo, wǒmen jiù qù chī diǎnr dōngxi.",
+        "note": "结束 ↔ 开始.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần cuộc họp kết thúc thì chúng ta có thể đi ăn cơm.",
+        "answer": "只要会议结束，我们就可以去吃饭。",
+        "answerPy": "Zhǐyào huìyì jiéshù, wǒmen jiù kěyǐ qù chīfàn.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 会议 vừa học trong bài này).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "会议结束",
+        "py": "huìyì jiéshù",
+        "vn": "cuộc họp kết thúc"
+      },
+      {
+        "zh": "结束了",
+        "py": "jiéshù le",
+        "vn": "kết thúc rồi"
+      },
+      {
+        "zh": "还没结束",
+        "py": "hái méi jiéshù",
+        "vn": "vẫn chưa xong"
+      },
+      {
+        "zh": "电影结束",
+        "py": "diànyǐng jiéshù",
+        "vn": "phim hết rồi"
+      },
+      {
+        "zh": "工作结束以后",
+        "py": "gōngzuò jiéshù yǐhòu",
+        "vn": "sau khi làm việc xong"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 结束 + 了",
+        "m": "Việc gì đó đã kết thúc"
+      },
+      {
+        "s": "结束 ↔ 开始",
+        "m": "Kết thúc ↔ bắt đầu"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "忘记",
+    "py": "wàngjì",
+    "pos": "Động từ",
+    "vn": "quên",
+    "hv": "vong ký",
+    "em": "🤔",
+    "lesson": 2,
+    "explain": [
+      "Không còn nhớ, để mất khỏi trí nhớ."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp hoặc dùng trong 把字句: 别忘记 + V, 把……忘记了.",
+    "collo": [
+      "别忘记",
+      "忘记了",
+      "把……忘了"
+    ],
+    "ex_zh": "会议结束后，别忘记把空调关了。",
+    "ex_py": "Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.",
+    "ex_vn": "Sau khi họp xong, đừng quên tắt máy điều hòa nhé.",
+    "exList": [
+      {
+        "zh": "会议结束后，别忘记把空调关了。",
+        "py": "Huìyì jiéshù hòu, bié wàngjì bǎ kōngtiáo guān le.",
+        "vn": "Sau khi họp xong, đừng quên tắt máy điều hòa nhé."
+      },
+      {
+        "zh": "我把爸爸的生日忘了。",
+        "py": "Wǒ bǎ bàba de shēngrì wàng le.",
+        "vn": "Con quên mất sinh nhật bố rồi."
+      },
+      {
+        "zh": "你昨天让我去图书馆把书还了，你忘了？",
+        "py": "Nǐ zuótiān ràng wǒ qù túshūguǎn bǎ shū huán le, nǐ wàng le?",
+        "vn": "Hôm qua bạn bảo mình đi thư viện trả sách rồi, bạn quên à?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "忘",
+        "p": "wàng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "亡 trên → 心 dưới",
+        "rad": "心 (tâm – tim, tâm trí)",
+        "mean": "quên",
+        "tip": "亡(mất đi) + 心(tâm trí) → điều gì đó MẤT ĐI khỏi TÂM TRÍ = QUÊN.",
+        "cf": "忙 (máng – \"bận rộn\", có 忄 thay vì 心\")",
+        "w": "忘记 / 忘了 / 别忘了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi quên mất bài tập cô giáo giao rồi, bạn nhắc tôi một tiếng được không?",
+        "answer": "我把老师说的作业忘了，你能告诉我一下吗？",
+        "answerPy": "Wǒ bǎ lǎoshī shuō de zuòyè wàng le, nǐ néng gàosu wǒ yíxià ma?",
+        "note": "作业 là từ bài 1; câu chữ 把 dùng khi nói về cái đã xác định.",
+        "pair": "把……忘了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Xin lỗi, vì dạo này việc nhiều quá nên tôi quên mất chuyện đó.",
+        "answer": "对不起，因为最近事情太多了，所以我把那件事忘了。",
+        "answerPy": "Duìbuqǐ, yīnwèi zuìjìn shìqing tài duō le, suǒyǐ wǒ bǎ nà jiàn shì wàng le.",
+        "note": "最近 là từ bài 5.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "别忘记",
+        "py": "bié wàngjì",
+        "vn": "đừng quên"
+      },
+      {
+        "zh": "忘记了",
+        "py": "wàngjì le",
+        "vn": "quên mất rồi"
+      },
+      {
+        "zh": "把……忘了",
+        "py": "bǎ wàng le",
+        "vn": "quên mất cái gì"
+      },
+      {
+        "zh": "忘记带",
+        "py": "wàngjì dài",
+        "vn": "quên mang"
+      },
+      {
+        "zh": "忘记了名字",
+        "py": "wàngjì le míngzi",
+        "vn": "quên mất tên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 忘了",
+        "m": "Quên mất cái gì — câu chữ 把"
+      },
+      {
+        "s": "忘记 ≈ 忘",
+        "m": "忘记 đầy đủ hơn, 忘 thiên khẩu ngữ"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "空调",
+    "py": "kōngtiáo",
+    "pos": "Danh từ",
+    "vn": "máy điều hòa không khí",
+    "hv": "không điều",
+    "em": "❄️",
+    "lesson": 2,
+    "explain": [
+      "Thiết bị điều chỉnh nhiệt độ không khí trong phòng."
+    ],
+    "usage": "Danh từ; đi cùng động từ 开/关: 开空调, 关空调.",
+    "collo": [
+      "开空调",
+      "关空调",
+      "空调坏了"
+    ],
+    "ex_zh": "别忘记把空调关了。",
+    "ex_py": "Bié wàngjì bǎ kōngtiáo guān le.",
+    "ex_vn": "Đừng quên tắt máy điều hòa nhé.",
+    "exList": [
+      {
+        "zh": "别忘记把空调关了。",
+        "py": "Bié wàngjì bǎ kōngtiáo guān le.",
+        "vn": "Đừng quên tắt máy điều hòa nhé."
+      },
+      {
+        "zh": "空调下面怎么这么多水？",
+        "py": "Kōngtiáo xiàmian zěnme zhème duō shuǐ?",
+        "vn": "Sao dưới máy điều hòa nhiều nước thế?"
+      },
+      {
+        "zh": "你记得把空调和灯都关了。",
+        "py": "Nǐ jìde bǎ kōngtiáo hé dēng dōu guān le.",
+        "vn": "Bạn nhớ tắt cả máy điều hòa và đèn nhé."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "调",
+        "p": "tiáo",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "讠 trái → 周 phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "điều chỉnh",
+        "tip": "讠(nói, ý chỉ hòa hợp) + 周(khắp, đều) → làm cho MỌI THỨ hòa hợp đều đặn = ĐIỀU CHỈNH; 空调 = điều chỉnh không khí.",
+        "cf": "周 (zhōu – \"vòng, tuần\", không có bộ 讠\")",
+        "w": "空调 / 调整"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ra khỏi nhà thì đừng quên khoá cửa và tắt điều hoà.",
+        "answer": "出门的时候，别忘记把门锁了，也别忘记关空调。",
+        "answerPy": "Chūmén de shíhou, bié wàngjì bǎ mén suǒ le, yě bié wàngjì guān kōngtiáo.",
+        "note": "开 / 关 + 空调 — bật, tắt điều hoà.",
+        "pair": "……的时候……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu trời nóng thì bạn mở máy điều hòa lên đi.",
+        "answer": "如果天气热，你就开空调吧。",
+        "answerPy": "Rúguǒ tiānqì rè, nǐ jiù kāi kōngtiáo ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "开空调",
+        "py": "kāi kōngtiáo",
+        "vn": "bật điều hoà"
+      },
+      {
+        "zh": "关空调",
+        "py": "guān kōngtiáo",
+        "vn": "tắt điều hoà"
+      },
+      {
+        "zh": "空调坏了",
+        "py": "kōngtiáo huài le",
+        "vn": "điều hoà hỏng rồi"
+      },
+      {
+        "zh": "空调很凉快",
+        "py": "kōngtiáo hěn liángkuai",
+        "vn": "điều hoà rất mát"
+      },
+      {
+        "zh": "房间有空调",
+        "py": "fángjiān yǒu kōngtiáo",
+        "vn": "phòng có điều hoà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "开 / 关 + 空调",
+        "m": "Bật / tắt điều hoà"
+      },
+      {
+        "s": "空 + 调",
+        "m": "Điều (调) hoà không khí (空)"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "关",
+    "py": "guān",
+    "pos": "Động từ",
+    "vn": "tắt, đóng",
+    "hv": "quan",
+    "em": "🔴",
+    "lesson": 2,
+    "explain": [
+      "Ngừng hoạt động một thiết bị, hoặc đóng lại một vật."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 关 + [vật] (关灯, 关空调); thường dùng trong 把字句.",
+    "collo": [
+      "关灯",
+      "关空调",
+      "关门"
+    ],
+    "ex_zh": "别忘记把空调关了。",
+    "ex_py": "Bié wàngjì bǎ kōngtiáo guān le.",
+    "ex_vn": "Đừng quên tắt máy điều hòa nhé.",
+    "exList": [
+      {
+        "zh": "别忘记把空调关了。",
+        "py": "Bié wàngjì bǎ kōngtiáo guān le.",
+        "vn": "Đừng quên tắt máy điều hòa nhé."
+      },
+      {
+        "zh": "记得把灯关了。",
+        "py": "Jìde bǎ dēng guān le.",
+        "vn": "Nhớ tắt đèn nhé."
+      },
+      {
+        "zh": "饭菜都做好了，把电脑关了吧？先吃饭。",
+        "py": "Fàncài dōu zuòhǎo le, bǎ diànnǎo guān le ba? Xiān chīfàn.",
+        "vn": "Cơm nước xong hết rồi, tắt máy tính đi nhé? Ăn cơm trước đã."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "关",
+        "p": "guān",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "nét liền",
+        "rad": "冫(băng)",
+        "mean": "đóng, tắt; liên quan",
+        "tip": "Chữ giản thể mô phỏng cánh cửa được ĐÓNG LẠI → ĐÓNG, TẮT; mở rộng nghĩa LIÊN QUAN (关系).",
+        "cf": "并 (bìng – \"cùng, và\", hình dáng khác hẳn\")",
+        "w": "关灯 / 关门 / 关系"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cửa lớp học đóng chưa? Nếu chưa thì tôi đi đóng.",
+        "answer": "教室的门关了没有？如果还没关，我就去关。",
+        "answerPy": "Jiàoshì de mén guānle méiyǒu? Rúguǒ hái méi guān, wǒ jiù qù guān.",
+        "note": "V + 了没有 — dạng hỏi đã làm chưa.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn tắt máy điều hòa thì phòng sẽ không lạnh nữa.",
+        "answer": "只要你把空调关了，房间就不会冷了。",
+        "answerPy": "Zhǐyào nǐ bǎ kōngtiáo guān le, fángjiān jiù bú huì lěng le.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 空调 vừa học trong bài này).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "关灯",
+        "py": "guān dēng",
+        "vn": "tắt đèn"
+      },
+      {
+        "zh": "关门",
+        "py": "guān mén",
+        "vn": "đóng cửa"
+      },
+      {
+        "zh": "关空调",
+        "py": "guān kōngtiáo",
+        "vn": "tắt điều hoà"
+      },
+      {
+        "zh": "关手机",
+        "py": "guān shǒujī",
+        "vn": "tắt điện thoại"
+      },
+      {
+        "zh": "把门关了",
+        "py": "bǎ mén guān le",
+        "vn": "đóng cửa lại rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 关了",
+        "m": "Tắt, đóng cái gì — câu chữ 把"
+      },
+      {
+        "s": "关 ↔ 开",
+        "m": "Tắt, đóng ↔ bật, mở"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "地铁",
+    "py": "dìtiě",
+    "pos": "Danh từ",
+    "vn": "tàu điện ngầm",
+    "hv": "địa thiết",
+    "em": "🚇",
+    "lesson": 2,
+    "explain": [
+      "Phương tiện giao thông công cộng chạy dưới lòng đất."
+    ],
+    "usage": "Danh từ; đi cùng động từ 坐: 坐地铁.",
+    "collo": [
+      "坐地铁",
+      "地铁站",
+      "地铁上"
+    ],
+    "ex_zh": "他正坐地铁来我们公司呢。",
+    "ex_py": "Tā zhèng zuò dìtiě lái wǒmen gōngsī ne.",
+    "ex_vn": "Ông ấy đang đi tàu điện ngầm đến công ty mình đấy.",
+    "exList": [
+      {
+        "zh": "他正坐地铁来我们公司呢。",
+        "py": "Tā zhèng zuò dìtiě lái wǒmen gōngsī ne.",
+        "vn": "Ông ấy đang đi tàu điện ngầm đến công ty mình đấy."
+      },
+      {
+        "zh": "上下班都不用坐地铁了，骑自行车就可以。",
+        "py": "Shàng-xiàbān dōu búyòng zuò dìtiě le, qí zìxíngchē jiù kěyǐ.",
+        "vn": "Đi làm về đều không cần đi tàu điện ngầm nữa, đi xe đạp là được."
+      },
+      {
+        "zh": "这儿附近有眼镜店吗？地铁站旁边有一个。",
+        "py": "Zhèr fùjìn yǒu yǎnjìngdiàn ma? Dìtiě zhàn pángbiān yǒu yí ge.",
+        "vn": "Gần đây có cửa hàng kính không? Bên cạnh ga tàu điện ngầm có một cái."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "铁",
+        "p": "tiě",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "钅 trái → 失 phải",
+        "rad": "钅 (kim – kim loại)",
+        "mean": "sắt",
+        "tip": "钅(kim loại) + 失(mất, ý chỉ màu đen xỉn) → kim loại màu ĐEN XỈN = SẮT; 地铁 = \"đường sắt dưới đất\" = TÀU ĐIỆN NGẦM.",
+        "cf": "跌 (diē – \"ngã\", có bộ 足\")",
+        "w": "地铁 / 铁路 / 地铁站"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Giám đốc Chu nói khoảng ba giờ sẽ đi tàu điện ngầm đến công ty.",
+        "answer": "周经理说他三点左右会坐地铁到公司。",
+        "answerPy": "Zhōu jīnglǐ shuō tā sān diǎn zuǒyòu huì zuò dìtiě dào gōngsī.",
+        "note": "经理 là từ bài 2; 坐地铁 — dùng 坐 chứ không dùng 骑.",
+        "pair": "……会……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu gần nhà bạn có ga tàu điện ngầm thì sẽ rất tiện.",
+        "answer": "如果你家附近有地铁站，就会很方便。",
+        "answerPy": "Rúguǒ nǐ jiā fùjìn yǒu dìtiě zhàn, jiù huì hěn fāngbiàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 附近/方便 đã học ở Bài 10).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "坐地铁",
+        "py": "zuò dìtiě",
+        "vn": "đi tàu điện ngầm"
+      },
+      {
+        "zh": "地铁站",
+        "py": "dìtiě zhàn",
+        "vn": "ga tàu điện ngầm"
+      },
+      {
+        "zh": "地铁上",
+        "py": "dìtiě shàng",
+        "vn": "trên tàu điện"
+      },
+      {
+        "zh": "地铁很快",
+        "py": "dìtiě hěn kuài",
+        "vn": "tàu điện rất nhanh"
+      },
+      {
+        "zh": "换地铁",
+        "py": "huàn dìtiě",
+        "vn": "đổi tuyến tàu điện"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坐 + 地铁",
+        "m": "Đi tàu điện ngầm — dùng 坐, không dùng 骑"
+      },
+      {
+        "s": "地 + 铁",
+        "m": "Đường sắt (铁) dưới đất (地)"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "双",
+    "py": "shuāng",
+    "pos": "Lượng từ",
+    "vn": "đôi",
+    "hv": "song",
+    "em": "👞",
+    "lesson": 3,
+    "explain": [
+      "Đơn vị đếm các vật đi thành cặp như đũa, giày."
+    ],
+    "usage": "Lượng từ, đứng sau số từ: [số từ] + 双 + [danh từ] (一双筷子).",
+    "collo": [
+      "一双筷子",
+      "一双鞋",
+      "两双"
+    ],
+    "ex_zh": "还差一双筷子，你去拿一下。",
+    "ex_py": "Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.",
+    "ex_vn": "Còn thiếu một đôi đũa, con lấy giúp mẹ đi.",
+    "exList": [
+      {
+        "zh": "还差一双筷子，你去拿一下。",
+        "py": "Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.",
+        "vn": "Còn thiếu một đôi đũa, con lấy giúp mẹ đi."
+      },
+      {
+        "zh": "服务员，这儿只有一双筷子，请再给我们拿一双。",
+        "py": "Fúwùyuán, zhèr zhǐ yǒu yì shuāng kuàizi, qǐng zài gěi wǒmen ná yì shuāng.",
+        "vn": "Phục vụ ơi, ở đây chỉ có một đôi đũa, làm ơn lấy thêm cho chúng tôi một đôi."
+      },
+      {
+        "zh": "拿两双筷子就可以了，今天爸爸不回来吃晚饭。",
+        "py": "Ná liǎng shuāng kuàizi jiù kěyǐ le, jīntiān bàba bù huílai chī wǎnfàn.",
+        "vn": "Lấy hai đôi đũa là được rồi, hôm nay bố không về ăn tối."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "双",
+        "p": "shuāng",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "又+又 (kết hợp)",
+        "rad": "又 (hựu)",
+        "mean": "đôi, cặp",
+        "tip": "Chữ giản thể mô phỏng HAI bàn tay (又+又) chụm lại → ĐÔI, CẶP.",
+        "cf": "反 (fǎn – \"trái ngược\", chỉ có 1 chữ 又\")",
+        "w": "一双筷子 / 一双鞋"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mẹ mua cho hai anh em tôi mỗi người một đôi giày thể thao.",
+        "answer": "妈妈给我们兄弟俩每人买了一双运动鞋。",
+        "answerPy": "Māma gěi wǒmen xiōngdì liǎ měi rén mǎile yì shuāng yùndòngxié.",
+        "note": "một + 双 + vật đi thành đôi: 鞋, 筷子, 袜子.",
+        "pair": "给……买……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần lấy hai đôi đũa là đủ rồi.",
+        "answer": "只要拿两双筷子就够了。",
+        "answerPy": "Zhǐyào ná liǎng shuāng kuàizi jiù gòu le.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一双筷子",
+        "py": "yì shuāng kuàizi",
+        "vn": "một đôi đũa"
+      },
+      {
+        "zh": "一双鞋",
+        "py": "yì shuāng xié",
+        "vn": "một đôi giày"
+      },
+      {
+        "zh": "两双",
+        "py": "liǎng shuāng",
+        "vn": "hai đôi"
+      },
+      {
+        "zh": "一双袜子",
+        "py": "yì shuāng wàzi",
+        "vn": "một đôi tất"
+      },
+      {
+        "zh": "一双手",
+        "py": "yì shuāng shǒu",
+        "vn": "đôi bàn tay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 双 + vật đi thành đôi",
+        "m": "Lượng từ 双: 筷子, 鞋, 袜子, 手, 脚"
+      },
+      {
+        "s": "双 (đôi có hai cái giống nhau) ≠ 副 (bộ, như 一副眼镜)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "筷子",
+    "py": "kuàizi",
+    "pos": "Danh từ",
+    "vn": "đũa",
+    "hv": "khoái tử",
+    "em": "🥢",
+    "lesson": 3,
+    "explain": [
+      "Dụng cụ ăn cơm truyền thống gồm hai que."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 双: 一双筷子.",
+    "collo": [
+      "一双筷子",
+      "用筷子",
+      "拿筷子"
+    ],
+    "ex_zh": "还差一双筷子，你去拿一下。",
+    "ex_py": "Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.",
+    "ex_vn": "Còn thiếu một đôi đũa, con lấy giúp mẹ đi.",
+    "exList": [
+      {
+        "zh": "还差一双筷子，你去拿一下。",
+        "py": "Hái chà yì shuāng kuàizi, nǐ qù ná yíxià.",
+        "vn": "Còn thiếu một đôi đũa, con lấy giúp mẹ đi."
+      },
+      {
+        "zh": "服务员，这儿只有一双筷子，请再给我们拿一双。",
+        "py": "Fúwùyuán, zhèr zhǐ yǒu yì shuāng kuàizi, qǐng zài gěi wǒmen ná yì shuāng.",
+        "vn": "Phục vụ ơi, ở đây chỉ có một đôi đũa, làm ơn lấy thêm cho chúng tôi một đôi."
+      },
+      {
+        "zh": "拿两双筷子就可以了，今天爸爸不回来吃晚饭。",
+        "py": "Ná liǎng shuāng kuàizi jiù kěyǐ le, jīntiān bàba bù huílai chī wǎnfàn.",
+        "vn": "Lấy hai đôi đũa là được rồi, hôm nay bố không về ăn tối."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "筷",
+        "p": "kuài",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "⺮ trên → 快 dưới",
+        "rad": "⺮ (trúc – tre)",
+        "mean": "đũa",
+        "tip": "⺮(tre, vật liệu làm đũa) + 快(nhanh) → dụng cụ bằng TRE giúp gắp thức ăn NHANH = ĐŨA.",
+        "cf": "快 (kuài – \"nhanh\", không có bộ ⺮\")",
+        "w": "筷子 / 一双筷子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Phục vụ ơi, chúng tôi thiếu một đôi đũa, phiền bạn lấy thêm giúp.",
+        "answer": "服务员，我们少一双筷子，麻烦你再拿一双来。",
+        "answerPy": "Fúwùyuán, wǒmen shǎo yì shuāng kuàizi, máfan nǐ zài ná yì shuāng lái.",
+        "note": "拿 là từ bài 2 — cầm, lấy bằng tay.",
+        "pair": "麻烦……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu thiếu đũa thì bạn đi lấy thêm một đôi đi.",
+        "answer": "如果差筷子，你就再去拿一双吧。",
+        "answerPy": "Rúguǒ chà kuàizi, nǐ jiù zài qù ná yì shuāng ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 差 đã học ở Bài 7).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一双筷子",
+        "py": "yì shuāng kuàizi",
+        "vn": "một đôi đũa"
+      },
+      {
+        "zh": "用筷子",
+        "py": "yòng kuàizi",
+        "vn": "dùng đũa"
+      },
+      {
+        "zh": "拿筷子",
+        "py": "ná kuàizi",
+        "vn": "cầm đũa"
+      },
+      {
+        "zh": "学用筷子",
+        "py": "xué yòng kuàizi",
+        "vn": "học dùng đũa"
+      },
+      {
+        "zh": "筷子和勺子",
+        "py": "kuàizi hé sháozi",
+        "vn": "đũa và thìa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "用 + 筷子 + V",
+        "m": "Dùng đũa để làm gì"
+      },
+      {
+        "s": "一 + 双 + 筷子",
+        "m": "Đũa luôn đi thành đôi"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "啤酒",
+    "py": "píjiǔ",
+    "pos": "Danh từ",
+    "vn": "bia, rượu bia",
+    "hv": "bì tửu",
+    "em": "🍺",
+    "lesson": 3,
+    "explain": [
+      "Loại đồ uống có cồn, lên men từ lúa mạch."
+    ],
+    "usage": "Danh từ; đi cùng động từ 喝: 喝啤酒.",
+    "collo": [
+      "喝啤酒",
+      "一瓶啤酒",
+      "买啤酒"
+    ],
+    "ex_zh": "那我们今天喝点儿啤酒吧。",
+    "ex_py": "Nà wǒmen jīntiān hē diǎnr píjiǔ ba.",
+    "ex_vn": "Vậy hôm nay chúng ta uống chút bia đi.",
+    "exList": [
+      {
+        "zh": "那我们今天喝点儿啤酒吧。",
+        "py": "Nà wǒmen jīntiān hē diǎnr píjiǔ ba.",
+        "vn": "Vậy hôm nay chúng ta uống chút bia đi."
+      },
+      {
+        "zh": "你去楼下买几瓶啤酒吧。",
+        "py": "Nǐ qù lóuxià mǎi jǐ píng píjiǔ ba.",
+        "vn": "Bạn xuống dưới lầu mua vài chai bia đi."
+      },
+      {
+        "zh": "医生说你爸爸一口酒都不能喝。",
+        "py": "Yīshēng shuō nǐ bàba yì kǒu jiǔ dōu bù néng hē.",
+        "vn": "Bác sĩ nói bố con không được uống một ngụm rượu nào cả."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "啤",
+        "p": "pí",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "口 trái → 卑 phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "bia (phiên âm)",
+        "tip": "口(miệng, ý chỉ đồ uống) + 卑(âm đọc mượn từ \"beer\") → chữ tạo ra để PHIÊN ÂM từ \"bia\" của phương Tây.",
+        "cf": "脾 (pí – \"lá lách\", có bộ 月\")",
+        "w": "啤酒 / 喝啤酒"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bố con không được uống một ngụm rượu nào cả.",
+        "answer": "你爸爸一口酒都不能喝。",
+        "answerPy": "Nǐ bàba yì kǒu jiǔ dōu bù néng hē.",
+        "note": "一口……都不能 diễn tả sự cấm đoán tuyệt đối (ôn lại 口 sẽ học ngay bên dưới).",
+        "pair": "一……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đói thì chúng ta uống chút bia trước rồi ăn cơm.",
+        "answer": "如果你饿了，我们就先喝点儿啤酒再吃饭。",
+        "answerPy": "Rúguǒ nǐ è le, wǒmen jiù xiān hē diǎnr píjiǔ zài chīfàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 饿 đã học ở Bài 4).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喝啤酒",
+        "py": "hē píjiǔ",
+        "vn": "uống bia"
+      },
+      {
+        "zh": "一瓶啤酒",
+        "py": "yì píng píjiǔ",
+        "vn": "một chai bia"
+      },
+      {
+        "zh": "买啤酒",
+        "py": "mǎi píjiǔ",
+        "vn": "mua bia"
+      },
+      {
+        "zh": "冰啤酒",
+        "py": "bīng píjiǔ",
+        "vn": "bia lạnh"
+      },
+      {
+        "zh": "不能喝啤酒",
+        "py": "bù néng hē píjiǔ",
+        "vn": "không uống được bia"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 瓶 + 啤酒",
+        "m": "Lượng từ 瓶 cho chai"
+      },
+      {
+        "s": "啤 + 酒",
+        "m": "Rượu (酒) bia — 啤 là dịch âm của \"beer\""
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "口",
+    "py": "kǒu",
+    "pos": "Lượng từ",
+    "vn": "miếng, ngụm, hớp",
+    "hv": "khẩu",
+    "em": "👄",
+    "lesson": 3,
+    "explain": [
+      "Đơn vị đếm số lần ăn/uống bằng miệng."
+    ],
+    "usage": "Lượng từ, đứng sau số từ: [số từ] + 口 + [danh từ] (一口水, 一口酒).",
+    "collo": [
+      "一口水",
+      "一口酒",
+      "喝一口"
+    ],
+    "ex_zh": "医生说你爸爸一口酒都不能喝。",
+    "ex_py": "Yīshēng shuō nǐ bàba yì kǒu jiǔ dōu bù néng hē.",
+    "ex_vn": "Bác sĩ nói bố con không được uống một ngụm rượu nào cả.",
+    "exList": [
+      {
+        "zh": "医生说你爸爸一口酒都不能喝。",
+        "py": "Yīshēng shuō nǐ bàba yì kǒu jiǔ dōu bù néng hē.",
+        "vn": "Bác sĩ nói bố con không được uống một ngụm rượu nào cả."
+      },
+      {
+        "zh": "这种咖啡特别好喝，你快来喝一口吧。",
+        "py": "Zhè zhǒng kāfēi tèbié hǎohē, nǐ kuài lái hē yì kǒu ba.",
+        "vn": "Loại cà phê này ngon lắm, bạn mau đến uống một ngụm đi."
+      },
+      {
+        "zh": "吃几口饭就饱了。",
+        "py": "Chī jǐ kǒu fàn jiù bǎo le.",
+        "vn": "Ăn mấy miếng cơm là no rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "口",
+        "p": "kǒu",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 3,
+        "ord": "nét liền, hình cái miệng",
+        "rad": "口 (khẩu)",
+        "mean": "miệng",
+        "tip": "Chữ tượng hình mô phỏng hình cái MIỆNG đang mở → MIỆNG, mở rộng làm lượng từ đếm miếng/ngụm.",
+        "cf": "囗 (wéi – bộ \"vi\", nét vuông đơn giản hơn\")",
+        "w": "一口 / 口水 / 门口"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Loại cà phê này ngon lắm, bạn nếm một ngụm thử xem.",
+        "answer": "这种咖啡特别好喝，你尝一口试试吧。",
+        "answerPy": "Zhè zhǒng kāfēi tèbié hǎohē, nǐ cháng yì kǒu shìshi ba.",
+        "note": "V + 一口 — làm gì một ngụm, một miếng; 特别 là từ bài 6.",
+        "pair": "……吧"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần uống một ngụm là biết ngay có ngọt hay không.",
+        "answer": "只要喝一口，就知道甜不甜了。",
+        "answerPy": "Zhǐyào hē yì kǒu, jiù zhīdào tián bù tián le.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 甜 đã học ở Bài 3).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一口水",
+        "py": "yì kǒu shuǐ",
+        "vn": "một ngụm nước"
+      },
+      {
+        "zh": "喝一口",
+        "py": "hē yì kǒu",
+        "vn": "uống một ngụm"
+      },
+      {
+        "zh": "吃一口",
+        "py": "chī yì kǒu",
+        "vn": "ăn một miếng"
+      },
+      {
+        "zh": "尝一口",
+        "py": "cháng yì kǒu",
+        "vn": "nếm một miếng"
+      },
+      {
+        "zh": "一口就喝完了",
+        "py": "yì kǒu jiù hē wán le",
+        "vn": "một ngụm là hết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 一口",
+        "m": "Làm gì một ngụm, một miếng"
+      },
+      {
+        "s": "口 (ngụm, miếng) — lượng từ cho lượng vào miệng một lần"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "瓶子",
+    "py": "píngzi",
+    "pos": "Danh từ",
+    "vn": "lọ, bình",
+    "hv": "bình tử",
+    "em": "🍾",
+    "lesson": 3,
+    "explain": [
+      "Vật dụng có cổ nhỏ dùng để đựng chất lỏng."
+    ],
+    "usage": "Danh từ; cũng dùng làm lượng từ 瓶ế: 一瓶 (một chai/lọ).",
+    "collo": [
+      "酒瓶子",
+      "一个瓶子",
+      "空瓶子"
+    ],
+    "ex_zh": "别让他看见酒瓶子。",
+    "ex_py": "Bié ràng tā kànjiàn jiǔ píngzi.",
+    "ex_vn": "Đừng để ông ấy nhìn thấy chai rượu.",
+    "exList": [
+      {
+        "zh": "别让他看见酒瓶子。",
+        "py": "Bié ràng tā kànjiàn jiǔ píngzi.",
+        "vn": "Đừng để ông ấy nhìn thấy chai rượu."
+      },
+      {
+        "zh": "桌子上有一个瓶子，是谁的？",
+        "py": "Zhuōzi shang yǒu yí ge píngzi, shì shéi de?",
+        "vn": "Trên bàn có một cái lọ, của ai vậy?"
+      },
+      {
+        "zh": "你去楼下买几瓶啤酒吧。",
+        "py": "Nǐ qù lóuxià mǎi jǐ píng píjiǔ ba.",
+        "vn": "Bạn xuống dưới lầu mua vài chai bia đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "瓶",
+        "p": "píng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "并 trên → 瓦 dưới",
+        "rad": "瓦 (ngõa – ngói, gốm)",
+        "mean": "chai, lọ",
+        "tip": "并(kết hợp, gộp lại) + 瓦(đồ gốm) → đồ GỐM có hình dáng để ĐỰNG chất lỏng = CHAI, LỌ.",
+        "cf": "并 (bìng – \"cùng, và\", không có bộ 瓦\")",
+        "w": "瓶子 / 一瓶 / 花瓶"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mẹ bảo tôi đi lấy một cái chai, vì mẹ muốn đựng nước.",
+        "answer": "妈妈让我去拿一个瓶子，因为她想装水。",
+        "answerPy": "Māma ràng wǒ qù ná yí ge píngzi, yīnwèi tā xiǎng zhuāng shuǐ.",
+        "note": "一个瓶子 (cái chai) khác 一瓶水 (một chai nước).",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bố không được uống rượu nên mẹ giấu hết chai rượu đi.",
+        "answer": "因为爸爸不能喝酒，所以妈妈把酒瓶子都藏起来了。",
+        "answerPy": "Yīnwèi bàba bù néng hē jiǔ, suǒyǐ māma bǎ jiǔ píngzi dōu cáng qǐlai le.",
+        "note": "因为……所以…… kết hợp 把字句 (ôn lại 啤酒 vừa học trong bài này).",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个瓶子",
+        "py": "yí gè píngzi",
+        "vn": "một cái chai"
+      },
+      {
+        "zh": "空瓶子",
+        "py": "kòng píngzi",
+        "vn": "chai rỗng"
+      },
+      {
+        "zh": "酒瓶子",
+        "py": "jiǔ píngzi",
+        "vn": "chai rượu"
+      },
+      {
+        "zh": "打开瓶子",
+        "py": "dǎkāi píngzi",
+        "vn": "mở chai"
+      },
+      {
+        "zh": "瓶子里",
+        "py": "píngzi li",
+        "vn": "trong chai"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "瓶子 (cái chai) ≠ 瓶 (lượng từ): 一个瓶子 / 一瓶水"
+      },
+      {
+        "s": "打开 + 瓶子",
+        "m": "Mở nắp chai"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "笔记本(电脑)",
+    "py": "bǐjìběn (diànnǎo)",
+    "pos": "Danh từ",
+    "vn": "máy tính xách tay",
+    "hv": "bút ký bản điện não",
+    "em": "💻",
+    "lesson": 4,
+    "explain": [
+      "Loại máy tính nhỏ gọn, dễ mang theo."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 个/台: 一个笔记本电脑.",
+    "collo": [
+      "一个笔记本电脑",
+      "买笔记本电脑",
+      "换笔记本电脑"
+    ],
+    "ex_zh": "这个笔记本电脑我去年买的时候要五千块左右。",
+    "ex_py": "Zhège bǐjìběn diànnǎo wǒ qùnián mǎi de shíhou yào wǔqiān kuài zuǒyòu.",
+    "ex_vn": "Chiếc máy tính xách tay này khi tôi mua năm ngoái giá khoảng năm nghìn đồng.",
+    "exList": [
+      {
+        "zh": "这个笔记本电脑我去年买的时候要五千块左右。",
+        "py": "Zhège bǐjìběn diànnǎo wǒ qùnián mǎi de shíhou yào wǔqiān kuài zuǒyòu.",
+        "vn": "Chiếc máy tính xách tay này khi tôi mua năm ngoái giá khoảng năm nghìn đồng."
+      },
+      {
+        "zh": "我的笔记本电脑太旧了，我想换一个。",
+        "py": "Wǒ de bǐjìběn diànnǎo tài jiù le, wǒ xiǎng huàn yí ge.",
+        "vn": "Máy tính xách tay của tôi cũ quá rồi, tôi muốn đổi một cái khác."
+      },
+      {
+        "zh": "小周，你帮我看一下笔记本电脑吧。",
+        "py": "Xiǎo Zhōu, nǐ bāng wǒ kàn yíxià bǐjìběn diànnǎo ba.",
+        "vn": "Tiểu Chu, bạn giúp tôi xem qua máy tính xách tay chút đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "脑",
+        "p": "nǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "月 trái → 甾(biến thể) phải",
+        "rad": "月 (nhục – thân thể)",
+        "mean": "não, bộ óc",
+        "tip": "月(bộ phận cơ thể) + phần còn lại (hình ảnh bộ não) → NÃO; 电脑 = \"não điện\" = MÁY TÍNH.",
+        "cf": "恼 (nǎo – \"phiền não\", có bộ 忄\")",
+        "w": "电脑 / 笔记本电脑 / 头脑"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc laptop đó cô ấy mua năm ngoái khoảng tám nghìn, bây giờ rẻ hơn nhiều rồi.",
+        "answer": "那个笔记本电脑她去年买的时候要八千块左右，现在便宜多了。",
+        "answerPy": "Nàge bǐjìběn diànnǎo tā qùnián mǎi de shíhou yào bāqiān kuài zuǒyòu, xiànzài piányi duō le.",
+        "note": "是……的 — nhấn thời gian mua.",
+        "pair": "……，现在……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn đổi máy tính mới thì tôi có thể giúp bạn xem qua.",
+        "answer": "如果你想换新笔记本电脑，我就可以帮你看看。",
+        "answerPy": "Rúguǒ nǐ xiǎng huàn xīn bǐjìběn diànnǎo, wǒ jiù kěyǐ bāng nǐ kànkan.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 换 đã học ở Bài 10).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个笔记本电脑",
+        "py": "yí gè bǐjìběn diànnǎo",
+        "vn": "một cái laptop"
+      },
+      {
+        "zh": "买笔记本电脑",
+        "py": "mǎi bǐjìběn diànnǎo",
+        "vn": "mua laptop"
+      },
+      {
+        "zh": "换笔记本电脑",
+        "py": "huàn bǐjìběn diànnǎo",
+        "vn": "đổi laptop"
+      },
+      {
+        "zh": "用笔记本电脑",
+        "py": "yòng bǐjìběn diànnǎo",
+        "vn": "dùng laptop"
+      },
+      {
+        "zh": "笔记本电脑很贵",
+        "py": "bǐjìběn diànnǎo hěn guì",
+        "vn": "laptop rất đắt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "笔记本 (sổ tay) + 电脑 = laptop",
+        "m": "Máy tính mỏng như quyển sổ"
+      },
+      {
+        "s": "用 + 笔记本电脑 + V",
+        "m": "Dùng laptop để làm gì"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "电子邮件",
+    "py": "diànzǐ yóujiàn",
+    "pos": "Danh từ",
+    "vn": "email",
+    "hv": "điện tử bưu kiện",
+    "em": "📧",
+    "lesson": 4,
+    "explain": [
+      "Thư điện tử gửi qua mạng Internet."
+    ],
+    "usage": "Danh từ; đi cùng động từ 看/发: 看电子邮件, 发电子邮件.",
+    "collo": [
+      "看电子邮件",
+      "发电子邮件",
+      "收电子邮件"
+    ],
+    "ex_zh": "现在我每天起床后的第一件事就是打开电脑，看电子邮件。",
+    "ex_py": "Xiànzài wǒ měitiān qǐchuáng hòu de dì-yī jiàn shì jiùshì dǎkāi diànnǎo, kàn diànzǐ yóujiàn.",
+    "ex_vn": "Bây giờ mỗi ngày sau khi thức dậy việc đầu tiên tôi làm là mở máy tính, xem email.",
+    "exList": [
+      {
+        "zh": "现在我每天起床后的第一件事就是打开电脑，看电子邮件。",
+        "py": "Xiànzài wǒ měitiān qǐchuáng hòu de dì-yī jiàn shì jiùshì dǎkāi diànnǎo, kàn diànzǐ yóujiàn.",
+        "vn": "Bây giờ mỗi ngày sau khi thức dậy việc đầu tiên tôi làm là mở máy tính, xem email."
+      },
+      {
+        "zh": "昨天我还能看电子邮件，今天突然就打不开了。",
+        "py": "Zuótiān wǒ hái néng kàn diànzǐ yóujiàn, jīntiān tūrán jiù dǎ bu kāi le.",
+        "vn": "Hôm qua tôi vẫn xem email được, hôm nay đột nhiên không mở được nữa."
+      },
+      {
+        "zh": "我已经很少写信了。",
+        "py": "Wǒ yǐjīng hěn shǎo xiě xìn le.",
+        "vn": "Tôi đã rất ít viết thư rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "邮",
+        "p": "yóu",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "由 trái → 阝 phải",
+        "rad": "阝 (ấp – vùng đất)",
+        "mean": "bưu chính, gửi thư",
+        "tip": "由(từ, nguồn gốc) + 阝(vùng đất, trạm dịch) → nơi TRUNG CHUYỂN thư từ = BƯU CHÍNH; 邮件 = thư từ, 电子邮件 = thư điện tử.",
+        "cf": "油 (yóu – \"dầu\", có bộ 氵\")",
+        "w": "电子邮件 / 邮件 / 邮局"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Việc đầu tiên tôi làm mỗi sáng là mở máy tính xem email.",
+        "answer": "我每天早上第一件事就是打开电脑看电子邮件。",
+        "answerPy": "Wǒ měitiān zǎoshang dì-yī jiàn shì jiùshì dǎkāi diànnǎo kàn diànzǐ yóujiàn.",
+        "note": "第一件事就是 + V diễn tả việc làm đầu tiên.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có việc gì thì gửi email cho tôi nhé.",
+        "answer": "如果你有事，就给我发电子邮件吧。",
+        "answerPy": "Rúguǒ nǐ yǒu shì, jiù gěi wǒ fā diànzǐ yóujiàn ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "发电子邮件",
+        "py": "fā diànzǐ yóujiàn",
+        "vn": "gửi email"
+      },
+      {
+        "zh": "收电子邮件",
+        "py": "shōu diànzǐ yóujiàn",
+        "vn": "nhận email"
+      },
+      {
+        "zh": "看电子邮件",
+        "py": "kàn diànzǐ yóujiàn",
+        "vn": "xem email"
+      },
+      {
+        "zh": "一封电子邮件",
+        "py": "yì fēng diànzǐ yóujiàn",
+        "vn": "một email"
+      },
+      {
+        "zh": "电子邮件地址",
+        "py": "diànzǐ yóujiàn dìzhǐ",
+        "vn": "địa chỉ email"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "发 / 收 + 电子邮件",
+        "m": "Gửi / nhận email"
+      },
+      {
+        "s": "电子 + 邮件",
+        "m": "Thư từ (邮件) điện tử (电子)"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "习惯",
+    "py": "xíguàn",
+    "pos": "Động từ/Danh từ",
+    "vn": "quen; thói quen",
+    "hv": "tập quán",
+    "em": "🔁",
+    "lesson": 4,
+    "explain": [
+      "Đã trở nên quen thuộc với điều gì đó, hoặc bản thân điều lặp lại đã thành thói quen."
+    ],
+    "usage": "Động từ: 习惯 + V (习惯用电脑); Danh từ: 好习惯, 有习惯.",
+    "collo": [
+      "习惯用",
+      "好习惯",
+      "还没习惯"
+    ],
+    "ex_zh": "已经习惯用电脑来学习和工作了。",
+    "ex_py": "Yǐjīng xíguàn yòng diànnǎo lái xuéxí hé gōngzuò le.",
+    "ex_vn": "Đã quen dùng máy tính để học tập và làm việc rồi.",
+    "exList": [
+      {
+        "zh": "已经习惯用电脑来学习和工作了。",
+        "py": "Yǐjīng xíguàn yòng diànnǎo lái xuéxí hé gōngzuò le.",
+        "vn": "Đã quen dùng máy tính để học tập và làm việc rồi."
+      },
+      {
+        "zh": "我已经很少写信，也很少用笔写字，已经习惯用电脑了。",
+        "py": "Wǒ yǐjīng hěn shǎo xiě xìn, yě hěn shǎo yòng bǐ xiě zì, yǐjīng xíguàn yòng diànnǎo le.",
+        "vn": "Tôi đã rất ít viết thư, cũng rất ít dùng bút viết chữ, đã quen dùng máy tính rồi."
+      },
+      {
+        "zh": "哪一天突然没有了电脑，我们怎么办呢？",
+        "py": "Nǎ yì tiān tūrán méiyǒule diànnǎo, wǒmen zěnme bàn ne?",
+        "vn": "Nếu một ngày nào đó bỗng nhiên không có máy tính nữa, chúng ta phải làm sao đây?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "惯",
+        "p": "guàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "忄 trái → 贯 phải",
+        "rad": "忄 (tâm – tim, tâm trí)",
+        "mean": "quen thuộc",
+        "tip": "忄(tâm trí) + 贯(xuyên suốt, liên tục) → điều gì đó LẶP LẠI LIÊN TỤC trong tâm trí = QUEN THUỘC.",
+        "cf": "贯 (guàn – \"xuyên suốt\", không có bộ 忄\")",
+        "w": "习惯 / 不习惯 / 好习惯"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã quen dùng máy tính để học và làm việc, nên không có máy tính là rất bất tiện.",
+        "answer": "因为我已经习惯用电脑来学习和工作了，所以没有电脑很不方便。",
+        "answerPy": "Yīnwèi wǒ yǐjīng xíguàn yòng diànnǎo lái xuéxí hé gōngzuò le, suǒyǐ méiyǒu diànnǎo hěn bù fāngbiàn.",
+        "note": "习惯 + V — quen làm gì; 方便 là từ bài 10.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn quen dùng máy tính thì sẽ tiện hơn nhiều.",
+        "answer": "只要你习惯用电脑，就会方便多了。",
+        "answerPy": "Zhǐyào nǐ xíguàn yòng diànnǎo, jiù huì fāngbiàn duō le.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 方便 đã học ở Bài 10).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "好习惯",
+        "py": "hǎo xíguàn",
+        "vn": "thói quen tốt"
+      },
+      {
+        "zh": "习惯用",
+        "py": "xíguàn yòng",
+        "vn": "quen dùng"
+      },
+      {
+        "zh": "还没习惯",
+        "py": "hái méi xíguàn",
+        "vn": "vẫn chưa quen"
+      },
+      {
+        "zh": "生活习惯",
+        "py": "shēnghuó xíguàn",
+        "vn": "thói quen sinh hoạt"
+      },
+      {
+        "zh": "养成习惯",
+        "py": "yǎngchéng xíguàn",
+        "vn": "hình thành thói quen"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 习惯 + V (động từ)",
+        "m": "Ai đó quen làm gì"
+      },
+      {
+        "s": "好 / 坏 + 习惯 (danh từ)",
+        "m": "Thói quen tốt / xấu"
+      }
+    ]
+  }
 ];
 
 const wuData = [

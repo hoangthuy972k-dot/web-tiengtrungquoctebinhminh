@@ -1,0 +1,127 @@
+/* ══════════════════════════════════════════════════════════
+   TỪ MỚI HSK 4 — một từ một ô, bố cục theo slide giảng
+   ----------------------------------------------------------
+   Dung chung cho HAI giao dien:
+     · trang bai hoc /lessons/hsk4-bai-N.html  (may chieu tren lop)
+     · loi hoc 7 buoc trong trang chu          (hoc sinh tu hoc)
+   Trang chu dung bo bien CSS khac han trang bai hoc, nen cac
+   bien mau duoc dinh nghia ngay tai .h4-list — trang bai hoc
+   da co san cac bien nay voi DUNG gia tri do, nen khong doi gi.
+   ══════════════════════════════════════════════════════════ */
+.h4-list{
+  --ink:#1f1a17;--mid:#5f5952;--soft:#7d776e;--border:#e6e2da;
+  --bg:#fafaf7;--sky:#c8372d;--sky-l:#fdefec;--sky-d:#a82d24;
+  --warm:#d9580c;--green:#1f8a4c;--green-l:#e9f6ee;
+  --gold:#b7791f;--teal:#0d8a80;--py:#a8691a;
+  --font-hanzi-display:'Noto Serif SC','Noto Sans SC','PingFang SC',serif;
+}
+.h4-list{display:flex;flex-direction:column;gap:10px;}
+.h4-tools{display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap;}
+.h4-tool{background:white;border:1.5px solid var(--border);border-radius:999px;padding:7px 18px;
+  font-family:inherit;font-size:0.85rem;color:var(--mid);cursor:pointer;}
+.h4-tool:hover{border-color:var(--sky);color:var(--sky);}
+.h4-tools-hint{font-size:0.82rem;color:var(--soft);}
+
+.h4-word{background:white;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.h4-word.is-open{border-color:var(--sky);box-shadow:0 6px 24px rgba(200,55,45,0.10);}
+
+/* Thanh luôn nhìn thấy */
+.h4-bar{width:100%;display:grid;
+  grid-template-columns:38px minmax(96px,auto) minmax(90px,auto) auto 1fr 22px;
+  align-items:center;gap:14px;padding:13px 18px;background:none;border:none;
+  font-family:inherit;text-align:left;cursor:pointer;}
+.h4-bar:hover{background:#fdfaf6;}
+.h4-no{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;
+  background:var(--sky-l);color:var(--sky-d);font-weight:700;font-size:0.85rem;}
+.h4-zh{font-family:var(--font-hanzi-display);font-size:1.55rem;font-weight:700;color:var(--ink);line-height:1.2;}
+.h4-py{color:var(--py);font-size:0.95rem;}
+/* Mau theo tu loai dat o day (khong phai trong JS) de trang bai hoc va
+   loi hoc 7 buoc cua hoc sinh luon dung MOT bang mau. */
+.h4-pos{font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:20px;white-space:nowrap;
+  background:#f1efe9;color:var(--mid);}
+.h4-pos[data-pos="Danh từ"]{background:#dbeafe;color:#1d4ed8;}
+.h4-pos[data-pos="Động từ"]{background:#dcfce7;color:#16a34a;}
+.h4-pos[data-pos="Tính từ"]{background:#fef9c3;color:#b45309;}
+.h4-pos[data-pos="Đại từ"]{background:#fce7f3;color:#be185d;}
+.h4-pos[data-pos="Lượng từ"]{background:#f0fdf4;color:#15803d;}
+.h4-vn{color:var(--mid);font-size:0.95rem;}
+.h4-caret{color:var(--soft);transition:transform 0.2s;}
+.h4-word.is-open .h4-caret{transform:rotate(180deg);}
+
+.h4-panel{padding:0 18px 18px;border-top:1px dashed var(--border);}
+.h4-top{display:grid;grid-template-columns:230px 1fr;gap:18px;margin-top:16px;}
+
+/* Thẻ từ bên trái — giống tấm thẻ trong slide */
+.h4-card{background:linear-gradient(160deg,#fdfbff,#f6f1fb);border:1.5px solid #e4dcf0;
+  border-radius:18px;padding:18px 16px;text-align:center;align-self:start;}
+/* Anh minh hoa chi co o loi hoc cua hoc sinh (trang may chieu khong dung) */
+.h4-card-img{display:block;width:100%;max-width:200px;margin:0 auto 10px;border-radius:12px;
+  aspect-ratio:4/3;object-fit:cover;}
+.h4-card-py{color:var(--soft);font-size:0.9rem;}
+.h4-card-zh{font-family:var(--font-hanzi-display);font-size:2.9rem;font-weight:900;
+  color:var(--sky);line-height:1.15;margin:2px 0 10px;}
+.h4-card-pos{display:inline-block;background:var(--teal);color:#fff;border-radius:999px;
+  padding:4px 16px;font-size:0.8rem;font-weight:600;}
+.h4-card-vn{font-size:1.1rem;font-weight:700;color:var(--ink);margin-top:10px;}
+.h4-card-hv{font-size:0.82rem;color:var(--gold);margin-top:5px;}
+.h4-card-note{font-size:0.82rem;color:var(--mid);font-style:italic;margin-top:8px;line-height:1.55;}
+
+/* Cột phải: 搭配 + 句型 */
+.h4-sec-h{display:inline-flex;align-items:center;gap:8px;background:var(--sky-l);
+  color:var(--sky-d);border-radius:999px;padding:5px 16px;font-size:0.85rem;font-weight:600;margin-bottom:10px;}
+.h4-sec-zh{font-family:var(--font-hanzi-display);font-weight:700;}
+.h4-tb{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;
+  border:1px solid var(--border);margin-bottom:16px;}
+.h4-tb th{background:var(--sky);color:#fff;font-size:0.8rem;font-weight:600;padding:8px 12px;text-align:left;}
+.h4-tb td{padding:8px 12px;border-top:1px solid var(--border);font-size:0.92rem;}
+.h4-tb tbody tr:nth-child(odd){background:#fdfaff;}
+.h4-tb-zh{font-family:var(--font-hanzi-display);color:var(--sky-d);font-weight:600;white-space:nowrap;}
+.h4-tb-py{color:var(--soft);font-size:0.85rem;}
+.h4-tb-vn{color:var(--mid);}
+.h4-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.h4-chip{background:#fdfaff;border:1px solid #e4dcf0;border-radius:999px;padding:5px 14px;
+  font-family:var(--font-hanzi-display);font-size:1rem;color:var(--sky-d);}
+.h4-pats{display:flex;flex-direction:column;gap:8px;}
+.h4-pat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center;
+  background:var(--green-l);border-radius:11px;padding:10px 14px;}
+.h4-pat-s{font-family:var(--font-hanzi-display);font-size:1rem;color:var(--ink);}
+.h4-pat-m{font-size:0.87rem;color:var(--mid);}
+.h4-usage{font-size:0.87rem;color:var(--mid);line-height:1.6;background:var(--bg);border-radius:10px;padding:10px 14px;}
+
+/* 例句 và 翻译练习 */
+.h4-block{margin-top:18px;}
+.h4-ex,.h4-tr{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;
+  background:#fffdf7;border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:8px;}
+.h4-tr{background:#fdf7ff;}
+.h4-ex-no{width:26px;height:26px;display:grid;place-items:center;border-radius:999px;
+  background:var(--teal);color:#fff;font-size:0.82rem;font-weight:700;}
+.h4-ex-no.is-tr{background:var(--warm);}
+.h4-ex-zh{font-family:var(--font-hanzi-display);font-size:1.18rem;color:var(--ink);line-height:1.6;}
+.h4-ex-py{color:var(--soft);font-size:0.84rem;margin-top:2px;}
+.h4-ex-vn{color:var(--mid);font-size:0.9rem;margin-top:6px;}
+.h4-tr-vn{font-size:1rem;color:var(--ink);line-height:1.6;}
+/* The nay con duoc dung o o luyen dich cua trang chu, co the nam ngoai
+   .h4-list — nen co gia tri du phong cho cac bien mau. */
+.h4-pair{display:inline-block;background:var(--green-l,#e9f6ee);border:1px solid #bfe3cd;color:var(--green,#1f8a4c);
+  border-radius:999px;padding:3px 14px;font-family:var(--font-hanzi-display,'Noto Serif SC',serif);font-size:0.9rem;margin-top:8px;}
+.h4-tr-ans{margin-top:8px;background:#fff;border-radius:10px;padding:10px 12px;}
+.h4-tr-zh{font-family:var(--font-hanzi-display);font-size:1.12rem;color:var(--sky-d);line-height:1.6;}
+.h4-tr-note{font-size:0.85rem;color:var(--mid);margin-top:6px;line-height:1.55;}
+.h4-peek{display:block;margin-top:7px;background:none;border:none;padding:0;
+  color:var(--teal);font-family:inherit;font-size:0.84rem;font-weight:600;cursor:pointer;}
+.h4-peek:hover{text-decoration:underline;}
+.h4-spk{border:none;background:none;cursor:pointer;font-size:0.85em;opacity:0.5;padding:0 3px;}
+.h4-spk:hover{opacity:1;}
+
+@media (max-width:860px){
+  .h4-top{grid-template-columns:1fr;}
+  .h4-card{max-width:280px;margin:0 auto;}
+  .h4-pat{grid-template-columns:1fr;gap:4px;}
+}
+@media (max-width:640px){
+  .h4-bar{grid-template-columns:30px 1fr auto;gap:8px;row-gap:2px;padding:11px 13px;}
+  .h4-py{grid-column:2;font-size:0.85rem;}
+  .h4-pos{display:none;}
+  .h4-vn{grid-column:2;font-size:0.88rem;}
+  .h4-caret{grid-row:1;grid-column:3;}
+}

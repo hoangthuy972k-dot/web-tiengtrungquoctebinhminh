@@ -3327,16 +3327,160 @@
     return '<div class="vp-word-example vp-word-examples-all"><div class="vp-examples-label">Ví dụ:</div><ol class="vp-examples-list">' + items + '</ol></div>';
   }
 
+  // ══════════════════════════════════════════════════════════
+  // TỪ MỚI HSK 4 — một từ một ô (bố cục theo slide giảng của cô)
+  // ----------------------------------------------------------
+  // Dung CHUNG lop CSS .h4-* voi trang bai hoc /lessons/hsk4-bai-N.html,
+  // nhung o day la ban cho HOC SINH TU HOC: phan luyen dich giu nguyen o
+  // go bai cua minh roi moi mo dap an, thay vi chi bam xem nhu tren lop.
+  // Khong hien chiet tu Han tu — len HSK 4 hoc sinh da thuoc mat chu.
+  // ══════════════════════════════════════════════════════════
+  function vpIsHsk4() {
+    return !!(currentHubLesson && /\/hsk4-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+  }
+
+  function vpH4Say(t) {
+    return '<button type="button" class="h4-spk" data-speak="' + String(t).replace(/"/g, '&quot;') + '">🔊</button>';
+  }
+
+  function vpH4Collo(v) {
+    var list = (v.colloFull && v.colloFull.length)
+      ? v.colloFull
+      : (v.collo || []).map(function (c) { return { zh: c, py: '', vn: '' }; });
+    if (!list.length) return '';
+    var coDayDu = list.some(function (c) { return c.py || c.vn; });
+    if (!coDayDu) {
+      // Bai chua soan pinyin/nghia cho phan ket hop tu: hien dang the cho gon,
+      // khong dung bang rong 3 cot.
+      return '<div class="h4-chips">' + list.map(function (c) {
+        return '<span class="h4-chip">' + c.zh + '</span>';
+      }).join('') + '</div>';
+    }
+    return '<table class="h4-tb"><thead><tr><th>Tiếng Trung</th><th>Pinyin</th><th>Nghĩa tiếng Việt</th></tr></thead><tbody>' +
+      list.map(function (c) {
+        return '<tr><td class="h4-tb-zh">' + c.zh + '</td><td class="h4-tb-py">' + (c.py || '') + '</td><td class="h4-tb-vn">' + (c.vn || '') + '</td></tr>';
+      }).join('') + '</tbody></table>';
+  }
+
+  function vpH4Patterns(v) {
+    if (!v.patterns || !v.patterns.length) return '';
+    return '<div class="h4-sec-h"><span class="h4-sec-zh">句型</span> Cấu trúc câu</div>' +
+      '<div class="h4-pats">' + v.patterns.map(function (p) {
+        return '<div class="h4-pat"><div class="h4-pat-s">' + p.s + '</div><div class="h4-pat-m">→ ' + p.m + '</div></div>';
+      }).join('') + '</div>';
+  }
+
+  function vpH4Examples(v) {
+    var list = v.exList || [];
+    if (!list.length) return '';
+    return '<div class="h4-block"><div class="h4-sec-h"><span class="h4-sec-zh">例句</span> Ví dụ</div>' +
+      list.map(function (e, i) {
+        return '<div class="h4-ex">' +
+          '<span class="h4-ex-no">' + (i + 1) + '</span>' +
+          '<div class="h4-ex-body">' +
+            '<div class="h4-ex-zh">' + e.zh + ' ' + vpH4Say(e.zh) + '</div>' +
+            '<div class="h4-ex-py">' + (e.py || '') + '</div>' +
+            '<button type="button" class="h4-peek" data-h4-peek>Xem nghĩa ▾</button>' +
+            '<div class="h4-ex-vn" hidden>' + (e.vn || '') + '</div>' +
+          '</div></div>';
+      }).join('') + '</div>';
+  }
+
+  function renderVpListHsk4() {
+    var wrap = $('#vpContent');
+    wrap.innerHTML =
+      '<div class="h4-list">' +
+        '<div class="h4-tools">' +
+          '<button type="button" class="h4-tool" data-h4-all="1">Mở tất cả</button>' +
+          '<button type="button" class="h4-tool" data-h4-all="0">Thu gọn</button>' +
+          '<span class="h4-tools-hint">Bấm vào từ để mở phần chi tiết</span>' +
+        '</div>' +
+        vpVocab.map(function (v, vi) {
+          var img = v.img
+            ? '<img class="h4-card-img" src="' + v.img + '" alt="' + String(v.vn || '').replace(/"/g, '&quot;') + '" loading="lazy" decoding="async" onerror="this.remove()">'
+            : '';
+          var ghiChu = v.note || (v.explain && v.explain[0]) || '';
+          return '<article class="h4-word" data-i="' + vi + '">' +
+            '<button type="button" class="h4-bar" aria-expanded="false">' +
+              '<span class="h4-no">' + (v.n != null ? v.n : vi + 1) + '</span>' +
+              '<span class="h4-zh">' + v.zh + '</span>' +
+              '<span class="h4-py">' + v.py + '</span>' +
+              (v.pos ? '<span class="h4-pos" data-pos="' + v.pos + '">' + v.pos + '</span>' : '<span class="h4-pos"></span>') +
+              '<span class="h4-vn">' + v.vn + '</span>' +
+              '<span class="h4-caret">▾</span>' +
+            '</button>' +
+            '<div class="h4-panel" hidden>' +
+              '<div class="h4-top">' +
+                '<div class="h4-card">' + img +
+                  '<div class="h4-card-py">' + v.py + '</div>' +
+                  '<div class="h4-card-zh">' + v.zh + ' ' + vpH4Say(v.zh) + '</div>' +
+                  (v.pos ? '<div class="h4-card-pos">' + v.pos + '</div>' : '') +
+                  '<div class="h4-card-vn">' + v.vn + '</div>' +
+                  (v.hv ? '<div class="h4-card-hv">Hán–Việt: <b>' + v.hv + '</b></div>' : '') +
+                  (ghiChu ? '<div class="h4-card-note">' + ghiChu + '</div>' : '') +
+                '</div>' +
+                '<div class="h4-right">' +
+                  '<div class="h4-sec-h"><span class="h4-sec-zh">搭配</span> Kết hợp từ</div>' +
+                  vpH4Collo(v) +
+                  vpH4Patterns(v) +
+                  (v.usage && !(v.patterns && v.patterns.length) ? '<div class="h4-usage"><b>Cách dùng:</b> ' + v.usage + '</div>' : '') +
+                '</div>' +
+              '</div>' +
+              vpH4Examples(v) +
+              // Luyen dich: giu o go bai cua hoc sinh (khac trang may chieu tren lop)
+              (v.checkList
+                ? '<div class="h4-block"><div class="h4-sec-h"><span class="h4-sec-zh">翻译练习</span> Luyện dịch Việt → Trung</div>' +
+                    v.checkList.map(function (c, ci) { return renderVpCheckHtml(c, vi + '_' + ci); }).join('') +
+                  '</div>'
+                : (v.check ? renderVpCheckHtml(v.check, vi) : '')) +
+            '</div>' +
+          '</article>';
+        }).join('') +
+      '</div>';
+
+    var list = wrap.firstChild;
+    list.addEventListener('click', function (e) {
+      var peek = e.target.closest('[data-h4-peek]');
+      if (peek) {
+        var box = peek.nextElementSibling;
+        box.hidden = !box.hidden;
+        peek.textContent = box.hidden ? peek.textContent.replace('▴', '▾') : peek.textContent.replace('▾', '▴');
+        return;
+      }
+      var bar = e.target.closest('.h4-bar');
+      if (!bar) return;
+      var art = bar.closest('.h4-word');
+      var mo = art.classList.toggle('is-open');
+      art.querySelector('.h4-panel').hidden = !mo;
+      bar.setAttribute('aria-expanded', mo ? 'true' : 'false');
+    });
+    $all('[data-h4-all]', list).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var mo = btn.getAttribute('data-h4-all') === '1';
+        $all('.h4-word', list).forEach(function (a) {
+          a.classList.toggle('is-open', mo);
+          a.querySelector('.h4-panel').hidden = !mo;
+          a.querySelector('.h4-bar').setAttribute('aria-expanded', mo ? 'true' : 'false');
+        });
+      });
+    });
+    $all('[data-speak]', list).forEach(function (btn) {
+      btn.addEventListener('click', function (e) { e.stopPropagation(); vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    wireVpCheckWidgets(list);
+  }
+
   function renderVpList() {
     vpResetHzWriters();
+    if (vpIsHsk4()) return renderVpListHsk4();
     var wrap = $('#vpContent');
     wrap.innerHTML = '<div class="vp-list-grid"></div>';
     var grid = wrap.firstChild;
-    // HSK4: pinyin luon hien cho moi tu/vi du; nghia tieng Viet cua vi du
-    // chi hien khi hoc sinh bam nut (de tu dich truoc roi doi chieu).
-    var isHsk4 = !!(currentHubLesson && /\/hsk4-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
-    var opts = { alwaysPy: isHsk4, hideVn: isHsk4 };
-    var pyCls = 'vp-word-py' + (isHsk4 ? ' py-always' : '');
+    // Tu HSK 4 tro len da re sang renderVpListHsk4() o tren, nen nhanh nay
+    // chi con phuc vu HSK 1-3 / YCT: pinyin theo nut tat-bat chung cua trang,
+    // nghia tieng Viet cua vi du hien luon.
+    var opts = {};
+    var pyCls = 'vp-word-py';
     vpVocab.forEach(function (v, vi) {
       var ex = v.exList && v.exList[0];
       var card = document.createElement('div');
@@ -3390,6 +3534,8 @@
     return '<div class="vp-check-box">' +
       '<div class="vp-check-label">✏️ Luyện dịch câu này</div>' +
       '<div class="vp-check-q' + (isZh ? ' hanzi' : '') + '">' + check.prompt + '</div>' +
+      // Goi y cap lien tu (VD 不仅……也……) — giong cach cac slide giang nhac bai
+      (check.pair ? '<span class="h4-pair">' + check.pair + '</span>' : '') +
       '<textarea class="vp-check-input" data-check-input="' + vi + '" rows="2" placeholder="Nhập bản dịch của bạn..."></textarea>' +
       '<button type="button" class="vp-check-btn" data-check-reveal="' + vi + '">Xem đáp án mẫu</button>' +
       '<div class="vp-check-answer" data-check-answer="' + vi + '" hidden>' +

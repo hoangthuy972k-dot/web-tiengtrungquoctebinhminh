@@ -371,7 +371,7 @@ function buildVocabHsk4(){
           '<span class="h4-no">'+v.n+'</span>'+
           '<span class="h4-zh">'+v.zh+'</span>'+
           '<span class="h4-py">'+v.py+'</span>'+
-          '<span class="h4-pos" style="'+(posStyle[v.pos]||'')+'">'+v.pos+'</span>'+
+          '<span class="h4-pos" data-pos="'+v.pos+'">'+v.pos+'</span>'+
           '<span class="h4-vn">'+v.vn+'</span>'+
           '<span class="h4-caret">▾</span>'+
         '</button>'+

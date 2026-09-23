@@ -23,6 +23,7 @@ const SHARED = [
   'css/lesson-template.css',
   'css/widgets.css',
   'css/hsk5.css',
+  'css/vocab-h4.css',
   'js/lesson-engine.js',
   'js/widgets.js',
   'js/hsk5-extra.js'

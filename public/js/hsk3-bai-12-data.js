@@ -3,313 +3,1513 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'太阳',py:'tàiyáng',pos:'Danh từ',vn:'mặt trời', hv: 'thái dương',em:'☀️',lesson:1,
-   explain:['Ngôi sao trung tâm hệ mặt trời, mang lại ánh sáng và nhiệt cho Trái Đất.'],
-   usage:'Danh từ; thường xuất hiện trong thành ngữ "太阳从西边出来" (mặt trời mọc từ hướng tây) diễn tả điều bất ngờ, khó tin.',
-   collo:['太阳出来了','晒太阳','太阳从西边出来'],
-   ex_zh:'今天太阳从西边出来了吗？',ex_py:'Jīntiān tàiyáng cóng xībian chūlai le ma?',ex_vn:'Hôm nay mặt trời mọc từ hướng tây à?',
-   exList:[
-     {zh:'今天太阳从西边出来了吗？',py:'Jīntiān tàiyáng cóng xībian chūlai le ma?',vn:'Hôm nay mặt trời mọc từ hướng tây à?'},
-     {zh:'今天太阳不错，你带我出去吧。',py:'Jīntiān tàiyáng búcuò, nǐ dài wǒ chūqu ba.',vn:'Hôm nay trời nắng đẹp, bạn đưa mình ra ngoài đi.'},
-     {zh:'真的吗？太阳从西边出来了？',py:'Zhēn de ma? Tàiyáng cóng xībian chūlai le?',vn:'Thật á? Mặt trời mọc từ hướng tây à?'},
-   ],
-   hanzi:[
-     {c:'阳',p:'yáng',type:'左右结构 · Trái-phải',st:6,ord:'阝 trái → 日 phải',rad:'阝 (phụ – gò đất)',mean:'dương, mặt trời',
-      tip:'阝(sườn núi) + 日(mặt trời) → phía sườn núi CÓ ÁNH NẮNG mặt trời chiếu tới → DƯƠNG, MẶT TRỜI.',
-      cf:'阴 (yīn – "âm, mây", có 月 thay vì 日")',w:'太阳 / 阳光'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sao anh đi ngủ sớm thế?',answer:'你怎么这么早就要睡觉了？',answerPy:'Nǐ zěnme zhème zǎo jiù yào shuìjiào le?',
-      note:'就 diễn tả hành động xảy ra sớm/nhanh (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Tám giờ vào học, cậu ấy chín giờ mới dậy.',answer:'八点上课，他九点才起床。',answerPy:'Bā diǎn shàngkè, tā jiǔ diǎn cái qǐchuáng.',
-      note:'才 diễn tả hành động xảy ra muộn/chậm (điểm ngữ pháp bài này).'},
-   ]},
-
-  {n:2,zh:'西',py:'xī',pos:'Danh từ',vn:'phía tây, hướng tây', hv: 'tây',em:'🧭',lesson:1,
-   explain:['Một trong bốn hướng chính, hướng mặt trời lặn.'],
-   usage:'Danh từ chỉ phương hướng; thường ghép với 边/门: 西边, 西门.',
-   collo:['西边','西门','从西边'],
-   ex_zh:'今天太阳从西边出来了吗？',ex_py:'Jīntiān tàiyáng cóng xībian chūlai le ma?',ex_vn:'Hôm nay mặt trời mọc từ hướng tây à?',
-   exList:[
-     {zh:'今天太阳从西边出来了吗？',py:'Jīntiān tàiyáng cóng xībian chūlai le ma?',vn:'Hôm nay mặt trời mọc từ hướng tây à?'},
-     {zh:'我快到西门了。',py:'Wǒ kuài dào xīmén le.',vn:'Tôi sắp đến cổng tây rồi.'},
-     {zh:'出了西门，向左走两百米就能看见。',py:'Chūle xīmén, xiàng zuǒ zǒu liǎngbǎi mǐ jiù néng kànjiàn.',vn:'Ra khỏi cổng tây, đi sang trái 200 mét là thấy.'},
-   ],
-   hanzi:[
-     {c:'西',p:'xī',type:'独体字 · Chữ đơn (tượng hình)',st:6,ord:'nét liền, hình cái tổ chim',rad:'西 (á)',mean:'phía tây',
-      tip:'Chữ tượng hình cổ mô phỏng hình chim VỀ TỔ lúc mặt trời lặn (hướng tây) → PHÍA TÂY.',
-      cf:'酉 (yǒu – "chi dậu", hình dáng gần giống")',w:'西边 / 西门 / 东西'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Xin hỏi, gần sân bay có chỗ nào bán trái cây không?',answer:'请问，机场附近有没有卖水果的地方？',answerPy:'Qǐngwèn, jīchǎng fùjìn yǒu méiyǒu mài shuǐguǒ de dìfang?',
-      note:'附近 diễn tả khu vực lân cận (ôn lại 附近 đã học ở Bài 10).'},
-     {promptLang:'vi',prompt:'Từ cổng tây đi xe buýt, mười phút là đến được ga tàu.',answer:'从西门坐公交车，十分钟就能到火车站。',answerPy:'Cóng xīmén zuò gōngjiāochē, shí fēnzhōng jiù néng dào huǒchēzhàn.',
-      note:'就 diễn tả hành động sẽ xảy ra nhanh chóng, thuận lợi.'},
-   ]},
-
-  {n:3,zh:'生气',py:'shēngqì',pos:'Động từ',vn:'giận, tức giận', hv: 'sinh khí',em:'😠',lesson:1,
-   explain:['Cảm thấy tức giận, không hài lòng về điều gì đó.'],
-   usage:'Động từ ly hợp; thường dùng ở dạng mệnh lệnh: 别生气.',
-   collo:['很生气','别生气','经理生气了'],
-   ex_zh:'经理生气了，他告诉我，明天8点不到，以后就别来了。',ex_py:'Jīnglǐ shēngqì le, tā gàosu wǒ, míngtiān bā diǎn bú dào, yǐhòu jiù bié lái le.',ex_vn:'Giám đốc giận rồi, ông ấy bảo mình, mai không đến trước 8 giờ thì sau này đừng đến nữa.',
-   exList:[
-     {zh:'经理生气了，他告诉我，明天8点不到，以后就别来了。',py:'Jīnglǐ shēngqì le, tā gàosu wǒ, míngtiān bā diǎn bú dào, yǐhòu jiù bié lái le.',vn:'Giám đốc giận rồi, ông ấy bảo mình, mai không đến trước 8 giờ thì sau này đừng đến nữa.'},
-     {zh:'别生气，我十分钟就到。',py:'Bié shēngqì, wǒ shí fēnzhōng jiù dào.',vn:'Đừng giận, mười phút nữa tôi đến ngay.'},
-     {zh:'所以我有点儿生气，不是因为他们没带铅笔，是因为他们没有好的学习习惯。',py:'Suǒyǐ wǒ yǒudiǎnr shēngqì, bú shì yīnwèi tāmen méi dài qiānbǐ, shì yīnwèi tāmen méiyǒu hǎo de xuéxí xíguàn.',vn:'Nên tôi hơi tức giận, không phải vì các em không mang bút chì, mà vì các em không có thói quen học tập tốt.'},
-   ],
-   hanzi:[
-     {c:'气',p:'qì',type:'独体字 · Chữ đơn',st:4,ord:'nét liền',rad:'气 (khí)',mean:'khí, hơi',
-      tip:'Chữ tượng hình mô phỏng luồng KHÍ bốc lên → KHÍ, HƠI; 生气 = sinh ra luồng khí trong lòng = TỨC GIẬN.',
-      cf:'汽 (qì – "hơi nước", có bộ 氵")',w:'生气 / 空气 / 天气'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì giám đốc giận rồi nên Tiểu Cương 8 giờ trước phải đến công ty.',answer:'因为经理生气了，所以小刚8点前要到公司。',answerPy:'Yīnwèi jīnglǐ shēngqì le, suǒyǐ Xiǎogāng bā diǎn qián yào dào gōngsī.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn không đến muộn thì giám đốc sẽ không giận đâu.',answer:'只要你不迟到，经理就不会生气。',answerPy:'Zhǐyào nǐ bù chídào, jīnglǐ jiù bú huì shēngqì.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 迟到 đã học ở Bài 7).'},
-   ]},
-
-  {n:4,zh:'行李箱',py:'xínglixiāng',pos:'Danh từ',vn:'hành lý, vali', hv: 'hành lý tương',em:'🧳',lesson:2,
-   explain:['Vật dụng dùng để đựng đồ khi đi du lịch, công tác.'],
-   usage:'Danh từ; đi cùng động từ 放/拿: 放行李箱, 拿行李箱.',
-   collo:['放到行李箱里','拿行李箱','一个行李箱'],
-   ex_zh:'那我帮你把衣服放到行李箱里吧。',ex_py:'Nà wǒ bāng nǐ bǎ yīfu fàngdào xínglixiāng li ba.',ex_vn:'Vậy em giúp anh xếp quần áo vào vali nhé.',
-   exList:[
-     {zh:'那我帮你把衣服放到行李箱里吧。',py:'Nà wǒ bāng nǐ bǎ yīfu fàngdào xínglixiāng li ba.',vn:'Vậy em giúp anh xếp quần áo vào vali nhé.'},
-     {zh:'你把护照放在行李箱里了吗？',py:'Nǐ bǎ hùzhào fàng zài xínglixiāng li le ma?',vn:'Bạn để hộ chiếu trong vali rồi à?'},
-     {zh:'能帮我把这些行李箱放到上面吗？我搬不动。',py:'Néng bāng wǒ bǎ zhèxiē xínglixiāng fàngdào shàngmian ma? Wǒ bān bu dòng.',vn:'Giúp tôi để những cái vali này lên trên được không? Tôi khiêng không nổi.'},
-   ],
-   hanzi:[
-     {c:'箱',p:'xiāng',type:'上下结构 · Trên-dưới',st:15,ord:'⺮ trên → 相 dưới',rad:'⺮ (trúc – tre)',mean:'hòm, rương',
-      tip:'⺮(tre, vật liệu đan) + 相(cùng nhau, ý chỉ ghép lại) → vật đan bằng tre ghép lại thành HÒM, RƯƠNG.',
-      cf:'相 (xiāng – "lẫn nhau", không có bộ ⺮")',w:'行李箱 / 箱子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Em giúp anh xếp quần áo vào vali nhé.',answer:'我帮你把衣服放到行李箱里吧。',answerPy:'Wǒ bāng nǐ bǎ yīfu fàngdào xínglixiāng li ba.',
-      note:'把字句2: 把+B(衣服)+动词(放)+到+vị trí (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn không mang được vali thì tôi giúp bạn xách.',answer:'如果你拿不动行李箱，我就帮你拿。',answerPy:'Rúguǒ nǐ ná bu dòng xínglixiāng, wǒ jiù bāng nǐ ná.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:5,zh:'自己',py:'zìjǐ',pos:'Đại từ',vn:'tự mình, bản thân', hv: 'tự kỷ',em:'🙋',lesson:2,
-   explain:['Chỉ chính bản thân người nói hoặc người được nhắc đến.'],
-   usage:'Đại từ phản thân, đứng trước động từ hoặc sau danh từ: 自己 + V, [người] + 自己.',
-   collo:['自己照顾自己','自己去','靠自己'],
-   ex_zh:'你要自己照顾好自己。',ex_py:'Nǐ yào zìjǐ zhàogù hǎo zìjǐ.',ex_vn:'Em phải tự chăm sóc bản thân tốt nhé.',
-   exList:[
-     {zh:'你要自己照顾好自己。',py:'Nǐ yào zìjǐ zhàogù hǎo zìjǐ.',vn:'Em phải tự chăm sóc bản thân tốt nhé.'},
-     {zh:'我还是自己打出租车去吧。',py:'Wǒ háishi zìjǐ dǎ chūzūchē qù ba.',vn:'Tôi tự bắt taxi đi thì hơn.'},
-     {zh:'我很喜欢画画儿，但是没有人教过我，我都是自己学的。',py:'Wǒ hěn xǐhuan huà huàr, dànshì méiyǒu rén jiāoguo wǒ, wǒ dōu shì zìjǐ xué de.',vn:'Tôi rất thích vẽ tranh, nhưng chưa ai dạy tôi cả, tôi đều tự học đấy.'},
-   ],
-   hanzi:[
-     {c:'己',p:'jǐ',type:'独体字 · Chữ đơn (tượng hình)',st:3,ord:'nét liền',rad:'己 (kỷ)',mean:'bản thân, mình',
-      tip:'Chữ tượng hình mô phỏng sợi dây cuộn lại tự thân → BẢN THÂN; 自(chính mình)+己(bản thân) = TỰ MÌNH.',
-      cf:'已 (yǐ – "đã", hình dáng gần giống")',w:'自己 / 自己的'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn tự chăm sóc bản thân tốt thì tôi sẽ yên tâm.',answer:'只要你自己照顾好自己，我就放心了。',answerPy:'Zhǐyào nǐ zìjǐ zhàogù hǎo zìjǐ, wǒ jiù fàngxīn le.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 照顾/放心 đã học ở Bài 5, 9).'},
-     {promptLang:'vi',prompt:'Nếu bạn không biết đường thì tự hỏi người khác đi.',answer:'如果你不认识路，就自己问问别人吧。',answerPy:'Rúguǒ nǐ bú rènshi lù, jiù zìjǐ wènwen biéren ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:6,zh:'包',py:'bāo',pos:'Danh từ',vn:'cặp, túi', hv: 'bao',em:'👜',lesson:2,
-   explain:['Vật dụng dùng để đựng, mang theo đồ cá nhân.'],
-   usage:'Danh từ; đi cùng động từ 放/拿: 放在包里.',
-   collo:['放在包里','一个包','我的包'],
-   ex_zh:'我已经把我的照片放在你的包里了。',ex_py:'Wǒ yǐjīng bǎ wǒ de zhàopiàn fàng zài nǐ de bāo li le.',ex_vn:'Em đã để ảnh của em vào túi của anh rồi đấy.',
-   exList:[
-     {zh:'我已经把我的照片放在你的包里了。',py:'Wǒ yǐjīng bǎ wǒ de zhàopiàn fàng zài nǐ de bāo li le.',vn:'Em đã để ảnh của em vào túi của anh rồi đấy.'},
-     {zh:'没有，在我包里呢，这样拿着比较方便。',py:'Méiyǒu, zài wǒ bāo li ne, zhèyàng názhe bǐjiào fāngbiàn.',vn:'Không có, ở trong túi tôi đấy, cầm thế này tiện hơn.'},
-     {zh:'我的包忘在出租车上了，钱包、手机和护照都在里面。',py:'Wǒ de bāo wàng zài chūzūchē shang le, qiánbāo, shǒujī hé hùzhào dōu zài lǐmiàn.',vn:'Túi của tôi để quên trên taxi rồi, ví tiền, điện thoại và hộ chiếu đều ở trong đó.'},
-   ],
-   hanzi:[
-     {c:'包',p:'bāo',type:'半包围结构 · Bán bao vây',st:5,ord:'勹 bao ngoài → 巳 trong',rad:'勹 (bao)',mean:'gói, bọc',
-      tip:'勹(hình người khom lưng ôm) + 巳(bào thai) → hình ảnh BỌC LẤY bên trong → GÓI, BỌC, mở rộng thành TÚI, CẶP.',
-      cf:'饱 (bǎo – "no bụng", có bộ 饣")',w:'包 / 书包 / 面包'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh đã để chìa khóa vào túi của em rồi đấy.',answer:'我已经把钥匙放在你的包里了。',answerPy:'Wǒ yǐjīng bǎ yàoshi fàng zài nǐ de bāo li le.',
-      note:'把字句2: 把+B(钥匙)+动词(放)+在+vị trí (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn tìm không thấy chìa khóa thì xem trong túi thử đi.',answer:'如果你找不到钥匙，就看看包里吧。',answerPy:'Rúguǒ nǐ zhǎo bu dào yàoshi, jiù kànkan bāo li ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 找不到 đã học ở Bài 6).'},
-   ]},
-
-  {n:7,zh:'发现',py:'fāxiàn',pos:'Động từ',vn:'phát hiện', hv: 'phát hiện',em:'🔍',lesson:3,
-   explain:['Nhận ra, tìm thấy điều gì đó chưa biết trước đó.'],
-   usage:'Động từ, mang tân ngữ là mệnh đề hoặc danh từ: 发现 + [sự việc]; thường đi cùng 才.',
-   collo:['才发现','发现问题','没有发现'],
-   ex_zh:'来机场的路上我才发现忘带护照了。',ex_py:'Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.',ex_vn:'Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.',
-   exList:[
-     {zh:'来机场的路上我才发现忘带护照了。',py:'Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.',vn:'Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.'},
-     {zh:'司机把我送到机场的时候，我才发现忘记带钱包了。',py:'Sījī bǎ wǒ sòngdào jīchǎng de shíhou, wǒ cái fāxiàn wàngjì dài qiánbāo le.',vn:'Lúc tài xế chở em đến sân bay, em mới phát hiện quên mang ví tiền.'},
-     {zh:'我今天上午帮他洗衣服的时候，在他那条蓝色的裤子里找到了。',py:'Wǒ jīntiān shàngwǔ bāng tā xǐ yīfu de shíhou, zài tā nà tiáo lánsè de kùzi li zhǎodào le.',vn:'Sáng nay lúc tôi giặt đồ giúp bố, tôi tìm thấy nó trong cái quần xanh của bố.'},
-   ],
-   hanzi:[
-     {c:'现',p:'xiàn',type:'左右结构 · Trái-phải',st:8,ord:'王 trái → 见 phải',rad:'王 (ngọc)',mean:'hiện ra, xuất hiện',
-      tip:'王(ngọc, ánh sáng) + 见(nhìn thấy) → ánh sáng NGỌC hiện ra trước mắt = HIỆN RA; 发(phát ra)+现(hiện ra) = PHÁT HIỆN.',
-      cf:'见 (jiàn – "nhìn thấy", không có bộ 王")',w:'发现 / 现在 / 出现'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lúc lên máy bay tôi mới phát hiện quên mang điện thoại.',answer:'上飞机的时候我才发现忘带手机了。',answerPy:'Shàng fēijī de shíhou wǒ cái fāxiàn wàng dài shǒujī le.',
-      note:'才 diễn tả hành động xảy ra muộn/chậm (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn phát hiện có vấn đề gì thì hãy nói cho tôi biết ngay.',answer:'如果你发现有问题，就马上告诉我吧。',answerPy:'Rúguǒ nǐ fāxiàn yǒu wèntí, jiù mǎshàng gàosu wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:8,zh:'护照',py:'hùzhào',pos:'Danh từ',vn:'hộ chiếu', hv: 'hộ chiếu',em:'📔',lesson:3,
-   explain:['Giấy tờ tùy thân dùng khi xuất nhập cảnh.'],
-   usage:'Danh từ; đi cùng động từ 带/办: 带护照, 办护照.',
-   collo:['带护照','办护照','忘带护照'],
-   ex_zh:'来机场的路上我才发现忘带护照了。',ex_py:'Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.',ex_vn:'Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.',
-   exList:[
-     {zh:'来机场的路上我才发现忘带护照了。',py:'Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.',vn:'Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.'},
-     {zh:'你把护照放在行李箱里了吗？',py:'Nǐ bǎ hùzhào fàng zài xínglixiāng li le ma?',vn:'Bạn để hộ chiếu trong vali rồi à?'},
-     {zh:'爸爸找了很长时间都没找到他的护照。',py:'Bàba zhǎole hěn cháng shíjiān dōu méi zhǎodào tā de hùzhào.',vn:'Bố tìm mãi mà không thấy hộ chiếu của mình đâu.'},
-   ],
-   hanzi:[
-     {c:'照',p:'zhào',type:'上下结构 · Trên-dưới',st:13,ord:'昭 trên → 灬 dưới',rad:'灬 (hỏa – lửa)',mean:'chiếu sáng; giấy tờ',
-      tip:'昭(sáng rõ) + 灬(ánh sáng) → CHIẾU SÁNG, mở rộng nghĩa "soi rõ thân phận" = giấy tờ chứng minh; 护照 = giấy BẢO HỘ (护) khi đi lại.',
-      cf:'招 (zhāo – "vẫy tay, chiêu mộ", có bộ 扌")',w:'护照 / 照片 / 拍照'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn để hộ chiếu vào túi rồi à?',answer:'你把护照放在包里了吗？',answerPy:'Nǐ bǎ hùzhào fàng zài bāo li le ma?',
-      note:'把字句2: 把+B(护照)+动词(放)+在+vị trí (ôn lại 包 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn quên mang hộ chiếu thì không thể lên máy bay được.',answer:'如果你忘带护照，就不能上飞机了。',answerPy:'Rúguǒ nǐ wàng dài hùzhào, jiù bù néng shàng fēijī le.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'起飞',py:'qǐfēi',pos:'Động từ',vn:'cất cánh (máy bay)', hv: 'khởi phi',em:'🛫',lesson:3,
-   explain:['Máy bay rời khỏi mặt đất bay lên.'],
-   usage:'Động từ, thường đi cùng chủ ngữ 飞机: 飞机起飞了.',
-   collo:['飞机起飞','就要起飞','马上起飞'],
-   ex_zh:'快点吧，飞机就要起飞了。',ex_py:'Kuài diǎn ba, fēijī jiù yào qǐfēi le.',ex_vn:'Nhanh lên đi, máy bay sắp cất cánh rồi.',
-   exList:[
-     {zh:'快点吧，飞机就要起飞了。',py:'Kuài diǎn ba, fēijī jiù yào qǐfēi le.',vn:'Nhanh lên đi, máy bay sắp cất cánh rồi.'},
-     {zh:'对不起，先生，飞机马上就要起飞了，请您关上手机。',py:'Duìbuqǐ, xiānsheng, fēijī mǎshàng jiù yào qǐfēi le, qǐng nín guānshàng shǒujī.',vn:'Xin lỗi anh, máy bay sắp cất cánh rồi, mời anh tắt điện thoại.'},
-     {zh:'来机场的路上我才发现忘带护照了。',py:'Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.',vn:'Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.'},
-   ],
-   hanzi:[
-     {c:'飞',p:'fēi',type:'独体字 · Chữ đơn (tượng hình)',st:3,ord:'nét liền, hình con chim bay',rad:'飞 (phi)',mean:'bay',
-      tip:'Chữ giản thể mô phỏng đôi CÁNH đang BAY → BAY; 起(dấy lên)+飞(bay) = CẤT CÁNH.',
-      cf:'非 (fēi – "không phải", hình dáng khác hẳn")',w:'起飞 / 飞机 / 飞'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Máy bay sắp cất cánh rồi, nhanh lên đi.',answer:'飞机就要起飞了，快点吧。',answerPy:'Fēijī jiù yào qǐfēi le, kuài diǎn ba.',
-      note:'就要……了 diễn tả sự việc sắp xảy ra.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn đến đúng giờ thì sẽ không lỡ chuyến bay.',answer:'只要你准时到，就不会错过飞机起飞了。',answerPy:'Zhǐyào nǐ zhǔnshí dào, jiù bú huì cuòguò fēijī qǐfēi le.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:10,zh:'司机',py:'sījī',pos:'Danh từ',vn:'tài xế', hv: 'ti cơ',em:'🚕',lesson:3,
-   explain:['Người điều khiển phương tiện giao thông.'],
-   usage:'Danh từ; đứng làm chủ ngữ hoặc tân ngữ trong câu.',
-   collo:['出租车司机','当司机','司机把我送到'],
-   ex_zh:'司机把我送到机场的时候，我才发现忘记带钱包了。',ex_py:'Sījī bǎ wǒ sòngdào jīchǎng de shíhou, wǒ cái fāxiàn wàngjì dài qiánbāo le.',ex_vn:'Lúc tài xế chở em đến sân bay, em mới phát hiện quên mang ví tiền.',
-   exList:[
-     {zh:'司机把我送到机场的时候，我才发现忘记带钱包了。',py:'Sījī bǎ wǒ sòngdào jīchǎng de shíhou, wǒ cái fāxiàn wàngjì dài qiánbāo le.',vn:'Lúc tài xế chở em đến sân bay, em mới phát hiện quên mang ví tiền.'},
-     {zh:'他是出租车司机。',py:'Tā shì chūzūchē sījī.',vn:'Anh ấy là tài xế taxi.'},
-     {zh:'我让司机明天九点前到楼下等您。',py:'Wǒ ràng sījī míngtiān jiǔ diǎn qián dào lóuxià děng nín.',vn:'Tôi bảo tài xế ngày mai trước 9 giờ xuống dưới lầu đợi anh.'},
-   ],
-   hanzi:[
-     {c:'司',p:'sī',type:'独体字 · Chữ đơn',st:5,ord:'nét liền',rad:'口 (khẩu)',mean:'quản lý, phụ trách',
-      tip:'Chữ tượng hình mô phỏng người CẦM QUYỀN ra lệnh → QUẢN LÝ; 司机 = người ĐIỀU KHIỂN (机) máy móc/xe = TÀI XẾ.',
-      cf:'同 (tóng – "giống nhau", hình dáng khác")',w:'司机 / 公司'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tài xế đưa tôi đến sân bay rồi.',answer:'司机把我送到机场了。',answerPy:'Sījī bǎ wǒ sòngdào jīchǎng le.',
-      note:'把字句2: 把+B(我)+动词(送)+到+vị trí (ôn lại 机场 đã học ở Bài 2).'},
-     {promptLang:'vi',prompt:'Nếu tài xế không đến thì chúng ta tự bắt taxi đi vậy.',answer:'如果司机不来，我们就自己打出租车去吧。',answerPy:'Rúguǒ sījī bù lái, wǒmen jiù zìjǐ dǎ chūzūchē qù ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 自己 vừa học trong bài này).'},
-   ]},
-
-  {n:11,zh:'教',py:'jiāo',pos:'Động từ',vn:'dạy', hv: 'giáo',em:'👩‍🏫',lesson:4,
-   explain:['Truyền đạt kiến thức, kỹ năng cho người khác.'],
-   usage:'Động từ, mang hai tân ngữ: 教 + [người] + [môn/kỹ năng] (教学生画画儿).',
-   collo:['教学生','教画画儿','教了十年'],
-   ex_zh:'我是一个中学老师，教学生画画儿。',ex_py:'Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.',ex_vn:'Tôi là một giáo viên trung học, dạy học sinh vẽ tranh.',
-   exList:[
-     {zh:'我是一个中学老师，教学生画画儿。',py:'Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.',vn:'Tôi là một giáo viên trung học, dạy học sinh vẽ tranh.'},
-     {zh:'那你教教我吧，我一直想学。',py:'Nà nǐ jiāojiao wǒ ba, wǒ yìzhí xiǎng xué.',vn:'Vậy bạn dạy mình đi, mình muốn học mãi rồi.'},
-     {zh:'但是没有人教过我，我都是自己学的。',py:'Dànshì méiyǒu rén jiāoguo wǒ, wǒ dōu shì zìjǐ xué de.',vn:'Nhưng chưa ai dạy tôi cả, tôi đều tự học đấy.'},
-   ],
-   hanzi:[
-     {c:'教',p:'jiāo',type:'左右结构 · Trái-phải',st:11,ord:'孝 trái → 攵 phải',rad:'攵 (phốc – gõ nhẹ)',mean:'dạy dỗ',
-      tip:'孝(hiếu thảo, học theo bậc trên) + 攵(tác động, chỉ dạy) → truyền đạt điều hay lẽ phải cho con cháu = DẠY DỖ.',
-      cf:'孝 (xiào – "hiếu thảo", không có bộ 攵")',w:'教 / 教书 / 教学生'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi dạy học sinh vẽ tranh.',answer:'我教学生画画儿。',answerPy:'Wǒ jiāo xuésheng huà huàr.',
-      note:'教 + người + việc (画画儿) mang hai tân ngữ (ôn lại 画 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Nếu bạn muốn học vẽ thì tôi có thể dạy bạn.',answer:'如果你想学画画儿，我就可以教你。',answerPy:'Rúguǒ nǐ xiǎng xué huà huàr, wǒ jiù kěyǐ jiāo nǐ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'画',py:'huà',pos:'Động từ',vn:'vẽ; tranh', hv: 'họa',em:'🎨',lesson:4,
-   explain:['Dùng bút vẽ nên hình ảnh; cũng dùng làm danh từ chỉ bức tranh.'],
-   usage:'Động từ: 画 + [đối tượng] (画画儿); Danh từ: 一张画.',
-   collo:['画画儿','一张画','画得好'],
-   ex_zh:'我是一个中学老师，教学生画画儿。',ex_py:'Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.',ex_vn:'Tôi là một giáo viên trung học, dạy học sinh vẽ tranh.',
-   exList:[
-     {zh:'我是一个中学老师，教学生画画儿。',py:'Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.',vn:'Tôi là một giáo viên trung học, dạy học sinh vẽ tranh.'},
-     {zh:'我很喜欢画画儿，你看这个小狗就是我画的，可爱吗？',py:'Wǒ hěn xǐhuan huà huàr, nǐ kàn zhège xiǎogǒu jiùshì wǒ huà de, kě\'ài ma?',vn:'Tôi rất thích vẽ tranh, bạn xem con chó nhỏ này chính là tôi vẽ đấy, đáng yêu không?'},
-     {zh:'太阳是我画的，小猫是妹妹画的。',py:'Tàiyáng shì wǒ huà de, xiǎomāo shì mèimei huà de.',vn:'Mặt trời là tôi vẽ, con mèo nhỏ là em gái vẽ.'},
-   ],
-   hanzi:[
-     {c:'画',p:'huà',type:'独体字 · Chữ đơn',st:8,ord:'nét liền',rad:'田 (điền)',mean:'vẽ, bức tranh',
-      tip:'Chữ giản thể mô phỏng khung tranh với đường viền bao quanh hình ảnh bên trong → VẼ, BỨC TRANH.',
-      cf:'面 (miàn – "mặt", hình dáng gần giống")',w:'画画儿 / 一张画 / 画家'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy cậu ấy không mang bút chì nhưng thầy giáo vẫn dạy cậu ấy vẽ.',answer:'虽然他没带铅笔，但是老师还是教了他画画儿。',answerPy:'Suīrán tā méi dài qiānbǐ, dànshì lǎoshī háishi jiāole tā huà huàr.',
-      note:'虽然……但是…… diễn tả sự tương phản (ôn lại 教 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Bức tranh này bạn vẽ đẹp thật đấy.',answer:'这张画你画得真好看。',answerPy:'Zhè zhāng huà nǐ huà de zhēn hǎokàn.',
-      note:'画 vừa làm danh từ (这张画) vừa làm động từ (画得好看).'},
-   ]},
-
-  {n:13,zh:'需要',py:'xūyào',pos:'Động từ',vn:'cần', hv: 'nhu yếu',em:'✅',lesson:4,
-   explain:['Có nhu cầu, đòi hỏi điều gì đó.'],
-   usage:'Động từ, mang tân ngữ là danh từ hoặc động từ: 需要 + [vật/việc] (需要带的东西, 需要休息).',
-   collo:['需要带','需要休息','不需要'],
-   ex_zh:'我都会把下次学生需要带的东西写在黑板上。',ex_py:'Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.',ex_vn:'Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng.',
-   exList:[
-     {zh:'我都会把下次学生需要带的东西写在黑板上。',py:'Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.',vn:'Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng.'},
-     {zh:'我们需要换新的桌子和椅子。',py:'Wǒmen xūyào huàn xīn de zhuōzi hé yǐzi.',vn:'Chúng tôi cần đổi bàn ghế mới.'},
-     {zh:'不需要，休息一下就好了。',py:'Bù xūyào, xiūxi yíxià jiù hǎo le.',vn:'Không cần đâu, nghỉ một chút là được rồi.'},
-   ],
-   hanzi:[
-     {c:'需',p:'xū',type:'上下结构 · Trên-dưới',st:14,ord:'雨 trên → 而 dưới',rad:'雨 (vũ – mưa)',mean:'cần thiết',
-      tip:'雨(mưa, ý chỉ điều tất yếu của tự nhiên) + 而(và) → điều TẤT YẾU cần có = CẦN THIẾT.',
-      cf:'儒 (rú – "nho gia", có bộ 亻")',w:'需要 / 不需要'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thầy giáo cần mua một ít bút chì mới.',answer:'老师需要买一些新的铅笔。',answerPy:'Lǎoshī xūyào mǎi yìxiē xīn de qiānbǐ.',
-      note:'需要 + V diễn tả nhu cầu.'},
-     {promptLang:'vi',prompt:'Nếu bạn cần giúp đỡ thì cứ nói với tôi nhé.',answer:'如果你需要帮忙，就跟我说吧。',answerPy:'Rúguǒ nǐ xūyào bāngmáng, jiù gēn wǒ shuō ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 帮忙 đã học ở Bài 6).'},
-   ]},
-
-  {n:14,zh:'黑板',py:'hēibǎn',pos:'Danh từ',vn:'bảng đen', hv: 'hắc bản',em:'⬛',lesson:4,
-   explain:['Tấm bảng dùng để viết phấn trong lớp học.'],
-   usage:'Danh từ; đi cùng động từ 写: 写在黑板上.',
-   collo:['黑板上','写在黑板上','擦黑板'],
-   ex_zh:'我都会把下次学生需要带的东西写在黑板上。',ex_py:'Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.',ex_vn:'Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng.',
-   exList:[
-     {zh:'我都会把下次学生需要带的东西写在黑板上。',py:'Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.',vn:'Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng.'},
-     {zh:'黑板上的那个字怎么读？',py:'Hēibǎn shang de nàge zì zěnme dú?',vn:'Chữ đó trên bảng đọc thế nào?'},
-     {zh:'我也不认识，我查一下字典，找到了告诉你。',py:'Wǒ yě bú rènshi, wǒ chá yíxià zìdiǎn, zhǎodàole gàosu nǐ.',vn:'Tôi cũng không biết, tôi tra từ điển chút, tìm được rồi báo bạn.'},
-   ],
-   hanzi:[
-     {c:'黑',p:'hēi',type:'上下结构 · Trên-dưới',st:12,ord:'里 trên → 灬 dưới',rad:'灬 (hỏa – lửa)',mean:'màu đen',
-      tip:'Hình ảnh khói LỬA ám lên cửa sổ tạo thành màu ĐEN → MÀU ĐEN.',
-      cf:'墨 (mò – "mực", có bộ 土")',w:'黑板 / 黑色 / 黑夜'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi viết những đồ học sinh cần mang lên bảng.',answer:'我把学生需要带的东西写在黑板上。',answerPy:'Wǒ bǎ xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.',
-      note:'把字句2: 把+B(东西)+动词(写)+在+vị trí (ôn lại 需要 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn không hiểu chữ trên bảng thì hỏi thầy giáo đi.',answer:'如果你看不懂黑板上的字，就问问老师吧。',answerPy:'Rúguǒ nǐ kàn bu dǒng hēibǎn shang de zì, jiù wènwen lǎoshī ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "太阳",
+    "py": "tàiyáng",
+    "pos": "Danh từ",
+    "vn": "mặt trời",
+    "hv": "thái dương",
+    "em": "☀️",
+    "lesson": 1,
+    "explain": [
+      "Ngôi sao trung tâm hệ mặt trời, mang lại ánh sáng và nhiệt cho Trái Đất."
+    ],
+    "usage": "Danh từ; thường xuất hiện trong thành ngữ \"太阳从西边出来\" (mặt trời mọc từ hướng tây) diễn tả điều bất ngờ, khó tin.",
+    "collo": [
+      "太阳出来了",
+      "晒太阳",
+      "太阳从西边出来"
+    ],
+    "ex_zh": "今天太阳从西边出来了吗？",
+    "ex_py": "Jīntiān tàiyáng cóng xībian chūlai le ma?",
+    "ex_vn": "Hôm nay mặt trời mọc từ hướng tây à?",
+    "exList": [
+      {
+        "zh": "今天太阳从西边出来了吗？",
+        "py": "Jīntiān tàiyáng cóng xībian chūlai le ma?",
+        "vn": "Hôm nay mặt trời mọc từ hướng tây à?"
+      },
+      {
+        "zh": "今天太阳不错，你带我出去吧。",
+        "py": "Jīntiān tàiyáng búcuò, nǐ dài wǒ chūqu ba.",
+        "vn": "Hôm nay trời nắng đẹp, bạn đưa mình ra ngoài đi."
+      },
+      {
+        "zh": "真的吗？太阳从西边出来了？",
+        "py": "Zhēn de ma? Tàiyáng cóng xībian chūlai le?",
+        "vn": "Thật á? Mặt trời mọc từ hướng tây à?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "阳",
+        "p": "yáng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "阝 trái → 日 phải",
+        "rad": "阝 (phụ – gò đất)",
+        "mean": "dương, mặt trời",
+        "tip": "阝(sườn núi) + 日(mặt trời) → phía sườn núi CÓ ÁNH NẮNG mặt trời chiếu tới → DƯƠNG, MẶT TRỜI.",
+        "cf": "阴 (yīn – \"âm, mây\", có 月 thay vì 日\")",
+        "w": "太阳 / 阳光"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sao hôm nay anh đi ngủ sớm thế? Chẳng lẽ mai phải dậy lúc mặt trời chưa lên?",
+        "answer": "你今天怎么这么早就要睡觉了？是不是明天太阳还没出来就要起床？",
+        "answerPy": "Nǐ jīntiān zěnme zhème zǎo jiù yào shuìjiào le? Shì bu shì míngtiān tàiyáng hái méi chūlái jiù yào qǐchuáng?",
+        "note": "太阳出来 — mặt trời mọc.",
+        "pair": "是不是……？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tám giờ vào học, cậu ấy chín giờ mới dậy.",
+        "answer": "八点上课，他九点才起床。",
+        "answerPy": "Bā diǎn shàngkè, tā jiǔ diǎn cái qǐchuáng.",
+        "note": "才 diễn tả hành động xảy ra muộn/chậm (điểm ngữ pháp bài này).",
+        "pair": "……，才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "太阳出来了",
+        "py": "tàiyáng chū lái le",
+        "vn": "mặt trời lên rồi"
+      },
+      {
+        "zh": "晒太阳",
+        "py": "shài tàiyáng",
+        "vn": "phơi nắng"
+      },
+      {
+        "zh": "太阳很大",
+        "py": "tàiyáng hěn dà",
+        "vn": "nắng rất to"
+      },
+      {
+        "zh": "太阳从东边出来",
+        "py": "tàiyáng cóng dōng biān chū lái",
+        "vn": "mặt trời mọc đằng đông"
+      },
+      {
+        "zh": "太阳下山了",
+        "py": "tàiyáng xiàshān le",
+        "vn": "mặt trời lặn rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "太阳 + 出来 / 下山 + 了",
+        "m": "Mặt trời mọc / lặn"
+      },
+      {
+        "s": "太 + 阳",
+        "m": "Vầng dương (阳) lớn nhất (太)"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "西",
+    "py": "xī",
+    "pos": "Danh từ",
+    "vn": "phía tây, hướng tây",
+    "hv": "tây",
+    "em": "🧭",
+    "lesson": 1,
+    "explain": [
+      "Một trong bốn hướng chính, hướng mặt trời lặn."
+    ],
+    "usage": "Danh từ chỉ phương hướng; thường ghép với 边/门: 西边, 西门.",
+    "collo": [
+      "西边",
+      "西门",
+      "从西边"
+    ],
+    "ex_zh": "今天太阳从西边出来了吗？",
+    "ex_py": "Jīntiān tàiyáng cóng xībian chūlai le ma?",
+    "ex_vn": "Hôm nay mặt trời mọc từ hướng tây à?",
+    "exList": [
+      {
+        "zh": "今天太阳从西边出来了吗？",
+        "py": "Jīntiān tàiyáng cóng xībian chūlai le ma?",
+        "vn": "Hôm nay mặt trời mọc từ hướng tây à?"
+      },
+      {
+        "zh": "我快到西门了。",
+        "py": "Wǒ kuài dào xīmén le.",
+        "vn": "Tôi sắp đến cổng tây rồi."
+      },
+      {
+        "zh": "出了西门，向左走两百米就能看见。",
+        "py": "Chūle xīmén, xiàng zuǒ zǒu liǎngbǎi mǐ jiù néng kànjiàn.",
+        "vn": "Ra khỏi cổng tây, đi sang trái 200 mét là thấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "西",
+        "p": "xī",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 6,
+        "ord": "nét liền, hình cái tổ chim",
+        "rad": "西 (á)",
+        "mean": "phía tây",
+        "tip": "Chữ tượng hình cổ mô phỏng hình chim VỀ TỔ lúc mặt trời lặn (hướng tây) → PHÍA TÂY.",
+        "cf": "酉 (yǒu – \"chi dậu\", hình dáng gần giống\")",
+        "w": "西边 / 西门 / 东西"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hỏi gần sân bay có chỗ nào bán trái cây không? Nếu có thì tôi đi mua chút.",
+        "answer": "请问，机场附近有没有卖水果的地方？如果有，我就去买点儿。",
+        "answerPy": "Qǐngwèn, jīchǎng fùjìn yǒu méiyǒu mài shuǐguǒ de dìfang? Rúguǒ yǒu, wǒ jiù qù mǎi diǎnr.",
+        "note": "附近 và 地方 là từ bài 10.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Từ cổng tây đi xe buýt, mười phút là đến được ga tàu.",
+        "answer": "从西门坐公交车，十分钟就能到火车站。",
+        "answerPy": "Cóng xīmén zuò gōngjiāochē, shí fēnzhōng jiù néng dào huǒchēzhàn.",
+        "note": "就 diễn tả hành động sẽ xảy ra nhanh chóng, thuận lợi.",
+        "pair": "从……到……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "西边",
+        "py": "xī biān",
+        "vn": "phía tây"
+      },
+      {
+        "zh": "西门",
+        "py": "xī mén",
+        "vn": "cổng tây"
+      },
+      {
+        "zh": "从西边来",
+        "py": "cóng xī biān lái",
+        "vn": "từ phía tây tới"
+      },
+      {
+        "zh": "往西走",
+        "py": "wǎng xī zǒu",
+        "vn": "đi về phía tây"
+      },
+      {
+        "zh": "西边的房子",
+        "py": "xī biān de fángzi",
+        "vn": "ngôi nhà phía tây"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "往 + 西 + 走",
+        "m": "Đi về phía tây"
+      },
+      {
+        "s": "东 · 西 · 南 · 北 — bốn hướng; 南方 北方 là từ bài 1"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "生气",
+    "py": "shēngqì",
+    "pos": "Động từ",
+    "vn": "giận, tức giận",
+    "hv": "sinh khí",
+    "em": "😠",
+    "lesson": 1,
+    "explain": [
+      "Cảm thấy tức giận, không hài lòng về điều gì đó."
+    ],
+    "usage": "Động từ ly hợp; thường dùng ở dạng mệnh lệnh: 别生气.",
+    "collo": [
+      "很生气",
+      "别生气",
+      "经理生气了"
+    ],
+    "ex_zh": "经理生气了，他告诉我，明天8点不到，以后就别来了。",
+    "ex_py": "Jīnglǐ shēngqì le, tā gàosu wǒ, míngtiān bā diǎn bú dào, yǐhòu jiù bié lái le.",
+    "ex_vn": "Giám đốc giận rồi, ông ấy bảo mình, mai không đến trước 8 giờ thì sau này đừng đến nữa.",
+    "exList": [
+      {
+        "zh": "经理生气了，他告诉我，明天8点不到，以后就别来了。",
+        "py": "Jīnglǐ shēngqì le, tā gàosu wǒ, míngtiān bā diǎn bú dào, yǐhòu jiù bié lái le.",
+        "vn": "Giám đốc giận rồi, ông ấy bảo mình, mai không đến trước 8 giờ thì sau này đừng đến nữa."
+      },
+      {
+        "zh": "别生气，我十分钟就到。",
+        "py": "Bié shēngqì, wǒ shí fēnzhōng jiù dào.",
+        "vn": "Đừng giận, mười phút nữa tôi đến ngay."
+      },
+      {
+        "zh": "所以我有点儿生气，不是因为他们没带铅笔，是因为他们没有好的学习习惯。",
+        "py": "Suǒyǐ wǒ yǒudiǎnr shēngqì, bú shì yīnwèi tāmen méi dài qiānbǐ, shì yīnwèi tāmen méiyǒu hǎo de xuéxí xíguàn.",
+        "vn": "Nên tôi hơi tức giận, không phải vì các em không mang bút chì, mà vì các em không có thói quen học tập tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "气",
+        "p": "qì",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "气 (khí)",
+        "mean": "khí, hơi",
+        "tip": "Chữ tượng hình mô phỏng luồng KHÍ bốc lên → KHÍ, HƠI; 生气 = sinh ra luồng khí trong lòng = TỨC GIẬN.",
+        "cf": "汽 (qì – \"hơi nước\", có bộ 氵\")",
+        "w": "生气 / 空气 / 天气"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì giám đốc giận rồi nên Tiểu Cương 8 giờ trước phải đến công ty.",
+        "answer": "因为经理生气了，所以小刚8点前要到公司。",
+        "answerPy": "Yīnwèi jīnglǐ shēngqì le, suǒyǐ Xiǎogāng bā diǎn qián yào dào gōngsī.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn không đến muộn thì giám đốc sẽ không giận đâu.",
+        "answer": "只要你不迟到，经理就不会生气。",
+        "answerPy": "Zhǐyào nǐ bù chídào, jīnglǐ jiù bú huì shēngqì.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 迟到 đã học ở Bài 7).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很生气",
+        "py": "hěn shēngqì",
+        "vn": "rất tức giận"
+      },
+      {
+        "zh": "别生气",
+        "py": "bié shēngqì",
+        "vn": "đừng giận"
+      },
+      {
+        "zh": "生我的气",
+        "py": "shēng wǒ de qì",
+        "vn": "giận tôi"
+      },
+      {
+        "zh": "生了半天气",
+        "py": "shēng le bàn tiānqì",
+        "vn": "giận cả buổi"
+      },
+      {
+        "zh": "经理生气了",
+        "py": "jīnglǐ shēngqì le",
+        "vn": "giám đốc giận rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "生 + ai + 的气",
+        "m": "生气 là từ ly hợp: 生我的气 ✓ / 生气我 ✗"
+      },
+      {
+        "s": "别 + 生气",
+        "m": "Đừng giận — lời làm lành"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "行李箱",
+    "py": "xínglixiāng",
+    "pos": "Danh từ",
+    "vn": "hành lý, vali",
+    "hv": "hành lý tương",
+    "em": "🧳",
+    "lesson": 2,
+    "explain": [
+      "Vật dụng dùng để đựng đồ khi đi du lịch, công tác."
+    ],
+    "usage": "Danh từ; đi cùng động từ 放/拿: 放行李箱, 拿行李箱.",
+    "collo": [
+      "放到行李箱里",
+      "拿行李箱",
+      "一个行李箱"
+    ],
+    "ex_zh": "那我帮你把衣服放到行李箱里吧。",
+    "ex_py": "Nà wǒ bāng nǐ bǎ yīfu fàngdào xínglixiāng li ba.",
+    "ex_vn": "Vậy em giúp anh xếp quần áo vào vali nhé.",
+    "exList": [
+      {
+        "zh": "那我帮你把衣服放到行李箱里吧。",
+        "py": "Nà wǒ bāng nǐ bǎ yīfu fàngdào xínglixiāng li ba.",
+        "vn": "Vậy em giúp anh xếp quần áo vào vali nhé."
+      },
+      {
+        "zh": "你把护照放在行李箱里了吗？",
+        "py": "Nǐ bǎ hùzhào fàng zài xínglixiāng li le ma?",
+        "vn": "Bạn để hộ chiếu trong vali rồi à?"
+      },
+      {
+        "zh": "能帮我把这些行李箱放到上面吗？我搬不动。",
+        "py": "Néng bāng wǒ bǎ zhèxiē xínglixiāng fàngdào shàngmian ma? Wǒ bān bu dòng.",
+        "vn": "Giúp tôi để những cái vali này lên trên được không? Tôi khiêng không nổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "箱",
+        "p": "xiāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 15,
+        "ord": "⺮ trên → 相 dưới",
+        "rad": "⺮ (trúc – tre)",
+        "mean": "hòm, rương",
+        "tip": "⺮(tre, vật liệu đan) + 相(cùng nhau, ý chỉ ghép lại) → vật đan bằng tre ghép lại thành HÒM, RƯƠNG.",
+        "cf": "相 (xiāng – \"lẫn nhau\", không có bộ ⺮\")",
+        "w": "行李箱 / 箱子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Em giúp anh xếp quần áo vào vali, xếp xong thì anh nghỉ một lát đi.",
+        "answer": "我帮你把衣服放到行李箱里，放好了你就休息一会儿吧。",
+        "answerPy": "Wǒ bāng nǐ bǎ yīfu fàng dào xínglixiāng li, fàng hǎole nǐ jiù xiūxi yíhuìr ba.",
+        "note": "Câu chữ 把: 把 + tân ngữ + 放到 + nơi chốn + 里.",
+        "pair": "……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không mang được vali thì tôi giúp bạn xách.",
+        "answer": "如果你拿不动行李箱，我就帮你拿。",
+        "answerPy": "Rúguǒ nǐ ná bu dòng xínglixiāng, wǒ jiù bāng nǐ ná.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个行李箱",
+        "py": "yí gè xínglixiāng",
+        "vn": "một cái vali"
+      },
+      {
+        "zh": "拿行李箱",
+        "py": "ná xínglixiāng",
+        "vn": "xách vali"
+      },
+      {
+        "zh": "放到行李箱里",
+        "py": "fàng dào xínglixiāng li",
+        "vn": "cho vào vali"
+      },
+      {
+        "zh": "行李箱很重",
+        "py": "xínglixiāng hěn zhòng",
+        "vn": "vali rất nặng"
+      },
+      {
+        "zh": "打开行李箱",
+        "py": "dǎkāi xínglixiāng",
+        "vn": "mở vali"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 放到 + 行李箱 + 里",
+        "m": "Cho cái gì vào vali"
+      },
+      {
+        "s": "行李 + 箱",
+        "m": "Hòm (箱) đựng hành lý (行李)"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "自己",
+    "py": "zìjǐ",
+    "pos": "Đại từ",
+    "vn": "tự mình, bản thân",
+    "hv": "tự kỷ",
+    "em": "🙋",
+    "lesson": 2,
+    "explain": [
+      "Chỉ chính bản thân người nói hoặc người được nhắc đến."
+    ],
+    "usage": "Đại từ phản thân, đứng trước động từ hoặc sau danh từ: 自己 + V, [người] + 自己.",
+    "collo": [
+      "自己照顾自己",
+      "自己去",
+      "靠自己"
+    ],
+    "ex_zh": "你要自己照顾好自己。",
+    "ex_py": "Nǐ yào zìjǐ zhàogù hǎo zìjǐ.",
+    "ex_vn": "Em phải tự chăm sóc bản thân tốt nhé.",
+    "exList": [
+      {
+        "zh": "你要自己照顾好自己。",
+        "py": "Nǐ yào zìjǐ zhàogù hǎo zìjǐ.",
+        "vn": "Em phải tự chăm sóc bản thân tốt nhé."
+      },
+      {
+        "zh": "我还是自己打出租车去吧。",
+        "py": "Wǒ háishi zìjǐ dǎ chūzūchē qù ba.",
+        "vn": "Tôi tự bắt taxi đi thì hơn."
+      },
+      {
+        "zh": "我很喜欢画画儿，但是没有人教过我，我都是自己学的。",
+        "py": "Wǒ hěn xǐhuan huà huàr, dànshì méiyǒu rén jiāoguo wǒ, wǒ dōu shì zìjǐ xué de.",
+        "vn": "Tôi rất thích vẽ tranh, nhưng chưa ai dạy tôi cả, tôi đều tự học đấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "己",
+        "p": "jǐ",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "己 (kỷ)",
+        "mean": "bản thân, mình",
+        "tip": "Chữ tượng hình mô phỏng sợi dây cuộn lại tự thân → BẢN THÂN; 自(chính mình)+己(bản thân) = TỰ MÌNH.",
+        "cf": "已 (yǐ – \"đã\", hình dáng gần giống\")",
+        "w": "自己 / 自己的"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn tự chăm sóc bản thân tốt thì tôi sẽ yên tâm.",
+        "answer": "只要你自己照顾好自己，我就放心了。",
+        "answerPy": "Zhǐyào nǐ zìjǐ zhàogù hǎo zìjǐ, wǒ jiù fàngxīn le.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 照顾/放心 đã học ở Bài 5, 9).",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không biết đường thì tự hỏi người khác đi.",
+        "answer": "如果你不认识路，就自己问问别人吧。",
+        "answerPy": "Rúguǒ nǐ bú rènshi lù, jiù zìjǐ wènwen biéren ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "自己去",
+        "py": "zìjǐ qù",
+        "vn": "tự đi"
+      },
+      {
+        "zh": "自己做",
+        "py": "zìjǐ zuò",
+        "vn": "tự làm"
+      },
+      {
+        "zh": "自己的东西",
+        "py": "zìjǐ de dōngxi",
+        "vn": "đồ của mình"
+      },
+      {
+        "zh": "照顾自己",
+        "py": "zhàogù zìjǐ",
+        "vn": "tự chăm sóc mình"
+      },
+      {
+        "zh": "让他自己来",
+        "py": "ràng tā zìjǐ lái",
+        "vn": "để cậu ấy tự làm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 自己 + V",
+        "m": "Ai đó tự làm gì"
+      },
+      {
+        "s": "自己的 + N",
+        "m": "Của chính mình"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "包",
+    "py": "bāo",
+    "pos": "Danh từ",
+    "vn": "cặp, túi",
+    "hv": "bao",
+    "em": "👜",
+    "lesson": 2,
+    "explain": [
+      "Vật dụng dùng để đựng, mang theo đồ cá nhân."
+    ],
+    "usage": "Danh từ; đi cùng động từ 放/拿: 放在包里.",
+    "collo": [
+      "放在包里",
+      "一个包",
+      "我的包"
+    ],
+    "ex_zh": "我已经把我的照片放在你的包里了。",
+    "ex_py": "Wǒ yǐjīng bǎ wǒ de zhàopiàn fàng zài nǐ de bāo li le.",
+    "ex_vn": "Em đã để ảnh của em vào túi của anh rồi đấy.",
+    "exList": [
+      {
+        "zh": "我已经把我的照片放在你的包里了。",
+        "py": "Wǒ yǐjīng bǎ wǒ de zhàopiàn fàng zài nǐ de bāo li le.",
+        "vn": "Em đã để ảnh của em vào túi của anh rồi đấy."
+      },
+      {
+        "zh": "没有，在我包里呢，这样拿着比较方便。",
+        "py": "Méiyǒu, zài wǒ bāo li ne, zhèyàng názhe bǐjiào fāngbiàn.",
+        "vn": "Không có, ở trong túi tôi đấy, cầm thế này tiện hơn."
+      },
+      {
+        "zh": "我的包忘在出租车上了，钱包、手机和护照都在里面。",
+        "py": "Wǒ de bāo wàng zài chūzūchē shang le, qiánbāo, shǒujī hé hùzhào dōu zài lǐmiàn.",
+        "vn": "Túi của tôi để quên trên taxi rồi, ví tiền, điện thoại và hộ chiếu đều ở trong đó."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "包",
+        "p": "bāo",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "勹 bao ngoài → 巳 trong",
+        "rad": "勹 (bao)",
+        "mean": "gói, bọc",
+        "tip": "勹(hình người khom lưng ôm) + 巳(bào thai) → hình ảnh BỌC LẤY bên trong → GÓI, BỌC, mở rộng thành TÚI, CẶP.",
+        "cf": "饱 (bǎo – \"no bụng\", có bộ 饣\")",
+        "w": "包 / 书包 / 面包"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh để chìa khoá trong túi của em rồi, nếu tìm không thấy thì gọi cho anh.",
+        "answer": "我已经把钥匙放在你的包里了，如果你找不到，就给我打电话。",
+        "answerPy": "Wǒ yǐjīng bǎ yàoshi fàng zài nǐ de bāo li le, rúguǒ nǐ zhǎo bu dào, jiù gěi wǒ dǎ diànhuà.",
+        "note": "包 (cái túi) khác 包子 (bánh bao, bài 19 HSK4).",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn tìm không thấy chìa khóa thì xem trong túi thử đi.",
+        "answer": "如果你找不到钥匙，就看看包里吧。",
+        "answerPy": "Rúguǒ nǐ zhǎo bu dào yàoshi, jiù kànkan bāo li ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 找不到 đã học ở Bài 6).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个包",
+        "py": "yí gè bāo",
+        "vn": "một cái túi"
+      },
+      {
+        "zh": "放在包里",
+        "py": "fàng zài bāo li",
+        "vn": "để trong túi"
+      },
+      {
+        "zh": "我的包",
+        "py": "wǒ de bāo",
+        "vn": "túi của tôi"
+      },
+      {
+        "zh": "背包",
+        "py": "bēibāo",
+        "vn": "balo"
+      },
+      {
+        "zh": "包很重",
+        "py": "bāo hěn zhòng",
+        "vn": "túi rất nặng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 放在 + 包 + 里",
+        "m": "Để cái gì trong túi"
+      },
+      {
+        "s": "包 (cái túi) ≠ 包子 (bánh bao)"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "发现",
+    "py": "fāxiàn",
+    "pos": "Động từ",
+    "vn": "phát hiện",
+    "hv": "phát hiện",
+    "em": "🔍",
+    "lesson": 3,
+    "explain": [
+      "Nhận ra, tìm thấy điều gì đó chưa biết trước đó."
+    ],
+    "usage": "Động từ, mang tân ngữ là mệnh đề hoặc danh từ: 发现 + [sự việc]; thường đi cùng 才.",
+    "collo": [
+      "才发现",
+      "发现问题",
+      "没有发现"
+    ],
+    "ex_zh": "来机场的路上我才发现忘带护照了。",
+    "ex_py": "Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.",
+    "ex_vn": "Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.",
+    "exList": [
+      {
+        "zh": "来机场的路上我才发现忘带护照了。",
+        "py": "Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.",
+        "vn": "Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu."
+      },
+      {
+        "zh": "司机把我送到机场的时候，我才发现忘记带钱包了。",
+        "py": "Sījī bǎ wǒ sòngdào jīchǎng de shíhou, wǒ cái fāxiàn wàngjì dài qiánbāo le.",
+        "vn": "Lúc tài xế chở em đến sân bay, em mới phát hiện quên mang ví tiền."
+      },
+      {
+        "zh": "我今天上午帮他洗衣服的时候，在他那条蓝色的裤子里找到了。",
+        "py": "Wǒ jīntiān shàngwǔ bāng tā xǐ yīfu de shíhou, zài tā nà tiáo lánsè de kùzi li zhǎodào le.",
+        "vn": "Sáng nay lúc tôi giặt đồ giúp bố, tôi tìm thấy nó trong cái quần xanh của bố."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "现",
+        "p": "xiàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "王 trái → 见 phải",
+        "rad": "王 (ngọc)",
+        "mean": "hiện ra, xuất hiện",
+        "tip": "王(ngọc, ánh sáng) + 见(nhìn thấy) → ánh sáng NGỌC hiện ra trước mắt = HIỆN RA; 发(phát ra)+现(hiện ra) = PHÁT HIỆN.",
+        "cf": "见 (jiàn – \"nhìn thấy\", không có bộ 王\")",
+        "w": "发现 / 现在 / 出现"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mãi đến lúc lên máy bay tôi mới phát hiện quên mang điện thoại.",
+        "answer": "上飞机的时候我才发现忘带手机了。",
+        "answerPy": "Shàng fēijī de shíhou wǒ cái fāxiàn wàng dài shǒujī le.",
+        "note": "才 nhấn việc xảy ra muộn hơn mong đợi.",
+        "pair": "……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn phát hiện có vấn đề gì thì hãy nói cho tôi biết ngay.",
+        "answer": "如果你发现有问题，就马上告诉我吧。",
+        "answerPy": "Rúguǒ nǐ fāxiàn yǒu wèntí, jiù mǎshàng gàosu wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "才发现",
+        "py": "cái fāxiàn",
+        "vn": "lúc đó mới phát hiện"
+      },
+      {
+        "zh": "发现问题",
+        "py": "fāxiàn wèntí",
+        "vn": "phát hiện vấn đề"
+      },
+      {
+        "zh": "没有发现",
+        "py": "méiyǒu fāxiàn",
+        "vn": "không phát hiện"
+      },
+      {
+        "zh": "突然发现",
+        "py": "tūrán fāxiàn",
+        "vn": "bỗng phát hiện"
+      },
+      {
+        "zh": "发现忘带了",
+        "py": "fāxiàn wàng dài le",
+        "vn": "phát hiện quên mang"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "才 + 发现",
+        "m": "Mãi mới phát hiện — 才 nhấn việc muộn hơn mong đợi"
+      },
+      {
+        "s": "发现 (nhận ra điều chưa biết) ≠ 找到 (tìm ra vật)"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "护照",
+    "py": "hùzhào",
+    "pos": "Danh từ",
+    "vn": "hộ chiếu",
+    "hv": "hộ chiếu",
+    "em": "📔",
+    "lesson": 3,
+    "explain": [
+      "Giấy tờ tùy thân dùng khi xuất nhập cảnh."
+    ],
+    "usage": "Danh từ; đi cùng động từ 带/办: 带护照, 办护照.",
+    "collo": [
+      "带护照",
+      "办护照",
+      "忘带护照"
+    ],
+    "ex_zh": "来机场的路上我才发现忘带护照了。",
+    "ex_py": "Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.",
+    "ex_vn": "Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu.",
+    "exList": [
+      {
+        "zh": "来机场的路上我才发现忘带护照了。",
+        "py": "Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.",
+        "vn": "Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu."
+      },
+      {
+        "zh": "你把护照放在行李箱里了吗？",
+        "py": "Nǐ bǎ hùzhào fàng zài xínglixiāng li le ma?",
+        "vn": "Bạn để hộ chiếu trong vali rồi à?"
+      },
+      {
+        "zh": "爸爸找了很长时间都没找到他的护照。",
+        "py": "Bàba zhǎole hěn cháng shíjiān dōu méi zhǎodào tā de hùzhào.",
+        "vn": "Bố tìm mãi mà không thấy hộ chiếu của mình đâu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "照",
+        "p": "zhào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "昭 trên → 灬 dưới",
+        "rad": "灬 (hỏa – lửa)",
+        "mean": "chiếu sáng; giấy tờ",
+        "tip": "昭(sáng rõ) + 灬(ánh sáng) → CHIẾU SÁNG, mở rộng nghĩa \"soi rõ thân phận\" = giấy tờ chứng minh; 护照 = giấy BẢO HỘ (护) khi đi lại.",
+        "cf": "招 (zhāo – \"vẫy tay, chiêu mộ\", có bộ 扌\")",
+        "w": "护照 / 照片 / 拍照"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn để hộ chiếu vào túi chưa? Nếu chưa thì mau cất vào đi.",
+        "answer": "你把护照放在包里了吗？如果还没有，就快点儿放进去吧。",
+        "answerPy": "Nǐ bǎ hùzhào fàng zài bāo li le ma? Rúguǒ hái méiyǒu, jiù kuài diǎnr fàng jinqu ba.",
+        "note": "带护照 — mang hộ chiếu; 带 là từ bài 1.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn quên mang hộ chiếu thì không thể lên máy bay được.",
+        "answer": "如果你忘带护照，就不能上飞机了。",
+        "answerPy": "Rúguǒ nǐ wàng dài hùzhào, jiù bù néng shàng fēijī le.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "带护照",
+        "py": "dài hùzhào",
+        "vn": "mang hộ chiếu"
+      },
+      {
+        "zh": "办护照",
+        "py": "bàn hùzhào",
+        "vn": "làm hộ chiếu"
+      },
+      {
+        "zh": "忘带护照",
+        "py": "wàng dài hùzhào",
+        "vn": "quên mang hộ chiếu"
+      },
+      {
+        "zh": "护照在包里",
+        "py": "hùzhào zài bāo li",
+        "vn": "hộ chiếu trong túi"
+      },
+      {
+        "zh": "护照号码",
+        "py": "hùzhào hàomǎ",
+        "vn": "số hộ chiếu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "带 + 护照",
+        "m": "Mang hộ chiếu — 带 là từ bài 1"
+      },
+      {
+        "s": "护 + 照",
+        "m": "Giấy chứng (照) bảo hộ (护)"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "起飞",
+    "py": "qǐfēi",
+    "pos": "Động từ",
+    "vn": "cất cánh (máy bay)",
+    "hv": "khởi phi",
+    "em": "🛫",
+    "lesson": 3,
+    "explain": [
+      "Máy bay rời khỏi mặt đất bay lên."
+    ],
+    "usage": "Động từ, thường đi cùng chủ ngữ 飞机: 飞机起飞了.",
+    "collo": [
+      "飞机起飞",
+      "就要起飞",
+      "马上起飞"
+    ],
+    "ex_zh": "快点吧，飞机就要起飞了。",
+    "ex_py": "Kuài diǎn ba, fēijī jiù yào qǐfēi le.",
+    "ex_vn": "Nhanh lên đi, máy bay sắp cất cánh rồi.",
+    "exList": [
+      {
+        "zh": "快点吧，飞机就要起飞了。",
+        "py": "Kuài diǎn ba, fēijī jiù yào qǐfēi le.",
+        "vn": "Nhanh lên đi, máy bay sắp cất cánh rồi."
+      },
+      {
+        "zh": "对不起，先生，飞机马上就要起飞了，请您关上手机。",
+        "py": "Duìbuqǐ, xiānsheng, fēijī mǎshàng jiù yào qǐfēi le, qǐng nín guānshàng shǒujī.",
+        "vn": "Xin lỗi anh, máy bay sắp cất cánh rồi, mời anh tắt điện thoại."
+      },
+      {
+        "zh": "来机场的路上我才发现忘带护照了。",
+        "py": "Lái jīchǎng de lùshang wǒ cái fāxiàn wàng dài hùzhào le.",
+        "vn": "Trên đường ra sân bay em mới phát hiện quên mang hộ chiếu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "飞",
+        "p": "fēi",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 3,
+        "ord": "nét liền, hình con chim bay",
+        "rad": "飞 (phi)",
+        "mean": "bay",
+        "tip": "Chữ giản thể mô phỏng đôi CÁNH đang BAY → BAY; 起(dấy lên)+飞(bay) = CẤT CÁNH.",
+        "cf": "非 (fēi – \"không phải\", hình dáng khác hẳn\")",
+        "w": "起飞 / 飞机 / 飞"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Máy bay sắp cất cánh rồi, nếu không nhanh lên thì không kịp đâu.",
+        "answer": "飞机就要起飞了，如果不快点儿，就来不及了。",
+        "answerPy": "Fēijī jiù yào qǐfēi le, rúguǒ bú kuài diǎnr, jiù láibují le.",
+        "note": "就要……了 — sắp sửa; 来不及 học ở HSK 4 nhưng rất hay dùng.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn đến đúng giờ thì sẽ không lỡ chuyến bay.",
+        "answer": "只要你准时到，就不会错过飞机起飞了。",
+        "answerPy": "Zhǐyào nǐ zhǔnshí dào, jiù bú huì cuòguò fēijī qǐfēi le.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "飞机起飞",
+        "py": "fēijī qǐfēi",
+        "vn": "máy bay cất cánh"
+      },
+      {
+        "zh": "就要起飞了",
+        "py": "jiù yào qǐfēi le",
+        "vn": "sắp cất cánh rồi"
+      },
+      {
+        "zh": "马上起飞",
+        "py": "mǎshàng qǐfēi",
+        "vn": "cất cánh ngay"
+      },
+      {
+        "zh": "起飞时间",
+        "py": "qǐfēi shíjiān",
+        "vn": "giờ cất cánh"
+      },
+      {
+        "zh": "准时起飞",
+        "py": "zhǔnshí qǐfēi",
+        "vn": "cất cánh đúng giờ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "就要 + 起飞 + 了",
+        "m": "Sắp cất cánh rồi"
+      },
+      {
+        "s": "起 + 飞",
+        "m": "Bắt đầu (起) bay (飞)"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "司机",
+    "py": "sījī",
+    "pos": "Danh từ",
+    "vn": "tài xế",
+    "hv": "ti cơ",
+    "em": "🚕",
+    "lesson": 3,
+    "explain": [
+      "Người điều khiển phương tiện giao thông."
+    ],
+    "usage": "Danh từ; đứng làm chủ ngữ hoặc tân ngữ trong câu.",
+    "collo": [
+      "出租车司机",
+      "当司机",
+      "司机把我送到"
+    ],
+    "ex_zh": "司机把我送到机场的时候，我才发现忘记带钱包了。",
+    "ex_py": "Sījī bǎ wǒ sòngdào jīchǎng de shíhou, wǒ cái fāxiàn wàngjì dài qiánbāo le.",
+    "ex_vn": "Lúc tài xế chở em đến sân bay, em mới phát hiện quên mang ví tiền.",
+    "exList": [
+      {
+        "zh": "司机把我送到机场的时候，我才发现忘记带钱包了。",
+        "py": "Sījī bǎ wǒ sòngdào jīchǎng de shíhou, wǒ cái fāxiàn wàngjì dài qiánbāo le.",
+        "vn": "Lúc tài xế chở em đến sân bay, em mới phát hiện quên mang ví tiền."
+      },
+      {
+        "zh": "他是出租车司机。",
+        "py": "Tā shì chūzūchē sījī.",
+        "vn": "Anh ấy là tài xế taxi."
+      },
+      {
+        "zh": "我让司机明天九点前到楼下等您。",
+        "py": "Wǒ ràng sījī míngtiān jiǔ diǎn qián dào lóuxià děng nín.",
+        "vn": "Tôi bảo tài xế ngày mai trước 9 giờ xuống dưới lầu đợi anh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "司",
+        "p": "sī",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "口 (khẩu)",
+        "mean": "quản lý, phụ trách",
+        "tip": "Chữ tượng hình mô phỏng người CẦM QUYỀN ra lệnh → QUẢN LÝ; 司机 = người ĐIỀU KHIỂN (机) máy móc/xe = TÀI XẾ.",
+        "cf": "同 (tóng – \"giống nhau\", hình dáng khác\")",
+        "w": "司机 / 公司"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tài xế đi đường cao tốc, nên đưa tôi đến sân bay rất nhanh.",
+        "answer": "因为司机走了大路，所以很快就把我送到机场了。",
+        "answerPy": "Yīnwèi sījī zǒule dà lù, suǒyǐ hěn kuài jiù bǎ wǒ sòng dào jīchǎng le.",
+        "note": "Câu chữ 把: 把我送到 + nơi chốn.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu tài xế không đến thì chúng ta tự bắt taxi đi vậy.",
+        "answer": "如果司机不来，我们就自己打出租车去吧。",
+        "answerPy": "Rúguǒ sījī bù lái, wǒmen jiù zìjǐ dǎ chūzūchē qù ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 自己 vừa học trong bài này).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "出租车司机",
+        "py": "chūzūchē sījī",
+        "vn": "tài xế taxi"
+      },
+      {
+        "zh": "当司机",
+        "py": "dāng sījī",
+        "vn": "làm tài xế"
+      },
+      {
+        "zh": "问司机",
+        "py": "wèn sījī",
+        "vn": "hỏi tài xế"
+      },
+      {
+        "zh": "司机送我",
+        "py": "sījī sòng wǒ",
+        "vn": "tài xế chở tôi"
+      },
+      {
+        "zh": "好司机",
+        "py": "hǎo sījī",
+        "vn": "tài xế giỏi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "当 + 司机",
+        "m": "Làm nghề lái xe"
+      },
+      {
+        "s": "司 + 机",
+        "m": "Người điều khiển (司) máy móc (机)"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "教",
+    "py": "jiāo",
+    "pos": "Động từ",
+    "vn": "dạy",
+    "hv": "giáo",
+    "em": "👩‍🏫",
+    "lesson": 4,
+    "explain": [
+      "Truyền đạt kiến thức, kỹ năng cho người khác."
+    ],
+    "usage": "Động từ, mang hai tân ngữ: 教 + [người] + [môn/kỹ năng] (教学生画画儿).",
+    "collo": [
+      "教学生",
+      "教画画儿",
+      "教了十年"
+    ],
+    "ex_zh": "我是一个中学老师，教学生画画儿。",
+    "ex_py": "Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.",
+    "ex_vn": "Tôi là một giáo viên trung học, dạy học sinh vẽ tranh.",
+    "exList": [
+      {
+        "zh": "我是一个中学老师，教学生画画儿。",
+        "py": "Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.",
+        "vn": "Tôi là một giáo viên trung học, dạy học sinh vẽ tranh."
+      },
+      {
+        "zh": "那你教教我吧，我一直想学。",
+        "py": "Nà nǐ jiāojiao wǒ ba, wǒ yìzhí xiǎng xué.",
+        "vn": "Vậy bạn dạy mình đi, mình muốn học mãi rồi."
+      },
+      {
+        "zh": "但是没有人教过我，我都是自己学的。",
+        "py": "Dànshì méiyǒu rén jiāoguo wǒ, wǒ dōu shì zìjǐ xué de.",
+        "vn": "Nhưng chưa ai dạy tôi cả, tôi đều tự học đấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "教",
+        "p": "jiāo",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "孝 trái → 攵 phải",
+        "rad": "攵 (phốc – gõ nhẹ)",
+        "mean": "dạy dỗ",
+        "tip": "孝(hiếu thảo, học theo bậc trên) + 攵(tác động, chỉ dạy) → truyền đạt điều hay lẽ phải cho con cháu = DẠY DỖ.",
+        "cf": "孝 (xiào – \"hiếu thảo\", không có bộ 攵\")",
+        "w": "教 / 教书 / 教学生"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi dạy học sinh vẽ tranh đã mười năm rồi, nên rất hiểu các em.",
+        "answer": "我教学生画画儿已经十年了，所以很了解他们。",
+        "answerPy": "Wǒ jiāo xuésheng huà huàr yǐjīng shí nián le, suǒyǐ hěn liǎojiě tāmen.",
+        "note": "教 có thể mang hai tân ngữ: 教学生画画儿; 了解 là từ bài 9.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn học vẽ thì tôi có thể dạy bạn.",
+        "answer": "如果你想学画画儿，我就可以教你。",
+        "answerPy": "Rúguǒ nǐ xiǎng xué huà huàr, wǒ jiù kěyǐ jiāo nǐ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "教学生",
+        "py": "jiào xuésheng",
+        "vn": "dạy học sinh"
+      },
+      {
+        "zh": "教汉语",
+        "py": "jiào Hànyǔ",
+        "vn": "dạy tiếng Trung"
+      },
+      {
+        "zh": "教画画儿",
+        "py": "jiào huàhuà ér",
+        "vn": "dạy vẽ"
+      },
+      {
+        "zh": "教了十年",
+        "py": "jiào le shí nián",
+        "vn": "dạy mười năm rồi"
+      },
+      {
+        "zh": "教我们数学",
+        "py": "jiào wǒmen shùxué",
+        "vn": "dạy chúng tôi môn Toán"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "教 + ai + N",
+        "m": "Dạy ai môn gì — có thể mang hai tân ngữ"
+      },
+      {
+        "s": "教 (jiāo, dạy) ≠ 教室 (jiàoshì) — hai âm khác nhau"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "画",
+    "py": "huà",
+    "pos": "Động từ",
+    "vn": "vẽ; tranh",
+    "hv": "họa",
+    "em": "🎨",
+    "lesson": 4,
+    "explain": [
+      "Dùng bút vẽ nên hình ảnh; cũng dùng làm danh từ chỉ bức tranh."
+    ],
+    "usage": "Động từ: 画 + [đối tượng] (画画儿); Danh từ: 一张画.",
+    "collo": [
+      "画画儿",
+      "一张画",
+      "画得好"
+    ],
+    "ex_zh": "我是一个中学老师，教学生画画儿。",
+    "ex_py": "Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.",
+    "ex_vn": "Tôi là một giáo viên trung học, dạy học sinh vẽ tranh.",
+    "exList": [
+      {
+        "zh": "我是一个中学老师，教学生画画儿。",
+        "py": "Wǒ shì yí ge zhōngxué lǎoshī, jiāo xuésheng huà huàr.",
+        "vn": "Tôi là một giáo viên trung học, dạy học sinh vẽ tranh."
+      },
+      {
+        "zh": "我很喜欢画画儿，你看这个小狗就是我画的，可爱吗？",
+        "py": "Wǒ hěn xǐhuan huà huàr, nǐ kàn zhège xiǎogǒu jiùshì wǒ huà de, kě'ài ma?",
+        "vn": "Tôi rất thích vẽ tranh, bạn xem con chó nhỏ này chính là tôi vẽ đấy, đáng yêu không?"
+      },
+      {
+        "zh": "太阳是我画的，小猫是妹妹画的。",
+        "py": "Tàiyáng shì wǒ huà de, xiǎomāo shì mèimei huà de.",
+        "vn": "Mặt trời là tôi vẽ, con mèo nhỏ là em gái vẽ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "画",
+        "p": "huà",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "nét liền",
+        "rad": "田 (điền)",
+        "mean": "vẽ, bức tranh",
+        "tip": "Chữ giản thể mô phỏng khung tranh với đường viền bao quanh hình ảnh bên trong → VẼ, BỨC TRANH.",
+        "cf": "面 (miàn – \"mặt\", hình dáng gần giống\")",
+        "w": "画画儿 / 一张画 / 画家"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy cậu ấy không mang bút chì nhưng thầy giáo vẫn dạy cậu ấy vẽ.",
+        "answer": "虽然他没带铅笔，但是老师还是教了他画画儿。",
+        "answerPy": "Suīrán tā méi dài qiānbǐ, dànshì lǎoshī háishi jiāole tā huà huàr.",
+        "note": "虽然……但是…… diễn tả sự tương phản (ôn lại 教 vừa học trong bài này).",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bức tranh này bạn vẽ đẹp thật, vừa đẹp vừa giống.",
+        "answer": "这张画你画得真好看，又漂亮又像。",
+        "answerPy": "Zhè zhāng huà nǐ huà de zhēn hǎokàn, yòu piàoliang yòu xiàng.",
+        "note": "V + 得 + Adj — bổ ngữ trạng thái; 一张画 — lượng từ 张.",
+        "pair": "又……又……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "画画儿",
+        "py": "huàhuà ér",
+        "vn": "vẽ tranh"
+      },
+      {
+        "zh": "一张画",
+        "py": "yì zhāng huà",
+        "vn": "một bức tranh"
+      },
+      {
+        "zh": "画得好",
+        "py": "huà de hǎo",
+        "vn": "vẽ đẹp"
+      },
+      {
+        "zh": "学画画儿",
+        "py": "xué huàhuà ér",
+        "vn": "học vẽ"
+      },
+      {
+        "zh": "画在纸上",
+        "py": "huà zài zhǐ shàng",
+        "vn": "vẽ lên giấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "画 + 画儿",
+        "m": "Vẽ tranh — động từ và danh từ cùng chữ"
+      },
+      {
+        "s": "một + 张 + 画",
+        "m": "Lượng từ 张 cho vật phẳng mỏng"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "需要",
+    "py": "xūyào",
+    "pos": "Động từ",
+    "vn": "cần",
+    "hv": "nhu yếu",
+    "em": "✅",
+    "lesson": 4,
+    "explain": [
+      "Có nhu cầu, đòi hỏi điều gì đó."
+    ],
+    "usage": "Động từ, mang tân ngữ là danh từ hoặc động từ: 需要 + [vật/việc] (需要带的东西, 需要休息).",
+    "collo": [
+      "需要带",
+      "需要休息",
+      "不需要"
+    ],
+    "ex_zh": "我都会把下次学生需要带的东西写在黑板上。",
+    "ex_py": "Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.",
+    "ex_vn": "Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng.",
+    "exList": [
+      {
+        "zh": "我都会把下次学生需要带的东西写在黑板上。",
+        "py": "Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.",
+        "vn": "Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng."
+      },
+      {
+        "zh": "我们需要换新的桌子和椅子。",
+        "py": "Wǒmen xūyào huàn xīn de zhuōzi hé yǐzi.",
+        "vn": "Chúng tôi cần đổi bàn ghế mới."
+      },
+      {
+        "zh": "不需要，休息一下就好了。",
+        "py": "Bù xūyào, xiūxi yíxià jiù hǎo le.",
+        "vn": "Không cần đâu, nghỉ một chút là được rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "需",
+        "p": "xū",
+        "type": "上下结构 · Trên-dưới",
+        "st": 14,
+        "ord": "雨 trên → 而 dưới",
+        "rad": "雨 (vũ – mưa)",
+        "mean": "cần thiết",
+        "tip": "雨(mưa, ý chỉ điều tất yếu của tự nhiên) + 而(và) → điều TẤT YẾU cần có = CẦN THIẾT.",
+        "cf": "儒 (rú – \"nho gia\", có bộ 亻\")",
+        "w": "需要 / 不需要"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy cần mua một ít bút chì mới, vì bút cũ đã dùng hết rồi.",
+        "answer": "老师需要买一些新的铅笔，因为旧的已经用完了。",
+        "answerPy": "Lǎoshī xūyào mǎi yìxiē xīn de qiānbǐ, yīnwèi jiù de yǐjīng yòng wán le.",
+        "note": "旧 là từ bài 10; V + 完 — bổ ngữ kết quả.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn cần giúp đỡ thì cứ nói với tôi nhé.",
+        "answer": "如果你需要帮忙，就跟我说吧。",
+        "answerPy": "Rúguǒ nǐ xūyào bāngmáng, jiù gēn wǒ shuō ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 帮忙 đã học ở Bài 6).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "需要带",
+        "py": "xūyào dài",
+        "vn": "cần mang"
+      },
+      {
+        "zh": "需要休息",
+        "py": "xūyào xiūxi",
+        "vn": "cần nghỉ ngơi"
+      },
+      {
+        "zh": "不需要",
+        "py": "bù xūyào",
+        "vn": "không cần"
+      },
+      {
+        "zh": "需要帮忙吗",
+        "py": "xūyào bāngmáng ma",
+        "vn": "cần giúp không"
+      },
+      {
+        "zh": "需要多长时间",
+        "py": "xūyào duō zhǎng shíjiān",
+        "vn": "cần bao lâu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "需要 + V / N",
+        "m": "Cần làm gì, cần cái gì"
+      },
+      {
+        "s": "需要 (cần khách quan) ≠ 想 (muốn chủ quan)"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "黑板",
+    "py": "hēibǎn",
+    "pos": "Danh từ",
+    "vn": "bảng đen",
+    "hv": "hắc bản",
+    "em": "⬛",
+    "lesson": 4,
+    "explain": [
+      "Tấm bảng dùng để viết phấn trong lớp học."
+    ],
+    "usage": "Danh từ; đi cùng động từ 写: 写在黑板上.",
+    "collo": [
+      "黑板上",
+      "写在黑板上",
+      "擦黑板"
+    ],
+    "ex_zh": "我都会把下次学生需要带的东西写在黑板上。",
+    "ex_py": "Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.",
+    "ex_vn": "Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng.",
+    "exList": [
+      {
+        "zh": "我都会把下次学生需要带的东西写在黑板上。",
+        "py": "Wǒ dōu huì bǎ xià cì xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang.",
+        "vn": "Tôi đều viết những đồ học sinh cần mang cho lần sau lên bảng."
+      },
+      {
+        "zh": "黑板上的那个字怎么读？",
+        "py": "Hēibǎn shang de nàge zì zěnme dú?",
+        "vn": "Chữ đó trên bảng đọc thế nào?"
+      },
+      {
+        "zh": "我也不认识，我查一下字典，找到了告诉你。",
+        "py": "Wǒ yě bú rènshi, wǒ chá yíxià zìdiǎn, zhǎodàole gàosu nǐ.",
+        "vn": "Tôi cũng không biết, tôi tra từ điển chút, tìm được rồi báo bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "黑",
+        "p": "hēi",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "里 trên → 灬 dưới",
+        "rad": "灬 (hỏa – lửa)",
+        "mean": "màu đen",
+        "tip": "Hình ảnh khói LỬA ám lên cửa sổ tạo thành màu ĐEN → MÀU ĐEN.",
+        "cf": "墨 (mò – \"mực\", có bộ 土\")",
+        "w": "黑板 / 黑色 / 黑夜"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi viết những thứ học sinh cần mang lên bảng, để em nào cũng nhìn thấy.",
+        "answer": "我把学生需要带的东西写在黑板上，这样每个学生都能看见。",
+        "answerPy": "Wǒ bǎ xuésheng xūyào dài de dōngxi xiě zài hēibǎn shang, zhèyàng měi ge xuésheng dōu néng kànjiàn.",
+        "note": "Câu chữ 把: 把 + tân ngữ + 写在 + nơi chốn + 上.",
+        "pair": "这样……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không hiểu chữ trên bảng thì hỏi thầy giáo đi.",
+        "answer": "如果你看不懂黑板上的字，就问问老师吧。",
+        "answerPy": "Rúguǒ nǐ kàn bu dǒng hēibǎn shang de zì, jiù wènwen lǎoshī ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "黑板上",
+        "py": "hēibǎn shàng",
+        "vn": "trên bảng"
+      },
+      {
+        "zh": "写在黑板上",
+        "py": "xiě zài hēibǎn shàng",
+        "vn": "viết lên bảng"
+      },
+      {
+        "zh": "擦黑板",
+        "py": "cā hēibǎn",
+        "vn": "lau bảng"
+      },
+      {
+        "zh": "看黑板",
+        "py": "kàn hēibǎn",
+        "vn": "nhìn lên bảng"
+      },
+      {
+        "zh": "黑板很大",
+        "py": "hēibǎn hěn dà",
+        "vn": "bảng rất rộng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 写在 + 黑板 + 上",
+        "m": "Viết cái gì lên bảng"
+      },
+      {
+        "s": "黑 + 板",
+        "m": "Tấm ván (板) màu đen (黑)"
+      }
+    ]
+  }
 ];
 
 const wuData = [

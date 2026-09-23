@@ -3,335 +3,1620 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'终于',py:'zhōngyú',pos:'Phó từ',vn:'cuối cùng', hv: 'chung vu',em:'🏁',lesson:1,
-   explain:['Diễn tả sau một thời gian dài chờ đợi, sự việc cuối cùng cũng xảy ra.'],
-   usage:'Phó từ, đứng trước động từ hoặc tính từ: 终于 + V/Adj.',
-   collo:['终于回来了','终于到了','终于成功了'],
-   ex_zh:'你终于回来了！',ex_py:'Nǐ zhōngyú huílai le!',ex_vn:'Anh cuối cùng cũng về rồi!',
-   exList:[
-     {zh:'你终于回来了！从哪儿买回来这么多东西啊？',py:'Nǐ zhōngyú huílai le! Cóng nǎr mǎi huilai zhème duō dōngxi a?',vn:'Anh cuối cùng cũng về rồi! Mua ở đâu về nhiều đồ thế?'},
-     {zh:'我终于找到了那家咖啡店。',py:'Wǒ zhōngyú zhǎodàole nà jiā kāfēidiàn.',vn:'Tôi cuối cùng cũng tìm thấy quán cà phê đó.'},
-     {zh:'等了很久，火车终于来了。',py:'Děngle hěn jiǔ, huǒchē zhōngyú lái le.',vn:'Chờ mãi, cuối cùng tàu hoả cũng đến.'},
-   ],
-   hanzi:[
-     {c:'终',p:'zhōng',type:'左右结构 · Trái-phải',st:8,ord:'纟 trái → 冬 phải',rad:'纟 (mịch – tơ lụa)',mean:'cuối cùng, kết thúc',
-      tip:'纟(sợi chỉ, dệt vải) + 冬(mùa đông, hết năm) → sợi chỉ dệt đến hết năm = KẾT THÚC, CUỐI CÙNG.',
-      cf:'冬 (dōng – "mùa đông", không có bộ 纟")',w:'终于 / 最终'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đợi nửa tiếng, xe buýt cuối cùng cũng đến rồi.',answer:'等了半个小时，公共汽车终于来了。',answerPy:'Děngle bàn ge xiǎoshí, gōnggòng qìchē zhōngyú lái le.',
-      note:'终于 đứng trước động từ, diễn tả sự việc cuối cùng cũng xảy ra sau thời gian dài.'},
-     {promptLang:'vi',prompt:'Vì cuối cùng cũng tìm được nên tôi rất vui.',answer:'因为终于找到了，所以我很高兴。',answerPy:'Yīnwèi zhōngyú zhǎodào le, suǒyǐ wǒ hěn gāoxìng.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:2,zh:'爷爷',py:'yéye',pos:'Danh từ',vn:'ông nội', hv: 'gia gia',em:'👴',lesson:1,
-   explain:['Cách gọi cha của cha (ông nội) trong gia đình.'],
-   usage:'Danh từ xưng hô; thường đi cùng 奶奶 thành cặp.',
-   collo:['爷爷奶奶','看看爷爷','爷爷的礼物'],
-   ex_zh:'这是给爷爷的礼物。',ex_py:'Zhè shì gěi yéye de lǐwù.',ex_vn:'Đây là quà tặng cho ông nội.',
-   exList:[
-     {zh:'这是给爷爷的礼物，明天我们一起送过去，看看爷爷奶奶。',py:'Zhè shì gěi yéye de lǐwù, míngtiān wǒmen yìqǐ sòng guoqu, kànkan yéye nǎinai.',vn:'Đây là quà tặng cho ông nội, mai chúng ta cùng mang qua, thăm ông bà nội.'},
-     {zh:'爷爷今年七十岁了。',py:'Yéye jīnnián qīshí suì le.',vn:'Ông nội năm nay bảy mươi tuổi rồi.'},
-     {zh:'爷爷，这本书我没看过，是您新买的吗？',py:'Yéye, zhè běn shū wǒ méi kànguo, shì nín xīn mǎi de ma?',vn:'Ông ơi, quyển sách này cháu chưa xem qua, là ông mới mua à?'},
-   ],
-   hanzi:[
-     {c:'爷',p:'yé',type:'上下结构 · Trên-dưới',st:6,ord:'父 trên → 一 dưới',rad:'父 (phụ – cha)',mean:'ông',
-      tip:'父(cha) + 一(số một, bậc cao nhất) → người cha ở BẬC TRÊN CÙNG trong nhà = ÔNG.',
-      cf:'爸 (bà – "cha", có bộ 巴")',w:'爷爷 / 大爷'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ông nội của bạn tôi năm nay tám mươi tuổi rồi.',answer:'我朋友的爷爷今年八十岁了。',answerPy:'Wǒ péngyou de yéye jīnnián bāshí suì le.',
-      note:'岁 chỉ tuổi tác, đi cùng con số.'},
-     {promptLang:'vi',prompt:'Tuy ông nội đã già nhưng vẫn rất khoẻ mạnh.',answer:'虽然爷爷已经老了，但是他还是很健康。',answerPy:'Suīrán yéye yǐjīng lǎo le, dànshì tā háishi hěn jiànkāng.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:3,zh:'礼物',py:'lǐwù',pos:'Danh từ',vn:'quà biếu, quà tặng', hv: 'lễ vật',em:'🎁',lesson:1,
-   explain:['Vật dùng để tặng, biếu người khác thể hiện tình cảm.'],
-   usage:'Danh từ; đi cùng động từ 送/买/给: 送礼物, 买礼物.',
-   collo:['送礼物','买礼物','爷爷的礼物'],
-   ex_zh:'这是给爷爷的礼物。',ex_py:'Zhè shì gěi yéye de lǐwù.',ex_vn:'Đây là quà tặng cho ông nội.',
-   exList:[
-     {zh:'这是给爷爷的礼物，明天我们一起送过去。',py:'Zhè shì gěi yéye de lǐwù, míngtiān wǒmen yìqǐ sòng guoqu.',vn:'Đây là quà tặng cho ông nội, mai chúng ta cùng mang qua.'},
-     {zh:'这本书我没看过，是您新买的礼物吗？',py:'Zhè běn shū wǒ méi kànguo, shì nín xīn mǎi de lǐwù ma?',vn:'Quyển sách này tôi chưa xem qua, là món quà ông mới mua à?'},
-     {zh:'爸爸从国外带回来一些礼物。',py:'Bàba cóng guówài dài huilai yìxiē lǐwù.',vn:'Bố mang một ít quà từ nước ngoài về.'},
-   ],
-   hanzi:[
-     {c:'礼',p:'lǐ',type:'左右结构 · Trái-phải',st:5,ord:'礻 trái → 乚 phải',rad:'礻 (kỳ – lễ, thần)',mean:'lễ nghi, quà',
-      tip:'礻(bộ thị, liên quan nghi lễ cúng tế) + 乚(nét cong) → NGHI LỄ trang trọng, mở rộng thành LỄ VẬT, QUÀ TẶNG.',
-      cf:'衣 (yī – "áo", không có bộ 礻")',w:'礼物 / 送礼'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh trai mang một chiếc bánh sinh nhật từ cửa hàng về.',answer:'哥哥从商店带回来一个生日蛋糕。',answerPy:'Gēge cóng shāngdiàn dài huilai yí ge shēngrì dàngāo.',
-      note:'带回来 = bổ ngữ xu hướng kép (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn không biết mua quà gì thì tôi có thể giúp bạn.',answer:'如果你不知道买什么礼物，我就可以帮你。',answerPy:'Rúguǒ nǐ bù zhīdào mǎi shénme lǐwù, wǒ jiù kěyǐ bāng nǐ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:4,zh:'奶奶',py:'nǎinai',pos:'Danh từ',vn:'bà nội', hv: 'nãi nãi',em:'👵',lesson:1,
-   explain:['Cách gọi mẹ của cha (bà nội) trong gia đình.'],
-   usage:'Danh từ xưng hô; thường đi cùng 爷爷 thành cặp.',
-   collo:['爷爷奶奶','看看奶奶','奶奶做的菜'],
-   ex_zh:'明天我们一起送过去，看看爷爷奶奶。',ex_py:'Míngtiān wǒmen yìqǐ sòng guoqu, kànkan yéye nǎinai.',ex_vn:'Mai chúng ta cùng mang qua, thăm ông bà nội.',
-   exList:[
-     {zh:'明天我们一起送过去，看看爷爷奶奶。',py:'Míngtiān wǒmen yìqǐ sòng guoqu, kànkan yéye nǎinai.',vn:'Mai chúng ta cùng mang qua, thăm ông bà nội.'},
-     {zh:'奶奶做的菜特别好吃。',py:'Nǎinai zuò de cài tèbié hǎochī.',vn:'Món ăn bà nội nấu đặc biệt ngon.'},
-     {zh:'奶奶今年身体很健康。',py:'Nǎinai jīnnián shēntǐ hěn jiànkāng.',vn:'Năm nay sức khoẻ bà nội rất tốt.'},
-   ],
-   hanzi:[
-     {c:'奶',p:'nǎi',type:'左右结构 · Trái-phải',st:5,ord:'女 trái → 乃 phải',rad:'女 (nữ)',mean:'bà, sữa',
-      tip:'女(nữ) + 乃(bèn, mới, ý chỉ nuôi dưỡng) → người PHỤ NỮ nuôi dưỡng con cháu = BÀ; mở rộng nghĩa SỮA.',
-      cf:'奴 (nú – "nô lệ", có 又 thay vì 乃")',w:'奶奶 / 牛奶'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Món mì bà nội nấu đặc biệt ngon.',answer:'奶奶做的面条特别好吃。',answerPy:'Nǎinai zuò de miàntiáo tèbié hǎochī.',
-      note:'的 nối định ngữ 奶奶做 với danh từ 菜.'},
-     {promptLang:'vi',prompt:'Chỉ cần bà nội khoẻ mạnh thì cả nhà đều vui.',answer:'只要奶奶健康，全家人就都高兴。',answerPy:'Zhǐyào nǎinai jiànkāng, quánjiā rén jiù dōu gāoxìng.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:5,zh:'遇到',py:'yùdào',pos:'Động từ',vn:'tình cờ gặp', hv: 'ngộ đáo',em:'🤝',lesson:2,
-   explain:['Bất ngờ gặp một người hoặc sự việc nào đó, không hẹn trước.'],
-   usage:'Động từ, mang tân ngữ là người hoặc sự việc: 遇到 + [người/vấn đề].',
-   collo:['在路上遇到','遇到问题','遇到老同学'],
-   ex_zh:'她是我今天在路上遇到的一个老同学。',ex_py:'Tā shì wǒ jīntiān zài lùshang yùdào de yí ge lǎo tóngxué.',ex_vn:'Cô ấy là một người bạn học cũ tôi tình cờ gặp trên đường hôm nay.',
-   exList:[
-     {zh:'她是我今天在路上遇到的一个老同学。',py:'Tā shì wǒ jīntiān zài lùshang yùdào de yí ge lǎo tóngxué.',vn:'Cô ấy là một người bạn học cũ tôi tình cờ gặp trên đường hôm nay.'},
-     {zh:'那位老人遇到了问题。',py:'Nà wèi lǎorén yùdàole wèntí.',vn:'Cụ già đó gặp phải vấn đề.'},
-     {zh:'好久不见！没想到在这儿遇到你了。',py:'Hǎojiǔ bú jiàn! Méi xiǎngdào zài zhèr yùdào nǐ le.',vn:'Lâu rồi không gặp! Không ngờ lại gặp bạn ở đây.'},
-   ],
-   hanzi:[
-     {c:'遇',p:'yù',type:'半包围结构 · Bán bao vây',st:12,ord:'辶 ngoài → 禺 trong',rad:'辶 (sước – đi)',mean:'gặp gỡ',
-      tip:'辶(đi đường) + 禺(hình dáng con khỉ, ý chỉ bất ngờ) → đi đường bất ngờ GẶP GỠ ai đó.',
-      cf:'偶 (ǒu – "ngẫu nhiên", có bộ 亻")',w:'遇到 / 遇见'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lâu quá không gặp! Không ngờ lại gặp bạn ở siêu thị.',answer:'好久不见！没想到在超市遇到你了。',answerPy:'Hǎojiǔ bú jiàn! Méi xiǎngdào zài chāoshì yùdào nǐ le.',
-      note:'没想到 diễn tả sự bất ngờ.'},
-     {promptLang:'vi',prompt:'Nếu bạn gặp vấn đề gì thì cứ hỏi tôi.',answer:'如果你遇到什么问题，就问我吧。',answerPy:'Rúguǒ nǐ yùdào shénme wèntí, jiù wèn wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:6,zh:'一边',py:'yìbiān',pos:'Phó từ',vn:'vừa (dùng để liên kết hai hành động xảy ra cùng lúc)', hv: 'nhất biên',em:'🔀',lesson:2,
-   explain:['Dùng thành cặp 一边……一边…… để diễn tả hai hành động xảy ra đồng thời.'],
-   usage:'一边 + V1 + 一边 + V2; có thể lược bỏ 一 thành 边……边……',
-   collo:['一边喝咖啡一边聊天儿','一边吃一边看','边说边笑'],
-   ex_zh:'一边喝咖啡一边说了些过去的事。',ex_py:'Yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.',ex_vn:'Vừa uống cà phê vừa nói chuyện xưa.',
-   exList:[
-     {zh:'是啊，一边喝咖啡一边说了些过去的事。',py:'Shì a, yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.',vn:'Đúng vậy, vừa uống cà phê vừa nói chuyện xưa.'},
-     {zh:'妈妈一边唱歌一边做饭。',py:'Māma yìbiān chànggē yìbiān zuò fàn.',vn:'Mẹ vừa hát vừa nấu cơm.'},
-     {zh:'我丈夫喜欢一边吃早饭一边看报纸。',py:'Wǒ zhàngfu xǐhuan yìbiān chī zǎofàn yìbiān kàn bàozhǐ.',vn:'Chồng tôi thích vừa ăn sáng vừa đọc báo.'},
-   ],
-   hanzi:[
-     {c:'边',p:'biān',type:'半包围结构 · Bán bao vây',st:5,ord:'辶 ngoài → 力 trong',rad:'辶 (sước – đi)',mean:'bên cạnh',
-      tip:'辶(đi) + 力(sức lực, giản thể từ chữ phồn thể 邊) → đường viền BÊN CẠNH khi di chuyển.',
-      cf:'力 (lì – "sức lực", không có bộ 辶")',w:'一边 / 旁边 / 那边'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Em gái vừa nghe nhạc vừa làm bài tập.',answer:'妹妹一边听音乐一边做作业。',answerPy:'Mèimei yìbiān tīng yīnyuè yìbiān zuò zuòyè.',
-      note:'一边……一边…… diễn tả hai hành động xảy ra cùng lúc (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Thầy giáo vừa nói vừa cười.',answer:'老师边说边笑。',answerPy:'Lǎoshī biān shuō biān xiào.',
-      note:'边……边…… là dạng lược bỏ 一 của 一边……一边…….'},
-   ]},
-
-  {n:7,zh:'过去',py:'guòqù',pos:'Danh từ',vn:'quá khứ', hv: 'quá khứ',em:'⏳',lesson:2,
-   explain:['Khoảng thời gian đã trôi qua, trước hiện tại.'],
-   usage:'Danh từ, thường làm định ngữ: 过去的事; cũng dùng làm trạng ngữ chỉ thời gian trước đây.',
-   collo:['过去的事','过去的时候','说过去的事'],
-   ex_zh:'一边喝咖啡一边说了些过去的事。',ex_py:'Yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.',ex_vn:'Vừa uống cà phê vừa nói chuyện xưa.',
-   exList:[
-     {zh:'是啊，一边喝咖啡一边说了些过去的事。',py:'Shì a, yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.',vn:'Đúng vậy, vừa uống cà phê vừa nói chuyện xưa.'},
-     {zh:'十年过去了，现在他已经是校长了。',py:'Shí nián guòqu le, xiànzài tā yǐjīng shì xiàozhǎng le.',vn:'Mười năm đã trôi qua, giờ anh ấy đã là hiệu trưởng rồi.'},
-     {zh:'方校长的办公室过去在四层。',py:'Fāng xiàozhǎng de bàngōngshì guòqù zài sì céng.',vn:'Trước đây văn phòng hiệu trưởng Phương ở tầng bốn.'},
-   ],
-   hanzi:[
-     {c:'过',p:'guò',type:'半包围结构 · Bán bao vây',st:6,ord:'辶 ngoài → 寸 trong',rad:'辶 (sước – đi)',mean:'đi qua',
-      tip:'辶(đi) + 寸(một đoạn ngắn, chỉ thời gian/khoảng cách) → ĐI QUA một khoảng thời gian hoặc không gian.',
-      cf:'辻 (không phải chữ Hán thường dùng)',w:'过去 / 经过 / 过'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Năm năm đã trôi qua, giờ cô ấy đã là giáo viên rồi.',answer:'五年过去了，现在她已经是老师了。',answerPy:'Wǔ nián guòqu le, xiànzài tā yǐjīng shì lǎoshī le.',
-      note:'过去了 diễn tả thời gian đã trôi qua (ôn lại 校长 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Tuy chuyện đó đã là quá khứ nhưng tôi vẫn nhớ rất rõ.',answer:'虽然那是过去的事，但是我还是记得很清楚。',answerPy:'Suīrán nà shì guòqù de shì, dànshì wǒ háishi jìde hěn qīngchu.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:8,zh:'一般',py:'yìbān',pos:'Tính từ',vn:'thông thường', hv: 'nhất ban',em:'📅',lesson:3,
-   explain:['Diễn tả tình trạng bình thường, như thường lệ.'],
-   usage:'Tính từ, thường làm trạng ngữ đứng trước động từ: 一般 + V.',
-   collo:['一般来说','周末一般','一般在家'],
-   ex_zh:'周末你一般跟小刚出去看电影吗？',ex_py:'Zhōumò nǐ yìbān gēn Xiǎogāng chūqu kàn diànyǐng ma?',ex_vn:'Cuối tuần bạn có thường đi xem phim cùng Tiểu Cương không?',
-   exList:[
-     {zh:'小丽，周末你一般跟小刚出去看电影吗？',py:'Xiǎolì, zhōumò nǐ yìbān gēn Xiǎogāng chūqu kàn diànyǐng ma?',vn:'Tiểu Lệ, cuối tuần bạn có thường đi xem phim cùng Tiểu Cương không?'},
-     {zh:'我一般十点左右睡觉。',py:'Wǒ yìbān shí diǎn zuǒyòu shuìjiào.',vn:'Tôi thường ngủ khoảng mười giờ.'},
-     {zh:'一般来说，坐飞机比坐火车快。',py:'Yìbān lái shuō, zuò fēijī bǐ zuò huǒchē kuài.',vn:'Nói chung, đi máy bay nhanh hơn đi tàu hoả.'},
-   ],
-   hanzi:[
-     {c:'般',p:'bān',type:'左右结构 · Trái-phải',st:10,ord:'舟 trái → 殳 phải',rad:'舟 (chu – thuyền)',mean:'giống như, thông thường',
-      tip:'舟(thuyền) + 殳(cầm gậy chèo) → thuyền đi theo cách THÔNG THƯỜNG, giống nhau mỗi lần.',
-      cf:'船 (chuán – "thuyền", có bộ 舟 khác cách ghép)',w:'一般 / 那般'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi thường về nhà lúc khoảng sáu giờ.',answer:'我一般六点左右回家。',answerPy:'Wǒ yìbān liù diǎn zuǒyòu huí jiā.',
-      note:'左右 = số ước lượng (ôn lại đã học ở Bài 11).'},
-     {promptLang:'vi',prompt:'Nếu bạn thường xuyên tập thể dục thì sẽ khoẻ mạnh hơn.',answer:'如果你一般都锻炼身体，就会更健康。',answerPy:'Rúguǒ nǐ yìbān dōu duànliàn shēntǐ, jiù huì gèng jiànkāng.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'愿意',py:'yuànyì',pos:'Động từ',vn:'muốn', hv: 'nguyện ý',em:'💭',lesson:3,
-   explain:['Trong lòng mong muốn làm một việc gì đó, sẵn lòng.'],
-   usage:'Động từ năng nguyện, đứng trước động từ khác: 愿意 + V.',
-   collo:['更愿意','愿意帮忙','不愿意'],
-   ex_zh:'我更愿意在家看电视。',ex_py:'Wǒ gèng yuànyì zài jiā kàn diànshì.',ex_vn:'Tôi thích ở nhà xem tivi hơn.',
-   exList:[
-     {zh:'我很少去电影院看电影，我更愿意在家看电视。',py:'Wǒ hěn shǎo qù diànyǐngyuàn kàn diànyǐng, wǒ gèng yuànyì zài jiā kàn diànshì.',vn:'Tôi rất ít khi đi rạp xem phim, tôi thích ở nhà xem tivi hơn.'},
-     {zh:'大家有了问题，都愿意请他帮忙。',py:'Dàjiā yǒule wèntí, dōu yuànyì qǐng tā bāngmáng.',vn:'Mọi người có vấn đề gì, đều muốn nhờ ông ấy giúp.'},
-     {zh:'你愿意跟我一起去吗？',py:'Nǐ yuànyì gēn wǒ yìqǐ qù ma?',vn:'Bạn có muốn đi cùng tôi không?'},
-   ],
-   hanzi:[
-     {c:'愿',p:'yuàn',type:'上下结构 · Trên-dưới',st:14,ord:'原 trên → 心 dưới',rad:'心 (tâm)',mean:'nguyện vọng',
-      tip:'原(nguồn gốc, ban đầu) + 心(trái tim) → điều xuất phát từ TRÁI TIM ban đầu = NGUYỆN VỌNG, MUỐN.',
-      cf:'原 (yuán – "nguồn gốc", không có bộ 心")',w:'愿意 / 愿望'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn có muốn cùng tôi đi xem phim không?',answer:'你愿意跟我一起去看电影吗？',answerPy:'Nǐ yuànyì gēn wǒ yìqǐ qù kàn diànyǐng ma?',
-      note:'愿意 + V diễn tả mong muốn.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn muốn thì chúng ta có thể cùng đi.',answer:'只要你愿意，我们就可以一起去。',answerPy:'Zhǐyào nǐ yuànyì, wǒmen jiù kěyǐ yìqǐ qù.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:10,zh:'起来',py:'qǐlai',pos:'Động từ',vn:'(chỉ sự di chuyển hướng lên) lên', hv: 'khởi lai',em:'⬆️',lesson:3,
-   explain:['Bổ ngữ xu hướng kép diễn tả động tác hướng lên trên hoặc bắt đầu một hành động.'],
-   usage:'Động từ + 起来: 站起来, 坐起来; cũng dùng để diễn tả bắt đầu một trạng thái.',
-   collo:['站起来','坐久了','站起来休息'],
-   ex_zh:'坐久了还可以站起来休息一会儿。',ex_py:'Zuò jiǔ le hái kěyǐ zhàn qilai xiūxi yíhuìr.',ex_vn:'Ngồi lâu còn có thể đứng dậy nghỉ một lát.',
-   exList:[
-     {zh:'可以一边吃一边看，坐久了还可以站起来休息一会儿。',py:'Kěyǐ yìbiān chī yìbiān kàn, zuò jiǔ le hái kěyǐ zhàn qilai xiūxi yíhuìr.',vn:'Có thể vừa ăn vừa xem, ngồi lâu còn có thể đứng dậy nghỉ một lát.'},
-     {zh:'别帮他，让他自己站起来，他一定可以。',py:'Bié bāng tā, ràng tā zìjǐ zhàn qilai, tā yídìng kěyǐ.',vn:'Đừng giúp cậu bé, để cậu tự đứng dậy, cậu chắc chắn làm được.'},
-     {zh:'孩子笑了起来。',py:'Háizi xiàole qilai.',vn:'Đứa trẻ bật cười lên.'},
-   ],
-   hanzi:[
-     {c:'起',p:'qǐ',type:'半包围结构 · Bán bao vây',st:10,ord:'走 ngoài → 己 trong',rad:'走 (tẩu – đi)',mean:'dậy, khởi đầu',
-      tip:'走(đi, chạy) + 己(bản thân) → tự mình đứng DẬY, chuyển động lên = KHỞI ĐẦU.',
-      cf:'己 (jǐ – "bản thân", không có bộ 走")',w:'起来 / 一起 / 起床'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ngồi lâu còn có thể đứng dậy nghỉ một lát.',answer:'坐久了还可以站起来休息一会儿。',answerPy:'Zuò jiǔ le hái kěyǐ zhàn qilai xiūxi yíhuìr.',
-      note:'站起来 = bổ ngữ xu hướng kép (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Đừng giúp cậu bé, để cậu tự đứng dậy.',answer:'别帮他，让他自己站起来。',answerPy:'Bié bāng tā, ràng tā zìjǐ zhàn qilai.',
-      note:'自己 diễn tả tự bản thân (ôn lại đã học ở Bài 12).'},
-   ]},
-
-  {n:11,zh:'应该',py:'yīnggāi',pos:'Động từ',vn:'nên, cần phải', hv: 'ưng cai',em:'👍',lesson:3,
-   explain:['Diễn tả điều nên làm theo lẽ thường hoặc lời khuyên.'],
-   usage:'Động từ năng nguyện, đứng trước động từ khác: 应该 + V.',
-   collo:['应该多出去','应该休息','不应该'],
-   ex_zh:'你应该多出去走走。',ex_py:'Nǐ yīnggāi duō chūqu zǒuzou.',ex_vn:'Bạn nên đi ra ngoài nhiều hơn.',
-   exList:[
-     {zh:'你应该多出去走走，这样你们的生活会更有意思。',py:'Nǐ yīnggāi duō chūqu zǒuzou, zhèyàng nǐmen de shēnghuó huì gèng yǒu yìsi.',vn:'Bạn nên đi ra ngoài nhiều hơn, như vậy cuộc sống của hai người sẽ thú vị hơn.'},
-     {zh:'你应该多休息，别太累了。',py:'Nǐ yīnggāi duō xiūxi, bié tài lèi le.',vn:'Bạn nên nghỉ ngơi nhiều hơn, đừng để quá mệt.'},
-     {zh:'我们应该经常锻炼身体。',py:'Wǒmen yīnggāi jīngcháng duànliàn shēntǐ.',vn:'Chúng ta nên thường xuyên rèn luyện sức khoẻ.'},
-   ],
-   hanzi:[
-     {c:'应',p:'yīng',type:'半包围结构 · Bán bao vây',st:7,ord:'广 ngoài → 应 trong (giản thể)',rad:'广 (nghiễm – mái nhà)',mean:'nên, đáp lại',
-      tip:'广(mái nhà che chở) + phần dưới giản thể từ 應(đáp lại) → ĐÁP LẠI đúng đắn theo lẽ phải = NÊN.',
-      cf:'店 (diàn – "cửa hàng", cũng có bộ 广")',w:'应该 / 答应'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn nên thường xuyên uống nước.',answer:'你应该经常喝水。',answerPy:'Nǐ yīnggāi jīngcháng hē shuǐ.',
-      note:'经常 sẽ học ngay bên dưới trong bài này.'},
-     {promptLang:'vi',prompt:'Nếu bạn nên nghỉ ngơi thì đừng làm việc quá nhiều.',answer:'如果你应该休息，就别工作太多。',answerPy:'Rúguǒ nǐ yīnggāi xiūxi, jiù bié gōngzuò tài duō.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'生活',py:'shēnghuó',pos:'Danh từ',vn:'đời sống, cuộc sống', hv: 'sinh hoạt',em:'🌱',lesson:3,
-   explain:['Toàn bộ những hoạt động diễn ra trong cuộc đời một người.'],
-   usage:'Danh từ; cũng có thể làm động từ nghĩa "sinh sống".',
-   collo:['生活很有意思','生活习惯','美好的生活'],
-   ex_zh:'这样你们的生活会更有意思。',ex_py:'Zhèyàng nǐmen de shēnghuó huì gèng yǒu yìsi.',ex_vn:'Như vậy cuộc sống của hai người sẽ thú vị hơn.',
-   exList:[
-     {zh:'你应该多出去走走，这样你们的生活会更有意思。',py:'Nǐ yīnggāi duō chūqu zǒuzou, zhèyàng nǐmen de shēnghuó huì gèng yǒu yìsi.',vn:'Bạn nên đi ra ngoài nhiều hơn, như vậy cuộc sống của hai người sẽ thú vị hơn.'},
-     {zh:'有他在，我的生活已经很有意思了。',py:'Yǒu tā zài, wǒ de shēnghuó yǐjīng hěn yǒu yìsi le.',vn:'Có anh ấy ở bên, cuộc sống của tôi đã rất thú vị rồi.'},
-     {zh:'我们的生活越来越好了。',py:'Wǒmen de shēnghuó yuè lái yuè hǎo le.',vn:'Cuộc sống của chúng tôi ngày càng tốt hơn.'},
-   ],
-   hanzi:[
-     {c:'活',p:'huó',type:'左右结构 · Trái-phải',st:9,ord:'氵 trái → 舌 phải',rad:'氵 (thuỷ – nước)',mean:'sống',
-      tip:'氵(nước) + 舌(lưỡi) → có nước để lưỡi nếm, còn hơi thở = SỐNG; 生(sinh ra)+活(sống) = ĐỜI SỐNG.',
-      cf:'话 (huà – "lời nói", có bộ 讠")',w:'生活 / 活动'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cuộc sống ở thành phố ngày càng đắt đỏ hơn.',answer:'城市里的生活越来越贵了。',answerPy:'Chéngshì lǐ de shēnghuó yuè lái yuè guì le.',
-      note:'越来越 diễn tả xu hướng tăng dần.'},
-     {promptLang:'vi',prompt:'Có con ở bên, cuộc sống của bà ấy rất vui vẻ.',answer:'有孩子在，她的生活很快乐。',answerPy:'Yǒu háizi zài, tā de shēnghuó hěn kuàilè.',
-      note:'有……在 diễn tả sự hiện diện của ai đó.'},
-   ]},
-
-  {n:13,zh:'校长',py:'xiàozhǎng',pos:'Danh từ',vn:'hiệu trưởng', hv: 'hiệu trưởng',em:'🏫',lesson:4,
-   explain:['Người đứng đầu quản lý một trường học.'],
-   usage:'Danh từ; thường dùng làm chức danh trước tên riêng: 方校长.',
-   collo:['方校长','当校长','校长的办公室'],
-   ex_zh:'现在他已经是校长了。',ex_py:'Xiànzài tā yǐjīng shì xiàozhǎng le.',ex_vn:'Hiện giờ anh ấy đã là hiệu trưởng rồi.',
-   exList:[
-     {zh:'十年过去了，现在他已经是校长了。',py:'Shí nián guòqu le, xiànzài tā yǐjīng shì xiàozhǎng le.',vn:'Mười năm đã trôi qua, giờ anh ấy đã là hiệu trưởng rồi.'},
-     {zh:'方校长的办公室过去在四层。',py:'Fāng xiàozhǎng de bàngōngshì guòqù zài sì céng.',vn:'Trước đây văn phòng hiệu trưởng Phương ở tầng bốn.'},
-     {zh:'校长今天有一个重要的会议。',py:'Xiàozhǎng jīntiān yǒu yí ge zhòngyào de huìyì.',vn:'Hôm nay hiệu trưởng có một cuộc họp quan trọng.'},
-   ],
-   hanzi:[
-     {c:'校',p:'xiào',type:'左右结构 · Trái-phải',st:10,ord:'木 trái → 交 phải',rad:'木 (mộc – gỗ)',mean:'trường học',
-      tip:'木(gỗ, xây dựng) + 交(giao lưu, kết bạn) → nơi bằng gỗ để mọi người GIAO LƯU, học tập = TRƯỜNG HỌC.',
-      cf:'较 (jiào – "so sánh", có bộ 车")',w:'校长 / 学校'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ngày mai hiệu trưởng có một cuộc họp quan trọng với phụ huynh.',answer:'校长明天有一个重要的家长会议。',answerPy:'Xiàozhǎng míngtiān yǒu yí ge zhòngyào de jiāzhǎng huìyì.',
-      note:'重要 diễn tả tính quan trọng (ôn lại đã học ở Bài 12).'},
-     {promptLang:'vi',prompt:'Tuy anh ấy đã là hiệu trưởng rồi nhưng vẫn rất bận.',answer:'虽然他已经是校长了，但是他还是很忙。',answerPy:'Suīrán tā yǐjīng shì xiàozhǎng le, dànshì tā háishi hěn máng.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:14,zh:'坏',py:'huài',pos:'Tính từ',vn:'quá, quá mức', hv: 'hoại',em:'😫',lesson:4,
-   explain:['Đứng sau tính từ/động từ làm bổ ngữ, diễn tả mức độ nghiêm trọng, quá mức.'],
-   usage:'Tính từ/bổ ngữ mức độ: [Adj/V] + 坏了, diễn tả mức độ cao (累坏了, 忙坏了).',
-   collo:['累坏了','忙坏了','坏了'],
-   ex_zh:'我真怕他累坏了。',ex_py:'Wǒ zhēn pà tā lèihuài le.',ex_vn:'Tôi thật sự sợ anh ấy mệt quá sức.',
-   exList:[
-     {zh:'我真怕他累坏了。',py:'Wǒ zhēn pà tā lèihuài le.',vn:'Tôi thật sự sợ anh ấy mệt quá sức.'},
-     {zh:'电梯坏了，我是爬上来的。',py:'Diàntī huài le, wǒ shì pá shanglai de.',vn:'Thang máy hỏng rồi, tôi trèo lên đấy.'},
-     {zh:'今天太忙了，我都忙坏了。',py:'Jīntiān tài máng le, wǒ dōu mánghuài le.',vn:'Hôm nay bận quá, tôi bận đến mức mệt lử.'},
-   ],
-   hanzi:[
-     {c:'坏',p:'huài',type:'左右结构 · Trái-phải',st:7,ord:'土 trái → 不 phải',rad:'土 (thổ – đất)',mean:'hỏng, quá mức',
-      tip:'土(đất) + 不(phủ định) → đất KHÔNG còn nguyên vẹn = HỎNG, mở rộng thành bổ ngữ mức độ QUÁ MỨC.',
-      cf:'环 (huán – "vòng", có bộ 王")',w:'累坏了 / 坏了 / 破坏'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tivi hỏng rồi, chúng tôi đến nhà hàng xóm xem đấy.',answer:'电视坏了，我们是去邻居家看的。',answerPy:'Diànshì huài le, wǒmen shì qù línjū jiā kàn de.',
-      note:'是……的 nhấn mạnh cách thức của hành động đã xảy ra.'},
-     {promptLang:'vi',prompt:'Tôi thật sự sợ anh ấy mệt quá sức nên bảo anh ấy nghỉ ngơi nhiều hơn.',answer:'我真怕他累坏了，所以让他多休息。',answerPy:'Wǒ zhēn pà tā lèihuài le, suǒyǐ ràng tā duō xiūxi.',
-      note:'所以 nêu kết quả từ nguyên nhân phía trước.'},
-   ]},
-
-  {n:15,zh:'经常',py:'jīngcháng',pos:'Phó từ',vn:'thường xuyên', hv: 'kinh thường',em:'🔁',lesson:4,
-   explain:['Diễn tả tần suất cao, việc xảy ra nhiều lần, đều đặn.'],
-   usage:'Phó từ, đứng trước động từ: 经常 + V.',
-   collo:['经常来','经常锻炼','经常在一起'],
-   ex_zh:'可以经常和我还有孩子在一起。',ex_py:'Kěyǐ jīngcháng hé wǒ hái yǒu háizi zài yìqǐ.',ex_vn:'Có thể thường xuyên ở bên tôi và các con.',
-   exList:[
-     {zh:'希望他能少一些会议，多一些休息，可以经常和我还有孩子在一起。',py:'Xīwàng tā néng shǎo yìxiē huìyì, duō yìxiē xiūxi, kěyǐ jīngcháng hé wǒ hái yǒu háizi zài yìqǐ.',vn:'Mong anh ấy có thể họp ít lại, nghỉ ngơi nhiều hơn, có thể thường xuyên ở bên tôi và các con.'},
-     {zh:'我们应该经常锻炼身体。',py:'Wǒmen yīnggāi jīngcháng duànliàn shēntǐ.',vn:'Chúng ta nên thường xuyên rèn luyện sức khoẻ.'},
-     {zh:'他经常一个人去咖啡店看书。',py:'Tā jīngcháng yí ge rén qù kāfēidiàn kàn shū.',vn:'Anh ấy thường xuyên một mình đến quán cà phê đọc sách.'},
-   ],
-   hanzi:[
-     {c:'经',p:'jīng',type:'左右结构 · Trái-phải',st:8,ord:'纟 trái → 圣 phải (giản thể)',rad:'纟 (mịch – tơ lụa)',mean:'trải qua, thường xuyên',
-      tip:'纟(sợi tơ dệt) + phần phải (giản thể từ 巠, sợi dọc trong khung dệt) → sợi dọc XUYÊN SUỐT tấm vải = THƯỜNG XUYÊN, TRẢI QUA.',
-      cf:'轻 (qīng – "nhẹ", có bộ 车")',w:'经常 / 已经 / 经理'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cô ấy thường xuyên một mình đi công viên chạy bộ.',answer:'她经常一个人去公园跑步。',answerPy:'Tā jīngcháng yí ge rén qù gōngyuán pǎobù.',
-      note:'经常 đứng trước động từ diễn tả tần suất cao.'},
-     {promptLang:'vi',prompt:'Mong anh ấy có thể thường xuyên ở bên tôi.',answer:'希望他能经常和我在一起。',answerPy:'Xīwàng tā néng jīngcháng hé wǒ zài yìqǐ.',
-      note:'希望……能…… diễn tả mong muốn ai đó có thể làm gì.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "终于",
+    "py": "zhōngyú",
+    "pos": "Phó từ",
+    "vn": "cuối cùng",
+    "hv": "chung vu",
+    "em": "🏁",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả sau một thời gian dài chờ đợi, sự việc cuối cùng cũng xảy ra."
+    ],
+    "usage": "Phó từ, đứng trước động từ hoặc tính từ: 终于 + V/Adj.",
+    "collo": [
+      "终于回来了",
+      "终于到了",
+      "终于成功了"
+    ],
+    "ex_zh": "你终于回来了！",
+    "ex_py": "Nǐ zhōngyú huílai le!",
+    "ex_vn": "Anh cuối cùng cũng về rồi!",
+    "exList": [
+      {
+        "zh": "你终于回来了！从哪儿买回来这么多东西啊？",
+        "py": "Nǐ zhōngyú huílai le! Cóng nǎr mǎi huilai zhème duō dōngxi a?",
+        "vn": "Anh cuối cùng cũng về rồi! Mua ở đâu về nhiều đồ thế?"
+      },
+      {
+        "zh": "我终于找到了那家咖啡店。",
+        "py": "Wǒ zhōngyú zhǎodàole nà jiā kāfēidiàn.",
+        "vn": "Tôi cuối cùng cũng tìm thấy quán cà phê đó."
+      },
+      {
+        "zh": "等了很久，火车终于来了。",
+        "py": "Děngle hěn jiǔ, huǒchē zhōngyú lái le.",
+        "vn": "Chờ mãi, cuối cùng tàu hoả cũng đến."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "终",
+        "p": "zhōng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟 trái → 冬 phải",
+        "rad": "纟 (mịch – tơ lụa)",
+        "mean": "cuối cùng, kết thúc",
+        "tip": "纟(sợi chỉ, dệt vải) + 冬(mùa đông, hết năm) → sợi chỉ dệt đến hết năm = KẾT THÚC, CUỐI CÙNG.",
+        "cf": "冬 (dōng – \"mùa đông\", không có bộ 纟\")",
+        "w": "终于 / 最终"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đợi nửa tiếng, cuối cùng xe buýt cũng đến, ai nấy đều thở phào.",
+        "answer": "等了半个小时，公共汽车终于来了，大家都放心了。",
+        "answerPy": "Děngle bàn ge xiǎoshí, gōnggòng qìchē zhōngyú lái le, dàjiā dōu fàngxīn le.",
+        "note": "放心 là từ bài 9; 终于 dùng sau một quá trình chờ đợi.",
+        "pair": "……终于……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cuối cùng cũng tìm được nên tôi rất vui.",
+        "answer": "因为终于找到了，所以我很高兴。",
+        "answerPy": "Yīnwèi zhōngyú zhǎodào le, suǒyǐ wǒ hěn gāoxìng.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "终于到了",
+        "py": "zhōngyú dào le",
+        "vn": "cuối cùng cũng tới"
+      },
+      {
+        "zh": "终于回来了",
+        "py": "zhōngyú huílai le",
+        "vn": "cuối cùng đã về"
+      },
+      {
+        "zh": "终于成功了",
+        "py": "zhōngyú chénggōng le",
+        "vn": "cuối cùng đã thành công"
+      },
+      {
+        "zh": "终于找到了",
+        "py": "zhōngyú zhǎo dào le",
+        "vn": "cuối cùng cũng tìm thấy"
+      },
+      {
+        "zh": "等了很久终于来了",
+        "py": "děng le hěn jiǔ zhōngyú lái le",
+        "vn": "đợi lâu cuối cùng cũng đến"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "终于 + V + 了",
+        "m": "Cuối cùng cũng … — sau một quá trình chờ đợi"
+      },
+      {
+        "s": "终于 (sau chờ đợi, kết quả tốt) ≠ 最后 (chỉ thứ tự cuối, bài 9)"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "爷爷",
+    "py": "yéye",
+    "pos": "Danh từ",
+    "vn": "ông nội",
+    "hv": "gia gia",
+    "em": "👴",
+    "lesson": 1,
+    "explain": [
+      "Cách gọi cha của cha (ông nội) trong gia đình."
+    ],
+    "usage": "Danh từ xưng hô; thường đi cùng 奶奶 thành cặp.",
+    "collo": [
+      "爷爷奶奶",
+      "看看爷爷",
+      "爷爷的礼物"
+    ],
+    "ex_zh": "这是给爷爷的礼物。",
+    "ex_py": "Zhè shì gěi yéye de lǐwù.",
+    "ex_vn": "Đây là quà tặng cho ông nội.",
+    "exList": [
+      {
+        "zh": "这是给爷爷的礼物，明天我们一起送过去，看看爷爷奶奶。",
+        "py": "Zhè shì gěi yéye de lǐwù, míngtiān wǒmen yìqǐ sòng guoqu, kànkan yéye nǎinai.",
+        "vn": "Đây là quà tặng cho ông nội, mai chúng ta cùng mang qua, thăm ông bà nội."
+      },
+      {
+        "zh": "爷爷今年七十岁了。",
+        "py": "Yéye jīnnián qīshí suì le.",
+        "vn": "Ông nội năm nay bảy mươi tuổi rồi."
+      },
+      {
+        "zh": "爷爷，这本书我没看过，是您新买的吗？",
+        "py": "Yéye, zhè běn shū wǒ méi kànguo, shì nín xīn mǎi de ma?",
+        "vn": "Ông ơi, quyển sách này cháu chưa xem qua, là ông mới mua à?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "爷",
+        "p": "yé",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "父 trên → 一 dưới",
+        "rad": "父 (phụ – cha)",
+        "mean": "ông",
+        "tip": "父(cha) + 一(số một, bậc cao nhất) → người cha ở BẬC TRÊN CÙNG trong nhà = ÔNG.",
+        "cf": "爸 (bà – \"cha\", có bộ 巴\")",
+        "w": "爷爷 / 大爷"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ông của bạn tôi năm nay tám mươi tuổi rồi mà vẫn thường xuyên tập thể dục.",
+        "answer": "我朋友的爷爷今年八十岁了，但是还经常锻炼身体。",
+        "answerPy": "Wǒ péngyou de yéye jīnnián bāshí suì le, dànshì hái jīngcháng duànliàn shēntǐ.",
+        "note": "锻炼 là từ bài 6; 经常 là từ cùng bài.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy ông nội đã già nhưng vẫn rất khoẻ mạnh.",
+        "answer": "虽然爷爷已经老了，但是他还是很健康。",
+        "answerPy": "Suīrán yéye yǐjīng lǎo le, dànshì tā háishi hěn jiànkāng.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "爷爷奶奶",
+        "py": "yéye nǎinai",
+        "vn": "ông bà nội"
+      },
+      {
+        "zh": "看看爷爷",
+        "py": "kànkàn yéye",
+        "vn": "thăm ông"
+      },
+      {
+        "zh": "爷爷的礼物",
+        "py": "yéye de lǐwù",
+        "vn": "quà của ông"
+      },
+      {
+        "zh": "我爷爷",
+        "py": "wǒ yéye",
+        "vn": "ông nội tôi"
+      },
+      {
+        "zh": "爷爷八十岁了",
+        "py": "yéye bāshí suì le",
+        "vn": "ông tám mươi tuổi rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "爷爷 (ông nội) / 奶奶 (bà nội)",
+        "m": "Bên nội — bên ngoại là 外公 外婆"
+      },
+      {
+        "s": "爷爷奶奶",
+        "m": "Ông bà — hay đi thành cặp"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "礼物",
+    "py": "lǐwù",
+    "pos": "Danh từ",
+    "vn": "quà biếu, quà tặng",
+    "hv": "lễ vật",
+    "em": "🎁",
+    "lesson": 1,
+    "explain": [
+      "Vật dùng để tặng, biếu người khác thể hiện tình cảm."
+    ],
+    "usage": "Danh từ; đi cùng động từ 送/买/给: 送礼物, 买礼物.",
+    "collo": [
+      "送礼物",
+      "买礼物",
+      "爷爷的礼物"
+    ],
+    "ex_zh": "这是给爷爷的礼物。",
+    "ex_py": "Zhè shì gěi yéye de lǐwù.",
+    "ex_vn": "Đây là quà tặng cho ông nội.",
+    "exList": [
+      {
+        "zh": "这是给爷爷的礼物，明天我们一起送过去。",
+        "py": "Zhè shì gěi yéye de lǐwù, míngtiān wǒmen yìqǐ sòng guoqu.",
+        "vn": "Đây là quà tặng cho ông nội, mai chúng ta cùng mang qua."
+      },
+      {
+        "zh": "这本书我没看过，是您新买的礼物吗？",
+        "py": "Zhè běn shū wǒ méi kànguo, shì nín xīn mǎi de lǐwù ma?",
+        "vn": "Quyển sách này tôi chưa xem qua, là món quà ông mới mua à?"
+      },
+      {
+        "zh": "爸爸从国外带回来一些礼物。",
+        "py": "Bàba cóng guówài dài huilai yìxiē lǐwù.",
+        "vn": "Bố mang một ít quà từ nước ngoài về."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "礼",
+        "p": "lǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "礻 trái → 乚 phải",
+        "rad": "礻 (kỳ – lễ, thần)",
+        "mean": "lễ nghi, quà",
+        "tip": "礻(bộ thị, liên quan nghi lễ cúng tế) + 乚(nét cong) → NGHI LỄ trang trọng, mở rộng thành LỄ VẬT, QUÀ TẶNG.",
+        "cf": "衣 (yī – \"áo\", không có bộ 礻\")",
+        "w": "礼物 / 送礼"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai vừa về đến nhà là mang theo một chiếc bánh sinh nhật làm quà cho tôi.",
+        "answer": "哥哥一回到家，就从商店带回来一个生日蛋糕送给我做礼物。",
+        "answerPy": "Gēge yì huí dào jiā, jiù cóng shāngdiàn dài huilai yí ge shēngrì dàngāo sòng gěi wǒ zuò lǐwù.",
+        "note": "送 + ai + 礼物 — tặng quà cho ai.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không biết mua quà gì thì tôi có thể giúp bạn.",
+        "answer": "如果你不知道买什么礼物，我就可以帮你。",
+        "answerPy": "Rúguǒ nǐ bù zhīdào mǎi shénme lǐwù, wǒ jiù kěyǐ bāng nǐ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "送礼物",
+        "py": "sòng lǐwù",
+        "vn": "tặng quà"
+      },
+      {
+        "zh": "买礼物",
+        "py": "mǎi lǐwù",
+        "vn": "mua quà"
+      },
+      {
+        "zh": "收到礼物",
+        "py": "shōu dào lǐwù",
+        "vn": "nhận được quà"
+      },
+      {
+        "zh": "生日礼物",
+        "py": "shēngrì lǐwù",
+        "vn": "quà sinh nhật"
+      },
+      {
+        "zh": "一个礼物",
+        "py": "yí gè lǐwù",
+        "vn": "một món quà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "送 + ai + 礼物",
+        "m": "Tặng quà cho ai"
+      },
+      {
+        "s": "礼 + 物",
+        "m": "Đồ vật (物) dùng làm lễ (礼)"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "奶奶",
+    "py": "nǎinai",
+    "pos": "Danh từ",
+    "vn": "bà nội",
+    "hv": "nãi nãi",
+    "em": "👵",
+    "lesson": 1,
+    "explain": [
+      "Cách gọi mẹ của cha (bà nội) trong gia đình."
+    ],
+    "usage": "Danh từ xưng hô; thường đi cùng 爷爷 thành cặp.",
+    "collo": [
+      "爷爷奶奶",
+      "看看奶奶",
+      "奶奶做的菜"
+    ],
+    "ex_zh": "明天我们一起送过去，看看爷爷奶奶。",
+    "ex_py": "Míngtiān wǒmen yìqǐ sòng guoqu, kànkan yéye nǎinai.",
+    "ex_vn": "Mai chúng ta cùng mang qua, thăm ông bà nội.",
+    "exList": [
+      {
+        "zh": "明天我们一起送过去，看看爷爷奶奶。",
+        "py": "Míngtiān wǒmen yìqǐ sòng guoqu, kànkan yéye nǎinai.",
+        "vn": "Mai chúng ta cùng mang qua, thăm ông bà nội."
+      },
+      {
+        "zh": "奶奶做的菜特别好吃。",
+        "py": "Nǎinai zuò de cài tèbié hǎochī.",
+        "vn": "Món ăn bà nội nấu đặc biệt ngon."
+      },
+      {
+        "zh": "奶奶今年身体很健康。",
+        "py": "Nǎinai jīnnián shēntǐ hěn jiànkāng.",
+        "vn": "Năm nay sức khoẻ bà nội rất tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "奶",
+        "p": "nǎi",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "女 trái → 乃 phải",
+        "rad": "女 (nữ)",
+        "mean": "bà, sữa",
+        "tip": "女(nữ) + 乃(bèn, mới, ý chỉ nuôi dưỡng) → người PHỤ NỮ nuôi dưỡng con cháu = BÀ; mở rộng nghĩa SỮA.",
+        "cf": "奴 (nú – \"nô lệ\", có 又 thay vì 乃\")",
+        "w": "奶奶 / 牛奶"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Món mì bà nội nấu đặc biệt ngon, nên tôi lần nào cũng ăn hai bát.",
+        "answer": "奶奶做的面条特别好吃，所以我每次都吃两碗。",
+        "answerPy": "Nǎinai zuò de miàntiáo tèbié hǎochī, suǒyǐ wǒ měi cì dōu chī liǎng wǎn.",
+        "note": "特别 là từ bài 6.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bà nội khoẻ mạnh thì cả nhà đều vui.",
+        "answer": "只要奶奶健康，全家人就都高兴。",
+        "answerPy": "Zhǐyào nǎinai jiànkāng, quánjiā rén jiù dōu gāoxìng.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "奶奶做的菜",
+        "py": "nǎinai zuò de cài",
+        "vn": "món bà nấu"
+      },
+      {
+        "zh": "看看奶奶",
+        "py": "kànkàn nǎinai",
+        "vn": "thăm bà"
+      },
+      {
+        "zh": "我奶奶",
+        "py": "wǒ nǎinai",
+        "vn": "bà nội tôi"
+      },
+      {
+        "zh": "跟奶奶聊天儿",
+        "py": "gēn nǎinai liáo tiān ér",
+        "vn": "trò chuyện với bà"
+      },
+      {
+        "zh": "奶奶很喜欢",
+        "py": "nǎinai hěn xǐhuan",
+        "vn": "bà rất thích"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "奶奶 + 做的 + N",
+        "m": "Món bà làm"
+      },
+      {
+        "s": "跟 + 奶奶 + 聊天儿",
+        "m": "Trò chuyện với bà — 聊天儿 là từ bài 6"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "遇到",
+    "py": "yùdào",
+    "pos": "Động từ",
+    "vn": "tình cờ gặp",
+    "hv": "ngộ đáo",
+    "em": "🤝",
+    "lesson": 2,
+    "explain": [
+      "Bất ngờ gặp một người hoặc sự việc nào đó, không hẹn trước."
+    ],
+    "usage": "Động từ, mang tân ngữ là người hoặc sự việc: 遇到 + [người/vấn đề].",
+    "collo": [
+      "在路上遇到",
+      "遇到问题",
+      "遇到老同学"
+    ],
+    "ex_zh": "她是我今天在路上遇到的一个老同学。",
+    "ex_py": "Tā shì wǒ jīntiān zài lùshang yùdào de yí ge lǎo tóngxué.",
+    "ex_vn": "Cô ấy là một người bạn học cũ tôi tình cờ gặp trên đường hôm nay.",
+    "exList": [
+      {
+        "zh": "她是我今天在路上遇到的一个老同学。",
+        "py": "Tā shì wǒ jīntiān zài lùshang yùdào de yí ge lǎo tóngxué.",
+        "vn": "Cô ấy là một người bạn học cũ tôi tình cờ gặp trên đường hôm nay."
+      },
+      {
+        "zh": "那位老人遇到了问题。",
+        "py": "Nà wèi lǎorén yùdàole wèntí.",
+        "vn": "Cụ già đó gặp phải vấn đề."
+      },
+      {
+        "zh": "好久不见！没想到在这儿遇到你了。",
+        "py": "Hǎojiǔ bú jiàn! Méi xiǎngdào zài zhèr yùdào nǐ le.",
+        "vn": "Lâu rồi không gặp! Không ngờ lại gặp bạn ở đây."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "遇",
+        "p": "yù",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 12,
+        "ord": "辶 ngoài → 禺 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "gặp gỡ",
+        "tip": "辶(đi đường) + 禺(hình dáng con khỉ, ý chỉ bất ngờ) → đi đường bất ngờ GẶP GỠ ai đó.",
+        "cf": "偶 (ǒu – \"ngẫu nhiên\", có bộ 亻\")",
+        "w": "遇到 / 遇见"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lâu lắm không gặp! Tôi cứ tưởng bạn đã đi rồi, không ngờ gặp bạn ở siêu thị.",
+        "answer": "好久不见！我以为你已经走了，没想到在超市遇到你了。",
+        "answerPy": "Hǎojiǔ bú jiàn! Wǒ yǐwéi nǐ yǐjīng zǒu le, méi xiǎngdào zài chāoshì yùdào nǐ le.",
+        "note": "超市 là từ bài 4; 遇到 là tình cờ gặp, khác 见面 (hẹn gặp).",
+        "pair": "以为……没想到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn gặp vấn đề gì thì cứ hỏi tôi.",
+        "answer": "如果你遇到什么问题，就问我吧。",
+        "answerPy": "Rúguǒ nǐ yùdào shénme wèntí, jiù wèn wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "在路上遇到",
+        "py": "zài lùshang yùdào",
+        "vn": "gặp trên đường"
+      },
+      {
+        "zh": "遇到老同学",
+        "py": "yùdào lǎo tóngxué",
+        "vn": "gặp bạn học cũ"
+      },
+      {
+        "zh": "遇到问题",
+        "py": "yùdào wèntí",
+        "vn": "gặp vấn đề"
+      },
+      {
+        "zh": "没想到遇到你",
+        "py": "méi xiǎng dào yùdào nǐ",
+        "vn": "không ngờ gặp bạn"
+      },
+      {
+        "zh": "经常遇到",
+        "py": "jīngcháng yùdào",
+        "vn": "thường gặp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + nơi chốn + 遇到 + ai",
+        "m": "Tình cờ gặp ai ở đâu"
+      },
+      {
+        "s": "遇到 (tình cờ gặp) ≠ 见面 (hẹn gặp, bài 8)"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "一边",
+    "py": "yìbiān",
+    "pos": "Phó từ",
+    "vn": "vừa (dùng để liên kết hai hành động xảy ra cùng lúc)",
+    "hv": "nhất biên",
+    "em": "🔀",
+    "lesson": 2,
+    "explain": [
+      "Dùng thành cặp 一边……一边…… để diễn tả hai hành động xảy ra đồng thời."
+    ],
+    "usage": "一边 + V1 + 一边 + V2; có thể lược bỏ 一 thành 边……边……",
+    "collo": [
+      "一边喝咖啡一边聊天儿",
+      "一边吃一边看",
+      "边说边笑"
+    ],
+    "ex_zh": "一边喝咖啡一边说了些过去的事。",
+    "ex_py": "Yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.",
+    "ex_vn": "Vừa uống cà phê vừa nói chuyện xưa.",
+    "exList": [
+      {
+        "zh": "是啊，一边喝咖啡一边说了些过去的事。",
+        "py": "Shì a, yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.",
+        "vn": "Đúng vậy, vừa uống cà phê vừa nói chuyện xưa."
+      },
+      {
+        "zh": "妈妈一边唱歌一边做饭。",
+        "py": "Māma yìbiān chànggē yìbiān zuò fàn.",
+        "vn": "Mẹ vừa hát vừa nấu cơm."
+      },
+      {
+        "zh": "我丈夫喜欢一边吃早饭一边看报纸。",
+        "py": "Wǒ zhàngfu xǐhuan yìbiān chī zǎofàn yìbiān kàn bàozhǐ.",
+        "vn": "Chồng tôi thích vừa ăn sáng vừa đọc báo."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "边",
+        "p": "biān",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "辶 ngoài → 力 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "bên cạnh",
+        "tip": "辶(đi) + 力(sức lực, giản thể từ chữ phồn thể 邊) → đường viền BÊN CẠNH khi di chuyển.",
+        "cf": "力 (lì – \"sức lực\", không có bộ 辶\")",
+        "w": "一边 / 旁边 / 那边"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Em gái vừa nghe nhạc vừa làm bài tập.",
+        "answer": "妹妹一边听音乐一边做作业。",
+        "answerPy": "Mèimei yìbiān tīng yīnyuè yìbiān zuò zuòyè.",
+        "note": "一边……一边…… diễn tả hai hành động xảy ra cùng lúc (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "一边……一边……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy vừa giảng vừa cười, nên giờ học của thầy đặc biệt vui.",
+        "answer": "老师一边说一边笑，所以他的课特别有意思。",
+        "answerPy": "Lǎoshī yìbiān shuō yìbiān xiào, suǒyǐ tā de kè tèbié yǒu yìsi.",
+        "note": "边……边…… là dạng rút gọn.",
+        "pair": "一边……一边……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一边吃一边看",
+        "py": "yìbiān chī yìbiān kàn",
+        "vn": "vừa ăn vừa xem"
+      },
+      {
+        "zh": "一边走一边聊",
+        "py": "yìbiān zǒu yìbiān liáo",
+        "vn": "vừa đi vừa nói"
+      },
+      {
+        "zh": "边说边笑",
+        "py": "biān shuō biān xiào",
+        "vn": "vừa nói vừa cười"
+      },
+      {
+        "zh": "一边听一边写",
+        "py": "yìbiān tīng yìbiān xiě",
+        "vn": "vừa nghe vừa viết"
+      },
+      {
+        "zh": "一边工作一边学习",
+        "py": "yìbiān gōngzuò yìbiān xuéxí",
+        "vn": "vừa làm vừa học"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一边 + V1 + 一边 + V2",
+        "m": "Vừa làm A vừa làm B — cùng lúc"
+      },
+      {
+        "s": "边……边…… là dạng rút gọn của 一边……一边……"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "过去",
+    "py": "guòqù",
+    "pos": "Danh từ",
+    "vn": "quá khứ",
+    "hv": "quá khứ",
+    "em": "⏳",
+    "lesson": 2,
+    "explain": [
+      "Khoảng thời gian đã trôi qua, trước hiện tại."
+    ],
+    "usage": "Danh từ, thường làm định ngữ: 过去的事; cũng dùng làm trạng ngữ chỉ thời gian trước đây.",
+    "collo": [
+      "过去的事",
+      "过去的时候",
+      "说过去的事"
+    ],
+    "ex_zh": "一边喝咖啡一边说了些过去的事。",
+    "ex_py": "Yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.",
+    "ex_vn": "Vừa uống cà phê vừa nói chuyện xưa.",
+    "exList": [
+      {
+        "zh": "是啊，一边喝咖啡一边说了些过去的事。",
+        "py": "Shì a, yìbiān hē kāfēi yìbiān shuōle xiē guòqù de shì.",
+        "vn": "Đúng vậy, vừa uống cà phê vừa nói chuyện xưa."
+      },
+      {
+        "zh": "十年过去了，现在他已经是校长了。",
+        "py": "Shí nián guòqu le, xiànzài tā yǐjīng shì xiàozhǎng le.",
+        "vn": "Mười năm đã trôi qua, giờ anh ấy đã là hiệu trưởng rồi."
+      },
+      {
+        "zh": "方校长的办公室过去在四层。",
+        "py": "Fāng xiàozhǎng de bàngōngshì guòqù zài sì céng.",
+        "vn": "Trước đây văn phòng hiệu trưởng Phương ở tầng bốn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "过",
+        "p": "guò",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 6,
+        "ord": "辶 ngoài → 寸 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "đi qua",
+        "tip": "辶(đi) + 寸(một đoạn ngắn, chỉ thời gian/khoảng cách) → ĐI QUA một khoảng thời gian hoặc không gian.",
+        "cf": "辻 (không phải chữ Hán thường dùng)",
+        "w": "过去 / 经过 / 过"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Năm năm trôi qua, giờ cô ấy đã là giáo viên, còn tôi vẫn đang đi học.",
+        "answer": "五年过去了，现在她已经是老师了，我还在上学。",
+        "answerPy": "Wǔ nián guòqù le, xiànzài tā yǐjīng shì lǎoshī le, wǒ hái zài shàngxué.",
+        "note": "thời lượng + 过去了 — bao lâu đã trôi qua.",
+        "pair": "……，……还……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy chuyện đó đã là quá khứ nhưng tôi vẫn nhớ rất rõ.",
+        "answer": "虽然那是过去的事，但是我还是记得很清楚。",
+        "answerPy": "Suīrán nà shì guòqù de shì, dànshì wǒ háishi jìde hěn qīngchu.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "过去的事",
+        "py": "guòqù de shì",
+        "vn": "chuyện quá khứ"
+      },
+      {
+        "zh": "说过去的事",
+        "py": "shuō guòqù de shì",
+        "vn": "kể chuyện xưa"
+      },
+      {
+        "zh": "五年过去了",
+        "py": "wǔ nián guòqù le",
+        "vn": "năm năm trôi qua"
+      },
+      {
+        "zh": "过去的时候",
+        "py": "guòqù de shíhou",
+        "vn": "lúc trước"
+      },
+      {
+        "zh": "忘了过去",
+        "py": "wàng le guòqù",
+        "vn": "quên đi quá khứ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "thời lượng + 过去了",
+        "m": "Bao lâu đã trôi qua"
+      },
+      {
+        "s": "过去 (quá khứ) ≠ 以前 (trước đây, bài 7) — 过去 nhấn khoảng thời gian đã qua"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "一般",
+    "py": "yìbān",
+    "pos": "Tính từ",
+    "vn": "thông thường",
+    "hv": "nhất ban",
+    "em": "📅",
+    "lesson": 3,
+    "explain": [
+      "Diễn tả tình trạng bình thường, như thường lệ."
+    ],
+    "usage": "Tính từ, thường làm trạng ngữ đứng trước động từ: 一般 + V.",
+    "collo": [
+      "一般来说",
+      "周末一般",
+      "一般在家"
+    ],
+    "ex_zh": "周末你一般跟小刚出去看电影吗？",
+    "ex_py": "Zhōumò nǐ yìbān gēn Xiǎogāng chūqu kàn diànyǐng ma?",
+    "ex_vn": "Cuối tuần bạn có thường đi xem phim cùng Tiểu Cương không?",
+    "exList": [
+      {
+        "zh": "小丽，周末你一般跟小刚出去看电影吗？",
+        "py": "Xiǎolì, zhōumò nǐ yìbān gēn Xiǎogāng chūqu kàn diànyǐng ma?",
+        "vn": "Tiểu Lệ, cuối tuần bạn có thường đi xem phim cùng Tiểu Cương không?"
+      },
+      {
+        "zh": "我一般十点左右睡觉。",
+        "py": "Wǒ yìbān shí diǎn zuǒyòu shuìjiào.",
+        "vn": "Tôi thường ngủ khoảng mười giờ."
+      },
+      {
+        "zh": "一般来说，坐飞机比坐火车快。",
+        "py": "Yìbān lái shuō, zuò fēijī bǐ zuò huǒchē kuài.",
+        "vn": "Nói chung, đi máy bay nhanh hơn đi tàu hoả."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "般",
+        "p": "bān",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "舟 trái → 殳 phải",
+        "rad": "舟 (chu – thuyền)",
+        "mean": "giống như, thông thường",
+        "tip": "舟(thuyền) + 殳(cầm gậy chèo) → thuyền đi theo cách THÔNG THƯỜNG, giống nhau mỗi lần.",
+        "cf": "船 (chuán – \"thuyền\", có bộ 舟 khác cách ghép)",
+        "w": "一般 / 那般"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thường về nhà khoảng sáu giờ, nhưng hôm nay phải làm thêm nên về muộn.",
+        "answer": "我一般六点左右回家，但是今天要加班，所以回来晚了。",
+        "answerPy": "Wǒ yìbān liù diǎn zuǒyòu huí jiā, dànshì jīntiān yào jiābān, suǒyǐ huílai wǎn le.",
+        "note": "左右 — khoảng chừng, đứng sau số lượng.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thường xuyên tập thể dục thì sẽ khoẻ mạnh hơn.",
+        "answer": "如果你一般都锻炼身体，就会更健康。",
+        "answerPy": "Rúguǒ nǐ yìbān dōu duànliàn shēntǐ, jiù huì gèng jiànkāng.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一般来说",
+        "py": "yìbān lái shuō",
+        "vn": "nói chung thì"
+      },
+      {
+        "zh": "一般在家",
+        "py": "yìbān zài jiā",
+        "vn": "thường ở nhà"
+      },
+      {
+        "zh": "周末一般",
+        "py": "zhōumò yìbān",
+        "vn": "cuối tuần thường"
+      },
+      {
+        "zh": "一般的东西",
+        "py": "yìbān de dōngxi",
+        "vn": "đồ bình thường"
+      },
+      {
+        "zh": "成绩一般",
+        "py": "chéngjì yìbān",
+        "vn": "thành tích bình thường"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一般 + Sub + V (phó từ)",
+        "m": "Thường thì ai đó …"
+      },
+      {
+        "s": "一般 (bình thường, tính từ)",
+        "m": "成绩一般 — kết quả tàm tạm"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "愿意",
+    "py": "yuànyì",
+    "pos": "Động từ",
+    "vn": "muốn",
+    "hv": "nguyện ý",
+    "em": "💭",
+    "lesson": 3,
+    "explain": [
+      "Trong lòng mong muốn làm một việc gì đó, sẵn lòng."
+    ],
+    "usage": "Động từ năng nguyện, đứng trước động từ khác: 愿意 + V.",
+    "collo": [
+      "更愿意",
+      "愿意帮忙",
+      "不愿意"
+    ],
+    "ex_zh": "我更愿意在家看电视。",
+    "ex_py": "Wǒ gèng yuànyì zài jiā kàn diànshì.",
+    "ex_vn": "Tôi thích ở nhà xem tivi hơn.",
+    "exList": [
+      {
+        "zh": "我很少去电影院看电影，我更愿意在家看电视。",
+        "py": "Wǒ hěn shǎo qù diànyǐngyuàn kàn diànyǐng, wǒ gèng yuànyì zài jiā kàn diànshì.",
+        "vn": "Tôi rất ít khi đi rạp xem phim, tôi thích ở nhà xem tivi hơn."
+      },
+      {
+        "zh": "大家有了问题，都愿意请他帮忙。",
+        "py": "Dàjiā yǒule wèntí, dōu yuànyì qǐng tā bāngmáng.",
+        "vn": "Mọi người có vấn đề gì, đều muốn nhờ ông ấy giúp."
+      },
+      {
+        "zh": "你愿意跟我一起去吗？",
+        "py": "Nǐ yuànyì gēn wǒ yìqǐ qù ma?",
+        "vn": "Bạn có muốn đi cùng tôi không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "愿",
+        "p": "yuàn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 14,
+        "ord": "原 trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "nguyện vọng",
+        "tip": "原(nguồn gốc, ban đầu) + 心(trái tim) → điều xuất phát từ TRÁI TIM ban đầu = NGUYỆN VỌNG, MUỐN.",
+        "cf": "原 (yuán – \"nguồn gốc\", không có bộ 心\")",
+        "w": "愿意 / 愿望"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn có muốn cùng tôi đi xem phim không? Nếu bận thì để hôm khác cũng được.",
+        "answer": "你愿意跟我一起去看电影吗？如果你忙，就改天也行。",
+        "answerPy": "Nǐ yuànyì gēn wǒ yìqǐ qù kàn diànyǐng ma? Rúguǒ nǐ máng, jiù gǎitiān yě xíng.",
+        "note": "愿意 nhấn sự bằng lòng, khác 想 (muốn).",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn muốn thì chúng ta có thể cùng đi.",
+        "answer": "只要你愿意，我们就可以一起去。",
+        "answerPy": "Zhǐyào nǐ yuànyì, wǒmen jiù kěyǐ yìqǐ qù.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "愿意帮忙",
+        "py": "yuànyì bāngmáng",
+        "vn": "sẵn lòng giúp"
+      },
+      {
+        "zh": "不愿意",
+        "py": "bú yuànyì",
+        "vn": "không muốn"
+      },
+      {
+        "zh": "更愿意",
+        "py": "gèng yuànyì",
+        "vn": "thích hơn"
+      },
+      {
+        "zh": "愿意去",
+        "py": "yuànyì qù",
+        "vn": "muốn đi"
+      },
+      {
+        "zh": "你愿意吗",
+        "py": "nǐ yuànyì ma",
+        "vn": "bạn có muốn không"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 愿意 + V",
+        "m": "Ai đó bằng lòng, sẵn sàng làm gì"
+      },
+      {
+        "s": "愿意 (bằng lòng) ≠ 想 (muốn) — 愿意 nhấn sự đồng ý"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "起来",
+    "py": "qǐlai",
+    "pos": "Động từ",
+    "vn": "(chỉ sự di chuyển hướng lên) lên",
+    "hv": "khởi lai",
+    "em": "⬆️",
+    "lesson": 3,
+    "explain": [
+      "Bổ ngữ xu hướng kép diễn tả động tác hướng lên trên hoặc bắt đầu một hành động."
+    ],
+    "usage": "Động từ + 起来: 站起来, 坐起来; cũng dùng để diễn tả bắt đầu một trạng thái.",
+    "collo": [
+      "站起来",
+      "坐久了",
+      "站起来休息"
+    ],
+    "ex_zh": "坐久了还可以站起来休息一会儿。",
+    "ex_py": "Zuò jiǔ le hái kěyǐ zhàn qilai xiūxi yíhuìr.",
+    "ex_vn": "Ngồi lâu còn có thể đứng dậy nghỉ một lát.",
+    "exList": [
+      {
+        "zh": "可以一边吃一边看，坐久了还可以站起来休息一会儿。",
+        "py": "Kěyǐ yìbiān chī yìbiān kàn, zuò jiǔ le hái kěyǐ zhàn qilai xiūxi yíhuìr.",
+        "vn": "Có thể vừa ăn vừa xem, ngồi lâu còn có thể đứng dậy nghỉ một lát."
+      },
+      {
+        "zh": "别帮他，让他自己站起来，他一定可以。",
+        "py": "Bié bāng tā, ràng tā zìjǐ zhàn qilai, tā yídìng kěyǐ.",
+        "vn": "Đừng giúp cậu bé, để cậu tự đứng dậy, cậu chắc chắn làm được."
+      },
+      {
+        "zh": "孩子笑了起来。",
+        "py": "Háizi xiàole qilai.",
+        "vn": "Đứa trẻ bật cười lên."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "起",
+        "p": "qǐ",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "走 ngoài → 己 trong",
+        "rad": "走 (tẩu – đi)",
+        "mean": "dậy, khởi đầu",
+        "tip": "走(đi, chạy) + 己(bản thân) → tự mình đứng DẬY, chuyển động lên = KHỞI ĐẦU.",
+        "cf": "己 (jǐ – \"bản thân\", không có bộ 走\")",
+        "w": "起来 / 一起 / 起床"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngồi lâu quá thì nên đứng dậy nghỉ một lát, như vậy mới không mỏi lưng.",
+        "answer": "坐久了就应该站起来休息一会儿，这样才不会腰疼。",
+        "answerPy": "Zuò jiǔ le jiù yīnggāi zhàn qilai xiūxi yíhuìr, zhèyàng cái bú huì yāo téng.",
+        "note": "V + 起来 — bổ ngữ xu hướng chỉ hướng lên.",
+        "pair": "……就应该……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng giúp cậu bé, để cậu tự đứng dậy thì mới học được cách tự lo.",
+        "answer": "别帮他，让他自己站起来，这样才能学会照顾自己。",
+        "answerPy": "Bié bāng tā, ràng tā zìjǐ zhàn qilai, zhèyàng cái néng xuéhuì zhàogù zìjǐ.",
+        "note": "自己 là từ bài 12; 照顾 là từ bài 5.",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "站起来",
+        "py": "zhàn qǐlai",
+        "vn": "đứng dậy"
+      },
+      {
+        "zh": "坐起来",
+        "py": "zuò qǐlai",
+        "vn": "ngồi dậy"
+      },
+      {
+        "zh": "拿起来",
+        "py": "ná qǐlai",
+        "vn": "cầm lên"
+      },
+      {
+        "zh": "早点儿起来",
+        "py": "zǎo diǎn ér qǐlai",
+        "vn": "dậy sớm chút"
+      },
+      {
+        "zh": "看起来很好",
+        "py": "kàn qǐlai hěn hǎo",
+        "vn": "trông rất tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 起来",
+        "m": "Bổ ngữ xu hướng — hướng lên: 站起来, 拿起来"
+      },
+      {
+        "s": "看起来 + Adj",
+        "m": "Nhìn thì có vẻ … — nghĩa mở rộng"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "应该",
+    "py": "yīnggāi",
+    "pos": "Động từ",
+    "vn": "nên, cần phải",
+    "hv": "ưng cai",
+    "em": "👍",
+    "lesson": 3,
+    "explain": [
+      "Diễn tả điều nên làm theo lẽ thường hoặc lời khuyên."
+    ],
+    "usage": "Động từ năng nguyện, đứng trước động từ khác: 应该 + V.",
+    "collo": [
+      "应该多出去",
+      "应该休息",
+      "不应该"
+    ],
+    "ex_zh": "你应该多出去走走。",
+    "ex_py": "Nǐ yīnggāi duō chūqu zǒuzou.",
+    "ex_vn": "Bạn nên đi ra ngoài nhiều hơn.",
+    "exList": [
+      {
+        "zh": "你应该多出去走走，这样你们的生活会更有意思。",
+        "py": "Nǐ yīnggāi duō chūqu zǒuzou, zhèyàng nǐmen de shēnghuó huì gèng yǒu yìsi.",
+        "vn": "Bạn nên đi ra ngoài nhiều hơn, như vậy cuộc sống của hai người sẽ thú vị hơn."
+      },
+      {
+        "zh": "你应该多休息，别太累了。",
+        "py": "Nǐ yīnggāi duō xiūxi, bié tài lèi le.",
+        "vn": "Bạn nên nghỉ ngơi nhiều hơn, đừng để quá mệt."
+      },
+      {
+        "zh": "我们应该经常锻炼身体。",
+        "py": "Wǒmen yīnggāi jīngcháng duànliàn shēntǐ.",
+        "vn": "Chúng ta nên thường xuyên rèn luyện sức khoẻ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "应",
+        "p": "yīng",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "广 ngoài → 应 trong (giản thể)",
+        "rad": "广 (nghiễm – mái nhà)",
+        "mean": "nên, đáp lại",
+        "tip": "广(mái nhà che chở) + phần dưới giản thể từ 應(đáp lại) → ĐÁP LẠI đúng đắn theo lẽ phải = NÊN.",
+        "cf": "店 (diàn – \"cửa hàng\", cũng có bộ 广\")",
+        "w": "应该 / 答应"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn nên uống nước thường xuyên, vì uống nhiều nước thì tốt cho sức khoẻ.",
+        "answer": "你应该经常喝水，因为多喝水对身体好。",
+        "answerPy": "Nǐ yīnggāi jīngcháng hē shuǐ, yīnwèi duō hē shuǐ duì shēntǐ hǎo.",
+        "note": "对 + N + 好 — tốt cho cái gì.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn nên nghỉ ngơi thì đừng làm việc quá nhiều.",
+        "answer": "如果你应该休息，就别工作太多。",
+        "answerPy": "Rúguǒ nǐ yīnggāi xiūxi, jiù bié gōngzuò tài duō.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "应该休息",
+        "py": "yīnggāi xiūxi",
+        "vn": "nên nghỉ ngơi"
+      },
+      {
+        "zh": "不应该",
+        "py": "bù yīnggāi",
+        "vn": "không nên"
+      },
+      {
+        "zh": "应该多出去",
+        "py": "yīnggāi duō chūqù",
+        "vn": "nên ra ngoài nhiều hơn"
+      },
+      {
+        "zh": "应该到了",
+        "py": "yīnggāi dào le",
+        "vn": "lẽ ra đã đến rồi"
+      },
+      {
+        "zh": "你应该知道",
+        "py": "nǐ yīnggāi zhīdào",
+        "vn": "bạn nên biết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 应该 + V",
+        "m": "Ai đó nên làm gì"
+      },
+      {
+        "s": "应该 vừa là \"nên\", vừa là \"chắc là\": 他应该到了"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "生活",
+    "py": "shēnghuó",
+    "pos": "Danh từ",
+    "vn": "đời sống, cuộc sống",
+    "hv": "sinh hoạt",
+    "em": "🌱",
+    "lesson": 3,
+    "explain": [
+      "Toàn bộ những hoạt động diễn ra trong cuộc đời một người."
+    ],
+    "usage": "Danh từ; cũng có thể làm động từ nghĩa \"sinh sống\".",
+    "collo": [
+      "生活很有意思",
+      "生活习惯",
+      "美好的生活"
+    ],
+    "ex_zh": "这样你们的生活会更有意思。",
+    "ex_py": "Zhèyàng nǐmen de shēnghuó huì gèng yǒu yìsi.",
+    "ex_vn": "Như vậy cuộc sống của hai người sẽ thú vị hơn.",
+    "exList": [
+      {
+        "zh": "你应该多出去走走，这样你们的生活会更有意思。",
+        "py": "Nǐ yīnggāi duō chūqu zǒuzou, zhèyàng nǐmen de shēnghuó huì gèng yǒu yìsi.",
+        "vn": "Bạn nên đi ra ngoài nhiều hơn, như vậy cuộc sống của hai người sẽ thú vị hơn."
+      },
+      {
+        "zh": "有他在，我的生活已经很有意思了。",
+        "py": "Yǒu tā zài, wǒ de shēnghuó yǐjīng hěn yǒu yìsi le.",
+        "vn": "Có anh ấy ở bên, cuộc sống của tôi đã rất thú vị rồi."
+      },
+      {
+        "zh": "我们的生活越来越好了。",
+        "py": "Wǒmen de shēnghuó yuè lái yuè hǎo le.",
+        "vn": "Cuộc sống của chúng tôi ngày càng tốt hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "活",
+        "p": "huó",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "氵 trái → 舌 phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "sống",
+        "tip": "氵(nước) + 舌(lưỡi) → có nước để lưỡi nếm, còn hơi thở = SỐNG; 生(sinh ra)+活(sống) = ĐỜI SỐNG.",
+        "cf": "话 (huà – \"lời nói\", có bộ 讠\")",
+        "w": "生活 / 活动"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cuộc sống ở thành phố ngày càng đắt đỏ hơn.",
+        "answer": "城市里的生活越来越贵了。",
+        "answerPy": "Chéngshì lǐ de shēnghuó yuè lái yuè guì le.",
+        "note": "越来越 diễn tả xu hướng tăng dần.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Có con cái ở bên, cuộc sống của bà ấy vừa bận rộn vừa vui vẻ.",
+        "answer": "有孩子在，她的生活又忙又快乐。",
+        "answerPy": "Yǒu háizi zài, tā de shēnghuó yòu máng yòu kuàilè.",
+        "note": "生活 làm danh từ: ……的生活.",
+        "pair": "又……又……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "生活很有意思",
+        "py": "shēnghuó hěn yǒuyìsi",
+        "vn": "cuộc sống rất thú vị"
+      },
+      {
+        "zh": "生活习惯",
+        "py": "shēnghuó xíguàn",
+        "vn": "thói quen sinh hoạt"
+      },
+      {
+        "zh": "美好的生活",
+        "py": "měi hǎo de shēnghuó",
+        "vn": "cuộc sống tốt đẹp"
+      },
+      {
+        "zh": "生活在北京",
+        "py": "shēnghuó zài Běijīng",
+        "vn": "sống ở Bắc Kinh"
+      },
+      {
+        "zh": "生活很快乐",
+        "py": "shēnghuó hěn kuàilè",
+        "vn": "cuộc sống vui vẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "生活 + 在 + nơi chốn (động từ)",
+        "m": "Sống ở đâu"
+      },
+      {
+        "s": "……的 + 生活 (danh từ)",
+        "m": "Cuộc sống thế nào"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "校长",
+    "py": "xiàozhǎng",
+    "pos": "Danh từ",
+    "vn": "hiệu trưởng",
+    "hv": "hiệu trưởng",
+    "em": "🏫",
+    "lesson": 4,
+    "explain": [
+      "Người đứng đầu quản lý một trường học."
+    ],
+    "usage": "Danh từ; thường dùng làm chức danh trước tên riêng: 方校长.",
+    "collo": [
+      "方校长",
+      "当校长",
+      "校长的办公室"
+    ],
+    "ex_zh": "现在他已经是校长了。",
+    "ex_py": "Xiànzài tā yǐjīng shì xiàozhǎng le.",
+    "ex_vn": "Hiện giờ anh ấy đã là hiệu trưởng rồi.",
+    "exList": [
+      {
+        "zh": "十年过去了，现在他已经是校长了。",
+        "py": "Shí nián guòqu le, xiànzài tā yǐjīng shì xiàozhǎng le.",
+        "vn": "Mười năm đã trôi qua, giờ anh ấy đã là hiệu trưởng rồi."
+      },
+      {
+        "zh": "方校长的办公室过去在四层。",
+        "py": "Fāng xiàozhǎng de bàngōngshì guòqù zài sì céng.",
+        "vn": "Trước đây văn phòng hiệu trưởng Phương ở tầng bốn."
+      },
+      {
+        "zh": "校长今天有一个重要的会议。",
+        "py": "Xiàozhǎng jīntiān yǒu yí ge zhòngyào de huìyì.",
+        "vn": "Hôm nay hiệu trưởng có một cuộc họp quan trọng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "校",
+        "p": "xiào",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "木 trái → 交 phải",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "trường học",
+        "tip": "木(gỗ, xây dựng) + 交(giao lưu, kết bạn) → nơi bằng gỗ để mọi người GIAO LƯU, học tập = TRƯỜNG HỌC.",
+        "cf": "较 (jiào – \"so sánh\", có bộ 车\")",
+        "w": "校长 / 学校"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mai hiệu trưởng có một cuộc họp phụ huynh quan trọng, nên hôm nay phải chuẩn bị trước.",
+        "answer": "校长明天有一个重要的家长会议，所以今天要先准备好。",
+        "answerPy": "Xiàozhǎng míngtiān yǒu yí ge zhòngyào de jiāzhǎng huìyì, suǒyǐ jīntiān yào xiān zhǔnbèi hǎo.",
+        "note": "会议 là từ bài 11, 重要 là từ bài 8.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy anh ấy đã là hiệu trưởng rồi nhưng vẫn rất bận.",
+        "answer": "虽然他已经是校长了，但是他还是很忙。",
+        "answerPy": "Suīrán tā yǐjīng shì xiàozhǎng le, dànshì tā háishi hěn máng.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "方校长",
+        "py": "fāng xiàozhǎng",
+        "vn": "hiệu trưởng Phương"
+      },
+      {
+        "zh": "当校长",
+        "py": "dāng xiàozhǎng",
+        "vn": "làm hiệu trưởng"
+      },
+      {
+        "zh": "校长的办公室",
+        "py": "xiàozhǎng de bàngōngshì",
+        "vn": "văn phòng hiệu trưởng"
+      },
+      {
+        "zh": "找校长",
+        "py": "zhǎo xiàozhǎng",
+        "vn": "tìm hiệu trưởng"
+      },
+      {
+        "zh": "校长说",
+        "py": "xiàozhǎng shuō",
+        "vn": "hiệu trưởng nói"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "họ + 校长",
+        "m": "Cách gọi: hiệu trưởng Phương…"
+      },
+      {
+        "s": "校 + 长",
+        "m": "Người đứng đầu (长) trường (校) — cùng kiểu 班长"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "坏",
+    "py": "huài",
+    "pos": "Tính từ",
+    "vn": "quá, quá mức",
+    "hv": "hoại",
+    "em": "😫",
+    "lesson": 4,
+    "explain": [
+      "Đứng sau tính từ/động từ làm bổ ngữ, diễn tả mức độ nghiêm trọng, quá mức."
+    ],
+    "usage": "Tính từ/bổ ngữ mức độ: [Adj/V] + 坏了, diễn tả mức độ cao (累坏了, 忙坏了).",
+    "collo": [
+      "累坏了",
+      "忙坏了",
+      "坏了"
+    ],
+    "ex_zh": "我真怕他累坏了。",
+    "ex_py": "Wǒ zhēn pà tā lèihuài le.",
+    "ex_vn": "Tôi thật sự sợ anh ấy mệt quá sức.",
+    "exList": [
+      {
+        "zh": "我真怕他累坏了。",
+        "py": "Wǒ zhēn pà tā lèihuài le.",
+        "vn": "Tôi thật sự sợ anh ấy mệt quá sức."
+      },
+      {
+        "zh": "电梯坏了，我是爬上来的。",
+        "py": "Diàntī huài le, wǒ shì pá shanglai de.",
+        "vn": "Thang máy hỏng rồi, tôi trèo lên đấy."
+      },
+      {
+        "zh": "今天太忙了，我都忙坏了。",
+        "py": "Jīntiān tài máng le, wǒ dōu mánghuài le.",
+        "vn": "Hôm nay bận quá, tôi bận đến mức mệt lử."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "坏",
+        "p": "huài",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "土 trái → 不 phải",
+        "rad": "土 (thổ – đất)",
+        "mean": "hỏng, quá mức",
+        "tip": "土(đất) + 不(phủ định) → đất KHÔNG còn nguyên vẹn = HỎNG, mở rộng thành bổ ngữ mức độ QUÁ MỨC.",
+        "cf": "环 (huán – \"vòng\", có bộ 王\")",
+        "w": "累坏了 / 坏了 / 破坏"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tivi hỏng rồi, nên chúng tôi sang nhà hàng xóm xem.",
+        "answer": "因为电视坏了，所以我们是去邻居家看的。",
+        "answerPy": "Yīnwèi diànshì huài le, suǒyǐ wǒmen shì qù línjū jiā kàn de.",
+        "note": "是……的 — nhấn nơi chốn của việc đã xảy ra.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thật sự sợ anh ấy mệt quá sức nên bảo anh ấy nghỉ ngơi nhiều hơn.",
+        "answer": "我真怕他累坏了，所以让他多休息。",
+        "answerPy": "Wǒ zhēn pà tā lèihuài le, suǒyǐ ràng tā duō xiūxi.",
+        "note": "所以 nêu kết quả từ nguyên nhân phía trước.",
+        "pair": "……，所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "累坏了",
+        "py": "lèi huài le",
+        "vn": "mệt lả"
+      },
+      {
+        "zh": "忙坏了",
+        "py": "máng huài le",
+        "vn": "bận tối mắt"
+      },
+      {
+        "zh": "电视坏了",
+        "py": "diànshì huài le",
+        "vn": "tivi hỏng rồi"
+      },
+      {
+        "zh": "饿坏了",
+        "py": "è huài le",
+        "vn": "đói lả"
+      },
+      {
+        "zh": "坏习惯",
+        "py": "huài xíguàn",
+        "vn": "thói quen xấu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 坏了",
+        "m": "Đến mức … quá: 累坏了, 饿坏了"
+      },
+      {
+        "s": "N + 坏了",
+        "m": "Cái gì đó hỏng rồi: 电视坏了"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "经常",
+    "py": "jīngcháng",
+    "pos": "Phó từ",
+    "vn": "thường xuyên",
+    "hv": "kinh thường",
+    "em": "🔁",
+    "lesson": 4,
+    "explain": [
+      "Diễn tả tần suất cao, việc xảy ra nhiều lần, đều đặn."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 经常 + V.",
+    "collo": [
+      "经常来",
+      "经常锻炼",
+      "经常在一起"
+    ],
+    "ex_zh": "可以经常和我还有孩子在一起。",
+    "ex_py": "Kěyǐ jīngcháng hé wǒ hái yǒu háizi zài yìqǐ.",
+    "ex_vn": "Có thể thường xuyên ở bên tôi và các con.",
+    "exList": [
+      {
+        "zh": "希望他能少一些会议，多一些休息，可以经常和我还有孩子在一起。",
+        "py": "Xīwàng tā néng shǎo yìxiē huìyì, duō yìxiē xiūxi, kěyǐ jīngcháng hé wǒ hái yǒu háizi zài yìqǐ.",
+        "vn": "Mong anh ấy có thể họp ít lại, nghỉ ngơi nhiều hơn, có thể thường xuyên ở bên tôi và các con."
+      },
+      {
+        "zh": "我们应该经常锻炼身体。",
+        "py": "Wǒmen yīnggāi jīngcháng duànliàn shēntǐ.",
+        "vn": "Chúng ta nên thường xuyên rèn luyện sức khoẻ."
+      },
+      {
+        "zh": "他经常一个人去咖啡店看书。",
+        "py": "Tā jīngcháng yí ge rén qù kāfēidiàn kàn shū.",
+        "vn": "Anh ấy thường xuyên một mình đến quán cà phê đọc sách."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "经",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟 trái → 圣 phải (giản thể)",
+        "rad": "纟 (mịch – tơ lụa)",
+        "mean": "trải qua, thường xuyên",
+        "tip": "纟(sợi tơ dệt) + phần phải (giản thể từ 巠, sợi dọc trong khung dệt) → sợi dọc XUYÊN SUỐT tấm vải = THƯỜNG XUYÊN, TRẢI QUA.",
+        "cf": "轻 (qīng – \"nhẹ\", có bộ 车\")",
+        "w": "经常 / 已经 / 经理"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy thường một mình ra công viên chạy bộ, vì chạy buổi sáng dễ chịu nhất.",
+        "answer": "她经常一个人去公园跑步，因为早上跑步最舒服。",
+        "answerPy": "Tā jīngcháng yí ge rén qù gōngyuán pǎobù, yīnwèi zǎoshang pǎobù zuì shūfu.",
+        "note": "公园 là từ bài 6, 舒服 là từ bài 3.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi mong anh ấy có thể thường ở bên tôi, chứ không phải chỉ gặp vào cuối tuần.",
+        "answer": "我希望他能经常和我在一起，而不是只有周末才见面。",
+        "answerPy": "Wǒ xīwàng tā néng jīngcháng hé wǒ zài yìqǐ, ér bú shì zhǐyǒu zhōumò cái jiànmiàn.",
+        "note": "周末 là từ bài 1, 见面 là từ bài 8.",
+        "pair": "不是……而是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "经常来",
+        "py": "jīngcháng lái",
+        "vn": "thường đến"
+      },
+      {
+        "zh": "经常锻炼",
+        "py": "jīngcháng duànliàn",
+        "vn": "thường tập thể dục"
+      },
+      {
+        "zh": "经常在一起",
+        "py": "jīngcháng zài yìqǐ",
+        "vn": "thường ở bên nhau"
+      },
+      {
+        "zh": "经常迟到",
+        "py": "jīngcháng chídào",
+        "vn": "hay đến muộn"
+      },
+      {
+        "zh": "不经常",
+        "py": "bù jīngcháng",
+        "vn": "không thường xuyên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 经常 + V",
+        "m": "Ai đó thường xuyên làm gì"
+      },
+      {
+        "s": "经常 ≈ 总是 (bài 4)",
+        "m": "总是 mạnh hơn: không lúc nào không"
+      }
+    ]
+  }
 ];
 
 const wuData = [

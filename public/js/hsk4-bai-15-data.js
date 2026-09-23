@@ -379,7 +379,7 @@ var vocabData = [
       {
         "zh": "放寒假",
         "py": "fàng hánjià",
-        "vn": "nghỉ đông"
+        "vn": "bắt đầu nghỉ đông"
       },
       {
         "zh": "寒假去旅行",
@@ -399,7 +399,7 @@ var vocabData = [
       {
         "zh": "过寒假",
         "py": "guo hánjià",
-        "vn": "nghỉ đông"
+        "vn": "trải qua kỳ nghỉ đông"
       }
     ],
     "patterns": [

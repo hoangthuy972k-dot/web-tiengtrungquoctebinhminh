@@ -3,619 +3,3059 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'加油站',py:'jiāyóuzhàn',pos:'Danh từ',vn:'trạm xăng dầu', hv: 'gia du trạm',em:'⛽',lesson:1,
-   explain:['Nơi đổ xăng. 加油 = đổ xăng / cố lên; 站 = trạm (网站 Bài 18).'],
-   usage:'去加油站, 路上有加油站吗, 在加油站抽烟.',
-   collo:['去机场的路上有加油站吗','在加油站抽烟很危险','找加油站'],
-   ex_zh:'该加油了，去机场的路上有加油站吗？',ex_py:'Gāi jiā yóu le, qù jīchǎng de lùshang yǒu jiāyóuzhàn ma?',ex_vn:'Nên đổ xăng rồi, trên đường ra sân bay có trạm xăng không?',
-   exList:[
-     {zh:'该加油了，去机场的路上有加油站吗？',py:'Gāi jiā yóu le, qù jīchǎng de lùshang yǒu jiāyóuzhàn ma?',vn:'Nên đổ xăng rồi, trên đường ra sân bay có trạm xăng không?'},
-     {zh:'我记得过了长江大桥往右一拐就有一个，大概有四五公里远。',py:'Wǒ jìde guòle Chángjiāng Dàqiáo wǎng yòu yì guǎi jiù yǒu yí ge, dàgài yǒu sì-wǔ gōnglǐ yuǎn.',vn:'Tôi nhớ qua cầu Trường Giang rẽ phải là có một trạm, khoảng bốn năm km.'},
-     {zh:'在加油站这样的地方抽烟非常危险，因此很多地方都禁止抽烟。',py:'Zài jiāyóuzhàn zhèyàng de dìfang chōu yān fēicháng wēixiǎn, yīncǐ hěn duō dìfang dōu jìnzhǐ chōu yān.',vn:'Hút thuốc ở nơi như cây xăng rất nguy hiểm, vì vậy nhiều nơi cấm hút thuốc.'},
-   ],
-   hanzi:[
-     {c:'油',p:'yóu',type:'左右结构 · Trái-phải',st:8,ord:'氵 trái → 由 phải',rad:'氵 (thủy)',mean:'dầu',
-      tip:'Nước 氵 + 由 → chất lỏng → DẦU. 加油 = thêm dầu/cố lên; 油钱 (Bài 14); 邮 (Bài 18) cũng có 由.',
-      cf:'邮 (yóu – bưu)',w:'加油站 / 加油 / 油'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nên đổ xăng rồi, trên đường ra sân bay có trạm xăng không?',answer:'该加油了，去机场的路上有加油站吗？',answerPy:'Gāi jiā yóu le, qù jīchǎng de lùshang yǒu jiāyóuzhàn ma?',
-      note:'该……了 (Bài 7).'},
-   ]},
-
-  {n:2,zh:'航班',py:'hángbān',pos:'Danh từ',vn:'chuyến bay', hv: 'hàng ban',em:'✈️',lesson:1,
-   explain:['Chuyến bay theo lịch. 航班号, 几点的航班, 航班推迟了.'],
-   usage:'几点的航班, 航班推迟, 改签航班.',
-   collo:['你去北京的航班是几点的','航班推迟了一个小时','改签到后天的同一航班'],
-   ex_zh:'你去北京的航班是几点的？时间来得及吗？',ex_py:'Nǐ qù Běijīng de hángbān shì jǐ diǎn de? Shíjiān láidejí ma?',ex_vn:'Chuyến bay đi Bắc Kinh của bạn mấy giờ? Thời gian có kịp không?',
-   exList:[
-     {zh:'你去北京的航班是几点的？时间来得及吗？',py:'Nǐ qù Běijīng de hángbān shì jǐ diǎn de? Shíjiān láidejí ma?',vn:'Chuyến bay đi Bắc Kinh của bạn mấy giờ? Thời gian có kịp không?'},
-     {zh:'航班本来是十点的，后来机场网站上通知推迟了一个小时。',py:'Hángbān běnlái shì shí diǎn de, hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí.',vn:'Chuyến bay vốn 10 giờ, sau đó trang web sân bay thông báo hoãn một tiếng.'},
-     {zh:'乘客，您好！我们很抱歉地通知您，由于天气原因，您乘坐的CA1864航班推迟起飞。',py:'Chéngkè, nín hǎo! Wǒmen hěn bàoqiàn de tōngzhī nín, yóuyú tiānqì yuányīn, nín chéngzuò de CA1864 hángbān tuīchí qǐfēi.',vn:'Kính thưa hành khách! Chúng tôi rất tiếc thông báo, do thời tiết, chuyến bay CA1864 của quý khách hoãn cất cánh.'},
-   ],
-   hanzi:[
-     {c:'航',p:'háng',type:'左右结构 · Trái-phải',st:10,ord:'舟 trái → 亢 phải',rad:'舟 (chu)',mean:'đi thuyền, bay',
-      tip:'Thuyền 舟 + 亢 → đi thuyền → mở rộng: HÀNG không. 航班 = chuyến bay; 航空 = hàng không.',
-      cf:'船 (chuán – thuyền)',w:'航班 / 航空 / 航空公司'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chuyến bay vốn 10 giờ, sau đó trang web sân bay thông báo hoãn một tiếng.',answer:'航班本来是十点的，后来机场网站上通知推迟了一个小时。',answerPy:'Hángbān běnlái shì shí diǎn de, hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí.',
-      note:'本来 (Bài 10), 网站 (Bài 18), 通知 (Bài 4).'},
-   ]},
-
-  {n:3,zh:'推迟',py:'tuīchí',pos:'Động từ',vn:'hoãn lại', hv: 'thôi trì',em:'⏳',lesson:1,
-   explain:['Lùi thời gian. 推 (Bài 16) + 迟. 推迟一个小时, 推迟起飞, 推迟到下周.'],
-   usage:'推迟了一个小时, 推迟起飞, 推迟到……',
-   collo:['通知推迟了一个小时','推迟起飞','出国的时间推迟了'],
-   ex_zh:'后来机场网站上通知推迟了一个小时，所以九点半以前到就应该没问题。',ex_py:'Hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí, suǒyǐ jiǔ diǎn bàn yǐqián dào jiù yīnggāi méi wèntí.',ex_vn:'Sau đó trang web sân bay thông báo hoãn một tiếng, nên đến trước 9 rưỡi là không vấn đề.',
-   exList:[
-     {zh:'后来机场网站上通知推迟了一个小时，所以九点半以前到就应该没问题。',py:'Hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí, suǒyǐ jiǔ diǎn bàn yǐqián dào jiù yīnggāi méi wèntí.',vn:'Sau đó trang web sân bay thông báo hoãn một tiếng, nên đến trước 9 rưỡi là không vấn đề.'},
-     {zh:'A：小高，听说你出国的时间推迟了？B：是的，我的签证还没办好，大概得10月底才能走。',py:'A: Xiǎo Gāo, tīngshuō nǐ chū guó de shíjiān tuīchí le? B: Shì de, wǒ de qiānzhèng hái méi bànhǎo, dàgài děi shí yuè dǐ cái néng zǒu.',vn:'A: Tiểu Cao, nghe nói thời gian ra nước ngoài của bạn hoãn rồi? B: Đúng, visa chưa xong, đại khái cuối tháng 10 mới đi được.'},
-     {zh:'刚才听广播说明天可能会下大雨，足球比赛恐怕要推迟了。',py:'Gāngcái tīng guǎngbō shuō míngtiān kěnéng huì xià dà yǔ, zúqiú bǐsài kǒngpà yào tuīchí le.',vn:'Vừa nghe đài nói mai có thể mưa to, trận bóng e là phải hoãn.'},
-   ],
-   hanzi:[
-     {c:'迟',p:'chí',type:'半包围结构 · Nửa bao quanh',st:7,ord:'尺 trong → 辶 bao',rad:'辶 (sước)',mean:'muộn',
-      tip:'Đi 辶 + 尺 → đi chậm → MUỘN, TRỄ. 推迟 = đẩy lùi; 迟到 = đến muộn.',
-      cf:'尺 (chǐ – thước)',w:'推迟 / 迟到 / 迟'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Visa tôi chưa xong, đại khái cuối tháng 10 mới đi được.',answer:'我的签证还没办好，大概得10月底才能走。',answerPy:'Wǒ de qiānzhèng hái méi bànhǎo, dàgài děi shí yuè dǐ cái néng zǒu.',
-      note:'签证 (Bài 16), 大概 (Bài 13), 月底 (Bài 11), 才 (Bài 3).'},
-   ]},
-
-  {n:4,zh:'高速公路',py:'gāosù gōnglù',pos:'Danh từ',vn:'đường cao tốc', hv: 'cao tốc công lộ',em:'🛣️',lesson:1,
-   explain:['Đường tốc độ cao. 高速 = tốc độ cao (速度 Bài 14); 公路 = đường bộ. 上高速公路, 走高速公路.'],
-   usage:'上高速公路, 走高速公路, 高速公路上.',
-   collo:['往西走五百米就能上高速公路','走高速公路大约半个小时','高速公路上不能停车'],
-   ex_zh:'一会儿加完油，往西走五百米就能上高速公路。走高速公路大约半个小时就到了。',ex_py:'Yíhuìr jiāwán yóu, wǎng xī zǒu wǔbǎi mǐ jiù néng shàng gāosù gōnglù. Zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.',ex_vn:'Lát đổ xăng xong, đi về phía tây 500 mét là lên được cao tốc. Đi cao tốc khoảng nửa tiếng là đến.',
-   exList:[
-     {zh:'一会儿加完油，往西走五百米就能上高速公路。走高速公路大约半个小时就到了。',py:'Yíhuìr jiāwán yóu, wǎng xī zǒu wǔbǎi mǐ jiù néng shàng gāosù gōnglù. Zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.',vn:'Lát đổ xăng xong, đi về phía tây 500 mét là lên được cao tốc. Đi cao tốc khoảng nửa tiếng là đến.'},
-     {zh:'高速公路上汽车的速度不能超过每小时120公里。',py:'Gāosù gōnglù shang qìchē de sùdù bù néng chāoguò měi xiǎoshí yìbǎi èrshí gōnglǐ.',vn:'Trên cao tốc tốc độ ô tô không được vượt quá 120 km/giờ.'},
-     {zh:'现在高速公路越来越多，开车去外地旅行方便多了。',py:'Xiànzài gāosù gōnglù yuè lái yuè duō, kāi chē qù wàidì lǚxíng fāngbiàn duō le.',vn:'Giờ cao tốc ngày càng nhiều, lái xe đi du lịch nơi khác tiện hơn nhiều.'},
-   ],
-   hanzi:[
-     {c:'路',p:'lù',type:'左右结构 · Trái-phải',st:13,ord:'足 trái → 各 phải',rad:'足 (túc)',mean:'đường',
-      tip:'Chân 足 + 各 → nơi chân đi → ĐƯỜNG. 公路 = đường công cộng; 路口 (Bài 2); 迷路 (Bài 18); 马路 (Bài 19).',
-      cf:'各 (gè – mỗi)',w:'高速公路 / 路口 / 迷路 / 马路'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đi về phía tây 500 mét là lên được cao tốc. Đi cao tốc khoảng nửa tiếng là đến.',answer:'往西走五百米就能上高速公路。走高速公路大约半个小时就到了。',answerPy:'Wǎng xī zǒu wǔbǎi mǐ jiù néng shàng gāosù gōnglù. Zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.',
-      note:'往 (Bài 2), 大约 (Bài 13), 米 (Bài 2).'},
-   ]},
-
-  {n:5,zh:'登机牌',py:'dēngjīpái',pos:'Danh từ',vn:'thẻ lên máy bay', hv: 'đăng cơ bài',em:'🎫',lesson:1,
-   explain:['Boarding pass. 登机 = lên máy bay; 牌 = thẻ, biển. 换登机牌 = làm thủ tục lấy thẻ.'],
-   usage:'换登机牌, 拿着登机牌, 登机牌上.',
-   collo:['进去换登机牌','拿好登机牌','登机牌上的座位号'],
-   ex_zh:'一会儿我自己进去换登机牌，你就不用送我了。',ex_py:'Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le.',ex_vn:'Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn tôi nữa.',
-   exList:[
-     {zh:'一会儿我自己进去换登机牌，你就不用送我了，等我到了首都机场再给你发短信。',py:'Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le, děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.',vn:'Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn, đợi tôi đến sân bay Thủ Đô sẽ nhắn tin.'},
-     {zh:'请拿好您的护照和登机牌，准备登机。',py:'Qǐng náhǎo nín de hùzhào hé dēngjīpái, zhǔnbèi dēng jī.',vn:'Xin cầm sẵn hộ chiếu và thẻ lên máy bay, chuẩn bị lên máy bay.'},
-     {zh:'登机牌上写着座位号，您可以按照号码找座位。',py:'Dēngjīpái shang xiězhe zuòwèi hào, nín kěyǐ ànzhào hàomǎ zhǎo zuòwèi.',vn:'Trên thẻ có ghi số ghế, ngài có thể theo số tìm chỗ ngồi.'},
-   ],
-   hanzi:[
-     {c:'登',p:'dēng',type:'上下结构 · Trên-dưới',st:12,ord:'癶 trên → 豆 dưới',rad:'癶 (bát)',mean:'leo lên',
-      tip:'Hai chân 癶 bước lên bệ 豆 → LEO LÊN, ĐĂNG. 登机 = lên máy bay; 登山 = leo núi; 登记 = đăng ký.',
-      cf:'凳 (dèng – ghế đẩu)',w:'登机牌 / 登山 / 登记'},
-     {c:'牌',p:'pái',type:'左右结构 · Trái-phải',st:12,ord:'片 trái → 卑 phải',rad:'片 (phiến)',mean:'thẻ, biển',
-      tip:'Miếng 片 + 卑 → tấm THẺ, BIỂN. 登机牌, 牌子 (nhãn hiệu), 名牌.',
-      cf:'片 (piàn – miếng)',w:'登机牌 / 牌子 / 名牌'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn tôi nữa.',answer:'一会儿我自己进去换登机牌，你就不用送我了。',answerPy:'Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le.',
-      note:'换 (Bài 5), 不用……了.'},
-   ]},
-
-  {n:6,zh:'首都',py:'shǒudū',pos:'Danh từ',vn:'thủ đô', hv: 'thủ đô',em:'🏛️',lesson:1,
-   explain:['Thành phố chính của một nước. 首都机场 = sân bay Thủ Đô (Bắc Kinh). 首 = đầu (首先 Bài 10).'],
-   usage:'首都机场, 中国的首都, 首都北京.',
-   collo:['首都机场','中国的首都是北京','越南的首都'],
-   ex_zh:'等我到了首都机场再给你发短信。',ex_py:'Děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.',ex_vn:'Đợi tôi đến sân bay Thủ Đô sẽ nhắn tin cho bạn.',
-   exList:[
-     {zh:'等我到了首都机场再给你发短信。',py:'Děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.',vn:'Đợi tôi đến sân bay Thủ Đô sẽ nhắn tin cho bạn.'},
-     {zh:'北京是中国的首都，也是一座有着几千年历史的文化名城。',py:'Běijīng shì Zhōngguó de shǒudū, yě shì yí zuò yǒuzhe jǐqiān nián lìshǐ de wénhuà míngchéng.',vn:'Bắc Kinh là thủ đô Trung Quốc, cũng là thành phố văn hóa nổi tiếng có lịch sử mấy nghìn năm.'},
-     {zh:'河内是越南的首都，有很多有名的小吃。',py:'Hénèi shì Yuènán de shǒudū, yǒu hěn duō yǒumíng de xiǎochī.',vn:'Hà Nội là thủ đô Việt Nam, có nhiều món ăn vặt nổi tiếng.'},
-   ],
-   hanzi:[
-     {c:'都',p:'dū',type:'左右结构 · Trái-phải',st:10,ord:'者 trái → 阝 phải',rad:'阝 (ấp)',mean:'đô thị',
-      tip:'者 + 阝(ấp, thành) → thành lớn → ĐÔ (dū). Đọc dōu = đều (phó từ). 首都 = thủ đô.',
-      cf:'者 (zhě – người)',w:'首都 / 都市 / 都 (dōu)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bắc Kinh là thủ đô Trung Quốc, cũng là thành phố văn hóa nổi tiếng có lịch sử mấy nghìn năm.',answer:'北京是中国的首都，也是一座有着几千年历史的文化名城。',answerPy:'Běijīng shì Zhōngguó de shǒudū, yě shì yí zuò yǒuzhe jǐqiān nián lìshǐ de wénhuà míngchéng.',
-      note:'座 (Bài 18), 着 (Bài 2).'},
-   ]},
-
-  {n:7,zh:'旅行',py:'lǚxíng',pos:'Động từ',vn:'du lịch', hv: 'lữ hành',em:'🧳',lesson:2,
-   explain:['Đi chơi xa. So sánh 旅游 (Bài 1): 旅行 nhấn mạnh hành trình, cũng làm danh từ (一次旅行).'],
-   usage:'去旅行, 旅行方式, 一次愉快的旅行.',
-   collo:['总是说想去旅行','旅行中有任何事','一次愉快的旅行'],
-   ex_zh:'平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。',ex_py:'Píngshí nǚ\'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.',ex_vn:'Bình thường con gái nhiều bài học, luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật.',
-   exList:[
-     {zh:'平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。',py:'Píngshí nǚ\'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.',vn:'Bình thường con gái nhiều bài học, luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật.'},
-     {zh:'一个人有时间一定要去旅行，旅行不仅能丰富一个人的经历，而且是很好的减压方法。',py:'Yí ge rén yǒu shíjiān yídìng yào qù lǚxíng, lǚxíng bùjǐn néng fēngfù yí ge rén de jīnglì, érqiě shì hěn hǎo de jiǎnyā fāngfǎ.',vn:'Có thời gian nhất định phải đi du lịch, du lịch không chỉ làm phong phú trải nghiệm mà còn là cách giảm áp lực tốt.'},
-     {zh:'欢迎大家来到美丽的海南，旅行中有任何事您都可以找我商量。',py:'Huānyíng dàjiā láidào měilì de Hǎinán, lǚxíng zhōng yǒu rènhé shì nín dōu kěyǐ zhǎo wǒ shāngliang.',vn:'Hoan nghênh đến Hải Nam xinh đẹp, trong chuyến đi có việc gì đều có thể tìm tôi bàn bạc.'},
-   ],
-   hanzi:[
-     {c:'旅',p:'lǚ',type:'左右结构 · Trái-phải',st:10,ord:'方 trái → 𠂉氏 phải',rad:'方 (phương)',mean:'lữ hành',
-      tip:'Cờ 方 + đoàn người → đoàn đi xa → LỮ. 旅行, 旅游 (Bài 1), 旅馆.',
-      cf:'族 (zú – tộc, cùng bộ)',w:'旅行 / 旅游 / 旅馆'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Du lịch không chỉ làm phong phú trải nghiệm của một người mà còn là cách giảm áp lực tốt.',answer:'旅行不仅能丰富一个人的经历，而且是很好的减压方法。',answerPy:'Lǚxíng bùjǐn néng fēngfù yí ge rén de jīnglì, érqiě shì hěn hǎo de jiǎnyā fāngfǎ.',
-      note:'不仅……而且 (Bài 6), 丰富 (Bài 8), 经历 (Bài 9), 压力 (Bài 5).'},
-   ]},
-
-  {n:8,zh:'怪',py:'guài',pos:'Phó từ',vn:'rất, vô cùng', hv: 'quái',em:'❗',lesson:2,
-   explain:['Phó từ khẩu ngữ: 怪 + tính từ + 的 = rất, khá (怪可怜的, 怪不好意思的). Cũng là tính từ "kỳ lạ" (奇怪 Bài 5) và động từ "trách" (怪我).'],
-   usage:'怪可怜的, 怪不好意思的, 怪冷的.',
-   collo:['怪可怜的','怪不好意思的','怪累的'],
-   ex_zh:'总是说想去旅行，但是没时间，怪可怜的。',ex_py:'Zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.',ex_vn:'Luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật.',
-   exList:[
-     {zh:'总是说想去旅行，但是没时间，怪可怜的。',py:'Zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.',vn:'Luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật.'},
-     {zh:'让你专门跑一趟，怪不好意思的。',py:'Ràng nǐ zhuānmén pǎo yí tàng, guài bù hǎoyìsi de.',vn:'Để bạn phải chạy một chuyến, thật ngại quá.'},
-     {zh:'这件事不能怪他，是我没说清楚。',py:'Zhè jiàn shì bù néng guài tā, shì wǒ méi shuō qīngchu.',vn:'Chuyện này không thể trách anh ấy, là tôi nói không rõ.'},
-   ],
-   hanzi:[
-     {c:'怪',p:'guài',type:'左右结构 · Trái-phải',st:8,ord:'忄 trái → 圣 phải',rad:'忄 (tâm)',mean:'lạ; trách',
-      tip:'Tâm 忄 + 圣 → thấy trong lòng LẠ → KỲ QUÁI (奇怪 Bài 5); mở rộng: TRÁCH (怪我); phó từ khẩu ngữ: RẤT (怪……的).',
-      cf:'圣 (shèng – thánh)',w:'怪 / 奇怪 / 怪不得 / 怪……的'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Để bạn phải chạy một chuyến, thật ngại quá.',answer:'让你专门跑一趟，怪不好意思的。',answerPy:'Ràng nǐ zhuānmén pǎo yí tàng, guài bù hǎoyìsi de.',
-      note:'专门 (Bài 9), 趟 (Bài 17), 怪……的.'},
-   ]},
-
-  {n:9,zh:'可怜',py:'kělián',pos:'Tính từ',vn:'đáng thương, tội nghiệp', hv: 'khả liên',em:'🥺',lesson:2,
-   explain:['Đáng thương. 怪可怜的, 可怜的小狗. Cũng là động từ: 可怜他 (thương hại).'],
-   usage:'怪可怜的, 可怜的小狗, 真可怜.',
-   collo:['怪可怜的','一只可怜的小狗','太可怜了'],
-   ex_zh:'但是没时间，怪可怜的。',ex_py:'Dànshì méi shíjiān, guài kělián de.',ex_vn:'Nhưng không có thời gian, tội nghiệp thật.',
-   exList:[
-     {zh:'平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。',py:'Píngshí nǚ\'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.',vn:'Con gái nhiều bài học, luôn nói muốn du lịch nhưng không có thời gian, tội nghiệp thật.'},
-     {zh:'我走在回家的路上，突然发现商店门口有一只可怜的小狗，我心里一软，就把它抱回了家。',py:'Wǒ zǒu zài huí jiā de lùshang, tūrán fāxiàn shāngdiàn ménkǒu yǒu yì zhī kělián de xiǎo gǒu, wǒ xīnli yì ruǎn, jiù bǎ tā bàohuíle jiā.',vn:'Tôi đi trên đường về nhà, đột nhiên thấy cửa hàng có một chú chó nhỏ đáng thương, tôi mềm lòng, ôm nó về nhà.'},
-     {zh:'他一个人在国外，生病了也没人照顾，真可怜。',py:'Tā yí ge rén zài guówài, shēng bìng le yě méi rén zhàogù, zhēn kělián.',vn:'Anh ấy một mình ở nước ngoài, ốm cũng không ai chăm, thật đáng thương.'},
-   ],
-   hanzi:[
-     {c:'怜',p:'lián',type:'左右结构 · Trái-phải',st:8,ord:'忄 trái → 令 phải',rad:'忄 (tâm)',mean:'thương',
-      tip:'Tâm 忄 + 令 → trong lòng THƯƠNG XÓT → LÂN. 可怜 = đáng thương.',
-      cf:'冷 (lěng – lạnh, cũng có 令)',w:'可怜 / 可怜的'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đột nhiên thấy cửa hàng có một chú chó nhỏ đáng thương, tôi mềm lòng, ôm nó về nhà.',answer:'突然发现商店门口有一只可怜的小狗，我心里一软，就把它抱回了家。',answerPy:'Tūrán fāxiàn shāngdiàn ménkǒu yǒu yì zhī kělián de xiǎo gǒu, wǒ xīnli yì ruǎn, jiù bǎ tā bàohuíle jiā.',
-      note:'突然 (Bài 8), 抱 (Bài 17), 把……回.'},
-   ]},
-
-  {n:10,zh:'对面',py:'duìmiàn',pos:'Danh từ',vn:'đối diện, trước mặt', hv: 'đối diện',em:'↔️',lesson:2,
-   explain:['Phía bên kia, trước mặt. 对面的饭店, 坐在对面, 马路对面.'],
-   usage:'对面的饭店, 马路对面, 坐在我对面.',
-   collo:['去对面的饭店','马路对面','对面那条街'],
-   ex_zh:'中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？',ex_py:'Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma?',ex_vn:'Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao?',
-   exList:[
-     {zh:'中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？',py:'Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma?',vn:'Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao?'},
-     {zh:'对面那条街上新开了一家理发店。',py:'Duìmiàn nà tiáo jiē shang xīn kāile yì jiā lǐfàdiàn.',vn:'Phố đối diện mới mở một tiệm cắt tóc.'},
-     {zh:'去西边的公共汽车应该在对面坐。',py:'Qù xībiān de gōnggòng qìchē yīnggāi zài duìmiàn zuò.',vn:'Xe buýt đi phía tây phải đón ở bên đối diện.'},
-   ],
-   hanzi:[
-     {c:'面',p:'miàn',type:'独体字 · Chữ đơn thể',st:9,ord:'一 → 丿 → 𠃌 → 目 …',rad:'面 (diện)',mean:'mặt',
-      tip:'Tượng hình khuôn MẶT. 对面 = mặt đối mặt; 方面 (Bài 5); 面包; 见面.',
-      cf:'而 (ér – mà)',w:'对面 / 方面 / 面包 / 见面'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Phố đối diện mới mở một tiệm cắt tóc.',answer:'对面那条街上新开了一家理发店。',answerPy:'Duìmiàn nà tiáo jiē shang xīn kāile yì jiā lǐfàdiàn.',
-      note:'理发 (Bài 19), lượng từ 条/家.'},
-   ]},
-
-  {n:11,zh:'烤鸭',py:'kǎoyā',pos:'Danh từ',vn:'vịt quay', hv: 'khảo áp',em:'🦆',lesson:2,
-   explain:['Món ăn nổi tiếng Bắc Kinh. 北京烤鸭, 吃烤鸭, 一只烤鸭.'],
-   usage:'吃烤鸭, 北京烤鸭, 一只烤鸭.',
-   collo:['去饭店吃烤鸭','北京烤鸭','烤鸭很有名'],
-   ex_zh:'中午我们不是要去对面的饭店吃烤鸭吗？',ex_py:'Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā ma?',ex_vn:'Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay sao?',
-   exList:[
-     {zh:'中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？',py:'Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma?',vn:'Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao?'},
-     {zh:'来北京一定要尝一尝北京烤鸭。',py:'Lái Běijīng yídìng yào cháng yi cháng Běijīng kǎoyā.',vn:'Đến Bắc Kinh nhất định phải nếm thử vịt quay Bắc Kinh.'},
-     {zh:'这家饭店的烤鸭很有名，每天都要排队。',py:'Zhè jiā fàndiàn de kǎoyā hěn yǒumíng, měi tiān dōu yào pái duì.',vn:'Vịt quay nhà hàng này rất nổi tiếng, ngày nào cũng phải xếp hàng.'},
-   ],
-   hanzi:[
-     {c:'烤',p:'kǎo',type:'左右结构 · Trái-phải',st:10,ord:'火 trái → 考 phải',rad:'火 (hỏa)',mean:'nướng',
-      tip:'Lửa 火 + 考 → NƯỚNG, QUAY. 烤鸭 = vịt quay; 烤肉 = thịt nướng; 考 (thi) không có 火.',
-      cf:'考 (kǎo – thi)',w:'烤鸭 / 烤肉 / 烤'},
-     {c:'鸭',p:'yā',type:'左右结构 · Trái-phải',st:10,ord:'甲 trái → 鸟 phải',rad:'鸟 (điểu)',mean:'vịt',
-      tip:'甲(biểu âm) + chim 鸟 → VỊT. 烤鸭, 鸭子.',
-      cf:'鸡 (jī – gà)',w:'烤鸭 / 鸭子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đến Bắc Kinh nhất định phải nếm thử vịt quay Bắc Kinh.',answer:'来北京一定要尝一尝北京烤鸭。',answerPy:'Lái Běijīng yídìng yào cháng yi cháng Běijīng kǎoyā.',
-      note:'尝 (Bài 7), động từ lặp 尝一尝.'},
-   ]},
-
-  {n:12,zh:'祝贺',py:'zhùhè',pos:'Động từ',vn:'chúc mừng', hv: 'chúc hạ',em:'🎉',lesson:2,
-   explain:['Chúc mừng thành công/việc vui. 祝贺你, 祝贺她考试合格. So sánh 祝 (chúc) + 贺 (mừng).'],
-   usage:'祝贺你, 祝贺她……, 表示祝贺.',
-   collo:['祝贺她考试成绩都合格','祝贺你们','向他表示祝贺'],
-   ex_zh:'祝贺她考试成绩都合格吗？',ex_py:'Zhùhè tā kǎoshì chéngjì dōu hégé ma?',ex_vn:'Chúc mừng con thi đạt hết sao?',
-   exList:[
-     {zh:'中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？那时候再告诉她，不是更好？',py:'Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma? Nà shíhou zài gàosu tā, bú shì gèng hǎo?',vn:'Trưa nay chẳng phải đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao? Lúc đó nói với con chẳng phải tốt hơn?'},
-     {zh:'A：这次活动非常成功，我们顺利完成了公司交给的任务。B：辛苦了，祝贺你们！来，干一杯！',py:'A: Zhè cì huódòng fēicháng chénggōng, wǒmen shùnlì wánchéngle gōngsī jiāo gěi de rènwu. B: Xīnkǔ le, zhùhè nǐmen! Lái, gān yì bēi!',vn:'A: Hoạt động lần này rất thành công, chúng tôi hoàn thành thuận lợi nhiệm vụ công ty giao. B: Vất vả rồi, chúc mừng các bạn! Nào, cạn ly!'},
-     {zh:'听说你考上研究生了，祝贺你！',py:'Tīngshuō nǐ kǎoshàng yánjiūshēng le, zhùhè nǐ!',vn:'Nghe nói bạn đỗ cao học rồi, chúc mừng bạn!'},
-   ],
-   hanzi:[
-     {c:'贺',p:'hè',type:'上下结构 · Trên-dưới',st:9,ord:'加 trên → 贝 dưới',rad:'贝 (bối)',mean:'mừng',
-      tip:'加(thêm) + 贝(tiền, quà) → mang quà đến → CHÚC MỪNG (hạ). 祝贺 = chúc hạ.',
-      cf:'加 (jiā – thêm)',w:'祝贺 / 贺卡'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vất vả rồi, chúc mừng các bạn! Nào, cạn ly!',answer:'辛苦了，祝贺你们！来，干一杯！',answerPy:'Xīnkǔ le, zhùhè nǐmen! Lái, gān yì bēi!',
-      note:'辛苦 (Bài 4), 干杯 (từ mới).'},
-   ]},
-
-  {n:13,zh:'合格',py:'hégé',pos:'Tính từ',vn:'đạt tiêu chuẩn, đạt yêu cầu', hv: 'hợp cách',em:'✅',lesson:2,
-   explain:['Đạt yêu cầu (thi, sản phẩm, con người). 考试合格, 合格的产品, 一个合格的现代人.'],
-   usage:'考试成绩合格, 合格的产品, 合格的现代人.',
-   collo:['考试成绩都合格','成绩都合格','做一个合格的现代人'],
-   ex_zh:'祝贺她考试成绩都合格。',ex_py:'Zhùhè tā kǎoshì chéngjì dōu hégé.',ex_vn:'Chúc mừng con thi đạt hết.',
-   exList:[
-     {zh:'祝贺她考试成绩都合格。',py:'Zhùhè tā kǎoshì chéngjì dōu hégé.',vn:'Chúc mừng con thi đạt hết.'},
-     {zh:'"活到老，学到老"。在现代社会中，我们必须坚持学习，努力获得新的知识，才能适应社会的发展速度，做一个合格的现代人。',py:'"Huó dào lǎo, xué dào lǎo". Zài xiàndài shèhuì zhōng, wǒmen bìxū jiānchí xuéxí, nǔlì huòdé xīn de zhīshi, cái néng shìyìng shèhuì de fāzhǎn sùdù, zuò yí ge hégé de xiàndài rén.',vn:'"Sống đến già, học đến già". Trong xã hội hiện đại, phải kiên trì học, nỗ lực có kiến thức mới, mới thích ứng tốc độ phát triển, làm một người hiện đại đạt chuẩn.'},
-     {zh:'只要他这次考试的成绩都合格，就可以进入高级班学习。',py:'Zhǐyào tā zhè cì kǎoshì de chéngjì dōu hégé, jiù kěyǐ jìnrù gāojí bān xuéxí.',vn:'Chỉ cần lần này thi đạt hết, là có thể vào lớp cao cấp học.'},
-   ],
-   hanzi:[
-     {c:'格',p:'gé',type:'左右结构 · Trái-phải',st:10,ord:'木 trái → 各 phải',rad:'木 (mộc)',mean:'cách, chuẩn',
-      tip:'Gỗ 木 + 各 → khung chuẩn → CÁCH. 合格 = hợp chuẩn; 性格 (Bài 8); 价格 (Bài 5); 表格 (Bài 16); 严格 (Bài 12).',
-      cf:'各 (gè – mỗi)',w:'合格 / 性格 / 价格 / 表格 / 严格'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần lần này thi đạt hết, là có thể vào lớp cao cấp học.',answer:'只要他这次考试的成绩都合格，就可以进入高级班学习。',answerPy:'Zhǐyào tā zhè cì kǎoshì de chéngjì dōu hégé, jiù kěyǐ jìnrù gāojí bān xuéxí.',
-      note:'只要……就 (Bài 8), 成绩 (Bài 2).'},
-   ]},
-
-  {n:14,zh:'干杯',py:'gān bēi',pos:'Động từ',vn:'cạn ly', hv: 'can bôi',em:'🥂',lesson:3,
-   explain:['Uống cạn để chúc mừng. Động từ ly hợp: 干一杯, 和……干杯. 干 (gān) = khô (Bài 17).'],
-   usage:'干杯, 干一杯, 和你干杯的那个人.',
-   collo:['和你干杯的那个人','来，干一杯','为……干杯'],
-   ex_zh:'这张照片上和你干杯的那个人是少数民族吗？她打扮得真漂亮。',ex_py:'Zhè zhāng zhàopiàn shang hé nǐ gān bēi de nàge rén shì shǎoshù mínzú ma? Tā dǎban de zhēn piàoliang.',ex_vn:'Người cạn ly với bạn trong ảnh này là dân tộc thiểu số à? Cô ấy trang điểm đẹp thật.',
-   exList:[
-     {zh:'这张照片上和你干杯的那个人是少数民族吗？她打扮得真漂亮。',py:'Zhè zhāng zhàopiàn shang hé nǐ gān bēi de nàge rén shì shǎoshù mínzú ma? Tā dǎban de zhēn piàoliang.',vn:'Người cạn ly với bạn trong ảnh này là dân tộc thiểu số à? Cô ấy trang điểm đẹp thật.'},
-     {zh:'辛苦了，祝贺你们！来，干一杯！',py:'Xīnkǔ le, zhùhè nǐmen! Lái, gān yì bēi!',vn:'Vất vả rồi, chúc mừng các bạn! Nào, cạn ly!'},
-     {zh:'来，为我们的友谊干杯！',py:'Lái, wèi wǒmen de yǒuyì gān bēi!',vn:'Nào, cạn ly vì tình bạn của chúng ta!'},
-   ],
-   hanzi:[
-     {c:'杯',p:'bēi',type:'左右结构 · Trái-phải',st:8,ord:'木 trái → 不 phải',rad:'木 (mộc)',mean:'cốc, ly',
-      tip:'Gỗ 木 + 不 → cái CỐC (xưa làm bằng gỗ). 干杯 = cạn ly; 杯子; 世界杯.',
-      cf:'不 (bù – không)',w:'干杯 / 杯子 / 一杯 / 世界杯'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nào, cạn ly vì tình bạn của chúng ta!',answer:'来，为我们的友谊干杯！',answerPy:'Lái, wèi wǒmen de yǒuyì gān bēi!',
-      note:'为 (Bài 4), 友谊 (Bài 11).'},
-   ]},
-
-  {n:15,zh:'民族',py:'mínzú',pos:'Danh từ',vn:'dân tộc', hv: 'dân tộc',em:'🎎',lesson:3,
-   explain:['Cộng đồng người có chung văn hóa. 少数民族 = dân tộc thiểu số; 56个民族; 汉族.'],
-   usage:'少数民族, 56个民族, 民族服装.',
-   collo:['少数民族','中国有56个民族','民族文化'],
-   ex_zh:'她是我们的导游，不是少数民族。',ex_py:'Tā shì wǒmen de dǎoyóu, bú shì shǎoshù mínzú.',ex_vn:'Cô ấy là hướng dẫn viên của chúng tôi, không phải dân tộc thiểu số.',
-   exList:[
-     {zh:'她是我们的导游，不是少数民族。一路上她给我们讲了很多有趣的笑话。',py:'Tā shì wǒmen de dǎoyóu, bú shì shǎoshù mínzú. Yí lù shang tā gěi wǒmen jiǎngle hěn duō yǒuqù de xiàohua.',vn:'Cô ấy là hướng dẫn viên, không phải dân tộc thiểu số. Dọc đường cô kể nhiều truyện cười thú vị.'},
-     {zh:'中国有56个民族，其中汉族人的数量最多，汉族以外的55个民族由于人数较少，人们把它们叫作"少数民族"。',py:'Zhōngguó yǒu wǔshíliù ge mínzú, qízhōng Hànzú rén de shùliàng zuì duō, Hànzú yǐwài de wǔshíwǔ ge mínzú yóuyú rénshù jiào shǎo, rénmen bǎ tāmen jiàozuò "shǎoshù mínzú".',vn:'Trung Quốc có 56 dân tộc, người Hán đông nhất, 55 dân tộc còn lại do số người ít nên gọi là "dân tộc thiểu số".'},
-     {zh:'每个民族都有自己的传统和文化。',py:'Měi ge mínzú dōu yǒu zìjǐ de chuántǒng hé wénhuà.',vn:'Mỗi dân tộc đều có truyền thống và văn hóa riêng.'},
-   ],
-   hanzi:[
-     {c:'族',p:'zú',type:'左右结构 · Trái-phải',st:11,ord:'方 trái → 𠂉矢 phải',rad:'方 (phương)',mean:'tộc',
-      tip:'Cờ 方 + tên 矢 → nhóm người cùng chiến đấu dưới một lá cờ → TỘC. 民族, 家族, 汉族.',
-      cf:'旅 (lǚ – lữ, cùng bộ)',w:'民族 / 少数民族 / 家族'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mỗi dân tộc đều có truyền thống và văn hóa riêng.',answer:'每个民族都有自己的传统和文化。',answerPy:'Měi ge mínzú dōu yǒu zìjǐ de chuántǒng hé wénhuà.',
-      note:'传统 (Bài 9).'},
-   ]},
-
-  {n:16,zh:'打扮',py:'dǎban',pos:'Động từ',vn:'trang điểm, ăn diện', hv: 'đả ban',em:'💄',lesson:3,
-   explain:['Ăn mặc, trang điểm. 打扮得真漂亮, 爱打扮. Cũng là danh từ: 这种打扮.'],
-   usage:'打扮得很漂亮, 爱打扮, 这种打扮.',
-   collo:['打扮得真漂亮','打扮一下','这种打扮不太合适'],
-   ex_zh:'她打扮得真漂亮。',ex_py:'Tā dǎban de zhēn piàoliang.',ex_vn:'Cô ấy trang điểm đẹp thật.',
-   exList:[
-     {zh:'这张照片上和你干杯的那个人是少数民族吗？她打扮得真漂亮。',py:'Zhè zhāng zhàopiàn shang hé nǐ gān bēi de nàge rén shì shǎoshù mínzú ma? Tā dǎban de zhēn piàoliang.',vn:'Người cạn ly với bạn trong ảnh là dân tộc thiểu số à? Cô ấy trang điểm đẹp thật.'},
-     {zh:'A：今晚我穿这条裙子怎么样？今年最流行的。B：很漂亮，不过我觉得这种打扮参加正式的舞会可能还是不太合适。',py:'A: Jīn wǎn wǒ chuān zhè tiáo qúnzi zěnmeyàng? Jīnnián zuì liúxíng de. B: Hěn piàoliang, búguò wǒ juéde zhè zhǒng dǎban cānjiā zhèngshì de wǔhuì kěnéng háishi bú tài héshì.',vn:'A: Tối nay tôi mặc váy này thế nào? Mốt nhất năm nay. B: Rất đẹp, nhưng tôi thấy kiểu ăn diện này dự vũ hội chính thức có lẽ chưa hợp.'},
-     {zh:'参加面试前，稍微打扮一下会给人留下好印象。',py:'Cānjiā miànshì qián, shāowēi dǎban yíxià huì gěi rén liúxià hǎo yìnxiàng.',vn:'Trước khi phỏng vấn, chỉnh trang một chút sẽ để lại ấn tượng tốt.'},
-   ],
-   hanzi:[
-     {c:'扮',p:'ban',type:'左右结构 · Trái-phải',st:7,ord:'扌 trái → 分 phải',rad:'扌 (thủ)',mean:'trang điểm',
-      tip:'Tay 扌 + 分 → tay sửa soạn → TRANG ĐIỂM, đóng vai. 打扮 = ăn diện.',
-      cf:'份 (fèn – phần)',w:'打扮 / 扮演'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Rất đẹp, nhưng tôi thấy kiểu ăn diện này dự vũ hội chính thức có lẽ chưa hợp.',answer:'很漂亮，不过我觉得这种打扮参加正式的舞会可能还是不太合适。',answerPy:'Hěn piàoliang, búguò wǒ juéde zhè zhǒng dǎban cānjiā zhèngshì de wǔhuì kěnéng háishi bú tài héshì.',
-      note:'正式 (Bài 6), 合适 (Bài 15), 流行 (Bài 5).'},
-   ]},
-
-  {n:17,zh:'笑话',py:'xiàohua',pos:'Danh từ',vn:'truyện cười', hv: 'tiếu thoại',em:'😂',lesson:3,
-   explain:['Chuyện gây cười. 讲笑话, 有趣的笑话, 一肚子的笑话. Cũng là động từ: 笑话别人 (chê cười).'],
-   usage:'讲笑话, 有趣的笑话, 别笑话我.',
-   collo:['讲了很多有趣的笑话','一肚子的笑话','别笑话我'],
-   ex_zh:'一路上她给我们讲了很多有趣的笑话。',ex_py:'Yí lù shang tā gěi wǒmen jiǎngle hěn duō yǒuqù de xiàohua.',ex_vn:'Dọc đường cô ấy kể cho chúng tôi nhiều truyện cười thú vị.',
-   exList:[
-     {zh:'一路上她给我们讲了很多有趣的笑话。',py:'Yí lù shang tā gěi wǒmen jiǎngle hěn duō yǒuqù de xiàohua.',vn:'Dọc đường cô ấy kể cho chúng tôi nhiều truyện cười thú vị.'},
-     {zh:'A：你这一肚子的笑话，都是从哪儿听来的？B：有个网站上有很多，看到有趣的我就记下来。',py:'A: Nǐ zhè yí dùzi de xiàohua, dōu shì cóng nǎr tīnglái de? B: Yǒu ge wǎngzhàn shang yǒu hěn duō, kàndào yǒuqù de wǒ jiù jì xiàlai.',vn:'A: Cả bụng truyện cười của bạn nghe từ đâu vậy? B: Có trang web có nhiều lắm, thấy hay tôi ghi lại.'},
-     {zh:'她讲着讲着自己就先笑了，而大家却不明白她到底为什么笑。',py:'Tā jiǎngzhe jiǎngzhe zìjǐ jiù xiān xiào le, ér dàjiā què bù míngbai tā dàodǐ wèishénme xiào.',vn:'Cô ấy kể một lúc thì tự cười trước, còn mọi người lại không hiểu rốt cuộc cô cười gì.'},
-   ],
-   hanzi:[
-     {c:'笑',p:'xiào',type:'上下结构 · Trên-dưới',st:10,ord:'⺮ trên → 夭 dưới',rad:'⺮ (trúc)',mean:'cười',
-      tip:'Trúc ⺮ + 夭 → cây trúc uốn cong như người cười → CƯỜI. 笑话 = truyện cười; 开玩笑 (Bài 5).',
-      cf:'夭 (yāo)',w:'笑话 / 开玩笑 / 笑'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cả bụng truyện cười của bạn nghe từ đâu vậy? — Có trang web có nhiều lắm, thấy hay tôi ghi lại.',answer:'你这一肚子的笑话，都是从哪儿听来的？——有个网站上有很多，看到有趣的我就记下来。',answerPy:'Nǐ zhè yí dùzi de xiàohua, dōu shì cóng nǎr tīnglái de? — Yǒu ge wǎngzhàn shang yǒu hěn duō, kàndào yǒuqù de wǒ jiù jì xiàlai.',
-      note:'肚子 (Bài 7), 网站 (Bài 18), 有趣 (Bài 13).'},
-   ]},
-
-  {n:18,zh:'存',py:'cún',pos:'Động từ',vn:'gửi', hv: 'tồn',em:'🏦',lesson:3,
-   explain:['Gửi (đồ, tiền) để giữ. 存包 = gửi túi; 存钱 = gửi tiền; 存在 = tồn tại.'],
-   usage:'存包, 存钱, 把行李存在……',
-   collo:['存包的钥匙','存钱','把包存在这里'],
-   ex_zh:'有一次我把存包的钥匙丢了，最后还是她帮我找到的。',ex_py:'Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.',ex_vn:'Có lần tôi làm mất chìa khóa tủ gửi đồ, cuối cùng vẫn là cô ấy giúp tìm được.',
-   exList:[
-     {zh:'有一次我把存包的钥匙丢了，最后还是她帮我找到的。',py:'Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.',vn:'Có lần tôi làm mất chìa khóa tủ gửi đồ, cuối cùng vẫn là cô ấy giúp tìm được.'},
-     {zh:'进超市前请先把包存在门口。',py:'Jìn chāoshì qián qǐng xiān bǎ bāo cún zài ménkǒu.',vn:'Trước khi vào siêu thị xin gửi túi ở cửa.'},
-     {zh:'他每个月都把一部分工资存进银行。',py:'Tā měi ge yuè dōu bǎ yí bùfen gōngzī cúnjìn yínháng.',vn:'Mỗi tháng anh ấy gửi một phần lương vào ngân hàng.'},
-   ],
-   hanzi:[
-     {c:'存',p:'cún',type:'半包围结构 · Nửa bao quanh',st:6,ord:'𠂇 → 丨 → 子',rad:'子 (tử)',mean:'gửi, tồn tại',
-      tip:'才 + 子 → giữ lại → TỒN, GỬI. 存包, 存钱, 存在, 保存.',
-      cf:'在 (zài – ở)',w:'存 / 存包 / 存钱 / 存在'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mỗi tháng anh ấy gửi một phần lương vào ngân hàng.',answer:'他每个月都把一部分工资存进银行。',answerPy:'Tā měi ge yuè dōu bǎ yí bùfen gōngzī cúnjìn yínháng.',
-      note:'部分 (Bài 13), 工资 (Bài 10), 把……进.'},
-   ]},
-
-  {n:19,zh:'钥匙',py:'yàoshi',pos:'Danh từ',vn:'chìa khóa', hv: 'thược thi',em:'🔑',lesson:3,
-   explain:['Dụng cụ mở khóa. 一把钥匙, 钥匙丢了, 房间的钥匙.'],
-   usage:'一把钥匙, 钥匙丢了, 存包的钥匙.',
-   collo:['存包的钥匙','钥匙丢了','找到钥匙'],
-   ex_zh:'我把存包的钥匙丢了。',ex_py:'Wǒ bǎ cún bāo de yàoshi diū le.',ex_vn:'Tôi làm mất chìa khóa tủ gửi đồ.',
-   exList:[
-     {zh:'有一次我把存包的钥匙丢了，最后还是她帮我找到的。这张照片就是找到钥匙后，我们一起照的。',py:'Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de. Zhè zhāng zhàopiàn jiù shì zhǎodào yàoshi hòu, wǒmen yìqǐ zhào de.',vn:'Có lần tôi mất chìa khóa tủ gửi đồ, cuối cùng cô ấy giúp tìm được. Tấm ảnh này chụp chung sau khi tìm được chìa.'},
-     {zh:'喂，你还在逛街吗？我的钥匙丢了，进不了门。',py:'Wèi, nǐ hái zài guàng jiē ma? Wǒ de yàoshi diū le, jìnbuliǎo mén.',vn:'Alô, em còn dạo phố à? Anh mất chìa khóa, không vào được nhà.'},
-     {zh:'钥匙可能掉到沙发底下了，你找找看。',py:'Yàoshi kěnéng diàodào shāfā dǐxia le, nǐ zhǎozhao kàn.',vn:'Chìa khóa có thể rơi dưới gầm sofa, bạn tìm thử.'},
-   ],
-   hanzi:[
-     {c:'钥',p:'yào',type:'左右结构 · Trái-phải',st:9,ord:'钅 trái → 月 phải',rad:'钅 (kim)',mean:'chìa khóa',
-      tip:'Kim loại 钅 + 月 → CHÌA KHÓA. 钥匙 luôn đi đôi.',
-      cf:'钢 (gāng – thép)',w:'钥匙'},
-     {c:'匙',p:'shi',type:'半包围结构 · Nửa bao quanh',st:11,ord:'是 → 匕',rad:'匕 (chủy)',mean:'thìa; chìa',
-      tip:'是 + 匕(thìa) → THÌA; trong 钥匙 đọc nhẹ shi = chìa khóa. 勺子 (Bài 12) cũng là thìa.',
-      cf:'是 (shì – là)',w:'钥匙 / 汤匙'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Có lần tôi làm mất chìa khóa tủ gửi đồ, cuối cùng vẫn là cô ấy giúp tìm được.',answer:'有一次我把存包的钥匙丢了，最后还是她帮我找到的。',answerPy:'Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.',
-      note:'丢 (Bài 14), 还是 (Bài 1), 把……了.'},
-   ]},
-
-  {n:20,zh:'究竟',py:'jiūjìng',pos:'Phó từ',vn:'rốt cuộc (nhấn mạnh trong câu hỏi)', hv: 'cứu cánh',em:'❓',lesson:3,
-   explain:['Nhấn mạnh truy vấn trong câu hỏi hoặc câu có đại từ nghi vấn (= 到底 Bài 16), thiên về văn viết. Chủ ngữ là đại từ nghi vấn → 究竟 đứng trước. Ngữ pháp trọng tâm: 究竟 vs 到底.'],
-   usage:'究竟哪个……？, 究竟是怎么回事, 究竟什么是……？',
-   collo:['究竟哪个季节去比较好','究竟是怎么回事','究竟从哪里来'],
-   ex_zh:'究竟哪个季节去丽江旅游比较好呢？',ex_py:'Jiūjìng nǎ ge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne?',ex_vn:'Rốt cuộc mùa nào đi Lệ Giang du lịch thì tốt hơn?',
-   exList:[
-     {zh:'明年我有机会也去那儿看看，到时把你的导游介绍给我吧。究竟哪个季节去丽江旅游比较好呢？',py:'Míngnián wǒ yǒu jīhuì yě qù nàr kànkan, dào shí bǎ nǐ de dǎoyóu jièshào gěi wǒ ba. Jiūjìng nǎ ge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne?',vn:'Năm sau có dịp tôi cũng đi xem, lúc đó giới thiệu hướng dẫn viên cho tôi nhé. Rốt cuộc mùa nào đi Lệ Giang thì tốt?'},
-     {zh:'随着科学技术的发展，很多问题已经得到解决。但有些问题我们仍然无法回答，例如，生命究竟从哪里来？',py:'Suízhe kēxué jìshù de fāzhǎn, hěn duō wèntí yǐjīng dédào jiějué. Dàn yǒuxiē wèntí wǒmen réngrán wúfǎ huídá, lìrú, shēngmìng jiūjìng cóng nǎlǐ lái?',vn:'Cùng với sự phát triển khoa học kỹ thuật, nhiều vấn đề đã được giải quyết. Nhưng có vấn đề vẫn không trả lời được, ví dụ, sự sống rốt cuộc từ đâu đến?'},
-     {zh:'学习时，不仅要知道答案是什么，还要弄清楚答案究竟是怎么得来的，只有这样，才能把问题真正弄懂。',py:'Xuéxí shí, bùjǐn yào zhīdào dá\'àn shì shénme, hái yào nòng qīngchu dá\'àn jiūjìng shì zěnme délái de, zhǐyǒu zhèyàng, cái néng bǎ wèntí zhēnzhèng nòngdǒng.',vn:'Khi học không chỉ biết đáp án là gì, còn phải làm rõ đáp án rốt cuộc có được thế nào, chỉ như vậy mới thật sự hiểu vấn đề.'},
-   ],
-   hanzi:[
-     {c:'究',p:'jiū',type:'上下结构 · Trên-dưới',st:7,ord:'穴 trên → 九 dưới',rad:'穴 (huyệt)',mean:'tìm tòi',
-      tip:'Hang 穴 + 九 → đào sâu đến cùng → CỨU (nghiên cứu). 究竟 = xét đến cùng; 研究 (Bài 9).',
-      cf:'穷 (qióng – nghèo, Bài 10)',w:'究竟 / 研究'},
-     {c:'竟',p:'jìng',type:'上下结构 · Trên-dưới',st:11,ord:'音 trên → 儿 dưới',rad:'立 (lập)',mean:'cuối cùng',
-      tip:'音 + 儿 → bản nhạc kết thúc → CUỐI CÙNG, RỐT CUỘC. 究竟; 竟然 (Bài 6); 毕竟.',
-      cf:'竞 (jìng – cạnh tranh, Bài 17)',w:'究竟 / 竟然 / 毕竟'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Có vấn đề chúng ta vẫn không trả lời được, ví dụ, sự sống rốt cuộc từ đâu đến?',answer:'有些问题我们仍然无法回答，例如，生命究竟从哪里来？',answerPy:'Yǒuxiē wèntí wǒmen réngrán wúfǎ huídá, lìrú, shēngmìng jiūjìng cóng nǎlǐ lái?',
-      note:'仍然 (Bài 17), 无法 (Bài 12), 例如 (Bài 10), 生命 (Bài 8).'},
-     {promptLang:'vi',prompt:'Rốt cuộc mùa nào đi Lệ Giang du lịch thì tốt hơn?',answer:'究竟哪个季节去丽江旅游比较好呢？',answerPy:'Jiūjìng nǎ ge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne?',
-      note:'究竟 đứng trước đại từ nghi vấn làm chủ ngữ; 季节 (Bài 7).'},
-   ]},
-
-  {n:21,zh:'棵',py:'kē',pos:'Lượng từ',vn:'cây, ngọn (dùng cho thực vật)', hv: 'khỏa',em:'🌳',lesson:4,
-   explain:['Lượng từ cho cây cối: 一棵树, 一棵草, 两棵植物. Phân biệt 颗 (kē – hạt nhỏ, viên).'],
-   usage:'一棵树, 一棵一棵地, 两棵植物.',
-   collo:['窗外的树一棵一棵地变绿','一棵大树','两棵不同的植物'],
-   ex_zh:'窗外的树一棵一棵地变绿，北方也许还下着雪，南方却已经到处都是绿色了。',ex_py:'Chuāngwài de shù yì kē yì kē de biàn lǜ, běifāng yěxǔ hái xiàzhe xuě, nánfāng què yǐjīng dàochù dōu shì lǜsè le.',ex_vn:'Cây ngoài cửa sổ từng cây một xanh dần, miền Bắc có lẽ còn tuyết, miền Nam đã khắp nơi xanh rồi.',
-   exList:[
-     {zh:'窗外的树一棵一棵地变绿，北方也许还下着雪，南方却已经到处都是绿色了。',py:'Chuāngwài de shù yì kē yì kē de biàn lǜ, běifāng yěxǔ hái xiàzhe xuě, nánfāng què yǐjīng dàochù dōu shì lǜsè le.',vn:'Cây ngoài cửa sổ từng cây một xanh dần, miền Bắc có lẽ còn tuyết, miền Nam đã khắp nơi xanh rồi.'},
-     {zh:'虽然这是两棵不同的植物，但是它们到底有什么区别，我也说不清楚。',py:'Suīrán zhè shì liǎng kē bù tóng de zhíwù, dànshì tāmen dàodǐ yǒu shénme qūbié, wǒ yě shuōbuqīngchu.',vn:'Tuy đây là hai cây khác nhau, nhưng rốt cuộc khác gì tôi cũng nói không rõ.'},
-     {zh:'我家门口有一棵老树，已经有一百多年了。',py:'Wǒ jiā ménkǒu yǒu yì kē lǎo shù, yǐjīng yǒu yìbǎi duō nián le.',vn:'Trước cửa nhà tôi có một cây cổ thụ, đã hơn trăm năm.'},
-   ],
-   hanzi:[
-     {c:'棵',p:'kē',type:'左右结构 · Trái-phải',st:12,ord:'木 trái → 果 phải',rad:'木 (mộc)',mean:'cây (lượng từ)',
-      tip:'Gỗ 木 + 果 → lượng từ cho CÂY. Phân biệt 颗 (kē, bộ 页 – hạt, viên: 一颗星).',
-      cf:'颗 (kē – hạt)',w:'一棵树 / 一棵草'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy đây là hai cây khác nhau, nhưng rốt cuộc khác gì tôi cũng nói không rõ.',answer:'虽然这是两棵不同的植物，但是它们到底有什么区别，我也说不清楚。',answerPy:'Suīrán zhè shì liǎng kē bù tóng de zhíwù, dànshì tāmen dàodǐ yǒu shénme qūbié, wǒ yě shuōbuqīngchu.',
-      note:'植物 (Bài 12), 到底 (Bài 16), 区别 (Bài 8).'},
-   ]},
-
-  {n:22,zh:'汤',py:'tāng',pos:'Danh từ',vn:'canh, súp', hv: 'thang',em:'🍲',lesson:4,
-   explain:['Món nước. 鸡蛋汤, 喝汤, 一碗汤. 汤 vs 场 (chǎng).'],
-   usage:'喝汤, 鸡蛋汤, 一碗汤.',
-   collo:['特别是汤','鸡蛋汤','喝一碗汤'],
-   ex_zh:'南方菜很有特点，特别是汤，味道鲜美，很多北方人都喜欢喝。',ex_py:'Nánfāng cài hěn yǒu tèdiǎn, tèbié shì tāng, wèidào xiānměi, hěn duō běifāng rén dōu xǐhuan hē.',ex_vn:'Món ăn miền Nam rất đặc sắc, nhất là canh, vị tươi ngon, nhiều người miền Bắc thích uống.',
-   exList:[
-     {zh:'南方菜很有特点，特别是汤，味道鲜美，很多北方人都喜欢喝。',py:'Nánfāng cài hěn yǒu tèdiǎn, tèbié shì tāng, wèidào xiānměi, hěn duō běifāng rén dōu xǐhuan hē.',vn:'Món ăn miền Nam rất đặc sắc, nhất là canh, vị tươi ngon, nhiều người miền Bắc thích uống.'},
-     {zh:'饺子很香，不过鸡蛋汤稍微有点儿咸。',py:'Jiǎozi hěn xiāng, búguò jīdàn tāng shāowēi yǒudiǎnr xián.',vn:'Sủi cảo rất thơm, nhưng canh trứng hơi mặn.'},
-     {zh:'西红柿鸡蛋汤的做法很简单，我保证你一次就能学会。',py:'Xīhóngshì jīdàn tāng de zuòfǎ hěn jiǎndān, wǒ bǎozhèng nǐ yí cì jiù néng xuéhuì.',vn:'Cách nấu canh trứng cà chua rất đơn giản, tôi đảm bảo bạn học một lần là biết.'},
-   ],
-   hanzi:[
-     {c:'汤',p:'tāng',type:'左右结构 · Trái-phải',st:6,ord:'氵 trái → 𠃓 phải',rad:'氵 (thủy)',mean:'canh',
-      tip:'Nước 氵 + 𠃓 → nước nóng → CANH, SÚP. Phân biệt 场 (chǎng, bộ 土, Bài 19), 扬 (yáng, Bài 15).',
-      cf:'场 (chǎng – sân)',w:'汤 / 鸡蛋汤 / 喝汤'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Món ăn miền Nam rất đặc sắc, nhất là canh, vị tươi ngon, nhiều người miền Bắc thích uống.',answer:'南方菜很有特点，特别是汤，味道鲜美，很多北方人都喜欢喝。',answerPy:'Nánfāng cài hěn yǒu tèdiǎn, tèbié shì tāng, wèidào xiānměi, hěn duō běifāng rén dōu xǐhuan hē.',
-      note:'特点 (Bài 18), 味道 (Bài 7).'},
-   ]},
-
-  {n:23,zh:'对话',py:'duìhuà',pos:'Động từ',vn:'đối thoại, tiếp xúc', hv: 'đối thoại',em:'💬',lesson:4,
-   explain:['Nói chuyện qua lại. 跟……对话, 一段对话, 完成对话.'],
-   usage:'跟上海人对话, 一段对话, 对话练习.',
-   collo:['跟上海人对话时','完成对话','一段对话'],
-   ex_zh:'比如你跟上海人对话时，会发现上海话听起来就像外语一样。',ex_py:'Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.',ex_vn:'Ví dụ khi đối thoại với người Thượng Hải, bạn sẽ thấy tiếng Thượng Hải nghe như ngoại ngữ.',
-   exList:[
-     {zh:'比如你跟上海人对话时，会发现上海话听起来就像外语一样。',py:'Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.',vn:'Ví dụ khi đối thoại với người Thượng Hải, bạn sẽ thấy tiếng Thượng Hải nghe như ngoại ngữ.'},
-     {zh:'上午来应聘的那个小伙子是学电子技术的，成绩很优秀，通过面试时和他的对话，感觉他的性格也不错。',py:'Shàngwǔ lái yìngpìn de nàge xiǎohuǒzi shì xué diànzǐ jìshù de, chéngjì hěn yōuxiù, tōngguò miànshì shí hé tā de duìhuà, gǎnjué tā de xìnggé yě búcuò.',vn:'Chàng trai đến ứng tuyển sáng nay học kỹ thuật điện tử, thành tích xuất sắc, qua đối thoại phỏng vấn thấy tính cách cũng tốt.'},
-     {zh:'父母应该多和孩子对话，了解他们的想法。',py:'Fùmǔ yīnggāi duō hé háizi duìhuà, liǎojiě tāmen de xiǎngfǎ.',vn:'Cha mẹ nên đối thoại nhiều với con, hiểu suy nghĩ của chúng.'},
-   ],
-   hanzi:[
-     {c:'话',p:'huà',type:'左右结构 · Trái-phải',st:8,ord:'讠 trái → 舌 phải',rad:'讠 (ngôn)',mean:'lời nói',
-      tip:'Lời 讠 + lưỡi 舌 → LỜI NÓI. 对话, 普通话, 笑话, 电话, 说话.',
-      cf:'活 (huó – sống, bộ 氵)',w:'对话 / 普通话 / 笑话 / 电话'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ví dụ khi đối thoại với người Thượng Hải, bạn sẽ thấy tiếng Thượng Hải nghe như ngoại ngữ.',answer:'比如你跟上海人对话时，会发现上海话听起来就像外语一样。',answerPy:'Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.',
-      note:'听起来 (ngữ pháp bài), 像……一样 (Bài 6).'},
-   ]},
-
-  {n:24,zh:'普通话',py:'pǔtōnghuà',pos:'Danh từ',vn:'tiếng phổ thông, tiếng Quan thoại', hv: 'phổ thông thoại',em:'🗣️',lesson:4,
-   explain:['Tiếng Trung chuẩn. 普通 (Bài 12) = phổ thông. 讲普通话, 普通话水平考试.'],
-   usage:'讲普通话, 普通话水平考试, 说普通话.',
-   collo:['上海人也会讲普通话','普通话水平考试','普通话说得很标准'],
-   ex_zh:'虽然上海人也会讲普通话，可是仔细听，还是有上海味儿。',ex_py:'Suīrán Shànghǎi rén yě huì jiǎng pǔtōnghuà, kěshì zǐxì tīng, háishi yǒu Shànghǎi wèir.',ex_vn:'Tuy người Thượng Hải cũng nói tiếng phổ thông, nhưng nghe kỹ vẫn có giọng Thượng Hải.',
-   exList:[
-     {zh:'虽然上海人也会讲普通话，可是仔细听，还是有上海味儿。',py:'Suīrán Shànghǎi rén yě huì jiǎng pǔtōnghuà, kěshì zǐxì tīng, háishi yǒu Shànghǎi wèir.',vn:'Tuy người Thượng Hải cũng nói tiếng phổ thông, nhưng nghe kỹ vẫn có giọng Thượng Hải.'},
-     {zh:'A：你的普通话水平考试考得怎么样？B：我这次没考，因为我错过了报名时间，只能等下次了。',py:'A: Nǐ de pǔtōnghuà shuǐpíng kǎoshì kǎo de zěnmeyàng? B: Wǒ zhè cì méi kǎo, yīnwèi wǒ cuòguòle bào míng shíjiān, zhǐ néng děng xià cì le.',vn:'A: Thi trình độ tiếng phổ thông của bạn thế nào? B: Lần này tôi không thi, vì lỡ thời gian đăng ký, đành đợi lần sau.'},
-     {zh:'汉语普通话以北京话为标准。',py:'Hànyǔ pǔtōnghuà yǐ Běijīng huà wéi biāozhǔn.',vn:'Tiếng phổ thông lấy tiếng Bắc Kinh làm chuẩn.'},
-   ],
-   hanzi:[
-     {c:'普',p:'pǔ',type:'上下结构 · Trên-dưới',st:12,ord:'並 trên → 日 dưới',rad:'日 (nhật)',mean:'phổ biến',
-      tip:'並 + 日(mặt trời) → ánh nắng chiếu khắp → PHỔ. 普通话, 普遍 (Bài 13), 普通 (Bài 12).',
-      cf:'谱 (pǔ – phổ nhạc)',w:'普通话 / 普遍 / 普通'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lần này tôi không thi, vì lỡ thời gian đăng ký, đành đợi lần sau.',answer:'我这次没考，因为我错过了报名时间，只能等下次了。',answerPy:'Wǒ zhè cì méi kǎo, yīnwèi wǒ cuòguòle bào míng shíjiān, zhǐ néng děng xià cì le.',
-      note:'错过 (Bài 4), 报名 (Bài 16).'},
-   ]},
-
-  {n:25,zh:'小吃',py:'xiǎochī',pos:'Danh từ',vn:'món ăn vặt', hv: 'tiểu ngật',em:'🍢',lesson:5,
-   explain:['Món ăn nhẹ đặc sản. 有名的小吃, 各地的小吃, 小吃街.'],
-   usage:'有名的小吃, 各地的小吃, 尝小吃.',
-   collo:['尝到各地有名的小吃','美食小吃','小吃街'],
-   ex_zh:'对我来说，最重要的是旅行能让我有机会尝到各地有名的小吃。',ex_py:'Duì wǒ lái shuō, zuì zhòngyào de shì lǚxíng néng ràng wǒ yǒu jīhuì chángdào gè dì yǒumíng de xiǎochī.',ex_vn:'Với tôi, quan trọng nhất là du lịch cho tôi cơ hội nếm món ăn vặt nổi tiếng các nơi.',
-   exList:[
-     {zh:'对我来说，最重要的是旅行能让我有机会尝到各地有名的小吃。',py:'Duì wǒ lái shuō, zuì zhòngyào de shì lǚxíng néng ràng wǒ yǒu jīhuì chángdào gè dì yǒumíng de xiǎochī.',vn:'Với tôi, quan trọng nhất là du lịch cho tôi cơ hội nếm món ăn vặt nổi tiếng các nơi.'},
-     {zh:'北京有很多有名的小吃，比如烤鸭、豆汁儿什么的。',py:'Běijīng yǒu hěn duō yǒumíng de xiǎochī, bǐrú kǎoyā, dòuzhīr shénme de.',vn:'Bắc Kinh có nhiều món ăn vặt nổi tiếng, như vịt quay, nước đậu các thứ.'},
-     {zh:'河内的小吃又便宜又好吃，游客都很喜欢。',py:'Hénèi de xiǎochī yòu piányi yòu hǎochī, yóukè dōu hěn xǐhuan.',vn:'Món ăn vặt Hà Nội vừa rẻ vừa ngon, du khách đều thích.'},
-   ],
-   hanzi:[
-     {c:'吃',p:'chī',type:'左右结构 · Trái-phải',st:6,ord:'口 trái → 乞 phải',rad:'口 (khẩu)',mean:'ăn',
-      tip:'Miệng 口 + 乞 → ĂN. 小吃 = món ăn nhỏ; 吃惊 (Bài 13); 吃苦 (Bài 13).',
-      cf:'乞 (qǐ – xin)',w:'小吃 / 吃惊 / 吃苦 / 好吃'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Với tôi, quan trọng nhất là du lịch cho tôi cơ hội nếm món ăn vặt nổi tiếng các nơi.',answer:'对我来说，最重要的是旅行能让我有机会尝到各地有名的小吃。',answerPy:'Duì wǒ lái shuō, zuì zhòngyào de shì lǚxíng néng ràng wǒ yǒu jīhuì chángdào gè dì yǒumíng de xiǎochī.',
-      note:'对……来说 (Bài 5), 尝 (Bài 7), 各地.'},
-   ]},
-
-  {n:26,zh:'收拾',py:'shōushi',pos:'Động từ',vn:'thu dọn, thu xếp', hv: 'thu thập',em:'🧹',lesson:5,
-   explain:['Dọn dẹp, sắp xếp (≈ 整理 Bài 15). 收拾行李, 收拾房间, 收拾好.'],
-   usage:'收拾行李, 收拾房间, 收拾一下.',
-   collo:['收拾好行李','收拾房间','抽时间收拾一下'],
-   ex_zh:'放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。',ex_py:'Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.',ex_vn:'Khi nghỉ, tôi thu dọn hành lý, mang bản đồ, mua vé tàu, xuất phát đến điểm đến.',
-   exList:[
-     {zh:'放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。',py:'Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.',vn:'Khi nghỉ, tôi thu dọn hành lý, mang bản đồ, mua vé tàu, xuất phát đến điểm đến.'},
-     {zh:'你回到家就把衣服、书包什么的扔在沙发上，房间太乱了，你抽时间收拾一下吧。',py:'Nǐ huídào jiā jiù bǎ yīfu, shūbāo shénme de rēng zài shāfā shang, fángjiān tài luàn le, nǐ chōu shíjiān shōushi yíxià ba.',vn:'Về nhà là bạn ném quần áo, cặp sách lên sofa, phòng bừa quá, tranh thủ dọn đi.'},
-     {zh:'好的，我现在就收拾，一定弄得整整齐齐。',py:'Hǎo de, wǒ xiànzài jiù shōushi, yídìng nòng de zhěngzhěng-qíqí.',vn:'Được, tôi dọn ngay, nhất định làm gọn gàng ngăn nắp.'},
-   ],
-   hanzi:[
-     {c:'拾',p:'shi',type:'左右结构 · Trái-phải',st:9,ord:'扌 trái → 合 phải',rad:'扌 (thủ)',mean:'nhặt',
-      tip:'Tay 扌 + 合 → tay gom lại → NHẶT, THẬP. 收拾 = thu nhặt = dọn dẹp. Cũng là số 10 viết kép.',
-      cf:'合 (hé – hợp)',w:'收拾 / 拾'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Về nhà là bạn ném quần áo, cặp sách lên sofa, phòng bừa quá, tranh thủ dọn đi.',answer:'你回到家就把衣服、书包什么的扔在沙发上，房间太乱了，你抽时间收拾一下吧。',answerPy:'Nǐ huídào jiā jiù bǎ yīfu, shūbāo shénme de rēng zài shāfā shang, fángjiān tài luàn le, nǐ chōu shíjiān shōushi yíxià ba.',
-      note:'什么的 (Bài 14), 扔 (Bài 14), 乱 (Bài 14), 抽 (Bài 7).'},
-   ]},
-
-  {n:27,zh:'出发',py:'chūfā',pos:'Động từ',vn:'xuất phát, khởi hành', hv: 'xuất phát',em:'🚀',lesson:5,
-   explain:['Bắt đầu đi. 向……出发, 几点出发, 马上出发. Trái với 到达.'],
-   usage:'向目的地出发, 几点出发, 一放假就出发.',
-   collo:['向目的地出发','马上出发','一放假就出发'],
-   ex_zh:'买张火车票，向目的地出发。',ex_py:'Mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.',ex_vn:'Mua vé tàu, xuất phát đến điểm đến.',
-   exList:[
-     {zh:'放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。',py:'Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.',vn:'Khi nghỉ, tôi thu dọn hành lý, mang bản đồ, mua vé tàu, xuất phát đến điểm đến.'},
-     {zh:'时间不变，地点改在西门了。快去整理一下东西吧，我们马上出发。',py:'Shíjiān bú biàn, dìdiǎn gǎi zài xīmén le. Kuài qù zhěnglǐ yíxià dōngxi ba, wǒmen mǎshàng chūfā.',vn:'Giờ không đổi, địa điểm đổi sang cổng tây. Mau dọn đồ, chúng ta xuất phát ngay.'},
-     {zh:'你认为理想的旅行方式是什么样的？一放假就出发吗？',py:'Nǐ rènwéi lǐxiǎng de lǚxíng fāngshì shì shénme yàng de? Yí fàng jià jiù chūfā ma?',vn:'Bạn cho rằng cách du lịch lý tưởng là thế nào? Vừa nghỉ là lên đường?'},
-   ],
-   hanzi:[
-     {c:'发',p:'fā',type:'独体字 · Chữ đơn thể',st:5,ord:'𠂇 → 又 → 丶',rad:'又 (hựu)',mean:'phát',
-      tip:'Giản thể của 發 → PHÁT. 出发, 发生 (Bài 7), 发展 (Bài 10), 沙发 (Bài 11); đọc fà = tóc (理发 Bài 19).',
-      cf:'友 (yǒu – bạn)',w:'出发 / 发生 / 发展 / 理发 (fà)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Giờ không đổi, địa điểm đổi sang cổng tây. Mau dọn đồ, chúng ta xuất phát ngay.',answer:'时间不变，地点改在西门了。快去整理一下东西吧，我们马上出发。',answerPy:'Shíjiān bú biàn, dìdiǎn gǎi zài xīmén le. Kuài qù zhěnglǐ yíxià dōngxi ba, wǒmen mǎshàng chūfā.',
-      note:'地点 (Bài 18), 整理 (Bài 15).'},
-   ]},
-
-  {n:28,zh:'辣',py:'là',pos:'Tính từ',vn:'cay', hv: 'lạt',em:'🌶️',lesson:5,
-   explain:['Vị cay. 太辣了, 咸辣, 香辣, 酸辣. 湖南菜的特点就是辣.'],
-   usage:'很辣, 太辣了, 又辣又香.',
-   collo:['湖南菜的特点就是辣','咸辣、香辣和酸辣','不能吃辣'],
-   ex_zh:'湖南菜的特点就是辣，与其他地方的辣不同，湖南菜的辣主要是咸辣、香辣和酸辣。',ex_py:'Húnán cài de tèdiǎn jiù shì là, yǔ qítā dìfang de là bù tóng, Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.',ex_vn:'Đặc điểm món Hồ Nam là cay, khác cái cay nơi khác, cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.',
-   exList:[
-     {zh:'湖南菜的特点就是辣，与其他地方的辣不同，湖南菜的辣主要是咸辣、香辣和酸辣。',py:'Húnán cài de tèdiǎn jiù shì là, yǔ qítā dìfang de là bù tóng, Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.',vn:'Đặc điểm món Hồ Nam là cay, khác cái cay nơi khác, cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.'},
-     {zh:'我不能吃辣，一吃辣的东西就咳嗽。',py:'Wǒ bù néng chī là, yì chī là de dōngxi jiù késou.',vn:'Tôi không ăn cay được, vừa ăn cay là ho.'},
-     {zh:'四川菜又麻又辣，很多外国人也爱吃。',py:'Sìchuān cài yòu má yòu là, hěn duō wàiguó rén yě ài chī.',vn:'Món Tứ Xuyên vừa tê vừa cay, nhiều người nước ngoài cũng thích.'},
-   ],
-   hanzi:[
-     {c:'辣',p:'là',type:'左右结构 · Trái-phải',st:14,ord:'辛 trái → 束 phải',rad:'辛 (tân)',mean:'cay',
-      tip:'辛(cay) + 束 → CAY. Năm vị: 酸 (chua), 甜 (ngọt), 苦 (đắng, Bài 13), 辣 (cay), 咸 (mặn, Bài 18).',
-      cf:'辛 (xīn – 辛苦 Bài 4)',w:'辣 / 辣椒 / 酸辣'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi không ăn cay được, vừa ăn cay là ho.',answer:'我不能吃辣，一吃辣的东西就咳嗽。',answerPy:'Wǒ bù néng chī là, yì chī là de dōngxi jiù késou.',
-      note:'一……就 (ngữ pháp bài), 咳嗽 (Bài 7).'},
-   ]},
-
-  {n:29,zh:'香',py:'xiāng',pos:'Tính từ',vn:'thơm', hv: 'hương',em:'🌸',lesson:5,
-   explain:['Mùi/vị thơm ngon. 很香, 香辣, 饺子很香, 睡得很香 (ngủ ngon).'],
-   usage:'很香, 香辣, 饭菜很香.',
-   collo:['香辣','饺子很香','花很香'],
-   ex_zh:'湖南菜的辣主要是咸辣、香辣和酸辣。',ex_py:'Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.',ex_vn:'Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.',
-   exList:[
-     {zh:'湖南菜的辣主要是咸辣、香辣和酸辣。',py:'Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.',vn:'Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.'},
-     {zh:'饺子很香，不过鸡蛋汤稍微有点儿咸。',py:'Jiǎozi hěn xiāng, búguò jīdàn tāng shāowēi yǒudiǎnr xián.',vn:'Sủi cảo rất thơm, nhưng canh trứng hơi mặn.'},
-     {zh:'这几天香山特别热闹，秋天的红叶吸引了很多游客。',py:'Zhè jǐ tiān Xiāng Shān tèbié rènao, qiūtiān de hóngyè xīyǐnle hěn duō yóukè.',vn:'Mấy hôm nay Hương Sơn rất náo nhiệt, lá đỏ mùa thu thu hút nhiều du khách.'},
-   ],
-   hanzi:[
-     {c:'香',p:'xiāng',type:'上下结构 · Trên-dưới',st:9,ord:'禾 trên → 日 dưới',rad:'香 (hương)',mean:'thơm',
-      tip:'Lúa 禾 + 日 → hương lúa chín → THƠM, HƯƠNG. 香山 (Bài 17), 香蕉, 香港.',
-      cf:'季 (jì – mùa)',w:'香 / 香山 / 香蕉 / 香港'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sủi cảo rất thơm, nhưng canh trứng hơi mặn.',answer:'饺子很香，不过鸡蛋汤稍微有点儿咸。',answerPy:'Jiǎozi hěn xiāng, búguò jīdàn tāng shāowēi yǒudiǎnr xián.',
-      note:'饺子 (Bài 19), 稍微 (Bài 13), 咸 (Bài 18).'},
-   ]},
-
-  {n:30,zh:'酸',py:'suān',pos:'Tính từ',vn:'chua', hv: 'toan',em:'🍋',lesson:5,
-   explain:['Vị chua. 酸辣, 太酸了, 又酸又甜. Cũng nghĩa "mỏi": 腿酸.'],
-   usage:'很酸, 酸辣, 又酸又甜.',
-   collo:['酸辣','又酸又甜','太酸了'],
-   ex_zh:'湖南菜的辣主要是咸辣、香辣和酸辣。',ex_py:'Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.',ex_vn:'Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.',
-   exList:[
-     {zh:'湖南菜的辣主要是咸辣、香辣和酸辣。虽然全国各地都有湖南饭馆儿，但最好还是直接去那里尝一尝。',py:'Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là. Suīrán quánguó gè dì dōu yǒu Húnán fànguǎnr, dàn zuìhǎo háishi zhíjiē qù nàli cháng yi cháng.',vn:'Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua. Tuy khắp nơi có quán Hồ Nam, tốt nhất vẫn đến tận nơi nếm thử.'},
-     {zh:'这种水果又酸又甜，味道很特别。',py:'Zhè zhǒng shuǐguǒ yòu suān yòu tián, wèidào hěn tèbié.',vn:'Loại quả này vừa chua vừa ngọt, vị rất đặc biệt.'},
-     {zh:'爬了一天山，腿酸得走不动了。',py:'Pále yì tiān shān, tuǐ suān de zǒubudòng le.',vn:'Leo núi cả ngày, chân mỏi không đi nổi.'},
-   ],
-   hanzi:[
-     {c:'酸',p:'suān',type:'左右结构 · Trái-phải',st:14,ord:'酉 trái → 夋 phải',rad:'酉 (dậu)',mean:'chua',
-      tip:'Bộ 酉 (rượu, lên men) + 夋 → vị lên men → CHUA. 醒 (Bài 15) cũng bộ 酉.',
-      cf:'醒 (xǐng – tỉnh)',w:'酸 / 酸辣 / 酸奶'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy khắp nơi có quán Hồ Nam, tốt nhất vẫn đến tận nơi nếm thử.',answer:'虽然全国各地都有湖南饭馆儿，但最好还是直接去那里尝一尝。',answerPy:'Suīrán quánguó gè dì dōu yǒu Húnán fànguǎnr, dàn zuìhǎo háishi zhíjiē qù nàli cháng yi cháng.',
-      note:'直接 (Bài 12), 尝 (Bài 7), 最好 (Bài 3).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "加油站",
+    "py": "jiāyóuzhàn",
+    "pos": "Danh từ",
+    "vn": "trạm xăng dầu",
+    "hv": "gia du trạm",
+    "em": "⛽",
+    "lesson": 1,
+    "explain": [
+      "Nơi đổ xăng. 加油 = đổ xăng / cố lên; 站 = trạm (网站 Bài 18)."
+    ],
+    "usage": "去加油站, 路上有加油站吗, 在加油站抽烟.",
+    "collo": [
+      "去机场的路上有加油站吗",
+      "在加油站抽烟很危险",
+      "找加油站"
+    ],
+    "ex_zh": "该加油了，去机场的路上有加油站吗？",
+    "ex_py": "Gāi jiā yóu le, qù jīchǎng de lùshang yǒu jiāyóuzhàn ma?",
+    "ex_vn": "Nên đổ xăng rồi, trên đường ra sân bay có trạm xăng không?",
+    "exList": [
+      {
+        "zh": "该加油了，去机场的路上有加油站吗？",
+        "py": "Gāi jiā yóu le, qù jīchǎng de lùshang yǒu jiāyóuzhàn ma?",
+        "vn": "Nên đổ xăng rồi, trên đường ra sân bay có trạm xăng không?"
+      },
+      {
+        "zh": "我记得过了长江大桥往右一拐就有一个，大概有四五公里远。",
+        "py": "Wǒ jìde guòle Chángjiāng Dàqiáo wǎng yòu yì guǎi jiù yǒu yí ge, dàgài yǒu sì-wǔ gōnglǐ yuǎn.",
+        "vn": "Tôi nhớ qua cầu Trường Giang rẽ phải là có một trạm, khoảng bốn năm km."
+      },
+      {
+        "zh": "在加油站这样的地方抽烟非常危险，因此很多地方都禁止抽烟。",
+        "py": "Zài jiāyóuzhàn zhèyàng de dìfang chōu yān fēicháng wēixiǎn, yīncǐ hěn duō dìfang dōu jìnzhǐ chōu yān.",
+        "vn": "Hút thuốc ở nơi như cây xăng rất nguy hiểm, vì vậy nhiều nơi cấm hút thuốc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "油",
+        "p": "yóu",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "氵 trái → 由 phải",
+        "rad": "氵 (thủy)",
+        "mean": "dầu",
+        "tip": "Nước 氵 + 由 → chất lỏng → DẦU. 加油 = thêm dầu/cố lên; 油钱 (Bài 14); 邮 (Bài 18) cũng có 由.",
+        "cf": "邮 (yóu – bưu)",
+        "w": "加油站 / 加油 / 油"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đến lúc đổ xăng rồi, nếu trên đường ra sân bay có trạm xăng thì ghé vào nhé.",
+        "answer": "该加油了，要是去机场的路上有加油站，就顺便去一下吧。",
+        "answerPy": "Gāi jiāyóu le, yàoshi qù jīchǎng de lù shang yǒu jiāyóuzhàn, jiù shùnbiàn qù yíxià ba.",
+        "note": "顺便 là từ bài 5; 加油站 — trạm (站) đổ xăng.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "找加油站",
+        "py": "zhǎo jiāyóuzhàn",
+        "vn": "tìm trạm xăng"
+      },
+      {
+        "zh": "在加油站",
+        "py": "zài jiāyóuzhàn",
+        "vn": "ở trạm xăng"
+      },
+      {
+        "zh": "路上有加油站",
+        "py": "lùshang yǒu jiāyóuzhàn",
+        "vn": "trên đường có trạm xăng"
+      },
+      {
+        "zh": "去加油站加油",
+        "py": "qù jiāyóuzhàn jiā yóu",
+        "vn": "ra trạm đổ xăng"
+      },
+      {
+        "zh": "加油站很近",
+        "py": "jiāyóuzhàn hěn jìn",
+        "vn": "trạm xăng rất gần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 + 加油站 + 加油",
+        "m": "Ra trạm đổ xăng"
+      },
+      {
+        "s": "加油 + 站",
+        "m": "Trạm (站) đổ xăng (加油) — 加油 cũng nghĩa \"cố lên\""
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "航班",
+    "py": "hángbān",
+    "pos": "Danh từ",
+    "vn": "chuyến bay",
+    "hv": "hàng ban",
+    "em": "✈️",
+    "lesson": 1,
+    "explain": [
+      "Chuyến bay theo lịch. 航班号, 几点的航班, 航班推迟了."
+    ],
+    "usage": "几点的航班, 航班推迟, 改签航班.",
+    "collo": [
+      "你去北京的航班是几点的",
+      "航班推迟了一个小时",
+      "改签到后天的同一航班"
+    ],
+    "ex_zh": "你去北京的航班是几点的？时间来得及吗？",
+    "ex_py": "Nǐ qù Běijīng de hángbān shì jǐ diǎn de? Shíjiān láidejí ma?",
+    "ex_vn": "Chuyến bay đi Bắc Kinh của bạn mấy giờ? Thời gian có kịp không?",
+    "exList": [
+      {
+        "zh": "你去北京的航班是几点的？时间来得及吗？",
+        "py": "Nǐ qù Běijīng de hángbān shì jǐ diǎn de? Shíjiān láidejí ma?",
+        "vn": "Chuyến bay đi Bắc Kinh của bạn mấy giờ? Thời gian có kịp không?"
+      },
+      {
+        "zh": "航班本来是十点的，后来机场网站上通知推迟了一个小时。",
+        "py": "Hángbān běnlái shì shí diǎn de, hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí.",
+        "vn": "Chuyến bay vốn 10 giờ, sau đó trang web sân bay thông báo hoãn một tiếng."
+      },
+      {
+        "zh": "乘客，您好！我们很抱歉地通知您，由于天气原因，您乘坐的CA1864航班推迟起飞。",
+        "py": "Chéngkè, nín hǎo! Wǒmen hěn bàoqiàn de tōngzhī nín, yóuyú tiānqì yuányīn, nín chéngzuò de CA1864 hángbān tuīchí qǐfēi.",
+        "vn": "Kính thưa hành khách! Chúng tôi rất tiếc thông báo, do thời tiết, chuyến bay CA1864 của quý khách hoãn cất cánh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "航",
+        "p": "háng",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "舟 trái → 亢 phải",
+        "rad": "舟 (chu)",
+        "mean": "đi thuyền, bay",
+        "tip": "Thuyền 舟 + 亢 → đi thuyền → mở rộng: HÀNG không. 航班 = chuyến bay; 航空 = hàng không.",
+        "cf": "船 (chuán – thuyền)",
+        "w": "航班 / 航空 / 航空公司"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chuyến bay vốn là 10 giờ, nhưng sau đó trang web sân bay báo hoãn một tiếng.",
+        "answer": "航班本来是十点的，可是后来机场网站上通知推迟了一个小时。",
+        "answerPy": "Hángbān běnlái shì shí diǎn de, kěshì hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí.",
+        "note": "本来 là từ bài 4, 网站 là từ bài 18, 通知 là từ bài 3.",
+        "pair": "虽然……可是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去北京的航班",
+        "py": "qù Běijīng de hángbān",
+        "vn": "chuyến bay đi Bắc Kinh"
+      },
+      {
+        "zh": "航班推迟了",
+        "py": "hángbān tuīchí le",
+        "vn": "chuyến bay bị hoãn"
+      },
+      {
+        "zh": "同一航班",
+        "py": "tóng yì hángbān",
+        "vn": "cùng chuyến bay"
+      },
+      {
+        "zh": "改签航班",
+        "py": "gǎiqiān hángbān",
+        "vn": "đổi chuyến bay"
+      },
+      {
+        "zh": "航班号",
+        "py": "hángbān hào",
+        "vn": "số hiệu chuyến bay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 + nơi chốn + 的 + 航班",
+        "m": "Chuyến bay đi đâu"
+      },
+      {
+        "s": "航班 + 推迟 / 取消",
+        "m": "Chuyến bay hoãn / huỷ"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "推迟",
+    "py": "tuīchí",
+    "pos": "Động từ",
+    "vn": "hoãn lại",
+    "hv": "thôi trì",
+    "em": "⏳",
+    "lesson": 1,
+    "explain": [
+      "Lùi thời gian. 推 (Bài 16) + 迟. 推迟一个小时, 推迟起飞, 推迟到下周."
+    ],
+    "usage": "推迟了一个小时, 推迟起飞, 推迟到……",
+    "collo": [
+      "通知推迟了一个小时",
+      "推迟起飞",
+      "出国的时间推迟了"
+    ],
+    "ex_zh": "后来机场网站上通知推迟了一个小时，所以九点半以前到就应该没问题。",
+    "ex_py": "Hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí, suǒyǐ jiǔ diǎn bàn yǐqián dào jiù yīnggāi méi wèntí.",
+    "ex_vn": "Sau đó trang web sân bay thông báo hoãn một tiếng, nên đến trước 9 rưỡi là không vấn đề.",
+    "exList": [
+      {
+        "zh": "后来机场网站上通知推迟了一个小时，所以九点半以前到就应该没问题。",
+        "py": "Hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí, suǒyǐ jiǔ diǎn bàn yǐqián dào jiù yīnggāi méi wèntí.",
+        "vn": "Sau đó trang web sân bay thông báo hoãn một tiếng, nên đến trước 9 rưỡi là không vấn đề."
+      },
+      {
+        "zh": "A：小高，听说你出国的时间推迟了？B：是的，我的签证还没办好，大概得10月底才能走。",
+        "py": "A: Xiǎo Gāo, tīngshuō nǐ chū guó de shíjiān tuīchí le? B: Shì de, wǒ de qiānzhèng hái méi bànhǎo, dàgài děi shí yuè dǐ cái néng zǒu.",
+        "vn": "A: Tiểu Cao, nghe nói thời gian ra nước ngoài của bạn hoãn rồi? B: Đúng, visa chưa xong, đại khái cuối tháng 10 mới đi được."
+      },
+      {
+        "zh": "刚才听广播说明天可能会下大雨，足球比赛恐怕要推迟了。",
+        "py": "Gāngcái tīng guǎngbō shuō míngtiān kěnéng huì xià dà yǔ, zúqiú bǐsài kǒngpà yào tuīchí le.",
+        "vn": "Vừa nghe đài nói mai có thể mưa to, trận bóng e là phải hoãn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "迟",
+        "p": "chí",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 7,
+        "ord": "尺 trong → 辶 bao",
+        "rad": "辶 (sước)",
+        "mean": "muộn",
+        "tip": "Đi 辶 + 尺 → đi chậm → MUỘN, TRỄ. 推迟 = đẩy lùi; 迟到 = đến muộn.",
+        "cf": "尺 (chǐ – thước)",
+        "w": "推迟 / 迟到 / 迟"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Visa tôi chưa xong, đại khái cuối tháng 10 mới đi được.",
+        "answer": "我的签证还没办好，大概得10月底才能走。",
+        "answerPy": "Wǒ de qiānzhèng hái méi bànhǎo, dàgài děi shí yuè dǐ cái néng zǒu.",
+        "note": "签证 (Bài 16), 大概 (Bài 13), 月底 (Bài 11), 才 (Bài 3).",
+        "pair": "……，才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "推迟一个小时",
+        "py": "tuīchí yí gè xiǎoshí",
+        "vn": "hoãn một tiếng"
+      },
+      {
+        "zh": "推迟起飞",
+        "py": "tuīchí qǐfēi",
+        "vn": "hoãn cất cánh"
+      },
+      {
+        "zh": "时间推迟了",
+        "py": "shíjiān tuīchí le",
+        "vn": "thời gian bị lùi lại"
+      },
+      {
+        "zh": "推迟到明天",
+        "py": "tuīchí dào míngtiān",
+        "vn": "hoãn đến mai"
+      },
+      {
+        "zh": "会议推迟",
+        "py": "huìyì tuīchí",
+        "vn": "cuộc họp bị hoãn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "推迟 + 到 + thời gian",
+        "m": "Hoãn đến lúc nào"
+      },
+      {
+        "s": "推迟 ≈ 推 (bài 16)",
+        "m": "推迟 chỉ dùng cho thời gian, rõ nghĩa hơn"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "高速公路",
+    "py": "gāosù gōnglù",
+    "pos": "Danh từ",
+    "vn": "đường cao tốc",
+    "hv": "cao tốc công lộ",
+    "em": "🛣️",
+    "lesson": 1,
+    "explain": [
+      "Đường tốc độ cao. 高速 = tốc độ cao (速度 Bài 14); 公路 = đường bộ. 上高速公路, 走高速公路."
+    ],
+    "usage": "上高速公路, 走高速公路, 高速公路上.",
+    "collo": [
+      "往西走五百米就能上高速公路",
+      "走高速公路大约半个小时",
+      "高速公路上不能停车"
+    ],
+    "ex_zh": "一会儿加完油，往西走五百米就能上高速公路。走高速公路大约半个小时就到了。",
+    "ex_py": "Yíhuìr jiāwán yóu, wǎng xī zǒu wǔbǎi mǐ jiù néng shàng gāosù gōnglù. Zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.",
+    "ex_vn": "Lát đổ xăng xong, đi về phía tây 500 mét là lên được cao tốc. Đi cao tốc khoảng nửa tiếng là đến.",
+    "exList": [
+      {
+        "zh": "一会儿加完油，往西走五百米就能上高速公路。走高速公路大约半个小时就到了。",
+        "py": "Yíhuìr jiāwán yóu, wǎng xī zǒu wǔbǎi mǐ jiù néng shàng gāosù gōnglù. Zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.",
+        "vn": "Lát đổ xăng xong, đi về phía tây 500 mét là lên được cao tốc. Đi cao tốc khoảng nửa tiếng là đến."
+      },
+      {
+        "zh": "高速公路上汽车的速度不能超过每小时120公里。",
+        "py": "Gāosù gōnglù shang qìchē de sùdù bù néng chāoguò měi xiǎoshí yìbǎi èrshí gōnglǐ.",
+        "vn": "Trên cao tốc tốc độ ô tô không được vượt quá 120 km/giờ."
+      },
+      {
+        "zh": "现在高速公路越来越多，开车去外地旅行方便多了。",
+        "py": "Xiànzài gāosù gōnglù yuè lái yuè duō, kāi chē qù wàidì lǚxíng fāngbiàn duō le.",
+        "vn": "Giờ cao tốc ngày càng nhiều, lái xe đi du lịch nơi khác tiện hơn nhiều."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "路",
+        "p": "lù",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "足 trái → 各 phải",
+        "rad": "足 (túc)",
+        "mean": "đường",
+        "tip": "Chân 足 + 各 → nơi chân đi → ĐƯỜNG. 公路 = đường công cộng; 路口 (Bài 2); 迷路 (Bài 18); 马路 (Bài 19).",
+        "cf": "各 (gè – mỗi)",
+        "w": "高速公路 / 路口 / 迷路 / 马路"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần đi về phía tây 500 mét là lên được cao tốc, đi cao tốc khoảng nửa tiếng là tới.",
+        "answer": "只要往西走五百米，就能上高速公路，走高速公路大约半个小时就到了。",
+        "answerPy": "Zhǐyào wǎng xī zǒu wǔbǎi mǐ, jiù néng shàng gāosù gōnglù, zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.",
+        "note": "大约 là từ bài 13.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "上高速公路",
+        "py": "shàng gāosù gōnglù",
+        "vn": "lên đường cao tốc"
+      },
+      {
+        "zh": "走高速公路",
+        "py": "zǒu gāosù gōnglù",
+        "vn": "đi đường cao tốc"
+      },
+      {
+        "zh": "高速公路上",
+        "py": "gāosù gōnglù shàng",
+        "vn": "trên đường cao tốc"
+      },
+      {
+        "zh": "高速公路不能停车",
+        "py": "gāosù gōnglù bù néng tíng chē",
+        "vn": "cao tốc không được đỗ xe"
+      },
+      {
+        "zh": "离高速公路很近",
+        "py": "lí gāosù gōnglù hěn jìn",
+        "vn": "gần đường cao tốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "上 / 走 + 高速公路",
+        "m": "Lên / đi đường cao tốc"
+      },
+      {
+        "s": "高速 + 公路",
+        "m": "Đường (公路) tốc độ cao (高速) — 速度 là từ bài 14"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "登机牌",
+    "py": "dēngjīpái",
+    "pos": "Danh từ",
+    "vn": "thẻ lên máy bay",
+    "hv": "đăng cơ bài",
+    "em": "🎫",
+    "lesson": 1,
+    "explain": [
+      "Boarding pass. 登机 = lên máy bay; 牌 = thẻ, biển. 换登机牌 = làm thủ tục lấy thẻ."
+    ],
+    "usage": "换登机牌, 拿着登机牌, 登机牌上.",
+    "collo": [
+      "进去换登机牌",
+      "拿好登机牌",
+      "登机牌上的座位号"
+    ],
+    "ex_zh": "一会儿我自己进去换登机牌，你就不用送我了。",
+    "ex_py": "Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le.",
+    "ex_vn": "Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn tôi nữa.",
+    "exList": [
+      {
+        "zh": "一会儿我自己进去换登机牌，你就不用送我了，等我到了首都机场再给你发短信。",
+        "py": "Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le, děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.",
+        "vn": "Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn, đợi tôi đến sân bay Thủ Đô sẽ nhắn tin."
+      },
+      {
+        "zh": "请拿好您的护照和登机牌，准备登机。",
+        "py": "Qǐng náhǎo nín de hùzhào hé dēngjīpái, zhǔnbèi dēng jī.",
+        "vn": "Xin cầm sẵn hộ chiếu và thẻ lên máy bay, chuẩn bị lên máy bay."
+      },
+      {
+        "zh": "登机牌上写着座位号，您可以按照号码找座位。",
+        "py": "Dēngjīpái shang xiězhe zuòwèi hào, nín kěyǐ ànzhào hàomǎ zhǎo zuòwèi.",
+        "vn": "Trên thẻ có ghi số ghế, ngài có thể theo số tìm chỗ ngồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "登",
+        "p": "dēng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "癶 trên → 豆 dưới",
+        "rad": "癶 (bát)",
+        "mean": "leo lên",
+        "tip": "Hai chân 癶 bước lên bệ 豆 → LEO LÊN, ĐĂNG. 登机 = lên máy bay; 登山 = leo núi; 登记 = đăng ký.",
+        "cf": "凳 (dèng – ghế đẩu)",
+        "w": "登机牌 / 登山 / 登记"
+      },
+      {
+        "c": "牌",
+        "p": "pái",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "片 trái → 卑 phải",
+        "rad": "片 (phiến)",
+        "mean": "thẻ, biển",
+        "tip": "Miếng 片 + 卑 → tấm THẺ, BIỂN. 登机牌, 牌子 (nhãn hiệu), 名牌.",
+        "cf": "片 (piàn – miếng)",
+        "w": "登机牌 / 牌子 / 名牌"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn tôi nữa.",
+        "answer": "一会儿我自己进去换登机牌，你就不用送我了。",
+        "answerPy": "Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le.",
+        "note": "换 (Bài 5), 不用……了.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "换登机牌",
+        "py": "huàn dēngjīpái",
+        "vn": "đổi thẻ lên máy bay"
+      },
+      {
+        "zh": "拿好登机牌",
+        "py": "ná hǎo dēngjīpái",
+        "vn": "cầm chắc thẻ lên máy bay"
+      },
+      {
+        "zh": "登机牌上的座位号",
+        "py": "dēngjīpái shàng de zuòwèi hào",
+        "vn": "số ghế trên thẻ"
+      },
+      {
+        "zh": "打印登机牌",
+        "py": "dǎyìn dēngjīpái",
+        "vn": "in thẻ lên máy bay"
+      },
+      {
+        "zh": "忘了登机牌",
+        "py": "wàng le dēngjīpái",
+        "vn": "quên thẻ lên máy bay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "换 + 登机牌",
+        "m": "Làm thủ tục lấy thẻ lên máy bay"
+      },
+      {
+        "s": "登机 + 牌",
+        "m": "Thẻ (牌) lên máy bay (登机)"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "首都",
+    "py": "shǒudū",
+    "pos": "Danh từ",
+    "vn": "thủ đô",
+    "hv": "thủ đô",
+    "em": "🏛️",
+    "lesson": 1,
+    "explain": [
+      "Thành phố chính của một nước. 首都机场 = sân bay Thủ Đô (Bắc Kinh). 首 = đầu (首先 Bài 10)."
+    ],
+    "usage": "首都机场, 中国的首都, 首都北京.",
+    "collo": [
+      "首都机场",
+      "中国的首都是北京",
+      "越南的首都"
+    ],
+    "ex_zh": "等我到了首都机场再给你发短信。",
+    "ex_py": "Děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.",
+    "ex_vn": "Đợi tôi đến sân bay Thủ Đô sẽ nhắn tin cho bạn.",
+    "exList": [
+      {
+        "zh": "等我到了首都机场再给你发短信。",
+        "py": "Děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.",
+        "vn": "Đợi tôi đến sân bay Thủ Đô sẽ nhắn tin cho bạn."
+      },
+      {
+        "zh": "北京是中国的首都，也是一座有着几千年历史的文化名城。",
+        "py": "Běijīng shì Zhōngguó de shǒudū, yě shì yí zuò yǒuzhe jǐqiān nián lìshǐ de wénhuà míngchéng.",
+        "vn": "Bắc Kinh là thủ đô Trung Quốc, cũng là thành phố văn hóa nổi tiếng có lịch sử mấy nghìn năm."
+      },
+      {
+        "zh": "河内是越南的首都，有很多有名的小吃。",
+        "py": "Hénèi shì Yuènán de shǒudū, yǒu hěn duō yǒumíng de xiǎochī.",
+        "vn": "Hà Nội là thủ đô Việt Nam, có nhiều món ăn vặt nổi tiếng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "都",
+        "p": "dū",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "者 trái → 阝 phải",
+        "rad": "阝 (ấp)",
+        "mean": "đô thị",
+        "tip": "者 + 阝(ấp, thành) → thành lớn → ĐÔ (dū). Đọc dōu = đều (phó từ). 首都 = thủ đô.",
+        "cf": "者 (zhě – người)",
+        "w": "首都 / 都市 / 都 (dōu)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bắc Kinh không những là thủ đô Trung Quốc, mà còn là thành phố văn hoá có lịch sử mấy nghìn năm.",
+        "answer": "北京不但是中国的首都，而且还是一座有着几千年历史的文化名城。",
+        "answerPy": "Běijīng búdàn shì Zhōngguó de shǒudū, érqiě hái shì yí zuò yǒuzhe jǐ qiān nián lìshǐ de wénhuà míngchéng.",
+        "note": "一座城市 — lượng từ 座 (bài 18).",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "中国的首都",
+        "py": "Zhōngguó de shǒudū",
+        "vn": "thủ đô Trung Quốc"
+      },
+      {
+        "zh": "首都机场",
+        "py": "shǒudū jīchǎng",
+        "vn": "sân bay Thủ Đô"
+      },
+      {
+        "zh": "越南的首都",
+        "py": "yuè nán de shǒudū",
+        "vn": "thủ đô Việt Nam"
+      },
+      {
+        "zh": "首都北京",
+        "py": "shǒudū Běijīng",
+        "vn": "thủ đô Bắc Kinh"
+      },
+      {
+        "zh": "去首都",
+        "py": "qù shǒudū",
+        "vn": "đến thủ đô"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "nước + 的首都 + 是 + …",
+        "m": "Thủ đô của nước nào là …"
+      },
+      {
+        "s": "首 + 都",
+        "m": "Thành đô (都) đứng đầu (首)"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "旅行",
+    "py": "lǚxíng",
+    "pos": "Động từ",
+    "vn": "du lịch",
+    "hv": "lữ hành",
+    "em": "🧳",
+    "lesson": 2,
+    "explain": [
+      "Đi chơi xa. So sánh 旅游 (Bài 1): 旅行 nhấn mạnh hành trình, cũng làm danh từ (一次旅行)."
+    ],
+    "usage": "去旅行, 旅行方式, 一次愉快的旅行.",
+    "collo": [
+      "总是说想去旅行",
+      "旅行中有任何事",
+      "一次愉快的旅行"
+    ],
+    "ex_zh": "平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。",
+    "ex_py": "Píngshí nǚ'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.",
+    "ex_vn": "Bình thường con gái nhiều bài học, luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật.",
+    "exList": [
+      {
+        "zh": "平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。",
+        "py": "Píngshí nǚ'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.",
+        "vn": "Bình thường con gái nhiều bài học, luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật."
+      },
+      {
+        "zh": "一个人有时间一定要去旅行，旅行不仅能丰富一个人的经历，而且是很好的减压方法。",
+        "py": "Yí ge rén yǒu shíjiān yídìng yào qù lǚxíng, lǚxíng bùjǐn néng fēngfù yí ge rén de jīnglì, érqiě shì hěn hǎo de jiǎnyā fāngfǎ.",
+        "vn": "Có thời gian nhất định phải đi du lịch, du lịch không chỉ làm phong phú trải nghiệm mà còn là cách giảm áp lực tốt."
+      },
+      {
+        "zh": "欢迎大家来到美丽的海南，旅行中有任何事您都可以找我商量。",
+        "py": "Huānyíng dàjiā láidào měilì de Hǎinán, lǚxíng zhōng yǒu rènhé shì nín dōu kěyǐ zhǎo wǒ shāngliang.",
+        "vn": "Hoan nghênh đến Hải Nam xinh đẹp, trong chuyến đi có việc gì đều có thể tìm tôi bàn bạc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "旅",
+        "p": "lǚ",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "方 trái → 𠂉氏 phải",
+        "rad": "方 (phương)",
+        "mean": "lữ hành",
+        "tip": "Cờ 方 + đoàn người → đoàn đi xa → LỮ. 旅行, 旅游 (Bài 1), 旅馆.",
+        "cf": "族 (zú – tộc, cùng bộ)",
+        "w": "旅行 / 旅游 / 旅馆"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Du lịch không chỉ làm phong phú trải nghiệm của một người mà còn là cách giảm áp lực tốt.",
+        "answer": "旅行不仅能丰富一个人的经历，而且是很好的减压方法。",
+        "answerPy": "Lǚxíng bùjǐn néng fēngfù yí ge rén de jīnglì, érqiě shì hěn hǎo de jiǎnyā fāngfǎ.",
+        "note": "不仅……而且 (Bài 6), 丰富 (Bài 8), 经历 (Bài 9), 压力 (Bài 5).",
+        "pair": "不仅……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去旅行",
+        "py": "qù lǚxíng",
+        "vn": "đi du lịch"
+      },
+      {
+        "zh": "一次愉快的旅行",
+        "py": "yí cì yúkuài de lǚxíng",
+        "vn": "một chuyến đi vui vẻ"
+      },
+      {
+        "zh": "旅行中",
+        "py": "lǚxíng zhōng",
+        "vn": "trong chuyến đi"
+      },
+      {
+        "zh": "想去旅行",
+        "py": "xiǎng qù lǚxíng",
+        "vn": "muốn đi du lịch"
+      },
+      {
+        "zh": "旅行计划",
+        "py": "lǚxíng jìhuà",
+        "vn": "kế hoạch du lịch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一 + 次 + 旅行",
+        "m": "Một chuyến du lịch — 愉快 là từ bài 8"
+      },
+      {
+        "s": "旅行 ≈ 旅游",
+        "m": "旅行 nhấn việc đi lại; 旅游 nhấn tham quan giải trí"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "怪",
+    "py": "guài",
+    "pos": "Phó từ",
+    "vn": "rất, vô cùng",
+    "hv": "quái",
+    "em": "❗",
+    "lesson": 2,
+    "explain": [
+      "Phó từ khẩu ngữ: 怪 + tính từ + 的 = rất, khá (怪可怜的, 怪不好意思的). Cũng là tính từ \"kỳ lạ\" (奇怪 Bài 5) và động từ \"trách\" (怪我)."
+    ],
+    "usage": "怪可怜的, 怪不好意思的, 怪冷的.",
+    "collo": [
+      "怪可怜的",
+      "怪不好意思的",
+      "怪累的"
+    ],
+    "ex_zh": "总是说想去旅行，但是没时间，怪可怜的。",
+    "ex_py": "Zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.",
+    "ex_vn": "Luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật.",
+    "exList": [
+      {
+        "zh": "总是说想去旅行，但是没时间，怪可怜的。",
+        "py": "Zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.",
+        "vn": "Luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật."
+      },
+      {
+        "zh": "让你专门跑一趟，怪不好意思的。",
+        "py": "Ràng nǐ zhuānmén pǎo yí tàng, guài bù hǎoyìsi de.",
+        "vn": "Để bạn phải chạy một chuyến, thật ngại quá."
+      },
+      {
+        "zh": "这件事不能怪他，是我没说清楚。",
+        "py": "Zhè jiàn shì bù néng guài tā, shì wǒ méi shuō qīngchu.",
+        "vn": "Chuyện này không thể trách anh ấy, là tôi nói không rõ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "怪",
+        "p": "guài",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "忄 trái → 圣 phải",
+        "rad": "忄 (tâm)",
+        "mean": "lạ; trách",
+        "tip": "Tâm 忄 + 圣 → thấy trong lòng LẠ → KỲ QUÁI (奇怪 Bài 5); mở rộng: TRÁCH (怪我); phó từ khẩu ngữ: RẤT (怪……的).",
+        "cf": "圣 (shèng – thánh)",
+        "w": "怪 / 奇怪 / 怪不得 / 怪……的"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Để bạn phải chạy riêng một chuyến, thật là ngại quá.",
+        "answer": "让你专门跑一趟，怪不好意思的。",
+        "answerPy": "Ràng nǐ zhuānmén pǎo yí tàng, guài bù hǎoyìsi de.",
+        "note": "专门 là từ bài 2, 趟 là từ bài 17; 怪…的 phải đủ hai đầu.",
+        "pair": "怪……的"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "怪可怜的",
+        "py": "guài kělián de",
+        "vn": "trông tội quá"
+      },
+      {
+        "zh": "怪不好意思的",
+        "py": "guài bù hǎoyìsi de",
+        "vn": "thật ngại quá"
+      },
+      {
+        "zh": "怪累的",
+        "py": "guài lèi de",
+        "vn": "mệt phết"
+      },
+      {
+        "zh": "怪冷的",
+        "py": "guài lěng de",
+        "vn": "lạnh ghê"
+      },
+      {
+        "zh": "怪有意思的",
+        "py": "guài yǒuyìsi de",
+        "vn": "thú vị ra phết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "怪 + Adj + 的",
+        "m": "Rất … — khung cố định, vế sau bắt buộc có 的"
+      },
+      {
+        "s": "✗ 怪可怜 → ✓ 怪可怜的",
+        "m": "怪…的 phải đủ hai đầu"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "可怜",
+    "py": "kělián",
+    "pos": "Tính từ",
+    "vn": "đáng thương, tội nghiệp",
+    "hv": "khả liên",
+    "em": "🥺",
+    "lesson": 2,
+    "explain": [
+      "Đáng thương. 怪可怜的, 可怜的小狗. Cũng là động từ: 可怜他 (thương hại)."
+    ],
+    "usage": "怪可怜的, 可怜的小狗, 真可怜.",
+    "collo": [
+      "怪可怜的",
+      "一只可怜的小狗",
+      "太可怜了"
+    ],
+    "ex_zh": "但是没时间，怪可怜的。",
+    "ex_py": "Dànshì méi shíjiān, guài kělián de.",
+    "ex_vn": "Nhưng không có thời gian, tội nghiệp thật.",
+    "exList": [
+      {
+        "zh": "平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。",
+        "py": "Píngshí nǚ'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.",
+        "vn": "Con gái nhiều bài học, luôn nói muốn du lịch nhưng không có thời gian, tội nghiệp thật."
+      },
+      {
+        "zh": "我走在回家的路上，突然发现商店门口有一只可怜的小狗，我心里一软，就把它抱回了家。",
+        "py": "Wǒ zǒu zài huí jiā de lùshang, tūrán fāxiàn shāngdiàn ménkǒu yǒu yì zhī kělián de xiǎo gǒu, wǒ xīnli yì ruǎn, jiù bǎ tā bàohuíle jiā.",
+        "vn": "Tôi đi trên đường về nhà, đột nhiên thấy cửa hàng có một chú chó nhỏ đáng thương, tôi mềm lòng, ôm nó về nhà."
+      },
+      {
+        "zh": "他一个人在国外，生病了也没人照顾，真可怜。",
+        "py": "Tā yí ge rén zài guówài, shēng bìng le yě méi rén zhàogù, zhēn kělián.",
+        "vn": "Anh ấy một mình ở nước ngoài, ốm cũng không ai chăm, thật đáng thương."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "怜",
+        "p": "lián",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "忄 trái → 令 phải",
+        "rad": "忄 (tâm)",
+        "mean": "thương",
+        "tip": "Tâm 忄 + 令 → trong lòng THƯƠNG XÓT → LÂN. 可怜 = đáng thương.",
+        "cf": "冷 (lěng – lạnh, cũng có 令)",
+        "w": "可怜 / 可怜的"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đột nhiên thấy cửa hàng có một chú chó nhỏ đáng thương, tôi mềm lòng, ôm nó về nhà.",
+        "answer": "突然发现商店门口有一只可怜的小狗，我心里一软，就把它抱回了家。",
+        "answerPy": "Tūrán fāxiàn shāngdiàn ménkǒu yǒu yì zhī kělián de xiǎo gǒu, wǒ xīnli yì ruǎn, jiù bǎ tā bàohuíle jiā.",
+        "note": "突然 (Bài 8), 抱 (Bài 17), 把……回.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "太可怜了",
+        "py": "tài kělián le",
+        "vn": "tội quá"
+      },
+      {
+        "zh": "怪可怜的",
+        "py": "guài kělián de",
+        "vn": "trông tội nghiệp"
+      },
+      {
+        "zh": "可怜的小狗",
+        "py": "kělián de xiǎo gǒu",
+        "vn": "con chó tội nghiệp"
+      },
+      {
+        "zh": "觉得可怜",
+        "py": "juéde kělián",
+        "vn": "thấy tội"
+      },
+      {
+        "zh": "可怜的孩子",
+        "py": "kělián de háizi",
+        "vn": "đứa trẻ đáng thương"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 太 + 可怜 + 了",
+        "m": "Ai đó thật đáng thương"
+      },
+      {
+        "s": "可怜 ≈ 同情 (bài 16)",
+        "m": "可怜 là tính từ; 同情 là động từ"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "对面",
+    "py": "duìmiàn",
+    "pos": "Danh từ",
+    "vn": "đối diện, trước mặt",
+    "hv": "đối diện",
+    "em": "↔️",
+    "lesson": 2,
+    "explain": [
+      "Phía bên kia, trước mặt. 对面的饭店, 坐在对面, 马路对面."
+    ],
+    "usage": "对面的饭店, 马路对面, 坐在我对面.",
+    "collo": [
+      "去对面的饭店",
+      "马路对面",
+      "对面那条街"
+    ],
+    "ex_zh": "中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？",
+    "ex_py": "Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma?",
+    "ex_vn": "Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao?",
+    "exList": [
+      {
+        "zh": "中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？",
+        "py": "Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma?",
+        "vn": "Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao?"
+      },
+      {
+        "zh": "对面那条街上新开了一家理发店。",
+        "py": "Duìmiàn nà tiáo jiē shang xīn kāile yì jiā lǐfàdiàn.",
+        "vn": "Phố đối diện mới mở một tiệm cắt tóc."
+      },
+      {
+        "zh": "去西边的公共汽车应该在对面坐。",
+        "py": "Qù xībiān de gōnggòng qìchē yīnggāi zài duìmiàn zuò.",
+        "vn": "Xe buýt đi phía tây phải đón ở bên đối diện."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "面",
+        "p": "miàn",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 9,
+        "ord": "一 → 丿 → 𠃌 → 目 …",
+        "rad": "面 (diện)",
+        "mean": "mặt",
+        "tip": "Tượng hình khuôn MẶT. 对面 = mặt đối mặt; 方面 (Bài 5); 面包; 见面.",
+        "cf": "而 (ér – mà)",
+        "w": "对面 / 方面 / 面包 / 见面"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Phố đối diện mới mở một tiệm cắt tóc, chỉ cần bạn rảnh là mình dẫn bạn qua đó.",
+        "answer": "对面那条街上新开了一家理发店，只要你有空，我就带你去。",
+        "answerPy": "Duìmiàn nà tiáo jiē shang xīn kāile yì jiā lǐfàdiàn, zhǐyào nǐ yǒu kòng, wǒ jiù dài nǐ qù.",
+        "note": "理发店 là từ bài 19; 对面 đứng SAU danh từ chỉ nơi chốn.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "马路对面",
+        "py": "mǎ lù duìmiàn",
+        "vn": "bên kia đường"
+      },
+      {
+        "zh": "对面的饭店",
+        "py": "duìmiàn de fàndiàn",
+        "vn": "nhà hàng đối diện"
+      },
+      {
+        "zh": "对面那条街",
+        "py": "duìmiàn nà tiáo jiē",
+        "vn": "con phố đối diện"
+      },
+      {
+        "zh": "坐在对面",
+        "py": "zuò zài duìmiàn",
+        "vn": "ngồi đối diện"
+      },
+      {
+        "zh": "学校对面",
+        "py": "xuéxiào duìmiàn",
+        "vn": "đối diện trường học"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "nơi chốn + 对面",
+        "m": "Đối diện nơi nào — 对面 đứng SAU"
+      },
+      {
+        "s": "对 + 面",
+        "m": "Mặt (面) đối (对) nhau"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "烤鸭",
+    "py": "kǎoyā",
+    "pos": "Danh từ",
+    "vn": "vịt quay",
+    "hv": "khảo áp",
+    "em": "🦆",
+    "lesson": 2,
+    "explain": [
+      "Món ăn nổi tiếng Bắc Kinh. 北京烤鸭, 吃烤鸭, 一只烤鸭."
+    ],
+    "usage": "吃烤鸭, 北京烤鸭, 一只烤鸭.",
+    "collo": [
+      "去饭店吃烤鸭",
+      "北京烤鸭",
+      "烤鸭很有名"
+    ],
+    "ex_zh": "中午我们不是要去对面的饭店吃烤鸭吗？",
+    "ex_py": "Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā ma?",
+    "ex_vn": "Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay sao?",
+    "exList": [
+      {
+        "zh": "中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？",
+        "py": "Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma?",
+        "vn": "Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao?"
+      },
+      {
+        "zh": "来北京一定要尝一尝北京烤鸭。",
+        "py": "Lái Běijīng yídìng yào cháng yi cháng Běijīng kǎoyā.",
+        "vn": "Đến Bắc Kinh nhất định phải nếm thử vịt quay Bắc Kinh."
+      },
+      {
+        "zh": "这家饭店的烤鸭很有名，每天都要排队。",
+        "py": "Zhè jiā fàndiàn de kǎoyā hěn yǒumíng, měi tiān dōu yào pái duì.",
+        "vn": "Vịt quay nhà hàng này rất nổi tiếng, ngày nào cũng phải xếp hàng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "烤",
+        "p": "kǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "火 trái → 考 phải",
+        "rad": "火 (hỏa)",
+        "mean": "nướng",
+        "tip": "Lửa 火 + 考 → NƯỚNG, QUAY. 烤鸭 = vịt quay; 烤肉 = thịt nướng; 考 (thi) không có 火.",
+        "cf": "考 (kǎo – thi)",
+        "w": "烤鸭 / 烤肉 / 烤"
+      },
+      {
+        "c": "鸭",
+        "p": "yā",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "甲 trái → 鸟 phải",
+        "rad": "鸟 (điểu)",
+        "mean": "vịt",
+        "tip": "甲(biểu âm) + chim 鸟 → VỊT. 烤鸭, 鸭子.",
+        "cf": "鸡 (jī – gà)",
+        "w": "烤鸭 / 鸭子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đến Bắc Kinh thì nhất định phải nếm thử vịt quay Bắc Kinh, vì đó là món nổi tiếng nhất ở đây.",
+        "answer": "来北京一定要尝一尝北京烤鸭，因为那是这儿最有名的小吃。",
+        "answerPy": "Lái Běijīng yídìng yào cháng yi cháng Běijīng kǎoyā, yīnwèi nà shì zhèr zuì yǒumíng de xiǎochī.",
+        "note": "尝 là từ bài 6; 小吃 là từ cùng bài.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "北京烤鸭",
+        "py": "Běijīng Kǎoyā",
+        "vn": "vịt quay Bắc Kinh"
+      },
+      {
+        "zh": "吃烤鸭",
+        "py": "chī kǎoyā",
+        "vn": "ăn vịt quay"
+      },
+      {
+        "zh": "尝一尝烤鸭",
+        "py": "cháng yì cháng kǎoyā",
+        "vn": "nếm thử vịt quay"
+      },
+      {
+        "zh": "烤鸭很有名",
+        "py": "kǎoyā hěn yǒumíng",
+        "vn": "vịt quay rất nổi tiếng"
+      },
+      {
+        "zh": "一只烤鸭",
+        "py": "yì zhī kǎoyā",
+        "vn": "một con vịt quay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "烤 + 鸭",
+        "m": "Vịt (鸭) nướng (烤)"
+      },
+      {
+        "s": "尝 + 一尝 + 烤鸭",
+        "m": "Nếm thử vịt quay — 尝 là từ bài 6"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "祝贺",
+    "py": "zhùhè",
+    "pos": "Động từ",
+    "vn": "chúc mừng",
+    "hv": "chúc hạ",
+    "em": "🎉",
+    "lesson": 2,
+    "explain": [
+      "Chúc mừng thành công/việc vui. 祝贺你, 祝贺她考试合格. So sánh 祝 (chúc) + 贺 (mừng)."
+    ],
+    "usage": "祝贺你, 祝贺她……, 表示祝贺.",
+    "collo": [
+      "祝贺她考试成绩都合格",
+      "祝贺你们",
+      "向他表示祝贺"
+    ],
+    "ex_zh": "祝贺她考试成绩都合格吗？",
+    "ex_py": "Zhùhè tā kǎoshì chéngjì dōu hégé ma?",
+    "ex_vn": "Chúc mừng con thi đạt hết sao?",
+    "exList": [
+      {
+        "zh": "中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？那时候再告诉她，不是更好？",
+        "py": "Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma? Nà shíhou zài gàosu tā, bú shì gèng hǎo?",
+        "vn": "Trưa nay chẳng phải đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao? Lúc đó nói với con chẳng phải tốt hơn?"
+      },
+      {
+        "zh": "A：这次活动非常成功，我们顺利完成了公司交给的任务。B：辛苦了，祝贺你们！来，干一杯！",
+        "py": "A: Zhè cì huódòng fēicháng chénggōng, wǒmen shùnlì wánchéngle gōngsī jiāo gěi de rènwu. B: Xīnkǔ le, zhùhè nǐmen! Lái, gān yì bēi!",
+        "vn": "A: Hoạt động lần này rất thành công, chúng tôi hoàn thành thuận lợi nhiệm vụ công ty giao. B: Vất vả rồi, chúc mừng các bạn! Nào, cạn ly!"
+      },
+      {
+        "zh": "听说你考上研究生了，祝贺你！",
+        "py": "Tīngshuō nǐ kǎoshàng yánjiūshēng le, zhùhè nǐ!",
+        "vn": "Nghe nói bạn đỗ cao học rồi, chúc mừng bạn!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "贺",
+        "p": "hè",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "加 trên → 贝 dưới",
+        "rad": "贝 (bối)",
+        "mean": "mừng",
+        "tip": "加(thêm) + 贝(tiền, quà) → mang quà đến → CHÚC MỪNG (hạ). 祝贺 = chúc hạ.",
+        "cf": "加 (jiā – thêm)",
+        "w": "祝贺 / 贺卡"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vất vả rồi, chúc mừng các bạn! Nào, chúng ta cạn một ly!",
+        "answer": "辛苦了，祝贺你们！来，咱们干一杯！",
+        "answerPy": "Xīnkǔ le, zhùhè nǐmen! Lái, zánmen gān yì bēi!",
+        "note": "辛苦 là từ bài 7, 咱们 là từ bài 3; 干杯 là từ ly hợp.",
+        "pair": "祝贺……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "祝贺你",
+        "py": "zhùhè nǐ",
+        "vn": "chúc mừng bạn"
+      },
+      {
+        "zh": "表示祝贺",
+        "py": "biǎoshì zhùhè",
+        "vn": "gửi lời chúc mừng"
+      },
+      {
+        "zh": "祝贺成绩合格",
+        "py": "zhùhè chéngjì hégé",
+        "vn": "chúc mừng đạt kết quả"
+      },
+      {
+        "zh": "向他祝贺",
+        "py": "xiàng tā zhùhè",
+        "vn": "chúc mừng anh ấy"
+      },
+      {
+        "zh": "热烈祝贺",
+        "py": "rèliè zhùhè",
+        "vn": "nhiệt liệt chúc mừng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "祝贺 + ai (động từ)",
+        "m": "Chúc mừng ai"
+      },
+      {
+        "s": "向 + ai + 表示祝贺",
+        "m": "Gửi lời chúc mừng tới ai — 表示 là từ bài 11"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "合格",
+    "py": "hégé",
+    "pos": "Tính từ",
+    "vn": "đạt tiêu chuẩn, đạt yêu cầu",
+    "hv": "hợp cách",
+    "em": "✅",
+    "lesson": 2,
+    "explain": [
+      "Đạt yêu cầu (thi, sản phẩm, con người). 考试合格, 合格的产品, 一个合格的现代人."
+    ],
+    "usage": "考试成绩合格, 合格的产品, 合格的现代人.",
+    "collo": [
+      "考试成绩都合格",
+      "成绩都合格",
+      "做一个合格的现代人"
+    ],
+    "ex_zh": "祝贺她考试成绩都合格。",
+    "ex_py": "Zhùhè tā kǎoshì chéngjì dōu hégé.",
+    "ex_vn": "Chúc mừng con thi đạt hết.",
+    "exList": [
+      {
+        "zh": "祝贺她考试成绩都合格。",
+        "py": "Zhùhè tā kǎoshì chéngjì dōu hégé.",
+        "vn": "Chúc mừng con thi đạt hết."
+      },
+      {
+        "zh": "\"活到老，学到老\"。在现代社会中，我们必须坚持学习，努力获得新的知识，才能适应社会的发展速度，做一个合格的现代人。",
+        "py": "\"Huó dào lǎo, xué dào lǎo\". Zài xiàndài shèhuì zhōng, wǒmen bìxū jiānchí xuéxí, nǔlì huòdé xīn de zhīshi, cái néng shìyìng shèhuì de fāzhǎn sùdù, zuò yí ge hégé de xiàndài rén.",
+        "vn": "\"Sống đến già, học đến già\". Trong xã hội hiện đại, phải kiên trì học, nỗ lực có kiến thức mới, mới thích ứng tốc độ phát triển, làm một người hiện đại đạt chuẩn."
+      },
+      {
+        "zh": "只要他这次考试的成绩都合格，就可以进入高级班学习。",
+        "py": "Zhǐyào tā zhè cì kǎoshì de chéngjì dōu hégé, jiù kěyǐ jìnrù gāojí bān xuéxí.",
+        "vn": "Chỉ cần lần này thi đạt hết, là có thể vào lớp cao cấp học."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "格",
+        "p": "gé",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "木 trái → 各 phải",
+        "rad": "木 (mộc)",
+        "mean": "cách, chuẩn",
+        "tip": "Gỗ 木 + 各 → khung chuẩn → CÁCH. 合格 = hợp chuẩn; 性格 (Bài 8); 价格 (Bài 5); 表格 (Bài 16); 严格 (Bài 12).",
+        "cf": "各 (gè – mỗi)",
+        "w": "合格 / 性格 / 价格 / 表格 / 严格"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần lần này thi đạt hết, là có thể vào lớp cao cấp học.",
+        "answer": "只要他这次考试的成绩都合格，就可以进入高级班学习。",
+        "answerPy": "Zhǐyào tā zhè cì kǎoshì de chéngjì dōu hégé, jiù kěyǐ jìnrù gāojí bān xuéxí.",
+        "note": "只要……就 (Bài 8), 成绩 (Bài 2).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "成绩合格",
+        "py": "chéngjì hégé",
+        "vn": "kết quả đạt"
+      },
+      {
+        "zh": "考试合格",
+        "py": "kǎoshì hégé",
+        "vn": "thi đạt"
+      },
+      {
+        "zh": "不合格",
+        "py": "bù hégé",
+        "vn": "không đạt"
+      },
+      {
+        "zh": "合格的现代人",
+        "py": "hégé de xiàn dài rén",
+        "vn": "một người hiện đại đủ tiêu chuẩn"
+      },
+      {
+        "zh": "质量合格",
+        "py": "zhìliàng hégé",
+        "vn": "chất lượng đạt chuẩn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 合格 / 不合格",
+        "m": "Cái gì đạt / không đạt chuẩn"
+      },
+      {
+        "s": "合格 ≈ 符合标准 (bài 3, 5)",
+        "m": "Đạt tiêu chuẩn"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "干杯",
+    "py": "gān bēi",
+    "pos": "Động từ",
+    "vn": "cạn ly",
+    "hv": "can bôi",
+    "em": "🥂",
+    "lesson": 3,
+    "explain": [
+      "Uống cạn để chúc mừng. Động từ ly hợp: 干一杯, 和……干杯. 干 (gān) = khô (Bài 17)."
+    ],
+    "usage": "干杯, 干一杯, 和你干杯的那个人.",
+    "collo": [
+      "和你干杯的那个人",
+      "来，干一杯",
+      "为……干杯"
+    ],
+    "ex_zh": "这张照片上和你干杯的那个人是少数民族吗？她打扮得真漂亮。",
+    "ex_py": "Zhè zhāng zhàopiàn shang hé nǐ gān bēi de nàge rén shì shǎoshù mínzú ma? Tā dǎban de zhēn piàoliang.",
+    "ex_vn": "Người cạn ly với bạn trong ảnh này là dân tộc thiểu số à? Cô ấy trang điểm đẹp thật.",
+    "exList": [
+      {
+        "zh": "这张照片上和你干杯的那个人是少数民族吗？她打扮得真漂亮。",
+        "py": "Zhè zhāng zhàopiàn shang hé nǐ gān bēi de nàge rén shì shǎoshù mínzú ma? Tā dǎban de zhēn piàoliang.",
+        "vn": "Người cạn ly với bạn trong ảnh này là dân tộc thiểu số à? Cô ấy trang điểm đẹp thật."
+      },
+      {
+        "zh": "辛苦了，祝贺你们！来，干一杯！",
+        "py": "Xīnkǔ le, zhùhè nǐmen! Lái, gān yì bēi!",
+        "vn": "Vất vả rồi, chúc mừng các bạn! Nào, cạn ly!"
+      },
+      {
+        "zh": "来，为我们的友谊干杯！",
+        "py": "Lái, wèi wǒmen de yǒuyì gān bēi!",
+        "vn": "Nào, cạn ly vì tình bạn của chúng ta!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "杯",
+        "p": "bēi",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "木 trái → 不 phải",
+        "rad": "木 (mộc)",
+        "mean": "cốc, ly",
+        "tip": "Gỗ 木 + 不 → cái CỐC (xưa làm bằng gỗ). 干杯 = cạn ly; 杯子; 世界杯.",
+        "cf": "不 (bù – không)",
+        "w": "干杯 / 杯子 / 一杯 / 世界杯"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nào, chúng ta nâng ly vì tình bạn của mình!",
+        "answer": "来，为我们的友谊干杯！",
+        "answerPy": "Lái, wèi wǒmen de yǒuyì gānbēi!",
+        "note": "友谊 là từ bài 2 — 真正的友谊.",
+        "pair": "为……干杯"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "干一杯",
+        "py": "gàn yì bēi",
+        "vn": "cạn một ly"
+      },
+      {
+        "zh": "为……干杯",
+        "py": "wèi gān bēi",
+        "vn": "nâng ly vì…"
+      },
+      {
+        "zh": "跟你干杯",
+        "py": "gēn nǐ gān bēi",
+        "vn": "cạn ly với bạn"
+      },
+      {
+        "zh": "干了杯",
+        "py": "gàn le bēi",
+        "vn": "đã cạn ly"
+      },
+      {
+        "zh": "大家干杯",
+        "py": "dàjiā gān bēi",
+        "vn": "mọi người cạn ly"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "为 + N + 干杯",
+        "m": "Nâng ly vì cái gì"
+      },
+      {
+        "s": "干 + 了 + 杯",
+        "m": "干杯 là từ ly hợp: 干了一杯 ✓"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "民族",
+    "py": "mínzú",
+    "pos": "Danh từ",
+    "vn": "dân tộc",
+    "hv": "dân tộc",
+    "em": "🎎",
+    "lesson": 3,
+    "explain": [
+      "Cộng đồng người có chung văn hóa. 少数民族 = dân tộc thiểu số; 56个民族; 汉族."
+    ],
+    "usage": "少数民族, 56个民族, 民族服装.",
+    "collo": [
+      "少数民族",
+      "中国有56个民族",
+      "民族文化"
+    ],
+    "ex_zh": "她是我们的导游，不是少数民族。",
+    "ex_py": "Tā shì wǒmen de dǎoyóu, bú shì shǎoshù mínzú.",
+    "ex_vn": "Cô ấy là hướng dẫn viên của chúng tôi, không phải dân tộc thiểu số.",
+    "exList": [
+      {
+        "zh": "她是我们的导游，不是少数民族。一路上她给我们讲了很多有趣的笑话。",
+        "py": "Tā shì wǒmen de dǎoyóu, bú shì shǎoshù mínzú. Yí lù shang tā gěi wǒmen jiǎngle hěn duō yǒuqù de xiàohua.",
+        "vn": "Cô ấy là hướng dẫn viên, không phải dân tộc thiểu số. Dọc đường cô kể nhiều truyện cười thú vị."
+      },
+      {
+        "zh": "中国有56个民族，其中汉族人的数量最多，汉族以外的55个民族由于人数较少，人们把它们叫作\"少数民族\"。",
+        "py": "Zhōngguó yǒu wǔshíliù ge mínzú, qízhōng Hànzú rén de shùliàng zuì duō, Hànzú yǐwài de wǔshíwǔ ge mínzú yóuyú rénshù jiào shǎo, rénmen bǎ tāmen jiàozuò \"shǎoshù mínzú\".",
+        "vn": "Trung Quốc có 56 dân tộc, người Hán đông nhất, 55 dân tộc còn lại do số người ít nên gọi là \"dân tộc thiểu số\"."
+      },
+      {
+        "zh": "每个民族都有自己的传统和文化。",
+        "py": "Měi ge mínzú dōu yǒu zìjǐ de chuántǒng hé wénhuà.",
+        "vn": "Mỗi dân tộc đều có truyền thống và văn hóa riêng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "族",
+        "p": "zú",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "方 trái → 𠂉矢 phải",
+        "rad": "方 (phương)",
+        "mean": "tộc",
+        "tip": "Cờ 方 + tên 矢 → nhóm người cùng chiến đấu dưới một lá cờ → TỘC. 民族, 家族, 汉族.",
+        "cf": "旅 (lǚ – lữ, cùng bộ)",
+        "w": "民族 / 少数民族 / 家族"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mỗi dân tộc không những có truyền thống riêng, mà còn có văn hoá riêng của mình.",
+        "answer": "每个民族不但有自己的传统，而且还有自己的文化。",
+        "answerPy": "Měi ge mínzú búdàn yǒu zìjǐ de chuántǒng, érqiě hái yǒu zìjǐ de wénhuà.",
+        "note": "少数民族 — dân tộc thiểu số.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "少数民族",
+        "py": "shǎoshù mínzú",
+        "vn": "dân tộc thiểu số"
+      },
+      {
+        "zh": "民族文化",
+        "py": "mínzú wénhuà",
+        "vn": "văn hoá dân tộc"
+      },
+      {
+        "zh": "56个民族",
+        "py": "gè mínzú",
+        "vn": "56 dân tộc"
+      },
+      {
+        "zh": "每个民族",
+        "py": "měi gè mínzú",
+        "vn": "mỗi dân tộc"
+      },
+      {
+        "zh": "民族传统",
+        "py": "mínzú chuántǒng",
+        "vn": "truyền thống dân tộc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "少数 + 民族",
+        "m": "Dân tộc thiểu số"
+      },
+      {
+        "s": "民族 + 文化 / 传统",
+        "m": "Văn hoá, truyền thống dân tộc"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "打扮",
+    "py": "dǎban",
+    "pos": "Động từ",
+    "vn": "trang điểm, ăn diện",
+    "hv": "đả ban",
+    "em": "💄",
+    "lesson": 3,
+    "explain": [
+      "Ăn mặc, trang điểm. 打扮得真漂亮, 爱打扮. Cũng là danh từ: 这种打扮."
+    ],
+    "usage": "打扮得很漂亮, 爱打扮, 这种打扮.",
+    "collo": [
+      "打扮得真漂亮",
+      "打扮一下",
+      "这种打扮不太合适"
+    ],
+    "ex_zh": "她打扮得真漂亮。",
+    "ex_py": "Tā dǎban de zhēn piàoliang.",
+    "ex_vn": "Cô ấy trang điểm đẹp thật.",
+    "exList": [
+      {
+        "zh": "这张照片上和你干杯的那个人是少数民族吗？她打扮得真漂亮。",
+        "py": "Zhè zhāng zhàopiàn shang hé nǐ gān bēi de nàge rén shì shǎoshù mínzú ma? Tā dǎban de zhēn piàoliang.",
+        "vn": "Người cạn ly với bạn trong ảnh là dân tộc thiểu số à? Cô ấy trang điểm đẹp thật."
+      },
+      {
+        "zh": "A：今晚我穿这条裙子怎么样？今年最流行的。B：很漂亮，不过我觉得这种打扮参加正式的舞会可能还是不太合适。",
+        "py": "A: Jīn wǎn wǒ chuān zhè tiáo qúnzi zěnmeyàng? Jīnnián zuì liúxíng de. B: Hěn piàoliang, búguò wǒ juéde zhè zhǒng dǎban cānjiā zhèngshì de wǔhuì kěnéng háishi bú tài héshì.",
+        "vn": "A: Tối nay tôi mặc váy này thế nào? Mốt nhất năm nay. B: Rất đẹp, nhưng tôi thấy kiểu ăn diện này dự vũ hội chính thức có lẽ chưa hợp."
+      },
+      {
+        "zh": "参加面试前，稍微打扮一下会给人留下好印象。",
+        "py": "Cānjiā miànshì qián, shāowēi dǎban yíxià huì gěi rén liúxià hǎo yìnxiàng.",
+        "vn": "Trước khi phỏng vấn, chỉnh trang một chút sẽ để lại ấn tượng tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "扮",
+        "p": "ban",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "扌 trái → 分 phải",
+        "rad": "扌 (thủ)",
+        "mean": "trang điểm",
+        "tip": "Tay 扌 + 分 → tay sửa soạn → TRANG ĐIỂM, đóng vai. 打扮 = ăn diện.",
+        "cf": "份 (fèn – phần)",
+        "w": "打扮 / 扮演"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Rất đẹp, nhưng tôi thấy kiểu ăn diện này dự vũ hội chính thức có lẽ chưa hợp.",
+        "answer": "很漂亮，不过我觉得这种打扮参加正式的舞会可能还是不太合适。",
+        "answerPy": "Hěn piàoliang, búguò wǒ juéde zhè zhǒng dǎban cānjiā zhèngshì de wǔhuì kěnéng háishi bú tài héshì.",
+        "note": "正式 (Bài 6), 合适 (Bài 15), 流行 (Bài 5).",
+        "pair": "……，不过……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "打扮得很漂亮",
+        "py": "dǎban de hěn piàoliang",
+        "vn": "trang điểm rất đẹp"
+      },
+      {
+        "zh": "打扮一下",
+        "py": "dǎban yíxià",
+        "vn": "sửa soạn một chút"
+      },
+      {
+        "zh": "这种打扮",
+        "py": "zhè zhǒng dǎban",
+        "vn": "kiểu ăn mặc này"
+      },
+      {
+        "zh": "化妆打扮",
+        "py": "huàzhuāng dǎban",
+        "vn": "trang điểm ăn diện"
+      },
+      {
+        "zh": "不太会打扮",
+        "py": "bú tài huì dǎban",
+        "vn": "không biết ăn diện lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打扮 + 得 + Adj (động từ)",
+        "m": "Ăn diện, trang điểm thế nào"
+      },
+      {
+        "s": "这种 + 打扮 (danh từ)",
+        "m": "Kiểu ăn mặc này"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "笑话",
+    "py": "xiàohua",
+    "pos": "Danh từ",
+    "vn": "truyện cười",
+    "hv": "tiếu thoại",
+    "em": "😂",
+    "lesson": 3,
+    "explain": [
+      "Chuyện gây cười. 讲笑话, 有趣的笑话, 一肚子的笑话. Cũng là động từ: 笑话别人 (chê cười)."
+    ],
+    "usage": "讲笑话, 有趣的笑话, 别笑话我.",
+    "collo": [
+      "讲了很多有趣的笑话",
+      "一肚子的笑话",
+      "别笑话我"
+    ],
+    "ex_zh": "一路上她给我们讲了很多有趣的笑话。",
+    "ex_py": "Yí lù shang tā gěi wǒmen jiǎngle hěn duō yǒuqù de xiàohua.",
+    "ex_vn": "Dọc đường cô ấy kể cho chúng tôi nhiều truyện cười thú vị.",
+    "exList": [
+      {
+        "zh": "一路上她给我们讲了很多有趣的笑话。",
+        "py": "Yí lù shang tā gěi wǒmen jiǎngle hěn duō yǒuqù de xiàohua.",
+        "vn": "Dọc đường cô ấy kể cho chúng tôi nhiều truyện cười thú vị."
+      },
+      {
+        "zh": "A：你这一肚子的笑话，都是从哪儿听来的？B：有个网站上有很多，看到有趣的我就记下来。",
+        "py": "A: Nǐ zhè yí dùzi de xiàohua, dōu shì cóng nǎr tīnglái de? B: Yǒu ge wǎngzhàn shang yǒu hěn duō, kàndào yǒuqù de wǒ jiù jì xiàlai.",
+        "vn": "A: Cả bụng truyện cười của bạn nghe từ đâu vậy? B: Có trang web có nhiều lắm, thấy hay tôi ghi lại."
+      },
+      {
+        "zh": "她讲着讲着自己就先笑了，而大家却不明白她到底为什么笑。",
+        "py": "Tā jiǎngzhe jiǎngzhe zìjǐ jiù xiān xiào le, ér dàjiā què bù míngbai tā dàodǐ wèishénme xiào.",
+        "vn": "Cô ấy kể một lúc thì tự cười trước, còn mọi người lại không hiểu rốt cuộc cô cười gì."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "笑",
+        "p": "xiào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "⺮ trên → 夭 dưới",
+        "rad": "⺮ (trúc)",
+        "mean": "cười",
+        "tip": "Trúc ⺮ + 夭 → cây trúc uốn cong như người cười → CƯỜI. 笑话 = truyện cười; 开玩笑 (Bài 5).",
+        "cf": "夭 (yāo)",
+        "w": "笑话 / 开玩笑 / 笑"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cả bụng truyện cười của bạn nghe từ đâu vậy? — Có trang web có nhiều lắm, thấy hay tôi ghi lại.",
+        "answer": "你这一肚子的笑话，都是从哪儿听来的？——有个网站上有很多，看到有趣的我就记下来。",
+        "answerPy": "Nǐ zhè yí dùzi de xiàohua, dōu shì cóng nǎr tīnglái de? — Yǒu ge wǎngzhàn shang yǒu hěn duō, kàndào yǒuqù de wǒ jiù jì xiàlai.",
+        "note": "肚子 (Bài 7), 网站 (Bài 18), 有趣 (Bài 13).",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "讲笑话",
+        "py": "jiǎng xiàohua",
+        "vn": "kể chuyện cười"
+      },
+      {
+        "zh": "有趣的笑话",
+        "py": "yǒuqù de xiàohua",
+        "vn": "truyện cười thú vị"
+      },
+      {
+        "zh": "一个笑话",
+        "py": "yí gè xiàohua",
+        "vn": "một chuyện cười"
+      },
+      {
+        "zh": "别笑话我",
+        "py": "bié xiàohua wǒ",
+        "vn": "đừng cười tôi"
+      },
+      {
+        "zh": "一肚子笑话",
+        "py": "yí dùzi xiàohua",
+        "vn": "đầy bụng chuyện cười"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "讲 + 笑话 (danh từ)",
+        "m": "Kể chuyện cười — 有趣 là từ bài 13"
+      },
+      {
+        "s": "笑话 + ai (động từ)",
+        "m": "Chê cười ai"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "存",
+    "py": "cún",
+    "pos": "Động từ",
+    "vn": "gửi",
+    "hv": "tồn",
+    "em": "🏦",
+    "lesson": 3,
+    "explain": [
+      "Gửi (đồ, tiền) để giữ. 存包 = gửi túi; 存钱 = gửi tiền; 存在 = tồn tại."
+    ],
+    "usage": "存包, 存钱, 把行李存在……",
+    "collo": [
+      "存包的钥匙",
+      "存钱",
+      "把包存在这里"
+    ],
+    "ex_zh": "有一次我把存包的钥匙丢了，最后还是她帮我找到的。",
+    "ex_py": "Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.",
+    "ex_vn": "Có lần tôi làm mất chìa khóa tủ gửi đồ, cuối cùng vẫn là cô ấy giúp tìm được.",
+    "exList": [
+      {
+        "zh": "有一次我把存包的钥匙丢了，最后还是她帮我找到的。",
+        "py": "Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.",
+        "vn": "Có lần tôi làm mất chìa khóa tủ gửi đồ, cuối cùng vẫn là cô ấy giúp tìm được."
+      },
+      {
+        "zh": "进超市前请先把包存在门口。",
+        "py": "Jìn chāoshì qián qǐng xiān bǎ bāo cún zài ménkǒu.",
+        "vn": "Trước khi vào siêu thị xin gửi túi ở cửa."
+      },
+      {
+        "zh": "他每个月都把一部分工资存进银行。",
+        "py": "Tā měi ge yuè dōu bǎ yí bùfen gōngzī cúnjìn yínháng.",
+        "vn": "Mỗi tháng anh ấy gửi một phần lương vào ngân hàng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "存",
+        "p": "cún",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 6,
+        "ord": "𠂇 → 丨 → 子",
+        "rad": "子 (tử)",
+        "mean": "gửi, tồn tại",
+        "tip": "才 + 子 → giữ lại → TỒN, GỬI. 存包, 存钱, 存在, 保存.",
+        "cf": "在 (zài – ở)",
+        "w": "存 / 存包 / 存钱 / 存在"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì anh ấy muốn mua nhà, nên mỗi tháng đều gửi một phần lương vào ngân hàng.",
+        "answer": "因为他想买房子，所以每个月都把一部分工资存进银行。",
+        "answerPy": "Yīnwèi tā xiǎng mǎi fángzi, suǒyǐ měi ge yuè dōu bǎ yí bùfen gōngzī cún jìn yínháng.",
+        "note": "工资 là từ bài 4, 部分 là từ bài 13; 存 ↔ 取 (bài 9).",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "存钱",
+        "py": "cún qián",
+        "vn": "gửi tiền"
+      },
+      {
+        "zh": "存包",
+        "py": "cún bāo",
+        "vn": "gửi túi"
+      },
+      {
+        "zh": "存进银行",
+        "py": "cún jìn yínháng",
+        "vn": "gửi vào ngân hàng"
+      },
+      {
+        "zh": "存包的钥匙",
+        "py": "cún bāo de yàoshi",
+        "vn": "chìa khoá tủ gửi đồ"
+      },
+      {
+        "zh": "把包存在这里",
+        "py": "bǎ bāo cún zài zhèlǐ",
+        "vn": "gửi túi ở đây"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 存 + 在 / 进 + nơi chốn",
+        "m": "Gửi cái gì vào đâu"
+      },
+      {
+        "s": "存 ↔ 取 (bài 9)",
+        "m": "Gửi vào ↔ rút ra"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "钥匙",
+    "py": "yàoshi",
+    "pos": "Danh từ",
+    "vn": "chìa khóa",
+    "hv": "thược thi",
+    "em": "🔑",
+    "lesson": 3,
+    "explain": [
+      "Dụng cụ mở khóa. 一把钥匙, 钥匙丢了, 房间的钥匙."
+    ],
+    "usage": "一把钥匙, 钥匙丢了, 存包的钥匙.",
+    "collo": [
+      "存包的钥匙",
+      "钥匙丢了",
+      "找到钥匙"
+    ],
+    "ex_zh": "我把存包的钥匙丢了。",
+    "ex_py": "Wǒ bǎ cún bāo de yàoshi diū le.",
+    "ex_vn": "Tôi làm mất chìa khóa tủ gửi đồ.",
+    "exList": [
+      {
+        "zh": "有一次我把存包的钥匙丢了，最后还是她帮我找到的。这张照片就是找到钥匙后，我们一起照的。",
+        "py": "Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de. Zhè zhāng zhàopiàn jiù shì zhǎodào yàoshi hòu, wǒmen yìqǐ zhào de.",
+        "vn": "Có lần tôi mất chìa khóa tủ gửi đồ, cuối cùng cô ấy giúp tìm được. Tấm ảnh này chụp chung sau khi tìm được chìa."
+      },
+      {
+        "zh": "喂，你还在逛街吗？我的钥匙丢了，进不了门。",
+        "py": "Wèi, nǐ hái zài guàng jiē ma? Wǒ de yàoshi diū le, jìnbuliǎo mén.",
+        "vn": "Alô, em còn dạo phố à? Anh mất chìa khóa, không vào được nhà."
+      },
+      {
+        "zh": "钥匙可能掉到沙发底下了，你找找看。",
+        "py": "Yàoshi kěnéng diàodào shāfā dǐxia le, nǐ zhǎozhao kàn.",
+        "vn": "Chìa khóa có thể rơi dưới gầm sofa, bạn tìm thử."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "钥",
+        "p": "yào",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "钅 trái → 月 phải",
+        "rad": "钅 (kim)",
+        "mean": "chìa khóa",
+        "tip": "Kim loại 钅 + 月 → CHÌA KHÓA. 钥匙 luôn đi đôi.",
+        "cf": "钢 (gāng – thép)",
+        "w": "钥匙"
+      },
+      {
+        "c": "匙",
+        "p": "shi",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 11,
+        "ord": "是 → 匕",
+        "rad": "匕 (chủy)",
+        "mean": "thìa; chìa",
+        "tip": "是 + 匕(thìa) → THÌA; trong 钥匙 đọc nhẹ shi = chìa khóa. 勺子 (Bài 12) cũng là thìa.",
+        "cf": "是 (shì – là)",
+        "w": "钥匙 / 汤匙"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Có lần tôi làm mất chìa khóa tủ gửi đồ, cuối cùng vẫn là cô ấy giúp tìm được.",
+        "answer": "有一次我把存包的钥匙丢了，最后还是她帮我找到的。",
+        "answerPy": "Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.",
+        "note": "丢 (Bài 14), 还是 (Bài 1), 把……了.",
+        "pair": "……，还是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "钥匙丢了",
+        "py": "yàoshi diū le",
+        "vn": "mất chìa khoá"
+      },
+      {
+        "zh": "找到钥匙",
+        "py": "zhǎo dào yàoshi",
+        "vn": "tìm thấy chìa khoá"
+      },
+      {
+        "zh": "一把钥匙",
+        "py": "yì bǎ yàoshi",
+        "vn": "một chiếc chìa khoá"
+      },
+      {
+        "zh": "存包的钥匙",
+        "py": "cún bāo de yàoshi",
+        "vn": "chìa khoá tủ gửi đồ"
+      },
+      {
+        "zh": "房间的钥匙",
+        "py": "fángjiān de yàoshi",
+        "vn": "chìa khoá phòng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 把 + 钥匙",
+        "m": "Lượng từ 把 — cùng kiểu 一把刀 (bài 19)"
+      },
+      {
+        "s": "钥匙 (yàoshi) đồng âm với 要是 (nếu như)"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "究竟",
+    "py": "jiūjìng",
+    "pos": "Phó từ",
+    "vn": "rốt cuộc (nhấn mạnh trong câu hỏi)",
+    "hv": "cứu cánh",
+    "em": "❓",
+    "lesson": 3,
+    "explain": [
+      "Nhấn mạnh truy vấn trong câu hỏi hoặc câu có đại từ nghi vấn (= 到底 Bài 16), thiên về văn viết. Chủ ngữ là đại từ nghi vấn → 究竟 đứng trước. Ngữ pháp trọng tâm: 究竟 vs 到底."
+    ],
+    "usage": "究竟哪个……？, 究竟是怎么回事, 究竟什么是……？",
+    "collo": [
+      "究竟哪个季节去比较好",
+      "究竟是怎么回事",
+      "究竟从哪里来"
+    ],
+    "ex_zh": "究竟哪个季节去丽江旅游比较好呢？",
+    "ex_py": "Jiūjìng nǎ ge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne?",
+    "ex_vn": "Rốt cuộc mùa nào đi Lệ Giang du lịch thì tốt hơn?",
+    "exList": [
+      {
+        "zh": "明年我有机会也去那儿看看，到时把你的导游介绍给我吧。究竟哪个季节去丽江旅游比较好呢？",
+        "py": "Míngnián wǒ yǒu jīhuì yě qù nàr kànkan, dào shí bǎ nǐ de dǎoyóu jièshào gěi wǒ ba. Jiūjìng nǎ ge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne?",
+        "vn": "Năm sau có dịp tôi cũng đi xem, lúc đó giới thiệu hướng dẫn viên cho tôi nhé. Rốt cuộc mùa nào đi Lệ Giang thì tốt?"
+      },
+      {
+        "zh": "随着科学技术的发展，很多问题已经得到解决。但有些问题我们仍然无法回答，例如，生命究竟从哪里来？",
+        "py": "Suízhe kēxué jìshù de fāzhǎn, hěn duō wèntí yǐjīng dédào jiějué. Dàn yǒuxiē wèntí wǒmen réngrán wúfǎ huídá, lìrú, shēngmìng jiūjìng cóng nǎlǐ lái?",
+        "vn": "Cùng với sự phát triển khoa học kỹ thuật, nhiều vấn đề đã được giải quyết. Nhưng có vấn đề vẫn không trả lời được, ví dụ, sự sống rốt cuộc từ đâu đến?"
+      },
+      {
+        "zh": "学习时，不仅要知道答案是什么，还要弄清楚答案究竟是怎么得来的，只有这样，才能把问题真正弄懂。",
+        "py": "Xuéxí shí, bùjǐn yào zhīdào dá'àn shì shénme, hái yào nòng qīngchu dá'àn jiūjìng shì zěnme délái de, zhǐyǒu zhèyàng, cái néng bǎ wèntí zhēnzhèng nòngdǒng.",
+        "vn": "Khi học không chỉ biết đáp án là gì, còn phải làm rõ đáp án rốt cuộc có được thế nào, chỉ như vậy mới thật sự hiểu vấn đề."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "究",
+        "p": "jiū",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "穴 trên → 九 dưới",
+        "rad": "穴 (huyệt)",
+        "mean": "tìm tòi",
+        "tip": "Hang 穴 + 九 → đào sâu đến cùng → CỨU (nghiên cứu). 究竟 = xét đến cùng; 研究 (Bài 9).",
+        "cf": "穷 (qióng – nghèo, Bài 10)",
+        "w": "究竟 / 研究"
+      },
+      {
+        "c": "竟",
+        "p": "jìng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "音 trên → 儿 dưới",
+        "rad": "立 (lập)",
+        "mean": "cuối cùng",
+        "tip": "音 + 儿 → bản nhạc kết thúc → CUỐI CÙNG, RỐT CUỘC. 究竟; 竟然 (Bài 6); 毕竟.",
+        "cf": "竞 (jìng – cạnh tranh, Bài 17)",
+        "w": "究竟 / 竟然 / 毕竟"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Có vấn đề chúng ta vẫn không trả lời được, ví dụ, sự sống rốt cuộc từ đâu đến?",
+        "answer": "有些问题我们仍然无法回答，例如，生命究竟从哪里来？",
+        "answerPy": "Yǒuxiē wèntí wǒmen réngrán wúfǎ huídá, lìrú, shēngmìng jiūjìng cóng nǎlǐ lái?",
+        "note": "仍然 (Bài 17), 无法 (Bài 12), 例如 (Bài 10), 生命 (Bài 8).",
+        "pair": "例如……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Rốt cuộc mùa nào đi Lệ Giang du lịch thì tốt hơn? Nếu bạn biết thì nói giúp mình.",
+        "answer": "究竟哪个季节去丽江旅游比较好呢？要是你知道，就告诉我一下。",
+        "answerPy": "Jiūjìng nǎge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne? Yàoshi nǐ zhīdào, jiù gàosu wǒ yíxià.",
+        "note": "究竟 văn viết hơn 到底 (bài 16), cũng không đi với 吗.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "究竟是怎么回事",
+        "py": "jiūjìng shì zěnme huí shì",
+        "vn": "rốt cuộc là chuyện gì"
+      },
+      {
+        "zh": "究竟哪个好",
+        "py": "jiūjìng nǎge hǎo",
+        "vn": "rốt cuộc cái nào tốt"
+      },
+      {
+        "zh": "究竟从哪里来",
+        "py": "jiūjìng cóng nǎlǐ lái",
+        "vn": "rốt cuộc từ đâu tới"
+      },
+      {
+        "zh": "究竟去不去",
+        "py": "jiūjìng qù bú qù",
+        "vn": "rốt cuộc có đi không"
+      },
+      {
+        "zh": "想知道究竟",
+        "py": "xiǎng zhīdào jiūjìng",
+        "vn": "muốn biết ngọn ngành"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "究竟 + câu hỏi？",
+        "m": "Rốt cuộc … ? — 究竟 văn viết hơn 到底 (bài 16)"
+      },
+      {
+        "s": "✗ 究竟他来了吗？ → ✓ 究竟他来不来？",
+        "m": "Cũng không đi với 吗"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "棵",
+    "py": "kē",
+    "pos": "Lượng từ",
+    "vn": "cây, ngọn (dùng cho thực vật)",
+    "hv": "khỏa",
+    "em": "🌳",
+    "lesson": 4,
+    "explain": [
+      "Lượng từ cho cây cối: 一棵树, 一棵草, 两棵植物. Phân biệt 颗 (kē – hạt nhỏ, viên)."
+    ],
+    "usage": "一棵树, 一棵一棵地, 两棵植物.",
+    "collo": [
+      "窗外的树一棵一棵地变绿",
+      "一棵大树",
+      "两棵不同的植物"
+    ],
+    "ex_zh": "窗外的树一棵一棵地变绿，北方也许还下着雪，南方却已经到处都是绿色了。",
+    "ex_py": "Chuāngwài de shù yì kē yì kē de biàn lǜ, běifāng yěxǔ hái xiàzhe xuě, nánfāng què yǐjīng dàochù dōu shì lǜsè le.",
+    "ex_vn": "Cây ngoài cửa sổ từng cây một xanh dần, miền Bắc có lẽ còn tuyết, miền Nam đã khắp nơi xanh rồi.",
+    "exList": [
+      {
+        "zh": "窗外的树一棵一棵地变绿，北方也许还下着雪，南方却已经到处都是绿色了。",
+        "py": "Chuāngwài de shù yì kē yì kē de biàn lǜ, běifāng yěxǔ hái xiàzhe xuě, nánfāng què yǐjīng dàochù dōu shì lǜsè le.",
+        "vn": "Cây ngoài cửa sổ từng cây một xanh dần, miền Bắc có lẽ còn tuyết, miền Nam đã khắp nơi xanh rồi."
+      },
+      {
+        "zh": "虽然这是两棵不同的植物，但是它们到底有什么区别，我也说不清楚。",
+        "py": "Suīrán zhè shì liǎng kē bù tóng de zhíwù, dànshì tāmen dàodǐ yǒu shénme qūbié, wǒ yě shuōbuqīngchu.",
+        "vn": "Tuy đây là hai cây khác nhau, nhưng rốt cuộc khác gì tôi cũng nói không rõ."
+      },
+      {
+        "zh": "我家门口有一棵老树，已经有一百多年了。",
+        "py": "Wǒ jiā ménkǒu yǒu yì kē lǎo shù, yǐjīng yǒu yìbǎi duō nián le.",
+        "vn": "Trước cửa nhà tôi có một cây cổ thụ, đã hơn trăm năm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "棵",
+        "p": "kē",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "木 trái → 果 phải",
+        "rad": "木 (mộc)",
+        "mean": "cây (lượng từ)",
+        "tip": "Gỗ 木 + 果 → lượng từ cho CÂY. Phân biệt 颗 (kē, bộ 页 – hạt, viên: 一颗星).",
+        "cf": "颗 (kē – hạt)",
+        "w": "一棵树 / 一棵草"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy đây là hai cây khác nhau, nhưng rốt cuộc khác gì tôi cũng nói không rõ.",
+        "answer": "虽然这是两棵不同的植物，但是它们到底有什么区别，我也说不清楚。",
+        "answerPy": "Suīrán zhè shì liǎng kē bù tóng de zhíwù, dànshì tāmen dàodǐ yǒu shénme qūbié, wǒ yě shuōbuqīngchu.",
+        "note": "植物 (Bài 12), 到底 (Bài 16), 区别 (Bài 8).",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一棵树",
+        "py": "yì kē shù",
+        "vn": "một cái cây"
+      },
+      {
+        "zh": "一棵大树",
+        "py": "yì kē dà shù",
+        "vn": "một cây to"
+      },
+      {
+        "zh": "两棵植物",
+        "py": "liǎng kē zhíwù",
+        "vn": "hai cây"
+      },
+      {
+        "zh": "一棵一棵地",
+        "py": "yì kē yì kē de",
+        "vn": "từng cây một"
+      },
+      {
+        "zh": "几棵花",
+        "py": "jǐ kē huā",
+        "vn": "mấy cây hoa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 棵 + cây cối",
+        "m": "Lượng từ 棵 cho thực vật — 植物 là từ bài 7"
+      },
+      {
+        "s": "一棵一棵地 + V",
+        "m": "Từng cây một — dạng lặp lượng từ"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "汤",
+    "py": "tāng",
+    "pos": "Danh từ",
+    "vn": "canh, súp",
+    "hv": "thang",
+    "em": "🍲",
+    "lesson": 4,
+    "explain": [
+      "Món nước. 鸡蛋汤, 喝汤, 一碗汤. 汤 vs 场 (chǎng)."
+    ],
+    "usage": "喝汤, 鸡蛋汤, 一碗汤.",
+    "collo": [
+      "特别是汤",
+      "鸡蛋汤",
+      "喝一碗汤"
+    ],
+    "ex_zh": "南方菜很有特点，特别是汤，味道鲜美，很多北方人都喜欢喝。",
+    "ex_py": "Nánfāng cài hěn yǒu tèdiǎn, tèbié shì tāng, wèidào xiānměi, hěn duō běifāng rén dōu xǐhuan hē.",
+    "ex_vn": "Món ăn miền Nam rất đặc sắc, nhất là canh, vị tươi ngon, nhiều người miền Bắc thích uống.",
+    "exList": [
+      {
+        "zh": "南方菜很有特点，特别是汤，味道鲜美，很多北方人都喜欢喝。",
+        "py": "Nánfāng cài hěn yǒu tèdiǎn, tèbié shì tāng, wèidào xiānměi, hěn duō běifāng rén dōu xǐhuan hē.",
+        "vn": "Món ăn miền Nam rất đặc sắc, nhất là canh, vị tươi ngon, nhiều người miền Bắc thích uống."
+      },
+      {
+        "zh": "饺子很香，不过鸡蛋汤稍微有点儿咸。",
+        "py": "Jiǎozi hěn xiāng, búguò jīdàn tāng shāowēi yǒudiǎnr xián.",
+        "vn": "Sủi cảo rất thơm, nhưng canh trứng hơi mặn."
+      },
+      {
+        "zh": "西红柿鸡蛋汤的做法很简单，我保证你一次就能学会。",
+        "py": "Xīhóngshì jīdàn tāng de zuòfǎ hěn jiǎndān, wǒ bǎozhèng nǐ yí cì jiù néng xuéhuì.",
+        "vn": "Cách nấu canh trứng cà chua rất đơn giản, tôi đảm bảo bạn học một lần là biết."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "汤",
+        "p": "tāng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "氵 trái → 𠃓 phải",
+        "rad": "氵 (thủy)",
+        "mean": "canh",
+        "tip": "Nước 氵 + 𠃓 → nước nóng → CANH, SÚP. Phân biệt 场 (chǎng, bộ 土, Bài 19), 扬 (yáng, Bài 15).",
+        "cf": "场 (chǎng – sân)",
+        "w": "汤 / 鸡蛋汤 / 喝汤"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Món miền Nam rất đặc sắc, nhất là canh — vị tươi ngon nên nhiều người miền Bắc cũng thích.",
+        "answer": "南方菜很有特点，尤其是汤，因为味道鲜美，所以很多北方人都喜欢喝。",
+        "answerPy": "Nánfāng cài hěn yǒu tèdiǎn, yóuqí shì tāng, yīnwèi wèidào xiānměi, suǒyǐ hěn duō běifāng rén dōu xǐhuan hē.",
+        "note": "特点 là từ bài 8, 尤其 là từ bài 5, 味道 là từ bài 5.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喝汤",
+        "py": "hē tāng",
+        "vn": "uống canh"
+      },
+      {
+        "zh": "鸡蛋汤",
+        "py": "jīdàn tāng",
+        "vn": "canh trứng"
+      },
+      {
+        "zh": "一碗汤",
+        "py": "yì wǎn tāng",
+        "vn": "một bát canh"
+      },
+      {
+        "zh": "汤很鲜",
+        "py": "tāng hěn xiān",
+        "vn": "canh rất ngọt"
+      },
+      {
+        "zh": "做汤",
+        "py": "zuò tāng",
+        "vn": "nấu canh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "喝 + 汤",
+        "m": "Uống canh — tiếng Trung dùng 喝 chứ không dùng 吃"
+      },
+      {
+        "s": "một + 碗 + 汤",
+        "m": "Một bát canh"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "对话",
+    "py": "duìhuà",
+    "pos": "Động từ",
+    "vn": "đối thoại, tiếp xúc",
+    "hv": "đối thoại",
+    "em": "💬",
+    "lesson": 4,
+    "explain": [
+      "Nói chuyện qua lại. 跟……对话, 一段对话, 完成对话."
+    ],
+    "usage": "跟上海人对话, 一段对话, 对话练习.",
+    "collo": [
+      "跟上海人对话时",
+      "完成对话",
+      "一段对话"
+    ],
+    "ex_zh": "比如你跟上海人对话时，会发现上海话听起来就像外语一样。",
+    "ex_py": "Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.",
+    "ex_vn": "Ví dụ khi đối thoại với người Thượng Hải, bạn sẽ thấy tiếng Thượng Hải nghe như ngoại ngữ.",
+    "exList": [
+      {
+        "zh": "比如你跟上海人对话时，会发现上海话听起来就像外语一样。",
+        "py": "Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.",
+        "vn": "Ví dụ khi đối thoại với người Thượng Hải, bạn sẽ thấy tiếng Thượng Hải nghe như ngoại ngữ."
+      },
+      {
+        "zh": "上午来应聘的那个小伙子是学电子技术的，成绩很优秀，通过面试时和他的对话，感觉他的性格也不错。",
+        "py": "Shàngwǔ lái yìngpìn de nàge xiǎohuǒzi shì xué diànzǐ jìshù de, chéngjì hěn yōuxiù, tōngguò miànshì shí hé tā de duìhuà, gǎnjué tā de xìnggé yě búcuò.",
+        "vn": "Chàng trai đến ứng tuyển sáng nay học kỹ thuật điện tử, thành tích xuất sắc, qua đối thoại phỏng vấn thấy tính cách cũng tốt."
+      },
+      {
+        "zh": "父母应该多和孩子对话，了解他们的想法。",
+        "py": "Fùmǔ yīnggāi duō hé háizi duìhuà, liǎojiě tāmen de xiǎngfǎ.",
+        "vn": "Cha mẹ nên đối thoại nhiều với con, hiểu suy nghĩ của chúng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "话",
+        "p": "huà",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "讠 trái → 舌 phải",
+        "rad": "讠 (ngôn)",
+        "mean": "lời nói",
+        "tip": "Lời 讠 + lưỡi 舌 → LỜI NÓI. 对话, 普通话, 笑话, 电话, 说话.",
+        "cf": "活 (huó – sống, bộ 氵)",
+        "w": "对话 / 普通话 / 笑话 / 电话"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ví dụ khi đối thoại với người Thượng Hải, bạn sẽ thấy tiếng Thượng Hải nghe như ngoại ngữ.",
+        "answer": "比如你跟上海人对话时，会发现上海话听起来就像外语一样。",
+        "answerPy": "Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.",
+        "note": "听起来 (ngữ pháp bài), 像……一样 (Bài 6).",
+        "pair": "像……一样……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "完成对话",
+        "py": "wán chéng duìhuà",
+        "vn": "hoàn thành đoạn hội thoại"
+      },
+      {
+        "zh": "一段对话",
+        "py": "yí duàn duìhuà",
+        "vn": "một đoạn đối thoại"
+      },
+      {
+        "zh": "跟他对话",
+        "py": "gēn tā duìhuà",
+        "vn": "đối thoại với anh ấy"
+      },
+      {
+        "zh": "对话练习",
+        "py": "duìhuà liànxí",
+        "vn": "luyện hội thoại"
+      },
+      {
+        "zh": "听对话",
+        "py": "tīng duìhuà",
+        "vn": "nghe hội thoại"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 对话",
+        "m": "Đối thoại với ai"
+      },
+      {
+        "s": "一 + 段 + 对话",
+        "m": "Một đoạn hội thoại"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "普通话",
+    "py": "pǔtōnghuà",
+    "pos": "Danh từ",
+    "vn": "tiếng phổ thông, tiếng Quan thoại",
+    "hv": "phổ thông thoại",
+    "em": "🗣️",
+    "lesson": 4,
+    "explain": [
+      "Tiếng Trung chuẩn. 普通 (Bài 12) = phổ thông. 讲普通话, 普通话水平考试."
+    ],
+    "usage": "讲普通话, 普通话水平考试, 说普通话.",
+    "collo": [
+      "上海人也会讲普通话",
+      "普通话水平考试",
+      "普通话说得很标准"
+    ],
+    "ex_zh": "虽然上海人也会讲普通话，可是仔细听，还是有上海味儿。",
+    "ex_py": "Suīrán Shànghǎi rén yě huì jiǎng pǔtōnghuà, kěshì zǐxì tīng, háishi yǒu Shànghǎi wèir.",
+    "ex_vn": "Tuy người Thượng Hải cũng nói tiếng phổ thông, nhưng nghe kỹ vẫn có giọng Thượng Hải.",
+    "exList": [
+      {
+        "zh": "虽然上海人也会讲普通话，可是仔细听，还是有上海味儿。",
+        "py": "Suīrán Shànghǎi rén yě huì jiǎng pǔtōnghuà, kěshì zǐxì tīng, háishi yǒu Shànghǎi wèir.",
+        "vn": "Tuy người Thượng Hải cũng nói tiếng phổ thông, nhưng nghe kỹ vẫn có giọng Thượng Hải."
+      },
+      {
+        "zh": "A：你的普通话水平考试考得怎么样？B：我这次没考，因为我错过了报名时间，只能等下次了。",
+        "py": "A: Nǐ de pǔtōnghuà shuǐpíng kǎoshì kǎo de zěnmeyàng? B: Wǒ zhè cì méi kǎo, yīnwèi wǒ cuòguòle bào míng shíjiān, zhǐ néng děng xià cì le.",
+        "vn": "A: Thi trình độ tiếng phổ thông của bạn thế nào? B: Lần này tôi không thi, vì lỡ thời gian đăng ký, đành đợi lần sau."
+      },
+      {
+        "zh": "汉语普通话以北京话为标准。",
+        "py": "Hànyǔ pǔtōnghuà yǐ Běijīng huà wéi biāozhǔn.",
+        "vn": "Tiếng phổ thông lấy tiếng Bắc Kinh làm chuẩn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "普",
+        "p": "pǔ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "並 trên → 日 dưới",
+        "rad": "日 (nhật)",
+        "mean": "phổ biến",
+        "tip": "並 + 日(mặt trời) → ánh nắng chiếu khắp → PHỔ. 普通话, 普遍 (Bài 13), 普通 (Bài 12).",
+        "cf": "谱 (pǔ – phổ nhạc)",
+        "w": "普通话 / 普遍 / 普通"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lần này tôi không thi, vì lỡ thời gian đăng ký, đành đợi lần sau.",
+        "answer": "我这次没考，因为我错过了报名时间，只能等下次了。",
+        "answerPy": "Wǒ zhè cì méi kǎo, yīnwèi wǒ cuòguòle bào míng shíjiān, zhǐ néng děng xià cì le.",
+        "note": "错过 (Bài 4), 报名 (Bài 16).",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "讲普通话",
+        "py": "jiǎng pǔtōnghuà",
+        "vn": "nói tiếng phổ thông"
+      },
+      {
+        "zh": "普通话很标准",
+        "py": "pǔtōnghuà hěn biāozhǔn",
+        "vn": "tiếng phổ thông rất chuẩn"
+      },
+      {
+        "zh": "普通话水平考试",
+        "py": "pǔtōnghuà shuǐpíng kǎoshì",
+        "vn": "kỳ thi trình độ tiếng phổ thông"
+      },
+      {
+        "zh": "学普通话",
+        "py": "xué pǔtōnghuà",
+        "vn": "học tiếng phổ thông"
+      },
+      {
+        "zh": "听不懂普通话",
+        "py": "tīng bù dǒng pǔtōnghuà",
+        "vn": "không nghe hiểu tiếng phổ thông"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "讲 / 说 + 普通话",
+        "m": "Nói tiếng phổ thông"
+      },
+      {
+        "s": "普通 (bài 9) + 话",
+        "m": "Tiếng nói (话) chung (普通)"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "小吃",
+    "py": "xiǎochī",
+    "pos": "Danh từ",
+    "vn": "món ăn vặt",
+    "hv": "tiểu ngật",
+    "em": "🍢",
+    "lesson": 5,
+    "explain": [
+      "Món ăn nhẹ đặc sản. 有名的小吃, 各地的小吃, 小吃街."
+    ],
+    "usage": "有名的小吃, 各地的小吃, 尝小吃.",
+    "collo": [
+      "尝到各地有名的小吃",
+      "美食小吃",
+      "小吃街"
+    ],
+    "ex_zh": "对我来说，最重要的是旅行能让我有机会尝到各地有名的小吃。",
+    "ex_py": "Duì wǒ lái shuō, zuì zhòngyào de shì lǚxíng néng ràng wǒ yǒu jīhuì chángdào gè dì yǒumíng de xiǎochī.",
+    "ex_vn": "Với tôi, quan trọng nhất là du lịch cho tôi cơ hội nếm món ăn vặt nổi tiếng các nơi.",
+    "exList": [
+      {
+        "zh": "对我来说，最重要的是旅行能让我有机会尝到各地有名的小吃。",
+        "py": "Duì wǒ lái shuō, zuì zhòngyào de shì lǚxíng néng ràng wǒ yǒu jīhuì chángdào gè dì yǒumíng de xiǎochī.",
+        "vn": "Với tôi, quan trọng nhất là du lịch cho tôi cơ hội nếm món ăn vặt nổi tiếng các nơi."
+      },
+      {
+        "zh": "北京有很多有名的小吃，比如烤鸭、豆汁儿什么的。",
+        "py": "Běijīng yǒu hěn duō yǒumíng de xiǎochī, bǐrú kǎoyā, dòuzhīr shénme de.",
+        "vn": "Bắc Kinh có nhiều món ăn vặt nổi tiếng, như vịt quay, nước đậu các thứ."
+      },
+      {
+        "zh": "河内的小吃又便宜又好吃，游客都很喜欢。",
+        "py": "Hénèi de xiǎochī yòu piányi yòu hǎochī, yóukè dōu hěn xǐhuan.",
+        "vn": "Món ăn vặt Hà Nội vừa rẻ vừa ngon, du khách đều thích."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "吃",
+        "p": "chī",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "口 trái → 乞 phải",
+        "rad": "口 (khẩu)",
+        "mean": "ăn",
+        "tip": "Miệng 口 + 乞 → ĂN. 小吃 = món ăn nhỏ; 吃惊 (Bài 13); 吃苦 (Bài 13).",
+        "cf": "乞 (qǐ – xin)",
+        "w": "小吃 / 吃惊 / 吃苦 / 好吃"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Với tôi, quan trọng nhất là du lịch cho tôi cơ hội nếm món ăn vặt nổi tiếng các nơi.",
+        "answer": "对我来说，最重要的是旅行能让我有机会尝到各地有名的小吃。",
+        "answerPy": "Duì wǒ lái shuō, zuì zhòngyào de shì lǚxíng néng ràng wǒ yǒu jīhuì chángdào gè dì yǒumíng de xiǎochī.",
+        "note": "对……来说 (Bài 5), 尝 (Bài 7), 各地.",
+        "pair": "对……来说……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有名的小吃",
+        "py": "yǒumíng de xiǎochī",
+        "vn": "món ăn vặt nổi tiếng"
+      },
+      {
+        "zh": "尝小吃",
+        "py": "cháng xiǎochī",
+        "vn": "nếm món ăn vặt"
+      },
+      {
+        "zh": "小吃街",
+        "py": "xiǎochījiē",
+        "vn": "phố ăn vặt"
+      },
+      {
+        "zh": "各地的小吃",
+        "py": "gè de de xiǎochī",
+        "vn": "món vặt các vùng"
+      },
+      {
+        "zh": "美食小吃",
+        "py": "měishí xiǎochī",
+        "vn": "ẩm thực đường phố"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "尝 + 小吃",
+        "m": "Nếm món ăn vặt"
+      },
+      {
+        "s": "小 + 吃",
+        "m": "Món ăn (吃) nhỏ (小) — ăn chơi, không phải bữa chính"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "收拾",
+    "py": "shōushi",
+    "pos": "Động từ",
+    "vn": "thu dọn, thu xếp",
+    "hv": "thu thập",
+    "em": "🧹",
+    "lesson": 5,
+    "explain": [
+      "Dọn dẹp, sắp xếp (≈ 整理 Bài 15). 收拾行李, 收拾房间, 收拾好."
+    ],
+    "usage": "收拾行李, 收拾房间, 收拾一下.",
+    "collo": [
+      "收拾好行李",
+      "收拾房间",
+      "抽时间收拾一下"
+    ],
+    "ex_zh": "放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。",
+    "ex_py": "Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.",
+    "ex_vn": "Khi nghỉ, tôi thu dọn hành lý, mang bản đồ, mua vé tàu, xuất phát đến điểm đến.",
+    "exList": [
+      {
+        "zh": "放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。",
+        "py": "Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.",
+        "vn": "Khi nghỉ, tôi thu dọn hành lý, mang bản đồ, mua vé tàu, xuất phát đến điểm đến."
+      },
+      {
+        "zh": "你回到家就把衣服、书包什么的扔在沙发上，房间太乱了，你抽时间收拾一下吧。",
+        "py": "Nǐ huídào jiā jiù bǎ yīfu, shūbāo shénme de rēng zài shāfā shang, fángjiān tài luàn le, nǐ chōu shíjiān shōushi yíxià ba.",
+        "vn": "Về nhà là bạn ném quần áo, cặp sách lên sofa, phòng bừa quá, tranh thủ dọn đi."
+      },
+      {
+        "zh": "好的，我现在就收拾，一定弄得整整齐齐。",
+        "py": "Hǎo de, wǒ xiànzài jiù shōushi, yídìng nòng de zhěngzhěng-qíqí.",
+        "vn": "Được, tôi dọn ngay, nhất định làm gọn gàng ngăn nắp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "拾",
+        "p": "shi",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "扌 trái → 合 phải",
+        "rad": "扌 (thủ)",
+        "mean": "nhặt",
+        "tip": "Tay 扌 + 合 → tay gom lại → NHẶT, THẬP. 收拾 = thu nhặt = dọn dẹp. Cũng là số 10 viết kép.",
+        "cf": "合 (hé – hợp)",
+        "w": "收拾 / 拾"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cứ về đến nhà là bạn ném quần áo sách vở lên sô pha, phòng bừa quá, tranh thủ dọn đi.",
+        "answer": "你一回到家就把衣服、书包什么的扔在沙发上，房间太乱了，抽时间收拾一下吧。",
+        "answerPy": "Nǐ yì huí dào jiā jiù bǎ yīfu, shūbāo shénme de rēng zài shāfā shang, fángjiān tài luàn le, chōu shíjiān shōushi yíxià ba.",
+        "note": "扔 là từ bài 14, 乱 là từ bài 4, 沙发 là từ bài 5.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "收拾房间",
+        "py": "shōushi fángjiān",
+        "vn": "dọn phòng"
+      },
+      {
+        "zh": "收拾行李",
+        "py": "shōushi xíng Lǐ",
+        "vn": "thu xếp hành lý"
+      },
+      {
+        "zh": "收拾好了",
+        "py": "shōushi hǎo le",
+        "vn": "dọn xong rồi"
+      },
+      {
+        "zh": "抽时间收拾",
+        "py": "chōu shíjiān shōushi",
+        "vn": "tranh thủ dọn"
+      },
+      {
+        "zh": "收拾东西",
+        "py": "shōushi dōngxi",
+        "vn": "dọn đồ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "收拾 + 房间 / 行李",
+        "m": "Dọn phòng, xếp hành lý"
+      },
+      {
+        "s": "收拾 ≈ 整理 (bài 15)",
+        "m": "收拾 thiên khẩu ngữ, thường là dọn cho gọn"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "出发",
+    "py": "chūfā",
+    "pos": "Động từ",
+    "vn": "xuất phát, khởi hành",
+    "hv": "xuất phát",
+    "em": "🚀",
+    "lesson": 5,
+    "explain": [
+      "Bắt đầu đi. 向……出发, 几点出发, 马上出发. Trái với 到达."
+    ],
+    "usage": "向目的地出发, 几点出发, 一放假就出发.",
+    "collo": [
+      "向目的地出发",
+      "马上出发",
+      "一放假就出发"
+    ],
+    "ex_zh": "买张火车票，向目的地出发。",
+    "ex_py": "Mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.",
+    "ex_vn": "Mua vé tàu, xuất phát đến điểm đến.",
+    "exList": [
+      {
+        "zh": "放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。",
+        "py": "Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.",
+        "vn": "Khi nghỉ, tôi thu dọn hành lý, mang bản đồ, mua vé tàu, xuất phát đến điểm đến."
+      },
+      {
+        "zh": "时间不变，地点改在西门了。快去整理一下东西吧，我们马上出发。",
+        "py": "Shíjiān bú biàn, dìdiǎn gǎi zài xīmén le. Kuài qù zhěnglǐ yíxià dōngxi ba, wǒmen mǎshàng chūfā.",
+        "vn": "Giờ không đổi, địa điểm đổi sang cổng tây. Mau dọn đồ, chúng ta xuất phát ngay."
+      },
+      {
+        "zh": "你认为理想的旅行方式是什么样的？一放假就出发吗？",
+        "py": "Nǐ rènwéi lǐxiǎng de lǚxíng fāngshì shì shénme yàng de? Yí fàng jià jiù chūfā ma?",
+        "vn": "Bạn cho rằng cách du lịch lý tưởng là thế nào? Vừa nghỉ là lên đường?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "发",
+        "p": "fā",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 5,
+        "ord": "𠂇 → 又 → 丶",
+        "rad": "又 (hựu)",
+        "mean": "phát",
+        "tip": "Giản thể của 發 → PHÁT. 出发, 发生 (Bài 7), 发展 (Bài 10), 沙发 (Bài 11); đọc fà = tóc (理发 Bài 19).",
+        "cf": "友 (yǒu – bạn)",
+        "w": "出发 / 发生 / 发展 / 理发 (fà)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Giờ không đổi nhưng địa điểm chuyển sang cổng tây, bạn mau dọn đồ đi, chúng ta xuất phát ngay.",
+        "answer": "时间不变，可是地点改在西门了，你快去收拾一下东西吧，我们马上出发。",
+        "answerPy": "Shíjiān bú biàn, kěshì dìdiǎn gǎi zài xīmén le, nǐ kuài qù shōushi yíxià dōngxi ba, wǒmen mǎshàng chūfā.",
+        "note": "地点 là từ bài 18; 出发 ↔ 到达.",
+        "pair": "虽然……可是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "马上出发",
+        "py": "mǎshàng chūfā",
+        "vn": "xuất phát ngay"
+      },
+      {
+        "zh": "准时出发",
+        "py": "zhǔnshí chūfā",
+        "vn": "xuất phát đúng giờ"
+      },
+      {
+        "zh": "向目的地出发",
+        "py": "xiàng mùdìdì chūfā",
+        "vn": "lên đường tới đích"
+      },
+      {
+        "zh": "出发前",
+        "py": "chūfā qián",
+        "vn": "trước khi khởi hành"
+      },
+      {
+        "zh": "一放假就出发",
+        "py": "yí fàng jià jiù chūfā",
+        "vn": "vừa nghỉ là lên đường"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "向 + 目的地 + 出发",
+        "m": "Lên đường tới đích — 目的 là từ bài 14"
+      },
+      {
+        "s": "出发 ↔ 到达",
+        "m": "Khởi hành ↔ đến nơi"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "辣",
+    "py": "là",
+    "pos": "Tính từ",
+    "vn": "cay",
+    "hv": "lạt",
+    "em": "🌶️",
+    "lesson": 5,
+    "explain": [
+      "Vị cay. 太辣了, 咸辣, 香辣, 酸辣. 湖南菜的特点就是辣."
+    ],
+    "usage": "很辣, 太辣了, 又辣又香.",
+    "collo": [
+      "湖南菜的特点就是辣",
+      "咸辣、香辣和酸辣",
+      "不能吃辣"
+    ],
+    "ex_zh": "湖南菜的特点就是辣，与其他地方的辣不同，湖南菜的辣主要是咸辣、香辣和酸辣。",
+    "ex_py": "Húnán cài de tèdiǎn jiù shì là, yǔ qítā dìfang de là bù tóng, Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.",
+    "ex_vn": "Đặc điểm món Hồ Nam là cay, khác cái cay nơi khác, cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.",
+    "exList": [
+      {
+        "zh": "湖南菜的特点就是辣，与其他地方的辣不同，湖南菜的辣主要是咸辣、香辣和酸辣。",
+        "py": "Húnán cài de tèdiǎn jiù shì là, yǔ qítā dìfang de là bù tóng, Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.",
+        "vn": "Đặc điểm món Hồ Nam là cay, khác cái cay nơi khác, cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua."
+      },
+      {
+        "zh": "我不能吃辣，一吃辣的东西就咳嗽。",
+        "py": "Wǒ bù néng chī là, yì chī là de dōngxi jiù késou.",
+        "vn": "Tôi không ăn cay được, vừa ăn cay là ho."
+      },
+      {
+        "zh": "四川菜又麻又辣，很多外国人也爱吃。",
+        "py": "Sìchuān cài yòu má yòu là, hěn duō wàiguó rén yě ài chī.",
+        "vn": "Món Tứ Xuyên vừa tê vừa cay, nhiều người nước ngoài cũng thích."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "辣",
+        "p": "là",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "辛 trái → 束 phải",
+        "rad": "辛 (tân)",
+        "mean": "cay",
+        "tip": "辛(cay) + 束 → CAY. Năm vị: 酸 (chua), 甜 (ngọt), 苦 (đắng, Bài 13), 辣 (cay), 咸 (mặn, Bài 18).",
+        "cf": "辛 (xīn – 辛苦 Bài 4)",
+        "w": "辣 / 辣椒 / 酸辣"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không ăn cay được, vừa ăn cay là ho.",
+        "answer": "我不能吃辣，一吃辣的东西就咳嗽。",
+        "answerPy": "Wǒ bù néng chī là, yì chī là de dōngxi jiù késou.",
+        "note": "一……就 (ngữ pháp bài), 咳嗽 (Bài 7).",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "太辣了",
+        "py": "tài là le",
+        "vn": "cay quá"
+      },
+      {
+        "zh": "不能吃辣",
+        "py": "bù néng chī là",
+        "vn": "không ăn được cay"
+      },
+      {
+        "zh": "香辣",
+        "py": "xiāng là",
+        "vn": "thơm cay"
+      },
+      {
+        "zh": "酸辣",
+        "py": "suān là",
+        "vn": "chua cay"
+      },
+      {
+        "zh": "湖南菜很辣",
+        "py": "Húnán cài hěn là",
+        "vn": "món Hồ Nam rất cay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 能 / 不能 + 吃辣",
+        "m": "Ăn được / không ăn được cay"
+      },
+      {
+        "s": "咸 (bài 18) · 苦 (bài 13) · 辣 · 酸 · 香 — nhóm từ chỉ vị"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "香",
+    "py": "xiāng",
+    "pos": "Tính từ",
+    "vn": "thơm",
+    "hv": "hương",
+    "em": "🌸",
+    "lesson": 5,
+    "explain": [
+      "Mùi/vị thơm ngon. 很香, 香辣, 饺子很香, 睡得很香 (ngủ ngon)."
+    ],
+    "usage": "很香, 香辣, 饭菜很香.",
+    "collo": [
+      "香辣",
+      "饺子很香",
+      "花很香"
+    ],
+    "ex_zh": "湖南菜的辣主要是咸辣、香辣和酸辣。",
+    "ex_py": "Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.",
+    "ex_vn": "Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.",
+    "exList": [
+      {
+        "zh": "湖南菜的辣主要是咸辣、香辣和酸辣。",
+        "py": "Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.",
+        "vn": "Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua."
+      },
+      {
+        "zh": "饺子很香，不过鸡蛋汤稍微有点儿咸。",
+        "py": "Jiǎozi hěn xiāng, búguò jīdàn tāng shāowēi yǒudiǎnr xián.",
+        "vn": "Sủi cảo rất thơm, nhưng canh trứng hơi mặn."
+      },
+      {
+        "zh": "这几天香山特别热闹，秋天的红叶吸引了很多游客。",
+        "py": "Zhè jǐ tiān Xiāng Shān tèbié rènao, qiūtiān de hóngyè xīyǐnle hěn duō yóukè.",
+        "vn": "Mấy hôm nay Hương Sơn rất náo nhiệt, lá đỏ mùa thu thu hút nhiều du khách."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "香",
+        "p": "xiāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "禾 trên → 日 dưới",
+        "rad": "香 (hương)",
+        "mean": "thơm",
+        "tip": "Lúa 禾 + 日 → hương lúa chín → THƠM, HƯƠNG. 香山 (Bài 17), 香蕉, 香港.",
+        "cf": "季 (jì – mùa)",
+        "w": "香 / 香山 / 香蕉 / 香港"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sủi cảo rất thơm, nhưng canh trứng hơi mặn.",
+        "answer": "饺子很香，不过鸡蛋汤稍微有点儿咸。",
+        "answerPy": "Jiǎozi hěn xiāng, búguò jīdàn tāng shāowēi yǒudiǎnr xián.",
+        "note": "饺子 (Bài 19), 稍微 (Bài 13), 咸 (Bài 18).",
+        "pair": "……，不过……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很香",
+        "py": "hěn xiāng",
+        "vn": "rất thơm"
+      },
+      {
+        "zh": "饺子很香",
+        "py": "jiǎozi hěn xiāng",
+        "vn": "sủi cảo rất thơm"
+      },
+      {
+        "zh": "香辣",
+        "py": "xiāng là",
+        "vn": "thơm cay"
+      },
+      {
+        "zh": "花很香",
+        "py": "huā hěn xiāng",
+        "vn": "hoa rất thơm"
+      },
+      {
+        "zh": "闻起来很香",
+        "py": "wén qǐlai hěn xiāng",
+        "vn": "ngửi rất thơm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 + 香",
+        "m": "Cái gì đó rất thơm"
+      },
+      {
+        "s": "香 dùng cho cả mùi thức ăn và mùi hoa"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "酸",
+    "py": "suān",
+    "pos": "Tính từ",
+    "vn": "chua",
+    "hv": "toan",
+    "em": "🍋",
+    "lesson": 5,
+    "explain": [
+      "Vị chua. 酸辣, 太酸了, 又酸又甜. Cũng nghĩa \"mỏi\": 腿酸."
+    ],
+    "usage": "很酸, 酸辣, 又酸又甜.",
+    "collo": [
+      "酸辣",
+      "又酸又甜",
+      "太酸了"
+    ],
+    "ex_zh": "湖南菜的辣主要是咸辣、香辣和酸辣。",
+    "ex_py": "Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là.",
+    "ex_vn": "Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua.",
+    "exList": [
+      {
+        "zh": "湖南菜的辣主要是咸辣、香辣和酸辣。虽然全国各地都有湖南饭馆儿，但最好还是直接去那里尝一尝。",
+        "py": "Húnán cài de là zhǔyào shì xián là, xiāng là hé suān là. Suīrán quánguó gè dì dōu yǒu Húnán fànguǎnr, dàn zuìhǎo háishi zhíjiē qù nàli cháng yi cháng.",
+        "vn": "Cay Hồ Nam chủ yếu là cay mặn, cay thơm và cay chua. Tuy khắp nơi có quán Hồ Nam, tốt nhất vẫn đến tận nơi nếm thử."
+      },
+      {
+        "zh": "这种水果又酸又甜，味道很特别。",
+        "py": "Zhè zhǒng shuǐguǒ yòu suān yòu tián, wèidào hěn tèbié.",
+        "vn": "Loại quả này vừa chua vừa ngọt, vị rất đặc biệt."
+      },
+      {
+        "zh": "爬了一天山，腿酸得走不动了。",
+        "py": "Pále yì tiān shān, tuǐ suān de zǒubudòng le.",
+        "vn": "Leo núi cả ngày, chân mỏi không đi nổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "酸",
+        "p": "suān",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "酉 trái → 夋 phải",
+        "rad": "酉 (dậu)",
+        "mean": "chua",
+        "tip": "Bộ 酉 (rượu, lên men) + 夋 → vị lên men → CHUA. 醒 (Bài 15) cũng bộ 酉.",
+        "cf": "醒 (xǐng – tỉnh)",
+        "w": "酸 / 酸辣 / 酸奶"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy khắp nơi có quán Hồ Nam, tốt nhất vẫn đến tận nơi nếm thử.",
+        "answer": "虽然全国各地都有湖南饭馆儿，但最好还是直接去那里尝一尝。",
+        "answerPy": "Suīrán quánguó gè dì dōu yǒu Húnán fànguǎnr, dàn zuìhǎo háishi zhíjiē qù nàli cháng yi cháng.",
+        "note": "直接 (Bài 12), 尝 (Bài 7), 最好 (Bài 3).",
+        "pair": "虽然……还是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "太酸了",
+        "py": "tài suān le",
+        "vn": "chua quá"
+      },
+      {
+        "zh": "又酸又甜",
+        "py": "yòu suān yòu tián",
+        "vn": "vừa chua vừa ngọt"
+      },
+      {
+        "zh": "酸辣",
+        "py": "suān là",
+        "vn": "chua cay"
+      },
+      {
+        "zh": "酸的味道",
+        "py": "suān de wèidào",
+        "vn": "vị chua"
+      },
+      {
+        "zh": "有点儿酸",
+        "py": "yǒudiǎnr suān",
+        "vn": "hơi chua"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "又 + 酸 + 又 + 甜",
+        "m": "Vừa chua vừa ngọt — khung 又……又…… của bài 7"
+      },
+      {
+        "s": "酸 ↔ 甜",
+        "m": "Chua ↔ ngọt"
+      }
+    ]
+  }
 ];
 
 var wuData = [

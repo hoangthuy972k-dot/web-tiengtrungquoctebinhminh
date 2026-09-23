@@ -622,7 +622,7 @@ var vocabData = [
       {
         "zh": "西红柿新鲜",
         "py": "xīhóngshì xīnxiān",
-        "vn": "cà chua tươi"
+        "vn": "cà chua thì tươi (làm vị ngữ)"
       },
       {
         "zh": "两斤西红柿",
@@ -637,7 +637,7 @@ var vocabData = [
       {
         "zh": "新鲜的西红柿",
         "py": "xīnxiān de xīhóngshì",
-        "vn": "cà chua tươi"
+        "vn": "cà chua tươi (làm định ngữ)"
       }
     ],
     "patterns": [

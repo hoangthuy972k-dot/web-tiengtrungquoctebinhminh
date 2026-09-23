@@ -1608,7 +1608,7 @@ var vocabData = [
       {
         "zh": "尽管……可是……",
         "py": "jǐnguǎn kěshì",
-        "vn": "mặc dù… nhưng…"
+        "vn": "mặc dù… thế nhưng… (可是 thiên khẩu ngữ)"
       },
       {
         "zh": "尽管……还是……",
@@ -3220,7 +3220,7 @@ var vocabData = [
       {
         "zh": "陪着你",
         "py": "péi zhe nǐ",
-        "vn": "ở bên cạnh bạn"
+        "vn": "luôn ở cùng bạn"
       },
       {
         "zh": "陪在你身边",

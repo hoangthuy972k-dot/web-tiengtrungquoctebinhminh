@@ -45,6 +45,12 @@ vocabData.forEach(function (v) {
     v.patterns = nd.patterns.map(function (p) { return { s: p[0], m: p[1] }; });
     soPattern += v.patterns.length;
   }
+  // HSK 1 chua co san phan luyen dich trong du lieu — tao moi tu file viet-lai.
+  if (!v.checkList || !v.checkList.length) {
+    const them = [];
+    for (let i = 0; VIET_LAI[v.zh + "|" + i]; i++) them.push({ promptLang: "vi" });
+    if (them.length) v.checkList = them;
+  }
   (v.checkList || []).forEach(function (c, i) {
     const vl = VIET_LAI[v.zh + '|' + i];
     if (vl) {

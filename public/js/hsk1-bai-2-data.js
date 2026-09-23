@@ -2,54 +2,316 @@
 // DATA — HSK1 Bài 2: 谢谢你!
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'谢谢',py:'xièxie',pos:'Động từ',vn:'cảm ơn', hv: 'tạ tạ',em:'🙏',lesson:1,
-   ex_zh:'谢谢！',ex_py:'Xièxie!',ex_vn:'Cảm ơn!',
-   exList:[
-     {zh:'谢谢！',py:'Xièxie!',vn:'Cảm ơn!'},
-     {zh:'谢谢你！',py:'Xièxie nǐ!',vn:'Cảm ơn bạn!'},
-   ],
-   hanzi:[
-     {c:'谢',p:'xiè',type:'左右结构 · Trái-phải',st:12,ord:'讠(ngôn) trái → 射(xạ) phải',rad:'讠 (ngôn – lời nói)',mean:'cảm ơn, tạ ơn',
-      tip:'讠(lời nói) + 射(bắn ra) → LỜI NÓI bày tỏ lòng biết ơn được gửi ra ngoài.',
-      cf:'榭 (xiè – "nhà thuỷ tạ")',w:'谢谢 / 不谢'},
-   ]},
-  {n:2,zh:'不',py:'bù / bú',pos:'Phó từ',vn:'không cần, không, đừng', hv: 'bất',em:'🚫',lesson:1,
-   ex_zh:'不谢！',ex_py:'Bú xiè!',ex_vn:'Không cần cảm ơn đâu!',
-   exList:[
-     {zh:'不谢！',py:'Bú xiè!',vn:'Không cần cảm ơn đâu!'},
-     {zh:'不客气！',py:'Bú kèqi!',vn:'Đừng khách sáo!'},
-   ],
-   hanzi:[
-     {c:'不',p:'bù / bú',type:'独体字 · Chữ đơn',st:4,ord:'一(ngang) → 丨→ ㇒ → 丶',rad:'一 (nhất)',mean:'không, đừng, chẳng',
-      tip:'Nét ngang trên cùng như một bức tường CHẶN LẠI → mang nghĩa PHỦ ĐỊNH. Đổi sang thanh 2 (bú) khi đứng trước âm tiết mang thanh 4.',
-      cf:'布 (bù – "vải")',w:'不谢 / 不客气 / 不是'},
-   ]},
-  {n:3,zh:'不客气',py:'bú kèqi',pos:'Cụm từ',vn:'đừng khách sáo, không có gì', hv: 'bất khách khí',em:'😊',lesson:1,
-   ex_zh:'不客气！',ex_py:'Bú kèqi!',ex_vn:'Đừng khách sáo!',
-   exList:[
-     {zh:'不客气！',py:'Bú kèqi!',vn:'Đừng khách sáo!'},
-   ],
-   hanzi:[
-     {c:'客',p:'kè',type:'上下结构 · Trên-dưới',st:9,ord:'宀(miên) trên → 各(các) dưới',rad:'宀 (miên – mái nhà)',mean:'khách',
-      tip:'宀(mái nhà) + 各(mỗi người, mỗi nơi) → người từ nhiều nơi đến ở tạm dưới MỘT MÁI NHÀ = KHÁCH.',
-      cf:'各 (gè – "mỗi")',w:'客气 / 不客气'},
-     {c:'气',p:'qì',type:'独体字 · Chữ đơn',st:4,ord:'ノ→一→㇕→一',rad:'气 (khí – tự thành bộ)',mean:'khí, hơi',
-      tip:'Hình dáng luồng khí đang bay lượn → KHÍ; ghép với 客 thành "khách khí" nghĩa là giữ ý tứ, khách sáo.',
-      cf:'汽 (qì – "hơi nước", thêm bộ 氵")',w:'客气 / 不客气'},
-   ]},
-  {n:4,zh:'再见',py:'zàijiàn',pos:'Động từ',vn:'tạm biệt', hv: 'tái kiến',em:'👋',lesson:1,
-   ex_zh:'再见！',ex_py:'Zàijiàn!',ex_vn:'Tạm biệt!',
-   exList:[
-     {zh:'再见！',py:'Zàijiàn!',vn:'Tạm biệt!'},
-   ],
-   hanzi:[
-     {c:'再',p:'zài',type:'独体字 · Chữ đơn',st:6,ord:'一→冂→土(biến thể)',rad:'冂 (biến thể)',mean:'lại, lần nữa',
-      tip:'Hình ảnh một vật được xếp CHỒNG THÊM một lần nữa lên trên → LẶP LẠI, LẦN NỮA.',
-      cf:'冉 (rǎn – yếu tố Hán cổ)',w:'再见'},
-     {c:'见',p:'jiàn',type:'独体字 · Chữ đơn',st:4,ord:'冂→ㇾ→儿(biến thể)',rad:'见 (kiến – tự thành bộ)',mean:'gặp, nhìn thấy',
-      tip:'Hình con mắt trên đôi chân đang bước tới → NHÌN THẤY, GẶP GỠ.',
-      cf:'贝 (bèi – "vật báu")',w:'再见'},
-   ]},
+  {
+    "n": 1,
+    "zh": "谢谢",
+    "py": "xièxie",
+    "pos": "Động từ",
+    "vn": "cảm ơn",
+    "hv": "tạ tạ",
+    "em": "🙏",
+    "lesson": 1,
+    "ex_zh": "谢谢！",
+    "ex_py": "Xièxie!",
+    "ex_vn": "Cảm ơn!",
+    "exList": [
+      {
+        "zh": "谢谢！",
+        "py": "Xièxie!",
+        "vn": "Cảm ơn!"
+      },
+      {
+        "zh": "谢谢你！",
+        "py": "Xièxie nǐ!",
+        "vn": "Cảm ơn bạn!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "谢",
+        "p": "xiè",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "讠(ngôn) trái → 射(xạ) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "cảm ơn, tạ ơn",
+        "tip": "讠(lời nói) + 射(bắn ra) → LỜI NÓI bày tỏ lòng biết ơn được gửi ra ngoài.",
+        "cf": "榭 (xiè – \"nhà thuỷ tạ\")",
+        "w": "谢谢 / 不谢"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "谢谢你",
+        "py": "xièxie nǐ",
+        "vn": "cảm ơn bạn"
+      },
+      {
+        "zh": "谢谢您",
+        "py": "xièxie nín",
+        "vn": "cảm ơn ngài"
+      },
+      {
+        "zh": "谢谢你们",
+        "py": "xièxie nǐmen",
+        "vn": "cảm ơn các bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "谢谢 + người",
+        "m": "Cảm ơn ai: 谢谢你 · 谢谢您 · 谢谢你们"
+      },
+      {
+        "s": "谢谢 —— 不客气",
+        "m": "Cảm ơn — Không có gì: một cặp đối đáp"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn bạn!",
+        "answer": "谢谢你！",
+        "answerPy": "Xièxie nǐ!",
+        "note": "Cảm ơn ai thì đặt người đó ngay sau 谢谢.",
+        "pair": "谢谢 + người"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "— Cảm ơn ngài! — Không có gì!",
+        "answer": "谢谢您！——不客气！",
+        "answerPy": "Xièxie nín! —— Bú kèqi!",
+        "note": "Với người trên thì dùng 您 cho lễ phép.",
+        "pair": "谢谢 —— 不客气"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "不",
+    "py": "bù / bú",
+    "pos": "Phó từ",
+    "vn": "không cần, không, đừng",
+    "hv": "bất",
+    "em": "🚫",
+    "lesson": 1,
+    "ex_zh": "不谢！",
+    "ex_py": "Bú xiè!",
+    "ex_vn": "Không cần cảm ơn đâu!",
+    "exList": [
+      {
+        "zh": "不谢！",
+        "py": "Bú xiè!",
+        "vn": "Không cần cảm ơn đâu!"
+      },
+      {
+        "zh": "不客气！",
+        "py": "Bú kèqi!",
+        "vn": "Đừng khách sáo!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "不",
+        "p": "bù / bú",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) → 丨→ ㇒ → 丶",
+        "rad": "一 (nhất)",
+        "mean": "không, đừng, chẳng",
+        "tip": "Nét ngang trên cùng như một bức tường CHẶN LẠI → mang nghĩa PHỦ ĐỊNH. Đổi sang thanh 2 (bú) khi đứng trước âm tiết mang thanh 4.",
+        "cf": "布 (bù – \"vải\")",
+        "w": "不谢 / 不客气 / 不是"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "不好",
+        "py": "bù hǎo",
+        "vn": "không tốt"
+      },
+      {
+        "zh": "不客气",
+        "py": "bú kèqi",
+        "vn": "không có gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "不 + tính từ / động từ",
+        "m": "Phủ định: 不好 — không tốt"
+      },
+      {
+        "s": "不 đọc bú khi đứng trước thanh 4: 不客气 (bú kèqi)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không tốt.",
+        "answer": "不好。",
+        "answerPy": "Bù hǎo.",
+        "note": "不 đặt TRƯỚC tính từ để phủ định.",
+        "pair": "不 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không có gì đâu!",
+        "answer": "不客气！",
+        "answerPy": "Bú kèqi!",
+        "note": "Ở đây 不 đọc bú vì chữ sau (客) mang thanh 4.",
+        "pair": "不客气！"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "不客气",
+    "py": "bú kèqi",
+    "pos": "Cụm từ",
+    "vn": "đừng khách sáo, không có gì",
+    "hv": "bất khách khí",
+    "em": "😊",
+    "lesson": 1,
+    "ex_zh": "不客气！",
+    "ex_py": "Bú kèqi!",
+    "ex_vn": "Đừng khách sáo!",
+    "exList": [
+      {
+        "zh": "不客气！",
+        "py": "Bú kèqi!",
+        "vn": "Đừng khách sáo!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "客",
+        "p": "kè",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "宀(miên) trên → 各(các) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "khách",
+        "tip": "宀(mái nhà) + 各(mỗi người, mỗi nơi) → người từ nhiều nơi đến ở tạm dưới MỘT MÁI NHÀ = KHÁCH.",
+        "cf": "各 (gè – \"mỗi\")",
+        "w": "客气 / 不客气"
+      },
+      {
+        "c": "气",
+        "p": "qì",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "ノ→一→㇕→一",
+        "rad": "气 (khí – tự thành bộ)",
+        "mean": "khí, hơi",
+        "tip": "Hình dáng luồng khí đang bay lượn → KHÍ; ghép với 客 thành \"khách khí\" nghĩa là giữ ý tứ, khách sáo.",
+        "cf": "汽 (qì – \"hơi nước\", thêm bộ 氵\")",
+        "w": "客气 / 不客气"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "谢谢 —— 不客气",
+        "m": "Câu đáp khi người khác cảm ơn mình"
+      },
+      {
+        "s": "不客气 nghĩa đen: đừng (不) khách sáo (客气)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không có gì!",
+        "answer": "不客气！",
+        "answerPy": "Bú kèqi!",
+        "note": "Câu đáp khi ai đó nói 谢谢 với mình.",
+        "pair": "不客气！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "— Cảm ơn các bạn! — Không có gì!",
+        "answer": "谢谢你们！——不客气！",
+        "answerPy": "Xièxie nǐmen! —— Bú kèqi!",
+        "note": "Cảm ơn nhiều người thì dùng 你们.",
+        "pair": "谢谢 —— 不客气"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "再见",
+    "py": "zàijiàn",
+    "pos": "Động từ",
+    "vn": "tạm biệt",
+    "hv": "tái kiến",
+    "em": "👋",
+    "lesson": 1,
+    "ex_zh": "再见！",
+    "ex_py": "Zàijiàn!",
+    "ex_vn": "Tạm biệt!",
+    "exList": [
+      {
+        "zh": "再见！",
+        "py": "Zàijiàn!",
+        "vn": "Tạm biệt!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "再",
+        "p": "zài",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "一→冂→土(biến thể)",
+        "rad": "冂 (biến thể)",
+        "mean": "lại, lần nữa",
+        "tip": "Hình ảnh một vật được xếp CHỒNG THÊM một lần nữa lên trên → LẶP LẠI, LẦN NỮA.",
+        "cf": "冉 (rǎn – yếu tố Hán cổ)",
+        "w": "再见"
+      },
+      {
+        "c": "见",
+        "p": "jiàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "冂→ㇾ→儿(biến thể)",
+        "rad": "见 (kiến – tự thành bộ)",
+        "mean": "gặp, nhìn thấy",
+        "tip": "Hình con mắt trên đôi chân đang bước tới → NHÌN THẤY, GẶP GỠ.",
+        "cf": "贝 (bèi – \"vật báu\")",
+        "w": "再见"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "再 + 见",
+        "m": "Nghĩa đen: gặp (见) lại (再)"
+      },
+      {
+        "s": "Chia tay thì cả hai bên đều nói 再见"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tạm biệt!",
+        "answer": "再见！",
+        "answerPy": "Zàijiàn!",
+        "note": "Dùng khi chia tay, không phân biệt thân sơ.",
+        "pair": "再见！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "— Chào ngài, tạm biệt ạ! — Tạm biệt!",
+        "answer": "您好，再见！——再见！",
+        "answerPy": "Nín hǎo, zàijiàn! —— Zàijiàn!",
+        "note": "Người nghe đáp lại cũng bằng 再见.",
+        "pair": "……好 —— 再见"
+      }
+    ]
+  }
 ];
 
 const wuData = [

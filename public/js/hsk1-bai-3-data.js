@@ -2,135 +2,960 @@
 // DATA — HSK1 Bài 3: 你叫什么名字?
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'叫',py:'jiào',pos:'Động từ',vn:'tên là, gọi là', hv: 'khiếu',em:'📛',lesson:1,
-   ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
-   exList:[
-     {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
-     {zh:'我叫王芳。',py:'Wǒ jiào Wáng Fāng.',vn:'Tôi tên là Vương Phương.'},
-   ],
-   hanzi:[
-     {c:'叫',p:'jiào',type:'左右结构 · Trái-phải',st:5,ord:'口(khẩu) trái → 니(biến thể) phải',rad:'口 (khẩu – miệng)',mean:'gọi, tên là',
-      tip:'口(miệng) dùng để GỌI TÊN ai đó.',
-      cf:'纠 (jiū – "vướng, rối")',w:'你叫什么名字'},
-   ]},
-  {n:2,zh:'什么',py:'shénme',pos:'Đại từ',vn:'cái gì, gì', hv: 'thập ma',em:'❓',lesson:1,
-   ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
-   exList:[
-     {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
-   ],
-   hanzi:[
-     {c:'什',p:'shén',type:'左右结构 · Trái-phải',st:4,ord:'亻(nhân) trái → 十(thập) phải',rad:'亻 (nhân – người)',mean:'gì (trong 什么)',
-      tip:'亻(người) + 十(số mười, chỉ nhiều loại) → hỏi về NHIỀU THỨ liên quan tới người, vật.',
-      cf:'汁 (zhī – "nước ép")',w:'什么'},
-     {c:'么',p:'me',type:'独体字 · Chữ đơn',st:3,ord:'ノ→𠃌→ㄥ',rad:'丿 (phẩy, biến thể)',mean:'trợ từ nghi vấn (trong 什么)',
-      tip:'Thường ghép sau 什 để tạo thành từ hỏi CÁI GÌ.',
-      cf:'幺 (yāo – "nhỏ, non")',w:'什么 / 怎么'},
-   ]},
-  {n:3,zh:'名字',py:'míngzi',pos:'Danh từ',vn:'tên', hv: 'danh tự',em:'🏷️',lesson:1,
-   ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
-   exList:[
-     {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
-   ],
-   hanzi:[
-     {c:'名',p:'míng',type:'上下结构 · Trên-dưới',st:6,ord:'夕(tịch) trên → 口(khẩu) dưới',rad:'夕 (tịch – buổi tối)',mean:'tên',
-      tip:'夕(trời tối, không nhìn rõ mặt) + 口(miệng gọi) → phải GỌI TÊN mới biết là ai.',
-      cf:'各 (gè – "mỗi")',w:'名字'},
-     {c:'字',p:'zì',type:'上下结构 · Trên-dưới',st:6,ord:'宀(miên) trên → 子(tử) dưới',rad:'宀 (miên – mái nhà)',mean:'chữ, tên',
-      tip:'宀(mái nhà) + 子(con) → con cái sinh ra trong nhà được đặt CHỮ, TÊN.',
-      cf:'子 (zǐ – "con")',w:'名字 / 汉字'},
-   ]},
-  {n:4,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, ta, mình', hv: 'ngã',em:'👤',lesson:1,
-   ex_zh:'我叫王芳。',ex_py:'Wǒ jiào Wáng Fāng.',ex_vn:'Tôi tên là Vương Phương.',
-   exList:[
-     {zh:'我叫王芳。',py:'Wǒ jiào Wáng Fāng.',vn:'Tôi tên là Vương Phương.'},
-     {zh:'我是学生。',py:'Wǒ shì xuésheng.',vn:'Tôi là học sinh.'},
-   ],
-   hanzi:[
-     {c:'我',p:'wǒ',type:'独体字 · Chữ đơn',st:7,ord:'丿→𠄌→一→一→丿→㇂→戈',rad:'戈 (qua – cây giáo, biến thể)',mean:'tôi, ta, mình',
-      tip:'Chữ cổ vốn là hình vũ khí có răng cưa, người cầm nó tự XƯNG mình là chủ → TÔI.',
-      cf:'找 (zhǎo – "tìm")',w:'我 / 我们 / 我是'},
-   ]},
-  {n:5,zh:'是',py:'shì',pos:'Động từ',vn:'là', hv: 'thị',em:'✅',lesson:2,
-   ex_zh:'我是学生。',ex_py:'Wǒ shì xuésheng.',ex_vn:'Tôi là học sinh.',
-   exList:[
-     {zh:'我是学生。',py:'Wǒ shì xuésheng.',vn:'Tôi là học sinh.'},
-     {zh:'我不是老师，我是学生。',py:'Wǒ bú shì lǎoshī, wǒ shì xuésheng.',vn:'Tôi không phải giáo viên, tôi là học sinh.'},
-   ],
-   hanzi:[
-     {c:'是',p:'shì',type:'上下结构 · Trên-dưới',st:9,ord:'日(nhật) trên → 正(biến thể) dưới',rad:'日 (nhật – mặt trời)',mean:'là, đúng',
-      tip:'日(mặt trời) đứng CHÍNH GIỮA bầu trời → biểu thị điều ĐÚNG, khẳng định LÀ.',
-      cf:'量 (liàng – "đo lường")',w:'我是 / 不是 / 是吗'},
-   ]},
-  {n:6,zh:'老师',py:'lǎoshī',pos:'Danh từ',vn:'thầy cô giáo', hv: 'lão sư',em:'👩‍🏫',lesson:2,
-   ex_zh:'你是老师吗？',ex_py:'Nǐ shì lǎoshī ma?',ex_vn:'Bạn là giáo viên phải không?',
-   exList:[
-     {zh:'你是老师吗？',py:'Nǐ shì lǎoshī ma?',vn:'Bạn là giáo viên phải không?'},
-   ],
-   hanzi:[
-     {c:'老',p:'lǎo',type:'独体字 · Chữ đơn',st:6,ord:'土→耂→匕(biến thể)',rad:'老 (lão – tự thành bộ)',mean:'già, lão',
-      tip:'Hình dáng người già chống gậy, tóc dài → GIÀ; 老师 nghĩa là người thầy đáng kính trọng.',
-      cf:'考 (kǎo – "thi cử")',w:'老师'},
-     {c:'师',p:'shī',type:'左右结构 · Trái-phải',st:6,ord:'丿→𠂉→帀(biến thể)',rad:'巾 (cân – khăn, biến thể)',mean:'thầy, sư phụ',
-      tip:'Người dẫn dắt, chỉ dạy người khác → THẦY, hợp với 老 thành "người thầy đáng kính".',
-      cf:'帅 (shuài – "soái, chỉ huy")',w:'老师'},
-   ]},
-  {n:7,zh:'吗',py:'ma',pos:'Trợ từ',vn:'đặt cuối câu tạo câu hỏi Có/Không', hv: 'ma',em:'❔',lesson:2,
-   ex_zh:'你是老师吗？',ex_py:'Nǐ shì lǎoshī ma?',ex_vn:'Bạn là giáo viên phải không?',
-   exList:[
-     {zh:'你是老师吗？',py:'Nǐ shì lǎoshī ma?',vn:'Bạn là giáo viên phải không?'},
-     {zh:'你是中国人吗？',py:'Nǐ shì Zhōngguó rén ma?',vn:'Bạn là người Trung Quốc phải không?'},
-   ],
-   hanzi:[
-     {c:'吗',p:'ma',type:'左右结构 · Trái-phải',st:6,ord:'口(khẩu) trái → 马(mã) phải',rad:'口 (khẩu – miệng)',mean:'trợ từ tạo câu hỏi',
-      tip:'口(miệng) phát ra âm hỏi, mượn âm của 马(ngựa) làm ký hiệu ngữ âm — không liên quan tới nghĩa "ngựa".',
-      cf:'妈 (mā – "mẹ", cũng mượn âm 马")',w:'是吗 / 你好吗'},
-   ]},
-  {n:8,zh:'学生',py:'xuésheng',pos:'Danh từ',vn:'học sinh', hv: 'học sinh',em:'🎒',lesson:2,
-   ex_zh:'我不是老师，我是学生。',ex_py:'Wǒ bú shì lǎoshī, wǒ shì xuésheng.',ex_vn:'Tôi không phải giáo viên, tôi là học sinh.',
-   exList:[
-     {zh:'我不是老师，我是学生。',py:'Wǒ bú shì lǎoshī, wǒ shì xuésheng.',vn:'Tôi không phải giáo viên, tôi là học sinh.'},
-   ],
-   hanzi:[
-     {c:'学',p:'xué',type:'上下结构 · Trên-dưới',st:8,ord:'⺍(biến thể) trên → 冖 → 子 dưới',rad:'子 (tử – con, phần dưới)',mean:'học',
-      tip:'Hình hai bàn tay che chở đứa trẻ 子(con) đang HỌC dưới mái nhà.',
-      cf:'觉 (jué – "cảm thấy")',w:'学生 / 学校 / 学习'},
-     {c:'生',p:'shēng',type:'独体字 · Chữ đơn',st:5,ord:'丿→𠂉→⼀→土(biến thể)',rad:'生 (sinh – tự thành bộ)',mean:'sinh ra, sống',
-      tip:'Hình cây cỏ mọc lên khỏi mặt đất → SINH RA, SỐNG; 学生 nghĩa là người đang "sinh trưởng" tri thức.',
-      cf:'姓 (xìng – "họ")',w:'学生 / 医生 / 先生'},
-   ]},
-  {n:9,zh:'人',py:'rén',pos:'Danh từ',vn:'người', hv: 'nhân',em:'🧍',lesson:2,
-   ex_zh:'我不是中国人，我是美国人。',ex_py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',ex_vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.',
-   exList:[
-     {zh:'我不是中国人，我是美国人。',py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.'},
-   ],
-   hanzi:[
-     {c:'人',p:'rén',type:'独体字 · Chữ đơn',st:2,ord:'丿→㇏',rad:'人 (nhân – tự thành bộ)',mean:'người',
-      tip:'Hình dáng một người đang đứng nghiêng, hai chân chống đỡ → NGƯỜI.',
-      cf:'入 (rù – "vào")',w:'中国人 / 美国人 / 学生'},
-   ]},
-  {n:10,zh:'中国',py:'Zhōngguó',pos:'Danh từ riêng',vn:'Trung Quốc', hv: 'Trung Quốc',em:'🇨🇳',lesson:2,
-   ex_zh:'你是中国人吗？',ex_py:'Nǐ shì Zhōngguó rén ma?',ex_vn:'Bạn là người Trung Quốc phải không?',
-   exList:[
-     {zh:'你是中国人吗？',py:'Nǐ shì Zhōngguó rén ma?',vn:'Bạn là người Trung Quốc phải không?'},
-   ],
-   hanzi:[
-     {c:'中',p:'zhōng',type:'独体字 · Chữ đơn',st:4,ord:'丨(cổn) xuyên qua giữa 口(khẩu)',rad:'丨 (cổn – nét sổ)',mean:'giữa, trung tâm',
-      tip:'Một nét thẳng xuyên qua giữa ô vuông → chỉ vị trí TRUNG TÂM, Ở GIỮA.',
-      cf:'冲 (chōng – "xông tới")',w:'中国 / 中午'},
-     {c:'国',p:'guó',type:'全包围结构 · Bao vây hoàn toàn',st:8,ord:'囗(vi) bao ngoài → 玉(biến thể) bên trong',rad:'囗 (vi – vây quanh)',mean:'nước, quốc gia',
-      tip:'囗(tường thành bao quanh) + 玉(ngọc quý bên trong) → lãnh thổ có biên giới bảo vệ báu vật = ĐẤT NƯỚC.',
-      cf:'固 (gù – "vững chắc")',w:'中国 / 美国 / 哪国'},
-   ]},
-  {n:11,zh:'美国',py:'Měiguó',pos:'Danh từ riêng',vn:'nước Mỹ', hv: 'Mỹ Quốc',em:'🇺🇸',lesson:2,
-   ex_zh:'我不是中国人，我是美国人。',ex_py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',ex_vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.',
-   exList:[
-     {zh:'我不是中国人，我是美国人。',py:'Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.',vn:'Tôi không phải người Trung Quốc, tôi là người Mỹ.'},
-   ],
-   hanzi:[
-     {c:'美',p:'měi',type:'上下结构 · Trên-dưới',st:9,ord:'⺷(biến thể 羊) trên → 大(đại) dưới',rad:'羊 (dương – con dê, biến thể)',mean:'đẹp, hay',
-      tip:'羊(con dê, biểu tượng no đủ) to 大(lớn) → coi là ĐẸP, TỐT LÀNH; dùng làm âm phiên dịch tên nước Mỹ (美国).',
-      cf:'羔 (gāo – "cừu con")',w:'美国 / 很美'},
-   ]},
+  {
+    "n": 1,
+    "zh": "叫",
+    "py": "jiào",
+    "pos": "Động từ",
+    "vn": "tên là, gọi là",
+    "hv": "khiếu",
+    "em": "📛",
+    "lesson": 1,
+    "ex_zh": "你叫什么名字？",
+    "ex_py": "Nǐ jiào shénme míngzi?",
+    "ex_vn": "Bạn tên là gì?",
+    "exList": [
+      {
+        "zh": "你叫什么名字？",
+        "py": "Nǐ jiào shénme míngzi?",
+        "vn": "Bạn tên là gì?"
+      },
+      {
+        "zh": "我叫王芳。",
+        "py": "Wǒ jiào Wáng Fāng.",
+        "vn": "Tôi tên là Vương Phương."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "叫",
+        "p": "jiào",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "口(khẩu) trái → 니(biến thể) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "gọi, tên là",
+        "tip": "口(miệng) dùng để GỌI TÊN ai đó.",
+        "cf": "纠 (jiū – \"vướng, rối\")",
+        "w": "你叫什么名字"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "叫什么",
+        "py": "jiào shénme",
+        "vn": "gọi là gì"
+      },
+      {
+        "zh": "叫什么名字",
+        "py": "jiào shénme míngzi",
+        "vn": "tên là gì"
+      },
+      {
+        "zh": "我叫",
+        "py": "wǒ jiào",
+        "vn": "tôi tên là"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 叫 + tên",
+        "m": "Ai đó tên là gì: 我叫……"
+      },
+      {
+        "s": "叫 + 什么名字",
+        "m": "Khung hỏi tên: 你叫什么名字？"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn tên là gì?",
+        "answer": "你叫什么名字？",
+        "answerPy": "Nǐ jiào shénme míngzi?",
+        "note": "Câu hỏi đã có 什么 nên không thêm 吗 nữa.",
+        "pair": "叫什么名字？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thưa thầy, thầy tên là gì ạ?",
+        "answer": "老师，您叫什么名字？",
+        "answerPy": "Lǎoshī, nín jiào shénme míngzi?",
+        "note": "Gọi thầy cô thì dùng 您 cho lễ phép.",
+        "pair": "叫什么名字？"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "什么",
+    "py": "shénme",
+    "pos": "Đại từ",
+    "vn": "cái gì, gì",
+    "hv": "thập ma",
+    "em": "❓",
+    "lesson": 1,
+    "ex_zh": "你叫什么名字？",
+    "ex_py": "Nǐ jiào shénme míngzi?",
+    "ex_vn": "Bạn tên là gì?",
+    "exList": [
+      {
+        "zh": "你叫什么名字？",
+        "py": "Nǐ jiào shénme míngzi?",
+        "vn": "Bạn tên là gì?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "什",
+        "p": "shén",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "亻(nhân) trái → 十(thập) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "gì (trong 什么)",
+        "tip": "亻(người) + 十(số mười, chỉ nhiều loại) → hỏi về NHIỀU THỨ liên quan tới người, vật.",
+        "cf": "汁 (zhī – \"nước ép\")",
+        "w": "什么"
+      },
+      {
+        "c": "么",
+        "p": "me",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "ノ→𠃌→ㄥ",
+        "rad": "丿 (phẩy, biến thể)",
+        "mean": "trợ từ nghi vấn (trong 什么)",
+        "tip": "Thường ghép sau 什 để tạo thành từ hỏi CÁI GÌ.",
+        "cf": "幺 (yāo – \"nhỏ, non\")",
+        "w": "什么 / 怎么"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "什么名字",
+        "py": "shénme míngzi",
+        "vn": "tên gì"
+      },
+      {
+        "zh": "叫什么",
+        "py": "jiào shénme",
+        "vn": "gọi là gì"
+      },
+      {
+        "zh": "是什么",
+        "py": "shì shénme",
+        "vn": "là cái gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "什么 + danh từ",
+        "m": "什么名字 — 什么 đứng trước danh từ"
+      },
+      {
+        "s": "Câu đã có 什么 thì KHÔNG thêm 吗: ✗ 你叫什么吗？"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn tên gì?",
+        "answer": "你叫什么？",
+        "answerPy": "Nǐ jiào shénme?",
+        "note": "Nói nhanh thì bỏ 名字, chỉ còn 叫什么.",
+        "pair": "叫什么？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn tên là gì?",
+        "answer": "你们叫什么名字？",
+        "answerPy": "Nǐmen jiào shénme míngzi?",
+        "note": "Hỏi nhiều người thì dùng 你们.",
+        "pair": "叫什么名字？"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "名字",
+    "py": "míngzi",
+    "pos": "Danh từ",
+    "vn": "tên",
+    "hv": "danh tự",
+    "em": "🏷️",
+    "lesson": 1,
+    "ex_zh": "你叫什么名字？",
+    "ex_py": "Nǐ jiào shénme míngzi?",
+    "ex_vn": "Bạn tên là gì?",
+    "exList": [
+      {
+        "zh": "你叫什么名字？",
+        "py": "Nǐ jiào shénme míngzi?",
+        "vn": "Bạn tên là gì?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "名",
+        "p": "míng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "夕(tịch) trên → 口(khẩu) dưới",
+        "rad": "夕 (tịch – buổi tối)",
+        "mean": "tên",
+        "tip": "夕(trời tối, không nhìn rõ mặt) + 口(miệng gọi) → phải GỌI TÊN mới biết là ai.",
+        "cf": "各 (gè – \"mỗi\")",
+        "w": "名字"
+      },
+      {
+        "c": "字",
+        "p": "zì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "宀(miên) trên → 子(tử) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "chữ, tên",
+        "tip": "宀(mái nhà) + 子(con) → con cái sinh ra trong nhà được đặt CHỮ, TÊN.",
+        "cf": "子 (zǐ – \"con\")",
+        "w": "名字 / 汉字"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "什么名字",
+        "py": "shénme míngzi",
+        "vn": "tên gì"
+      },
+      {
+        "zh": "叫什么名字",
+        "py": "jiào shénme míngzi",
+        "vn": "tên là gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "叫 + 什么 + 名字",
+        "m": "Khung hỏi tên đầy đủ"
+      },
+      {
+        "s": "名 + 字",
+        "m": "Cả hai chữ đều mang nghĩa tên gọi"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi tên là Vương Mỹ.",
+        "answer": "我叫王美。",
+        "answerPy": "Wǒ jiào Wáng Měi.",
+        "note": "我叫 + tên — cách tự giới thiệu ngắn gọn nhất.",
+        "pair": "我叫……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy tên là gì?",
+        "answer": "老师叫什么名字？",
+        "answerPy": "Lǎoshī jiào shénme míngzi?",
+        "note": "Chủ ngữ có thể là người thứ ba: 老师叫……",
+        "pair": "叫什么名字？"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "我",
+    "py": "wǒ",
+    "pos": "Đại từ",
+    "vn": "tôi, ta, mình",
+    "hv": "ngã",
+    "em": "👤",
+    "lesson": 1,
+    "ex_zh": "我叫王芳。",
+    "ex_py": "Wǒ jiào Wáng Fāng.",
+    "ex_vn": "Tôi tên là Vương Phương.",
+    "exList": [
+      {
+        "zh": "我叫王芳。",
+        "py": "Wǒ jiào Wáng Fāng.",
+        "vn": "Tôi tên là Vương Phương."
+      },
+      {
+        "zh": "我是学生。",
+        "py": "Wǒ shì xuésheng.",
+        "vn": "Tôi là học sinh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "我",
+        "p": "wǒ",
+        "type": "独体字 · Chữ đơn",
+        "st": 7,
+        "ord": "丿→𠄌→一→一→丿→㇂→戈",
+        "rad": "戈 (qua – cây giáo, biến thể)",
+        "mean": "tôi, ta, mình",
+        "tip": "Chữ cổ vốn là hình vũ khí có răng cưa, người cầm nó tự XƯNG mình là chủ → TÔI.",
+        "cf": "找 (zhǎo – \"tìm\")",
+        "w": "我 / 我们 / 我是"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我是",
+        "py": "wǒ shì",
+        "vn": "tôi là"
+      },
+      {
+        "zh": "我叫",
+        "py": "wǒ jiào",
+        "vn": "tôi tên là"
+      },
+      {
+        "zh": "我不是",
+        "py": "wǒ bú shì",
+        "vn": "tôi không phải là"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "我 + 是 + danh từ",
+        "m": "Tôi là …: 我是学生"
+      },
+      {
+        "s": "我 (tôi) ↔ 你 (bạn) — cặp đại từ cơ bản nhất"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi là học sinh.",
+        "answer": "我是学生。",
+        "answerPy": "Wǒ shì xuésheng.",
+        "note": "Khung 我 + 是 + danh từ dùng để tự giới thiệu.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không phải người Mỹ.",
+        "answer": "我不是美国人。",
+        "answerPy": "Wǒ bú shì Měiguó rén.",
+        "note": "Phủ định của 是 luôn là 不是.",
+        "pair": "不是……"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "是",
+    "py": "shì",
+    "pos": "Động từ",
+    "vn": "là",
+    "hv": "thị",
+    "em": "✅",
+    "lesson": 2,
+    "ex_zh": "我是学生。",
+    "ex_py": "Wǒ shì xuésheng.",
+    "ex_vn": "Tôi là học sinh.",
+    "exList": [
+      {
+        "zh": "我是学生。",
+        "py": "Wǒ shì xuésheng.",
+        "vn": "Tôi là học sinh."
+      },
+      {
+        "zh": "我不是老师，我是学生。",
+        "py": "Wǒ bú shì lǎoshī, wǒ shì xuésheng.",
+        "vn": "Tôi không phải giáo viên, tôi là học sinh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "是",
+        "p": "shì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "日(nhật) trên → 正(biến thể) dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "là, đúng",
+        "tip": "日(mặt trời) đứng CHÍNH GIỮA bầu trời → biểu thị điều ĐÚNG, khẳng định LÀ.",
+        "cf": "量 (liàng – \"đo lường\")",
+        "w": "我是 / 不是 / 是吗"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "是学生",
+        "py": "shì xuésheng",
+        "vn": "là học sinh"
+      },
+      {
+        "zh": "是老师",
+        "py": "shì lǎoshī",
+        "vn": "là giáo viên"
+      },
+      {
+        "zh": "是中国人",
+        "py": "shì Zhōngguó rén",
+        "vn": "là người Trung Quốc"
+      },
+      {
+        "zh": "不是",
+        "py": "bú shì",
+        "vn": "không phải"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 是 + danh từ",
+        "m": "Câu chữ 是: 我是学生"
+      },
+      {
+        "s": "Phủ định là 不是, KHÔNG nói 没是"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn là học sinh.",
+        "answer": "你是学生。",
+        "answerPy": "Nǐ shì xuésheng.",
+        "note": "Câu chữ 是 nối chủ ngữ với danh từ chỉ thân phận.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không phải giáo viên.",
+        "answer": "我不是老师。",
+        "answerPy": "Wǒ bú shì lǎoshī.",
+        "note": "不 đọc bú vì 是 mang thanh 4.",
+        "pair": "不是……"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "老师",
+    "py": "lǎoshī",
+    "pos": "Danh từ",
+    "vn": "thầy cô giáo",
+    "hv": "lão sư",
+    "em": "👩‍🏫",
+    "lesson": 2,
+    "ex_zh": "你是老师吗？",
+    "ex_py": "Nǐ shì lǎoshī ma?",
+    "ex_vn": "Bạn là giáo viên phải không?",
+    "exList": [
+      {
+        "zh": "你是老师吗？",
+        "py": "Nǐ shì lǎoshī ma?",
+        "vn": "Bạn là giáo viên phải không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "老",
+        "p": "lǎo",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "土→耂→匕(biến thể)",
+        "rad": "老 (lão – tự thành bộ)",
+        "mean": "già, lão",
+        "tip": "Hình dáng người già chống gậy, tóc dài → GIÀ; 老师 nghĩa là người thầy đáng kính trọng.",
+        "cf": "考 (kǎo – \"thi cử\")",
+        "w": "老师"
+      },
+      {
+        "c": "师",
+        "p": "shī",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "丿→𠂉→帀(biến thể)",
+        "rad": "巾 (cân – khăn, biến thể)",
+        "mean": "thầy, sư phụ",
+        "tip": "Người dẫn dắt, chỉ dạy người khác → THẦY, hợp với 老 thành \"người thầy đáng kính\".",
+        "cf": "帅 (shuài – \"soái, chỉ huy\")",
+        "w": "老师"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "中国老师",
+        "py": "Zhōngguó lǎoshī",
+        "vn": "giáo viên Trung Quốc"
+      },
+      {
+        "zh": "美国老师",
+        "py": "Měiguó lǎoshī",
+        "vn": "giáo viên Mỹ"
+      },
+      {
+        "zh": "是老师",
+        "py": "shì lǎoshī",
+        "vn": "là giáo viên"
+      },
+      {
+        "zh": "老师好",
+        "py": "lǎoshī hǎo",
+        "vn": "chào thầy cô"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "老师 + 好",
+        "m": "Lời chào thầy cô: 老师好！"
+      },
+      {
+        "s": "老 + 师",
+        "m": "老 ở đây không mang nghĩa già, chỉ là tiếng đệm kính trọng"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào thầy ạ!",
+        "answer": "老师好！",
+        "answerPy": "Lǎoshī hǎo!",
+        "note": "Học sinh Trung Quốc chào thầy cô bằng 老师好.",
+        "pair": "……好！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn là giáo viên phải không?",
+        "answer": "你是老师吗？",
+        "answerPy": "Nǐ shì lǎoshī ma?",
+        "note": "Thêm 吗 vào cuối câu kể là thành câu hỏi.",
+        "pair": "……吗？"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "吗",
+    "py": "ma",
+    "pos": "Trợ từ",
+    "vn": "đặt cuối câu tạo câu hỏi Có/Không",
+    "hv": "ma",
+    "em": "❔",
+    "lesson": 2,
+    "ex_zh": "你是老师吗？",
+    "ex_py": "Nǐ shì lǎoshī ma?",
+    "ex_vn": "Bạn là giáo viên phải không?",
+    "exList": [
+      {
+        "zh": "你是老师吗？",
+        "py": "Nǐ shì lǎoshī ma?",
+        "vn": "Bạn là giáo viên phải không?"
+      },
+      {
+        "zh": "你是中国人吗？",
+        "py": "Nǐ shì Zhōngguó rén ma?",
+        "vn": "Bạn là người Trung Quốc phải không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "吗",
+        "p": "ma",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "口(khẩu) trái → 马(mã) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "trợ từ tạo câu hỏi",
+        "tip": "口(miệng) phát ra âm hỏi, mượn âm của 马(ngựa) làm ký hiệu ngữ âm — không liên quan tới nghĩa \"ngựa\".",
+        "cf": "妈 (mā – \"mẹ\", cũng mượn âm 马\")",
+        "w": "是吗 / 你好吗"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "是吗",
+        "py": "shì ma",
+        "vn": "phải không"
+      },
+      {
+        "zh": "好吗",
+        "py": "hǎo ma",
+        "vn": "có khoẻ không"
+      },
+      {
+        "zh": "是学生吗",
+        "py": "shì xuésheng ma",
+        "vn": "là học sinh phải không"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "câu kể + 吗？",
+        "m": "Biến câu kể thành câu hỏi: 你是学生吗？"
+      },
+      {
+        "s": "吗 luôn đứng CUỐI câu, không đứng giữa"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn là học sinh phải không?",
+        "answer": "你是学生吗？",
+        "answerPy": "Nǐ shì xuésheng ma?",
+        "note": "吗 luôn đứng ở cuối câu.",
+        "pair": "……吗？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn khoẻ không?",
+        "answer": "你好吗？",
+        "answerPy": "Nǐ hǎo ma?",
+        "note": "你好吗 là câu hỏi thăm, khác với lời chào 你好.",
+        "pair": "……吗？"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "学生",
+    "py": "xuésheng",
+    "pos": "Danh từ",
+    "vn": "học sinh",
+    "hv": "học sinh",
+    "em": "🎒",
+    "lesson": 2,
+    "ex_zh": "我不是老师，我是学生。",
+    "ex_py": "Wǒ bú shì lǎoshī, wǒ shì xuésheng.",
+    "ex_vn": "Tôi không phải giáo viên, tôi là học sinh.",
+    "exList": [
+      {
+        "zh": "我不是老师，我是学生。",
+        "py": "Wǒ bú shì lǎoshī, wǒ shì xuésheng.",
+        "vn": "Tôi không phải giáo viên, tôi là học sinh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "学",
+        "p": "xué",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "⺍(biến thể) trên → 冖 → 子 dưới",
+        "rad": "子 (tử – con, phần dưới)",
+        "mean": "học",
+        "tip": "Hình hai bàn tay che chở đứa trẻ 子(con) đang HỌC dưới mái nhà.",
+        "cf": "觉 (jué – \"cảm thấy\")",
+        "w": "学生 / 学校 / 学习"
+      },
+      {
+        "c": "生",
+        "p": "shēng",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "丿→𠂉→⼀→土(biến thể)",
+        "rad": "生 (sinh – tự thành bộ)",
+        "mean": "sinh ra, sống",
+        "tip": "Hình cây cỏ mọc lên khỏi mặt đất → SINH RA, SỐNG; 学生 nghĩa là người đang \"sinh trưởng\" tri thức.",
+        "cf": "姓 (xìng – \"họ\")",
+        "w": "学生 / 医生 / 先生"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "中国学生",
+        "py": "Zhōngguó xuésheng",
+        "vn": "học sinh Trung Quốc"
+      },
+      {
+        "zh": "美国学生",
+        "py": "Měiguó xuésheng",
+        "vn": "học sinh Mỹ"
+      },
+      {
+        "zh": "是学生",
+        "py": "shì xuésheng",
+        "vn": "là học sinh"
+      },
+      {
+        "zh": "学生们",
+        "py": "xuésheng men",
+        "vn": "các học sinh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "是 + 学生",
+        "m": "Là học sinh"
+      },
+      {
+        "s": "学 + 生",
+        "m": "Người (生) đi học (学)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi là học sinh Trung Quốc.",
+        "answer": "我是中国学生。",
+        "answerPy": "Wǒ shì Zhōngguó xuésheng.",
+        "note": "中国 ghép thẳng trước 学生, không cần 的.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn là học sinh phải không?",
+        "answer": "你们是学生吗？",
+        "answerPy": "Nǐmen shì xuésheng ma?",
+        "note": "Chủ ngữ số nhiều vẫn dùng 是 như thường.",
+        "pair": "……吗？"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "人",
+    "py": "rén",
+    "pos": "Danh từ",
+    "vn": "người",
+    "hv": "nhân",
+    "em": "🧍",
+    "lesson": 2,
+    "ex_zh": "我不是中国人，我是美国人。",
+    "ex_py": "Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.",
+    "ex_vn": "Tôi không phải người Trung Quốc, tôi là người Mỹ.",
+    "exList": [
+      {
+        "zh": "我不是中国人，我是美国人。",
+        "py": "Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.",
+        "vn": "Tôi không phải người Trung Quốc, tôi là người Mỹ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "人",
+        "p": "rén",
+        "type": "独体字 · Chữ đơn",
+        "st": 2,
+        "ord": "丿→㇏",
+        "rad": "人 (nhân – tự thành bộ)",
+        "mean": "người",
+        "tip": "Hình dáng một người đang đứng nghiêng, hai chân chống đỡ → NGƯỜI.",
+        "cf": "入 (rù – \"vào\")",
+        "w": "中国人 / 美国人 / 学生"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "中国人",
+        "py": "Zhōngguó rén",
+        "vn": "người Trung Quốc"
+      },
+      {
+        "zh": "美国人",
+        "py": "Měiguó rén",
+        "vn": "người Mỹ"
+      },
+      {
+        "zh": "是中国人",
+        "py": "shì Zhōngguó rén",
+        "vn": "là người Trung Quốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "tên nước + 人",
+        "m": "Người nước nào: 中国人 · 美国人"
+      },
+      {
+        "s": "人 là chữ tượng hình — hai nét là hai chân người đang bước"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi là người Trung Quốc.",
+        "answer": "我是中国人。",
+        "answerPy": "Wǒ shì Zhōngguó rén.",
+        "note": "Tên nước + 人 là cách nói quốc tịch.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn là người Mỹ phải không?",
+        "answer": "你是美国人吗？",
+        "answerPy": "Nǐ shì Měiguó rén ma?",
+        "note": "Muốn hỏi quốc tịch của ai thì thêm 吗 vào cuối.",
+        "pair": "……吗？"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "中国",
+    "py": "Zhōngguó",
+    "pos": "Danh từ riêng",
+    "vn": "Trung Quốc",
+    "hv": "Trung Quốc",
+    "em": "🇨🇳",
+    "lesson": 2,
+    "ex_zh": "你是中国人吗？",
+    "ex_py": "Nǐ shì Zhōngguó rén ma?",
+    "ex_vn": "Bạn là người Trung Quốc phải không?",
+    "exList": [
+      {
+        "zh": "你是中国人吗？",
+        "py": "Nǐ shì Zhōngguó rén ma?",
+        "vn": "Bạn là người Trung Quốc phải không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "中",
+        "p": "zhōng",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "丨(cổn) xuyên qua giữa 口(khẩu)",
+        "rad": "丨 (cổn – nét sổ)",
+        "mean": "giữa, trung tâm",
+        "tip": "Một nét thẳng xuyên qua giữa ô vuông → chỉ vị trí TRUNG TÂM, Ở GIỮA.",
+        "cf": "冲 (chōng – \"xông tới\")",
+        "w": "中国 / 中午"
+      },
+      {
+        "c": "国",
+        "p": "guó",
+        "type": "全包围结构 · Bao vây hoàn toàn",
+        "st": 8,
+        "ord": "囗(vi) bao ngoài → 玉(biến thể) bên trong",
+        "rad": "囗 (vi – vây quanh)",
+        "mean": "nước, quốc gia",
+        "tip": "囗(tường thành bao quanh) + 玉(ngọc quý bên trong) → lãnh thổ có biên giới bảo vệ báu vật = ĐẤT NƯỚC.",
+        "cf": "固 (gù – \"vững chắc\")",
+        "w": "中国 / 美国 / 哪国"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "中国人",
+        "py": "Zhōngguó rén",
+        "vn": "người Trung Quốc"
+      },
+      {
+        "zh": "中国学生",
+        "py": "Zhōngguó xuésheng",
+        "vn": "học sinh Trung Quốc"
+      },
+      {
+        "zh": "中国老师",
+        "py": "Zhōngguó lǎoshī",
+        "vn": "giáo viên Trung Quốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "中国 + 人 / 学生 / 老师",
+        "m": "Ghép thẳng với danh từ chỉ người"
+      },
+      {
+        "s": "中 + 国",
+        "m": "Nước (国) ở giữa (中) — cách người Trung Quốc tự gọi"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn là người Trung Quốc.",
+        "answer": "你们是中国人。",
+        "answerPy": "Nǐmen shì Zhōngguó rén.",
+        "note": "中国人 — người Trung Quốc.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy không phải giáo viên người Trung Quốc.",
+        "answer": "老师不是中国老师。",
+        "answerPy": "Lǎoshī bú shì Zhōngguó lǎoshī.",
+        "note": "中国老师 — giáo viên người Trung Quốc.",
+        "pair": "不是……"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "美国",
+    "py": "Měiguó",
+    "pos": "Danh từ riêng",
+    "vn": "nước Mỹ",
+    "hv": "Mỹ Quốc",
+    "em": "🇺🇸",
+    "lesson": 2,
+    "ex_zh": "我不是中国人，我是美国人。",
+    "ex_py": "Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.",
+    "ex_vn": "Tôi không phải người Trung Quốc, tôi là người Mỹ.",
+    "exList": [
+      {
+        "zh": "我不是中国人，我是美国人。",
+        "py": "Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.",
+        "vn": "Tôi không phải người Trung Quốc, tôi là người Mỹ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "美",
+        "p": "měi",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "⺷(biến thể 羊) trên → 大(đại) dưới",
+        "rad": "羊 (dương – con dê, biến thể)",
+        "mean": "đẹp, hay",
+        "tip": "羊(con dê, biểu tượng no đủ) to 大(lớn) → coi là ĐẸP, TỐT LÀNH; dùng làm âm phiên dịch tên nước Mỹ (美国).",
+        "cf": "羔 (gāo – \"cừu con\")",
+        "w": "美国 / 很美"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "美国人",
+        "py": "Měiguó rén",
+        "vn": "người Mỹ"
+      },
+      {
+        "zh": "美国学生",
+        "py": "Měiguó xuésheng",
+        "vn": "học sinh Mỹ"
+      },
+      {
+        "zh": "美国老师",
+        "py": "Měiguó lǎoshī",
+        "vn": "giáo viên Mỹ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "美国 + 人 / 学生 / 老师",
+        "m": "Ghép thẳng với danh từ chỉ người"
+      },
+      {
+        "s": "美 + 国",
+        "m": "Nước (国) đẹp (美) — phiên âm từ America"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi là người Mỹ.",
+        "answer": "我是美国人。",
+        "answerPy": "Wǒ shì Měiguó rén.",
+        "note": "美国人 — người Mỹ.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thưa thầy, thầy là giáo viên người Mỹ phải không ạ?",
+        "answer": "老师，您是美国老师吗？",
+        "answerPy": "Lǎoshī, nín shì Měiguó lǎoshī ma?",
+        "note": "Gọi người ta trước, rồi mới đặt câu hỏi.",
+        "pair": "……吗？"
+      }
+    ]
+  }
 ];
 
 const wuData = [

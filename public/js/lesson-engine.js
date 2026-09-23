@@ -289,8 +289,9 @@ document.addEventListener('click',function(e){
 // Han tu o cuoi phan mo ra. Len HSK 4 hoc sinh da thuoc mat chu nen bo,
 // nhung o HSK 3 thi mat chu VAN DANG hoc — bo di la mat bai.
 // ══════════════════════════════════════════════════════════════
-function isHsk4Page(){ return /hsk[34]-bai-\d+/.test(location.pathname); }
-function hsk3GiuHanTu(){ return /hsk3-bai-\d+/.test(location.pathname); }
+function isHsk4Page(){ return /hsk[134]-bai-\d+/.test(location.pathname); }
+// HSK 1 va HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
+function hsk3GiuHanTu(){ return /hsk[13]-bai-\d+/.test(location.pathname); }
 
 // Khoi chiet tu Han tu — dung chung cho ca hai bo cuc (the cu va o HSK 3/4)
 function hzListHtml(v,vi){
@@ -411,7 +412,10 @@ function buildVocabHsk4(){
                 ((v.explain&&v.explain[0])?'<div class="h4-card-note">'+v.explain[0]+'</div>':''))+
             '</div>'+
             '<div class="h4-right">'+
-              '<div class="h4-sec-h"><span class="h4-sec-zh">搭配</span> Kết hợp từ</div>'+
+              // HSK 1 bai dau von tu qua it, co tu chua ghep duoc cum nao —
+              // khong in tieu de 搭配 de khoi de lai mot muc trong
+              ((v.colloFull&&v.colloFull.length)||(v.collo&&v.collo.length)
+                ? '<div class="h4-sec-h"><span class="h4-sec-zh">搭配</span> Kết hợp từ</div>' : '')+
               h4Collo(v)+
               h4Patterns(v)+
               (v.usage&&!(v.patterns&&v.patterns.length)?'<div class="h4-usage"><b>Cách dùng:</b> '+v.usage+'</div>':'')+

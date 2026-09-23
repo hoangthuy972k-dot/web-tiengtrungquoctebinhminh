@@ -2,81 +2,443 @@
 // DATA — HSK1 Bài 1: 你好!
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'你',py:'nǐ',pos:'Đại từ',vn:'anh, chị, bạn (ngôi thứ hai số ít)', hv: 'nhĩ',em:'👉',lesson:1,
-   ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn!',
-   exList:[
-     {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
-     {zh:'你们好！',py:'Nǐmen hǎo!',vn:'Chào các bạn!'},
-   ],
-   hanzi:[
-     {c:'你',p:'nǐ',type:'左右结构 · Trái-phải',st:7,ord:'亻(nhân) trái → 尔(biến thể) phải',rad:'亻(nhân – người)',mean:'anh, chị, bạn (ngôi thứ 2)',
-      tip:'亻(người) đứng cạnh 尔(âm cổ chỉ "ngươi") → dùng để gọi NGƯỜI ĐANG NÓI CHUYỆN với mình.',
-      cf:'休 (xiū – "nghỉ ngơi", cũng có bộ 亻)',w:'你好 / 你们 / 你是'},
-   ]},
-  {n:2,zh:'好',py:'hǎo',pos:'Tính từ',vn:'khỏe, tốt', hv: 'hảo',em:'👍',lesson:1,
-   ex_zh:'你好！',ex_py:'Nǐ hǎo!',ex_vn:'Chào bạn! (bạn khỏe không / chào)',
-   exList:[
-     {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
-     {zh:'您好！',py:'Nín hǎo!',vn:'Chào ngài!'},
-     {zh:'你们好！',py:'Nǐmen hǎo!',vn:'Chào các bạn!'},
-   ],
-   hanzi:[
-     {c:'好',p:'hǎo',type:'左右结构 · Trái-phải',st:6,ord:'女(nữ) trái → 子(tử) phải',rad:'女 (nữ – con gái)',mean:'tốt, khỏe',
-      tip:'女(mẹ) đứng cạnh 子(con) → hình ảnh MẸ CON sum vầy = TỐT ĐẸP.',
-      cf:'如 (rú – "như", cũng có bộ 女")',w:'你好 / 您好 / 你们好'},
-   ]},
-  {n:3,zh:'您',py:'nín',pos:'Đại từ',vn:'ông, bà, ngài (kính trọng)', hv: 'nâm',em:'🙇',lesson:1,
-   ex_zh:'您好！',ex_py:'Nín hǎo!',ex_vn:'Chào ngài!',
-   exList:[
-     {zh:'您好！',py:'Nín hǎo!',vn:'Chào ngài!'},
-   ],
-   hanzi:[
-     {c:'您',p:'nín',type:'上下结构 · Trên-dưới',st:11,ord:'你(biến thể) trên → 心(tâm) dưới',rad:'心 (tâm – trái tim)',mean:'ngài, ông/bà (kính trọng)',
-      tip:'Thêm bộ 心(trái tim) xuống dưới chữ 你 → dùng CẢ TẤM LÒNG để bày tỏ sự TÔN KÍNH khi xưng hô.',
-      cf:'念 (niàn – "tưởng nhớ", cũng có bộ 心")',w:'您好 / 谢谢您'},
-   ]},
-  {n:4,zh:'你们',py:'nǐmen',pos:'Đại từ',vn:'các anh, các chị, các bạn (số nhiều)', hv: 'nhĩ môn',em:'👥',lesson:1,
-   ex_zh:'你们好！',ex_py:'Nǐmen hǎo!',ex_vn:'Chào các anh/chị!',
-   exList:[
-     {zh:'你们好！',py:'Nǐmen hǎo!',vn:'Chào các anh/chị!'},
-   ],
-   hanzi:[
-     {c:'们',p:'men',type:'左右结构 · Trái-phải',st:5,ord:'亻(nhân) trái → 门(môn) phải',rad:'亻 (nhân – người)',mean:'hậu tố số nhiều (chỉ người)',
-      tip:'亻(người) đứng cạnh 门(cửa) → nhiều người cùng qua MỘT CÁNH CỬA = biểu thị SỐ NHIỀU.',
-      cf:'门 (mén – "cửa")',w:'你们好'},
-   ]},
-  {n:5,zh:'对不起',py:'duìbuqǐ',pos:'Động từ',vn:'xin lỗi', hv: 'đối bất khởi',em:'🙏',lesson:2,
-   ex_zh:'对不起！',ex_py:'Duìbuqǐ!',ex_vn:'Xin lỗi!',
-   exList:[
-     {zh:'对不起！',py:'Duìbuqǐ!',vn:'Xin lỗi!'},
-   ],
-   hanzi:[
-     {c:'对',p:'duì',type:'左右结构 · Trái-phải',st:5,ord:'又(biến thể) trái → 寸(thốn) phải',rad:'寸 (thốn – gang tay, đo lường)',mean:'đúng, đối diện',
-      tip:'寸(gang tay đo lường) bên phải → làm ĐÚNG theo phép tắc; khi làm sai thì phải nói 对不起.',
-      cf:'讨 (tǎo – "đòi hỏi")',w:'对不起'},
-     {c:'不',p:'bù',type:'独体字 · Chữ đơn',st:4,ord:'一(ngang) → 丨→ ㇒ → 丶',rad:'一 (nhất)',mean:'không, chẳng, đừng',
-      tip:'Nét ngang trên cùng như một bức tường CHẶN LẠI → mang nghĩa PHỦ ĐỊNH điều phía sau.',
-      cf:'布 (bù – "vải")',w:'对不起'},
-     {c:'起',p:'qǐ',type:'半包围结构 · Bán bao vây',st:10,ord:'走(tẩu, biến thể) bao ngoài → 己(kỷ) bên trong',rad:'走 (tẩu – đi)',mean:'dậy, nổi lên',
-      tip:'走(đi) + 己(bản thân) → tự mình đứng dậy; ở đây ghép với 对不 thành cụm từ cố định XIN LỖI.',
-      cf:'己 (jǐ – "bản thân")',w:'对不起'},
-   ]},
-  {n:6,zh:'没关系',py:'méi guānxi',pos:'Cụm từ',vn:'không sao đâu, không có vấn đề gì', hv: 'một quan hệ',em:'🤝',lesson:2,
-   ex_zh:'没关系！',ex_py:'Méi guānxi!',ex_vn:'Không sao đâu!',
-   exList:[
-     {zh:'没关系！',py:'Méi guānxi!',vn:'Không sao đâu!'},
-   ],
-   hanzi:[
-     {c:'没',p:'méi',type:'左右结构 · Trái-phải',st:7,ord:'氵(thuỷ) trái → 殳(biến thể) phải',rad:'氵 (thuỷ – nước)',mean:'không, không có',
-      tip:'氵(nước) dâng lên che lấp mọi thứ → mang nghĩa KHÔNG CÒN, KHÔNG CÓ.',
-      cf:'汉 (hàn – "Hán", cũng có bộ 氵")',w:'没关系'},
-     {c:'关',p:'guān',type:'上下结构 · Trên-dưới',st:6,ord:'丷(bát, biến thể) trên → phần dưới',rad:'丷 (bát – chia, biến thể)',mean:'liên quan, đóng',
-      tip:'Hình ảnh cái CHỐT CỬA được cài lại → ĐÓNG, và RÀNG BUỘC liên quan với nhau.',
-      cf:'并 (bìng – "cùng, và")',w:'没关系 / 关系'},
-     {c:'系',p:'xì',type:'上下结构 · Trên-dưới',st:7,ord:'丿(phẩy) trên → phần dưới giống 糸',rad:'糸 (mịch – tơ, sợi, phần dưới)',mean:'liên hệ, hệ thống',
-      tip:'Như những SỢI TƠ (糸) đan xen nhau → biểu thị MỐI LIÊN HỆ, QUAN HỆ giữa các sự việc.',
-      cf:'紧 (jǐn – "khẩn cấp", cũng liên quan đến sợi dây")',w:'关系 / 没关系'},
-   ]},
+  {
+    "n": 1,
+    "zh": "你",
+    "py": "nǐ",
+    "pos": "Đại từ",
+    "vn": "anh, chị, bạn (ngôi thứ hai số ít)",
+    "hv": "nhĩ",
+    "em": "👉",
+    "lesson": 1,
+    "ex_zh": "你好！",
+    "ex_py": "Nǐ hǎo!",
+    "ex_vn": "Chào bạn!",
+    "exList": [
+      {
+        "zh": "你好！",
+        "py": "Nǐ hǎo!",
+        "vn": "Chào bạn!"
+      },
+      {
+        "zh": "你们好！",
+        "py": "Nǐmen hǎo!",
+        "vn": "Chào các bạn!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "你",
+        "p": "nǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻(nhân) trái → 尔(biến thể) phải",
+        "rad": "亻(nhân – người)",
+        "mean": "anh, chị, bạn (ngôi thứ 2)",
+        "tip": "亻(người) đứng cạnh 尔(âm cổ chỉ \"ngươi\") → dùng để gọi NGƯỜI ĐANG NÓI CHUYỆN với mình.",
+        "cf": "休 (xiū – \"nghỉ ngơi\", cũng có bộ 亻)",
+        "w": "你好 / 你们 / 你是"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "你好",
+        "py": "nǐ hǎo",
+        "vn": "chào bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "你 + 好",
+        "m": "Lời chào cơ bản nhất: 你好！"
+      },
+      {
+        "s": "你 (bạn, ngang hàng) ≠ 您 (ngài, kính trọng)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào bạn!",
+        "answer": "你好！",
+        "answerPy": "Nǐ hǎo!",
+        "note": "你好 là lời chào dùng được với hầu hết mọi người.",
+        "pair": "……好！"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "好",
+    "py": "hǎo",
+    "pos": "Tính từ",
+    "vn": "khỏe, tốt",
+    "hv": "hảo",
+    "em": "👍",
+    "lesson": 1,
+    "ex_zh": "你好！",
+    "ex_py": "Nǐ hǎo!",
+    "ex_vn": "Chào bạn! (bạn khỏe không / chào)",
+    "exList": [
+      {
+        "zh": "你好！",
+        "py": "Nǐ hǎo!",
+        "vn": "Chào bạn!"
+      },
+      {
+        "zh": "您好！",
+        "py": "Nín hǎo!",
+        "vn": "Chào ngài!"
+      },
+      {
+        "zh": "你们好！",
+        "py": "Nǐmen hǎo!",
+        "vn": "Chào các bạn!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "好",
+        "p": "hǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "女(nữ) trái → 子(tử) phải",
+        "rad": "女 (nữ – con gái)",
+        "mean": "tốt, khỏe",
+        "tip": "女(mẹ) đứng cạnh 子(con) → hình ảnh MẸ CON sum vầy = TỐT ĐẸP.",
+        "cf": "如 (rú – \"như\", cũng có bộ 女\")",
+        "w": "你好 / 您好 / 你们好"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "你好",
+        "py": "nǐ hǎo",
+        "vn": "chào bạn"
+      },
+      {
+        "zh": "您好",
+        "py": "nín hǎo",
+        "vn": "chào ngài"
+      },
+      {
+        "zh": "你们好",
+        "py": "nǐmen hǎo",
+        "vn": "chào các bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "đại từ + 好",
+        "m": "你好 · 您好 · 你们好 — đổi đại từ là đổi người được chào"
+      },
+      {
+        "s": "好 nghĩa gốc là \"tốt, khoẻ\"; 你好 nghĩa đen là \"bạn khoẻ chứ\""
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào ngài!",
+        "answer": "您好！",
+        "answerPy": "Nín hǎo!",
+        "note": "Gặp người lớn tuổi hoặc khách thì dùng 您 thay cho 你.",
+        "pair": "……好！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chào các bạn!",
+        "answer": "你们好！",
+        "answerPy": "Nǐmen hǎo!",
+        "note": "Chào nhiều người thì dùng 你们.",
+        "pair": "……好！"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "您",
+    "py": "nín",
+    "pos": "Đại từ",
+    "vn": "ông, bà, ngài (kính trọng)",
+    "hv": "nâm",
+    "em": "🙇",
+    "lesson": 1,
+    "ex_zh": "您好！",
+    "ex_py": "Nín hǎo!",
+    "ex_vn": "Chào ngài!",
+    "exList": [
+      {
+        "zh": "您好！",
+        "py": "Nín hǎo!",
+        "vn": "Chào ngài!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "您",
+        "p": "nín",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "你(biến thể) trên → 心(tâm) dưới",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "ngài, ông/bà (kính trọng)",
+        "tip": "Thêm bộ 心(trái tim) xuống dưới chữ 你 → dùng CẢ TẤM LÒNG để bày tỏ sự TÔN KÍNH khi xưng hô.",
+        "cf": "念 (niàn – \"tưởng nhớ\", cũng có bộ 心\")",
+        "w": "您好 / 谢谢您"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "您好",
+        "py": "nín hǎo",
+        "vn": "chào ngài"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "您 + 好",
+        "m": "Chào người lớn tuổi, thầy cô, khách"
+      },
+      {
+        "s": "您 = 你 + 心 — thêm bộ Tâm (心) ở dưới cho lễ phép"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào bác ạ!",
+        "answer": "您好！",
+        "answerPy": "Nín hǎo!",
+        "note": "您 mang sắc thái kính trọng — chữ 心 (tâm) nằm dưới chữ 你.",
+        "pair": "……好！"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "你们",
+    "py": "nǐmen",
+    "pos": "Đại từ",
+    "vn": "các anh, các chị, các bạn (số nhiều)",
+    "hv": "nhĩ môn",
+    "em": "👥",
+    "lesson": 1,
+    "ex_zh": "你们好！",
+    "ex_py": "Nǐmen hǎo!",
+    "ex_vn": "Chào các anh/chị!",
+    "exList": [
+      {
+        "zh": "你们好！",
+        "py": "Nǐmen hǎo!",
+        "vn": "Chào các anh/chị!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "们",
+        "p": "men",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "亻(nhân) trái → 门(môn) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "hậu tố số nhiều (chỉ người)",
+        "tip": "亻(người) đứng cạnh 门(cửa) → nhiều người cùng qua MỘT CÁNH CỬA = biểu thị SỐ NHIỀU.",
+        "cf": "门 (mén – \"cửa\")",
+        "w": "你们好"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "你们好",
+        "py": "nǐmen hǎo",
+        "vn": "chào các bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "你 + 们",
+        "m": "们 là đuôi chỉ số nhiều của người"
+      },
+      {
+        "s": "你们 (nhiều người) ≠ 你 (một người)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào các anh chị!",
+        "answer": "你们好！",
+        "answerPy": "Nǐmen hǎo!",
+        "note": "们 gắn sau đại từ chỉ người để thành số nhiều.",
+        "pair": "……好！"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "对不起",
+    "py": "duìbuqǐ",
+    "pos": "Động từ",
+    "vn": "xin lỗi",
+    "hv": "đối bất khởi",
+    "em": "🙏",
+    "lesson": 2,
+    "ex_zh": "对不起！",
+    "ex_py": "Duìbuqǐ!",
+    "ex_vn": "Xin lỗi!",
+    "exList": [
+      {
+        "zh": "对不起！",
+        "py": "Duìbuqǐ!",
+        "vn": "Xin lỗi!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "对",
+        "p": "duì",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "又(biến thể) trái → 寸(thốn) phải",
+        "rad": "寸 (thốn – gang tay, đo lường)",
+        "mean": "đúng, đối diện",
+        "tip": "寸(gang tay đo lường) bên phải → làm ĐÚNG theo phép tắc; khi làm sai thì phải nói 对不起.",
+        "cf": "讨 (tǎo – \"đòi hỏi\")",
+        "w": "对不起"
+      },
+      {
+        "c": "不",
+        "p": "bù",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) → 丨→ ㇒ → 丶",
+        "rad": "一 (nhất)",
+        "mean": "không, chẳng, đừng",
+        "tip": "Nét ngang trên cùng như một bức tường CHẶN LẠI → mang nghĩa PHỦ ĐỊNH điều phía sau.",
+        "cf": "布 (bù – \"vải\")",
+        "w": "对不起"
+      },
+      {
+        "c": "起",
+        "p": "qǐ",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "走(tẩu, biến thể) bao ngoài → 己(kỷ) bên trong",
+        "rad": "走 (tẩu – đi)",
+        "mean": "dậy, nổi lên",
+        "tip": "走(đi) + 己(bản thân) → tự mình đứng dậy; ở đây ghép với 对不 thành cụm từ cố định XIN LỖI.",
+        "cf": "己 (jǐ – \"bản thân\")",
+        "w": "对不起"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "对不起 —— 没关系",
+        "m": "Xin lỗi — Không sao: một cặp đối đáp"
+      },
+      {
+        "s": "对不起 luôn dùng nguyên cụm ba chữ, không tách ra"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin lỗi!",
+        "answer": "对不起！",
+        "answerPy": "Duìbuqǐ!",
+        "note": "Ba chữ đi liền nhau, không tách rời.",
+        "pair": "对不起！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "— Xin lỗi! — Không sao đâu!",
+        "answer": "对不起！——没关系！",
+        "answerPy": "Duìbuqǐ! —— Méi guānxi!",
+        "note": "Cặp đối đáp quen thuộc: một người xin lỗi, một người đáp lại.",
+        "pair": "对不起 —— 没关系"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "没关系",
+    "py": "méi guānxi",
+    "pos": "Cụm từ",
+    "vn": "không sao đâu, không có vấn đề gì",
+    "hv": "một quan hệ",
+    "em": "🤝",
+    "lesson": 2,
+    "ex_zh": "没关系！",
+    "ex_py": "Méi guānxi!",
+    "ex_vn": "Không sao đâu!",
+    "exList": [
+      {
+        "zh": "没关系！",
+        "py": "Méi guānxi!",
+        "vn": "Không sao đâu!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "没",
+        "p": "méi",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "氵(thuỷ) trái → 殳(biến thể) phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "không, không có",
+        "tip": "氵(nước) dâng lên che lấp mọi thứ → mang nghĩa KHÔNG CÒN, KHÔNG CÓ.",
+        "cf": "汉 (hàn – \"Hán\", cũng có bộ 氵\")",
+        "w": "没关系"
+      },
+      {
+        "c": "关",
+        "p": "guān",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "丷(bát, biến thể) trên → phần dưới",
+        "rad": "丷 (bát – chia, biến thể)",
+        "mean": "liên quan, đóng",
+        "tip": "Hình ảnh cái CHỐT CỬA được cài lại → ĐÓNG, và RÀNG BUỘC liên quan với nhau.",
+        "cf": "并 (bìng – \"cùng, và\")",
+        "w": "没关系 / 关系"
+      },
+      {
+        "c": "系",
+        "p": "xì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "丿(phẩy) trên → phần dưới giống 糸",
+        "rad": "糸 (mịch – tơ, sợi, phần dưới)",
+        "mean": "liên hệ, hệ thống",
+        "tip": "Như những SỢI TƠ (糸) đan xen nhau → biểu thị MỐI LIÊN HỆ, QUAN HỆ giữa các sự việc.",
+        "cf": "紧 (jǐn – \"khẩn cấp\", cũng liên quan đến sợi dây\")",
+        "w": "关系 / 没关系"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "—— 没关系",
+        "m": "Câu đáp khi người khác nói 对不起"
+      },
+      {
+        "s": "没关系 nghĩa đen: không (没) có liên quan (关系) gì"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không sao đâu!",
+        "answer": "没关系！",
+        "answerPy": "Méi guānxi!",
+        "note": "Câu đáp lịch sự khi người khác xin lỗi mình.",
+        "pair": "没关系！"
+      }
+    ]
+  }
 ];
 
 const wuData = [

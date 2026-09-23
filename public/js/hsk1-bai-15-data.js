@@ -2,96 +2,768 @@
 // DATA — HSK1 Bài 15: 我是坐飞机来的。
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen biết, hiểu biết', hv: 'nhận thức',em:'🤝',lesson:1,
-   ex_zh:'你和李小姐是什么时候认识的？',ex_py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',ex_vn:'Cô và cô Lý quen nhau khi nào vậy?',
-   exList:[
-     {zh:'你和李小姐是什么时候认识的？',py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',vn:'Cô và cô Lý quen nhau khi nào vậy?'},
-   ],
-   hanzi:[
-     {c:'认',p:'rèn',type:'左右结构 · Trái-phải',st:4,ord:'讠(ngôn) trái → 人(nhân, biến thể) phải',rad:'讠 (ngôn – lời nói)',mean:'nhận, nhận biết',
-      tip:'讠(lời nói) + 人(người) → dùng lời NHẬN RA, xác NHẬN một người.',
-      cf:'队 (duì – "đội, hàng")',w:'认识'},
-     {c:'识',p:'shí',type:'左右结构 · Trái-phải',st:7,ord:'讠(ngôn) trái → 只(biến thể) phải',rad:'讠 (ngôn – lời nói)',mean:'biết, hiểu biết',
-      tip:'讠(lời nói) + 只(phân biệt) → dùng lời PHÂN BIỆT, HIỂU BIẾT về sự vật.',
-      cf:'职 (zhí – "chức vụ")',w:'认识'},
-   ]},
-  {n:2,zh:'年',py:'nián',pos:'Danh từ',vn:'năm', hv: 'niên',em:'📅',lesson:1,
-   ex_zh:'我们是2011年9月认识的。',ex_py:'Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.',ex_vn:'Chúng tôi quen nhau vào tháng 9 năm 2011.',
-   exList:[
-     {zh:'我们是2011年9月认识的。',py:'Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.',vn:'Chúng tôi quen nhau vào tháng 9 năm 2011.'},
-   ],
-   hanzi:[]},
-  {n:3,zh:'大学',py:'dàxué',pos:'Danh từ',vn:'trường đại học', hv: 'đại học',em:'🎓',lesson:1,
-   ex_zh:'她是我大学同学。',ex_py:'Tā shì wǒ dàxué tóngxué.',ex_vn:'Cô ấy là bạn học cùng lớp đại học của tôi.',
-   exList:[
-     {zh:'她是我大学同学。',py:'Tā shì wǒ dàxué tóngxué.',vn:'Cô ấy là bạn học cùng lớp đại học của tôi.'},
-   ],
-   hanzi:[]},
-  {n:4,zh:'饭店',py:'fàndiàn',pos:'Danh từ',vn:'khách sạn, nhà hàng ăn uống', hv: 'phạn điếm',em:'🏨',lesson:2,
-   ex_zh:'你们是怎么来饭店的？',ex_py:'Nǐmen shì zěnme lái fàndiàn de?',ex_vn:'Anh chị đến khách sạn bằng cách nào?',
-   exList:[
-     {zh:'你们是怎么来饭店的？',py:'Nǐmen shì zěnme lái fàndiàn de?',vn:'Anh chị đến khách sạn bằng cách nào?'},
-   ],
-   hanzi:[]},
-  {n:5,zh:'出租车',py:'chūzūchē',pos:'Danh từ',vn:'xe taxi', hv: 'xuất tô xa',em:'🚕',lesson:2,
-   ex_zh:'我们是坐出租车来的。',ex_py:'Wǒmen shì zuò chūzūchē lái de.',ex_vn:'Chúng tôi đi xe taxi đến.',
-   exList:[
-     {zh:'我们是坐出租车来的。',py:'Wǒmen shì zuò chūzūchē lái de.',vn:'Chúng tôi đi xe taxi đến.'},
-   ],
-   hanzi:[
-     {c:'出',p:'chū',type:'独体字 · Chữ đơn',st:5,ord:'山(biến thể) → 山(biến thể)',rad:'凵 (khảm, biến thể)',mean:'ra, đi ra',
-      tip:'Hình bàn chân bước RA khỏi hang động → RA, ĐI RA.',
-      cf:'击 (jī – "đánh")',w:'出租车 / 出去'},
-     {c:'租',p:'zū',type:'左右结构 · Trái-phải',st:10,ord:'禾(hòa) trái → 且(thả) phải',rad:'禾 (hòa – lúa)',mean:'thuê, cho thuê',
-      tip:'禾(lúa, hoa màu nộp tô) + 且(hơn nữa) → nộp lúa để THUÊ đất, mở rộng nghĩa THUÊ, CHO THUÊ. (车 đã học ở Bài 14)',
-      cf:'祖 (zǔ – "tổ tiên")',w:'出租车'},
-   ]},
-  {n:6,zh:'一起',py:'yìqǐ',pos:'Phó từ',vn:'cùng nhau, đồng hành', hv: 'nhất khởi',em:'🧑‍🤝‍🧑',lesson:2,
-   ex_zh:'他是和朋友一起开车来的。',ex_py:'Tā shì hé péngyou yìqǐ kāi chē lái de.',ex_vn:'Cậu ấy lái xe cùng với bạn đến đây.',
-   exList:[
-     {zh:'他是和朋友一起开车来的。',py:'Tā shì hé péngyou yìqǐ kāi chē lái de.',vn:'Cậu ấy lái xe cùng với bạn đến đây.'},
-   ],
-   hanzi:[
-     {c:'起',p:'qǐ',type:'半包围结构 · Bán bao vây',st:10,ord:'走(biến thể) bao ngoài → 己(kỷ) bên trong',rad:'走 (tẩu – đi, biến thể)',mean:'dậy, bắt đầu; cùng (trong 一起)',
-      tip:'走(đi) + 己(bản thân) → tự mình đứng dậy đi; ghép với 一 thành CÙNG NHAU.',
-      cf:'己 (jǐ – "bản thân")',w:'一起 / 起来'},
-   ]},
-  {n:7,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui mừng, phấn khởi', hv: 'cao hứng',em:'😄',lesson:3,
-   ex_zh:'很高兴认识您！',ex_py:'Hěn gāoxìng rènshi nín!',ex_vn:'Rất vui được biết ngài!',
-   exList:[
-     {zh:'很高兴认识您！',py:'Hěn gāoxìng rènshi nín!',vn:'Rất vui được biết ngài!'},
-   ],
-   hanzi:[
-     {c:'高',p:'gāo',type:'独体字 · Tượng hình',st:10,ord:'亠→口→冂→口',rad:'高 (cao – tự thành bộ)',mean:'cao',
-      tip:'Hình một tòa lầu nhiều tầng cao vút → CAO; 高兴 = "hứng thú dâng cao" = VUI MỪNG.',
-      cf:'亭 (tíng – "cái đình")',w:'高兴 / 很高'},
-     {c:'兴',p:'xìng',type:'独体字 · Chữ đơn',st:6,ord:'丷(biến thể) → 一→八(biến thể)',rad:'八 (bát, biến thể)',mean:'hứng thú, phấn chấn',
-      tip:'Hình nhiều bàn tay cùng nâng một vật lên → cùng nhau PHẤN KHỞI, HỨNG THÚ.',
-      cf:'共 (gòng – "cùng")',w:'高兴'},
-   ]},
-  {n:8,zh:'听',py:'tīng',pos:'Động từ',vn:'nghe, nghe thấy', hv: 'thính',em:'👂',lesson:3,
-   ex_zh:'听张先生说，您是坐飞机来北京的？',ex_py:'Tīng Zhāng xiānsheng shuō, nín shì zuò fēijī lái Běijīng de?',ex_vn:'Nghe ông Trương nói cô đáp máy bay đến Bắc Kinh, có phải không?',
-   exList:[
-     {zh:'听张先生说，您是坐飞机来北京的？',py:'Tīng Zhāng xiānsheng shuō, nín shì zuò fēijī lái Běijīng de?',vn:'Nghe ông Trương nói cô đáp máy bay đến Bắc Kinh, có phải không?'},
-   ],
-   hanzi:[
-     {c:'听',p:'tīng',type:'左右结构 · Trái-phải',st:7,ord:'口(khẩu) trái → 斤(biến thể) phải',rad:'口 (khẩu – miệng)',mean:'nghe, nghe thấy',
-      tip:'口(miệng nói) được tai TIẾP NHẬN → NGHE.',
-      cf:'厅 (tīng – "sảnh, phòng")',w:'听说 / 听音乐'},
-   ]},
-  {n:9,zh:'飞机',py:'fēijī',pos:'Danh từ',vn:'máy bay', hv: 'phi cơ',em:'✈️',lesson:3,
-   ex_zh:'您是坐飞机来北京的？',ex_py:'Nín shì zuò fēijī lái Běijīng de?',ex_vn:'Cô đáp máy bay đến Bắc Kinh phải không?',
-   exList:[
-     {zh:'您是坐飞机来北京的？',py:'Nín shì zuò fēijī lái Běijīng de?',vn:'Cô đáp máy bay đến Bắc Kinh phải không?'},
-   ],
-   hanzi:[
-     {c:'飞',p:'fēi',type:'独体字 · Tượng hình',st:3,ord:'飞(biến thể, 3 nét)',rad:'飞 (phi – tự thành bộ)',mean:'bay',
-      tip:'Hình con chim đang dang cánh bay → BAY.',
-      cf:'见 (jiàn – "nhìn thấy", đã học Bài 2")',w:'飞机'},
-     {c:'机',p:'jī',type:'左右结构 · Trái-phải',st:6,ord:'木(mộc) trái → 几(kỷ) phải',rad:'木 (mộc – gỗ)',mean:'máy móc',
-      tip:'木(gỗ, vật liệu chế tạo máy móc thời xưa) + 几(mượn âm) → MÁY MÓC; 飞机 = "máy biết bay" = MÁY BAY.',
-      cf:'几 (jǐ – "mấy", đã học Bài 5")',w:'飞机'},
-   ]},
+  {
+    "n": 1,
+    "zh": "认识",
+    "py": "rènshi",
+    "pos": "Động từ",
+    "vn": "quen biết, hiểu biết",
+    "hv": "nhận thức",
+    "em": "🤝",
+    "lesson": 1,
+    "ex_zh": "你和李小姐是什么时候认识的？",
+    "ex_py": "Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?",
+    "ex_vn": "Cô và cô Lý quen nhau khi nào vậy?",
+    "exList": [
+      {
+        "zh": "你和李小姐是什么时候认识的？",
+        "py": "Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?",
+        "vn": "Cô và cô Lý quen nhau khi nào vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "认",
+        "p": "rèn",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "讠(ngôn) trái → 人(nhân, biến thể) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "nhận, nhận biết",
+        "tip": "讠(lời nói) + 人(người) → dùng lời NHẬN RA, xác NHẬN một người.",
+        "cf": "队 (duì – \"đội, hàng\")",
+        "w": "认识"
+      },
+      {
+        "c": "识",
+        "p": "shí",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "讠(ngôn) trái → 只(biến thể) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "biết, hiểu biết",
+        "tip": "讠(lời nói) + 只(phân biệt) → dùng lời PHÂN BIỆT, HIỂU BIẾT về sự vật.",
+        "cf": "职 (zhí – \"chức vụ\")",
+        "w": "认识"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "认识你",
+        "py": "rènshi nǐ",
+        "vn": "quen biết bạn"
+      },
+      {
+        "zh": "认识这个字",
+        "py": "rènshi zhège zì",
+        "vn": "biết chữ này"
+      },
+      {
+        "zh": "不认识",
+        "py": "bú rènshi",
+        "vn": "không quen, không biết"
+      },
+      {
+        "zh": "认识一年了",
+        "py": "rènshi yì nián le",
+        "vn": "quen nhau một năm rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "认识 + người / chữ",
+        "m": "Quen ai, biết mặt chữ nào"
+      },
+      {
+        "s": "认识 (biết mặt, quen) khác 会 (học rồi nên làm được)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Rất vui được làm quen với bạn!",
+        "answer": "很高兴认识你！",
+        "answerPy": "Hěn gāoxìng rènshi nǐ!",
+        "note": "Câu làm quen kinh điển, học thuộc cả câu.",
+        "pair": "很高兴认识你！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không biết chữ Hán này.",
+        "answer": "我不认识这个汉字。",
+        "answerPy": "Wǒ bú rènshi zhège Hànzì.",
+        "note": "认识 là biết mặt chữ, khác 会 là biết viết.",
+        "pair": "不 + V"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "年",
+    "py": "nián",
+    "pos": "Danh từ",
+    "vn": "năm",
+    "hv": "niên",
+    "em": "📅",
+    "lesson": 1,
+    "ex_zh": "我们是2011年9月认识的。",
+    "ex_py": "Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.",
+    "ex_vn": "Chúng tôi quen nhau vào tháng 9 năm 2011.",
+    "exList": [
+      {
+        "zh": "我们是2011年9月认识的。",
+        "py": "Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.",
+        "vn": "Chúng tôi quen nhau vào tháng 9 năm 2011."
+      }
+    ],
+    "hanzi": [],
+    "colloFull": [
+      {
+        "zh": "一年",
+        "py": "yì nián",
+        "vn": "một năm"
+      },
+      {
+        "zh": "今年",
+        "py": "jīnnián",
+        "vn": "năm nay"
+      },
+      {
+        "zh": "三年",
+        "py": "sān nián",
+        "vn": "ba năm"
+      },
+      {
+        "zh": "学了一年",
+        "py": "xué le yì nián",
+        "vn": "học được một năm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 年",
+        "m": "Bao nhiêu năm: 一年 — 年 tự làm lượng từ"
+      },
+      {
+        "s": "✗ 一个年 → ✓ 一年",
+        "m": "年 · 天 · 岁 đều không cần thêm 个"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi học tiếng Trung được một năm rồi.",
+        "answer": "我学习汉语一年了。",
+        "answerPy": "Wǒ xuéxí Hànyǔ yì nián le.",
+        "note": "年 tự làm lượng từ, không thêm 个.",
+        "pair": "……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Năm nay tôi hai mươi tuổi.",
+        "answer": "今年我二十岁。",
+        "answerPy": "Jīnnián wǒ èrshí suì.",
+        "note": "今年 — năm nay.",
+        "pair": "……岁"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "大学",
+    "py": "dàxué",
+    "pos": "Danh từ",
+    "vn": "trường đại học",
+    "hv": "đại học",
+    "em": "🎓",
+    "lesson": 1,
+    "ex_zh": "她是我大学同学。",
+    "ex_py": "Tā shì wǒ dàxué tóngxué.",
+    "ex_vn": "Cô ấy là bạn học cùng lớp đại học của tôi.",
+    "exList": [
+      {
+        "zh": "她是我大学同学。",
+        "py": "Tā shì wǒ dàxué tóngxué.",
+        "vn": "Cô ấy là bạn học cùng lớp đại học của tôi."
+      }
+    ],
+    "hanzi": [],
+    "colloFull": [
+      {
+        "zh": "上大学",
+        "py": "shàng dàxué",
+        "vn": "học đại học"
+      },
+      {
+        "zh": "去大学",
+        "py": "qù dàxué",
+        "vn": "đến trường đại học"
+      },
+      {
+        "zh": "大学的老师",
+        "py": "dàxué de lǎoshī",
+        "vn": "giảng viên đại học"
+      },
+      {
+        "zh": "中国大学",
+        "py": "Zhōngguó dàxué",
+        "vn": "đại học Trung Quốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 / 上 + 大学",
+        "m": "Đi, học ở trường đại học"
+      },
+      {
+        "s": "大 + 学",
+        "m": "Trường (学) bậc lớn (大) — khác 学校 nói chung"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con gái tôi học đại học ở Trung Quốc.",
+        "answer": "我的女儿在中国上大学。",
+        "answerPy": "Wǒ de nǚ'ér zài Zhōngguó shàng dàxué.",
+        "note": "Nơi chốn đứng trước động từ.",
+        "pair": "在……上大学"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Giảng viên đại học của chúng tôi đều rất tốt.",
+        "answer": "我们大学的老师都很好。",
+        "answerPy": "Wǒmen dàxué de lǎoshī dōu hěn hǎo.",
+        "note": "都 đứng sau chủ ngữ số nhiều.",
+        "pair": "都 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "饭店",
+    "py": "fàndiàn",
+    "pos": "Danh từ",
+    "vn": "khách sạn, nhà hàng ăn uống",
+    "hv": "phạn điếm",
+    "em": "🏨",
+    "lesson": 2,
+    "ex_zh": "你们是怎么来饭店的？",
+    "ex_py": "Nǐmen shì zěnme lái fàndiàn de?",
+    "ex_vn": "Anh chị đến khách sạn bằng cách nào?",
+    "exList": [
+      {
+        "zh": "你们是怎么来饭店的？",
+        "py": "Nǐmen shì zěnme lái fàndiàn de?",
+        "vn": "Anh chị đến khách sạn bằng cách nào?"
+      }
+    ],
+    "hanzi": [],
+    "colloFull": [
+      {
+        "zh": "去饭店",
+        "py": "qù fàndiàn",
+        "vn": "đến nhà hàng"
+      },
+      {
+        "zh": "在饭店吃饭",
+        "py": "zài fàndiàn chī fàn",
+        "vn": "ăn cơm ở nhà hàng"
+      },
+      {
+        "zh": "这个饭店",
+        "py": "zhège fàndiàn",
+        "vn": "nhà hàng này"
+      },
+      {
+        "zh": "饭店的菜",
+        "py": "fàndiàn de cài",
+        "vn": "món của nhà hàng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 饭店 + 吃饭",
+        "m": "Ăn cơm ở nhà hàng"
+      },
+      {
+        "s": "饭 + 店",
+        "m": "Tiệm (店) cơm (饭) — cùng kiểu với 商店"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trưa nay chúng ta ăn cơm ở nhà hàng nhé.",
+        "answer": "今天中午我们在饭店吃饭吧。",
+        "answerPy": "Jīntiān zhōngwǔ wǒmen zài fàndiàn chī fàn ba.",
+        "note": "在饭店吃饭 — ăn cơm ở nhà hàng.",
+        "pair": "……吧"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Món của nhà hàng này rất ngon.",
+        "answer": "这个饭店的菜很好吃。",
+        "answerPy": "Zhège fàndiàn de cài hěn hǎochī.",
+        "note": "饭店的菜 — món của nhà hàng.",
+        "pair": "很 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "出租车",
+    "py": "chūzūchē",
+    "pos": "Danh từ",
+    "vn": "xe taxi",
+    "hv": "xuất tô xa",
+    "em": "🚕",
+    "lesson": 2,
+    "ex_zh": "我们是坐出租车来的。",
+    "ex_py": "Wǒmen shì zuò chūzūchē lái de.",
+    "ex_vn": "Chúng tôi đi xe taxi đến.",
+    "exList": [
+      {
+        "zh": "我们是坐出租车来的。",
+        "py": "Wǒmen shì zuò chūzūchē lái de.",
+        "vn": "Chúng tôi đi xe taxi đến."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "出",
+        "p": "chū",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "山(biến thể) → 山(biến thể)",
+        "rad": "凵 (khảm, biến thể)",
+        "mean": "ra, đi ra",
+        "tip": "Hình bàn chân bước RA khỏi hang động → RA, ĐI RA.",
+        "cf": "击 (jī – \"đánh\")",
+        "w": "出租车 / 出去"
+      },
+      {
+        "c": "租",
+        "p": "zū",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "禾(hòa) trái → 且(thả) phải",
+        "rad": "禾 (hòa – lúa)",
+        "mean": "thuê, cho thuê",
+        "tip": "禾(lúa, hoa màu nộp tô) + 且(hơn nữa) → nộp lúa để THUÊ đất, mở rộng nghĩa THUÊ, CHO THUÊ. (车 đã học ở Bài 14)",
+        "cf": "祖 (zǔ – \"tổ tiên\")",
+        "w": "出租车"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "坐出租车",
+        "py": "zuò chūzūchē",
+        "vn": "đi taxi"
+      },
+      {
+        "zh": "开出租车",
+        "py": "kāi chūzūchē",
+        "vn": "lái taxi"
+      },
+      {
+        "zh": "一个出租车",
+        "py": "yí gè chūzūchē",
+        "vn": "một chiếc taxi"
+      },
+      {
+        "zh": "出租车上",
+        "py": "chūzūchē shàng",
+        "vn": "trên taxi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坐 + 出租车",
+        "m": "Đi taxi — dùng 坐 như 坐车"
+      },
+      {
+        "s": "出租 + 车",
+        "m": "Xe (车) cho thuê (出租)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng ta đi taxi đến trường đại học nhé.",
+        "answer": "我们坐出租车去大学吧。",
+        "answerPy": "Wǒmen zuò chūzūchē qù dàxué ba.",
+        "note": "坐出租车 — đi taxi.",
+        "pair": "坐 + phương tiện"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bố tôi lái taxi.",
+        "answer": "我爸爸开出租车。",
+        "answerPy": "Wǒ bàba kāi chūzūchē.",
+        "note": "开 dùng cho người cầm lái.",
+        "pair": "开 + phương tiện"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "一起",
+    "py": "yìqǐ",
+    "pos": "Phó từ",
+    "vn": "cùng nhau, đồng hành",
+    "hv": "nhất khởi",
+    "em": "🧑‍🤝‍🧑",
+    "lesson": 2,
+    "ex_zh": "他是和朋友一起开车来的。",
+    "ex_py": "Tā shì hé péngyou yìqǐ kāi chē lái de.",
+    "ex_vn": "Cậu ấy lái xe cùng với bạn đến đây.",
+    "exList": [
+      {
+        "zh": "他是和朋友一起开车来的。",
+        "py": "Tā shì hé péngyou yìqǐ kāi chē lái de.",
+        "vn": "Cậu ấy lái xe cùng với bạn đến đây."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "起",
+        "p": "qǐ",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "走(biến thể) bao ngoài → 己(kỷ) bên trong",
+        "rad": "走 (tẩu – đi, biến thể)",
+        "mean": "dậy, bắt đầu; cùng (trong 一起)",
+        "tip": "走(đi) + 己(bản thân) → tự mình đứng dậy đi; ghép với 一 thành CÙNG NHAU.",
+        "cf": "己 (jǐ – \"bản thân\")",
+        "w": "一起 / 起来"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一起去",
+        "py": "yìqǐ qù",
+        "vn": "cùng đi"
+      },
+      {
+        "zh": "一起吃饭",
+        "py": "yìqǐ chī fàn",
+        "vn": "cùng ăn cơm"
+      },
+      {
+        "zh": "和我一起",
+        "py": "hé wǒ yìqǐ",
+        "vn": "cùng với tôi"
+      },
+      {
+        "zh": "一起学习",
+        "py": "yìqǐ xuéxí",
+        "vn": "cùng học"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "和 + ai + 一起 + động từ",
+        "m": "Cùng ai làm gì: 和我一起去"
+      },
+      {
+        "s": "一起 đứng TRƯỚC động từ, không đứng cuối câu"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiều nay bạn cùng đi mua đồ với tôi nhé.",
+        "answer": "今天下午你和我一起去买东西吧。",
+        "answerPy": "Jīntiān xiàwǔ nǐ hé wǒ yìqǐ qù mǎi dōngxi ba.",
+        "note": "一起 đứng trước động từ.",
+        "pair": "和……一起……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng ta cùng học tiếng Trung.",
+        "answer": "我们一起学习汉语。",
+        "answerPy": "Wǒmen yìqǐ xuéxí Hànyǔ.",
+        "note": "Không nói 我们学习汉语一起.",
+        "pair": "一起 + V"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "高兴",
+    "py": "gāoxìng",
+    "pos": "Tính từ",
+    "vn": "vui mừng, phấn khởi",
+    "hv": "cao hứng",
+    "em": "😄",
+    "lesson": 3,
+    "ex_zh": "很高兴认识您！",
+    "ex_py": "Hěn gāoxìng rènshi nín!",
+    "ex_vn": "Rất vui được biết ngài!",
+    "exList": [
+      {
+        "zh": "很高兴认识您！",
+        "py": "Hěn gāoxìng rènshi nín!",
+        "vn": "Rất vui được biết ngài!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "高",
+        "p": "gāo",
+        "type": "独体字 · Tượng hình",
+        "st": 10,
+        "ord": "亠→口→冂→口",
+        "rad": "高 (cao – tự thành bộ)",
+        "mean": "cao",
+        "tip": "Hình một tòa lầu nhiều tầng cao vút → CAO; 高兴 = \"hứng thú dâng cao\" = VUI MỪNG.",
+        "cf": "亭 (tíng – \"cái đình\")",
+        "w": "高兴 / 很高"
+      },
+      {
+        "c": "兴",
+        "p": "xìng",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "丷(biến thể) → 一→八(biến thể)",
+        "rad": "八 (bát, biến thể)",
+        "mean": "hứng thú, phấn chấn",
+        "tip": "Hình nhiều bàn tay cùng nâng một vật lên → cùng nhau PHẤN KHỞI, HỨNG THÚ.",
+        "cf": "共 (gòng – \"cùng\")",
+        "w": "高兴"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很高兴",
+        "py": "hěn gāoxìng",
+        "vn": "rất vui"
+      },
+      {
+        "zh": "太高兴了",
+        "py": "tài gāoxìng le",
+        "vn": "vui quá"
+      },
+      {
+        "zh": "不高兴",
+        "py": "bù gāoxìng",
+        "vn": "không vui"
+      },
+      {
+        "zh": "都很高兴",
+        "py": "dōu hěn gāoxìng",
+        "vn": "đều rất vui"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "很高兴 + 认识你",
+        "m": "Rất vui được làm quen — câu chào hỏi kinh điển"
+      },
+      {
+        "s": "高 + 兴",
+        "m": "Hứng (兴) lên cao (高)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay mẹ tôi rất vui.",
+        "answer": "今天我妈妈很高兴。",
+        "answerPy": "Jīntiān wǒ māma hěn gāoxìng.",
+        "note": "Tính từ làm vị ngữ cần có 很.",
+        "pair": "很 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy không vui, vì trời mưa rồi.",
+        "answer": "她不高兴，下雨了。",
+        "answerPy": "Tā bù gāoxìng, xià yǔ le.",
+        "note": "Hai vế đặt cạnh nhau, chưa cần liên từ.",
+        "pair": "不 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "听",
+    "py": "tīng",
+    "pos": "Động từ",
+    "vn": "nghe, nghe thấy",
+    "hv": "thính",
+    "em": "👂",
+    "lesson": 3,
+    "ex_zh": "听张先生说，您是坐飞机来北京的？",
+    "ex_py": "Tīng Zhāng xiānsheng shuō, nín shì zuò fēijī lái Běijīng de?",
+    "ex_vn": "Nghe ông Trương nói cô đáp máy bay đến Bắc Kinh, có phải không?",
+    "exList": [
+      {
+        "zh": "听张先生说，您是坐飞机来北京的？",
+        "py": "Tīng Zhāng xiānsheng shuō, nín shì zuò fēijī lái Běijīng de?",
+        "vn": "Nghe ông Trương nói cô đáp máy bay đến Bắc Kinh, có phải không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "听",
+        "p": "tīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "口(khẩu) trái → 斤(biến thể) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "nghe, nghe thấy",
+        "tip": "口(miệng nói) được tai TIẾP NHẬN → NGHE.",
+        "cf": "厅 (tīng – \"sảnh, phòng\")",
+        "w": "听说 / 听音乐"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "听老师说",
+        "py": "tīng lǎoshī shuō",
+        "vn": "nghe thầy nói"
+      },
+      {
+        "zh": "听电话",
+        "py": "tīng diànhuà",
+        "vn": "nghe điện thoại"
+      },
+      {
+        "zh": "不听",
+        "py": "bù tīng",
+        "vn": "không nghe"
+      },
+      {
+        "zh": "听一听",
+        "py": "tīng yì tīng",
+        "vn": "nghe thử"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "听 + người + 说",
+        "m": "Nghe ai nói"
+      },
+      {
+        "s": "听 (nghe bằng tai) ≠ 看 (nhìn bằng mắt)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trên lớp các bạn học đều nghe thầy nói.",
+        "answer": "同学们都听老师说。",
+        "answerPy": "Tóngxuémen dōu tīng lǎoshī shuō.",
+        "note": "听 + người + 说 — nghe ai nói.",
+        "pair": "都 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn nghe thử xem, đây là tiếng Trung.",
+        "answer": "你听一听，这是汉语。",
+        "answerPy": "Nǐ tīng yi tīng, zhè shì Hànyǔ.",
+        "note": "Dạng lặp động từ làm ngữ khí nhẹ đi.",
+        "pair": "V + 一 + V"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "飞机",
+    "py": "fēijī",
+    "pos": "Danh từ",
+    "vn": "máy bay",
+    "hv": "phi cơ",
+    "em": "✈️",
+    "lesson": 3,
+    "ex_zh": "您是坐飞机来北京的？",
+    "ex_py": "Nín shì zuò fēijī lái Běijīng de?",
+    "ex_vn": "Cô đáp máy bay đến Bắc Kinh phải không?",
+    "exList": [
+      {
+        "zh": "您是坐飞机来北京的？",
+        "py": "Nín shì zuò fēijī lái Běijīng de?",
+        "vn": "Cô đáp máy bay đến Bắc Kinh phải không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "飞",
+        "p": "fēi",
+        "type": "独体字 · Tượng hình",
+        "st": 3,
+        "ord": "飞(biến thể, 3 nét)",
+        "rad": "飞 (phi – tự thành bộ)",
+        "mean": "bay",
+        "tip": "Hình con chim đang dang cánh bay → BAY.",
+        "cf": "见 (jiàn – \"nhìn thấy\", đã học Bài 2\")",
+        "w": "飞机"
+      },
+      {
+        "c": "机",
+        "p": "jī",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "木(mộc) trái → 几(kỷ) phải",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "máy móc",
+        "tip": "木(gỗ, vật liệu chế tạo máy móc thời xưa) + 几(mượn âm) → MÁY MÓC; 飞机 = \"máy biết bay\" = MÁY BAY.",
+        "cf": "几 (jǐ – \"mấy\", đã học Bài 5\")",
+        "w": "飞机"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "坐飞机",
+        "py": "zuò fēijī",
+        "vn": "đi máy bay"
+      },
+      {
+        "zh": "一个飞机",
+        "py": "yí gè fēijī",
+        "vn": "một chiếc máy bay"
+      },
+      {
+        "zh": "飞机上",
+        "py": "fēijī shàng",
+        "vn": "trên máy bay"
+      },
+      {
+        "zh": "坐飞机回中国",
+        "py": "zuò fēijī huí Zhōngguó",
+        "vn": "đi máy bay về Trung Quốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坐 + 飞机",
+        "m": "Đi máy bay — cũng dùng 坐"
+      },
+      {
+        "s": "飞 + 机",
+        "m": "Cỗ máy (机) biết bay (飞)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngày mai tôi đi máy bay về Trung Quốc.",
+        "answer": "明天我坐飞机回中国。",
+        "answerPy": "Míngtiān wǒ zuò fēijī huí Zhōngguó.",
+        "note": "坐飞机 — đi máy bay, cũng dùng 坐.",
+        "pair": "坐 + phương tiện"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mấy giờ máy bay đến?",
+        "answer": "飞机几点来？",
+        "answerPy": "Fēijī jǐ diǎn lái?",
+        "note": "Thời gian đứng trước động từ.",
+        "pair": "几点……？"
+      }
+    ]
+  }
 ];
 
 const wuData = [

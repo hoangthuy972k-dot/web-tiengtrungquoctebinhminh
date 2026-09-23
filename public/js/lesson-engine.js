@@ -280,6 +280,160 @@ document.addEventListener('click',function(e){
   if(b && typeof speakZh==='function') speakZh(b.getAttribute('data-hv-say'));
 });
 
+
+// ══════════════════════════════════════════════════════════════
+// TU MOI HSK 4 — mot tu mot o, bo cuc theo slide giang cua thay/co
+//   the dong : so thu tu · chu Han lon · pinyin · tu loai · nghia
+//   the mo   : the tu (trai) + 搭配 va 句型 (phai) + 例句 + 翻译练习
+// Bo han phan chiet tu Han tu: len HSK 4 hoc sinh da thuoc mat chu,
+// phan do lam trang dai ra ma it ai doc.
+// ══════════════════════════════════════════════════════════════
+function isHsk4Page(){ return /hsk4-bai-\d+/.test(location.pathname); }
+
+function h4Collo(v){
+  var list = v.colloFull && v.colloFull.length
+    ? v.colloFull
+    : (v.collo || []).map(function(c){ return { zh:c, py:'', vn:'' }; });
+  if(!list.length) return '';
+  var hasDetail = list.some(function(c){ return c.py || c.vn; });
+  if(!hasDetail){
+    // Chua kip soan pinyin/nghia thi hien dang the cho gon, khong de bang rong
+    return '<div class="h4-chips">'+list.map(function(c){
+      return '<span class="h4-chip">'+c.zh+'</span>';
+    }).join('')+'</div>';
+  }
+  return '<table class="h4-tb"><thead><tr><th>Tiếng Trung</th><th>Pinyin</th><th>Nghĩa tiếng Việt</th></tr></thead><tbody>'+
+    list.map(function(c){
+      return '<tr><td class="h4-tb-zh">'+c.zh+'</td><td class="h4-tb-py">'+(c.py||'')+'</td><td class="h4-tb-vn">'+(c.vn||'')+'</td></tr>';
+    }).join('')+'</tbody></table>';
+}
+
+function h4Patterns(v){
+  if(!v.patterns || !v.patterns.length) return '';
+  return '<div class="h4-sec-h"><span class="h4-sec-zh">句型</span> Cấu trúc câu</div>'+
+    '<div class="h4-pats">'+v.patterns.map(function(p){
+      return '<div class="h4-pat"><div class="h4-pat-s">'+p.s+'</div><div class="h4-pat-m">→ '+p.m+'</div></div>';
+    }).join('')+'</div>';
+}
+
+function h4Examples(v,vi){
+  var list = v.exList || (v.ex_zh ? [{zh:v.ex_zh,py:v.ex_py,vn:v.ex_vn}] : []);
+  if(!list.length) return '';
+  return '<div class="h4-block"><div class="h4-sec-h"><span class="h4-sec-zh">例句</span> Ví dụ</div>'+
+    list.map(function(e,i){
+      return '<div class="h4-ex">'+
+        '<span class="h4-ex-no">'+(i+1)+'</span>'+
+        '<div class="h4-ex-body">'+
+          '<div class="h4-ex-zh">'+e.zh+' '+h4Say(e.zh)+'</div>'+
+          '<div class="h4-ex-py">'+(e.py||'')+'</div>'+
+          '<button type="button" class="h4-peek" data-h4-peek>Xem nghĩa ▾</button>'+
+          '<div class="h4-ex-vn" hidden>'+(e.vn||'')+'</div>'+
+        '</div></div>';
+    }).join('')+'</div>';
+}
+
+function h4Translate(v,vi){
+  var list = v.checkList || [];
+  if(!list.length) return '';
+  return '<div class="h4-block"><div class="h4-sec-h"><span class="h4-sec-zh">翻译练习</span> Luyện dịch Việt → Trung</div>'+
+    list.map(function(t,i){
+      return '<div class="h4-tr">'+
+        '<span class="h4-ex-no is-tr">'+(i+1)+'</span>'+
+        '<div class="h4-ex-body">'+
+          '<div class="h4-tr-vn">'+t.prompt+'</div>'+
+          (t.pair?'<span class="h4-pair">'+t.pair+'</span>':'')+
+          '<button type="button" class="h4-peek" data-h4-peek>Xem đáp án ▾</button>'+
+          '<div class="h4-tr-ans" hidden>'+
+            '<div class="h4-tr-zh">→ '+t.answer+' '+h4Say(t.answer)+'</div>'+
+            (t.answerPy?'<div class="h4-ex-py">'+t.answerPy+'</div>':'')+
+            (t.note?'<div class="h4-tr-note">💡 '+t.note+'</div>':'')+
+          '</div>'+
+        '</div></div>';
+    }).join('')+'</div>';
+}
+
+function h4Say(t){
+  return '<button type="button" class="h4-spk" data-h4-say="'+String(t).replace(/"/g,'&quot;')+'" aria-label="Nghe">🔊</button>';
+}
+
+function buildVocabHsk4(){
+  const g=document.getElementById('vocab-grid');
+  g.className='h4-list';
+  g.innerHTML=
+    '<div class="h4-tools">'+
+      '<button type="button" class="h4-tool" id="h4OpenAll">Mở tất cả</button>'+
+      '<button type="button" class="h4-tool" id="h4CloseAll">Thu gọn</button>'+
+      '<span class="h4-tools-hint">Bấm vào từ để mở phần chi tiết</span>'+
+    '</div>'+
+    vocabData.map(function(v,vi){
+      return '<article class="h4-word" data-lesson="'+v.lesson+'" data-i="'+vi+'">'+
+        '<button type="button" class="h4-bar" aria-expanded="false">'+
+          '<span class="h4-no">'+v.n+'</span>'+
+          '<span class="h4-zh">'+v.zh+'</span>'+
+          '<span class="h4-py">'+v.py+'</span>'+
+          '<span class="h4-pos" style="'+(posStyle[v.pos]||'')+'">'+v.pos+'</span>'+
+          '<span class="h4-vn">'+v.vn+'</span>'+
+          '<span class="h4-caret">▾</span>'+
+        '</button>'+
+        '<div class="h4-panel" hidden>'+
+          '<div class="h4-top">'+
+            '<div class="h4-card">'+
+              '<div class="h4-card-py">'+v.py+'</div>'+
+              '<div class="h4-card-zh">'+v.zh+' '+h4Say(v.zh)+'</div>'+
+              '<div class="h4-card-pos">'+v.pos+'</div>'+
+              '<div class="h4-card-vn">'+v.vn+'</div>'+
+              (v.hv?'<div class="h4-card-hv">Hán–Việt: <b>'+v.hv+'</b></div>':'')+
+              (v.note?'<div class="h4-card-note">'+v.note+'</div>':
+                ((v.explain&&v.explain[0])?'<div class="h4-card-note">'+v.explain[0]+'</div>':''))+
+            '</div>'+
+            '<div class="h4-right">'+
+              '<div class="h4-sec-h"><span class="h4-sec-zh">搭配</span> Kết hợp từ</div>'+
+              h4Collo(v)+
+              h4Patterns(v)+
+              (v.usage&&!(v.patterns&&v.patterns.length)?'<div class="h4-usage"><b>Cách dùng:</b> '+v.usage+'</div>':'')+
+            '</div>'+
+          '</div>'+
+          h4Examples(v,vi)+
+          h4Translate(v,vi)+
+        '</div>'+
+      '</article>';
+    }).join('');
+
+  g.addEventListener('click',function(e){
+    var say=e.target.closest('[data-h4-say]');
+    if(say){ if(typeof speakZh==='function') speakZh(say.getAttribute('data-h4-say')); return; }
+
+    var peek=e.target.closest('[data-h4-peek]');
+    if(peek){
+      var box=peek.nextElementSibling;
+      box.hidden=!box.hidden;
+      peek.textContent=(box.hidden?peek.textContent.replace('▴','▾'):peek.textContent.replace('▾','▴'));
+      return;
+    }
+
+    var bar=e.target.closest('.h4-bar');
+    if(!bar) return;
+    var art=bar.closest('.h4-word');
+    var moi=art.classList.toggle('is-open');
+    art.querySelector('.h4-panel').hidden=!moi;
+    bar.setAttribute('aria-expanded',moi?'true':'false');
+    if(moi) savePageScore('vocab',{done:true});
+  });
+
+  var openAll=document.getElementById('h4OpenAll');
+  var closeAll=document.getElementById('h4CloseAll');
+  function datTatCa(mo){
+    g.querySelectorAll('.h4-word').forEach(function(a){
+      a.classList.toggle('is-open',mo);
+      a.querySelector('.h4-panel').hidden=!mo;
+      a.querySelector('.h4-bar').setAttribute('aria-expanded',mo?'true':'false');
+    });
+    if(mo) savePageScore('vocab',{done:true});
+  }
+  if(openAll) openAll.addEventListener('click',function(){ datTatCa(true); });
+  if(closeAll) closeAll.addEventListener('click',function(){ datTatCa(false); });
+}
+
 // ══════════════════════════════════════════
 // VOCAB
 // ══════════════════════════════════════════
@@ -1238,7 +1392,7 @@ document.addEventListener('click', function(e){
 // INIT
 // ══════════════════════════════════════════
 if(typeof wuData!=='undefined')buildWarmup();
-if(typeof vocabData!=='undefined')buildVocab();
+if(typeof vocabData!=='undefined'){ isHsk4Page()?buildVocabHsk4():buildVocab(); }
 buildHanViet();
 if(typeof vocabData!=='undefined')updateFlash();
 if(typeof dialogData!=='undefined'){buildDialogs();hideDialogAudioIfMissing();}

@@ -3,112 +3,1074 @@
 
 var vocabData = [
   {
-    n: 1, zh: '站', py: 'zhàn', pos: 'Động từ', vn: 'đứng', hv: 'trạm', em: '🧍', img: '/images/hsk2v3-bai-14/zhan.jpg', lesson: 1,
-    ex_zh: '王老师，你家楼下站着一个人。', ex_py: 'Wáng lǎoshī, nǐ jiā lóu xià zhànzhe yí ge rén.', ex_vn: 'Cô Vương ơi, ở dưới tầng nhà cô có một người đang đứng kìa.',
-    exList: [
-      { zh: '王老师，你家楼下站着一个人。', py: 'Wáng lǎoshī, nǐ jiā lóu xià zhànzhe yí ge rén.', vn: 'Cô Vương ơi, ở dưới tầng nhà cô có một người đang đứng kìa.' },
-      { zh: '一听到老师叫他的名字，他就站起来了。', py: 'Yì tīngdào lǎoshī jiào tā de míngzi, tā jiù zhàn qǐlái le.', vn: 'Vừa nghe cô giáo gọi tên, cậu ấy liền đứng dậy.' }
+    "n": 1,
+    "zh": "站",
+    "py": "zhàn",
+    "pos": "Động từ",
+    "vn": "đứng",
+    "hv": "trạm",
+    "em": "🧍",
+    "img": "/images/hsk2v3-bai-14/zhan.jpg",
+    "lesson": 1,
+    "ex_zh": "王老师，你家楼下站着一个人。",
+    "ex_py": "Wáng lǎoshī, nǐ jiā lóu xià zhànzhe yí ge rén.",
+    "ex_vn": "Cô Vương ơi, ở dưới tầng nhà cô có một người đang đứng kìa.",
+    "exList": [
+      {
+        "zh": "王老师，你家楼下站着一个人。",
+        "py": "Wáng lǎoshī, nǐ jiā lóu xià zhànzhe yí ge rén.",
+        "vn": "Cô Vương ơi, ở dưới tầng nhà cô có một người đang đứng kìa."
+      },
+      {
+        "zh": "一听到老师叫他的名字，他就站起来了。",
+        "py": "Yì tīngdào lǎoshī jiào tā de míngzi, tā jiù zhàn qǐlái le.",
+        "vn": "Vừa nghe cô giáo gọi tên, cậu ấy liền đứng dậy."
+      }
     ],
-    hanzi: [{ c: '站', p: 'zhàn', type: '形声字 · Chữ hình thanh', st: 10, ord: '立 → 占', rad: '立 (lập – đứng)', mean: 'đứng; trạm', tip: 'Ở bài 12, 站 là danh từ "trạm"; ở đây là động từ "đứng".', cf: '坐 (zuò – ngồi)', w: '站 / 站着 / 站起来' }]
+    "hanzi": [
+      {
+        "c": "站",
+        "p": "zhàn",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 10,
+        "ord": "立 → 占",
+        "rad": "立 (lập – đứng)",
+        "mean": "đứng; trạm",
+        "tip": "Ở bài 12, 站 là danh từ \"trạm\"; ở đây là động từ \"đứng\".",
+        "cf": "坐 (zuò – ngồi)",
+        "w": "站 / 站着 / 站起来"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "站起来",
+        "py": "zhàn qǐlai",
+        "vn": "đứng dậy"
+      },
+      {
+        "zh": "站在门口",
+        "py": "zhàn zài ménkǒu",
+        "vn": "đứng ở cổng"
+      },
+      {
+        "zh": "别站着",
+        "py": "bié zhàn zhe",
+        "vn": "đừng đứng"
+      },
+      {
+        "zh": "地铁站",
+        "py": "dìtiě zhàn",
+        "vn": "ga tàu điện ngầm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "站 + 在 + nơi chốn",
+        "m": "Đứng ở đâu: 他站在门口"
+      },
+      {
+        "s": "站 (đứng, động từ) và 站 (bến, ga — danh từ) — cùng chữ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy vào rồi, các bạn học đều đứng dậy.",
+        "answer": "老师进来了，同学们都站起来了。",
+        "answerPy": "Lǎoshī jìnlai le, tóngxuémen dōu zhàn qǐlai le.",
+        "note": "站起来 — đứng dậy.",
+        "pair": "都 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy đang đứng ở cổng trường đợi vợ.",
+        "answer": "他正站在学校门口等妻子。",
+        "answerPy": "Tā zhèng zhàn zài xuéxiào ménkǒu děng qīzi.",
+        "note": "站在 + nơi chốn — đứng ở đâu.",
+        "pair": "正 + V"
+      }
+    ]
   },
   {
-    n: 2, zh: '包', py: 'bāo', pos: 'Danh từ / Động từ / Lượng từ', vn: 'túi, gói, bao', hv: 'bao', em: '👜', img: '/images/hsk2v3-bai-14/bao.jpg', lesson: 1,
-    ex_zh: '手里还拿着一个黑色的包。', ex_py: 'Shǒu li hái názhe yí ge hēisè de bāo.', ex_vn: 'Trên tay còn đang cầm một chiếc túi màu đen nữa.',
-    exList: [
-      { zh: '手里还拿着一个黑色的包。', py: 'Shǒu li hái názhe yí ge hēisè de bāo.', vn: 'Trên tay còn đang cầm một chiếc túi màu đen nữa.' },
-      { zh: '包里是什么东西？快拿出来吧。', py: 'Bāo li shì shénme dōngxi? Kuài ná chūlái ba.', vn: 'Trong túi là thứ gì vậy? Mau lấy ra đi.' }
+    "n": 2,
+    "zh": "包",
+    "py": "bāo",
+    "pos": "Danh từ / Động từ / Lượng từ",
+    "vn": "túi, gói, bao",
+    "hv": "bao",
+    "em": "👜",
+    "img": "/images/hsk2v3-bai-14/bao.jpg",
+    "lesson": 1,
+    "ex_zh": "手里还拿着一个黑色的包。",
+    "ex_py": "Shǒu li hái názhe yí ge hēisè de bāo.",
+    "ex_vn": "Trên tay còn đang cầm một chiếc túi màu đen nữa.",
+    "exList": [
+      {
+        "zh": "手里还拿着一个黑色的包。",
+        "py": "Shǒu li hái názhe yí ge hēisè de bāo.",
+        "vn": "Trên tay còn đang cầm một chiếc túi màu đen nữa."
+      },
+      {
+        "zh": "包里是什么东西？快拿出来吧。",
+        "py": "Bāo li shì shénme dōngxi? Kuài ná chūlái ba.",
+        "vn": "Trong túi là thứ gì vậy? Mau lấy ra đi."
+      }
     ],
-    hanzi: [{ c: '包', p: 'bāo', type: '会意字 · Chữ hội ý', st: 5, ord: '勹 → 巳', rad: '勹 (bao)', mean: 'túi; bọc', tip: 'Cùng chữ 包 trong 书包 (cặp sách), 面包 (bánh mì).', cf: '', w: '包 / 书包 / 面包' }]
+    "hanzi": [
+      {
+        "c": "包",
+        "p": "bāo",
+        "type": "会意字 · Chữ hội ý",
+        "st": 5,
+        "ord": "勹 → 巳",
+        "rad": "勹 (bao)",
+        "mean": "túi; bọc",
+        "tip": "Cùng chữ 包 trong 书包 (cặp sách), 面包 (bánh mì).",
+        "cf": "",
+        "w": "包 / 书包 / 面包"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个包",
+        "py": "yí gè bāo",
+        "vn": "một cái túi"
+      },
+      {
+        "zh": "我的包",
+        "py": "wǒ de bāo",
+        "vn": "túi của tôi"
+      },
+      {
+        "zh": "包里",
+        "py": "bāo li",
+        "vn": "trong túi"
+      },
+      {
+        "zh": "书包",
+        "py": "shūbāo",
+        "vn": "cặp sách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 个 + 包",
+        "m": "Lượng từ của 包 là 个"
+      },
+      {
+        "s": "包 nằm trong 书包 · 面包 · 包子 — cùng một chữ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trong túi của tôi có bút, vở và điện thoại.",
+        "answer": "我的包里有笔、本子和手机。",
+        "answerPy": "Wǒ de bāo li yǒu bǐ, běnzi hé shǒujī.",
+        "note": "Liệt kê nhiều thứ thì 和 đặt trước cái cuối cùng.",
+        "pair": "A 和 B"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái túi này bao nhiêu tiền?",
+        "answer": "这个包多少钱？",
+        "answerPy": "Zhège bāo duōshao qián?",
+        "note": "包 nằm trong 书包 · 面包 · 包子.",
+        "pair": "多少钱？"
+      }
+    ]
   },
   {
-    n: 3, zh: '过年', py: 'guònián', pos: 'Động từ', vn: 'đón Tết, ăn Tết', hv: 'quá niên', em: '🧧', img: '/images/hsk2v3-bai-14/guonian.jpg', lesson: 2,
-    ex_zh: '就要过年了，你一个人在这儿多没意思啊。', ex_py: 'Jiù yào guònián le, nǐ yí ge rén zài zhèr duō méi yìsi a.', ex_vn: 'Sắp đến Tết rồi, em ở đây một mình thì thật vô vị.',
-    exList: [
-      { zh: '就要过年了，你一个人在这儿多没意思啊。', py: 'Jiù yào guònián le, nǐ yí ge rén zài zhèr duō méi yìsi a.', vn: 'Sắp đến Tết rồi, em ở đây một mình thì thật vô vị.' },
-      { zh: '他已经几年没回国了，今年想回国过年。', py: 'Tā yǐjīng jǐ nián méi huíguó le, jīnnián xiǎng huíguó guònián.', vn: 'Anh ấy đã mấy năm không về nước, năm nay muốn về nước ăn Tết.' }
+    "n": 3,
+    "zh": "过年",
+    "py": "guònián",
+    "pos": "Động từ",
+    "vn": "đón Tết, ăn Tết",
+    "hv": "quá niên",
+    "em": "🧧",
+    "img": "/images/hsk2v3-bai-14/guonian.jpg",
+    "lesson": 2,
+    "ex_zh": "就要过年了，你一个人在这儿多没意思啊。",
+    "ex_py": "Jiù yào guònián le, nǐ yí ge rén zài zhèr duō méi yìsi a.",
+    "ex_vn": "Sắp đến Tết rồi, em ở đây một mình thì thật vô vị.",
+    "exList": [
+      {
+        "zh": "就要过年了，你一个人在这儿多没意思啊。",
+        "py": "Jiù yào guònián le, nǐ yí ge rén zài zhèr duō méi yìsi a.",
+        "vn": "Sắp đến Tết rồi, em ở đây một mình thì thật vô vị."
+      },
+      {
+        "zh": "他已经几年没回国了，今年想回国过年。",
+        "py": "Tā yǐjīng jǐ nián méi huíguó le, jīnnián xiǎng huíguó guònián.",
+        "vn": "Anh ấy đã mấy năm không về nước, năm nay muốn về nước ăn Tết."
+      }
     ],
-    hanzi: [{ c: '年', p: 'nián', type: '象形字 · Chữ tượng hình', st: 6, ord: '丿 → 一 → 一 → 丨 → 一 → 丨', rad: '干 (can)', mean: 'năm', tip: 'Ôn 过 (bài 6): 过生日、过年 đều là "đón, trải qua".', cf: '新年 (xīnnián – bài 13)', w: '过年 / 今年 / 新年' }]
+    "hanzi": [
+      {
+        "c": "年",
+        "p": "nián",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 6,
+        "ord": "丿 → 一 → 一 → 丨 → 一 → 丨",
+        "rad": "干 (can)",
+        "mean": "năm",
+        "tip": "Ôn 过 (bài 6): 过生日、过年 đều là \"đón, trải qua\".",
+        "cf": "新年 (xīnnián – bài 13)",
+        "w": "过年 / 今年 / 新年"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "回家过年",
+        "py": "huí jiā guònián",
+        "vn": "về nhà ăn Tết"
+      },
+      {
+        "zh": "过年的时候",
+        "py": "guònián de shíhou",
+        "vn": "dịp Tết"
+      },
+      {
+        "zh": "在西安过年",
+        "py": "zài xī ān guònián",
+        "vn": "ăn Tết ở Tây An"
+      },
+      {
+        "zh": "过年快乐",
+        "py": "guònián kuàilè",
+        "vn": "chúc Tết vui vẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "回 + nơi chốn + 过年",
+        "m": "Về đâu ăn Tết: 回家过年"
+      },
+      {
+        "s": "过年 = 过新年 — 过年 ngắn gọn hơn, hay dùng khi nói"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Năm nay tôi về Tây An ăn Tết.",
+        "answer": "今年我回西安过年。",
+        "answerPy": "Jīnnián wǒ huí Xī'ān guònián.",
+        "note": "过年 = 过新年, 过年 ngắn gọn hơn.",
+        "pair": "回……过年"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Dịp Tết mọi người đều rất vui.",
+        "answer": "过年的时候大家都很快乐。",
+        "answerPy": "Guònián de shíhou dàjiā dōu hěn kuàilè.",
+        "note": "过年的时候 — dịp Tết.",
+        "pair": "都 + Adj"
+      }
+    ]
   },
   {
-    n: 4, zh: '没意思', py: 'méi yìsi', pos: 'Cụm từ', vn: 'vô vị, chán', hv: 'một ý tư', em: '😑', img: '/images/hsk2v3-bai-14/meiyisi.jpg', lesson: 2,
-    ex_zh: '你一个人在这儿多没意思啊。', ex_py: 'Nǐ yí ge rén zài zhèr duō méi yìsi a.', ex_vn: 'Em ở đây một mình thì thật vô vị.',
-    exList: [
-      { zh: '你一个人在这儿多没意思啊。', py: 'Nǐ yí ge rén zài zhèr duō méi yìsi a.', vn: 'Em ở đây một mình thì thật vô vị.' },
-      { zh: '这个电影很没意思，我们看别的吧。', py: 'Zhège diànyǐng hěn méi yìsi, wǒmen kàn bié de ba.', vn: 'Bộ phim này rất chán, chúng ta xem phim khác đi.' }
+    "n": 4,
+    "zh": "没意思",
+    "py": "méi yìsi",
+    "pos": "Cụm từ",
+    "vn": "vô vị, chán",
+    "hv": "một ý tư",
+    "em": "😑",
+    "img": "/images/hsk2v3-bai-14/meiyisi.jpg",
+    "lesson": 2,
+    "ex_zh": "你一个人在这儿多没意思啊。",
+    "ex_py": "Nǐ yí ge rén zài zhèr duō méi yìsi a.",
+    "ex_vn": "Em ở đây một mình thì thật vô vị.",
+    "exList": [
+      {
+        "zh": "你一个人在这儿多没意思啊。",
+        "py": "Nǐ yí ge rén zài zhèr duō méi yìsi a.",
+        "vn": "Em ở đây một mình thì thật vô vị."
+      },
+      {
+        "zh": "这个电影很没意思，我们看别的吧。",
+        "py": "Zhège diànyǐng hěn méi yìsi, wǒmen kàn bié de ba.",
+        "vn": "Bộ phim này rất chán, chúng ta xem phim khác đi."
+      }
     ],
-    hanzi: [{ c: '意', p: 'yì', type: '会意字 · Chữ hội ý', st: 13, ord: '立 → 曰 → 心', rad: '心 (tâm)', mean: 'ý, ý nghĩa', tip: '没意思 ↔ 有意思 (bài 8).', cf: '有意思 (yǒu yìsi)', w: '没意思 / 有意思 / 意思' }]
+    "hanzi": [
+      {
+        "c": "意",
+        "p": "yì",
+        "type": "会意字 · Chữ hội ý",
+        "st": 13,
+        "ord": "立 → 曰 → 心",
+        "rad": "心 (tâm)",
+        "mean": "ý, ý nghĩa",
+        "tip": "没意思 ↔ 有意思 (bài 8).",
+        "cf": "有意思 (yǒu yìsi)",
+        "w": "没意思 / 有意思 / 意思"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很没意思",
+        "py": "hěn méi yìsi",
+        "vn": "rất chán"
+      },
+      {
+        "zh": "没意思的电影",
+        "py": "méi yìsi de diànyǐng",
+        "vn": "bộ phim chán"
+      },
+      {
+        "zh": "觉得没意思",
+        "py": "juéde méi yìsi",
+        "vn": "thấy chán"
+      },
+      {
+        "zh": "一点儿也没意思",
+        "py": "yìdiǎnr yě méi yìsi",
+        "vn": "chẳng thú vị chút nào"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 没意思",
+        "m": "Chán, không thú vị: 这个电影没意思"
+      },
+      {
+        "s": "没意思 ↔ 有意思",
+        "m": "Chán ↔ thú vị"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bộ phim này chán quá, tôi không muốn xem.",
+        "answer": "这个电影太没意思了，我不想看。",
+        "answerPy": "Zhège diànyǐng tài méi yìsi le, wǒ bù xiǎng kàn.",
+        "note": "没意思 ↔ 有意思.",
+        "pair": "太……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy quyển sách này rất dài nhưng không chán chút nào.",
+        "answer": "虽然这本书很长，但是一点儿也没意思。",
+        "answerPy": "Suīrán zhè běn shū hěn cháng, dànshì yìdiǎnr yě méi yìsi.",
+        "note": "一点儿也 + phủ định — chẳng … chút nào.",
+        "pair": "虽然……但是……"
+      }
+    ]
   },
   {
-    n: 5, zh: '位', py: 'wèi', pos: 'Lượng từ', vn: 'vị (dùng cho người, lịch sự)', hv: 'vị', em: '🙇', lesson: 2,
-    ex_zh: '一飞，你旁边这位是？', ex_py: 'Yīfēi, nǐ pángbiān zhè wèi shì?', ex_vn: 'Nhất Phi, bạn bên cạnh em là ai vậy?',
-    exList: [
-      { zh: '一飞，你旁边这位是？', py: 'Yīfēi, nǐ pángbiān zhè wèi shì?', vn: 'Nhất Phi, bạn bên cạnh em là ai vậy?' },
-      { zh: '这位是我们的王老师。', py: 'Zhè wèi shì wǒmen de Wáng lǎoshī.', vn: 'Vị này là cô Vương của chúng tôi.' }
+    "n": 5,
+    "zh": "位",
+    "py": "wèi",
+    "pos": "Lượng từ",
+    "vn": "vị (dùng cho người, lịch sự)",
+    "hv": "vị",
+    "em": "🙇",
+    "lesson": 2,
+    "ex_zh": "一飞，你旁边这位是？",
+    "ex_py": "Yīfēi, nǐ pángbiān zhè wèi shì?",
+    "ex_vn": "Nhất Phi, bạn bên cạnh em là ai vậy?",
+    "exList": [
+      {
+        "zh": "一飞，你旁边这位是？",
+        "py": "Yīfēi, nǐ pángbiān zhè wèi shì?",
+        "vn": "Nhất Phi, bạn bên cạnh em là ai vậy?"
+      },
+      {
+        "zh": "这位是我们的王老师。",
+        "py": "Zhè wèi shì wǒmen de Wáng lǎoshī.",
+        "vn": "Vị này là cô Vương của chúng tôi."
+      }
     ],
-    hanzi: [{ c: '位', p: 'wèi', type: '会意字 · Chữ hội ý', st: 7, ord: '亻 → 立', rad: '亻 (nhân đứng)', mean: 'vị trí; vị (người)', tip: '位 lịch sự hơn 个 khi nói về người.', cf: '个 (ge)', w: '一位老师 / 这位 / 位子' }]
+    "hanzi": [
+      {
+        "c": "位",
+        "p": "wèi",
+        "type": "会意字 · Chữ hội ý",
+        "st": 7,
+        "ord": "亻 → 立",
+        "rad": "亻 (nhân đứng)",
+        "mean": "vị trí; vị (người)",
+        "tip": "位 lịch sự hơn 个 khi nói về người.",
+        "cf": "个 (ge)",
+        "w": "一位老师 / 这位 / 位子"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一位老师",
+        "py": "yí wèi lǎoshī",
+        "vn": "một vị giáo viên"
+      },
+      {
+        "zh": "这位女士",
+        "py": "zhè wèi nǚshì",
+        "vn": "vị nữ này"
+      },
+      {
+        "zh": "几位客人",
+        "py": "jǐ wèi kèrén",
+        "vn": "mấy vị khách"
+      },
+      {
+        "zh": "那位先生",
+        "py": "nà wèi xiānsheng",
+        "vn": "vị ông kia"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 位 + người",
+        "m": "Lượng từ 位 dùng cho người, có ý KÍNH TRỌNG"
+      },
+      {
+        "s": "✗ 一位小孩儿 → 位 chỉ dùng với người lớn, người cần tôn trọng"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhà chúng tôi hôm nay có ba vị khách.",
+        "answer": "我们家今天有三位客人。",
+        "answerPy": "Wǒmen jiā jīntiān yǒu sān wèi kèrén.",
+        "note": "位 dùng cho người, có ý kính trọng.",
+        "pair": "……有……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vị này là giáo viên tiếng Trung của chúng tôi.",
+        "answer": "这位是我们的汉语老师。",
+        "answerPy": "Zhè wèi shì wǒmen de Hànyǔ lǎoshī.",
+        "note": "✗ 一位小孩儿 — 位 chỉ dùng với người cần tôn trọng.",
+        "pair": "是……"
+      }
+    ]
   },
   {
-    n: 6, zh: '前面', py: 'qiánmiàn', pos: 'Danh từ', vn: 'phía trước', hv: 'tiền diện', em: '⬆️', img: '/images/hsk2v3-bai-14/qianmian.jpg', lesson: 2,
-    ex_zh: '我家就在前面那个楼，有时间来玩。', ex_py: 'Wǒ jiā jiù zài qiánmiàn nàge lóu, yǒu shíjiān lái wán.', ex_vn: 'Nhà em ở ngay toà nhà phía trước kia, lúc nào rảnh anh qua chơi nhé.',
-    exList: [
-      { zh: '我家就在前面那个楼，有时间来玩。', py: 'Wǒ jiā jiù zài qiánmiàn nàge lóu, yǒu shíjiān lái wán.', vn: 'Nhà em ở ngay toà nhà phía trước kia, lúc nào rảnh anh qua chơi nhé.' },
-      { zh: '你看，前面的那个人好高啊！', py: 'Nǐ kàn, qiánmiàn de nàge rén hǎo gāo a!', vn: 'Bạn xem, người phía trước kia cao thật đấy!' }
+    "n": 6,
+    "zh": "前面",
+    "py": "qiánmiàn",
+    "pos": "Danh từ",
+    "vn": "phía trước",
+    "hv": "tiền diện",
+    "em": "⬆️",
+    "img": "/images/hsk2v3-bai-14/qianmian.jpg",
+    "lesson": 2,
+    "ex_zh": "我家就在前面那个楼，有时间来玩。",
+    "ex_py": "Wǒ jiā jiù zài qiánmiàn nàge lóu, yǒu shíjiān lái wán.",
+    "ex_vn": "Nhà em ở ngay toà nhà phía trước kia, lúc nào rảnh anh qua chơi nhé.",
+    "exList": [
+      {
+        "zh": "我家就在前面那个楼，有时间来玩。",
+        "py": "Wǒ jiā jiù zài qiánmiàn nàge lóu, yǒu shíjiān lái wán.",
+        "vn": "Nhà em ở ngay toà nhà phía trước kia, lúc nào rảnh anh qua chơi nhé."
+      },
+      {
+        "zh": "你看，前面的那个人好高啊！",
+        "py": "Nǐ kàn, qiánmiàn de nàge rén hǎo gāo a!",
+        "vn": "Bạn xem, người phía trước kia cao thật đấy!"
+      }
     ],
-    hanzi: [{ c: '前', p: 'qián', type: '会意字 · Chữ hội ý', st: 9, ord: '丷 → 一 → 月 → 刂', rad: '刂 (đao)', mean: 'trước', tip: 'Đủ bộ phương vị: 前面/后面、里面/外面、上面/下面.', cf: '后面 (hòumiàn – bài 10)', w: '前面 / 前边 / 以前' }]
+    "hanzi": [
+      {
+        "c": "前",
+        "p": "qián",
+        "type": "会意字 · Chữ hội ý",
+        "st": 9,
+        "ord": "丷 → 一 → 月 → 刂",
+        "rad": "刂 (đao)",
+        "mean": "trước",
+        "tip": "Đủ bộ phương vị: 前面/后面、里面/外面、上面/下面.",
+        "cf": "后面 (hòumiàn – bài 10)",
+        "w": "前面 / 前边 / 以前"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "学校前面",
+        "py": "xuéxiào qiánmiàn",
+        "vn": "trước trường"
+      },
+      {
+        "zh": "在前面",
+        "py": "zài qiánmiàn",
+        "vn": "ở phía trước"
+      },
+      {
+        "zh": "我前面",
+        "py": "wǒ qiánmiàn",
+        "vn": "phía trước tôi"
+      },
+      {
+        "zh": "前面有",
+        "py": "qiánmiàn yǒu",
+        "vn": "phía trước có"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "danh từ + 前面",
+        "m": "Phía trước cái gì: 学校前面"
+      },
+      {
+        "s": "前面 ↔ 后面",
+        "m": "Trước ↔ sau"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Phía trước nhà tôi có một ga tàu điện ngầm.",
+        "answer": "我家前面有一个地铁站。",
+        "answerPy": "Wǒ jiā qiánmiàn yǒu yí ge dìtiě zhàn.",
+        "note": "前面 ↔ 后面 — trước và sau.",
+        "pair": "nơi chốn + 有 + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô bé ngồi phía trước tôi có đôi mắt rất đẹp.",
+        "answer": "坐在我前面的女孩儿眼睛很漂亮。",
+        "answerPy": "Zuò zài wǒ qiánmiàn de nǚháir yǎnjing hěn piàoliang.",
+        "note": "我前面 — phía trước tôi.",
+        "pair": "很 + Adj"
+      }
+    ]
   },
   {
-    n: 7, zh: '房子', py: 'fángzi', pos: 'Danh từ', vn: 'nhà, ngôi nhà, căn hộ', hv: 'phòng tử', em: '🏠', img: '/images/hsk2v3-bai-14/fangzi.jpg', lesson: 3,
-    ex_zh: '一飞，你住的房子真不错，很大，离学校也不远。', ex_py: 'Yīfēi, nǐ zhù de fángzi zhēn búcuò, hěn dà, lí xuéxiào yě bù yuǎn.', ex_vn: 'Nhất Phi, căn hộ em ở thật đẹp, rộng rãi, lại không xa trường học.',
-    exList: [
-      { zh: '一飞，你住的房子真不错，很大，离学校也不远。', py: 'Yīfēi, nǐ zhù de fángzi zhēn búcuò, hěn dà, lí xuéxiào yě bù yuǎn.', vn: 'Nhất Phi, căn hộ em ở thật đẹp, rộng rãi, lại không xa trường học.' },
-      { zh: '这个房子比我们以前住的大一些。', py: 'Zhège fángzi bǐ wǒmen yǐqián zhù de dà yìxiē.', vn: 'Căn nhà này rộng hơn căn chúng tôi ở trước đây một chút.' }
+    "n": 7,
+    "zh": "房子",
+    "py": "fángzi",
+    "pos": "Danh từ",
+    "vn": "nhà, ngôi nhà, căn hộ",
+    "hv": "phòng tử",
+    "em": "🏠",
+    "img": "/images/hsk2v3-bai-14/fangzi.jpg",
+    "lesson": 3,
+    "ex_zh": "一飞，你住的房子真不错，很大，离学校也不远。",
+    "ex_py": "Yīfēi, nǐ zhù de fángzi zhēn búcuò, hěn dà, lí xuéxiào yě bù yuǎn.",
+    "ex_vn": "Nhất Phi, căn hộ em ở thật đẹp, rộng rãi, lại không xa trường học.",
+    "exList": [
+      {
+        "zh": "一飞，你住的房子真不错，很大，离学校也不远。",
+        "py": "Yīfēi, nǐ zhù de fángzi zhēn búcuò, hěn dà, lí xuéxiào yě bù yuǎn.",
+        "vn": "Nhất Phi, căn hộ em ở thật đẹp, rộng rãi, lại không xa trường học."
+      },
+      {
+        "zh": "这个房子比我们以前住的大一些。",
+        "py": "Zhège fángzi bǐ wǒmen yǐqián zhù de dà yìxiē.",
+        "vn": "Căn nhà này rộng hơn căn chúng tôi ở trước đây một chút."
+      }
     ],
-    hanzi: [{ c: '房', p: 'fáng', type: '形声字 · Chữ hình thanh', st: 8, ord: '户 → 方', rad: '户 (hộ – cửa)', mean: 'nhà, phòng', tip: 'Ôn 离 (bài 9): 离学校也不远.', cf: '', w: '房子 / 房间 / 买房' }]
+    "hanzi": [
+      {
+        "c": "房",
+        "p": "fáng",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 8,
+        "ord": "户 → 方",
+        "rad": "户 (hộ – cửa)",
+        "mean": "nhà, phòng",
+        "tip": "Ôn 离 (bài 9): 离学校也不远.",
+        "cf": "",
+        "w": "房子 / 房间 / 买房"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个房子",
+        "py": "yí gè fángzi",
+        "vn": "một căn nhà"
+      },
+      {
+        "zh": "买房子",
+        "py": "mǎi fángzi",
+        "vn": "mua nhà"
+      },
+      {
+        "zh": "大房子",
+        "py": "dà fángzi",
+        "vn": "căn nhà lớn"
+      },
+      {
+        "zh": "房子里面",
+        "py": "fángzi lǐmiàn",
+        "vn": "trong nhà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "买 + 房子",
+        "m": "Mua nhà"
+      },
+      {
+        "s": "房子 (căn nhà) và 房间 (căn phòng) — cùng chữ 房"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sang năm chúng tôi định mua một căn nhà.",
+        "answer": "明年我们准备买一个房子。",
+        "answerPy": "Míngnián wǒmen zhǔnbèi mǎi yí ge fángzi.",
+        "note": "房子 (căn nhà) và 房间 (căn phòng).",
+        "pair": "准备 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trong nhà có mấy đứa trẻ đang chơi.",
+        "answer": "房子里面有几个小孩儿正在玩儿。",
+        "answerPy": "Fángzi lǐmiàn yǒu jǐ ge xiǎoháir zhèngzài wánr.",
+        "note": "房子里面 — trong nhà.",
+        "pair": "正在 + V"
+      }
+    ]
   },
   {
-    n: 8, zh: '小孩儿', py: 'xiǎoháir', pos: 'Danh từ', vn: 'đứa trẻ, trẻ con', hv: 'tiểu hài nhi', em: '🧒', img: '/images/hsk2v3-bai-14/xiaohair.jpg', lesson: 3,
-    ex_zh: '我也帮他们家的小孩儿学中文。', ex_py: 'Wǒ yě bāng tāmen jiā de xiǎoháir xué Zhōngwén.', ex_vn: 'Em cũng đang giúp con họ học tiếng Trung Quốc.',
-    exList: [
-      { zh: '我也帮他们家的小孩儿学中文。', py: 'Wǒ yě bāng tāmen jiā de xiǎoháir xué Zhōngwén.', vn: 'Em cũng đang giúp con họ học tiếng Trung Quốc.' },
-      { zh: '那个小孩儿跑得真快。', py: 'Nàge xiǎoháir pǎo de zhēn kuài.', vn: 'Đứa trẻ đó chạy nhanh thật.' }
+    "n": 8,
+    "zh": "小孩儿",
+    "py": "xiǎoháir",
+    "pos": "Danh từ",
+    "vn": "đứa trẻ, trẻ con",
+    "hv": "tiểu hài nhi",
+    "em": "🧒",
+    "img": "/images/hsk2v3-bai-14/xiaohair.jpg",
+    "lesson": 3,
+    "ex_zh": "我也帮他们家的小孩儿学中文。",
+    "ex_py": "Wǒ yě bāng tāmen jiā de xiǎoháir xué Zhōngwén.",
+    "ex_vn": "Em cũng đang giúp con họ học tiếng Trung Quốc.",
+    "exList": [
+      {
+        "zh": "我也帮他们家的小孩儿学中文。",
+        "py": "Wǒ yě bāng tāmen jiā de xiǎoháir xué Zhōngwén.",
+        "vn": "Em cũng đang giúp con họ học tiếng Trung Quốc."
+      },
+      {
+        "zh": "那个小孩儿跑得真快。",
+        "py": "Nàge xiǎoháir pǎo de zhēn kuài.",
+        "vn": "Đứa trẻ đó chạy nhanh thật."
+      }
     ],
-    hanzi: [{ c: '孩', p: 'hái', type: '形声字 · Chữ hình thanh', st: 9, ord: '子 → 亥', rad: '子 (tử – con)', mean: 'trẻ con', tip: 'Ôn 帮 (bài 10): 帮 + người + việc.', cf: '男孩儿 (bài 9) · 女孩儿', w: '小孩儿 / 孩子 / 女孩儿' }]
+    "hanzi": [
+      {
+        "c": "孩",
+        "p": "hái",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 9,
+        "ord": "子 → 亥",
+        "rad": "子 (tử – con)",
+        "mean": "trẻ con",
+        "tip": "Ôn 帮 (bài 10): 帮 + người + việc.",
+        "cf": "男孩儿 (bài 9) · 女孩儿",
+        "w": "小孩儿 / 孩子 / 女孩儿"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个小孩儿",
+        "py": "yí gè xiǎoháir",
+        "vn": "một đứa trẻ"
+      },
+      {
+        "zh": "那个小孩儿",
+        "py": "nàge xiǎoháir",
+        "vn": "đứa trẻ kia"
+      },
+      {
+        "zh": "小孩儿的名字",
+        "py": "xiǎoháir de míngzi",
+        "vn": "tên đứa trẻ"
+      },
+      {
+        "zh": "很多小孩儿",
+        "py": "hěn duō xiǎoháir",
+        "vn": "rất nhiều trẻ con"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 个 + 小孩儿",
+        "m": "Lượng từ của 小孩儿 là 个"
+      },
+      {
+        "s": "小孩儿 = 孩子 — 小孩儿 thiên khẩu ngữ hơn"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dịp Tết trẻ con đều rất vui.",
+        "answer": "过年的时候小孩儿都很快乐。",
+        "answerPy": "Guònián de shíhou xiǎoháir dōu hěn kuàilè.",
+        "note": "小孩儿 = 孩子, 小孩儿 thiên khẩu ngữ hơn.",
+        "pair": "都 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đứa trẻ kia là con trai của chị tôi.",
+        "answer": "那个小孩儿是我姐姐的儿子。",
+        "answerPy": "Nàge xiǎoháir shì wǒ jiějie de érzi.",
+        "note": "Lượng từ của 小孩儿 là 个.",
+        "pair": "是……"
+      }
+    ]
   },
   {
-    n: 9, zh: '女孩儿', py: 'nǚháir', pos: 'Danh từ', vn: 'bé gái, cô bé', hv: 'nữ hài nhi', em: '👧', img: '/images/hsk2v3-bai-14/nuhair.jpg', lesson: 3,
-    ex_zh: '我记得你跟我说过，是个女孩儿，学得也很好。', ex_py: 'Wǒ jìde nǐ gēn wǒ shuōguo, shì ge nǚháir, xué de yě hěn hǎo.', ex_vn: 'Anh nhớ em đã từng kể với anh rồi, là một bé gái, học cũng rất giỏi.',
-    exList: [
-      { zh: '我记得你跟我说过，是个女孩儿，学得也很好。', py: 'Wǒ jìde nǐ gēn wǒ shuōguo, shì ge nǚháir, xué de yě hěn hǎo.', vn: 'Anh nhớ em đã từng kể với anh rồi, là một bé gái, học cũng rất giỏi.' },
-      { zh: '她经常跑上来找我玩。', py: 'Tā jīngcháng pǎo shànglái zhǎo wǒ wán.', vn: 'Con bé thường xuyên chạy lên đây chơi với em.' }
+    "n": 9,
+    "zh": "女孩儿",
+    "py": "nǚháir",
+    "pos": "Danh từ",
+    "vn": "bé gái, cô bé",
+    "hv": "nữ hài nhi",
+    "em": "👧",
+    "img": "/images/hsk2v3-bai-14/nuhair.jpg",
+    "lesson": 3,
+    "ex_zh": "我记得你跟我说过，是个女孩儿，学得也很好。",
+    "ex_py": "Wǒ jìde nǐ gēn wǒ shuōguo, shì ge nǚháir, xué de yě hěn hǎo.",
+    "ex_vn": "Anh nhớ em đã từng kể với anh rồi, là một bé gái, học cũng rất giỏi.",
+    "exList": [
+      {
+        "zh": "我记得你跟我说过，是个女孩儿，学得也很好。",
+        "py": "Wǒ jìde nǐ gēn wǒ shuōguo, shì ge nǚháir, xué de yě hěn hǎo.",
+        "vn": "Anh nhớ em đã từng kể với anh rồi, là một bé gái, học cũng rất giỏi."
+      },
+      {
+        "zh": "她经常跑上来找我玩。",
+        "py": "Tā jīngcháng pǎo shànglái zhǎo wǒ wán.",
+        "vn": "Con bé thường xuyên chạy lên đây chơi với em."
+      }
     ],
-    hanzi: [{ c: '女', p: 'nǚ', type: '象形字 · Chữ tượng hình', st: 3, ord: '⺩ → 丿 → 一', rad: '女 (nữ)', mean: 'nữ, con gái', tip: '女孩儿 ↔ 男孩儿 (bài 9).', cf: '男孩儿 (nánháir)', w: '女孩儿 / 女儿 / 女的' }]
+    "hanzi": [
+      {
+        "c": "女",
+        "p": "nǚ",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 3,
+        "ord": "⺩ → 丿 → 一",
+        "rad": "女 (nữ)",
+        "mean": "nữ, con gái",
+        "tip": "女孩儿 ↔ 男孩儿 (bài 9).",
+        "cf": "男孩儿 (nánháir)",
+        "w": "女孩儿 / 女儿 / 女的"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个女孩儿",
+        "py": "yí gè nǚháir",
+        "vn": "một bé gái"
+      },
+      {
+        "zh": "那个女孩儿",
+        "py": "nàge nǚháir",
+        "vn": "cô bé kia"
+      },
+      {
+        "zh": "女孩儿的眼睛",
+        "py": "nǚháir de yǎnjing",
+        "vn": "đôi mắt cô bé"
+      },
+      {
+        "zh": "漂亮的女孩儿",
+        "py": "piàoliang de nǚháir",
+        "vn": "cô bé xinh xắn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 个 + 女孩儿",
+        "m": "Lượng từ của 女孩儿 là 个"
+      },
+      {
+        "s": "女孩儿 (bé gái) ↔ 男孩儿 (bé trai)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô bé kia là em gái tôi.",
+        "answer": "那个女孩儿是我妹妹。",
+        "answerPy": "Nàge nǚháir shì wǒ mèimei.",
+        "note": "女孩儿 ↔ 男孩儿.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô bé này biết nhảy, nhảy rất đẹp.",
+        "answer": "这个女孩儿会跳舞，跳得很好。",
+        "answerPy": "Zhège nǚháir huì tiàowǔ, tiào de hěn hǎo.",
+        "note": "跳得很好 — nhảy rất đẹp.",
+        "pair": "V + 得 + Adj"
+      }
+    ]
   },
   {
-    n: 10, zh: '姓', py: 'xìng', pos: 'Động từ', vn: 'họ (là)', hv: 'tính', em: '🪪', img: '/images/hsk2v3-bai-14/xing.jpg', lesson: 4,
-    ex_zh: '我男朋友姓杨，叫杨同乐。', ex_py: 'Wǒ nánpéngyou xìng Yáng, jiào Yáng Tónglè.', ex_vn: 'Bạn trai tôi họ Dương, tên là Dương Đồng Lạc.',
-    exList: [
-      { zh: '我男朋友姓杨，叫杨同乐。', py: 'Wǒ nánpéngyou xìng Yáng, jiào Yáng Tónglè.', vn: 'Bạn trai tôi họ Dương, tên là Dương Đồng Lạc.' },
-      { zh: '我姓李，叫李明，是从上海来的。', py: 'Wǒ xìng Lǐ, jiào Lǐ Míng, shì cóng Shànghǎi lái de.', vn: 'Tôi họ Lý, tên là Lý Minh, đến từ Thượng Hải.' }
+    "n": 10,
+    "zh": "姓",
+    "py": "xìng",
+    "pos": "Động từ",
+    "vn": "họ (là)",
+    "hv": "tính",
+    "em": "🪪",
+    "img": "/images/hsk2v3-bai-14/xing.jpg",
+    "lesson": 4,
+    "ex_zh": "我男朋友姓杨，叫杨同乐。",
+    "ex_py": "Wǒ nánpéngyou xìng Yáng, jiào Yáng Tónglè.",
+    "ex_vn": "Bạn trai tôi họ Dương, tên là Dương Đồng Lạc.",
+    "exList": [
+      {
+        "zh": "我男朋友姓杨，叫杨同乐。",
+        "py": "Wǒ nánpéngyou xìng Yáng, jiào Yáng Tónglè.",
+        "vn": "Bạn trai tôi họ Dương, tên là Dương Đồng Lạc."
+      },
+      {
+        "zh": "我姓李，叫李明，是从上海来的。",
+        "py": "Wǒ xìng Lǐ, jiào Lǐ Míng, shì cóng Shànghǎi lái de.",
+        "vn": "Tôi họ Lý, tên là Lý Minh, đến từ Thượng Hải."
+      }
     ],
-    hanzi: [{ c: '姓', p: 'xìng', type: '形声字 · Chữ hình thanh', st: 8, ord: '女 → 生', rad: '女 (nữ)', mean: 'họ', tip: '姓 + họ, 叫 + tên đầy đủ — mẫu giới thiệu quen thuộc.', cf: '叫 (jiào)', w: '姓 / 你姓什么 / 姓名' }]
+    "hanzi": [
+      {
+        "c": "姓",
+        "p": "xìng",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 8,
+        "ord": "女 → 生",
+        "rad": "女 (nữ)",
+        "mean": "họ",
+        "tip": "姓 + họ, 叫 + tên đầy đủ — mẫu giới thiệu quen thuộc.",
+        "cf": "叫 (jiào)",
+        "w": "姓 / 你姓什么 / 姓名"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "姓王",
+        "py": "xìng wáng",
+        "vn": "họ Vương"
+      },
+      {
+        "zh": "你姓什么",
+        "py": "nǐ xìng shénme",
+        "vn": "bạn họ gì"
+      },
+      {
+        "zh": "我姓李",
+        "py": "wǒ xìng Lǐ",
+        "vn": "tôi họ Lý"
+      },
+      {
+        "zh": "姓和名字",
+        "py": "xìng hé míngzi",
+        "vn": "họ và tên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 姓 + họ",
+        "m": "Ai đó họ gì: 我姓王"
+      },
+      {
+        "s": "姓 (họ) khác 叫 (tên) — 我姓王，叫王方"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hỏi, bạn họ gì ạ?",
+        "answer": "请问，你姓什么？",
+        "answerPy": "Qǐngwèn, nǐ xìng shénme?",
+        "note": "姓 (họ) khác 叫 (tên).",
+        "pair": "姓什么？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi họ Vương, tên là Vương Phương.",
+        "answer": "我姓王，叫王方。",
+        "answerPy": "Wǒ xìng Wáng, jiào Wáng Fāng.",
+        "note": "Câu tự giới thiệu đầy đủ nhất.",
+        "pair": "姓……叫……"
+      }
+    ]
   },
   {
-    n: 11, zh: '眼睛', py: 'yǎnjing', pos: 'Danh từ', vn: 'mắt', hv: 'nhãn tình', em: '👁️', img: '/images/hsk2v3-bai-14/yanjing.jpg', lesson: 4,
-    ex_zh: '他高个子、大眼睛，唱歌唱得很好。', ex_py: 'Tā gāo gèzi, dà yǎnjing, chànggē chàng de hěn hǎo.', ex_vn: 'Anh ấy có dáng người cao, mắt to, hát rất hay.',
-    exList: [
-      { zh: '他高个子、大眼睛，唱歌唱得很好。', py: 'Tā gāo gèzi, dà yǎnjing, chànggē chàng de hěn hǎo.', vn: 'Anh ấy có dáng người cao, mắt to, hát rất hay.' },
-      { zh: '他儿子的眼睛大大的，很漂亮。', py: 'Tā érzi de yǎnjing dàdà de, hěn piàoliang.', vn: 'Mắt con trai anh ấy to tròn, rất đẹp.' }
+    "n": 11,
+    "zh": "眼睛",
+    "py": "yǎnjing",
+    "pos": "Danh từ",
+    "vn": "mắt",
+    "hv": "nhãn tình",
+    "em": "👁️",
+    "img": "/images/hsk2v3-bai-14/yanjing.jpg",
+    "lesson": 4,
+    "ex_zh": "他高个子、大眼睛，唱歌唱得很好。",
+    "ex_py": "Tā gāo gèzi, dà yǎnjing, chànggē chàng de hěn hǎo.",
+    "ex_vn": "Anh ấy có dáng người cao, mắt to, hát rất hay.",
+    "exList": [
+      {
+        "zh": "他高个子、大眼睛，唱歌唱得很好。",
+        "py": "Tā gāo gèzi, dà yǎnjing, chànggē chàng de hěn hǎo.",
+        "vn": "Anh ấy có dáng người cao, mắt to, hát rất hay."
+      },
+      {
+        "zh": "他儿子的眼睛大大的，很漂亮。",
+        "py": "Tā érzi de yǎnjing dàdà de, hěn piàoliang.",
+        "vn": "Mắt con trai anh ấy to tròn, rất đẹp."
+      }
     ],
-    hanzi: [{ c: '眼', p: 'yǎn', type: '形声字 · Chữ hình thanh', st: 11, ord: '目 → 艮', rad: '目 (mục – mắt)', mean: 'mắt', tip: 'Ôn tính từ lặp (bài 6): 眼睛大大的.', cf: '', w: '眼睛 / 大眼睛 / 眼里' }]
+    "hanzi": [
+      {
+        "c": "眼",
+        "p": "yǎn",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 11,
+        "ord": "目 → 艮",
+        "rad": "目 (mục – mắt)",
+        "mean": "mắt",
+        "tip": "Ôn tính từ lặp (bài 6): 眼睛大大的.",
+        "cf": "",
+        "w": "眼睛 / 大眼睛 / 眼里"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "大眼睛",
+        "py": "dà yǎnjing",
+        "vn": "đôi mắt to"
+      },
+      {
+        "zh": "漂亮的眼睛",
+        "py": "piàoliang de yǎnjing",
+        "vn": "đôi mắt đẹp"
+      },
+      {
+        "zh": "她的眼睛",
+        "py": "tā de yǎnjing",
+        "vn": "đôi mắt cô ấy"
+      },
+      {
+        "zh": "眼睛不舒服",
+        "py": "yǎnjing bù shūfu",
+        "vn": "mắt khó chịu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 的 + 眼睛",
+        "m": "Đôi mắt của ai"
+      },
+      {
+        "s": "眼 + 睛",
+        "m": "Hai chữ đều có bộ 目 (mắt)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đôi mắt em gái tôi giống mẹ.",
+        "answer": "我妹妹的眼睛跟妈妈一样。",
+        "answerPy": "Wǒ mèimei de yǎnjing gēn māma yíyàng.",
+        "note": "跟 + ai + 一样 — giống ai.",
+        "pair": "跟……一样"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hôm qua lên mạng quá lâu nên hôm nay mắt tôi khó chịu.",
+        "answer": "因为昨天上网时间太长，所以今天我眼睛不舒服。",
+        "answerPy": "Yīnwèi zuótiān shàngwǎng shíjiān tài cháng, suǒyǐ jīntiān wǒ yǎnjing bù shūfu.",
+        "note": "眼 + 睛 — hai chữ đều có bộ 目 (mắt).",
+        "pair": "因为……所以……"
+      }
+    ]
   },
   {
-    n: 12, zh: '跳舞', py: 'tiàowǔ', pos: 'Động từ', vn: 'nhảy múa, khiêu vũ', hv: 'khiêu vũ', em: '💃', img: '/images/hsk2v3-bai-14/tiaowu.jpg', lesson: 4,
-    ex_zh: '跳舞跳得也不错。', ex_py: 'Tiàowǔ tiào de yě búcuò.', ex_vn: 'Nhảy cũng rất đẹp.',
-    exList: [
-      { zh: '跳舞跳得也不错。', py: 'Tiàowǔ tiào de yě búcuò.', vn: 'Nhảy cũng rất đẹp.' },
-      { zh: '我从小就跟老师学跳舞，学了十多年了。', py: 'Wǒ cóngxiǎo jiù gēn lǎoshī xué tiàowǔ, xuéle shí duō nián le.', vn: 'Từ nhỏ tôi đã học nhảy với thầy cô, học hơn mười năm rồi.' }
+    "n": 12,
+    "zh": "跳舞",
+    "py": "tiàowǔ",
+    "pos": "Động từ",
+    "vn": "nhảy múa, khiêu vũ",
+    "hv": "khiêu vũ",
+    "em": "💃",
+    "img": "/images/hsk2v3-bai-14/tiaowu.jpg",
+    "lesson": 4,
+    "ex_zh": "跳舞跳得也不错。",
+    "ex_py": "Tiàowǔ tiào de yě búcuò.",
+    "ex_vn": "Nhảy cũng rất đẹp.",
+    "exList": [
+      {
+        "zh": "跳舞跳得也不错。",
+        "py": "Tiàowǔ tiào de yě búcuò.",
+        "vn": "Nhảy cũng rất đẹp."
+      },
+      {
+        "zh": "我从小就跟老师学跳舞，学了十多年了。",
+        "py": "Wǒ cóngxiǎo jiù gēn lǎoshī xué tiàowǔ, xuéle shí duō nián le.",
+        "vn": "Từ nhỏ tôi đã học nhảy với thầy cô, học hơn mười năm rồi."
+      }
     ],
-    hanzi: [{ c: '跳', p: 'tiào', type: '形声字 · Chữ hình thanh', st: 13, ord: '⻊ → 兆', rad: '⻊ (túc – chân)', mean: 'nhảy', tip: '跳舞 là từ li hợp: 跳舞跳得不错 (ôn bài 7).', cf: '', w: '跳舞 / 跳 / 跳得好' }]
+    "hanzi": [
+      {
+        "c": "跳",
+        "p": "tiào",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 13,
+        "ord": "⻊ → 兆",
+        "rad": "⻊ (túc – chân)",
+        "mean": "nhảy",
+        "tip": "跳舞 là từ li hợp: 跳舞跳得不错 (ôn bài 7).",
+        "cf": "",
+        "w": "跳舞 / 跳 / 跳得好"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喜欢跳舞",
+        "py": "xǐhuan tiàowǔ",
+        "vn": "thích nhảy múa"
+      },
+      {
+        "zh": "去跳舞",
+        "py": "qù tiàowǔ",
+        "vn": "đi nhảy"
+      },
+      {
+        "zh": "会跳舞",
+        "py": "huì tiàowǔ",
+        "vn": "biết nhảy"
+      },
+      {
+        "zh": "跳得很好",
+        "py": "tiào de hěn hǎo",
+        "vn": "nhảy rất đẹp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "会 + 跳舞",
+        "m": "Biết nhảy — kỹ năng học mà có"
+      },
+      {
+        "s": "跳舞 là từ ly hợp: 跳了一个舞 ✓ / 跳舞了一个 ✗"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn có biết nhảy không?",
+        "answer": "你会跳舞吗？",
+        "answerPy": "Nǐ huì tiàowǔ ma?",
+        "note": "会 + 跳舞 — kỹ năng học mà có.",
+        "pair": "……吗？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Dịp Tết chúng tôi đều nhảy một bài.",
+        "answer": "过年的时候我们都跳了一个舞。",
+        "answerPy": "Guònián de shíhou wǒmen dōu tiàole yí ge wǔ.",
+        "note": "跳舞 là từ ly hợp: 跳了一个舞 ✓.",
+        "pair": "都 + V"
+      }
+    ]
   }
 ];
 

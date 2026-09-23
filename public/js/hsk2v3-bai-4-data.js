@@ -3,148 +3,1427 @@
 
 var vocabData = [
   {
-    n: 1, zh: '过', py: 'guo', pos: 'Trợ từ', vn: 'đã từng', hv: 'quá', em: '🕰️', lesson: 1,
-    ex_zh: '我们来过这家商场吗？', ex_py: 'Wǒmen láiguo zhè jiā shāngchǎng ma?', ex_vn: 'Chúng ta đã từng đến trung tâm mua sắm này chưa?',
-    exList: [
-      { zh: '我们来过这家商场吗？', py: 'Wǒmen láiguo zhè jiā shāngchǎng ma?', vn: 'Chúng ta đã từng đến trung tâm mua sắm này chưa?' },
-      { zh: '她去过中国。', py: 'Tā qùguo Zhōngguó.', vn: 'Cô ấy từng đến Trung Quốc.' }
+    "n": 1,
+    "zh": "过",
+    "py": "guo",
+    "pos": "Trợ từ",
+    "vn": "đã từng",
+    "hv": "quá",
+    "em": "🕰️",
+    "lesson": 1,
+    "ex_zh": "我们来过这家商场吗？",
+    "ex_py": "Wǒmen láiguo zhè jiā shāngchǎng ma?",
+    "ex_vn": "Chúng ta đã từng đến trung tâm mua sắm này chưa?",
+    "exList": [
+      {
+        "zh": "我们来过这家商场吗？",
+        "py": "Wǒmen láiguo zhè jiā shāngchǎng ma?",
+        "vn": "Chúng ta đã từng đến trung tâm mua sắm này chưa?"
+      },
+      {
+        "zh": "她去过中国。",
+        "py": "Tā qùguo Zhōngguó.",
+        "vn": "Cô ấy từng đến Trung Quốc."
+      }
     ],
-    hanzi: [{ c: '过', p: 'guò', type: '形声字 · Chữ hình thanh', st: 6, ord: '寸 → 辶', rad: '辶 (sước – đi)', mean: 'qua; từng', tip: 'Đọc nhẹ "guo" khi làm trợ từ động thái: 吃过、去过。', cf: '', w: '来过 / 去过 / 吃过' }]
+    "hanzi": [
+      {
+        "c": "过",
+        "p": "guò",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 6,
+        "ord": "寸 → 辶",
+        "rad": "辶 (sước – đi)",
+        "mean": "qua; từng",
+        "tip": "Đọc nhẹ \"guo\" khi làm trợ từ động thái: 吃过、去过。",
+        "cf": "",
+        "w": "来过 / 去过 / 吃过"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去过北京",
+        "py": "qù guo Běijīng",
+        "vn": "đã từng đi Bắc Kinh"
+      },
+      {
+        "zh": "吃过",
+        "py": "chī guo",
+        "vn": "đã từng ăn"
+      },
+      {
+        "zh": "看过这个电影",
+        "py": "kàn guo zhège diànyǐng",
+        "vn": "đã xem bộ phim này"
+      },
+      {
+        "zh": "没去过",
+        "py": "méi qù guo",
+        "vn": "chưa từng đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 过",
+        "m": "Đã TỪNG làm gì — kinh nghiệm: 我去过北京"
+      },
+      {
+        "s": "Phủ định là 没 + V + 过: 我没去过北京"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã từng đi Bắc Kinh một lần.",
+        "answer": "我去过一次北京。",
+        "answerPy": "Wǒ qùguo yí cì Běijīng.",
+        "note": "过 chỉ kinh nghiệm đã từng làm.",
+        "pair": "V + 过"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi chưa từng ăn vịt quay Bắc Kinh.",
+        "answer": "我没吃过北京烤鸭。",
+        "answerPy": "Wǒ méi chīguo Běijīng kǎoyā.",
+        "note": "Phủ định của 过 là 没 + V + 过.",
+        "pair": "没 + V + 过"
+      }
+    ]
   },
   {
-    n: 2, zh: '商场', py: 'shāngchǎng', pos: 'Danh từ', vn: 'trung tâm thương mại', hv: 'thương trường', em: '🏬', img: '/images/hsk2v3-bai-4/shangchang.jpg', lesson: 1,
-    ex_zh: '我和妈妈去了一家商场。', ex_py: 'Wǒ hé māma qùle yì jiā shāngchǎng.', ex_vn: 'Mình đã đi đến một trung tâm thương mại với mẹ.',
-    exList: [
-      { zh: '我和妈妈去了一家商场。', py: 'Wǒ hé māma qùle yì jiā shāngchǎng.', vn: 'Mình đã đi đến một trung tâm thương mại với mẹ.' },
-      { zh: '商场里的东西很便宜。', py: 'Shāngchǎng li de dōngxi hěn piányi.', vn: 'Đồ trong trung tâm thương mại rất rẻ.' }
+    "n": 2,
+    "zh": "商场",
+    "py": "shāngchǎng",
+    "pos": "Danh từ",
+    "vn": "trung tâm thương mại",
+    "hv": "thương trường",
+    "em": "🏬",
+    "img": "/images/hsk2v3-bai-4/shangchang.jpg",
+    "lesson": 1,
+    "ex_zh": "我和妈妈去了一家商场。",
+    "ex_py": "Wǒ hé māma qùle yì jiā shāngchǎng.",
+    "ex_vn": "Mình đã đi đến một trung tâm thương mại với mẹ.",
+    "exList": [
+      {
+        "zh": "我和妈妈去了一家商场。",
+        "py": "Wǒ hé māma qùle yì jiā shāngchǎng.",
+        "vn": "Mình đã đi đến một trung tâm thương mại với mẹ."
+      },
+      {
+        "zh": "商场里的东西很便宜。",
+        "py": "Shāngchǎng li de dōngxi hěn piányi.",
+        "vn": "Đồ trong trung tâm thương mại rất rẻ."
+      }
     ],
-    hanzi: [{ c: '商', p: 'shāng', type: '形声字 · Chữ hình thanh', st: 11, ord: '亠 → 丷 → 冂 → 八 → 口', rad: '口 (khẩu – miệng)', mean: 'buôn bán, thương mại', tip: '商场 = nơi buôn bán lớn; 商店 = cửa hàng.', cf: '', w: '商场 / 商店 / 商量' }]
+    "hanzi": [
+      {
+        "c": "商",
+        "p": "shāng",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 11,
+        "ord": "亠 → 丷 → 冂 → 八 → 口",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "buôn bán, thương mại",
+        "tip": "商场 = nơi buôn bán lớn; 商店 = cửa hàng.",
+        "cf": "",
+        "w": "商场 / 商店 / 商量"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去商场",
+        "py": "qù shāngchǎng",
+        "vn": "đi trung tâm thương mại"
+      },
+      {
+        "zh": "在商场",
+        "py": "zài shāngchǎng",
+        "vn": "ở trung tâm thương mại"
+      },
+      {
+        "zh": "商场里",
+        "py": "shāngchǎng li",
+        "vn": "trong trung tâm thương mại"
+      },
+      {
+        "zh": "商场的东西",
+        "py": "shāngchǎng de dōngxi",
+        "vn": "đồ của trung tâm thương mại"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 / 在 + 商场",
+        "m": "Đi, ở trung tâm thương mại"
+      },
+      {
+        "s": "商场 lớn hơn 商店 — 商场 có nhiều gian hàng"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiều nay tôi muốn đi trung tâm thương mại mua quần áo.",
+        "answer": "今天下午我想去商场买衣服。",
+        "answerPy": "Jīntiān xiàwǔ wǒ xiǎng qù shāngchǎng mǎi yīfu.",
+        "note": "商场 lớn hơn 商店.",
+        "pair": "想 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trong trung tâm thương mại có rất nhiều người.",
+        "answer": "商场里有很多人。",
+        "answerPy": "Shāngchǎng li yǒu hěn duō rén.",
+        "note": "商场里 — trong trung tâm thương mại.",
+        "pair": "nơi chốn + 有 + N"
+      }
+    ]
   },
   {
-    n: 3, zh: '进去', py: 'jìnqù', pos: 'Động từ', vn: 'đi vào', hv: 'tiến khứ', em: '🚪', img: '/images/hsk2v3-bai-4/jinqu.jpg', lesson: 1,
-    ex_zh: '我们进去看看吧。', ex_py: 'Wǒmen jìnqù kànkan ba.', ex_vn: 'Chúng ta đi vào xem một chút nhé.',
-    exList: [
-      { zh: '我们进去看看吧。', py: 'Wǒmen jìnqù kànkan ba.', vn: 'Chúng ta đi vào xem một chút nhé.' },
-      { zh: '我看见老师在教室里，你进去找她吧。', py: 'Wǒ kànjiàn lǎoshī zài jiàoshì li, nǐ jìnqù zhǎo tā ba.', vn: 'Tôi thấy cô giáo ở trong lớp, bạn vào tìm cô ấy đi.' }
+    "n": 3,
+    "zh": "进去",
+    "py": "jìnqù",
+    "pos": "Động từ",
+    "vn": "đi vào",
+    "hv": "tiến khứ",
+    "em": "🚪",
+    "img": "/images/hsk2v3-bai-4/jinqu.jpg",
+    "lesson": 1,
+    "ex_zh": "我们进去看看吧。",
+    "ex_py": "Wǒmen jìnqù kànkan ba.",
+    "ex_vn": "Chúng ta đi vào xem một chút nhé.",
+    "exList": [
+      {
+        "zh": "我们进去看看吧。",
+        "py": "Wǒmen jìnqù kànkan ba.",
+        "vn": "Chúng ta đi vào xem một chút nhé."
+      },
+      {
+        "zh": "我看见老师在教室里，你进去找她吧。",
+        "py": "Wǒ kànjiàn lǎoshī zài jiàoshì li, nǐ jìnqù zhǎo tā ba.",
+        "vn": "Tôi thấy cô giáo ở trong lớp, bạn vào tìm cô ấy đi."
+      }
     ],
-    hanzi: [{ c: '进', p: 'jìn', type: '形声字 · Chữ hình thanh', st: 7, ord: '井 → 辶', rad: '辶 (sước – đi)', mean: 'vào, tiến vào', tip: '进去 = vào (xa người nói); 进来 = vào (về phía người nói).', cf: '', w: '进去 / 进来 / 进步' }]
+    "hanzi": [
+      {
+        "c": "进",
+        "p": "jìn",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 7,
+        "ord": "井 → 辶",
+        "rad": "辶 (sước – đi)",
+        "mean": "vào, tiến vào",
+        "tip": "进去 = vào (xa người nói); 进来 = vào (về phía người nói).",
+        "cf": "",
+        "w": "进去 / 进来 / 进步"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "进去看看",
+        "py": "jìnqù kànkàn",
+        "vn": "vào xem thử"
+      },
+      {
+        "zh": "走进去",
+        "py": "zǒu jìnqù",
+        "vn": "đi vào"
+      },
+      {
+        "zh": "进去吧",
+        "py": "jìnqù ba",
+        "vn": "vào đi"
+      },
+      {
+        "zh": "别进去",
+        "py": "bié jìnqù",
+        "vn": "đừng vào"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "进去 + động từ",
+        "m": "Vào trong làm gì: 进去看看"
+      },
+      {
+        "s": "进去 (vào, xa người nói) ↔ 进来 (vào, gần người nói)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng ta vào xem thử đi.",
+        "answer": "我们进去看看吧。",
+        "answerPy": "Wǒmen jìnqu kànkan ba.",
+        "note": "进去 + động từ — vào trong làm gì.",
+        "pair": "进去 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy đang trong tiết học, đừng vào.",
+        "answer": "老师正在上课，别进去。",
+        "answerPy": "Lǎoshī zhèngzài shàngkè, bié jìnqu.",
+        "note": "进去 (xa người nói) ↔ 进来 (gần người nói).",
+        "pair": "别 + V"
+      }
+    ]
   },
   {
-    n: 4, zh: '条', py: 'tiáo', pos: 'Lượng từ', vn: 'cái, chiếc (quần, váy, cá, sông…)', hv: 'điều', em: '👖', lesson: 1,
-    ex_zh: '我想买条裤子。', ex_py: 'Wǒ xiǎng mǎi tiáo kùzi.', ex_vn: 'Con muốn mua chiếc quần.',
-    exList: [
-      { zh: '我想买条裤子。', py: 'Wǒ xiǎng mǎi tiáo kùzi.', vn: 'Con muốn mua chiếc quần.' },
-      { zh: '你已经有一条黑色的裤子了。', py: 'Nǐ yǐjīng yǒu yì tiáo hēisè de kùzi le.', vn: 'Con đã có một chiếc quần đen rồi.' }
+    "n": 4,
+    "zh": "条",
+    "py": "tiáo",
+    "pos": "Lượng từ",
+    "vn": "cái, chiếc (quần, váy, cá, sông…)",
+    "hv": "điều",
+    "em": "👖",
+    "lesson": 1,
+    "ex_zh": "我想买条裤子。",
+    "ex_py": "Wǒ xiǎng mǎi tiáo kùzi.",
+    "ex_vn": "Con muốn mua chiếc quần.",
+    "exList": [
+      {
+        "zh": "我想买条裤子。",
+        "py": "Wǒ xiǎng mǎi tiáo kùzi.",
+        "vn": "Con muốn mua chiếc quần."
+      },
+      {
+        "zh": "你已经有一条黑色的裤子了。",
+        "py": "Nǐ yǐjīng yǒu yì tiáo hēisè de kùzi le.",
+        "vn": "Con đã có một chiếc quần đen rồi."
+      }
     ],
-    hanzi: [{ c: '条', p: 'tiáo', type: '会意字 · Chữ hội ý', st: 7, ord: '夂 → 木', rad: '木 (mộc – cây)', mean: 'sợi, chiếc (vật dài)', tip: 'Dùng cho vật dài: 一条裤子、一条鱼、一条路。', cf: '', w: '一条裤子 / 一条鱼 / 一条街' }]
+    "hanzi": [
+      {
+        "c": "条",
+        "p": "tiáo",
+        "type": "会意字 · Chữ hội ý",
+        "st": 7,
+        "ord": "夂 → 木",
+        "rad": "木 (mộc – cây)",
+        "mean": "sợi, chiếc (vật dài)",
+        "tip": "Dùng cho vật dài: 一条裤子、一条鱼、一条路。",
+        "cf": "",
+        "w": "一条裤子 / 一条鱼 / 一条街"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一条裤子",
+        "py": "yì tiáo kùzi",
+        "vn": "một cái quần"
+      },
+      {
+        "zh": "两条鱼",
+        "py": "liǎng tiáo yú",
+        "vn": "hai con cá"
+      },
+      {
+        "zh": "这条裤子",
+        "py": "zhè tiáo kùzi",
+        "vn": "cái quần này"
+      },
+      {
+        "zh": "几条",
+        "py": "jǐ tiáo",
+        "vn": "mấy cái"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 条 + vật dài",
+        "m": "Lượng từ 条 cho vật dài: 裤子 · 鱼 · 路"
+      },
+      {
+        "s": "✗ 一个裤子 → ✓ 一条裤子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn mua hai cái quần.",
+        "answer": "我想买两条裤子。",
+        "answerPy": "Wǒ xiǎng mǎi liǎng tiáo kùzi.",
+        "note": "✗ 一个裤子 → ✓ 一条裤子.",
+        "pair": "想 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái quần này bao nhiêu tiền?",
+        "answer": "这条裤子多少钱？",
+        "answerPy": "Zhè tiáo kùzi duōshao qián?",
+        "note": "条 dùng cho vật dài: 裤子 · 鱼 · 路.",
+        "pair": "多少钱？"
+      }
+    ]
   },
   {
-    n: 5, zh: '裤子', py: 'kùzi', pos: 'Danh từ', vn: 'quần', hv: 'khố tử', em: '👖', img: '/images/hsk2v3-bai-4/kuzi.jpg', lesson: 1,
-    ex_zh: '我想买这条白色的裤子。', ex_py: 'Wǒ xiǎng mǎi zhè tiáo báisè de kùzi.', ex_vn: 'Con muốn mua chiếc quần màu trắng này.',
-    exList: [
-      { zh: '我想买这条白色的裤子。', py: 'Wǒ xiǎng mǎi zhè tiáo báisè de kùzi.', vn: 'Con muốn mua chiếc quần màu trắng này.' },
-      { zh: '我没穿过红色的裤子。', py: 'Wǒ méi chuānguo hóngsè de kùzi.', vn: 'Con chưa từng mặc quần màu đỏ.' }
+    "n": 5,
+    "zh": "裤子",
+    "py": "kùzi",
+    "pos": "Danh từ",
+    "vn": "quần",
+    "hv": "khố tử",
+    "em": "👖",
+    "img": "/images/hsk2v3-bai-4/kuzi.jpg",
+    "lesson": 1,
+    "ex_zh": "我想买这条白色的裤子。",
+    "ex_py": "Wǒ xiǎng mǎi zhè tiáo báisè de kùzi.",
+    "ex_vn": "Con muốn mua chiếc quần màu trắng này.",
+    "exList": [
+      {
+        "zh": "我想买这条白色的裤子。",
+        "py": "Wǒ xiǎng mǎi zhè tiáo báisè de kùzi.",
+        "vn": "Con muốn mua chiếc quần màu trắng này."
+      },
+      {
+        "zh": "我没穿过红色的裤子。",
+        "py": "Wǒ méi chuānguo hóngsè de kùzi.",
+        "vn": "Con chưa từng mặc quần màu đỏ."
+      }
     ],
-    hanzi: [{ c: '裤', p: 'kù', type: '形声字 · Chữ hình thanh', st: 12, ord: '衤 → 广 → 车', rad: '衤 (y – áo)', mean: 'quần', tip: 'Bộ 衤 (áo quần) cho biết chữ liên quan đến trang phục.', cf: '', w: '裤子 / 短裤' }]
+    "hanzi": [
+      {
+        "c": "裤",
+        "p": "kù",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 12,
+        "ord": "衤 → 广 → 车",
+        "rad": "衤 (y – áo)",
+        "mean": "quần",
+        "tip": "Bộ 衤 (áo quần) cho biết chữ liên quan đến trang phục.",
+        "cf": "",
+        "w": "裤子 / 短裤"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一条裤子",
+        "py": "yì tiáo kùzi",
+        "vn": "một cái quần"
+      },
+      {
+        "zh": "买裤子",
+        "py": "mǎi kùzi",
+        "vn": "mua quần"
+      },
+      {
+        "zh": "穿裤子",
+        "py": "chuān kùzi",
+        "vn": "mặc quần"
+      },
+      {
+        "zh": "黑色的裤子",
+        "py": "hēisè de kùzi",
+        "vn": "cái quần màu đen"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "穿 + 裤子",
+        "m": "Mặc quần — dùng 穿 như 穿衣服"
+      },
+      {
+        "s": "裤 + 子",
+        "m": "子 là đuôi từ đọc nhẹ, giống 桌子 · 包子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thích mặc quần màu đen.",
+        "answer": "我喜欢穿黑色的裤子。",
+        "answerPy": "Wǒ xǐhuan chuān hēisè de kùzi.",
+        "note": "穿裤子 — mặc quần, dùng 穿.",
+        "pair": "喜欢 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cái quần này quá đắt nên tôi đã không mua.",
+        "answer": "因为这条裤子太贵，所以我没买。",
+        "answerPy": "Yīnwèi zhè tiáo kùzi tài guì, suǒyǐ wǒ méi mǎi.",
+        "note": "Tiếng Trung dùng cả hai vế 因为 và 所以.",
+        "pair": "因为……所以……"
+      }
+    ]
   },
   {
-    n: 6, zh: '白色', py: 'báisè', pos: 'Danh từ', vn: 'màu trắng', hv: 'bạch sắc', em: '⚪', img: '/images/hsk2v3-bai-4/baise.jpg', lesson: 2,
-    ex_zh: '你有很多白色的衣服。', ex_py: 'Nǐ yǒu hěn duō báisè de yīfu.', ex_vn: 'Con đã có rất nhiều quần áo màu trắng rồi.',
-    exList: [
-      { zh: '你有很多白色的衣服。', py: 'Nǐ yǒu hěn duō báisè de yīfu.', vn: 'Con đã có rất nhiều quần áo màu trắng rồi.' },
-      { zh: '我觉得这条白色的不太好看。', py: 'Wǒ juéde zhè tiáo báisè de bú tài hǎokàn.', vn: 'Mẹ thấy chiếc màu trắng này không đẹp lắm.' }
+    "n": 6,
+    "zh": "白色",
+    "py": "báisè",
+    "pos": "Danh từ",
+    "vn": "màu trắng",
+    "hv": "bạch sắc",
+    "em": "⚪",
+    "img": "/images/hsk2v3-bai-4/baise.jpg",
+    "lesson": 2,
+    "ex_zh": "你有很多白色的衣服。",
+    "ex_py": "Nǐ yǒu hěn duō báisè de yīfu.",
+    "ex_vn": "Con đã có rất nhiều quần áo màu trắng rồi.",
+    "exList": [
+      {
+        "zh": "你有很多白色的衣服。",
+        "py": "Nǐ yǒu hěn duō báisè de yīfu.",
+        "vn": "Con đã có rất nhiều quần áo màu trắng rồi."
+      },
+      {
+        "zh": "我觉得这条白色的不太好看。",
+        "py": "Wǒ juéde zhè tiáo báisè de bú tài hǎokàn.",
+        "vn": "Mẹ thấy chiếc màu trắng này không đẹp lắm."
+      }
     ],
-    hanzi: [{ c: '色', p: 'sè', type: '会意字 · Chữ hội ý', st: 6, ord: '⺈ → 巴', rad: '色 (sắc)', mean: 'màu sắc', tip: 'Ghép với màu: 白色、红色、绿色、黑色。', cf: '', w: '白色 / 红色 / 颜色' }]
+    "hanzi": [
+      {
+        "c": "色",
+        "p": "sè",
+        "type": "会意字 · Chữ hội ý",
+        "st": 6,
+        "ord": "⺈ → 巴",
+        "rad": "色 (sắc)",
+        "mean": "màu sắc",
+        "tip": "Ghép với màu: 白色、红色、绿色、黑色。",
+        "cf": "",
+        "w": "白色 / 红色 / 颜色"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "白色的衣服",
+        "py": "báisè de yīfu",
+        "vn": "quần áo màu trắng"
+      },
+      {
+        "zh": "白色的裤子",
+        "py": "báisè de kùzi",
+        "vn": "quần màu trắng"
+      },
+      {
+        "zh": "喜欢白色",
+        "py": "xǐhuan báisè",
+        "vn": "thích màu trắng"
+      },
+      {
+        "zh": "白色的书包",
+        "py": "báisè de shūbāo",
+        "vn": "cặp sách màu trắng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "白色 + 的 + danh từ",
+        "m": "Cái gì màu trắng"
+      },
+      {
+        "s": "白色 · 红色 · 绿色 · 黑色 — đều ghép với 色"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn thử cái áo màu trắng kia.",
+        "answer": "我想试一下那件白色的衣服。",
+        "answerPy": "Wǒ xiǎng shì yíxià nà jiàn báisè de yīfu.",
+        "note": "白色 + 的 + danh từ.",
+        "pair": "想 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi thích màu trắng nên tôi mua cái cặp màu trắng.",
+        "answer": "因为我喜欢白色，所以我买了白色的书包。",
+        "answerPy": "Yīnwèi wǒ xǐhuan báisè, suǒyǐ wǒ mǎile báisè de shūbāo.",
+        "note": "白色 · 红色 · 绿色 · 黑色 đều ghép với 色.",
+        "pair": "因为……所以……"
+      }
+    ]
   },
   {
-    n: 7, zh: '因为', py: 'yīnwèi', pos: 'Liên từ', vn: 'bởi vì, vì', hv: 'nhân vị', em: '🔗', lesson: 2,
-    ex_zh: '因为我喜欢白色啊！', ex_py: 'Yīnwèi wǒ xǐhuan báisè a!', ex_vn: 'Vì con thích màu trắng ạ.',
-    exList: [
-      { zh: '因为我喜欢白色啊！', py: 'Yīnwèi wǒ xǐhuan báisè a!', vn: 'Vì con thích màu trắng ạ.' },
-      { zh: '因为我生病了，今天没去上班。', py: 'Yīnwèi wǒ shēngbìng le, jīntiān méi qù shàngbān.', vn: 'Vì tôi bị ốm nên hôm nay không đi làm.' }
+    "n": 7,
+    "zh": "因为",
+    "py": "yīnwèi",
+    "pos": "Liên từ",
+    "vn": "bởi vì, vì",
+    "hv": "nhân vị",
+    "em": "🔗",
+    "lesson": 2,
+    "ex_zh": "因为我喜欢白色啊！",
+    "ex_py": "Yīnwèi wǒ xǐhuan báisè a!",
+    "ex_vn": "Vì con thích màu trắng ạ.",
+    "exList": [
+      {
+        "zh": "因为我喜欢白色啊！",
+        "py": "Yīnwèi wǒ xǐhuan báisè a!",
+        "vn": "Vì con thích màu trắng ạ."
+      },
+      {
+        "zh": "因为我生病了，今天没去上班。",
+        "py": "Yīnwèi wǒ shēngbìng le, jīntiān méi qù shàngbān.",
+        "vn": "Vì tôi bị ốm nên hôm nay không đi làm."
+      }
     ],
-    hanzi: [{ c: '因', p: 'yīn', type: '会意字 · Chữ hội ý', st: 6, ord: '囗 → 大', rad: '囗 (vi – bao quanh)', mean: 'nguyên nhân', tip: '因为 thường đi cặp với 所以.', cf: '', w: '因为 / 原因' }]
+    "hanzi": [
+      {
+        "c": "因",
+        "p": "yīn",
+        "type": "会意字 · Chữ hội ý",
+        "st": 6,
+        "ord": "囗 → 大",
+        "rad": "囗 (vi – bao quanh)",
+        "mean": "nguyên nhân",
+        "tip": "因为 thường đi cặp với 所以.",
+        "cf": "",
+        "w": "因为 / 原因"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "因为下雨",
+        "py": "yīnwèi xià yǔ",
+        "vn": "vì trời mưa"
+      },
+      {
+        "zh": "因为很忙",
+        "py": "yīnwèi hěn máng",
+        "vn": "vì rất bận"
+      },
+      {
+        "zh": "因为太贵",
+        "py": "yīnwèi tài guì",
+        "vn": "vì quá đắt"
+      },
+      {
+        "zh": "因为……所以……",
+        "py": "yīnwèi suǒyǐ",
+        "vn": "vì… nên…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "因为 A，所以 B",
+        "m": "Vì A nên B — cặp liên từ nhân quả đầu tiên"
+      },
+      {
+        "s": "Tiếng Trung dùng CẢ HAI vế 因为 và 所以, khác tiếng Việt"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời mưa nên chúng tôi không ra ngoài.",
+        "answer": "因为下雨，所以我们没出去。",
+        "answerPy": "Yīnwèi xià yǔ, suǒyǐ wǒmen méi chūqu.",
+        "note": "Cặp liên từ nhân quả đầu tiên các em học.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hôm nay rất bận nên tôi không đi trung tâm thương mại.",
+        "answer": "因为今天很忙，所以我不去商场。",
+        "answerPy": "Yīnwèi jīntiān hěn máng, suǒyǐ wǒ bú qù shāngchǎng.",
+        "note": "因为 mở đầu vế nguyên nhân.",
+        "pair": "因为……所以……"
+      }
+    ]
   },
   {
-    n: 8, zh: '试', py: 'shì', pos: 'Động từ', vn: 'thử', hv: 'thí', em: '🧪', img: '/images/hsk2v3-bai-4/shi.jpg', lesson: 2,
-    ex_zh: '你试试那条红色的吧。', ex_py: 'Nǐ shìshi nà tiáo hóngsè de ba.', ex_vn: 'Con thử chiếc màu đỏ kia xem sao.',
-    exList: [
-      { zh: '你试试那条红色的吧。', py: 'Nǐ shìshi nà tiáo hóngsè de ba.', vn: 'Con thử chiếc màu đỏ kia xem sao.' },
-      { zh: '妈妈让我试了试。', py: 'Māma ràng wǒ shìle shì.', vn: 'Mẹ đã bảo mình thử xem.' }
+    "n": 8,
+    "zh": "试",
+    "py": "shì",
+    "pos": "Động từ",
+    "vn": "thử",
+    "hv": "thí",
+    "em": "🧪",
+    "img": "/images/hsk2v3-bai-4/shi.jpg",
+    "lesson": 2,
+    "ex_zh": "你试试那条红色的吧。",
+    "ex_py": "Nǐ shìshi nà tiáo hóngsè de ba.",
+    "ex_vn": "Con thử chiếc màu đỏ kia xem sao.",
+    "exList": [
+      {
+        "zh": "你试试那条红色的吧。",
+        "py": "Nǐ shìshi nà tiáo hóngsè de ba.",
+        "vn": "Con thử chiếc màu đỏ kia xem sao."
+      },
+      {
+        "zh": "妈妈让我试了试。",
+        "py": "Māma ràng wǒ shìle shì.",
+        "vn": "Mẹ đã bảo mình thử xem."
+      }
     ],
-    hanzi: [{ c: '试', p: 'shì', type: '形声字 · Chữ hình thanh', st: 8, ord: '讠 → 式', rad: '讠 (ngôn – lời nói)', mean: 'thử, thi', tip: '试试 (thử một chút) là dạng lặp của động từ đơn âm tiết.', cf: '', w: '试试 / 考试 / 试衣服' }]
+    "hanzi": [
+      {
+        "c": "试",
+        "p": "shì",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 8,
+        "ord": "讠 → 式",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "thử, thi",
+        "tip": "试试 (thử một chút) là dạng lặp của động từ đơn âm tiết.",
+        "cf": "",
+        "w": "试试 / 考试 / 试衣服"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "试一下",
+        "py": "shì yíxià",
+        "vn": "thử một chút"
+      },
+      {
+        "zh": "试试",
+        "py": "shìshì",
+        "vn": "thử xem"
+      },
+      {
+        "zh": "试试这条",
+        "py": "shìshì zhè tiáo",
+        "vn": "thử cái này"
+      },
+      {
+        "zh": "想试",
+        "py": "xiǎng shì",
+        "vn": "muốn thử"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "试 + 一下 / 试试",
+        "m": "Thử một chút — dạng lặp làm ngữ khí nhẹ đi"
+      },
+      {
+        "s": "试 hay dùng khi mua quần áo: 我可以试一下吗？"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thử cái quần này được không ạ?",
+        "answer": "我可以试一下这条裤子吗？",
+        "answerPy": "Wǒ kěyǐ shì yíxià zhè tiáo kùzi ma?",
+        "note": "Câu rất hay dùng khi mua quần áo.",
+        "pair": "可以……吗？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn thử cái màu đỏ xem.",
+        "answer": "你试试红色的吧。",
+        "answerPy": "Nǐ shìshi hóngsè de ba.",
+        "note": "试试 — dạng lặp làm ngữ khí nhẹ đi.",
+        "pair": "……吧"
+      }
+    ]
   },
   {
-    n: 9, zh: '红色', py: 'hóngsè', pos: 'Danh từ', vn: 'màu đỏ', hv: 'hồng sắc', em: '🔴', img: '/images/hsk2v3-bai-4/hongse.jpg', lesson: 2,
-    ex_zh: '我没穿过红色的。', ex_py: 'Wǒ méi chuānguo hóngsè de.', ex_vn: 'Con chưa từng mặc màu đỏ.',
-    exList: [
-      { zh: '我没穿过红色的。', py: 'Wǒ méi chuānguo hóngsè de.', vn: 'Con chưa từng mặc màu đỏ.' },
-      { zh: '你穿红色的很好看。', py: 'Nǐ chuān hóngsè de hěn hǎokàn.', vn: 'Con mặc đồ màu đỏ rất đẹp.' }
+    "n": 9,
+    "zh": "红色",
+    "py": "hóngsè",
+    "pos": "Danh từ",
+    "vn": "màu đỏ",
+    "hv": "hồng sắc",
+    "em": "🔴",
+    "img": "/images/hsk2v3-bai-4/hongse.jpg",
+    "lesson": 2,
+    "ex_zh": "我没穿过红色的。",
+    "ex_py": "Wǒ méi chuānguo hóngsè de.",
+    "ex_vn": "Con chưa từng mặc màu đỏ.",
+    "exList": [
+      {
+        "zh": "我没穿过红色的。",
+        "py": "Wǒ méi chuānguo hóngsè de.",
+        "vn": "Con chưa từng mặc màu đỏ."
+      },
+      {
+        "zh": "你穿红色的很好看。",
+        "py": "Nǐ chuān hóngsè de hěn hǎokàn.",
+        "vn": "Con mặc đồ màu đỏ rất đẹp."
+      }
     ],
-    hanzi: [{ c: '红', p: 'hóng', type: '形声字 · Chữ hình thanh', st: 6, ord: '纟 → 工', rad: '纟 (mịch – sợi tơ)', mean: 'màu đỏ', tip: 'Bộ 纟 vì ngày xưa màu sắc gắn với việc nhuộm vải.', cf: '', w: '红色 / 红茶 / 很红' }]
+    "hanzi": [
+      {
+        "c": "红",
+        "p": "hóng",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 6,
+        "ord": "纟 → 工",
+        "rad": "纟 (mịch – sợi tơ)",
+        "mean": "màu đỏ",
+        "tip": "Bộ 纟 vì ngày xưa màu sắc gắn với việc nhuộm vải.",
+        "cf": "",
+        "w": "红色 / 红茶 / 很红"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "红色的衣服",
+        "py": "hóngsè de yīfu",
+        "vn": "quần áo màu đỏ"
+      },
+      {
+        "zh": "红色的书包",
+        "py": "hóngsè de shūbāo",
+        "vn": "cặp sách màu đỏ"
+      },
+      {
+        "zh": "喜欢红色",
+        "py": "xǐhuan hóngsè",
+        "vn": "thích màu đỏ"
+      },
+      {
+        "zh": "红色的裤子",
+        "py": "hóngsè de kùzi",
+        "vn": "quần màu đỏ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "红色 + 的 + danh từ",
+        "m": "Cái gì màu đỏ"
+      },
+      {
+        "s": "红色 là màu may mắn trong văn hoá Trung Quốc"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái cặp màu đỏ này đẹp hơn.",
+        "answer": "这个红色的书包更漂亮。",
+        "answerPy": "Zhège hóngsè de shūbāo gèng piàoliang.",
+        "note": "更 đứng trước tính từ.",
+        "pair": "更 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì màu đỏ là màu may mắn nên rất nhiều người Trung Quốc thích màu đỏ.",
+        "answer": "因为红色很好，所以很多中国人喜欢红色。",
+        "answerPy": "Yīnwèi hóngsè hěn hǎo, suǒyǐ hěn duō Zhōngguó rén xǐhuan hóngsè.",
+        "note": "红色 là màu may mắn trong văn hoá Trung Quốc.",
+        "pair": "因为……所以……"
+      }
+    ]
   },
   {
-    n: 10, zh: '所以', py: 'suǒyǐ', pos: 'Liên từ', vn: 'cho nên, nên', hv: 'sở dĩ', em: '➡️', lesson: 2,
-    ex_zh: '就是因为没穿过，所以要试试啊！', ex_py: 'Jiù shì yīnwèi méi chuānguo, suǒyǐ yào shìshi a!', ex_vn: 'Chính là vì chưa từng mặc nên cần phải thử xem.',
-    exList: [
-      { zh: '就是因为没穿过，所以要试试啊！', py: 'Jiù shì yīnwèi méi chuānguo, suǒyǐ yào shìshi a!', vn: 'Chính là vì chưa từng mặc nên cần phải thử xem.' },
-      { zh: '因为是新开的，所以这几天东西很便宜。', py: 'Yīnwèi shì xīn kāi de, suǒyǐ zhè jǐ tiān dōngxi hěn piányi.', vn: 'Vì mới khai trương nên mấy hôm nay đồ rất rẻ.' }
+    "n": 10,
+    "zh": "所以",
+    "py": "suǒyǐ",
+    "pos": "Liên từ",
+    "vn": "cho nên, nên",
+    "hv": "sở dĩ",
+    "em": "➡️",
+    "lesson": 2,
+    "ex_zh": "就是因为没穿过，所以要试试啊！",
+    "ex_py": "Jiù shì yīnwèi méi chuānguo, suǒyǐ yào shìshi a!",
+    "ex_vn": "Chính là vì chưa từng mặc nên cần phải thử xem.",
+    "exList": [
+      {
+        "zh": "就是因为没穿过，所以要试试啊！",
+        "py": "Jiù shì yīnwèi méi chuānguo, suǒyǐ yào shìshi a!",
+        "vn": "Chính là vì chưa từng mặc nên cần phải thử xem."
+      },
+      {
+        "zh": "因为是新开的，所以这几天东西很便宜。",
+        "py": "Yīnwèi shì xīn kāi de, suǒyǐ zhè jǐ tiān dōngxi hěn piányi.",
+        "vn": "Vì mới khai trương nên mấy hôm nay đồ rất rẻ."
+      }
     ],
-    hanzi: [{ c: '所', p: 'suǒ', type: '形声字 · Chữ hình thanh', st: 8, ord: '户 → 斤', rad: '户 (hộ – cửa)', mean: 'nơi; (kết cấu)', tip: '所以 = vì vậy, đứng ở vế kết quả.', cf: '', w: '所以 / 所有 / 厕所' }]
+    "hanzi": [
+      {
+        "c": "所",
+        "p": "suǒ",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 8,
+        "ord": "户 → 斤",
+        "rad": "户 (hộ – cửa)",
+        "mean": "nơi; (kết cấu)",
+        "tip": "所以 = vì vậy, đứng ở vế kết quả.",
+        "cf": "",
+        "w": "所以 / 所有 / 厕所"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "所以我不去",
+        "py": "suǒyǐ wǒ bú qù",
+        "vn": "nên tôi không đi"
+      },
+      {
+        "zh": "所以很累",
+        "py": "suǒyǐ hěn lèi",
+        "vn": "nên rất mệt"
+      },
+      {
+        "zh": "所以没买",
+        "py": "suǒyǐ méi mǎi",
+        "vn": "nên đã không mua"
+      },
+      {
+        "zh": "因为……所以……",
+        "py": "yīnwèi suǒyǐ",
+        "vn": "vì… nên…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "因为 A，所以 B",
+        "m": "Vì A nên B — 所以 mở đầu vế kết quả"
+      },
+      {
+        "s": "所以 luôn đứng ĐẦU vế thứ hai"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hôm qua rất mệt nên tôi đã ngủ sớm.",
+        "answer": "因为昨天很累，所以我很早就睡觉了。",
+        "answerPy": "Yīnwèi zuótiān hěn lèi, suǒyǐ wǒ hěn zǎo jiù shuìjiào le.",
+        "note": "所以 luôn đứng đầu vế thứ hai.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì chỗ đó xa quá nên chúng tôi bắt taxi đi.",
+        "answer": "因为那里太远了，所以我们打车去。",
+        "answerPy": "Yīnwèi nàli tài yuǎn le, suǒyǐ wǒmen dǎchē qù.",
+        "note": "所以 mở đầu vế kết quả.",
+        "pair": "因为……所以……"
+      }
+    ]
   },
   {
-    n: 11, zh: '书包', py: 'shūbāo', pos: 'Danh từ', vn: 'cặp sách', hv: 'thư bao', em: '🎒', img: '/images/hsk2v3-bai-4/shubao.jpg', lesson: 3,
-    ex_zh: '妈妈，我想买个新书包。', ex_py: 'Māma, wǒ xiǎng mǎi ge xīn shūbāo.', ex_vn: 'Mẹ ơi, con muốn mua cặp sách mới ạ.',
-    exList: [
-      { zh: '妈妈，我想买个新书包。', py: 'Māma, wǒ xiǎng mǎi ge xīn shūbāo.', vn: 'Mẹ ơi, con muốn mua cặp sách mới ạ.' },
-      { zh: '这么多漂亮的书包！', py: 'Zhème duō piàoliang de shūbāo!', vn: 'Bao nhiêu là cặp sách đẹp!' }
+    "n": 11,
+    "zh": "书包",
+    "py": "shūbāo",
+    "pos": "Danh từ",
+    "vn": "cặp sách",
+    "hv": "thư bao",
+    "em": "🎒",
+    "img": "/images/hsk2v3-bai-4/shubao.jpg",
+    "lesson": 3,
+    "ex_zh": "妈妈，我想买个新书包。",
+    "ex_py": "Māma, wǒ xiǎng mǎi ge xīn shūbāo.",
+    "ex_vn": "Mẹ ơi, con muốn mua cặp sách mới ạ.",
+    "exList": [
+      {
+        "zh": "妈妈，我想买个新书包。",
+        "py": "Māma, wǒ xiǎng mǎi ge xīn shūbāo.",
+        "vn": "Mẹ ơi, con muốn mua cặp sách mới ạ."
+      },
+      {
+        "zh": "这么多漂亮的书包！",
+        "py": "Zhème duō piàoliang de shūbāo!",
+        "vn": "Bao nhiêu là cặp sách đẹp!"
+      }
     ],
-    hanzi: [{ c: '包', p: 'bāo', type: '象形字 · Chữ tượng hình', st: 5, ord: '⺈ → 巳', rad: '勹 (bao)', mean: 'túi, bọc', tip: '书包 = túi đựng sách; 面包 = bánh mì.', cf: '', w: '书包 / 面包 / 包子' }]
+    "hanzi": [
+      {
+        "c": "包",
+        "p": "bāo",
+        "type": "象形字 · Chữ tượng hình",
+        "st": 5,
+        "ord": "⺈ → 巳",
+        "rad": "勹 (bao)",
+        "mean": "túi, bọc",
+        "tip": "书包 = túi đựng sách; 面包 = bánh mì.",
+        "cf": "",
+        "w": "书包 / 面包 / 包子"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个书包",
+        "py": "yí gè shūbāo",
+        "vn": "một cái cặp sách"
+      },
+      {
+        "zh": "买书包",
+        "py": "mǎi shūbāo",
+        "vn": "mua cặp sách"
+      },
+      {
+        "zh": "红色的书包",
+        "py": "hóngsè de shūbāo",
+        "vn": "cặp sách màu đỏ"
+      },
+      {
+        "zh": "书包里",
+        "py": "shūbāo li",
+        "vn": "trong cặp sách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 个 + 书包",
+        "m": "Lượng từ của 书包 là 个"
+      },
+      {
+        "s": "书 + 包",
+        "m": "Túi (包) đựng sách (书)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trong cặp sách của tôi có ba quyển sách.",
+        "answer": "我的书包里有三本书。",
+        "answerPy": "Wǒ de shūbāo li yǒu sān běn shū.",
+        "note": "书包里 — trong cặp sách.",
+        "pair": "nơi chốn + 有 + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn mua một cái cặp sách màu xanh lá.",
+        "answer": "我想买一个绿色的书包。",
+        "answerPy": "Wǒ xiǎng mǎi yí ge lǜsè de shūbāo.",
+        "note": "Lượng từ của 书包 là 个.",
+        "pair": "想 + V"
+      }
+    ]
   },
   {
-    n: 12, zh: '过去', py: 'guòqù', pos: 'Động từ', vn: 'sang, đi sang', hv: 'quá khứ', em: '➡️', img: '/images/hsk2v3-bai-4/guoqu.jpg', lesson: 3,
-    ex_zh: '那边卖书包，我们过去看看吧。', ex_py: 'Nàbiān mài shūbāo, wǒmen guòqù kànkan ba.', ex_vn: 'Đằng kia có bán cặp sách, chúng ta sang đó xem thử nhé.',
-    exList: [
-      { zh: '那边卖书包，我们过去看看吧。', py: 'Nàbiān mài shūbāo, wǒmen guòqù kànkan ba.', vn: 'Đằng kia có bán cặp sách, chúng ta sang đó xem thử nhé.' },
-      { zh: '你过去拿一下，好吗？', py: 'Nǐ guòqù ná yíxià, hǎo ma?', vn: 'Bạn sang lấy giúp một chút được không?' }
+    "n": 12,
+    "zh": "过去",
+    "py": "guòqù",
+    "pos": "Động từ",
+    "vn": "sang, đi sang",
+    "hv": "quá khứ",
+    "em": "➡️",
+    "img": "/images/hsk2v3-bai-4/guoqu.jpg",
+    "lesson": 3,
+    "ex_zh": "那边卖书包，我们过去看看吧。",
+    "ex_py": "Nàbiān mài shūbāo, wǒmen guòqù kànkan ba.",
+    "ex_vn": "Đằng kia có bán cặp sách, chúng ta sang đó xem thử nhé.",
+    "exList": [
+      {
+        "zh": "那边卖书包，我们过去看看吧。",
+        "py": "Nàbiān mài shūbāo, wǒmen guòqù kànkan ba.",
+        "vn": "Đằng kia có bán cặp sách, chúng ta sang đó xem thử nhé."
+      },
+      {
+        "zh": "你过去拿一下，好吗？",
+        "py": "Nǐ guòqù ná yíxià, hǎo ma?",
+        "vn": "Bạn sang lấy giúp một chút được không?"
+      }
     ],
-    hanzi: [{ c: '去', p: 'qù', type: '会意字 · Chữ hội ý', st: 5, ord: '土 → 厶', rad: '厶 (khư)', mean: 'đi, đến', tip: '过去 (sang đó) ↔ 过来 (sang đây).', cf: '过来 (guòlái)', w: '过去 / 过来 / 出去' }]
+    "hanzi": [
+      {
+        "c": "去",
+        "p": "qù",
+        "type": "会意字 · Chữ hội ý",
+        "st": 5,
+        "ord": "土 → 厶",
+        "rad": "厶 (khư)",
+        "mean": "đi, đến",
+        "tip": "过去 (sang đó) ↔ 过来 (sang đây).",
+        "cf": "过来 (guòlái)",
+        "w": "过去 / 过来 / 出去"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "走过去",
+        "py": "zǒu guòqù",
+        "vn": "đi qua đó"
+      },
+      {
+        "zh": "拿过去",
+        "py": "ná guòqù",
+        "vn": "mang qua đó"
+      },
+      {
+        "zh": "过去看看",
+        "py": "guòqù kànkàn",
+        "vn": "qua đó xem"
+      },
+      {
+        "zh": "过去吧",
+        "py": "guòqù ba",
+        "vn": "qua đó đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 过去",
+        "m": "Đi ra xa người nói: 走过去"
+      },
+      {
+        "s": "过去 (ra xa mình) ↔ 过来 (lại gần mình)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn đi qua đó xem một chút.",
+        "answer": "你走过去看一下。",
+        "answerPy": "Nǐ zǒu guòqu kàn yíxià.",
+        "note": "过去 — đi ra xa người nói.",
+        "pair": "V + 过去"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái này bạn mang qua đó cho thầy nhé.",
+        "answer": "这个你拿过去给老师吧。",
+        "answerPy": "Zhège nǐ ná guòqu gěi lǎoshī ba.",
+        "note": "过去 (ra xa) ↔ 过来 (lại gần).",
+        "pair": "V + 过去"
+      }
+    ]
   },
   {
-    n: 13, zh: '绿色', py: 'lǜsè', pos: 'Danh từ', vn: 'màu xanh lá cây', hv: 'lục sắc', em: '🟢', img: '/images/hsk2v3-bai-4/luse.jpg', lesson: 3,
-    ex_zh: '我也觉得绿色的更好看。', ex_py: 'Wǒ yě juéde lǜsè de gèng hǎokàn.', ex_vn: 'Mẹ cũng thấy cái màu xanh lá cây đẹp hơn.',
-    exList: [
-      { zh: '我也觉得绿色的更好看。', py: 'Wǒ yě juéde lǜsè de gèng hǎokàn.', vn: 'Mẹ cũng thấy cái màu xanh lá cây đẹp hơn.' },
-      { zh: '绿色的书包在那边。', py: 'Lǜsè de shūbāo zài nàbiān.', vn: 'Cặp sách màu xanh lá ở đằng kia.' }
+    "n": 13,
+    "zh": "绿色",
+    "py": "lǜsè",
+    "pos": "Danh từ",
+    "vn": "màu xanh lá cây",
+    "hv": "lục sắc",
+    "em": "🟢",
+    "img": "/images/hsk2v3-bai-4/luse.jpg",
+    "lesson": 3,
+    "ex_zh": "我也觉得绿色的更好看。",
+    "ex_py": "Wǒ yě juéde lǜsè de gèng hǎokàn.",
+    "ex_vn": "Mẹ cũng thấy cái màu xanh lá cây đẹp hơn.",
+    "exList": [
+      {
+        "zh": "我也觉得绿色的更好看。",
+        "py": "Wǒ yě juéde lǜsè de gèng hǎokàn.",
+        "vn": "Mẹ cũng thấy cái màu xanh lá cây đẹp hơn."
+      },
+      {
+        "zh": "绿色的书包在那边。",
+        "py": "Lǜsè de shūbāo zài nàbiān.",
+        "vn": "Cặp sách màu xanh lá ở đằng kia."
+      }
     ],
-    hanzi: [{ c: '绿', p: 'lǜ', type: '形声字 · Chữ hình thanh', st: 11, ord: '纟 → 录', rad: '纟 (mịch – sợi tơ)', mean: 'màu xanh lá', tip: '绿 (xanh lá) khác 蓝 (xanh lam).', cf: '蓝 (lán – xanh lam)', w: '绿色 / 绿茶 / 很绿' }]
+    "hanzi": [
+      {
+        "c": "绿",
+        "p": "lǜ",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 11,
+        "ord": "纟 → 录",
+        "rad": "纟 (mịch – sợi tơ)",
+        "mean": "màu xanh lá",
+        "tip": "绿 (xanh lá) khác 蓝 (xanh lam).",
+        "cf": "蓝 (lán – xanh lam)",
+        "w": "绿色 / 绿茶 / 很绿"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "绿色的衣服",
+        "py": "lǜsè de yīfu",
+        "vn": "quần áo màu xanh lá"
+      },
+      {
+        "zh": "绿色的裤子",
+        "py": "lǜsè de kùzi",
+        "vn": "quần màu xanh lá"
+      },
+      {
+        "zh": "喜欢绿色",
+        "py": "xǐhuan lǜsè",
+        "vn": "thích màu xanh lá"
+      },
+      {
+        "zh": "绿色的书包",
+        "py": "lǜsè de shūbāo",
+        "vn": "cặp sách màu xanh lá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "绿色 + 的 + danh từ",
+        "m": "Cái gì màu xanh lá"
+      },
+      {
+        "s": "绿 có bộ 纟 (sợi tơ) — màu vốn nói về màu vải nhuộm"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái quần màu xanh lá này không đắt.",
+        "answer": "这条绿色的裤子不贵。",
+        "answerPy": "Zhè tiáo lǜsè de kùzi bú guì.",
+        "note": "绿色 + 的 + danh từ.",
+        "pair": "不 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn thích màu xanh lá hay màu đen?",
+        "answer": "你喜欢绿色还是黑色？",
+        "answerPy": "Nǐ xǐhuan lǜsè háishi hēisè?",
+        "note": "Câu hỏi lựa chọn không thêm 吗.",
+        "pair": "A 还是 B？"
+      }
+    ]
   },
   {
-    n: 14, zh: '黑色', py: 'hēisè', pos: 'Danh từ', vn: 'màu đen', hv: 'hắc sắc', em: '⚫', img: '/images/hsk2v3-bai-4/heise.jpg', lesson: 3,
-    ex_zh: '红色的、绿色的、黑色的，你想买哪个？', ex_py: 'Hóngsè de, lǜsè de, hēisè de, nǐ xiǎng mǎi nǎge?', ex_vn: 'Cái màu đỏ, màu xanh lá, màu đen, con muốn mua cái nào?',
-    exList: [
-      { zh: '红色的、绿色的、黑色的，你想买哪个？', py: 'Hóngsè de, lǜsè de, hēisè de, nǐ xiǎng mǎi nǎge?', vn: 'Cái màu đỏ, màu xanh lá, màu đen, con muốn mua cái nào?' },
-      { zh: '你已经有一条黑色的裤子了。', py: 'Nǐ yǐjīng yǒu yì tiáo hēisè de kùzi le.', vn: 'Con đã có một chiếc quần màu đen rồi.' }
+    "n": 14,
+    "zh": "黑色",
+    "py": "hēisè",
+    "pos": "Danh từ",
+    "vn": "màu đen",
+    "hv": "hắc sắc",
+    "em": "⚫",
+    "img": "/images/hsk2v3-bai-4/heise.jpg",
+    "lesson": 3,
+    "ex_zh": "红色的、绿色的、黑色的，你想买哪个？",
+    "ex_py": "Hóngsè de, lǜsè de, hēisè de, nǐ xiǎng mǎi nǎge?",
+    "ex_vn": "Cái màu đỏ, màu xanh lá, màu đen, con muốn mua cái nào?",
+    "exList": [
+      {
+        "zh": "红色的、绿色的、黑色的，你想买哪个？",
+        "py": "Hóngsè de, lǜsè de, hēisè de, nǐ xiǎng mǎi nǎge?",
+        "vn": "Cái màu đỏ, màu xanh lá, màu đen, con muốn mua cái nào?"
+      },
+      {
+        "zh": "你已经有一条黑色的裤子了。",
+        "py": "Nǐ yǐjīng yǒu yì tiáo hēisè de kùzi le.",
+        "vn": "Con đã có một chiếc quần màu đen rồi."
+      }
     ],
-    hanzi: [{ c: '黑', p: 'hēi', type: '会意字 · Chữ hội ý', st: 12, ord: '口 → 土 → 灬', rad: '黑 (hắc)', mean: 'đen', tip: 'Phần dưới là bộ 灬 (lửa) — khói lửa làm ám đen.', cf: '', w: '黑色 / 黑板 / 天黑了' }]
+    "hanzi": [
+      {
+        "c": "黑",
+        "p": "hēi",
+        "type": "会意字 · Chữ hội ý",
+        "st": 12,
+        "ord": "口 → 土 → 灬",
+        "rad": "黑 (hắc)",
+        "mean": "đen",
+        "tip": "Phần dưới là bộ 灬 (lửa) — khói lửa làm ám đen.",
+        "cf": "",
+        "w": "黑色 / 黑板 / 天黑了"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "黑色的裤子",
+        "py": "hēisè de kùzi",
+        "vn": "quần màu đen"
+      },
+      {
+        "zh": "黑色的衣服",
+        "py": "hēisè de yīfu",
+        "vn": "quần áo màu đen"
+      },
+      {
+        "zh": "喜欢黑色",
+        "py": "xǐhuan hēisè",
+        "vn": "thích màu đen"
+      },
+      {
+        "zh": "黑色的书包",
+        "py": "hēisè de shūbāo",
+        "vn": "cặp sách màu đen"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "黑色 + 的 + danh từ",
+        "m": "Cái gì màu đen"
+      },
+      {
+        "s": "黑色 ↔ 白色",
+        "m": "Đen ↔ trắng"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bố tôi thích mặc quần áo màu đen.",
+        "answer": "我爸爸喜欢穿黑色的衣服。",
+        "answerPy": "Wǒ bàba xǐhuan chuān hēisè de yīfu.",
+        "note": "黑色 ↔ 白色 — đen và trắng.",
+        "pair": "喜欢 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái cặp màu đen này tôi đã mua ở trung tâm thương mại.",
+        "answer": "这个黑色的书包我在商场买的。",
+        "answerPy": "Zhège hēisè de shūbāo wǒ zài shāngchǎng mǎi de.",
+        "note": "在 + nơi chốn + động từ.",
+        "pair": "在……买"
+      }
+    ]
   },
   {
-    n: 15, zh: '更', py: 'gèng', pos: 'Phó từ', vn: 'càng, hơn', hv: 'cánh', em: '⬆️', lesson: 3,
-    ex_zh: '我也觉得绿色的更好看。', ex_py: 'Wǒ yě juéde lǜsè de gèng hǎokàn.', ex_vn: 'Mình cũng thấy cái màu xanh lá đẹp hơn.',
-    exList: [
-      { zh: '我也觉得绿色的更好看。', py: 'Wǒ yě juéde lǜsè de gèng hǎokàn.', vn: 'Mình cũng thấy cái màu xanh lá đẹp hơn.' },
-      { zh: '我更喜欢吃妈妈做的。', py: 'Wǒ gèng xǐhuan chī māma zuò de.', vn: 'Tôi thích ăn món mẹ nấu hơn.' }
+    "n": 15,
+    "zh": "更",
+    "py": "gèng",
+    "pos": "Phó từ",
+    "vn": "càng, hơn",
+    "hv": "cánh",
+    "em": "⬆️",
+    "lesson": 3,
+    "ex_zh": "我也觉得绿色的更好看。",
+    "ex_py": "Wǒ yě juéde lǜsè de gèng hǎokàn.",
+    "ex_vn": "Mình cũng thấy cái màu xanh lá đẹp hơn.",
+    "exList": [
+      {
+        "zh": "我也觉得绿色的更好看。",
+        "py": "Wǒ yě juéde lǜsè de gèng hǎokàn.",
+        "vn": "Mình cũng thấy cái màu xanh lá đẹp hơn."
+      },
+      {
+        "zh": "我更喜欢吃妈妈做的。",
+        "py": "Wǒ gèng xǐhuan chī māma zuò de.",
+        "vn": "Tôi thích ăn món mẹ nấu hơn."
+      }
     ],
-    hanzi: [{ c: '更', p: 'gèng', type: '会意字 · Chữ hội ý', st: 7, ord: '一 → 日 → 乂', rad: '一 (nhất)', mean: 'càng, hơn', tip: '更 + tính từ: 更好、更漂亮、更便宜。', cf: '', w: '更好看 / 更便宜 / 更喜欢' }]
+    "hanzi": [
+      {
+        "c": "更",
+        "p": "gèng",
+        "type": "会意字 · Chữ hội ý",
+        "st": 7,
+        "ord": "一 → 日 → 乂",
+        "rad": "一 (nhất)",
+        "mean": "càng, hơn",
+        "tip": "更 + tính từ: 更好、更漂亮、更便宜。",
+        "cf": "",
+        "w": "更好看 / 更便宜 / 更喜欢"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "更好",
+        "py": "gèng hǎo",
+        "vn": "tốt hơn"
+      },
+      {
+        "zh": "更贵",
+        "py": "gèng guì",
+        "vn": "đắt hơn"
+      },
+      {
+        "zh": "更喜欢",
+        "py": "gèng xǐhuan",
+        "vn": "thích hơn"
+      },
+      {
+        "zh": "更漂亮",
+        "py": "gèng piàoliang",
+        "vn": "đẹp hơn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "更 + tính từ",
+        "m": "Hơn — so với cái vừa nhắc: 这条更好"
+      },
+      {
+        "s": "更 đứng TRƯỚC tính từ, không đứng sau"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái quần này đẹp hơn, nhưng cũng đắt hơn.",
+        "answer": "这条裤子更漂亮，但也更贵。",
+        "answerPy": "Zhè tiáo kùzi gèng piàoliang, dàn yě gèng guì.",
+        "note": "更 đứng trước tính từ.",
+        "pair": "……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thích màu trắng hơn.",
+        "answer": "我更喜欢白色。",
+        "answerPy": "Wǒ gèng xǐhuan báisè.",
+        "note": "更 cũng dùng được trước động từ chỉ cảm xúc.",
+        "pair": "更 + V"
+      }
+    ]
   },
   {
-    n: 16, zh: '颜色', py: 'yánsè', pos: 'Danh từ', vn: 'màu sắc', hv: 'nhan sắc', em: '🎨', img: '/images/hsk2v3-bai-4/yanse.jpg', lesson: 4,
-    ex_zh: '商场里的衣服颜色很多。', ex_py: 'Shāngchǎng li de yīfu yánsè hěn duō.', ex_vn: 'Quần áo trong trung tâm thương mại có rất nhiều màu sắc.',
-    exList: [
-      { zh: '商场里的衣服颜色很多。', py: 'Shāngchǎng li de yīfu yánsè hěn duō.', vn: 'Quần áo trong trung tâm thương mại có rất nhiều màu sắc.' },
-      { zh: '你喜欢什么颜色？', py: 'Nǐ xǐhuan shénme yánsè?', vn: 'Bạn thích màu gì?' }
+    "n": 16,
+    "zh": "颜色",
+    "py": "yánsè",
+    "pos": "Danh từ",
+    "vn": "màu sắc",
+    "hv": "nhan sắc",
+    "em": "🎨",
+    "img": "/images/hsk2v3-bai-4/yanse.jpg",
+    "lesson": 4,
+    "ex_zh": "商场里的衣服颜色很多。",
+    "ex_py": "Shāngchǎng li de yīfu yánsè hěn duō.",
+    "ex_vn": "Quần áo trong trung tâm thương mại có rất nhiều màu sắc.",
+    "exList": [
+      {
+        "zh": "商场里的衣服颜色很多。",
+        "py": "Shāngchǎng li de yīfu yánsè hěn duō.",
+        "vn": "Quần áo trong trung tâm thương mại có rất nhiều màu sắc."
+      },
+      {
+        "zh": "你喜欢什么颜色？",
+        "py": "Nǐ xǐhuan shénme yánsè?",
+        "vn": "Bạn thích màu gì?"
+      }
     ],
-    hanzi: [{ c: '颜', p: 'yán', type: '形声字 · Chữ hình thanh', st: 15, ord: '立 → 厂 → 彡 → 页', rad: '页 (hiệt – đầu)', mean: 'sắc mặt, màu', tip: 'Vốn chỉ sắc mặt, sau mở rộng thành "màu sắc".', cf: '', w: '颜色 / 什么颜色' }]
+    "hanzi": [
+      {
+        "c": "颜",
+        "p": "yán",
+        "type": "形声字 · Chữ hình thanh",
+        "st": 15,
+        "ord": "立 → 厂 → 彡 → 页",
+        "rad": "页 (hiệt – đầu)",
+        "mean": "sắc mặt, màu",
+        "tip": "Vốn chỉ sắc mặt, sau mở rộng thành \"màu sắc\".",
+        "cf": "",
+        "w": "颜色 / 什么颜色"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "什么颜色",
+        "py": "shénme yánsè",
+        "vn": "màu gì"
+      },
+      {
+        "zh": "喜欢的颜色",
+        "py": "xǐhuan de yánsè",
+        "vn": "màu yêu thích"
+      },
+      {
+        "zh": "这个颜色",
+        "py": "zhège yánsè",
+        "vn": "màu này"
+      },
+      {
+        "zh": "几种颜色",
+        "py": "jǐ zhǒng yánsè",
+        "vn": "mấy màu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "什么 + 颜色？",
+        "m": "Màu gì: 你喜欢什么颜色？"
+      },
+      {
+        "s": "颜 + 色",
+        "m": "Sắc (色) diện (颜) — hai chữ cùng nghĩa ghép lại"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn thích màu gì?",
+        "answer": "你喜欢什么颜色？",
+        "answerPy": "Nǐ xǐhuan shénme yánsè?",
+        "note": "Câu đã có 什么 thì không thêm 吗.",
+        "pair": "……什么？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Màu này rất đẹp, tôi muốn thử một chút.",
+        "answer": "这个颜色很漂亮，我想试一下。",
+        "answerPy": "Zhège yánsè hěn piàoliang, wǒ xiǎng shì yíxià.",
+        "note": "颜 + 色 — hai chữ cùng nghĩa ghép lại.",
+        "pair": "想 + V"
+      }
+    ]
   }
 ];
 

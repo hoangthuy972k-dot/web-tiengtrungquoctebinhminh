@@ -48,6 +48,16 @@ fs.readdirSync(DIR).filter((f) => /\.html$/.test(f)).sort().forEach(function (f)
     s = s.replace(re, function (_m, q) { return q + '/' + rel + '?v=' + STAMP + q; });
   });
 
+  // File du lieu rieng cua tung bai: dong dau bang chinh noi dung file do,
+  // de sua noi dung mot bai khong lam het han cache 112 bai con lai.
+  const reData = new RegExp('(["\'])(/js/[a-z0-9-]+-data\\.js)(\\?[^"\']*)?\\1', 'g');
+  s = s.replace(reData, function (m, q, duong) {
+    const fp = path.join(ROOT, 'public', duong.replace(/^\//, ''));
+    if (!fs.existsSync(fp)) return m;
+    const dau = crypto.createHash('sha1').update(fs.readFileSync(fp)).digest('hex').slice(0, 10);
+    return q + duong + '?v=rd' + dau + q;
+  });
+
   if (s !== truoc) { if (THAT) fs.writeFileSync(p, s); doi++; } else nguyen++;
 });
 

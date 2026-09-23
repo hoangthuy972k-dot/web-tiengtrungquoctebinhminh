@@ -1,22 +1,29 @@
-/* Gan noi dung 搭配 / 句型 / cap lien tu vao mot file du lieu bai HSK 4.
-   Chay:  node ap-noidung.js <so bai> [--that]
+/* Gan noi dung 搭配 / 句型 / cap lien tu vao mot file du lieu bai hoc.
+   Chay:  node tools/tu-vung/ap-noi-dung.js <cap> <so bai> [--that]
+          node tools/tu-vung/ap-noi-dung.js hsk3 5 --that
+   Bo <cap> thi mac dinh hsk4 (cach goi cu van chay duoc).
    Khong --that thi chi bao cao, khong ghi file.
 
    Vi sao sua bang script chu khong go tay: pinyin cua cot giua duoc ghep tu
-   tu dien rut ra tu chinh du lieu bai hoc (py.js), nen khong the go sai dau. */
+   tu dien rut ra tu chinh du lieu bai hoc (pinyin.js), nen khong go sai dau. */
 const fs = require('fs');
 const path = require('path');
 const PY = require('./pinyin.js');
 const PAIRS = require('./khung-cau.js');
 
-const SO = process.argv[2];
+const arg = process.argv.slice(2).filter(function (x) { return x.indexOf('--') !== 0; });
+const CAP = /^hsk\d$/.test(arg[0]) ? arg[0] : 'hsk4';
+const SO = /^hsk\d$/.test(arg[0]) ? arg[1] : arg[0];
 const THAT = process.argv.includes('--that');
-const FILE = path.join(process.cwd(), 'public', 'js', 'hsk4-bai-' + SO + '-data.js');
-const NOI_DUNG = require(path.join(process.cwd(), 'tools/tu-vung/noi-dung/bai-' + SO + '.js'));
+// hsk4 giu ten file cu (bai-N.js), cac cap khac co tien to
+const TEN = CAP === 'hsk4' ? '' : CAP + '-';
+const FILE = path.join(process.cwd(), 'public', 'js', CAP + '-bai-' + SO + '-data.js');
+const ND = path.join(process.cwd(), 'tools/tu-vung/noi-dung');
+const NOI_DUNG = require(path.join(ND, TEN + 'bai-' + SO + '.js'));
 let VIET_LAI = {};
 let PY_TAY = {};
-try { PY_TAY = require(path.join(process.cwd(), 'tools/tu-vung/noi-dung/pinyin-' + SO + '.json')); } catch (e) { /* chua co */ }
-try { VIET_LAI = require(path.join(process.cwd(), 'tools/tu-vung/noi-dung/viet-lai-' + SO + '.js')); } catch (e) { /* bai chua co phan viet lai */ }
+try { PY_TAY = require(path.join(ND, TEN + 'pinyin-' + SO + '.json')); } catch (e) { /* chua co */ }
+try { VIET_LAI = require(path.join(ND, TEN + 'viet-lai-' + SO + '.js')); } catch (e) { /* bai chua co phan viet lai */ }
 
 const src = fs.readFileSync(FILE, 'utf8');
 const vocabData = (new Function(src + '; return vocabData'))();
@@ -59,7 +66,7 @@ vocabData.forEach(function (v) {
   });
 });
 
-console.log('BAI ' + SO);
+console.log(CAP.toUpperCase() + ' BAI ' + SO);
 console.log('  hang 搭配 da gan : ' + soCollo);
 console.log('  cau truc 句型    : ' + soPattern);
 console.log('  cau viet lai     : ' + soVietLai);

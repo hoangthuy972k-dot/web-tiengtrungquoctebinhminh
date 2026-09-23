@@ -3,312 +3,1474 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'发烧',py:'fā shāo',pos:'Động từ',vn:'sốt', hv: 'phát thiêu',em:'🤒',lesson:1,
-   explain:['Thân nhiệt cơ thể tăng cao hơn bình thường, thường là dấu hiệu của bệnh.'],
-   usage:'Động từ ly hợp; thường đi cùng 有点儿/一点儿: 有点儿发烧.',
-   collo:['有点儿发烧','发高烧','退烧'],
-   ex_zh:'前几天有点儿发烧，现在好多了。',ex_py:'Qián jǐ tiān yǒudiǎnr fā shāo, xiànzài hǎoduō le.',ex_vn:'Mấy hôm trước hơi sốt, giờ đỡ nhiều rồi.',
-   exList:[
-     {zh:'前几天有点儿发烧，现在好多了。',py:'Qián jǐ tiān yǒudiǎnr fā shāo, xiànzài hǎoduō le.',vn:'Mấy hôm trước hơi sốt, giờ đỡ nhiều rồi.'},
-     {zh:'你不是发烧了吗？怎么还来上班？',py:'Nǐ bú shì fā shāo le ma? Zěnme hái lái shàngbān?',vn:'Bạn chẳng phải bị sốt sao? Sao vẫn đến làm vậy?'},
-     {zh:'我是不是发烧了？怎么总是觉得冷？',py:'Wǒ shì bu shì fā shāo le? Zěnme zǒngshì juéde lěng?',vn:'Có phải tôi bị sốt không? Sao cứ thấy lạnh mãi vậy?'},
-   ],
-   hanzi:[
-     {c:'烧',p:'shāo',type:'左右结构 · Trái-phải',st:10,ord:'火 trái → 尧 phải',rad:'火 (hỏa – lửa)',mean:'đốt cháy; sốt',
-      tip:'火(lửa) + 尧(cao ngất) → lửa cháy cao, mở rộng nghĩa cơ thể "nóng như lửa" = SỐT.',
-      cf:'浇 (jiāo – "tưới nước", có 氵 thay vì 火")',w:'发烧 / 退烧'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì tôi hơi sốt nên hôm nay tôi không đi làm.',answer:'因为我有点儿发烧，所以今天不去上班。',answerPy:'Yīnwèi wǒ yǒudiǎnr fā shāo, suǒyǐ jīntiān bú qù shàngbān.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu con bạn bị sốt thì nên đưa đi bệnh viện.',answer:'如果你的孩子发烧了，就应该带他去医院。',answerPy:'Rúguǒ nǐ de háizi fā shāo le, jiù yīnggāi dài tā qù yīyuàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 带 đã học ở Bài 1).'},
-   ]},
-
-  {n:2,zh:'为',py:'wèi',pos:'Giới từ',vn:'cho, vì', hv: 'vị',em:'🎁',lesson:1,
-   explain:['Giới từ chỉ đối tượng hưởng lợi hoặc mục đích của hành động.'],
-   usage:'Giới từ, đứng trước đối tượng: 为 + [đối tượng] + động từ (为你买).',
-   collo:['为你买','为朋友准备','为孩子做饭'],
-   ex_zh:'这是我为你买的绿茶，很不错。',ex_py:'Zhè shì wǒ wèi nǐ mǎi de lǜchá, hěn búcuò.',ex_vn:'Đây là trà xanh tôi mua cho bạn, ngon lắm đấy.',
-   exList:[
-     {zh:'这是我为你买的绿茶，很不错。',py:'Zhè shì wǒ wèi nǐ mǎi de lǜchá, hěn búcuò.',vn:'Đây là trà xanh tôi mua cho bạn, ngon lắm đấy.'},
-     {zh:'为什么？怎么了？',py:'Wèi shénme? Zěnme le?',vn:'Sao vậy? Có chuyện gì thế?'},
-     {zh:'妈妈每天都为我们做饭。',py:'Māma měitiān dōu wèi wǒmen zuò fàn.',vn:'Mẹ mỗi ngày đều nấu cơm cho chúng tôi.'},
-   ],
-   hanzi:[
-     {c:'为',p:'wèi',type:'独体字 · Chữ đơn',st:4,ord:'nét liền',rad:'丶 (chủ)',mean:'vì, cho',
-      tip:'Chữ giản thể từ 爲 (hình con voi đang làm việc) → nghĩa "làm việc VÌ ai đó", mở rộng thành giới từ CHO/VÌ.',
-      cf:'办 (bàn – "làm việc", có 力 hai bên")',w:'为你 / 为了 / 因为'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đây là bánh kem tôi mua cho bạn.',answer:'这是我为你买的蛋糕。',answerPy:'Zhè shì wǒ wèi nǐ mǎi de dàngāo.',
-      note:'为 + đối tượng đứng trước động từ (ôn lại 蛋糕 đã học ở Bài 4).'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn vui thì tôi làm gì cho bạn cũng được.',answer:'只要你高兴，我为你做什么都可以。',answerPy:'Zhǐyào nǐ gāoxìng, wǒ wèi nǐ zuò shénme dōu kěyǐ.',
-      note:'只要……就…… (ở đây dùng 都) diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:3,zh:'照顾',py:'zhàogù',pos:'Động từ',vn:'chăm sóc', hv: 'chiếu cố',em:'🤲',lesson:2,
-   explain:['Quan tâm, trông nom, giúp đỡ ai đó, thường dùng khi người đó ốm đau hoặc còn nhỏ.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 照顾 + [người] (照顾他).',
-   collo:['照顾他','在家照顾','互相照顾'],
-   ex_zh:'我儿子生病了，我要在家照顾他。',ex_py:'Wǒ érzi shēng bìng le, wǒ yào zài jiā zhàogù tā.',ex_vn:'Con trai tôi bị ốm, tôi phải ở nhà chăm sóc cháu.',
-   exList:[
-     {zh:'我儿子生病了，我要在家照顾他。',py:'Wǒ érzi shēng bìng le, wǒ yào zài jiā zhàogù tā.',vn:'Con trai tôi bị ốm, tôi phải ở nhà chăm sóc cháu.'},
-     {zh:'我感冒好了，明天你不用来照顾我了。',py:'Wǒ gǎnmào hǎo le, míngtiān nǐ búyòng lái zhàogù wǒ le.',vn:'Tôi khỏi cảm rồi, ngày mai bạn không cần đến chăm sóc tôi nữa.'},
-     {zh:'谢谢你这几天一直照顾我。',py:'Xièxie nǐ zhè jǐ tiān yìzhí zhàogù wǒ.',vn:'Cảm ơn bạn mấy hôm nay đã luôn chăm sóc tôi.'},
-   ],
-   hanzi:[
-     {c:'顾',p:'gù',type:'左右结构 · Trái-phải',st:10,ord:'厄 trái → 页 phải',rad:'页 (hiệt – đầu)',mean:'chăm sóc, đoái hoài',
-      tip:'页(đầu, ý chỉ ngoảnh đầu nhìn) → NGOẢNH ĐẦU quan tâm đến ai đó = CHĂM SÓC.',
-      cf:'雇 (gù – "thuê", có 隹 thay vì 页")',w:'照顾 / 顾客'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi phải ở nhà chăm sóc con trai bị ốm.',answer:'我要在家照顾生病的儿子。',answerPy:'Wǒ yào zài jiā zhàogù shēng bìng de érzi.',
-      note:'照顾 + tân ngữ chỉ người.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn chăm sóc mẹ tốt thì mẹ sẽ nhanh khỏe lại.',answer:'只要你把妈妈照顾好，她就会很快好起来。',answerPy:'Zhǐyào nǐ bǎ māma zhàogù hǎo, tā jiù huì hěn kuài hǎoqǐlai.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 把 đã học ở Bài 2).'},
-   ]},
-
-  {n:4,zh:'用',py:'yòng',pos:'Động từ',vn:'cần, dùng', hv: 'dụng',em:'❓',lesson:2,
-   explain:['Cần thiết phải làm gì; thường dùng ở dạng phủ định 不用 (không cần).'],
-   usage:'Động từ; 不用 + V = không cần làm gì.',
-   collo:['不用','不用去','有用'],
-   ex_zh:'不用去医院，昨天吃了感冒药，现在好一些了。',ex_py:'Búyòng qù yīyuàn, zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.',ex_vn:'Không cần đi bệnh viện đâu, hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi.',
-   exList:[
-     {zh:'不用去医院，昨天吃了感冒药，现在好一些了。',py:'Búyòng qù yīyuàn, zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.',vn:'Không cần đi bệnh viện đâu, hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi.'},
-     {zh:'那不用再吃药了。',py:'Nà búyòng zài chī yào le.',vn:'Vậy thì không cần uống thuốc nữa.'},
-     {zh:'医生，我的病用吃药吗？',py:'Yīshēng, wǒ de bìng yòng chī yào ma?',vn:'Bác sĩ, bệnh của tôi có cần uống thuốc không?'},
-   ],
-   hanzi:[
-     {c:'用',p:'yòng',type:'独体字 · Chữ đơn (tượng hình)',st:5,ord:'nét liền, hình cái thùng/ống',rad:'用',mean:'dùng, cần',
-      tip:'Chữ tượng hình mô phỏng một vật dụng (ống/thùng) → nghĩa DÙNG, mở rộng 不用 = KHÔNG CẦN.',
-      cf:'甩 (shuǎi – "vung, ném", thêm 1 nét vào 用")',w:'不用 / 用了 / 有用'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Không cần lo lắng, uống thuốc rồi sẽ khỏe hơn.',answer:'不用着急，吃了药就会好一些。',answerPy:'Búyòng zháojí, chīle yào jiù huì hǎo yìxiē.',
-      note:'不用 + V diễn tả không cần thiết (ôn lại 着急 đã học ở Bài 1).'},
-     {promptLang:'vi',prompt:'Nếu bạn không cảm thấy đau nữa thì không cần đi khám nữa.',answer:'如果你不觉得疼了，就不用再去看病了。',answerPy:'Rúguǒ nǐ bù juéde téng le, jiù búyòng zài qù kànbìng le.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 疼 đã học ở Bài 2).'},
-   ]},
-
-  {n:5,zh:'感冒',py:'gǎnmào',pos:'Động từ',vn:'bị cảm', hv: 'cảm mạo',em:'🤧',lesson:2,
-   explain:['Bệnh cảm cúm thông thường, do nhiễm lạnh hoặc vi rút.'],
-   usage:'Động từ ly hợp; cũng dùng làm danh từ trong 感冒药 (thuốc cảm).',
-   collo:['感冒药','感冒了','没感冒'],
-   ex_zh:'昨天吃了感冒药，现在好一些了。',ex_py:'Zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.',ex_vn:'Hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi.',
-   exList:[
-     {zh:'昨天吃了感冒药，现在好一些了。',py:'Zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.',vn:'Hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi.'},
-     {zh:'前天感冒，昨天发烧，头也越来越疼。',py:'Qiántiān gǎnmào, zuótiān fā shāo, tóu yě yuè lái yuè téng.',vn:'Hôm kia bị cảm, hôm qua sốt, đầu cũng đau ngày càng nhiều.'},
-     {zh:'我感冒好了，明天你不用来照顾我了。',py:'Wǒ gǎnmào hǎo le, míngtiān nǐ búyòng lái zhàogù wǒ le.',vn:'Tôi khỏi cảm rồi, ngày mai bạn không cần đến chăm sóc tôi nữa.'},
-   ],
-   hanzi:[
-     {c:'冒',p:'mào',type:'上下结构 · Trên-dưới',st:9,ord:'冃 trên → 目 dưới',rad:'冂 (quynh)',mean:'mạo hiểm; cảm (bệnh)',
-      tip:'冃(mũ trùm) trên 目(mắt) → hình ảnh khói/hơi xông lên che mắt, mở rộng nghĩa "nhiễm phải" = CẢM.',
-      cf:'帽 (mào – "cái mũ", có bộ 巾")',w:'感冒 / 感冒药'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy tôi bị cảm nhưng vẫn phải đi làm.',answer:'虽然我感冒了，但是还是要上班。',answerPy:'Suīrán wǒ gǎnmào le, dànshì háishi yào shàngbān.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn nhiều nghỉ ngơi thì cảm sẽ nhanh khỏi.',answer:'只要你多休息，感冒就会好得快。',answerPy:'Zhǐyào nǐ duō xiūxi, gǎnmào jiù huì hǎo de kuài.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:6,zh:'季节',py:'jìjié',pos:'Danh từ',vn:'mùa', hv: 'quý tiết',em:'🍂',lesson:3,
-   explain:['Khoảng thời gian trong năm có đặc điểm khí hậu riêng (xuân, hạ, thu, đông).'],
-   usage:'Danh từ; thường hỏi bằng 哪个季节 (mùa nào).',
-   collo:['哪个季节','四个季节','最喜欢的季节'],
-   ex_zh:'你最喜欢哪个季节？',ex_py:'Nǐ zuì xǐhuan nǎge jìjié?',ex_vn:'Bạn thích mùa nào nhất?',
-   exList:[
-     {zh:'你最喜欢哪个季节？',py:'Nǐ zuì xǐhuan nǎge jìjié?',vn:'Bạn thích mùa nào nhất?'},
-     {zh:'一年有四个季节：春天、夏天、秋天、冬天。',py:'Yì nián yǒu sì ge jìjié: chūntiān, xiàtiān, qiūtiān, dōngtiān.',vn:'Một năm có bốn mùa: xuân, hạ, thu, đông.'},
-     {zh:'每个季节我都喜欢。',py:'Měi ge jìjié wǒ dōu xǐhuan.',vn:'Mùa nào tôi cũng thích.'},
-   ],
-   hanzi:[
-     {c:'季',p:'jì',type:'上下结构 · Trên-dưới',st:8,ord:'禾 trên → 子 dưới',rad:'子 (tử – con)',mean:'mùa, thời kỳ',
-      tip:'禾(lúa) + 子(con, nhỏ) → mùa vụ nhỏ trong năm, như một "đứa con" của năm = MÙA.',
-      cf:'李 (lǐ – "họ Lý; quả mận", cũng có phần 子")',w:'季节 / 四季'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trong bốn mùa, tôi thích mùa xuân nhất.',answer:'四个季节里，我最喜欢春天。',answerPy:'Sì ge jìjié lǐ, wǒ zuì xǐhuan chūntiān.',
-      note:'最 + động từ/tính từ diễn tả mức độ cao nhất.'},
-     {promptLang:'vi',prompt:'Mỗi mùa đều có cái đẹp riêng của nó.',answer:'每个季节都有自己的美。',answerPy:'Měi ge jìjié dōu yǒu zìjǐ de měi.',
-      note:'每……都…… diễn tả tính phổ quát.'},
-   ]},
-
-  {n:7,zh:'当然',py:'dāngrán',pos:'Phó từ',vn:'đương nhiên, dĩ nhiên', hv: 'đương nhiên',em:'👍',lesson:3,
-   explain:['Điều hiển nhiên, không cần nghi ngờ.'],
-   usage:'Phó từ, thường đứng đầu câu trả lời hoặc trước 是: 当然 + 是 + [câu trả lời].',
-   collo:['当然是','当然可以','当然好'],
-   ex_zh:'当然是春天，天气不那么冷了，草和树都绿了，花也开了。',ex_py:'Dāngrán shì chūntiān, tiānqì bú nàme lěng le, cǎo hé shù dōu lǜ le, huā yě kāi le.',ex_vn:'Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa, cỏ và cây đều xanh rồi, hoa cũng nở rồi.',
-   exList:[
-     {zh:'当然是春天，天气不那么冷了，草和树都绿了，花也开了。',py:'Dāngrán shì chūntiān, tiānqì bú nàme lěng le, cǎo hé shù dōu lǜ le, huā yě kāi le.',vn:'Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa, cỏ và cây đều xanh rồi, hoa cũng nở rồi.'},
-     {zh:'当然可以，你随便看。',py:'Dāngrán kěyǐ, nǐ suíbiàn kàn.',vn:'Đương nhiên được, bạn cứ xem thoải mái.'},
-     {zh:'这个问题我当然知道答案。',py:'Zhège wèntí wǒ dāngrán zhīdào dá\'àn.',vn:'Câu hỏi này tôi đương nhiên biết đáp án.'},
-   ],
-   hanzi:[
-     {c:'当',p:'dāng',type:'上下结构 · Trên-dưới',st:6,ord:'⺌ trên → 彐+田 dưới',rad:'田 (điền – ruộng)',mean:'đương, nên; đương nhiên',
-      tip:'Hình ảnh hai thửa ruộng đối diện tương xứng nhau → nghĩa "tương xứng, nên vậy", mở rộng thành ĐƯƠNG NHIÊN.',
-      cf:'常 (cháng – "thường xuyên", không có bộ 田")',w:'当然 / 应当'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đương nhiên tôi thích mùa hè nhất, vì có thể mặc váy đẹp.',answer:'我当然最喜欢夏天，因为可以穿漂亮的裙子。',answerPy:'Wǒ dāngrán zuì xǐhuan xiàtiān, yīnwèi kěyǐ chuān piàoliang de qúnzi.',
-      note:'因为 giải thích lý do cho câu trả lời.'},
-     {promptLang:'vi',prompt:'Nếu bạn hỏi tôi thì đương nhiên tôi sẽ giúp bạn.',answer:'如果你问我，我当然会帮你。',answerPy:'Rúguǒ nǐ wèn wǒ, wǒ dāngrán huì bāng nǐ.',
-      note:'如果……就/会…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:8,zh:'春(天)',py:'chūn(tiān)',pos:'Danh từ',vn:'mùa xuân', hv: 'xuân thiên',em:'🌸',lesson:3,
-   explain:['Mùa đầu tiên trong năm, sau mùa đông, thời tiết ấm dần, cây cối đâm chồi.'],
-   usage:'Danh từ; thường nói 春天 (đầy đủ) hoặc 春 (trong từ ghép/thơ).',
-   collo:['春天到了','喜欢春天','春天的花'],
-   ex_zh:'当然是春天，天气不那么冷了。',ex_py:'Dāngrán shì chūntiān, tiānqì bú nàme lěng le.',ex_vn:'Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa.',
-   exList:[
-     {zh:'当然是春天，天气不那么冷了。',py:'Dāngrán shì chūntiān, tiānqì bú nàme lěng le.',vn:'Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa.'},
-     {zh:'春天到了，花都开了。',py:'Chūntiān dào le, huā dōu kāi le.',vn:'Mùa xuân đến rồi, hoa đều nở cả rồi.'},
-     {zh:'我喜欢3月，因为天气不那么冷了。',py:'Wǒ xǐhuan sān yuè, yīnwèi tiānqì bú nàme lěng le.',vn:'Tôi thích tháng 3, vì thời tiết không còn lạnh nữa.'},
-   ],
-   hanzi:[
-     {c:'春',p:'chūn',type:'上下结构 · Trên-dưới',st:9,ord:'三+人 trên → 日 dưới',rad:'日 (nhật – mặt trời)',mean:'mùa xuân',
-      tip:'Hình ảnh cây cỏ mọc lên đón ánh mặt trời 日 → MÙA XUÂN, mùa cây cối sinh sôi.',
-      cf:'泰 (tài – "yên ổn, hanh thông", nét trên tương tự")',w:'春天 / 春节'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mùa xuân đến rồi, cỏ và cây đều xanh rồi.',answer:'春天到了，草和树都绿了。',answerPy:'Chūntiān dào le, cǎo hé shù dōu lǜ le.',
-      note:'了 diễn tả sự thay đổi/tình huống mới (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Vì mùa xuân trời không lạnh nên mọi người thích ra ngoài đi dạo.',answer:'因为春天天气不冷，所以大家喜欢出去走走。',answerPy:'Yīnwèi chūntiān tiānqì bù lěng, suǒyǐ dàjiā xǐhuan chūqu zǒuzou.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:9,zh:'草',py:'cǎo',pos:'Danh từ',vn:'cỏ', hv: 'thảo',em:'🌿',lesson:3,
-   explain:['Loài thực vật thân mềm, mọc thấp, thường phủ xanh mặt đất.'],
-   usage:'Danh từ; thường xuất hiện cùng 树 (cây), 绿 (xanh): 草和树都绿了.',
-   collo:['草地','草和树','绿草'],
-   ex_zh:'草和树都绿了，花也开了。',ex_py:'Cǎo hé shù dōu lǜ le, huā yě kāi le.',ex_vn:'Cỏ và cây đều xanh rồi, hoa cũng nở rồi.',
-   exList:[
-     {zh:'草和树都绿了，花也开了。',py:'Cǎo hé shù dōu lǜ le, huā yě kāi le.',vn:'Cỏ và cây đều xanh rồi, hoa cũng nở rồi.'},
-     {zh:'树和草都绿了，天气真好！',py:'Shù hé cǎo dōu lǜ le, tiānqì zhēn hǎo!',vn:'Cây và cỏ đều xanh rồi, thời tiết đẹp thật!'},
-     {zh:'我们要多出来走走，在草地上坐坐。',py:'Wǒmen yào duō chūlai zǒuzou, zài cǎodì shang zuòzuo.',vn:'Chúng ta nên ra ngoài đi dạo nhiều, ngồi trên bãi cỏ.'},
-   ],
-   hanzi:[
-     {c:'草',p:'cǎo',type:'上下结构 · Trên-dưới',st:9,ord:'艹 trên → 早 dưới',rad:'艹 (thảo – cỏ)',mean:'cỏ',
-      tip:'艹(bộ cỏ) + 早(sớm, mọc sớm) → loài cây mọc sớm và nhanh = CỎ.',
-      cf:'早 (zǎo – "sớm", không có bộ 艹")',w:'草地 / 绿草'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cỏ và cây đều xanh rồi, mùa xuân đến thật rồi.',answer:'草和树都绿了，春天真的到了。',answerPy:'Cǎo hé shù dōu lǜ le, chūntiān zhēnde dào le.',
-      note:'了 diễn tả sự thay đổi (ôn lại 春天 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bãi cỏ khô rồi thì chúng ta không nên ngồi ở đó nữa.',answer:'如果草地干了，我们就不要坐在那儿了。',answerPy:'Rúguǒ cǎodì gān le, wǒmen jiù bú yào zuò zài nàr le.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:10,zh:'夏(天)',py:'xià(tiān)',pos:'Danh từ',vn:'mùa hè', hv: 'hạ thiên',em:'☀️',lesson:3,
-   explain:['Mùa thứ hai trong năm, sau mùa xuân, thời tiết nóng nhất trong năm.'],
-   usage:'Danh từ; thường nói 夏天 (đầy đủ) hoặc 夏 (trong từ ghép).',
-   collo:['喜欢夏天','夏天热','夏天到了'],
-   ex_zh:'我最喜欢夏天，因为我可以穿漂亮的裙子了。',ex_py:'Wǒ zuì xǐhuan xiàtiān, yīnwèi wǒ kěyǐ chuān piàoliang de qúnzi le.',ex_vn:'Tôi thích mùa hè nhất, vì tôi có thể mặc váy đẹp rồi.',
-   exList:[
-     {zh:'我最喜欢夏天，因为我可以穿漂亮的裙子了。',py:'Wǒ zuì xǐhuan xiàtiān, yīnwèi wǒ kěyǐ chuān piàoliang de qúnzi le.',vn:'Tôi thích mùa hè nhất, vì tôi có thể mặc váy đẹp rồi.'},
-     {zh:'那我也喜欢夏天了。',py:'Nà wǒ yě xǐhuan xiàtiān le.',vn:'Vậy tôi cũng thích mùa hè rồi.'},
-     {zh:'夏天到了，天气越来越热。',py:'Xiàtiān dào le, tiānqì yuè lái yuè rè.',vn:'Mùa hè đến rồi, thời tiết ngày càng nóng.'},
-   ],
-   hanzi:[
-     {c:'夏',p:'xià',type:'独体字 · Chữ đơn (phức tạp)',st:10,ord:'nét liền, hình người đội mũ lớn',rad:'夂 (truy)',mean:'mùa hè',
-      tip:'Hình tượng người đội mũ lớn tránh nắng gắt → MÙA HÈ, mùa nắng nóng.',
-      cf:'复 (fù – "lặp lại", phần dưới tương tự")',w:'夏天 / 夏季'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì mùa hè có thể mặc váy đẹp nên tôi thích mùa hè nhất.',answer:'因为夏天可以穿漂亮的裙子，所以我最喜欢夏天。',answerPy:'Yīnwèi xiàtiān kěyǐ chuān piàoliang de qúnzi, suǒyǐ wǒ zuì xǐhuan xiàtiān.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 裙子 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Chỉ cần mùa hè đến là mọi người sẽ mặc ít quần áo hơn.',answer:'只要夏天到了，大家就会穿得少一些。',answerPy:'Zhǐyào xiàtiān dào le, dàjiā jiù huì chuān de shǎo yìxiē.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:11,zh:'裙子',py:'qúnzi',pos:'Danh từ',vn:'váy', hv: 'quần tử',em:'👗',lesson:3,
-   explain:['Trang phục nữ mặc ở phần dưới cơ thể, thường liền một mảnh.'],
-   usage:'Danh từ; lượng từ đi kèm là 条: 一条裙子.',
-   collo:['一条裙子','穿裙子','漂亮的裙子'],
-   ex_zh:'我可以穿漂亮的裙子了。',ex_py:'Wǒ kěyǐ chuān piàoliang de qúnzi le.',ex_vn:'Tôi có thể mặc váy đẹp rồi.',
-   exList:[
-     {zh:'我可以穿漂亮的裙子了。',py:'Wǒ kěyǐ chuān piàoliang de qúnzi le.',vn:'Tôi có thể mặc váy đẹp rồi.'},
-     {zh:'我喜欢看你穿漂亮的裙子。',py:'Wǒ xǐhuan kàn nǐ chuān piàoliang de qúnzi.',vn:'Tôi thích nhìn bạn mặc váy đẹp thôi.'},
-     {zh:'这条裙子是去年买的，今年就不能穿了。',py:'Zhè tiáo qúnzi shì qùnián mǎi de, jīnnián jiù bù néng chuān le.',vn:'Cái váy này mua từ năm ngoái, năm nay không mặc vừa nữa rồi.'},
-   ],
-   hanzi:[
-     {c:'裙',p:'qún',type:'左右结构 · Trái-phải',st:12,ord:'衤 trái → 君 phải',rad:'衤 (y – quần áo)',mean:'váy',
-      tip:'衤(quần áo) + 君(người cao quý) → trang phục cho phái nữ, gợi vẻ đài các = VÁY.',
-      cf:'群 (qún – "đám đông", có 羊 thay vì 衤")',w:'裙子 / 一条裙子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi thích nhìn con gái tôi mặc váy mới.',answer:'我喜欢看我女儿穿新裙子。',answerPy:'Wǒ xǐhuan kàn wǒ nǚ\'ér chuān xīn qúnzi.',
-      note:'V1(看)+V2(穿) — 看 mang một mệnh đề làm tân ngữ.'},
-     {promptLang:'vi',prompt:'Nếu cái váy này không vừa nữa thì chúng ta đi mua cái khác.',answer:'如果这条裙子不能穿了，我们就去买别的。',answerPy:'Rúguǒ zhè tiáo qúnzi bù néng chuān le, wǒmen jiù qù mǎi biéde.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 条 đã học ở Bài 2).'},
-   ]},
-
-  {n:12,zh:'最近',py:'zuìjìn',pos:'Phó từ',vn:'gần đây, dạo này', hv: 'tối cận',em:'🕐',lesson:4,
-   explain:['Khoảng thời gian gần với hiện tại, vừa mới qua hoặc đang diễn ra.'],
-   usage:'Phó từ, thường đứng đầu câu hoặc sau chủ ngữ: 最近 + [tình huống] (最近越来越胖).',
-   collo:['最近怎么样','我最近','最近越来越'],
-   ex_zh:'我最近越来越胖了。',ex_py:'Wǒ zuìjìn yuè lái yuè pàng le.',ex_vn:'Dạo này tôi ngày càng béo lên.',
-   exList:[
-     {zh:'我最近越来越胖了。',py:'Wǒ zuìjìn yuè lái yuè pàng le.',vn:'Dạo này tôi ngày càng béo lên.'},
-     {zh:'听说你最近不舒服，好些了吗？',py:'Tīngshuō nǐ zuìjìn bù shūfu, hǎo xiē le ma?',vn:'Nghe nói dạo này bạn không khỏe, đỡ hơn chưa?'},
-     {zh:'最近天气越来越冷，还总是下雨。',py:'Zuìjìn tiānqì yuè lái yuè lěng, hái zǒngshì xiàyǔ.',vn:'Dạo này thời tiết ngày càng lạnh, lại còn hay mưa nữa.'},
-   ],
-   hanzi:[
-     {c:'最',p:'zuì',type:'上下结构 · Trên-dưới',st:12,ord:'曰 trên → 取 dưới',rad:'曰 (viết – nói)',mean:'nhất; gần đây',
-      tip:'曰(nói) + 取(lấy, chọn) → chọn ra điều được nói đến nhiều nhất = NHẤT; 最近 = khoảng thời gian GẦN NHẤT.',
-      cf:'撮 (cuō – "một nhúm", có bộ 扌")',w:'最近 / 最好'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Dạo này tôi ngày càng bận rộn.',answer:'我最近越来越忙了。',answerPy:'Wǒ zuìjìn yuè lái yuè máng le.',
-      note:'最近 + 越来越 + tính từ diễn tả sự thay đổi gần đây.'},
-     {promptLang:'vi',prompt:'Tuy dạo này tôi hơi mệt nhưng vẫn phải đi làm.',answer:'虽然我最近有点儿累，但是还是要上班。',answerPy:'Suīrán wǒ zuìjìn yǒudiǎnr lèi, dànshì háishi yào shàngbān.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:13,zh:'越',py:'yuè',pos:'Phó từ',vn:'càng', hv: 'việt',em:'📈',lesson:4,
-   explain:['Phó từ dùng lặp lại trong cấu trúc 越来越 hoặc 越……越…… để diễn tả mức độ tăng dần theo thời gian/điều kiện.'],
-   usage:'Cấu trúc: 越来越 + tính từ/động từ tâm lý (越来越漂亮), không thêm phó từ mức độ (很/非常) phía trước.',
-   collo:['越来越漂亮','越来越好吃','越来越难'],
-   ex_zh:'我觉得你越来越漂亮了。',ex_py:'Wǒ juéde nǐ yuè lái yuè piàoliang le.',ex_vn:'Tôi thấy bạn ngày càng xinh hơn đấy.',
-   exList:[
-     {zh:'我觉得你越来越漂亮了。',py:'Wǒ juéde nǐ yuè lái yuè piàoliang le.',vn:'Tôi thấy bạn ngày càng xinh hơn đấy.'},
-     {zh:'我做的饭越来越好吃，我能少吃吗？',py:'Wǒ zuò de fàn yuè lái yuè hǎochī, wǒ néng shǎo chī ma?',vn:'Cơm tôi nấu ngày càng ngon, tôi ăn ít được sao?'},
-     {zh:'我觉得汉语越来越难了。',py:'Wǒ juéde Hànyǔ yuè lái yuè nán le.',vn:'Tôi thấy tiếng Trung ngày càng khó.'},
-   ],
-   hanzi:[
-     {c:'越',p:'yuè',type:'左右结构 · Trái-phải',st:12,ord:'走 trái → 戉 phải',rad:'走 (tẩu – đi)',mean:'vượt qua; càng',
-      tip:'走(đi, vượt) + 戉(cái rìu, biểu tượng quyền lực) → VƯỢT QUA giới hạn, mở rộng 越……越…… = CÀNG…CÀNG….',
-      cf:'钺 (yuè – "cái việt/rìu lớn", có bộ 钅")',w:'越来越 / 越……越……'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Con đường này càng đi càng khó đi.',answer:'这条路越走越难走。',answerPy:'Zhè tiáo lù yuè zǒu yuè nán zǒu.',
-      note:'越……越…… diễn tả mức độ tăng dần theo hành động (ôn lại 条/难 đã học ở Bài 2-3).'},
-     {promptLang:'vi',prompt:'Vì thời tiết ngày càng lạnh nên mọi người mặc càng nhiều.',answer:'因为天气越来越冷，所以大家穿得越来越多。',answerPy:'Yīnwèi tiānqì yuè lái yuè lěng, suǒyǐ dàjiā chuān de yuè lái yuè duō.',
-      note:'因为……所以…… kết hợp 越来越 diễn tả nguyên nhân — kết quả theo thời gian.'},
-   ]},
-
-  {n:14,zh:'张',py:'Zhāng',pos:'Danh từ riêng',vn:'Trương (họ)', hv: 'Trương',em:'👩',lesson:2,
-   explain:['Họ Trương, một họ phổ biến ở Trung Quốc; ở đây là 张太太 (bà Trương), bạn của 周太太.'],
-   usage:'Danh từ riêng chỉ họ người, đứng trước 太太/先生/小姐: 张太太.',
-   collo:['张太太','姓张','张先生'],
-   ex_zh:'张太太：为什么？怎么了？',ex_py:'Zhāng tàitai: Wèi shénme? Zěnme le?',ex_vn:'Bà Trương: Sao vậy? Có chuyện gì thế?',
-   exList:[
-     {zh:'张太太：为什么？怎么了？',py:'Zhāng tàitai: Wèi shénme? Zěnme le?',vn:'Bà Trương: Sao vậy? Có chuyện gì thế?'},
-     {zh:'那我们下次再一起出去玩儿吧。',py:'Nà wǒmen xià cì zài yìqǐ chūqu wánr ba.',vn:'Vậy lần sau chúng ta lại cùng đi chơi nhé.'},
-   ],
-   hanzi:[
-     {c:'张',p:'zhāng',type:'左右结构 · Trái-phải',st:7,ord:'弓 trái → 长 phải',rad:'弓 (cung)',mean:'giương (cung); họ Trương',
-      tip:'弓(cây cung) + 长(dài, kéo dài) → GIƯƠNG cung kéo dài dây; đây cũng là một họ phổ biến ở Trung Quốc.',
-      cf:'长 (cháng – "dài", không có bộ 弓")',w:'张太太 / 张开'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bà Trương nói ngày mai bà không thể đi chơi cùng chúng tôi nữa.',answer:'张太太说她明天不能和我们一起出去玩儿了。',answerPy:'Zhāng tàitai shuō tā míngtiān bù néng hé wǒmen yìqǐ chūqu wánr le.',
-      note:'了 diễn tả sự thay đổi tình huống (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Vì con trai bà Trương bị ốm nên bà phải ở nhà chăm sóc cháu.',answer:'因为张太太的儿子生病了，所以她要在家照顾他。',answerPy:'Yīnwèi Zhāng tàitai de érzi shēng bìng le, suǒyǐ tā yào zài jiā zhàogù tā.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 照顾 vừa học trong bài này).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "发烧",
+    "py": "fā shāo",
+    "pos": "Động từ",
+    "vn": "sốt",
+    "hv": "phát thiêu",
+    "em": "🤒",
+    "lesson": 1,
+    "explain": [
+      "Thân nhiệt cơ thể tăng cao hơn bình thường, thường là dấu hiệu của bệnh."
+    ],
+    "usage": "Động từ ly hợp; thường đi cùng 有点儿/一点儿: 有点儿发烧.",
+    "collo": [
+      "有点儿发烧",
+      "发高烧",
+      "退烧"
+    ],
+    "ex_zh": "前几天有点儿发烧，现在好多了。",
+    "ex_py": "Qián jǐ tiān yǒudiǎnr fā shāo, xiànzài hǎoduō le.",
+    "ex_vn": "Mấy hôm trước hơi sốt, giờ đỡ nhiều rồi.",
+    "exList": [
+      {
+        "zh": "前几天有点儿发烧，现在好多了。",
+        "py": "Qián jǐ tiān yǒudiǎnr fā shāo, xiànzài hǎoduō le.",
+        "vn": "Mấy hôm trước hơi sốt, giờ đỡ nhiều rồi."
+      },
+      {
+        "zh": "你不是发烧了吗？怎么还来上班？",
+        "py": "Nǐ bú shì fā shāo le ma? Zěnme hái lái shàngbān?",
+        "vn": "Bạn chẳng phải bị sốt sao? Sao vẫn đến làm vậy?"
+      },
+      {
+        "zh": "我是不是发烧了？怎么总是觉得冷？",
+        "py": "Wǒ shì bu shì fā shāo le? Zěnme zǒngshì juéde lěng?",
+        "vn": "Có phải tôi bị sốt không? Sao cứ thấy lạnh mãi vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "烧",
+        "p": "shāo",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "火 trái → 尧 phải",
+        "rad": "火 (hỏa – lửa)",
+        "mean": "đốt cháy; sốt",
+        "tip": "火(lửa) + 尧(cao ngất) → lửa cháy cao, mở rộng nghĩa cơ thể \"nóng như lửa\" = SỐT.",
+        "cf": "浇 (jiāo – \"tưới nước\", có 氵 thay vì 火\")",
+        "w": "发烧 / 退烧"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi hơi sốt nên hôm nay tôi không đi làm.",
+        "answer": "因为我有点儿发烧，所以今天不去上班。",
+        "answerPy": "Yīnwèi wǒ yǒudiǎnr fā shāo, suǒyǐ jīntiān bú qù shàngbān.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu con bạn bị sốt thì nên đưa đi bệnh viện.",
+        "answer": "如果你的孩子发烧了，就应该带他去医院。",
+        "answerPy": "Rúguǒ nǐ de háizi fā shāo le, jiù yīnggāi dài tā qù yīyuàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 带 đã học ở Bài 1).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有点儿发烧",
+        "py": "yǒudiǎnr fā shāo",
+        "vn": "hơi sốt"
+      },
+      {
+        "zh": "发高烧",
+        "py": "fā gāo shāo",
+        "vn": "sốt cao"
+      },
+      {
+        "zh": "发烧了",
+        "py": "fā shāo le",
+        "vn": "sốt rồi"
+      },
+      {
+        "zh": "发了两天烧",
+        "py": "fā le liǎng tiān shāo",
+        "vn": "sốt hai ngày"
+      },
+      {
+        "zh": "退烧",
+        "py": "tuì shāo",
+        "vn": "hạ sốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "发 + 了 + thời lượng + 烧",
+        "m": "发烧 là từ ly hợp: 发了两天烧 ✓"
+      },
+      {
+        "s": "有点儿 + 发烧",
+        "m": "Hơi sốt — 有点儿 dùng cho điều không mong muốn"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "为",
+    "py": "wèi",
+    "pos": "Giới từ",
+    "vn": "cho, vì",
+    "hv": "vị",
+    "em": "🎁",
+    "lesson": 1,
+    "explain": [
+      "Giới từ chỉ đối tượng hưởng lợi hoặc mục đích của hành động."
+    ],
+    "usage": "Giới từ, đứng trước đối tượng: 为 + [đối tượng] + động từ (为你买).",
+    "collo": [
+      "为你买",
+      "为朋友准备",
+      "为孩子做饭"
+    ],
+    "ex_zh": "这是我为你买的绿茶，很不错。",
+    "ex_py": "Zhè shì wǒ wèi nǐ mǎi de lǜchá, hěn búcuò.",
+    "ex_vn": "Đây là trà xanh tôi mua cho bạn, ngon lắm đấy.",
+    "exList": [
+      {
+        "zh": "这是我为你买的绿茶，很不错。",
+        "py": "Zhè shì wǒ wèi nǐ mǎi de lǜchá, hěn búcuò.",
+        "vn": "Đây là trà xanh tôi mua cho bạn, ngon lắm đấy."
+      },
+      {
+        "zh": "为什么？怎么了？",
+        "py": "Wèi shénme? Zěnme le?",
+        "vn": "Sao vậy? Có chuyện gì thế?"
+      },
+      {
+        "zh": "妈妈每天都为我们做饭。",
+        "py": "Māma měitiān dōu wèi wǒmen zuò fàn.",
+        "vn": "Mẹ mỗi ngày đều nấu cơm cho chúng tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "为",
+        "p": "wèi",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "丶 (chủ)",
+        "mean": "vì, cho",
+        "tip": "Chữ giản thể từ 爲 (hình con voi đang làm việc) → nghĩa \"làm việc VÌ ai đó\", mở rộng thành giới từ CHO/VÌ.",
+        "cf": "办 (bàn – \"làm việc\", có 力 hai bên\")",
+        "w": "为你 / 为了 / 因为"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hôm nay là sinh nhật bạn, nên đây là chiếc bánh tôi mua cho bạn.",
+        "answer": "因为今天是你的生日，所以这是我为你买的蛋糕。",
+        "answerPy": "Yīnwèi jīntiān shì nǐ de shēngrì, suǒyǐ zhè shì wǒ wèi nǐ mǎi de dàngāo.",
+        "note": "为 + ai + V — làm gì cho ai; 蛋糕 là từ bài 4.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn vui thì tôi làm gì cho bạn cũng được.",
+        "answer": "只要你高兴，我为你做什么都可以。",
+        "answerPy": "Zhǐyào nǐ gāoxìng, wǒ wèi nǐ zuò shénme dōu kěyǐ.",
+        "note": "只要……就…… (ở đây dùng 都) diễn tả điều kiện đủ.",
+        "pair": "只要……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "为你买",
+        "py": "wèi nǐ mǎi",
+        "vn": "mua cho bạn"
+      },
+      {
+        "zh": "为孩子做饭",
+        "py": "wèi háizi zuò fàn",
+        "vn": "nấu cơm cho con"
+      },
+      {
+        "zh": "为朋友准备",
+        "py": "wèi péngyou zhǔnbèi",
+        "vn": "chuẩn bị cho bạn"
+      },
+      {
+        "zh": "为他高兴",
+        "py": "wèi tā gāoxìng",
+        "vn": "mừng cho anh ấy"
+      },
+      {
+        "zh": "为大家服务",
+        "py": "wèi dàjiā fúwù",
+        "vn": "phục vụ mọi người"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "为 + ai + V",
+        "m": "Làm gì cho ai"
+      },
+      {
+        "s": "为 (wèi, vì ai) ≠ 为 (wéi, là) — ở bài này đọc wèi"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "照顾",
+    "py": "zhàogù",
+    "pos": "Động từ",
+    "vn": "chăm sóc",
+    "hv": "chiếu cố",
+    "em": "🤲",
+    "lesson": 2,
+    "explain": [
+      "Quan tâm, trông nom, giúp đỡ ai đó, thường dùng khi người đó ốm đau hoặc còn nhỏ."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 照顾 + [người] (照顾他).",
+    "collo": [
+      "照顾他",
+      "在家照顾",
+      "互相照顾"
+    ],
+    "ex_zh": "我儿子生病了，我要在家照顾他。",
+    "ex_py": "Wǒ érzi shēng bìng le, wǒ yào zài jiā zhàogù tā.",
+    "ex_vn": "Con trai tôi bị ốm, tôi phải ở nhà chăm sóc cháu.",
+    "exList": [
+      {
+        "zh": "我儿子生病了，我要在家照顾他。",
+        "py": "Wǒ érzi shēng bìng le, wǒ yào zài jiā zhàogù tā.",
+        "vn": "Con trai tôi bị ốm, tôi phải ở nhà chăm sóc cháu."
+      },
+      {
+        "zh": "我感冒好了，明天你不用来照顾我了。",
+        "py": "Wǒ gǎnmào hǎo le, míngtiān nǐ búyòng lái zhàogù wǒ le.",
+        "vn": "Tôi khỏi cảm rồi, ngày mai bạn không cần đến chăm sóc tôi nữa."
+      },
+      {
+        "zh": "谢谢你这几天一直照顾我。",
+        "py": "Xièxie nǐ zhè jǐ tiān yìzhí zhàogù wǒ.",
+        "vn": "Cảm ơn bạn mấy hôm nay đã luôn chăm sóc tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "顾",
+        "p": "gù",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "厄 trái → 页 phải",
+        "rad": "页 (hiệt – đầu)",
+        "mean": "chăm sóc, đoái hoài",
+        "tip": "页(đầu, ý chỉ ngoảnh đầu nhìn) → NGOẢNH ĐẦU quan tâm đến ai đó = CHĂM SÓC.",
+        "cf": "雇 (gù – \"thuê\", có 隹 thay vì 页\")",
+        "w": "照顾 / 顾客"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì con trai tôi bị ốm, nên tôi phải ở nhà chăm sóc cháu.",
+        "answer": "因为我儿子生病了，所以我要在家照顾他。",
+        "answerPy": "Yīnwèi wǒ érzi shēngbìng le, suǒyǐ wǒ yào zài jiā zhàogù tā.",
+        "note": "照顾 + ai — chăm sóc ai.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn chăm sóc mẹ tốt thì mẹ sẽ nhanh khỏe lại.",
+        "answer": "只要你把妈妈照顾好，她就会很快好起来。",
+        "answerPy": "Zhǐyào nǐ bǎ māma zhàogù hǎo, tā jiù huì hěn kuài hǎoqǐlai.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 把 đã học ở Bài 2).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "照顾孩子",
+        "py": "zhàogù háizi",
+        "vn": "chăm sóc con"
+      },
+      {
+        "zh": "照顾病人",
+        "py": "zhàogù bìngrén",
+        "vn": "chăm người ốm"
+      },
+      {
+        "zh": "在家照顾",
+        "py": "zài jiā zhàogù",
+        "vn": "ở nhà chăm sóc"
+      },
+      {
+        "zh": "互相照顾",
+        "py": "hùxiāng zhàogù",
+        "vn": "chăm sóc lẫn nhau"
+      },
+      {
+        "zh": "照顾好自己",
+        "py": "zhàogù hǎo zìjǐ",
+        "vn": "tự chăm sóc mình cho tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "照顾 + ai",
+        "m": "Chăm sóc ai"
+      },
+      {
+        "s": "照顾好 + ai",
+        "m": "Chăm sóc ai cho chu đáo — 好 là bổ ngữ kết quả"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "用",
+    "py": "yòng",
+    "pos": "Động từ",
+    "vn": "cần, dùng",
+    "hv": "dụng",
+    "em": "❓",
+    "lesson": 2,
+    "explain": [
+      "Cần thiết phải làm gì; thường dùng ở dạng phủ định 不用 (không cần)."
+    ],
+    "usage": "Động từ; 不用 + V = không cần làm gì.",
+    "collo": [
+      "不用",
+      "不用去",
+      "有用"
+    ],
+    "ex_zh": "不用去医院，昨天吃了感冒药，现在好一些了。",
+    "ex_py": "Búyòng qù yīyuàn, zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.",
+    "ex_vn": "Không cần đi bệnh viện đâu, hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi.",
+    "exList": [
+      {
+        "zh": "不用去医院，昨天吃了感冒药，现在好一些了。",
+        "py": "Búyòng qù yīyuàn, zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.",
+        "vn": "Không cần đi bệnh viện đâu, hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi."
+      },
+      {
+        "zh": "那不用再吃药了。",
+        "py": "Nà búyòng zài chī yào le.",
+        "vn": "Vậy thì không cần uống thuốc nữa."
+      },
+      {
+        "zh": "医生，我的病用吃药吗？",
+        "py": "Yīshēng, wǒ de bìng yòng chī yào ma?",
+        "vn": "Bác sĩ, bệnh của tôi có cần uống thuốc không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "用",
+        "p": "yòng",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 5,
+        "ord": "nét liền, hình cái thùng/ống",
+        "rad": "用",
+        "mean": "dùng, cần",
+        "tip": "Chữ tượng hình mô phỏng một vật dụng (ống/thùng) → nghĩa DÙNG, mở rộng 不用 = KHÔNG CẦN.",
+        "cf": "甩 (shuǎi – \"vung, ném\", thêm 1 nét vào 用\")",
+        "w": "不用 / 用了 / 有用"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng lo, chỉ cần uống thuốc là sẽ đỡ hơn.",
+        "answer": "不用着急，只要吃了药，就会好一些。",
+        "answerPy": "Búyòng zháojí, zhǐyào chīle yào, jiù huì hǎo yìxiē.",
+        "note": "不用 là phủ định của 得 (phải); 着急 là từ bài 1.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không cảm thấy đau nữa thì không cần đi khám nữa.",
+        "answer": "如果你不觉得疼了，就不用再去看病了。",
+        "answerPy": "Rúguǒ nǐ bù juéde téng le, jiù búyòng zài qù kànbìng le.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 疼 đã học ở Bài 2).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "不用去",
+        "py": "bú yòng qù",
+        "vn": "không cần đi"
+      },
+      {
+        "zh": "不用谢",
+        "py": "bú yòng xiè",
+        "vn": "không có gì"
+      },
+      {
+        "zh": "不用着急",
+        "py": "bú yòng zháojí",
+        "vn": "không cần vội"
+      },
+      {
+        "zh": "有用",
+        "py": "yǒu yòng",
+        "vn": "có ích"
+      },
+      {
+        "zh": "用不用",
+        "py": "yòng bú yòng",
+        "vn": "có cần không"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "不用 + V",
+        "m": "Không cần làm gì"
+      },
+      {
+        "s": "不用 là phủ định của 得 (děi, phải) — không nói 不得"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "感冒",
+    "py": "gǎnmào",
+    "pos": "Động từ",
+    "vn": "bị cảm",
+    "hv": "cảm mạo",
+    "em": "🤧",
+    "lesson": 2,
+    "explain": [
+      "Bệnh cảm cúm thông thường, do nhiễm lạnh hoặc vi rút."
+    ],
+    "usage": "Động từ ly hợp; cũng dùng làm danh từ trong 感冒药 (thuốc cảm).",
+    "collo": [
+      "感冒药",
+      "感冒了",
+      "没感冒"
+    ],
+    "ex_zh": "昨天吃了感冒药，现在好一些了。",
+    "ex_py": "Zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.",
+    "ex_vn": "Hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi.",
+    "exList": [
+      {
+        "zh": "昨天吃了感冒药，现在好一些了。",
+        "py": "Zuótiān chīle gǎnmào yào, xiànzài hǎo yìxiē le.",
+        "vn": "Hôm qua uống thuốc cảm rồi, giờ đỡ hơn một chút rồi."
+      },
+      {
+        "zh": "前天感冒，昨天发烧，头也越来越疼。",
+        "py": "Qiántiān gǎnmào, zuótiān fā shāo, tóu yě yuè lái yuè téng.",
+        "vn": "Hôm kia bị cảm, hôm qua sốt, đầu cũng đau ngày càng nhiều."
+      },
+      {
+        "zh": "我感冒好了，明天你不用来照顾我了。",
+        "py": "Wǒ gǎnmào hǎo le, míngtiān nǐ búyòng lái zhàogù wǒ le.",
+        "vn": "Tôi khỏi cảm rồi, ngày mai bạn không cần đến chăm sóc tôi nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "冒",
+        "p": "mào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "冃 trên → 目 dưới",
+        "rad": "冂 (quynh)",
+        "mean": "mạo hiểm; cảm (bệnh)",
+        "tip": "冃(mũ trùm) trên 目(mắt) → hình ảnh khói/hơi xông lên che mắt, mở rộng nghĩa \"nhiễm phải\" = CẢM.",
+        "cf": "帽 (mào – \"cái mũ\", có bộ 巾\")",
+        "w": "感冒 / 感冒药"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy tôi bị cảm nhưng vẫn phải đi làm.",
+        "answer": "虽然我感冒了，但是还是要上班。",
+        "answerPy": "Suīrán wǒ gǎnmào le, dànshì háishi yào shàngbān.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn nhiều nghỉ ngơi thì cảm sẽ nhanh khỏi.",
+        "answer": "只要你多休息，感冒就会好得快。",
+        "answerPy": "Zhǐyào nǐ duō xiūxi, gǎnmào jiù huì hǎo de kuài.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "感冒了",
+        "py": "gǎnmào le",
+        "vn": "bị cảm rồi"
+      },
+      {
+        "zh": "感冒药",
+        "py": "gǎnmào yào",
+        "vn": "thuốc cảm"
+      },
+      {
+        "zh": "没感冒",
+        "py": "méi gǎnmào",
+        "vn": "không bị cảm"
+      },
+      {
+        "zh": "容易感冒",
+        "py": "róngyì gǎnmào",
+        "vn": "dễ bị cảm"
+      },
+      {
+        "zh": "感冒好了",
+        "py": "gǎnmào hǎo le",
+        "vn": "khỏi cảm rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 感冒 + 了",
+        "m": "Ai đó bị cảm rồi"
+      },
+      {
+        "s": "感冒 + 药",
+        "m": "Thuốc cảm — bệnh + 药 = thuốc chữa bệnh đó"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "季节",
+    "py": "jìjié",
+    "pos": "Danh từ",
+    "vn": "mùa",
+    "hv": "quý tiết",
+    "em": "🍂",
+    "lesson": 3,
+    "explain": [
+      "Khoảng thời gian trong năm có đặc điểm khí hậu riêng (xuân, hạ, thu, đông)."
+    ],
+    "usage": "Danh từ; thường hỏi bằng 哪个季节 (mùa nào).",
+    "collo": [
+      "哪个季节",
+      "四个季节",
+      "最喜欢的季节"
+    ],
+    "ex_zh": "你最喜欢哪个季节？",
+    "ex_py": "Nǐ zuì xǐhuan nǎge jìjié?",
+    "ex_vn": "Bạn thích mùa nào nhất?",
+    "exList": [
+      {
+        "zh": "你最喜欢哪个季节？",
+        "py": "Nǐ zuì xǐhuan nǎge jìjié?",
+        "vn": "Bạn thích mùa nào nhất?"
+      },
+      {
+        "zh": "一年有四个季节：春天、夏天、秋天、冬天。",
+        "py": "Yì nián yǒu sì ge jìjié: chūntiān, xiàtiān, qiūtiān, dōngtiān.",
+        "vn": "Một năm có bốn mùa: xuân, hạ, thu, đông."
+      },
+      {
+        "zh": "每个季节我都喜欢。",
+        "py": "Měi ge jìjié wǒ dōu xǐhuan.",
+        "vn": "Mùa nào tôi cũng thích."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "季",
+        "p": "jì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "禾 trên → 子 dưới",
+        "rad": "子 (tử – con)",
+        "mean": "mùa, thời kỳ",
+        "tip": "禾(lúa) + 子(con, nhỏ) → mùa vụ nhỏ trong năm, như một \"đứa con\" của năm = MÙA.",
+        "cf": "李 (lǐ – \"họ Lý; quả mận\", cũng có phần 子\")",
+        "w": "季节 / 四季"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trong bốn mùa, tôi thích mùa xuân nhất, vì mùa xuân không nóng cũng không lạnh.",
+        "answer": "四个季节里，我最喜欢春天，因为春天不冷也不热。",
+        "answerPy": "Sì ge jìjié li, wǒ zuì xǐhuan chūntiān, yīnwèi chūntiān bù lěng yě bú rè.",
+        "note": "不 A 也不 B — không A cũng không B.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy mỗi mùa đều có cái đẹp riêng, nhưng tôi vẫn thích mùa xuân nhất.",
+        "answer": "虽然每个季节都有自己的美，但是我还是最喜欢春天。",
+        "answerPy": "Suīrán měi ge jìjié dōu yǒu zìjǐ de měi, dànshì wǒ háishi zuì xǐhuan chūntiān.",
+        "note": "还是 ở đây là phó từ \"vẫn\", khác 还是 trong câu hỏi lựa chọn (bài 3).",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "四个季节",
+        "py": "sì gè jìjié",
+        "vn": "bốn mùa"
+      },
+      {
+        "zh": "哪个季节",
+        "py": "nǎge jìjié",
+        "vn": "mùa nào"
+      },
+      {
+        "zh": "最喜欢的季节",
+        "py": "zuì xǐhuan de jìjié",
+        "vn": "mùa thích nhất"
+      },
+      {
+        "zh": "这个季节",
+        "py": "zhège jìjié",
+        "vn": "mùa này"
+      },
+      {
+        "zh": "季节变了",
+        "py": "jìjié biàn le",
+        "vn": "mùa đã đổi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "四个 + 季节",
+        "m": "Bốn mùa: 春天·夏天·秋天·冬天"
+      },
+      {
+        "s": "季 + 节",
+        "m": "Chia (节) theo mùa (季)"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "当然",
+    "py": "dāngrán",
+    "pos": "Phó từ",
+    "vn": "đương nhiên, dĩ nhiên",
+    "hv": "đương nhiên",
+    "em": "👍",
+    "lesson": 3,
+    "explain": [
+      "Điều hiển nhiên, không cần nghi ngờ."
+    ],
+    "usage": "Phó từ, thường đứng đầu câu trả lời hoặc trước 是: 当然 + 是 + [câu trả lời].",
+    "collo": [
+      "当然是",
+      "当然可以",
+      "当然好"
+    ],
+    "ex_zh": "当然是春天，天气不那么冷了，草和树都绿了，花也开了。",
+    "ex_py": "Dāngrán shì chūntiān, tiānqì bú nàme lěng le, cǎo hé shù dōu lǜ le, huā yě kāi le.",
+    "ex_vn": "Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa, cỏ và cây đều xanh rồi, hoa cũng nở rồi.",
+    "exList": [
+      {
+        "zh": "当然是春天，天气不那么冷了，草和树都绿了，花也开了。",
+        "py": "Dāngrán shì chūntiān, tiānqì bú nàme lěng le, cǎo hé shù dōu lǜ le, huā yě kāi le.",
+        "vn": "Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa, cỏ và cây đều xanh rồi, hoa cũng nở rồi."
+      },
+      {
+        "zh": "当然可以，你随便看。",
+        "py": "Dāngrán kěyǐ, nǐ suíbiàn kàn.",
+        "vn": "Đương nhiên được, bạn cứ xem thoải mái."
+      },
+      {
+        "zh": "这个问题我当然知道答案。",
+        "py": "Zhège wèntí wǒ dāngrán zhīdào dá'àn.",
+        "vn": "Câu hỏi này tôi đương nhiên biết đáp án."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "当",
+        "p": "dāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "⺌ trên → 彐+田 dưới",
+        "rad": "田 (điền – ruộng)",
+        "mean": "đương, nên; đương nhiên",
+        "tip": "Hình ảnh hai thửa ruộng đối diện tương xứng nhau → nghĩa \"tương xứng, nên vậy\", mở rộng thành ĐƯƠNG NHIÊN.",
+        "cf": "常 (cháng – \"thường xuyên\", không có bộ 田\")",
+        "w": "当然 / 应当"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đương nhiên tôi thích mùa hè nhất, vì có thể mặc váy đẹp.",
+        "answer": "我当然最喜欢夏天，因为可以穿漂亮的裙子。",
+        "answerPy": "Wǒ dāngrán zuì xǐhuan xiàtiān, yīnwèi kěyǐ chuān piàoliang de qúnzi.",
+        "note": "因为 giải thích lý do cho câu trả lời.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn hỏi tôi thì đương nhiên tôi sẽ giúp bạn.",
+        "answer": "如果你问我，我当然会帮你。",
+        "answerPy": "Rúguǒ nǐ wèn wǒ, wǒ dāngrán huì bāng nǐ.",
+        "note": "如果……就/会…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……会……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "当然可以",
+        "py": "dāngrán kěyǐ",
+        "vn": "đương nhiên được"
+      },
+      {
+        "zh": "当然是",
+        "py": "dāngrán shì",
+        "vn": "đương nhiên là"
+      },
+      {
+        "zh": "当然好",
+        "py": "dāngrán hǎo",
+        "vn": "dĩ nhiên tốt"
+      },
+      {
+        "zh": "当然知道",
+        "py": "dāngrán zhīdào",
+        "vn": "đương nhiên biết"
+      },
+      {
+        "zh": "当然不行",
+        "py": "dāngrán bù xíng",
+        "vn": "đương nhiên không được"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "当然 + V / Adj",
+        "m": "Đương nhiên …"
+      },
+      {
+        "s": "当然可以 / 当然好",
+        "m": "Cách đáp lời đồng ý dứt khoát"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "春(天)",
+    "py": "chūn(tiān)",
+    "pos": "Danh từ",
+    "vn": "mùa xuân",
+    "hv": "xuân thiên",
+    "em": "🌸",
+    "lesson": 3,
+    "explain": [
+      "Mùa đầu tiên trong năm, sau mùa đông, thời tiết ấm dần, cây cối đâm chồi."
+    ],
+    "usage": "Danh từ; thường nói 春天 (đầy đủ) hoặc 春 (trong từ ghép/thơ).",
+    "collo": [
+      "春天到了",
+      "喜欢春天",
+      "春天的花"
+    ],
+    "ex_zh": "当然是春天，天气不那么冷了。",
+    "ex_py": "Dāngrán shì chūntiān, tiānqì bú nàme lěng le.",
+    "ex_vn": "Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa.",
+    "exList": [
+      {
+        "zh": "当然是春天，天气不那么冷了。",
+        "py": "Dāngrán shì chūntiān, tiānqì bú nàme lěng le.",
+        "vn": "Đương nhiên là mùa xuân, thời tiết không còn lạnh nữa."
+      },
+      {
+        "zh": "春天到了，花都开了。",
+        "py": "Chūntiān dào le, huā dōu kāi le.",
+        "vn": "Mùa xuân đến rồi, hoa đều nở cả rồi."
+      },
+      {
+        "zh": "我喜欢3月，因为天气不那么冷了。",
+        "py": "Wǒ xǐhuan sān yuè, yīnwèi tiānqì bú nàme lěng le.",
+        "vn": "Tôi thích tháng 3, vì thời tiết không còn lạnh nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "春",
+        "p": "chūn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "三+人 trên → 日 dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "mùa xuân",
+        "tip": "Hình ảnh cây cỏ mọc lên đón ánh mặt trời 日 → MÙA XUÂN, mùa cây cối sinh sôi.",
+        "cf": "泰 (tài – \"yên ổn, hanh thông\", nét trên tương tự\")",
+        "w": "春天 / 春节"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mùa xuân vừa đến là cỏ và cây đều xanh trở lại.",
+        "answer": "春天一到，草和树就都绿了。",
+        "answerPy": "Chūntiān yí dào, cǎo hé shù jiù dōu lǜ le.",
+        "note": "绿了 — 了 chỉ sự thay đổi trạng thái.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì mùa xuân trời không lạnh nên mọi người thích ra ngoài đi dạo.",
+        "answer": "因为春天天气不冷，所以大家喜欢出去走走。",
+        "answerPy": "Yīnwèi chūntiān tiānqì bù lěng, suǒyǐ dàjiā xǐhuan chūqu zǒuzou.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "春天到了",
+        "py": "chūn tiān dào le",
+        "vn": "mùa xuân đến rồi"
+      },
+      {
+        "zh": "喜欢春天",
+        "py": "xǐhuan chūn tiān",
+        "vn": "thích mùa xuân"
+      },
+      {
+        "zh": "春天的花",
+        "py": "chūn tiān de huā",
+        "vn": "hoa mùa xuân"
+      },
+      {
+        "zh": "春天很暖和",
+        "py": "chūn tiān hěn nuǎnhuo",
+        "vn": "mùa xuân ấm áp"
+      },
+      {
+        "zh": "去年春天",
+        "py": "qùnián chūn tiān",
+        "vn": "mùa xuân năm ngoái"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "春天 + 到了",
+        "m": "Mùa xuân đến rồi"
+      },
+      {
+        "s": "春 · 夏 · 秋 · 冬 + 天",
+        "m": "Bốn mùa đều thêm 天"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "草",
+    "py": "cǎo",
+    "pos": "Danh từ",
+    "vn": "cỏ",
+    "hv": "thảo",
+    "em": "🌿",
+    "lesson": 3,
+    "explain": [
+      "Loài thực vật thân mềm, mọc thấp, thường phủ xanh mặt đất."
+    ],
+    "usage": "Danh từ; thường xuất hiện cùng 树 (cây), 绿 (xanh): 草和树都绿了.",
+    "collo": [
+      "草地",
+      "草和树",
+      "绿草"
+    ],
+    "ex_zh": "草和树都绿了，花也开了。",
+    "ex_py": "Cǎo hé shù dōu lǜ le, huā yě kāi le.",
+    "ex_vn": "Cỏ và cây đều xanh rồi, hoa cũng nở rồi.",
+    "exList": [
+      {
+        "zh": "草和树都绿了，花也开了。",
+        "py": "Cǎo hé shù dōu lǜ le, huā yě kāi le.",
+        "vn": "Cỏ và cây đều xanh rồi, hoa cũng nở rồi."
+      },
+      {
+        "zh": "树和草都绿了，天气真好！",
+        "py": "Shù hé cǎo dōu lǜ le, tiānqì zhēn hǎo!",
+        "vn": "Cây và cỏ đều xanh rồi, thời tiết đẹp thật!"
+      },
+      {
+        "zh": "我们要多出来走走，在草地上坐坐。",
+        "py": "Wǒmen yào duō chūlai zǒuzou, zài cǎodì shang zuòzuo.",
+        "vn": "Chúng ta nên ra ngoài đi dạo nhiều, ngồi trên bãi cỏ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "草",
+        "p": "cǎo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "艹 trên → 早 dưới",
+        "rad": "艹 (thảo – cỏ)",
+        "mean": "cỏ",
+        "tip": "艹(bộ cỏ) + 早(sớm, mọc sớm) → loài cây mọc sớm và nhanh = CỎ.",
+        "cf": "早 (zǎo – \"sớm\", không có bộ 艹\")",
+        "w": "草地 / 绿草"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cỏ và cây đều xanh rồi, nên tôi biết mùa xuân đã thật sự đến.",
+        "answer": "因为草和树都绿了，所以我知道春天真的到了。",
+        "answerPy": "Yīnwèi cǎo hé shù dōu lǜ le, suǒyǐ wǒ zhīdào chūntiān zhēn de dào le.",
+        "note": "草地 — bãi cỏ; 草 và 树 hay đi cùng nhau.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bãi cỏ khô rồi thì chúng ta không nên ngồi ở đó nữa.",
+        "answer": "如果草地干了，我们就不要坐在那儿了。",
+        "answerPy": "Rúguǒ cǎodì gān le, wǒmen jiù bú yào zuò zài nàr le.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "草地",
+        "py": "cǎodì",
+        "vn": "bãi cỏ"
+      },
+      {
+        "zh": "绿草",
+        "py": "lǜ cǎo",
+        "vn": "cỏ xanh"
+      },
+      {
+        "zh": "草绿了",
+        "py": "cǎo lǜ le",
+        "vn": "cỏ xanh rồi"
+      },
+      {
+        "zh": "草和树",
+        "py": "cǎo hé shù",
+        "vn": "cỏ và cây"
+      },
+      {
+        "zh": "坐在草地上",
+        "py": "zuò zài cǎodì shàng",
+        "vn": "ngồi trên bãi cỏ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "草 + 绿 + 了",
+        "m": "Cỏ đã xanh — 了 chỉ sự thay đổi"
+      },
+      {
+        "s": "草 + 地",
+        "m": "Đất (地) cỏ (草) = bãi cỏ"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "夏(天)",
+    "py": "xià(tiān)",
+    "pos": "Danh từ",
+    "vn": "mùa hè",
+    "hv": "hạ thiên",
+    "em": "☀️",
+    "lesson": 3,
+    "explain": [
+      "Mùa thứ hai trong năm, sau mùa xuân, thời tiết nóng nhất trong năm."
+    ],
+    "usage": "Danh từ; thường nói 夏天 (đầy đủ) hoặc 夏 (trong từ ghép).",
+    "collo": [
+      "喜欢夏天",
+      "夏天热",
+      "夏天到了"
+    ],
+    "ex_zh": "我最喜欢夏天，因为我可以穿漂亮的裙子了。",
+    "ex_py": "Wǒ zuì xǐhuan xiàtiān, yīnwèi wǒ kěyǐ chuān piàoliang de qúnzi le.",
+    "ex_vn": "Tôi thích mùa hè nhất, vì tôi có thể mặc váy đẹp rồi.",
+    "exList": [
+      {
+        "zh": "我最喜欢夏天，因为我可以穿漂亮的裙子了。",
+        "py": "Wǒ zuì xǐhuan xiàtiān, yīnwèi wǒ kěyǐ chuān piàoliang de qúnzi le.",
+        "vn": "Tôi thích mùa hè nhất, vì tôi có thể mặc váy đẹp rồi."
+      },
+      {
+        "zh": "那我也喜欢夏天了。",
+        "py": "Nà wǒ yě xǐhuan xiàtiān le.",
+        "vn": "Vậy tôi cũng thích mùa hè rồi."
+      },
+      {
+        "zh": "夏天到了，天气越来越热。",
+        "py": "Xiàtiān dào le, tiānqì yuè lái yuè rè.",
+        "vn": "Mùa hè đến rồi, thời tiết ngày càng nóng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "夏",
+        "p": "xià",
+        "type": "独体字 · Chữ đơn (phức tạp)",
+        "st": 10,
+        "ord": "nét liền, hình người đội mũ lớn",
+        "rad": "夂 (truy)",
+        "mean": "mùa hè",
+        "tip": "Hình tượng người đội mũ lớn tránh nắng gắt → MÙA HÈ, mùa nắng nóng.",
+        "cf": "复 (fù – \"lặp lại\", phần dưới tương tự\")",
+        "w": "夏天 / 夏季"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì mùa hè có thể mặc váy đẹp nên tôi thích mùa hè nhất.",
+        "answer": "因为夏天可以穿漂亮的裙子，所以我最喜欢夏天。",
+        "answerPy": "Yīnwèi xiàtiān kěyǐ chuān piàoliang de qúnzi, suǒyǐ wǒ zuì xǐhuan xiàtiān.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả (ôn lại 裙子 vừa học trong bài này).",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần mùa hè đến là mọi người sẽ mặc ít quần áo hơn.",
+        "answer": "只要夏天到了，大家就会穿得少一些。",
+        "answerPy": "Zhǐyào xiàtiān dào le, dàjiā jiù huì chuān de shǎo yìxiē.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "夏天很热",
+        "py": "xià tiān hěn rè",
+        "vn": "mùa hè rất nóng"
+      },
+      {
+        "zh": "喜欢夏天",
+        "py": "xǐhuan xià tiān",
+        "vn": "thích mùa hè"
+      },
+      {
+        "zh": "夏天到了",
+        "py": "xià tiān dào le",
+        "vn": "mùa hè đến rồi"
+      },
+      {
+        "zh": "夏天穿裙子",
+        "py": "xià tiān chuān qúnzi",
+        "vn": "mùa hè mặc váy"
+      },
+      {
+        "zh": "今年夏天",
+        "py": "jīnnián xià tiān",
+        "vn": "mùa hè năm nay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "夏天 + 热 / 冬天 + 冷",
+        "m": "Mùa hè nóng, mùa đông lạnh"
+      },
+      {
+        "s": "夏天 ↔ 冬天",
+        "m": "Mùa hè ↔ mùa đông"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "裙子",
+    "py": "qúnzi",
+    "pos": "Danh từ",
+    "vn": "váy",
+    "hv": "quần tử",
+    "em": "👗",
+    "lesson": 3,
+    "explain": [
+      "Trang phục nữ mặc ở phần dưới cơ thể, thường liền một mảnh."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 条: 一条裙子.",
+    "collo": [
+      "一条裙子",
+      "穿裙子",
+      "漂亮的裙子"
+    ],
+    "ex_zh": "我可以穿漂亮的裙子了。",
+    "ex_py": "Wǒ kěyǐ chuān piàoliang de qúnzi le.",
+    "ex_vn": "Tôi có thể mặc váy đẹp rồi.",
+    "exList": [
+      {
+        "zh": "我可以穿漂亮的裙子了。",
+        "py": "Wǒ kěyǐ chuān piàoliang de qúnzi le.",
+        "vn": "Tôi có thể mặc váy đẹp rồi."
+      },
+      {
+        "zh": "我喜欢看你穿漂亮的裙子。",
+        "py": "Wǒ xǐhuan kàn nǐ chuān piàoliang de qúnzi.",
+        "vn": "Tôi thích nhìn bạn mặc váy đẹp thôi."
+      },
+      {
+        "zh": "这条裙子是去年买的，今年就不能穿了。",
+        "py": "Zhè tiáo qúnzi shì qùnián mǎi de, jīnnián jiù bù néng chuān le.",
+        "vn": "Cái váy này mua từ năm ngoái, năm nay không mặc vừa nữa rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "裙",
+        "p": "qún",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "衤 trái → 君 phải",
+        "rad": "衤 (y – quần áo)",
+        "mean": "váy",
+        "tip": "衤(quần áo) + 君(người cao quý) → trang phục cho phái nữ, gợi vẻ đài các = VÁY.",
+        "cf": "群 (qún – \"đám đông\", có 羊 thay vì 衤\")",
+        "w": "裙子 / 一条裙子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thích nhìn con gái mặc váy mới, vì trông cháu vừa xinh vừa vui.",
+        "answer": "我喜欢看我女儿穿新裙子，因为她又漂亮又高兴。",
+        "answerPy": "Wǒ xǐhuan kàn wǒ nǚ'ér chuān xīn qúnzi, yīnwèi tā yòu piàoliang yòu gāoxìng.",
+        "note": "又 A 又 B là khung bài 4; 一条裙子 — lượng từ 条.",
+        "pair": "又……又……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu cái váy này không vừa nữa thì chúng ta đi mua cái khác.",
+        "answer": "如果这条裙子不能穿了，我们就去买别的。",
+        "answerPy": "Rúguǒ zhè tiáo qúnzi bù néng chuān le, wǒmen jiù qù mǎi biéde.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 条 đã học ở Bài 2).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一条裙子",
+        "py": "yì tiáo qúnzi",
+        "vn": "một cái váy"
+      },
+      {
+        "zh": "穿裙子",
+        "py": "chuān qúnzi",
+        "vn": "mặc váy"
+      },
+      {
+        "zh": "漂亮的裙子",
+        "py": "piàoliang de qúnzi",
+        "vn": "cái váy đẹp"
+      },
+      {
+        "zh": "新裙子",
+        "py": "xīn qúnzi",
+        "vn": "váy mới"
+      },
+      {
+        "zh": "买条裙子",
+        "py": "mǎi tiáo qúnzi",
+        "vn": "mua cái váy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 条 + 裙子",
+        "m": "Lượng từ 条 — giống 裤子 ở bài 3"
+      },
+      {
+        "s": "穿 + 裙子",
+        "m": "Mặc váy"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "最近",
+    "py": "zuìjìn",
+    "pos": "Phó từ",
+    "vn": "gần đây, dạo này",
+    "hv": "tối cận",
+    "em": "🕐",
+    "lesson": 4,
+    "explain": [
+      "Khoảng thời gian gần với hiện tại, vừa mới qua hoặc đang diễn ra."
+    ],
+    "usage": "Phó từ, thường đứng đầu câu hoặc sau chủ ngữ: 最近 + [tình huống] (最近越来越胖).",
+    "collo": [
+      "最近怎么样",
+      "我最近",
+      "最近越来越"
+    ],
+    "ex_zh": "我最近越来越胖了。",
+    "ex_py": "Wǒ zuìjìn yuè lái yuè pàng le.",
+    "ex_vn": "Dạo này tôi ngày càng béo lên.",
+    "exList": [
+      {
+        "zh": "我最近越来越胖了。",
+        "py": "Wǒ zuìjìn yuè lái yuè pàng le.",
+        "vn": "Dạo này tôi ngày càng béo lên."
+      },
+      {
+        "zh": "听说你最近不舒服，好些了吗？",
+        "py": "Tīngshuō nǐ zuìjìn bù shūfu, hǎo xiē le ma?",
+        "vn": "Nghe nói dạo này bạn không khỏe, đỡ hơn chưa?"
+      },
+      {
+        "zh": "最近天气越来越冷，还总是下雨。",
+        "py": "Zuìjìn tiānqì yuè lái yuè lěng, hái zǒngshì xiàyǔ.",
+        "vn": "Dạo này thời tiết ngày càng lạnh, lại còn hay mưa nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "最",
+        "p": "zuì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "曰 trên → 取 dưới",
+        "rad": "曰 (viết – nói)",
+        "mean": "nhất; gần đây",
+        "tip": "曰(nói) + 取(lấy, chọn) → chọn ra điều được nói đến nhiều nhất = NHẤT; 最近 = khoảng thời gian GẦN NHẤT.",
+        "cf": "撮 (cuō – \"một nhúm\", có bộ 扌\")",
+        "w": "最近 / 最好"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dạo này tôi ngày càng bận rộn.",
+        "answer": "我最近越来越忙了。",
+        "answerPy": "Wǒ zuìjìn yuè lái yuè máng le.",
+        "note": "最近 + 越来越 + tính từ diễn tả sự thay đổi gần đây.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy dạo này tôi hơi mệt nhưng vẫn phải đi làm.",
+        "answer": "虽然我最近有点儿累，但是还是要上班。",
+        "answerPy": "Suīrán wǒ zuìjìn yǒudiǎnr lèi, dànshì háishi yào shàngbān.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "最近怎么样",
+        "py": "zuìjìn zěnmeyàng",
+        "vn": "dạo này thế nào"
+      },
+      {
+        "zh": "最近很忙",
+        "py": "zuìjìn hěn máng",
+        "vn": "dạo này rất bận"
+      },
+      {
+        "zh": "最近越来越",
+        "py": "zuìjìn yuè lái yuè",
+        "vn": "gần đây ngày càng"
+      },
+      {
+        "zh": "最近没见",
+        "py": "zuìjìn méi jiàn",
+        "vn": "dạo này không gặp"
+      },
+      {
+        "zh": "最近的事",
+        "py": "zuìjìn de shì",
+        "vn": "chuyện gần đây"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "最近 + Sub + V",
+        "m": "Dạo này ai đó …"
+      },
+      {
+        "s": "最近怎么样？",
+        "m": "Dạo này thế nào? — câu hỏi thăm quen thuộc"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "越",
+    "py": "yuè",
+    "pos": "Phó từ",
+    "vn": "càng",
+    "hv": "việt",
+    "em": "📈",
+    "lesson": 4,
+    "explain": [
+      "Phó từ dùng lặp lại trong cấu trúc 越来越 hoặc 越……越…… để diễn tả mức độ tăng dần theo thời gian/điều kiện."
+    ],
+    "usage": "Cấu trúc: 越来越 + tính từ/động từ tâm lý (越来越漂亮), không thêm phó từ mức độ (很/非常) phía trước.",
+    "collo": [
+      "越来越漂亮",
+      "越来越好吃",
+      "越来越难"
+    ],
+    "ex_zh": "我觉得你越来越漂亮了。",
+    "ex_py": "Wǒ juéde nǐ yuè lái yuè piàoliang le.",
+    "ex_vn": "Tôi thấy bạn ngày càng xinh hơn đấy.",
+    "exList": [
+      {
+        "zh": "我觉得你越来越漂亮了。",
+        "py": "Wǒ juéde nǐ yuè lái yuè piàoliang le.",
+        "vn": "Tôi thấy bạn ngày càng xinh hơn đấy."
+      },
+      {
+        "zh": "我做的饭越来越好吃，我能少吃吗？",
+        "py": "Wǒ zuò de fàn yuè lái yuè hǎochī, wǒ néng shǎo chī ma?",
+        "vn": "Cơm tôi nấu ngày càng ngon, tôi ăn ít được sao?"
+      },
+      {
+        "zh": "我觉得汉语越来越难了。",
+        "py": "Wǒ juéde Hànyǔ yuè lái yuè nán le.",
+        "vn": "Tôi thấy tiếng Trung ngày càng khó."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "越",
+        "p": "yuè",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "走 trái → 戉 phải",
+        "rad": "走 (tẩu – đi)",
+        "mean": "vượt qua; càng",
+        "tip": "走(đi, vượt) + 戉(cái rìu, biểu tượng quyền lực) → VƯỢT QUA giới hạn, mở rộng 越……越…… = CÀNG…CÀNG….",
+        "cf": "钺 (yuè – \"cái việt/rìu lớn\", có bộ 钅\")",
+        "w": "越来越 / 越……越……"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con đường này càng đi càng khó đi.",
+        "answer": "这条路越走越难走。",
+        "answerPy": "Zhè tiáo lù yuè zǒu yuè nán zǒu.",
+        "note": "越……越…… diễn tả mức độ tăng dần theo hành động (ôn lại 条/难 đã học ở Bài 2-3).",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì thời tiết ngày càng lạnh nên mọi người mặc càng nhiều.",
+        "answer": "因为天气越来越冷，所以大家穿得越来越多。",
+        "answerPy": "Yīnwèi tiānqì yuè lái yuè lěng, suǒyǐ dàjiā chuān de yuè lái yuè duō.",
+        "note": "因为……所以…… kết hợp 越来越 diễn tả nguyên nhân — kết quả theo thời gian.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "越来越漂亮",
+        "py": "yuè lái yuè piàoliang",
+        "vn": "ngày càng đẹp"
+      },
+      {
+        "zh": "越来越好",
+        "py": "yuè lái yuè hǎo",
+        "vn": "ngày càng tốt"
+      },
+      {
+        "zh": "越来越难",
+        "py": "yuè lái yuè nán",
+        "vn": "ngày càng khó"
+      },
+      {
+        "zh": "越吃越想吃",
+        "py": "yuè chī yuè xiǎng chī",
+        "vn": "càng ăn càng muốn ăn"
+      },
+      {
+        "zh": "越忙越累",
+        "py": "yuè máng yuè lèi",
+        "vn": "càng bận càng mệt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "越来越 + Adj",
+        "m": "Ngày càng … (thay đổi theo thời gian)"
+      },
+      {
+        "s": "越 A 越 B",
+        "m": "Càng A càng B — hai vế biến đổi cùng chiều"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "张",
+    "py": "Zhāng",
+    "pos": "Danh từ riêng",
+    "vn": "Trương (họ)",
+    "hv": "Trương",
+    "em": "👩",
+    "lesson": 2,
+    "explain": [
+      "Họ Trương, một họ phổ biến ở Trung Quốc; ở đây là 张太太 (bà Trương), bạn của 周太太."
+    ],
+    "usage": "Danh từ riêng chỉ họ người, đứng trước 太太/先生/小姐: 张太太.",
+    "collo": [
+      "张太太",
+      "姓张",
+      "张先生"
+    ],
+    "ex_zh": "张太太：为什么？怎么了？",
+    "ex_py": "Zhāng tàitai: Wèi shénme? Zěnme le?",
+    "ex_vn": "Bà Trương: Sao vậy? Có chuyện gì thế?",
+    "exList": [
+      {
+        "zh": "张太太：为什么？怎么了？",
+        "py": "Zhāng tàitai: Wèi shénme? Zěnme le?",
+        "vn": "Bà Trương: Sao vậy? Có chuyện gì thế?"
+      },
+      {
+        "zh": "那我们下次再一起出去玩儿吧。",
+        "py": "Nà wǒmen xià cì zài yìqǐ chūqu wánr ba.",
+        "vn": "Vậy lần sau chúng ta lại cùng đi chơi nhé."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "张",
+        "p": "zhāng",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "弓 trái → 长 phải",
+        "rad": "弓 (cung)",
+        "mean": "giương (cung); họ Trương",
+        "tip": "弓(cây cung) + 长(dài, kéo dài) → GIƯƠNG cung kéo dài dây; đây cũng là một họ phổ biến ở Trung Quốc.",
+        "cf": "长 (cháng – \"dài\", không có bộ 弓\")",
+        "w": "张太太 / 张开"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bà Trương nói mai bà bận, nên không đi chơi cùng chúng tôi được.",
+        "answer": "张太太说她明天很忙，所以不能和我们一起出去玩儿了。",
+        "answerPy": "Zhāng tàitai shuō tā míngtiān hěn máng, suǒyǐ bù néng hé wǒmen yìqǐ chūqu wánr le.",
+        "note": "太太 là từ bài 2 — 张太太, 周太太.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì con trai bà Trương bị ốm nên bà phải ở nhà chăm sóc cháu.",
+        "answer": "因为张太太的儿子生病了，所以她要在家照顾他。",
+        "answerPy": "Yīnwèi Zhāng tàitai de érzi shēng bìng le, suǒyǐ tā yào zài jiā zhàogù tā.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả (ôn lại 照顾 vừa học trong bài này).",
+        "pair": "因为……所以……"
+      }
+    ]
+  }
 ];
 
 const wuData = [

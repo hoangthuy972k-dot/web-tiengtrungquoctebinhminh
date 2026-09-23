@@ -6,11 +6,14 @@ const fs = require('fs');
 const path = require('path');
 const PAIRS = require('./khung-cau.js');
 
-const SO = process.argv[2];
+const arg = process.argv.slice(2).filter(function (x) { return x.indexOf('--') !== 0; });
+const CAP = /^hsk[0-9]$/.test(arg[0]) ? arg[0] : 'hsk4';
+const SO = /^hsk[0-9]$/.test(arg[0]) ? arg[1] : arg[0];
+const TEN = CAP === 'hsk4' ? '' : CAP + '-';
 const THAT = process.argv.includes('--that');
-const FILE = path.join(process.cwd(), 'public', 'js', 'hsk4-bai-' + SO + '-data.js');
+const FILE = path.join(process.cwd(), 'public', 'js', CAP + '-bai-' + SO + '-data.js');
 let VIET_LAI = {};
-try { VIET_LAI = require(path.join(process.cwd(), 'tools/tu-vung/noi-dung/viet-lai-' + SO + '.js')); } catch (e) { /* khong co */ }
+try { VIET_LAI = require(path.join(process.cwd(), 'tools/tu-vung/noi-dung/' + TEN + 'viet-lai-' + SO + '.js')); } catch (e) { /* khong co */ }
 
 const src = fs.readFileSync(FILE, 'utf8');
 const vocabData = (new Function(src + '; return vocabData'))();
@@ -25,7 +28,7 @@ vocabData.forEach(function (v) {
     else { if (c.pair) { delete c.pair; boDi++; } khong++; }
   });
 });
-console.log('BAI ' + SO + ': giu nguyen(viet tay)=' + giu + '  do lai=' + doi + '  bo the mo ho=' + boDi + '  khong co the=' + khong);
+console.log(CAP.toUpperCase() + ' BAI ' + SO + ': giu nguyen(viet tay)=' + giu + '  do lai=' + doi + '  bo the mo ho=' + boDi + '  khong co the=' + khong);
 
 if (!THAT) { console.log('  (chay thu)'); process.exit(0); }
 const batDau = src.search(/(?:const|let|var) vocabData/);

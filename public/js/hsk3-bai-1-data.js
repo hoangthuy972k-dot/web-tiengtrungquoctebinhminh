@@ -3,355 +3,1693 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'周末',py:'zhōumò',pos:'Danh từ',vn:'cuối tuần', hv: 'chu mạt',em:'📅',lesson:1,
-   explain:['Hai ngày thứ Bảy và Chủ nhật, khoảng thời gian nghỉ ngơi sau một tuần làm việc/học tập.'],
-   usage:'Danh từ chỉ thời gian; thường đứng ĐẦU CÂU hoặc ngay SAU chủ ngữ làm trạng ngữ: 周末 + Chủ ngữ + Vị ngữ.',
-   collo:['周末愉快','这个周末','周末计划'],
-   ex_zh:'周末你有什么打算？',ex_py:'Zhōumò nǐ yǒu shénme dǎsuàn?',ex_vn:'Cuối tuần bạn có kế hoạch gì?',
-   exList:[
-     {zh:'周末你有什么打算？',py:'Zhōumò nǐ yǒu shénme dǎsuàn?',vn:'Cuối tuần bạn có kế hoạch gì?'},
-     {zh:'这个周末我要去旅游。',py:'Zhège zhōumò wǒ yào qù lǚyóu.',vn:'Cuối tuần này tôi định đi du lịch.'},
-     {zh:'周末愉快！',py:'Zhōumò yúkuài!',vn:'Chúc cuối tuần vui vẻ!'},
-   ],
-   hanzi:[
-     {c:'末',p:'mò',type:'独体字 · Chữ đơn (chỉ sự)',st:5,ord:'木 (mộc) + nét ngang trên cùng',rad:'木 (mộc – cây)',mean:'ngọn, cuối, phần cuối',
-      tip:'Chữ 木(cây) thêm một nét ngang ở ngọn để chỉ ĐẦU NGỌN cây → nghĩa mở rộng "phần CUỐI" của một khoảng thời gian.',
-      cf:'未 (wèi – "chưa", nét ngang ngắn hơn ở trên)',w:'周末 / 月末 / 期末'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì cuối tuần này tôi rảnh nên tôi định đi thăm bạn.',answer:'因为这个周末我有空，所以我打算去看朋友。',answerPy:'Yīnwèi zhège zhōumò wǒ yǒu kòng, suǒyǐ wǒ dǎsuàn qù kàn péngyou.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu cuối tuần trời đẹp thì chúng ta đi leo núi nhé.',answer:'如果周末天气好，我们就去爬山吧。',answerPy:'Rúguǒ zhōumò tiānqì hǎo, wǒmen jiù qù páshān ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:2,zh:'打算',py:'dǎsuàn',pos:'Danh từ/Động từ',vn:'kế hoạch; dự định', hv: 'đả toán',em:'📝',lesson:1,
-   explain:['1. (Danh từ) Kế hoạch, ý định đã nghĩ đến cho việc gì đó.','2. (Động từ) Có ý định làm gì, dự định làm gì.'],
-   usage:'Khi làm động từ: 打算 + Động từ khác (打算去旅游); khi làm danh từ: 有/没有 + 打算 (有什么打算).',
-   collo:['有什么打算','打算去旅游','早就打算好了'],
-   ex_zh:'我早就想好了。',ex_py:'Wǒ zǎo jiù xiǎnghǎo le.',ex_vn:'Tôi đã nghĩ xong từ lâu rồi.',
-   exList:[
-     {zh:'周末你有什么打算？',py:'Zhōumò nǐ yǒu shénme dǎsuàn?',vn:'Cuối tuần bạn có kế hoạch gì?'},
-     {zh:'下个月我打算去旅游。',py:'Xià ge yuè wǒ dǎsuàn qù lǚyóu.',vn:'Tháng sau tôi định đi du lịch.'},
-     {zh:'你打算什么时候搬？',py:'Nǐ dǎsuàn shénme shíhou bān?',vn:'Bạn định khi nào chuyển nhà?'},
-   ],
-   hanzi:[
-     {c:'算',p:'suàn',type:'上下结构 · Trên-dưới',st:14,ord:'竹 (trúc) trên → 目+廾 dưới',rad:'竹 (trúc – tre)',mean:'tính toán',
-      tip:'Bộ tre 竹 (dụng cụ tính toán cổ, như bàn tính) → nghĩa TÍNH TOÁN, mở rộng thành "dự tính, dự định".',
-      cf:'笔 (bǐ – "bút", cũng có bộ 竹")',w:'打算 / 计算 / 算了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy tôi đã có kế hoạch nhưng vẫn muốn nghe ý kiến của bạn.',answer:'虽然我已经有打算了，但是还想听听你的意见。',answerPy:'Suīrán wǒ yǐjīng yǒu dǎsuàn le, dànshì hái xiǎng tīngting nǐ de yìjiàn.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-     {promptLang:'vi',prompt:'Nếu bạn chưa có kế hoạch gì thì cùng đi xem phim với tôi đi.',answer:'如果你还没有什么打算，就跟我一起去看电影吧。',answerPy:'Rúguǒ nǐ hái méiyǒu shénme dǎsuàn, jiù gēn wǒ yìqǐ qù kàn diànyǐng ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'啊',py:'a',pos:'Trợ từ',vn:'à, đấy, nhé (trợ từ cuối câu)', hv: 'a',em:'💬',lesson:1,
-   explain:['Trợ từ ngữ khí đứng cuối câu, dùng để khẳng định, xác nhận hoặc biện minh cho điều vừa nói, giúp lời nói mềm mại, tự nhiên hơn.'],
-   usage:'Đứng ở CUỐI CÂU trần thuật hoặc câu hỏi: [câu] + 啊. Không mang nghĩa từ vựng riêng, chỉ thêm sắc thái ngữ khí.',
-   collo:['是啊','好啊','是啊，我已经……'],
-   ex_zh:'是啊，我已经找好饭馆儿了。',ex_py:'Shì a, wǒ yǐjīng zhǎohǎo fànguǎnr le.',ex_vn:'Đúng vậy đấy, anh đã tìm sẵn quán ăn rồi.',
-   exList:[
-     {zh:'是啊，我已经找好饭馆儿了。',py:'Shì a, wǒ yǐjīng zhǎohǎo fànguǎnr le.',vn:'Đúng vậy đấy, anh đã tìm sẵn quán ăn rồi.'},
-     {zh:'南方啊，我们去年就是这个时候去的。',py:'Nánfāng a, wǒmen qùnián jiù shì zhège shíhou qù de.',vn:'Miền Nam đấy, năm ngoái chúng tôi cũng đi vào lúc này.'},
-     {zh:'今天的面包真便宜，是啊，那我们多买几个吧！',py:'Jīntiān de miànbāo zhēn piányi, shì a, nà wǒmen duō mǎi jǐ ge ba!',vn:'Bánh mì hôm nay rẻ thật, đúng đấy, vậy chúng ta mua thêm vài cái đi!'},
-   ],
-   hanzi:[
-     {c:'啊',p:'a',type:'左右结构 · Trái-phải',st:10,ord:'口 (khẩu) trái → 阿 (a) phải',rad:'口 (khẩu – miệng)',mean:'trợ từ ngữ khí',
-      tip:'Bộ miệng 口 (âm thanh phát ra) + 阿(âm "a") → chữ chuyên dùng ghi lại tiếng thốt "à" cuối câu.',
-      cf:'阿 (ā – dùng trong tên riêng, không có bộ 口")',w:'是啊 / 好啊 / 对啊'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đúng đấy, tôi cũng nghĩ kế hoạch này rất hay.',answer:'是啊，我也觉得这个打算很好。',answerPy:'Shì a, wǒ yě juéde zhège dǎsuàn hěn hǎo.',
-      note:'是啊 dùng để xác nhận, đồng tình với điều vừa nghe.'},
-     {promptLang:'vi',prompt:'Được đấy, chúng ta cuối tuần này đi chơi cùng nhau nhé.',answer:'好啊，我们这个周末一起去玩儿吧。',answerPy:'Hǎo a, wǒmen zhège zhōumò yìqǐ qù wánr ba.',
-      note:'好啊 = đồng ý một cách vui vẻ, tự nhiên.'},
-   ]},
-
-  {n:4,zh:'跟',py:'gēn',pos:'Giới từ',vn:'cùng, với', hv: 'cân',em:'🤝',lesson:1,
-   explain:['Giới từ chỉ đối tượng cùng tham gia một hành động với chủ ngữ.'],
-   usage:'Đứng TRƯỚC đối tượng, tạo thành cụm giới từ làm trạng ngữ: 跟 + [người] + Động từ (跟你去, 跟我一起玩儿).',
-   collo:['跟你去','跟我一起','跟朋友聊天'],
-   ex_zh:'我还没想好要不要跟你去呢。',ex_py:'Wǒ hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.',ex_vn:'Tôi vẫn chưa nghĩ xong có nên đi cùng bạn hay không.',
-   exList:[
-     {zh:'我还没想好要不要跟你去呢。',py:'Wǒ hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.',vn:'Tôi vẫn chưa nghĩ xong có nên đi cùng bạn hay không.'},
-     {zh:'你能跟我一起去吗？',py:'Nǐ néng gēn wǒ yìqǐ qù ma?',vn:'Bạn có thể đi cùng tôi không?'},
-     {zh:'我喜欢跟朋友聊天。',py:'Wǒ xǐhuan gēn péngyou liáotiān.',vn:'Tôi thích trò chuyện cùng bạn bè.'},
-   ],
-   hanzi:[
-     {c:'跟',p:'gēn',type:'左右结构 · Trái-phải',st:13,ord:'足 (túc) trái → 艮 (cấn) phải',rad:'足 (túc – chân)',mean:'theo, đi cùng',
-      tip:'Bộ chân 足 (bước đi) + 艮(dừng lại, đối diện) → BƯỚC THEO SÁT ai đó = ĐI CÙNG.',
-      cf:'很 (hěn – "rất", cũng có 艮")',w:'跟你 / 跟着 / 跟他学'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn đi cùng tôi thì tôi sẽ không sợ lạc đường.',answer:'只要你跟我一起去，我就不怕迷路。',answerPy:'Zhǐyào nǐ gēn wǒ yìqǐ qù, wǒ jiù bú pà mílù.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Vì em gái muốn đi cùng nên tôi phải đợi thêm một lúc.',answer:'因为妹妹想跟着去，所以我得再等一会儿。',answerPy:'Yīnwèi mèimei xiǎng gēnzhe qù, suǒyǐ wǒ děi zài děng yíhuìr.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:5,zh:'一直',py:'yìzhí',pos:'Phó từ',vn:'suốt, liên tục', hv: 'nhất trực',em:'➡️',lesson:2,
-   explain:['Diễn tả một hành động hoặc trạng thái kéo dài không ngừng, không thay đổi.'],
-   usage:'Phó từ, đứng TRƯỚC động từ/tính từ mà nó bổ nghĩa: 一直 + V/Adj (一直玩儿, 一直想).',
-   collo:['一直玩儿','一直想去','一直没有'],
-   ex_zh:'你一直玩儿电脑游戏，作业写完了吗？',ex_py:'Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?',ex_vn:'Con chơi game máy tính suốt vậy, bài tập làm xong chưa?',
-   exList:[
-     {zh:'你一直玩儿电脑游戏，作业写完了吗？',py:'Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?',vn:'Con chơi game máy tính suốt vậy, bài tập làm xong chưa?'},
-     {zh:'南方我一直想去看看。',py:'Nánfāng wǒ yìzhí xiǎng qù kànkan.',vn:'Miền Nam tôi vẫn luôn muốn đi xem thử.'},
-     {zh:'他一直在办公室工作。',py:'Tā yìzhí zài bàngōngshì gōngzuò.',vn:'Anh ấy làm việc suốt trong văn phòng.'},
-   ],
-   hanzi:[
-     {c:'直',p:'zhí',type:'独体字 · Chữ đơn (chỉ sự)',st:8,ord:'十+目 trên → 一 dưới',rad:'目 (mục – mắt)',mean:'thẳng, liên tục',
-      tip:'Mắt 目 nhìn thẳng theo một đường thẳng 一 không lệch hướng → nghĩa THẲNG, mở rộng thành LIÊN TỤC không đổi.',
-      cf:'真 (zhēn – "thật", hình gần giống")',w:'一直 / 直接 / 直走'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời mưa suốt nên chúng tôi không thể đi leo núi được.',answer:'因为雨一直下，所以我们没能去爬山。',answerPy:'Yīnwèi yǔ yìzhí xià, suǒyǐ wǒmen méi néng qù páshān.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy đã ôn tập liên tục nhưng cô ấy vẫn thấy lo lắng.',answer:'虽然她一直在复习，但是还是觉得着急。',answerPy:'Suīrán tā yìzhí zài fùxí, dànshì háishi juéde zháojí.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:6,zh:'游戏',py:'yóuxì',pos:'Danh từ',vn:'trò chơi', hv: 'du hí',em:'🎮',lesson:2,
-   explain:['Hoạt động giải trí, thường chỉ trò chơi điện tử/máy tính trong ngữ cảnh hiện đại.'],
-   usage:'Danh từ; thường kết hợp với động từ 玩儿 (chơi): 玩儿 + 游戏.',
-   collo:['玩儿游戏','电脑游戏','手机游戏'],
-   ex_zh:'你一直玩儿电脑游戏，作业写完了吗？',ex_py:'Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?',ex_vn:'Con chơi game máy tính suốt vậy, bài tập làm xong chưa?',
-   exList:[
-     {zh:'你一直玩儿电脑游戏，作业写完了吗？',py:'Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?',vn:'Con chơi game máy tính suốt vậy, bài tập làm xong chưa?'},
-     {zh:'那也不能一直玩儿啊。',py:'Nà yě bù néng yìzhí wánr a.',vn:'Vậy cũng không thể chơi mãi được.'},
-     {zh:'弟弟很喜欢玩儿手机游戏。',py:'Dìdi hěn xǐhuan wánr shǒujī yóuxì.',vn:'Em trai rất thích chơi game trên điện thoại.'},
-   ],
-   hanzi:[
-     {c:'戏',p:'xì',type:'左右结构 · Trái-phải',st:6,ord:'又 (hựu) trái → 戈 (qua) phải',rad:'戈 (qua – vũ khí)',mean:'trò chơi; tuồng, kịch',
-      tip:'又(tay) cầm 戈(vũ khí đồ chơi) → diễn tả các trò TRÒ CHƠI, DIỄN KỊCH thời cổ.',
-      cf:'哉 (zāi – trợ từ cổ, cũng có 戈")',w:'游戏 / 做游戏 / 电脑游戏'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn làm xong bài tập thì có thể chơi game một lúc.',answer:'如果你写完了作业，就可以玩儿一会儿游戏。',answerPy:'Rúguǒ nǐ xiěwánle zuòyè, jiù kěyǐ wánr yíhuìr yóuxì.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-     {promptLang:'vi',prompt:'Chỉ cần đừng chơi game quá nhiều thì mẹ sẽ không lo lắng.',answer:'只要你别玩儿太多游戏，妈妈就不会着急。',answerPy:'Zhǐyào nǐ bié wánr tài duō yóuxì, māma jiù bú huì zháojí.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:7,zh:'作业',py:'zuòyè',pos:'Danh từ',vn:'bài tập về nhà', hv: 'tác nghiệp',em:'📓',lesson:2,
-   explain:['Bài tập giáo viên giao cho học sinh làm ở nhà.'],
-   usage:'Danh từ; thường kết hợp với động từ 写 (viết/làm) hoặc 做 (làm): 写作业, 做作业.',
-   collo:['写作业','做作业','作业写完了'],
-   ex_zh:'作业写完了吗？',ex_py:'Zuòyè xiěwán le ma?',ex_vn:'Bài tập làm xong chưa?',
-   exList:[
-     {zh:'作业写完了吗？',py:'Zuòyè xiěwán le ma?',vn:'Bài tập làm xong chưa?'},
-     {zh:'都写完了。',py:'Dōu xiěwán le.',vn:'Đều làm xong hết rồi.'},
-     {zh:'我不能跟你出去玩儿，明天的汉语课我还没做作业。',py:'Wǒ bù néng gēn nǐ chūqu wánr, míngtiān de Hànyǔ kè wǒ hái méi zuò zuòyè.',vn:'Tôi không thể đi chơi cùng bạn, bài tập cho tiết tiếng Trung ngày mai tôi vẫn chưa làm.'},
-   ],
-   hanzi:[
-     {c:'业',p:'yè',type:'独体字 · Chữ đơn (giản thể)',st:5,ord:'nét liền',rad:'一 (nhất)',mean:'nghề nghiệp; công việc',
-      tip:'Chữ giản thể mô phỏng hình cái giá gỗ để treo chuông khánh thời cổ, nơi thực hiện công việc → mở rộng thành CÔNG VIỆC, BÀI VỞ.',
-      cf:'亚 (yà – "châu Á", hình dáng gần giống")',w:'作业 / 工作 / 毕业'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì bài tập còn nhiều nên tôi không có thời gian chơi game.',answer:'因为作业还很多，所以我没有时间玩儿游戏。',answerPy:'Yīnwèi zuòyè hái hěn duō, suǒyǐ wǒ méiyǒu shíjiān wánr yóuxì.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn làm xong bài tập sớm thì có thể đi ngủ sớm.',answer:'如果你早点儿写完作业，就可以早点儿睡觉。',answerPy:'Rúguǒ nǐ zǎo diǎnr xiěwán zuòyè, jiù kěyǐ zǎo diǎnr shuìjiào.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:8,zh:'着急',py:'zháojí',pos:'Tính từ',vn:'lo lắng, sốt ruột', hv: 'trước cấp',em:'😟',lesson:2,
-   explain:['Cảm giác không yên tâm, muốn giải quyết ngay một việc gì đó gấp gáp.'],
-   usage:'Tính từ, làm vị ngữ với 很/别/一点儿也不: 很着急, 别着急 (đừng lo), 一点儿也不着急 (không lo chút nào).',
-   collo:['别着急','很着急','一点儿也不着急'],
-   ex_zh:'你怎么一点儿也不着急？',ex_py:'Nǐ zěnme yìdiǎnr yě bù zháojí?',ex_vn:'Sao con không lo lắng chút nào vậy?',
-   exList:[
-     {zh:'你怎么一点儿也不着急？',py:'Nǐ zěnme yìdiǎnr yě bù zháojí?',vn:'Sao con không lo lắng chút nào vậy?'},
-     {zh:'如果你着急，我们就先走吧。',py:'Rúguǒ nǐ zháojí, wǒmen jiù xiān zǒu ba.',vn:'Nếu bạn gấp thì chúng ta đi trước đi.'},
-     {zh:'考试快到了，他很着急。',py:'Kǎoshì kuài dào le, tā hěn zháojí.',vn:'Kỳ thi sắp đến rồi, anh ấy rất lo lắng.'},
-   ],
-   hanzi:[
-     {c:'急',p:'jí',type:'上下结构 · Trên-dưới',st:9,ord:'刍+勹 trên → 心 dưới',rad:'心 (tâm – trái tim)',mean:'gấp, vội, lo lắng',
-      tip:'Bộ tâm 心 (trong lòng) ở dưới, phần trên mô phỏng trạng thái GẤP GÁP → trong lòng nôn nóng, VỘI VÃ.',
-      cf:'忽 (hū – "bỗng nhiên", cũng có bộ 心")',w:'着急 / 急事 / 急忙'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì bài tập chưa làm xong nên cậu bé rất lo lắng.',answer:'因为作业还没写完，所以孩子很着急。',answerPy:'Yīnwèi zuòyè hái méi xiěwán, suǒyǐ háizi hěn zháojí.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn ôn tập sớm thì sẽ không phải lo lắng nữa.',answer:'只要你早点儿复习，就不用着急了。',answerPy:'Zhǐyào nǐ zǎo diǎnr fùxí, jiù búyòng zháojí le.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:9,zh:'复习',py:'fùxí',pos:'Động từ',vn:'ôn tập', hv: 'phục tập',em:'📖',lesson:2,
-   explain:['Xem lại, học lại những kiến thức đã học để ghi nhớ kỹ hơn.'],
-   usage:'Động từ, có thể theo sau bởi tân ngữ (复习课文) hoặc kết quả bổ ngữ 好 (复习好了 = ôn xong và tốt).',
-   collo:['复习好了','复习课文','早就复习了'],
-   ex_zh:'我早就复习好了。',ex_py:'Wǒ zǎo jiù fùxí hǎo le.',ex_vn:'Con đã ôn xong từ lâu rồi.',
-   exList:[
-     {zh:'我早就复习好了。',py:'Wǒ zǎo jiù fùxí hǎo le.',vn:'Con đã ôn xong từ lâu rồi.'},
-     {zh:'明天不是有考试吗？',py:'Míngtiān bú shì yǒu kǎoshì ma?',vn:'Ngày mai chẳng phải có thi sao?'},
-     {zh:'考试快到了，你复习得怎么样？',py:'Kǎoshì kuài dào le, nǐ fùxí de zěnmeyàng?',vn:'Kỳ thi sắp đến rồi, bạn ôn tập thế nào rồi?'},
-   ],
-   hanzi:[
-     {c:'习',p:'xí',type:'独体字 · Chữ đơn (giản thể)',st:3,ord:'nét liền',rad:'乙 (ất)',mean:'học tập, luyện tập',
-      tip:'Chữ giản thể tượng hình cánh chim non tập bay lặp đi lặp lại → nghĩa LUYỆN TẬP, ÔN LẠI nhiều lần.',
-      cf:'刁 (diāo – "xảo trá", hình gần giống")',w:'复习 / 学习 / 习惯'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì tôi đã ôn tập kỹ nên không còn lo lắng về kỳ thi nữa.',answer:'因为我已经复习好了，所以不再担心考试了。',answerPy:'Yīnwèi wǒ yǐjīng fùxí hǎo le, suǒyǐ bú zài dānxīn kǎoshì le.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn chưa ôn tập xong thì đừng đi chơi game nữa.',answer:'如果你还没复习好，就别去玩儿游戏了。',answerPy:'Rúguǒ nǐ hái méi fùxí hǎo, jiù bié qù wánr yóuxì le.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:10,zh:'南方',py:'nánfāng',pos:'Danh từ',vn:'phía nam, miền Nam', hv: 'nam phương',em:'🧭',lesson:3,
-   explain:['Khu vực phía nam của một quốc gia/vùng đất, thường được nói tắt là 南.'],
-   usage:'Danh từ chỉ phương hướng/khu vực; đối lập với 北方 (miền Bắc). Có thể dùng 南 độc lập hoặc 南方 đầy đủ.',
-   collo:['去南方','南方人','南方天气'],
-   ex_zh:'南方啊，我们去年就是这个时候去的。',ex_py:'Nánfāng a, wǒmen qùnián jiù shì zhège shíhou qù de.',ex_vn:'Miền Nam đấy, năm ngoái chúng tôi cũng đi vào lúc này.',
-   exList:[
-     {zh:'南方啊，我们去年就是这个时候去的。',py:'Nánfāng a, wǒmen qùnián jiù shì zhège shíhou qù de.',vn:'Miền Nam đấy, năm ngoái chúng tôi cũng đi vào lúc này.'},
-     {zh:'南方太热了，北方好一些，不冷也不热。',py:'Nánfāng tài rè le, běifāng hǎo yìxiē, bù lěng yě bú rè.',vn:'Miền Nam nóng quá, miền Bắc dễ chịu hơn, không lạnh cũng không nóng.'},
-     {zh:'南方我一直想去看看。',py:'Nánfāng wǒ yìzhí xiǎng qù kànkan.',vn:'Miền Nam tôi vẫn luôn muốn đi xem thử.'},
-   ],
-   hanzi:[
-     {c:'南',p:'nán',type:'独体字 · Chữ đơn (chỉ sự)',st:9,ord:'nét liền',rad:'十 (thập)',mean:'phía nam',
-      tip:'Chữ cổ vốn mô phỏng hình một loại nhạc cụ treo hướng về phía có ánh nắng ấm → PHƯƠNG NAM (hướng mặt trời, ấm áp).',
-      cf:'击 (jī – "đánh", không liên quan nghĩa")',w:'南方 / 南边 / 东南'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì miền Nam nóng quá nên chúng tôi quyết định đi miền Bắc.',answer:'因为南方太热了，所以我们决定去北方。',answerPy:'Yīnwèi nánfāng tài rè le, suǒyǐ wǒmen juédìng qù běifāng.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy miền Nam nóng nhưng tôi vẫn rất thích đi du lịch ở đó.',answer:'虽然南方很热，但是我还是很喜欢去那儿旅游。',answerPy:'Suīrán nánfāng hěn rè, dànshì wǒ háishi hěn xǐhuan qù nàr lǚyóu.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:11,zh:'北方',py:'běifāng',pos:'Danh từ',vn:'phía bắc, miền Bắc', hv: 'bắc phương',em:'🧭',lesson:3,
-   explain:['Khu vực phía bắc của một quốc gia/vùng đất, đối lập với 南方 (miền Nam).'],
-   usage:'Danh từ chỉ phương hướng/khu vực, cách dùng tương tự 南方.',
-   collo:['北方人','北方好一些','去北方'],
-   ex_zh:'南方太热了，北方好一些，不冷也不热。',ex_py:'Nánfāng tài rè le, běifāng hǎo yìxiē, bù lěng yě bú rè.',ex_vn:'Miền Nam nóng quá, miền Bắc dễ chịu hơn, không lạnh cũng không nóng.',
-   exList:[
-     {zh:'南方太热了，北方好一些，不冷也不热。',py:'Nánfāng tài rè le, běifāng hǎo yìxiē, bù lěng yě bú rè.',vn:'Miền Nam nóng quá, miền Bắc dễ chịu hơn, không lạnh cũng không nóng.'},
-     {zh:'我是北方人。',py:'Wǒ shì běifāngrén.',vn:'Tôi là người miền Bắc.'},
-     {zh:'冬天北方很冷。',py:'Dōngtiān běifāng hěn lěng.',vn:'Mùa đông miền Bắc rất lạnh.'},
-   ],
-   hanzi:[
-     {c:'北',p:'běi',type:'左右结构 · Trái-phải',st:5,ord:'两个"匕" đối lưng nhau',rad:'匕 (chuỷ)',mean:'phía bắc',
-      tip:'Hình vẽ cổ hai người quay lưng vào nhau → hướng NGƯỢC với hướng mặt trời (nam) = PHƯƠNG BẮC.',
-      cf:'比 (bǐ – "so sánh", hình gần giống nhưng quay cùng chiều")',w:'北方 / 北边 / 东北'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần mùa đông đến thì miền Bắc sẽ rất lạnh.',answer:'只要冬天一到，北方就会很冷。',answerPy:'Zhǐyào dōngtiān yí dào, běifāng jiù huì hěn lěng.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Vì miền Bắc không nóng cũng không lạnh nên nhiều người thích sống ở đó.',answer:'因为北方不冷也不热，所以很多人喜欢住在那儿。',answerPy:'Yīnwèi běifāng bù lěng yě bú rè, suǒyǐ hěn duō rén xǐhuan zhù zài nàr.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:12,zh:'面包',py:'miànbāo',pos:'Danh từ',vn:'bánh mì', hv: 'diện bao',em:'🍞',lesson:4,
-   explain:['Loại thực phẩm làm từ bột mì nướng lên, dùng để ăn sáng hoặc ăn nhẹ.'],
-   usage:'Danh từ; lượng từ đi kèm là 个 hoặc 块: 一个面包, 一块面包.',
-   collo:['买面包','一个面包','面包便宜'],
-   ex_zh:'今天的面包真便宜。',ex_py:'Jīntiān de miànbāo zhēn piányi.',ex_vn:'Bánh mì hôm nay rẻ thật.',
-   exList:[
-     {zh:'今天的面包真便宜。',py:'Jīntiān de miànbāo zhēn piányi.',vn:'Bánh mì hôm nay rẻ thật.'},
-     {zh:'是啊，那我们多买几个吧！',py:'Shì a, nà wǒmen duō mǎi jǐ ge ba!',vn:'Đúng đấy, vậy chúng ta mua thêm vài cái đi!'},
-     {zh:'水果、面包、茶都准备好了，我们还带什么？',py:'Shuǐguǒ, miànbāo, chá dōu zhǔnbèi hǎo le, wǒmen hái dài shénme?',vn:'Trái cây, bánh mì, trà đều chuẩn bị xong rồi, chúng ta còn mang gì nữa?'},
-   ],
-   hanzi:[
-     {c:'包',p:'bāo',type:'半包围结构 · Bán bao vây',st:5,ord:'勹 bao ngoài → 巳 trong',rad:'勹 (bao – bao bọc)',mean:'gói, bọc; bánh bao/bánh mì',
-      tip:'Bộ 勹(bao bọc) ôm lấy phần trong → hình ảnh vật gì đó được BỌC LẠI, mở rộng thành các loại bánh có lớp vỏ bọc.',
-      cf:'色 (sè – "màu sắc", không liên quan")',w:'面包 / 书包 / 面包车'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì bánh mì ở cửa hàng này rất ngon nên tôi thường xuyên mua.',answer:'因为这家店的面包很好吃，所以我常常买。',answerPy:'Yīnwèi zhè jiā diàn de miànbāo hěn hǎochī, suǒyǐ wǒ chángcháng mǎi.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bánh mì hết rồi thì chúng ta mua trái cây thay thế vậy.',answer:'如果面包卖完了，我们就买水果代替吧。',answerPy:'Rúguǒ miànbāo màiwán le, wǒmen jiù mǎi shuǐguǒ dàitì ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'带',py:'dài',pos:'Động từ',vn:'mang theo', hv: 'đái',em:'🎒',lesson:4,
-   explain:['Cầm, đem theo một vật gì đó khi di chuyển từ nơi này đến nơi khác.'],
-   usage:'Động từ, theo sau là tân ngữ chỉ vật được mang theo: 带 + [vật] (带地图, 带钱).',
-   collo:['带地图','带钱','多带几件'],
-   ex_zh:'再多带几件衣服吧。',ex_py:'Zài duō dài jǐ jiàn yīfu ba.',ex_vn:'Mang thêm vài bộ quần áo nữa đi.',
-   exList:[
-     {zh:'再多带几件衣服吧。',py:'Zài duō dài jǐ jiàn yīfu ba.',vn:'Mang thêm vài bộ quần áo nữa đi.'},
-     {zh:'手机、电脑、地图，一个也不能少。',py:'Shǒujī, diànnǎo, dìtú, yí ge yě bù néng shǎo.',vn:'Điện thoại, máy tính, bản đồ, một cái cũng không thể thiếu.'},
-     {zh:'我没带地图，我们问问那边的游客吧。',py:'Wǒ méi dài dìtú, wǒmen wènwen nàbiān de yóukè ba.',vn:'Tôi không mang bản đồ, chúng ta hỏi thử du khách đằng kia đi.'},
-   ],
-   hanzi:[
-     {c:'带',p:'dài',type:'独体字 · Chữ đơn (tượng hình)',st:9,ord:'nét liền, hình dây lưng',rad:'巾 (cân – khăn, vải)',mean:'mang, đeo; dải, đai',
-      tip:'Chữ tượng hình mô phỏng chiếc DÂY LƯNG/dải vải đeo quanh người → mở rộng thành động từ MANG THEO.',
-      cf:'常 (cháng – "thường xuyên", không liên quan")',w:'带东西 / 带钱 / 带路'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời sắp mưa nên bạn nhớ mang theo ô nhé.',answer:'因为要下雨了，所以你记得带把伞。',answerPy:'Yīnwèi yào xiàyǔ le, suǒyǐ nǐ jìde dài bǎ sǎn.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn không mang theo tiền thì tôi cho bạn mượn.',answer:'如果你没带钱，我就借给你吧。',answerPy:'Rúguǒ nǐ méi dài qián, wǒ jiù jiè gěi nǐ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:14,zh:'地图',py:'dìtú',pos:'Danh từ',vn:'bản đồ', hv: 'địa đồ',em:'🗺️',lesson:4,
-   explain:['Bản vẽ thể hiện vị trí địa lý, đường xá, khu vực... dùng để tìm đường.'],
-   usage:'Danh từ; lượng từ đi kèm là 张 (tấm): 一张地图.',
-   collo:['一张地图','带地图','看地图'],
-   ex_zh:'手机、电脑、地图，一个也不能少。',ex_py:'Shǒujī, diànnǎo, dìtú, yí ge yě bù néng shǎo.',ex_vn:'Điện thoại, máy tính, bản đồ, một cái cũng không thể thiếu.',
-   exList:[
-     {zh:'手机、电脑、地图，一个也不能少。',py:'Shǒujī, diànnǎo, dìtú, yí ge yě bù néng shǎo.',vn:'Điện thoại, máy tính, bản đồ, một cái cũng không thể thiếu.'},
-     {zh:'别着急，车上有电子地图。',py:'Bié zháojí, chē shang yǒu diànzǐ dìtú.',vn:'Đừng lo, trên xe có bản đồ điện tử.'},
-     {zh:'不用，我就是地图，你问我吧。',py:'Búyòng, wǒ jiù shì dìtú, nǐ wèn wǒ ba.',vn:'Không cần đâu, tôi chính là bản đồ, bạn cứ hỏi tôi đi.'},
-   ],
-   hanzi:[
-     {c:'图',p:'tú',type:'半包围结构 · Bán bao vây (giản thể)',st:8,ord:'囗 bao ngoài → 冬 (biến thể) trong',rad:'囗 (vi – bao quanh)',mean:'hình vẽ, bản đồ',
-      tip:'Bộ 囗(khung bao quanh, như đường biên giới) chứa hình vẽ bên trong → BẢN ĐỒ, HÌNH VẼ khu vực.',
-      cf:'因 (yīn – "nguyên nhân", cũng có 囗")',w:'地图 / 图书馆 / 画图'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì không mang bản đồ nên chúng tôi đã đi lạc đường.',answer:'因为没带地图，所以我们走错路了。',answerPy:'Yīnwèi méi dài dìtú, suǒyǐ wǒmen zǒucuò lù le.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn không rành đường thì hãy mang theo bản đồ điện tử.',answer:'如果你不认识路，就带上电子地图吧。',answerPy:'Rúguǒ nǐ bú rènshi lù, jiù dàishang diànzǐ dìtú ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:15,zh:'搬',py:'bān',pos:'Động từ',vn:'dọn, dời, chuyển (nhà/đồ)', hv: 'ban',em:'📦',lesson:4,
-   explain:['Di chuyển một vật (thường nặng/cồng kềnh) hoặc chuyển nơi ở từ chỗ này sang chỗ khác.'],
-   usage:'Động từ, có thể đi với tân ngữ 家 (搬家 = chuyển nhà) hoặc vật cụ thể (搬东西 = khuân đồ).',
-   collo:['搬家','搬东西','不是搬家'],
-   ex_zh:'我们是去旅游，不是搬家，还是少带一些吧。',ex_py:'Wǒmen shì qù lǚyóu, bú shì bān jiā, háishi shǎo dài yìxiē ba.',ex_vn:'Chúng ta là đi du lịch, không phải chuyển nhà, thôi mang ít thôi.',
-   exList:[
-     {zh:'我们是去旅游，不是搬家，还是少带一些吧。',py:'Wǒmen shì qù lǚyóu, bú shì bān jiā, háishi shǎo dài yìxiē ba.',vn:'Chúng ta là đi du lịch, không phải chuyển nhà, thôi mang ít thôi.'},
-     {zh:'请问您打算什么时候搬？',py:'Qǐngwèn nín dǎsuàn shénme shíhou bān?',vn:'Xin hỏi anh định khi nào chuyển nhà?'},
-     {zh:'这么多东西，你怎么一个人搬？',py:'Zhème duō dōngxi, nǐ zěnme yí ge rén bān?',vn:'Nhiều đồ vậy, sao bạn khuân một mình được?'},
-   ],
-   hanzi:[
-     {c:'搬',p:'bān',type:'左右结构 · Trái-phải',st:13,ord:'扌 (thủ) trái → 般 (bàn) phải',rad:'扌 (thủ – bàn tay)',mean:'khuân, dời, chuyển',
-      tip:'Bộ tay 扌 + 般(loại, kiểu — vốn chỉ thuyền) → dùng TAY di chuyển đồ vật từ nơi này sang nơi khác.',
-      cf:'船 (chuán – "thuyền", cũng chứa 舟 gần 般")',w:'搬家 / 搬东西 / 搬走'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì nhà mới gần công ty hơn nên tuần sau chúng tôi sẽ chuyển nhà.',answer:'因为新家离公司更近，所以我们下周要搬家。',answerPy:'Yīnwèi xīn jiā lí gōngsī gèng jìn, suǒyǐ wǒmen xià zhōu yào bān jiā.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn giúp tôi khuân đồ thì tôi sẽ mời bạn ăn cơm.',answer:'只要你帮我搬东西，我就请你吃饭。',answerPy:'Zhǐyào nǐ bāng wǒ bān dōngxi, wǒ jiù qǐng nǐ chīfàn.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:16,zh:'小丽',py:'Xiǎolì',pos:'Danh từ riêng',vn:'chị Lệ (tên người)', hv: 'Tiểu Lệ',em:'👧',lesson:1,
-   explain:['Tên riêng của một nhân vật nữ trong bài hội thoại (nhân vật xuất hiện xuyên suốt các bài tiếp theo).'],
-   usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
-   collo:['小丽说','跟小丽一起','小丽的打算'],
-   ex_zh:'小丽还没想好要不要跟你去呢。',ex_py:'Xiǎolì hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.',ex_vn:'Chị Lệ vẫn chưa nghĩ xong có nên đi cùng bạn hay không.',
-   exList:[
-     {zh:'小丽还没想好要不要跟你去呢。',py:'Xiǎolì hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.',vn:'Chị Lệ vẫn chưa nghĩ xong có nên đi cùng bạn hay không.'},
-     {zh:'小丽，周末你有什么打算？',py:'Xiǎolì, zhōumò nǐ yǒu shénme dǎsuàn?',vn:'Chị Lệ ơi, cuối tuần chị có kế hoạch gì không?'},
-   ]},
-
-  {n:17,zh:'小刚',py:'Xiǎogāng',pos:'Danh từ riêng',vn:'anh Cương (tên người)', hv: 'Tiểu Cương',em:'🧑',lesson:1,
-   explain:['Tên riêng của một nhân vật nam trong bài hội thoại (nhân vật xuất hiện xuyên suốt các bài tiếp theo).'],
-   usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
-   collo:['小刚说','跟小刚一起','小刚的打算'],
-   ex_zh:'小刚早就想好了。',ex_py:'Xiǎogāng zǎo jiù xiǎnghǎo le.',ex_vn:'Anh Cương đã nghĩ xong từ lâu rồi.',
-   exList:[
-     {zh:'小刚早就想好了。',py:'Xiǎogāng zǎo jiù xiǎnghǎo le.',vn:'Anh Cương đã nghĩ xong từ lâu rồi.'},
-     {zh:'小刚，我们还带什么？',py:'Xiǎogāng, wǒmen hái dài shénme?',vn:'Anh Cương ơi, chúng ta còn mang gì nữa?'},
-   ]},
+  {
+    "n": 1,
+    "zh": "周末",
+    "py": "zhōumò",
+    "pos": "Danh từ",
+    "vn": "cuối tuần",
+    "hv": "chu mạt",
+    "em": "📅",
+    "lesson": 1,
+    "explain": [
+      "Hai ngày thứ Bảy và Chủ nhật, khoảng thời gian nghỉ ngơi sau một tuần làm việc/học tập."
+    ],
+    "usage": "Danh từ chỉ thời gian; thường đứng ĐẦU CÂU hoặc ngay SAU chủ ngữ làm trạng ngữ: 周末 + Chủ ngữ + Vị ngữ.",
+    "collo": [
+      "周末愉快",
+      "这个周末",
+      "周末计划"
+    ],
+    "ex_zh": "周末你有什么打算？",
+    "ex_py": "Zhōumò nǐ yǒu shénme dǎsuàn?",
+    "ex_vn": "Cuối tuần bạn có kế hoạch gì?",
+    "exList": [
+      {
+        "zh": "周末你有什么打算？",
+        "py": "Zhōumò nǐ yǒu shénme dǎsuàn?",
+        "vn": "Cuối tuần bạn có kế hoạch gì?"
+      },
+      {
+        "zh": "这个周末我要去旅游。",
+        "py": "Zhège zhōumò wǒ yào qù lǚyóu.",
+        "vn": "Cuối tuần này tôi định đi du lịch."
+      },
+      {
+        "zh": "周末愉快！",
+        "py": "Zhōumò yúkuài!",
+        "vn": "Chúc cuối tuần vui vẻ!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "末",
+        "p": "mò",
+        "type": "独体字 · Chữ đơn (chỉ sự)",
+        "st": 5,
+        "ord": "木 (mộc) + nét ngang trên cùng",
+        "rad": "木 (mộc – cây)",
+        "mean": "ngọn, cuối, phần cuối",
+        "tip": "Chữ 木(cây) thêm một nét ngang ở ngọn để chỉ ĐẦU NGỌN cây → nghĩa mở rộng \"phần CUỐI\" của một khoảng thời gian.",
+        "cf": "未 (wèi – \"chưa\", nét ngang ngắn hơn ở trên)",
+        "w": "周末 / 月末 / 期末"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cuối tuần này tôi rảnh nên tôi định đi thăm bạn.",
+        "answer": "因为这个周末我有空，所以我打算去看朋友。",
+        "answerPy": "Yīnwèi zhège zhōumò wǒ yǒu kòng, suǒyǐ wǒ dǎsuàn qù kàn péngyou.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu cuối tuần trời đẹp thì chúng ta đi leo núi nhé.",
+        "answer": "如果周末天气好，我们就去爬山吧。",
+        "answerPy": "Rúguǒ zhōumò tiānqì hǎo, wǒmen jiù qù páshān ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "这个周末",
+        "py": "zhège zhōumò",
+        "vn": "cuối tuần này"
+      },
+      {
+        "zh": "上个周末",
+        "py": "shàng gè zhōumò",
+        "vn": "cuối tuần trước"
+      },
+      {
+        "zh": "周末愉快",
+        "py": "zhōumò yúkuài",
+        "vn": "cuối tuần vui vẻ"
+      },
+      {
+        "zh": "周末的打算",
+        "py": "zhōumò de dǎsuàn",
+        "vn": "kế hoạch cuối tuần"
+      },
+      {
+        "zh": "周末休息",
+        "py": "zhōumò xiūxi",
+        "vn": "cuối tuần nghỉ ngơi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "这个 / 上个 + 周末",
+        "m": "Cuối tuần này / cuối tuần trước"
+      },
+      {
+        "s": "周 + 末",
+        "m": "Cuối (末) tuần (周) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "打算",
+    "py": "dǎsuàn",
+    "pos": "Danh từ/Động từ",
+    "vn": "kế hoạch; dự định",
+    "hv": "đả toán",
+    "em": "📝",
+    "lesson": 1,
+    "explain": [
+      "1. (Danh từ) Kế hoạch, ý định đã nghĩ đến cho việc gì đó.",
+      "2. (Động từ) Có ý định làm gì, dự định làm gì."
+    ],
+    "usage": "Khi làm động từ: 打算 + Động từ khác (打算去旅游); khi làm danh từ: 有/没有 + 打算 (有什么打算).",
+    "collo": [
+      "有什么打算",
+      "打算去旅游",
+      "早就打算好了"
+    ],
+    "ex_zh": "我早就想好了。",
+    "ex_py": "Wǒ zǎo jiù xiǎnghǎo le.",
+    "ex_vn": "Tôi đã nghĩ xong từ lâu rồi.",
+    "exList": [
+      {
+        "zh": "周末你有什么打算？",
+        "py": "Zhōumò nǐ yǒu shénme dǎsuàn?",
+        "vn": "Cuối tuần bạn có kế hoạch gì?"
+      },
+      {
+        "zh": "下个月我打算去旅游。",
+        "py": "Xià ge yuè wǒ dǎsuàn qù lǚyóu.",
+        "vn": "Tháng sau tôi định đi du lịch."
+      },
+      {
+        "zh": "你打算什么时候搬？",
+        "py": "Nǐ dǎsuàn shénme shíhou bān?",
+        "vn": "Bạn định khi nào chuyển nhà?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "算",
+        "p": "suàn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 14,
+        "ord": "竹 (trúc) trên → 目+廾 dưới",
+        "rad": "竹 (trúc – tre)",
+        "mean": "tính toán",
+        "tip": "Bộ tre 竹 (dụng cụ tính toán cổ, như bàn tính) → nghĩa TÍNH TOÁN, mở rộng thành \"dự tính, dự định\".",
+        "cf": "笔 (bǐ – \"bút\", cũng có bộ 竹\")",
+        "w": "打算 / 计算 / 算了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy tôi đã có kế hoạch nhưng vẫn muốn nghe ý kiến của bạn.",
+        "answer": "虽然我已经有打算了，但是还想听听你的意见。",
+        "answerPy": "Suīrán wǒ yǐjīng yǒu dǎsuàn le, dànshì hái xiǎng tīngting nǐ de yìjiàn.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn chưa có kế hoạch gì thì cùng đi xem phim với tôi đi.",
+        "answer": "如果你还没有什么打算，就跟我一起去看电影吧。",
+        "answerPy": "Rúguǒ nǐ hái méiyǒu shénme dǎsuàn, jiù gēn wǒ yìqǐ qù kàn diànyǐng ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有什么打算",
+        "py": "yǒu shénme dǎsuàn",
+        "vn": "có dự định gì"
+      },
+      {
+        "zh": "打算去旅游",
+        "py": "dǎsuàn qù lǚyóu",
+        "vn": "định đi du lịch"
+      },
+      {
+        "zh": "我的打算",
+        "py": "wǒ de dǎsuàn",
+        "vn": "kế hoạch của tôi"
+      },
+      {
+        "zh": "没有打算",
+        "py": "méiyǒu dǎsuàn",
+        "vn": "chưa có dự định"
+      },
+      {
+        "zh": "打算学汉语",
+        "py": "dǎsuàn xué Hànyǔ",
+        "vn": "định học tiếng Trung"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 打算 + V (động từ)",
+        "m": "Ai đó dự định làm gì"
+      },
+      {
+        "s": "有 + 什么 + 打算 (danh từ)",
+        "m": "Có dự định gì"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "啊",
+    "py": "a",
+    "pos": "Trợ từ",
+    "vn": "à, đấy, nhé (trợ từ cuối câu)",
+    "hv": "a",
+    "em": "💬",
+    "lesson": 1,
+    "explain": [
+      "Trợ từ ngữ khí đứng cuối câu, dùng để khẳng định, xác nhận hoặc biện minh cho điều vừa nói, giúp lời nói mềm mại, tự nhiên hơn."
+    ],
+    "usage": "Đứng ở CUỐI CÂU trần thuật hoặc câu hỏi: [câu] + 啊. Không mang nghĩa từ vựng riêng, chỉ thêm sắc thái ngữ khí.",
+    "collo": [
+      "是啊",
+      "好啊",
+      "是啊，我已经……"
+    ],
+    "ex_zh": "是啊，我已经找好饭馆儿了。",
+    "ex_py": "Shì a, wǒ yǐjīng zhǎohǎo fànguǎnr le.",
+    "ex_vn": "Đúng vậy đấy, anh đã tìm sẵn quán ăn rồi.",
+    "exList": [
+      {
+        "zh": "是啊，我已经找好饭馆儿了。",
+        "py": "Shì a, wǒ yǐjīng zhǎohǎo fànguǎnr le.",
+        "vn": "Đúng vậy đấy, anh đã tìm sẵn quán ăn rồi."
+      },
+      {
+        "zh": "南方啊，我们去年就是这个时候去的。",
+        "py": "Nánfāng a, wǒmen qùnián jiù shì zhège shíhou qù de.",
+        "vn": "Miền Nam đấy, năm ngoái chúng tôi cũng đi vào lúc này."
+      },
+      {
+        "zh": "今天的面包真便宜，是啊，那我们多买几个吧！",
+        "py": "Jīntiān de miànbāo zhēn piányi, shì a, nà wǒmen duō mǎi jǐ ge ba!",
+        "vn": "Bánh mì hôm nay rẻ thật, đúng đấy, vậy chúng ta mua thêm vài cái đi!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "啊",
+        "p": "a",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "口 (khẩu) trái → 阿 (a) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "trợ từ ngữ khí",
+        "tip": "Bộ miệng 口 (âm thanh phát ra) + 阿(âm \"a\") → chữ chuyên dùng ghi lại tiếng thốt \"à\" cuối câu.",
+        "cf": "阿 (ā – dùng trong tên riêng, không có bộ 口\")",
+        "w": "是啊 / 好啊 / 对啊"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đúng vậy, vì kế hoạch này rất hay nên tôi cũng muốn đi cùng.",
+        "answer": "是啊，因为这个打算很好，所以我也想一起去。",
+        "answerPy": "Shì a, yīnwèi zhège dǎsuàn hěn hǎo, suǒyǐ wǒ yě xiǎng yìqǐ qù.",
+        "note": "打算 vừa là danh từ (có dự định) vừa là động từ (định làm gì).",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Được đấy, nếu cuối tuần này bạn rảnh thì chúng ta cùng đi chơi.",
+        "answer": "好啊，如果这个周末你有空儿，我们就一起去玩儿吧。",
+        "answerPy": "Hǎo a, rúguǒ zhège zhōumò nǐ yǒu kòngr, wǒmen jiù yìqǐ qù wánr ba.",
+        "note": "如果……就…… là khung giả thiết cơ bản của HSK 3.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "是啊",
+        "py": "shì a",
+        "vn": "đúng vậy"
+      },
+      {
+        "zh": "好啊",
+        "py": "hǎo a",
+        "vn": "được đấy"
+      },
+      {
+        "zh": "太好了啊",
+        "py": "tài hǎo le a",
+        "vn": "hay quá đi"
+      },
+      {
+        "zh": "你好啊",
+        "py": "nǐ hǎo a",
+        "vn": "chào bạn nhé"
+      },
+      {
+        "zh": "快来啊",
+        "py": "kuài lái a",
+        "vn": "mau đến đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "câu + 啊",
+        "m": "Trợ từ cuối câu — làm câu mềm và thân mật hơn"
+      },
+      {
+        "s": "是啊 / 好啊",
+        "m": "Cách đáp lời đồng tình trong khẩu ngữ"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "跟",
+    "py": "gēn",
+    "pos": "Giới từ",
+    "vn": "cùng, với",
+    "hv": "cân",
+    "em": "🤝",
+    "lesson": 1,
+    "explain": [
+      "Giới từ chỉ đối tượng cùng tham gia một hành động với chủ ngữ."
+    ],
+    "usage": "Đứng TRƯỚC đối tượng, tạo thành cụm giới từ làm trạng ngữ: 跟 + [người] + Động từ (跟你去, 跟我一起玩儿).",
+    "collo": [
+      "跟你去",
+      "跟我一起",
+      "跟朋友聊天"
+    ],
+    "ex_zh": "我还没想好要不要跟你去呢。",
+    "ex_py": "Wǒ hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.",
+    "ex_vn": "Tôi vẫn chưa nghĩ xong có nên đi cùng bạn hay không.",
+    "exList": [
+      {
+        "zh": "我还没想好要不要跟你去呢。",
+        "py": "Wǒ hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.",
+        "vn": "Tôi vẫn chưa nghĩ xong có nên đi cùng bạn hay không."
+      },
+      {
+        "zh": "你能跟我一起去吗？",
+        "py": "Nǐ néng gēn wǒ yìqǐ qù ma?",
+        "vn": "Bạn có thể đi cùng tôi không?"
+      },
+      {
+        "zh": "我喜欢跟朋友聊天。",
+        "py": "Wǒ xǐhuan gēn péngyou liáotiān.",
+        "vn": "Tôi thích trò chuyện cùng bạn bè."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "跟",
+        "p": "gēn",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "足 (túc) trái → 艮 (cấn) phải",
+        "rad": "足 (túc – chân)",
+        "mean": "theo, đi cùng",
+        "tip": "Bộ chân 足 (bước đi) + 艮(dừng lại, đối diện) → BƯỚC THEO SÁT ai đó = ĐI CÙNG.",
+        "cf": "很 (hěn – \"rất\", cũng có 艮\")",
+        "w": "跟你 / 跟着 / 跟他学"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn đi cùng tôi thì tôi sẽ không sợ lạc đường.",
+        "answer": "只要你跟我一起去，我就不怕迷路。",
+        "answerPy": "Zhǐyào nǐ gēn wǒ yìqǐ qù, wǒ jiù bú pà mílù.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì em gái muốn đi cùng nên tôi phải đợi thêm một lúc.",
+        "answer": "因为妹妹想跟着去，所以我得再等一会儿。",
+        "answerPy": "Yīnwèi mèimei xiǎng gēnzhe qù, suǒyǐ wǒ děi zài děng yíhuìr.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "跟朋友一起",
+        "py": "gēn péngyou yìqǐ",
+        "vn": "cùng với bạn"
+      },
+      {
+        "zh": "跟我去",
+        "py": "gēn wǒ qù",
+        "vn": "đi cùng tôi"
+      },
+      {
+        "zh": "跟他说",
+        "py": "gēn tā shuō",
+        "vn": "nói với anh ấy"
+      },
+      {
+        "zh": "跟老师学",
+        "py": "gēn lǎoshī xué",
+        "vn": "học với thầy"
+      },
+      {
+        "zh": "跟你一样",
+        "py": "gēn nǐ yíyàng",
+        "vn": "giống như bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 一起 + V",
+        "m": "Cùng ai làm gì"
+      },
+      {
+        "s": "跟 + ai + 一样",
+        "m": "Giống như ai"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "一直",
+    "py": "yìzhí",
+    "pos": "Phó từ",
+    "vn": "suốt, liên tục",
+    "hv": "nhất trực",
+    "em": "➡️",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả một hành động hoặc trạng thái kéo dài không ngừng, không thay đổi."
+    ],
+    "usage": "Phó từ, đứng TRƯỚC động từ/tính từ mà nó bổ nghĩa: 一直 + V/Adj (一直玩儿, 一直想).",
+    "collo": [
+      "一直玩儿",
+      "一直想去",
+      "一直没有"
+    ],
+    "ex_zh": "你一直玩儿电脑游戏，作业写完了吗？",
+    "ex_py": "Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?",
+    "ex_vn": "Con chơi game máy tính suốt vậy, bài tập làm xong chưa?",
+    "exList": [
+      {
+        "zh": "你一直玩儿电脑游戏，作业写完了吗？",
+        "py": "Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?",
+        "vn": "Con chơi game máy tính suốt vậy, bài tập làm xong chưa?"
+      },
+      {
+        "zh": "南方我一直想去看看。",
+        "py": "Nánfāng wǒ yìzhí xiǎng qù kànkan.",
+        "vn": "Miền Nam tôi vẫn luôn muốn đi xem thử."
+      },
+      {
+        "zh": "他一直在办公室工作。",
+        "py": "Tā yìzhí zài bàngōngshì gōngzuò.",
+        "vn": "Anh ấy làm việc suốt trong văn phòng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "直",
+        "p": "zhí",
+        "type": "独体字 · Chữ đơn (chỉ sự)",
+        "st": 8,
+        "ord": "十+目 trên → 一 dưới",
+        "rad": "目 (mục – mắt)",
+        "mean": "thẳng, liên tục",
+        "tip": "Mắt 目 nhìn thẳng theo một đường thẳng 一 không lệch hướng → nghĩa THẲNG, mở rộng thành LIÊN TỤC không đổi.",
+        "cf": "真 (zhēn – \"thật\", hình gần giống\")",
+        "w": "一直 / 直接 / 直走"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời mưa suốt nên chúng tôi không thể đi leo núi được.",
+        "answer": "因为雨一直下，所以我们没能去爬山。",
+        "answerPy": "Yīnwèi yǔ yìzhí xià, suǒyǐ wǒmen méi néng qù páshān.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy đã ôn tập liên tục nhưng cô ấy vẫn thấy lo lắng.",
+        "answer": "虽然她一直在复习，但是还是觉得着急。",
+        "answerPy": "Suīrán tā yìzhí zài fùxí, dànshì háishi juéde zháojí.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一直想去",
+        "py": "yīzhí xiǎng qù",
+        "vn": "luôn muốn đi"
+      },
+      {
+        "zh": "一直没有",
+        "py": "yīzhí méiyǒu",
+        "vn": "mãi vẫn chưa có"
+      },
+      {
+        "zh": "一直在家",
+        "py": "yīzhí zài jiā",
+        "vn": "suốt ở nhà"
+      },
+      {
+        "zh": "一直下雨",
+        "py": "yīzhí xià yǔ",
+        "vn": "mưa suốt"
+      },
+      {
+        "zh": "一直往前走",
+        "py": "yīzhí wǎng qián zǒu",
+        "vn": "đi thẳng về phía trước"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 一直 + V",
+        "m": "Ai đó … suốt, liên tục"
+      },
+      {
+        "s": "一直 + 往前走",
+        "m": "Đi thẳng — nghĩa chỉ phương hướng"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "游戏",
+    "py": "yóuxì",
+    "pos": "Danh từ",
+    "vn": "trò chơi",
+    "hv": "du hí",
+    "em": "🎮",
+    "lesson": 2,
+    "explain": [
+      "Hoạt động giải trí, thường chỉ trò chơi điện tử/máy tính trong ngữ cảnh hiện đại."
+    ],
+    "usage": "Danh từ; thường kết hợp với động từ 玩儿 (chơi): 玩儿 + 游戏.",
+    "collo": [
+      "玩儿游戏",
+      "电脑游戏",
+      "手机游戏"
+    ],
+    "ex_zh": "你一直玩儿电脑游戏，作业写完了吗？",
+    "ex_py": "Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?",
+    "ex_vn": "Con chơi game máy tính suốt vậy, bài tập làm xong chưa?",
+    "exList": [
+      {
+        "zh": "你一直玩儿电脑游戏，作业写完了吗？",
+        "py": "Nǐ yìzhí wánr diànnǎo yóuxì, zuòyè xiěwán le ma?",
+        "vn": "Con chơi game máy tính suốt vậy, bài tập làm xong chưa?"
+      },
+      {
+        "zh": "那也不能一直玩儿啊。",
+        "py": "Nà yě bù néng yìzhí wánr a.",
+        "vn": "Vậy cũng không thể chơi mãi được."
+      },
+      {
+        "zh": "弟弟很喜欢玩儿手机游戏。",
+        "py": "Dìdi hěn xǐhuan wánr shǒujī yóuxì.",
+        "vn": "Em trai rất thích chơi game trên điện thoại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "戏",
+        "p": "xì",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "又 (hựu) trái → 戈 (qua) phải",
+        "rad": "戈 (qua – vũ khí)",
+        "mean": "trò chơi; tuồng, kịch",
+        "tip": "又(tay) cầm 戈(vũ khí đồ chơi) → diễn tả các trò TRÒ CHƠI, DIỄN KỊCH thời cổ.",
+        "cf": "哉 (zāi – trợ từ cổ, cũng có 戈\")",
+        "w": "游戏 / 做游戏 / 电脑游戏"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn làm xong bài tập thì có thể chơi game một lúc.",
+        "answer": "如果你写完了作业，就可以玩儿一会儿游戏。",
+        "answerPy": "Rúguǒ nǐ xiěwánle zuòyè, jiù kěyǐ wánr yíhuìr yóuxì.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần đừng chơi game quá nhiều thì mẹ sẽ không lo lắng.",
+        "answer": "只要你别玩儿太多游戏，妈妈就不会着急。",
+        "answerPy": "Zhǐyào nǐ bié wánr tài duō yóuxì, māma jiù bú huì zháojí.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "玩儿游戏",
+        "py": "wánr yóuxì",
+        "vn": "chơi trò chơi"
+      },
+      {
+        "zh": "电脑游戏",
+        "py": "diànnǎo yóuxì",
+        "vn": "trò chơi máy tính"
+      },
+      {
+        "zh": "手机游戏",
+        "py": "shǒujī yóuxì",
+        "vn": "game điện thoại"
+      },
+      {
+        "zh": "好玩儿的游戏",
+        "py": "hǎowánr de yóuxì",
+        "vn": "trò chơi hay"
+      },
+      {
+        "zh": "做游戏",
+        "py": "zuò yóuxì",
+        "vn": "chơi trò chơi (cùng nhau)"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "玩儿 + 游戏",
+        "m": "Chơi game — dùng động từ 玩儿"
+      },
+      {
+        "s": "loại + 游戏",
+        "m": "电脑游戏, 手机游戏 — trò chơi loại gì"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "作业",
+    "py": "zuòyè",
+    "pos": "Danh từ",
+    "vn": "bài tập về nhà",
+    "hv": "tác nghiệp",
+    "em": "📓",
+    "lesson": 2,
+    "explain": [
+      "Bài tập giáo viên giao cho học sinh làm ở nhà."
+    ],
+    "usage": "Danh từ; thường kết hợp với động từ 写 (viết/làm) hoặc 做 (làm): 写作业, 做作业.",
+    "collo": [
+      "写作业",
+      "做作业",
+      "作业写完了"
+    ],
+    "ex_zh": "作业写完了吗？",
+    "ex_py": "Zuòyè xiěwán le ma?",
+    "ex_vn": "Bài tập làm xong chưa?",
+    "exList": [
+      {
+        "zh": "作业写完了吗？",
+        "py": "Zuòyè xiěwán le ma?",
+        "vn": "Bài tập làm xong chưa?"
+      },
+      {
+        "zh": "都写完了。",
+        "py": "Dōu xiěwán le.",
+        "vn": "Đều làm xong hết rồi."
+      },
+      {
+        "zh": "我不能跟你出去玩儿，明天的汉语课我还没做作业。",
+        "py": "Wǒ bù néng gēn nǐ chūqu wánr, míngtiān de Hànyǔ kè wǒ hái méi zuò zuòyè.",
+        "vn": "Tôi không thể đi chơi cùng bạn, bài tập cho tiết tiếng Trung ngày mai tôi vẫn chưa làm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "业",
+        "p": "yè",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "一 (nhất)",
+        "mean": "nghề nghiệp; công việc",
+        "tip": "Chữ giản thể mô phỏng hình cái giá gỗ để treo chuông khánh thời cổ, nơi thực hiện công việc → mở rộng thành CÔNG VIỆC, BÀI VỞ.",
+        "cf": "亚 (yà – \"châu Á\", hình dáng gần giống\")",
+        "w": "作业 / 工作 / 毕业"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bài tập còn nhiều nên tôi không có thời gian chơi game.",
+        "answer": "因为作业还很多，所以我没有时间玩儿游戏。",
+        "answerPy": "Yīnwèi zuòyè hái hěn duō, suǒyǐ wǒ méiyǒu shíjiān wánr yóuxì.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn làm xong bài tập sớm thì có thể đi ngủ sớm.",
+        "answer": "如果你早点儿写完作业，就可以早点儿睡觉。",
+        "answerPy": "Rúguǒ nǐ zǎo diǎnr xiěwán zuòyè, jiù kěyǐ zǎo diǎnr shuìjiào.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "写作业",
+        "py": "xiě zuòyè",
+        "vn": "làm bài tập"
+      },
+      {
+        "zh": "做作业",
+        "py": "zuò zuòyè",
+        "vn": "làm bài tập"
+      },
+      {
+        "zh": "作业写完了",
+        "py": "zuòyè xiě wán le",
+        "vn": "làm xong bài rồi"
+      },
+      {
+        "zh": "很多作业",
+        "py": "hěn duō zuòyè",
+        "vn": "rất nhiều bài tập"
+      },
+      {
+        "zh": "交作业",
+        "py": "jiāo zuòyè",
+        "vn": "nộp bài"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "写 / 做 + 作业",
+        "m": "Làm bài tập về nhà"
+      },
+      {
+        "s": "作业 + 写完了",
+        "m": "Bài tập đã làm xong — 完 là bổ ngữ kết quả"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "着急",
+    "py": "zháojí",
+    "pos": "Tính từ",
+    "vn": "lo lắng, sốt ruột",
+    "hv": "trước cấp",
+    "em": "😟",
+    "lesson": 2,
+    "explain": [
+      "Cảm giác không yên tâm, muốn giải quyết ngay một việc gì đó gấp gáp."
+    ],
+    "usage": "Tính từ, làm vị ngữ với 很/别/一点儿也不: 很着急, 别着急 (đừng lo), 一点儿也不着急 (không lo chút nào).",
+    "collo": [
+      "别着急",
+      "很着急",
+      "一点儿也不着急"
+    ],
+    "ex_zh": "你怎么一点儿也不着急？",
+    "ex_py": "Nǐ zěnme yìdiǎnr yě bù zháojí?",
+    "ex_vn": "Sao con không lo lắng chút nào vậy?",
+    "exList": [
+      {
+        "zh": "你怎么一点儿也不着急？",
+        "py": "Nǐ zěnme yìdiǎnr yě bù zháojí?",
+        "vn": "Sao con không lo lắng chút nào vậy?"
+      },
+      {
+        "zh": "如果你着急，我们就先走吧。",
+        "py": "Rúguǒ nǐ zháojí, wǒmen jiù xiān zǒu ba.",
+        "vn": "Nếu bạn gấp thì chúng ta đi trước đi."
+      },
+      {
+        "zh": "考试快到了，他很着急。",
+        "py": "Kǎoshì kuài dào le, tā hěn zháojí.",
+        "vn": "Kỳ thi sắp đến rồi, anh ấy rất lo lắng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "急",
+        "p": "jí",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "刍+勹 trên → 心 dưới",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "gấp, vội, lo lắng",
+        "tip": "Bộ tâm 心 (trong lòng) ở dưới, phần trên mô phỏng trạng thái GẤP GÁP → trong lòng nôn nóng, VỘI VÃ.",
+        "cf": "忽 (hū – \"bỗng nhiên\", cũng có bộ 心\")",
+        "w": "着急 / 急事 / 急忙"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bài tập chưa làm xong nên cậu bé rất lo lắng.",
+        "answer": "因为作业还没写完，所以孩子很着急。",
+        "answerPy": "Yīnwèi zuòyè hái méi xiěwán, suǒyǐ háizi hěn zháojí.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn ôn tập sớm thì sẽ không phải lo lắng nữa.",
+        "answer": "只要你早点儿复习，就不用着急了。",
+        "answerPy": "Zhǐyào nǐ zǎo diǎnr fùxí, jiù búyòng zháojí le.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "别着急",
+        "py": "bié zháojí",
+        "vn": "đừng vội"
+      },
+      {
+        "zh": "很着急",
+        "py": "hěn zháojí",
+        "vn": "rất sốt ruột"
+      },
+      {
+        "zh": "不着急",
+        "py": "bù zháojí",
+        "vn": "không vội"
+      },
+      {
+        "zh": "着急去",
+        "py": "zháojí qù",
+        "vn": "vội đi"
+      },
+      {
+        "zh": "妈妈很着急",
+        "py": "māma hěn zháojí",
+        "vn": "mẹ rất lo"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "别 + 着急",
+        "m": "Đừng vội, đừng lo — lời trấn an"
+      },
+      {
+        "s": "着急 (sốt ruột) khác 忙 (bận)"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "复习",
+    "py": "fùxí",
+    "pos": "Động từ",
+    "vn": "ôn tập",
+    "hv": "phục tập",
+    "em": "📖",
+    "lesson": 2,
+    "explain": [
+      "Xem lại, học lại những kiến thức đã học để ghi nhớ kỹ hơn."
+    ],
+    "usage": "Động từ, có thể theo sau bởi tân ngữ (复习课文) hoặc kết quả bổ ngữ 好 (复习好了 = ôn xong và tốt).",
+    "collo": [
+      "复习好了",
+      "复习课文",
+      "早就复习了"
+    ],
+    "ex_zh": "我早就复习好了。",
+    "ex_py": "Wǒ zǎo jiù fùxí hǎo le.",
+    "ex_vn": "Con đã ôn xong từ lâu rồi.",
+    "exList": [
+      {
+        "zh": "我早就复习好了。",
+        "py": "Wǒ zǎo jiù fùxí hǎo le.",
+        "vn": "Con đã ôn xong từ lâu rồi."
+      },
+      {
+        "zh": "明天不是有考试吗？",
+        "py": "Míngtiān bú shì yǒu kǎoshì ma?",
+        "vn": "Ngày mai chẳng phải có thi sao?"
+      },
+      {
+        "zh": "考试快到了，你复习得怎么样？",
+        "py": "Kǎoshì kuài dào le, nǐ fùxí de zěnmeyàng?",
+        "vn": "Kỳ thi sắp đến rồi, bạn ôn tập thế nào rồi?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "习",
+        "p": "xí",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "乙 (ất)",
+        "mean": "học tập, luyện tập",
+        "tip": "Chữ giản thể tượng hình cánh chim non tập bay lặp đi lặp lại → nghĩa LUYỆN TẬP, ÔN LẠI nhiều lần.",
+        "cf": "刁 (diāo – \"xảo trá\", hình gần giống\")",
+        "w": "复习 / 学习 / 习惯"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi đã ôn tập kỹ nên không còn lo lắng về kỳ thi nữa.",
+        "answer": "因为我已经复习好了，所以不再担心考试了。",
+        "answerPy": "Yīnwèi wǒ yǐjīng fùxí hǎo le, suǒyǐ bú zài dānxīn kǎoshì le.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn chưa ôn tập xong thì đừng đi chơi game nữa.",
+        "answer": "如果你还没复习好，就别去玩儿游戏了。",
+        "answerPy": "Rúguǒ nǐ hái méi fùxí hǎo, jiù bié qù wánr yóuxì le.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "复习课文",
+        "py": "fùxí kè wén",
+        "vn": "ôn bài đọc"
+      },
+      {
+        "zh": "复习好了",
+        "py": "fùxí hǎo le",
+        "vn": "ôn xong rồi"
+      },
+      {
+        "zh": "认真复习",
+        "py": "rènzhēn fùxí",
+        "vn": "ôn tập nghiêm túc"
+      },
+      {
+        "zh": "复习汉语",
+        "py": "fùxí Hànyǔ",
+        "vn": "ôn tiếng Trung"
+      },
+      {
+        "zh": "复习一下",
+        "py": "fùxí yíxià",
+        "vn": "ôn lại một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "复习 + N",
+        "m": "Ôn tập cái gì"
+      },
+      {
+        "s": "复习 ↔ 预习",
+        "m": "Ôn lại bài cũ ↔ chuẩn bị bài mới"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "南方",
+    "py": "nánfāng",
+    "pos": "Danh từ",
+    "vn": "phía nam, miền Nam",
+    "hv": "nam phương",
+    "em": "🧭",
+    "lesson": 3,
+    "explain": [
+      "Khu vực phía nam của một quốc gia/vùng đất, thường được nói tắt là 南."
+    ],
+    "usage": "Danh từ chỉ phương hướng/khu vực; đối lập với 北方 (miền Bắc). Có thể dùng 南 độc lập hoặc 南方 đầy đủ.",
+    "collo": [
+      "去南方",
+      "南方人",
+      "南方天气"
+    ],
+    "ex_zh": "南方啊，我们去年就是这个时候去的。",
+    "ex_py": "Nánfāng a, wǒmen qùnián jiù shì zhège shíhou qù de.",
+    "ex_vn": "Miền Nam đấy, năm ngoái chúng tôi cũng đi vào lúc này.",
+    "exList": [
+      {
+        "zh": "南方啊，我们去年就是这个时候去的。",
+        "py": "Nánfāng a, wǒmen qùnián jiù shì zhège shíhou qù de.",
+        "vn": "Miền Nam đấy, năm ngoái chúng tôi cũng đi vào lúc này."
+      },
+      {
+        "zh": "南方太热了，北方好一些，不冷也不热。",
+        "py": "Nánfāng tài rè le, běifāng hǎo yìxiē, bù lěng yě bú rè.",
+        "vn": "Miền Nam nóng quá, miền Bắc dễ chịu hơn, không lạnh cũng không nóng."
+      },
+      {
+        "zh": "南方我一直想去看看。",
+        "py": "Nánfāng wǒ yìzhí xiǎng qù kànkan.",
+        "vn": "Miền Nam tôi vẫn luôn muốn đi xem thử."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "南",
+        "p": "nán",
+        "type": "独体字 · Chữ đơn (chỉ sự)",
+        "st": 9,
+        "ord": "nét liền",
+        "rad": "十 (thập)",
+        "mean": "phía nam",
+        "tip": "Chữ cổ vốn mô phỏng hình một loại nhạc cụ treo hướng về phía có ánh nắng ấm → PHƯƠNG NAM (hướng mặt trời, ấm áp).",
+        "cf": "击 (jī – \"đánh\", không liên quan nghĩa\")",
+        "w": "南方 / 南边 / 东南"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì miền Nam nóng quá nên chúng tôi quyết định đi miền Bắc.",
+        "answer": "因为南方太热了，所以我们决定去北方。",
+        "answerPy": "Yīnwèi nánfāng tài rè le, suǒyǐ wǒmen juédìng qù běifāng.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy miền Nam nóng nhưng tôi vẫn rất thích đi du lịch ở đó.",
+        "answer": "虽然南方很热，但是我还是很喜欢去那儿旅游。",
+        "answerPy": "Suīrán nánfāng hěn rè, dànshì wǒ háishi hěn xǐhuan qù nàr lǚyóu.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去南方",
+        "py": "qù nánfāng",
+        "vn": "đi miền Nam"
+      },
+      {
+        "zh": "南方人",
+        "py": "nánfāng rén",
+        "vn": "người miền Nam"
+      },
+      {
+        "zh": "南方的天气",
+        "py": "nánfāng de tiānqì",
+        "vn": "thời tiết miền Nam"
+      },
+      {
+        "zh": "在南方",
+        "py": "zài nánfāng",
+        "vn": "ở miền Nam"
+      },
+      {
+        "zh": "南方很热",
+        "py": "nánfāng hěn rè",
+        "vn": "miền Nam rất nóng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "南方 ↔ 北方",
+        "m": "Miền Nam ↔ miền Bắc"
+      },
+      {
+        "s": "南方 + 人 / 菜 / 天气",
+        "m": "Người, món ăn, thời tiết miền Nam"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "北方",
+    "py": "běifāng",
+    "pos": "Danh từ",
+    "vn": "phía bắc, miền Bắc",
+    "hv": "bắc phương",
+    "em": "🧭",
+    "lesson": 3,
+    "explain": [
+      "Khu vực phía bắc của một quốc gia/vùng đất, đối lập với 南方 (miền Nam)."
+    ],
+    "usage": "Danh từ chỉ phương hướng/khu vực, cách dùng tương tự 南方.",
+    "collo": [
+      "北方人",
+      "北方好一些",
+      "去北方"
+    ],
+    "ex_zh": "南方太热了，北方好一些，不冷也不热。",
+    "ex_py": "Nánfāng tài rè le, běifāng hǎo yìxiē, bù lěng yě bú rè.",
+    "ex_vn": "Miền Nam nóng quá, miền Bắc dễ chịu hơn, không lạnh cũng không nóng.",
+    "exList": [
+      {
+        "zh": "南方太热了，北方好一些，不冷也不热。",
+        "py": "Nánfāng tài rè le, běifāng hǎo yìxiē, bù lěng yě bú rè.",
+        "vn": "Miền Nam nóng quá, miền Bắc dễ chịu hơn, không lạnh cũng không nóng."
+      },
+      {
+        "zh": "我是北方人。",
+        "py": "Wǒ shì běifāngrén.",
+        "vn": "Tôi là người miền Bắc."
+      },
+      {
+        "zh": "冬天北方很冷。",
+        "py": "Dōngtiān běifāng hěn lěng.",
+        "vn": "Mùa đông miền Bắc rất lạnh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "北",
+        "p": "běi",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "两个\"匕\" đối lưng nhau",
+        "rad": "匕 (chuỷ)",
+        "mean": "phía bắc",
+        "tip": "Hình vẽ cổ hai người quay lưng vào nhau → hướng NGƯỢC với hướng mặt trời (nam) = PHƯƠNG BẮC.",
+        "cf": "比 (bǐ – \"so sánh\", hình gần giống nhưng quay cùng chiều\")",
+        "w": "北方 / 北边 / 东北"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần mùa đông đến thì miền Bắc sẽ rất lạnh.",
+        "answer": "只要冬天一到，北方就会很冷。",
+        "answerPy": "Zhǐyào dōngtiān yí dào, běifāng jiù huì hěn lěng.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì miền Bắc không nóng cũng không lạnh nên nhiều người thích sống ở đó.",
+        "answer": "因为北方不冷也不热，所以很多人喜欢住在那儿。",
+        "answerPy": "Yīnwèi běifāng bù lěng yě bú rè, suǒyǐ hěn duō rén xǐhuan zhù zài nàr.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去北方",
+        "py": "qù běifāng",
+        "vn": "đi miền Bắc"
+      },
+      {
+        "zh": "北方人",
+        "py": "běifāng rén",
+        "vn": "người miền Bắc"
+      },
+      {
+        "zh": "北方很冷",
+        "py": "běifāng hěn lěng",
+        "vn": "miền Bắc rất lạnh"
+      },
+      {
+        "zh": "北方的冬天",
+        "py": "běifāng de dōng tiān",
+        "vn": "mùa đông miền Bắc"
+      },
+      {
+        "zh": "在北方住",
+        "py": "zài běifāng zhù",
+        "vn": "sống ở miền Bắc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "北方 + 冷 / 南方 + 热",
+        "m": "Miền Bắc lạnh, miền Nam nóng"
+      },
+      {
+        "s": "北 (bắc) · 南 (nam) · 东 (đông) · 西 (tây)"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "面包",
+    "py": "miànbāo",
+    "pos": "Danh từ",
+    "vn": "bánh mì",
+    "hv": "diện bao",
+    "em": "🍞",
+    "lesson": 4,
+    "explain": [
+      "Loại thực phẩm làm từ bột mì nướng lên, dùng để ăn sáng hoặc ăn nhẹ."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 个 hoặc 块: 一个面包, 一块面包.",
+    "collo": [
+      "买面包",
+      "一个面包",
+      "面包便宜"
+    ],
+    "ex_zh": "今天的面包真便宜。",
+    "ex_py": "Jīntiān de miànbāo zhēn piányi.",
+    "ex_vn": "Bánh mì hôm nay rẻ thật.",
+    "exList": [
+      {
+        "zh": "今天的面包真便宜。",
+        "py": "Jīntiān de miànbāo zhēn piányi.",
+        "vn": "Bánh mì hôm nay rẻ thật."
+      },
+      {
+        "zh": "是啊，那我们多买几个吧！",
+        "py": "Shì a, nà wǒmen duō mǎi jǐ ge ba!",
+        "vn": "Đúng đấy, vậy chúng ta mua thêm vài cái đi!"
+      },
+      {
+        "zh": "水果、面包、茶都准备好了，我们还带什么？",
+        "py": "Shuǐguǒ, miànbāo, chá dōu zhǔnbèi hǎo le, wǒmen hái dài shénme?",
+        "vn": "Trái cây, bánh mì, trà đều chuẩn bị xong rồi, chúng ta còn mang gì nữa?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "包",
+        "p": "bāo",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "勹 bao ngoài → 巳 trong",
+        "rad": "勹 (bao – bao bọc)",
+        "mean": "gói, bọc; bánh bao/bánh mì",
+        "tip": "Bộ 勹(bao bọc) ôm lấy phần trong → hình ảnh vật gì đó được BỌC LẠI, mở rộng thành các loại bánh có lớp vỏ bọc.",
+        "cf": "色 (sè – \"màu sắc\", không liên quan\")",
+        "w": "面包 / 书包 / 面包车"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bánh mì ở cửa hàng này rất ngon nên tôi thường xuyên mua.",
+        "answer": "因为这家店的面包很好吃，所以我常常买。",
+        "answerPy": "Yīnwèi zhè jiā diàn de miànbāo hěn hǎochī, suǒyǐ wǒ chángcháng mǎi.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bánh mì hết rồi thì chúng ta mua trái cây thay thế vậy.",
+        "answer": "如果面包卖完了，我们就买水果代替吧。",
+        "answerPy": "Rúguǒ miànbāo màiwán le, wǒmen jiù mǎi shuǐguǒ dàitì ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买面包",
+        "py": "mǎi miànbāo",
+        "vn": "mua bánh mì"
+      },
+      {
+        "zh": "一个面包",
+        "py": "yí gè miànbāo",
+        "vn": "một cái bánh mì"
+      },
+      {
+        "zh": "吃面包",
+        "py": "chī miànbāo",
+        "vn": "ăn bánh mì"
+      },
+      {
+        "zh": "面包很好吃",
+        "py": "miànbāo hěn hǎochī",
+        "vn": "bánh mì rất ngon"
+      },
+      {
+        "zh": "面包和牛奶",
+        "py": "miànbāo hé niúnǎi",
+        "vn": "bánh mì và sữa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 个 + 面包",
+        "m": "Một cái bánh mì"
+      },
+      {
+        "s": "面 + 包",
+        "m": "Bọc (包) bột mì (面)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "带",
+    "py": "dài",
+    "pos": "Động từ",
+    "vn": "mang theo",
+    "hv": "đái",
+    "em": "🎒",
+    "lesson": 4,
+    "explain": [
+      "Cầm, đem theo một vật gì đó khi di chuyển từ nơi này đến nơi khác."
+    ],
+    "usage": "Động từ, theo sau là tân ngữ chỉ vật được mang theo: 带 + [vật] (带地图, 带钱).",
+    "collo": [
+      "带地图",
+      "带钱",
+      "多带几件"
+    ],
+    "ex_zh": "再多带几件衣服吧。",
+    "ex_py": "Zài duō dài jǐ jiàn yīfu ba.",
+    "ex_vn": "Mang thêm vài bộ quần áo nữa đi.",
+    "exList": [
+      {
+        "zh": "再多带几件衣服吧。",
+        "py": "Zài duō dài jǐ jiàn yīfu ba.",
+        "vn": "Mang thêm vài bộ quần áo nữa đi."
+      },
+      {
+        "zh": "手机、电脑、地图，一个也不能少。",
+        "py": "Shǒujī, diànnǎo, dìtú, yí ge yě bù néng shǎo.",
+        "vn": "Điện thoại, máy tính, bản đồ, một cái cũng không thể thiếu."
+      },
+      {
+        "zh": "我没带地图，我们问问那边的游客吧。",
+        "py": "Wǒ méi dài dìtú, wǒmen wènwen nàbiān de yóukè ba.",
+        "vn": "Tôi không mang bản đồ, chúng ta hỏi thử du khách đằng kia đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "带",
+        "p": "dài",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 9,
+        "ord": "nét liền, hình dây lưng",
+        "rad": "巾 (cân – khăn, vải)",
+        "mean": "mang, đeo; dải, đai",
+        "tip": "Chữ tượng hình mô phỏng chiếc DÂY LƯNG/dải vải đeo quanh người → mở rộng thành động từ MANG THEO.",
+        "cf": "常 (cháng – \"thường xuyên\", không liên quan\")",
+        "w": "带东西 / 带钱 / 带路"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời sắp mưa nên bạn nhớ mang theo ô nhé.",
+        "answer": "因为要下雨了，所以你记得带把伞。",
+        "answerPy": "Yīnwèi yào xiàyǔ le, suǒyǐ nǐ jìde dài bǎ sǎn.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không mang theo tiền thì tôi cho bạn mượn.",
+        "answer": "如果你没带钱，我就借给你吧。",
+        "answerPy": "Rúguǒ nǐ méi dài qián, wǒ jiù jiè gěi nǐ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "带地图",
+        "py": "dài dìtú",
+        "vn": "mang bản đồ"
+      },
+      {
+        "zh": "带钱",
+        "py": "dài qián",
+        "vn": "mang tiền"
+      },
+      {
+        "zh": "带伞",
+        "py": "dài sǎn",
+        "vn": "mang ô"
+      },
+      {
+        "zh": "忘了带",
+        "py": "wàng le dài",
+        "vn": "quên mang"
+      },
+      {
+        "zh": "多带几件",
+        "py": "duō dài jǐ jiàn",
+        "vn": "mang thêm mấy cái"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "带 + N",
+        "m": "Mang theo cái gì"
+      },
+      {
+        "s": "忘了 + 带 + N",
+        "m": "Quên mang cái gì"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "地图",
+    "py": "dìtú",
+    "pos": "Danh từ",
+    "vn": "bản đồ",
+    "hv": "địa đồ",
+    "em": "🗺️",
+    "lesson": 4,
+    "explain": [
+      "Bản vẽ thể hiện vị trí địa lý, đường xá, khu vực... dùng để tìm đường."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 张 (tấm): 一张地图.",
+    "collo": [
+      "一张地图",
+      "带地图",
+      "看地图"
+    ],
+    "ex_zh": "手机、电脑、地图，一个也不能少。",
+    "ex_py": "Shǒujī, diànnǎo, dìtú, yí ge yě bù néng shǎo.",
+    "ex_vn": "Điện thoại, máy tính, bản đồ, một cái cũng không thể thiếu.",
+    "exList": [
+      {
+        "zh": "手机、电脑、地图，一个也不能少。",
+        "py": "Shǒujī, diànnǎo, dìtú, yí ge yě bù néng shǎo.",
+        "vn": "Điện thoại, máy tính, bản đồ, một cái cũng không thể thiếu."
+      },
+      {
+        "zh": "别着急，车上有电子地图。",
+        "py": "Bié zháojí, chē shang yǒu diànzǐ dìtú.",
+        "vn": "Đừng lo, trên xe có bản đồ điện tử."
+      },
+      {
+        "zh": "不用，我就是地图，你问我吧。",
+        "py": "Búyòng, wǒ jiù shì dìtú, nǐ wèn wǒ ba.",
+        "vn": "Không cần đâu, tôi chính là bản đồ, bạn cứ hỏi tôi đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "图",
+        "p": "tú",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 8,
+        "ord": "囗 bao ngoài → 冬 (biến thể) trong",
+        "rad": "囗 (vi – bao quanh)",
+        "mean": "hình vẽ, bản đồ",
+        "tip": "Bộ 囗(khung bao quanh, như đường biên giới) chứa hình vẽ bên trong → BẢN ĐỒ, HÌNH VẼ khu vực.",
+        "cf": "因 (yīn – \"nguyên nhân\", cũng có 囗\")",
+        "w": "地图 / 图书馆 / 画图"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì không mang bản đồ nên chúng tôi đã đi lạc đường.",
+        "answer": "因为没带地图，所以我们走错路了。",
+        "answerPy": "Yīnwèi méi dài dìtú, suǒyǐ wǒmen zǒucuò lù le.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không rành đường thì hãy mang theo bản đồ điện tử.",
+        "answer": "如果你不认识路，就带上电子地图吧。",
+        "answerPy": "Rúguǒ nǐ bú rènshi lù, jiù dàishang diànzǐ dìtú ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一张地图",
+        "py": "yì zhāng dìtú",
+        "vn": "một tấm bản đồ"
+      },
+      {
+        "zh": "带地图",
+        "py": "dài dìtú",
+        "vn": "mang bản đồ"
+      },
+      {
+        "zh": "看地图",
+        "py": "kàn dìtú",
+        "vn": "xem bản đồ"
+      },
+      {
+        "zh": "中国地图",
+        "py": "Zhōngguó dìtú",
+        "vn": "bản đồ Trung Quốc"
+      },
+      {
+        "zh": "地图上",
+        "py": "dìtú shàng",
+        "vn": "trên bản đồ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 张 + 地图",
+        "m": "Lượng từ 张 cho vật phẳng mỏng"
+      },
+      {
+        "s": "地 + 图",
+        "m": "Hình vẽ (图) mặt đất (地)"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "搬",
+    "py": "bān",
+    "pos": "Động từ",
+    "vn": "dọn, dời, chuyển (nhà/đồ)",
+    "hv": "ban",
+    "em": "📦",
+    "lesson": 4,
+    "explain": [
+      "Di chuyển một vật (thường nặng/cồng kềnh) hoặc chuyển nơi ở từ chỗ này sang chỗ khác."
+    ],
+    "usage": "Động từ, có thể đi với tân ngữ 家 (搬家 = chuyển nhà) hoặc vật cụ thể (搬东西 = khuân đồ).",
+    "collo": [
+      "搬家",
+      "搬东西",
+      "不是搬家"
+    ],
+    "ex_zh": "我们是去旅游，不是搬家，还是少带一些吧。",
+    "ex_py": "Wǒmen shì qù lǚyóu, bú shì bān jiā, háishi shǎo dài yìxiē ba.",
+    "ex_vn": "Chúng ta là đi du lịch, không phải chuyển nhà, thôi mang ít thôi.",
+    "exList": [
+      {
+        "zh": "我们是去旅游，不是搬家，还是少带一些吧。",
+        "py": "Wǒmen shì qù lǚyóu, bú shì bān jiā, háishi shǎo dài yìxiē ba.",
+        "vn": "Chúng ta là đi du lịch, không phải chuyển nhà, thôi mang ít thôi."
+      },
+      {
+        "zh": "请问您打算什么时候搬？",
+        "py": "Qǐngwèn nín dǎsuàn shénme shíhou bān?",
+        "vn": "Xin hỏi anh định khi nào chuyển nhà?"
+      },
+      {
+        "zh": "这么多东西，你怎么一个人搬？",
+        "py": "Zhème duō dōngxi, nǐ zěnme yí ge rén bān?",
+        "vn": "Nhiều đồ vậy, sao bạn khuân một mình được?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "搬",
+        "p": "bān",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "扌 (thủ) trái → 般 (bàn) phải",
+        "rad": "扌 (thủ – bàn tay)",
+        "mean": "khuân, dời, chuyển",
+        "tip": "Bộ tay 扌 + 般(loại, kiểu — vốn chỉ thuyền) → dùng TAY di chuyển đồ vật từ nơi này sang nơi khác.",
+        "cf": "船 (chuán – \"thuyền\", cũng chứa 舟 gần 般\")",
+        "w": "搬家 / 搬东西 / 搬走"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì nhà mới gần công ty hơn nên tuần sau chúng tôi sẽ chuyển nhà.",
+        "answer": "因为新家离公司更近，所以我们下周要搬家。",
+        "answerPy": "Yīnwèi xīn jiā lí gōngsī gèng jìn, suǒyǐ wǒmen xià zhōu yào bān jiā.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn giúp tôi khuân đồ thì tôi sẽ mời bạn ăn cơm.",
+        "answer": "只要你帮我搬东西，我就请你吃饭。",
+        "answerPy": "Zhǐyào nǐ bāng wǒ bān dōngxi, wǒ jiù qǐng nǐ chīfàn.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "搬家",
+        "py": "bān jiā",
+        "vn": "chuyển nhà"
+      },
+      {
+        "zh": "搬东西",
+        "py": "bān dōngxi",
+        "vn": "khiêng đồ"
+      },
+      {
+        "zh": "搬桌子",
+        "py": "bān zhuōzi",
+        "vn": "khiêng bàn"
+      },
+      {
+        "zh": "搬到北京",
+        "py": "bān dào Běijīng",
+        "vn": "chuyển đến Bắc Kinh"
+      },
+      {
+        "zh": "帮我搬",
+        "py": "bāng wǒ bān",
+        "vn": "giúp tôi khiêng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "搬 + 家 / 东西",
+        "m": "Chuyển nhà, khiêng đồ"
+      },
+      {
+        "s": "搬到 + nơi chốn",
+        "m": "Chuyển đến đâu"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "小丽",
+    "py": "Xiǎolì",
+    "pos": "Danh từ riêng",
+    "vn": "chị Lệ (tên người)",
+    "hv": "Tiểu Lệ",
+    "em": "👧",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của một nhân vật nữ trong bài hội thoại (nhân vật xuất hiện xuyên suốt các bài tiếp theo)."
+    ],
+    "usage": "Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.",
+    "collo": [
+      "小丽说",
+      "跟小丽一起",
+      "小丽的打算"
+    ],
+    "ex_zh": "小丽还没想好要不要跟你去呢。",
+    "ex_py": "Xiǎolì hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.",
+    "ex_vn": "Chị Lệ vẫn chưa nghĩ xong có nên đi cùng bạn hay không.",
+    "exList": [
+      {
+        "zh": "小丽还没想好要不要跟你去呢。",
+        "py": "Xiǎolì hái méi xiǎnghǎo yào bu yào gēn nǐ qù ne.",
+        "vn": "Chị Lệ vẫn chưa nghĩ xong có nên đi cùng bạn hay không."
+      },
+      {
+        "zh": "小丽，周末你有什么打算？",
+        "py": "Xiǎolì, zhōumò nǐ yǒu shénme dǎsuàn?",
+        "vn": "Chị Lệ ơi, cuối tuần chị có kế hoạch gì không?"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "小刚",
+    "py": "Xiǎogāng",
+    "pos": "Danh từ riêng",
+    "vn": "anh Cương (tên người)",
+    "hv": "Tiểu Cương",
+    "em": "🧑",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của một nhân vật nam trong bài hội thoại (nhân vật xuất hiện xuyên suốt các bài tiếp theo)."
+    ],
+    "usage": "Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.",
+    "collo": [
+      "小刚说",
+      "跟小刚一起",
+      "小刚的打算"
+    ],
+    "ex_zh": "小刚早就想好了。",
+    "ex_py": "Xiǎogāng zǎo jiù xiǎnghǎo le.",
+    "ex_vn": "Anh Cương đã nghĩ xong từ lâu rồi.",
+    "exList": [
+      {
+        "zh": "小刚早就想好了。",
+        "py": "Xiǎogāng zǎo jiù xiǎnghǎo le.",
+        "vn": "Anh Cương đã nghĩ xong từ lâu rồi."
+      },
+      {
+        "zh": "小刚，我们还带什么？",
+        "py": "Xiǎogāng, wǒmen hái dài shénme?",
+        "vn": "Anh Cương ơi, chúng ta còn mang gì nữa?"
+      }
+    ]
+  }
 ];
 
 const wuData = [

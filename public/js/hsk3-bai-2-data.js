@@ -3,442 +3,2098 @@
 // Nguồn: PPT gốc HSK3 第2课《他什么时候回来》【Lucy制作】
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'腿',py:'tuǐ',pos:'Danh từ',vn:'chân, đùi', hv: 'thối',em:'🦵',lesson:1,
-   explain:['Bộ phận cơ thể tính từ hông đến bàn chân (gồm đùi và cẳng chân), dùng để đứng và di chuyển.'],
-   usage:'Danh từ chỉ bộ phận cơ thể, làm chủ ngữ hoặc định ngữ. Muốn nói bộ phận đó bị đau thì đặt 腿 TRƯỚC tính từ 疼: 腿 + 疼.',
-   collo:['长腿','短腿','腿疼','我的腿'],
-   ex_zh:'我的腿很长。',ex_py:'Wǒ de tuǐ hěn cháng.',ex_vn:'Chân tôi rất dài.',
-   exList:[
-     {zh:'我的腿很长。',py:'Wǒ de tuǐ hěn cháng.',vn:'Chân tôi rất dài.'},
-     {zh:'我的小腿有点儿疼。',py:'Wǒ de xiǎotuǐ yǒudiǎnr téng.',vn:'Bắp chân tôi hơi đau.'},
-     {zh:'我现在腿也疼，脚也疼。',py:'Wǒ xiànzài tuǐ yě téng, jiǎo yě téng.',vn:'Bây giờ tôi vừa đau chân vừa đau bàn chân.'},
-   ],
-   hanzi:[
-     {c:'腿',p:'tuǐ',type:'左右结构 · Trái-phải',st:13,ord:'月 (nhục) trái → 退 (thoái) phải',rad:'月 (nhục – thân thể)',mean:'chân, đùi',
-      tip:'月(bộ phận cơ thể) + 退(lùi lại) → bộ phận cơ thể dùng để BƯỚC LÙI/ĐI LẠI = CHÂN.',
-      cf:'退 (tuì – "lùi lại", không có bộ 月")',w:'大腿 / 小腿 / 左腿 / 右腿'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì hôm qua đi bộ nhiều nên bây giờ chân tôi rất đau.',answer:'因为昨天走了很多路，所以我的腿现在很疼。',answerPy:'Yīnwèi zuótiān zǒule hěn duō lù, suǒyǐ wǒ de tuǐ xiànzài hěn téng.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy chân anh ấy dài nhưng anh ấy chạy không nhanh.',answer:'虽然他的腿很长，但是他跑得不快。',answerPy:'Suīrán tā de tuǐ hěn cháng, dànshì tā pǎo de bú kuài.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:2,zh:'疼',py:'téng',pos:'Tính từ',vn:'đau, đau đớn', hv: 'đông',em:'🤕',lesson:1,
-   explain:['Cảm giác khó chịu, nhức nhối ở một bộ phận cơ thể do bị thương, bệnh, hoặc mệt mỏi.'],
-   usage:'Tính từ chỉ cảm giác, luôn đứng SAU danh từ chỉ bộ phận cơ thể: [bộ phận cơ thể] + 疼 (không đảo ngược thứ tự).',
-   collo:['头疼','腿疼','肚子疼','脚疼'],
-   ex_zh:'你哪儿疼？',ex_py:'Nǐ nǎr téng?',ex_vn:'Bạn đau ở đâu?',
-   exList:[
-     {zh:'你哪儿疼？',py:'Nǐ nǎr téng?',vn:'Bạn đau ở đâu?'},
-     {zh:'我头疼。',py:'Wǒ tóu téng.',vn:'Tôi đau đầu.'},
-     {zh:'我肚子疼，眼睛也疼。',py:'Wǒ dùzi téng, yǎnjīng yě téng.',vn:'Tôi đau bụng, mắt cũng đau.'},
-   ],
-   hanzi:[
-     {c:'疼',p:'téng',type:'半包围结构 · Bán bao vây',st:10,ord:'疒 (nạch) bao → 冬 (đông) trong',rad:'疒 (nạch – bệnh tật)',mean:'đau, đau đớn',
-      tip:'Bộ 疒(bệnh) + 冬(mùa đông) → mùa đông lạnh khiến cơ thể ĐAU NHỨC.',
-      cf:'冷 (lěng – "lạnh", cũng liên quan mùa đông)',w:'头疼 / 腿疼 / 肚子疼 / 眼睛疼'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì tôi đau đầu nên tôi không muốn đi làm hôm nay.',answer:'因为我头疼，所以我今天不想上班。',answerPy:'Yīnwèi wǒ tóuténg, suǒyǐ wǒ jīntiān bù xiǎng shàngbān.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bụng bạn còn đau thì bạn nên đi khám bác sĩ.',answer:'如果你的肚子还疼，你就应该去看医生。',answerPy:'Rúguǒ nǐ de dùzi hái téng, nǐ jiù yīnggāi qù kàn yīshēng.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'脚',py:'jiǎo',pos:'Danh từ',vn:'chân, bàn chân', hv: 'cước',em:'🦶',lesson:1,
-   explain:['Phần dưới cùng của chân, tiếp xúc trực tiếp với mặt đất khi đứng/đi — khác với 腿 (chỉ toàn bộ chân từ hông trở xuống).'],
-   usage:'Danh từ chỉ bộ phận cơ thể; lượng từ đi kèm là 只 (một chiếc) hoặc 双 (một đôi): 一只脚 / 一双脚.',
-   collo:['左脚','右脚','一双脚','脚疼'],
-   ex_zh:'我现在腿疼，脚也疼。',ex_py:'Wǒ xiànzài tuǐ téng, jiǎo yě téng.',ex_vn:'Bây giờ tôi đau chân, bàn chân cũng đau.',
-   exList:[
-     {zh:'我现在腿疼，脚也疼。',py:'Wǒ xiànzài tuǐ téng, jiǎo yě téng.',vn:'Bây giờ tôi đau chân, bàn chân cũng đau.'},
-     {zh:'我的左脚，你的右脚。',py:'Wǒ de zuǒjiǎo, nǐ de yòujiǎo.',vn:'Chân trái của tôi, chân phải của bạn.'},
-     {zh:'鞋太小了，我的脚不舒服。',py:'Xié tài xiǎo le, wǒ de jiǎo bù shūfu.',vn:'Giày quá nhỏ, chân tôi khó chịu.'},
-   ],
-   hanzi:[
-     {c:'脚',p:'jiǎo',type:'左右结构 · Trái-phải',st:11,ord:'月 (nhục) trái → 却 (khước) phải',rad:'月 (nhục – thân thể)',mean:'chân, bàn chân',
-      tip:'月(thân thể) + 却(ngược lại, trái lại) → bộ phận ở phía dưới cùng cơ thể = BÀN CHÂN.',
-      cf:'却 (què – "lại, trái lại", không có bộ 月")',w:'左脚 / 右脚 / 一双脚'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì giày mới hơi chật nên bàn chân tôi rất khó chịu.',answer:'因为新鞋有点儿小，所以我的脚很不舒服。',answerPy:'Yīnwèi xīn xié yǒudiǎnr xiǎo, suǒyǐ wǒ de jiǎo hěn bù shūfu.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy bàn chân trái của tôi nhỏ nhưng bàn chân phải lại to hơn.',answer:'虽然我的左脚很小，但是右脚更大。',answerPy:'Suīrán wǒ de zuǒjiǎo hěn xiǎo, dànshì yòujiǎo gèng dà.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:4,zh:'树',py:'shù',pos:'Danh từ',vn:'cây', hv: 'thụ',em:'🌳',lesson:1,
-   explain:['Loài thực vật thân gỗ, có rễ, thân, cành, lá — thường mọc cao lớn ngoài trời.'],
-   usage:'Danh từ; lượng từ CHUYÊN DÙNG là 棵 (không dùng 个): 一棵树, không nói 一个树.',
-   collo:['大树','小树','一棵树','种树'],
-   ex_zh:'这里有一棵树。',ex_py:'Zhèlǐ yǒu yì kē shù.',ex_vn:'Ở đây có một cây.',
-   exList:[
-     {zh:'这里有一棵树。',py:'Zhèlǐ yǒu yì kē shù.',vn:'Ở đây có một cây.'},
-     {zh:'那里也有一棵树。',py:'Nàlǐ yě yǒu yì kē shù.',vn:'Ở đó cũng có một cây.'},
-     {zh:'那边树多，我们过去坐一下吧。',py:'Nàbiān shù duō, wǒmen guòqu zuò yíxià ba.',vn:'Đằng kia nhiều cây, chúng ta qua đó ngồi một chút đi.'},
-   ],
-   hanzi:[
-     {c:'树',p:'shù',type:'左右结构 · Trái-phải',st:9,ord:'木 (mộc) trái → 又 (hựu) phải',rad:'木 (mộc – gỗ, cây)',mean:'cây',
-      tip:'Bộ 木(gỗ) đứng bên trái luôn liên quan đến CÂY CỐI, gỗ.',
-      cf:'林 (lín – "rừng", hai chữ 木")',w:'大树 / 小树 / 一棵树'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời nắng to nên chúng tôi ngồi nghỉ dưới một cái cây.',answer:'因为天气很热，所以我们坐在一棵树下休息。',answerPy:'Yīnwèi tiānqì hěn rè, suǒyǐ wǒmen zuò zài yì kē shù xià xiūxi.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu đằng kia có nhiều cây thì chúng ta nên qua đó chụp ảnh.',answer:'如果那边有很多树，我们就应该过去拍照。',answerPy:'Rúguǒ nàbiān yǒu hěn duō shù, wǒmen jiù yīnggāi guòqu pāizhào.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:5,zh:'容易',py:'róngyì',pos:'Tính từ',vn:'dễ, dễ dàng', hv: 'dung dị',em:'✅',lesson:1,
-   explain:['Không tốn nhiều công sức, thời gian hay khó khăn để thực hiện hoặc hiểu.'],
-   usage:'Tính từ song âm tiết. Khi làm vị ngữ cần có phó từ mức độ (很/太) đứng TRƯỚC: 很容易 (không nói trơn 容易). Khi bổ nghĩa cho động từ: 容易 + V = dễ làm gì (容易学).',
-   collo:['很容易','太容易了','容易学','容易做'],
-   ex_zh:'学汉语很容易。',ex_py:'Xué Hànyǔ hěn róngyì.',ex_vn:'Học tiếng Trung rất dễ.',
-   exList:[
-     {zh:'学汉语很容易。',py:'Xué Hànyǔ hěn róngyì.',vn:'Học tiếng Trung rất dễ.'},
-     {zh:'这个问题很容易。',py:'Zhège wèntí hěn róngyì.',vn:'Câu hỏi này rất dễ.'},
-     {zh:'找到一个好工作不容易。',py:'Zhǎodào yí ge hǎo gōngzuò bù róngyì.',vn:'Tìm được một công việc tốt không dễ.'},
-   ],
-   hanzi:[
-     {c:'容',p:'róng',type:'上下结构 · Trên-dưới',st:10,ord:'宀 (miên) trên → 谷 (cốc) dưới',rad:'宀 (miên – mái nhà)',mean:'chứa đựng, dung nạp',
-      tip:'Mái nhà 宀 che thung lũng 谷 → có chỗ CHỨA ĐỰNG, DUNG NẠP; mọi việc DỄ hơn khi có chỗ dung thân.',
-      cf:'客 (kè – "khách", cũng bộ 宀")',w:'容易 / 内容'},
-     {c:'易',p:'yì',type:'独体字 · Chữ đơn',st:8,ord:'nét liền, không tách bộ',rad:'日 (nhật)',mean:'dễ; thay đổi',
-      tip:'Chữ tượng hình cổ chỉ sự BIẾN ĐỔI linh hoạt → nghĩa mở rộng thành "DỄ DÀNG".',
-      cf:'昜 (dạng cổ liên quan)',w:'容易 / 简易'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy bài kiểm tra này rất dễ nhưng vẫn có vài bạn làm sai.',answer:'虽然这次考试很容易，但是还有几个同学做错了。',answerPy:'Suīrán zhè cì kǎoshì hěn róngyì, dànshì hái yǒu jǐ ge tóngxué zuòcuò le.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-     {promptLang:'vi',prompt:'Vì công việc này rất dễ nên tôi làm xong rất nhanh.',answer:'因为这个工作很容易，所以我很快就做完了。',answerPy:'Yīnwèi zhège gōngzuò hěn róngyì, suǒyǐ wǒ hěn kuài jiù zuòwán le.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:6,zh:'难',py:'nán',pos:'Tính từ',vn:'khó', hv: 'nan',em:'❌',lesson:1,
-   explain:['Cần nhiều công sức, khó thực hiện hoặc khó hiểu — trái nghĩa với 容易.'],
-   usage:'Tính từ, cách dùng đối xứng với 容易: 很难 (làm vị ngữ); 难 + V = khó làm gì (难写, 难学).',
-   collo:['很难','难写','难学','难做'],
-   ex_zh:'写汉字很难。',ex_py:'Xiě Hànzì hěn nán.',ex_vn:'Viết chữ Hán rất khó.',
-   exList:[
-     {zh:'写汉字很难。',py:'Xiě Hànzì hěn nán.',vn:'Viết chữ Hán rất khó.'},
-     {zh:'这道菜很难做。',py:'Zhè dào cài hěn nán zuò.',vn:'Món này khó làm.'},
-     {zh:'上山容易下山难。',py:'Shàng shān róngyì xià shān nán.',vn:'Lên núi dễ, xuống núi khó.'},
-   ],
-   hanzi:[
-     {c:'难',p:'nán',type:'左右结构 · Trái-phải',st:10,ord:'又 (hựu) trái → 隹 (chuy) phải',rad:'又 (hựu – bàn tay)',mean:'khó',
-      tip:'Bộ 又(tay) cầm 隹(chim đuôi ngắn) → bắt chim bằng tay rất KHÓ.',
-      cf:'难 và 准 (chuẩn) đều có 隹',w:'很难 / 难写 / 难学'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì bài này quá khó nên tôi phải hỏi thầy giáo.',answer:'因为这道题太难了，所以我得问老师。',answerPy:'Yīnwèi zhè dào tí tài nán le, suǒyǐ wǒ děi wèn lǎoshī.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu chữ Hán khó nhớ thì bạn nên viết nhiều lần.',answer:'如果汉字难记，你就应该多写几遍。',answerPy:'Rúguǒ Hànzì nán jì, nǐ jiù yīnggāi duō xiě jǐ biàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:7,zh:'太太',py:'tàitai',pos:'Danh từ',vn:'bà, vợ, phu nhân', hv: 'thái thái',em:'👩',lesson:2,
-   explain:['1. Người vợ (cách nói lịch sự, trang trọng).','2. Cách xưng hô lịch sự với phụ nữ đã có chồng, đi kèm họ.'],
-   usage:'Danh từ. Khi dùng làm cách xưng hô lịch sự, đặt SAU họ của người đó: Họ + 太太 (周太太 = bà Chu).',
-   collo:['我太太','他太太','周太太','李太太'],
-   ex_zh:'她是我的太太。',ex_py:'Tā shì wǒ de tàitai.',ex_vn:'Cô ấy là vợ tôi.',
-   exList:[
-     {zh:'她是我的太太。',py:'Tā shì wǒ de tàitai.',vn:'Cô ấy là vợ tôi.'},
-     {zh:'周太太在办公室。',py:'Zhōu tàitai zài bàngōngshì.',vn:'Bà Chu ở văn phòng.'},
-     {zh:'他太太很漂亮。',py:'Tā tàitai hěn piàoliang.',vn:'Vợ anh ấy rất đẹp.'},
-   ],
-   hanzi:[
-     {c:'太',p:'tài',type:'独体字 · Chữ đơn',st:4,ord:'大 → 丶(chấm) dưới',rad:'大 (đại – to lớn)',mean:'quá, thái',
-      tip:'To lớn 大 + thêm một chấm 丶bên dưới → "THÁI", ý mức độ cao/trang trọng; ghép với 太太 = cách gọi lịch sự người vợ.',
-      cf:'犬 (quǎn – "con chó")',w:'太太 / 太大了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy vợ anh ấy rất bận nhưng cô ấy vẫn nấu cơm mỗi ngày.',answer:'虽然他太太很忙，但是她每天还是做饭。',answerPy:'Suīrán tā tàitai hěn máng, dànshì tā měitiān háishi zuò fàn.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-     {promptLang:'vi',prompt:'Vì bà Chu không có ở nhà nên tôi đã gọi điện cho bà ấy.',answer:'因为周太太不在家，所以我给她打了个电话。',answerPy:'Yīnwèi Zhōu tàitai bú zài jiā, suǒyǐ wǒ gěi tā dǎle ge diànhuà.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:8,zh:'秘书',py:'mìshū',pos:'Danh từ',vn:'thư ký', hv: 'bí thư',em:'📋',lesson:2,
-   explain:['Người phụ trách công việc văn phòng, giấy tờ, sắp xếp lịch làm việc cho cấp trên.'],
-   usage:'Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 秘书 (王秘书 = thư ký Vương).',
-   collo:['王秘书','我的秘书','秘书处'],
-   ex_zh:'这是我的秘书。',ex_py:'Zhè shì wǒ de mìshū.',ex_vn:'Đây là thư ký của tôi.',
-   exList:[
-     {zh:'这是我的秘书。',py:'Zhè shì wǒ de mìshū.',vn:'Đây là thư ký của tôi.'},
-     {zh:'王秘书在办公室。',py:'Wáng mìshū zài bàngōngshì.',vn:'Thư ký Vương ở văn phòng.'},
-     {zh:'刘秘书出去了。',py:'Liú mìshū chūqu le.',vn:'Thư ký Lưu ra ngoài rồi.'},
-   ],
-   hanzi:[
-     {c:'秘',p:'mì',type:'左右结构 · Trái-phải',st:10,ord:'禾 (hoà) trái → 必 (tất) phải',rad:'禾 (hoà – lúa)',mean:'bí mật',
-      tip:'Bộ 禾(lúa) + 必(tất nhiên) → giữ kín thông tin về mùa màng = BÍ MẬT; người giữ việc riêng cho sếp = thư ký.',
-      cf:'密 (mì – "bí mật, kín đáo")',w:'秘书 / 秘密'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì giám đốc ra ngoài rồi nên thư ký bảo tôi chiều quay lại.',answer:'因为经理出去了，所以秘书让我下午再来。',answerPy:'Yīnwèi jīnglǐ chūqu le, suǒyǐ mìshū ràng wǒ xiàwǔ zài lái.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn muốn gặp giám đốc thì bạn nên hỏi thư ký trước.',answer:'如果你想见经理，你就应该先问秘书。',answerPy:'Rúguǒ nǐ xiǎng jiàn jīnglǐ, nǐ jiù yīnggāi xiān wèn mìshū.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'经理',py:'jīnglǐ',pos:'Danh từ',vn:'giám đốc, quản lý', hv: 'kinh lý',em:'👔',lesson:2,
-   explain:['Người đứng đầu, phụ trách quản lý, điều hành công việc của một công ty/bộ phận.'],
-   usage:'Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 经理 (张经理, 李经理).',
-   collo:['张经理','李经理','总经理'],
-   ex_zh:'这是我的经理。',ex_py:'Zhè shì wǒ de jīnglǐ.',ex_vn:'Đây là giám đốc của tôi.',
-   exList:[
-     {zh:'这是我的经理。',py:'Zhè shì wǒ de jīnglǐ.',vn:'Đây là giám đốc của tôi.'},
-     {zh:'张经理在办公室。',py:'Zhāng jīnglǐ zài bàngōngshì.',vn:'Giám đốc Trương ở văn phòng.'},
-     {zh:'李经理在哪儿？',py:'Lǐ jīnglǐ zài nǎr?',vn:'Giám đốc Lý ở đâu?'},
-   ],
-   hanzi:[
-     {c:'经',p:'jīng',type:'左右结构 · Trái-phải',st:8,ord:'纟 (mịch) trái → 22 (kinh) phải',rad:'纟 (mịch – tơ, sợi)',mean:'kinh qua, quản lý',
-      tip:'Bộ 纟(sợi tơ, dệt theo đường kinh tuyến) → mở rộng thành QUẢN LÝ có hệ thống, trải qua.',
-      cf:'轻 (qīng – "nhẹ")',w:'经理 / 经过'},
-     {c:'理',p:'lǐ',type:'左右结构 · Trái-phải',st:11,ord:'王 (vương) trái → 里 (lý) phải',rad:'王 (vương – ngọc)',mean:'lý lẽ, xử lý',
-      tip:'Người thợ ngọc 王 xử lý đường vân trong viên ngọc 里 → LÝ LẼ, XỬ LÝ, QUẢN LÝ.',
-      cf:'里 (lǐ – "bên trong")',w:'经理 / 道理 / 处理'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì giám đốc Lý rất bận nên anh ấy không thể gặp bạn hôm nay.',answer:'因为李经理很忙，所以他今天不能见你。',answerPy:'Yīnwèi Lǐ jīnglǐ hěn máng, suǒyǐ tā jīntiān bù néng jiàn nǐ.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy giám đốc Trương đi ra ngoài nhưng chiều nay anh ấy sẽ về.',answer:'虽然张经理出去了，但是他今天下午会回来。',answerPy:'Suīrán Zhāng jīnglǐ chūqu le, dànshì tā jīntiān xiàwǔ huì huílai.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:10,zh:'办公室',py:'bàngōngshì',pos:'Danh từ',vn:'văn phòng', hv: 'biện công thất',em:'🏢',lesson:2,
-   explain:['Căn phòng dùng để làm việc, xử lý công việc hành chính, giấy tờ.'],
-   usage:'Danh từ chỉ nơi chốn; thường đi cùng giới từ 在 khi nói làm gì TẠI văn phòng: 在 + 办公室 + Động từ.',
-   collo:['在办公室','我的办公室','办公室主任'],
-   ex_zh:'我的办公室在这里。',ex_py:'Wǒ de bàngōngshì zài zhèlǐ.',ex_vn:'Văn phòng của tôi ở đây.',
-   exList:[
-     {zh:'我的办公室在这里。',py:'Wǒ de bàngōngshì zài zhèlǐ.',vn:'Văn phòng của tôi ở đây.'},
-     {zh:'王秘书在办公室。',py:'Wáng mìshū zài bàngōngshì.',vn:'Thư ký Vương ở văn phòng.'},
-     {zh:'我们经常在办公室吃午饭。',py:'Wǒmen jīngcháng zài bàngōngshì chī wǔfàn.',vn:'Chúng tôi thường ăn trưa ở văn phòng.'},
-   ],
-   hanzi:[
-     {c:'办',p:'bàn',type:'独体字 · Chữ đơn (giản thể)',st:4,ord:'力 (lực) ở giữa hai chấm',rad:'力 (lực – sức lực)',mean:'làm, xử lý',
-      tip:'Sức lực 力 ở giữa hai bên → dồn sức để LÀM VIỆC.',
-      cf:'为 (wèi – "vì")',w:'办公室 / 办事'},
-     {c:'室',p:'shì',type:'上下结构 · Trên-dưới',st:9,ord:'宀 (miên) trên → 至 (chí) dưới',rad:'宀 (miên – mái nhà)',mean:'căn phòng',
-      tip:'Mái nhà 宀 nơi người ta đi đến 至 để dừng chân → CĂN PHÒNG.',
-      cf:'到 (dào – cũng chứa 至")',w:'办公室 / 教室'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì văn phòng của tôi ở tòa nhà số năm nên bạn dễ tìm thấy.',answer:'因为我的办公室在五号楼，所以你很容易找到。',answerPy:'Yīnwèi wǒ de bàngōngshì zài wǔ hào lóu, suǒyǐ nǐ hěn róngyì zhǎodào.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn có việc thì có thể đến văn phòng tìm tôi.',answer:'如果你有事，就可以去办公室找我。',answerPy:'Rúguǒ nǐ yǒu shì, jiù kěyǐ qù bàngōngshì zhǎo wǒ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'周',py:'Zhōu',pos:'Danh từ riêng',vn:'họ Chu', hv: 'Chu',em:'👨',lesson:2,
-   explain:['Một họ (tên riêng) của người Trung Quốc, tương đương họ "Chu" trong tiếng Việt.'],
-   usage:'Danh từ riêng, dùng làm họ đứng TRƯỚC tên hoặc chức danh: 周 + tên (周明) hoặc 周 + chức danh (周经理).',
-   collo:['周明','周经理','周太太'],
-   ex_zh:'请问周明在吗？',ex_py:'Qǐngwèn Zhōu Míng zài ma?',ex_vn:'Xin hỏi anh Chu Minh có ở đó không?',
-   exList:[
-     {zh:'请问周明在吗？',py:'Qǐngwèn Zhōu Míng zài ma?',vn:'Xin hỏi anh Chu Minh có ở đó không?'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì anh Chu không có ở văn phòng nên tôi đã gọi điện cho anh ấy.',answer:'因为周先生不在办公室，所以我给他打了个电话。',answerPy:'Yīnwèi Zhōu xiānsheng bú zài bàngōngshì, suǒyǐ wǒ gěi tā dǎle ge diànhuà.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu anh gặp anh Chu thì hãy nói tôi đang tìm anh ấy.',answer:'如果你见到周先生，就告诉他我在找他。',answerPy:'Rúguǒ nǐ jiàndào Zhōu xiānsheng, jiù gàosu tā wǒ zài zhǎo tā.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'周明',py:'Zhōu Míng',pos:'Danh từ riêng',vn:'tên người (Chu Minh)', hv: 'Chu Minh',em:'🙋',lesson:2,
-   explain:['Tên đầy đủ (họ + tên) của một nhân vật trong bài hội thoại.'],
-   usage:'Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.',
-   ex_zh:'周经理出去了，不在办公室。',ex_py:'Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.',ex_vn:'Giám đốc Chu ra ngoài rồi, không có ở văn phòng.',
-   exList:[
-     {zh:'周经理出去了，不在办公室。',py:'Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.',vn:'Giám đốc Chu ra ngoài rồi, không có ở văn phòng.'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì anh Chu Minh ra ngoài giải quyết việc nên chiều nay mới về.',answer:'因为周明出去办事了，所以今天下午才回来。',answerPy:'Yīnwèi Zhōu Míng chūqu bànshì le, suǒyǐ jīntiān xiàwǔ cái huílai.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu anh Chu Minh về thì hãy bảo anh ấy gọi điện cho tôi.',answer:'如果周明回来了，就让他给我打电话。',answerPy:'Rúguǒ Zhōu Míng huílai le, jiù ràng tā gěi wǒ dǎ diànhuà.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'辆',py:'liàng',pos:'Lượng từ',vn:'chiếc (xe cộ)', hv: 'lượng',em:'🚗',lesson:3,
-   explain:['Lượng từ chuyên dùng để đếm số lượng xe cộ (ô tô, xe buýt, taxi...).'],
-   usage:'Lượng từ, đứng giữa SỐ TỪ và DANH TỪ chỉ xe: [số từ] + 辆 + [xe] (一辆车, 几辆公共汽车).',
-   collo:['一辆车','两辆','几辆','一辆出租车'],
-   ex_zh:'这儿有一辆车。',ex_py:'Zhèr yǒu yí liàng chē.',ex_vn:'Ở đây có một chiếc xe.',
-   exList:[
-     {zh:'这儿有一辆车。',py:'Zhèr yǒu yí liàng chē.',vn:'Ở đây có một chiếc xe.'},
-     {zh:'这儿有几辆公共汽车？',py:'Zhèr yǒu jǐ liàng gōnggòng qìchē?',vn:'Ở đây có mấy chiếc xe buýt?'},
-     {zh:'我去叫辆出租车。',py:'Wǒ qù jiào liàng chūzūchē.',vn:'Tôi đi gọi một chiếc taxi.'},
-   ],
-   hanzi:[
-     {c:'辆',p:'liàng',type:'左右结构 · Trái-phải',st:11,ord:'车 (xa) trái → 两 (lưỡng) phải',rad:'车 (xa – xe)',mean:'chiếc (xe)',
-      tip:'Bộ 车(xe) + 两(hai, âm gần "lượng") → lượng từ CHUYÊN DÙNG để đếm XE CỘ.',
-      cf:'两 (liǎng – "hai", không có bộ 车")',w:'一辆车 / 两辆 / 几辆'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời mưa to nên tôi gọi một chiếc taxi để về nhà.',answer:'因为雨下得很大，所以我叫了一辆出租车回家。',answerPy:'Yīnwèi yǔ xià de hěn dà, suǒyǐ wǒ jiàole yí liàng chūzūchē huí jiā.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn không có xe thì chúng ta có thể đi chung một chiếc.',answer:'如果你没有车，我们就可以坐一辆车一起去。',answerPy:'Rúguǒ nǐ méiyǒu chē, wǒmen jiù kěyǐ zuò yí liàng chē yìqǐ qù.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:14,zh:'楼',py:'lóu',pos:'Danh từ',vn:'lầu, tòa nhà', hv: 'lâu',em:'🏬',lesson:3,
-   explain:['1. Tòa nhà nhiều tầng.','2. Tầng (lầu) trong một tòa nhà.'],
-   usage:'Danh từ. Hỏi số tòa nhà dùng 几号楼; chỉ hướng lên/xuống tầng dùng 上楼/下楼, 楼上/楼下.',
-   collo:['大楼','几号楼','上楼','下楼','楼上','楼下'],
-   ex_zh:'我在5号楼。',ex_py:'Wǒ zài wǔ hào lóu.',ex_vn:'Tôi ở tòa nhà số 5.',
-   exList:[
-     {zh:'我在5号楼。',py:'Wǒ zài wǔ hào lóu.',vn:'Tôi ở tòa nhà số 5.'},
-     {zh:'你在几号楼？',py:'Nǐ zài jǐ hào lóu?',vn:'Bạn ở tòa nhà số mấy?'},
-     {zh:'我上楼去给你拿把伞。',py:'Wǒ shànglóu qù gěi nǐ ná bǎ sǎn.',vn:'Tôi lên lầu lấy cho bạn một cái ô.'},
-   ],
-   hanzi:[
-     {c:'楼',p:'lóu',type:'左右结构 · Trái-phải',st:13,ord:'木 (mộc) trái → 娄 (lũ) phải',rad:'木 (mộc – gỗ)',mean:'lầu, tòa nhà',
-      tip:'Bộ gỗ 木 (nhà làm bằng gỗ thời xưa) + 娄(xếp lớp) → nhà xếp nhiều TẦNG = TÒA NHÀ, LẦU.',
-      cf:'数 (shù – "số", cũng có phần giống 娄")',w:'大楼 / 楼上 / 楼下 / 上楼 / 下楼'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì thang máy hỏng nên chúng tôi phải đi bộ lên lầu.',answer:'因为电梯坏了，所以我们得走上楼。',answerPy:'Yīnwèi diàntī huài le, suǒyǐ wǒmen děi zǒushàng lóu.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn tìm không thấy phòng tôi thì cứ hỏi ở tòa nhà số ba.',answer:'如果你找不到我的房间，就在三号楼问一下。',answerPy:'Rúguǒ nǐ zhǎo bú dào wǒ de fángjiān, jiù zài sān hào lóu wèn yíxià.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:15,zh:'拿',py:'ná',pos:'Động từ',vn:'cầm, lấy', hv: 'nã',em:'🤲',lesson:3,
-   explain:['Dùng tay giữ hoặc mang lấy một vật gì đó.'],
-   usage:'Động từ, theo sau là tân ngữ chỉ vật được cầm/lấy: 拿 + [vật] (拿书, 拿钱, 拿伞).',
-   collo:['拿书','拿钱','拿伞','拿东西'],
-   ex_zh:'你手里拿的是什么？',ex_py:'Nǐ shǒu lǐ ná de shì shénme?',ex_vn:'Cái bạn đang cầm trên tay là gì?',
-   exList:[
-     {zh:'你手里拿的是什么？',py:'Nǐ shǒu lǐ ná de shì shénme?',vn:'Cái bạn đang cầm trên tay là gì?'},
-     {zh:'我去拿把伞。',py:'Wǒ qù ná bǎ sǎn.',vn:'Tôi đi lấy một cái ô.'},
-     {zh:'别忘了拿你的伞。',py:'Bié wàngle ná nǐ de sǎn.',vn:'Đừng quên mang theo ô của bạn.'},
-   ],
-   hanzi:[
-     {c:'拿',p:'ná',type:'上下结构 · Trên-dưới',st:10,ord:'合 (hợp) trên → 手 (thủ) dưới',rad:'手 (thủ – tay)',mean:'cầm, lấy',
-      tip:'合(hợp lại) bàn 手(tay) → khép bàn tay lại để CẦM/LẤY một vật gì đó.',
-      cf:'合 (hé – "hợp lại")',w:'拿书 / 拿钱 / 拿伞'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời sắp mưa nên tôi lên lầu lấy một cái ô.',answer:'因为要下雨了，所以我上楼拿了一把伞。',answerPy:'Yīnwèi yào xiàyǔ le, suǒyǐ wǒ shànglóu nále yì bǎ sǎn.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn cần tiền thì cứ lấy trong túi tôi.',answer:'如果你需要钱，就在我包里拿吧。',answerPy:'Rúguǒ nǐ xūyào qián, jiù zài wǒ bāo lǐ ná ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:16,zh:'把',py:'bǎ',pos:'Lượng từ',vn:'cái, chiếc (đồ có tay cầm)', hv: 'bả',em:'🖐️',lesson:3,
-   explain:['Lượng từ dùng cho các đồ vật có tay cầm hoặc dùng bằng tay (ô, dao, ghế, quạt...).'],
-   usage:'Lượng từ, đứng giữa SỐ TỪ và DANH TỪ: [số từ] + 把 + [đồ vật] (一把伞, 一把椅子).',
-   collo:['一把伞','一把椅子','一把刀','一把扇子'],
-   ex_zh:'我去拿把伞。',ex_py:'Wǒ qù ná bǎ sǎn.',ex_vn:'Tôi đi lấy một cái ô.',
-   exList:[
-     {zh:'我去拿把伞。',py:'Wǒ qù ná bǎ sǎn.',vn:'Tôi đi lấy một cái ô.'},
-     {zh:'那儿有一把椅子。',py:'Nàr yǒu yì bǎ yǐzi.',vn:'Ở đó có một cái ghế.'},
-     {zh:'这是一把刀，那是一把扇子。',py:'Zhè shì yì bǎ dāo, nà shì yì bǎ shànzi.',vn:'Đây là một con dao, kia là một cái quạt.'},
-   ],
-   hanzi:[
-     {c:'把',p:'bǎ',type:'左右结构 · Trái-phải',st:7,ord:'扌 (thủ) trái → 巴 (ba) phải',rad:'扌 (thủ – bàn tay)',mean:'nắm giữ; lượng từ',
-      tip:'Bộ tay 扌 + 巴(bám chặt) → dùng TAY nắm giữ; cũng là lượng từ cho đồ vật CÓ TAY CẦM.',
-      cf:'巴 (bā – "bám, mong chờ")',w:'一把伞 / 一把椅子 / 一把刀'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trên bàn có nhiều dao nên tôi không biết lấy chiếc nào.',answer:'因为桌子上有很多把刀，所以我不知道拿哪把。',answerPy:'Yīnwèi zhuōzi shang yǒu hěn duō bǎ dāo, suǒyǐ wǒ bù zhīdào ná nǎ bǎ.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu ghế không đủ thì chúng ta mua thêm vài chiếc.',answer:'如果椅子不够，我们就再买几把。',answerPy:'Rúguǒ yǐzi bú gòu, wǒmen jiù zài mǎi jǐ bǎ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:17,zh:'伞',py:'sǎn',pos:'Danh từ',vn:'cái ô, dù', hv: 'tản',em:'☂️',lesson:3,
-   explain:['Vật dụng có cán và phần vải xòe tròn, dùng để che mưa hoặc che nắng.'],
-   usage:'Danh từ; lượng từ đi kèm là 把: 一把伞. Phân biệt 雨伞 (ô che mưa) và 太阳伞 (ô che nắng).',
-   collo:['雨伞','太阳伞','一把伞'],
-   ex_zh:'外面下雨了，我去拿把伞。',ex_py:'Wàimian xiàyǔ le, wǒ qù ná bǎ sǎn.',ex_vn:'Bên ngoài mưa rồi, tôi đi lấy một cái ô.',
-   exList:[
-     {zh:'外面下雨了，我去拿把伞。',py:'Wàimian xiàyǔ le, wǒ qù ná bǎ sǎn.',vn:'Bên ngoài mưa rồi, tôi đi lấy một cái ô.'},
-     {zh:'我上楼去给你拿把伞。',py:'Wǒ shànglóu qù gěi nǐ ná bǎ sǎn.',vn:'Tôi lên lầu lấy ô cho bạn.'},
-     {zh:'太阳伞和雨伞不一样。',py:'Tàiyángsǎn hé yǔsǎn bù yíyàng.',vn:'Ô che nắng và ô che mưa không giống nhau.'},
-   ],
-   hanzi:[
-     {c:'伞',p:'sǎn',type:'独体字 · Chữ đơn (tượng hình)',st:5,ord:'人 trên → nhiều nét dưới',rad:'人 (nhân)',mean:'cái ô, dù',
-      tip:'Hình dáng ký tự trông giống một chiếc Ô đang xòe ra che mưa nắng.',
-      cf:'企 (qǐ – cũng có bộ 人 phía trên)',w:'雨伞 / 太阳伞 / 一把伞'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì bên ngoài đang mưa nên tôi mượn bạn một cái ô.',answer:'因为外面正在下雨，所以我跟你借一把伞。',answerPy:'Yīnwèi wàimian zhèngzài xiàyǔ, suǒyǐ wǒ gēn nǐ jiè yì bǎ sǎn.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn quên mang ô thì bạn có thể bị ướt hết người.',answer:'如果你忘了带伞，你就可能全身都湿了。',answerPy:'Rúguǒ nǐ wàngle dài sǎn, nǐ jiù kěnéng quánshēn dōu shī le.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:18,zh:'胖',py:'pàng',pos:'Tính từ',vn:'béo, mập', hv: 'bàn',em:'🐷',lesson:4,
-   explain:['Có nhiều thịt/mỡ trên cơ thể, thân hình to lớn — trái nghĩa với 瘦 (gầy).'],
-   usage:'Tính từ; làm vị ngữ với 很 (很胖); nói mức độ tăng cân dùng 胖 + 了 + số lượng: 胖了5公斤.',
-   collo:['很胖','胖了','这么胖'],
-   ex_zh:'他很胖，我很瘦。',ex_py:'Tā hěn pàng, wǒ hěn shòu.',ex_vn:'Anh ấy rất béo, tôi rất gầy.',
-   exList:[
-     {zh:'他很胖，我很瘦。',py:'Tā hěn pàng, wǒ hěn shòu.',vn:'Anh ấy rất béo, tôi rất gầy.'},
-     {zh:'你看，我这么胖，怎么办呢？',py:'Nǐ kàn, wǒ zhème pàng, zěnme bàn ne?',vn:'Con xem, mẹ béo thế này, phải làm sao đây?'},
-     {zh:'最近她吃得很多，胖了五公斤。',py:'Zuìjìn tā chī de hěn duō, pàngle wǔ gōngjīn.',vn:'Gần đây cô ấy ăn nhiều, béo lên 5 cân.'},
-   ],
-   hanzi:[
-     {c:'胖',p:'pàng',type:'左右结构 · Trái-phải',st:9,ord:'月 (nhục) trái → 半 (bán) phải',rad:'月 (nhục – thịt)',mean:'béo, mập',
-      tip:'Bộ thịt 月 + 半(nửa, ý nhiều thịt dư ra) → nhiều THỊT trên cơ thể = BÉO.',
-      cf:'伴 (bàn – "bạn đồng hành", cũng có 半")',w:'很胖 / 胖了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì gần đây ăn nhiều nên tôi béo lên vài cân.',answer:'因为最近吃得很多，所以我胖了几公斤。',answerPy:'Yīnwèi zuìjìn chī de hěn duō, suǒyǐ wǒ pàngle jǐ gōngjīn.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy anh ấy ăn rất ít nhưng vẫn rất béo.',answer:'虽然他吃得很少，但是还是很胖。',answerPy:'Suīrán tā chī de hěn shǎo, dànshì háishi hěn pàng.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:19,zh:'其实',py:'qíshí',pos:'Phó từ',vn:'thực ra, thật ra', hv: 'kỳ thực',em:'💬',lesson:4,
-   explain:['Dùng để đính chính, bổ sung một sự thật khác với điều vừa nói/nghĩ trước đó.'],
-   usage:'Phó từ, đứng ở ĐẦU CÂU hoặc NGAY SAU chủ ngữ, TRƯỚC động từ/tính từ: 其实 + [câu], hoặc [Chủ ngữ] + 其实 + [vị ngữ].',
-   collo:['其实……','他其实……','其实很容易'],
-   ex_zh:'他看起来很年轻，其实已经40岁了。',ex_py:'Tā kànqǐlai hěn niánqīng, qíshí yǐjīng sìshí suì le.',ex_vn:'Anh ấy trông rất trẻ, nhưng thực ra đã 40 tuổi rồi.',
-   exList:[
-     {zh:'他看起来很年轻，其实已经40岁了。',py:'Tā kànqǐlai hěn niánqīng, qíshí yǐjīng sìshí suì le.',vn:'Anh ấy trông rất trẻ, nhưng thực ra đã 40 tuổi rồi.'},
-     {zh:'其实，我还没吃饭。',py:'Qíshí, wǒ hái méi chīfàn.',vn:'Thực ra, tôi vẫn chưa ăn cơm.'},
-     {zh:'这个工作看起来很难，其实很容易。',py:'Zhège gōngzuò kànqǐlai hěn nán, qíshí hěn róngyì.',vn:'Công việc này nhìn thì khó, nhưng thực ra rất dễ.'},
-   ],
-   hanzi:[
-     {c:'其',p:'qí',type:'独体字 · Chữ đơn (tượng hình)',st:8,ord:'nét liền, gốc là hình cái nia',rad:'八 (bát)',mean:'đó, cái đó',
-      tip:'Vốn là hình vẽ cái nia sàng gạo cổ, sau mượn dùng làm đại từ chỉ định "đó, của nó".',
-      cf:'期 (qī – "thời kỳ", cũng chứa 其")',w:'其实 / 其他'},
-     {c:'实',p:'shí',type:'上下结构 · Trên-dưới (giản thể)',st:8,ord:'宀 (miên) trên → 头 (biến thể) dưới',rad:'宀 (miên – mái nhà)',mean:'thật, thực',
-      tip:'Trong nhà 宀 có của cải THẬT SỰ → nghĩa THỰC, CHÂN THẬT.',
-      cf:'买 (mǎi – hình dạng gần giống phần dưới)',w:'其实 / 事实 / 实在'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mọi người nghĩ tôi rất bận, nhưng thực ra tôi có nhiều thời gian rảnh.',answer:'大家觉得我很忙，但其实我有很多空儿。',answerPy:'Dàjiā juéde wǒ hěn máng, dàn qíshí wǒ yǒu hěn duō kòngr.',
-      note:'但其实…… đính chính lại điều mọi người nghĩ trước đó.'},
-     {promptLang:'vi',prompt:'Câu hỏi này nhìn có vẻ khó, nhưng thực ra rất đơn giản.',answer:'这个问题看起来很难，但其实很简单。',answerPy:'Zhège wèntí kànqǐlai hěn nán, dàn qíshí hěn jiǎndān.',
-      note:'V起来 + tính từ = nhìn/thấy có vẻ như thế nào; 但其实…… đính chính lại.'},
-   ]},
-
-  {n:20,zh:'瘦',py:'shòu',pos:'Tính từ',vn:'gầy, ốm', hv: 'sấu',em:'📉',lesson:4,
-   explain:['1. Ít thịt/mỡ trên cơ thể, thân hình nhỏ, mảnh — trái nghĩa 胖.','2. Quần áo bó sát, chật.'],
-   usage:'Tính từ; làm vị ngữ với 很/有点儿: 很瘦, 有点儿瘦; nói mức độ giảm cân dùng 瘦 + 了: 瘦了.',
-   collo:['很瘦','瘦了','有点儿瘦'],
-   ex_zh:'我现在没以前那么胖了。',ex_py:'Wǒ xiànzài méi yǐqián nàme pàng le.',ex_vn:'Bây giờ tôi không còn béo như trước nữa.',
-   exList:[
-     {zh:'我现在没以前那么胖了。',py:'Wǒ xiànzài méi yǐqián nàme pàng le.',vn:'Bây giờ tôi không còn béo như trước nữa.'},
-     {zh:'我比以前瘦。',py:'Wǒ bǐ yǐqián shòu.',vn:'Tôi gầy hơn trước.'},
-     {zh:'这件衣服有点儿瘦。',py:'Zhè jiàn yīfu yǒudiǎnr shòu.',vn:'Bộ quần áo này hơi chật.'},
-   ],
-   hanzi:[
-     {c:'瘦',p:'shòu',type:'半包围结构 · Bán bao vây',st:14,ord:'疒 (nạch) bao → 叟 (tẩu) trong',rad:'疒 (nạch – bệnh tật)',mean:'gầy, ốm',
-      tip:'Bộ bệnh 疒 + 叟(ông già) → cơ thể như ông già ốm o = GẦY.',
-      cf:'瘦 và 疼 đều mang bộ 疒 (liên quan cơ thể)',w:'很瘦 / 瘦了 / 有点儿瘦'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì cô ấy tập thể thao mỗi ngày nên bây giờ gầy hơn trước rất nhiều.',answer:'因为她每天运动，所以现在比以前瘦多了。',answerPy:'Yīnwèi tā měitiān yùndòng, suǒyǐ xiànzài bǐ yǐqián shòu duō le.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy bộ quần áo này hơi chật nhưng tôi vẫn rất thích nó.',answer:'虽然这件衣服有点儿瘦，但是我还是很喜欢它。',answerPy:'Suīrán zhè jiàn yīfu yǒudiǎnr shòu, dànshì wǒ háishi hěn xǐhuan tā.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "腿",
+    "py": "tuǐ",
+    "pos": "Danh từ",
+    "vn": "chân, đùi",
+    "hv": "thối",
+    "em": "🦵",
+    "lesson": 1,
+    "explain": [
+      "Bộ phận cơ thể tính từ hông đến bàn chân (gồm đùi và cẳng chân), dùng để đứng và di chuyển."
+    ],
+    "usage": "Danh từ chỉ bộ phận cơ thể, làm chủ ngữ hoặc định ngữ. Muốn nói bộ phận đó bị đau thì đặt 腿 TRƯỚC tính từ 疼: 腿 + 疼.",
+    "collo": [
+      "长腿",
+      "短腿",
+      "腿疼",
+      "我的腿"
+    ],
+    "ex_zh": "我的腿很长。",
+    "ex_py": "Wǒ de tuǐ hěn cháng.",
+    "ex_vn": "Chân tôi rất dài.",
+    "exList": [
+      {
+        "zh": "我的腿很长。",
+        "py": "Wǒ de tuǐ hěn cháng.",
+        "vn": "Chân tôi rất dài."
+      },
+      {
+        "zh": "我的小腿有点儿疼。",
+        "py": "Wǒ de xiǎotuǐ yǒudiǎnr téng.",
+        "vn": "Bắp chân tôi hơi đau."
+      },
+      {
+        "zh": "我现在腿也疼，脚也疼。",
+        "py": "Wǒ xiànzài tuǐ yě téng, jiǎo yě téng.",
+        "vn": "Bây giờ tôi vừa đau chân vừa đau bàn chân."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "腿",
+        "p": "tuǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "月 (nhục) trái → 退 (thoái) phải",
+        "rad": "月 (nhục – thân thể)",
+        "mean": "chân, đùi",
+        "tip": "月(bộ phận cơ thể) + 退(lùi lại) → bộ phận cơ thể dùng để BƯỚC LÙI/ĐI LẠI = CHÂN.",
+        "cf": "退 (tuì – \"lùi lại\", không có bộ 月\")",
+        "w": "大腿 / 小腿 / 左腿 / 右腿"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hôm qua đi bộ nhiều nên bây giờ chân tôi rất đau.",
+        "answer": "因为昨天走了很多路，所以我的腿现在很疼。",
+        "answerPy": "Yīnwèi zuótiān zǒule hěn duō lù, suǒyǐ wǒ de tuǐ xiànzài hěn téng.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy chân anh ấy dài nhưng anh ấy chạy không nhanh.",
+        "answer": "虽然他的腿很长，但是他跑得不快。",
+        "answerPy": "Suīrán tā de tuǐ hěn cháng, dànshì tā pǎo de bú kuài.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "腿疼",
+        "py": "tuǐ téng",
+        "vn": "đau chân"
+      },
+      {
+        "zh": "长腿",
+        "py": "zhǎng tuǐ",
+        "vn": "chân dài"
+      },
+      {
+        "zh": "我的腿",
+        "py": "wǒ de tuǐ",
+        "vn": "chân tôi"
+      },
+      {
+        "zh": "两条腿",
+        "py": "liǎng tiáo tuǐ",
+        "vn": "hai chân"
+      },
+      {
+        "zh": "腿不舒服",
+        "py": "tuǐ bù shūfu",
+        "vn": "chân khó chịu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "腿 + 疼 / 长",
+        "m": "Chân đau, chân dài — bộ phận cơ thể làm chủ ngữ nhỏ"
+      },
+      {
+        "s": "hai + 条 + 腿",
+        "m": "Lượng từ 条 cho vật dài"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "疼",
+    "py": "téng",
+    "pos": "Tính từ",
+    "vn": "đau, đau đớn",
+    "hv": "đông",
+    "em": "🤕",
+    "lesson": 1,
+    "explain": [
+      "Cảm giác khó chịu, nhức nhối ở một bộ phận cơ thể do bị thương, bệnh, hoặc mệt mỏi."
+    ],
+    "usage": "Tính từ chỉ cảm giác, luôn đứng SAU danh từ chỉ bộ phận cơ thể: [bộ phận cơ thể] + 疼 (không đảo ngược thứ tự).",
+    "collo": [
+      "头疼",
+      "腿疼",
+      "肚子疼",
+      "脚疼"
+    ],
+    "ex_zh": "你哪儿疼？",
+    "ex_py": "Nǐ nǎr téng?",
+    "ex_vn": "Bạn đau ở đâu?",
+    "exList": [
+      {
+        "zh": "你哪儿疼？",
+        "py": "Nǐ nǎr téng?",
+        "vn": "Bạn đau ở đâu?"
+      },
+      {
+        "zh": "我头疼。",
+        "py": "Wǒ tóu téng.",
+        "vn": "Tôi đau đầu."
+      },
+      {
+        "zh": "我肚子疼，眼睛也疼。",
+        "py": "Wǒ dùzi téng, yǎnjīng yě téng.",
+        "vn": "Tôi đau bụng, mắt cũng đau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "疼",
+        "p": "téng",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "疒 (nạch) bao → 冬 (đông) trong",
+        "rad": "疒 (nạch – bệnh tật)",
+        "mean": "đau, đau đớn",
+        "tip": "Bộ 疒(bệnh) + 冬(mùa đông) → mùa đông lạnh khiến cơ thể ĐAU NHỨC.",
+        "cf": "冷 (lěng – \"lạnh\", cũng liên quan mùa đông)",
+        "w": "头疼 / 腿疼 / 肚子疼 / 眼睛疼"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi đau đầu nên tôi không muốn đi làm hôm nay.",
+        "answer": "因为我头疼，所以我今天不想上班。",
+        "answerPy": "Yīnwèi wǒ tóuténg, suǒyǐ wǒ jīntiān bù xiǎng shàngbān.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bụng bạn còn đau thì bạn nên đi khám bác sĩ.",
+        "answer": "如果你的肚子还疼，你就应该去看医生。",
+        "answerPy": "Rúguǒ nǐ de dùzi hái téng, nǐ jiù yīnggāi qù kàn yīshēng.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "头疼",
+        "py": "tóu téng",
+        "vn": "đau đầu"
+      },
+      {
+        "zh": "腿疼",
+        "py": "tuǐ téng",
+        "vn": "đau chân"
+      },
+      {
+        "zh": "肚子疼",
+        "py": "dùzi téng",
+        "vn": "đau bụng"
+      },
+      {
+        "zh": "有点儿疼",
+        "py": "yǒudiǎnr téng",
+        "vn": "hơi đau"
+      },
+      {
+        "zh": "疼得厉害",
+        "py": "téng de lìhai",
+        "vn": "đau dữ dội"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "✗ 我疼头 → ✓ 我头疼",
+        "m": "Bộ phận cơ thể đứng trước 疼"
+      },
+      {
+        "s": "有点儿 + 疼",
+        "m": "Hơi đau — 有点儿 dùng cho điều không mong muốn"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "脚",
+    "py": "jiǎo",
+    "pos": "Danh từ",
+    "vn": "chân, bàn chân",
+    "hv": "cước",
+    "em": "🦶",
+    "lesson": 1,
+    "explain": [
+      "Phần dưới cùng của chân, tiếp xúc trực tiếp với mặt đất khi đứng/đi — khác với 腿 (chỉ toàn bộ chân từ hông trở xuống)."
+    ],
+    "usage": "Danh từ chỉ bộ phận cơ thể; lượng từ đi kèm là 只 (một chiếc) hoặc 双 (một đôi): 一只脚 / 一双脚.",
+    "collo": [
+      "左脚",
+      "右脚",
+      "一双脚",
+      "脚疼"
+    ],
+    "ex_zh": "我现在腿疼，脚也疼。",
+    "ex_py": "Wǒ xiànzài tuǐ téng, jiǎo yě téng.",
+    "ex_vn": "Bây giờ tôi đau chân, bàn chân cũng đau.",
+    "exList": [
+      {
+        "zh": "我现在腿疼，脚也疼。",
+        "py": "Wǒ xiànzài tuǐ téng, jiǎo yě téng.",
+        "vn": "Bây giờ tôi đau chân, bàn chân cũng đau."
+      },
+      {
+        "zh": "我的左脚，你的右脚。",
+        "py": "Wǒ de zuǒjiǎo, nǐ de yòujiǎo.",
+        "vn": "Chân trái của tôi, chân phải của bạn."
+      },
+      {
+        "zh": "鞋太小了，我的脚不舒服。",
+        "py": "Xié tài xiǎo le, wǒ de jiǎo bù shūfu.",
+        "vn": "Giày quá nhỏ, chân tôi khó chịu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "脚",
+        "p": "jiǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "月 (nhục) trái → 却 (khước) phải",
+        "rad": "月 (nhục – thân thể)",
+        "mean": "chân, bàn chân",
+        "tip": "月(thân thể) + 却(ngược lại, trái lại) → bộ phận ở phía dưới cùng cơ thể = BÀN CHÂN.",
+        "cf": "却 (què – \"lại, trái lại\", không có bộ 月\")",
+        "w": "左脚 / 右脚 / 一双脚"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì giày mới hơi chật nên bàn chân tôi rất khó chịu.",
+        "answer": "因为新鞋有点儿小，所以我的脚很不舒服。",
+        "answerPy": "Yīnwèi xīn xié yǒudiǎnr xiǎo, suǒyǐ wǒ de jiǎo hěn bù shūfu.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy bàn chân trái của tôi nhỏ nhưng bàn chân phải lại to hơn.",
+        "answer": "虽然我的左脚很小，但是右脚更大。",
+        "answerPy": "Suīrán wǒ de zuǒjiǎo hěn xiǎo, dànshì yòujiǎo gèng dà.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "脚疼",
+        "py": "jiǎo téng",
+        "vn": "đau chân"
+      },
+      {
+        "zh": "左脚",
+        "py": "zuǒ jiǎo",
+        "vn": "chân trái"
+      },
+      {
+        "zh": "右脚",
+        "py": "yòu jiǎo",
+        "vn": "chân phải"
+      },
+      {
+        "zh": "一双脚",
+        "py": "yì shuāng jiǎo",
+        "vn": "đôi bàn chân"
+      },
+      {
+        "zh": "洗脚",
+        "py": "xǐ jiǎo",
+        "vn": "rửa chân"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 双 + 脚",
+        "m": "Lượng từ 双 cho vật đi thành đôi"
+      },
+      {
+        "s": "脚 (bàn chân) ≠ 腿 (cả chân)"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "树",
+    "py": "shù",
+    "pos": "Danh từ",
+    "vn": "cây",
+    "hv": "thụ",
+    "em": "🌳",
+    "lesson": 1,
+    "explain": [
+      "Loài thực vật thân gỗ, có rễ, thân, cành, lá — thường mọc cao lớn ngoài trời."
+    ],
+    "usage": "Danh từ; lượng từ CHUYÊN DÙNG là 棵 (không dùng 个): 一棵树, không nói 一个树.",
+    "collo": [
+      "大树",
+      "小树",
+      "一棵树",
+      "种树"
+    ],
+    "ex_zh": "这里有一棵树。",
+    "ex_py": "Zhèlǐ yǒu yì kē shù.",
+    "ex_vn": "Ở đây có một cây.",
+    "exList": [
+      {
+        "zh": "这里有一棵树。",
+        "py": "Zhèlǐ yǒu yì kē shù.",
+        "vn": "Ở đây có một cây."
+      },
+      {
+        "zh": "那里也有一棵树。",
+        "py": "Nàlǐ yě yǒu yì kē shù.",
+        "vn": "Ở đó cũng có một cây."
+      },
+      {
+        "zh": "那边树多，我们过去坐一下吧。",
+        "py": "Nàbiān shù duō, wǒmen guòqu zuò yíxià ba.",
+        "vn": "Đằng kia nhiều cây, chúng ta qua đó ngồi một chút đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "树",
+        "p": "shù",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "木 (mộc) trái → 又 (hựu) phải",
+        "rad": "木 (mộc – gỗ, cây)",
+        "mean": "cây",
+        "tip": "Bộ 木(gỗ) đứng bên trái luôn liên quan đến CÂY CỐI, gỗ.",
+        "cf": "林 (lín – \"rừng\", hai chữ 木\")",
+        "w": "大树 / 小树 / 一棵树"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời nắng to nên chúng tôi ngồi nghỉ dưới một cái cây.",
+        "answer": "因为天气很热，所以我们坐在一棵树下休息。",
+        "answerPy": "Yīnwèi tiānqì hěn rè, suǒyǐ wǒmen zuò zài yì kē shù xià xiūxi.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu đằng kia có nhiều cây thì chúng ta nên qua đó chụp ảnh.",
+        "answer": "如果那边有很多树，我们就应该过去拍照。",
+        "answerPy": "Rúguǒ nàbiān yǒu hěn duō shù, wǒmen jiù yīnggāi guòqu pāizhào.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一棵树",
+        "py": "yì kē shù",
+        "vn": "một cái cây"
+      },
+      {
+        "zh": "大树",
+        "py": "dà shù",
+        "vn": "cây to"
+      },
+      {
+        "zh": "种树",
+        "py": "zhǒng shù",
+        "vn": "trồng cây"
+      },
+      {
+        "zh": "树下",
+        "py": "shù xià",
+        "vn": "dưới gốc cây"
+      },
+      {
+        "zh": "树很高",
+        "py": "shù hěn gāo",
+        "vn": "cây rất cao"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 棵 + 树",
+        "m": "Lượng từ 棵 cho cây cối"
+      },
+      {
+        "s": "在 + 树 + 下",
+        "m": "Dưới gốc cây"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "容易",
+    "py": "róngyì",
+    "pos": "Tính từ",
+    "vn": "dễ, dễ dàng",
+    "hv": "dung dị",
+    "em": "✅",
+    "lesson": 1,
+    "explain": [
+      "Không tốn nhiều công sức, thời gian hay khó khăn để thực hiện hoặc hiểu."
+    ],
+    "usage": "Tính từ song âm tiết. Khi làm vị ngữ cần có phó từ mức độ (很/太) đứng TRƯỚC: 很容易 (không nói trơn 容易). Khi bổ nghĩa cho động từ: 容易 + V = dễ làm gì (容易学).",
+    "collo": [
+      "很容易",
+      "太容易了",
+      "容易学",
+      "容易做"
+    ],
+    "ex_zh": "学汉语很容易。",
+    "ex_py": "Xué Hànyǔ hěn róngyì.",
+    "ex_vn": "Học tiếng Trung rất dễ.",
+    "exList": [
+      {
+        "zh": "学汉语很容易。",
+        "py": "Xué Hànyǔ hěn róngyì.",
+        "vn": "Học tiếng Trung rất dễ."
+      },
+      {
+        "zh": "这个问题很容易。",
+        "py": "Zhège wèntí hěn róngyì.",
+        "vn": "Câu hỏi này rất dễ."
+      },
+      {
+        "zh": "找到一个好工作不容易。",
+        "py": "Zhǎodào yí ge hǎo gōngzuò bù róngyì.",
+        "vn": "Tìm được một công việc tốt không dễ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "容",
+        "p": "róng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "宀 (miên) trên → 谷 (cốc) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "chứa đựng, dung nạp",
+        "tip": "Mái nhà 宀 che thung lũng 谷 → có chỗ CHỨA ĐỰNG, DUNG NẠP; mọi việc DỄ hơn khi có chỗ dung thân.",
+        "cf": "客 (kè – \"khách\", cũng bộ 宀\")",
+        "w": "容易 / 内容"
+      },
+      {
+        "c": "易",
+        "p": "yì",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "nét liền, không tách bộ",
+        "rad": "日 (nhật)",
+        "mean": "dễ; thay đổi",
+        "tip": "Chữ tượng hình cổ chỉ sự BIẾN ĐỔI linh hoạt → nghĩa mở rộng thành \"DỄ DÀNG\".",
+        "cf": "昜 (dạng cổ liên quan)",
+        "w": "容易 / 简易"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy bài kiểm tra này rất dễ nhưng vẫn có vài bạn làm sai.",
+        "answer": "虽然这次考试很容易，但是还有几个同学做错了。",
+        "answerPy": "Suīrán zhè cì kǎoshì hěn róngyì, dànshì hái yǒu jǐ ge tóngxué zuòcuò le.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì công việc này rất dễ nên tôi làm xong rất nhanh.",
+        "answer": "因为这个工作很容易，所以我很快就做完了。",
+        "answerPy": "Yīnwèi zhège gōngzuò hěn róngyì, suǒyǐ wǒ hěn kuài jiù zuòwán le.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很容易",
+        "py": "hěn róngyì",
+        "vn": "rất dễ"
+      },
+      {
+        "zh": "容易学",
+        "py": "róngyì xué",
+        "vn": "dễ học"
+      },
+      {
+        "zh": "不容易",
+        "py": "bù róngyì",
+        "vn": "không dễ"
+      },
+      {
+        "zh": "容易做",
+        "py": "róngyì zuò",
+        "vn": "dễ làm"
+      },
+      {
+        "zh": "太容易了",
+        "py": "tài róngyì le",
+        "vn": "dễ quá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "容易 + V",
+        "m": "Dễ làm gì"
+      },
+      {
+        "s": "容易 ↔ 难",
+        "m": "Dễ ↔ khó"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "难",
+    "py": "nán",
+    "pos": "Tính từ",
+    "vn": "khó",
+    "hv": "nan",
+    "em": "❌",
+    "lesson": 1,
+    "explain": [
+      "Cần nhiều công sức, khó thực hiện hoặc khó hiểu — trái nghĩa với 容易."
+    ],
+    "usage": "Tính từ, cách dùng đối xứng với 容易: 很难 (làm vị ngữ); 难 + V = khó làm gì (难写, 难学).",
+    "collo": [
+      "很难",
+      "难写",
+      "难学",
+      "难做"
+    ],
+    "ex_zh": "写汉字很难。",
+    "ex_py": "Xiě Hànzì hěn nán.",
+    "ex_vn": "Viết chữ Hán rất khó.",
+    "exList": [
+      {
+        "zh": "写汉字很难。",
+        "py": "Xiě Hànzì hěn nán.",
+        "vn": "Viết chữ Hán rất khó."
+      },
+      {
+        "zh": "这道菜很难做。",
+        "py": "Zhè dào cài hěn nán zuò.",
+        "vn": "Món này khó làm."
+      },
+      {
+        "zh": "上山容易下山难。",
+        "py": "Shàng shān róngyì xià shān nán.",
+        "vn": "Lên núi dễ, xuống núi khó."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "难",
+        "p": "nán",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "又 (hựu) trái → 隹 (chuy) phải",
+        "rad": "又 (hựu – bàn tay)",
+        "mean": "khó",
+        "tip": "Bộ 又(tay) cầm 隹(chim đuôi ngắn) → bắt chim bằng tay rất KHÓ.",
+        "cf": "难 và 准 (chuẩn) đều có 隹",
+        "w": "很难 / 难写 / 难学"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bài này quá khó nên tôi phải hỏi thầy giáo.",
+        "answer": "因为这道题太难了，所以我得问老师。",
+        "answerPy": "Yīnwèi zhè dào tí tài nán le, suǒyǐ wǒ děi wèn lǎoshī.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu chữ Hán khó nhớ thì bạn nên viết nhiều lần.",
+        "answer": "如果汉字难记，你就应该多写几遍。",
+        "answerPy": "Rúguǒ Hànzì nán jì, nǐ jiù yīnggāi duō xiě jǐ biàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很难",
+        "py": "hěn nán",
+        "vn": "rất khó"
+      },
+      {
+        "zh": "难写",
+        "py": "nán xiě",
+        "vn": "khó viết"
+      },
+      {
+        "zh": "难学",
+        "py": "nán xué",
+        "vn": "khó học"
+      },
+      {
+        "zh": "不太难",
+        "py": "bú tài nán",
+        "vn": "không khó lắm"
+      },
+      {
+        "zh": "难不难",
+        "py": "nán bù nán",
+        "vn": "khó hay không khó"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "难 + V",
+        "m": "Khó làm gì: 难写, 难学, 难做"
+      },
+      {
+        "s": "难不难？",
+        "m": "Có khó không? — dạng hỏi chính phản"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "太太",
+    "py": "tàitai",
+    "pos": "Danh từ",
+    "vn": "bà, vợ, phu nhân",
+    "hv": "thái thái",
+    "em": "👩",
+    "lesson": 2,
+    "explain": [
+      "1. Người vợ (cách nói lịch sự, trang trọng).",
+      "2. Cách xưng hô lịch sự với phụ nữ đã có chồng, đi kèm họ."
+    ],
+    "usage": "Danh từ. Khi dùng làm cách xưng hô lịch sự, đặt SAU họ của người đó: Họ + 太太 (周太太 = bà Chu).",
+    "collo": [
+      "我太太",
+      "他太太",
+      "周太太",
+      "李太太"
+    ],
+    "ex_zh": "她是我的太太。",
+    "ex_py": "Tā shì wǒ de tàitai.",
+    "ex_vn": "Cô ấy là vợ tôi.",
+    "exList": [
+      {
+        "zh": "她是我的太太。",
+        "py": "Tā shì wǒ de tàitai.",
+        "vn": "Cô ấy là vợ tôi."
+      },
+      {
+        "zh": "周太太在办公室。",
+        "py": "Zhōu tàitai zài bàngōngshì.",
+        "vn": "Bà Chu ở văn phòng."
+      },
+      {
+        "zh": "他太太很漂亮。",
+        "py": "Tā tàitai hěn piàoliang.",
+        "vn": "Vợ anh ấy rất đẹp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "太",
+        "p": "tài",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "大 → 丶(chấm) dưới",
+        "rad": "大 (đại – to lớn)",
+        "mean": "quá, thái",
+        "tip": "To lớn 大 + thêm một chấm 丶bên dưới → \"THÁI\", ý mức độ cao/trang trọng; ghép với 太太 = cách gọi lịch sự người vợ.",
+        "cf": "犬 (quǎn – \"con chó\")",
+        "w": "太太 / 太大了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy vợ anh ấy rất bận nhưng cô ấy vẫn nấu cơm mỗi ngày.",
+        "answer": "虽然他太太很忙，但是她每天还是做饭。",
+        "answerPy": "Suīrán tā tàitai hěn máng, dànshì tā měitiān háishi zuò fàn.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bà Chu không có ở nhà nên tôi đã gọi điện cho bà ấy.",
+        "answer": "因为周太太不在家，所以我给她打了个电话。",
+        "answerPy": "Yīnwèi Zhōu tàitai bú zài jiā, suǒyǐ wǒ gěi tā dǎle ge diànhuà.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我太太",
+        "py": "wǒ tàitai",
+        "vn": "vợ tôi"
+      },
+      {
+        "zh": "周太太",
+        "py": "zhōu tàitai",
+        "vn": "bà Chu"
+      },
+      {
+        "zh": "他太太",
+        "py": "tā tàitai",
+        "vn": "vợ anh ấy"
+      },
+      {
+        "zh": "太太和先生",
+        "py": "tàitai hé xiānsheng",
+        "vn": "bà và ông"
+      },
+      {
+        "zh": "李太太很忙",
+        "py": "Lǐ tàitai hěn máng",
+        "vn": "bà Lý rất bận"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "họ + 太太",
+        "m": "Cách gọi: bà Chu, bà Lý…"
+      },
+      {
+        "s": "太太 (vợ, bà) ↔ 先生 (chồng, ông)"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "秘书",
+    "py": "mìshū",
+    "pos": "Danh từ",
+    "vn": "thư ký",
+    "hv": "bí thư",
+    "em": "📋",
+    "lesson": 2,
+    "explain": [
+      "Người phụ trách công việc văn phòng, giấy tờ, sắp xếp lịch làm việc cho cấp trên."
+    ],
+    "usage": "Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 秘书 (王秘书 = thư ký Vương).",
+    "collo": [
+      "王秘书",
+      "我的秘书",
+      "秘书处"
+    ],
+    "ex_zh": "这是我的秘书。",
+    "ex_py": "Zhè shì wǒ de mìshū.",
+    "ex_vn": "Đây là thư ký của tôi.",
+    "exList": [
+      {
+        "zh": "这是我的秘书。",
+        "py": "Zhè shì wǒ de mìshū.",
+        "vn": "Đây là thư ký của tôi."
+      },
+      {
+        "zh": "王秘书在办公室。",
+        "py": "Wáng mìshū zài bàngōngshì.",
+        "vn": "Thư ký Vương ở văn phòng."
+      },
+      {
+        "zh": "刘秘书出去了。",
+        "py": "Liú mìshū chūqu le.",
+        "vn": "Thư ký Lưu ra ngoài rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "秘",
+        "p": "mì",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "禾 (hoà) trái → 必 (tất) phải",
+        "rad": "禾 (hoà – lúa)",
+        "mean": "bí mật",
+        "tip": "Bộ 禾(lúa) + 必(tất nhiên) → giữ kín thông tin về mùa màng = BÍ MẬT; người giữ việc riêng cho sếp = thư ký.",
+        "cf": "密 (mì – \"bí mật, kín đáo\")",
+        "w": "秘书 / 秘密"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì giám đốc ra ngoài rồi nên thư ký bảo tôi chiều quay lại.",
+        "answer": "因为经理出去了，所以秘书让我下午再来。",
+        "answerPy": "Yīnwèi jīnglǐ chūqu le, suǒyǐ mìshū ràng wǒ xiàwǔ zài lái.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn gặp giám đốc thì bạn nên hỏi thư ký trước.",
+        "answer": "如果你想见经理，你就应该先问秘书。",
+        "answerPy": "Rúguǒ nǐ xiǎng jiàn jīnglǐ, nǐ jiù yīnggāi xiān wèn mìshū.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "王秘书",
+        "py": "wáng mìshū",
+        "vn": "thư ký Vương"
+      },
+      {
+        "zh": "我的秘书",
+        "py": "wǒ de mìshū",
+        "vn": "thư ký của tôi"
+      },
+      {
+        "zh": "当秘书",
+        "py": "dāng mìshū",
+        "vn": "làm thư ký"
+      },
+      {
+        "zh": "秘书在办公室",
+        "py": "mìshū zài bàngōngshì",
+        "vn": "thư ký ở văn phòng"
+      },
+      {
+        "zh": "经理的秘书",
+        "py": "jīnglǐ de mìshū",
+        "vn": "thư ký của giám đốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "họ + 秘书",
+        "m": "Cách gọi: thư ký Vương…"
+      },
+      {
+        "s": "当 + 秘书",
+        "m": "Làm thư ký"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "经理",
+    "py": "jīnglǐ",
+    "pos": "Danh từ",
+    "vn": "giám đốc, quản lý",
+    "hv": "kinh lý",
+    "em": "👔",
+    "lesson": 2,
+    "explain": [
+      "Người đứng đầu, phụ trách quản lý, điều hành công việc của một công ty/bộ phận."
+    ],
+    "usage": "Danh từ chức danh; đặt SAU họ để xưng hô: Họ + 经理 (张经理, 李经理).",
+    "collo": [
+      "张经理",
+      "李经理",
+      "总经理"
+    ],
+    "ex_zh": "这是我的经理。",
+    "ex_py": "Zhè shì wǒ de jīnglǐ.",
+    "ex_vn": "Đây là giám đốc của tôi.",
+    "exList": [
+      {
+        "zh": "这是我的经理。",
+        "py": "Zhè shì wǒ de jīnglǐ.",
+        "vn": "Đây là giám đốc của tôi."
+      },
+      {
+        "zh": "张经理在办公室。",
+        "py": "Zhāng jīnglǐ zài bàngōngshì.",
+        "vn": "Giám đốc Trương ở văn phòng."
+      },
+      {
+        "zh": "李经理在哪儿？",
+        "py": "Lǐ jīnglǐ zài nǎr?",
+        "vn": "Giám đốc Lý ở đâu?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "经",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟 (mịch) trái → 22 (kinh) phải",
+        "rad": "纟 (mịch – tơ, sợi)",
+        "mean": "kinh qua, quản lý",
+        "tip": "Bộ 纟(sợi tơ, dệt theo đường kinh tuyến) → mở rộng thành QUẢN LÝ có hệ thống, trải qua.",
+        "cf": "轻 (qīng – \"nhẹ\")",
+        "w": "经理 / 经过"
+      },
+      {
+        "c": "理",
+        "p": "lǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "王 (vương) trái → 里 (lý) phải",
+        "rad": "王 (vương – ngọc)",
+        "mean": "lý lẽ, xử lý",
+        "tip": "Người thợ ngọc 王 xử lý đường vân trong viên ngọc 里 → LÝ LẼ, XỬ LÝ, QUẢN LÝ.",
+        "cf": "里 (lǐ – \"bên trong\")",
+        "w": "经理 / 道理 / 处理"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì giám đốc Lý rất bận nên anh ấy không thể gặp bạn hôm nay.",
+        "answer": "因为李经理很忙，所以他今天不能见你。",
+        "answerPy": "Yīnwèi Lǐ jīnglǐ hěn máng, suǒyǐ tā jīntiān bù néng jiàn nǐ.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy giám đốc Trương đi ra ngoài nhưng chiều nay anh ấy sẽ về.",
+        "answer": "虽然张经理出去了，但是他今天下午会回来。",
+        "answerPy": "Suīrán Zhāng jīnglǐ chūqu le, dànshì tā jīntiān xiàwǔ huì huílai.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "张经理",
+        "py": "zhāng jīnglǐ",
+        "vn": "giám đốc Trương"
+      },
+      {
+        "zh": "我们经理",
+        "py": "wǒmen jīnglǐ",
+        "vn": "giám đốc của chúng tôi"
+      },
+      {
+        "zh": "当经理",
+        "py": "dāng jīnglǐ",
+        "vn": "làm giám đốc"
+      },
+      {
+        "zh": "经理很忙",
+        "py": "jīnglǐ hěn máng",
+        "vn": "giám đốc rất bận"
+      },
+      {
+        "zh": "找经理",
+        "py": "zhǎo jīnglǐ",
+        "vn": "tìm giám đốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "họ + 经理",
+        "m": "Cách gọi: giám đốc Trương…"
+      },
+      {
+        "s": "当 + 经理",
+        "m": "Làm giám đốc"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "办公室",
+    "py": "bàngōngshì",
+    "pos": "Danh từ",
+    "vn": "văn phòng",
+    "hv": "biện công thất",
+    "em": "🏢",
+    "lesson": 2,
+    "explain": [
+      "Căn phòng dùng để làm việc, xử lý công việc hành chính, giấy tờ."
+    ],
+    "usage": "Danh từ chỉ nơi chốn; thường đi cùng giới từ 在 khi nói làm gì TẠI văn phòng: 在 + 办公室 + Động từ.",
+    "collo": [
+      "在办公室",
+      "我的办公室",
+      "办公室主任"
+    ],
+    "ex_zh": "我的办公室在这里。",
+    "ex_py": "Wǒ de bàngōngshì zài zhèlǐ.",
+    "ex_vn": "Văn phòng của tôi ở đây.",
+    "exList": [
+      {
+        "zh": "我的办公室在这里。",
+        "py": "Wǒ de bàngōngshì zài zhèlǐ.",
+        "vn": "Văn phòng của tôi ở đây."
+      },
+      {
+        "zh": "王秘书在办公室。",
+        "py": "Wáng mìshū zài bàngōngshì.",
+        "vn": "Thư ký Vương ở văn phòng."
+      },
+      {
+        "zh": "我们经常在办公室吃午饭。",
+        "py": "Wǒmen jīngcháng zài bàngōngshì chī wǔfàn.",
+        "vn": "Chúng tôi thường ăn trưa ở văn phòng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "办",
+        "p": "bàn",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 4,
+        "ord": "力 (lực) ở giữa hai chấm",
+        "rad": "力 (lực – sức lực)",
+        "mean": "làm, xử lý",
+        "tip": "Sức lực 力 ở giữa hai bên → dồn sức để LÀM VIỆC.",
+        "cf": "为 (wèi – \"vì\")",
+        "w": "办公室 / 办事"
+      },
+      {
+        "c": "室",
+        "p": "shì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "宀 (miên) trên → 至 (chí) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "căn phòng",
+        "tip": "Mái nhà 宀 nơi người ta đi đến 至 để dừng chân → CĂN PHÒNG.",
+        "cf": "到 (dào – cũng chứa 至\")",
+        "w": "办公室 / 教室"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì văn phòng của tôi ở tòa nhà số năm nên bạn dễ tìm thấy.",
+        "answer": "因为我的办公室在五号楼，所以你很容易找到。",
+        "answerPy": "Yīnwèi wǒ de bàngōngshì zài wǔ hào lóu, suǒyǐ nǐ hěn róngyì zhǎodào.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có việc thì có thể đến văn phòng tìm tôi.",
+        "answer": "如果你有事，就可以去办公室找我。",
+        "answerPy": "Rúguǒ nǐ yǒu shì, jiù kěyǐ qù bàngōngshì zhǎo wǒ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "在办公室",
+        "py": "zài bàngōngshì",
+        "vn": "ở văn phòng"
+      },
+      {
+        "zh": "我的办公室",
+        "py": "wǒ de bàngōngshì",
+        "vn": "văn phòng của tôi"
+      },
+      {
+        "zh": "去办公室",
+        "py": "qù bàngōngshì",
+        "vn": "đến văn phòng"
+      },
+      {
+        "zh": "办公室很大",
+        "py": "bàngōngshì hěn dà",
+        "vn": "văn phòng rất rộng"
+      },
+      {
+        "zh": "办公室里",
+        "py": "bàngōngshì li",
+        "vn": "trong văn phòng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 办公室 + 里",
+        "m": "Trong văn phòng"
+      },
+      {
+        "s": "办公 + 室",
+        "m": "Phòng (室) làm việc (办公)"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "周",
+    "py": "Zhōu",
+    "pos": "Danh từ riêng",
+    "vn": "họ Chu",
+    "hv": "Chu",
+    "em": "👨",
+    "lesson": 2,
+    "explain": [
+      "Một họ (tên riêng) của người Trung Quốc, tương đương họ \"Chu\" trong tiếng Việt."
+    ],
+    "usage": "Danh từ riêng, dùng làm họ đứng TRƯỚC tên hoặc chức danh: 周 + tên (周明) hoặc 周 + chức danh (周经理).",
+    "collo": [
+      "周明",
+      "周经理",
+      "周太太"
+    ],
+    "ex_zh": "请问周明在吗？",
+    "ex_py": "Qǐngwèn Zhōu Míng zài ma?",
+    "ex_vn": "Xin hỏi anh Chu Minh có ở đó không?",
+    "exList": [
+      {
+        "zh": "请问周明在吗？",
+        "py": "Qǐngwèn Zhōu Míng zài ma?",
+        "vn": "Xin hỏi anh Chu Minh có ở đó không?"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì anh Chu không có ở văn phòng nên tôi đã gọi điện cho anh ấy.",
+        "answer": "因为周先生不在办公室，所以我给他打了个电话。",
+        "answerPy": "Yīnwèi Zhōu xiānsheng bú zài bàngōngshì, suǒyǐ wǒ gěi tā dǎle ge diànhuà.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu anh gặp anh Chu thì hãy nói tôi đang tìm anh ấy.",
+        "answer": "如果你见到周先生，就告诉他我在找他。",
+        "answerPy": "Rúguǒ nǐ jiàndào Zhōu xiānsheng, jiù gàosu tā wǒ zài zhǎo tā.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "周明",
+    "py": "Zhōu Míng",
+    "pos": "Danh từ riêng",
+    "vn": "tên người (Chu Minh)",
+    "hv": "Chu Minh",
+    "em": "🙋",
+    "lesson": 2,
+    "explain": [
+      "Tên đầy đủ (họ + tên) của một nhân vật trong bài hội thoại."
+    ],
+    "usage": "Danh từ riêng chỉ tên người, dùng làm chủ ngữ hoặc tân ngữ trong câu như một danh từ bình thường.",
+    "ex_zh": "周经理出去了，不在办公室。",
+    "ex_py": "Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.",
+    "ex_vn": "Giám đốc Chu ra ngoài rồi, không có ở văn phòng.",
+    "exList": [
+      {
+        "zh": "周经理出去了，不在办公室。",
+        "py": "Zhōu jīnglǐ chūqu le, bú zài bàngōngshì.",
+        "vn": "Giám đốc Chu ra ngoài rồi, không có ở văn phòng."
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì anh Chu Minh ra ngoài giải quyết việc nên chiều nay mới về.",
+        "answer": "因为周明出去办事了，所以今天下午才回来。",
+        "answerPy": "Yīnwèi Zhōu Míng chūqu bànshì le, suǒyǐ jīntiān xiàwǔ cái huílai.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu anh Chu Minh về thì hãy bảo anh ấy gọi điện cho tôi.",
+        "answer": "如果周明回来了，就让他给我打电话。",
+        "answerPy": "Rúguǒ Zhōu Míng huílai le, jiù ràng tā gěi wǒ dǎ diànhuà.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "辆",
+    "py": "liàng",
+    "pos": "Lượng từ",
+    "vn": "chiếc (xe cộ)",
+    "hv": "lượng",
+    "em": "🚗",
+    "lesson": 3,
+    "explain": [
+      "Lượng từ chuyên dùng để đếm số lượng xe cộ (ô tô, xe buýt, taxi...)."
+    ],
+    "usage": "Lượng từ, đứng giữa SỐ TỪ và DANH TỪ chỉ xe: [số từ] + 辆 + [xe] (一辆车, 几辆公共汽车).",
+    "collo": [
+      "一辆车",
+      "两辆",
+      "几辆",
+      "一辆出租车"
+    ],
+    "ex_zh": "这儿有一辆车。",
+    "ex_py": "Zhèr yǒu yí liàng chē.",
+    "ex_vn": "Ở đây có một chiếc xe.",
+    "exList": [
+      {
+        "zh": "这儿有一辆车。",
+        "py": "Zhèr yǒu yí liàng chē.",
+        "vn": "Ở đây có một chiếc xe."
+      },
+      {
+        "zh": "这儿有几辆公共汽车？",
+        "py": "Zhèr yǒu jǐ liàng gōnggòng qìchē?",
+        "vn": "Ở đây có mấy chiếc xe buýt?"
+      },
+      {
+        "zh": "我去叫辆出租车。",
+        "py": "Wǒ qù jiào liàng chūzūchē.",
+        "vn": "Tôi đi gọi một chiếc taxi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "辆",
+        "p": "liàng",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "车 (xa) trái → 两 (lưỡng) phải",
+        "rad": "车 (xa – xe)",
+        "mean": "chiếc (xe)",
+        "tip": "Bộ 车(xe) + 两(hai, âm gần \"lượng\") → lượng từ CHUYÊN DÙNG để đếm XE CỘ.",
+        "cf": "两 (liǎng – \"hai\", không có bộ 车\")",
+        "w": "一辆车 / 两辆 / 几辆"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời mưa to nên tôi gọi một chiếc taxi để về nhà.",
+        "answer": "因为雨下得很大，所以我叫了一辆出租车回家。",
+        "answerPy": "Yīnwèi yǔ xià de hěn dà, suǒyǐ wǒ jiàole yí liàng chūzūchē huí jiā.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không có xe thì chúng ta có thể đi chung một chiếc.",
+        "answer": "如果你没有车，我们就可以坐一辆车一起去。",
+        "answerPy": "Rúguǒ nǐ méiyǒu chē, wǒmen jiù kěyǐ zuò yí liàng chē yìqǐ qù.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一辆车",
+        "py": "yí liàng chē",
+        "vn": "một chiếc xe"
+      },
+      {
+        "zh": "两辆自行车",
+        "py": "liǎng liàng zìxíngchē",
+        "vn": "hai chiếc xe đạp"
+      },
+      {
+        "zh": "一辆出租车",
+        "py": "yí liàng chūzūchē",
+        "vn": "một chiếc taxi"
+      },
+      {
+        "zh": "几辆车",
+        "py": "jǐ liàng chē",
+        "vn": "mấy chiếc xe"
+      },
+      {
+        "zh": "那辆车",
+        "py": "nà liàng chē",
+        "vn": "chiếc xe đó"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 辆 + 车",
+        "m": "Lượng từ 辆 cho xe cộ"
+      },
+      {
+        "s": "✗ 一个车 → ✓ 一辆车",
+        "m": "Xe cộ dùng 辆"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "楼",
+    "py": "lóu",
+    "pos": "Danh từ",
+    "vn": "lầu, tòa nhà",
+    "hv": "lâu",
+    "em": "🏬",
+    "lesson": 3,
+    "explain": [
+      "1. Tòa nhà nhiều tầng.",
+      "2. Tầng (lầu) trong một tòa nhà."
+    ],
+    "usage": "Danh từ. Hỏi số tòa nhà dùng 几号楼; chỉ hướng lên/xuống tầng dùng 上楼/下楼, 楼上/楼下.",
+    "collo": [
+      "大楼",
+      "几号楼",
+      "上楼",
+      "下楼",
+      "楼上",
+      "楼下"
+    ],
+    "ex_zh": "我在5号楼。",
+    "ex_py": "Wǒ zài wǔ hào lóu.",
+    "ex_vn": "Tôi ở tòa nhà số 5.",
+    "exList": [
+      {
+        "zh": "我在5号楼。",
+        "py": "Wǒ zài wǔ hào lóu.",
+        "vn": "Tôi ở tòa nhà số 5."
+      },
+      {
+        "zh": "你在几号楼？",
+        "py": "Nǐ zài jǐ hào lóu?",
+        "vn": "Bạn ở tòa nhà số mấy?"
+      },
+      {
+        "zh": "我上楼去给你拿把伞。",
+        "py": "Wǒ shànglóu qù gěi nǐ ná bǎ sǎn.",
+        "vn": "Tôi lên lầu lấy cho bạn một cái ô."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "楼",
+        "p": "lóu",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "木 (mộc) trái → 娄 (lũ) phải",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "lầu, tòa nhà",
+        "tip": "Bộ gỗ 木 (nhà làm bằng gỗ thời xưa) + 娄(xếp lớp) → nhà xếp nhiều TẦNG = TÒA NHÀ, LẦU.",
+        "cf": "数 (shù – \"số\", cũng có phần giống 娄\")",
+        "w": "大楼 / 楼上 / 楼下 / 上楼 / 下楼"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì thang máy hỏng nên chúng tôi phải đi bộ lên lầu.",
+        "answer": "因为电梯坏了，所以我们得走上楼。",
+        "answerPy": "Yīnwèi diàntī huài le, suǒyǐ wǒmen děi zǒushàng lóu.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn tìm không thấy phòng tôi thì cứ hỏi ở tòa nhà số ba.",
+        "answer": "如果你找不到我的房间，就在三号楼问一下。",
+        "answerPy": "Rúguǒ nǐ zhǎo bú dào wǒ de fángjiān, jiù zài sān hào lóu wèn yíxià.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "上楼",
+        "py": "shàng lóu",
+        "vn": "lên lầu"
+      },
+      {
+        "zh": "下楼",
+        "py": "xià lóu",
+        "vn": "xuống lầu"
+      },
+      {
+        "zh": "楼上",
+        "py": "lóu shàng",
+        "vn": "trên lầu"
+      },
+      {
+        "zh": "楼下",
+        "py": "lóu xià",
+        "vn": "dưới lầu"
+      },
+      {
+        "zh": "几号楼",
+        "py": "jǐ hào lóu",
+        "vn": "toà nhà số mấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "上 / 下 + 楼",
+        "m": "Lên / xuống lầu"
+      },
+      {
+        "s": "楼 + 上 / 下",
+        "m": "Trên lầu / dưới lầu — 楼 đứng TRƯỚC"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "拿",
+    "py": "ná",
+    "pos": "Động từ",
+    "vn": "cầm, lấy",
+    "hv": "nã",
+    "em": "🤲",
+    "lesson": 3,
+    "explain": [
+      "Dùng tay giữ hoặc mang lấy một vật gì đó."
+    ],
+    "usage": "Động từ, theo sau là tân ngữ chỉ vật được cầm/lấy: 拿 + [vật] (拿书, 拿钱, 拿伞).",
+    "collo": [
+      "拿书",
+      "拿钱",
+      "拿伞",
+      "拿东西"
+    ],
+    "ex_zh": "你手里拿的是什么？",
+    "ex_py": "Nǐ shǒu lǐ ná de shì shénme?",
+    "ex_vn": "Cái bạn đang cầm trên tay là gì?",
+    "exList": [
+      {
+        "zh": "你手里拿的是什么？",
+        "py": "Nǐ shǒu lǐ ná de shì shénme?",
+        "vn": "Cái bạn đang cầm trên tay là gì?"
+      },
+      {
+        "zh": "我去拿把伞。",
+        "py": "Wǒ qù ná bǎ sǎn.",
+        "vn": "Tôi đi lấy một cái ô."
+      },
+      {
+        "zh": "别忘了拿你的伞。",
+        "py": "Bié wàngle ná nǐ de sǎn.",
+        "vn": "Đừng quên mang theo ô của bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "拿",
+        "p": "ná",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "合 (hợp) trên → 手 (thủ) dưới",
+        "rad": "手 (thủ – tay)",
+        "mean": "cầm, lấy",
+        "tip": "合(hợp lại) bàn 手(tay) → khép bàn tay lại để CẦM/LẤY một vật gì đó.",
+        "cf": "合 (hé – \"hợp lại\")",
+        "w": "拿书 / 拿钱 / 拿伞"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời sắp mưa nên tôi lên lầu lấy một cái ô.",
+        "answer": "因为要下雨了，所以我上楼拿了一把伞。",
+        "answerPy": "Yīnwèi yào xiàyǔ le, suǒyǐ wǒ shànglóu nále yì bǎ sǎn.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn cần tiền thì cứ lấy trong túi tôi.",
+        "answer": "如果你需要钱，就在我包里拿吧。",
+        "answerPy": "Rúguǒ nǐ xūyào qián, jiù zài wǒ bāo lǐ ná ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "拿书",
+        "py": "ná shū",
+        "vn": "cầm sách"
+      },
+      {
+        "zh": "拿钱",
+        "py": "ná qián",
+        "vn": "lấy tiền"
+      },
+      {
+        "zh": "拿伞",
+        "py": "ná sǎn",
+        "vn": "cầm ô"
+      },
+      {
+        "zh": "拿东西",
+        "py": "ná dōngxi",
+        "vn": "lấy đồ"
+      },
+      {
+        "zh": "帮我拿",
+        "py": "bāng wǒ ná",
+        "vn": "cầm giúp tôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "拿 + N",
+        "m": "Cầm, lấy cái gì"
+      },
+      {
+        "s": "拿 (cầm bằng tay) ≠ 带 (mang theo)"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "把",
+    "py": "bǎ",
+    "pos": "Lượng từ",
+    "vn": "cái, chiếc (đồ có tay cầm)",
+    "hv": "bả",
+    "em": "🖐️",
+    "lesson": 3,
+    "explain": [
+      "Lượng từ dùng cho các đồ vật có tay cầm hoặc dùng bằng tay (ô, dao, ghế, quạt...)."
+    ],
+    "usage": "Lượng từ, đứng giữa SỐ TỪ và DANH TỪ: [số từ] + 把 + [đồ vật] (一把伞, 一把椅子).",
+    "collo": [
+      "一把伞",
+      "一把椅子",
+      "一把刀",
+      "一把扇子"
+    ],
+    "ex_zh": "我去拿把伞。",
+    "ex_py": "Wǒ qù ná bǎ sǎn.",
+    "ex_vn": "Tôi đi lấy một cái ô.",
+    "exList": [
+      {
+        "zh": "我去拿把伞。",
+        "py": "Wǒ qù ná bǎ sǎn.",
+        "vn": "Tôi đi lấy một cái ô."
+      },
+      {
+        "zh": "那儿有一把椅子。",
+        "py": "Nàr yǒu yì bǎ yǐzi.",
+        "vn": "Ở đó có một cái ghế."
+      },
+      {
+        "zh": "这是一把刀，那是一把扇子。",
+        "py": "Zhè shì yì bǎ dāo, nà shì yì bǎ shànzi.",
+        "vn": "Đây là một con dao, kia là một cái quạt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "把",
+        "p": "bǎ",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "扌 (thủ) trái → 巴 (ba) phải",
+        "rad": "扌 (thủ – bàn tay)",
+        "mean": "nắm giữ; lượng từ",
+        "tip": "Bộ tay 扌 + 巴(bám chặt) → dùng TAY nắm giữ; cũng là lượng từ cho đồ vật CÓ TAY CẦM.",
+        "cf": "巴 (bā – \"bám, mong chờ\")",
+        "w": "一把伞 / 一把椅子 / 一把刀"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trên bàn có nhiều dao nên tôi không biết lấy chiếc nào.",
+        "answer": "因为桌子上有很多把刀，所以我不知道拿哪把。",
+        "answerPy": "Yīnwèi zhuōzi shang yǒu hěn duō bǎ dāo, suǒyǐ wǒ bù zhīdào ná nǎ bǎ.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu ghế không đủ thì chúng ta mua thêm vài chiếc.",
+        "answer": "如果椅子不够，我们就再买几把。",
+        "answerPy": "Rúguǒ yǐzi bú gòu, wǒmen jiù zài mǎi jǐ bǎ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一把伞",
+        "py": "yì bǎ sǎn",
+        "vn": "một cái ô"
+      },
+      {
+        "zh": "一把椅子",
+        "py": "yì bǎ yǐzi",
+        "vn": "một cái ghế"
+      },
+      {
+        "zh": "一把刀",
+        "py": "yì bǎ dāo",
+        "vn": "một con dao"
+      },
+      {
+        "zh": "两把伞",
+        "py": "liǎng bǎ sǎn",
+        "vn": "hai cái ô"
+      },
+      {
+        "zh": "那把椅子",
+        "py": "nà bǎ yǐzi",
+        "vn": "cái ghế đó"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 把 + đồ có tay cầm",
+        "m": "Lượng từ 把: 伞, 椅子, 刀"
+      },
+      {
+        "s": "把 (lượng từ) khác 把 trong câu chữ 把 — nhận ra theo vị trí"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "伞",
+    "py": "sǎn",
+    "pos": "Danh từ",
+    "vn": "cái ô, dù",
+    "hv": "tản",
+    "em": "☂️",
+    "lesson": 3,
+    "explain": [
+      "Vật dụng có cán và phần vải xòe tròn, dùng để che mưa hoặc che nắng."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 把: 一把伞. Phân biệt 雨伞 (ô che mưa) và 太阳伞 (ô che nắng).",
+    "collo": [
+      "雨伞",
+      "太阳伞",
+      "一把伞"
+    ],
+    "ex_zh": "外面下雨了，我去拿把伞。",
+    "ex_py": "Wàimian xiàyǔ le, wǒ qù ná bǎ sǎn.",
+    "ex_vn": "Bên ngoài mưa rồi, tôi đi lấy một cái ô.",
+    "exList": [
+      {
+        "zh": "外面下雨了，我去拿把伞。",
+        "py": "Wàimian xiàyǔ le, wǒ qù ná bǎ sǎn.",
+        "vn": "Bên ngoài mưa rồi, tôi đi lấy một cái ô."
+      },
+      {
+        "zh": "我上楼去给你拿把伞。",
+        "py": "Wǒ shànglóu qù gěi nǐ ná bǎ sǎn.",
+        "vn": "Tôi lên lầu lấy ô cho bạn."
+      },
+      {
+        "zh": "太阳伞和雨伞不一样。",
+        "py": "Tàiyángsǎn hé yǔsǎn bù yíyàng.",
+        "vn": "Ô che nắng và ô che mưa không giống nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "伞",
+        "p": "sǎn",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 5,
+        "ord": "人 trên → nhiều nét dưới",
+        "rad": "人 (nhân)",
+        "mean": "cái ô, dù",
+        "tip": "Hình dáng ký tự trông giống một chiếc Ô đang xòe ra che mưa nắng.",
+        "cf": "企 (qǐ – cũng có bộ 人 phía trên)",
+        "w": "雨伞 / 太阳伞 / 一把伞"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bên ngoài đang mưa nên tôi mượn bạn một cái ô.",
+        "answer": "因为外面正在下雨，所以我跟你借一把伞。",
+        "answerPy": "Yīnwèi wàimian zhèngzài xiàyǔ, suǒyǐ wǒ gēn nǐ jiè yì bǎ sǎn.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn quên mang ô thì bạn có thể bị ướt hết người.",
+        "answer": "如果你忘了带伞，你就可能全身都湿了。",
+        "answerPy": "Rúguǒ nǐ wàngle dài sǎn, nǐ jiù kěnéng quánshēn dōu shī le.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一把伞",
+        "py": "yì bǎ sǎn",
+        "vn": "một cái ô"
+      },
+      {
+        "zh": "雨伞",
+        "py": "yǔ sǎn",
+        "vn": "ô che mưa"
+      },
+      {
+        "zh": "带伞",
+        "py": "dài sǎn",
+        "vn": "mang ô"
+      },
+      {
+        "zh": "拿伞",
+        "py": "ná sǎn",
+        "vn": "cầm ô"
+      },
+      {
+        "zh": "忘了带伞",
+        "py": "wàng le dài sǎn",
+        "vn": "quên mang ô"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "带 / 拿 + 伞",
+        "m": "Mang, cầm ô"
+      },
+      {
+        "s": "雨 + 伞 / 太阳 + 伞",
+        "m": "Ô che mưa / ô che nắng"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "胖",
+    "py": "pàng",
+    "pos": "Tính từ",
+    "vn": "béo, mập",
+    "hv": "bàn",
+    "em": "🐷",
+    "lesson": 4,
+    "explain": [
+      "Có nhiều thịt/mỡ trên cơ thể, thân hình to lớn — trái nghĩa với 瘦 (gầy)."
+    ],
+    "usage": "Tính từ; làm vị ngữ với 很 (很胖); nói mức độ tăng cân dùng 胖 + 了 + số lượng: 胖了5公斤.",
+    "collo": [
+      "很胖",
+      "胖了",
+      "这么胖"
+    ],
+    "ex_zh": "他很胖，我很瘦。",
+    "ex_py": "Tā hěn pàng, wǒ hěn shòu.",
+    "ex_vn": "Anh ấy rất béo, tôi rất gầy.",
+    "exList": [
+      {
+        "zh": "他很胖，我很瘦。",
+        "py": "Tā hěn pàng, wǒ hěn shòu.",
+        "vn": "Anh ấy rất béo, tôi rất gầy."
+      },
+      {
+        "zh": "你看，我这么胖，怎么办呢？",
+        "py": "Nǐ kàn, wǒ zhème pàng, zěnme bàn ne?",
+        "vn": "Con xem, mẹ béo thế này, phải làm sao đây?"
+      },
+      {
+        "zh": "最近她吃得很多，胖了五公斤。",
+        "py": "Zuìjìn tā chī de hěn duō, pàngle wǔ gōngjīn.",
+        "vn": "Gần đây cô ấy ăn nhiều, béo lên 5 cân."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "胖",
+        "p": "pàng",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "月 (nhục) trái → 半 (bán) phải",
+        "rad": "月 (nhục – thịt)",
+        "mean": "béo, mập",
+        "tip": "Bộ thịt 月 + 半(nửa, ý nhiều thịt dư ra) → nhiều THỊT trên cơ thể = BÉO.",
+        "cf": "伴 (bàn – \"bạn đồng hành\", cũng có 半\")",
+        "w": "很胖 / 胖了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì gần đây ăn nhiều nên tôi béo lên vài cân.",
+        "answer": "因为最近吃得很多，所以我胖了几公斤。",
+        "answerPy": "Yīnwèi zuìjìn chī de hěn duō, suǒyǐ wǒ pàngle jǐ gōngjīn.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy anh ấy ăn rất ít nhưng vẫn rất béo.",
+        "answer": "虽然他吃得很少，但是还是很胖。",
+        "answerPy": "Suīrán tā chī de hěn shǎo, dànshì háishi hěn pàng.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很胖",
+        "py": "hěn pàng",
+        "vn": "rất mập"
+      },
+      {
+        "zh": "胖了",
+        "py": "pàng le",
+        "vn": "béo lên rồi"
+      },
+      {
+        "zh": "有点儿胖",
+        "py": "yǒudiǎnr pàng",
+        "vn": "hơi mập"
+      },
+      {
+        "zh": "这么胖",
+        "py": "zhème pàng",
+        "vn": "mập thế"
+      },
+      {
+        "zh": "不胖不瘦",
+        "py": "bú pàng bú shòu",
+        "vn": "không mập không gầy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 了",
+        "m": "胖了 — béo lên rồi, chỉ sự thay đổi"
+      },
+      {
+        "s": "胖 ↔ 瘦",
+        "m": "Mập ↔ gầy"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "其实",
+    "py": "qíshí",
+    "pos": "Phó từ",
+    "vn": "thực ra, thật ra",
+    "hv": "kỳ thực",
+    "em": "💬",
+    "lesson": 4,
+    "explain": [
+      "Dùng để đính chính, bổ sung một sự thật khác với điều vừa nói/nghĩ trước đó."
+    ],
+    "usage": "Phó từ, đứng ở ĐẦU CÂU hoặc NGAY SAU chủ ngữ, TRƯỚC động từ/tính từ: 其实 + [câu], hoặc [Chủ ngữ] + 其实 + [vị ngữ].",
+    "collo": [
+      "其实……",
+      "他其实……",
+      "其实很容易"
+    ],
+    "ex_zh": "他看起来很年轻，其实已经40岁了。",
+    "ex_py": "Tā kànqǐlai hěn niánqīng, qíshí yǐjīng sìshí suì le.",
+    "ex_vn": "Anh ấy trông rất trẻ, nhưng thực ra đã 40 tuổi rồi.",
+    "exList": [
+      {
+        "zh": "他看起来很年轻，其实已经40岁了。",
+        "py": "Tā kànqǐlai hěn niánqīng, qíshí yǐjīng sìshí suì le.",
+        "vn": "Anh ấy trông rất trẻ, nhưng thực ra đã 40 tuổi rồi."
+      },
+      {
+        "zh": "其实，我还没吃饭。",
+        "py": "Qíshí, wǒ hái méi chīfàn.",
+        "vn": "Thực ra, tôi vẫn chưa ăn cơm."
+      },
+      {
+        "zh": "这个工作看起来很难，其实很容易。",
+        "py": "Zhège gōngzuò kànqǐlai hěn nán, qíshí hěn róngyì.",
+        "vn": "Công việc này nhìn thì khó, nhưng thực ra rất dễ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "其",
+        "p": "qí",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 8,
+        "ord": "nét liền, gốc là hình cái nia",
+        "rad": "八 (bát)",
+        "mean": "đó, cái đó",
+        "tip": "Vốn là hình vẽ cái nia sàng gạo cổ, sau mượn dùng làm đại từ chỉ định \"đó, của nó\".",
+        "cf": "期 (qī – \"thời kỳ\", cũng chứa 其\")",
+        "w": "其实 / 其他"
+      },
+      {
+        "c": "实",
+        "p": "shí",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 8,
+        "ord": "宀 (miên) trên → 头 (biến thể) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "thật, thực",
+        "tip": "Trong nhà 宀 có của cải THẬT SỰ → nghĩa THỰC, CHÂN THẬT.",
+        "cf": "买 (mǎi – hình dạng gần giống phần dưới)",
+        "w": "其实 / 事实 / 实在"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mọi người nghĩ tôi rất bận, nhưng thực ra tôi có nhiều thời gian rảnh.",
+        "answer": "大家觉得我很忙，但其实我有很多空儿。",
+        "answerPy": "Dàjiā juéde wǒ hěn máng, dàn qíshí wǒ yǒu hěn duō kòngr.",
+        "note": "但其实…… đính chính lại điều mọi người nghĩ trước đó.",
+        "pair": "……，但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Câu hỏi này nhìn có vẻ khó, nhưng thực ra rất đơn giản.",
+        "answer": "这个问题看起来很难，但其实很简单。",
+        "answerPy": "Zhège wèntí kànqǐlai hěn nán, dàn qíshí hěn jiǎndān.",
+        "note": "V起来 + tính từ = nhìn/thấy có vẻ như thế nào; 但其实…… đính chính lại.",
+        "pair": "……，但……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "其实很容易",
+        "py": "qíshí hěn róngyì",
+        "vn": "thực ra rất dễ"
+      },
+      {
+        "zh": "其实不难",
+        "py": "qíshí bù nán",
+        "vn": "thật ra không khó"
+      },
+      {
+        "zh": "他其实",
+        "py": "tā qíshí",
+        "vn": "thực ra anh ấy"
+      },
+      {
+        "zh": "其实我知道",
+        "py": "qíshí wǒ zhīdào",
+        "vn": "thật ra tôi biết"
+      },
+      {
+        "zh": "但其实",
+        "py": "dàn qíshí",
+        "vn": "nhưng thực ra"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "……，其实 + mệnh đề",
+        "m": "…, thực ra … (trái với điều người ta tưởng)"
+      },
+      {
+        "s": "其实 đứng SAU chủ ngữ hoặc đầu vế sau"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "瘦",
+    "py": "shòu",
+    "pos": "Tính từ",
+    "vn": "gầy, ốm",
+    "hv": "sấu",
+    "em": "📉",
+    "lesson": 4,
+    "explain": [
+      "1. Ít thịt/mỡ trên cơ thể, thân hình nhỏ, mảnh — trái nghĩa 胖.",
+      "2. Quần áo bó sát, chật."
+    ],
+    "usage": "Tính từ; làm vị ngữ với 很/有点儿: 很瘦, 有点儿瘦; nói mức độ giảm cân dùng 瘦 + 了: 瘦了.",
+    "collo": [
+      "很瘦",
+      "瘦了",
+      "有点儿瘦"
+    ],
+    "ex_zh": "我现在没以前那么胖了。",
+    "ex_py": "Wǒ xiànzài méi yǐqián nàme pàng le.",
+    "ex_vn": "Bây giờ tôi không còn béo như trước nữa.",
+    "exList": [
+      {
+        "zh": "我现在没以前那么胖了。",
+        "py": "Wǒ xiànzài méi yǐqián nàme pàng le.",
+        "vn": "Bây giờ tôi không còn béo như trước nữa."
+      },
+      {
+        "zh": "我比以前瘦。",
+        "py": "Wǒ bǐ yǐqián shòu.",
+        "vn": "Tôi gầy hơn trước."
+      },
+      {
+        "zh": "这件衣服有点儿瘦。",
+        "py": "Zhè jiàn yīfu yǒudiǎnr shòu.",
+        "vn": "Bộ quần áo này hơi chật."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "瘦",
+        "p": "shòu",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 14,
+        "ord": "疒 (nạch) bao → 叟 (tẩu) trong",
+        "rad": "疒 (nạch – bệnh tật)",
+        "mean": "gầy, ốm",
+        "tip": "Bộ bệnh 疒 + 叟(ông già) → cơ thể như ông già ốm o = GẦY.",
+        "cf": "瘦 và 疼 đều mang bộ 疒 (liên quan cơ thể)",
+        "w": "很瘦 / 瘦了 / 有点儿瘦"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cô ấy tập thể thao mỗi ngày nên bây giờ gầy hơn trước rất nhiều.",
+        "answer": "因为她每天运动，所以现在比以前瘦多了。",
+        "answerPy": "Yīnwèi tā měitiān yùndòng, suǒyǐ xiànzài bǐ yǐqián shòu duō le.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy bộ quần áo này hơi chật nhưng tôi vẫn rất thích nó.",
+        "answer": "虽然这件衣服有点儿瘦，但是我还是很喜欢它。",
+        "answerPy": "Suīrán zhè jiàn yīfu yǒudiǎnr shòu, dànshì wǒ háishi hěn xǐhuan tā.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很瘦",
+        "py": "hěn shòu",
+        "vn": "rất gầy"
+      },
+      {
+        "zh": "瘦了",
+        "py": "shòu le",
+        "vn": "gầy đi rồi"
+      },
+      {
+        "zh": "有点儿瘦",
+        "py": "yǒudiǎnr shòu",
+        "vn": "hơi gầy"
+      },
+      {
+        "zh": "太瘦了",
+        "py": "tài shòu le",
+        "vn": "gầy quá"
+      },
+      {
+        "zh": "想瘦一点儿",
+        "py": "xiǎng shòu yìdiǎnr",
+        "vn": "muốn gầy hơn chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 了",
+        "m": "瘦了 — gầy đi rồi"
+      },
+      {
+        "s": "瘦 ↔ 胖",
+        "m": "Gầy ↔ mập"
+      }
+    ]
+  }
 ];
 
 const wuData = [

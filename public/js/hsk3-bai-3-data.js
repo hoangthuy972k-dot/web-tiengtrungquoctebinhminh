@@ -3,379 +3,1836 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'还是',py:'háishi',pos:'Liên từ',vn:'hay, hay là', hv: 'hoàn thị',em:'🔀',lesson:1,
-   explain:['Dùng để nêu ra sự lựa chọn giữa hai (hay nhiều) khả năng, thường dùng trong câu hỏi lựa chọn.'],
-   usage:'Đứng giữa hai vế lựa chọn: A + 还是 + B? Nếu vế lựa chọn tự nó là một câu hỏi thì bắt buộc dùng 还是, không được dùng 或者.',
-   collo:['喝咖啡还是喝茶','去还是不去','红的还是绿的'],
-   ex_zh:'你要喝咖啡还是喝茶？',ex_py:'Nǐ yào hē kāfēi háishi hē chá?',ex_vn:'Bạn muốn uống cà phê hay uống trà?',
-   exList:[
-     {zh:'你要喝咖啡还是喝茶？',py:'Nǐ yào hē kāfēi háishi hē chá?',vn:'Bạn muốn uống cà phê hay uống trà?'},
-     {zh:'你周末在家看书还是出去运动？',py:'Nǐ zhōumò zài jiā kàn shū háishi chūqu yùndòng?',vn:'Cuối tuần bạn ở nhà đọc sách hay ra ngoài vận động?'},
-     {zh:'周太太40岁还是50岁，我们不知道。',py:'Zhōu tàitai sìshí suì háishi wǔshí suì, wǒmen bù zhīdào.',vn:'Bà Chu 40 tuổi hay 50 tuổi, chúng tôi không biết.'},
-   ],
-   hanzi:[
-     {c:'还',p:'hái',type:'半包围结构 · Bán bao vây',st:7,ord:'辶 (sước) bao → 不 (bất) trong',rad:'辶 (sước – đi)',mean:'còn, vẫn; hay',
-      tip:'Bộ 辶(đi) → ý nghĩa mở rộng "còn quay lại/còn tiếp diễn", dùng để nối các lựa chọn còn đang cân nhắc.',
-      cf:'远 (yuǎn – "xa", cũng có bộ 辶")',w:'还是 / 还有 / 还没'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cuối tuần bạn định đi leo núi hay ở nhà xem tivi?',answer:'周末你打算去爬山还是在家看电视？',answerPy:'Zhōumò nǐ dǎsuàn qù páshān háishi zài jiā kàn diànshì?',
-      note:'还是 nối hai lựa chọn trong câu hỏi.'},
-     {promptLang:'vi',prompt:'Tôi không nhớ rõ chiếc quần đó là màu đỏ hay màu xanh.',answer:'我不记得那条裤子是红色还是绿色。',answerPy:'Wǒ bù jìde nà tiáo kùzi shì hóngsè háishi lǜsè.',
-      note:'还是 vẫn dùng được trong câu trần thuật khi diễn tả sự không chắc chắn giữa 2 khả năng.'},
-   ]},
-
-  {n:2,zh:'爬山',py:'pá shān',pos:'Động từ',vn:'leo núi', hv: 'ba sơn',em:'⛰️',lesson:1,
-   explain:['Hoạt động leo lên núi, thường để tập thể dục hoặc ngắm cảnh.'],
-   usage:'Động từ ly hợp (V+O): 爬 (leo) + 山 (núi), có thể tách ra khi thêm bổ ngữ: 爬了三个小时的山.',
-   collo:['去爬山','爬山的时候','喜欢爬山'],
-   ex_zh:'我们明天要去爬山。',ex_py:'Wǒmen míngtiān yào qù páshān.',ex_vn:'Ngày mai chúng tôi định đi leo núi.',
-   exList:[
-     {zh:'我们明天要去爬山。',py:'Wǒmen míngtiān yào qù páshān.',vn:'Ngày mai chúng tôi định đi leo núi.'},
-     {zh:'爬山的时候要小心点儿。',py:'Páshān de shíhou yào xiǎoxīn diǎnr.',vn:'Lúc leo núi phải cẩn thận một chút.'},
-     {zh:'小丽还没想好周末去爬山还是去看电影。',py:'Xiǎolì hái méi xiǎnghǎo zhōumò qù páshān háishi qù kàn diànyǐng.',vn:'Tiểu Lệ vẫn chưa nghĩ xong cuối tuần đi leo núi hay đi xem phim.'},
-   ],
-   hanzi:[
-     {c:'爬',p:'pá',type:'左右结构 · Trái-phải',st:8,ord:'爪 (trảo) trái → 巴 (ba) phải',rad:'爪 (trảo – móng vuốt)',mean:'leo, bò',
-      tip:'Bộ 爪(móng vuốt/tay bám) + 巴(bám chặt) → dùng tay chân BÁM để LEO lên.',
-      cf:'巴 (bā – "bám, mong chờ")',w:'爬山 / 爬树 / 爬起来'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì thời tiết đẹp nên chúng tôi rủ nhau đi leo núi.',answer:'因为天气很好，所以我们一起去爬山。',answerPy:'Yīnwèi tiānqì hěn hǎo, suǒyǐ wǒmen yìqǐ qù páshān.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Tuy chân tôi hơi đau nhưng tôi vẫn muốn đi leo núi.',answer:'虽然我的腿有点儿疼，但是我还是想去爬山。',answerPy:'Suīrán wǒ de tuǐ yǒudiǎnr téng, dànshì wǒ háishi xiǎng qù páshān.',
-      note:'虽然……但是…… diễn tả sự tương phản (ôn lại 腿/疼 đã học ở Bài 2).'},
-   ]},
-
-  {n:3,zh:'小心',py:'xiǎoxīn',pos:'Tính từ',vn:'cẩn thận', hv: 'tiểu tâm',em:'⚠️',lesson:1,
-   explain:['Chú ý, thận trọng khi làm việc gì để tránh xảy ra chuyện không hay.'],
-   usage:'Có thể làm vị ngữ (要小心) hoặc phó từ đứng trước động từ (小心地 + V); thường dùng ở dạng mệnh lệnh 小心 + danh từ (小心车).',
-   collo:['要小心','小心点儿','小心车'],
-   ex_zh:'爬山的时候要小心点儿。',ex_py:'Páshān de shíhou yào xiǎoxīn diǎnr.',ex_vn:'Lúc leo núi phải cẩn thận một chút.',
-   exList:[
-     {zh:'爬山的时候要小心点儿。',py:'Páshān de shíhou yào xiǎoxīn diǎnr.',vn:'Lúc leo núi phải cẩn thận một chút.'},
-     {zh:'过马路的时候要小心汽车。',py:'Guò mǎlù de shíhou yào xiǎoxīn qìchē.',vn:'Lúc qua đường phải cẩn thận xe cộ.'},
-     {zh:'这儿的路不好走，你小心点儿。',py:'Zhèr de lù bù hǎo zǒu, nǐ xiǎoxīn diǎnr.',vn:'Đường ở đây khó đi, bạn cẩn thận một chút.'},
-   ],
-   hanzi:[
-     {c:'心',p:'xīn',type:'独体字 · Chữ đơn (tượng hình)',st:4,ord:'nét liền, hình trái tim',rad:'心 (tâm – trái tim)',mean:'tim, lòng, tâm trí',
-      tip:'Chữ tượng hình mô phỏng hình trái tim → nghĩa gốc TIM, mở rộng thành TÂM TRÍ, SUY NGHĨ.',
-      cf:'必 (bì – "ắt hẳn", có nét giống 心")',w:'小心 / 放心 / 开心'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trời mưa đường trơn, bạn lái xe nhớ cẩn thận nhé.',answer:'下雨了路很滑，你开车要记得小心点儿。',answerPy:'Xiàyǔ le lù hěn huá, nǐ kāichē yào jìde xiǎoxīn diǎnr.',
-      note:'記得 (Bài này) nhắc bạn nhớ làm gì.'},
-     {promptLang:'vi',prompt:'Nếu bạn không cẩn thận thì rất dễ bị cảm lạnh.',answer:'如果你不小心，就很容易感冒。',answerPy:'Rúguǒ nǐ bù xiǎoxīn, jiù hěn róngyì gǎnmào.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 容易 đã học ở Bài 2).'},
-   ]},
-
-  {n:4,zh:'条',py:'tiáo',pos:'Lượng từ',vn:'cái, chiếc (dùng cho vật dài)', hv: 'điều',em:'👖',lesson:2,
-   explain:['Lượng từ dùng cho các vật có hình dạng dài như quần, đường, con sông, con cá.'],
-   usage:'Lượng từ, đứng giữa SỐ TỪ (hoặc chỉ thị từ 这/那) và DANH TỪ: [số từ/这/那] + 条 + [danh từ] (一条裤子, 这条路).',
-   collo:['一条裤子','这条路','两条鱼'],
-   ex_zh:'你觉得这条裤子怎么样？',ex_py:'Nǐ juéde zhè tiáo kùzi zěnmeyàng?',ex_vn:'Bạn thấy cái quần này thế nào?',
-   exList:[
-     {zh:'你觉得这条裤子怎么样？',py:'Nǐ juéde zhè tiáo kùzi zěnmeyàng?',vn:'Bạn thấy cái quần này thế nào?'},
-     {zh:'我记得你已经有两条这样的裤子了。',py:'Wǒ jìde nǐ yǐjīng yǒu liǎng tiáo zhèyàng de kùzi le.',vn:'Anh nhớ là em đã có hai cái quần kiểu này rồi.'},
-     {zh:'这条鱼很新鲜。',py:'Zhè tiáo yú hěn xīnxiān.',vn:'Con cá này rất tươi.'},
-   ],
-   hanzi:[
-     {c:'条',p:'tiáo',type:'上下结构 · Trên-dưới',st:7,ord:'夂 (truy) trên → 木 (mộc) dưới',rad:'木 (mộc – gỗ)',mean:'cành cây; lượng từ vật dài',
-      tip:'Vốn chỉ CÀNH CÂY dài mảnh → mở rộng thành lượng từ cho mọi vật DÀI như quần, đường, con sông.',
-      cf:'各 (gè – hình dáng trên gần giống)',w:'一条裤子 / 一条路 / 一条鱼'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì cái quần này hơi chật nên tôi định đổi một cái khác.',answer:'因为这条裤子有点儿小，所以我打算换一条。',answerPy:'Yīnwèi zhè tiáo kùzi yǒudiǎnr xiǎo, suǒyǐ wǒ dǎsuàn huàn yì tiáo.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Con đường này tuy nhỏ nhưng đi rất nhanh.',answer:'这条路虽然小，但是走得很快。',answerPy:'Zhè tiáo lù suīrán xiǎo, dànshì zǒu de hěn kuài.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:5,zh:'裤子',py:'kùzi',pos:'Danh từ',vn:'quần', hv: 'khố tử',em:'👖',lesson:2,
-   explain:['Trang phục mặc ở phần dưới cơ thể, che từ thắt lưng đến chân.'],
-   usage:'Danh từ; lượng từ đi kèm là 条: 一条裤子. Thường xuất hiện cùng động từ 穿 (mặc), 买 (mua), 洗 (giặt).',
-   collo:['穿裤子','买裤子','洗裤子'],
-   ex_zh:'那我们再看看别的。',ex_py:'Nà wǒmen zài kànkan biéde.',ex_vn:'Vậy chúng ta xem thêm cái khác nữa.',
-   exList:[
-     {zh:'我觉得大了一点儿。',py:'Wǒ juéde dàle yìdiǎnr.',vn:'Tôi thấy hơi to một chút.'},
-     {zh:'这件衬衫怎么样？',py:'Zhè jiàn chènshān zěnmeyàng?',vn:'Cái áo sơ mi này thế nào?'},
-     {zh:'你新给我买的那条裤子放哪儿了？',py:'Nǐ xīn gěi wǒ mǎi de nà tiáo kùzi fàng nǎr le?',vn:'Cái quần mới bạn mua cho tôi để ở đâu rồi?'},
-   ],
-   hanzi:[
-     {c:'裤',p:'kù',type:'左右结构 · Trái-phải',st:12,ord:'衤 (y) trái → 库 (khố) phải',rad:'衤 (y – quần áo)',mean:'quần',
-      tip:'Bộ 衤(quần áo, biến thể của 衣) + 库(kho) → trang phục QUẦN, mặc phần dưới cơ thể.',
-      cf:'库 (kù – "kho", không có bộ 衤")',w:'裤子 / 一条裤子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chiếc quần này tôi mua ở cửa hàng bách hóa, không đắt lắm.',answer:'这条裤子是我在商场买的，不太贵。',answerPy:'Zhè tiáo kùzi shì wǒ zài shāngchǎng mǎi de, bú tài guì.',
-      note:'是……的 nhấn mạnh thông tin về địa điểm mua.'},
-     {promptLang:'vi',prompt:'Nếu quần bẩn thì bạn nên giặt ngay hôm nay.',answer:'如果裤子脏了，你今天就应该洗一下。',answerPy:'Rúguǒ kùzi zāng le, nǐ jīntiān jiù yīnggāi xǐ yíxià.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:6,zh:'记得',py:'jìde',pos:'Động từ',vn:'nhớ, còn nhớ', hv: 'ký đắc',em:'🧠',lesson:2,
-   explain:['Còn lưu giữ trong trí nhớ, không quên.'],
-   usage:'Động từ, phủ định là 不记得 (không nhớ); có thể theo sau bởi một mệnh đề: 记得 + [sự việc].',
-   collo:['不记得','记得带钱','还记得吗'],
-   ex_zh:'我记得你已经有两条这样的裤子了。',ex_py:'Wǒ jìde nǐ yǐjīng yǒu liǎng tiáo zhèyàng de kùzi le.',ex_vn:'Anh nhớ là em đã có hai cái quần kiểu này rồi.',
-   exList:[
-     {zh:'我记得你已经有两条这样的裤子了。',py:'Wǒ jìde nǐ yǐjīng yǒu liǎng tiáo zhèyàng de kùzi le.',vn:'Anh nhớ là em đã có hai cái quần kiểu này rồi.'},
-     {zh:'你还记得我吗？',py:'Nǐ hái jìde wǒ ma?',vn:'Bạn còn nhớ tôi không?'},
-     {zh:'他的生日是10月还是11月，我不记得了。',py:'Tā de shēngrì shì shíyuè háishi shíyīyuè, wǒ bù jìde le.',vn:'Sinh nhật anh ấy là tháng 10 hay tháng 11, tôi không nhớ nữa.'},
-   ],
-   hanzi:[
-     {c:'记',p:'jì',type:'左右结构 · Trái-phải',st:5,ord:'讠 (ngôn) trái → 己 (kỷ) phải',rad:'讠 (ngôn – lời nói)',mean:'ghi nhớ, ghi chép',
-      tip:'Bộ 讠(lời nói) + 己(bản thân) → tự mình GHI LẠI lời nói/sự việc trong đầu = NHỚ.',
-      cf:'己 (jǐ – "bản thân", không có bộ 讠")',w:'记得 / 忘记 / 记住'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì tôi không còn nhớ mật khẩu nên tôi phải hỏi lại bạn.',answer:'因为我不记得密码了，所以我得再问你一次。',answerPy:'Yīnwèi wǒ bú jìde mìmǎ le, suǒyǐ wǒ děi zài wèn nǐ yí cì.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn còn nhớ địa chỉ đó thì hãy nói cho tôi biết.',answer:'如果你还记得那个地址，就告诉我吧。',answerPy:'Rúguǒ nǐ hái jìde nàge dìzhǐ, jiù gàosu wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:7,zh:'衬衫',py:'chènshān',pos:'Danh từ',vn:'áo sơ mi', hv: 'sấn sam',em:'👔',lesson:2,
-   explain:['Loại áo có cổ và cúc cài phía trước, thường mặc đi làm/dự tiệc.'],
-   usage:'Danh từ; lượng từ đi kèm là 件: 一件衬衫.',
-   collo:['一件衬衫','穿衬衫','洗衬衫'],
-   ex_zh:'这件衬衫怎么样？',ex_py:'Zhè jiàn chènshān zěnmeyàng?',ex_vn:'Cái áo sơ mi này thế nào?',
-   exList:[
-     {zh:'这件衬衫怎么样？',py:'Zhè jiàn chènshān zěnmeyàng?',vn:'Cái áo sơ mi này thế nào?'},
-     {zh:'这上面写着320元。',py:'Zhè shàngmian xiězhe sānbǎi èrshí yuán.',vn:'Trên đây ghi 320 đồng.'},
-     {zh:'我想买件衬衫。',py:'Wǒ xiǎng mǎi jiàn chènshān.',vn:'Tôi muốn mua một cái áo sơ mi.'},
-   ],
-   hanzi:[
-     {c:'衫',p:'shān',type:'左右结构 · Trái-phải',st:8,ord:'衤 (y) trái → 彡 (sam) phải',rad:'衤 (y – quần áo)',mean:'áo',
-      tip:'Bộ 衤(quần áo) + 彡(hoa văn, đường nét) → loại ÁO có đường may/hoa văn, khái quát nghĩa ÁO.',
-      cf:'形 (xíng – "hình dạng", cũng có 彡")',w:'衬衫 / 一件衬衫'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi mặc cái áo sơ mi này xong là ra ngoài liền.',answer:'我穿了这件衬衫就出去了。',answerPy:'Wǒ chuānle zhè jiàn chènshān jiù chūqu le.',
-      note:'V了……就V…… diễn tả hai hành động liên tiếp.'},
-     {promptLang:'vi',prompt:'Tuy áo sơ mi này không rẻ nhưng chất lượng rất tốt.',answer:'虽然这件衬衫不便宜，但是质量很好。',answerPy:'Suīrán zhè jiàn chènshān bù piányi, dànshì zhìliàng hěn hǎo.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:8,zh:'元',py:'yuán',pos:'Lượng từ',vn:'đồng (đơn vị tiền tệ)', hv: 'nguyên',em:'💴',lesson:2,
-   explain:['Đơn vị tiền tệ của Trung Quốc (nhân dân tệ).'],
-   usage:'Lượng từ, đứng ngay sau SỐ TỪ: [số từ] + 元 (320元). Trong khẩu ngữ thường nói 块 thay cho 元.',
-   collo:['320元','多少元','一元'],
-   ex_zh:'这上面写着320元。',ex_py:'Zhè shàngmian xiězhe sānbǎi èrshí yuán.',ex_vn:'Trên đây ghi 320 đồng.',
-   exList:[
-     {zh:'这上面写着320元。',py:'Zhè shàngmian xiězhe sānbǎi èrshí yuán.',vn:'Trên đây ghi 320 đồng.'},
-     {zh:'还不错，多少钱？',py:'Hái búcuò, duōshao qián?',vn:'Cũng được đấy, bao nhiêu tiền?'},
-     {zh:'买一件。',py:'Mǎi yí jiàn.',vn:'Mua một cái.'},
-   ],
-   hanzi:[
-     {c:'元',p:'yuán',type:'独体字 · Chữ đơn',st:4,ord:'二 trên → 儿 dưới',rad:'儿 (nhân đi)',mean:'đầu tiên; đồng (tiền)',
-      tip:'Chữ cổ chỉ CÁI ĐẦU, phần khởi đầu → mở rộng nghĩa "đơn vị cơ bản" và dùng làm đơn vị TIỀN TỆ.',
-      cf:'无 (wú – "không có")',w:'元 / 一百元 / 多少元'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cái quần này giá 320 đồng, hơi đắt một chút.',answer:'这条裤子要320元，有点儿贵。',answerPy:'Zhè tiáo kùzi yào sānbǎi èrshí yuán, yǒudiǎnr guì.',
-      note:'V要 + giá tiền = giá bao nhiêu.'},
-     {promptLang:'vi',prompt:'Nếu áo sơ mi này chỉ 100 đồng thì tôi sẽ mua hai cái.',answer:'如果这件衬衫只要100元，我就买两件。',answerPy:'Rúguǒ zhè jiàn chènshān zhǐ yào yìbǎi yuán, wǒ jiù mǎi liǎng jiàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'新鲜',py:'xīnxiān',pos:'Tính từ',vn:'tươi', hv: 'tân tiên',em:'🍎',lesson:3,
-   explain:['Vừa mới, chưa để lâu, còn giữ được chất lượng ban đầu (thường dùng cho đồ ăn).'],
-   usage:'Tính từ, làm vị ngữ với 很/真: 很新鲜, hoặc làm định ngữ: 新鲜的鱼.',
-   collo:['很新鲜','新鲜的鱼','不新鲜'],
-   ex_zh:'这些水果真新鲜，我们买西瓜还是苹果？',ex_py:'Zhèxiē shuǐguǒ zhēn xīnxiān, wǒmen mǎi xīguā háishi píngguǒ?',ex_vn:'Những trái cây này thật tươi, chúng ta mua dưa hấu hay táo?',
-   exList:[
-     {zh:'这些水果真新鲜，我们买西瓜还是苹果？',py:'Zhèxiē shuǐguǒ zhēn xīnxiān, wǒmen mǎi xīguā háishi píngguǒ?',vn:'Những trái cây này thật tươi, chúng ta mua dưa hấu hay táo?'},
-     {zh:'这条鱼很新鲜。',py:'Zhè tiáo yú hěn xīnxiān.',vn:'Con cá này rất tươi.'},
-     {zh:'今天的鲜奶不新鲜了。',py:'Jīntiān de xiānnǎi bù xīnxiān le.',vn:'Sữa tươi hôm nay không còn tươi nữa.'},
-   ],
-   hanzi:[
-     {c:'鲜',p:'xiān',type:'左右结构 · Trái-phải',st:14,ord:'鱼 (ngư) trái → 羊 (dương) phải',rad:'鱼 (ngư – cá)',mean:'tươi',
-      tip:'鱼(cá) + 羊(dê) — hai loại thịt ngon nhất thời cổ → TƯƠI, NGON.',
-      cf:'鱼 (yú – "cá", chỉ nửa trái của chữ")',w:'新鲜 / 鲜奶 / 鲜花'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trái cây này không tươi nên tôi không mua nữa.',answer:'因为这些水果不新鲜，所以我不买了。',answerPy:'Yīnwèi zhèxiē shuǐguǒ bù xīnxiān, suǒyǐ wǒ bù mǎi le.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Chỉ cần cá còn tươi thì món này chắc chắn sẽ rất ngon.',answer:'只要鱼是新鲜的，这道菜就一定很好吃。',answerPy:'Zhǐyào yú shì xīnxiān de, zhè dào cài jiù yídìng hěn hǎochī.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:10,zh:'甜',py:'tián',pos:'Tính từ',vn:'ngọt', hv: 'điềm',em:'🍬',lesson:3,
-   explain:['Có vị ngọt như đường, mật.'],
-   usage:'Tính từ, làm vị ngữ với 很/不: 很甜, 不甜; thường xuất hiện trong câu điều kiện quảng cáo "不甜不要钱".',
-   collo:['很甜','不甜','有点儿甜'],
-   ex_zh:'西瓜吧。你看，这上面写着"西瓜不甜不要钱"。',ex_py:'Xīguā ba. Nǐ kàn, zhè shàngmian xiězhe "xīguā bù tián bú yào qián".',ex_vn:'Dưa hấu đi. Bạn xem, trên đây ghi "dưa hấu không ngọt không lấy tiền".',
-   exList:[
-     {zh:'西瓜吧。你看，这上面写着"西瓜不甜不要钱"。',py:'Xīguā ba. Nǐ kàn, zhè shàngmian xiězhe "xīguā bù tián bú yào qián".',vn:'Dưa hấu đi. Bạn xem, trên đây ghi "dưa hấu không ngọt không lấy tiền".'},
-     {zh:'今天买的冷饮很甜。',py:'Jīntiān mǎi de lěngyǐn hěn tián.',vn:'Đồ uống lạnh mua hôm nay rất ngọt.'},
-     {zh:'我喜欢喝甜的花茶。',py:'Wǒ xǐhuan hē tián de huāchá.',vn:'Tôi thích uống trà hoa ngọt.'},
-   ],
-   hanzi:[
-     {c:'甜',p:'tián',type:'左右结构 · Trái-phải',st:11,ord:'舌 (thiệt) trái → 甘 (cam) phải',rad:'舌 (thiệt – cái lưỡi)',mean:'ngọt',
-      tip:'舌(lưỡi) + 甘(ngọt) → dùng LƯỠI cảm nhận vị NGỌT.',
-      cf:'甘 (gān – "ngọt, cam tâm", không có bộ 舌")',w:'很甜 / 甜茶 / 甜点'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đồ uống này ngọt quá nên tôi không muốn uống hết.',answer:'这杯饮料太甜了，所以我不想喝完。',answerPy:'Zhè bēi yǐnliào tài tián le, suǒyǐ wǒ bù xiǎng hē wán.',
-      note:'因为……所以…… hoặc câu chỉ dùng 所以 khi lý do đã rõ.'},
-     {promptLang:'vi',prompt:'Nếu dưa hấu không ngọt thì cửa hàng sẽ không lấy tiền.',answer:'如果西瓜不甜，商店就不要钱。',answerPy:'Rúguǒ xīguā bù tián, shāngdiàn jiù bú yào qián.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'只',py:'zhǐ',pos:'Phó từ',vn:'chỉ', hv: 'chỉ',em:'☝️',lesson:3,
-   explain:['Giới hạn phạm vi, số lượng hoặc phạm vi hành động ở mức duy nhất được nêu.'],
-   usage:'Phó từ, đứng TRƯỚC động từ/tính từ mà nó bổ nghĩa: 只 + V/Adj (只吃水果, 只要200元).',
-   collo:['只吃水果','只要','只学汉语'],
-   ex_zh:'今天晚上只吃水果不吃饭！',ex_py:'Jīntiān wǎnshang zhǐ chī shuǐguǒ bù chī fàn!',ex_vn:'Tối nay chỉ ăn trái cây không ăn cơm!',
-   exList:[
-     {zh:'今天晚上只吃水果不吃饭！',py:'Jīntiān wǎnshang zhǐ chī shuǐguǒ bù chī fàn!',vn:'Tối nay chỉ ăn trái cây không ăn cơm!',},
-     {zh:'我只学汉语，不学英语。',py:'Wǒ zhǐ xué Hànyǔ, bù xué Yīngyǔ.',vn:'Tôi chỉ học tiếng Trung, không học tiếng Anh.'},
-     {zh:'这儿只卖书，不卖水。',py:'Zhèr zhǐ mài shū, bú mài shuǐ.',vn:'Ở đây chỉ bán sách, không bán nước.'},
-   ],
-   hanzi:[
-     {c:'只',p:'zhǐ',type:'上下结构 · Trên-dưới',st:5,ord:'口 trên → 八 dưới',rad:'口 (khẩu – miệng)',mean:'chỉ; con (lượng từ)',
-      tip:'Chữ tượng hình cổ chỉ con chim vừa bay ra, nghĩa mở rộng thành "duy nhất, chỉ".',
-      cf:'尺 (chǐ – "thước", hình dạng gần giống")',w:'只吃 / 只要 / 只有'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì cửa hàng chỉ còn táo nên chúng tôi chỉ mua táo.',answer:'因为商店只有苹果了，所以我们只买了苹果。',answerPy:'Yīnwèi shāngdiàn zhǐ yǒu píngguǒ le, suǒyǐ wǒmen zhǐ mǎile píngguǒ.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn chỉ có 100 đồng thì không đủ mua cái quần này.',answer:'如果你只有100元，就不够买这条裤子。',answerPy:'Rúguǒ nǐ zhǐ yǒu yìbǎi yuán, jiù bú gòu mǎi zhè tiáo kùzi.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'放',py:'fàng',pos:'Động từ',vn:'đặt, để', hv: 'phóng',em:'📥',lesson:4,
-   explain:['Đặt một vật vào một vị trí nào đó.'],
-   usage:'Động từ, thường đi cùng trợ từ 着 trong câu tồn tại: [nơi chốn] + 放着 + [vật] (桌子上放着很多饮料).',
-   collo:['放在桌子上','放着','没放着'],
-   ex_zh:'桌子上放着很多饮料，你喝什么？',ex_py:'Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?',ex_vn:'Trên bàn đặt rất nhiều đồ uống, bạn uống gì?',
-   exList:[
-     {zh:'桌子上放着很多饮料，你喝什么？',py:'Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?',vn:'Trên bàn đặt rất nhiều đồ uống, bạn uống gì?'},
-     {zh:'我的手机放哪儿了？我怎么不记得了？',py:'Wǒ de shǒujī fàng nǎr le? Wǒ zěnme bù jìde le?',vn:'Điện thoại của tôi để đâu rồi? Sao tôi không nhớ nữa?'},
-     {zh:'桌子上面放着一杯咖啡，是你的吗？',py:'Zhuōzi shàngmian fàngzhe yì bēi kāfēi, shì nǐ de ma?',vn:'Trên bàn có để một ly cà phê, có phải của bạn không?'},
-   ],
-   hanzi:[
-     {c:'放',p:'fàng',type:'左右结构 · Trái-phải',st:8,ord:'方 (phương) trái → 攵 (phốc) phải',rad:'攵 (phốc – gõ nhẹ)',mean:'đặt, để; thả',
-      tip:'方(phương hướng) + 攵(tác động bằng tay) → dùng tay đưa vật theo một hướng rồi ĐẶT xuống.',
-      cf:'方 (fāng – "phương hướng", không có bộ 攵")',w:'放着 / 放在 / 放心'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trên bàn để rất nhiều đồ uống nên khách ai cũng vui.',answer:'因为桌子上放着很多饮料，所以客人都很高兴。',answerPy:'Yīnwèi zhuōzi shang fàngzhe hěn duō yǐnliào, suǒyǐ kèrén dōu hěn gāoxìng.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn nhớ mình để chìa khóa ở đâu thì nói cho tôi biết.',answer:'如果你记得钥匙放在哪儿了，就告诉我吧。',answerPy:'Rúguǒ nǐ jìde yàoshi fàng zài nǎr le, jiù gàosu wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 记得 vừa học).'},
-   ]},
-
-  {n:13,zh:'饮料',py:'yǐnliào',pos:'Danh từ',vn:'đồ uống, thức uống', hv: 'ẩm liệu',em:'🥤',lesson:4,
-   explain:['Chất lỏng dùng để uống nói chung (nước ngọt, trà, cà phê...).'],
-   usage:'Danh từ; lượng từ đi kèm là 杯 (ly) hoặc 瓶 (chai): 一杯饮料, 一瓶饮料.',
-   collo:['喝饮料','买饮料','水果饮料'],
-   ex_zh:'桌子上放着很多饮料，你喝什么？',ex_py:'Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?',ex_vn:'Trên bàn đặt rất nhiều đồ uống, bạn uống gì?',
-   exList:[
-     {zh:'桌子上放着很多饮料，你喝什么？',py:'Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?',vn:'Trên bàn đặt rất nhiều đồ uống, bạn uống gì?'},
-     {zh:'那不是绿茶，是水果饮料。',py:'Nà bú shì lǜchá, shì shuǐguǒ yǐnliào.',vn:'Đó không phải trà xanh, đó là nước ép trái cây.'},
-     {zh:'桌子上的饮料给你吧。',py:'Zhuōzi shang de yǐnliào gěi nǐ ba.',vn:'Đồ uống trên bàn cho bạn đấy.'},
-   ],
-   hanzi:[
-     {c:'饮',p:'yǐn',type:'左右结构 · Trái-phải',st:6,ord:'饣 (thực) trái → 欠 (khiếm) phải',rad:'饣 (thực – ăn uống)',mean:'uống',
-      tip:'Bộ 饣(ăn uống) + 欠(há miệng) → há miệng để UỐNG.',
-      cf:'吹 (chuī – "thổi", cũng có 欠")',w:'饮料 / 喝饮料'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời nóng nên mọi người đều muốn uống đồ uống lạnh.',answer:'因为天气很热，所以大家都想喝冷饮料。',answerPy:'Yīnwèi tiānqì hěn rè, suǒyǐ dàjiā dōu xiǎng hē lěng yǐnliào.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu đồ uống này quá ngọt thì bạn đừng uống hết.',answer:'如果这杯饮料太甜，你就别喝完。',answerPy:'Rúguǒ zhè bēi yǐnliào tài tián, nǐ jiù bié hē wán.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 甜 vừa học).'},
-   ]},
-
-  {n:14,zh:'或者',py:'huòzhě',pos:'Liên từ',vn:'hoặc', hv: 'hoặc giả',em:'🔁',lesson:4,
-   explain:['Dùng để nêu ra sự lựa chọn giữa hai (hay nhiều) khả năng, thường dùng trong câu trần thuật.'],
-   usage:'Đứng giữa hai vế lựa chọn trong câu KHẲNG ĐỊNH (không phải câu hỏi): A + 或者 + B, đều được/đều có thể.',
-   collo:['茶或者咖啡','或者工作累了','看书或者听音乐'],
-   ex_zh:'茶或者咖啡都可以。',ex_py:'Chá huòzhě kāfēi dōu kěyǐ.',ex_vn:'Trà hoặc cà phê đều được.',
-   exList:[
-     {zh:'茶或者咖啡都可以。',py:'Chá huòzhě kāfēi dōu kěyǐ.',vn:'Trà hoặc cà phê đều được.'},
-     {zh:'今天晚上吃米饭或者面条都可以。',py:'Jīntiān wǎnshang chī mǐfàn huòzhě miàntiáo dōu kěyǐ.',vn:'Tối nay ăn cơm hoặc mì đều được.'},
-     {zh:'天冷了或者工作累了的时候，喝杯热茶会很舒服。',py:'Tiān lěngle huòzhě gōngzuò lèile de shíhou, hē bēi rè chá huì hěn shūfu.',vn:'Khi trời lạnh hoặc làm việc mệt, uống ly trà nóng sẽ rất dễ chịu.'},
-   ],
-   hanzi:[
-     {c:'或',p:'huò',type:'半包围结构 · Bán bao vây',st:8,ord:'囗 bao ngoài → 戈+一 trong',rad:'戈 (qua – vũ khí)',mean:'hoặc, có thể',
-      tip:'Hình vẽ cổ: dùng vũ khí 戈 bảo vệ vùng đất 囗 → mở rộng nghĩa "có lẽ, hoặc" (chưa chắc chắn).',
-      cf:'国 (guó – "quốc gia", cùng gốc chữ 或")',w:'或者 / 也许'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn có thể mặc áo sơ mi hoặc mặc quần đều được, tùy bạn.',answer:'你穿衬衫或者穿裤子都可以，随便你。',answerPy:'Nǐ chuān chènshān huòzhě chuān kùzi dōu kěyǐ, suíbiàn nǐ.',
-      note:'或者……都可以 = A hoặc B đều được.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn uống trà hoặc cà phê thì sẽ tỉnh táo hơn.',answer:'只要你喝茶或者喝咖啡，就会更精神。',answerPy:'Zhǐyào nǐ hē chá huòzhě hē kāfēi, jiù huì gèng jīngshen.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:15,zh:'舒服',py:'shūfu',pos:'Tính từ',vn:'dễ chịu, thoải mái', hv: 'thư phục',em:'😌',lesson:4,
-   explain:['Cảm giác thoải mái, khoan khoái về thể chất hoặc tinh thần.'],
-   usage:'Tính từ, làm vị ngữ với 很/会: 很舒服, 会很舒服; phủ định 不舒服 còn có nghĩa "khó ở, không khỏe".',
-   collo:['很舒服','不舒服','觉得舒服'],
-   ex_zh:'喝杯热茶会很舒服。',ex_py:'Hē bēi rè chá huì hěn shūfu.',ex_vn:'Uống một ly trà nóng sẽ rất dễ chịu.',
-   exList:[
-     {zh:'喝杯热茶会很舒服。',py:'Hē bēi rè chá huì hěn shūfu.',vn:'Uống một ly trà nóng sẽ rất dễ chịu.'},
-     {zh:'你怎么了？不舒服吗？',py:'Nǐ zěnme le? Bù shūfu ma?',vn:'Bạn sao vậy? Không khỏe à?'},
-     {zh:'工作累的时候听听歌，会觉得舒服点儿。',py:'Gōngzuò lèi de shíhou tīngting gē, huì juéde shūfu diǎnr.',vn:'Lúc làm việc mệt nghe chút nhạc sẽ thấy dễ chịu hơn.'},
-   ],
-   hanzi:[
-     {c:'舒',p:'shū',type:'左右结构 · Trái-phải',st:12,ord:'舍 (xá) trái → 予 (dữ) phải',rad:'舌 (thiệt)',mean:'thư thái, dễ chịu',
-      tip:'舍(buông bỏ, thả lỏng) + 予(cho đi) → buông bỏ căng thẳng, cảm thấy THƯ THÁI.',
-      cf:'舍 (shě – "buông bỏ", không có 予")',w:'舒服 / 舒适'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì cảm thấy không khỏe nên hôm nay tôi không muốn đi làm.',answer:'因为觉得不舒服，所以我今天不想上班。',answerPy:'Yīnwèi juéde bù shūfu, suǒyǐ wǒ jīntiān bù xiǎng shàngbān.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn nghỉ ngơi nhiều hơn thì sẽ thấy dễ chịu hơn.',answer:'只要你多休息，就会觉得舒服一点儿。',answerPy:'Zhǐyào nǐ duō xiūxi, jiù huì juéde shūfu yìdiǎnr.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:16,zh:'花',py:'huā',pos:'Danh từ',vn:'hoa', hv: 'hoa',em:'🌸',lesson:4,
-   explain:['Bộ phận sinh sản của cây, thường có màu sắc và hương thơm; ở đây dùng trong từ 花茶 (trà hoa/trà ướp hoa).'],
-   usage:'Danh từ; làm định ngữ tạo từ ghép: 花 + danh từ (花茶 = trà hoa).',
-   collo:['花茶','买花','很多花'],
-   ex_zh:'你喜欢喝什么茶？',ex_py:'Nǐ xǐhuan hē shénme chá?',ex_vn:'Bạn thích uống trà gì?',
-   exList:[
-     {zh:'花茶、绿茶、红茶，我都喜欢。',py:'Huāchá, lǜchá, hóngchá, wǒ dōu xǐhuan.',vn:'Trà hoa, trà xanh, trà đen, tôi đều thích.'},
-     {zh:'公园里种着很多花。',py:'Gōngyuán lǐ zhòngzhe hěn duō huā.',vn:'Trong công viên trồng rất nhiều hoa.'},
-     {zh:'这是朋友送我的花。',py:'Zhè shì péngyou sòng wǒ de huā.',vn:'Đây là hoa bạn tôi tặng.'},
-   ],
-   hanzi:[
-     {c:'花',p:'huā',type:'上下结构 · Trên-dưới',st:7,ord:'艹 (thảo) trên → 化 (hoá) dưới',rad:'艹 (thảo – cỏ cây)',mean:'hoa',
-      tip:'Bộ cỏ 艹 (thực vật) + 化(biến hoá) → thực vật BIẾN HOÁ nở rộ thành HOA.',
-      cf:'化 (huà – "biến hoá", không có bộ 艹")',w:'花茶 / 一朵花 / 花园'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trà hoa có mùi thơm nên tôi rất thích uống.',answer:'因为花茶很香，所以我很喜欢喝。',answerPy:'Yīnwèi huāchá hěn xiāng, suǒyǐ wǒ hěn xǐhuan hē.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Dù là trà hoa hay trà xanh, tôi đều thích uống.',answer:'不管是花茶还是绿茶，我都喜欢喝。',answerPy:'Bùguǎn shì huāchá háishi lǜchá, wǒ dōu xǐhuan hē.',
-      note:'不管……都…… diễn tả dù trong trường hợp nào kết quả cũng không đổi.'},
-   ]},
-
-  {n:17,zh:'绿',py:'lǜ',pos:'Tính từ',vn:'xanh (lá cây)', hv: 'lục',em:'💚',lesson:4,
-   explain:['Màu xanh lá cây, màu của cây cỏ.'],
-   usage:'Tính từ chỉ màu sắc, làm định ngữ trực tiếp trước danh từ: 绿 + danh từ (绿茶), hoặc làm vị ngữ với 很: 很绿.',
-   collo:['绿茶','绿色','很绿'],
-   ex_zh:'花茶、绿茶、红茶，我都喜欢。',ex_py:'Huāchá, lǜchá, hóngchá, wǒ dōu xǐhuan.',ex_vn:'Trà hoa, trà xanh, trà đen, tôi đều thích.',
-   exList:[
-     {zh:'花茶、绿茶、红茶，我都喜欢。',py:'Huāchá, lǜchá, hóngchá, wǒ dōu xǐhuan.',vn:'Trà hoa, trà xanh, trà đen, tôi đều thích.'},
-     {zh:'这儿没有绿茶。',py:'Zhèr méiyǒu lǜchá.',vn:'Ở đây không có trà xanh.'},
-     {zh:'桌子上不是放着绿茶吗？',py:'Zhuōzi shang bú shì fàngzhe lǜchá ma?',vn:'Trên bàn chẳng phải đang để trà xanh sao?'},
-   ],
-   hanzi:[
-     {c:'绿',p:'lǜ',type:'左右结构 · Trái-phải',st:11,ord:'纟 (mịch) trái → 录 (lục) phải',rad:'纟 (mịch – tơ, sợi)',mean:'xanh lá cây',
-      tip:'Bộ tơ lụa 纟 (thường được nhuộm màu) + 录(ghi lại) → tên gọi màu XANH LÁ được ghi nhận qua vải nhuộm.',
-      cf:'录 (lù – "ghi chép", không có bộ 纟")',w:'绿茶 / 绿色 / 很绿'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trà xanh có vị hơi đắng nên bà tôi không thích uống.',answer:'因为绿茶有点儿苦，所以我奶奶不喜欢喝。',answerPy:'Yīnwèi lǜchá yǒudiǎnr kǔ, suǒyǐ wǒ nǎinai bù xǐhuan hē.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu cửa hàng không còn trà xanh thì cho tôi trà hoa vậy.',answer:'如果商店没有绿茶了，就给我花茶吧。',answerPy:'Rúguǒ shāngdiàn méiyǒu lǜchá le, jiù gěi wǒ huāchá ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 花 vừa học).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "还是",
+    "py": "háishi",
+    "pos": "Liên từ",
+    "vn": "hay, hay là",
+    "hv": "hoàn thị",
+    "em": "🔀",
+    "lesson": 1,
+    "explain": [
+      "Dùng để nêu ra sự lựa chọn giữa hai (hay nhiều) khả năng, thường dùng trong câu hỏi lựa chọn."
+    ],
+    "usage": "Đứng giữa hai vế lựa chọn: A + 还是 + B? Nếu vế lựa chọn tự nó là một câu hỏi thì bắt buộc dùng 还是, không được dùng 或者.",
+    "collo": [
+      "喝咖啡还是喝茶",
+      "去还是不去",
+      "红的还是绿的"
+    ],
+    "ex_zh": "你要喝咖啡还是喝茶？",
+    "ex_py": "Nǐ yào hē kāfēi háishi hē chá?",
+    "ex_vn": "Bạn muốn uống cà phê hay uống trà?",
+    "exList": [
+      {
+        "zh": "你要喝咖啡还是喝茶？",
+        "py": "Nǐ yào hē kāfēi háishi hē chá?",
+        "vn": "Bạn muốn uống cà phê hay uống trà?"
+      },
+      {
+        "zh": "你周末在家看书还是出去运动？",
+        "py": "Nǐ zhōumò zài jiā kàn shū háishi chūqu yùndòng?",
+        "vn": "Cuối tuần bạn ở nhà đọc sách hay ra ngoài vận động?"
+      },
+      {
+        "zh": "周太太40岁还是50岁，我们不知道。",
+        "py": "Zhōu tàitai sìshí suì háishi wǔshí suì, wǒmen bù zhīdào.",
+        "vn": "Bà Chu 40 tuổi hay 50 tuổi, chúng tôi không biết."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "还",
+        "p": "hái",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "辶 (sước) bao → 不 (bất) trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "còn, vẫn; hay",
+        "tip": "Bộ 辶(đi) → ý nghĩa mở rộng \"còn quay lại/còn tiếp diễn\", dùng để nối các lựa chọn còn đang cân nhắc.",
+        "cf": "远 (yuǎn – \"xa\", cũng có bộ 辶\")",
+        "w": "还是 / 还有 / 还没"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cuối tuần bạn định đi leo núi hay ở nhà xem tivi? Nếu trời mưa thì ở nhà đi.",
+        "answer": "周末你打算去爬山还是在家看电视？如果下雨，就在家吧。",
+        "answerPy": "Zhōumò nǐ dǎsuàn qù páshān háishi zài jiā kàn diànshì? Rúguǒ xiàyǔ, jiù zài jiā ba.",
+        "note": "还是 dùng trong câu HỎI; câu kể thì dùng 或者.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy tôi từng thấy cái quần đó, nhưng không nhớ nó màu đỏ hay màu xanh.",
+        "answer": "那条裤子我虽然看过，但是不记得是红色还是绿色。",
+        "answerPy": "Nà tiáo kùzi wǒ suīrán kànguo, dànshì bú jìde shì hóngsè háishi lǜsè.",
+        "note": "一条裤子 — lượng từ 条 cho vật dài.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去还是不去",
+        "py": "qù háishi bú qù",
+        "vn": "đi hay không đi"
+      },
+      {
+        "zh": "喝茶还是喝咖啡",
+        "py": "hē chá háishi hē kāfēi",
+        "vn": "uống trà hay cà phê"
+      },
+      {
+        "zh": "红的还是绿的",
+        "py": "hóng de háishi lǜ de",
+        "vn": "cái đỏ hay cái xanh"
+      },
+      {
+        "zh": "你还是我",
+        "py": "nǐ háishi wǒ",
+        "vn": "bạn hay tôi"
+      },
+      {
+        "zh": "今天还是明天",
+        "py": "jīntiān háishi míngtiān",
+        "vn": "hôm nay hay ngày mai"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A 还是 B？",
+        "m": "A hay B? — chỉ dùng trong câu HỎI"
+      },
+      {
+        "s": "✗ 我喝茶还是咖啡。 → ✓ 我喝茶或者咖啡。",
+        "m": "Câu trần thuật dùng 或者"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "爬山",
+    "py": "pá shān",
+    "pos": "Động từ",
+    "vn": "leo núi",
+    "hv": "ba sơn",
+    "em": "⛰️",
+    "lesson": 1,
+    "explain": [
+      "Hoạt động leo lên núi, thường để tập thể dục hoặc ngắm cảnh."
+    ],
+    "usage": "Động từ ly hợp (V+O): 爬 (leo) + 山 (núi), có thể tách ra khi thêm bổ ngữ: 爬了三个小时的山.",
+    "collo": [
+      "去爬山",
+      "爬山的时候",
+      "喜欢爬山"
+    ],
+    "ex_zh": "我们明天要去爬山。",
+    "ex_py": "Wǒmen míngtiān yào qù páshān.",
+    "ex_vn": "Ngày mai chúng tôi định đi leo núi.",
+    "exList": [
+      {
+        "zh": "我们明天要去爬山。",
+        "py": "Wǒmen míngtiān yào qù páshān.",
+        "vn": "Ngày mai chúng tôi định đi leo núi."
+      },
+      {
+        "zh": "爬山的时候要小心点儿。",
+        "py": "Páshān de shíhou yào xiǎoxīn diǎnr.",
+        "vn": "Lúc leo núi phải cẩn thận một chút."
+      },
+      {
+        "zh": "小丽还没想好周末去爬山还是去看电影。",
+        "py": "Xiǎolì hái méi xiǎnghǎo zhōumò qù páshān háishi qù kàn diànyǐng.",
+        "vn": "Tiểu Lệ vẫn chưa nghĩ xong cuối tuần đi leo núi hay đi xem phim."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "爬",
+        "p": "pá",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "爪 (trảo) trái → 巴 (ba) phải",
+        "rad": "爪 (trảo – móng vuốt)",
+        "mean": "leo, bò",
+        "tip": "Bộ 爪(móng vuốt/tay bám) + 巴(bám chặt) → dùng tay chân BÁM để LEO lên.",
+        "cf": "巴 (bā – \"bám, mong chờ\")",
+        "w": "爬山 / 爬树 / 爬起来"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì thời tiết đẹp nên chúng tôi rủ nhau đi leo núi.",
+        "answer": "因为天气很好，所以我们一起去爬山。",
+        "answerPy": "Yīnwèi tiānqì hěn hǎo, suǒyǐ wǒmen yìqǐ qù páshān.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy chân tôi hơi đau nhưng tôi vẫn muốn đi leo núi.",
+        "answer": "虽然我的腿有点儿疼，但是我还是想去爬山。",
+        "answerPy": "Suīrán wǒ de tuǐ yǒudiǎnr téng, dànshì wǒ háishi xiǎng qù páshān.",
+        "note": "虽然……但是…… diễn tả sự tương phản (ôn lại 腿/疼 đã học ở Bài 2).",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去爬山",
+        "py": "qù pá shān",
+        "vn": "đi leo núi"
+      },
+      {
+        "zh": "喜欢爬山",
+        "py": "xǐhuan pá shān",
+        "vn": "thích leo núi"
+      },
+      {
+        "zh": "爬山的时候",
+        "py": "pá shān de shíhou",
+        "vn": "lúc leo núi"
+      },
+      {
+        "zh": "爬了一个小时山",
+        "py": "pá le yí gè xiǎoshí shān",
+        "vn": "leo núi một tiếng"
+      },
+      {
+        "zh": "一起爬山",
+        "py": "yìqǐ pá shān",
+        "vn": "cùng leo núi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "爬 + 了 + thời lượng + 山",
+        "m": "爬山 là từ ly hợp: 爬了一小时山 ✓"
+      },
+      {
+        "s": "去 + 爬山",
+        "m": "Đi leo núi"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "小心",
+    "py": "xiǎoxīn",
+    "pos": "Tính từ",
+    "vn": "cẩn thận",
+    "hv": "tiểu tâm",
+    "em": "⚠️",
+    "lesson": 1,
+    "explain": [
+      "Chú ý, thận trọng khi làm việc gì để tránh xảy ra chuyện không hay."
+    ],
+    "usage": "Có thể làm vị ngữ (要小心) hoặc phó từ đứng trước động từ (小心地 + V); thường dùng ở dạng mệnh lệnh 小心 + danh từ (小心车).",
+    "collo": [
+      "要小心",
+      "小心点儿",
+      "小心车"
+    ],
+    "ex_zh": "爬山的时候要小心点儿。",
+    "ex_py": "Páshān de shíhou yào xiǎoxīn diǎnr.",
+    "ex_vn": "Lúc leo núi phải cẩn thận một chút.",
+    "exList": [
+      {
+        "zh": "爬山的时候要小心点儿。",
+        "py": "Páshān de shíhou yào xiǎoxīn diǎnr.",
+        "vn": "Lúc leo núi phải cẩn thận một chút."
+      },
+      {
+        "zh": "过马路的时候要小心汽车。",
+        "py": "Guò mǎlù de shíhou yào xiǎoxīn qìchē.",
+        "vn": "Lúc qua đường phải cẩn thận xe cộ."
+      },
+      {
+        "zh": "这儿的路不好走，你小心点儿。",
+        "py": "Zhèr de lù bù hǎo zǒu, nǐ xiǎoxīn diǎnr.",
+        "vn": "Đường ở đây khó đi, bạn cẩn thận một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "心",
+        "p": "xīn",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 4,
+        "ord": "nét liền, hình trái tim",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "tim, lòng, tâm trí",
+        "tip": "Chữ tượng hình mô phỏng hình trái tim → nghĩa gốc TIM, mở rộng thành TÂM TRÍ, SUY NGHĨ.",
+        "cf": "必 (bì – \"ắt hẳn\", có nét giống 心\")",
+        "w": "小心 / 放心 / 开心"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời mưa đường trơn nên bạn lái xe nhớ cẩn thận hơn một chút.",
+        "answer": "因为下雨了路很滑，所以你开车要记得小心点儿。",
+        "answerPy": "Yīnwèi xiàyǔ le lù hěn huá, suǒyǐ nǐ kāichē yào jìde xiǎoxīn diǎnr.",
+        "note": "记得 + V — nhớ làm gì, dùng khi dặn dò.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không cẩn thận thì rất dễ bị cảm lạnh.",
+        "answer": "如果你不小心，就很容易感冒。",
+        "answerPy": "Rúguǒ nǐ bù xiǎoxīn, jiù hěn róngyì gǎnmào.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 容易 đã học ở Bài 2).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "要小心",
+        "py": "yào xiǎoxīn",
+        "vn": "phải cẩn thận"
+      },
+      {
+        "zh": "小心点儿",
+        "py": "xiǎoxīn diǎn ér",
+        "vn": "cẩn thận chút"
+      },
+      {
+        "zh": "小心车",
+        "py": "xiǎoxīn chē",
+        "vn": "coi chừng xe"
+      },
+      {
+        "zh": "小心一点儿",
+        "py": "xiǎoxīn yìdiǎnr",
+        "vn": "cẩn thận hơn chút"
+      },
+      {
+        "zh": "很小心",
+        "py": "hěn xiǎoxīn",
+        "vn": "rất cẩn thận"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "小心 + N",
+        "m": "Coi chừng cái gì: 小心车, 小心路滑"
+      },
+      {
+        "s": "小心点儿",
+        "m": "Cẩn thận một chút — lời dặn quen thuộc"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "条",
+    "py": "tiáo",
+    "pos": "Lượng từ",
+    "vn": "cái, chiếc (dùng cho vật dài)",
+    "hv": "điều",
+    "em": "👖",
+    "lesson": 2,
+    "explain": [
+      "Lượng từ dùng cho các vật có hình dạng dài như quần, đường, con sông, con cá."
+    ],
+    "usage": "Lượng từ, đứng giữa SỐ TỪ (hoặc chỉ thị từ 这/那) và DANH TỪ: [số từ/这/那] + 条 + [danh từ] (一条裤子, 这条路).",
+    "collo": [
+      "一条裤子",
+      "这条路",
+      "两条鱼"
+    ],
+    "ex_zh": "你觉得这条裤子怎么样？",
+    "ex_py": "Nǐ juéde zhè tiáo kùzi zěnmeyàng?",
+    "ex_vn": "Bạn thấy cái quần này thế nào?",
+    "exList": [
+      {
+        "zh": "你觉得这条裤子怎么样？",
+        "py": "Nǐ juéde zhè tiáo kùzi zěnmeyàng?",
+        "vn": "Bạn thấy cái quần này thế nào?"
+      },
+      {
+        "zh": "我记得你已经有两条这样的裤子了。",
+        "py": "Wǒ jìde nǐ yǐjīng yǒu liǎng tiáo zhèyàng de kùzi le.",
+        "vn": "Anh nhớ là em đã có hai cái quần kiểu này rồi."
+      },
+      {
+        "zh": "这条鱼很新鲜。",
+        "py": "Zhè tiáo yú hěn xīnxiān.",
+        "vn": "Con cá này rất tươi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "条",
+        "p": "tiáo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "夂 (truy) trên → 木 (mộc) dưới",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "cành cây; lượng từ vật dài",
+        "tip": "Vốn chỉ CÀNH CÂY dài mảnh → mở rộng thành lượng từ cho mọi vật DÀI như quần, đường, con sông.",
+        "cf": "各 (gè – hình dáng trên gần giống)",
+        "w": "一条裤子 / 一条路 / 一条鱼"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cái quần này hơi chật nên tôi định đổi một cái khác.",
+        "answer": "因为这条裤子有点儿小，所以我打算换一条。",
+        "answerPy": "Yīnwèi zhè tiáo kùzi yǒudiǎnr xiǎo, suǒyǐ wǒ dǎsuàn huàn yì tiáo.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Con đường này tuy nhỏ nhưng đi rất nhanh.",
+        "answer": "这条路虽然小，但是走得很快。",
+        "answerPy": "Zhè tiáo lù suīrán xiǎo, dànshì zǒu de hěn kuài.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一条裤子",
+        "py": "yì tiáo kùzi",
+        "vn": "một cái quần"
+      },
+      {
+        "zh": "一条路",
+        "py": "yì tiáo lù",
+        "vn": "một con đường"
+      },
+      {
+        "zh": "两条鱼",
+        "py": "liǎng tiáo yú",
+        "vn": "hai con cá"
+      },
+      {
+        "zh": "一条裙子",
+        "py": "yì tiáo qúnzi",
+        "vn": "một cái váy"
+      },
+      {
+        "zh": "那条河",
+        "py": "nà tiáo hé",
+        "vn": "con sông đó"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 条 + vật dài",
+        "m": "Lượng từ 条: 裤子, 路, 鱼, 裙子, 河"
+      },
+      {
+        "s": "✗ 一个裤子 → ✓ 一条裤子"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "裤子",
+    "py": "kùzi",
+    "pos": "Danh từ",
+    "vn": "quần",
+    "hv": "khố tử",
+    "em": "👖",
+    "lesson": 2,
+    "explain": [
+      "Trang phục mặc ở phần dưới cơ thể, che từ thắt lưng đến chân."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 条: 一条裤子. Thường xuất hiện cùng động từ 穿 (mặc), 买 (mua), 洗 (giặt).",
+    "collo": [
+      "穿裤子",
+      "买裤子",
+      "洗裤子"
+    ],
+    "ex_zh": "那我们再看看别的。",
+    "ex_py": "Nà wǒmen zài kànkan biéde.",
+    "ex_vn": "Vậy chúng ta xem thêm cái khác nữa.",
+    "exList": [
+      {
+        "zh": "我觉得大了一点儿。",
+        "py": "Wǒ juéde dàle yìdiǎnr.",
+        "vn": "Tôi thấy hơi to một chút."
+      },
+      {
+        "zh": "这件衬衫怎么样？",
+        "py": "Zhè jiàn chènshān zěnmeyàng?",
+        "vn": "Cái áo sơ mi này thế nào?"
+      },
+      {
+        "zh": "你新给我买的那条裤子放哪儿了？",
+        "py": "Nǐ xīn gěi wǒ mǎi de nà tiáo kùzi fàng nǎr le?",
+        "vn": "Cái quần mới bạn mua cho tôi để ở đâu rồi?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "裤",
+        "p": "kù",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "衤 (y) trái → 库 (khố) phải",
+        "rad": "衤 (y – quần áo)",
+        "mean": "quần",
+        "tip": "Bộ 衤(quần áo, biến thể của 衣) + 库(kho) → trang phục QUẦN, mặc phần dưới cơ thể.",
+        "cf": "库 (kù – \"kho\", không có bộ 衤\")",
+        "w": "裤子 / 一条裤子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc quần này không những tôi mua ở trung tâm thương mại, mà giá cũng không đắt lắm.",
+        "answer": "这条裤子不但是我在商场买的，而且也不太贵。",
+        "answerPy": "Zhè tiáo kùzi búdàn shì wǒ zài shāngchǎng mǎi de, érqiě yě bú tài guì.",
+        "note": "是……的 — nhấn nơi mua, thời gian mua.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu quần bẩn thì bạn nên giặt ngay hôm nay.",
+        "answer": "如果裤子脏了，你今天就应该洗一下。",
+        "answerPy": "Rúguǒ kùzi zāng le, nǐ jīntiān jiù yīnggāi xǐ yíxià.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一条裤子",
+        "py": "yì tiáo kùzi",
+        "vn": "một cái quần"
+      },
+      {
+        "zh": "穿裤子",
+        "py": "chuān kùzi",
+        "vn": "mặc quần"
+      },
+      {
+        "zh": "买裤子",
+        "py": "mǎi kùzi",
+        "vn": "mua quần"
+      },
+      {
+        "zh": "洗裤子",
+        "py": "xǐ kùzi",
+        "vn": "giặt quần"
+      },
+      {
+        "zh": "新裤子",
+        "py": "xīn kùzi",
+        "vn": "quần mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "穿 + 裤子",
+        "m": "Mặc quần — 穿 dùng cho quần áo, giày"
+      },
+      {
+        "s": "一 + 条 + 裤子",
+        "m": "Lượng từ 条"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "记得",
+    "py": "jìde",
+    "pos": "Động từ",
+    "vn": "nhớ, còn nhớ",
+    "hv": "ký đắc",
+    "em": "🧠",
+    "lesson": 2,
+    "explain": [
+      "Còn lưu giữ trong trí nhớ, không quên."
+    ],
+    "usage": "Động từ, phủ định là 不记得 (không nhớ); có thể theo sau bởi một mệnh đề: 记得 + [sự việc].",
+    "collo": [
+      "不记得",
+      "记得带钱",
+      "还记得吗"
+    ],
+    "ex_zh": "我记得你已经有两条这样的裤子了。",
+    "ex_py": "Wǒ jìde nǐ yǐjīng yǒu liǎng tiáo zhèyàng de kùzi le.",
+    "ex_vn": "Anh nhớ là em đã có hai cái quần kiểu này rồi.",
+    "exList": [
+      {
+        "zh": "我记得你已经有两条这样的裤子了。",
+        "py": "Wǒ jìde nǐ yǐjīng yǒu liǎng tiáo zhèyàng de kùzi le.",
+        "vn": "Anh nhớ là em đã có hai cái quần kiểu này rồi."
+      },
+      {
+        "zh": "你还记得我吗？",
+        "py": "Nǐ hái jìde wǒ ma?",
+        "vn": "Bạn còn nhớ tôi không?"
+      },
+      {
+        "zh": "他的生日是10月还是11月，我不记得了。",
+        "py": "Tā de shēngrì shì shíyuè háishi shíyīyuè, wǒ bù jìde le.",
+        "vn": "Sinh nhật anh ấy là tháng 10 hay tháng 11, tôi không nhớ nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "记",
+        "p": "jì",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "讠 (ngôn) trái → 己 (kỷ) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "ghi nhớ, ghi chép",
+        "tip": "Bộ 讠(lời nói) + 己(bản thân) → tự mình GHI LẠI lời nói/sự việc trong đầu = NHỚ.",
+        "cf": "己 (jǐ – \"bản thân\", không có bộ 讠\")",
+        "w": "记得 / 忘记 / 记住"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi không còn nhớ mật khẩu nên tôi phải hỏi lại bạn.",
+        "answer": "因为我不记得密码了，所以我得再问你一次。",
+        "answerPy": "Yīnwèi wǒ bú jìde mìmǎ le, suǒyǐ wǒ děi zài wèn nǐ yí cì.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn còn nhớ địa chỉ đó thì hãy nói cho tôi biết.",
+        "answer": "如果你还记得那个地址，就告诉我吧。",
+        "answerPy": "Rúguǒ nǐ hái jìde nàge dìzhǐ, jiù gàosu wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "不记得",
+        "py": "bú jìde",
+        "vn": "không nhớ"
+      },
+      {
+        "zh": "记得带钱",
+        "py": "jìde dài qián",
+        "vn": "nhớ mang tiền"
+      },
+      {
+        "zh": "还记得吗",
+        "py": "hái jìde ma",
+        "vn": "còn nhớ không"
+      },
+      {
+        "zh": "记得很清楚",
+        "py": "jìde hěn qīngchu",
+        "vn": "nhớ rất rõ"
+      },
+      {
+        "zh": "记得他",
+        "py": "jìde tā",
+        "vn": "nhớ anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "记得 + V",
+        "m": "Nhớ làm gì (lời dặn)"
+      },
+      {
+        "s": "记得 ↔ 忘了",
+        "m": "Nhớ ↔ quên"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "衬衫",
+    "py": "chènshān",
+    "pos": "Danh từ",
+    "vn": "áo sơ mi",
+    "hv": "sấn sam",
+    "em": "👔",
+    "lesson": 2,
+    "explain": [
+      "Loại áo có cổ và cúc cài phía trước, thường mặc đi làm/dự tiệc."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 件: 一件衬衫.",
+    "collo": [
+      "一件衬衫",
+      "穿衬衫",
+      "洗衬衫"
+    ],
+    "ex_zh": "这件衬衫怎么样？",
+    "ex_py": "Zhè jiàn chènshān zěnmeyàng?",
+    "ex_vn": "Cái áo sơ mi này thế nào?",
+    "exList": [
+      {
+        "zh": "这件衬衫怎么样？",
+        "py": "Zhè jiàn chènshān zěnmeyàng?",
+        "vn": "Cái áo sơ mi này thế nào?"
+      },
+      {
+        "zh": "这上面写着320元。",
+        "py": "Zhè shàngmian xiězhe sānbǎi èrshí yuán.",
+        "vn": "Trên đây ghi 320 đồng."
+      },
+      {
+        "zh": "我想买件衬衫。",
+        "py": "Wǒ xiǎng mǎi jiàn chènshān.",
+        "vn": "Tôi muốn mua một cái áo sơ mi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "衫",
+        "p": "shān",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "衤 (y) trái → 彡 (sam) phải",
+        "rad": "衤 (y – quần áo)",
+        "mean": "áo",
+        "tip": "Bộ 衤(quần áo) + 彡(hoa văn, đường nét) → loại ÁO có đường may/hoa văn, khái quát nghĩa ÁO.",
+        "cf": "形 (xíng – \"hình dạng\", cũng có 彡\")",
+        "w": "衬衫 / 一件衬衫"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi mặc cái áo sơ mi này xong là ra ngoài ngay.",
+        "answer": "我一穿上这件衬衫，就出去了。",
+        "answerPy": "Wǒ yì chuān shang zhè jiàn chènshān, jiù chūqu le.",
+        "note": "一件衬衫 (áo) khác 一条裤子 (quần) — hai lượng từ khác nhau.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy áo sơ mi này không rẻ nhưng chất lượng rất tốt.",
+        "answer": "虽然这件衬衫不便宜，但是质量很好。",
+        "answerPy": "Suīrán zhè jiàn chènshān bù piányi, dànshì zhìliàng hěn hǎo.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一件衬衫",
+        "py": "yí jiàn chènshān",
+        "vn": "một cái áo sơ mi"
+      },
+      {
+        "zh": "穿衬衫",
+        "py": "chuān chènshān",
+        "vn": "mặc áo sơ mi"
+      },
+      {
+        "zh": "白衬衫",
+        "py": "bái chènshān",
+        "vn": "áo sơ mi trắng"
+      },
+      {
+        "zh": "洗衬衫",
+        "py": "xǐ chènshān",
+        "vn": "giặt áo sơ mi"
+      },
+      {
+        "zh": "买件衬衫",
+        "py": "mǎi jiàn chènshān",
+        "vn": "mua cái áo sơ mi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 件 + 衬衫",
+        "m": "Lượng từ 件 cho áo, sự việc"
+      },
+      {
+        "s": "件 (áo) ≠ 条 (quần) — hai loại quần áo, hai lượng từ"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "元",
+    "py": "yuán",
+    "pos": "Lượng từ",
+    "vn": "đồng (đơn vị tiền tệ)",
+    "hv": "nguyên",
+    "em": "💴",
+    "lesson": 2,
+    "explain": [
+      "Đơn vị tiền tệ của Trung Quốc (nhân dân tệ)."
+    ],
+    "usage": "Lượng từ, đứng ngay sau SỐ TỪ: [số từ] + 元 (320元). Trong khẩu ngữ thường nói 块 thay cho 元.",
+    "collo": [
+      "320元",
+      "多少元",
+      "一元"
+    ],
+    "ex_zh": "这上面写着320元。",
+    "ex_py": "Zhè shàngmian xiězhe sānbǎi èrshí yuán.",
+    "ex_vn": "Trên đây ghi 320 đồng.",
+    "exList": [
+      {
+        "zh": "这上面写着320元。",
+        "py": "Zhè shàngmian xiězhe sānbǎi èrshí yuán.",
+        "vn": "Trên đây ghi 320 đồng."
+      },
+      {
+        "zh": "还不错，多少钱？",
+        "py": "Hái búcuò, duōshao qián?",
+        "vn": "Cũng được đấy, bao nhiêu tiền?"
+      },
+      {
+        "zh": "买一件。",
+        "py": "Mǎi yí jiàn.",
+        "vn": "Mua một cái."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "元",
+        "p": "yuán",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "二 trên → 儿 dưới",
+        "rad": "儿 (nhân đi)",
+        "mean": "đầu tiên; đồng (tiền)",
+        "tip": "Chữ cổ chỉ CÁI ĐẦU, phần khởi đầu → mở rộng nghĩa \"đơn vị cơ bản\" và dùng làm đơn vị TIỀN TỆ.",
+        "cf": "无 (wú – \"không có\")",
+        "w": "元 / 一百元 / 多少元"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái quần này tuy giá 320 đồng hơi đắt, nhưng chất lượng rất tốt.",
+        "answer": "这条裤子虽然要320元有点儿贵，但是很好。",
+        "answerPy": "Zhè tiáo kùzi suīrán yào 320 yuán yǒudiǎnr guì, dànshì hěn hǎo.",
+        "note": "元 dùng khi viết, 块 dùng khi nói — cùng một đơn vị.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu áo sơ mi này chỉ 100 đồng thì tôi sẽ mua hai cái.",
+        "answer": "如果这件衬衫只要100元，我就买两件。",
+        "answerPy": "Rúguǒ zhè jiàn chènshān zhǐ yào yìbǎi yuán, wǒ jiù mǎi liǎng jiàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "320元",
+        "py": "yuán",
+        "vn": "320 đồng"
+      },
+      {
+        "zh": "多少元",
+        "py": "duōshao yuán",
+        "vn": "bao nhiêu đồng"
+      },
+      {
+        "zh": "一元",
+        "py": "yì yuán",
+        "vn": "một đồng"
+      },
+      {
+        "zh": "几百元",
+        "py": "jǐ bǎi yuán",
+        "vn": "mấy trăm đồng"
+      },
+      {
+        "zh": "贵了100元",
+        "py": "guì le yuán",
+        "vn": "đắt hơn 100 đồng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 元",
+        "m": "Đơn vị tiền — 元 dùng khi viết"
+      },
+      {
+        "s": "元 (viết) ≈ 块 (nói)",
+        "m": "Cùng một đơn vị, khác ngữ cảnh"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "新鲜",
+    "py": "xīnxiān",
+    "pos": "Tính từ",
+    "vn": "tươi",
+    "hv": "tân tiên",
+    "em": "🍎",
+    "lesson": 3,
+    "explain": [
+      "Vừa mới, chưa để lâu, còn giữ được chất lượng ban đầu (thường dùng cho đồ ăn)."
+    ],
+    "usage": "Tính từ, làm vị ngữ với 很/真: 很新鲜, hoặc làm định ngữ: 新鲜的鱼.",
+    "collo": [
+      "很新鲜",
+      "新鲜的鱼",
+      "不新鲜"
+    ],
+    "ex_zh": "这些水果真新鲜，我们买西瓜还是苹果？",
+    "ex_py": "Zhèxiē shuǐguǒ zhēn xīnxiān, wǒmen mǎi xīguā háishi píngguǒ?",
+    "ex_vn": "Những trái cây này thật tươi, chúng ta mua dưa hấu hay táo?",
+    "exList": [
+      {
+        "zh": "这些水果真新鲜，我们买西瓜还是苹果？",
+        "py": "Zhèxiē shuǐguǒ zhēn xīnxiān, wǒmen mǎi xīguā háishi píngguǒ?",
+        "vn": "Những trái cây này thật tươi, chúng ta mua dưa hấu hay táo?"
+      },
+      {
+        "zh": "这条鱼很新鲜。",
+        "py": "Zhè tiáo yú hěn xīnxiān.",
+        "vn": "Con cá này rất tươi."
+      },
+      {
+        "zh": "今天的鲜奶不新鲜了。",
+        "py": "Jīntiān de xiānnǎi bù xīnxiān le.",
+        "vn": "Sữa tươi hôm nay không còn tươi nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "鲜",
+        "p": "xiān",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "鱼 (ngư) trái → 羊 (dương) phải",
+        "rad": "鱼 (ngư – cá)",
+        "mean": "tươi",
+        "tip": "鱼(cá) + 羊(dê) — hai loại thịt ngon nhất thời cổ → TƯƠI, NGON.",
+        "cf": "鱼 (yú – \"cá\", chỉ nửa trái của chữ\")",
+        "w": "新鲜 / 鲜奶 / 鲜花"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trái cây này không tươi nên tôi không mua nữa.",
+        "answer": "因为这些水果不新鲜，所以我不买了。",
+        "answerPy": "Yīnwèi zhèxiē shuǐguǒ bù xīnxiān, suǒyǐ wǒ bù mǎi le.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần cá còn tươi thì món này chắc chắn sẽ rất ngon.",
+        "answer": "只要鱼是新鲜的，这道菜就一定很好吃。",
+        "answerPy": "Zhǐyào yú shì xīnxiān de, zhè dào cài jiù yídìng hěn hǎochī.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很新鲜",
+        "py": "hěn xīnxiān",
+        "vn": "rất tươi"
+      },
+      {
+        "zh": "新鲜的鱼",
+        "py": "xīnxiān de yú",
+        "vn": "cá tươi"
+      },
+      {
+        "zh": "不新鲜",
+        "py": "bù xīnxiān",
+        "vn": "không tươi"
+      },
+      {
+        "zh": "新鲜水果",
+        "py": "xīnxiān shuǐguǒ",
+        "vn": "trái cây tươi"
+      },
+      {
+        "zh": "空气新鲜",
+        "py": "kōngqì xīnxiān",
+        "vn": "không khí trong lành"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "新鲜的 + N",
+        "m": "… tươi: 新鲜的鱼, 新鲜水果"
+      },
+      {
+        "s": "空气 + 新鲜",
+        "m": "Không khí trong lành — nghĩa mở rộng"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "甜",
+    "py": "tián",
+    "pos": "Tính từ",
+    "vn": "ngọt",
+    "hv": "điềm",
+    "em": "🍬",
+    "lesson": 3,
+    "explain": [
+      "Có vị ngọt như đường, mật."
+    ],
+    "usage": "Tính từ, làm vị ngữ với 很/不: 很甜, 不甜; thường xuất hiện trong câu điều kiện quảng cáo \"不甜不要钱\".",
+    "collo": [
+      "很甜",
+      "不甜",
+      "有点儿甜"
+    ],
+    "ex_zh": "西瓜吧。你看，这上面写着\"西瓜不甜不要钱\"。",
+    "ex_py": "Xīguā ba. Nǐ kàn, zhè shàngmian xiězhe \"xīguā bù tián bú yào qián\".",
+    "ex_vn": "Dưa hấu đi. Bạn xem, trên đây ghi \"dưa hấu không ngọt không lấy tiền\".",
+    "exList": [
+      {
+        "zh": "西瓜吧。你看，这上面写着\"西瓜不甜不要钱\"。",
+        "py": "Xīguā ba. Nǐ kàn, zhè shàngmian xiězhe \"xīguā bù tián bú yào qián\".",
+        "vn": "Dưa hấu đi. Bạn xem, trên đây ghi \"dưa hấu không ngọt không lấy tiền\"."
+      },
+      {
+        "zh": "今天买的冷饮很甜。",
+        "py": "Jīntiān mǎi de lěngyǐn hěn tián.",
+        "vn": "Đồ uống lạnh mua hôm nay rất ngọt."
+      },
+      {
+        "zh": "我喜欢喝甜的花茶。",
+        "py": "Wǒ xǐhuan hē tián de huāchá.",
+        "vn": "Tôi thích uống trà hoa ngọt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "甜",
+        "p": "tián",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "舌 (thiệt) trái → 甘 (cam) phải",
+        "rad": "舌 (thiệt – cái lưỡi)",
+        "mean": "ngọt",
+        "tip": "舌(lưỡi) + 甘(ngọt) → dùng LƯỠI cảm nhận vị NGỌT.",
+        "cf": "甘 (gān – \"ngọt, cam tâm\", không có bộ 舌\")",
+        "w": "很甜 / 甜茶 / 甜点"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đồ uống này ngọt quá nên tôi không muốn uống hết.",
+        "answer": "这杯饮料太甜了，所以我不想喝完。",
+        "answerPy": "Zhè bēi yǐnliào tài tián le, suǒyǐ wǒ bù xiǎng hē wán.",
+        "note": "因为……所以…… hoặc câu chỉ dùng 所以 khi lý do đã rõ.",
+        "pair": "……，所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu dưa hấu không ngọt thì cửa hàng sẽ không lấy tiền.",
+        "answer": "如果西瓜不甜，商店就不要钱。",
+        "answerPy": "Rúguǒ xīguā bù tián, shāngdiàn jiù bú yào qián.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很甜",
+        "py": "hěn tián",
+        "vn": "rất ngọt"
+      },
+      {
+        "zh": "不甜",
+        "py": "bù tián",
+        "vn": "không ngọt"
+      },
+      {
+        "zh": "有点儿甜",
+        "py": "yǒudiǎnr tián",
+        "vn": "hơi ngọt"
+      },
+      {
+        "zh": "甜的东西",
+        "py": "tián de dōngxi",
+        "vn": "đồ ngọt"
+      },
+      {
+        "zh": "西瓜很甜",
+        "py": "xīguā hěn tián",
+        "vn": "dưa hấu rất ngọt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 + 甜",
+        "m": "Cái gì đó rất ngọt"
+      },
+      {
+        "s": "甜 · 酸 · 苦 · 辣 — bốn vị cơ bản"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "只",
+    "py": "zhǐ",
+    "pos": "Phó từ",
+    "vn": "chỉ",
+    "hv": "chỉ",
+    "em": "☝️",
+    "lesson": 3,
+    "explain": [
+      "Giới hạn phạm vi, số lượng hoặc phạm vi hành động ở mức duy nhất được nêu."
+    ],
+    "usage": "Phó từ, đứng TRƯỚC động từ/tính từ mà nó bổ nghĩa: 只 + V/Adj (只吃水果, 只要200元).",
+    "collo": [
+      "只吃水果",
+      "只要",
+      "只学汉语"
+    ],
+    "ex_zh": "今天晚上只吃水果不吃饭！",
+    "ex_py": "Jīntiān wǎnshang zhǐ chī shuǐguǒ bù chī fàn!",
+    "ex_vn": "Tối nay chỉ ăn trái cây không ăn cơm!",
+    "exList": [
+      {
+        "zh": "今天晚上只吃水果不吃饭！",
+        "py": "Jīntiān wǎnshang zhǐ chī shuǐguǒ bù chī fàn!",
+        "vn": "Tối nay chỉ ăn trái cây không ăn cơm!"
+      },
+      {
+        "zh": "我只学汉语，不学英语。",
+        "py": "Wǒ zhǐ xué Hànyǔ, bù xué Yīngyǔ.",
+        "vn": "Tôi chỉ học tiếng Trung, không học tiếng Anh."
+      },
+      {
+        "zh": "这儿只卖书，不卖水。",
+        "py": "Zhèr zhǐ mài shū, bú mài shuǐ.",
+        "vn": "Ở đây chỉ bán sách, không bán nước."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "只",
+        "p": "zhǐ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 5,
+        "ord": "口 trên → 八 dưới",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "chỉ; con (lượng từ)",
+        "tip": "Chữ tượng hình cổ chỉ con chim vừa bay ra, nghĩa mở rộng thành \"duy nhất, chỉ\".",
+        "cf": "尺 (chǐ – \"thước\", hình dạng gần giống\")",
+        "w": "只吃 / 只要 / 只有"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cửa hàng chỉ còn táo nên chúng tôi chỉ mua táo.",
+        "answer": "因为商店只有苹果了，所以我们只买了苹果。",
+        "answerPy": "Yīnwèi shāngdiàn zhǐ yǒu píngguǒ le, suǒyǐ wǒmen zhǐ mǎile píngguǒ.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn chỉ có 100 đồng thì không đủ mua cái quần này.",
+        "answer": "如果你只有100元，就不够买这条裤子。",
+        "answerPy": "Rúguǒ nǐ zhǐ yǒu yìbǎi yuán, jiù bú gòu mǎi zhè tiáo kùzi.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "只吃水果",
+        "py": "zhī chī shuǐguǒ",
+        "vn": "chỉ ăn trái cây"
+      },
+      {
+        "zh": "只有一个",
+        "py": "zhǐyǒu yí gè",
+        "vn": "chỉ có một cái"
+      },
+      {
+        "zh": "只学汉语",
+        "py": "zhī xué Hànyǔ",
+        "vn": "chỉ học tiếng Trung"
+      },
+      {
+        "zh": "只要一杯",
+        "py": "zhǐyào yì bēi",
+        "vn": "chỉ lấy một cốc"
+      },
+      {
+        "zh": "只想休息",
+        "py": "zhī xiǎng xiūxi",
+        "vn": "chỉ muốn nghỉ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "只 + V",
+        "m": "Chỉ làm gì — 只 đứng trước động từ"
+      },
+      {
+        "s": "✗ 我买只一个 → ✓ 我只买一个"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "放",
+    "py": "fàng",
+    "pos": "Động từ",
+    "vn": "đặt, để",
+    "hv": "phóng",
+    "em": "📥",
+    "lesson": 4,
+    "explain": [
+      "Đặt một vật vào một vị trí nào đó."
+    ],
+    "usage": "Động từ, thường đi cùng trợ từ 着 trong câu tồn tại: [nơi chốn] + 放着 + [vật] (桌子上放着很多饮料).",
+    "collo": [
+      "放在桌子上",
+      "放着",
+      "没放着"
+    ],
+    "ex_zh": "桌子上放着很多饮料，你喝什么？",
+    "ex_py": "Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?",
+    "ex_vn": "Trên bàn đặt rất nhiều đồ uống, bạn uống gì?",
+    "exList": [
+      {
+        "zh": "桌子上放着很多饮料，你喝什么？",
+        "py": "Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?",
+        "vn": "Trên bàn đặt rất nhiều đồ uống, bạn uống gì?"
+      },
+      {
+        "zh": "我的手机放哪儿了？我怎么不记得了？",
+        "py": "Wǒ de shǒujī fàng nǎr le? Wǒ zěnme bù jìde le?",
+        "vn": "Điện thoại của tôi để đâu rồi? Sao tôi không nhớ nữa?"
+      },
+      {
+        "zh": "桌子上面放着一杯咖啡，是你的吗？",
+        "py": "Zhuōzi shàngmian fàngzhe yì bēi kāfēi, shì nǐ de ma?",
+        "vn": "Trên bàn có để một ly cà phê, có phải của bạn không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "放",
+        "p": "fàng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "方 (phương) trái → 攵 (phốc) phải",
+        "rad": "攵 (phốc – gõ nhẹ)",
+        "mean": "đặt, để; thả",
+        "tip": "方(phương hướng) + 攵(tác động bằng tay) → dùng tay đưa vật theo một hướng rồi ĐẶT xuống.",
+        "cf": "方 (fāng – \"phương hướng\", không có bộ 攵\")",
+        "w": "放着 / 放在 / 放心"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trên bàn để rất nhiều đồ uống nên khách ai cũng vui.",
+        "answer": "因为桌子上放着很多饮料，所以客人都很高兴。",
+        "answerPy": "Yīnwèi zhuōzi shang fàngzhe hěn duō yǐnliào, suǒyǐ kèrén dōu hěn gāoxìng.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn nhớ mình để chìa khóa ở đâu thì nói cho tôi biết.",
+        "answer": "如果你记得钥匙放在哪儿了，就告诉我吧。",
+        "answerPy": "Rúguǒ nǐ jìde yàoshi fàng zài nǎr le, jiù gàosu wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 记得 vừa học).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "放在桌子上",
+        "py": "fàng zài zhuōzi shàng",
+        "vn": "để trên bàn"
+      },
+      {
+        "zh": "放好",
+        "py": "fàng hǎo",
+        "vn": "để cho ngay ngắn"
+      },
+      {
+        "zh": "放着",
+        "py": "fàng zhe",
+        "vn": "đang để đó"
+      },
+      {
+        "zh": "放进包里",
+        "py": "fàng jìn bāo li",
+        "vn": "cho vào túi"
+      },
+      {
+        "zh": "别乱放",
+        "py": "bié luàn fàng",
+        "vn": "đừng để bừa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 放在 + nơi chốn + 上 / 里",
+        "m": "Đặt cái gì ở đâu"
+      },
+      {
+        "s": "放着",
+        "m": "Đang để đó — 着 chỉ trạng thái kéo dài"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "饮料",
+    "py": "yǐnliào",
+    "pos": "Danh từ",
+    "vn": "đồ uống, thức uống",
+    "hv": "ẩm liệu",
+    "em": "🥤",
+    "lesson": 4,
+    "explain": [
+      "Chất lỏng dùng để uống nói chung (nước ngọt, trà, cà phê...)."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 杯 (ly) hoặc 瓶 (chai): 一杯饮料, 一瓶饮料.",
+    "collo": [
+      "喝饮料",
+      "买饮料",
+      "水果饮料"
+    ],
+    "ex_zh": "桌子上放着很多饮料，你喝什么？",
+    "ex_py": "Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?",
+    "ex_vn": "Trên bàn đặt rất nhiều đồ uống, bạn uống gì?",
+    "exList": [
+      {
+        "zh": "桌子上放着很多饮料，你喝什么？",
+        "py": "Zhuōzi shang fàngzhe hěn duō yǐnliào, nǐ hē shénme?",
+        "vn": "Trên bàn đặt rất nhiều đồ uống, bạn uống gì?"
+      },
+      {
+        "zh": "那不是绿茶，是水果饮料。",
+        "py": "Nà bú shì lǜchá, shì shuǐguǒ yǐnliào.",
+        "vn": "Đó không phải trà xanh, đó là nước ép trái cây."
+      },
+      {
+        "zh": "桌子上的饮料给你吧。",
+        "py": "Zhuōzi shang de yǐnliào gěi nǐ ba.",
+        "vn": "Đồ uống trên bàn cho bạn đấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "饮",
+        "p": "yǐn",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "饣 (thực) trái → 欠 (khiếm) phải",
+        "rad": "饣 (thực – ăn uống)",
+        "mean": "uống",
+        "tip": "Bộ 饣(ăn uống) + 欠(há miệng) → há miệng để UỐNG.",
+        "cf": "吹 (chuī – \"thổi\", cũng có 欠\")",
+        "w": "饮料 / 喝饮料"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời nóng nên mọi người đều muốn uống đồ uống lạnh.",
+        "answer": "因为天气很热，所以大家都想喝冷饮料。",
+        "answerPy": "Yīnwèi tiānqì hěn rè, suǒyǐ dàjiā dōu xiǎng hē lěng yǐnliào.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu đồ uống này quá ngọt thì bạn đừng uống hết.",
+        "answer": "如果这杯饮料太甜，你就别喝完。",
+        "answerPy": "Rúguǒ zhè bēi yǐnliào tài tián, nǐ jiù bié hē wán.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 甜 vừa học).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喝饮料",
+        "py": "hē yǐnliào",
+        "vn": "uống nước"
+      },
+      {
+        "zh": "买饮料",
+        "py": "mǎi yǐnliào",
+        "vn": "mua đồ uống"
+      },
+      {
+        "zh": "一瓶饮料",
+        "py": "yì píng yǐnliào",
+        "vn": "một chai nước"
+      },
+      {
+        "zh": "水果饮料",
+        "py": "shuǐguǒ yǐnliào",
+        "vn": "nước trái cây"
+      },
+      {
+        "zh": "冷饮料",
+        "py": "lěng yǐnliào",
+        "vn": "đồ uống lạnh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "喝 + 饮料",
+        "m": "Uống đồ uống"
+      },
+      {
+        "s": "饮 + 料",
+        "m": "Thứ (料) để uống (饮)"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "或者",
+    "py": "huòzhě",
+    "pos": "Liên từ",
+    "vn": "hoặc",
+    "hv": "hoặc giả",
+    "em": "🔁",
+    "lesson": 4,
+    "explain": [
+      "Dùng để nêu ra sự lựa chọn giữa hai (hay nhiều) khả năng, thường dùng trong câu trần thuật."
+    ],
+    "usage": "Đứng giữa hai vế lựa chọn trong câu KHẲNG ĐỊNH (không phải câu hỏi): A + 或者 + B, đều được/đều có thể.",
+    "collo": [
+      "茶或者咖啡",
+      "或者工作累了",
+      "看书或者听音乐"
+    ],
+    "ex_zh": "茶或者咖啡都可以。",
+    "ex_py": "Chá huòzhě kāfēi dōu kěyǐ.",
+    "ex_vn": "Trà hoặc cà phê đều được.",
+    "exList": [
+      {
+        "zh": "茶或者咖啡都可以。",
+        "py": "Chá huòzhě kāfēi dōu kěyǐ.",
+        "vn": "Trà hoặc cà phê đều được."
+      },
+      {
+        "zh": "今天晚上吃米饭或者面条都可以。",
+        "py": "Jīntiān wǎnshang chī mǐfàn huòzhě miàntiáo dōu kěyǐ.",
+        "vn": "Tối nay ăn cơm hoặc mì đều được."
+      },
+      {
+        "zh": "天冷了或者工作累了的时候，喝杯热茶会很舒服。",
+        "py": "Tiān lěngle huòzhě gōngzuò lèile de shíhou, hē bēi rè chá huì hěn shūfu.",
+        "vn": "Khi trời lạnh hoặc làm việc mệt, uống ly trà nóng sẽ rất dễ chịu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "或",
+        "p": "huò",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 8,
+        "ord": "囗 bao ngoài → 戈+一 trong",
+        "rad": "戈 (qua – vũ khí)",
+        "mean": "hoặc, có thể",
+        "tip": "Hình vẽ cổ: dùng vũ khí 戈 bảo vệ vùng đất 囗 → mở rộng nghĩa \"có lẽ, hoặc\" (chưa chắc chắn).",
+        "cf": "国 (guó – \"quốc gia\", cùng gốc chữ 或\")",
+        "w": "或者 / 也许"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn mặc áo sơ mi hoặc mặc quần đều được, chỉ cần bạn thấy thoải mái là được.",
+        "answer": "你穿衬衫或者穿裤子都可以，只要你觉得舒服就行。",
+        "answerPy": "Nǐ chuān chènshān huòzhě chuān kùzi dōu kěyǐ, zhǐyào nǐ juéde shūfu jiù xíng.",
+        "note": "或者 dùng trong câu kể; 还是 dùng trong câu hỏi.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn uống trà hoặc cà phê thì sẽ tỉnh táo hơn.",
+        "answer": "只要你喝茶或者喝咖啡，就会更精神。",
+        "answerPy": "Zhǐyào nǐ hē chá huòzhě hē kāfēi, jiù huì gèng jīngshen.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "茶或者咖啡",
+        "py": "chá huòzhě kāfēi",
+        "vn": "trà hoặc cà phê"
+      },
+      {
+        "zh": "看书或者听音乐",
+        "py": "kàn shū huòzhě tīng yīnyuè",
+        "vn": "đọc sách hoặc nghe nhạc"
+      },
+      {
+        "zh": "今天或者明天",
+        "py": "jīntiān huòzhě míngtiān",
+        "vn": "hôm nay hoặc ngày mai"
+      },
+      {
+        "zh": "或者你来",
+        "py": "huòzhě nǐ lái",
+        "vn": "hoặc là bạn đến"
+      },
+      {
+        "zh": "我或者他",
+        "py": "wǒ huòzhě tā",
+        "vn": "tôi hoặc anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A 或者 B",
+        "m": "A hoặc B — dùng trong câu TRẦN THUẬT"
+      },
+      {
+        "s": "或者 (kể) ≠ 还是 (hỏi)",
+        "m": "Đây là chỗ học sinh Việt hay nhầm"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "舒服",
+    "py": "shūfu",
+    "pos": "Tính từ",
+    "vn": "dễ chịu, thoải mái",
+    "hv": "thư phục",
+    "em": "😌",
+    "lesson": 4,
+    "explain": [
+      "Cảm giác thoải mái, khoan khoái về thể chất hoặc tinh thần."
+    ],
+    "usage": "Tính từ, làm vị ngữ với 很/会: 很舒服, 会很舒服; phủ định 不舒服 còn có nghĩa \"khó ở, không khỏe\".",
+    "collo": [
+      "很舒服",
+      "不舒服",
+      "觉得舒服"
+    ],
+    "ex_zh": "喝杯热茶会很舒服。",
+    "ex_py": "Hē bēi rè chá huì hěn shūfu.",
+    "ex_vn": "Uống một ly trà nóng sẽ rất dễ chịu.",
+    "exList": [
+      {
+        "zh": "喝杯热茶会很舒服。",
+        "py": "Hē bēi rè chá huì hěn shūfu.",
+        "vn": "Uống một ly trà nóng sẽ rất dễ chịu."
+      },
+      {
+        "zh": "你怎么了？不舒服吗？",
+        "py": "Nǐ zěnme le? Bù shūfu ma?",
+        "vn": "Bạn sao vậy? Không khỏe à?"
+      },
+      {
+        "zh": "工作累的时候听听歌，会觉得舒服点儿。",
+        "py": "Gōngzuò lèi de shíhou tīngting gē, huì juéde shūfu diǎnr.",
+        "vn": "Lúc làm việc mệt nghe chút nhạc sẽ thấy dễ chịu hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "舒",
+        "p": "shū",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "舍 (xá) trái → 予 (dữ) phải",
+        "rad": "舌 (thiệt)",
+        "mean": "thư thái, dễ chịu",
+        "tip": "舍(buông bỏ, thả lỏng) + 予(cho đi) → buông bỏ căng thẳng, cảm thấy THƯ THÁI.",
+        "cf": "舍 (shě – \"buông bỏ\", không có 予\")",
+        "w": "舒服 / 舒适"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cảm thấy không khỏe nên hôm nay tôi không muốn đi làm.",
+        "answer": "因为觉得不舒服，所以我今天不想上班。",
+        "answerPy": "Yīnwèi juéde bù shūfu, suǒyǐ wǒ jīntiān bù xiǎng shàngbān.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn nghỉ ngơi nhiều hơn thì sẽ thấy dễ chịu hơn.",
+        "answer": "只要你多休息，就会觉得舒服一点儿。",
+        "answerPy": "Zhǐyào nǐ duō xiūxi, jiù huì juéde shūfu yìdiǎnr.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很舒服",
+        "py": "hěn shūfu",
+        "vn": "rất dễ chịu"
+      },
+      {
+        "zh": "不舒服",
+        "py": "bù shūfu",
+        "vn": "khó chịu, không khoẻ"
+      },
+      {
+        "zh": "觉得舒服",
+        "py": "juéde shūfu",
+        "vn": "thấy thoải mái"
+      },
+      {
+        "zh": "坐着很舒服",
+        "py": "zuò zhe hěn shūfu",
+        "vn": "ngồi rất thoải mái"
+      },
+      {
+        "zh": "身体不舒服",
+        "py": "shēntǐ bù shūfu",
+        "vn": "người không khoẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 不舒服",
+        "m": "Ai đó thấy trong người không khoẻ"
+      },
+      {
+        "s": "V + 着 + 很舒服",
+        "m": "Làm gì thấy thoải mái"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "花",
+    "py": "huā",
+    "pos": "Danh từ",
+    "vn": "hoa",
+    "hv": "hoa",
+    "em": "🌸",
+    "lesson": 4,
+    "explain": [
+      "Bộ phận sinh sản của cây, thường có màu sắc và hương thơm; ở đây dùng trong từ 花茶 (trà hoa/trà ướp hoa)."
+    ],
+    "usage": "Danh từ; làm định ngữ tạo từ ghép: 花 + danh từ (花茶 = trà hoa).",
+    "collo": [
+      "花茶",
+      "买花",
+      "很多花"
+    ],
+    "ex_zh": "你喜欢喝什么茶？",
+    "ex_py": "Nǐ xǐhuan hē shénme chá?",
+    "ex_vn": "Bạn thích uống trà gì?",
+    "exList": [
+      {
+        "zh": "花茶、绿茶、红茶，我都喜欢。",
+        "py": "Huāchá, lǜchá, hóngchá, wǒ dōu xǐhuan.",
+        "vn": "Trà hoa, trà xanh, trà đen, tôi đều thích."
+      },
+      {
+        "zh": "公园里种着很多花。",
+        "py": "Gōngyuán lǐ zhòngzhe hěn duō huā.",
+        "vn": "Trong công viên trồng rất nhiều hoa."
+      },
+      {
+        "zh": "这是朋友送我的花。",
+        "py": "Zhè shì péngyou sòng wǒ de huā.",
+        "vn": "Đây là hoa bạn tôi tặng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "花",
+        "p": "huā",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "艹 (thảo) trên → 化 (hoá) dưới",
+        "rad": "艹 (thảo – cỏ cây)",
+        "mean": "hoa",
+        "tip": "Bộ cỏ 艹 (thực vật) + 化(biến hoá) → thực vật BIẾN HOÁ nở rộ thành HOA.",
+        "cf": "化 (huà – \"biến hoá\", không có bộ 艹\")",
+        "w": "花茶 / 一朵花 / 花园"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trà hoa có mùi thơm nên tôi rất thích uống.",
+        "answer": "因为花茶很香，所以我很喜欢喝。",
+        "answerPy": "Yīnwèi huāchá hěn xiāng, suǒyǐ wǒ hěn xǐhuan hē.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trà hoa hoặc trà xanh, loại nào tôi cũng thích uống.",
+        "answer": "花茶或者绿茶，我都喜欢喝。",
+        "answerPy": "Huāchá huòzhě lǜchá, wǒ dōu xǐhuan hē.",
+        "note": "Sửa từ 不管……还是…… (khung HSK 4) sang 或者……都…… cho đúng tầm HSK 3.",
+        "pair": "或者……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买花",
+        "py": "mǎi huā",
+        "vn": "mua hoa"
+      },
+      {
+        "zh": "花茶",
+        "py": "huā chá",
+        "vn": "trà hoa"
+      },
+      {
+        "zh": "很多花",
+        "py": "hěn duō huā",
+        "vn": "rất nhiều hoa"
+      },
+      {
+        "zh": "一朵花",
+        "py": "yī duo huā",
+        "vn": "một bông hoa"
+      },
+      {
+        "zh": "花很香",
+        "py": "huā hěn xiāng",
+        "vn": "hoa rất thơm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 朵 + 花",
+        "m": "Lượng từ 朵 cho hoa"
+      },
+      {
+        "s": "花 (hoa) ≠ 花 (tiêu tiền) — cùng chữ, khác nghĩa"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "绿",
+    "py": "lǜ",
+    "pos": "Tính từ",
+    "vn": "xanh (lá cây)",
+    "hv": "lục",
+    "em": "💚",
+    "lesson": 4,
+    "explain": [
+      "Màu xanh lá cây, màu của cây cỏ."
+    ],
+    "usage": "Tính từ chỉ màu sắc, làm định ngữ trực tiếp trước danh từ: 绿 + danh từ (绿茶), hoặc làm vị ngữ với 很: 很绿.",
+    "collo": [
+      "绿茶",
+      "绿色",
+      "很绿"
+    ],
+    "ex_zh": "花茶、绿茶、红茶，我都喜欢。",
+    "ex_py": "Huāchá, lǜchá, hóngchá, wǒ dōu xǐhuan.",
+    "ex_vn": "Trà hoa, trà xanh, trà đen, tôi đều thích.",
+    "exList": [
+      {
+        "zh": "花茶、绿茶、红茶，我都喜欢。",
+        "py": "Huāchá, lǜchá, hóngchá, wǒ dōu xǐhuan.",
+        "vn": "Trà hoa, trà xanh, trà đen, tôi đều thích."
+      },
+      {
+        "zh": "这儿没有绿茶。",
+        "py": "Zhèr méiyǒu lǜchá.",
+        "vn": "Ở đây không có trà xanh."
+      },
+      {
+        "zh": "桌子上不是放着绿茶吗？",
+        "py": "Zhuōzi shang bú shì fàngzhe lǜchá ma?",
+        "vn": "Trên bàn chẳng phải đang để trà xanh sao?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "绿",
+        "p": "lǜ",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "纟 (mịch) trái → 录 (lục) phải",
+        "rad": "纟 (mịch – tơ, sợi)",
+        "mean": "xanh lá cây",
+        "tip": "Bộ tơ lụa 纟 (thường được nhuộm màu) + 录(ghi lại) → tên gọi màu XANH LÁ được ghi nhận qua vải nhuộm.",
+        "cf": "录 (lù – \"ghi chép\", không có bộ 纟\")",
+        "w": "绿茶 / 绿色 / 很绿"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trà xanh có vị hơi đắng nên bà tôi không thích uống.",
+        "answer": "因为绿茶有点儿苦，所以我奶奶不喜欢喝。",
+        "answerPy": "Yīnwèi lǜchá yǒudiǎnr kǔ, suǒyǐ wǒ nǎinai bù xǐhuan hē.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu cửa hàng không còn trà xanh thì cho tôi trà hoa vậy.",
+        "answer": "如果商店没有绿茶了，就给我花茶吧。",
+        "answerPy": "Rúguǒ shāngdiàn méiyǒu lǜchá le, jiù gěi wǒ huāchá ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 花 vừa học).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "绿茶",
+        "py": "lǜ chá",
+        "vn": "trà xanh"
+      },
+      {
+        "zh": "绿色",
+        "py": "lǜsè",
+        "vn": "màu xanh lá"
+      },
+      {
+        "zh": "很绿",
+        "py": "hěn lǜ",
+        "vn": "rất xanh"
+      },
+      {
+        "zh": "绿的裤子",
+        "py": "lǜ de kùzi",
+        "vn": "cái quần xanh"
+      },
+      {
+        "zh": "草绿了",
+        "py": "cǎo lǜ le",
+        "vn": "cỏ xanh rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "绿 + 色 / 茶",
+        "m": "Màu xanh lá, trà xanh"
+      },
+      {
+        "s": "绿 (xanh lá) ≠ 蓝 (xanh dương)"
+      }
+    ]
+  }
 ];
 
 const wuData = [

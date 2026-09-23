@@ -3,674 +3,3274 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'流利',py:'liúlì',pos:'Tính từ',vn:'lưu loát, trôi chảy', hv: 'lưu lợi',em:'🗣️',lesson:1,
-   explain:['Diễn tả ngôn ngữ nói/đọc trôi chảy, không vấp váp.'],
-   usage:'Tính từ; thường đi với 说得流利, 汉语说得流利.',
-   collo:['说得这么流利','汉语流利','读得很流利'],
-   ex_zh:'你来中国才一年，汉语就说得这么流利，真厉害！',ex_py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!',ex_vn:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!',
-   exList:[
-     {zh:'你来中国才一年，汉语就说得这么流利，真厉害！',py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!',vn:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!'},
-     {zh:'她的英语说得非常流利。',py:'Tā de Yīngyǔ shuō de fēicháng liúlì.',vn:'Tiếng Anh của cô ấy nói rất lưu loát.'},
-     {zh:'不过，只要多练习，你也能说得像他一样流利。',py:'Búguò, zhǐyào duō liànxí, nǐ yě néng shuō de xiàng tā yíyàng liúlì.',vn:'Nhưng, chỉ cần luyện tập nhiều, bạn cũng có thể nói lưu loát như anh ấy.'},
-   ],
-   hanzi:[
-     {c:'流',p:'liú',type:'左右结构 · Trái-phải',st:10,ord:'氵 (thủy) trái → 㐬 phải',rad:'氵 (thủy – nước)',mean:'chảy, trôi chảy',
-      tip:'Bộ nước 氵 (dòng nước chảy liên tục) → mở rộng nghĩa TRÔI CHẢY, kết hợp 利(lợi, thuận lợi) thành 流利 = LƯU LOÁT (nói trôi chảy như nước chảy).',
-      cf:'留 (liú – "ở lại", bộ 田")',w:'流利 / 流水 / 交流'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn đến Trung Quốc mới một năm, nhưng tiếng Trung đã nói lưu loát như vậy, thật lợi hại.',answer:'你来中国才一年，汉语就说得这么流利，真厉害。',answerPy:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai.',
-      note:'说得……流利 kết hợp 厉害, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn kiên trì luyện tập, tiếng Trung của bạn cũng sẽ nói lưu loát hơn.',answer:'只要你坚持练习，你的汉语也会说得更流利。',answerPy:'Zhǐyào nǐ jiānchí liànxí, nǐ de Hànyǔ yě huì shuō de gèng liúlì.',
-      note:'只要……坚持 kết hợp 坚持, ôn lại từ vựng Bài 9.'},
-   ]},
-
-  {n:2,zh:'厉害',py:'lìhai',pos:'Tính từ',vn:'lợi hại, giỏi giang', hv: 'lệ hại',em:'💪',lesson:1,
-   explain:['Diễn tả năng lực/mức độ vượt trội, đáng nể.'],
-   usage:'Tính từ; thường đi với 真厉害, 疼得厉害.',
-   collo:['真厉害','疼得厉害','厉害的人'],
-   ex_zh:'你来中国才一年，汉语就说得这么流利，真厉害！',ex_py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!',ex_vn:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!',
-   exList:[
-     {zh:'你来中国才一年，汉语就说得这么流利，真厉害！',py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!',vn:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!'},
-     {zh:'你太厉害了！连中文报纸都看得懂。',py:'Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.',vn:'Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được.'},
-     {zh:'大夫，我的牙最近疼得厉害，不知道是怎么回事。',py:'Dàifu, wǒ de yá zuìjìn téng de lìhai, bù zhīdào shì zěnme huí shì.',vn:'Bác sĩ, răng tôi gần đây đau dữ dội, không biết là chuyện gì.'},
-   ],
-   hanzi:[
-     {c:'厉',p:'lì',type:'半包围结构 · Bán bao vây (giản thể)',st:5,ord:'厂 bao ngoài → 万 trong',rad:'厂 (hán)',mean:'nghiêm khắc, mãnh liệt',
-      tip:'Chữ giản thể mang nghĩa MÃNH LIỆT, NGHIÊM KHẮC, kết hợp 害(hại, mức độ) thành 厉害 = LỢI HẠI, mức độ vượt trội đáng nể.',
-      cf:'历 (lì – "trải qua", tự dạng gần giống)',w:'厉害 / 严厉 / 厉声'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được, thật lưu loát.',answer:'你太厉害了！连中文报纸都看得懂，说得真流利。',answerPy:'Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng, shuō de zhēn liúlì.',
-      note:'厉害 kết hợp 连/流利, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Bác sĩ, đầu tôi gần đây đau dữ dội, không biết là bị làm sao.',answer:'大夫，我的头最近疼得厉害，不知道是怎么回事。',answerPy:'Dàifu, wǒ de tóu zuìjìn téng de lìhai, bù zhīdào shì zěnme huí shì.',
-      note:'疼得厉害 — đau dữ dội.'},
-   ]},
-
-  {n:3,zh:'语法',py:'yǔfǎ',pos:'Danh từ',vn:'ngữ pháp', hv: 'ngữ pháp',em:'📖',lesson:1,
-   explain:['Quy tắc cấu trúc câu, cách kết hợp từ ngữ của một ngôn ngữ.'],
-   usage:'Danh từ; thường đi với 语法不太好, 学习语法.',
-   collo:['语法不太好','学习语法','语法知识'],
-   ex_zh:'其实我的语法不太好，很多句子说得都不太准确。',ex_py:'Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.',ex_vn:'Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm.',
-   exList:[
-     {zh:'其实我的语法不太好，很多句子说得都不太准确。',py:'Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.',vn:'Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm.'},
-     {zh:'时间可能来不及，不过只好这样了，这些语法知识太难了。',py:'Shíjiān kěnéng láibují, búguò zhǐhǎo zhèyàng le, zhèxiē yǔfǎ zhīshi tài nán le.',vn:'Thời gian có thể không kịp, nhưng đành phải vậy thôi, những kiến thức ngữ pháp này quá khó.'},
-     {zh:'学习汉语语法需要多做练习。',py:'Xuéxí Hànyǔ yǔfǎ xūyào duō zuò liànxí.',vn:'Học ngữ pháp tiếng Trung cần làm nhiều bài tập.'},
-   ],
-   hanzi:[
-     {c:'法',p:'fǎ',type:'左右结构 · Trái-phải',st:8,ord:'氵 (thủy) trái → 去 phải',rad:'氵 (thủy – nước)',mean:'phép tắc, quy tắc',
-      tip:'Bộ nước 氵 (công bằng như nước) → mở rộng nghĩa PHÁP LUẬT, QUY TẮC, kết hợp 语(lời nói) thành 语法 = NGỮ PHÁP (quy tắc của lời nói).',
-      cf:'去 (qù – "đi", không có bộ 氵")',w:'语法 / 方法 / 法律'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thực ra ngữ pháp của tôi không tốt lắm, nhưng nhờ đọc báo tiếng Trung nhiều nên từ vựng tăng lên không ít.',answer:'其实我的语法不太好，不过多亏看中文报纸，词语增加了不少。',answerPy:'Qíshí wǒ de yǔfǎ bú tài hǎo, búguò duōkuī kàn Zhōngwén bàozhǐ, cíyǔ zēngjiāle bùshǎo.',
-      note:'语法 kết hợp 词语/增加, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Học ngữ pháp tiếng Trung tuy phức tạp, nhưng chỉ cần kiên trì luyện tập, dần dần sẽ thấy không khó nữa.',answer:'学习汉语语法虽然复杂，但只要坚持练习，慢慢就会发现没那么难了。',answerPy:'Xuéxí Hànyǔ yǔfǎ suīrán fùzá, dàn zhǐyào jiānchí liànxí, mànman jiù huì fāxiàn méi nàme nán le.',
-      note:'语法……复杂……坚持练习 kết hợp 复杂/坚持, ôn lại nhiều từ vựng.'},
-   ]},
-
-  {n:4,zh:'准确',py:'zhǔnquè',pos:'Tính từ',vn:'chính xác, đúng', hv: 'chuẩn xác',em:'🎯',lesson:1,
-   explain:['Diễn tả sự đúng đắn, không sai lệch.'],
-   usage:'Tính từ; thường đi với 说得不太准确, 准确的方法.',
-   collo:['说得不太准确','准确的答案','消息准确吗'],
-   ex_zh:'其实我的语法不太好，很多句子说得都不太准确。',ex_py:'Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.',ex_vn:'Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm.',
-   exList:[
-     {zh:'其实我的语法不太好，很多句子说得都不太准确。',py:'Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.',vn:'Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm.'},
-     {zh:'这个消息准确吗？我怎么不知道？',py:'Zhège xiāoxi zhǔnquè ma? Wǒ zěnme bù zhīdào?',vn:'Tin này có chính xác không? Sao tôi lại không biết?'},
-     {zh:'正确的方法可以让我们做得更好，答案也会更准确。',py:'Zhèngquè de fāngfǎ kěyǐ ràng wǒmen zuò de gèng hǎo, dá\'àn yě huì gèng zhǔnquè.',vn:'Phương pháp đúng đắn có thể khiến chúng ta làm tốt hơn, đáp án cũng sẽ chính xác hơn.'},
-   ],
-   hanzi:[
-     {c:'确',p:'què',type:'左右结构 · Trái-phải (giản thể)',st:12,ord:'石 (thạch) trái → 角(biến thể) phải',rad:'石 (thạch – đá)',mean:'chắc chắn, đúng',
-      tip:'Bộ đá 石 (vững chắc) → CHẮC CHẮN, kết hợp 准(chuẩn) thành 准确 = CHÍNH XÁC.',
-      cf:'确 dễ nhầm 碗 (wǎn – "cái bát")',w:'准确 / 正确 / 确实'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Rất nhiều câu tôi nói ra đều không chính xác lắm, ngữ pháp của tôi thực sự không tốt.',answer:'我说的很多句子都不太准确，我的语法确实不太好。',answerPy:'Wǒ shuō de hěn duō jùzi dōu bú tài zhǔnquè, wǒ de yǔfǎ quèshí bú tài hǎo.',
-      note:'准确 kết hợp 语法/确实, ôn lại từ vựng của bài và Bài 10.'},
-     {promptLang:'vi',prompt:'Tin này chính xác không? Chẳng lẽ bạn không biết sao?',answer:'这个消息准确吗？难道你不知道吗？',answerPy:'Zhège xiāoxi zhǔnquè ma? Nándào nǐ bù zhīdào ma?',
-      note:'准确 kết hợp 难道, ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:5,zh:'词语',py:'cíyǔ',pos:'Danh từ',vn:'từ ngữ, cách diễn đạt', hv: 'từ ngữ',em:'📝',lesson:1,
-   explain:['Từ và cụm từ trong ngôn ngữ.'],
-   usage:'Danh từ; thường đi với 学到很多新词语, 选择合适的词语.',
-   collo:['新词语','词语增加了','简单的词语'],
-   ex_zh:'我建议你坚持看中文报纸，这样能学到很多新词语。',ex_py:'Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, zhèyàng néng xuédào hěn duō xīn cíyǔ.',ex_vn:'Tôi đề nghị bạn kiên trì đọc báo tiếng Trung, như vậy có thể học được nhiều từ ngữ mới.',
-   exList:[
-     {zh:'我建议你坚持看中文报纸，这样能学到很多新词语。',py:'Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, zhèyàng néng xuédào hěn duō xīn cíyǔ.',vn:'Tôi đề nghị bạn kiên trì đọc báo tiếng Trung, như vậy có thể học được nhiều từ ngữ mới.'},
-     {zh:'会叫"爸爸""妈妈"了，也能说一些简单的词语。',py:'Huì jiào "bàba" "māma" le, yě néng shuō yìxiē jiǎndān de cíyǔ.',vn:'Đã biết gọi "bố" "mẹ" rồi, cũng có thể nói một số từ ngữ đơn giản.'},
-     {zh:'这本词典收录了很多常用词语。',py:'Zhè běn cídiǎn shōulùle hěn duō chángyòng cíyǔ.',vn:'Quyển từ điển này thu thập rất nhiều từ ngữ thường dùng.'},
-   ],
-   hanzi:[
-     {c:'词',p:'cí',type:'左右结构 · Trái-phải (giản thể)',st:7,ord:'讠 (ngôn) trái → 司 phải',rad:'讠 (ngôn – lời nói)',mean:'từ ngữ',
-      tip:'Bộ lời nói 讠 + 司(biểu âm) → đơn vị LỜI NÓI nhỏ nhất có nghĩa, kết hợp 语(ngôn ngữ) thành 词语 = TỪ NGỮ.',
-      cf:'祠 (cí – "đền thờ", bộ 礻")',w:'词语 / 词典 / 生词'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi đề nghị bạn kiên trì đọc báo tiếng Trung, như vậy sẽ học được rất nhiều từ ngữ mới, ngữ pháp cũng sẽ tiến bộ.',answer:'我建议你坚持看中文报纸，这样会学到很多新词语，语法也会有进步。',answerPy:'Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, zhèyàng huì xuédào hěn duō xīn cíyǔ, yǔfǎ yě huì yǒu jìnbù.',
-      note:'词语 kết hợp 建议/语法, ôn lại từ vựng của bài và Bài 10.'},
-     {promptLang:'vi',prompt:'Đứa trẻ đã biết gọi "bố" "mẹ" rồi, cũng có thể nói một số từ ngữ đơn giản, thật lợi hại.',answer:'孩子会叫"爸爸""妈妈"了，也能说一些简单的词语，真厉害。',answerPy:'Háizi huì jiào "bàba" "māma" le, yě néng shuō yìxiē jiǎndān de cíyǔ, zhēn lìhai.',
-      note:'词语 kết hợp 厉害, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:6,zh:'连',py:'lián',pos:'Giới từ',vn:'ngay cả (nhấn mạnh)', hv: 'liên',em:'🔗',lesson:1,
-   explain:['Giới từ nhấn mạnh, thường dùng cấu trúc "连……也/都……". Người nói thông qua nhấn mạnh một ví dụ cực đoan để nói rõ một tình huống khác.'],
-   usage:'连 + Chủ ngữ/Tân ngữ (đặt trước) + 也/都 + Vị ngữ.',
-   collo:['连……都……','连中文报纸都看得懂','连我住的楼'],
-   ex_zh:'你太厉害了！连中文报纸都看得懂。',ex_py:'Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.',ex_vn:'Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được.',
-   exList:[
-     {zh:'你太厉害了！连中文报纸都看得懂。',py:'Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.',vn:'Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được.'},
-     {zh:'如果连你自己都不喜欢自己，又怎么能让别人喜欢你呢？',py:'Rúguǒ lián nǐ zìjǐ dōu bù xǐhuan zìjǐ, yòu zěnme néng ràng biérén xǐhuan nǐ ne?',vn:'Nếu ngay cả bản thân bạn cũng không thích bản thân, thì làm sao có thể khiến người khác thích bạn được?'},
-     {zh:'广告越来越多，几乎无处不在。连我住的楼的电梯里都有三个广告。',py:'Guǎnggào yuè lái yuè duō, jīhū wúchù búzài. Lián wǒ zhù de lóu de diàntī li dōu yǒu sān ge guǎnggào.',vn:'Quảng cáo ngày càng nhiều, hầu như không nơi nào không có. Ngay cả trong thang máy của tòa nhà tôi ở cũng có ba quảng cáo.'},
-   ],
-   hanzi:[
-     {c:'连',p:'lián',type:'半包围结构 · Bán bao vây',st:7,ord:'辶 bao ngoài → 车 trong',rad:'辶 (sước – đi)',mean:'liên tục, ngay cả',
-      tip:'Bộ đi 辶 + 车(xe, biểu ý nối tiếp nhau) → LIÊN TỤC, KẾT NỐI, mở rộng thành giới từ NGAY CẢ (nhấn mạnh trường hợp cực đoan).',
-      cf:'莲 (lián – "hoa sen", bộ 艹")',w:'连……都/也…… / 连接 / 连忙'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn giỏi quá! Ngay cả những từ ngữ phức tạp cũng nói được chính xác.',answer:'你太厉害了！连复杂的词语都能说得准确。',answerPy:'Nǐ tài lìhai le! Lián fùzá de cíyǔ dōu néng shuō de zhǔnquè.',
-      note:'连……都…… kết hợp 复杂/词语/准确, ôn lại nhiều từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Nếu ngay cả điều đơn giản này bạn cũng không hiểu, vậy thì thật khó giải thích rồi.',answer:'如果连这么简单的事你都不明白，那就真的很难解释了。',answerPy:'Rúguǒ lián zhème jiǎndān de shì nǐ dōu bù míngbai, nà jiù zhēn de hěn nán jiěshì le.',
-      note:'连……都…… — ngay cả … cũng.'},
-   ]},
-
-  {n:7,zh:'阅读',py:'yuèdú',pos:'Động từ',vn:'đọc (sách báo)', hv: 'duyệt độc',em:'📚',lesson:2,
-   explain:['Hoạt động đọc, thường dùng cho việc đọc sách/tài liệu nghiêm túc.'],
-   usage:'Động từ; thường đi với 坚持阅读, 阅读能力.',
-   collo:['坚持阅读','阅读考试','阅读能力'],
-   ex_zh:'想不到你工作那么忙，还能每天坚持阅读。',ex_py:'Xiǎngbudào nǐ gōngzuò nàme máng, hái néng měitiān jiānchí yuèdú.',ex_vn:'Không ngờ bạn công việc bận như vậy, vẫn có thể kiên trì đọc sách mỗi ngày.',
-   exList:[
-     {zh:'想不到你工作那么忙，还能每天坚持阅读。',py:'Xiǎngbudào nǐ gōngzuò nàme máng, hái néng měitiān jiānchí yuèdú.',vn:'Không ngờ bạn công việc bận như vậy, vẫn có thể kiên trì đọc sách mỗi ngày.'},
-     {zh:'这次阅读考试的题太多了，我没做完。',py:'Zhè cì yuèdú kǎoshì de tí tài duō le, wǒ méi zuòwán.',vn:'Đề thi đọc hiểu lần này quá nhiều, tôi không làm xong.'},
-     {zh:'坚持做读书笔记，对提高阅读能力有很大帮助。',py:'Jiānchí zuò dúshū bǐjì, duì tígāo yuèdú nénglì yǒu hěn dà bāngzhù.',vn:'Kiên trì ghi chép đọc sách, có ích rất lớn cho việc nâng cao năng lực đọc hiểu.'},
-   ],
-   hanzi:[
-     {c:'阅',p:'yuè',type:'半包围结构 · Bán bao vây (giản thể)',st:10,ord:'门 bao ngoài → 兑 trong',rad:'门 (môn – cửa)',mean:'xem, đọc',
-      tip:'Bộ cửa 门 (mở ra để xem xét) → mở rộng nghĩa XEM, ĐỌC, kết hợp 读(đọc) thành 阅读 = ĐỌC (một cách trang trọng, có suy ngẫm).',
-      cf:'悦 (yuè – "vui vẻ", bộ 忄")',w:'阅读 / 阅读能力 / 阅读理解'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Không ngờ bạn công việc bận như vậy, vẫn kiên trì đọc sách mỗi ngày, thật lợi hại.',answer:'想不到你工作那么忙，还能每天坚持阅读，真厉害。',answerPy:'Xiǎngbudào nǐ gōngzuò nàme máng, hái néng měitiān jiānchí yuèdú, zhēn lìhai.',
-      note:'坚持阅读 kết hợp 厉害, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Kiên trì đọc sách, ngoài việc tăng thêm kiến thức ra, còn có thể giúp tôi giảm bớt áp lực.',answer:'坚持阅读，除了能增加知识外，还能帮助我减轻压力。',answerPy:'Jiānchí yuèdú, chúle néng zēngjiā zhīshi wài, hái néng bāngzhù wǒ jiǎnqīng yālì.',
-      note:'阅读 kết hợp 增加, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:8,zh:'来得及',py:'láidejí',pos:'Động từ',vn:'kịp, còn kịp', hv: 'lai đắc cập',em:'⏰',lesson:2,
-   explain:['Còn đủ thời gian để làm việc gì đó.'],
-   usage:'Động từ; thường đi với 应该来得及吧, 时间来不及 (dạng phủ định).',
-   collo:['来得及吧','时间来不及','来不及做'],
-   ex_zh:'两个小时的时间应该来得及吧？',ex_py:'Liǎng ge xiǎoshí de shíjiān yīnggāi láidejí ba?',ex_vn:'Thời gian hai tiếng chắc là kịp chứ?',
-   exList:[
-     {zh:'两个小时的时间应该来得及吧？',py:'Liǎng ge xiǎoshí de shíjiān yīnggāi láidejí ba?',vn:'Thời gian hai tiếng chắc là kịp chứ?'},
-     {zh:'后面简单的题我虽然会，可是时间来不及，最后只好放弃了。',py:'Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.',vn:'Những câu đơn giản phía sau tôi tuy biết làm, nhưng thời gian không kịp, cuối cùng đành phải bỏ qua.'},
-     {zh:'时间可能来不及，不过只好这样了，这些语法知识太难了。',py:'Shíjiān kěnéng láibují, búguò zhǐhǎo zhèyàng le, zhèxiē yǔfǎ zhīshi tài nán le.',vn:'Thời gian có thể không kịp, nhưng đành phải vậy thôi, những kiến thức ngữ pháp này quá khó.'},
-   ],
-   hanzi:[
-     {c:'及',p:'jí',type:'独体字 · Chữ đơn',st:3,ord:'nét liền',rad:'又 (hựu, biến thể)',mean:'kịp, đến',
-      tip:'Chữ tượng hình tay với tới người phía trước → nghĩa KỊP, ĐẠT ĐẾN, kết hợp 来得(có thể) thành 来得及 = KỊP THỜI GIAN.',
-      cf:'乃 (nǎi – "bèn, là", tự dạng gần giống)',w:'来得及 / 来不及 / 及时'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thời gian hai tiếng chắc là kịp chứ? Đừng lo lắng.',answer:'两个小时的时间应该来得及吧？别担心。',answerPy:'Liǎng ge xiǎoshí de shíjiān yīnggāi láidejí ba? Bié dānxīn.',
-      note:'来得及 — kịp thời gian.'},
-     {promptLang:'vi',prompt:'Nếu bây giờ mới bắt đầu chuẩn bị, e rằng thời gian sẽ không kịp.',answer:'如果现在才开始准备，恐怕时间会来不及。',answerPy:'Rúguǒ xiànzài cái kāishǐ zhǔnbèi, kǒngpà shíjiān huì láibují.',
-      note:'来不及 — không kịp.'},
-   ]},
-
-  {n:9,zh:'复杂',py:'fùzá',pos:'Tính từ',vn:'phức tạp, rắc rối', hv: 'phục tạp',em:'🧩',lesson:2,
-   explain:['Diễn tả sự việc có nhiều yếu tố, khó hiểu/khó giải quyết.'],
-   usage:'Tính từ; thường đi với 比较复杂的题, 有点儿复杂.',
-   collo:['比较复杂的题','这个问题有点儿复杂','复杂的生活'],
-   ex_zh:'这次主要是因为我先做了比较难、比较复杂的题。',ex_py:'Zhè cì zhǔyào shì yīnwèi wǒ xiān zuòle bǐjiào nán, bǐjiào fùzá de tí.',ex_vn:'Lần này chủ yếu là vì tôi làm trước những câu tương đối khó, tương đối phức tạp.',
-   exList:[
-     {zh:'这次主要是因为我先做了比较难、比较复杂的题。',py:'Zhè cì zhǔyào shì yīnwèi wǒ xiān zuòle bǐjiào nán, bǐjiào fùzá de tí.',vn:'Lần này chủ yếu là vì tôi làm trước những câu tương đối khó, tương đối phức tạp.'},
-     {zh:'这个问题有点儿复杂，你耐心听我给你解释一下，好吗？',py:'Zhège wèntí yǒudiǎnr fùzá, nǐ nàixīn tīng wǒ gěi nǐ jiěshì yíxià, hǎo ma?',vn:'Vấn đề này có hơi phức tạp, bạn kiên nhẫn nghe tôi giải thích một chút nhé?'},
-     {zh:'世界上有那么多有意思的事情，有那么多不一样的生活。',py:'Shìjiè shang yǒu nàme duō yǒuyìsi de shìqing, yǒu nàme duō bù yíyàng de shēnghuó.',vn:'Trên thế giới có nhiều việc thú vị như vậy, có nhiều cuộc sống khác nhau như vậy.'},
-   ],
-   hanzi:[
-     {c:'杂',p:'zá',type:'上下结构 · Trên-dưới (giản thể)',st:6,ord:'九 trên → 木 dưới',rad:'木 (mộc)',mean:'lộn xộn, tạp',
-      tip:'Chữ giản thể mang nghĩa TẠP, LỘN XỘN (nhiều thứ trộn lẫn), kết hợp 复(lặp đi lặp lại) thành 复杂 = PHỨC TẠP.',
-      cf:'杂 dễ nhầm 未 (wèi – "chưa")',w:'复杂 / 杂志 / 复杂化'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đề thi đọc hiểu lần này quá nhiều câu phức tạp, tôi không làm kịp.',answer:'这次阅读考试的复杂题太多了，我来不及做完。',answerPy:'Zhè cì yuèdú kǎoshì de fùzá tí tài duō le, wǒ láibují zuòwán.',
-      note:'复杂 kết hợp 阅读/来不及, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Vấn đề này có hơi phức tạp, ngay cả tôi cũng chưa hiểu rõ hoàn toàn.',answer:'这个问题有点儿复杂，连我也没完全弄明白。',answerPy:'Zhège wèntí yǒudiǎnr fùzá, lián wǒ yě méi wánquán nòng míngbai.',
-      note:'复杂 kết hợp 连, ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:10,zh:'只好',py:'zhǐhǎo',pos:'Phó từ',vn:'đành phải, buộc phải', hv: 'chỉ hảo',em:'😔',lesson:2,
-   explain:['Diễn tả việc không còn lựa chọn nào khác, đành phải làm theo cách đó.'],
-   usage:'Phó từ, đứng trước động từ: 最后只好放弃了.',
-   collo:['最后只好放弃了','只好这样了','只好等待'],
-   ex_zh:'后面简单的题我虽然会，可是时间来不及，最后只好放弃了。',ex_py:'Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.',ex_vn:'Những câu đơn giản phía sau tôi tuy biết làm, nhưng thời gian không kịp, cuối cùng đành phải bỏ qua.',
-   exList:[
-     {zh:'后面简单的题我虽然会，可是时间来不及，最后只好放弃了。',py:'Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.',vn:'Những câu đơn giản phía sau tôi tuy biết làm, nhưng thời gian không kịp, cuối cùng đành phải bỏ qua.'},
-     {zh:'时间可能来不及，不过只好这样了，这些语法知识太难了。',py:'Shíjiān kěnéng láibují, búguò zhǐhǎo zhèyàng le, zhèxiē yǔfǎ zhīshi tài nán le.',vn:'Thời gian có thể không kịp, nhưng đành phải vậy thôi, những kiến thức ngữ pháp này quá khó.'},
-     {zh:'商店已经关门了，我们只好明天再来买。',py:'Shāngdiàn yǐjīng guānmén le, wǒmen zhǐhǎo míngtiān zài lái mǎi.',vn:'Cửa hàng đã đóng cửa rồi, chúng tôi đành phải ngày mai đến mua tiếp.'},
-   ],
-   hanzi:[
-     {c:'只',p:'zhǐ',type:'独体字 · Chữ đơn',st:5,ord:'nét liền',rad:'口 (khẩu)',mean:'chỉ, chỉ có',
-      tip:'Chữ mang nghĩa CHỈ, DUY NHẤT, kết hợp 好(tốt, đành) thành 只好 = ĐÀNH PHẢI (chỉ còn cách này là tốt nhất).',
-      cf:'另 (lìng – "khác", tự dạng gần giống)',w:'只好 / 只是 / 只有'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì thời gian không kịp, tôi đành phải bỏ qua những câu phức tạp phía sau.',answer:'由于时间来不及，我只好放弃了后面复杂的题。',answerPy:'Yóuyú shíjiān láibují, wǒ zhǐhǎo fàngqìle hòumiàn fùzá de tí.',
-      note:'只好 kết hợp 由于/来不及/复杂, ôn lại từ vựng Bài 10 và của bài.'},
-     {promptLang:'vi',prompt:'Cửa hàng đã đóng cửa rồi, chúng tôi đành phải ngày mai đến mua tiếp.',answer:'商店已经关门了，我们只好明天再来买。',answerPy:'Shāngdiàn yǐjīng guānmén le, wǒmen zhǐhǎo míngtiān zài lái mǎi.',
-      note:'只好 — đành phải.'},
-   ]},
-
-  {n:11,zh:'填空',py:'tiánkòng',pos:'Động từ',vn:'điền vào chỗ trống', hv: 'điền khống',em:'✍️',lesson:2,
-   explain:['Loại bài tập yêu cầu điền từ/nội dung vào phần để trống.'],
-   usage:'Động từ ly hợp; thường đi với 填空题, 有几个填空题.',
-   collo:['填空题','有几个填空题不会做','选词填空'],
-   ex_zh:'有几个填空题不会做，有几个选择题，实在想不出来该选哪个。',ex_py:'Yǒu jǐ ge tiánkòng tí bú huì zuò, yǒu jǐ ge xuǎnzé tí, shízài xiǎng bu chūlai gāi xuǎn nǎge.',ex_vn:'Có mấy câu điền chỗ trống không làm được, có mấy câu trắc nghiệm, thực sự nghĩ không ra nên chọn cái nào.',
-   exList:[
-     {zh:'有几个填空题不会做，有几个选择题，实在想不出来该选哪个。',py:'Yǒu jǐ ge tiánkòng tí bú huì zuò, yǒu jǐ ge xuǎnzé tí, shízài xiǎng bu chūlai gāi xuǎn nǎge.',vn:'Có mấy câu điền chỗ trống không làm được, có mấy câu trắc nghiệm, thực sự nghĩ không ra nên chọn cái nào.'},
-     {zh:'请完成下面的填空题。',py:'Qǐng wánchéng xiàmiàn de tiánkòng tí.',vn:'Xin hoàn thành bài tập điền chỗ trống bên dưới.'},
-     {zh:'这次考试的填空题比选择题难。',py:'Zhè cì kǎoshì de tiánkòng tí bǐ xuǎnzé tí nán.',vn:'Câu điền chỗ trống của kỳ thi lần này khó hơn câu trắc nghiệm.'},
-   ],
-   hanzi:[
-     {c:'填',p:'tián',type:'左右结构 · Trái-phải',st:13,ord:'土 (thổ) trái → 真 phải',rad:'土 (thổ – đất)',mean:'lấp đầy, điền vào',
-      tip:'Bộ đất 土 (lấp đầy chỗ trũng) → mở rộng nghĩa ĐIỀN VÀO, LẤP ĐẦY, kết hợp 空(chỗ trống) thành 填空 = ĐIỀN VÀO CHỖ TRỐNG.',
-      cf:'镇 (zhèn – "thị trấn", bộ 钅")',w:'填空 / 填写 / 填表'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Có mấy câu điền chỗ trống tôi không làm được, đành phải đoán bừa một đáp án.',answer:'有几个填空题我不会做，只好随便猜了一个答案。',answerPy:'Yǒu jǐ ge tiánkòng tí wǒ bú huì zuò, zhǐhǎo suíbiàn cāile yí ge dá\'àn.',
-      note:'填空 kết hợp 只好/答案, ôn lại từ vựng của bài và Bài 10.'},
-     {promptLang:'vi',prompt:'Xin hoàn thành các câu điền chỗ trống bên dưới, chú ý ngữ pháp cho chính xác.',answer:'请完成下面的填空题，注意语法要准确。',answerPy:'Qǐng wánchéng xiàmiàn de tiánkòng tí, zhùyì yǔfǎ yào zhǔnquè.',
-      note:'填空 kết hợp 语法/准确, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:12,zh:'猜',py:'cāi',pos:'Động từ',vn:'đoán', hv: 'sai',em:'🤔',lesson:2,
-   explain:['Suy đoán khi không chắc chắn về câu trả lời.'],
-   usage:'Động từ; thường đi với 随便猜了一个, 猜对了.',
-   collo:['随便猜了一个答案','一个都没猜对','猜猜看'],
-   ex_zh:'就随便猜了一个答案，结果一个都没猜对。',ex_py:'Jiù suíbiàn cāile yí ge dá\'àn, jiéguǒ yí ge dōu méi cāiduì.',ex_vn:'Liền đoán bừa một đáp án, kết quả một câu cũng không đoán đúng.',
-   exList:[
-     {zh:'就随便猜了一个答案，结果一个都没猜对。',py:'Jiù suíbiàn cāile yí ge dá\'àn, jiéguǒ yí ge dōu méi cāiduì.',vn:'Liền đoán bừa một đáp án, kết quả một câu cũng không đoán đúng.'},
-     {zh:'你猜猜看，这是什么？',py:'Nǐ cāicai kàn, zhè shì shénme?',vn:'Bạn đoán xem, đây là cái gì?'},
-     {zh:'不认识的词语，你可以先猜猜意思，然后查词典确认。',py:'Bú rènshi de cíyǔ, nǐ kěyǐ xiān cāicai yìsi, ránhòu chá cídiǎn quèrèn.',vn:'Từ ngữ không quen, bạn có thể đoán nghĩa trước, sau đó tra từ điển xác nhận.'},
-   ],
-   hanzi:[
-     {c:'猜',p:'cāi',type:'左右结构 · Trái-phải',st:11,ord:'犭 (khuyển) trái → 青 phải',rad:'犭 (khuyển – chó)',mean:'đoán, nghi ngờ',
-      tip:'Bộ khuyển 犭 (thú vật đánh hơi, đoán mò) + 青(biểu âm) → mở rộng nghĩa ĐOÁN, SUY ĐOÁN.',
-      cf:'猎 (liè – "săn bắn", cũng bộ 犭")',w:'猜 / 猜测 / 猜想'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Có mấy câu trắc nghiệm tôi nghĩ không ra nên chọn cái nào, liền đoán bừa một đáp án.',answer:'有几个选择题我想不出来该选哪个，就随便猜了一个答案。',answerPy:'Yǒu jǐ ge xuǎnzé tí wǒ xiǎng bu chūlai gāi xuǎn nǎge, jiù suíbiàn cāile yí ge dá\'àn.',
-      note:'猜 kết hợp 答案, ôn lại từ vựng của bài và Bài 10.'},
-     {promptLang:'vi',prompt:'Gặp từ ngữ không quen, bạn có thể đoán nghĩa trước dựa vào ngữ pháp của câu.',answer:'遇到不认识的词语，你可以先根据句子的语法猜猜意思。',answerPy:'Yùdào bú rènshi de cíyǔ, nǐ kěyǐ xiān gēnjù jùzi de yǔfǎ cāicai yìsi.',
-      note:'猜 kết hợp 词语/语法, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:13,zh:'否则',py:'fǒuzé',pos:'Liên từ',vn:'nếu không thì, bằng không', hv: 'phủ tắc',em:'⚠️',lesson:2,
-   explain:['Diễn tả "nếu không phải như vậy". Câu theo sau 否则 chỉ kết quả được suy ra từ câu phía trước, hoặc đưa ra một lựa chọn khác.'],
-   usage:'Vế 1，否则 + Vế 2 (kết quả nếu không làm theo vế 1).',
-   collo:['否则会……','否则就……','否则不会……'],
-   ex_zh:'看来要想考好，不但要认真复习，还得注意考试的方法，否则，会做的题也没时间做了。',ex_py:'Kànlái yào xiǎng kǎohǎo, búdàn yào rènzhēn fùxí, hái děi zhùyì kǎoshì de fāngfǎ, fǒuzé, huì zuò de tí yě méi shíjiān zuò le.',ex_vn:'Xem ra muốn thi tốt, không chỉ phải ôn tập nghiêm túc, còn phải chú ý phương pháp thi, nếu không, câu biết làm cũng không có thời gian làm nữa.',
-   exList:[
-     {zh:'看来要想考好，不但要认真复习，还得注意考试的方法，否则，会做的题也没时间做了。',py:'Kànlái yào xiǎng kǎohǎo, búdàn yào rènzhēn fùxí, hái děi zhùyì kǎoshì de fāngfǎ, fǒuzé, huì zuò de tí yě méi shíjiān zuò le.',vn:'Xem ra muốn thi tốt, không chỉ phải ôn tập nghiêm túc, còn phải chú ý phương pháp thi, nếu không, câu biết làm cũng không có thời gian làm nữa.'},
-     {zh:'他一定有重要的事找你，否则不会打这么多次电话来。',py:'Tā yídìng yǒu zhòngyào de shì zhǎo nǐ, fǒuzé bú huì dǎ zhème duō cì diànhuà lái.',vn:'Anh ấy chắc chắn có việc quan trọng tìm bạn, nếu không sẽ không gọi điện thoại nhiều lần như vậy.'},
-     {zh:'你最好下午四点前去公司找她，否则就明天早上再去。',py:'Nǐ zuìhǎo xiàwǔ sì diǎn qián qù gōngsī zhǎo tā, fǒuzé jiù míngtiān zǎoshang zài qù.',vn:'Bạn tốt nhất nên đến công ty tìm cô ấy trước bốn giờ chiều, nếu không thì sáng mai đi lại.'},
-   ],
-   hanzi:[
-     {c:'否',p:'fǒu',type:'上下结构 · Trên-dưới',st:7,ord:'不 trên → 口 dưới',rad:'口 (khẩu)',mean:'không, phủ định',
-      tip:'Chữ mang nghĩa PHỦ ĐỊNH, KHÔNG, kết hợp 则(thì, quy tắc) thành 否则 = NẾU KHÔNG THÌ.',
-      cf:'吝 (lìn – "keo kiệt", tự dạng khác)',w:'否则 / 是否 / 否认'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn phải kiên trì luyện tập ngữ pháp, nếu không những câu nói ra sẽ mãi không chính xác.',answer:'你得坚持练习语法，否则说出来的句子会一直不准确。',answerPy:'Nǐ děi jiānchí liànxí yǔfǎ, fǒuzé shuō chulai de jùzi huì yìzhí bù zhǔnquè.',
-      note:'否则 kết hợp 语法/准确, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Anh ấy chắc chắn có việc quan trọng tìm bạn, nếu không sẽ không gọi điện thoại nhiều lần như vậy.',answer:'他肯定有重要的事找你，否则不会打这么多次电话来。',answerPy:'Tā kěndìng yǒu zhòngyào de shì zhǎo nǐ, fǒuzé bú huì dǎ zhème duō cì diànhuà lái.',
-      note:'否则 kết hợp 肯定, ôn lại ngữ pháp Bài 5.'},
-   ]},
-
-  {n:14,zh:'客厅',py:'kètīng',pos:'Danh từ',vn:'phòng khách', hv: 'khách sảnh',em:'🛋️',lesson:3,
-   explain:['Căn phòng trong nhà dùng để tiếp khách, sinh hoạt chung.'],
-   usage:'Danh từ; thường đi với 客厅里, 在客厅.',
-   collo:['客厅里到处是书','在客厅看电视','客厅很大'],
-   ex_zh:'你的客厅里怎么到处是书啊？这些书你都喜欢看吗？',ex_py:'Nǐ de kètīng li zěnme dàochù shì shū a? Zhèxiē shū nǐ dōu xǐhuan kàn ma?',ex_vn:'Phòng khách của bạn sao khắp nơi đều là sách thế? Những sách này bạn đều thích đọc à?',
-   exList:[
-     {zh:'你的客厅里怎么到处是书啊？这些书你都喜欢看吗？',py:'Nǐ de kètīng li zěnme dàochù shì shū a? Zhèxiē shū nǐ dōu xǐhuan kàn ma?',vn:'Phòng khách của bạn sao khắp nơi đều là sách thế? Những sách này bạn đều thích đọc à?'},
-     {zh:'我本来想把沙发放在客厅中间，后来发现放在窗户旁边更好看。',py:'Wǒ běnlái xiǎng bǎ shāfā fàng zài kètīng zhōngjiān, hòulái fāxiàn fàng zài chuānghu pángbiān gèng hǎokàn.',vn:'Tôi vốn định đặt sô pha ở giữa phòng khách, sau đó phát hiện đặt cạnh cửa sổ đẹp hơn.'},
-     {zh:'他家的客厅不仅大，而且很亮。',py:'Tā jiā de kètīng bùjǐn dà, érqiě hěn liàng.',vn:'Phòng khách nhà anh ấy không những rộng, mà còn rất sáng.'},
-   ],
-   hanzi:[
-     {c:'厅',p:'tīng',type:'半包围结构 · Bán bao vây (giản thể)',st:4,ord:'厂 bao ngoài → 丁 trong',rad:'厂 (hán – mái nhà)',mean:'sảnh, phòng lớn',
-      tip:'Bộ mái nhà 厂 + 丁(biểu âm) → căn PHÒNG LỚN dưới mái nhà, kết hợp 客(khách) thành 客厅 = PHÒNG KHÁCH.',
-      cf:'听 (tīng – "nghe", cùng âm, bộ 口)',w:'客厅 / 餐厅 / 大厅'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Phòng khách của bạn sao khắp nơi đều là sách thế?',answer:'你的客厅里怎么到处是书啊？',answerPy:'Nǐ de kètīng li zěnme dàochù shì shū a?',
-      note:'客厅里到处是…… — khắp phòng khách đều là….'},
-     {promptLang:'vi',prompt:'Tôi vốn định đặt sô pha trong phòng khách, kết quả lại phát hiện phòng quá nhỏ.',answer:'我本来打算把沙发放在客厅里，结果发现房间太小了。',answerPy:'Wǒ běnlái dǎsuàn bǎ shāfā fàng zài kètīng li, jiéguǒ fāxiàn fángjiān tài xiǎo le.',
-      note:'本来……结果…… ôn lại ngữ pháp Bài 3 và Bài 9.'},
-   ]},
-
-  {n:15,zh:'无论',py:'wúlùn',pos:'Liên từ',vn:'bất kể, dù … (cũng)', hv: 'vô luận',em:'♾️',lesson:3,
-   explain:['Diễn tả trong bất kỳ điều kiện nào kết quả/kết luận cũng không thay đổi; thường dùng cấu trúc 无论……都/也……. Sau 无论 là thành phần lựa chọn (A还是B) hoặc đại từ nghi vấn phiếm chỉ (什么/怎么样).'],
-   usage:'无论 + A还是B / đại từ nghi vấn，……都/也……',
-   collo:['无论是……还是……','无论怎么样','无论如何'],
-   ex_zh:'无论是普通杂志，还是著名小说，只要打开它们，就会发现，世界上有那么多有意思的事情。',ex_py:'Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn, shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.',ex_vn:'Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện, trên thế giới có nhiều chuyện thú vị đến thế.',
-   exList:[
-     {zh:'无论是普通杂志，还是著名小说，只要打开它们，就会发现，世界上有那么多有意思的事情。',py:'Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn, shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.',vn:'Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện, trên thế giới có nhiều chuyện thú vị đến thế.'},
-     {zh:'无论做什么事都要注意方法，正确的方法可以让我们做得更好。',py:'Wúlùn zuò shénme shì dōu yào zhùyì fāngfǎ, zhèngquè de fāngfǎ kěyǐ ràng wǒmen zuò de gèng hǎo.',vn:'Bất kể làm việc gì đều phải chú ý phương pháp, phương pháp đúng có thể giúp chúng ta làm tốt hơn.'},
-     {zh:'这次比赛他已经打出了自己最好的水平，无论结果怎么样，我们都应该为他高兴。',py:'Zhè cì bǐsài tā yǐjīng dǎchūle zìjǐ zuì hǎo de shuǐpíng, wúlùn jiéguǒ zěnmeyàng, wǒmen dōu yīnggāi wèi tā gāoxìng.',vn:'Trận đấu này anh ấy đã thi đấu hết trình độ tốt nhất của mình, bất kể kết quả thế nào, chúng ta đều nên vui cho anh ấy.'},
-   ],
-   hanzi:[
-     {c:'论',p:'lùn',type:'左右结构 · Trái-phải (giản thể)',st:6,ord:'讠 (ngôn) trái → 仑 phải',rad:'讠 (ngôn – lời nói)',mean:'bàn luận',
-      tip:'Bộ lời nói 讠 + 仑(biểu âm) → BÀN LUẬN, kết hợp 无(không) thành 无论 = KHÔNG CẦN BÀN, tức BẤT KỂ.',
-      cf:'轮 (lún – "bánh xe", bộ 车)',w:'无论 / 讨论 / 结论'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bất kể kết quả thế nào, chúng ta đều nên vui cho anh ấy.',answer:'无论结果怎么样，我们都应该为他高兴。',answerPy:'Wúlùn jiéguǒ zěnmeyàng, wǒmen dōu yīnggāi wèi tā gāoxìng.',
-      note:'无论……都 kết hợp 结果, ôn lại ngữ pháp Bài 9.'},
-     {promptLang:'vi',prompt:'Theo tôi thấy, bất kể là công việc hay học tập, "nói suông không luyện" đều không được.',answer:'在我看来，无论是工作还是学习，"光说不练"都是不行的。',answerPy:'Zài wǒ kànlái, wúlùn shì gōngzuò háishi xuéxí, "guāng shuō bú liàn" dōu shì bùxíng de.',
-      note:'无论……还是……都 kết hợp 在……看来, ôn lại ngữ pháp Bài 10.'},
-   ]},
-
-  {n:16,zh:'杂志',py:'zázhì',pos:'Danh từ',vn:'tạp chí', hv: 'tạp chí',em:'📰',lesson:3,
-   explain:['Ấn phẩm định kỳ gồm nhiều bài viết, hình ảnh về một hoặc nhiều chủ đề.'],
-   usage:'Danh từ; thường đi với 看杂志, 一本杂志.',
-   collo:['普通杂志','看杂志','一本杂志'],
-   ex_zh:'无论是普通杂志，还是著名小说，只要打开它们，就会发现世界上有那么多有意思的事情。',ex_py:'Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.',ex_vn:'Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện trên thế giới có nhiều chuyện thú vị đến thế.',
-   exList:[
-     {zh:'无论是普通杂志，还是著名小说，只要打开它们，就会发现世界上有那么多有意思的事情。',py:'Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.',vn:'Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện trên thế giới có nhiều chuyện thú vị đến thế.'},
-     {zh:'我对这本杂志很感兴趣，尤其是关于旅游的文章。',py:'Wǒ duì zhè běn zázhì hěn gǎn xìngqù, yóuqí shì guānyú lǚyóu de wénzhāng.',vn:'Tôi rất hứng thú với quyển tạp chí này, đặc biệt là những bài viết về du lịch.'},
-     {zh:'他每天通过看杂志来学习新词语。',py:'Tā měi tiān tōngguò kàn zázhì lái xuéxí xīn cíyǔ.',vn:'Mỗi ngày anh ấy học từ mới thông qua việc đọc tạp chí.'},
-   ],
-   hanzi:[
-     {c:'杂',p:'zá',type:'上下结构 · Trên-dưới (giản thể)',st:6,ord:'九 trên → 木 (mộc) dưới',rad:'木 (mộc)',mean:'lẫn lộn, nhiều loại',
-      tip:'Chữ giản thể nghĩa TẠP, NHIỀU LOẠI LẪN LỘN, kết hợp 志(ghi chép) thành 杂志 = TẠP CHÍ (ghi chép nhiều loại chuyện).',
-      cf:'染 (rǎn – "nhuộm", cũng có 九 + 木)',w:'杂志 / 复杂 / 杂技'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi rất hứng thú với quyển tạp chí này, đặc biệt là những bài viết về du lịch.',answer:'我对这本杂志很感兴趣，尤其是关于旅游的文章。',answerPy:'Wǒ duì zhè běn zázhì hěn gǎn xìngqù, yóuqí shì guānyú lǚyóu de wénzhāng.',
-      note:'尤其 kết hợp 文章, ôn lại ngữ pháp Bài 5.'},
-     {promptLang:'vi',prompt:'Anh ấy học từ mới thông qua việc đọc tạp chí mỗi ngày.',answer:'他通过每天看杂志来学习新词语。',answerPy:'Tā tōngguò měi tiān kàn zázhì lái xuéxí xīn cíyǔ.',
-      note:'通过……来…… ôn lại ngữ pháp Bài 9.'},
-   ]},
-
-  {n:17,zh:'著名',py:'zhùmíng',pos:'Tính từ',vn:'nổi tiếng', hv: 'trứ danh',em:'🌟',lesson:3,
-   explain:['Được nhiều người biết đến; danh tiếng lớn (thường dùng cho tác phẩm, nhân vật, địa danh).'],
-   usage:'Tính từ, thường làm định ngữ: 著名的小说/作家/大学.',
-   collo:['著名小说','著名的作家','世界上著名的'],
-   ex_zh:'虽然身高只有一米六零，但他却是世界上著名的篮球运动员。',ex_py:'Suīrán shēngāo zhǐyǒu yì mǐ liù líng, dàn tā què shì shìjiè shang zhùmíng de lánqiú yùndòngyuán.',ex_vn:'Tuy chiều cao chỉ có 1m60, nhưng anh ấy lại là vận động viên bóng rổ nổi tiếng thế giới.',
-   exList:[
-     {zh:'虽然身高只有一米六零，但他却是世界上著名的篮球运动员。',py:'Suīrán shēngāo zhǐyǒu yì mǐ liù líng, dàn tā què shì shìjiè shang zhùmíng de lánqiú yùndòngyuán.',vn:'Tuy chiều cao chỉ có 1m60, nhưng anh ấy lại là vận động viên bóng rổ nổi tiếng thế giới.'},
-     {zh:'无论是普通杂志，还是著名小说，只要打开它们，就会有收获。',py:'Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì yǒu shōuhuò.',vn:'Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ có thu hoạch.'},
-     {zh:'她是著名的科学家，同时也是一位好母亲。',py:'Tā shì zhùmíng de kēxuéjiā, tóngshí yě shì yí wèi hǎo mǔqīn.',vn:'Cô ấy là nhà khoa học nổi tiếng, đồng thời cũng là một người mẹ tốt.'},
-   ],
-   hanzi:[
-     {c:'著',p:'zhù',type:'上下结构 · Trên-dưới',st:11,ord:'艹 (thảo) trên → 者 dưới',rad:'艹 (thảo – cỏ)',mean:'nổi bật, trứ tác',
-      tip:'Bộ cỏ 艹 + 者(biểu âm) → nghĩa gốc là RÕ RÀNG, NỔI BẬT, kết hợp 名(tên) thành 著名 = TÊN TUỔI NỔI BẬT, NỔI TIẾNG.',
-      cf:'着 (zhe – trợ từ, chữ giản thể tách ra từ 著)',w:'著名 / 著作 / 名著'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy chiều cao chỉ có 1m60, nhưng anh ấy lại là vận động viên bóng rổ nổi tiếng thế giới.',answer:'虽然身高只有一米六零，但他却是世界上著名的篮球运动员。',answerPy:'Suīrán shēngāo zhǐyǒu yì mǐ liù líng, dàn tā què shì shìjiè shang zhùmíng de lánqiú yùndòngyuán.',
-      note:'虽然……但……却 ôn lại ngữ pháp 却 Bài 2.'},
-     {promptLang:'vi',prompt:'Thật không ngờ, nhà văn nổi tiếng này lại chỉ mới 25 tuổi.',answer:'真没想到，这位著名的作家竟然只有25岁。',answerPy:'Zhēn méi xiǎngdào, zhè wèi zhùmíng de zuòjiā jìngrán zhǐyǒu èrshíwǔ suì.',
-      note:'竟然 ôn lại ngữ pháp Bài 6.'},
-   ]},
-
-  {n:18,zh:'页',py:'yè',pos:'Lượng từ',vn:'trang (sách)', hv: 'hiệt',em:'📄',lesson:3,
-   explain:['Lượng từ chỉ trang sách, trang giấy.'],
-   usage:'Số + 页: 一页书, 读10页, 第几页.',
-   collo:['读一页书','读10页','第五页'],
-   ex_zh:'如果3分钟读一页书，半个小时就可以读10页。',ex_py:'Rúguǒ sān fēnzhōng dú yí yè shū, bàn ge xiǎoshí jiù kěyǐ dú shí yè.',ex_vn:'Nếu 3 phút đọc một trang sách, nửa tiếng là có thể đọc 10 trang.',
-   exList:[
-     {zh:'如果3分钟读一页书，半个小时就可以读10页。',py:'Rúguǒ sān fēnzhōng dú yí yè shū, bàn ge xiǎoshí jiù kěyǐ dú shí yè.',vn:'Nếu 3 phút đọc một trang sách, nửa tiếng là có thể đọc 10 trang.'},
-     {zh:'每天花半个小时来读书，一个月就可以读300页，差不多就是一本书了。',py:'Měi tiān huā bàn ge xiǎoshí lái dú shū, yí ge yuè jiù kěyǐ dú sānbǎi yè, chàbuduō jiù shì yì běn shū le.',vn:'Mỗi ngày dành nửa tiếng để đọc sách, một tháng là có thể đọc 300 trang, gần như là một quyển sách rồi.'},
-     {zh:'请大家把书翻到第20页。',py:'Qǐng dàjiā bǎ shū fāndào dì-èrshí yè.',vn:'Mời mọi người lật sách đến trang 20.'},
-   ],
-   hanzi:[
-     {c:'页',p:'yè',type:'独体字 · Chữ đơn (giản thể)',st:6,ord:'nét liền',rad:'页 (hiệt – đầu)',mean:'trang sách, đầu',
-      tip:'Chữ tượng hình cái ĐẦU người (nghĩa gốc), sau mượn dùng làm lượng từ TRANG SÁCH (mỗi trang như một "đầu" của tờ giấy).',
-      cf:'贝 (bèi – "vỏ sò", tự dạng gần giống)',w:'页 / 一页 / 网页'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mỗi ngày dành nửa tiếng đọc sách, một tháng là có thể đọc 300 trang, gần như là một quyển sách rồi.',answer:'每天花半个小时来读书，一个月就可以读300页，差不多就是一本书了。',answerPy:'Měi tiān huā bàn ge xiǎoshí lái dú shū, yí ge yuè jiù kěyǐ dú sānbǎi yè, chàbuduō jiù shì yì běn shū le.',
-      note:'差不多 ôn lại ngữ pháp Bài 2.'},
-     {promptLang:'vi',prompt:'Chỉ cần mỗi ngày đọc 10 trang, một năm là có thể đọc xong hơn 10 quyển sách.',answer:'只要每天读10页，一年就能读完十多本书。',answerPy:'Zhǐyào měi tiān dú shí yè, yì nián jiù néng dúwán shí duō běn shū.',
-      note:'只要……就 ôn lại ngữ pháp Bài 8.'},
-   ]},
-
-  {n:19,zh:'增加',py:'zēngjiā',pos:'Động từ',vn:'tăng thêm', hv: 'tăng gia',em:'📈',lesson:3,
-   explain:['Làm cho nhiều hơn, lớn hơn về số lượng/mức độ.'],
-   usage:'Động từ: 增加知识, 增加了不少烦恼, 增加收入.',
-   collo:['增加知识','增加了不少烦恼','增加收入'],
-   ex_zh:'坚持阅读，除了能增加知识外，还能帮助我减轻压力。',ex_py:'Jiānchí yuèdú, chúle néng zēngjiā zhīshi wài, hái néng bāngzhù wǒ jiǎnqīng yālì.',ex_vn:'Kiên trì đọc sách, ngoài việc có thể tăng thêm kiến thức, còn có thể giúp tôi giảm bớt áp lực.',
-   exList:[
-     {zh:'坚持阅读，除了能增加知识外，还能帮助我减轻压力，人也会变得轻松起来。',py:'Jiānchí yuèdú, chúle néng zēngjiā zhīshi wài, hái néng bāngzhù wǒ jiǎnqīng yālì, rén yě huì biànde qīngsōng qilai.',vn:'Kiên trì đọc sách, ngoài việc tăng thêm kiến thức, còn giúp tôi giảm bớt áp lực, con người cũng trở nên thư thái hơn.'},
-     {zh:'科学的发展确实给生活带来了许多方便，但也给我们增加了不少烦恼。',py:'Kēxué de fāzhǎn quèshí gěi shēnghuó dàilaile xǔduō fāngbiàn, dàn yě gěi wǒmen zēngjiāle bùshǎo fánnǎo.',vn:'Sự phát triển của khoa học thực sự mang lại nhiều tiện lợi cho cuộc sống, nhưng cũng tăng thêm cho chúng ta không ít phiền muộn.'},
-     {zh:'公司今年的收入比去年增加了一倍。',py:'Gōngsī jīnnián de shōurù bǐ qùnián zēngjiāle yí bèi.',vn:'Thu nhập năm nay của công ty tăng gấp đôi so với năm ngoái.'},
-   ],
-   hanzi:[
-     {c:'增',p:'zēng',type:'左右结构 · Trái-phải',st:15,ord:'土 (thổ) trái → 曾 phải',rad:'土 (thổ – đất)',mean:'tăng thêm',
-      tip:'Bộ đất 土 (đắp thêm đất) + 曾(biểu âm) → ĐẮP THÊM, kết hợp 加(cộng thêm) thành 增加 = TĂNG THÊM.',
-      cf:'赠 (zèng – "tặng", bộ 贝)',w:'增加 / 增长 / 增多'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sự phát triển của khoa học thực sự mang lại nhiều tiện lợi, nhưng cũng tăng thêm cho chúng ta không ít phiền muộn.',answer:'科学的发展确实带来了许多方便，但也给我们增加了不少烦恼。',answerPy:'Kēxué de fāzhǎn quèshí dàilaile xǔduō fāngbiàn, dàn yě gěi wǒmen zēngjiāle bùshǎo fánnǎo.',
-      note:'确实 ôn lại ngữ pháp Bài 10.'},
-     {promptLang:'vi',prompt:'Thu nhập năm nay của công ty tăng gấp đôi so với năm ngoái.',answer:'公司今年的收入比去年增加了一倍。',answerPy:'Gōngsī jīnnián de shōurù bǐ qùnián zēngjiāle yí bèi.',
-      note:'倍 ôn lại ngữ pháp Bài 6.'},
-   ]},
-
-  {n:20,zh:'文章',py:'wénzhāng',pos:'Danh từ',vn:'bài văn, bài báo', hv: 'văn chương',em:'📃',lesson:4,
-   explain:['Bài viết hoàn chỉnh (bài văn, bài báo, bài luận).'],
-   usage:'Danh từ; lượng từ 篇: 一篇文章, 看完一篇文章.',
-   collo:['一篇文章','看完一篇文章','写文章'],
-   ex_zh:'在看完一篇文章或一本书之后，还可以把它的主要内容和自己的想法写下来。',ex_py:'Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng hé zìjǐ de xiǎngfǎ xiě xialai.',ex_vn:'Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó và suy nghĩ của mình.',
-   exList:[
-     {zh:'在看完一篇文章或一本书之后，还可以把它的主要内容和自己的想法写下来。',py:'Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng hé zìjǐ de xiǎngfǎ xiě xialai.',vn:'Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó và suy nghĩ của mình.'},
-     {zh:'这篇文章写得挺好的，值得大家看一看。',py:'Zhè piān wénzhāng xiě de tǐng hǎo de, zhídé dàjiā kàn yi kàn.',vn:'Bài văn này viết khá hay, đáng để mọi người xem thử.'},
-     {zh:'他不仅会写文章，还会画画儿。',py:'Tā bùjǐn huì xiě wénzhāng, hái huì huà huàr.',vn:'Anh ấy không những biết viết văn, còn biết vẽ tranh.'},
-   ],
-   hanzi:[
-     {c:'章',p:'zhāng',type:'上下结构 · Trên-dưới',st:11,ord:'立 trên → 早 dưới',rad:'立 (lập)',mean:'chương, đoạn văn',
-      tip:'Chữ hội ý 音(âm nhạc) + 十(mười, kết thúc) → một KHÚC NHẠC hoàn chỉnh, mở rộng thành CHƯƠNG/ĐOẠN VĂN, kết hợp 文 thành 文章 = BÀI VĂN.',
-      cf:'张 (zhāng – "tờ, họ Trương")',w:'文章 / 第一章 / 图章'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bài văn này viết khá hay, đáng để mọi người xem thử.',answer:'这篇文章写得挺好的，值得大家看一看。',answerPy:'Zhè piān wénzhāng xiě de tǐng hǎo de, zhídé dàjiā kàn yi kàn.',
-      note:'挺……的 (Bài 3) + 值得 (Bài 6) — ôn lại hai điểm ngữ pháp cũ.'},
-     {promptLang:'vi',prompt:'Sau khi đọc xong một bài văn, hãy viết lại nội dung chính của nó.',answer:'看完一篇文章之后，把它的主要内容写下来。',answerPy:'Kànwán yì piān wénzhāng zhīhòu, bǎ tā de zhǔyào nèiróng xiě xialai.',
-      note:'把……写下来 kết hợp 内容, ôn lại câu chữ 把.'},
-   ]},
-
-  {n:21,zh:'之',py:'zhī',pos:'Trợ từ',vn:'của (nối từ bổ nghĩa và từ được bổ nghĩa)', hv: 'chi',em:'🔗',lesson:4,
-   explain:['Trợ từ kết cấu mang màu sắc văn viết, nối định ngữ với trung tâm ngữ, tương đương 的: 之后, 之前, 之间, 之一.'],
-   usage:'……之后 / 之前 / 之间 / 之一 / 之中.',
-   collo:['之后','之一','之间'],
-   ex_zh:'在看完一篇文章或一本书之后，还可以把它的主要内容写下来。',ex_py:'Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng xiě xialai.',ex_vn:'Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó.',
-   exList:[
-     {zh:'在看完一篇文章或一本书之后，还可以把它的主要内容写下来。',py:'Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng xiě xialai.',vn:'Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó.'},
-     {zh:'做读书笔记就是其中一种好方法，也是提高阅读能力的方法之一。',py:'Zuò dúshū bǐjì jiù shì qízhōng yì zhǒng hǎo fāngfǎ, yě shì tígāo yuèdú nénglì de fāngfǎ zhī yī.',vn:'Ghi chép khi đọc sách chính là một trong những phương pháp tốt, cũng là một trong các cách nâng cao năng lực đọc.'},
-     {zh:'幽默是成功者的共同特点之一。',py:'Yōumò shì chénggōngzhě de gòngtóng tèdiǎn zhī yī.',vn:'Hài hước là một trong những đặc điểm chung của người thành công.'},
-   ],
-   hanzi:[
-     {c:'之',p:'zhī',type:'独体字 · Chữ đơn',st:3,ord:'丶 → 𠃋 → 乀',rad:'丶 (chủ)',mean:'của, đi',
-      tip:'Chữ tượng hình bàn chân bước đi khỏi vạch (nghĩa gốc là ĐI), sau mượn làm trợ từ CỦA trong văn viết (之后 = sau đó).',
-      cf:'乏 (fá – "thiếu", tự dạng gần giống)',w:'之后 / 之一 / 之间'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ghi chép khi đọc sách là một trong những phương pháp tốt, trong đó cách đơn giản nhất là chép lại câu mình thích.',answer:'做读书笔记是好方法之一，其中最简单的就是把自己喜欢的句子记下来。',answerPy:'Zuò dúshū bǐjì shì hǎo fāngfǎ zhī yī, qízhōng zuì jiǎndān de jiù shì bǎ zìjǐ xǐhuan de jùzi jì xialai.',
-      note:'之一 kết hợp 其中, ôn lại ngữ pháp Bài 6.'},
-     {promptLang:'vi',prompt:'Sau khi tốt nghiệp, anh ấy vốn định làm luật sư, kết quả lại trở thành nhà văn.',answer:'毕业之后，他本来打算当律师，结果却成了作家。',answerPy:'Bìyè zhīhòu, tā běnlái dǎsuàn dāng lǜshī, jiéguǒ què chéngle zuòjiā.',
-      note:'之后 kết hợp 本来 (Bài 3), 结果 (Bài 9), 却 (Bài 2).'},
-   ]},
-
-  {n:22,zh:'内容',py:'nèiróng',pos:'Danh từ',vn:'nội dung', hv: 'nội dung',em:'📋',lesson:4,
-   explain:['Những gì được chứa đựng, trình bày trong bài viết, sách, cuộc nói chuyện…'],
-   usage:'Danh từ: 主要内容, 书本上的内容, 内容丰富.',
-   collo:['主要内容','内容丰富','复习重要内容'],
-   ex_zh:'然而，你不能完全相信书本上的内容，要有自己的看法和判断。',ex_py:'Rán\'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.',ex_vn:'Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.',
-   exList:[
-     {zh:'然而，你不能完全相信书本上的内容，要有自己的看法和判断。',py:'Rán\'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.',vn:'Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.'},
-     {zh:'你看过那位作家的小说吗？他的小说语言幽默，内容丰富。',py:'Nǐ kànguo nà wèi zuòjiā de xiǎoshuō ma? Tā de xiǎoshuō yǔyán yōumò, nèiróng fēngfù.',vn:'Bạn đọc tiểu thuyết của nhà văn đó chưa? Tiểu thuyết của ông ấy ngôn ngữ hài hước, nội dung phong phú.'},
-     {zh:'这是复习材料，复习要注意方法，要复习重要内容。',py:'Zhè shì fùxí cáiliào, fùxí yào zhùyì fāngfǎ, yào fùxí zhòngyào nèiróng.',vn:'Đây là tài liệu ôn tập, ôn tập phải chú ý phương pháp, phải ôn nội dung quan trọng.'},
-   ],
-   hanzi:[
-     {c:'容',p:'róng',type:'上下结构 · Trên-dưới',st:10,ord:'宀 (miên) trên → 谷 dưới',rad:'宀 (miên – mái nhà)',mean:'chứa đựng, dung nạp',
-      tip:'Bộ mái nhà 宀 + 谷(thung lũng, chỗ chứa) → CHỨA ĐỰNG, kết hợp 内(bên trong) thành 内容 = NỘI DUNG (những gì chứa bên trong).',
-      cf:'客 (kè – "khách", cũng bộ 宀)',w:'内容 / 容易 / 容许'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách.',answer:'然而，你不能完全相信书本上的内容。',answerPy:'Rán\'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng.',
-      note:'然而 — chuyển ý, ngữ pháp của bài.'},
-     {promptLang:'vi',prompt:'Đối với tôi mà nói, nội dung quyển sách này hơi phức tạp.',answer:'对我来说，这本书的内容有点儿复杂。',answerPy:'Duì wǒ lái shuō, zhè běn shū de nèiróng yǒudiǎnr fùzá.',
-      note:'对……来说 ôn lại ngữ pháp Bài 5, kết hợp 复杂.'},
-   ]},
-
-  {n:23,zh:'然而',py:'rán\'ér',pos:'Liên từ',vn:'nhưng, song, tuy nhiên', hv: 'nhiên nhi',em:'↩️',lesson:4,
-   explain:['Liên từ chỉ sự chuyển ý, đứng đầu vế sau, thường dùng trong văn viết; sau 然而 có thể có dấu phẩy để ngắt.'],
-   usage:'Vế 1。然而(，) + Vế 2 (văn viết).',
-   collo:['然而，……','然而一直没有放弃','然而看法不同'],
-   ex_zh:'他虽然失败了很多次，然而一直没有放弃。',ex_py:'Tā suīrán shībàile hěn duō cì, rán\'ér yìzhí méiyǒu fàngqì.',ex_vn:'Anh ấy tuy thất bại rất nhiều lần, nhưng vẫn luôn không từ bỏ.',
-   exList:[
-     {zh:'他虽然失败了很多次，然而一直没有放弃。',py:'Tā suīrán shībàile hěn duō cì, rán\'ér yìzhí méiyǒu fàngqì.',vn:'Anh ấy tuy thất bại rất nhiều lần, nhưng vẫn luôn không từ bỏ.'},
-     {zh:'很多人觉得自己的生活是幸福的，然而每个人对幸福的看法却不完全相同。',py:'Hěn duō rén juéde zìjǐ de shēnghuó shì xìngfú de, rán\'ér měi ge rén duì xìngfú de kànfǎ què bù wánquán xiāngtóng.',vn:'Nhiều người cảm thấy cuộc sống của mình hạnh phúc, tuy nhiên cách nhìn của mỗi người về hạnh phúc lại không hoàn toàn giống nhau.'},
-     {zh:'然而，你不能完全相信书本上的内容，要有自己的看法和判断。',py:'Rán\'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.',vn:'Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.'},
-   ],
-   hanzi:[
-     {c:'然',p:'rán',type:'上下结构 · Trên-dưới',st:12,ord:'月+犬 trên → 灬 (hỏa) dưới',rad:'灬 (hỏa – lửa)',mean:'như vậy, đúng vậy',
-      tip:'Chữ hội ý thịt 月 + chó 犬 trên lửa 灬 → nghĩa gốc là ĐỐT, sau mượn nghĩa NHƯ VẬY, kết hợp 而 thành 然而 = "như vậy mà" → NHƯNG.',
-      cf:'燃 (rán – "đốt cháy", thêm bộ 火 để giữ nghĩa gốc)',w:'然而 / 虽然 / 竟然 / 仍然'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Có người cho rằng chỉ cần có tiền là sẽ hạnh phúc, tuy nhiên rất nhiều thứ không thể dùng tiền mua được.',answer:'有的人觉得只要有钱就会幸福，然而很多东西是不能用钱买到的。',answerPy:'Yǒude rén juéde zhǐyào yǒu qián jiù huì xìngfú, rán\'ér hěn duō dōngxi shì bù néng yòng qián mǎidào de.',
-      note:'然而 kết hợp 只要……就 (Bài 8) và chủ đề hạnh phúc Bài 10.'},
-     {promptLang:'vi',prompt:'Anh ấy từ nhỏ đã muốn trở thành cảnh sát, tuy nhiên do sức khỏe không tốt nên đành phải từ bỏ.',answer:'他从小就想成为一名警察，然而由于身体不好，只好放弃了。',answerPy:'Tā cóngxiǎo jiù xiǎng chéngwéi yì míng jǐngchá, rán\'ér yóuyú shēntǐ bù hǎo, zhǐhǎo fàngqì le.',
-      note:'然而 kết hợp 由于 (Bài 10) và 只好 (từ mới của bài).'},
-   ]},
-
-  {n:24,zh:'看法',py:'kànfǎ',pos:'Danh từ',vn:'quan điểm, cách nhìn', hv: 'khán pháp',em:'👁️',lesson:4,
-   explain:['Ý kiến, cách nhìn nhận của một người về sự việc nào đó.'],
-   usage:'Danh từ: 自己的看法, 对……的看法, 看法不同.',
-   collo:['自己的看法','对……的看法','看法不同'],
-   ex_zh:'你不能完全相信书本上的内容，要有自己的看法和判断。',ex_py:'Nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.',ex_vn:'Bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.',
-   exList:[
-     {zh:'你不能完全相信书本上的内容，要有自己的看法和判断。',py:'Nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.',vn:'Bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.'},
-     {zh:'每个人对幸福的看法却不完全相同。',py:'Měi ge rén duì xìngfú de kànfǎ què bù wánquán xiāngtóng.',vn:'Cách nhìn của mỗi người về hạnh phúc lại không hoàn toàn giống nhau.'},
-     {zh:'在我看来，你的看法很有道理。',py:'Zài wǒ kànlái, nǐ de kànfǎ hěn yǒu dàolǐ.',vn:'Theo tôi thấy, quan điểm của bạn rất có lý.'},
-   ],
-   hanzi:[
-     {c:'法',p:'fǎ',type:'左右结构 · Trái-phải',st:8,ord:'氵 (thủy) trái → 去 phải',rad:'氵 (thủy – nước)',mean:'phép, cách',
-      tip:'Bộ nước 氵 (công bằng như mặt nước) + 去 → PHÉP TẮC, mở rộng thành CÁCH THỨC, kết hợp 看 thành 看法 = CÁCH NHÌN.',
-      cf:'去 (qù – "đi", phần bên phải)',w:'看法 / 方法 / 办法 / 语法'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Theo tôi thấy, quan điểm của bạn rất có lý.',answer:'在我看来，你的看法很有道理。',answerPy:'Zài wǒ kànlái, nǐ de kànfǎ hěn yǒu dàolǐ.',
-      note:'在……看来 ôn lại ngữ pháp Bài 10.'},
-     {promptLang:'vi',prompt:'Tôi vốn tưởng mọi người có cùng quan điểm, hóa ra mỗi người nghĩ một khác.',answer:'我以为大家的看法都一样，原来每个人想的都不同。',answerPy:'Wǒ yǐwéi dàjiā de kànfǎ dōu yíyàng, yuánlái měi ge rén xiǎng de dōu bùtóng.',
-      note:'以为 + 原来 ôn lại ngữ pháp Bài 4.'},
-   ]},
-
-  {n:25,zh:'相同',py:'xiāngtóng',pos:'Tính từ',vn:'giống nhau, như nhau', hv: 'tương đồng',em:'🟰',lesson:5,
-   explain:['Hoàn toàn giống nhau, không có điểm khác biệt.'],
-   usage:'Tính từ: 相同的汉字, 看法相同, 跟……相同.',
-   collo:['三个相同的汉字','看法不完全相同','相同年龄'],
-   ex_zh:'虽然这句话只用了三个相同的汉字，但是不同的顺序却表示了不同的意思。',ex_py:'Suīrán zhè jù huà zhǐ yòngle sān ge xiāngtóng de Hànzì, dànshì bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.',ex_vn:'Tuy câu nói này chỉ dùng ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.',
-   exList:[
-     {zh:'虽然这句话只用了三个相同的汉字，但是不同的顺序却表示了不同的意思。',py:'Suīrán zhè jù huà zhǐ yòngle sān ge xiāngtóng de Hànzì, dànshì bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.',vn:'Tuy câu nói này chỉ dùng ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.'},
-     {zh:'他很年轻，可是遇到问题时，却比相同年龄的人更冷静。',py:'Tā hěn niánqīng, kěshì yùdào wèntí shí, què bǐ xiāngtóng niánlíng de rén gèng lěngjìng.',vn:'Anh ấy rất trẻ, nhưng khi gặp vấn đề, lại bình tĩnh hơn những người cùng tuổi.'},
-     {zh:'我们俩的爱好几乎完全相同。',py:'Wǒmen liǎ de àihào jīhū wánquán xiāngtóng.',vn:'Sở thích của hai chúng tôi hầu như hoàn toàn giống nhau.'},
-   ],
-   hanzi:[
-     {c:'相',p:'xiāng',type:'左右结构 · Trái-phải',st:9,ord:'木 (mộc) trái → 目 (mục) phải',rad:'目 (mục – mắt)',mean:'lẫn nhau',
-      tip:'Chữ hội ý mắt 目 nhìn cây 木 → QUAN SÁT, mở rộng thành LẪN NHAU, kết hợp 同(giống) thành 相同 = GIỐNG NHAU.',
-      cf:'想 (xiǎng – "nghĩ", thêm bộ 心)',w:'相同 / 相信 / 互相'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh ấy rất trẻ, nhưng khi gặp vấn đề lại bình tĩnh hơn những người cùng tuổi.',answer:'他很年轻，可是遇到问题时，却比相同年龄的人更冷静。',answerPy:'Tā hěn niánqīng, kěshì yùdào wèntí shí, què bǐ xiāngtóng niánlíng de rén gèng lěngjìng.',
-      note:'可是 (Bài 9) + 却 (Bài 2) — ôn lại hai điểm ngữ pháp cũ.'},
-     {promptLang:'vi',prompt:'Sở thích của hai chúng tôi hầu như hoàn toàn giống nhau.',answer:'我们俩的爱好几乎完全相同。',answerPy:'Wǒmen liǎ de àihào jīhū wánquán xiāngtóng.',
-      note:'几乎 ôn lại ngữ pháp Bài 2.'},
-   ]},
-
-  {n:26,zh:'顺序',py:'shùnxù',pos:'Danh từ',vn:'trật tự, thứ tự', hv: 'thuận tự',em:'🔢',lesson:5,
-   explain:['Thứ tự sắp xếp trước sau của sự vật, hành động.'],
-   usage:'Danh từ: 不同的顺序, 按照……的顺序, 顺序不对.',
-   collo:['不同的顺序','按照顺序','先下后上的顺序'],
-   ex_zh:'为了保证您和他人的安全，请您按照"先下后上"的顺序上下车。',ex_py:'Wèile bǎozhèng nín hé tārén de ānquán, qǐng nín ànzhào "xiān xià hòu shàng" de shùnxù shàng xià chē.',ex_vn:'Để đảm bảo an toàn cho bạn và người khác, xin hãy lên xuống xe theo thứ tự "xuống trước lên sau".',
-   exList:[
-     {zh:'为了保证您和他人的安全，请您按照"先下后上"的顺序上下车。',py:'Wèile bǎozhèng nín hé tārén de ānquán, qǐng nín ànzhào "xiān xià hòu shàng" de shùnxù shàng xià chē.',vn:'Để đảm bảo an toàn cho bạn và người khác, xin hãy lên xuống xe theo thứ tự "xuống trước lên sau".'},
-     {zh:'虽然这句话只用了三个相同的汉字，但是不同的顺序却表示了不同的意思。',py:'Suīrán zhè jù huà zhǐ yòngle sān ge xiāngtóng de Hànzì, dànshì bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.',vn:'Tuy câu này chỉ dùng ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.'},
-     {zh:'请按照顺序排队，不要着急。',py:'Qǐng ànzhào shùnxù páiduì, búyào zháojí.',vn:'Xin hãy xếp hàng theo thứ tự, đừng vội.'},
-   ],
-   hanzi:[
-     {c:'序',p:'xù',type:'半包围结构 · Bán bao vây',st:7,ord:'广 bao ngoài → 予 trong',rad:'广 (nghiễm – mái nhà)',mean:'thứ tự, mở đầu',
-      tip:'Bộ mái nhà 广 + 予(biểu âm) → nghĩa gốc là bức tường phía đông-tây của nhà (có trước sau), mở rộng thành THỨ TỰ, kết hợp 顺(thuận) thành 顺序 = TRẬT TỰ.',
-      cf:'预 (yù – "dự, trước", bộ 页)',w:'顺序 / 秩序 / 序言'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Xin hãy lên xuống xe theo thứ tự "xuống trước lên sau".',answer:'请您按照"先下后上"的顺序上下车。',answerPy:'Qǐng nín ànzhào "xiān xià hòu shàng" de shùnxù shàng xià chē.',
-      note:'按照……的顺序 ôn lại ngữ pháp 按照 Bài 4.'},
-     {promptLang:'vi',prompt:'Trước tiên đọc đề, sau đó làm bài, cuối cùng kiểm tra — thứ tự này rất quan trọng.',answer:'首先读题，其次做题，最后检查，这个顺序很重要。',answerPy:'Shǒuxiān dú tí, qícì zuò tí, zuìhòu jiǎnchá, zhège shùnxù hěn zhòngyào.',
-      note:'首先……其次……最后 ôn lại ngữ pháp Bài 3.'},
-   ]},
-
-  {n:27,zh:'表示',py:'biǎoshì',pos:'Động từ',vn:'biểu thị, có ý nghĩa; bày tỏ', hv: 'biểu thị',em:'💬',lesson:5,
-   explain:['1. Biểu thị, mang ý nghĩa (từ ngữ/ký hiệu biểu thị điều gì).','2. Bày tỏ (thái độ, cảm xúc) bằng lời nói/hành động.'],
-   usage:'表示 + ý nghĩa/thái độ: 表示不同的意思, 表示感谢, 表示同意.',
-   collo:['表示了不同的意思','表示感谢','表示同意'],
-   ex_zh:'不同的顺序却表示了不同的意思。',ex_py:'Bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.',ex_vn:'Thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.',
-   exList:[
-     {zh:'不同的顺序却表示了不同的意思。',py:'Bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.',vn:'Thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.'},
-     {zh:'他向大家表示了感谢。',py:'Tā xiàng dàjiā biǎoshìle gǎnxiè.',vn:'Anh ấy bày tỏ lòng cảm ơn với mọi người.'},
-     {zh:'尽管有些人不同意，但大部分人都表示支持这个计划。',py:'Jǐnguǎn yǒuxiē rén bù tóngyì, dàn dà bùfen rén dōu biǎoshì zhīchí zhège jìhuà.',vn:'Mặc dù có người không đồng ý, nhưng phần lớn mọi người đều bày tỏ ủng hộ kế hoạch này.'},
-   ],
-   hanzi:[
-     {c:'表',p:'biǎo',type:'上下结构 · Trên-dưới',st:8,ord:'龶 trên → 𧘇 dưới',rad:'衣 (y – áo, biến thể)',mean:'bề ngoài, biểu lộ',
-      tip:'Chữ hội ý áo lông 衣+毛 mặc bên NGOÀI → BỀ MẶT, mở rộng thành BIỂU LỘ ra ngoài, kết hợp 示(cho thấy) thành 表示 = BIỂU THỊ.',
-      cf:'麦 (mài – "lúa mạch", phần trên gần giống)',w:'表示 / 表演 / 表格 / 手表'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mặc dù có người không đồng ý, nhưng phần lớn mọi người đều bày tỏ ủng hộ.',answer:'尽管有些人不同意，但大部分人都表示支持。',answerPy:'Jǐnguǎn yǒuxiē rén bù tóngyì, dàn dà bùfen rén dōu biǎoshì zhīchí.',
-      note:'尽管 ôn lại ngữ pháp Bài 2.'},
-     {promptLang:'vi',prompt:'Ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.',answer:'三个相同的汉字，不同的顺序却表示了不同的意思。',answerPy:'Sān ge xiāngtóng de Hànzì, bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.',
-      note:'表示 kết hợp 相同/顺序 — từ mới của bài, cùng 却 (Bài 2).'},
-   ]},
-
-  {n:28,zh:'养成',py:'yǎngchéng',pos:'Động từ',vn:'hình thành, tạo (thói quen)', hv: 'dưỡng thành',em:'🌱',lesson:5,
-   explain:['Dần dần hình thành (thói quen, tính cách) qua thời gian.'],
-   usage:'养成 + 习惯: 养成阅读的习惯, 养成好习惯.',
-   collo:['养成阅读的习惯','养成好习惯','从小养成'],
-   ex_zh:'"好读书"就是要养成阅读的习惯，使读书真正成为自己的兴趣爱好。',ex_py:'"Hào dú shū" jiù shì yào yǎngchéng yuèdú de xíguàn, shǐ dú shū zhēnzhèng chéngwéi zìjǐ de xìngqù àihào.',ex_vn:'"Thích đọc sách" chính là phải hình thành thói quen đọc sách, khiến việc đọc sách thực sự trở thành sở thích của mình.',
-   exList:[
-     {zh:'"好读书"就是要养成阅读的习惯，使读书真正成为自己的兴趣爱好。',py:'"Hào dú shū" jiù shì yào yǎngchéng yuèdú de xíguàn, shǐ dú shū zhēnzhèng chéngwéi zìjǐ de xìngqù àihào.',vn:'"Thích đọc sách" chính là phải hình thành thói quen đọc sách, khiến việc đọc sách thực sự trở thành sở thích của mình.'},
-     {zh:'好习惯要从小养成。',py:'Hǎo xíguàn yào cóngxiǎo yǎngchéng.',vn:'Thói quen tốt phải hình thành từ nhỏ.'},
-     {zh:'只要坚持一个月，你就能养成早起的习惯。',py:'Zhǐyào jiānchí yí ge yuè, nǐ jiù néng yǎngchéng zǎoqǐ de xíguàn.',vn:'Chỉ cần kiên trì một tháng, bạn sẽ hình thành được thói quen dậy sớm.'},
-   ],
-   hanzi:[
-     {c:'养',p:'yǎng',type:'上下结构 · Trên-dưới (giản thể)',st:9,ord:'𦍌 (dương) trên → 𧘇 dưới',rad:'羊 (dương – dê)',mean:'nuôi dưỡng',
-      tip:'Bộ dê 羊 (nuôi dê) → NUÔI DƯỠNG, kết hợp 成(thành) thành 养成 = NUÔI DƯỠNG THÀNH (thói quen).',
-      cf:'美 (měi – "đẹp", cũng có 羊 ở trên)',w:'养成 / 养 / 营养'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Hình thành thói quen đọc sách sẽ khiến cuộc sống của bạn phong phú hơn.',answer:'养成阅读的习惯会使你的生活更丰富。',answerPy:'Yǎngchéng yuèdú de xíguàn huì shǐ nǐ de shēnghuó gèng fēngfù.',
-      note:'使 ôn lại ngữ pháp Bài 8.'},
-     {promptLang:'vi',prompt:'Chỉ cần kiên trì một tháng, bạn sẽ hình thành được thói quen dậy sớm.',answer:'只要坚持一个月，你就能养成早起的习惯。',answerPy:'Zhǐyào jiānchí yí ge yuè, nǐ jiù néng yǎngchéng zǎoqǐ de xíguàn.',
-      note:'只要……就 ôn lại ngữ pháp Bài 8.'},
-   ]},
-
-  {n:29,zh:'同时',py:'tóngshí',pos:'Liên từ/Danh từ',vn:'đồng thời, hơn nữa; cùng lúc', hv: 'đồng thời',em:'⏱️',lesson:5,
-   explain:['1. (Liên từ) Nghĩa "hơn nữa", tiến thêm một bước, thường đi với 又/也/还.','2. (Danh từ) Chỉ hành động xảy ra cùng lúc, dùng trong cấu trúc 在……(的)同时.'],
-   usage:'Vế 1。同时，……也/还……(liên từ) | 在……(的)同时，……(danh từ)',
-   collo:['同时，……也','在……的同时','同时还'],
-   ex_zh:'阅读有许多好处，它能丰富你的知识；同时，它还会丰富你的情感，使你的生活更精彩。',ex_py:'Yuèdú yǒu xǔduō hǎochù, tā néng fēngfù nǐ de zhīshi; tóngshí, tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.',ex_vn:'Đọc sách có rất nhiều lợi ích, nó có thể làm phong phú kiến thức của bạn; đồng thời, nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn.',
-   exList:[
-     {zh:'阅读有许多好处，它能丰富你的知识；同时，它还会丰富你的情感，使你的生活更精彩。',py:'Yuèdú yǒu xǔduō hǎochù, tā néng fēngfù nǐ de zhīshi; tóngshí, tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.',vn:'Đọc sách có rất nhiều lợi ích, nó có thể làm phong phú kiến thức của bạn; đồng thời, nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn.'},
-     {zh:'因为小孩子的想法没有那么复杂，所以他们总是很快乐。同时，小孩子也是最诚实的。',py:'Yīnwèi xiǎo háizi de xiǎngfǎ méiyǒu nàme fùzá, suǒyǐ tāmen zǒngshì hěn kuàilè. Tóngshí, xiǎo háizi yě shì zuì chéngshí de.',vn:'Vì suy nghĩ của trẻ con không phức tạp như vậy, nên chúng luôn rất vui vẻ. Đồng thời, trẻ con cũng là thành thật nhất.'},
-     {zh:'在学习汉语的同时，我还了解了中国文化，认识了很多中国朋友。',py:'Zài xuéxí Hànyǔ de tóngshí, wǒ hái liǎojiěle Zhōngguó wénhuà, rènshile hěn duō Zhōngguó péngyou.',vn:'Trong lúc học tiếng Trung, tôi còn hiểu thêm văn hóa Trung Quốc, quen được rất nhiều bạn Trung Quốc.'},
-   ],
-   hanzi:[
-     {c:'同',p:'tóng',type:'半包围结构 · Bán bao vây',st:6,ord:'冂 bao ngoài → 一+口 trong',rad:'口 (khẩu)',mean:'cùng, giống',
-      tip:'Chữ hội ý nhiều miệng 口 nói CÙNG một ý dưới một mái 冂 → CÙNG, GIỐNG, kết hợp 时(thời gian) thành 同时 = CÙNG LÚC.',
-      cf:'向 (xiàng – "hướng về", tự dạng gần giống)',w:'同时 / 同意 / 相同 / 共同'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh trai tôi năm nay 26 tuổi, trong lúc học thạc sĩ, còn làm việc ở một công ty.',answer:'我哥哥今年26岁，在读硕士研究生的同时，还在一家公司工作。',answerPy:'Wǒ gēge jīnnián èrshíliù suì, zài dú shuòshì yánjiūshēng de tóngshí, hái zài yì jiā gōngsī gōngzuò.',
-      note:'在……的同时 kết hợp 硕士, ôn lại từ vựng Bài 10.'},
-     {promptLang:'vi',prompt:'Cô ấy là nhà khoa học nổi tiếng, đồng thời cũng là một người mẹ tốt.',answer:'她是著名的科学家，同时也是一位好母亲。',answerPy:'Tā shì zhùmíng de kēxuéjiā, tóngshí yě shì yí wèi hǎo mǔqīn.',
-      note:'同时……也 kết hợp 著名 (từ mới) và 母亲 (Bài 10).'},
-   ]},
-
-  {n:30,zh:'精彩',py:'jīngcǎi',pos:'Tính từ',vn:'tuyệt vời, xuất sắc, đặc sắc', hv: 'tinh thái',em:'✨',lesson:5,
-   explain:['Đặc sắc, hấp dẫn, xuất sắc (biểu diễn, trận đấu, cuộc sống…).'],
-   usage:'Tính từ: 生活更精彩, 精彩的比赛, 表演很精彩.',
-   collo:['生活更精彩','精彩的比赛','表演很精彩'],
-   ex_zh:'它还会丰富你的情感，使你的生活更精彩。',ex_py:'Tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.',ex_vn:'Nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn.',
-   exList:[
-     {zh:'它还会丰富你的情感，使你的生活更精彩。',py:'Tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.',vn:'Nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn.'},
-     {zh:'昨天的比赛太精彩了，即使下着大雨，观众也没有离开。',py:'Zuótiān de bǐsài tài jīngcǎi le, jíshǐ xiàzhe dàyǔ, guānzhòng yě méiyǒu líkāi.',vn:'Trận đấu hôm qua quá đặc sắc, dù trời mưa to, khán giả cũng không rời đi.'},
-     {zh:'这场表演精彩极了，值得再看一次。',py:'Zhè chǎng biǎoyǎn jīngcǎi jí le, zhídé zài kàn yí cì.',vn:'Buổi biểu diễn này đặc sắc cực kỳ, đáng để xem lại lần nữa.'},
-   ],
-   hanzi:[
-     {c:'彩',p:'cǎi',type:'左右结构 · Trái-phải',st:11,ord:'采 trái → 彡 (sam) phải',rad:'彡 (sam – vệt màu, lông)',mean:'màu sắc rực rỡ',
-      tip:'Bộ 彡 (vệt màu, hoa văn) + 采(biểu âm) → MÀU SẮC RỰC RỠ, kết hợp 精(tinh, tốt) thành 精彩 = ĐẶC SẮC, TUYỆT VỜI.',
-      cf:'采 (cǎi – "hái", phần bên trái)',w:'精彩 / 彩色 / 光彩'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trận đấu hôm qua quá đặc sắc, dù trời mưa to, khán giả cũng không rời đi.',answer:'昨天的比赛太精彩了，即使下着大雨，观众也没有离开。',answerPy:'Zuótiān de bǐsài tài jīngcǎi le, jíshǐ xiàzhe dàyǔ, guānzhòng yě méiyǒu líkāi.',
-      note:'即使……也 ôn lại ngữ pháp Bài 1.'},
-     {promptLang:'vi',prompt:'Đọc sách có thể khiến cuộc sống của bạn tuyệt vời hơn, vì vậy hãy để đọc sách thành thói quen của bạn.',answer:'阅读能使你的生活更精彩，因此，让阅读成为你的习惯吧！',answerPy:'Yuèdú néng shǐ nǐ de shēnghuó gèng jīngcǎi, yīncǐ, ràng yuèdú chéngwéi nǐ de xíguàn ba!',
-      note:'使 + 因此 ôn lại ngữ pháp Bài 8.'},
-   ]},
-
-  {n:31,zh:'大卫',py:'Dàwèi',pos:'Danh từ riêng',vn:'David (tên người)', hv: 'Đại Vệ',em:'👨',lesson:1,
-   explain:['Tên riêng của nhân vật nam (người nước ngoài), bạn của Mã Khắc.'],
-   usage:'Danh từ riêng chỉ tên người.',
-   collo:['大卫说','大卫和马克'],
-   ex_zh:'马克向大卫介绍自己学习汉语的方法。',ex_py:'Mǎkè xiàng Dàwèi jièshào zìjǐ xuéxí Hànyǔ de fāngfǎ.',ex_vn:'Mã Khắc giới thiệu với David phương pháp học tiếng Trung của mình.',
-   exList:[
-     {zh:'马克向大卫介绍自己学习汉语的方法。',py:'Mǎkè xiàng Dàwèi jièshào zìjǐ xuéxí Hànyǔ de fāngfǎ.',vn:'Mã Khắc giới thiệu với David phương pháp học tiếng Trung của mình.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "流利",
+    "py": "liúlì",
+    "pos": "Tính từ",
+    "vn": "lưu loát, trôi chảy",
+    "hv": "lưu lợi",
+    "em": "🗣️",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả ngôn ngữ nói/đọc trôi chảy, không vấp váp."
+    ],
+    "usage": "Tính từ; thường đi với 说得流利, 汉语说得流利.",
+    "collo": [
+      "说得这么流利",
+      "汉语流利",
+      "读得很流利"
+    ],
+    "ex_zh": "你来中国才一年，汉语就说得这么流利，真厉害！",
+    "ex_py": "Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!",
+    "ex_vn": "Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!",
+    "exList": [
+      {
+        "zh": "你来中国才一年，汉语就说得这么流利，真厉害！",
+        "py": "Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!",
+        "vn": "Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!"
+      },
+      {
+        "zh": "她的英语说得非常流利。",
+        "py": "Tā de Yīngyǔ shuō de fēicháng liúlì.",
+        "vn": "Tiếng Anh của cô ấy nói rất lưu loát."
+      },
+      {
+        "zh": "不过，只要多练习，你也能说得像他一样流利。",
+        "py": "Búguò, zhǐyào duō liànxí, nǐ yě néng shuō de xiàng tā yíyàng liúlì.",
+        "vn": "Nhưng, chỉ cần luyện tập nhiều, bạn cũng có thể nói lưu loát như anh ấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "流",
+        "p": "liú",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "氵 (thủy) trái → 㐬 phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "chảy, trôi chảy",
+        "tip": "Bộ nước 氵 (dòng nước chảy liên tục) → mở rộng nghĩa TRÔI CHẢY, kết hợp 利(lợi, thuận lợi) thành 流利 = LƯU LOÁT (nói trôi chảy như nước chảy).",
+        "cf": "留 (liú – \"ở lại\", bộ 田\")",
+        "w": "流利 / 流水 / 交流"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn đến Trung Quốc mới một năm, nhưng tiếng Trung đã nói lưu loát như vậy, thật lợi hại.",
+        "answer": "你来中国才一年，汉语就说得这么流利，真厉害。",
+        "answerPy": "Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai.",
+        "note": "说得……流利 kết hợp 厉害, ôn lại từ vựng của bài.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn kiên trì luyện tập, tiếng Trung của bạn cũng sẽ nói lưu loát hơn.",
+        "answer": "只要你坚持练习，你的汉语也会说得更流利。",
+        "answerPy": "Zhǐyào nǐ jiānchí liànxí, nǐ de Hànyǔ yě huì shuō de gèng liúlì.",
+        "note": "只要……坚持 kết hợp 坚持, ôn lại từ vựng Bài 9.",
+        "pair": "只要……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "说得流利",
+        "py": "shuō de liúlì",
+        "vn": "nói lưu loát"
+      },
+      {
+        "zh": "汉语流利",
+        "py": "Hànyǔ liúlì",
+        "vn": "tiếng Trung lưu loát"
+      },
+      {
+        "zh": "读得很流利",
+        "py": "dú de hěn liúlì",
+        "vn": "đọc rất trôi chảy"
+      },
+      {
+        "zh": "不太流利",
+        "py": "bú tài liúlì",
+        "vn": "chưa lưu loát lắm"
+      },
+      {
+        "zh": "流利地回答",
+        "py": "liúlì de huídá",
+        "vn": "trả lời trôi chảy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 得 + 流利",
+        "m": "Nói, đọc trôi chảy thế nào"
+      },
+      {
+        "s": "流利 dùng cho NÓI / ĐỌC, không dùng cho viết"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "厉害",
+    "py": "lìhai",
+    "pos": "Tính từ",
+    "vn": "lợi hại, giỏi giang",
+    "hv": "lệ hại",
+    "em": "💪",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả năng lực/mức độ vượt trội, đáng nể."
+    ],
+    "usage": "Tính từ; thường đi với 真厉害, 疼得厉害.",
+    "collo": [
+      "真厉害",
+      "疼得厉害",
+      "厉害的人"
+    ],
+    "ex_zh": "你来中国才一年，汉语就说得这么流利，真厉害！",
+    "ex_py": "Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!",
+    "ex_vn": "Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!",
+    "exList": [
+      {
+        "zh": "你来中国才一年，汉语就说得这么流利，真厉害！",
+        "py": "Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!",
+        "vn": "Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!"
+      },
+      {
+        "zh": "你太厉害了！连中文报纸都看得懂。",
+        "py": "Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.",
+        "vn": "Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được."
+      },
+      {
+        "zh": "大夫，我的牙最近疼得厉害，不知道是怎么回事。",
+        "py": "Dàifu, wǒ de yá zuìjìn téng de lìhai, bù zhīdào shì zěnme huí shì.",
+        "vn": "Bác sĩ, răng tôi gần đây đau dữ dội, không biết là chuyện gì."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "厉",
+        "p": "lì",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 5,
+        "ord": "厂 bao ngoài → 万 trong",
+        "rad": "厂 (hán)",
+        "mean": "nghiêm khắc, mãnh liệt",
+        "tip": "Chữ giản thể mang nghĩa MÃNH LIỆT, NGHIÊM KHẮC, kết hợp 害(hại, mức độ) thành 厉害 = LỢI HẠI, mức độ vượt trội đáng nể.",
+        "cf": "历 (lì – \"trải qua\", tự dạng gần giống)",
+        "w": "厉害 / 严厉 / 厉声"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được, thật lưu loát.",
+        "answer": "你太厉害了！连中文报纸都看得懂，说得真流利。",
+        "answerPy": "Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng, shuō de zhēn liúlì.",
+        "note": "厉害 kết hợp 连/流利, ôn lại từ vựng của bài.",
+        "pair": "连……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bác sĩ ơi, dạo này đầu tôi đau dữ dội, chẳng lẽ là do ngủ quá ít?",
+        "answer": "大夫，我的头最近疼得厉害，难道是因为睡得太少吗？",
+        "answerPy": "Dàifu, wǒ de tóu zuìjìn téng de lìhai, nándào shì yīnwèi shuì de tài shǎo ma?",
+        "note": "大夫 là từ bài 7; V + 得 + 厉害 chỉ mức độ nặng.",
+        "pair": "难道……吗？"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "真厉害",
+        "py": "zhēn lìhai",
+        "vn": "giỏi thật"
+      },
+      {
+        "zh": "疼得厉害",
+        "py": "téng de lìhai",
+        "vn": "đau dữ dội"
+      },
+      {
+        "zh": "厉害的人",
+        "py": "lìhai de rén",
+        "vn": "người lợi hại"
+      },
+      {
+        "zh": "咳嗽得厉害",
+        "py": "késou de lìhai",
+        "vn": "ho dữ dội"
+      },
+      {
+        "zh": "最厉害",
+        "py": "zuì lìhai",
+        "vn": "lợi hại nhất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 真 + 厉害 (khen)",
+        "m": "Khen ai đó giỏi"
+      },
+      {
+        "s": "V + 得 + 厉害 (mức độ)",
+        "m": "Đau, ho… đến mức dữ dội"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "语法",
+    "py": "yǔfǎ",
+    "pos": "Danh từ",
+    "vn": "ngữ pháp",
+    "hv": "ngữ pháp",
+    "em": "📖",
+    "lesson": 1,
+    "explain": [
+      "Quy tắc cấu trúc câu, cách kết hợp từ ngữ của một ngôn ngữ."
+    ],
+    "usage": "Danh từ; thường đi với 语法不太好, 学习语法.",
+    "collo": [
+      "语法不太好",
+      "学习语法",
+      "语法知识"
+    ],
+    "ex_zh": "其实我的语法不太好，很多句子说得都不太准确。",
+    "ex_py": "Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.",
+    "ex_vn": "Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm.",
+    "exList": [
+      {
+        "zh": "其实我的语法不太好，很多句子说得都不太准确。",
+        "py": "Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.",
+        "vn": "Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm."
+      },
+      {
+        "zh": "时间可能来不及，不过只好这样了，这些语法知识太难了。",
+        "py": "Shíjiān kěnéng láibují, búguò zhǐhǎo zhèyàng le, zhèxiē yǔfǎ zhīshi tài nán le.",
+        "vn": "Thời gian có thể không kịp, nhưng đành phải vậy thôi, những kiến thức ngữ pháp này quá khó."
+      },
+      {
+        "zh": "学习汉语语法需要多做练习。",
+        "py": "Xuéxí Hànyǔ yǔfǎ xūyào duō zuò liànxí.",
+        "vn": "Học ngữ pháp tiếng Trung cần làm nhiều bài tập."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "法",
+        "p": "fǎ",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "氵 (thủy) trái → 去 phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "phép tắc, quy tắc",
+        "tip": "Bộ nước 氵 (công bằng như nước) → mở rộng nghĩa PHÁP LUẬT, QUY TẮC, kết hợp 语(lời nói) thành 语法 = NGỮ PHÁP (quy tắc của lời nói).",
+        "cf": "去 (qù – \"đi\", không có bộ 氵\")",
+        "w": "语法 / 方法 / 法律"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thực ra ngữ pháp của tôi không tốt lắm, nhưng nhờ đọc báo tiếng Trung nhiều nên từ vựng tăng lên không ít.",
+        "answer": "其实我的语法不太好，不过多亏看中文报纸，词语增加了不少。",
+        "answerPy": "Qíshí wǒ de yǔfǎ bú tài hǎo, búguò duōkuī kàn Zhōngwén bàozhǐ, cíyǔ zēngjiāle bùshǎo.",
+        "note": "语法 kết hợp 词语/增加, ôn lại từ vựng của bài.",
+        "pair": "……，不过……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Học ngữ pháp tiếng Trung tuy phức tạp, nhưng chỉ cần kiên trì luyện tập, dần dần sẽ thấy không khó nữa.",
+        "answer": "学习汉语语法虽然复杂，但只要坚持练习，慢慢就会发现没那么难了。",
+        "answerPy": "Xuéxí Hànyǔ yǔfǎ suīrán fùzá, dàn zhǐyào jiānchí liànxí, mànman jiù huì fāxiàn méi nàme nán le.",
+        "note": "语法……复杂……坚持练习 kết hợp 复杂/坚持, ôn lại nhiều từ vựng.",
+        "pair": "虽然……但……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "学习语法",
+        "py": "xuéxí yǔfǎ",
+        "vn": "học ngữ pháp"
+      },
+      {
+        "zh": "语法不太好",
+        "py": "yǔfǎ bú tài hǎo",
+        "vn": "ngữ pháp chưa tốt"
+      },
+      {
+        "zh": "语法知识",
+        "py": "yǔfǎ zhīshi",
+        "vn": "kiến thức ngữ pháp"
+      },
+      {
+        "zh": "语法错误",
+        "py": "yǔfǎ cuòwù",
+        "vn": "lỗi ngữ pháp"
+      },
+      {
+        "zh": "注意语法",
+        "py": "zhù yì yǔfǎ",
+        "vn": "chú ý ngữ pháp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "语法 + 好 / 不好",
+        "m": "Ngữ pháp tốt / chưa tốt"
+      },
+      {
+        "s": "语法 + 知识 / 错误",
+        "m": "Kiến thức / lỗi ngữ pháp"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "准确",
+    "py": "zhǔnquè",
+    "pos": "Tính từ",
+    "vn": "chính xác, đúng",
+    "hv": "chuẩn xác",
+    "em": "🎯",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả sự đúng đắn, không sai lệch."
+    ],
+    "usage": "Tính từ; thường đi với 说得不太准确, 准确的方法.",
+    "collo": [
+      "说得不太准确",
+      "准确的答案",
+      "消息准确吗"
+    ],
+    "ex_zh": "其实我的语法不太好，很多句子说得都不太准确。",
+    "ex_py": "Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.",
+    "ex_vn": "Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm.",
+    "exList": [
+      {
+        "zh": "其实我的语法不太好，很多句子说得都不太准确。",
+        "py": "Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.",
+        "vn": "Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói ra đều không chuẩn xác lắm."
+      },
+      {
+        "zh": "这个消息准确吗？我怎么不知道？",
+        "py": "Zhège xiāoxi zhǔnquè ma? Wǒ zěnme bù zhīdào?",
+        "vn": "Tin này có chính xác không? Sao tôi lại không biết?"
+      },
+      {
+        "zh": "正确的方法可以让我们做得更好，答案也会更准确。",
+        "py": "Zhèngquè de fāngfǎ kěyǐ ràng wǒmen zuò de gèng hǎo, dá'àn yě huì gèng zhǔnquè.",
+        "vn": "Phương pháp đúng đắn có thể khiến chúng ta làm tốt hơn, đáp án cũng sẽ chính xác hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "确",
+        "p": "què",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 12,
+        "ord": "石 (thạch) trái → 角(biến thể) phải",
+        "rad": "石 (thạch – đá)",
+        "mean": "chắc chắn, đúng",
+        "tip": "Bộ đá 石 (vững chắc) → CHẮC CHẮN, kết hợp 准(chuẩn) thành 准确 = CHÍNH XÁC.",
+        "cf": "确 dễ nhầm 碗 (wǎn – \"cái bát\")",
+        "w": "准确 / 正确 / 确实"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì ngữ pháp của tôi chưa tốt, nên rất nhiều câu tôi nói ra đều chưa chính xác.",
+        "answer": "因为我的语法确实不太好，所以我说的很多句子都不太准确。",
+        "answerPy": "Yīnwèi wǒ de yǔfǎ quèshí bú tài hǎo, suǒyǐ wǒ shuō de hěn duō jùzi dōu bú tài zhǔnquè.",
+        "note": "确实 là từ bài 10; 准确 là sát chuẩn, khác 正确 (đúng/sai).",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tin này chính xác không? Chẳng lẽ bạn không biết sao?",
+        "answer": "这个消息准确吗？难道你不知道吗？",
+        "answerPy": "Zhège xiāoxi zhǔnquè ma? Nándào nǐ bù zhīdào ma?",
+        "note": "准确 kết hợp 难道, ôn lại điểm ngữ pháp của bài.",
+        "pair": "难道……吗……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "说得准确",
+        "py": "shuō de zhǔnquè",
+        "vn": "nói chính xác"
+      },
+      {
+        "zh": "准确的答案",
+        "py": "zhǔnquè de dá'àn",
+        "vn": "đáp án chính xác"
+      },
+      {
+        "zh": "消息准确",
+        "py": "xiāoxi zhǔnquè",
+        "vn": "tin chính xác"
+      },
+      {
+        "zh": "不太准确",
+        "py": "bú tài zhǔnquè",
+        "vn": "chưa chuẩn lắm"
+      },
+      {
+        "zh": "准确地表示",
+        "py": "zhǔnquè de biǎoshì",
+        "vn": "diễn đạt chính xác"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 得 + 准确",
+        "m": "Làm gì một cách chính xác"
+      },
+      {
+        "s": "准确 ≠ 正确",
+        "m": "准确 là khớp chuẩn, sát; 正确 (bài 9) là đúng / sai"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "词语",
+    "py": "cíyǔ",
+    "pos": "Danh từ",
+    "vn": "từ ngữ, cách diễn đạt",
+    "hv": "từ ngữ",
+    "em": "📝",
+    "lesson": 1,
+    "explain": [
+      "Từ và cụm từ trong ngôn ngữ."
+    ],
+    "usage": "Danh từ; thường đi với 学到很多新词语, 选择合适的词语.",
+    "collo": [
+      "新词语",
+      "词语增加了",
+      "简单的词语"
+    ],
+    "ex_zh": "我建议你坚持看中文报纸，这样能学到很多新词语。",
+    "ex_py": "Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, zhèyàng néng xuédào hěn duō xīn cíyǔ.",
+    "ex_vn": "Tôi đề nghị bạn kiên trì đọc báo tiếng Trung, như vậy có thể học được nhiều từ ngữ mới.",
+    "exList": [
+      {
+        "zh": "我建议你坚持看中文报纸，这样能学到很多新词语。",
+        "py": "Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, zhèyàng néng xuédào hěn duō xīn cíyǔ.",
+        "vn": "Tôi đề nghị bạn kiên trì đọc báo tiếng Trung, như vậy có thể học được nhiều từ ngữ mới."
+      },
+      {
+        "zh": "会叫\"爸爸\"\"妈妈\"了，也能说一些简单的词语。",
+        "py": "Huì jiào \"bàba\" \"māma\" le, yě néng shuō yìxiē jiǎndān de cíyǔ.",
+        "vn": "Đã biết gọi \"bố\" \"mẹ\" rồi, cũng có thể nói một số từ ngữ đơn giản."
+      },
+      {
+        "zh": "这本词典收录了很多常用词语。",
+        "py": "Zhè běn cídiǎn shōulùle hěn duō chángyòng cíyǔ.",
+        "vn": "Quyển từ điển này thu thập rất nhiều từ ngữ thường dùng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "词",
+        "p": "cí",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 7,
+        "ord": "讠 (ngôn) trái → 司 phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "từ ngữ",
+        "tip": "Bộ lời nói 讠 + 司(biểu âm) → đơn vị LỜI NÓI nhỏ nhất có nghĩa, kết hợp 语(ngôn ngữ) thành 词语 = TỪ NGỮ.",
+        "cf": "祠 (cí – \"đền thờ\", bộ 礻\")",
+        "w": "词语 / 词典 / 生词"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi khuyên bạn kiên trì đọc báo tiếng Trung, đọc càng nhiều thì từ mới học được càng nhiều.",
+        "answer": "我建议你坚持看中文报纸，看得越多，学到的新词语就越多。",
+        "answerPy": "Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, kàn de yuè duō, xuédào de xīn cíyǔ jiù yuè duō.",
+        "note": "建议 là từ bài 10, 坚持 là từ bài 9.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đứa bé không những biết gọi \"bố\" \"mẹ\", mà còn nói được vài từ đơn giản, giỏi thật.",
+        "answer": "孩子不但会叫\"爸爸\"\"妈妈\"了，而且还能说一些简单的词语，真厉害。",
+        "answerPy": "Háizi búdàn huì jiào \"bàba\" \"māma\" le, érqiě hái néng shuō yìxiē jiǎndān de cíyǔ, zhēn lìhai.",
+        "note": "真厉害 — lời khen quen thuộc trong khẩu ngữ.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "新词语",
+        "py": "xīn cíyǔ",
+        "vn": "từ ngữ mới"
+      },
+      {
+        "zh": "简单的词语",
+        "py": "jiǎndān de cíyǔ",
+        "vn": "từ ngữ đơn giản"
+      },
+      {
+        "zh": "学到新词语",
+        "py": "xué dào xīn cíyǔ",
+        "vn": "học được từ mới"
+      },
+      {
+        "zh": "词语增加了",
+        "py": "cíyǔ zēngjiā le",
+        "vn": "vốn từ tăng lên"
+      },
+      {
+        "zh": "常用词语",
+        "py": "chángyòng cíyǔ",
+        "vn": "từ ngữ thường dùng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "学 / 记 + 词语",
+        "m": "Học, nhớ từ ngữ"
+      },
+      {
+        "s": "词语 ≈ 生词",
+        "m": "词语 là từ ngữ nói chung; 生词 là từ mới của bài"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "连",
+    "py": "lián",
+    "pos": "Giới từ",
+    "vn": "ngay cả (nhấn mạnh)",
+    "hv": "liên",
+    "em": "🔗",
+    "lesson": 1,
+    "explain": [
+      "Giới từ nhấn mạnh, thường dùng cấu trúc \"连……也/都……\". Người nói thông qua nhấn mạnh một ví dụ cực đoan để nói rõ một tình huống khác."
+    ],
+    "usage": "连 + Chủ ngữ/Tân ngữ (đặt trước) + 也/都 + Vị ngữ.",
+    "collo": [
+      "连……都……",
+      "连中文报纸都看得懂",
+      "连我住的楼"
+    ],
+    "ex_zh": "你太厉害了！连中文报纸都看得懂。",
+    "ex_py": "Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.",
+    "ex_vn": "Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được.",
+    "exList": [
+      {
+        "zh": "你太厉害了！连中文报纸都看得懂。",
+        "py": "Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.",
+        "vn": "Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được."
+      },
+      {
+        "zh": "如果连你自己都不喜欢自己，又怎么能让别人喜欢你呢？",
+        "py": "Rúguǒ lián nǐ zìjǐ dōu bù xǐhuan zìjǐ, yòu zěnme néng ràng biérén xǐhuan nǐ ne?",
+        "vn": "Nếu ngay cả bản thân bạn cũng không thích bản thân, thì làm sao có thể khiến người khác thích bạn được?"
+      },
+      {
+        "zh": "广告越来越多，几乎无处不在。连我住的楼的电梯里都有三个广告。",
+        "py": "Guǎnggào yuè lái yuè duō, jīhū wúchù búzài. Lián wǒ zhù de lóu de diàntī li dōu yǒu sān ge guǎnggào.",
+        "vn": "Quảng cáo ngày càng nhiều, hầu như không nơi nào không có. Ngay cả trong thang máy của tòa nhà tôi ở cũng có ba quảng cáo."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "连",
+        "p": "lián",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "辶 bao ngoài → 车 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "liên tục, ngay cả",
+        "tip": "Bộ đi 辶 + 车(xe, biểu ý nối tiếp nhau) → LIÊN TỤC, KẾT NỐI, mở rộng thành giới từ NGAY CẢ (nhấn mạnh trường hợp cực đoan).",
+        "cf": "莲 (lián – \"hoa sen\", bộ 艹\")",
+        "w": "连……都/也…… / 连接 / 连忙"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn giỏi quá! Ngay cả những từ ngữ phức tạp cũng nói được chính xác.",
+        "answer": "你太厉害了！连复杂的词语都能说得准确。",
+        "answerPy": "Nǐ tài lìhai le! Lián fùzá de cíyǔ dōu néng shuō de zhǔnquè.",
+        "note": "连……都…… kết hợp 复杂/词语/准确, ôn lại nhiều từ vựng của bài.",
+        "pair": "连……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu ngay cả điều đơn giản này bạn cũng không hiểu, vậy thì thật khó giải thích rồi.",
+        "answer": "如果连这么简单的事你都不明白，那就真的很难解释了。",
+        "answerPy": "Rúguǒ lián zhème jiǎndān de shì nǐ dōu bù míngbai, nà jiù zhēn de hěn nán jiěshì le.",
+        "note": "连……都…… — ngay cả … cũng.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "连……都……",
+        "py": "lián dōu",
+        "vn": "ngay cả… cũng…"
+      },
+      {
+        "zh": "连……也……",
+        "py": "lián yě",
+        "vn": "đến cả… cũng…"
+      },
+      {
+        "zh": "连我都不知道",
+        "py": "lián wǒ dōu bù zhīdào",
+        "vn": "ngay cả tôi cũng không biết"
+      },
+      {
+        "zh": "连报纸都看得懂",
+        "py": "lián bàozhǐ dōu kàn de dǒng",
+        "vn": "báo cũng đọc hiểu được"
+      },
+      {
+        "zh": "连一个字都没写",
+        "py": "lián yí gè zì dōu méi xiě",
+        "vn": "một chữ cũng chưa viết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "连 + N + 都 / 也 + V",
+        "m": "Ngay cả … cũng … (nhấn mức bất ngờ)"
+      },
+      {
+        "s": "✗ 连他来了 → ✓ 连他都来了",
+        "m": "连 bắt buộc có 都 / 也 ở vế sau"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "阅读",
+    "py": "yuèdú",
+    "pos": "Động từ",
+    "vn": "đọc (sách báo)",
+    "hv": "duyệt độc",
+    "em": "📚",
+    "lesson": 2,
+    "explain": [
+      "Hoạt động đọc, thường dùng cho việc đọc sách/tài liệu nghiêm túc."
+    ],
+    "usage": "Động từ; thường đi với 坚持阅读, 阅读能力.",
+    "collo": [
+      "坚持阅读",
+      "阅读考试",
+      "阅读能力"
+    ],
+    "ex_zh": "想不到你工作那么忙，还能每天坚持阅读。",
+    "ex_py": "Xiǎngbudào nǐ gōngzuò nàme máng, hái néng měitiān jiānchí yuèdú.",
+    "ex_vn": "Không ngờ bạn công việc bận như vậy, vẫn có thể kiên trì đọc sách mỗi ngày.",
+    "exList": [
+      {
+        "zh": "想不到你工作那么忙，还能每天坚持阅读。",
+        "py": "Xiǎngbudào nǐ gōngzuò nàme máng, hái néng měitiān jiānchí yuèdú.",
+        "vn": "Không ngờ bạn công việc bận như vậy, vẫn có thể kiên trì đọc sách mỗi ngày."
+      },
+      {
+        "zh": "这次阅读考试的题太多了，我没做完。",
+        "py": "Zhè cì yuèdú kǎoshì de tí tài duō le, wǒ méi zuòwán.",
+        "vn": "Đề thi đọc hiểu lần này quá nhiều, tôi không làm xong."
+      },
+      {
+        "zh": "坚持做读书笔记，对提高阅读能力有很大帮助。",
+        "py": "Jiānchí zuò dúshū bǐjì, duì tígāo yuèdú nénglì yǒu hěn dà bāngzhù.",
+        "vn": "Kiên trì ghi chép đọc sách, có ích rất lớn cho việc nâng cao năng lực đọc hiểu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "阅",
+        "p": "yuè",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 10,
+        "ord": "门 bao ngoài → 兑 trong",
+        "rad": "门 (môn – cửa)",
+        "mean": "xem, đọc",
+        "tip": "Bộ cửa 门 (mở ra để xem xét) → mở rộng nghĩa XEM, ĐỌC, kết hợp 读(đọc) thành 阅读 = ĐỌC (một cách trang trọng, có suy ngẫm).",
+        "cf": "悦 (yuè – \"vui vẻ\", bộ 忄\")",
+        "w": "阅读 / 阅读能力 / 阅读理解"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không ngờ bạn bận thế mà vẫn kiên trì đọc sách mỗi ngày, thật giỏi.",
+        "answer": "我本来以为你工作那么忙就没时间了，没想到你还能每天坚持阅读，真厉害。",
+        "answerPy": "Wǒ běnlái yǐwéi nǐ gōngzuò nàme máng jiù méi shíjiān le, méi xiǎngdào nǐ hái néng měi tiān jiānchí yuèdú, zhēn lìhai.",
+        "note": "阅读 trang trọng hơn 看书, dùng cho sách báo và đề thi.",
+        "pair": "以为……没想到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Kiên trì đọc sách, ngoài việc tăng thêm kiến thức ra, còn có thể giúp tôi giảm bớt áp lực.",
+        "answer": "坚持阅读，除了能增加知识外，还能帮助我减轻压力。",
+        "answerPy": "Jiānchí yuèdú, chúle néng zēngjiā zhīshi wài, hái néng bāngzhù wǒ jiǎnqīng yālì.",
+        "note": "阅读 kết hợp 增加, ôn lại từ vựng của bài.",
+        "pair": "除了……还……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "坚持阅读",
+        "py": "jiānchí yuèdú",
+        "vn": "kiên trì đọc sách"
+      },
+      {
+        "zh": "阅读考试",
+        "py": "yuèdú kǎoshì",
+        "vn": "bài thi đọc hiểu"
+      },
+      {
+        "zh": "阅读能力",
+        "py": "yuèdú nénglì",
+        "vn": "năng lực đọc"
+      },
+      {
+        "zh": "阅读习惯",
+        "py": "yuèdú xíguàn",
+        "vn": "thói quen đọc"
+      },
+      {
+        "zh": "大量阅读",
+        "py": "dà liàng yuèdú",
+        "vn": "đọc nhiều"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坚持 + 阅读",
+        "m": "Kiên trì đọc — 坚持 là từ bài 9"
+      },
+      {
+        "s": "阅读 ≈ 看书",
+        "m": "阅读 trang trọng, dùng cho sách báo và bài thi"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "来得及",
+    "py": "láidejí",
+    "pos": "Động từ",
+    "vn": "kịp, còn kịp",
+    "hv": "lai đắc cập",
+    "em": "⏰",
+    "lesson": 2,
+    "explain": [
+      "Còn đủ thời gian để làm việc gì đó."
+    ],
+    "usage": "Động từ; thường đi với 应该来得及吧, 时间来不及 (dạng phủ định).",
+    "collo": [
+      "来得及吧",
+      "时间来不及",
+      "来不及做"
+    ],
+    "ex_zh": "两个小时的时间应该来得及吧？",
+    "ex_py": "Liǎng ge xiǎoshí de shíjiān yīnggāi láidejí ba?",
+    "ex_vn": "Thời gian hai tiếng chắc là kịp chứ?",
+    "exList": [
+      {
+        "zh": "两个小时的时间应该来得及吧？",
+        "py": "Liǎng ge xiǎoshí de shíjiān yīnggāi láidejí ba?",
+        "vn": "Thời gian hai tiếng chắc là kịp chứ?"
+      },
+      {
+        "zh": "后面简单的题我虽然会，可是时间来不及，最后只好放弃了。",
+        "py": "Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.",
+        "vn": "Những câu đơn giản phía sau tôi tuy biết làm, nhưng thời gian không kịp, cuối cùng đành phải bỏ qua."
+      },
+      {
+        "zh": "时间可能来不及，不过只好这样了，这些语法知识太难了。",
+        "py": "Shíjiān kěnéng láibují, búguò zhǐhǎo zhèyàng le, zhèxiē yǔfǎ zhīshi tài nán le.",
+        "vn": "Thời gian có thể không kịp, nhưng đành phải vậy thôi, những kiến thức ngữ pháp này quá khó."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "及",
+        "p": "jí",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "又 (hựu, biến thể)",
+        "mean": "kịp, đến",
+        "tip": "Chữ tượng hình tay với tới người phía trước → nghĩa KỊP, ĐẠT ĐẾN, kết hợp 来得(có thể) thành 来得及 = KỊP THỜI GIAN.",
+        "cf": "乃 (nǎi – \"bèn, là\", tự dạng gần giống)",
+        "w": "来得及 / 来不及 / 及时"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thời gian hai tiếng chắc là kịp chứ? Đừng lo lắng.",
+        "answer": "两个小时的时间应该来得及吧？别担心。",
+        "answerPy": "Liǎng ge xiǎoshí de shíjiān yīnggāi láidejí ba? Bié dānxīn.",
+        "note": "来得及 — kịp thời gian.",
+        "pair": "时……时……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bây giờ mới bắt đầu chuẩn bị, e rằng thời gian sẽ không kịp.",
+        "answer": "如果现在才开始准备，恐怕时间会来不及。",
+        "answerPy": "Rúguǒ xiànzài cái kāishǐ zhǔnbèi, kǒngpà shíjiān huì láibují.",
+        "note": "来不及 — không kịp.",
+        "pair": "如果……会……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "还来得及",
+        "py": "hái láidejí",
+        "vn": "vẫn còn kịp"
+      },
+      {
+        "zh": "来得及吧",
+        "py": "láidejí ba",
+        "vn": "kịp chứ"
+      },
+      {
+        "zh": "来不及做",
+        "py": "láibují zuò",
+        "vn": "làm không kịp"
+      },
+      {
+        "zh": "时间来不及",
+        "py": "shíjiān láibují",
+        "vn": "thời gian không kịp"
+      },
+      {
+        "zh": "来得及准备",
+        "py": "láidejí zhǔnbèi",
+        "vn": "kịp chuẩn bị"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "来得及 + V",
+        "m": "Còn kịp làm gì"
+      },
+      {
+        "s": "来得及 ↔ 来不及 (bài 7)",
+        "m": "Kịp ↔ không kịp"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "复杂",
+    "py": "fùzá",
+    "pos": "Tính từ",
+    "vn": "phức tạp, rắc rối",
+    "hv": "phục tạp",
+    "em": "🧩",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả sự việc có nhiều yếu tố, khó hiểu/khó giải quyết."
+    ],
+    "usage": "Tính từ; thường đi với 比较复杂的题, 有点儿复杂.",
+    "collo": [
+      "比较复杂的题",
+      "这个问题有点儿复杂",
+      "复杂的生活"
+    ],
+    "ex_zh": "这次主要是因为我先做了比较难、比较复杂的题。",
+    "ex_py": "Zhè cì zhǔyào shì yīnwèi wǒ xiān zuòle bǐjiào nán, bǐjiào fùzá de tí.",
+    "ex_vn": "Lần này chủ yếu là vì tôi làm trước những câu tương đối khó, tương đối phức tạp.",
+    "exList": [
+      {
+        "zh": "这次主要是因为我先做了比较难、比较复杂的题。",
+        "py": "Zhè cì zhǔyào shì yīnwèi wǒ xiān zuòle bǐjiào nán, bǐjiào fùzá de tí.",
+        "vn": "Lần này chủ yếu là vì tôi làm trước những câu tương đối khó, tương đối phức tạp."
+      },
+      {
+        "zh": "这个问题有点儿复杂，你耐心听我给你解释一下，好吗？",
+        "py": "Zhège wèntí yǒudiǎnr fùzá, nǐ nàixīn tīng wǒ gěi nǐ jiěshì yíxià, hǎo ma?",
+        "vn": "Vấn đề này có hơi phức tạp, bạn kiên nhẫn nghe tôi giải thích một chút nhé?"
+      },
+      {
+        "zh": "世界上有那么多有意思的事情，有那么多不一样的生活。",
+        "py": "Shìjiè shang yǒu nàme duō yǒuyìsi de shìqing, yǒu nàme duō bù yíyàng de shēnghuó.",
+        "vn": "Trên thế giới có nhiều việc thú vị như vậy, có nhiều cuộc sống khác nhau như vậy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "杂",
+        "p": "zá",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 6,
+        "ord": "九 trên → 木 dưới",
+        "rad": "木 (mộc)",
+        "mean": "lộn xộn, tạp",
+        "tip": "Chữ giản thể mang nghĩa TẠP, LỘN XỘN (nhiều thứ trộn lẫn), kết hợp 复(lặp đi lặp lại) thành 复杂 = PHỨC TẠP.",
+        "cf": "杂 dễ nhầm 未 (wèi – \"chưa\")",
+        "w": "复杂 / 杂志 / 复杂化"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì đề thi đọc hiểu lần này quá nhiều câu phức tạp, nên tôi làm không kịp.",
+        "answer": "因为这次阅读考试的复杂题太多了，所以我来不及做完。",
+        "answerPy": "Yīnwèi zhè cì yuèdú kǎoshì de fùzá tí tài duō le, suǒyǐ wǒ láibují zuò wán.",
+        "note": "来不及 là từ bài 7, đối lập với 来得及 của bài này.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vấn đề này có hơi phức tạp, ngay cả tôi cũng chưa hiểu rõ hoàn toàn.",
+        "answer": "这个问题有点儿复杂，连我也没完全弄明白。",
+        "answerPy": "Zhège wèntí yǒudiǎnr fùzá, lián wǒ yě méi wánquán nòng míngbai.",
+        "note": "复杂 kết hợp 连, ôn lại điểm ngữ pháp của bài.",
+        "pair": "连……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "比较复杂",
+        "py": "bǐjiào fùzá",
+        "vn": "khá phức tạp"
+      },
+      {
+        "zh": "复杂的题",
+        "py": "fùzá de tí",
+        "vn": "câu hỏi phức tạp"
+      },
+      {
+        "zh": "有点儿复杂",
+        "py": "yǒudiǎnr fùzá",
+        "vn": "hơi rắc rối"
+      },
+      {
+        "zh": "复杂的生活",
+        "py": "fùzá de shēnghuó",
+        "vn": "cuộc sống phức tạp"
+      },
+      {
+        "zh": "问题很复杂",
+        "py": "wèntí hěn fùzá",
+        "vn": "vấn đề rất rắc rối"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 / 有点儿 + 复杂",
+        "m": "Cái gì đó rất / hơi phức tạp"
+      },
+      {
+        "s": "复杂 ↔ 简单",
+        "m": "Phức tạp ↔ đơn giản"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "只好",
+    "py": "zhǐhǎo",
+    "pos": "Phó từ",
+    "vn": "đành phải, buộc phải",
+    "hv": "chỉ hảo",
+    "em": "😔",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả việc không còn lựa chọn nào khác, đành phải làm theo cách đó."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 最后只好放弃了.",
+    "collo": [
+      "最后只好放弃了",
+      "只好这样了",
+      "只好等待"
+    ],
+    "ex_zh": "后面简单的题我虽然会，可是时间来不及，最后只好放弃了。",
+    "ex_py": "Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.",
+    "ex_vn": "Những câu đơn giản phía sau tôi tuy biết làm, nhưng thời gian không kịp, cuối cùng đành phải bỏ qua.",
+    "exList": [
+      {
+        "zh": "后面简单的题我虽然会，可是时间来不及，最后只好放弃了。",
+        "py": "Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.",
+        "vn": "Những câu đơn giản phía sau tôi tuy biết làm, nhưng thời gian không kịp, cuối cùng đành phải bỏ qua."
+      },
+      {
+        "zh": "时间可能来不及，不过只好这样了，这些语法知识太难了。",
+        "py": "Shíjiān kěnéng láibují, búguò zhǐhǎo zhèyàng le, zhèxiē yǔfǎ zhīshi tài nán le.",
+        "vn": "Thời gian có thể không kịp, nhưng đành phải vậy thôi, những kiến thức ngữ pháp này quá khó."
+      },
+      {
+        "zh": "商店已经关门了，我们只好明天再来买。",
+        "py": "Shāngdiàn yǐjīng guānmén le, wǒmen zhǐhǎo míngtiān zài lái mǎi.",
+        "vn": "Cửa hàng đã đóng cửa rồi, chúng tôi đành phải ngày mai đến mua tiếp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "只",
+        "p": "zhǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "口 (khẩu)",
+        "mean": "chỉ, chỉ có",
+        "tip": "Chữ mang nghĩa CHỈ, DUY NHẤT, kết hợp 好(tốt, đành) thành 只好 = ĐÀNH PHẢI (chỉ còn cách này là tốt nhất).",
+        "cf": "另 (lìng – \"khác\", tự dạng gần giống)",
+        "w": "只好 / 只是 / 只有"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì thời gian không kịp, nên tôi đành bỏ những câu phức tạp phía sau.",
+        "answer": "由于时间来不及，所以我只好放弃了后面复杂的题。",
+        "answerPy": "Yóuyú shíjiān láibují, suǒyǐ wǒ zhǐhǎo fàngqìle hòumiàn fùzá de tí.",
+        "note": "由于 là từ bài 10 — chỉ đứng ở vế trước.",
+        "pair": "由于……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cửa hàng đã đóng cửa, nên chúng tôi đành mai đến mua.",
+        "answer": "因为商店已经关门了，所以我们只好明天再来买。",
+        "answerPy": "Yīnwèi shāngdiàn yǐjīng guānmén le, suǒyǐ wǒmen zhǐhǎo míngtiān zài lái mǎi.",
+        "note": "只好 ≈ 不得不 (bài 4) — đều mang ý miễn cưỡng.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "只好放弃",
+        "py": "zhǐhǎo fàngqì",
+        "vn": "đành phải bỏ cuộc"
+      },
+      {
+        "zh": "只好这样了",
+        "py": "zhǐhǎo zhèyàng le",
+        "vn": "đành vậy thôi"
+      },
+      {
+        "zh": "只好等待",
+        "py": "zhǐhǎo děngdài",
+        "vn": "đành phải chờ"
+      },
+      {
+        "zh": "只好明天再来",
+        "py": "zhǐhǎo míngtiān zài lái",
+        "vn": "đành mai đến lại"
+      },
+      {
+        "zh": "最后只好",
+        "py": "zuìhòu zhǐhǎo",
+        "vn": "cuối cùng đành phải"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 只好 + V",
+        "m": "Ai đó đành phải làm gì (không còn lựa chọn)"
+      },
+      {
+        "s": "只好 ≈ 不得不 (bài 4)",
+        "m": "Cả hai đều mang ý miễn cưỡng"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "填空",
+    "py": "tiánkòng",
+    "pos": "Động từ",
+    "vn": "điền vào chỗ trống",
+    "hv": "điền khống",
+    "em": "✍️",
+    "lesson": 2,
+    "explain": [
+      "Loại bài tập yêu cầu điền từ/nội dung vào phần để trống."
+    ],
+    "usage": "Động từ ly hợp; thường đi với 填空题, 有几个填空题.",
+    "collo": [
+      "填空题",
+      "有几个填空题不会做",
+      "选词填空"
+    ],
+    "ex_zh": "有几个填空题不会做，有几个选择题，实在想不出来该选哪个。",
+    "ex_py": "Yǒu jǐ ge tiánkòng tí bú huì zuò, yǒu jǐ ge xuǎnzé tí, shízài xiǎng bu chūlai gāi xuǎn nǎge.",
+    "ex_vn": "Có mấy câu điền chỗ trống không làm được, có mấy câu trắc nghiệm, thực sự nghĩ không ra nên chọn cái nào.",
+    "exList": [
+      {
+        "zh": "有几个填空题不会做，有几个选择题，实在想不出来该选哪个。",
+        "py": "Yǒu jǐ ge tiánkòng tí bú huì zuò, yǒu jǐ ge xuǎnzé tí, shízài xiǎng bu chūlai gāi xuǎn nǎge.",
+        "vn": "Có mấy câu điền chỗ trống không làm được, có mấy câu trắc nghiệm, thực sự nghĩ không ra nên chọn cái nào."
+      },
+      {
+        "zh": "请完成下面的填空题。",
+        "py": "Qǐng wánchéng xiàmiàn de tiánkòng tí.",
+        "vn": "Xin hoàn thành bài tập điền chỗ trống bên dưới."
+      },
+      {
+        "zh": "这次考试的填空题比选择题难。",
+        "py": "Zhè cì kǎoshì de tiánkòng tí bǐ xuǎnzé tí nán.",
+        "vn": "Câu điền chỗ trống của kỳ thi lần này khó hơn câu trắc nghiệm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "填",
+        "p": "tián",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "土 (thổ) trái → 真 phải",
+        "rad": "土 (thổ – đất)",
+        "mean": "lấp đầy, điền vào",
+        "tip": "Bộ đất 土 (lấp đầy chỗ trũng) → mở rộng nghĩa ĐIỀN VÀO, LẤP ĐẦY, kết hợp 空(chỗ trống) thành 填空 = ĐIỀN VÀO CHỖ TRỐNG.",
+        "cf": "镇 (zhèn – \"thị trấn\", bộ 钅\")",
+        "w": "填空 / 填写 / 填表"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì có mấy câu điền từ tôi không làm được, nên đành đoán bừa một đáp án.",
+        "answer": "因为有几个填空题我不会做，所以只好随便猜了一个答案。",
+        "answerPy": "Yīnwèi yǒu jǐ ge tiánkòng tí wǒ bú huì zuò, suǒyǐ zhǐhǎo suíbiàn cāile yí ge dá'àn.",
+        "note": "随便 là từ bài 9, 答案 là từ bài 10.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mời hoàn thành các câu điền từ bên dưới; chỉ cần ngữ pháp chính xác là được điểm.",
+        "answer": "请完成下面的填空题，只要语法准确，就能得分。",
+        "answerPy": "Qǐng wánchéng xiàmiàn de tiánkòng tí, zhǐyào yǔfǎ zhǔnquè, jiù néng défēn.",
+        "note": "得分 — được điểm; 填空题 là dạng bài quen thuộc trong đề HSK.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "填空题",
+        "py": "tiánkòng tí",
+        "vn": "câu điền chỗ trống"
+      },
+      {
+        "zh": "选词填空",
+        "py": "xuǎn cí tiánkòng",
+        "vn": "chọn từ điền vào chỗ trống"
+      },
+      {
+        "zh": "做填空题",
+        "py": "zuò tiánkòng tí",
+        "vn": "làm bài điền từ"
+      },
+      {
+        "zh": "填空不会做",
+        "py": "tiánkòng bú huì zuò",
+        "vn": "không làm được bài điền"
+      },
+      {
+        "zh": "完成填空",
+        "py": "wán chéng tiánkòng",
+        "vn": "hoàn thành phần điền từ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "填空 + 题",
+        "m": "Dạng bài điền vào chỗ trống"
+      },
+      {
+        "s": "填 + 空",
+        "m": "Điền (填) vào chỗ trống (空) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "猜",
+    "py": "cāi",
+    "pos": "Động từ",
+    "vn": "đoán",
+    "hv": "sai",
+    "em": "🤔",
+    "lesson": 2,
+    "explain": [
+      "Suy đoán khi không chắc chắn về câu trả lời."
+    ],
+    "usage": "Động từ; thường đi với 随便猜了一个, 猜对了.",
+    "collo": [
+      "随便猜了一个答案",
+      "一个都没猜对",
+      "猜猜看"
+    ],
+    "ex_zh": "就随便猜了一个答案，结果一个都没猜对。",
+    "ex_py": "Jiù suíbiàn cāile yí ge dá'àn, jiéguǒ yí ge dōu méi cāiduì.",
+    "ex_vn": "Liền đoán bừa một đáp án, kết quả một câu cũng không đoán đúng.",
+    "exList": [
+      {
+        "zh": "就随便猜了一个答案，结果一个都没猜对。",
+        "py": "Jiù suíbiàn cāile yí ge dá'àn, jiéguǒ yí ge dōu méi cāiduì.",
+        "vn": "Liền đoán bừa một đáp án, kết quả một câu cũng không đoán đúng."
+      },
+      {
+        "zh": "你猜猜看，这是什么？",
+        "py": "Nǐ cāicai kàn, zhè shì shénme?",
+        "vn": "Bạn đoán xem, đây là cái gì?"
+      },
+      {
+        "zh": "不认识的词语，你可以先猜猜意思，然后查词典确认。",
+        "py": "Bú rènshi de cíyǔ, nǐ kěyǐ xiān cāicai yìsi, ránhòu chá cídiǎn quèrèn.",
+        "vn": "Từ ngữ không quen, bạn có thể đoán nghĩa trước, sau đó tra từ điển xác nhận."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "猜",
+        "p": "cāi",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "犭 (khuyển) trái → 青 phải",
+        "rad": "犭 (khuyển – chó)",
+        "mean": "đoán, nghi ngờ",
+        "tip": "Bộ khuyển 犭 (thú vật đánh hơi, đoán mò) + 青(biểu âm) → mở rộng nghĩa ĐOÁN, SUY ĐOÁN.",
+        "cf": "猎 (liè – \"săn bắn\", cũng bộ 犭\")",
+        "w": "猜 / 猜测 / 猜想"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì có mấy câu trắc nghiệm tôi nghĩ mãi không ra, nên đành đoán bừa một đáp án.",
+        "answer": "因为有几个选择题我想不出来该选哪个，所以就随便猜了一个答案。",
+        "answerPy": "Yīnwèi yǒu jǐ ge xuǎnzé tí wǒ xiǎng bu chūlái gāi xuǎn nǎge, suǒyǐ jiù suíbiàn cāile yí ge dá'àn.",
+        "note": "V + 不出来 — bổ ngữ khả năng phủ định: nghĩ không ra.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Gặp từ ngữ không quen, bạn có thể đoán nghĩa trước dựa vào ngữ pháp của câu.",
+        "answer": "遇到不认识的词语，你可以先根据句子的语法猜猜意思。",
+        "answerPy": "Yùdào bú rènshi de cíyǔ, nǐ kěyǐ xiān gēnjù jùzi de yǔfǎ cāicai yìsi.",
+        "note": "猜 kết hợp 词语/语法, ôn lại từ vựng của bài.",
+        "pair": "根据……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "猜猜看",
+        "py": "cāicāi kàn",
+        "vn": "đoán thử xem"
+      },
+      {
+        "zh": "随便猜",
+        "py": "suíbiàn cāi",
+        "vn": "đoán bừa"
+      },
+      {
+        "zh": "猜对了",
+        "py": "cāi duì le",
+        "vn": "đoán đúng rồi"
+      },
+      {
+        "zh": "一个都没猜对",
+        "py": "yí gè dōu méi cāi duì",
+        "vn": "không đoán đúng cái nào"
+      },
+      {
+        "zh": "猜答案",
+        "py": "cāi dá'àn",
+        "vn": "đoán đáp án"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "猜 + 对 / 错",
+        "m": "Đoán đúng / sai — bổ ngữ kết quả"
+      },
+      {
+        "s": "猜猜看",
+        "m": "Đoán thử xem — động từ lặp + 看"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "否则",
+    "py": "fǒuzé",
+    "pos": "Liên từ",
+    "vn": "nếu không thì, bằng không",
+    "hv": "phủ tắc",
+    "em": "⚠️",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả \"nếu không phải như vậy\". Câu theo sau 否则 chỉ kết quả được suy ra từ câu phía trước, hoặc đưa ra một lựa chọn khác."
+    ],
+    "usage": "Vế 1，否则 + Vế 2 (kết quả nếu không làm theo vế 1).",
+    "collo": [
+      "否则会……",
+      "否则就……",
+      "否则不会……"
+    ],
+    "ex_zh": "看来要想考好，不但要认真复习，还得注意考试的方法，否则，会做的题也没时间做了。",
+    "ex_py": "Kànlái yào xiǎng kǎohǎo, búdàn yào rènzhēn fùxí, hái děi zhùyì kǎoshì de fāngfǎ, fǒuzé, huì zuò de tí yě méi shíjiān zuò le.",
+    "ex_vn": "Xem ra muốn thi tốt, không chỉ phải ôn tập nghiêm túc, còn phải chú ý phương pháp thi, nếu không, câu biết làm cũng không có thời gian làm nữa.",
+    "exList": [
+      {
+        "zh": "看来要想考好，不但要认真复习，还得注意考试的方法，否则，会做的题也没时间做了。",
+        "py": "Kànlái yào xiǎng kǎohǎo, búdàn yào rènzhēn fùxí, hái děi zhùyì kǎoshì de fāngfǎ, fǒuzé, huì zuò de tí yě méi shíjiān zuò le.",
+        "vn": "Xem ra muốn thi tốt, không chỉ phải ôn tập nghiêm túc, còn phải chú ý phương pháp thi, nếu không, câu biết làm cũng không có thời gian làm nữa."
+      },
+      {
+        "zh": "他一定有重要的事找你，否则不会打这么多次电话来。",
+        "py": "Tā yídìng yǒu zhòngyào de shì zhǎo nǐ, fǒuzé bú huì dǎ zhème duō cì diànhuà lái.",
+        "vn": "Anh ấy chắc chắn có việc quan trọng tìm bạn, nếu không sẽ không gọi điện thoại nhiều lần như vậy."
+      },
+      {
+        "zh": "你最好下午四点前去公司找她，否则就明天早上再去。",
+        "py": "Nǐ zuìhǎo xiàwǔ sì diǎn qián qù gōngsī zhǎo tā, fǒuzé jiù míngtiān zǎoshang zài qù.",
+        "vn": "Bạn tốt nhất nên đến công ty tìm cô ấy trước bốn giờ chiều, nếu không thì sáng mai đi lại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "否",
+        "p": "fǒu",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "不 trên → 口 dưới",
+        "rad": "口 (khẩu)",
+        "mean": "không, phủ định",
+        "tip": "Chữ mang nghĩa PHỦ ĐỊNH, KHÔNG, kết hợp 则(thì, quy tắc) thành 否则 = NẾU KHÔNG THÌ.",
+        "cf": "吝 (lìn – \"keo kiệt\", tự dạng khác)",
+        "w": "否则 / 是否 / 否认"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn phải kiên trì luyện tập ngữ pháp, nếu không những câu nói ra sẽ mãi không chính xác.",
+        "answer": "你得坚持练习语法，否则说出来的句子会一直不准确。",
+        "answerPy": "Nǐ děi jiānchí liànxí yǔfǎ, fǒuzé shuō chulai de jùzi huì yìzhí bù zhǔnquè.",
+        "note": "否则 kết hợp 语法/准确, ôn lại từ vựng của bài.",
+        "pair": "否则……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy chắc chắn có việc quan trọng tìm bạn, nếu không sẽ không gọi điện thoại nhiều lần như vậy.",
+        "answer": "他肯定有重要的事找你，否则不会打这么多次电话来。",
+        "answerPy": "Tā kěndìng yǒu zhòngyào de shì zhǎo nǐ, fǒuzé bú huì dǎ zhème duō cì diànhuà lái.",
+        "note": "否则 kết hợp 肯定, ôn lại ngữ pháp Bài 5.",
+        "pair": "否则……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "否则会",
+        "py": "fǒuzé huì",
+        "vn": "nếu không sẽ"
+      },
+      {
+        "zh": "否则就",
+        "py": "fǒuzé jiù",
+        "vn": "bằng không thì"
+      },
+      {
+        "zh": "否则不会",
+        "py": "fǒuzé bú huì",
+        "vn": "nếu không thì sẽ không"
+      },
+      {
+        "zh": "……，否则……",
+        "py": "fǒuzé",
+        "vn": "…, nếu không thì…"
+      },
+      {
+        "zh": "快点儿，否则迟到",
+        "py": "kuài diǎn ér fǒuzé chídào",
+        "vn": "nhanh lên, kẻo muộn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "mệnh đề 1，否则 + hậu quả",
+        "m": "Phải …, nếu không thì …"
+      },
+      {
+        "s": "否则 ≈ 不然",
+        "m": "否则 thiên văn viết hơn 不然"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "客厅",
+    "py": "kètīng",
+    "pos": "Danh từ",
+    "vn": "phòng khách",
+    "hv": "khách sảnh",
+    "em": "🛋️",
+    "lesson": 3,
+    "explain": [
+      "Căn phòng trong nhà dùng để tiếp khách, sinh hoạt chung."
+    ],
+    "usage": "Danh từ; thường đi với 客厅里, 在客厅.",
+    "collo": [
+      "客厅里到处是书",
+      "在客厅看电视",
+      "客厅很大"
+    ],
+    "ex_zh": "你的客厅里怎么到处是书啊？这些书你都喜欢看吗？",
+    "ex_py": "Nǐ de kètīng li zěnme dàochù shì shū a? Zhèxiē shū nǐ dōu xǐhuan kàn ma?",
+    "ex_vn": "Phòng khách của bạn sao khắp nơi đều là sách thế? Những sách này bạn đều thích đọc à?",
+    "exList": [
+      {
+        "zh": "你的客厅里怎么到处是书啊？这些书你都喜欢看吗？",
+        "py": "Nǐ de kètīng li zěnme dàochù shì shū a? Zhèxiē shū nǐ dōu xǐhuan kàn ma?",
+        "vn": "Phòng khách của bạn sao khắp nơi đều là sách thế? Những sách này bạn đều thích đọc à?"
+      },
+      {
+        "zh": "我本来想把沙发放在客厅中间，后来发现放在窗户旁边更好看。",
+        "py": "Wǒ běnlái xiǎng bǎ shāfā fàng zài kètīng zhōngjiān, hòulái fāxiàn fàng zài chuānghu pángbiān gèng hǎokàn.",
+        "vn": "Tôi vốn định đặt sô pha ở giữa phòng khách, sau đó phát hiện đặt cạnh cửa sổ đẹp hơn."
+      },
+      {
+        "zh": "他家的客厅不仅大，而且很亮。",
+        "py": "Tā jiā de kètīng bùjǐn dà, érqiě hěn liàng.",
+        "vn": "Phòng khách nhà anh ấy không những rộng, mà còn rất sáng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "厅",
+        "p": "tīng",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 4,
+        "ord": "厂 bao ngoài → 丁 trong",
+        "rad": "厂 (hán – mái nhà)",
+        "mean": "sảnh, phòng lớn",
+        "tip": "Bộ mái nhà 厂 + 丁(biểu âm) → căn PHÒNG LỚN dưới mái nhà, kết hợp 客(khách) thành 客厅 = PHÒNG KHÁCH.",
+        "cf": "听 (tīng – \"nghe\", cùng âm, bộ 口)",
+        "w": "客厅 / 餐厅 / 大厅"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Phòng khách nhà bạn sao đâu cũng là sách thế? Chẳng lẽ bạn đọc hết chỗ này rồi?",
+        "answer": "你的客厅里怎么到处是书啊？难道这些你都看完了吗？",
+        "answerPy": "Nǐ de kètīng li zěnme dàochù shì shū a? Nándào zhèxiē nǐ dōu kàn wán le ma?",
+        "note": "到处 là từ bài 8 — 到处都是.",
+        "pair": "难道……吗？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi vốn tưởng sô pha đặt vừa phòng khách, ai ngờ phòng lại quá nhỏ.",
+        "answer": "我本来以为沙发放在客厅里正好，没想到房间太小了。",
+        "answerPy": "Wǒ běnlái yǐwéi shāfā fàng zài kètīng li zhènghǎo, méi xiǎngdào fángjiān tài xiǎo le.",
+        "note": "沙发 là từ bài 5, 正好 là từ bài 2.",
+        "pair": "以为……没想到……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "在客厅",
+        "py": "zài kètīng",
+        "vn": "ở phòng khách"
+      },
+      {
+        "zh": "客厅很大",
+        "py": "kètīng hěn dà",
+        "vn": "phòng khách rất rộng"
+      },
+      {
+        "zh": "客厅里到处是书",
+        "py": "kètīng li dàochù shì shū",
+        "vn": "phòng khách đâu cũng là sách"
+      },
+      {
+        "zh": "打扫客厅",
+        "py": "dǎsǎo kètīng",
+        "vn": "dọn phòng khách"
+      },
+      {
+        "zh": "客厅的沙发",
+        "py": "kètīng de shāfā",
+        "vn": "sô pha phòng khách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 客厅 + 里",
+        "m": "Trong phòng khách"
+      },
+      {
+        "s": "客 + 厅",
+        "m": "Sảnh (厅) tiếp khách (客) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "无论",
+    "py": "wúlùn",
+    "pos": "Liên từ",
+    "vn": "bất kể, dù … (cũng)",
+    "hv": "vô luận",
+    "em": "♾️",
+    "lesson": 3,
+    "explain": [
+      "Diễn tả trong bất kỳ điều kiện nào kết quả/kết luận cũng không thay đổi; thường dùng cấu trúc 无论……都/也……. Sau 无论 là thành phần lựa chọn (A还是B) hoặc đại từ nghi vấn phiếm chỉ (什么/怎么样)."
+    ],
+    "usage": "无论 + A还是B / đại từ nghi vấn，……都/也……",
+    "collo": [
+      "无论是……还是……",
+      "无论怎么样",
+      "无论如何"
+    ],
+    "ex_zh": "无论是普通杂志，还是著名小说，只要打开它们，就会发现，世界上有那么多有意思的事情。",
+    "ex_py": "Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn, shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.",
+    "ex_vn": "Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện, trên thế giới có nhiều chuyện thú vị đến thế.",
+    "exList": [
+      {
+        "zh": "无论是普通杂志，还是著名小说，只要打开它们，就会发现，世界上有那么多有意思的事情。",
+        "py": "Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn, shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.",
+        "vn": "Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện, trên thế giới có nhiều chuyện thú vị đến thế."
+      },
+      {
+        "zh": "无论做什么事都要注意方法，正确的方法可以让我们做得更好。",
+        "py": "Wúlùn zuò shénme shì dōu yào zhùyì fāngfǎ, zhèngquè de fāngfǎ kěyǐ ràng wǒmen zuò de gèng hǎo.",
+        "vn": "Bất kể làm việc gì đều phải chú ý phương pháp, phương pháp đúng có thể giúp chúng ta làm tốt hơn."
+      },
+      {
+        "zh": "这次比赛他已经打出了自己最好的水平，无论结果怎么样，我们都应该为他高兴。",
+        "py": "Zhè cì bǐsài tā yǐjīng dǎchūle zìjǐ zuì hǎo de shuǐpíng, wúlùn jiéguǒ zěnmeyàng, wǒmen dōu yīnggāi wèi tā gāoxìng.",
+        "vn": "Trận đấu này anh ấy đã thi đấu hết trình độ tốt nhất của mình, bất kể kết quả thế nào, chúng ta đều nên vui cho anh ấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "论",
+        "p": "lùn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 6,
+        "ord": "讠 (ngôn) trái → 仑 phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "bàn luận",
+        "tip": "Bộ lời nói 讠 + 仑(biểu âm) → BÀN LUẬN, kết hợp 无(không) thành 无论 = KHÔNG CẦN BÀN, tức BẤT KỂ.",
+        "cf": "轮 (lún – \"bánh xe\", bộ 车)",
+        "w": "无论 / 讨论 / 结论"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể kết quả thế nào, chúng ta đều nên vui cho anh ấy.",
+        "answer": "无论结果怎么样，我们都应该为他高兴。",
+        "answerPy": "Wúlùn jiéguǒ zěnmeyàng, wǒmen dōu yīnggāi wèi tā gāoxìng.",
+        "note": "无论……都 kết hợp 结果, ôn lại ngữ pháp Bài 9.",
+        "pair": "无论……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Theo tôi thấy, bất kể là công việc hay học tập, \"nói suông không luyện\" đều không được.",
+        "answer": "在我看来，无论是工作还是学习，\"光说不练\"都是不行的。",
+        "answerPy": "Zài wǒ kànlái, wúlùn shì gōngzuò háishi xuéxí, \"guāng shuō bú liàn\" dōu shì bùxíng de.",
+        "note": "无论……还是……都 kết hợp 在……看来, ôn lại ngữ pháp Bài 10.",
+        "pair": "无论……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "无论是……还是……",
+        "py": "wúlùn shì háishi",
+        "vn": "bất kể là… hay…"
+      },
+      {
+        "zh": "无论怎么样",
+        "py": "wúlùn zěnmeyàng",
+        "vn": "dù thế nào"
+      },
+      {
+        "zh": "无论如何",
+        "py": "wúlùn rúhé",
+        "vn": "dù sao đi nữa"
+      },
+      {
+        "zh": "无论……都……",
+        "py": "wúlùn dōu",
+        "vn": "bất kể… đều…"
+      },
+      {
+        "zh": "无论多难",
+        "py": "wúlùn duō nán",
+        "vn": "dù khó đến đâu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "无论 + từ nghi vấn / A 还是 B，都 + V",
+        "m": "Bất kể … đều …"
+      },
+      {
+        "s": "无论 ≈ 不管 (bài 3)",
+        "m": "无论 thiên văn viết, 不管 thiên khẩu ngữ"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "杂志",
+    "py": "zázhì",
+    "pos": "Danh từ",
+    "vn": "tạp chí",
+    "hv": "tạp chí",
+    "em": "📰",
+    "lesson": 3,
+    "explain": [
+      "Ấn phẩm định kỳ gồm nhiều bài viết, hình ảnh về một hoặc nhiều chủ đề."
+    ],
+    "usage": "Danh từ; thường đi với 看杂志, 一本杂志.",
+    "collo": [
+      "普通杂志",
+      "看杂志",
+      "一本杂志"
+    ],
+    "ex_zh": "无论是普通杂志，还是著名小说，只要打开它们，就会发现世界上有那么多有意思的事情。",
+    "ex_py": "Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.",
+    "ex_vn": "Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện trên thế giới có nhiều chuyện thú vị đến thế.",
+    "exList": [
+      {
+        "zh": "无论是普通杂志，还是著名小说，只要打开它们，就会发现世界上有那么多有意思的事情。",
+        "py": "Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn shìjiè shang yǒu nàme duō yǒu yìsi de shìqing.",
+        "vn": "Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện trên thế giới có nhiều chuyện thú vị đến thế."
+      },
+      {
+        "zh": "我对这本杂志很感兴趣，尤其是关于旅游的文章。",
+        "py": "Wǒ duì zhè běn zázhì hěn gǎn xìngqù, yóuqí shì guānyú lǚyóu de wénzhāng.",
+        "vn": "Tôi rất hứng thú với quyển tạp chí này, đặc biệt là những bài viết về du lịch."
+      },
+      {
+        "zh": "他每天通过看杂志来学习新词语。",
+        "py": "Tā měi tiān tōngguò kàn zázhì lái xuéxí xīn cíyǔ.",
+        "vn": "Mỗi ngày anh ấy học từ mới thông qua việc đọc tạp chí."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "杂",
+        "p": "zá",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 6,
+        "ord": "九 trên → 木 (mộc) dưới",
+        "rad": "木 (mộc)",
+        "mean": "lẫn lộn, nhiều loại",
+        "tip": "Chữ giản thể nghĩa TẠP, NHIỀU LOẠI LẪN LỘN, kết hợp 志(ghi chép) thành 杂志 = TẠP CHÍ (ghi chép nhiều loại chuyện).",
+        "cf": "染 (rǎn – \"nhuộm\", cũng có 九 + 木)",
+        "w": "杂志 / 复杂 / 杂技"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không những rất thích quyển tạp chí này, mà đặc biệt thích các bài về du lịch trong đó.",
+        "answer": "我不但对这本杂志很感兴趣，而且尤其喜欢里面关于旅游的文章。",
+        "answerPy": "Wǒ búdàn duì zhè běn zázhì hěn gǎn xìngqù, érqiě yóuqí xǐhuan lǐmiàn guānyú lǚyóu de wénzhāng.",
+        "note": "尤其 là từ bài 5; 对 + N + 感兴趣.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy học từ mới bằng cách đọc tạp chí mỗi ngày, đọc càng nhiều thì nhớ càng chắc.",
+        "answer": "他通过每天看杂志来学习新词语，看得越多，记得就越牢。",
+        "answerPy": "Tā tōngguò měi tiān kàn zázhì lái xuéxí xīn cíyǔ, kàn de yuè duō, jì de jiù yuè láo.",
+        "note": "通过 là từ bài 9 — 通过 + cách thức 来 + V.",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一本杂志",
+        "py": "yì běn zázhì",
+        "vn": "một quyển tạp chí"
+      },
+      {
+        "zh": "看杂志",
+        "py": "kàn zázhì",
+        "vn": "đọc tạp chí"
+      },
+      {
+        "zh": "普通杂志",
+        "py": "pǔtōng zázhì",
+        "vn": "tạp chí thường"
+      },
+      {
+        "zh": "旅游杂志",
+        "py": "lǚyóu zázhì",
+        "vn": "tạp chí du lịch"
+      },
+      {
+        "zh": "订杂志",
+        "py": "dìng zázhì",
+        "vn": "đặt mua tạp chí"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 本 + 杂志",
+        "m": "Lượng từ 本 cho sách, tạp chí"
+      },
+      {
+        "s": "loại + 杂志",
+        "m": "旅游杂志, 时尚杂志 — tạp chí về gì"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "著名",
+    "py": "zhùmíng",
+    "pos": "Tính từ",
+    "vn": "nổi tiếng",
+    "hv": "trứ danh",
+    "em": "🌟",
+    "lesson": 3,
+    "explain": [
+      "Được nhiều người biết đến; danh tiếng lớn (thường dùng cho tác phẩm, nhân vật, địa danh)."
+    ],
+    "usage": "Tính từ, thường làm định ngữ: 著名的小说/作家/大学.",
+    "collo": [
+      "著名小说",
+      "著名的作家",
+      "世界上著名的"
+    ],
+    "ex_zh": "虽然身高只有一米六零，但他却是世界上著名的篮球运动员。",
+    "ex_py": "Suīrán shēngāo zhǐyǒu yì mǐ liù líng, dàn tā què shì shìjiè shang zhùmíng de lánqiú yùndòngyuán.",
+    "ex_vn": "Tuy chiều cao chỉ có 1m60, nhưng anh ấy lại là vận động viên bóng rổ nổi tiếng thế giới.",
+    "exList": [
+      {
+        "zh": "虽然身高只有一米六零，但他却是世界上著名的篮球运动员。",
+        "py": "Suīrán shēngāo zhǐyǒu yì mǐ liù líng, dàn tā què shì shìjiè shang zhùmíng de lánqiú yùndòngyuán.",
+        "vn": "Tuy chiều cao chỉ có 1m60, nhưng anh ấy lại là vận động viên bóng rổ nổi tiếng thế giới."
+      },
+      {
+        "zh": "无论是普通杂志，还是著名小说，只要打开它们，就会有收获。",
+        "py": "Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì yǒu shōuhuò.",
+        "vn": "Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ có thu hoạch."
+      },
+      {
+        "zh": "她是著名的科学家，同时也是一位好母亲。",
+        "py": "Tā shì zhùmíng de kēxuéjiā, tóngshí yě shì yí wèi hǎo mǔqīn.",
+        "vn": "Cô ấy là nhà khoa học nổi tiếng, đồng thời cũng là một người mẹ tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "著",
+        "p": "zhù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "艹 (thảo) trên → 者 dưới",
+        "rad": "艹 (thảo – cỏ)",
+        "mean": "nổi bật, trứ tác",
+        "tip": "Bộ cỏ 艹 + 者(biểu âm) → nghĩa gốc là RÕ RÀNG, NỔI BẬT, kết hợp 名(tên) thành 著名 = TÊN TUỔI NỔI BẬT, NỔI TIẾNG.",
+        "cf": "着 (zhe – trợ từ, chữ giản thể tách ra từ 著)",
+        "w": "著名 / 著作 / 名著"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy chiều cao chỉ có 1m60, nhưng anh ấy lại là vận động viên bóng rổ nổi tiếng thế giới.",
+        "answer": "虽然身高只有一米六零，但他却是世界上著名的篮球运动员。",
+        "answerPy": "Suīrán shēngāo zhǐyǒu yì mǐ liù líng, dàn tā què shì shìjiè shang zhùmíng de lánqiú yùndòngyuán.",
+        "note": "虽然……但……却 ôn lại ngữ pháp 却 Bài 2.",
+        "pair": "虽然……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thật không ngờ, nhà văn nổi tiếng này lại chỉ mới 25 tuổi.",
+        "answer": "真没想到，这位著名的作家竟然只有25岁。",
+        "answerPy": "Zhēn méi xiǎngdào, zhè wèi zhùmíng de zuòjiā jìngrán zhǐyǒu èrshíwǔ suì.",
+        "note": "竟然 ôn lại ngữ pháp Bài 6.",
+        "pair": "只有……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "著名的作家",
+        "py": "zhùmíng de zuòjiā",
+        "vn": "nhà văn nổi tiếng"
+      },
+      {
+        "zh": "著名小说",
+        "py": "zhùmíng xiǎoshuō",
+        "vn": "tiểu thuyết nổi tiếng"
+      },
+      {
+        "zh": "世界著名",
+        "py": "shìjiè zhùmíng",
+        "vn": "nổi tiếng thế giới"
+      },
+      {
+        "zh": "著名的城市",
+        "py": "zhùmíng de chéngshì",
+        "vn": "thành phố nổi tiếng"
+      },
+      {
+        "zh": "非常著名",
+        "py": "fēicháng zhùmíng",
+        "vn": "vô cùng nổi tiếng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "著名的 + N",
+        "m": "… nổi tiếng — thường làm định ngữ"
+      },
+      {
+        "s": "著名 ≈ 有名",
+        "m": "著名 trang trọng hơn, dùng cho người và tác phẩm lớn"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "页",
+    "py": "yè",
+    "pos": "Lượng từ",
+    "vn": "trang (sách)",
+    "hv": "hiệt",
+    "em": "📄",
+    "lesson": 3,
+    "explain": [
+      "Lượng từ chỉ trang sách, trang giấy."
+    ],
+    "usage": "Số + 页: 一页书, 读10页, 第几页.",
+    "collo": [
+      "读一页书",
+      "读10页",
+      "第五页"
+    ],
+    "ex_zh": "如果3分钟读一页书，半个小时就可以读10页。",
+    "ex_py": "Rúguǒ sān fēnzhōng dú yí yè shū, bàn ge xiǎoshí jiù kěyǐ dú shí yè.",
+    "ex_vn": "Nếu 3 phút đọc một trang sách, nửa tiếng là có thể đọc 10 trang.",
+    "exList": [
+      {
+        "zh": "如果3分钟读一页书，半个小时就可以读10页。",
+        "py": "Rúguǒ sān fēnzhōng dú yí yè shū, bàn ge xiǎoshí jiù kěyǐ dú shí yè.",
+        "vn": "Nếu 3 phút đọc một trang sách, nửa tiếng là có thể đọc 10 trang."
+      },
+      {
+        "zh": "每天花半个小时来读书，一个月就可以读300页，差不多就是一本书了。",
+        "py": "Měi tiān huā bàn ge xiǎoshí lái dú shū, yí ge yuè jiù kěyǐ dú sānbǎi yè, chàbuduō jiù shì yì běn shū le.",
+        "vn": "Mỗi ngày dành nửa tiếng để đọc sách, một tháng là có thể đọc 300 trang, gần như là một quyển sách rồi."
+      },
+      {
+        "zh": "请大家把书翻到第20页。",
+        "py": "Qǐng dàjiā bǎ shū fāndào dì-èrshí yè.",
+        "vn": "Mời mọi người lật sách đến trang 20."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "页",
+        "p": "yè",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 6,
+        "ord": "nét liền",
+        "rad": "页 (hiệt – đầu)",
+        "mean": "trang sách, đầu",
+        "tip": "Chữ tượng hình cái ĐẦU người (nghĩa gốc), sau mượn dùng làm lượng từ TRANG SÁCH (mỗi trang như một \"đầu\" của tờ giấy).",
+        "cf": "贝 (bèi – \"vỏ sò\", tự dạng gần giống)",
+        "w": "页 / 一页 / 网页"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mỗi ngày dành nửa tiếng đọc sách, một tháng là có thể đọc 300 trang, gần như là một quyển sách rồi.",
+        "answer": "每天花半个小时来读书，一个月就可以读300页，差不多就是一本书了。",
+        "answerPy": "Měi tiān huā bàn ge xiǎoshí lái dú shū, yí ge yuè jiù kěyǐ dú sānbǎi yè, chàbuduō jiù shì yì běn shū le.",
+        "note": "差不多 ôn lại ngữ pháp Bài 2.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần mỗi ngày đọc 10 trang, một năm là có thể đọc xong hơn 10 quyển sách.",
+        "answer": "只要每天读10页，一年就能读完十多本书。",
+        "answerPy": "Zhǐyào měi tiān dú shí yè, yì nián jiù néng dúwán shí duō běn shū.",
+        "note": "只要……就 ôn lại ngữ pháp Bài 8.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一页书",
+        "py": "yí yè shū",
+        "vn": "một trang sách"
+      },
+      {
+        "zh": "读10页",
+        "py": "dú yè",
+        "vn": "đọc 10 trang"
+      },
+      {
+        "zh": "第五页",
+        "py": "dì wǔ yè",
+        "vn": "trang thứ năm"
+      },
+      {
+        "zh": "每天读一页",
+        "py": "měi tiān dú yí yè",
+        "vn": "mỗi ngày đọc một trang"
+      },
+      {
+        "zh": "翻到下一页",
+        "py": "fān dào xià yí yè",
+        "vn": "lật sang trang sau"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 页",
+        "m": "Mấy trang — 页 vừa là lượng từ vừa là danh từ"
+      },
+      {
+        "s": "第 + số + 页",
+        "m": "Trang thứ mấy"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "增加",
+    "py": "zēngjiā",
+    "pos": "Động từ",
+    "vn": "tăng thêm",
+    "hv": "tăng gia",
+    "em": "📈",
+    "lesson": 3,
+    "explain": [
+      "Làm cho nhiều hơn, lớn hơn về số lượng/mức độ."
+    ],
+    "usage": "Động từ: 增加知识, 增加了不少烦恼, 增加收入.",
+    "collo": [
+      "增加知识",
+      "增加了不少烦恼",
+      "增加收入"
+    ],
+    "ex_zh": "坚持阅读，除了能增加知识外，还能帮助我减轻压力。",
+    "ex_py": "Jiānchí yuèdú, chúle néng zēngjiā zhīshi wài, hái néng bāngzhù wǒ jiǎnqīng yālì.",
+    "ex_vn": "Kiên trì đọc sách, ngoài việc có thể tăng thêm kiến thức, còn có thể giúp tôi giảm bớt áp lực.",
+    "exList": [
+      {
+        "zh": "坚持阅读，除了能增加知识外，还能帮助我减轻压力，人也会变得轻松起来。",
+        "py": "Jiānchí yuèdú, chúle néng zēngjiā zhīshi wài, hái néng bāngzhù wǒ jiǎnqīng yālì, rén yě huì biànde qīngsōng qilai.",
+        "vn": "Kiên trì đọc sách, ngoài việc tăng thêm kiến thức, còn giúp tôi giảm bớt áp lực, con người cũng trở nên thư thái hơn."
+      },
+      {
+        "zh": "科学的发展确实给生活带来了许多方便，但也给我们增加了不少烦恼。",
+        "py": "Kēxué de fāzhǎn quèshí gěi shēnghuó dàilaile xǔduō fāngbiàn, dàn yě gěi wǒmen zēngjiāle bùshǎo fánnǎo.",
+        "vn": "Sự phát triển của khoa học thực sự mang lại nhiều tiện lợi cho cuộc sống, nhưng cũng tăng thêm cho chúng ta không ít phiền muộn."
+      },
+      {
+        "zh": "公司今年的收入比去年增加了一倍。",
+        "py": "Gōngsī jīnnián de shōurù bǐ qùnián zēngjiāle yí bèi.",
+        "vn": "Thu nhập năm nay của công ty tăng gấp đôi so với năm ngoái."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "增",
+        "p": "zēng",
+        "type": "左右结构 · Trái-phải",
+        "st": 15,
+        "ord": "土 (thổ) trái → 曾 phải",
+        "rad": "土 (thổ – đất)",
+        "mean": "tăng thêm",
+        "tip": "Bộ đất 土 (đắp thêm đất) + 曾(biểu âm) → ĐẮP THÊM, kết hợp 加(cộng thêm) thành 增加 = TĂNG THÊM.",
+        "cf": "赠 (zèng – \"tặng\", bộ 贝)",
+        "w": "增加 / 增长 / 增多"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sự phát triển của khoa học tuy mang lại nhiều tiện lợi, nhưng cũng làm tăng không ít phiền muộn cho chúng ta.",
+        "answer": "科学的发展虽然确实带来了许多方便，但是也给我们增加了不少烦恼。",
+        "answerPy": "Kēxué de fāzhǎn suīrán quèshí dàiláile xǔduō fāngbiàn, dànshì yě gěi wǒmen zēngjiāle bù shǎo fánnǎo.",
+        "note": "科学 và 烦恼 là từ bài 8 và bài 7; 发展 là từ bài 10.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thu nhập năm nay của công ty không những tăng gấp đôi so với năm ngoái, mà tiền thưởng cũng nhiều hơn.",
+        "answer": "公司今年的收入不但比去年增加了一倍，而且奖金也更多了。",
+        "answerPy": "Gōngsī jīnnián de shōurù búdàn bǐ qùnián zēngjiāle yí bèi, érqiě jiǎngjīn yě gèng duō le.",
+        "note": "收入 là từ bài 3, 奖金 là từ bài 4; 增加了一倍 — tăng gấp đôi.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "增加知识",
+        "py": "zēngjiā zhīshi",
+        "vn": "tăng thêm kiến thức"
+      },
+      {
+        "zh": "增加收入",
+        "py": "zēngjiā shōurù",
+        "vn": "tăng thu nhập"
+      },
+      {
+        "zh": "增加烦恼",
+        "py": "zēngjiā fánnǎo",
+        "vn": "thêm phiền muộn"
+      },
+      {
+        "zh": "增加了一倍",
+        "py": "zēngjiā le yí bèi",
+        "vn": "tăng gấp đôi"
+      },
+      {
+        "zh": "给……增加",
+        "py": "gěi zēngjiā",
+        "vn": "làm tăng thêm cho…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "增加 + N",
+        "m": "Tăng thêm cái gì"
+      },
+      {
+        "s": "增加 ↔ 减少",
+        "m": "Tăng ↔ giảm"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "文章",
+    "py": "wénzhāng",
+    "pos": "Danh từ",
+    "vn": "bài văn, bài báo",
+    "hv": "văn chương",
+    "em": "📃",
+    "lesson": 4,
+    "explain": [
+      "Bài viết hoàn chỉnh (bài văn, bài báo, bài luận)."
+    ],
+    "usage": "Danh từ; lượng từ 篇: 一篇文章, 看完一篇文章.",
+    "collo": [
+      "一篇文章",
+      "看完一篇文章",
+      "写文章"
+    ],
+    "ex_zh": "在看完一篇文章或一本书之后，还可以把它的主要内容和自己的想法写下来。",
+    "ex_py": "Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng hé zìjǐ de xiǎngfǎ xiě xialai.",
+    "ex_vn": "Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó và suy nghĩ của mình.",
+    "exList": [
+      {
+        "zh": "在看完一篇文章或一本书之后，还可以把它的主要内容和自己的想法写下来。",
+        "py": "Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng hé zìjǐ de xiǎngfǎ xiě xialai.",
+        "vn": "Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó và suy nghĩ của mình."
+      },
+      {
+        "zh": "这篇文章写得挺好的，值得大家看一看。",
+        "py": "Zhè piān wénzhāng xiě de tǐng hǎo de, zhídé dàjiā kàn yi kàn.",
+        "vn": "Bài văn này viết khá hay, đáng để mọi người xem thử."
+      },
+      {
+        "zh": "他不仅会写文章，还会画画儿。",
+        "py": "Tā bùjǐn huì xiě wénzhāng, hái huì huà huàr.",
+        "vn": "Anh ấy không những biết viết văn, còn biết vẽ tranh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "章",
+        "p": "zhāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "立 trên → 早 dưới",
+        "rad": "立 (lập)",
+        "mean": "chương, đoạn văn",
+        "tip": "Chữ hội ý 音(âm nhạc) + 十(mười, kết thúc) → một KHÚC NHẠC hoàn chỉnh, mở rộng thành CHƯƠNG/ĐOẠN VĂN, kết hợp 文 thành 文章 = BÀI VĂN.",
+        "cf": "张 (zhāng – \"tờ, họ Trương\")",
+        "w": "文章 / 第一章 / 图章"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bài viết này không những viết khá hay, mà nội dung cũng rất phong phú, đáng để mọi người đọc thử.",
+        "answer": "这篇文章不仅写得挺好的，而且内容也很丰富，值得大家看一看。",
+        "answerPy": "Zhè piān wénzhāng bùjǐn xiě de tǐng hǎo de, érqiě nèiróng yě hěn fēngfù, zhídé dàjiā kàn yi kàn.",
+        "note": "值得 là từ bài 6, 丰富 là từ bài 2.",
+        "pair": "不仅……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cứ đọc xong một bài là hãy viết ngay nội dung chính của nó ra.",
+        "answer": "一看完一篇文章，就把它的主要内容写下来。",
+        "answerPy": "Yí kàn wán yì piān wénzhāng, jiù bǎ tā de zhǔyào nèiróng xiě xialai.",
+        "note": "Câu chữ 把: 把 + tân ngữ + 写下来.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一篇文章",
+        "py": "yì piān wénzhāng",
+        "vn": "một bài viết"
+      },
+      {
+        "zh": "写文章",
+        "py": "xiě wénzhāng",
+        "vn": "viết bài"
+      },
+      {
+        "zh": "看完一篇文章",
+        "py": "kàn wán yì piān wénzhāng",
+        "vn": "đọc xong một bài"
+      },
+      {
+        "zh": "文章的内容",
+        "py": "wénzhāng de nèiróng",
+        "vn": "nội dung bài viết"
+      },
+      {
+        "zh": "好文章",
+        "py": "hǎo wénzhāng",
+        "vn": "bài viết hay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 篇 + 文章",
+        "m": "Lượng từ 篇 (bài 9) cho bài viết"
+      },
+      {
+        "s": "文章 ≠ 小说",
+        "m": "文章 là bài viết ngắn; 小说 là tiểu thuyết"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "之",
+    "py": "zhī",
+    "pos": "Trợ từ",
+    "vn": "của (nối từ bổ nghĩa và từ được bổ nghĩa)",
+    "hv": "chi",
+    "em": "🔗",
+    "lesson": 4,
+    "explain": [
+      "Trợ từ kết cấu mang màu sắc văn viết, nối định ngữ với trung tâm ngữ, tương đương 的: 之后, 之前, 之间, 之一."
+    ],
+    "usage": "……之后 / 之前 / 之间 / 之一 / 之中.",
+    "collo": [
+      "之后",
+      "之一",
+      "之间"
+    ],
+    "ex_zh": "在看完一篇文章或一本书之后，还可以把它的主要内容写下来。",
+    "ex_py": "Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng xiě xialai.",
+    "ex_vn": "Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó.",
+    "exList": [
+      {
+        "zh": "在看完一篇文章或一本书之后，还可以把它的主要内容写下来。",
+        "py": "Zài kànwán yì piān wénzhāng huò yì běn shū zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng xiě xialai.",
+        "vn": "Sau khi đọc xong một bài văn hoặc một quyển sách, còn có thể viết lại nội dung chính của nó."
+      },
+      {
+        "zh": "做读书笔记就是其中一种好方法，也是提高阅读能力的方法之一。",
+        "py": "Zuò dúshū bǐjì jiù shì qízhōng yì zhǒng hǎo fāngfǎ, yě shì tígāo yuèdú nénglì de fāngfǎ zhī yī.",
+        "vn": "Ghi chép khi đọc sách chính là một trong những phương pháp tốt, cũng là một trong các cách nâng cao năng lực đọc."
+      },
+      {
+        "zh": "幽默是成功者的共同特点之一。",
+        "py": "Yōumò shì chénggōngzhě de gòngtóng tèdiǎn zhī yī.",
+        "vn": "Hài hước là một trong những đặc điểm chung của người thành công."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "之",
+        "p": "zhī",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "丶 → 𠃋 → 乀",
+        "rad": "丶 (chủ)",
+        "mean": "của, đi",
+        "tip": "Chữ tượng hình bàn chân bước đi khỏi vạch (nghĩa gốc là ĐI), sau mượn làm trợ từ CỦA trong văn viết (之后 = sau đó).",
+        "cf": "乏 (fá – \"thiếu\", tự dạng gần giống)",
+        "w": "之后 / 之一 / 之间"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ghi chép khi đọc sách là một trong những phương pháp tốt, trong đó cách đơn giản nhất là chép lại câu mình thích.",
+        "answer": "做读书笔记是好方法之一，其中最简单的就是把自己喜欢的句子记下来。",
+        "answerPy": "Zuò dúshū bǐjì shì hǎo fāngfǎ zhī yī, qízhōng zuì jiǎndān de jiù shì bǎ zìjǐ xǐhuan de jùzi jì xialai.",
+        "note": "之一 kết hợp 其中, ôn lại ngữ pháp Bài 6.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sau khi tốt nghiệp, anh ấy vốn định làm luật sư, kết quả lại trở thành nhà văn.",
+        "answer": "毕业之后，他本来打算当律师，结果却成了作家。",
+        "answerPy": "Bìyè zhīhòu, tā běnlái dǎsuàn dāng lǜshī, jiéguǒ què chéngle zuòjiā.",
+        "note": "之后 kết hợp 本来 (Bài 3), 结果 (Bài 9), 却 (Bài 2).",
+        "pair": "……，却……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "之后",
+        "py": "zhī hòu",
+        "vn": "sau đó"
+      },
+      {
+        "zh": "之前",
+        "py": "zhī qián",
+        "vn": "trước đó"
+      },
+      {
+        "zh": "之一",
+        "py": "zhī yī",
+        "vn": "một trong số"
+      },
+      {
+        "zh": "之间",
+        "py": "zhī jiān",
+        "vn": "giữa"
+      },
+      {
+        "zh": "三分之二",
+        "py": "sān fēn zhī èr",
+        "vn": "hai phần ba"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "……之一",
+        "m": "Một trong những … — 之 là 的 của văn viết cổ"
+      },
+      {
+        "s": "A 与 B 之间",
+        "m": "Giữa A và B"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "内容",
+    "py": "nèiróng",
+    "pos": "Danh từ",
+    "vn": "nội dung",
+    "hv": "nội dung",
+    "em": "📋",
+    "lesson": 4,
+    "explain": [
+      "Những gì được chứa đựng, trình bày trong bài viết, sách, cuộc nói chuyện…"
+    ],
+    "usage": "Danh từ: 主要内容, 书本上的内容, 内容丰富.",
+    "collo": [
+      "主要内容",
+      "内容丰富",
+      "复习重要内容"
+    ],
+    "ex_zh": "然而，你不能完全相信书本上的内容，要有自己的看法和判断。",
+    "ex_py": "Rán'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.",
+    "ex_vn": "Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.",
+    "exList": [
+      {
+        "zh": "然而，你不能完全相信书本上的内容，要有自己的看法和判断。",
+        "py": "Rán'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.",
+        "vn": "Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình."
+      },
+      {
+        "zh": "你看过那位作家的小说吗？他的小说语言幽默，内容丰富。",
+        "py": "Nǐ kànguo nà wèi zuòjiā de xiǎoshuō ma? Tā de xiǎoshuō yǔyán yōumò, nèiróng fēngfù.",
+        "vn": "Bạn đọc tiểu thuyết của nhà văn đó chưa? Tiểu thuyết của ông ấy ngôn ngữ hài hước, nội dung phong phú."
+      },
+      {
+        "zh": "这是复习材料，复习要注意方法，要复习重要内容。",
+        "py": "Zhè shì fùxí cáiliào, fùxí yào zhùyì fāngfǎ, yào fùxí zhòngyào nèiróng.",
+        "vn": "Đây là tài liệu ôn tập, ôn tập phải chú ý phương pháp, phải ôn nội dung quan trọng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "容",
+        "p": "róng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "宀 (miên) trên → 谷 dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "chứa đựng, dung nạp",
+        "tip": "Bộ mái nhà 宀 + 谷(thung lũng, chỗ chứa) → CHỨA ĐỰNG, kết hợp 内(bên trong) thành 内容 = NỘI DUNG (những gì chứa bên trong).",
+        "cf": "客 (kè – \"khách\", cũng bộ 宀)",
+        "w": "内容 / 容易 / 容许"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sách quả thực dạy ta nhiều thứ, tuy nhiên bạn không thể tin hoàn toàn vào nội dung trong sách.",
+        "answer": "书确实能教给我们很多东西，然而你不能完全相信书本上的内容。",
+        "answerPy": "Shū quèshí néng jiāo gěi wǒmen hěn duō dōngxi, rán'ér nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng.",
+        "note": "然而 chỉ dùng trong văn viết, thường mở đầu câu mới.",
+        "pair": "然而……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đối với tôi mà nói, nội dung quyển sách này hơi phức tạp.",
+        "answer": "对我来说，这本书的内容有点儿复杂。",
+        "answerPy": "Duì wǒ lái shuō, zhè běn shū de nèiróng yǒudiǎnr fùzá.",
+        "note": "对……来说 ôn lại ngữ pháp Bài 5, kết hợp 复杂.",
+        "pair": "对……来说……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "主要内容",
+        "py": "zhǔyào nèiróng",
+        "vn": "nội dung chính"
+      },
+      {
+        "zh": "内容丰富",
+        "py": "nèiróng fēngfù",
+        "vn": "nội dung phong phú"
+      },
+      {
+        "zh": "书上的内容",
+        "py": "shū shàng de nèiróng",
+        "vn": "nội dung trong sách"
+      },
+      {
+        "zh": "复习重要内容",
+        "py": "fùxí zhòngyào nèiróng",
+        "vn": "ôn nội dung quan trọng"
+      },
+      {
+        "zh": "内容很多",
+        "py": "nèiróng hěn duō",
+        "vn": "nội dung rất nhiều"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 的 + 内容",
+        "m": "Nội dung của cái gì"
+      },
+      {
+        "s": "内容 + 丰富",
+        "m": "Nội dung phong phú — 丰富 là từ bài 2"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "然而",
+    "py": "rán'ér",
+    "pos": "Liên từ",
+    "vn": "nhưng, song, tuy nhiên",
+    "hv": "nhiên nhi",
+    "em": "↩️",
+    "lesson": 4,
+    "explain": [
+      "Liên từ chỉ sự chuyển ý, đứng đầu vế sau, thường dùng trong văn viết; sau 然而 có thể có dấu phẩy để ngắt."
+    ],
+    "usage": "Vế 1。然而(，) + Vế 2 (văn viết).",
+    "collo": [
+      "然而，……",
+      "然而一直没有放弃",
+      "然而看法不同"
+    ],
+    "ex_zh": "他虽然失败了很多次，然而一直没有放弃。",
+    "ex_py": "Tā suīrán shībàile hěn duō cì, rán'ér yìzhí méiyǒu fàngqì.",
+    "ex_vn": "Anh ấy tuy thất bại rất nhiều lần, nhưng vẫn luôn không từ bỏ.",
+    "exList": [
+      {
+        "zh": "他虽然失败了很多次，然而一直没有放弃。",
+        "py": "Tā suīrán shībàile hěn duō cì, rán'ér yìzhí méiyǒu fàngqì.",
+        "vn": "Anh ấy tuy thất bại rất nhiều lần, nhưng vẫn luôn không từ bỏ."
+      },
+      {
+        "zh": "很多人觉得自己的生活是幸福的，然而每个人对幸福的看法却不完全相同。",
+        "py": "Hěn duō rén juéde zìjǐ de shēnghuó shì xìngfú de, rán'ér měi ge rén duì xìngfú de kànfǎ què bù wánquán xiāngtóng.",
+        "vn": "Nhiều người cảm thấy cuộc sống của mình hạnh phúc, tuy nhiên cách nhìn của mỗi người về hạnh phúc lại không hoàn toàn giống nhau."
+      },
+      {
+        "zh": "然而，你不能完全相信书本上的内容，要有自己的看法和判断。",
+        "py": "Rán'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.",
+        "vn": "Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "然",
+        "p": "rán",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "月+犬 trên → 灬 (hỏa) dưới",
+        "rad": "灬 (hỏa – lửa)",
+        "mean": "như vậy, đúng vậy",
+        "tip": "Chữ hội ý thịt 月 + chó 犬 trên lửa 灬 → nghĩa gốc là ĐỐT, sau mượn nghĩa NHƯ VẬY, kết hợp 而 thành 然而 = \"như vậy mà\" → NHƯNG.",
+        "cf": "燃 (rán – \"đốt cháy\", thêm bộ 火 để giữ nghĩa gốc)",
+        "w": "然而 / 虽然 / 竟然 / 仍然"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Có người cho rằng chỉ cần có tiền là sẽ hạnh phúc, tuy nhiên rất nhiều thứ không thể dùng tiền mua được.",
+        "answer": "有的人觉得只要有钱就会幸福，然而很多东西是不能用钱买到的。",
+        "answerPy": "Yǒude rén juéde zhǐyào yǒu qián jiù huì xìngfú, rán'ér hěn duō dōngxi shì bù néng yòng qián mǎidào de.",
+        "note": "然而 kết hợp 只要……就 (Bài 8) và chủ đề hạnh phúc Bài 10.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy từ nhỏ đã muốn trở thành cảnh sát, tuy nhiên do sức khỏe không tốt nên đành phải từ bỏ.",
+        "answer": "他从小就想成为一名警察，然而由于身体不好，只好放弃了。",
+        "answerPy": "Tā cóngxiǎo jiù xiǎng chéngwéi yì míng jǐngchá, rán'ér yóuyú shēntǐ bù hǎo, zhǐhǎo fàngqì le.",
+        "note": "然而 kết hợp 由于 (Bài 10) và 只好 (từ mới của bài).",
+        "pair": "……，而……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "然而，……",
+        "py": "rán'ér",
+        "vn": "tuy nhiên,…"
+      },
+      {
+        "zh": "然而看法不同",
+        "py": "rán'ér kànfǎ bù tóng",
+        "vn": "song quan điểm khác nhau"
+      },
+      {
+        "zh": "然而一直没放弃",
+        "py": "rán'ér yīzhí méi fàngqì",
+        "vn": "nhưng vẫn chưa từ bỏ"
+      },
+      {
+        "zh": "……，然而……",
+        "py": "rán'ér",
+        "vn": "…, thế nhưng…"
+      },
+      {
+        "zh": "然而事实是",
+        "py": "rán'ér shì shí shì",
+        "vn": "song sự thật là"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "mệnh đề 1。然而，mệnh đề 2",
+        "m": "…. Tuy nhiên, …"
+      },
+      {
+        "s": "然而 ≈ 但是",
+        "m": "然而 chỉ dùng trong văn viết, thường đứng đầu câu mới"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "看法",
+    "py": "kànfǎ",
+    "pos": "Danh từ",
+    "vn": "quan điểm, cách nhìn",
+    "hv": "khán pháp",
+    "em": "👁️",
+    "lesson": 4,
+    "explain": [
+      "Ý kiến, cách nhìn nhận của một người về sự việc nào đó."
+    ],
+    "usage": "Danh từ: 自己的看法, 对……的看法, 看法不同.",
+    "collo": [
+      "自己的看法",
+      "对……的看法",
+      "看法不同"
+    ],
+    "ex_zh": "你不能完全相信书本上的内容，要有自己的看法和判断。",
+    "ex_py": "Nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.",
+    "ex_vn": "Bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.",
+    "exList": [
+      {
+        "zh": "你不能完全相信书本上的内容，要有自己的看法和判断。",
+        "py": "Nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.",
+        "vn": "Bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình."
+      },
+      {
+        "zh": "每个人对幸福的看法却不完全相同。",
+        "py": "Měi ge rén duì xìngfú de kànfǎ què bù wánquán xiāngtóng.",
+        "vn": "Cách nhìn của mỗi người về hạnh phúc lại không hoàn toàn giống nhau."
+      },
+      {
+        "zh": "在我看来，你的看法很有道理。",
+        "py": "Zài wǒ kànlái, nǐ de kànfǎ hěn yǒu dàolǐ.",
+        "vn": "Theo tôi thấy, quan điểm của bạn rất có lý."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "法",
+        "p": "fǎ",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "氵 (thủy) trái → 去 phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "phép, cách",
+        "tip": "Bộ nước 氵 (công bằng như mặt nước) + 去 → PHÉP TẮC, mở rộng thành CÁCH THỨC, kết hợp 看 thành 看法 = CÁCH NHÌN.",
+        "cf": "去 (qù – \"đi\", phần bên phải)",
+        "w": "看法 / 方法 / 办法 / 语法"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Theo tôi thấy, quan điểm của bạn không những rất có lý, mà còn đáng để mọi người cân nhắc.",
+        "answer": "在我看来，你的看法不但很有道理，而且值得大家考虑。",
+        "answerPy": "Zài wǒ kànlái, nǐ de kànfǎ búdàn hěn yǒu dàolǐ, érqiě zhídé dàjiā kǎolǜ.",
+        "note": "在我看来 — theo tôi thì; 考虑 là từ bài 5.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi vốn tưởng mọi người có cùng quan điểm, hóa ra mỗi người nghĩ một khác.",
+        "answer": "我以为大家的看法都一样，原来每个人想的都不同。",
+        "answerPy": "Wǒ yǐwéi dàjiā de kànfǎ dōu yíyàng, yuánlái měi ge rén xiǎng de dōu bùtóng.",
+        "note": "以为 + 原来 ôn lại ngữ pháp Bài 4.",
+        "pair": "一……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "自己的看法",
+        "py": "zìjǐ de kànfǎ",
+        "vn": "quan điểm của mình"
+      },
+      {
+        "zh": "看法不同",
+        "py": "kànfǎ bù tóng",
+        "vn": "cách nhìn khác nhau"
+      },
+      {
+        "zh": "对……的看法",
+        "py": "duì de kànfǎ",
+        "vn": "cách nhìn về…"
+      },
+      {
+        "zh": "改变看法",
+        "py": "gǎibiàn kànfǎ",
+        "vn": "thay đổi cách nhìn"
+      },
+      {
+        "zh": "说说你的看法",
+        "py": "shuōshuō nǐ de kànfǎ",
+        "vn": "nói thử quan điểm của bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "对 + N + 的看法",
+        "m": "Cách nhìn về cái gì"
+      },
+      {
+        "s": "看法 ≈ 意见",
+        "m": "看法 trung tính; 意见 thường mang ý phê bình"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "相同",
+    "py": "xiāngtóng",
+    "pos": "Tính từ",
+    "vn": "giống nhau, như nhau",
+    "hv": "tương đồng",
+    "em": "🟰",
+    "lesson": 5,
+    "explain": [
+      "Hoàn toàn giống nhau, không có điểm khác biệt."
+    ],
+    "usage": "Tính từ: 相同的汉字, 看法相同, 跟……相同.",
+    "collo": [
+      "三个相同的汉字",
+      "看法不完全相同",
+      "相同年龄"
+    ],
+    "ex_zh": "虽然这句话只用了三个相同的汉字，但是不同的顺序却表示了不同的意思。",
+    "ex_py": "Suīrán zhè jù huà zhǐ yòngle sān ge xiāngtóng de Hànzì, dànshì bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.",
+    "ex_vn": "Tuy câu nói này chỉ dùng ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.",
+    "exList": [
+      {
+        "zh": "虽然这句话只用了三个相同的汉字，但是不同的顺序却表示了不同的意思。",
+        "py": "Suīrán zhè jù huà zhǐ yòngle sān ge xiāngtóng de Hànzì, dànshì bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.",
+        "vn": "Tuy câu nói này chỉ dùng ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau."
+      },
+      {
+        "zh": "他很年轻，可是遇到问题时，却比相同年龄的人更冷静。",
+        "py": "Tā hěn niánqīng, kěshì yùdào wèntí shí, què bǐ xiāngtóng niánlíng de rén gèng lěngjìng.",
+        "vn": "Anh ấy rất trẻ, nhưng khi gặp vấn đề, lại bình tĩnh hơn những người cùng tuổi."
+      },
+      {
+        "zh": "我们俩的爱好几乎完全相同。",
+        "py": "Wǒmen liǎ de àihào jīhū wánquán xiāngtóng.",
+        "vn": "Sở thích của hai chúng tôi hầu như hoàn toàn giống nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "相",
+        "p": "xiāng",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "木 (mộc) trái → 目 (mục) phải",
+        "rad": "目 (mục – mắt)",
+        "mean": "lẫn nhau",
+        "tip": "Chữ hội ý mắt 目 nhìn cây 木 → QUAN SÁT, mở rộng thành LẪN NHAU, kết hợp 同(giống) thành 相同 = GIỐNG NHAU.",
+        "cf": "想 (xiǎng – \"nghĩ\", thêm bộ 心)",
+        "w": "相同 / 相信 / 互相"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy rất trẻ, nhưng khi gặp vấn đề lại bình tĩnh hơn những người cùng tuổi.",
+        "answer": "他很年轻，可是遇到问题时，却比相同年龄的人更冷静。",
+        "answerPy": "Tā hěn niánqīng, kěshì yùdào wèntí shí, què bǐ xiāngtóng niánlíng de rén gèng lěngjìng.",
+        "note": "可是 (Bài 9) + 却 (Bài 2) — ôn lại hai điểm ngữ pháp cũ.",
+        "pair": "比……更……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sở thích của hai chúng tôi tuy gần như giống hệt nhau, nhưng quan điểm lại không hoàn toàn như nhau.",
+        "answer": "我们俩的爱好虽然几乎完全相同，但是看法却不完全一样。",
+        "answerPy": "Wǒmen liǎ de àihào suīrán jīhū wánquán xiāngtóng, dànshì kànfǎ què bù wánquán yíyàng.",
+        "note": "俩 là từ bài 1; 却 là từ bài 2.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "完全相同",
+        "py": "wánquán xiāngtóng",
+        "vn": "hoàn toàn giống nhau"
+      },
+      {
+        "zh": "相同的汉字",
+        "py": "xiāngtóng de Hànzì",
+        "vn": "chữ Hán giống nhau"
+      },
+      {
+        "zh": "看法相同",
+        "py": "kànfǎ xiāngtóng",
+        "vn": "quan điểm giống nhau"
+      },
+      {
+        "zh": "不完全相同",
+        "py": "bù wánquán xiāngtóng",
+        "vn": "không hoàn toàn giống"
+      },
+      {
+        "zh": "相同年龄",
+        "py": "xiāngtóng niánlíng",
+        "vn": "cùng độ tuổi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A 和 B + 相同",
+        "m": "A và B giống nhau"
+      },
+      {
+        "s": "相同 ↔ 不同",
+        "m": "Giống nhau ↔ khác nhau"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "顺序",
+    "py": "shùnxù",
+    "pos": "Danh từ",
+    "vn": "trật tự, thứ tự",
+    "hv": "thuận tự",
+    "em": "🔢",
+    "lesson": 5,
+    "explain": [
+      "Thứ tự sắp xếp trước sau của sự vật, hành động."
+    ],
+    "usage": "Danh từ: 不同的顺序, 按照……的顺序, 顺序不对.",
+    "collo": [
+      "不同的顺序",
+      "按照顺序",
+      "先下后上的顺序"
+    ],
+    "ex_zh": "为了保证您和他人的安全，请您按照\"先下后上\"的顺序上下车。",
+    "ex_py": "Wèile bǎozhèng nín hé tārén de ānquán, qǐng nín ànzhào \"xiān xià hòu shàng\" de shùnxù shàng xià chē.",
+    "ex_vn": "Để đảm bảo an toàn cho bạn và người khác, xin hãy lên xuống xe theo thứ tự \"xuống trước lên sau\".",
+    "exList": [
+      {
+        "zh": "为了保证您和他人的安全，请您按照\"先下后上\"的顺序上下车。",
+        "py": "Wèile bǎozhèng nín hé tārén de ānquán, qǐng nín ànzhào \"xiān xià hòu shàng\" de shùnxù shàng xià chē.",
+        "vn": "Để đảm bảo an toàn cho bạn và người khác, xin hãy lên xuống xe theo thứ tự \"xuống trước lên sau\"."
+      },
+      {
+        "zh": "虽然这句话只用了三个相同的汉字，但是不同的顺序却表示了不同的意思。",
+        "py": "Suīrán zhè jù huà zhǐ yòngle sān ge xiāngtóng de Hànzì, dànshì bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.",
+        "vn": "Tuy câu này chỉ dùng ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau."
+      },
+      {
+        "zh": "请按照顺序排队，不要着急。",
+        "py": "Qǐng ànzhào shùnxù páiduì, búyào zháojí.",
+        "vn": "Xin hãy xếp hàng theo thứ tự, đừng vội."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "序",
+        "p": "xù",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "广 bao ngoài → 予 trong",
+        "rad": "广 (nghiễm – mái nhà)",
+        "mean": "thứ tự, mở đầu",
+        "tip": "Bộ mái nhà 广 + 予(biểu âm) → nghĩa gốc là bức tường phía đông-tây của nhà (có trước sau), mở rộng thành THỨ TỰ, kết hợp 顺(thuận) thành 顺序 = TRẬT TỰ.",
+        "cf": "预 (yù – \"dự, trước\", bộ 页)",
+        "w": "顺序 / 秩序 / 序言"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hãy lên xuống xe theo thứ tự \"xuống trước lên sau\".",
+        "answer": "请您按照\"先下后上\"的顺序上下车。",
+        "answerPy": "Qǐng nín ànzhào \"xiān xià hòu shàng\" de shùnxù shàng xià chē.",
+        "note": "按照……的顺序 ôn lại ngữ pháp 按照 Bài 4.",
+        "pair": "按照……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trước tiên đọc đề, sau đó làm bài, cuối cùng kiểm tra — thứ tự này rất quan trọng.",
+        "answer": "首先读题，其次做题，最后检查，这个顺序很重要。",
+        "answerPy": "Shǒuxiān dú tí, qícì zuò tí, zuìhòu jiǎnchá, zhège shùnxù hěn zhòngyào.",
+        "note": "首先……其次……最后 ôn lại ngữ pháp Bài 3.",
+        "pair": "首先……其次……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "按照顺序",
+        "py": "ànzhào shùnxù",
+        "vn": "theo thứ tự"
+      },
+      {
+        "zh": "不同的顺序",
+        "py": "bù tóng de shùnxù",
+        "vn": "thứ tự khác nhau"
+      },
+      {
+        "zh": "先下后上的顺序",
+        "py": "xiān xià hòu shàng de shùnxù",
+        "vn": "thứ tự xuống trước lên sau"
+      },
+      {
+        "zh": "顺序不对",
+        "py": "shùnxù bú duì",
+        "vn": "sai thứ tự"
+      },
+      {
+        "zh": "排顺序",
+        "py": "pái shùnxù",
+        "vn": "sắp thứ tự"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "按照 + 顺序",
+        "m": "Theo thứ tự — 按照 là từ bài 4"
+      },
+      {
+        "s": "顺序 + 对 / 不对",
+        "m": "Thứ tự đúng / sai"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "表示",
+    "py": "biǎoshì",
+    "pos": "Động từ",
+    "vn": "biểu thị, có ý nghĩa; bày tỏ",
+    "hv": "biểu thị",
+    "em": "💬",
+    "lesson": 5,
+    "explain": [
+      "1. Biểu thị, mang ý nghĩa (từ ngữ/ký hiệu biểu thị điều gì).",
+      "2. Bày tỏ (thái độ, cảm xúc) bằng lời nói/hành động."
+    ],
+    "usage": "表示 + ý nghĩa/thái độ: 表示不同的意思, 表示感谢, 表示同意.",
+    "collo": [
+      "表示了不同的意思",
+      "表示感谢",
+      "表示同意"
+    ],
+    "ex_zh": "不同的顺序却表示了不同的意思。",
+    "ex_py": "Bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.",
+    "ex_vn": "Thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.",
+    "exList": [
+      {
+        "zh": "不同的顺序却表示了不同的意思。",
+        "py": "Bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.",
+        "vn": "Thứ tự khác nhau lại biểu thị ý nghĩa khác nhau."
+      },
+      {
+        "zh": "他向大家表示了感谢。",
+        "py": "Tā xiàng dàjiā biǎoshìle gǎnxiè.",
+        "vn": "Anh ấy bày tỏ lòng cảm ơn với mọi người."
+      },
+      {
+        "zh": "尽管有些人不同意，但大部分人都表示支持这个计划。",
+        "py": "Jǐnguǎn yǒuxiē rén bù tóngyì, dàn dà bùfen rén dōu biǎoshì zhīchí zhège jìhuà.",
+        "vn": "Mặc dù có người không đồng ý, nhưng phần lớn mọi người đều bày tỏ ủng hộ kế hoạch này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "表",
+        "p": "biǎo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "龶 trên → 𧘇 dưới",
+        "rad": "衣 (y – áo, biến thể)",
+        "mean": "bề ngoài, biểu lộ",
+        "tip": "Chữ hội ý áo lông 衣+毛 mặc bên NGOÀI → BỀ MẶT, mở rộng thành BIỂU LỘ ra ngoài, kết hợp 示(cho thấy) thành 表示 = BIỂU THỊ.",
+        "cf": "麦 (mài – \"lúa mạch\", phần trên gần giống)",
+        "w": "表示 / 表演 / 表格 / 手表"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mặc dù có người không đồng ý, nhưng phần lớn mọi người đều bày tỏ ủng hộ.",
+        "answer": "尽管有些人不同意，但大部分人都表示支持。",
+        "answerPy": "Jǐnguǎn yǒuxiē rén bù tóngyì, dàn dà bùfen rén dōu biǎoshì zhīchí.",
+        "note": "尽管 ôn lại ngữ pháp Bài 2.",
+        "pair": "尽管……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ba chữ Hán giống nhau, nhưng thứ tự khác nhau lại biểu thị ý nghĩa khác nhau.",
+        "answer": "三个相同的汉字，不同的顺序却表示了不同的意思。",
+        "answerPy": "Sān ge xiāngtóng de Hànzì, bù tóng de shùnxù què biǎoshìle bù tóng de yìsi.",
+        "note": "表示 kết hợp 相同/顺序 — từ mới của bài, cùng 却 (Bài 2).",
+        "pair": "……，却……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "表示感谢",
+        "py": "biǎoshì gǎnxiè",
+        "vn": "bày tỏ lòng cảm ơn"
+      },
+      {
+        "zh": "表示同意",
+        "py": "biǎoshì tóngyì",
+        "vn": "tỏ ý đồng ý"
+      },
+      {
+        "zh": "表示不同的意思",
+        "py": "biǎoshì bù tóng de yìsi",
+        "vn": "biểu thị ý nghĩa khác nhau"
+      },
+      {
+        "zh": "表示关心",
+        "py": "biǎoshì guānxīn",
+        "vn": "thể hiện sự quan tâm"
+      },
+      {
+        "zh": "表示反对",
+        "py": "biǎoshì fǎnduì",
+        "vn": "tỏ ý phản đối"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "表示 + 感谢 / 同意 / 反对",
+        "m": "Bày tỏ thái độ gì"
+      },
+      {
+        "s": "A + 表示 + ý nghĩa",
+        "m": "A biểu thị nghĩa gì"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "养成",
+    "py": "yǎngchéng",
+    "pos": "Động từ",
+    "vn": "hình thành, tạo (thói quen)",
+    "hv": "dưỡng thành",
+    "em": "🌱",
+    "lesson": 5,
+    "explain": [
+      "Dần dần hình thành (thói quen, tính cách) qua thời gian."
+    ],
+    "usage": "养成 + 习惯: 养成阅读的习惯, 养成好习惯.",
+    "collo": [
+      "养成阅读的习惯",
+      "养成好习惯",
+      "从小养成"
+    ],
+    "ex_zh": "\"好读书\"就是要养成阅读的习惯，使读书真正成为自己的兴趣爱好。",
+    "ex_py": "\"Hào dú shū\" jiù shì yào yǎngchéng yuèdú de xíguàn, shǐ dú shū zhēnzhèng chéngwéi zìjǐ de xìngqù àihào.",
+    "ex_vn": "\"Thích đọc sách\" chính là phải hình thành thói quen đọc sách, khiến việc đọc sách thực sự trở thành sở thích của mình.",
+    "exList": [
+      {
+        "zh": "\"好读书\"就是要养成阅读的习惯，使读书真正成为自己的兴趣爱好。",
+        "py": "\"Hào dú shū\" jiù shì yào yǎngchéng yuèdú de xíguàn, shǐ dú shū zhēnzhèng chéngwéi zìjǐ de xìngqù àihào.",
+        "vn": "\"Thích đọc sách\" chính là phải hình thành thói quen đọc sách, khiến việc đọc sách thực sự trở thành sở thích của mình."
+      },
+      {
+        "zh": "好习惯要从小养成。",
+        "py": "Hǎo xíguàn yào cóngxiǎo yǎngchéng.",
+        "vn": "Thói quen tốt phải hình thành từ nhỏ."
+      },
+      {
+        "zh": "只要坚持一个月，你就能养成早起的习惯。",
+        "py": "Zhǐyào jiānchí yí ge yuè, nǐ jiù néng yǎngchéng zǎoqǐ de xíguàn.",
+        "vn": "Chỉ cần kiên trì một tháng, bạn sẽ hình thành được thói quen dậy sớm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "养",
+        "p": "yǎng",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 9,
+        "ord": "𦍌 (dương) trên → 𧘇 dưới",
+        "rad": "羊 (dương – dê)",
+        "mean": "nuôi dưỡng",
+        "tip": "Bộ dê 羊 (nuôi dê) → NUÔI DƯỠNG, kết hợp 成(thành) thành 养成 = NUÔI DƯỠNG THÀNH (thói quen).",
+        "cf": "美 (měi – \"đẹp\", cũng có 羊 ở trên)",
+        "w": "养成 / 养 / 营养"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần tạo được thói quen đọc sách là cuộc sống của bạn sẽ phong phú hơn.",
+        "answer": "只要养成阅读的习惯，你的生活就会变得更丰富。",
+        "answerPy": "Zhǐyào yǎngchéng yuèdú de xíguàn, nǐ de shēnghuó jiù huì biàn de gèng fēngfù.",
+        "note": "养成 + … + 的习惯 — kết hợp cố định.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần kiên trì một tháng, bạn sẽ hình thành được thói quen dậy sớm.",
+        "answer": "只要坚持一个月，你就能养成早起的习惯。",
+        "answerPy": "Zhǐyào jiānchí yí ge yuè, nǐ jiù néng yǎngchéng zǎoqǐ de xíguàn.",
+        "note": "只要……就 ôn lại ngữ pháp Bài 8.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "养成习惯",
+        "py": "yǎngchéng xíguàn",
+        "vn": "tạo thói quen"
+      },
+      {
+        "zh": "养成好习惯",
+        "py": "yǎngchéng hǎo xíguàn",
+        "vn": "hình thành thói quen tốt"
+      },
+      {
+        "zh": "从小养成",
+        "py": "cóngxiǎo yǎngchéng",
+        "vn": "hình thành từ nhỏ"
+      },
+      {
+        "zh": "养成阅读的习惯",
+        "py": "yǎngchéng yuèdú de xíguàn",
+        "vn": "tạo thói quen đọc sách"
+      },
+      {
+        "zh": "很难养成",
+        "py": "hěn nán yǎngchéng",
+        "vn": "rất khó hình thành"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "养成 + … + 的习惯",
+        "m": "Tạo thói quen làm gì"
+      },
+      {
+        "s": "养成 ≠ 养 (bài 7)",
+        "m": "养成 là hình thành thói quen; 养 là nuôi, trồng"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "同时",
+    "py": "tóngshí",
+    "pos": "Liên từ/Danh từ",
+    "vn": "đồng thời, hơn nữa; cùng lúc",
+    "hv": "đồng thời",
+    "em": "⏱️",
+    "lesson": 5,
+    "explain": [
+      "1. (Liên từ) Nghĩa \"hơn nữa\", tiến thêm một bước, thường đi với 又/也/还.",
+      "2. (Danh từ) Chỉ hành động xảy ra cùng lúc, dùng trong cấu trúc 在……(的)同时."
+    ],
+    "usage": "Vế 1。同时，……也/还……(liên từ) | 在……(的)同时，……(danh từ)",
+    "collo": [
+      "同时，……也",
+      "在……的同时",
+      "同时还"
+    ],
+    "ex_zh": "阅读有许多好处，它能丰富你的知识；同时，它还会丰富你的情感，使你的生活更精彩。",
+    "ex_py": "Yuèdú yǒu xǔduō hǎochù, tā néng fēngfù nǐ de zhīshi; tóngshí, tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.",
+    "ex_vn": "Đọc sách có rất nhiều lợi ích, nó có thể làm phong phú kiến thức của bạn; đồng thời, nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn.",
+    "exList": [
+      {
+        "zh": "阅读有许多好处，它能丰富你的知识；同时，它还会丰富你的情感，使你的生活更精彩。",
+        "py": "Yuèdú yǒu xǔduō hǎochù, tā néng fēngfù nǐ de zhīshi; tóngshí, tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.",
+        "vn": "Đọc sách có rất nhiều lợi ích, nó có thể làm phong phú kiến thức của bạn; đồng thời, nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn."
+      },
+      {
+        "zh": "因为小孩子的想法没有那么复杂，所以他们总是很快乐。同时，小孩子也是最诚实的。",
+        "py": "Yīnwèi xiǎo háizi de xiǎngfǎ méiyǒu nàme fùzá, suǒyǐ tāmen zǒngshì hěn kuàilè. Tóngshí, xiǎo háizi yě shì zuì chéngshí de.",
+        "vn": "Vì suy nghĩ của trẻ con không phức tạp như vậy, nên chúng luôn rất vui vẻ. Đồng thời, trẻ con cũng là thành thật nhất."
+      },
+      {
+        "zh": "在学习汉语的同时，我还了解了中国文化，认识了很多中国朋友。",
+        "py": "Zài xuéxí Hànyǔ de tóngshí, wǒ hái liǎojiěle Zhōngguó wénhuà, rènshile hěn duō Zhōngguó péngyou.",
+        "vn": "Trong lúc học tiếng Trung, tôi còn hiểu thêm văn hóa Trung Quốc, quen được rất nhiều bạn Trung Quốc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "同",
+        "p": "tóng",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 6,
+        "ord": "冂 bao ngoài → 一+口 trong",
+        "rad": "口 (khẩu)",
+        "mean": "cùng, giống",
+        "tip": "Chữ hội ý nhiều miệng 口 nói CÙNG một ý dưới một mái 冂 → CÙNG, GIỐNG, kết hợp 时(thời gian) thành 同时 = CÙNG LÚC.",
+        "cf": "向 (xiàng – \"hướng về\", tự dạng gần giống)",
+        "w": "同时 / 同意 / 相同 / 共同"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi năm nay 26 tuổi, vừa học cao học vừa làm việc ở một công ty.",
+        "answer": "我哥哥今年26岁，在读硕士研究生的同时，还在一家公司工作。",
+        "answerPy": "Wǒ gēge jīnnián 26 suì, zài dú shuòshì yánjiūshēng de tóngshí, hái zài yì jiā gōngsī gōngzuò.",
+        "note": "硕士研究生 là từ bài 10.",
+        "pair": "在……的同时……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy không những là nhà khoa học nổi tiếng, mà đồng thời còn là một người mẹ tốt.",
+        "answer": "她不但是著名的科学家，而且同时也是一位好母亲。",
+        "answerPy": "Tā búdàn shì zhùmíng de kēxuéjiā, érqiě tóngshí yě shì yí wèi hǎo mǔqīn.",
+        "note": "母亲 là từ bài 10; 著名 trang trọng hơn 有名.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "同时，……也",
+        "py": "tóngshí yě",
+        "vn": "đồng thời,… cũng"
+      },
+      {
+        "zh": "在……的同时",
+        "py": "zài de tóngshí",
+        "vn": "trong lúc…"
+      },
+      {
+        "zh": "同时还",
+        "py": "tóngshí hái",
+        "vn": "đồng thời còn"
+      },
+      {
+        "zh": "两件事同时发生",
+        "py": "liǎng jiàn shì tóngshí fāshēng",
+        "vn": "hai việc xảy ra cùng lúc"
+      },
+      {
+        "zh": "同时进行",
+        "py": "tóngshí jìnxíng",
+        "vn": "tiến hành cùng lúc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + … + 的同时，还 / 也 + V",
+        "m": "Trong khi làm A thì đồng thời cũng B"
+      },
+      {
+        "s": "……，同时…… (liên từ)",
+        "m": "…, hơn nữa … — nối hai vế cùng chiều"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "精彩",
+    "py": "jīngcǎi",
+    "pos": "Tính từ",
+    "vn": "tuyệt vời, xuất sắc, đặc sắc",
+    "hv": "tinh thái",
+    "em": "✨",
+    "lesson": 5,
+    "explain": [
+      "Đặc sắc, hấp dẫn, xuất sắc (biểu diễn, trận đấu, cuộc sống…)."
+    ],
+    "usage": "Tính từ: 生活更精彩, 精彩的比赛, 表演很精彩.",
+    "collo": [
+      "生活更精彩",
+      "精彩的比赛",
+      "表演很精彩"
+    ],
+    "ex_zh": "它还会丰富你的情感，使你的生活更精彩。",
+    "ex_py": "Tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.",
+    "ex_vn": "Nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn.",
+    "exList": [
+      {
+        "zh": "它还会丰富你的情感，使你的生活更精彩。",
+        "py": "Tā hái huì fēngfù nǐ de qínggǎn, shǐ nǐ de shēnghuó gèng jīngcǎi.",
+        "vn": "Nó còn làm phong phú tình cảm của bạn, khiến cuộc sống của bạn tuyệt vời hơn."
+      },
+      {
+        "zh": "昨天的比赛太精彩了，即使下着大雨，观众也没有离开。",
+        "py": "Zuótiān de bǐsài tài jīngcǎi le, jíshǐ xiàzhe dàyǔ, guānzhòng yě méiyǒu líkāi.",
+        "vn": "Trận đấu hôm qua quá đặc sắc, dù trời mưa to, khán giả cũng không rời đi."
+      },
+      {
+        "zh": "这场表演精彩极了，值得再看一次。",
+        "py": "Zhè chǎng biǎoyǎn jīngcǎi jí le, zhídé zài kàn yí cì.",
+        "vn": "Buổi biểu diễn này đặc sắc cực kỳ, đáng để xem lại lần nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "彩",
+        "p": "cǎi",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "采 trái → 彡 (sam) phải",
+        "rad": "彡 (sam – vệt màu, lông)",
+        "mean": "màu sắc rực rỡ",
+        "tip": "Bộ 彡 (vệt màu, hoa văn) + 采(biểu âm) → MÀU SẮC RỰC RỠ, kết hợp 精(tinh, tốt) thành 精彩 = ĐẶC SẮC, TUYỆT VỜI.",
+        "cf": "采 (cǎi – \"hái\", phần bên trái)",
+        "w": "精彩 / 彩色 / 光彩"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trận đấu hôm qua quá đặc sắc, dù trời mưa to, khán giả cũng không rời đi.",
+        "answer": "昨天的比赛太精彩了，即使下着大雨，观众也没有离开。",
+        "answerPy": "Zuótiān de bǐsài tài jīngcǎi le, jíshǐ xiàzhe dàyǔ, guānzhòng yě méiyǒu líkāi.",
+        "note": "即使……也 ôn lại ngữ pháp Bài 1.",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đọc sách có thể khiến cuộc sống của bạn tuyệt vời hơn, vì vậy hãy để đọc sách thành thói quen của bạn.",
+        "answer": "阅读能使你的生活更精彩，因此，让阅读成为你的习惯吧！",
+        "answerPy": "Yuèdú néng shǐ nǐ de shēnghuó gèng jīngcǎi, yīncǐ, ràng yuèdú chéngwéi nǐ de xíguàn ba!",
+        "note": "使 + 因此 ôn lại ngữ pháp Bài 8.",
+        "pair": "……，因此……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "精彩的比赛",
+        "py": "jīngcǎi de bǐsài",
+        "vn": "trận đấu hay"
+      },
+      {
+        "zh": "表演很精彩",
+        "py": "biǎoyǎn hěn jīngcǎi",
+        "vn": "màn biểu diễn đặc sắc"
+      },
+      {
+        "zh": "生活更精彩",
+        "py": "shēnghuó gèng jīngcǎi",
+        "vn": "cuộc sống đặc sắc hơn"
+      },
+      {
+        "zh": "非常精彩",
+        "py": "fēicháng jīngcǎi",
+        "vn": "vô cùng xuất sắc"
+      },
+      {
+        "zh": "精彩的故事",
+        "py": "jīngcǎi de gùshi",
+        "vn": "câu chuyện hấp dẫn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "精彩的 + N",
+        "m": "… đặc sắc, … hay"
+      },
+      {
+        "s": "精彩 dùng cho trận đấu, biểu diễn, câu chuyện — không dùng cho người"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "大卫",
+    "py": "Dàwèi",
+    "pos": "Danh từ riêng",
+    "vn": "David (tên người)",
+    "hv": "Đại Vệ",
+    "em": "👨",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của nhân vật nam (người nước ngoài), bạn của Mã Khắc."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "大卫说",
+      "大卫和马克"
+    ],
+    "ex_zh": "马克向大卫介绍自己学习汉语的方法。",
+    "ex_py": "Mǎkè xiàng Dàwèi jièshào zìjǐ xuéxí Hànyǔ de fāngfǎ.",
+    "ex_vn": "Mã Khắc giới thiệu với David phương pháp học tiếng Trung của mình.",
+    "exList": [
+      {
+        "zh": "马克向大卫介绍自己学习汉语的方法。",
+        "py": "Mǎkè xiàng Dàwèi jièshào zìjǐ xuéxí Hànyǔ de fāngfǎ.",
+        "vn": "Mã Khắc giới thiệu với David phương pháp học tiếng Trung của mình."
+      }
+    ]
+  }
 ];
 
 var wuData = [

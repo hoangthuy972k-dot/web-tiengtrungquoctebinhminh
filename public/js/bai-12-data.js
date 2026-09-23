@@ -2,114 +2,843 @@
 // DATA — Bài 12: 你穿得太少了
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'得',py:'de',pos:'Trợ từ kết cấu',vn:'dùng sau động từ để nối bổ ngữ trạng thái', hv: 'đắc',em:'🔗',lesson:1,
-   ex_zh:'你吃得太少了。',ex_py:'Nǐ chī de tài shǎo le.',ex_vn:'Bạn ăn ít quá.',
-   exList:[
-     {zh:'你吃得太少了。',py:'Nǐ chī de tài shǎo le.',vn:'Bạn ăn ít quá.'},
-     {zh:'他说得很清楚。',py:'Tā shuō de hěn qīngchu.',vn:'Anh ấy nói rất rõ ràng.'},
-     {zh:'我起得不早。',py:'Wǒ qǐ de bù zǎo.',vn:'Tôi dậy không sớm.'},
-   ],
-   hanzi:[
-     {c:'得',p:'de / dé',type:'左右结构 · Trái-phải',st:11,ord:'彳(sách) trái → 旦+寸 phải',rad:'彳(sách – bước ngắn)',mean:'trợ từ nối bổ ngữ; đạt được',
-      tip:'Bộ 彳(bước đi) → trên đường đi mà ĐẠT ĐƯỢC điều gì; đọc "de" khi nối động từ với phần miêu tả.',
-      cf:'德 (dé – "đạo đức")',w:'V + 得 + Tính từ / 得到 / 觉得'},
-   ]},
-  {n:2,zh:'妻子',py:'qīzi',pos:'Danh từ',vn:'vợ', hv: 'thê tử',em:'👰',lesson:2,
-   ex_zh:'我妻子比我做得好。',ex_py:'Wǒ qīzi bǐ wǒ zuò de hǎo.',ex_vn:'Vợ tớ nấu ngon hơn tớ nhiều.',
-   exList:[
-     {zh:'我妻子比我做得好。',py:'Wǒ qīzi bǐ wǒ zuò de hǎo.',vn:'Vợ tớ nấu ngon hơn tớ nhiều.'},
-     {zh:'他和妻子一起去旅游。',py:'Tā hé qīzi yìqǐ qù lǚyóu.',vn:'Anh ấy cùng vợ đi du lịch.'},
-     {zh:'我的妻子是老师。',py:'Wǒ de qīzi shì lǎoshī.',vn:'Vợ tôi là giáo viên.'},
-   ],
-   hanzi:[
-     {c:'妻',p:'qī',type:'上下结构 · Trên-dưới',st:8,ord:'彐→女',rad:'女 (nữ – phụ nữ)',mean:'vợ',
-      tip:'Bộ 女 (phụ nữ) ở dưới → người phụ nữ trong nhà = VỢ.',
-      cf:'妾 (qiè – "thiếp")',w:'妻子 / 夫妻'},
-   ]},
-  {n:3,zh:'雪',py:'xuě',pos:'Danh từ',vn:'tuyết', hv: 'tuyết',em:'❄️',lesson:3,
-   ex_zh:'下雪了，今天真冷。',ex_py:'Xià xuě le, jīntiān zhēn lěng.',ex_vn:'Tuyết rơi rồi, hôm nay lạnh thật.',
-   exList:[
-     {zh:'下雪了，今天真冷。',py:'Xià xuě le, jīntiān zhēn lěng.',vn:'Tuyết rơi rồi, hôm nay lạnh thật.'},
-     {zh:'这里冬天常常下雪。',py:'Zhèlǐ dōngtiān chángcháng xià xuě.',vn:'Ở đây mùa đông thường xuyên có tuyết rơi.'},
-     {zh:'外面的雪很大。',py:'Wàimian de xuě hěn dà.',vn:'Tuyết bên ngoài rất dày.'},
-   ],
-   hanzi:[
-     {c:'雪',p:'xuě',type:'上下结构 · Trên-dưới',st:11,ord:'雨 (vũ) trên → 彐 dưới',rad:'雨 (vũ – mưa)',mean:'tuyết',
-      tip:'Bộ 雨 (mưa) ở trên → trời lạnh khiến mưa đóng băng thành TUYẾT.',
-      cf:'雨 (yǔ – "mưa", thiếu phần dưới)',w:'下雪 / 大雪 / 雪天'},
-   ]},
-  {n:4,zh:'零',py:'líng',pos:'Số từ',vn:'không, số không', hv: 'linh',em:'0️⃣',lesson:3,
-   ex_zh:'有零下十度吧。',ex_py:'Yǒu líng xià shí dù ba.',ex_vn:'Phải âm 10 độ ấy nhỉ.',
-   exList:[
-     {zh:'有零下十度吧。',py:'Yǒu líng xià shí dù ba.',vn:'Phải âm 10 độ ấy nhỉ.'},
-     {zh:'现在是零下五度。',py:'Xiànzài shì líng xià wǔ dù.',vn:'Bây giờ là âm 5 độ.'},
-     {zh:'我的电话号码有两个零。',py:'Wǒ de diànhuà hàomǎ yǒu liǎng ge líng.',vn:'Số điện thoại của tôi có hai số 0.'},
-   ],
-   hanzi:[
-     {c:'零',p:'líng',type:'上下结构 · Trên-dưới',st:13,ord:'雨 (vũ) → 令 (lệnh)',rad:'雨 (vũ – mưa)',mean:'số không, lẻ',
-      tip:'Bộ 雨 (mưa) → mưa nhỏ giọt lẻ tẻ, dần hết → nghĩa "KHÔNG, số 0".',
-      cf:'铃 (líng – "chuông", bộ 钅)',w:'零下 / 零钱 / 三十零五'},
-   ]},
-  {n:5,zh:'度',py:'dù',pos:'Lượng từ',vn:'độ (nhiệt độ)', hv: 'độ',em:'🌡️',lesson:3,
-   ex_zh:'零下十度',ex_py:'líng xià shí dù',ex_vn:'âm 10 độ',
-   exList:[
-     {zh:'今天三十五度，太热了。',py:'Jīntiān sānshíwǔ dù, tài rè le.',vn:'Hôm nay 35 độ, nóng quá.'},
-     {zh:'水一百度就开了。',py:'Shuǐ yìbǎi dù jiù kāi le.',vn:'Nước 100 độ là sôi.'},
-     {zh:'今天的温度是十五度。',py:'Jīntiān de wēndù shì shíwǔ dù.',vn:'Nhiệt độ hôm nay là 15 độ.'},
-   ],
-   hanzi:[
-     {c:'度',p:'dù',type:'半包围 · Bán bao (广)',st:9,ord:'广 (nghiễm) → 廿+又',rad:'广 (nghiễm – mái che)',mean:'độ, mức độ',
-      tip:'Mái nhà 广 che một khoảng đo lường → đơn vị đo MỨC ĐỘ (nhiệt độ, góc độ).',
-      cf:'渡 (dù – "vượt qua", bộ 氵)',w:'度 / 温度 / 态度'},
-   ]},
-  {n:6,zh:'穿',py:'chuān',pos:'Động từ',vn:'mặc (quần áo), đi (giày)', hv: 'xuyên',em:'👔',lesson:3,
-   ex_zh:'你穿得太少了。',ex_py:'Nǐ chuān de tài shǎo le.',ex_vn:'Bạn mặc ít quá.',
-   exList:[
-     {zh:'你穿得太少了。',py:'Nǐ chuān de tài shǎo le.',vn:'Bạn mặc ít quá.'},
-     {zh:'今天你穿这件红色的衣服吧。',py:'Jīntiān nǐ chuān zhè jiàn hóngsè de yīfu ba.',vn:'Hôm nay bạn mặc chiếc áo màu đỏ này đi.'},
-     {zh:'他喜欢穿白色的鞋。',py:'Tā xǐhuan chuān báisè de xié.',vn:'Anh ấy thích đi giày màu trắng.'},
-   ],
-   hanzi:[
-     {c:'穿',p:'chuān',type:'上下结构 · Trên-dưới',st:9,ord:'穴 (huyệt) → 牙 (nha)',rad:'穴 (huyệt – hang, lỗ)',mean:'mặc, xỏ qua',
-      tip:'穴 (lỗ) + 牙 (răng, vật nhọn) → xỏ vật nhọn XUYÊN QUA lỗ → MẶC, ĐI (giày/quần áo).',
-      cf:'空 (kōng – "trống rỗng")',w:'穿衣服 / 穿鞋 / 穿得多'},
-   ]},
-  {n:7,zh:'进',py:'jìn',pos:'Động từ',vn:'vào, đi vào', hv: 'tiến',em:'🚪',lesson:3,
-   ex_zh:'我们进房间吧。',ex_py:'Wǒmen jìn fángjiān ba.',ex_vn:'Chúng ta vào phòng đi.',
-   exList:[
-     {zh:'我们进房间吧。',py:'Wǒmen jìn fángjiān ba.',vn:'Chúng ta vào phòng đi.'},
-     {zh:'请进！',py:'Qǐng jìn!',vn:'Mời vào!'},
-     {zh:'他刚进公司工作。',py:'Tā gāng jìn gōngsī gōngzuò.',vn:'Anh ấy vừa mới vào công ty làm việc.'},
-   ],
-   hanzi:[
-     {c:'进',p:'jìn',type:'半包围 · Bán bao (辶)',st:7,ord:'井 (tỉnh) → 辶 (viết sau cùng)',rad:'辶 (sước – đi)',mean:'vào, tiến vào',
-      tip:'Bộ 辶 (đi) + 井 (giếng, lối vào) → bước chân TIẾN VÀO một không gian.',
-      cf:'出 (chū – "ra", trái nghĩa, đã học Bài 2)',w:'进来 / 进房间 / 请进'},
-   ]},
-  {n:8,zh:'弟弟',py:'dìdi',pos:'Danh từ',vn:'em trai', hv: 'đệ đệ',em:'👦',lesson:4,
-   ex_zh:'我弟弟让我帮他找个房子。',ex_py:'Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi.',ex_vn:'Em trai tớ nhờ tớ tìm giúp nó một căn nhà.',
-   exList:[
-     {zh:'我弟弟让我帮他找个房子。',py:'Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi.',vn:'Em trai tớ nhờ tớ tìm giúp nó một căn nhà.'},
-     {zh:'我弟弟比我小两岁。',py:'Wǒ dìdi bǐ wǒ xiǎo liǎng suì.',vn:'Em trai tôi nhỏ hơn tôi 2 tuổi.'},
-     {zh:'弟弟在学校学习汉语。',py:'Dìdi zài xuéxiào xuéxí Hànyǔ.',vn:'Em trai đang học tiếng Trung ở trường.'},
-   ],
-   hanzi:[
-     {c:'弟',p:'dì',type:'独体字 · Chữ đơn',st:7,ord:'丷→丨→一→㇃→一→一',rad:'弓 (cung, biến thể)',mean:'em trai',
-      tip:'Hình sợi dây quấn quanh cây gậy theo thứ tự dưới lên → chỉ THỨ BẬC dưới trong nhà = em trai.',
-      cf:'第 (dì – "thứ tự", đã học Bài 9)',w:'弟弟 / 兄弟'},
-   ]},
-  {n:9,zh:'近',py:'jìn',pos:'Tính từ',vn:'gần', hv: 'cận',em:'📍',lesson:4,
-   ex_zh:'他也希望能住得近一点儿。',ex_py:'Tā yě xīwàng néng zhù de jìn yìdiǎnr.',ex_vn:'Nó cũng hy vọng có thể ở gần hơn một chút.',
-   exList:[
-     {zh:'他也希望能住得近一点儿。',py:'Tā yě xīwàng néng zhù de jìn yìdiǎnr.',vn:'Nó cũng hy vọng có thể ở gần hơn một chút.'},
-     {zh:'我家离学校很近。',py:'Wǒ jiā lí xuéxiào hěn jìn.',vn:'Nhà tôi cách trường học rất gần.'},
-     {zh:'这儿离公司近吗？',py:'Zhèr lí gōngsī jìn ma?',vn:'Ở đây cách công ty có gần không?'},
-   ],
-   hanzi:[
-     {c:'近',p:'jìn',type:'半包围 · Bán bao (辶)',st:7,ord:'斤 (cân) → 辶 (viết sau cùng)',rad:'辶 (sước – đi)',mean:'gần',
-      tip:'Bộ 辶 (đi) + 斤 (rìu, khoảng cách ngắn) → đi một đoạn NGẮN là tới = GẦN.',
-      cf:'远 (yuǎn – trái nghĩa, đã học Bài 7)',w:'很近 / 附近 / 住得近'},
-   ]},
+  {
+    "n": 1,
+    "zh": "得",
+    "py": "de",
+    "pos": "Trợ từ kết cấu",
+    "vn": "dùng sau động từ để nối bổ ngữ trạng thái",
+    "hv": "đắc",
+    "em": "🔗",
+    "lesson": 1,
+    "ex_zh": "你吃得太少了。",
+    "ex_py": "Nǐ chī de tài shǎo le.",
+    "ex_vn": "Bạn ăn ít quá.",
+    "exList": [
+      {
+        "zh": "你吃得太少了。",
+        "py": "Nǐ chī de tài shǎo le.",
+        "vn": "Bạn ăn ít quá."
+      },
+      {
+        "zh": "他说得很清楚。",
+        "py": "Tā shuō de hěn qīngchu.",
+        "vn": "Anh ấy nói rất rõ ràng."
+      },
+      {
+        "zh": "我起得不早。",
+        "py": "Wǒ qǐ de bù zǎo.",
+        "vn": "Tôi dậy không sớm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "得",
+        "p": "de / dé",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "彳(sách) trái → 旦+寸 phải",
+        "rad": "彳(sách – bước ngắn)",
+        "mean": "trợ từ nối bổ ngữ; đạt được",
+        "tip": "Bộ 彳(bước đi) → trên đường đi mà ĐẠT ĐƯỢC điều gì; đọc \"de\" khi nối động từ với phần miêu tả.",
+        "cf": "德 (dé – \"đạo đức\")",
+        "w": "V + 得 + Tính từ / 得到 / 觉得"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "说得很快",
+        "py": "shuō de hěn kuài",
+        "vn": "nói rất nhanh"
+      },
+      {
+        "zh": "走得很慢",
+        "py": "zǒu de hěn màn",
+        "vn": "đi rất chậm"
+      },
+      {
+        "zh": "做得不错",
+        "py": "zuò de búcuò",
+        "vn": "làm khá tốt"
+      },
+      {
+        "zh": "唱得很好",
+        "py": "chàng de hěn hǎo",
+        "vn": "hát rất hay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 得 + tính từ",
+        "m": "Làm việc gì ĐẾN MỨC nào: 他说得很快"
+      },
+      {
+        "s": "Sau 得 vẫn phải có 很: ✗ 说得快 → ✓ 说得很快"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy nói nhanh quá, tôi nghe không hiểu.",
+        "answer": "他说得很快，我没听懂。",
+        "answerPy": "Tā shuō de hěn kuài, wǒ méi tīngdǒng.",
+        "note": "Sau 得 vẫn phải có 很.",
+        "pair": "V + 得 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chị tôi hát rất hay, múa cũng rất đẹp.",
+        "answer": "我姐姐唱得很好，跳舞也跳得很漂亮。",
+        "answerPy": "Wǒ jiějie chàng de hěn hǎo, tiàowǔ yě tiào de hěn piàoliang.",
+        "note": "Từ ly hợp phải nhắc lại động từ trước 得.",
+        "pair": "V + 得 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "妻子",
+    "py": "qīzi",
+    "pos": "Danh từ",
+    "vn": "vợ",
+    "hv": "thê tử",
+    "em": "👰",
+    "lesson": 2,
+    "ex_zh": "我妻子比我做得好。",
+    "ex_py": "Wǒ qīzi bǐ wǒ zuò de hǎo.",
+    "ex_vn": "Vợ tớ nấu ngon hơn tớ nhiều.",
+    "exList": [
+      {
+        "zh": "我妻子比我做得好。",
+        "py": "Wǒ qīzi bǐ wǒ zuò de hǎo.",
+        "vn": "Vợ tớ nấu ngon hơn tớ nhiều."
+      },
+      {
+        "zh": "他和妻子一起去旅游。",
+        "py": "Tā hé qīzi yìqǐ qù lǚyóu.",
+        "vn": "Anh ấy cùng vợ đi du lịch."
+      },
+      {
+        "zh": "我的妻子是老师。",
+        "py": "Wǒ de qīzi shì lǎoshī.",
+        "vn": "Vợ tôi là giáo viên."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "妻",
+        "p": "qī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "彐→女",
+        "rad": "女 (nữ – phụ nữ)",
+        "mean": "vợ",
+        "tip": "Bộ 女 (phụ nữ) ở dưới → người phụ nữ trong nhà = VỢ.",
+        "cf": "妾 (qiè – \"thiếp\")",
+        "w": "妻子 / 夫妻"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我妻子",
+        "py": "wǒ qīzi",
+        "vn": "vợ tôi"
+      },
+      {
+        "zh": "他的妻子",
+        "py": "tā de qīzi",
+        "vn": "vợ anh ấy"
+      },
+      {
+        "zh": "妻子和孩子",
+        "py": "qīzi hé háizi",
+        "vn": "vợ và con"
+      },
+      {
+        "zh": "妻子在家",
+        "py": "qīzi zài jiā",
+        "vn": "vợ ở nhà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 妻子",
+        "m": "Vợ của ai — người thân hay bỏ 的"
+      },
+      {
+        "s": "妻子 (vợ) ↔ 丈夫 (chồng)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vợ tôi làm việc ở một công ty gần đây.",
+        "answer": "我妻子在一个很近的公司上班。",
+        "answerPy": "Wǒ qīzi zài yí ge hěn jìn de gōngsī shàngbān.",
+        "note": "妻子 ↔ 丈夫 — vợ và chồng.",
+        "pair": "在……上班"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vợ và con anh ấy đều ở nhà.",
+        "answer": "他的妻子和孩子都在家。",
+        "answerPy": "Tā de qīzi hé háizi dōu zài jiā.",
+        "note": "都 đứng SAU cả hai chủ ngữ.",
+        "pair": "……和……都……"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "雪",
+    "py": "xuě",
+    "pos": "Danh từ",
+    "vn": "tuyết",
+    "hv": "tuyết",
+    "em": "❄️",
+    "lesson": 3,
+    "ex_zh": "下雪了，今天真冷。",
+    "ex_py": "Xià xuě le, jīntiān zhēn lěng.",
+    "ex_vn": "Tuyết rơi rồi, hôm nay lạnh thật.",
+    "exList": [
+      {
+        "zh": "下雪了，今天真冷。",
+        "py": "Xià xuě le, jīntiān zhēn lěng.",
+        "vn": "Tuyết rơi rồi, hôm nay lạnh thật."
+      },
+      {
+        "zh": "这里冬天常常下雪。",
+        "py": "Zhèlǐ dōngtiān chángcháng xià xuě.",
+        "vn": "Ở đây mùa đông thường xuyên có tuyết rơi."
+      },
+      {
+        "zh": "外面的雪很大。",
+        "py": "Wàimian de xuě hěn dà.",
+        "vn": "Tuyết bên ngoài rất dày."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "雪",
+        "p": "xuě",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "雨 (vũ) trên → 彐 dưới",
+        "rad": "雨 (vũ – mưa)",
+        "mean": "tuyết",
+        "tip": "Bộ 雨 (mưa) ở trên → trời lạnh khiến mưa đóng băng thành TUYẾT.",
+        "cf": "雨 (yǔ – \"mưa\", thiếu phần dưới)",
+        "w": "下雪 / 大雪 / 雪天"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "下雪",
+        "py": "xià xuě",
+        "vn": "có tuyết"
+      },
+      {
+        "zh": "下雪了",
+        "py": "xià xuě le",
+        "vn": "tuyết rơi rồi"
+      },
+      {
+        "zh": "大雪",
+        "py": "dà xuě",
+        "vn": "tuyết lớn"
+      },
+      {
+        "zh": "雪很大",
+        "py": "xuě hěn dà",
+        "vn": "tuyết rất to"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "下 + 雪",
+        "m": "Tuyết rơi — giống 下雨"
+      },
+      {
+        "s": "✗ 雪下 → ✓ 下雪了 — hiện tượng thời tiết đảo ngược trật tự"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngoài trời có tuyết rồi, bạn mặc nhiều một chút.",
+        "answer": "外面下雪了，你穿多一点儿。",
+        "answerPy": "Wàimiàn xià xuě le, nǐ chuān duō yìdiǎnr.",
+        "note": "✗ 雪下 → ✓ 下雪了.",
+        "pair": "……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuyết năm ngoái to hơn năm nay.",
+        "answer": "去年的雪比今年大。",
+        "answerPy": "Qùnián de xuě bǐ jīnnián dà.",
+        "note": "Sau 比 KHÔNG dùng 很.",
+        "pair": "A 比 B + Adj"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "零",
+    "py": "líng",
+    "pos": "Số từ",
+    "vn": "không, số không",
+    "hv": "linh",
+    "em": "0️⃣",
+    "lesson": 3,
+    "ex_zh": "有零下十度吧。",
+    "ex_py": "Yǒu líng xià shí dù ba.",
+    "ex_vn": "Phải âm 10 độ ấy nhỉ.",
+    "exList": [
+      {
+        "zh": "有零下十度吧。",
+        "py": "Yǒu líng xià shí dù ba.",
+        "vn": "Phải âm 10 độ ấy nhỉ."
+      },
+      {
+        "zh": "现在是零下五度。",
+        "py": "Xiànzài shì líng xià wǔ dù.",
+        "vn": "Bây giờ là âm 5 độ."
+      },
+      {
+        "zh": "我的电话号码有两个零。",
+        "py": "Wǒ de diànhuà hàomǎ yǒu liǎng ge líng.",
+        "vn": "Số điện thoại của tôi có hai số 0."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "零",
+        "p": "líng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "雨 (vũ) → 令 (lệnh)",
+        "rad": "雨 (vũ – mưa)",
+        "mean": "số không, lẻ",
+        "tip": "Bộ 雨 (mưa) → mưa nhỏ giọt lẻ tẻ, dần hết → nghĩa \"KHÔNG, số 0\".",
+        "cf": "铃 (líng – \"chuông\", bộ 钅)",
+        "w": "零下 / 零钱 / 三十零五"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "零度",
+        "py": "líng dù",
+        "vn": "không độ"
+      },
+      {
+        "zh": "零下",
+        "py": "líng xià",
+        "vn": "dưới không"
+      },
+      {
+        "zh": "零下十度",
+        "py": "líng xià shí dù",
+        "vn": "âm mười độ"
+      },
+      {
+        "zh": "零点",
+        "py": "líng diǎn",
+        "vn": "không giờ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "零下 + số + 度",
+        "m": "Nhiệt độ âm: 零下十度"
+      },
+      {
+        "s": "零 là chữ viết đầy đủ của số 0"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay âm mười độ, lạnh quá.",
+        "answer": "今天零下十度，太冷了。",
+        "answerPy": "Jīntiān líng xià shí dù, tài lěng le.",
+        "note": "零下 + số + 度 — nhiệt độ âm.",
+        "pair": "太……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ngày mai không độ, có thể có tuyết.",
+        "answer": "明天零度，可能下雪。",
+        "answerPy": "Míngtiān líng dù, kěnéng xià xuě.",
+        "note": "可能 (đoán) đứng TRƯỚC động từ.",
+        "pair": "可能 + V"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "度",
+    "py": "dù",
+    "pos": "Lượng từ",
+    "vn": "độ (nhiệt độ)",
+    "hv": "độ",
+    "em": "🌡️",
+    "lesson": 3,
+    "ex_zh": "零下十度",
+    "ex_py": "líng xià shí dù",
+    "ex_vn": "âm 10 độ",
+    "exList": [
+      {
+        "zh": "今天三十五度，太热了。",
+        "py": "Jīntiān sānshíwǔ dù, tài rè le.",
+        "vn": "Hôm nay 35 độ, nóng quá."
+      },
+      {
+        "zh": "水一百度就开了。",
+        "py": "Shuǐ yìbǎi dù jiù kāi le.",
+        "vn": "Nước 100 độ là sôi."
+      },
+      {
+        "zh": "今天的温度是十五度。",
+        "py": "Jīntiān de wēndù shì shíwǔ dù.",
+        "vn": "Nhiệt độ hôm nay là 15 độ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "度",
+        "p": "dù",
+        "type": "半包围 · Bán bao (广)",
+        "st": 9,
+        "ord": "广 (nghiễm) → 廿+又",
+        "rad": "广 (nghiễm – mái che)",
+        "mean": "độ, mức độ",
+        "tip": "Mái nhà 广 che một khoảng đo lường → đơn vị đo MỨC ĐỘ (nhiệt độ, góc độ).",
+        "cf": "渡 (dù – \"vượt qua\", bộ 氵)",
+        "w": "度 / 温度 / 态度"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "十度",
+        "py": "shí dù",
+        "vn": "mười độ"
+      },
+      {
+        "zh": "零下五度",
+        "py": "líng xià wǔ dù",
+        "vn": "âm năm độ"
+      },
+      {
+        "zh": "多少度",
+        "py": "duōshao dù",
+        "vn": "bao nhiêu độ"
+      },
+      {
+        "zh": "三十度",
+        "py": "sānshí dù",
+        "vn": "ba mươi độ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 度",
+        "m": "Nói nhiệt độ: 今天十五度"
+      },
+      {
+        "s": "多少度？ — khung hỏi nhiệt độ quen thuộc nhất"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay bao nhiêu độ?",
+        "answer": "今天多少度？",
+        "answerPy": "Jīntiān duōshao dù?",
+        "note": "Câu có 多少 thì không thêm 吗.",
+        "pair": "多少度？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay ba mươi độ, nóng hơn hôm qua.",
+        "answer": "今天三十度，比昨天热。",
+        "answerPy": "Jīntiān sānshí dù, bǐ zuótiān rè.",
+        "note": "Khung so sánh cơ bản nhất.",
+        "pair": "A 比 B + Adj"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "穿",
+    "py": "chuān",
+    "pos": "Động từ",
+    "vn": "mặc (quần áo), đi (giày)",
+    "hv": "xuyên",
+    "em": "👔",
+    "lesson": 3,
+    "ex_zh": "你穿得太少了。",
+    "ex_py": "Nǐ chuān de tài shǎo le.",
+    "ex_vn": "Bạn mặc ít quá.",
+    "exList": [
+      {
+        "zh": "你穿得太少了。",
+        "py": "Nǐ chuān de tài shǎo le.",
+        "vn": "Bạn mặc ít quá."
+      },
+      {
+        "zh": "今天你穿这件红色的衣服吧。",
+        "py": "Jīntiān nǐ chuān zhè jiàn hóngsè de yīfu ba.",
+        "vn": "Hôm nay bạn mặc chiếc áo màu đỏ này đi."
+      },
+      {
+        "zh": "他喜欢穿白色的鞋。",
+        "py": "Tā xǐhuan chuān báisè de xié.",
+        "vn": "Anh ấy thích đi giày màu trắng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "穿",
+        "p": "chuān",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "穴 (huyệt) → 牙 (nha)",
+        "rad": "穴 (huyệt – hang, lỗ)",
+        "mean": "mặc, xỏ qua",
+        "tip": "穴 (lỗ) + 牙 (răng, vật nhọn) → xỏ vật nhọn XUYÊN QUA lỗ → MẶC, ĐI (giày/quần áo).",
+        "cf": "空 (kōng – \"trống rỗng\")",
+        "w": "穿衣服 / 穿鞋 / 穿得多"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "穿衣服",
+        "py": "chuān yīfu",
+        "vn": "mặc quần áo"
+      },
+      {
+        "zh": "穿得少",
+        "py": "chuān de shǎo",
+        "vn": "mặc ít"
+      },
+      {
+        "zh": "穿白衣服",
+        "py": "chuān bái yīfu",
+        "vn": "mặc áo trắng"
+      },
+      {
+        "zh": "穿得多",
+        "py": "chuān de duō",
+        "vn": "mặc nhiều"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "穿 + 衣服",
+        "m": "Mặc quần áo"
+      },
+      {
+        "s": "穿 (mặc vào người) — quần áo, giày đều dùng 穿"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bên ngoài lạnh quá, bạn mặc thêm một cái áo đi.",
+        "answer": "外面太冷了，你穿一件衣服吧。",
+        "answerPy": "Wàimiàn tài lěng le, nǐ chuān yí jiàn yīfu ba.",
+        "note": "Lượng từ của 衣服 là 件.",
+        "pair": "太……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Em trai tôi hôm nay mặc áo trắng.",
+        "answer": "我弟弟今天穿白衣服。",
+        "answerPy": "Wǒ dìdi jīntiān chuān bái yīfu.",
+        "note": "Quần áo, giày đều dùng 穿.",
+        "pair": "穿 + N"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "进",
+    "py": "jìn",
+    "pos": "Động từ",
+    "vn": "vào, đi vào",
+    "hv": "tiến",
+    "em": "🚪",
+    "lesson": 3,
+    "ex_zh": "我们进房间吧。",
+    "ex_py": "Wǒmen jìn fángjiān ba.",
+    "ex_vn": "Chúng ta vào phòng đi.",
+    "exList": [
+      {
+        "zh": "我们进房间吧。",
+        "py": "Wǒmen jìn fángjiān ba.",
+        "vn": "Chúng ta vào phòng đi."
+      },
+      {
+        "zh": "请进！",
+        "py": "Qǐng jìn!",
+        "vn": "Mời vào!"
+      },
+      {
+        "zh": "他刚进公司工作。",
+        "py": "Tā gāng jìn gōngsī gōngzuò.",
+        "vn": "Anh ấy vừa mới vào công ty làm việc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "进",
+        "p": "jìn",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 7,
+        "ord": "井 (tỉnh) → 辶 (viết sau cùng)",
+        "rad": "辶 (sước – đi)",
+        "mean": "vào, tiến vào",
+        "tip": "Bộ 辶 (đi) + 井 (giếng, lối vào) → bước chân TIẾN VÀO một không gian.",
+        "cf": "出 (chū – \"ra\", trái nghĩa, đã học Bài 2)",
+        "w": "进来 / 进房间 / 请进"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "进来",
+        "py": "jìnlái",
+        "vn": "vào đây"
+      },
+      {
+        "zh": "进去",
+        "py": "jìnqù",
+        "vn": "đi vào"
+      },
+      {
+        "zh": "进教室",
+        "py": "jìn jiàoshì",
+        "vn": "vào lớp"
+      },
+      {
+        "zh": "请进",
+        "py": "qǐng jìn",
+        "vn": "mời vào"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "进 + nơi chốn",
+        "m": "Vào chỗ nào: 进教室"
+      },
+      {
+        "s": "进来 (vào chỗ tôi) ↔ 进去 (vào chỗ kia)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mời vào, bạn ngồi một chút.",
+        "answer": "请进，你坐一下。",
+        "answerPy": "Qǐng jìn, nǐ zuò yíxià.",
+        "note": "请进 — câu mời khách vào nhà.",
+        "pair": "请 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy đã vào lớp rồi, các bạn đừng nói chuyện.",
+        "answer": "老师已经进教室了，你们别说话。",
+        "answerPy": "Lǎoshī yǐjīng jìn jiàoshì le, nǐmen bié shuōhuà.",
+        "note": "进 + nơi chốn — vào chỗ nào.",
+        "pair": "已经……了"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "弟弟",
+    "py": "dìdi",
+    "pos": "Danh từ",
+    "vn": "em trai",
+    "hv": "đệ đệ",
+    "em": "👦",
+    "lesson": 4,
+    "ex_zh": "我弟弟让我帮他找个房子。",
+    "ex_py": "Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi.",
+    "ex_vn": "Em trai tớ nhờ tớ tìm giúp nó một căn nhà.",
+    "exList": [
+      {
+        "zh": "我弟弟让我帮他找个房子。",
+        "py": "Wǒ dìdi ràng wǒ bāng tā zhǎo ge fángzi.",
+        "vn": "Em trai tớ nhờ tớ tìm giúp nó một căn nhà."
+      },
+      {
+        "zh": "我弟弟比我小两岁。",
+        "py": "Wǒ dìdi bǐ wǒ xiǎo liǎng suì.",
+        "vn": "Em trai tôi nhỏ hơn tôi 2 tuổi."
+      },
+      {
+        "zh": "弟弟在学校学习汉语。",
+        "py": "Dìdi zài xuéxiào xuéxí Hànyǔ.",
+        "vn": "Em trai đang học tiếng Trung ở trường."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "弟",
+        "p": "dì",
+        "type": "独体字 · Chữ đơn",
+        "st": 7,
+        "ord": "丷→丨→一→㇃→一→一",
+        "rad": "弓 (cung, biến thể)",
+        "mean": "em trai",
+        "tip": "Hình sợi dây quấn quanh cây gậy theo thứ tự dưới lên → chỉ THỨ BẬC dưới trong nhà = em trai.",
+        "cf": "第 (dì – \"thứ tự\", đã học Bài 9)",
+        "w": "弟弟 / 兄弟"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我弟弟",
+        "py": "wǒ dìdi",
+        "vn": "em trai tôi"
+      },
+      {
+        "zh": "弟弟的手机",
+        "py": "dìdi de shǒujī",
+        "vn": "điện thoại của em"
+      },
+      {
+        "zh": "两个弟弟",
+        "py": "liǎng gè dìdi",
+        "vn": "hai đứa em trai"
+      },
+      {
+        "zh": "弟弟上学",
+        "py": "dìdi shàngxué",
+        "vn": "em đi học"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 弟弟",
+        "m": "Em trai của ai"
+      },
+      {
+        "s": "哥哥 · 弟弟 · 姐姐 — ba cách gọi anh chị em"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Em trai tôi cao hơn tôi.",
+        "answer": "我弟弟比我高。",
+        "answerPy": "Wǒ dìdi bǐ wǒ gāo.",
+        "note": "Sau 比 KHÔNG dùng 很.",
+        "pair": "A 比 B + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Em trai tôi đang giặt quần áo.",
+        "answer": "我弟弟正在洗衣服呢。",
+        "answerPy": "Wǒ dìdi zhèngzài xǐ yīfu ne.",
+        "note": "正在 đầu câu, 呢 cuối câu.",
+        "pair": "正在……呢"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "近",
+    "py": "jìn",
+    "pos": "Tính từ",
+    "vn": "gần",
+    "hv": "cận",
+    "em": "📍",
+    "lesson": 4,
+    "ex_zh": "他也希望能住得近一点儿。",
+    "ex_py": "Tā yě xīwàng néng zhù de jìn yìdiǎnr.",
+    "ex_vn": "Nó cũng hy vọng có thể ở gần hơn một chút.",
+    "exList": [
+      {
+        "zh": "他也希望能住得近一点儿。",
+        "py": "Tā yě xīwàng néng zhù de jìn yìdiǎnr.",
+        "vn": "Nó cũng hy vọng có thể ở gần hơn một chút."
+      },
+      {
+        "zh": "我家离学校很近。",
+        "py": "Wǒ jiā lí xuéxiào hěn jìn.",
+        "vn": "Nhà tôi cách trường học rất gần."
+      },
+      {
+        "zh": "这儿离公司近吗？",
+        "py": "Zhèr lí gōngsī jìn ma?",
+        "vn": "Ở đây cách công ty có gần không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "近",
+        "p": "jìn",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 7,
+        "ord": "斤 (cân) → 辶 (viết sau cùng)",
+        "rad": "辶 (sước – đi)",
+        "mean": "gần",
+        "tip": "Bộ 辶 (đi) + 斤 (rìu, khoảng cách ngắn) → đi một đoạn NGẮN là tới = GẦN.",
+        "cf": "远 (yuǎn – trái nghĩa, đã học Bài 7)",
+        "w": "很近 / 附近 / 住得近"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很近",
+        "py": "hěn jìn",
+        "vn": "rất gần"
+      },
+      {
+        "zh": "不近",
+        "py": "bú jìn",
+        "vn": "không gần"
+      },
+      {
+        "zh": "离这儿很近",
+        "py": "lí zhèr hěn jìn",
+        "vn": "cách đây rất gần"
+      },
+      {
+        "zh": "近一点儿",
+        "py": "jìn yìdiǎnr",
+        "vn": "gần một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A + 离 + B + 很近",
+        "m": "A cách B rất gần"
+      },
+      {
+        "s": "近 ↔ 远 — gần và xa"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhà tôi cách trường rất gần, đi bộ mười phút.",
+        "answer": "我家离学校很近，走路十分钟。",
+        "answerPy": "Wǒ jiā lí xuéxiào hěn jìn, zǒulù shí fēnzhōng.",
+        "note": "近 ↔ 远 — gần và xa.",
+        "pair": "A 离 B 很近"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bệnh viện gần hơn sân bay.",
+        "answer": "医院比机场近。",
+        "answerPy": "Yīyuàn bǐ jīchǎng jìn.",
+        "note": "Sau 比 dùng tính từ trần.",
+        "pair": "A 比 B + Adj"
+      }
+    ]
+  }
 ];
 
 const wuData = [

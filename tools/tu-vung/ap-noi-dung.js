@@ -16,9 +16,11 @@ const LA_CAP = /^hsk\d(?:v\d)?$/;   // hsk1 · hsk3 · hsk4 · hsk1v3 (bo de HSK
 const CAP = LA_CAP.test(arg[0]) ? arg[0] : 'hsk4';
 const SO = LA_CAP.test(arg[0]) ? arg[1] : arg[0];
 const THAT = process.argv.includes('--that');
-// hsk4 giu ten file cu (bai-N.js), cac cap khac co tien to
+// hsk4 giu ten file noi dung cu (bai-N.js), cac cap khac co tien to
 const TEN = CAP === 'hsk4' ? '' : CAP + '-';
-const FILE = path.join(process.cwd(), 'public', 'js', CAP + '-bai-' + SO + '-data.js');
+// HSK 2 bo cu: file du lieu tren web khong co tien to cap do (bai-N-data.js)
+const FILE = path.join(process.cwd(), 'public', 'js',
+  (CAP === 'hsk2' ? '' : CAP + '-') + 'bai-' + SO + '-data.js');
 const ND = path.join(process.cwd(), 'tools/tu-vung/noi-dung');
 const NOI_DUNG = require(path.join(ND, TEN + 'bai-' + SO + '.js'));
 let VIET_LAI = {};

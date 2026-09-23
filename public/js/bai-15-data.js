@@ -2,114 +2,800 @@
 // DATA — Bài 15: 新年就要到了
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'新年',py:'xīnnián',pos:'Danh từ',vn:'năm mới', hv: 'tân niên',em:'🎉',lesson:1,
-   ex_zh:'新年就要到了，你有什么计划？',ex_py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',ex_vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?',
-   exList:[
-     {zh:'新年就要到了，你有什么计划？',py:'Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?',vn:'Năm mới sắp đến rồi, bạn có kế hoạch gì không?'},
-     {zh:'新年快乐！',py:'Xīnnián kuàilè!',vn:'Chúc mừng năm mới!'},
-     {zh:'新年的时候我们都回家。',py:'Xīnnián de shíhou wǒmen dōu huíjiā.',vn:'Vào dịp năm mới, chúng tôi đều về nhà.'},
-   ],
-   hanzi:[
-     {c:'新',p:'xīn',type:'左右结构 · Trái-phải',st:13,ord:'立 → 木 → 斤',rad:'斤 (cân – cái rìu)',mean:'mới',
-      tip:'斤(rìu) chặt 木(cây) 立(dựng) lên → tạo ra vật MỚI.',
-      cf:'亲 (qīn – "thân thiết")',w:'新年 / 新的 / 更新'},
-     {c:'年',p:'nián',type:'独体字 · Tượng hình',st:6,ord:'丿→𠂉→干biến thể',rad:'干 (can)',mean:'năm',
-      tip:'Hình người vác bó lúa sau vụ mùa → mỗi vụ mùa là một chu kỳ = NĂM.',
-      cf:'午 (wǔ – "buổi trưa")',w:'新年 / 今年 / 去年'},
-   ]},
-  {n:2,zh:'票',py:'piào',pos:'Danh từ',vn:'vé', hv: 'phiếu',em:'🎫',lesson:1,
-   ex_zh:'票已经买好了。',ex_py:'Piào yǐjīng mǎihǎo le.',ex_vn:'Vé đã mua xong rồi.',
-   exList:[
-     {zh:'票已经买好了。',py:'Piào yǐjīng mǎihǎo le.',vn:'Vé đã mua xong rồi.'},
-     {zh:'火车票多少钱？',py:'Huǒchēpiào duōshao qián?',vn:'Vé tàu bao nhiêu tiền?'},
-     {zh:'这张票是我的。',py:'Zhè zhāng piào shì wǒ de.',vn:'Tấm vé này là của tôi.'},
-   ],
-   hanzi:[
-     {c:'票',p:'piào',type:'上下结构 · Trên-dưới',st:11,ord:'覀(biến thể) → 示',rad:'示 (thị – chỉ ra)',mean:'vé, phiếu',
-      tip:'Phần trên giống 覀(che phủ), dưới 示(tờ giấy chỉ ra) → tờ giấy làm bằng chứng = VÉ.',
-      cf:'漂 (piāo – "trôi nổi")',w:'火车票 / 电影票 / 买票'},
-   ]},
-  {n:3,zh:'火车站',py:'huǒchēzhàn',pos:'Danh từ',vn:'ga tàu hoả', hv: 'hỏa xa trạm',em:'🚉',lesson:1,
-   ex_zh:'火车站人多不多？',ex_py:'Huǒchēzhàn rén duō bu duō?',ex_vn:'Ga tàu có đông người không?',
-   exList:[
-     {zh:'火车站人多不多？',py:'Huǒchēzhàn rén duō bu duō?',vn:'Ga tàu có đông người không?'},
-     {zh:'我在火车站等你。',py:'Wǒ zài huǒchēzhàn děng nǐ.',vn:'Tôi đợi bạn ở ga tàu.'},
-     {zh:'火车站离这儿不远。',py:'Huǒchēzhàn lí zhèr bù yuǎn.',vn:'Ga tàu cách đây không xa.'},
-   ],
-   hanzi:[
-     {c:'火',p:'huǒ',type:'独体字 · Tượng hình',st:4,ord:'丶→丿→丿→丶',rad:'火 (hoả – tự thành bộ)',mean:'lửa',
-      tip:'Hình ngọn lửa đang cháy → LỬA, mở rộng thành "tàu hoả" (xe chạy bằng hơi nước/lửa).',
-      cf:'灯 (dēng – "đèn")',w:'火车 / 火车站'},
-     {c:'站',p:'zhàn',type:'左右结构 · Trái-phải',st:10,ord:'立 (lập) trái → 占 (chiếm) phải',rad:'立 (lập – đứng)',mean:'trạm, ga',
-      tip:'立(đứng) + 占(chiếm chỗ) → nơi đứng lại chờ = TRẠM, GA.',
-      cf:'古 (gǔ – "cổ xưa")',w:'火车站 / 车站 / 站着'},
-   ]},
-  {n:4,zh:'大家',py:'dàjiā',pos:'Đại từ',vn:'mọi người', hv: 'đại gia',em:'👨‍👩‍👧‍👦',lesson:2,
-   ex_zh:'大家都在准备回家。',ex_py:'Dàjiā dōu zài zhǔnbèi huíjiā.',ex_vn:'Mọi người đều đang chuẩn bị về nhà.',
-   exList:[
-     {zh:'大家都在准备回家。',py:'Dàjiā dōu zài zhǔnbèi huíjiā.',vn:'Mọi người đều đang chuẩn bị về nhà.'},
-     {zh:'大家好！',py:'Dàjiā hǎo!',vn:'Xin chào mọi người!'},
-     {zh:'大家都很高兴。',py:'Dàjiā dōu hěn gāoxìng.',vn:'Mọi người đều rất vui.'},
-   ],
-   hanzi:[
-     {c:'大',p:'dà',type:'独体字 · Tượng hình',st:3,ord:'一→ノ→㇏',rad:'大 (đại – tự thành bộ)',mean:'to, lớn',
-      tip:'Hình người dang rộng tay chân → TO LỚN.',
-      cf:'太 (tài – "quá")',w:'大家 / 大学 / 长大'},
-     {c:'家',p:'jiā',type:'上下结构 · Trên-dưới',st:10,ord:'宀 (miên) → 豕 (thỉ)',rad:'宀 (miên – mái nhà)',mean:'nhà, gia đình',
-      tip:'Mái nhà 宀 có con lợn 豕 bên dưới — thời xưa nuôi lợn dưới nhà sàn → biểu tượng của NHÀ.',
-      cf:'豪 (háo – "hào hiệp")',w:'大家 / 回家 / 家人'},
-   ]},
-  {n:5,zh:'更',py:'gèng',pos:'Phó từ',vn:'càng, hơn', hv: 'cánh',em:'📈',lesson:2,
-   ex_zh:'今天阴，比昨天更冷。',ex_py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',ex_vn:'Hôm nay âm u, lạnh hơn hôm qua.',
-   exList:[
-     {zh:'今天阴，比昨天更冷。',py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',vn:'Hôm nay âm u, lạnh hơn hôm qua.'},
-     {zh:'我觉得今年比去年更热闹。',py:'Wǒ juéde jīnnián bǐ qùnián gèng rènao.',vn:'Tôi thấy năm nay náo nhiệt hơn năm ngoái.'},
-     {zh:'他比我更忙。',py:'Tā bǐ wǒ gèng máng.',vn:'Anh ấy còn bận hơn tôi.'},
-   ],
-   hanzi:[
-     {c:'更',p:'gèng',type:'上下结构 · Trên-dưới',st:7,ord:'一 → 日 → 㐅biến thể',rad:'一 (nhất)',mean:'càng, hơn',
-      tip:'Ghi nhớ qua cụm 比……更…… (so sánh hơn nữa) — mức độ tăng thêm so với gốc.',
-      cf:'夏 (xià – "mùa hè")',w:'更冷 / 更好 / 更热闹'},
-   ]},
-  {n:6,zh:'妹妹',py:'mèimei',pos:'Danh từ',vn:'em gái', hv: 'muội muội',em:'👧',lesson:3,
-   ex_zh:'你妹妹呢？',ex_py:'Nǐ mèimei ne?',ex_vn:'Em gái bạn đâu rồi?',
-   exList:[
-     {zh:'你妹妹呢？',py:'Nǐ mèimei ne?',vn:'Em gái bạn đâu rồi?'},
-     {zh:'我妹妹今年十岁。',py:'Wǒ mèimei jīnnián shí suì.',vn:'Em gái tôi năm nay 10 tuổi.'},
-     {zh:'她是我妹妹。',py:'Tā shì wǒ mèimei.',vn:'Cô ấy là em gái tôi.'},
-   ],
-   hanzi:[
-     {c:'妹',p:'mèi',type:'左右结构 · Trái-phải',st:8,ord:'女 (nữ) trái → 未 (vị) phải',rad:'女 (nữ – con gái)',mean:'em gái',
-      tip:'女(con gái) + 未(chưa) → người con gái CHƯA lớn bằng chị = EM GÁI.',
-      cf:'妈 (mā – "mẹ")',w:'妹妹 / 姐妹'},
-   ]},
-  {n:7,zh:'阴',py:'yīn',pos:'Tính từ',vn:'âm u, râm mát', hv: 'âm',em:'☁️',lesson:3,
-   ex_zh:'今天阴，比昨天更冷。',ex_py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',ex_vn:'Hôm nay âm u, lạnh hơn hôm qua.',
-   exList:[
-     {zh:'今天阴，比昨天更冷。',py:'Jīntiān yīn, bǐ zuótiān gèng lěng.',vn:'Hôm nay âm u, lạnh hơn hôm qua.'},
-     {zh:'今天是阴天。',py:'Jīntiān shì yīntiān.',vn:'Hôm nay là trời âm u.'},
-     {zh:'天气预报说明天阴转晴。',py:'Tiānqì yùbào shuō míngtiān yīn zhuǎn qíng.',vn:'Dự báo thời tiết nói ngày mai âm u chuyển quang.'},
-   ],
-   hanzi:[
-     {c:'阴',p:'yīn',type:'左右结构 · Trái-phải',st:6,ord:'阝(phụ) trái → 月 (nguyệt) phải',rad:'阝(phụ – gò đất)',mean:'âm u',
-      tip:'阝(sườn đồi) + 月(trăng, chỉ bóng tối) → phía khuất ánh nắng của quả đồi = ÂM U.',
-      cf:'阳 (yáng – "nắng, dương")',w:'阴天 / 阴转晴'},
-   ]},
-  {n:8,zh:'公共汽车',py:'gōnggòngqìchē',pos:'Danh từ',vn:'xe buýt', hv: 'công cộng khí xa',em:'🚌',lesson:3,
-   ex_zh:'她坐公共汽车去火车站。',ex_py:'Tā zuò gōnggòngqìchē qù huǒchēzhàn.',ex_vn:'Cô ấy đi xe buýt đến ga tàu.',
-   exList:[
-     {zh:'她坐公共汽车去火车站。',py:'Tā zuò gōnggòngqìchē qù huǒchēzhàn.',vn:'Cô ấy đi xe buýt đến ga tàu.'},
-     {zh:'我每天坐公共汽车上班。',py:'Wǒ měitiān zuò gōnggòngqìchē shàngbān.',vn:'Ngày nào tôi cũng đi xe buýt đi làm.'},
-     {zh:'公共汽车来了！',py:'Gōnggòngqìchē lái le!',vn:'Xe buýt đến rồi!'},
-   ],
-   hanzi:[
-     {c:'公',p:'gōng',type:'上下结构 · Trên-dưới',st:4,ord:'八 → 厶',rad:'八 (bát – chia)',mean:'công cộng',
-      tip:'八(chia ra) trên 厶(riêng tư) → chia sẻ chung, thuộc về mọi người = CÔNG CỘNG.',
-      cf:'公司 (gōngsī – đã học ở Bài 7)',w:'公共汽车 / 公司 / 公园'},
-     {c:'共',p:'gòng',type:'上下结构 · Trên-dưới',st:6,ord:'廿 → 八',rad:'八 (bát)',mean:'cùng, chung',
-      tip:'Nhiều tay cùng nâng một vật → làm CÙNG NHAU, CHUNG.',
-      cf:'具 (jù – "dụng cụ")',w:'公共 / 一共'},
-   ]},
+  {
+    "n": 1,
+    "zh": "新年",
+    "py": "xīnnián",
+    "pos": "Danh từ",
+    "vn": "năm mới",
+    "hv": "tân niên",
+    "em": "🎉",
+    "lesson": 1,
+    "ex_zh": "新年就要到了，你有什么计划？",
+    "ex_py": "Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?",
+    "ex_vn": "Năm mới sắp đến rồi, bạn có kế hoạch gì không?",
+    "exList": [
+      {
+        "zh": "新年就要到了，你有什么计划？",
+        "py": "Xīnnián jiùyào dào le, nǐ yǒu shénme jìhuà?",
+        "vn": "Năm mới sắp đến rồi, bạn có kế hoạch gì không?"
+      },
+      {
+        "zh": "新年快乐！",
+        "py": "Xīnnián kuàilè!",
+        "vn": "Chúc mừng năm mới!"
+      },
+      {
+        "zh": "新年的时候我们都回家。",
+        "py": "Xīnnián de shíhou wǒmen dōu huíjiā.",
+        "vn": "Vào dịp năm mới, chúng tôi đều về nhà."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "新",
+        "p": "xīn",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "立 → 木 → 斤",
+        "rad": "斤 (cân – cái rìu)",
+        "mean": "mới",
+        "tip": "斤(rìu) chặt 木(cây) 立(dựng) lên → tạo ra vật MỚI.",
+        "cf": "亲 (qīn – \"thân thiết\")",
+        "w": "新年 / 新的 / 更新"
+      },
+      {
+        "c": "年",
+        "p": "nián",
+        "type": "独体字 · Tượng hình",
+        "st": 6,
+        "ord": "丿→𠂉→干biến thể",
+        "rad": "干 (can)",
+        "mean": "năm",
+        "tip": "Hình người vác bó lúa sau vụ mùa → mỗi vụ mùa là một chu kỳ = NĂM.",
+        "cf": "午 (wǔ – \"buổi trưa\")",
+        "w": "新年 / 今年 / 去年"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "过新年",
+        "py": "guo xīnnián",
+        "vn": "đón năm mới"
+      },
+      {
+        "zh": "新年快乐",
+        "py": "xīnnián kuàilè",
+        "vn": "chúc mừng năm mới"
+      },
+      {
+        "zh": "新年的时候",
+        "py": "xīnnián de shíhou",
+        "vn": "dịp năm mới"
+      },
+      {
+        "zh": "新年回家",
+        "py": "xīnnián huí jiā",
+        "vn": "về nhà dịp năm mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "过 + 新年",
+        "m": "Đón năm mới — dùng động từ 过, giống 过生日"
+      },
+      {
+        "s": "新年快乐！— câu chúc quen thuộc nhất dịp đầu năm"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúc mừng năm mới! Chúc cả nhà sức khoẻ tốt.",
+        "answer": "新年快乐！希望大家身体好。",
+        "answerPy": "Xīnnián kuàilè! Xīwàng dàjiā shēntǐ hǎo.",
+        "note": "Sau 希望 là cả một câu.",
+        "pair": "希望 + câu"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Năm mới tôi muốn về nhà đón Tết với bố mẹ.",
+        "answer": "新年我要回家和爸爸妈妈一起过。",
+        "answerPy": "Xīnnián wǒ yào huí jiā hé bàba māma yìqǐ guò.",
+        "note": "过新年 — đón năm mới, dùng động từ 过.",
+        "pair": "和……一起"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "票",
+    "py": "piào",
+    "pos": "Danh từ",
+    "vn": "vé",
+    "hv": "phiếu",
+    "em": "🎫",
+    "lesson": 1,
+    "ex_zh": "票已经买好了。",
+    "ex_py": "Piào yǐjīng mǎihǎo le.",
+    "ex_vn": "Vé đã mua xong rồi.",
+    "exList": [
+      {
+        "zh": "票已经买好了。",
+        "py": "Piào yǐjīng mǎihǎo le.",
+        "vn": "Vé đã mua xong rồi."
+      },
+      {
+        "zh": "火车票多少钱？",
+        "py": "Huǒchēpiào duōshao qián?",
+        "vn": "Vé tàu bao nhiêu tiền?"
+      },
+      {
+        "zh": "这张票是我的。",
+        "py": "Zhè zhāng piào shì wǒ de.",
+        "vn": "Tấm vé này là của tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "票",
+        "p": "piào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "覀(biến thể) → 示",
+        "rad": "示 (thị – chỉ ra)",
+        "mean": "vé, phiếu",
+        "tip": "Phần trên giống 覀(che phủ), dưới 示(tờ giấy chỉ ra) → tờ giấy làm bằng chứng = VÉ.",
+        "cf": "漂 (piāo – \"trôi nổi\")",
+        "w": "火车票 / 电影票 / 买票"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买票",
+        "py": "mǎi piào",
+        "vn": "mua vé"
+      },
+      {
+        "zh": "一张票",
+        "py": "yì zhāng piào",
+        "vn": "một cái vé"
+      },
+      {
+        "zh": "火车票",
+        "py": "huǒchē piào",
+        "vn": "vé tàu"
+      },
+      {
+        "zh": "票很贵",
+        "py": "piào hěn guì",
+        "vn": "vé rất đắt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 张 + 票",
+        "m": "Lượng từ của 票 là 张, giống 报纸"
+      },
+      {
+        "s": "买 + 票",
+        "m": "Mua vé — 火车票 · 飞机票"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã mua vé tàu rồi.",
+        "answer": "我已经买了火车票。",
+        "answerPy": "Wǒ yǐjīng mǎile huǒchēpiào.",
+        "note": "Lượng từ của 票 là 张.",
+        "pair": "已经……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vé máy bay đắt hơn vé tàu.",
+        "answer": "飞机票比火车票更贵。",
+        "answerPy": "Fēijīpiào bǐ huǒchēpiào gèng guì.",
+        "note": "更 nói mức hơn nữa.",
+        "pair": "A 比 B 更 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "火车站",
+    "py": "huǒchēzhàn",
+    "pos": "Danh từ",
+    "vn": "ga tàu hoả",
+    "hv": "hỏa xa trạm",
+    "em": "🚉",
+    "lesson": 1,
+    "ex_zh": "火车站人多不多？",
+    "ex_py": "Huǒchēzhàn rén duō bu duō?",
+    "ex_vn": "Ga tàu có đông người không?",
+    "exList": [
+      {
+        "zh": "火车站人多不多？",
+        "py": "Huǒchēzhàn rén duō bu duō?",
+        "vn": "Ga tàu có đông người không?"
+      },
+      {
+        "zh": "我在火车站等你。",
+        "py": "Wǒ zài huǒchēzhàn děng nǐ.",
+        "vn": "Tôi đợi bạn ở ga tàu."
+      },
+      {
+        "zh": "火车站离这儿不远。",
+        "py": "Huǒchēzhàn lí zhèr bù yuǎn.",
+        "vn": "Ga tàu cách đây không xa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "火",
+        "p": "huǒ",
+        "type": "独体字 · Tượng hình",
+        "st": 4,
+        "ord": "丶→丿→丿→丶",
+        "rad": "火 (hoả – tự thành bộ)",
+        "mean": "lửa",
+        "tip": "Hình ngọn lửa đang cháy → LỬA, mở rộng thành \"tàu hoả\" (xe chạy bằng hơi nước/lửa).",
+        "cf": "灯 (dēng – \"đèn\")",
+        "w": "火车 / 火车站"
+      },
+      {
+        "c": "站",
+        "p": "zhàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "立 (lập) trái → 占 (chiếm) phải",
+        "rad": "立 (lập – đứng)",
+        "mean": "trạm, ga",
+        "tip": "立(đứng) + 占(chiếm chỗ) → nơi đứng lại chờ = TRẠM, GA.",
+        "cf": "古 (gǔ – \"cổ xưa\")",
+        "w": "火车站 / 车站 / 站着"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去火车站",
+        "py": "qù huǒchēzhàn",
+        "vn": "ra ga tàu"
+      },
+      {
+        "zh": "在火车站等",
+        "py": "zài huǒchēzhàn děng",
+        "vn": "đợi ở ga tàu"
+      },
+      {
+        "zh": "火车站很远",
+        "py": "huǒchēzhàn hěn yuǎn",
+        "vn": "ga tàu rất xa"
+      },
+      {
+        "zh": "到火车站",
+        "py": "dào huǒchēzhàn",
+        "vn": "đến ga tàu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 / 到 + 火车站",
+        "m": "Ra ga, đến ga"
+      },
+      {
+        "s": "火车 + 站",
+        "m": "Bến (站) của tàu hoả (火车)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ga tàu cách đây không xa, đi bộ nửa tiếng.",
+        "answer": "火车站离这儿不远，走路半个小时。",
+        "answerPy": "Huǒchēzhàn lí zhèr bù yuǎn, zǒulù bàn ge xiǎoshí.",
+        "note": "离 nói khoảng cách giữa hai nơi.",
+        "pair": "A 离 B 不远"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tối mai tôi đợi bạn ở ga tàu.",
+        "answer": "明天晚上我在火车站等你。",
+        "answerPy": "Míngtiān wǎnshang wǒ zài huǒchēzhàn děng nǐ.",
+        "note": "Nơi chốn đứng TRƯỚC động từ.",
+        "pair": "在……等"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "大家",
+    "py": "dàjiā",
+    "pos": "Đại từ",
+    "vn": "mọi người",
+    "hv": "đại gia",
+    "em": "👨‍👩‍👧‍👦",
+    "lesson": 2,
+    "ex_zh": "大家都在准备回家。",
+    "ex_py": "Dàjiā dōu zài zhǔnbèi huíjiā.",
+    "ex_vn": "Mọi người đều đang chuẩn bị về nhà.",
+    "exList": [
+      {
+        "zh": "大家都在准备回家。",
+        "py": "Dàjiā dōu zài zhǔnbèi huíjiā.",
+        "vn": "Mọi người đều đang chuẩn bị về nhà."
+      },
+      {
+        "zh": "大家好！",
+        "py": "Dàjiā hǎo!",
+        "vn": "Xin chào mọi người!"
+      },
+      {
+        "zh": "大家都很高兴。",
+        "py": "Dàjiā dōu hěn gāoxìng.",
+        "vn": "Mọi người đều rất vui."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "大",
+        "p": "dà",
+        "type": "独体字 · Tượng hình",
+        "st": 3,
+        "ord": "一→ノ→㇏",
+        "rad": "大 (đại – tự thành bộ)",
+        "mean": "to, lớn",
+        "tip": "Hình người dang rộng tay chân → TO LỚN.",
+        "cf": "太 (tài – \"quá\")",
+        "w": "大家 / 大学 / 长大"
+      },
+      {
+        "c": "家",
+        "p": "jiā",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "宀 (miên) → 豕 (thỉ)",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "nhà, gia đình",
+        "tip": "Mái nhà 宀 có con lợn 豕 bên dưới — thời xưa nuôi lợn dưới nhà sàn → biểu tượng của NHÀ.",
+        "cf": "豪 (háo – \"hào hiệp\")",
+        "w": "大家 / 回家 / 家人"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "大家好",
+        "py": "dàjiā hǎo",
+        "vn": "chào mọi người"
+      },
+      {
+        "zh": "大家都来了",
+        "py": "dàjiā dōu lái le",
+        "vn": "mọi người đều đến rồi"
+      },
+      {
+        "zh": "欢迎大家",
+        "py": "huānyíng dàjiā",
+        "vn": "chào mừng mọi người"
+      },
+      {
+        "zh": "告诉大家",
+        "py": "gàosu dàjiā",
+        "vn": "nói với mọi người"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "大家 + 都 + động từ",
+        "m": "Mọi người đều …: 大家都来了"
+      },
+      {
+        "s": "大家 (mọi người có mặt) — luôn đi với 都"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào mọi người, tôi họ Vương, rất vui được gặp mọi người.",
+        "answer": "大家好，我姓王，欢迎大家。",
+        "answerPy": "Dàjiā hǎo, wǒ xìng Wáng, huānyíng dàjiā.",
+        "note": "大家好 — câu chào khi đứng trước nhiều người.",
+        "pair": "Sub + 姓 + họ"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mọi người đều đến rồi, chúng ta bắt đầu thôi.",
+        "answer": "大家都来了，我们开始吧。",
+        "answerPy": "Dàjiā dōu lái le, wǒmen kāishǐ ba.",
+        "note": "大家 luôn đi với 都.",
+        "pair": "大家都……"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "更",
+    "py": "gèng",
+    "pos": "Phó từ",
+    "vn": "càng, hơn",
+    "hv": "cánh",
+    "em": "📈",
+    "lesson": 2,
+    "ex_zh": "今天阴，比昨天更冷。",
+    "ex_py": "Jīntiān yīn, bǐ zuótiān gèng lěng.",
+    "ex_vn": "Hôm nay âm u, lạnh hơn hôm qua.",
+    "exList": [
+      {
+        "zh": "今天阴，比昨天更冷。",
+        "py": "Jīntiān yīn, bǐ zuótiān gèng lěng.",
+        "vn": "Hôm nay âm u, lạnh hơn hôm qua."
+      },
+      {
+        "zh": "我觉得今年比去年更热闹。",
+        "py": "Wǒ juéde jīnnián bǐ qùnián gèng rènao.",
+        "vn": "Tôi thấy năm nay náo nhiệt hơn năm ngoái."
+      },
+      {
+        "zh": "他比我更忙。",
+        "py": "Tā bǐ wǒ gèng máng.",
+        "vn": "Anh ấy còn bận hơn tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "更",
+        "p": "gèng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "一 → 日 → 㐅biến thể",
+        "rad": "一 (nhất)",
+        "mean": "càng, hơn",
+        "tip": "Ghi nhớ qua cụm 比……更…… (so sánh hơn nữa) — mức độ tăng thêm so với gốc.",
+        "cf": "夏 (xià – \"mùa hè\")",
+        "w": "更冷 / 更好 / 更热闹"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "更好",
+        "py": "gèng hǎo",
+        "vn": "tốt hơn"
+      },
+      {
+        "zh": "更贵",
+        "py": "gèng guì",
+        "vn": "đắt hơn"
+      },
+      {
+        "zh": "更快",
+        "py": "gèng kuài",
+        "vn": "nhanh hơn"
+      },
+      {
+        "zh": "比他更高",
+        "py": "bǐ tā gèng gāo",
+        "vn": "cao hơn anh ấy nữa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A + 比 + B + 更 + tính từ",
+        "m": "A còn hơn B: 他比我更高"
+      },
+      {
+        "s": "更 (hơn nữa, đã hơn sẵn) ≠ 最 (nhất)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay lạnh hơn hôm qua nữa.",
+        "answer": "今天比昨天更冷。",
+        "answerPy": "Jīntiān bǐ zuótiān gèng lěng.",
+        "note": "更 dùng khi cả hai đều đã ở mức đó.",
+        "pair": "A 比 B 更 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Em gái tôi hát hay hơn tôi nữa.",
+        "answer": "我妹妹唱歌唱得比我更好。",
+        "answerPy": "Wǒ mèimei chànggē chàng de bǐ wǒ gèng hǎo.",
+        "note": "Từ ly hợp phải nhắc lại động từ trước 得.",
+        "pair": "V + 得 + 比……"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "妹妹",
+    "py": "mèimei",
+    "pos": "Danh từ",
+    "vn": "em gái",
+    "hv": "muội muội",
+    "em": "👧",
+    "lesson": 3,
+    "ex_zh": "你妹妹呢？",
+    "ex_py": "Nǐ mèimei ne?",
+    "ex_vn": "Em gái bạn đâu rồi?",
+    "exList": [
+      {
+        "zh": "你妹妹呢？",
+        "py": "Nǐ mèimei ne?",
+        "vn": "Em gái bạn đâu rồi?"
+      },
+      {
+        "zh": "我妹妹今年十岁。",
+        "py": "Wǒ mèimei jīnnián shí suì.",
+        "vn": "Em gái tôi năm nay 10 tuổi."
+      },
+      {
+        "zh": "她是我妹妹。",
+        "py": "Tā shì wǒ mèimei.",
+        "vn": "Cô ấy là em gái tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "妹",
+        "p": "mèi",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "女 (nữ) trái → 未 (vị) phải",
+        "rad": "女 (nữ – con gái)",
+        "mean": "em gái",
+        "tip": "女(con gái) + 未(chưa) → người con gái CHƯA lớn bằng chị = EM GÁI.",
+        "cf": "妈 (mā – \"mẹ\")",
+        "w": "妹妹 / 姐妹"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我妹妹",
+        "py": "wǒ mèimei",
+        "vn": "em gái tôi"
+      },
+      {
+        "zh": "妹妹的票",
+        "py": "mèimei de piào",
+        "vn": "vé của em gái"
+      },
+      {
+        "zh": "两个妹妹",
+        "py": "liǎng gè mèimei",
+        "vn": "hai đứa em gái"
+      },
+      {
+        "zh": "妹妹上学",
+        "py": "mèimei shàngxué",
+        "vn": "em gái đi học"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 妹妹",
+        "m": "Em gái của ai"
+      },
+      {
+        "s": "姐姐 · 妹妹 · 哥哥 · 弟弟 — bốn cách gọi anh chị em"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Em gái tôi năm nay mười tuổi, học ở trường gần đây.",
+        "answer": "我妹妹今年十岁，在很近的学校上学。",
+        "answerPy": "Wǒ mèimei jīnnián shí suì, zài hěn jìn de xuéxiào shàngxué.",
+        "note": "妹妹 — em gái, gọi hai lần.",
+        "pair": "在……上学"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái vé này là của em gái tôi, đừng cầm nhầm.",
+        "answer": "这张票是我妹妹的，别拿错了。",
+        "answerPy": "Zhè zhāng piào shì wǒ mèimei de, bié nácuò le.",
+        "note": "别 dùng khi khuyên ai đừng làm gì.",
+        "pair": "V + 错了"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "阴",
+    "py": "yīn",
+    "pos": "Tính từ",
+    "vn": "âm u, râm mát",
+    "hv": "âm",
+    "em": "☁️",
+    "lesson": 3,
+    "ex_zh": "今天阴，比昨天更冷。",
+    "ex_py": "Jīntiān yīn, bǐ zuótiān gèng lěng.",
+    "ex_vn": "Hôm nay âm u, lạnh hơn hôm qua.",
+    "exList": [
+      {
+        "zh": "今天阴，比昨天更冷。",
+        "py": "Jīntiān yīn, bǐ zuótiān gèng lěng.",
+        "vn": "Hôm nay âm u, lạnh hơn hôm qua."
+      },
+      {
+        "zh": "今天是阴天。",
+        "py": "Jīntiān shì yīntiān.",
+        "vn": "Hôm nay là trời âm u."
+      },
+      {
+        "zh": "天气预报说明天阴转晴。",
+        "py": "Tiānqì yùbào shuō míngtiān yīn zhuǎn qíng.",
+        "vn": "Dự báo thời tiết nói ngày mai âm u chuyển quang."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "阴",
+        "p": "yīn",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "阝(phụ) trái → 月 (nguyệt) phải",
+        "rad": "阝(phụ – gò đất)",
+        "mean": "âm u",
+        "tip": "阝(sườn đồi) + 月(trăng, chỉ bóng tối) → phía khuất ánh nắng của quả đồi = ÂM U.",
+        "cf": "阳 (yáng – \"nắng, dương\")",
+        "w": "阴天 / 阴转晴"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "阴天",
+        "py": "yīn tiān",
+        "vn": "trời âm u"
+      },
+      {
+        "zh": "天阴了",
+        "py": "tiān yīn le",
+        "vn": "trời râm rồi"
+      },
+      {
+        "zh": "阴天很冷",
+        "py": "yīn tiān hěn lěng",
+        "vn": "trời râm rất lạnh"
+      },
+      {
+        "zh": "今天阴",
+        "py": "jīntiān yīn",
+        "vn": "hôm nay trời âm u"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "天 + 阴 + 了",
+        "m": "Trời râm rồi — tình hình đã đổi"
+      },
+      {
+        "s": "阴 ↔ 晴 — trời râm và trời nắng"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay trời âm u, có thể sắp mưa.",
+        "answer": "今天是阴天，可能要下雨了。",
+        "answerPy": "Jīntiān shì yīntiān, kěnéng yào xià yǔ le.",
+        "note": "阴 ↔ 晴 — trời râm và trời nắng.",
+        "pair": "可能……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trời râm rồi, chúng ta về nhà thôi.",
+        "answer": "天阴了，我们回家吧。",
+        "answerPy": "Tiān yīn le, wǒmen huí jiā ba.",
+        "note": "了 cuối câu báo tình hình đã đổi.",
+        "pair": "……了"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "公共汽车",
+    "py": "gōnggòngqìchē",
+    "pos": "Danh từ",
+    "vn": "xe buýt",
+    "hv": "công cộng khí xa",
+    "em": "🚌",
+    "lesson": 3,
+    "ex_zh": "她坐公共汽车去火车站。",
+    "ex_py": "Tā zuò gōnggòngqìchē qù huǒchēzhàn.",
+    "ex_vn": "Cô ấy đi xe buýt đến ga tàu.",
+    "exList": [
+      {
+        "zh": "她坐公共汽车去火车站。",
+        "py": "Tā zuò gōnggòngqìchē qù huǒchēzhàn.",
+        "vn": "Cô ấy đi xe buýt đến ga tàu."
+      },
+      {
+        "zh": "我每天坐公共汽车上班。",
+        "py": "Wǒ měitiān zuò gōnggòngqìchē shàngbān.",
+        "vn": "Ngày nào tôi cũng đi xe buýt đi làm."
+      },
+      {
+        "zh": "公共汽车来了！",
+        "py": "Gōnggòngqìchē lái le!",
+        "vn": "Xe buýt đến rồi!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "公",
+        "p": "gōng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 4,
+        "ord": "八 → 厶",
+        "rad": "八 (bát – chia)",
+        "mean": "công cộng",
+        "tip": "八(chia ra) trên 厶(riêng tư) → chia sẻ chung, thuộc về mọi người = CÔNG CỘNG.",
+        "cf": "公司 (gōngsī – đã học ở Bài 7)",
+        "w": "公共汽车 / 公司 / 公园"
+      },
+      {
+        "c": "共",
+        "p": "gòng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "廿 → 八",
+        "rad": "八 (bát)",
+        "mean": "cùng, chung",
+        "tip": "Nhiều tay cùng nâng một vật → làm CÙNG NHAU, CHUNG.",
+        "cf": "具 (jù – \"dụng cụ\")",
+        "w": "公共 / 一共"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "坐公共汽车",
+        "py": "zuò gōnggòngqìchē",
+        "vn": "đi xe buýt"
+      },
+      {
+        "zh": "公共汽车站",
+        "py": "gōnggòngqìchē zhàn",
+        "vn": "bến xe buýt"
+      },
+      {
+        "zh": "公共汽车票",
+        "py": "gōnggòngqìchē piào",
+        "vn": "vé xe buýt"
+      },
+      {
+        "zh": "等公共汽车",
+        "py": "děng gōnggòngqìchē",
+        "vn": "chờ xe buýt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坐 + 公共汽车 + 去",
+        "m": "Đi xe buýt đến đâu: 坐公共汽车去火车站"
+      },
+      {
+        "s": "坐 dùng cho xe buýt, tàu, máy bay; 骑 dùng cho xe đạp"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn đi xe buýt ra ga tàu nhé.",
+        "answer": "你坐公共汽车去火车站吧。",
+        "answerPy": "Nǐ zuò gōnggòng qìchē qù huǒchēzhàn ba.",
+        "note": "坐 dùng cho xe buýt, 骑 dùng cho xe đạp.",
+        "pair": "坐……去……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bến xe buýt ở bên phải ngã tư.",
+        "answer": "公共汽车站在路口右边。",
+        "answerPy": "Gōnggòng qìchē zhàn zài lùkǒu yòubian.",
+        "note": "danh từ + 右边 — bên phải cái gì.",
+        "pair": "在……右边"
+      }
+    ]
+  }
 ];
 
 const wuData = [

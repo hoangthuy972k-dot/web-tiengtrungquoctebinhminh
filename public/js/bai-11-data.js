@@ -2,159 +2,1113 @@
 // DATA — Bài 11: 他比我大三岁
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'唱歌',py:'chàng gē',pos:'Động từ',vn:'hát, ca hát', hv: 'xướng ca',em:'🎤',lesson:1,
-   ex_zh:'昨天和你一起唱歌的人是谁？',ex_py:'Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',ex_vn:'Người hôm qua cùng hát karaoke với bạn là ai thế?',
-   exList:[
-     {zh:'昨天和你一起唱歌的人是谁？',py:'Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?',vn:'Người hôm qua cùng hát karaoke với bạn là ai thế?'},
-     {zh:'她唱歌唱得非常好。',py:'Tā chàng gē chàng de fēicháng hǎo.',vn:'Cô ấy hát rất hay.'},
-     {zh:'我们一起去唱歌吧。',py:'Wǒmen yìqǐ qù chàng gē ba.',vn:'Chúng ta cùng đi hát đi.'},
-   ],
-   hanzi:[
-     {c:'唱',p:'chàng',type:'左右结构 · Trái-phải',st:11,ord:'口 (khẩu) trái → 昌 (xương) phải',rad:'口 (khẩu – miệng)',mean:'hát',
-      tip:'Bộ 口 (miệng) → dùng miệng cất tiếng HÁT.',
-      cf:'倡 (chàng – "đề xướng")',w:'唱歌 / 唱得好'},
-     {c:'歌',p:'gē',type:'左右结构 · Trái-phải',st:14,ord:'哥 (ca) trái → 欠 (khiếm) phải',rad:'欠 (khiếm – ngáp/thở)',mean:'bài hát',
-      tip:'哥 (âm thanh lặp) + 欠 (miệng mở ra) → cất tiếng ngân nga = BÀI HÁT.',
-      cf:'哥 (gē – "anh trai", đã học Bài 10)',w:'唱歌 / 一首歌'},
-   ]},
-  {n:2,zh:'男',py:'nán',pos:'Danh từ / Tính từ',vn:'nam, con trai, bạn trai', hv: 'nam',em:'👦',lesson:1,
-   ex_zh:'是不是男朋友？',ex_py:'Shìbushì nán péngyou?',ex_vn:'Có phải bạn trai không?',
-   exList:[
-     {zh:'是不是男朋友？',py:'Shìbushì nán péngyou?',vn:'Có phải bạn trai không?'},
-     {zh:'这个班男学生比较多。',py:'Zhège bān nán xuésheng bǐjiào duō.',vn:'Lớp này học sinh nam khá nhiều.'},
-     {zh:'他是我男朋友。',py:'Tā shì wǒ nán péngyou.',vn:'Anh ấy là bạn trai tôi.'},
-   ],
-   hanzi:[
-     {c:'男',p:'nán',type:'上下结构 · Trên-dưới',st:7,ord:'田 (điền) trên → 力 (lực) dưới',rad:'田 (điền – ruộng)',mean:'nam, con trai',
-      tip:'Ruộng 田 + sức lực 力 → người đàn ông ra đồng dùng sức cày cấy = NAM GIỚI.',
-      cf:'画 (huà – "vẽ")',w:'男朋友 / 男人 / 男生'},
-   ]},
-  {n:3,zh:'女',py:'nǚ',pos:'Danh từ / Tính từ',vn:'nữ, con gái', hv: 'nữ',em:'👧',lesson:2,
-   ex_zh:'左边这个看报纸的女孩子是你姐姐吗？',ex_py:'Zuǒbiān zhège kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',ex_vn:'Cô gái xem báo ở bên trái có phải chị gái bạn không?',
-   exList:[
-     {zh:'左边这个看报纸的女孩子是你姐姐吗？',py:'Zuǒbiān zhège kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',vn:'Cô gái xem báo ở bên trái có phải chị gái bạn không?'},
-     {zh:'她是一个女老师。',py:'Tā shì yí ge nǚ lǎoshī.',vn:'Cô ấy là một giáo viên nữ.'},
-     {zh:'这个班女学生比较多。',py:'Zhège bān nǚ xuésheng bǐjiào duō.',vn:'Lớp này học sinh nữ khá nhiều.'},
-   ],
-   hanzi:[
-     {c:'女',p:'nǚ',type:'独体字 · Tượng hình',st:3,ord:'ㄋ→一→一 (biến thể)',rad:'女 (nữ – tự thành bộ)',mean:'nữ, con gái',
-      tip:'Hình người phụ nữ ngồi quỳ khoanh tay cách điệu → "NỮ".',
-      cf:'安 (ān – "an", thêm mái nhà)',w:'女孩子 / 女儿 / 女朋友'},
-   ]},
-  {n:4,zh:'孩子',py:'háizi',pos:'Danh từ',vn:'trẻ em, đứa con', hv: 'hài tử',em:'🧒',lesson:2,
-   ex_zh:'那个看报纸的女孩子是你姐姐吗？',ex_py:'Nàge kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',ex_vn:'Cô gái xem báo kia có phải chị gái bạn không?',
-   exList:[
-     {zh:'那个看报纸的女孩子是你姐姐吗？',py:'Nàge kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?',vn:'Cô gái xem báo kia có phải chị gái bạn không?'},
-     {zh:'我家有两个孩子。',py:'Wǒ jiā yǒu liǎng ge háizi.',vn:'Nhà tôi có hai đứa con.'},
-     {zh:'这个孩子很聪明。',py:'Zhège háizi hěn cōngming.',vn:'Đứa trẻ này rất thông minh.'},
-   ],
-   hanzi:[
-     {c:'孩',p:'hái',type:'左右结构 · Trái-phải',st:9,ord:'子 (tử) trái → 亥 (hợi) phải',rad:'子 (tử – con)',mean:'trẻ em',
-      tip:'Bộ 子 (con) → chỉ chung TRẺ EM, con cái.',
-      cf:'该 (gāi – "nên", bộ 讠)',w:'孩子 / 男孩 / 女孩'},
-     {c:'子',p:'zi / zǐ',type:'独体字 · Chữ đơn',st:3,ord:'了→一',rad:'子 (tử – tự thành bộ)',mean:'con, hậu tố danh từ',
-      tip:'Hình đứa trẻ quấn tã → "CON". Cũng dùng làm hậu tố danh từ: 桌子, 儿子.',
-      cf:'孑 (jié – thiếu 1 nét)',w:'孩子 / 儿子 / 桌子'},
-   ]},
-  {n:5,zh:'右边',py:'yòubian',pos:'Danh từ chỉ phương vị',vn:'bên phải', hv: 'hữu biên',em:'👉',lesson:2,
-   ex_zh:'右边写字的那个人是我哥哥。',ex_py:'Yòubian xiě zì de nàge rén shì wǒ gēge.',ex_vn:'Người viết chữ bên phải là anh trai tớ.',
-   exList:[
-     {zh:'右边写字的那个人是我哥哥。',py:'Yòubian xiě zì de nàge rén shì wǒ gēge.',vn:'Người viết chữ bên phải là anh trai tớ.'},
-     {zh:'银行在邮局右边。',py:'Yínháng zài yóujú yòubian.',vn:'Ngân hàng ở bên phải bưu điện.'},
-     {zh:'请往右边看。',py:'Qǐng wǎng yòubian kàn.',vn:'Xin hãy nhìn về bên phải.'},
-   ],
-   hanzi:[
-     {c:'右',p:'yòu',type:'半包围 · Bán bao',st:5,ord:'ノ→一→口',rad:'口 (khẩu – miệng)',mean:'bên phải',
-      tip:'又 (bàn tay phải, đã gặp trong 对) + 口 → hướng tay phải hay dùng = BÊN PHẢI.',
-      cf:'左 (zuǒ – trái nghĩa, đã học Bài 3)',w:'右边 / 左右'},
-     {c:'边',p:'biān',type:'半包围 · Bán bao (辶)',st:5,ord:'力 → 辶 (viết sau cùng)',rad:'辶 (sước – đi)',mean:'bên, cạnh',
-      tip:'Đã học ở Bài 2 (旁边) — chỉ vị trí ở một BÊN nào đó.',
-      cf:'力 (lì – "sức lực")',w:'右边 / 左边 / 旁边'},
-   ]},
-  {n:6,zh:'比',py:'bǐ',pos:'Giới từ',vn:'so với', hv: 'tỉ',em:'⚖️',lesson:2,
-   ex_zh:'他比我大三岁。',ex_py:'Tā bǐ wǒ dà sān suì.',ex_vn:'Anh ấy lớn hơn tớ 3 tuổi.',
-   exList:[
-     {zh:'他比我大三岁。',py:'Tā bǐ wǒ dà sān suì.',vn:'Anh ấy lớn hơn tớ 3 tuổi.'},
-     {zh:'今天比昨天冷。',py:'Jīntiān bǐ zuótiān lěng.',vn:'Hôm nay lạnh hơn hôm qua.'},
-     {zh:'弟弟比我矮一点儿。',py:'Dìdi bǐ wǒ ǎi yìdiǎnr.',vn:'Em trai thấp hơn tôi một chút.'},
-   ],
-   hanzi:[
-     {c:'比',p:'bǐ',type:'独体字 · Chữ đơn',st:4,ord:'匕→匕 (hai chữ giống nhau đứng cạnh)',rad:'比 (tỉ – tự thành bộ)',mean:'so với',
-      tip:'Hai người đứng cạnh nhau quay cùng hướng → đặt cạnh nhau để SO SÁNH.',
-      cf:'北 (běi – "phía Bắc", hai người quay lưng)',w:'比较 / A比B / 对比'},
-   ]},
-  {n:7,zh:'便宜',py:'piányi',pos:'Tính từ',vn:'rẻ', hv: 'tiện nghi',em:'💰',lesson:3,
-   ex_zh:'西瓜比昨天便宜。',ex_py:'Xīguā bǐ zuótiān piányi.',ex_vn:'Dưa hấu rẻ hơn hôm qua.',
-   exList:[
-     {zh:'西瓜比昨天便宜。',py:'Xīguā bǐ zuótiān piányi.',vn:'Dưa hấu rẻ hơn hôm qua.'},
-     {zh:'这儿的东西很便宜。',py:'Zhèr de dōngxi hěn piányi.',vn:'Đồ ở đây rất rẻ.'},
-     {zh:'能不能便宜一点儿？',py:'Néng bu néng piányi yìdiǎnr?',vn:'Có thể rẻ hơn một chút không?'},
-   ],
-   hanzi:[
-     {c:'便',p:'pián / biàn',type:'左右结构 · Trái-phải',st:9,ord:'亻(nhân) trái → 更 (cánh) phải',rad:'亻(nhân – người)',mean:'rẻ (pián); tiện lợi (biàn)',
-      tip:'Người 亻 + 更 (thay đổi cho tốt hơn) → mang lại sự THUẬN TIỆN, giá cả dễ chịu.',
-      cf:'使 (shǐ – "khiến, sai")',w:'便宜 / 方便'},
-     {c:'宜',p:'yí',type:'上下结构 · Trên-dưới',st:8,ord:'宀 (miên) → 且 (thả)',rad:'宀 (miên – mái nhà)',mean:'thích hợp, rẻ',
-      tip:'便 + 宜 = vừa tiện lợi vừa hợp túi tiền = RẺ.',
-      cf:'宣 (xuān – "tuyên bố")',w:'便宜 / 适宜'},
-   ]},
-  {n:8,zh:'说话',py:'shuōhuà',pos:'Động từ',vn:'nói chuyện', hv: 'thuyết thoại',em:'💬',lesson:4,
-   ex_zh:'前面说话的那个人就是我的汉语老师。',ex_py:'Qiánmiàn shuōhuà de nàge rén jiùshì wǒ de Hànyǔ lǎoshī.',ex_vn:'Người nói chuyện phía trước chính là giáo viên tiếng Trung của chúng tớ.',
-   exList:[
-     {zh:'前面说话的那个人就是我的汉语老师。',py:'Qiánmiàn shuōhuà de nàge rén jiùshì wǒ de Hànyǔ lǎoshī.',vn:'Người nói chuyện phía trước chính là giáo viên tiếng Trung của chúng tớ.'},
-     {zh:'他正在跟朋友说话。',py:'Tā zhèngzài gēn péngyou shuōhuà.',vn:'Anh ấy đang nói chuyện với bạn.'},
-     {zh:'请不要大声说话。',py:'Qǐng bú yào dàshēng shuōhuà.',vn:'Xin đừng nói chuyện to tiếng.'},
-   ],
-   hanzi:[
-     {c:'说',p:'shuō',type:'左右结构 · Trái-phải',st:9,ord:'讠(ngôn) trái → 兑 (đoài) phải',rad:'讠(ngôn – lời nói)',mean:'nói',
-      tip:'Bộ 讠(lời nói) → hành động dùng miệng phát ra lời = NÓI.',
-      cf:'脱 (tuō – "cởi", bộ 月)',w:'说话 / 说汉语 / 听说'},
-     {c:'话',p:'huà',type:'左右结构 · Trái-phải',st:8,ord:'讠(ngôn) trái → 舌 (thiệt) phải',rad:'讠(ngôn – lời nói)',mean:'lời nói',
-      tip:'Lời nói 讠 phát ra từ lưỡi 舌 → LỜI NÓI, câu chuyện.',
-      cf:'活 (huó – "sống", bộ 氵)',w:'说话 / 电话 / 对话'},
-   ]},
-  {n:9,zh:'可能',py:'kěnéng',pos:'Trợ động từ',vn:'có thể, có lẽ', hv: 'khả năng',em:'🤔',lesson:4,
-   ex_zh:'你可能不认识他。',ex_py:'Nǐ kěnéng bú rènshi tā.',ex_vn:'Có thể bạn không quen thầy ấy đâu.',
-   exList:[
-     {zh:'你可能不认识他。',py:'Nǐ kěnéng bú rènshi tā.',vn:'Có thể bạn không quen thầy ấy đâu.'},
-     {zh:'明天可能会下雨。',py:'Míngtiān kěnéng huì xià yǔ.',vn:'Ngày mai có lẽ sẽ mưa.'},
-     {zh:'他可能已经到了。',py:'Tā kěnéng yǐjīng dào le.',vn:'Có lẽ anh ấy đã đến rồi.'},
-   ],
-   hanzi:[
-     {c:'可',p:'kě',type:'独体字 · Chữ đơn',st:5,ord:'一→丨→乛→一→亅',rad:'口 (khẩu)',mean:'có thể, được',
-      tip:'Đã học ở Bài 5 (可以) — miệng 口 nói lời chấp thuận.',
-      cf:'河 (hé – "sông")',w:'可能 / 可以'},
-     {c:'能',p:'néng',type:'左右结构 · Trái-phải',st:10,ord:'厶→月 trái → 匕匕 phải',rad:'月 (nhục – thịt, biến thể)',mean:'năng lực, có thể',
-      tip:'可 (được phép) + 能 (năng lực) = có KHẢ NĂNG xảy ra = CÓ THỂ, CÓ LẼ.',
-      cf:'态 (tài – "thái độ")',w:'可能 / 能不能 / 可能性'},
-   ]},
-  {n:10,zh:'去年',py:'qùnián',pos:'Danh từ chỉ thời gian',vn:'năm ngoái', hv: 'khứ niên',em:'📅',lesson:4,
-   ex_zh:'是去年来的。',ex_py:'Shì qùnián lái de.',ex_vn:'Đến từ năm ngoái.',
-   exList:[
-     {zh:'是去年来的。',py:'Shì qùnián lái de.',vn:'Đến từ năm ngoái.'},
-     {zh:'我去年去过北京。',py:'Wǒ qùnián qùguo Běijīng.',vn:'Năm ngoái tôi đã đi Bắc Kinh.'},
-     {zh:'去年这个时候很冷。',py:'Qùnián zhège shíhou hěn lěng.',vn:'Năm ngoái vào thời điểm này rất lạnh.'},
-   ],
-   hanzi:[
-     {c:'去',p:'qù',type:'上下结构 · Trên-dưới',st:5,ord:'土→厶',rad:'厶 (mô – tự riêng)',mean:'đi, qua (thời gian)',
-      tip:'Hình người bước ra khỏi cửa → nghĩa "ĐI"; ghép với 年 chỉ năm ĐÃ QUA.',
-      cf:'丢 (diū – "làm mất")',w:'去年 / 去哪儿 / 出去'},
-     {c:'年',p:'nián',type:'独体字 · Tượng hình',st:6,ord:'丿→一→一→一→丨→一',rad:'干 (can)',mean:'năm',
-      tip:'Hình bó lúa chín được gánh trên vai → mỗi mùa lúa chín là một NĂM.',
-      cf:'午 (wǔ – "buổi trưa")',w:'去年 / 今年 / 明年'},
-   ]},
-  {n:11,zh:'姓',py:'xìng',pos:'Động từ / Danh từ',vn:'họ, mang họ', hv: 'tính',em:'🪪',lesson:4,
-   ex_zh:'他姓王。',ex_py:'Tā xìng Wáng.',ex_vn:'Thầy ấy họ Vương.',
-   exList:[
-     {zh:'他姓王。',py:'Tā xìng Wáng.',vn:'Thầy ấy họ Vương.'},
-     {zh:'请问您贵姓？',py:'Qǐngwèn nín guìxìng?',vn:'Xin hỏi quý danh của ngài là gì ạ?'},
-     {zh:'我姓阮，叫阮文。',py:'Wǒ xìng Ruǎn, jiào Ruǎn Wén.',vn:'Tôi họ Nguyễn, tên là Nguyễn Văn.'},
-   ],
-   hanzi:[
-     {c:'姓',p:'xìng',type:'左右结构 · Trái-phải',st:8,ord:'女 (nữ) trái → 生 (sinh) phải',rad:'女 (nữ – phụ nữ)',mean:'họ',
-      tip:'女 (mẹ) + 生 (sinh ra) → xưa con cái mang HỌ theo dòng mẹ.',
-      cf:'性 (xìng – "tính cách", bộ 忄)',w:'姓王 / 贵姓 / 姓名'},
-   ]},
+  {
+    "n": 1,
+    "zh": "唱歌",
+    "py": "chàng gē",
+    "pos": "Động từ",
+    "vn": "hát, ca hát",
+    "hv": "xướng ca",
+    "em": "🎤",
+    "lesson": 1,
+    "ex_zh": "昨天和你一起唱歌的人是谁？",
+    "ex_py": "Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?",
+    "ex_vn": "Người hôm qua cùng hát karaoke với bạn là ai thế?",
+    "exList": [
+      {
+        "zh": "昨天和你一起唱歌的人是谁？",
+        "py": "Zuótiān hé nǐ yìqǐ chàng gē de rén shì shéi?",
+        "vn": "Người hôm qua cùng hát karaoke với bạn là ai thế?"
+      },
+      {
+        "zh": "她唱歌唱得非常好。",
+        "py": "Tā chàng gē chàng de fēicháng hǎo.",
+        "vn": "Cô ấy hát rất hay."
+      },
+      {
+        "zh": "我们一起去唱歌吧。",
+        "py": "Wǒmen yìqǐ qù chàng gē ba.",
+        "vn": "Chúng ta cùng đi hát đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "唱",
+        "p": "chàng",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "口 (khẩu) trái → 昌 (xương) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "hát",
+        "tip": "Bộ 口 (miệng) → dùng miệng cất tiếng HÁT.",
+        "cf": "倡 (chàng – \"đề xướng\")",
+        "w": "唱歌 / 唱得好"
+      },
+      {
+        "c": "歌",
+        "p": "gē",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "哥 (ca) trái → 欠 (khiếm) phải",
+        "rad": "欠 (khiếm – ngáp/thở)",
+        "mean": "bài hát",
+        "tip": "哥 (âm thanh lặp) + 欠 (miệng mở ra) → cất tiếng ngân nga = BÀI HÁT.",
+        "cf": "哥 (gē – \"anh trai\", đã học Bài 10)",
+        "w": "唱歌 / 一首歌"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "会唱歌",
+        "py": "huì chàng gē",
+        "vn": "biết hát"
+      },
+      {
+        "zh": "喜欢唱歌",
+        "py": "xǐhuan chàng gē",
+        "vn": "thích hát"
+      },
+      {
+        "zh": "一起唱歌",
+        "py": "yìqǐ chàng gē",
+        "vn": "cùng hát"
+      },
+      {
+        "zh": "唱歌跳舞",
+        "py": "chàng gē tiàowǔ",
+        "vn": "hát hò nhảy múa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "会 + 唱歌",
+        "m": "Biết hát — 会 là kỹ năng học được"
+      },
+      {
+        "s": "唱歌 là từ ly hợp, giống 跳舞 · 上班"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chị tôi vừa biết hát vừa biết múa.",
+        "answer": "我姐姐会唱歌，也会跳舞。",
+        "answerPy": "Wǒ jiějie huì chànggē, yě huì tiàowǔ.",
+        "note": "唱歌 · 跳舞 đều là từ ly hợp.",
+        "pair": "也 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tối nay chúng ta cùng đi hát nhé.",
+        "answer": "今天晚上我们一起去唱歌吧。",
+        "answerPy": "Jīntiān wǎnshang wǒmen yìqǐ qù chànggē ba.",
+        "note": "吧 dùng khi rủ rê.",
+        "pair": "一起 + V"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "男",
+    "py": "nán",
+    "pos": "Danh từ / Tính từ",
+    "vn": "nam, con trai, bạn trai",
+    "hv": "nam",
+    "em": "👦",
+    "lesson": 1,
+    "ex_zh": "是不是男朋友？",
+    "ex_py": "Shìbushì nán péngyou?",
+    "ex_vn": "Có phải bạn trai không?",
+    "exList": [
+      {
+        "zh": "是不是男朋友？",
+        "py": "Shìbushì nán péngyou?",
+        "vn": "Có phải bạn trai không?"
+      },
+      {
+        "zh": "这个班男学生比较多。",
+        "py": "Zhège bān nán xuésheng bǐjiào duō.",
+        "vn": "Lớp này học sinh nam khá nhiều."
+      },
+      {
+        "zh": "他是我男朋友。",
+        "py": "Tā shì wǒ nán péngyou.",
+        "vn": "Anh ấy là bạn trai tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "男",
+        "p": "nán",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "田 (điền) trên → 力 (lực) dưới",
+        "rad": "田 (điền – ruộng)",
+        "mean": "nam, con trai",
+        "tip": "Ruộng 田 + sức lực 力 → người đàn ông ra đồng dùng sức cày cấy = NAM GIỚI.",
+        "cf": "画 (huà – \"vẽ\")",
+        "w": "男朋友 / 男人 / 男生"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "男孩子",
+        "py": "nán háizi",
+        "vn": "con trai"
+      },
+      {
+        "zh": "男的",
+        "py": "nán de",
+        "vn": "người nam"
+      },
+      {
+        "zh": "男服务员",
+        "py": "nán fúwùyuán",
+        "vn": "nhân viên nam"
+      },
+      {
+        "zh": "男同学",
+        "py": "nán tóngxué",
+        "vn": "bạn nam"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "男 + danh từ",
+        "m": "Người nam: 男孩子 · 男同学"
+      },
+      {
+        "s": "男 ↔ 女 — nam và nữ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhân viên nam kia là anh trai tôi.",
+        "answer": "那个男服务员是我哥哥。",
+        "answerPy": "Nàge nán fúwùyuán shì wǒ gēge.",
+        "note": "男 + danh từ — người nam.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trong phòng học có mười bạn nam.",
+        "answer": "教室里有十个男同学。",
+        "answerPy": "Jiàoshì li yǒu shí ge nán tóngxué.",
+        "note": "男 ↔ 女 — nam và nữ.",
+        "pair": "nơi chốn + 有 + N"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "女",
+    "py": "nǚ",
+    "pos": "Danh từ / Tính từ",
+    "vn": "nữ, con gái",
+    "hv": "nữ",
+    "em": "👧",
+    "lesson": 2,
+    "ex_zh": "左边这个看报纸的女孩子是你姐姐吗？",
+    "ex_py": "Zuǒbiān zhège kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?",
+    "ex_vn": "Cô gái xem báo ở bên trái có phải chị gái bạn không?",
+    "exList": [
+      {
+        "zh": "左边这个看报纸的女孩子是你姐姐吗？",
+        "py": "Zuǒbiān zhège kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?",
+        "vn": "Cô gái xem báo ở bên trái có phải chị gái bạn không?"
+      },
+      {
+        "zh": "她是一个女老师。",
+        "py": "Tā shì yí ge nǚ lǎoshī.",
+        "vn": "Cô ấy là một giáo viên nữ."
+      },
+      {
+        "zh": "这个班女学生比较多。",
+        "py": "Zhège bān nǚ xuésheng bǐjiào duō.",
+        "vn": "Lớp này học sinh nữ khá nhiều."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "女",
+        "p": "nǚ",
+        "type": "独体字 · Tượng hình",
+        "st": 3,
+        "ord": "ㄋ→一→一 (biến thể)",
+        "rad": "女 (nữ – tự thành bộ)",
+        "mean": "nữ, con gái",
+        "tip": "Hình người phụ nữ ngồi quỳ khoanh tay cách điệu → \"NỮ\".",
+        "cf": "安 (ān – \"an\", thêm mái nhà)",
+        "w": "女孩子 / 女儿 / 女朋友"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "女孩子",
+        "py": "nǚ háizi",
+        "vn": "con gái"
+      },
+      {
+        "zh": "女的",
+        "py": "nǚ de",
+        "vn": "người nữ"
+      },
+      {
+        "zh": "女老师",
+        "py": "nǚ lǎoshī",
+        "vn": "cô giáo"
+      },
+      {
+        "zh": "女同学",
+        "py": "nǚ tóngxué",
+        "vn": "bạn nữ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "女 + danh từ",
+        "m": "Người nữ: 女孩子 · 女老师"
+      },
+      {
+        "s": "女 là chữ tượng hình — vẽ người phụ nữ ngồi"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô giáo mới của chúng tôi cực kỳ tốt.",
+        "answer": "我们的新女老师非常好。",
+        "answerPy": "Wǒmen de xīn nǚ lǎoshī fēicháng hǎo.",
+        "note": "女 + danh từ — người nữ.",
+        "pair": "非常 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô bé kia là con gái của chị tôi.",
+        "answer": "那个女孩子是我姐姐的女儿。",
+        "answerPy": "Nàge nǚ háizi shì wǒ jiějie de nǚ'ér.",
+        "note": "女孩子 — bé gái.",
+        "pair": "是……的"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "孩子",
+    "py": "háizi",
+    "pos": "Danh từ",
+    "vn": "trẻ em, đứa con",
+    "hv": "hài tử",
+    "em": "🧒",
+    "lesson": 2,
+    "ex_zh": "那个看报纸的女孩子是你姐姐吗？",
+    "ex_py": "Nàge kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?",
+    "ex_vn": "Cô gái xem báo kia có phải chị gái bạn không?",
+    "exList": [
+      {
+        "zh": "那个看报纸的女孩子是你姐姐吗？",
+        "py": "Nàge kàn bàozhǐ de nǚháizi shì nǐ jiějie ma?",
+        "vn": "Cô gái xem báo kia có phải chị gái bạn không?"
+      },
+      {
+        "zh": "我家有两个孩子。",
+        "py": "Wǒ jiā yǒu liǎng ge háizi.",
+        "vn": "Nhà tôi có hai đứa con."
+      },
+      {
+        "zh": "这个孩子很聪明。",
+        "py": "Zhège háizi hěn cōngming.",
+        "vn": "Đứa trẻ này rất thông minh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "孩",
+        "p": "hái",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "子 (tử) trái → 亥 (hợi) phải",
+        "rad": "子 (tử – con)",
+        "mean": "trẻ em",
+        "tip": "Bộ 子 (con) → chỉ chung TRẺ EM, con cái.",
+        "cf": "该 (gāi – \"nên\", bộ 讠)",
+        "w": "孩子 / 男孩 / 女孩"
+      },
+      {
+        "c": "子",
+        "p": "zi / zǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "了→一",
+        "rad": "子 (tử – tự thành bộ)",
+        "mean": "con, hậu tố danh từ",
+        "tip": "Hình đứa trẻ quấn tã → \"CON\". Cũng dùng làm hậu tố danh từ: 桌子, 儿子.",
+        "cf": "孑 (jié – thiếu 1 nét)",
+        "w": "孩子 / 儿子 / 桌子"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "两个孩子",
+        "py": "liǎng gè háizi",
+        "vn": "hai đứa con"
+      },
+      {
+        "zh": "男孩子",
+        "py": "nán háizi",
+        "vn": "con trai"
+      },
+      {
+        "zh": "孩子们",
+        "py": "háizi men",
+        "vn": "các cháu"
+      },
+      {
+        "zh": "孩子的房间",
+        "py": "háizi de fángjiān",
+        "vn": "phòng của con"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 个 + 孩子",
+        "m": "Lượng từ của 孩子 là 个"
+      },
+      {
+        "s": "孩子 (con, trẻ con) — 儿子 · 女儿 đều là 孩子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi có hai đứa con.",
+        "answer": "我哥哥有两个孩子。",
+        "answerPy": "Wǒ gēge yǒu liǎng ge háizi.",
+        "note": "Lượng từ của 孩子 là 个.",
+        "pair": "有 + số + M + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bọn trẻ đang chơi bóng rổ ngoài sân.",
+        "answer": "孩子们正在外面打篮球呢。",
+        "answerPy": "Háizimen zhèngzài wàimiàn dǎ lánqiú ne.",
+        "note": "们 dùng cho người, không dùng cho vật.",
+        "pair": "正在……呢"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "右边",
+    "py": "yòubian",
+    "pos": "Danh từ chỉ phương vị",
+    "vn": "bên phải",
+    "hv": "hữu biên",
+    "em": "👉",
+    "lesson": 2,
+    "ex_zh": "右边写字的那个人是我哥哥。",
+    "ex_py": "Yòubian xiě zì de nàge rén shì wǒ gēge.",
+    "ex_vn": "Người viết chữ bên phải là anh trai tớ.",
+    "exList": [
+      {
+        "zh": "右边写字的那个人是我哥哥。",
+        "py": "Yòubian xiě zì de nàge rén shì wǒ gēge.",
+        "vn": "Người viết chữ bên phải là anh trai tớ."
+      },
+      {
+        "zh": "银行在邮局右边。",
+        "py": "Yínháng zài yóujú yòubian.",
+        "vn": "Ngân hàng ở bên phải bưu điện."
+      },
+      {
+        "zh": "请往右边看。",
+        "py": "Qǐng wǎng yòubian kàn.",
+        "vn": "Xin hãy nhìn về bên phải."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "右",
+        "p": "yòu",
+        "type": "半包围 · Bán bao",
+        "st": 5,
+        "ord": "ノ→一→口",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "bên phải",
+        "tip": "又 (bàn tay phải, đã gặp trong 对) + 口 → hướng tay phải hay dùng = BÊN PHẢI.",
+        "cf": "左 (zuǒ – trái nghĩa, đã học Bài 3)",
+        "w": "右边 / 左右"
+      },
+      {
+        "c": "边",
+        "p": "biān",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 5,
+        "ord": "力 → 辶 (viết sau cùng)",
+        "rad": "辶 (sước – đi)",
+        "mean": "bên, cạnh",
+        "tip": "Đã học ở Bài 2 (旁边) — chỉ vị trí ở một BÊN nào đó.",
+        "cf": "力 (lì – \"sức lực\")",
+        "w": "右边 / 左边 / 旁边"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "在右边",
+        "py": "zài yòubian",
+        "vn": "ở bên phải"
+      },
+      {
+        "zh": "右边的门",
+        "py": "yòubian de mén",
+        "vn": "cửa bên phải"
+      },
+      {
+        "zh": "学校右边",
+        "py": "xuéxiào yòubian",
+        "vn": "bên phải trường"
+      },
+      {
+        "zh": "我的右边",
+        "py": "wǒ de yòubian",
+        "vn": "bên phải tôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "danh từ + 右边",
+        "m": "Bên phải cái gì: 学校右边"
+      },
+      {
+        "s": "右边 · 旁边 · 外面 — đều là từ chỉ vị trí"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bệnh viện ở bên phải trường học.",
+        "answer": "医院在学校右边。",
+        "answerPy": "Yīyuàn zài xuéxiào yòubian.",
+        "note": "danh từ + 右边 — bên phải cái gì.",
+        "pair": "在……右边"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Phòng học của chúng tôi là cái cửa bên phải.",
+        "answer": "我们的教室是右边的门。",
+        "answerPy": "Wǒmen de jiàoshì shì yòubian de mén.",
+        "note": "右边的 + danh từ — cái ở bên phải.",
+        "pair": "是……的"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "比",
+    "py": "bǐ",
+    "pos": "Giới từ",
+    "vn": "so với",
+    "hv": "tỉ",
+    "em": "⚖️",
+    "lesson": 2,
+    "ex_zh": "他比我大三岁。",
+    "ex_py": "Tā bǐ wǒ dà sān suì.",
+    "ex_vn": "Anh ấy lớn hơn tớ 3 tuổi.",
+    "exList": [
+      {
+        "zh": "他比我大三岁。",
+        "py": "Tā bǐ wǒ dà sān suì.",
+        "vn": "Anh ấy lớn hơn tớ 3 tuổi."
+      },
+      {
+        "zh": "今天比昨天冷。",
+        "py": "Jīntiān bǐ zuótiān lěng.",
+        "vn": "Hôm nay lạnh hơn hôm qua."
+      },
+      {
+        "zh": "弟弟比我矮一点儿。",
+        "py": "Dìdi bǐ wǒ ǎi yìdiǎnr.",
+        "vn": "Em trai thấp hơn tôi một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "比",
+        "p": "bǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "匕→匕 (hai chữ giống nhau đứng cạnh)",
+        "rad": "比 (tỉ – tự thành bộ)",
+        "mean": "so với",
+        "tip": "Hai người đứng cạnh nhau quay cùng hướng → đặt cạnh nhau để SO SÁNH.",
+        "cf": "北 (běi – \"phía Bắc\", hai người quay lưng)",
+        "w": "比较 / A比B / 对比"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "比我高",
+        "py": "bǐ wǒ gāo",
+        "vn": "cao hơn tôi"
+      },
+      {
+        "zh": "比他快",
+        "py": "bǐ tā kuài",
+        "vn": "nhanh hơn anh ấy"
+      },
+      {
+        "zh": "比昨天冷",
+        "py": "bǐ zuótiān lěng",
+        "vn": "lạnh hơn hôm qua"
+      },
+      {
+        "zh": "不比",
+        "py": "bù bǐ",
+        "vn": "không hơn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A + 比 + B + tính từ",
+        "m": "A hơn B: 我哥哥比我高"
+      },
+      {
+        "s": "✗ 我比他很高 → ✓ 我比他高 — sau 比 KHÔNG dùng 很"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi cao hơn tôi.",
+        "answer": "我哥哥比我高。",
+        "answerPy": "Wǒ gēge bǐ wǒ gāo.",
+        "note": "Sau 比 KHÔNG dùng 很.",
+        "pair": "A 比 B + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay lạnh hơn hôm qua.",
+        "answer": "今天比昨天冷。",
+        "answerPy": "Jīntiān bǐ zuótiān lěng.",
+        "note": "Khung so sánh cơ bản nhất.",
+        "pair": "A 比 B + Adj"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "便宜",
+    "py": "piányi",
+    "pos": "Tính từ",
+    "vn": "rẻ",
+    "hv": "tiện nghi",
+    "em": "💰",
+    "lesson": 3,
+    "ex_zh": "西瓜比昨天便宜。",
+    "ex_py": "Xīguā bǐ zuótiān piányi.",
+    "ex_vn": "Dưa hấu rẻ hơn hôm qua.",
+    "exList": [
+      {
+        "zh": "西瓜比昨天便宜。",
+        "py": "Xīguā bǐ zuótiān piányi.",
+        "vn": "Dưa hấu rẻ hơn hôm qua."
+      },
+      {
+        "zh": "这儿的东西很便宜。",
+        "py": "Zhèr de dōngxi hěn piányi.",
+        "vn": "Đồ ở đây rất rẻ."
+      },
+      {
+        "zh": "能不能便宜一点儿？",
+        "py": "Néng bu néng piányi yìdiǎnr?",
+        "vn": "Có thể rẻ hơn một chút không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "便",
+        "p": "pián / biàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "亻(nhân) trái → 更 (cánh) phải",
+        "rad": "亻(nhân – người)",
+        "mean": "rẻ (pián); tiện lợi (biàn)",
+        "tip": "Người 亻 + 更 (thay đổi cho tốt hơn) → mang lại sự THUẬN TIỆN, giá cả dễ chịu.",
+        "cf": "使 (shǐ – \"khiến, sai\")",
+        "w": "便宜 / 方便"
+      },
+      {
+        "c": "宜",
+        "p": "yí",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "宀 (miên) → 且 (thả)",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "thích hợp, rẻ",
+        "tip": "便 + 宜 = vừa tiện lợi vừa hợp túi tiền = RẺ.",
+        "cf": "宣 (xuān – \"tuyên bố\")",
+        "w": "便宜 / 适宜"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很便宜",
+        "py": "hěn piányi",
+        "vn": "rất rẻ"
+      },
+      {
+        "zh": "不便宜",
+        "py": "bù piányi",
+        "vn": "không rẻ"
+      },
+      {
+        "zh": "便宜一点儿",
+        "py": "piányi yìdiǎnr",
+        "vn": "rẻ một chút"
+      },
+      {
+        "zh": "比这个便宜",
+        "py": "bǐ zhège piányi",
+        "vn": "rẻ hơn cái này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A + 比 + B + 便宜",
+        "m": "A rẻ hơn B"
+      },
+      {
+        "s": "便宜 ↔ 贵 — rẻ và đắt"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dưa hấu ở đây rẻ hơn ở kia.",
+        "answer": "这儿的西瓜比那儿的便宜。",
+        "answerPy": "Zhèr de xīguā bǐ nàr de piányi.",
+        "note": "便宜 ↔ 贵 — rẻ và đắt.",
+        "pair": "A 比 B + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đắt quá, rẻ một chút được không?",
+        "answer": "太贵了，便宜一点儿可以吗？",
+        "answerPy": "Tài guì le, piányi yìdiǎnr kěyǐ ma?",
+        "note": "一点儿 đứng SAU tính từ.",
+        "pair": "可以……吗？"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "说话",
+    "py": "shuōhuà",
+    "pos": "Động từ",
+    "vn": "nói chuyện",
+    "hv": "thuyết thoại",
+    "em": "💬",
+    "lesson": 4,
+    "ex_zh": "前面说话的那个人就是我的汉语老师。",
+    "ex_py": "Qiánmiàn shuōhuà de nàge rén jiùshì wǒ de Hànyǔ lǎoshī.",
+    "ex_vn": "Người nói chuyện phía trước chính là giáo viên tiếng Trung của chúng tớ.",
+    "exList": [
+      {
+        "zh": "前面说话的那个人就是我的汉语老师。",
+        "py": "Qiánmiàn shuōhuà de nàge rén jiùshì wǒ de Hànyǔ lǎoshī.",
+        "vn": "Người nói chuyện phía trước chính là giáo viên tiếng Trung của chúng tớ."
+      },
+      {
+        "zh": "他正在跟朋友说话。",
+        "py": "Tā zhèngzài gēn péngyou shuōhuà.",
+        "vn": "Anh ấy đang nói chuyện với bạn."
+      },
+      {
+        "zh": "请不要大声说话。",
+        "py": "Qǐng bú yào dàshēng shuōhuà.",
+        "vn": "Xin đừng nói chuyện to tiếng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "说",
+        "p": "shuō",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "讠(ngôn) trái → 兑 (đoài) phải",
+        "rad": "讠(ngôn – lời nói)",
+        "mean": "nói",
+        "tip": "Bộ 讠(lời nói) → hành động dùng miệng phát ra lời = NÓI.",
+        "cf": "脱 (tuō – \"cởi\", bộ 月)",
+        "w": "说话 / 说汉语 / 听说"
+      },
+      {
+        "c": "话",
+        "p": "huà",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "讠(ngôn) trái → 舌 (thiệt) phải",
+        "rad": "讠(ngôn – lời nói)",
+        "mean": "lời nói",
+        "tip": "Lời nói 讠 phát ra từ lưỡi 舌 → LỜI NÓI, câu chuyện.",
+        "cf": "活 (huó – \"sống\", bộ 氵)",
+        "w": "说话 / 电话 / 对话"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "别说话",
+        "py": "bié shuōhuà",
+        "vn": "đừng nói chuyện"
+      },
+      {
+        "zh": "和他说话",
+        "py": "hé tā shuōhuà",
+        "vn": "nói chuyện với anh ấy"
+      },
+      {
+        "zh": "说话很快",
+        "py": "shuōhuà hěn kuài",
+        "vn": "nói rất nhanh"
+      },
+      {
+        "zh": "爱说话",
+        "py": "ài shuōhuà",
+        "vn": "thích nói chuyện"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "和 + người + 说话",
+        "m": "Nói chuyện với ai"
+      },
+      {
+        "s": "说话 là từ ly hợp: 说了很长时间话"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy đang giảng bài, các em đừng nói chuyện.",
+        "answer": "老师正在上课，你们别说话。",
+        "answerPy": "Lǎoshī zhèngzài shàngkè, nǐmen bié shuōhuà.",
+        "note": "别 dùng khi khuyên ai đừng làm gì.",
+        "pair": "别 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy nói nhanh quá, tôi nghe không hiểu.",
+        "answer": "他说话太快了，我没听懂。",
+        "answerPy": "Tā shuōhuà tài kuài le, wǒ méi tīngdǒng.",
+        "note": "说话 là từ ly hợp.",
+        "pair": "太……了"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "可能",
+    "py": "kěnéng",
+    "pos": "Trợ động từ",
+    "vn": "có thể, có lẽ",
+    "hv": "khả năng",
+    "em": "🤔",
+    "lesson": 4,
+    "ex_zh": "你可能不认识他。",
+    "ex_py": "Nǐ kěnéng bú rènshi tā.",
+    "ex_vn": "Có thể bạn không quen thầy ấy đâu.",
+    "exList": [
+      {
+        "zh": "你可能不认识他。",
+        "py": "Nǐ kěnéng bú rènshi tā.",
+        "vn": "Có thể bạn không quen thầy ấy đâu."
+      },
+      {
+        "zh": "明天可能会下雨。",
+        "py": "Míngtiān kěnéng huì xià yǔ.",
+        "vn": "Ngày mai có lẽ sẽ mưa."
+      },
+      {
+        "zh": "他可能已经到了。",
+        "py": "Tā kěnéng yǐjīng dào le.",
+        "vn": "Có lẽ anh ấy đã đến rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "可",
+        "p": "kě",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "一→丨→乛→一→亅",
+        "rad": "口 (khẩu)",
+        "mean": "có thể, được",
+        "tip": "Đã học ở Bài 5 (可以) — miệng 口 nói lời chấp thuận.",
+        "cf": "河 (hé – \"sông\")",
+        "w": "可能 / 可以"
+      },
+      {
+        "c": "能",
+        "p": "néng",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "厶→月 trái → 匕匕 phải",
+        "rad": "月 (nhục – thịt, biến thể)",
+        "mean": "năng lực, có thể",
+        "tip": "可 (được phép) + 能 (năng lực) = có KHẢ NĂNG xảy ra = CÓ THỂ, CÓ LẼ.",
+        "cf": "态 (tài – \"thái độ\")",
+        "w": "可能 / 能不能 / 可能性"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "可能来",
+        "py": "kěnéng lái",
+        "vn": "có thể đến"
+      },
+      {
+        "zh": "可能不去",
+        "py": "kěnéng bú qù",
+        "vn": "có thể không đi"
+      },
+      {
+        "zh": "很可能",
+        "py": "hěn kěnéng",
+        "vn": "rất có thể"
+      },
+      {
+        "zh": "可能在家",
+        "py": "kěnéng zài jiā",
+        "vn": "có thể ở nhà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "可能 + động từ",
+        "m": "Có lẽ sẽ: 他可能不来了"
+      },
+      {
+        "s": "可能 (đoán) ≠ 可以 (được phép) — hai từ khác hẳn nhau"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bên ngoài mưa rồi, anh ấy có thể không đến.",
+        "answer": "外面下雨了，他可能不来了。",
+        "answerPy": "Wàimiàn xià yǔ le, tā kěnéng bù lái le.",
+        "note": "可能 (đoán) ≠ 可以 (được phép).",
+        "pair": "可能 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Giờ này thầy có thể đang ở trong phòng học.",
+        "answer": "现在老师可能在教室里。",
+        "answerPy": "Xiànzài lǎoshī kěnéng zài jiàoshì li.",
+        "note": "可能 đứng TRƯỚC động từ.",
+        "pair": "可能 + 在……"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "去年",
+    "py": "qùnián",
+    "pos": "Danh từ chỉ thời gian",
+    "vn": "năm ngoái",
+    "hv": "khứ niên",
+    "em": "📅",
+    "lesson": 4,
+    "ex_zh": "是去年来的。",
+    "ex_py": "Shì qùnián lái de.",
+    "ex_vn": "Đến từ năm ngoái.",
+    "exList": [
+      {
+        "zh": "是去年来的。",
+        "py": "Shì qùnián lái de.",
+        "vn": "Đến từ năm ngoái."
+      },
+      {
+        "zh": "我去年去过北京。",
+        "py": "Wǒ qùnián qùguo Běijīng.",
+        "vn": "Năm ngoái tôi đã đi Bắc Kinh."
+      },
+      {
+        "zh": "去年这个时候很冷。",
+        "py": "Qùnián zhège shíhou hěn lěng.",
+        "vn": "Năm ngoái vào thời điểm này rất lạnh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "去",
+        "p": "qù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 5,
+        "ord": "土→厶",
+        "rad": "厶 (mô – tự riêng)",
+        "mean": "đi, qua (thời gian)",
+        "tip": "Hình người bước ra khỏi cửa → nghĩa \"ĐI\"; ghép với 年 chỉ năm ĐÃ QUA.",
+        "cf": "丢 (diū – \"làm mất\")",
+        "w": "去年 / 去哪儿 / 出去"
+      },
+      {
+        "c": "年",
+        "p": "nián",
+        "type": "独体字 · Tượng hình",
+        "st": 6,
+        "ord": "丿→一→一→一→丨→一",
+        "rad": "干 (can)",
+        "mean": "năm",
+        "tip": "Hình bó lúa chín được gánh trên vai → mỗi mùa lúa chín là một NĂM.",
+        "cf": "午 (wǔ – \"buổi trưa\")",
+        "w": "去年 / 今年 / 明年"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去年冬天",
+        "py": "qùnián dōng tiān",
+        "vn": "mùa đông năm ngoái"
+      },
+      {
+        "zh": "去年来的",
+        "py": "qùnián lái de",
+        "vn": "đến từ năm ngoái"
+      },
+      {
+        "zh": "比去年",
+        "py": "bǐ qùnián",
+        "vn": "so với năm ngoái"
+      },
+      {
+        "zh": "去年九月",
+        "py": "qùnián jiǔ yuè",
+        "vn": "tháng chín năm ngoái"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去年 + việc gì",
+        "m": "Năm ngoái làm gì: 去年我去中国了"
+      },
+      {
+        "s": "去年 · 今年 · 明年 — ba mốc năm đi liền một bộ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Năm ngoái tôi đi Bắc Kinh du lịch.",
+        "answer": "去年我去北京旅游了。",
+        "answerPy": "Qùnián wǒ qù Běijīng lǚyóu le.",
+        "note": "去年 · 今年 · 明年 đi liền một bộ.",
+        "pair": "……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Năm nay tôi bận hơn năm ngoái.",
+        "answer": "今年我比去年忙。",
+        "answerPy": "Jīnnián wǒ bǐ qùnián máng.",
+        "note": "Sau 比 KHÔNG dùng 很.",
+        "pair": "A 比 B + Adj"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "姓",
+    "py": "xìng",
+    "pos": "Động từ / Danh từ",
+    "vn": "họ, mang họ",
+    "hv": "tính",
+    "em": "🪪",
+    "lesson": 4,
+    "ex_zh": "他姓王。",
+    "ex_py": "Tā xìng Wáng.",
+    "ex_vn": "Thầy ấy họ Vương.",
+    "exList": [
+      {
+        "zh": "他姓王。",
+        "py": "Tā xìng Wáng.",
+        "vn": "Thầy ấy họ Vương."
+      },
+      {
+        "zh": "请问您贵姓？",
+        "py": "Qǐngwèn nín guìxìng?",
+        "vn": "Xin hỏi quý danh của ngài là gì ạ?"
+      },
+      {
+        "zh": "我姓阮，叫阮文。",
+        "py": "Wǒ xìng Ruǎn, jiào Ruǎn Wén.",
+        "vn": "Tôi họ Nguyễn, tên là Nguyễn Văn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "姓",
+        "p": "xìng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "女 (nữ) trái → 生 (sinh) phải",
+        "rad": "女 (nữ – phụ nữ)",
+        "mean": "họ",
+        "tip": "女 (mẹ) + 生 (sinh ra) → xưa con cái mang HỌ theo dòng mẹ.",
+        "cf": "性 (xìng – \"tính cách\", bộ 忄)",
+        "w": "姓王 / 贵姓 / 姓名"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我姓王",
+        "py": "wǒ xìng wáng",
+        "vn": "tôi họ Vương"
+      },
+      {
+        "zh": "你姓什么",
+        "py": "nǐ xìng shénme",
+        "vn": "bạn họ gì"
+      },
+      {
+        "zh": "姓什么",
+        "py": "xìng shénme",
+        "vn": "họ gì"
+      },
+      {
+        "zh": "他姓李",
+        "py": "tā xìng Lǐ",
+        "vn": "anh ấy họ Lý"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 姓 + họ",
+        "m": "姓 là ĐỘNG TỪ: 我姓王 (không nói 我是姓王)"
+      },
+      {
+        "s": "姓 có bộ 女 — thời xưa họ truyền theo mẹ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi họ Vương, bạn họ gì?",
+        "answer": "我姓王，你姓什么？",
+        "answerPy": "Wǒ xìng Wáng, nǐ xìng shénme?",
+        "note": "姓 là động từ, không thêm 是.",
+        "pair": "Sub + 姓 + họ"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô giáo mới của chúng tôi họ Lý.",
+        "answer": "我们的新女老师姓李。",
+        "answerPy": "Wǒmen de xīn nǚ lǎoshī xìng Lǐ.",
+        "note": "✗ 我是姓王 → ✓ 我姓王.",
+        "pair": "Sub + 姓 + họ"
+      }
+    ]
+  }
 ];
 
 const wuData = [

@@ -2,150 +2,1080 @@
 // DATA — Bài 13: 门开着呢
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'着',py:'zhe',pos:'Trợ từ động thái',vn:'đang, duy trì trạng thái', hv: 'trứ',em:'🔄',lesson:1,
-   ex_zh:'门开着呢。',ex_py:'Mén kāizhe ne.',ex_vn:'Cửa đang mở đấy.',
-   exList:[
-     {zh:'门开着呢。',py:'Mén kāizhe ne.',vn:'Cửa đang mở đấy.'},
-     {zh:'她手里拿着一本书。',py:'Tā shǒu lǐ názhe yì běn shū.',vn:'Cô ấy tay đang cầm một quyển sách.'},
-     {zh:'他坐着看电视。',py:'Tā zuòzhe kàn diànshì.',vn:'Anh ấy ngồi xem tivi.'},
-   ],
-   hanzi:[
-     {c:'着',p:'zhe / zháo / zhuó',type:'上下结构 · Trên-dưới',st:11,ord:'羊(biến thể) → 目',rad:'目 (mục – mắt)',mean:'đang, duy trì trạng thái',
-      tip:'Đọc nhẹ "zhe" khi đứng sau động từ, biểu thị hành động/trạng thái đang được DUY TRÌ.',
-      cf:'差 (chà – "kém, thiếu")',w:'开着 / 拿着 / 看着'},
-   ]},
-  {n:2,zh:'手',py:'shǒu',pos:'Danh từ',vn:'tay, bàn tay', hv: 'thủ',em:'✋',lesson:2,
-   ex_zh:'手里拿着铅笔。',ex_py:'Shǒu lǐ názhe qiānbǐ.',ex_vn:'Tay cầm bút chì.',
-   exList:[
-     {zh:'手里拿着铅笔。',py:'Shǒu lǐ názhe qiānbǐ.',vn:'Tay cầm bút chì.'},
-     {zh:'请举手。',py:'Qǐng jǔ shǒu.',vn:'Xin hãy giơ tay.'},
-     {zh:'吃饭以前要洗手。',py:'Chīfàn yǐqián yào xǐ shǒu.',vn:'Trước khi ăn cơm phải rửa tay.'},
-   ],
-   hanzi:[
-     {c:'手',p:'shǒu',type:'独体字 · Tượng hình',st:4,ord:'丿→一→𠃌→丿',rad:'手 (thủ – tự thành bộ)',mean:'tay',
-      tip:'Hình bàn tay xoè năm ngón cách điệu → "TAY". Đã gặp trong 手机 (Bài 10).',
-      cf:'毛 (máo – "lông")',w:'手里 / 手机 / 洗手'},
-   ]},
-  {n:3,zh:'拿',py:'ná',pos:'Động từ',vn:'cầm, nắm, xách', hv: 'nã',em:'🤲',lesson:2,
-   ex_zh:'那个手里拿着铅笔的呢？',ex_py:'Nàge shǒu lǐ názhe qiānbǐ de ne?',ex_vn:'Thế còn người tay cầm bút chì đằng kia thì sao?',
-   exList:[
-     {zh:'那个手里拿着铅笔的呢？',py:'Nàge shǒu lǐ názhe qiānbǐ de ne?',vn:'Thế còn người tay cầm bút chì đằng kia thì sao?'},
-     {zh:'请帮我拿一下这本书。',py:'Qǐng bāng wǒ ná yíxià zhè běn shū.',vn:'Làm ơn cầm giúp tôi quyển sách này.'},
-     {zh:'他手里拿着手机。',py:'Tā shǒu lǐ názhe shǒujī.',vn:'Anh ấy tay đang cầm điện thoại.'},
-   ],
-   hanzi:[
-     {c:'拿',p:'ná',type:'上下结构 · Trên-dưới',st:10,ord:'合 (hợp) → 手 (thủ)',rad:'手 (thủ – tay)',mean:'cầm, nắm',
-      tip:'合 (khép lại) + 手 (tay) → khép bàn tay lại để CẦM, NẮM đồ vật.',
-      cf:'合 (hé – "hợp", thiếu bộ 手")',w:'拿着 / 拿书 / 拿走'},
-   ]},
-  {n:4,zh:'铅笔',py:'qiānbǐ',pos:'Danh từ',vn:'bút chì', hv: 'duyên bút',em:'✏️',lesson:2,
-   ex_zh:'手里拿着铅笔。',ex_py:'Shǒu lǐ názhe qiānbǐ.',ex_vn:'Tay đang cầm bút chì.',
-   exList:[
-     {zh:'手里拿着铅笔。',py:'Shǒu lǐ názhe qiānbǐ.',vn:'Tay đang cầm bút chì.'},
-     {zh:'请给我一支铅笔。',py:'Qǐng gěi wǒ yì zhī qiānbǐ.',vn:'Xin cho tôi một cây bút chì.'},
-     {zh:'这支铅笔是我的。',py:'Zhè zhī qiānbǐ shì wǒ de.',vn:'Cây bút chì này là của tôi.'},
-   ],
-   hanzi:[
-     {c:'铅',p:'qiān',type:'左右结构 · Trái-phải',st:10,ord:'钅(kim) trái → 几+口 phải',rad:'钅(kim – kim loại)',mean:'chì',
-      tip:'Bộ 钅(kim loại) → ruột bút làm từ chất liệu như kim loại chì.',
-      cf:'船 (chuán – "thuyền")',w:'铅笔 / 铅笔盒'},
-     {c:'笔',p:'bǐ',type:'上下结构 · Trên-dưới',st:10,ord:'⺮(trúc) → 毛 (mao)',rad:'⺮(trúc – tre)',mean:'bút',
-      tip:'Bộ 竹 (tre, thân bút) + 毛 (lông, đầu bút lông) → cây BÚT truyền thống.',
-      cf:'毛 (máo – "lông")',w:'铅笔 / 毛笔 / 用笔'},
-   ]},
-  {n:5,zh:'班',py:'bān',pos:'Danh từ',vn:'lớp học, lớp', hv: 'ban',em:'🏫',lesson:3,
-   ex_zh:'就是我们班那个女孩。',ex_py:'Jiùshì wǒmen bān nàge nǚhái.',ex_vn:'Chính là cô gái ở lớp chúng mình.',
-   exList:[
-     {zh:'就是我们班那个女孩。',py:'Jiùshì wǒmen bān nàge nǚhái.',vn:'Chính là cô gái ở lớp chúng mình.'},
-     {zh:'我们班有二十个学生。',py:'Wǒmen bān yǒu èrshí ge xuésheng.',vn:'Lớp chúng tôi có 20 học sinh.'},
-     {zh:'他是我的同班同学。',py:'Tā shì wǒ de tóngbān tóngxué.',vn:'Anh ấy là bạn cùng lớp với tôi.'},
-   ],
-   hanzi:[
-     {c:'班',p:'bān',type:'左右结构 · Trái-phải',st:10,ord:'王 (vương) trái → 刂 (đao) giữa → 王 phải',rad:'王 (vương – ngọc)',mean:'lớp, nhóm, ca',
-      tip:'Đã học ở Bài 9 (上班) — hai miếng ngọc bị dao tách ra thành từng NHÓM/LỚP.',
-      cf:'斑 (bān – "vết đốm")',w:'我们班 / 上班 / 班长'},
-   ]},
-  {n:6,zh:'长',py:'zhǎng',pos:'Động từ',vn:'mọc, sinh trưởng, lớn', hv: 'trưởng',em:'👁️',lesson:3,
-   ex_zh:'长着两个大眼睛。',ex_py:'Zhǎngzhe liǎng ge dà yǎnjing.',ex_vn:'Có đôi mắt to (mọc hai con mắt to).',
-   exList:[
-     {zh:'长着两个大眼睛。',py:'Zhǎngzhe liǎng ge dà yǎnjing.',vn:'Có đôi mắt to.'},
-     {zh:'孩子长得很快。',py:'Háizi zhǎng de hěn kuài.',vn:'Đứa trẻ lớn rất nhanh.'},
-     {zh:'树上长了很多叶子。',py:'Shù shang zhǎngle hěn duō yèzi.',vn:'Trên cây mọc rất nhiều lá.'},
-   ],
-   hanzi:[
-     {c:'长',p:'zhǎng / cháng',type:'独体字 · Tượng hình',st:4,ord:'丿→𠃌→一→乚',rad:'长 (trường – tự thành bộ)',mean:'mọc, lớn lên (zhǎng); dài (cháng)',
-      tip:'Đã học ở Bài 4 với âm "cháng" (dài); cùng chữ này đọc "zhǎng" khi nghĩa MỌC, LỚN LÊN, trưởng thành.',
-      cf:'常 (cháng – "thường xuyên")',w:'长着 / 长大 / 校长'},
-   ]},
-  {n:7,zh:'笑',py:'xiào',pos:'Động từ / Tính từ',vn:'cười', hv: 'tiếu',em:'😄',lesson:3,
-   ex_zh:'非常爱笑的女孩。',ex_py:'Fēicháng ài xiào de nǚhái.',ex_vn:'Cô gái rất hay cười.',
-   exList:[
-     {zh:'非常爱笑的女孩。',py:'Fēicháng ài xiào de nǚhái.',vn:'Cô gái rất hay cười.'},
-     {zh:'他笑了。',py:'Tā xiào le.',vn:'Anh ấy đã cười.'},
-     {zh:'别笑我。',py:'Bié xiào wǒ.',vn:'Đừng cười tôi.'},
-   ],
-   hanzi:[
-     {c:'笑',p:'xiào',type:'上下结构 · Trên-dưới',st:10,ord:'⺮(trúc) → 夭 (yêu)',rad:'⺮(trúc – tre)',mean:'cười',
-      tip:'Tre 竹 nghiêng ngả trong gió như dáng người CƯỜI nghiêng ngả.',
-      cf:'笔 (bǐ – "bút")',w:'笑了 / 爱笑 / 微笑'},
-   ]},
-  {n:8,zh:'宾馆',py:'bīnguǎn',pos:'Danh từ',vn:'khách sạn, nhà khách', hv: 'tân quán',em:'🏨',lesson:4,
-   ex_zh:'这离新宾馆远吗？',ex_py:'Zhè lí xīn bīnguǎn yuǎn ma?',ex_vn:'Ở đây cách khách sạn mới có xa không?',
-   exList:[
-     {zh:'这离新宾馆远吗？',py:'Zhè lí xīn bīnguǎn yuǎn ma?',vn:'Ở đây cách khách sạn mới có xa không?'},
-     {zh:'我们住在这家宾馆。',py:'Wǒmen zhù zài zhè jiā bīnguǎn.',vn:'Chúng tôi ở khách sạn này.'},
-     {zh:'这个宾馆很不错。',py:'Zhège bīnguǎn hěn búcuò.',vn:'Khách sạn này khá tốt.'},
-   ],
-   hanzi:[
-     {c:'宾',p:'bīn',type:'上下结构 · Trên-dưới',st:9,ord:'宀 (miên) → 兵 (biến thể)',rad:'宀 (miên – mái nhà)',mean:'khách',
-      tip:'Mái nhà 宀 đón tiếp người từ xa đến → KHÁCH.',
-      cf:'宝 (bǎo – "báu vật")',w:'宾馆 / 来宾'},
-     {c:'馆',p:'guǎn',type:'左右结构 · Trái-phải',st:11,ord:'饣(thực) trái → 官 (quan) phải',rad:'饣(thực – ăn)',mean:'quán, nơi tiếp đón',
-      tip:'Bộ 饣(ăn uống) → nơi cung cấp ăn ở cho khách = QUÁN, KHÁCH SẠN.',
-      cf:'管 (guǎn – "quản lý", bộ 竹")',w:'宾馆 / 图书馆 / 饭馆'},
-   ]},
-  {n:9,zh:'一直',py:'yīzhí',pos:'Phó từ',vn:'đi thẳng, luôn luôn', hv: 'nhất trực',em:'➡️',lesson:4,
-   ex_zh:'从这一直往前走。',ex_py:'Cóng zhè yìzhí wǎng qián zǒu.',ex_vn:'Từ đây đi thẳng về phía trước.',
-   exList:[
-     {zh:'从这一直往前走。',py:'Cóng zhè yìzhí wǎng qián zǒu.',vn:'Từ đây đi thẳng về phía trước.'},
-     {zh:'他一直在等你。',py:'Tā yìzhí zài děng nǐ.',vn:'Anh ấy vẫn luôn đợi bạn.'},
-     {zh:'我一直很喜欢跳舞。',py:'Wǒ yìzhí hěn xǐhuan tiàowǔ.',vn:'Tôi luôn luôn thích múa.'},
-   ],
-   hanzi:[
-     {c:'一',p:'yī',type:'独体字 · Chữ đơn',st:1,ord:'一',rad:'一 (nhất)',mean:'một',
-      tip:'Chữ đơn giản nhất, một nét ngang.',
-      cf:'二 (èr)',w:'一直 / 一下 / 一起'},
-     {c:'直',p:'zhí',type:'独体字 · Chữ đơn',st:8,ord:'十→目→一',rad:'目 (mục – mắt)',mean:'thẳng',
-      tip:'Mắt 目 nhìn theo một đường thẳng không lệch → THẲNG.',
-      cf:'真 (zhēn – "thật")',w:'一直 / 直走 / 直接'},
-   ]},
-  {n:10,zh:'往',py:'wǎng',pos:'Giới từ',vn:'hướng về, về phía', hv: 'vãng',em:'🧭',lesson:4,
-   ex_zh:'往前走。',ex_py:'Wǎng qián zǒu.',ex_vn:'Đi về phía trước.',
-   exList:[
-     {zh:'往前走。',py:'Wǎng qián zǒu.',vn:'Đi về phía trước.'},
-     {zh:'到了路口再往右走。',py:'Dàole lùkǒu zài wǎng yòu zǒu.',vn:'Đến ngã tư thì rẽ phải.'},
-     {zh:'请往这边看。',py:'Qǐng wǎng zhè biān kàn.',vn:'Xin hãy nhìn về phía này.'},
-   ],
-   hanzi:[
-     {c:'往',p:'wǎng',type:'左右结构 · Trái-phải',st:8,ord:'彳(sách) trái → 主 (chủ) phải',rad:'彳(sách – bước ngắn)',mean:'hướng về',
-      tip:'Bộ 彳(đi) + 主 (hướng chính) → bước đi THEO HƯỚNG nhất định.',
-      cf:'住 (zhù – "ở", bộ 亻")',w:'往前 / 往右 / 往那儿'},
-   ]},
-  {n:11,zh:'路口',py:'lùkǒu',pos:'Danh từ',vn:'giao lộ, ngã tư, lối rẽ', hv: 'lộ khẩu',em:'🚦',lesson:4,
-   ex_zh:'到了前面的路口。',ex_py:'Dàole qiánmiàn de lùkǒu.',ex_vn:'Đến ngã tư phía trước.',
-   exList:[
-     {zh:'到了前面的路口。',py:'Dàole qiánmiàn de lùkǒu.',vn:'Đến ngã tư phía trước.'},
-     {zh:'路口有很多车。',py:'Lùkǒu yǒu hěn duō chē.',vn:'Ở ngã tư có rất nhiều xe.'},
-     {zh:'请在路口等我。',py:'Qǐng zài lùkǒu děng wǒ.',vn:'Xin hãy đợi tôi ở ngã tư.'},
-   ],
-   hanzi:[
-     {c:'路',p:'lù',type:'左右结构 · Trái-phải',st:13,ord:'足 (túc) trái → 各 (các) phải',rad:'足 (túc – chân)',mean:'đường, tuyến đường',
-      tip:'Bộ 足 (chân) → nơi bàn chân mỗi người 各 (tự) đi qua = CON ĐƯỜNG.',
-      cf:'露 (lù – "lộ ra", bộ 雨")',w:'路口 / 马路 / 一直走'},
-     {c:'口',p:'kǒu',type:'独体字 · Tượng hình',st:3,ord:'丨→𠃌→一',rad:'口 (khẩu – tự thành bộ)',mean:'miệng; cửa ngõ, lối',
-      tip:'Hình cái miệng cách điệu → nghĩa gốc MIỆNG, mở rộng thành LỐI RA VÀO.',
-      cf:'日 (rì – "mặt trời")',w:'路口 / 门口 / 人口'},
-   ]},
+  {
+    "n": 1,
+    "zh": "着",
+    "py": "zhe",
+    "pos": "Trợ từ động thái",
+    "vn": "đang, duy trì trạng thái",
+    "hv": "trứ",
+    "em": "🔄",
+    "lesson": 1,
+    "ex_zh": "门开着呢。",
+    "ex_py": "Mén kāizhe ne.",
+    "ex_vn": "Cửa đang mở đấy.",
+    "exList": [
+      {
+        "zh": "门开着呢。",
+        "py": "Mén kāizhe ne.",
+        "vn": "Cửa đang mở đấy."
+      },
+      {
+        "zh": "她手里拿着一本书。",
+        "py": "Tā shǒu lǐ názhe yì běn shū.",
+        "vn": "Cô ấy tay đang cầm một quyển sách."
+      },
+      {
+        "zh": "他坐着看电视。",
+        "py": "Tā zuòzhe kàn diànshì.",
+        "vn": "Anh ấy ngồi xem tivi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "着",
+        "p": "zhe / zháo / zhuó",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "羊(biến thể) → 目",
+        "rad": "目 (mục – mắt)",
+        "mean": "đang, duy trì trạng thái",
+        "tip": "Đọc nhẹ \"zhe\" khi đứng sau động từ, biểu thị hành động/trạng thái đang được DUY TRÌ.",
+        "cf": "差 (chà – \"kém, thiếu\")",
+        "w": "开着 / 拿着 / 看着"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "拿着",
+        "py": "ná zhe",
+        "vn": "đang cầm"
+      },
+      {
+        "zh": "开着",
+        "py": "kāi zhe",
+        "vn": "đang mở"
+      },
+      {
+        "zh": "坐着看",
+        "py": "zuò zhe kàn",
+        "vn": "ngồi xem"
+      },
+      {
+        "zh": "穿着白衣服",
+        "py": "chuān zhe bái yīfu",
+        "vn": "đang mặc áo trắng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 着",
+        "m": "Trạng thái đang duy trì: 门开着"
+      },
+      {
+        "s": "着 (trạng thái kéo dài) ≠ 正在 (việc đang diễn ra)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cửa đang mở, bạn vào đi.",
+        "answer": "门开着呢，你进来吧。",
+        "answerPy": "Mén kāizhe ne, nǐ jìnlái ba.",
+        "note": "着 nói trạng thái đang duy trì.",
+        "pair": "V + 着 + 呢"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy vừa ngồi vừa xem tivi.",
+        "answer": "他坐着看电视。",
+        "answerPy": "Tā zuòzhe kàn diànshì.",
+        "note": "Động từ trước mang 着 là tư thế.",
+        "pair": "V着 + V"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "手",
+    "py": "shǒu",
+    "pos": "Danh từ",
+    "vn": "tay, bàn tay",
+    "hv": "thủ",
+    "em": "✋",
+    "lesson": 2,
+    "ex_zh": "手里拿着铅笔。",
+    "ex_py": "Shǒu lǐ názhe qiānbǐ.",
+    "ex_vn": "Tay cầm bút chì.",
+    "exList": [
+      {
+        "zh": "手里拿着铅笔。",
+        "py": "Shǒu lǐ názhe qiānbǐ.",
+        "vn": "Tay cầm bút chì."
+      },
+      {
+        "zh": "请举手。",
+        "py": "Qǐng jǔ shǒu.",
+        "vn": "Xin hãy giơ tay."
+      },
+      {
+        "zh": "吃饭以前要洗手。",
+        "py": "Chīfàn yǐqián yào xǐ shǒu.",
+        "vn": "Trước khi ăn cơm phải rửa tay."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "手",
+        "p": "shǒu",
+        "type": "独体字 · Tượng hình",
+        "st": 4,
+        "ord": "丿→一→𠃌→丿",
+        "rad": "手 (thủ – tự thành bộ)",
+        "mean": "tay",
+        "tip": "Hình bàn tay xoè năm ngón cách điệu → \"TAY\". Đã gặp trong 手机 (Bài 10).",
+        "cf": "毛 (máo – \"lông\")",
+        "w": "手里 / 手机 / 洗手"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "洗手",
+        "py": "xǐ shǒu",
+        "vn": "rửa tay"
+      },
+      {
+        "zh": "手里",
+        "py": "shǒu li",
+        "vn": "trong tay"
+      },
+      {
+        "zh": "手里拿着",
+        "py": "shǒu li ná zhe",
+        "vn": "trong tay cầm"
+      },
+      {
+        "zh": "两只手",
+        "py": "liǎng zhī shǒu",
+        "vn": "hai bàn tay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "手 + 里",
+        "m": "Trong tay: 手里拿着铅笔"
+      },
+      {
+        "s": "手 là chữ tượng hình — vẽ bàn tay năm ngón"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trong tay em trai tôi đang cầm một cây bút chì.",
+        "answer": "我弟弟手里拿着一支铅笔。",
+        "answerPy": "Wǒ dìdi shǒu li názhe yì zhī qiānbǐ.",
+        "note": "Lượng từ của 铅笔 là 支.",
+        "pair": "手里拿着……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trước khi ăn cơm phải rửa tay.",
+        "answer": "吃饭以前要洗手。",
+        "answerPy": "Chīfàn yǐqián yào xǐ shǒu.",
+        "note": "以前 đứng SAU việc, giống 以后.",
+        "pair": "……以前"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "拿",
+    "py": "ná",
+    "pos": "Động từ",
+    "vn": "cầm, nắm, xách",
+    "hv": "nã",
+    "em": "🤲",
+    "lesson": 2,
+    "ex_zh": "那个手里拿着铅笔的呢？",
+    "ex_py": "Nàge shǒu lǐ názhe qiānbǐ de ne?",
+    "ex_vn": "Thế còn người tay cầm bút chì đằng kia thì sao?",
+    "exList": [
+      {
+        "zh": "那个手里拿着铅笔的呢？",
+        "py": "Nàge shǒu lǐ názhe qiānbǐ de ne?",
+        "vn": "Thế còn người tay cầm bút chì đằng kia thì sao?"
+      },
+      {
+        "zh": "请帮我拿一下这本书。",
+        "py": "Qǐng bāng wǒ ná yíxià zhè běn shū.",
+        "vn": "Làm ơn cầm giúp tôi quyển sách này."
+      },
+      {
+        "zh": "他手里拿着手机。",
+        "py": "Tā shǒu lǐ názhe shǒujī.",
+        "vn": "Anh ấy tay đang cầm điện thoại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "拿",
+        "p": "ná",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "合 (hợp) → 手 (thủ)",
+        "rad": "手 (thủ – tay)",
+        "mean": "cầm, nắm",
+        "tip": "合 (khép lại) + 手 (tay) → khép bàn tay lại để CẦM, NẮM đồ vật.",
+        "cf": "合 (hé – \"hợp\", thiếu bộ 手\")",
+        "w": "拿着 / 拿书 / 拿走"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "拿书",
+        "py": "ná shū",
+        "vn": "cầm sách"
+      },
+      {
+        "zh": "拿着铅笔",
+        "py": "ná zhe qiānbǐ",
+        "vn": "cầm bút chì"
+      },
+      {
+        "zh": "帮我拿",
+        "py": "bāng wǒ ná",
+        "vn": "cầm giúp tôi"
+      },
+      {
+        "zh": "拿一下",
+        "py": "ná yíxià",
+        "vn": "cầm một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "拿 + 着 + đồ vật",
+        "m": "Đang cầm cái gì: 手里拿着书"
+      },
+      {
+        "s": "拿 có bộ 手 ở dưới — cầm bằng tay"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn cầm giúp tôi cái điện thoại này một chút.",
+        "answer": "你帮我拿一下这个手机。",
+        "answerPy": "Nǐ bāng wǒ ná yíxià zhège shǒujī.",
+        "note": "拿 có bộ 手 — cầm bằng tay.",
+        "pair": "帮 + người + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Người con gái đang cầm bút chì kia là bạn cùng lớp tôi.",
+        "answer": "那个手里拿着铅笔的女孩子是我同班同学。",
+        "answerPy": "Nàge shǒu li názhe qiānbǐ de nǚ háizi shì wǒ tóngbān tóngxué.",
+        "note": "Cả cụm dài làm định ngữ, kết thúc bằng 的.",
+        "pair": "……的 + N"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "铅笔",
+    "py": "qiānbǐ",
+    "pos": "Danh từ",
+    "vn": "bút chì",
+    "hv": "duyên bút",
+    "em": "✏️",
+    "lesson": 2,
+    "ex_zh": "手里拿着铅笔。",
+    "ex_py": "Shǒu lǐ názhe qiānbǐ.",
+    "ex_vn": "Tay đang cầm bút chì.",
+    "exList": [
+      {
+        "zh": "手里拿着铅笔。",
+        "py": "Shǒu lǐ názhe qiānbǐ.",
+        "vn": "Tay đang cầm bút chì."
+      },
+      {
+        "zh": "请给我一支铅笔。",
+        "py": "Qǐng gěi wǒ yì zhī qiānbǐ.",
+        "vn": "Xin cho tôi một cây bút chì."
+      },
+      {
+        "zh": "这支铅笔是我的。",
+        "py": "Zhè zhī qiānbǐ shì wǒ de.",
+        "vn": "Cây bút chì này là của tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "铅",
+        "p": "qiān",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "钅(kim) trái → 几+口 phải",
+        "rad": "钅(kim – kim loại)",
+        "mean": "chì",
+        "tip": "Bộ 钅(kim loại) → ruột bút làm từ chất liệu như kim loại chì.",
+        "cf": "船 (chuán – \"thuyền\")",
+        "w": "铅笔 / 铅笔盒"
+      },
+      {
+        "c": "笔",
+        "p": "bǐ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "⺮(trúc) → 毛 (mao)",
+        "rad": "⺮(trúc – tre)",
+        "mean": "bút",
+        "tip": "Bộ 竹 (tre, thân bút) + 毛 (lông, đầu bút lông) → cây BÚT truyền thống.",
+        "cf": "毛 (máo – \"lông\")",
+        "w": "铅笔 / 毛笔 / 用笔"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一支铅笔",
+        "py": "yì zhī qiānbǐ",
+        "vn": "một cây bút chì"
+      },
+      {
+        "zh": "用铅笔写",
+        "py": "yòng qiānbǐ xiě",
+        "vn": "viết bằng bút chì"
+      },
+      {
+        "zh": "拿着铅笔",
+        "py": "ná zhe qiānbǐ",
+        "vn": "cầm bút chì"
+      },
+      {
+        "zh": "我的铅笔",
+        "py": "wǒ de qiānbǐ",
+        "vn": "bút chì của tôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 支 + 铅笔",
+        "m": "Lượng từ của 铅笔 là 支"
+      },
+      {
+        "s": "铅 + 笔",
+        "m": "Cây bút (笔) có ruột chì (铅)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cho tôi xin một cây bút chì.",
+        "answer": "请给我一支铅笔。",
+        "answerPy": "Qǐng gěi wǒ yì zhī qiānbǐ.",
+        "note": "给 + người + đồ vật.",
+        "pair": "请 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cây bút chì này rẻ hơn cây kia.",
+        "answer": "这支铅笔比那支便宜。",
+        "answerPy": "Zhè zhī qiānbǐ bǐ nà zhī piányi.",
+        "note": "Sau 比 KHÔNG dùng 很.",
+        "pair": "A 比 B + Adj"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "班",
+    "py": "bān",
+    "pos": "Danh từ",
+    "vn": "lớp học, lớp",
+    "hv": "ban",
+    "em": "🏫",
+    "lesson": 3,
+    "ex_zh": "就是我们班那个女孩。",
+    "ex_py": "Jiùshì wǒmen bān nàge nǚhái.",
+    "ex_vn": "Chính là cô gái ở lớp chúng mình.",
+    "exList": [
+      {
+        "zh": "就是我们班那个女孩。",
+        "py": "Jiùshì wǒmen bān nàge nǚhái.",
+        "vn": "Chính là cô gái ở lớp chúng mình."
+      },
+      {
+        "zh": "我们班有二十个学生。",
+        "py": "Wǒmen bān yǒu èrshí ge xuésheng.",
+        "vn": "Lớp chúng tôi có 20 học sinh."
+      },
+      {
+        "zh": "他是我的同班同学。",
+        "py": "Tā shì wǒ de tóngbān tóngxué.",
+        "vn": "Anh ấy là bạn cùng lớp với tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "班",
+        "p": "bān",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "王 (vương) trái → 刂 (đao) giữa → 王 phải",
+        "rad": "王 (vương – ngọc)",
+        "mean": "lớp, nhóm, ca",
+        "tip": "Đã học ở Bài 9 (上班) — hai miếng ngọc bị dao tách ra thành từng NHÓM/LỚP.",
+        "cf": "斑 (bān – \"vết đốm\")",
+        "w": "我们班 / 上班 / 班长"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我们班",
+        "py": "wǒmen bān",
+        "vn": "lớp chúng tôi"
+      },
+      {
+        "zh": "一个班",
+        "py": "yí gè bān",
+        "vn": "một lớp"
+      },
+      {
+        "zh": "班里",
+        "py": "bān li",
+        "vn": "trong lớp"
+      },
+      {
+        "zh": "同班同学",
+        "py": "tóng bān tóngxué",
+        "vn": "bạn cùng lớp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 班",
+        "m": "Lớp của ai: 我们班"
+      },
+      {
+        "s": "班 (tập thể lớp) ≠ 教室 (căn phòng học)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lớp chúng tôi có hai mươi học sinh.",
+        "answer": "我们班有二十个学生。",
+        "answerPy": "Wǒmen bān yǒu èrshí ge xuésheng.",
+        "note": "班 là tập thể lớp, 教室 là căn phòng.",
+        "pair": "有 + số + M + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy là bạn cùng lớp của tôi, anh ấy họ Vương.",
+        "answer": "他是我的同班同学，他姓王。",
+        "answerPy": "Tā shì wǒ de tóngbān tóngxué, tā xìng Wáng.",
+        "note": "姓 là động từ, không thêm 是.",
+        "pair": "Sub + 姓 + họ"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "长",
+    "py": "zhǎng",
+    "pos": "Động từ",
+    "vn": "mọc, sinh trưởng, lớn",
+    "hv": "trưởng",
+    "em": "👁️",
+    "lesson": 3,
+    "ex_zh": "长着两个大眼睛。",
+    "ex_py": "Zhǎngzhe liǎng ge dà yǎnjing.",
+    "ex_vn": "Có đôi mắt to (mọc hai con mắt to).",
+    "exList": [
+      {
+        "zh": "长着两个大眼睛。",
+        "py": "Zhǎngzhe liǎng ge dà yǎnjing.",
+        "vn": "Có đôi mắt to."
+      },
+      {
+        "zh": "孩子长得很快。",
+        "py": "Háizi zhǎng de hěn kuài.",
+        "vn": "Đứa trẻ lớn rất nhanh."
+      },
+      {
+        "zh": "树上长了很多叶子。",
+        "py": "Shù shang zhǎngle hěn duō yèzi.",
+        "vn": "Trên cây mọc rất nhiều lá."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "长",
+        "p": "zhǎng / cháng",
+        "type": "独体字 · Tượng hình",
+        "st": 4,
+        "ord": "丿→𠃌→一→乚",
+        "rad": "长 (trường – tự thành bộ)",
+        "mean": "mọc, lớn lên (zhǎng); dài (cháng)",
+        "tip": "Đã học ở Bài 4 với âm \"cháng\" (dài); cùng chữ này đọc \"zhǎng\" khi nghĩa MỌC, LỚN LÊN, trưởng thành.",
+        "cf": "常 (cháng – \"thường xuyên\")",
+        "w": "长着 / 长大 / 校长"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "长得很高",
+        "py": "zhǎng de hěn gāo",
+        "vn": "người cao"
+      },
+      {
+        "zh": "长着大眼睛",
+        "py": "zhǎng zhe dà yǎnjing",
+        "vn": "có đôi mắt to"
+      },
+      {
+        "zh": "长大",
+        "py": "zhǎng dà",
+        "vn": "lớn lên"
+      },
+      {
+        "zh": "长得很快",
+        "py": "zhǎng de hěn kuài",
+        "vn": "lớn rất nhanh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "长 + 得 + tính từ",
+        "m": "Trông như thế nào: 她长得很漂亮"
+      },
+      {
+        "s": "长 zhǎng (lớn lên) ≠ 长 cháng (dài) — một chữ, hai âm"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy có đôi mắt to, rất hay cười.",
+        "answer": "她长着两个大眼睛，非常爱笑。",
+        "answerPy": "Tā zhǎngzhe liǎng ge dà yǎnjing, fēicháng ài xiào.",
+        "note": "长 zhǎng ở đây là \"trông có, mọc ra\".",
+        "pair": "长着……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Con của anh trai tôi lớn rất nhanh.",
+        "answer": "我哥哥的孩子长得很快。",
+        "answerPy": "Wǒ gēge de háizi zhǎng de hěn kuài.",
+        "note": "Sau 得 vẫn phải có 很.",
+        "pair": "V + 得 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "笑",
+    "py": "xiào",
+    "pos": "Động từ / Tính từ",
+    "vn": "cười",
+    "hv": "tiếu",
+    "em": "😄",
+    "lesson": 3,
+    "ex_zh": "非常爱笑的女孩。",
+    "ex_py": "Fēicháng ài xiào de nǚhái.",
+    "ex_vn": "Cô gái rất hay cười.",
+    "exList": [
+      {
+        "zh": "非常爱笑的女孩。",
+        "py": "Fēicháng ài xiào de nǚhái.",
+        "vn": "Cô gái rất hay cười."
+      },
+      {
+        "zh": "他笑了。",
+        "py": "Tā xiào le.",
+        "vn": "Anh ấy đã cười."
+      },
+      {
+        "zh": "别笑我。",
+        "py": "Bié xiào wǒ.",
+        "vn": "Đừng cười tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "笑",
+        "p": "xiào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "⺮(trúc) → 夭 (yêu)",
+        "rad": "⺮(trúc – tre)",
+        "mean": "cười",
+        "tip": "Tre 竹 nghiêng ngả trong gió như dáng người CƯỜI nghiêng ngả.",
+        "cf": "笔 (bǐ – \"bút\")",
+        "w": "笑了 / 爱笑 / 微笑"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "爱笑",
+        "py": "ài xiào",
+        "vn": "hay cười"
+      },
+      {
+        "zh": "笑了",
+        "py": "xiào le",
+        "vn": "cười rồi"
+      },
+      {
+        "zh": "笑着说",
+        "py": "xiào zhe shuō",
+        "vn": "vừa cười vừa nói"
+      },
+      {
+        "zh": "笑得很快乐",
+        "py": "xiào de hěn kuàilè",
+        "vn": "cười rất vui"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "笑 + 着 + động từ",
+        "m": "Vừa cười vừa làm gì: 笑着说"
+      },
+      {
+        "s": "爱笑 — hay cười, là nét tính cách"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy vừa cười vừa nói: Chào mừng bạn đến!",
+        "answer": "她笑着说：欢迎你来！",
+        "answerPy": "Tā xiàozhe shuō: Huānyíng nǐ lái!",
+        "note": "笑着说 — vừa cười vừa nói.",
+        "pair": "V着 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bọn trẻ cười rất vui.",
+        "answer": "孩子们笑得很快乐。",
+        "answerPy": "Háizimen xiào de hěn kuàilè.",
+        "note": "得 nối động từ với mức độ.",
+        "pair": "V + 得 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "宾馆",
+    "py": "bīnguǎn",
+    "pos": "Danh từ",
+    "vn": "khách sạn, nhà khách",
+    "hv": "tân quán",
+    "em": "🏨",
+    "lesson": 4,
+    "ex_zh": "这离新宾馆远吗？",
+    "ex_py": "Zhè lí xīn bīnguǎn yuǎn ma?",
+    "ex_vn": "Ở đây cách khách sạn mới có xa không?",
+    "exList": [
+      {
+        "zh": "这离新宾馆远吗？",
+        "py": "Zhè lí xīn bīnguǎn yuǎn ma?",
+        "vn": "Ở đây cách khách sạn mới có xa không?"
+      },
+      {
+        "zh": "我们住在这家宾馆。",
+        "py": "Wǒmen zhù zài zhè jiā bīnguǎn.",
+        "vn": "Chúng tôi ở khách sạn này."
+      },
+      {
+        "zh": "这个宾馆很不错。",
+        "py": "Zhège bīnguǎn hěn búcuò.",
+        "vn": "Khách sạn này khá tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "宾",
+        "p": "bīn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "宀 (miên) → 兵 (biến thể)",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "khách",
+        "tip": "Mái nhà 宀 đón tiếp người từ xa đến → KHÁCH.",
+        "cf": "宝 (bǎo – \"báu vật\")",
+        "w": "宾馆 / 来宾"
+      },
+      {
+        "c": "馆",
+        "p": "guǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "饣(thực) trái → 官 (quan) phải",
+        "rad": "饣(thực – ăn)",
+        "mean": "quán, nơi tiếp đón",
+        "tip": "Bộ 饣(ăn uống) → nơi cung cấp ăn ở cho khách = QUÁN, KHÁCH SẠN.",
+        "cf": "管 (guǎn – \"quản lý\", bộ 竹\")",
+        "w": "宾馆 / 图书馆 / 饭馆"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "住宾馆",
+        "py": "zhù bīnguǎn",
+        "vn": "ở khách sạn"
+      },
+      {
+        "zh": "一个宾馆",
+        "py": "yí gè bīnguǎn",
+        "vn": "một khách sạn"
+      },
+      {
+        "zh": "宾馆的服务员",
+        "py": "bīnguǎn de fúwùyuán",
+        "vn": "nhân viên khách sạn"
+      },
+      {
+        "zh": "到宾馆",
+        "py": "dào bīnguǎn",
+        "vn": "đến khách sạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "住 + 宾馆",
+        "m": "Ở khách sạn"
+      },
+      {
+        "s": "宾 + 馆",
+        "m": "Toà nhà (馆) đón khách (宾)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Khách sạn này cách sân bay rất gần.",
+        "answer": "这个宾馆离机场很近。",
+        "answerPy": "Zhège bīnguǎn lí jīchǎng hěn jìn.",
+        "note": "离 nói khoảng cách giữa hai nơi.",
+        "pair": "A 离 B 很近"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chị tôi ở khách sạn bên phải trường học.",
+        "answer": "我姐姐住学校右边的宾馆。",
+        "answerPy": "Wǒ jiějie zhù xuéxiào yòubian de bīnguǎn.",
+        "note": "右边的 + danh từ — cái ở bên phải.",
+        "pair": "住 + nơi chốn"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "一直",
+    "py": "yīzhí",
+    "pos": "Phó từ",
+    "vn": "đi thẳng, luôn luôn",
+    "hv": "nhất trực",
+    "em": "➡️",
+    "lesson": 4,
+    "ex_zh": "从这一直往前走。",
+    "ex_py": "Cóng zhè yìzhí wǎng qián zǒu.",
+    "ex_vn": "Từ đây đi thẳng về phía trước.",
+    "exList": [
+      {
+        "zh": "从这一直往前走。",
+        "py": "Cóng zhè yìzhí wǎng qián zǒu.",
+        "vn": "Từ đây đi thẳng về phía trước."
+      },
+      {
+        "zh": "他一直在等你。",
+        "py": "Tā yìzhí zài děng nǐ.",
+        "vn": "Anh ấy vẫn luôn đợi bạn."
+      },
+      {
+        "zh": "我一直很喜欢跳舞。",
+        "py": "Wǒ yìzhí hěn xǐhuan tiàowǔ.",
+        "vn": "Tôi luôn luôn thích múa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "一",
+        "p": "yī",
+        "type": "独体字 · Chữ đơn",
+        "st": 1,
+        "ord": "一",
+        "rad": "一 (nhất)",
+        "mean": "một",
+        "tip": "Chữ đơn giản nhất, một nét ngang.",
+        "cf": "二 (èr)",
+        "w": "一直 / 一下 / 一起"
+      },
+      {
+        "c": "直",
+        "p": "zhí",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "十→目→一",
+        "rad": "目 (mục – mắt)",
+        "mean": "thẳng",
+        "tip": "Mắt 目 nhìn theo một đường thẳng không lệch → THẲNG.",
+        "cf": "真 (zhēn – \"thật\")",
+        "w": "一直 / 直走 / 直接"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一直走",
+        "py": "yīzhí zǒu",
+        "vn": "đi thẳng"
+      },
+      {
+        "zh": "一直等",
+        "py": "yīzhí děng",
+        "vn": "chờ mãi"
+      },
+      {
+        "zh": "一直在家",
+        "py": "yīzhí zài jiā",
+        "vn": "luôn ở nhà"
+      },
+      {
+        "zh": "一直往前",
+        "py": "yīzhí wǎng qián",
+        "vn": "thẳng về phía trước"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一直 + động từ",
+        "m": "Đi thẳng, làm mãi: 一直走"
+      },
+      {
+        "s": "一直 vừa nói HƯỚNG (đi thẳng), vừa nói THỜI GIAN (suốt)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn đi thẳng, đến ngã tư thứ nhất là thấy bệnh viện.",
+        "answer": "你一直走，到第一个路口就是医院。",
+        "answerPy": "Nǐ yìzhí zǒu, dào dì-yī ge lùkǒu jiù shì yīyuàn.",
+        "note": "一直走 — đi thẳng, không rẽ.",
+        "pair": "……就是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đợi bạn suốt ở ngoài cửa.",
+        "answer": "我一直在门外等你。",
+        "answerPy": "Wǒ yìzhí zài mén wài děng nǐ.",
+        "note": "一直 vừa nói hướng, vừa nói suốt thời gian.",
+        "pair": "一直 + V"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "往",
+    "py": "wǎng",
+    "pos": "Giới từ",
+    "vn": "hướng về, về phía",
+    "hv": "vãng",
+    "em": "🧭",
+    "lesson": 4,
+    "ex_zh": "往前走。",
+    "ex_py": "Wǎng qián zǒu.",
+    "ex_vn": "Đi về phía trước.",
+    "exList": [
+      {
+        "zh": "往前走。",
+        "py": "Wǎng qián zǒu.",
+        "vn": "Đi về phía trước."
+      },
+      {
+        "zh": "到了路口再往右走。",
+        "py": "Dàole lùkǒu zài wǎng yòu zǒu.",
+        "vn": "Đến ngã tư thì rẽ phải."
+      },
+      {
+        "zh": "请往这边看。",
+        "py": "Qǐng wǎng zhè biān kàn.",
+        "vn": "Xin hãy nhìn về phía này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "往",
+        "p": "wǎng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "彳(sách) trái → 主 (chủ) phải",
+        "rad": "彳(sách – bước ngắn)",
+        "mean": "hướng về",
+        "tip": "Bộ 彳(đi) + 主 (hướng chính) → bước đi THEO HƯỚNG nhất định.",
+        "cf": "住 (zhù – \"ở\", bộ 亻\")",
+        "w": "往前 / 往右 / 往那儿"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "往前走",
+        "py": "wǎng qián zǒu",
+        "vn": "đi về phía trước"
+      },
+      {
+        "zh": "往右",
+        "py": "wǎng yòu",
+        "vn": "sang phải"
+      },
+      {
+        "zh": "往学校走",
+        "py": "wǎng xuéxiào zǒu",
+        "vn": "đi về phía trường"
+      },
+      {
+        "zh": "往那儿",
+        "py": "wǎng nàr",
+        "vn": "về phía kia"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "往 + hướng + 走",
+        "m": "Đi về hướng nào: 往右走"
+      },
+      {
+        "s": "往 (hướng đi) ≠ 到 (đích đến)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn đi thẳng về phía trước, đến ngã tư thì rẽ phải.",
+        "answer": "你一直往前走，到路口往右走。",
+        "answerPy": "Nǐ yìzhí wǎng qián zǒu, dào lùkǒu wǎng yòu zǒu.",
+        "note": "往 nói hướng đi, 到 nói đích đến.",
+        "pair": "往 + hướng + 走"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Khách sạn ở phía kia, bạn đi về phía đó.",
+        "answer": "宾馆在那儿，你往那儿走吧。",
+        "answerPy": "Bīnguǎn zài nàr, nǐ wǎng nàr zǒu ba.",
+        "note": "往那儿走 — đi về phía đó.",
+        "pair": "往 + hướng + 走"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "路口",
+    "py": "lùkǒu",
+    "pos": "Danh từ",
+    "vn": "giao lộ, ngã tư, lối rẽ",
+    "hv": "lộ khẩu",
+    "em": "🚦",
+    "lesson": 4,
+    "ex_zh": "到了前面的路口。",
+    "ex_py": "Dàole qiánmiàn de lùkǒu.",
+    "ex_vn": "Đến ngã tư phía trước.",
+    "exList": [
+      {
+        "zh": "到了前面的路口。",
+        "py": "Dàole qiánmiàn de lùkǒu.",
+        "vn": "Đến ngã tư phía trước."
+      },
+      {
+        "zh": "路口有很多车。",
+        "py": "Lùkǒu yǒu hěn duō chē.",
+        "vn": "Ở ngã tư có rất nhiều xe."
+      },
+      {
+        "zh": "请在路口等我。",
+        "py": "Qǐng zài lùkǒu děng wǒ.",
+        "vn": "Xin hãy đợi tôi ở ngã tư."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "路",
+        "p": "lù",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "足 (túc) trái → 各 (các) phải",
+        "rad": "足 (túc – chân)",
+        "mean": "đường, tuyến đường",
+        "tip": "Bộ 足 (chân) → nơi bàn chân mỗi người 各 (tự) đi qua = CON ĐƯỜNG.",
+        "cf": "露 (lù – \"lộ ra\", bộ 雨\")",
+        "w": "路口 / 马路 / 一直走"
+      },
+      {
+        "c": "口",
+        "p": "kǒu",
+        "type": "独体字 · Tượng hình",
+        "st": 3,
+        "ord": "丨→𠃌→一",
+        "rad": "口 (khẩu – tự thành bộ)",
+        "mean": "miệng; cửa ngõ, lối",
+        "tip": "Hình cái miệng cách điệu → nghĩa gốc MIỆNG, mở rộng thành LỐI RA VÀO.",
+        "cf": "日 (rì – \"mặt trời\")",
+        "w": "路口 / 门口 / 人口"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "第一个路口",
+        "py": "dì yí gè lùkǒu",
+        "vn": "ngã tư thứ nhất"
+      },
+      {
+        "zh": "到路口",
+        "py": "dào lùkǒu",
+        "vn": "đến ngã tư"
+      },
+      {
+        "zh": "路口右边",
+        "py": "lùkǒu yòubian",
+        "vn": "bên phải ngã tư"
+      },
+      {
+        "zh": "在路口等",
+        "py": "zài lùkǒu děng",
+        "vn": "chờ ở ngã tư"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "第 + số + 个 + 路口",
+        "m": "Ngã tư thứ mấy: 第一个路口"
+      },
+      {
+        "s": "路 + 口",
+        "m": "Cái miệng (口) của con đường (路)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đến ngã tư thứ hai bạn rẽ phải.",
+        "answer": "到第二个路口你往右走。",
+        "answerPy": "Dào dì-èr ge lùkǒu nǐ wǎng yòu zǒu.",
+        "note": "第 + số + lượng từ — chỉ thứ tự.",
+        "pair": "第 + số + M"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi chờ bạn ở ngã tư, bạn đến nhanh một chút.",
+        "answer": "我在路口等你，你快一点儿来。",
+        "answerPy": "Wǒ zài lùkǒu děng nǐ, nǐ kuài yìdiǎnr lái.",
+        "note": "Nơi chốn đứng TRƯỚC động từ.",
+        "pair": "在……等"
+      }
+    ]
+  }
 ];
 
 const wuData = [

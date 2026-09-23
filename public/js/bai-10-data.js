@@ -2,129 +2,906 @@
 // DATA — Bài 10: 别找了，手机在桌子上呢
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'课',py:'kè',pos:'Danh từ',vn:'bài học, tiết học, môn học', hv: 'khóa',em:'📖',lesson:1,
-   ex_zh:'我们下课了。',ex_py:'Wǒmen xiàkè le.',ex_vn:'Chúng tôi tan học rồi.',
-   exList:[
-     {zh:'我们下课了。',py:'Wǒmen xiàkè le.',vn:'Chúng tôi tan học rồi. (下课 — tan học)'},
-     {zh:'明天的课是汉语课。',py:'Míngtiān de kè shì Hànyǔ kè.',vn:'Tiết học ngày mai là tiết tiếng Trung. (汉语课 — tiết tiếng Trung)'},
-     {zh:'我上午有汉语课，下午有英语课。',py:'Wǒ shàngwǔ yǒu Hànyǔ kè, xiàwǔ yǒu Yīngyǔ kè.',vn:'Sáng tôi có tiết tiếng Trung, chiều có tiết tiếng Anh. (英语课 — tiết tiếng Anh)'},
-   ],
-   hanzi:[
-     {c:'课',p:'kè',type:'左右结构 · Trái-phải',st:10,ord:'讠(ngôn) trái → 果 (quả) phải',rad:'讠(ngôn – lời nói)',mean:'bài học, môn học',
-      tip:'Bộ 讠(lời nói/giảng dạy) + 果 (kết quả) → lời giảng mang lại KẾT QUẢ học tập = BÀI HỌC.',
-      cf:'棵 (kē – lượng từ cây)',w:'汉语课 / 上课 / 下课'},
-   ]},
-  {n:2,zh:'帮助',py:'bāngzhù',pos:'Động từ / Danh từ',vn:'giúp đỡ, có ích', hv: 'bang trợ',em:'🤝',lesson:1,
-   ex_zh:'他常常帮助同学。',ex_py:'Tā chángcháng bāngzhù tóngxué.',ex_vn:'Anh ấy thường xuyên giúp đỡ bạn học.',
-   exList:[
-     {zh:'他常常帮助同学。',py:'Tā chángcháng bāngzhù tóngxué.',vn:'Anh ấy thường xuyên giúp đỡ bạn học. (帮助 + người)'},
-     {zh:'你能帮助一下大卫吗？',py:'Nǐ néng bāngzhù yíxià Dàwèi ma?',vn:'Bạn có thể giúp David một chút được không? (khẩu ngữ: 帮 + người, ví dụ 帮我一下)'},
-     {zh:'看书对学习有帮助。',py:'Kàn shū duì xuéxí yǒu bāngzhù.',vn:'Đọc sách có ích cho việc học. (cấu trúc: 对…有帮助)'},
-   ],
-   hanzi:[
-     {c:'帮',p:'bāng',type:'上下结构 · Trên-dưới',st:9,ord:'邦 (biến thể) → 巾 (cân)',rad:'巾 (cân – khăn)',mean:'giúp đỡ',
-      tip:'Đã học ở Bài 4 (帮我介绍) — cùng nhau hỗ trợ.',
-      cf:'邦 (bāng – "quốc gia")',w:'帮助 / 帮忙 / 帮我'},
-     {c:'助',p:'zhù',type:'左右结构 · Trái-phải',st:7,ord:'且 (thả) trái → 力 (lực) phải',rad:'力 (lực – sức mạnh)',mean:'trợ giúp',
-      tip:'Bộ 力 (sức lực) → góp thêm sức để TRỢ GIÚP người khác.',
-      cf:'昨 (zuó – khác bộ trái)',w:'帮助 / 助手 / 互助'},
-   ]},
-  {n:3,zh:'别',py:'bié',pos:'Phó từ',vn:'đừng', hv: 'biệt',em:'🚫',lesson:2,
-   ex_zh:'别看电视了。',ex_py:'Bié kàn diànshì le.',ex_vn:'Đừng xem tivi nữa.',
-   exList:[
-     {zh:'别看电视了。',py:'Bié kàn diànshì le.',vn:'Đừng xem tivi nữa. (别 + Động từ + 了)'},
-     {zh:'别看报纸了，医生说你要多休息。',py:'Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi.',vn:'Đừng đọc báo nữa, bác sĩ bảo bạn cần nghỉ ngơi nhiều.'},
-     {zh:'别着急，我们还有时间。',py:'Bié zháojí, wǒmen hái yǒu shíjiān.',vn:'Đừng vội, chúng ta vẫn còn thời gian.'},
-   ],
-   hanzi:[
-     {c:'别',p:'bié',type:'左右结构 · Trái-phải',st:7,ord:'另 (lánh) trái → 刂 (đao) phải',rad:'刂(đao – dao)',mean:'đừng; khác',
-      tip:'Bộ 刂(dao) cắt lìa, tách biệt → dùng để NGĂN CẢN, bảo "đừng" làm nữa.',
-      cf:'列 (liè – "hàng, dãy")',w:'别…了 / 别的 / 特别'},
-   ]},
-  {n:4,zh:'哥哥',py:'gēge',pos:'Danh từ',vn:'anh trai', hv: 'ca ca',em:'👨',lesson:3,
-   ex_zh:'哥哥今天中午回来吃饭。',ex_py:'Gēge jīntiān zhōngwǔ huílái chīfàn.',ex_vn:'Trưa nay anh trai về ăn cơm.',
-   exList:[
-     {zh:'哥哥今天中午回来吃饭。',py:'Gēge jīntiān zhōngwǔ huílái chīfàn.',vn:'Trưa nay anh trai về ăn cơm.'},
-     {zh:'我哥哥在北京工作。',py:'Wǒ gēge zài Běijīng gōngzuò.',vn:'Anh trai tôi làm việc ở Bắc Kinh.'},
-     {zh:'哥哥比我大五岁。',py:'Gēge bǐ wǒ dà wǔ suì.',vn:'Anh trai lớn hơn tôi 5 tuổi.'},
-   ],
-   hanzi:[
-     {c:'哥',p:'gē',type:'上下结构 · Trên-dưới',st:10,ord:'可→可 (hai chữ 可 chồng nhau)',rad:'口 (khẩu – miệng)',mean:'anh trai',
-      tip:'Hai chữ 可 (đồng ý) chồng lên nhau → hình ảnh người anh luôn gật đầu chỉ bảo em.',
-      cf:'歌 (gē – "bài hát")',w:'哥哥 / 大哥'},
-   ]},
-  {n:5,zh:'鸡蛋',py:'jīdàn',pos:'Danh từ',vn:'trứng gà', hv: 'kê đản',em:'🥚',lesson:3,
-   ex_zh:'我今天早上吃了一个鸡蛋。',ex_py:'Wǒ jīntiān zǎoshang chīle yí ge jīdàn.',ex_vn:'Sáng nay tôi đã ăn một quả trứng gà.',
-   exList:[
-     {zh:'我今天早上吃了一个鸡蛋。',py:'Wǒ jīntiān zǎoshang chīle yí ge jīdàn.',vn:'Sáng nay tôi đã ăn một quả trứng gà.'},
-     {zh:'你会做鸡蛋汤吗？',py:'Nǐ huì zuò jīdàn tāng ma?',vn:'Bạn có biết làm canh trứng không? (鸡蛋汤 — canh trứng)'},
-     {zh:'我去超市买了一些鸡蛋。',py:'Wǒ qù chāoshì mǎile yìxiē jīdàn.',vn:'Tôi đã đi siêu thị mua một ít trứng gà.'},
-   ],
-   hanzi:[
-     {c:'鸡',p:'jī',type:'左右结构 · Trái-phải',st:7,ord:'又 (hựu) trái → 鸟 (điểu) phải',rad:'鸟 (điểu – chim)',mean:'gà',
-      tip:'Bộ 鸟 (chim) → gà cũng thuộc họ nhà chim, chỉ là không bay được xa.',
-      cf:'鸭 (yā – "vịt")',w:'鸡蛋 / 鸡肉 / 小鸡'},
-     {c:'蛋',p:'dàn',type:'上下结构 · Trên-dưới',st:11,ord:'疋 (sơ) → 虫 (trùng)',rad:'疋 (sơ)',mean:'trứng',
-      tip:'Hình quả trứng cách điệu bên trên phần thân → nghĩa "TRỨNG" nói chung.',
-      cf:'蜑 (dàn – ít dùng)',w:'鸡蛋 / 鸭蛋'},
-   ]},
-  {n:6,zh:'西瓜',py:'xīguā',pos:'Danh từ',vn:'dưa hấu', hv: 'tây qua',em:'🍉',lesson:3,
-   ex_zh:'我买了一点儿西瓜。',ex_py:'Wǒ mǎile yìdiǎnr xīguā.',ex_vn:'Tôi đã mua một ít dưa hấu.',
-   exList:[
-     {zh:'我买了一点儿西瓜。',py:'Wǒ mǎile yìdiǎnr xīguā.',vn:'Tôi đã mua một ít dưa hấu. (买西瓜 — mua dưa hấu)'},
-     {zh:'西瓜很甜。',py:'Xīguā hěn tián.',vn:'Dưa hấu rất ngọt.'},
-     {zh:'西瓜多少钱？',py:'Xīguā duōshao qián?',vn:'Dưa hấu bao nhiêu tiền?'},
-   ],
-   hanzi:[
-     {c:'西',p:'xī',type:'独体字 · Chữ đơn',st:6,ord:'一→儿→一→凵',rad:'西 (tây – tự thành bộ)',mean:'phía Tây',
-      tip:'Hình cái tổ chim lúc mặt trời lặn về phía Tây → chỉ HƯỚNG TÂY.',
-      cf:'酉 (yǒu – "chi Dậu")',w:'西瓜 / 东西 / 西边'},
-     {c:'瓜',p:'guā',type:'独体字 · Tượng hình',st:5,ord:'丶→ᄼ→㇈→丨',rad:'瓜 (qua – tự thành bộ)',mean:'dưa, bầu bí',
-      tip:'Hình quả dưa lủng lẳng trên dây leo → "DƯA".',
-      cf:'爪 (zhǎo – "móng vuốt")',w:'西瓜 / 木瓜 / 黄瓜'},
-   ]},
-  {n:7,zh:'正在',py:'zhèngzài',pos:'Phó từ',vn:'đang', hv: 'chính tại',em:'⏳',lesson:3,
-   ex_zh:'妈妈正在准备午饭呢。',ex_py:'Māma zhèngzài zhǔnbèi wǔfàn ne.',ex_vn:'Mẹ đang chuẩn bị bữa trưa kìa.',
-   exList:[
-     {zh:'妈妈正在准备午饭呢。',py:'Māma zhèngzài zhǔnbèi wǔfàn ne.',vn:'Mẹ đang chuẩn bị bữa trưa kìa.'},
-     {zh:'他们正在教室里上课。',py:'Tāmen zhèngzài jiàoshì lǐ shàngkè.',vn:'Họ đang học trong lớp học.'},
-     {zh:'正在下大雨，我不能出去。',py:'Zhèngzài xià dàyǔ, wǒ bùnéng chūqù.',vn:'Trời đang mưa to, tôi không thể ra ngoài. (lưu ý: không dùng 正在 với động từ trạng thái như 知道/认识/喜欢/爱)'},
-   ],
-   hanzi:[
-     {c:'正',p:'zhèng',type:'独体字 · Chữ đơn',st:5,ord:'一→丨→一→乛→一',rad:'止 (chỉ)',mean:'đúng, chính',
-      tip:'Một nét ngang (mốc chuẩn) trên chữ 止 (dừng đúng chỗ) → nghĩa "ĐÚNG, CHÍNH".',
-      cf:'政 (zhèng – "chính trị")',w:'正在 / 正好 / 正常'},
-     {c:'在',p:'zài',type:'半包围 · Bán bao',st:6,ord:'土 → 才 bao ngoài',rad:'土 (thổ – đất)',mean:'ở, đang',
-      tip:'Đã học nhiều lần — chỉ vị trí/trạng thái đang diễn ra.',
-      cf:'再 (zài – "lại")',w:'正在 / 在家 / 现在'},
-   ]},
-  {n:8,zh:'手机',py:'shǒujī',pos:'Danh từ',vn:'điện thoại di động', hv: 'thủ cơ',em:'📱',lesson:4,
-   ex_zh:'手机在桌子上呢。',ex_py:'Shǒujī zài zhuōzi shang ne.',ex_vn:'Điện thoại ở trên bàn kìa.',
-   exList:[
-     {zh:'手机在桌子上呢。',py:'Shǒujī zài zhuōzi shang ne.',vn:'Điện thoại ở trên bàn kìa.'},
-     {zh:'我的手机没电了。',py:'Wǒ de shǒujī méi diàn le.',vn:'Điện thoại của tôi hết pin rồi. (没电了 — hết pin rồi)'},
-     {zh:'我的手机快没电了，我要去充电。',py:'Wǒ de shǒujī kuài méi diàn le, wǒ yào qù chōngdiàn.',vn:'Điện thoại của tôi sắp hết pin rồi, tôi phải đi sạc. (充电 — sạc pin)'},
-   ],
-   hanzi:[
-     {c:'手',p:'shǒu',type:'独体字 · Tượng hình',st:4,ord:'丿→一→𠃌→丿',rad:'手 (thủ – tự thành bộ)',mean:'tay',
-      tip:'Hình bàn tay xoè năm ngón cách điệu → "TAY". Sẽ học kỹ hơn ở Bài 13.',
-      cf:'毛 (máo – "lông")',w:'手机 / 手表 / 洗手'},
-     {c:'机',p:'jī',type:'左右结构 · Trái-phải',st:6,ord:'木 (mộc) trái → 几 (kỷ) phải',rad:'木 (mộc – cây/gỗ)',mean:'máy móc',
-      tip:'Bộ 木 (gỗ) — máy móc xưa làm từ khung gỗ → nghĩa mở rộng "MÁY".',
-      cf:'几 (jǐ – "mấy")',w:'手机 / 飞机 / 机场'},
-   ]},
-  {n:9,zh:'洗',py:'xǐ',pos:'Động từ',vn:'rửa, giặt', hv: 'tẩy',em:'🧼',lesson:4,
-   ex_zh:'那件衣服我帮你洗了。',ex_py:'Nà jiàn yīfu wǒ bāng nǐ xǐ le.',ex_vn:'Chiếc áo đó tớ giặt giúp bạn rồi.',
-   exList:[
-     {zh:'那件衣服我帮你洗了。',py:'Nà jiàn yīfu wǒ bāng nǐ xǐ le.',vn:'Chiếc áo đó tớ giặt giúp bạn rồi.'},
-     {zh:'我每天都洗衣服。',py:'Wǒ měitiān dōu xǐ yīfu.',vn:'Ngày nào tôi cũng giặt quần áo. (洗衣服 — giặt quần áo)'},
-     {zh:'你能帮我洗一下这些碗吗？',py:'Nǐ néng bāng wǒ xǐ yíxià zhèxiē wǎn ma?',vn:'Bạn có thể giúp tôi rửa mấy cái bát này một chút không?'},
-   ],
-   hanzi:[
-     {c:'洗',p:'xǐ',type:'左右结构 · Trái-phải',st:9,ord:'氵(thủy) trái → 先 (tiên) phải',rad:'氵(thủy – nước)',mean:'rửa, giặt',
-      tip:'Bộ 氵(nước) → dùng nước để RỬA SẠCH đồ vật/quần áo.',
-      cf:'先 (xiān – "trước", thiếu bộ 氵)',w:'洗手 / 洗衣服 / 洗澡'},
-   ]},
+  {
+    "n": 1,
+    "zh": "课",
+    "py": "kè",
+    "pos": "Danh từ",
+    "vn": "bài học, tiết học, môn học",
+    "hv": "khóa",
+    "em": "📖",
+    "lesson": 1,
+    "ex_zh": "我们下课了。",
+    "ex_py": "Wǒmen xiàkè le.",
+    "ex_vn": "Chúng tôi tan học rồi.",
+    "exList": [
+      {
+        "zh": "我们下课了。",
+        "py": "Wǒmen xiàkè le.",
+        "vn": "Chúng tôi tan học rồi. (下课 — tan học)"
+      },
+      {
+        "zh": "明天的课是汉语课。",
+        "py": "Míngtiān de kè shì Hànyǔ kè.",
+        "vn": "Tiết học ngày mai là tiết tiếng Trung. (汉语课 — tiết tiếng Trung)"
+      },
+      {
+        "zh": "我上午有汉语课，下午有英语课。",
+        "py": "Wǒ shàngwǔ yǒu Hànyǔ kè, xiàwǔ yǒu Yīngyǔ kè.",
+        "vn": "Sáng tôi có tiết tiếng Trung, chiều có tiết tiếng Anh. (英语课 — tiết tiếng Anh)"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "课",
+        "p": "kè",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "讠(ngôn) trái → 果 (quả) phải",
+        "rad": "讠(ngôn – lời nói)",
+        "mean": "bài học, môn học",
+        "tip": "Bộ 讠(lời nói/giảng dạy) + 果 (kết quả) → lời giảng mang lại KẾT QUẢ học tập = BÀI HỌC.",
+        "cf": "棵 (kē – lượng từ cây)",
+        "w": "汉语课 / 上课 / 下课"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "上课",
+        "py": "shàngkè",
+        "vn": "lên lớp"
+      },
+      {
+        "zh": "下课",
+        "py": "xiàkè",
+        "vn": "tan học"
+      },
+      {
+        "zh": "汉语课",
+        "py": "Hànyǔ kè",
+        "vn": "tiết tiếng Trung"
+      },
+      {
+        "zh": "上汉语课",
+        "py": "shàng Hànyǔ kè",
+        "vn": "học tiết tiếng Trung"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "上 / 下 + 课",
+        "m": "Vào học và tan học"
+      },
+      {
+        "s": "课 có bộ 讠 (lời nói) — lớp học là nơi nói và nghe"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tám giờ vào học, mười một giờ tan học.",
+        "answer": "八点上课，十一点下课。",
+        "answerPy": "Bā diǎn shàngkè, shíyī diǎn xiàkè.",
+        "note": "上课 ↔ 下课 — vào học và tan học.",
+        "pair": "……点"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay có tiết tiếng Trung, tôi không được đến muộn.",
+        "answer": "今天有汉语课，我不可以来晚。",
+        "answerPy": "Jīntiān yǒu Hànyǔ kè, wǒ bù kěyǐ lái wǎn.",
+        "note": "不可以 — không được phép.",
+        "pair": "不可以 + V"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "帮助",
+    "py": "bāngzhù",
+    "pos": "Động từ / Danh từ",
+    "vn": "giúp đỡ, có ích",
+    "hv": "bang trợ",
+    "em": "🤝",
+    "lesson": 1,
+    "ex_zh": "他常常帮助同学。",
+    "ex_py": "Tā chángcháng bāngzhù tóngxué.",
+    "ex_vn": "Anh ấy thường xuyên giúp đỡ bạn học.",
+    "exList": [
+      {
+        "zh": "他常常帮助同学。",
+        "py": "Tā chángcháng bāngzhù tóngxué.",
+        "vn": "Anh ấy thường xuyên giúp đỡ bạn học. (帮助 + người)"
+      },
+      {
+        "zh": "你能帮助一下大卫吗？",
+        "py": "Nǐ néng bāngzhù yíxià Dàwèi ma?",
+        "vn": "Bạn có thể giúp David một chút được không? (khẩu ngữ: 帮 + người, ví dụ 帮我一下)"
+      },
+      {
+        "zh": "看书对学习有帮助。",
+        "py": "Kàn shū duì xuéxí yǒu bāngzhù.",
+        "vn": "Đọc sách có ích cho việc học. (cấu trúc: 对…有帮助)"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "帮",
+        "p": "bāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "邦 (biến thể) → 巾 (cân)",
+        "rad": "巾 (cân – khăn)",
+        "mean": "giúp đỡ",
+        "tip": "Đã học ở Bài 4 (帮我介绍) — cùng nhau hỗ trợ.",
+        "cf": "邦 (bāng – \"quốc gia\")",
+        "w": "帮助 / 帮忙 / 帮我"
+      },
+      {
+        "c": "助",
+        "p": "zhù",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "且 (thả) trái → 力 (lực) phải",
+        "rad": "力 (lực – sức mạnh)",
+        "mean": "trợ giúp",
+        "tip": "Bộ 力 (sức lực) → góp thêm sức để TRỢ GIÚP người khác.",
+        "cf": "昨 (zuó – khác bộ trái)",
+        "w": "帮助 / 助手 / 互助"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "帮助我",
+        "py": "bāngzhù wǒ",
+        "vn": "giúp đỡ tôi"
+      },
+      {
+        "zh": "帮助同学",
+        "py": "bāngzhù tóngxué",
+        "vn": "giúp bạn học"
+      },
+      {
+        "zh": "帮助哥哥",
+        "py": "bāngzhù gēge",
+        "vn": "giúp đỡ anh trai"
+      },
+      {
+        "zh": "谢谢你的帮助",
+        "py": "xièxie nǐ de bāngzhù",
+        "vn": "cảm ơn sự giúp đỡ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "帮助 + người",
+        "m": "Giúp đỡ ai: 老师帮助我们"
+      },
+      {
+        "s": "帮助 (trang trọng hơn) và 帮 (khẩu ngữ): 帮我看一下"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn sự giúp đỡ của thầy.",
+        "answer": "谢谢老师的帮助。",
+        "answerPy": "Xièxie lǎoshī de bāngzhù.",
+        "note": "帮助 trang trọng hơn 帮.",
+        "pair": "……的帮助"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi thường giúp đỡ tôi học tiếng Trung.",
+        "answer": "我哥哥经常帮助我学习汉语。",
+        "answerPy": "Wǒ gēge jīngcháng bāngzhù wǒ xuéxí Hànyǔ.",
+        "note": "经常 đứng TRƯỚC động từ.",
+        "pair": "帮助 + người + V"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "别",
+    "py": "bié",
+    "pos": "Phó từ",
+    "vn": "đừng",
+    "hv": "biệt",
+    "em": "🚫",
+    "lesson": 2,
+    "ex_zh": "别看电视了。",
+    "ex_py": "Bié kàn diànshì le.",
+    "ex_vn": "Đừng xem tivi nữa.",
+    "exList": [
+      {
+        "zh": "别看电视了。",
+        "py": "Bié kàn diànshì le.",
+        "vn": "Đừng xem tivi nữa. (别 + Động từ + 了)"
+      },
+      {
+        "zh": "别看报纸了，医生说你要多休息。",
+        "py": "Bié kàn bàozhǐ le, yīshēng shuō nǐ yào duō xiūxi.",
+        "vn": "Đừng đọc báo nữa, bác sĩ bảo bạn cần nghỉ ngơi nhiều."
+      },
+      {
+        "zh": "别着急，我们还有时间。",
+        "py": "Bié zháojí, wǒmen hái yǒu shíjiān.",
+        "vn": "Đừng vội, chúng ta vẫn còn thời gian."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "别",
+        "p": "bié",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "另 (lánh) trái → 刂 (đao) phải",
+        "rad": "刂(đao – dao)",
+        "mean": "đừng; khác",
+        "tip": "Bộ 刂(dao) cắt lìa, tách biệt → dùng để NGĂN CẢN, bảo \"đừng\" làm nữa.",
+        "cf": "列 (liè – \"hàng, dãy\")",
+        "w": "别…了 / 别的 / 特别"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "别走",
+        "py": "bié zǒu",
+        "vn": "đừng đi"
+      },
+      {
+        "zh": "别看电视",
+        "py": "bié kàn diànshì",
+        "vn": "đừng xem tivi"
+      },
+      {
+        "zh": "别问",
+        "py": "bié wèn",
+        "vn": "đừng hỏi"
+      },
+      {
+        "zh": "别太累",
+        "py": "bié tài lèi",
+        "vn": "đừng quá mệt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "别 + động từ",
+        "m": "Đừng làm gì: 别走"
+      },
+      {
+        "s": "别 (đừng) dùng khi khuyên; 不 chỉ là phủ định"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đã muộn rồi, đừng xem tivi nữa.",
+        "answer": "很晚了，别看电视了。",
+        "answerPy": "Hěn wǎn le, bié kàn diànshì le.",
+        "note": "别 dùng khi khuyên ai đừng làm gì.",
+        "pair": "别……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn ốm rồi, đừng đi làm, ở nhà nghỉ đi.",
+        "answer": "你生病了，别去上班，在家休息吧。",
+        "answerPy": "Nǐ shēngbìng le, bié qù shàngbān, zài jiā xiūxi ba.",
+        "note": "别 + động từ — đừng làm gì.",
+        "pair": "别 + V"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "哥哥",
+    "py": "gēge",
+    "pos": "Danh từ",
+    "vn": "anh trai",
+    "hv": "ca ca",
+    "em": "👨",
+    "lesson": 3,
+    "ex_zh": "哥哥今天中午回来吃饭。",
+    "ex_py": "Gēge jīntiān zhōngwǔ huílái chīfàn.",
+    "ex_vn": "Trưa nay anh trai về ăn cơm.",
+    "exList": [
+      {
+        "zh": "哥哥今天中午回来吃饭。",
+        "py": "Gēge jīntiān zhōngwǔ huílái chīfàn.",
+        "vn": "Trưa nay anh trai về ăn cơm."
+      },
+      {
+        "zh": "我哥哥在北京工作。",
+        "py": "Wǒ gēge zài Běijīng gōngzuò.",
+        "vn": "Anh trai tôi làm việc ở Bắc Kinh."
+      },
+      {
+        "zh": "哥哥比我大五岁。",
+        "py": "Gēge bǐ wǒ dà wǔ suì.",
+        "vn": "Anh trai lớn hơn tôi 5 tuổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "哥",
+        "p": "gē",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "可→可 (hai chữ 可 chồng nhau)",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "anh trai",
+        "tip": "Hai chữ 可 (đồng ý) chồng lên nhau → hình ảnh người anh luôn gật đầu chỉ bảo em.",
+        "cf": "歌 (gē – \"bài hát\")",
+        "w": "哥哥 / 大哥"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我哥哥",
+        "py": "wǒ gēge",
+        "vn": "anh trai tôi"
+      },
+      {
+        "zh": "哥哥的手机",
+        "py": "gēge de shǒujī",
+        "vn": "điện thoại của anh"
+      },
+      {
+        "zh": "两个哥哥",
+        "py": "liǎng gè gēge",
+        "vn": "hai người anh"
+      },
+      {
+        "zh": "哥哥上班",
+        "py": "gēge shàngbān",
+        "vn": "anh đi làm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "ai + 哥哥",
+        "m": "Anh của ai — người thân hay bỏ 的"
+      },
+      {
+        "s": "哥哥 (anh) · 姐姐 (chị) — đều nói hai lần"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi làm việc ở một công ty rất xa.",
+        "answer": "我哥哥在一个很远的公司上班。",
+        "answerPy": "Wǒ gēge zài yí ge hěn yuǎn de gōngsī shàngbān.",
+        "note": "Nơi chốn đứng TRƯỚC động từ.",
+        "pair": "在……上班"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Điện thoại của anh tôi màu đen.",
+        "answer": "我哥哥的手机是黑的。",
+        "answerPy": "Wǒ gēge de shǒujī shì hēi de.",
+        "note": "……的 cuối câu thay cho danh từ đã biết.",
+        "pair": "是……的"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "鸡蛋",
+    "py": "jīdàn",
+    "pos": "Danh từ",
+    "vn": "trứng gà",
+    "hv": "kê đản",
+    "em": "🥚",
+    "lesson": 3,
+    "ex_zh": "我今天早上吃了一个鸡蛋。",
+    "ex_py": "Wǒ jīntiān zǎoshang chīle yí ge jīdàn.",
+    "ex_vn": "Sáng nay tôi đã ăn một quả trứng gà.",
+    "exList": [
+      {
+        "zh": "我今天早上吃了一个鸡蛋。",
+        "py": "Wǒ jīntiān zǎoshang chīle yí ge jīdàn.",
+        "vn": "Sáng nay tôi đã ăn một quả trứng gà."
+      },
+      {
+        "zh": "你会做鸡蛋汤吗？",
+        "py": "Nǐ huì zuò jīdàn tāng ma?",
+        "vn": "Bạn có biết làm canh trứng không? (鸡蛋汤 — canh trứng)"
+      },
+      {
+        "zh": "我去超市买了一些鸡蛋。",
+        "py": "Wǒ qù chāoshì mǎile yìxiē jīdàn.",
+        "vn": "Tôi đã đi siêu thị mua một ít trứng gà."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "鸡",
+        "p": "jī",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "又 (hựu) trái → 鸟 (điểu) phải",
+        "rad": "鸟 (điểu – chim)",
+        "mean": "gà",
+        "tip": "Bộ 鸟 (chim) → gà cũng thuộc họ nhà chim, chỉ là không bay được xa.",
+        "cf": "鸭 (yā – \"vịt\")",
+        "w": "鸡蛋 / 鸡肉 / 小鸡"
+      },
+      {
+        "c": "蛋",
+        "p": "dàn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "疋 (sơ) → 虫 (trùng)",
+        "rad": "疋 (sơ)",
+        "mean": "trứng",
+        "tip": "Hình quả trứng cách điệu bên trên phần thân → nghĩa \"TRỨNG\" nói chung.",
+        "cf": "蜑 (dàn – ít dùng)",
+        "w": "鸡蛋 / 鸭蛋"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "吃鸡蛋",
+        "py": "chī jīdàn",
+        "vn": "ăn trứng"
+      },
+      {
+        "zh": "买鸡蛋",
+        "py": "mǎi jīdàn",
+        "vn": "mua trứng"
+      },
+      {
+        "zh": "一个鸡蛋",
+        "py": "yí gè jīdàn",
+        "vn": "một quả trứng"
+      },
+      {
+        "zh": "鸡蛋面条",
+        "py": "jīdàn miàntiáo",
+        "vn": "mì trứng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "吃 / 买 + 鸡蛋",
+        "m": "Ăn trứng, mua trứng"
+      },
+      {
+        "s": "鸡 + 蛋",
+        "m": "Quả trứng (蛋) của con gà (鸡)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sáng nào tôi cũng ăn một quả trứng.",
+        "answer": "我每天早上都吃一个鸡蛋。",
+        "answerPy": "Wǒ měi tiān zǎoshang dōu chī yí ge jīdàn.",
+        "note": "每 đi với 都 thành một cặp.",
+        "pair": "每……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn mua giúp tôi hai cân trứng nhé.",
+        "answer": "你帮我买两公斤鸡蛋吧。",
+        "answerPy": "Nǐ bāng wǒ mǎi liǎng gōngjīn jīdàn ba.",
+        "note": "公斤 đứng giữa số và danh từ.",
+        "pair": "帮 + người + V"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "西瓜",
+    "py": "xīguā",
+    "pos": "Danh từ",
+    "vn": "dưa hấu",
+    "hv": "tây qua",
+    "em": "🍉",
+    "lesson": 3,
+    "ex_zh": "我买了一点儿西瓜。",
+    "ex_py": "Wǒ mǎile yìdiǎnr xīguā.",
+    "ex_vn": "Tôi đã mua một ít dưa hấu.",
+    "exList": [
+      {
+        "zh": "我买了一点儿西瓜。",
+        "py": "Wǒ mǎile yìdiǎnr xīguā.",
+        "vn": "Tôi đã mua một ít dưa hấu. (买西瓜 — mua dưa hấu)"
+      },
+      {
+        "zh": "西瓜很甜。",
+        "py": "Xīguā hěn tián.",
+        "vn": "Dưa hấu rất ngọt."
+      },
+      {
+        "zh": "西瓜多少钱？",
+        "py": "Xīguā duōshao qián?",
+        "vn": "Dưa hấu bao nhiêu tiền?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "西",
+        "p": "xī",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "一→儿→一→凵",
+        "rad": "西 (tây – tự thành bộ)",
+        "mean": "phía Tây",
+        "tip": "Hình cái tổ chim lúc mặt trời lặn về phía Tây → chỉ HƯỚNG TÂY.",
+        "cf": "酉 (yǒu – \"chi Dậu\")",
+        "w": "西瓜 / 东西 / 西边"
+      },
+      {
+        "c": "瓜",
+        "p": "guā",
+        "type": "独体字 · Tượng hình",
+        "st": 5,
+        "ord": "丶→ᄼ→㇈→丨",
+        "rad": "瓜 (qua – tự thành bộ)",
+        "mean": "dưa, bầu bí",
+        "tip": "Hình quả dưa lủng lẳng trên dây leo → \"DƯA\".",
+        "cf": "爪 (zhǎo – \"móng vuốt\")",
+        "w": "西瓜 / 木瓜 / 黄瓜"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "吃西瓜",
+        "py": "chī xīguā",
+        "vn": "ăn dưa hấu"
+      },
+      {
+        "zh": "买西瓜",
+        "py": "mǎi xīguā",
+        "vn": "mua dưa hấu"
+      },
+      {
+        "zh": "一个西瓜",
+        "py": "yí gè xīguā",
+        "vn": "một quả dưa hấu"
+      },
+      {
+        "zh": "西瓜很好吃",
+        "py": "xīguā hěn hǎochī",
+        "vn": "dưa hấu rất ngon"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "吃 + 西瓜",
+        "m": "Ăn dưa hấu"
+      },
+      {
+        "s": "西 + 瓜",
+        "m": "Quả dưa (瓜) đến từ phía tây (西)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dưa hấu ở đây rất ngon mà lại không đắt.",
+        "answer": "这儿的西瓜很好吃，也不贵。",
+        "answerPy": "Zhèr de xīguā hěn hǎochī, yě bú guì.",
+        "note": "也 đứng TRƯỚC tính từ.",
+        "pair": "也 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trời nóng quá, chúng ta ăn dưa hấu đi.",
+        "answer": "天太热了，我们吃西瓜吧。",
+        "answerPy": "Tiān tài rè le, wǒmen chī xīguā ba.",
+        "note": "太……了 phải đủ hai vế.",
+        "pair": "太……了"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "正在",
+    "py": "zhèngzài",
+    "pos": "Phó từ",
+    "vn": "đang",
+    "hv": "chính tại",
+    "em": "⏳",
+    "lesson": 3,
+    "ex_zh": "妈妈正在准备午饭呢。",
+    "ex_py": "Māma zhèngzài zhǔnbèi wǔfàn ne.",
+    "ex_vn": "Mẹ đang chuẩn bị bữa trưa kìa.",
+    "exList": [
+      {
+        "zh": "妈妈正在准备午饭呢。",
+        "py": "Māma zhèngzài zhǔnbèi wǔfàn ne.",
+        "vn": "Mẹ đang chuẩn bị bữa trưa kìa."
+      },
+      {
+        "zh": "他们正在教室里上课。",
+        "py": "Tāmen zhèngzài jiàoshì lǐ shàngkè.",
+        "vn": "Họ đang học trong lớp học."
+      },
+      {
+        "zh": "正在下大雨，我不能出去。",
+        "py": "Zhèngzài xià dàyǔ, wǒ bùnéng chūqù.",
+        "vn": "Trời đang mưa to, tôi không thể ra ngoài. (lưu ý: không dùng 正在 với động từ trạng thái như 知道/认识/喜欢/爱)"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "正",
+        "p": "zhèng",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "一→丨→一→乛→一",
+        "rad": "止 (chỉ)",
+        "mean": "đúng, chính",
+        "tip": "Một nét ngang (mốc chuẩn) trên chữ 止 (dừng đúng chỗ) → nghĩa \"ĐÚNG, CHÍNH\".",
+        "cf": "政 (zhèng – \"chính trị\")",
+        "w": "正在 / 正好 / 正常"
+      },
+      {
+        "c": "在",
+        "p": "zài",
+        "type": "半包围 · Bán bao",
+        "st": 6,
+        "ord": "土 → 才 bao ngoài",
+        "rad": "土 (thổ – đất)",
+        "mean": "ở, đang",
+        "tip": "Đã học nhiều lần — chỉ vị trí/trạng thái đang diễn ra.",
+        "cf": "再 (zài – \"lại\")",
+        "w": "正在 / 在家 / 现在"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "正在上课",
+        "py": "zhèngzài shàngkè",
+        "vn": "đang trong giờ học"
+      },
+      {
+        "zh": "正在吃饭",
+        "py": "zhèngzài chī fàn",
+        "vn": "đang ăn cơm"
+      },
+      {
+        "zh": "正在工作",
+        "py": "zhèngzài gōngzuò",
+        "vn": "đang làm việc"
+      },
+      {
+        "zh": "正在洗",
+        "py": "zhèngzài xǐ",
+        "vn": "đang rửa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "正在 + động từ",
+        "m": "Đang làm gì: 他正在上课"
+      },
+      {
+        "s": "正在 (ngay lúc này) mạnh hơn 在; cuối câu hay thêm 呢"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy đang trong giờ dạy, bạn chờ một chút nhé.",
+        "answer": "老师正在上课，你等一下吧。",
+        "answerPy": "Lǎoshī zhèngzài shàngkè, nǐ děng yíxià ba.",
+        "note": "正在 — ngay lúc này đang làm.",
+        "pair": "正在 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi đang giặt quần áo.",
+        "answer": "我哥哥正在洗衣服呢。",
+        "answerPy": "Wǒ gēge zhèngzài xǐ yīfu ne.",
+        "note": "正在 đầu câu, 呢 cuối câu.",
+        "pair": "正在……呢"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "手机",
+    "py": "shǒujī",
+    "pos": "Danh từ",
+    "vn": "điện thoại di động",
+    "hv": "thủ cơ",
+    "em": "📱",
+    "lesson": 4,
+    "ex_zh": "手机在桌子上呢。",
+    "ex_py": "Shǒujī zài zhuōzi shang ne.",
+    "ex_vn": "Điện thoại ở trên bàn kìa.",
+    "exList": [
+      {
+        "zh": "手机在桌子上呢。",
+        "py": "Shǒujī zài zhuōzi shang ne.",
+        "vn": "Điện thoại ở trên bàn kìa."
+      },
+      {
+        "zh": "我的手机没电了。",
+        "py": "Wǒ de shǒujī méi diàn le.",
+        "vn": "Điện thoại của tôi hết pin rồi. (没电了 — hết pin rồi)"
+      },
+      {
+        "zh": "我的手机快没电了，我要去充电。",
+        "py": "Wǒ de shǒujī kuài méi diàn le, wǒ yào qù chōngdiàn.",
+        "vn": "Điện thoại của tôi sắp hết pin rồi, tôi phải đi sạc. (充电 — sạc pin)"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "手",
+        "p": "shǒu",
+        "type": "独体字 · Tượng hình",
+        "st": 4,
+        "ord": "丿→一→𠃌→丿",
+        "rad": "手 (thủ – tự thành bộ)",
+        "mean": "tay",
+        "tip": "Hình bàn tay xoè năm ngón cách điệu → \"TAY\". Sẽ học kỹ hơn ở Bài 13.",
+        "cf": "毛 (máo – \"lông\")",
+        "w": "手机 / 手表 / 洗手"
+      },
+      {
+        "c": "机",
+        "p": "jī",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "木 (mộc) trái → 几 (kỷ) phải",
+        "rad": "木 (mộc – cây/gỗ)",
+        "mean": "máy móc",
+        "tip": "Bộ 木 (gỗ) — máy móc xưa làm từ khung gỗ → nghĩa mở rộng \"MÁY\".",
+        "cf": "几 (jǐ – \"mấy\")",
+        "w": "手机 / 飞机 / 机场"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我的手机",
+        "py": "wǒ de shǒujī",
+        "vn": "điện thoại của tôi"
+      },
+      {
+        "zh": "买手机",
+        "py": "mǎi shǒujī",
+        "vn": "mua điện thoại"
+      },
+      {
+        "zh": "新手机",
+        "py": "xīn shǒujī",
+        "vn": "điện thoại mới"
+      },
+      {
+        "zh": "手机在哪儿",
+        "py": "shǒujī zài nǎr",
+        "vn": "điện thoại ở đâu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 个 + 手机",
+        "m": "Lượng từ của 手机 là 个"
+      },
+      {
+        "s": "手 + 机",
+        "m": "Cái máy (机) cầm trên tay (手)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Điện thoại của tôi đâu rồi? Tôi chưa tìm thấy.",
+        "answer": "我的手机在哪儿？我没找到。",
+        "answerPy": "Wǒ de shǒujī zài nǎr? Wǒ méi zhǎodào.",
+        "note": "Câu có 哪儿 thì không thêm 吗.",
+        "pair": "在哪儿？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái điện thoại mới này đắt quá, tôi không mua.",
+        "answer": "这个新手机太贵了，我不买。",
+        "answerPy": "Zhège xīn shǒujī tài guì le, wǒ bù mǎi.",
+        "note": "太……了 nói mức độ vượt quá.",
+        "pair": "太……了"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "洗",
+    "py": "xǐ",
+    "pos": "Động từ",
+    "vn": "rửa, giặt",
+    "hv": "tẩy",
+    "em": "🧼",
+    "lesson": 4,
+    "ex_zh": "那件衣服我帮你洗了。",
+    "ex_py": "Nà jiàn yīfu wǒ bāng nǐ xǐ le.",
+    "ex_vn": "Chiếc áo đó tớ giặt giúp bạn rồi.",
+    "exList": [
+      {
+        "zh": "那件衣服我帮你洗了。",
+        "py": "Nà jiàn yīfu wǒ bāng nǐ xǐ le.",
+        "vn": "Chiếc áo đó tớ giặt giúp bạn rồi."
+      },
+      {
+        "zh": "我每天都洗衣服。",
+        "py": "Wǒ měitiān dōu xǐ yīfu.",
+        "vn": "Ngày nào tôi cũng giặt quần áo. (洗衣服 — giặt quần áo)"
+      },
+      {
+        "zh": "你能帮我洗一下这些碗吗？",
+        "py": "Nǐ néng bāng wǒ xǐ yíxià zhèxiē wǎn ma?",
+        "vn": "Bạn có thể giúp tôi rửa mấy cái bát này một chút không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "洗",
+        "p": "xǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "氵(thủy) trái → 先 (tiên) phải",
+        "rad": "氵(thủy – nước)",
+        "mean": "rửa, giặt",
+        "tip": "Bộ 氵(nước) → dùng nước để RỬA SẠCH đồ vật/quần áo.",
+        "cf": "先 (xiān – \"trước\", thiếu bộ 氵)",
+        "w": "洗手 / 洗衣服 / 洗澡"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "洗手",
+        "py": "xǐ shǒu",
+        "vn": "rửa tay"
+      },
+      {
+        "zh": "洗衣服",
+        "py": "xǐ yīfu",
+        "vn": "giặt quần áo"
+      },
+      {
+        "zh": "洗西瓜",
+        "py": "xǐ xīguā",
+        "vn": "rửa dưa hấu"
+      },
+      {
+        "zh": "洗完了",
+        "py": "xǐ wán le",
+        "vn": "rửa xong rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "洗 + đồ vật",
+        "m": "Rửa, giặt cái gì: 洗衣服"
+      },
+      {
+        "s": "洗 có bộ 氵 (nước) — việc gì cũng cần nước"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mẹ đang rửa dưa hấu.",
+        "answer": "妈妈正在洗西瓜呢。",
+        "answerPy": "Māma zhèngzài xǐ xīguā ne.",
+        "note": "洗 có bộ 氵 — việc gì cũng cần nước.",
+        "pair": "正在……呢"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi giặt xong quần áo rồi mới đi ngủ.",
+        "answer": "我洗完衣服就去睡觉。",
+        "answerPy": "Wǒ xǐwán yīfu jiù qù shuìjiào.",
+        "note": "完 đứng SAU động từ, nói việc đã hết.",
+        "pair": "V完……就……"
+      }
+    ]
+  }
 ];
 
 const wuData = [

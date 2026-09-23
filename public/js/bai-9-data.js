@@ -2,153 +2,1089 @@
 // DATA — Bài 9: 题太多，我没做完
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'错',py:'cuò',pos:'Tính từ',vn:'sai, nhầm', hv: 'thác',em:'❌',lesson:1,
-   ex_zh:'你打错了。',ex_py:'Nǐ dǎ cuò le.',ex_vn:'Bạn gọi nhầm số rồi.',
-   exList:[
-     {zh:'你打错了。',py:'Nǐ dǎ cuò le.',vn:'Bạn gọi nhầm số rồi.'},
-     {zh:'对不起，我说错了。',py:'Duìbuqǐ, wǒ shuō cuò le.',vn:'Xin lỗi, tôi nói sai rồi.'},
-     {zh:'这个字你写错了。',py:'Zhège zì nǐ xiě cuò le.',vn:'Chữ này bạn viết sai rồi.'},
-   ],
-   hanzi:[
-     {c:'错',p:'cuò',type:'左右结构 · Trái-phải',st:13,ord:'钅(kim) trái → 昔 (tích) phải',rad:'钅(kim – kim loại)',mean:'sai, nhầm',
-      tip:'Đã gặp trong 不错 (Bài 5) — 钅 xưa liên quan tới việc mài giũa, sai lệch trong chế tác kim loại.',
-      cf:'措 (cuò – "biện pháp")',w:'打错 / 不错 / 错了'},
-   ]},
-  {n:2,zh:'从',py:'cóng',pos:'Giới từ',vn:'từ (mốc thời gian, địa điểm)', hv: 'tòng',em:'🚩',lesson:2,
-   ex_zh:'从什么时候开始？',ex_py:'Cóng shénme shíhou kāishǐ?',ex_vn:'Bắt đầu từ khi nào?',
-   exList:[
-     {zh:'从什么时候开始？',py:'Cóng shénme shíhou kāishǐ?',vn:'Bắt đầu từ khi nào?'},
-     {zh:'我从北京来。',py:'Wǒ cóng Běijīng lái.',vn:'Tôi đến từ Bắc Kinh.'},
-     {zh:'从这儿到学校很近。',py:'Cóng zhèr dào xuéxiào hěn jìn.',vn:'Từ đây đến trường rất gần.'},
-   ],
-   hanzi:[
-     {c:'从',p:'cóng',type:'独体字 · Chữ đơn',st:4,ord:'人→人 (hai người nối tiếp)',rad:'人 (nhân – người)',mean:'từ, theo',
-      tip:'Hình hai người nối đuôi nhau đi cùng hướng → nghĩa "ĐI THEO, xuất phát TỪ".',
-      cf:'丛 (cóng – "bụi cây", thêm nét dưới)',w:'从…开始 / 从来 / 自从'},
-   ]},
-  {n:3,zh:'跳舞',py:'tiàowǔ',pos:'Động từ',vn:'nhảy múa, khiêu vũ', hv: 'khiêu vũ',em:'💃',lesson:2,
-   ex_zh:'我第一次跳舞是在七岁的时候。',ex_py:'Wǒ dì yī cì tiàowǔ shì zài qī suì de shíhou.',ex_vn:'Lần đầu tiên tôi múa là lúc 7 tuổi.',
-   exList:[
-     {zh:'我第一次跳舞是在七岁的时候。',py:'Wǒ dì yī cì tiàowǔ shì zài qī suì de shíhou.',vn:'Lần đầu tiên tôi múa là lúc 7 tuổi.'},
-     {zh:'她跳舞跳得很好。',py:'Tā tiàowǔ tiào de hěn hǎo.',vn:'Cô ấy múa rất đẹp.'},
-     {zh:'晚上我们去跳舞吧。',py:'Wǎnshang wǒmen qù tiàowǔ ba.',vn:'Tối nay chúng ta đi khiêu vũ đi.'},
-   ],
-   hanzi:[
-     {c:'跳',p:'tiào',type:'左右结构 · Trái-phải',st:13,ord:'足 (túc) trái → 兆 (triệu) phải',rad:'足 (túc – chân)',mean:'nhảy',
-      tip:'Bộ 足 (chân, đã gặp ở 跑 Bài 2) → dùng chân bật lên = NHẢY.',
-      cf:'桃 (táo – "quả đào", bộ 木)',w:'跳舞 / 跳高 / 心跳'},
-     {c:'舞',p:'wǔ',type:'独体字 · Chữ đơn',st:14,ord:'一→一→夕→丨丨丨→一→丿→丨→一',rad:'舛 (suyễn)',mean:'múa',
-      tip:'Hình người dang tay múa với dải lụa cách điệu → "MÚA".',
-      cf:'午 (wǔ – "buổi trưa", ít nét hơn)',w:'跳舞 / 舞蹈'},
-   ]},
-  {n:4,zh:'第一',py:'dì-yī',pos:'Số từ',vn:'đầu tiên, thứ nhất', hv: 'đệ nhất',em:'🥇',lesson:2,
-   ex_zh:'这是他的第一个工作。',ex_py:'Zhè shì tā de dì yī ge gōngzuò.',ex_vn:'Đây là công việc đầu tiên của cậu ấy.',
-   exList:[
-     {zh:'这是他的第一个工作。',py:'Zhè shì tā de dì yī ge gōngzuò.',vn:'Đây là công việc đầu tiên của cậu ấy.'},
-     {zh:'这是我第一次来中国。',py:'Zhè shì wǒ dì yī cì lái Zhōngguó.',vn:'Đây là lần đầu tiên tôi đến Trung Quốc.'},
-     {zh:'他考了第一名。',py:'Tā kǎole dì yī míng.',vn:'Cậu ấy thi được hạng nhất.'},
-   ],
-   hanzi:[
-     {c:'第',p:'dì',type:'上下结构 · Trên-dưới',st:11,ord:'⺮ (trúc) → 弟 (đệ)',rad:'⺮ (trúc – tre)',mean:'thứ (số thứ tự)',
-      tip:'Xưa khắc thứ tự lên thẻ tre 竹 → 第 + số = biểu thị THỨ TỰ.',
-      cf:'弟 (dì – "em trai", thiếu bộ 竹)',w:'第一 / 第二 / 第几'},
-   ]},
-  {n:5,zh:'希望',py:'xīwàng',pos:'Động từ',vn:'hy vọng', hv: 'hi vọng',em:'🌠',lesson:3,
-   ex_zh:'希望他能喜欢。',ex_py:'Xīwàng tā néng xǐhuan.',ex_vn:'Hy vọng cậu ấy sẽ thích nó.',
-   exList:[
-     {zh:'希望他能喜欢。',py:'Xīwàng tā néng xǐhuan.',vn:'Hy vọng cậu ấy sẽ thích nó.'},
-     {zh:'我希望明天天气好。',py:'Wǒ xīwàng míngtiān tiānqì hǎo.',vn:'Tôi hy vọng ngày mai thời tiết đẹp.'},
-     {zh:'希望你早点儿回来。',py:'Xīwàng nǐ zǎodiǎnr huílái.',vn:'Hy vọng bạn về sớm một chút.'},
-   ],
-   hanzi:[
-     {c:'希',p:'xī',type:'上下结构 · Trên-dưới',st:7,ord:'㐅→巾',rad:'巾 (cân – khăn)',mean:'mong, hiếm',
-      tip:'Nghĩa gốc liên quan tới sự "hiếm, ít gặp" → mong muốn điều hiếm có = HY VỌNG.',
-      cf:'稀 (xī – "hiếm", thêm bộ 禾)',w:'希望 / 希奇'},
-     {c:'望',p:'wàng',type:'上下结构 · Trên-dưới',st:11,ord:'亡→月→王',rad:'月 (nguyệt – mặt trăng)',mean:'trông mong, nhìn xa',
-      tip:'Người đứng nhìn 月 (trăng) từ xa → ánh mắt TRÔNG MONG, hy vọng.',
-      cf:'忘 (wàng – "quên", bộ 心)',w:'希望 / 看望 / 望远镜'},
-   ]},
-  {n:6,zh:'问题',py:'wèntí',pos:'Danh từ',vn:'câu hỏi, vấn đề', hv: 'vấn đề',em:'❓',lesson:3,
-   ex_zh:'没问题！',ex_py:'Méi wèntí!',ex_vn:'Không thành vấn đề!',
-   exList:[
-     {zh:'没问题！',py:'Méi wèntí!',vn:'Không thành vấn đề!'},
-     {zh:'我有一个问题想问你。',py:'Wǒ yǒu yí ge wèntí xiǎng wèn nǐ.',vn:'Tôi có một câu hỏi muốn hỏi bạn.'},
-     {zh:'这是一个大问题。',py:'Zhè shì yí ge dà wèntí.',vn:'Đây là một vấn đề lớn.'},
-   ],
-   hanzi:[
-     {c:'问',p:'wèn',type:'半包围 · Bán bao (门)',st:6,ord:'门 (môn) bao ngoài → 口 (khẩu) bên trong',rad:'门 (môn – cửa)',mean:'hỏi',
-      tip:'Đã học ở Bài 4 — miệng 口 đứng ở cửa 门 cất tiếng HỎI.',
-      cf:'间 (jiān)',w:'问题 / 问一下 / 请问'},
-     {c:'题',p:'tí',type:'左右结构 · Trái-phải',st:15,ord:'是 (thị) trái → 页 (hiệt) phải',rad:'页 (hiệt – đầu, trang)',mean:'đề bài, chủ đề',
-      tip:'Bộ 页 (trang giấy/tiêu đề) → phần đầu trang nêu ra ĐỀ BÀI, chủ đề.',
-      cf:'提 (tí – "đề xuất", bộ 扌)',w:'问题 / 题目 / 考题'},
-   ]},
-  {n:7,zh:'欢迎',py:'huānyíng',pos:'Động từ',vn:'chào mừng, hoan nghênh', hv: 'hoan nghênh',em:'🎉',lesson:3,
-   ex_zh:'非常欢迎。',ex_py:'Fēicháng huānyíng.',ex_vn:'Vô cùng hoan nghênh.',
-   exList:[
-     {zh:'非常欢迎。',py:'Fēicháng huānyíng.',vn:'Vô cùng hoan nghênh.'},
-     {zh:'欢迎来中国！',py:'Huānyíng lái Zhōngguó!',vn:'Chào mừng đến Trung Quốc!'},
-     {zh:'我们都很欢迎他。',py:'Wǒmen dōu hěn huānyíng tā.',vn:'Chúng tôi đều rất hoan nghênh anh ấy.'},
-   ],
-   hanzi:[
-     {c:'欢',p:'huān',type:'左右结构 · Trái-phải',st:6,ord:'又 (hựu) trái → 欠 (khiếm) phải',rad:'又 (hựu)',mean:'vui mừng',
-      tip:'Nghĩa liên quan tới cảm xúc VUI MỪNG, phấn khởi khi gặp gỡ.',
-      cf:'次 (cì – "lần", bộ khác trái)',w:'欢迎 / 喜欢 / 欢乐'},
-     {c:'迎',p:'yíng',type:'半包围 · Bán bao (辶)',st:7,ord:'卬 → 辶 (viết sau cùng)',rad:'辶 (sước – đi)',mean:'đón, nghênh',
-      tip:'Bộ 辶 (đi) → ra tận nơi để ĐÓN CHÀO ai đó.',
-      cf:'仰 (yǎng – "ngửa lên")',w:'欢迎 / 迎接'},
-   ]},
-  {n:8,zh:'上班',py:'shàngbān',pos:'Động từ',vn:'đi làm, vào ca', hv: 'thượng ban',em:'💼',lesson:3,
-   ex_zh:'他从下个星期一开始上班。',ex_py:'Tā cóng xià ge xīngqīyī kāishǐ shàngbān.',ex_vn:'Cậu ấy bắt đầu đi làm từ thứ Hai tuần sau.',
-   exList:[
-     {zh:'他从下个星期一开始上班。',py:'Tā cóng xià ge xīngqīyī kāishǐ shàngbān.',vn:'Cậu ấy bắt đầu đi làm từ thứ Hai tuần sau.'},
-     {zh:'我每天九点上班。',py:'Wǒ měitiān jiǔ diǎn shàngbān.',vn:'Mỗi ngày tôi đi làm lúc 9 giờ.'},
-     {zh:'爸爸已经去上班了。',py:'Bàba yǐjīng qù shàngbān le.',vn:'Bố đã đi làm rồi.'},
-   ],
-   hanzi:[
-     {c:'上',p:'shàng',type:'独体字 · Chữ đơn',st:3,ord:'一→丨→一',rad:'一 (nhất)',mean:'trên, lên',
-      tip:'Đã học ở Bài 3/4 (早上, 晚上) — nét ngắn trên nét ngang dài = hướng lên.',
-      cf:'下 (xià)',w:'上班 / 上课 / 早上'},
-     {c:'班',p:'bān',type:'左右结构 · Trái-phải',st:10,ord:'王 (vương) trái → 刂 (đao) giữa → 王 phải',rad:'王 (vương – ngọc)',mean:'ca làm, nhóm, lớp',
-      tip:'Hai miếng ngọc 王 được tách ra bởi dao 刂 → phân chia thành từng NHÓM/CA làm việc.',
-      cf:'斑 (bān – "vết đốm")',w:'上班 / 班长 / 一班'},
-   ]},
-  {n:9,zh:'懂',py:'dǒng',pos:'Động từ',vn:'hiểu', hv: 'đổng',em:'💡',lesson:4,
-   ex_zh:'你听懂了吗？',ex_py:'Nǐ tīng dǒng le ma?',ex_vn:'Bạn nghe có hiểu không?',
-   exList:[
-     {zh:'你听懂了吗？',py:'Nǐ tīng dǒng le ma?',vn:'Bạn nghe có hiểu không?'},
-     {zh:'我看懂了这本书。',py:'Wǒ kàn dǒngle zhè běn shū.',vn:'Tôi đọc hiểu quyển sách này rồi.'},
-     {zh:'这个问题我不懂。',py:'Zhège wèntí wǒ bù dǒng.',vn:'Vấn đề này tôi không hiểu.'},
-   ],
-   hanzi:[
-     {c:'懂',p:'dǒng',type:'左右结构 · Trái-phải',st:15,ord:'忄(tâm) trái → 董 (đổng) phải',rad:'忄(tâm – trái tim)',mean:'hiểu',
-      tip:'Bộ 忄(tâm/trí) → dùng đầu óc nắm rõ được ý nghĩa = HIỂU.',
-      cf:'董 (dǒng – "giám sát", thiếu bộ 忄)',w:'听懂 / 看懂 / 不懂'},
-   ]},
-  {n:10,zh:'完',py:'wán',pos:'Động từ',vn:'xong, hết', hv: 'hoàn',em:'✅',lesson:4,
-   ex_zh:'题太多，我没做完。',ex_py:'Tí tài duō, wǒ méi zuò wán.',ex_vn:'Đề nhiều quá, tôi làm chưa xong.',
-   exList:[
-     {zh:'题太多，我没做完。',py:'Tí tài duō, wǒ méi zuò wán.',vn:'Đề nhiều quá, tôi làm chưa xong.'},
-     {zh:'我吃完饭了。',py:'Wǒ chī wán fàn le.',vn:'Tôi ăn xong cơm rồi.'},
-     {zh:'电影已经完了。',py:'Diànyǐng yǐjīng wán le.',vn:'Bộ phim đã kết thúc rồi.'},
-   ],
-   hanzi:[
-     {c:'完',p:'wán',type:'上下结构 · Trên-dưới',st:7,ord:'宀 (miên) → 元 (nguyên)',rad:'宀 (miên – mái nhà)',mean:'hoàn thành, hết',
-      tip:'Mái nhà 宀 che kín trọn vẹn 元 (đầu tiên/vẹn toàn) → mọi thứ đã trọn vẹn = XONG, HẾT.',
-      cf:'院 (yuàn – đã học ở Bài 2, khác bộ)',w:'做完 / 吃完 / 用完'},
-   ]},
-  {n:11,zh:'题',py:'tí',pos:'Danh từ',vn:'câu hỏi, đề bài', hv: 'đề',em:'📄',lesson:4,
-   ex_zh:'昨天的考试题很难。',ex_py:'Zuótiān de kǎoshì tí hěn nán.',ex_vn:'Đề thi hôm qua rất khó.',
-   exList:[
-     {zh:'昨天的考试题很难。',py:'Zuótiān de kǎoshì tí hěn nán.',vn:'Đề thi hôm qua rất khó.'},
-     {zh:'这道题我不会。',py:'Zhè dào tí wǒ bú huì.',vn:'Câu hỏi này tôi không biết làm.'},
-     {zh:'今天的题太多了。',py:'Jīntiān de tí tài duō le.',vn:'Đề bài hôm nay nhiều quá.'},
-   ],
-   hanzi:[
-     {c:'题',p:'tí',type:'左右结构 · Trái-phải',st:15,ord:'是 (thị) trái → 页 (hiệt) phải',rad:'页 (hiệt – đầu, trang)',mean:'đề bài, câu hỏi',
-      tip:'Ôn lại: 页 (trang) → phần nêu ra ĐỀ/CÂU HỎI cần trả lời.',
-      cf:'提 (tí – "đề xuất")',w:'问题 / 考题 / 题目'},
-   ]},
+  {
+    "n": 1,
+    "zh": "错",
+    "py": "cuò",
+    "pos": "Tính từ",
+    "vn": "sai, nhầm",
+    "hv": "thác",
+    "em": "❌",
+    "lesson": 1,
+    "ex_zh": "你打错了。",
+    "ex_py": "Nǐ dǎ cuò le.",
+    "ex_vn": "Bạn gọi nhầm số rồi.",
+    "exList": [
+      {
+        "zh": "你打错了。",
+        "py": "Nǐ dǎ cuò le.",
+        "vn": "Bạn gọi nhầm số rồi."
+      },
+      {
+        "zh": "对不起，我说错了。",
+        "py": "Duìbuqǐ, wǒ shuō cuò le.",
+        "vn": "Xin lỗi, tôi nói sai rồi."
+      },
+      {
+        "zh": "这个字你写错了。",
+        "py": "Zhège zì nǐ xiě cuò le.",
+        "vn": "Chữ này bạn viết sai rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "错",
+        "p": "cuò",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "钅(kim) trái → 昔 (tích) phải",
+        "rad": "钅(kim – kim loại)",
+        "mean": "sai, nhầm",
+        "tip": "Đã gặp trong 不错 (Bài 5) — 钅 xưa liên quan tới việc mài giũa, sai lệch trong chế tác kim loại.",
+        "cf": "措 (cuò – \"biện pháp\")",
+        "w": "打错 / 不错 / 错了"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "错了",
+        "py": "cuò le",
+        "vn": "sai rồi"
+      },
+      {
+        "zh": "写错了",
+        "py": "xiě cuò le",
+        "vn": "viết sai rồi"
+      },
+      {
+        "zh": "说错",
+        "py": "shuō cuò",
+        "vn": "nói sai"
+      },
+      {
+        "zh": "不错",
+        "py": "búcuò",
+        "vn": "khá tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 错 + 了",
+        "m": "Làm sai rồi: 我写错了"
+      },
+      {
+        "s": "错 (sai) nhưng 不错 lại là KHEN — chú ý đừng nhầm"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chữ này tôi viết sai rồi.",
+        "answer": "这个字我写错了。",
+        "answerPy": "Zhège zì wǒ xiěcuò le.",
+        "note": "错 đứng SAU động từ, nói kết quả.",
+        "pair": "V + 错了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Xin lỗi, tôi nói sai rồi.",
+        "answer": "对不起，我说错了。",
+        "answerPy": "Duìbuqǐ, wǒ shuōcuò le.",
+        "note": "错 (sai) nhưng 不错 lại là lời khen.",
+        "pair": "V + 错了"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "从",
+    "py": "cóng",
+    "pos": "Giới từ",
+    "vn": "từ (mốc thời gian, địa điểm)",
+    "hv": "tòng",
+    "em": "🚩",
+    "lesson": 2,
+    "ex_zh": "从什么时候开始？",
+    "ex_py": "Cóng shénme shíhou kāishǐ?",
+    "ex_vn": "Bắt đầu từ khi nào?",
+    "exList": [
+      {
+        "zh": "从什么时候开始？",
+        "py": "Cóng shénme shíhou kāishǐ?",
+        "vn": "Bắt đầu từ khi nào?"
+      },
+      {
+        "zh": "我从北京来。",
+        "py": "Wǒ cóng Běijīng lái.",
+        "vn": "Tôi đến từ Bắc Kinh."
+      },
+      {
+        "zh": "从这儿到学校很近。",
+        "py": "Cóng zhèr dào xuéxiào hěn jìn.",
+        "vn": "Từ đây đến trường rất gần."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "从",
+        "p": "cóng",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "人→人 (hai người nối tiếp)",
+        "rad": "人 (nhân – người)",
+        "mean": "từ, theo",
+        "tip": "Hình hai người nối đuôi nhau đi cùng hướng → nghĩa \"ĐI THEO, xuất phát TỪ\".",
+        "cf": "丛 (cóng – \"bụi cây\", thêm nét dưới)",
+        "w": "从…开始 / 从来 / 自从"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "从这儿",
+        "py": "cóng zhèr",
+        "vn": "từ đây"
+      },
+      {
+        "zh": "从家到公司",
+        "py": "cóng jiā dào gōngsī",
+        "vn": "từ nhà đến công ty"
+      },
+      {
+        "zh": "从八点",
+        "py": "cóng bā diǎn",
+        "vn": "từ tám giờ"
+      },
+      {
+        "zh": "从学校来",
+        "py": "cóng xuéxiào lái",
+        "vn": "từ trường đến"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "从 + A + 到 + B",
+        "m": "Từ A đến B: 从家到公司"
+      },
+      {
+        "s": "从 nói ĐIỂM XUẤT PHÁT; 离 nói KHOẢNG CÁCH"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Từ nhà tôi đến công ty mất nửa tiếng.",
+        "answer": "从我家到公司要半个小时。",
+        "answerPy": "Cóng wǒ jiā dào gōngsī yào bàn ge xiǎoshí.",
+        "note": "从 nói điểm xuất phát, 到 nói điểm đến.",
+        "pair": "从……到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hàng ngày tôi làm việc từ tám giờ đến năm giờ.",
+        "answer": "我每天从八点到五点上班。",
+        "answerPy": "Wǒ měi tiān cóng bā diǎn dào wǔ diǎn shàngbān.",
+        "note": "从……到…… dùng được cho cả thời gian và nơi chốn.",
+        "pair": "从……到……"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "跳舞",
+    "py": "tiàowǔ",
+    "pos": "Động từ",
+    "vn": "nhảy múa, khiêu vũ",
+    "hv": "khiêu vũ",
+    "em": "💃",
+    "lesson": 2,
+    "ex_zh": "我第一次跳舞是在七岁的时候。",
+    "ex_py": "Wǒ dì yī cì tiàowǔ shì zài qī suì de shíhou.",
+    "ex_vn": "Lần đầu tiên tôi múa là lúc 7 tuổi.",
+    "exList": [
+      {
+        "zh": "我第一次跳舞是在七岁的时候。",
+        "py": "Wǒ dì yī cì tiàowǔ shì zài qī suì de shíhou.",
+        "vn": "Lần đầu tiên tôi múa là lúc 7 tuổi."
+      },
+      {
+        "zh": "她跳舞跳得很好。",
+        "py": "Tā tiàowǔ tiào de hěn hǎo.",
+        "vn": "Cô ấy múa rất đẹp."
+      },
+      {
+        "zh": "晚上我们去跳舞吧。",
+        "py": "Wǎnshang wǒmen qù tiàowǔ ba.",
+        "vn": "Tối nay chúng ta đi khiêu vũ đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "跳",
+        "p": "tiào",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "足 (túc) trái → 兆 (triệu) phải",
+        "rad": "足 (túc – chân)",
+        "mean": "nhảy",
+        "tip": "Bộ 足 (chân, đã gặp ở 跑 Bài 2) → dùng chân bật lên = NHẢY.",
+        "cf": "桃 (táo – \"quả đào\", bộ 木)",
+        "w": "跳舞 / 跳高 / 心跳"
+      },
+      {
+        "c": "舞",
+        "p": "wǔ",
+        "type": "独体字 · Chữ đơn",
+        "st": 14,
+        "ord": "一→一→夕→丨丨丨→一→丿→丨→一",
+        "rad": "舛 (suyễn)",
+        "mean": "múa",
+        "tip": "Hình người dang tay múa với dải lụa cách điệu → \"MÚA\".",
+        "cf": "午 (wǔ – \"buổi trưa\", ít nét hơn)",
+        "w": "跳舞 / 舞蹈"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去跳舞",
+        "py": "qù tiàowǔ",
+        "vn": "đi khiêu vũ"
+      },
+      {
+        "zh": "喜欢跳舞",
+        "py": "xǐhuan tiàowǔ",
+        "vn": "thích múa"
+      },
+      {
+        "zh": "会跳舞",
+        "py": "huì tiàowǔ",
+        "vn": "biết múa"
+      },
+      {
+        "zh": "一起跳舞",
+        "py": "yìqǐ tiàowǔ",
+        "vn": "cùng nhau múa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "会 + 跳舞",
+        "m": "Biết múa — 会 là kỹ năng học được"
+      },
+      {
+        "s": "跳舞 là từ ly hợp: 跳了一个小时舞"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chị tôi biết múa, tôi không biết múa.",
+        "answer": "我姐姐会跳舞，我不会跳舞。",
+        "answerPy": "Wǒ jiějie huì tiàowǔ, wǒ bú huì tiàowǔ.",
+        "note": "跳舞 là từ ly hợp.",
+        "pair": "会 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tối nay chúng ta cùng đi khiêu vũ nhé.",
+        "answer": "今天晚上我们一起去跳舞吧。",
+        "answerPy": "Jīntiān wǎnshang wǒmen yìqǐ qù tiàowǔ ba.",
+        "note": "吧 dùng khi rủ rê.",
+        "pair": "一起 + V"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "第一",
+    "py": "dì-yī",
+    "pos": "Số từ",
+    "vn": "đầu tiên, thứ nhất",
+    "hv": "đệ nhất",
+    "em": "🥇",
+    "lesson": 2,
+    "ex_zh": "这是他的第一个工作。",
+    "ex_py": "Zhè shì tā de dì yī ge gōngzuò.",
+    "ex_vn": "Đây là công việc đầu tiên của cậu ấy.",
+    "exList": [
+      {
+        "zh": "这是他的第一个工作。",
+        "py": "Zhè shì tā de dì yī ge gōngzuò.",
+        "vn": "Đây là công việc đầu tiên của cậu ấy."
+      },
+      {
+        "zh": "这是我第一次来中国。",
+        "py": "Zhè shì wǒ dì yī cì lái Zhōngguó.",
+        "vn": "Đây là lần đầu tiên tôi đến Trung Quốc."
+      },
+      {
+        "zh": "他考了第一名。",
+        "py": "Tā kǎole dì yī míng.",
+        "vn": "Cậu ấy thi được hạng nhất."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "第",
+        "p": "dì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "⺮ (trúc) → 弟 (đệ)",
+        "rad": "⺮ (trúc – tre)",
+        "mean": "thứ (số thứ tự)",
+        "tip": "Xưa khắc thứ tự lên thẻ tre 竹 → 第 + số = biểu thị THỨ TỰ.",
+        "cf": "弟 (dì – \"em trai\", thiếu bộ 竹)",
+        "w": "第一 / 第二 / 第几"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "第一个",
+        "py": "dì yí gè",
+        "vn": "cái thứ nhất"
+      },
+      {
+        "zh": "第一天",
+        "py": "dì yì tiān",
+        "vn": "ngày đầu tiên"
+      },
+      {
+        "zh": "第一个问题",
+        "py": "dì yí gè wèntí",
+        "vn": "câu hỏi thứ nhất"
+      },
+      {
+        "zh": "第一题",
+        "py": "dì yì tí",
+        "vn": "câu thứ nhất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "第 + số + lượng từ",
+        "m": "Thứ tự: 第一个 · 第二天"
+      },
+      {
+        "s": "第一 (thứ nhất) ≠ 一个 (một cái) — 第 là chữ chỉ thứ tự"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay là ngày đầu tiên tôi đi làm.",
+        "answer": "今天是我上班的第一天。",
+        "answerPy": "Jīntiān shì wǒ shàngbān de dì-yī tiān.",
+        "note": "第 + số + lượng từ — chỉ thứ tự.",
+        "pair": "是……的"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Câu thứ nhất tôi làm sai rồi.",
+        "answer": "第一题我做错了。",
+        "answerPy": "Dì-yī tí wǒ zuòcuò le.",
+        "note": "第一题 — câu thứ nhất trong bài.",
+        "pair": "V + 错了"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "希望",
+    "py": "xīwàng",
+    "pos": "Động từ",
+    "vn": "hy vọng",
+    "hv": "hi vọng",
+    "em": "🌠",
+    "lesson": 3,
+    "ex_zh": "希望他能喜欢。",
+    "ex_py": "Xīwàng tā néng xǐhuan.",
+    "ex_vn": "Hy vọng cậu ấy sẽ thích nó.",
+    "exList": [
+      {
+        "zh": "希望他能喜欢。",
+        "py": "Xīwàng tā néng xǐhuan.",
+        "vn": "Hy vọng cậu ấy sẽ thích nó."
+      },
+      {
+        "zh": "我希望明天天气好。",
+        "py": "Wǒ xīwàng míngtiān tiānqì hǎo.",
+        "vn": "Tôi hy vọng ngày mai thời tiết đẹp."
+      },
+      {
+        "zh": "希望你早点儿回来。",
+        "py": "Xīwàng nǐ zǎodiǎnr huílái.",
+        "vn": "Hy vọng bạn về sớm một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "希",
+        "p": "xī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "㐅→巾",
+        "rad": "巾 (cân – khăn)",
+        "mean": "mong, hiếm",
+        "tip": "Nghĩa gốc liên quan tới sự \"hiếm, ít gặp\" → mong muốn điều hiếm có = HY VỌNG.",
+        "cf": "稀 (xī – \"hiếm\", thêm bộ 禾)",
+        "w": "希望 / 希奇"
+      },
+      {
+        "c": "望",
+        "p": "wàng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "亡→月→王",
+        "rad": "月 (nguyệt – mặt trăng)",
+        "mean": "trông mong, nhìn xa",
+        "tip": "Người đứng nhìn 月 (trăng) từ xa → ánh mắt TRÔNG MONG, hy vọng.",
+        "cf": "忘 (wàng – \"quên\", bộ 心)",
+        "w": "希望 / 看望 / 望远镜"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "希望你来",
+        "py": "xīwàng nǐ lái",
+        "vn": "mong bạn đến"
+      },
+      {
+        "zh": "希望好",
+        "py": "xīwàng hǎo",
+        "vn": "mong tốt"
+      },
+      {
+        "zh": "我希望",
+        "py": "wǒ xīwàng",
+        "vn": "tôi mong"
+      },
+      {
+        "zh": "希望明天",
+        "py": "xīwàng míngtiān",
+        "vn": "mong ngày mai"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "希望 + một câu",
+        "m": "Mong điều gì: 我希望你身体好"
+      },
+      {
+        "s": "希望 (mong, còn xa) — mạnh hơn 想 (muốn, gần hơn)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi mong sức khoẻ bố mẹ tốt.",
+        "answer": "我希望爸爸妈妈身体好。",
+        "answerPy": "Wǒ xīwàng bàba māma shēntǐ hǎo.",
+        "note": "Sau 希望 là cả một câu.",
+        "pair": "希望 + câu"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng tôi mong bạn ngày mai đến sớm một chút.",
+        "answer": "我们希望你明天早一点儿来。",
+        "answerPy": "Wǒmen xīwàng nǐ míngtiān zǎo yìdiǎnr lái.",
+        "note": "希望 mong điều còn ở phía trước.",
+        "pair": "希望 + câu"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "问题",
+    "py": "wèntí",
+    "pos": "Danh từ",
+    "vn": "câu hỏi, vấn đề",
+    "hv": "vấn đề",
+    "em": "❓",
+    "lesson": 3,
+    "ex_zh": "没问题！",
+    "ex_py": "Méi wèntí!",
+    "ex_vn": "Không thành vấn đề!",
+    "exList": [
+      {
+        "zh": "没问题！",
+        "py": "Méi wèntí!",
+        "vn": "Không thành vấn đề!"
+      },
+      {
+        "zh": "我有一个问题想问你。",
+        "py": "Wǒ yǒu yí ge wèntí xiǎng wèn nǐ.",
+        "vn": "Tôi có một câu hỏi muốn hỏi bạn."
+      },
+      {
+        "zh": "这是一个大问题。",
+        "py": "Zhè shì yí ge dà wèntí.",
+        "vn": "Đây là một vấn đề lớn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "问",
+        "p": "wèn",
+        "type": "半包围 · Bán bao (门)",
+        "st": 6,
+        "ord": "门 (môn) bao ngoài → 口 (khẩu) bên trong",
+        "rad": "门 (môn – cửa)",
+        "mean": "hỏi",
+        "tip": "Đã học ở Bài 4 — miệng 口 đứng ở cửa 门 cất tiếng HỎI.",
+        "cf": "间 (jiān)",
+        "w": "问题 / 问一下 / 请问"
+      },
+      {
+        "c": "题",
+        "p": "tí",
+        "type": "左右结构 · Trái-phải",
+        "st": 15,
+        "ord": "是 (thị) trái → 页 (hiệt) phải",
+        "rad": "页 (hiệt – đầu, trang)",
+        "mean": "đề bài, chủ đề",
+        "tip": "Bộ 页 (trang giấy/tiêu đề) → phần đầu trang nêu ra ĐỀ BÀI, chủ đề.",
+        "cf": "提 (tí – \"đề xuất\", bộ 扌)",
+        "w": "问题 / 题目 / 考题"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个问题",
+        "py": "yí gè wèntí",
+        "vn": "một câu hỏi"
+      },
+      {
+        "zh": "问问题",
+        "py": "wèn wèntí",
+        "vn": "đặt câu hỏi"
+      },
+      {
+        "zh": "什么问题",
+        "py": "shénme wèntí",
+        "vn": "vấn đề gì"
+      },
+      {
+        "zh": "没问题",
+        "py": "méi wèntí",
+        "vn": "không vấn đề gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "问 + 问题",
+        "m": "Đặt câu hỏi — hai chữ 问 liền nhau"
+      },
+      {
+        "s": "没问题 — câu trả lời khi nhận lời giúp ai"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn hỏi thầy một câu hỏi.",
+        "answer": "我想问老师一个问题。",
+        "answerPy": "Wǒ xiǎng wèn lǎoshī yí ge wèntí.",
+        "note": "问问题 — đặt câu hỏi.",
+        "pair": "想 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không vấn đề gì, để tôi giúp bạn làm.",
+        "answer": "没问题，让我帮你做吧。",
+        "answerPy": "Méi wèntí, ràng wǒ bāng nǐ zuò ba.",
+        "note": "没问题 — câu nói khi nhận lời giúp.",
+        "pair": "让 + người + V"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "欢迎",
+    "py": "huānyíng",
+    "pos": "Động từ",
+    "vn": "chào mừng, hoan nghênh",
+    "hv": "hoan nghênh",
+    "em": "🎉",
+    "lesson": 3,
+    "ex_zh": "非常欢迎。",
+    "ex_py": "Fēicháng huānyíng.",
+    "ex_vn": "Vô cùng hoan nghênh.",
+    "exList": [
+      {
+        "zh": "非常欢迎。",
+        "py": "Fēicháng huānyíng.",
+        "vn": "Vô cùng hoan nghênh."
+      },
+      {
+        "zh": "欢迎来中国！",
+        "py": "Huānyíng lái Zhōngguó!",
+        "vn": "Chào mừng đến Trung Quốc!"
+      },
+      {
+        "zh": "我们都很欢迎他。",
+        "py": "Wǒmen dōu hěn huānyíng tā.",
+        "vn": "Chúng tôi đều rất hoan nghênh anh ấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "欢",
+        "p": "huān",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "又 (hựu) trái → 欠 (khiếm) phải",
+        "rad": "又 (hựu)",
+        "mean": "vui mừng",
+        "tip": "Nghĩa liên quan tới cảm xúc VUI MỪNG, phấn khởi khi gặp gỡ.",
+        "cf": "次 (cì – \"lần\", bộ khác trái)",
+        "w": "欢迎 / 喜欢 / 欢乐"
+      },
+      {
+        "c": "迎",
+        "p": "yíng",
+        "type": "半包围 · Bán bao (辶)",
+        "st": 7,
+        "ord": "卬 → 辶 (viết sau cùng)",
+        "rad": "辶 (sước – đi)",
+        "mean": "đón, nghênh",
+        "tip": "Bộ 辶 (đi) → ra tận nơi để ĐÓN CHÀO ai đó.",
+        "cf": "仰 (yǎng – \"ngửa lên\")",
+        "w": "欢迎 / 迎接"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "欢迎你",
+        "py": "huānyíng nǐ",
+        "vn": "hoan nghênh bạn"
+      },
+      {
+        "zh": "欢迎来",
+        "py": "huānyíng lái",
+        "vn": "chào mừng đến"
+      },
+      {
+        "zh": "欢迎欢迎",
+        "py": "huānyíng huānyíng",
+        "vn": "hoan nghênh hoan nghênh"
+      },
+      {
+        "zh": "欢迎你们",
+        "py": "huānyíng nǐmen",
+        "vn": "chào mừng các bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "欢迎 + người + động từ",
+        "m": "Chào mừng ai làm gì: 欢迎你来我家"
+      },
+      {
+        "s": "欢迎 nói khi có khách đến — nói hai lần cho thân mật"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào mừng bạn đến nhà tôi chơi.",
+        "answer": "欢迎你来我家。",
+        "answerPy": "Huānyíng nǐ lái wǒ jiā.",
+        "note": "欢迎 nói khi có khách đến.",
+        "pair": "欢迎 + người + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nhân viên nhà hàng này rất nhiệt tình chào khách.",
+        "answer": "这个饭店的服务员非常欢迎你们。",
+        "answerPy": "Zhège fàndiàn de fúwùyuán fēicháng huānyíng nǐmen.",
+        "note": "欢迎 vừa là lời chào, vừa là động từ.",
+        "pair": "非常 + V"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "上班",
+    "py": "shàngbān",
+    "pos": "Động từ",
+    "vn": "đi làm, vào ca",
+    "hv": "thượng ban",
+    "em": "💼",
+    "lesson": 3,
+    "ex_zh": "他从下个星期一开始上班。",
+    "ex_py": "Tā cóng xià ge xīngqīyī kāishǐ shàngbān.",
+    "ex_vn": "Cậu ấy bắt đầu đi làm từ thứ Hai tuần sau.",
+    "exList": [
+      {
+        "zh": "他从下个星期一开始上班。",
+        "py": "Tā cóng xià ge xīngqīyī kāishǐ shàngbān.",
+        "vn": "Cậu ấy bắt đầu đi làm từ thứ Hai tuần sau."
+      },
+      {
+        "zh": "我每天九点上班。",
+        "py": "Wǒ měitiān jiǔ diǎn shàngbān.",
+        "vn": "Mỗi ngày tôi đi làm lúc 9 giờ."
+      },
+      {
+        "zh": "爸爸已经去上班了。",
+        "py": "Bàba yǐjīng qù shàngbān le.",
+        "vn": "Bố đã đi làm rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "上",
+        "p": "shàng",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "一→丨→一",
+        "rad": "一 (nhất)",
+        "mean": "trên, lên",
+        "tip": "Đã học ở Bài 3/4 (早上, 晚上) — nét ngắn trên nét ngang dài = hướng lên.",
+        "cf": "下 (xià)",
+        "w": "上班 / 上课 / 早上"
+      },
+      {
+        "c": "班",
+        "p": "bān",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "王 (vương) trái → 刂 (đao) giữa → 王 phải",
+        "rad": "王 (vương – ngọc)",
+        "mean": "ca làm, nhóm, lớp",
+        "tip": "Hai miếng ngọc 王 được tách ra bởi dao 刂 → phân chia thành từng NHÓM/CA làm việc.",
+        "cf": "斑 (bān – \"vết đốm\")",
+        "w": "上班 / 班长 / 一班"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去上班",
+        "py": "qù shàngbān",
+        "vn": "đi làm"
+      },
+      {
+        "zh": "几点上班",
+        "py": "jǐ diǎn shàngbān",
+        "vn": "mấy giờ đi làm"
+      },
+      {
+        "zh": "开始上班",
+        "py": "kāishǐ shàngbān",
+        "vn": "bắt đầu làm việc"
+      },
+      {
+        "zh": "不上班",
+        "py": "bù shàngbān",
+        "vn": "không đi làm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 + 上班",
+        "m": "Đi làm — 上班 là từ ly hợp"
+      },
+      {
+        "s": "上班 (đi làm) · 上课 (đi học) — cùng chữ 上"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sáng nào chồng tôi cũng đi làm bằng xe buýt.",
+        "answer": "我丈夫每天早上都坐公共汽车去上班。",
+        "answerPy": "Wǒ zhàngfu měi tiān zǎoshang dōu zuò gōnggòng qìchē qù shàngbān.",
+        "note": "上班 là từ ly hợp.",
+        "pair": "每……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chủ nhật tôi không đi làm, tôi ở nhà nghỉ.",
+        "answer": "星期天我不上班，我在家休息。",
+        "answerPy": "Xīngqītiān wǒ bú shàngbān, wǒ zài jiā xiūxi.",
+        "note": "Nơi chốn đứng TRƯỚC động từ.",
+        "pair": "在……休息"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "懂",
+    "py": "dǒng",
+    "pos": "Động từ",
+    "vn": "hiểu",
+    "hv": "đổng",
+    "em": "💡",
+    "lesson": 4,
+    "ex_zh": "你听懂了吗？",
+    "ex_py": "Nǐ tīng dǒng le ma?",
+    "ex_vn": "Bạn nghe có hiểu không?",
+    "exList": [
+      {
+        "zh": "你听懂了吗？",
+        "py": "Nǐ tīng dǒng le ma?",
+        "vn": "Bạn nghe có hiểu không?"
+      },
+      {
+        "zh": "我看懂了这本书。",
+        "py": "Wǒ kàn dǒngle zhè běn shū.",
+        "vn": "Tôi đọc hiểu quyển sách này rồi."
+      },
+      {
+        "zh": "这个问题我不懂。",
+        "py": "Zhège wèntí wǒ bù dǒng.",
+        "vn": "Vấn đề này tôi không hiểu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "懂",
+        "p": "dǒng",
+        "type": "左右结构 · Trái-phải",
+        "st": 15,
+        "ord": "忄(tâm) trái → 董 (đổng) phải",
+        "rad": "忄(tâm – trái tim)",
+        "mean": "hiểu",
+        "tip": "Bộ 忄(tâm/trí) → dùng đầu óc nắm rõ được ý nghĩa = HIỂU.",
+        "cf": "董 (dǒng – \"giám sát\", thiếu bộ 忄)",
+        "w": "听懂 / 看懂 / 不懂"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "听懂",
+        "py": "tīng dǒng",
+        "vn": "nghe hiểu"
+      },
+      {
+        "zh": "看懂",
+        "py": "kàn dǒng",
+        "vn": "đọc hiểu"
+      },
+      {
+        "zh": "懂了",
+        "py": "dǒng le",
+        "vn": "hiểu rồi"
+      },
+      {
+        "zh": "不懂",
+        "py": "bù dǒng",
+        "vn": "không hiểu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "听 / 看 + 懂",
+        "m": "Nghe hiểu, đọc hiểu — 懂 nói KẾT QUẢ"
+      },
+      {
+        "s": "懂 (hiểu rõ) ≠ 知道 (nghe nói qua thì biết)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy nói chậm một chút, tôi nghe không hiểu.",
+        "answer": "老师说慢一点儿，我没听懂。",
+        "answerPy": "Lǎoshī shuō màn yìdiǎnr, wǒ méi tīngdǒng.",
+        "note": "听懂 — nghe rồi hiểu được.",
+        "pair": "没 + V + 懂"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Câu này tôi hiểu rồi, cảm ơn thầy.",
+        "answer": "这个题我懂了，谢谢老师。",
+        "answerPy": "Zhège tí wǒ dǒng le, xièxie lǎoshī.",
+        "note": "懂了 — đã hiểu, tình hình đã đổi.",
+        "pair": "……了"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "完",
+    "py": "wán",
+    "pos": "Động từ",
+    "vn": "xong, hết",
+    "hv": "hoàn",
+    "em": "✅",
+    "lesson": 4,
+    "ex_zh": "题太多，我没做完。",
+    "ex_py": "Tí tài duō, wǒ méi zuò wán.",
+    "ex_vn": "Đề nhiều quá, tôi làm chưa xong.",
+    "exList": [
+      {
+        "zh": "题太多，我没做完。",
+        "py": "Tí tài duō, wǒ méi zuò wán.",
+        "vn": "Đề nhiều quá, tôi làm chưa xong."
+      },
+      {
+        "zh": "我吃完饭了。",
+        "py": "Wǒ chī wán fàn le.",
+        "vn": "Tôi ăn xong cơm rồi."
+      },
+      {
+        "zh": "电影已经完了。",
+        "py": "Diànyǐng yǐjīng wán le.",
+        "vn": "Bộ phim đã kết thúc rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "完",
+        "p": "wán",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "宀 (miên) → 元 (nguyên)",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "hoàn thành, hết",
+        "tip": "Mái nhà 宀 che kín trọn vẹn 元 (đầu tiên/vẹn toàn) → mọi thứ đã trọn vẹn = XONG, HẾT.",
+        "cf": "院 (yuàn – đã học ở Bài 2, khác bộ)",
+        "w": "做完 / 吃完 / 用完"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "做完",
+        "py": "zuò wán",
+        "vn": "làm xong"
+      },
+      {
+        "zh": "吃完",
+        "py": "chī wán",
+        "vn": "ăn xong"
+      },
+      {
+        "zh": "写完了",
+        "py": "xiě wán le",
+        "vn": "viết xong rồi"
+      },
+      {
+        "zh": "看完",
+        "py": "kàn wán",
+        "vn": "xem xong"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 完 + 了",
+        "m": "Làm xong rồi: 我做完了"
+      },
+      {
+        "s": "完 nói VIỆC ĐÃ HẾT; 懂 nói ĐÃ HIỂU"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi làm xong việc rồi mới đi ăn cơm.",
+        "answer": "我做完事情就去吃饭。",
+        "answerPy": "Wǒ zuòwán shìqing jiù qù chīfàn.",
+        "note": "完 đứng SAU động từ, nói việc đã hết.",
+        "pair": "V完……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn ăn xong chưa?",
+        "answer": "你吃完了吗？",
+        "answerPy": "Nǐ chīwán le ma?",
+        "note": "Hỏi việc đã xong hay chưa.",
+        "pair": "V完了吗？"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "题",
+    "py": "tí",
+    "pos": "Danh từ",
+    "vn": "câu hỏi, đề bài",
+    "hv": "đề",
+    "em": "📄",
+    "lesson": 4,
+    "ex_zh": "昨天的考试题很难。",
+    "ex_py": "Zuótiān de kǎoshì tí hěn nán.",
+    "ex_vn": "Đề thi hôm qua rất khó.",
+    "exList": [
+      {
+        "zh": "昨天的考试题很难。",
+        "py": "Zuótiān de kǎoshì tí hěn nán.",
+        "vn": "Đề thi hôm qua rất khó."
+      },
+      {
+        "zh": "这道题我不会。",
+        "py": "Zhè dào tí wǒ bú huì.",
+        "vn": "Câu hỏi này tôi không biết làm."
+      },
+      {
+        "zh": "今天的题太多了。",
+        "py": "Jīntiān de tí tài duō le.",
+        "vn": "Đề bài hôm nay nhiều quá."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "题",
+        "p": "tí",
+        "type": "左右结构 · Trái-phải",
+        "st": 15,
+        "ord": "是 (thị) trái → 页 (hiệt) phải",
+        "rad": "页 (hiệt – đầu, trang)",
+        "mean": "đề bài, câu hỏi",
+        "tip": "Ôn lại: 页 (trang) → phần nêu ra ĐỀ/CÂU HỎI cần trả lời.",
+        "cf": "提 (tí – \"đề xuất\")",
+        "w": "问题 / 考题 / 题目"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "第一题",
+        "py": "dì yì tí",
+        "vn": "câu thứ nhất"
+      },
+      {
+        "zh": "做题",
+        "py": "zuò tí",
+        "vn": "làm bài"
+      },
+      {
+        "zh": "这个题",
+        "py": "zhège tí",
+        "vn": "câu này"
+      },
+      {
+        "zh": "很多题",
+        "py": "hěn duō tí",
+        "vn": "rất nhiều câu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 题",
+        "m": "Đếm câu hỏi: 第一题 · 十个题"
+      },
+      {
+        "s": "题 (câu hỏi trong bài) — 问题 là vấn đề, câu hỏi nói ra"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi làm xong hai mươi câu rồi.",
+        "answer": "今天我做完二十个题了。",
+        "answerPy": "Jīntiān wǒ zuòwán èrshí ge tí le.",
+        "note": "做题 — làm bài tập.",
+        "pair": "……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Câu thứ nhất tôi không hiểu, bạn giúp tôi xem một chút.",
+        "answer": "第一题我不懂，你帮我看一下。",
+        "answerPy": "Dì-yī tí wǒ bù dǒng, nǐ bāng wǒ kàn yíxià.",
+        "note": "帮我 + động từ — làm giúp tôi.",
+        "pair": "帮 + người + V"
+      }
+    ]
+  }
 ];
 
 const wuData = [

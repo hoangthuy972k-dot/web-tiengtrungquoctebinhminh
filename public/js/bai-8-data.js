@@ -2,123 +2,881 @@
 // DATA — Bài 8: 让我想想再告诉你
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'让',py:'ràng',pos:'Động từ',vn:'để, bảo, cho phép', hv: 'nhượng',em:'🙏',lesson:1,
-   ex_zh:'让我想想。',ex_py:'Ràng wǒ xiǎngxiang.',ex_vn:'Để tôi suy nghĩ một chút.',
-   exList:[
-     {zh:'让我想想。',py:'Ràng wǒ xiǎngxiang.',vn:'Để tôi suy nghĩ một chút.'},
-     {zh:'老师让我给大卫打个电话。',py:'Lǎoshī ràng wǒ gěi Dàwèi dǎ ge diànhuà.',vn:'Thầy giáo bảo tôi gọi điện thoại cho David.'},
-     {zh:'请让一下。',py:'Qǐng ràng yíxià.',vn:'Làm ơn tránh ra một chút.'},
-   ],
-   hanzi:[
-     {c:'让',p:'ràng',type:'左右结构 · Trái-phải',st:5,ord:'讠(ngôn) trái → 上 (thượng) phải',rad:'讠(ngôn – lời nói)',mean:'để, bảo, nhường',
-      tip:'Bộ 讠(lời nói) → dùng lời nói khiến người khác làm gì, hoặc NHƯỜNG cho ai đó.',
-      cf:'样 (yàng, kiểu dáng)',w:'让我 / 让开 / 谦让'},
-   ]},
-  {n:2,zh:'告诉',py:'gàosu',pos:'Động từ',vn:'nói cho biết, mách', hv: 'cáo tố',em:'💬',lesson:1,
-   ex_zh:'再告诉你。',ex_py:'Zài gàosu nǐ.',ex_vn:'Rồi nói cho bạn biết sau.',
-   exList:[
-     {zh:'再告诉你。',py:'Zài gàosu nǐ.',vn:'Rồi nói cho bạn biết sau.'},
-     {zh:'请告诉我你的名字。',py:'Qǐng gàosu wǒ nǐ de míngzi.',vn:'Làm ơn cho tôi biết tên bạn.'},
-     {zh:'我告诉他了。',py:'Wǒ gàosu tā le.',vn:'Tôi đã nói cho anh ấy biết rồi.'},
-   ],
-   hanzi:[
-     {c:'告',p:'gào',type:'上下结构 · Trên-dưới',st:7,ord:'牛(biến thể) trên → 口 dưới',rad:'口 (khẩu – miệng)',mean:'báo, nói',
-      tip:'Bộ 口 (miệng) → dùng lời BÁO cho người khác biết.',
-      cf:'吿 (dạng cổ của 告)',w:'告诉 / 报告 / 广告'},
-     {c:'诉',p:'sù',type:'左右结构 · Trái-phải',st:7,ord:'讠(ngôn) trái → 斥 (xích) phải',rad:'讠(ngôn – lời nói)',mean:'kể, nói ra',
-      tip:'Bộ 讠(lời nói) → 告 + 诉 = nói ra cho ai đó biết = MÁCH, NÓI CHO BIẾT.',
-      cf:'折 (zhé, gãy, bộ 扌)',w:'告诉 / 诉说'},
-   ]},
-  {n:3,zh:'等',py:'děng',pos:'Động từ',vn:'chờ, đợi', hv: 'đẳng',em:'⏳',lesson:2,
-   ex_zh:'你等等我好吗？',ex_py:'Nǐ děngděng wǒ hǎoma?',ex_vn:'Bạn đợi tôi một chút được không?',
-   exList:[
-     {zh:'你等等我好吗？',py:'Nǐ děngděng wǒ hǎoma?',vn:'Bạn đợi tôi một chút được không?'},
-     {zh:'我在门口等你。',py:'Wǒ zài ménkǒu děng nǐ.',vn:'Tôi đợi bạn ở cửa.'},
-     {zh:'请等一下。',py:'Qǐng děng yíxià.',vn:'Làm ơn đợi một chút.'},
-   ],
-   hanzi:[
-     {c:'等',p:'děng',type:'上下结构 · Trên-dưới',st:12,ord:'⺮(trúc) trên → 寺 (tự) dưới',rad:'⺮(trúc – tre)',mean:'chờ, đợi; cấp bậc',
-      tip:'Xưa dùng thẻ tre 竹 xếp hàng theo thứ tự tại 寺 (nha môn) → phải CHỜ ĐỢI đến lượt.',
-      cf:'待 (dài, chờ đợi, bộ 彳)',w:'等等 / 等一下 / 平等'},
-   ]},
-  {n:4,zh:'找',py:'zhǎo',pos:'Động từ',vn:'tìm, kiếm', hv: 'trảo',em:'🔍',lesson:2,
-   ex_zh:'我想找时间去看看。',ex_py:'Wǒ xiǎng zhǎo shíjiān qù kànkan.',ex_vn:'Tôi muốn tìm thời gian ghé thăm cậu ấy.',
-   exList:[
-     {zh:'我想找时间去看看。',py:'Wǒ xiǎng zhǎo shíjiān qù kànkan.',vn:'Tôi muốn tìm thời gian ghé thăm cậu ấy.'},
-     {zh:'你在找什么？',py:'Nǐ zài zhǎo shénme?',vn:'Bạn đang tìm gì vậy?'},
-     {zh:'我找不到我的手表了。',py:'Wǒ zhǎo bú dào wǒ de shǒubiǎo le.',vn:'Tôi tìm không thấy đồng hồ của mình.'},
-   ],
-   hanzi:[
-     {c:'找',p:'zhǎo',type:'左右结构 · Trái-phải',st:7,ord:'扌(thủ) trái → 戈 (qua) phải',rad:'扌(thủ – tay)',mean:'tìm, kiếm',
-      tip:'Bộ 扌(tay) → dùng tay lục lọi, TÌM KIẾM vật gì đó.',
-      cf:'我 (wǒ, tôi, cùng chứa 戈)',w:'找到 / 找工作 / 找时间'},
-   ]},
-  {n:5,zh:'事情',py:'shìqing',pos:'Danh từ',vn:'sự việc, việc, chuyện', hv: 'sự tình',em:'📋',lesson:2,
-   ex_zh:'大卫有什么事情吗？',ex_py:'Dàwèi yǒu shénme shìqing ma?',ex_vn:'David có chuyện gì vậy?',
-   exList:[
-     {zh:'大卫有什么事情吗？',py:'Dàwèi yǒu shénme shìqing ma?',vn:'David có chuyện gì vậy?'},
-     {zh:'我今天有很多事情要做。',py:'Wǒ jīntiān yǒu hěn duō shìqing yào zuò.',vn:'Hôm nay tôi có nhiều việc phải làm.'},
-     {zh:'这件事情很重要。',py:'Zhè jiàn shìqing hěn zhòngyào.',vn:'Việc này rất quan trọng.'},
-   ],
-   hanzi:[
-     {c:'事',p:'shì',type:'独体字 · Chữ đơn',st:8,ord:'一→口→彐→亅',rad:'亅 (quyết)',mean:'việc, sự việc',
-      tip:'Hình bàn tay cầm dụng cụ hành sự cách điệu → "VIỆC, CÔNG VIỆC".',
-      cf:'吏 (lì, quan lại)',w:'事情 / 有事 / 工作的事'},
-     {c:'情',p:'qíng',type:'左右结构 · Trái-phải',st:11,ord:'忄(tâm) trái → 青 (thanh) phải',rad:'忄(tâm – trái tim)',mean:'tình cảm; tình huống',
-      tip:'Bộ 忄(tâm) → 事 + 情 = việc liên quan tới cảm xúc/tình huống cụ thể = SỰ VIỆC.',
-      cf:'请 (qǐng, mời, bộ 讠)',w:'事情 / 心情 / 事情多'},
-   ]},
-  {n:6,zh:'服务员',py:'fúwùyuán',pos:'Danh từ',vn:'nhân viên phục vụ', hv: 'phục vụ viên',em:'🛎️',lesson:3,
-   ex_zh:'服务员，门打不开了。',ex_py:'Fúwùyuán, mén dǎ bù kāi le.',ex_vn:'Lễ tân ơi, cửa không mở được rồi.',
-   exList:[
-     {zh:'服务员，门打不开了。',py:'Fúwùyuán, mén dǎ bù kāi le.',vn:'Lễ tân ơi, cửa không mở được rồi.'},
-     {zh:'服务员，请给我一杯水。',py:'Fúwùyuán, qǐng gěi wǒ yì bēi shuǐ.',vn:'Phục vụ ơi, cho tôi một ly nước.'},
-     {zh:'这里的服务员很热情。',py:'Zhèlǐ de fúwùyuán hěn rèqíng.',vn:'Nhân viên phục vụ ở đây rất nhiệt tình.'},
-   ],
-   hanzi:[
-     {c:'服',p:'fú',type:'左右结构 · Trái-phải',st:8,ord:'月(nhục) trái → 𠬝(phục) phải',rad:'月 (nhục – thịt/thân thể)',mean:'phục vụ; quần áo',
-      tip:'Bộ 月(thân thể) → hành động chăm sóc thân thể người khác = PHỤC VỤ.',
-      cf:'报 (bào, báo, Bài 4: 报纸)',w:'服务员 / 衣服 / 服务'},
-     {c:'务',p:'wù',type:'上下结构 · Trên-dưới',st:5,ord:'夂→力',rad:'力 (lực – sức lực)',mean:'công việc, nhiệm vụ',
-      tip:'Bộ 力(sức lực) → dồn sức làm CÔNG VIỆC, nhiệm vụ.',
-      cf:'雾 (wù, sương mù, bộ 雨)',w:'服务 / 任务 / 事务'},
-   ]},
-  {n:7,zh:'白',py:'bái',pos:'Tính từ',vn:'trắng, màu trắng', hv: 'bạch',em:'⚪',lesson:4,
-   ex_zh:'这件白的有点儿长。',ex_py:'Zhè jiàn bái de yǒudiǎnr cháng.',ex_vn:'Chiếc màu trắng này hơi dài một chút.',
-   exList:[
-     {zh:'这件白的有点儿长。',py:'Zhè jiàn bái de yǒudiǎnr cháng.',vn:'Chiếc màu trắng này hơi dài một chút.'},
-     {zh:'她喜欢穿白色的衣服。',py:'Tā xǐhuan chuān báisè de yīfu.',vn:'Cô ấy thích mặc quần áo màu trắng.'},
-     {zh:'这只猫是白色的。',py:'Zhè zhī māo shì báisè de.',vn:'Con mèo này màu trắng.'},
-   ],
-   hanzi:[
-     {c:'白',p:'bái',type:'独体字 · Tượng hình',st:5,ord:'丿→𠃌→一→一→一',rad:'白 (bạch – tự thành bộ)',mean:'trắng',
-      tip:'Hình ánh mặt trời/hạt gạo trắng cách điệu → "TRẮNG".',
-      cf:'百 (bǎi, trăm, thêm nét)',w:'白色 / 白天 / 明白'},
-   ]},
-  {n:8,zh:'黑',py:'hēi',pos:'Tính từ',vn:'đen, màu đen', hv: 'hắc',em:'⚫',lesson:4,
-   ex_zh:'那件黑的有点儿贵。',ex_py:'Nà jiàn hēi de yǒudiǎnr guì.',ex_vn:'Chiếc màu đen kia thì hơi đắt.',
-   exList:[
-     {zh:'那件黑的有点儿贵。',py:'Nà jiàn hēi de yǒudiǎnr guì.',vn:'Chiếc màu đen kia thì hơi đắt.'},
-     {zh:'他的头发是黑色的。',py:'Tā de tóufa shì hēisè de.',vn:'Tóc anh ấy màu đen.'},
-     {zh:'天已经黑了。',py:'Tiān yǐjīng hēi le.',vn:'Trời đã tối rồi.'},
-   ],
-   hanzi:[
-     {c:'黑',p:'hēi',type:'上下结构 · Trên-dưới',st:12,ord:'里 (lý) trên → 灬 (hỏa) dưới',rad:'黑 (hắc – tự thành bộ)',mean:'đen, tối',
-      tip:'Hình ống khói ám khói đen 灬 phía dưới → "ĐEN, TỐI".',
-      cf:'墨 (mò, mực đen, thêm bộ 土)',w:'黑色 / 黑板 / 天黑了'},
-   ]},
-  {n:9,zh:'贵',py:'guì',pos:'Tính từ',vn:'đắt, sang trọng', hv: 'quý',em:'💎',lesson:4,
-   ex_zh:'他的自行车很贵。',ex_py:'Tā de zìxíngchē hěn guì.',ex_vn:'Xe đạp của anh ấy rất đắt.',
-   exList:[
-     {zh:'他的自行车很贵。',py:'Tā de zìxíngchē hěn guì.',vn:'Xe đạp của anh ấy rất đắt.'},
-     {zh:'这块手表太贵了。',py:'Zhè kuài shǒubiǎo tài guì le.',vn:'Chiếc đồng hồ này đắt quá.'},
-     {zh:'这里的咖啡不贵。',py:'Zhèlǐ de kāfēi bú guì.',vn:'Cà phê ở đây không đắt.'},
-   ],
-   hanzi:[
-     {c:'贵',p:'guì',type:'上下结构 · Trên-dưới',st:9,ord:'中→一→贝 (bối)',rad:'贝 (bối – vỏ sò, tiền cổ)',mean:'đắt, quý',
-      tip:'Bộ 贝(tiền tệ cổ) → liên quan tới giá trị lớn = ĐẮT, QUÝ GIÁ.',
-      cf:'柜 (guì, tủ, bộ 木)',w:'很贵 / 贵姓 / 名贵'},
-   ]},
+  {
+    "n": 1,
+    "zh": "让",
+    "py": "ràng",
+    "pos": "Động từ",
+    "vn": "để, bảo, cho phép",
+    "hv": "nhượng",
+    "em": "🙏",
+    "lesson": 1,
+    "ex_zh": "让我想想。",
+    "ex_py": "Ràng wǒ xiǎngxiang.",
+    "ex_vn": "Để tôi suy nghĩ một chút.",
+    "exList": [
+      {
+        "zh": "让我想想。",
+        "py": "Ràng wǒ xiǎngxiang.",
+        "vn": "Để tôi suy nghĩ một chút."
+      },
+      {
+        "zh": "老师让我给大卫打个电话。",
+        "py": "Lǎoshī ràng wǒ gěi Dàwèi dǎ ge diànhuà.",
+        "vn": "Thầy giáo bảo tôi gọi điện thoại cho David."
+      },
+      {
+        "zh": "请让一下。",
+        "py": "Qǐng ràng yíxià.",
+        "vn": "Làm ơn tránh ra một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "让",
+        "p": "ràng",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "讠(ngôn) trái → 上 (thượng) phải",
+        "rad": "讠(ngôn – lời nói)",
+        "mean": "để, bảo, nhường",
+        "tip": "Bộ 讠(lời nói) → dùng lời nói khiến người khác làm gì, hoặc NHƯỜNG cho ai đó.",
+        "cf": "样 (yàng, kiểu dáng)",
+        "w": "让我 / 让开 / 谦让"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "让我去",
+        "py": "ràng wǒ qù",
+        "vn": "để tôi đi"
+      },
+      {
+        "zh": "让他来",
+        "py": "ràng tā lái",
+        "vn": "cho anh ấy đến"
+      },
+      {
+        "zh": "不让",
+        "py": "bú ràng",
+        "vn": "không cho"
+      },
+      {
+        "zh": "让我看看",
+        "py": "ràng wǒ kànkàn",
+        "vn": "cho tôi xem"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "让 + người + động từ",
+        "m": "Để ai làm gì: 让我看看"
+      },
+      {
+        "s": "让 (cho phép, sai ai làm) — người đứng giữa 让 và động từ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cho tôi xem một chút cái áo trắng này.",
+        "answer": "让我看一下这件白衣服。",
+        "answerPy": "Ràng wǒ kàn yíxià zhè jiàn bái yīfu.",
+        "note": "Người đứng giữa 让 và động từ.",
+        "pair": "让 + người + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mẹ không cho tôi uống cà phê.",
+        "answer": "妈妈不让我喝咖啡。",
+        "answerPy": "Māma bú ràng wǒ hē kāfēi.",
+        "note": "不 đứng TRƯỚC 让.",
+        "pair": "不让 + người + V"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "告诉",
+    "py": "gàosu",
+    "pos": "Động từ",
+    "vn": "nói cho biết, mách",
+    "hv": "cáo tố",
+    "em": "💬",
+    "lesson": 1,
+    "ex_zh": "再告诉你。",
+    "ex_py": "Zài gàosu nǐ.",
+    "ex_vn": "Rồi nói cho bạn biết sau.",
+    "exList": [
+      {
+        "zh": "再告诉你。",
+        "py": "Zài gàosu nǐ.",
+        "vn": "Rồi nói cho bạn biết sau."
+      },
+      {
+        "zh": "请告诉我你的名字。",
+        "py": "Qǐng gàosu wǒ nǐ de míngzi.",
+        "vn": "Làm ơn cho tôi biết tên bạn."
+      },
+      {
+        "zh": "我告诉他了。",
+        "py": "Wǒ gàosu tā le.",
+        "vn": "Tôi đã nói cho anh ấy biết rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "告",
+        "p": "gào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "牛(biến thể) trên → 口 dưới",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "báo, nói",
+        "tip": "Bộ 口 (miệng) → dùng lời BÁO cho người khác biết.",
+        "cf": "吿 (dạng cổ của 告)",
+        "w": "告诉 / 报告 / 广告"
+      },
+      {
+        "c": "诉",
+        "p": "sù",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "讠(ngôn) trái → 斥 (xích) phải",
+        "rad": "讠(ngôn – lời nói)",
+        "mean": "kể, nói ra",
+        "tip": "Bộ 讠(lời nói) → 告 + 诉 = nói ra cho ai đó biết = MÁCH, NÓI CHO BIẾT.",
+        "cf": "折 (zhé, gãy, bộ 扌)",
+        "w": "告诉 / 诉说"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "告诉我",
+        "py": "gàosu wǒ",
+        "vn": "nói cho tôi"
+      },
+      {
+        "zh": "告诉他",
+        "py": "gàosu tā",
+        "vn": "nói với anh ấy"
+      },
+      {
+        "zh": "告诉老师",
+        "py": "gàosu lǎoshī",
+        "vn": "nói với thầy"
+      },
+      {
+        "zh": "不告诉",
+        "py": "bú gàosu",
+        "vn": "không nói"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "告诉 + người + việc gì",
+        "m": "Cho ai biết việc gì: 告诉我你的名字"
+      },
+      {
+        "s": "告诉 phải có người nghe; 说 thì không cần"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn nói cho tôi biết, mấy giờ bắt đầu thi?",
+        "answer": "你告诉我，几点开始考试？",
+        "answerPy": "Nǐ gàosu wǒ, jǐ diǎn kāishǐ kǎoshì?",
+        "note": "告诉 phải có người nghe.",
+        "pair": "告诉 + người"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi chưa nói với thầy việc này.",
+        "answer": "这件事情我还没告诉老师。",
+        "answerPy": "Zhè jiàn shìqing wǒ hái méi gàosu lǎoshī.",
+        "note": "还没 — việc chưa xảy ra.",
+        "pair": "还没 + V"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "等",
+    "py": "děng",
+    "pos": "Động từ",
+    "vn": "chờ, đợi",
+    "hv": "đẳng",
+    "em": "⏳",
+    "lesson": 2,
+    "ex_zh": "你等等我好吗？",
+    "ex_py": "Nǐ děngděng wǒ hǎoma?",
+    "ex_vn": "Bạn đợi tôi một chút được không?",
+    "exList": [
+      {
+        "zh": "你等等我好吗？",
+        "py": "Nǐ děngděng wǒ hǎoma?",
+        "vn": "Bạn đợi tôi một chút được không?"
+      },
+      {
+        "zh": "我在门口等你。",
+        "py": "Wǒ zài ménkǒu děng nǐ.",
+        "vn": "Tôi đợi bạn ở cửa."
+      },
+      {
+        "zh": "请等一下。",
+        "py": "Qǐng děng yíxià.",
+        "vn": "Làm ơn đợi một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "等",
+        "p": "děng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "⺮(trúc) trên → 寺 (tự) dưới",
+        "rad": "⺮(trúc – tre)",
+        "mean": "chờ, đợi; cấp bậc",
+        "tip": "Xưa dùng thẻ tre 竹 xếp hàng theo thứ tự tại 寺 (nha môn) → phải CHỜ ĐỢI đến lượt.",
+        "cf": "待 (dài, chờ đợi, bộ 彳)",
+        "w": "等等 / 等一下 / 平等"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "等我",
+        "py": "děng wǒ",
+        "vn": "chờ tôi"
+      },
+      {
+        "zh": "等一下",
+        "py": "děng yíxià",
+        "vn": "chờ một chút"
+      },
+      {
+        "zh": "等公共汽车",
+        "py": "děng gōnggòngqìchē",
+        "vn": "chờ xe buýt"
+      },
+      {
+        "zh": "在门外等",
+        "py": "zài mén wài děng",
+        "vn": "chờ ngoài cửa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "等 + người / vật",
+        "m": "Chờ ai, chờ cái gì: 等公共汽车"
+      },
+      {
+        "s": "等一下 — câu nói lịch sự khi cần người khác chờ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn chờ tôi một chút, tôi đến ngay.",
+        "answer": "你等我一下，我就来。",
+        "answerPy": "Nǐ děng wǒ yíxià, wǒ jiù lái.",
+        "note": "就来 — đến ngay lập tức.",
+        "pair": "就 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi chờ xe buýt nửa tiếng rồi.",
+        "answer": "我等了半个小时公共汽车。",
+        "answerPy": "Wǒ děngle bàn ge xiǎoshí gōnggòng qìchē.",
+        "note": "Thời lượng đứng SAU động từ.",
+        "pair": "……了 + thời lượng"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "找",
+    "py": "zhǎo",
+    "pos": "Động từ",
+    "vn": "tìm, kiếm",
+    "hv": "trảo",
+    "em": "🔍",
+    "lesson": 2,
+    "ex_zh": "我想找时间去看看。",
+    "ex_py": "Wǒ xiǎng zhǎo shíjiān qù kànkan.",
+    "ex_vn": "Tôi muốn tìm thời gian ghé thăm cậu ấy.",
+    "exList": [
+      {
+        "zh": "我想找时间去看看。",
+        "py": "Wǒ xiǎng zhǎo shíjiān qù kànkan.",
+        "vn": "Tôi muốn tìm thời gian ghé thăm cậu ấy."
+      },
+      {
+        "zh": "你在找什么？",
+        "py": "Nǐ zài zhǎo shénme?",
+        "vn": "Bạn đang tìm gì vậy?"
+      },
+      {
+        "zh": "我找不到我的手表了。",
+        "py": "Wǒ zhǎo bú dào wǒ de shǒubiǎo le.",
+        "vn": "Tôi tìm không thấy đồng hồ của mình."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "找",
+        "p": "zhǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "扌(thủ) trái → 戈 (qua) phải",
+        "rad": "扌(thủ – tay)",
+        "mean": "tìm, kiếm",
+        "tip": "Bộ 扌(tay) → dùng tay lục lọi, TÌM KIẾM vật gì đó.",
+        "cf": "我 (wǒ, tôi, cùng chứa 戈)",
+        "w": "找到 / 找工作 / 找时间"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "找我",
+        "py": "zhǎo wǒ",
+        "vn": "tìm tôi"
+      },
+      {
+        "zh": "找什么",
+        "py": "zhǎo shénme",
+        "vn": "tìm gì"
+      },
+      {
+        "zh": "找到",
+        "py": "zhǎo dào",
+        "vn": "tìm được"
+      },
+      {
+        "zh": "找工作",
+        "py": "zhǎo gōngzuò",
+        "vn": "tìm việc làm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "找 + người / vật",
+        "m": "Tìm ai, tìm cái gì"
+      },
+      {
+        "s": "找 có bộ 扌 (tay) — tìm bằng tay"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Có người tìm bạn ngoài cửa.",
+        "answer": "门外有人找你。",
+        "answerPy": "Mén wài yǒu rén zhǎo nǐ.",
+        "note": "有人 + động từ — có người làm gì.",
+        "pair": "nơi chốn + 有人 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chị tôi muốn tìm một công việc mới.",
+        "answer": "我姐姐想找一个新工作。",
+        "answerPy": "Wǒ jiějie xiǎng zhǎo yí ge xīn gōngzuò.",
+        "note": "找工作 — tìm việc làm.",
+        "pair": "想 + V"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "事情",
+    "py": "shìqing",
+    "pos": "Danh từ",
+    "vn": "sự việc, việc, chuyện",
+    "hv": "sự tình",
+    "em": "📋",
+    "lesson": 2,
+    "ex_zh": "大卫有什么事情吗？",
+    "ex_py": "Dàwèi yǒu shénme shìqing ma?",
+    "ex_vn": "David có chuyện gì vậy?",
+    "exList": [
+      {
+        "zh": "大卫有什么事情吗？",
+        "py": "Dàwèi yǒu shénme shìqing ma?",
+        "vn": "David có chuyện gì vậy?"
+      },
+      {
+        "zh": "我今天有很多事情要做。",
+        "py": "Wǒ jīntiān yǒu hěn duō shìqing yào zuò.",
+        "vn": "Hôm nay tôi có nhiều việc phải làm."
+      },
+      {
+        "zh": "这件事情很重要。",
+        "py": "Zhè jiàn shìqing hěn zhòngyào.",
+        "vn": "Việc này rất quan trọng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "事",
+        "p": "shì",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "一→口→彐→亅",
+        "rad": "亅 (quyết)",
+        "mean": "việc, sự việc",
+        "tip": "Hình bàn tay cầm dụng cụ hành sự cách điệu → \"VIỆC, CÔNG VIỆC\".",
+        "cf": "吏 (lì, quan lại)",
+        "w": "事情 / 有事 / 工作的事"
+      },
+      {
+        "c": "情",
+        "p": "qíng",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "忄(tâm) trái → 青 (thanh) phải",
+        "rad": "忄(tâm – trái tim)",
+        "mean": "tình cảm; tình huống",
+        "tip": "Bộ 忄(tâm) → 事 + 情 = việc liên quan tới cảm xúc/tình huống cụ thể = SỰ VIỆC.",
+        "cf": "请 (qǐng, mời, bộ 讠)",
+        "w": "事情 / 心情 / 事情多"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一件事情",
+        "py": "yí jiàn shìqing",
+        "vn": "một việc"
+      },
+      {
+        "zh": "什么事情",
+        "py": "shénme shìqing",
+        "vn": "việc gì"
+      },
+      {
+        "zh": "很多事情",
+        "py": "hěn duō shìqing",
+        "vn": "rất nhiều việc"
+      },
+      {
+        "zh": "公司的事情",
+        "py": "gōngsī de shìqing",
+        "vn": "việc của công ty"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 件 + 事情",
+        "m": "Lượng từ của 事情 là 件"
+      },
+      {
+        "s": "事 + 情",
+        "m": "Hai chữ cùng nghĩa ghép lại thành một từ"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay tôi có rất nhiều việc, không có thời gian đi bơi.",
+        "answer": "今天我有很多事情，没有时间去游泳。",
+        "answerPy": "Jīntiān wǒ yǒu hěn duō shìqing, méiyǒu shíjiān qù yóuyǒng.",
+        "note": "很多 đứng trước danh từ.",
+        "pair": "很多 + N"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn nói với bạn một việc.",
+        "answer": "我想告诉你一件事情。",
+        "answerPy": "Wǒ xiǎng gàosu nǐ yí jiàn shìqing.",
+        "note": "Lượng từ của 事情 là 件.",
+        "pair": "一件事情"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "服务员",
+    "py": "fúwùyuán",
+    "pos": "Danh từ",
+    "vn": "nhân viên phục vụ",
+    "hv": "phục vụ viên",
+    "em": "🛎️",
+    "lesson": 3,
+    "ex_zh": "服务员，门打不开了。",
+    "ex_py": "Fúwùyuán, mén dǎ bù kāi le.",
+    "ex_vn": "Lễ tân ơi, cửa không mở được rồi.",
+    "exList": [
+      {
+        "zh": "服务员，门打不开了。",
+        "py": "Fúwùyuán, mén dǎ bù kāi le.",
+        "vn": "Lễ tân ơi, cửa không mở được rồi."
+      },
+      {
+        "zh": "服务员，请给我一杯水。",
+        "py": "Fúwùyuán, qǐng gěi wǒ yì bēi shuǐ.",
+        "vn": "Phục vụ ơi, cho tôi một ly nước."
+      },
+      {
+        "zh": "这里的服务员很热情。",
+        "py": "Zhèlǐ de fúwùyuán hěn rèqíng.",
+        "vn": "Nhân viên phục vụ ở đây rất nhiệt tình."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "服",
+        "p": "fú",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "月(nhục) trái → 𠬝(phục) phải",
+        "rad": "月 (nhục – thịt/thân thể)",
+        "mean": "phục vụ; quần áo",
+        "tip": "Bộ 月(thân thể) → hành động chăm sóc thân thể người khác = PHỤC VỤ.",
+        "cf": "报 (bào, báo, Bài 4: 报纸)",
+        "w": "服务员 / 衣服 / 服务"
+      },
+      {
+        "c": "务",
+        "p": "wù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 5,
+        "ord": "夂→力",
+        "rad": "力 (lực – sức lực)",
+        "mean": "công việc, nhiệm vụ",
+        "tip": "Bộ 力(sức lực) → dồn sức làm CÔNG VIỆC, nhiệm vụ.",
+        "cf": "雾 (wù, sương mù, bộ 雨)",
+        "w": "服务 / 任务 / 事务"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "叫服务员",
+        "py": "jiào fúwùyuán",
+        "vn": "gọi nhân viên"
+      },
+      {
+        "zh": "问服务员",
+        "py": "wèn fúwùyuán",
+        "vn": "hỏi nhân viên"
+      },
+      {
+        "zh": "服务员来了",
+        "py": "fúwùyuán lái le",
+        "vn": "nhân viên đến rồi"
+      },
+      {
+        "zh": "饭店的服务员",
+        "py": "fàndiàn de fúwùyuán",
+        "vn": "nhân viên nhà hàng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "问 / 叫 + 服务员",
+        "m": "Hỏi, gọi nhân viên"
+      },
+      {
+        "s": "服务 + 员",
+        "m": "Người (员) làm công việc phục vụ (服务)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn gọi nhân viên đến một chút.",
+        "answer": "你让服务员过来一下。",
+        "answerPy": "Nǐ ràng fúwùyuán guòlái yíxià.",
+        "note": "过来 — đến chỗ người nói.",
+        "pair": "让 + người + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nhân viên nhà hàng này cực kỳ tốt.",
+        "answer": "这个饭店的服务员非常好。",
+        "answerPy": "Zhège fàndiàn de fúwùyuán fēicháng hǎo.",
+        "note": "……的服务员 — nhân viên của nơi nào.",
+        "pair": "非常 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "白",
+    "py": "bái",
+    "pos": "Tính từ",
+    "vn": "trắng, màu trắng",
+    "hv": "bạch",
+    "em": "⚪",
+    "lesson": 4,
+    "ex_zh": "这件白的有点儿长。",
+    "ex_py": "Zhè jiàn bái de yǒudiǎnr cháng.",
+    "ex_vn": "Chiếc màu trắng này hơi dài một chút.",
+    "exList": [
+      {
+        "zh": "这件白的有点儿长。",
+        "py": "Zhè jiàn bái de yǒudiǎnr cháng.",
+        "vn": "Chiếc màu trắng này hơi dài một chút."
+      },
+      {
+        "zh": "她喜欢穿白色的衣服。",
+        "py": "Tā xǐhuan chuān báisè de yīfu.",
+        "vn": "Cô ấy thích mặc quần áo màu trắng."
+      },
+      {
+        "zh": "这只猫是白色的。",
+        "py": "Zhè zhī māo shì báisè de.",
+        "vn": "Con mèo này màu trắng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "白",
+        "p": "bái",
+        "type": "独体字 · Tượng hình",
+        "st": 5,
+        "ord": "丿→𠃌→一→一→一",
+        "rad": "白 (bạch – tự thành bộ)",
+        "mean": "trắng",
+        "tip": "Hình ánh mặt trời/hạt gạo trắng cách điệu → \"TRẮNG\".",
+        "cf": "百 (bǎi, trăm, thêm nét)",
+        "w": "白色 / 白天 / 明白"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "白的",
+        "py": "bái de",
+        "vn": "cái màu trắng"
+      },
+      {
+        "zh": "白衣服",
+        "py": "bái yīfu",
+        "vn": "áo trắng"
+      },
+      {
+        "zh": "白猫",
+        "py": "bái māo",
+        "vn": "con mèo trắng"
+      },
+      {
+        "zh": "白颜色",
+        "py": "bái yánsè",
+        "vn": "màu trắng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "白 + danh từ",
+        "m": "Cái gì màu trắng: 白衣服"
+      },
+      {
+        "s": "白 ↔ 黑 — trắng và đen"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái áo trắng này bao nhiêu tiền?",
+        "answer": "这件白衣服多少钱？",
+        "answerPy": "Zhè jiàn bái yīfu duōshao qián?",
+        "note": "白 + danh từ — cái gì màu trắng.",
+        "pair": "多少钱？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không thích màu trắng, tôi thích màu đen.",
+        "answer": "我不喜欢白颜色，我喜欢黑颜色。",
+        "answerPy": "Wǒ bù xǐhuan bái yánsè, wǒ xǐhuan hēi yánsè.",
+        "note": "白 ↔ 黑 — trắng và đen.",
+        "pair": "喜欢 + N"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "黑",
+    "py": "hēi",
+    "pos": "Tính từ",
+    "vn": "đen, màu đen",
+    "hv": "hắc",
+    "em": "⚫",
+    "lesson": 4,
+    "ex_zh": "那件黑的有点儿贵。",
+    "ex_py": "Nà jiàn hēi de yǒudiǎnr guì.",
+    "ex_vn": "Chiếc màu đen kia thì hơi đắt.",
+    "exList": [
+      {
+        "zh": "那件黑的有点儿贵。",
+        "py": "Nà jiàn hēi de yǒudiǎnr guì.",
+        "vn": "Chiếc màu đen kia thì hơi đắt."
+      },
+      {
+        "zh": "他的头发是黑色的。",
+        "py": "Tā de tóufa shì hēisè de.",
+        "vn": "Tóc anh ấy màu đen."
+      },
+      {
+        "zh": "天已经黑了。",
+        "py": "Tiān yǐjīng hēi le.",
+        "vn": "Trời đã tối rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "黑",
+        "p": "hēi",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "里 (lý) trên → 灬 (hỏa) dưới",
+        "rad": "黑 (hắc – tự thành bộ)",
+        "mean": "đen, tối",
+        "tip": "Hình ống khói ám khói đen 灬 phía dưới → \"ĐEN, TỐI\".",
+        "cf": "墨 (mò, mực đen, thêm bộ 土)",
+        "w": "黑色 / 黑板 / 天黑了"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "黑的",
+        "py": "hēi de",
+        "vn": "cái màu đen"
+      },
+      {
+        "zh": "黑衣服",
+        "py": "hēi yīfu",
+        "vn": "áo đen"
+      },
+      {
+        "zh": "黑颜色",
+        "py": "hēi yánsè",
+        "vn": "màu đen"
+      },
+      {
+        "zh": "天黑了",
+        "py": "tiān hēi le",
+        "vn": "trời tối rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "黑 + danh từ",
+        "m": "Cái gì màu đen: 黑衣服"
+      },
+      {
+        "s": "天黑了 — trời tối, cũng dùng chữ 黑"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trời tối rồi, chúng ta về nhà thôi.",
+        "answer": "天黑了，我们回家吧。",
+        "answerPy": "Tiān hēi le, wǒmen huí jiā ba.",
+        "note": "天黑了 — trời tối, tình hình đã đổi.",
+        "pair": "……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái xe đạp màu đen kia là của chị tôi.",
+        "answer": "那个黑自行车是我姐姐的。",
+        "answerPy": "Nàge hēi zìxíngchē shì wǒ jiějie de.",
+        "note": "……的 cuối câu thay cho danh từ đã biết.",
+        "pair": "是……的"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "贵",
+    "py": "guì",
+    "pos": "Tính từ",
+    "vn": "đắt, sang trọng",
+    "hv": "quý",
+    "em": "💎",
+    "lesson": 4,
+    "ex_zh": "他的自行车很贵。",
+    "ex_py": "Tā de zìxíngchē hěn guì.",
+    "ex_vn": "Xe đạp của anh ấy rất đắt.",
+    "exList": [
+      {
+        "zh": "他的自行车很贵。",
+        "py": "Tā de zìxíngchē hěn guì.",
+        "vn": "Xe đạp của anh ấy rất đắt."
+      },
+      {
+        "zh": "这块手表太贵了。",
+        "py": "Zhè kuài shǒubiǎo tài guì le.",
+        "vn": "Chiếc đồng hồ này đắt quá."
+      },
+      {
+        "zh": "这里的咖啡不贵。",
+        "py": "Zhèlǐ de kāfēi bú guì.",
+        "vn": "Cà phê ở đây không đắt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "贵",
+        "p": "guì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "中→一→贝 (bối)",
+        "rad": "贝 (bối – vỏ sò, tiền cổ)",
+        "mean": "đắt, quý",
+        "tip": "Bộ 贝(tiền tệ cổ) → liên quan tới giá trị lớn = ĐẮT, QUÝ GIÁ.",
+        "cf": "柜 (guì, tủ, bộ 木)",
+        "w": "很贵 / 贵姓 / 名贵"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很贵",
+        "py": "hěn guì",
+        "vn": "rất đắt"
+      },
+      {
+        "zh": "不贵",
+        "py": "bú guì",
+        "vn": "không đắt"
+      },
+      {
+        "zh": "太贵了",
+        "py": "tài guì le",
+        "vn": "đắt quá"
+      },
+      {
+        "zh": "贵的衣服",
+        "py": "guì de yīfu",
+        "vn": "quần áo đắt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "太 + 贵 + 了",
+        "m": "Đắt quá — hai vế đi liền nhau"
+      },
+      {
+        "s": "贵 ↔ 不贵 — 太贵了 là câu nói khi mặc cả"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái áo này đắt quá, tôi không mua.",
+        "answer": "这件衣服太贵了，我不买。",
+        "answerPy": "Zhè jiàn yīfu tài guì le, wǒ bù mǎi.",
+        "note": "太……了 phải đủ hai vế.",
+        "pair": "太……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thịt cừu ở đây không đắt, một cân hai mươi đồng.",
+        "answer": "这儿的羊肉不贵，一公斤二十块钱。",
+        "answerPy": "Zhèr de yángròu bú guì, yì gōngjīn èrshí kuài qián.",
+        "note": "Nói giá thì không cần động từ 是.",
+        "pair": "……块钱"
+      }
+    ]
+  }
 ];
 
 const wuData = [

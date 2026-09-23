@@ -3336,7 +3336,7 @@
   // Khong hien chiet tu Han tu — len HSK 4 hoc sinh da thuoc mat chu.
   // ══════════════════════════════════════════════════════════
   function vpIsHsk4() {
-    return !!(currentHubLesson && /\/hsk(?:[134]|[12]v3)-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    return !!(currentHubLesson && /\/(?:hsk(?:[134]|[12]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
   }
 
   function vpH4Say(t) {
@@ -3391,7 +3391,7 @@
   function renderVpListHsk4() {
     // Chi HSK 3 giu chiet tu Han tu; HSK 4 tro len da bo
     // HSK 1 va HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
-    var giuHanTu = !!(currentHubLesson && /\/hsk(?:[13]|[12]v3)-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    var giuHanTu = !!(currentHubLesson && /\/(?:hsk(?:[13]|[12]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
     var wrap = $('#vpContent');
     wrap.innerHTML =
       '<div class="h4-list">' +

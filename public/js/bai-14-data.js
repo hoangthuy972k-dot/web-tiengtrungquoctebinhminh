@@ -2,108 +2,775 @@
 // DATA — Bài 14: 你看过那个电影吗？
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'过',py:'guo',pos:'Trợ từ động thái',vn:'đã từng (kinh nghiệm)', hv: 'quá',em:'✅',lesson:1,
-   ex_zh:'你看过那个电影吗？',ex_py:'Nǐ kànguo nàge diànyǐng ma?',ex_vn:'Bạn đã từng xem bộ phim đó chưa?',
-   exList:[
-     {zh:'你看过那个电影吗？',py:'Nǐ kànguo nàge diànyǐng ma?',vn:'Bạn đã từng xem bộ phim đó chưa?'},
-     {zh:'我去过中国。',py:'Wǒ qùguo Zhōngguó.',vn:'Tôi đã từng đến Trung Quốc.'},
-     {zh:'她没吃过中国菜。',py:'Tā méi chīguo Zhōngguó cài.',vn:'Cô ấy chưa từng ăn món Trung Quốc.'},
-   ],
-   hanzi:[
-     {c:'过',p:'guo / guò',type:'半包围结构 · Bán bao vây',st:6,ord:'辶 (sước) → 寸 (biến thể)',rad:'辶 (sước – đi)',mean:'đã từng; đi qua',
-      tip:'Bộ 辶(đi) → đã ĐI QUA một việc gì đó = có kinh nghiệm về việc đó. Đã gặp nghĩa "đi qua" ở Bài 7 (走过).',
-      cf:'边 (biān – "bên cạnh")',w:'看过 / 去过 / 吃过'},
-   ]},
-  {n:2,zh:'有意思',py:'yǒuyìsi',pos:'Tính từ',vn:'thú vị, hay', hv: 'hữu ý tư',em:'😊',lesson:1,
-   ex_zh:'看过，很有意思。',ex_py:'Kànguo, hěn yǒuyìsi.',ex_vn:'Đã xem rồi, rất thú vị.',
-   exList:[
-     {zh:'看过，很有意思。',py:'Kànguo, hěn yǒuyìsi.',vn:'Đã xem rồi, rất thú vị.'},
-     {zh:'写汉字很有意思。',py:'Xiě Hànzì hěn yǒuyìsi.',vn:'Viết chữ Hán rất thú vị.'},
-     {zh:'这本书很有意思。',py:'Zhè běn shū hěn yǒuyìsi.',vn:'Quyển sách này rất thú vị.'},
-   ],
-   hanzi:[
-     {c:'意',p:'yì',type:'上下结构 · Trên-dưới',st:13,ord:'立 → 日 → 心',rad:'心 (tâm – trái tim)',mean:'ý, ý nghĩ',
-      tip:'立(đứng) trên 日(mặt trời) trên 心(tim) → đứng suy nghĩ trong lòng = Ý NGHĨ.',
-      cf:'音 (yīn – "âm thanh")',w:'意思 / 同意 / 意见'},
-     {c:'思',p:'sī',type:'上下结构 · Trên-dưới',st:9,ord:'田 → 心',rad:'心 (tâm – trái tim)',mean:'suy nghĩ',
-      tip:'田(ruộng, tượng trưng đầu óc) trên 心(tim) → SUY NGHĨ bằng cả đầu và tim.',
-      cf:'田 (tián – "ruộng")',w:'意思 / 思考 / 有意思'},
-   ]},
-  {n:3,zh:'但是',py:'dànshì',pos:'Liên từ',vn:'nhưng', hv: 'đãn thị',em:'🔀',lesson:2,
-   ex_zh:'可以，但是我女朋友也想一起去。',ex_py:'Kěyǐ, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.',ex_vn:'Được, nhưng bạn gái tôi cũng muốn đi cùng.',
-   exList:[
-     {zh:'可以，但是我女朋友也想一起去。',py:'Kěyǐ, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.',vn:'Được, nhưng bạn gái tôi cũng muốn đi cùng.'},
-     {zh:'我想去，但是没有时间。',py:'Wǒ xiǎng qù, dànshì méiyǒu shíjiān.',vn:'Tôi muốn đi, nhưng không có thời gian.'},
-     {zh:'他很忙，但是他每天都去打球。',py:'Tā hěn máng, dànshì tā měitiān dōu qù dǎqiú.',vn:'Anh ấy rất bận, nhưng ngày nào cũng đi chơi bóng.'},
-   ],
-   hanzi:[
-     {c:'但',p:'dàn',type:'左右结构 · Trái-phải',st:7,ord:'亻(nhân) trái → 旦 (đán) phải',rad:'亻(nhân – người)',mean:'nhưng, chỉ',
-      tip:'亻(người) + 旦(bình minh) → người đứng lúc bình minh chỉ có MỘT MÌNH, ý "chỉ, nhưng".',
-      cf:'担 (dān – "gánh vác")',w:'但是 / 不但'},
-   ]},
-  {n:4,zh:'虽然',py:'suīrán',pos:'Liên từ',vn:'mặc dù, tuy', hv: 'tuy nhiên',em:'⚖️',lesson:2,
-   ex_zh:'虽然北京很远，但是你一定要去看看。',ex_py:'Suīrán Běijīng hěn yuǎn, dànshì nǐ yídìng yào qù kànkan.',ex_vn:'Mặc dù Bắc Kinh xa, nhưng bạn nhất định phải đến xem thử.',
-   exList:[
-     {zh:'虽然北京很远，但是你一定要去看看。',py:'Suīrán Běijīng hěn yuǎn, dànshì nǐ yídìng yào qù kànkan.',vn:'Mặc dù Bắc Kinh xa, nhưng bạn nhất định phải đến xem thử.'},
-     {zh:'虽然汉字很难，但是我很喜欢写汉字。',py:'Suīrán Hànzì hěn nán, dànshì wǒ hěn xǐhuan xiě Hànzì.',vn:'Mặc dù chữ Hán khó, nhưng tôi rất thích viết chữ Hán.'},
-     {zh:'虽然下雨，但是他还是去了。',py:'Suīrán xiàyǔ, dànshì tā háishi qù le.',vn:'Mặc dù trời mưa, nhưng anh ấy vẫn đi.'},
-   ],
-   hanzi:[
-     {c:'虽',p:'suī',type:'左右结构 · Trái-phải',st:9,ord:'虫 (trùng) → 口 phía trên',rad:'虫 (trùng – côn trùng)',mean:'tuy, mặc dù',
-      tip:'口(miệng) trên 虫(côn trùng) → chỉ mang nghĩa ngữ pháp "TUY", không liên quan nghĩa gốc.',
-      cf:'虫 (chóng – "côn trùng")',w:'虽然 / 虽说'},
-     {c:'然',p:'rán',type:'左右结构 · Trái-phải',st:12,ord:'月(biến thể) → 犬(biến thể) → 灬',rad:'灬(hỏa – lửa)',mean:'vậy, như thế',
-      tip:'Kết hợp thịt 月 + chó 犬 + lửa 灬 (nướng) → nghĩa gốc "đốt", nay dùng làm hậu tố "NHƯ VẬY".',
-      cf:'燃 (rán – "đốt cháy")',w:'虽然 / 当然 / 自然'},
-   ]},
-  {n:5,zh:'次',py:'cì',pos:'Lượng từ',vn:'lần, lượt', hv: 'thứ',em:'🔢',lesson:2,
-   ex_zh:'我们今天晚上再去看一次，怎么样？',ex_py:'Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?',ex_vn:'Tối nay chúng ta đi xem thêm một lần nữa, được không?',
-   exList:[
-     {zh:'我们今天晚上再去看一次，怎么样？',py:'Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?',vn:'Tối nay chúng ta đi xem thêm một lần nữa, được không?'},
-     {zh:'我去过一次中国。',py:'Wǒ qùguo yí cì Zhōngguó.',vn:'Tôi đã từng đến Trung Quốc một lần.'},
-     {zh:'这是我第一次吃中国菜。',py:'Zhè shì wǒ dì-yī cì chī Zhōngguó cài.',vn:'Đây là lần đầu tiên tôi ăn món Trung Quốc.'},
-   ],
-   hanzi:[
-     {c:'次',p:'cì',type:'左右结构 · Trái-phải',st:6,ord:'冫(băng) trái → 欠 (khiếm) phải',rad:'冫(băng – băng giá)',mean:'lần, lượt',
-      tip:'Bộ 冫(băng) + 欠(thiếu, ngáp) → dùng đếm số LẦN lặp lại của một hành động.',
-      cf:'冷 (lěng – "lạnh")',w:'一次 / 再次 / 这次'},
-   ]},
-  {n:6,zh:'玩儿',py:'wánr',pos:'Động từ',vn:'chơi, chơi đùa', hv: 'ngoạn nhi',em:'🎮',lesson:3,
-   ex_zh:'我想去公园玩儿。',ex_py:'Wǒ xiǎng qù gōngyuán wánr.',ex_vn:'Tôi muốn đi công viên chơi.',
-   exList:[
-     {zh:'我想去公园玩儿。',py:'Wǒ xiǎng qù gōngyuán wánr.',vn:'Tôi muốn đi công viên chơi.'},
-     {zh:'孩子们在外面玩儿。',py:'Háizimen zài wàimian wánr.',vn:'Bọn trẻ đang chơi ở bên ngoài.'},
-     {zh:'周末我们一起去玩儿吧。',py:'Zhōumò wǒmen yìqǐ qù wánr ba.',vn:'Cuối tuần chúng ta cùng đi chơi nhé.'},
-   ],
-   hanzi:[
-     {c:'玩',p:'wán',type:'左右结构 · Trái-phải',st:8,ord:'王 (vương) trái → 元 (nguyên) phải',rad:'王 (vương – ngọc)',mean:'chơi, chơi đùa',
-      tip:'Bộ 王(ngọc) + 元(gốc, ban đầu) → thời xưa nghịch ngọc quý để giải trí = CHƠI.',
-      cf:'现 (xiàn – "hiện tại", cũng bộ 王")',w:'玩儿 / 好玩儿'},
-   ]},
-  {n:7,zh:'晴',py:'qíng',pos:'Tính từ',vn:'trời quang, nắng đẹp', hv: 'tình',em:'☀️',lesson:3,
-   ex_zh:'今天天气很晴。',ex_py:'Jīntiān tiānqì hěn qíng.',ex_vn:'Hôm nay trời rất quang đãng.',
-   exList:[
-     {zh:'今天天气很晴。',py:'Jīntiān tiānqì hěn qíng.',vn:'Hôm nay trời rất quang đãng.'},
-     {zh:'明天是晴天。',py:'Míngtiān shì qíngtiān.',vn:'Ngày mai là trời nắng.'},
-     {zh:'今天从阴天变成晴天了。',py:'Jīntiān cóng yīntiān biànchéng qíngtiān le.',vn:'Hôm nay từ trời âm u chuyển thành trời quang.'},
-   ],
-   hanzi:[
-     {c:'晴',p:'qíng',type:'左右结构 · Trái-phải',st:12,ord:'日 (nhật) trái → 青 (thanh) phải',rad:'日 (nhật – mặt trời)',mean:'trời quang, nắng',
-      tip:'Bộ 日(mặt trời) + 青(xanh trong) → bầu trời XANH TRONG có nắng = QUANG ĐÃNG.',
-      cf:'情 (qíng – "tình cảm", bộ 忄")',w:'晴天 / 天晴了'},
-   ]},
-  {n:8,zh:'百',py:'bǎi',pos:'Số từ',vn:'trăm', hv: 'bách',em:'💯',lesson:3,
-   ex_zh:'我学了大概一百个小时了。',ex_py:'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le.',ex_vn:'Tôi đã học được khoảng một trăm tiếng rồi.',
-   exList:[
-     {zh:'我学了大概一百个小时了。',py:'Wǒ xuéle dàgài yìbǎi ge xiǎoshí le.',vn:'Tôi đã học được khoảng một trăm tiếng rồi.'},
-     {zh:'这本书有三百页。',py:'Zhè běn shū yǒu sānbǎi yè.',vn:'Quyển sách này có ba trăm trang.'},
-     {zh:'这件衣服一百块钱。',py:'Zhè jiàn yīfu yìbǎi kuài qián.',vn:'Chiếc áo này giá một trăm tệ.'},
-   ],
-   hanzi:[
-     {c:'百',p:'bǎi',type:'上下结构 · Trên-dưới',st:6,ord:'一 → 白',rad:'白 (bạch – trắng)',mean:'trăm',
-      tip:'一(một) trên 白(trăm cũng gần âm bạch) → số đếm TRĂM.',
-      cf:'白 (bái – "màu trắng")',w:'一百 / 几百 / 百分之'},
-   ]},
+  {
+    "n": 1,
+    "zh": "过",
+    "py": "guo",
+    "pos": "Trợ từ động thái",
+    "vn": "đã từng (kinh nghiệm)",
+    "hv": "quá",
+    "em": "✅",
+    "lesson": 1,
+    "ex_zh": "你看过那个电影吗？",
+    "ex_py": "Nǐ kànguo nàge diànyǐng ma?",
+    "ex_vn": "Bạn đã từng xem bộ phim đó chưa?",
+    "exList": [
+      {
+        "zh": "你看过那个电影吗？",
+        "py": "Nǐ kànguo nàge diànyǐng ma?",
+        "vn": "Bạn đã từng xem bộ phim đó chưa?"
+      },
+      {
+        "zh": "我去过中国。",
+        "py": "Wǒ qùguo Zhōngguó.",
+        "vn": "Tôi đã từng đến Trung Quốc."
+      },
+      {
+        "zh": "她没吃过中国菜。",
+        "py": "Tā méi chīguo Zhōngguó cài.",
+        "vn": "Cô ấy chưa từng ăn món Trung Quốc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "过",
+        "p": "guo / guò",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 6,
+        "ord": "辶 (sước) → 寸 (biến thể)",
+        "rad": "辶 (sước – đi)",
+        "mean": "đã từng; đi qua",
+        "tip": "Bộ 辶(đi) → đã ĐI QUA một việc gì đó = có kinh nghiệm về việc đó. Đã gặp nghĩa \"đi qua\" ở Bài 7 (走过).",
+        "cf": "边 (biān – \"bên cạnh\")",
+        "w": "看过 / 去过 / 吃过"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去过",
+        "py": "qù guo",
+        "vn": "đã từng đi"
+      },
+      {
+        "zh": "吃过",
+        "py": "chī guo",
+        "vn": "đã từng ăn"
+      },
+      {
+        "zh": "看过",
+        "py": "kàn guo",
+        "vn": "đã từng xem"
+      },
+      {
+        "zh": "没去过",
+        "py": "méi qù guo",
+        "vn": "chưa từng đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 过",
+        "m": "Đã từng làm: 我去过北京"
+      },
+      {
+        "s": "没 + động từ + 过",
+        "m": "Chưa từng làm: 我没去过 — KHÔNG bỏ 过"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã từng đi Bắc Kinh du lịch.",
+        "answer": "我去过北京旅游。",
+        "answerPy": "Wǒ qùguo Běijīng lǚyóu.",
+        "note": "过 nói kinh nghiệm đã từng.",
+        "pair": "V + 过"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi chưa từng ăn thịt cừu.",
+        "answer": "我没吃过羊肉。",
+        "answerPy": "Wǒ méi chīguo yángròu.",
+        "note": "Phủ định dùng 没, KHÔNG bỏ 过.",
+        "pair": "没 + V + 过"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "有意思",
+    "py": "yǒuyìsi",
+    "pos": "Tính từ",
+    "vn": "thú vị, hay",
+    "hv": "hữu ý tư",
+    "em": "😊",
+    "lesson": 1,
+    "ex_zh": "看过，很有意思。",
+    "ex_py": "Kànguo, hěn yǒuyìsi.",
+    "ex_vn": "Đã xem rồi, rất thú vị.",
+    "exList": [
+      {
+        "zh": "看过，很有意思。",
+        "py": "Kànguo, hěn yǒuyìsi.",
+        "vn": "Đã xem rồi, rất thú vị."
+      },
+      {
+        "zh": "写汉字很有意思。",
+        "py": "Xiě Hànzì hěn yǒuyìsi.",
+        "vn": "Viết chữ Hán rất thú vị."
+      },
+      {
+        "zh": "这本书很有意思。",
+        "py": "Zhè běn shū hěn yǒuyìsi.",
+        "vn": "Quyển sách này rất thú vị."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "意",
+        "p": "yì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "立 → 日 → 心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "ý, ý nghĩ",
+        "tip": "立(đứng) trên 日(mặt trời) trên 心(tim) → đứng suy nghĩ trong lòng = Ý NGHĨ.",
+        "cf": "音 (yīn – \"âm thanh\")",
+        "w": "意思 / 同意 / 意见"
+      },
+      {
+        "c": "思",
+        "p": "sī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "田 → 心",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "suy nghĩ",
+        "tip": "田(ruộng, tượng trưng đầu óc) trên 心(tim) → SUY NGHĨ bằng cả đầu và tim.",
+        "cf": "田 (tián – \"ruộng\")",
+        "w": "意思 / 思考 / 有意思"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很有意思",
+        "py": "hěn yǒuyìsi",
+        "vn": "rất thú vị"
+      },
+      {
+        "zh": "没有意思",
+        "py": "méiyǒu yìsi",
+        "vn": "không thú vị"
+      },
+      {
+        "zh": "有意思的书",
+        "py": "yǒuyìsi de shū",
+        "vn": "quyển sách hay"
+      },
+      {
+        "zh": "最有意思",
+        "py": "zuì yǒuyìsi",
+        "vn": "thú vị nhất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "很 + 有意思",
+        "m": "Rất thú vị — 有意思 là một cụm cố định"
+      },
+      {
+        "s": "有意思 (thú vị) ≠ 意思 (ý nghĩa): 什么意思？"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Quyển sách này rất hay, bạn xem thử đi.",
+        "answer": "这本书很有意思，你看一下吧。",
+        "answerPy": "Zhè běn shū hěn yǒu yìsi, nǐ kàn yíxià ba.",
+        "note": "有意思 là một cụm cố định.",
+        "pair": "很 + 有意思"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy tiết học này dài nhưng rất thú vị.",
+        "answer": "虽然这节课很长，但是很有意思。",
+        "answerPy": "Suīrán zhè jié kè hěn cháng, dànshì hěn yǒu yìsi.",
+        "note": "Tiếng Trung phải đủ cả hai vế.",
+        "pair": "虽然……但是……"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "但是",
+    "py": "dànshì",
+    "pos": "Liên từ",
+    "vn": "nhưng",
+    "hv": "đãn thị",
+    "em": "🔀",
+    "lesson": 2,
+    "ex_zh": "可以，但是我女朋友也想一起去。",
+    "ex_py": "Kěyǐ, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.",
+    "ex_vn": "Được, nhưng bạn gái tôi cũng muốn đi cùng.",
+    "exList": [
+      {
+        "zh": "可以，但是我女朋友也想一起去。",
+        "py": "Kěyǐ, dànshì wǒ nǚpéngyou yě xiǎng yìqǐ qù.",
+        "vn": "Được, nhưng bạn gái tôi cũng muốn đi cùng."
+      },
+      {
+        "zh": "我想去，但是没有时间。",
+        "py": "Wǒ xiǎng qù, dànshì méiyǒu shíjiān.",
+        "vn": "Tôi muốn đi, nhưng không có thời gian."
+      },
+      {
+        "zh": "他很忙，但是他每天都去打球。",
+        "py": "Tā hěn máng, dànshì tā měitiān dōu qù dǎqiú.",
+        "vn": "Anh ấy rất bận, nhưng ngày nào cũng đi chơi bóng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "但",
+        "p": "dàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻(nhân) trái → 旦 (đán) phải",
+        "rad": "亻(nhân – người)",
+        "mean": "nhưng, chỉ",
+        "tip": "亻(người) + 旦(bình minh) → người đứng lúc bình minh chỉ có MỘT MÌNH, ý \"chỉ, nhưng\".",
+        "cf": "担 (dān – \"gánh vác\")",
+        "w": "但是 / 不但"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "但是很贵",
+        "py": "dànshì hěn guì",
+        "vn": "nhưng rất đắt"
+      },
+      {
+        "zh": "但是没去",
+        "py": "dànshì méi qù",
+        "vn": "nhưng đã không đi"
+      },
+      {
+        "zh": "但是不懂",
+        "py": "dànshì bù dǒng",
+        "vn": "nhưng không hiểu"
+      },
+      {
+        "zh": "但是很累",
+        "py": "dànshì hěn lèi",
+        "vn": "nhưng rất mệt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "虽然……，但是……",
+        "m": "Tuy … nhưng … — dùng CẢ HAI vế"
+      },
+      {
+        "s": "但是 đứng đầu vế sau, nói điều ngược lại"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái điện thoại này đắt nhưng rất tốt.",
+        "answer": "这个手机很贵，但是很好。",
+        "answerPy": "Zhège shǒujī hěn guì, dànshì hěn hǎo.",
+        "note": "但是 đứng đầu vế sau.",
+        "pair": "……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã học tiếng Trung hai năm nhưng nói vẫn không nhanh.",
+        "answer": "我学了两年汉语，但是说得不快。",
+        "answerPy": "Wǒ xuéle liǎng nián Hànyǔ, dànshì shuō de bú kuài.",
+        "note": "Sau 得 nói mức độ làm việc đó.",
+        "pair": "V + 得 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "虽然",
+    "py": "suīrán",
+    "pos": "Liên từ",
+    "vn": "mặc dù, tuy",
+    "hv": "tuy nhiên",
+    "em": "⚖️",
+    "lesson": 2,
+    "ex_zh": "虽然北京很远，但是你一定要去看看。",
+    "ex_py": "Suīrán Běijīng hěn yuǎn, dànshì nǐ yídìng yào qù kànkan.",
+    "ex_vn": "Mặc dù Bắc Kinh xa, nhưng bạn nhất định phải đến xem thử.",
+    "exList": [
+      {
+        "zh": "虽然北京很远，但是你一定要去看看。",
+        "py": "Suīrán Běijīng hěn yuǎn, dànshì nǐ yídìng yào qù kànkan.",
+        "vn": "Mặc dù Bắc Kinh xa, nhưng bạn nhất định phải đến xem thử."
+      },
+      {
+        "zh": "虽然汉字很难，但是我很喜欢写汉字。",
+        "py": "Suīrán Hànzì hěn nán, dànshì wǒ hěn xǐhuan xiě Hànzì.",
+        "vn": "Mặc dù chữ Hán khó, nhưng tôi rất thích viết chữ Hán."
+      },
+      {
+        "zh": "虽然下雨，但是他还是去了。",
+        "py": "Suīrán xiàyǔ, dànshì tā háishi qù le.",
+        "vn": "Mặc dù trời mưa, nhưng anh ấy vẫn đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "虽",
+        "p": "suī",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "虫 (trùng) → 口 phía trên",
+        "rad": "虫 (trùng – côn trùng)",
+        "mean": "tuy, mặc dù",
+        "tip": "口(miệng) trên 虫(côn trùng) → chỉ mang nghĩa ngữ pháp \"TUY\", không liên quan nghĩa gốc.",
+        "cf": "虫 (chóng – \"côn trùng\")",
+        "w": "虽然 / 虽说"
+      },
+      {
+        "c": "然",
+        "p": "rán",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "月(biến thể) → 犬(biến thể) → 灬",
+        "rad": "灬(hỏa – lửa)",
+        "mean": "vậy, như thế",
+        "tip": "Kết hợp thịt 月 + chó 犬 + lửa 灬 (nướng) → nghĩa gốc \"đốt\", nay dùng làm hậu tố \"NHƯ VẬY\".",
+        "cf": "燃 (rán – \"đốt cháy\")",
+        "w": "虽然 / 当然 / 自然"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "虽然很贵",
+        "py": "suīrán hěn guì",
+        "vn": "tuy rất đắt"
+      },
+      {
+        "zh": "虽然很累",
+        "py": "suīrán hěn lèi",
+        "vn": "tuy rất mệt"
+      },
+      {
+        "zh": "虽然下雨",
+        "py": "suīrán xià yǔ",
+        "vn": "tuy trời mưa"
+      },
+      {
+        "zh": "虽然很远",
+        "py": "suīrán hěn yuǎn",
+        "vn": "tuy rất xa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "虽然 + vế 1，但是 + vế 2",
+        "m": "Tuy … nhưng …"
+      },
+      {
+        "s": "Tiếng Việt chỉ cần một vế, tiếng Trung phải đủ hai"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy hôm nay mưa nhưng chúng tôi vẫn đi chơi.",
+        "answer": "虽然今天下雨，但是我们还去玩儿。",
+        "answerPy": "Suīrán jīntiān xià yǔ, dànshì wǒmen hái qù wánr.",
+        "note": "还 — vẫn, dù sao cũng.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy khách sạn này xa nhưng rẻ hơn khách sạn kia.",
+        "answer": "虽然这个宾馆很远，但是比那个便宜。",
+        "answerPy": "Suīrán zhège bīnguǎn hěn yuǎn, dànshì bǐ nàge piányi.",
+        "note": "Sau 比 KHÔNG dùng 很.",
+        "pair": "A 比 B + Adj"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "次",
+    "py": "cì",
+    "pos": "Lượng từ",
+    "vn": "lần, lượt",
+    "hv": "thứ",
+    "em": "🔢",
+    "lesson": 2,
+    "ex_zh": "我们今天晚上再去看一次，怎么样？",
+    "ex_py": "Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?",
+    "ex_vn": "Tối nay chúng ta đi xem thêm một lần nữa, được không?",
+    "exList": [
+      {
+        "zh": "我们今天晚上再去看一次，怎么样？",
+        "py": "Wǒmen jīntiān wǎnshang zài qù kàn yí cì, zěnmeyàng?",
+        "vn": "Tối nay chúng ta đi xem thêm một lần nữa, được không?"
+      },
+      {
+        "zh": "我去过一次中国。",
+        "py": "Wǒ qùguo yí cì Zhōngguó.",
+        "vn": "Tôi đã từng đến Trung Quốc một lần."
+      },
+      {
+        "zh": "这是我第一次吃中国菜。",
+        "py": "Zhè shì wǒ dì-yī cì chī Zhōngguó cài.",
+        "vn": "Đây là lần đầu tiên tôi ăn món Trung Quốc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "次",
+        "p": "cì",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "冫(băng) trái → 欠 (khiếm) phải",
+        "rad": "冫(băng – băng giá)",
+        "mean": "lần, lượt",
+        "tip": "Bộ 冫(băng) + 欠(thiếu, ngáp) → dùng đếm số LẦN lặp lại của một hành động.",
+        "cf": "冷 (lěng – \"lạnh\")",
+        "w": "一次 / 再次 / 这次"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一次",
+        "py": "yí cì",
+        "vn": "một lần"
+      },
+      {
+        "zh": "第一次",
+        "py": "dì yí cì",
+        "vn": "lần đầu tiên"
+      },
+      {
+        "zh": "去过两次",
+        "py": "qù guo liǎng cì",
+        "vn": "đã đi hai lần"
+      },
+      {
+        "zh": "几次",
+        "py": "jǐ cì",
+        "vn": "mấy lần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "động từ + 过 + số + 次",
+        "m": "Đã làm mấy lần: 我去过两次"
+      },
+      {
+        "s": "次 đếm SỐ LẦN; 个 đếm sự vật"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã đến Bắc Kinh hai lần rồi.",
+        "answer": "我去过两次北京。",
+        "answerPy": "Wǒ qùguo liǎng cì Běijīng.",
+        "note": "次 đếm số lần, 个 đếm sự vật.",
+        "pair": "V过 + số + 次"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đây là lần đầu tiên tôi ngồi máy bay.",
+        "answer": "这是我第一次坐飞机。",
+        "answerPy": "Zhè shì wǒ dì-yī cì zuò fēijī.",
+        "note": "第一次 — lần đầu tiên.",
+        "pair": "第 + số + M"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "玩儿",
+    "py": "wánr",
+    "pos": "Động từ",
+    "vn": "chơi, chơi đùa",
+    "hv": "ngoạn nhi",
+    "em": "🎮",
+    "lesson": 3,
+    "ex_zh": "我想去公园玩儿。",
+    "ex_py": "Wǒ xiǎng qù gōngyuán wánr.",
+    "ex_vn": "Tôi muốn đi công viên chơi.",
+    "exList": [
+      {
+        "zh": "我想去公园玩儿。",
+        "py": "Wǒ xiǎng qù gōngyuán wánr.",
+        "vn": "Tôi muốn đi công viên chơi."
+      },
+      {
+        "zh": "孩子们在外面玩儿。",
+        "py": "Háizimen zài wàimian wánr.",
+        "vn": "Bọn trẻ đang chơi ở bên ngoài."
+      },
+      {
+        "zh": "周末我们一起去玩儿吧。",
+        "py": "Zhōumò wǒmen yìqǐ qù wánr ba.",
+        "vn": "Cuối tuần chúng ta cùng đi chơi nhé."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "玩",
+        "p": "wán",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "王 (vương) trái → 元 (nguyên) phải",
+        "rad": "王 (vương – ngọc)",
+        "mean": "chơi, chơi đùa",
+        "tip": "Bộ 王(ngọc) + 元(gốc, ban đầu) → thời xưa nghịch ngọc quý để giải trí = CHƠI.",
+        "cf": "现 (xiàn – \"hiện tại\", cũng bộ 王\")",
+        "w": "玩儿 / 好玩儿"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去玩儿",
+        "py": "qù wánr",
+        "vn": "đi chơi"
+      },
+      {
+        "zh": "玩儿得很快乐",
+        "py": "wánr de hěn kuàilè",
+        "vn": "chơi rất vui"
+      },
+      {
+        "zh": "来我家玩儿",
+        "py": "lái wǒ jiā wánr",
+        "vn": "đến nhà tôi chơi"
+      },
+      {
+        "zh": "玩儿一天",
+        "py": "wánr yì tiān",
+        "vn": "chơi một ngày"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "来 / 去 + nơi chốn + 玩儿",
+        "m": "Đến đâu chơi: 欢迎你来我家玩儿"
+      },
+      {
+        "s": "玩儿 (chơi, giải trí) — khẩu ngữ luôn có 儿"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chào mừng bạn đến nhà tôi chơi.",
+        "answer": "欢迎你来我家玩儿。",
+        "answerPy": "Huānyíng nǐ lái wǒ jiā wánr.",
+        "note": "玩儿 trong khẩu ngữ luôn có 儿.",
+        "pair": "来……玩儿"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm qua bọn trẻ chơi rất vui.",
+        "answer": "昨天孩子们玩儿得很快乐。",
+        "answerPy": "Zuótiān háizimen wánr de hěn kuàilè.",
+        "note": "Sau 得 vẫn phải có 很.",
+        "pair": "V + 得 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "晴",
+    "py": "qíng",
+    "pos": "Tính từ",
+    "vn": "trời quang, nắng đẹp",
+    "hv": "tình",
+    "em": "☀️",
+    "lesson": 3,
+    "ex_zh": "今天天气很晴。",
+    "ex_py": "Jīntiān tiānqì hěn qíng.",
+    "ex_vn": "Hôm nay trời rất quang đãng.",
+    "exList": [
+      {
+        "zh": "今天天气很晴。",
+        "py": "Jīntiān tiānqì hěn qíng.",
+        "vn": "Hôm nay trời rất quang đãng."
+      },
+      {
+        "zh": "明天是晴天。",
+        "py": "Míngtiān shì qíngtiān.",
+        "vn": "Ngày mai là trời nắng."
+      },
+      {
+        "zh": "今天从阴天变成晴天了。",
+        "py": "Jīntiān cóng yīntiān biànchéng qíngtiān le.",
+        "vn": "Hôm nay từ trời âm u chuyển thành trời quang."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "晴",
+        "p": "qíng",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "日 (nhật) trái → 青 (thanh) phải",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "trời quang, nắng",
+        "tip": "Bộ 日(mặt trời) + 青(xanh trong) → bầu trời XANH TRONG có nắng = QUANG ĐÃNG.",
+        "cf": "情 (qíng – \"tình cảm\", bộ 忄\")",
+        "w": "晴天 / 天晴了"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "晴天",
+        "py": "qíng tiān",
+        "vn": "trời nắng"
+      },
+      {
+        "zh": "天晴了",
+        "py": "tiān qíng le",
+        "vn": "trời hửng rồi"
+      },
+      {
+        "zh": "今天很晴",
+        "py": "jīntiān hěn qíng",
+        "vn": "hôm nay trời quang"
+      },
+      {
+        "zh": "晴天去玩儿",
+        "py": "qíng tiān qù wánr",
+        "vn": "ngày nắng đi chơi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "天 + 晴 + 了",
+        "m": "Trời hửng rồi — tình hình đã đổi"
+      },
+      {
+        "s": "晴 có bộ 日 (mặt trời) — có nắng thì trời quang"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trời hửng rồi, chúng ta đi chơi thôi.",
+        "answer": "天晴了，我们去玩儿吧。",
+        "answerPy": "Tiān qíng le, wǒmen qù wánr ba.",
+        "note": "了 cuối câu báo tình hình đã đổi.",
+        "pair": "……了"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ngày mai trời nắng, tôi muốn đi bơi.",
+        "answer": "明天是晴天，我要去游泳。",
+        "answerPy": "Míngtiān shì qíngtiān, wǒ yào qù yóuyǒng.",
+        "note": "晴 có bộ 日 — có nắng thì trời quang.",
+        "pair": "要 + V"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "百",
+    "py": "bǎi",
+    "pos": "Số từ",
+    "vn": "trăm",
+    "hv": "bách",
+    "em": "💯",
+    "lesson": 3,
+    "ex_zh": "我学了大概一百个小时了。",
+    "ex_py": "Wǒ xuéle dàgài yìbǎi ge xiǎoshí le.",
+    "ex_vn": "Tôi đã học được khoảng một trăm tiếng rồi.",
+    "exList": [
+      {
+        "zh": "我学了大概一百个小时了。",
+        "py": "Wǒ xuéle dàgài yìbǎi ge xiǎoshí le.",
+        "vn": "Tôi đã học được khoảng một trăm tiếng rồi."
+      },
+      {
+        "zh": "这本书有三百页。",
+        "py": "Zhè běn shū yǒu sānbǎi yè.",
+        "vn": "Quyển sách này có ba trăm trang."
+      },
+      {
+        "zh": "这件衣服一百块钱。",
+        "py": "Zhè jiàn yīfu yìbǎi kuài qián.",
+        "vn": "Chiếc áo này giá một trăm tệ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "百",
+        "p": "bǎi",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "一 → 白",
+        "rad": "白 (bạch – trắng)",
+        "mean": "trăm",
+        "tip": "一(một) trên 白(trăm cũng gần âm bạch) → số đếm TRĂM.",
+        "cf": "白 (bái – \"màu trắng\")",
+        "w": "一百 / 几百 / 百分之"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一百",
+        "py": "yìbǎi",
+        "vn": "một trăm"
+      },
+      {
+        "zh": "两百",
+        "py": "liǎngbǎi",
+        "vn": "hai trăm"
+      },
+      {
+        "zh": "一百块",
+        "py": "yìbǎi kuài",
+        "vn": "một trăm đồng"
+      },
+      {
+        "zh": "几百",
+        "py": "jǐ bǎi",
+        "vn": "mấy trăm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 百",
+        "m": "Đếm hàng trăm: 一百 · 两百"
+      },
+      {
+        "s": "一百 chứ không nói 百 trơ — trước 百 luôn có số"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái áo này một trăm đồng, không đắt.",
+        "answer": "这件衣服一百块钱，不贵。",
+        "answerPy": "Zhè jiàn yīfu yìbǎi kuài qián, bú guì.",
+        "note": "Nói giá thì không cần động từ 是.",
+        "pair": "……块钱"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trường chúng tôi có hai trăm học sinh.",
+        "answer": "我们学校有两百个学生。",
+        "answerPy": "Wǒmen xuéxiào yǒu liǎngbǎi ge xuésheng.",
+        "note": "Trước 百 luôn có số.",
+        "pair": "有 + số + M + N"
+      }
+    ]
+  }
 ];
 
 const wuData = [

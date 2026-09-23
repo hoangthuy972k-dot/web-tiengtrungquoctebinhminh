@@ -1277,9 +1277,9 @@ var vocabData = [
         "vn": "hai đôi"
       },
       {
-        "zh": "一双袜子",
-        "py": "yì shuāng wàzi",
-        "vn": "một đôi tất"
+        "zh": "一双手",
+        "py": "yì shuāng shǒu",
+        "vn": "một đôi tay"
       },
       {
         "zh": "一双手",
@@ -1290,7 +1290,7 @@ var vocabData = [
     "patterns": [
       {
         "s": "số + 双 + vật đi thành đôi",
-        "m": "Lượng từ 双: 筷子, 鞋, 袜子, 手, 脚"
+        "m": "Lượng từ 双: 筷子, 鞋, 手 — vật luôn có đôi"
       },
       {
         "s": "双 (đôi có hai cái giống nhau) ≠ 副 (bộ, như 一副眼镜)"
@@ -1922,9 +1922,9 @@ var vocabData = [
         "vn": "xem email"
       },
       {
-        "zh": "一封电子邮件",
-        "py": "yì fēng diànzǐ yóujiàn",
-        "vn": "một email"
+        "zh": "收到电子邮件",
+        "py": "shōu dào diànzǐ yóujiàn",
+        "vn": "nhận được email"
       },
       {
         "zh": "电子邮件地址",

@@ -37,7 +37,7 @@ module.exports = {
   },
   '包': {
     collo: [['一个包', 'một cái túi'], ['放在包里', 'để trong túi'],
-            ['我的包', 'túi của tôi'], ['背包', 'balo'],
+            ['我的包', 'túi của tôi'], ['大包', 'cái túi to'],
             ['包很重', 'túi rất nặng']],
     patterns: [['把 + N + 放在 + 包 + 里', 'Để cái gì trong túi'],
                ['包 (cái túi) ≠ 包子 (bánh bao)']]

@@ -3,313 +3,1511 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'耳朵',py:'ěrduo',pos:'Danh từ',vn:'tai', hv: 'nhĩ đóa',em:'👂',lesson:1,
-   explain:['Bộ phận trên đầu dùng để nghe.'],
-   usage:'Danh từ; đi cùng động từ 放/看: 把头发放在耳朵后面.',
-   collo:['耳朵后面','耳朵疼','看一下耳朵'],
-   ex_zh:'女儿最近喜欢把头发放在耳朵后面。',ex_py:'Nǚ\'ér zuìjìn xǐhuan bǎ tóufa fàng zài ěrduo hòumiàn.',ex_vn:'Con gái gần đây thích để tóc ra sau tai.',
-   exList:[
-     {zh:'女儿最近喜欢把头发放在耳朵后面，你知道为什么吗？',py:'Nǚ\'ér zuìjìn xǐhuan bǎ tóufa fàng zài ěrduo hòumiàn, nǐ zhīdào wèi shénme ma?',vn:'Con gái gần đây thích để tóc ra sau tai, em biết vì sao không?'},
-     {zh:'别害怕，不要动，让我看一下你的耳朵。',py:'Bié hàipà, búyào dòng, ràng wǒ kàn yíxià nǐ de ěrduo.',vn:'Đừng sợ, đừng cử động, để tôi xem tai bạn một chút.'},
-     {zh:'刚才游泳时耳朵进水了，现在耳朵里一直不舒服。',py:'Gāngcái yóuyǒng shí ěrduo jìn shuǐ le, xiànzài ěrduo li yìzhí bù shūfu.',vn:'Vừa nãy bơi bị nước vào tai, giờ trong tai cứ khó chịu mãi.'},
-   ],
-   hanzi:[
-     {c:'朵',p:'duo',type:'上下结构 · Trên-dưới',st:6,ord:'几 trên → 木 dưới',rad:'木 (mộc – gỗ)',mean:'lượng từ chỉ hoa',
-      tip:'几(hình dáng cong) + 木(cây) → hình DÁNG bông hoa trên CÂY; 耳(tai)+朵(hình dáng cong) = TAI (hình cong giống bông hoa).',
-      cf:'条 (tiáo – "sợi, dải", có bộ 冬")',w:'耳朵 / 一朵花'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần trời lạnh là tai cậu ấy lại khó chịu mãi không dứt.',answer:'只要天一冷，他的耳朵就一直不舒服。',answerPy:'Zhǐyào tiān yì lěng, tā de ěrduo jiù yìzhí bù shūfu.',
-      note:'一直 diễn tả trạng thái kéo dài liên tục.'},
-     {promptLang:'vi',prompt:'Nếu tai bạn khó chịu thì đi khám bác sĩ đi.',answer:'如果你的耳朵不舒服，就去看医生吧。',answerPy:'Rúguǒ nǐ de ěrduo bù shūfu, jiù qù kàn yīshēng ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
-   ]},
-
-  {n:2,zh:'脸',py:'liǎn',pos:'Danh từ',vn:'mặt, khuôn mặt', hv: 'kiểm',em:'😊',lesson:1,
-   explain:['Phần trước của đầu, từ trán đến cằm.'],
-   usage:'Danh từ; đi cùng động từ 看上去: 脸看上去漂亮.',
-   collo:['脸看上去','脸色','洗脸'],
-   ex_zh:'这样可以使她的脸看上去漂亮一些。',ex_py:'Zhèyàng kěyǐ shǐ tā de liǎn kàn shangqu piàoliang yìxiē.',ex_vn:'Như vậy có thể khiến khuôn mặt con trông xinh hơn một chút.',
-   exList:[
-     {zh:'这样可以使她的脸看上去漂亮一些。',py:'Zhèyàng kěyǐ shǐ tā de liǎn kàn shangqu piàoliang yìxiē.',vn:'Như vậy có thể khiến khuôn mặt con trông xinh hơn một chút.'},
-     {zh:'他今天穿蓝西服，看上去像40多岁。',py:'Tā jīntiān chuān lán xīfú, kàn shangqu xiàng sìshí duō suì.',vn:'Hôm nay anh ấy mặc âu phục xanh, trông như hơn 40 tuổi.'},
-     {zh:'你的脸色看上去不太好，哪儿不舒服啊？',py:'Nǐ de liǎnsè kàn shangqu bú tài hǎo, nǎr bù shūfu a?',vn:'Sắc mặt bạn trông không tốt lắm, chỗ nào khó chịu vậy?'},
-   ],
-   hanzi:[
-     {c:'脸',p:'liǎn',type:'左右结构 · Trái-phải',st:10,ord:'月 trái → 佥 phải (giản thể)',rad:'月 (nhục – thịt)',mean:'mặt',
-      tip:'月(bộ thịt, chỉ cơ thể) + 佥(mọi người) → phần cơ thể mà MỌI NGƯỜI đều nhìn thấy đầu tiên = MẶT.',
-      cf:'检 (jiǎn – "kiểm tra", có bộ 木")',w:'脸 / 洗脸 / 脸色'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy sắc mặt anh ấy trông không tốt lắm, nhưng anh ấy nói bản thân không sao.',answer:'虽然他脸色看上去不太好，但是他说自己没什么事。',answerPy:'Suīrán tā liǎnsè kàn shangqu bú tài hǎo, dànshì tā shuō zìjǐ méi shénme shì.',
-      note:'看上去 diễn tả sự đánh giá qua quan sát (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn rửa mặt xong thì chúng ta đi ăn cơm đi.',answer:'如果你洗完脸了，我们就去吃饭吧。',answerPy:'Rúguǒ nǐ xǐwán liǎn le, wǒmen jiù qù chī fàn ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'短',py:'duǎn',pos:'Tính từ',vn:'ngắn', hv: 'đoản',em:'📏',lesson:1,
-   explain:['Có độ dài nhỏ, trái nghĩa với 长.'],
-   usage:'Tính từ, làm định ngữ hoặc vị ngữ: 短头发.',
-   collo:['短头发','短一些','变短'],
-   ex_zh:'她小时候喜欢短头发。',ex_py:'Tā xiǎoshíhou xǐhuan duǎn tóufa.',ex_vn:'Hồi nhỏ con thích để tóc ngắn.',
-   exList:[
-     {zh:'女儿变化不小，她小时候喜欢短头发，像男孩子一样。',py:'Nǚ\'ér biànhuà bù xiǎo, tā xiǎoshíhou xǐhuan duǎn tóufa, xiàng nán háizi yíyàng.',vn:'Con gái thay đổi không nhỏ đâu, hồi nhỏ con thích để tóc ngắn, giống con trai vậy.'},
-     {zh:'那时她比较瘦，还是短头发。',py:'Nà shí tā bǐjiào shòu, háishi duǎn tóufa.',vn:'Lúc đó cô ấy khá gầy, vẫn để tóc ngắn.'},
-     {zh:'这条裤子有点儿短。',py:'Zhè tiáo kùzi yǒudiǎnr duǎn.',vn:'Cái quần này hơi ngắn.'},
-   ],
-   hanzi:[
-     {c:'短',p:'duǎn',type:'左右结构 · Trái-phải',st:12,ord:'矢 trái → 豆 phải',rad:'矢 (thỉ – mũi tên)',mean:'ngắn',
-      tip:'矢(mũi tên, vật ngắn) + 豆(hạt đậu, cũng nhỏ) → hai vật đều NGẮN, NHỎ để so sánh = NGẮN.',
-      cf:'豆 (dòu – "đậu", không có bộ 矢")',w:'短 / 短头发 / 短信'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy cái áo này hơi ngắn, nhưng mặc vào vẫn khá đẹp.',answer:'虽然这件衣服有点儿短，但是穿起来还挺好看。',answerPy:'Suīrán zhè jiàn yīfu yǒudiǎnr duǎn, dànshì chuān qilai hái tǐng hǎokàn.',
-      note:'有点儿 + Adj diễn tả mức độ nhẹ.'},
-     {promptLang:'vi',prompt:'Nếu tóc bạn ngắn thì sẽ trông trẻ hơn.',answer:'如果你的头发短一些，就会看上去更年轻。',answerPy:'Rúguǒ nǐ de tóufa duǎn yìxiē, jiù huì kàn shangqu gèng niánqīng.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:4,zh:'马',py:'mǎ',pos:'Danh từ',vn:'ngựa', hv: 'mã',em:'🐴',lesson:2,
-   explain:['Loài động vật bốn chân, dùng để cưỡi, kéo xe.'],
-   usage:'Danh từ; đi cùng động từ 骑: 骑马.',
-   collo:['骑马','骑马比赛','喜欢骑马'],
-   ex_zh:'上次我们参加骑马比赛的照片。',ex_py:'Shàng cì wǒmen cānjiā qí mǎ bǐsài de zhàopiàn.',ex_vn:'Ảnh chúng ta chụp khi tham gia cuộc thi cưỡi ngựa lần trước.',
-   exList:[
-     {zh:'上次我们参加骑马比赛的照片，我选了几张洗出来了。',py:'Shàng cì wǒmen cānjiā qí mǎ bǐsài de zhàopiàn, wǒ xuǎnle jǐ zhāng xǐ chulai le.',vn:'Ảnh chúng ta chụp khi tham gia cuộc thi cưỡi ngựa lần trước, tôi chọn mấy tấm rửa ra rồi.'},
-     {zh:'你会骑马？跟谁学的？',py:'Nǐ huì qí mǎ? Gēn shéi xué de?',vn:'Bạn biết cưỡi ngựa à? Học từ ai vậy?'},
-     {zh:'我爷爷，他很喜欢骑马，而且骑得很好。',py:'Wǒ yéye, tā hěn xǐhuan qí mǎ, érqiě qí de hěn hǎo.',vn:'Ông nội tôi, ông rất thích cưỡi ngựa, mà lại cưỡi rất giỏi.'},
-   ],
-   hanzi:[
-     {c:'马',p:'mǎ',type:'独体字 · Chữ đơn (tượng hình, giản thể)',st:3,ord:'nét liền',rad:'马 (mã)',mean:'ngựa',
-      tip:'Chữ giản thể mô phỏng hình con NGỰA với bờm và bốn chân → NGỰA.',
-      cf:'鸟 (niǎo – "chim", hình dáng gần giống")',w:'马 / 骑马'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh trai tôi không chỉ biết cưỡi ngựa, mà còn cưỡi nhanh hơn ai hết.',answer:'我哥哥不但会骑马，而且骑得比谁都快。',answerPy:'Wǒ gēge búdàn huì qí mǎ, érqiě qí de bǐ shéi dōu kuài.',
-      note:'不但……而且…… có thể lược 不但, chỉ dùng 而且 khi ngữ cảnh rõ (ôn lại đã học ở Bài 18).'},
-     {promptLang:'vi',prompt:'Nếu bạn thích cưỡi ngựa thì chúng ta đi công viên cưỡi thử đi.',answer:'如果你喜欢骑马，我们就去公园骑骑吧。',answerPy:'Rúguǒ nǐ xǐhuan qí mǎ, wǒmen jiù qù gōngyuán qíqi ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:5,zh:'张',py:'zhāng',pos:'Lượng từ',vn:'tờ, tấm', hv: 'trương',em:'📄',lesson:2,
-   explain:['Lượng từ dùng cho vật phẳng như giấy, bức ảnh.'],
-   usage:'一 + 张 + [danh từ phẳng]: 一张照片.',
-   collo:['一张照片','几张纸','这张画儿'],
-   ex_zh:'我选了几张洗出来了。',ex_py:'Wǒ xuǎnle jǐ zhāng xǐ chulai le.',ex_vn:'Tôi chọn mấy tấm rửa ra rồi.',
-   exList:[
-     {zh:'上次我们参加骑马比赛的照片，我选了几张洗出来了。',py:'Shàng cì wǒmen cānjiā qí mǎ bǐsài de zhàopiàn, wǒ xuǎnle jǐ zhāng xǐ chulai le.',vn:'Ảnh chúng ta chụp khi tham gia cuộc thi cưỡi ngựa lần trước, tôi chọn mấy tấm rửa ra rồi.'},
-     {zh:'你看，这张照片是前年夏天照的。',py:'Nǐ kàn, zhè zhāng zhàopiàn shì qiánnián xiàtiān zhào de.',vn:'Bạn xem, tấm ảnh này chụp hè năm kia đấy.'},
-     {zh:'这张照片让我想起了我的家。',py:'Zhè zhāng zhàopiàn ràng wǒ xiǎngqǐle wǒ de jiā.',vn:'Tấm ảnh này khiến tôi nhớ đến nhà mình.'},
-   ],
-   hanzi:[
-     {c:'张',p:'zhāng',type:'左右结构 · Trái-phải',st:7,ord:'弓 trái → 长 phải (giản thể)',rad:'弓 (cung)',mean:'mở ra; lượng từ vật phẳng',
-      tip:'弓(cây cung) + 长(kéo dài) → kéo dài dây CUNG để bắn = MỞ RA; mở rộng làm lượng từ cho vật phẳng có thể trải ra (giấy, ảnh).',
-      cf:'长 (cháng/zhǎng – "dài/lớn lên", không có bộ 弓")',w:'张 / 一张纸'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tấm ảnh đó khiến mẹ nhớ đến bản thân hồi nhỏ.',answer:'那张照片让妈妈想起了小时候的自己。',answerPy:'Nà zhāng zhàopiàn ràng māma xiǎngqǐle xiǎoshíhou de zìjǐ.',
-      note:'让 + đối tượng + kết quả diễn tả sự khiến cho (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn có tấm ảnh nào đẹp thì cho tôi xem thử đi.',answer:'如果你有什么好看的照片，就给我看看吧。',answerPy:'Rúguǒ nǐ yǒu shénme hǎokàn de zhàopiàn, jiù gěi wǒ kànkan ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:6,zh:'位',py:'wèi',pos:'Lượng từ',vn:'vị (dùng cho người, hàm ý kính trọng)', hv: 'vị',em:'🙋',lesson:2,
-   explain:['Lượng từ dùng cho người, thể hiện sự tôn trọng.'],
-   usage:'一 + 位 + [người]: 这位.',
-   collo:['这位','一位老师','哪位'],
-   ex_zh:'骑得最快的这位是谁？',ex_py:'Qí de zuì kuài de zhè wèi shì shéi?',ex_vn:'Vị này cưỡi nhanh nhất là ai vậy?',
-   exList:[
-     {zh:'快给我看看。骑得最快的这位是谁？',py:'Kuài gěi wǒ kànkan. Qí de zuì kuài de zhè wèi shì shéi?',vn:'Mau cho tôi xem. Vị này cưỡi nhanh nhất là ai vậy?'},
-     {zh:'请问，您是哪位？',py:'Qǐngwèn, nín shì nǎ wèi?',vn:'Xin hỏi, anh/chị là ai vậy ạ?'},
-     {zh:'这位是我们的新经理。',py:'Zhè wèi shì wǒmen de xīn jīnglǐ.',vn:'Vị này là giám đốc mới của chúng tôi.'},
-   ],
-   hanzi:[
-     {c:'位',p:'wèi',type:'左右结构 · Trái-phải',st:7,ord:'亻 trái → 立 phải',rad:'亻 (nhân – người)',mean:'vị trí; vị (lượng từ)',
-      tip:'亻(người) + 立(đứng) → NGƯỜI đứng ở một VỊ TRÍ nhất định; mở rộng làm lượng từ tôn trọng cho người.',
-      cf:'立 (lì – "đứng", không có bộ 亻")',w:'位 / 位置'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vị này tuy là giám đốc mới đến, nhưng mọi người đều rất thích anh ấy.',answer:'这位虽然是新来的经理，但是大家都很喜欢他。',answerPy:'Zhè wèi suīrán shì xīnlái de jīnglǐ, dànshì dàjiā dōu hěn xǐhuan tā.',
-      note:'这位 dùng lịch sự khi giới thiệu người.'},
-     {promptLang:'vi',prompt:'Nếu vị này là giám đốc mới thì chúng ta nên chào hỏi.',answer:'如果这位是新经理，我们就应该打个招呼。',answerPy:'Rúguǒ zhè wèi shì xīn jīnglǐ, wǒmen jiù yīnggāi dǎ ge zhāohu.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:7,zh:'蓝',py:'lán',pos:'Tính từ',vn:'có màu xanh da trời', hv: 'lam',em:'🔵',lesson:2,
-   explain:['Màu của bầu trời trong, biển cả.'],
-   usage:'Tính từ; đi cùng danh từ: 蓝西服.',
-   collo:['蓝西服','蓝色','天蓝蓝的'],
-   ex_zh:'他今天穿蓝西服。',ex_py:'Tā jīntiān chuān lán xīfú.',ex_vn:'Hôm nay anh ấy mặc âu phục xanh.',
-   exList:[
-     {zh:'他今天穿蓝西服，看上去像40多岁。',py:'Tā jīntiān chuān lán xīfú, kàn shangqu xiàng sìshí duō suì.',vn:'Hôm nay anh ấy mặc âu phục xanh, trông như hơn 40 tuổi.'},
-     {zh:'还有蓝色和黑色的，拿一件您试试？',py:'Hái yǒu lánsè hé hēisè de, ná yí jiàn nín shìshi?',vn:'Còn có màu xanh và màu đen nữa, lấy một cái anh mặc thử nhé?'},
-     {zh:'蓝色会让我的脸看上去更年轻些。',py:'Lánsè huì ràng wǒ de liǎn kàn shangqu gèng niánqīng xiē.',vn:'Màu xanh sẽ khiến khuôn mặt tôi trông trẻ hơn một chút.'},
-   ],
-   hanzi:[
-     {c:'蓝',p:'lán',type:'上下结构 · Trên-dưới',st:13,ord:'艹 trên → 监 dưới (giản thể)',rad:'艹 (thảo – cỏ cây)',mean:'màu xanh lam',
-      tip:'艹(cây cỏ, thực vật nhuộm màu) + 监(soi xét) → thực vật dùng để nhuộm màu XANH LAM thời xưa (cây chàm).',
-      cf:'篮 (lán – "cái giỏ", có bộ ⺮")',w:'蓝色 / 蓝天'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn mặc bộ âu phục xanh đó vào, sẽ khiến bạn trông bảnh hơn.',answer:'只要你穿上那件蓝西服，就会让你看上去更帅。',answerPy:'Zhǐyào nǐ chuānshang nà jiàn lán xīfú, jiù huì ràng nǐ kàn shangqu gèng shuài.',
-      note:'让 + đối tượng + kết quả diễn tả sự khiến cho (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn thích màu xanh thì mua cái áo đó đi.',answer:'如果你喜欢蓝色，就买那件衣服吧。',answerPy:'Rúguǒ nǐ xǐhuan lánsè, jiù mǎi nà jiàn yīfu ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:8,zh:'秋(天)',py:'qiū(tiān)',pos:'Danh từ',vn:'mùa thu', hv: 'thu thiên',em:'🍂',lesson:3,
-   explain:['Mùa chuyển tiếp giữa hè và đông.'],
-   usage:'Danh từ chỉ mùa; đi cùng động từ 出生: 秋天出生的.',
-   collo:['去年秋天','秋天出生','这个秋天'],
-   ex_zh:'她去年秋天出生的。',ex_py:'Tā qùnián qiūtiān chūshēng de.',ex_vn:'Con bé sinh vào mùa thu năm ngoái.',
-   exList:[
-     {zh:'她去年秋天出生的，刚过完一岁生日。',py:'Tā qùnián qiūtiān chūshēng de, gāng guòwán yí suì shēngrì.',vn:'Con bé sinh vào mùa thu năm ngoái, vừa mới qua sinh nhật một tuổi.'},
-     {zh:'秋天的天气很凉快。',py:'Qiūtiān de tiānqì hěn liángkuai.',vn:'Thời tiết mùa thu rất mát mẻ.'},
-     {zh:'我最喜欢的季节是秋天。',py:'Wǒ zuì xǐhuan de jìjié shì qiūtiān.',vn:'Mùa tôi thích nhất là mùa thu.'},
-   ],
-   hanzi:[
-     {c:'秋',p:'qiū',type:'左右结构 · Trái-phải',st:9,ord:'禾 trái → 火 phải',rad:'禾 (hoà – lúa)',mean:'mùa thu',
-      tip:'禾(cây lúa) + 火(lửa, màu vàng đỏ) → mùa LÚA chín có màu vàng như LỬA = MÙA THU.',
-      cf:'秒 (miǎo – "giây", có 少 thay vì 火")',w:'秋天 / 秋季'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nơi tôi muốn đến nhất chính là Hoàng Hà vào mùa thu.',answer:'我最想去的地方就是秋天的黄河。',answerPy:'Wǒ zuì xiǎng qù de dìfang jiù shì qiūtiān de Huáng Hé.',
-      note:'最 + động từ + 的 làm định ngữ.'},
-     {promptLang:'vi',prompt:'Nếu mùa thu đến thì lá cây sẽ chuyển màu vàng.',answer:'如果秋天到了，树叶就会变黄。',answerPy:'Rúguǒ qiūtiān dào le, shùyè jiù huì biàn huáng.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'过',py:'guò',pos:'Động từ',vn:'ăn (mừng), trải qua', hv: 'quá',em:'🎂',lesson:3,
-   explain:['Kỷ niệm một dịp đặc biệt, hoặc trải qua khoảng thời gian.'],
-   usage:'Động từ, mang tân ngữ: 过生日, 过年.',
-   collo:['过生日','过年','过节'],
-   ex_zh:'刚过完一岁生日。',ex_py:'Gāng guòwán yí suì shēngrì.',ex_vn:'Vừa mới qua sinh nhật một tuổi.',
-   exList:[
-     {zh:'她去年秋天出生的，刚过完一岁生日。',py:'Tā qùnián qiūtiān chūshēng de, gāng guòwán yí suì shēngrì.',vn:'Con bé sinh vào mùa thu năm ngoái, vừa mới qua sinh nhật một tuổi.'},
-     {zh:'过生日要吃面条，这是我第一次做面条。',py:'Guò shēngrì yào chī miàntiáo, zhè shì wǒ dì-yī cì zuò miàntiáo.',vn:'Ăn sinh nhật phải ăn mì, đây là lần đầu tiên tôi làm mì.'},
-     {zh:'我真希望时间能慢下来，不要过得那么快。',py:'Wǒ zhēn xīwàng shíjiān néng màn xiàlai, búyào guò de nàme kuài.',vn:'Tôi thật mong thời gian có thể chậm lại, đừng trôi qua nhanh như vậy.'},
-   ],
-   hanzi:[
-     {c:'过',p:'guò',type:'半包围结构 · Bán bao vây',st:6,ord:'辶 ngoài → 寸 trong',rad:'辶 (sước – đi)',mean:'đi qua, trải qua',
-      tip:'辶(đi) + 寸(một đoạn ngắn, thời gian) → ĐI QUA một khoảng thời gian; mở rộng nghĩa TRẢI QUA, ĂN MỪNG (một dịp).',
-      cf:'辻 (không phải chữ Hán thường dùng)',w:'过 / 经过 / 过年'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy sinh nhật năm nay tổ chức đơn giản, nhưng tôi vẫn rất vui.',answer:'虽然今年的生日过得很简单，但是我还是很开心。',answerPy:'Suīrán jīnnián de shēngrì guò de hěn jiǎndān, dànshì wǒ háishi hěn kāixīn.',
-      note:'过生日 diễn tả ăn mừng sinh nhật.'},
-     {promptLang:'vi',prompt:'Nếu bạn qua sinh nhật vui vẻ thì tôi cũng vui theo.',answer:'如果你过生日过得开心，我也会跟着高兴。',answerPy:'Rúguǒ nǐ guò shēngrì guò de kāixīn, wǒ yě huì gēnzhe gāoxìng.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:10,zh:'鸟',py:'niǎo',pos:'Danh từ',vn:'chim', hv: 'điểu',em:'🐦',lesson:3,
-   explain:['Loài động vật có cánh, biết bay và hót.'],
-   usage:'Danh từ; đi cùng động từ 叫: 鸟叫.',
-   collo:['鸟叫','小鸟','什么鸟'],
-   ex_zh:'她就喜欢听她爸爸学鸟叫。',ex_py:'Tā jiù xǐhuan tīng tā bàba xué niǎo jiào.',ex_vn:'Con bé chỉ thích nghe bố nó bắt chước tiếng chim kêu.',
-   exList:[
-     {zh:'她就喜欢听她爸爸学鸟叫。哭的时候，只要他爸爸学小鸟叫，她马上就安静下来了。',py:'Tā jiù xǐhuan tīng tā bàba xué niǎo jiào. Kū de shíhou, zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.',vn:'Con bé chỉ thích nghe bố nó bắt chước tiếng chim kêu. Lúc khóc, chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay.'},
-     {zh:'你看，树上那只鸟，红红的，嘴小小的，是什么鸟？',py:'Nǐ kàn, shù shang nà zhī niǎo, hónghóng de, zuǐ xiǎoxiǎo de, shì shénme niǎo?',vn:'Bạn xem, con chim trên cây kia, đỏ đỏ, mỏ nhỏ nhỏ, là chim gì vậy?'},
-     {zh:'街道两边的树，还有树上的小鸟，会使我觉得很快乐。',py:'Jiēdào liǎng biān de shù, hái yǒu shù shang de xiǎo niǎo, huì shǐ wǒ juéde hěn kuàilè.',vn:'Hàng cây hai bên đường phố, còn có chim nhỏ trên cây, khiến tôi cảm thấy rất vui.'},
-   ],
-   hanzi:[
-     {c:'鸟',p:'niǎo',type:'独体字 · Chữ đơn (tượng hình, giản thể)',st:5,ord:'nét liền',rad:'鸟 (điểu)',mean:'chim',
-      tip:'Chữ giản thể mô phỏng hình con CHIM với đầu, thân và đuôi → CHIM.',
-      cf:'乌 (wū – "quạ", thiếu nét chấm mắt")',w:'鸟 / 小鸟'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chim nhỏ trong công viên vừa bay vừa hót, khiến tôi nhớ lại tuổi thơ.',answer:'公园里的小鸟一边飞一边叫，使我想起了童年。',answerPy:'Gōngyuán li de xiǎo niǎo yìbiān fēi yìbiān jiào, shǐ wǒ xiǎngqǐle tóngnián.',
-      note:'使 diễn tả sự khiến cho (ôn lại 街道 đã học ở Bài 15).'},
-     {promptLang:'vi',prompt:'Nếu bạn thích nghe chim hót thì đi công viên đi.',answer:'如果你喜欢听鸟叫，就去公园吧。',answerPy:'Rúguǒ nǐ xǐhuan tīng niǎo jiào, jiù qù gōngyuán ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'哭',py:'kū',pos:'Động từ',vn:'khóc', hv: 'khốc',em:'😢',lesson:3,
-   explain:['Biểu lộ cảm xúc buồn, đau bằng nước mắt.'],
-   usage:'Động từ; đi cùng 的时候: 哭的时候.',
-   collo:['哭的时候','一直哭','别哭'],
-   ex_zh:'哭的时候，只要他爸爸学小鸟叫，她马上就安静下来了。',ex_py:'Kū de shíhou, zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.',ex_vn:'Lúc khóc, chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay.',
-   exList:[
-     {zh:'哭的时候，只要他爸爸学小鸟叫，她马上就安静下来了。',py:'Kū de shíhou, zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.',vn:'Lúc khóc, chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay.'},
-     {zh:'你哭了？没有啊，刚才风刮得太大，眼睛里进东西了。',py:'Nǐ kū le? Méiyǒu a, gāngcái fēng guā de tài dà, yǎnjing li jìn dōngxi le.',vn:'Bạn khóc à? Không có, vừa nãy gió thổi to quá, có vật gì vào mắt rồi.'},
-     {zh:'最近，我家小雨一直哭，说耳朵疼。',py:'Zuìjìn, wǒ jiā Xiǎoyǔ yìzhí kū, shuō ěrduo téng.',vn:'Gần đây, bé Tiểu Vũ nhà tôi cứ khóc mãi, nói tai đau.'},
-   ],
-   hanzi:[
-     {c:'哭',p:'kū',type:'上下结构 · Trên-dưới',st:10,ord:'吅 trên → 犬 dưới',rad:'口 (khẩu)',mean:'khóc',
-      tip:'吅(hai miệng, tiếng kêu to) + 犬(con chó, tiếng tru) → tiếng kêu KHÓC to như tiếng chó tru.',
-      cf:'器 (qì – "dụng cụ", có 4 chữ 口")',w:'哭 / 别哭了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì tai cứ đau mãi nên bé Tiểu Vũ mới khóc mãi không thôi.',answer:'因为耳朵一直很疼，所以小雨才一直哭。',answerPy:'Yīnwèi ěrduo yìzhí hěn téng, suǒyǐ Xiǎoyǔ cái yìzhí kū.',
-      note:'一直 diễn tả trạng thái kéo dài liên tục (ôn lại 耳朵 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bé khóc thì bạn hát cho bé nghe đi.',answer:'如果孩子哭了，你就给她唱首歌吧。',answerPy:'Rúguǒ háizi kū le, nǐ jiù gěi tā chàng shǒu gē ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'黄河',py:'Huáng Hé',pos:'Danh từ riêng',vn:'Hoàng Hà', hv: 'Hoàng Hà',em:'🏞️',lesson:4,
-   explain:['Con sông lớn thứ hai ở Trung Quốc, được coi là cái nôi của văn minh Trung Hoa.'],
-   usage:'Danh từ riêng; đi cùng động từ 看/去: 去看黄河.',
-   collo:['黄河边上','看黄河','中国有名的大河'],
-   ex_zh:'我先去看了黄河。',ex_py:'Wǒ xiān qù kànle Huáng Hé.',ex_vn:'Tôi trước tiên đi xem sông Hoàng Hà.',
-   exList:[
-     {zh:'我先去看了黄河，黄河是中国有名的大河。',py:'Wǒ xiān qù kànle Huáng Hé, Huáng Hé shì Zhōngguó yǒumíng de dà hé.',vn:'Tôi trước tiên đi xem sông Hoàng Hà, Hoàng Hà là con sông lớn nổi tiếng của Trung Quốc.'},
-     {zh:'这张照片让我想起了我的家，以前我家住在黄河边上。',py:'Zhè zhāng zhàopiàn ràng wǒ xiǎngqǐle wǒ de jiā, yǐqián wǒ jiā zhù zài Huáng Hé biānshang.',vn:'Tấm ảnh này khiến tôi nhớ đến nhà mình, trước đây nhà tôi sống ở bên bờ Hoàng Hà.'},
-     {zh:'黄河是中国有名的大河。',py:'Huáng Hé shì Zhōngguó yǒumíng de dà hé.',vn:'Hoàng Hà là con sông lớn nổi tiếng của Trung Quốc.'},
-   ],
-   hanzi:[
-     {c:'河',p:'hé',type:'左右结构 · Trái-phải',st:8,ord:'氵 trái → 可 phải',rad:'氵 (thuỷ – nước)',mean:'sông',
-      tip:'氵(nước) + 可(có thể, âm đọc) → dòng NƯỚC chảy dài = SÔNG; 黄(vàng)+河(sông) = HOÀNG HÀ (sông có nước màu vàng).',
-      cf:'何 (hé – "gì, nào", không có bộ 氵")',w:'黄河 / 河边'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần nhắc đến những con sông lớn nổi tiếng của Trung Quốc là mọi người sẽ nghĩ đến Hoàng Hà.',answer:'只要提到中国有名的大河，大家就会想到黄河。',answerPy:'Zhǐyào tídào Zhōngguó yǒumíng de dà hé, dàjiā jiù huì xiǎngdào Huáng Hé.',
-      note:'有名 diễn tả sự nổi tiếng (ôn lại đã học ở Bài 18).'},
-     {promptLang:'vi',prompt:'Nếu bạn đến Trung Quốc thì nên đi xem Hoàng Hà một lần.',answer:'如果你来中国，就应该去看一次黄河。',answerPy:'Rúguǒ nǐ lái Zhōngguó, jiù yīnggāi qù kàn yí cì Huáng Hé.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'船',py:'chuán',pos:'Danh từ',vn:'thuyền, tàu', hv: 'thuyền',em:'🚢',lesson:4,
-   explain:['Phương tiện di chuyển trên mặt nước.'],
-   usage:'Danh từ; đi cùng động từ 坐: 坐船.',
-   collo:['坐船','坐在船上','船票'],
-   ex_zh:'我坐在船上，一边看一边照相。',ex_py:'Wǒ zuò zài chuán shang, yìbiān kàn yìbiān zhàoxiàng.',ex_vn:'Tôi ngồi trên thuyền, vừa ngắm vừa chụp ảnh.',
-   exList:[
-     {zh:'我坐在船上，一边看一边照相。',py:'Wǒ zuò zài chuán shang, yìbiān kàn yìbiān zhàoxiàng.',vn:'Tôi ngồi trên thuyền, vừa ngắm vừa chụp ảnh.'},
-     {zh:'你终于来了，船马上就开了。',py:'Nǐ zhōngyú lái le, chuán mǎshàng jiù kāi le.',vn:'Bạn cuối cùng cũng đến rồi, thuyền sắp chạy rồi.'},
-     {zh:'坐船虽然便宜，但是太慢了，要十四个小时。',py:'Zuò chuán suīrán piányi, dànshì tài màn le, yào shísì ge xiǎoshí.',vn:'Đi tàu tuy rẻ, nhưng chậm quá, phải mất mười bốn tiếng.'},
-   ],
-   hanzi:[
-     {c:'船',p:'chuán',type:'左右结构 · Trái-phải',st:11,ord:'舟 trái → 㕣 phải',rad:'舟 (chu – thuyền)',mean:'thuyền, tàu',
-      tip:'舟(hình con thuyền) + 㕣(cái miệng thung lũng, dòng nước) → thuyền đi trên DÒNG NƯỚC = THUYỀN, TÀU.',
-      cf:'般 (bān – "loại", cũng có bộ 舟")',w:'船 / 坐船'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đi tàu tuy có thể ngắm cảnh, nhưng ngồi lâu quá, tôi hơi mệt.',answer:'坐船虽然能看风景，但是坐的时间太久，我有点儿累了。',answerPy:'Zuò chuán suīrán néng kàn fēngjǐng, dànshì zuò de shíjiān tài jiǔ, wǒ yǒudiǎnr lèi le.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-     {promptLang:'vi',prompt:'Nếu bạn thích ngồi tàu thì chúng ta đi tàu đi.',answer:'如果你喜欢坐船，我们就坐船去吧。',answerPy:'Rúguǒ nǐ xǐhuan zuò chuán, wǒmen jiù zuò chuán qù ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:14,zh:'经过',py:'jīngguò',pos:'Động từ',vn:'đi ngang qua', hv: 'kinh quá',em:'🛣️',lesson:4,
-   explain:['Đi qua một nơi hoặc trải qua một quá trình.'],
-   usage:'Động từ, mang tân ngữ là nơi chốn hoặc thời gian: 经过很多地方.',
-   collo:['经过很多地方','经过这条街','经过一段时间'],
-   ex_zh:'一路上经过了很多地方。',ex_py:'Yí lù shang jīngguòle hěn duō dìfang.',ex_vn:'Suốt chặng đường đi qua rất nhiều nơi.',
-   exList:[
-     {zh:'一路上经过了很多地方，每个地方都不一样。',py:'Yí lù shang jīngguòle hěn duō dìfang, měi ge dìfang dōu bù yíyàng.',vn:'Suốt chặng đường đi qua rất nhiều nơi, mỗi nơi đều khác nhau.'},
-     {zh:'上下班的时候，我都会经过这条街。',py:'Shàng xià bān de shíhou, wǒ dōu huì jīngguò zhè tiáo jiē.',vn:'Lúc đi làm về, tôi đều đi ngang qua con phố này.'},
-     {zh:'如果你经过我家，就进来喝杯茶吧。',py:'Rúguǒ nǐ jīngguò wǒ jiā, jiù jìnlai hē bēi chá ba.',vn:'Nếu bạn đi ngang qua nhà tôi thì ghé vào uống chén trà đi.'},
-   ],
-   hanzi:[
-     {c:'经',p:'jīng',type:'左右结构 · Trái-phải',st:8,ord:'纟 trái → 圣 phải (giản thể)',rad:'纟 (mịch – tơ lụa)',mean:'trải qua, thường xuyên',
-      tip:'纟(sợi tơ dệt) + phần phải (giản thể) → sợi dọc XUYÊN SUỐT tấm vải = ĐI QUA, TRẢI QUA.',
-      cf:'轻 (qīng – "nhẹ", có bộ 车")',w:'经过 / 经常 / 已经'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lúc đi bệnh viện, tôi đều đi ngang qua một công viên.',answer:'去医院的时候，我都会经过一个公园。',answerPy:'Qù yīyuàn de shíhou, wǒ dōu huì jīngguò yí ge gōngyuán.',
-      note:'……的时候 diễn tả thời điểm (ôn lại 街道 đã học ở Bài 15).'},
-     {promptLang:'vi',prompt:'Nếu bạn đi ngang qua nhà tôi thì hãy ghé vào chơi.',answer:'如果你经过我家，就进来玩儿吧。',answerPy:'Rúguǒ nǐ jīngguò wǒ jiā, jiù jìnlai wánr ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "耳朵",
+    "py": "ěrduo",
+    "pos": "Danh từ",
+    "vn": "tai",
+    "hv": "nhĩ đóa",
+    "em": "👂",
+    "lesson": 1,
+    "explain": [
+      "Bộ phận trên đầu dùng để nghe."
+    ],
+    "usage": "Danh từ; đi cùng động từ 放/看: 把头发放在耳朵后面.",
+    "collo": [
+      "耳朵后面",
+      "耳朵疼",
+      "看一下耳朵"
+    ],
+    "ex_zh": "女儿最近喜欢把头发放在耳朵后面。",
+    "ex_py": "Nǚ'ér zuìjìn xǐhuan bǎ tóufa fàng zài ěrduo hòumiàn.",
+    "ex_vn": "Con gái gần đây thích để tóc ra sau tai.",
+    "exList": [
+      {
+        "zh": "女儿最近喜欢把头发放在耳朵后面，你知道为什么吗？",
+        "py": "Nǚ'ér zuìjìn xǐhuan bǎ tóufa fàng zài ěrduo hòumiàn, nǐ zhīdào wèi shénme ma?",
+        "vn": "Con gái gần đây thích để tóc ra sau tai, em biết vì sao không?"
+      },
+      {
+        "zh": "别害怕，不要动，让我看一下你的耳朵。",
+        "py": "Bié hàipà, búyào dòng, ràng wǒ kàn yíxià nǐ de ěrduo.",
+        "vn": "Đừng sợ, đừng cử động, để tôi xem tai bạn một chút."
+      },
+      {
+        "zh": "刚才游泳时耳朵进水了，现在耳朵里一直不舒服。",
+        "py": "Gāngcái yóuyǒng shí ěrduo jìn shuǐ le, xiànzài ěrduo li yìzhí bù shūfu.",
+        "vn": "Vừa nãy bơi bị nước vào tai, giờ trong tai cứ khó chịu mãi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "朵",
+        "p": "duo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "几 trên → 木 dưới",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "lượng từ chỉ hoa",
+        "tip": "几(hình dáng cong) + 木(cây) → hình DÁNG bông hoa trên CÂY; 耳(tai)+朵(hình dáng cong) = TAI (hình cong giống bông hoa).",
+        "cf": "条 (tiáo – \"sợi, dải\", có bộ 冬\")",
+        "w": "耳朵 / 一朵花"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần trời lạnh là tai cậu ấy lại khó chịu mãi không dứt.",
+        "answer": "只要天一冷，他的耳朵就一直不舒服。",
+        "answerPy": "Zhǐyào tiān yì lěng, tā de ěrduo jiù yìzhí bù shūfu.",
+        "note": "一直 diễn tả trạng thái kéo dài liên tục.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu tai bạn khó chịu thì đi khám bác sĩ đi.",
+        "answer": "如果你的耳朵不舒服，就去看医生吧。",
+        "answerPy": "Rúguǒ nǐ de ěrduo bù shūfu, jiù qù kàn yīshēng ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "耳朵很大",
+        "py": "ěrduo hěn dà",
+        "vn": "tai rất to"
+      },
+      {
+        "zh": "大耳朵",
+        "py": "dà ěrduo",
+        "vn": "tai to"
+      },
+      {
+        "zh": "耳朵不舒服",
+        "py": "ěrduo bù shūfu",
+        "vn": "tai khó chịu"
+      },
+      {
+        "zh": "耳朵像爸爸",
+        "py": "ěrduo xiàng bàba",
+        "vn": "tai giống bố"
+      },
+      {
+        "zh": "两只耳朵",
+        "py": "liǎng zhī ěrduo",
+        "vn": "hai cái tai"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "bộ phận + 像 + ai",
+        "m": "Bộ phận nào giống ai — 像 là từ bài 14"
+      },
+      {
+        "s": "两 + 只 + 耳朵",
+        "m": "Lượng từ 只 (bài 18) dùng cho bộ phận đi thành đôi"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "脸",
+    "py": "liǎn",
+    "pos": "Danh từ",
+    "vn": "mặt, khuôn mặt",
+    "hv": "kiểm",
+    "em": "😊",
+    "lesson": 1,
+    "explain": [
+      "Phần trước của đầu, từ trán đến cằm."
+    ],
+    "usage": "Danh từ; đi cùng động từ 看上去: 脸看上去漂亮.",
+    "collo": [
+      "脸看上去",
+      "脸色",
+      "洗脸"
+    ],
+    "ex_zh": "这样可以使她的脸看上去漂亮一些。",
+    "ex_py": "Zhèyàng kěyǐ shǐ tā de liǎn kàn shangqu piàoliang yìxiē.",
+    "ex_vn": "Như vậy có thể khiến khuôn mặt con trông xinh hơn một chút.",
+    "exList": [
+      {
+        "zh": "这样可以使她的脸看上去漂亮一些。",
+        "py": "Zhèyàng kěyǐ shǐ tā de liǎn kàn shangqu piàoliang yìxiē.",
+        "vn": "Như vậy có thể khiến khuôn mặt con trông xinh hơn một chút."
+      },
+      {
+        "zh": "他今天穿蓝西服，看上去像40多岁。",
+        "py": "Tā jīntiān chuān lán xīfú, kàn shangqu xiàng sìshí duō suì.",
+        "vn": "Hôm nay anh ấy mặc âu phục xanh, trông như hơn 40 tuổi."
+      },
+      {
+        "zh": "你的脸色看上去不太好，哪儿不舒服啊？",
+        "py": "Nǐ de liǎnsè kàn shangqu bú tài hǎo, nǎr bù shūfu a?",
+        "vn": "Sắc mặt bạn trông không tốt lắm, chỗ nào khó chịu vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "脸",
+        "p": "liǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "月 trái → 佥 phải (giản thể)",
+        "rad": "月 (nhục – thịt)",
+        "mean": "mặt",
+        "tip": "月(bộ thịt, chỉ cơ thể) + 佥(mọi người) → phần cơ thể mà MỌI NGƯỜI đều nhìn thấy đầu tiên = MẶT.",
+        "cf": "检 (jiǎn – \"kiểm tra\", có bộ 木\")",
+        "w": "脸 / 洗脸 / 脸色"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy sắc mặt anh ấy trông không tốt lắm, nhưng anh ấy nói bản thân không sao.",
+        "answer": "虽然他脸色看上去不太好，但是他说自己没什么事。",
+        "answerPy": "Suīrán tā liǎnsè kàn shangqu bú tài hǎo, dànshì tā shuō zìjǐ méi shénme shì.",
+        "note": "看上去 diễn tả sự đánh giá qua quan sát (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn rửa mặt xong thì chúng ta đi ăn cơm đi.",
+        "answer": "如果你洗完脸了，我们就去吃饭吧。",
+        "answerPy": "Rúguǒ nǐ xǐwán liǎn le, wǒmen jiù qù chī fàn ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "洗脸",
+        "py": "xǐliǎn",
+        "vn": "rửa mặt"
+      },
+      {
+        "zh": "脸红了",
+        "py": "liǎn hóng le",
+        "vn": "mặt đỏ lên"
+      },
+      {
+        "zh": "圆圆的脸",
+        "py": "yuányuán de liǎn",
+        "vn": "khuôn mặt tròn trịa"
+      },
+      {
+        "zh": "脸小小的",
+        "py": "liǎn xiǎoxiǎo de",
+        "vn": "mặt nho nhỏ"
+      },
+      {
+        "zh": "脸上",
+        "py": "liǎn shàng",
+        "vn": "trên mặt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "洗 + 脸",
+        "m": "Rửa mặt — đi cặp với 刷牙 (bài 16)"
+      },
+      {
+        "s": "Adj + Adj + 的",
+        "m": "Dạng lặp tính từ: 圆圆的, 小小的 — nghe mềm hơn"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "短",
+    "py": "duǎn",
+    "pos": "Tính từ",
+    "vn": "ngắn",
+    "hv": "đoản",
+    "em": "📏",
+    "lesson": 1,
+    "explain": [
+      "Có độ dài nhỏ, trái nghĩa với 长."
+    ],
+    "usage": "Tính từ, làm định ngữ hoặc vị ngữ: 短头发.",
+    "collo": [
+      "短头发",
+      "短一些",
+      "变短"
+    ],
+    "ex_zh": "她小时候喜欢短头发。",
+    "ex_py": "Tā xiǎoshíhou xǐhuan duǎn tóufa.",
+    "ex_vn": "Hồi nhỏ con thích để tóc ngắn.",
+    "exList": [
+      {
+        "zh": "女儿变化不小，她小时候喜欢短头发，像男孩子一样。",
+        "py": "Nǚ'ér biànhuà bù xiǎo, tā xiǎoshíhou xǐhuan duǎn tóufa, xiàng nán háizi yíyàng.",
+        "vn": "Con gái thay đổi không nhỏ đâu, hồi nhỏ con thích để tóc ngắn, giống con trai vậy."
+      },
+      {
+        "zh": "那时她比较瘦，还是短头发。",
+        "py": "Nà shí tā bǐjiào shòu, háishi duǎn tóufa.",
+        "vn": "Lúc đó cô ấy khá gầy, vẫn để tóc ngắn."
+      },
+      {
+        "zh": "这条裤子有点儿短。",
+        "py": "Zhè tiáo kùzi yǒudiǎnr duǎn.",
+        "vn": "Cái quần này hơi ngắn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "短",
+        "p": "duǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "矢 trái → 豆 phải",
+        "rad": "矢 (thỉ – mũi tên)",
+        "mean": "ngắn",
+        "tip": "矢(mũi tên, vật ngắn) + 豆(hạt đậu, cũng nhỏ) → hai vật đều NGẮN, NHỎ để so sánh = NGẮN.",
+        "cf": "豆 (dòu – \"đậu\", không có bộ 矢\")",
+        "w": "短 / 短头发 / 短信"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy cái áo này hơi ngắn, nhưng mặc vào vẫn khá đẹp.",
+        "answer": "虽然这件衣服有点儿短，但是穿起来还挺好看。",
+        "answerPy": "Suīrán zhè jiàn yīfu yǒudiǎnr duǎn, dànshì chuān qilai hái tǐng hǎokàn.",
+        "note": "有点儿 + Adj diễn tả mức độ nhẹ.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu tóc bạn ngắn thì sẽ trông trẻ hơn.",
+        "answer": "如果你的头发短一些，就会看上去更年轻。",
+        "answerPy": "Rúguǒ nǐ de tóufa duǎn yìxiē, jiù huì kàn shangqu gèng niánqīng.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "短头发",
+        "py": "duǎn tóufa",
+        "vn": "tóc ngắn"
+      },
+      {
+        "zh": "时间很短",
+        "py": "shíjiān hěn duǎn",
+        "vn": "thời gian rất ngắn"
+      },
+      {
+        "zh": "短一点儿",
+        "py": "duǎn yìdiǎnr",
+        "vn": "ngắn hơn chút"
+      },
+      {
+        "zh": "冬天很短",
+        "py": "dōng tiān hěn duǎn",
+        "vn": "mùa đông rất ngắn"
+      },
+      {
+        "zh": "短短的",
+        "py": "duǎnduǎn de",
+        "vn": "ngăn ngắn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "短 ↔ 长",
+        "m": "Ngắn ↔ dài — 头发很短 / 头发很长 (bài 16)"
+      },
+      {
+        "s": "Adj + 一点儿",
+        "m": "So sánh nhẹ: ngắn hơn chút"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "马",
+    "py": "mǎ",
+    "pos": "Danh từ",
+    "vn": "ngựa",
+    "hv": "mã",
+    "em": "🐴",
+    "lesson": 2,
+    "explain": [
+      "Loài động vật bốn chân, dùng để cưỡi, kéo xe."
+    ],
+    "usage": "Danh từ; đi cùng động từ 骑: 骑马.",
+    "collo": [
+      "骑马",
+      "骑马比赛",
+      "喜欢骑马"
+    ],
+    "ex_zh": "上次我们参加骑马比赛的照片。",
+    "ex_py": "Shàng cì wǒmen cānjiā qí mǎ bǐsài de zhàopiàn.",
+    "ex_vn": "Ảnh chúng ta chụp khi tham gia cuộc thi cưỡi ngựa lần trước.",
+    "exList": [
+      {
+        "zh": "上次我们参加骑马比赛的照片，我选了几张洗出来了。",
+        "py": "Shàng cì wǒmen cānjiā qí mǎ bǐsài de zhàopiàn, wǒ xuǎnle jǐ zhāng xǐ chulai le.",
+        "vn": "Ảnh chúng ta chụp khi tham gia cuộc thi cưỡi ngựa lần trước, tôi chọn mấy tấm rửa ra rồi."
+      },
+      {
+        "zh": "你会骑马？跟谁学的？",
+        "py": "Nǐ huì qí mǎ? Gēn shéi xué de?",
+        "vn": "Bạn biết cưỡi ngựa à? Học từ ai vậy?"
+      },
+      {
+        "zh": "我爷爷，他很喜欢骑马，而且骑得很好。",
+        "py": "Wǒ yéye, tā hěn xǐhuan qí mǎ, érqiě qí de hěn hǎo.",
+        "vn": "Ông nội tôi, ông rất thích cưỡi ngựa, mà lại cưỡi rất giỏi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "马",
+        "p": "mǎ",
+        "type": "独体字 · Chữ đơn (tượng hình, giản thể)",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "马 (mã)",
+        "mean": "ngựa",
+        "tip": "Chữ giản thể mô phỏng hình con NGỰA với bờm và bốn chân → NGỰA.",
+        "cf": "鸟 (niǎo – \"chim\", hình dáng gần giống\")",
+        "w": "马 / 骑马"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi không chỉ biết cưỡi ngựa, mà còn cưỡi nhanh hơn ai hết.",
+        "answer": "我哥哥不但会骑马，而且骑得比谁都快。",
+        "answerPy": "Wǒ gēge búdàn huì qí mǎ, érqiě qí de bǐ shéi dōu kuài.",
+        "note": "不但……而且…… có thể lược 不但, chỉ dùng 而且 khi ngữ cảnh rõ (ôn lại đã học ở Bài 18).",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích cưỡi ngựa thì chúng ta đi công viên cưỡi thử đi.",
+        "answer": "如果你喜欢骑马，我们就去公园骑骑吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan qí mǎ, wǒmen jiù qù gōngyuán qíqi ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "骑马去",
+        "py": "qí mǎ qù",
+        "vn": "cưỡi ngựa đi"
+      },
+      {
+        "zh": "骑马",
+        "py": "qí mǎ",
+        "vn": "cưỡi ngựa"
+      },
+      {
+        "zh": "白马",
+        "py": "bái mǎ",
+        "vn": "ngựa trắng"
+      },
+      {
+        "zh": "马跑得很快",
+        "py": "mǎ pǎo de hěn kuài",
+        "vn": "ngựa chạy rất nhanh"
+      },
+      {
+        "zh": "马的耳朵",
+        "py": "mǎ de ěrduo",
+        "vn": "tai ngựa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "骑 + 马",
+        "m": "Cưỡi ngựa — dùng 骑 như 骑自行车"
+      },
+      {
+        "s": "马 là chữ tượng hình: nét cong là bờm và bốn chân ngựa"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "张",
+    "py": "zhāng",
+    "pos": "Lượng từ",
+    "vn": "tờ, tấm",
+    "hv": "trương",
+    "em": "📄",
+    "lesson": 2,
+    "explain": [
+      "Lượng từ dùng cho vật phẳng như giấy, bức ảnh."
+    ],
+    "usage": "一 + 张 + [danh từ phẳng]: 一张照片.",
+    "collo": [
+      "一张照片",
+      "几张纸",
+      "这张画儿"
+    ],
+    "ex_zh": "我选了几张洗出来了。",
+    "ex_py": "Wǒ xuǎnle jǐ zhāng xǐ chulai le.",
+    "ex_vn": "Tôi chọn mấy tấm rửa ra rồi.",
+    "exList": [
+      {
+        "zh": "上次我们参加骑马比赛的照片，我选了几张洗出来了。",
+        "py": "Shàng cì wǒmen cānjiā qí mǎ bǐsài de zhàopiàn, wǒ xuǎnle jǐ zhāng xǐ chulai le.",
+        "vn": "Ảnh chúng ta chụp khi tham gia cuộc thi cưỡi ngựa lần trước, tôi chọn mấy tấm rửa ra rồi."
+      },
+      {
+        "zh": "你看，这张照片是前年夏天照的。",
+        "py": "Nǐ kàn, zhè zhāng zhàopiàn shì qiánnián xiàtiān zhào de.",
+        "vn": "Bạn xem, tấm ảnh này chụp hè năm kia đấy."
+      },
+      {
+        "zh": "这张照片让我想起了我的家。",
+        "py": "Zhè zhāng zhàopiàn ràng wǒ xiǎngqǐle wǒ de jiā.",
+        "vn": "Tấm ảnh này khiến tôi nhớ đến nhà mình."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "张",
+        "p": "zhāng",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "弓 trái → 长 phải (giản thể)",
+        "rad": "弓 (cung)",
+        "mean": "mở ra; lượng từ vật phẳng",
+        "tip": "弓(cây cung) + 长(kéo dài) → kéo dài dây CUNG để bắn = MỞ RA; mở rộng làm lượng từ cho vật phẳng có thể trải ra (giấy, ảnh).",
+        "cf": "长 (cháng/zhǎng – \"dài/lớn lên\", không có bộ 弓\")",
+        "w": "张 / 一张纸"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mẹ vừa nhìn thấy tấm ảnh đó là nhớ ngay đến chính mình hồi nhỏ.",
+        "answer": "妈妈一看见那张照片，就想起了小时候的自己。",
+        "answerPy": "Māma yí kànjiàn nà zhāng zhàopiàn, jiù xiǎngqǐle xiǎo shíhou de zìjǐ.",
+        "note": "一……就…… — vừa … là …; 张 là lượng từ cho vật mặt phẳng: 照片, 地图, 桌子.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có tấm ảnh nào đẹp thì cho tôi xem thử đi.",
+        "answer": "如果你有什么好看的照片，就给我看看吧。",
+        "answerPy": "Rúguǒ nǐ yǒu shénme hǎokàn de zhàopiàn, jiù gěi wǒ kànkan ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一张照片",
+        "py": "yì zhāng zhàopiàn",
+        "vn": "một tấm ảnh"
+      },
+      {
+        "zh": "一张地图",
+        "py": "yì zhāng dìtú",
+        "vn": "một tấm bản đồ"
+      },
+      {
+        "zh": "一张桌子",
+        "py": "yì zhāng zhuōzi",
+        "vn": "một cái bàn"
+      },
+      {
+        "zh": "一张菜单",
+        "py": "yì zhāng càidān",
+        "vn": "một tờ thực đơn"
+      },
+      {
+        "zh": "那张地图",
+        "py": "nà zhāng dìtú",
+        "vn": "tấm bản đồ đó"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 张 + vật mặt phẳng",
+        "m": "Lượng từ 张: 照片, 纸, 桌子, 菜单 (bài 14)"
+      },
+      {
+        "s": "张 (lượng từ) — cũng là một họ người Trung Quốc: 张老师"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "位",
+    "py": "wèi",
+    "pos": "Lượng từ",
+    "vn": "vị (dùng cho người, hàm ý kính trọng)",
+    "hv": "vị",
+    "em": "🙋",
+    "lesson": 2,
+    "explain": [
+      "Lượng từ dùng cho người, thể hiện sự tôn trọng."
+    ],
+    "usage": "一 + 位 + [người]: 这位.",
+    "collo": [
+      "这位",
+      "一位老师",
+      "哪位"
+    ],
+    "ex_zh": "骑得最快的这位是谁？",
+    "ex_py": "Qí de zuì kuài de zhè wèi shì shéi?",
+    "ex_vn": "Vị này cưỡi nhanh nhất là ai vậy?",
+    "exList": [
+      {
+        "zh": "快给我看看。骑得最快的这位是谁？",
+        "py": "Kuài gěi wǒ kànkan. Qí de zuì kuài de zhè wèi shì shéi?",
+        "vn": "Mau cho tôi xem. Vị này cưỡi nhanh nhất là ai vậy?"
+      },
+      {
+        "zh": "请问，您是哪位？",
+        "py": "Qǐngwèn, nín shì nǎ wèi?",
+        "vn": "Xin hỏi, anh/chị là ai vậy ạ?"
+      },
+      {
+        "zh": "这位是我们的新经理。",
+        "py": "Zhè wèi shì wǒmen de xīn jīnglǐ.",
+        "vn": "Vị này là giám đốc mới của chúng tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "位",
+        "p": "wèi",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻 trái → 立 phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "vị trí; vị (lượng từ)",
+        "tip": "亻(người) + 立(đứng) → NGƯỜI đứng ở một VỊ TRÍ nhất định; mở rộng làm lượng từ tôn trọng cho người.",
+        "cf": "立 (lì – \"đứng\", không có bộ 亻\")",
+        "w": "位 / 位置"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vị này tuy là giám đốc mới đến, nhưng mọi người đều rất thích anh ấy.",
+        "answer": "这位虽然是新来的经理，但是大家都很喜欢他。",
+        "answerPy": "Zhè wèi suīrán shì xīnlái de jīnglǐ, dànshì dàjiā dōu hěn xǐhuan tā.",
+        "note": "这位 dùng lịch sự khi giới thiệu người.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu vị này là giám đốc mới thì chúng ta nên chào hỏi.",
+        "answer": "如果这位是新经理，我们就应该打个招呼。",
+        "answerPy": "Rúguǒ zhè wèi shì xīn jīnglǐ, wǒmen jiù yīnggāi dǎ ge zhāohu.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一位老师",
+        "py": "yí wèi lǎoshī",
+        "vn": "một vị giáo viên"
+      },
+      {
+        "zh": "这位画家",
+        "py": "zhè wèi huàjiā",
+        "vn": "vị hoạ sĩ này"
+      },
+      {
+        "zh": "几位客人",
+        "py": "jǐ wèi kèrén",
+        "vn": "mấy vị khách"
+      },
+      {
+        "zh": "那位阿姨",
+        "py": "nà wèi āyí",
+        "vn": "vị cô kia"
+      },
+      {
+        "zh": "两位校长",
+        "py": "liǎng wèi xiàozhǎng",
+        "vn": "hai vị hiệu trưởng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 位 + người (kính trọng)",
+        "m": "Lượng từ 位 trang trọng hơn 个"
+      },
+      {
+        "s": "✗ 一位小狗 → 位 chỉ dùng cho NGƯỜI, và có ý kính trọng"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "蓝",
+    "py": "lán",
+    "pos": "Tính từ",
+    "vn": "có màu xanh da trời",
+    "hv": "lam",
+    "em": "🔵",
+    "lesson": 2,
+    "explain": [
+      "Màu của bầu trời trong, biển cả."
+    ],
+    "usage": "Tính từ; đi cùng danh từ: 蓝西服.",
+    "collo": [
+      "蓝西服",
+      "蓝色",
+      "天蓝蓝的"
+    ],
+    "ex_zh": "他今天穿蓝西服。",
+    "ex_py": "Tā jīntiān chuān lán xīfú.",
+    "ex_vn": "Hôm nay anh ấy mặc âu phục xanh.",
+    "exList": [
+      {
+        "zh": "他今天穿蓝西服，看上去像40多岁。",
+        "py": "Tā jīntiān chuān lán xīfú, kàn shangqu xiàng sìshí duō suì.",
+        "vn": "Hôm nay anh ấy mặc âu phục xanh, trông như hơn 40 tuổi."
+      },
+      {
+        "zh": "还有蓝色和黑色的，拿一件您试试？",
+        "py": "Hái yǒu lánsè hé hēisè de, ná yí jiàn nín shìshi?",
+        "vn": "Còn có màu xanh và màu đen nữa, lấy một cái anh mặc thử nhé?"
+      },
+      {
+        "zh": "蓝色会让我的脸看上去更年轻些。",
+        "py": "Lánsè huì ràng wǒ de liǎn kàn shangqu gèng niánqīng xiē.",
+        "vn": "Màu xanh sẽ khiến khuôn mặt tôi trông trẻ hơn một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "蓝",
+        "p": "lán",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "艹 trên → 监 dưới (giản thể)",
+        "rad": "艹 (thảo – cỏ cây)",
+        "mean": "màu xanh lam",
+        "tip": "艹(cây cỏ, thực vật nhuộm màu) + 监(soi xét) → thực vật dùng để nhuộm màu XANH LAM thời xưa (cây chàm).",
+        "cf": "篮 (lán – \"cái giỏ\", có bộ ⺮\")",
+        "w": "蓝色 / 蓝天"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn mặc bộ âu phục xanh đó vào, sẽ khiến bạn trông bảnh hơn.",
+        "answer": "只要你穿上那件蓝西服，就会让你看上去更帅。",
+        "answerPy": "Zhǐyào nǐ chuānshang nà jiàn lán xīfú, jiù huì ràng nǐ kàn shangqu gèng shuài.",
+        "note": "让 + đối tượng + kết quả diễn tả sự khiến cho (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích màu xanh thì mua cái áo đó đi.",
+        "answer": "如果你喜欢蓝色，就买那件衣服吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan lánsè, jiù mǎi nà jiàn yīfu ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "蓝色",
+        "py": "lán sè",
+        "vn": "màu xanh da trời"
+      },
+      {
+        "zh": "蓝天",
+        "py": "lán tiān",
+        "vn": "trời xanh"
+      },
+      {
+        "zh": "蓝色的裙子",
+        "py": "lán sè de qúnzi",
+        "vn": "chiếc váy xanh"
+      },
+      {
+        "zh": "蓝蓝的",
+        "py": "lánlán de",
+        "vn": "xanh biếc"
+      },
+      {
+        "zh": "又蓝又干净",
+        "py": "yòu lán yòu gānjìng",
+        "vn": "vừa xanh vừa sạch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "蓝 + 色 + 的 + N",
+        "m": "Cái gì màu xanh da trời"
+      },
+      {
+        "s": "又 A 又 B",
+        "m": "Vừa A vừa B — 又蓝又干净 (干净 là từ bài 14)"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "秋(天)",
+    "py": "qiū(tiān)",
+    "pos": "Danh từ",
+    "vn": "mùa thu",
+    "hv": "thu thiên",
+    "em": "🍂",
+    "lesson": 3,
+    "explain": [
+      "Mùa chuyển tiếp giữa hè và đông."
+    ],
+    "usage": "Danh từ chỉ mùa; đi cùng động từ 出生: 秋天出生的.",
+    "collo": [
+      "去年秋天",
+      "秋天出生",
+      "这个秋天"
+    ],
+    "ex_zh": "她去年秋天出生的。",
+    "ex_py": "Tā qùnián qiūtiān chūshēng de.",
+    "ex_vn": "Con bé sinh vào mùa thu năm ngoái.",
+    "exList": [
+      {
+        "zh": "她去年秋天出生的，刚过完一岁生日。",
+        "py": "Tā qùnián qiūtiān chūshēng de, gāng guòwán yí suì shēngrì.",
+        "vn": "Con bé sinh vào mùa thu năm ngoái, vừa mới qua sinh nhật một tuổi."
+      },
+      {
+        "zh": "秋天的天气很凉快。",
+        "py": "Qiūtiān de tiānqì hěn liángkuai.",
+        "vn": "Thời tiết mùa thu rất mát mẻ."
+      },
+      {
+        "zh": "我最喜欢的季节是秋天。",
+        "py": "Wǒ zuì xǐhuan de jìjié shì qiūtiān.",
+        "vn": "Mùa tôi thích nhất là mùa thu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "秋",
+        "p": "qiū",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "禾 trái → 火 phải",
+        "rad": "禾 (hoà – lúa)",
+        "mean": "mùa thu",
+        "tip": "禾(cây lúa) + 火(lửa, màu vàng đỏ) → mùa LÚA chín có màu vàng như LỬA = MÙA THU.",
+        "cf": "秒 (miǎo – \"giây\", có 少 thay vì 火\")",
+        "w": "秋天 / 秋季"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hoàng Hà mùa thu không những đẹp, mà thời tiết còn không lạnh không nóng.",
+        "answer": "秋天的黄河不但很美，而且天气不冷不热。",
+        "answerPy": "Qiūtiān de Huáng Hé búdàn hěn měi, érqiě tiānqì bù lěng bú rè.",
+        "note": "不但……而且…… là khung bài 18; 不 A 不 B — vừa phải.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu mùa thu đến thì lá cây sẽ chuyển màu vàng.",
+        "answer": "如果秋天到了，树叶就会变黄。",
+        "answerPy": "Rúguǒ qiūtiān dào le, shùyè jiù huì biàn huáng.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "秋天很美",
+        "py": "qiū tiān hěn měi",
+        "vn": "mùa thu rất đẹp"
+      },
+      {
+        "zh": "今年秋天",
+        "py": "jīnnián qiū tiān",
+        "vn": "mùa thu năm nay"
+      },
+      {
+        "zh": "秋天的黄河",
+        "py": "qiū tiān de Huáng Hé",
+        "vn": "Hoàng Hà mùa thu"
+      },
+      {
+        "zh": "过秋天",
+        "py": "guo qiū tiān",
+        "vn": "trải qua mùa thu"
+      },
+      {
+        "zh": "秋天不冷不热",
+        "py": "qiū tiān bù lěng bú rè",
+        "vn": "mùa thu không lạnh không nóng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "春 · 夏 · 秋 · 冬 — bốn mùa đều thêm 天 (冬天 học ở bài 17)"
+      },
+      {
+        "s": "不 A 不 B",
+        "m": "Không A cũng không B: 不冷不热 — vừa phải"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "过",
+    "py": "guò",
+    "pos": "Động từ",
+    "vn": "ăn (mừng), trải qua",
+    "hv": "quá",
+    "em": "🎂",
+    "lesson": 3,
+    "explain": [
+      "Kỷ niệm một dịp đặc biệt, hoặc trải qua khoảng thời gian."
+    ],
+    "usage": "Động từ, mang tân ngữ: 过生日, 过年.",
+    "collo": [
+      "过生日",
+      "过年",
+      "过节"
+    ],
+    "ex_zh": "刚过完一岁生日。",
+    "ex_py": "Gāng guòwán yí suì shēngrì.",
+    "ex_vn": "Vừa mới qua sinh nhật một tuổi.",
+    "exList": [
+      {
+        "zh": "她去年秋天出生的，刚过完一岁生日。",
+        "py": "Tā qùnián qiūtiān chūshēng de, gāng guòwán yí suì shēngrì.",
+        "vn": "Con bé sinh vào mùa thu năm ngoái, vừa mới qua sinh nhật một tuổi."
+      },
+      {
+        "zh": "过生日要吃面条，这是我第一次做面条。",
+        "py": "Guò shēngrì yào chī miàntiáo, zhè shì wǒ dì-yī cì zuò miàntiáo.",
+        "vn": "Ăn sinh nhật phải ăn mì, đây là lần đầu tiên tôi làm mì."
+      },
+      {
+        "zh": "我真希望时间能慢下来，不要过得那么快。",
+        "py": "Wǒ zhēn xīwàng shíjiān néng màn xiàlai, búyào guò de nàme kuài.",
+        "vn": "Tôi thật mong thời gian có thể chậm lại, đừng trôi qua nhanh như vậy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "过",
+        "p": "guò",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 6,
+        "ord": "辶 ngoài → 寸 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "đi qua, trải qua",
+        "tip": "辶(đi) + 寸(một đoạn ngắn, thời gian) → ĐI QUA một khoảng thời gian; mở rộng nghĩa TRẢI QUA, ĂN MỪNG (một dịp).",
+        "cf": "辻 (không phải chữ Hán thường dùng)",
+        "w": "过 / 经过 / 过年"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy sinh nhật năm nay tổ chức đơn giản, nhưng tôi vẫn rất vui.",
+        "answer": "虽然今年的生日过得很简单，但是我还是很开心。",
+        "answerPy": "Suīrán jīnnián de shēngrì guò de hěn jiǎndān, dànshì wǒ háishi hěn kāixīn.",
+        "note": "过生日 diễn tả ăn mừng sinh nhật.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn qua sinh nhật vui vẻ thì tôi cũng vui theo.",
+        "answer": "如果你过生日过得开心，我也会跟着高兴。",
+        "answerPy": "Rúguǒ nǐ guò shēngrì guò de kāixīn, wǒ yě huì gēnzhe gāoxìng.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……会……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "过生日",
+        "py": "guo shēngrì",
+        "vn": "mừng sinh nhật"
+      },
+      {
+        "zh": "过节日",
+        "py": "guo jiérì",
+        "vn": "ăn mừng ngày lễ"
+      },
+      {
+        "zh": "过得很好",
+        "py": "guo de hěn hǎo",
+        "vn": "sống rất tốt"
+      },
+      {
+        "zh": "过冬天",
+        "py": "guo dōng tiān",
+        "vn": "trải qua mùa đông"
+      },
+      {
+        "zh": "过一个星期",
+        "py": "guo yí gè xīngqī",
+        "vn": "qua một tuần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "过 + 生日 / 节日 (động từ)",
+        "m": "Mừng, đón một dịp — 节日 là từ bài 15"
+      },
+      {
+        "s": "过 (guò, động từ: trải qua) ≠ 过 (guo, trợ từ: đã từng) — 我去过北京"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "鸟",
+    "py": "niǎo",
+    "pos": "Danh từ",
+    "vn": "chim",
+    "hv": "điểu",
+    "em": "🐦",
+    "lesson": 3,
+    "explain": [
+      "Loài động vật có cánh, biết bay và hót."
+    ],
+    "usage": "Danh từ; đi cùng động từ 叫: 鸟叫.",
+    "collo": [
+      "鸟叫",
+      "小鸟",
+      "什么鸟"
+    ],
+    "ex_zh": "她就喜欢听她爸爸学鸟叫。",
+    "ex_py": "Tā jiù xǐhuan tīng tā bàba xué niǎo jiào.",
+    "ex_vn": "Con bé chỉ thích nghe bố nó bắt chước tiếng chim kêu.",
+    "exList": [
+      {
+        "zh": "她就喜欢听她爸爸学鸟叫。哭的时候，只要他爸爸学小鸟叫，她马上就安静下来了。",
+        "py": "Tā jiù xǐhuan tīng tā bàba xué niǎo jiào. Kū de shíhou, zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.",
+        "vn": "Con bé chỉ thích nghe bố nó bắt chước tiếng chim kêu. Lúc khóc, chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay."
+      },
+      {
+        "zh": "你看，树上那只鸟，红红的，嘴小小的，是什么鸟？",
+        "py": "Nǐ kàn, shù shang nà zhī niǎo, hónghóng de, zuǐ xiǎoxiǎo de, shì shénme niǎo?",
+        "vn": "Bạn xem, con chim trên cây kia, đỏ đỏ, mỏ nhỏ nhỏ, là chim gì vậy?"
+      },
+      {
+        "zh": "街道两边的树，还有树上的小鸟，会使我觉得很快乐。",
+        "py": "Jiēdào liǎng biān de shù, hái yǒu shù shang de xiǎo niǎo, huì shǐ wǒ juéde hěn kuàilè.",
+        "vn": "Hàng cây hai bên đường phố, còn có chim nhỏ trên cây, khiến tôi cảm thấy rất vui."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "鸟",
+        "p": "niǎo",
+        "type": "独体字 · Chữ đơn (tượng hình, giản thể)",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "鸟 (điểu)",
+        "mean": "chim",
+        "tip": "Chữ giản thể mô phỏng hình con CHIM với đầu, thân và đuôi → CHIM.",
+        "cf": "乌 (wū – \"quạ\", thiếu nét chấm mắt\")",
+        "w": "鸟 / 小鸟"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chim nhỏ trong công viên vừa bay vừa hót, khiến tôi nhớ lại tuổi thơ.",
+        "answer": "公园里的小鸟一边飞一边叫，使我想起了童年。",
+        "answerPy": "Gōngyuán li de xiǎo niǎo yìbiān fēi yìbiān jiào, shǐ wǒ xiǎngqǐle tóngnián.",
+        "note": "使 diễn tả sự khiến cho (ôn lại 街道 đã học ở Bài 15).",
+        "pair": "一边……一边……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích nghe chim hót thì đi công viên đi.",
+        "answer": "如果你喜欢听鸟叫，就去公园吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan tīng niǎo jiào, jiù qù gōngyuán ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一只鸟",
+        "py": "yì zhī niǎo",
+        "vn": "một con chim"
+      },
+      {
+        "zh": "小鸟",
+        "py": "xiǎo niǎo",
+        "vn": "chim nhỏ"
+      },
+      {
+        "zh": "鸟的声音",
+        "py": "niǎo de shēngyīn",
+        "vn": "tiếng chim"
+      },
+      {
+        "zh": "看见很多鸟",
+        "py": "kànjiàn hěn duō niǎo",
+        "vn": "nhìn thấy nhiều chim"
+      },
+      {
+        "zh": "很多小鸟",
+        "py": "hěn duō xiǎo niǎo",
+        "vn": "rất nhiều chim nhỏ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 只 + 鸟",
+        "m": "Lượng từ 只 (bài 18) cho động vật nhỏ"
+      },
+      {
+        "s": "鸟 là chữ tượng hình: bốn chấm dưới là đuôi chim"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "哭",
+    "py": "kū",
+    "pos": "Động từ",
+    "vn": "khóc",
+    "hv": "khốc",
+    "em": "😢",
+    "lesson": 3,
+    "explain": [
+      "Biểu lộ cảm xúc buồn, đau bằng nước mắt."
+    ],
+    "usage": "Động từ; đi cùng 的时候: 哭的时候.",
+    "collo": [
+      "哭的时候",
+      "一直哭",
+      "别哭"
+    ],
+    "ex_zh": "哭的时候，只要他爸爸学小鸟叫，她马上就安静下来了。",
+    "ex_py": "Kū de shíhou, zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.",
+    "ex_vn": "Lúc khóc, chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay.",
+    "exList": [
+      {
+        "zh": "哭的时候，只要他爸爸学小鸟叫，她马上就安静下来了。",
+        "py": "Kū de shíhou, zhǐyào tā bàba xué xiǎo niǎo jiào, tā mǎshàng jiù ānjìng xialai le.",
+        "vn": "Lúc khóc, chỉ cần bố nó bắt chước tiếng chim con kêu là con bé lập tức yên lặng ngay."
+      },
+      {
+        "zh": "你哭了？没有啊，刚才风刮得太大，眼睛里进东西了。",
+        "py": "Nǐ kū le? Méiyǒu a, gāngcái fēng guā de tài dà, yǎnjing li jìn dōngxi le.",
+        "vn": "Bạn khóc à? Không có, vừa nãy gió thổi to quá, có vật gì vào mắt rồi."
+      },
+      {
+        "zh": "最近，我家小雨一直哭，说耳朵疼。",
+        "py": "Zuìjìn, wǒ jiā Xiǎoyǔ yìzhí kū, shuō ěrduo téng.",
+        "vn": "Gần đây, bé Tiểu Vũ nhà tôi cứ khóc mãi, nói tai đau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "哭",
+        "p": "kū",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "吅 trên → 犬 dưới",
+        "rad": "口 (khẩu)",
+        "mean": "khóc",
+        "tip": "吅(hai miệng, tiếng kêu to) + 犬(con chó, tiếng tru) → tiếng kêu KHÓC to như tiếng chó tru.",
+        "cf": "器 (qì – \"dụng cụ\", có 4 chữ 口\")",
+        "w": "哭 / 别哭了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tai cứ đau mãi nên bé Tiểu Vũ mới khóc mãi không thôi.",
+        "answer": "因为耳朵一直很疼，所以小雨才一直哭。",
+        "answerPy": "Yīnwèi ěrduo yìzhí hěn téng, suǒyǐ Xiǎoyǔ cái yìzhí kū.",
+        "note": "一直 diễn tả trạng thái kéo dài liên tục (ôn lại 耳朵 vừa học trong bài này).",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bé khóc thì bạn hát cho bé nghe đi.",
+        "answer": "如果孩子哭了，你就给她唱首歌吧。",
+        "answerPy": "Rúguǒ háizi kū le, nǐ jiù gěi tā chàng shǒu gē ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "哭起来",
+        "py": "kū qǐlai",
+        "vn": "khóc oà lên"
+      },
+      {
+        "zh": "别哭了",
+        "py": "bié kū le",
+        "vn": "đừng khóc nữa"
+      },
+      {
+        "zh": "哭了很长时间",
+        "py": "kū le hěn zhǎng shíjiān",
+        "vn": "khóc rất lâu"
+      },
+      {
+        "zh": "孩子哭了",
+        "py": "háizi kū le",
+        "vn": "đứa bé khóc"
+      },
+      {
+        "zh": "又哭又笑",
+        "py": "yòu kū yòu xiào",
+        "vn": "vừa khóc vừa cười"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "哭 + 起来",
+        "m": "Bắt đầu khóc — 起来 là từ bài 13"
+      },
+      {
+        "s": "哭 ↔ 笑",
+        "m": "Khóc ↔ cười"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "黄河",
+    "py": "Huáng Hé",
+    "pos": "Danh từ riêng",
+    "vn": "Hoàng Hà",
+    "hv": "Hoàng Hà",
+    "em": "🏞️",
+    "lesson": 4,
+    "explain": [
+      "Con sông lớn thứ hai ở Trung Quốc, được coi là cái nôi của văn minh Trung Hoa."
+    ],
+    "usage": "Danh từ riêng; đi cùng động từ 看/去: 去看黄河.",
+    "collo": [
+      "黄河边上",
+      "看黄河",
+      "中国有名的大河"
+    ],
+    "ex_zh": "我先去看了黄河。",
+    "ex_py": "Wǒ xiān qù kànle Huáng Hé.",
+    "ex_vn": "Tôi trước tiên đi xem sông Hoàng Hà.",
+    "exList": [
+      {
+        "zh": "我先去看了黄河，黄河是中国有名的大河。",
+        "py": "Wǒ xiān qù kànle Huáng Hé, Huáng Hé shì Zhōngguó yǒumíng de dà hé.",
+        "vn": "Tôi trước tiên đi xem sông Hoàng Hà, Hoàng Hà là con sông lớn nổi tiếng của Trung Quốc."
+      },
+      {
+        "zh": "这张照片让我想起了我的家，以前我家住在黄河边上。",
+        "py": "Zhè zhāng zhàopiàn ràng wǒ xiǎngqǐle wǒ de jiā, yǐqián wǒ jiā zhù zài Huáng Hé biānshang.",
+        "vn": "Tấm ảnh này khiến tôi nhớ đến nhà mình, trước đây nhà tôi sống ở bên bờ Hoàng Hà."
+      },
+      {
+        "zh": "黄河是中国有名的大河。",
+        "py": "Huáng Hé shì Zhōngguó yǒumíng de dà hé.",
+        "vn": "Hoàng Hà là con sông lớn nổi tiếng của Trung Quốc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "河",
+        "p": "hé",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "氵 trái → 可 phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "sông",
+        "tip": "氵(nước) + 可(có thể, âm đọc) → dòng NƯỚC chảy dài = SÔNG; 黄(vàng)+河(sông) = HOÀNG HÀ (sông có nước màu vàng).",
+        "cf": "何 (hé – \"gì, nào\", không có bộ 氵\")",
+        "w": "黄河 / 河边"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần nhắc đến những con sông lớn nổi tiếng của Trung Quốc là mọi người sẽ nghĩ đến Hoàng Hà.",
+        "answer": "只要提到中国有名的大河，大家就会想到黄河。",
+        "answerPy": "Zhǐyào tídào Zhōngguó yǒumíng de dà hé, dàjiā jiù huì xiǎngdào Huáng Hé.",
+        "note": "有名 diễn tả sự nổi tiếng (ôn lại đã học ở Bài 18).",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đến Trung Quốc thì nên đi xem Hoàng Hà một lần.",
+        "answer": "如果你来中国，就应该去看一次黄河。",
+        "answerPy": "Rúguǒ nǐ lái Zhōngguó, jiù yīnggāi qù kàn yí cì Huáng Hé.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "黄河边",
+        "py": "Huáng Hé biān",
+        "vn": "bên bờ Hoàng Hà"
+      },
+      {
+        "zh": "黄河的水",
+        "py": "Huáng Hé de shuǐ",
+        "vn": "nước sông Hoàng Hà"
+      },
+      {
+        "zh": "坐船看黄河",
+        "py": "zuò chuán kàn Huáng Hé",
+        "vn": "đi thuyền ngắm Hoàng Hà"
+      },
+      {
+        "zh": "秋天的黄河",
+        "py": "qiū tiān de Huáng Hé",
+        "vn": "Hoàng Hà mùa thu"
+      },
+      {
+        "zh": "去黄河旅游",
+        "py": "qù Huáng Hé lǚyóu",
+        "vn": "đi du lịch Hoàng Hà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "黄河 + 边",
+        "m": "Bên bờ Hoàng Hà — 边 chỉ vị trí"
+      },
+      {
+        "s": "黄 + 河",
+        "m": "Sông (河) màu vàng (黄) — vì nhiều phù sa"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "船",
+    "py": "chuán",
+    "pos": "Danh từ",
+    "vn": "thuyền, tàu",
+    "hv": "thuyền",
+    "em": "🚢",
+    "lesson": 4,
+    "explain": [
+      "Phương tiện di chuyển trên mặt nước."
+    ],
+    "usage": "Danh từ; đi cùng động từ 坐: 坐船.",
+    "collo": [
+      "坐船",
+      "坐在船上",
+      "船票"
+    ],
+    "ex_zh": "我坐在船上，一边看一边照相。",
+    "ex_py": "Wǒ zuò zài chuán shang, yìbiān kàn yìbiān zhàoxiàng.",
+    "ex_vn": "Tôi ngồi trên thuyền, vừa ngắm vừa chụp ảnh.",
+    "exList": [
+      {
+        "zh": "我坐在船上，一边看一边照相。",
+        "py": "Wǒ zuò zài chuán shang, yìbiān kàn yìbiān zhàoxiàng.",
+        "vn": "Tôi ngồi trên thuyền, vừa ngắm vừa chụp ảnh."
+      },
+      {
+        "zh": "你终于来了，船马上就开了。",
+        "py": "Nǐ zhōngyú lái le, chuán mǎshàng jiù kāi le.",
+        "vn": "Bạn cuối cùng cũng đến rồi, thuyền sắp chạy rồi."
+      },
+      {
+        "zh": "坐船虽然便宜，但是太慢了，要十四个小时。",
+        "py": "Zuò chuán suīrán piányi, dànshì tài màn le, yào shísì ge xiǎoshí.",
+        "vn": "Đi tàu tuy rẻ, nhưng chậm quá, phải mất mười bốn tiếng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "船",
+        "p": "chuán",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "舟 trái → 㕣 phải",
+        "rad": "舟 (chu – thuyền)",
+        "mean": "thuyền, tàu",
+        "tip": "舟(hình con thuyền) + 㕣(cái miệng thung lũng, dòng nước) → thuyền đi trên DÒNG NƯỚC = THUYỀN, TÀU.",
+        "cf": "般 (bān – \"loại\", cũng có bộ 舟\")",
+        "w": "船 / 坐船"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đi tàu tuy có thể ngắm cảnh, nhưng ngồi lâu quá, tôi hơi mệt.",
+        "answer": "坐船虽然能看风景，但是坐的时间太久，我有点儿累了。",
+        "answerPy": "Zuò chuán suīrán néng kàn fēngjǐng, dànshì zuò de shíjiān tài jiǔ, wǒ yǒudiǎnr lèi le.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích ngồi tàu thì chúng ta đi tàu đi.",
+        "answer": "如果你喜欢坐船，我们就坐船去吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan zuò chuán, wǒmen jiù zuò chuán qù ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "坐船",
+        "py": "zuò chuán",
+        "vn": "đi thuyền"
+      },
+      {
+        "zh": "一条船",
+        "py": "yì tiáo chuán",
+        "vn": "một chiếc thuyền"
+      },
+      {
+        "zh": "上船",
+        "py": "shàng chuán",
+        "vn": "lên thuyền"
+      },
+      {
+        "zh": "船上",
+        "py": "chuán shàng",
+        "vn": "trên thuyền"
+      },
+      {
+        "zh": "坐船去",
+        "py": "zuò chuán qù",
+        "vn": "đi bằng thuyền"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坐 + 船 / 车 / 飞机",
+        "m": "Đi bằng phương tiện nào"
+      },
+      {
+        "s": "một + 条 + 船",
+        "m": "Lượng từ 条 cho vật dài — như 一条街道 (bài 15)"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "经过",
+    "py": "jīngguò",
+    "pos": "Động từ",
+    "vn": "đi ngang qua",
+    "hv": "kinh quá",
+    "em": "🛣️",
+    "lesson": 4,
+    "explain": [
+      "Đi qua một nơi hoặc trải qua một quá trình."
+    ],
+    "usage": "Động từ, mang tân ngữ là nơi chốn hoặc thời gian: 经过很多地方.",
+    "collo": [
+      "经过很多地方",
+      "经过这条街",
+      "经过一段时间"
+    ],
+    "ex_zh": "一路上经过了很多地方。",
+    "ex_py": "Yí lù shang jīngguòle hěn duō dìfang.",
+    "ex_vn": "Suốt chặng đường đi qua rất nhiều nơi.",
+    "exList": [
+      {
+        "zh": "一路上经过了很多地方，每个地方都不一样。",
+        "py": "Yí lù shang jīngguòle hěn duō dìfang, měi ge dìfang dōu bù yíyàng.",
+        "vn": "Suốt chặng đường đi qua rất nhiều nơi, mỗi nơi đều khác nhau."
+      },
+      {
+        "zh": "上下班的时候，我都会经过这条街。",
+        "py": "Shàng xià bān de shíhou, wǒ dōu huì jīngguò zhè tiáo jiē.",
+        "vn": "Lúc đi làm về, tôi đều đi ngang qua con phố này."
+      },
+      {
+        "zh": "如果你经过我家，就进来喝杯茶吧。",
+        "py": "Rúguǒ nǐ jīngguò wǒ jiā, jiù jìnlai hē bēi chá ba.",
+        "vn": "Nếu bạn đi ngang qua nhà tôi thì ghé vào uống chén trà đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "经",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "纟 trái → 圣 phải (giản thể)",
+        "rad": "纟 (mịch – tơ lụa)",
+        "mean": "trải qua, thường xuyên",
+        "tip": "纟(sợi tơ dệt) + phần phải (giản thể) → sợi dọc XUYÊN SUỐT tấm vải = ĐI QUA, TRẢI QUA.",
+        "cf": "轻 (qīng – \"nhẹ\", có bộ 车\")",
+        "w": "经过 / 经常 / 已经"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mỗi lần đi bệnh viện, tôi đều đi ngang qua một công viên rồi mới đến nơi.",
+        "answer": "每次去医院，我都先经过一个公园，然后才到。",
+        "answerPy": "Měi cì qù yīyuàn, wǒ dōu xiān jīngguò yí ge gōngyuán, ránhòu cái dào.",
+        "note": "经过 + nơi chốn — đi ngang qua đâu; 先……然后…… là khung bài 14.",
+        "pair": "先……然后……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đi ngang qua nhà tôi thì hãy ghé vào chơi.",
+        "answer": "如果你经过我家，就进来玩儿吧。",
+        "answerPy": "Rúguǒ nǐ jīngguò wǒ jiā, jiù jìnlai wánr ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "经过一个公园",
+        "py": "jīngguò yí gè gōngyuán",
+        "vn": "đi ngang một công viên"
+      },
+      {
+        "zh": "经过学校",
+        "py": "jīngguò xuéxiào",
+        "vn": "đi qua trường"
+      },
+      {
+        "zh": "每天都经过",
+        "py": "měi tiān dōu jīngguò",
+        "vn": "ngày nào cũng đi qua"
+      },
+      {
+        "zh": "经过这里",
+        "py": "jīngguò zhèlǐ",
+        "vn": "đi qua đây"
+      },
+      {
+        "zh": "经过的时候",
+        "py": "jīngguò de shíhou",
+        "vn": "lúc đi ngang qua"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "经过 + nơi chốn",
+        "m": "Đi ngang qua đâu — sau 经过 là NƠI CHỐN"
+      },
+      {
+        "s": "经过 (đi ngang qua) ≠ 过 (trải qua một dịp)"
+      }
+    ]
+  }
 ];
 
 const wuData = [

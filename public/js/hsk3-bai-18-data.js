@@ -3,379 +3,1833 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'向',py:'xiàng',pos:'Giới từ',vn:'đối với, về phía (chỉ hướng của hành động)', hv: 'hướng',em:'➡️',lesson:1,
-   explain:['Chỉ đối tượng hoặc hướng của một hành động.'],
-   usage:'向 + [đối tượng] + [động từ]: 向你借钱.',
-   collo:['向你借钱','向左走','向别人问路'],
-   ex_zh:'我打算买房子了，想向你借点儿钱。',ex_py:'Wǒ dǎsuàn mǎi fángzi le, xiǎng xiàng nǐ jiè diǎnr qián.',ex_vn:'Tôi định mua nhà rồi, muốn mượn anh chút tiền.',
-   exList:[
-     {zh:'老周，我打算买房子了，想向你借点儿钱。',py:'Lǎo Zhōu, wǒ dǎsuàn mǎi fángzi le, xiǎng xiàng nǐ jiè diǎnr qián.',vn:'Lão Chu ơi, tôi định mua nhà rồi, muốn mượn anh chút tiền.'},
-     {zh:'一个外地人向我问路。',py:'Yí ge wàidìrén xiàng wǒ wènlù.',vn:'Một người từ nơi khác hỏi đường tôi.'},
-     {zh:'到了地铁站以后再向右走。',py:'Dàole dìtiězhàn yǐhòu zài xiàng yòu zǒu.',vn:'Đến ga tàu điện ngầm rồi thì rẽ phải.'},
-   ],
-   hanzi:[
-     {c:'向',p:'xiàng',type:'独体字 · Chữ đơn (tượng hình)',st:6,ord:'nét liền',rad:'口 (khẩu)',mean:'hướng về',
-      tip:'Chữ tượng hình cổ mô phỏng cửa sổ nhà HƯỚNG ra một phía → HƯỚNG VỀ, ĐỐI VỚI.',
-      cf:'问 (wèn – "hỏi", có 门 thay vì 冂")',w:'向 / 方向'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời tối nhìn không rõ đường, nên tôi hỏi đường chú bên cạnh.',answer:'因为天黑了看不清路，所以我向旁边的叔叔问路。',answerPy:'Yīnwèi tiān hēi le kàn bu qīng lù, suǒyǐ wǒ xiàng pángbiān de shūshu wènlù.',
-      note:'向 + đối tượng + động từ diễn tả hướng của hành động.'},
-     {promptLang:'vi',prompt:'Nếu bạn không biết đường thì hỏi cảnh sát đi.',answer:'如果你不知道路，就向警察问路吧。',answerPy:'Rúguǒ nǐ bù zhīdào lù, jiù xiàng jǐngchá wènlù ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
-   ]},
-
-  {n:2,zh:'万',py:'wàn',pos:'Số từ',vn:'vạn, mười nghìn', hv: 'vạn',em:'🔢',lesson:1,
-   explain:['Đơn vị số đếm bằng 10.000.'],
-   usage:'Số từ, đi trước lượng từ/danh từ: 5万块.',
-   collo:['5万块钱','三万块','一万米'],
-   ex_zh:'还差5万块钱。',ex_py:'Hái chà wǔ wàn kuài qián.',ex_vn:'Còn thiếu 5 vạn đồng.',
-   exList:[
-     {zh:'还差5万块钱。',py:'Hái chà wǔ wàn kuài qián.',vn:'Còn thiếu 5 vạn đồng.'},
-     {zh:'我买这画儿花了三万块呢。',py:'Wǒ mǎi zhè huàr huāle sān wàn kuài ne.',vn:'Tôi mua bức tranh này tốn ba vạn đồng đấy.'},
-     {zh:'一米九一，我都不相信自己能长这么高。',py:'Yì mǐ jiǔ yī, wǒ dōu bù xiāngxìn zìjǐ néng zhǎng zhème gāo.',vn:'Một mét chín mươi mốt, tôi còn không tin mình có thể cao đến thế.'},
-   ],
-   hanzi:[
-     {c:'万',p:'wàn',type:'独体字 · Chữ đơn (giản thể)',st:3,ord:'nét liền',rad:'一 (nhất)',mean:'vạn, mười nghìn',
-      tip:'Chữ giản thể đơn giản hóa từ hình con bọ cạp với nhiều chân (số lượng lớn) → mở rộng nghĩa VẠN, số lượng lớn.',
-      cf:'方 (fāng – "phương hướng", hình dáng khác")',w:'万 / 一万'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Dù chiếc áo đó rất đắt, nhưng mẹ vẫn tốn hai vạn đồng mua cho tôi.',answer:'虽然那件衣服很贵，但是妈妈还是花了两万块买给我。',answerPy:'Suīrán nà jiàn yīfu hěn guì, dànshì māma háishi huāle liǎng wàn kuài mǎi gěi wǒ.',
-      note:'花 + tiền diễn tả tiêu tốn (ôn lại 花 đã học ở Bài 15).'},
-     {promptLang:'vi',prompt:'Nếu bạn có một vạn đồng thì có thể mua căn nhà này không?',answer:'如果你有一万块，就能买这个房子吗？',answerPy:'Rúguǒ nǐ yǒu yíwàn kuài, jiù néng mǎi zhège fángzi ma?',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'只',py:'zhī',pos:'Lượng từ',vn:'con (dùng cho động vật)', hv: 'chích',em:'🐾',lesson:2,
-   explain:['Lượng từ dùng để đếm động vật, cũng dùng cho một số vật thành đôi.'],
-   usage:'一 + 只 + [động vật]: 一只狗.',
-   collo:['一只狗','那只狗','一只猫'],
-   ex_zh:'你看那只狗多可爱。',ex_py:'Nǐ kàn nà zhī gǒu duō kě\'ài.',ex_vn:'Mẹ xem con chó đó đáng yêu chưa.',
-   exList:[
-     {zh:'妈妈，你看那只狗多可爱，眼睛大大的，嘴小小的。',py:'Māma, nǐ kàn nà zhī gǒu duō kě\'ài, yǎnjing dàdà de, zuǐ xiǎoxiǎo de.',vn:'Mẹ ơi, mẹ xem con chó đó đáng yêu chưa, mắt to to, miệng nhỏ nhỏ.'},
-     {zh:'你下星期去北京？你的那只狗怎么办？',py:'Nǐ xià xīngqī qù Běijīng? Nǐ de nà zhī gǒu zěnme bàn?',vn:'Tuần sau bạn đi Bắc Kinh à? Con chó của bạn tính sao?'},
-     {zh:'我有个同学很喜欢小动物，她同意帮我照顾几天。',py:'Wǒ yǒu ge tóngxué hěn xǐhuan xiǎo dòngwù, tā tóngyì bāng wǒ zhàogù jǐ tiān.',vn:'Tôi có một bạn học rất thích động vật nhỏ, bạn ấy đồng ý giúp tôi chăm mấy hôm.'},
-   ],
-   hanzi:[
-     {c:'只',p:'zhī',type:'独体字 · Chữ đơn (giản thể, đa âm)',st:5,ord:'nét liền',rad:'口 (khẩu)',mean:'con (lượng từ); chỉ (phó từ)',
-      tip:'Chữ tượng hình mô phỏng CON CHIM chỉ còn MỘT chân, một cánh → dùng làm lượng từ cho vật/con đơn lẻ; khi đọc zhǐ nghĩa là CHỈ, DUY NHẤT.',
-      cf:'口 (kǒu – "miệng", không có 八ở dưới")',w:'一只狗 / 只有'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Dù ban đầu bố không đồng ý, nhưng cuối cùng vẫn mua cho tôi một con mèo con.',answer:'虽然爸爸一开始不同意，但是最后还是给我买了一只小猫。',answerPy:'Suīrán bàba yì kāishǐ bù tóngyì, dànshì zuìhòu háishi gěi wǒ mǎile yì zhī xiǎomāo.',
-      note:'同意 sẽ học ngay bên dưới trong bài này.'},
-     {promptLang:'vi',prompt:'Nếu bạn thích con chó đó thì chúng ta mua về đi.',answer:'如果你喜欢那只狗，我们就买回去吧。',answerPy:'Rúguǒ nǐ xǐhuan nà zhī gǒu, wǒmen jiù mǎi huiqu ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:4,zh:'嘴',py:'zuǐ',pos:'Danh từ',vn:'miệng', hv: 'chủy',em:'👄',lesson:2,
-   explain:['Bộ phận trên khuôn mặt dùng để ăn, nói.'],
-   usage:'Danh từ; thường đi cùng tính từ lặp: 嘴小小的.',
-   collo:['嘴小小的','他的嘴','嘴像爸爸'],
-   ex_zh:'嘴小小的，我们买回去吧。',ex_py:'Zuǐ xiǎoxiǎo de, wǒmen mǎi huiqu ba.',ex_vn:'Miệng nhỏ nhỏ, mình mua về đi.',
-   exList:[
-     {zh:'眼睛大大的，嘴小小的，我们买回去吧。',py:'Yǎnjing dàdà de, zuǐ xiǎoxiǎo de, wǒmen mǎi huiqu ba.',vn:'Mắt to to, miệng nhỏ nhỏ, mình mua về đi.'},
-     {zh:'他跟你长得真像啊，但是他的嘴更像他爸爸。',py:'Tā gēn nǐ zhǎng de zhēn xiàng a, dànshì tā de zuǐ gèng xiàng tā bàba.',vn:'Nó giống bạn thật đấy, nhưng miệng nó lại giống bố nó hơn.'},
-     {zh:'她的嘴小小的，笑起来很可爱。',py:'Tā de zuǐ xiǎoxiǎo de, xiào qilai hěn kě\'ài.',vn:'Miệng cô ấy nhỏ nhỏ, cười lên trông đáng yêu lắm.'},
-   ],
-   hanzi:[
-     {c:'嘴',p:'zuǐ',type:'左右结构 · Trái-phải',st:16,ord:'口 trái → 觜 phải',rad:'口 (khẩu)',mean:'miệng',
-      tip:'口(miệng) + 觜(mỏ chim, tóc mai) → bộ phận trên MẶT dùng để ăn nói, mở rộng từ hình MỎ = MIỆNG.',
-      cf:'嗤 (chī – "cười khẩy", có 齿 thay vì 此")',w:'嘴 / 张嘴'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mắt em gái giống mẹ, nhưng miệng lại giống bố hơn.',answer:'妹妹的眼睛像妈妈，但是嘴更像爸爸。',answerPy:'Mèimei de yǎnjing xiàng māma, dànshì zuǐ gèng xiàng bàba.',
-      note:'像 diễn tả sự giống nhau (ôn lại đã học ở Bài 14).'},
-     {promptLang:'vi',prompt:'Nếu miệng bé giống bố thì chắc chắn nhỏ nhỏ.',answer:'如果孩子的嘴像爸爸，就一定是小小的。',answerPy:'Rúguǒ háizi de zuǐ xiàng bàba, jiù yídìng shì xiǎoxiǎo de.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:5,zh:'动物',py:'dòngwù',pos:'Danh từ',vn:'động vật, loài vật', hv: 'động vật',em:'🐾',lesson:2,
-   explain:['Sinh vật có khả năng di chuyển, khác với thực vật.'],
-   usage:'Danh từ; đi cùng tính từ 小: 小动物.',
-   collo:['小动物','动物园','喜欢动物'],
-   ex_zh:'动物和小孩儿一样，都需要人照顾。',ex_py:'Dòngwù hé xiǎoháir yíyàng, dōu xūyào rén zhàogù.',ex_vn:'Động vật cũng như trẻ con, đều cần người chăm sóc.',
-   exList:[
-     {zh:'动物和小孩儿一样，都需要人照顾。',py:'Dòngwù hé xiǎoháir yíyàng, dōu xūyào rén zhàogù.',vn:'Động vật cũng như trẻ con, đều cần người chăm sóc.'},
-     {zh:'孩子对动物很感兴趣。',py:'Háizi duì dòngwù hěn gǎn xìngqù.',vn:'Đứa trẻ rất hứng thú với động vật.'},
-     {zh:'你怎么总是带孩子到动物园看动物？',py:'Nǐ zěnme zǒngshì dài háizi dào dòngwùyuán kàn dòngwù?',vn:'Sao bạn cứ dẫn con đến sở thú xem động vật vậy?'},
-   ],
-   hanzi:[
-     {c:'物',p:'wù',type:'左右结构 · Trái-phải',st:8,ord:'牛 trái → 勿 phải',rad:'牛 (ngưu – trâu, bò)',mean:'vật, đồ vật',
-      tip:'牛(con trâu, đại diện gia súc) + 勿(đừng) → mọi VẬT tồn tại quanh ta; 动(chuyển động)+物(vật) = ĐỘNG VẬT.',
-      cf:'物 vs 牛 (niú – chỉ riêng con trâu")',w:'动物 / 东西'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Dù em gái sợ chó con, nhưng bé lại rất hứng thú với những động vật khác.',answer:'虽然妹妹害怕小狗，但是她对别的动物很感兴趣。',answerPy:'Suīrán mèimei hàipà xiǎogǒu, dànshì tā duì bié de dòngwù hěn gǎn xìngqù.',
-      note:'对……感兴趣 diễn tả sự hứng thú (ôn lại đã học ở Bài 15).'},
-     {promptLang:'vi',prompt:'Nếu bạn thích động vật thì đi sở thú chơi đi.',answer:'如果你喜欢动物，就去动物园玩儿吧。',answerPy:'Rúguǒ nǐ xǐhuan dòngwù, jiù qù dòngwùyuán wánr ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:6,zh:'段',py:'duàn',pos:'Lượng từ',vn:'khoảng, quãng', hv: 'đoạn',em:'📏',lesson:2,
-   explain:['Lượng từ dùng cho khoảng thời gian hoặc đoạn đường.'],
-   usage:'一 + 段 + [时间/路]: 一段时间.',
-   collo:['这段时间','一段时间','一段路'],
-   ex_zh:'这段时间你自己的衣服都没洗。',ex_py:'Zhè duàn shíjiān nǐ zìjǐ de yīfu dōu méi xǐ.',ex_vn:'Thời gian này quần áo của con còn chưa giặt.',
-   exList:[
-     {zh:'这段时间你自己的衣服都没洗，你能照顾好它吗？',py:'Zhè duàn shíjiān nǐ zìjǐ de yīfu dōu méi xǐ, nǐ néng zhàogù hǎo tā ma?',vn:'Thời gian này quần áo của con còn chưa giặt, con chăm nó nổi không?'},
-     {zh:'只要经过一段时间，就会慢慢地习惯。',py:'Zhǐyào jīngguò yí duàn shíjiān, jiù huì mànman de xíguàn.',vn:'Chỉ cần trải qua một khoảng thời gian, sẽ dần dần quen thôi.'},
-     {zh:'奇怪，这段时间怎么没看见小周来上班？',py:'Qíguài, zhè duàn shíjiān zěnme méi kànjiàn Xiǎo Zhōu lái shàngbān?',vn:'Lạ thật, dạo này sao không thấy Tiểu Chu đi làm nhỉ?'},
-   ],
-   hanzi:[
-     {c:'段',p:'duàn',type:'左右结构 · Trái-phải',st:9,ord:'⇃ trái → 殳 phải',rad:'殳 (thù – cây gậy)',mean:'đoạn, quãng',
-      tip:'Hình ảnh vật thể bị chia thành từng ĐOẠN bởi công cụ (殳); mở rộng nghĩa ĐOẠN, QUÃNG thời gian/không gian.',
-      cf:'锻 (duàn – "tôi luyện", có bộ 钅")',w:'一段时间 / 阶段'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lạ thật, dạo này sao anh ấy cứ luôn bận vậy?',answer:'奇怪，这段时间他怎么总是很忙？',answerPy:'Qíguài, zhè duàn shíjiān tā zěnme zǒngshì hěn máng?',
-      note:'奇怪 sẽ học ngay bên dưới trong bài này.'},
-     {promptLang:'vi',prompt:'Nếu bạn có một khoảng thời gian rảnh thì cùng tôi đi du lịch đi.',answer:'如果你有一段空闲时间，就跟我一起去旅游吧。',answerPy:'Rúguǒ nǐ yǒu yí duàn kòngxián shíjiān, jiù gēn wǒ yìqǐ qù lǚyóu ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:7,zh:'不但……而且……',py:'búdàn……érqiě……',pos:'Liên từ',vn:'không những... mà còn...', hv: 'bất đãn nhi thả',em:'➕',lesson:3,
-   explain:['Diễn tả sự bổ sung tăng tiến, vế sau có mức độ cao hơn hoặc bổ sung thêm vế trước.'],
-   usage:'不但 + [A]，而且 + [B].',
-   collo:['不但很有名，而且……','不但环境好，而且……'],
-   ex_zh:'贵公司不但很有名，而且工作环境好。',ex_py:'Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.',ex_vn:'Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.',
-   exList:[
-     {zh:'贵公司不但很有名，而且工作环境好。',py:'Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.',vn:'Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.'},
-     {zh:'动物园不但环境好，而且孩子对动物很感兴趣。',py:'Dòngwùyuán búdàn huánjìng hǎo, érqiě háizi duì dòngwù hěn gǎn xìngqù.',vn:'Sở thú không những môi trường tốt, mà đứa trẻ còn rất hứng thú với động vật.'},
-     {zh:'今天不但来了很多北京人，而且还有很多外地人。',py:'Jīntiān búdàn láile hěn duō Běijīngrén, érqiě hái yǒu hěn duō wàidìrén.',vn:'Hôm nay không những đến rất nhiều người Bắc Kinh, mà còn có rất nhiều người ngoại tỉnh.'},
-   ],
-   hanzi:[
-     {c:'但',p:'dàn',type:'左右结构 · Trái-phải',st:7,ord:'亻 trái → 旦 phải',rad:'亻 (nhân – người)',mean:'nhưng, chỉ',
-      tip:'亻(người) + 旦(bình minh, chỉ điều đơn giản) → người CHỈ nói điều đơn giản, mở rộng thành liên từ chuyển ý NHƯNG.',
-      cf:'旦 (dàn – "bình minh", không có bộ 亻")',w:'不但 / 但是'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Công viên không những rất rộng, mà bên trong còn có rất nhiều hoa đẹp.',answer:'公园不但很大，而且里面有很多好看的花。',answerPy:'Gōngyuán búdàn hěn dà, érqiě lǐmiàn yǒu hěn duō hǎokàn de huā.',
-      note:'不但……而且…… diễn tả sự bổ sung tăng tiến.'},
-     {promptLang:'vi',prompt:'Nhà hàng này cá không những tươi mà còn rẻ.',answer:'这家饭馆的鱼不但新鲜，而且便宜。',answerPy:'Zhè jiā fànguǎn de yú búdàn xīnxiān, érqiě piányi.',
-      note:'不但……而且…… diễn tả sự bổ sung tăng tiến.'},
-   ]},
-
-  {n:8,zh:'有名',py:'yǒumíng',pos:'Tính từ',vn:'có tiếng, nổi tiếng', hv: 'hữu danh',em:'⭐',lesson:3,
-   explain:['Được nhiều người biết đến vì có đặc điểm nổi bật.'],
-   usage:'Tính từ, làm vị ngữ: 很有名.',
-   collo:['很有名','非常有名','公司很有名'],
-   ex_zh:'贵公司不但很有名，而且工作环境好。',ex_py:'Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.',ex_vn:'Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.',
-   exList:[
-     {zh:'贵公司不但很有名，而且工作环境好。',py:'Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.',vn:'Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.'},
-     {zh:'这是黄老师的画儿吧，他的画都非常有名。',py:'Zhè shì Huáng lǎoshī de huàr ba, tā de huà dōu fēicháng yǒumíng.',vn:'Đây là tranh của thầy Hoàng phải không, tranh của thầy đều rất nổi tiếng.'},
-     {zh:'听说这家饭馆的羊肉非常有名。',py:'Tīngshuō zhè jiā fànguǎn de yángròu fēicháng yǒumíng.',vn:'Nghe nói thịt cừu của nhà hàng này rất nổi tiếng.'},
-   ],
-   hanzi:[
-     {c:'名',p:'míng',type:'上下结构 · Trên-dưới',st:6,ord:'夕 trên → 口 dưới',rad:'口 (khẩu)',mean:'tên, danh tiếng',
-      tip:'夕(buổi tối, tối trời) + 口(miệng, gọi tên) → trời tối phải GỌI TÊN mới nhận ra nhau = TÊN, mở rộng DANH TIẾNG.',
-      cf:'各 (gè – "mỗi", có 夂 thay vì 夕")',w:'有名 / 名字'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nghe nói họa sĩ này ở Trung Quốc rất nổi tiếng.',answer:'听说这位画家在中国非常有名。',answerPy:'Tīngshuō zhè wèi huàjiā zài Zhōngguó fēicháng yǒumíng.',
-      note:'非常 + Adj diễn tả mức độ cao.'},
-     {promptLang:'vi',prompt:'Nếu quán ăn này nổi tiếng thì chắc chắn có nhiều khách.',answer:'如果这家饭馆很有名，就一定有很多客人。',answerPy:'Rúguǒ zhè jiā fànguǎn hěn yǒumíng, jiù yídìng yǒu hěn duō kèrén.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'同意',py:'tóngyì',pos:'Động từ',vn:'đồng ý, tán thành', hv: 'đồng ý',em:'✅',lesson:3,
-   explain:['Chấp nhận, tán thành với ý kiến hoặc đề nghị.'],
-   usage:'Động từ, mang tân ngữ: 同意 + [việc]; hoặc đứng độc lập.',
-   collo:['你家人同意吗','同意帮忙','不同意'],
-   ex_zh:'你家人同意吗？',ex_py:'Nǐ jiārén tóngyì ma?',ex_vn:'Gia đình bạn có đồng ý không?',
-   exList:[
-     {zh:'做这个工作有点儿累，需要经常去外地。你家人同意吗？',py:'Zuò zhège gōngzuò yǒudiǎnr lèi, xūyào jīngcháng qù wàidì. Nǐ jiārén tóngyì ma?',vn:'Làm công việc này hơi vất vả, cần thường xuyên đi công tác xa. Gia đình bạn có đồng ý không?'},
-     {zh:'我有个同学很喜欢小动物，她同意帮我照顾几天。',py:'Wǒ yǒu ge tóngxué hěn xǐhuan xiǎo dòngwù, tā tóngyì bāng wǒ zhàogù jǐ tiān.',vn:'Tôi có một bạn học rất thích động vật nhỏ, bạn ấy đồng ý giúp tôi chăm mấy hôm.'},
-     {zh:'关于这一点，我同意，可是吃太少，我晚上睡不着觉。',py:'Guānyú zhè yì diǎn, wǒ tóngyì, kěshì chī tài shǎo, wǒ wǎnshang shuì bu zháo jiào.',vn:'Về điểm này, tôi đồng ý, nhưng ăn ít quá thì tối tôi không ngủ được.'},
-   ],
-   hanzi:[
-     {c:'意',p:'yì',type:'上下结构 · Trên-dưới',st:13,ord:'立 trên → 心 dưới',rad:'心 (tâm)',mean:'ý nghĩ, ý kiến',
-      tip:'音(âm thanh, lời nói) + 心(trái tim) → LỜI NÓI xuất phát từ TRÁI TIM = Ý NGHĨ; 同(giống nhau)+意(ý) = ĐỒNG Ý.',
-      cf:'音 (yīn – "âm thanh", không có bộ 心")',w:'同意 / 意思'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Về chuyến du lịch này, tôi đồng ý với ý kiến của bạn, nhưng chúng ta vẫn cần hỏi mẹ thêm.',answer:'关于这次旅行，我同意你的看法，可是我们还需要问问妈妈。',answerPy:'Guānyú zhè cì lǚxíng, wǒ tóngyì nǐ de kànfǎ, kěshì wǒmen hái xūyào wènwen māma.',
-      note:'关于 sẽ học ngay bên dưới trong bài này.'},
-     {promptLang:'vi',prompt:'Nếu bố mẹ đồng ý thì tôi sẽ đi du học.',answer:'如果爸爸妈妈同意，我就去留学。',answerPy:'Rúguǒ bàba māma tóngyì, wǒ jiù qù liú xué.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 留学 đã học ở Bài 15).'},
-   ]},
-
-  {n:10,zh:'相信',py:'xiāngxìn',pos:'Động từ',vn:'tin, tin tưởng', hv: 'tương tín',em:'🤝',lesson:3,
-   explain:['Tin rằng điều gì đó là đúng, đáng tin cậy.'],
-   usage:'Động từ, mang tân ngữ là mệnh đề: 相信 + [việc].',
-   collo:['我相信','相信自己','没办法相信'],
-   ex_zh:'我相信他们会同意的。',ex_py:'Wǒ xiāngxìn tāmen huì tóngyì de.',ex_vn:'Tôi tin họ sẽ đồng ý.',
-   exList:[
-     {zh:'只要我愿意，我相信他们就会同意的。',py:'Zhǐyào wǒ yuànyì, wǒ xiāngxìn tāmen jiù huì tóngyì de.',vn:'Chỉ cần tôi muốn, tôi tin họ sẽ đồng ý thôi.'},
-     {zh:'孩子怎么了，变化这么大，我真没办法相信。',py:'Háizi zěnme le, biànhuà zhème dà, wǒ zhēn méi bànfǎ xiāngxìn.',vn:'Đứa trẻ sao thế, thay đổi nhiều vậy, tôi thật sự không tin nổi.'},
-     {zh:'一米九一，我都不相信自己能长这么高。',py:'Yì mǐ jiǔ yī, wǒ dōu bù xiāngxìn zìjǐ néng zhǎng zhème gāo.',vn:'Một mét chín mươi mốt, tôi còn không tin mình có thể cao đến thế.'},
-   ],
-   hanzi:[
-     {c:'信',p:'xìn',type:'左右结构 · Trái-phải',st:9,ord:'亻 trái → 言 phải',rad:'亻 (nhân – người)',mean:'tin tưởng; lá thư',
-      tip:'亻(người) + 言(lời nói) → lời nói của NGƯỜI đáng TIN CẬY; 相(lẫn nhau)+信(tin) = TIN TƯỞNG lẫn nhau.',
-      cf:'言 (yán – "lời nói", không có bộ 亻")',w:'相信 / 信 (lá thư)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tin tức này đột ngột quá, tôi thật sự không thể tin nổi.',answer:'这个消息太突然了，我真没办法相信。',answerPy:'Zhège xiāoxi tài tūrán le, wǒ zhēn méi bànfǎ xiāngxìn.',
-      note:'没办法 diễn tả sự bất lực (ôn lại 办法 đã học ở Bài 17).'},
-     {promptLang:'vi',prompt:'Nếu bạn tin tôi thì hãy cho tôi cơ hội thử một lần.',answer:'如果你相信我，就给我一次机会吧。',answerPy:'Rúguǒ nǐ xiāngxìn wǒ, jiù gěi wǒ yí cì jīhuì ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'关于',py:'guānyú',pos:'Giới từ',vn:'về', hv: 'quan vu',em:'📌',lesson:3,
-   explain:['Nêu chủ đề, đối tượng mà nội dung sau đó liên quan đến.'],
-   usage:'关于 + [chủ đề]，[nội dung].',
-   collo:['关于这个工作','关于这件事','关于中国文化'],
-   ex_zh:'关于这个工作，还有什么问题吗？',ex_py:'Guānyú zhège gōngzuò, hái yǒu shénme wèntí ma?',ex_vn:'Về công việc này, còn vấn đề gì không?',
-   exList:[
-     {zh:'关于这个工作，还有什么问题吗？',py:'Guānyú zhège gōngzuò, hái yǒu shénme wèntí ma?',vn:'Về công việc này, còn vấn đề gì không?'},
-     {zh:'我最近看了一些关于中国文化的电影。',py:'Wǒ zuìjìn kànle yìxiē guānyú Zhōngguó wénhuà de diànyǐng.',vn:'Gần đây tôi xem một số phim về văn hóa Trung Quốc.'},
-     {zh:'关于中国的节日，除了春节以外，别的我都不了解。',py:'Guānyú Zhōngguó de jiérì, chúle Chūnjié yǐwài, biéde wǒ dōu bù liǎojiě.',vn:'Về ngày lễ của Trung Quốc, ngoài Tết Nguyên đán ra, những cái khác tôi đều không hiểu rõ.'},
-   ],
-   hanzi:[
-     {c:'于',p:'yú',type:'独体字 · Chữ đơn',st:3,ord:'nét liền',rad:'二 (nhị)',mean:'ở, tại, về',
-      tip:'Chữ tượng hình cổ mô phỏng dòng khí đi TỚI một nơi → mở rộng nghĩa Ở, TẠI, VỀ (một vấn đề).',
-      cf:'干 (gān – "khô", hình dáng gần giống")',w:'关于 / 对于 / 由于'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi đã đọc một quyển sách về lịch sử Trung Quốc.',answer:'我读了一本关于中国历史的书。',answerPy:'Wǒ dúle yì běn guānyú Zhōngguó lìshǐ de shū.',
-      note:'关于 + chủ đề + 的 + danh từ.'},
-     {promptLang:'vi',prompt:'Nếu bạn có vấn đề gì về công việc này thì hỏi tôi đi.',answer:'如果你对这个工作有什么问题，就问我吧。',answerPy:'Rúguǒ nǐ duì zhège gōngzuò yǒu shénme wèntí, jiù wèn wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'机会',py:'jīhuì',pos:'Danh từ',vn:'cơ hội', hv: 'cơ hội',em:'🎯',lesson:3,
-   explain:['Thời điểm hoặc điều kiện thuận lợi để làm việc gì đó.'],
-   usage:'Danh từ; đi cùng động từ 有/给: 有机会, 给机会.',
-   collo:['这个机会','有机会','给我机会'],
-   ex_zh:'谢谢您给我这个机会。',ex_py:'Xièxie nín gěi wǒ zhège jīhuì.',ex_vn:'Cảm ơn anh đã cho tôi cơ hội này.',
-   exList:[
-     {zh:'没有了，谢谢您给我这个机会，我会努力的。',py:'Méiyǒu le, xièxie nín gěi wǒ zhège jīhuì, wǒ huì nǔlì de.',vn:'Không còn ạ, cảm ơn anh đã cho tôi cơ hội này, tôi sẽ cố gắng.'},
-     {zh:'她有这么好的机会啊。',py:'Tā yǒu zhème hǎo de jīhuì a.',vn:'Cô ấy có cơ hội tốt vậy đấy.'},
-     {zh:'在我们那儿很少有机会骑自行车。',py:'Zài wǒmen nàr hěn shǎo yǒu jīhuì qí zìxíngchē.',vn:'Ở chỗ chúng tôi rất ít khi có cơ hội đi xe đạp.'},
-   ],
-   hanzi:[
-     {c:'会',p:'huì',type:'上下结构 · Trên-dưới',st:6,ord:'人 trên → 云 dưới (giản thể)',rad:'人 (nhân)',mean:'gặp gỡ, dịp',
-      tip:'人(người) + 云(mây, tụ hội) → NGƯỜI tụ hội gặp nhau = GẶP GỠ; 机(máy móc, thời điểm)+会(gặp) = CƠ HỘI.',
-      cf:'云 (yún – "mây", không có bộ 人")',w:'机会 / 会议'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ở thành phố này, chúng tôi rất ít khi có cơ hội nhìn thấy tuyết.',answer:'在这个城市，我们很少有机会看到雪。',answerPy:'Zài zhège chéngshì, wǒmen hěn shǎo yǒu jīhuì kàndào xuě.',
-      note:'很少 + V diễn tả tần suất thấp.'},
-     {promptLang:'vi',prompt:'Nếu bạn có cơ hội thì nên nắm bắt lấy.',answer:'如果你有机会，就应该抓住它。',answerPy:'Rúguǒ nǐ yǒu jīhuì, jiù yīnggāi zhuāzhù tā.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'国家',py:'guójiā',pos:'Danh từ',vn:'đất nước, quốc gia', hv: 'quốc gia',em:'🇻🇳',lesson:4,
-   explain:['Một lãnh thổ có chủ quyền, chính phủ riêng.'],
-   usage:'Danh từ; đi cùng tính từ 不同: 不同的国家.',
-   collo:['不同的国家','哪个国家','国家的文化'],
-   ex_zh:'不同的国家有不同的文化。',ex_py:'Bùtóng de guójiā yǒu bùtóng de wénhuà.',ex_vn:'Các quốc gia khác nhau có văn hóa khác nhau.',
-   exList:[
-     {zh:'不同的国家有不同的文化，每种文化都有自己的特点。',py:'Bùtóng de guójiā yǒu bùtóng de wénhuà, měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.',vn:'Các quốc gia khác nhau có văn hóa khác nhau, mỗi loại văn hóa đều có đặc điểm riêng.'},
-     {zh:'有些国家的人名写在姓前面。',py:'Yǒuxiē guójiā de rénmíng xiě zài xìng qiánmiàn.',vn:'Có những nước tên người viết trước họ.'},
-     {zh:'你是从哪个国家来的？',py:'Nǐ shì cóng nǎge guójiā lái de?',vn:'Bạn từ quốc gia nào đến vậy?'},
-   ],
-   hanzi:[
-     {c:'国',p:'guó',type:'全包围结构 · Bao vây toàn phần',st:8,ord:'囗 ngoài → 玉 trong (giản thể)',rad:'囗 (vi – bao vây)',mean:'quốc gia',
-      tip:'囗(biên giới bao quanh) + 玉(ngọc quý, tượng trưng của cải) → vùng đất có BIÊN GIỚI chứa của cải quý = QUỐC GIA.',
-      cf:'固 (gù – "vững chắc", có 古 thay vì 玉")',w:'国家 / 中国'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh ấy từ quốc gia nào đến đây làm việc vậy?',answer:'他是从哪个国家来这儿工作的？',answerPy:'Tā shì cóng nǎge guójiā lái zhèr gōngzuò de?',
-      note:'是……的 nhấn mạnh nguồn gốc.'},
-     {promptLang:'vi',prompt:'Nếu mỗi quốc gia đều tôn trọng văn hóa của nhau thì thế giới sẽ tốt đẹp hơn.',answer:'如果每个国家都尊重对方的文化，世界就会更美好。',answerPy:'Rúguǒ měi ge guójiā dōu zūnzhòng duìfāng de wénhuà, shìjiè jiù huì gèng měihǎo.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 世界 đã học ở Bài 15).'},
-   ]},
-
-  {n:14,zh:'种',py:'zhǒng',pos:'Lượng từ',vn:'loại', hv: 'chủng',em:'📦',lesson:4,
-   explain:['Lượng từ dùng để phân loại sự vật.'],
-   usage:'一 + 种 + [danh từ]: 一种文化.',
-   collo:['每种文化','一种药','哪种茶'],
-   ex_zh:'每种文化都有自己的特点。',ex_py:'Měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.',ex_vn:'Mỗi loại văn hóa đều có đặc điểm riêng.',
-   exList:[
-     {zh:'不同的国家有不同的文化，每种文化都有自己的特点。',py:'Bùtóng de guójiā yǒu bùtóng de wénhuà, měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.',vn:'Các quốc gia khác nhau có văn hóa khác nhau, mỗi loại văn hóa đều có đặc điểm riêng.'},
-     {zh:'你喜欢喝哪种茶？',py:'Nǐ xǐhuan hē nǎ zhǒng chá?',vn:'Bạn thích uống loại trà nào?'},
-     {zh:'这种药你吃过吗？',py:'Zhè zhǒng yào nǐ chīguo ma?',vn:'Loại thuốc này bạn uống qua chưa?'},
-   ],
-   hanzi:[
-     {c:'种',p:'zhǒng',type:'左右结构 · Trái-phải',st:9,ord:'禾 trái → 中 phải (giản thể)',rad:'禾 (hoà – lúa)',mean:'loại, giống',
-      tip:'禾(cây lúa) + 中(ở giữa, trồng vào) → gieo trồng LÚA theo từng GIỐNG khác nhau = LOẠI, GIỐNG.',
-      cf:'重 (zhòng – "nặng", có bộ 里")',w:'种 / 种类'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn muốn ăn loại trái cây nào?',answer:'你想吃哪种水果？',answerPy:'Nǐ xiǎng chī nǎ zhǒng shuǐguǒ?',
-      note:'哪 + lượng từ hỏi lựa chọn.'},
-     {promptLang:'vi',prompt:'Nếu bạn thích loại văn hóa này thì hãy tìm hiểu thêm.',answer:'如果你喜欢这种文化，就多了解一下吧。',answerPy:'Rúguǒ nǐ xǐhuan zhè zhǒng wénhuà, jiù duō liǎojiě yíxià ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:15,zh:'特点',py:'tèdiǎn',pos:'Danh từ',vn:'đặc điểm', hv: 'đặc điểm',em:'🔖',lesson:4,
-   explain:['Nét riêng, điểm nổi bật của một sự vật, hiện tượng.'],
-   usage:'Danh từ; đi cùng động từ 有: 有特点.',
-   collo:['自己的特点','有特点','文化的特点'],
-   ex_zh:'每种文化都有自己的特点。',ex_py:'Měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.',ex_vn:'Mỗi loại văn hóa đều có đặc điểm riêng.',
-   exList:[
-     {zh:'不同的国家有不同的文化，每种文化都有自己的特点。',py:'Bùtóng de guójiā yǒu bùtóng de wénhuà, měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.',vn:'Các quốc gia khác nhau có văn hóa khác nhau, mỗi loại văn hóa đều có đặc điểm riêng.'},
-     {zh:'这个地方的街道很有特点。',py:'Zhège dìfang de jiēdào hěn yǒu tèdiǎn.',vn:'Đường phố ở nơi này rất có đặc điểm riêng.'},
-     {zh:'每个人都有自己的特点。',py:'Měi ge rén dōu yǒu zìjǐ de tèdiǎn.',vn:'Mỗi người đều có đặc điểm riêng của mình.'},
-   ],
-   hanzi:[
-     {c:'特',p:'tè',type:'左右结构 · Trái-phải',st:10,ord:'牛 trái → 寺 phải',rad:'牛 (ngưu – trâu, bò)',mean:'đặc biệt',
-      tip:'牛(trâu, con vật quý giá thời xưa) + 寺(chùa, nơi trang trọng) → con trâu ĐẶC BIỆT dùng nơi trang trọng = ĐẶC BIỆT.',
-      cf:'持 (chí – "cầm giữ", có 扌thay vì 牛")',w:'特点 / 特别'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mỗi đứa trẻ đều có đặc điểm riêng của mình.',answer:'每个孩子都有自己的特点。',answerPy:'Měi ge háizi dōu yǒu zìjǐ de tèdiǎn.',
-      note:'每……都 diễn tả tính phổ quát.'},
-     {promptLang:'vi',prompt:'Nếu bạn hiểu đặc điểm của nơi đó thì sẽ quen nhanh hơn.',answer:'如果你了解那里的特点，就会更快习惯。',answerPy:'Rúguǒ nǐ liǎojiě nàli de tèdiǎn, jiù huì gèng kuài xíguàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:16,zh:'奇怪',py:'qíguài',pos:'Tính từ',vn:'kỳ lạ, lạ lùng', hv: 'kỳ quái',em:'❓',lesson:4,
-   explain:['Khác thường, khó hiểu, làm người ta ngạc nhiên.'],
-   usage:'Tính từ, làm vị ngữ hoặc trạng ngữ: 觉得奇怪.',
-   collo:['有点儿奇怪','真奇怪','觉得奇怪'],
-   ex_zh:'还会觉得有点奇怪。',ex_py:'Hái huì juéde yǒudiǎn qíguài.',ex_vn:'Còn thấy hơi kỳ lạ.',
-   exList:[
-     {zh:'到了一个新环境，你会觉得什么都很新鲜，而且还会觉得有点奇怪。',py:'Dàole yí ge xīn huánjìng, nǐ huì juéde shénme dōu hěn xīnxiān, érqiě hái huì juéde yǒudiǎn qíguài.',vn:'Đến một môi trường mới, bạn sẽ thấy cái gì cũng mới lạ, và còn thấy hơi kỳ lạ.'},
-     {zh:'奇怪，我记得把手机放进包里了，怎么找不到了？',py:'Qíguài, wǒ jìde bǎ shǒujī fàng jìn bāo li le, zěnme zhǎo bu dào le?',vn:'Lạ thật, tôi nhớ để điện thoại vào túi rồi mà, sao tìm không thấy?'},
-     {zh:'奇怪，这段时间怎么没看见小周来上班？',py:'Qíguài, zhè duàn shíjiān zěnme méi kànjiàn Xiǎo Zhōu lái shàngbān?',vn:'Lạ thật, dạo này sao không thấy Tiểu Chu đi làm nhỉ?'},
-   ],
-   hanzi:[
-     {c:'奇',p:'qí',type:'上下结构 · Trên-dưới',st:8,ord:'大 trên → 可 dưới',rad:'大 (đại)',mean:'kỳ lạ, đặc biệt',
-      tip:'大(lớn) + 可(có thể) → điều LỚN LAO khác thường có thể xảy ra = KỲ LẠ, ĐẶC BIỆT.',
-      cf:'椅 (yǐ – "cái ghế", có bộ 木")',w:'奇怪 / 好奇'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lạ thật, tôi nhớ để chìa khóa vào ngăn kéo rồi mà, sao không thấy nữa?',answer:'奇怪，我记得把钥匙放进抽屉里了，怎么不见了？',answerPy:'Qíguài, wǒ jìde bǎ yàoshi fàng jìn chōuti li le, zěnme bú jiàn le?',
-      note:'把字句3: 把+钥匙+放进+vị trí (ôn lại đã học ở Bài 14).'},
-     {promptLang:'vi',prompt:'Nếu bạn thấy kỳ lạ thì cứ hỏi tôi đi.',answer:'如果你觉得奇怪，就问我吧。',answerPy:'Rúguǒ nǐ juéde qíguài, jiù wèn wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:17,zh:'地',py:'de',pos:'Trợ từ',vn:'(dùng để nối trạng ngữ với động từ mà nó bổ nghĩa)', hv: 'địa',em:'🔗',lesson:4,
-   explain:['Trợ từ kết cấu, đứng sau trạng ngữ (thường là tính từ), trước động từ.'],
-   usage:'[Trạng ngữ] + 地 + [động từ].',
-   collo:['慢慢地','认真地','奇怪地'],
-   ex_zh:'就会慢慢地习惯。',ex_py:'Jiù huì mànman de xíguàn.',ex_vn:'Sẽ dần dần quen thôi.',
-   exList:[
-     {zh:'但是只要经过一段时间，就会慢慢地习惯。',py:'Dànshì zhǐyào jīngguò yí duàn shíjiān, jiù huì mànman de xíguàn.',vn:'Nhưng chỉ cần trải qua một khoảng thời gian, sẽ dần dần quen thôi.'},
-     {zh:'大家都奇怪地看着我。',py:'Dàjiā dōu qíguài de kànzhe wǒ.',vn:'Mọi người đều nhìn tôi với vẻ ngạc nhiên.'},
-     {zh:'请认真地学习。',py:'Qǐng rènzhēn de xuéxí.',vn:'Xin hãy học tập nghiêm túc.'},
-   ],
-   hanzi:[
-     {c:'地',p:'de',type:'左右结构 · Trái-phải',st:6,ord:'土 trái → 也 phải',rad:'土 (thổ – đất)',mean:'đất; trợ từ trạng ngữ',
-      tip:'土(đất) + 也(cũng) → khi đọc dì nghĩa là ĐẤT; khi đọc de (nhẹ) làm TRỢ TỪ nối trạng ngữ với động từ.',
-      cf:'他 (tā – "anh ấy", có bộ 亻")',w:'慢慢地 / 地方'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Các bạn học đều ngạc nhiên hỏi tôi có chuyện gì.',answer:'同学们都奇怪地问我怎么回事。',answerPy:'Tóngxuémen dōu qíguài de wèn wǒ zěnme huí shì.',
-      note:'奇怪 + 地 + 问 diễn tả trạng ngữ chỉ cách thức (ôn lại 奇怪 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn học tập nghiêm túc thì trình độ sẽ nâng cao nhanh.',answer:'如果你认真地学习，水平就会提高得很快。',answerPy:'Rúguǒ nǐ rènzhēn de xuéxí, shuǐpíng jiù huì tígāo de hěn kuài.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 水平/提高 đã học ở Bài 15).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "向",
+    "py": "xiàng",
+    "pos": "Giới từ",
+    "vn": "đối với, về phía (chỉ hướng của hành động)",
+    "hv": "hướng",
+    "em": "➡️",
+    "lesson": 1,
+    "explain": [
+      "Chỉ đối tượng hoặc hướng của một hành động."
+    ],
+    "usage": "向 + [đối tượng] + [động từ]: 向你借钱.",
+    "collo": [
+      "向你借钱",
+      "向左走",
+      "向别人问路"
+    ],
+    "ex_zh": "我打算买房子了，想向你借点儿钱。",
+    "ex_py": "Wǒ dǎsuàn mǎi fángzi le, xiǎng xiàng nǐ jiè diǎnr qián.",
+    "ex_vn": "Tôi định mua nhà rồi, muốn mượn anh chút tiền.",
+    "exList": [
+      {
+        "zh": "老周，我打算买房子了，想向你借点儿钱。",
+        "py": "Lǎo Zhōu, wǒ dǎsuàn mǎi fángzi le, xiǎng xiàng nǐ jiè diǎnr qián.",
+        "vn": "Lão Chu ơi, tôi định mua nhà rồi, muốn mượn anh chút tiền."
+      },
+      {
+        "zh": "一个外地人向我问路。",
+        "py": "Yí ge wàidìrén xiàng wǒ wènlù.",
+        "vn": "Một người từ nơi khác hỏi đường tôi."
+      },
+      {
+        "zh": "到了地铁站以后再向右走。",
+        "py": "Dàole dìtiězhàn yǐhòu zài xiàng yòu zǒu.",
+        "vn": "Đến ga tàu điện ngầm rồi thì rẽ phải."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "向",
+        "p": "xiàng",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 6,
+        "ord": "nét liền",
+        "rad": "口 (khẩu)",
+        "mean": "hướng về",
+        "tip": "Chữ tượng hình cổ mô phỏng cửa sổ nhà HƯỚNG ra một phía → HƯỚNG VỀ, ĐỐI VỚI.",
+        "cf": "问 (wèn – \"hỏi\", có 门 thay vì 冂\")",
+        "w": "向 / 方向"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời tối nhìn không rõ đường, nên tôi hỏi đường chú bên cạnh.",
+        "answer": "因为天黑了看不清路，所以我向旁边的叔叔问路。",
+        "answerPy": "Yīnwèi tiān hēi le kàn bu qīng lù, suǒyǐ wǒ xiàng pángbiān de shūshu wènlù.",
+        "note": "向 + đối tượng + động từ diễn tả hướng của hành động.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không biết đường thì hỏi cảnh sát đi.",
+        "answer": "如果你不知道路，就向警察问路吧。",
+        "answerPy": "Rúguǒ nǐ bù zhīdào lù, jiù xiàng jǐngchá wènlù ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "向你借钱",
+        "py": "xiàng nǐ jiè qián",
+        "vn": "vay tiền bạn"
+      },
+      {
+        "zh": "向左走",
+        "py": "xiàng zuǒ zǒu",
+        "vn": "đi về bên trái"
+      },
+      {
+        "zh": "向别人问路",
+        "py": "xiàng biérén wèn lù",
+        "vn": "hỏi đường người khác"
+      },
+      {
+        "zh": "向前走",
+        "py": "xiàng qián zǒu",
+        "vn": "đi về phía trước"
+      },
+      {
+        "zh": "向老师学习",
+        "py": "xiàng lǎoshī xuéxí",
+        "vn": "học tập thầy cô"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "向 + đối tượng + V",
+        "m": "Hướng về ai mà làm gì: 向他借, 向我问"
+      },
+      {
+        "s": "向 (hướng của hành động) ≠ 往 (hướng di chuyển) — 向他笑 ✓ / 往他笑 ✗"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "万",
+    "py": "wàn",
+    "pos": "Số từ",
+    "vn": "vạn, mười nghìn",
+    "hv": "vạn",
+    "em": "🔢",
+    "lesson": 1,
+    "explain": [
+      "Đơn vị số đếm bằng 10.000."
+    ],
+    "usage": "Số từ, đi trước lượng từ/danh từ: 5万块.",
+    "collo": [
+      "5万块钱",
+      "三万块",
+      "一万米"
+    ],
+    "ex_zh": "还差5万块钱。",
+    "ex_py": "Hái chà wǔ wàn kuài qián.",
+    "ex_vn": "Còn thiếu 5 vạn đồng.",
+    "exList": [
+      {
+        "zh": "还差5万块钱。",
+        "py": "Hái chà wǔ wàn kuài qián.",
+        "vn": "Còn thiếu 5 vạn đồng."
+      },
+      {
+        "zh": "我买这画儿花了三万块呢。",
+        "py": "Wǒ mǎi zhè huàr huāle sān wàn kuài ne.",
+        "vn": "Tôi mua bức tranh này tốn ba vạn đồng đấy."
+      },
+      {
+        "zh": "一米九一，我都不相信自己能长这么高。",
+        "py": "Yì mǐ jiǔ yī, wǒ dōu bù xiāngxìn zìjǐ néng zhǎng zhème gāo.",
+        "vn": "Một mét chín mươi mốt, tôi còn không tin mình có thể cao đến thế."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "万",
+        "p": "wàn",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "一 (nhất)",
+        "mean": "vạn, mười nghìn",
+        "tip": "Chữ giản thể đơn giản hóa từ hình con bọ cạp với nhiều chân (số lượng lớn) → mở rộng nghĩa VẠN, số lượng lớn.",
+        "cf": "方 (fāng – \"phương hướng\", hình dáng khác\")",
+        "w": "万 / 一万"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dù chiếc áo đó rất đắt, nhưng mẹ vẫn tốn hai vạn đồng mua cho tôi.",
+        "answer": "虽然那件衣服很贵，但是妈妈还是花了两万块买给我。",
+        "answerPy": "Suīrán nà jiàn yīfu hěn guì, dànshì māma háishi huāle liǎng wàn kuài mǎi gěi wǒ.",
+        "note": "花 + tiền diễn tả tiêu tốn (ôn lại 花 đã học ở Bài 15).",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có một vạn đồng thì có thể mua căn nhà này không?",
+        "answer": "如果你有一万块，就能买这个房子吗？",
+        "answerPy": "Rúguǒ nǐ yǒu yíwàn kuài, jiù néng mǎi zhège fángzi ma?",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一万块",
+        "py": "yíwàn kuài",
+        "vn": "một vạn đồng"
+      },
+      {
+        "zh": "两万人",
+        "py": "liǎngwàn rén",
+        "vn": "hai vạn người"
+      },
+      {
+        "zh": "十万",
+        "py": "shíwàn",
+        "vn": "mười vạn"
+      },
+      {
+        "zh": "花了三万",
+        "py": "huā le sānwàn",
+        "vn": "tiêu ba vạn"
+      },
+      {
+        "zh": "一万多",
+        "py": "yíwàn duō",
+        "vn": "hơn một vạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 万 + lượng từ",
+        "m": "Bao nhiêu vạn — 一万块, 两万人"
+      },
+      {
+        "s": "百 → 千 → 万",
+        "m": "Tiếng Trung đếm theo vạn, không theo \"chục nghìn\""
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "只",
+    "py": "zhī",
+    "pos": "Lượng từ",
+    "vn": "con (dùng cho động vật)",
+    "hv": "chích",
+    "em": "🐾",
+    "lesson": 2,
+    "explain": [
+      "Lượng từ dùng để đếm động vật, cũng dùng cho một số vật thành đôi."
+    ],
+    "usage": "一 + 只 + [động vật]: 一只狗.",
+    "collo": [
+      "一只狗",
+      "那只狗",
+      "一只猫"
+    ],
+    "ex_zh": "你看那只狗多可爱。",
+    "ex_py": "Nǐ kàn nà zhī gǒu duō kě'ài.",
+    "ex_vn": "Mẹ xem con chó đó đáng yêu chưa.",
+    "exList": [
+      {
+        "zh": "妈妈，你看那只狗多可爱，眼睛大大的，嘴小小的。",
+        "py": "Māma, nǐ kàn nà zhī gǒu duō kě'ài, yǎnjing dàdà de, zuǐ xiǎoxiǎo de.",
+        "vn": "Mẹ ơi, mẹ xem con chó đó đáng yêu chưa, mắt to to, miệng nhỏ nhỏ."
+      },
+      {
+        "zh": "你下星期去北京？你的那只狗怎么办？",
+        "py": "Nǐ xià xīngqī qù Běijīng? Nǐ de nà zhī gǒu zěnme bàn?",
+        "vn": "Tuần sau bạn đi Bắc Kinh à? Con chó của bạn tính sao?"
+      },
+      {
+        "zh": "我有个同学很喜欢小动物，她同意帮我照顾几天。",
+        "py": "Wǒ yǒu ge tóngxué hěn xǐhuan xiǎo dòngwù, tā tóngyì bāng wǒ zhàogù jǐ tiān.",
+        "vn": "Tôi có một bạn học rất thích động vật nhỏ, bạn ấy đồng ý giúp tôi chăm mấy hôm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "只",
+        "p": "zhī",
+        "type": "独体字 · Chữ đơn (giản thể, đa âm)",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "口 (khẩu)",
+        "mean": "con (lượng từ); chỉ (phó từ)",
+        "tip": "Chữ tượng hình mô phỏng CON CHIM chỉ còn MỘT chân, một cánh → dùng làm lượng từ cho vật/con đơn lẻ; khi đọc zhǐ nghĩa là CHỈ, DUY NHẤT.",
+        "cf": "口 (kǒu – \"miệng\", không có 八ở dưới\")",
+        "w": "一只狗 / 只有"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dù ban đầu bố không đồng ý, nhưng cuối cùng vẫn mua cho tôi một con mèo con.",
+        "answer": "虽然爸爸一开始不同意，但是最后还是给我买了一只小猫。",
+        "answerPy": "Suīrán bàba yì kāishǐ bù tóngyì, dànshì zuìhòu háishi gěi wǒ mǎile yì zhī xiǎomāo.",
+        "note": "同意 sẽ học ngay bên dưới trong bài này.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích con chó đó thì chúng ta mua về đi.",
+        "answer": "如果你喜欢那只狗，我们就买回去吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan nà zhī gǒu, wǒmen jiù mǎi huiqu ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一只猫",
+        "py": "yì zhī māo",
+        "vn": "một con mèo"
+      },
+      {
+        "zh": "两只小动物",
+        "py": "liǎng zhī xiǎo dòngwù",
+        "vn": "hai con vật nhỏ"
+      },
+      {
+        "zh": "一只小狗",
+        "py": "yì zhī xiǎo gǒu",
+        "vn": "một con chó nhỏ"
+      },
+      {
+        "zh": "三只手表",
+        "py": "sān zhī shǒubiǎo",
+        "vn": "ba cái đồng hồ"
+      },
+      {
+        "zh": "那只狗",
+        "py": "nà zhī gǒu",
+        "vn": "con chó kia"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 只 + động vật nhỏ",
+        "m": "Lượng từ 只 cho chim, mèo, chó, gà"
+      },
+      {
+        "s": "只 (zhī, lượng từ) ≠ 只 (zhǐ, chỉ) — cùng chữ, khác âm khác nghĩa"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "嘴",
+    "py": "zuǐ",
+    "pos": "Danh từ",
+    "vn": "miệng",
+    "hv": "chủy",
+    "em": "👄",
+    "lesson": 2,
+    "explain": [
+      "Bộ phận trên khuôn mặt dùng để ăn, nói."
+    ],
+    "usage": "Danh từ; thường đi cùng tính từ lặp: 嘴小小的.",
+    "collo": [
+      "嘴小小的",
+      "他的嘴",
+      "嘴像爸爸"
+    ],
+    "ex_zh": "嘴小小的，我们买回去吧。",
+    "ex_py": "Zuǐ xiǎoxiǎo de, wǒmen mǎi huiqu ba.",
+    "ex_vn": "Miệng nhỏ nhỏ, mình mua về đi.",
+    "exList": [
+      {
+        "zh": "眼睛大大的，嘴小小的，我们买回去吧。",
+        "py": "Yǎnjing dàdà de, zuǐ xiǎoxiǎo de, wǒmen mǎi huiqu ba.",
+        "vn": "Mắt to to, miệng nhỏ nhỏ, mình mua về đi."
+      },
+      {
+        "zh": "他跟你长得真像啊，但是他的嘴更像他爸爸。",
+        "py": "Tā gēn nǐ zhǎng de zhēn xiàng a, dànshì tā de zuǐ gèng xiàng tā bàba.",
+        "vn": "Nó giống bạn thật đấy, nhưng miệng nó lại giống bố nó hơn."
+      },
+      {
+        "zh": "她的嘴小小的，笑起来很可爱。",
+        "py": "Tā de zuǐ xiǎoxiǎo de, xiào qilai hěn kě'ài.",
+        "vn": "Miệng cô ấy nhỏ nhỏ, cười lên trông đáng yêu lắm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "嘴",
+        "p": "zuǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 16,
+        "ord": "口 trái → 觜 phải",
+        "rad": "口 (khẩu)",
+        "mean": "miệng",
+        "tip": "口(miệng) + 觜(mỏ chim, tóc mai) → bộ phận trên MẶT dùng để ăn nói, mở rộng từ hình MỎ = MIỆNG.",
+        "cf": "嗤 (chī – \"cười khẩy\", có 齿 thay vì 此\")",
+        "w": "嘴 / 张嘴"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mắt em gái giống mẹ, nhưng miệng lại giống bố hơn.",
+        "answer": "妹妹的眼睛像妈妈，但是嘴更像爸爸。",
+        "answerPy": "Mèimei de yǎnjing xiàng māma, dànshì zuǐ gèng xiàng bàba.",
+        "note": "像 diễn tả sự giống nhau (ôn lại đã học ở Bài 14).",
+        "pair": "……，但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu miệng bé giống bố thì chắc chắn nhỏ nhỏ.",
+        "answer": "如果孩子的嘴像爸爸，就一定是小小的。",
+        "answerPy": "Rúguǒ háizi de zuǐ xiàng bàba, jiù yídìng shì xiǎoxiǎo de.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "嘴很小",
+        "py": "zuǐ hěn xiǎo",
+        "vn": "miệng rất nhỏ"
+      },
+      {
+        "zh": "嘴像爸爸",
+        "py": "zuǐ xiàng bàba",
+        "vn": "miệng giống bố"
+      },
+      {
+        "zh": "张开嘴",
+        "py": "zhāng kāi zuǐ",
+        "vn": "há miệng"
+      },
+      {
+        "zh": "小小的嘴",
+        "py": "xiǎoxiǎo de zuǐ",
+        "vn": "cái miệng nho nhỏ"
+      },
+      {
+        "zh": "嘴不舒服",
+        "py": "zuǐ bù shūfu",
+        "vn": "miệng khó chịu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "bộ phận + 像 + ai",
+        "m": "Bộ phận nào giống ai — 像 là từ bài 14"
+      },
+      {
+        "s": "嘴 (cái miệng) và 口 (miệng, ngụm — bài 17) — 嘴 thiên khẩu ngữ"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "动物",
+    "py": "dòngwù",
+    "pos": "Danh từ",
+    "vn": "động vật, loài vật",
+    "hv": "động vật",
+    "em": "🐾",
+    "lesson": 2,
+    "explain": [
+      "Sinh vật có khả năng di chuyển, khác với thực vật."
+    ],
+    "usage": "Danh từ; đi cùng tính từ 小: 小动物.",
+    "collo": [
+      "小动物",
+      "动物园",
+      "喜欢动物"
+    ],
+    "ex_zh": "动物和小孩儿一样，都需要人照顾。",
+    "ex_py": "Dòngwù hé xiǎoháir yíyàng, dōu xūyào rén zhàogù.",
+    "ex_vn": "Động vật cũng như trẻ con, đều cần người chăm sóc.",
+    "exList": [
+      {
+        "zh": "动物和小孩儿一样，都需要人照顾。",
+        "py": "Dòngwù hé xiǎoháir yíyàng, dōu xūyào rén zhàogù.",
+        "vn": "Động vật cũng như trẻ con, đều cần người chăm sóc."
+      },
+      {
+        "zh": "孩子对动物很感兴趣。",
+        "py": "Háizi duì dòngwù hěn gǎn xìngqù.",
+        "vn": "Đứa trẻ rất hứng thú với động vật."
+      },
+      {
+        "zh": "你怎么总是带孩子到动物园看动物？",
+        "py": "Nǐ zěnme zǒngshì dài háizi dào dòngwùyuán kàn dòngwù?",
+        "vn": "Sao bạn cứ dẫn con đến sở thú xem động vật vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "物",
+        "p": "wù",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "牛 trái → 勿 phải",
+        "rad": "牛 (ngưu – trâu, bò)",
+        "mean": "vật, đồ vật",
+        "tip": "牛(con trâu, đại diện gia súc) + 勿(đừng) → mọi VẬT tồn tại quanh ta; 动(chuyển động)+物(vật) = ĐỘNG VẬT.",
+        "cf": "物 vs 牛 (niú – chỉ riêng con trâu\")",
+        "w": "动物 / 东西"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dù em gái sợ chó con, nhưng bé lại rất hứng thú với những động vật khác.",
+        "answer": "虽然妹妹害怕小狗，但是她对别的动物很感兴趣。",
+        "answerPy": "Suīrán mèimei hàipà xiǎogǒu, dànshì tā duì bié de dòngwù hěn gǎn xìngqù.",
+        "note": "对……感兴趣 diễn tả sự hứng thú (ôn lại đã học ở Bài 15).",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích động vật thì đi sở thú chơi đi.",
+        "answer": "如果你喜欢动物，就去动物园玩儿吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan dòngwù, jiù qù dòngwùyuán wánr ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "喜欢动物",
+        "py": "xǐhuan dòngwù",
+        "vn": "thích động vật"
+      },
+      {
+        "zh": "动物园",
+        "py": "dòngwù yuán",
+        "vn": "sở thú"
+      },
+      {
+        "zh": "别的动物",
+        "py": "bié de dòngwù",
+        "vn": "các động vật khác"
+      },
+      {
+        "zh": "小动物",
+        "py": "xiǎo dòngwù",
+        "vn": "con vật nhỏ"
+      },
+      {
+        "zh": "可爱的动物",
+        "py": "kě'ài de dòngwù",
+        "vn": "con vật đáng yêu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "动物 + 园",
+        "m": "Sở thú — vườn (园) thú (动物)"
+      },
+      {
+        "s": "动 + 物",
+        "m": "Vật (物) biết cử động (动)"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "段",
+    "py": "duàn",
+    "pos": "Lượng từ",
+    "vn": "khoảng, quãng",
+    "hv": "đoạn",
+    "em": "📏",
+    "lesson": 2,
+    "explain": [
+      "Lượng từ dùng cho khoảng thời gian hoặc đoạn đường."
+    ],
+    "usage": "一 + 段 + [时间/路]: 一段时间.",
+    "collo": [
+      "这段时间",
+      "一段时间",
+      "一段路"
+    ],
+    "ex_zh": "这段时间你自己的衣服都没洗。",
+    "ex_py": "Zhè duàn shíjiān nǐ zìjǐ de yīfu dōu méi xǐ.",
+    "ex_vn": "Thời gian này quần áo của con còn chưa giặt.",
+    "exList": [
+      {
+        "zh": "这段时间你自己的衣服都没洗，你能照顾好它吗？",
+        "py": "Zhè duàn shíjiān nǐ zìjǐ de yīfu dōu méi xǐ, nǐ néng zhàogù hǎo tā ma?",
+        "vn": "Thời gian này quần áo của con còn chưa giặt, con chăm nó nổi không?"
+      },
+      {
+        "zh": "只要经过一段时间，就会慢慢地习惯。",
+        "py": "Zhǐyào jīngguò yí duàn shíjiān, jiù huì mànman de xíguàn.",
+        "vn": "Chỉ cần trải qua một khoảng thời gian, sẽ dần dần quen thôi."
+      },
+      {
+        "zh": "奇怪，这段时间怎么没看见小周来上班？",
+        "py": "Qíguài, zhè duàn shíjiān zěnme méi kànjiàn Xiǎo Zhōu lái shàngbān?",
+        "vn": "Lạ thật, dạo này sao không thấy Tiểu Chu đi làm nhỉ?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "段",
+        "p": "duàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "⇃ trái → 殳 phải",
+        "rad": "殳 (thù – cây gậy)",
+        "mean": "đoạn, quãng",
+        "tip": "Hình ảnh vật thể bị chia thành từng ĐOẠN bởi công cụ (殳); mở rộng nghĩa ĐOẠN, QUÃNG thời gian/không gian.",
+        "cf": "锻 (duàn – \"tôi luyện\", có bộ 钅\")",
+        "w": "一段时间 / 阶段"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lạ thật, dạo này sao anh ấy cứ luôn bận vậy?",
+        "answer": "奇怪，这段时间他怎么总是很忙？",
+        "answerPy": "Qíguài, zhè duàn shíjiān tā zěnme zǒngshì hěn máng?",
+        "note": "奇怪 sẽ học ngay bên dưới trong bài này.",
+        "pair": "总是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có một khoảng thời gian rảnh thì cùng tôi đi du lịch đi.",
+        "answer": "如果你有一段空闲时间，就跟我一起去旅游吧。",
+        "answerPy": "Rúguǒ nǐ yǒu yí duàn kòngxián shíjiān, jiù gēn wǒ yìqǐ qù lǚyóu ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一段时间",
+        "py": "yí duàn shíjiān",
+        "vn": "một khoảng thời gian"
+      },
+      {
+        "zh": "这段话",
+        "py": "zhè duàn huà",
+        "vn": "đoạn lời này"
+      },
+      {
+        "zh": "一段路",
+        "py": "yí duàn lù",
+        "vn": "một đoạn đường"
+      },
+      {
+        "zh": "那段日子",
+        "py": "nà duàn rì zi",
+        "vn": "quãng ngày đó"
+      },
+      {
+        "zh": "第一段",
+        "py": "dì yí duàn",
+        "vn": "đoạn thứ nhất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 段 + 时间 / 路 / 话",
+        "m": "Lượng từ 段 cho khoảng thời gian, đoạn đường, đoạn văn"
+      },
+      {
+        "s": "一段时间 ≈ 一些日子",
+        "m": "段 nhấn một quãng liền mạch"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "不但……而且……",
+    "py": "búdàn……érqiě……",
+    "pos": "Liên từ",
+    "vn": "không những... mà còn...",
+    "hv": "bất đãn nhi thả",
+    "em": "➕",
+    "lesson": 3,
+    "explain": [
+      "Diễn tả sự bổ sung tăng tiến, vế sau có mức độ cao hơn hoặc bổ sung thêm vế trước."
+    ],
+    "usage": "不但 + [A]，而且 + [B].",
+    "collo": [
+      "不但很有名，而且……",
+      "不但环境好，而且……"
+    ],
+    "ex_zh": "贵公司不但很有名，而且工作环境好。",
+    "ex_py": "Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.",
+    "ex_vn": "Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.",
+    "exList": [
+      {
+        "zh": "贵公司不但很有名，而且工作环境好。",
+        "py": "Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.",
+        "vn": "Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt."
+      },
+      {
+        "zh": "动物园不但环境好，而且孩子对动物很感兴趣。",
+        "py": "Dòngwùyuán búdàn huánjìng hǎo, érqiě háizi duì dòngwù hěn gǎn xìngqù.",
+        "vn": "Sở thú không những môi trường tốt, mà đứa trẻ còn rất hứng thú với động vật."
+      },
+      {
+        "zh": "今天不但来了很多北京人，而且还有很多外地人。",
+        "py": "Jīntiān búdàn láile hěn duō Běijīngrén, érqiě hái yǒu hěn duō wàidìrén.",
+        "vn": "Hôm nay không những đến rất nhiều người Bắc Kinh, mà còn có rất nhiều người ngoại tỉnh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "但",
+        "p": "dàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻 trái → 旦 phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "nhưng, chỉ",
+        "tip": "亻(người) + 旦(bình minh, chỉ điều đơn giản) → người CHỈ nói điều đơn giản, mở rộng thành liên từ chuyển ý NHƯNG.",
+        "cf": "旦 (dàn – \"bình minh\", không có bộ 亻\")",
+        "w": "不但 / 但是"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Công viên không những rất rộng, mà bên trong còn có rất nhiều hoa đẹp.",
+        "answer": "公园不但很大，而且里面有很多好看的花。",
+        "answerPy": "Gōngyuán búdàn hěn dà, érqiě lǐmiàn yǒu hěn duō hǎokàn de huā.",
+        "note": "不但……而且…… diễn tả sự bổ sung tăng tiến.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nhà hàng này cá không những tươi mà còn rẻ.",
+        "answer": "这家饭馆的鱼不但新鲜，而且便宜。",
+        "answerPy": "Zhè jiā fànguǎn de yú búdàn xīnxiān, érqiě piányi.",
+        "note": "不但……而且…… diễn tả sự bổ sung tăng tiến.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "不但……而且……",
+        "py": "búdàn érqiě",
+        "vn": "không những… mà còn…"
+      },
+      {
+        "zh": "不但便宜而且新鲜",
+        "py": "búdàn piányi érqiě xīnxiān",
+        "vn": "vừa rẻ vừa tươi"
+      },
+      {
+        "zh": "不但会说而且说得好",
+        "py": "búdàn huì shuō érqiě shuō de hǎo",
+        "vn": "không những biết nói mà còn nói hay"
+      },
+      {
+        "zh": "不但很大",
+        "py": "búdàn hěn dà",
+        "vn": "không những rất rộng"
+      },
+      {
+        "zh": "而且有很多花",
+        "py": "érqiě yǒu hěn duō huā",
+        "vn": "mà còn có nhiều hoa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "不但 A，而且 B",
+        "m": "Không những A mà còn B — B mạnh hơn A"
+      },
+      {
+        "s": "Cùng chủ ngữ: 不但 đứng SAU chủ ngữ. Khác chủ ngữ: 不但 đứng TRƯỚC"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "有名",
+    "py": "yǒumíng",
+    "pos": "Tính từ",
+    "vn": "có tiếng, nổi tiếng",
+    "hv": "hữu danh",
+    "em": "⭐",
+    "lesson": 3,
+    "explain": [
+      "Được nhiều người biết đến vì có đặc điểm nổi bật."
+    ],
+    "usage": "Tính từ, làm vị ngữ: 很有名.",
+    "collo": [
+      "很有名",
+      "非常有名",
+      "公司很有名"
+    ],
+    "ex_zh": "贵公司不但很有名，而且工作环境好。",
+    "ex_py": "Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.",
+    "ex_vn": "Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt.",
+    "exList": [
+      {
+        "zh": "贵公司不但很有名，而且工作环境好。",
+        "py": "Guì gōngsī búdàn hěn yǒumíng, érqiě gōngzuò huánjìng hǎo.",
+        "vn": "Quý công ty không những rất nổi tiếng, mà còn có môi trường làm việc tốt."
+      },
+      {
+        "zh": "这是黄老师的画儿吧，他的画都非常有名。",
+        "py": "Zhè shì Huáng lǎoshī de huàr ba, tā de huà dōu fēicháng yǒumíng.",
+        "vn": "Đây là tranh của thầy Hoàng phải không, tranh của thầy đều rất nổi tiếng."
+      },
+      {
+        "zh": "听说这家饭馆的羊肉非常有名。",
+        "py": "Tīngshuō zhè jiā fànguǎn de yángròu fēicháng yǒumíng.",
+        "vn": "Nghe nói thịt cừu của nhà hàng này rất nổi tiếng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "名",
+        "p": "míng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "夕 trên → 口 dưới",
+        "rad": "口 (khẩu)",
+        "mean": "tên, danh tiếng",
+        "tip": "夕(buổi tối, tối trời) + 口(miệng, gọi tên) → trời tối phải GỌI TÊN mới nhận ra nhau = TÊN, mở rộng DANH TIẾNG.",
+        "cf": "各 (gè – \"mỗi\", có 夂 thay vì 夕\")",
+        "w": "有名 / 名字"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vị hoạ sĩ này không những nổi tiếng ở Trung Quốc, mà tranh của ông còn rất đắt.",
+        "answer": "这位画家不但在中国非常有名，而且他的画也很贵。",
+        "answerPy": "Zhè wèi huàjiā búdàn zài Zhōngguó fēicháng yǒumíng, érqiě tā de huà yě hěn guì.",
+        "note": "不但……而且…… là khung trọng tâm của bài này; 画家 đã học ở bài 15.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu quán ăn này nổi tiếng thì chắc chắn có nhiều khách.",
+        "answer": "如果这家饭馆很有名，就一定有很多客人。",
+        "answerPy": "Rúguǒ zhè jiā fànguǎn hěn yǒumíng, jiù yídìng yǒu hěn duō kèrén.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很有名",
+        "py": "hěn yǒumíng",
+        "vn": "rất nổi tiếng"
+      },
+      {
+        "zh": "有名的画家",
+        "py": "yǒumíng de huàjiā",
+        "vn": "hoạ sĩ nổi tiếng"
+      },
+      {
+        "zh": "在中国很有名",
+        "py": "zài Zhōngguó hěn yǒumíng",
+        "vn": "rất nổi tiếng ở Trung Quốc"
+      },
+      {
+        "zh": "有名的地方",
+        "py": "yǒumíng de dìfang",
+        "vn": "nơi nổi tiếng"
+      },
+      {
+        "zh": "越来越有名",
+        "py": "yuè lái yuè yǒumíng",
+        "vn": "ngày càng nổi tiếng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "有名 + 的 + N",
+        "m": "Cái gì nổi tiếng"
+      },
+      {
+        "s": "有 + 名",
+        "m": "Có (有) tiếng tăm (名) — cùng kiểu 有意思, 有用"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "同意",
+    "py": "tóngyì",
+    "pos": "Động từ",
+    "vn": "đồng ý, tán thành",
+    "hv": "đồng ý",
+    "em": "✅",
+    "lesson": 3,
+    "explain": [
+      "Chấp nhận, tán thành với ý kiến hoặc đề nghị."
+    ],
+    "usage": "Động từ, mang tân ngữ: 同意 + [việc]; hoặc đứng độc lập.",
+    "collo": [
+      "你家人同意吗",
+      "同意帮忙",
+      "不同意"
+    ],
+    "ex_zh": "你家人同意吗？",
+    "ex_py": "Nǐ jiārén tóngyì ma?",
+    "ex_vn": "Gia đình bạn có đồng ý không?",
+    "exList": [
+      {
+        "zh": "做这个工作有点儿累，需要经常去外地。你家人同意吗？",
+        "py": "Zuò zhège gōngzuò yǒudiǎnr lèi, xūyào jīngcháng qù wàidì. Nǐ jiārén tóngyì ma?",
+        "vn": "Làm công việc này hơi vất vả, cần thường xuyên đi công tác xa. Gia đình bạn có đồng ý không?"
+      },
+      {
+        "zh": "我有个同学很喜欢小动物，她同意帮我照顾几天。",
+        "py": "Wǒ yǒu ge tóngxué hěn xǐhuan xiǎo dòngwù, tā tóngyì bāng wǒ zhàogù jǐ tiān.",
+        "vn": "Tôi có một bạn học rất thích động vật nhỏ, bạn ấy đồng ý giúp tôi chăm mấy hôm."
+      },
+      {
+        "zh": "关于这一点，我同意，可是吃太少，我晚上睡不着觉。",
+        "py": "Guānyú zhè yì diǎn, wǒ tóngyì, kěshì chī tài shǎo, wǒ wǎnshang shuì bu zháo jiào.",
+        "vn": "Về điểm này, tôi đồng ý, nhưng ăn ít quá thì tối tôi không ngủ được."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "意",
+        "p": "yì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "立 trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "ý nghĩ, ý kiến",
+        "tip": "音(âm thanh, lời nói) + 心(trái tim) → LỜI NÓI xuất phát từ TRÁI TIM = Ý NGHĨ; 同(giống nhau)+意(ý) = ĐỒNG Ý.",
+        "cf": "音 (yīn – \"âm thanh\", không có bộ 心\")",
+        "w": "同意 / 意思"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Về chuyến du lịch này, tôi đồng ý với ý kiến của bạn, nhưng chúng ta vẫn cần hỏi mẹ thêm.",
+        "answer": "关于这次旅行，我同意你的看法，可是我们还需要问问妈妈。",
+        "answerPy": "Guānyú zhè cì lǚxíng, wǒ tóngyì nǐ de kànfǎ, kěshì wǒmen hái xūyào wènwen māma.",
+        "note": "关于 sẽ học ngay bên dưới trong bài này.",
+        "pair": "……，可是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bố mẹ đồng ý thì tôi sẽ đi du học.",
+        "answer": "如果爸爸妈妈同意，我就去留学。",
+        "answerPy": "Rúguǒ bàba māma tóngyì, wǒ jiù qù liú xué.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 留学 đã học ở Bài 15).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "同意你的看法",
+        "py": "tóngyì nǐ de kànfǎ",
+        "vn": "đồng ý với ý kiến của bạn"
+      },
+      {
+        "zh": "不同意",
+        "py": "bù tóngyì",
+        "vn": "không đồng ý"
+      },
+      {
+        "zh": "完全同意",
+        "py": "wánquán tóngyì",
+        "vn": "hoàn toàn nhất trí"
+      },
+      {
+        "zh": "爸爸妈妈同意",
+        "py": "bàba māma tóngyì",
+        "vn": "bố mẹ đồng ý"
+      },
+      {
+        "zh": "同意去",
+        "py": "tóngyì qù",
+        "vn": "đồng ý đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "同意 + N / mệnh đề",
+        "m": "Đồng ý điều gì"
+      },
+      {
+        "s": "同 + 意",
+        "m": "Cùng (同) ý (意) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "相信",
+    "py": "xiāngxìn",
+    "pos": "Động từ",
+    "vn": "tin, tin tưởng",
+    "hv": "tương tín",
+    "em": "🤝",
+    "lesson": 3,
+    "explain": [
+      "Tin rằng điều gì đó là đúng, đáng tin cậy."
+    ],
+    "usage": "Động từ, mang tân ngữ là mệnh đề: 相信 + [việc].",
+    "collo": [
+      "我相信",
+      "相信自己",
+      "没办法相信"
+    ],
+    "ex_zh": "我相信他们会同意的。",
+    "ex_py": "Wǒ xiāngxìn tāmen huì tóngyì de.",
+    "ex_vn": "Tôi tin họ sẽ đồng ý.",
+    "exList": [
+      {
+        "zh": "只要我愿意，我相信他们就会同意的。",
+        "py": "Zhǐyào wǒ yuànyì, wǒ xiāngxìn tāmen jiù huì tóngyì de.",
+        "vn": "Chỉ cần tôi muốn, tôi tin họ sẽ đồng ý thôi."
+      },
+      {
+        "zh": "孩子怎么了，变化这么大，我真没办法相信。",
+        "py": "Háizi zěnme le, biànhuà zhème dà, wǒ zhēn méi bànfǎ xiāngxìn.",
+        "vn": "Đứa trẻ sao thế, thay đổi nhiều vậy, tôi thật sự không tin nổi."
+      },
+      {
+        "zh": "一米九一，我都不相信自己能长这么高。",
+        "py": "Yì mǐ jiǔ yī, wǒ dōu bù xiāngxìn zìjǐ néng zhǎng zhème gāo.",
+        "vn": "Một mét chín mươi mốt, tôi còn không tin mình có thể cao đến thế."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "信",
+        "p": "xìn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "亻 trái → 言 phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "tin tưởng; lá thư",
+        "tip": "亻(người) + 言(lời nói) → lời nói của NGƯỜI đáng TIN CẬY; 相(lẫn nhau)+信(tin) = TIN TƯỞNG lẫn nhau.",
+        "cf": "言 (yán – \"lời nói\", không có bộ 亻\")",
+        "w": "相信 / 信 (lá thư)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy tin này đến quá bất ngờ, nhưng tôi vẫn tin là thật.",
+        "answer": "虽然这个消息太突然了，但是我还是相信是真的。",
+        "answerPy": "Suīrán zhège xiāoxi tài tūrán le, dànshì wǒ háishi xiāngxìn shì zhēn de.",
+        "note": "相信 dùng cho việc tin là thật, khác 认为 (cho rằng) ở bài 16.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn tin tôi thì hãy cho tôi cơ hội thử một lần.",
+        "answer": "如果你相信我，就给我一次机会吧。",
+        "answerPy": "Rúguǒ nǐ xiāngxìn wǒ, jiù gěi wǒ yí cì jīhuì ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "相信我",
+        "py": "xiāngxìn wǒ",
+        "vn": "tin tôi"
+      },
+      {
+        "zh": "不能相信",
+        "py": "bù néng xiāngxìn",
+        "vn": "không thể tin"
+      },
+      {
+        "zh": "相信他们会同意",
+        "py": "xiāngxìn tāmen huì tóngyì",
+        "vn": "tin họ sẽ đồng ý"
+      },
+      {
+        "zh": "我相信",
+        "py": "wǒ xiāngxìn",
+        "vn": "tôi tin rằng"
+      },
+      {
+        "zh": "相信自己",
+        "py": "xiāngxìn zìjǐ",
+        "vn": "tin vào bản thân"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "相信 + ai / mệnh đề",
+        "m": "Tin ai, tin rằng …"
+      },
+      {
+        "s": "相信 (tin là thật) ≠ 认为 (cho rằng, bài 16)"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "关于",
+    "py": "guānyú",
+    "pos": "Giới từ",
+    "vn": "về",
+    "hv": "quan vu",
+    "em": "📌",
+    "lesson": 3,
+    "explain": [
+      "Nêu chủ đề, đối tượng mà nội dung sau đó liên quan đến."
+    ],
+    "usage": "关于 + [chủ đề]，[nội dung].",
+    "collo": [
+      "关于这个工作",
+      "关于这件事",
+      "关于中国文化"
+    ],
+    "ex_zh": "关于这个工作，还有什么问题吗？",
+    "ex_py": "Guānyú zhège gōngzuò, hái yǒu shénme wèntí ma?",
+    "ex_vn": "Về công việc này, còn vấn đề gì không?",
+    "exList": [
+      {
+        "zh": "关于这个工作，还有什么问题吗？",
+        "py": "Guānyú zhège gōngzuò, hái yǒu shénme wèntí ma?",
+        "vn": "Về công việc này, còn vấn đề gì không?"
+      },
+      {
+        "zh": "我最近看了一些关于中国文化的电影。",
+        "py": "Wǒ zuìjìn kànle yìxiē guānyú Zhōngguó wénhuà de diànyǐng.",
+        "vn": "Gần đây tôi xem một số phim về văn hóa Trung Quốc."
+      },
+      {
+        "zh": "关于中国的节日，除了春节以外，别的我都不了解。",
+        "py": "Guānyú Zhōngguó de jiérì, chúle Chūnjié yǐwài, biéde wǒ dōu bù liǎojiě.",
+        "vn": "Về ngày lễ của Trung Quốc, ngoài Tết Nguyên đán ra, những cái khác tôi đều không hiểu rõ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "于",
+        "p": "yú",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "二 (nhị)",
+        "mean": "ở, tại, về",
+        "tip": "Chữ tượng hình cổ mô phỏng dòng khí đi TỚI một nơi → mở rộng nghĩa Ở, TẠI, VỀ (một vấn đề).",
+        "cf": "干 (gān – \"khô\", hình dáng gần giống\")",
+        "w": "关于 / 对于 / 由于"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trước hết tôi đọc một quyển sách về lịch sử Trung Quốc, sau đó mới đi Bắc Kinh.",
+        "answer": "我先读了一本关于中国历史的书，然后才去北京。",
+        "answerPy": "Wǒ xiān dúle yì běn guānyú Zhōngguó lìshǐ de shū, ránhòu cái qù Běijīng.",
+        "note": "关于 + N + 的 + N — sách, bài về cái gì; 先……然后…… là khung bài 14.",
+        "pair": "先……然后……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có vấn đề gì về công việc này thì hỏi tôi đi.",
+        "answer": "如果你对这个工作有什么问题，就问我吧。",
+        "answerPy": "Rúguǒ nǐ duì zhège gōngzuò yǒu shénme wèntí, jiù wèn wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "关于中国历史",
+        "py": "guānyú Zhōngguó lìshǐ",
+        "vn": "về lịch sử Trung Quốc"
+      },
+      {
+        "zh": "关于这次旅行",
+        "py": "guānyú zhè cì lǚxíng",
+        "vn": "về chuyến đi này"
+      },
+      {
+        "zh": "关于这个问题",
+        "py": "guānyú zhège wèntí",
+        "vn": "về vấn đề này"
+      },
+      {
+        "zh": "关于他的事",
+        "py": "guānyú tā de shì",
+        "vn": "chuyện về anh ấy"
+      },
+      {
+        "zh": "一本关于……的书",
+        "py": "yì běn guānyú de shū",
+        "vn": "một quyển sách về…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "关于 + N + 的 + N",
+        "m": "Sách, bài, tin về cái gì"
+      },
+      {
+        "s": "关于 đứng ĐẦU câu hoặc làm định ngữ; 对于 nhấn đối tượng tác động"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "机会",
+    "py": "jīhuì",
+    "pos": "Danh từ",
+    "vn": "cơ hội",
+    "hv": "cơ hội",
+    "em": "🎯",
+    "lesson": 3,
+    "explain": [
+      "Thời điểm hoặc điều kiện thuận lợi để làm việc gì đó."
+    ],
+    "usage": "Danh từ; đi cùng động từ 有/给: 有机会, 给机会.",
+    "collo": [
+      "这个机会",
+      "有机会",
+      "给我机会"
+    ],
+    "ex_zh": "谢谢您给我这个机会。",
+    "ex_py": "Xièxie nín gěi wǒ zhège jīhuì.",
+    "ex_vn": "Cảm ơn anh đã cho tôi cơ hội này.",
+    "exList": [
+      {
+        "zh": "没有了，谢谢您给我这个机会，我会努力的。",
+        "py": "Méiyǒu le, xièxie nín gěi wǒ zhège jīhuì, wǒ huì nǔlì de.",
+        "vn": "Không còn ạ, cảm ơn anh đã cho tôi cơ hội này, tôi sẽ cố gắng."
+      },
+      {
+        "zh": "她有这么好的机会啊。",
+        "py": "Tā yǒu zhème hǎo de jīhuì a.",
+        "vn": "Cô ấy có cơ hội tốt vậy đấy."
+      },
+      {
+        "zh": "在我们那儿很少有机会骑自行车。",
+        "py": "Zài wǒmen nàr hěn shǎo yǒu jīhuì qí zìxíngchē.",
+        "vn": "Ở chỗ chúng tôi rất ít khi có cơ hội đi xe đạp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "会",
+        "p": "huì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "人 trên → 云 dưới (giản thể)",
+        "rad": "人 (nhân)",
+        "mean": "gặp gỡ, dịp",
+        "tip": "人(người) + 云(mây, tụ hội) → NGƯỜI tụ hội gặp nhau = GẶP GỠ; 机(máy móc, thời điểm)+会(gặp) = CƠ HỘI.",
+        "cf": "云 (yún – \"mây\", không có bộ 人\")",
+        "w": "机会 / 会议"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì thành phố này mùa đông không lạnh, nên chúng tôi rất ít có cơ hội thấy tuyết.",
+        "answer": "因为这个城市的冬天不冷，所以我们很少有机会看到雪。",
+        "answerPy": "Yīnwèi zhège chéngshì de dōngtiān bù lěng, suǒyǐ wǒmen hěn shǎo yǒu jīhuì kàndào xuě.",
+        "note": "冬天 là từ bài 17; 有机会 + V — có cơ hội làm gì.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có cơ hội thì nên nắm bắt lấy.",
+        "answer": "如果你有机会，就应该抓住它。",
+        "answerPy": "Rúguǒ nǐ yǒu jīhuì, jiù yīnggāi zhuāzhù tā.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有机会",
+        "py": "yǒu jīhuì",
+        "vn": "có cơ hội"
+      },
+      {
+        "zh": "一次机会",
+        "py": "yí cì jīhuì",
+        "vn": "một lần cơ hội"
+      },
+      {
+        "zh": "很少有机会",
+        "py": "hěn shǎo yǒu jīhuì",
+        "vn": "ít khi có cơ hội"
+      },
+      {
+        "zh": "好机会",
+        "py": "hǎo jīhuì",
+        "vn": "cơ hội tốt"
+      },
+      {
+        "zh": "给我一次机会",
+        "py": "gěi wǒ yí cì jīhuì",
+        "vn": "cho tôi một cơ hội"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "有 / 没有 + 机会 + V",
+        "m": "Có, không có cơ hội làm gì"
+      },
+      {
+        "s": "机 + 会",
+        "m": "Thời (机) cơ gặp được (会)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "国家",
+    "py": "guójiā",
+    "pos": "Danh từ",
+    "vn": "đất nước, quốc gia",
+    "hv": "quốc gia",
+    "em": "🇻🇳",
+    "lesson": 4,
+    "explain": [
+      "Một lãnh thổ có chủ quyền, chính phủ riêng."
+    ],
+    "usage": "Danh từ; đi cùng tính từ 不同: 不同的国家.",
+    "collo": [
+      "不同的国家",
+      "哪个国家",
+      "国家的文化"
+    ],
+    "ex_zh": "不同的国家有不同的文化。",
+    "ex_py": "Bùtóng de guójiā yǒu bùtóng de wénhuà.",
+    "ex_vn": "Các quốc gia khác nhau có văn hóa khác nhau.",
+    "exList": [
+      {
+        "zh": "不同的国家有不同的文化，每种文化都有自己的特点。",
+        "py": "Bùtóng de guójiā yǒu bùtóng de wénhuà, měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.",
+        "vn": "Các quốc gia khác nhau có văn hóa khác nhau, mỗi loại văn hóa đều có đặc điểm riêng."
+      },
+      {
+        "zh": "有些国家的人名写在姓前面。",
+        "py": "Yǒuxiē guójiā de rénmíng xiě zài xìng qiánmiàn.",
+        "vn": "Có những nước tên người viết trước họ."
+      },
+      {
+        "zh": "你是从哪个国家来的？",
+        "py": "Nǐ shì cóng nǎge guójiā lái de?",
+        "vn": "Bạn từ quốc gia nào đến vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "国",
+        "p": "guó",
+        "type": "全包围结构 · Bao vây toàn phần",
+        "st": 8,
+        "ord": "囗 ngoài → 玉 trong (giản thể)",
+        "rad": "囗 (vi – bao vây)",
+        "mean": "quốc gia",
+        "tip": "囗(biên giới bao quanh) + 玉(ngọc quý, tượng trưng của cải) → vùng đất có BIÊN GIỚI chứa của cải quý = QUỐC GIA.",
+        "cf": "固 (gù – \"vững chắc\", có 古 thay vì 玉\")",
+        "w": "国家 / 中国"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy không những đến từ một quốc gia khác, mà tiếng Trung còn nói rất tốt.",
+        "answer": "他不但是从别的国家来的，而且汉语说得很好。",
+        "answerPy": "Tā búdàn shì cóng biéde guójiā lái de, érqiě Hànyǔ shuō de hěn hǎo.",
+        "note": "从 + 国家 + 来 — đến từ nước nào; 得 bổ ngữ trình độ.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu mỗi quốc gia đều tôn trọng văn hóa của nhau thì thế giới sẽ tốt đẹp hơn.",
+        "answer": "如果每个国家都尊重对方的文化，世界就会更美好。",
+        "answerPy": "Rúguǒ měi ge guójiā dōu zūnzhòng duìfāng de wénhuà, shìjiè jiù huì gèng měihǎo.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 世界 đã học ở Bài 15).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "哪个国家",
+        "py": "nǎge guójiā",
+        "vn": "quốc gia nào"
+      },
+      {
+        "zh": "别的国家",
+        "py": "bié de guójiā",
+        "vn": "nước khác"
+      },
+      {
+        "zh": "每个国家",
+        "py": "měi gè guójiā",
+        "vn": "mỗi quốc gia"
+      },
+      {
+        "zh": "国家的文化",
+        "py": "guójiā de wénhuà",
+        "vn": "văn hoá của một nước"
+      },
+      {
+        "zh": "来自这个国家",
+        "py": "láizì zhège guójiā",
+        "vn": "đến từ nước này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "从 + 哪个国家 + 来",
+        "m": "Đến từ quốc gia nào"
+      },
+      {
+        "s": "国 + 家",
+        "m": "Nước (国) và nhà (家) — nghĩa mở rộng thành quốc gia"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "种",
+    "py": "zhǒng",
+    "pos": "Lượng từ",
+    "vn": "loại",
+    "hv": "chủng",
+    "em": "📦",
+    "lesson": 4,
+    "explain": [
+      "Lượng từ dùng để phân loại sự vật."
+    ],
+    "usage": "一 + 种 + [danh từ]: 一种文化.",
+    "collo": [
+      "每种文化",
+      "一种药",
+      "哪种茶"
+    ],
+    "ex_zh": "每种文化都有自己的特点。",
+    "ex_py": "Měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.",
+    "ex_vn": "Mỗi loại văn hóa đều có đặc điểm riêng.",
+    "exList": [
+      {
+        "zh": "不同的国家有不同的文化，每种文化都有自己的特点。",
+        "py": "Bùtóng de guójiā yǒu bùtóng de wénhuà, měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.",
+        "vn": "Các quốc gia khác nhau có văn hóa khác nhau, mỗi loại văn hóa đều có đặc điểm riêng."
+      },
+      {
+        "zh": "你喜欢喝哪种茶？",
+        "py": "Nǐ xǐhuan hē nǎ zhǒng chá?",
+        "vn": "Bạn thích uống loại trà nào?"
+      },
+      {
+        "zh": "这种药你吃过吗？",
+        "py": "Zhè zhǒng yào nǐ chīguo ma?",
+        "vn": "Loại thuốc này bạn uống qua chưa?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "种",
+        "p": "zhǒng",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "禾 trái → 中 phải (giản thể)",
+        "rad": "禾 (hoà – lúa)",
+        "mean": "loại, giống",
+        "tip": "禾(cây lúa) + 中(ở giữa, trồng vào) → gieo trồng LÚA theo từng GIỐNG khác nhau = LOẠI, GIỐNG.",
+        "cf": "重 (zhòng – \"nặng\", có bộ 里\")",
+        "w": "种 / 种类"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngoài táo ra, bạn còn muốn ăn loại trái cây nào nữa?",
+        "answer": "除了苹果以外，你还想吃哪种水果？",
+        "answerPy": "Chúle píngguǒ yǐwài, nǐ hái xiǎng chī nǎ zhǒng shuǐguǒ?",
+        "note": "除了……以外，还…… là khung bài 15 — A THUỘC nhóm; 种 là lượng từ chủng loại.",
+        "pair": "除了……以外，还……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích loại văn hóa này thì hãy tìm hiểu thêm.",
+        "answer": "如果你喜欢这种文化，就多了解一下吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan zhè zhǒng wénhuà, jiù duō liǎojiě yíxià ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "哪种水果",
+        "py": "nǎ zhǒng shuǐguǒ",
+        "vn": "loại trái cây nào"
+      },
+      {
+        "zh": "这种文化",
+        "py": "zhè zhǒng wénhuà",
+        "vn": "loại văn hoá này"
+      },
+      {
+        "zh": "两种茶",
+        "py": "liǎng zhǒng chá",
+        "vn": "hai loại trà"
+      },
+      {
+        "zh": "各种",
+        "py": "gè zhǒng",
+        "vn": "các loại"
+      },
+      {
+        "zh": "这种情况",
+        "py": "zhè zhǒng qíngkuàng",
+        "vn": "tình huống loại này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số / chỉ định + 种 + N",
+        "m": "Lượng từ 种 — chủng loại: 这种, 哪种, 各种"
+      },
+      {
+        "s": "种 (zhǒng, loại) ≠ 种 (zhòng, trồng) — cùng chữ, khác âm"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "特点",
+    "py": "tèdiǎn",
+    "pos": "Danh từ",
+    "vn": "đặc điểm",
+    "hv": "đặc điểm",
+    "em": "🔖",
+    "lesson": 4,
+    "explain": [
+      "Nét riêng, điểm nổi bật của một sự vật, hiện tượng."
+    ],
+    "usage": "Danh từ; đi cùng động từ 有: 有特点.",
+    "collo": [
+      "自己的特点",
+      "有特点",
+      "文化的特点"
+    ],
+    "ex_zh": "每种文化都有自己的特点。",
+    "ex_py": "Měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.",
+    "ex_vn": "Mỗi loại văn hóa đều có đặc điểm riêng.",
+    "exList": [
+      {
+        "zh": "不同的国家有不同的文化，每种文化都有自己的特点。",
+        "py": "Bùtóng de guójiā yǒu bùtóng de wénhuà, měi zhǒng wénhuà dōu yǒu zìjǐ de tèdiǎn.",
+        "vn": "Các quốc gia khác nhau có văn hóa khác nhau, mỗi loại văn hóa đều có đặc điểm riêng."
+      },
+      {
+        "zh": "这个地方的街道很有特点。",
+        "py": "Zhège dìfang de jiēdào hěn yǒu tèdiǎn.",
+        "vn": "Đường phố ở nơi này rất có đặc điểm riêng."
+      },
+      {
+        "zh": "每个人都有自己的特点。",
+        "py": "Měi ge rén dōu yǒu zìjǐ de tèdiǎn.",
+        "vn": "Mỗi người đều có đặc điểm riêng của mình."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "特",
+        "p": "tè",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "牛 trái → 寺 phải",
+        "rad": "牛 (ngưu – trâu, bò)",
+        "mean": "đặc biệt",
+        "tip": "牛(trâu, con vật quý giá thời xưa) + 寺(chùa, nơi trang trọng) → con trâu ĐẶC BIỆT dùng nơi trang trọng = ĐẶC BIỆT.",
+        "cf": "持 (chí – \"cầm giữ\", có 扌thay vì 牛\")",
+        "w": "特点 / 特别"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ khi hiểu được đặc điểm của mỗi đứa trẻ, giáo viên mới dạy tốt được.",
+        "answer": "只有了解每个孩子的特点，老师才能教好。",
+        "answerPy": "Zhǐyǒu liǎojiě měi ge háizi de tèdiǎn, lǎoshī cái néng jiāo hǎo.",
+        "note": "只有……才…… — điều kiện duy nhất; 了解 là từ bài 9.",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn hiểu đặc điểm của nơi đó thì sẽ quen nhanh hơn.",
+        "answer": "如果你了解那里的特点，就会更快习惯。",
+        "answerPy": "Rúguǒ nǐ liǎojiě nàli de tèdiǎn, jiù huì gèng kuài xíguàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有特点",
+        "py": "yǒu tèdiǎn",
+        "vn": "có nét riêng"
+      },
+      {
+        "zh": "自己的特点",
+        "py": "zìjǐ de tèdiǎn",
+        "vn": "đặc điểm của mình"
+      },
+      {
+        "zh": "这里的特点",
+        "py": "zhèlǐ de tèdiǎn",
+        "vn": "đặc điểm nơi này"
+      },
+      {
+        "zh": "文化特点",
+        "py": "wénhuà tèdiǎn",
+        "vn": "đặc điểm văn hoá"
+      },
+      {
+        "zh": "特点是",
+        "py": "tèdiǎn shì",
+        "vn": "đặc điểm là"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 的 + 特点",
+        "m": "Đặc điểm của cái gì"
+      },
+      {
+        "s": "特 + 点",
+        "m": "Điểm (点) riêng biệt (特)"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "奇怪",
+    "py": "qíguài",
+    "pos": "Tính từ",
+    "vn": "kỳ lạ, lạ lùng",
+    "hv": "kỳ quái",
+    "em": "❓",
+    "lesson": 4,
+    "explain": [
+      "Khác thường, khó hiểu, làm người ta ngạc nhiên."
+    ],
+    "usage": "Tính từ, làm vị ngữ hoặc trạng ngữ: 觉得奇怪.",
+    "collo": [
+      "有点儿奇怪",
+      "真奇怪",
+      "觉得奇怪"
+    ],
+    "ex_zh": "还会觉得有点奇怪。",
+    "ex_py": "Hái huì juéde yǒudiǎn qíguài.",
+    "ex_vn": "Còn thấy hơi kỳ lạ.",
+    "exList": [
+      {
+        "zh": "到了一个新环境，你会觉得什么都很新鲜，而且还会觉得有点奇怪。",
+        "py": "Dàole yí ge xīn huánjìng, nǐ huì juéde shénme dōu hěn xīnxiān, érqiě hái huì juéde yǒudiǎn qíguài.",
+        "vn": "Đến một môi trường mới, bạn sẽ thấy cái gì cũng mới lạ, và còn thấy hơi kỳ lạ."
+      },
+      {
+        "zh": "奇怪，我记得把手机放进包里了，怎么找不到了？",
+        "py": "Qíguài, wǒ jìde bǎ shǒujī fàng jìn bāo li le, zěnme zhǎo bu dào le?",
+        "vn": "Lạ thật, tôi nhớ để điện thoại vào túi rồi mà, sao tìm không thấy?"
+      },
+      {
+        "zh": "奇怪，这段时间怎么没看见小周来上班？",
+        "py": "Qíguài, zhè duàn shíjiān zěnme méi kànjiàn Xiǎo Zhōu lái shàngbān?",
+        "vn": "Lạ thật, dạo này sao không thấy Tiểu Chu đi làm nhỉ?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "奇",
+        "p": "qí",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "大 trên → 可 dưới",
+        "rad": "大 (đại)",
+        "mean": "kỳ lạ, đặc biệt",
+        "tip": "大(lớn) + 可(có thể) → điều LỚN LAO khác thường có thể xảy ra = KỲ LẠ, ĐẶC BIỆT.",
+        "cf": "椅 (yǐ – \"cái ghế\", có bộ 木\")",
+        "w": "奇怪 / 好奇"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lạ thật, tôi vừa để chìa khoá vào ngăn kéo là nó đã không thấy đâu nữa.",
+        "answer": "真奇怪，我一把钥匙放进抽屉里，它就不见了。",
+        "answerPy": "Zhēn qíguài, wǒ yì bǎ yàoshi fàngjìn chōuti li, tā jiù bú jiàn le.",
+        "note": "一……就…… — vừa … là …; 把字句 đặt tân ngữ xác định trước động từ.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thấy kỳ lạ thì cứ hỏi tôi đi.",
+        "answer": "如果你觉得奇怪，就问我吧。",
+        "answerPy": "Rúguǒ nǐ juéde qíguài, jiù wèn wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "觉得奇怪",
+        "py": "juéde qíguài",
+        "vn": "thấy kỳ lạ"
+      },
+      {
+        "zh": "很奇怪",
+        "py": "hěn qíguài",
+        "vn": "rất lạ"
+      },
+      {
+        "zh": "奇怪的声音",
+        "py": "qíguài de shēngyīn",
+        "vn": "tiếng động lạ"
+      },
+      {
+        "zh": "真奇怪",
+        "py": "zhēn qíguài",
+        "vn": "lạ thật"
+      },
+      {
+        "zh": "奇怪地问",
+        "py": "qíguài de wèn",
+        "vn": "ngạc nhiên hỏi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "觉得 + 奇怪",
+        "m": "Thấy lạ"
+      },
+      {
+        "s": "奇怪 + 地 + V",
+        "m": "Làm gì một cách ngạc nhiên — 地 là từ cùng bài"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "地",
+    "py": "de",
+    "pos": "Trợ từ",
+    "vn": "(dùng để nối trạng ngữ với động từ mà nó bổ nghĩa)",
+    "hv": "địa",
+    "em": "🔗",
+    "lesson": 4,
+    "explain": [
+      "Trợ từ kết cấu, đứng sau trạng ngữ (thường là tính từ), trước động từ."
+    ],
+    "usage": "[Trạng ngữ] + 地 + [động từ].",
+    "collo": [
+      "慢慢地",
+      "认真地",
+      "奇怪地"
+    ],
+    "ex_zh": "就会慢慢地习惯。",
+    "ex_py": "Jiù huì mànman de xíguàn.",
+    "ex_vn": "Sẽ dần dần quen thôi.",
+    "exList": [
+      {
+        "zh": "但是只要经过一段时间，就会慢慢地习惯。",
+        "py": "Dànshì zhǐyào jīngguò yí duàn shíjiān, jiù huì mànman de xíguàn.",
+        "vn": "Nhưng chỉ cần trải qua một khoảng thời gian, sẽ dần dần quen thôi."
+      },
+      {
+        "zh": "大家都奇怪地看着我。",
+        "py": "Dàjiā dōu qíguài de kànzhe wǒ.",
+        "vn": "Mọi người đều nhìn tôi với vẻ ngạc nhiên."
+      },
+      {
+        "zh": "请认真地学习。",
+        "py": "Qǐng rènzhēn de xuéxí.",
+        "vn": "Xin hãy học tập nghiêm túc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "地",
+        "p": "de",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "土 trái → 也 phải",
+        "rad": "土 (thổ – đất)",
+        "mean": "đất; trợ từ trạng ngữ",
+        "tip": "土(đất) + 也(cũng) → khi đọc dì nghĩa là ĐẤT; khi đọc de (nhẹ) làm TRỢ TỪ nối trạng ngữ với động từ.",
+        "cf": "他 (tā – \"anh ấy\", có bộ 亻\")",
+        "w": "慢慢地 / 地方"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn học vừa ngạc nhiên hỏi tôi có chuyện gì, vừa nhìn tôi.",
+        "answer": "同学们一边奇怪地问我怎么回事，一边看着我。",
+        "answerPy": "Tóngxuémen yìbiān qíguài de wèn wǒ zěnme huí shì, yìbiān kànzhe wǒ.",
+        "note": "Adj + 地 + V — trạng ngữ cách thức; 一边……一边…… là khung bài 13.",
+        "pair": "一边……一边……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn học tập nghiêm túc thì trình độ sẽ nâng cao nhanh.",
+        "answer": "如果你认真地学习，水平就会提高得很快。",
+        "answerPy": "Rúguǒ nǐ rènzhēn de xuéxí, shuǐpíng jiù huì tígāo de hěn kuài.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 水平/提高 đã học ở Bài 15).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "认真地学习",
+        "py": "rènzhēn de xuéxí",
+        "vn": "học một cách nghiêm túc"
+      },
+      {
+        "zh": "慢慢地走",
+        "py": "mànmàn de zǒu",
+        "vn": "đi chầm chậm"
+      },
+      {
+        "zh": "奇怪地问",
+        "py": "qíguài de wèn",
+        "vn": "ngạc nhiên hỏi"
+      },
+      {
+        "zh": "高兴地说",
+        "py": "gāoxìng de shuō",
+        "vn": "vui vẻ nói"
+      },
+      {
+        "zh": "努力地做",
+        "py": "nǔlì de zuò",
+        "vn": "nỗ lực làm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 地 + V",
+        "m": "Trạng ngữ cách thức: 认真地学习, 高兴地说"
+      },
+      {
+        "s": "的 (trước danh từ) · 地 (trước động từ) · 得 (sau động từ)"
+      }
+    ]
+  }
 ];
 
 const wuData = [

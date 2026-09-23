@@ -1576,7 +1576,7 @@ var vocabData = [
         "answer": "我希望他能经常和我在一起，而不是只有周末才见面。",
         "answerPy": "Wǒ xīwàng tā néng jīngcháng hé wǒ zài yìqǐ, ér bú shì zhǐyǒu zhōumò cái jiànmiàn.",
         "note": "周末 là từ bài 1, 见面 là từ bài 8.",
-        "pair": "不是……而是……"
+        "pair": "只有……才……"
       }
     ],
     "colloFull": [

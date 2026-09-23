@@ -44,7 +44,7 @@ module.exports = {
                ['loại + 游戏', '电脑游戏, 手机游戏 — trò chơi loại gì']]
   },
   '作业': {
-    collo: [['写作业', 'làm bài tập'], ['做作业', 'làm bài tập'],
+    collo: [['写作业', 'viết bài tập'], ['做作业', 'làm bài tập'],
             ['作业写完了', 'làm xong bài rồi'], ['很多作业', 'rất nhiều bài tập'],
             ['交作业', 'nộp bài']],
     patterns: [['写 / 做 + 作业', 'Làm bài tập về nhà'],

@@ -1169,9 +1169,9 @@ var vocabData = [
         "vn": "đói rồi"
       },
       {
-        "zh": "饿死了",
-        "py": "è sǐ le",
-        "vn": "đói chết mất"
+        "zh": "饿得很",
+        "py": "è de hěn",
+        "vn": "đói lắm"
       },
       {
         "zh": "不饿",
@@ -1712,9 +1712,9 @@ var vocabData = [
         "vn": "nhà có khách"
       },
       {
-        "zh": "热情地招待客人",
-        "py": "rèqíng de zhāodài kèrén",
-        "vn": "nhiệt tình tiếp khách"
+        "zh": "对客人很热情",
+        "py": "duì kèrén hěn rèqíng",
+        "vn": "rất nhiệt tình với khách"
       }
     ],
     "patterns": [

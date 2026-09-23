@@ -3,313 +3,1512 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'照相机',py:'zhàoxiàngjī',pos:'Danh từ',vn:'máy chụp ảnh', hv: 'chiếu tướng cơ',em:'📷',lesson:1,
-   explain:['Thiết bị dùng để chụp ảnh.'],
-   usage:'Danh từ; đi cùng động từ 拿走/带: 照相机被拿走了.',
-   collo:['照相机被拿走','带照相机','新买的照相机'],
-   ex_zh:'我的照相机被谁拿走了？',ex_py:'Wǒ de zhàoxiàngjī bèi shéi ná zǒu le?',ex_vn:'Máy ảnh của tôi bị ai lấy mất rồi?',
-   exList:[
-     {zh:'我的照相机被谁拿走了？怎么找不到了？',py:'Wǒ de zhàoxiàngjī bèi shéi ná zǒu le? Zěnme zhǎo bu dào le?',vn:'Máy ảnh của tôi bị ai lấy mất rồi? Sao tìm không thấy nữa?'},
-     {zh:'奶奶喜欢那个新买的照相机吗？',py:'Nǎinai xǐhuan nàge xīn mǎi de zhàoxiàngjī ma?',vn:'Bà nội có thích cái máy ảnh mới mua đó không?'},
-     {zh:'如果带上照相机就好了。',py:'Rúguǒ dàishang zhàoxiàngjī jiù hǎo le.',vn:'Nếu mang theo máy ảnh thì tốt rồi.'},
-   ],
-   hanzi:[
-     {c:'相',p:'xiàng',type:'左右结构 · Trái-phải',st:9,ord:'木 trái → 目 phải',rad:'木 (mộc – gỗ)',mean:'lẫn nhau; ảnh',
-      tip:'木(cây, vật thể) + 目(mắt, nhìn) → dùng MẮT nhìn vật thể LẪN NHAU; 照(chiếu sáng)+相(hình ảnh) = ẢNH, chụp ảnh.',
-      cf:'想 (xiǎng – "nghĩ", có thêm bộ 心")',w:'照相机 / 照相 / 相机'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chiếc máy ảnh mới mua này tuy đắt, nhưng chụp ảnh cực kỳ rõ nét.',answer:'这台新买的照相机虽然贵，但是拍照特别清楚。',answerPy:'Zhè tái xīn mǎi de zhàoxiàngjī suīrán guì, dànshì pāizhào tèbié qīngchu.',
-      note:'新 + động từ + 的 làm định ngữ.'},
-     {promptLang:'vi',prompt:'Nếu bạn mất máy ảnh thì tôi cho bạn mượn cái của tôi.',answer:'如果你的照相机丢了，我就把我的借给你。',answerPy:'Rúguǒ nǐ de zhàoxiàngjī diū le, wǒ jiù bǎ wǒ de jiè gěi nǐ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
-   ]},
-
-  {n:2,zh:'被',py:'bèi',pos:'Giới từ',vn:'bị (dùng để chỉ thể bị động)', hv: 'bị',em:'🔄',lesson:1,
-   explain:['Nêu chủ ngữ là đối tượng chịu tác động của hành động.'],
-   usage:'Chủ ngữ + 被 + [chủ thể hành động] + động từ + thành phần khác.',
-   collo:['被拿走','被影响','被认错'],
-   ex_zh:'我的照相机被谁拿走了？',ex_py:'Wǒ de zhàoxiàngjī bèi shéi ná zǒu le?',ex_vn:'Máy ảnh của tôi bị ai lấy mất rồi?',
-   exList:[
-     {zh:'我的照相机被谁拿走了？怎么找不到了？',py:'Wǒ de zhàoxiàngjī bèi shéi ná zǒu le? Zěnme zhǎo bu dào le?',vn:'Máy ảnh của tôi bị ai lấy mất rồi? Sao tìm không thấy nữa?'},
-     {zh:'我被他影响的。',py:'Wǒ bèi tā yǐngxiǎng de.',vn:'Mình bị anh ấy ảnh hưởng đấy.'},
-     {zh:'我们经常被别人认错。',py:'Wǒmen jīngcháng bèi biéren rèncuò.',vn:'Chúng tôi thường bị người khác nhận nhầm.'},
-   ],
-   hanzi:[
-     {c:'被',p:'bèi',type:'左右结构 · Trái-phải',st:10,ord:'衤 trái → 皮 phải',rad:'衤 (y – áo)',mean:'chăn, bị (thể bị động)',
-      tip:'衤(quần áo, chăn) + 皮(da, bề mặt) → tấm CHĂN phủ lên người; mở rộng nghĩa "chịu tác động phủ lên" = BỊ.',
-      cf:'披 (pī – "khoác", có bộ 扌")',w:'被 / 被子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Suy nghĩ của tôi đã bị trải nghiệm lần này ảnh hưởng.',answer:'我的想法被这次经历影响了。',answerPy:'Wǒ de xiǎngfǎ bèi zhè cì jīnglì yǐngxiǎng le.',
-      note:'被 diễn tả câu bị động (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Vấn đề vẫn chưa được giải quyết.',answer:'问题还没有被解决呢。',answerPy:'Wèntí hái méiyǒu bèi jiějué ne.',
-      note:'Phó từ phủ định (没有) đặt TRƯỚC 被.'},
-   ]},
-
-  {n:3,zh:'难过',py:'nánguò',pos:'Tính từ',vn:'buồn', hv: 'nan quá',em:'😢',lesson:1,
-   explain:['Cảm thấy đau lòng, không vui.'],
-   usage:'Tính từ, làm vị ngữ: 别难过.',
-   collo:['别难过','很难过','怎么这么难过'],
-   ex_zh:'别难过，再买一个吧。',ex_py:'Bié nánguò, zài mǎi yí ge ba.',ex_vn:'Đừng buồn, mua cái khác đi.',
-   exList:[
-     {zh:'别难过，再买一个吧，公司东门外不就有一个大商场吗？',py:'Bié nánguò, zài mǎi yí ge ba, gōngsī dōngmén wài bú jiù yǒu yí ge dà shāngchǎng ma?',vn:'Đừng buồn, mua cái khác đi, ngoài cổng đông công ty chẳng phải có một khu thương mại lớn sao?'},
-     {zh:'你怎么这么难过啊？怎么了？',py:'Nǐ zěnme zhème nánguò a? Zěnme le?',vn:'Sao bạn buồn thế? Sao vậy?'},
-     {zh:'你别难过了，我们一起帮你想办法。',py:'Nǐ bié nánguò le, wǒmen yìqǐ bāng nǐ xiǎng bànfǎ.',vn:'Bạn đừng buồn nữa, chúng tôi cùng giúp bạn nghĩ cách.'},
-   ],
-   hanzi:[
-     {c:'过',p:'guò',type:'半包围结构 · Bán bao vây',st:6,ord:'辶 ngoài → 寸 trong',rad:'辶 (sước – đi)',mean:'trải qua',
-      tip:'辶(đi) + 寸(khoảng thời gian) → trải qua một khoảng thời gian KHÓ khăn; 难(khó)+过(trải qua) = BUỒN, khó chịu trong lòng.',
-      cf:'过 (guò – cùng chữ đã học ở Bài 19")',w:'难过 / 难受'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đừng buồn nữa, tôi sẽ cùng bạn nghĩ cách giải quyết vấn đề này.',answer:'别难过了，我陪你一起想办法解决这个问题。',answerPy:'Bié nánguò le, wǒ péi nǐ yìqǐ xiǎng bànfǎ jiějué zhège wèntí.',
-      note:'办法 diễn tả cách giải quyết (ôn lại đã học ở Bài 17).'},
-     {promptLang:'vi',prompt:'Nếu bạn buồn thì cứ nói cho tôi biết.',answer:'如果你难过，就告诉我吧。',answerPy:'Rúguǒ nǐ nánguò, jiù gàosu wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:4,zh:'东',py:'dōng',pos:'Danh từ',vn:'phía đông', hv: 'đông',em:'🧭',lesson:1,
-   explain:['Một trong bốn hướng chính, hướng mặt trời mọc.'],
-   usage:'Danh từ chỉ phương hướng; đi cùng 门/边: 东门, 东边.',
-   collo:['东门','往东走','东边'],
-   ex_zh:'公司东门外不就有一个大商场吗？',ex_py:'Gōngsī dōngmén wài bú jiù yǒu yí ge dà shāngchǎng ma?',ex_vn:'Ngoài cổng đông công ty chẳng phải có một khu thương mại lớn sao?',
-   exList:[
-     {zh:'别难过，再买一个吧，公司东门外不就有一个大商场吗？',py:'Bié nánguò, zài mǎi yí ge ba, gōngsī dōngmén wài bú jiù yǒu yí ge dà shāngchǎng ma?',vn:'Đừng buồn, mua cái khác đi, ngoài cổng đông công ty chẳng phải có một khu thương mại lớn sao?'},
-     {zh:'只有往东走才能到国家公园。',py:'Zhǐyǒu wǎng dōng zǒu cái néng dào guójiā gōngyuán.',vn:'Chỉ có đi về hướng đông mới đến được công viên quốc gia.'},
-     {zh:'中国在东边。',py:'Zhōngguó zài dōngbian.',vn:'Trung Quốc ở phía đông.'},
-   ],
-   hanzi:[
-     {c:'东',p:'dōng',type:'独体字 · Chữ đơn (giản thể)',st:5,ord:'nét liền',rad:'一 (nhất)',mean:'phía đông',
-      tip:'Chữ tượng hình cổ mô phỏng mặt trời (日) mọc lên sau CÂY (木) vào buổi sáng → PHÍA ĐÔNG.',
-      cf:'车 (chē – "xe", hình dáng gần giống")',w:'东 / 东边 / 东西'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ có đi về hướng đông, mới tìm được nhà hàng mới khai trương đó.',answer:'只有往东走，才能找到那家新开的饭馆。',answerPy:'Zhǐyǒu wǎng dōng zǒu, cái néng zhǎodào nà jiā xīn kāi de fànguǎn.',
-      note:'只有……才…… diễn tả điều kiện duy nhất (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn đi về phía đông thì sẽ thấy trường học.',answer:'如果你往东走，就会看到学校。',answerPy:'Rúguǒ nǐ wǎng dōng zǒu, jiù huì kàndào xuéxiào.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:5,zh:'信用卡',py:'xìnyòngkǎ',pos:'Danh từ',vn:'thẻ tín dụng', hv: 'tín dụng tạp',em:'💳',lesson:1,
-   explain:['Loại thẻ ngân hàng dùng để thanh toán, có thể chi tiêu trước trả sau.'],
-   usage:'Danh từ; đi cùng động từ 用/花: 用信用卡.',
-   collo:['信用卡里的钱','用信用卡','这张信用卡'],
-   ex_zh:'我这个月信用卡里的钱已经花得差不多了。',ex_py:'Wǒ zhège yuè xìnyòngkǎ li de qián yǐjīng huā de chà bu duō le.',ex_vn:'Tiền trong thẻ tín dụng của tôi tháng này đã tiêu gần hết rồi.',
-   exList:[
-     {zh:'但是我这个月信用卡里的钱已经花得差不多了。',py:'Dànshì wǒ zhège yuè xìnyòngkǎ li de qián yǐjīng huā de chà bu duō le.',vn:'Nhưng tiền trong thẻ tín dụng của tôi tháng này đã tiêu gần hết rồi.'},
-     {zh:'服务员说我这张信用卡不能用了。',py:'Fúwùyuán shuō wǒ zhè zhāng xìnyòngkǎ bù néng yòng le.',vn:'Nhân viên nói thẻ tín dụng của tôi không dùng được nữa.'},
-     {zh:'我去银行，我的信用卡该还钱了。',py:'Wǒ qù yínháng, wǒ de xìnyòngkǎ gāi huán qián le.',vn:'Tôi đi ngân hàng đây, thẻ tín dụng của tôi phải trả tiền rồi.'},
-   ],
-   hanzi:[
-     {c:'卡',p:'kǎ',type:'上下结构 · Trên-dưới',st:5,ord:'上 trên → 卜 dưới',rad:'卜 (bốc)',mean:'thẻ',
-      tip:'Chữ ghép từ 上(trên) và 下(dưới, giản lược thành 卜) mô phỏng vật MẮC KẸT ở giữa → mượn âm để chỉ THẺ (card).',
-      cf:'卞 (biàn – họ Biện", hình dáng gần giống")',w:'信用卡 / 卡片'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nhân viên bán hàng nói thẻ tín dụng này không phải của tôi.',answer:'售货员说这张信用卡不是我的。',answerPy:'Shòuhuòyuán shuō zhè zhāng xìnyòngkǎ bú shì wǒ de.',
-      note:'张 là lượng từ cho vật phẳng (ôn lại đã học ở Bài 19).'},
-     {promptLang:'vi',prompt:'Nếu thẻ tín dụng của bạn không dùng được thì đi ngân hàng hỏi thử đi.',answer:'如果你的信用卡不能用，就去银行问问吧。',answerPy:'Rúguǒ nǐ de xìnyòngkǎ bù néng yòng, jiù qù yínháng wènwen ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:6,zh:'关心',py:'guānxīn',pos:'Động từ',vn:'quan tâm, chú ý', hv: 'quan tâm',em:'💗',lesson:2,
-   explain:['Để tâm, lo lắng cho ai đó hoặc việc gì đó.'],
-   usage:'Động từ, mang tân ngữ: 关心 + [người/việc].',
-   collo:['关心体育','关心学生','不关心'],
-   ex_zh:'你怎么突然关心起体育来了？',ex_py:'Nǐ zěnme tūrán guānxīn qǐ tǐyù lái le?',ex_vn:'Sao đột nhiên bạn lại quan tâm đến thể thao vậy?',
-   exList:[
-     {zh:'你怎么突然关心起体育来了？',py:'Nǐ zěnme tūrán guānxīn qǐ tǐyù lái le?',vn:'Sao đột nhiên bạn lại quan tâm đến thể thao vậy?'},
-     {zh:'我还一直觉得你不关心我的学习呢。',py:'Wǒ hái yìzhí juéde nǐ bù guānxīn wǒ de xuéxí ne.',vn:'Em cứ nghĩ là anh không quan tâm việc học của em đấy.'},
-     {zh:'他一直都很关心我。',py:'Tā yìzhí dōu hěn guānxīn wǒ.',vn:'Anh ấy luôn luôn rất quan tâm tôi.'},
-   ],
-   hanzi:[
-     {c:'关',p:'guān',type:'独体字 · Chữ đơn (giản thể)',st:6,ord:'nét liền',rad:'丷 (bát)',mean:'liên quan, đóng',
-      tip:'Chữ giản thể mô phỏng cánh CỬA đóng lại, liên kết hai bên → LIÊN QUAN, ĐÓNG; 关(liên quan)+心(tâm) = QUAN TÂM.',
-      cf:'吴 (wú – "họ Ngô", hình dáng khác")',w:'关心 / 关于 / 关系'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cô giáo luôn luôn rất quan tâm đến thành tích của mỗi học sinh.',answer:'老师一直都很关心每个学生的成绩。',answerPy:'Lǎoshī yìzhí dōu hěn guānxīn měi ge xuéshēng de chéngjì.',
-      note:'一直都 diễn tả trạng thái duy trì liên tục.'},
-     {promptLang:'vi',prompt:'Nếu bạn quan tâm đến sức khỏe thì nên tập thể dục thường xuyên.',answer:'如果你关心健康，就应该经常锻炼。',answerPy:'Rúguǒ nǐ guānxīn jiànkāng, jiù yīnggāi jīngcháng duànliàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:7,zh:'只有……才……',py:'zhǐyǒu……cái……',pos:'Liên từ',vn:'chỉ có... (thì) mới...', hv: 'chỉ hữu tài',em:'🔑',lesson:2,
-   explain:['Diễn tả điều kiện duy nhất để có kết quả nào đó.'],
-   usage:'只有 + [điều kiện duy nhất]，才 + [kết quả].',
-   collo:['只有爱，才能……','只有真正……才能……','只有你们……才能……'],
-   ex_zh:'看来只有爱，才能让人有变化。',ex_py:'Kànlái zhǐyǒu ài, cái néng ràng rén yǒu biànhuà.',ex_vn:'Xem ra chỉ có tình yêu mới có thể khiến người ta thay đổi.',
-   exList:[
-     {zh:'看来只有爱，才能让人有变化。',py:'Kànlái zhǐyǒu ài, cái néng ràng rén yǒu biànhuà.',vn:'Xem ra chỉ có tình yêu mới có thể khiến người ta thay đổi.'},
-     {zh:'只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟吧。',py:'Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi ba.',vn:'Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em nhỉ.'},
-     {zh:'所以只有真正做事情的时候，才能了解有多难。',py:'Suǒyǐ zhǐyǒu zhēnzhèng zuò shìqing de shíhou, cái néng liǎojiě yǒu duō nán.',vn:'Vì vậy chỉ khi thực sự bắt tay vào làm mới hiểu được nó khó đến đâu.'},
-   ],
-   hanzi:[
-     {c:'只',p:'zhǐ',type:'独体字 · Chữ đơn (đa âm)',st:5,ord:'nét liền',rad:'口 (khẩu)',mean:'chỉ, duy nhất',
-      tip:'Cùng chữ với 只(zhī - lượng từ con vật), nhưng khi đọc zhǐ nghĩa là CHỈ, DUY NHẤT.',
-      cf:'只 (zhī – "con" (lượng từ), cùng chữ khác âm đọc")',w:'只有 / 只是 / 只要'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em.',answer:'只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟。',answerPy:'Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi.',
-      note:'只有……才…… diễn tả điều kiện duy nhất (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Chỉ có làm xong bài tập mới được xem tivi.',answer:'只有写完作业，才能看电视。',answerPy:'Zhǐyǒu xiěwán zuòyè, cái néng kàn diànshì.',
-      note:'只有……才…… diễn tả điều kiện duy nhất.'},
-   ]},
-
-  {n:8,zh:'成绩',py:'chéngjì',pos:'Danh từ',vn:'thành tích, kết quả (công tác, học tập)', hv: 'thành tích',em:'📊',lesson:2,
-   explain:['Kết quả đạt được qua học tập hoặc công việc.'],
-   usage:'Danh từ; đi cùng tính từ: 成绩差/好.',
-   collo:['成绩差','考试成绩','数学成绩'],
-   ex_zh:'我的成绩差极了。',ex_py:'Wǒ de chéngjì chà jí le.',ex_vn:'Thành tích của mình tệ lắm.',
-   exList:[
-     {zh:'我最近天天上网玩儿游戏，我的成绩差极了。',py:'Wǒ zuìjìn tiāntiān shàng wǎng wánr yóuxì, wǒ de chéngjì chà jí le.',vn:'Gần đây mình lên mạng chơi game hàng ngày, thành tích của mình tệ lắm.'},
-     {zh:'你是怎么提高历史成绩的？',py:'Nǐ shì zěnme tígāo lìshǐ chéngjì de?',vn:'Bạn đã nâng cao thành tích môn lịch sử thế nào vậy?'},
-     {zh:'考试成绩出来了吗？',py:'Kǎoshì chéngjì chulai le ma?',vn:'Kết quả thi ra chưa?'},
-   ],
-   hanzi:[
-     {c:'绩',p:'jì',type:'左右结构 · Trái-phải',st:11,ord:'纟 trái → 责 phải (giản thể)',rad:'纟 (mịch – tơ lụa)',mean:'thành tích',
-      tip:'纟(sợi tơ, dệt thành sản phẩm) + 责(trách nhiệm) → kết quả từ công việc có TRÁCH NHIỆM = THÀNH TÍCH.',
-      cf:'责 (zé – "trách nhiệm", không có bộ 纟")',w:'成绩 / 业绩'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Kết quả kỳ thi lần này khi nào ra vậy?',answer:'这次考试的成绩什么时候出来？',answerPy:'Zhè cì kǎoshì de chéngjì shénme shíhou chulai?',
-      note:'出来 diễn tả kết quả xuất hiện (ôn lại đã học ở Bài 19).'},
-     {promptLang:'vi',prompt:'Nếu bạn học chăm chỉ thì thành tích sẽ tốt hơn.',answer:'如果你认真学习，成绩就会更好。',answerPy:'Rúguǒ nǐ rènzhēn xuéxí, chéngjì jiù huì gèng hǎo.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'碗',py:'wǎn',pos:'Danh từ',vn:'bát', hv: 'oản',em:'🥣',lesson:3,
-   explain:['Vật dụng hình tròn dùng để đựng cơm, canh.'],
-   usage:'Danh từ; đi cùng động từ 拿着/洗: 拿着碗.',
-   collo:['拿着碗','洗碗','一个碗'],
-   ex_zh:'那个拿着碗吃饭的人是你哥哥吗？',ex_py:'Nàge názhe wǎn chī fàn de rén shì nǐ gēge ma?',ex_vn:'Người cầm bát ăn cơm đó là anh trai bạn à?',
-   exList:[
-     {zh:'那个拿着碗吃饭的人是你哥哥吗？他和你长得真像。',py:'Nàge názhe wǎn chī fàn de rén shì nǐ gēge ma? Tā hé nǐ zhǎng de zhēn xiàng.',vn:'Người cầm bát ăn cơm đó là anh trai bạn à? Anh ấy trông giống bạn thật đấy.'},
-     {zh:'我来洗碗筷，你去看电视吧。',py:'Wǒ lái xǐ wǎnkuài, nǐ qù kàn diànshì ba.',vn:'Tôi rửa bát đũa, bạn đi xem tivi đi.'},
-     {zh:'你先吃，一会儿多来一碗饭。',py:'Nǐ xiān chī, yíhuìr duō lái yì wǎn fàn.',vn:'Bạn ăn trước đi, lát nữa lấy thêm một bát cơm.'},
-   ],
-   hanzi:[
-     {c:'碗',p:'wǎn',type:'左右结构 · Trái-phải',st:13,ord:'石 trái → 宛 phải',rad:'石 (thạch – đá)',mean:'bát',
-      tip:'石(đá, sứ) + 宛(cong, uốn lượn) → vật liệu ĐÁ/SỨ tạo thành hình CONG tròn = BÁT.',
-      cf:'椀 (dạng cổ của 碗, làm bằng gỗ")',w:'碗 / 洗碗'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Để tôi rửa bát, bạn đi nghỉ một lát đi.',answer:'我来洗碗，你去休息一会儿吧。',answerPy:'Wǒ lái xǐ wǎn, nǐ qù xiūxi yíhuìr ba.',
-      note:'我来 + V diễn tả sự chủ động đề nghị làm việc gì.'},
-     {promptLang:'vi',prompt:'Nếu bát bẩn thì bạn rửa giúp tôi đi.',answer:'如果碗脏了，你就帮我洗洗吧。',answerPy:'Rúguǒ wǎn zāng le, nǐ jiù bāng wǒ xǐxi ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:10,zh:'分',py:'fēn',pos:'Động từ',vn:'phân biệt', hv: 'phân',em:'✂️',lesson:3,
-   explain:['Chia tách, nhận biết sự khác nhau giữa các đối tượng.'],
-   usage:'Động từ, thường đi cùng bổ ngữ 出来: 分出来.',
-   collo:['分出来','分不清','分开'],
-   ex_zh:'只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟吧。',ex_py:'Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi ba.',ex_vn:'Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em nhỉ.',
-   exList:[
-     {zh:'只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟吧。',py:'Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi ba.',vn:'Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em nhỉ.'},
-     {zh:'除了父母以外，还有我们自己也能啊。',py:'Chúle fùmǔ yǐwài, hái yǒu wǒmen zìjǐ yě néng a.',vn:'Ngoài bố mẹ ra, còn có chính chúng tôi cũng phân biệt được đấy.'},
-     {zh:'我怎么也分不清这两个字。',py:'Wǒ zěnme yě fēn bu qīng zhè liǎng ge zì.',vn:'Tôi thế nào cũng không phân biệt rõ được hai chữ này.'},
-   ],
-   hanzi:[
-     {c:'分',p:'fēn',type:'上下结构 · Trên-dưới',st:4,ord:'八 trên → 刀 dưới',rad:'刀 (đao – dao)',mean:'chia, phân biệt',
-      tip:'八(hình chia đôi) + 刀(dao) → dùng DAO CHIA vật ra làm hai = CHIA, PHÂN BIỆT.',
-      cf:'刀 (dāo – "dao", không có bộ 八")',w:'分 / 分开 / 分数'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi thế nào cũng không phân biệt được mùi vị của hai loại trà này.',answer:'我怎么也分不出来这两种茶的味道。',answerPy:'Wǒ zěnme yě fēn bu chūlai zhè liǎng zhǒng chá de wèidào.',
-      note:'怎么也 + phủ định diễn tả sự bất khả thi dù cố gắng thế nào.'},
-     {promptLang:'vi',prompt:'Nếu bạn phân biệt được hai anh em thì thật giỏi.',answer:'如果你能分出来他们兄弟俩，就真厉害。',answerPy:'Rúguǒ nǐ néng fēn chulai tāmen xiōngdì liǎ, jiù zhēn lìhai.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'解决',py:'jiějué',pos:'Động từ',vn:'giải quyết', hv: 'giải quyết',em:'✅',lesson:4,
-   explain:['Xử lý, tìm ra cách khắc phục vấn đề.'],
-   usage:'Động từ, mang tân ngữ: 解决问题.',
-   collo:['解决问题','解决办法','被解决'],
-   ex_zh:'不同的问题有不同的解决办法。',ex_py:'Bùtóng de wèntí yǒu bùtóng de jiějué bànfǎ.',ex_vn:'Những vấn đề khác nhau có cách giải quyết khác nhau.',
-   exList:[
-     {zh:'其实，不同的问题有不同的解决办法。',py:'Qíshí, bùtóng de wèntí yǒu bùtóng de jiějué bànfǎ.',vn:'Thực ra, những vấn đề khác nhau có cách giải quyết khác nhau.'},
-     {zh:'多么难的问题，都会被解决的。',py:'Duōme nán de wèntí, dōu huì bèi jiějué de.',vn:'Vấn đề dù khó đến mấy cũng sẽ được giải quyết.'},
-     {zh:'我试着帮你解决电脑的问题。',py:'Wǒ shìzhe bāng nǐ jiějué diànnǎo de wèntí.',vn:'Tôi thử giúp bạn giải quyết vấn đề máy tính.'},
-   ],
-   hanzi:[
-     {c:'决',p:'jué',type:'左右结构 · Trái-phải',st:6,ord:'冫 trái → 夬 phải',rad:'冫 (băng – nước đá)',mean:'quyết định, giải quyết',
-      tip:'冫(nước, dòng chảy) + 夬(khai thông, mở ra) → khơi thông dòng nước bị tắc = GIẢI QUYẾT, QUYẾT ĐỊNH.',
-      cf:'快 (kuài – "nhanh", có bộ 忄")',w:'解决 / 决定'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi thử tự mình giải quyết vấn đề thẻ tín dụng này.',answer:'我试着自己解决这个信用卡的问题。',answerPy:'Wǒ shìzhe zìjǐ jiějué zhège xìnyòngkǎ de wèntí.',
-      note:'试着 + V diễn tả hành động thử làm (ôn lại 试 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Nếu bạn không giải quyết được thì cứ hỏi tôi.',answer:'如果你解决不了，就问我吧。',answerPy:'Rúguǒ nǐ jiějué bu liǎo, jiù wèn wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'试',py:'shì',pos:'Động từ',vn:'thử', hv: 'thí',em:'🧪',lesson:4,
-   explain:['Làm thử để xem kết quả hoặc kiểm tra.'],
-   usage:'Động từ; thường đi cùng 着: 试着做.',
-   collo:['试着做','试一试','试试看'],
-   ex_zh:'所以得试着做做。',ex_py:'Suǒyǐ děi shìzhe zuòzuo.',ex_vn:'Nên phải thử làm xem.',
-   exList:[
-     {zh:'有些问题看上去很难，但是做起来非常简单，所以得试着做做。',py:'Yǒuxiē wèntí kàn shangqu hěn nán, dànshì zuò qilai fēicháng jiǎndān, suǒyǐ děi shìzhe zuòzuo.',vn:'Có những vấn đề nhìn có vẻ khó, nhưng làm thì lại rất đơn giản, nên phải thử làm xem.'},
-     {zh:'帮您找双43号的试试？',py:'Bāng nín zhǎo shuāng sìshísān hào de shìshi?',vn:'Tôi tìm giúp anh đôi cỡ 43 thử nhé?'},
-     {zh:'你有更好的办法来解决这个问题吗？',py:'Nǐ yǒu gèng hǎo de bànfǎ lái jiějué zhège wèntí ma?',vn:'Bạn có cách nào tốt hơn để giải quyết vấn đề này không?'},
-   ],
-   hanzi:[
-     {c:'试',p:'shì',type:'左右结构 · Trái-phải',st:8,ord:'讠 trái → 式 phải (giản thể)',rad:'讠 (ngôn – lời nói)',mean:'thử',
-      tip:'讠(lời nói) + 式(hình thức, cách thức) → nói ra để kiểm tra CÁCH THỨC = THỬ.',
-      cf:'式 (shì – "kiểu cách", không có bộ 讠")',w:'试 / 试试 / 考试'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đôi giày này bạn mang thử xem?',answer:'这双鞋你穿着试试？',answerPy:'Zhè shuāng xié nǐ chuānzhe shìshi?',
-      note:'试试 = động từ lặp lại dạng AA (ôn lại đã học ở Bài 17).'},
-     {promptLang:'vi',prompt:'Nếu bạn không chắc thì cứ thử làm xem.',answer:'如果你不确定，就试着做做吧。',answerPy:'Rúguǒ nǐ bú quèdìng, jiù shìzhe zuòzuo ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'真正',py:'zhēnzhèng',pos:'Phó từ',vn:'thật sự', hv: 'chân chính',em:'💯',lesson:4,
-   explain:['Diễn tả tính chất chân thực, không giả tạo.'],
-   usage:'Phó từ, đứng trước động từ/danh từ: 真正做事情.',
-   collo:['真正做事情','真正的朋友','真正了解'],
-   ex_zh:'只有真正做事情的时候，才能了解有多难。',ex_py:'Zhǐyǒu zhēnzhèng zuò shìqing de shíhou, cái néng liǎojiě yǒu duō nán.',ex_vn:'Chỉ khi thực sự bắt tay vào làm mới hiểu được nó khó đến đâu.',
-   exList:[
-     {zh:'所以只有真正做事情的时候，才能了解有多难。',py:'Suǒyǐ zhǐyǒu zhēnzhèng zuò shìqing de shíhou, cái néng liǎojiě yǒu duō nán.',vn:'Vì vậy chỉ khi thực sự bắt tay vào làm mới hiểu được nó khó đến đâu.'},
-     {zh:'难过的时候我们应该做一些真正能使自己快乐的事。',py:'Nánguò de shíhou wǒmen yīnggāi zuò yìxiē zhēnzhèng néng shǐ zìjǐ kuàilè de shì.',vn:'Lúc buồn chúng ta nên làm một số việc thật sự khiến bản thân vui vẻ.'},
-     {zh:'只有真的好牛皮做出来的鞋，穿着才舒服。',py:'Zhǐyǒu zhēn de hǎo niúpí zuò chulai de xié, chuānzhe cái shūfu.',vn:'Chỉ có giày làm từ da bò tốt thật, mang mới thoải mái.'},
-   ],
-   hanzi:[
-     {c:'正',p:'zhèng',type:'独体字 · Chữ đơn',st:5,ord:'nét liền',rad:'止 (chỉ – dừng)',mean:'đúng, chính',
-      tip:'Chữ tượng hình mô phỏng bước chân ĐÚNG hướng, không lệch → CHÍNH XÁC, ĐÚNG ĐẮN; 真(thật)+正(đúng) = THẬT SỰ.',
-      cf:'止 (zhǐ – "dừng lại", không có nét ngang trên")',w:'真正 / 正在 / 正常'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vận động là một việc thật sự có thể khiến cơ thể trở nên khỏe mạnh.',answer:'运动是一件真正能使身体变得健康的事。',answerPy:'Yùndòng shì yí jiàn zhēnzhèng néng shǐ shēntǐ biàn de jiànkāng de shì.',
-      note:'使 diễn tả sự khiến cho (ôn lại đã học ở Bài 19).'},
-     {promptLang:'vi',prompt:'Chỉ khi bạn thực sự cố gắng thì mới thành công.',answer:'只有你真正努力，才会成功。',answerPy:'Zhǐyǒu nǐ zhēnzhèng nǔlì, cái huì chénggōng.',
-      note:'只有……才…… diễn tả điều kiện duy nhất.'},
-   ]},
-
-  {n:14,zh:'多么',py:'duōme',pos:'Phó từ',vn:'(mức độ tương đối cao) mấy, bao nhiêu', hv: 'đa ma',em:'❗',lesson:4,
-   explain:['Nhấn mạnh mức độ cao trong câu cảm thán hoặc câu điều kiện.'],
-   usage:'多么 + [Adj]，都/也……: diễn tả bất kể mức độ cao đến đâu.',
-   collo:['多么难的问题','多么漂亮','多么希望'],
-   ex_zh:'多么难的问题，都会被解决的。',ex_py:'Duōme nán de wèntí, dōu huì bèi jiějué de.',ex_vn:'Vấn đề dù khó đến mấy cũng sẽ được giải quyết.',
-   exList:[
-     {zh:'不过，我们一定要相信：多么难的问题，都会被解决的。',py:'Búguò, wǒmen yídìng yào xiāngxìn: duōme nán de wèntí, dōu huì bèi jiějué de.',vn:'Tuy nhiên, chúng ta nhất định phải tin: vấn đề dù khó đến mấy cũng sẽ được giải quyết.'},
-     {zh:'春天来了，公园里的花儿都开了，多么漂亮啊！',py:'Chūntiān lái le, gōngyuán li de huār dōu kāi le, duōme piàoliang a!',vn:'Mùa xuân đến rồi, hoa trong công viên đều nở hết, đẹp biết bao!'},
-     {zh:'我多么希望早点儿好啊。',py:'Wǒ duōme xīwàng zǎo diǎnr hǎo a.',vn:'Tôi mong sao mau khỏi biết bao.'},
-   ],
-   hanzi:[
-     {c:'么',p:'me',type:'独体字 · Chữ đơn (giản thể, nhẹ)',st:3,ord:'nét liền',rad:'丿 (phiệt)',mean:'trợ từ nghi vấn/cảm thán',
-      tip:'Chữ giản thể đơn giản hóa, thường kết hợp với các từ khác (多么, 什么, 怎么) làm TRỢ TỪ không mang nghĩa riêng.',
-      cf:'公 (gōng – "công cộng", hình dáng khác")',w:'多么 / 什么 / 怎么'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mùa đông đến rồi, tuyết bên ngoài rơi to biết bao!',answer:'冬天到了，外面的雪下得多么大啊！',answerPy:'Dōngtiān dào le, wàimian de xuě xià de duōme dà a!',
-      note:'多么 + Adj + 啊 diễn tả câu cảm thán.'},
-     {promptLang:'vi',prompt:'Nếu bạn tin tưởng thì vấn đề dù khó đến mấy cũng sẽ được giải quyết.',answer:'如果你相信，多么难的问题都会被解决的。',answerPy:'Rúguǒ nǐ xiāngxìn, duōme nán de wèntí dōu huì bèi jiějué de.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 相信 đã học ở Bài 18).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "照相机",
+    "py": "zhàoxiàngjī",
+    "pos": "Danh từ",
+    "vn": "máy chụp ảnh",
+    "hv": "chiếu tướng cơ",
+    "em": "📷",
+    "lesson": 1,
+    "explain": [
+      "Thiết bị dùng để chụp ảnh."
+    ],
+    "usage": "Danh từ; đi cùng động từ 拿走/带: 照相机被拿走了.",
+    "collo": [
+      "照相机被拿走",
+      "带照相机",
+      "新买的照相机"
+    ],
+    "ex_zh": "我的照相机被谁拿走了？",
+    "ex_py": "Wǒ de zhàoxiàngjī bèi shéi ná zǒu le?",
+    "ex_vn": "Máy ảnh của tôi bị ai lấy mất rồi?",
+    "exList": [
+      {
+        "zh": "我的照相机被谁拿走了？怎么找不到了？",
+        "py": "Wǒ de zhàoxiàngjī bèi shéi ná zǒu le? Zěnme zhǎo bu dào le?",
+        "vn": "Máy ảnh của tôi bị ai lấy mất rồi? Sao tìm không thấy nữa?"
+      },
+      {
+        "zh": "奶奶喜欢那个新买的照相机吗？",
+        "py": "Nǎinai xǐhuan nàge xīn mǎi de zhàoxiàngjī ma?",
+        "vn": "Bà nội có thích cái máy ảnh mới mua đó không?"
+      },
+      {
+        "zh": "如果带上照相机就好了。",
+        "py": "Rúguǒ dàishang zhàoxiàngjī jiù hǎo le.",
+        "vn": "Nếu mang theo máy ảnh thì tốt rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "相",
+        "p": "xiàng",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "木 trái → 目 phải",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "lẫn nhau; ảnh",
+        "tip": "木(cây, vật thể) + 目(mắt, nhìn) → dùng MẮT nhìn vật thể LẪN NHAU; 照(chiếu sáng)+相(hình ảnh) = ẢNH, chụp ảnh.",
+        "cf": "想 (xiǎng – \"nghĩ\", có thêm bộ 心\")",
+        "w": "照相机 / 照相 / 相机"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc máy ảnh mới mua này tuy đắt, nhưng chụp ảnh cực kỳ rõ nét.",
+        "answer": "这台新买的照相机虽然贵，但是拍照特别清楚。",
+        "answerPy": "Zhè tái xīn mǎi de zhàoxiàngjī suīrán guì, dànshì pāizhào tèbié qīngchu.",
+        "note": "新 + động từ + 的 làm định ngữ.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn mất máy ảnh thì tôi cho bạn mượn cái của tôi.",
+        "answer": "如果你的照相机丢了，我就把我的借给你。",
+        "answerPy": "Rúguǒ nǐ de zhàoxiàngjī diū le, wǒ jiù bǎ wǒ de jiè gěi nǐ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个照相机",
+        "py": "yí gè zhàoxiàngjī",
+        "vn": "một cái máy ảnh"
+      },
+      {
+        "zh": "买照相机",
+        "py": "mǎi zhàoxiàngjī",
+        "vn": "mua máy ảnh"
+      },
+      {
+        "zh": "用照相机",
+        "py": "yòng zhàoxiàngjī",
+        "vn": "dùng máy ảnh"
+      },
+      {
+        "zh": "新照相机",
+        "py": "xīn zhàoxiàngjī",
+        "vn": "máy ảnh mới"
+      },
+      {
+        "zh": "照相机坏了",
+        "py": "zhàoxiàngjī huài le",
+        "vn": "máy ảnh hỏng rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "照相 + 机",
+        "m": "Máy (机) chụp ảnh (照相)"
+      },
+      {
+        "s": "N + 坏了",
+        "m": "Cái gì hỏng rồi — 坏 là từ bài 13"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "被",
+    "py": "bèi",
+    "pos": "Giới từ",
+    "vn": "bị (dùng để chỉ thể bị động)",
+    "hv": "bị",
+    "em": "🔄",
+    "lesson": 1,
+    "explain": [
+      "Nêu chủ ngữ là đối tượng chịu tác động của hành động."
+    ],
+    "usage": "Chủ ngữ + 被 + [chủ thể hành động] + động từ + thành phần khác.",
+    "collo": [
+      "被拿走",
+      "被影响",
+      "被认错"
+    ],
+    "ex_zh": "我的照相机被谁拿走了？",
+    "ex_py": "Wǒ de zhàoxiàngjī bèi shéi ná zǒu le?",
+    "ex_vn": "Máy ảnh của tôi bị ai lấy mất rồi?",
+    "exList": [
+      {
+        "zh": "我的照相机被谁拿走了？怎么找不到了？",
+        "py": "Wǒ de zhàoxiàngjī bèi shéi ná zǒu le? Zěnme zhǎo bu dào le?",
+        "vn": "Máy ảnh của tôi bị ai lấy mất rồi? Sao tìm không thấy nữa?"
+      },
+      {
+        "zh": "我被他影响的。",
+        "py": "Wǒ bèi tā yǐngxiǎng de.",
+        "vn": "Mình bị anh ấy ảnh hưởng đấy."
+      },
+      {
+        "zh": "我们经常被别人认错。",
+        "py": "Wǒmen jīngcháng bèi biéren rèncuò.",
+        "vn": "Chúng tôi thường bị người khác nhận nhầm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "被",
+        "p": "bèi",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "衤 trái → 皮 phải",
+        "rad": "衤 (y – áo)",
+        "mean": "chăn, bị (thể bị động)",
+        "tip": "衤(quần áo, chăn) + 皮(da, bề mặt) → tấm CHĂN phủ lên người; mở rộng nghĩa \"chịu tác động phủ lên\" = BỊ.",
+        "cf": "披 (pī – \"khoác\", có bộ 扌\")",
+        "w": "被 / 被子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ khi tự mình trải qua một lần, cách nghĩ của bạn mới bị thay đổi.",
+        "answer": "只有自己经历一次，你的想法才会被影响。",
+        "answerPy": "Zhǐyǒu zìjǐ jīnglì yí cì, nǐ de xiǎngfǎ cái huì bèi yǐngxiǎng.",
+        "note": "只有……才…… là khung trọng tâm bài này; sau 被 động từ phải có 了 hoặc bổ ngữ.",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy vấn đề vẫn chưa được giải quyết, nhưng chúng tôi đã nghĩ ra cách rồi.",
+        "answer": "虽然问题还没有被解决，但是我们已经想到办法了。",
+        "answerPy": "Suīrán wèntí hái méiyǒu bèi jiějué, dànshì wǒmen yǐjīng xiǎngdào bànfǎ le.",
+        "note": "办法 là từ bài 17; 被 + V + 了 — dạng bị động hoàn chỉnh.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "被他拿走了",
+        "py": "bèi tā ná zǒu le",
+        "vn": "bị anh ấy lấy đi"
+      },
+      {
+        "zh": "被哥哥用了",
+        "py": "bèi gēge yòng le",
+        "vn": "bị anh trai dùng mất"
+      },
+      {
+        "zh": "被解决了",
+        "py": "bèi jiějué le",
+        "vn": "đã được giải quyết"
+      },
+      {
+        "zh": "被妈妈看见了",
+        "py": "bèi māma kànjiàn le",
+        "vn": "bị mẹ nhìn thấy"
+      },
+      {
+        "zh": "没被发现",
+        "py": "méi bèi fāxiàn",
+        "vn": "chưa bị phát hiện"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 被 + (ai) + V + 了 / 过 / bổ ngữ",
+        "m": "Câu bị động: động từ phải có thành phần đi kèm"
+      },
+      {
+        "s": "✗ 我的书被他拿 → ✓ 我的书被他拿走了",
+        "m": "Sau 被 không được dừng ở động từ trần"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "难过",
+    "py": "nánguò",
+    "pos": "Tính từ",
+    "vn": "buồn",
+    "hv": "nan quá",
+    "em": "😢",
+    "lesson": 1,
+    "explain": [
+      "Cảm thấy đau lòng, không vui."
+    ],
+    "usage": "Tính từ, làm vị ngữ: 别难过.",
+    "collo": [
+      "别难过",
+      "很难过",
+      "怎么这么难过"
+    ],
+    "ex_zh": "别难过，再买一个吧。",
+    "ex_py": "Bié nánguò, zài mǎi yí ge ba.",
+    "ex_vn": "Đừng buồn, mua cái khác đi.",
+    "exList": [
+      {
+        "zh": "别难过，再买一个吧，公司东门外不就有一个大商场吗？",
+        "py": "Bié nánguò, zài mǎi yí ge ba, gōngsī dōngmén wài bú jiù yǒu yí ge dà shāngchǎng ma?",
+        "vn": "Đừng buồn, mua cái khác đi, ngoài cổng đông công ty chẳng phải có một khu thương mại lớn sao?"
+      },
+      {
+        "zh": "你怎么这么难过啊？怎么了？",
+        "py": "Nǐ zěnme zhème nánguò a? Zěnme le?",
+        "vn": "Sao bạn buồn thế? Sao vậy?"
+      },
+      {
+        "zh": "你别难过了，我们一起帮你想办法。",
+        "py": "Nǐ bié nánguò le, wǒmen yìqǐ bāng nǐ xiǎng bànfǎ.",
+        "vn": "Bạn đừng buồn nữa, chúng tôi cùng giúp bạn nghĩ cách."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "过",
+        "p": "guò",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 6,
+        "ord": "辶 ngoài → 寸 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "trải qua",
+        "tip": "辶(đi) + 寸(khoảng thời gian) → trải qua một khoảng thời gian KHÓ khăn; 难(khó)+过(trải qua) = BUỒN, khó chịu trong lòng.",
+        "cf": "过 (guò – cùng chữ đã học ở Bài 19\")",
+        "w": "难过 / 难受"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng buồn nữa, chỉ cần chúng ta cùng nghĩ cách thì vấn đề sẽ giải quyết được.",
+        "answer": "别难过了，只要我们一起想办法，问题就能解决。",
+        "answerPy": "Bié nánguò le, zhǐyào wǒmen yìqǐ xiǎng bànfǎ, wèntí jiù néng jiějué.",
+        "note": "只要……就…… (đủ điều kiện) khác 只有……才…… (điều kiện duy nhất).",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn buồn thì cứ nói cho tôi biết.",
+        "answer": "如果你难过，就告诉我吧。",
+        "answerPy": "Rúguǒ nǐ nánguò, jiù gàosu wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很难过",
+        "py": "hěn nánguò",
+        "vn": "rất buồn"
+      },
+      {
+        "zh": "别难过",
+        "py": "bié nánguò",
+        "vn": "đừng buồn"
+      },
+      {
+        "zh": "心里难过",
+        "py": "xīn li nánguò",
+        "vn": "trong lòng buồn"
+      },
+      {
+        "zh": "难过得哭了",
+        "py": "nánguò de kū le",
+        "vn": "buồn đến phát khóc"
+      },
+      {
+        "zh": "难过极了",
+        "py": "nánguò jí le",
+        "vn": "buồn vô cùng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "别 + 难过 + 了",
+        "m": "Đừng buồn nữa — lời an ủi"
+      },
+      {
+        "s": "难过 (buồn) ≠ 难 (khó) — 难过 nói về cảm xúc"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "东",
+    "py": "dōng",
+    "pos": "Danh từ",
+    "vn": "phía đông",
+    "hv": "đông",
+    "em": "🧭",
+    "lesson": 1,
+    "explain": [
+      "Một trong bốn hướng chính, hướng mặt trời mọc."
+    ],
+    "usage": "Danh từ chỉ phương hướng; đi cùng 门/边: 东门, 东边.",
+    "collo": [
+      "东门",
+      "往东走",
+      "东边"
+    ],
+    "ex_zh": "公司东门外不就有一个大商场吗？",
+    "ex_py": "Gōngsī dōngmén wài bú jiù yǒu yí ge dà shāngchǎng ma?",
+    "ex_vn": "Ngoài cổng đông công ty chẳng phải có một khu thương mại lớn sao?",
+    "exList": [
+      {
+        "zh": "别难过，再买一个吧，公司东门外不就有一个大商场吗？",
+        "py": "Bié nánguò, zài mǎi yí ge ba, gōngsī dōngmén wài bú jiù yǒu yí ge dà shāngchǎng ma?",
+        "vn": "Đừng buồn, mua cái khác đi, ngoài cổng đông công ty chẳng phải có một khu thương mại lớn sao?"
+      },
+      {
+        "zh": "只有往东走才能到国家公园。",
+        "py": "Zhǐyǒu wǎng dōng zǒu cái néng dào guójiā gōngyuán.",
+        "vn": "Chỉ có đi về hướng đông mới đến được công viên quốc gia."
+      },
+      {
+        "zh": "中国在东边。",
+        "py": "Zhōngguó zài dōngbian.",
+        "vn": "Trung Quốc ở phía đông."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "东",
+        "p": "dōng",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "一 (nhất)",
+        "mean": "phía đông",
+        "tip": "Chữ tượng hình cổ mô phỏng mặt trời (日) mọc lên sau CÂY (木) vào buổi sáng → PHÍA ĐÔNG.",
+        "cf": "车 (chē – \"xe\", hình dáng gần giống\")",
+        "w": "东 / 东边 / 东西"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có đi về hướng đông, mới tìm được nhà hàng mới khai trương đó.",
+        "answer": "只有往东走，才能找到那家新开的饭馆。",
+        "answerPy": "Zhǐyǒu wǎng dōng zǒu, cái néng zhǎodào nà jiā xīn kāi de fànguǎn.",
+        "note": "只有……才…… diễn tả điều kiện duy nhất (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đi về phía đông thì sẽ thấy trường học.",
+        "answer": "如果你往东走，就会看到学校。",
+        "answerPy": "Rúguǒ nǐ wǎng dōng zǒu, jiù huì kàndào xuéxiào.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "东边",
+        "py": "dōng biān",
+        "vn": "phía đông"
+      },
+      {
+        "zh": "往东走",
+        "py": "wǎng dōng zǒu",
+        "vn": "đi về phía đông"
+      },
+      {
+        "zh": "东面",
+        "py": "dōng miàn",
+        "vn": "mặt phía đông"
+      },
+      {
+        "zh": "在城市的东边",
+        "py": "zài chéngshì de dōng biān",
+        "vn": "ở phía đông thành phố"
+      },
+      {
+        "zh": "东南西北",
+        "py": "dōng nán xī běi",
+        "vn": "đông nam tây bắc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "往 + 东 + 走",
+        "m": "Đi về phía đông — so với 向左走 (bài 18)"
+      },
+      {
+        "s": "东 · 南 · 西 · 北 — bốn phương, thêm 边 thành nơi chốn"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "信用卡",
+    "py": "xìnyòngkǎ",
+    "pos": "Danh từ",
+    "vn": "thẻ tín dụng",
+    "hv": "tín dụng tạp",
+    "em": "💳",
+    "lesson": 1,
+    "explain": [
+      "Loại thẻ ngân hàng dùng để thanh toán, có thể chi tiêu trước trả sau."
+    ],
+    "usage": "Danh từ; đi cùng động từ 用/花: 用信用卡.",
+    "collo": [
+      "信用卡里的钱",
+      "用信用卡",
+      "这张信用卡"
+    ],
+    "ex_zh": "我这个月信用卡里的钱已经花得差不多了。",
+    "ex_py": "Wǒ zhège yuè xìnyòngkǎ li de qián yǐjīng huā de chà bu duō le.",
+    "ex_vn": "Tiền trong thẻ tín dụng của tôi tháng này đã tiêu gần hết rồi.",
+    "exList": [
+      {
+        "zh": "但是我这个月信用卡里的钱已经花得差不多了。",
+        "py": "Dànshì wǒ zhège yuè xìnyòngkǎ li de qián yǐjīng huā de chà bu duō le.",
+        "vn": "Nhưng tiền trong thẻ tín dụng của tôi tháng này đã tiêu gần hết rồi."
+      },
+      {
+        "zh": "服务员说我这张信用卡不能用了。",
+        "py": "Fúwùyuán shuō wǒ zhè zhāng xìnyòngkǎ bù néng yòng le.",
+        "vn": "Nhân viên nói thẻ tín dụng của tôi không dùng được nữa."
+      },
+      {
+        "zh": "我去银行，我的信用卡该还钱了。",
+        "py": "Wǒ qù yínháng, wǒ de xìnyòngkǎ gāi huán qián le.",
+        "vn": "Tôi đi ngân hàng đây, thẻ tín dụng của tôi phải trả tiền rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "卡",
+        "p": "kǎ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 5,
+        "ord": "上 trên → 卜 dưới",
+        "rad": "卜 (bốc)",
+        "mean": "thẻ",
+        "tip": "Chữ ghép từ 上(trên) và 下(dưới, giản lược thành 卜) mô phỏng vật MẮC KẸT ở giữa → mượn âm để chỉ THẺ (card).",
+        "cf": "卞 (biàn – họ Biện\", hình dáng gần giống\")",
+        "w": "信用卡 / 卡片"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô bán hàng nói tấm thẻ tín dụng này không phải của tôi, vì tên trên thẻ không đúng.",
+        "answer": "因为卡上的名字不对，所以售货员说这张信用卡不是我的。",
+        "answerPy": "Yīnwèi kǎ shàng de míngzi bú duì, suǒyǐ shòuhuòyuán shuō zhè zhāng xìnyòngkǎ bú shì wǒ de.",
+        "note": "一 + 张 + 信用卡 — lượng từ 张 của bài 19.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu thẻ tín dụng của bạn không dùng được thì đi ngân hàng hỏi thử đi.",
+        "answer": "如果你的信用卡不能用，就去银行问问吧。",
+        "answerPy": "Rúguǒ nǐ de xìnyòngkǎ bù néng yòng, jiù qù yínháng wènwen ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "用信用卡",
+        "py": "yòng xìnyòngkǎ",
+        "vn": "dùng thẻ tín dụng"
+      },
+      {
+        "zh": "一张信用卡",
+        "py": "yì zhāng xìnyòngkǎ",
+        "vn": "một chiếc thẻ tín dụng"
+      },
+      {
+        "zh": "信用卡不见了",
+        "py": "xìnyòngkǎ bú jiàn le",
+        "vn": "thẻ tín dụng không thấy đâu"
+      },
+      {
+        "zh": "办信用卡",
+        "py": "bàn xìnyòngkǎ",
+        "vn": "làm thẻ tín dụng"
+      },
+      {
+        "zh": "这张信用卡",
+        "py": "zhè zhāng xìnyòngkǎ",
+        "vn": "chiếc thẻ này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 张 + 信用卡",
+        "m": "Lượng từ 张 (bài 19) cho vật mặt phẳng"
+      },
+      {
+        "s": "信用 + 卡",
+        "m": "Thẻ (卡) tín dụng (信用)"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "关心",
+    "py": "guānxīn",
+    "pos": "Động từ",
+    "vn": "quan tâm, chú ý",
+    "hv": "quan tâm",
+    "em": "💗",
+    "lesson": 2,
+    "explain": [
+      "Để tâm, lo lắng cho ai đó hoặc việc gì đó."
+    ],
+    "usage": "Động từ, mang tân ngữ: 关心 + [người/việc].",
+    "collo": [
+      "关心体育",
+      "关心学生",
+      "不关心"
+    ],
+    "ex_zh": "你怎么突然关心起体育来了？",
+    "ex_py": "Nǐ zěnme tūrán guānxīn qǐ tǐyù lái le?",
+    "ex_vn": "Sao đột nhiên bạn lại quan tâm đến thể thao vậy?",
+    "exList": [
+      {
+        "zh": "你怎么突然关心起体育来了？",
+        "py": "Nǐ zěnme tūrán guānxīn qǐ tǐyù lái le?",
+        "vn": "Sao đột nhiên bạn lại quan tâm đến thể thao vậy?"
+      },
+      {
+        "zh": "我还一直觉得你不关心我的学习呢。",
+        "py": "Wǒ hái yìzhí juéde nǐ bù guānxīn wǒ de xuéxí ne.",
+        "vn": "Em cứ nghĩ là anh không quan tâm việc học của em đấy."
+      },
+      {
+        "zh": "他一直都很关心我。",
+        "py": "Tā yìzhí dōu hěn guānxīn wǒ.",
+        "vn": "Anh ấy luôn luôn rất quan tâm tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "关",
+        "p": "guān",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 6,
+        "ord": "nét liền",
+        "rad": "丷 (bát)",
+        "mean": "liên quan, đóng",
+        "tip": "Chữ giản thể mô phỏng cánh CỬA đóng lại, liên kết hai bên → LIÊN QUAN, ĐÓNG; 关(liên quan)+心(tâm) = QUAN TÂM.",
+        "cf": "吴 (wú – \"họ Ngô\", hình dáng khác\")",
+        "w": "关心 / 关于 / 关系"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô giáo luôn luôn rất quan tâm đến thành tích của mỗi học sinh.",
+        "answer": "老师一直都很关心每个学生的成绩。",
+        "answerPy": "Lǎoshī yìzhí dōu hěn guānxīn měi ge xuéshēng de chéngjì.",
+        "note": "一直都 diễn tả trạng thái duy trì liên tục.",
+        "pair": "一……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn quan tâm đến sức khỏe thì nên tập thể dục thường xuyên.",
+        "answer": "如果你关心健康，就应该经常锻炼。",
+        "answerPy": "Rúguǒ nǐ guānxīn jiànkāng, jiù yīnggāi jīngcháng duànliàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "关心别人",
+        "py": "guānxīn biérén",
+        "vn": "quan tâm người khác"
+      },
+      {
+        "zh": "关心孩子",
+        "py": "guānxīn háizi",
+        "vn": "quan tâm con cái"
+      },
+      {
+        "zh": "很关心我",
+        "py": "hěn guānxīn wǒ",
+        "vn": "rất quan tâm tôi"
+      },
+      {
+        "zh": "关心健康",
+        "py": "guānxīn jiànkāng",
+        "vn": "quan tâm sức khoẻ"
+      },
+      {
+        "zh": "谢谢你的关心",
+        "py": "xièxie nǐ de guānxīn",
+        "vn": "cảm ơn sự quan tâm của bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "关心 + ai / cái gì",
+        "m": "Quan tâm ai, quan tâm việc gì"
+      },
+      {
+        "s": "关 + 心",
+        "m": "Đặt lòng (心) mình vào (关) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "只有……才……",
+    "py": "zhǐyǒu……cái……",
+    "pos": "Liên từ",
+    "vn": "chỉ có... (thì) mới...",
+    "hv": "chỉ hữu tài",
+    "em": "🔑",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả điều kiện duy nhất để có kết quả nào đó."
+    ],
+    "usage": "只有 + [điều kiện duy nhất]，才 + [kết quả].",
+    "collo": [
+      "只有爱，才能……",
+      "只有真正……才能……",
+      "只有你们……才能……"
+    ],
+    "ex_zh": "看来只有爱，才能让人有变化。",
+    "ex_py": "Kànlái zhǐyǒu ài, cái néng ràng rén yǒu biànhuà.",
+    "ex_vn": "Xem ra chỉ có tình yêu mới có thể khiến người ta thay đổi.",
+    "exList": [
+      {
+        "zh": "看来只有爱，才能让人有变化。",
+        "py": "Kànlái zhǐyǒu ài, cái néng ràng rén yǒu biànhuà.",
+        "vn": "Xem ra chỉ có tình yêu mới có thể khiến người ta thay đổi."
+      },
+      {
+        "zh": "只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟吧。",
+        "py": "Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi ba.",
+        "vn": "Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em nhỉ."
+      },
+      {
+        "zh": "所以只有真正做事情的时候，才能了解有多难。",
+        "py": "Suǒyǐ zhǐyǒu zhēnzhèng zuò shìqing de shíhou, cái néng liǎojiě yǒu duō nán.",
+        "vn": "Vì vậy chỉ khi thực sự bắt tay vào làm mới hiểu được nó khó đến đâu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "只",
+        "p": "zhǐ",
+        "type": "独体字 · Chữ đơn (đa âm)",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "口 (khẩu)",
+        "mean": "chỉ, duy nhất",
+        "tip": "Cùng chữ với 只(zhī - lượng từ con vật), nhưng khi đọc zhǐ nghĩa là CHỈ, DUY NHẤT.",
+        "cf": "只 (zhī – \"con\" (lượng từ), cùng chữ khác âm đọc\")",
+        "w": "只有 / 只是 / 只要"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em.",
+        "answer": "只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟。",
+        "answerPy": "Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi.",
+        "note": "只有……才…… diễn tả điều kiện duy nhất (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có làm xong bài tập mới được xem tivi.",
+        "answer": "只有写完作业，才能看电视。",
+        "answerPy": "Zhǐyǒu xiěwán zuòyè, cái néng kàn diànshì.",
+        "note": "只有……才…… diễn tả điều kiện duy nhất.",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "只有……才……",
+        "py": "zhǐyǒu cái",
+        "vn": "chỉ có… mới…"
+      },
+      {
+        "zh": "只有努力才能成功",
+        "py": "zhǐyǒu nǔlì cái néng chénggōng",
+        "vn": "chỉ có nỗ lực mới thành công"
+      },
+      {
+        "zh": "只有休息好才有精神",
+        "py": "zhǐyǒu xiūxi hǎo cái yǒu jīngshén",
+        "vn": "chỉ khi nghỉ đủ mới tỉnh táo"
+      },
+      {
+        "zh": "只有你才能帮我",
+        "py": "zhǐyǒu nǐ cái néng bāng wǒ",
+        "vn": "chỉ có bạn mới giúp được tôi"
+      },
+      {
+        "zh": "只有这样才行",
+        "py": "zhǐyǒu zhèyàng cái xíng",
+        "vn": "chỉ có thế mới được"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "只有 A，才 B",
+        "m": "Chỉ khi A thì mới B — A là điều kiện DUY NHẤT"
+      },
+      {
+        "s": "只有……才…… (duy nhất) ≠ 只要……就…… (đủ rồi) — so sánh kỹ hai khung"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "成绩",
+    "py": "chéngjì",
+    "pos": "Danh từ",
+    "vn": "thành tích, kết quả (công tác, học tập)",
+    "hv": "thành tích",
+    "em": "📊",
+    "lesson": 2,
+    "explain": [
+      "Kết quả đạt được qua học tập hoặc công việc."
+    ],
+    "usage": "Danh từ; đi cùng tính từ: 成绩差/好.",
+    "collo": [
+      "成绩差",
+      "考试成绩",
+      "数学成绩"
+    ],
+    "ex_zh": "我的成绩差极了。",
+    "ex_py": "Wǒ de chéngjì chà jí le.",
+    "ex_vn": "Thành tích của mình tệ lắm.",
+    "exList": [
+      {
+        "zh": "我最近天天上网玩儿游戏，我的成绩差极了。",
+        "py": "Wǒ zuìjìn tiāntiān shàng wǎng wánr yóuxì, wǒ de chéngjì chà jí le.",
+        "vn": "Gần đây mình lên mạng chơi game hàng ngày, thành tích của mình tệ lắm."
+      },
+      {
+        "zh": "你是怎么提高历史成绩的？",
+        "py": "Nǐ shì zěnme tígāo lìshǐ chéngjì de?",
+        "vn": "Bạn đã nâng cao thành tích môn lịch sử thế nào vậy?"
+      },
+      {
+        "zh": "考试成绩出来了吗？",
+        "py": "Kǎoshì chéngjì chulai le ma?",
+        "vn": "Kết quả thi ra chưa?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "绩",
+        "p": "jì",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "纟 trái → 责 phải (giản thể)",
+        "rad": "纟 (mịch – tơ lụa)",
+        "mean": "thành tích",
+        "tip": "纟(sợi tơ, dệt thành sản phẩm) + 责(trách nhiệm) → kết quả từ công việc có TRÁCH NHIỆM = THÀNH TÍCH.",
+        "cf": "责 (zé – \"trách nhiệm\", không có bộ 纟\")",
+        "w": "成绩 / 业绩"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn vừa thi xong là kết quả sẽ có ngay thôi.",
+        "answer": "你一考完试，成绩就出来了。",
+        "answerPy": "Nǐ yì kǎowán shì, chéngjì jiù chūlai le.",
+        "note": "一……就…… — vừa … là …; 成绩出来了 — kết quả đã có.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn học chăm chỉ thì thành tích sẽ tốt hơn.",
+        "answer": "如果你认真学习，成绩就会更好。",
+        "answerPy": "Rúguǒ nǐ rènzhēn xuéxí, chéngjì jiù huì gèng hǎo.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "考试成绩",
+        "py": "kǎoshì chéngjì",
+        "vn": "kết quả thi"
+      },
+      {
+        "zh": "成绩很好",
+        "py": "chéngjì hěn hǎo",
+        "vn": "kết quả tốt"
+      },
+      {
+        "zh": "提高成绩",
+        "py": "tí gāo chéngjì",
+        "vn": "nâng cao thành tích"
+      },
+      {
+        "zh": "成绩出来了",
+        "py": "chéngjì chū lái le",
+        "vn": "kết quả có rồi"
+      },
+      {
+        "zh": "这次的成绩",
+        "py": "zhè cì de chéngjì",
+        "vn": "kết quả lần này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "提高 + 成绩",
+        "m": "Nâng cao thành tích — 提高 là từ bài 15"
+      },
+      {
+        "s": "成绩 + 出来了",
+        "m": "Kết quả đã có — 出来 là bổ ngữ xu hướng"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "碗",
+    "py": "wǎn",
+    "pos": "Danh từ",
+    "vn": "bát",
+    "hv": "oản",
+    "em": "🥣",
+    "lesson": 3,
+    "explain": [
+      "Vật dụng hình tròn dùng để đựng cơm, canh."
+    ],
+    "usage": "Danh từ; đi cùng động từ 拿着/洗: 拿着碗.",
+    "collo": [
+      "拿着碗",
+      "洗碗",
+      "一个碗"
+    ],
+    "ex_zh": "那个拿着碗吃饭的人是你哥哥吗？",
+    "ex_py": "Nàge názhe wǎn chī fàn de rén shì nǐ gēge ma?",
+    "ex_vn": "Người cầm bát ăn cơm đó là anh trai bạn à?",
+    "exList": [
+      {
+        "zh": "那个拿着碗吃饭的人是你哥哥吗？他和你长得真像。",
+        "py": "Nàge názhe wǎn chī fàn de rén shì nǐ gēge ma? Tā hé nǐ zhǎng de zhēn xiàng.",
+        "vn": "Người cầm bát ăn cơm đó là anh trai bạn à? Anh ấy trông giống bạn thật đấy."
+      },
+      {
+        "zh": "我来洗碗筷，你去看电视吧。",
+        "py": "Wǒ lái xǐ wǎnkuài, nǐ qù kàn diànshì ba.",
+        "vn": "Tôi rửa bát đũa, bạn đi xem tivi đi."
+      },
+      {
+        "zh": "你先吃，一会儿多来一碗饭。",
+        "py": "Nǐ xiān chī, yíhuìr duō lái yì wǎn fàn.",
+        "vn": "Bạn ăn trước đi, lát nữa lấy thêm một bát cơm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "碗",
+        "p": "wǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "石 trái → 宛 phải",
+        "rad": "石 (thạch – đá)",
+        "mean": "bát",
+        "tip": "石(đá, sứ) + 宛(cong, uốn lượn) → vật liệu ĐÁ/SỨ tạo thành hình CONG tròn = BÁT.",
+        "cf": "椀 (dạng cổ của 碗, làm bằng gỗ\")",
+        "w": "碗 / 洗碗"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Để tôi rửa bát trước, sau đó bạn hãy đi nghỉ một lát.",
+        "answer": "先让我洗碗，然后你再去休息一会儿吧。",
+        "answerPy": "Xiān ràng wǒ xǐ wǎn, ránhòu nǐ zài qù xiūxi yíhuìr ba.",
+        "note": "把 + 碗 + 洗干净 cũng nói được; 干净 là từ bài 14.",
+        "pair": "先……然后……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bát bẩn thì bạn rửa giúp tôi đi.",
+        "answer": "如果碗脏了，你就帮我洗洗吧。",
+        "answerPy": "Rúguǒ wǎn zāng le, nǐ jiù bāng wǒ xǐxi ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "洗碗",
+        "py": "xǐ wǎn",
+        "vn": "rửa bát"
+      },
+      {
+        "zh": "一个碗",
+        "py": "yí gè wǎn",
+        "vn": "một cái bát"
+      },
+      {
+        "zh": "一碗面条",
+        "py": "yì wǎn miàntiáo",
+        "vn": "một bát mì"
+      },
+      {
+        "zh": "把碗洗干净",
+        "py": "bǎ wǎn xǐ gānjìng",
+        "vn": "rửa bát cho sạch"
+      },
+      {
+        "zh": "碗里",
+        "py": "wǎn li",
+        "vn": "trong bát"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + 碗 + 洗干净",
+        "m": "Rửa bát cho sạch — 干净 là từ bài 14"
+      },
+      {
+        "s": "一 + 个 + 碗 (danh từ) / 一 + 碗 + 面条 (lượng từ)"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "分",
+    "py": "fēn",
+    "pos": "Động từ",
+    "vn": "phân biệt",
+    "hv": "phân",
+    "em": "✂️",
+    "lesson": 3,
+    "explain": [
+      "Chia tách, nhận biết sự khác nhau giữa các đối tượng."
+    ],
+    "usage": "Động từ, thường đi cùng bổ ngữ 出来: 分出来.",
+    "collo": [
+      "分出来",
+      "分不清",
+      "分开"
+    ],
+    "ex_zh": "只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟吧。",
+    "ex_py": "Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi ba.",
+    "ex_vn": "Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em nhỉ.",
+    "exList": [
+      {
+        "zh": "只有你们的爸爸妈妈才能分出来哪个是哥哥，哪个是弟弟吧。",
+        "py": "Zhǐyǒu nǐmen de bàba māma cái néng fēn chulai nǎge shì gēge, nǎge shì dìdi ba.",
+        "vn": "Chỉ có bố mẹ các bạn mới phân biệt được ai là anh, ai là em nhỉ."
+      },
+      {
+        "zh": "除了父母以外，还有我们自己也能啊。",
+        "py": "Chúle fùmǔ yǐwài, hái yǒu wǒmen zìjǐ yě néng a.",
+        "vn": "Ngoài bố mẹ ra, còn có chính chúng tôi cũng phân biệt được đấy."
+      },
+      {
+        "zh": "我怎么也分不清这两个字。",
+        "py": "Wǒ zěnme yě fēn bu qīng zhè liǎng ge zì.",
+        "vn": "Tôi thế nào cũng không phân biệt rõ được hai chữ này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "分",
+        "p": "fēn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 4,
+        "ord": "八 trên → 刀 dưới",
+        "rad": "刀 (đao – dao)",
+        "mean": "chia, phân biệt",
+        "tip": "八(hình chia đôi) + 刀(dao) → dùng DAO CHIA vật ra làm hai = CHIA, PHÂN BIỆT.",
+        "cf": "刀 (dāo – \"dao\", không có bộ 八\")",
+        "w": "分 / 分开 / 分数"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hai loại trà này không những nhìn giống nhau, mà mùi vị tôi cũng không tài nào phân biệt được.",
+        "answer": "这两种茶不但看起来一样，而且味道我怎么也分不出来。",
+        "answerPy": "Zhè liǎng zhǒng chá búdàn kànqǐlai yíyàng, érqiě wèidào wǒ zěnme yě fēn bu chūlái.",
+        "note": "分不出来 — bổ ngữ khả năng phủ định; 种 là lượng từ chủng loại (bài 18).",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn phân biệt được hai anh em thì thật giỏi.",
+        "answer": "如果你能分出来他们兄弟俩，就真厉害。",
+        "answerPy": "Rúguǒ nǐ néng fēn chulai tāmen xiōngdì liǎ, jiù zhēn lìhai.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "分不出来",
+        "py": "fēn bù chū lái",
+        "vn": "không phân biệt được"
+      },
+      {
+        "zh": "分开",
+        "py": "fēn kāi",
+        "vn": "tách ra"
+      },
+      {
+        "zh": "分成两种",
+        "py": "fēn chéng liǎng zhǒng",
+        "vn": "chia thành hai loại"
+      },
+      {
+        "zh": "分清楚",
+        "py": "fēn qīngchu",
+        "vn": "phân biệt rõ"
+      },
+      {
+        "zh": "很难分",
+        "py": "hěn nán fēn",
+        "vn": "rất khó phân biệt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "分 + 不 + 出来",
+        "m": "Bổ ngữ khả năng phủ định: không phân biệt nổi"
+      },
+      {
+        "s": "分 (fēn, phân biệt) ≠ 分 (fēn, phút, điểm) — cùng chữ, nhiều nghĩa"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "解决",
+    "py": "jiějué",
+    "pos": "Động từ",
+    "vn": "giải quyết",
+    "hv": "giải quyết",
+    "em": "✅",
+    "lesson": 4,
+    "explain": [
+      "Xử lý, tìm ra cách khắc phục vấn đề."
+    ],
+    "usage": "Động từ, mang tân ngữ: 解决问题.",
+    "collo": [
+      "解决问题",
+      "解决办法",
+      "被解决"
+    ],
+    "ex_zh": "不同的问题有不同的解决办法。",
+    "ex_py": "Bùtóng de wèntí yǒu bùtóng de jiějué bànfǎ.",
+    "ex_vn": "Những vấn đề khác nhau có cách giải quyết khác nhau.",
+    "exList": [
+      {
+        "zh": "其实，不同的问题有不同的解决办法。",
+        "py": "Qíshí, bùtóng de wèntí yǒu bùtóng de jiějué bànfǎ.",
+        "vn": "Thực ra, những vấn đề khác nhau có cách giải quyết khác nhau."
+      },
+      {
+        "zh": "多么难的问题，都会被解决的。",
+        "py": "Duōme nán de wèntí, dōu huì bèi jiějué de.",
+        "vn": "Vấn đề dù khó đến mấy cũng sẽ được giải quyết."
+      },
+      {
+        "zh": "我试着帮你解决电脑的问题。",
+        "py": "Wǒ shìzhe bāng nǐ jiějué diànnǎo de wèntí.",
+        "vn": "Tôi thử giúp bạn giải quyết vấn đề máy tính."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "决",
+        "p": "jué",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "冫 trái → 夬 phải",
+        "rad": "冫 (băng – nước đá)",
+        "mean": "quyết định, giải quyết",
+        "tip": "冫(nước, dòng chảy) + 夬(khai thông, mở ra) → khơi thông dòng nước bị tắc = GIẢI QUYẾT, QUYẾT ĐỊNH.",
+        "cf": "快 (kuài – \"nhanh\", có bộ 忄\")",
+        "w": "解决 / 决定"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ khi tự mình thử làm, tôi mới giải quyết được vấn đề thẻ tín dụng này.",
+        "answer": "只有自己试着做，我才能解决这个信用卡的问题。",
+        "answerPy": "Zhǐyǒu zìjǐ shìzhe zuò, wǒ cái néng jiějué zhège xìnyòngkǎ de wèntí.",
+        "note": "试着 + V — thử làm gì; 解决问题 là kết hợp cố định.",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không giải quyết được thì cứ hỏi tôi.",
+        "answer": "如果你解决不了，就问我吧。",
+        "answerPy": "Rúguǒ nǐ jiějué bu liǎo, jiù wèn wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "解决问题",
+        "py": "jiějué wèntí",
+        "vn": "giải quyết vấn đề"
+      },
+      {
+        "zh": "解决办法",
+        "py": "jiějué bànfǎ",
+        "vn": "cách giải quyết"
+      },
+      {
+        "zh": "很难解决",
+        "py": "hěn nán jiějué",
+        "vn": "rất khó giải quyết"
+      },
+      {
+        "zh": "自己解决",
+        "py": "zìjǐ jiějué",
+        "vn": "tự giải quyết"
+      },
+      {
+        "zh": "还没解决",
+        "py": "hái méi jiějué",
+        "vn": "vẫn chưa giải quyết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "解决 + 问题",
+        "m": "Giải quyết vấn đề — kết hợp cố định"
+      },
+      {
+        "s": "想 + 办法 + 解决",
+        "m": "Nghĩ cách giải quyết — 办法 là từ bài 17"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "试",
+    "py": "shì",
+    "pos": "Động từ",
+    "vn": "thử",
+    "hv": "thí",
+    "em": "🧪",
+    "lesson": 4,
+    "explain": [
+      "Làm thử để xem kết quả hoặc kiểm tra."
+    ],
+    "usage": "Động từ; thường đi cùng 着: 试着做.",
+    "collo": [
+      "试着做",
+      "试一试",
+      "试试看"
+    ],
+    "ex_zh": "所以得试着做做。",
+    "ex_py": "Suǒyǐ děi shìzhe zuòzuo.",
+    "ex_vn": "Nên phải thử làm xem.",
+    "exList": [
+      {
+        "zh": "有些问题看上去很难，但是做起来非常简单，所以得试着做做。",
+        "py": "Yǒuxiē wèntí kàn shangqu hěn nán, dànshì zuò qilai fēicháng jiǎndān, suǒyǐ děi shìzhe zuòzuo.",
+        "vn": "Có những vấn đề nhìn có vẻ khó, nhưng làm thì lại rất đơn giản, nên phải thử làm xem."
+      },
+      {
+        "zh": "帮您找双43号的试试？",
+        "py": "Bāng nín zhǎo shuāng sìshísān hào de shìshi?",
+        "vn": "Tôi tìm giúp anh đôi cỡ 43 thử nhé?"
+      },
+      {
+        "zh": "你有更好的办法来解决这个问题吗？",
+        "py": "Nǐ yǒu gèng hǎo de bànfǎ lái jiějué zhège wèntí ma?",
+        "vn": "Bạn có cách nào tốt hơn để giải quyết vấn đề này không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "试",
+        "p": "shì",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "讠 trái → 式 phải (giản thể)",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "thử",
+        "tip": "讠(lời nói) + 式(hình thức, cách thức) → nói ra để kiểm tra CÁCH THỨC = THỬ.",
+        "cf": "式 (shì – \"kiểu cách\", không có bộ 讠\")",
+        "w": "试 / 试试 / 考试"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thấy đôi giày này đẹp thì mặc thử xem sao.",
+        "answer": "如果你觉得这双鞋好看，就穿着试试吧。",
+        "answerPy": "Rúguǒ nǐ juéde zhè shuāng xié hǎokàn, jiù chuānzhe shìshi ba.",
+        "note": "双 là lượng từ bài 11; 试试 — dạng lặp động từ, làm nhẹ ngữ khí.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không chắc thì cứ thử làm xem.",
+        "answer": "如果你不确定，就试着做做吧。",
+        "answerPy": "Rúguǒ nǐ bú quèdìng, jiù shìzhe zuòzuo ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "试一试",
+        "py": "shì yí shì",
+        "vn": "thử một chút"
+      },
+      {
+        "zh": "试试看",
+        "py": "shìshì kàn",
+        "vn": "thử xem"
+      },
+      {
+        "zh": "穿着试试",
+        "py": "chuān zhe shìshì",
+        "vn": "mặc thử xem"
+      },
+      {
+        "zh": "试着自己做",
+        "py": "shì zhe zìjǐ zuò",
+        "vn": "thử tự làm"
+      },
+      {
+        "zh": "再试一次",
+        "py": "zài shì yí cì",
+        "vn": "thử lại một lần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 一 + V / VV",
+        "m": "Dạng lặp động từ: 试一试, 试试 — làm nhẹ đi"
+      },
+      {
+        "s": "试着 + V",
+        "m": "Thử làm gì đó"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "真正",
+    "py": "zhēnzhèng",
+    "pos": "Phó từ",
+    "vn": "thật sự",
+    "hv": "chân chính",
+    "em": "💯",
+    "lesson": 4,
+    "explain": [
+      "Diễn tả tính chất chân thực, không giả tạo."
+    ],
+    "usage": "Phó từ, đứng trước động từ/danh từ: 真正做事情.",
+    "collo": [
+      "真正做事情",
+      "真正的朋友",
+      "真正了解"
+    ],
+    "ex_zh": "只有真正做事情的时候，才能了解有多难。",
+    "ex_py": "Zhǐyǒu zhēnzhèng zuò shìqing de shíhou, cái néng liǎojiě yǒu duō nán.",
+    "ex_vn": "Chỉ khi thực sự bắt tay vào làm mới hiểu được nó khó đến đâu.",
+    "exList": [
+      {
+        "zh": "所以只有真正做事情的时候，才能了解有多难。",
+        "py": "Suǒyǐ zhǐyǒu zhēnzhèng zuò shìqing de shíhou, cái néng liǎojiě yǒu duō nán.",
+        "vn": "Vì vậy chỉ khi thực sự bắt tay vào làm mới hiểu được nó khó đến đâu."
+      },
+      {
+        "zh": "难过的时候我们应该做一些真正能使自己快乐的事。",
+        "py": "Nánguò de shíhou wǒmen yīnggāi zuò yìxiē zhēnzhèng néng shǐ zìjǐ kuàilè de shì.",
+        "vn": "Lúc buồn chúng ta nên làm một số việc thật sự khiến bản thân vui vẻ."
+      },
+      {
+        "zh": "只有真的好牛皮做出来的鞋，穿着才舒服。",
+        "py": "Zhǐyǒu zhēn de hǎo niúpí zuò chulai de xié, chuānzhe cái shūfu.",
+        "vn": "Chỉ có giày làm từ da bò tốt thật, mang mới thoải mái."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "正",
+        "p": "zhèng",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "止 (chỉ – dừng)",
+        "mean": "đúng, chính",
+        "tip": "Chữ tượng hình mô phỏng bước chân ĐÚNG hướng, không lệch → CHÍNH XÁC, ĐÚNG ĐẮN; 真(thật)+正(đúng) = THẬT SỰ.",
+        "cf": "止 (zhǐ – \"dừng lại\", không có nét ngang trên\")",
+        "w": "真正 / 正在 / 正常"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vận động không những giúp vui vẻ, mà còn là việc thật sự làm cơ thể khoẻ lên.",
+        "answer": "运动不但能让人高兴，而且是一件真正能使身体变得健康的事。",
+        "answerPy": "Yùndòng búdàn néng ràng rén gāoxìng, érqiě shì yí jiàn zhēnzhèng néng shǐ shēntǐ biàn de jiànkāng de shì.",
+        "note": "真正 + 的 + N hoặc 真正 + V — đích thực; khác 真 (rất).",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ khi bạn thực sự cố gắng thì mới thành công.",
+        "answer": "只有你真正努力，才会成功。",
+        "answerPy": "Zhǐyǒu nǐ zhēnzhèng nǔlì, cái huì chénggōng.",
+        "note": "只有……才…… diễn tả điều kiện duy nhất.",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "真正的朋友",
+        "py": "zhēnzhèng de péngyou",
+        "vn": "người bạn thật sự"
+      },
+      {
+        "zh": "真正明白",
+        "py": "zhēnzhèng míngbai",
+        "vn": "thật sự hiểu"
+      },
+      {
+        "zh": "真正喜欢",
+        "py": "zhēnzhèng xǐhuan",
+        "vn": "thật lòng thích"
+      },
+      {
+        "zh": "真正的原因",
+        "py": "zhēnzhèng de yuányīn",
+        "vn": "nguyên nhân thật sự"
+      },
+      {
+        "zh": "真正能帮你的人",
+        "py": "zhēnzhèng néng bāng nǐ de rén",
+        "vn": "người thật sự giúp được bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "真正 + 的 + N / 真正 + V",
+        "m": "Đích thực, thật sự"
+      },
+      {
+        "s": "真正 (đích thực) ≠ 真 (rất, quả là) — 真好 ✓ / 真正好 ✗"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "多么",
+    "py": "duōme",
+    "pos": "Phó từ",
+    "vn": "(mức độ tương đối cao) mấy, bao nhiêu",
+    "hv": "đa ma",
+    "em": "❗",
+    "lesson": 4,
+    "explain": [
+      "Nhấn mạnh mức độ cao trong câu cảm thán hoặc câu điều kiện."
+    ],
+    "usage": "多么 + [Adj]，都/也……: diễn tả bất kể mức độ cao đến đâu.",
+    "collo": [
+      "多么难的问题",
+      "多么漂亮",
+      "多么希望"
+    ],
+    "ex_zh": "多么难的问题，都会被解决的。",
+    "ex_py": "Duōme nán de wèntí, dōu huì bèi jiějué de.",
+    "ex_vn": "Vấn đề dù khó đến mấy cũng sẽ được giải quyết.",
+    "exList": [
+      {
+        "zh": "不过，我们一定要相信：多么难的问题，都会被解决的。",
+        "py": "Búguò, wǒmen yídìng yào xiāngxìn: duōme nán de wèntí, dōu huì bèi jiějué de.",
+        "vn": "Tuy nhiên, chúng ta nhất định phải tin: vấn đề dù khó đến mấy cũng sẽ được giải quyết."
+      },
+      {
+        "zh": "春天来了，公园里的花儿都开了，多么漂亮啊！",
+        "py": "Chūntiān lái le, gōngyuán li de huār dōu kāi le, duōme piàoliang a!",
+        "vn": "Mùa xuân đến rồi, hoa trong công viên đều nở hết, đẹp biết bao!"
+      },
+      {
+        "zh": "我多么希望早点儿好啊。",
+        "py": "Wǒ duōme xīwàng zǎo diǎnr hǎo a.",
+        "vn": "Tôi mong sao mau khỏi biết bao."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "么",
+        "p": "me",
+        "type": "独体字 · Chữ đơn (giản thể, nhẹ)",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "丿 (phiệt)",
+        "mean": "trợ từ nghi vấn/cảm thán",
+        "tip": "Chữ giản thể đơn giản hóa, thường kết hợp với các từ khác (多么, 什么, 怎么) làm TRỢ TỪ không mang nghĩa riêng.",
+        "cf": "公 (gōng – \"công cộng\", hình dáng khác\")",
+        "w": "多么 / 什么 / 怎么"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mùa đông vừa đến là tuyết bên ngoài đã rơi lớn biết bao!",
+        "answer": "冬天一到，外面的雪就下得多么大啊！",
+        "answerPy": "Dōngtiān yí dào, wàimiàn de xuě jiù xià de duōme dà a!",
+        "note": "多么 + Adj + 啊 — câu cảm thán; 冬天 là từ bài 17.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn tin tưởng thì vấn đề dù khó đến mấy cũng sẽ được giải quyết.",
+        "answer": "如果你相信，多么难的问题都会被解决的。",
+        "answerPy": "Rúguǒ nǐ xiāngxìn, duōme nán de wèntí dōu huì bèi jiějué de.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 相信 đã học ở Bài 18).",
+        "pair": "如果……会……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "多么漂亮",
+        "py": "duōme piàoliang",
+        "vn": "đẹp biết bao"
+      },
+      {
+        "zh": "多么高兴",
+        "py": "duōme gāoxìng",
+        "vn": "vui biết mấy"
+      },
+      {
+        "zh": "多么大的雪",
+        "py": "duōme dà de xuě",
+        "vn": "tuyết lớn biết bao"
+      },
+      {
+        "zh": "多么好的机会",
+        "py": "duōme hǎo de jīhuì",
+        "vn": "cơ hội tốt biết bao"
+      },
+      {
+        "zh": "多么可爱",
+        "py": "duōme kě'ài",
+        "vn": "đáng yêu biết bao"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "多么 + Adj + 啊",
+        "m": "Câu cảm thán: … biết bao!"
+      },
+      {
+        "s": "多么 ≈ 多",
+        "m": "Khẩu ngữ hay rút thành 多: 多好啊！"
+      }
+    ]
+  }
 ];
 
 const wuData = [

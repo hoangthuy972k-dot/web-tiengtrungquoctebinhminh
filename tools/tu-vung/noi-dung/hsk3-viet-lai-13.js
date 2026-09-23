@@ -49,6 +49,6 @@ module.exports = {
     answer: '她经常一个人去公园跑步，因为早上跑步最舒服。', pair: '因为……',
     note: '公园 là từ bài 6, 舒服 là từ bài 3.' },
   '经常|1': { prompt: 'Tôi mong anh ấy có thể thường ở bên tôi, chứ không phải chỉ gặp vào cuối tuần.',
-    answer: '我希望他能经常和我在一起，而不是只有周末才见面。', pair: '不是……而是……',
+    answer: '我希望他能经常和我在一起，而不是只有周末才见面。', pair: '只有……才……',
     note: '周末 là từ bài 1, 见面 là từ bài 8.' }
 };

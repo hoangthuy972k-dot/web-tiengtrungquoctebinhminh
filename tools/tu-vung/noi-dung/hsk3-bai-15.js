@@ -58,7 +58,7 @@ module.exports = {
   },
   '要求': {
     collo: [['比赛的要求', 'yêu cầu của cuộc thi'], ['有要求', 'có yêu cầu'],
-            ['符合要求', 'đạt yêu cầu'], ['提出要求', 'đưa ra yêu cầu'],
+            ['要求很高', 'yêu cầu rất cao'], ['提出要求', 'đưa ra yêu cầu'],
             ['老师的要求', 'yêu cầu của thầy']],
     patterns: [['N + 的 + 要求 (danh từ)', 'Yêu cầu của cái gì'],
                ['要求 + ai + V (động từ)', 'Yêu cầu ai làm gì']]

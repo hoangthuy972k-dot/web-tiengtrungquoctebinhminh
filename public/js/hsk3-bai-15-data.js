@@ -947,9 +947,9 @@ var vocabData = [
         "vn": "có yêu cầu"
       },
       {
-        "zh": "符合要求",
-        "py": "fúhé yāoqiú",
-        "vn": "đạt yêu cầu"
+        "zh": "要求很高",
+        "py": "yāoqiú hěn gāo",
+        "vn": "yêu cầu rất cao"
       },
       {
         "zh": "提出要求",

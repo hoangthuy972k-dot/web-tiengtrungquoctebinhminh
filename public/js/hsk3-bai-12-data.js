@@ -629,9 +629,9 @@ var vocabData = [
         "vn": "túi của tôi"
       },
       {
-        "zh": "背包",
-        "py": "bēibāo",
-        "vn": "balo"
+        "zh": "大包",
+        "py": "dà bāo",
+        "vn": "cái túi to"
       },
       {
         "zh": "包很重",

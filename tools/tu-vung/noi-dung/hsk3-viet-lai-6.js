@@ -22,7 +22,7 @@ module.exports = {
     answer: '那个小女孩儿又喜欢跟奶奶聊天儿，又喜欢听奶奶讲故事。', pair: '又……又……',
     note: '讲故事 — 讲 dùng cho việc kể, giảng có nội dung.' },
   '睡着|0': { prompt: 'Bạn chẳng phải nói tối qua ngủ không được sao? Vậy hôm nay nghỉ sớm một chút đi.',
-    answer: '你不是说昨晚睡不着觉吗？那今天就早点儿休息吧。', pair: '既然……就……',
+    answer: '你不是说昨晚睡不着觉吗？那今天就早点儿休息吧。', pair: '……吗？那……就……',
     note: '睡不着 — bổ ngữ khả năng phủ định, khác 不睡觉.' },
   '睡着|1': { prompt: 'Chỉ cần uống một ly sữa nóng là bạn sẽ ngủ ngon hơn.',
     answer: '只要喝杯热牛奶，你就可以睡得更好。', pair: '只要……就……',

@@ -1464,7 +1464,7 @@ var vocabData = [
         "answer": "你不是说昨晚睡不着觉吗？那今天就早点儿休息吧。",
         "answerPy": "Nǐ bú shì shuō zuówǎn shuì bu zháo jiào ma? Nà jīntiān jiù zǎo diǎnr xiūxi ba.",
         "note": "睡不着 — bổ ngữ khả năng phủ định, khác 不睡觉.",
-        "pair": "既然……就……"
+        "pair": "……吗？那……就……"
       },
       {
         "promptLang": "vi",

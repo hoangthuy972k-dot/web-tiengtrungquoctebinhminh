@@ -79,9 +79,9 @@ module.exports = {
   },
   '双': {
     collo: [['一双筷子', 'một đôi đũa'], ['一双鞋', 'một đôi giày'],
-            ['两双', 'hai đôi'], ['一双袜子', 'một đôi tất'],
+            ['两双', 'hai đôi'], ['一双手', 'một đôi tay'],
             ['一双手', 'đôi bàn tay']],
-    patterns: [['số + 双 + vật đi thành đôi', 'Lượng từ 双: 筷子, 鞋, 袜子, 手, 脚'],
+    patterns: [['số + 双 + vật đi thành đôi', 'Lượng từ 双: 筷子, 鞋, 手 — vật luôn có đôi'],
                ['双 (đôi có hai cái giống nhau) ≠ 副 (bộ, như 一副眼镜)']]
   },
   '筷子': {
@@ -121,7 +121,7 @@ module.exports = {
   },
   '电子邮件': {
     collo: [['发电子邮件', 'gửi email'], ['收电子邮件', 'nhận email'],
-            ['看电子邮件', 'xem email'], ['一封电子邮件', 'một email'],
+            ['看电子邮件', 'xem email'], ['收到电子邮件', 'nhận được email'],
             ['电子邮件地址', 'địa chỉ email']],
     patterns: [['发 / 收 + 电子邮件', 'Gửi / nhận email'],
                ['电子 + 邮件', 'Thư từ (邮件) điện tử (电子)']]

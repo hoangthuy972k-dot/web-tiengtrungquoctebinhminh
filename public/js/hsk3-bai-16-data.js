@@ -3,357 +3,1729 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'城市',py:'chéngshì',pos:'Danh từ',vn:'thành phố', hv: 'thành thị',em:'🏙️',lesson:1,
-   explain:['Khu vực đô thị lớn, tập trung dân cư và cơ sở hạ tầng.'],
-   usage:'Danh từ; đi cùng động từ 住/去: 住在城市, 去其他城市.',
-   collo:['大城市','住在城市','其他城市'],
-   ex_zh:'我不喜欢一直住在同一个城市。',ex_py:'Wǒ bù xǐhuan yìzhí zhù zài tóng yí ge chéngshì.',ex_vn:'Tôi không thích cứ sống mãi ở một thành phố.',
-   exList:[
-     {zh:'我不喜欢一直住在同一个城市，想去其他城市看一看。',py:'Wǒ bù xǐhuan yìzhí zhù zài tóng yí ge chéngshì, xiǎng qù qítā chéngshì kàn yi kàn.',vn:'Tôi không thích cứ sống mãi ở một thành phố, muốn đi các thành phố khác xem thử.'},
-     {zh:'这个城市真不错，干净、安静、漂亮。',py:'Zhège chéngshì zhēn búcuò, gānjìng, ānjìng, piàoliang.',vn:'Thành phố này thật không tệ, sạch sẽ, yên tĩnh, đẹp đẽ.'},
-     {zh:'你觉得哪个城市最好玩儿？',py:'Nǐ juéde nǎge chéngshì zuì hǎowánr?',vn:'Bạn thấy thành phố nào thú vị nhất?'},
-   ],
-   hanzi:[
-     {c:'城',p:'chéng',type:'左右结构 · Trái-phải',st:9,ord:'土 trái → 成 phải',rad:'土 (thổ – đất)',mean:'thành phố, thành trì',
-      tip:'土(đất) + 成(hoàn thành, xây nên) → khối đất được XÂY DỰNG hoàn chỉnh thành THÀNH TRÌ, THÀNH PHỐ.',
-      cf:'诚 (chéng – "thành thật", có bộ 讠")',w:'城市 / 长城'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trong những thành phố bạn từng đến, bạn thấy thành phố nào đẹp nhất?',answer:'在你去过的城市里，你觉得哪个城市最漂亮？',answerPy:'Zài nǐ qùguo de chéngshì lǐ, nǐ juéde nǎge chéngshì zuì piàoliang?',
-      note:'哪个 + N hỏi lựa chọn.'},
-     {promptLang:'vi',prompt:'Nếu bạn thích thành phố này thì chúng ta ở lại thêm vài ngày đi.',answer:'如果你喜欢这个城市，我们就多住几天吧。',answerPy:'Rúguǒ nǐ xǐhuan zhège chéngshì, wǒmen jiù duō zhù jǐ tiān ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).'},
-   ]},
-
-  {n:2,zh:'如果',py:'rúguǒ',pos:'Liên từ',vn:'nếu', hv: 'như quả',em:'🔀',lesson:1,
-   explain:['Dùng để nêu một giả thiết, điều kiện.'],
-   usage:'如果 + [giả thiết]，(chủ ngữ) + 就 + [kết quả].',
-   collo:['如果……就……','如果有钱','如果不舒服'],
-   ex_zh:'如果有钱，就去了。',ex_py:'Rúguǒ yǒu qián, jiù qù le.',ex_vn:'Nếu có tiền thì đã đi rồi.',
-   exList:[
-     {zh:'但是那时候没有钱，如果有钱，就去了。',py:'Dànshì nà shíhou méiyǒu qián, rúguǒ yǒu qián, jiù qù le.',vn:'Nhưng lúc đó không có tiền, nếu có tiền thì đã đi rồi.'},
-     {zh:'如果不舒服，就去医院检查一下吧。',py:'Rúguǒ bù shūfu, jiù qù yīyuàn jiǎnchá yíxià ba.',vn:'Nếu khó chịu thì đi bệnh viện khám thử đi.'},
-     {zh:'如果你太累了，就休息一会儿。',py:'Rúguǒ nǐ tài lèi le, jiù xiūxi yíhuìr.',vn:'Nếu bạn mệt quá thì nghỉ một lát đi.'},
-   ],
-   hanzi:[
-     {c:'如',p:'rú',type:'左右结构 · Trái-phải',st:6,ord:'女 trái → 口 phải',rad:'女 (nữ)',mean:'như là, nếu',
-      tip:'女(nữ) + 口(miệng, lời nói) → nghe LỜI người phụ nữ (thời xưa: mẹ) thì mọi việc NHƯ Ý; mở rộng nghĩa GIẢ THIẾT "nếu như".',
-      cf:'知 (zhī – "biết", có bộ 矢")',w:'如果 / 比如'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn đói thì ăn chút gì trước đi.',answer:'如果你饿了，就先吃点儿东西吧。',answerPy:'Rúguǒ nǐ è le, jiù xiān chī diǎnr dōngxi ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Tuy bây giờ tiền không còn là vấn đề nhưng chủ yếu là không có thời gian.',answer:'虽然现在钱不是问题了，但是主要是没有时间。',answerPy:'Suīrán xiànzài qián bú shì wèntí le, dànshì zhǔyào shì méiyǒu shíjiān.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:3,zh:'认为',py:'rènwéi',pos:'Động từ',vn:'cho rằng', hv: 'nhận vi',em:'💭',lesson:1,
-   explain:['Diễn tả quan điểm, ý kiến cá nhân về một vấn đề.'],
-   usage:'Động từ, mang tân ngữ là mệnh đề: 认为 + [ý kiến].',
-   collo:['我认为','大家都认为','认为不可能'],
-   ex_zh:'我认为现在您有时间也不会出去玩儿。',ex_py:'Wǒ rènwéi xiànzài nín yǒu shíjiān yě bú huì chūqu wánr.',ex_vn:'Cháu nghĩ bây giờ chú có thời gian cũng sẽ không đi chơi đâu.',
-   exList:[
-     {zh:'我认为现在您有时间也不会出去玩儿。',py:'Wǒ rènwéi xiànzài nín yǒu shíjiān yě bú huì chūqu wánr.',vn:'Cháu nghĩ bây giờ chú có thời gian cũng sẽ không đi chơi đâu.'},
-     {zh:'她认为男的不可能去跑步。',py:'Tā rènwéi nán de bù kěnéng qù pǎobù.',vn:'Cô ấy cho rằng người đàn ông đó không thể đi chạy bộ được.'},
-     {zh:'很多人都认为，人和人的关系冷冷的。',py:'Hěn duō rén dōu rènwéi, rén hé rén de guānxi lěnglěng de.',vn:'Nhiều người đều cho rằng, quan hệ giữa người với người lạnh nhạt.'},
-   ],
-   hanzi:[
-     {c:'认',p:'rèn',type:'左右结构 · Trái-phải',st:4,ord:'讠 trái → 人 phải',rad:'讠 (ngôn – lời nói, giản thể)',mean:'nhận biết, thừa nhận',
-      tip:'讠(lời nói) + 人(người) → dùng LỜI NÓI để nhận biết NGƯỜI khác = NHẬN RA, mở rộng nghĩa CHO RẰNG.',
-      cf:'忍 (rěn – "nhẫn nhịn", có bộ 心")',w:'认为 / 认识 / 认真'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mọi người đều cho rằng kỳ thi lần này không khó.',answer:'大家都认为这次考试不难。',answerPy:'Dàjiā dōu rènwéi zhè cì kǎoshì bù nán.',
-      note:'认为 + mệnh đề diễn tả quan điểm.'},
-     {promptLang:'vi',prompt:'Nếu bạn cho rằng đúng thì cứ làm theo cách đó đi.',answer:'如果你认为对，就照那个办法做吧。',answerPy:'Rúguǒ nǐ rènwéi duì, jiù zhào nàge bànfǎ zuò ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:4,zh:'皮鞋',py:'píxié',pos:'Danh từ',vn:'giày da', hv: 'bì hài',em:'👞',lesson:2,
-   explain:['Loại giày làm từ chất liệu da.'],
-   usage:'Danh từ; đi cùng động từ 送/买: 送皮鞋.',
-   collo:['小皮鞋','买皮鞋','一双皮鞋'],
-   ex_zh:'你送的小皮鞋和小帽子真漂亮！',ex_py:'Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!',ex_vn:'Đôi giày da và cái mũ bạn tặng đẹp thật!',
-   exList:[
-     {zh:'谢谢你们来看我女儿。你送的小皮鞋和小帽子真漂亮！',py:'Xièxie nǐmen lái kàn wǒ nǚ\'ér. Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!',vn:'Cảm ơn các bạn đến thăm con gái mình. Đôi giày da và cái mũ bạn tặng đẹp thật!'},
-     {zh:'每天都帮她把小皮鞋放好。',py:'Měi tiān dōu bāng tā bǎ xiǎo píxié fànghǎo.',vn:'Ngày nào cũng giúp cô bé xếp gọn đôi giày da nhỏ.'},
-     {zh:'这双小皮鞋真好看，谁给你买的？',py:'Zhè shuāng xiǎo píxié zhēn hǎokàn, shéi gěi nǐ mǎi de?',vn:'Đôi giày da nhỏ này đẹp thật, ai mua cho bạn vậy?'},
-   ],
-   hanzi:[
-     {c:'皮',p:'pí',type:'半包围结构 · Bán bao vây',st:5,ord:'nét liền',rad:'皮 (bì – da)',mean:'da',
-      tip:'Chữ tượng hình mô phỏng bàn tay LỘT DA thú → DA; 皮(da)+鞋(giày) = GIÀY DA.',
-      cf:'反 (fǎn – "trái lại", hình dáng gần giống")',w:'皮鞋 / 皮肤'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đôi giày da đen đó chắc mắc lắm nhỉ, bạn mua ở đâu vậy?',answer:'那双黑皮鞋很贵吧，你在哪儿买的？',answerPy:'Nà shuāng hēi píxié hěn guì ba, nǐ zài nǎr mǎi de?',
-      note:'双 là lượng từ dùng cho giày.'},
-     {promptLang:'vi',prompt:'Nếu bạn thích đôi giày da đó thì tôi mua tặng bạn.',answer:'如果你喜欢那双皮鞋，我就买给你。',answerPy:'Rúguǒ nǐ xǐhuan nà shuāng píxié, wǒ jiù mǎi gěi nǐ.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:5,zh:'帽子',py:'màozi',pos:'Danh từ',vn:'mũ, nón', hv: 'mạo tử',em:'🎩',lesson:2,
-   explain:['Vật đội trên đầu để che nắng, giữ ấm hoặc làm đẹp.'],
-   usage:'Danh từ; đi cùng động từ 戴/送: 戴帽子.',
-   collo:['小帽子','戴帽子','买帽子'],
-   ex_zh:'你送的小皮鞋和小帽子真漂亮！',ex_py:'Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!',ex_vn:'Đôi giày da và cái mũ bạn tặng đẹp thật!',
-   exList:[
-     {zh:'谢谢你们来看我女儿。你送的小皮鞋和小帽子真漂亮！',py:'Xièxie nǐmen lái kàn wǒ nǚ\'ér. Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!',vn:'Cảm ơn các bạn đến thăm con gái mình. Đôi giày da và cái mũ bạn tặng đẹp thật!'},
-     {zh:'外边冷极了，戴上帽子吧。',py:'Wàibian lěng jí le, dàishang màozi ba.',vn:'Bên ngoài lạnh lắm, đội mũ vào đi.'},
-     {zh:'这顶帽子是谁的？',py:'Zhè dǐng màozi shì shéi de?',vn:'Cái mũ này của ai vậy?'},
-   ],
-   hanzi:[
-     {c:'帽',p:'mào',type:'左右结构 · Trái-phải',st:12,ord:'巾 trái → 冒 phải',rad:'巾 (cân – khăn, vải)',mean:'mũ, nón',
-      tip:'巾(vải, khăn) + 冒(che trên đầu) → tấm vải CHE lên đầu = MŨ, NÓN.',
-      cf:'冒 (mào – "liều lĩnh", không có bộ 巾")',w:'帽子 / 戴帽子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Hôm nay nóng lắm, bạn đừng đội mũ nữa.',answer:'今天热极了，你别戴帽子了。',answerPy:'Jīntiān rè jí le, nǐ bié dài màozi le.',
-      note:'冷极了 diễn tả mức độ cực điểm (ôn lại 极了 đã học ở Bài 15).'},
-     {promptLang:'vi',prompt:'Nếu trời lạnh thì bạn nên đội mũ.',answer:'如果天气冷，你就应该戴帽子。',answerPy:'Rúguǒ tiānqì lěng, nǐ jiù yīnggāi dài màozi.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:6,zh:'长',py:'zhǎng',pos:'Động từ',vn:'trưởng thành, lớn lên', hv: 'trưởng',em:'📏',lesson:2,
-   explain:['Phát triển về kích thước, tuổi tác theo thời gian.'],
-   usage:'Động từ, thường đi cùng bổ ngữ trạng thái: 长得 + [tính từ].',
-   collo:['长得可爱','长高了','长大了'],
-   ex_zh:'你女儿长得白白的、胖胖的，真可爱！',ex_py:'Nǐ nǚ\'ér zhǎng de báibái de, pàngpàng de, zhēn kě\'ài!',ex_vn:'Con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!',
-   exList:[
-     {zh:'别客气，你女儿长得白白的、胖胖的，真可爱！',py:'Bié kèqi, nǐ nǚ\'ér zhǎng de báibái de, pàngpàng de, zhēn kě\'ài!',vn:'Đừng khách sáo, con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!'},
-     {zh:'她鼻子小小的，头发黑黑的，长得像谁？',py:'Tā bízi xiǎoxiǎo de, tóufa hēihēi de, zhǎng de xiàng shéi?',vn:'Bé mũi nhỏ nhỏ, tóc đen đen, giống ai vậy?'},
-     {zh:'乐乐，你长高了，也长胖了。',py:'Lèlè, nǐ zhǎnggāo le, yě zhǎngpàng le.',vn:'Lạc Lạc, con cao lên rồi, cũng mập lên rồi.'},
-   ],
-   hanzi:[
-     {c:'长',p:'zhǎng',type:'独体字 · Chữ đơn (tượng hình, giản thể)',st:4,ord:'nét liền',rad:'长 (trường)',mean:'lớn lên; dài',
-      tip:'Chữ tượng hình mô phỏng mái tóc DÀI theo thời gian → khi đọc zhǎng nghĩa là LỚN LÊN, TRƯỞNG THÀNH; khi đọc cháng nghĩa là DÀI.',
-      cf:'张 (zhāng – "mở ra", có bộ 弓")',w:'长大 / 长得 / 校长'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Con trai, mùa hè này con cao lên không ít đấy.',answer:'儿子，你这个暑假长高了不少。',answerPy:'Érzi, nǐ zhège shǔjià zhǎnggāo le bù shǎo.',
-      note:'长 + bổ ngữ kết quả (高/胖) diễn tả sự phát triển.'},
-     {promptLang:'vi',prompt:'Nếu con lớn lên, con sẽ hiểu bố mẹ hơn.',answer:'如果你长大了，就会更了解爸爸妈妈。',answerPy:'Rúguǒ nǐ zhǎngdà le, jiù huì gèng liǎojiě bàba māma.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 了解 đã học ở Bài 15).'},
-   ]},
-
-  {n:7,zh:'可爱',py:'kě\'ài',pos:'Tính từ',vn:'đáng yêu, dễ thương', hv: 'khả ái',em:'🥰',lesson:2,
-   explain:['Có vẻ ngoài hoặc tính cách khiến người khác yêu thích.'],
-   usage:'Tính từ, làm vị ngữ: 真可爱.',
-   collo:['真可爱','可爱极了','长得可爱'],
-   ex_zh:'你女儿长得白白的、胖胖的，真可爱！',ex_py:'Nǐ nǚ\'ér zhǎng de báibái de, pàngpàng de, zhēn kě\'ài!',ex_vn:'Con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!',
-   exList:[
-     {zh:'别客气，你女儿长得白白的、胖胖的，真可爱！',py:'Bié kèqi, nǐ nǚ\'ér zhǎng de báibái de, pàngpàng de, zhēn kě\'ài!',vn:'Đừng khách sáo, con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!'},
-     {zh:'你家小狗小小的，长得真可爱！',py:'Nǐ jiā xiǎogǒu xiǎoxiǎo de, zhǎng de zhēn kě\'ài!',vn:'Con chó nhỏ nhà bạn nho nhỏ, trông đáng yêu thật!'},
-     {zh:'那孩子特别可爱，出生时特别胖。',py:'Nà háizi tèbié kě\'ài, chūshēng shí tèbié pàng.',vn:'Đứa bé đó đặc biệt đáng yêu, lúc sinh ra rất mũm mĩm.'},
-   ],
-   hanzi:[
-     {c:'爱',p:'ài',type:'上下结构 · Trên-dưới',st:10,ord:'⺈ trên → 友 dưới (giản thể)',rad:'爪 (trảo – móng vuốt)',mean:'yêu thương',
-      tip:'⺈(bàn tay) + 友(bạn bè) → dùng TAY ôm ấp BẠN BÈ thân thiết = YÊU THƯƠNG; 可(có thể)+爱(yêu) = ĐÁNG YÊU.',
-      cf:'受 (shòu – "nhận", hình dáng gần giống")',w:'可爱 / 爱好'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Con mèo nhà hàng xóm mũm mĩm, trông thật đáng yêu!',answer:'邻居家的猫咪胖胖的，看起来真可爱！',answerPy:'Línjū jiā de māomī pàngpàng de, kàn qilai zhēn kě\'ài!',
-      note:'小小的 = tính từ đơn âm tiết lặp lại (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu con mèo đó đáng yêu thì chúng ta mang về nhà đi.',answer:'如果那只猫可爱，我们就把它带回家吧。',answerPy:'Rúguǒ nà zhī māo kě\'ài, wǒmen jiù bǎ tā dài huí jiā ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:8,zh:'米',py:'mǐ',pos:'Danh từ',vn:'mét', hv: 'mễ',em:'📐',lesson:2,
-   explain:['Đơn vị đo chiều dài trong hệ mét.'],
-   usage:'Danh từ đơn vị, đi sau con số: 一米, 快1米了.',
-   collo:['1米','两米','一千米'],
-   ex_zh:'快1米了，25公斤。',ex_py:'Kuài yì mǐ le, èrshíwǔ gōngjīn.',ex_vn:'Sắp được 1 mét rồi, nặng 25 cân.',
-   exList:[
-     {zh:'快1米了，25公斤。',py:'Kuài yì mǐ le, èrshíwǔ gōngjīn.',vn:'Sắp được 1 mét rồi, nặng 25 cân.'},
-     {zh:'我打算每天去运动场跑两千米。',py:'Wǒ dǎsuàn měi tiān qù yùndòngchǎng pǎo liǎng qiān mǐ.',vn:'Tôi định mỗi ngày ra sân vận động chạy hai nghìn mét.'},
-     {zh:'离这儿两百米就是学校。',py:'Lí zhèr liǎngbǎi mǐ jiùshì xuéxiào.',vn:'Cách đây hai trăm mét là trường học.'},
-   ],
-   hanzi:[
-     {c:'米',p:'mǐ',type:'独体字 · Chữ đơn (tượng hình)',st:6,ord:'nét liền',rad:'米 (mễ – gạo)',mean:'gạo; mét',
-      tip:'Chữ tượng hình mô phỏng các HẠT GẠO rơi vãi → GẠO; do phiên âm gần giống "mètre" nên mượn dùng làm đơn vị MÉT.',
-      cf:'来 (lái – "đến", hình dáng gần giống")',w:'米 (mét) / 大米'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cách nhà tôi không xa, khoảng ba trăm mét là đến siêu thị.',answer:'离我家不远，大概三百米就是超市。',answerPy:'Lí wǒ jiā bù yuǎn, dàgài sānbǎi mǐ jiùshì chāoshì.',
-      note:'离 diễn tả khoảng cách (ôn lại 学校 đã học ở Bài 13).'},
-     {promptLang:'vi',prompt:'Nếu bạn chạy được hai nghìn mét thì sức khỏe sẽ tốt hơn.',answer:'如果你能跑两千米，身体就会更好。',answerPy:'Rúguǒ nǐ néng pǎo liǎng qiān mǐ, shēntǐ jiù huì gèng hǎo.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:9,zh:'公斤',py:'gōngjīn',pos:'Danh từ',vn:'kilôgram', hv: 'công cân',em:'⚖️',lesson:2,
-   explain:['Đơn vị đo khối lượng trong hệ mét.'],
-   usage:'Danh từ đơn vị, đi sau con số: 25公斤.',
-   collo:['25公斤','瘦得只有40公斤','四公斤'],
-   ex_zh:'快1米了，25公斤。',ex_py:'Kuài yì mǐ le, èrshíwǔ gōngjīn.',ex_vn:'Sắp được 1 mét rồi, nặng 25 cân.',
-   exList:[
-     {zh:'快1米了，25公斤。',py:'Kuài yì mǐ le, èrshíwǔ gōngjīn.',vn:'Sắp được 1 mét rồi, nặng 25 cân.'},
-     {zh:'那时候她很瘦，瘦得只有40公斤。',py:'Nà shíhou tā hěn shòu, shòu de zhǐyǒu sìshí gōngjīn.',vn:'Lúc đó cô ấy rất gầy, gầy đến mức chỉ có 40 cân.'},
-     {zh:'那孩子出生时特别胖，四公斤呢。',py:'Nà háizi chūshēng shí tèbié pàng, sì gōngjīn ne.',vn:'Đứa bé đó lúc sinh ra rất mũm mĩm, tận bốn cân đấy.'},
-   ],
-   hanzi:[
-     {c:'斤',p:'jīn',type:'独体字 · Chữ đơn (tượng hình)',st:4,ord:'nét liền',rad:'斤 (cân)',mean:'cân, rìu',
-      tip:'Chữ tượng hình mô phỏng hình cái RÌU (dụng cụ cân đo thời xưa) → CÂN; 公(chung, tiêu chuẩn)+斤(cân) = KILÔGRAM.',
-      cf:'斥 (chì – "quở trách", có nét chấm thêm")',w:'公斤 / 斤 (đơn vị cân cổ)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bây giờ anh ấy béo lên rồi, béo đến mức đã tám mươi cân rồi.',answer:'现在他胖了，胖得已经有八十公斤了。',answerPy:'Xiànzài tā pàng le, pàng de yǐjīng yǒu bāshí gōngjīn le.',
-      note:'瘦得 + cụm từ = bổ ngữ trạng thái phức tạp (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn ăn nhiều thì sẽ tăng thêm vài cân.',answer:'如果你多吃点儿，就会长几公斤。',answerPy:'Rúguǒ nǐ duō chī diǎnr, jiù huì zhǎng jǐ gōngjīn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 长 vừa học trong bài này).'},
-   ]},
-
-  {n:10,zh:'鼻子',py:'bízi',pos:'Danh từ',vn:'mũi', hv: 'tị tử',em:'👃',lesson:2,
-   explain:['Bộ phận trên khuôn mặt dùng để thở và ngửi.'],
-   usage:'Danh từ; thường đi cùng tính từ lặp: 鼻子小小的.',
-   collo:['鼻子小小的','高高的鼻子','鼻子像爸爸'],
-   ex_zh:'你看她鼻子小小的，头发黑黑的。',ex_py:'Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de.',ex_vn:'Bạn xem bé mũi nhỏ nhỏ, tóc đen đen.',
-   exList:[
-     {zh:'你看她鼻子小小的，头发黑黑的，长得像谁？',py:'Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de, zhǎng de xiàng shéi?',vn:'Bạn xem bé mũi nhỏ nhỏ, tóc đen đen, giống ai vậy?'},
-     {zh:'鼻子像爸爸，高高的。',py:'Bízi xiàng bàba, gāogāo de.',vn:'Mũi giống bố, cao cao.'},
-     {zh:'他的鼻子长得很好看。',py:'Tā de bízi zhǎng de hěn hǎokàn.',vn:'Mũi của anh ấy trông rất đẹp.'},
-   ],
-   hanzi:[
-     {c:'鼻',p:'bí',type:'上下结构 · Trên-dưới',st:14,ord:'自 trên → 畀 dưới',rad:'自 (tự – mũi)',mean:'mũi',
-      tip:'自(hình cái mũi cổ) + 畀(cho, trao) → 自 vốn là hình MŨI, thêm 畀 làm rõ nghĩa = MŨI (bộ phận cơ thể).',
-      cf:'自 (zì – "tự mình", chính là hình cái mũi ban đầu")',w:'鼻子 / 鼻音'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Miệng giống chị gái, nho nhỏ.',answer:'嘴巴像姐姐，小小的。',answerPy:'Zuǐba xiàng jiějie, xiǎoxiǎo de.',
-      note:'高高的 = tính từ đơn âm tiết lặp lại (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu mũi bé giống bố thì chắc chắn cao cao.',answer:'如果孩子的鼻子像爸爸，就一定是高高的。',answerPy:'Rúguǒ háizi de bízi xiàng bàba, jiù yídìng shì gāogāo de.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'头发',py:'tóufa',pos:'Danh từ',vn:'tóc', hv: 'đầu phát',em:'💇',lesson:2,
-   explain:['Sợi mọc trên đầu người.'],
-   usage:'Danh từ; thường đi cùng tính từ lặp: 头发黑黑的.',
-   collo:['头发黑黑的','长头发','头发长长的'],
-   ex_zh:'你看她鼻子小小的，头发黑黑的。',ex_py:'Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de.',ex_vn:'Bạn xem bé mũi nhỏ nhỏ, tóc đen đen.',
-   exList:[
-     {zh:'你看她鼻子小小的，头发黑黑的，长得像谁？',py:'Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de, zhǎng de xiàng shéi?',vn:'Bạn xem bé mũi nhỏ nhỏ, tóc đen đen, giống ai vậy?'},
-     {zh:'这个头发长长的是姐姐吧？',py:'Zhège tóufa chángcháng de shì jiějie ba?',vn:'Người tóc dài dài này là chị gái phải không?'},
-     {zh:'她喜欢长头发，大女儿不喜欢。',py:'Tā xǐhuan cháng tóufa, dà nǚ\'ér bù xǐhuan.',vn:'Bé thích để tóc dài, con gái lớn thì không thích.'},
-   ],
-   hanzi:[
-     {c:'发',p:'fà',type:'独体字 · Chữ đơn (giản thể, đa âm)',st:5,ord:'nét liền',rad:'又 (hựu)',mean:'tóc',
-      tip:'Cùng chữ với 发(fā - phát ra), nhưng khi đọc fà nghĩa là TÓC — vì tóc cũng "mọc/phát ra" từ da đầu.',
-      cf:'发 (fā – "gửi, phát ra", cùng chữ khác âm đọc")',w:'头发 / 白发'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Người tóc ngắn ngắn đó là ai vậy?',answer:'那个头发短短的是谁啊？',answerPy:'Nàge tóufa duǎnduǎn de shì shéi a?',
-      note:'长长的 = tính từ đơn âm tiết lặp lại.'},
-     {promptLang:'vi',prompt:'Nếu tóc bạn dài thì trông sẽ đẹp hơn.',answer:'如果你的头发长长的，看起来就会更漂亮。',answerPy:'Rúguǒ nǐ de tóufa chángcháng de, kàn qilai jiù huì gèng piàoliang.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'检查',py:'jiǎnchá',pos:'Động từ',vn:'kiểm tra, khám', hv: 'kiểm tra',em:'🔍',lesson:3,
-   explain:['Xem xét kỹ để phát hiện vấn đề.'],
-   usage:'Động từ, mang tân ngữ: 检查牙, 检查身体.',
-   collo:['去医院检查','检查一下','检查好几次'],
-   ex_zh:'如果不舒服，就去医院检查一下吧。',ex_py:'Rúguǒ bù shūfu, jiù qù yīyuàn jiǎnchá yíxià ba.',ex_vn:'Nếu khó chịu thì đi bệnh viện khám thử đi.',
-   exList:[
-     {zh:'如果不舒服，就去医院检查一下吧。',py:'Rúguǒ bù shūfu, jiù qù yīyuàn jiǎnchá yíxià ba.',vn:'Nếu khó chịu thì đi bệnh viện khám thử đi.'},
-     {zh:'检查好几次了，但是没什么用。',py:'Jiǎnchá hǎo jǐ cì le, dànshì méi shénme yòng.',vn:'Khám mấy lần rồi, nhưng chẳng có tác dụng gì.'},
-     {zh:'只听你说不行，我需要检查一下才清楚。',py:'Zhǐ tīng nǐ shuō bù xíng, wǒ xūyào jiǎnchá yíxià cái qīngchu.',vn:'Chỉ nghe bạn nói không được đâu, tôi cần khám thử mới rõ được.'},
-   ],
-   hanzi:[
-     {c:'检',p:'jiǎn',type:'左右结构 · Trái-phải',st:11,ord:'木 trái → 佥 phải (giản thể)',rad:'木 (mộc – gỗ)',mean:'kiểm tra',
-      tip:'木(gỗ, thẻ tre ghi chép) + 佥(mọi người cùng xem) → mọi người cùng XEM XÉT thẻ ghi = KIỂM TRA.',
-      cf:'验 (yàn – "kiểm nghiệm", có bộ 马")',w:'检查 / 检验'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Máy tính bị lỗi rồi, tôi phải tìm người kiểm tra thì mới dùng được.',answer:'电脑出问题了，我得找人检查一下才能用。',answerPy:'Diànnǎo chū wèntí le, wǒ děi zhǎo rén jiǎnchá yíxià cái néng yòng.',
-      note:'才 diễn tả điều kiện cần (ôn lại đã học ở Bài 12).'},
-     {promptLang:'vi',prompt:'Nếu ngày mai vẫn không khỏe thì đi khám bác sĩ đi.',answer:'如果明天还不好，就去检查一下医生吧。',answerPy:'Rúguǒ míngtiān hái bù hǎo, jiù qù jiǎnchá yíxià yīshēng ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'刷牙',py:'shuā yá',pos:'Động từ',vn:'chải răng', hv: 'loát nha',em:'🪥',lesson:3,
-   explain:['Dùng bàn chải làm sạch răng.'],
-   usage:'Động từ ly hợp: 刷 + 牙; thường đi cùng 好好儿: 好好儿刷牙.',
-   collo:['好好儿刷牙','早上刷牙','刷牙、洗脸'],
-   ex_zh:'每次医生都告诉我，回家好好儿刷牙。',ex_py:'Měi cì yīshēng dōu gàosu wǒ, huí jiā hǎohāor shuā yá.',ex_vn:'Lần nào bác sĩ cũng bảo tôi, về nhà đánh răng cho kỹ.',
-   exList:[
-     {zh:'每次医生都告诉我，回家好好儿刷牙。',py:'Měi cì yīshēng dōu gàosu wǒ, huí jiā hǎohāor shuā yá.',vn:'Lần nào bác sĩ cũng bảo tôi, về nhà đánh răng cho kỹ.'},
-     {zh:'起床以后要先刷牙、洗脸。',py:'Qǐchuáng yǐhòu yào xiān shuā yá, xǐ liǎn.',vn:'Sau khi ngủ dậy phải đánh răng, rửa mặt trước.'},
-     {zh:'孩子还不会自己刷牙。',py:'Háizi hái bú huì zìjǐ shuā yá.',vn:'Đứa bé vẫn chưa biết tự đánh răng.'},
-   ],
-   hanzi:[
-     {c:'刷',p:'shuā',type:'左右结构 · Trái-phải',st:8,ord:'尸 trái → 刂 phải',rad:'刂 (đao – dao)',mean:'chải, cọ',
-      tip:'尸(hình dáng vật thể) + 刂(công cụ) → dùng CÔNG CỤ (bàn chải) chà lên bề mặt = CHẢI, ĐÁNH (răng).',
-      cf:'刻 (kè – "khắc", có 亥 thay vì 尸")',w:'刷牙 / 刷卡'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trước khi ngủ phải đánh răng, thay đồ trước.',answer:'睡觉以前要先刷牙、脱衣服。',answerPy:'Shuìjiào yǐqián yào xiān shuā yá, tuō yīfu.',
-      note:'先……要 diễn tả việc cần làm trước.'},
-     {promptLang:'vi',prompt:'Nếu bạn đánh răng cẩn thận thì răng sẽ không đau nữa.',answer:'如果你好好儿刷牙，牙就不会疼了。',answerPy:'Rúguǒ nǐ hǎohāor shuā yá, yá jiù bú huì téng le.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:14,zh:'关系',py:'guānxi',pos:'Danh từ',vn:'quan hệ', hv: 'quan hệ',em:'🤝',lesson:4,
-   explain:['Mối liên hệ, tương tác giữa người với người hoặc sự vật.'],
-   usage:'Danh từ; đi cùng động từ 变得: 关系变得更好.',
-   collo:['人和人的关系','关系冷冷的','关系变得更好'],
-   ex_zh:'很多人都觉得现在人和人的关系冷冷的。',ex_py:'Hěn duō rén dōu juéde xiànzài rén hé rén de guānxi lěnglěng de.',ex_vn:'Nhiều người cảm thấy quan hệ giữa người với người hiện nay lạnh nhạt.',
-   exList:[
-     {zh:'很多人都觉得现在人和人的关系冷冷的。',py:'Hěn duō rén dōu juéde xiànzài rén hé rén de guānxi lěnglěng de.',vn:'Nhiều người cảm thấy quan hệ giữa người với người hiện nay lạnh nhạt.'},
-     {zh:'和别人的关系就会变得更好。',py:'Hé biéren de guānxi jiù huì biàn de gèng hǎo.',vn:'Quan hệ với người khác sẽ trở nên tốt hơn.'},
-     {zh:'人和人的关系也不错，遇到问题时，别人都愿意帮助你。',py:'Rén hé rén de guānxi yě búcuò, yùdào wèntí shí, biéren dōu yuànyì bāngzhù nǐ.',vn:'Quan hệ giữa người với người cũng không tệ, khi gặp vấn đề, người khác đều sẵn lòng giúp bạn.'},
-   ],
-   hanzi:[
-     {c:'系',p:'xì',type:'上下结构 · Trên-dưới',st:7,ord:'丿 trên → 糸 dưới (giản thể)',rad:'糸 (mịch – tơ)',mean:'liên hệ, buộc',
-      tip:'丿(bàn tay) + 糸(sợi tơ) → dùng tay BUỘC các sợi tơ lại với nhau = LIÊN HỆ, mở rộng nghĩa QUAN HỆ.',
-      cf:'系 (jì – "buộc chặt", cùng chữ khác nghĩa")',w:'关系 / 关心'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Học cách giúp đỡ lẫn nhau thì quan hệ giữa mọi người sẽ trở nên tốt hơn.',answer:'学会互相帮助，大家的关系就会变得更好。',answerPy:'Xuéhuì hùxiāng bāngzhù, dàjiā de guānxi jiù huì biàn de gèng hǎo.',
-      note:'变得更好 diễn tả sự thay đổi tích cực.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn cười nhiều với người khác thì người khác sẽ sẵn lòng giúp bạn.',answer:'只要你多对别人笑笑，别人就会愿意帮助你。',answerPy:'Zhǐyào nǐ duō duì biéren xiàoxiao, biéren jiù huì yuànyì bāngzhù nǐ.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 愿意 đã học ở Bài 13).'},
-   ]},
-
-  {n:15,zh:'别人',py:'biérén',pos:'Danh từ',vn:'người khác', hv: 'biệt nhân',em:'👥',lesson:4,
-   explain:['Chỉ những người khác, không phải người nói.'],
-   usage:'Danh từ, thường làm tân ngữ hoặc định ngữ: 对别人, 别人的.',
-   collo:['对别人','别人的关系','跟别人见面'],
-   ex_zh:'我们应该多对别人笑笑。',ex_py:'Wǒmen yīnggāi duō duì biéren xiàoxiao.',ex_vn:'Chúng ta nên cười nhiều hơn với người khác.',
-   exList:[
-     {zh:'忙得没时间跟别人见面。',py:'Máng de méi shíjiān gēn biéren jiànmiàn.',vn:'Bận đến mức không có thời gian gặp người khác.'},
-     {zh:'其实，我们应该多对别人笑笑。',py:'Qíshí, wǒmen yīnggāi duō duì biéren xiàoxiao.',vn:'Thực ra, chúng ta nên cười nhiều hơn với người khác.'},
-     {zh:'遇到问题时，别人都愿意帮助你。',py:'Yùdào wèntí shí, biéren dōu yuànyì bāngzhù nǐ.',vn:'Khi gặp vấn đề, người khác đều sẵn lòng giúp bạn.'},
-   ],
-   hanzi:[
-     {c:'别',p:'bié',type:'左右结构 · Trái-phải',st:7,ord:'另 trái → 刂 phải',rad:'刂 (đao – dao)',mean:'khác, chia lìa',
-      tip:'另(riêng biệt) + 刂(dao, cắt) → CẮT RIÊNG ra thành phần KHÁC; 别(khác)+人(người) = NGƯỜI KHÁC.',
-      cf:'到 (dào – "đến", có 至 thay vì 另")',w:'别人 / 别的'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Khi gặp từ ngữ không hiểu, có thể hỏi người khác thử xem.',answer:'遇到不懂的词语时，可以问问别人。',answerPy:'Yùdào bù dǒng de cíyǔ shí, kěyǐ wènwen biéren.',
-      note:'遇到 diễn tả tình cờ gặp phải (ôn lại đã học ở Bài 13).'},
-     {promptLang:'vi',prompt:'Nếu bạn bận đến mức không gặp người khác thì quan hệ sẽ lạnh nhạt.',answer:'如果你忙得不跟别人见面，关系就会冷冷的。',answerPy:'Rúguǒ nǐ máng de bù gēn biéren jiànmiàn, guānxi jiù huì lěnglěng de.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:16,zh:'词语',py:'cíyǔ',pos:'Danh từ',vn:'từ ngữ', hv: 'từ ngữ',em:'📖',lesson:4,
-   explain:['Từ và cụm từ trong ngôn ngữ.'],
-   usage:'Danh từ; đi cùng động từ 用: 用词语.',
-   collo:['用词语','这样的词语','写对词语'],
-   ex_zh:'如果能多用一些"您好""谢谢"这样的词语。',ex_py:'Rúguǒ néng duō yòng yìxiē "nín hǎo" "xièxie" zhèyàng de cíyǔ.',ex_vn:'Nếu có thể dùng nhiều hơn những từ ngữ như "xin chào", "cảm ơn".',
-   exList:[
-     {zh:'说话时如果能多用一些"您好""谢谢"这样的词语，和别人的关系就会变得更好。',py:'Shuōhuà shí rúguǒ néng duō yòng yìxiē "nín hǎo" "xièxie" zhèyàng de cíyǔ, hé biéren de guānxi jiù huì biàn de gèng hǎo.',vn:'Khi nói chuyện nếu có thể dùng nhiều hơn những từ ngữ như "xin chào", "cảm ơn", thì quan hệ với người khác sẽ trở nên tốt hơn.'},
-     {zh:'如果有人能把这个星期学的词语都写对，老师就送给他一件礼物。',py:'Rúguǒ yǒu rén néng bǎ zhège xīngqī xué de cíyǔ dōu xiěduì, lǎoshī jiù sòng gěi tā yí jiàn lǐwù.',vn:'Nếu có ai viết đúng hết những từ ngữ học trong tuần này, thầy giáo sẽ tặng người đó một món quà.'},
-     {zh:'这些词语我都不认识。',py:'Zhèxiē cíyǔ wǒ dōu bú rènshi.',vn:'Những từ ngữ này tôi đều không biết.'},
-   ],
-   hanzi:[
-     {c:'词',p:'cí',type:'左右结构 · Trái-phải',st:7,ord:'讠 trái → 司 phải',rad:'讠 (ngôn – lời nói)',mean:'từ ngữ',
-      tip:'讠(lời nói) + 司(quản lý, chi phối) → LỜI NÓI được sắp xếp có ý nghĩa = TỪ NGỮ.',
-      cf:'司 (sī – "quản lý", không có bộ 讠")',w:'词语 / 生词'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mấy câu này tôi đều không hiểu được.',answer:'这几个句子我都看不懂。',answerPy:'Zhè jǐ ge jùzi wǒ dōu kàn bu dǒng.',
-      note:'都 + phủ định diễn tả toàn bộ đều không.'},
-     {promptLang:'vi',prompt:'Nếu bạn học thuộc những từ ngữ này thì tiếng Trung sẽ tiến bộ nhanh.',answer:'如果你记住这些词语，汉语水平就会提高得很快。',answerPy:'Rúguǒ nǐ jìzhù zhèxiē cíyǔ, Hànyǔ shuǐpíng jiù huì tígāo de hěn kuài.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 水平/提高 đã học ở Bài 15).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "城市",
+    "py": "chéngshì",
+    "pos": "Danh từ",
+    "vn": "thành phố",
+    "hv": "thành thị",
+    "em": "🏙️",
+    "lesson": 1,
+    "explain": [
+      "Khu vực đô thị lớn, tập trung dân cư và cơ sở hạ tầng."
+    ],
+    "usage": "Danh từ; đi cùng động từ 住/去: 住在城市, 去其他城市.",
+    "collo": [
+      "大城市",
+      "住在城市",
+      "其他城市"
+    ],
+    "ex_zh": "我不喜欢一直住在同一个城市。",
+    "ex_py": "Wǒ bù xǐhuan yìzhí zhù zài tóng yí ge chéngshì.",
+    "ex_vn": "Tôi không thích cứ sống mãi ở một thành phố.",
+    "exList": [
+      {
+        "zh": "我不喜欢一直住在同一个城市，想去其他城市看一看。",
+        "py": "Wǒ bù xǐhuan yìzhí zhù zài tóng yí ge chéngshì, xiǎng qù qítā chéngshì kàn yi kàn.",
+        "vn": "Tôi không thích cứ sống mãi ở một thành phố, muốn đi các thành phố khác xem thử."
+      },
+      {
+        "zh": "这个城市真不错，干净、安静、漂亮。",
+        "py": "Zhège chéngshì zhēn búcuò, gānjìng, ānjìng, piàoliang.",
+        "vn": "Thành phố này thật không tệ, sạch sẽ, yên tĩnh, đẹp đẽ."
+      },
+      {
+        "zh": "你觉得哪个城市最好玩儿？",
+        "py": "Nǐ juéde nǎge chéngshì zuì hǎowánr?",
+        "vn": "Bạn thấy thành phố nào thú vị nhất?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "城",
+        "p": "chéng",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "土 trái → 成 phải",
+        "rad": "土 (thổ – đất)",
+        "mean": "thành phố, thành trì",
+        "tip": "土(đất) + 成(hoàn thành, xây nên) → khối đất được XÂY DỰNG hoàn chỉnh thành THÀNH TRÌ, THÀNH PHỐ.",
+        "cf": "诚 (chéng – \"thành thật\", có bộ 讠\")",
+        "w": "城市 / 长城"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trong những thành phố bạn từng đến, nếu phải chọn thì bạn thấy nơi nào đẹp nhất?",
+        "answer": "在你去过的城市里，如果要选，你就觉得哪个城市最漂亮？",
+        "answerPy": "Zài nǐ qùguo de chéngshì li, rúguǒ yào xuǎn, nǐ jiù juéde nǎge chéngshì zuì piàoliang?",
+        "note": "V + 过 — đã từng; 选择 sẽ học ở bài 17.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích thành phố này thì chúng ta ở lại thêm vài ngày đi.",
+        "answer": "如果你喜欢这个城市，我们就多住几天吧。",
+        "answerPy": "Rúguǒ nǐ xǐhuan zhège chéngshì, wǒmen jiù duō zhù jǐ tiān ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "大城市",
+        "py": "dà chéngshì",
+        "vn": "thành phố lớn"
+      },
+      {
+        "zh": "住在城市",
+        "py": "zhù zài chéngshì",
+        "vn": "sống ở thành phố"
+      },
+      {
+        "zh": "其他城市",
+        "py": "qítā chéngshì",
+        "vn": "các thành phố khác"
+      },
+      {
+        "zh": "漂亮的城市",
+        "py": "piàoliang de chéngshì",
+        "vn": "thành phố đẹp"
+      },
+      {
+        "zh": "城市生活",
+        "py": "chéngshì shēnghuó",
+        "vn": "cuộc sống thành phố"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "住在 + 城市",
+        "m": "Sống ở thành phố"
+      },
+      {
+        "s": "城 + 市",
+        "m": "Thành (城) và chợ (市) — nơi đông người"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "如果",
+    "py": "rúguǒ",
+    "pos": "Liên từ",
+    "vn": "nếu",
+    "hv": "như quả",
+    "em": "🔀",
+    "lesson": 1,
+    "explain": [
+      "Dùng để nêu một giả thiết, điều kiện."
+    ],
+    "usage": "如果 + [giả thiết]，(chủ ngữ) + 就 + [kết quả].",
+    "collo": [
+      "如果……就……",
+      "如果有钱",
+      "如果不舒服"
+    ],
+    "ex_zh": "如果有钱，就去了。",
+    "ex_py": "Rúguǒ yǒu qián, jiù qù le.",
+    "ex_vn": "Nếu có tiền thì đã đi rồi.",
+    "exList": [
+      {
+        "zh": "但是那时候没有钱，如果有钱，就去了。",
+        "py": "Dànshì nà shíhou méiyǒu qián, rúguǒ yǒu qián, jiù qù le.",
+        "vn": "Nhưng lúc đó không có tiền, nếu có tiền thì đã đi rồi."
+      },
+      {
+        "zh": "如果不舒服，就去医院检查一下吧。",
+        "py": "Rúguǒ bù shūfu, jiù qù yīyuàn jiǎnchá yíxià ba.",
+        "vn": "Nếu khó chịu thì đi bệnh viện khám thử đi."
+      },
+      {
+        "zh": "如果你太累了，就休息一会儿。",
+        "py": "Rúguǒ nǐ tài lèi le, jiù xiūxi yíhuìr.",
+        "vn": "Nếu bạn mệt quá thì nghỉ một lát đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "如",
+        "p": "rú",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "女 trái → 口 phải",
+        "rad": "女 (nữ)",
+        "mean": "như là, nếu",
+        "tip": "女(nữ) + 口(miệng, lời nói) → nghe LỜI người phụ nữ (thời xưa: mẹ) thì mọi việc NHƯ Ý; mở rộng nghĩa GIẢ THIẾT \"nếu như\".",
+        "cf": "知 (zhī – \"biết\", có bộ 矢\")",
+        "w": "如果 / 比如"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đói thì ăn chút gì trước đi.",
+        "answer": "如果你饿了，就先吃点儿东西吧。",
+        "answerPy": "Rúguǒ nǐ è le, jiù xiān chī diǎnr dōngxi ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy bây giờ tiền không còn là vấn đề nhưng chủ yếu là không có thời gian.",
+        "answer": "虽然现在钱不是问题了，但是主要是没有时间。",
+        "answerPy": "Suīrán xiànzài qián bú shì wèntí le, dànshì zhǔyào shì méiyǒu shíjiān.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "如果……就……",
+        "py": "rúguǒ jiù",
+        "vn": "nếu… thì…"
+      },
+      {
+        "zh": "如果有钱",
+        "py": "rúguǒ yǒu qián",
+        "vn": "nếu có tiền"
+      },
+      {
+        "zh": "如果不舒服",
+        "py": "rúguǒ bù shūfu",
+        "vn": "nếu không khoẻ"
+      },
+      {
+        "zh": "如果可以",
+        "py": "rúguǒ kěyǐ",
+        "vn": "nếu được"
+      },
+      {
+        "zh": "如果……的话",
+        "py": "rúguǒ de huà",
+        "vn": "nếu như…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "如果 + mệnh đề，就 + mệnh đề",
+        "m": "Nếu … thì … — khung giả thiết cơ bản"
+      },
+      {
+        "s": "如果……的话",
+        "m": "Thêm 的话 ở cuối vế đầu cho rõ ý giả thiết"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "认为",
+    "py": "rènwéi",
+    "pos": "Động từ",
+    "vn": "cho rằng",
+    "hv": "nhận vi",
+    "em": "💭",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả quan điểm, ý kiến cá nhân về một vấn đề."
+    ],
+    "usage": "Động từ, mang tân ngữ là mệnh đề: 认为 + [ý kiến].",
+    "collo": [
+      "我认为",
+      "大家都认为",
+      "认为不可能"
+    ],
+    "ex_zh": "我认为现在您有时间也不会出去玩儿。",
+    "ex_py": "Wǒ rènwéi xiànzài nín yǒu shíjiān yě bú huì chūqu wánr.",
+    "ex_vn": "Cháu nghĩ bây giờ chú có thời gian cũng sẽ không đi chơi đâu.",
+    "exList": [
+      {
+        "zh": "我认为现在您有时间也不会出去玩儿。",
+        "py": "Wǒ rènwéi xiànzài nín yǒu shíjiān yě bú huì chūqu wánr.",
+        "vn": "Cháu nghĩ bây giờ chú có thời gian cũng sẽ không đi chơi đâu."
+      },
+      {
+        "zh": "她认为男的不可能去跑步。",
+        "py": "Tā rènwéi nán de bù kěnéng qù pǎobù.",
+        "vn": "Cô ấy cho rằng người đàn ông đó không thể đi chạy bộ được."
+      },
+      {
+        "zh": "很多人都认为，人和人的关系冷冷的。",
+        "py": "Hěn duō rén dōu rènwéi, rén hé rén de guānxi lěnglěng de.",
+        "vn": "Nhiều người đều cho rằng, quan hệ giữa người với người lạnh nhạt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "认",
+        "p": "rèn",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "讠 trái → 人 phải",
+        "rad": "讠 (ngôn – lời nói, giản thể)",
+        "mean": "nhận biết, thừa nhận",
+        "tip": "讠(lời nói) + 人(người) → dùng LỜI NÓI để nhận biết NGƯỜI khác = NHẬN RA, mở rộng nghĩa CHO RẰNG.",
+        "cf": "忍 (rěn – \"nhẫn nhịn\", có bộ 心\")",
+        "w": "认为 / 认识 / 认真"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mọi người đều cho rằng kỳ thi lần này không khó, nhưng tôi thấy khá khó.",
+        "answer": "大家都认为这次考试不难，但是我觉得比较难。",
+        "answerPy": "Dàjiā dōu rènwéi zhè cì kǎoshì bù nán, dànshì wǒ juéde bǐjiào nán.",
+        "note": "比较 là từ bài 9 — khá, tương đối.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn cho rằng đúng thì cứ làm theo cách đó đi.",
+        "answer": "如果你认为对，就照那个办法做吧。",
+        "answerPy": "Rúguǒ nǐ rènwéi duì, jiù zhào nàge bànfǎ zuò ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我认为",
+        "py": "wǒ rènwéi",
+        "vn": "tôi cho rằng"
+      },
+      {
+        "zh": "大家都认为",
+        "py": "dàjiā dōu rènwéi",
+        "vn": "mọi người đều cho rằng"
+      },
+      {
+        "zh": "认为不可能",
+        "py": "rènwéi bù kěnéng",
+        "vn": "cho là không thể"
+      },
+      {
+        "zh": "你认为呢",
+        "py": "nǐ rènwéi ne",
+        "vn": "bạn nghĩ sao"
+      },
+      {
+        "zh": "认为很重要",
+        "py": "rènwéi hěn zhòngyào",
+        "vn": "cho là rất quan trọng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 认为 + mệnh đề",
+        "m": "Ai đó cho rằng …"
+      },
+      {
+        "s": "认为 (quan điểm) ≠ 以为 (nghĩ sai) — HSK 4 sẽ học 以为"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "皮鞋",
+    "py": "píxié",
+    "pos": "Danh từ",
+    "vn": "giày da",
+    "hv": "bì hài",
+    "em": "👞",
+    "lesson": 2,
+    "explain": [
+      "Loại giày làm từ chất liệu da."
+    ],
+    "usage": "Danh từ; đi cùng động từ 送/买: 送皮鞋.",
+    "collo": [
+      "小皮鞋",
+      "买皮鞋",
+      "一双皮鞋"
+    ],
+    "ex_zh": "你送的小皮鞋和小帽子真漂亮！",
+    "ex_py": "Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!",
+    "ex_vn": "Đôi giày da và cái mũ bạn tặng đẹp thật!",
+    "exList": [
+      {
+        "zh": "谢谢你们来看我女儿。你送的小皮鞋和小帽子真漂亮！",
+        "py": "Xièxie nǐmen lái kàn wǒ nǚ'ér. Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!",
+        "vn": "Cảm ơn các bạn đến thăm con gái mình. Đôi giày da và cái mũ bạn tặng đẹp thật!"
+      },
+      {
+        "zh": "每天都帮她把小皮鞋放好。",
+        "py": "Měi tiān dōu bāng tā bǎ xiǎo píxié fànghǎo.",
+        "vn": "Ngày nào cũng giúp cô bé xếp gọn đôi giày da nhỏ."
+      },
+      {
+        "zh": "这双小皮鞋真好看，谁给你买的？",
+        "py": "Zhè shuāng xiǎo píxié zhēn hǎokàn, shéi gěi nǐ mǎi de?",
+        "vn": "Đôi giày da nhỏ này đẹp thật, ai mua cho bạn vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "皮",
+        "p": "pí",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "皮 (bì – da)",
+        "mean": "da",
+        "tip": "Chữ tượng hình mô phỏng bàn tay LỘT DA thú → DA; 皮(da)+鞋(giày) = GIÀY DA.",
+        "cf": "反 (fǎn – \"trái lại\", hình dáng gần giống\")",
+        "w": "皮鞋 / 皮肤"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đôi giày da đen đó chắc đắt lắm nhỉ? Nếu không đắt thì tôi cũng mua một đôi.",
+        "answer": "那双黑皮鞋很贵吧？如果不贵，我就也买一双。",
+        "answerPy": "Nà shuāng hēi píxié hěn guì ba? Rúguǒ bú guì, wǒ jiù yě mǎi yì shuāng.",
+        "note": "một + 双 + 皮鞋 — lượng từ 双 (bài 11).",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích đôi giày da đó thì tôi mua tặng bạn.",
+        "answer": "如果你喜欢那双皮鞋，我就买给你。",
+        "answerPy": "Rúguǒ nǐ xǐhuan nà shuāng píxié, wǒ jiù mǎi gěi nǐ.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一双皮鞋",
+        "py": "yì shuāng píxié",
+        "vn": "một đôi giày da"
+      },
+      {
+        "zh": "买皮鞋",
+        "py": "mǎi píxié",
+        "vn": "mua giày da"
+      },
+      {
+        "zh": "黑皮鞋",
+        "py": "hēi píxié",
+        "vn": "giày da đen"
+      },
+      {
+        "zh": "穿皮鞋",
+        "py": "chuān píxié",
+        "vn": "đi giày da"
+      },
+      {
+        "zh": "皮鞋很贵",
+        "py": "píxié hěn guì",
+        "vn": "giày da rất đắt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 双 + 皮鞋",
+        "m": "Lượng từ 双 (bài 11) cho vật đi thành đôi"
+      },
+      {
+        "s": "皮 + 鞋",
+        "m": "Giày (鞋) bằng da (皮)"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "帽子",
+    "py": "màozi",
+    "pos": "Danh từ",
+    "vn": "mũ, nón",
+    "hv": "mạo tử",
+    "em": "🎩",
+    "lesson": 2,
+    "explain": [
+      "Vật đội trên đầu để che nắng, giữ ấm hoặc làm đẹp."
+    ],
+    "usage": "Danh từ; đi cùng động từ 戴/送: 戴帽子.",
+    "collo": [
+      "小帽子",
+      "戴帽子",
+      "买帽子"
+    ],
+    "ex_zh": "你送的小皮鞋和小帽子真漂亮！",
+    "ex_py": "Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!",
+    "ex_vn": "Đôi giày da và cái mũ bạn tặng đẹp thật!",
+    "exList": [
+      {
+        "zh": "谢谢你们来看我女儿。你送的小皮鞋和小帽子真漂亮！",
+        "py": "Xièxie nǐmen lái kàn wǒ nǚ'ér. Nǐ sòng de xiǎo píxié hé xiǎo màozi zhēn piàoliang!",
+        "vn": "Cảm ơn các bạn đến thăm con gái mình. Đôi giày da và cái mũ bạn tặng đẹp thật!"
+      },
+      {
+        "zh": "外边冷极了，戴上帽子吧。",
+        "py": "Wàibian lěng jí le, dàishang màozi ba.",
+        "vn": "Bên ngoài lạnh lắm, đội mũ vào đi."
+      },
+      {
+        "zh": "这顶帽子是谁的？",
+        "py": "Zhè dǐng màozi shì shéi de?",
+        "vn": "Cái mũ này của ai vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "帽",
+        "p": "mào",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "巾 trái → 冒 phải",
+        "rad": "巾 (cân – khăn, vải)",
+        "mean": "mũ, nón",
+        "tip": "巾(vải, khăn) + 冒(che trên đầu) → tấm vải CHE lên đầu = MŨ, NÓN.",
+        "cf": "冒 (mào – \"liều lĩnh\", không có bộ 巾\")",
+        "w": "帽子 / 戴帽子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay nóng cực kỳ, bạn đừng đội mũ nữa, kẻo càng nóng hơn.",
+        "answer": "今天热极了，你别戴帽子了，不然会更热。",
+        "answerPy": "Jīntiān rè jí le, nǐ bié dài màozi le, bùrán huì gèng rè.",
+        "note": "极了 là từ bài 15; 戴帽子 chứ không nói 穿帽子.",
+        "pair": "不然……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu trời lạnh thì bạn nên đội mũ.",
+        "answer": "如果天气冷，你就应该戴帽子。",
+        "answerPy": "Rúguǒ tiānqì lěng, nǐ jiù yīnggāi dài màozi.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "戴帽子",
+        "py": "dài màozi",
+        "vn": "đội mũ"
+      },
+      {
+        "zh": "买帽子",
+        "py": "mǎi màozi",
+        "vn": "mua mũ"
+      },
+      {
+        "zh": "一个帽子",
+        "py": "yí gè màozi",
+        "vn": "một cái mũ"
+      },
+      {
+        "zh": "小帽子",
+        "py": "xiǎo màozi",
+        "vn": "cái mũ nhỏ"
+      },
+      {
+        "zh": "别戴帽子了",
+        "py": "bié dài màozi le",
+        "vn": "đừng đội mũ nữa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "戴 + 帽子",
+        "m": "Đội mũ — dùng 戴 như 戴眼镜 (bài 6)"
+      },
+      {
+        "s": "✗ 穿帽子 → ✓ 戴帽子"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "长",
+    "py": "zhǎng",
+    "pos": "Động từ",
+    "vn": "trưởng thành, lớn lên",
+    "hv": "trưởng",
+    "em": "📏",
+    "lesson": 2,
+    "explain": [
+      "Phát triển về kích thước, tuổi tác theo thời gian."
+    ],
+    "usage": "Động từ, thường đi cùng bổ ngữ trạng thái: 长得 + [tính từ].",
+    "collo": [
+      "长得可爱",
+      "长高了",
+      "长大了"
+    ],
+    "ex_zh": "你女儿长得白白的、胖胖的，真可爱！",
+    "ex_py": "Nǐ nǚ'ér zhǎng de báibái de, pàngpàng de, zhēn kě'ài!",
+    "ex_vn": "Con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!",
+    "exList": [
+      {
+        "zh": "别客气，你女儿长得白白的、胖胖的，真可爱！",
+        "py": "Bié kèqi, nǐ nǚ'ér zhǎng de báibái de, pàngpàng de, zhēn kě'ài!",
+        "vn": "Đừng khách sáo, con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!"
+      },
+      {
+        "zh": "她鼻子小小的，头发黑黑的，长得像谁？",
+        "py": "Tā bízi xiǎoxiǎo de, tóufa hēihēi de, zhǎng de xiàng shéi?",
+        "vn": "Bé mũi nhỏ nhỏ, tóc đen đen, giống ai vậy?"
+      },
+      {
+        "zh": "乐乐，你长高了，也长胖了。",
+        "py": "Lèlè, nǐ zhǎnggāo le, yě zhǎngpàng le.",
+        "vn": "Lạc Lạc, con cao lên rồi, cũng mập lên rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "长",
+        "p": "zhǎng",
+        "type": "独体字 · Chữ đơn (tượng hình, giản thể)",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "长 (trường)",
+        "mean": "lớn lên; dài",
+        "tip": "Chữ tượng hình mô phỏng mái tóc DÀI theo thời gian → khi đọc zhǎng nghĩa là LỚN LÊN, TRƯỞNG THÀNH; khi đọc cháng nghĩa là DÀI.",
+        "cf": "张 (zhāng – \"mở ra\", có bộ 弓\")",
+        "w": "长大 / 长得 / 校长"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con trai, mùa hè này con không những cao lên nhiều, mà còn gầy đi nữa.",
+        "answer": "儿子，你这个暑假不但长高了不少，而且还瘦了。",
+        "answerPy": "Érzi, nǐ zhège shǔjià búdàn zhǎng gāole bù shǎo, érqiě hái shòu le.",
+        "note": "长 (zhǎng, lớn lên) khác 长 (cháng, dài); 瘦 là từ bài 2.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu con lớn lên, con sẽ hiểu bố mẹ hơn.",
+        "answer": "如果你长大了，就会更了解爸爸妈妈。",
+        "answerPy": "Rúguǒ nǐ zhǎngdà le, jiù huì gèng liǎojiě bàba māma.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 了解 đã học ở Bài 15).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "长高了",
+        "py": "zhǎng gāo le",
+        "vn": "cao lên rồi"
+      },
+      {
+        "zh": "长大了",
+        "py": "zhǎng dà le",
+        "vn": "lớn rồi"
+      },
+      {
+        "zh": "长得可爱",
+        "py": "zhǎng de kě'ài",
+        "vn": "trông đáng yêu"
+      },
+      {
+        "zh": "长得像妈妈",
+        "py": "zhǎng de xiàng māma",
+        "vn": "trông giống mẹ"
+      },
+      {
+        "zh": "长得很快",
+        "py": "zhǎng de hěn kuài",
+        "vn": "lớn rất nhanh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "长 + 得 + Adj",
+        "m": "Trông thế nào — 长得像, 长得可爱"
+      },
+      {
+        "s": "长 (zhǎng, lớn lên) ≠ 长 (cháng, dài) — cùng chữ, khác âm"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "可爱",
+    "py": "kě'ài",
+    "pos": "Tính từ",
+    "vn": "đáng yêu, dễ thương",
+    "hv": "khả ái",
+    "em": "🥰",
+    "lesson": 2,
+    "explain": [
+      "Có vẻ ngoài hoặc tính cách khiến người khác yêu thích."
+    ],
+    "usage": "Tính từ, làm vị ngữ: 真可爱.",
+    "collo": [
+      "真可爱",
+      "可爱极了",
+      "长得可爱"
+    ],
+    "ex_zh": "你女儿长得白白的、胖胖的，真可爱！",
+    "ex_py": "Nǐ nǚ'ér zhǎng de báibái de, pàngpàng de, zhēn kě'ài!",
+    "ex_vn": "Con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!",
+    "exList": [
+      {
+        "zh": "别客气，你女儿长得白白的、胖胖的，真可爱！",
+        "py": "Bié kèqi, nǐ nǚ'ér zhǎng de báibái de, pàngpàng de, zhēn kě'ài!",
+        "vn": "Đừng khách sáo, con gái bạn trắng trắng, mũm mĩm, đáng yêu thật!"
+      },
+      {
+        "zh": "你家小狗小小的，长得真可爱！",
+        "py": "Nǐ jiā xiǎogǒu xiǎoxiǎo de, zhǎng de zhēn kě'ài!",
+        "vn": "Con chó nhỏ nhà bạn nho nhỏ, trông đáng yêu thật!"
+      },
+      {
+        "zh": "那孩子特别可爱，出生时特别胖。",
+        "py": "Nà háizi tèbié kě'ài, chūshēng shí tèbié pàng.",
+        "vn": "Đứa bé đó đặc biệt đáng yêu, lúc sinh ra rất mũm mĩm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "爱",
+        "p": "ài",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "⺈ trên → 友 dưới (giản thể)",
+        "rad": "爪 (trảo – móng vuốt)",
+        "mean": "yêu thương",
+        "tip": "⺈(bàn tay) + 友(bạn bè) → dùng TAY ôm ấp BẠN BÈ thân thiết = YÊU THƯƠNG; 可(có thể)+爱(yêu) = ĐÁNG YÊU.",
+        "cf": "受 (shòu – \"nhận\", hình dáng gần giống\")",
+        "w": "可爱 / 爱好"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Con mèo nhà hàng xóm vừa mũm mĩm vừa đáng yêu, đứa trẻ nào cũng thích.",
+        "answer": "邻居家的猫又胖胖的又可爱，每个孩子都喜欢。",
+        "answerPy": "Línjū jiā de māo yòu pàngpàng de yòu kě'ài, měi ge háizi dōu xǐhuan.",
+        "note": "胖 là từ bài 2; dạng lặp 胖胖的 nghe thân mật hơn.",
+        "pair": "又……又……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu con mèo đó đáng yêu thì chúng ta mang về nhà đi.",
+        "answer": "如果那只猫可爱，我们就把它带回家吧。",
+        "answerPy": "Rúguǒ nà zhī māo kě'ài, wǒmen jiù bǎ tā dài huí jiā ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "真可爱",
+        "py": "zhēn kě'ài",
+        "vn": "đáng yêu thật"
+      },
+      {
+        "zh": "可爱极了",
+        "py": "kě'ài jí le",
+        "vn": "đáng yêu cực kỳ"
+      },
+      {
+        "zh": "长得可爱",
+        "py": "zhǎng de kě'ài",
+        "vn": "trông đáng yêu"
+      },
+      {
+        "zh": "可爱的孩子",
+        "py": "kě'ài de háizi",
+        "vn": "đứa trẻ dễ thương"
+      },
+      {
+        "zh": "很可爱",
+        "py": "hěn kě'ài",
+        "vn": "rất dễ thương"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 极了",
+        "m": "Cực kỳ … — 极了 là từ bài 15"
+      },
+      {
+        "s": "可 + 爱",
+        "m": "Đáng (可) yêu (爱) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "米",
+    "py": "mǐ",
+    "pos": "Danh từ",
+    "vn": "mét",
+    "hv": "mễ",
+    "em": "📐",
+    "lesson": 2,
+    "explain": [
+      "Đơn vị đo chiều dài trong hệ mét."
+    ],
+    "usage": "Danh từ đơn vị, đi sau con số: 一米, 快1米了.",
+    "collo": [
+      "1米",
+      "两米",
+      "一千米"
+    ],
+    "ex_zh": "快1米了，25公斤。",
+    "ex_py": "Kuài yì mǐ le, èrshíwǔ gōngjīn.",
+    "ex_vn": "Sắp được 1 mét rồi, nặng 25 cân.",
+    "exList": [
+      {
+        "zh": "快1米了，25公斤。",
+        "py": "Kuài yì mǐ le, èrshíwǔ gōngjīn.",
+        "vn": "Sắp được 1 mét rồi, nặng 25 cân."
+      },
+      {
+        "zh": "我打算每天去运动场跑两千米。",
+        "py": "Wǒ dǎsuàn měi tiān qù yùndòngchǎng pǎo liǎng qiān mǐ.",
+        "vn": "Tôi định mỗi ngày ra sân vận động chạy hai nghìn mét."
+      },
+      {
+        "zh": "离这儿两百米就是学校。",
+        "py": "Lí zhèr liǎngbǎi mǐ jiùshì xuéxiào.",
+        "vn": "Cách đây hai trăm mét là trường học."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "米",
+        "p": "mǐ",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 6,
+        "ord": "nét liền",
+        "rad": "米 (mễ – gạo)",
+        "mean": "gạo; mét",
+        "tip": "Chữ tượng hình mô phỏng các HẠT GẠO rơi vãi → GẠO; do phiên âm gần giống \"mètre\" nên mượn dùng làm đơn vị MÉT.",
+        "cf": "来 (lái – \"đến\", hình dáng gần giống\")",
+        "w": "米 (mét) / 大米"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Siêu thị cách nhà tôi không xa, chỉ khoảng ba trăm mét là tới.",
+        "answer": "超市离我家不远，大概三百米就到了。",
+        "answerPy": "Chāoshì lí wǒ jiā bù yuǎn, dàgài sānbǎi mǐ jiù dào le.",
+        "note": "离 + nơi chốn + 远 / 近 — cách đâu xa hay gần.",
+        "pair": "……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn chạy được hai nghìn mét thì sức khỏe sẽ tốt hơn.",
+        "answer": "如果你能跑两千米，身体就会更好。",
+        "answerPy": "Rúguǒ nǐ néng pǎo liǎng qiān mǐ, shēntǐ jiù huì gèng hǎo.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一米",
+        "py": "yì mǐ",
+        "vn": "một mét"
+      },
+      {
+        "zh": "三百米",
+        "py": "sānbǎi mǐ",
+        "vn": "ba trăm mét"
+      },
+      {
+        "zh": "一千米",
+        "py": "yìqiān mǐ",
+        "vn": "một nghìn mét"
+      },
+      {
+        "zh": "1米8",
+        "py": "mǐ",
+        "vn": "một mét tám"
+      },
+      {
+        "zh": "离这儿五百米",
+        "py": "lí zhèr wǔbǎi mǐ",
+        "vn": "cách đây năm trăm mét"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 米",
+        "m": "Bao nhiêu mét"
+      },
+      {
+        "s": "米 (mét) ≠ 米 (gạo) — cùng chữ, hai nghĩa"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "公斤",
+    "py": "gōngjīn",
+    "pos": "Danh từ",
+    "vn": "kilôgram",
+    "hv": "công cân",
+    "em": "⚖️",
+    "lesson": 2,
+    "explain": [
+      "Đơn vị đo khối lượng trong hệ mét."
+    ],
+    "usage": "Danh từ đơn vị, đi sau con số: 25公斤.",
+    "collo": [
+      "25公斤",
+      "瘦得只有40公斤",
+      "四公斤"
+    ],
+    "ex_zh": "快1米了，25公斤。",
+    "ex_py": "Kuài yì mǐ le, èrshíwǔ gōngjīn.",
+    "ex_vn": "Sắp được 1 mét rồi, nặng 25 cân.",
+    "exList": [
+      {
+        "zh": "快1米了，25公斤。",
+        "py": "Kuài yì mǐ le, èrshíwǔ gōngjīn.",
+        "vn": "Sắp được 1 mét rồi, nặng 25 cân."
+      },
+      {
+        "zh": "那时候她很瘦，瘦得只有40公斤。",
+        "py": "Nà shíhou tā hěn shòu, shòu de zhǐyǒu sìshí gōngjīn.",
+        "vn": "Lúc đó cô ấy rất gầy, gầy đến mức chỉ có 40 cân."
+      },
+      {
+        "zh": "那孩子出生时特别胖，四公斤呢。",
+        "py": "Nà háizi chūshēng shí tèbié pàng, sì gōngjīn ne.",
+        "vn": "Đứa bé đó lúc sinh ra rất mũm mĩm, tận bốn cân đấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "斤",
+        "p": "jīn",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "斤 (cân)",
+        "mean": "cân, rìu",
+        "tip": "Chữ tượng hình mô phỏng hình cái RÌU (dụng cụ cân đo thời xưa) → CÂN; 公(chung, tiêu chuẩn)+斤(cân) = KILÔGRAM.",
+        "cf": "斥 (chì – \"quở trách\", có nét chấm thêm\")",
+        "w": "公斤 / 斤 (đơn vị cân cổ)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bây giờ anh ấy béo lên rồi, béo đến mức đã tám mươi cân.",
+        "answer": "现在他胖了，胖得已经有八十公斤了。",
+        "answerPy": "Xiànzài tā pàng le, pàng de yǐjīng yǒu bāshí gōngjīn le.",
+        "note": "Adj + 得 + kết quả — béo đến mức nào.",
+        "pair": "……得……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn ăn nhiều thì sẽ tăng thêm vài cân.",
+        "answer": "如果你多吃点儿，就会长几公斤。",
+        "answerPy": "Rúguǒ nǐ duō chī diǎnr, jiù huì zhǎng jǐ gōngjīn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 长 vừa học trong bài này).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "25公斤",
+        "py": "gōngjīn",
+        "vn": "hai lăm cân"
+      },
+      {
+        "zh": "四公斤",
+        "py": "sì gōngjīn",
+        "vn": "bốn cân"
+      },
+      {
+        "zh": "八十公斤",
+        "py": "bāshí gōngjīn",
+        "vn": "tám mươi cân"
+      },
+      {
+        "zh": "重五公斤",
+        "py": "zhòng wǔ gōngjīn",
+        "vn": "nặng năm cân"
+      },
+      {
+        "zh": "只有40公斤",
+        "py": "zhǐyǒu gōngjīn",
+        "vn": "chỉ có bốn mươi cân"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số + 公斤",
+        "m": "Bao nhiêu ki-lô-gam"
+      },
+      {
+        "s": "公斤 (kg) — 1 公斤 = 2 斤"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "鼻子",
+    "py": "bízi",
+    "pos": "Danh từ",
+    "vn": "mũi",
+    "hv": "tị tử",
+    "em": "👃",
+    "lesson": 2,
+    "explain": [
+      "Bộ phận trên khuôn mặt dùng để thở và ngửi."
+    ],
+    "usage": "Danh từ; thường đi cùng tính từ lặp: 鼻子小小的.",
+    "collo": [
+      "鼻子小小的",
+      "高高的鼻子",
+      "鼻子像爸爸"
+    ],
+    "ex_zh": "你看她鼻子小小的，头发黑黑的。",
+    "ex_py": "Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de.",
+    "ex_vn": "Bạn xem bé mũi nhỏ nhỏ, tóc đen đen.",
+    "exList": [
+      {
+        "zh": "你看她鼻子小小的，头发黑黑的，长得像谁？",
+        "py": "Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de, zhǎng de xiàng shéi?",
+        "vn": "Bạn xem bé mũi nhỏ nhỏ, tóc đen đen, giống ai vậy?"
+      },
+      {
+        "zh": "鼻子像爸爸，高高的。",
+        "py": "Bízi xiàng bàba, gāogāo de.",
+        "vn": "Mũi giống bố, cao cao."
+      },
+      {
+        "zh": "他的鼻子长得很好看。",
+        "py": "Tā de bízi zhǎng de hěn hǎokàn.",
+        "vn": "Mũi của anh ấy trông rất đẹp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "鼻",
+        "p": "bí",
+        "type": "上下结构 · Trên-dưới",
+        "st": 14,
+        "ord": "自 trên → 畀 dưới",
+        "rad": "自 (tự – mũi)",
+        "mean": "mũi",
+        "tip": "自(hình cái mũi cổ) + 畀(cho, trao) → 自 vốn là hình MŨI, thêm 畀 làm rõ nghĩa = MŨI (bộ phận cơ thể).",
+        "cf": "自 (zì – \"tự mình\", chính là hình cái mũi ban đầu\")",
+        "w": "鼻子 / 鼻音"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mũi cháu giống bố, sống mũi cao cao; còn miệng thì giống chị, nho nhỏ.",
+        "answer": "鼻子像爸爸，高高的；嘴像姐姐，小小的。",
+        "answerPy": "Bízi xiàng bàba, gāogāo de; zuǐ xiàng jiějie, xiǎoxiǎo de.",
+        "note": "Dạng lặp tính từ 高高的, 小小的 — nghe mềm và thân mật.",
+        "pair": "……；……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu mũi bé giống bố thì chắc chắn cao cao.",
+        "answer": "如果孩子的鼻子像爸爸，就一定是高高的。",
+        "answerPy": "Rúguǒ háizi de bízi xiàng bàba, jiù yídìng shì gāogāo de.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "鼻子小小的",
+        "py": "bízi xiǎoxiǎo de",
+        "vn": "mũi nho nhỏ"
+      },
+      {
+        "zh": "高高的鼻子",
+        "py": "gāogāo de bízi",
+        "vn": "sống mũi cao"
+      },
+      {
+        "zh": "鼻子像爸爸",
+        "py": "bízi xiàng bàba",
+        "vn": "mũi giống bố"
+      },
+      {
+        "zh": "鼻子不舒服",
+        "py": "bízi bù shūfu",
+        "vn": "mũi khó chịu"
+      },
+      {
+        "zh": "大鼻子",
+        "py": "dà bízi",
+        "vn": "mũi to"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + Adj + 的",
+        "m": "Dạng lặp tính từ: 小小的, 高高的 — nghe mềm và thân mật"
+      },
+      {
+        "s": "bộ phận + 像 + ai",
+        "m": "Bộ phận nào giống ai — 像 là từ bài 14"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "头发",
+    "py": "tóufa",
+    "pos": "Danh từ",
+    "vn": "tóc",
+    "hv": "đầu phát",
+    "em": "💇",
+    "lesson": 2,
+    "explain": [
+      "Sợi mọc trên đầu người."
+    ],
+    "usage": "Danh từ; thường đi cùng tính từ lặp: 头发黑黑的.",
+    "collo": [
+      "头发黑黑的",
+      "长头发",
+      "头发长长的"
+    ],
+    "ex_zh": "你看她鼻子小小的，头发黑黑的。",
+    "ex_py": "Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de.",
+    "ex_vn": "Bạn xem bé mũi nhỏ nhỏ, tóc đen đen.",
+    "exList": [
+      {
+        "zh": "你看她鼻子小小的，头发黑黑的，长得像谁？",
+        "py": "Nǐ kàn tā bízi xiǎoxiǎo de, tóufa hēihēi de, zhǎng de xiàng shéi?",
+        "vn": "Bạn xem bé mũi nhỏ nhỏ, tóc đen đen, giống ai vậy?"
+      },
+      {
+        "zh": "这个头发长长的是姐姐吧？",
+        "py": "Zhège tóufa chángcháng de shì jiějie ba?",
+        "vn": "Người tóc dài dài này là chị gái phải không?"
+      },
+      {
+        "zh": "她喜欢长头发，大女儿不喜欢。",
+        "py": "Tā xǐhuan cháng tóufa, dà nǚ'ér bù xǐhuan.",
+        "vn": "Bé thích để tóc dài, con gái lớn thì không thích."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "发",
+        "p": "fà",
+        "type": "独体字 · Chữ đơn (giản thể, đa âm)",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "又 (hựu)",
+        "mean": "tóc",
+        "tip": "Cùng chữ với 发(fā - phát ra), nhưng khi đọc fà nghĩa là TÓC — vì tóc cũng \"mọc/phát ra\" từ da đầu.",
+        "cf": "发 (fā – \"gửi, phát ra\", cùng chữ khác âm đọc\")",
+        "w": "头发 / 白发"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Người tóc ngắn ngắn kia là ai vậy? Nếu bạn quen thì giới thiệu giúp tôi.",
+        "answer": "那个头发短短的是谁啊？如果你认识，就给我介绍一下。",
+        "answerPy": "Nàge tóufa duǎnduǎn de shì shéi a? Rúguǒ nǐ rènshi, jiù gěi wǒ jièshào yíxià.",
+        "note": "头发 + 长 / 短 — tóc dài, tóc ngắn.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu tóc bạn dài thì trông sẽ đẹp hơn.",
+        "answer": "如果你的头发长长的，看起来就会更漂亮。",
+        "answerPy": "Rúguǒ nǐ de tóufa chángcháng de, kàn qilai jiù huì gèng piàoliang.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "长头发",
+        "py": "zhǎng tóufa",
+        "vn": "tóc dài"
+      },
+      {
+        "zh": "短头发",
+        "py": "duǎn tóufa",
+        "vn": "tóc ngắn"
+      },
+      {
+        "zh": "头发黑黑的",
+        "py": "tóufa hēihēi de",
+        "vn": "tóc đen nhánh"
+      },
+      {
+        "zh": "洗头发",
+        "py": "xǐ tóufa",
+        "vn": "gội đầu"
+      },
+      {
+        "zh": "头发很长",
+        "py": "tóufa hěn zhǎng",
+        "vn": "tóc rất dài"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "头发 + 长 / 短",
+        "m": "Tóc dài / ngắn — 长 ở đây đọc cháng"
+      },
+      {
+        "s": "头 + 发",
+        "m": "Tóc (发) trên đầu (头)"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "检查",
+    "py": "jiǎnchá",
+    "pos": "Động từ",
+    "vn": "kiểm tra, khám",
+    "hv": "kiểm tra",
+    "em": "🔍",
+    "lesson": 3,
+    "explain": [
+      "Xem xét kỹ để phát hiện vấn đề."
+    ],
+    "usage": "Động từ, mang tân ngữ: 检查牙, 检查身体.",
+    "collo": [
+      "去医院检查",
+      "检查一下",
+      "检查好几次"
+    ],
+    "ex_zh": "如果不舒服，就去医院检查一下吧。",
+    "ex_py": "Rúguǒ bù shūfu, jiù qù yīyuàn jiǎnchá yíxià ba.",
+    "ex_vn": "Nếu khó chịu thì đi bệnh viện khám thử đi.",
+    "exList": [
+      {
+        "zh": "如果不舒服，就去医院检查一下吧。",
+        "py": "Rúguǒ bù shūfu, jiù qù yīyuàn jiǎnchá yíxià ba.",
+        "vn": "Nếu khó chịu thì đi bệnh viện khám thử đi."
+      },
+      {
+        "zh": "检查好几次了，但是没什么用。",
+        "py": "Jiǎnchá hǎo jǐ cì le, dànshì méi shénme yòng.",
+        "vn": "Khám mấy lần rồi, nhưng chẳng có tác dụng gì."
+      },
+      {
+        "zh": "只听你说不行，我需要检查一下才清楚。",
+        "py": "Zhǐ tīng nǐ shuō bù xíng, wǒ xūyào jiǎnchá yíxià cái qīngchu.",
+        "vn": "Chỉ nghe bạn nói không được đâu, tôi cần khám thử mới rõ được."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "检",
+        "p": "jiǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "木 trái → 佥 phải (giản thể)",
+        "rad": "木 (mộc – gỗ)",
+        "mean": "kiểm tra",
+        "tip": "木(gỗ, thẻ tre ghi chép) + 佥(mọi người cùng xem) → mọi người cùng XEM XÉT thẻ ghi = KIỂM TRA.",
+        "cf": "验 (yàn – \"kiểm nghiệm\", có bộ 马\")",
+        "w": "检查 / 检验"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Máy tính bị lỗi rồi, tôi phải tìm người kiểm tra thì mới dùng được.",
+        "answer": "电脑出问题了，我得找人检查一下才能用。",
+        "answerPy": "Diànnǎo chū wèntí le, wǒ děi zhǎo rén jiǎnchá yíxià cái néng yòng.",
+        "note": "才 diễn tả điều kiện cần (ôn lại đã học ở Bài 12).",
+        "pair": "一……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu ngày mai vẫn không khỏe thì đi khám bác sĩ đi.",
+        "answer": "如果明天还不好，就去检查一下医生吧。",
+        "answerPy": "Rúguǒ míngtiān hái bù hǎo, jiù qù jiǎnchá yíxià yīshēng ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去医院检查",
+        "py": "qù yīyuàn jiǎnchá",
+        "vn": "đi bệnh viện khám"
+      },
+      {
+        "zh": "检查一下",
+        "py": "jiǎnchá yíxià",
+        "vn": "kiểm tra một chút"
+      },
+      {
+        "zh": "检查身体",
+        "py": "jiǎnchá shēntǐ",
+        "vn": "khám sức khoẻ"
+      },
+      {
+        "zh": "检查作业",
+        "py": "jiǎnchá zuòyè",
+        "vn": "kiểm tra bài tập"
+      },
+      {
+        "zh": "检查好几次",
+        "py": "jiǎnchá hǎo jǐ cì",
+        "vn": "kiểm tra mấy lần"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "检查 + 身体 / 作业",
+        "m": "Khám sức khoẻ, kiểm tra bài"
+      },
+      {
+        "s": "检 + 查",
+        "m": "Xem xét (检) và tra (查)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "刷牙",
+    "py": "shuā yá",
+    "pos": "Động từ",
+    "vn": "chải răng",
+    "hv": "loát nha",
+    "em": "🪥",
+    "lesson": 3,
+    "explain": [
+      "Dùng bàn chải làm sạch răng."
+    ],
+    "usage": "Động từ ly hợp: 刷 + 牙; thường đi cùng 好好儿: 好好儿刷牙.",
+    "collo": [
+      "好好儿刷牙",
+      "早上刷牙",
+      "刷牙、洗脸"
+    ],
+    "ex_zh": "每次医生都告诉我，回家好好儿刷牙。",
+    "ex_py": "Měi cì yīshēng dōu gàosu wǒ, huí jiā hǎohāor shuā yá.",
+    "ex_vn": "Lần nào bác sĩ cũng bảo tôi, về nhà đánh răng cho kỹ.",
+    "exList": [
+      {
+        "zh": "每次医生都告诉我，回家好好儿刷牙。",
+        "py": "Měi cì yīshēng dōu gàosu wǒ, huí jiā hǎohāor shuā yá.",
+        "vn": "Lần nào bác sĩ cũng bảo tôi, về nhà đánh răng cho kỹ."
+      },
+      {
+        "zh": "起床以后要先刷牙、洗脸。",
+        "py": "Qǐchuáng yǐhòu yào xiān shuā yá, xǐ liǎn.",
+        "vn": "Sau khi ngủ dậy phải đánh răng, rửa mặt trước."
+      },
+      {
+        "zh": "孩子还不会自己刷牙。",
+        "py": "Háizi hái bú huì zìjǐ shuā yá.",
+        "vn": "Đứa bé vẫn chưa biết tự đánh răng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "刷",
+        "p": "shuā",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "尸 trái → 刂 phải",
+        "rad": "刂 (đao – dao)",
+        "mean": "chải, cọ",
+        "tip": "尸(hình dáng vật thể) + 刂(công cụ) → dùng CÔNG CỤ (bàn chải) chà lên bề mặt = CHẢI, ĐÁNH (răng).",
+        "cf": "刻 (kè – \"khắc\", có 亥 thay vì 尸\")",
+        "w": "刷牙 / 刷卡"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trước khi ngủ phải đánh răng và thay quần áo trước, rồi mới lên giường.",
+        "answer": "睡觉以前要先刷牙、脱衣服，然后再上床。",
+        "answerPy": "Shuìjiào yǐqián yào xiān shuāyá, tuō yīfu, ránhòu zài shàng chuáng.",
+        "note": "脱 là từ bài 19 HSK4 nhưng dùng từ HSK 3; 刷牙 là từ ly hợp.",
+        "pair": "先……然后……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đánh răng cẩn thận thì răng sẽ không đau nữa.",
+        "answer": "如果你好好儿刷牙，牙就不会疼了。",
+        "answerPy": "Rúguǒ nǐ hǎohāor shuā yá, yá jiù bú huì téng le.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "好好儿刷牙",
+        "py": "hǎohǎo ér shuā yá",
+        "vn": "đánh răng cho kỹ"
+      },
+      {
+        "zh": "早上刷牙",
+        "py": "zǎoshang shuā yá",
+        "vn": "sáng đánh răng"
+      },
+      {
+        "zh": "刷牙、洗脸",
+        "py": "shuā yá xǐliǎn",
+        "vn": "đánh răng rửa mặt"
+      },
+      {
+        "zh": "刷了牙",
+        "py": "shuā le yá",
+        "vn": "đã đánh răng"
+      },
+      {
+        "zh": "睡觉前刷牙",
+        "py": "shuì jiào qián shuā yá",
+        "vn": "trước khi ngủ đánh răng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "刷 + 了 + 牙",
+        "m": "刷牙 là từ ly hợp: 刷了牙 ✓"
+      },
+      {
+        "s": "刷 + 牙",
+        "m": "Chải (刷) răng (牙)"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "关系",
+    "py": "guānxi",
+    "pos": "Danh từ",
+    "vn": "quan hệ",
+    "hv": "quan hệ",
+    "em": "🤝",
+    "lesson": 4,
+    "explain": [
+      "Mối liên hệ, tương tác giữa người với người hoặc sự vật."
+    ],
+    "usage": "Danh từ; đi cùng động từ 变得: 关系变得更好.",
+    "collo": [
+      "人和人的关系",
+      "关系冷冷的",
+      "关系变得更好"
+    ],
+    "ex_zh": "很多人都觉得现在人和人的关系冷冷的。",
+    "ex_py": "Hěn duō rén dōu juéde xiànzài rén hé rén de guānxi lěnglěng de.",
+    "ex_vn": "Nhiều người cảm thấy quan hệ giữa người với người hiện nay lạnh nhạt.",
+    "exList": [
+      {
+        "zh": "很多人都觉得现在人和人的关系冷冷的。",
+        "py": "Hěn duō rén dōu juéde xiànzài rén hé rén de guānxi lěnglěng de.",
+        "vn": "Nhiều người cảm thấy quan hệ giữa người với người hiện nay lạnh nhạt."
+      },
+      {
+        "zh": "和别人的关系就会变得更好。",
+        "py": "Hé biéren de guānxi jiù huì biàn de gèng hǎo.",
+        "vn": "Quan hệ với người khác sẽ trở nên tốt hơn."
+      },
+      {
+        "zh": "人和人的关系也不错，遇到问题时，别人都愿意帮助你。",
+        "py": "Rén hé rén de guānxi yě búcuò, yùdào wèntí shí, biéren dōu yuànyì bāngzhù nǐ.",
+        "vn": "Quan hệ giữa người với người cũng không tệ, khi gặp vấn đề, người khác đều sẵn lòng giúp bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "系",
+        "p": "xì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "丿 trên → 糸 dưới (giản thể)",
+        "rad": "糸 (mịch – tơ)",
+        "mean": "liên hệ, buộc",
+        "tip": "丿(bàn tay) + 糸(sợi tơ) → dùng tay BUỘC các sợi tơ lại với nhau = LIÊN HỆ, mở rộng nghĩa QUAN HỆ.",
+        "cf": "系 (jì – \"buộc chặt\", cùng chữ khác nghĩa\")",
+        "w": "关系 / 关心"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần học được cách giúp đỡ lẫn nhau là quan hệ giữa mọi người sẽ tốt lên.",
+        "answer": "只要学会互相帮助，大家的关系就会变得更好。",
+        "answerPy": "Zhǐyào xuéhuì hùxiāng bāngzhù, dàjiā de guānxi jiù huì biàn de gèng hǎo.",
+        "note": "互相 và 更 là từ bài 6.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn cười nhiều với người khác thì người khác sẽ sẵn lòng giúp bạn.",
+        "answer": "只要你多对别人笑笑，别人就会愿意帮助你。",
+        "answerPy": "Zhǐyào nǐ duō duì biéren xiàoxiao, biéren jiù huì yuànyì bāngzhù nǐ.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 愿意 đã học ở Bài 13).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "人和人的关系",
+        "py": "rén hé rén de guānxi",
+        "vn": "quan hệ giữa người với người"
+      },
+      {
+        "zh": "关系很好",
+        "py": "guānxi hěn hǎo",
+        "vn": "quan hệ tốt"
+      },
+      {
+        "zh": "关系变得更好",
+        "py": "guānxi biàn de gèng hǎo",
+        "vn": "quan hệ tốt lên"
+      },
+      {
+        "zh": "没关系",
+        "py": "méi guānxi",
+        "vn": "không sao"
+      },
+      {
+        "zh": "跟他的关系",
+        "py": "gēn tā de guānxi",
+        "vn": "quan hệ với anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 的关系",
+        "m": "Quan hệ với ai"
+      },
+      {
+        "s": "没关系",
+        "m": "Không sao đâu — lời đáp khi người khác xin lỗi"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "别人",
+    "py": "biérén",
+    "pos": "Danh từ",
+    "vn": "người khác",
+    "hv": "biệt nhân",
+    "em": "👥",
+    "lesson": 4,
+    "explain": [
+      "Chỉ những người khác, không phải người nói."
+    ],
+    "usage": "Danh từ, thường làm tân ngữ hoặc định ngữ: 对别人, 别人的.",
+    "collo": [
+      "对别人",
+      "别人的关系",
+      "跟别人见面"
+    ],
+    "ex_zh": "我们应该多对别人笑笑。",
+    "ex_py": "Wǒmen yīnggāi duō duì biéren xiàoxiao.",
+    "ex_vn": "Chúng ta nên cười nhiều hơn với người khác.",
+    "exList": [
+      {
+        "zh": "忙得没时间跟别人见面。",
+        "py": "Máng de méi shíjiān gēn biéren jiànmiàn.",
+        "vn": "Bận đến mức không có thời gian gặp người khác."
+      },
+      {
+        "zh": "其实，我们应该多对别人笑笑。",
+        "py": "Qíshí, wǒmen yīnggāi duō duì biéren xiàoxiao.",
+        "vn": "Thực ra, chúng ta nên cười nhiều hơn với người khác."
+      },
+      {
+        "zh": "遇到问题时，别人都愿意帮助你。",
+        "py": "Yùdào wèntí shí, biéren dōu yuànyì bāngzhù nǐ.",
+        "vn": "Khi gặp vấn đề, người khác đều sẵn lòng giúp bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "别",
+        "p": "bié",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "另 trái → 刂 phải",
+        "rad": "刂 (đao – dao)",
+        "mean": "khác, chia lìa",
+        "tip": "另(riêng biệt) + 刂(dao, cắt) → CẮT RIÊNG ra thành phần KHÁC; 别(khác)+人(người) = NGƯỜI KHÁC.",
+        "cf": "到 (dào – \"đến\", có 至 thay vì 另\")",
+        "w": "别人 / 别的"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Khi gặp từ không hiểu thì cứ hỏi người khác, đừng ngại.",
+        "answer": "遇到不懂的词语时，就问问别人，别不好意思。",
+        "answerPy": "Yùdào bù dǒng de cíyǔ shí, jiù wènwen biéren, bié bù hǎoyìsi.",
+        "note": "遇到 là từ bài 13 — tình cờ gặp.",
+        "pair": "……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn bận đến mức không gặp người khác thì quan hệ sẽ lạnh nhạt.",
+        "answer": "如果你忙得不跟别人见面，关系就会冷冷的。",
+        "answerPy": "Rúguǒ nǐ máng de bù gēn biéren jiànmiàn, guānxi jiù huì lěnglěng de.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "对别人",
+        "py": "duì biérén",
+        "vn": "đối với người khác"
+      },
+      {
+        "zh": "问问别人",
+        "py": "wènwèn biérén",
+        "vn": "hỏi người khác"
+      },
+      {
+        "zh": "帮助别人",
+        "py": "bāngzhù biérén",
+        "vn": "giúp đỡ người khác"
+      },
+      {
+        "zh": "别人的东西",
+        "py": "biérén de dōngxi",
+        "vn": "đồ của người khác"
+      },
+      {
+        "zh": "跟别人见面",
+        "py": "gēn biérén jiànmiàn",
+        "vn": "gặp người khác"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "帮助 + 别人",
+        "m": "Giúp đỡ người khác"
+      },
+      {
+        "s": "别人 ≈ 其他人 (bài 15)",
+        "m": "别人 thiên khẩu ngữ hơn"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "词语",
+    "py": "cíyǔ",
+    "pos": "Danh từ",
+    "vn": "từ ngữ",
+    "hv": "từ ngữ",
+    "em": "📖",
+    "lesson": 4,
+    "explain": [
+      "Từ và cụm từ trong ngôn ngữ."
+    ],
+    "usage": "Danh từ; đi cùng động từ 用: 用词语.",
+    "collo": [
+      "用词语",
+      "这样的词语",
+      "写对词语"
+    ],
+    "ex_zh": "如果能多用一些\"您好\"\"谢谢\"这样的词语。",
+    "ex_py": "Rúguǒ néng duō yòng yìxiē \"nín hǎo\" \"xièxie\" zhèyàng de cíyǔ.",
+    "ex_vn": "Nếu có thể dùng nhiều hơn những từ ngữ như \"xin chào\", \"cảm ơn\".",
+    "exList": [
+      {
+        "zh": "说话时如果能多用一些\"您好\"\"谢谢\"这样的词语，和别人的关系就会变得更好。",
+        "py": "Shuōhuà shí rúguǒ néng duō yòng yìxiē \"nín hǎo\" \"xièxie\" zhèyàng de cíyǔ, hé biéren de guānxi jiù huì biàn de gèng hǎo.",
+        "vn": "Khi nói chuyện nếu có thể dùng nhiều hơn những từ ngữ như \"xin chào\", \"cảm ơn\", thì quan hệ với người khác sẽ trở nên tốt hơn."
+      },
+      {
+        "zh": "如果有人能把这个星期学的词语都写对，老师就送给他一件礼物。",
+        "py": "Rúguǒ yǒu rén néng bǎ zhège xīngqī xué de cíyǔ dōu xiěduì, lǎoshī jiù sòng gěi tā yí jiàn lǐwù.",
+        "vn": "Nếu có ai viết đúng hết những từ ngữ học trong tuần này, thầy giáo sẽ tặng người đó một món quà."
+      },
+      {
+        "zh": "这些词语我都不认识。",
+        "py": "Zhèxiē cíyǔ wǒ dōu bú rènshi.",
+        "vn": "Những từ ngữ này tôi đều không biết."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "词",
+        "p": "cí",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "讠 trái → 司 phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "từ ngữ",
+        "tip": "讠(lời nói) + 司(quản lý, chi phối) → LỜI NÓI được sắp xếp có ý nghĩa = TỪ NGỮ.",
+        "cf": "司 (sī – \"quản lý\", không có bộ 讠\")",
+        "w": "词语 / 生词"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mấy câu này tôi đều không hiểu, vì có nhiều từ tôi chưa học.",
+        "answer": "这几个句子我都看不懂，因为有很多词语我还没学过。",
+        "answerPy": "Zhè jǐ ge jùzi wǒ dōu kàn bu dǒng, yīnwèi yǒu hěn duō cíyǔ wǒ hái méi xuéguo.",
+        "note": "句子 là từ bài 15; V + 不懂 — bổ ngữ khả năng phủ định.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn học thuộc những từ ngữ này thì tiếng Trung sẽ tiến bộ nhanh.",
+        "answer": "如果你记住这些词语，汉语水平就会提高得很快。",
+        "answerPy": "Rúguǒ nǐ jìzhù zhèxiē cíyǔ, Hànyǔ shuǐpíng jiù huì tígāo de hěn kuài.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 水平/提高 đã học ở Bài 15).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "用词语",
+        "py": "yòng cíyǔ",
+        "vn": "dùng từ ngữ"
+      },
+      {
+        "zh": "写对词语",
+        "py": "xiě duì cíyǔ",
+        "vn": "viết đúng từ"
+      },
+      {
+        "zh": "这样的词语",
+        "py": "zhèyàng de cíyǔ",
+        "vn": "từ ngữ như vậy"
+      },
+      {
+        "zh": "不懂的词语",
+        "py": "bù dǒng de cíyǔ",
+        "vn": "từ không hiểu"
+      },
+      {
+        "zh": "学新词语",
+        "py": "xué xīn cíyǔ",
+        "vn": "học từ mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "不懂的 + 词语",
+        "m": "Từ ngữ không hiểu"
+      },
+      {
+        "s": "词 + 语",
+        "m": "Từ (词) và lời (语)"
+      }
+    ]
+  }
 ];
 
 const wuData = [

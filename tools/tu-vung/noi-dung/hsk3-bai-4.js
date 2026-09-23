@@ -72,7 +72,7 @@ module.exports = {
   },
   '饿': {
     collo: [['很饿', 'rất đói'], ['有点儿饿', 'hơi đói'],
-            ['饿了', 'đói rồi'], ['饿死了', 'đói chết mất'],
+            ['饿了', 'đói rồi'], ['饿得很', 'đói lắm'],
             ['不饿', 'không đói']],
     patterns: [['Sub + 饿 + 了', 'Ai đó đói rồi — 了 chỉ sự thay đổi'],
                ['饿 ↔ 饱', 'Đói ↔ no']]
@@ -108,7 +108,7 @@ module.exports = {
   '客人': {
     collo: [['请客人', 'mời khách'], ['等客人', 'đợi khách'],
             ['跟客人说话', 'nói chuyện với khách'], ['家里来客人了', 'nhà có khách'],
-            ['热情地招待客人', 'nhiệt tình tiếp khách']],
+            ['对客人很热情', 'rất nhiệt tình với khách']],
     patterns: [['请 / 等 + 客人', 'Mời khách, đợi khách'],
                ['客 + 人', 'Người (人) là khách (客)']]
   }

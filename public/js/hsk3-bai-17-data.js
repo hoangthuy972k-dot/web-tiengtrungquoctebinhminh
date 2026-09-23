@@ -3,357 +3,1725 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'请假',py:'qǐng jià',pos:'Động từ',vn:'xin nghỉ phép', hv: 'thỉnh giá',em:'📝',lesson:1,
-   explain:['Xin phép nghỉ, không đi làm hoặc đi học trong một khoảng thời gian.'],
-   usage:'Động từ ly hợp: 请 + 假; đi cùng số ngày: 请几天假.',
-   collo:['请几天假','请病假','请事假'],
-   ex_zh:'下个星期我可以请几天假吗？',ex_py:'Xià ge xīngqī wǒ kěyǐ qǐng jǐ tiān jià ma?',ex_vn:'Tuần sau em xin nghỉ mấy ngày được không ạ?',
-   exList:[
-     {zh:'周经理，下个星期我可以请几天假吗？',py:'Zhōu jīnglǐ, xià ge xīngqī wǒ kěyǐ qǐng jǐ tiān jià ma?',vn:'Giám đốc Chu, tuần sau em xin nghỉ mấy ngày được không ạ?'},
-     {zh:'老师，我可以请几天假吗？',py:'Lǎoshī, wǒ kěyǐ qǐng jǐ tiān jià ma?',vn:'Thầy ơi, em xin nghỉ mấy ngày được không ạ?'},
-     {zh:'这个月你已经请了两个星期假了，不能再请了。',py:'Zhège yuè nǐ yǐjīng qǐngle liǎng ge xīngqī jià le, bù néng zài qǐng le.',vn:'Tháng này bạn đã xin nghỉ hai tuần rồi, không thể xin nữa đâu.'},
-   ],
-   hanzi:[
-     {c:'假',p:'jià',type:'左右结构 · Trái-phải',st:11,ord:'亻 trái → 段 phải (giản thể)',rad:'亻 (nhân – người)',mean:'kỳ nghỉ; giả',
-      tip:'亻(người) + 段(một đoạn, thời gian) → khoảng thời gian NGƯỜI được nghỉ; khi đọc jiǎ nghĩa là GIẢ, KHÔNG THẬT.',
-      cf:'暇 (xiá – "rảnh rỗi", có bộ 日")',w:'请假 / 假期'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tháng này tôi đã xin nghỉ ba ngày rồi, tuần sau không thể xin nữa.',answer:'这个月我已经请了三天假了，下个星期不能再请了。',answerPy:'Zhège yuè wǒ yǐjīng qǐngle sān tiān jià le, xià ge xīngqī bù néng zài qǐng le.',
-      note:'已经……了 diễn tả hành động đã hoàn tất.'},
-     {promptLang:'vi',prompt:'Nếu bạn không khỏe thì cứ xin nghỉ đi.',answer:'如果你不舒服，就请假吧。',answerPy:'Rúguǒ nǐ bù shūfu, jiù qǐngjià ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).'},
-   ]},
-
-  {n:2,zh:'一共',py:'yígòng',pos:'Phó từ',vn:'tổng cộng', hv: 'nhất cộng',em:'🔢',lesson:1,
-   explain:['Diễn tả tổng số lượng khi cộng gộp lại.'],
-   usage:'Phó từ, đứng trước động từ hoặc số lượng: 一共 + [số lượng/động từ].',
-   collo:['一共想请几天','一共21个学生','一共写100个'],
-   ex_zh:'你一共想请几天假？',ex_py:'Nǐ yígòng xiǎng qǐng jǐ tiān jià?',ex_vn:'Em muốn xin nghỉ tổng cộng mấy ngày?',
-   exList:[
-     {zh:'你一共想请几天假？',py:'Nǐ yígòng xiǎng qǐng jǐ tiān jià?',vn:'Em muốn xin nghỉ tổng cộng mấy ngày?'},
-     {zh:'这个学期我们班新来了2个同学，一共21个学生。',py:'Zhège xuéqī wǒmen bān xīn láile liǎng ge tóngxué, yígòng èrshíyī ge xuésheng.',vn:'Học kỳ này lớp chúng tôi có thêm 2 bạn mới, tổng cộng 21 học sinh.'},
-     {zh:'比赛是根据要求写汉字，一共写100个。',py:'Bǐsài shì gēnjù yāoqiú xiě hànzì, yígòng xiě yìbǎi ge.',vn:'Cuộc thi là viết chữ Hán theo yêu cầu, tổng cộng viết 100 chữ.'},
-   ],
-   hanzi:[
-     {c:'共',p:'gòng',type:'上下结构 · Trên-dưới',st:6,ord:'廿 trên → 八 dưới',rad:'八 (bát)',mean:'cùng, chung',
-      tip:'廿(hai mươi, số nhiều) + 八(chia ra) → nhiều người CÙNG CHUNG một việc; 一(một)+共(chung) = TỔNG CỘNG.',
-      cf:'具 (jù – "dụng cụ", có 目 thay vì 廿")',w:'一共 / 共同'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tháng trước tổ chúng tôi có thêm 3 đồng nghiệp mới, tổng cộng 12 người.',answer:'上个月我们组新来了3个同事，一共12个人。',answerPy:'Shàng ge yuè wǒmen zǔ xīn láile sān ge tóngshì, yígòng shí\'èr ge rén.',
-      note:'一共 + số lượng diễn tả tổng số.'},
-     {promptLang:'vi',prompt:'Nếu tổng cộng có 21 học sinh thì phòng học đủ chỗ không?',answer:'如果一共有21个学生，教室就够坐吗？',answerPy:'Rúguǒ yígòng yǒu èrshíyī ge xuésheng, jiàoshì jiù gòu zuò ma?',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'邻居',py:'línjū',pos:'Danh từ',vn:'láng giềng', hv: 'lân cư',em:'🏘️',lesson:2,
-   explain:['Người sống gần nhà, cùng khu vực.'],
-   usage:'Danh từ; đi cùng động từ 是: 是邻居.',
-   collo:['是邻居','新邻居','过去是邻居'],
-   ex_zh:'我们过去是邻居，后来是大学同学。',ex_py:'Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué.',ex_vn:'Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học.',
-   exList:[
-     {zh:'我们过去是邻居，后来是大学同学，关系一直很不错。',py:'Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué, guānxi yìzhí hěn búcuò.',vn:'Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học, quan hệ luôn rất tốt.'},
-     {zh:'我们是你们的新邻居，昨天刚搬过来。',py:'Wǒmen shì nǐmen de xīn línjū, zuótiān gāng bān guolai.',vn:'Chúng tôi là hàng xóm mới của các bạn, hôm qua vừa chuyển đến.'},
-     {zh:'我们在这儿住了五年了，对这儿很了解。',py:'Wǒmen zài zhèr zhùle wǔ nián le, duì zhèr hěn liǎojiě.',vn:'Chúng tôi sống ở đây năm năm rồi, rất hiểu rõ nơi này.'},
-   ],
-   hanzi:[
-     {c:'邻',p:'lín',type:'左右结构 · Trái-phải',st:7,ord:'令 trái → 阝 phải (giản thể)',rad:'阝 (ấp – khu dân cư)',mean:'láng giềng',
-      tip:'令(ra lệnh, gần gũi) + 阝(khu dân cư) → những nhà gần nhau trong cùng khu = LÁNG GIỀNG.',
-      cf:'冷 (lěng – "lạnh", có bộ 冫")',w:'邻居 / 邻近'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Họ là hàng xóm mới ở đối diện nhà chúng tôi, tuần trước vừa mới chuyển đến.',answer:'他们是我们对面的新邻居，上个星期刚搬过来。',answerPy:'Tāmen shì wǒmen duìmiàn de xīn línjū, shàng ge xīngqī gāng bān guolai.',
-      note:'刚 + V diễn tả hành động vừa mới xảy ra.'},
-     {promptLang:'vi',prompt:'Nếu bạn có vấn đề gì thì có thể đến hỏi hàng xóm.',answer:'如果你有什么问题，就可以来问邻居。',answerPy:'Rúguǒ nǐ yǒu shénme wèntí, jiù kěyǐ lái wèn línjū.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:4,zh:'后来',py:'hòulái',pos:'Danh từ',vn:'sau này, sau đó', hv: 'hậu lai',em:'⏭️',lesson:2,
-   explain:['Chỉ khoảng thời gian tiếp theo sau một sự việc đã xảy ra.'],
-   usage:'Danh từ chỉ thời gian, thường đứng đầu câu hoặc sau chủ ngữ.',
-   collo:['后来是','后来发现','后来儿子生病了'],
-   ex_zh:'我们过去是邻居，后来是大学同学。',ex_py:'Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué.',ex_vn:'Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học.',
-   exList:[
-     {zh:'我们过去是邻居，后来是大学同学，关系一直很不错。',py:'Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué, guānxi yìzhí hěn búcuò.',vn:'Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học, quan hệ luôn rất tốt.'},
-     {zh:'后来发现没带钱包，只好都放回去了。',py:'Hòulái fāxiàn méi dài qiánbāo, zhǐhǎo dōu fàng huiqu le.',vn:'Sau đó phát hiện không mang ví tiền, đành phải để lại hết.'},
-     {zh:'后来儿子生病了，为了照顾他，哪儿都没去。',py:'Hòulái érzi shēngbìng le, wèile zhàogù tā, nǎr dōu méi qù.',vn:'Sau đó con trai bị bệnh, để chăm sóc con, chẳng đi đâu cả.'},
-   ],
-   hanzi:[
-     {c:'后',p:'hòu',type:'半包围结构 · Bán bao vây',st:6,ord:'尸 ngoài → 口 trong (giản thể)',rad:'尸 (thi)',mean:'sau, phía sau',
-      tip:'Chữ giản thể mô phỏng hình người bước CHẬM lại phía SAU đoàn người → SAU, PHÍA SAU; 后(sau)+来(đến) = SAU NÀY.',
-      cf:'厚 (hòu – "dày", có 厂 thay vì 尸")',w:'后来 / 以后 / 后边'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sau đó con gái phải thi, để cho con yên tâm ôn tập, cả nhà chúng tôi chẳng đi chơi đâu cả.',answer:'后来女儿要考试了，为了让她安心复习，我们哪儿都没去玩儿。',answerPy:'Hòulái nǚ\'ér yào kǎoshì le, wèile ràng tā ānxīn fùxí, wǒmen nǎr dōu méi qù wánr.',
-      note:'哪儿都 + phủ định diễn tả toàn bộ không ngoại lệ (điểm ngữ pháp trọng tâm bài này).'},
-     {promptLang:'vi',prompt:'Nếu sau này bạn hiểu rõ hơn thì hãy nói cho tôi biết.',answer:'如果后来你更了解了，就告诉我吧。',answerPy:'Rúguǒ hòulái nǐ gèng liǎojiě le, jiù gàosu wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:5,zh:'爱好',py:'àihào',pos:'Danh từ',vn:'sở thích', hv: 'ái hiếu',em:'❤️',lesson:2,
-   explain:['Điều mà một người thích làm, quan tâm thường xuyên.'],
-   usage:'Danh từ; đi cùng động từ 有: 有很多爱好.',
-   collo:['很多爱好','我的爱好','有兴趣的爱好'],
-   ex_zh:'他有很多爱好，什么都会。',ex_py:'Tā yǒu hěn duō àihào, shénme dōu huì.',ex_vn:'Anh ấy có nhiều sở thích, cái gì cũng biết.',
-   exList:[
-     {zh:'他有很多爱好，唱歌、画画儿、踢足球，什么都会。',py:'Tā yǒu hěn duō àihào, chànggē, huà huàr, tī zúqiú, shénme dōu huì.',vn:'Anh ấy có nhiều sở thích, hát, vẽ tranh, đá bóng, cái gì cũng biết.'},
-     {zh:'我的爱好是游泳。',py:'Wǒ de àihào shì yóuyǒng.',vn:'Sở thích của tôi là bơi lội.'},
-     {zh:'我的爱好跟你的不一样，我更喜欢游泳。',py:'Wǒ de àihào gēn nǐ de bù yíyàng, wǒ gèng xǐhuan yóuyǒng.',vn:'Sở thích của tôi khác với của bạn, tôi thích bơi lội hơn.'},
-   ],
-   hanzi:[
-     {c:'好',p:'hào',type:'左右结构 · Trái-phải',st:6,ord:'女 trái → 子 phải',rad:'女 (nữ)',mean:'thích; tốt (đa âm)',
-      tip:'女(nữ) + 子(con cái) → mẹ ôm con thể hiện tình yêu THÍCH THÚ; khi đọc hǎo nghĩa là TỐT, khi đọc hào nghĩa là THÍCH.',
-      cf:'子 (zǐ – "con", không có bộ 女")',w:'爱好 / 好奇'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sở thích của em trai tôi khác với tôi, nó thích đá bóng hơn.',answer:'我弟弟的爱好跟我的不一样，他更喜欢踢足球。',answerPy:'Wǒ dìdi de àihào gēn wǒ de bù yíyàng, tā gèng xǐhuan tī zúqiú.',
-      note:'跟……不一样 diễn tả sự khác biệt.'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn có sở thích chung thì các bạn sẽ trở thành bạn tốt.',answer:'只要你们有共同的爱好，就会成为好朋友。',answerPy:'Zhǐyào nǐmen yǒu gòngtóng de àihào, jiù huì chéngwéi hǎo péngyou.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:6,zh:'办法',py:'bànfǎ',pos:'Danh từ',vn:'cách, biện pháp', hv: 'biện pháp',em:'💡',lesson:3,
-   explain:['Cách thức, phương pháp để giải quyết một việc.'],
-   usage:'Danh từ; đi cùng động từ 有/想: 有办法, 想办法.',
-   collo:['有办法','想办法','没办法'],
-   ex_zh:'谁都有办法看好你的"病"。',ex_py:'Shéi dōu yǒu bànfǎ kànhǎo nǐ de "bìng".',ex_vn:'Ai cũng có cách chữa khỏi "bệnh" của em.',
-   exList:[
-     {zh:'不用去医院，谁都有办法看好你的"病"。',py:'Búyòng qù yīyuàn, shéi dōu yǒu bànfǎ kànhǎo nǐ de "bìng".',vn:'Không cần đi bệnh viện đâu, ai cũng có cách chữa khỏi "bệnh" của em.'},
-     {zh:'有些事情必须要自己来做选择和决定，不能什么都请别人帮忙。',py:'Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng, bù néng shénme dōu qǐng biéren bāngmáng.',vn:'Có những việc phải tự mình lựa chọn và quyết định, không thể việc gì cũng nhờ người khác giúp.'},
-     {zh:'没办法，为了瘦一点儿，我必须少吃。',py:'Méi bànfǎ, wèile shòu yìdiǎnr, wǒ bìxū shǎo chī.',vn:'Không còn cách nào khác, để gầy đi một chút, tôi phải ăn ít lại.'},
-   ],
-   hanzi:[
-     {c:'法',p:'fǎ',type:'左右结构 · Trái-phải',st:8,ord:'氵 trái → 去 phải',rad:'氵 (thuỷ – nước)',mean:'phương pháp, luật',
-      tip:'氵(nước, công bằng như mặt nước) + 去(đi qua) → quy tắc PHÁP LUẬT áp dụng công bằng; 办(làm)+法(phương pháp) = CÁCH LÀM.',
-      cf:'去 (qù – "đi", không có bộ 氵")',w:'办法 / 法律'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Không còn cách nào khác, để qua được kỳ thi, tôi phải ôn tập thêm hai tiếng mỗi ngày.',answer:'没办法，为了通过考试，我必须每天多复习两个小时。',answerPy:'Méi bànfǎ, wèile tōngguò kǎoshì, wǒ bìxū měitiān duō fùxí liǎng ge xiǎoshí.',
-      note:'为了 diễn tả mục đích (sẽ học ngay bên dưới trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn có cách hay thì hãy nói cho tôi biết.',answer:'如果你有好办法，就告诉我吧。',answerPy:'Rúguǒ nǐ yǒu hǎo bànfǎ, jiù gàosu wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:7,zh:'饱',py:'bǎo',pos:'Tính từ',vn:'no', hv: 'bão',em:'🍚',lesson:3,
-   explain:['Trạng thái ăn đủ, không còn đói.'],
-   usage:'Tính từ, làm bổ ngữ sau động từ 吃: 吃饱了.',
-   collo:['吃饱','吃不饱','吃饱了就睡'],
-   ex_zh:'你吃饱了就睡。',ex_py:'Nǐ chībǎole jiù shuì.',ex_vn:'Em ăn no là ngủ.',
-   exList:[
-     {zh:'谁都知道运动对身体好。但是你吃饱了就睡。',py:'Shéi dōu zhīdào yùndòng duì shēntǐ hǎo. Dànshì nǐ chībǎole jiù shuì.',vn:'Ai cũng biết vận động tốt cho sức khỏe. Nhưng em ăn no là ngủ.'},
-     {zh:'你的早饭只有一杯咖啡和一小块蛋糕，吃不饱。',py:'Nǐ de zǎofàn zhǐyǒu yì bēi kāfēi hé yì xiǎo kuài dàngāo, chī bu bǎo.',vn:'Bữa sáng của bạn chỉ có một cốc cà phê và một miếng bánh nhỏ, ăn không no đâu.'},
-     {zh:'我吃饱了，谢谢。',py:'Wǒ chībǎo le, xièxie.',vn:'Tôi ăn no rồi, cảm ơn.'},
-   ],
-   hanzi:[
-     {c:'饱',p:'bǎo',type:'左右结构 · Trái-phải',st:8,ord:'饣 trái → 包 phải',rad:'饣 (thực – ăn)',mean:'no',
-      tip:'饣(ăn) + 包(gói tròn, đầy) → ăn đến khi bụng ĐẦY, TRÒN như cái gói = NO.',
-      cf:'抱 (bào – "ôm", có bộ 扌")',w:'吃饱 / 饱了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bữa trưa của bạn chỉ có một bát cơm và một chút rau xanh, ăn không no đâu.',answer:'你的午饭只有一碗米饭和一点儿青菜，吃不饱。',answerPy:'Nǐ de wǔfàn zhǐyǒu yì wǎn mǐfàn hé yìdiǎnr qīngcài, chī bu bǎo.',
-      note:'吃不饱 diễn tả khả năng phủ định (không thể no).'},
-     {promptLang:'vi',prompt:'Nếu bạn ăn no rồi thì đừng đi ngủ ngay.',answer:'如果你吃饱了，就别马上去睡觉。',answerPy:'Rúguǒ nǐ chībǎo le, jiù bié mǎshàng qù shuìjiào.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:8,zh:'为了',py:'wèile',pos:'Giới từ',vn:'để, vì', hv: 'vị liễu',em:'🎯',lesson:3,
-   explain:['Nêu mục đích của một hành động.'],
-   usage:'为了 + [mục đích]，[hành động].',
-   collo:['为了健康','为了瘦一点儿','为了照顾他'],
-   ex_zh:'为了健康，我真应该多锻炼锻炼了。',ex_py:'Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le.',ex_vn:'Vì sức khỏe, em thật sự nên tập luyện nhiều hơn.',
-   exList:[
-     {zh:'为了健康，我真应该多锻炼锻炼了。',py:'Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le.',vn:'Vì sức khỏe, em thật sự nên tập luyện nhiều hơn.'},
-     {zh:'没办法，为了瘦一点儿，我必须少吃。',py:'Méi bànfǎ, wèile shòu yìdiǎnr, wǒ bìxū shǎo chī.',vn:'Không còn cách nào khác, để gầy đi một chút, tôi phải ăn ít lại.'},
-     {zh:'为了照顾他，哪儿都没去。',py:'Wèile zhàogù tā, nǎr dōu méi qù.',vn:'Để chăm sóc con, chẳng đi đâu cả.'},
-   ],
-   hanzi:[
-     {c:'为',p:'wèi',type:'独体字 · Chữ đơn (giản thể)',st:4,ord:'nét liền',rad:'丶 (chủ)',mean:'vì, để',
-      tip:'Chữ giản thể đơn giản hóa từ hình bàn tay LÀM VIỆC gì đó → mở rộng nghĩa "làm VÌ mục đích" = VÌ, ĐỂ.',
-      cf:'办 (bàn – "làm", có 力 thay vì 丶")',w:'为了 / 因为'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Để chăm sóc mẹ bị ốm, tuần này tôi chẳng đi đâu cả.',answer:'为了照顾生病的妈妈，这个星期我哪儿都没去。',answerPy:'Wèile zhàogù shēngbìng de māma, zhège xīngqī wǒ nǎr dōu méi qù.',
-      note:'为了 nêu mục đích, đứng đầu câu.'},
-     {promptLang:'vi',prompt:'Vì muốn nâng cao trình độ tiếng Trung, tôi quyết định mỗi ngày đọc sách.',answer:'为了提高汉语水平，我决定每天看书。',answerPy:'Wèile tígāo Hànyǔ shuǐpíng, wǒ juédìng měitiān kàn shū.',
-      note:'为了 + mục đích, 决定 + hành động (ôn lại 提高/水平 đã học ở Bài 15).'},
-   ]},
-
-  {n:9,zh:'决定',py:'juédìng',pos:'Động từ',vn:'quyết định', hv: 'quyết định',em:'✅',lesson:3,
-   explain:['Đưa ra lựa chọn cuối cùng sau khi suy nghĩ.'],
-   usage:'Động từ, mang tân ngữ là mệnh đề: 决定 + [việc].',
-   collo:['决定每天','做决定','自己决定'],
-   ex_zh:'从明天起，我决定每天去长跑。',ex_py:'Cóng míngtiān qǐ, wǒ juédìng měitiān qù chángpǎo.',ex_vn:'Từ ngày mai, em quyết định mỗi ngày đi chạy bộ đường dài.',
-   exList:[
-     {zh:'为了健康，我真应该多锻炼锻炼了。从明天起，我决定每天去长跑。',py:'Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le. Cóng míngtiān qǐ, wǒ juédìng měitiān qù chángpǎo.',vn:'Vì sức khỏe, em thật sự nên tập luyện nhiều hơn. Từ ngày mai, em quyết định mỗi ngày đi chạy bộ đường dài.'},
-     {zh:'有些事情必须要自己来做选择和决定。',py:'Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng.',vn:'Có những việc phải tự mình lựa chọn và quyết định.'},
-     {zh:'我还没决定呢。',py:'Wǒ hái méi juédìng ne.',vn:'Tôi vẫn chưa quyết định đâu.'},
-   ],
-   hanzi:[
-     {c:'定',p:'dìng',type:'上下结构 · Trên-dưới',st:8,ord:'宀 trên → 定 dưới',rad:'宀 (miên – mái nhà)',mean:'quyết định, ổn định',
-      tip:'宀(mái nhà) + 疋(bàn chân đứng vững) → đứng vững dưới MÁI NHÀ, không lung lay = ỔN ĐỊNH, mở rộng QUYẾT ĐỊNH.',
-      cf:'空 (kōng – "trống rỗng", có 工 thay vì 疋")',w:'决定 / 一定 / 定'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cuối tuần này có đi leo núi hay không, tôi vẫn chưa quyết định đâu.',answer:'这个周末去不去爬山，我还没决定呢。',answerPy:'Zhège zhōumò qù bu qù pá shān, wǒ hái méi juédìng ne.',
-      note:'还没……呢 diễn tả hành động chưa xảy ra.'},
-     {promptLang:'vi',prompt:'Nếu bạn quyết định đi thì tôi sẽ đi cùng bạn.',answer:'如果你决定去，我就跟你一起去。',answerPy:'Rúguǒ nǐ juédìng qù, wǒ jiù gēn nǐ yìqǐ qù.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:10,zh:'选择',py:'xuǎnzé',pos:'Động từ',vn:'lựa chọn', hv: 'tuyển trạch',em:'☑️',lesson:4,
-   explain:['Chọn ra một trong nhiều khả năng.'],
-   usage:'Động từ, mang tân ngữ: 选择 + [đối tượng].',
-   collo:['选择时间','选择地点','做选择'],
-   ex_zh:'第一，要选择"对"的时间。',ex_py:'Dì yī, yào xuǎnzé "duì" de shíjiān.',ex_vn:'Thứ nhất, phải chọn thời gian "đúng".',
-   exList:[
-     {zh:'第一，要选择"对"的时间。',py:'Dì yī, yào xuǎnzé "duì" de shíjiān.',vn:'Thứ nhất, phải chọn thời gian "đúng".'},
-     {zh:'第二，要选择"对"的地点。',py:'Dì èr, yào xuǎnzé "duì" de dìdiǎn.',vn:'Thứ hai, phải chọn địa điểm "đúng".'},
-     {zh:'有些事情必须要自己来做选择和决定。',py:'Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng.',vn:'Có những việc phải tự mình lựa chọn và quyết định.'},
-   ],
-   hanzi:[
-     {c:'选',p:'xuǎn',type:'半包围结构 · Bán bao vây',st:9,ord:'辶 ngoài → 先 trong',rad:'辶 (sước – đi)',mean:'lựa chọn',
-      tip:'辶(đi) + 先(trước tiên) → đi TRƯỚC để CHỌN LỰA cái tốt nhất = LỰA CHỌN.',
-      cf:'洗 (xǐ – "rửa", có bộ 氵")',w:'选择 / 选举'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thứ hai, phải chọn sở thích phù hợp với bản thân.',answer:'第二，要选择适合自己的爱好。',answerPy:'Dì èr, yào xuǎnzé shìhé zìjǐ de àihào.',
-      note:'第二 dùng để liệt kê thứ tự.'},
-     {promptLang:'vi',prompt:'Nếu bạn không biết chọn cái nào thì hỏi tôi đi.',answer:'如果你不知道选择哪个，就问我吧。',answerPy:'Rúguǒ nǐ bù zhīdào xuǎnzé nǎge, jiù wèn wǒ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:11,zh:'冬(天)',py:'dōng(tiān)',pos:'Danh từ',vn:'(mùa) đông', hv: 'đông thiên',em:'❄️',lesson:4,
-   explain:['Mùa lạnh nhất trong năm.'],
-   usage:'Danh từ chỉ mùa; đi cùng động từ 要: 冬天要再晚一些.',
-   collo:['冬天','今年冬天','冬天特别长'],
-   ex_zh:'冬天要再晚一些。',ex_py:'Dōngtiān yào zài wǎn yìxiē.',ex_vn:'Mùa đông thì phải muộn hơn một chút.',
-   exList:[
-     {zh:'一般来说，早上9点是最好的时间，冬天要再晚一些。',py:'Yìbān lái shuō, zǎoshang jiǔ diǎn shì zuì hǎo de shíjiān, dōngtiān yào zài wǎn yìxiē.',vn:'Nói chung, 9 giờ sáng là thời gian tốt nhất, mùa đông thì phải muộn hơn một chút.'},
-     {zh:'雪下得真大，谁都没想到今年冬天能下这么大的雪。',py:'Xuě xià de zhēn dà, shéi dōu méi xiǎngdào jīnnián dōngtiān néng xià zhème dà de xuě.',vn:'Tuyết rơi to thật, ai cũng không ngờ mùa đông năm nay lại có tuyết to thế.'},
-     {zh:'冬天特别长，从11月到第二年3月都比较冷。',py:'Dōngtiān tèbié cháng, cóng shíyī yuè dào dì-èr nián sān yuè dōu bǐjiào lěng.',vn:'Mùa đông đặc biệt dài, từ tháng 11 đến tháng 3 năm sau đều khá lạnh.'},
-   ],
-   hanzi:[
-     {c:'冬',p:'dōng',type:'独体字 · Chữ đơn (tượng hình)',st:5,ord:'nét liền',rad:'冫 (băng – nước đá)',mean:'mùa đông',
-      tip:'冫(băng giá) + 夂(bước chân chậm chạp vì lạnh) → mùa lạnh khiến bước đi CHẬM CHẠP = MÙA ĐÔNG.',
-      cf:'各 (gè – "mỗi", hình dáng phần trên gần giống")',w:'冬天 / 冬季'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mùa đông ở đây rất ngắn, từ tháng 12 đến tháng 1 năm sau mới khá lạnh.',answer:'这里的冬天很短，从12月到第二年1月才比较冷。',answerPy:'Zhèli de dōngtiān hěn duǎn, cóng shí\'èr yuè dào dì-èr nián yī yuè cái bǐjiào lěng.',
-      note:'从……到…… diễn tả khoảng thời gian.'},
-     {promptLang:'vi',prompt:'Nếu mùa đông ở đây quá lạnh thì tôi sẽ không quen được.',answer:'如果这里的冬天太冷，我就不会习惯。',answerPy:'Rúguǒ zhèli de dōngtiān tài lěng, wǒ jiù bú huì xíguàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'必须',py:'bìxū',pos:'Phó từ',vn:'cần phải', hv: 'tất tu',em:'❗',lesson:4,
-   explain:['Diễn tả sự bắt buộc, không thể thiếu.'],
-   usage:'Phó từ, đứng trước động từ: 必须 + V.',
-   collo:['必须要','必须少吃','必须根据'],
-   ex_zh:'第三，必须要根据自己的健康情况运动。',ex_py:'Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.',ex_vn:'Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân.',
-   exList:[
-     {zh:'第三，必须要根据自己的健康情况运动。',py:'Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.',vn:'Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân.'},
-     {zh:'没办法，为了瘦一点儿，我必须少吃。',py:'Méi bànfǎ, wèile shòu yìdiǎnr, wǒ bìxū shǎo chī.',vn:'Không còn cách nào khác, để gầy đi một chút, tôi phải ăn ít lại.'},
-     {zh:'有些事情必须要自己来做选择和决定。',py:'Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng.',vn:'Có những việc phải tự mình lựa chọn và quyết định.'},
-   ],
-   hanzi:[
-     {c:'须',p:'xū',type:'左右结构 · Trái-phải',st:9,ord:'彡 trái → 页 phải',rad:'页 (hiệt – đầu)',mean:'cần phải; râu',
-      tip:'彡(sợi lông) + 页(đầu, mặt) → sợi lông mọc trên MẶT = RÂU; mở rộng nghĩa "điều tất yếu phải có" = CẦN PHẢI.',
-      cf:'颈 (jǐng – "cổ", có 圣 thay vì 彡")',w:'必须 / 须要'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Có một số vấn đề phải do chính giáo viên tự lựa chọn và quyết định.',answer:'有些问题必须由老师自己来做选择和决定。',answerPy:'Yǒuxiē wèntí bìxū yóu lǎoshī zìjǐ lái zuò xuǎnzé hé juédìng.',
-      note:'必须要 diễn tả sự bắt buộc (ôn lại 选择/决定 đã học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn muốn khỏe mạnh thì phải tập thể dục thường xuyên.',answer:'如果你想健康，就必须经常锻炼。',answerPy:'Rúguǒ nǐ xiǎng jiànkāng, jiù bìxū jīngcháng duànliàn.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:13,zh:'根据',py:'gēnjù',pos:'Giới từ',vn:'căn cứ vào, dựa vào', hv: 'căn cứ',em:'📊',lesson:4,
-   explain:['Nêu cơ sở, căn cứ để làm một việc gì đó.'],
-   usage:'根据 + [căn cứ]，[hành động].',
-   collo:['根据情况','根据要求','根据自己的健康'],
-   ex_zh:'必须要根据自己的健康情况运动。',ex_py:'Bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.',ex_vn:'Phải vận động dựa theo tình trạng sức khỏe của bản thân.',
-   exList:[
-     {zh:'第三，必须要根据自己的健康情况运动。',py:'Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.',vn:'Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân.'},
-     {zh:'比赛是根据要求写汉字。',py:'Bǐsài shì gēnjù yāoqiú xiě hànzì.',vn:'Cuộc thi là viết chữ Hán theo yêu cầu.'},
-     {zh:'请根据自己的情况选择。',py:'Qǐng gēnjù zìjǐ de qíngkuàng xuǎnzé.',vn:'Xin hãy chọn dựa theo tình trạng của bản thân.'},
-   ],
-   hanzi:[
-     {c:'据',p:'jù',type:'左右结构 · Trái-phải',st:8,ord:'扌 trái → 居 phải',rad:'扌 (thủ – tay)',mean:'căn cứ, dựa vào',
-      tip:'扌(tay) + 居(ở, dựa vào) → dùng TAY nắm giữ làm chỗ DỰA VÀO = CĂN CỨ.',
-      cf:'居 (jū – "ở", không có bộ 扌")',w:'根据 / 数据'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Xin hãy chọn quần áo phù hợp dựa theo tình hình thời tiết.',answer:'请根据天气的情况选择合适的衣服。',answerPy:'Qǐng gēnjù tiānqì de qíngkuàng xuǎnzé héshì de yīfu.',
-      note:'根据 + căn cứ, mệnh đề sau nêu hành động (ôn lại 选择/情况 sẽ học trong bài này).'},
-     {promptLang:'vi',prompt:'Nếu bạn dựa theo yêu cầu để làm thì sẽ không sai.',answer:'如果你根据要求做，就不会错。',answerPy:'Rúguǒ nǐ gēnjù yāoqiú zuò, jiù bú huì cuò.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:14,zh:'情况',py:'qíngkuàng',pos:'Danh từ',vn:'tình hình, tình trạng', hv: 'tình huống',em:'📋',lesson:4,
-   explain:['Trạng thái, hoàn cảnh của một sự việc tại một thời điểm.'],
-   usage:'Danh từ; đi cùng tính từ sở hữu: 健康情况.',
-   collo:['健康情况','根据情况','生活情况'],
-   ex_zh:'必须要根据自己的健康情况运动。',ex_py:'Bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.',ex_vn:'Phải vận động dựa theo tình trạng sức khỏe của bản thân.',
-   exList:[
-     {zh:'第三，必须要根据自己的健康情况运动。',py:'Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.',vn:'Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân.'},
-     {zh:'你在国外留学这几年怎么样？那里的生活情况习惯了吗？',py:'Nǐ zài guówài liú xué zhè jǐ nián zěnme yàng? Nàli de shēnghuó qíngkuàng xíguàn le ma?',vn:'Mấy năm du học nước ngoài của bạn thế nào? Tình hình sinh hoạt ở đó quen chưa?'},
-     {zh:'请了解一下这个地方的情况。',py:'Qǐng liǎojiě yíxià zhège dìfang de qíngkuàng.',vn:'Xin hãy tìm hiểu tình hình của nơi này.'},
-   ],
-   hanzi:[
-     {c:'况',p:'kuàng',type:'左右结构 · Trái-phải',st:7,ord:'冫 trái → 兄 phải',rad:'冫 (băng – nước đá)',mean:'tình huống',
-      tip:'冫(nước) + 兄(anh trai, so sánh) → so sánh dòng nước chảy để biết TÌNH HÌNH; 情(cảm xúc)+况(tình huống) = TÌNH TRẠNG.',
-      cf:'兄 (xiōng – "anh trai", không có bộ 冫")',w:'情况 / 何况'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Xin hãy tìm hiểu tình hình của công ty này.',answer:'请了解一下这家公司的情况。',answerPy:'Qǐng liǎojiě yíxià zhè jiā gōngsī de qíngkuàng.',
-      note:'了解 + tân ngữ diễn tả tìm hiểu (ôn lại đã học ở Bài 15).'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn dựa theo tình hình sức khỏe để vận động thì cơ thể sẽ khỏe hơn.',answer:'只要你根据健康情况运动，身体就会更健康。',answerPy:'Zhǐyào nǐ gēnjù jiànkāng qíngkuàng yùndòng, shēntǐ jiù huì gèng jiànkāng.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:15,zh:'口',py:'kǒu',pos:'Danh từ',vn:'miệng', hv: 'khẩu',em:'👄',lesson:4,
-   explain:['Bộ phận trên cơ thể dùng để ăn, nói.'],
-   usage:'Danh từ; thường ghép với tính từ: 口渴.',
-   collo:['口渴','刚运动完口渴','一口'],
-   ex_zh:'还要记得刚运动完口渴的时候，不要马上喝水。',ex_py:'Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.',ex_vn:'Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay.',
-   exList:[
-     {zh:'还要记得刚运动完口渴的时候，不要马上喝水。',py:'Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.',vn:'Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay.'},
-     {zh:'你先喝一口水吧。',py:'Nǐ xiān hē yì kǒu shuǐ ba.',vn:'Bạn uống một ngụm nước trước đã.'},
-     {zh:'这个人的口很大。',py:'Zhège rén de kǒu hěn dà.',vn:'Miệng người này to lắm.'},
-   ],
-   hanzi:[
-     {c:'口',p:'kǒu',type:'独体字 · Chữ đơn (tượng hình)',st:3,ord:'nét liền',rad:'口 (khẩu)',mean:'miệng',
-      tip:'Chữ tượng hình mô phỏng hình dạng cái MIỆNG đang mở → MIỆNG.',
-      cf:'囗 (wéi – "bao vây", chữ tương tự nhưng nghĩa khác")',w:'口 / 口渴 / 人口'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn uống một ngụm trà trước đã.',answer:'你先喝一口茶吧。',answerPy:'Nǐ xiān hē yì kǒu chá ba.',
-      note:'口 làm lượng từ chỉ một ngụm.'},
-     {promptLang:'vi',prompt:'Nếu miệng bạn khát thì uống chút nước đi.',answer:'如果你口渴了，就喝点儿水吧。',answerPy:'Rúguǒ nǐ kǒu kě le, jiù hē diǎnr shuǐ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:16,zh:'渴',py:'kě',pos:'Tính từ',vn:'khát', hv: 'khát',em:'🥤',lesson:4,
-   explain:['Trạng thái muốn uống nước do thiếu nước.'],
-   usage:'Tính từ; thường ghép với 口: 口渴, hoặc đứng độc lập: 渴了.',
-   collo:['口渴','渴了','很渴'],
-   ex_zh:'还要记得刚运动完口渴的时候，不要马上喝水。',ex_py:'Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.',ex_vn:'Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay.',
-   exList:[
-     {zh:'还要记得刚运动完口渴的时候，不要马上喝水。',py:'Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.',vn:'Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay.'},
-     {zh:'玩儿了这么长时间，渴了吧？',py:'Wánrle zhème cháng shíjiān, kě le ba?',vn:'Chơi lâu thế này, khát rồi phải không?'},
-     {zh:'我不渴，你喝吧。',py:'Wǒ bù kě, nǐ hē ba.',vn:'Tôi không khát, bạn uống đi.'},
-   ],
-   hanzi:[
-     {c:'渴',p:'kě',type:'左右结构 · Trái-phải',st:12,ord:'氵 trái → 曷 phải',rad:'氵 (thuỷ – nước)',mean:'khát',
-      tip:'氵(nước) + 曷(cầu xin, mong muốn) → mong muốn có NƯỚC uống = KHÁT.',
-      cf:'喝 (hē – "uống", có bộ 口")',w:'口渴 / 渴了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chạy lâu thế này, khát rồi phải không?',answer:'跑了这么长时间，渴了吧？',answerPy:'Pǎole zhème cháng shíjiān, kě le ba?',
-      note:'……了吧 diễn tả sự phỏng đoán.'},
-     {promptLang:'vi',prompt:'Nếu bạn khát thì uống chút nước đi.',answer:'如果你渴了，就喝点儿水吧。',answerPy:'Rúguǒ nǐ kě le, jiù hē diǎnr shuǐ ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "请假",
+    "py": "qǐng jià",
+    "pos": "Động từ",
+    "vn": "xin nghỉ phép",
+    "hv": "thỉnh giá",
+    "em": "📝",
+    "lesson": 1,
+    "explain": [
+      "Xin phép nghỉ, không đi làm hoặc đi học trong một khoảng thời gian."
+    ],
+    "usage": "Động từ ly hợp: 请 + 假; đi cùng số ngày: 请几天假.",
+    "collo": [
+      "请几天假",
+      "请病假",
+      "请事假"
+    ],
+    "ex_zh": "下个星期我可以请几天假吗？",
+    "ex_py": "Xià ge xīngqī wǒ kěyǐ qǐng jǐ tiān jià ma?",
+    "ex_vn": "Tuần sau em xin nghỉ mấy ngày được không ạ?",
+    "exList": [
+      {
+        "zh": "周经理，下个星期我可以请几天假吗？",
+        "py": "Zhōu jīnglǐ, xià ge xīngqī wǒ kěyǐ qǐng jǐ tiān jià ma?",
+        "vn": "Giám đốc Chu, tuần sau em xin nghỉ mấy ngày được không ạ?"
+      },
+      {
+        "zh": "老师，我可以请几天假吗？",
+        "py": "Lǎoshī, wǒ kěyǐ qǐng jǐ tiān jià ma?",
+        "vn": "Thầy ơi, em xin nghỉ mấy ngày được không ạ?"
+      },
+      {
+        "zh": "这个月你已经请了两个星期假了，不能再请了。",
+        "py": "Zhège yuè nǐ yǐjīng qǐngle liǎng ge xīngqī jià le, bù néng zài qǐng le.",
+        "vn": "Tháng này bạn đã xin nghỉ hai tuần rồi, không thể xin nữa đâu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "假",
+        "p": "jià",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "亻 trái → 段 phải (giản thể)",
+        "rad": "亻 (nhân – người)",
+        "mean": "kỳ nghỉ; giả",
+        "tip": "亻(người) + 段(một đoạn, thời gian) → khoảng thời gian NGƯỜI được nghỉ; khi đọc jiǎ nghĩa là GIẢ, KHÔNG THẬT.",
+        "cf": "暇 (xiá – \"rảnh rỗi\", có bộ 日\")",
+        "w": "请假 / 假期"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tháng này tôi đã xin nghỉ ba ngày rồi, nên tuần sau không thể xin nữa.",
+        "answer": "因为这个月我已经请了三天假了，所以下个星期不能再请了。",
+        "answerPy": "Yīnwèi zhège yuè wǒ yǐjīng qǐngle sān tiān jià le, suǒyǐ xià ge xīngqī bù néng zài qǐng le.",
+        "note": "请假 là từ ly hợp: 请了三天假 ✓ / 请假了三天 ✗.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không khỏe thì cứ xin nghỉ đi.",
+        "answer": "如果你不舒服，就请假吧。",
+        "answerPy": "Rúguǒ nǐ bù shūfu, jiù qǐngjià ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại đã học ở Bài 16).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "请几天假",
+        "py": "qǐng jǐ tiān jià",
+        "vn": "xin nghỉ mấy ngày"
+      },
+      {
+        "zh": "请病假",
+        "py": "qǐng bìng jià",
+        "vn": "xin nghỉ ốm"
+      },
+      {
+        "zh": "请事假",
+        "py": "qǐng shì jià",
+        "vn": "xin nghỉ việc riêng"
+      },
+      {
+        "zh": "请了三天假",
+        "py": "qǐng le sān tiān jià",
+        "vn": "đã xin nghỉ ba ngày"
+      },
+      {
+        "zh": "跟老师请假",
+        "py": "gēn lǎoshī qǐng jià",
+        "vn": "xin phép thầy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "请 + thời lượng + 假",
+        "m": "请假 là từ ly hợp: 请了三天假 ✓ / 请假了三天 ✗"
+      },
+      {
+        "s": "跟 + ai + 请假",
+        "m": "Xin phép ai"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "一共",
+    "py": "yígòng",
+    "pos": "Phó từ",
+    "vn": "tổng cộng",
+    "hv": "nhất cộng",
+    "em": "🔢",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả tổng số lượng khi cộng gộp lại."
+    ],
+    "usage": "Phó từ, đứng trước động từ hoặc số lượng: 一共 + [số lượng/động từ].",
+    "collo": [
+      "一共想请几天",
+      "一共21个学生",
+      "一共写100个"
+    ],
+    "ex_zh": "你一共想请几天假？",
+    "ex_py": "Nǐ yígòng xiǎng qǐng jǐ tiān jià?",
+    "ex_vn": "Em muốn xin nghỉ tổng cộng mấy ngày?",
+    "exList": [
+      {
+        "zh": "你一共想请几天假？",
+        "py": "Nǐ yígòng xiǎng qǐng jǐ tiān jià?",
+        "vn": "Em muốn xin nghỉ tổng cộng mấy ngày?"
+      },
+      {
+        "zh": "这个学期我们班新来了2个同学，一共21个学生。",
+        "py": "Zhège xuéqī wǒmen bān xīn láile liǎng ge tóngxué, yígòng èrshíyī ge xuésheng.",
+        "vn": "Học kỳ này lớp chúng tôi có thêm 2 bạn mới, tổng cộng 21 học sinh."
+      },
+      {
+        "zh": "比赛是根据要求写汉字，一共写100个。",
+        "py": "Bǐsài shì gēnjù yāoqiú xiě hànzì, yígòng xiě yìbǎi ge.",
+        "vn": "Cuộc thi là viết chữ Hán theo yêu cầu, tổng cộng viết 100 chữ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "共",
+        "p": "gòng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "廿 trên → 八 dưới",
+        "rad": "八 (bát)",
+        "mean": "cùng, chung",
+        "tip": "廿(hai mươi, số nhiều) + 八(chia ra) → nhiều người CÙNG CHUNG một việc; 一(một)+共(chung) = TỔNG CỘNG.",
+        "cf": "具 (jù – \"dụng cụ\", có 目 thay vì 廿\")",
+        "w": "一共 / 共同"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tháng trước tổ tôi có thêm ba đồng nghiệp mới, nên bây giờ tổng cộng mười hai người.",
+        "answer": "因为上个月我们组新来了3个同事，所以现在一共12个人。",
+        "answerPy": "Yīnwèi shàng ge yuè wǒmen zǔ xīn láile 3 ge tóngshì, suǒyǐ xiànzài yígòng 12 ge rén.",
+        "note": "同事 là từ bài 7; 一共 đếm tổng số.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu tổng cộng có 21 học sinh thì phòng học đủ chỗ không?",
+        "answer": "如果一共有21个学生，教室就够坐吗？",
+        "answerPy": "Rúguǒ yígòng yǒu èrshíyī ge xuésheng, jiàoshì jiù gòu zuò ma?",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一共12个人",
+        "py": "yígòng gè rén",
+        "vn": "tổng cộng 12 người"
+      },
+      {
+        "zh": "一共多少钱",
+        "py": "yígòng duōshao qián",
+        "vn": "tổng cộng bao nhiêu tiền"
+      },
+      {
+        "zh": "一共写100个",
+        "py": "yígòng xiě gè",
+        "vn": "viết tổng cộng 100 chữ"
+      },
+      {
+        "zh": "一共三天",
+        "py": "yígòng sān tiān",
+        "vn": "tổng cộng ba ngày"
+      },
+      {
+        "zh": "一共有",
+        "py": "yígòng yǒu",
+        "vn": "tổng cộng có"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一共 + số lượng",
+        "m": "Tổng cộng bao nhiêu"
+      },
+      {
+        "s": "一共 (tổng số) ≠ 都 (đều) — 一共 đếm, 都 nói về từng cái"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "邻居",
+    "py": "línjū",
+    "pos": "Danh từ",
+    "vn": "láng giềng",
+    "hv": "lân cư",
+    "em": "🏘️",
+    "lesson": 2,
+    "explain": [
+      "Người sống gần nhà, cùng khu vực."
+    ],
+    "usage": "Danh từ; đi cùng động từ 是: 是邻居.",
+    "collo": [
+      "是邻居",
+      "新邻居",
+      "过去是邻居"
+    ],
+    "ex_zh": "我们过去是邻居，后来是大学同学。",
+    "ex_py": "Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué.",
+    "ex_vn": "Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học.",
+    "exList": [
+      {
+        "zh": "我们过去是邻居，后来是大学同学，关系一直很不错。",
+        "py": "Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué, guānxi yìzhí hěn búcuò.",
+        "vn": "Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học, quan hệ luôn rất tốt."
+      },
+      {
+        "zh": "我们是你们的新邻居，昨天刚搬过来。",
+        "py": "Wǒmen shì nǐmen de xīn línjū, zuótiān gāng bān guolai.",
+        "vn": "Chúng tôi là hàng xóm mới của các bạn, hôm qua vừa chuyển đến."
+      },
+      {
+        "zh": "我们在这儿住了五年了，对这儿很了解。",
+        "py": "Wǒmen zài zhèr zhùle wǔ nián le, duì zhèr hěn liǎojiě.",
+        "vn": "Chúng tôi sống ở đây năm năm rồi, rất hiểu rõ nơi này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "邻",
+        "p": "lín",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "令 trái → 阝 phải (giản thể)",
+        "rad": "阝 (ấp – khu dân cư)",
+        "mean": "láng giềng",
+        "tip": "令(ra lệnh, gần gũi) + 阝(khu dân cư) → những nhà gần nhau trong cùng khu = LÁNG GIỀNG.",
+        "cf": "冷 (lěng – \"lạnh\", có bộ 冫\")",
+        "w": "邻居 / 邻近"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Họ là hàng xóm mới ở đối diện, tuần trước vừa chuyển đến nên chúng tôi chưa quen lắm.",
+        "answer": "他们是我们对面的新邻居，上个星期刚搬过来，所以我们还不太熟。",
+        "answerPy": "Tāmen shì wǒmen duìmiàn de xīn línjū, shàng ge xīngqī gāng bān guolai, suǒyǐ wǒmen hái bú tài shú.",
+        "note": "搬 là từ bài 1; 刚 — vừa mới.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có vấn đề gì thì có thể đến hỏi hàng xóm.",
+        "answer": "如果你有什么问题，就可以来问邻居。",
+        "answerPy": "Rúguǒ nǐ yǒu shénme wèntí, jiù kěyǐ lái wèn línjū.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "新邻居",
+        "py": "xīn línjū",
+        "vn": "hàng xóm mới"
+      },
+      {
+        "zh": "是邻居",
+        "py": "shì línjū",
+        "vn": "là hàng xóm"
+      },
+      {
+        "zh": "邻居家",
+        "py": "línjū jiā",
+        "vn": "nhà hàng xóm"
+      },
+      {
+        "zh": "对面的邻居",
+        "py": "duìmiàn de línjū",
+        "vn": "hàng xóm đối diện"
+      },
+      {
+        "zh": "跟邻居聊天儿",
+        "py": "gēn línjū liáo tiān ér",
+        "vn": "trò chuyện với hàng xóm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "对面的 + 邻居",
+        "m": "Hàng xóm đối diện"
+      },
+      {
+        "s": "邻 + 居",
+        "m": "Ở (居) gần bên (邻)"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "后来",
+    "py": "hòulái",
+    "pos": "Danh từ",
+    "vn": "sau này, sau đó",
+    "hv": "hậu lai",
+    "em": "⏭️",
+    "lesson": 2,
+    "explain": [
+      "Chỉ khoảng thời gian tiếp theo sau một sự việc đã xảy ra."
+    ],
+    "usage": "Danh từ chỉ thời gian, thường đứng đầu câu hoặc sau chủ ngữ.",
+    "collo": [
+      "后来是",
+      "后来发现",
+      "后来儿子生病了"
+    ],
+    "ex_zh": "我们过去是邻居，后来是大学同学。",
+    "ex_py": "Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué.",
+    "ex_vn": "Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học.",
+    "exList": [
+      {
+        "zh": "我们过去是邻居，后来是大学同学，关系一直很不错。",
+        "py": "Wǒmen guòqù shì línjū, hòulái shì dàxué tóngxué, guānxi yìzhí hěn búcuò.",
+        "vn": "Trước đây chúng tôi là hàng xóm, sau đó là bạn học đại học, quan hệ luôn rất tốt."
+      },
+      {
+        "zh": "后来发现没带钱包，只好都放回去了。",
+        "py": "Hòulái fāxiàn méi dài qiánbāo, zhǐhǎo dōu fàng huiqu le.",
+        "vn": "Sau đó phát hiện không mang ví tiền, đành phải để lại hết."
+      },
+      {
+        "zh": "后来儿子生病了，为了照顾他，哪儿都没去。",
+        "py": "Hòulái érzi shēngbìng le, wèile zhàogù tā, nǎr dōu méi qù.",
+        "vn": "Sau đó con trai bị bệnh, để chăm sóc con, chẳng đi đâu cả."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "后",
+        "p": "hòu",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 6,
+        "ord": "尸 ngoài → 口 trong (giản thể)",
+        "rad": "尸 (thi)",
+        "mean": "sau, phía sau",
+        "tip": "Chữ giản thể mô phỏng hình người bước CHẬM lại phía SAU đoàn người → SAU, PHÍA SAU; 后(sau)+来(đến) = SAU NÀY.",
+        "cf": "厚 (hòu – \"dày\", có 厂 thay vì 尸\")",
+        "w": "后来 / 以后 / 后边"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sau đó con gái phải thi, để cho con yên tâm ôn tập, cả nhà chúng tôi chẳng đi chơi đâu cả.",
+        "answer": "后来女儿要考试了，为了让她安心复习，我们哪儿都没去玩儿。",
+        "answerPy": "Hòulái nǚ'ér yào kǎoshì le, wèile ràng tā ānxīn fùxí, wǒmen nǎr dōu méi qù wánr.",
+        "note": "哪儿都 + phủ định diễn tả toàn bộ không ngoại lệ (điểm ngữ pháp trọng tâm bài này).",
+        "pair": "为了……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu sau này bạn hiểu rõ hơn thì hãy nói cho tôi biết.",
+        "answer": "如果后来你更了解了，就告诉我吧。",
+        "answerPy": "Rúguǒ hòulái nǐ gèng liǎojiě le, jiù gàosu wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "后来发现",
+        "py": "hòulái fāxiàn",
+        "vn": "sau đó phát hiện"
+      },
+      {
+        "zh": "后来是",
+        "py": "hòulái shì",
+        "vn": "về sau là"
+      },
+      {
+        "zh": "后来怎么样了",
+        "py": "hòulái zěnmeyàng le",
+        "vn": "sau đó thế nào"
+      },
+      {
+        "zh": "以前……后来……",
+        "py": "yǐqián hòulái",
+        "vn": "trước đây… về sau…"
+      },
+      {
+        "zh": "后来就搬走了",
+        "py": "hòulái jiù bān zǒu le",
+        "vn": "sau đó thì chuyển đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "以前……，后来……",
+        "m": "Trước đây …, về sau …"
+      },
+      {
+        "s": "后来 chỉ dùng cho việc ĐÃ QUA; việc sắp tới dùng 以后"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "爱好",
+    "py": "àihào",
+    "pos": "Danh từ",
+    "vn": "sở thích",
+    "hv": "ái hiếu",
+    "em": "❤️",
+    "lesson": 2,
+    "explain": [
+      "Điều mà một người thích làm, quan tâm thường xuyên."
+    ],
+    "usage": "Danh từ; đi cùng động từ 有: 有很多爱好.",
+    "collo": [
+      "很多爱好",
+      "我的爱好",
+      "有兴趣的爱好"
+    ],
+    "ex_zh": "他有很多爱好，什么都会。",
+    "ex_py": "Tā yǒu hěn duō àihào, shénme dōu huì.",
+    "ex_vn": "Anh ấy có nhiều sở thích, cái gì cũng biết.",
+    "exList": [
+      {
+        "zh": "他有很多爱好，唱歌、画画儿、踢足球，什么都会。",
+        "py": "Tā yǒu hěn duō àihào, chànggē, huà huàr, tī zúqiú, shénme dōu huì.",
+        "vn": "Anh ấy có nhiều sở thích, hát, vẽ tranh, đá bóng, cái gì cũng biết."
+      },
+      {
+        "zh": "我的爱好是游泳。",
+        "py": "Wǒ de àihào shì yóuyǒng.",
+        "vn": "Sở thích của tôi là bơi lội."
+      },
+      {
+        "zh": "我的爱好跟你的不一样，我更喜欢游泳。",
+        "py": "Wǒ de àihào gēn nǐ de bù yíyàng, wǒ gèng xǐhuan yóuyǒng.",
+        "vn": "Sở thích của tôi khác với của bạn, tôi thích bơi lội hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "好",
+        "p": "hào",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "女 trái → 子 phải",
+        "rad": "女 (nữ)",
+        "mean": "thích; tốt (đa âm)",
+        "tip": "女(nữ) + 子(con cái) → mẹ ôm con thể hiện tình yêu THÍCH THÚ; khi đọc hǎo nghĩa là TỐT, khi đọc hào nghĩa là THÍCH.",
+        "cf": "子 (zǐ – \"con\", không có bộ 女\")",
+        "w": "爱好 / 好奇"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sở thích của em trai tôi khác với tôi, nó thích đá bóng hơn.",
+        "answer": "我弟弟的爱好跟我的不一样，他更喜欢踢足球。",
+        "answerPy": "Wǒ dìdi de àihào gēn wǒ de bù yíyàng, tā gèng xǐhuan tī zúqiú.",
+        "note": "跟……不一样 diễn tả sự khác biệt.",
+        "pair": "跟……一样……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn có sở thích chung thì các bạn sẽ trở thành bạn tốt.",
+        "answer": "只要你们有共同的爱好，就会成为好朋友。",
+        "answerPy": "Zhǐyào nǐmen yǒu gòngtóng de àihào, jiù huì chéngwéi hǎo péngyou.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我的爱好",
+        "py": "wǒ de àihào",
+        "vn": "sở thích của tôi"
+      },
+      {
+        "zh": "很多爱好",
+        "py": "hěn duō àihào",
+        "vn": "nhiều sở thích"
+      },
+      {
+        "zh": "一个爱好",
+        "py": "yí gè àihào",
+        "vn": "một sở thích"
+      },
+      {
+        "zh": "适合自己的爱好",
+        "py": "shìhé zìjǐ de àihào",
+        "vn": "sở thích hợp với mình"
+      },
+      {
+        "zh": "爱好是看书",
+        "py": "àihào shì kàn shū",
+        "vn": "sở thích là đọc sách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 的爱好 + 是 + …",
+        "m": "Sở thích của ai là gì"
+      },
+      {
+        "s": "爱好 (danh từ, sở thích) — khác 喜欢 (động từ, thích)"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "办法",
+    "py": "bànfǎ",
+    "pos": "Danh từ",
+    "vn": "cách, biện pháp",
+    "hv": "biện pháp",
+    "em": "💡",
+    "lesson": 3,
+    "explain": [
+      "Cách thức, phương pháp để giải quyết một việc."
+    ],
+    "usage": "Danh từ; đi cùng động từ 有/想: 有办法, 想办法.",
+    "collo": [
+      "有办法",
+      "想办法",
+      "没办法"
+    ],
+    "ex_zh": "谁都有办法看好你的\"病\"。",
+    "ex_py": "Shéi dōu yǒu bànfǎ kànhǎo nǐ de \"bìng\".",
+    "ex_vn": "Ai cũng có cách chữa khỏi \"bệnh\" của em.",
+    "exList": [
+      {
+        "zh": "不用去医院，谁都有办法看好你的\"病\"。",
+        "py": "Búyòng qù yīyuàn, shéi dōu yǒu bànfǎ kànhǎo nǐ de \"bìng\".",
+        "vn": "Không cần đi bệnh viện đâu, ai cũng có cách chữa khỏi \"bệnh\" của em."
+      },
+      {
+        "zh": "有些事情必须要自己来做选择和决定，不能什么都请别人帮忙。",
+        "py": "Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng, bù néng shénme dōu qǐng biéren bāngmáng.",
+        "vn": "Có những việc phải tự mình lựa chọn và quyết định, không thể việc gì cũng nhờ người khác giúp."
+      },
+      {
+        "zh": "没办法，为了瘦一点儿，我必须少吃。",
+        "py": "Méi bànfǎ, wèile shòu yìdiǎnr, wǒ bìxū shǎo chī.",
+        "vn": "Không còn cách nào khác, để gầy đi một chút, tôi phải ăn ít lại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "法",
+        "p": "fǎ",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "氵 trái → 去 phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "phương pháp, luật",
+        "tip": "氵(nước, công bằng như mặt nước) + 去(đi qua) → quy tắc PHÁP LUẬT áp dụng công bằng; 办(làm)+法(phương pháp) = CÁCH LÀM.",
+        "cf": "去 (qù – \"đi\", không có bộ 氵\")",
+        "w": "办法 / 法律"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không còn cách nào khác, để qua được kỳ thi, tôi phải ôn tập thêm hai tiếng mỗi ngày.",
+        "answer": "没办法，为了通过考试，我必须每天多复习两个小时。",
+        "answerPy": "Méi bànfǎ, wèile tōngguò kǎoshì, wǒ bìxū měitiān duō fùxí liǎng ge xiǎoshí.",
+        "note": "为了 diễn tả mục đích (sẽ học ngay bên dưới trong bài này).",
+        "pair": "为了……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có cách hay thì hãy nói cho tôi biết.",
+        "answer": "如果你有好办法，就告诉我吧。",
+        "answerPy": "Rúguǒ nǐ yǒu hǎo bànfǎ, jiù gàosu wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有办法",
+        "py": "yǒu bànfǎ",
+        "vn": "có cách"
+      },
+      {
+        "zh": "想办法",
+        "py": "xiǎng bànfǎ",
+        "vn": "nghĩ cách"
+      },
+      {
+        "zh": "没办法",
+        "py": "méi bànfǎ",
+        "vn": "không còn cách nào"
+      },
+      {
+        "zh": "好办法",
+        "py": "hǎo bànfǎ",
+        "vn": "cách hay"
+      },
+      {
+        "zh": "这个办法不错",
+        "py": "zhège bànfǎ búcuò",
+        "vn": "cách này khá ổn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "想 + 办法",
+        "m": "Nghĩ cách — dùng 想, không dùng 做"
+      },
+      {
+        "s": "没办法 + V",
+        "m": "Không có cách nào làm được gì"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "饱",
+    "py": "bǎo",
+    "pos": "Tính từ",
+    "vn": "no",
+    "hv": "bão",
+    "em": "🍚",
+    "lesson": 3,
+    "explain": [
+      "Trạng thái ăn đủ, không còn đói."
+    ],
+    "usage": "Tính từ, làm bổ ngữ sau động từ 吃: 吃饱了.",
+    "collo": [
+      "吃饱",
+      "吃不饱",
+      "吃饱了就睡"
+    ],
+    "ex_zh": "你吃饱了就睡。",
+    "ex_py": "Nǐ chībǎole jiù shuì.",
+    "ex_vn": "Em ăn no là ngủ.",
+    "exList": [
+      {
+        "zh": "谁都知道运动对身体好。但是你吃饱了就睡。",
+        "py": "Shéi dōu zhīdào yùndòng duì shēntǐ hǎo. Dànshì nǐ chībǎole jiù shuì.",
+        "vn": "Ai cũng biết vận động tốt cho sức khỏe. Nhưng em ăn no là ngủ."
+      },
+      {
+        "zh": "你的早饭只有一杯咖啡和一小块蛋糕，吃不饱。",
+        "py": "Nǐ de zǎofàn zhǐyǒu yì bēi kāfēi hé yì xiǎo kuài dàngāo, chī bu bǎo.",
+        "vn": "Bữa sáng của bạn chỉ có một cốc cà phê và một miếng bánh nhỏ, ăn không no đâu."
+      },
+      {
+        "zh": "我吃饱了，谢谢。",
+        "py": "Wǒ chībǎo le, xièxie.",
+        "vn": "Tôi ăn no rồi, cảm ơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "饱",
+        "p": "bǎo",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "饣 trái → 包 phải",
+        "rad": "饣 (thực – ăn)",
+        "mean": "no",
+        "tip": "饣(ăn) + 包(gói tròn, đầy) → ăn đến khi bụng ĐẦY, TRÒN như cái gói = NO.",
+        "cf": "抱 (bào – \"ôm\", có bộ 扌\")",
+        "w": "吃饱 / 饱了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bữa trưa của bạn chỉ có một bát cơm và một chút rau xanh, ăn không no đâu.",
+        "answer": "你的午饭只有一碗米饭和一点儿青菜，吃不饱。",
+        "answerPy": "Nǐ de wǔfàn zhǐyǒu yì wǎn mǐfàn hé yìdiǎnr qīngcài, chī bu bǎo.",
+        "note": "吃不饱 diễn tả khả năng phủ định (không thể no).",
+        "pair": "只有……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn ăn no rồi thì đừng đi ngủ ngay.",
+        "answer": "如果你吃饱了，就别马上去睡觉。",
+        "answerPy": "Rúguǒ nǐ chībǎo le, jiù bié mǎshàng qù shuìjiào.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "吃饱",
+        "py": "chī bǎo",
+        "vn": "ăn no"
+      },
+      {
+        "zh": "吃不饱",
+        "py": "chī bù bǎo",
+        "vn": "ăn không no"
+      },
+      {
+        "zh": "吃饱了",
+        "py": "chī bǎo le",
+        "vn": "no rồi"
+      },
+      {
+        "zh": "很饱",
+        "py": "hěn bǎo",
+        "vn": "rất no"
+      },
+      {
+        "zh": "吃饱了就睡",
+        "py": "chī bǎo le jiù shuì",
+        "vn": "ăn no là ngủ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "吃 + 饱",
+        "m": "Ăn no — 饱 là bổ ngữ kết quả"
+      },
+      {
+        "s": "饱 ↔ 饿",
+        "m": "No ↔ đói (bài 4)"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "为了",
+    "py": "wèile",
+    "pos": "Giới từ",
+    "vn": "để, vì",
+    "hv": "vị liễu",
+    "em": "🎯",
+    "lesson": 3,
+    "explain": [
+      "Nêu mục đích của một hành động."
+    ],
+    "usage": "为了 + [mục đích]，[hành động].",
+    "collo": [
+      "为了健康",
+      "为了瘦一点儿",
+      "为了照顾他"
+    ],
+    "ex_zh": "为了健康，我真应该多锻炼锻炼了。",
+    "ex_py": "Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le.",
+    "ex_vn": "Vì sức khỏe, em thật sự nên tập luyện nhiều hơn.",
+    "exList": [
+      {
+        "zh": "为了健康，我真应该多锻炼锻炼了。",
+        "py": "Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le.",
+        "vn": "Vì sức khỏe, em thật sự nên tập luyện nhiều hơn."
+      },
+      {
+        "zh": "没办法，为了瘦一点儿，我必须少吃。",
+        "py": "Méi bànfǎ, wèile shòu yìdiǎnr, wǒ bìxū shǎo chī.",
+        "vn": "Không còn cách nào khác, để gầy đi một chút, tôi phải ăn ít lại."
+      },
+      {
+        "zh": "为了照顾他，哪儿都没去。",
+        "py": "Wèile zhàogù tā, nǎr dōu méi qù.",
+        "vn": "Để chăm sóc con, chẳng đi đâu cả."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "为",
+        "p": "wèi",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "丶 (chủ)",
+        "mean": "vì, để",
+        "tip": "Chữ giản thể đơn giản hóa từ hình bàn tay LÀM VIỆC gì đó → mở rộng nghĩa \"làm VÌ mục đích\" = VÌ, ĐỂ.",
+        "cf": "办 (bàn – \"làm\", có 力 thay vì 丶\")",
+        "w": "为了 / 因为"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Để chăm sóc mẹ bị ốm, tuần này tôi chẳng đi đâu cả.",
+        "answer": "为了照顾生病的妈妈，这个星期我哪儿都没去。",
+        "answerPy": "Wèile zhàogù shēngbìng de māma, zhège xīngqī wǒ nǎr dōu méi qù.",
+        "note": "为了 nêu mục đích, đứng đầu câu.",
+        "pair": "为了……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì muốn nâng cao trình độ tiếng Trung, tôi quyết định mỗi ngày đọc sách.",
+        "answer": "为了提高汉语水平，我决定每天看书。",
+        "answerPy": "Wèile tígāo Hànyǔ shuǐpíng, wǒ juédìng měitiān kàn shū.",
+        "note": "为了 + mục đích, 决定 + hành động (ôn lại 提高/水平 đã học ở Bài 15).",
+        "pair": "为了……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "为了健康",
+        "py": "wèile jiànkāng",
+        "vn": "vì sức khoẻ"
+      },
+      {
+        "zh": "为了瘦一点儿",
+        "py": "wèile shòu yìdiǎnr",
+        "vn": "để gầy hơn chút"
+      },
+      {
+        "zh": "为了照顾他",
+        "py": "wèile zhàogù tā",
+        "vn": "để chăm sóc anh ấy"
+      },
+      {
+        "zh": "为了考试",
+        "py": "wèile kǎoshì",
+        "vn": "vì kỳ thi"
+      },
+      {
+        "zh": "为了学好汉语",
+        "py": "wèile xué hǎo Hànyǔ",
+        "vn": "để học tốt tiếng Trung"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "为了 + mục đích，Sub + V",
+        "m": "Vì, để … mà làm gì"
+      },
+      {
+        "s": "为了 (mục đích) ≠ 因为 (nguyên nhân)"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "决定",
+    "py": "juédìng",
+    "pos": "Động từ",
+    "vn": "quyết định",
+    "hv": "quyết định",
+    "em": "✅",
+    "lesson": 3,
+    "explain": [
+      "Đưa ra lựa chọn cuối cùng sau khi suy nghĩ."
+    ],
+    "usage": "Động từ, mang tân ngữ là mệnh đề: 决定 + [việc].",
+    "collo": [
+      "决定每天",
+      "做决定",
+      "自己决定"
+    ],
+    "ex_zh": "从明天起，我决定每天去长跑。",
+    "ex_py": "Cóng míngtiān qǐ, wǒ juédìng měitiān qù chángpǎo.",
+    "ex_vn": "Từ ngày mai, em quyết định mỗi ngày đi chạy bộ đường dài.",
+    "exList": [
+      {
+        "zh": "为了健康，我真应该多锻炼锻炼了。从明天起，我决定每天去长跑。",
+        "py": "Wèile jiànkāng, wǒ zhēn yīnggāi duō duànliàn duànliàn le. Cóng míngtiān qǐ, wǒ juédìng měitiān qù chángpǎo.",
+        "vn": "Vì sức khỏe, em thật sự nên tập luyện nhiều hơn. Từ ngày mai, em quyết định mỗi ngày đi chạy bộ đường dài."
+      },
+      {
+        "zh": "有些事情必须要自己来做选择和决定。",
+        "py": "Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng.",
+        "vn": "Có những việc phải tự mình lựa chọn và quyết định."
+      },
+      {
+        "zh": "我还没决定呢。",
+        "py": "Wǒ hái méi juédìng ne.",
+        "vn": "Tôi vẫn chưa quyết định đâu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "定",
+        "p": "dìng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "宀 trên → 定 dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "quyết định, ổn định",
+        "tip": "宀(mái nhà) + 疋(bàn chân đứng vững) → đứng vững dưới MÁI NHÀ, không lung lay = ỔN ĐỊNH, mở rộng QUYẾT ĐỊNH.",
+        "cf": "空 (kōng – \"trống rỗng\", có 工 thay vì 疋\")",
+        "w": "决定 / 一定 / 定"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cuối tuần này có đi leo núi không thì tôi vẫn chưa quyết, vì còn phải xem thời tiết.",
+        "answer": "这个周末去不去爬山，我还没决定呢，因为还要看天气。",
+        "answerPy": "Zhège zhōumò qù bu qù páshān, wǒ hái méi juédìng ne, yīnwèi hái yào kàn tiānqì.",
+        "note": "爬山 là từ bài 3; 决定 + V — quyết định làm gì.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn quyết định đi thì tôi sẽ đi cùng bạn.",
+        "answer": "如果你决定去，我就跟你一起去。",
+        "answerPy": "Rúguǒ nǐ juédìng qù, wǒ jiù gēn nǐ yìqǐ qù.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "做决定",
+        "py": "zuò juédìng",
+        "vn": "đưa ra quyết định"
+      },
+      {
+        "zh": "自己决定",
+        "py": "zìjǐ juédìng",
+        "vn": "tự quyết định"
+      },
+      {
+        "zh": "决定每天跑步",
+        "py": "juédìng měi tiān pǎobù",
+        "vn": "quyết định chạy bộ mỗi ngày"
+      },
+      {
+        "zh": "还没决定",
+        "py": "hái méi juédìng",
+        "vn": "vẫn chưa quyết"
+      },
+      {
+        "zh": "决定去",
+        "py": "juédìng qù",
+        "vn": "quyết định đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 决定 + V (động từ)",
+        "m": "Ai đó quyết định làm gì"
+      },
+      {
+        "s": "做 + 决定 (danh từ)",
+        "m": "Đưa ra quyết định"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "选择",
+    "py": "xuǎnzé",
+    "pos": "Động từ",
+    "vn": "lựa chọn",
+    "hv": "tuyển trạch",
+    "em": "☑️",
+    "lesson": 4,
+    "explain": [
+      "Chọn ra một trong nhiều khả năng."
+    ],
+    "usage": "Động từ, mang tân ngữ: 选择 + [đối tượng].",
+    "collo": [
+      "选择时间",
+      "选择地点",
+      "做选择"
+    ],
+    "ex_zh": "第一，要选择\"对\"的时间。",
+    "ex_py": "Dì yī, yào xuǎnzé \"duì\" de shíjiān.",
+    "ex_vn": "Thứ nhất, phải chọn thời gian \"đúng\".",
+    "exList": [
+      {
+        "zh": "第一，要选择\"对\"的时间。",
+        "py": "Dì yī, yào xuǎnzé \"duì\" de shíjiān.",
+        "vn": "Thứ nhất, phải chọn thời gian \"đúng\"."
+      },
+      {
+        "zh": "第二，要选择\"对\"的地点。",
+        "py": "Dì èr, yào xuǎnzé \"duì\" de dìdiǎn.",
+        "vn": "Thứ hai, phải chọn địa điểm \"đúng\"."
+      },
+      {
+        "zh": "有些事情必须要自己来做选择和决定。",
+        "py": "Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng.",
+        "vn": "Có những việc phải tự mình lựa chọn và quyết định."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "选",
+        "p": "xuǎn",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 9,
+        "ord": "辶 ngoài → 先 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "lựa chọn",
+        "tip": "辶(đi) + 先(trước tiên) → đi TRƯỚC để CHỌN LỰA cái tốt nhất = LỰA CHỌN.",
+        "cf": "洗 (xǐ – \"rửa\", có bộ 氵\")",
+        "w": "选择 / 选举"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thứ hai, phải chọn sở thích hợp với mình, như vậy mới giữ được lâu.",
+        "answer": "第二，要选择适合自己的爱好，这样才能坚持下去。",
+        "answerPy": "Dì-èr, yào xuǎnzé shìhé zìjǐ de àihào, zhèyàng cái néng jiānchí xiàqu.",
+        "note": "自己 là từ bài 12; 选择 + N — lựa chọn cái gì.",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn không biết chọn cái nào thì hỏi tôi đi.",
+        "answer": "如果你不知道选择哪个，就问我吧。",
+        "answerPy": "Rúguǒ nǐ bù zhīdào xuǎnzé nǎge, jiù wèn wǒ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "选择时间",
+        "py": "xuǎnzé shíjiān",
+        "vn": "chọn thời gian"
+      },
+      {
+        "zh": "选择地点",
+        "py": "xuǎnzé dìdiǎn",
+        "vn": "chọn địa điểm"
+      },
+      {
+        "zh": "做选择",
+        "py": "zuò xuǎnzé",
+        "vn": "đưa ra lựa chọn"
+      },
+      {
+        "zh": "选择适合自己的",
+        "py": "xuǎnzé shìhé zìjǐ de",
+        "vn": "chọn cái hợp với mình"
+      },
+      {
+        "zh": "很难选择",
+        "py": "hěn nán xuǎnzé",
+        "vn": "rất khó chọn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "选择 + N (động từ)",
+        "m": "Lựa chọn cái gì"
+      },
+      {
+        "s": "做 + 选择 (danh từ)",
+        "m": "Đưa ra sự lựa chọn"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "冬(天)",
+    "py": "dōng(tiān)",
+    "pos": "Danh từ",
+    "vn": "(mùa) đông",
+    "hv": "đông thiên",
+    "em": "❄️",
+    "lesson": 4,
+    "explain": [
+      "Mùa lạnh nhất trong năm."
+    ],
+    "usage": "Danh từ chỉ mùa; đi cùng động từ 要: 冬天要再晚一些.",
+    "collo": [
+      "冬天",
+      "今年冬天",
+      "冬天特别长"
+    ],
+    "ex_zh": "冬天要再晚一些。",
+    "ex_py": "Dōngtiān yào zài wǎn yìxiē.",
+    "ex_vn": "Mùa đông thì phải muộn hơn một chút.",
+    "exList": [
+      {
+        "zh": "一般来说，早上9点是最好的时间，冬天要再晚一些。",
+        "py": "Yìbān lái shuō, zǎoshang jiǔ diǎn shì zuì hǎo de shíjiān, dōngtiān yào zài wǎn yìxiē.",
+        "vn": "Nói chung, 9 giờ sáng là thời gian tốt nhất, mùa đông thì phải muộn hơn một chút."
+      },
+      {
+        "zh": "雪下得真大，谁都没想到今年冬天能下这么大的雪。",
+        "py": "Xuě xià de zhēn dà, shéi dōu méi xiǎngdào jīnnián dōngtiān néng xià zhème dà de xuě.",
+        "vn": "Tuyết rơi to thật, ai cũng không ngờ mùa đông năm nay lại có tuyết to thế."
+      },
+      {
+        "zh": "冬天特别长，从11月到第二年3月都比较冷。",
+        "py": "Dōngtiān tèbié cháng, cóng shíyī yuè dào dì-èr nián sān yuè dōu bǐjiào lěng.",
+        "vn": "Mùa đông đặc biệt dài, từ tháng 11 đến tháng 3 năm sau đều khá lạnh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "冬",
+        "p": "dōng",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "冫 (băng – nước đá)",
+        "mean": "mùa đông",
+        "tip": "冫(băng giá) + 夂(bước chân chậm chạp vì lạnh) → mùa lạnh khiến bước đi CHẬM CHẠP = MÙA ĐÔNG.",
+        "cf": "各 (gè – \"mỗi\", hình dáng phần trên gần giống\")",
+        "w": "冬天 / 冬季"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mùa đông ở đây rất ngắn, từ tháng 12 đến tháng 1 năm sau mới khá lạnh.",
+        "answer": "这里的冬天很短，从12月到第二年1月才比较冷。",
+        "answerPy": "Zhèli de dōngtiān hěn duǎn, cóng shí'èr yuè dào dì-èr nián yī yuè cái bǐjiào lěng.",
+        "note": "从……到…… diễn tả khoảng thời gian.",
+        "pair": "从……到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu mùa đông ở đây quá lạnh thì tôi sẽ không quen được.",
+        "answer": "如果这里的冬天太冷，我就不会习惯。",
+        "answerPy": "Rúguǒ zhèli de dōngtiān tài lěng, wǒ jiù bú huì xíguàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "冬天很冷",
+        "py": "dōng tiān hěn lěng",
+        "vn": "mùa đông rất lạnh"
+      },
+      {
+        "zh": "今年冬天",
+        "py": "jīnnián dōng tiān",
+        "vn": "mùa đông năm nay"
+      },
+      {
+        "zh": "冬天特别长",
+        "py": "dōng tiān tèbié zhǎng",
+        "vn": "mùa đông đặc biệt dài"
+      },
+      {
+        "zh": "过冬天",
+        "py": "guo dōng tiān",
+        "vn": "trải qua mùa đông"
+      },
+      {
+        "zh": "冬天的衣服",
+        "py": "dōng tiān de yīfu",
+        "vn": "quần áo mùa đông"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "冬天 ↔ 夏天 (bài 5)",
+        "m": "Mùa đông ↔ mùa hè"
+      },
+      {
+        "s": "春 · 夏 · 秋 · 冬 — bốn mùa đều thêm 天"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "必须",
+    "py": "bìxū",
+    "pos": "Phó từ",
+    "vn": "cần phải",
+    "hv": "tất tu",
+    "em": "❗",
+    "lesson": 4,
+    "explain": [
+      "Diễn tả sự bắt buộc, không thể thiếu."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 必须 + V.",
+    "collo": [
+      "必须要",
+      "必须少吃",
+      "必须根据"
+    ],
+    "ex_zh": "第三，必须要根据自己的健康情况运动。",
+    "ex_py": "Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.",
+    "ex_vn": "Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân.",
+    "exList": [
+      {
+        "zh": "第三，必须要根据自己的健康情况运动。",
+        "py": "Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.",
+        "vn": "Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân."
+      },
+      {
+        "zh": "没办法，为了瘦一点儿，我必须少吃。",
+        "py": "Méi bànfǎ, wèile shòu yìdiǎnr, wǒ bìxū shǎo chī.",
+        "vn": "Không còn cách nào khác, để gầy đi một chút, tôi phải ăn ít lại."
+      },
+      {
+        "zh": "有些事情必须要自己来做选择和决定。",
+        "py": "Yǒuxiē shìqing bìxū yào zìjǐ lái zuò xuǎnzé hé juédìng.",
+        "vn": "Có những việc phải tự mình lựa chọn và quyết định."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "须",
+        "p": "xū",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "彡 trái → 页 phải",
+        "rad": "页 (hiệt – đầu)",
+        "mean": "cần phải; râu",
+        "tip": "彡(sợi lông) + 页(đầu, mặt) → sợi lông mọc trên MẶT = RÂU; mở rộng nghĩa \"điều tất yếu phải có\" = CẦN PHẢI.",
+        "cf": "颈 (jǐng – \"cổ\", có 圣 thay vì 彡\")",
+        "w": "必须 / 须要"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Có những việc bắt buộc phải do chính giáo viên tự chọn và tự quyết định.",
+        "answer": "有些问题必须由老师自己来做选择和决定。",
+        "answerPy": "Yǒuxiē wèntí bìxū yóu lǎoshī zìjǐ lái zuò xuǎnzé hé juédìng.",
+        "note": "由 + ai + V (bài 13 HSK4) — do ai làm; 必须 mạnh hơn 应该.",
+        "pair": "必须……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn muốn khỏe mạnh thì phải tập thể dục thường xuyên.",
+        "answer": "如果你想健康，就必须经常锻炼。",
+        "answerPy": "Rúguǒ nǐ xiǎng jiànkāng, jiù bìxū jīngcháng duànliàn.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "必须要",
+        "py": "bìxū yào",
+        "vn": "nhất định phải"
+      },
+      {
+        "zh": "必须少吃",
+        "py": "bìxū shǎo chī",
+        "vn": "buộc phải ăn ít"
+      },
+      {
+        "zh": "必须根据情况",
+        "py": "bìxū gēnjù qíngkuàng",
+        "vn": "phải căn cứ tình hình"
+      },
+      {
+        "zh": "必须做完",
+        "py": "bìxū zuò wán",
+        "vn": "phải làm xong"
+      },
+      {
+        "zh": "不必须",
+        "py": "bù bìxū",
+        "vn": "không bắt buộc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 必须 + V",
+        "m": "Ai đó bắt buộc phải làm gì"
+      },
+      {
+        "s": "必须 (yêu cầu khách quan) ≠ 应该 (nên, bài 13)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "根据",
+    "py": "gēnjù",
+    "pos": "Giới từ",
+    "vn": "căn cứ vào, dựa vào",
+    "hv": "căn cứ",
+    "em": "📊",
+    "lesson": 4,
+    "explain": [
+      "Nêu cơ sở, căn cứ để làm một việc gì đó."
+    ],
+    "usage": "根据 + [căn cứ]，[hành động].",
+    "collo": [
+      "根据情况",
+      "根据要求",
+      "根据自己的健康"
+    ],
+    "ex_zh": "必须要根据自己的健康情况运动。",
+    "ex_py": "Bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.",
+    "ex_vn": "Phải vận động dựa theo tình trạng sức khỏe của bản thân.",
+    "exList": [
+      {
+        "zh": "第三，必须要根据自己的健康情况运动。",
+        "py": "Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.",
+        "vn": "Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân."
+      },
+      {
+        "zh": "比赛是根据要求写汉字。",
+        "py": "Bǐsài shì gēnjù yāoqiú xiě hànzì.",
+        "vn": "Cuộc thi là viết chữ Hán theo yêu cầu."
+      },
+      {
+        "zh": "请根据自己的情况选择。",
+        "py": "Qǐng gēnjù zìjǐ de qíngkuàng xuǎnzé.",
+        "vn": "Xin hãy chọn dựa theo tình trạng của bản thân."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "据",
+        "p": "jù",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "扌 trái → 居 phải",
+        "rad": "扌 (thủ – tay)",
+        "mean": "căn cứ, dựa vào",
+        "tip": "扌(tay) + 居(ở, dựa vào) → dùng TAY nắm giữ làm chỗ DỰA VÀO = CĂN CỨ.",
+        "cf": "居 (jū – \"ở\", không có bộ 扌\")",
+        "w": "根据 / 数据"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hãy chọn quần áo phù hợp dựa theo tình hình thời tiết.",
+        "answer": "请根据天气的情况选择合适的衣服。",
+        "answerPy": "Qǐng gēnjù tiānqì de qíngkuàng xuǎnzé héshì de yīfu.",
+        "note": "根据 + căn cứ, mệnh đề sau nêu hành động (ôn lại 选择/情况 sẽ học trong bài này).",
+        "pair": "根据……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn dựa theo yêu cầu để làm thì sẽ không sai.",
+        "answer": "如果你根据要求做，就不会错。",
+        "answerPy": "Rúguǒ nǐ gēnjù yāoqiú zuò, jiù bú huì cuò.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "根据情况",
+        "py": "gēnjù qíngkuàng",
+        "vn": "căn cứ tình hình"
+      },
+      {
+        "zh": "根据要求",
+        "py": "gēnjù yāoqiú",
+        "vn": "theo yêu cầu"
+      },
+      {
+        "zh": "根据自己的健康",
+        "py": "gēnjù zìjǐ de jiànkāng",
+        "vn": "dựa vào sức khoẻ của mình"
+      },
+      {
+        "zh": "根据老师说的",
+        "py": "gēnjù lǎoshī shuō de",
+        "vn": "theo lời thầy nói"
+      },
+      {
+        "zh": "根据天气",
+        "py": "gēnjù tiānqì",
+        "vn": "tuỳ thời tiết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "根据 + N，Sub + V",
+        "m": "Căn cứ vào cái gì mà làm gì"
+      },
+      {
+        "s": "根据 dẫn CĂN CỨ, không dẫn người: ✗ 根据他笑"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "情况",
+    "py": "qíngkuàng",
+    "pos": "Danh từ",
+    "vn": "tình hình, tình trạng",
+    "hv": "tình huống",
+    "em": "📋",
+    "lesson": 4,
+    "explain": [
+      "Trạng thái, hoàn cảnh của một sự việc tại một thời điểm."
+    ],
+    "usage": "Danh từ; đi cùng tính từ sở hữu: 健康情况.",
+    "collo": [
+      "健康情况",
+      "根据情况",
+      "生活情况"
+    ],
+    "ex_zh": "必须要根据自己的健康情况运动。",
+    "ex_py": "Bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.",
+    "ex_vn": "Phải vận động dựa theo tình trạng sức khỏe của bản thân.",
+    "exList": [
+      {
+        "zh": "第三，必须要根据自己的健康情况运动。",
+        "py": "Dì sān, bìxū yào gēnjù zìjǐ de jiànkāng qíngkuàng yùndòng.",
+        "vn": "Thứ ba, phải vận động dựa theo tình trạng sức khỏe của bản thân."
+      },
+      {
+        "zh": "你在国外留学这几年怎么样？那里的生活情况习惯了吗？",
+        "py": "Nǐ zài guówài liú xué zhè jǐ nián zěnme yàng? Nàli de shēnghuó qíngkuàng xíguàn le ma?",
+        "vn": "Mấy năm du học nước ngoài của bạn thế nào? Tình hình sinh hoạt ở đó quen chưa?"
+      },
+      {
+        "zh": "请了解一下这个地方的情况。",
+        "py": "Qǐng liǎojiě yíxià zhège dìfang de qíngkuàng.",
+        "vn": "Xin hãy tìm hiểu tình hình của nơi này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "况",
+        "p": "kuàng",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "冫 trái → 兄 phải",
+        "rad": "冫 (băng – nước đá)",
+        "mean": "tình huống",
+        "tip": "冫(nước) + 兄(anh trai, so sánh) → so sánh dòng nước chảy để biết TÌNH HÌNH; 情(cảm xúc)+况(tình huống) = TÌNH TRẠNG.",
+        "cf": "兄 (xiōng – \"anh trai\", không có bộ 冫\")",
+        "w": "情况 / 何况"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trước khi đi phỏng vấn, bạn nên tìm hiểu tình hình của công ty này một chút.",
+        "answer": "去面试以前，你应该先了解一下这家公司的情况。",
+        "answerPy": "Qù miànshì yǐqián, nǐ yīnggāi xiān liǎojiě yíxià zhè jiā gōngsī de qíngkuàng.",
+        "note": "V + 以前 — trước khi làm gì; 了解 là từ bài 9.",
+        "pair": "……以前……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn dựa theo tình hình sức khỏe để vận động thì cơ thể sẽ khỏe hơn.",
+        "answer": "只要你根据健康情况运动，身体就会更健康。",
+        "answerPy": "Zhǐyào nǐ gēnjù jiànkāng qíngkuàng yùndòng, shēntǐ jiù huì gèng jiànkāng.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "健康情况",
+        "py": "jiànkāng qíngkuàng",
+        "vn": "tình hình sức khoẻ"
+      },
+      {
+        "zh": "根据情况",
+        "py": "gēnjù qíngkuàng",
+        "vn": "tuỳ tình hình"
+      },
+      {
+        "zh": "生活情况",
+        "py": "shēnghuó qíngkuàng",
+        "vn": "tình hình sinh hoạt"
+      },
+      {
+        "zh": "了解情况",
+        "py": "liǎojiě qíngkuàng",
+        "vn": "nắm tình hình"
+      },
+      {
+        "zh": "情况不太好",
+        "py": "qíngkuàng bú tài hǎo",
+        "vn": "tình hình không tốt lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "了解 + 情况",
+        "m": "Tìm hiểu tình hình — 了解 là từ bài 9"
+      },
+      {
+        "s": "情 + 况",
+        "m": "Tình (情) hình (况)"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "口",
+    "py": "kǒu",
+    "pos": "Danh từ",
+    "vn": "miệng",
+    "hv": "khẩu",
+    "em": "👄",
+    "lesson": 4,
+    "explain": [
+      "Bộ phận trên cơ thể dùng để ăn, nói."
+    ],
+    "usage": "Danh từ; thường ghép với tính từ: 口渴.",
+    "collo": [
+      "口渴",
+      "刚运动完口渴",
+      "一口"
+    ],
+    "ex_zh": "还要记得刚运动完口渴的时候，不要马上喝水。",
+    "ex_py": "Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.",
+    "ex_vn": "Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay.",
+    "exList": [
+      {
+        "zh": "还要记得刚运动完口渴的时候，不要马上喝水。",
+        "py": "Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.",
+        "vn": "Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay."
+      },
+      {
+        "zh": "你先喝一口水吧。",
+        "py": "Nǐ xiān hē yì kǒu shuǐ ba.",
+        "vn": "Bạn uống một ngụm nước trước đã."
+      },
+      {
+        "zh": "这个人的口很大。",
+        "py": "Zhège rén de kǒu hěn dà.",
+        "vn": "Miệng người này to lắm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "口",
+        "p": "kǒu",
+        "type": "独体字 · Chữ đơn (tượng hình)",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "口 (khẩu)",
+        "mean": "miệng",
+        "tip": "Chữ tượng hình mô phỏng hình dạng cái MIỆNG đang mở → MIỆNG.",
+        "cf": "囗 (wéi – \"bao vây\", chữ tương tự nhưng nghĩa khác\")",
+        "w": "口 / 口渴 / 人口"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn uống một ngụm trà trước đã, rồi hãy nói tiếp.",
+        "answer": "你先喝一口茶，然后再说吧。",
+        "answerPy": "Nǐ xiān hē yì kǒu chá, ránhòu zài shuō ba.",
+        "note": "V + 一口 — làm gì một ngụm (bài 11).",
+        "pair": "先……然后……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu miệng bạn khát thì uống chút nước đi.",
+        "answer": "如果你口渴了，就喝点儿水吧。",
+        "answerPy": "Rúguǒ nǐ kǒu kě le, jiù hē diǎnr shuǐ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "口渴",
+        "py": "kǒu kě",
+        "vn": "khát nước"
+      },
+      {
+        "zh": "一口水",
+        "py": "yì kǒu shuǐ",
+        "vn": "một ngụm nước"
+      },
+      {
+        "zh": "喝一口",
+        "py": "hē yì kǒu",
+        "vn": "uống một ngụm"
+      },
+      {
+        "zh": "张开口",
+        "py": "zhāng kāi kǒu",
+        "vn": "há miệng"
+      },
+      {
+        "zh": "口很干",
+        "py": "kǒu hěn gān",
+        "vn": "miệng rất khô"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "口 + 渴",
+        "m": "Khát — nghĩa đen là miệng khát"
+      },
+      {
+        "s": "口 (cái miệng, danh từ) và 口 (ngụm, lượng từ — bài 11)"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "渴",
+    "py": "kě",
+    "pos": "Tính từ",
+    "vn": "khát",
+    "hv": "khát",
+    "em": "🥤",
+    "lesson": 4,
+    "explain": [
+      "Trạng thái muốn uống nước do thiếu nước."
+    ],
+    "usage": "Tính từ; thường ghép với 口: 口渴, hoặc đứng độc lập: 渴了.",
+    "collo": [
+      "口渴",
+      "渴了",
+      "很渴"
+    ],
+    "ex_zh": "还要记得刚运动完口渴的时候，不要马上喝水。",
+    "ex_py": "Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.",
+    "ex_vn": "Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay.",
+    "exList": [
+      {
+        "zh": "还要记得刚运动完口渴的时候，不要马上喝水。",
+        "py": "Hái yào jìde gāng yùndòng wán kǒu kě de shíhou, búyào mǎshàng hē shuǐ.",
+        "vn": "Còn phải nhớ lúc vừa vận động xong khát nước, đừng uống nước ngay."
+      },
+      {
+        "zh": "玩儿了这么长时间，渴了吧？",
+        "py": "Wánrle zhème cháng shíjiān, kě le ba?",
+        "vn": "Chơi lâu thế này, khát rồi phải không?"
+      },
+      {
+        "zh": "我不渴，你喝吧。",
+        "py": "Wǒ bù kě, nǐ hē ba.",
+        "vn": "Tôi không khát, bạn uống đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "渴",
+        "p": "kě",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "氵 trái → 曷 phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "khát",
+        "tip": "氵(nước) + 曷(cầu xin, mong muốn) → mong muốn có NƯỚC uống = KHÁT.",
+        "cf": "喝 (hē – \"uống\", có bộ 口\")",
+        "w": "口渴 / 渴了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chạy lâu thế này chắc khát rồi phải không? Nếu khát thì uống chút nước đi.",
+        "answer": "跑了这么长时间，渴了吧？如果渴了，就喝点儿水吧。",
+        "answerPy": "Pǎole zhème cháng shíjiān, kě le ba? Rúguǒ kě le, jiù hē diǎnr shuǐ ba.",
+        "note": "口渴 — khát; 渴 uống nước, 饿 thì ăn.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn khát thì uống chút nước đi.",
+        "answer": "如果你渴了，就喝点儿水吧。",
+        "answerPy": "Rúguǒ nǐ kě le, jiù hē diǎnr shuǐ ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "口渴",
+        "py": "kǒu kě",
+        "vn": "khát nước"
+      },
+      {
+        "zh": "渴了",
+        "py": "kě le",
+        "vn": "khát rồi"
+      },
+      {
+        "zh": "很渴",
+        "py": "hěn kě",
+        "vn": "rất khát"
+      },
+      {
+        "zh": "不渴",
+        "py": "bù kě",
+        "vn": "không khát"
+      },
+      {
+        "zh": "渴得很",
+        "py": "kě de hěn",
+        "vn": "khát lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 渴 + 了",
+        "m": "Ai đó khát rồi"
+      },
+      {
+        "s": "渴 (khát) ≠ 饿 (đói) — 渴 uống, 饿 ăn"
+      }
+    ]
+  }
 ];
 
 const wuData = [

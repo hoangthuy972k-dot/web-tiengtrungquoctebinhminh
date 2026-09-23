@@ -80,7 +80,7 @@ module.exports = {
   '放': {
     collo: [['放在桌子上', 'để trên bàn'], ['放好', 'để cho ngay ngắn'],
             ['放着', 'đang để đó'], ['放进包里', 'cho vào túi'],
-            ['别乱放', 'đừng để bừa']],
+            ['别放这儿', 'đừng để ở đây']],
     patterns: [['把 + N + 放在 + nơi chốn + 上 / 里', 'Đặt cái gì ở đâu'],
                ['放着', 'Đang để đó — 着 chỉ trạng thái kéo dài']]
   },

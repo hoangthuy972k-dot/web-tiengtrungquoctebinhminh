@@ -1279,9 +1279,9 @@ var vocabData = [
         "vn": "cho vào túi"
       },
       {
-        "zh": "别乱放",
-        "py": "bié luàn fàng",
-        "vn": "đừng để bừa"
+        "zh": "别放这儿",
+        "py": "bié fàng zhèr",
+        "vn": "đừng để ở đây"
       }
     ],
     "patterns": [
@@ -1697,7 +1697,7 @@ var vocabData = [
       },
       {
         "zh": "花茶",
-        "py": "huā chá",
+        "py": "huāchá",
         "vn": "trà hoa"
       },
       {
@@ -1799,7 +1799,7 @@ var vocabData = [
     "colloFull": [
       {
         "zh": "绿茶",
-        "py": "lǜ chá",
+        "py": "lǜchá",
         "vn": "trà xanh"
       },
       {

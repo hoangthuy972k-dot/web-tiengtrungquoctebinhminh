@@ -726,7 +726,7 @@ var vocabData = [
       {
         "zh": "写作业",
         "py": "xiě zuòyè",
-        "vn": "làm bài tập"
+        "vn": "viết bài tập"
       },
       {
         "zh": "做作业",

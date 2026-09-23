@@ -289,9 +289,9 @@ document.addEventListener('click',function(e){
 // Han tu o cuoi phan mo ra. Len HSK 4 hoc sinh da thuoc mat chu nen bo,
 // nhung o HSK 3 thi mat chu VAN DANG hoc — bo di la mat bai.
 // ══════════════════════════════════════════════════════════════
-function isHsk4Page(){ return /hsk[134]-bai-\d+/.test(location.pathname); }
+function isHsk4Page(){ return /hsk(?:[134]|1v3)-bai-\d+/.test(location.pathname); }
 // HSK 1 va HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
-function hsk3GiuHanTu(){ return /hsk[13]-bai-\d+/.test(location.pathname); }
+function hsk3GiuHanTu(){ return /hsk(?:[13]|1v3)-bai-\d+/.test(location.pathname); }
 
 // Khoi chiet tu Han tu — dung chung cho ca hai bo cuc (the cu va o HSK 3/4)
 function hzListHtml(v,vi){
@@ -336,7 +336,9 @@ function h4Patterns(v){
   if(!v.patterns || !v.patterns.length) return '';
   return '<div class="h4-sec-h"><span class="h4-sec-zh">句型</span> Cấu trúc câu</div>'+
     '<div class="h4-pats">'+v.patterns.map(function(p){
-      return '<div class="h4-pat"><div class="h4-pat-s">'+p.s+'</div><div class="h4-pat-m">→ '+p.m+'</div></div>';
+      // Co dong 句型 chi co mot ve (vi du mot luu y ✗/✓) — khong in mui ten rong
+      return '<div class="h4-pat"><div class="h4-pat-s">'+p.s+'</div>'+
+        (p.m?'<div class="h4-pat-m">→ '+p.m+'</div>':'')+'</div>';
     }).join('')+'</div>';
 }
 

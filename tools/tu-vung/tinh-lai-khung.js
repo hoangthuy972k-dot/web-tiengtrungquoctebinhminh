@@ -7,8 +7,9 @@ const path = require('path');
 const PAIRS = require('./khung-cau.js');
 
 const arg = process.argv.slice(2).filter(function (x) { return x.indexOf('--') !== 0; });
-const CAP = /^hsk[0-9]$/.test(arg[0]) ? arg[0] : 'hsk4';
-const SO = /^hsk[0-9]$/.test(arg[0]) ? arg[1] : arg[0];
+const LA_CAP = /^hsk\d(?:v\d)?$/;   // hsk1 · hsk3 · hsk4 · hsk1v3 (bo de HSK 3.0)
+const CAP = LA_CAP.test(arg[0]) ? arg[0] : 'hsk4';
+const SO = LA_CAP.test(arg[0]) ? arg[1] : arg[0];
 const TEN = CAP === 'hsk4' ? '' : CAP + '-';
 const THAT = process.argv.includes('--that');
 const FILE = path.join(process.cwd(), 'public', 'js', CAP + '-bai-' + SO + '-data.js');

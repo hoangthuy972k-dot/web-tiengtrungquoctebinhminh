@@ -3336,7 +3336,7 @@
   // Khong hien chiet tu Han tu — len HSK 4 hoc sinh da thuoc mat chu.
   // ══════════════════════════════════════════════════════════
   function vpIsHsk4() {
-    return !!(currentHubLesson && /\/hsk[134]-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    return !!(currentHubLesson && /\/hsk(?:[134]|1v3)-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
   }
 
   function vpH4Say(t) {
@@ -3366,7 +3366,9 @@
     if (!v.patterns || !v.patterns.length) return '';
     return '<div class="h4-sec-h"><span class="h4-sec-zh">句型</span> Cấu trúc câu</div>' +
       '<div class="h4-pats">' + v.patterns.map(function (p) {
-        return '<div class="h4-pat"><div class="h4-pat-s">' + p.s + '</div><div class="h4-pat-m">→ ' + p.m + '</div></div>';
+        // Co dong 句型 chi co mot ve (vi du mot luu y ✗/✓) — khong in mui ten rong
+        return '<div class="h4-pat"><div class="h4-pat-s">' + p.s + '</div>' +
+          (p.m ? '<div class="h4-pat-m">→ ' + p.m + '</div>' : '') + '</div>';
       }).join('') + '</div>';
   }
 
@@ -3389,7 +3391,7 @@
   function renderVpListHsk4() {
     // Chi HSK 3 giu chiet tu Han tu; HSK 4 tro len da bo
     // HSK 1 va HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
-    var giuHanTu = !!(currentHubLesson && /\/hsk[13]-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    var giuHanTu = !!(currentHubLesson && /\/hsk(?:[13]|1v3)-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
     var wrap = $('#vpContent');
     wrap.innerHTML =
       '<div class="h4-list">' +

@@ -12,8 +12,9 @@ const PY = require('./pinyin.js');
 const PAIRS = require('./khung-cau.js');
 
 const arg = process.argv.slice(2).filter(function (x) { return x.indexOf('--') !== 0; });
-const CAP = /^hsk\d$/.test(arg[0]) ? arg[0] : 'hsk4';
-const SO = /^hsk\d$/.test(arg[0]) ? arg[1] : arg[0];
+const LA_CAP = /^hsk\d(?:v\d)?$/;   // hsk1 · hsk3 · hsk4 · hsk1v3 (bo de HSK 3.0)
+const CAP = LA_CAP.test(arg[0]) ? arg[0] : 'hsk4';
+const SO = LA_CAP.test(arg[0]) ? arg[1] : arg[0];
 const THAT = process.argv.includes('--that');
 // hsk4 giu ten file cu (bai-N.js), cac cap khac co tien to
 const TEN = CAP === 'hsk4' ? '' : CAP + '-';

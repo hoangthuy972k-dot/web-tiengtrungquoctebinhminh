@@ -3,190 +3,1283 @@
 // Nguồn: Giáo trình New HSK 1 (chuẩn 3.0) - Trung Việt, NXB Dân Trí
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'请问',py:'qǐngwèn',pos:'Động từ',vn:'xin hỏi', hv: 'thỉnh vấn',em:'🙋',lesson:1,
-   ex_zh:'请问，你叫什么名字？',ex_py:'Qǐngwèn, nǐ jiào shénme míngzi?',ex_vn:'Xin hỏi, bạn tên là gì?',
-   exList:[
-     {zh:'请问，你叫什么名字？',py:'Qǐngwèn, nǐ jiào shénme míngzi?',vn:'Xin hỏi, bạn tên là gì?'},
-   ],
-   hanzi:[
-     {c:'请',p:'qǐng',type:'左右结构 · Trái-phải',st:10,ord:'讠(ngôn) trái → 青(thanh) phải',rad:'讠 (ngôn – lời nói)',mean:'xin, mời',
-      tip:'讠(lời nói) + 青(trong sáng) → lời nói TRONG SÁNG, lễ độ khi nhờ vả = XIN, MỜI.',
-      cf:'情 (qíng – "tình cảm", bộ 忄")',w:'请问 / 请坐'},
-     {c:'问',p:'wèn',type:'半包围结构 · Bán bao vây',st:6,ord:'门(môn) bao ngoài → 口(khẩu) bên trong',rad:'门 (môn – cửa)',mean:'hỏi',
-      tip:'门(cửa) + 口(miệng) → đứng ở CỬA dùng MIỆNG để cất tiếng HỎI thăm.',
-      cf:'间 (jiān – "khoảng, gian", cũng bộ 门")',w:'请问 / 问题 / 问好'},
-   ]},
-  {n:2,zh:'你',py:'nǐ',pos:'Đại từ',vn:'bạn, anh, chị, em', hv: 'nhĩ',em:'👉',lesson:1,
-   ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
-   exList:[
-     {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
-     {zh:'你好，安妮！',py:'Nǐ hǎo, Ānnī!',vn:'Chào Annie!'},
-   ],
-   hanzi:[
-     {c:'你',p:'nǐ',type:'左右结构 · Trái-phải',st:7,ord:'亻(nhân) trái → 尔(nhĩ, biến thể) phải',rad:'亻 (nhân – người)',mean:'bạn, anh, chị, em',
-      tip:'亻(người) + 尔(cách gọi thân mật thời cổ) → chỉ NGƯỜI đang nói chuyện đối diện mình = BẠN.',
-      cf:'您 (nín – "ngài", cách gọi kính trọng, cũng có 亻/尔")',w:'你好 / 你们 / 你是'},
-   ]},
-  {n:3,zh:'叫',py:'jiào',pos:'Động từ',vn:'gọi là, tên là', hv: 'khiếu',em:'📛',lesson:1,
-   ex_zh:'我叫陈天中。',ex_py:'Wǒ jiào Chén Tiānzhōng.',ex_vn:'Tôi tên là Trần Thiên Trung.',
-   exList:[
-     {zh:'我叫陈天中。',py:'Wǒ jiào Chén Tiānzhōng.',vn:'Tôi tên là Trần Thiên Trung.'},
-     {zh:'我叫李文。',py:'Wǒ jiào Lǐ Wén.',vn:'Mình tên là Lý Văn.'},
-   ],
-   hanzi:[
-     {c:'叫',p:'jiào',type:'左右结构 · Trái-phải',st:5,ord:'口(khẩu) trái → 니(biến thể) phải',rad:'口 (khẩu – miệng)',mean:'gọi, kêu',
-      tip:'Bộ 口(miệng) → hành động phát ra tiếng để GỌI TÊN ai đó.',
-      cf:'叶 (yè – "lá cây", cũng bộ 口")',w:'叫什么 / 叫做'},
-   ]},
-  {n:4,zh:'什么',py:'shénme',pos:'Đại từ',vn:'gì, cái gì', hv: 'thập ma',em:'❓',lesson:1,
-   ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
-   exList:[
-     {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
-   ],
-   hanzi:[
-     {c:'什',p:'shén',type:'左右结构 · Trái-phải',st:4,ord:'亻(nhân) trái → 十(thập) phải',rad:'亻 (nhân – người)',mean:'gì (dùng trong 什么)',
-      tip:'亻(người) + 十(số mười, nhiều thứ) → hỏi về NGƯỜI/vật trong nhiều khả năng khác nhau = GÌ.',
-      cf:'付 (fù – "trả tiền", cũng bộ 亻")',w:'什么 / 为什么'},
-     {c:'么',p:'me',type:'独体字 · Chữ đơn',st:3,ord:'viết liền 3 nét cong, không tách bộ phận',rad:'丿 (phiệt – nét phẩy, tự thành bộ)',mean:'(trợ từ, không mang nghĩa riêng)',
-      tip:'么 là chữ giản thể của 麼, nét viết đơn giản, ĐỨNG MỘT MÌNH không mang nghĩa riêng mà chỉ làm trợ từ nghi vấn trong 什么, 怎么.',
-      cf:'乡 (xiāng – "quê hương", hình dáng nét gần giống)',w:'什么 / 怎么 / 那么'},
-   ]},
-  {n:5,zh:'名字',py:'míngzi',pos:'Danh từ',vn:'tên', hv: 'danh tự',em:'🏷️',lesson:1,
-   ex_zh:'你叫什么名字？',ex_py:'Nǐ jiào shénme míngzi?',ex_vn:'Bạn tên là gì?',
-   exList:[
-     {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
-   ],
-   hanzi:[
-     {c:'名',p:'míng',type:'上下结构 · Trên-dưới',st:6,ord:'夕(tịch) trên → 口(khẩu) dưới',rad:'口 (khẩu – miệng)',mean:'tên',
-      tip:'夕(đêm tối) + 口(miệng) → trời tối không nhìn rõ mặt, phải dùng MIỆNG xưng TÊN để nhận ra nhau.',
-      cf:'各 (gè – "mỗi", cũng có 夕")',w:'名字 / 姓名'},
-     {c:'字',p:'zì',type:'上下结构 · Trên-dưới',st:6,ord:'宀(miên) trên → 子(tử) dưới',rad:'宀 (miên – mái nhà)',mean:'chữ, tên',
-      tip:'宀(mái nhà) + 子(con) → đứa CON sinh ra trong nhà được đặt TÊN, nghĩa mở rộng thành CHỮ VIẾT.',
-      cf:'学 (xué – "học", phần trên cũng dễ nhầm với 宀")',w:'名字 / 汉字 / 写字'},
-   ]},
-  {n:6,zh:'我',py:'wǒ',pos:'Đại từ',vn:'tôi, mình', hv: 'ngã',em:'🙋‍♂️',lesson:1,
-   ex_zh:'我叫陈天中。',ex_py:'Wǒ jiào Chén Tiānzhōng.',ex_vn:'Tôi tên là Trần Thiên Trung.',
-   exList:[
-     {zh:'我叫陈天中。',py:'Wǒ jiào Chén Tiānzhōng.',vn:'Tôi tên là Trần Thiên Trung.'},
-     {zh:'我是学生。',py:'Wǒ shì xuésheng.',vn:'Tôi là học sinh.'},
-   ],
-   hanzi:[
-     {c:'我',p:'wǒ',type:'独体字 · Chữ đơn',st:7,ord:'手(biến thể, nét tay) trái → 戈(qua) phải, viết liền một khối',rad:'戈 (qua – vũ khí, cây giáo)',mean:'tôi, mình',
-      tip:'Chữ 我 vốn là hình người TỰ cầm 戈(vũ khí) bảo vệ bản thân → mở rộng thành đại từ ngôi thứ nhất TÔI, MÌNH.',
-      cf:'找 (zhǎo – "tìm", cũng có bộ 戈")',w:'我们 / 我是 / 我叫'},
-   ]},
-  {n:7,zh:'不',py:'bù',pos:'Phó từ',vn:'không', hv: 'bất',em:'🚫',lesson:2,
-   ex_zh:'我不是安妮。',ex_py:'Wǒ bú shì Ānnī.',ex_vn:'Tôi không phải là Annie.',
-   exList:[
-     {zh:'我不是安妮。',py:'Wǒ bú shì Ānnī.',vn:'Tôi không phải là Annie.'},
-   ],
-   hanzi:[
-     {c:'不',p:'bù',type:'独体字 · Chữ đơn',st:4,ord:'一(ngang) trên → 丿㇏(hai nét chéo) dưới',rad:'一 (nhất – nét ngang)',mean:'không, chẳng',
-      tip:'Hình ảnh cành cây bị chặt NGỌN, chặn không cho mọc thêm lên trên → biểu thị sự PHỦ ĐỊNH, KHÔNG.',
-      cf:'木 (mù – "cây gỗ", hình dáng gần giống nhưng đủ 4 nét cân đối)',w:'不是 / 不好 / 不对'},
-   ]},
-  {n:8,zh:'是',py:'shì',pos:'Động từ',vn:'là', hv: 'thị',em:'✅',lesson:2,
-   ex_zh:'我是白家月。',ex_py:'Wǒ shì Bái Jiāyuè.',ex_vn:'Tôi là Bạch Gia Nguyệt.',
-   exList:[
-     {zh:'我是白家月。',py:'Wǒ shì Bái Jiāyuè.',vn:'Tôi là Bạch Gia Nguyệt.'},
-     {zh:'我是学生。',py:'Wǒ shì xuésheng.',vn:'Tôi là học sinh.'},
-   ],
-   hanzi:[
-     {c:'是',p:'shì',type:'上下结构 · Trên-dưới',st:9,ord:'日(nhật) trên → 疋(sơ biến thể) dưới',rad:'日 (nhật – mặt trời)',mean:'là, đúng',
-      tip:'日(mặt trời) luôn ĐÚNG giờ mọc → mở rộng thành nghĩa "ĐÚNG, LÀ".',
-      cf:'定 (dìng – "quyết định")',w:'是学生 / 不是'},
-   ]},
-  {n:9,zh:'对不起',py:'duìbuqǐ',pos:'Động từ',vn:'xin lỗi', hv: 'đối bất khởi',em:'🙇',lesson:2,
-   ex_zh:'对不起！',ex_py:'Duìbuqǐ!',ex_vn:'Xin lỗi!',
-   exList:[
-     {zh:'对不起！',py:'Duìbuqǐ!',vn:'Xin lỗi!'},
-   ],
-   hanzi:[
-     {c:'对',p:'duì',type:'左右结构 · Trái-phải (giản thể)',st:5,ord:'又(hựu, biến thể) trái → 寸(thốn) phải',rad:'寸 (thốn – tấc, đo lường)',mean:'đúng, đối',
-      tip:'又(bàn tay) + 寸(tấc, chuẩn mực đo lường) → dùng tay đo cho ĐÚNG chuẩn, mở rộng thành ĐÚNG, ĐỐI DIỆN.',
-      cf:'双 (shuāng – "đôi, cặp", cũng có bộ 又")',w:'对不起 / 不对 / 对话'},
-     {c:'不',p:'bu',type:'独体字 · Chữ đơn',st:4,ord:'一(ngang) trên → 丿㇏(hai nét chéo) dưới',rad:'一 (nhất – nét ngang)',mean:'không, chẳng',
-      tip:'Hình ảnh cành cây bị chặt NGỌN, chặn không cho mọc thêm lên trên → biểu thị sự PHỦ ĐỊNH, KHÔNG.',
-      cf:'木 (mù – "cây gỗ", hình dáng gần giống nhưng đủ 4 nét cân đối)',w:'对不起 / 不是 / 不好'},
-     {c:'起',p:'qǐ',type:'半包围结构 · Bán bao vây',st:10,ord:'走(tẩu) bao trái-dưới → 己(kỷ) phía trên-phải',rad:'走 (tẩu – chạy, đi)',mean:'dậy, khởi, bắt đầu',
-      tip:'走(đi, chạy) + 己(bản thân) → tự BẢN THÂN đứng DẬY để bước ĐI, mở rộng thành KHỞI ĐẦU.',
-      cf:'记 (jì – "ghi nhớ", cũng có phần 己")',w:'对不起 / 起来 / 一起'},
-   ]},
-  {n:10,zh:'没关系',py:'méi guānxi',pos:'Cụm từ',vn:'không sao, không có gì', hv: 'một quan hệ',em:'🤝',lesson:2,
-   ex_zh:'没关系！',ex_py:'Méi guānxi!',ex_vn:'Không sao!',
-   exList:[
-     {zh:'没关系！',py:'Méi guānxi!',vn:'Không sao!'},
-   ],
-   hanzi:[
-     {c:'没',p:'méi',type:'左右结构 · Trái-phải',st:7,ord:'氵(thuỷ) trái → 殳(thù, biến thể) phải',rad:'氵 (thuỷ – nước)',mean:'không có, chìm',
-      tip:'氵(nước) + 殳(tay cầm gậy khuấy) → vật bị NƯỚC nhấn CHÌM mất dạng, mở rộng thành nghĩa KHÔNG CÓ.',
-      cf:'设 (shè – "thiết lập, bày ra", cũng có 殳")',w:'没关系 / 没有 / 没事'},
-     {c:'关',p:'guān',type:'上下结构 · Trên-dưới (giản thể)',st:6,ord:'丷(hai chấm) trên → 天(biến thể, gốc là hình dây buộc) dưới',rad:'八 (bát – chia tách)',mean:'đóng, liên quan',
-      tip:'关 vốn là hình sợi dây buộc chặt then CỬA lại → nghĩa ĐÓNG, và những gì bị buộc chung với nhau thì LIÊN QUAN đến nhau.',
-      cf:'兰 (lán – "hoa lan", phần trên 丷 giống hệt 关 nhưng phần dưới khác)',w:'没关系 / 关心 / 关门'},
-     {c:'系',p:'xì',type:'上下结构 · Trên-dưới',st:7,ord:'丿(nét phẩy, tay) trên → 糸(mịch, sợi tơ) dưới',rad:'糸 (mịch – tơ, sợi)',mean:'hệ, liên quan, buộc',
-      tip:'Hình bàn tay (丿biến thể) nắm lấy các SỢI TƠ (糸) buộc chúng lại với nhau → LIÊN QUAN, HỆ THỐNG.',
-      cf:'紧 (jǐn – "khẩn cấp, chặt", cũng có 糸 ở dưới)',w:'关系 / 系统 / 联系'},
-   ]},
-  {n:11,zh:'没事',py:'méishì',pos:'Động từ',vn:'không sao, không có gì', hv: 'một sự',em:'👌',lesson:2,
-   ex_zh:'没事！没事！',ex_py:'Méishì! Méishì!',ex_vn:'Không sao đâu! Không sao đâu!',
-   exList:[
-     {zh:'没事！没事！',py:'Méishì! Méishì!',vn:'Không sao đâu! Không sao đâu!'},
-   ],
-   hanzi:[
-     {c:'没',p:'méi',type:'左右结构 · Trái-phải',st:7,ord:'氵(thuỷ) trái → 殳(thù, biến thể) phải',rad:'氵 (thuỷ – nước)',mean:'không có, chìm',
-      tip:'氵(nước) + 殳(tay cầm gậy khuấy) → vật bị NƯỚC nhấn CHÌM mất dạng, mở rộng thành nghĩa KHÔNG CÓ.',
-      cf:'设 (shè – "thiết lập, bày ra", cũng có 殳")',w:'没事 / 没有 / 没关系'},
-     {c:'事',p:'shì',type:'独体字 · Chữ đơn',st:8,ord:'一(ngang) → 口(khẩu, biến thể) → 亅(nét móc xuyên dọc thân chữ)',rad:'一 (nhất – nét ngang)',mean:'việc, sự việc',
-      tip:'Hình ảnh bàn tay cầm cây bút/cờ hiệu ghi chép công VIỆC của quan lại thời xưa → mở rộng thành VIỆC, SỰ VIỆC.',
-      cf:'争 (zhēng – "tranh giành", phần trên hình dáng gần giống)',w:'没事 / 事情 / 有事'},
-   ]},
-  {n:12,zh:'很',py:'hěn',pos:'Phó từ',vn:'rất', hv: 'ngận',em:'💯',lesson:3,
-   ex_zh:'很高兴认识你。',ex_py:'Hěn gāoxìng rènshi nǐ.',ex_vn:'Rất vui được làm quen với bạn.',
-   exList:[
-     {zh:'很高兴认识你。',py:'Hěn gāoxìng rènshi nǐ.',vn:'Rất vui được làm quen với bạn.'},
-   ],
-   hanzi:[
-     {c:'很',p:'hěn',type:'左右结构 · Trái-phải',st:9,ord:'彳(xích) trái → 艮(cấn) phải',rad:'彳 (xích – bước chân trái, đi chậm)',mean:'rất',
-      tip:'彳(bước đi) + 艮(cứng, kiên định, khó lay chuyển) → đi theo mức độ KIÊN ĐỊNH cao, mở rộng thành RẤT.',
-      cf:'恨 (hèn – "hận, ghét", cũng có 艮 nhưng bộ 忄")',w:'很好 / 很高兴 / 非常'},
-   ]},
-  {n:13,zh:'高兴',py:'gāoxìng',pos:'Tính từ',vn:'vui, vui vẻ', hv: 'cao hứng',em:'😄',lesson:3,
-   ex_zh:'很高兴认识你。',ex_py:'Hěn gāoxìng rènshi nǐ.',ex_vn:'Rất vui được làm quen với bạn.',
-   exList:[
-     {zh:'很高兴认识你。',py:'Hěn gāoxìng rènshi nǐ.',vn:'Rất vui được làm quen với bạn.'},
-   ],
-   hanzi:[
-     {c:'兴',p:'xìng / xīng',type:'独体字 · Chữ đơn (giản thể)',st:6,ord:'⺍ → 八(biến thể)',rad:'八 (bát)',mean:'vui, hứng thú',
-      tip:'Hình ảnh đôi tay cùng nâng một vật lên trong niềm hân hoan → HỨNG KHỞI, VUI VẺ.',
-      cf:'共 (gòng – "cùng nhau")',w:'高兴 / 兴趣'},
-     {c:'高',p:'gāo',type:'上下结构 · Trên-dưới',st:10,ord:'亠 → 口 → 冋(biến thể) → 口, xếp từ trên xuống dưới',rad:'高 (cao – tự thành bộ)',mean:'cao',
-      tip:'Hình ảnh một tòa lầu nhiều tầng với mái, cửa sổ, nền móng xếp chồng lên nhau → biểu thị CAO.',
-      cf:'亮 (liàng – "sáng", cấu trúc trên-dưới gần giống)',w:'高兴 / 高大 / 很高'},
-   ]},
-  {n:14,zh:'认识',py:'rènshi',pos:'Động từ',vn:'quen, làm quen, nhận biết', hv: 'nhận thức',em:'🤗',lesson:3,
-   ex_zh:'认识你我也很高兴。',ex_py:'Rènshi nǐ wǒ yě hěn gāoxìng.',ex_vn:'Quen biết bạn tôi cũng rất vui.',
-   exList:[
-     {zh:'认识你我也很高兴。',py:'Rènshi nǐ wǒ yě hěn gāoxìng.',vn:'Quen biết bạn tôi cũng rất vui.'},
-   ],
-   hanzi:[
-     {c:'认',p:'rèn',type:'左右结构 · Trái-phải (giản thể)',st:4,ord:'讠(ngôn) trái → 人(nhân) phải',rad:'讠 (ngôn – lời nói)',mean:'nhận, biết',
-      tip:'讠(lời nói) + 人(người) → dùng lời để XÁC NHẬN một NGƯỜI mà mình biết.',
-      cf:'队 (duì – "đội")',w:'认识 / 认为'},
-     {c:'识',p:'shí',type:'左右结构 · Trái-phải (giản thể)',st:7,ord:'讠(ngôn) trái → 只(chỉ, biến thể) phải',rad:'讠 (ngôn – lời nói)',mean:'biết, nhận thức',
-      tip:'讠(lời nói) + 只(chỉ ra, duy nhất) → dùng LỜI để chỉ rõ, phân biệt sự vật → BIẾT, NHẬN THỨC.',
-      cf:'织 (zhī – "dệt", phần phải gần giống nhưng bộ 纟")',w:'认识 / 知识 / 常识'},
-   ]},
-  {n:15,zh:'也',py:'yě',pos:'Phó từ',vn:'cũng', hv: 'dã',em:'➕',lesson:3,
-   ex_zh:'认识你我也很高兴。',ex_py:'Rènshi nǐ wǒ yě hěn gāoxìng.',ex_vn:'Quen biết bạn tôi cũng rất vui.',
-   exList:[
-     {zh:'认识你我也很高兴。',py:'Rènshi nǐ wǒ yě hěn gāoxìng.',vn:'Quen biết bạn tôi cũng rất vui.'},
-   ],
-   hanzi:[
-     {c:'也',p:'yě',type:'独体字 · Chữ đơn',st:3,ord:'nét gập liền mạch 3 nét, không tách bộ phận',rad:'乙 (ất – tự thành bộ)',mean:'cũng',
-      tip:'也 là hình vẽ đơn giản với nét gập liền mạch, không tách rời → dùng làm phó từ CŨNG, tiếp nối ý đã nói trước đó.',
-      cf:'已 (yǐ – "đã, rồi", hình dáng rất gần giống 也")',w:'也是 / 也很 / 也好'},
-   ]},
+  {
+    "n": 1,
+    "zh": "请问",
+    "py": "qǐngwèn",
+    "pos": "Động từ",
+    "vn": "xin hỏi",
+    "hv": "thỉnh vấn",
+    "em": "🙋",
+    "lesson": 1,
+    "ex_zh": "请问，你叫什么名字？",
+    "ex_py": "Qǐngwèn, nǐ jiào shénme míngzi?",
+    "ex_vn": "Xin hỏi, bạn tên là gì?",
+    "exList": [
+      {
+        "zh": "请问，你叫什么名字？",
+        "py": "Qǐngwèn, nǐ jiào shénme míngzi?",
+        "vn": "Xin hỏi, bạn tên là gì?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "请",
+        "p": "qǐng",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "讠(ngôn) trái → 青(thanh) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "xin, mời",
+        "tip": "讠(lời nói) + 青(trong sáng) → lời nói TRONG SÁNG, lễ độ khi nhờ vả = XIN, MỜI.",
+        "cf": "情 (qíng – \"tình cảm\", bộ 忄\")",
+        "w": "请问 / 请坐"
+      },
+      {
+        "c": "问",
+        "p": "wèn",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 6,
+        "ord": "门(môn) bao ngoài → 口(khẩu) bên trong",
+        "rad": "门 (môn – cửa)",
+        "mean": "hỏi",
+        "tip": "门(cửa) + 口(miệng) → đứng ở CỬA dùng MIỆNG để cất tiếng HỎI thăm.",
+        "cf": "间 (jiān – \"khoảng, gian\", cũng bộ 门\")",
+        "w": "请问 / 问题 / 问好"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "请问 + câu hỏi",
+        "m": "Đặt ở ĐẦU câu hỏi cho lễ phép: 请问，你叫什么名字？"
+      },
+      {
+        "s": "请 + 问",
+        "m": "Xin (请) được hỏi (问) — dùng nguyên cụm"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hỏi, bạn tên là gì ạ?",
+        "answer": "请问，你叫什么名字？",
+        "answerPy": "Qǐngwèn, nǐ jiào shénme míngzi?",
+        "note": "请问 đặt ở đầu câu hỏi cho lễ phép.",
+        "pair": "请问，……？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hỏi, thầy tên là gì ạ?",
+        "answer": "请问，老师叫什么名字？",
+        "answerPy": "Qǐngwèn, lǎoshī jiào shénme míngzi?",
+        "note": "Dùng nguyên cụm 请问, không tách.",
+        "pair": "请问，……？"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "你",
+    "py": "nǐ",
+    "pos": "Đại từ",
+    "vn": "bạn, anh, chị, em",
+    "hv": "nhĩ",
+    "em": "👉",
+    "lesson": 1,
+    "ex_zh": "你叫什么名字？",
+    "ex_py": "Nǐ jiào shénme míngzi?",
+    "ex_vn": "Bạn tên là gì?",
+    "exList": [
+      {
+        "zh": "你叫什么名字？",
+        "py": "Nǐ jiào shénme míngzi?",
+        "vn": "Bạn tên là gì?"
+      },
+      {
+        "zh": "你好，安妮！",
+        "py": "Nǐ hǎo, Ānnī!",
+        "vn": "Chào Annie!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "你",
+        "p": "nǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "亻(nhân) trái → 尔(nhĩ, biến thể) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "bạn, anh, chị, em",
+        "tip": "亻(người) + 尔(cách gọi thân mật thời cổ) → chỉ NGƯỜI đang nói chuyện đối diện mình = BẠN.",
+        "cf": "您 (nín – \"ngài\", cách gọi kính trọng, cũng có 亻/尔\")",
+        "w": "你好 / 你们 / 你是"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "你好",
+        "py": "nǐ hǎo",
+        "vn": "chào bạn"
+      },
+      {
+        "zh": "你们",
+        "py": "nǐmen",
+        "vn": "các bạn"
+      },
+      {
+        "zh": "谢谢你",
+        "py": "xièxie nǐ",
+        "vn": "cảm ơn bạn"
+      },
+      {
+        "zh": "你叫什么",
+        "py": "nǐ jiào shénme",
+        "vn": "bạn tên là gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "你 + động từ",
+        "m": "Chủ ngữ ngôi thứ hai: 你叫什么名字？"
+      },
+      {
+        "s": "你 (ngang hàng) ≠ 您 (kính trọng)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn là học sinh phải không?",
+        "answer": "你是学生？",
+        "answerPy": "Nǐ shì xuésheng?",
+        "note": "Ngữ điệu lên cao cũng thành câu hỏi.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn bạn, chào bạn nhé!",
+        "answer": "谢谢你，你好！",
+        "answerPy": "Xièxie nǐ, nǐ hǎo!",
+        "note": "你 dùng với người ngang hàng.",
+        "pair": "谢谢 + người"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "叫",
+    "py": "jiào",
+    "pos": "Động từ",
+    "vn": "gọi là, tên là",
+    "hv": "khiếu",
+    "em": "📛",
+    "lesson": 1,
+    "ex_zh": "我叫陈天中。",
+    "ex_py": "Wǒ jiào Chén Tiānzhōng.",
+    "ex_vn": "Tôi tên là Trần Thiên Trung.",
+    "exList": [
+      {
+        "zh": "我叫陈天中。",
+        "py": "Wǒ jiào Chén Tiānzhōng.",
+        "vn": "Tôi tên là Trần Thiên Trung."
+      },
+      {
+        "zh": "我叫李文。",
+        "py": "Wǒ jiào Lǐ Wén.",
+        "vn": "Mình tên là Lý Văn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "叫",
+        "p": "jiào",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "口(khẩu) trái → 니(biến thể) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "gọi, kêu",
+        "tip": "Bộ 口(miệng) → hành động phát ra tiếng để GỌI TÊN ai đó.",
+        "cf": "叶 (yè – \"lá cây\", cũng bộ 口\")",
+        "w": "叫什么 / 叫做"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "叫什么",
+        "py": "jiào shénme",
+        "vn": "gọi là gì"
+      },
+      {
+        "zh": "叫什么名字",
+        "py": "jiào shénme míngzi",
+        "vn": "tên là gì"
+      },
+      {
+        "zh": "我叫",
+        "py": "wǒ jiào",
+        "vn": "tôi tên là"
+      },
+      {
+        "zh": "你叫",
+        "py": "nǐ jiào",
+        "vn": "bạn tên là"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 叫 + tên",
+        "m": "Ai đó tên là gì: 我叫……"
+      },
+      {
+        "s": "叫 + 什么名字",
+        "m": "Khung hỏi tên: 你叫什么名字？"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn tên là gì?",
+        "answer": "你叫什么名字？",
+        "answerPy": "Nǐ jiào shénme míngzi?",
+        "note": "Câu đã có 什么 nên không thêm 吗.",
+        "pair": "叫什么名字？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi tên là Vương Phương.",
+        "answer": "我叫王方。",
+        "answerPy": "Wǒ jiào Wáng Fāng.",
+        "note": "我叫 + tên — cách tự giới thiệu ngắn gọn nhất.",
+        "pair": "我叫……"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "什么",
+    "py": "shénme",
+    "pos": "Đại từ",
+    "vn": "gì, cái gì",
+    "hv": "thập ma",
+    "em": "❓",
+    "lesson": 1,
+    "ex_zh": "你叫什么名字？",
+    "ex_py": "Nǐ jiào shénme míngzi?",
+    "ex_vn": "Bạn tên là gì?",
+    "exList": [
+      {
+        "zh": "你叫什么名字？",
+        "py": "Nǐ jiào shénme míngzi?",
+        "vn": "Bạn tên là gì?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "什",
+        "p": "shén",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "亻(nhân) trái → 十(thập) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "gì (dùng trong 什么)",
+        "tip": "亻(người) + 十(số mười, nhiều thứ) → hỏi về NGƯỜI/vật trong nhiều khả năng khác nhau = GÌ.",
+        "cf": "付 (fù – \"trả tiền\", cũng bộ 亻\")",
+        "w": "什么 / 为什么"
+      },
+      {
+        "c": "么",
+        "p": "me",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "viết liền 3 nét cong, không tách bộ phận",
+        "rad": "丿 (phiệt – nét phẩy, tự thành bộ)",
+        "mean": "(trợ từ, không mang nghĩa riêng)",
+        "tip": "么 là chữ giản thể của 麼, nét viết đơn giản, ĐỨNG MỘT MÌNH không mang nghĩa riêng mà chỉ làm trợ từ nghi vấn trong 什么, 怎么.",
+        "cf": "乡 (xiāng – \"quê hương\", hình dáng nét gần giống)",
+        "w": "什么 / 怎么 / 那么"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "什么名字",
+        "py": "shénme míngzi",
+        "vn": "tên gì"
+      },
+      {
+        "zh": "叫什么",
+        "py": "jiào shénme",
+        "vn": "gọi là gì"
+      },
+      {
+        "zh": "是什么",
+        "py": "shì shénme",
+        "vn": "là cái gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "什么 + danh từ",
+        "m": "什么 đứng trước danh từ: 什么名字"
+      },
+      {
+        "s": "Câu đã có 什么 thì KHÔNG thêm 吗"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn tên gì?",
+        "answer": "你叫什么？",
+        "answerPy": "Nǐ jiào shénme?",
+        "note": "Nói nhanh thì bỏ 名字, chỉ còn 叫什么.",
+        "pair": "叫什么？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn học tên là gì?",
+        "answer": "同学们叫什么名字？",
+        "answerPy": "Tóngxuémen jiào shénme míngzi?",
+        "note": "同学们 — các bạn cùng lớp.",
+        "pair": "叫什么名字？"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "名字",
+    "py": "míngzi",
+    "pos": "Danh từ",
+    "vn": "tên",
+    "hv": "danh tự",
+    "em": "🏷️",
+    "lesson": 1,
+    "ex_zh": "你叫什么名字？",
+    "ex_py": "Nǐ jiào shénme míngzi?",
+    "ex_vn": "Bạn tên là gì?",
+    "exList": [
+      {
+        "zh": "你叫什么名字？",
+        "py": "Nǐ jiào shénme míngzi?",
+        "vn": "Bạn tên là gì?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "名",
+        "p": "míng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "夕(tịch) trên → 口(khẩu) dưới",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "tên",
+        "tip": "夕(đêm tối) + 口(miệng) → trời tối không nhìn rõ mặt, phải dùng MIỆNG xưng TÊN để nhận ra nhau.",
+        "cf": "各 (gè – \"mỗi\", cũng có 夕\")",
+        "w": "名字 / 姓名"
+      },
+      {
+        "c": "字",
+        "p": "zì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "宀(miên) trên → 子(tử) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "chữ, tên",
+        "tip": "宀(mái nhà) + 子(con) → đứa CON sinh ra trong nhà được đặt TÊN, nghĩa mở rộng thành CHỮ VIẾT.",
+        "cf": "学 (xué – \"học\", phần trên cũng dễ nhầm với 宀\")",
+        "w": "名字 / 汉字 / 写字"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "什么名字",
+        "py": "shénme míngzi",
+        "vn": "tên gì"
+      },
+      {
+        "zh": "叫什么名字",
+        "py": "jiào shénme míngzi",
+        "vn": "tên là gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "叫 + 什么 + 名字",
+        "m": "Khung hỏi tên đầy đủ"
+      },
+      {
+        "s": "名 + 字",
+        "m": "Cả hai chữ đều mang nghĩa tên gọi"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy Vương tên là gì ạ?",
+        "answer": "王老师叫什么名字？",
+        "answerPy": "Wáng lǎoshī jiào shénme míngzi?",
+        "note": "Chủ ngữ có thể là người thứ ba.",
+        "pair": "叫什么名字？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Xin hỏi, các bạn tên là gì?",
+        "answer": "请问，你们叫什么名字？",
+        "answerPy": "Qǐngwèn, nǐmen jiào shénme míngzi?",
+        "note": "Hỏi nhiều người thì dùng 你们.",
+        "pair": "请问，……？"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "我",
+    "py": "wǒ",
+    "pos": "Đại từ",
+    "vn": "tôi, mình",
+    "hv": "ngã",
+    "em": "🙋‍♂️",
+    "lesson": 1,
+    "ex_zh": "我叫陈天中。",
+    "ex_py": "Wǒ jiào Chén Tiānzhōng.",
+    "ex_vn": "Tôi tên là Trần Thiên Trung.",
+    "exList": [
+      {
+        "zh": "我叫陈天中。",
+        "py": "Wǒ jiào Chén Tiānzhōng.",
+        "vn": "Tôi tên là Trần Thiên Trung."
+      },
+      {
+        "zh": "我是学生。",
+        "py": "Wǒ shì xuésheng.",
+        "vn": "Tôi là học sinh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "我",
+        "p": "wǒ",
+        "type": "独体字 · Chữ đơn",
+        "st": 7,
+        "ord": "手(biến thể, nét tay) trái → 戈(qua) phải, viết liền một khối",
+        "rad": "戈 (qua – vũ khí, cây giáo)",
+        "mean": "tôi, mình",
+        "tip": "Chữ 我 vốn là hình người TỰ cầm 戈(vũ khí) bảo vệ bản thân → mở rộng thành đại từ ngôi thứ nhất TÔI, MÌNH.",
+        "cf": "找 (zhǎo – \"tìm\", cũng có bộ 戈\")",
+        "w": "我们 / 我是 / 我叫"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我是",
+        "py": "wǒ shì",
+        "vn": "tôi là"
+      },
+      {
+        "zh": "我叫",
+        "py": "wǒ jiào",
+        "vn": "tôi tên là"
+      },
+      {
+        "zh": "我不是",
+        "py": "wǒ bú shì",
+        "vn": "tôi không phải là"
+      },
+      {
+        "zh": "我也是",
+        "py": "wǒ yě shì",
+        "vn": "tôi cũng vậy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "我 + 是 + danh từ",
+        "m": "Tôi là …: 我是学生"
+      },
+      {
+        "s": "我 (tôi) ↔ 你 (bạn) — cặp đại từ cơ bản nhất"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi là học sinh.",
+        "answer": "我是学生。",
+        "answerPy": "Wǒ shì xuésheng.",
+        "note": "Khung 我 + 是 + danh từ dùng để tự giới thiệu.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cũng rất vui.",
+        "answer": "我也很高兴。",
+        "answerPy": "Wǒ yě hěn gāoxìng.",
+        "note": "也 đứng sau chủ ngữ, trước 很.",
+        "pair": "也 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "不",
+    "py": "bù",
+    "pos": "Phó từ",
+    "vn": "không",
+    "hv": "bất",
+    "em": "🚫",
+    "lesson": 2,
+    "ex_zh": "我不是安妮。",
+    "ex_py": "Wǒ bú shì Ānnī.",
+    "ex_vn": "Tôi không phải là Annie.",
+    "exList": [
+      {
+        "zh": "我不是安妮。",
+        "py": "Wǒ bú shì Ānnī.",
+        "vn": "Tôi không phải là Annie."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "不",
+        "p": "bù",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) trên → 丿㇏(hai nét chéo) dưới",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "không, chẳng",
+        "tip": "Hình ảnh cành cây bị chặt NGỌN, chặn không cho mọc thêm lên trên → biểu thị sự PHỦ ĐỊNH, KHÔNG.",
+        "cf": "木 (mù – \"cây gỗ\", hình dáng gần giống nhưng đủ 4 nét cân đối)",
+        "w": "不是 / 不好 / 不对"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "不是",
+        "py": "bú shì",
+        "vn": "không phải"
+      },
+      {
+        "zh": "不好",
+        "py": "bù hǎo",
+        "vn": "không tốt"
+      },
+      {
+        "zh": "不客气",
+        "py": "bú kèqi",
+        "vn": "không có gì"
+      },
+      {
+        "zh": "不认识",
+        "py": "bú rènshi",
+        "vn": "không quen"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "不 + động từ / tính từ",
+        "m": "Phủ định đặt TRƯỚC: 不是 · 不好"
+      },
+      {
+        "s": "不 đọc bú khi đứng trước thanh 4: 不是 (bú shì), 不客气 (bú kèqi)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không phải giáo viên.",
+        "answer": "我不是老师。",
+        "answerPy": "Wǒ bú shì lǎoshī.",
+        "note": "不 đọc bú vì 是 mang thanh 4.",
+        "pair": "不是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không quen thầy Vương.",
+        "answer": "我不认识王老师。",
+        "answerPy": "Wǒ bú rènshi Wáng lǎoshī.",
+        "note": "不 đặt ngay trước động từ.",
+        "pair": "不 + V"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "是",
+    "py": "shì",
+    "pos": "Động từ",
+    "vn": "là",
+    "hv": "thị",
+    "em": "✅",
+    "lesson": 2,
+    "ex_zh": "我是白家月。",
+    "ex_py": "Wǒ shì Bái Jiāyuè.",
+    "ex_vn": "Tôi là Bạch Gia Nguyệt.",
+    "exList": [
+      {
+        "zh": "我是白家月。",
+        "py": "Wǒ shì Bái Jiāyuè.",
+        "vn": "Tôi là Bạch Gia Nguyệt."
+      },
+      {
+        "zh": "我是学生。",
+        "py": "Wǒ shì xuésheng.",
+        "vn": "Tôi là học sinh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "是",
+        "p": "shì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "日(nhật) trên → 疋(sơ biến thể) dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "là, đúng",
+        "tip": "日(mặt trời) luôn ĐÚNG giờ mọc → mở rộng thành nghĩa \"ĐÚNG, LÀ\".",
+        "cf": "定 (dìng – \"quyết định\")",
+        "w": "是学生 / 不是"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "是学生",
+        "py": "shì xuésheng",
+        "vn": "là học sinh"
+      },
+      {
+        "zh": "是老师",
+        "py": "shì lǎoshī",
+        "vn": "là giáo viên"
+      },
+      {
+        "zh": "是同学",
+        "py": "shì tóngxué",
+        "vn": "là bạn cùng lớp"
+      },
+      {
+        "zh": "不是",
+        "py": "bú shì",
+        "vn": "không phải"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 是 + danh từ",
+        "m": "Câu chữ 是: 我是学生"
+      },
+      {
+        "s": "Phủ định là 不是, KHÔNG nói 没是"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vương Phương là bạn cùng lớp của tôi.",
+        "answer": "王方是我同学。",
+        "answerPy": "Wáng Fāng shì wǒ tóngxué.",
+        "note": "我同学 — bạn cùng lớp của tôi.",
+        "pair": "是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy Vương không phải học sinh.",
+        "answer": "王老师不是学生。",
+        "answerPy": "Wáng lǎoshī bú shì xuésheng.",
+        "note": "Phủ định của 是 luôn là 不是.",
+        "pair": "不是……"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "对不起",
+    "py": "duìbuqǐ",
+    "pos": "Động từ",
+    "vn": "xin lỗi",
+    "hv": "đối bất khởi",
+    "em": "🙇",
+    "lesson": 2,
+    "ex_zh": "对不起！",
+    "ex_py": "Duìbuqǐ!",
+    "ex_vn": "Xin lỗi!",
+    "exList": [
+      {
+        "zh": "对不起！",
+        "py": "Duìbuqǐ!",
+        "vn": "Xin lỗi!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "对",
+        "p": "duì",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 5,
+        "ord": "又(hựu, biến thể) trái → 寸(thốn) phải",
+        "rad": "寸 (thốn – tấc, đo lường)",
+        "mean": "đúng, đối",
+        "tip": "又(bàn tay) + 寸(tấc, chuẩn mực đo lường) → dùng tay đo cho ĐÚNG chuẩn, mở rộng thành ĐÚNG, ĐỐI DIỆN.",
+        "cf": "双 (shuāng – \"đôi, cặp\", cũng có bộ 又\")",
+        "w": "对不起 / 不对 / 对话"
+      },
+      {
+        "c": "不",
+        "p": "bu",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "一(ngang) trên → 丿㇏(hai nét chéo) dưới",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "không, chẳng",
+        "tip": "Hình ảnh cành cây bị chặt NGỌN, chặn không cho mọc thêm lên trên → biểu thị sự PHỦ ĐỊNH, KHÔNG.",
+        "cf": "木 (mù – \"cây gỗ\", hình dáng gần giống nhưng đủ 4 nét cân đối)",
+        "w": "对不起 / 不是 / 不好"
+      },
+      {
+        "c": "起",
+        "p": "qǐ",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "走(tẩu) bao trái-dưới → 己(kỷ) phía trên-phải",
+        "rad": "走 (tẩu – chạy, đi)",
+        "mean": "dậy, khởi, bắt đầu",
+        "tip": "走(đi, chạy) + 己(bản thân) → tự BẢN THÂN đứng DẬY để bước ĐI, mở rộng thành KHỞI ĐẦU.",
+        "cf": "记 (jì – \"ghi nhớ\", cũng có phần 己\")",
+        "w": "对不起 / 起来 / 一起"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "对不起 —— 没关系 / 没事",
+        "m": "Xin lỗi — Không sao: cặp đối đáp"
+      },
+      {
+        "s": "对不起 luôn dùng nguyên cụm ba chữ, không tách ra"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xin lỗi thầy ạ!",
+        "answer": "老师，对不起！",
+        "answerPy": "Lǎoshī, duìbuqǐ!",
+        "note": "Gọi người ta trước rồi mới xin lỗi.",
+        "pair": "对不起！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "— Xin lỗi! — Không sao đâu!",
+        "answer": "对不起！——没关系！",
+        "answerPy": "Duìbuqǐ! —— Méi guānxi!",
+        "note": "Cặp đối đáp quen thuộc.",
+        "pair": "对不起 —— 没关系"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "没关系",
+    "py": "méi guānxi",
+    "pos": "Cụm từ",
+    "vn": "không sao, không có gì",
+    "hv": "một quan hệ",
+    "em": "🤝",
+    "lesson": 2,
+    "ex_zh": "没关系！",
+    "ex_py": "Méi guānxi!",
+    "ex_vn": "Không sao!",
+    "exList": [
+      {
+        "zh": "没关系！",
+        "py": "Méi guānxi!",
+        "vn": "Không sao!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "没",
+        "p": "méi",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "氵(thuỷ) trái → 殳(thù, biến thể) phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "không có, chìm",
+        "tip": "氵(nước) + 殳(tay cầm gậy khuấy) → vật bị NƯỚC nhấn CHÌM mất dạng, mở rộng thành nghĩa KHÔNG CÓ.",
+        "cf": "设 (shè – \"thiết lập, bày ra\", cũng có 殳\")",
+        "w": "没关系 / 没有 / 没事"
+      },
+      {
+        "c": "关",
+        "p": "guān",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 6,
+        "ord": "丷(hai chấm) trên → 天(biến thể, gốc là hình dây buộc) dưới",
+        "rad": "八 (bát – chia tách)",
+        "mean": "đóng, liên quan",
+        "tip": "关 vốn là hình sợi dây buộc chặt then CỬA lại → nghĩa ĐÓNG, và những gì bị buộc chung với nhau thì LIÊN QUAN đến nhau.",
+        "cf": "兰 (lán – \"hoa lan\", phần trên 丷 giống hệt 关 nhưng phần dưới khác)",
+        "w": "没关系 / 关心 / 关门"
+      },
+      {
+        "c": "系",
+        "p": "xì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "丿(nét phẩy, tay) trên → 糸(mịch, sợi tơ) dưới",
+        "rad": "糸 (mịch – tơ, sợi)",
+        "mean": "hệ, liên quan, buộc",
+        "tip": "Hình bàn tay (丿biến thể) nắm lấy các SỢI TƠ (糸) buộc chúng lại với nhau → LIÊN QUAN, HỆ THỐNG.",
+        "cf": "紧 (jǐn – \"khẩn cấp, chặt\", cũng có 糸 ở dưới)",
+        "w": "关系 / 系统 / 联系"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "—— 没关系",
+        "m": "Câu đáp khi người khác nói 对不起"
+      },
+      {
+        "s": "没关系 nghĩa đen: không (没) có liên quan (关系) gì"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không sao đâu!",
+        "answer": "没关系！",
+        "answerPy": "Méi guānxi!",
+        "note": "Câu đáp lịch sự khi người khác xin lỗi mình.",
+        "pair": "没关系！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "— Xin lỗi các bạn! — Không sao!",
+        "answer": "同学们，对不起！——没关系！",
+        "answerPy": "Tóngxuémen, duìbuqǐ! —— Méi guānxi!",
+        "note": "没关系 nghe trang trọng hơn 没事.",
+        "pair": "对不起 —— 没关系"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "没事",
+    "py": "méishì",
+    "pos": "Động từ",
+    "vn": "không sao, không có gì",
+    "hv": "một sự",
+    "em": "👌",
+    "lesson": 2,
+    "ex_zh": "没事！没事！",
+    "ex_py": "Méishì! Méishì!",
+    "ex_vn": "Không sao đâu! Không sao đâu!",
+    "exList": [
+      {
+        "zh": "没事！没事！",
+        "py": "Méishì! Méishì!",
+        "vn": "Không sao đâu! Không sao đâu!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "没",
+        "p": "méi",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "氵(thuỷ) trái → 殳(thù, biến thể) phải",
+        "rad": "氵 (thuỷ – nước)",
+        "mean": "không có, chìm",
+        "tip": "氵(nước) + 殳(tay cầm gậy khuấy) → vật bị NƯỚC nhấn CHÌM mất dạng, mở rộng thành nghĩa KHÔNG CÓ.",
+        "cf": "设 (shè – \"thiết lập, bày ra\", cũng có 殳\")",
+        "w": "没事 / 没有 / 没关系"
+      },
+      {
+        "c": "事",
+        "p": "shì",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "一(ngang) → 口(khẩu, biến thể) → 亅(nét móc xuyên dọc thân chữ)",
+        "rad": "一 (nhất – nét ngang)",
+        "mean": "việc, sự việc",
+        "tip": "Hình ảnh bàn tay cầm cây bút/cờ hiệu ghi chép công VIỆC của quan lại thời xưa → mở rộng thành VIỆC, SỰ VIỆC.",
+        "cf": "争 (zhēng – \"tranh giành\", phần trên hình dáng gần giống)",
+        "w": "没事 / 事情 / 有事"
+      }
+    ],
+    "colloFull": [],
+    "patterns": [
+      {
+        "s": "—— 没事",
+        "m": "Câu đáp nhẹ nhàng hơn 没关系, nghe rất thân mật"
+      },
+      {
+        "s": "没 + 事",
+        "m": "Không (没) có chuyện gì (事)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không sao đâu!",
+        "answer": "没事！",
+        "answerPy": "Méi shì!",
+        "note": "没事 nghe thân mật hơn 没关系.",
+        "pair": "没事！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "— Xin lỗi! — Không sao, không sao!",
+        "answer": "对不起！——没事，没事！",
+        "answerPy": "Duìbuqǐ! —— Méi shì, méi shì!",
+        "note": "Nói hai lần cho nhẹ nhàng, rất tự nhiên.",
+        "pair": "对不起 —— 没事"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "很",
+    "py": "hěn",
+    "pos": "Phó từ",
+    "vn": "rất",
+    "hv": "ngận",
+    "em": "💯",
+    "lesson": 3,
+    "ex_zh": "很高兴认识你。",
+    "ex_py": "Hěn gāoxìng rènshi nǐ.",
+    "ex_vn": "Rất vui được làm quen với bạn.",
+    "exList": [
+      {
+        "zh": "很高兴认识你。",
+        "py": "Hěn gāoxìng rènshi nǐ.",
+        "vn": "Rất vui được làm quen với bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "很",
+        "p": "hěn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "彳(xích) trái → 艮(cấn) phải",
+        "rad": "彳 (xích – bước chân trái, đi chậm)",
+        "mean": "rất",
+        "tip": "彳(bước đi) + 艮(cứng, kiên định, khó lay chuyển) → đi theo mức độ KIÊN ĐỊNH cao, mở rộng thành RẤT.",
+        "cf": "恨 (hèn – \"hận, ghét\", cũng có 艮 nhưng bộ 忄\")",
+        "w": "很好 / 很高兴 / 非常"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很好",
+        "py": "hěn hǎo",
+        "vn": "rất tốt"
+      },
+      {
+        "zh": "很高兴",
+        "py": "hěn gāoxìng",
+        "vn": "rất vui"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 很 + tính từ",
+        "m": "Câu vị ngữ tính từ: 我很高兴"
+      },
+      {
+        "s": "Tính từ làm vị ngữ gần như luôn cần 很 đứng trước"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi rất vui.",
+        "answer": "我很高兴。",
+        "answerPy": "Wǒ hěn gāoxìng.",
+        "note": "Tính từ làm vị ngữ gần như luôn cần 很.",
+        "pair": "很 + Adj"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy Vương rất tốt.",
+        "answer": "王老师很好。",
+        "answerPy": "Wáng lǎoshī hěn hǎo.",
+        "note": "Không nói 王老师好 trơ như vậy trong câu kể.",
+        "pair": "很 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "高兴",
+    "py": "gāoxìng",
+    "pos": "Tính từ",
+    "vn": "vui, vui vẻ",
+    "hv": "cao hứng",
+    "em": "😄",
+    "lesson": 3,
+    "ex_zh": "很高兴认识你。",
+    "ex_py": "Hěn gāoxìng rènshi nǐ.",
+    "ex_vn": "Rất vui được làm quen với bạn.",
+    "exList": [
+      {
+        "zh": "很高兴认识你。",
+        "py": "Hěn gāoxìng rènshi nǐ.",
+        "vn": "Rất vui được làm quen với bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "兴",
+        "p": "xìng / xīng",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 6,
+        "ord": "⺍ → 八(biến thể)",
+        "rad": "八 (bát)",
+        "mean": "vui, hứng thú",
+        "tip": "Hình ảnh đôi tay cùng nâng một vật lên trong niềm hân hoan → HỨNG KHỞI, VUI VẺ.",
+        "cf": "共 (gòng – \"cùng nhau\")",
+        "w": "高兴 / 兴趣"
+      },
+      {
+        "c": "高",
+        "p": "gāo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "亠 → 口 → 冋(biến thể) → 口, xếp từ trên xuống dưới",
+        "rad": "高 (cao – tự thành bộ)",
+        "mean": "cao",
+        "tip": "Hình ảnh một tòa lầu nhiều tầng với mái, cửa sổ, nền móng xếp chồng lên nhau → biểu thị CAO.",
+        "cf": "亮 (liàng – \"sáng\", cấu trúc trên-dưới gần giống)",
+        "w": "高兴 / 高大 / 很高"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很高兴",
+        "py": "hěn gāoxìng",
+        "vn": "rất vui"
+      },
+      {
+        "zh": "不高兴",
+        "py": "bù gāoxìng",
+        "vn": "không vui"
+      },
+      {
+        "zh": "很高兴认识你",
+        "py": "hěn gāoxìng rènshi nǐ",
+        "vn": "rất vui được làm quen"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "很高兴 + 认识你",
+        "m": "Rất vui được làm quen — câu chào hỏi kinh điển"
+      },
+      {
+        "s": "高 + 兴",
+        "m": "Hứng (兴) lên cao (高)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Rất vui được làm quen với bạn!",
+        "answer": "很高兴认识你！",
+        "answerPy": "Hěn gāoxìng rènshi nǐ!",
+        "note": "Câu làm quen kinh điển, học thuộc cả câu.",
+        "pair": "很高兴认识你！"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn học cũng rất vui.",
+        "answer": "同学们也很高兴。",
+        "answerPy": "Tóngxuémen yě hěn gāoxìng.",
+        "note": "也很高兴 — cũng rất vui.",
+        "pair": "也 + Adj"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "认识",
+    "py": "rènshi",
+    "pos": "Động từ",
+    "vn": "quen, làm quen, nhận biết",
+    "hv": "nhận thức",
+    "em": "🤗",
+    "lesson": 3,
+    "ex_zh": "认识你我也很高兴。",
+    "ex_py": "Rènshi nǐ wǒ yě hěn gāoxìng.",
+    "ex_vn": "Quen biết bạn tôi cũng rất vui.",
+    "exList": [
+      {
+        "zh": "认识你我也很高兴。",
+        "py": "Rènshi nǐ wǒ yě hěn gāoxìng.",
+        "vn": "Quen biết bạn tôi cũng rất vui."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "认",
+        "p": "rèn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 4,
+        "ord": "讠(ngôn) trái → 人(nhân) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "nhận, biết",
+        "tip": "讠(lời nói) + 人(người) → dùng lời để XÁC NHẬN một NGƯỜI mà mình biết.",
+        "cf": "队 (duì – \"đội\")",
+        "w": "认识 / 认为"
+      },
+      {
+        "c": "识",
+        "p": "shí",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 7,
+        "ord": "讠(ngôn) trái → 只(chỉ, biến thể) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "biết, nhận thức",
+        "tip": "讠(lời nói) + 只(chỉ ra, duy nhất) → dùng LỜI để chỉ rõ, phân biệt sự vật → BIẾT, NHẬN THỨC.",
+        "cf": "织 (zhī – \"dệt\", phần phải gần giống nhưng bộ 纟\")",
+        "w": "认识 / 知识 / 常识"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "认识你",
+        "py": "rènshi nǐ",
+        "vn": "quen bạn"
+      },
+      {
+        "zh": "不认识",
+        "py": "bú rènshi",
+        "vn": "không quen"
+      },
+      {
+        "zh": "认识老师",
+        "py": "rènshi lǎoshī",
+        "vn": "quen thầy"
+      },
+      {
+        "zh": "认识同学",
+        "py": "rènshi tóngxué",
+        "vn": "quen bạn cùng lớp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "认识 + người",
+        "m": "Quen ai, biết mặt ai"
+      },
+      {
+        "s": "认 + 识",
+        "m": "Nhận ra (认) và biết (识)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi quen thầy Vương.",
+        "answer": "我认识王老师。",
+        "answerPy": "Wǒ rènshi Wáng lǎoshī.",
+        "note": "认识 + người — quen ai, biết mặt ai.",
+        "pair": "认识 + người"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Rất vui được làm quen với các bạn!",
+        "answer": "很高兴认识你们！",
+        "answerPy": "Hěn gāoxìng rènshi nǐmen!",
+        "note": "Làm quen nhiều người thì dùng 你们.",
+        "pair": "很高兴认识你们！"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "也",
+    "py": "yě",
+    "pos": "Phó từ",
+    "vn": "cũng",
+    "hv": "dã",
+    "em": "➕",
+    "lesson": 3,
+    "ex_zh": "认识你我也很高兴。",
+    "ex_py": "Rènshi nǐ wǒ yě hěn gāoxìng.",
+    "ex_vn": "Quen biết bạn tôi cũng rất vui.",
+    "exList": [
+      {
+        "zh": "认识你我也很高兴。",
+        "py": "Rènshi nǐ wǒ yě hěn gāoxìng.",
+        "vn": "Quen biết bạn tôi cũng rất vui."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "也",
+        "p": "yě",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "nét gập liền mạch 3 nét, không tách bộ phận",
+        "rad": "乙 (ất – tự thành bộ)",
+        "mean": "cũng",
+        "tip": "也 là hình vẽ đơn giản với nét gập liền mạch, không tách rời → dùng làm phó từ CŨNG, tiếp nối ý đã nói trước đó.",
+        "cf": "已 (yǐ – \"đã, rồi\", hình dáng rất gần giống 也\")",
+        "w": "也是 / 也很 / 也好"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "也是",
+        "py": "yě shì",
+        "vn": "cũng là"
+      },
+      {
+        "zh": "也不是",
+        "py": "yě bú shì",
+        "vn": "cũng không phải"
+      },
+      {
+        "zh": "我也是",
+        "py": "wǒ yě shì",
+        "vn": "tôi cũng vậy"
+      },
+      {
+        "zh": "也很高兴",
+        "py": "yě hěn gāoxìng",
+        "vn": "cũng rất vui"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 也 + động từ / tính từ",
+        "m": "也 đứng SAU chủ ngữ, TRƯỚC động từ"
+      },
+      {
+        "s": "✗ 也我是学生 → ✓ 我也是学生"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cũng là học sinh.",
+        "answer": "我也是学生。",
+        "answerPy": "Wǒ yě shì xuésheng.",
+        "note": "也 đứng sau chủ ngữ, trước động từ.",
+        "pair": "也 + V"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn học cũng không quen thầy Vương.",
+        "answer": "同学们也不认识王老师。",
+        "answerPy": "Tóngxuémen yě bú rènshi Wáng lǎoshī.",
+        "note": "也 đứng trước 不, không nói 不也.",
+        "pair": "也不……"
+      }
+    ]
+  }
 ];
 
 var wuData = [

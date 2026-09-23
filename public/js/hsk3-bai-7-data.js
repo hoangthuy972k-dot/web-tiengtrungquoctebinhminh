@@ -3,269 +3,1299 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'同事',py:'tóngshì',pos:'Danh từ',vn:'đồng nghiệp', hv: 'đồng sự',em:'👔',lesson:1,
-   explain:['Người cùng làm việc trong một cơ quan, công ty.'],
-   usage:'Danh từ; làm định ngữ với 的 hoặc trực tiếp trước danh từ khác: 新同事.',
-   collo:['新同事','老同事','我的同事'],
-   ex_zh:'那个漂亮的新同事是谁？',ex_py:'Nàge piàoliang de xīn tóngshì shì shéi?',ex_vn:'Đồng nghiệp mới xinh đẹp kia là ai vậy?',
-   exList:[
-     {zh:'那个漂亮的新同事是谁？',py:'Nàge piàoliang de xīn tóngshì shì shéi?',vn:'Đồng nghiệp mới xinh đẹp kia là ai vậy?'},
-     {zh:'你今天的工作我还没做完，你来帮帮我好吗？',py:'Jīntiān de gōngzuò wǒ hái méi zuòwán, nǐ lái bāngbang wǒ hǎo ma?',vn:'Công việc hôm nay tôi vẫn chưa làm xong, bạn qua giúp tôi được không?'},
-     {zh:'她是我们公司新来的同事。',py:'Tā shì wǒmen gōngsī xīn lái de tóngshì.',vn:'Cô ấy là đồng nghiệp mới đến công ty chúng tôi.'},
-   ],
-   hanzi:[
-     {c:'事',p:'shì',type:'独体字 · Chữ đơn',st:8,ord:'nét liền',rad:'亅 (quyết)',mean:'việc, sự việc',
-      tip:'Chữ tượng hình mô phỏng tay cầm dụng cụ làm việc → nghĩa CÔNG VIỆC, SỰ VIỆC; 同(cùng)+事(việc) = người cùng làm việc.',
-      cf:'吏 (lì – "quan lại", gần giống phần trên")',w:'同事 / 事情 / 没事'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cô ấy làm việc ở công ty này ba năm rồi.',answer:'她在这家公司工作三年了。',answerPy:'Tā zài zhè jiā gōngsī gōngzuò sān nián le.',
-      note:'Sub+V+了+thời lượng diễn tả khoảng thời gian hành động kéo dài (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Vì cô ấy vừa đến công ty nên mọi người chưa quen cô ấy.',answer:'因为她刚来公司，所以大家还不认识她。',answerPy:'Yīnwèi tā gāng lái gōngsī, suǒyǐ dàjiā hái bú rènshi tā.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:2,zh:'以前',py:'yǐqián',pos:'Danh từ',vn:'trước đây, trước kia', hv: 'dĩ tiền',em:'⏳',lesson:1,
-   explain:['Khoảng thời gian đã qua so với hiện tại.'],
-   usage:'Danh từ, thường đứng đầu câu hoặc trước động từ: 以前 + [câu].',
-   collo:['以前工作','以前在哪儿','以前没有'],
-   ex_zh:'以前她在哪儿工作？',ex_py:'Yǐqián tā zài nǎr gōngzuò?',ex_vn:'Trước đây cô ấy làm việc ở đâu?',
-   exList:[
-     {zh:'以前她在哪儿工作？',py:'Yǐqián tā zài nǎr gōngzuò?',vn:'Trước đây cô ấy làm việc ở đâu?'},
-     {zh:'我以前在学校工作，现在在银行工作。',py:'Wǒ yǐqián zài xuéxiào gōngzuò, xiànzài zài yínháng gōngzuò.',vn:'Trước đây tôi làm việc ở trường học, bây giờ làm ở ngân hàng.'},
-     {zh:'你为什么不在书店工作了？那不是我以前喜欢的。',py:'Nǐ wèishénme bú zài shūdiàn gōngzuò le? Nà bú shì wǒ yǐqián xǐhuan de.',vn:'Sao bạn không làm ở hiệu sách nữa? Đó không phải điều tôi từng thích.'},
-   ],
-   hanzi:[
-     {c:'前',p:'qián',type:'上下结构 · Trên-dưới',st:9,ord:'⺈+月 trên → 刂 dưới',rad:'刂 (đao)',mean:'trước, phía trước',
-      tip:'Chữ mô phỏng chiếc thuyền đi VỀ PHÍA TRƯỚC → mở rộng nghĩa THỜI GIAN TRƯỚC (以前 = khoảng trước đây).',
-      cf:'剪 (jiǎn – "cắt", có 刀 trên thay vì 月")',w:'以前 / 前边 / 前年'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trước đây tôi thích chơi thể thao, bây giờ thích nghe nhạc hơn.',answer:'我以前喜欢运动，现在更喜欢听音乐。',answerPy:'Wǒ yǐqián xǐhuan yùndòng, xiànzài gèng xǐhuan tīng yīnyuè.',
-      note:'以前……现在…… diễn tả sự đối lập giữa quá khứ và hiện tại.'},
-     {promptLang:'vi',prompt:'Tuy trước đây tôi không thích âm nhạc nhưng bây giờ lại rất thích.',answer:'虽然我以前不喜欢音乐，但是现在很喜欢。',answerPy:'Suīrán wǒ yǐqián bù xǐhuan yīnyuè, dànshì xiànzài hěn xǐhuan.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:3,zh:'银行',py:'yínháng',pos:'Danh từ',vn:'ngân hàng', hv: 'ngân hàng',em:'🏦',lesson:1,
-   explain:['Tổ chức tài chính nhận gửi tiền, cho vay và các dịch vụ liên quan.'],
-   usage:'Danh từ; đi cùng động từ 在/去: 在银行工作, 去银行.',
-   collo:['在银行工作','去银行','银行经理'],
-   ex_zh:'她在银行工作了两年以后来的我们公司。',ex_py:'Tā zài yínháng gōngzuòle liǎng nián yǐhòu lái de wǒmen gōngsī.',ex_vn:'Cô ấy làm việc ở ngân hàng hai năm rồi mới đến công ty chúng tôi.',
-   exList:[
-     {zh:'她在银行工作了两年以后来的我们公司。',py:'Tā zài yínháng gōngzuòle liǎng nián yǐhòu lái de wǒmen gōngsī.',vn:'Cô ấy làm việc ở ngân hàng hai năm rồi mới đến công ty chúng tôi.'},
-     {zh:'欢迎你来我们银行。',py:'Huānyíng nǐ lái wǒmen yínháng.',vn:'Hoan nghênh bạn đến ngân hàng chúng tôi.'},
-     {zh:'我是2010年开始工作的，在银行工作了两年以后，来到了这家公司。',py:'Wǒ shì èr líng yī líng nián kāishǐ gōngzuò de, zài yínháng gōngzuòle liǎng nián yǐhòu, láidàole zhè jiā gōngsī.',vn:'Tôi bắt đầu làm việc từ năm 2010, làm ở ngân hàng hai năm rồi mới đến công ty này.'},
-   ],
-   hanzi:[
-     {c:'银',p:'yín',type:'左右结构 · Trái-phải',st:11,ord:'钅 trái → 艮 phải',rad:'钅 (kim – kim loại)',mean:'bạc',
-      tip:'钅(kim loại) + 艮(cứng, bền) → kim loại quý bền chắc = BẠC; 银行 vốn nghĩa "cửa hàng đổi bạc" thời cổ.',
-      cf:'很 (hěn – "rất", có 彳 thay vì 钅")',w:'银行 / 银色'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn cần đổi tiền thì đi ngân hàng đi.',answer:'如果你需要换钱，就去银行吧。',answerPy:'Rúguǒ nǐ xūyào huàn qián, jiù qù yínháng ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-     {promptLang:'vi',prompt:'Đồng nghiệp mới của tôi trước đây làm việc ở ngân hàng.',answer:'我的新同事以前在银行工作。',answerPy:'Wǒ de xīn tóngshì yǐqián zài yínháng gōngzuò.',
-      note:'以前 diễn tả thời điểm trong quá khứ (ôn lại 同事/以前 vừa học trong bài này).'},
-   ]},
-
-  {n:4,zh:'久',py:'jiǔ',pos:'Tính từ',vn:'lâu, lâu dài', hv: 'cửu',em:'⏱️',lesson:2,
-   explain:['Khoảng thời gian dài.'],
-   usage:'Tính từ, thường dùng trong câu hỏi 多久 (bao lâu) hoặc 很久 (rất lâu).',
-   collo:['多久','很久','等了很久'],
-   ex_zh:'你们唱了多久？',ex_py:'Nǐmen chàngle duō jiǔ?',ex_vn:'Các bạn hát bao lâu?',
-   exList:[
-     {zh:'你们唱了多久？',py:'Nǐmen chàngle duō jiǔ?',vn:'Các bạn hát bao lâu?'},
-     {zh:'男的看了多长时间电影？很久。',py:'Nánde kànle duō cháng shíjiān diànyǐng? Hěn jiǔ.',vn:'Người nam xem phim bao lâu? Rất lâu.'},
-     {zh:'我在这儿等了很久了。',py:'Wǒ zài zhèr děngle hěn jiǔ le.',vn:'Tôi đợi ở đây rất lâu rồi.'},
-   ],
-   hanzi:[
-     {c:'久',p:'jiǔ',type:'独体字 · Chữ đơn',st:3,ord:'nét liền',rad:'丿 (phiệt)',mean:'lâu',
-      tip:'Chữ cổ mô phỏng hình người bị giữ lại phía sau (chân bị kéo) → ý nghĩa KÉO DÀI THỜI GIAN = LÂU.',
-      cf:'夂 (zhǐ – bộ thủ "đi chậm", hình dáng gần giống")',w:'多久 / 很久 / 长久'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn đợi thêm chút nữa thôi, không lâu đâu.',answer:'只要你再等一会儿，不会很久的。',answerPy:'Zhǐyào nǐ zài děng yíhuìr, bú huì hěn jiǔ de.',
-      note:'只要……就…… (ở đây rút gọn 就) diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Bà tôi làm việc ở ngân hàng rất lâu rồi.',answer:'我奶奶在银行工作很久了。',answerPy:'Wǒ nǎinai zài yínháng gōngzuò hěn jiǔ le.',
-      note:'很久了 diễn tả khoảng thời gian dài (ôn lại 银行 đã học trong bài này).'},
-   ]},
-
-  {n:5,zh:'感兴趣',py:'gǎn xìngqù',pos:'Cụm động từ',vn:'có hứng thú, thích', hv: 'cảm hứng thú',em:'✨',lesson:2,
-   explain:['Cảm thấy hứng thú, quan tâm đến điều gì đó.'],
-   usage:'Cấu trúc: 对 + [đối tượng] + (phó từ mức độ) + 感兴趣; phủ định: 对……不感兴趣.',
-   collo:['对……感兴趣','很感兴趣','不感兴趣'],
-   ex_zh:'你们都对音乐感兴趣吗？',ex_py:'Nǐmen dōu duì yīnyuè gǎn xìngqù ma?',ex_vn:'Cả hai đều thích âm nhạc à?',
-   exList:[
-     {zh:'你们都对音乐感兴趣吗？',py:'Nǐmen dōu duì yīnyuè gǎn xìngqù ma?',vn:'Cả hai đều thích âm nhạc à?'},
-     {zh:'她对音乐感兴趣，我对她更感兴趣。',py:'Tā duì yīnyuè gǎn xìngqù, wǒ duì tā gèng gǎn xìngqù.',vn:'Cô ấy thích âm nhạc, còn tôi thích cô ấy hơn.'},
-     {zh:'我对爬山不感兴趣，爬山太累了。',py:'Wǒ duì páshān bù gǎn xìngqù, páshān tài lèi le.',vn:'Tôi không thích leo núi, leo núi mệt lắm.'},
-   ],
-   hanzi:[
-     {c:'趣',p:'qù',type:'半包围结构 · Bán bao vây',st:15,ord:'走 bao ngoài → 取 trong',rad:'走 (tẩu – đi)',mean:'thú vị, hứng thú',
-      tip:'走(đi, hướng đến) + 取(chọn lấy) → hướng đến, chọn lấy điều mình thích = HỨNG THÚ.',
-      cf:'取 (qǔ – "lấy", không có bộ 走")',w:'感兴趣 / 有意思 / 兴趣'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn thích môn thể thao nào?',answer:'你对什么运动感兴趣？',answerPy:'Nǐ duì shénme yùndòng gǎn xìngqù?',
-      note:'对 + đối tượng + 感兴趣 hỏi về sở thích.'},
-     {promptLang:'vi',prompt:'Nếu bạn thích âm nhạc thì cùng đi nghe hòa nhạc với tôi đi.',answer:'如果你对音乐感兴趣，就跟我一起去听音乐会吧。',answerPy:'Rúguǒ nǐ duì yīnyuè gǎn xìngqù, jiù gēn wǒ yìqǐ qù tīng yīnyuèhuì ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 音乐会 đã học ở Bài 6).'},
-   ]},
-
-  {n:6,zh:'结婚',py:'jiéhūn',pos:'Động từ',vn:'kết hôn, cưới', hv: 'kết hôn',em:'💍',lesson:3,
-   explain:['Nam nữ chính thức trở thành vợ chồng.'],
-   usage:'Động từ ly hợp; thường đi cùng 跟/和 + người: 跟她结婚.',
-   collo:['跟她结婚','下个月结婚','结婚了'],
-   ex_zh:'我跟小丽下个月结婚，到时候欢迎你来。',ex_py:'Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.',ex_vn:'Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé.',
-   exList:[
-     {zh:'我跟小丽下个月结婚，到时候欢迎你来。',py:'Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.',vn:'Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé.'},
-     {zh:'什么？结婚？',py:'Shénme? Jié hūn?',vn:'Gì cơ? Kết hôn?'},
-     {zh:'你跟她结婚，那我怎么办啊？',py:'Nǐ gēn tā jié hūn, nà wǒ zěnme bàn a?',vn:'Bạn cưới cô ấy, vậy tôi phải làm sao đây?'},
-   ],
-   hanzi:[
-     {c:'婚',p:'hūn',type:'左右结构 · Trái-phải',st:11,ord:'女 trái → 昏 phải',rad:'女 (nữ)',mean:'kết hôn, hôn nhân',
-      tip:'女(người phụ nữ) + 昏(hoàng hôn, thời cổ rước dâu vào buổi chiều tối) → nghi lễ CƯỚI HỎI = KẾT HÔN.',
-      cf:'昏 (hūn – "hoàng hôn, mê man", không có bộ 女")',w:'结婚 / 结婚了 / 婚礼'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tháng sau chúng tôi kết hôn, hoan nghênh bạn đến.',answer:'我们下个月结婚，欢迎你来。',answerPy:'Wǒmen xià ge yuè jié hūn, huānyíng nǐ lái.',
-      note:'欢迎你来 = lời mời trang trọng (ôn lại 欢迎 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Anh trai tôi và vợ anh ấy quen nhau bảy năm rồi mới kết hôn.',answer:'我哥哥和他妻子认识七年了才结婚。',answerPy:'Wǒ gēge hé tā qīzi rènshi qī nián le cái jiéhūn.',
-      note:'认识……了才…… diễn tả phải sau một khoảng thời gian mới xảy ra việc gì (ôn lại 妻子 đã học ở Bài 6).'},
-   ]},
-
-  {n:7,zh:'欢迎',py:'huānyíng',pos:'Động từ',vn:'hoan nghênh, chào mừng', hv: 'hoan nghênh',em:'🎉',lesson:3,
-   explain:['Vui vẻ đón tiếp, mời gọi ai đó đến.'],
-   usage:'Động từ, mang tân ngữ trực tiếp là người hoặc mệnh đề: 欢迎 + [người] + [V].',
-   collo:['欢迎你来','欢迎光临','受欢迎'],
-   ex_zh:'我跟小丽下个月结婚，到时候欢迎你来。',ex_py:'Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.',ex_vn:'Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé.',
-   exList:[
-     {zh:'我跟小丽下个月结婚，到时候欢迎你来。',py:'Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.',vn:'Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé.'},
-     {zh:'欢迎你来我们银行。',py:'Huānyíng nǐ lái wǒmen yínháng.',vn:'Hoan nghênh bạn đến ngân hàng chúng tôi.'},
-     {zh:'经理您好，我一定好好儿工作。',py:'Jīnglǐ nín hǎo, wǒ yídìng hǎohāor gōngzuò.',vn:'Chào giám đốc, tôi nhất định sẽ làm việc chăm chỉ.'},
-   ],
-   hanzi:[
-     {c:'迎',p:'yíng',type:'半包围结构 · Bán bao vây',st:7,ord:'辶 bao ngoài → 卬 trong',rad:'辶 (sước – đi)',mean:'đón tiếp',
-      tip:'辶(đi) + 卬(ngẩng đầu trông ngóng) → đi ra NGÊNH ĐÓN người khác = ĐÓN TIẾP, HOAN NGHÊNH.',
-      cf:'仰 (yǎng – "ngưỡng mộ", có 亻 thay vì 辶")',w:'欢迎 / 迎接'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn có thời gian, chúng tôi rất hoan nghênh bạn đến.',answer:'只要你有时间，我们就很欢迎你来。',answerPy:'Zhǐyào nǐ yǒu shíjiān, wǒmen jiù hěn huānyíng nǐ lái.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Đồng nghiệp mới rất được mọi người hoan nghênh.',answer:'新同事很受大家欢迎。',answerPy:'Xīn tóngshì hěn shòu dàjiā huānyíng.',
-      note:'受欢迎 = được yêu mến, hoan nghênh (ôn lại 同事 vừa học trong bài này).'},
-   ]},
-
-  {n:8,zh:'迟到',py:'chídào',pos:'Động từ',vn:'đến muộn', hv: 'trì đáo',em:'⏰',lesson:4,
-   explain:['Đến trễ hơn thời gian đã hẹn hoặc quy định.'],
-   usage:'Động từ ly hợp, thường đi cùng 了 hoặc thời lượng: 迟到了, 迟到了一刻钟.',
-   collo:['迟到了','没迟到','怎么迟到了'],
-   ex_zh:'你看看手表，怎么迟到了？',ex_py:'Nǐ kànkan shǒubiǎo, zěnme chídào le?',ex_vn:'Bạn xem đồng hồ đi, sao lại đến muộn vậy?',
-   exList:[
-     {zh:'你看看手表，怎么迟到了？',py:'Nǐ kànkan shǒubiǎo, zěnme chídào le?',vn:'Bạn xem đồng hồ đi, sao lại đến muộn vậy?'},
-     {zh:'没迟到啊。',py:'Méi chídào a.',vn:'Không có muộn đâu.'},
-     {zh:'不是我迟到了，是你的表快了一刻钟。',py:'Bú shì wǒ chídào le, shì nǐ de biǎo kuàile yí kè zhōng.',vn:'Không phải tôi đến muộn, mà là đồng hồ của bạn chạy nhanh mười lăm phút.'},
-   ],
-   hanzi:[
-     {c:'迟',p:'chí',type:'半包围结构 · Bán bao vây',st:7,ord:'辶 bao ngoài → 尺 trong',rad:'辶 (sước – đi)',mean:'muộn, trễ',
-      tip:'辶(đi) + 尺(cây thước, ý chỉ đo lường chậm) → đi CHẬM hơn mức quy định = MUỘN, TRỄ.',
-      cf:'尺 (chǐ – "cái thước", không có bộ 辶")',w:'迟到 / 迟早'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn không phải nói 8 giờ đến đón tôi sao? Bạn đến muộn rồi.',answer:'你不是说八点来接我吗？你迟到了。',answerPy:'Nǐ bú shì shuō bā diǎn lái jiē wǒ ma? Nǐ chídào le.',
-      note:'不是……吗 diễn tả nhắc lại điều đã hẹn (ôn lại 接 sẽ học ngay bên dưới trong bài này).'},
-     {promptLang:'vi',prompt:'Chỉ cần bạn đến sớm mười lăm phút thì sẽ không muộn.',answer:'只要你早来一刻钟，就不会迟到。',answerPy:'Zhǐyào nǐ zǎo lái yí kè zhōng, jiù bú huì chídào.',
-      note:'只要……就…… diễn tả điều kiện đủ (ôn lại 刻 sẽ học ngay bên dưới trong bài này).'},
-   ]},
-
-  {n:9,zh:'半',py:'bàn',pos:'Số từ',vn:'một nửa, rưỡi', hv: 'bán',em:'🕧',lesson:4,
-   explain:['Một nửa của một đơn vị; dùng trong giờ để chỉ 30 phút.'],
-   usage:'Số từ, đứng sau giờ để chỉ 30 phút: [giờ] + 半 (七点半 = 7 giờ rưỡi); hoặc trước lượng từ: 半个小时.',
-   collo:['七点半','半个小时','一半'],
-   ex_zh:'你不是说七点半来接我吗？',ex_py:'Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?',ex_vn:'Chẳng phải bạn nói 7h30 đến đón tôi sao?',
-   exList:[
-     {zh:'你不是说七点半来接我吗？',py:'Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?',vn:'Chẳng phải bạn nói 7h30 đến đón tôi sao?'},
-     {zh:'我都在这儿坐了半个小时了。',py:'Wǒ dōu zài zhèr zuòle bàn ge xiǎoshí le.',vn:'Tôi ngồi đây nửa tiếng rồi đấy.'},
-     {zh:'我坐出租车半个小时就回去了。',py:'Wǒ zuò chūzūchē bàn ge xiǎoshí jiù huíqu le.',vn:'Tôi đi taxi nửa tiếng là về đến nhà rồi.'},
-   ],
-   hanzi:[
-     {c:'半',p:'bàn',type:'独体字 · Chữ đơn',st:5,ord:'nét liền',rad:'八 (bát – tám, chia)',mean:'một nửa',
-      tip:'Chữ tượng hình mô phỏng vật bị CHIA làm đôi (nét 八 ở trên chỉ sự phân chia) → MỘT NỬA.',
-      cf:'伴 (bàn – "bạn đồng hành", có 亻 thêm vào")',w:'一半 / 半个 / 点半'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn có thể đến đón tôi lúc 7 giờ rưỡi không?',answer:'你能七点半来接我吗？',answerPy:'Nǐ néng qī diǎn bàn lái jiē wǒ ma?',
-      note:'[giờ]+半 = giờ rưỡi (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Anh ấy đợi tôi ở cửa công ty nửa tiếng rồi.',answer:'他在公司门口等了我半个小时了。',answerPy:'Tā zài gōngsī ménkǒu děngle wǒ bàn ge xiǎoshí le.',
-      note:'半个小时 = nửa tiếng, làm bổ ngữ thời lượng.'},
-   ]},
-
-  {n:10,zh:'接',py:'jiē',pos:'Động từ',vn:'đón', hv: 'tiếp',em:'🚗',lesson:4,
-   explain:['Ra đón ai đó đến một nơi.'],
-   usage:'Động từ, mang tân ngữ trực tiếp là người: 接 + [người] (接我, 接你).',
-   collo:['来接我','接人','去接'],
-   ex_zh:'你不是说七点半来接我吗？',ex_py:'Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?',ex_vn:'Chẳng phải bạn nói 7h30 đến đón tôi sao?',
-   exList:[
-     {zh:'你不是说七点半来接我吗？',py:'Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?',vn:'Chẳng phải bạn nói 7h30 đến đón tôi sao?'},
-     {zh:'就是那天来公司接你的那个？',py:'Jiùshì nàtiān lái gōngsī jiē nǐ de nàge?',vn:'Chính là người hôm đó đến công ty đón bạn đấy à?'},
-     {zh:'我已经等了半个小时了，你在哪儿呢？',py:'Wǒ yǐjīng děngle bàn ge xiǎoshí le, nǐ zài nǎr ne?',vn:'Tôi đã đợi nửa tiếng rồi, bạn đang ở đâu vậy?'},
-   ],
-   hanzi:[
-     {c:'接',p:'jiē',type:'左右结构 · Trái-phải',st:11,ord:'扌 trái → 妾 phải',rad:'扌 (thủ – tay)',mean:'đón, tiếp nhận',
-      tip:'扌(tay) + 妾(người phụ nữ được đón về) → dùng TAY đón nhận ai đó = ĐÓN.',
-      cf:'妾 (qiè – "thiếp", không có bộ 扌")',w:'接我 / 接人 / 迎接'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ai đến đón bạn ở sân bay vậy?',answer:'谁来机场接你？',answerPy:'Shéi lái jīchǎng jiē nǐ?',
-      note:'接 + người diễn tả hành động đón ai đó.'},
-     {promptLang:'vi',prompt:'Nếu bạn đến muộn thì tôi sẽ không đến đón bạn nữa.',answer:'如果你迟到，我就不来接你了。',answerPy:'Rúguǒ nǐ chídào, wǒ jiù bù lái jiē nǐ le.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 迟到 vừa học trong bài này).'},
-   ]},
-
-  {n:11,zh:'刻',py:'kè',pos:'Lượng từ',vn:'mười lăm phút', hv: 'khắc',em:'🕒',lesson:4,
-   explain:['Đơn vị thời gian bằng 15 phút, dùng để nói giờ hoặc khoảng thời gian.'],
-   usage:'Lượng từ; đứng sau số từ: 一刻 (15 phút), 三刻 (45 phút); 一刻钟 là cách nói đầy đủ chỉ khoảng thời gian.',
-   collo:['一刻钟','三刻','差一刻'],
-   ex_zh:'你迟到了一刻钟。',ex_py:'Nǐ chídàole yí kè zhōng.',ex_vn:'Bạn đến muộn mười lăm phút rồi.',
-   exList:[
-     {zh:'你迟到了一刻钟。',py:'Nǐ chídàole yí kè zhōng.',vn:'Bạn đến muộn mười lăm phút rồi.'},
-     {zh:'不是我迟到了，是你的表快了一刻钟。',py:'Bú shì wǒ chídào le, shì nǐ de biǎo kuàile yí kè zhōng.',vn:'Không phải tôi đến muộn, mà là đồng hồ của bạn chạy nhanh mười lăm phút.'},
-     {zh:'现在差一刻九点。',py:'Xiànzài chà yí kè jiǔ diǎn.',vn:'Bây giờ là kém mười lăm phút nữa 9 giờ.'},
-   ],
-   hanzi:[
-     {c:'刻',p:'kè',type:'左右结构 · Trái-phải',st:8,ord:'亥 trái → 刂 phải',rad:'刂 (đao – dao)',mean:'khắc, chạm',
-      tip:'亥(một khoảng thời gian trong 12 canh giờ cổ) + 刂(dao, dùng để khắc vạch trên đồng hồ nước cổ) → mở rộng thành đơn vị 15 PHÚT.',
-      cf:'该 (gāi – "nên, phải", có 讠 thay vì 刂")',w:'一刻钟 / 三刻 / 立刻'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bây giờ là kém mười lăm phút nữa 6 giờ, chúng ta đi thôi.',answer:'现在差一刻六点，我们走吧。',answerPy:'Xiànzài chà yí kè liù diǎn, wǒmen zǒu ba.',
-      note:'差+一刻+giờ = cách nói giờ kém (điểm ngữ pháp bài này, ôn lại 差 sẽ học ngay bên dưới).'},
-     {promptLang:'vi',prompt:'Chúng tôi hát hai tiếng đồng hồ, rất vui.',answer:'我们唱了两个小时歌，很高兴。',answerPy:'Wǒmen chàngle liǎng ge xiǎoshí gē, hěn gāoxìng.',
-      note:'唱了+thời lượng+歌 diễn tả khoảng thời gian hành động kéo dài.'},
-   ]},
-
-  {n:12,zh:'差',py:'chà',pos:'Động từ',vn:'kém, thiếu', hv: 'sai',em:'➖',lesson:4,
-   explain:['Còn thiếu, chưa đủ; dùng trong cách nói giờ để chỉ "còn thiếu bao nhiêu phút nữa đến giờ tròn".'],
-   usage:'Động từ; cấu trúc nói giờ: 差 + [khoảng thời gian] + [giờ] (差一刻八点 = 7:45).',
-   collo:['差一刻','差五分','差不多'],
-   ex_zh:'已经差一刻八点了！',ex_py:'Yǐjīng chà yí kè bā diǎn le!',ex_vn:'Đã kém mười lăm phút nữa là 8 giờ rồi!',
-   exList:[
-     {zh:'已经差一刻八点了！',py:'Yǐjīng chà yí kè bā diǎn le!',vn:'Đã kém mười lăm phút nữa là 8 giờ rồi!'},
-     {zh:'我都在这儿坐了半个小时了。',py:'Wǒ dōu zài zhèr zuòle bàn ge xiǎoshí le.',vn:'Tôi ngồi đây nửa tiếng rồi đấy.'},
-     {zh:'现在差五分十二点。',py:'Xiànzài chà wǔ fēn shí\'èr diǎn.',vn:'Bây giờ là kém 5 phút nữa 12 giờ.'},
-   ],
-   hanzi:[
-     {c:'差',p:'chà',type:'上下结构 · Trên-dưới',st:9,ord:'𝒁+羊(biến thể) trên → 工 dưới',rad:'工 (công)',mean:'kém, thiếu; sai lệch',
-      tip:'Chữ cổ vốn chỉ sự SAI LỆCH, không đồng đều → mở rộng nghĩa THIẾU, KÉM so với mức chuẩn.',
-      cf:'着 (zhe/zháo – hình trên gần giống nhưng bộ khác")',w:'差一刻 / 差不多 / 差点儿'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bây giờ là kém mười lăm phút nữa 9 giờ, chúng ta phải đi nhanh thôi.',answer:'现在差一刻九点，我们得快点儿走了。',answerPy:'Xiànzài chà yí kè jiǔ diǎn, wǒmen děi kuài diǎnr zǒu le.',
-      note:'差+一刻+giờ = cách nói giờ kém.'},
-     {promptLang:'vi',prompt:'Nếu đồng hồ của bạn chạy chậm thì bạn sẽ đến muộn đấy.',answer:'如果你的表慢了，你就会迟到的。',answerPy:'Rúguǒ nǐ de biǎo màn le, nǐ jiù huì chídào de.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 迟到 vừa học trong bài này).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "同事",
+    "py": "tóngshì",
+    "pos": "Danh từ",
+    "vn": "đồng nghiệp",
+    "hv": "đồng sự",
+    "em": "👔",
+    "lesson": 1,
+    "explain": [
+      "Người cùng làm việc trong một cơ quan, công ty."
+    ],
+    "usage": "Danh từ; làm định ngữ với 的 hoặc trực tiếp trước danh từ khác: 新同事.",
+    "collo": [
+      "新同事",
+      "老同事",
+      "我的同事"
+    ],
+    "ex_zh": "那个漂亮的新同事是谁？",
+    "ex_py": "Nàge piàoliang de xīn tóngshì shì shéi?",
+    "ex_vn": "Đồng nghiệp mới xinh đẹp kia là ai vậy?",
+    "exList": [
+      {
+        "zh": "那个漂亮的新同事是谁？",
+        "py": "Nàge piàoliang de xīn tóngshì shì shéi?",
+        "vn": "Đồng nghiệp mới xinh đẹp kia là ai vậy?"
+      },
+      {
+        "zh": "你今天的工作我还没做完，你来帮帮我好吗？",
+        "py": "Jīntiān de gōngzuò wǒ hái méi zuòwán, nǐ lái bāngbang wǒ hǎo ma?",
+        "vn": "Công việc hôm nay tôi vẫn chưa làm xong, bạn qua giúp tôi được không?"
+      },
+      {
+        "zh": "她是我们公司新来的同事。",
+        "py": "Tā shì wǒmen gōngsī xīn lái de tóngshì.",
+        "vn": "Cô ấy là đồng nghiệp mới đến công ty chúng tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "事",
+        "p": "shì",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "nét liền",
+        "rad": "亅 (quyết)",
+        "mean": "việc, sự việc",
+        "tip": "Chữ tượng hình mô phỏng tay cầm dụng cụ làm việc → nghĩa CÔNG VIỆC, SỰ VIỆC; 同(cùng)+事(việc) = người cùng làm việc.",
+        "cf": "吏 (lì – \"quan lại\", gần giống phần trên\")",
+        "w": "同事 / 事情 / 没事"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy làm ở công ty này ba năm rồi, nên đồng nghiệp ai cũng quen cô ấy.",
+        "answer": "因为她在这家公司工作三年了，所以同事们都认识她。",
+        "answerPy": "Yīnwèi tā zài zhè jiā gōngsī gōngzuò sān nián le, suǒyǐ tóngshìmen dōu rènshi tā.",
+        "note": "同事 (cùng làm) / 同学 (cùng học) — cùng một cách ghép.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cô ấy vừa đến công ty nên mọi người chưa quen cô ấy.",
+        "answer": "因为她刚来公司，所以大家还不认识她。",
+        "answerPy": "Yīnwèi tā gāng lái gōngsī, suǒyǐ dàjiā hái bú rènshi tā.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "新同事",
+        "py": "xīn tóngshì",
+        "vn": "đồng nghiệp mới"
+      },
+      {
+        "zh": "老同事",
+        "py": "lǎo tóngshì",
+        "vn": "đồng nghiệp cũ"
+      },
+      {
+        "zh": "我的同事",
+        "py": "wǒ de tóngshì",
+        "vn": "đồng nghiệp của tôi"
+      },
+      {
+        "zh": "跟同事一起",
+        "py": "gēn tóngshì yìqǐ",
+        "vn": "cùng với đồng nghiệp"
+      },
+      {
+        "zh": "同事们",
+        "py": "tóngshì men",
+        "vn": "các đồng nghiệp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "同 + 事",
+        "m": "Người cùng (同) làm việc (事)"
+      },
+      {
+        "s": "同事 (cùng làm) / 同学 (cùng học) / 同屋 (cùng phòng)"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "以前",
+    "py": "yǐqián",
+    "pos": "Danh từ",
+    "vn": "trước đây, trước kia",
+    "hv": "dĩ tiền",
+    "em": "⏳",
+    "lesson": 1,
+    "explain": [
+      "Khoảng thời gian đã qua so với hiện tại."
+    ],
+    "usage": "Danh từ, thường đứng đầu câu hoặc trước động từ: 以前 + [câu].",
+    "collo": [
+      "以前工作",
+      "以前在哪儿",
+      "以前没有"
+    ],
+    "ex_zh": "以前她在哪儿工作？",
+    "ex_py": "Yǐqián tā zài nǎr gōngzuò?",
+    "ex_vn": "Trước đây cô ấy làm việc ở đâu?",
+    "exList": [
+      {
+        "zh": "以前她在哪儿工作？",
+        "py": "Yǐqián tā zài nǎr gōngzuò?",
+        "vn": "Trước đây cô ấy làm việc ở đâu?"
+      },
+      {
+        "zh": "我以前在学校工作，现在在银行工作。",
+        "py": "Wǒ yǐqián zài xuéxiào gōngzuò, xiànzài zài yínháng gōngzuò.",
+        "vn": "Trước đây tôi làm việc ở trường học, bây giờ làm ở ngân hàng."
+      },
+      {
+        "zh": "你为什么不在书店工作了？那不是我以前喜欢的。",
+        "py": "Nǐ wèishénme bú zài shūdiàn gōngzuò le? Nà bú shì wǒ yǐqián xǐhuan de.",
+        "vn": "Sao bạn không làm ở hiệu sách nữa? Đó không phải điều tôi từng thích."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "前",
+        "p": "qián",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "⺈+月 trên → 刂 dưới",
+        "rad": "刂 (đao)",
+        "mean": "trước, phía trước",
+        "tip": "Chữ mô phỏng chiếc thuyền đi VỀ PHÍA TRƯỚC → mở rộng nghĩa THỜI GIAN TRƯỚC (以前 = khoảng trước đây).",
+        "cf": "剪 (jiǎn – \"cắt\", có 刀 trên thay vì 月\")",
+        "w": "以前 / 前边 / 前年"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trước đây tôi thích chơi thể thao, nhưng bây giờ thích nghe nhạc hơn.",
+        "answer": "我以前喜欢运动，但是现在更喜欢听音乐。",
+        "answerPy": "Wǒ yǐqián xǐhuan yùndòng, dànshì xiànzài gèng xǐhuan tīng yīnyuè.",
+        "note": "更 là từ bài 6 — dùng khi so với tình trạng trước.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy trước đây tôi không thích âm nhạc nhưng bây giờ lại rất thích.",
+        "answer": "虽然我以前不喜欢音乐，但是现在很喜欢。",
+        "answerPy": "Suīrán wǒ yǐqián bù xǐhuan yīnyuè, dànshì xiànzài hěn xǐhuan.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "以前在哪儿",
+        "py": "yǐqián zài nǎr",
+        "vn": "trước đây ở đâu"
+      },
+      {
+        "zh": "以前没有",
+        "py": "yǐqián méiyǒu",
+        "vn": "trước đây không có"
+      },
+      {
+        "zh": "很久以前",
+        "py": "hěn jiǔ yǐqián",
+        "vn": "rất lâu trước đây"
+      },
+      {
+        "zh": "来中国以前",
+        "py": "lái Zhōngguó yǐqián",
+        "vn": "trước khi đến Trung Quốc"
+      },
+      {
+        "zh": "跟以前一样",
+        "py": "gēn yǐqián yíyàng",
+        "vn": "giống như trước"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 以前",
+        "m": "Trước khi làm gì — 以前 đứng SAU"
+      },
+      {
+        "s": "以前 ↔ 以后",
+        "m": "Trước đây ↔ sau này"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "银行",
+    "py": "yínháng",
+    "pos": "Danh từ",
+    "vn": "ngân hàng",
+    "hv": "ngân hàng",
+    "em": "🏦",
+    "lesson": 1,
+    "explain": [
+      "Tổ chức tài chính nhận gửi tiền, cho vay và các dịch vụ liên quan."
+    ],
+    "usage": "Danh từ; đi cùng động từ 在/去: 在银行工作, 去银行.",
+    "collo": [
+      "在银行工作",
+      "去银行",
+      "银行经理"
+    ],
+    "ex_zh": "她在银行工作了两年以后来的我们公司。",
+    "ex_py": "Tā zài yínháng gōngzuòle liǎng nián yǐhòu lái de wǒmen gōngsī.",
+    "ex_vn": "Cô ấy làm việc ở ngân hàng hai năm rồi mới đến công ty chúng tôi.",
+    "exList": [
+      {
+        "zh": "她在银行工作了两年以后来的我们公司。",
+        "py": "Tā zài yínháng gōngzuòle liǎng nián yǐhòu lái de wǒmen gōngsī.",
+        "vn": "Cô ấy làm việc ở ngân hàng hai năm rồi mới đến công ty chúng tôi."
+      },
+      {
+        "zh": "欢迎你来我们银行。",
+        "py": "Huānyíng nǐ lái wǒmen yínháng.",
+        "vn": "Hoan nghênh bạn đến ngân hàng chúng tôi."
+      },
+      {
+        "zh": "我是2010年开始工作的，在银行工作了两年以后，来到了这家公司。",
+        "py": "Wǒ shì èr líng yī líng nián kāishǐ gōngzuò de, zài yínháng gōngzuòle liǎng nián yǐhòu, láidàole zhè jiā gōngsī.",
+        "vn": "Tôi bắt đầu làm việc từ năm 2010, làm ở ngân hàng hai năm rồi mới đến công ty này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "银",
+        "p": "yín",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "钅 trái → 艮 phải",
+        "rad": "钅 (kim – kim loại)",
+        "mean": "bạc",
+        "tip": "钅(kim loại) + 艮(cứng, bền) → kim loại quý bền chắc = BẠC; 银行 vốn nghĩa \"cửa hàng đổi bạc\" thời cổ.",
+        "cf": "很 (hěn – \"rất\", có 彳 thay vì 钅\")",
+        "w": "银行 / 银色"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn cần đổi tiền thì đi ngân hàng đi.",
+        "answer": "如果你需要换钱，就去银行吧。",
+        "answerPy": "Rúguǒ nǐ xūyào huàn qián, jiù qù yínháng ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đồng nghiệp mới của tôi trước đây không những làm ở ngân hàng, mà còn làm rất lâu.",
+        "answer": "我的新同事以前不但在银行工作，而且工作了很久。",
+        "answerPy": "Wǒ de xīn tóngshì yǐqián búdàn zài yínháng gōngzuò, érqiě gōngzuòle hěn jiǔ.",
+        "note": "在 + nơi chốn + 工作 — làm việc ở đâu.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去银行",
+        "py": "qù yínháng",
+        "vn": "đi ngân hàng"
+      },
+      {
+        "zh": "在银行工作",
+        "py": "zài yínháng gōngzuò",
+        "vn": "làm ở ngân hàng"
+      },
+      {
+        "zh": "银行经理",
+        "py": "yínháng jīnglǐ",
+        "vn": "giám đốc ngân hàng"
+      },
+      {
+        "zh": "银行门口",
+        "py": "yínháng ménkǒu",
+        "vn": "cửa ngân hàng"
+      },
+      {
+        "zh": "银行开门了",
+        "py": "yínháng kāi mén le",
+        "vn": "ngân hàng mở cửa rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 银行 + 工作",
+        "m": "Làm việc ở ngân hàng"
+      },
+      {
+        "s": "银 + 行",
+        "m": "Nơi (行) giữ bạc (银)"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "久",
+    "py": "jiǔ",
+    "pos": "Tính từ",
+    "vn": "lâu, lâu dài",
+    "hv": "cửu",
+    "em": "⏱️",
+    "lesson": 2,
+    "explain": [
+      "Khoảng thời gian dài."
+    ],
+    "usage": "Tính từ, thường dùng trong câu hỏi 多久 (bao lâu) hoặc 很久 (rất lâu).",
+    "collo": [
+      "多久",
+      "很久",
+      "等了很久"
+    ],
+    "ex_zh": "你们唱了多久？",
+    "ex_py": "Nǐmen chàngle duō jiǔ?",
+    "ex_vn": "Các bạn hát bao lâu?",
+    "exList": [
+      {
+        "zh": "你们唱了多久？",
+        "py": "Nǐmen chàngle duō jiǔ?",
+        "vn": "Các bạn hát bao lâu?"
+      },
+      {
+        "zh": "男的看了多长时间电影？很久。",
+        "py": "Nánde kànle duō cháng shíjiān diànyǐng? Hěn jiǔ.",
+        "vn": "Người nam xem phim bao lâu? Rất lâu."
+      },
+      {
+        "zh": "我在这儿等了很久了。",
+        "py": "Wǒ zài zhèr děngle hěn jiǔ le.",
+        "vn": "Tôi đợi ở đây rất lâu rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "久",
+        "p": "jiǔ",
+        "type": "独体字 · Chữ đơn",
+        "st": 3,
+        "ord": "nét liền",
+        "rad": "丿 (phiệt)",
+        "mean": "lâu",
+        "tip": "Chữ cổ mô phỏng hình người bị giữ lại phía sau (chân bị kéo) → ý nghĩa KÉO DÀI THỜI GIAN = LÂU.",
+        "cf": "夂 (zhǐ – bộ thủ \"đi chậm\", hình dáng gần giống\")",
+        "w": "多久 / 很久 / 长久"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn đợi thêm chút nữa thôi, không lâu đâu.",
+        "answer": "只要你再等一会儿，不会很久的。",
+        "answerPy": "Zhǐyào nǐ zài děng yíhuìr, bú huì hěn jiǔ de.",
+        "note": "只要……就…… (ở đây rút gọn 就) diễn tả điều kiện đủ.",
+        "pair": "只要……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bà tôi làm ở ngân hàng rất lâu rồi, nên quen rất nhiều người ở đó.",
+        "answer": "因为我奶奶在银行工作很久了，所以认识那儿很多人。",
+        "answerPy": "Yīnwèi wǒ nǎinai zài yínháng gōngzuò hěn jiǔ le, suǒyǐ rènshi nàr hěn duō rén.",
+        "note": "V + 了 + 很久 — làm gì đã lâu.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "多久",
+        "py": "duō jiǔ",
+        "vn": "bao lâu"
+      },
+      {
+        "zh": "很久",
+        "py": "hěn jiǔ",
+        "vn": "rất lâu"
+      },
+      {
+        "zh": "等了很久",
+        "py": "děng le hěn jiǔ",
+        "vn": "đợi rất lâu"
+      },
+      {
+        "zh": "好久不见",
+        "py": "hǎo jiǔ bú jiàn",
+        "vn": "lâu rồi không gặp"
+      },
+      {
+        "zh": "住了很久",
+        "py": "zhù le hěn jiǔ",
+        "vn": "sống rất lâu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 了 + 很久",
+        "m": "Làm gì đã lâu"
+      },
+      {
+        "s": "多久？",
+        "m": "Bao lâu? — hỏi thời lượng"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "感兴趣",
+    "py": "gǎn xìngqù",
+    "pos": "Cụm động từ",
+    "vn": "có hứng thú, thích",
+    "hv": "cảm hứng thú",
+    "em": "✨",
+    "lesson": 2,
+    "explain": [
+      "Cảm thấy hứng thú, quan tâm đến điều gì đó."
+    ],
+    "usage": "Cấu trúc: 对 + [đối tượng] + (phó từ mức độ) + 感兴趣; phủ định: 对……不感兴趣.",
+    "collo": [
+      "对……感兴趣",
+      "很感兴趣",
+      "不感兴趣"
+    ],
+    "ex_zh": "你们都对音乐感兴趣吗？",
+    "ex_py": "Nǐmen dōu duì yīnyuè gǎn xìngqù ma?",
+    "ex_vn": "Cả hai đều thích âm nhạc à?",
+    "exList": [
+      {
+        "zh": "你们都对音乐感兴趣吗？",
+        "py": "Nǐmen dōu duì yīnyuè gǎn xìngqù ma?",
+        "vn": "Cả hai đều thích âm nhạc à?"
+      },
+      {
+        "zh": "她对音乐感兴趣，我对她更感兴趣。",
+        "py": "Tā duì yīnyuè gǎn xìngqù, wǒ duì tā gèng gǎn xìngqù.",
+        "vn": "Cô ấy thích âm nhạc, còn tôi thích cô ấy hơn."
+      },
+      {
+        "zh": "我对爬山不感兴趣，爬山太累了。",
+        "py": "Wǒ duì páshān bù gǎn xìngqù, páshān tài lèi le.",
+        "vn": "Tôi không thích leo núi, leo núi mệt lắm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "趣",
+        "p": "qù",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 15,
+        "ord": "走 bao ngoài → 取 trong",
+        "rad": "走 (tẩu – đi)",
+        "mean": "thú vị, hứng thú",
+        "tip": "走(đi, hướng đến) + 取(chọn lấy) → hướng đến, chọn lấy điều mình thích = HỨNG THÚ.",
+        "cf": "取 (qǔ – \"lấy\", không có bộ 走\")",
+        "w": "感兴趣 / 有意思 / 兴趣"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn thích môn thể thao nào? Nếu thích bóng đá thì chiều nay đi xem cùng tôi.",
+        "answer": "你对什么运动感兴趣？如果你对足球感兴趣，就下午跟我一起去看吧。",
+        "answerPy": "Nǐ duì shénme yùndòng gǎn xìngqù? Rúguǒ nǐ duì zúqiú gǎn xìngqù, jiù xiàwǔ gēn wǒ yìqǐ qù kàn ba.",
+        "note": "对 + N + 感兴趣 — bắt buộc có 对.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn thích âm nhạc thì cùng đi nghe hòa nhạc với tôi đi.",
+        "answer": "如果你对音乐感兴趣，就跟我一起去听音乐会吧。",
+        "answerPy": "Rúguǒ nǐ duì yīnyuè gǎn xìngqù, jiù gēn wǒ yìqǐ qù tīng yīnyuèhuì ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 音乐会 đã học ở Bài 6).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "对音乐感兴趣",
+        "py": "duì yīnyuè gǎn xìngqù",
+        "vn": "thích âm nhạc"
+      },
+      {
+        "zh": "很感兴趣",
+        "py": "hěn gǎn xìngqù",
+        "vn": "rất hứng thú"
+      },
+      {
+        "zh": "不感兴趣",
+        "py": "bù gǎn xìngqù",
+        "vn": "không hứng thú"
+      },
+      {
+        "zh": "对什么感兴趣",
+        "py": "duì shénme gǎn xìngqù",
+        "vn": "thích cái gì"
+      },
+      {
+        "zh": "越来越感兴趣",
+        "py": "yuè lái yuè gǎn xìngqù",
+        "vn": "ngày càng thích"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "对 + N + 感兴趣",
+        "m": "Có hứng thú với cái gì — bắt buộc có 对"
+      },
+      {
+        "s": "✗ 我感兴趣音乐 → ✓ 我对音乐感兴趣"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "结婚",
+    "py": "jiéhūn",
+    "pos": "Động từ",
+    "vn": "kết hôn, cưới",
+    "hv": "kết hôn",
+    "em": "💍",
+    "lesson": 3,
+    "explain": [
+      "Nam nữ chính thức trở thành vợ chồng."
+    ],
+    "usage": "Động từ ly hợp; thường đi cùng 跟/和 + người: 跟她结婚.",
+    "collo": [
+      "跟她结婚",
+      "下个月结婚",
+      "结婚了"
+    ],
+    "ex_zh": "我跟小丽下个月结婚，到时候欢迎你来。",
+    "ex_py": "Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.",
+    "ex_vn": "Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé.",
+    "exList": [
+      {
+        "zh": "我跟小丽下个月结婚，到时候欢迎你来。",
+        "py": "Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.",
+        "vn": "Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé."
+      },
+      {
+        "zh": "什么？结婚？",
+        "py": "Shénme? Jié hūn?",
+        "vn": "Gì cơ? Kết hôn?"
+      },
+      {
+        "zh": "你跟她结婚，那我怎么办啊？",
+        "py": "Nǐ gēn tā jié hūn, nà wǒ zěnme bàn a?",
+        "vn": "Bạn cưới cô ấy, vậy tôi phải làm sao đây?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "婚",
+        "p": "hūn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "女 trái → 昏 phải",
+        "rad": "女 (nữ)",
+        "mean": "kết hôn, hôn nhân",
+        "tip": "女(người phụ nữ) + 昏(hoàng hôn, thời cổ rước dâu vào buổi chiều tối) → nghi lễ CƯỚI HỎI = KẾT HÔN.",
+        "cf": "昏 (hūn – \"hoàng hôn, mê man\", không có bộ 女\")",
+        "w": "结婚 / 结婚了 / 婚礼"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tháng sau chúng tôi kết hôn, nếu bạn rảnh thì nhất định phải đến nhé.",
+        "answer": "我们下个月结婚，如果你有空儿，就一定要来。",
+        "answerPy": "Wǒmen xià ge yuè jiéhūn, rúguǒ nǐ yǒu kòngr, jiù yídìng yào lái.",
+        "note": "结婚 là từ ly hợp: 跟她结婚 ✓ / 结婚她 ✗.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh trai tôi và vợ anh ấy quen nhau bảy năm rồi mới cưới.",
+        "answer": "我哥哥和他妻子认识了七年，然后才结婚。",
+        "answerPy": "Wǒ gēge hé tā qīzi rènshile qī nián, ránhòu cái jiéhūn.",
+        "note": "才 nhấn việc xảy ra muộn hơn mong đợi.",
+        "pair": "先……然后……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "跟她结婚",
+        "py": "gēn tā jiéhūn",
+        "vn": "kết hôn với cô ấy"
+      },
+      {
+        "zh": "下个月结婚",
+        "py": "xià gè yuè jiéhūn",
+        "vn": "tháng sau cưới"
+      },
+      {
+        "zh": "结婚了",
+        "py": "jiéhūn le",
+        "vn": "đã kết hôn"
+      },
+      {
+        "zh": "结了婚",
+        "py": "jié le hūn",
+        "vn": "đã lập gia đình"
+      },
+      {
+        "zh": "结婚的时候",
+        "py": "jiéhūn de shíhou",
+        "vn": "lúc kết hôn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 结婚",
+        "m": "Kết hôn với ai"
+      },
+      {
+        "s": "结 + 了 + 婚",
+        "m": "结婚 là từ ly hợp: ✗ 结婚她 → ✓ 跟她结婚"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "欢迎",
+    "py": "huānyíng",
+    "pos": "Động từ",
+    "vn": "hoan nghênh, chào mừng",
+    "hv": "hoan nghênh",
+    "em": "🎉",
+    "lesson": 3,
+    "explain": [
+      "Vui vẻ đón tiếp, mời gọi ai đó đến."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp là người hoặc mệnh đề: 欢迎 + [người] + [V].",
+    "collo": [
+      "欢迎你来",
+      "欢迎光临",
+      "受欢迎"
+    ],
+    "ex_zh": "我跟小丽下个月结婚，到时候欢迎你来。",
+    "ex_py": "Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.",
+    "ex_vn": "Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé.",
+    "exList": [
+      {
+        "zh": "我跟小丽下个月结婚，到时候欢迎你来。",
+        "py": "Wǒ gēn Xiǎolì xià ge yuè jié hūn, dào shíhou huānyíng nǐ lái.",
+        "vn": "Tháng sau tôi và Tiểu Lệ kết hôn, đến lúc đó hoan nghênh bạn đến nhé."
+      },
+      {
+        "zh": "欢迎你来我们银行。",
+        "py": "Huānyíng nǐ lái wǒmen yínháng.",
+        "vn": "Hoan nghênh bạn đến ngân hàng chúng tôi."
+      },
+      {
+        "zh": "经理您好，我一定好好儿工作。",
+        "py": "Jīnglǐ nín hǎo, wǒ yídìng hǎohāor gōngzuò.",
+        "vn": "Chào giám đốc, tôi nhất định sẽ làm việc chăm chỉ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "迎",
+        "p": "yíng",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "辶 bao ngoài → 卬 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "đón tiếp",
+        "tip": "辶(đi) + 卬(ngẩng đầu trông ngóng) → đi ra NGÊNH ĐÓN người khác = ĐÓN TIẾP, HOAN NGHÊNH.",
+        "cf": "仰 (yǎng – \"ngưỡng mộ\", có 亻 thay vì 辶\")",
+        "w": "欢迎 / 迎接"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn có thời gian, chúng tôi rất hoan nghênh bạn đến.",
+        "answer": "只要你有时间，我们就很欢迎你来。",
+        "answerPy": "Zhǐyào nǐ yǒu shíjiān, wǒmen jiù hěn huānyíng nǐ lái.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì đồng nghiệp mới vừa nhiệt tình vừa chăm chỉ, nên rất được mọi người quý mến.",
+        "answer": "因为新同事又热情又努力，所以很受大家欢迎。",
+        "answerPy": "Yīnwèi xīn tóngshì yòu rèqíng yòu nǔlì, suǒyǐ hěn shòu dàjiā huānyíng.",
+        "note": "热情 và 努力 là từ bài 4; 受欢迎 — được yêu thích.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "欢迎你来",
+        "py": "huānyíng nǐ lái",
+        "vn": "hoan nghênh bạn đến"
+      },
+      {
+        "zh": "欢迎光临",
+        "py": "huānyíng guānglín",
+        "vn": "hoan nghênh quý khách"
+      },
+      {
+        "zh": "受欢迎",
+        "py": "shòu huānyíng",
+        "vn": "được ưa thích"
+      },
+      {
+        "zh": "很受欢迎",
+        "py": "hěn shòu huānyíng",
+        "vn": "rất được yêu thích"
+      },
+      {
+        "zh": "欢迎新同事",
+        "py": "huānyíng xīn tóngshì",
+        "vn": "chào mừng đồng nghiệp mới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "欢迎 + ai + V",
+        "m": "Hoan nghênh ai làm gì"
+      },
+      {
+        "s": "受 + 欢迎",
+        "m": "Được hoan nghênh, được ưa chuộng"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "迟到",
+    "py": "chídào",
+    "pos": "Động từ",
+    "vn": "đến muộn",
+    "hv": "trì đáo",
+    "em": "⏰",
+    "lesson": 4,
+    "explain": [
+      "Đến trễ hơn thời gian đã hẹn hoặc quy định."
+    ],
+    "usage": "Động từ ly hợp, thường đi cùng 了 hoặc thời lượng: 迟到了, 迟到了一刻钟.",
+    "collo": [
+      "迟到了",
+      "没迟到",
+      "怎么迟到了"
+    ],
+    "ex_zh": "你看看手表，怎么迟到了？",
+    "ex_py": "Nǐ kànkan shǒubiǎo, zěnme chídào le?",
+    "ex_vn": "Bạn xem đồng hồ đi, sao lại đến muộn vậy?",
+    "exList": [
+      {
+        "zh": "你看看手表，怎么迟到了？",
+        "py": "Nǐ kànkan shǒubiǎo, zěnme chídào le?",
+        "vn": "Bạn xem đồng hồ đi, sao lại đến muộn vậy?"
+      },
+      {
+        "zh": "没迟到啊。",
+        "py": "Méi chídào a.",
+        "vn": "Không có muộn đâu."
+      },
+      {
+        "zh": "不是我迟到了，是你的表快了一刻钟。",
+        "py": "Bú shì wǒ chídào le, shì nǐ de biǎo kuàile yí kè zhōng.",
+        "vn": "Không phải tôi đến muộn, mà là đồng hồ của bạn chạy nhanh mười lăm phút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "迟",
+        "p": "chí",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "辶 bao ngoài → 尺 trong",
+        "rad": "辶 (sước – đi)",
+        "mean": "muộn, trễ",
+        "tip": "辶(đi) + 尺(cây thước, ý chỉ đo lường chậm) → đi CHẬM hơn mức quy định = MUỘN, TRỄ.",
+        "cf": "尺 (chǐ – \"cái thước\", không có bộ 辶\")",
+        "w": "迟到 / 迟早"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn chẳng phải nói tám giờ đến đón tôi sao? Giờ bạn đến muộn rồi.",
+        "answer": "你不是说八点来接我吗？现在你迟到了。",
+        "answerPy": "Nǐ bú shì shuō bā diǎn lái jiē wǒ ma? Xiànzài nǐ chídào le.",
+        "note": "迟到 ↔ 准时.",
+        "pair": "不是……吗？"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn đến sớm mười lăm phút thì sẽ không muộn.",
+        "answer": "只要你早来一刻钟，就不会迟到。",
+        "answerPy": "Zhǐyào nǐ zǎo lái yí kè zhōng, jiù bú huì chídào.",
+        "note": "只要……就…… diễn tả điều kiện đủ (ôn lại 刻 sẽ học ngay bên dưới trong bài này).",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "迟到了",
+        "py": "chídào le",
+        "vn": "đến muộn rồi"
+      },
+      {
+        "zh": "没迟到",
+        "py": "méi chídào",
+        "vn": "không muộn"
+      },
+      {
+        "zh": "经常迟到",
+        "py": "jīngcháng chídào",
+        "vn": "thường xuyên đi muộn"
+      },
+      {
+        "zh": "迟到了十分钟",
+        "py": "chídào le shífēn zhōng",
+        "vn": "muộn mười phút"
+      },
+      {
+        "zh": "别迟到",
+        "py": "bié chídào",
+        "vn": "đừng đến muộn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 迟到 + 了",
+        "m": "Ai đó đến muộn rồi"
+      },
+      {
+        "s": "迟到 ↔ 准时",
+        "m": "Đến muộn ↔ đúng giờ"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "半",
+    "py": "bàn",
+    "pos": "Số từ",
+    "vn": "một nửa, rưỡi",
+    "hv": "bán",
+    "em": "🕧",
+    "lesson": 4,
+    "explain": [
+      "Một nửa của một đơn vị; dùng trong giờ để chỉ 30 phút."
+    ],
+    "usage": "Số từ, đứng sau giờ để chỉ 30 phút: [giờ] + 半 (七点半 = 7 giờ rưỡi); hoặc trước lượng từ: 半个小时.",
+    "collo": [
+      "七点半",
+      "半个小时",
+      "一半"
+    ],
+    "ex_zh": "你不是说七点半来接我吗？",
+    "ex_py": "Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?",
+    "ex_vn": "Chẳng phải bạn nói 7h30 đến đón tôi sao?",
+    "exList": [
+      {
+        "zh": "你不是说七点半来接我吗？",
+        "py": "Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?",
+        "vn": "Chẳng phải bạn nói 7h30 đến đón tôi sao?"
+      },
+      {
+        "zh": "我都在这儿坐了半个小时了。",
+        "py": "Wǒ dōu zài zhèr zuòle bàn ge xiǎoshí le.",
+        "vn": "Tôi ngồi đây nửa tiếng rồi đấy."
+      },
+      {
+        "zh": "我坐出租车半个小时就回去了。",
+        "py": "Wǒ zuò chūzūchē bàn ge xiǎoshí jiù huíqu le.",
+        "vn": "Tôi đi taxi nửa tiếng là về đến nhà rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "半",
+        "p": "bàn",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "八 (bát – tám, chia)",
+        "mean": "một nửa",
+        "tip": "Chữ tượng hình mô phỏng vật bị CHIA làm đôi (nét 八 ở trên chỉ sự phân chia) → MỘT NỬA.",
+        "cf": "伴 (bàn – \"bạn đồng hành\", có 亻 thêm vào\")",
+        "w": "一半 / 半个 / 点半"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn rảnh thì bảy giờ rưỡi đến đón tôi được không?",
+        "answer": "如果你有空儿，就七点半来接我，好吗？",
+        "answerPy": "Rúguǒ nǐ yǒu kòngr, jiù qī diǎn bàn lái jiē wǒ, hǎo ma?",
+        "note": "七点半 — 半 đứng SAU giờ; 半个小时 — 半 đứng TRƯỚC lượng từ.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy đợi tôi ở cửa công ty nửa tiếng rồi, chúng ta đi nhanh thôi.",
+        "answer": "他在公司门口等了我半个小时了，我们就快点儿走吧。",
+        "answerPy": "Tā zài gōngsī ménkǒu děngle wǒ bàn ge xiǎoshí le, wǒmen jiù kuài diǎnr zǒu ba.",
+        "note": "V + 了 + thời lượng + 了 — đã làm bao lâu và còn tiếp.",
+        "pair": "……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "七点半",
+        "py": "qī diǎn bàn",
+        "vn": "bảy giờ rưỡi"
+      },
+      {
+        "zh": "半个小时",
+        "py": "bàn gè xiǎoshí",
+        "vn": "nửa tiếng"
+      },
+      {
+        "zh": "一半",
+        "py": "yíbàn",
+        "vn": "một nửa"
+      },
+      {
+        "zh": "半年",
+        "py": "bàn nián",
+        "vn": "nửa năm"
+      },
+      {
+        "zh": "一个半小时",
+        "py": "yí gè bàn xiǎoshí",
+        "vn": "một tiếng rưỡi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "số giờ + 半",
+        "m": "Mấy giờ rưỡi — 半 đứng SAU giờ"
+      },
+      {
+        "s": "半 + 个 + 小时",
+        "m": "Nửa tiếng — 半 đứng TRƯỚC lượng từ"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "接",
+    "py": "jiē",
+    "pos": "Động từ",
+    "vn": "đón",
+    "hv": "tiếp",
+    "em": "🚗",
+    "lesson": 4,
+    "explain": [
+      "Ra đón ai đó đến một nơi."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp là người: 接 + [người] (接我, 接你).",
+    "collo": [
+      "来接我",
+      "接人",
+      "去接"
+    ],
+    "ex_zh": "你不是说七点半来接我吗？",
+    "ex_py": "Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?",
+    "ex_vn": "Chẳng phải bạn nói 7h30 đến đón tôi sao?",
+    "exList": [
+      {
+        "zh": "你不是说七点半来接我吗？",
+        "py": "Nǐ bú shì shuō qī diǎn bàn lái jiē wǒ ma?",
+        "vn": "Chẳng phải bạn nói 7h30 đến đón tôi sao?"
+      },
+      {
+        "zh": "就是那天来公司接你的那个？",
+        "py": "Jiùshì nàtiān lái gōngsī jiē nǐ de nàge?",
+        "vn": "Chính là người hôm đó đến công ty đón bạn đấy à?"
+      },
+      {
+        "zh": "我已经等了半个小时了，你在哪儿呢？",
+        "py": "Wǒ yǐjīng děngle bàn ge xiǎoshí le, nǐ zài nǎr ne?",
+        "vn": "Tôi đã đợi nửa tiếng rồi, bạn đang ở đâu vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "接",
+        "p": "jiē",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "扌 trái → 妾 phải",
+        "rad": "扌 (thủ – tay)",
+        "mean": "đón, tiếp nhận",
+        "tip": "扌(tay) + 妾(người phụ nữ được đón về) → dùng TAY đón nhận ai đó = ĐÓN.",
+        "cf": "妾 (qiè – \"thiếp\", không có bộ 扌\")",
+        "w": "接我 / 接人 / 迎接"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ai đến sân bay đón bạn vậy? Nếu không có ai thì tôi đi đón.",
+        "answer": "谁来机场接你？如果没有人，我就去接你。",
+        "answerPy": "Shéi lái jīchǎng jiē nǐ? Rúguǒ méiyǒu rén, wǒ jiù qù jiē nǐ.",
+        "note": "接 vừa là \"đón người\" vừa là \"nghe điện thoại\".",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đến muộn thì tôi sẽ không đến đón bạn nữa.",
+        "answer": "如果你迟到，我就不来接你了。",
+        "answerPy": "Rúguǒ nǐ chídào, wǒ jiù bù lái jiē nǐ le.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 迟到 vừa học trong bài này).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "来接我",
+        "py": "lái jiē wǒ",
+        "vn": "đến đón tôi"
+      },
+      {
+        "zh": "去机场接人",
+        "py": "qù jīchǎng jiē rén",
+        "vn": "ra sân bay đón người"
+      },
+      {
+        "zh": "接电话",
+        "py": "jiē diànhuà",
+        "vn": "nghe điện thoại"
+      },
+      {
+        "zh": "接孩子",
+        "py": "jiē háizi",
+        "vn": "đón con"
+      },
+      {
+        "zh": "谁来接你",
+        "py": "shéi lái jiē nǐ",
+        "vn": "ai đến đón bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "去 + nơi chốn + 接 + ai",
+        "m": "Đi đâu đón ai"
+      },
+      {
+        "s": "接 + 电话",
+        "m": "Nghe điện thoại — nghĩa riêng cần nhớ"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "刻",
+    "py": "kè",
+    "pos": "Lượng từ",
+    "vn": "mười lăm phút",
+    "hv": "khắc",
+    "em": "🕒",
+    "lesson": 4,
+    "explain": [
+      "Đơn vị thời gian bằng 15 phút, dùng để nói giờ hoặc khoảng thời gian."
+    ],
+    "usage": "Lượng từ; đứng sau số từ: 一刻 (15 phút), 三刻 (45 phút); 一刻钟 là cách nói đầy đủ chỉ khoảng thời gian.",
+    "collo": [
+      "一刻钟",
+      "三刻",
+      "差一刻"
+    ],
+    "ex_zh": "你迟到了一刻钟。",
+    "ex_py": "Nǐ chídàole yí kè zhōng.",
+    "ex_vn": "Bạn đến muộn mười lăm phút rồi.",
+    "exList": [
+      {
+        "zh": "你迟到了一刻钟。",
+        "py": "Nǐ chídàole yí kè zhōng.",
+        "vn": "Bạn đến muộn mười lăm phút rồi."
+      },
+      {
+        "zh": "不是我迟到了，是你的表快了一刻钟。",
+        "py": "Bú shì wǒ chídào le, shì nǐ de biǎo kuàile yí kè zhōng.",
+        "vn": "Không phải tôi đến muộn, mà là đồng hồ của bạn chạy nhanh mười lăm phút."
+      },
+      {
+        "zh": "现在差一刻九点。",
+        "py": "Xiànzài chà yí kè jiǔ diǎn.",
+        "vn": "Bây giờ là kém mười lăm phút nữa 9 giờ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "刻",
+        "p": "kè",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "亥 trái → 刂 phải",
+        "rad": "刂 (đao – dao)",
+        "mean": "khắc, chạm",
+        "tip": "亥(một khoảng thời gian trong 12 canh giờ cổ) + 刂(dao, dùng để khắc vạch trên đồng hồ nước cổ) → mở rộng thành đơn vị 15 PHÚT.",
+        "cf": "该 (gāi – \"nên, phải\", có 讠 thay vì 刂\")",
+        "w": "一刻钟 / 三刻 / 立刻"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bây giờ kém mười lăm phút nữa là sáu giờ, chúng ta đi thôi kẻo muộn.",
+        "answer": "现在差一刻六点，我们走吧，不然就迟到了。",
+        "answerPy": "Xiànzài chà yí kè liù diǎn, wǒmen zǒu ba, bùrán jiù chídào le.",
+        "note": "差一刻六点 = 5 giờ 45 — cách nói giờ rất hay dùng.",
+        "pair": "不然……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng tôi vừa hát vừa trò chuyện suốt hai tiếng, ai cũng vui.",
+        "answer": "我们一边唱歌一边聊天儿，聊了两个小时，大家都很高兴。",
+        "answerPy": "Wǒmen yìbiān chànggē yìbiān liáotiānr, liáole liǎng ge xiǎoshí, dàjiā dōu hěn gāoxìng.",
+        "note": "聊天儿 là từ bài 6.",
+        "pair": "一边……一边……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一刻钟",
+        "py": "yí kè zhōng",
+        "vn": "mười lăm phút"
+      },
+      {
+        "zh": "三刻",
+        "py": "sān kè",
+        "vn": "bốn lăm phút"
+      },
+      {
+        "zh": "差一刻",
+        "py": "chà yí kè",
+        "vn": "kém mười lăm"
+      },
+      {
+        "zh": "两点一刻",
+        "py": "liǎng diǎn yí kè",
+        "vn": "hai giờ mười lăm"
+      },
+      {
+        "zh": "差一刻六点",
+        "py": "chà yí kè liù diǎn",
+        "vn": "kém mười lăm phút nữa sáu giờ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "giờ + 一刻 / 三刻",
+        "m": "2 giờ 15 = 两点一刻; 2 giờ 45 = 两点三刻"
+      },
+      {
+        "s": "差 + 一刻 + giờ",
+        "m": "Kém 15 phút nữa tới mấy giờ"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "差",
+    "py": "chà",
+    "pos": "Động từ",
+    "vn": "kém, thiếu",
+    "hv": "sai",
+    "em": "➖",
+    "lesson": 4,
+    "explain": [
+      "Còn thiếu, chưa đủ; dùng trong cách nói giờ để chỉ \"còn thiếu bao nhiêu phút nữa đến giờ tròn\"."
+    ],
+    "usage": "Động từ; cấu trúc nói giờ: 差 + [khoảng thời gian] + [giờ] (差一刻八点 = 7:45).",
+    "collo": [
+      "差一刻",
+      "差五分",
+      "差不多"
+    ],
+    "ex_zh": "已经差一刻八点了！",
+    "ex_py": "Yǐjīng chà yí kè bā diǎn le!",
+    "ex_vn": "Đã kém mười lăm phút nữa là 8 giờ rồi!",
+    "exList": [
+      {
+        "zh": "已经差一刻八点了！",
+        "py": "Yǐjīng chà yí kè bā diǎn le!",
+        "vn": "Đã kém mười lăm phút nữa là 8 giờ rồi!"
+      },
+      {
+        "zh": "我都在这儿坐了半个小时了。",
+        "py": "Wǒ dōu zài zhèr zuòle bàn ge xiǎoshí le.",
+        "vn": "Tôi ngồi đây nửa tiếng rồi đấy."
+      },
+      {
+        "zh": "现在差五分十二点。",
+        "py": "Xiànzài chà wǔ fēn shí'èr diǎn.",
+        "vn": "Bây giờ là kém 5 phút nữa 12 giờ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "差",
+        "p": "chà",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "𝒁+羊(biến thể) trên → 工 dưới",
+        "rad": "工 (công)",
+        "mean": "kém, thiếu; sai lệch",
+        "tip": "Chữ cổ vốn chỉ sự SAI LỆCH, không đồng đều → mở rộng nghĩa THIẾU, KÉM so với mức chuẩn.",
+        "cf": "着 (zhe/zháo – hình trên gần giống nhưng bộ khác\")",
+        "w": "差一刻 / 差不多 / 差点儿"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bây giờ kém mười lăm phút nữa chín giờ, nếu không đi nhanh thì sẽ muộn.",
+        "answer": "现在差一刻九点，如果不快点儿走，就会迟到。",
+        "answerPy": "Xiànzài chà yí kè jiǔ diǎn, rúguǒ bú kuài diǎnr zǒu, jiù huì chídào.",
+        "note": "差 (chà, kém) khác 差 (chāi) trong 出差.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu đồng hồ của bạn chạy chậm thì bạn sẽ đến muộn đấy.",
+        "answer": "如果你的表慢了，你就会迟到的。",
+        "answerPy": "Rúguǒ nǐ de biǎo màn le, nǐ jiù huì chídào de.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 迟到 vừa học trong bài này).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "差一刻",
+        "py": "chà yí kè",
+        "vn": "kém mười lăm phút"
+      },
+      {
+        "zh": "差五分",
+        "py": "chà wǔ fēn",
+        "vn": "kém năm phút"
+      },
+      {
+        "zh": "差不多",
+        "py": "chàbuduō",
+        "vn": "gần như, xấp xỉ"
+      },
+      {
+        "zh": "差一点儿",
+        "py": "chà yìdiǎnr",
+        "vn": "suýt nữa"
+      },
+      {
+        "zh": "还差两个",
+        "py": "hái chà liǎng gè",
+        "vn": "còn thiếu hai cái"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "差 + thời lượng + giờ",
+        "m": "Kém bao nhiêu nữa tới mấy giờ"
+      },
+      {
+        "s": "差 (chà, kém) ≠ 差 (chāi, công tác — 出差)"
+      }
+    ]
+  }
 ];
 
 const wuData = [

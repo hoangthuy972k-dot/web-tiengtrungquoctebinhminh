@@ -3,335 +3,1622 @@
 // Nguồn: HSK标准教程3 (Giáo trình chuẩn HSK 3 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'眼镜',py:'yǎnjìng',pos:'Danh từ',vn:'mắt kính', hv: 'nhãn kính',em:'👓',lesson:1,
-   explain:['Dụng cụ đeo trên mắt giúp nhìn rõ hơn.'],
-   usage:'Danh từ; lượng từ đi kèm là 副: 一副眼镜.',
-   collo:['一副眼镜','戴眼镜','找眼镜'],
-   ex_zh:'我的眼镜呢？怎么突然找不到了？',ex_py:'Wǒ de yǎnjìng ne? Zěnme tūrán zhǎo bu dào le?',ex_vn:'Kính của tôi đâu rồi? Sao đột nhiên lại không tìm thấy?',
-   exList:[
-     {zh:'我的眼镜呢？怎么突然找不到了？',py:'Wǒ de yǎnjìng ne? Zěnme tūrán zhǎo bu dào le?',vn:'Kính của tôi đâu rồi? Sao đột nhiên lại không tìm thấy?'},
-     {zh:'我离不开眼镜，没有眼镜，我一个字也看不清楚。',py:'Wǒ lí bu kāi yǎnjìng, méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.',vn:'Anh không thể rời kính được, không có kính, anh một chữ cũng không nhìn rõ.'},
-     {zh:'树那么远，你看得清楚吗？我有眼镜，看得清楚。',py:'Shù nàme yuǎn, nǐ kàn de qīngchu ma? Wǒ yǒu yǎnjìng, kàn de qīngchu.',vn:'Cây xa vậy, bạn nhìn rõ không? Tôi có kính, nhìn rõ mà.'},
-   ],
-   hanzi:[
-     {c:'镜',p:'jìng',type:'左右结构 · Trái-phải',st:16,ord:'钅 trái → 竟 phải',rad:'钅 (kim – kim loại)',mean:'gương, kính',
-      tip:'钅(kim loại, xưa gương làm bằng đồng) + 竟(cuối cùng, trọn vẹn) → vật kim loại soi TRỌN VẸN hình ảnh = GƯƠNG, KÍNH.',
-      cf:'境 (jìng – "cảnh, biên giới", có bộ 土")',w:'眼镜 / 镜子'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi tìm không thấy chìa khóa của mình, bạn nhìn thấy không?',answer:'我找不到我的钥匙，你看见了吗？',answerPy:'Wǒ zhǎo bu dào wǒ de yàoshi, nǐ kànjiàn le ma?',
-      note:'找不到 = bổ ngữ khả năng dạng phủ định (điểm ngữ pháp bài này, ôn lại 钥匙 đã học ở Bài 2).'},
-     {promptLang:'vi',prompt:'Không có kính tôi một chữ cũng không nhìn rõ.',answer:'没有眼镜，我一个字也看不清楚。',answerPy:'Méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.',
-      note:'看不清楚 = bổ ngữ khả năng dạng phủ định.'},
-   ]},
-
-  {n:2,zh:'突然',py:'tūrán',pos:'Phó từ',vn:'bỗng nhiên, bỗng dưng', hv: 'đột nhiên',em:'⚡',lesson:1,
-   explain:['Xảy ra bất ngờ, không có dấu hiệu báo trước.'],
-   usage:'Phó từ, đứng trước động từ/tính từ: 突然 + V/Adj.',
-   collo:['突然找不到','突然不下了','突然生病'],
-   ex_zh:'怎么突然找不到了？',ex_py:'Zěnme tūrán zhǎo bu dào le?',ex_vn:'Sao đột nhiên lại không tìm thấy?',
-   exList:[
-     {zh:'怎么突然找不到了？',py:'Zěnme tūrán zhǎo bu dào le?',vn:'Sao đột nhiên lại không tìm thấy?'},
-     {zh:'怎么突然不下了？是啊，刚才还下得那么大。',py:'Zěnme tūrán bú xià le? Shì a, gāngcái hái xià de nàme dà.',vn:'Sao đột nhiên hết mưa rồi? Đúng vậy, lúc nãy còn mưa to thế.'},
-     {zh:'你怎么突然说要用我的车？',py:'Nǐ zěnme tūrán shuō yào yòng wǒ de chē?',vn:'Sao bạn đột nhiên nói cần dùng xe của tôi?'},
-   ],
-   hanzi:[
-     {c:'突',p:'tū',type:'上下结构 · Trên-dưới',st:9,ord:'穴 trên → 犬 dưới',rad:'穴 (huyệt – hang)',mean:'đột ngột',
-      tip:'穴(cái hang) + 犬(con chó) → hình ảnh con chó bất ngờ lao ra khỏi hang → ĐỘT NGỘT, BẤT NGỜ.',
-      cf:'究 (jiū – "nghiên cứu", có 九 thay vì 犬")',w:'突然 / 突出'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì trời đột nhiên đổ mưa nên chúng tôi phải vào nhà.',answer:'因为天突然下雨了，所以我们得进屋。',answerPy:'Yīnwèi tiān tūrán xiàyǔ le, suǒyǐ wǒmen děi jìn wū.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu bạn đột nhiên không thấy khỏe thì nên nghỉ ngơi ngay.',answer:'如果你突然觉得不舒服，就应该马上休息。',answerPy:'Rúguǒ nǐ tūrán juéde bù shūfu, jiù yīnggāi mǎshàng xiūxi.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:3,zh:'离开',py:'líkāi',pos:'Động từ',vn:'rời khỏi, tách khỏi', hv: 'li khai',em:'🚶',lesson:1,
-   explain:['Rời xa một người, nơi chốn hoặc vật gì đó.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 离开 + [người/nơi chốn]; thường dùng dạng phủ định khả năng 离不开 (không thể rời khỏi).',
-   collo:['离不开','离开家','离开学校'],
-   ex_zh:'我离不开眼镜，没有眼镜，我一个字也看不清楚。',ex_py:'Wǒ lí bu kāi yǎnjìng, méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.',ex_vn:'Anh không thể rời kính được, không có kính, anh một chữ cũng không nhìn rõ.',
-   exList:[
-     {zh:'我离不开眼镜，没有眼镜，我一个字也看不清楚。',py:'Wǒ lí bu kāi yǎnjìng, méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.',vn:'Anh không thể rời kính được, không có kính, anh một chữ cũng không nhìn rõ.'},
-     {zh:'她刚离开学校，最近一直在家休息。',py:'Tā gāng líkāi xuéxiào, zuìjìn yìzhí zài jiā xiūxi.',vn:'Cô ấy vừa rời trường, dạo này luôn ở nhà nghỉ ngơi.'},
-     {zh:'我孩子太小，离不开人。',py:'Wǒ háizi tài xiǎo, lí bu kāi rén.',vn:'Con tôi còn nhỏ quá, không thể rời người lớn được.'},
-   ],
-   hanzi:[
-     {c:'离',p:'lí',type:'上下结构 · Trên-dưới',st:10,ord:'亠+凶 trên → 离(giản thể riêng)',rad:'离',mean:'rời xa, cách',
-      tip:'Chữ cổ mô phỏng hình con chim tách bầy bay đi → nghĩa RỜI XA, TÁCH KHỎI.',
-      cf:'禽 (qín – "cầm thú, chim", có nét dưới tương tự")',w:'离开 / 离不开 / 距离'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn không rời khỏi nhà thì sẽ an toàn.',answer:'只要你不离开家，就会很安全。',answerPy:'Zhǐyào nǐ bù líkāi jiā, jiù huì hěn ānquán.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Tuy anh ấy đã rời công ty nhưng vẫn thường liên lạc với đồng nghiệp cũ.',answer:'虽然他已经离开公司了，但是还是常常联系老同事。',answerPy:'Suīrán tā yǐjīng líkāi gōngsī le, dànshì háishi chángcháng liánxì lǎo tóngshì.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:4,zh:'清楚',py:'qīngchu',pos:'Tính từ',vn:'rõ ràng', hv: 'thanh sở',em:'🔍',lesson:1,
-   explain:['Nhìn/nghe/hiểu một cách rõ ràng, không mơ hồ.'],
-   usage:'Tính từ, thường làm bổ ngữ khả năng sau động từ: 看得/不清楚, 说得/不清楚.',
-   collo:['看得清楚','看不清楚','说清楚'],
-   ex_zh:'我一个字也看不清楚。',ex_py:'Wǒ yí ge zì yě kàn bu qīngchu.',ex_vn:'Tôi một chữ cũng không nhìn rõ.',
-   exList:[
-     {zh:'我一个字也看不清楚。',py:'Wǒ yí ge zì yě kàn bu qīngchu.',vn:'Tôi một chữ cũng không nhìn rõ.'},
-     {zh:'你刚才说什么？我听不清楚。',py:'Nǐ gāngcái shuō shénme? Wǒ tīng bu qīngchu.',vn:'Lúc nãy bạn nói gì? Tôi nghe không rõ.'},
-     {zh:'树那么远，你看得清楚吗？',py:'Shù nàme yuǎn, nǐ kàn de qīngchu ma?',vn:'Cây xa vậy, bạn nhìn rõ không?'},
-   ],
-   hanzi:[
-     {c:'楚',p:'chǔ',type:'左右结构 · Trái-phải',st:13,ord:'林 trái → 疋 phải',rad:'木 (mộc – cây)',mean:'rõ ràng; nước Sở',
-      tip:'林(rừng cây) + 疋(chân, đi qua) → đi xuyên rừng cây rậm rạp mà vẫn nhìn RÕ đường = RÕ RÀNG.',
-      cf:'礎 (chǔ – "nền móng", có bộ 石")',w:'清楚 / 楚国'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn nói rõ ràng hơn một chút thì tôi sẽ hiểu.',answer:'如果你说得清楚一点儿，我就会明白。',answerPy:'Rúguǒ nǐ shuō de qīngchu yìdiǎnr, wǒ jiù huì míngbai.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 明白 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Vì chữ viết quá nhỏ nên tôi nhìn không rõ.',answer:'因为字写得太小了，所以我看不清楚。',answerPy:'Yīnwèi zì xiě de tài xiǎo le, suǒyǐ wǒ kàn bu qīngchu.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-   ]},
-
-  {n:5,zh:'刚才',py:'gāngcái',pos:'Danh từ',vn:'lúc nãy', hv: 'cương tài',em:'⏱️',lesson:1,
-   explain:['Khoảng thời gian vài phút trước hiện tại.'],
-   usage:'Danh từ, có thể đứng đầu câu hoặc trước động từ: 刚才 + [câu], khác với 刚 (phó từ, chỉ đứng trước động từ).',
-   collo:['刚才说什么','刚才还在','刚才放在'],
-   ex_zh:'是不是刚才放在桌子上了？',ex_py:'Shì bu shì gāngcái fàng zài zhuōzi shang le?',ex_vn:'Có phải lúc nãy để trên bàn không?',
-   exList:[
-     {zh:'是不是刚才放在桌子上了？',py:'Shì bu shì gāngcái fàng zài zhuōzi shang le?',vn:'Có phải lúc nãy để trên bàn không?'},
-     {zh:'你刚才说什么？我听不清楚。',py:'Nǐ gāngcái shuō shénme? Wǒ tīng bu qīngchu.',vn:'Lúc nãy bạn nói gì? Tôi nghe không rõ.'},
-     {zh:'是啊，刚才还下得那么大。',py:'Shì a, gāngcái hái xià de nàme dà.',vn:'Đúng vậy, lúc nãy còn mưa to thế.'},
-   ],
-   hanzi:[
-     {c:'刚',p:'gāng',type:'左右结构 · Trái-phải',st:6,ord:'冈 trái → 刂 phải',rad:'刂 (đao – dao)',mean:'vừa mới',
-      tip:'冈(quả đồi, cứng rắn) + 刂(dao, cắt) → hành động vừa được "cắt" ra, mới xảy ra = VỪA MỚI.',
-      cf:'钢 (gāng – "thép", có bộ 钅")',w:'刚才 / 刚刚 / 刚好'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vừa nãy có người gọi điện tìm bạn.',answer:'刚才有人打电话找你。',answerPy:'Gāngcái yǒu rén dǎ diànhuà zhǎo nǐ.',
-      note:'刚才 đứng đầu câu diễn tả thời điểm vài phút trước (điểm ngữ pháp bài này).'},
-     {promptLang:'vi',prompt:'Chị gái tôi vừa nãy còn ở đây, sao giờ không thấy nữa?',answer:'我姐姐刚才还在这儿，怎么现在找不到了？',answerPy:'Wǒ jiějie gāngcái hái zài zhèr, zěnme xiànzài zhǎo bu dào le?',
-      note:'找不到 = bổ ngữ khả năng phủ định (ôn lại 姐姐).'},
-   ]},
-
-  {n:6,zh:'帮忙',py:'bāngmáng',pos:'Động từ',vn:'giúp, giúp đỡ', hv: 'bang mang',em:'🤝',lesson:1,
-   explain:['Trợ giúp người khác làm việc gì đó.'],
-   usage:'Động từ ly hợp; không mang tân ngữ trực tiếp, muốn nói "giúp ai" phải dùng 帮 + người + 忙 hoặc 帮 + người + V.',
-   collo:['帮个忙','过来帮忙','请你帮忙'],
-   ex_zh:'你快过来帮忙啊。',ex_py:'Nǐ kuài guòlai bāng máng a.',ex_vn:'Em mau lại đây giúp anh đi.',
-   exList:[
-     {zh:'你快过来帮忙啊。',py:'Nǐ kuài guòlai bāng máng a.',vn:'Em mau lại đây giúp anh đi.'},
-     {zh:'我的车可能有点儿问题，你能过来帮个忙吗？',py:'Wǒ de chē kěnéng yǒudiǎnr wèntí, nǐ néng guòlai bāng ge máng ma?',vn:'Xe của tôi có lẽ có vấn đề, bạn qua giúp tôi một chút được không?'},
-     {zh:'我过去帮他给他家里打了个电话。',py:'Wǒ guòqu bāng tā gěi tā jiālǐ dǎle ge diànhuà.',vn:'Tôi qua giúp cậu bé gọi điện về nhà cậu ấy.'},
-   ],
-   hanzi:[
-     {c:'帮',p:'bāng',type:'上下结构 · Trên-dưới',st:9,ord:'邦 trên → 巾 dưới',rad:'巾 (cân – khăn)',mean:'giúp đỡ',
-      tip:'邦(đất nước, cộng đồng) + 巾(khăn, vật dụng) → hỗ trợ lẫn nhau trong cộng đồng = GIÚP ĐỠ.',
-      cf:'邦 (bāng – "đất nước", không có bộ 巾")',w:'帮忙 / 帮助 / 帮我'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn cần giúp thì gọi cho tôi bất cứ lúc nào.',answer:'只要你需要帮忙，随时给我打电话。',answerPy:'Zhǐyào nǐ xūyào bāngmáng, suíshí gěi wǒ dǎ diànhuà.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Vì cậu bé tìm không thấy đường về nhà nên tôi qua giúp cậu ấy.',answer:'因为那个孩子找不到回家的路，所以我过去帮他。',answerPy:'Yīnwèi nàge háizi zhǎo bu dào huí jiā de lù, suǒyǐ wǒ guòqu bāng tā.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 找不到 vừa học trong bài này).'},
-   ]},
-
-  {n:7,zh:'特别',py:'tèbié',pos:'Phó từ',vn:'vô cùng, rất', hv: 'đặc biệt',em:'❗',lesson:2,
-   explain:['Mức độ cao hơn bình thường, nhấn mạnh hơn 很.'],
-   usage:'Phó từ, đứng trước tính từ: 特别 + Adj (特别难, 特别高兴).',
-   collo:['特别难','特别高兴','特别喜欢'],
-   ex_zh:'今天这些题特别难，我看不懂，不会做。',ex_py:'Jīntiān zhèxiē tí tèbié nán, wǒ kàn bu dǒng, bú huì zuò.',ex_vn:'Mấy bài hôm nay khó quá, mình không hiểu, không làm được.',
-   exList:[
-     {zh:'今天这些题特别难，我看不懂，不会做。',py:'Jīntiān zhèxiē tí tèbié nán, wǒ kàn bu dǒng, bú huì zuò.',vn:'Mấy bài hôm nay khó quá, mình không hiểu, không làm được.'},
-     {zh:'外边特别冷，你出去的时候多穿点儿。',py:'Wàibian tèbié lěng, nǐ chūqu de shíhou duō chuān diǎnr.',vn:'Bên ngoài rất lạnh, lúc bạn ra ngoài mặc thêm chút đi.'},
-     {zh:'刚才跟朋友聊天儿聊得特别高兴。',py:'Gāngcái gēn péngyou liáotiānr liáo de tèbié gāoxìng.',vn:'Lúc nãy tán gẫu với bạn bè vui vô cùng.'},
-   ],
-   hanzi:[
-     {c:'特',p:'tè',type:'左右结构 · Trái-phải',st:10,ord:'牛 trái → 寺 phải',rad:'牛 (ngưu – trâu, bò)',mean:'đặc biệt',
-      tip:'牛(con vật quý) + 寺(chùa, nơi trang trọng) → vật quý được đưa vào nơi trang trọng = ĐẶC BIỆT.',
-      cf:'持 (chí – "cầm, giữ", có bộ 扌")',w:'特别 / 特点'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì bài tập hôm nay đặc biệt khó nên tôi làm rất lâu.',answer:'因为今天的作业特别难，所以我做了很久。',answerPy:'Yīnwèi jīntiān de zuòyè tèbié nán, suǒyǐ wǒ zuòle hěn jiǔ.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 作业/难 đã học ở Bài 1-2).'},
-     {promptLang:'vi',prompt:'Anh ấy đặc biệt thích xem thi đấu bóng đá.',answer:'他特别喜欢看足球比赛。',answerPy:'Tā tèbié xǐhuan kàn zúqiú bǐsài.',
-      note:'特别 + động từ tâm lý diễn tả mức độ cao.'},
-   ]},
-
-  {n:8,zh:'讲',py:'jiǎng',pos:'Động từ',vn:'giải thích, nói', hv: 'giảng',em:'🗣️',lesson:2,
-   explain:['Nói, giải thích một vấn đề cho người khác hiểu.'],
-   usage:'Động từ, thường đi cùng bổ ngữ khả năng: 讲得/不明白.',
-   collo:['讲明白','讲不明白','给你讲讲'],
-   ex_zh:'电话里讲不明白，你来我家吧，我给你讲讲。',ex_py:'Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba, wǒ gěi nǐ jiǎngjiang.',ex_vn:'Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi, mình giảng cho bạn.',
-   exList:[
-     {zh:'电话里讲不明白，你来我家吧，我给你讲讲。',py:'Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba, wǒ gěi nǐ jiǎngjiang.',vn:'Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi, mình giảng cho bạn.'},
-     {zh:'我都讲了三次了，你怎么还听不明白？',py:'Wǒ dōu jiǎngle sān cì le, nǐ zěnme hái tīng bu míngbai?',vn:'Tôi giảng những ba lần rồi, sao bạn vẫn không hiểu vậy?'},
-     {zh:'这个问题老师讲得很清楚。',py:'Zhège wèntí lǎoshī jiǎng de hěn qīngchu.',vn:'Vấn đề này thầy giáo giảng rất rõ ràng.'},
-   ],
-   hanzi:[
-     {c:'讲',p:'jiǎng',type:'左右结构 · Trái-phải',st:6,ord:'讠 trái → 井 phải',rad:'讠 (ngôn – lời nói)',mean:'giảng, nói',
-      tip:'讠(lời nói) + 井(giếng, có trật tự) → nói năng CÓ TRẬT TỰ, rõ ràng = GIẢNG GIẢI.',
-      cf:'井 (jǐng – "cái giếng", không có bộ 讠")',w:'讲课 / 讲明白 / 讲话'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn giải thích rõ thì tôi sẽ hiểu.',answer:'只要你讲明白，我就会懂。',answerPy:'Zhǐyào nǐ jiǎng míngbai, wǒ jiù huì dǒng.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Tuy thầy giáo giảng ba lần rồi nhưng tôi vẫn chưa hiểu.',answer:'虽然老师讲了三次了，但是我还是不明白。',answerPy:'Suīrán lǎoshī jiǎngle sān cì le, dànshì wǒ háishi bù míngbai.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-   ]},
-
-  {n:9,zh:'明白',py:'míngbai',pos:'Tính từ',vn:'rõ ràng, dễ hiểu', hv: 'minh bạch',em:'💡',lesson:2,
-   explain:['Hiểu rõ, không còn thắc mắc; cũng dùng làm động từ nghĩa "hiểu".'],
-   usage:'Tính từ/động từ; thường làm bổ ngữ khả năng: 讲得/不明白, 听得/不明白.',
-   collo:['听明白','讲不明白','我明白了'],
-   ex_zh:'电话里讲不明白，你来我家吧。',ex_py:'Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba.',ex_vn:'Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi.',
-   exList:[
-     {zh:'电话里讲不明白，你来我家吧。',py:'Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba.',vn:'Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi.'},
-     {zh:'我都讲了三次了，你怎么还听不明白？',py:'Wǒ dōu jiǎngle sān cì le, nǐ zěnme hái tīng bu míngbai?',vn:'Tôi giảng những ba lần rồi, sao bạn vẫn không hiểu vậy?'},
-     {zh:'如果你还不明白，就再问问老师吧。',py:'Rúguǒ nǐ hái bù míngbai, jiù zài wènwen lǎoshī ba.',vn:'Nếu bạn vẫn chưa hiểu thì hỏi lại thầy giáo đi.'},
-   ],
-   hanzi:[
-     {c:'白',p:'bái',type:'独体字 · Chữ đơn',st:5,ord:'nét liền, hình ánh sáng',rad:'白 (bạch – trắng)',mean:'trắng; rõ ràng',
-      tip:'Hình tượng ánh sáng trắng chiếu rọi → mở rộng nghĩa RÕ RÀNG, SÁNG TỎ; 明(sáng)+白(rõ) = HIỂU RÕ.',
-      cf:'百 (bǎi – "trăm", thêm 1 nét trên 白")',w:'明白 / 白色 / 白天'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn đọc lại một lần nữa thì sẽ hiểu rõ hơn.',answer:'如果你再读一遍，就会更明白。',answerPy:'Rúguǒ nǐ zài dú yí biàn, jiù huì gèng míngbai.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-     {promptLang:'vi',prompt:'Tôi nghe thầy giảng ba lần rồi mới hiểu rõ.',answer:'我听老师讲了三次才明白。',answerPy:'Wǒ tīng lǎoshī jiǎngle sān cì cái míngbai.',
-      note:'才 diễn tả phải sau nhiều lần mới đạt được kết quả.'},
-   ]},
-
-  {n:10,zh:'锻炼',py:'duànliàn',pos:'Động từ',vn:'tập thể dục', hv: 'đoán luyện',em:'🏃',lesson:2,
-   explain:['Rèn luyện cơ thể thông qua vận động thể chất.'],
-   usage:'Động từ, có thể mang tân ngữ 身体: 锻炼身体.',
-   collo:['锻炼身体','去锻炼','锻炼完了'],
-   ex_zh:'我锻炼完了就过去。',ex_py:'Wǒ duànliàn wán le jiù guòqu.',ex_vn:'Mình tập thể dục xong là qua ngay.',
-   exList:[
-     {zh:'我锻炼完了就过去。',py:'Wǒ duànliàn wán le jiù guòqu.',vn:'Mình tập thể dục xong là qua ngay.'},
-     {zh:'我每天早上都去公园跑步，锻炼身体。',py:'Wǒ měitiān zǎoshang dōu qù gōngyuán pǎobù, duànliàn shēntǐ.',vn:'Mỗi sáng tôi đều đi công viên chạy bộ, tập thể dục.'},
-     {zh:'为了让自己更健康，他每天都花一个小时去锻炼。',py:'Wèile ràng zìjǐ gèng jiànkāng, tā měitiān dōu huā yí ge xiǎoshí qù duànliàn.',vn:'Để bản thân khỏe mạnh hơn, anh ấy mỗi ngày đều dành một tiếng để tập thể dục.'},
-   ],
-   hanzi:[
-     {c:'炼',p:'liàn',type:'左右结构 · Trái-phải',st:9,ord:'火 trái → 东 phải',rad:'火 (hỏa – lửa)',mean:'tôi luyện, rèn luyện',
-      tip:'火(lửa) + 东(hướng đông) → dùng LỬA để TÔI LUYỆN kim loại, mở rộng nghĩa RÈN LUYỆN cơ thể.',
-      cf:'练 (liàn – "luyện tập", có 纟 thay vì 火")',w:'锻炼 / 炼习'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn tập thể dục xong là qua nhà tôi.',answer:'只要你锻炼完了就过来我家。',answerPy:'Zhǐyào nǐ duànliàn wán le jiù guòlai wǒ jiā.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-     {promptLang:'vi',prompt:'Vì muốn khỏe mạnh hơn nên anh ấy mỗi ngày đều tập thể dục.',answer:'因为想更健康，所以他每天都锻炼。',answerPy:'Yīnwèi xiǎng gèng jiànkāng, suǒyǐ tā měitiān dōu duànliàn.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả (ôn lại 更 sẽ học ngay bên dưới trong bài này).'},
-   ]},
-
-  {n:11,zh:'音乐',py:'yīnyuè',pos:'Danh từ',vn:'âm nhạc', hv: 'âm nhạc',em:'🎵',lesson:3,
-   explain:['Nghệ thuật âm thanh, giai điệu.'],
-   usage:'Danh từ; đi cùng động từ 听 (nghe): 听音乐.',
-   collo:['听音乐','音乐会','喜欢音乐'],
-   ex_zh:'那你请她听音乐会吧，她喜欢听音乐。',ex_py:'Nà nǐ qǐng tā tīng yīnyuèhuì ba, tā xǐhuan tīng yīnyuè.',ex_vn:'Vậy bạn mời cô ấy đi nghe hòa nhạc đi, cô ấy thích nghe nhạc mà.',
-   exList:[
-     {zh:'那你请她听音乐会吧，她喜欢听音乐。',py:'Nà nǐ qǐng tā tīng yīnyuèhuì ba, tā xǐhuan tīng yīnyuè.',vn:'Vậy bạn mời cô ấy đi nghe hòa nhạc đi, cô ấy thích nghe nhạc mà.'},
-     {zh:'音乐会人太多，买不到票。',py:'Yīnyuèhuì rén tài duō, mǎi bu dào piào.',vn:'Buổi hòa nhạc đông người quá, không mua được vé.'},
-     {zh:'她特别喜欢听音乐。',py:'Tā tèbié xǐhuan tīng yīnyuè.',vn:'Cô ấy đặc biệt thích nghe nhạc.'},
-   ],
-   hanzi:[
-     {c:'乐',p:'yuè',type:'独体字 · Chữ đơn',st:5,ord:'nét liền',rad:'丿(phiệt)',mean:'âm nhạc; vui (lè)',
-      tip:'Chữ tượng hình mô phỏng nhạc cụ cổ (trống trên giá gỗ) → ÂM NHẠC; đọc "lè" thì mang nghĩa VUI.',
-      cf:'药 (yào – "thuốc", có bộ 艹")',w:'音乐 / 音乐会 / 快乐 (lè)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì cô ấy thích nghe nhạc nên tôi mời cô ấy đi nghe hòa nhạc.',answer:'因为她喜欢听音乐，所以我请她听音乐会。',answerPy:'Yīnwèi tā xǐhuan tīng yīnyuè, suǒyǐ wǒ qǐng tā tīng yīnyuèhuì.',
-      note:'因为……所以…… nêu nguyên nhân — kết quả.'},
-     {promptLang:'vi',prompt:'Nếu buổi hòa nhạc còn vé thì chúng ta mua hai vé đi.',answer:'如果音乐会还有票，我们就买两张吧。',answerPy:'Rúguǒ yīnyuèhuì hái yǒu piào, wǒmen jiù mǎi liǎng zhāng ba.',
-      note:'如果……就…… diễn tả giả thiết — kết quả.'},
-   ]},
-
-  {n:12,zh:'公园',py:'gōngyuán',pos:'Danh từ',vn:'công viên', hv: 'công viên',em:'🏞️',lesson:3,
-   explain:['Khu vực công cộng có cây xanh, dùng để nghỉ ngơi, giải trí.'],
-   usage:'Danh từ; đi cùng động từ 去 (đi): 去公园.',
-   collo:['去公园','公园里','公园走走'],
-   ex_zh:'那去公园走走，聊聊天儿吧。',ex_py:'Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.',ex_vn:'Vậy đi công viên dạo chút, tán gẫu đi.',
-   exList:[
-     {zh:'那去公园走走，聊聊天儿吧。',py:'Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.',vn:'Vậy đi công viên dạo chút, tán gẫu đi.'},
-     {zh:'公园太大，多累啊。',py:'Gōngyuán tài dà, duō lèi a.',vn:'Công viên to quá, mệt lắm.'},
-     {zh:'我每天早上都去公园跑步，锻炼身体。',py:'Wǒ měitiān zǎoshang dōu qù gōngyuán pǎobù, duànliàn shēntǐ.',vn:'Mỗi sáng tôi đều đi công viên chạy bộ, tập thể dục.'},
-   ],
-   hanzi:[
-     {c:'园',p:'yuán',type:'半包围结构 · Bán bao vây',st:7,ord:'囗 bao ngoài → 元 trong',rad:'囗 (vi – vây quanh)',mean:'vườn, công viên',
-      tip:'囗(hàng rào bao quanh) + 元(khởi đầu, cơ bản) → khu đất được rào lại để trồng trọt/nghỉ ngơi = VƯỜN, CÔNG VIÊN.',
-      cf:'国 (guó – "quốc gia", cũng có bộ 囗")',w:'公园 / 花园'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tuy công viên rất lớn nhưng đi dạo cũng thú vị.',answer:'虽然公园很大，但是走走也很有意思。',answerPy:'Suīrán gōngyuán hěn dà, dànshì zǒuzou yě hěn yǒu yìsi.',
-      note:'虽然……但是…… diễn tả sự tương phản.'},
-     {promptLang:'vi',prompt:'Chỉ cần trời không mưa thì chúng ta đi công viên dạo chút.',answer:'只要天不下雨，我们就去公园走走。',answerPy:'Zhǐyào tiān bú xiàyǔ, wǒmen jiù qù gōngyuán zǒuzou.',
-      note:'只要……就…… diễn tả điều kiện đủ.'},
-   ]},
-
-  {n:13,zh:'聊天(儿)',py:'liáotiān(r)',pos:'Động từ',vn:'tán gẫu', hv: 'liêu thiên nhi',em:'💬',lesson:3,
-   explain:['Nói chuyện phiếm, trò chuyện thoải mái không có chủ đề cố định.'],
-   usage:'Động từ ly hợp; thường đi cùng 跟/和 + người: 跟朋友聊天儿.',
-   collo:['跟朋友聊天儿','聊聊天儿','正在聊天儿'],
-   ex_zh:'那去公园走走，聊聊天儿吧。',ex_py:'Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.',ex_vn:'Vậy đi công viên dạo chút, tán gẫu đi.',
-   exList:[
-     {zh:'那去公园走走，聊聊天儿吧。',py:'Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.',vn:'Vậy đi công viên dạo chút, tán gẫu đi.'},
-     {zh:'刚才还在这儿跟我们聊天儿呢。',py:'Gāngcái hái zài zhèr gēn wǒmen liáotiānr ne.',vn:'Lúc nãy còn ở đây tán gẫu với chúng tôi mà.'},
-     {zh:'我听不懂汉语，那跟我聊聊天儿吧。',py:'Wǒ tīng bu dǒng Hànyǔ, nà gēn wǒ liáoliao tiānr ba.',vn:'Tôi không nghe hiểu tiếng Trung, vậy tán gẫu với tôi đi.'},
-   ],
-   hanzi:[
-     {c:'聊',p:'liáo',type:'左右结构 · Trái-phải',st:10,ord:'耳 trái → 卯 phải',rad:'耳 (nhĩ – tai)',mean:'trò chuyện, tán gẫu',
-      tip:'耳(tai, lắng nghe) + 卯(âm mão) → dùng TAI lắng nghe nhau trò chuyện thoải mái = TÁN GẪU.',
-      cf:'柳 (liǔ – "cây liễu", có bộ 木")',w:'聊天儿 / 聊聊'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn không nghe hiểu tiếng Trung thì hãy tán gẫu với tôi đi.',answer:'你听不懂汉语，就跟我聊聊天儿吧。',answerPy:'Nǐ tīng bu dǒng Hànyǔ, jiù gēn wǒ liáoliao tiānr ba.',
-      note:'听不懂 = bổ ngữ khả năng phủ định.'},
-     {promptLang:'vi',prompt:'Cô bé đó thích nói chuyện với bà.',answer:'那个小女孩儿喜欢跟奶奶聊天儿。',answerPy:'Nàge xiǎo nǚháir xǐhuan gēn nǎinai liáotiānr.',
-      note:'跟 + người + 聊天儿 diễn tả trò chuyện cùng ai.'},
-   ]},
-
-  {n:14,zh:'睡着',py:'shuìzháo',pos:'Động từ',vn:'ngủ được', hv: 'thụy trước',em:'😴',lesson:4,
-   explain:['Chìm vào giấc ngủ thành công; thường dùng ở dạng phủ định 睡不着 (không ngủ được).'],
-   usage:'Bổ ngữ khả năng: 睡+得/不+着.',
-   collo:['睡不着','睡不着觉','睡得着'],
-   ex_zh:'你不是说晚上睡不着觉吗？',ex_py:'Nǐ bú shì shuō wǎnshang shuì bu zháo jiào ma?',ex_vn:'Chẳng phải anh nói buổi tối ngủ không được sao?',
-   exList:[
-     {zh:'你不是说晚上睡不着觉吗？',py:'Nǐ bú shì shuō wǎnshang shuì bu zháo jiào ma?',vn:'Chẳng phải anh nói buổi tối ngủ không được sao?'},
-     {zh:'我刚到北京，晚上总是睡不着。',py:'Wǒ gāng dào Běijīng, wǎnshang zǒngshì shuì bu zháo.',vn:'Tôi vừa đến Bắc Kinh, buổi tối cứ ngủ không được.'},
-     {zh:'我睡不着的时候喜欢看电视。',py:'Wǒ shuì bu zháo de shíhou xǐhuan kàn diànshì.',vn:'Lúc tôi ngủ không được thì thích xem tivi.'},
-   ],
-   hanzi:[
-     {c:'着',p:'zháo',type:'上下结构 · Trên-dưới',st:11,ord:'羊(biến thể) trên → 目 dưới',rad:'目 (mục – mắt)',mean:'đạt được, trúng',
-      tip:'Khi đọc "zháo", 着 mang nghĩa ĐẠT ĐƯỢC kết quả mong muốn — 睡着 = đạt được trạng thái NGỦ.',
-      cf:'着 (zhe – "đang", cùng chữ nhưng khác âm và nghĩa")',w:'睡着 / 找着 / 着急'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn không phải nói tối qua ngủ không được sao?',answer:'你不是说昨晚睡不着觉吗？',answerPy:'Nǐ bú shì shuō zuówǎn shuì bu zháo jiào ma?',
-      note:'睡不着 = bổ ngữ khả năng phủ định.'},
-     {promptLang:'vi',prompt:'Uống ly sữa nóng, có thể ngủ ngon hơn.',answer:'喝杯热牛奶，可以睡得更好。',answerPy:'Hē bēi rè niúnǎi, kěyǐ shuì de gèng hǎo.',
-      note:'更 + tính từ diễn tả mức độ tăng thêm (ôn lại 更 vừa học trong bài này).'},
-   ]},
-
-  {n:15,zh:'更',py:'gèng',pos:'Phó từ',vn:'càng, hơn nữa', hv: 'cánh',em:'📊',lesson:4,
-   explain:['Diễn tả mức độ tăng thêm so với một mức đã có.'],
-   usage:'Phó từ, đứng trước tính từ/động từ: 更 + Adj/V (更好, 更喜欢).',
-   collo:['更好','更漂亮','更喜欢'],
-   ex_zh:'你还是喝杯牛奶吧，可以睡得更好些。',ex_py:'Nǐ háishi hē bēi niúnǎi ba, kěyǐ shuì de gèng hǎo xiē.',ex_vn:'Anh nên uống ly sữa thì hơn, ngủ sẽ ngon hơn.',
-   exList:[
-     {zh:'你还是喝杯牛奶吧，可以睡得更好些。',py:'Nǐ háishi hē bēi niúnǎi ba, kěyǐ shuì de gèng hǎo xiē.',vn:'Anh nên uống ly sữa thì hơn, ngủ sẽ ngon hơn.'},
-     {zh:'你女儿越来越漂亮了！现在更漂亮。',py:'Nǐ nǚ\'ér yuè lái yuè piàoliang le! Xiànzài gèng piàoliang.',vn:'Con gái bạn ngày càng xinh! Bây giờ càng xinh hơn.'},
-     {zh:'为了让自己更健康，他每天都去锻炼。',py:'Wèile ràng zìjǐ gèng jiànkāng, tā měitiān dōu qù duànliàn.',vn:'Để bản thân khỏe mạnh hơn, anh ấy mỗi ngày đều đi tập thể dục.'},
-   ],
-   hanzi:[
-     {c:'更',p:'gèng',type:'上下结构 · Trên-dưới',st:7,ord:'一+日 trên → 乂+丨 dưới',rad:'曰 (viết)',mean:'càng, hơn nữa; canh (giờ)',
-      tip:'Chữ cổ vốn chỉ việc "thay đổi, tiếp diễn" (như canh giờ đêm) → mở rộng nghĩa "tiếp tục tăng thêm" = CÀNG, HƠN NỮA.',
-      cf:'硬 (yìng – "cứng", có phần giống bên phải")',w:'更好 / 更漂亮 / 更喜欢'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu bạn tập thể dục thường xuyên thì sẽ càng khỏe mạnh hơn.',answer:'如果你常常锻炼，就会更健康。',answerPy:'Rúguǒ nǐ chángcháng duànliàn, jiù huì gèng jiànkāng.',
-      note:'如果……就…… diễn tả giả thiết — kết quả (ôn lại 锻炼 vừa học trong bài này).'},
-     {promptLang:'vi',prompt:'Cô ấy hôm nay mặc chiếc váy đó càng xinh đẹp hơn.',answer:'她今天穿那条裙子更漂亮了。',answerPy:'Tā jīntiān chuān nà tiáo qúnzi gèng piàoliang le.',
-      note:'更 + tính từ diễn tả mức độ tăng thêm (ôn lại 裙子 đã học ở Bài 5).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "眼镜",
+    "py": "yǎnjìng",
+    "pos": "Danh từ",
+    "vn": "mắt kính",
+    "hv": "nhãn kính",
+    "em": "👓",
+    "lesson": 1,
+    "explain": [
+      "Dụng cụ đeo trên mắt giúp nhìn rõ hơn."
+    ],
+    "usage": "Danh từ; lượng từ đi kèm là 副: 一副眼镜.",
+    "collo": [
+      "一副眼镜",
+      "戴眼镜",
+      "找眼镜"
+    ],
+    "ex_zh": "我的眼镜呢？怎么突然找不到了？",
+    "ex_py": "Wǒ de yǎnjìng ne? Zěnme tūrán zhǎo bu dào le?",
+    "ex_vn": "Kính của tôi đâu rồi? Sao đột nhiên lại không tìm thấy?",
+    "exList": [
+      {
+        "zh": "我的眼镜呢？怎么突然找不到了？",
+        "py": "Wǒ de yǎnjìng ne? Zěnme tūrán zhǎo bu dào le?",
+        "vn": "Kính của tôi đâu rồi? Sao đột nhiên lại không tìm thấy?"
+      },
+      {
+        "zh": "我离不开眼镜，没有眼镜，我一个字也看不清楚。",
+        "py": "Wǒ lí bu kāi yǎnjìng, méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.",
+        "vn": "Anh không thể rời kính được, không có kính, anh một chữ cũng không nhìn rõ."
+      },
+      {
+        "zh": "树那么远，你看得清楚吗？我有眼镜，看得清楚。",
+        "py": "Shù nàme yuǎn, nǐ kàn de qīngchu ma? Wǒ yǒu yǎnjìng, kàn de qīngchu.",
+        "vn": "Cây xa vậy, bạn nhìn rõ không? Tôi có kính, nhìn rõ mà."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "镜",
+        "p": "jìng",
+        "type": "左右结构 · Trái-phải",
+        "st": 16,
+        "ord": "钅 trái → 竟 phải",
+        "rad": "钅 (kim – kim loại)",
+        "mean": "gương, kính",
+        "tip": "钅(kim loại, xưa gương làm bằng đồng) + 竟(cuối cùng, trọn vẹn) → vật kim loại soi TRỌN VẸN hình ảnh = GƯƠNG, KÍNH.",
+        "cf": "境 (jìng – \"cảnh, biên giới\", có bộ 土\")",
+        "w": "眼镜 / 镜子"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi tìm mãi không thấy kính, nếu bạn nhìn thấy thì bảo tôi một tiếng nhé.",
+        "answer": "我找不到我的眼镜，如果你看见了，就告诉我一声。",
+        "answerPy": "Wǒ zhǎo bu dào wǒ de yǎnjìng, rúguǒ nǐ kànjiàn le, jiù gàosu wǒ yì shēng.",
+        "note": "V + 不到 — bổ ngữ khả năng phủ định: tìm không ra.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không có kính tôi một chữ cũng không nhìn rõ.",
+        "answer": "没有眼镜，我一个字也看不清楚。",
+        "answerPy": "Méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.",
+        "note": "看不清楚 = bổ ngữ khả năng dạng phủ định.",
+        "pair": "一……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一副眼镜",
+        "py": "yí fù yǎnjìng",
+        "vn": "một cặp kính"
+      },
+      {
+        "zh": "戴眼镜",
+        "py": "dài yǎnjìng",
+        "vn": "đeo kính"
+      },
+      {
+        "zh": "找眼镜",
+        "py": "zhǎo yǎnjìng",
+        "vn": "tìm kính"
+      },
+      {
+        "zh": "戴眼镜的人",
+        "py": "dài yǎnjìng de rén",
+        "vn": "người đeo kính"
+      },
+      {
+        "zh": "忘了戴眼镜",
+        "py": "wàng le dài yǎnjìng",
+        "vn": "quên đeo kính"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 副 + 眼镜",
+        "m": "Lượng từ 副 cho vật đi thành bộ"
+      },
+      {
+        "s": "✗ 穿眼镜 → ✓ 戴眼镜",
+        "m": "穿 cho quần áo giày, 戴 cho kính mũ đồng hồ"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "突然",
+    "py": "tūrán",
+    "pos": "Phó từ",
+    "vn": "bỗng nhiên, bỗng dưng",
+    "hv": "đột nhiên",
+    "em": "⚡",
+    "lesson": 1,
+    "explain": [
+      "Xảy ra bất ngờ, không có dấu hiệu báo trước."
+    ],
+    "usage": "Phó từ, đứng trước động từ/tính từ: 突然 + V/Adj.",
+    "collo": [
+      "突然找不到",
+      "突然不下了",
+      "突然生病"
+    ],
+    "ex_zh": "怎么突然找不到了？",
+    "ex_py": "Zěnme tūrán zhǎo bu dào le?",
+    "ex_vn": "Sao đột nhiên lại không tìm thấy?",
+    "exList": [
+      {
+        "zh": "怎么突然找不到了？",
+        "py": "Zěnme tūrán zhǎo bu dào le?",
+        "vn": "Sao đột nhiên lại không tìm thấy?"
+      },
+      {
+        "zh": "怎么突然不下了？是啊，刚才还下得那么大。",
+        "py": "Zěnme tūrán bú xià le? Shì a, gāngcái hái xià de nàme dà.",
+        "vn": "Sao đột nhiên hết mưa rồi? Đúng vậy, lúc nãy còn mưa to thế."
+      },
+      {
+        "zh": "你怎么突然说要用我的车？",
+        "py": "Nǐ zěnme tūrán shuō yào yòng wǒ de chē?",
+        "vn": "Sao bạn đột nhiên nói cần dùng xe của tôi?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "突",
+        "p": "tū",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "穴 trên → 犬 dưới",
+        "rad": "穴 (huyệt – hang)",
+        "mean": "đột ngột",
+        "tip": "穴(cái hang) + 犬(con chó) → hình ảnh con chó bất ngờ lao ra khỏi hang → ĐỘT NGỘT, BẤT NGỜ.",
+        "cf": "究 (jiū – \"nghiên cứu\", có 九 thay vì 犬\")",
+        "w": "突然 / 突出"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trời đột nhiên đổ mưa nên chúng tôi phải vào nhà.",
+        "answer": "因为天突然下雨了，所以我们得进屋。",
+        "answerPy": "Yīnwèi tiān tūrán xiàyǔ le, suǒyǐ wǒmen děi jìn wū.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đột nhiên không thấy khỏe thì nên nghỉ ngơi ngay.",
+        "answer": "如果你突然觉得不舒服，就应该马上休息。",
+        "answerPy": "Rúguǒ nǐ tūrán juéde bù shūfu, jiù yīnggāi mǎshàng xiūxi.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "突然生病",
+        "py": "tūrán shēngbìng",
+        "vn": "bỗng nhiên bị ốm"
+      },
+      {
+        "zh": "突然找不到",
+        "py": "tūrán zhǎo bú dào",
+        "vn": "bỗng dưng không tìm thấy"
+      },
+      {
+        "zh": "突然不下了",
+        "py": "tūrán bú xià le",
+        "vn": "bỗng ngừng rơi"
+      },
+      {
+        "zh": "突然想起来",
+        "py": "tūrán xiǎng qǐlai",
+        "vn": "chợt nhớ ra"
+      },
+      {
+        "zh": "天突然黑了",
+        "py": "tiān tūrán hēi le",
+        "vn": "trời bỗng tối"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 突然 + V",
+        "m": "Ai đó bỗng nhiên …"
+      },
+      {
+        "s": "突然 (bất ngờ) khác 马上 (ngay lập tức)"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "离开",
+    "py": "líkāi",
+    "pos": "Động từ",
+    "vn": "rời khỏi, tách khỏi",
+    "hv": "li khai",
+    "em": "🚶",
+    "lesson": 1,
+    "explain": [
+      "Rời xa một người, nơi chốn hoặc vật gì đó."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 离开 + [người/nơi chốn]; thường dùng dạng phủ định khả năng 离不开 (không thể rời khỏi).",
+    "collo": [
+      "离不开",
+      "离开家",
+      "离开学校"
+    ],
+    "ex_zh": "我离不开眼镜，没有眼镜，我一个字也看不清楚。",
+    "ex_py": "Wǒ lí bu kāi yǎnjìng, méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.",
+    "ex_vn": "Anh không thể rời kính được, không có kính, anh một chữ cũng không nhìn rõ.",
+    "exList": [
+      {
+        "zh": "我离不开眼镜，没有眼镜，我一个字也看不清楚。",
+        "py": "Wǒ lí bu kāi yǎnjìng, méiyǒu yǎnjìng, wǒ yí ge zì yě kàn bu qīngchu.",
+        "vn": "Anh không thể rời kính được, không có kính, anh một chữ cũng không nhìn rõ."
+      },
+      {
+        "zh": "她刚离开学校，最近一直在家休息。",
+        "py": "Tā gāng líkāi xuéxiào, zuìjìn yìzhí zài jiā xiūxi.",
+        "vn": "Cô ấy vừa rời trường, dạo này luôn ở nhà nghỉ ngơi."
+      },
+      {
+        "zh": "我孩子太小，离不开人。",
+        "py": "Wǒ háizi tài xiǎo, lí bu kāi rén.",
+        "vn": "Con tôi còn nhỏ quá, không thể rời người lớn được."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "离",
+        "p": "lí",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "亠+凶 trên → 离(giản thể riêng)",
+        "rad": "离",
+        "mean": "rời xa, cách",
+        "tip": "Chữ cổ mô phỏng hình con chim tách bầy bay đi → nghĩa RỜI XA, TÁCH KHỎI.",
+        "cf": "禽 (qín – \"cầm thú, chim\", có nét dưới tương tự\")",
+        "w": "离开 / 离不开 / 距离"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn không rời khỏi nhà thì sẽ an toàn.",
+        "answer": "只要你不离开家，就会很安全。",
+        "answerPy": "Zhǐyào nǐ bù líkāi jiā, jiù huì hěn ānquán.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy anh ấy đã rời công ty nhưng vẫn thường liên lạc với đồng nghiệp cũ.",
+        "answer": "虽然他已经离开公司了，但是还是常常联系老同事。",
+        "answerPy": "Suīrán tā yǐjīng líkāi gōngsī le, dànshì háishi chángcháng liánxì lǎo tóngshì.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "离开家",
+        "py": "líkāi jiā",
+        "vn": "rời nhà"
+      },
+      {
+        "zh": "离开学校",
+        "py": "líkāi xuéxiào",
+        "vn": "rời trường"
+      },
+      {
+        "zh": "离不开",
+        "py": "lí bù kāi",
+        "vn": "không rời được"
+      },
+      {
+        "zh": "离开这儿",
+        "py": "líkāi zhèr",
+        "vn": "rời khỏi đây"
+      },
+      {
+        "zh": "已经离开了",
+        "py": "yǐjīng líkāi le",
+        "vn": "đã đi rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "离开 + nơi chốn",
+        "m": "Rời khỏi đâu"
+      },
+      {
+        "s": "离开 + 不了 / 离不开",
+        "m": "Không rời được — bổ ngữ khả năng"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "清楚",
+    "py": "qīngchu",
+    "pos": "Tính từ",
+    "vn": "rõ ràng",
+    "hv": "thanh sở",
+    "em": "🔍",
+    "lesson": 1,
+    "explain": [
+      "Nhìn/nghe/hiểu một cách rõ ràng, không mơ hồ."
+    ],
+    "usage": "Tính từ, thường làm bổ ngữ khả năng sau động từ: 看得/不清楚, 说得/不清楚.",
+    "collo": [
+      "看得清楚",
+      "看不清楚",
+      "说清楚"
+    ],
+    "ex_zh": "我一个字也看不清楚。",
+    "ex_py": "Wǒ yí ge zì yě kàn bu qīngchu.",
+    "ex_vn": "Tôi một chữ cũng không nhìn rõ.",
+    "exList": [
+      {
+        "zh": "我一个字也看不清楚。",
+        "py": "Wǒ yí ge zì yě kàn bu qīngchu.",
+        "vn": "Tôi một chữ cũng không nhìn rõ."
+      },
+      {
+        "zh": "你刚才说什么？我听不清楚。",
+        "py": "Nǐ gāngcái shuō shénme? Wǒ tīng bu qīngchu.",
+        "vn": "Lúc nãy bạn nói gì? Tôi nghe không rõ."
+      },
+      {
+        "zh": "树那么远，你看得清楚吗？",
+        "py": "Shù nàme yuǎn, nǐ kàn de qīngchu ma?",
+        "vn": "Cây xa vậy, bạn nhìn rõ không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "楚",
+        "p": "chǔ",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "林 trái → 疋 phải",
+        "rad": "木 (mộc – cây)",
+        "mean": "rõ ràng; nước Sở",
+        "tip": "林(rừng cây) + 疋(chân, đi qua) → đi xuyên rừng cây rậm rạp mà vẫn nhìn RÕ đường = RÕ RÀNG.",
+        "cf": "礎 (chǔ – \"nền móng\", có bộ 石\")",
+        "w": "清楚 / 楚国"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn nói rõ ràng hơn một chút thì tôi sẽ hiểu.",
+        "answer": "如果你说得清楚一点儿，我就会明白。",
+        "answerPy": "Rúguǒ nǐ shuō de qīngchu yìdiǎnr, wǒ jiù huì míngbai.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 明白 vừa học trong bài này).",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì chữ viết quá nhỏ nên tôi nhìn không rõ.",
+        "answer": "因为字写得太小了，所以我看不清楚。",
+        "answerPy": "Yīnwèi zì xiě de tài xiǎo le, suǒyǐ wǒ kàn bu qīngchu.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "看得清楚",
+        "py": "kàn de qīngchu",
+        "vn": "nhìn thấy rõ"
+      },
+      {
+        "zh": "看不清楚",
+        "py": "kàn bù qīngchu",
+        "vn": "nhìn không rõ"
+      },
+      {
+        "zh": "说清楚",
+        "py": "shuō qīngchu",
+        "vn": "nói cho rõ"
+      },
+      {
+        "zh": "听清楚",
+        "py": "tīng qīngchu",
+        "vn": "nghe rõ"
+      },
+      {
+        "zh": "很清楚",
+        "py": "hěn qīngchu",
+        "vn": "rất rõ ràng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 得 / 不 + 清楚",
+        "m": "Nhìn, nghe rõ / không rõ — bổ ngữ khả năng"
+      },
+      {
+        "s": "V + 清楚",
+        "m": "Làm gì cho rõ — 清楚 là bổ ngữ kết quả"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "刚才",
+    "py": "gāngcái",
+    "pos": "Danh từ",
+    "vn": "lúc nãy",
+    "hv": "cương tài",
+    "em": "⏱️",
+    "lesson": 1,
+    "explain": [
+      "Khoảng thời gian vài phút trước hiện tại."
+    ],
+    "usage": "Danh từ, có thể đứng đầu câu hoặc trước động từ: 刚才 + [câu], khác với 刚 (phó từ, chỉ đứng trước động từ).",
+    "collo": [
+      "刚才说什么",
+      "刚才还在",
+      "刚才放在"
+    ],
+    "ex_zh": "是不是刚才放在桌子上了？",
+    "ex_py": "Shì bu shì gāngcái fàng zài zhuōzi shang le?",
+    "ex_vn": "Có phải lúc nãy để trên bàn không?",
+    "exList": [
+      {
+        "zh": "是不是刚才放在桌子上了？",
+        "py": "Shì bu shì gāngcái fàng zài zhuōzi shang le?",
+        "vn": "Có phải lúc nãy để trên bàn không?"
+      },
+      {
+        "zh": "你刚才说什么？我听不清楚。",
+        "py": "Nǐ gāngcái shuō shénme? Wǒ tīng bu qīngchu.",
+        "vn": "Lúc nãy bạn nói gì? Tôi nghe không rõ."
+      },
+      {
+        "zh": "是啊，刚才还下得那么大。",
+        "py": "Shì a, gāngcái hái xià de nàme dà.",
+        "vn": "Đúng vậy, lúc nãy còn mưa to thế."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "刚",
+        "p": "gāng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "冈 trái → 刂 phải",
+        "rad": "刂 (đao – dao)",
+        "mean": "vừa mới",
+        "tip": "冈(quả đồi, cứng rắn) + 刂(dao, cắt) → hành động vừa được \"cắt\" ra, mới xảy ra = VỪA MỚI.",
+        "cf": "钢 (gāng – \"thép\", có bộ 钅\")",
+        "w": "刚才 / 刚刚 / 刚好"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vừa nãy có người gọi điện tìm bạn, nhưng lúc đó bạn không ở đây.",
+        "answer": "刚才有人打电话找你，但是那时候你不在。",
+        "answerPy": "Gāngcái yǒu rén dǎ diànhuà zhǎo nǐ, dànshì nà shíhou nǐ bú zài.",
+        "note": "刚才 là danh từ chỉ lúc nãy, khác 刚 (phó từ, vừa mới).",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chị tôi vừa nãy còn ở đây, sao bỗng dưng giờ không thấy nữa?",
+        "answer": "我姐姐刚才还在这儿，怎么突然找不到了？",
+        "answerPy": "Wǒ jiějie gāngcái hái zài zhèr, zěnme tūrán zhǎo bu dào le?",
+        "note": "突然 nêu việc xảy ra ngoài dự tính.",
+        "pair": "突然……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "刚才还在",
+        "py": "gāngcái hái zài",
+        "vn": "vừa nãy còn ở đây"
+      },
+      {
+        "zh": "刚才说什么",
+        "py": "gāngcái shuō shénme",
+        "vn": "vừa nãy nói gì"
+      },
+      {
+        "zh": "刚才有人找你",
+        "py": "gāngcái yǒu rén zhǎo nǐ",
+        "vn": "vừa nãy có người tìm bạn"
+      },
+      {
+        "zh": "刚才放在桌子上",
+        "py": "gāngcái fàng zài zhuōzi shàng",
+        "vn": "vừa nãy để trên bàn"
+      },
+      {
+        "zh": "刚才的事",
+        "py": "gāngcái de shì",
+        "vn": "chuyện vừa nãy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "刚才 + Sub + V",
+        "m": "Vừa nãy ai đó …"
+      },
+      {
+        "s": "刚才 (danh từ chỉ lúc nãy) ≠ 刚 (phó từ, vừa mới)"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "帮忙",
+    "py": "bāngmáng",
+    "pos": "Động từ",
+    "vn": "giúp, giúp đỡ",
+    "hv": "bang mang",
+    "em": "🤝",
+    "lesson": 1,
+    "explain": [
+      "Trợ giúp người khác làm việc gì đó."
+    ],
+    "usage": "Động từ ly hợp; không mang tân ngữ trực tiếp, muốn nói \"giúp ai\" phải dùng 帮 + người + 忙 hoặc 帮 + người + V.",
+    "collo": [
+      "帮个忙",
+      "过来帮忙",
+      "请你帮忙"
+    ],
+    "ex_zh": "你快过来帮忙啊。",
+    "ex_py": "Nǐ kuài guòlai bāng máng a.",
+    "ex_vn": "Em mau lại đây giúp anh đi.",
+    "exList": [
+      {
+        "zh": "你快过来帮忙啊。",
+        "py": "Nǐ kuài guòlai bāng máng a.",
+        "vn": "Em mau lại đây giúp anh đi."
+      },
+      {
+        "zh": "我的车可能有点儿问题，你能过来帮个忙吗？",
+        "py": "Wǒ de chē kěnéng yǒudiǎnr wèntí, nǐ néng guòlai bāng ge máng ma?",
+        "vn": "Xe của tôi có lẽ có vấn đề, bạn qua giúp tôi một chút được không?"
+      },
+      {
+        "zh": "我过去帮他给他家里打了个电话。",
+        "py": "Wǒ guòqu bāng tā gěi tā jiālǐ dǎle ge diànhuà.",
+        "vn": "Tôi qua giúp cậu bé gọi điện về nhà cậu ấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "帮",
+        "p": "bāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "邦 trên → 巾 dưới",
+        "rad": "巾 (cân – khăn)",
+        "mean": "giúp đỡ",
+        "tip": "邦(đất nước, cộng đồng) + 巾(khăn, vật dụng) → hỗ trợ lẫn nhau trong cộng đồng = GIÚP ĐỠ.",
+        "cf": "邦 (bāng – \"đất nước\", không có bộ 巾\")",
+        "w": "帮忙 / 帮助 / 帮我"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn cần giúp thì gọi cho tôi bất cứ lúc nào.",
+        "answer": "只要你需要帮忙，随时给我打电话。",
+        "answerPy": "Zhǐyào nǐ xūyào bāngmáng, suíshí gěi wǒ dǎ diànhuà.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cậu bé tìm không thấy đường về nhà nên tôi qua giúp cậu ấy.",
+        "answer": "因为那个孩子找不到回家的路，所以我过去帮他。",
+        "answerPy": "Yīnwèi nàge háizi zhǎo bu dào huí jiā de lù, suǒyǐ wǒ guòqu bāng tā.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả (ôn lại 找不到 vừa học trong bài này).",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "帮个忙",
+        "py": "bāng gè máng",
+        "vn": "giúp một tay"
+      },
+      {
+        "zh": "请你帮忙",
+        "py": "qǐng nǐ bāngmáng",
+        "vn": "nhờ bạn giúp"
+      },
+      {
+        "zh": "过来帮忙",
+        "py": "guòlái bāngmáng",
+        "vn": "qua giúp"
+      },
+      {
+        "zh": "帮了我一个忙",
+        "py": "bāng le wǒ yí gè máng",
+        "vn": "đã giúp tôi một việc"
+      },
+      {
+        "zh": "需要帮忙吗",
+        "py": "xūyào bāngmáng ma",
+        "vn": "cần giúp không"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "帮 + 个 + 忙",
+        "m": "帮忙 là từ ly hợp: 帮个忙 ✓ / 帮忙我 ✗"
+      },
+      {
+        "s": "帮 + ai + 的忙",
+        "m": "Giúp ai — 帮我的忙"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "特别",
+    "py": "tèbié",
+    "pos": "Phó từ",
+    "vn": "vô cùng, rất",
+    "hv": "đặc biệt",
+    "em": "❗",
+    "lesson": 2,
+    "explain": [
+      "Mức độ cao hơn bình thường, nhấn mạnh hơn 很."
+    ],
+    "usage": "Phó từ, đứng trước tính từ: 特别 + Adj (特别难, 特别高兴).",
+    "collo": [
+      "特别难",
+      "特别高兴",
+      "特别喜欢"
+    ],
+    "ex_zh": "今天这些题特别难，我看不懂，不会做。",
+    "ex_py": "Jīntiān zhèxiē tí tèbié nán, wǒ kàn bu dǒng, bú huì zuò.",
+    "ex_vn": "Mấy bài hôm nay khó quá, mình không hiểu, không làm được.",
+    "exList": [
+      {
+        "zh": "今天这些题特别难，我看不懂，不会做。",
+        "py": "Jīntiān zhèxiē tí tèbié nán, wǒ kàn bu dǒng, bú huì zuò.",
+        "vn": "Mấy bài hôm nay khó quá, mình không hiểu, không làm được."
+      },
+      {
+        "zh": "外边特别冷，你出去的时候多穿点儿。",
+        "py": "Wàibian tèbié lěng, nǐ chūqu de shíhou duō chuān diǎnr.",
+        "vn": "Bên ngoài rất lạnh, lúc bạn ra ngoài mặc thêm chút đi."
+      },
+      {
+        "zh": "刚才跟朋友聊天儿聊得特别高兴。",
+        "py": "Gāngcái gēn péngyou liáotiānr liáo de tèbié gāoxìng.",
+        "vn": "Lúc nãy tán gẫu với bạn bè vui vô cùng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "特",
+        "p": "tè",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "牛 trái → 寺 phải",
+        "rad": "牛 (ngưu – trâu, bò)",
+        "mean": "đặc biệt",
+        "tip": "牛(con vật quý) + 寺(chùa, nơi trang trọng) → vật quý được đưa vào nơi trang trọng = ĐẶC BIỆT.",
+        "cf": "持 (chí – \"cầm, giữ\", có bộ 扌\")",
+        "w": "特别 / 特点"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bài tập hôm nay đặc biệt khó nên tôi làm rất lâu.",
+        "answer": "因为今天的作业特别难，所以我做了很久。",
+        "answerPy": "Yīnwèi jīntiān de zuòyè tèbié nán, suǒyǐ wǒ zuòle hěn jiǔ.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả (ôn lại 作业/难 đã học ở Bài 1-2).",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy không những rất thích xem bóng đá, mà trận nào cũng xem.",
+        "answer": "他不但特别喜欢看足球比赛，而且每场比赛都看。",
+        "answerPy": "Tā búdàn tèbié xǐhuan kàn zúqiú bǐsài, érqiě měi chǎng bǐsài dōu kàn.",
+        "note": "一场比赛 — lượng từ 场 (bài 4).",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "特别难",
+        "py": "tèbié nán",
+        "vn": "đặc biệt khó"
+      },
+      {
+        "zh": "特别高兴",
+        "py": "tèbié gāoxìng",
+        "vn": "vô cùng vui"
+      },
+      {
+        "zh": "特别喜欢",
+        "py": "tèbié xǐhuan",
+        "vn": "rất thích"
+      },
+      {
+        "zh": "特别的礼物",
+        "py": "tèbié de lǐwù",
+        "vn": "món quà đặc biệt"
+      },
+      {
+        "zh": "没什么特别",
+        "py": "méi shénme tèbié",
+        "vn": "chẳng có gì đặc biệt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "特别 + Adj / V (phó từ)",
+        "m": "Rất, vô cùng …"
+      },
+      {
+        "s": "特别的 + N (tính từ)",
+        "m": "… đặc biệt, riêng biệt"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "讲",
+    "py": "jiǎng",
+    "pos": "Động từ",
+    "vn": "giải thích, nói",
+    "hv": "giảng",
+    "em": "🗣️",
+    "lesson": 2,
+    "explain": [
+      "Nói, giải thích một vấn đề cho người khác hiểu."
+    ],
+    "usage": "Động từ, thường đi cùng bổ ngữ khả năng: 讲得/不明白.",
+    "collo": [
+      "讲明白",
+      "讲不明白",
+      "给你讲讲"
+    ],
+    "ex_zh": "电话里讲不明白，你来我家吧，我给你讲讲。",
+    "ex_py": "Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba, wǒ gěi nǐ jiǎngjiang.",
+    "ex_vn": "Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi, mình giảng cho bạn.",
+    "exList": [
+      {
+        "zh": "电话里讲不明白，你来我家吧，我给你讲讲。",
+        "py": "Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba, wǒ gěi nǐ jiǎngjiang.",
+        "vn": "Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi, mình giảng cho bạn."
+      },
+      {
+        "zh": "我都讲了三次了，你怎么还听不明白？",
+        "py": "Wǒ dōu jiǎngle sān cì le, nǐ zěnme hái tīng bu míngbai?",
+        "vn": "Tôi giảng những ba lần rồi, sao bạn vẫn không hiểu vậy?"
+      },
+      {
+        "zh": "这个问题老师讲得很清楚。",
+        "py": "Zhège wèntí lǎoshī jiǎng de hěn qīngchu.",
+        "vn": "Vấn đề này thầy giáo giảng rất rõ ràng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "讲",
+        "p": "jiǎng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "讠 trái → 井 phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "giảng, nói",
+        "tip": "讠(lời nói) + 井(giếng, có trật tự) → nói năng CÓ TRẬT TỰ, rõ ràng = GIẢNG GIẢI.",
+        "cf": "井 (jǐng – \"cái giếng\", không có bộ 讠\")",
+        "w": "讲课 / 讲明白 / 讲话"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn giải thích rõ thì tôi sẽ hiểu.",
+        "answer": "只要你讲明白，我就会懂。",
+        "answerPy": "Zhǐyào nǐ jiǎng míngbai, wǒ jiù huì dǒng.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy thầy giáo giảng ba lần rồi nhưng tôi vẫn chưa hiểu.",
+        "answer": "虽然老师讲了三次了，但是我还是不明白。",
+        "answerPy": "Suīrán lǎoshī jiǎngle sān cì le, dànshì wǒ háishi bù míngbai.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "讲明白",
+        "py": "jiǎng míngbai",
+        "vn": "giảng cho rõ"
+      },
+      {
+        "zh": "讲故事",
+        "py": "jiǎng gùshi",
+        "vn": "kể chuyện"
+      },
+      {
+        "zh": "给你讲讲",
+        "py": "gěi nǐ jiǎngjiǎng",
+        "vn": "giảng cho bạn nghe"
+      },
+      {
+        "zh": "老师讲课",
+        "py": "lǎoshī jiǎng kè",
+        "vn": "thầy giảng bài"
+      },
+      {
+        "zh": "讲不明白",
+        "py": "jiǎng bù míngbai",
+        "vn": "giảng không rõ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "讲 + 给 + ai + 听",
+        "m": "Kể, giảng cho ai nghe"
+      },
+      {
+        "s": "讲 ≈ 说",
+        "m": "讲 nhấn việc trình bày có nội dung: 讲课, 讲故事"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "明白",
+    "py": "míngbai",
+    "pos": "Tính từ",
+    "vn": "rõ ràng, dễ hiểu",
+    "hv": "minh bạch",
+    "em": "💡",
+    "lesson": 2,
+    "explain": [
+      "Hiểu rõ, không còn thắc mắc; cũng dùng làm động từ nghĩa \"hiểu\"."
+    ],
+    "usage": "Tính từ/động từ; thường làm bổ ngữ khả năng: 讲得/不明白, 听得/不明白.",
+    "collo": [
+      "听明白",
+      "讲不明白",
+      "我明白了"
+    ],
+    "ex_zh": "电话里讲不明白，你来我家吧。",
+    "ex_py": "Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba.",
+    "ex_vn": "Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi.",
+    "exList": [
+      {
+        "zh": "电话里讲不明白，你来我家吧。",
+        "py": "Diànhuà li jiǎng bu míngbai, nǐ lái wǒ jiā ba.",
+        "vn": "Nói qua điện thoại không giải thích rõ được, bạn đến nhà mình đi."
+      },
+      {
+        "zh": "我都讲了三次了，你怎么还听不明白？",
+        "py": "Wǒ dōu jiǎngle sān cì le, nǐ zěnme hái tīng bu míngbai?",
+        "vn": "Tôi giảng những ba lần rồi, sao bạn vẫn không hiểu vậy?"
+      },
+      {
+        "zh": "如果你还不明白，就再问问老师吧。",
+        "py": "Rúguǒ nǐ hái bù míngbai, jiù zài wènwen lǎoshī ba.",
+        "vn": "Nếu bạn vẫn chưa hiểu thì hỏi lại thầy giáo đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "白",
+        "p": "bái",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền, hình ánh sáng",
+        "rad": "白 (bạch – trắng)",
+        "mean": "trắng; rõ ràng",
+        "tip": "Hình tượng ánh sáng trắng chiếu rọi → mở rộng nghĩa RÕ RÀNG, SÁNG TỎ; 明(sáng)+白(rõ) = HIỂU RÕ.",
+        "cf": "百 (bǎi – \"trăm\", thêm 1 nét trên 白\")",
+        "w": "明白 / 白色 / 白天"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn đọc lại một lần nữa thì sẽ hiểu rõ hơn.",
+        "answer": "如果你再读一遍，就会更明白。",
+        "answerPy": "Rúguǒ nǐ zài dú yí biàn, jiù huì gèng míngbai.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bài này khó quá, nên tôi nghe thầy giảng ba lần mới hiểu.",
+        "answer": "因为这课特别难，所以我听老师讲了三次才明白。",
+        "answerPy": "Yīnwèi zhè kè tèbié nán, suǒyǐ wǒ tīng lǎoshī jiǎngle sān cì cái míngbai.",
+        "note": "V + 明白 — 明白 là bổ ngữ kết quả: nghe đến chỗ hiểu ra.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "听明白",
+        "py": "tīng míngbai",
+        "vn": "nghe hiểu"
+      },
+      {
+        "zh": "我明白了",
+        "py": "wǒ míngbai le",
+        "vn": "tôi hiểu rồi"
+      },
+      {
+        "zh": "讲不明白",
+        "py": "jiǎng bù míngbai",
+        "vn": "giảng không rõ"
+      },
+      {
+        "zh": "不明白",
+        "py": "bù míngbai",
+        "vn": "không hiểu"
+      },
+      {
+        "zh": "明白他的意思",
+        "py": "míngbai tā de yìsi",
+        "vn": "hiểu ý anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 明白",
+        "m": "Làm gì đến chỗ hiểu — 明白 là bổ ngữ kết quả"
+      },
+      {
+        "s": "明白 ≈ 懂",
+        "m": "明白 nhấn việc vỡ lẽ ra; 懂 nhấn việc nắm được"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "锻炼",
+    "py": "duànliàn",
+    "pos": "Động từ",
+    "vn": "tập thể dục",
+    "hv": "đoán luyện",
+    "em": "🏃",
+    "lesson": 2,
+    "explain": [
+      "Rèn luyện cơ thể thông qua vận động thể chất."
+    ],
+    "usage": "Động từ, có thể mang tân ngữ 身体: 锻炼身体.",
+    "collo": [
+      "锻炼身体",
+      "去锻炼",
+      "锻炼完了"
+    ],
+    "ex_zh": "我锻炼完了就过去。",
+    "ex_py": "Wǒ duànliàn wán le jiù guòqu.",
+    "ex_vn": "Mình tập thể dục xong là qua ngay.",
+    "exList": [
+      {
+        "zh": "我锻炼完了就过去。",
+        "py": "Wǒ duànliàn wán le jiù guòqu.",
+        "vn": "Mình tập thể dục xong là qua ngay."
+      },
+      {
+        "zh": "我每天早上都去公园跑步，锻炼身体。",
+        "py": "Wǒ měitiān zǎoshang dōu qù gōngyuán pǎobù, duànliàn shēntǐ.",
+        "vn": "Mỗi sáng tôi đều đi công viên chạy bộ, tập thể dục."
+      },
+      {
+        "zh": "为了让自己更健康，他每天都花一个小时去锻炼。",
+        "py": "Wèile ràng zìjǐ gèng jiànkāng, tā měitiān dōu huā yí ge xiǎoshí qù duànliàn.",
+        "vn": "Để bản thân khỏe mạnh hơn, anh ấy mỗi ngày đều dành một tiếng để tập thể dục."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "炼",
+        "p": "liàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "火 trái → 东 phải",
+        "rad": "火 (hỏa – lửa)",
+        "mean": "tôi luyện, rèn luyện",
+        "tip": "火(lửa) + 东(hướng đông) → dùng LỬA để TÔI LUYỆN kim loại, mở rộng nghĩa RÈN LUYỆN cơ thể.",
+        "cf": "练 (liàn – \"luyện tập\", có 纟 thay vì 火\")",
+        "w": "锻炼 / 炼习"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn tập thể dục xong là qua nhà tôi.",
+        "answer": "只要你锻炼完了就过来我家。",
+        "answerPy": "Zhǐyào nǐ duànliàn wán le jiù guòlai wǒ jiā.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì muốn khỏe mạnh hơn nên anh ấy mỗi ngày đều tập thể dục.",
+        "answer": "因为想更健康，所以他每天都锻炼。",
+        "answerPy": "Yīnwèi xiǎng gèng jiànkāng, suǒyǐ tā měitiān dōu duànliàn.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả (ôn lại 更 sẽ học ngay bên dưới trong bài này).",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "锻炼身体",
+        "py": "duànliàn shēntǐ",
+        "vn": "rèn luyện sức khoẻ"
+      },
+      {
+        "zh": "去锻炼",
+        "py": "qù duànliàn",
+        "vn": "đi tập"
+      },
+      {
+        "zh": "每天锻炼",
+        "py": "měi tiān duànliàn",
+        "vn": "tập mỗi ngày"
+      },
+      {
+        "zh": "锻炼完了",
+        "py": "duànliàn wán le",
+        "vn": "tập xong rồi"
+      },
+      {
+        "zh": "爱锻炼",
+        "py": "ài duànliàn",
+        "vn": "thích tập thể dục"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "锻炼 + 身体",
+        "m": "Rèn luyện sức khoẻ — kết hợp cố định"
+      },
+      {
+        "s": "锻 + 炼",
+        "m": "Rèn (锻) luyện (炼) — vốn là nghề rèn kim loại"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "音乐",
+    "py": "yīnyuè",
+    "pos": "Danh từ",
+    "vn": "âm nhạc",
+    "hv": "âm nhạc",
+    "em": "🎵",
+    "lesson": 3,
+    "explain": [
+      "Nghệ thuật âm thanh, giai điệu."
+    ],
+    "usage": "Danh từ; đi cùng động từ 听 (nghe): 听音乐.",
+    "collo": [
+      "听音乐",
+      "音乐会",
+      "喜欢音乐"
+    ],
+    "ex_zh": "那你请她听音乐会吧，她喜欢听音乐。",
+    "ex_py": "Nà nǐ qǐng tā tīng yīnyuèhuì ba, tā xǐhuan tīng yīnyuè.",
+    "ex_vn": "Vậy bạn mời cô ấy đi nghe hòa nhạc đi, cô ấy thích nghe nhạc mà.",
+    "exList": [
+      {
+        "zh": "那你请她听音乐会吧，她喜欢听音乐。",
+        "py": "Nà nǐ qǐng tā tīng yīnyuèhuì ba, tā xǐhuan tīng yīnyuè.",
+        "vn": "Vậy bạn mời cô ấy đi nghe hòa nhạc đi, cô ấy thích nghe nhạc mà."
+      },
+      {
+        "zh": "音乐会人太多，买不到票。",
+        "py": "Yīnyuèhuì rén tài duō, mǎi bu dào piào.",
+        "vn": "Buổi hòa nhạc đông người quá, không mua được vé."
+      },
+      {
+        "zh": "她特别喜欢听音乐。",
+        "py": "Tā tèbié xǐhuan tīng yīnyuè.",
+        "vn": "Cô ấy đặc biệt thích nghe nhạc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "乐",
+        "p": "yuè",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "丿(phiệt)",
+        "mean": "âm nhạc; vui (lè)",
+        "tip": "Chữ tượng hình mô phỏng nhạc cụ cổ (trống trên giá gỗ) → ÂM NHẠC; đọc \"lè\" thì mang nghĩa VUI.",
+        "cf": "药 (yào – \"thuốc\", có bộ 艹\")",
+        "w": "音乐 / 音乐会 / 快乐 (lè)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cô ấy thích nghe nhạc nên tôi mời cô ấy đi nghe hòa nhạc.",
+        "answer": "因为她喜欢听音乐，所以我请她听音乐会。",
+        "answerPy": "Yīnwèi tā xǐhuan tīng yīnyuè, suǒyǐ wǒ qǐng tā tīng yīnyuèhuì.",
+        "note": "因为……所以…… nêu nguyên nhân — kết quả.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu buổi hòa nhạc còn vé thì chúng ta mua hai vé đi.",
+        "answer": "如果音乐会还有票，我们就买两张吧。",
+        "answerPy": "Rúguǒ yīnyuèhuì hái yǒu piào, wǒmen jiù mǎi liǎng zhāng ba.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "听音乐",
+        "py": "tīng yīnyuè",
+        "vn": "nghe nhạc"
+      },
+      {
+        "zh": "音乐会",
+        "py": "yīnyuè huì",
+        "vn": "buổi hoà nhạc"
+      },
+      {
+        "zh": "喜欢音乐",
+        "py": "xǐhuan yīnyuè",
+        "vn": "thích âm nhạc"
+      },
+      {
+        "zh": "音乐很好听",
+        "py": "yīnyuè hěn hǎotīng",
+        "vn": "nhạc rất hay"
+      },
+      {
+        "zh": "一边听音乐一边看书",
+        "py": "yìbiān tīng yīnyuè yìbiān kàn shū",
+        "vn": "vừa nghe nhạc vừa đọc sách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "听 + 音乐",
+        "m": "Nghe nhạc"
+      },
+      {
+        "s": "音乐 + 会",
+        "m": "Buổi (会) hoà nhạc (音乐)"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "公园",
+    "py": "gōngyuán",
+    "pos": "Danh từ",
+    "vn": "công viên",
+    "hv": "công viên",
+    "em": "🏞️",
+    "lesson": 3,
+    "explain": [
+      "Khu vực công cộng có cây xanh, dùng để nghỉ ngơi, giải trí."
+    ],
+    "usage": "Danh từ; đi cùng động từ 去 (đi): 去公园.",
+    "collo": [
+      "去公园",
+      "公园里",
+      "公园走走"
+    ],
+    "ex_zh": "那去公园走走，聊聊天儿吧。",
+    "ex_py": "Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.",
+    "ex_vn": "Vậy đi công viên dạo chút, tán gẫu đi.",
+    "exList": [
+      {
+        "zh": "那去公园走走，聊聊天儿吧。",
+        "py": "Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.",
+        "vn": "Vậy đi công viên dạo chút, tán gẫu đi."
+      },
+      {
+        "zh": "公园太大，多累啊。",
+        "py": "Gōngyuán tài dà, duō lèi a.",
+        "vn": "Công viên to quá, mệt lắm."
+      },
+      {
+        "zh": "我每天早上都去公园跑步，锻炼身体。",
+        "py": "Wǒ měitiān zǎoshang dōu qù gōngyuán pǎobù, duànliàn shēntǐ.",
+        "vn": "Mỗi sáng tôi đều đi công viên chạy bộ, tập thể dục."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "园",
+        "p": "yuán",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 7,
+        "ord": "囗 bao ngoài → 元 trong",
+        "rad": "囗 (vi – vây quanh)",
+        "mean": "vườn, công viên",
+        "tip": "囗(hàng rào bao quanh) + 元(khởi đầu, cơ bản) → khu đất được rào lại để trồng trọt/nghỉ ngơi = VƯỜN, CÔNG VIÊN.",
+        "cf": "国 (guó – \"quốc gia\", cũng có bộ 囗\")",
+        "w": "公园 / 花园"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy công viên rất lớn nhưng đi dạo cũng thú vị.",
+        "answer": "虽然公园很大，但是走走也很有意思。",
+        "answerPy": "Suīrán gōngyuán hěn dà, dànshì zǒuzou yě hěn yǒu yìsi.",
+        "note": "虽然……但是…… diễn tả sự tương phản.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần trời không mưa thì chúng ta đi công viên dạo chút.",
+        "answer": "只要天不下雨，我们就去公园走走。",
+        "answerPy": "Zhǐyào tiān bú xiàyǔ, wǒmen jiù qù gōngyuán zǒuzou.",
+        "note": "只要……就…… diễn tả điều kiện đủ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去公园",
+        "py": "qù gōngyuán",
+        "vn": "đi công viên"
+      },
+      {
+        "zh": "公园里",
+        "py": "gōngyuán li",
+        "vn": "trong công viên"
+      },
+      {
+        "zh": "在公园走走",
+        "py": "zài gōngyuán zǒuzǒu",
+        "vn": "đi dạo trong công viên"
+      },
+      {
+        "zh": "公园很大",
+        "py": "gōngyuán hěn dà",
+        "vn": "công viên rất rộng"
+      },
+      {
+        "zh": "家附近的公园",
+        "py": "jiā fùjìn de gōngyuán",
+        "vn": "công viên gần nhà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 公园 + 里",
+        "m": "Trong công viên"
+      },
+      {
+        "s": "公 + 园",
+        "m": "Vườn (园) công cộng (公)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "聊天(儿)",
+    "py": "liáotiān(r)",
+    "pos": "Động từ",
+    "vn": "tán gẫu",
+    "hv": "liêu thiên nhi",
+    "em": "💬",
+    "lesson": 3,
+    "explain": [
+      "Nói chuyện phiếm, trò chuyện thoải mái không có chủ đề cố định."
+    ],
+    "usage": "Động từ ly hợp; thường đi cùng 跟/和 + người: 跟朋友聊天儿.",
+    "collo": [
+      "跟朋友聊天儿",
+      "聊聊天儿",
+      "正在聊天儿"
+    ],
+    "ex_zh": "那去公园走走，聊聊天儿吧。",
+    "ex_py": "Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.",
+    "ex_vn": "Vậy đi công viên dạo chút, tán gẫu đi.",
+    "exList": [
+      {
+        "zh": "那去公园走走，聊聊天儿吧。",
+        "py": "Nà qù gōngyuán zǒuzou, liáoliao tiānr ba.",
+        "vn": "Vậy đi công viên dạo chút, tán gẫu đi."
+      },
+      {
+        "zh": "刚才还在这儿跟我们聊天儿呢。",
+        "py": "Gāngcái hái zài zhèr gēn wǒmen liáotiānr ne.",
+        "vn": "Lúc nãy còn ở đây tán gẫu với chúng tôi mà."
+      },
+      {
+        "zh": "我听不懂汉语，那跟我聊聊天儿吧。",
+        "py": "Wǒ tīng bu dǒng Hànyǔ, nà gēn wǒ liáoliao tiānr ba.",
+        "vn": "Tôi không nghe hiểu tiếng Trung, vậy tán gẫu với tôi đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "聊",
+        "p": "liáo",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "耳 trái → 卯 phải",
+        "rad": "耳 (nhĩ – tai)",
+        "mean": "trò chuyện, tán gẫu",
+        "tip": "耳(tai, lắng nghe) + 卯(âm mão) → dùng TAI lắng nghe nhau trò chuyện thoải mái = TÁN GẪU.",
+        "cf": "柳 (liǔ – \"cây liễu\", có bộ 木\")",
+        "w": "聊天儿 / 聊聊"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn nghe không hiểu tiếng Trung thì cứ tán gẫu với tôi là được.",
+        "answer": "如果你听不懂汉语，就跟我聊聊天儿吧。",
+        "answerPy": "Rúguǒ nǐ tīng bu dǒng Hànyǔ, jiù gēn wǒ liáoliao tiānr ba.",
+        "note": "聊天儿 là từ ly hợp: 聊了半天天儿.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô bé đó vừa thích nói chuyện với bà, vừa thích nghe bà kể chuyện.",
+        "answer": "那个小女孩儿又喜欢跟奶奶聊天儿，又喜欢听奶奶讲故事。",
+        "answerPy": "Nàge xiǎo nǚháir yòu xǐhuan gēn nǎinai liáotiānr, yòu xǐhuan tīng nǎinai jiǎng gùshi.",
+        "note": "讲故事 — 讲 dùng cho việc kể, giảng có nội dung.",
+        "pair": "又……又……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "跟朋友聊天儿",
+        "py": "gēn péngyou liáo tiān ér",
+        "vn": "tán gẫu với bạn"
+      },
+      {
+        "zh": "聊聊天儿",
+        "py": "liáoliáo tiān ér",
+        "vn": "trò chuyện chút"
+      },
+      {
+        "zh": "正在聊天儿",
+        "py": "zhèngzài liáo tiān ér",
+        "vn": "đang nói chuyện"
+      },
+      {
+        "zh": "聊了半天天儿",
+        "py": "liáo le bàn tiāntiān ér",
+        "vn": "nói chuyện cả buổi"
+      },
+      {
+        "zh": "喜欢聊天儿",
+        "py": "xǐhuan liáo tiān ér",
+        "vn": "thích trò chuyện"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 聊天儿",
+        "m": "Trò chuyện với ai"
+      },
+      {
+        "s": "聊 + 了 + thời lượng + 天儿",
+        "m": "聊天儿 là từ ly hợp"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "睡着",
+    "py": "shuìzháo",
+    "pos": "Động từ",
+    "vn": "ngủ được",
+    "hv": "thụy trước",
+    "em": "😴",
+    "lesson": 4,
+    "explain": [
+      "Chìm vào giấc ngủ thành công; thường dùng ở dạng phủ định 睡不着 (không ngủ được)."
+    ],
+    "usage": "Bổ ngữ khả năng: 睡+得/不+着.",
+    "collo": [
+      "睡不着",
+      "睡不着觉",
+      "睡得着"
+    ],
+    "ex_zh": "你不是说晚上睡不着觉吗？",
+    "ex_py": "Nǐ bú shì shuō wǎnshang shuì bu zháo jiào ma?",
+    "ex_vn": "Chẳng phải anh nói buổi tối ngủ không được sao?",
+    "exList": [
+      {
+        "zh": "你不是说晚上睡不着觉吗？",
+        "py": "Nǐ bú shì shuō wǎnshang shuì bu zháo jiào ma?",
+        "vn": "Chẳng phải anh nói buổi tối ngủ không được sao?"
+      },
+      {
+        "zh": "我刚到北京，晚上总是睡不着。",
+        "py": "Wǒ gāng dào Běijīng, wǎnshang zǒngshì shuì bu zháo.",
+        "vn": "Tôi vừa đến Bắc Kinh, buổi tối cứ ngủ không được."
+      },
+      {
+        "zh": "我睡不着的时候喜欢看电视。",
+        "py": "Wǒ shuì bu zháo de shíhou xǐhuan kàn diànshì.",
+        "vn": "Lúc tôi ngủ không được thì thích xem tivi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "着",
+        "p": "zháo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "羊(biến thể) trên → 目 dưới",
+        "rad": "目 (mục – mắt)",
+        "mean": "đạt được, trúng",
+        "tip": "Khi đọc \"zháo\", 着 mang nghĩa ĐẠT ĐƯỢC kết quả mong muốn — 睡着 = đạt được trạng thái NGỦ.",
+        "cf": "着 (zhe – \"đang\", cùng chữ nhưng khác âm và nghĩa\")",
+        "w": "睡着 / 找着 / 着急"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn chẳng phải nói tối qua ngủ không được sao? Vậy hôm nay nghỉ sớm một chút đi.",
+        "answer": "你不是说昨晚睡不着觉吗？那今天就早点儿休息吧。",
+        "answerPy": "Nǐ bú shì shuō zuówǎn shuì bu zháo jiào ma? Nà jīntiān jiù zǎo diǎnr xiūxi ba.",
+        "note": "睡不着 — bổ ngữ khả năng phủ định, khác 不睡觉.",
+        "pair": "既然……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần uống một ly sữa nóng là bạn sẽ ngủ ngon hơn.",
+        "answer": "只要喝杯热牛奶，你就可以睡得更好。",
+        "answerPy": "Zhǐyào hē bēi rè niúnǎi, nǐ jiù kěyǐ shuì de gèng hǎo.",
+        "note": "更 dùng khi so với tình trạng đã có.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "睡不着",
+        "py": "shuì bù zhe",
+        "vn": "không ngủ được"
+      },
+      {
+        "zh": "睡着了",
+        "py": "shuìzháo le",
+        "vn": "ngủ thiếp đi rồi"
+      },
+      {
+        "zh": "睡得着",
+        "py": "shuì de zhe",
+        "vn": "ngủ được"
+      },
+      {
+        "zh": "很快就睡着了",
+        "py": "hěn kuài jiù shuìzháo le",
+        "vn": "nhanh chóng ngủ thiếp"
+      },
+      {
+        "zh": "昨晚睡不着",
+        "py": "zuó wǎn shuì bù zhe",
+        "vn": "tối qua mất ngủ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "睡 + 得 / 不 + 着",
+        "m": "Ngủ được / không ngủ được — bổ ngữ khả năng"
+      },
+      {
+        "s": "睡着 (zháo, ngủ thiếp đi) ≠ 睡觉 (đi ngủ)"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "更",
+    "py": "gèng",
+    "pos": "Phó từ",
+    "vn": "càng, hơn nữa",
+    "hv": "cánh",
+    "em": "📊",
+    "lesson": 4,
+    "explain": [
+      "Diễn tả mức độ tăng thêm so với một mức đã có."
+    ],
+    "usage": "Phó từ, đứng trước tính từ/động từ: 更 + Adj/V (更好, 更喜欢).",
+    "collo": [
+      "更好",
+      "更漂亮",
+      "更喜欢"
+    ],
+    "ex_zh": "你还是喝杯牛奶吧，可以睡得更好些。",
+    "ex_py": "Nǐ háishi hē bēi niúnǎi ba, kěyǐ shuì de gèng hǎo xiē.",
+    "ex_vn": "Anh nên uống ly sữa thì hơn, ngủ sẽ ngon hơn.",
+    "exList": [
+      {
+        "zh": "你还是喝杯牛奶吧，可以睡得更好些。",
+        "py": "Nǐ háishi hē bēi niúnǎi ba, kěyǐ shuì de gèng hǎo xiē.",
+        "vn": "Anh nên uống ly sữa thì hơn, ngủ sẽ ngon hơn."
+      },
+      {
+        "zh": "你女儿越来越漂亮了！现在更漂亮。",
+        "py": "Nǐ nǚ'ér yuè lái yuè piàoliang le! Xiànzài gèng piàoliang.",
+        "vn": "Con gái bạn ngày càng xinh! Bây giờ càng xinh hơn."
+      },
+      {
+        "zh": "为了让自己更健康，他每天都去锻炼。",
+        "py": "Wèile ràng zìjǐ gèng jiànkāng, tā měitiān dōu qù duànliàn.",
+        "vn": "Để bản thân khỏe mạnh hơn, anh ấy mỗi ngày đều đi tập thể dục."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "更",
+        "p": "gèng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "一+日 trên → 乂+丨 dưới",
+        "rad": "曰 (viết)",
+        "mean": "càng, hơn nữa; canh (giờ)",
+        "tip": "Chữ cổ vốn chỉ việc \"thay đổi, tiếp diễn\" (như canh giờ đêm) → mở rộng nghĩa \"tiếp tục tăng thêm\" = CÀNG, HƠN NỮA.",
+        "cf": "硬 (yìng – \"cứng\", có phần giống bên phải\")",
+        "w": "更好 / 更漂亮 / 更喜欢"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn tập thể dục thường xuyên thì sẽ càng khỏe mạnh hơn.",
+        "answer": "如果你常常锻炼，就会更健康。",
+        "answerPy": "Rúguǒ nǐ chángcháng duànliàn, jiù huì gèng jiànkāng.",
+        "note": "如果……就…… diễn tả giả thiết — kết quả (ôn lại 锻炼 vừa học trong bài này).",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay cô ấy mặc chiếc váy đó trông càng xinh hơn hôm qua.",
+        "answer": "她今天穿那条裙子，比昨天更漂亮了。",
+        "answerPy": "Tā jīntiān chuān nà tiáo qúnzi, bǐ zuótiān gèng piàoliang le.",
+        "note": "裙子 là từ bài 5, dùng lượng từ 条.",
+        "pair": "比……更……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "更好",
+        "py": "gèng hǎo",
+        "vn": "tốt hơn"
+      },
+      {
+        "zh": "更漂亮",
+        "py": "gèng piàoliang",
+        "vn": "đẹp hơn"
+      },
+      {
+        "zh": "更喜欢",
+        "py": "gèng xǐhuan",
+        "vn": "thích hơn"
+      },
+      {
+        "zh": "更重要",
+        "py": "gèng zhòngyào",
+        "vn": "quan trọng hơn"
+      },
+      {
+        "zh": "比以前更好",
+        "py": "bǐ yǐqián gèng hǎo",
+        "vn": "tốt hơn trước"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "更 + Adj",
+        "m": "Càng, hơn — dùng khi so với cái đã nói"
+      },
+      {
+        "s": "更 (hơn cái đã có) ≠ 最 (nhất)"
+      }
+    ]
+  }
 ];
 
 const wuData = [

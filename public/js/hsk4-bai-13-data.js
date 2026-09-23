@@ -3,718 +3,3490 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'京剧',py:'jīngjù',pos:'Danh từ',vn:'Kinh kịch', hv: 'kinh kịch',em:'🎭',lesson:1,
-   explain:['Loại hình sân khấu truyền thống nổi tiếng của Trung Quốc, kết hợp hát, nói, diễn, võ.'],
-   usage:'唱京剧, 看京剧, 京剧演员.',
-   collo:['京剧唱得真专业','听京剧','京剧演员'],
-   ex_zh:'小夏，你爷爷京剧唱得真专业，我还以为他是京剧演员呢。',ex_py:'Xiǎo Xià, nǐ yéye jīngjù chàng de zhēn zhuānyè, wǒ hái yǐwéi tā shì jīngjù yǎnyuán ne.',ex_vn:'Tiểu Hạ, ông bạn hát Kinh kịch chuyên nghiệp thật, tôi còn tưởng ông là diễn viên Kinh kịch.',
-   exList:[
-     {zh:'小夏，你爷爷京剧唱得真专业，我还以为他是京剧演员呢。',py:'Xiǎo Xià, nǐ yéye jīngjù chàng de zhēn zhuānyè, wǒ hái yǐwéi tā shì jīngjù yǎnyuán ne.',vn:'Tiểu Hạ, ông bạn hát Kinh kịch chuyên nghiệp thật, tôi còn tưởng ông là diễn viên Kinh kịch.'},
-     {zh:'真没想到你一个来自美国的外国留学生，能把京剧唱得这么好。',py:'Zhēn méi xiǎngdào nǐ yí ge láizì Měiguó de wàiguó liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.',vn:'Thật không ngờ một du học sinh đến từ Mỹ như bạn, lại hát Kinh kịch hay như vậy.'},
-     {zh:'随着社会的发展，京剧也在改变，以适应不同年龄观众的需要。',py:'Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn, yǐ shìyìng bù tóng niánlíng guānzhòng de xūyào.',vn:'Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi để thích ứng nhu cầu khán giả ở các độ tuổi khác nhau.'},
-   ],
-   hanzi:[
-     {c:'剧',p:'jù',type:'左右结构 · Trái-phải (giản thể)',st:10,ord:'居 trái → 刂 phải',rad:'刂 (đao)',mean:'kịch',
-      tip:'Bộ đao 刂 + 居(biểu âm) → nghĩa gốc là DỮ DỘI, sau chỉ KỊCH (diễn mạnh mẽ), kết hợp 京(Bắc Kinh) thành 京剧 = KINH KỊCH.',
-      cf:'据 (jù – "căn cứ", bộ 扌)',w:'京剧 / 电视剧 / 剧场'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ông bạn hát Kinh kịch chuyên nghiệp thật, tôi còn tưởng ông là diễn viên Kinh kịch.',answer:'你爷爷京剧唱得真专业，我还以为他是京剧演员呢。',answerPy:'Nǐ yéye jīngjù chàng de zhēn zhuānyè, wǒ hái yǐwéi tā shì jīngjù yǎnyuán ne.',
-      note:'以为 ôn lại ngữ pháp Bài 4.'},
-     {promptLang:'vi',prompt:'Bạn giỏi thật! Ngay cả Kinh kịch mà nhiều người Trung Quốc nghe không hiểu bạn cũng học được.',answer:'你真厉害！竟然连很多中国人都听不懂的京剧也能学会。',answerPy:'Nǐ zhēn lìhai! Jìngrán lián hěn duō Zhōngguó rén dōu tīngbudǒng de jīngjù yě néng xuéhuì.',
-      note:'竟然 (Bài 6) + 连……也 (Bài 11) + 厉害 (Bài 11).'},
-   ]},
-
-  {n:2,zh:'演员',py:'yǎnyuán',pos:'Danh từ',vn:'diễn viên', hv: 'diễn viên',em:'🎬',lesson:1,
-   explain:['Người biểu diễn trong phim, kịch, sân khấu.'],
-   usage:'京剧演员, 专业的演员, 当演员.',
-   collo:['京剧演员','专业的演员','有名的演员'],
-   ex_zh:'对啊，他本来就是京剧演员，年轻时在我们那儿很有名。',ex_py:'Duì a, tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí zài wǒmen nàr hěn yǒumíng.',ex_vn:'Đúng vậy, ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng ở chỗ chúng tôi.',
-   exList:[
-     {zh:'对啊，他本来就是京剧演员，年轻时在我们那儿很有名。',py:'Duì a, tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí zài wǒmen nàr hěn yǒumíng.',vn:'Đúng vậy, ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng ở chỗ chúng tôi.'},
-     {zh:'他们很喜欢唱京剧，虽然不是专业的演员，不过，他们唱得不错。',py:'Tāmen hěn xǐhuan chàng jīngjù, suīrán bú shì zhuānyè de yǎnyuán, búguò, tāmen chàng de búcuò.',vn:'Họ rất thích hát Kinh kịch, tuy không phải diễn viên chuyên nghiệp, nhưng họ hát khá hay.'},
-     {zh:'这位演员的表演非常精彩，观众都站起来鼓掌。',py:'Zhè wèi yǎnyuán de biǎoyǎn fēicháng jīngcǎi, guānzhòng dōu zhàn qilai gǔzhǎng.',vn:'Màn biểu diễn của diễn viên này rất đặc sắc, khán giả đều đứng dậy vỗ tay.'},
-   ],
-   hanzi:[
-     {c:'演',p:'yǎn',type:'左右结构 · Trái-phải',st:14,ord:'氵 (thủy) trái → 寅 phải',rad:'氵 (thủy)',mean:'diễn',
-      tip:'Bộ nước 氵 (chảy dài, triển khai) + 寅 → TRIỂN KHAI, DIỄN, kết hợp 员(người) thành 演员 = DIỄN VIÊN.',
-      cf:'寅 (yín – chi Dần)',w:'演员 / 演出 / 表演'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng, được khán giả vô cùng yêu thích.',answer:'他本来就是京剧演员，年轻时很有名，深受观众的喜爱。',answerPy:'Tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí hěn yǒumíng, shēn shòu guānzhòng de xǐ\'ài.',
-      note:'本来 ôn lại ngữ pháp Bài 3.'},
-     {promptLang:'vi',prompt:'Tuy không phải diễn viên chuyên nghiệp, nhưng họ hát khá hay, nghe rất có hồn.',answer:'虽然不是专业的演员，不过他们唱得不错，听起来很有味道。',answerPy:'Suīrán bú shì zhuānyè de yǎnyuán, búguò tāmen chàng de búcuò, tīng qilai hěn yǒu wèidào.',
-      note:'不过 ôn lại ngữ pháp Bài 10.'},
-   ]},
-
-  {n:3,zh:'观众',py:'guānzhòng',pos:'Danh từ',vn:'khán giả', hv: 'quan chúng',em:'👥',lesson:1,
-   explain:['Người xem biểu diễn, phim, thi đấu.'],
-   usage:'深受观众的喜爱, 吸引观众, 不同年龄的观众.',
-   collo:['深受观众们的喜爱','吸引了不少观众','不同年龄的观众'],
-   ex_zh:'年轻时在我们那儿很有名，深受观众们的喜爱。',ex_py:'Niánqīng shí zài wǒmen nàr hěn yǒumíng, shēn shòu guānzhòngmen de xǐ\'ài.',ex_vn:'Thời trẻ rất nổi tiếng ở chỗ chúng tôi, được khán giả vô cùng yêu thích.',
-   exList:[
-     {zh:'年轻时在我们那儿很有名，深受观众们的喜爱。',py:'Niánqīng shí zài wǒmen nàr hěn yǒumíng, shēn shòu guānzhòngmen de xǐ\'ài.',vn:'Thời trẻ rất nổi tiếng ở chỗ chúng tôi, được khán giả vô cùng yêu thích.'},
-     {zh:'这次演出举办得非常成功，吸引了不少当地的观众。',py:'Zhè cì yǎnchū jǔbàn de fēicháng chénggōng, xīyǐnle bùshǎo dāngdì de guānzhòng.',vn:'Buổi biểu diễn lần này tổ chức rất thành công, thu hút không ít khán giả địa phương.'},
-     {zh:'随着社会的发展，京剧也在改变，以适应不同年龄观众的需要。',py:'Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn, yǐ shìyìng bù tóng niánlíng guānzhòng de xūyào.',vn:'Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi để thích ứng nhu cầu khán giả các độ tuổi.'},
-   ],
-   hanzi:[
-     {c:'众',p:'zhòng',type:'品字结构 · Ba chữ 人',st:6,ord:'人 trên → 人人 dưới',rad:'人 (nhân)',mean:'đông người',
-      tip:'Chữ hội ý ba người 人 → ĐÔNG NGƯỜI, kết hợp 观(xem) thành 观众 = KHÁN GIẢ.',
-      cf:'从 (cóng – hai chữ 人)',w:'观众 / 大众 / 群众'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Buổi biểu diễn lần này tổ chức rất thành công, thu hút không ít khán giả địa phương.',answer:'这次演出举办得非常成功，吸引了不少当地的观众。',answerPy:'Zhè cì yǎnchū jǔbàn de fēicháng chénggōng, xīyǐnle bùshǎo dāngdì de guānzhòng.',
-      note:'练习2 SGK (2); 吸引 ôn lại Bài 6.'},
-     {promptLang:'vi',prompt:'Kinh kịch cũng đang thay đổi để thích ứng nhu cầu của khán giả ở các độ tuổi khác nhau.',answer:'京剧也在改变，以适应不同年龄观众的需要。',answerPy:'Jīngjù yě zài gǎibiàn, yǐ shìyìng bù tóng niánlíng guānzhòng de xūyào.',
-      note:'适应 ôn lại từ vựng Bài 8.'},
-   ]},
-
-  {n:4,zh:'厚',py:'hòu',pos:'Tính từ',vn:'dày; sâu nặng (tình cảm)', hv: 'hậu',em:'📚',lesson:1,
-   explain:['1. Dày (đối lập 薄).','2. Sâu đậm (tình cảm): 深厚的感情.'],
-   usage:'这本书很厚; 深厚的感情; 厚厚的.',
-   collo:['很深厚的感情','这本小说这么厚','厚衣服'],
-   ex_zh:'你爷爷一定对京剧有着很深厚的感情。',ex_py:'Nǐ yéye yídìng duì jīngjù yǒuzhe hěn shēnhòu de gǎnqíng.',ex_vn:'Ông bạn chắc chắn có tình cảm rất sâu đậm với Kinh kịch.',
-   exList:[
-     {zh:'你爷爷一定对京剧有着很深厚的感情。',py:'Nǐ yéye yídìng duì jīngjù yǒuzhe hěn shēnhòu de gǎnqíng.',vn:'Ông bạn chắc chắn có tình cảm rất sâu đậm với Kinh kịch.'},
-     {zh:'这本小说这么厚，什么时候才能看完啊？',py:'Zhè běn xiǎoshuō zhème hòu, shénme shíhou cái néng kànwán a?',vn:'Quyển tiểu thuyết này dày thế, bao giờ mới đọc xong đây?'},
-     {zh:'天冷了，出门要穿厚一点儿的衣服。',py:'Tiān lěng le, chūmén yào chuān hòu yìdiǎnr de yīfu.',vn:'Trời lạnh rồi, ra ngoài phải mặc áo dày một chút.'},
-   ],
-   hanzi:[
-     {c:'厚',p:'hòu',type:'半包围结构 · Bán bao vây',st:9,ord:'厂 bao → 日+子 trong',rad:'厂 (hán – vách núi)',mean:'dày',
-      tip:'Vách núi 厂 chồng nhiều lớp đất → DÀY, mở rộng thành SÂU NẶNG (tình cảm).',
-      cf:'原 (yuán – "nguyên", cũng bộ 厂)',w:'厚 / 深厚 / 厚道'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Quyển tiểu thuyết này dày thế, bao giờ mới đọc xong đây? — Mỗi tối đọc mười mấy trang, khoảng một tháng là đọc xong.',answer:'这本小说这么厚，什么时候才能看完啊？——每天晚上看十几页，差不多一个月就可以看完。',answerPy:'Zhè běn xiǎoshuō zhème hòu, shénme shíhou cái néng kànwán a? — Měi tiān wǎnshang kàn shí jǐ yè, chàbuduō yí ge yuè jiù kěyǐ kànwán.',
-      note:'练习2 SGK (6); 页 (Bài 11) + 差不多 (Bài 2).'},
-     {promptLang:'vi',prompt:'Ông chắc chắn có tình cảm rất sâu đậm với Kinh kịch, vì ông đã hát hơn 60 năm.',answer:'他一定对京剧有着很深厚的感情，因为他已经唱了60多年了。',answerPy:'Tā yídìng duì jīngjù yǒuzhe hěn shēnhòu de gǎnqíng, yīnwèi tā yǐjīng chàngle liùshí duō nián le.',
-      note:'有着 — 着 chỉ trạng thái kéo dài.'},
-   ]},
-
-  {n:5,zh:'演出',py:'yǎnchū',pos:'Động từ/Danh từ',vn:'biểu diễn; buổi biểu diễn', hv: 'diễn xuất',em:'🎪',lesson:1,
-   explain:['Biểu diễn trước khán giả; hoặc buổi biểu diễn.'],
-   usage:'上台演出; 看他的演出; 演出很成功.',
-   collo:['上台演出','看他的演出','这次演出举办得很成功'],
-   ex_zh:'他8岁就开始上台演出，到现在大概唱了60多年了。',ex_py:'Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.',ex_vn:'Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.',
-   exList:[
-     {zh:'他8岁就开始上台演出，到现在大概唱了60多年了。',py:'Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.',vn:'Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.'},
-     {zh:'我小时候经常去看他的演出。',py:'Wǒ xiǎoshíhou jīngcháng qù kàn tā de yǎnchū.',vn:'Hồi nhỏ tôi thường đi xem ông biểu diễn.'},
-     {zh:'这次演出举办得非常成功，吸引了不少当地的观众。',py:'Zhè cì yǎnchū jǔbàn de fēicháng chénggōng, xīyǐnle bùshǎo dāngdì de guānzhòng.',vn:'Buổi biểu diễn lần này tổ chức rất thành công, thu hút không ít khán giả địa phương.'},
-   ],
-   hanzi:[
-     {c:'出',p:'chū',type:'独体字 · Chữ đơn',st:5,ord:'凵 → 凵 chồng',rad:'凵 (khảm)',mean:'ra',
-      tip:'Chữ tượng hình bàn chân bước RA khỏi hang → RA, kết hợp 演 thành 演出 = DIỄN RA trước khán giả.',
-      cf:'山 (shān – "núi", tự dạng gần giống)',w:'演出 / 出来 / 出发'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.',answer:'他8岁就开始上台演出，到现在大概唱了60多年了。',answerPy:'Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.',
-      note:'大概 — ngữ pháp của bài; 就 chỉ sớm.'},
-     {promptLang:'vi',prompt:'Hồi nhỏ tôi thường đi xem ông biểu diễn, ông còn kể cho tôi nhiều câu chuyện lịch sử.',answer:'我小时候经常去看他的演出，他还给我讲很多历史故事。',answerPy:'Wǒ xiǎoshíhou jīngcháng qù kàn tā de yǎnchū, tā hái gěi wǒ jiǎng hěn duō lìshǐ gùshi.',
-      note:'给……讲 — kể cho ai.'},
-   ]},
-
-  {n:6,zh:'大概',py:'dàgài',pos:'Phó từ/Tính từ',vn:'khoảng chừng, có lẽ; đại khái', hv: 'đại khái',em:'🤔',lesson:1,
-   explain:['1. (Phó từ) Ước lượng gần đúng về số lượng/thời gian; hoặc suy đoán tình huống với khả năng cao.','2. (Tính từ) Không chính xác lắm, chung chung: 大概的想法/内容.'],
-   usage:'大概 + số lượng; 大概 + mệnh đề; 大概的 + danh từ.',
-   collo:['大概唱了60多年','大概会同意','大概的想法'],
-   ex_zh:'他8岁就开始上台演出，到现在大概唱了60多年了。',ex_py:'Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.',ex_vn:'Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.',
-   exList:[
-     {zh:'他8岁就开始上台演出，到现在大概唱了60多年了。',py:'Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.',vn:'Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.'},
-     {zh:'你的这个关于举办传统文化节活动的计划，我想校长大概会同意。',py:'Nǐ de zhège guānyú jǔbàn chuántǒng wénhuà jié huódòng de jìhuà, wǒ xiǎng xiàozhǎng dàgài huì tóngyì.',vn:'Kế hoạch tổ chức lễ hội văn hóa truyền thống này của bạn, tôi nghĩ hiệu trưởng có lẽ sẽ đồng ý.'},
-     {zh:'不管做什么事情，最好提前做计划，不用安排得特别详细，但必须有一个大概的想法。',py:'Bùguǎn zuò shénme shìqing, zuìhǎo tíqián zuò jìhuà, bú yòng ānpái de tèbié xiángxì, dàn bìxū yǒu yí ge dàgài de xiǎngfǎ.',vn:'Bất kể làm việc gì, tốt nhất lập kế hoạch trước, không cần sắp xếp quá chi tiết, nhưng phải có một ý tưởng đại khái.'},
-   ],
-   hanzi:[
-     {c:'概',p:'gài',type:'左右结构 · Trái-phải',st:13,ord:'木 (mộc) trái → 既 phải',rad:'木 (mộc)',mean:'gạt bằng, đại khái',
-      tip:'Nghĩa gốc là thanh gỗ 木 GẠT BẰNG miệng đấu → mở rộng thành ĐẠI KHÁI, KHÁI QUÁT.',
-      cf:'既 (jì – "đã", phần bên phải)',w:'大概 / 概念 / 大概的'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Kế hoạch tổ chức lễ hội văn hóa này, tôi nghĩ hiệu trưởng có lẽ sẽ đồng ý.',answer:'这个举办文化节活动的计划，我想校长大概会同意。',answerPy:'Zhège jǔbàn wénhuà jié huódòng de jìhuà, wǒ xiǎng xiàozhǎng dàgài huì tóngyì.',
-      note:'大概 phỏng đoán (khả năng cao) — ngữ pháp của bài.'},
-     {promptLang:'vi',prompt:'Không cần sắp xếp quá chi tiết, nhưng phải có một ý tưởng đại khái.',answer:'不用安排得特别详细，但必须有一个大概的想法。',answerPy:'Bú yòng ānpái de tèbié xiángxì, dàn bìxū yǒu yí ge dàgài de xiǎngfǎ.',
-      note:'大概的 (tính từ) + 详细 (Bài 12).'},
-   ]},
-
-  {n:7,zh:'来自',py:'láizì',pos:'Động từ',vn:'đến từ', hv: 'lai tự',em:'🌍',lesson:2,
-   explain:['Xuất phát từ (nơi chốn, nguồn gốc).'],
-   usage:'来自 + nơi: 来自美国, 来自不同的国家.',
-   collo:['来自美国的留学生','来自不同的国家','来自生活'],
-   ex_zh:'真没想到你一个来自美国的外国留学生，能把京剧唱得这么好。',ex_py:'Zhēn méi xiǎngdào nǐ yí ge láizì Měiguó de wàiguó liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.',ex_vn:'Thật không ngờ một du học sinh đến từ Mỹ như bạn, lại hát Kinh kịch hay như vậy.',
-   exList:[
-     {zh:'真没想到你一个来自美国的外国留学生，能把京剧唱得这么好。',py:'Zhēn méi xiǎngdào nǐ yí ge láizì Měiguó de wàiguó liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.',vn:'Thật không ngờ một du học sinh đến từ Mỹ như bạn, lại hát Kinh kịch hay như vậy.'},
-     {zh:'我们班的同学来自十几个不同的国家。',py:'Wǒmen bān de tóngxué láizì shí jǐ ge bù tóng de guójiā.',vn:'Các bạn lớp tôi đến từ hơn mười quốc gia khác nhau.'},
-     {zh:'很多问题的答案都来自生活。',py:'Hěn duō wèntí de dá\'àn dōu láizì shēnghuó.',vn:'Đáp án của nhiều vấn đề đều đến từ cuộc sống.'},
-   ],
-   hanzi:[
-     {c:'自',p:'zì',type:'独体字 · Chữ đơn',st:6,ord:'丿 → 目',rad:'自 (tự)',mean:'tự, từ',
-      tip:'Chữ tượng hình cái MŨI (chỉ vào mình) → TỰ, mở rộng thành TỪ (nguồn gốc), kết hợp 来 thành 来自 = ĐẾN TỪ.',
-      cf:'目 (mù – "mắt", thiếu nét phẩy trên)',w:'来自 / 自己 / 自然'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thật không ngờ một du học sinh đến từ Mỹ, lại hát Kinh kịch hay như vậy.',answer:'真没想到一个来自美国的留学生，能把京剧唱得这么好。',answerPy:'Zhēn méi xiǎngdào yí ge láizì Měiguó de liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.',
-      note:'Câu chữ 把 + bổ ngữ trạng thái.'},
-     {promptLang:'vi',prompt:'Lễ hội văn hóa giúp học sinh đến từ các nước hiểu Trung Quốc hơn.',answer:'文化节活动能让来自各国的学生更好地了解中国。',answerPy:'Wénhuà jié huódòng néng ràng láizì gè guó de xuésheng gèng hǎo de liǎojiě Zhōngguó.',
-      note:'让 ôn lại Bài 8.'},
-   ]},
-
-  {n:8,zh:'遍',py:'biàn',pos:'Lượng từ',vn:'lần, lượt (từ đầu đến cuối)', hv: 'biến',em:'🔁',lesson:2,
-   explain:['Lượng từ động lượng, chỉ một hành động trọn vẹn từ đầu đến cuối.'],
-   usage:'V + 一遍/几遍: 练习一遍, 检查一遍, 一遍一遍地.',
-   collo:['一遍一遍地练习','再检查一遍','看了好几遍'],
-   ex_zh:'我常常跟着电视学唱京剧，然后一遍一遍地练习。',ex_py:'Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí.',ex_vn:'Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại từng lượt.',
-   exList:[
-     {zh:'我常常跟着电视学唱京剧，然后一遍一遍地练习。',py:'Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí.',vn:'Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại từng lượt.'},
-     {zh:'材料整理好了没？——差不多了，我再检查一遍就给您送过去。',py:'Cáiliào zhěnglǐ hǎo le méi? — Chàbuduō le, wǒ zài jiǎnchá yí biàn jiù gěi nín sòng guòqu.',vn:'Tài liệu sắp xếp xong chưa? — Gần xong rồi, tôi kiểm tra lại một lượt nữa rồi gửi cho ngài.'},
-     {zh:'这篇文章我看了好几遍才看懂。',py:'Zhè piān wénzhāng wǒ kànle hǎojǐ biàn cái kàndǒng.',vn:'Bài văn này tôi đọc mấy lượt mới hiểu.'},
-   ],
-   hanzi:[
-     {c:'遍',p:'biàn',type:'半包围结构 · Bán bao vây',st:12,ord:'扁 trong → 辶 bao',rad:'辶 (sước – đi)',mean:'khắp, lượt',
-      tip:'Bộ đi 辶 + 扁 → ĐI KHẮP từ đầu đến cuối → LƯỢT (trọn vẹn).',
-      cf:'篇 (piān – "bài", bộ 竹)',w:'遍 / 一遍 / 普遍'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tài liệu gần xong rồi, tôi kiểm tra lại một lượt nữa rồi gửi cho ngài.',answer:'材料差不多了，我再检查一遍就给您送过去。',answerPy:'Cáiliào chàbuduō le, wǒ zài jiǎnchá yí biàn jiù gěi nín sòng guòqu.',
-      note:'练习2 SGK (8); 材料 (Bài 4).'},
-     {promptLang:'vi',prompt:'Tôi thường học hát theo TV, rồi luyện đi luyện lại từng lượt, thỉnh thoảng hát vài câu với người Trung Quốc.',answer:'我常常跟着电视学唱，然后一遍一遍地练习，偶尔跟中国人一起唱上几句。',answerPy:'Wǒ chángcháng gēnzhe diànshì xué chàng, ránhòu yí biàn yí biàn de liànxí, ǒu\'ěr gēn Zhōngguó rén yìqǐ chàngshang jǐ jù.',
-      note:'偶尔 — ngữ pháp của bài.'},
-   ]},
-
-  {n:9,zh:'偶尔',py:'ǒu\'ěr',pos:'Phó từ',vn:'thỉnh thoảng', hv: 'ngẫu nhĩ',em:'🕰️',lesson:2,
-   explain:['Tình huống xảy ra với tần suất rất thấp.'],
-   usage:'偶尔 + động từ: 偶尔跟……一起, 偶尔加班.',
-   collo:['偶尔跟中国人一起唱','偶尔加班','偶尔也会出现'],
-   ex_zh:'我常常跟着电视学唱京剧，然后一遍一遍地练习，偶尔跟中国人一起唱上几句。',ex_py:'Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí, ǒu\'ěr gēn Zhōngguó rén yìqǐ chàngshang jǐ jù.',ex_vn:'Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại, thỉnh thoảng hát vài câu với người Trung Quốc.',
-   exList:[
-     {zh:'我常常跟着电视学唱京剧，然后一遍一遍地练习，偶尔跟中国人一起唱上几句。',py:'Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí, ǒu\'ěr gēn Zhōngguó rén yìqǐ chàngshang jǐ jù.',vn:'Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại, thỉnh thoảng hát vài câu với người Trung Quốc.'},
-     {zh:'我们调查的近7000名上班族中，有64%的人经常加班，28%偶尔加班。',py:'Wǒmen diàochá de jìn qīqiān míng shàngbānzú zhōng, yǒu bǎifēnzhī liùshísì de rén jīngcháng jiābān, bǎifēnzhī èrshíbā ǒu\'ěr jiābān.',vn:'Trong gần 7000 người đi làm được khảo sát, 64% thường xuyên tăng ca, 28% thỉnh thoảng tăng ca.'},
-     {zh:'三叶草的叶子一般为三个，但偶尔也会出现四个叶子的。',py:'Sānyècǎo de yèzi yìbān wéi sān ge, dàn ǒu\'ěr yě huì chūxiàn sì ge yèzi de.',vn:'Cỏ ba lá thường có ba lá, nhưng thỉnh thoảng cũng xuất hiện loại bốn lá.'},
-   ],
-   hanzi:[
-     {c:'偶',p:'ǒu',type:'左右结构 · Trái-phải',st:11,ord:'亻 (nhân) trái → 禺 phải',rad:'亻 (nhân)',mean:'ngẫu nhiên, tượng gỗ',
-      tip:'Bộ người 亻 + 禺 → nghĩa gốc là TƯỢNG NGƯỜI, mượn nghĩa NGẪU NHIÊN, kết hợp 尔 thành 偶尔 = THỈNH THOẢNG.',
-      cf:'遇 (yù – "gặp", bộ 辶)',w:'偶尔 / 偶然 / 偶像'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Để giảm cân, tôi hầu như tối nào cũng kiên trì chạy bộ, thỉnh thoảng mới nghỉ một buổi.',answer:'为了减肥，我几乎每天晚上都坚持跑步，偶尔才休息一次。',answerPy:'Wèile jiǎnféi, wǒ jīhū měi tiān wǎnshang dōu jiānchí pǎobù, ǒu\'ěr cái xiūxi yí cì.',
-      note:'Bài luyện tập SGK (1); 几乎 (Bài 2) + 坚持 (Bài 9).'},
-     {promptLang:'vi',prompt:'Cô ấy và chồng rất ít ăn ở nhà, cuối tuần đi nhà hàng, thỉnh thoảng mới tự nấu.',answer:'她和丈夫很少在家吃饭，周末去饭馆儿吃，偶尔才自己做饭。',answerPy:'Tā hé zhàngfu hěn shǎo zài jiā chī fàn, zhōumò qù fànguǎnr chī, ǒu\'ěr cái zìjǐ zuò fàn.',
-      note:'Bài luyện tập SGK (3).'},
-   ]},
-
-  {n:10,zh:'吃惊',py:'chī jīng',pos:'Động từ',vn:'kinh ngạc', hv: 'ngật kinh',em:'😲',lesson:2,
-   explain:['Ngạc nhiên, giật mình vì điều bất ngờ (động từ li hợp).'],
-   usage:'别吃惊; 大吃一惊; 让人吃惊.',
-   collo:['别吃惊','大吃一惊','让人吃惊的消息'],
-   ex_zh:'别吃惊，因为我以前学习过音乐，有一些音乐基础。',ex_py:'Bié chī jīng, yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ.',ex_vn:'Đừng ngạc nhiên, vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc.',
-   exList:[
-     {zh:'别吃惊，因为我以前学习过音乐，有一些音乐基础。',py:'Bié chī jīng, yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ.',vn:'Đừng ngạc nhiên, vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc.'},
-     {zh:'听到这个消息，大家都大吃一惊。',py:'Tīngdào zhège xiāoxi, dàjiā dōu dà chī yì jīng.',vn:'Nghe tin này, mọi người đều vô cùng kinh ngạc.'},
-     {zh:'他竟然会唱京剧，真让人吃惊。',py:'Tā jìngrán huì chàng jīngjù, zhēn ràng rén chī jīng.',vn:'Anh ấy lại biết hát Kinh kịch, thật khiến người ta kinh ngạc.'},
-   ],
-   hanzi:[
-     {c:'惊',p:'jīng',type:'左右结构 · Trái-phải (giản thể)',st:11,ord:'忄 (tâm) trái → 京 phải',rad:'忄 (tâm)',mean:'kinh sợ',
-      tip:'Bộ tim 忄 + 京(biểu âm) → tim GIẬT MÌNH, kết hợp 吃 thành 吃惊 = KINH NGẠC.',
-      cf:'京 (jīng – "kinh đô", phần bên phải)',w:'吃惊 / 惊喜 / 吃了一惊'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh ấy lại biết hát Kinh kịch, thật khiến người ta kinh ngạc.',answer:'他竟然会唱京剧，真让人吃惊。',answerPy:'Tā jìngrán huì chàng jīngjù, zhēn ràng rén chī jīng.',
-      note:'竟然 (Bài 6) + 让 (Bài 8).'},
-     {promptLang:'vi',prompt:'Đừng ngạc nhiên, vì trước đây tôi từng học âm nhạc, có chút nền tảng.',answer:'别吃惊，因为我以前学习过音乐，有一些基础。',answerPy:'Bié chī jīng, yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē jīchǔ.',
-      note:'基础 — từ mới của bài; 过 chỉ kinh nghiệm.'},
-   ]},
-
-  {n:11,zh:'基础',py:'jīchǔ',pos:'Danh từ',vn:'nền tảng, căn bản', hv: 'cơ sở',em:'🧱',lesson:2,
-   explain:['Cái gốc, phần cơ sở để phát triển lên.'],
-   usage:'有……基础; 打好基础; 基础知识.',
-   collo:['有一些音乐基础','打好基础','基础知识'],
-   ex_zh:'因为我以前学习过音乐，有一些音乐基础，又对京剧这种表演艺术非常感兴趣。',ex_py:'Yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ, yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù.',ex_vn:'Vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc, lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch.',
-   exList:[
-     {zh:'因为我以前学习过音乐，有一些音乐基础，又对京剧这种表演艺术非常感兴趣。',py:'Yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ, yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù.',vn:'Vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc, lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch.'},
-     {zh:'你学得可真快！——我小时候学过两年的舞，有点儿基础。',py:'Nǐ xué de kě zhēn kuài! — Wǒ xiǎoshíhou xuéguo liǎng nián de wǔ, yǒudiǎnr jīchǔ.',vn:'Bạn học nhanh thật! — Hồi nhỏ tôi học hai năm múa, có chút nền tảng.'},
-     {zh:'学语言首先要打好语法和词汇的基础。',py:'Xué yǔyán shǒuxiān yào dǎhǎo yǔfǎ hé cíhuì de jīchǔ.',vn:'Học ngôn ngữ trước tiên phải xây nền tảng ngữ pháp và từ vựng cho tốt.'},
-   ],
-   hanzi:[
-     {c:'础',p:'chǔ',type:'左右结构 · Trái-phải (giản thể)',st:10,ord:'石 (thạch) trái → 出 phải',rad:'石 (thạch – đá)',mean:'đá tảng kê cột',
-      tip:'Bộ đá 石 + 出 → ĐÁ TẢNG kê chân cột, kết hợp 基(nền) thành 基础 = NỀN TẢNG.',
-      cf:'出 (chū – "ra", phần bên phải)',w:'基础 / 基本 / 基础知识'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn học nhanh thật! — Hồi nhỏ tôi học hai năm múa, có chút nền tảng.',answer:'你学得可真快！——我小时候学过两年的舞，有点儿基础。',answerPy:'Nǐ xué de kě zhēn kuài! — Wǒ xiǎoshíhou xuéguo liǎng nián de wǔ, yǒudiǎnr jīchǔ.',
-      note:'练习2 SGK (7).'},
-     {promptLang:'vi',prompt:'Học ngôn ngữ trước tiên phải xây nền tảng ngữ pháp cho tốt, nếu không càng học càng khó.',answer:'学语言首先要打好语法的基础，否则越学越难。',answerPy:'Xué yǔyán shǒuxiān yào dǎhǎo yǔfǎ de jīchǔ, fǒuzé yuè xué yuè nán.',
-      note:'首先 (Bài 3) + 否则 (Bài 11) + 语法 (Bài 11).'},
-   ]},
-
-  {n:12,zh:'表演',py:'biǎoyǎn',pos:'Động từ/Danh từ',vn:'biểu diễn, trình diễn', hv: 'biểu diễn',em:'🎤',lesson:2,
-   explain:['Diễn (kịch, múa, võ…) trước người xem; hoặc màn trình diễn.'],
-   usage:'表演艺术; 表演中国功夫; 精彩的表演.',
-   collo:['京剧这种表演艺术','表演的中国功夫','精彩的表演'],
-   ex_zh:'又对京剧这种表演艺术非常感兴趣，所以能比较容易地学会它的唱法。',ex_py:'Yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù, suǒyǐ néng bǐjiào róngyì de xuéhuì tā de chàngfǎ.',ex_vn:'Lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch, nên có thể học cách hát khá dễ dàng.',
-   exList:[
-     {zh:'又对京剧这种表演艺术非常感兴趣，所以能比较容易地学会它的唱法。',py:'Yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù, suǒyǐ néng bǐjiào róngyì de xuéhuì tā de chàngfǎ.',vn:'Lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch, nên có thể học cách hát khá dễ dàng.'},
-     {zh:'今天的晚会太精彩了，特别是那些外国留学生表演的中国功夫，动作既标准又好看，非常棒。',py:'Jīntiān de wǎnhuì tài jīngcǎi le, tèbié shì nàxiē wàiguó liúxuéshēng biǎoyǎn de Zhōngguó gōngfu, dòngzuò jì biāozhǔn yòu hǎokàn, fēicháng bàng.',vn:'Dạ hội hôm nay quá đặc sắc, đặc biệt là màn Kung Fu Trung Quốc do các du học sinh nước ngoài biểu diễn, động tác vừa chuẩn vừa đẹp, rất tuyệt.'},
-     {zh:'孩子们的表演虽然不专业，但是很可爱。',py:'Háizimen de biǎoyǎn suīrán bù zhuānyè, dànshì hěn kě\'ài.',vn:'Màn biểu diễn của các bé tuy không chuyên nghiệp, nhưng rất đáng yêu.'},
-   ],
-   hanzi:[
-     {c:'表',p:'biǎo',type:'上下结构 · Trên-dưới',st:8,ord:'龶 trên → 𧘇 dưới',rad:'衣 (y – áo)',mean:'bề ngoài, biểu lộ',
-      tip:'Nghĩa gốc là áo mặc bên NGOÀI → BIỂU LỘ ra ngoài, kết hợp 演 thành 表演 = BIỂU DIỄN (ôn lại 表示 Bài 11).',
-      cf:'同字词: 表示 / 表演 / 手表',w:'表演 / 表示 / 表格'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đặc biệt là màn Kung Fu Trung Quốc do các du học sinh biểu diễn, động tác vừa chuẩn vừa đẹp.',answer:'特别是那些外国留学生表演的中国功夫，动作既标准又好看。',answerPy:'Tèbié shì nàxiē wàiguó liúxuéshēng biǎoyǎn de Zhōngguó gōngfu, dòngzuò jì biāozhǔn yòu hǎokàn.',
-      note:'练习2 SGK (1); 既……又 ôn lại Bài 7.'},
-     {promptLang:'vi',prompt:'Tôi rất hứng thú với nghệ thuật biểu diễn Kinh kịch, nên học cách hát khá dễ.',answer:'我对京剧这种表演艺术很感兴趣，所以比较容易学会它的唱法。',answerPy:'Wǒ duì jīngjù zhè zhǒng biǎoyǎn yìshù hěn gǎn xìngqù, suǒyǐ bǐjiào róngyì xuéhuì tā de chàngfǎ.',
-      note:'对……感兴趣 — ôn lại.'},
-   ]},
-
-  {n:13,zh:'正常',py:'zhèngcháng',pos:'Tính từ',vn:'bình thường, thông thường', hv: 'chính thường',em:'✅',lesson:3,
-   explain:['Phù hợp với quy luật/tình trạng thông thường, không bất thường.'],
-   usage:'正常交流; 很正常; 不正常.',
-   collo:['正常交流','很正常','身体正常'],
-   ex_zh:'因为外国留学生不了解中国文化，有时候会影响他们和中国人之间的正常交流。',ex_py:'Yīnwèi wàiguó liúxuéshēng bù liǎojiě Zhōngguó wénhuà, yǒushíhou huì yǐngxiǎng tāmen hé Zhōngguó rén zhījiān de zhèngcháng jiāoliú.',ex_vn:'Vì du học sinh nước ngoài không hiểu văn hóa Trung Quốc, có lúc sẽ ảnh hưởng đến giao lưu bình thường giữa họ và người Trung Quốc.',
-   exList:[
-     {zh:'因为外国留学生不了解中国文化，有时候会影响他们和中国人之间的正常交流。',py:'Yīnwèi wàiguó liúxuéshēng bù liǎojiě Zhōngguó wénhuà, yǒushíhou huì yǐngxiǎng tāmen hé Zhōngguó rén zhījiān de zhèngcháng jiāoliú.',vn:'Vì du học sinh nước ngoài không hiểu văn hóa Trung Quốc, có lúc sẽ ảnh hưởng đến giao lưu bình thường giữa họ và người Trung Quốc.'},
-     {zh:'刚到一个新环境，觉得不习惯是很正常的。',py:'Gāng dào yí ge xīn huánjìng, juéde bù xíguàn shì hěn zhèngcháng de.',vn:'Mới đến một môi trường mới, cảm thấy không quen là rất bình thường.'},
-     {zh:'医生说他的身体一切正常。',py:'Yīshēng shuō tā de shēntǐ yíqiè zhèngcháng.',vn:'Bác sĩ nói cơ thể anh ấy mọi thứ đều bình thường.'},
-   ],
-   hanzi:[
-     {c:'常',p:'cháng',type:'上下结构 · Trên-dưới',st:11,ord:'尚 trên → 巾 dưới',rad:'巾 (cân – khăn)',mean:'thường',
-      tip:'Bộ khăn 巾 + 尚 → nghĩa gốc là tấm vải dài, mượn nghĩa THƯỜNG XUYÊN, kết hợp 正 thành 正常 = BÌNH THƯỜNG.',
-      cf:'党 (dǎng – "đảng", phần trên giống)',w:'正常 / 经常 / 常见'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mới đến một môi trường mới, cảm thấy không quen là rất bình thường.',answer:'刚到一个新环境，觉得不习惯是很正常的。',answerPy:'Gāng dào yí ge xīn huánjìng, juéde bù xíguàn shì hěn zhèngcháng de.',
-      note:'刚 (Bài 1) + 环境 (Bài 8).'},
-     {promptLang:'vi',prompt:'Không hiểu văn hóa có lúc ảnh hưởng đến giao lưu bình thường, thậm chí gây ra hiểu lầm.',answer:'不了解文化有时候会影响正常交流，甚至引起误会。',answerPy:'Bù liǎojiě wénhuà yǒushíhou huì yǐngxiǎng zhèngcháng jiāoliú, shènzhì yǐnqǐ wùhuì.',
-      note:'甚至 (Bài 4) + 引起/误会 (Bài 12).'},
-   ]},
-
-  {n:14,zh:'申请',py:'shēnqǐng',pos:'Động từ',vn:'xin, đăng ký (chính thức)', hv: 'thân thỉnh',em:'📝',lesson:3,
-   explain:['Đề nghị chính thức với cấp trên/cơ quan để được chấp thuận.'],
-   usage:'申请举办活动; 申请去国外留学; 申请学校.',
-   collo:['申请举办一次活动','申请去国外留学','申请国外学校'],
-   ex_zh:'所以我们想申请举办一次中国传统文化节活动。',ex_py:'Suǒyǐ wǒmen xiǎng shēnqǐng jǔbàn yí cì Zhōngguó chuántǒng wénhuà jié huódòng.',ex_vn:'Vì vậy chúng tôi muốn xin tổ chức một lễ hội văn hóa truyền thống Trung Quốc.',
-   exList:[
-     {zh:'所以我们想申请举办一次中国传统文化节活动。',py:'Suǒyǐ wǒmen xiǎng shēnqǐng jǔbàn yí cì Zhōngguó chuántǒng wénhuà jié huódòng.',vn:'Vì vậy chúng tôi muốn xin tổ chức một lễ hội văn hóa truyền thống Trung Quốc.'},
-     {zh:'听说你要申请去国外留学，准备得怎么样了？',py:'Tīngshuō nǐ yào shēnqǐng qù guówài liúxué, zhǔnbèi de zěnmeyàng le?',vn:'Nghe nói bạn định xin đi du học nước ngoài, chuẩn bị đến đâu rồi?'},
-     {zh:'接受调查的学生中，只有大约20%的人开始申请国外学校。',py:'Jiēshòu diàochá de xuésheng zhōng, zhǐyǒu dàyuē bǎifēnzhī èrshí de rén kāishǐ shēnqǐng guówài xuéxiào.',vn:'Trong số học sinh được khảo sát, chỉ khoảng 20% bắt đầu nộp đơn xin trường nước ngoài.'},
-   ],
-   hanzi:[
-     {c:'申',p:'shēn',type:'独体字 · Chữ đơn',st:5,ord:'日 → 丨 xuyên',rad:'田 (điền)',mean:'trình bày',
-      tip:'Chữ tượng hình tia chớp → mở rộng thành TRÌNH BÀY RÕ, kết hợp 请 thành 申请 = XIN (chính thức).',
-      cf:'甲 (jiǎ), 由 (yóu) — cùng dạng 田 + nét dọc',w:'申请 / 申请书 / 申请人'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nghe nói bạn định xin đi du học nước ngoài, chuẩn bị đến đâu rồi? — Đang tiến hành, tài liệu sắp chuẩn bị xong.',answer:'听说你要申请去国外留学，准备得怎么样了？——正在进行，材料差不多准备好了。',answerPy:'Tīngshuō nǐ yào shēnqǐng qù guówài liúxué, zhǔnbèi de zěnmeyàng le? — Zhèngzài jìnxíng, cáiliào chàbuduō zhǔnbèi hǎo le.',
-      note:'Bài luyện tập 进行 SGK (2).'},
-     {promptLang:'vi',prompt:'Chúng tôi muốn xin tổ chức lễ hội văn hóa, để học sinh các nước hiểu Trung Quốc hơn.',answer:'我们想申请举办文化节活动，让各国学生更好地了解中国。',answerPy:'Wǒmen xiǎng shēnqǐng jǔbàn wénhuà jié huódòng, ràng gè guó xuésheng gèng hǎo de liǎojiě Zhōngguó.',
-      note:'举办 (Bài 6) + 让 (Bài 8).'},
-   ]},
-
-  {n:15,zh:'有趣',py:'yǒuqù',pos:'Tính từ',vn:'thú vị, lý thú', hv: 'hữu thú',em:'😄',lesson:3,
-   explain:['Gây hứng thú, hấp dẫn.'],
-   usage:'办得非常有趣; 有趣的故事; 很有趣.',
-   collo:['办得非常有趣','有趣的故事','觉得很有趣'],
-   ex_zh:'上次的春游活动你们办得非常有趣，大家都玩儿得很开心。',ex_py:'Shàng cì de chūnyóu huódòng nǐmen bàn de fēicháng yǒuqù, dàjiā dōu wánr de hěn kāixīn.',ex_vn:'Hoạt động dã ngoại mùa xuân lần trước các bạn tổ chức rất thú vị, mọi người đều chơi rất vui.',
-   exList:[
-     {zh:'上次的春游活动你们办得非常有趣，大家都玩儿得很开心。',py:'Shàng cì de chūnyóu huódòng nǐmen bàn de fēicháng yǒuqù, dàjiā dōu wánr de hěn kāixīn.',vn:'Hoạt động dã ngoại mùa xuân lần trước các bạn tổ chức rất thú vị, mọi người đều chơi rất vui.'},
-     {zh:'京剧里的历史故事很有趣，让我学到了很多知识。',py:'Jīngjù li de lìshǐ gùshi hěn yǒuqù, ràng wǒ xuédàole hěn duō zhīshi.',vn:'Những câu chuyện lịch sử trong Kinh kịch rất thú vị, giúp tôi học được nhiều kiến thức.'},
-     {zh:'这位老师讲课既有趣又容易懂。',py:'Zhè wèi lǎoshī jiǎngkè jì yǒuqù yòu róngyì dǒng.',vn:'Thầy giáo này giảng bài vừa thú vị vừa dễ hiểu.'},
-   ],
-   hanzi:[
-     {c:'趣',p:'qù',type:'半包围结构 · Bán bao vây',st:15,ord:'走 bao → 取 trong',rad:'走 (tẩu – đi)',mean:'thú vị',
-      tip:'Bộ đi 走 + 取(lấy) → chạy đến LẤY (điều mình thích) → HỨNG THÚ, kết hợp 有 thành 有趣 = THÚ VỊ.',
-      cf:'取 (qǔ – "lấy", phần trong)',w:'有趣 / 兴趣 / 有意思'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Hoạt động dã ngoại lần trước các bạn tổ chức rất thú vị, mọi người chơi rất vui.',answer:'上次的春游活动你们办得非常有趣，大家都玩儿得很开心。',answerPy:'Shàng cì de chūnyóu huódòng nǐmen bàn de fēicháng yǒuqù, dàjiā dōu wánr de hěn kāixīn.',
-      note:'办得……有趣 — bổ ngữ trạng thái.'},
-     {promptLang:'vi',prompt:'Thầy giáo này giảng bài vừa thú vị vừa dễ hiểu, vì vậy rất được học sinh yêu thích.',answer:'这位老师讲课既有趣又容易懂，因此很受学生欢迎。',answerPy:'Zhè wèi lǎoshī jiǎngkè jì yǒuqù yòu róngyì dǒng, yīncǐ hěn shòu xuésheng huānyíng.',
-      note:'既……又 (Bài 7) + 因此 (Bài 8).'},
-   ]},
-
-  {n:16,zh:'开心',py:'kāixīn',pos:'Tính từ',vn:'vui vẻ', hv: 'khai tâm',em:'😊',lesson:3,
-   explain:['Tâm trạng vui vẻ, thoải mái.'],
-   usage:'玩儿得很开心; 很开心; 开心地笑.',
-   collo:['玩儿得很开心','过得很开心','开心地笑'],
-   ex_zh:'大家都玩儿得很开心，这次活动继续由你负责，相信也一定会很成功。',ex_py:'Dàjiā dōu wánr de hěn kāixīn, zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.',ex_vn:'Mọi người đều chơi rất vui, hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.',
-   exList:[
-     {zh:'大家都玩儿得很开心，这次活动继续由你负责，相信也一定会很成功。',py:'Dàjiā dōu wánr de hěn kāixīn, zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.',vn:'Mọi người đều chơi rất vui, hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.'},
-     {zh:'看到孩子们开心地笑，父母也觉得很幸福。',py:'Kàndào háizimen kāixīn de xiào, fùmǔ yě juéde hěn xìngfú.',vn:'Thấy bọn trẻ cười vui vẻ, bố mẹ cũng thấy rất hạnh phúc.'},
-     {zh:'和朋友一起喝茶聊天儿，是一件很开心的事。',py:'Hé péngyou yìqǐ hē chá liáo tiānr, shì yí jiàn hěn kāixīn de shì.',vn:'Cùng bạn bè uống trà trò chuyện là một việc rất vui.'},
-   ],
-   hanzi:[
-     {c:'心',p:'xīn',type:'独体字 · Chữ đơn',st:4,ord:'丶 → 乚 → 丶 → 丶',rad:'心 (tâm)',mean:'tim, lòng',
-      tip:'Chữ tượng hình quả TIM → LÒNG, kết hợp 开(mở) thành 开心 = MỞ LÒNG → VUI VẺ.',
-      cf:'必 (bì – "ắt", thêm một nét)',w:'开心 / 心情 / 用心'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thấy bọn trẻ cười vui vẻ, bố mẹ cũng thấy rất hạnh phúc.',answer:'看到孩子们开心地笑，父母也觉得很幸福。',answerPy:'Kàndào háizimen kāixīn de xiào, fùmǔ yě juéde hěn xìngfú.',
-      note:'幸福 ôn lại chủ đề Bài 10.'},
-     {promptLang:'vi',prompt:'Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng nhất định sẽ thành công.',answer:'这次活动继续由你负责，相信一定会很成功。',answerPy:'Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yídìng huì hěn chénggōng.',
-      note:'由 — ngữ pháp của bài; 负责 (Bài 4).'},
-   ]},
-
-  {n:17,zh:'继续',py:'jìxù',pos:'Động từ',vn:'tiếp tục', hv: 'kế tục',em:'▶️',lesson:3,
-   explain:['Tiếp diễn hoạt động đang làm, không dừng lại.'],
-   usage:'继续 + động từ: 继续进行, 继续由你负责, 继续读书.',
-   collo:['继续由你负责','会议继续进行','继续留在北京'],
-   ex_zh:'这次活动继续由你负责，相信也一定会很成功。',ex_py:'Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.',ex_vn:'Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.',
-   exList:[
-     {zh:'这次活动继续由你负责，相信也一定会很成功。',py:'Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.',vn:'Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.'},
-     {zh:'大家请注意，现在休息十五分钟，十点半会议继续进行。',py:'Dàjiā qǐng zhùyì, xiànzài xiūxi shíwǔ fēnzhōng, shí diǎn bàn huìyì jìxù jìnxíng.',vn:'Mọi người chú ý, bây giờ nghỉ 15 phút, 10 giờ rưỡi hội nghị tiếp tục.'},
-     {zh:'你想好了没？是继续读书还是参加工作？',py:'Nǐ xiǎnghǎo le méi? Shì jìxù dú shū háishi cānjiā gōngzuò?',vn:'Bạn nghĩ kỹ chưa? Tiếp tục học hay đi làm?'},
-   ],
-   hanzi:[
-     {c:'续',p:'xù',type:'左右结构 · Trái-phải (giản thể)',st:11,ord:'纟 (mịch) trái → 卖 phải',rad:'纟 (mịch – sợi tơ)',mean:'nối tiếp',
-      tip:'Bộ sợi 纟 (nối sợi tơ) + 卖 → NỐI TIẾP, kết hợp 继 thành 继续 = TIẾP TỤC.',
-      cf:'读 (dú – "đọc", bộ 讠 + 卖)',w:'继续 / 连续 / 手续'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn nghĩ kỹ chưa? Tiếp tục học hay đi làm? — Tôi định đi làm hai năm trước, rồi mới thi cao học.',answer:'你想好了没？是继续读书还是参加工作？——我想先工作两年，然后再考研究生。',answerPy:'Nǐ xiǎnghǎo le méi? Shì jìxù dú shū háishi cānjiā gōngzuò? — Wǒ xiǎng xiān gōngzuò liǎng nián, ránhòu zài kǎo yánjiūshēng.',
-      note:'练习2 SGK (9); 先……然后再 (Bài 3).'},
-     {promptLang:'vi',prompt:'Tôi đã bàn với bố mẹ, cuối cùng vẫn quyết định tiếp tục ở lại Bắc Kinh.',answer:'我和父母商量过了，最后还是决定继续留在北京。',answerPy:'Wǒ hé fùmǔ shāngliangguo le, zuìhòu háishi juédìng jìxù liú zài Běijīng.',
-      note:'商量 ôn lại từ vựng Bài 12.'},
-   ]},
-
-  {n:18,zh:'由',py:'yóu',pos:'Giới từ',vn:'do (ai phụ trách/thực hiện)', hv: 'do',em:'👤',lesson:3,
-   explain:['Giới từ dẫn ra người chịu trách nhiệm/thực hiện việc gì.'],
-   usage:'由 + người + 负责/翻译/组织.',
-   collo:['由你负责','由王大夫负责','由林语堂先生翻译'],
-   ex_zh:'这次活动继续由你负责，相信也一定会很成功。',ex_py:'Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.',ex_vn:'Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.',
-   exList:[
-     {zh:'这次活动继续由你负责，相信也一定会很成功。',py:'Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.',vn:'Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.'},
-     {zh:'按照规定，这件事情应该由王大夫负责。',py:'Ànzhào guīdìng, zhè jiàn shìqing yīnggāi yóu Wáng dàifu fùzé.',vn:'Theo quy định, việc này nên do bác sĩ Vương phụ trách.'},
-     {zh:'"幽默"这个词最早是由林语堂先生翻译过来的。',py:'"Yōumò" zhège cí zuì zǎo shì yóu Lín Yǔtáng xiānsheng fānyì guòlai de.',vn:'Từ "幽默" (hài hước) sớm nhất là do ông Lâm Ngữ Đường dịch sang.'},
-   ],
-   hanzi:[
-     {c:'由',p:'yóu',type:'独体字 · Chữ đơn',st:5,ord:'nét liền',rad:'田 (điền)',mean:'do, từ',
-      tip:'Chữ tượng hình quả trên cành → NGUỒN GỐC, TỪ ĐÂU → giới từ DO (ôn lại 由于 Bài 10).',
-      cf:'甲 (jiǎ), 申 (shēn) — cùng dạng',w:'由 / 由于 / 理由'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Theo quy định, việc này nên do bác sĩ Vương phụ trách.',answer:'按照规定，这件事情应该由王大夫负责。',answerPy:'Ànzhào guīdìng, zhè jiàn shìqing yīnggāi yóu Wáng dàifu fùzé.',
-      note:'按照 (Bài 4) + 规定 (Bài 12).'},
-     {promptLang:'vi',prompt:'Việc này chẳng phải giám đốc Mã chuyên phụ trách sao? — Anh ấy đã rời công ty, hiện do giám đốc Vương phụ trách.',answer:'这件事不是马经理专门负责吗？——他已经离开公司了，现在由王经理负责。',answerPy:'Zhè jiàn shì bú shì Mǎ jīnglǐ zhuānmén fùzé ma? — Tā yǐjīng líkāi gōngsī le, xiànzài yóu Wáng jīnglǐ fùzé.',
-      note:'Bài luyện tập SGK (1); 专门 (Bài 9).'},
-   ]},
-
-  {n:19,zh:'讨论',py:'tǎolùn',pos:'Động từ',vn:'thảo luận, bàn bạc', hv: 'thảo luận',em:'💬',lesson:3,
-   explain:['Trao đổi ý kiến để làm rõ vấn đề.'],
-   usage:'开会讨论; 讨论问题; 讨论一下.',
-   collo:['开会讨论','讨论这个问题','跟大家讨论'],
-   ex_zh:'我们回去就开会讨论，星期五之前把详细的计划书发给您。',ex_py:'Wǒmen huíqu jiù kāi huì tǎolùn, xīngqīwǔ zhīqián bǎ xiángxì de jìhuàshū fāgěi nín.',ex_vn:'Chúng tôi về sẽ họp thảo luận ngay, trước thứ Sáu gửi bản kế hoạch chi tiết cho ngài.',
-   exList:[
-     {zh:'我们回去就开会讨论，星期五之前把详细的计划书发给您。',py:'Wǒmen huíqu jiù kāi huì tǎolùn, xīngqīwǔ zhīqián bǎ xiángxì de jìhuàshū fāgěi nín.',vn:'Chúng tôi về sẽ họp thảo luận ngay, trước thứ Sáu gửi bản kế hoạch chi tiết cho ngài.'},
-     {zh:'这个问题我们已经讨论过好几遍了。',py:'Zhège wèntí wǒmen yǐjīng tǎolùnguo hǎojǐ biàn le.',vn:'Vấn đề này chúng tôi đã thảo luận mấy lượt rồi.'},
-     {zh:'大家正在讨论文化节的节目安排。',py:'Dàjiā zhèngzài tǎolùn wénhuà jié de jiémù ānpái.',vn:'Mọi người đang thảo luận sắp xếp tiết mục của lễ hội văn hóa.'},
-   ],
-   hanzi:[
-     {c:'讨',p:'tǎo',type:'左右结构 · Trái-phải (giản thể)',st:5,ord:'讠 (ngôn) trái → 寸 phải',rad:'讠 (ngôn)',mean:'bàn, đòi',
-      tip:'Bộ lời nói 讠 + 寸(tấc, quy tắc) → BÀN theo lý lẽ, kết hợp 论 thành 讨论 = THẢO LUẬN (ôn lại 无论 Bài 11).',
-      cf:'付 (fù – "trả", bộ 亻)',w:'讨论 / 讨厌 / 无论'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chúng tôi về sẽ họp thảo luận ngay, trước thứ Sáu gửi bản kế hoạch chi tiết cho ngài.',answer:'我们回去就开会讨论，星期五之前把详细的计划书发给您。',answerPy:'Wǒmen huíqu jiù kāi huì tǎolùn, xīngqīwǔ zhīqián bǎ xiángxì de jìhuàshū fāgěi nín.',
-      note:'之前 (Bài 11) + 详细 (Bài 12) + câu chữ 把.'},
-     {promptLang:'vi',prompt:'Vấn đề này chúng tôi đã thảo luận mấy lượt rồi, nhưng vẫn chưa đạt được kết quả tốt nhất.',answer:'这个问题我们已经讨论过好几遍了，可是还没达到最好的效果。',answerPy:'Zhège wèntí wǒmen yǐjīng tǎolùnguo hǎojǐ biàn le, kěshì hái méi dádào zuì hǎo de xiàoguǒ.',
-      note:'遍 (từ mới) + 达到 (Bài 12) + 可是 (Bài 9).'},
-   ]},
-
-  {n:20,zh:'大约',py:'dàyuē',pos:'Phó từ',vn:'khoảng chừng, ước chừng', hv: 'đại ước',em:'≈',lesson:4,
-   explain:['Ước lượng gần đúng về số lượng/thời gian (tương tự 大概 nghĩa 1).'],
-   usage:'大约 + số lượng: 大约3000多年, 大约20%.',
-   collo:['大约已经有3000多年','大约20%的人','大约半个小时'],
-   ex_zh:'筷子在中国大约已经有3000多年的历史了。',ex_py:'Kuàizi zài Zhōngguó dàyuē yǐjīng yǒu sānqiān duō nián de lìshǐ le.',ex_vn:'Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm.',
-   exList:[
-     {zh:'筷子在中国大约已经有3000多年的历史了。',py:'Kuàizi zài Zhōngguó dàyuē yǐjīng yǒu sānqiān duō nián de lìshǐ le.',vn:'Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm.'},
-     {zh:'接受调查的学生中，只有大约20%的人开始申请国外学校。',py:'Jiēshòu diàochá de xuésheng zhōng, zhǐyǒu dàyuē bǎifēnzhī èrshí de rén kāishǐ shēnqǐng guówài xuéxiào.',vn:'Trong số học sinh được khảo sát, chỉ khoảng 20% bắt đầu nộp đơn xin trường nước ngoài.'},
-     {zh:'从这儿到机场大约要半个小时。',py:'Cóng zhèr dào jīchǎng dàyuē yào bàn ge xiǎoshí.',vn:'Từ đây đến sân bay khoảng nửa tiếng.'},
-   ],
-   hanzi:[
-     {c:'约',p:'yuē',type:'左右结构 · Trái-phải (giản thể)',st:6,ord:'纟 (mịch) trái → 勺 phải',rad:'纟 (mịch)',mean:'ước, hẹn',
-      tip:'Bộ sợi 纟 + 勺 → BUỘC, HẸN ƯỚC, kết hợp 大 thành 大约 = ƯỚC CHỪNG (ôn lại 节约 Bài 12).',
-      cf:'同字词: 约会 / 节约 / 大约',w:'大约 / 约会 / 节约'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm.',answer:'筷子在中国大约已经有3000多年的历史了。',answerPy:'Kuàizi zài Zhōngguó dàyuē yǐjīng yǒu sānqiān duō nián de lìshǐ le.',
-      note:'大约 + số lượng — ước chừng.'},
-     {promptLang:'vi',prompt:'Hơn 80% người hy vọng được du học, nhưng trong đó chỉ khoảng 20% bắt đầu nộp đơn.',answer:'超过80%的人希望能出国留学，但这其中只有大约20%的人开始申请。',answerPy:'Chāoguò bǎifēnzhī bāshí de rén xīwàng néng chūguó liúxué, dàn zhè qízhōng zhǐyǒu dàyuē bǎifēnzhī èrshí de rén kāishǐ shēnqǐng.',
-      note:'其中 (Bài 6) + 百分之 (Bài 6) + 申请 (từ mới).'},
-   ]},
-
-  {n:21,zh:'餐厅',py:'cāntīng',pos:'Danh từ',vn:'nhà hàng', hv: 'xan sảnh',em:'🍽️',lesson:4,
-   explain:['Nơi phục vụ ăn uống.'],
-   usage:'中国餐厅; 在餐厅吃饭; 一家餐厅.',
-   collo:['国外的中国餐厅','在餐厅吃饭','一家餐厅'],
-   ex_zh:'国外的一些中国餐厅在放筷子的纸袋上会提供使用筷子的详细说明。',ex_py:'Guówài de yìxiē Zhōngguó cāntīng zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.',ex_vn:'Một số nhà hàng Trung Quốc ở nước ngoài in hướng dẫn chi tiết cách dùng đũa trên túi giấy đựng đũa.',
-   exList:[
-     {zh:'国外的一些中国餐厅在放筷子的纸袋上会提供使用筷子的详细说明。',py:'Guówài de yìxiē Zhōngguó cāntīng zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.',vn:'Một số nhà hàng Trung Quốc ở nước ngoài in hướng dẫn chi tiết cách dùng đũa trên túi giấy đựng đũa.'},
-     {zh:'这家餐厅的菜又便宜又好吃，天天都有很多人。',py:'Zhè jiā cāntīng de cài yòu piányi yòu hǎochī, tiāntiān dōu yǒu hěn duō rén.',vn:'Món ăn nhà hàng này vừa rẻ vừa ngon, ngày nào cũng đông người.'},
-     {zh:'我们在学校附近的餐厅商量了活动的计划。',py:'Wǒmen zài xuéxiào fùjìn de cāntīng shāngliangle huódòng de jìhuà.',vn:'Chúng tôi bàn kế hoạch hoạt động ở nhà hàng gần trường.'},
-   ],
-   hanzi:[
-     {c:'餐',p:'cān',type:'上下结构 · Trên-dưới',st:16,ord:'歺+又 trên → 食 dưới',rad:'食 (thực – ăn)',mean:'bữa ăn',
-      tip:'Bộ ăn 食 ở dưới + phần trên biểu âm → BỮA ĂN, kết hợp 厅(sảnh) thành 餐厅 = NHÀ HÀNG (ôn lại 客厅 Bài 11).',
-      cf:'同字词: 客厅 / 餐厅 / 大厅',w:'餐厅 / 早餐 / 西餐'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Món ăn nhà hàng này vừa rẻ vừa ngon, ngày nào cũng đông người.',answer:'这家餐厅的菜又便宜又好吃，天天都有很多人。',answerPy:'Zhè jiā cāntīng de cài yòu piányi yòu hǎochī, tiāntiān dōu yǒu hěn duō rén.',
-      note:'又……又 + 天天 (lặp danh từ, Bài 12).'},
-     {promptLang:'vi',prompt:'Một số nhà hàng Trung Quốc ở nước ngoài cung cấp hướng dẫn chi tiết cách dùng đũa.',answer:'国外的一些中国餐厅会提供使用筷子的详细说明。',answerPy:'Guówài de yìxiē Zhōngguó cāntīng huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.',
-      note:'提供 (Bài 8) + 使用/详细 (Bài 12).'},
-   ]},
-
-  {n:22,zh:'纸袋',py:'zhǐdài',pos:'Danh từ',vn:'túi giấy', hv: 'chỉ đại',em:'🛍️',lesson:4,
-   explain:['Túi làm bằng giấy; 袋(子) = túi nói chung.'],
-   usage:'放筷子的纸袋; 一个纸袋; 袋子.',
-   collo:['放筷子的纸袋','一个纸袋','塑料袋'],
-   ex_zh:'在放筷子的纸袋上会提供使用筷子的详细说明。',ex_py:'Zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.',ex_vn:'Trên túi giấy đựng đũa có in hướng dẫn chi tiết cách dùng đũa.',
-   exList:[
-     {zh:'在放筷子的纸袋上会提供使用筷子的详细说明。',py:'Zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.',vn:'Trên túi giấy đựng đũa có in hướng dẫn chi tiết cách dùng đũa.'},
-     {zh:'为了保护环境，超市现在都用纸袋，不用塑料袋了。',py:'Wèile bǎohù huánjìng, chāoshì xiànzài dōu yòng zhǐdài, bú yòng sùliàodài le.',vn:'Để bảo vệ môi trường, siêu thị bây giờ đều dùng túi giấy, không dùng túi ni lông nữa.'},
-     {zh:'请把这些东西放进袋子里。',py:'Qǐng bǎ zhèxiē dōngxi fàngjìn dàizi li.',vn:'Xin hãy cho những thứ này vào túi.'},
-   ],
-   hanzi:[
-     {c:'袋',p:'dài',type:'上下结构 · Trên-dưới',st:11,ord:'代 trên → 衣 dưới',rad:'衣 (y – áo, vải)',mean:'túi',
-      tip:'Bộ vải 衣 + 代(biểu âm) → TÚI (làm bằng vải/giấy).',
-      cf:'代 (dài – "thay", phần trên)',w:'纸袋 / 袋子 / 口袋'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Để bảo vệ môi trường, siêu thị bây giờ đều dùng túi giấy.',answer:'为了保护环境，超市现在都用纸袋。',answerPy:'Wèile bǎohù huánjìng, chāoshì xiànzài dōu yòng zhǐdài.',
-      note:'保护 ôn lại từ vựng Bài 12.'},
-     {promptLang:'vi',prompt:'Xin hãy cho những thứ này vào túi.',answer:'请把这些东西放进袋子里。',answerPy:'Qǐng bǎ zhèxiē dōngxi fàngjìn dàizi li.',
-      note:'Câu chữ 把 + 放进.'},
-   ]},
-
-  {n:23,zh:'互联网',py:'hùliánwǎng',pos:'Danh từ',vn:'mạng Internet', hv: 'hỗ liên võng',em:'🌐',lesson:4,
-   explain:['Mạng máy tính toàn cầu.'],
-   usage:'在互联网上; 通过互联网; 互联网的发展.',
-   collo:['在互联网上进行调查','通过互联网','互联网的发展'],
-   ex_zh:'有人在互联网上专门进行过调查，结果发现每六个中国人中就有一个使用筷子的方法是错误的。',ex_py:'Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá, jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.',ex_vn:'Có người đã tiến hành khảo sát chuyên biệt trên Internet, kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách.',
-   exList:[
-     {zh:'有人在互联网上专门进行过调查，结果发现每六个中国人中就有一个使用筷子的方法是错误的。',py:'Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá, jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.',vn:'Có người đã tiến hành khảo sát chuyên biệt trên Internet, kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách.'},
-     {zh:'随着互联网的发展，越来越多的人喜欢在网上写日记。',py:'Suízhe hùliánwǎng de fāzhǎn, yuè lái yuè duō de rén xǐhuan zài wǎngshàng xiě rìjì.',vn:'Cùng với sự phát triển của Internet, ngày càng nhiều người thích viết nhật ký trên mạng.'},
-     {zh:'通过互联网，我们可以很快地找到需要的信息。',py:'Tōngguò hùliánwǎng, wǒmen kěyǐ hěn kuài de zhǎodào xūyào de xìnxī.',vn:'Thông qua Internet, chúng ta có thể nhanh chóng tìm được thông tin cần thiết.'},
-   ],
-   hanzi:[
-     {c:'联',p:'lián',type:'左右结构 · Trái-phải (giản thể)',st:12,ord:'耳 (nhĩ) trái → 关 phải',rad:'耳 (nhĩ – tai)',mean:'liên kết',
-      tip:'Bộ tai 耳 + 关 → NỐI LIỀN, kết hợp 互(lẫn nhau) + 网(mạng) thành 互联网 = INTERNET.',
-      cf:'耶 (yē – bộ 耳 + 阝)',w:'互联网 / 联系 / 联合'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cùng với sự phát triển của Internet, ngày càng nhiều người thích viết nhật ký trên mạng.',answer:'随着互联网的发展，越来越多的人喜欢在网上写日记。',answerPy:'Suízhe hùliánwǎng de fāzhǎn, yuè lái yuè duō de rén xǐhuan zài wǎngshàng xiě rìjì.',
-      note:'Bài luyện tập 随着 SGK (1); 发展 (Bài 10).'},
-     {promptLang:'vi',prompt:'Thông qua Internet, chúng ta có thể nhanh chóng tìm được thông tin cần thiết.',answer:'通过互联网，我们可以很快地找到需要的信息。',answerPy:'Tōngguò hùliánwǎng, wǒmen kěyǐ hěn kuài de zhǎodào xūyào de xìnxī.',
-      note:'通过 ôn lại ngữ pháp Bài 9.'},
-   ]},
-
-  {n:24,zh:'进行',py:'jìnxíng',pos:'Động từ',vn:'tiến hành, thực hiện', hv: 'tiến hành',em:'⚙️',lesson:4,
-   explain:['Thực hiện hoạt động/công việc nào đó; thường đứng trước động từ hai âm tiết mang tính chính thức (调查, 讨论, 交流…).'],
-   usage:'进行 + 调查/讨论/交流/研究; 会议继续进行.',
-   collo:['进行过调查','继续进行','进行交流'],
-   ex_zh:'有人在互联网上专门进行过调查。',ex_py:'Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá.',ex_vn:'Có người đã tiến hành khảo sát chuyên biệt trên Internet.',
-   exList:[
-     {zh:'有人在互联网上专门进行过调查。',py:'Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá.',vn:'Có người đã tiến hành khảo sát chuyên biệt trên Internet.'},
-     {zh:'大家请注意，现在休息十五分钟，十点半会议继续进行。',py:'Dàjiā qǐng zhùyì, xiànzài xiūxi shíwǔ fēnzhōng, shí diǎn bàn huìyì jìxù jìnxíng.',vn:'Mọi người chú ý, bây giờ nghỉ 15 phút, 10 giờ rưỡi hội nghị tiếp tục.'},
-     {zh:'成功的语言学习者，在学习方面往往都是积极主动的，他们会主动与他人进行交流。',py:'Chénggōng de yǔyán xuéxízhě, zài xuéxí fāngmiàn wǎngwǎng dōu shì jījí zhǔdòng de, tāmen huì zhǔdòng yǔ tārén jìnxíng jiāoliú.',vn:'Người học ngôn ngữ thành công, về mặt học tập thường đều tích cực chủ động, họ sẽ chủ động giao lưu với người khác.'},
-   ],
-   hanzi:[
-     {c:'进',p:'jìn',type:'半包围结构 · Bán bao vây (giản thể)',st:7,ord:'井 trong → 辶 bao',rad:'辶 (sước – đi)',mean:'tiến, vào',
-      tip:'Bộ đi 辶 + 井 → ĐI VÀO, TIẾN, kết hợp 行(làm) thành 进行 = TIẾN HÀNH.',
-      cf:'近 (jìn – "gần", cũng bộ 辶)',w:'进行 / 进步 / 进入'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đã 6 giờ rồi, sao hội nghị vẫn chưa kết thúc? — Vẫn đang tiến hành, có lẽ còn nửa tiếng nữa.',answer:'都六点了，会议怎么还没结束？——还在进行，大概还要半个小时。',answerPy:'Dōu liù diǎn le, huìyì zěnme hái méi jiéshù? — Hái zài jìnxíng, dàgài hái yào bàn ge xiǎoshí.',
-      note:'Bài luyện tập SGK (1); 大概 (ngữ pháp của bài).'},
-     {promptLang:'vi',prompt:'Người học ngôn ngữ thành công thường chủ động giao lưu với người khác, hơn nữa nhờ người khác sửa lỗi.',answer:'成功的语言学习者往往会主动与他人进行交流，并且请别人帮助他们改错。',answerPy:'Chénggōng de yǔyán xuéxízhě wǎngwǎng huì zhǔdòng yǔ tārén jìnxíng jiāoliú, bìngqiě qǐng biérén bāngzhù tāmen gǎicuò.',
-      note:'往往 (Bài 8) + 并且 (Bài 12).'},
-   ]},
-
-  {n:25,zh:'错误',py:'cuòwù',pos:'Tính từ/Danh từ',vn:'sai; sai lầm', hv: 'thác ngộ',em:'❌',lesson:4,
-   explain:['Không đúng; hoặc lỗi sai.'],
-   usage:'方法是错误的; 错误的选择; 犯错误.',
-   collo:['使用筷子的方法是错误的','错误的选择','改正错误'],
-   ex_zh:'结果发现每六个中国人中就有一个使用筷子的方法是错误的。',ex_py:'Jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.',ex_vn:'Kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách.',
-   exList:[
-     {zh:'结果发现每六个中国人中就有一个使用筷子的方法是错误的。',py:'Jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.',vn:'Kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách.'},
-     {zh:'一个错误的选择可能让你失去很多机会。',py:'Yí ge cuòwù de xuǎnzé kěnéng ràng nǐ shīqù hěn duō jīhuì.',vn:'Một lựa chọn sai lầm có thể khiến bạn mất nhiều cơ hội.'},
-     {zh:'人人都会犯错误，关键是要及时改正。',py:'Rénrén dōu huì fàn cuòwù, guānjiàn shì yào jíshí gǎizhèng.',vn:'Ai cũng có thể mắc sai lầm, quan trọng là phải kịp thời sửa.'},
-   ],
-   hanzi:[
-     {c:'错',p:'cuò',type:'左右结构 · Trái-phải (giản thể)',st:13,ord:'钅(kim) trái → 昔 phải',rad:'钅 (kim)',mean:'sai, lẫn',
-      tip:'Bộ kim 钅 + 昔 → nghĩa gốc là mạ vàng đan xen, mượn nghĩa LẪN LỘN → SAI, kết hợp 误 thành 错误 = SAI LẦM (ôn lại 误会 Bài 12).',
-      cf:'借 (jiè – "mượn", bộ 亻 + 昔)',w:'错误 / 错 / 误会'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ai cũng có thể mắc sai lầm, quan trọng là phải kịp thời sửa.',answer:'人人都会犯错误，关键是要及时改正。',answerPy:'Rénrén dōu huì fàn cuòwù, guānjiàn shì yào jíshí gǎizhèng.',
-      note:'人人 (Bài 12) + 关键 (Bài 10).'},
-     {promptLang:'vi',prompt:'Nếu bạn cho rằng mỗi người Trung Quốc đều dùng đũa đúng cách, thì sai rồi.',answer:'如果你认为每个中国人都会正确使用筷子，那就错了。',answerPy:'Rúguǒ nǐ rènwéi měi ge Zhōngguó rén dōu huì zhèngquè shǐyòng kuàizi, nà jiù cuò le.',
-      note:'正确 (Bài 9) + 使用 (Bài 12).'},
-   ]},
-
-  {n:26,zh:'随着',py:'suízhe',pos:'Giới từ',vn:'cùng với, theo (sự thay đổi của…)', hv: 'tùy trứ',em:'📈',lesson:5,
-   explain:['Chỉ một sự việc là điều kiện để sự việc khác xảy ra; sau 随着 thường là động từ hai âm tiết có bổ nghĩa (……的发展/增长/加深).'],
-   usage:'随着 + ……的发展/加深/增长，……',
-   collo:['随着社会的发展','随着人们对茶的认识的加深','随着年龄的增长'],
-   ex_zh:'后来，随着人们对茶的认识的加深，慢慢开始把它当作解渴的饮料。',ex_py:'Hòulái, suízhe rénmen duì chá de rènshi de jiāshēn, mànmàn kāishǐ bǎ tā dàngzuò jiě kě de yǐnliào.',ex_vn:'Sau này, cùng với nhận thức về trà ngày càng sâu, người ta dần bắt đầu coi nó là thức uống giải khát.',
-   exList:[
-     {zh:'后来，随着人们对茶的认识的加深，慢慢开始把它当作解渴的饮料。',py:'Hòulái, suízhe rénmen duì chá de rènshi de jiāshēn, mànmàn kāishǐ bǎ tā dàngzuò jiě kě de yǐnliào.',vn:'Sau này, cùng với nhận thức về trà ngày càng sâu, người ta dần bắt đầu coi nó là thức uống giải khát.'},
-     {zh:'随着社会的发展，京剧也在改变，以适应不同年龄观众的需要。',py:'Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn, yǐ shìyìng bù tóng niánlíng guānzhòng de xūyào.',vn:'Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi để thích ứng nhu cầu khán giả các độ tuổi.'},
-     {zh:'随着年龄的增长，他们会发现生活总是在不停地变化。',py:'Suízhe niánlíng de zēngzhǎng, tāmen huì fāxiàn shēnghuó zǒngshì zài bù tíng de biànhuà.',vn:'Cùng với tuổi tác tăng lên, họ sẽ phát hiện cuộc sống luôn không ngừng thay đổi.'},
-   ],
-   hanzi:[
-     {c:'随',p:'suí',type:'左右结构 · Trái-phải (giản thể)',st:11,ord:'阝 trái → 有+辶 phải',rad:'阝 (phụ – gò đất)',mean:'theo',
-      tip:'Bộ 阝 + 辶(đi) → ĐI THEO, kết hợp 着 thành 随着 = CÙNG VỚI, THEO (ôn lại 随便 Bài 9).',
-      cf:'堕 (duò – "rơi", bộ 土)',w:'随着 / 随便 / 随时'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cùng với sự phát triển của xã hội, tiêu chuẩn về cái đẹp luôn thay đổi: xưa lấy béo làm đẹp, nay lấy gầy làm đẹp.',answer:'随着社会的发展，美的标准一直在变。过去人们以胖为美，现在的人以瘦为美。',answerPy:'Suízhe shèhuì de fāzhǎn, měi de biāozhǔn yìzhí zài biàn. Guòqù rénmen yǐ pàng wéi měi, xiànzài de rén yǐ shòu wéi měi.',
-      note:'Bài luyện tập SGK (2); 标准 (Bài 10).'},
-     {promptLang:'vi',prompt:'Hồi nhỏ chúng ta thường có nhiều lý tưởng lãng mạn, nhưng cùng với tuổi tác tăng lên, những giấc mơ ấy dần rời xa.',answer:'小时候我们往往会有许多浪漫的理想，但是随着年龄的增长，那些梦慢慢地离我们远去了。',answerPy:'Xiǎoshíhou wǒmen wǎngwǎng huì yǒu xǔduō làngmàn de lǐxiǎng, dànshì suízhe niánlíng de zēngzhǎng, nàxiē mèng mànmàn de lí wǒmen yuǎnqù le.',
-      note:'Bài luyện tập SGK (3); 往往 (Bài 8), 理想 (Bài 9).'},
-   ]},
-
-  {n:27,zh:'十分',py:'shífēn',pos:'Phó từ',vn:'rất, vô cùng', hv: 'thập phân',em:'💯',lesson:5,
-   explain:['Mức độ cao, tương đương 非常.'],
-   usage:'十分 + tính từ: 十分普遍, 十分重要, 十分满意.',
-   collo:['十分普遍','十分重要','十分满意'],
-   ex_zh:'在中国，喝茶是一种十分普遍的生活习惯。',ex_py:'Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.',ex_vn:'Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến.',
-   exList:[
-     {zh:'在中国，喝茶是一种十分普遍的生活习惯。',py:'Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.',vn:'Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến.'},
-     {zh:'对于这次调查计划，经理十分满意。',py:'Duìyú zhè cì diàochá jìhuà, jīnglǐ shífēn mǎnyì.',vn:'Đối với kế hoạch khảo sát lần này, giám đốc vô cùng hài lòng.'},
-     {zh:'养成阅读的习惯十分重要。',py:'Yǎngchéng yuèdú de xíguàn shífēn zhòngyào.',vn:'Hình thành thói quen đọc sách vô cùng quan trọng.'},
-   ],
-   hanzi:[
-     {c:'分',p:'fēn',type:'上下结构 · Trên-dưới',st:4,ord:'八 trên → 刀 dưới',rad:'刀 (đao)',mean:'chia, phần',
-      tip:'Chữ hội ý dao 刀 CHIA đôi 八 → PHẦN; 十分 = mười phần (trọn vẹn) → RẤT.',
-      cf:'公 (gōng – "công", tự dạng gần giống)',w:'十分 / 分钟 / 部分'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đối với kế hoạch khảo sát lần này, giám đốc vô cùng hài lòng.',answer:'对于这次调查计划，经理十分满意。',answerPy:'Duìyú zhè cì diàochá jìhuà, jīnglǐ shífēn mǎnyì.',
-      note:'对于 ôn lại ngữ pháp Bài 12.'},
-     {promptLang:'vi',prompt:'Hình thành thói quen đọc sách vô cùng quan trọng đối với việc học.',answer:'养成阅读的习惯对学习十分重要。',answerPy:'Yǎngchéng yuèdú de xíguàn duì xuéxí shífēn zhòngyào.',
-      note:'养成/阅读 ôn lại từ vựng Bài 11.'},
-   ]},
-
-  {n:28,zh:'普遍',py:'pǔbiàn',pos:'Tính từ',vn:'phổ biến', hv: 'phổ biến',em:'🌏',lesson:5,
-   explain:['Tồn tại rộng rãi, ở đâu cũng có.'],
-   usage:'十分普遍的习惯; 越来越普遍; 普遍现象.',
-   collo:['十分普遍的生活习惯','越来越普遍','普遍的现象'],
-   ex_zh:'在中国，喝茶是一种十分普遍的生活习惯。',ex_py:'Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.',ex_vn:'Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến.',
-   exList:[
-     {zh:'在中国，喝茶是一种十分普遍的生活习惯。',py:'Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.',vn:'Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến.'},
-     {zh:'很多大学生毕业后，选择的第一个职业，往往和自己的专业没什么关系，这种情况现在越来越普遍。',py:'Hěn duō dàxuéshēng bìyè hòu, xuǎnzé de dì-yī ge zhíyè, wǎngwǎng hé zìjǐ de zhuānyè méi shénme guānxi, zhè zhǒng qíngkuàng xiànzài yuè lái yuè pǔbiàn.',vn:'Nhiều sinh viên sau khi tốt nghiệp, nghề đầu tiên chọn thường không liên quan đến chuyên ngành, tình trạng này ngày càng phổ biến.'},
-     {zh:'用手机付钱在中国已经非常普遍了。',py:'Yòng shǒujī fù qián zài Zhōngguó yǐjīng fēicháng pǔbiàn le.',vn:'Dùng điện thoại thanh toán ở Trung Quốc đã rất phổ biến.'},
-   ],
-   hanzi:[
-     {c:'普',p:'pǔ',type:'上下结构 · Trên-dưới',st:12,ord:'並 trên → 日 dưới',rad:'日 (nhật)',mean:'rộng khắp',
-      tip:'Mặt trời 日 chiếu KHẮP nơi → RỘNG KHẮP, kết hợp 遍(khắp) thành 普遍 = PHỔ BIẾN.',
-      cf:'谱 (pǔ – "phổ, bản nhạc", bộ 讠)',w:'普遍 / 普通 / 普通话'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nghề đầu tiên sinh viên chọn thường không liên quan đến chuyên ngành, tình trạng này ngày càng phổ biến.',answer:'大学生选择的第一个职业往往和自己的专业没什么关系，这种情况现在越来越普遍。',answerPy:'Dàxuéshēng xuǎnzé de dì-yī ge zhíyè wǎngwǎng hé zìjǐ de zhuānyè méi shénme guānxi, zhè zhǒng qíngkuàng xiànzài yuè lái yuè pǔbiàn.',
-      note:'练习2 SGK (5); 往往 (Bài 8), 职业 (Bài 10).'},
-     {promptLang:'vi',prompt:'Dùng điện thoại thanh toán ở Trung Quốc đã rất phổ biến.',answer:'用手机付钱在中国已经非常普遍了。',answerPy:'Yòng shǒujī fù qián zài Zhōngguó yǐjīng fēicháng pǔbiàn le.',
-      note:'已经……了 chỉ sự thay đổi.'},
-   ]},
-
-  {n:29,zh:'部分',py:'bùfen',pos:'Danh từ',vn:'phần, bộ phận', hv: 'bộ phận',em:'🧩',lesson:5,
-   explain:['Một phần của toàn thể.'],
-   usage:'不可缺少的一部分; 前一部分; 大部分.',
-   collo:['生活中不可缺少的一部分','前一部分','大部分人'],
-   ex_zh:'对很多中国人来说，喝茶已成为他们生活中不可缺少的一部分。',ex_py:'Duì hěn duō Zhōngguó rén lái shuō, hē chá yǐ chéngwéi tāmen shēnghuó zhōng bù kě quēshǎo de yí bùfen.',ex_vn:'Đối với nhiều người Trung Quốc, uống trà đã trở thành một phần không thể thiếu trong cuộc sống.',
-   exList:[
-     {zh:'对很多中国人来说，喝茶已成为他们生活中不可缺少的一部分。',py:'Duì hěn duō Zhōngguó rén lái shuō, hē chá yǐ chéngwéi tāmen shēnghuó zhōng bù kě quēshǎo de yí bùfen.',vn:'Đối với nhiều người Trung Quốc, uống trà đã trở thành một phần không thể thiếu trong cuộc sống.'},
-     {zh:'这篇文章是介绍京剧的，前一部分介绍京剧的发展历史，第二部分主要谈京剧的发展方向。',py:'Zhè piān wénzhāng shì jièshào jīngjù de, qián yí bùfen jièshào jīngjù de fāzhǎn lìshǐ, dì-èr bùfen zhǔyào tán jīngjù de fāzhǎn fāngxiàng.',vn:'Bài văn này giới thiệu Kinh kịch, phần đầu giới thiệu lịch sử phát triển, phần hai chủ yếu bàn về hướng phát triển của Kinh kịch.'},
-     {zh:'大部分学生都希望有机会出国留学。',py:'Dà bùfen xuésheng dōu xīwàng yǒu jīhuì chūguó liúxué.',vn:'Phần lớn học sinh đều hy vọng có cơ hội du học.'},
-   ],
-   hanzi:[
-     {c:'部',p:'bù',type:'左右结构 · Trái-phải',st:10,ord:'咅 trái → 阝 phải',rad:'阝 (ấp – vùng)',mean:'bộ, phần',
-      tip:'Bộ 阝(vùng đất) + 咅 → nghĩa gốc là VÙNG, mở rộng thành BỘ PHẬN, kết hợp 分 thành 部分 = PHẦN.',
-      cf:'陪 (péi – "cùng", bộ 阝 bên trái)',w:'部分 / 全部 / 大部分'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đối với nhiều người Trung Quốc, uống trà đã trở thành một phần không thể thiếu trong cuộc sống.',answer:'对很多中国人来说，喝茶已成为他们生活中不可缺少的一部分。',answerPy:'Duì hěn duō Zhōngguó rén lái shuō, hē chá yǐ chéngwéi tāmen shēnghuó zhōng bù kě quēshǎo de yí bùfen.',
-      note:'对……来说 (Bài 5) + 缺少 (Bài 8) + 成为 (Bài 8).'},
-     {promptLang:'vi',prompt:'Bài văn này giới thiệu Kinh kịch, phần đầu do tôi viết, phần hai do bạn tôi viết.',answer:'这篇文章是介绍京剧的，前一部分由我写，第二部分由我朋友写。',answerPy:'Zhè piān wénzhāng shì jièshào jīngjù de, qián yí bùfen yóu wǒ xiě, dì-èr bùfen yóu wǒ péngyou xiě.',
-      note:'Bài luyện tập 由 SGK (2); 文章 (Bài 11).'},
-   ]},
-
-  {n:30,zh:'稍微',py:'shāowēi',pos:'Phó từ',vn:'hơi, một chút', hv: 'sảo vi',em:'🤏',lesson:5,
-   explain:['Mức độ nhẹ, số lượng ít.'],
-   usage:'稍微 + 有点儿/一点儿: 稍微有点儿苦, 稍微休息一下.',
-   collo:['稍微有点儿苦','稍微休息一下','稍微等一会儿'],
-   ex_zh:'比如广东省的人爱喝的"凉茶"，它的味道稍微有点儿苦，其实是一种用中药做成的饮料。',ex_py:'Bǐrú Guǎngdōng Shěng de rén ài hē de "liángchá", tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.',ex_vn:'Ví dụ "trà mát" người Quảng Đông thích uống, vị hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc.',
-   exList:[
-     {zh:'比如广东省的人爱喝的"凉茶"，它的味道稍微有点儿苦，其实是一种用中药做成的饮料。',py:'Bǐrú Guǎngdōng Shěng de rén ài hē de "liángchá", tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.',vn:'Ví dụ "trà mát" người Quảng Đông thích uống, vị hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc.'},
-     {zh:'孙小姐，我们大概什么时候出发？——大家先回房间稍微休息一下，半个小时后我们楼下集合。',py:'Sūn xiǎojiě, wǒmen dàgài shénme shíhou chūfā? — Dàjiā xiān huí fángjiān shāowēi xiūxi yíxià, bàn ge xiǎoshí hòu wǒmen lóuxià jíhé.',vn:'Cô Tôn, khoảng khi nào chúng ta xuất phát? — Mọi người về phòng nghỉ một chút, nửa tiếng sau tập trung dưới lầu.'},
-     {zh:'这道题稍微有点儿难，你再仔细想想。',py:'Zhè dào tí shāowēi yǒudiǎnr nán, nǐ zài zǐxì xiǎngxiang.',vn:'Câu này hơi khó một chút, bạn nghĩ kỹ lại xem.'},
-   ],
-   hanzi:[
-     {c:'微',p:'wēi',type:'左中右结构 · Trái-giữa-phải',st:13,ord:'彳 trái → 山+一+几 giữa → 攵 phải',rad:'彳 (xích – bước nhỏ)',mean:'nhỏ, ít',
-      tip:'Bộ bước nhỏ 彳 → NHỎ BÉ, kết hợp 稍(hơi) thành 稍微 = HƠI, MỘT CHÚT.',
-      cf:'徽 (huī – "huy hiệu")',w:'稍微 / 微笑 / 微信'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mọi người về phòng nghỉ một chút, nửa tiếng sau tập trung dưới lầu.',answer:'大家先回房间稍微休息一下，半个小时后我们楼下集合。',answerPy:'Dàjiā xiān huí fángjiān shāowēi xiūxi yíxià, bàn ge xiǎoshí hòu wǒmen lóuxià jíhé.',
-      note:'练习2 SGK (10).'},
-     {promptLang:'vi',prompt:'Câu này hơi khó một chút, bạn nghĩ kỹ lại xem.',answer:'这道题稍微有点儿难，你再仔细想想。',answerPy:'Zhè dào tí shāowēi yǒudiǎnr nán, nǐ zài zǐxì xiǎngxiang.',
-      note:'仔细 ôn lại từ vựng Bài 12.'},
-   ]},
-
-  {n:31,zh:'苦',py:'kǔ',pos:'Tính từ',vn:'đắng; khổ', hv: 'khổ',em:'☕',lesson:5,
-   explain:['1. Vị đắng.','2. Khổ cực (辛苦, 吃苦).'],
-   usage:'味道有点儿苦; 苦药; 很苦.',
-   collo:['味道稍微有点儿苦','凉茶虽然味道苦','良药苦口'],
-   ex_zh:'它的味道稍微有点儿苦，其实是一种用中药做成的饮料。',ex_py:'Tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.',ex_vn:'Vị của nó hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc.',
-   exList:[
-     {zh:'它的味道稍微有点儿苦，其实是一种用中药做成的饮料。',py:'Tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.',vn:'Vị của nó hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc.'},
-     {zh:'凉茶虽然味道苦，但对身体很有好处。',py:'Liángchá suīrán wèidào kǔ, dàn duì shēntǐ hěn yǒu hǎochù.',vn:'Trà mát tuy vị đắng, nhưng rất tốt cho sức khỏe.'},
-     {zh:'这种咖啡不加糖的话有点儿苦。',py:'Zhè zhǒng kāfēi bù jiā táng de huà yǒudiǎnr kǔ.',vn:'Loại cà phê này nếu không thêm đường thì hơi đắng.'},
-   ],
-   hanzi:[
-     {c:'苦',p:'kǔ',type:'上下结构 · Trên-dưới',st:8,ord:'艹 (thảo) trên → 古 dưới',rad:'艹 (thảo – cỏ)',mean:'đắng, khổ',
-      tip:'Bộ cỏ 艹 + 古 → loại cỏ ĐẮNG (khổ sâm), mở rộng thành KHỔ CỰC (辛苦 Bài 9).',
-      cf:'古 (gǔ – "cổ", phần dưới)',w:'苦 / 辛苦 / 吃苦'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trà mát tuy vị đắng, nhưng rất tốt cho sức khỏe. Ngoài ra, uống nóng hiệu quả cũng rất tốt.',answer:'凉茶虽然味道苦，但对身体很有好处。另外，凉茶热着喝效果也很不错。',answerPy:'Liángchá suīrán wèidào kǔ, dàn duì shēntǐ hěn yǒu hǎochù. Lìngwài, liángchá rèzhe hē xiàoguǒ yě hěn búcuò.',
-      note:'练习2 SGK (3); 另外 (Bài 3), 好处 (Bài 6).'},
-     {promptLang:'vi',prompt:'Loại cà phê này nếu không thêm đường thì hơi đắng.',answer:'这种咖啡不加糖的话有点儿苦。',answerPy:'Zhè zhǒng kāfēi bù jiā táng de huà yǒudiǎnr kǔ.',
-      note:'糖 ôn lại từ vựng Bài 10.'},
-   ]},
-
-  {n:32,zh:'省',py:'shěng',pos:'Danh từ',vn:'tỉnh', hv: 'tỉnh',em:'🗺️',lesson:5,
-   explain:['Đơn vị hành chính cấp cao nhất dưới quốc gia ở Trung Quốc.'],
-   usage:'广东省; 一个省; 省会.',
-   collo:['广东省','这个省','省会城市'],
-   ex_zh:'比如广东省的人爱喝的"凉茶"，其实是一种用中药做成的饮料。',ex_py:'Bǐrú Guǎngdōng Shěng de rén ài hē de "liángchá", qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.',ex_vn:'Ví dụ "trà mát" người tỉnh Quảng Đông thích uống, thực ra là thức uống làm từ thuốc bắc.',
-   exList:[
-     {zh:'比如广东省的人爱喝的"凉茶"，其实是一种用中药做成的饮料。',py:'Bǐrú Guǎngdōng Shěng de rén ài hē de "liángchá", qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.',vn:'Ví dụ "trà mát" người tỉnh Quảng Đông thích uống, thực ra là thức uống làm từ thuốc bắc.'},
-     {zh:'中国有很多省，每个省都有自己的特点。',py:'Zhōngguó yǒu hěn duō shěng, měi ge shěng dōu yǒu zìjǐ de tèdiǎn.',vn:'Trung Quốc có nhiều tỉnh, mỗi tỉnh đều có đặc điểm riêng.'},
-     {zh:'他来自云南省，那儿的茶很有名。',py:'Tā láizì Yúnnán Shěng, nàr de chá hěn yǒumíng.',vn:'Anh ấy đến từ tỉnh Vân Nam, trà ở đó rất nổi tiếng.'},
-   ],
-   hanzi:[
-     {c:'省',p:'shěng',type:'上下结构 · Trên-dưới',st:9,ord:'少 trên → 目 dưới',rad:'目 (mục – mắt)',mean:'tỉnh; tiết kiệm',
-      tip:'Chữ hội ý mắt 目 nhìn KỸ (少) → xem xét; mượn chỉ đơn vị hành chính TỈNH. Đọc "xǐng" khi nghĩa là "tỉnh ngộ".',
-      cf:'少 (shǎo – "ít", phần trên)',w:'省 / 广东省 / 省钱'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trung Quốc có nhiều tỉnh, mỗi tỉnh đều có đặc điểm riêng.',answer:'中国有很多省，每个省都有自己的特点。',answerPy:'Zhōngguó yǒu hěn duō shěng, měi ge shěng dōu yǒu zìjǐ de tèdiǎn.',
-      note:'特点 ôn lại từ vựng Bài 8.'},
-     {promptLang:'vi',prompt:'Anh ấy đến từ tỉnh Vân Nam, trà ở đó rất nổi tiếng.',answer:'他来自云南省，那儿的茶很有名。',answerPy:'Tā láizì Yúnnán Shěng, nàr de chá hěn yǒumíng.',
-      note:'来自 — từ mới của bài.'},
-   ]},
-
-  {n:33,zh:'广东省',py:'Guǎngdōng Shěng',pos:'Danh từ riêng',vn:'tỉnh Quảng Đông (Trung Quốc)', hv: 'Quảng Đông Tỉnh',em:'📍',lesson:5,
-   explain:['Tỉnh ở miền nam Trung Quốc, nổi tiếng với "凉茶" (trà mát) và ẩm thực Quảng Đông.'],
-   usage:'Danh từ riêng chỉ địa danh.',
-   collo:['广东省的人','广东省的凉茶'],
-   ex_zh:'比如广东省的人爱喝的"凉茶"，它的味道稍微有点儿苦。',ex_py:'Bǐrú Guǎngdōng Shěng de rén ài hē de "liángchá", tā de wèidào shāowēi yǒudiǎnr kǔ.',ex_vn:'Ví dụ "trà mát" người tỉnh Quảng Đông thích uống, vị hơi đắng một chút.',
-   exList:[
-     {zh:'比如广东省的人爱喝的"凉茶"，它的味道稍微有点儿苦。',py:'Bǐrú Guǎngdōng Shěng de rén ài hē de "liángchá", tā de wèidào shāowēi yǒudiǎnr kǔ.',vn:'Ví dụ "trà mát" người tỉnh Quảng Đông thích uống, vị hơi đắng một chút.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "京剧",
+    "py": "jīngjù",
+    "pos": "Danh từ",
+    "vn": "Kinh kịch",
+    "hv": "kinh kịch",
+    "em": "🎭",
+    "lesson": 1,
+    "explain": [
+      "Loại hình sân khấu truyền thống nổi tiếng của Trung Quốc, kết hợp hát, nói, diễn, võ."
+    ],
+    "usage": "唱京剧, 看京剧, 京剧演员.",
+    "collo": [
+      "京剧唱得真专业",
+      "听京剧",
+      "京剧演员"
+    ],
+    "ex_zh": "小夏，你爷爷京剧唱得真专业，我还以为他是京剧演员呢。",
+    "ex_py": "Xiǎo Xià, nǐ yéye jīngjù chàng de zhēn zhuānyè, wǒ hái yǐwéi tā shì jīngjù yǎnyuán ne.",
+    "ex_vn": "Tiểu Hạ, ông bạn hát Kinh kịch chuyên nghiệp thật, tôi còn tưởng ông là diễn viên Kinh kịch.",
+    "exList": [
+      {
+        "zh": "小夏，你爷爷京剧唱得真专业，我还以为他是京剧演员呢。",
+        "py": "Xiǎo Xià, nǐ yéye jīngjù chàng de zhēn zhuānyè, wǒ hái yǐwéi tā shì jīngjù yǎnyuán ne.",
+        "vn": "Tiểu Hạ, ông bạn hát Kinh kịch chuyên nghiệp thật, tôi còn tưởng ông là diễn viên Kinh kịch."
+      },
+      {
+        "zh": "真没想到你一个来自美国的外国留学生，能把京剧唱得这么好。",
+        "py": "Zhēn méi xiǎngdào nǐ yí ge láizì Měiguó de wàiguó liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.",
+        "vn": "Thật không ngờ một du học sinh đến từ Mỹ như bạn, lại hát Kinh kịch hay như vậy."
+      },
+      {
+        "zh": "随着社会的发展，京剧也在改变，以适应不同年龄观众的需要。",
+        "py": "Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn, yǐ shìyìng bù tóng niánlíng guānzhòng de xūyào.",
+        "vn": "Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi để thích ứng nhu cầu khán giả ở các độ tuổi khác nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "剧",
+        "p": "jù",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "居 trái → 刂 phải",
+        "rad": "刂 (đao)",
+        "mean": "kịch",
+        "tip": "Bộ đao 刂 + 居(biểu âm) → nghĩa gốc là DỮ DỘI, sau chỉ KỊCH (diễn mạnh mẽ), kết hợp 京(Bắc Kinh) thành 京剧 = KINH KỊCH.",
+        "cf": "据 (jù – \"căn cứ\", bộ 扌)",
+        "w": "京剧 / 电视剧 / 剧场"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ông bạn hát Kinh kịch chuyên nghiệp đến mức tôi cứ tưởng ông là diễn viên Kinh kịch, ai ngờ chỉ là người yêu thích.",
+        "answer": "你爷爷京剧唱得真专业，我本来以为他是京剧演员，没想到他只是个爱好者。",
+        "answerPy": "Nǐ yéye jīngjù chàng de zhēn zhuānyè, wǒ běnlái yǐwéi tā shì jīngjù yǎnyuán, méi xiǎngdào tā zhǐ shì ge àihàozhě.",
+        "note": "专业 là từ bài 3 — ở đây là tính từ \"chuyên nghiệp\".",
+        "pair": "以为……没想到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn giỏi thật! Ngay cả Kinh kịch mà nhiều người Trung Quốc nghe không hiểu bạn cũng học được.",
+        "answer": "你真厉害！竟然连很多中国人都听不懂的京剧也能学会。",
+        "answerPy": "Nǐ zhēn lìhai! Jìngrán lián hěn duō Zhōngguó rén dōu tīngbudǒng de jīngjù yě néng xuéhuì.",
+        "note": "竟然 (Bài 6) + 连……也 (Bài 11) + 厉害 (Bài 11).",
+        "pair": "连……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "听京剧",
+        "py": "tīng jīngjù",
+        "vn": "nghe Kinh kịch"
+      },
+      {
+        "zh": "唱京剧",
+        "py": "chàng jīngjù",
+        "vn": "hát Kinh kịch"
+      },
+      {
+        "zh": "京剧演员",
+        "py": "jīngjù yǎnyuán",
+        "vn": "diễn viên Kinh kịch"
+      },
+      {
+        "zh": "喜欢京剧",
+        "py": "xǐhuan jīngjù",
+        "vn": "thích Kinh kịch"
+      },
+      {
+        "zh": "京剧表演",
+        "py": "jīngjù biǎoyǎn",
+        "vn": "màn diễn Kinh kịch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "唱 / 听 + 京剧",
+        "m": "Hát / nghe Kinh kịch"
+      },
+      {
+        "s": "京 + 剧",
+        "m": "Kịch (剧) của Bắc Kinh (京) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "演员",
+    "py": "yǎnyuán",
+    "pos": "Danh từ",
+    "vn": "diễn viên",
+    "hv": "diễn viên",
+    "em": "🎬",
+    "lesson": 1,
+    "explain": [
+      "Người biểu diễn trong phim, kịch, sân khấu."
+    ],
+    "usage": "京剧演员, 专业的演员, 当演员.",
+    "collo": [
+      "京剧演员",
+      "专业的演员",
+      "有名的演员"
+    ],
+    "ex_zh": "对啊，他本来就是京剧演员，年轻时在我们那儿很有名。",
+    "ex_py": "Duì a, tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí zài wǒmen nàr hěn yǒumíng.",
+    "ex_vn": "Đúng vậy, ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng ở chỗ chúng tôi.",
+    "exList": [
+      {
+        "zh": "对啊，他本来就是京剧演员，年轻时在我们那儿很有名。",
+        "py": "Duì a, tā běnlái jiù shì jīngjù yǎnyuán, niánqīng shí zài wǒmen nàr hěn yǒumíng.",
+        "vn": "Đúng vậy, ông vốn là diễn viên Kinh kịch, thời trẻ rất nổi tiếng ở chỗ chúng tôi."
+      },
+      {
+        "zh": "他们很喜欢唱京剧，虽然不是专业的演员，不过，他们唱得不错。",
+        "py": "Tāmen hěn xǐhuan chàng jīngjù, suīrán bú shì zhuānyè de yǎnyuán, búguò, tāmen chàng de búcuò.",
+        "vn": "Họ rất thích hát Kinh kịch, tuy không phải diễn viên chuyên nghiệp, nhưng họ hát khá hay."
+      },
+      {
+        "zh": "这位演员的表演非常精彩，观众都站起来鼓掌。",
+        "py": "Zhè wèi yǎnyuán de biǎoyǎn fēicháng jīngcǎi, guānzhòng dōu zhàn qilai gǔzhǎng.",
+        "vn": "Màn biểu diễn của diễn viên này rất đặc sắc, khán giả đều đứng dậy vỗ tay."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "演",
+        "p": "yǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "氵 (thủy) trái → 寅 phải",
+        "rad": "氵 (thủy)",
+        "mean": "diễn",
+        "tip": "Bộ nước 氵 (chảy dài, triển khai) + 寅 → TRIỂN KHAI, DIỄN, kết hợp 员(người) thành 演员 = DIỄN VIÊN.",
+        "cf": "寅 (yín – chi Dần)",
+        "w": "演员 / 演出 / 表演"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chính vì ông vốn là diễn viên Kinh kịch nổi tiếng thời trẻ, nên rất được khán giả yêu mến.",
+        "answer": "正因为他本来就是年轻时很有名的京剧演员，所以深受观众的喜爱。",
+        "answerPy": "Zhèng yīnwèi tā běnlái jiùshì niánqīng shí hěn yǒumíng de jīngjù yǎnyuán, suǒyǐ shēn shòu guānzhòng de xǐ'ài.",
+        "note": "本来 là từ bài 4; 深受……喜爱 — được yêu thích sâu sắc.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy không phải diễn viên chuyên nghiệp, nhưng họ hát khá hay, nghe rất có hồn.",
+        "answer": "虽然不是专业的演员，不过他们唱得不错，听起来很有味道。",
+        "answerPy": "Suīrán bú shì zhuānyè de yǎnyuán, búguò tāmen chàng de búcuò, tīng qilai hěn yǒu wèidào.",
+        "note": "不过 ôn lại ngữ pháp Bài 10.",
+        "pair": "虽然……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "京剧演员",
+        "py": "jīngjù yǎnyuán",
+        "vn": "diễn viên Kinh kịch"
+      },
+      {
+        "zh": "有名的演员",
+        "py": "yǒumíng de yǎnyuán",
+        "vn": "diễn viên nổi tiếng"
+      },
+      {
+        "zh": "专业的演员",
+        "py": "zhuānyè de yǎnyuán",
+        "vn": "diễn viên chuyên nghiệp"
+      },
+      {
+        "zh": "当演员",
+        "py": "dāng yǎnyuán",
+        "vn": "làm diễn viên"
+      },
+      {
+        "zh": "一位演员",
+        "py": "yí wèi yǎnyuán",
+        "vn": "một diễn viên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "当 + 演员",
+        "m": "Làm diễn viên"
+      },
+      {
+        "s": "演 + 员",
+        "m": "Người (员) biểu diễn (演) — cùng kiểu với 售货员 bài 6"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "观众",
+    "py": "guānzhòng",
+    "pos": "Danh từ",
+    "vn": "khán giả",
+    "hv": "quan chúng",
+    "em": "👥",
+    "lesson": 1,
+    "explain": [
+      "Người xem biểu diễn, phim, thi đấu."
+    ],
+    "usage": "深受观众的喜爱, 吸引观众, 不同年龄的观众.",
+    "collo": [
+      "深受观众们的喜爱",
+      "吸引了不少观众",
+      "不同年龄的观众"
+    ],
+    "ex_zh": "年轻时在我们那儿很有名，深受观众们的喜爱。",
+    "ex_py": "Niánqīng shí zài wǒmen nàr hěn yǒumíng, shēn shòu guānzhòngmen de xǐ'ài.",
+    "ex_vn": "Thời trẻ rất nổi tiếng ở chỗ chúng tôi, được khán giả vô cùng yêu thích.",
+    "exList": [
+      {
+        "zh": "年轻时在我们那儿很有名，深受观众们的喜爱。",
+        "py": "Niánqīng shí zài wǒmen nàr hěn yǒumíng, shēn shòu guānzhòngmen de xǐ'ài.",
+        "vn": "Thời trẻ rất nổi tiếng ở chỗ chúng tôi, được khán giả vô cùng yêu thích."
+      },
+      {
+        "zh": "这次演出举办得非常成功，吸引了不少当地的观众。",
+        "py": "Zhè cì yǎnchū jǔbàn de fēicháng chénggōng, xīyǐnle bùshǎo dāngdì de guānzhòng.",
+        "vn": "Buổi biểu diễn lần này tổ chức rất thành công, thu hút không ít khán giả địa phương."
+      },
+      {
+        "zh": "随着社会的发展，京剧也在改变，以适应不同年龄观众的需要。",
+        "py": "Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn, yǐ shìyìng bù tóng niánlíng guānzhòng de xūyào.",
+        "vn": "Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi để thích ứng nhu cầu khán giả các độ tuổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "众",
+        "p": "zhòng",
+        "type": "品字结构 · Ba chữ 人",
+        "st": 6,
+        "ord": "人 trên → 人人 dưới",
+        "rad": "人 (nhân)",
+        "mean": "đông người",
+        "tip": "Chữ hội ý ba người 人 → ĐÔNG NGƯỜI, kết hợp 观(xem) thành 观众 = KHÁN GIẢ.",
+        "cf": "从 (cóng – hai chữ 人)",
+        "w": "观众 / 大众 / 群众"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Buổi diễn lần này không những tổ chức rất thành công, mà còn thu hút không ít khán giả địa phương.",
+        "answer": "这次演出不但举办得非常成功，而且还吸引了不少当地的观众。",
+        "answerPy": "Zhè cì yǎnchū búdàn jǔbàn de fēicháng chénggōng, érqiě hái xīyǐnle bù shǎo dāngdì de guānzhòng.",
+        "note": "举办 là từ bài 6, 成功 là từ bài 4.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Kinh kịch cũng đang thay đổi, để bất kể khán giả ở độ tuổi nào cũng thấy thích xem.",
+        "answer": "京剧也在改变，为了让不管什么年龄的观众都爱看。",
+        "answerPy": "Jīngjù yě zài gǎibiàn, wèile ràng bùguǎn shénme niánlíng de guānzhòng dōu ài kàn.",
+        "note": "改变 là từ bài 3, 年龄 là từ bài 5.",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "吸引观众",
+        "py": "xīyǐn guānzhòng",
+        "vn": "thu hút khán giả"
+      },
+      {
+        "zh": "受观众喜爱",
+        "py": "shòu guānzhòng xǐ'ài",
+        "vn": "được khán giả yêu thích"
+      },
+      {
+        "zh": "不同年龄的观众",
+        "py": "bù tóng niánlíng de guānzhòng",
+        "vn": "khán giả các độ tuổi"
+      },
+      {
+        "zh": "观众很多",
+        "py": "guānzhòng hěn duō",
+        "vn": "rất đông khán giả"
+      },
+      {
+        "zh": "当地的观众",
+        "py": "dāng de de guānzhòng",
+        "vn": "khán giả địa phương"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "受 + 观众 + 喜爱 / 欢迎",
+        "m": "Được khán giả yêu thích"
+      },
+      {
+        "s": "观众 ≠ 听众",
+        "m": "观众 là người XEM; 听众 là người NGHE"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "厚",
+    "py": "hòu",
+    "pos": "Tính từ",
+    "vn": "dày; sâu nặng (tình cảm)",
+    "hv": "hậu",
+    "em": "📚",
+    "lesson": 1,
+    "explain": [
+      "1. Dày (đối lập 薄).",
+      "2. Sâu đậm (tình cảm): 深厚的感情."
+    ],
+    "usage": "这本书很厚; 深厚的感情; 厚厚的.",
+    "collo": [
+      "很深厚的感情",
+      "这本小说这么厚",
+      "厚衣服"
+    ],
+    "ex_zh": "你爷爷一定对京剧有着很深厚的感情。",
+    "ex_py": "Nǐ yéye yídìng duì jīngjù yǒuzhe hěn shēnhòu de gǎnqíng.",
+    "ex_vn": "Ông bạn chắc chắn có tình cảm rất sâu đậm với Kinh kịch.",
+    "exList": [
+      {
+        "zh": "你爷爷一定对京剧有着很深厚的感情。",
+        "py": "Nǐ yéye yídìng duì jīngjù yǒuzhe hěn shēnhòu de gǎnqíng.",
+        "vn": "Ông bạn chắc chắn có tình cảm rất sâu đậm với Kinh kịch."
+      },
+      {
+        "zh": "这本小说这么厚，什么时候才能看完啊？",
+        "py": "Zhè běn xiǎoshuō zhème hòu, shénme shíhou cái néng kànwán a?",
+        "vn": "Quyển tiểu thuyết này dày thế, bao giờ mới đọc xong đây?"
+      },
+      {
+        "zh": "天冷了，出门要穿厚一点儿的衣服。",
+        "py": "Tiān lěng le, chūmén yào chuān hòu yìdiǎnr de yīfu.",
+        "vn": "Trời lạnh rồi, ra ngoài phải mặc áo dày một chút."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "厚",
+        "p": "hòu",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 9,
+        "ord": "厂 bao → 日+子 trong",
+        "rad": "厂 (hán – vách núi)",
+        "mean": "dày",
+        "tip": "Vách núi 厂 chồng nhiều lớp đất → DÀY, mở rộng thành SÂU NẶNG (tình cảm).",
+        "cf": "原 (yuán – \"nguyên\", cũng bộ 厂)",
+        "w": "厚 / 深厚 / 厚道"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Quyển tiểu thuyết này dày thế, bao giờ mới đọc xong đây? — Mỗi tối đọc mười mấy trang, khoảng một tháng là đọc xong.",
+        "answer": "这本小说这么厚，什么时候才能看完啊？——每天晚上看十几页，差不多一个月就可以看完。",
+        "answerPy": "Zhè běn xiǎoshuō zhème hòu, shénme shíhou cái néng kànwán a? — Měi tiān wǎnshang kàn shí jǐ yè, chàbuduō yí ge yuè jiù kěyǐ kànwán.",
+        "note": "练习2 SGK (6); 页 (Bài 11) + 差不多 (Bài 2).",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ông chắc chắn có tình cảm rất sâu đậm với Kinh kịch, vì ông đã hát hơn 60 năm.",
+        "answer": "他一定对京剧有着很深厚的感情，因为他已经唱了60多年了。",
+        "answerPy": "Tā yídìng duì jīngjù yǒuzhe hěn shēnhòu de gǎnqíng, yīnwèi tā yǐjīng chàngle liùshí duō nián le.",
+        "note": "有着 — 着 chỉ trạng thái kéo dài.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很厚的书",
+        "py": "hěn hòu de shū",
+        "vn": "quyển sách rất dày"
+      },
+      {
+        "zh": "厚衣服",
+        "py": "hòu yīfu",
+        "vn": "áo dày"
+      },
+      {
+        "zh": "深厚的感情",
+        "py": "shēn hòu de gǎnqíng",
+        "vn": "tình cảm sâu nặng"
+      },
+      {
+        "zh": "厚厚的",
+        "py": "hòuhòu de",
+        "vn": "dày cộm"
+      },
+      {
+        "zh": "不太厚",
+        "py": "bú tài hòu",
+        "vn": "không dày lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "厚 ↔ 薄",
+        "m": "Dày ↔ mỏng"
+      },
+      {
+        "s": "深厚 + 感情",
+        "m": "Tình cảm sâu nặng — nghĩa mở rộng của 厚"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "演出",
+    "py": "yǎnchū",
+    "pos": "Động từ/Danh từ",
+    "vn": "biểu diễn; buổi biểu diễn",
+    "hv": "diễn xuất",
+    "em": "🎪",
+    "lesson": 1,
+    "explain": [
+      "Biểu diễn trước khán giả; hoặc buổi biểu diễn."
+    ],
+    "usage": "上台演出; 看他的演出; 演出很成功.",
+    "collo": [
+      "上台演出",
+      "看他的演出",
+      "这次演出举办得很成功"
+    ],
+    "ex_zh": "他8岁就开始上台演出，到现在大概唱了60多年了。",
+    "ex_py": "Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.",
+    "ex_vn": "Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.",
+    "exList": [
+      {
+        "zh": "他8岁就开始上台演出，到现在大概唱了60多年了。",
+        "py": "Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.",
+        "vn": "Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm."
+      },
+      {
+        "zh": "我小时候经常去看他的演出。",
+        "py": "Wǒ xiǎoshíhou jīngcháng qù kàn tā de yǎnchū.",
+        "vn": "Hồi nhỏ tôi thường đi xem ông biểu diễn."
+      },
+      {
+        "zh": "这次演出举办得非常成功，吸引了不少当地的观众。",
+        "py": "Zhè cì yǎnchū jǔbàn de fēicháng chénggōng, xīyǐnle bùshǎo dāngdì de guānzhòng.",
+        "vn": "Buổi biểu diễn lần này tổ chức rất thành công, thu hút không ít khán giả địa phương."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "出",
+        "p": "chū",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "凵 → 凵 chồng",
+        "rad": "凵 (khảm)",
+        "mean": "ra",
+        "tip": "Chữ tượng hình bàn chân bước RA khỏi hang → RA, kết hợp 演 thành 演出 = DIỄN RA trước khán giả.",
+        "cf": "山 (shān – \"núi\", tự dạng gần giống)",
+        "w": "演出 / 出来 / 出发"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ông lên sân khấu từ năm 8 tuổi, tính đến nay chắc đã hát hơn 60 năm.",
+        "answer": "他8岁就开始上台演出，到现在大概唱了60多年了。",
+        "answerPy": "Tā 8 suì jiù kāishǐ shàngtái yǎnchū, dào xiànzài dàgài chàngle 60 duō nián le.",
+        "note": "大概 + số lượng — ước chừng bao nhiêu.",
+        "pair": "大概……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hồi nhỏ tôi không những hay đi xem ông diễn, mà ông còn kể cho tôi nhiều chuyện lịch sử.",
+        "answer": "我小时候不但经常去看他的演出，而且他还给我讲很多历史故事。",
+        "answerPy": "Wǒ xiǎoshíhou búdàn jīngcháng qù kàn tā de yǎnchū, érqiě tā hái gěi wǒ jiǎng hěn duō lìshǐ gùshi.",
+        "note": "一场演出 — 演出 làm danh từ thì dùng lượng từ 场.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "上台演出",
+        "py": "shàng tái yǎnchū",
+        "vn": "lên sân khấu biểu diễn"
+      },
+      {
+        "zh": "看演出",
+        "py": "kàn yǎnchū",
+        "vn": "xem biểu diễn"
+      },
+      {
+        "zh": "一场演出",
+        "py": "yì chǎng yǎnchū",
+        "vn": "một buổi diễn"
+      },
+      {
+        "zh": "演出很成功",
+        "py": "yǎnchū hěn chénggōng",
+        "vn": "buổi diễn rất thành công"
+      },
+      {
+        "zh": "参加演出",
+        "py": "cānjiā yǎnchū",
+        "vn": "tham gia biểu diễn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "上台 + 演出 (động từ)",
+        "m": "Lên sân khấu biểu diễn"
+      },
+      {
+        "s": "一 + 场 + 演出 (danh từ)",
+        "m": "Một buổi biểu diễn"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "大概",
+    "py": "dàgài",
+    "pos": "Phó từ/Tính từ",
+    "vn": "khoảng chừng, có lẽ; đại khái",
+    "hv": "đại khái",
+    "em": "🤔",
+    "lesson": 1,
+    "explain": [
+      "1. (Phó từ) Ước lượng gần đúng về số lượng/thời gian; hoặc suy đoán tình huống với khả năng cao.",
+      "2. (Tính từ) Không chính xác lắm, chung chung: 大概的想法/内容."
+    ],
+    "usage": "大概 + số lượng; 大概 + mệnh đề; 大概的 + danh từ.",
+    "collo": [
+      "大概唱了60多年",
+      "大概会同意",
+      "大概的想法"
+    ],
+    "ex_zh": "他8岁就开始上台演出，到现在大概唱了60多年了。",
+    "ex_py": "Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.",
+    "ex_vn": "Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm.",
+    "exList": [
+      {
+        "zh": "他8岁就开始上台演出，到现在大概唱了60多年了。",
+        "py": "Tā bā suì jiù kāishǐ shàng tái yǎnchū, dào xiànzài dàgài chàngle liùshí duō nián le.",
+        "vn": "Ông 8 tuổi đã bắt đầu lên sân khấu biểu diễn, đến nay đại khái đã hát hơn 60 năm."
+      },
+      {
+        "zh": "你的这个关于举办传统文化节活动的计划，我想校长大概会同意。",
+        "py": "Nǐ de zhège guānyú jǔbàn chuántǒng wénhuà jié huódòng de jìhuà, wǒ xiǎng xiàozhǎng dàgài huì tóngyì.",
+        "vn": "Kế hoạch tổ chức lễ hội văn hóa truyền thống này của bạn, tôi nghĩ hiệu trưởng có lẽ sẽ đồng ý."
+      },
+      {
+        "zh": "不管做什么事情，最好提前做计划，不用安排得特别详细，但必须有一个大概的想法。",
+        "py": "Bùguǎn zuò shénme shìqing, zuìhǎo tíqián zuò jìhuà, bú yòng ānpái de tèbié xiángxì, dàn bìxū yǒu yí ge dàgài de xiǎngfǎ.",
+        "vn": "Bất kể làm việc gì, tốt nhất lập kế hoạch trước, không cần sắp xếp quá chi tiết, nhưng phải có một ý tưởng đại khái."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "概",
+        "p": "gài",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "木 (mộc) trái → 既 phải",
+        "rad": "木 (mộc)",
+        "mean": "gạt bằng, đại khái",
+        "tip": "Nghĩa gốc là thanh gỗ 木 GẠT BẰNG miệng đấu → mở rộng thành ĐẠI KHÁI, KHÁI QUÁT.",
+        "cf": "既 (jì – \"đã\", phần bên phải)",
+        "w": "大概 / 概念 / 大概的"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Kế hoạch tổ chức lễ hội văn hoá này, chỉ cần viết rõ ràng thì hiệu trưởng có lẽ sẽ đồng ý.",
+        "answer": "这个举办文化节活动的计划，只要写得清楚，校长大概就会同意。",
+        "answerPy": "Zhège jǔbàn wénhuàjié huódòng de jìhuà, zhǐyào xiě de qīngchu, xiàozhǎng dàgài jiù huì tóngyì.",
+        "note": "计划 là từ bài 4, 活动 là từ bài 6.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không cần sắp xếp quá chi tiết, nhưng nhất định phải có một ý tưởng đại khái.",
+        "answer": "虽然不用安排得特别详细，但是必须有一个大概的想法。",
+        "answerPy": "Suīrán búyòng ānpái de tèbié xiángxì, dànshì bìxū yǒu yí ge dàgài de xiǎngfǎ.",
+        "note": "安排 là từ bài 3, 详细 là từ bài 12.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "大概会同意",
+        "py": "dàgài huì tóngyì",
+        "vn": "có lẽ sẽ đồng ý"
+      },
+      {
+        "zh": "大概60年",
+        "py": "dàgài nián",
+        "vn": "khoảng 60 năm"
+      },
+      {
+        "zh": "大概的想法",
+        "py": "dàgài de xiǎng fǎ",
+        "vn": "ý tưởng đại khái"
+      },
+      {
+        "zh": "大概知道",
+        "py": "dàgài zhīdào",
+        "vn": "đại khái biết"
+      },
+      {
+        "zh": "大概下午到",
+        "py": "dàgài xiàwǔ dào",
+        "vn": "chắc chiều đến"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "大概 + số lượng",
+        "m": "Khoảng chừng bao nhiêu"
+      },
+      {
+        "s": "大概 + 会 + V",
+        "m": "Có lẽ sẽ … — phỏng đoán"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "来自",
+    "py": "láizì",
+    "pos": "Động từ",
+    "vn": "đến từ",
+    "hv": "lai tự",
+    "em": "🌍",
+    "lesson": 2,
+    "explain": [
+      "Xuất phát từ (nơi chốn, nguồn gốc)."
+    ],
+    "usage": "来自 + nơi: 来自美国, 来自不同的国家.",
+    "collo": [
+      "来自美国的留学生",
+      "来自不同的国家",
+      "来自生活"
+    ],
+    "ex_zh": "真没想到你一个来自美国的外国留学生，能把京剧唱得这么好。",
+    "ex_py": "Zhēn méi xiǎngdào nǐ yí ge láizì Měiguó de wàiguó liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.",
+    "ex_vn": "Thật không ngờ một du học sinh đến từ Mỹ như bạn, lại hát Kinh kịch hay như vậy.",
+    "exList": [
+      {
+        "zh": "真没想到你一个来自美国的外国留学生，能把京剧唱得这么好。",
+        "py": "Zhēn méi xiǎngdào nǐ yí ge láizì Měiguó de wàiguó liúxuéshēng, néng bǎ jīngjù chàng de zhème hǎo.",
+        "vn": "Thật không ngờ một du học sinh đến từ Mỹ như bạn, lại hát Kinh kịch hay như vậy."
+      },
+      {
+        "zh": "我们班的同学来自十几个不同的国家。",
+        "py": "Wǒmen bān de tóngxué láizì shí jǐ ge bù tóng de guójiā.",
+        "vn": "Các bạn lớp tôi đến từ hơn mười quốc gia khác nhau."
+      },
+      {
+        "zh": "很多问题的答案都来自生活。",
+        "py": "Hěn duō wèntí de dá'àn dōu láizì shēnghuó.",
+        "vn": "Đáp án của nhiều vấn đề đều đến từ cuộc sống."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "自",
+        "p": "zì",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "丿 → 目",
+        "rad": "自 (tự)",
+        "mean": "tự, từ",
+        "tip": "Chữ tượng hình cái MŨI (chỉ vào mình) → TỰ, mở rộng thành TỪ (nguồn gốc), kết hợp 来 thành 来自 = ĐẾN TỪ.",
+        "cf": "目 (mù – \"mắt\", thiếu nét phẩy trên)",
+        "w": "来自 / 自己 / 自然"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cứ tưởng du học sinh đến từ Mỹ thì khó hát Kinh kịch, ai ngờ cậu ấy hát hay đến vậy.",
+        "answer": "我以为一个来自美国的留学生很难唱好京剧，没想到他唱得这么好。",
+        "answerPy": "Wǒ yǐwéi yí ge láizì Měiguó de liúxuéshēng hěn nán chàng hǎo jīngjù, méi xiǎngdào tā chàng de zhème hǎo.",
+        "note": "来自 đã gồm nghĩa \"từ\": ✗ 来自从美国.",
+        "pair": "以为……没想到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Lễ hội văn hoá không những giúp sinh viên các nước hiểu Trung Quốc hơn, mà còn giúp họ kết bạn.",
+        "answer": "文化节活动不但能让来自各国的学生更好地了解中国，而且还能让他们交到朋友。",
+        "answerPy": "Wénhuàjié huódòng búdàn néng ràng láizì gè guó de xuésheng gèng hǎo de liǎojiě Zhōngguó, érqiě hái néng ràng tāmen jiāo dào péngyou.",
+        "note": "各 là từ bài 6, 交朋友 là từ bài 2.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "来自美国",
+        "py": "láizì Měiguó",
+        "vn": "đến từ Mỹ"
+      },
+      {
+        "zh": "来自不同的国家",
+        "py": "láizì bù tóng de guójiā",
+        "vn": "đến từ các nước khác nhau"
+      },
+      {
+        "zh": "来自生活",
+        "py": "láizì shēnghuó",
+        "vn": "bắt nguồn từ cuộc sống"
+      },
+      {
+        "zh": "来自各国的学生",
+        "py": "láizì gè guó de xuésheng",
+        "vn": "sinh viên các nước"
+      },
+      {
+        "zh": "来自哪里",
+        "py": "láizì nǎlǐ",
+        "vn": "đến từ đâu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 来自 + nơi chốn",
+        "m": "Ai đó đến từ đâu"
+      },
+      {
+        "s": "✗ 来自从美国 → ✓ 来自美国",
+        "m": "来自 đã gồm nghĩa \"từ\", không thêm 从"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "遍",
+    "py": "biàn",
+    "pos": "Lượng từ",
+    "vn": "lần, lượt (từ đầu đến cuối)",
+    "hv": "biến",
+    "em": "🔁",
+    "lesson": 2,
+    "explain": [
+      "Lượng từ động lượng, chỉ một hành động trọn vẹn từ đầu đến cuối."
+    ],
+    "usage": "V + 一遍/几遍: 练习一遍, 检查一遍, 一遍一遍地.",
+    "collo": [
+      "一遍一遍地练习",
+      "再检查一遍",
+      "看了好几遍"
+    ],
+    "ex_zh": "我常常跟着电视学唱京剧，然后一遍一遍地练习。",
+    "ex_py": "Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí.",
+    "ex_vn": "Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại từng lượt.",
+    "exList": [
+      {
+        "zh": "我常常跟着电视学唱京剧，然后一遍一遍地练习。",
+        "py": "Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí.",
+        "vn": "Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại từng lượt."
+      },
+      {
+        "zh": "材料整理好了没？——差不多了，我再检查一遍就给您送过去。",
+        "py": "Cáiliào zhěnglǐ hǎo le méi? — Chàbuduō le, wǒ zài jiǎnchá yí biàn jiù gěi nín sòng guòqu.",
+        "vn": "Tài liệu sắp xếp xong chưa? — Gần xong rồi, tôi kiểm tra lại một lượt nữa rồi gửi cho ngài."
+      },
+      {
+        "zh": "这篇文章我看了好几遍才看懂。",
+        "py": "Zhè piān wénzhāng wǒ kànle hǎojǐ biàn cái kàndǒng.",
+        "vn": "Bài văn này tôi đọc mấy lượt mới hiểu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "遍",
+        "p": "biàn",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 12,
+        "ord": "扁 trong → 辶 bao",
+        "rad": "辶 (sước – đi)",
+        "mean": "khắp, lượt",
+        "tip": "Bộ đi 辶 + 扁 → ĐI KHẮP từ đầu đến cuối → LƯỢT (trọn vẹn).",
+        "cf": "篇 (piān – \"bài\", bộ 竹)",
+        "w": "遍 / 一遍 / 普遍"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tài liệu gần xong rồi, tôi kiểm tra lại một lượt nữa rồi gửi cho ngài.",
+        "answer": "材料差不多了，我再检查一遍就给您送过去。",
+        "answerPy": "Cáiliào chàbuduō le, wǒ zài jiǎnchá yí biàn jiù gěi nín sòng guòqu.",
+        "note": "练习2 SGK (8); 材料 (Bài 4).",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thường học hát theo tivi rồi luyện đi luyện lại, thỉnh thoảng còn hát vài câu cùng người Trung Quốc.",
+        "answer": "我常常跟着电视学唱，然后一遍一遍地练习，偶尔还跟中国人一起唱上几句。",
+        "answerPy": "Wǒ chángcháng gēnzhe diànshì xué chàng, ránhòu yí biàn yí biàn de liànxí, ǒu'ěr hái gēn Zhōngguórén yìqǐ chàng shang jǐ jù.",
+        "note": "遍 nhấn trọn vẹn từ đầu đến cuối, khác 次 chỉ đếm lần.",
+        "pair": "先……然后……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "看了一遍",
+        "py": "kàn le yí biàn",
+        "vn": "xem một lượt"
+      },
+      {
+        "zh": "一遍一遍地练习",
+        "py": "yí biàn yí biàn de liànxí",
+        "vn": "luyện đi luyện lại"
+      },
+      {
+        "zh": "再检查一遍",
+        "py": "zài jiǎnchá yí biàn",
+        "vn": "kiểm tra lại một lượt"
+      },
+      {
+        "zh": "看了好几遍",
+        "py": "kàn le hǎo jǐ biàn",
+        "vn": "xem mấy lượt"
+      },
+      {
+        "zh": "读三遍",
+        "py": "dú sān biàn",
+        "vn": "đọc ba lượt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 了 + số + 遍",
+        "m": "Làm gì mấy lượt, từ đầu đến cuối"
+      },
+      {
+        "s": "遍 ≠ 次",
+        "m": "遍 nhấn TRỌN VẸN từ đầu đến cuối; 次 chỉ đếm số lần"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "偶尔",
+    "py": "ǒu'ěr",
+    "pos": "Phó từ",
+    "vn": "thỉnh thoảng",
+    "hv": "ngẫu nhĩ",
+    "em": "🕰️",
+    "lesson": 2,
+    "explain": [
+      "Tình huống xảy ra với tần suất rất thấp."
+    ],
+    "usage": "偶尔 + động từ: 偶尔跟……一起, 偶尔加班.",
+    "collo": [
+      "偶尔跟中国人一起唱",
+      "偶尔加班",
+      "偶尔也会出现"
+    ],
+    "ex_zh": "我常常跟着电视学唱京剧，然后一遍一遍地练习，偶尔跟中国人一起唱上几句。",
+    "ex_py": "Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí, ǒu'ěr gēn Zhōngguó rén yìqǐ chàngshang jǐ jù.",
+    "ex_vn": "Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại, thỉnh thoảng hát vài câu với người Trung Quốc.",
+    "exList": [
+      {
+        "zh": "我常常跟着电视学唱京剧，然后一遍一遍地练习，偶尔跟中国人一起唱上几句。",
+        "py": "Wǒ chángcháng gēnzhe diànshì xué chàng jīngjù, ránhòu yí biàn yí biàn de liànxí, ǒu'ěr gēn Zhōngguó rén yìqǐ chàngshang jǐ jù.",
+        "vn": "Tôi thường học hát Kinh kịch theo TV, rồi luyện đi luyện lại, thỉnh thoảng hát vài câu với người Trung Quốc."
+      },
+      {
+        "zh": "我们调查的近7000名上班族中，有64%的人经常加班，28%偶尔加班。",
+        "py": "Wǒmen diàochá de jìn qīqiān míng shàngbānzú zhōng, yǒu bǎifēnzhī liùshísì de rén jīngcháng jiābān, bǎifēnzhī èrshíbā ǒu'ěr jiābān.",
+        "vn": "Trong gần 7000 người đi làm được khảo sát, 64% thường xuyên tăng ca, 28% thỉnh thoảng tăng ca."
+      },
+      {
+        "zh": "三叶草的叶子一般为三个，但偶尔也会出现四个叶子的。",
+        "py": "Sānyècǎo de yèzi yìbān wéi sān ge, dàn ǒu'ěr yě huì chūxiàn sì ge yèzi de.",
+        "vn": "Cỏ ba lá thường có ba lá, nhưng thỉnh thoảng cũng xuất hiện loại bốn lá."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "偶",
+        "p": "ǒu",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "亻 (nhân) trái → 禺 phải",
+        "rad": "亻 (nhân)",
+        "mean": "ngẫu nhiên, tượng gỗ",
+        "tip": "Bộ người 亻 + 禺 → nghĩa gốc là TƯỢNG NGƯỜI, mượn nghĩa NGẪU NHIÊN, kết hợp 尔 thành 偶尔 = THỈNH THOẢNG.",
+        "cf": "遇 (yù – \"gặp\", bộ 辶)",
+        "w": "偶尔 / 偶然 / 偶像"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Để giảm cân, tôi hầu như tối nào cũng kiên trì chạy bộ, thỉnh thoảng mới nghỉ một buổi.",
+        "answer": "为了减肥，我几乎每天晚上都坚持跑步，偶尔才休息一次。",
+        "answerPy": "Wèile jiǎnféi, wǒ jīhū měi tiān wǎnshang dōu jiānchí pǎobù, ǒu'ěr cái xiūxi yí cì.",
+        "note": "Bài luyện tập SGK (1); 几乎 (Bài 2) + 坚持 (Bài 9).",
+        "pair": "为了……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy và chồng rất ít ăn ở nhà, cuối tuần đi nhà hàng, thỉnh thoảng mới tự nấu.",
+        "answer": "她和丈夫很少在家吃饭，周末去饭馆儿吃，偶尔才自己做饭。",
+        "answerPy": "Tā hé zhàngfu hěn shǎo zài jiā chī fàn, zhōumò qù fànguǎnr chī, ǒu'ěr cái zìjǐ zuò fàn.",
+        "note": "Bài luyện tập SGK (3).",
+        "pair": "……，才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "偶尔加班",
+        "py": "ǒu'ěr jiā bān",
+        "vn": "thỉnh thoảng tăng ca"
+      },
+      {
+        "zh": "偶尔去看看",
+        "py": "ǒu'ěr qù kànkàn",
+        "vn": "thỉnh thoảng ghé xem"
+      },
+      {
+        "zh": "偶尔也会",
+        "py": "ǒu'ěr yě huì",
+        "vn": "đôi khi cũng sẽ"
+      },
+      {
+        "zh": "偶尔出现",
+        "py": "ǒu'ěr chūxiàn",
+        "vn": "thỉnh thoảng xuất hiện"
+      },
+      {
+        "zh": "只是偶尔",
+        "py": "zhī shì ǒu'ěr",
+        "vn": "chỉ thỉnh thoảng thôi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 偶尔 + V",
+        "m": "Ai đó thỉnh thoảng làm gì"
+      },
+      {
+        "s": "偶尔 ↔ 经常",
+        "m": "Thỉnh thoảng ↔ thường xuyên"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "吃惊",
+    "py": "chī jīng",
+    "pos": "Động từ",
+    "vn": "kinh ngạc",
+    "hv": "ngật kinh",
+    "em": "😲",
+    "lesson": 2,
+    "explain": [
+      "Ngạc nhiên, giật mình vì điều bất ngờ (động từ li hợp)."
+    ],
+    "usage": "别吃惊; 大吃一惊; 让人吃惊.",
+    "collo": [
+      "别吃惊",
+      "大吃一惊",
+      "让人吃惊的消息"
+    ],
+    "ex_zh": "别吃惊，因为我以前学习过音乐，有一些音乐基础。",
+    "ex_py": "Bié chī jīng, yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ.",
+    "ex_vn": "Đừng ngạc nhiên, vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc.",
+    "exList": [
+      {
+        "zh": "别吃惊，因为我以前学习过音乐，有一些音乐基础。",
+        "py": "Bié chī jīng, yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ.",
+        "vn": "Đừng ngạc nhiên, vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc."
+      },
+      {
+        "zh": "听到这个消息，大家都大吃一惊。",
+        "py": "Tīngdào zhège xiāoxi, dàjiā dōu dà chī yì jīng.",
+        "vn": "Nghe tin này, mọi người đều vô cùng kinh ngạc."
+      },
+      {
+        "zh": "他竟然会唱京剧，真让人吃惊。",
+        "py": "Tā jìngrán huì chàng jīngjù, zhēn ràng rén chī jīng.",
+        "vn": "Anh ấy lại biết hát Kinh kịch, thật khiến người ta kinh ngạc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "惊",
+        "p": "jīng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 11,
+        "ord": "忄 (tâm) trái → 京 phải",
+        "rad": "忄 (tâm)",
+        "mean": "kinh sợ",
+        "tip": "Bộ tim 忄 + 京(biểu âm) → tim GIẬT MÌNH, kết hợp 吃 thành 吃惊 = KINH NGẠC.",
+        "cf": "京 (jīng – \"kinh đô\", phần bên phải)",
+        "w": "吃惊 / 惊喜 / 吃了一惊"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cậu ấy chẳng những biết hát Kinh kịch, mà còn hát hay, thật khiến người ta kinh ngạc.",
+        "answer": "他不但会唱京剧，而且唱得很好，真让人吃惊。",
+        "answerPy": "Tā búdàn huì chàng jīngjù, érqiě chàng de hěn hǎo, zhēn ràng rén chījīng.",
+        "note": "吃惊 là từ ly hợp: 吃了一惊, 大吃一惊.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng ngạc nhiên, vì trước đây tôi từng học âm nhạc, có chút nền tảng.",
+        "answer": "别吃惊，因为我以前学习过音乐，有一些基础。",
+        "answerPy": "Bié chī jīng, yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē jīchǔ.",
+        "note": "基础 — từ mới của bài; 过 chỉ kinh nghiệm.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "大吃一惊",
+        "py": "dà chī yì jīng",
+        "vn": "giật cả mình"
+      },
+      {
+        "zh": "让人吃惊",
+        "py": "ràng rén chī jīng",
+        "vn": "khiến người ta kinh ngạc"
+      },
+      {
+        "zh": "别吃惊",
+        "py": "bié chī jīng",
+        "vn": "đừng ngạc nhiên"
+      },
+      {
+        "zh": "感到吃惊",
+        "py": "gǎndào chī jīng",
+        "vn": "cảm thấy kinh ngạc"
+      },
+      {
+        "zh": "吃惊的消息",
+        "py": "chī jīng de xiāoxi",
+        "vn": "tin gây sốc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "让 / 令 + 人 + 吃惊",
+        "m": "Khiến người ta kinh ngạc"
+      },
+      {
+        "s": "大吃一惊",
+        "m": "吃惊 là từ ly hợp: 吃了一惊, 大吃一惊"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "基础",
+    "py": "jīchǔ",
+    "pos": "Danh từ",
+    "vn": "nền tảng, căn bản",
+    "hv": "cơ sở",
+    "em": "🧱",
+    "lesson": 2,
+    "explain": [
+      "Cái gốc, phần cơ sở để phát triển lên."
+    ],
+    "usage": "有……基础; 打好基础; 基础知识.",
+    "collo": [
+      "有一些音乐基础",
+      "打好基础",
+      "基础知识"
+    ],
+    "ex_zh": "因为我以前学习过音乐，有一些音乐基础，又对京剧这种表演艺术非常感兴趣。",
+    "ex_py": "Yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ, yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù.",
+    "ex_vn": "Vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc, lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch.",
+    "exList": [
+      {
+        "zh": "因为我以前学习过音乐，有一些音乐基础，又对京剧这种表演艺术非常感兴趣。",
+        "py": "Yīnwèi wǒ yǐqián xuéxíguo yīnyuè, yǒu yìxiē yīnyuè jīchǔ, yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù.",
+        "vn": "Vì trước đây tôi từng học âm nhạc, có chút nền tảng âm nhạc, lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch."
+      },
+      {
+        "zh": "你学得可真快！——我小时候学过两年的舞，有点儿基础。",
+        "py": "Nǐ xué de kě zhēn kuài! — Wǒ xiǎoshíhou xuéguo liǎng nián de wǔ, yǒudiǎnr jīchǔ.",
+        "vn": "Bạn học nhanh thật! — Hồi nhỏ tôi học hai năm múa, có chút nền tảng."
+      },
+      {
+        "zh": "学语言首先要打好语法和词汇的基础。",
+        "py": "Xué yǔyán shǒuxiān yào dǎhǎo yǔfǎ hé cíhuì de jīchǔ.",
+        "vn": "Học ngôn ngữ trước tiên phải xây nền tảng ngữ pháp và từ vựng cho tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "础",
+        "p": "chǔ",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "石 (thạch) trái → 出 phải",
+        "rad": "石 (thạch – đá)",
+        "mean": "đá tảng kê cột",
+        "tip": "Bộ đá 石 + 出 → ĐÁ TẢNG kê chân cột, kết hợp 基(nền) thành 基础 = NỀN TẢNG.",
+        "cf": "出 (chū – \"ra\", phần bên phải)",
+        "w": "基础 / 基本 / 基础知识"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn học nhanh thật! — Vì hồi nhỏ tôi học hai năm múa nên có chút nền tảng.",
+        "answer": "你学得可真快！——因为我小时候学过两年的舞，所以有点儿基础。",
+        "answerPy": "Nǐ xué de kě zhēn kuài! — Yīnwèi wǒ xiǎoshíhou xuéguo liǎng nián de wǔ, suǒyǐ yǒudiǎnr jīchǔ.",
+        "note": "打好基础 / 有基础 — kết hợp cố định.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Học ngôn ngữ trước tiên phải xây nền tảng ngữ pháp cho tốt, nếu không càng học càng khó.",
+        "answer": "学语言首先要打好语法的基础，否则越学越难。",
+        "answerPy": "Xué yǔyán shǒuxiān yào dǎhǎo yǔfǎ de jīchǔ, fǒuzé yuè xué yuè nán.",
+        "note": "首先 (Bài 3) + 否则 (Bài 11) + 语法 (Bài 11).",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "打好基础",
+        "py": "dǎ hǎo jīchǔ",
+        "vn": "xây nền tảng tốt"
+      },
+      {
+        "zh": "有基础",
+        "py": "yǒu jīchǔ",
+        "vn": "có nền tảng"
+      },
+      {
+        "zh": "基础知识",
+        "py": "jīchǔ zhīshi",
+        "vn": "kiến thức cơ bản"
+      },
+      {
+        "zh": "音乐基础",
+        "py": "yīnyuè jīchǔ",
+        "vn": "nền tảng âm nhạc"
+      },
+      {
+        "zh": "在……基础上",
+        "py": "zài jīchǔ shàng",
+        "vn": "trên cơ sở…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "有 / 打好 + 基础",
+        "m": "Có / xây vững nền tảng"
+      },
+      {
+        "s": "在 + N + 的基础上",
+        "m": "Trên cơ sở cái gì"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "表演",
+    "py": "biǎoyǎn",
+    "pos": "Động từ/Danh từ",
+    "vn": "biểu diễn, trình diễn",
+    "hv": "biểu diễn",
+    "em": "🎤",
+    "lesson": 2,
+    "explain": [
+      "Diễn (kịch, múa, võ…) trước người xem; hoặc màn trình diễn."
+    ],
+    "usage": "表演艺术; 表演中国功夫; 精彩的表演.",
+    "collo": [
+      "京剧这种表演艺术",
+      "表演的中国功夫",
+      "精彩的表演"
+    ],
+    "ex_zh": "又对京剧这种表演艺术非常感兴趣，所以能比较容易地学会它的唱法。",
+    "ex_py": "Yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù, suǒyǐ néng bǐjiào róngyì de xuéhuì tā de chàngfǎ.",
+    "ex_vn": "Lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch, nên có thể học cách hát khá dễ dàng.",
+    "exList": [
+      {
+        "zh": "又对京剧这种表演艺术非常感兴趣，所以能比较容易地学会它的唱法。",
+        "py": "Yòu duì jīngjù zhè zhǒng biǎoyǎn yìshù fēicháng gǎn xìngqù, suǒyǐ néng bǐjiào róngyì de xuéhuì tā de chàngfǎ.",
+        "vn": "Lại rất hứng thú với nghệ thuật biểu diễn Kinh kịch, nên có thể học cách hát khá dễ dàng."
+      },
+      {
+        "zh": "今天的晚会太精彩了，特别是那些外国留学生表演的中国功夫，动作既标准又好看，非常棒。",
+        "py": "Jīntiān de wǎnhuì tài jīngcǎi le, tèbié shì nàxiē wàiguó liúxuéshēng biǎoyǎn de Zhōngguó gōngfu, dòngzuò jì biāozhǔn yòu hǎokàn, fēicháng bàng.",
+        "vn": "Dạ hội hôm nay quá đặc sắc, đặc biệt là màn Kung Fu Trung Quốc do các du học sinh nước ngoài biểu diễn, động tác vừa chuẩn vừa đẹp, rất tuyệt."
+      },
+      {
+        "zh": "孩子们的表演虽然不专业，但是很可爱。",
+        "py": "Háizimen de biǎoyǎn suīrán bù zhuānyè, dànshì hěn kě'ài.",
+        "vn": "Màn biểu diễn của các bé tuy không chuyên nghiệp, nhưng rất đáng yêu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "表",
+        "p": "biǎo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "龶 trên → 𧘇 dưới",
+        "rad": "衣 (y – áo)",
+        "mean": "bề ngoài, biểu lộ",
+        "tip": "Nghĩa gốc là áo mặc bên NGOÀI → BIỂU LỘ ra ngoài, kết hợp 演 thành 表演 = BIỂU DIỄN (ôn lại 表示 Bài 11).",
+        "cf": "同字词: 表示 / 表演 / 手表",
+        "w": "表演 / 表示 / 表格"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đặc biệt là màn Kung Fu Trung Quốc do các du học sinh biểu diễn, động tác vừa chuẩn vừa đẹp.",
+        "answer": "特别是那些外国留学生表演的中国功夫，动作既标准又好看。",
+        "answerPy": "Tèbié shì nàxiē wàiguó liúxuéshēng biǎoyǎn de Zhōngguó gōngfu, dòngzuò jì biāozhǔn yòu hǎokàn.",
+        "note": "练习2 SGK (1); 既……又 ôn lại Bài 7.",
+        "pair": "既……又……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi rất hứng thú với nghệ thuật biểu diễn Kinh kịch, nên học cách hát khá dễ.",
+        "answer": "我对京剧这种表演艺术很感兴趣，所以比较容易学会它的唱法。",
+        "answerPy": "Wǒ duì jīngjù zhè zhǒng biǎoyǎn yìshù hěn gǎn xìngqù, suǒyǐ bǐjiào róngyì xuéhuì tā de chàngfǎ.",
+        "note": "对……感兴趣 — ôn lại.",
+        "pair": "……，所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "精彩的表演",
+        "py": "jīngcǎi de biǎoyǎn",
+        "vn": "màn trình diễn đặc sắc"
+      },
+      {
+        "zh": "表演艺术",
+        "py": "biǎoyǎn yìshù",
+        "vn": "nghệ thuật biểu diễn"
+      },
+      {
+        "zh": "表演中国功夫",
+        "py": "biǎoyǎn Zhōngguó gōngfu",
+        "vn": "biểu diễn võ Trung Quốc"
+      },
+      {
+        "zh": "上台表演",
+        "py": "shàng tái biǎoyǎn",
+        "vn": "lên sân khấu diễn"
+      },
+      {
+        "zh": "表演得很好",
+        "py": "biǎoyǎn de hěn hǎo",
+        "vn": "diễn rất hay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "表演 + N (động từ)",
+        "m": "Biểu diễn tiết mục gì"
+      },
+      {
+        "s": "表演 ≈ 演出",
+        "m": "表演 nhấn kỹ năng diễn; 演出 nhấn buổi diễn"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "正常",
+    "py": "zhèngcháng",
+    "pos": "Tính từ",
+    "vn": "bình thường, thông thường",
+    "hv": "chính thường",
+    "em": "✅",
+    "lesson": 3,
+    "explain": [
+      "Phù hợp với quy luật/tình trạng thông thường, không bất thường."
+    ],
+    "usage": "正常交流; 很正常; 不正常.",
+    "collo": [
+      "正常交流",
+      "很正常",
+      "身体正常"
+    ],
+    "ex_zh": "因为外国留学生不了解中国文化，有时候会影响他们和中国人之间的正常交流。",
+    "ex_py": "Yīnwèi wàiguó liúxuéshēng bù liǎojiě Zhōngguó wénhuà, yǒushíhou huì yǐngxiǎng tāmen hé Zhōngguó rén zhījiān de zhèngcháng jiāoliú.",
+    "ex_vn": "Vì du học sinh nước ngoài không hiểu văn hóa Trung Quốc, có lúc sẽ ảnh hưởng đến giao lưu bình thường giữa họ và người Trung Quốc.",
+    "exList": [
+      {
+        "zh": "因为外国留学生不了解中国文化，有时候会影响他们和中国人之间的正常交流。",
+        "py": "Yīnwèi wàiguó liúxuéshēng bù liǎojiě Zhōngguó wénhuà, yǒushíhou huì yǐngxiǎng tāmen hé Zhōngguó rén zhījiān de zhèngcháng jiāoliú.",
+        "vn": "Vì du học sinh nước ngoài không hiểu văn hóa Trung Quốc, có lúc sẽ ảnh hưởng đến giao lưu bình thường giữa họ và người Trung Quốc."
+      },
+      {
+        "zh": "刚到一个新环境，觉得不习惯是很正常的。",
+        "py": "Gāng dào yí ge xīn huánjìng, juéde bù xíguàn shì hěn zhèngcháng de.",
+        "vn": "Mới đến một môi trường mới, cảm thấy không quen là rất bình thường."
+      },
+      {
+        "zh": "医生说他的身体一切正常。",
+        "py": "Yīshēng shuō tā de shēntǐ yíqiè zhèngcháng.",
+        "vn": "Bác sĩ nói cơ thể anh ấy mọi thứ đều bình thường."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "常",
+        "p": "cháng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "尚 trên → 巾 dưới",
+        "rad": "巾 (cân – khăn)",
+        "mean": "thường",
+        "tip": "Bộ khăn 巾 + 尚 → nghĩa gốc là tấm vải dài, mượn nghĩa THƯỜNG XUYÊN, kết hợp 正 thành 正常 = BÌNH THƯỜNG.",
+        "cf": "党 (dǎng – \"đảng\", phần trên giống)",
+        "w": "正常 / 经常 / 常见"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mới đến một môi trường mới mà thấy chưa quen thì rất bình thường, cứ từ từ sẽ thích nghi thôi.",
+        "answer": "刚到一个新环境，觉得不习惯是很正常的，只要慢慢来，就会适应的。",
+        "answerPy": "Gāng dào yí ge xīn huánjìng, juéde bù xíguàn shì hěn zhèngcháng de, zhǐyào mànmàn lái, jiù huì shìyìng de.",
+        "note": "适应 là từ bài 2 — thích nghi với hoàn cảnh mới.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không hiểu văn hóa có lúc ảnh hưởng đến giao lưu bình thường, thậm chí gây ra hiểu lầm.",
+        "answer": "不了解文化有时候会影响正常交流，甚至引起误会。",
+        "answerPy": "Bù liǎojiě wénhuà yǒushíhou huì yǐngxiǎng zhèngcháng jiāoliú, shènzhì yǐnqǐ wùhuì.",
+        "note": "甚至 (Bài 4) + 引起/误会 (Bài 12).",
+        "pair": "甚至……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很正常",
+        "py": "hěn zhèngcháng",
+        "vn": "rất bình thường"
+      },
+      {
+        "zh": "正常交流",
+        "py": "zhèngcháng jiāoliú",
+        "vn": "giao tiếp bình thường"
+      },
+      {
+        "zh": "身体正常",
+        "py": "shēntǐ zhèngcháng",
+        "vn": "cơ thể bình thường"
+      },
+      {
+        "zh": "正常情况下",
+        "py": "zhèngcháng qíngkuàng xià",
+        "vn": "trong điều kiện bình thường"
+      },
+      {
+        "zh": "不太正常",
+        "py": "bú tài zhèngcháng",
+        "vn": "không bình thường lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "……是很正常的",
+        "m": "… là chuyện rất bình thường"
+      },
+      {
+        "s": "正常 ↔ 不正常",
+        "m": "Bình thường ↔ bất thường"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "申请",
+    "py": "shēnqǐng",
+    "pos": "Động từ",
+    "vn": "xin, đăng ký (chính thức)",
+    "hv": "thân thỉnh",
+    "em": "📝",
+    "lesson": 3,
+    "explain": [
+      "Đề nghị chính thức với cấp trên/cơ quan để được chấp thuận."
+    ],
+    "usage": "申请举办活动; 申请去国外留学; 申请学校.",
+    "collo": [
+      "申请举办一次活动",
+      "申请去国外留学",
+      "申请国外学校"
+    ],
+    "ex_zh": "所以我们想申请举办一次中国传统文化节活动。",
+    "ex_py": "Suǒyǐ wǒmen xiǎng shēnqǐng jǔbàn yí cì Zhōngguó chuántǒng wénhuà jié huódòng.",
+    "ex_vn": "Vì vậy chúng tôi muốn xin tổ chức một lễ hội văn hóa truyền thống Trung Quốc.",
+    "exList": [
+      {
+        "zh": "所以我们想申请举办一次中国传统文化节活动。",
+        "py": "Suǒyǐ wǒmen xiǎng shēnqǐng jǔbàn yí cì Zhōngguó chuántǒng wénhuà jié huódòng.",
+        "vn": "Vì vậy chúng tôi muốn xin tổ chức một lễ hội văn hóa truyền thống Trung Quốc."
+      },
+      {
+        "zh": "听说你要申请去国外留学，准备得怎么样了？",
+        "py": "Tīngshuō nǐ yào shēnqǐng qù guówài liúxué, zhǔnbèi de zěnmeyàng le?",
+        "vn": "Nghe nói bạn định xin đi du học nước ngoài, chuẩn bị đến đâu rồi?"
+      },
+      {
+        "zh": "接受调查的学生中，只有大约20%的人开始申请国外学校。",
+        "py": "Jiēshòu diàochá de xuésheng zhōng, zhǐyǒu dàyuē bǎifēnzhī èrshí de rén kāishǐ shēnqǐng guówài xuéxiào.",
+        "vn": "Trong số học sinh được khảo sát, chỉ khoảng 20% bắt đầu nộp đơn xin trường nước ngoài."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "申",
+        "p": "shēn",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "日 → 丨 xuyên",
+        "rad": "田 (điền)",
+        "mean": "trình bày",
+        "tip": "Chữ tượng hình tia chớp → mở rộng thành TRÌNH BÀY RÕ, kết hợp 请 thành 申请 = XIN (chính thức).",
+        "cf": "甲 (jiǎ), 由 (yóu) — cùng dạng 田 + nét dọc",
+        "w": "申请 / 申请书 / 申请人"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nghe nói bạn định xin đi du học, chuẩn bị tới đâu rồi? — Đang tiến hành, hồ sơ sắp xong.",
+        "answer": "听说你要申请去国外留学，准备得怎么样了？——正在进行，只要再等几天，材料就准备好了。",
+        "answerPy": "Tīngshuō nǐ yào shēnqǐng qù guówài liúxué, zhǔnbèi de zěnmeyàng le? — Zhèngzài jìnxíng, zhǐyào zài děng jǐ tiān, cáiliào jiù zhǔnbèi hǎo le.",
+        "note": "材料 là từ bài 3; 进行 là từ bài này.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng em muốn xin tổ chức lễ hội văn hoá, vì như vậy sinh viên các nước sẽ hiểu Trung Quốc hơn.",
+        "answer": "我们想申请举办文化节活动，因为这样各国学生就能更好地了解中国。",
+        "answerPy": "Wǒmen xiǎng shēnqǐng jǔbàn wénhuàjié huódòng, yīnwèi zhèyàng gè guó xuésheng jiù néng gèng hǎo de liǎojiě Zhōngguó.",
+        "note": "申请 là xin phép cấp trên, khác 要求 (đòi hỏi).",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "申请留学",
+        "py": "shēnqǐng liú xué",
+        "vn": "xin đi du học"
+      },
+      {
+        "zh": "申请举办活动",
+        "py": "shēnqǐng jǔbàn huódòng",
+        "vn": "xin tổ chức hoạt động"
+      },
+      {
+        "zh": "申请材料",
+        "py": "shēnqǐng cáiliào",
+        "vn": "hồ sơ đăng ký"
+      },
+      {
+        "zh": "申请国外学校",
+        "py": "shēnqǐng guó wài xuéxiào",
+        "vn": "nộp đơn vào trường nước ngoài"
+      },
+      {
+        "zh": "申请成功",
+        "py": "shēnqǐng chénggōng",
+        "vn": "đăng ký thành công"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "申请 + V / N",
+        "m": "Xin, đăng ký làm gì"
+      },
+      {
+        "s": "申请 khác 要求: 申请 là xin phép cấp trên, 要求 là đòi hỏi"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "有趣",
+    "py": "yǒuqù",
+    "pos": "Tính từ",
+    "vn": "thú vị, lý thú",
+    "hv": "hữu thú",
+    "em": "😄",
+    "lesson": 3,
+    "explain": [
+      "Gây hứng thú, hấp dẫn."
+    ],
+    "usage": "办得非常有趣; 有趣的故事; 很有趣.",
+    "collo": [
+      "办得非常有趣",
+      "有趣的故事",
+      "觉得很有趣"
+    ],
+    "ex_zh": "上次的春游活动你们办得非常有趣，大家都玩儿得很开心。",
+    "ex_py": "Shàng cì de chūnyóu huódòng nǐmen bàn de fēicháng yǒuqù, dàjiā dōu wánr de hěn kāixīn.",
+    "ex_vn": "Hoạt động dã ngoại mùa xuân lần trước các bạn tổ chức rất thú vị, mọi người đều chơi rất vui.",
+    "exList": [
+      {
+        "zh": "上次的春游活动你们办得非常有趣，大家都玩儿得很开心。",
+        "py": "Shàng cì de chūnyóu huódòng nǐmen bàn de fēicháng yǒuqù, dàjiā dōu wánr de hěn kāixīn.",
+        "vn": "Hoạt động dã ngoại mùa xuân lần trước các bạn tổ chức rất thú vị, mọi người đều chơi rất vui."
+      },
+      {
+        "zh": "京剧里的历史故事很有趣，让我学到了很多知识。",
+        "py": "Jīngjù li de lìshǐ gùshi hěn yǒuqù, ràng wǒ xuédàole hěn duō zhīshi.",
+        "vn": "Những câu chuyện lịch sử trong Kinh kịch rất thú vị, giúp tôi học được nhiều kiến thức."
+      },
+      {
+        "zh": "这位老师讲课既有趣又容易懂。",
+        "py": "Zhè wèi lǎoshī jiǎngkè jì yǒuqù yòu róngyì dǒng.",
+        "vn": "Thầy giáo này giảng bài vừa thú vị vừa dễ hiểu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "趣",
+        "p": "qù",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 15,
+        "ord": "走 bao → 取 trong",
+        "rad": "走 (tẩu – đi)",
+        "mean": "thú vị",
+        "tip": "Bộ đi 走 + 取(lấy) → chạy đến LẤY (điều mình thích) → HỨNG THÚ, kết hợp 有 thành 有趣 = THÚ VỊ.",
+        "cf": "取 (qǔ – \"lấy\", phần trong)",
+        "w": "有趣 / 兴趣 / 有意思"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chuyến dã ngoại lần trước các bạn tổ chức không những rất thú vị, mà ai cũng chơi rất vui.",
+        "answer": "上次的春游活动你们不但办得非常有趣，而且大家都玩儿得很开心。",
+        "answerPy": "Shàng cì de chūnyóu huódòng nǐmen búdàn bàn de fēicháng yǒuqù, érqiě dàjiā dōu wánr de hěn kāixīn.",
+        "note": "V + 得 + Adj — bổ ngữ trạng thái, dùng hai lần trong một câu.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy giáo này giảng bài vừa thú vị vừa dễ hiểu, vì vậy rất được học sinh yêu thích.",
+        "answer": "这位老师讲课既有趣又容易懂，因此很受学生欢迎。",
+        "answerPy": "Zhè wèi lǎoshī jiǎngkè jì yǒuqù yòu róngyì dǒng, yīncǐ hěn shòu xuésheng huānyíng.",
+        "note": "既……又 (Bài 7) + 因此 (Bài 8).",
+        "pair": "既……又……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有趣的故事",
+        "py": "yǒuqù de gùshi",
+        "vn": "câu chuyện thú vị"
+      },
+      {
+        "zh": "觉得很有趣",
+        "py": "juéde hěn yǒuqù",
+        "vn": "thấy rất thú vị"
+      },
+      {
+        "zh": "办得有趣",
+        "py": "bàn de yǒuqù",
+        "vn": "tổ chức thú vị"
+      },
+      {
+        "zh": "非常有趣",
+        "py": "fēicháng yǒuqù",
+        "vn": "vô cùng lý thú"
+      },
+      {
+        "zh": "有趣的人",
+        "py": "yǒuqù de rén",
+        "vn": "người thú vị"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "有趣的 + N",
+        "m": "… thú vị"
+      },
+      {
+        "s": "有 + 趣",
+        "m": "Có (有) hứng thú (趣) — ghép nghĩa dễ nhớ"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "开心",
+    "py": "kāixīn",
+    "pos": "Tính từ",
+    "vn": "vui vẻ",
+    "hv": "khai tâm",
+    "em": "😊",
+    "lesson": 3,
+    "explain": [
+      "Tâm trạng vui vẻ, thoải mái."
+    ],
+    "usage": "玩儿得很开心; 很开心; 开心地笑.",
+    "collo": [
+      "玩儿得很开心",
+      "过得很开心",
+      "开心地笑"
+    ],
+    "ex_zh": "大家都玩儿得很开心，这次活动继续由你负责，相信也一定会很成功。",
+    "ex_py": "Dàjiā dōu wánr de hěn kāixīn, zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.",
+    "ex_vn": "Mọi người đều chơi rất vui, hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.",
+    "exList": [
+      {
+        "zh": "大家都玩儿得很开心，这次活动继续由你负责，相信也一定会很成功。",
+        "py": "Dàjiā dōu wánr de hěn kāixīn, zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.",
+        "vn": "Mọi người đều chơi rất vui, hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công."
+      },
+      {
+        "zh": "看到孩子们开心地笑，父母也觉得很幸福。",
+        "py": "Kàndào háizimen kāixīn de xiào, fùmǔ yě juéde hěn xìngfú.",
+        "vn": "Thấy bọn trẻ cười vui vẻ, bố mẹ cũng thấy rất hạnh phúc."
+      },
+      {
+        "zh": "和朋友一起喝茶聊天儿，是一件很开心的事。",
+        "py": "Hé péngyou yìqǐ hē chá liáo tiānr, shì yí jiàn hěn kāixīn de shì.",
+        "vn": "Cùng bạn bè uống trà trò chuyện là một việc rất vui."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "心",
+        "p": "xīn",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "丶 → 乚 → 丶 → 丶",
+        "rad": "心 (tâm)",
+        "mean": "tim, lòng",
+        "tip": "Chữ tượng hình quả TIM → LÒNG, kết hợp 开(mở) thành 开心 = MỞ LÒNG → VUI VẺ.",
+        "cf": "必 (bì – \"ắt\", thêm một nét)",
+        "w": "开心 / 心情 / 用心"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cứ thấy bọn trẻ cười vui là bố mẹ cũng thấy hạnh phúc.",
+        "answer": "一看到孩子们开心地笑，父母就觉得很幸福。",
+        "answerPy": "Yí kàndào háizimen kāixīn de xiào, fùmǔ jiù juéde hěn xìngfú.",
+        "note": "幸福 là từ bài 1; 开心 thiên khẩu ngữ hơn 愉快 (bài 8).",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hoạt động lần này tiếp tục do bạn phụ trách, nên tôi tin chắc sẽ rất thành công.",
+        "answer": "因为这次活动继续由你负责，所以我相信一定会很成功。",
+        "answerPy": "Yīnwèi zhè cì huódòng jìxù yóu nǐ fùzé, suǒyǐ wǒ xiāngxìn yídìng huì hěn chénggōng.",
+        "note": "由 + ai + 负责 — do ai phụ trách; 负责 là từ bài 3.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "玩儿得很开心",
+        "py": "wánr de hěn kāixīn",
+        "vn": "chơi rất vui"
+      },
+      {
+        "zh": "开心地笑",
+        "py": "kāixīn de xiào",
+        "vn": "cười vui vẻ"
+      },
+      {
+        "zh": "过得开心",
+        "py": "guo de kāixīn",
+        "vn": "sống vui vẻ"
+      },
+      {
+        "zh": "不开心",
+        "py": "bù kāixīn",
+        "vn": "không vui"
+      },
+      {
+        "zh": "让人开心",
+        "py": "ràng rén kāixīn",
+        "vn": "khiến người ta vui"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 得 + 开心",
+        "m": "Làm gì một cách vui vẻ"
+      },
+      {
+        "s": "开心 ≈ 愉快 (bài 8)",
+        "m": "开心 thiên khẩu ngữ hơn"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "继续",
+    "py": "jìxù",
+    "pos": "Động từ",
+    "vn": "tiếp tục",
+    "hv": "kế tục",
+    "em": "▶️",
+    "lesson": 3,
+    "explain": [
+      "Tiếp diễn hoạt động đang làm, không dừng lại."
+    ],
+    "usage": "继续 + động từ: 继续进行, 继续由你负责, 继续读书.",
+    "collo": [
+      "继续由你负责",
+      "会议继续进行",
+      "继续留在北京"
+    ],
+    "ex_zh": "这次活动继续由你负责，相信也一定会很成功。",
+    "ex_py": "Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.",
+    "ex_vn": "Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.",
+    "exList": [
+      {
+        "zh": "这次活动继续由你负责，相信也一定会很成功。",
+        "py": "Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.",
+        "vn": "Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công."
+      },
+      {
+        "zh": "大家请注意，现在休息十五分钟，十点半会议继续进行。",
+        "py": "Dàjiā qǐng zhùyì, xiànzài xiūxi shíwǔ fēnzhōng, shí diǎn bàn huìyì jìxù jìnxíng.",
+        "vn": "Mọi người chú ý, bây giờ nghỉ 15 phút, 10 giờ rưỡi hội nghị tiếp tục."
+      },
+      {
+        "zh": "你想好了没？是继续读书还是参加工作？",
+        "py": "Nǐ xiǎnghǎo le méi? Shì jìxù dú shū háishi cānjiā gōngzuò?",
+        "vn": "Bạn nghĩ kỹ chưa? Tiếp tục học hay đi làm?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "续",
+        "p": "xù",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 11,
+        "ord": "纟 (mịch) trái → 卖 phải",
+        "rad": "纟 (mịch – sợi tơ)",
+        "mean": "nối tiếp",
+        "tip": "Bộ sợi 纟 (nối sợi tơ) + 卖 → NỐI TIẾP, kết hợp 继 thành 继续 = TIẾP TỤC.",
+        "cf": "读 (dú – \"đọc\", bộ 讠 + 卖)",
+        "w": "继续 / 连续 / 手续"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn nghĩ kỹ chưa? Tiếp tục học hay đi làm? — Tôi định đi làm hai năm trước, rồi mới thi cao học.",
+        "answer": "你想好了没？是继续读书还是参加工作？——我想先工作两年，然后再考研究生。",
+        "answerPy": "Nǐ xiǎnghǎo le méi? Shì jìxù dú shū háishi cānjiā gōngzuò? — Wǒ xiǎng xiān gōngzuò liǎng nián, ránhòu zài kǎo yánjiūshēng.",
+        "note": "练习2 SGK (9); 先……然后再 (Bài 3).",
+        "pair": "先……然后……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã bàn với bố mẹ, cuối cùng vẫn quyết định tiếp tục ở lại Bắc Kinh.",
+        "answer": "我和父母商量过了，最后还是决定继续留在北京。",
+        "answerPy": "Wǒ hé fùmǔ shāngliangguo le, zuìhòu háishi juédìng jìxù liú zài Běijīng.",
+        "note": "商量 ôn lại từ vựng Bài 12.",
+        "pair": "……，还是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "继续进行",
+        "py": "jìxù jìnxíng",
+        "vn": "tiếp tục tiến hành"
+      },
+      {
+        "zh": "继续由你负责",
+        "py": "jìxù yóu nǐ fùzé",
+        "vn": "tiếp tục do bạn phụ trách"
+      },
+      {
+        "zh": "继续留下",
+        "py": "jìxù liú xià",
+        "vn": "tiếp tục ở lại"
+      },
+      {
+        "zh": "继续学习",
+        "py": "jìxù xuéxí",
+        "vn": "tiếp tục học"
+      },
+      {
+        "zh": "继续努力",
+        "py": "jìxù nǔlì",
+        "vn": "tiếp tục cố gắng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "继续 + V",
+        "m": "Tiếp tục làm gì"
+      },
+      {
+        "s": "✗ 继续了一个小时 → ✓ 继续了一个小时地做",
+        "m": "继续 cần động từ theo sau"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "由",
+    "py": "yóu",
+    "pos": "Giới từ",
+    "vn": "do (ai phụ trách/thực hiện)",
+    "hv": "do",
+    "em": "👤",
+    "lesson": 3,
+    "explain": [
+      "Giới từ dẫn ra người chịu trách nhiệm/thực hiện việc gì."
+    ],
+    "usage": "由 + người + 负责/翻译/组织.",
+    "collo": [
+      "由你负责",
+      "由王大夫负责",
+      "由林语堂先生翻译"
+    ],
+    "ex_zh": "这次活动继续由你负责，相信也一定会很成功。",
+    "ex_py": "Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.",
+    "ex_vn": "Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công.",
+    "exList": [
+      {
+        "zh": "这次活动继续由你负责，相信也一定会很成功。",
+        "py": "Zhè cì huódòng jìxù yóu nǐ fùzé, xiāngxìn yě yídìng huì hěn chénggōng.",
+        "vn": "Hoạt động lần này tiếp tục do bạn phụ trách, tin rằng cũng nhất định sẽ rất thành công."
+      },
+      {
+        "zh": "按照规定，这件事情应该由王大夫负责。",
+        "py": "Ànzhào guīdìng, zhè jiàn shìqing yīnggāi yóu Wáng dàifu fùzé.",
+        "vn": "Theo quy định, việc này nên do bác sĩ Vương phụ trách."
+      },
+      {
+        "zh": "\"幽默\"这个词最早是由林语堂先生翻译过来的。",
+        "py": "\"Yōumò\" zhège cí zuì zǎo shì yóu Lín Yǔtáng xiānsheng fānyì guòlai de.",
+        "vn": "Từ \"幽默\" (hài hước) sớm nhất là do ông Lâm Ngữ Đường dịch sang."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "由",
+        "p": "yóu",
+        "type": "独体字 · Chữ đơn",
+        "st": 5,
+        "ord": "nét liền",
+        "rad": "田 (điền)",
+        "mean": "do, từ",
+        "tip": "Chữ tượng hình quả trên cành → NGUỒN GỐC, TỪ ĐÂU → giới từ DO (ôn lại 由于 Bài 10).",
+        "cf": "甲 (jiǎ), 申 (shēn) — cùng dạng",
+        "w": "由 / 由于 / 理由"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Theo quy định, việc này nên do bác sĩ Vương phụ trách.",
+        "answer": "按照规定，这件事情应该由王大夫负责。",
+        "answerPy": "Ànzhào guīdìng, zhè jiàn shìqing yīnggāi yóu Wáng dàifu fùzé.",
+        "note": "按照 (Bài 4) + 规定 (Bài 12).",
+        "pair": "按照……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Việc này chẳng phải giám đốc Mã phụ trách sao? — Anh ấy rời công ty rồi, nên giờ do giám đốc Vương phụ trách.",
+        "answer": "这件事不是马经理专门负责吗？——因为他已经离开公司了，所以现在由王经理负责。",
+        "answerPy": "Zhè jiàn shì bú shì Mǎ jīnglǐ zhuānmén fùzé ma? — Yīnwèi tā yǐjīng líkāi gōngsī le, suǒyǐ xiànzài yóu Wáng jīnglǐ fùzé.",
+        "note": "由 nêu người LÀM; 被 nêu người CHỊU tác động.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "由你负责",
+        "py": "yóu nǐ fùzé",
+        "vn": "do bạn phụ trách"
+      },
+      {
+        "zh": "由王经理负责",
+        "py": "yóu wáng jīnglǐ fùzé",
+        "vn": "do giám đốc Vương phụ trách"
+      },
+      {
+        "zh": "由他决定",
+        "py": "yóu tā juédìng",
+        "vn": "do anh ấy quyết định"
+      },
+      {
+        "zh": "由我来写",
+        "py": "yóu wǒ lái xiě",
+        "vn": "để tôi viết"
+      },
+      {
+        "zh": "由大家讨论",
+        "py": "yóu dàjiā tǎolùn",
+        "vn": "do mọi người bàn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "由 + ai + V",
+        "m": "Do ai đó làm việc gì (chỉ người thực hiện)"
+      },
+      {
+        "s": "由 ≠ 被",
+        "m": "由 nêu ai làm; 被 nêu ai chịu tác động"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "讨论",
+    "py": "tǎolùn",
+    "pos": "Động từ",
+    "vn": "thảo luận, bàn bạc",
+    "hv": "thảo luận",
+    "em": "💬",
+    "lesson": 3,
+    "explain": [
+      "Trao đổi ý kiến để làm rõ vấn đề."
+    ],
+    "usage": "开会讨论; 讨论问题; 讨论一下.",
+    "collo": [
+      "开会讨论",
+      "讨论这个问题",
+      "跟大家讨论"
+    ],
+    "ex_zh": "我们回去就开会讨论，星期五之前把详细的计划书发给您。",
+    "ex_py": "Wǒmen huíqu jiù kāi huì tǎolùn, xīngqīwǔ zhīqián bǎ xiángxì de jìhuàshū fāgěi nín.",
+    "ex_vn": "Chúng tôi về sẽ họp thảo luận ngay, trước thứ Sáu gửi bản kế hoạch chi tiết cho ngài.",
+    "exList": [
+      {
+        "zh": "我们回去就开会讨论，星期五之前把详细的计划书发给您。",
+        "py": "Wǒmen huíqu jiù kāi huì tǎolùn, xīngqīwǔ zhīqián bǎ xiángxì de jìhuàshū fāgěi nín.",
+        "vn": "Chúng tôi về sẽ họp thảo luận ngay, trước thứ Sáu gửi bản kế hoạch chi tiết cho ngài."
+      },
+      {
+        "zh": "这个问题我们已经讨论过好几遍了。",
+        "py": "Zhège wèntí wǒmen yǐjīng tǎolùnguo hǎojǐ biàn le.",
+        "vn": "Vấn đề này chúng tôi đã thảo luận mấy lượt rồi."
+      },
+      {
+        "zh": "大家正在讨论文化节的节目安排。",
+        "py": "Dàjiā zhèngzài tǎolùn wénhuà jié de jiémù ānpái.",
+        "vn": "Mọi người đang thảo luận sắp xếp tiết mục của lễ hội văn hóa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "讨",
+        "p": "tǎo",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 5,
+        "ord": "讠 (ngôn) trái → 寸 phải",
+        "rad": "讠 (ngôn)",
+        "mean": "bàn, đòi",
+        "tip": "Bộ lời nói 讠 + 寸(tấc, quy tắc) → BÀN theo lý lẽ, kết hợp 论 thành 讨论 = THẢO LUẬN (ôn lại 无论 Bài 11).",
+        "cf": "付 (fù – \"trả\", bộ 亻)",
+        "w": "讨论 / 讨厌 / 无论"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng tôi về sẽ họp bàn ngay, chỉ cần trước thứ Sáu là gửi bản kế hoạch chi tiết cho ngài.",
+        "answer": "我们回去就开会讨论，只要在星期五之前，就把详细的计划书发给您。",
+        "answerPy": "Wǒmen huíqu jiù kāihuì tǎolùn, zhǐyào zài xīngqīwǔ zhīqián, jiù bǎ xiángxì de jìhuàshū fā gěi nín.",
+        "note": "详细 là từ bài 12; 讨论 chính thức hơn 商量.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vấn đề này chúng tôi đã thảo luận mấy lượt rồi, nhưng vẫn chưa đạt được kết quả tốt nhất.",
+        "answer": "这个问题我们已经讨论过好几遍了，可是还没达到最好的效果。",
+        "answerPy": "Zhège wèntí wǒmen yǐjīng tǎolùnguo hǎojǐ biàn le, kěshì hái méi dádào zuì hǎo de xiàoguǒ.",
+        "note": "遍 (từ mới) + 达到 (Bài 12) + 可是 (Bài 9).",
+        "pair": "……，可是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "开会讨论",
+        "py": "kāi huì tǎolùn",
+        "vn": "họp bàn"
+      },
+      {
+        "zh": "讨论问题",
+        "py": "tǎolùn wèntí",
+        "vn": "thảo luận vấn đề"
+      },
+      {
+        "zh": "跟大家讨论",
+        "py": "gēn dàjiā tǎolùn",
+        "vn": "bàn với mọi người"
+      },
+      {
+        "zh": "讨论一下",
+        "py": "tǎolùn yíxià",
+        "vn": "bàn một chút"
+      },
+      {
+        "zh": "热烈讨论",
+        "py": "rèliè tǎolùn",
+        "vn": "thảo luận sôi nổi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 讨论 + N",
+        "m": "Thảo luận với ai về việc gì"
+      },
+      {
+        "s": "讨论 ≈ 商量 (bài 12)",
+        "m": "讨论 nhiều người, chính thức; 商量 ít người, riêng tư"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "大约",
+    "py": "dàyuē",
+    "pos": "Phó từ",
+    "vn": "khoảng chừng, ước chừng",
+    "hv": "đại ước",
+    "em": "≈",
+    "lesson": 4,
+    "explain": [
+      "Ước lượng gần đúng về số lượng/thời gian (tương tự 大概 nghĩa 1)."
+    ],
+    "usage": "大约 + số lượng: 大约3000多年, 大约20%.",
+    "collo": [
+      "大约已经有3000多年",
+      "大约20%的人",
+      "大约半个小时"
+    ],
+    "ex_zh": "筷子在中国大约已经有3000多年的历史了。",
+    "ex_py": "Kuàizi zài Zhōngguó dàyuē yǐjīng yǒu sānqiān duō nián de lìshǐ le.",
+    "ex_vn": "Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm.",
+    "exList": [
+      {
+        "zh": "筷子在中国大约已经有3000多年的历史了。",
+        "py": "Kuàizi zài Zhōngguó dàyuē yǐjīng yǒu sānqiān duō nián de lìshǐ le.",
+        "vn": "Đũa ở Trung Quốc đã có lịch sử khoảng hơn 3000 năm."
+      },
+      {
+        "zh": "接受调查的学生中，只有大约20%的人开始申请国外学校。",
+        "py": "Jiēshòu diàochá de xuésheng zhōng, zhǐyǒu dàyuē bǎifēnzhī èrshí de rén kāishǐ shēnqǐng guówài xuéxiào.",
+        "vn": "Trong số học sinh được khảo sát, chỉ khoảng 20% bắt đầu nộp đơn xin trường nước ngoài."
+      },
+      {
+        "zh": "从这儿到机场大约要半个小时。",
+        "py": "Cóng zhèr dào jīchǎng dàyuē yào bàn ge xiǎoshí.",
+        "vn": "Từ đây đến sân bay khoảng nửa tiếng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "约",
+        "p": "yuē",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 6,
+        "ord": "纟 (mịch) trái → 勺 phải",
+        "rad": "纟 (mịch)",
+        "mean": "ước, hẹn",
+        "tip": "Bộ sợi 纟 + 勺 → BUỘC, HẸN ƯỚC, kết hợp 大 thành 大约 = ƯỚC CHỪNG (ôn lại 节约 Bài 12).",
+        "cf": "同字词: 约会 / 节约 / 大约",
+        "w": "大约 / 约会 / 节约"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đũa ở Trung Quốc không những đã có lịch sử khoảng hơn 3000 năm, mà đến nay vẫn được dùng hằng ngày.",
+        "answer": "筷子在中国不但大约已经有3000多年的历史了，而且到现在还每天都在用。",
+        "answerPy": "Kuàizi zài Zhōngguó búdàn dàyuē yǐjīng yǒu 3000 duō nián de lìshǐ le, érqiě dào xiànzài hái měi tiān dōu zài yòng.",
+        "note": "大约 chỉ dùng cho SỐ LƯỢNG, khác 大概 còn để phỏng đoán.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hơn 80% người hy vọng được du học, nhưng trong đó chỉ khoảng 20% bắt đầu nộp đơn.",
+        "answer": "超过80%的人希望能出国留学，但这其中只有大约20%的人开始申请。",
+        "answerPy": "Chāoguò bǎifēnzhī bāshí de rén xīwàng néng chūguó liúxué, dàn zhè qízhōng zhǐyǒu dàyuē bǎifēnzhī èrshí de rén kāishǐ shēnqǐng.",
+        "note": "其中 (Bài 6) + 百分之 (Bài 6) + 申请 (từ mới).",
+        "pair": "只有……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "大约半个小时",
+        "py": "dàyuē bàn gè xiǎoshí",
+        "vn": "khoảng nửa tiếng"
+      },
+      {
+        "zh": "大约3000年",
+        "py": "dàyuē nián",
+        "vn": "khoảng 3000 năm"
+      },
+      {
+        "zh": "大约20%的人",
+        "py": "dàyuē de rén",
+        "vn": "khoảng 20% số người"
+      },
+      {
+        "zh": "大约有",
+        "py": "dàyuē yǒu",
+        "vn": "khoảng chừng có"
+      },
+      {
+        "zh": "大约五点到",
+        "py": "dàyuē wǔ diǎn dào",
+        "vn": "chừng 5 giờ đến"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "大约 + số lượng",
+        "m": "Khoảng chừng bao nhiêu"
+      },
+      {
+        "s": "大约 ≈ 大概",
+        "m": "大约 chỉ dùng cho SỐ LƯỢNG; 大概 còn dùng để phỏng đoán"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "餐厅",
+    "py": "cāntīng",
+    "pos": "Danh từ",
+    "vn": "nhà hàng",
+    "hv": "xan sảnh",
+    "em": "🍽️",
+    "lesson": 4,
+    "explain": [
+      "Nơi phục vụ ăn uống."
+    ],
+    "usage": "中国餐厅; 在餐厅吃饭; 一家餐厅.",
+    "collo": [
+      "国外的中国餐厅",
+      "在餐厅吃饭",
+      "一家餐厅"
+    ],
+    "ex_zh": "国外的一些中国餐厅在放筷子的纸袋上会提供使用筷子的详细说明。",
+    "ex_py": "Guówài de yìxiē Zhōngguó cāntīng zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.",
+    "ex_vn": "Một số nhà hàng Trung Quốc ở nước ngoài in hướng dẫn chi tiết cách dùng đũa trên túi giấy đựng đũa.",
+    "exList": [
+      {
+        "zh": "国外的一些中国餐厅在放筷子的纸袋上会提供使用筷子的详细说明。",
+        "py": "Guówài de yìxiē Zhōngguó cāntīng zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.",
+        "vn": "Một số nhà hàng Trung Quốc ở nước ngoài in hướng dẫn chi tiết cách dùng đũa trên túi giấy đựng đũa."
+      },
+      {
+        "zh": "这家餐厅的菜又便宜又好吃，天天都有很多人。",
+        "py": "Zhè jiā cāntīng de cài yòu piányi yòu hǎochī, tiāntiān dōu yǒu hěn duō rén.",
+        "vn": "Món ăn nhà hàng này vừa rẻ vừa ngon, ngày nào cũng đông người."
+      },
+      {
+        "zh": "我们在学校附近的餐厅商量了活动的计划。",
+        "py": "Wǒmen zài xuéxiào fùjìn de cāntīng shāngliangle huódòng de jìhuà.",
+        "vn": "Chúng tôi bàn kế hoạch hoạt động ở nhà hàng gần trường."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "餐",
+        "p": "cān",
+        "type": "上下结构 · Trên-dưới",
+        "st": 16,
+        "ord": "歺+又 trên → 食 dưới",
+        "rad": "食 (thực – ăn)",
+        "mean": "bữa ăn",
+        "tip": "Bộ ăn 食 ở dưới + phần trên biểu âm → BỮA ĂN, kết hợp 厅(sảnh) thành 餐厅 = NHÀ HÀNG (ôn lại 客厅 Bài 11).",
+        "cf": "同字词: 客厅 / 餐厅 / 大厅",
+        "w": "餐厅 / 早餐 / 西餐"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Món ăn nhà hàng này vừa rẻ vừa ngon, ngày nào cũng đông người.",
+        "answer": "这家餐厅的菜又便宜又好吃，天天都有很多人。",
+        "answerPy": "Zhè jiā cāntīng de cài yòu piányi yòu hǎochī, tiāntiān dōu yǒu hěn duō rén.",
+        "note": "又……又 + 天天 (lặp danh từ, Bài 12).",
+        "pair": "又……又……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Một số nhà hàng Trung Quốc ở nước ngoài còn cung cấp hướng dẫn chi tiết cách dùng đũa, vì nhiều khách không biết dùng.",
+        "answer": "国外的一些中国餐厅还会提供使用筷子的详细说明，因为很多客人不会用。",
+        "answerPy": "Guówài de yìxiē Zhōngguó cāntīng hái huì tígōng shǐyòng kuàizi de xiángxì shuōmíng, yīnwèi hěn duō kèrén bú huì yòng.",
+        "note": "提供 là từ bài 3, 使用 và 说明 là từ bài 12 và bài 7.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一家餐厅",
+        "py": "yì jiā cāntīng",
+        "vn": "một nhà hàng"
+      },
+      {
+        "zh": "在餐厅吃饭",
+        "py": "zài cāntīng chī fàn",
+        "vn": "ăn ở nhà hàng"
+      },
+      {
+        "zh": "中国餐厅",
+        "py": "Zhōngguó cāntīng",
+        "vn": "nhà hàng Trung Quốc"
+      },
+      {
+        "zh": "学校的餐厅",
+        "py": "xuéxiào de cāntīng",
+        "vn": "nhà ăn của trường"
+      },
+      {
+        "zh": "餐厅很干净",
+        "py": "cāntīng hěn gānjìng",
+        "vn": "nhà hàng rất sạch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 家 + 餐厅",
+        "m": "Lượng từ 家 cho cửa hàng, công ty"
+      },
+      {
+        "s": "餐厅 ≈ 饭馆",
+        "m": "餐厅 sang hơn, cũng chỉ nhà ăn trong trường"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "纸袋",
+    "py": "zhǐdài",
+    "pos": "Danh từ",
+    "vn": "túi giấy",
+    "hv": "chỉ đại",
+    "em": "🛍️",
+    "lesson": 4,
+    "explain": [
+      "Túi làm bằng giấy; 袋(子) = túi nói chung."
+    ],
+    "usage": "放筷子的纸袋; 一个纸袋; 袋子.",
+    "collo": [
+      "放筷子的纸袋",
+      "一个纸袋",
+      "塑料袋"
+    ],
+    "ex_zh": "在放筷子的纸袋上会提供使用筷子的详细说明。",
+    "ex_py": "Zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.",
+    "ex_vn": "Trên túi giấy đựng đũa có in hướng dẫn chi tiết cách dùng đũa.",
+    "exList": [
+      {
+        "zh": "在放筷子的纸袋上会提供使用筷子的详细说明。",
+        "py": "Zài fàng kuàizi de zhǐdài shang huì tígōng shǐyòng kuàizi de xiángxì shuōmíng.",
+        "vn": "Trên túi giấy đựng đũa có in hướng dẫn chi tiết cách dùng đũa."
+      },
+      {
+        "zh": "为了保护环境，超市现在都用纸袋，不用塑料袋了。",
+        "py": "Wèile bǎohù huánjìng, chāoshì xiànzài dōu yòng zhǐdài, bú yòng sùliàodài le.",
+        "vn": "Để bảo vệ môi trường, siêu thị bây giờ đều dùng túi giấy, không dùng túi ni lông nữa."
+      },
+      {
+        "zh": "请把这些东西放进袋子里。",
+        "py": "Qǐng bǎ zhèxiē dōngxi fàngjìn dàizi li.",
+        "vn": "Xin hãy cho những thứ này vào túi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "袋",
+        "p": "dài",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "代 trên → 衣 dưới",
+        "rad": "衣 (y – áo, vải)",
+        "mean": "túi",
+        "tip": "Bộ vải 衣 + 代(biểu âm) → TÚI (làm bằng vải/giấy).",
+        "cf": "代 (dài – \"thay\", phần trên)",
+        "w": "纸袋 / 袋子 / 口袋"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Để bảo vệ môi trường, siêu thị bây giờ đều dùng túi giấy.",
+        "answer": "为了保护环境，超市现在都用纸袋。",
+        "answerPy": "Wèile bǎohù huánjìng, chāoshì xiànzài dōu yòng zhǐdài.",
+        "note": "保护 ôn lại từ vựng Bài 12.",
+        "pair": "为了……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn rảnh thì cho những thứ này vào túi giấy giúp mình nhé.",
+        "answer": "要是你有空，就把这些东西放进纸袋里吧。",
+        "answerPy": "Yàoshi nǐ yǒu kòng, jiù bǎ zhèxiē dōngxi fàng jìn zhǐdài li ba.",
+        "note": "Câu chữ 把: 把 + tân ngữ + 放进 + nơi chốn + 里.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个纸袋",
+        "py": "yí gè zhǐdài",
+        "vn": "một túi giấy"
+      },
+      {
+        "zh": "放进纸袋",
+        "py": "fàng jìn zhǐdài",
+        "vn": "cho vào túi giấy"
+      },
+      {
+        "zh": "放筷子的纸袋",
+        "py": "fàng kuàizi de zhǐdài",
+        "vn": "túi giấy đựng đũa"
+      },
+      {
+        "zh": "塑料袋",
+        "py": "sùliàodài",
+        "vn": "túi nilon"
+      },
+      {
+        "zh": "用纸袋装",
+        "py": "yòng zhǐdài zhuāng",
+        "vn": "đựng bằng túi giấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "纸 + 袋",
+        "m": "Túi (袋) bằng giấy (纸)"
+      },
+      {
+        "s": "把 + N + 放进 + 纸袋 + 里",
+        "m": "Cho cái gì vào túi"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "互联网",
+    "py": "hùliánwǎng",
+    "pos": "Danh từ",
+    "vn": "mạng Internet",
+    "hv": "hỗ liên võng",
+    "em": "🌐",
+    "lesson": 4,
+    "explain": [
+      "Mạng máy tính toàn cầu."
+    ],
+    "usage": "在互联网上; 通过互联网; 互联网的发展.",
+    "collo": [
+      "在互联网上进行调查",
+      "通过互联网",
+      "互联网的发展"
+    ],
+    "ex_zh": "有人在互联网上专门进行过调查，结果发现每六个中国人中就有一个使用筷子的方法是错误的。",
+    "ex_py": "Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá, jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.",
+    "ex_vn": "Có người đã tiến hành khảo sát chuyên biệt trên Internet, kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách.",
+    "exList": [
+      {
+        "zh": "有人在互联网上专门进行过调查，结果发现每六个中国人中就有一个使用筷子的方法是错误的。",
+        "py": "Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá, jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.",
+        "vn": "Có người đã tiến hành khảo sát chuyên biệt trên Internet, kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách."
+      },
+      {
+        "zh": "随着互联网的发展，越来越多的人喜欢在网上写日记。",
+        "py": "Suízhe hùliánwǎng de fāzhǎn, yuè lái yuè duō de rén xǐhuan zài wǎngshàng xiě rìjì.",
+        "vn": "Cùng với sự phát triển của Internet, ngày càng nhiều người thích viết nhật ký trên mạng."
+      },
+      {
+        "zh": "通过互联网，我们可以很快地找到需要的信息。",
+        "py": "Tōngguò hùliánwǎng, wǒmen kěyǐ hěn kuài de zhǎodào xūyào de xìnxī.",
+        "vn": "Thông qua Internet, chúng ta có thể nhanh chóng tìm được thông tin cần thiết."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "联",
+        "p": "lián",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 12,
+        "ord": "耳 (nhĩ) trái → 关 phải",
+        "rad": "耳 (nhĩ – tai)",
+        "mean": "liên kết",
+        "tip": "Bộ tai 耳 + 关 → NỐI LIỀN, kết hợp 互(lẫn nhau) + 网(mạng) thành 互联网 = INTERNET.",
+        "cf": "耶 (yē – bộ 耳 + 阝)",
+        "w": "互联网 / 联系 / 联合"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cùng với sự phát triển của Internet, ngày càng nhiều người thích viết nhật ký trên mạng.",
+        "answer": "随着互联网的发展，越来越多的人喜欢在网上写日记。",
+        "answerPy": "Suízhe hùliánwǎng de fāzhǎn, yuè lái yuè duō de rén xǐhuan zài wǎngshàng xiě rìjì.",
+        "note": "Bài luyện tập 随着 SGK (1); 发展 (Bài 10).",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nhờ Internet, chúng ta không những tìm được thông tin rất nhanh, mà còn giao lưu được với người khắp nơi.",
+        "answer": "通过互联网，我们不但可以很快地找到需要的信息，而且还能跟各地的人交流。",
+        "answerPy": "Tōngguò hùliánwǎng, wǒmen búdàn kěyǐ hěn kuài de zhǎodào xūyào de xìnxī, érqiě hái néng gēn gè dì de rén jiāoliú.",
+        "note": "通过 là từ bài 9, 交流 là từ bài 2.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "通过互联网",
+        "py": "tōngguò hùliánwǎng",
+        "vn": "thông qua Internet"
+      },
+      {
+        "zh": "在互联网上",
+        "py": "zài hùliánwǎng shàng",
+        "vn": "trên mạng Internet"
+      },
+      {
+        "zh": "互联网的发展",
+        "py": "hùliánwǎng de fāzhǎn",
+        "vn": "sự phát triển của Internet"
+      },
+      {
+        "zh": "用互联网",
+        "py": "yòng hùliánwǎng",
+        "vn": "dùng Internet"
+      },
+      {
+        "zh": "互联网调查",
+        "py": "hùliánwǎng diàochá",
+        "vn": "khảo sát qua mạng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在 + 互联网 + 上 + V",
+        "m": "Làm gì trên mạng"
+      },
+      {
+        "s": "通过 + 互联网",
+        "m": "Nhờ Internet — 通过 là từ bài 9"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "进行",
+    "py": "jìnxíng",
+    "pos": "Động từ",
+    "vn": "tiến hành, thực hiện",
+    "hv": "tiến hành",
+    "em": "⚙️",
+    "lesson": 4,
+    "explain": [
+      "Thực hiện hoạt động/công việc nào đó; thường đứng trước động từ hai âm tiết mang tính chính thức (调查, 讨论, 交流…)."
+    ],
+    "usage": "进行 + 调查/讨论/交流/研究; 会议继续进行.",
+    "collo": [
+      "进行过调查",
+      "继续进行",
+      "进行交流"
+    ],
+    "ex_zh": "有人在互联网上专门进行过调查。",
+    "ex_py": "Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá.",
+    "ex_vn": "Có người đã tiến hành khảo sát chuyên biệt trên Internet.",
+    "exList": [
+      {
+        "zh": "有人在互联网上专门进行过调查。",
+        "py": "Yǒu rén zài hùliánwǎng shang zhuānmén jìnxíngguo diàochá.",
+        "vn": "Có người đã tiến hành khảo sát chuyên biệt trên Internet."
+      },
+      {
+        "zh": "大家请注意，现在休息十五分钟，十点半会议继续进行。",
+        "py": "Dàjiā qǐng zhùyì, xiànzài xiūxi shíwǔ fēnzhōng, shí diǎn bàn huìyì jìxù jìnxíng.",
+        "vn": "Mọi người chú ý, bây giờ nghỉ 15 phút, 10 giờ rưỡi hội nghị tiếp tục."
+      },
+      {
+        "zh": "成功的语言学习者，在学习方面往往都是积极主动的，他们会主动与他人进行交流。",
+        "py": "Chénggōng de yǔyán xuéxízhě, zài xuéxí fāngmiàn wǎngwǎng dōu shì jījí zhǔdòng de, tāmen huì zhǔdòng yǔ tārén jìnxíng jiāoliú.",
+        "vn": "Người học ngôn ngữ thành công, về mặt học tập thường đều tích cực chủ động, họ sẽ chủ động giao lưu với người khác."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "进",
+        "p": "jìn",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 7,
+        "ord": "井 trong → 辶 bao",
+        "rad": "辶 (sước – đi)",
+        "mean": "tiến, vào",
+        "tip": "Bộ đi 辶 + 井 → ĐI VÀO, TIẾN, kết hợp 行(làm) thành 进行 = TIẾN HÀNH.",
+        "cf": "近 (jìn – \"gần\", cũng bộ 辶)",
+        "w": "进行 / 进步 / 进入"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sáu giờ rồi mà sao cuộc họp chưa xong? — Vẫn đang tiến hành, có lẽ còn nửa tiếng nữa.",
+        "answer": "都六点了，会议怎么还没结束？——还在进行，大概还要半个小时。",
+        "answerPy": "Dōu liù diǎn le, huìyì zěnme hái méi jiéshù? — Hái zài jìnxíng, dàgài hái yào bàn ge xiǎoshí.",
+        "note": "Sau 进行 phải là danh từ song âm: 进行调查 ✓ / 进行吃 ✗.",
+        "pair": "大概……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Người học ngôn ngữ thành công không những chủ động trao đổi với người khác, mà còn nhờ người ta sửa lỗi cho mình.",
+        "answer": "成功的语言学习者不但会主动与他人进行交流，并且还请别人帮助他们改错。",
+        "answerPy": "Chénggōng de yǔyán xuéxízhě búdàn huì zhǔdòng yǔ tārén jìnxíng jiāoliú, bìngqiě hái qǐng biéren bāngzhù tāmen gǎicuò.",
+        "note": "语言 là từ bài 12, 与 là từ bài 3.",
+        "pair": "不但……并且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "进行调查",
+        "py": "jìnxíng diàochá",
+        "vn": "tiến hành khảo sát"
+      },
+      {
+        "zh": "继续进行",
+        "py": "jìxù jìnxíng",
+        "vn": "tiếp tục tiến hành"
+      },
+      {
+        "zh": "进行交流",
+        "py": "jìnxíng jiāoliú",
+        "vn": "tiến hành trao đổi"
+      },
+      {
+        "zh": "正在进行",
+        "py": "zhèngzài jìnxíng",
+        "vn": "đang tiến hành"
+      },
+      {
+        "zh": "进行讨论",
+        "py": "jìnxíng tǎolùn",
+        "vn": "tiến hành thảo luận"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "进行 + danh từ hai âm tiết",
+        "m": "进行调查 ✓ / 进行吃 ✗ — sau 进行 phải là từ song âm"
+      },
+      {
+        "s": "进行 dùng cho việc chính thức, kéo dài"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "错误",
+    "py": "cuòwù",
+    "pos": "Tính từ/Danh từ",
+    "vn": "sai; sai lầm",
+    "hv": "thác ngộ",
+    "em": "❌",
+    "lesson": 4,
+    "explain": [
+      "Không đúng; hoặc lỗi sai."
+    ],
+    "usage": "方法是错误的; 错误的选择; 犯错误.",
+    "collo": [
+      "使用筷子的方法是错误的",
+      "错误的选择",
+      "改正错误"
+    ],
+    "ex_zh": "结果发现每六个中国人中就有一个使用筷子的方法是错误的。",
+    "ex_py": "Jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.",
+    "ex_vn": "Kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách.",
+    "exList": [
+      {
+        "zh": "结果发现每六个中国人中就有一个使用筷子的方法是错误的。",
+        "py": "Jiéguǒ fāxiàn měi liù ge Zhōngguó rén zhōng jiù yǒu yí ge shǐyòng kuàizi de fāngfǎ shì cuòwù de.",
+        "vn": "Kết quả phát hiện cứ sáu người Trung Quốc thì có một người dùng đũa sai cách."
+      },
+      {
+        "zh": "一个错误的选择可能让你失去很多机会。",
+        "py": "Yí ge cuòwù de xuǎnzé kěnéng ràng nǐ shīqù hěn duō jīhuì.",
+        "vn": "Một lựa chọn sai lầm có thể khiến bạn mất nhiều cơ hội."
+      },
+      {
+        "zh": "人人都会犯错误，关键是要及时改正。",
+        "py": "Rénrén dōu huì fàn cuòwù, guānjiàn shì yào jíshí gǎizhèng.",
+        "vn": "Ai cũng có thể mắc sai lầm, quan trọng là phải kịp thời sửa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "错",
+        "p": "cuò",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 13,
+        "ord": "钅(kim) trái → 昔 phải",
+        "rad": "钅 (kim)",
+        "mean": "sai, lẫn",
+        "tip": "Bộ kim 钅 + 昔 → nghĩa gốc là mạ vàng đan xen, mượn nghĩa LẪN LỘN → SAI, kết hợp 误 thành 错误 = SAI LẦM (ôn lại 误会 Bài 12).",
+        "cf": "借 (jiè – \"mượn\", bộ 亻 + 昔)",
+        "w": "错误 / 错 / 误会"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ai cũng có thể mắc sai lầm, mấu chốt không phải là không sai, mà là sửa kịp thời.",
+        "answer": "人人都会犯错误，关键不是不犯错，而是要及时改正。",
+        "answerPy": "Rénrén dōu huì fàn cuòwù, guānjiàn bú shì bú fàncuò, ér shì yào jíshí gǎizhèng.",
+        "note": "关键 là từ bài 10, 及时 là từ bài 2.",
+        "pair": "不是……而是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn cho rằng mỗi người Trung Quốc đều dùng đũa đúng cách, thì sai rồi.",
+        "answer": "如果你认为每个中国人都会正确使用筷子，那就错了。",
+        "answerPy": "Rúguǒ nǐ rènwéi měi ge Zhōngguó rén dōu huì zhèngquè shǐyòng kuàizi, nà jiù cuò le.",
+        "note": "正确 (Bài 9) + 使用 (Bài 12).",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "犯错误",
+        "py": "fàn cuòwù",
+        "vn": "phạm sai lầm"
+      },
+      {
+        "zh": "改正错误",
+        "py": "gǎizhèng cuòwù",
+        "vn": "sửa lỗi"
+      },
+      {
+        "zh": "错误的方法",
+        "py": "cuòwù de fāngfǎ",
+        "vn": "cách làm sai"
+      },
+      {
+        "zh": "错误的选择",
+        "py": "cuòwù de xuǎnzé",
+        "vn": "lựa chọn sai lầm"
+      },
+      {
+        "zh": "语法错误",
+        "py": "yǔfǎ cuòwù",
+        "vn": "lỗi ngữ pháp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "犯 / 改正 + 错误 (danh từ)",
+        "m": "Phạm / sửa lỗi"
+      },
+      {
+        "s": "错误的 + N (tính từ)",
+        "m": "… sai lầm"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "随着",
+    "py": "suízhe",
+    "pos": "Giới từ",
+    "vn": "cùng với, theo (sự thay đổi của…)",
+    "hv": "tùy trứ",
+    "em": "📈",
+    "lesson": 5,
+    "explain": [
+      "Chỉ một sự việc là điều kiện để sự việc khác xảy ra; sau 随着 thường là động từ hai âm tiết có bổ nghĩa (……的发展/增长/加深)."
+    ],
+    "usage": "随着 + ……的发展/加深/增长，……",
+    "collo": [
+      "随着社会的发展",
+      "随着人们对茶的认识的加深",
+      "随着年龄的增长"
+    ],
+    "ex_zh": "后来，随着人们对茶的认识的加深，慢慢开始把它当作解渴的饮料。",
+    "ex_py": "Hòulái, suízhe rénmen duì chá de rènshi de jiāshēn, mànmàn kāishǐ bǎ tā dàngzuò jiě kě de yǐnliào.",
+    "ex_vn": "Sau này, cùng với nhận thức về trà ngày càng sâu, người ta dần bắt đầu coi nó là thức uống giải khát.",
+    "exList": [
+      {
+        "zh": "后来，随着人们对茶的认识的加深，慢慢开始把它当作解渴的饮料。",
+        "py": "Hòulái, suízhe rénmen duì chá de rènshi de jiāshēn, mànmàn kāishǐ bǎ tā dàngzuò jiě kě de yǐnliào.",
+        "vn": "Sau này, cùng với nhận thức về trà ngày càng sâu, người ta dần bắt đầu coi nó là thức uống giải khát."
+      },
+      {
+        "zh": "随着社会的发展，京剧也在改变，以适应不同年龄观众的需要。",
+        "py": "Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn, yǐ shìyìng bù tóng niánlíng guānzhòng de xūyào.",
+        "vn": "Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi để thích ứng nhu cầu khán giả các độ tuổi."
+      },
+      {
+        "zh": "随着年龄的增长，他们会发现生活总是在不停地变化。",
+        "py": "Suízhe niánlíng de zēngzhǎng, tāmen huì fāxiàn shēnghuó zǒngshì zài bù tíng de biànhuà.",
+        "vn": "Cùng với tuổi tác tăng lên, họ sẽ phát hiện cuộc sống luôn không ngừng thay đổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "随",
+        "p": "suí",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 11,
+        "ord": "阝 trái → 有+辶 phải",
+        "rad": "阝 (phụ – gò đất)",
+        "mean": "theo",
+        "tip": "Bộ 阝 + 辶(đi) → ĐI THEO, kết hợp 着 thành 随着 = CÙNG VỚI, THEO (ôn lại 随便 Bài 9).",
+        "cf": "堕 (duò – \"rơi\", bộ 土)",
+        "w": "随着 / 随便 / 随时"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cùng với sự phát triển của xã hội, tiêu chuẩn cái đẹp luôn đổi: xưa lấy béo làm đẹp, nay lại lấy gầy làm đẹp.",
+        "answer": "随着社会的发展，美的标准一直在变：过去人们以胖为美，而现在的人以瘦为美。",
+        "answerPy": "Suízhe shèhuì de fāzhǎn, měi de biāozhǔn yìzhí zài biàn: guòqù rénmen yǐ pàng wéi měi, ér xiànzài de rén yǐ shòu wéi měi.",
+        "note": "标准 là từ bài 5, 发展 là từ bài 10; 随着 dẫn quá trình, không dẫn người.",
+        "pair": "……，而……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hồi nhỏ chúng ta thường có nhiều lý tưởng lãng mạn, nhưng cùng với tuổi tác tăng lên, những giấc mơ ấy dần rời xa.",
+        "answer": "小时候我们往往会有许多浪漫的理想，但是随着年龄的增长，那些梦慢慢地离我们远去了。",
+        "answerPy": "Xiǎoshíhou wǒmen wǎngwǎng huì yǒu xǔduō làngmàn de lǐxiǎng, dànshì suízhe niánlíng de zēngzhǎng, nàxiē mèng mànmàn de lí wǒmen yuǎnqù le.",
+        "note": "Bài luyện tập SGK (3); 往往 (Bài 8), 理想 (Bài 9).",
+        "pair": "……，但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "随着社会的发展",
+        "py": "suízhe shèhuì de fāzhǎn",
+        "vn": "cùng với sự phát triển xã hội"
+      },
+      {
+        "zh": "随着年龄的增长",
+        "py": "suízhe niánlíng de zēng zhǎng",
+        "vn": "theo tuổi tác"
+      },
+      {
+        "zh": "随着时间",
+        "py": "suízhe shíjiān",
+        "vn": "theo thời gian"
+      },
+      {
+        "zh": "随着经济的发展",
+        "py": "suízhe jīngjì de fāzhǎn",
+        "vn": "cùng sự phát triển kinh tế"
+      },
+      {
+        "zh": "随着认识的加深",
+        "py": "suízhe rènshi de jiāshēn",
+        "vn": "cùng với hiểu biết sâu thêm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "随着 + N + 的 + 变化，Sub + V",
+        "m": "Cùng với sự thay đổi của …, thì …"
+      },
+      {
+        "s": "✗ 随着他来了 → ✓ 随着社会的发展",
+        "m": "随着 dẫn QUÁ TRÌNH, không dẫn người"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "十分",
+    "py": "shífēn",
+    "pos": "Phó từ",
+    "vn": "rất, vô cùng",
+    "hv": "thập phân",
+    "em": "💯",
+    "lesson": 5,
+    "explain": [
+      "Mức độ cao, tương đương 非常."
+    ],
+    "usage": "十分 + tính từ: 十分普遍, 十分重要, 十分满意.",
+    "collo": [
+      "十分普遍",
+      "十分重要",
+      "十分满意"
+    ],
+    "ex_zh": "在中国，喝茶是一种十分普遍的生活习惯。",
+    "ex_py": "Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.",
+    "ex_vn": "Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến.",
+    "exList": [
+      {
+        "zh": "在中国，喝茶是一种十分普遍的生活习惯。",
+        "py": "Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.",
+        "vn": "Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến."
+      },
+      {
+        "zh": "对于这次调查计划，经理十分满意。",
+        "py": "Duìyú zhè cì diàochá jìhuà, jīnglǐ shífēn mǎnyì.",
+        "vn": "Đối với kế hoạch khảo sát lần này, giám đốc vô cùng hài lòng."
+      },
+      {
+        "zh": "养成阅读的习惯十分重要。",
+        "py": "Yǎngchéng yuèdú de xíguàn shífēn zhòngyào.",
+        "vn": "Hình thành thói quen đọc sách vô cùng quan trọng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "分",
+        "p": "fēn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 4,
+        "ord": "八 trên → 刀 dưới",
+        "rad": "刀 (đao)",
+        "mean": "chia, phần",
+        "tip": "Chữ hội ý dao 刀 CHIA đôi 八 → PHẦN; 十分 = mười phần (trọn vẹn) → RẤT.",
+        "cf": "公 (gōng – \"công\", tự dạng gần giống)",
+        "w": "十分 / 分钟 / 部分"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đối với kế hoạch khảo sát lần này, giám đốc không những vô cùng hài lòng, mà còn khen cả nhóm.",
+        "answer": "对于这次调查计划，经理不但十分满意，而且还表扬了整个小组。",
+        "answerPy": "Duìyú zhè cì diàochá jìhuà, jīnglǐ búdàn shífēn mǎnyì, érqiě hái biǎoyángle zhěnggè xiǎozǔ.",
+        "note": "对于 là từ bài 12, 调查 là từ bài 4.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần tạo được thói quen đọc sách là việc học sẽ tiến bộ, cho nên điều đó vô cùng quan trọng.",
+        "answer": "只要养成阅读的习惯，学习就会有进步，所以这一点十分重要。",
+        "answerPy": "Zhǐyào yǎngchéng yuèdú de xíguàn, xuéxí jiù huì yǒu jìnbù, suǒyǐ zhè yì diǎn shífēn zhòngyào.",
+        "note": "养成 và 阅读 đều là từ bài 11.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "十分重要",
+        "py": "shífēn zhòngyào",
+        "vn": "vô cùng quan trọng"
+      },
+      {
+        "zh": "十分满意",
+        "py": "shífēn mǎnyì",
+        "vn": "rất hài lòng"
+      },
+      {
+        "zh": "十分普遍",
+        "py": "shífēn pǔbiàn",
+        "vn": "rất phổ biến"
+      },
+      {
+        "zh": "十分感谢",
+        "py": "shífēn gǎnxiè",
+        "vn": "vô cùng cảm ơn"
+      },
+      {
+        "zh": "十分困难",
+        "py": "shífēn kùnnan",
+        "vn": "vô cùng khó khăn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "十分 + Adj",
+        "m": "Rất, vô cùng — 十分 thiên văn viết hơn 非常"
+      },
+      {
+        "s": "✗ 十分喜欢他 → ✓ 非常喜欢他",
+        "m": "十分 chủ yếu đi với tính từ"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "普遍",
+    "py": "pǔbiàn",
+    "pos": "Tính từ",
+    "vn": "phổ biến",
+    "hv": "phổ biến",
+    "em": "🌏",
+    "lesson": 5,
+    "explain": [
+      "Tồn tại rộng rãi, ở đâu cũng có."
+    ],
+    "usage": "十分普遍的习惯; 越来越普遍; 普遍现象.",
+    "collo": [
+      "十分普遍的生活习惯",
+      "越来越普遍",
+      "普遍的现象"
+    ],
+    "ex_zh": "在中国，喝茶是一种十分普遍的生活习惯。",
+    "ex_py": "Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.",
+    "ex_vn": "Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến.",
+    "exList": [
+      {
+        "zh": "在中国，喝茶是一种十分普遍的生活习惯。",
+        "py": "Zài Zhōngguó, hē chá shì yì zhǒng shífēn pǔbiàn de shēnghuó xíguàn.",
+        "vn": "Ở Trung Quốc, uống trà là một thói quen sinh hoạt vô cùng phổ biến."
+      },
+      {
+        "zh": "很多大学生毕业后，选择的第一个职业，往往和自己的专业没什么关系，这种情况现在越来越普遍。",
+        "py": "Hěn duō dàxuéshēng bìyè hòu, xuǎnzé de dì-yī ge zhíyè, wǎngwǎng hé zìjǐ de zhuānyè méi shénme guānxi, zhè zhǒng qíngkuàng xiànzài yuè lái yuè pǔbiàn.",
+        "vn": "Nhiều sinh viên sau khi tốt nghiệp, nghề đầu tiên chọn thường không liên quan đến chuyên ngành, tình trạng này ngày càng phổ biến."
+      },
+      {
+        "zh": "用手机付钱在中国已经非常普遍了。",
+        "py": "Yòng shǒujī fù qián zài Zhōngguó yǐjīng fēicháng pǔbiàn le.",
+        "vn": "Dùng điện thoại thanh toán ở Trung Quốc đã rất phổ biến."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "普",
+        "p": "pǔ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "並 trên → 日 dưới",
+        "rad": "日 (nhật)",
+        "mean": "rộng khắp",
+        "tip": "Mặt trời 日 chiếu KHẮP nơi → RỘNG KHẮP, kết hợp 遍(khắp) thành 普遍 = PHỔ BIẾN.",
+        "cf": "谱 (pǔ – \"phổ, bản nhạc\", bộ 讠)",
+        "w": "普遍 / 普通 / 普通话"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nghề đầu tiên sinh viên chọn thường không liên quan đến chuyên ngành, tình trạng này ngày càng phổ biến.",
+        "answer": "大学生选择的第一个职业往往和自己的专业没什么关系，这种情况现在越来越普遍。",
+        "answerPy": "Dàxuéshēng xuǎnzé de dì-yī ge zhíyè wǎngwǎng hé zìjǐ de zhuānyè méi shénme guānxi, zhè zhǒng qíngkuàng xiànzài yuè lái yuè pǔbiàn.",
+        "note": "练习2 SGK (5); 往往 (Bài 8), 职业 (Bài 10).",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Dùng điện thoại thanh toán ở Trung Quốc không những đã rất phổ biến, mà còn ngày càng tiện lợi.",
+        "answer": "用手机付钱在中国不但已经非常普遍了，而且越来越方便。",
+        "answerPy": "Yòng shǒujī fùqián zài Zhōngguó búdàn yǐjīng fēicháng pǔbiàn le, érqiě yuèláiyuè fāngbiàn.",
+        "note": "付款 là từ bài 5 — 用手机付钱.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "十分普遍",
+        "py": "shífēn pǔbiàn",
+        "vn": "rất phổ biến"
+      },
+      {
+        "zh": "越来越普遍",
+        "py": "yuè lái yuè pǔbiàn",
+        "vn": "ngày càng phổ biến"
+      },
+      {
+        "zh": "普遍的现象",
+        "py": "pǔbiàn de xiànxiàng",
+        "vn": "hiện tượng phổ biến"
+      },
+      {
+        "zh": "非常普遍",
+        "py": "fēicháng pǔbiàn",
+        "vn": "vô cùng phổ biến"
+      },
+      {
+        "zh": "普遍的习惯",
+        "py": "pǔbiàn de xíguàn",
+        "vn": "thói quen phổ biến"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 / 十分 + 普遍",
+        "m": "Cái gì đó rất phổ biến"
+      },
+      {
+        "s": "普遍 ≈ 常见",
+        "m": "普遍 nhấn diện rộng; 常见 nhấn hay gặp"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "部分",
+    "py": "bùfen",
+    "pos": "Danh từ",
+    "vn": "phần, bộ phận",
+    "hv": "bộ phận",
+    "em": "🧩",
+    "lesson": 5,
+    "explain": [
+      "Một phần của toàn thể."
+    ],
+    "usage": "不可缺少的一部分; 前一部分; 大部分.",
+    "collo": [
+      "生活中不可缺少的一部分",
+      "前一部分",
+      "大部分人"
+    ],
+    "ex_zh": "对很多中国人来说，喝茶已成为他们生活中不可缺少的一部分。",
+    "ex_py": "Duì hěn duō Zhōngguó rén lái shuō, hē chá yǐ chéngwéi tāmen shēnghuó zhōng bù kě quēshǎo de yí bùfen.",
+    "ex_vn": "Đối với nhiều người Trung Quốc, uống trà đã trở thành một phần không thể thiếu trong cuộc sống.",
+    "exList": [
+      {
+        "zh": "对很多中国人来说，喝茶已成为他们生活中不可缺少的一部分。",
+        "py": "Duì hěn duō Zhōngguó rén lái shuō, hē chá yǐ chéngwéi tāmen shēnghuó zhōng bù kě quēshǎo de yí bùfen.",
+        "vn": "Đối với nhiều người Trung Quốc, uống trà đã trở thành một phần không thể thiếu trong cuộc sống."
+      },
+      {
+        "zh": "这篇文章是介绍京剧的，前一部分介绍京剧的发展历史，第二部分主要谈京剧的发展方向。",
+        "py": "Zhè piān wénzhāng shì jièshào jīngjù de, qián yí bùfen jièshào jīngjù de fāzhǎn lìshǐ, dì-èr bùfen zhǔyào tán jīngjù de fāzhǎn fāngxiàng.",
+        "vn": "Bài văn này giới thiệu Kinh kịch, phần đầu giới thiệu lịch sử phát triển, phần hai chủ yếu bàn về hướng phát triển của Kinh kịch."
+      },
+      {
+        "zh": "大部分学生都希望有机会出国留学。",
+        "py": "Dà bùfen xuésheng dōu xīwàng yǒu jīhuì chūguó liúxué.",
+        "vn": "Phần lớn học sinh đều hy vọng có cơ hội du học."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "部",
+        "p": "bù",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "咅 trái → 阝 phải",
+        "rad": "阝 (ấp – vùng)",
+        "mean": "bộ, phần",
+        "tip": "Bộ 阝(vùng đất) + 咅 → nghĩa gốc là VÙNG, mở rộng thành BỘ PHẬN, kết hợp 分 thành 部分 = PHẦN.",
+        "cf": "陪 (péi – \"cùng\", bộ 阝 bên trái)",
+        "w": "部分 / 全部 / 大部分"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đối với nhiều người Trung Quốc, uống trà đã trở thành một phần không thể thiếu trong cuộc sống.",
+        "answer": "对很多中国人来说，喝茶已成为他们生活中不可缺少的一部分。",
+        "answerPy": "Duì hěn duō Zhōngguó rén lái shuō, hē chá yǐ chéngwéi tāmen shēnghuó zhōng bù kě quēshǎo de yí bùfen.",
+        "note": "对……来说 (Bài 5) + 缺少 (Bài 8) + 成为 (Bài 8).",
+        "pair": "对……来说……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bài viết này giới thiệu Kinh kịch: phần đầu do tôi viết, còn phần hai do bạn tôi viết.",
+        "answer": "这篇文章是介绍京剧的，前一部分由我写，而第二部分由我朋友写。",
+        "answerPy": "Zhè piān wénzhāng shì jièshào jīngjù de, qián yí bùfen yóu wǒ xiě, ér dì-èr bùfen yóu wǒ péngyou xiě.",
+        "note": "篇 và 文章 đều là từ bài 11; 由 + ai + V.",
+        "pair": "……，而……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一部分",
+        "py": "yí bùfen",
+        "vn": "một phần"
+      },
+      {
+        "zh": "大部分人",
+        "py": "dà bùfen rén",
+        "vn": "đa số mọi người"
+      },
+      {
+        "zh": "前一部分",
+        "py": "qián yí bùfen",
+        "vn": "phần đầu"
+      },
+      {
+        "zh": "不可缺少的部分",
+        "py": "bù kě quēshǎo de bùfen",
+        "vn": "phần không thể thiếu"
+      },
+      {
+        "zh": "第二部分",
+        "py": "dì èr bùfen",
+        "vn": "phần thứ hai"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "大 / 一 + 部分 + N",
+        "m": "Đa số / một phần cái gì"
+      },
+      {
+        "s": "部分 ↔ 全部 (bài 12)",
+        "m": "Một phần ↔ toàn bộ"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "稍微",
+    "py": "shāowēi",
+    "pos": "Phó từ",
+    "vn": "hơi, một chút",
+    "hv": "sảo vi",
+    "em": "🤏",
+    "lesson": 5,
+    "explain": [
+      "Mức độ nhẹ, số lượng ít."
+    ],
+    "usage": "稍微 + 有点儿/一点儿: 稍微有点儿苦, 稍微休息一下.",
+    "collo": [
+      "稍微有点儿苦",
+      "稍微休息一下",
+      "稍微等一会儿"
+    ],
+    "ex_zh": "比如广东省的人爱喝的\"凉茶\"，它的味道稍微有点儿苦，其实是一种用中药做成的饮料。",
+    "ex_py": "Bǐrú Guǎngdōng Shěng de rén ài hē de \"liángchá\", tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.",
+    "ex_vn": "Ví dụ \"trà mát\" người Quảng Đông thích uống, vị hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc.",
+    "exList": [
+      {
+        "zh": "比如广东省的人爱喝的\"凉茶\"，它的味道稍微有点儿苦，其实是一种用中药做成的饮料。",
+        "py": "Bǐrú Guǎngdōng Shěng de rén ài hē de \"liángchá\", tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.",
+        "vn": "Ví dụ \"trà mát\" người Quảng Đông thích uống, vị hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc."
+      },
+      {
+        "zh": "孙小姐，我们大概什么时候出发？——大家先回房间稍微休息一下，半个小时后我们楼下集合。",
+        "py": "Sūn xiǎojiě, wǒmen dàgài shénme shíhou chūfā? — Dàjiā xiān huí fángjiān shāowēi xiūxi yíxià, bàn ge xiǎoshí hòu wǒmen lóuxià jíhé.",
+        "vn": "Cô Tôn, khoảng khi nào chúng ta xuất phát? — Mọi người về phòng nghỉ một chút, nửa tiếng sau tập trung dưới lầu."
+      },
+      {
+        "zh": "这道题稍微有点儿难，你再仔细想想。",
+        "py": "Zhè dào tí shāowēi yǒudiǎnr nán, nǐ zài zǐxì xiǎngxiang.",
+        "vn": "Câu này hơi khó một chút, bạn nghĩ kỹ lại xem."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "微",
+        "p": "wēi",
+        "type": "左中右结构 · Trái-giữa-phải",
+        "st": 13,
+        "ord": "彳 trái → 山+一+几 giữa → 攵 phải",
+        "rad": "彳 (xích – bước nhỏ)",
+        "mean": "nhỏ, ít",
+        "tip": "Bộ bước nhỏ 彳 → NHỎ BÉ, kết hợp 稍(hơi) thành 稍微 = HƠI, MỘT CHÚT.",
+        "cf": "徽 (huī – \"huy hiệu\")",
+        "w": "稍微 / 微笑 / 微信"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mọi người về phòng nghỉ một chút đã, nửa tiếng sau thì tập trung dưới sảnh.",
+        "answer": "大家先回房间稍微休息一下，然后半个小时后我们楼下集合。",
+        "answerPy": "Dàjiā xiān huí fángjiān shāowēi xiūxi yíxià, ránhòu bàn ge xiǎoshí hòu wǒmen lóuxià jíhé.",
+        "note": "稍微 bắt buộc có 一下 / 一点儿 theo sau.",
+        "pair": "先……然后……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Câu này tuy hơi khó một chút, nhưng chỉ cần nghĩ kỹ là bạn làm được.",
+        "answer": "这道题虽然稍微有点儿难，但是只要仔细想想，你就能做出来。",
+        "answerPy": "Zhè dào tí suīrán shāowēi yǒudiǎnr nán, dànshì zhǐyào zǐxì xiǎngxiang, nǐ jiù néng zuò chulai.",
+        "note": "仔细 là từ bài 12; V + 出来 — nghĩ ra, làm ra.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "稍微有点儿苦",
+        "py": "shāowēi yǒudiǎnr kǔ",
+        "vn": "hơi đắng một chút"
+      },
+      {
+        "zh": "稍微休息一下",
+        "py": "shāowēi xiūxi yíxià",
+        "vn": "nghỉ một chút"
+      },
+      {
+        "zh": "稍微等一会儿",
+        "py": "shāowēi děng yíhuìr",
+        "vn": "đợi một lát"
+      },
+      {
+        "zh": "稍微大一点儿",
+        "py": "shāowēi dà yìdiǎnr",
+        "vn": "to hơn một chút"
+      },
+      {
+        "zh": "稍微改一下",
+        "py": "shāowēi gǎi yíxià",
+        "vn": "sửa một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "稍微 + Adj / V + 一点儿 / 一下",
+        "m": "Hơi… một chút — vế sau bắt buộc có 一点儿/一下"
+      },
+      {
+        "s": "✗ 稍微苦 → ✓ 稍微有点儿苦",
+        "m": "稍微 không đứng một mình trước tính từ"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "苦",
+    "py": "kǔ",
+    "pos": "Tính từ",
+    "vn": "đắng; khổ",
+    "hv": "khổ",
+    "em": "☕",
+    "lesson": 5,
+    "explain": [
+      "1. Vị đắng.",
+      "2. Khổ cực (辛苦, 吃苦)."
+    ],
+    "usage": "味道有点儿苦; 苦药; 很苦.",
+    "collo": [
+      "味道稍微有点儿苦",
+      "凉茶虽然味道苦",
+      "良药苦口"
+    ],
+    "ex_zh": "它的味道稍微有点儿苦，其实是一种用中药做成的饮料。",
+    "ex_py": "Tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.",
+    "ex_vn": "Vị của nó hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc.",
+    "exList": [
+      {
+        "zh": "它的味道稍微有点儿苦，其实是一种用中药做成的饮料。",
+        "py": "Tā de wèidào shāowēi yǒudiǎnr kǔ, qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.",
+        "vn": "Vị của nó hơi đắng một chút, thực ra là thức uống làm từ thuốc bắc."
+      },
+      {
+        "zh": "凉茶虽然味道苦，但对身体很有好处。",
+        "py": "Liángchá suīrán wèidào kǔ, dàn duì shēntǐ hěn yǒu hǎochù.",
+        "vn": "Trà mát tuy vị đắng, nhưng rất tốt cho sức khỏe."
+      },
+      {
+        "zh": "这种咖啡不加糖的话有点儿苦。",
+        "py": "Zhè zhǒng kāfēi bù jiā táng de huà yǒudiǎnr kǔ.",
+        "vn": "Loại cà phê này nếu không thêm đường thì hơi đắng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "苦",
+        "p": "kǔ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "艹 (thảo) trên → 古 dưới",
+        "rad": "艹 (thảo – cỏ)",
+        "mean": "đắng, khổ",
+        "tip": "Bộ cỏ 艹 + 古 → loại cỏ ĐẮNG (khổ sâm), mở rộng thành KHỔ CỰC (辛苦 Bài 9).",
+        "cf": "古 (gǔ – \"cổ\", phần dưới)",
+        "w": "苦 / 辛苦 / 吃苦"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trà mát tuy vị đắng, nhưng rất tốt cho sức khỏe. Ngoài ra, uống nóng hiệu quả cũng rất tốt.",
+        "answer": "凉茶虽然味道苦，但对身体很有好处。另外，凉茶热着喝效果也很不错。",
+        "answerPy": "Liángchá suīrán wèidào kǔ, dàn duì shēntǐ hěn yǒu hǎochù. Lìngwài, liángchá rèzhe hē xiàoguǒ yě hěn búcuò.",
+        "note": "练习2 SGK (3); 另外 (Bài 3), 好处 (Bài 6).",
+        "pair": "虽然……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Loại cà phê này nếu không thêm đường thì hơi đắng, nên tôi luôn cho một thìa.",
+        "answer": "这种咖啡要是不加糖的话就有点儿苦，所以我总是加一勺。",
+        "answerPy": "Zhè zhǒng kāfēi yàoshi bù jiā táng dehuà jiù yǒudiǎnr kǔ, suǒyǐ wǒ zǒngshì jiā yì sháo.",
+        "note": "糖 là từ bài 10, 勺 là từ bài 12.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "有点儿苦",
+        "py": "yǒudiǎnr kǔ",
+        "vn": "hơi đắng"
+      },
+      {
+        "zh": "味道很苦",
+        "py": "wèidào hěn kǔ",
+        "vn": "vị rất đắng"
+      },
+      {
+        "zh": "苦咖啡",
+        "py": "kǔ kāfēi",
+        "vn": "cà phê đắng"
+      },
+      {
+        "zh": "生活很苦",
+        "py": "shēnghuó hěn kǔ",
+        "vn": "cuộc sống vất vả"
+      },
+      {
+        "zh": "良药苦口",
+        "py": "liáng yào kǔ kǒu",
+        "vn": "thuốc đắng dã tật"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 味道 + 苦",
+        "m": "Cái gì đó vị đắng — 味道 là từ bài 5"
+      },
+      {
+        "s": "苦 (đắng) và 苦 (khổ) cùng một chữ"
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "zh": "省",
+    "py": "shěng",
+    "pos": "Danh từ",
+    "vn": "tỉnh",
+    "hv": "tỉnh",
+    "em": "🗺️",
+    "lesson": 5,
+    "explain": [
+      "Đơn vị hành chính cấp cao nhất dưới quốc gia ở Trung Quốc."
+    ],
+    "usage": "广东省; 一个省; 省会.",
+    "collo": [
+      "广东省",
+      "这个省",
+      "省会城市"
+    ],
+    "ex_zh": "比如广东省的人爱喝的\"凉茶\"，其实是一种用中药做成的饮料。",
+    "ex_py": "Bǐrú Guǎngdōng Shěng de rén ài hē de \"liángchá\", qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.",
+    "ex_vn": "Ví dụ \"trà mát\" người tỉnh Quảng Đông thích uống, thực ra là thức uống làm từ thuốc bắc.",
+    "exList": [
+      {
+        "zh": "比如广东省的人爱喝的\"凉茶\"，其实是一种用中药做成的饮料。",
+        "py": "Bǐrú Guǎngdōng Shěng de rén ài hē de \"liángchá\", qíshí shì yì zhǒng yòng zhōngyào zuòchéng de yǐnliào.",
+        "vn": "Ví dụ \"trà mát\" người tỉnh Quảng Đông thích uống, thực ra là thức uống làm từ thuốc bắc."
+      },
+      {
+        "zh": "中国有很多省，每个省都有自己的特点。",
+        "py": "Zhōngguó yǒu hěn duō shěng, měi ge shěng dōu yǒu zìjǐ de tèdiǎn.",
+        "vn": "Trung Quốc có nhiều tỉnh, mỗi tỉnh đều có đặc điểm riêng."
+      },
+      {
+        "zh": "他来自云南省，那儿的茶很有名。",
+        "py": "Tā láizì Yúnnán Shěng, nàr de chá hěn yǒumíng.",
+        "vn": "Anh ấy đến từ tỉnh Vân Nam, trà ở đó rất nổi tiếng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "省",
+        "p": "shěng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "少 trên → 目 dưới",
+        "rad": "目 (mục – mắt)",
+        "mean": "tỉnh; tiết kiệm",
+        "tip": "Chữ hội ý mắt 目 nhìn KỸ (少) → xem xét; mượn chỉ đơn vị hành chính TỈNH. Đọc \"xǐng\" khi nghĩa là \"tỉnh ngộ\".",
+        "cf": "少 (shǎo – \"ít\", phần trên)",
+        "w": "省 / 广东省 / 省钱"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trung Quốc không những có rất nhiều tỉnh, mà mỗi tỉnh đều có đặc điểm riêng.",
+        "answer": "中国不但有很多省，而且每个省都有自己的特点。",
+        "answerPy": "Zhōngguó búdàn yǒu hěn duō shěng, érqiě měi ge shěng dōu yǒu zìjǐ de tèdiǎn.",
+        "note": "特点 là từ bài 8 — 共同特点 / 自己的特点.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy đến từ tỉnh Vân Nam, chính vì vậy mà rất hiểu về trà.",
+        "answer": "他来自云南省，正因为这样，所以他对茶特别了解。",
+        "answerPy": "Tā láizì Yúnnán Shěng, zhèng yīnwèi zhèyàng, suǒyǐ tā duì chá tèbié liǎojiě.",
+        "note": "来自 + nơi chốn — không thêm 从.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "广东省",
+        "py": "Guǎngdōng Shěng",
+        "vn": "tỉnh Quảng Đông"
+      },
+      {
+        "zh": "这个省",
+        "py": "zhège shěng",
+        "vn": "tỉnh này"
+      },
+      {
+        "zh": "省会城市",
+        "py": "shěnghuì chéngshì",
+        "vn": "thành phố tỉnh lỵ"
+      },
+      {
+        "zh": "来自云南省",
+        "py": "láizì yún nán shěng",
+        "vn": "đến từ tỉnh Vân Nam"
+      },
+      {
+        "zh": "每个省",
+        "py": "měi gè shěng",
+        "vn": "mỗi tỉnh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "tên + 省",
+        "m": "Tỉnh nào: 广东省, 云南省"
+      },
+      {
+        "s": "省 → 市 → 区",
+        "m": "Tỉnh → thành phố → quận"
+      }
+    ]
+  },
+  {
+    "n": 33,
+    "zh": "广东省",
+    "py": "Guǎngdōng Shěng",
+    "pos": "Danh từ riêng",
+    "vn": "tỉnh Quảng Đông (Trung Quốc)",
+    "hv": "Quảng Đông Tỉnh",
+    "em": "📍",
+    "lesson": 5,
+    "explain": [
+      "Tỉnh ở miền nam Trung Quốc, nổi tiếng với \"凉茶\" (trà mát) và ẩm thực Quảng Đông."
+    ],
+    "usage": "Danh từ riêng chỉ địa danh.",
+    "collo": [
+      "广东省的人",
+      "广东省的凉茶"
+    ],
+    "ex_zh": "比如广东省的人爱喝的\"凉茶\"，它的味道稍微有点儿苦。",
+    "ex_py": "Bǐrú Guǎngdōng Shěng de rén ài hē de \"liángchá\", tā de wèidào shāowēi yǒudiǎnr kǔ.",
+    "ex_vn": "Ví dụ \"trà mát\" người tỉnh Quảng Đông thích uống, vị hơi đắng một chút.",
+    "exList": [
+      {
+        "zh": "比如广东省的人爱喝的\"凉茶\"，它的味道稍微有点儿苦。",
+        "py": "Bǐrú Guǎngdōng Shěng de rén ài hē de \"liángchá\", tā de wèidào shāowēi yǒudiǎnr kǔ.",
+        "vn": "Ví dụ \"trà mát\" người tỉnh Quảng Đông thích uống, vị hơi đắng một chút."
+      }
+    ]
+  }
 ];
 
 var wuData = [

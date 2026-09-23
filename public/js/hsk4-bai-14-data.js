@@ -3,672 +3,3310 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'出差',py:'chū chāi',pos:'Động từ',vn:'đi công tác', hv: 'xuất sai',em:'✈️',lesson:1,
-   explain:['Đi làm việc ở nơi khác theo yêu cầu của cơ quan/công ty. Động từ ly hợp: 出了一次差, 出差三天.'],
-   usage:'去上海出差, 出差三天, 明天要出差.',
-   collo:['明天出差','去北京出差','出差回来'],
-   ex_zh:'这是明天你出差要带的毛巾、牙膏和牙刷，把它们放到箱子里吧。',ex_py:'Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā, bǎ tāmen fàngdào xiāngzi li ba.',ex_vn:'Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang, cho vào vali đi.',
-   exList:[
-     {zh:'这是明天你出差要带的毛巾、牙膏和牙刷，把它们放到箱子里吧。',py:'Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā, bǎ tāmen fàngdào xiāngzi li ba.',vn:'Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang, cho vào vali đi.'},
-     {zh:'真抱歉，明天我得出差，不能参加明天的会议了。',py:'Zhēn bàoqiàn, míngtiān wǒ děi chū chāi, bù néng cānjiā míngtiān de huìyì le.',vn:'Thật xin lỗi, mai tôi phải đi công tác, không thể dự cuộc họp ngày mai.'},
-     {zh:'A：打扰一下，请问李老师在吗？B：他出差了。你找他有事吗？',py:'A: Dǎrǎo yíxià, qǐngwèn Lǐ lǎoshī zài ma? B: Tā chū chāi le. Nǐ zhǎo tā yǒu shì ma?',vn:'A: Làm phiền chút, cho hỏi thầy Lý có ở đây không? B: Thầy đi công tác rồi. Bạn tìm thầy có việc gì không?'},
-   ],
-   hanzi:[
-     {c:'差',p:'chāi',type:'上下结构 · Trên-dưới',st:9,ord:'𦍌 trên → 工 dưới',rad:'工 (công)',mean:'sai phái',
-      tip:'Chữ 差 đọc chāi = SAI PHÁI (cử đi làm việc), 出差 = ĐI CÔNG TÁC. Chú ý cùng chữ đọc chà = KÉM (差不多) và chā = SAI SỐ.',
-      cf:'着 (zhe – trợ từ)',w:'出差 / 差不多 / 差别'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thật xin lỗi, mai tôi phải đi công tác, không thể dự cuộc họp ngày mai.',answer:'真抱歉，明天我得出差，不能参加明天的会议了。',answerPy:'Zhēn bàoqiàn, míngtiān wǒ děi chū chāi, bù néng cānjiā míngtiān de huìyì le.',
-      note:'得 (děi) ôn lại Bài 3.'},
-     {promptLang:'vi',prompt:'Thầy đi công tác rồi, có lẽ tuần sau mới về.',answer:'他出差了，大概下星期才回来。',answerPy:'Tā chū chāi le, dàgài xià xīngqī cái huílai.',
-      note:'大概 ôn lại ngữ pháp Bài 13 + 才 (Bài 3).'},
-   ]},
-
-  {n:2,zh:'毛巾',py:'máojīn',pos:'Danh từ',vn:'khăn lau, khăn mặt', hv: 'mao cân',em:'🧻',lesson:1,
-   explain:['Khăn bằng vải bông dùng để lau mặt, lau tay, lau người.'],
-   usage:'一条毛巾, 用毛巾擦脸, 带毛巾.',
-   collo:['一条毛巾','带毛巾','用毛巾擦'],
-   ex_zh:'不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！',ex_py:'Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!',ex_vn:'Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!',
-   exList:[
-     {zh:'这是明天你出差要带的毛巾、牙膏和牙刷。',py:'Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā.',vn:'Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang.'},
-     {zh:'我明天要出差，妻子帮我把毛巾、牙膏和牙刷都放到了箱子里。',py:'Wǒ míngtiān yào chū chāi, qīzi bāng wǒ bǎ máojīn, yágāo hé yáshuā dōu fàngdào le xiāngzi li.',vn:'Mai tôi đi công tác, vợ giúp tôi cho khăn mặt, kem đánh răng và bàn chải vào vali.'},
-     {zh:'为了保护环境，我出差时都自己带毛巾，不用宾馆的。',py:'Wèile bǎohù huánjìng, wǒ chū chāi shí dōu zìjǐ dài máojīn, bú yòng bīnguǎn de.',vn:'Để bảo vệ môi trường, khi đi công tác tôi đều tự mang khăn, không dùng của khách sạn.'},
-   ],
-   hanzi:[
-     {c:'巾',p:'jīn',type:'独体字 · Chữ đơn thể',st:3,ord:'丨 → 冂 → 丨',rad:'巾 (cân)',mean:'khăn',
-      tip:'Tượng hình chiếc KHĂN treo xuống. Ghép 毛(lông) + 巾(khăn) = KHĂN BÔNG. Là bộ thủ trong 帽 (mũ), 带 (đai).',
-      cf:'币 (bì – tiền tệ)',w:'毛巾 / 纸巾 / 围巾'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mai tôi đi công tác, vợ giúp tôi cho khăn mặt, kem đánh răng và bàn chải vào vali.',answer:'我明天要出差，妻子帮我把毛巾、牙膏和牙刷都放到了箱子里。',answerPy:'Wǒ míngtiān yào chū chāi, qīzi bāng wǒ bǎ máojīn, yágāo hé yáshuā dōu fàngdào le xiāngzi li.',
-      note:'Câu chữ 把 + 到 (ôn lại Bài 2).'},
-   ]},
-
-  {n:3,zh:'牙膏',py:'yágāo',pos:'Danh từ',vn:'kem đánh răng', hv: 'nha cao',em:'🪥',lesson:1,
-   explain:['Kem dùng để đánh răng. 牙 = răng, 膏 = kem, cao.'],
-   usage:'一支牙膏, 买牙膏, 牙膏用完了.',
-   collo:['一支牙膏','牙膏和牙刷','牙膏用完了'],
-   ex_zh:'把毛巾、牙膏和牙刷放到箱子里吧。',ex_py:'Bǎ máojīn, yágāo hé yáshuā fàngdào xiāngzi li ba.',ex_vn:'Cho khăn mặt, kem đánh răng và bàn chải vào vali đi.',
-   exList:[
-     {zh:'把毛巾、牙膏和牙刷放到箱子里吧。',py:'Bǎ máojīn, yágāo hé yáshuā fàngdào xiāngzi li ba.',vn:'Cho khăn mặt, kem đánh răng và bàn chải vào vali đi.'},
-     {zh:'牙膏快用完了，明天去超市顺便买一支吧。',py:'Yágāo kuài yòngwán le, míngtiān qù chāoshì shùnbiàn mǎi yì zhī ba.',vn:'Kem đánh răng sắp hết rồi, mai đi siêu thị tiện thể mua một tuýp nhé.'},
-     {zh:'李进开始不想带毛巾、牙膏和牙刷，因为宾馆会免费提供。',py:'Lǐ Jìn kāishǐ bù xiǎng dài máojīn, yágāo hé yáshuā, yīnwèi bīnguǎn huì miǎnfèi tígōng.',vn:'Lý Tiến lúc đầu không muốn mang khăn, kem đánh răng và bàn chải, vì khách sạn cung cấp miễn phí.'},
-   ],
-   hanzi:[
-     {c:'膏',p:'gāo',type:'上下结构 · Trên-dưới',st:14,ord:'高 trên → 月 dưới',rad:'月 (nhục)',mean:'cao, kem',
-      tip:'Bộ 月(nhục – thịt, mỡ) + 高(biểu âm) → MỠ, KEM đặc. 牙膏 = kem đánh răng.',
-      cf:'高 (gāo – cao)',w:'牙膏 / 药膏'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Kem đánh răng sắp hết rồi, mai đi siêu thị tiện thể mua một tuýp nhé.',answer:'牙膏快用完了，明天去超市顺便买一支吧。',answerPy:'Yágāo kuài yòngwán le, míngtiān qù chāoshì shùnbiàn mǎi yì zhī ba.',
-      note:'顺便 ôn lại ngữ pháp Bài 4.'},
-   ]},
-
-  {n:4,zh:'重',py:'zhòng',pos:'Tính từ',vn:'nặng', hv: 'trọng',em:'🏋️',lesson:1,
-   explain:['Có trọng lượng lớn; cũng chỉ mức độ nghiêm trọng (严重). Chú ý đọc chóng = lặp lại (重新, Bài 8).'],
-   usage:'箱子很重, 够重的了, 太重了.',
-   collo:['箱子很重','够重的了','越来越重'],
-   ex_zh:'不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！',ex_py:'Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!',ex_vn:'Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!',
-   exList:[
-     {zh:'不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！',py:'Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!',vn:'Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!'},
-     {zh:'按照规定，您只能免费带20公斤的行李，超重的部分每公斤加收全部票价的1.5%。',py:'Ànzhào guīdìng, nín zhǐ néng miǎnfèi dài èrshí gōngjīn de xíngli, chāo zhòng de bùfen měi gōngjīn jiā shōu quánbù piàojià de bǎifēnzhī yī diǎn wǔ.',vn:'Theo quy định, ngài chỉ được mang miễn phí 20 kg hành lý, phần quá cân mỗi kg thu thêm 1,5% giá vé.'},
-     {zh:'这个箱子太重了，我一个人搬不动。',py:'Zhège xiāngzi tài zhòng le, wǒ yí ge rén bānbudòng.',vn:'Cái vali này nặng quá, một mình tôi không bê nổi.'},
-   ],
-   hanzi:[
-     {c:'重',p:'zhòng',type:'独体字 · Chữ đơn thể',st:9,ord:'丿 → 一 → 日 → 土',rad:'里 (lý)',mean:'nặng',
-      tip:'Hình người đứng trên đất 土 vác túi nặng → NẶNG. Đa âm: zhòng (nặng, quan trọng 重要) / chóng (lặp lại 重新).',
-      cf:'童 (tóng – trẻ con)',w:'重 / 严重 / 重要 / 重新'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cái vali này nặng quá, một mình tôi không bê nổi.',answer:'这个箱子太重了，我一个人搬不动。',answerPy:'Zhège xiāngzi tài zhòng le, wǒ yí ge rén bānbudòng.',
-      note:'Bổ ngữ khả năng 搬不动 ôn lại Bài 5.'},
-     {promptLang:'vi',prompt:'Theo quy định, phần hành lý quá cân mỗi kg thu thêm 1,5% giá vé.',answer:'按照规定，超重的部分每公斤加收全部票价的1.5%。',answerPy:'Ànzhào guīdìng, chāo zhòng de bùfen měi gōngjīn jiā shōu quánbù piàojià de bǎifēnzhī yī diǎn wǔ.',
-      note:'按照 (Bài 4), 规定/全部 (Bài 12), 部分 (Bài 13).'},
-   ]},
-
-  {n:5,zh:'行',py:'xíng',pos:'Động từ',vn:'được, đồng ý', hv: 'hành',em:'👌',lesson:1,
-   explain:['Dùng để đồng ý, chấp nhận (= 可以, 好的). Phủ định: 不行 = không được. 还行 = tạm được.'],
-   usage:'行，没问题, 不行, 还行.',
-   collo:['行，没问题','这样不行','还行'],
-   ex_zh:'行，没问题。我明天上午10点的飞机，你能开车把我送到机场吗？',ex_py:'Xíng, méi wèntí. Wǒ míngtiān shàngwǔ shí diǎn de fēijī, nǐ néng kāi chē bǎ wǒ sòngdào jīchǎng ma?',ex_vn:'Được, không vấn đề. Máy bay của anh 10 giờ sáng mai, em lái xe đưa anh ra sân bay được không?',
-   exList:[
-     {zh:'行，没问题。我明天上午10点的飞机，你能开车把我送到机场吗？',py:'Xíng, méi wèntí. Wǒ míngtiān shàngwǔ shí diǎn de fēijī, nǐ néng kāi chē bǎ wǒ sòngdào jīchǎng ma?',vn:'Được, không vấn đề. Máy bay của anh 10 giờ sáng mai, em lái xe đưa anh ra sân bay được không?'},
-     {zh:'学校附近房子太贵。离学校远点儿没关系，只要离地铁或者公交车站近就行。',py:'Xuéxiào fùjìn fángzi tài guì. Lí xuéxiào yuǎn diǎnr méi guānxi, zhǐyào lí dìtiě huòzhě gōngjiāochē zhàn jìn jiù xíng.',vn:'Nhà gần trường đắt quá. Xa trường một chút không sao, chỉ cần gần ga tàu điện ngầm hoặc trạm xe buýt là được.'},
-     {zh:'生活往往不会按照我们的计划来进行。因此，光有计划还不行。',py:'Shēnghuó wǎngwǎng bú huì ànzhào wǒmen de jìhuà lái jìnxíng. Yīncǐ, guāng yǒu jìhuà hái bù xíng.',vn:'Cuộc sống thường không diễn ra theo kế hoạch của chúng ta. Vì vậy, chỉ có kế hoạch thôi thì chưa được.'},
-   ],
-   hanzi:[
-     {c:'行',p:'xíng',type:'左右结构 · Trái-phải',st:6,ord:'彳 trái → 亍 phải',rad:'行 (hành)',mean:'được; đi',
-      tip:'Tượng hình NGÃ TƯ đường → ĐI, HÀNH; mở rộng thành "được, ổn" (xíng). Đọc háng = hàng, ngành (银行).',
-      cf:'街 (jiē – phố, có 行 bao ngoài)',w:'行 / 不行 / 还行 / 银行 (háng)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Xa trường một chút không sao, chỉ cần gần ga tàu điện ngầm là được.',answer:'离学校远点儿没关系，只要离地铁站近就行。',answerPy:'Lí xuéxiào yuǎn diǎnr méi guānxi, zhǐyào lí dìtiě zhàn jìn jiù xíng.',
-      note:'只要……就 ôn lại Bài 8.'},
-   ]},
-
-  {n:6,zh:'省',py:'shěng',pos:'Động từ',vn:'tiết kiệm', hv: 'tỉnh',em:'💰',lesson:1,
-   explain:['Dùng ít, tiết kiệm (tiền, thời gian, sức lực). Danh từ 省 = tỉnh (广东省, Bài 13).'],
-   usage:'省油钱, 省时间, 省力气.',
-   collo:['省油钱','省时间','省力气'],
-   ex_zh:'你还是坐地铁去机场吧。这样不仅省油钱，而且还不会污染空气。',ex_py:'Nǐ háishi zuò dìtiě qù jīchǎng ba. Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.',ex_vn:'Anh vẫn nên đi tàu điện ngầm ra sân bay. Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.',
-   exList:[
-     {zh:'你还是坐地铁去机场吧。这样不仅省油钱，而且还不会污染空气。',py:'Nǐ háishi zuò dìtiě qù jīchǎng ba. Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.',vn:'Anh vẫn nên đi tàu điện ngầm ra sân bay. Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.'},
-     {zh:'现在火车的速度非常快，有时乘坐火车甚至比乘坐飞机更省时间。',py:'Xiànzài huǒchē de sùdù fēicháng kuài, yǒushí chéngzuò huǒchē shènzhì bǐ chéngzuò fēijī gèng shěng shíjiān.',vn:'Bây giờ tốc độ tàu hỏa rất nhanh, có lúc đi tàu thậm chí còn tiết kiệm thời gian hơn đi máy bay.'},
-     {zh:'用正确的方法学习，既省时间又省力气，可以事半功倍。',py:'Yòng zhèngquè de fāngfǎ xuéxí, jì shěng shíjiān yòu shěng lìqi, kěyǐ shìbàngōngbèi.',vn:'Học bằng phương pháp đúng, vừa tiết kiệm thời gian vừa đỡ tốn sức, có thể đạt hiệu quả gấp đôi.'},
-   ],
-   hanzi:[
-     {c:'省',p:'shěng',type:'上下结构 · Trên-dưới',st:9,ord:'少 trên → 目 dưới',rad:'目 (mục)',mean:'tiết kiệm; tỉnh',
-      tip:'少(ít) + 目(mắt) → nhìn ít, dùng ít → TIẾT KIỆM. Mở rộng thành TỈNH (đơn vị hành chính). Đọc xǐng = xét lại (反省).',
-      cf:'少 (shǎo – ít)',w:'省钱 / 省时间 / 广东省 / 节省'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.',answer:'这样不仅省油钱，而且还不会污染空气。',answerPy:'Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.',
-      note:'不仅……而且 ôn lại Bài 6.'},
-     {promptLang:'vi',prompt:'Học bằng phương pháp đúng, vừa tiết kiệm thời gian vừa đỡ tốn sức.',answer:'用正确的方法学习，既省时间又省力气。',answerPy:'Yòng zhèngquè de fāngfǎ xuéxí, jì shěng shíjiān yòu shěng lìqi.',
-      note:'既……又 (Bài 7), 力气 (Bài 12).'},
-   ]},
-
-  {n:7,zh:'污染',py:'wūrǎn',pos:'Động từ',vn:'làm ô nhiễm', hv: 'ô nhiễm',em:'🏭',lesson:1,
-   explain:['Làm bẩn môi trường (không khí, nước). Cũng dùng như danh từ: 环境污染, 空气污染.'],
-   usage:'污染空气, 环境污染, 减少污染.',
-   collo:['污染空气','环境污染','减少污染'],
-   ex_zh:'这样不仅省油钱，而且还不会污染空气。',ex_py:'Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.',ex_vn:'Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.',
-   exList:[
-     {zh:'这样不仅省油钱，而且还不会污染空气。',py:'Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.',vn:'Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.'},
-     {zh:'塑料袋的大量使用也带来了严重的环境污染问题。',py:'Sùliàodài de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí.',vn:'Việc dùng túi nilông với số lượng lớn cũng mang lại vấn đề ô nhiễm môi trường nghiêm trọng.'},
-     {zh:'只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。',py:'Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.',vn:'Chỉ khi mọi người cùng nỗ lực, giảm ô nhiễm, bảo vệ môi trường, mới có thể khiến ngôi nhà của chúng ta đẹp hơn.'},
-   ],
-   hanzi:[
-     {c:'污',p:'wū',type:'左右结构 · Trái-phải',st:6,ord:'氵 trái → 亏 phải',rad:'氵 (thủy)',mean:'bẩn, ô',
-      tip:'Bộ nước 氵 + 亏(thiếu, hụt) → nước tù đọng → BẨN, Ô. 污染 = Ô NHIỄM.',
-      cf:'亏 (kuī – thiệt)',w:'污染 / 污水'},
-     {c:'染',p:'rǎn',type:'上下结构 · Trên-dưới',st:9,ord:'氵 → 九 → 木',rad:'木 (mộc)',mean:'nhiễm, nhuộm',
-      tip:'氵(nước) + 九(chín lần) + 木(cây – thuốc nhuộm) → nhúng vải vào nước thuốc nhiều lần → NHUỘM, NHIỄM.',
-      cf:'柒 (qī – bảy, viết kép)',w:'污染 / 传染 / 染色'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Việc dùng túi nilông với số lượng lớn cũng mang lại vấn đề ô nhiễm môi trường nghiêm trọng.',answer:'塑料袋的大量使用也带来了严重的环境污染问题。',answerPy:'Sùliàodài de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí.',
-      note:'使用 (Bài 12), 严重 (Bài 8).'},
-     {promptLang:'vi',prompt:'Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, mới có thể khiến ngôi nhà của chúng ta đẹp hơn.',answer:'只有大家共同努力减少污染，才能使我们的家变得更美丽。',answerPy:'Zhǐyǒu dàjiā gòngtóng nǔlì jiǎnshǎo wūrǎn, cái néng shǐ wǒmen de jiā biàn de gèng měilì.',
-      note:'只有……才 ôn lại Bài 9, 共同 (Bài 10).'},
-   ]},
-
-  {n:8,zh:'卫生间',py:'wèishēngjiān',pos:'Danh từ',vn:'nhà vệ sinh', hv: 'vệ sinh gian',em:'🚻',lesson:2,
-   explain:['Phòng vệ sinh, toilet. 卫生 = vệ sinh, 间 = phòng.'],
-   usage:'打扫卫生间, 卫生间很脏, 去卫生间.',
-   collo:['打扫卫生间','卫生间很脏','去一下卫生间'],
-   ex_zh:'小王，卫生间怎么那么脏啊？这会给客人留下不好的印象，快去打扫一下。',ex_py:'Xiǎo Wáng, wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng, kuài qù dǎsǎo yíxià.',ex_vn:'Tiểu Vương, sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách, mau đi dọn dẹp đi.',
-   exList:[
-     {zh:'小王，卫生间怎么那么脏啊？这会给客人留下不好的印象，快去打扫一下。',py:'Xiǎo Wáng, wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng, kuài qù dǎsǎo yíxià.',vn:'Tiểu Vương, sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách, mau đi dọn dẹp đi.'},
-     {zh:'今天店里太忙了，卫生间很脏，我也没来得及打扫。',py:'Jīntiān diàn li tài máng le, wèishēngjiān hěn zāng, wǒ yě méi láidejí dǎsǎo.',vn:'Hôm nay cửa hàng bận quá, nhà vệ sinh rất bẩn, tôi cũng chưa kịp dọn.'},
-     {zh:'请问，卫生间在哪儿？——在二楼，电梯旁边。',py:'Qǐngwèn, wèishēngjiān zài nǎr? — Zài èr lóu, diàntī pángbiān.',vn:'Xin hỏi, nhà vệ sinh ở đâu? — Ở tầng hai, cạnh thang máy.'},
-   ],
-   hanzi:[
-     {c:'卫',p:'wèi',type:'独体字 · Chữ đơn thể (giản thể)',st:3,ord:'㇇ → 丨 → 一',rad:'卩 (tiết)',mean:'bảo vệ',
-      tip:'Giản thể của 衛 (lính canh đi tuần quanh đường 行) → BẢO VỆ. 卫生 = bảo vệ sự sống → VỆ SINH.',
-      cf:'卩 (jié – bộ tiết)',w:'卫生 / 卫生间 / 保卫'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Hôm nay cửa hàng bận quá, nhà vệ sinh rất bẩn, tôi cũng chưa kịp dọn.',answer:'今天店里太忙了，卫生间很脏，我也没来得及打扫。',answerPy:'Jīntiān diàn li tài máng le, wèishēngjiān hěn zāng, wǒ yě méi láidejí dǎsǎo.',
-      note:'来得及 ôn lại Bài 4, 打扫 (Bài 7).'},
-   ]},
-
-  {n:9,zh:'脏',py:'zāng',pos:'Tính từ',vn:'bẩn, bẩn thỉu', hv: 'tạng',em:'🧹',lesson:2,
-   explain:['Không sạch, dơ. Trái nghĩa: 干净.'],
-   usage:'很脏, 弄脏了, 又脏又乱.',
-   collo:['卫生间很脏','衣服弄脏了','又脏又乱'],
-   ex_zh:'卫生间怎么那么脏啊？',ex_py:'Wèishēngjiān zěnme nàme zāng a?',ex_vn:'Sao nhà vệ sinh bẩn thế?',
-   exList:[
-     {zh:'卫生间怎么那么脏啊？这会给客人留下不好的印象。',py:'Wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng.',vn:'Sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách.'},
-     {zh:'孩子在外面玩儿了一下午，衣服都弄脏了。',py:'Háizi zài wàimiàn wánrle yí xiàwǔ, yīfu dōu nòngzāng le.',vn:'Đứa bé chơi ở ngoài cả buổi chiều, quần áo đều bị làm bẩn hết.'},
-     {zh:'河水越来越脏，鱼都快活不下去了。',py:'Héshuǐ yuè lái yuè zāng, yú dōu kuài huóbuxiàqù le.',vn:'Nước sông ngày càng bẩn, cá sắp không sống nổi nữa.'},
-   ],
-   hanzi:[
-     {c:'脏',p:'zāng',type:'左右结构 · Trái-phải',st:10,ord:'月 trái → 庄 phải',rad:'月 (nhục)',mean:'bẩn',
-      tip:'Bộ 月(nhục) + 庄. Đọc zāng = BẨN; đọc zàng = NỘI TẠNG (心脏 tim). Cùng chữ hai nghĩa!',
-      cf:'庄 (zhuāng – trang trại)',w:'脏 / 弄脏 / 心脏 (zàng)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đứa bé chơi ở ngoài cả buổi chiều, quần áo đều bị làm bẩn hết.',answer:'孩子在外面玩儿了一下午，衣服都弄脏了。',answerPy:'Háizi zài wàimiàn wánrle yí xiàwǔ, yīfu dōu nòngzāng le.',
-      note:'弄 + bổ ngữ kết quả ôn lại Bài 5.'},
-   ]},
-
-  {n:10,zh:'抱歉',py:'bàoqiàn',pos:'Động từ',vn:'xin lỗi, áy náy', hv: 'bão khiểm',em:'🙇',lesson:2,
-   explain:['Cảm thấy có lỗi, xin lỗi (trang trọng hơn 对不起). Thường: 实在抱歉, 真抱歉, 很抱歉.'],
-   usage:'实在抱歉, 真抱歉, 感到抱歉.',
-   collo:['实在抱歉','真抱歉','对……感到抱歉'],
-   ex_zh:'经理，实在抱歉。今天店里太忙了，我还没来得及打扫。',ex_py:'Jīnglǐ, shízài bàoqiàn. Jīntiān diàn li tài máng le, wǒ hái méi láidejí dǎsǎo.',ex_vn:'Giám đốc, thật sự xin lỗi. Hôm nay cửa hàng bận quá, tôi chưa kịp dọn dẹp.',
-   exList:[
-     {zh:'经理，实在抱歉。今天店里太忙了，我还没来得及打扫。',py:'Jīnglǐ, shízài bàoqiàn. Jīntiān diàn li tài máng le, wǒ hái méi láidejí dǎsǎo.',vn:'Giám đốc, thật sự xin lỗi. Hôm nay cửa hàng bận quá, tôi chưa kịp dọn dẹp.'},
-     {zh:'真抱歉，明天我得出差，不能参加明天的会议了。',py:'Zhēn bàoqiàn, míngtiān wǒ děi chū chāi, bù néng cānjiā míngtiān de huìyì le.',vn:'Thật xin lỗi, mai tôi phải đi công tác, không thể dự cuộc họp ngày mai.'},
-     {zh:'A：实在抱歉，我来晚了。今天路上有点儿堵。B：没关系，请坐。',py:'A: Shízài bàoqiàn, wǒ lái wǎn le. Jīntiān lùshang yǒudiǎnr dǔ. B: Méi guānxi, qǐng zuò.',vn:'A: Thật sự xin lỗi, tôi đến muộn. Hôm nay đường hơi tắc. B: Không sao, mời ngồi.'},
-   ],
-   hanzi:[
-     {c:'歉',p:'qiàn',type:'左右结构 · Trái-phải',st:14,ord:'兼 trái → 欠 phải',rad:'欠 (khiếm)',mean:'áy náy',
-      tip:'兼 + 欠(thiếu, nợ) → cảm thấy còn THIẾU NỢ người khác → ÁY NÁY. 抱歉 = ôm nỗi áy náy = XIN LỖI.',
-      cf:'谦 (qiān – khiêm tốn)',w:'抱歉 / 道歉'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thật sự xin lỗi, tôi đến muộn. Hôm nay đường hơi tắc.',answer:'实在抱歉，我来晚了。今天路上有点儿堵。',answerPy:'Shízài bàoqiàn, wǒ lái wǎn le. Jīntiān lùshang yǒudiǎnr dǔ.',
-      note:'实在 ôn lại ngữ pháp Bài 11.'},
-   ]},
-
-  {n:11,zh:'空',py:'kōng',pos:'Tính từ',vn:'trống, rỗng, không', hv: 'không',em:'🫙',lesson:2,
-   explain:['Không có gì bên trong. Chú ý đọc kòng = thời gian rảnh (有空).'],
-   usage:'空瓶子, 空盒子, 房间是空的.',
-   collo:['空饮料瓶子','空盒子','空房间'],
-   ex_zh:'那张桌子下面还有一些空饮料瓶子和纸盒子。',ex_py:'Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.',ex_vn:'Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy.',
-   exList:[
-     {zh:'那张桌子下面还有一些空饮料瓶子和纸盒子。',py:'Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.',vn:'Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy.'},
-     {zh:'这个房间是空的，没有人住。',py:'Zhège fángjiān shì kōng de, méiyǒu rén zhù.',vn:'Căn phòng này trống, không có ai ở.'},
-     {zh:'空瓶子别乱扔，放到垃圾桶里可以回收。',py:'Kōng píngzi bié luàn rēng, fàngdào lājītǒng li kěyǐ huíshōu.',vn:'Chai rỗng đừng vứt bừa, bỏ vào thùng rác có thể tái chế.'},
-   ],
-   hanzi:[
-     {c:'空',p:'kōng',type:'上下结构 · Trên-dưới',st:8,ord:'穴 trên → 工 dưới',rad:'穴 (huyệt)',mean:'trống',
-      tip:'穴(hang, lỗ) + 工 → cái hang rỗng → TRỐNG, KHÔNG (空气 không khí). Đọc kòng = rảnh (有空).',
-      cf:'穿 (chuān – xuyên, mặc)',w:'空 / 空气 / 空调 / 有空 (kòng)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chai rỗng đừng vứt bừa, bỏ vào thùng rác đi.',answer:'空瓶子别乱扔，放到垃圾桶里吧。',answerPy:'Kōng píngzi bié luàn rēng, fàngdào lājītǒng li ba.',
-      note:'别 + động từ (ôn lại Bài 1).'},
-   ]},
-
-  {n:12,zh:'盒子',py:'hézi',pos:'Danh từ',vn:'hộp', hv: 'hạp tử',em:'📦',lesson:2,
-   explain:['Vật đựng có nắp, thường nhỏ. Lượng từ: 个. 一盒 cũng dùng làm lượng từ (一盒巧克力).'],
-   usage:'纸盒子, 一个盒子, 打开盒子.',
-   collo:['纸盒子','打开盒子','空盒子'],
-   ex_zh:'那张桌子下面还有一些空饮料瓶子和纸盒子。',ex_py:'Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.',ex_vn:'Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy.',
-   exList:[
-     {zh:'那张桌子下面还有一些空饮料瓶子和纸盒子。',py:'Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.',vn:'Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy.'},
-     {zh:'她打开盒子，发现里面是一条漂亮的围巾。',py:'Tā dǎkāi hézi, fāxiàn lǐmiàn shì yì tiáo piàoliang de wéijīn.',vn:'Cô ấy mở hộp ra, phát hiện bên trong là một chiếc khăn quàng đẹp.'},
-     {zh:'你经常使用一次性饭盒吗？',py:'Nǐ jīngcháng shǐyòng yícìxìng fànhé ma?',vn:'Bạn có thường dùng hộp cơm dùng một lần không?'},
-   ],
-   hanzi:[
-     {c:'盒',p:'hé',type:'上下结构 · Trên-dưới',st:11,ord:'合 trên → 皿 dưới',rad:'皿 (mãnh)',mean:'hộp',
-      tip:'合(đóng lại, khớp) + 皿(đồ đựng) → đồ đựng có nắp ĐÓNG KHỚP → HỘP.',
-      cf:'盆 (pén – chậu)',w:'盒子 / 饭盒 / 一盒'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cô ấy mở hộp ra, phát hiện bên trong là một chiếc khăn quàng đẹp.',answer:'她打开盒子，发现里面是一条漂亮的围巾。',answerPy:'Tā dǎkāi hézi, fāxiàn lǐmiàn shì yì tiáo piàoliang de wéijīn.',
-      note:'Bổ ngữ kết quả 打开 (ôn lại Bài 2).'},
-   ]},
-
-  {n:13,zh:'扔',py:'rēng',pos:'Động từ',vn:'vứt bỏ, ném', hv: 'nhưng',em:'🗑️',lesson:2,
-   explain:['Vứt đi, ném đi. 扔掉 = vứt bỏ hẳn; 乱扔 = vứt bừa bãi.'],
-   usage:'扔掉, 乱扔垃圾, 扔进垃圾桶.',
-   collo:['扔掉','乱扔垃圾','把……扔掉'],
-   ex_zh:'好的，我马上就去把它们扔掉。',ex_py:'Hǎo de, wǒ mǎshàng jiù qù bǎ tāmen rēngdiào.',ex_vn:'Vâng, tôi đi vứt chúng ngay.',
-   exList:[
-     {zh:'好的，我马上就去把它们扔掉。',py:'Hǎo de, wǒ mǎshàng jiù qù bǎ tāmen rēngdiào.',vn:'Vâng, tôi đi vứt chúng ngay.'},
-     {zh:'如果在公共场所找不到垃圾箱，你一般会怎么做？——找到垃圾箱再扔。',py:'Rúguǒ zài gōnggòng chǎngsuǒ zhǎobudào lājīxiāng, nǐ yìbān huì zěnme zuò? — Zhǎodào lājīxiāng zài rēng.',vn:'Nếu ở nơi công cộng không tìm thấy thùng rác, bạn thường làm thế nào? — Tìm thấy thùng rác rồi mới vứt.'},
-     {zh:'环境污染的原因之一是有人乱扔垃圾。',py:'Huánjìng wūrǎn de yuányīn zhī yī shì yǒu rén luàn rēng lājī.',vn:'Một trong những nguyên nhân ô nhiễm môi trường là có người vứt rác bừa bãi.'},
-   ],
-   hanzi:[
-     {c:'扔',p:'rēng',type:'左右结构 · Trái-phải',st:5,ord:'扌 trái → 乃 phải',rad:'扌 (thủ)',mean:'ném',
-      tip:'Bộ tay 扌 + 乃 → dùng tay NÉM, VỨT. Chữ chỉ 5 nét, rất dễ nhớ.',
-      cf:'仍 (réng – vẫn)',w:'扔 / 扔掉 / 乱扔'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vâng, tôi đi vứt chúng ngay.',answer:'好的，我马上就去把它们扔掉。',answerPy:'Hǎo de, wǒ mǎshàng jiù qù bǎ tāmen rēngdiào.',
-      note:'Câu chữ 把 + 掉 (ôn lại Bài 5).'},
-     {promptLang:'vi',prompt:'Một trong những nguyên nhân ô nhiễm môi trường là có người vứt rác bừa bãi.',answer:'环境污染的原因之一是有人乱扔垃圾。',answerPy:'Huánjìng wūrǎn de yuányīn zhī yī shì yǒu rén luàn rēng lājī.',
-      note:'……之一 ôn lại Bài 10.'},
-   ]},
-
-  {n:14,zh:'以',py:'yǐ',pos:'Giới từ',vn:'dựa vào, bằng', hv: 'dĩ',em:'🔧',lesson:2,
-   explain:['Giới từ: dùng, bằng (以……+动词). 以……为…… = lấy … làm …. Liên từ: để, nhằm (chỉ mục đích).'],
-   usage:'以最快的速度, 以……为……, ……，以表示……',
-   collo:['以最快的速度完成','以严格的标准要求自己','以……为镜子'],
-   ex_zh:'经理您放心，我一定以最快的速度完成。',ex_py:'Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng.',ex_vn:'Giám đốc yên tâm, tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.',
-   exList:[
-     {zh:'经理您放心，我一定以最快的速度完成。',py:'Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng.',vn:'Giám đốc yên tâm, tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.'},
-     {zh:'我们应该以那些敢说真话的人为镜子，这样才能及时发现自己的缺点。',py:'Wǒmen yīnggāi yǐ nàxiē gǎn shuō zhēnhuà de rén wéi jìngzi, zhèyàng cái néng jíshí fāxiàn zìjǐ de quēdiǎn.',vn:'Chúng ta nên lấy những người dám nói thật làm gương, như vậy mới kịp thời phát hiện khuyết điểm của mình.'},
-     {zh:'中国人往往会请重要的朋友去饭店吃饭，以表示对客人的尊重和礼貌。',py:'Zhōngguó rén wǎngwǎng huì qǐng zhòngyào de péngyou qù fàndiàn chī fàn, yǐ biǎoshì duì kèrén de zūnzhòng hé lǐmào.',vn:'Người Trung Quốc thường mời bạn bè quan trọng đi nhà hàng ăn cơm, để thể hiện sự tôn trọng và lễ phép với khách.'},
-   ],
-   hanzi:[
-     {c:'以',p:'yǐ',type:'左右结构 · Trái-phải',st:4,ord:'㇙ → 丶 → 人',rad:'人 (nhân)',mean:'lấy, dùng',
-      tip:'Chữ cổ vẽ người cầm đồ vật → DÙNG, LẤY, BẰNG. Có trong 可以, 以为, 以前, 以后, 所以.',
-      cf:'似 (sì – giống)',w:'以 / 可以 / 以为 / 以前 / 所以'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Giám đốc yên tâm, tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.',answer:'经理您放心，我一定以最快的速度完成。',answerPy:'Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng.',
-      note:'放心 ôn lại Bài 5.'},
-     {promptLang:'vi',prompt:'Chỉ khi lấy tiêu chuẩn nghiêm khắc yêu cầu bản thân mới có thể khiến mình trở nên xuất sắc hơn.',answer:'只有以严格的标准来要求自己才会让自己变得更优秀。',answerPy:'Zhǐyǒu yǐ yángé de biāozhǔn lái yāoqiú zìjǐ cái huì ràng zìjǐ biàn de gèng yōuxiù.',
-      note:'只有……才 (Bài 9), 严格 (Bài 12), 标准/优秀 (Bài 10).'},
-   ]},
-
-  {n:15,zh:'速度',py:'sùdù',pos:'Danh từ',vn:'tốc độ', hv: 'tốc độ',em:'⚡',lesson:2,
-   explain:['Mức độ nhanh chậm. 度 còn có trong 温度 (nhiệt độ), 态度 (thái độ).'],
-   usage:'速度很快, 以最快的速度, 按照现在的速度.',
-   collo:['以最快的速度','火车的速度','速度非常快'],
-   ex_zh:'我一定以最快的速度完成。',ex_py:'Wǒ yídìng yǐ zuì kuài de sùdù wánchéng.',ex_vn:'Tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.',
-   exList:[
-     {zh:'我一定以最快的速度完成。',py:'Wǒ yídìng yǐ zuì kuài de sùdù wánchéng.',vn:'Tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.'},
-     {zh:'现在火车的速度非常快，有时乘坐火车甚至比乘坐飞机更节约时间。',py:'Xiànzài huǒchē de sùdù fēicháng kuài, yǒushí chéngzuò huǒchē shènzhì bǐ chéngzuò fēijī gèng jiéyuē shíjiān.',vn:'Bây giờ tốc độ tàu hỏa rất nhanh, có lúc đi tàu thậm chí còn tiết kiệm thời gian hơn đi máy bay.'},
-     {zh:'按照现在的速度，想要在规定时间内完成计划，好像有点儿困难。',py:'Ànzhào xiànzài de sùdù, xiǎng yào zài guīdìng shíjiān nèi wánchéng jìhuà, hǎoxiàng yǒudiǎnr kùnnan.',vn:'Theo tốc độ hiện tại, muốn hoàn thành kế hoạch trong thời gian quy định, có vẻ hơi khó.'},
-   ],
-   hanzi:[
-     {c:'速',p:'sù',type:'半包围结构 · Nửa bao quanh',st:10,ord:'束 trong → 辶 bao',rad:'辶 (sước)',mean:'nhanh',
-      tip:'Bộ đi 辶 + 束(bó, buộc) → đi nhanh như bó tên bắn → TỐC, NHANH. 速度 = TỐC ĐỘ.',
-      cf:'束 (shù – bó)',w:'速度 / 高速 / 快速'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Theo tốc độ hiện tại, muốn hoàn thành kế hoạch trong thời gian quy định, có vẻ hơi khó.',answer:'按照现在的速度，想要在规定时间内完成计划，好像有点儿困难。',answerPy:'Ànzhào xiànzài de sùdù, xiǎng yào zài guīdìng shíjiān nèi wánchéng jìhuà, hǎoxiàng yǒudiǎnr kùnnan.',
-      note:'按照 (Bài 4), 规定 (Bài 12), 好像 (Bài 6).'},
-   ]},
-
-  {n:16,zh:'地球',py:'dìqiú',pos:'Danh từ',vn:'trái đất', hv: 'địa cầu',em:'🌍',lesson:3,
-   explain:['Hành tinh chúng ta đang sống. 地球一小时 = Giờ Trái đất.'],
-   usage:'保护地球, 地球环境, 地球是我们共同的家.',
-   collo:['保护地球','地球环境','地球一小时'],
-   ex_zh:'早上听新闻说明天有一个叫"地球一小时"的活动，你对这个活动了解吗？',ex_py:'Zǎoshang tīng xīnwén shuō míngtiān yǒu yí ge jiào "Dìqiú Yì Xiǎoshí" de huódòng, nǐ duì zhège huódòng liǎojiě ma?',ex_vn:'Sáng nay nghe tin tức nói ngày mai có hoạt động tên "Giờ Trái đất", bạn có biết về hoạt động này không?',
-   exList:[
-     {zh:'早上听新闻说明天有一个叫"地球一小时"的活动，你对这个活动了解吗？',py:'Zǎoshang tīng xīnwén shuō míngtiān yǒu yí ge jiào "Dìqiú Yì Xiǎoshí" de huódòng, nǐ duì zhège huódòng liǎojiě ma?',vn:'Sáng nay nghe tin tức nói ngày mai có hoạt động tên "Giờ Trái đất", bạn có biết về hoạt động này không?'},
-     {zh:'地球是我们共同的家，只有大家共同努力，才能使我们的家变得更美丽。',py:'Dìqiú shì wǒmen gòngtóng de jiā, zhǐyǒu dàjiā gòngtóng nǔlì, cái néng shǐ wǒmen de jiā biàn de gèng měilì.',vn:'Trái đất là ngôi nhà chung của chúng ta, chỉ khi mọi người cùng nỗ lực mới có thể khiến ngôi nhà đẹp hơn.'},
-     {zh:'保护地球环境，并不是一件离我们很远、很难做到的事情。',py:'Bǎohù dìqiú huánjìng, bìng bú shì yí jiàn lí wǒmen hěn yuǎn, hěn nán zuòdào de shìqing.',vn:'Bảo vệ môi trường Trái đất không hề là việc xa vời, khó làm.'},
-   ],
-   hanzi:[
-     {c:'球',p:'qiú',type:'左右结构 · Trái-phải',st:11,ord:'王 trái → 求 phải',rad:'王 (ngọc)',mean:'quả cầu',
-      tip:'Bộ ngọc 王 + 求(biểu âm) → viên ngọc tròn → QUẢ CẦU, BÓNG. 地球 = quả cầu đất = TRÁI ĐẤT.',
-      cf:'求 (qiú – cầu xin)',w:'地球 / 足球 / 篮球'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bảo vệ môi trường Trái đất không hề là việc xa vời, khó làm.',answer:'保护地球环境，并不是一件离我们很远、很难做到的事情。',answerPy:'Bǎohù dìqiú huánjìng, bìng bú shì yí jiàn lí wǒmen hěn yuǎn, hěn nán zuòdào de shìqing.',
-      note:'并不 ôn lại Bài 4, 保护 (Bài 12).'},
-   ]},
-
-  {n:17,zh:'既然',py:'jìrán',pos:'Liên từ',vn:'vì, đã… thì…', hv: 'ký nhiên',em:'🔗',lesson:3,
-   explain:['Dùng ở vế đầu, nêu sự thật đã có, vế sau (就/也/还/那么) rút ra kết luận. Ngữ pháp trọng tâm.'],
-   usage:'既然……，就/那么……',
-   collo:['既然这样，就……','既然不愿意……，为什么还……','既然明天……，那么……'],
-   ex_zh:'既然明天晚上公司会关灯停电，那么我们肯定不用加班了。',ex_py:'Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.',ex_vn:'Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi.',
-   exList:[
-     {zh:'既然明天晚上公司会关灯停电，那么我们肯定不用加班了。',py:'Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.',vn:'Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi.'},
-     {zh:'A：你既然不愿意打球，为什么还要打？B：我是不得不打啊，因为这些天我又胖了好几斤。',py:'A: Nǐ jìrán bú yuànyì dǎ qiú, wèishénme hái yào dǎ? B: Wǒ shì bùdébù dǎ a, yīnwèi zhèxiē tiān wǒ yòu pàngle hǎo jǐ jīn.',vn:'A: Bạn đã không muốn chơi bóng, sao còn chơi? B: Tôi buộc phải chơi, vì mấy hôm nay tôi lại béo thêm mấy cân.'},
-     {zh:'既然这样，就只好安排在下周了。',py:'Jìrán zhèyàng, jiù zhǐhǎo ānpái zài xià zhōu le.',vn:'Đã vậy thì đành sắp xếp vào tuần sau.'},
-   ],
-   hanzi:[
-     {c:'既',p:'jì',type:'左右结构 · Trái-phải',st:9,ord:'旣 trái → 旡 phải',rad:'旡 (ký)',mean:'đã',
-      tip:'Hình người ăn xong quay đầu đi → ĐÃ XONG. 既然 = đã như vậy; 既……又 = vừa … vừa (Bài 7).',
-      cf:'即 (jí – tức là)',w:'既然 / 既……又……'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đã vậy thì đành sắp xếp vào tuần sau.',answer:'既然这样，就只好安排在下周了。',answerPy:'Jìrán zhèyàng, jiù zhǐhǎo ānpái zài xià zhōu le.',
-      note:'只好 ôn lại Bài 3.'},
-     {promptLang:'vi',prompt:'Đã có 15 trên 20 người đồng ý, thì chúng ta thông qua kế hoạch này.',answer:'既然二十个人中有十五个人同意，那我们就通过这个计划了。',answerPy:'Jìrán èrshí ge rén zhōng yǒu shíwǔ ge rén tóngyì, nà wǒmen jiù tōngguò zhège jìhuà le.',
-      note:'通过 ôn lại Bài 9.'},
-   ]},
-
-  {n:18,zh:'停',py:'tíng',pos:'Động từ',vn:'ngừng, cúp, cắt', hv: 'đình',em:'⏸️',lesson:3,
-   explain:['Dừng lại, ngừng (停电 cúp điện, 停车 đỗ xe, 停止 dừng lại). 不停地 = không ngừng.'],
-   usage:'停电, 停车, 不停地.',
-   collo:['关灯停电','停车','不停地变化'],
-   ex_zh:'既然明天晚上公司会关灯停电，那么我们肯定不用加班了。',ex_py:'Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.',ex_vn:'Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi.',
-   exList:[
-     {zh:'既然明天晚上公司会关灯停电，那么我们肯定不用加班了。',py:'Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.',vn:'Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi.'},
-     {zh:'随着年龄的增长，他们会发现生活总是在不停地变化。',py:'Suízhe niánlíng de zēngzhǎng, tāmen huì fāxiàn shēnghuó zǒngshì zài bù tíng de biànhuà.',vn:'Cùng với tuổi tác tăng lên, họ sẽ phát hiện cuộc sống luôn không ngừng thay đổi.'},
-     {zh:'这儿不能停车，请把车停到停车场去。',py:'Zhèr bù néng tíng chē, qǐng bǎ chē tíngdào tíngchēchǎng qù.',vn:'Ở đây không được đỗ xe, xin đỗ xe vào bãi.'},
-   ],
-   hanzi:[
-     {c:'停',p:'tíng',type:'左右结构 · Trái-phải',st:11,ord:'亻 trái → 亭 phải',rad:'亻 (nhân)',mean:'dừng',
-      tip:'Người 亻 + 亭(đình, nhà nghỉ chân) → người DỪNG lại nghỉ ở đình → DỪNG, NGỪNG.',
-      cf:'亭 (tíng – đình)',w:'停 / 停电 / 停车 / 不停'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ở đây không được đỗ xe, xin đỗ xe vào bãi.',answer:'这儿不能停车，请把车停到停车场去。',answerPy:'Zhèr bù néng tíng chē, qǐng bǎ chē tíngdào tíngchēchǎng qù.',
-      note:'把 + 到 + 去 (ôn lại Bài 2).'},
-   ]},
-
-  {n:19,zh:'得意',py:'déyì',pos:'Tính từ',vn:'hể hả, đắc chí', hv: 'đắc ý',em:'😏',lesson:3,
-   explain:['Vui vẻ tự mãn vì đạt được điều gì. Thường: 得意的样子, 因……而得意.'],
-   usage:'看你得意的样子, 因一时的成功而得意.',
-   collo:['得意的样子','别太得意','因成功而得意'],
-   ex_zh:'看你得意的样子！还以为你高兴是为了支持环保，原来是因为不用加班啊！',ex_py:'Kàn nǐ déyì de yàngzi! Hái yǐwéi nǐ gāoxìng shì wèile zhīchí huánbǎo, yuánlái shì yīnwèi búyòng jiā bān a!',ex_vn:'Nhìn cái vẻ hể hả của bạn kìa! Còn tưởng bạn vui vì ủng hộ bảo vệ môi trường, hóa ra là vì không phải tăng ca!',
-   exList:[
-     {zh:'看你得意的样子！还以为你高兴是为了支持环保，原来是因为不用加班啊！',py:'Kàn nǐ déyì de yàngzi! Hái yǐwéi nǐ gāoxìng shì wèile zhīchí huánbǎo, yuánlái shì yīnwèi búyòng jiā bān a!',vn:'Nhìn cái vẻ hể hả của bạn kìa! Còn tưởng bạn vui vì ủng hộ bảo vệ môi trường, hóa ra là vì không phải tăng ca!'},
-     {zh:'不要因一时的成功而得意，也不要因一时的失败而伤心。',py:'Búyào yīn yìshí de chénggōng ér déyì, yě búyào yīn yìshí de shībài ér shāngxīn.',vn:'Đừng vì thành công nhất thời mà đắc chí, cũng đừng vì thất bại nhất thời mà đau lòng.'},
-     {zh:'他考了第一名，得意得连饭都忘了吃。',py:'Tā kǎole dì-yī míng, déyì de lián fàn dōu wàngle chī.',vn:'Anh ấy thi được hạng nhất, hể hả đến mức quên cả ăn cơm.'},
-   ],
-   hanzi:[
-     {c:'意',p:'yì',type:'上下结构 · Trên-dưới',st:13,ord:'音 trên → 心 dưới',rad:'心 (tâm)',mean:'ý',
-      tip:'音(âm thanh) + 心(tim) → tiếng lòng → Ý. 得意 = được ý mình → ĐẮC Ý, HỂ HẢ.',
-      cf:'思 (sī – nghĩ)',w:'得意 / 意思 / 意见 / 满意'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đừng vì thành công nhất thời mà đắc chí, cũng đừng vì thất bại nhất thời mà đau lòng.',answer:'不要因一时的成功而得意，也不要因一时的失败而伤心。',answerPy:'Búyào yīn yìshí de chénggōng ér déyì, yě búyào yīn yìshí de shībài ér shāngxīn.',
-      note:'成功/失败 ôn lại Bài 9, 伤心 (Bài 8).'},
-   ]},
-
-  {n:20,zh:'目的',py:'mùdì',pos:'Danh từ',vn:'mục đích', hv: 'mục đích',em:'🎯',lesson:3,
-   explain:['Điều muốn đạt được. 目的是……, 达到目的, 目的很简单.'],
-   usage:'目的是……, 达到目的, 主要目的.',
-   collo:['目的挺简单','达到目的','活动的目的'],
-   ex_zh:'其实目的挺简单的，就是提醒人们节约用电，希望引起人们对气候变暖问题的关注。',ex_py:'Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn, xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.',ex_vn:'Thực ra mục đích khá đơn giản, chính là nhắc nhở mọi người tiết kiệm điện, hy vọng khơi dậy sự quan tâm đến vấn đề khí hậu nóng lên.',
-   exList:[
-     {zh:'其实目的挺简单的，就是提醒人们节约用电，希望引起人们对气候变暖问题的关注。',py:'Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn, xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.',vn:'Thực ra mục đích khá đơn giản, chính là nhắc nhở mọi người tiết kiệm điện, hy vọng khơi dậy sự quan tâm đến vấn đề khí hậu nóng lên.'},
-     {zh:'"地球一小时"是个什么活动？这个活动的目的是什么？',py:'"Dìqiú Yì Xiǎoshí" shì ge shénme huódòng? Zhège huódòng de mùdì shì shénme?',vn:'"Giờ Trái đất" là hoạt động gì? Mục đích của hoạt động này là gì?'},
-     {zh:'为了达到目的，他坚持每天练习三个小时。',py:'Wèile dádào mùdì, tā jiānchí měi tiān liànxí sān ge xiǎoshí.',vn:'Để đạt được mục đích, anh ấy kiên trì luyện tập ba tiếng mỗi ngày.'},
-   ],
-   hanzi:[
-     {c:'目',p:'mù',type:'独体字 · Chữ đơn thể',st:5,ord:'丨 → 𠃍 → 一 → 一 → 一',rad:'目 (mục)',mean:'mắt',
-      tip:'Tượng hình con MẮT dựng đứng. Mắt nhìn vào đích → 目的 = MỤC ĐÍCH. Chú ý 的 ở đây đọc dì.',
-      cf:'日 (rì – mặt trời, 4 nét)',w:'目的 / 节目 / 题目'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Để đạt được mục đích, anh ấy kiên trì luyện tập ba tiếng mỗi ngày.',answer:'为了达到目的，他坚持每天练习三个小时。',answerPy:'Wèile dádào mùdì, tā jiānchí měi tiān liànxí sān ge xiǎoshí.',
-      note:'达到 (Bài 12), 坚持 (Bài 9).'},
-   ]},
-
-  {n:21,zh:'暖',py:'nuǎn',pos:'Tính từ',vn:'ấm, ấm áp', hv: 'noãn',em:'☀️',lesson:3,
-   explain:['Ấm (không lạnh). 暖和 = ấm áp, 变暖 = ấm lên, 气候变暖 = khí hậu nóng lên.'],
-   usage:'气候变暖, 天气暖和, 暖气.',
-   collo:['气候变暖','天气变暖','暖和'],
-   ex_zh:'希望引起人们对气候变暖问题的关注。',ex_py:'Xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.',ex_vn:'Hy vọng khơi dậy sự quan tâm của mọi người đến vấn đề khí hậu nóng lên.',
-   exList:[
-     {zh:'希望引起人们对气候变暖问题的关注。',py:'Xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.',vn:'Hy vọng khơi dậy sự quan tâm của mọi người đến vấn đề khí hậu nóng lên.'},
-     {zh:'春天来了，天气一天比一天暖和。',py:'Chūntiān lái le, tiānqì yì tiān bǐ yì tiān nuǎnhuo.',vn:'Mùa xuân đến rồi, thời tiết ngày một ấm hơn.'},
-     {zh:'随着地球气候变暖，很多地方的夏天越来越热。',py:'Suízhe dìqiú qìhòu biàn nuǎn, hěn duō dìfang de xiàtiān yuè lái yuè rè.',vn:'Cùng với khí hậu Trái đất nóng lên, mùa hè nhiều nơi ngày càng nóng.'},
-   ],
-   hanzi:[
-     {c:'暖',p:'nuǎn',type:'左右结构 · Trái-phải',st:13,ord:'日 trái → 爰 phải',rad:'日 (nhật)',mean:'ấm',
-      tip:'Mặt trời 日 + 爰 → có nắng → ẤM. Phân biệt với 缓 (huǎn – chậm, bộ 纟).',
-      cf:'缓 (huǎn – chậm)',w:'暖 / 暖和 / 变暖 / 暖气'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cùng với khí hậu Trái đất nóng lên, mùa hè nhiều nơi ngày càng nóng.',answer:'随着地球气候变暖，很多地方的夏天越来越热。',answerPy:'Suízhe dìqiú qìhòu biàn nuǎn, hěn duō dìfang de xiàtiān yuè lái yuè rè.',
-      note:'随着 ôn lại ngữ pháp Bài 13, 气候 (Bài 9).'},
-   ]},
-
-  {n:22,zh:'塑料袋',py:'sùliàodài',pos:'Danh từ',vn:'túi nilông, túi nhựa', hv: 'tố liệu đại',em:'🛍️',lesson:4,
-   explain:['Túi làm bằng nhựa. 塑料 = nhựa, 袋 = túi (纸袋 túi giấy, Bài 13).'],
-   usage:'使用塑料袋, 免费塑料袋, 拒绝使用塑料袋.',
-   collo:['节约使用塑料袋','免费塑料袋','拒绝使用塑料袋'],
-   ex_zh:'塑料袋给人们的生活带来方便，受到人们的普遍欢迎，可是，它的大量使用也带来了严重的环境污染问题。',ex_py:'Sùliàodài gěi rénmen de shēnghuó dàilái fāngbiàn, shòudào rénmen de pǔbiàn huānyíng, kěshì, tā de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí.',ex_vn:'Túi nilông mang lại tiện lợi cho cuộc sống, được mọi người đón nhận rộng rãi, nhưng việc dùng với số lượng lớn cũng mang lại vấn đề ô nhiễm môi trường nghiêm trọng.',
-   exList:[
-     {zh:'塑料袋给人们的生活带来方便，受到人们的普遍欢迎。',py:'Sùliàodài gěi rénmen de shēnghuó dàilái fāngbiàn, shòudào rénmen de pǔbiàn huānyíng.',vn:'Túi nilông mang lại tiện lợi cho cuộc sống, được mọi người đón nhận rộng rãi.'},
-     {zh:'一些国家规定，超市、商场不能为顾客提供免费塑料袋。',py:'Yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài.',vn:'Một số nước quy định, siêu thị, trung tâm thương mại không được cung cấp túi nilông miễn phí cho khách.'},
-     {zh:'请大家节约使用塑料袋，或者购物时自备购物袋，甚至拒绝使用塑料袋。',py:'Qǐng dàjiā jiéyuē shǐyòng sùliàodài, huòzhě gòuwù shí zì bèi gòuwùdài, shènzhì jùjué shǐyòng sùliàodài.',vn:'Mong mọi người tiết kiệm dùng túi nilông, hoặc tự mang túi khi mua sắm, thậm chí từ chối dùng túi nilông.'},
-   ],
-   hanzi:[
-     {c:'塑',p:'sù',type:'上下结构 · Trên-dưới',st:13,ord:'朔 trên → 土 dưới',rad:'土 (thổ)',mean:'nặn, nhựa',
-      tip:'朔 + 土(đất) → NẶN đất thành hình → chất dẻo có thể nặn = 塑料 (NHỰA).',
-      cf:'朔 (shuò – mùng một)',w:'塑料 / 塑料袋 / 雕塑'},
-     {c:'袋',p:'dài',type:'上下结构 · Trên-dưới',st:11,ord:'代 trên → 衣 dưới',rad:'衣 (y)',mean:'túi',
-      tip:'代(biểu âm) + 衣(áo, vải) → đồ bằng vải để đựng → TÚI. 纸袋 (Bài 13), 塑料袋, 口袋.',
-      cf:'代 (dài – thay)',w:'塑料袋 / 纸袋 / 口袋'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Một số nước quy định, siêu thị không được cung cấp túi nilông miễn phí cho khách.',answer:'一些国家规定，超市不能为顾客提供免费塑料袋。',answerPy:'Yìxiē guójiā guīdìng, chāoshì bù néng wèi gùkè tígōng miǎnfèi sùliàodài.',
-      note:'规定 (Bài 12), 顾客/提供 (Bài 6), 免费 (Bài 5).'},
-   ]},
-
-  {n:23,zh:'于是',py:'yúshì',pos:'Liên từ',vn:'thế là', hv: 'vu thị',em:'➡️',lesson:4,
-   explain:['Dùng ở vế sau, sự việc sau xảy ra ngay tiếp theo sự việc trước (quan hệ tiếp nối). So sánh 因此 (nhấn mạnh nhân-quả).'],
-   usage:'……，于是……',
-   collo:['于是我爸妈就……','于是就有了……','于是，一些国家规定……'],
-   ex_zh:'它的大量使用也带来了严重的环境污染问题。于是，一些国家规定，超市、商场不能为顾客提供免费塑料袋。',ex_py:'Tā de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí. Yúshì, yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài.',ex_vn:'Việc dùng với số lượng lớn cũng mang lại ô nhiễm nghiêm trọng. Thế là, một số nước quy định siêu thị không được cung cấp túi nilông miễn phí.',
-   exList:[
-     {zh:'于是，一些国家规定，超市、商场不能为顾客提供免费塑料袋。',py:'Yúshì, yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài.',vn:'Thế là, một số nước quy định siêu thị, trung tâm thương mại không được cung cấp túi nilông miễn phí.'},
-     {zh:'听爷爷奶奶说，我妹妹出生那天，正好下了一场大雪，于是我爸妈就给她取名叫夏雪。',py:'Tīng yéye nǎinai shuō, wǒ mèimei chūshēng nà tiān, zhènghǎo xiàle yì cháng dà xuě, yúshì wǒ bàmā jiù gěi tā qǔ míng jiào Xià Xuě.',vn:'Nghe ông bà nói, ngày em gái tôi sinh ra vừa đúng có trận tuyết lớn, thế là bố mẹ đặt tên em là Hạ Tuyết.'},
-     {zh:'大家都同意寒假去旅行，于是，我们开始讨论去哪里旅行的问题。',py:'Dàjiā dōu tóngyì hánjià qù lǚxíng, yúshì, wǒmen kāishǐ tǎolùn qù nǎlǐ lǚxíng de wèntí.',vn:'Mọi người đều đồng ý nghỉ đông đi du lịch, thế là chúng tôi bắt đầu thảo luận đi đâu.'},
-   ],
-   hanzi:[
-     {c:'于',p:'yú',type:'独体字 · Chữ đơn thể',st:3,ord:'一 → 一 → 亅',rad:'二 (nhị)',mean:'ở, tại',
-      tip:'Chữ 3 nét, giới từ văn viết "ở, tại, với". 于是 = ở việc này → THẾ LÀ; 由于 (Bài 10), 对于 (Bài 12), 终于.',
-      cf:'干 (gān – khô)',w:'于是 / 由于 / 对于 / 终于'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mọi người đều đồng ý nghỉ đông đi du lịch, thế là chúng tôi bắt đầu thảo luận đi đâu.',answer:'大家都同意寒假去旅行，于是，我们开始讨论去哪里旅行的问题。',answerPy:'Dàjiā dōu tóngyì hánjià qù lǚxíng, yúshì, wǒmen kāishǐ tǎolùn qù nǎlǐ lǚxíng de wèntí.',
-      note:'讨论 ôn lại Bài 13.'},
-   ]},
-
-  {n:24,zh:'鼓励',py:'gǔlì',pos:'Động từ',vn:'khuyến khích', hv: 'cổ lệ',em:'📣',lesson:4,
-   explain:['Cổ vũ, động viên ai làm việc gì. 鼓励 + người + làm gì.'],
-   usage:'鼓励大家……, 受到鼓励, 老师的鼓励.',
-   collo:['鼓励大家购买','鼓励孩子','老师的鼓励'],
-   ex_zh:'并且鼓励大家购买可以多次使用的购物袋。',ex_py:'Bìngqiě gǔlì dàjiā gòumǎi kěyǐ duō cì shǐyòng de gòuwùdài.',ex_vn:'Hơn nữa khuyến khích mọi người mua túi mua sắm dùng được nhiều lần.',
-   exList:[
-     {zh:'并且鼓励大家购买可以多次使用的购物袋。',py:'Bìngqiě gǔlì dàjiā gòumǎi kěyǐ duō cì shǐyòng de gòuwùdài.',vn:'Hơn nữa khuyến khích mọi người mua túi mua sắm dùng được nhiều lần.'},
-     {zh:'为了鼓励大家少抽烟，人们将每年的4月7日定为"世界无烟日"。',py:'Wèile gǔlì dàjiā shǎo chōu yān, rénmen jiāng měi nián de sì yuè qī rì dìngwéi "Shìjiè Wú Yān Rì".',vn:'Để khuyến khích mọi người hút thuốc ít đi, người ta lấy ngày 7 tháng 4 hằng năm làm "Ngày thế giới không thuốc lá".'},
-     {zh:'孩子失败的时候，父母应该鼓励他，而不是批评他。',py:'Háizi shībài de shíhou, fùmǔ yīnggāi gǔlì tā, ér bú shì pīpíng tā.',vn:'Khi con thất bại, cha mẹ nên khuyến khích nó, chứ không phải phê bình.'},
-   ],
-   hanzi:[
-     {c:'鼓',p:'gǔ',type:'左右结构 · Trái-phải',st:13,ord:'壴 trái → 支 phải',rad:'鼓 (cổ)',mean:'trống',
-      tip:'壴(cái trống) + 支(tay cầm dùi) → ĐÁNH TRỐNG cổ vũ → 鼓励 = KHUYẾN KHÍCH, 鼓掌 = vỗ tay.',
-      cf:'支 (zhī – cành, chi)',w:'鼓励 / 鼓掌'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Khi con thất bại, cha mẹ nên khuyến khích nó, chứ không phải phê bình.',answer:'孩子失败的时候，父母应该鼓励他，而不是批评他。',answerPy:'Háizi shībài de shíhou, fùmǔ yīnggāi gǔlì tā, ér bú shì pīpíng tā.',
-      note:'而不是 (Bài 8), 批评 (Bài 6).'},
-   ]},
-
-  {n:25,zh:'拒绝',py:'jùjué',pos:'Động từ',vn:'từ chối', hv: 'cự tuyệt',em:'🙅',lesson:4,
-   explain:['Không nhận, không đồng ý. Trái nghĩa: 接受 (Bài 6).'],
-   usage:'拒绝使用……, 拒绝朋友的要求, 被拒绝.',
-   collo:['拒绝使用塑料袋','拒绝别人的要求','不好意思拒绝'],
-   ex_zh:'甚至拒绝使用塑料袋。',ex_py:'Shènzhì jùjué shǐyòng sùliàodài.',ex_vn:'Thậm chí từ chối dùng túi nilông.',
-   exList:[
-     {zh:'请大家节约使用塑料袋，或者购物时自备购物袋，甚至拒绝使用塑料袋。',py:'Qǐng dàjiā jiéyuē shǐyòng sùliàodài, huòzhě gòuwù shí zì bèi gòuwùdài, shènzhì jùjué shǐyòng sùliàodài.',vn:'Mong mọi người tiết kiệm dùng túi nilông, hoặc tự mang túi khi mua sắm, thậm chí từ chối dùng túi nilông.'},
-     {zh:'有的人总是不好意思拒绝朋友的要求，害怕这样会影响两个人的感情。',py:'Yǒude rén zǒngshì bù hǎoyìsi jùjué péngyou de yāoqiú, hàipà zhèyàng huì yǐngxiǎng liǎng ge rén de gǎnqíng.',vn:'Có người luôn ngại từ chối yêu cầu của bạn bè, sợ như vậy sẽ ảnh hưởng tình cảm hai người.'},
-     {zh:'他申请了那份工作，可惜被拒绝了。',py:'Tā shēnqǐngle nà fèn gōngzuò, kěxī bèi jùjué le.',vn:'Anh ấy xin công việc đó, tiếc là bị từ chối.'},
-   ],
-   hanzi:[
-     {c:'拒',p:'jù',type:'左右结构 · Trái-phải',st:7,ord:'扌 trái → 巨 phải',rad:'扌 (thủ)',mean:'cự tuyệt',
-      tip:'Tay 扌 + 巨(to lớn) → giơ tay đẩy ra → CỰ TUYỆT, TỪ CHỐI.',
-      cf:'距 (jù – khoảng cách)',w:'拒绝'},
-     {c:'绝',p:'jué',type:'左右结构 · Trái-phải',st:9,ord:'纟 trái → 色 phải',rad:'纟 (mịch)',mean:'dứt',
-      tip:'Sợi tơ 纟 bị cắt ĐỨT → TUYỆT, DỨT HẲN. 拒绝 = từ chối dứt khoát.',
-      cf:'色 (sè – màu)',w:'拒绝 / 绝对'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Có người luôn ngại từ chối yêu cầu của bạn bè, sợ như vậy sẽ ảnh hưởng tình cảm hai người.',answer:'有的人总是不好意思拒绝朋友的要求，害怕这样会影响两个人的感情。',answerPy:'Yǒude rén zǒngshì bù hǎoyìsi jùjué péngyou de yāoqiú, hàipà zhèyàng huì yǐngxiǎng liǎng ge rén de gǎnqíng.',
-      note:'害怕 (Bài 9), 影响 (Bài 4).'},
-     {promptLang:'vi',prompt:'Anh ấy xin công việc đó, tiếc là bị từ chối.',answer:'他申请了那份工作，可惜被拒绝了。',answerPy:'Tā shēnqǐngle nà fèn gōngzuò, kěxī bèi jùjué le.',
-      note:'申请 (Bài 13), 可惜 (Bài 12), câu chữ 被.'},
-   ]},
-
-  {n:26,zh:'减少',py:'jiǎnshǎo',pos:'Động từ',vn:'giảm bớt', hv: 'giảm thiểu',em:'📉',lesson:4,
-   explain:['Làm ít đi. Trái nghĩa: 增加 (Bài 9). 减少污染, 减少数量.'],
-   usage:'减少污染, 减少使用数量, 大大减少.',
-   collo:['减少污染','减少塑料袋的使用数量','减少压力'],
-   ex_zh:'这样做可以减少塑料袋的使用数量，对环境保护有很大的作用。',ex_py:'Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, duì huánjìng bǎohù yǒu hěn dà de zuòyòng.',ex_vn:'Làm như vậy có thể giảm số lượng túi nilông sử dụng, có tác dụng rất lớn đối với bảo vệ môi trường.',
-   exList:[
-     {zh:'这样做可以减少塑料袋的使用数量，对环境保护有很大的作用。',py:'Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, duì huánjìng bǎohù yǒu hěn dà de zuòyòng.',vn:'Làm như vậy có thể giảm số lượng túi nilông sử dụng, có tác dụng rất lớn đối với bảo vệ môi trường.'},
-     {zh:'只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。',py:'Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.',vn:'Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, bảo vệ môi trường, mới khiến ngôi nhà chúng ta đẹp hơn.'},
-     {zh:'幽默不但可以减轻你工作上的压力，还可以拉近人与人之间的距离。',py:'Yōumò búdàn kěyǐ jiǎnqīng nǐ gōngzuò shang de yālì, hái kěyǐ lājìn rén yǔ rén zhījiān de jùlí.',vn:'Hài hước không những giảm nhẹ áp lực công việc, mà còn kéo gần khoảng cách giữa người với người.'},
-   ],
-   hanzi:[
-     {c:'减',p:'jiǎn',type:'左右结构 · Trái-phải',st:11,ord:'冫 trái → 咸 phải',rad:'冫 (băng)',mean:'giảm',
-      tip:'Bộ băng 冫 (lạnh, co lại) + 咸 → GIẢM, BỚT. 减少 = giảm ít đi; 减肥 = giảm béo (Bài 7).',
-      cf:'感 (gǎn – cảm, bộ 心)',w:'减少 / 减肥 / 减轻'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Làm như vậy có thể giảm số lượng túi nilông sử dụng, có tác dụng rất lớn đối với bảo vệ môi trường.',answer:'这样做可以减少塑料袋的使用数量，对环境保护有很大的作用。',answerPy:'Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, duì huánjìng bǎohù yǒu hěn dà de zuòyòng.',
-      note:'作用/使用 ôn lại Bài 12.'},
-   ]},
-
-  {n:27,zh:'数量',py:'shùliàng',pos:'Danh từ',vn:'số lượng', hv: 'số lượng',em:'🔢',lesson:4,
-   explain:['Lượng nhiều hay ít của sự vật. 数量 (số lượng) vs 质量 (chất lượng, Bài 6).'],
-   usage:'使用数量, 数量很多, 减少数量.',
-   collo:['塑料袋的使用数量','数量不多','增加数量'],
-   ex_zh:'这样做可以减少塑料袋的使用数量。',ex_py:'Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng.',ex_vn:'Làm như vậy có thể giảm số lượng túi nilông sử dụng.',
-   exList:[
-     {zh:'这样做可以减少塑料袋的使用数量。',py:'Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng.',vn:'Làm như vậy có thể giảm số lượng túi nilông sử dụng.'},
-     {zh:'这家公司的产品数量不多，但是质量很好。',py:'Zhè jiā gōngsī de chǎnpǐn shùliàng bù duō, dànshì zhìliàng hěn hǎo.',vn:'Sản phẩm của công ty này số lượng không nhiều, nhưng chất lượng rất tốt.'},
-     {zh:'随着汽车数量的增加，空气污染越来越严重。',py:'Suízhe qìchē shùliàng de zēngjiā, kōngqì wūrǎn yuè lái yuè yánzhòng.',vn:'Cùng với số lượng ô tô tăng lên, ô nhiễm không khí ngày càng nghiêm trọng.'},
-   ],
-   hanzi:[
-     {c:'量',p:'liàng',type:'上下结构 · Trên-dưới',st:12,ord:'日 → 一 → 里',rad:'里 (lý)',mean:'lượng',
-      tip:'Hình cái cân đo lường → LƯỢNG (liàng). Đọc liáng = đo (量体温). 数量, 质量, 力量.',
-      cf:'重 (zhòng – nặng)',w:'数量 / 质量 / 商量 (liang)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cùng với số lượng ô tô tăng lên, ô nhiễm không khí ngày càng nghiêm trọng.',answer:'随着汽车数量的增加，空气污染越来越严重。',answerPy:'Suízhe qìchē shùliàng de zēngjiā, kōngqì wūrǎn yuè lái yuè yánzhòng.',
-      note:'随着 (Bài 13), 增加 (Bài 9).'},
-   ]},
-
-  {n:28,zh:'温度',py:'wēndù',pos:'Danh từ',vn:'nhiệt độ', hv: 'ôn độ',em:'🌡️',lesson:5,
-   explain:['Mức nóng lạnh. 温度高/低, 空调的温度, 温度较低.'],
-   usage:'温度很高, 把温度开得高一些, 温度较低.',
-   collo:['空调的温度','温度比较低','温度上升'],
-   ex_zh:'夏天把空调的温度开得高一些，出门时记得关空调和电脑，这样可以节约用电。',ex_py:'Xiàtiān bǎ kōngtiáo de wēndù kāi de gāo yìxiē, chū mén shí jìde guān kōngtiáo hé diànnǎo, zhèyàng kěyǐ jiéyuē yòng diàn.',ex_vn:'Mùa hè để nhiệt độ điều hòa cao hơn một chút, ra khỏi nhà nhớ tắt điều hòa và máy tính, như vậy có thể tiết kiệm điện.',
-   exList:[
-     {zh:'夏天把空调的温度开得高一些，出门时记得关空调和电脑，这样可以节约用电。',py:'Xiàtiān bǎ kōngtiáo de wēndù kāi de gāo yìxiē, chū mén shí jìde guān kōngtiáo hé diànnǎo, zhèyàng kěyǐ jiéyuē yòng diàn.',vn:'Mùa hè để nhiệt độ điều hòa cao hơn một chút, ra khỏi nhà nhớ tắt điều hòa và máy tính, như vậy có thể tiết kiệm điện.'},
-     {zh:'这个月底，我和丈夫准备开车去长白山，那边温度比较低，所以要提前准备几件厚一些的衣服。',py:'Zhège yuèdǐ, wǒ hé zhàngfu zhǔnbèi kāi chē qù Chángbái Shān, nàbiān wēndù bǐjiào dī, suǒyǐ yào tíqián zhǔnbèi jǐ jiàn hòu yìxiē de yīfu.',vn:'Cuối tháng này, tôi và chồng định lái xe đi Trường Bạch Sơn, bên đó nhiệt độ khá thấp, nên phải chuẩn bị trước mấy bộ đồ dày.'},
-     {zh:'室外锻炼并不是越早越好，尤其是冬天，日出前温度较低，并不适合运动。',py:'Shìwài duànliàn bìng bú shì yuè zǎo yuè hǎo, yóuqí shì dōngtiān, rìchū qián wēndù jiào dī, bìng bú shìhé yùndòng.',vn:'Tập ngoài trời không phải càng sớm càng tốt, nhất là mùa đông, trước bình minh nhiệt độ khá thấp, không thích hợp vận động.'},
-   ],
-   hanzi:[
-     {c:'温',p:'wēn',type:'左右结构 · Trái-phải',st:12,ord:'氵 trái → 昷 phải',rad:'氵 (thủy)',mean:'ấm',
-      tip:'Nước 氵 + 昷(hơi nóng bốc lên từ đồ đựng) → nước ẤM → ÔN. 温度 = nhiệt độ, 温暖 = ấm áp.',
-      cf:'湿 (shī – ẩm)',w:'温度 / 温暖 / 体温'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mùa hè để nhiệt độ điều hòa cao hơn một chút, như vậy có thể tiết kiệm điện.',answer:'夏天把空调的温度开得高一些，这样可以节约用电。',answerPy:'Xiàtiān bǎ kōngtiáo de wēndù kāi de gāo yìxiē, zhèyàng kěyǐ jiéyuē yòng diàn.',
-      note:'把 + 得 + bổ ngữ trạng thái; 节约 (Bài 12).'},
-     {promptLang:'vi',prompt:'Bên đó nhiệt độ khá thấp, nên phải chuẩn bị trước mấy bộ đồ dày.',answer:'那边温度比较低，所以要提前准备几件厚一些的衣服。',answerPy:'Nàbiān wēndù bǐjiào dī, suǒyǐ yào tíqián zhǔnbèi jǐ jiàn hòu yìxiē de yīfu.',
-      note:'提前 (Bài 4), 厚 (Bài 13).'},
-   ]},
-
-  {n:29,zh:'乘坐',py:'chéngzuò',pos:'Động từ',vn:'đi, đáp (xe buýt, máy bay…)', hv: 'thừa tọa',em:'🚌',lesson:5,
-   explain:['Đi bằng phương tiện (văn viết, trang trọng hơn 坐). 乘坐地铁/飞机/火车.'],
-   usage:'乘坐地铁, 乘坐飞机, 乘坐公共汽车.',
-   collo:['乘坐地铁','乘坐飞机','乘坐火车'],
-   ex_zh:'少开车，多骑车或者乘坐地铁和公共汽车，这样能降低空气污染。',ex_py:'Shǎo kāi chē, duō qí chē huòzhě chéngzuò dìtiě hé gōnggòng qìchē, zhèyàng néng jiàngdī kōngqì wūrǎn.',ex_vn:'Ít lái xe, đi xe đạp nhiều hơn hoặc đi tàu điện ngầm và xe buýt, như vậy có thể giảm ô nhiễm không khí.',
-   exList:[
-     {zh:'少开车，多骑车或者乘坐地铁和公共汽车，这样能降低空气污染。',py:'Shǎo kāi chē, duō qí chē huòzhě chéngzuò dìtiě hé gōnggòng qìchē, zhèyàng néng jiàngdī kōngqì wūrǎn.',vn:'Ít lái xe, đi xe đạp nhiều hơn hoặc đi tàu điện ngầm và xe buýt, như vậy có thể giảm ô nhiễm không khí.'},
-     {zh:'现在火车的速度非常快，有时乘坐火车甚至比乘坐飞机更节约时间。',py:'Xiànzài huǒchē de sùdù fēicháng kuài, yǒushí chéngzuò huǒchē shènzhì bǐ chéngzuò fēijī gèng jiéyuē shíjiān.',vn:'Bây giờ tốc độ tàu hỏa rất nhanh, có lúc đi tàu thậm chí còn tiết kiệm thời gian hơn đi máy bay.'},
-     {zh:'乘坐飞机时，请把手机关掉或者调成飞行模式。',py:'Chéngzuò fēijī shí, qǐng bǎ shǒujī guāndiào huòzhě tiáochéng fēixíng móshì.',vn:'Khi đi máy bay, xin tắt điện thoại hoặc chuyển sang chế độ máy bay.'},
-   ],
-   hanzi:[
-     {c:'乘',p:'chéng',type:'独体字 · Chữ đơn thể',st:10,ord:'禾 → 北 (hai bên)',rad:'丿 (phiệt)',mean:'cưỡi, đi',
-      tip:'Hình người trèo lên cây 木 → LEO LÊN, CƯỠI, ĐI (xe). 乘坐 = đáp (phương tiện), 乘客 = hành khách.',
-      cf:'剩 (shèng – thừa)',w:'乘坐 / 乘客'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ít lái xe, đi tàu điện ngầm và xe buýt nhiều hơn, như vậy có thể giảm ô nhiễm không khí.',answer:'少开车，多乘坐地铁和公共汽车，这样能降低空气污染。',answerPy:'Shǎo kāi chē, duō chéngzuò dìtiě hé gōnggòng qìchē, zhèyàng néng jiàngdī kōngqì wūrǎn.',
-      note:'降低 ôn lại Bài 10.'},
-   ]},
-
-  {n:30,zh:'丢',py:'diū',pos:'Động từ',vn:'ném, vứt; mất', hv: 'đâu',em:'🔑',lesson:5,
-   explain:['(1) Vứt, ném (把垃圾丢进垃圾桶). (2) Đánh mất (钥匙丢了, 丢东西).'],
-   usage:'把垃圾丢进垃圾桶, 钥匙丢了, 丢东西.',
-   collo:['丢进垃圾桶','钥匙丢了','别丢了'],
-   ex_zh:'还有养成把垃圾丢进垃圾桶的习惯什么的。',ex_py:'Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.',ex_vn:'Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân.',
-   exList:[
-     {zh:'还有养成把垃圾丢进垃圾桶的习惯什么的。',py:'Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.',vn:'Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân.'},
-     {zh:'喂，你还在逛街吗？我的钥匙丢了，进不了门，你快回来吧。',py:'Wèi, nǐ hái zài guàng jiē ma? Wǒ de yàoshi diū le, jìnbuliǎo mén, nǐ kuài huílai ba.',vn:'Alô, em còn đang dạo phố à? Anh làm mất chìa khóa rồi, không vào được nhà, em mau về đi.'},
-     {zh:'旅行时要小心，别把护照丢了。',py:'Lǚxíng shí yào xiǎoxīn, bié bǎ hùzhào diū le.',vn:'Khi đi du lịch phải cẩn thận, đừng làm mất hộ chiếu.'},
-   ],
-   hanzi:[
-     {c:'丢',p:'diū',type:'上下结构 · Trên-dưới',st:6,ord:'丿 → 去',rad:'丿 (phiệt)',mean:'mất, vứt',
-      tip:'丿 + 去(đi) → đồ vật ĐI MẤT → MẤT, VỨT. Chỉ 6 nét, viết như 去 thêm một phẩy trên.',
-      cf:'去 (qù – đi)',w:'丢 / 丢了 / 丢掉'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh làm mất chìa khóa rồi, không vào được nhà, em mau về đi.',answer:'我的钥匙丢了，进不了门，你快回来吧。',answerPy:'Wǒ de yàoshi diū le, jìnbuliǎo mén, nǐ kuài huílai ba.',
-      note:'Bổ ngữ khả năng 进不了 (Bài 5), 钥匙 (Bài 3).'},
-   ]},
-
-  {n:31,zh:'垃圾桶',py:'lājītǒng',pos:'Danh từ',vn:'thùng rác', hv: 'lạp ngập dũng',em:'🗑️',lesson:5,
-   explain:['Thùng đựng rác. 垃圾 = rác (Bài 11), 桶 = thùng. 垃圾箱 cũng dùng.'],
-   usage:'丢进垃圾桶, 垃圾桶满了, 倒垃圾.',
-   collo:['丢进垃圾桶','垃圾桶又满了','找垃圾桶'],
-   ex_zh:'还有养成把垃圾丢进垃圾桶的习惯什么的。',ex_py:'Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.',ex_vn:'Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân.',
-   exList:[
-     {zh:'还有养成把垃圾丢进垃圾桶的习惯什么的。',py:'Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.',vn:'Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân.'},
-     {zh:'A：垃圾桶又满了，你去扔一下垃圾吧。B：好的，看完这个节目我就去。',py:'A: Lājītǒng yòu mǎn le, nǐ qù rēng yíxià lājī ba. B: Hǎo de, kànwán zhège jiémù wǒ jiù qù.',vn:'A: Thùng rác lại đầy rồi, anh đi đổ rác đi. B: Được, xem xong chương trình này anh đi ngay.'},
-     {zh:'公园里每隔几十米就有一个垃圾桶，非常方便。',py:'Gōngyuán li měi gé jǐ shí mǐ jiù yǒu yí ge lājītǒng, fēicháng fāngbiàn.',vn:'Trong công viên cứ cách vài chục mét lại có một thùng rác, rất tiện.'},
-   ],
-   hanzi:[
-     {c:'桶',p:'tǒng',type:'左右结构 · Trái-phải',st:11,ord:'木 trái → 甬 phải',rad:'木 (mộc)',mean:'thùng',
-      tip:'Gỗ 木 + 甬(biểu âm) → THÙNG gỗ. 垃圾桶 = thùng rác, 水桶 = thùng nước.',
-      cf:'通 (tōng – thông, bộ 辶)',w:'垃圾桶 / 水桶'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thùng rác lại đầy rồi, anh đi đổ rác đi.',answer:'垃圾桶又满了，你去扔一下垃圾吧。',answerPy:'Lājītǒng yòu mǎn le, nǐ qù rēng yíxià lājī ba.',
-      note:'又 + 了 (ôn lại Bài 1), 满 (Bài 11).'},
-   ]},
-
-  {n:32,zh:'美丽',py:'měilì',pos:'Tính từ',vn:'đẹp', hv: 'mỹ lệ',em:'🌸',lesson:5,
-   explain:['Đẹp (thường dùng cho cảnh vật, thiên nhiên, văn viết). So với 漂亮 (khẩu ngữ, người/đồ vật).'],
-   usage:'美丽的家, 变得更美丽, 美丽的风景.',
-   collo:['变得更美丽','美丽的地球','美丽的风景'],
-   ex_zh:'只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。',ex_py:'Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.',ex_vn:'Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, bảo vệ môi trường, mới có thể khiến ngôi nhà chúng ta đẹp hơn.',
-   exList:[
-     {zh:'只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。',py:'Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.',vn:'Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, bảo vệ môi trường, mới có thể khiến ngôi nhà chúng ta đẹp hơn.'},
-     {zh:'怎样才能使地球变得更美丽？',py:'Zěnyàng cái néng shǐ dìqiú biàn de gèng měilì?',vn:'Làm thế nào mới có thể khiến Trái đất đẹp hơn?'},
-     {zh:'这里的风景太美丽了，我们多拍几张照片吧。',py:'Zhèlǐ de fēngjǐng tài měilì le, wǒmen duō pāi jǐ zhāng zhàopiàn ba.',vn:'Phong cảnh ở đây đẹp quá, chúng ta chụp thêm mấy tấm ảnh đi.'},
-   ],
-   hanzi:[
-     {c:'丽',p:'lì',type:'上下结构 · Trên-dưới (giản thể)',st:7,ord:'一 → 冂丶 → 冂丶',rad:'一 (nhất)',mean:'đẹp',
-      tip:'Giản thể của 麗 (con hươu có cặp sừng đẹp). 美丽 = MỸ LỆ = đẹp.',
-      cf:'两 (liǎng – hai)',w:'美丽 / 华丽'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Làm thế nào mới có thể khiến Trái đất đẹp hơn?',answer:'怎样才能使地球变得更美丽？',answerPy:'Zěnyàng cái néng shǐ dìqiú biàn de gèng měilì?',
-      note:'使 (Bài 10) + 变得 + 更.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "出差",
+    "py": "chū chāi",
+    "pos": "Động từ",
+    "vn": "đi công tác",
+    "hv": "xuất sai",
+    "em": "✈️",
+    "lesson": 1,
+    "explain": [
+      "Đi làm việc ở nơi khác theo yêu cầu của cơ quan/công ty. Động từ ly hợp: 出了一次差, 出差三天."
+    ],
+    "usage": "去上海出差, 出差三天, 明天要出差.",
+    "collo": [
+      "明天出差",
+      "去北京出差",
+      "出差回来"
+    ],
+    "ex_zh": "这是明天你出差要带的毛巾、牙膏和牙刷，把它们放到箱子里吧。",
+    "ex_py": "Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā, bǎ tāmen fàngdào xiāngzi li ba.",
+    "ex_vn": "Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang, cho vào vali đi.",
+    "exList": [
+      {
+        "zh": "这是明天你出差要带的毛巾、牙膏和牙刷，把它们放到箱子里吧。",
+        "py": "Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā, bǎ tāmen fàngdào xiāngzi li ba.",
+        "vn": "Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang, cho vào vali đi."
+      },
+      {
+        "zh": "真抱歉，明天我得出差，不能参加明天的会议了。",
+        "py": "Zhēn bàoqiàn, míngtiān wǒ děi chū chāi, bù néng cānjiā míngtiān de huìyì le.",
+        "vn": "Thật xin lỗi, mai tôi phải đi công tác, không thể dự cuộc họp ngày mai."
+      },
+      {
+        "zh": "A：打扰一下，请问李老师在吗？B：他出差了。你找他有事吗？",
+        "py": "A: Dǎrǎo yíxià, qǐngwèn Lǐ lǎoshī zài ma? B: Tā chū chāi le. Nǐ zhǎo tā yǒu shì ma?",
+        "vn": "A: Làm phiền chút, cho hỏi thầy Lý có ở đây không? B: Thầy đi công tác rồi. Bạn tìm thầy có việc gì không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "差",
+        "p": "chāi",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "𦍌 trên → 工 dưới",
+        "rad": "工 (công)",
+        "mean": "sai phái",
+        "tip": "Chữ 差 đọc chāi = SAI PHÁI (cử đi làm việc), 出差 = ĐI CÔNG TÁC. Chú ý cùng chữ đọc chà = KÉM (差不多) và chā = SAI SỐ.",
+        "cf": "着 (zhe – trợ từ)",
+        "w": "出差 / 差不多 / 差别"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thật xin lỗi, vì mai tôi phải đi công tác nên không dự họp được.",
+        "answer": "实在抱歉，因为明天我得出差，所以不能参加明天的会议了。",
+        "answerPy": "Shízài bàoqiàn, yīnwèi míngtiān wǒ děi chūchāi, suǒyǐ bù néng cānjiā míngtiān de huìyì le.",
+        "note": "出差 là từ ly hợp: 出了三天差 ✓ / 出差了三天 ✗.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy đi công tác rồi, có lẽ tuần sau mới về.",
+        "answer": "他出差了，大概下星期才回来。",
+        "answerPy": "Tā chū chāi le, dàgài xià xīngqī cái huílai.",
+        "note": "大概 ôn lại ngữ pháp Bài 13 + 才 (Bài 3).",
+        "pair": "……，才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "明天出差",
+        "py": "míngtiān chū chāi",
+        "vn": "mai đi công tác"
+      },
+      {
+        "zh": "去北京出差",
+        "py": "qù Běijīng chū chāi",
+        "vn": "đi Bắc Kinh công tác"
+      },
+      {
+        "zh": "出差回来",
+        "py": "chū chāi huílai",
+        "vn": "đi công tác về"
+      },
+      {
+        "zh": "出了三天差",
+        "py": "chū le sān tiān chà",
+        "vn": "đi công tác ba ngày"
+      },
+      {
+        "zh": "经常出差",
+        "py": "jīngcháng chū chāi",
+        "vn": "thường xuyên đi công tác"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "出 + thời lượng + 差",
+        "m": "出差 là từ ly hợp: 出了三天差 ✓ / 出差了三天 ✗"
+      },
+      {
+        "s": "去 + nơi chốn + 出差",
+        "m": "Đi đâu công tác"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "毛巾",
+    "py": "máojīn",
+    "pos": "Danh từ",
+    "vn": "khăn lau, khăn mặt",
+    "hv": "mao cân",
+    "em": "🧻",
+    "lesson": 1,
+    "explain": [
+      "Khăn bằng vải bông dùng để lau mặt, lau tay, lau người."
+    ],
+    "usage": "一条毛巾, 用毛巾擦脸, 带毛巾.",
+    "collo": [
+      "一条毛巾",
+      "带毛巾",
+      "用毛巾擦"
+    ],
+    "ex_zh": "不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！",
+    "ex_py": "Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!",
+    "ex_vn": "Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!",
+    "exList": [
+      {
+        "zh": "这是明天你出差要带的毛巾、牙膏和牙刷。",
+        "py": "Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā.",
+        "vn": "Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang."
+      },
+      {
+        "zh": "我明天要出差，妻子帮我把毛巾、牙膏和牙刷都放到了箱子里。",
+        "py": "Wǒ míngtiān yào chū chāi, qīzi bāng wǒ bǎ máojīn, yágāo hé yáshuā dōu fàngdào le xiāngzi li.",
+        "vn": "Mai tôi đi công tác, vợ giúp tôi cho khăn mặt, kem đánh răng và bàn chải vào vali."
+      },
+      {
+        "zh": "为了保护环境，我出差时都自己带毛巾，不用宾馆的。",
+        "py": "Wèile bǎohù huánjìng, wǒ chū chāi shí dōu zìjǐ dài máojīn, bú yòng bīnguǎn de.",
+        "vn": "Để bảo vệ môi trường, khi đi công tác tôi đều tự mang khăn, không dùng của khách sạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "巾",
+        "p": "jīn",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 3,
+        "ord": "丨 → 冂 → 丨",
+        "rad": "巾 (cân)",
+        "mean": "khăn",
+        "tip": "Tượng hình chiếc KHĂN treo xuống. Ghép 毛(lông) + 巾(khăn) = KHĂN BÔNG. Là bộ thủ trong 帽 (mũ), 带 (đai).",
+        "cf": "币 (bì – tiền tệ)",
+        "w": "毛巾 / 纸巾 / 围巾"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì mai tôi đi công tác, nên vợ đã cho khăn mặt, kem đánh răng và bàn chải vào vali giúp tôi.",
+        "answer": "因为我明天要出差，所以妻子帮我把毛巾、牙膏和牙刷都放到了箱子里。",
+        "answerPy": "Yīnwèi wǒ míngtiān yào chūchāi, suǒyǐ qīzi bāng wǒ bǎ máojīn, yágāo hé yáshuā dōu fàng dàole xiāngzi li.",
+        "note": "Câu chữ 把 với ba tân ngữ nối bằng dấu 、.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一条毛巾",
+        "py": "yì tiáo máojīn",
+        "vn": "một cái khăn"
+      },
+      {
+        "zh": "带毛巾",
+        "py": "dài máojīn",
+        "vn": "mang khăn"
+      },
+      {
+        "zh": "用毛巾擦",
+        "py": "yòng máojīn cā",
+        "vn": "dùng khăn lau"
+      },
+      {
+        "zh": "湿毛巾",
+        "py": "shī máojīn",
+        "vn": "khăn ướt"
+      },
+      {
+        "zh": "洗毛巾",
+        "py": "xǐ máojīn",
+        "vn": "giặt khăn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 条 + 毛巾",
+        "m": "Lượng từ 条 cho vật dài mềm"
+      },
+      {
+        "s": "用 + 毛巾 + 擦",
+        "m": "Dùng khăn lau — 擦 là từ bài 7"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "牙膏",
+    "py": "yágāo",
+    "pos": "Danh từ",
+    "vn": "kem đánh răng",
+    "hv": "nha cao",
+    "em": "🪥",
+    "lesson": 1,
+    "explain": [
+      "Kem dùng để đánh răng. 牙 = răng, 膏 = kem, cao."
+    ],
+    "usage": "一支牙膏, 买牙膏, 牙膏用完了.",
+    "collo": [
+      "一支牙膏",
+      "牙膏和牙刷",
+      "牙膏用完了"
+    ],
+    "ex_zh": "把毛巾、牙膏和牙刷放到箱子里吧。",
+    "ex_py": "Bǎ máojīn, yágāo hé yáshuā fàngdào xiāngzi li ba.",
+    "ex_vn": "Cho khăn mặt, kem đánh răng và bàn chải vào vali đi.",
+    "exList": [
+      {
+        "zh": "把毛巾、牙膏和牙刷放到箱子里吧。",
+        "py": "Bǎ máojīn, yágāo hé yáshuā fàngdào xiāngzi li ba.",
+        "vn": "Cho khăn mặt, kem đánh răng và bàn chải vào vali đi."
+      },
+      {
+        "zh": "牙膏快用完了，明天去超市顺便买一支吧。",
+        "py": "Yágāo kuài yòngwán le, míngtiān qù chāoshì shùnbiàn mǎi yì zhī ba.",
+        "vn": "Kem đánh răng sắp hết rồi, mai đi siêu thị tiện thể mua một tuýp nhé."
+      },
+      {
+        "zh": "李进开始不想带毛巾、牙膏和牙刷，因为宾馆会免费提供。",
+        "py": "Lǐ Jìn kāishǐ bù xiǎng dài máojīn, yágāo hé yáshuā, yīnwèi bīnguǎn huì miǎnfèi tígōng.",
+        "vn": "Lý Tiến lúc đầu không muốn mang khăn, kem đánh răng và bàn chải, vì khách sạn cung cấp miễn phí."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "膏",
+        "p": "gāo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 14,
+        "ord": "高 trên → 月 dưới",
+        "rad": "月 (nhục)",
+        "mean": "cao, kem",
+        "tip": "Bộ 月(nhục – thịt, mỡ) + 高(biểu âm) → MỠ, KEM đặc. 牙膏 = kem đánh răng.",
+        "cf": "高 (gāo – cao)",
+        "w": "牙膏 / 药膏"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Kem đánh răng sắp hết rồi, mai nếu đi siêu thị thì tiện thể mua một tuýp nhé.",
+        "answer": "牙膏快用完了，要是明天去超市，就顺便买一支吧。",
+        "answerPy": "Yágāo kuài yòng wán le, yàoshi míngtiān qù chāoshì, jiù shùnbiàn mǎi yì zhī ba.",
+        "note": "顺便 là từ bài 5; 一支牙膏 — lượng từ 支.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一支牙膏",
+        "py": "yì zhī yágāo",
+        "vn": "một tuýp kem đánh răng"
+      },
+      {
+        "zh": "牙膏和牙刷",
+        "py": "yágāo hé yáshuā",
+        "vn": "kem và bàn chải"
+      },
+      {
+        "zh": "牙膏用完了",
+        "py": "yágāo yòng wán le",
+        "vn": "kem đánh răng hết rồi"
+      },
+      {
+        "zh": "挤牙膏",
+        "py": "jǐ yágāo",
+        "vn": "bóp kem đánh răng"
+      },
+      {
+        "zh": "买牙膏",
+        "py": "mǎi yágāo",
+        "vn": "mua kem đánh răng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 支 + 牙膏",
+        "m": "Lượng từ 支 cho vật dài cứng"
+      },
+      {
+        "s": "牙 + 膏",
+        "m": "Kem (膏) đánh răng (牙)"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "重",
+    "py": "zhòng",
+    "pos": "Tính từ",
+    "vn": "nặng",
+    "hv": "trọng",
+    "em": "🏋️",
+    "lesson": 1,
+    "explain": [
+      "Có trọng lượng lớn; cũng chỉ mức độ nghiêm trọng (严重). Chú ý đọc chóng = lặp lại (重新, Bài 8)."
+    ],
+    "usage": "箱子很重, 够重的了, 太重了.",
+    "collo": [
+      "箱子很重",
+      "够重的了",
+      "越来越重"
+    ],
+    "ex_zh": "不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！",
+    "ex_py": "Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!",
+    "ex_vn": "Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!",
+    "exList": [
+      {
+        "zh": "不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！",
+        "py": "Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!",
+        "vn": "Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!"
+      },
+      {
+        "zh": "按照规定，您只能免费带20公斤的行李，超重的部分每公斤加收全部票价的1.5%。",
+        "py": "Ànzhào guīdìng, nín zhǐ néng miǎnfèi dài èrshí gōngjīn de xíngli, chāo zhòng de bùfen měi gōngjīn jiā shōu quánbù piàojià de bǎifēnzhī yī diǎn wǔ.",
+        "vn": "Theo quy định, ngài chỉ được mang miễn phí 20 kg hành lý, phần quá cân mỗi kg thu thêm 1,5% giá vé."
+      },
+      {
+        "zh": "这个箱子太重了，我一个人搬不动。",
+        "py": "Zhège xiāngzi tài zhòng le, wǒ yí ge rén bānbudòng.",
+        "vn": "Cái vali này nặng quá, một mình tôi không bê nổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "重",
+        "p": "zhòng",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 9,
+        "ord": "丿 → 一 → 日 → 土",
+        "rad": "里 (lý)",
+        "mean": "nặng",
+        "tip": "Hình người đứng trên đất 土 vác túi nặng → NẶNG. Đa âm: zhòng (nặng, quan trọng 重要) / chóng (lặp lại 重新).",
+        "cf": "童 (tóng – trẻ con)",
+        "w": "重 / 严重 / 重要 / 重新"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái vali này nặng đến mức một mình tôi không bê nổi, phiền bạn giúp một tay.",
+        "answer": "这个箱子重得我一个人搬不动，麻烦你帮我一下。",
+        "answerPy": "Zhège xiāngzi zhòng de wǒ yí ge rén bān bu dòng, máfan nǐ bāng wǒ yíxià.",
+        "note": "V + 不动 — bổ ngữ khả năng: không đủ sức làm.",
+        "pair": "……得……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Theo quy định, phần hành lý quá cân mỗi kg thu thêm 1,5% giá vé.",
+        "answer": "按照规定，超重的部分每公斤加收全部票价的1.5%。",
+        "answerPy": "Ànzhào guīdìng, chāo zhòng de bùfen měi gōngjīn jiā shōu quánbù piàojià de bǎifēnzhī yī diǎn wǔ.",
+        "note": "按照 (Bài 4), 规定/全部 (Bài 12), 部分 (Bài 13).",
+        "pair": "按照……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "箱子很重",
+        "py": "xiāng zi hěn zhòng",
+        "vn": "vali rất nặng"
+      },
+      {
+        "zh": "够重的了",
+        "py": "gòu zhòng de le",
+        "vn": "nặng ra phết"
+      },
+      {
+        "zh": "越来越重",
+        "py": "yuè lái yuè zhòng",
+        "vn": "ngày càng nặng"
+      },
+      {
+        "zh": "太重了",
+        "py": "tài zhòng le",
+        "vn": "nặng quá"
+      },
+      {
+        "zh": "不太重",
+        "py": "bú tài zhòng",
+        "vn": "không nặng lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 + 重",
+        "m": "Cái gì đó rất nặng"
+      },
+      {
+        "s": "重 (zhòng, nặng) ≠ 重 (chóng, lặp lại — 重新 bài 2)"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "行",
+    "py": "xíng",
+    "pos": "Động từ",
+    "vn": "được, đồng ý",
+    "hv": "hành",
+    "em": "👌",
+    "lesson": 1,
+    "explain": [
+      "Dùng để đồng ý, chấp nhận (= 可以, 好的). Phủ định: 不行 = không được. 还行 = tạm được."
+    ],
+    "usage": "行，没问题, 不行, 还行.",
+    "collo": [
+      "行，没问题",
+      "这样不行",
+      "还行"
+    ],
+    "ex_zh": "行，没问题。我明天上午10点的飞机，你能开车把我送到机场吗？",
+    "ex_py": "Xíng, méi wèntí. Wǒ míngtiān shàngwǔ shí diǎn de fēijī, nǐ néng kāi chē bǎ wǒ sòngdào jīchǎng ma?",
+    "ex_vn": "Được, không vấn đề. Máy bay của anh 10 giờ sáng mai, em lái xe đưa anh ra sân bay được không?",
+    "exList": [
+      {
+        "zh": "行，没问题。我明天上午10点的飞机，你能开车把我送到机场吗？",
+        "py": "Xíng, méi wèntí. Wǒ míngtiān shàngwǔ shí diǎn de fēijī, nǐ néng kāi chē bǎ wǒ sòngdào jīchǎng ma?",
+        "vn": "Được, không vấn đề. Máy bay của anh 10 giờ sáng mai, em lái xe đưa anh ra sân bay được không?"
+      },
+      {
+        "zh": "学校附近房子太贵。离学校远点儿没关系，只要离地铁或者公交车站近就行。",
+        "py": "Xuéxiào fùjìn fángzi tài guì. Lí xuéxiào yuǎn diǎnr méi guānxi, zhǐyào lí dìtiě huòzhě gōngjiāochē zhàn jìn jiù xíng.",
+        "vn": "Nhà gần trường đắt quá. Xa trường một chút không sao, chỉ cần gần ga tàu điện ngầm hoặc trạm xe buýt là được."
+      },
+      {
+        "zh": "生活往往不会按照我们的计划来进行。因此，光有计划还不行。",
+        "py": "Shēnghuó wǎngwǎng bú huì ànzhào wǒmen de jìhuà lái jìnxíng. Yīncǐ, guāng yǒu jìhuà hái bù xíng.",
+        "vn": "Cuộc sống thường không diễn ra theo kế hoạch của chúng ta. Vì vậy, chỉ có kế hoạch thôi thì chưa được."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "行",
+        "p": "xíng",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "彳 trái → 亍 phải",
+        "rad": "行 (hành)",
+        "mean": "được; đi",
+        "tip": "Tượng hình NGÃ TƯ đường → ĐI, HÀNH; mở rộng thành \"được, ổn\" (xíng). Đọc háng = hàng, ngành (银行).",
+        "cf": "街 (jiē – phố, có 行 bao ngoài)",
+        "w": "行 / 不行 / 还行 / 银行 (háng)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Xa trường một chút không sao, chỉ cần gần ga tàu điện ngầm là được.",
+        "answer": "离学校远点儿没关系，只要离地铁站近就行。",
+        "answerPy": "Lí xuéxiào yuǎn diǎnr méi guānxi, zhǐyào lí dìtiě zhàn jìn jiù xíng.",
+        "note": "只要……就 ôn lại Bài 8.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "行，没问题",
+        "py": "xíng méi wèntí",
+        "vn": "được, không vấn đề gì"
+      },
+      {
+        "zh": "这样不行",
+        "py": "zhèyàng bù xíng",
+        "vn": "thế thì không được"
+      },
+      {
+        "zh": "还行",
+        "py": "hái xíng",
+        "vn": "cũng tạm"
+      },
+      {
+        "zh": "行不行",
+        "py": "xíng bù xíng",
+        "vn": "được không"
+      },
+      {
+        "zh": "不行就换",
+        "py": "bù xíng jiù huàn",
+        "vn": "không được thì đổi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "行 / 不行",
+        "m": "Được / không được — trả lời ngắn"
+      },
+      {
+        "s": "……就行了",
+        "m": "Như vậy là được rồi"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "省",
+    "py": "shěng",
+    "pos": "Động từ",
+    "vn": "tiết kiệm",
+    "hv": "tỉnh",
+    "em": "💰",
+    "lesson": 1,
+    "explain": [
+      "Dùng ít, tiết kiệm (tiền, thời gian, sức lực). Danh từ 省 = tỉnh (广东省, Bài 13)."
+    ],
+    "usage": "省油钱, 省时间, 省力气.",
+    "collo": [
+      "省油钱",
+      "省时间",
+      "省力气"
+    ],
+    "ex_zh": "你还是坐地铁去机场吧。这样不仅省油钱，而且还不会污染空气。",
+    "ex_py": "Nǐ háishi zuò dìtiě qù jīchǎng ba. Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.",
+    "ex_vn": "Anh vẫn nên đi tàu điện ngầm ra sân bay. Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.",
+    "exList": [
+      {
+        "zh": "你还是坐地铁去机场吧。这样不仅省油钱，而且还不会污染空气。",
+        "py": "Nǐ háishi zuò dìtiě qù jīchǎng ba. Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.",
+        "vn": "Anh vẫn nên đi tàu điện ngầm ra sân bay. Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí."
+      },
+      {
+        "zh": "现在火车的速度非常快，有时乘坐火车甚至比乘坐飞机更省时间。",
+        "py": "Xiànzài huǒchē de sùdù fēicháng kuài, yǒushí chéngzuò huǒchē shènzhì bǐ chéngzuò fēijī gèng shěng shíjiān.",
+        "vn": "Bây giờ tốc độ tàu hỏa rất nhanh, có lúc đi tàu thậm chí còn tiết kiệm thời gian hơn đi máy bay."
+      },
+      {
+        "zh": "用正确的方法学习，既省时间又省力气，可以事半功倍。",
+        "py": "Yòng zhèngquè de fāngfǎ xuéxí, jì shěng shíjiān yòu shěng lìqi, kěyǐ shìbàngōngbèi.",
+        "vn": "Học bằng phương pháp đúng, vừa tiết kiệm thời gian vừa đỡ tốn sức, có thể đạt hiệu quả gấp đôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "省",
+        "p": "shěng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "少 trên → 目 dưới",
+        "rad": "目 (mục)",
+        "mean": "tiết kiệm; tỉnh",
+        "tip": "少(ít) + 目(mắt) → nhìn ít, dùng ít → TIẾT KIỆM. Mở rộng thành TỈNH (đơn vị hành chính). Đọc xǐng = xét lại (反省).",
+        "cf": "少 (shǎo – ít)",
+        "w": "省钱 / 省时间 / 广东省 / 节省"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.",
+        "answer": "这样不仅省油钱，而且还不会污染空气。",
+        "answerPy": "Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.",
+        "note": "不仅……而且 ôn lại Bài 6.",
+        "pair": "不仅……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Học bằng phương pháp đúng, vừa tiết kiệm thời gian vừa đỡ tốn sức.",
+        "answer": "用正确的方法学习，既省时间又省力气。",
+        "answerPy": "Yòng zhèngquè de fāngfǎ xuéxí, jì shěng shíjiān yòu shěng lìqi.",
+        "note": "既……又 (Bài 7), 力气 (Bài 12).",
+        "pair": "既……又……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "省钱",
+        "py": "shěng qián",
+        "vn": "tiết kiệm tiền"
+      },
+      {
+        "zh": "省时间",
+        "py": "shěng shíjiān",
+        "vn": "tiết kiệm thời gian"
+      },
+      {
+        "zh": "省力气",
+        "py": "shěng lìqi",
+        "vn": "đỡ tốn sức"
+      },
+      {
+        "zh": "省油钱",
+        "py": "shěng yóu qián",
+        "vn": "tiết kiệm tiền xăng"
+      },
+      {
+        "zh": "省了不少",
+        "py": "shěng le bù shǎo",
+        "vn": "tiết kiệm được không ít"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "省 + 钱 / 时间 / 力气",
+        "m": "Tiết kiệm tiền, thời gian, sức"
+      },
+      {
+        "s": "省 (shěng, tiết kiệm) ≠ 省 (shěng, tỉnh — bài 13)"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "污染",
+    "py": "wūrǎn",
+    "pos": "Động từ",
+    "vn": "làm ô nhiễm",
+    "hv": "ô nhiễm",
+    "em": "🏭",
+    "lesson": 1,
+    "explain": [
+      "Làm bẩn môi trường (không khí, nước). Cũng dùng như danh từ: 环境污染, 空气污染."
+    ],
+    "usage": "污染空气, 环境污染, 减少污染.",
+    "collo": [
+      "污染空气",
+      "环境污染",
+      "减少污染"
+    ],
+    "ex_zh": "这样不仅省油钱，而且还不会污染空气。",
+    "ex_py": "Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.",
+    "ex_vn": "Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.",
+    "exList": [
+      {
+        "zh": "这样不仅省油钱，而且还不会污染空气。",
+        "py": "Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.",
+        "vn": "Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí."
+      },
+      {
+        "zh": "塑料袋的大量使用也带来了严重的环境污染问题。",
+        "py": "Sùliàodài de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí.",
+        "vn": "Việc dùng túi nilông với số lượng lớn cũng mang lại vấn đề ô nhiễm môi trường nghiêm trọng."
+      },
+      {
+        "zh": "只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。",
+        "py": "Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.",
+        "vn": "Chỉ khi mọi người cùng nỗ lực, giảm ô nhiễm, bảo vệ môi trường, mới có thể khiến ngôi nhà của chúng ta đẹp hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "污",
+        "p": "wū",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "氵 trái → 亏 phải",
+        "rad": "氵 (thủy)",
+        "mean": "bẩn, ô",
+        "tip": "Bộ nước 氵 + 亏(thiếu, hụt) → nước tù đọng → BẨN, Ô. 污染 = Ô NHIỄM.",
+        "cf": "亏 (kuī – thiệt)",
+        "w": "污染 / 污水"
+      },
+      {
+        "c": "染",
+        "p": "rǎn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "氵 → 九 → 木",
+        "rad": "木 (mộc)",
+        "mean": "nhiễm, nhuộm",
+        "tip": "氵(nước) + 九(chín lần) + 木(cây – thuốc nhuộm) → nhúng vải vào nước thuốc nhiều lần → NHUỘM, NHIỄM.",
+        "cf": "柒 (qī – bảy, viết kép)",
+        "w": "污染 / 传染 / 染色"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Dùng túi nilông nhiều không những lãng phí, mà còn gây ô nhiễm môi trường nghiêm trọng.",
+        "answer": "塑料袋的大量使用不但很浪费，而且还带来了严重的环境污染问题。",
+        "answerPy": "Sùliàodài de dàliàng shǐyòng búdàn hěn làngfèi, érqiě hái dàiláile yánzhòng de huánjìng wūrǎn wèntí.",
+        "note": "浪费 là từ bài 5, 严重 là từ bài 7.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, mới có thể khiến ngôi nhà của chúng ta đẹp hơn.",
+        "answer": "只有大家共同努力减少污染，才能使我们的家变得更美丽。",
+        "answerPy": "Zhǐyǒu dàjiā gòngtóng nǔlì jiǎnshǎo wūrǎn, cái néng shǐ wǒmen de jiā biàn de gèng měilì.",
+        "note": "只有……才 ôn lại Bài 9, 共同 (Bài 10).",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "环境污染",
+        "py": "huánjìng wūrǎn",
+        "vn": "ô nhiễm môi trường"
+      },
+      {
+        "zh": "污染空气",
+        "py": "wūrǎn kōngqì",
+        "vn": "làm ô nhiễm không khí"
+      },
+      {
+        "zh": "减少污染",
+        "py": "jiǎnshǎo wūrǎn",
+        "vn": "giảm ô nhiễm"
+      },
+      {
+        "zh": "严重的污染",
+        "py": "yánzhòng de wūrǎn",
+        "vn": "ô nhiễm nghiêm trọng"
+      },
+      {
+        "zh": "水污染",
+        "py": "shuǐ wūrǎn",
+        "vn": "ô nhiễm nguồn nước"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "污染 + N (động từ)",
+        "m": "Làm ô nhiễm cái gì"
+      },
+      {
+        "s": "环境 + 污染 (danh từ)",
+        "m": "Sự ô nhiễm môi trường"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "卫生间",
+    "py": "wèishēngjiān",
+    "pos": "Danh từ",
+    "vn": "nhà vệ sinh",
+    "hv": "vệ sinh gian",
+    "em": "🚻",
+    "lesson": 2,
+    "explain": [
+      "Phòng vệ sinh, toilet. 卫生 = vệ sinh, 间 = phòng."
+    ],
+    "usage": "打扫卫生间, 卫生间很脏, 去卫生间.",
+    "collo": [
+      "打扫卫生间",
+      "卫生间很脏",
+      "去一下卫生间"
+    ],
+    "ex_zh": "小王，卫生间怎么那么脏啊？这会给客人留下不好的印象，快去打扫一下。",
+    "ex_py": "Xiǎo Wáng, wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng, kuài qù dǎsǎo yíxià.",
+    "ex_vn": "Tiểu Vương, sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách, mau đi dọn dẹp đi.",
+    "exList": [
+      {
+        "zh": "小王，卫生间怎么那么脏啊？这会给客人留下不好的印象，快去打扫一下。",
+        "py": "Xiǎo Wáng, wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng, kuài qù dǎsǎo yíxià.",
+        "vn": "Tiểu Vương, sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách, mau đi dọn dẹp đi."
+      },
+      {
+        "zh": "今天店里太忙了，卫生间很脏，我也没来得及打扫。",
+        "py": "Jīntiān diàn li tài máng le, wèishēngjiān hěn zāng, wǒ yě méi láidejí dǎsǎo.",
+        "vn": "Hôm nay cửa hàng bận quá, nhà vệ sinh rất bẩn, tôi cũng chưa kịp dọn."
+      },
+      {
+        "zh": "请问，卫生间在哪儿？——在二楼，电梯旁边。",
+        "py": "Qǐngwèn, wèishēngjiān zài nǎr? — Zài èr lóu, diàntī pángbiān.",
+        "vn": "Xin hỏi, nhà vệ sinh ở đâu? — Ở tầng hai, cạnh thang máy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "卫",
+        "p": "wèi",
+        "type": "独体字 · Chữ đơn thể (giản thể)",
+        "st": 3,
+        "ord": "㇇ → 丨 → 一",
+        "rad": "卩 (tiết)",
+        "mean": "bảo vệ",
+        "tip": "Giản thể của 衛 (lính canh đi tuần quanh đường 行) → BẢO VỆ. 卫生 = bảo vệ sự sống → VỆ SINH.",
+        "cf": "卩 (jié – bộ tiết)",
+        "w": "卫生 / 卫生间 / 保卫"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì hôm nay cửa hàng bận quá, nên nhà vệ sinh bẩn mà tôi cũng chưa kịp dọn.",
+        "answer": "因为今天店里太忙了，所以卫生间很脏，我也没来得及打扫。",
+        "answerPy": "Yīnwèi jīntiān diàn li tài máng le, suǒyǐ wèishēngjiān hěn zāng, wǒ yě méi láidejí dǎsǎo.",
+        "note": "来得及 là từ bài 11 — 没来得及 + V.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "打扫卫生间",
+        "py": "dǎsǎo wèishēngjiān",
+        "vn": "dọn nhà vệ sinh"
+      },
+      {
+        "zh": "卫生间很脏",
+        "py": "wèishēngjiān hěn zāng",
+        "vn": "nhà vệ sinh rất bẩn"
+      },
+      {
+        "zh": "去卫生间",
+        "py": "qù wèishēngjiān",
+        "vn": "đi nhà vệ sinh"
+      },
+      {
+        "zh": "卫生间在哪儿",
+        "py": "wèishēngjiān zài nǎr",
+        "vn": "nhà vệ sinh ở đâu"
+      },
+      {
+        "zh": "干净的卫生间",
+        "py": "gānjìng de wèishēngjiān",
+        "vn": "nhà vệ sinh sạch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打扫 + 卫生间",
+        "m": "Dọn nhà vệ sinh"
+      },
+      {
+        "s": "卫生 + 间",
+        "m": "Phòng (间) vệ sinh (卫生)"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "脏",
+    "py": "zāng",
+    "pos": "Tính từ",
+    "vn": "bẩn, bẩn thỉu",
+    "hv": "tạng",
+    "em": "🧹",
+    "lesson": 2,
+    "explain": [
+      "Không sạch, dơ. Trái nghĩa: 干净."
+    ],
+    "usage": "很脏, 弄脏了, 又脏又乱.",
+    "collo": [
+      "卫生间很脏",
+      "衣服弄脏了",
+      "又脏又乱"
+    ],
+    "ex_zh": "卫生间怎么那么脏啊？",
+    "ex_py": "Wèishēngjiān zěnme nàme zāng a?",
+    "ex_vn": "Sao nhà vệ sinh bẩn thế?",
+    "exList": [
+      {
+        "zh": "卫生间怎么那么脏啊？这会给客人留下不好的印象。",
+        "py": "Wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng.",
+        "vn": "Sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách."
+      },
+      {
+        "zh": "孩子在外面玩儿了一下午，衣服都弄脏了。",
+        "py": "Háizi zài wàimiàn wánrle yí xiàwǔ, yīfu dōu nòngzāng le.",
+        "vn": "Đứa bé chơi ở ngoài cả buổi chiều, quần áo đều bị làm bẩn hết."
+      },
+      {
+        "zh": "河水越来越脏，鱼都快活不下去了。",
+        "py": "Héshuǐ yuè lái yuè zāng, yú dōu kuài huóbuxiàqù le.",
+        "vn": "Nước sông ngày càng bẩn, cá sắp không sống nổi nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "脏",
+        "p": "zāng",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "月 trái → 庄 phải",
+        "rad": "月 (nhục)",
+        "mean": "bẩn",
+        "tip": "Bộ 月(nhục) + 庄. Đọc zāng = BẨN; đọc zàng = NỘI TẠNG (心脏 tim). Cùng chữ hai nghĩa!",
+        "cf": "庄 (zhuāng – trang trại)",
+        "w": "脏 / 弄脏 / 心脏 (zàng)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đứa bé chơi ở ngoài cả buổi chiều, quần áo đều bị làm bẩn hết.",
+        "answer": "孩子在外面玩儿了一下午，衣服都弄脏了。",
+        "answerPy": "Háizi zài wàimiàn wánrle yí xiàwǔ, yīfu dōu nòngzāng le.",
+        "note": "弄 + bổ ngữ kết quả ôn lại Bài 5.",
+        "pair": "一……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很脏",
+        "py": "hěn zāng",
+        "vn": "rất bẩn"
+      },
+      {
+        "zh": "弄脏了",
+        "py": "nòng zāng le",
+        "vn": "làm bẩn rồi"
+      },
+      {
+        "zh": "又脏又乱",
+        "py": "yòu zāng yòu luàn",
+        "vn": "vừa bẩn vừa lộn xộn"
+      },
+      {
+        "zh": "脏衣服",
+        "py": "zāng yīfu",
+        "vn": "quần áo bẩn"
+      },
+      {
+        "zh": "把手弄脏",
+        "py": "bǎ shǒu nòng zāng",
+        "vn": "làm bẩn tay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 弄脏",
+        "m": "Làm bẩn cái gì — câu chữ 把"
+      },
+      {
+        "s": "脏 ↔ 干净",
+        "m": "Bẩn ↔ sạch; 乱 là từ bài 4"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "抱歉",
+    "py": "bàoqiàn",
+    "pos": "Động từ",
+    "vn": "xin lỗi, áy náy",
+    "hv": "bão khiểm",
+    "em": "🙇",
+    "lesson": 2,
+    "explain": [
+      "Cảm thấy có lỗi, xin lỗi (trang trọng hơn 对不起). Thường: 实在抱歉, 真抱歉, 很抱歉."
+    ],
+    "usage": "实在抱歉, 真抱歉, 感到抱歉.",
+    "collo": [
+      "实在抱歉",
+      "真抱歉",
+      "对……感到抱歉"
+    ],
+    "ex_zh": "经理，实在抱歉。今天店里太忙了，我还没来得及打扫。",
+    "ex_py": "Jīnglǐ, shízài bàoqiàn. Jīntiān diàn li tài máng le, wǒ hái méi láidejí dǎsǎo.",
+    "ex_vn": "Giám đốc, thật sự xin lỗi. Hôm nay cửa hàng bận quá, tôi chưa kịp dọn dẹp.",
+    "exList": [
+      {
+        "zh": "经理，实在抱歉。今天店里太忙了，我还没来得及打扫。",
+        "py": "Jīnglǐ, shízài bàoqiàn. Jīntiān diàn li tài máng le, wǒ hái méi láidejí dǎsǎo.",
+        "vn": "Giám đốc, thật sự xin lỗi. Hôm nay cửa hàng bận quá, tôi chưa kịp dọn dẹp."
+      },
+      {
+        "zh": "真抱歉，明天我得出差，不能参加明天的会议了。",
+        "py": "Zhēn bàoqiàn, míngtiān wǒ děi chū chāi, bù néng cānjiā míngtiān de huìyì le.",
+        "vn": "Thật xin lỗi, mai tôi phải đi công tác, không thể dự cuộc họp ngày mai."
+      },
+      {
+        "zh": "A：实在抱歉，我来晚了。今天路上有点儿堵。B：没关系，请坐。",
+        "py": "A: Shízài bàoqiàn, wǒ lái wǎn le. Jīntiān lùshang yǒudiǎnr dǔ. B: Méi guānxi, qǐng zuò.",
+        "vn": "A: Thật sự xin lỗi, tôi đến muộn. Hôm nay đường hơi tắc. B: Không sao, mời ngồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "歉",
+        "p": "qiàn",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "兼 trái → 欠 phải",
+        "rad": "欠 (khiếm)",
+        "mean": "áy náy",
+        "tip": "兼 + 欠(thiếu, nợ) → cảm thấy còn THIẾU NỢ người khác → ÁY NÁY. 抱歉 = ôm nỗi áy náy = XIN LỖI.",
+        "cf": "谦 (qiān – khiêm tốn)",
+        "w": "抱歉 / 道歉"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thật sự xin lỗi, tôi đến muộn, vì hôm nay đường hơi tắc.",
+        "answer": "实在抱歉，我来晚了，因为今天路上有点儿堵。",
+        "answerPy": "Shízài bàoqiàn, wǒ lái wǎn le, yīnwèi jīntiān lù shang yǒudiǎnr dǔ.",
+        "note": "堵车 là từ bài 8; 抱歉 trang trọng hơn 对不起.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "实在抱歉",
+        "py": "shízài bàoqiàn",
+        "vn": "thật sự xin lỗi"
+      },
+      {
+        "zh": "真抱歉",
+        "py": "zhēn bàoqiàn",
+        "vn": "thành thật xin lỗi"
+      },
+      {
+        "zh": "很抱歉",
+        "py": "hěn bàoqiàn",
+        "vn": "rất áy náy"
+      },
+      {
+        "zh": "感到抱歉",
+        "py": "gǎndào bàoqiàn",
+        "vn": "cảm thấy áy náy"
+      },
+      {
+        "zh": "抱歉，我来晚了",
+        "py": "bàoqiàn wǒ lái wǎn le",
+        "vn": "xin lỗi, tôi đến muộn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "实在 / 真 + 抱歉",
+        "m": "Thật sự xin lỗi — 实在 là từ bài 5"
+      },
+      {
+        "s": "抱歉 ≈ 对不起",
+        "m": "抱歉 trang trọng hơn, dùng khi làm phiền người khác"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "空",
+    "py": "kōng",
+    "pos": "Tính từ",
+    "vn": "trống, rỗng, không",
+    "hv": "không",
+    "em": "🫙",
+    "lesson": 2,
+    "explain": [
+      "Không có gì bên trong. Chú ý đọc kòng = thời gian rảnh (有空)."
+    ],
+    "usage": "空瓶子, 空盒子, 房间是空的.",
+    "collo": [
+      "空饮料瓶子",
+      "空盒子",
+      "空房间"
+    ],
+    "ex_zh": "那张桌子下面还有一些空饮料瓶子和纸盒子。",
+    "ex_py": "Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.",
+    "ex_vn": "Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy.",
+    "exList": [
+      {
+        "zh": "那张桌子下面还有一些空饮料瓶子和纸盒子。",
+        "py": "Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.",
+        "vn": "Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy."
+      },
+      {
+        "zh": "这个房间是空的，没有人住。",
+        "py": "Zhège fángjiān shì kōng de, méiyǒu rén zhù.",
+        "vn": "Căn phòng này trống, không có ai ở."
+      },
+      {
+        "zh": "空瓶子别乱扔，放到垃圾桶里可以回收。",
+        "py": "Kōng píngzi bié luàn rēng, fàngdào lājītǒng li kěyǐ huíshōu.",
+        "vn": "Chai rỗng đừng vứt bừa, bỏ vào thùng rác có thể tái chế."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "空",
+        "p": "kōng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "穴 trên → 工 dưới",
+        "rad": "穴 (huyệt)",
+        "mean": "trống",
+        "tip": "穴(hang, lỗ) + 工 → cái hang rỗng → TRỐNG, KHÔNG (空气 không khí). Đọc kòng = rảnh (有空).",
+        "cf": "穿 (chuān – xuyên, mặc)",
+        "w": "空 / 空气 / 空调 / 有空 (kòng)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chai rỗng đừng vứt bừa, nếu thấy thùng rác thì bỏ vào đó.",
+        "answer": "空瓶子别乱扔，要是看到垃圾桶，就放进去吧。",
+        "answerPy": "Kōng píngzi bié luàn rēng, yàoshi kàndào lājītǒng, jiù fàng jinqu ba.",
+        "note": "空 (kōng, rỗng) khác 空儿 (kòngr, thời gian rảnh — bài 10).",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "空瓶子",
+        "py": "kòng píngzi",
+        "vn": "chai rỗng"
+      },
+      {
+        "zh": "空盒子",
+        "py": "kòng hézi",
+        "vn": "hộp rỗng"
+      },
+      {
+        "zh": "空房间",
+        "py": "kòng fángjiān",
+        "vn": "phòng trống"
+      },
+      {
+        "zh": "空着",
+        "py": "kòng zhe",
+        "vn": "đang để trống"
+      },
+      {
+        "zh": "空座位",
+        "py": "kòng zuòwèi",
+        "vn": "chỗ trống"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "空 + N",
+        "m": "Cái gì đó rỗng, trống"
+      },
+      {
+        "s": "空 (kōng, trống) ≠ 空儿 (kòngr, thời gian rảnh — bài 10)"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "盒子",
+    "py": "hézi",
+    "pos": "Danh từ",
+    "vn": "hộp",
+    "hv": "hạp tử",
+    "em": "📦",
+    "lesson": 2,
+    "explain": [
+      "Vật đựng có nắp, thường nhỏ. Lượng từ: 个. 一盒 cũng dùng làm lượng từ (一盒巧克力)."
+    ],
+    "usage": "纸盒子, 一个盒子, 打开盒子.",
+    "collo": [
+      "纸盒子",
+      "打开盒子",
+      "空盒子"
+    ],
+    "ex_zh": "那张桌子下面还有一些空饮料瓶子和纸盒子。",
+    "ex_py": "Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.",
+    "ex_vn": "Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy.",
+    "exList": [
+      {
+        "zh": "那张桌子下面还有一些空饮料瓶子和纸盒子。",
+        "py": "Nà zhāng zhuōzi xiàmiàn hái yǒu yìxiē kōng yǐnliào píngzi hé zhǐ hézi.",
+        "vn": "Dưới cái bàn kia còn có mấy chai nước rỗng và hộp giấy."
+      },
+      {
+        "zh": "她打开盒子，发现里面是一条漂亮的围巾。",
+        "py": "Tā dǎkāi hézi, fāxiàn lǐmiàn shì yì tiáo piàoliang de wéijīn.",
+        "vn": "Cô ấy mở hộp ra, phát hiện bên trong là một chiếc khăn quàng đẹp."
+      },
+      {
+        "zh": "你经常使用一次性饭盒吗？",
+        "py": "Nǐ jīngcháng shǐyòng yícìxìng fànhé ma?",
+        "vn": "Bạn có thường dùng hộp cơm dùng một lần không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "盒",
+        "p": "hé",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "合 trên → 皿 dưới",
+        "rad": "皿 (mãnh)",
+        "mean": "hộp",
+        "tip": "合(đóng lại, khớp) + 皿(đồ đựng) → đồ đựng có nắp ĐÓNG KHỚP → HỘP.",
+        "cf": "盆 (pén – chậu)",
+        "w": "盒子 / 饭盒 / 一盒"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy vừa mở hộp ra là phát hiện bên trong có một chiếc khăn quàng rất đẹp.",
+        "answer": "她一打开盒子，就发现里面是一条漂亮的围巾。",
+        "answerPy": "Tā yì dǎkāi hézi, jiù fāxiàn lǐmiàn shì yì tiáo piàoliang de wéijīn.",
+        "note": "一 + V + 就 + V — vừa làm việc này thì việc kia xảy ra ngay.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一个盒子",
+        "py": "yí gè hézi",
+        "vn": "một cái hộp"
+      },
+      {
+        "zh": "打开盒子",
+        "py": "dǎkāi hézi",
+        "vn": "mở hộp"
+      },
+      {
+        "zh": "纸盒子",
+        "py": "zhǐ hézi",
+        "vn": "hộp giấy"
+      },
+      {
+        "zh": "空盒子",
+        "py": "kòng hézi",
+        "vn": "hộp rỗng"
+      },
+      {
+        "zh": "放进盒子里",
+        "py": "fàng jìn hézi li",
+        "vn": "cho vào hộp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打开 + 盒子",
+        "m": "Mở hộp"
+      },
+      {
+        "s": "一 + 盒 + N",
+        "m": "盒 cũng làm lượng từ: 一盒巧克力 (bài 8)"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "扔",
+    "py": "rēng",
+    "pos": "Động từ",
+    "vn": "vứt bỏ, ném",
+    "hv": "nhưng",
+    "em": "🗑️",
+    "lesson": 2,
+    "explain": [
+      "Vứt đi, ném đi. 扔掉 = vứt bỏ hẳn; 乱扔 = vứt bừa bãi."
+    ],
+    "usage": "扔掉, 乱扔垃圾, 扔进垃圾桶.",
+    "collo": [
+      "扔掉",
+      "乱扔垃圾",
+      "把……扔掉"
+    ],
+    "ex_zh": "好的，我马上就去把它们扔掉。",
+    "ex_py": "Hǎo de, wǒ mǎshàng jiù qù bǎ tāmen rēngdiào.",
+    "ex_vn": "Vâng, tôi đi vứt chúng ngay.",
+    "exList": [
+      {
+        "zh": "好的，我马上就去把它们扔掉。",
+        "py": "Hǎo de, wǒ mǎshàng jiù qù bǎ tāmen rēngdiào.",
+        "vn": "Vâng, tôi đi vứt chúng ngay."
+      },
+      {
+        "zh": "如果在公共场所找不到垃圾箱，你一般会怎么做？——找到垃圾箱再扔。",
+        "py": "Rúguǒ zài gōnggòng chǎngsuǒ zhǎobudào lājīxiāng, nǐ yìbān huì zěnme zuò? — Zhǎodào lājīxiāng zài rēng.",
+        "vn": "Nếu ở nơi công cộng không tìm thấy thùng rác, bạn thường làm thế nào? — Tìm thấy thùng rác rồi mới vứt."
+      },
+      {
+        "zh": "环境污染的原因之一是有人乱扔垃圾。",
+        "py": "Huánjìng wūrǎn de yuányīn zhī yī shì yǒu rén luàn rēng lājī.",
+        "vn": "Một trong những nguyên nhân ô nhiễm môi trường là có người vứt rác bừa bãi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "扔",
+        "p": "rēng",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "扌 trái → 乃 phải",
+        "rad": "扌 (thủ)",
+        "mean": "ném",
+        "tip": "Bộ tay 扌 + 乃 → dùng tay NÉM, VỨT. Chữ chỉ 5 nét, rất dễ nhớ.",
+        "cf": "仍 (réng – vẫn)",
+        "w": "扔 / 扔掉 / 乱扔"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Được, chỉ cần anh nói một tiếng là tôi đi vứt chúng ngay.",
+        "answer": "好的，只要您说一声，我就马上去把它们扔掉。",
+        "answerPy": "Hǎo de, zhǐyào nín shuō yì shēng, wǒ jiù mǎshàng qù bǎ tāmen rēngdiào.",
+        "note": "把 + N + 扔掉 — 掉 là bổ ngữ kết quả (bài 7).",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Một trong những nguyên nhân gây ô nhiễm môi trường không phải là nhà máy, mà là có người vứt rác bừa bãi.",
+        "answer": "环境污染的原因之一不是工厂，而是有人乱扔垃圾。",
+        "answerPy": "Huánjìng wūrǎn de yuányīn zhī yī bú shì gōngchǎng, ér shì yǒu rén luàn rēng lājī.",
+        "note": "……之一 — 之 là từ bài 11.",
+        "pair": "不是……而是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "扔掉",
+        "py": "rēng diào",
+        "vn": "vứt đi"
+      },
+      {
+        "zh": "乱扔垃圾",
+        "py": "luàn rēng lājī",
+        "vn": "vứt rác bừa bãi"
+      },
+      {
+        "zh": "把……扔掉",
+        "py": "bǎ rēng diào",
+        "vn": "vứt cái gì đi"
+      },
+      {
+        "zh": "别乱扔",
+        "py": "bié luàn rēng",
+        "vn": "đừng vứt bừa"
+      },
+      {
+        "zh": "扔进垃圾桶",
+        "py": "rēng jìn lājītǒng",
+        "vn": "ném vào thùng rác"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 扔掉",
+        "m": "Vứt cái gì đi — 掉 là từ bài 7"
+      },
+      {
+        "s": "乱 + V",
+        "m": "Làm gì một cách bừa bãi: 乱扔, 乱放"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "以",
+    "py": "yǐ",
+    "pos": "Giới từ",
+    "vn": "dựa vào, bằng",
+    "hv": "dĩ",
+    "em": "🔧",
+    "lesson": 2,
+    "explain": [
+      "Giới từ: dùng, bằng (以……+动词). 以……为…… = lấy … làm …. Liên từ: để, nhằm (chỉ mục đích)."
+    ],
+    "usage": "以最快的速度, 以……为……, ……，以表示……",
+    "collo": [
+      "以最快的速度完成",
+      "以严格的标准要求自己",
+      "以……为镜子"
+    ],
+    "ex_zh": "经理您放心，我一定以最快的速度完成。",
+    "ex_py": "Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng.",
+    "ex_vn": "Giám đốc yên tâm, tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.",
+    "exList": [
+      {
+        "zh": "经理您放心，我一定以最快的速度完成。",
+        "py": "Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng.",
+        "vn": "Giám đốc yên tâm, tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất."
+      },
+      {
+        "zh": "我们应该以那些敢说真话的人为镜子，这样才能及时发现自己的缺点。",
+        "py": "Wǒmen yīnggāi yǐ nàxiē gǎn shuō zhēnhuà de rén wéi jìngzi, zhèyàng cái néng jíshí fāxiàn zìjǐ de quēdiǎn.",
+        "vn": "Chúng ta nên lấy những người dám nói thật làm gương, như vậy mới kịp thời phát hiện khuyết điểm của mình."
+      },
+      {
+        "zh": "中国人往往会请重要的朋友去饭店吃饭，以表示对客人的尊重和礼貌。",
+        "py": "Zhōngguó rén wǎngwǎng huì qǐng zhòngyào de péngyou qù fàndiàn chī fàn, yǐ biǎoshì duì kèrén de zūnzhòng hé lǐmào.",
+        "vn": "Người Trung Quốc thường mời bạn bè quan trọng đi nhà hàng ăn cơm, để thể hiện sự tôn trọng và lễ phép với khách."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "以",
+        "p": "yǐ",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "㇙ → 丶 → 人",
+        "rad": "人 (nhân)",
+        "mean": "lấy, dùng",
+        "tip": "Chữ cổ vẽ người cầm đồ vật → DÙNG, LẤY, BẰNG. Có trong 可以, 以为, 以前, 以后, 所以.",
+        "cf": "似 (sì – giống)",
+        "w": "以 / 可以 / 以为 / 以前 / 所以"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Giám đốc cứ yên tâm, chỉ cần giao cho tôi là tôi sẽ hoàn thành với tốc độ nhanh nhất.",
+        "answer": "经理您放心，只要交给我，我就一定以最快的速度完成。",
+        "answerPy": "Jīnglǐ nín fàngxīn, zhǐyào jiāo gěi wǒ, wǒ jiù yídìng yǐ zuì kuài de sùdù wánchéng.",
+        "note": "以 + N + V — bằng, với cái gì mà làm gì.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ khi lấy tiêu chuẩn nghiêm khắc yêu cầu bản thân mới có thể khiến mình trở nên xuất sắc hơn.",
+        "answer": "只有以严格的标准来要求自己才会让自己变得更优秀。",
+        "answerPy": "Zhǐyǒu yǐ yángé de biāozhǔn lái yāoqiú zìjǐ cái huì ràng zìjǐ biàn de gèng yōuxiù.",
+        "note": "只有……才 (Bài 9), 严格 (Bài 12), 标准/优秀 (Bài 10).",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "以最快的速度",
+        "py": "yǐ zuì kuài de sùdù",
+        "vn": "với tốc độ nhanh nhất"
+      },
+      {
+        "zh": "以严格的标准",
+        "py": "yǐ yángé de biāozhǔn",
+        "vn": "với tiêu chuẩn nghiêm khắc"
+      },
+      {
+        "zh": "以……为镜子",
+        "py": "yǐ wèi jìngzi",
+        "vn": "lấy… làm gương"
+      },
+      {
+        "zh": "以胖为美",
+        "py": "yǐ pàng wèi měi",
+        "vn": "lấy béo làm đẹp"
+      },
+      {
+        "zh": "以这种方法",
+        "py": "yǐ zhè zhǒng fāngfǎ",
+        "vn": "bằng cách này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "以 + N + V",
+        "m": "Bằng, với cái gì mà làm gì"
+      },
+      {
+        "s": "以 A 为 B",
+        "m": "Lấy A làm B — 以瘦为美 (bài 13)"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "速度",
+    "py": "sùdù",
+    "pos": "Danh từ",
+    "vn": "tốc độ",
+    "hv": "tốc độ",
+    "em": "⚡",
+    "lesson": 2,
+    "explain": [
+      "Mức độ nhanh chậm. 度 còn có trong 温度 (nhiệt độ), 态度 (thái độ)."
+    ],
+    "usage": "速度很快, 以最快的速度, 按照现在的速度.",
+    "collo": [
+      "以最快的速度",
+      "火车的速度",
+      "速度非常快"
+    ],
+    "ex_zh": "我一定以最快的速度完成。",
+    "ex_py": "Wǒ yídìng yǐ zuì kuài de sùdù wánchéng.",
+    "ex_vn": "Tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.",
+    "exList": [
+      {
+        "zh": "我一定以最快的速度完成。",
+        "py": "Wǒ yídìng yǐ zuì kuài de sùdù wánchéng.",
+        "vn": "Tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất."
+      },
+      {
+        "zh": "现在火车的速度非常快，有时乘坐火车甚至比乘坐飞机更节约时间。",
+        "py": "Xiànzài huǒchē de sùdù fēicháng kuài, yǒushí chéngzuò huǒchē shènzhì bǐ chéngzuò fēijī gèng jiéyuē shíjiān.",
+        "vn": "Bây giờ tốc độ tàu hỏa rất nhanh, có lúc đi tàu thậm chí còn tiết kiệm thời gian hơn đi máy bay."
+      },
+      {
+        "zh": "按照现在的速度，想要在规定时间内完成计划，好像有点儿困难。",
+        "py": "Ànzhào xiànzài de sùdù, xiǎng yào zài guīdìng shíjiān nèi wánchéng jìhuà, hǎoxiàng yǒudiǎnr kùnnan.",
+        "vn": "Theo tốc độ hiện tại, muốn hoàn thành kế hoạch trong thời gian quy định, có vẻ hơi khó."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "速",
+        "p": "sù",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 10,
+        "ord": "束 trong → 辶 bao",
+        "rad": "辶 (sước)",
+        "mean": "nhanh",
+        "tip": "Bộ đi 辶 + 束(bó, buộc) → đi nhanh như bó tên bắn → TỐC, NHANH. 速度 = TỐC ĐỘ.",
+        "cf": "束 (shù – bó)",
+        "w": "速度 / 高速 / 快速"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Theo tốc độ hiện tại, muốn hoàn thành kế hoạch trong thời gian quy định, có vẻ hơi khó.",
+        "answer": "按照现在的速度，想要在规定时间内完成计划，好像有点儿困难。",
+        "answerPy": "Ànzhào xiànzài de sùdù, xiǎng yào zài guīdìng shíjiān nèi wánchéng jìhuà, hǎoxiàng yǒudiǎnr kùnnan.",
+        "note": "按照 (Bài 4), 规定 (Bài 12), 好像 (Bài 6).",
+        "pair": "按照……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "速度很快",
+        "py": "sùdù hěn kuài",
+        "vn": "tốc độ rất nhanh"
+      },
+      {
+        "zh": "以最快的速度",
+        "py": "yǐ zuì kuài de sùdù",
+        "vn": "với tốc độ nhanh nhất"
+      },
+      {
+        "zh": "火车的速度",
+        "py": "huǒchē de sùdù",
+        "vn": "tốc độ tàu hoả"
+      },
+      {
+        "zh": "提高速度",
+        "py": "tí gāo sùdù",
+        "vn": "nâng tốc độ"
+      },
+      {
+        "zh": "速度慢",
+        "py": "sùdù màn",
+        "vn": "tốc độ chậm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "以 + … + 的速度 + V",
+        "m": "Làm gì với tốc độ thế nào"
+      },
+      {
+        "s": "速度 + 快 / 慢",
+        "m": "Tốc độ nhanh / chậm — không nói 速度高"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "地球",
+    "py": "dìqiú",
+    "pos": "Danh từ",
+    "vn": "trái đất",
+    "hv": "địa cầu",
+    "em": "🌍",
+    "lesson": 3,
+    "explain": [
+      "Hành tinh chúng ta đang sống. 地球一小时 = Giờ Trái đất."
+    ],
+    "usage": "保护地球, 地球环境, 地球是我们共同的家.",
+    "collo": [
+      "保护地球",
+      "地球环境",
+      "地球一小时"
+    ],
+    "ex_zh": "早上听新闻说明天有一个叫\"地球一小时\"的活动，你对这个活动了解吗？",
+    "ex_py": "Zǎoshang tīng xīnwén shuō míngtiān yǒu yí ge jiào \"Dìqiú Yì Xiǎoshí\" de huódòng, nǐ duì zhège huódòng liǎojiě ma?",
+    "ex_vn": "Sáng nay nghe tin tức nói ngày mai có hoạt động tên \"Giờ Trái đất\", bạn có biết về hoạt động này không?",
+    "exList": [
+      {
+        "zh": "早上听新闻说明天有一个叫\"地球一小时\"的活动，你对这个活动了解吗？",
+        "py": "Zǎoshang tīng xīnwén shuō míngtiān yǒu yí ge jiào \"Dìqiú Yì Xiǎoshí\" de huódòng, nǐ duì zhège huódòng liǎojiě ma?",
+        "vn": "Sáng nay nghe tin tức nói ngày mai có hoạt động tên \"Giờ Trái đất\", bạn có biết về hoạt động này không?"
+      },
+      {
+        "zh": "地球是我们共同的家，只有大家共同努力，才能使我们的家变得更美丽。",
+        "py": "Dìqiú shì wǒmen gòngtóng de jiā, zhǐyǒu dàjiā gòngtóng nǔlì, cái néng shǐ wǒmen de jiā biàn de gèng měilì.",
+        "vn": "Trái đất là ngôi nhà chung của chúng ta, chỉ khi mọi người cùng nỗ lực mới có thể khiến ngôi nhà đẹp hơn."
+      },
+      {
+        "zh": "保护地球环境，并不是一件离我们很远、很难做到的事情。",
+        "py": "Bǎohù dìqiú huánjìng, bìng bú shì yí jiàn lí wǒmen hěn yuǎn, hěn nán zuòdào de shìqing.",
+        "vn": "Bảo vệ môi trường Trái đất không hề là việc xa vời, khó làm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "球",
+        "p": "qiú",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "王 trái → 求 phải",
+        "rad": "王 (ngọc)",
+        "mean": "quả cầu",
+        "tip": "Bộ ngọc 王 + 求(biểu âm) → viên ngọc tròn → QUẢ CẦU, BÓNG. 地球 = quả cầu đất = TRÁI ĐẤT.",
+        "cf": "求 (qiú – cầu xin)",
+        "w": "地球 / 足球 / 篮球"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bảo vệ môi trường Trái đất không phải là việc xa vời khó làm, mà là việc ai cũng làm được mỗi ngày.",
+        "answer": "保护地球环境并不是一件离我们很远、很难做到的事情，而是每个人每天都能做的事。",
+        "answerPy": "Bǎohù dìqiú huánjìng bìng bú shì yí jiàn lí wǒmen hěn yuǎn, hěn nán zuòdào de shìqing, ér shì měi ge rén měi tiān dōu néng zuò de shì.",
+        "note": "并不 là từ bài 4 — phản bác điều người ta tưởng.",
+        "pair": "不是……而是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "保护地球",
+        "py": "bǎohù dìqiú",
+        "vn": "bảo vệ Trái đất"
+      },
+      {
+        "zh": "地球环境",
+        "py": "dìqiú huánjìng",
+        "vn": "môi trường Trái đất"
+      },
+      {
+        "zh": "美丽的地球",
+        "py": "měilì de dìqiú",
+        "vn": "Trái đất tươi đẹp"
+      },
+      {
+        "zh": "地球变暖",
+        "py": "dìqiú biàn nuǎn",
+        "vn": "Trái đất nóng lên"
+      },
+      {
+        "zh": "地球一小时",
+        "py": "dìqiú yì xiǎoshí",
+        "vn": "Giờ Trái đất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "保护 + 地球",
+        "m": "Bảo vệ Trái đất — 保护 là từ bài 12"
+      },
+      {
+        "s": "地 + 球",
+        "m": "Quả cầu (球) đất (地)"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "既然",
+    "py": "jìrán",
+    "pos": "Liên từ",
+    "vn": "vì, đã… thì…",
+    "hv": "ký nhiên",
+    "em": "🔗",
+    "lesson": 3,
+    "explain": [
+      "Dùng ở vế đầu, nêu sự thật đã có, vế sau (就/也/还/那么) rút ra kết luận. Ngữ pháp trọng tâm."
+    ],
+    "usage": "既然……，就/那么……",
+    "collo": [
+      "既然这样，就……",
+      "既然不愿意……，为什么还……",
+      "既然明天……，那么……"
+    ],
+    "ex_zh": "既然明天晚上公司会关灯停电，那么我们肯定不用加班了。",
+    "ex_py": "Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.",
+    "ex_vn": "Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi.",
+    "exList": [
+      {
+        "zh": "既然明天晚上公司会关灯停电，那么我们肯定不用加班了。",
+        "py": "Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.",
+        "vn": "Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi."
+      },
+      {
+        "zh": "A：你既然不愿意打球，为什么还要打？B：我是不得不打啊，因为这些天我又胖了好几斤。",
+        "py": "A: Nǐ jìrán bú yuànyì dǎ qiú, wèishénme hái yào dǎ? B: Wǒ shì bùdébù dǎ a, yīnwèi zhèxiē tiān wǒ yòu pàngle hǎo jǐ jīn.",
+        "vn": "A: Bạn đã không muốn chơi bóng, sao còn chơi? B: Tôi buộc phải chơi, vì mấy hôm nay tôi lại béo thêm mấy cân."
+      },
+      {
+        "zh": "既然这样，就只好安排在下周了。",
+        "py": "Jìrán zhèyàng, jiù zhǐhǎo ānpái zài xià zhōu le.",
+        "vn": "Đã vậy thì đành sắp xếp vào tuần sau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "既",
+        "p": "jì",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "旣 trái → 旡 phải",
+        "rad": "旡 (ký)",
+        "mean": "đã",
+        "tip": "Hình người ăn xong quay đầu đi → ĐÃ XONG. 既然 = đã như vậy; 既……又 = vừa … vừa (Bài 7).",
+        "cf": "即 (jí – tức là)",
+        "w": "既然 / 既……又……"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đã vậy thì đành sắp xếp vào tuần sau.",
+        "answer": "既然这样，就只好安排在下周了。",
+        "answerPy": "Jìrán zhèyàng, jiù zhǐhǎo ānpái zài xià zhōu le.",
+        "note": "只好 ôn lại Bài 3.",
+        "pair": "既然……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đã có 15 trên 20 người đồng ý, thì chúng ta thông qua kế hoạch này.",
+        "answer": "既然二十个人中有十五个人同意，那我们就通过这个计划了。",
+        "answerPy": "Jìrán èrshí ge rén zhōng yǒu shíwǔ ge rén tóngyì, nà wǒmen jiù tōngguò zhège jìhuà le.",
+        "note": "通过 ôn lại Bài 9.",
+        "pair": "既然……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "既然这样，就……",
+        "py": "jìrán zhèyàng jiù",
+        "vn": "đã vậy thì…"
+      },
+      {
+        "zh": "既然……那么……",
+        "py": "jìrán nàme",
+        "vn": "đã… thì…"
+      },
+      {
+        "zh": "既然来了",
+        "py": "jìrán lái le",
+        "vn": "đã đến rồi"
+      },
+      {
+        "zh": "既然不愿意",
+        "py": "jìrán bú yuànyì",
+        "vn": "đã không muốn"
+      },
+      {
+        "zh": "既然明天有空",
+        "py": "jìrán míngtiān yǒu kòng",
+        "vn": "đã mai rảnh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "既然 + sự thật đã biết，就 / 那么 + kết luận",
+        "m": "Đã … thì …"
+      },
+      {
+        "s": "既然 ≠ 因为",
+        "m": "既然 nêu điều CẢ HAI ĐÃ BIẾT; 因为 nêu nguyên nhân mới"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "停",
+    "py": "tíng",
+    "pos": "Động từ",
+    "vn": "ngừng, cúp, cắt",
+    "hv": "đình",
+    "em": "⏸️",
+    "lesson": 3,
+    "explain": [
+      "Dừng lại, ngừng (停电 cúp điện, 停车 đỗ xe, 停止 dừng lại). 不停地 = không ngừng."
+    ],
+    "usage": "停电, 停车, 不停地.",
+    "collo": [
+      "关灯停电",
+      "停车",
+      "不停地变化"
+    ],
+    "ex_zh": "既然明天晚上公司会关灯停电，那么我们肯定不用加班了。",
+    "ex_py": "Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.",
+    "ex_vn": "Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi.",
+    "exList": [
+      {
+        "zh": "既然明天晚上公司会关灯停电，那么我们肯定不用加班了。",
+        "py": "Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.",
+        "vn": "Đã là mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi."
+      },
+      {
+        "zh": "随着年龄的增长，他们会发现生活总是在不停地变化。",
+        "py": "Suízhe niánlíng de zēngzhǎng, tāmen huì fāxiàn shēnghuó zǒngshì zài bù tíng de biànhuà.",
+        "vn": "Cùng với tuổi tác tăng lên, họ sẽ phát hiện cuộc sống luôn không ngừng thay đổi."
+      },
+      {
+        "zh": "这儿不能停车，请把车停到停车场去。",
+        "py": "Zhèr bù néng tíng chē, qǐng bǎ chē tíngdào tíngchēchǎng qù.",
+        "vn": "Ở đây không được đỗ xe, xin đỗ xe vào bãi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "停",
+        "p": "tíng",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "亻 trái → 亭 phải",
+        "rad": "亻 (nhân)",
+        "mean": "dừng",
+        "tip": "Người 亻 + 亭(đình, nhà nghỉ chân) → người DỪNG lại nghỉ ở đình → DỪNG, NGỪNG.",
+        "cf": "亭 (tíng – đình)",
+        "w": "停 / 停电 / 停车 / 不停"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ở đây không được đỗ xe, nếu anh muốn đỗ thì xin đỗ vào bãi.",
+        "answer": "这儿不能停车，要是您想停，就请把车停到停车场去。",
+        "answerPy": "Zhèr bù néng tíngchē, yàoshi nín xiǎng tíng, jiù qǐng bǎ chē tíng dào tíngchēchǎng qù.",
+        "note": "把 + 车 + 停到 + nơi chốn + 去.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "停车",
+        "py": "tíng chē",
+        "vn": "đỗ xe"
+      },
+      {
+        "zh": "关灯停电",
+        "py": "guān dēng tíng diàn",
+        "vn": "tắt đèn cắt điện"
+      },
+      {
+        "zh": "不停地变化",
+        "py": "bù tíng de biànhuà",
+        "vn": "thay đổi không ngừng"
+      },
+      {
+        "zh": "停下来",
+        "py": "tíng xiàlái",
+        "vn": "dừng lại"
+      },
+      {
+        "zh": "雨停了",
+        "py": "yǔ tíng le",
+        "vn": "mưa tạnh rồi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + 车 + 停到 + nơi chốn",
+        "m": "Đỗ xe vào đâu"
+      },
+      {
+        "s": "不停地 + V",
+        "m": "Làm gì không ngừng"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "得意",
+    "py": "déyì",
+    "pos": "Tính từ",
+    "vn": "hể hả, đắc chí",
+    "hv": "đắc ý",
+    "em": "😏",
+    "lesson": 3,
+    "explain": [
+      "Vui vẻ tự mãn vì đạt được điều gì. Thường: 得意的样子, 因……而得意."
+    ],
+    "usage": "看你得意的样子, 因一时的成功而得意.",
+    "collo": [
+      "得意的样子",
+      "别太得意",
+      "因成功而得意"
+    ],
+    "ex_zh": "看你得意的样子！还以为你高兴是为了支持环保，原来是因为不用加班啊！",
+    "ex_py": "Kàn nǐ déyì de yàngzi! Hái yǐwéi nǐ gāoxìng shì wèile zhīchí huánbǎo, yuánlái shì yīnwèi búyòng jiā bān a!",
+    "ex_vn": "Nhìn cái vẻ hể hả của bạn kìa! Còn tưởng bạn vui vì ủng hộ bảo vệ môi trường, hóa ra là vì không phải tăng ca!",
+    "exList": [
+      {
+        "zh": "看你得意的样子！还以为你高兴是为了支持环保，原来是因为不用加班啊！",
+        "py": "Kàn nǐ déyì de yàngzi! Hái yǐwéi nǐ gāoxìng shì wèile zhīchí huánbǎo, yuánlái shì yīnwèi búyòng jiā bān a!",
+        "vn": "Nhìn cái vẻ hể hả của bạn kìa! Còn tưởng bạn vui vì ủng hộ bảo vệ môi trường, hóa ra là vì không phải tăng ca!"
+      },
+      {
+        "zh": "不要因一时的成功而得意，也不要因一时的失败而伤心。",
+        "py": "Búyào yīn yìshí de chénggōng ér déyì, yě búyào yīn yìshí de shībài ér shāngxīn.",
+        "vn": "Đừng vì thành công nhất thời mà đắc chí, cũng đừng vì thất bại nhất thời mà đau lòng."
+      },
+      {
+        "zh": "他考了第一名，得意得连饭都忘了吃。",
+        "py": "Tā kǎole dì-yī míng, déyì de lián fàn dōu wàngle chī.",
+        "vn": "Anh ấy thi được hạng nhất, hể hả đến mức quên cả ăn cơm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "意",
+        "p": "yì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "音 trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "ý",
+        "tip": "音(âm thanh) + 心(tim) → tiếng lòng → Ý. 得意 = được ý mình → ĐẮC Ý, HỂ HẢ.",
+        "cf": "思 (sī – nghĩ)",
+        "w": "得意 / 意思 / 意见 / 满意"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng vì thành công nhất thời mà đắc chí, cũng đừng vì thất bại nhất thời mà đau lòng.",
+        "answer": "不要因一时的成功而得意，也不要因一时的失败而伤心。",
+        "answerPy": "Búyào yīn yìshí de chénggōng ér déyì, yě búyào yīn yìshí de shībài ér shāngxīn.",
+        "note": "成功/失败 ôn lại Bài 9, 伤心 (Bài 8).",
+        "pair": "时……时……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "得意的样子",
+        "py": "déyì de yàngzi",
+        "vn": "vẻ đắc chí"
+      },
+      {
+        "zh": "别太得意",
+        "py": "bié tài déyì",
+        "vn": "đừng đắc ý quá"
+      },
+      {
+        "zh": "很得意",
+        "py": "hěn déyì",
+        "vn": "rất hể hả"
+      },
+      {
+        "zh": "得意地笑",
+        "py": "déyì de xiào",
+        "vn": "cười đắc ý"
+      },
+      {
+        "zh": "因成功而得意",
+        "py": "yīn chénggōng ér déyì",
+        "vn": "đắc chí vì thành công"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "得意的 + 样子",
+        "m": "Dáng vẻ đắc chí — 样子 là từ bài 5"
+      },
+      {
+        "s": "得意 ≠ 满意",
+        "m": "得意 là tự mãn về mình; 满意 là hài lòng với cái gì"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "目的",
+    "py": "mùdì",
+    "pos": "Danh từ",
+    "vn": "mục đích",
+    "hv": "mục đích",
+    "em": "🎯",
+    "lesson": 3,
+    "explain": [
+      "Điều muốn đạt được. 目的是……, 达到目的, 目的很简单."
+    ],
+    "usage": "目的是……, 达到目的, 主要目的.",
+    "collo": [
+      "目的挺简单",
+      "达到目的",
+      "活动的目的"
+    ],
+    "ex_zh": "其实目的挺简单的，就是提醒人们节约用电，希望引起人们对气候变暖问题的关注。",
+    "ex_py": "Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn, xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.",
+    "ex_vn": "Thực ra mục đích khá đơn giản, chính là nhắc nhở mọi người tiết kiệm điện, hy vọng khơi dậy sự quan tâm đến vấn đề khí hậu nóng lên.",
+    "exList": [
+      {
+        "zh": "其实目的挺简单的，就是提醒人们节约用电，希望引起人们对气候变暖问题的关注。",
+        "py": "Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn, xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.",
+        "vn": "Thực ra mục đích khá đơn giản, chính là nhắc nhở mọi người tiết kiệm điện, hy vọng khơi dậy sự quan tâm đến vấn đề khí hậu nóng lên."
+      },
+      {
+        "zh": "\"地球一小时\"是个什么活动？这个活动的目的是什么？",
+        "py": "\"Dìqiú Yì Xiǎoshí\" shì ge shénme huódòng? Zhège huódòng de mùdì shì shénme?",
+        "vn": "\"Giờ Trái đất\" là hoạt động gì? Mục đích của hoạt động này là gì?"
+      },
+      {
+        "zh": "为了达到目的，他坚持每天练习三个小时。",
+        "py": "Wèile dádào mùdì, tā jiānchí měi tiān liànxí sān ge xiǎoshí.",
+        "vn": "Để đạt được mục đích, anh ấy kiên trì luyện tập ba tiếng mỗi ngày."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "目",
+        "p": "mù",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 5,
+        "ord": "丨 → 𠃍 → 一 → 一 → 一",
+        "rad": "目 (mục)",
+        "mean": "mắt",
+        "tip": "Tượng hình con MẮT dựng đứng. Mắt nhìn vào đích → 目的 = MỤC ĐÍCH. Chú ý 的 ở đây đọc dì.",
+        "cf": "日 (rì – mặt trời, 4 nét)",
+        "w": "目的 / 节目 / 题目"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Để đạt được mục đích, anh ấy kiên trì luyện tập ba tiếng mỗi ngày.",
+        "answer": "为了达到目的，他坚持每天练习三个小时。",
+        "answerPy": "Wèile dádào mùdì, tā jiānchí měi tiān liànxí sān ge xiǎoshí.",
+        "note": "达到 (Bài 12), 坚持 (Bài 9).",
+        "pair": "为了……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "达到目的",
+        "py": "dádào mùdì",
+        "vn": "đạt mục đích"
+      },
+      {
+        "zh": "活动的目的",
+        "py": "huódòng de mùdì",
+        "vn": "mục đích hoạt động"
+      },
+      {
+        "zh": "目的很简单",
+        "py": "mùdì hěn jiǎndān",
+        "vn": "mục đích rất đơn giản"
+      },
+      {
+        "zh": "为了这个目的",
+        "py": "wèile zhège mùdì",
+        "vn": "vì mục đích này"
+      },
+      {
+        "zh": "学习的目的",
+        "py": "xuéxí de mùdì",
+        "vn": "mục đích học tập"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "达到 + 目的",
+        "m": "Đạt được mục đích — 达到 là từ bài 12"
+      },
+      {
+        "s": "N + 的目的 + 是 + …",
+        "m": "Mục đích của cái gì là …"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "暖",
+    "py": "nuǎn",
+    "pos": "Tính từ",
+    "vn": "ấm, ấm áp",
+    "hv": "noãn",
+    "em": "☀️",
+    "lesson": 3,
+    "explain": [
+      "Ấm (không lạnh). 暖和 = ấm áp, 变暖 = ấm lên, 气候变暖 = khí hậu nóng lên."
+    ],
+    "usage": "气候变暖, 天气暖和, 暖气.",
+    "collo": [
+      "气候变暖",
+      "天气变暖",
+      "暖和"
+    ],
+    "ex_zh": "希望引起人们对气候变暖问题的关注。",
+    "ex_py": "Xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.",
+    "ex_vn": "Hy vọng khơi dậy sự quan tâm của mọi người đến vấn đề khí hậu nóng lên.",
+    "exList": [
+      {
+        "zh": "希望引起人们对气候变暖问题的关注。",
+        "py": "Xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.",
+        "vn": "Hy vọng khơi dậy sự quan tâm của mọi người đến vấn đề khí hậu nóng lên."
+      },
+      {
+        "zh": "春天来了，天气一天比一天暖和。",
+        "py": "Chūntiān lái le, tiānqì yì tiān bǐ yì tiān nuǎnhuo.",
+        "vn": "Mùa xuân đến rồi, thời tiết ngày một ấm hơn."
+      },
+      {
+        "zh": "随着地球气候变暖，很多地方的夏天越来越热。",
+        "py": "Suízhe dìqiú qìhòu biàn nuǎn, hěn duō dìfang de xiàtiān yuè lái yuè rè.",
+        "vn": "Cùng với khí hậu Trái đất nóng lên, mùa hè nhiều nơi ngày càng nóng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "暖",
+        "p": "nuǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "日 trái → 爰 phải",
+        "rad": "日 (nhật)",
+        "mean": "ấm",
+        "tip": "Mặt trời 日 + 爰 → có nắng → ẤM. Phân biệt với 缓 (huǎn – chậm, bộ 纟).",
+        "cf": "缓 (huǎn – chậm)",
+        "w": "暖 / 暖和 / 变暖 / 暖气"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cùng với khí hậu Trái đất nóng lên, mùa hè nhiều nơi ngày càng nóng.",
+        "answer": "随着地球气候变暖，很多地方的夏天越来越热。",
+        "answerPy": "Suízhe dìqiú qìhòu biàn nuǎn, hěn duō dìfang de xiàtiān yuè lái yuè rè.",
+        "note": "随着 ôn lại ngữ pháp Bài 13, 气候 (Bài 9).",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "天气变暖",
+        "py": "tiānqì biàn nuǎn",
+        "vn": "thời tiết ấm lên"
+      },
+      {
+        "zh": "气候变暖",
+        "py": "qìhòu biàn nuǎn",
+        "vn": "khí hậu ấm lên"
+      },
+      {
+        "zh": "暖和",
+        "py": "nuǎnhuo",
+        "vn": "ấm áp"
+      },
+      {
+        "zh": "暖一点儿",
+        "py": "nuǎn yìdiǎnr",
+        "vn": "ấm hơn chút"
+      },
+      {
+        "zh": "房间很暖",
+        "py": "fángjiān hěn nuǎn",
+        "vn": "phòng rất ấm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "变 + 暖",
+        "m": "Ấm dần lên — 气候 là từ bài 7"
+      },
+      {
+        "s": "暖 ↔ 冷",
+        "m": "Ấm ↔ lạnh"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "塑料袋",
+    "py": "sùliàodài",
+    "pos": "Danh từ",
+    "vn": "túi nilông, túi nhựa",
+    "hv": "tố liệu đại",
+    "em": "🛍️",
+    "lesson": 4,
+    "explain": [
+      "Túi làm bằng nhựa. 塑料 = nhựa, 袋 = túi (纸袋 túi giấy, Bài 13)."
+    ],
+    "usage": "使用塑料袋, 免费塑料袋, 拒绝使用塑料袋.",
+    "collo": [
+      "节约使用塑料袋",
+      "免费塑料袋",
+      "拒绝使用塑料袋"
+    ],
+    "ex_zh": "塑料袋给人们的生活带来方便，受到人们的普遍欢迎，可是，它的大量使用也带来了严重的环境污染问题。",
+    "ex_py": "Sùliàodài gěi rénmen de shēnghuó dàilái fāngbiàn, shòudào rénmen de pǔbiàn huānyíng, kěshì, tā de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí.",
+    "ex_vn": "Túi nilông mang lại tiện lợi cho cuộc sống, được mọi người đón nhận rộng rãi, nhưng việc dùng với số lượng lớn cũng mang lại vấn đề ô nhiễm môi trường nghiêm trọng.",
+    "exList": [
+      {
+        "zh": "塑料袋给人们的生活带来方便，受到人们的普遍欢迎。",
+        "py": "Sùliàodài gěi rénmen de shēnghuó dàilái fāngbiàn, shòudào rénmen de pǔbiàn huānyíng.",
+        "vn": "Túi nilông mang lại tiện lợi cho cuộc sống, được mọi người đón nhận rộng rãi."
+      },
+      {
+        "zh": "一些国家规定，超市、商场不能为顾客提供免费塑料袋。",
+        "py": "Yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài.",
+        "vn": "Một số nước quy định, siêu thị, trung tâm thương mại không được cung cấp túi nilông miễn phí cho khách."
+      },
+      {
+        "zh": "请大家节约使用塑料袋，或者购物时自备购物袋，甚至拒绝使用塑料袋。",
+        "py": "Qǐng dàjiā jiéyuē shǐyòng sùliàodài, huòzhě gòuwù shí zì bèi gòuwùdài, shènzhì jùjué shǐyòng sùliàodài.",
+        "vn": "Mong mọi người tiết kiệm dùng túi nilông, hoặc tự mang túi khi mua sắm, thậm chí từ chối dùng túi nilông."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "塑",
+        "p": "sù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "朔 trên → 土 dưới",
+        "rad": "土 (thổ)",
+        "mean": "nặn, nhựa",
+        "tip": "朔 + 土(đất) → NẶN đất thành hình → chất dẻo có thể nặn = 塑料 (NHỰA).",
+        "cf": "朔 (shuò – mùng một)",
+        "w": "塑料 / 塑料袋 / 雕塑"
+      },
+      {
+        "c": "袋",
+        "p": "dài",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "代 trên → 衣 dưới",
+        "rad": "衣 (y)",
+        "mean": "túi",
+        "tip": "代(biểu âm) + 衣(áo, vải) → đồ bằng vải để đựng → TÚI. 纸袋 (Bài 13), 塑料袋, 口袋.",
+        "cf": "代 (dài – thay)",
+        "w": "塑料袋 / 纸袋 / 口袋"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chính vì túi nilông gây ô nhiễm nghiêm trọng, nên một số nước quy định siêu thị không được phát miễn phí cho khách.",
+        "answer": "正因为塑料袋污染严重，所以一些国家规定，超市不能为顾客提供免费塑料袋。",
+        "answerPy": "Zhèng yīnwèi sùliàodài wūrǎn yánzhòng, suǒyǐ yìxiē guójiā guīdìng, chāoshì bù néng wèi gùkè tígōng miǎnfèi sùliàodài.",
+        "note": "规定 là từ bài 12, 提供 là từ bài 3, 顾客 là từ bài 3.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "免费塑料袋",
+        "py": "miǎnfèi sùliàodài",
+        "vn": "túi nilông miễn phí"
+      },
+      {
+        "zh": "使用塑料袋",
+        "py": "shǐyòng sùliàodài",
+        "vn": "dùng túi nilông"
+      },
+      {
+        "zh": "拒绝使用塑料袋",
+        "py": "jùjué shǐyòng sùliàodài",
+        "vn": "từ chối dùng túi nilông"
+      },
+      {
+        "zh": "一个塑料袋",
+        "py": "yí gè sùliàodài",
+        "vn": "một cái túi nilông"
+      },
+      {
+        "zh": "少用塑料袋",
+        "py": "shǎo yòng sùliàodài",
+        "vn": "dùng ít túi nilông"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "塑料 + 袋",
+        "m": "Túi (袋) bằng nhựa (塑料) — cùng kiểu 纸袋 bài 13"
+      },
+      {
+        "s": "拒绝 / 减少 + 使用 + 塑料袋",
+        "m": "Từ chối / giảm dùng túi nilông"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "于是",
+    "py": "yúshì",
+    "pos": "Liên từ",
+    "vn": "thế là",
+    "hv": "vu thị",
+    "em": "➡️",
+    "lesson": 4,
+    "explain": [
+      "Dùng ở vế sau, sự việc sau xảy ra ngay tiếp theo sự việc trước (quan hệ tiếp nối). So sánh 因此 (nhấn mạnh nhân-quả)."
+    ],
+    "usage": "……，于是……",
+    "collo": [
+      "于是我爸妈就……",
+      "于是就有了……",
+      "于是，一些国家规定……"
+    ],
+    "ex_zh": "它的大量使用也带来了严重的环境污染问题。于是，一些国家规定，超市、商场不能为顾客提供免费塑料袋。",
+    "ex_py": "Tā de dàliàng shǐyòng yě dàiláile yánzhòng de huánjìng wūrǎn wèntí. Yúshì, yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài.",
+    "ex_vn": "Việc dùng với số lượng lớn cũng mang lại ô nhiễm nghiêm trọng. Thế là, một số nước quy định siêu thị không được cung cấp túi nilông miễn phí.",
+    "exList": [
+      {
+        "zh": "于是，一些国家规定，超市、商场不能为顾客提供免费塑料袋。",
+        "py": "Yúshì, yìxiē guójiā guīdìng, chāoshì, shāngchǎng bù néng wèi gùkè tígōng miǎnfèi sùliàodài.",
+        "vn": "Thế là, một số nước quy định siêu thị, trung tâm thương mại không được cung cấp túi nilông miễn phí."
+      },
+      {
+        "zh": "听爷爷奶奶说，我妹妹出生那天，正好下了一场大雪，于是我爸妈就给她取名叫夏雪。",
+        "py": "Tīng yéye nǎinai shuō, wǒ mèimei chūshēng nà tiān, zhènghǎo xiàle yì cháng dà xuě, yúshì wǒ bàmā jiù gěi tā qǔ míng jiào Xià Xuě.",
+        "vn": "Nghe ông bà nói, ngày em gái tôi sinh ra vừa đúng có trận tuyết lớn, thế là bố mẹ đặt tên em là Hạ Tuyết."
+      },
+      {
+        "zh": "大家都同意寒假去旅行，于是，我们开始讨论去哪里旅行的问题。",
+        "py": "Dàjiā dōu tóngyì hánjià qù lǚxíng, yúshì, wǒmen kāishǐ tǎolùn qù nǎlǐ lǚxíng de wèntí.",
+        "vn": "Mọi người đều đồng ý nghỉ đông đi du lịch, thế là chúng tôi bắt đầu thảo luận đi đâu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "于",
+        "p": "yú",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 3,
+        "ord": "一 → 一 → 亅",
+        "rad": "二 (nhị)",
+        "mean": "ở, tại",
+        "tip": "Chữ 3 nét, giới từ văn viết \"ở, tại, với\". 于是 = ở việc này → THẾ LÀ; 由于 (Bài 10), 对于 (Bài 12), 终于.",
+        "cf": "干 (gān – khô)",
+        "w": "于是 / 由于 / 对于 / 终于"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mọi người đều đồng ý nghỉ đông đi du lịch, thế là chúng tôi bắt đầu bàn xem nên đi đâu.",
+        "answer": "大家都同意寒假去旅行，于是，我们开始讨论去哪里旅行的问题。",
+        "answerPy": "Dàjiā dōu tóngyì hánjià qù lǚxíng, yúshì, wǒmen kāishǐ tǎolùn qù nǎlǐ lǚxíng de wèntí.",
+        "note": "讨论 là từ bài 13; 于是 nêu diễn biến tiếp theo, khác 所以.",
+        "pair": "于是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "于是就",
+        "py": "yúshì jiù",
+        "vn": "thế là liền"
+      },
+      {
+        "zh": "于是，……",
+        "py": "yúshì",
+        "vn": "thế là,…"
+      },
+      {
+        "zh": "于是有了",
+        "py": "yúshì yǒu le",
+        "vn": "thế là có được"
+      },
+      {
+        "zh": "于是大家",
+        "py": "yúshì dàjiā",
+        "vn": "thế là mọi người"
+      },
+      {
+        "zh": "于是决定",
+        "py": "yúshì juédìng",
+        "vn": "thế là quyết định"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "mệnh đề 1，于是 + mệnh đề 2",
+        "m": "…, thế là … (việc sau nối tiếp việc trước)"
+      },
+      {
+        "s": "于是 ≠ 所以",
+        "m": "于是 nêu diễn biến tiếp theo; 所以 nêu kết quả do nguyên nhân"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "鼓励",
+    "py": "gǔlì",
+    "pos": "Động từ",
+    "vn": "khuyến khích",
+    "hv": "cổ lệ",
+    "em": "📣",
+    "lesson": 4,
+    "explain": [
+      "Cổ vũ, động viên ai làm việc gì. 鼓励 + người + làm gì."
+    ],
+    "usage": "鼓励大家……, 受到鼓励, 老师的鼓励.",
+    "collo": [
+      "鼓励大家购买",
+      "鼓励孩子",
+      "老师的鼓励"
+    ],
+    "ex_zh": "并且鼓励大家购买可以多次使用的购物袋。",
+    "ex_py": "Bìngqiě gǔlì dàjiā gòumǎi kěyǐ duō cì shǐyòng de gòuwùdài.",
+    "ex_vn": "Hơn nữa khuyến khích mọi người mua túi mua sắm dùng được nhiều lần.",
+    "exList": [
+      {
+        "zh": "并且鼓励大家购买可以多次使用的购物袋。",
+        "py": "Bìngqiě gǔlì dàjiā gòumǎi kěyǐ duō cì shǐyòng de gòuwùdài.",
+        "vn": "Hơn nữa khuyến khích mọi người mua túi mua sắm dùng được nhiều lần."
+      },
+      {
+        "zh": "为了鼓励大家少抽烟，人们将每年的4月7日定为\"世界无烟日\"。",
+        "py": "Wèile gǔlì dàjiā shǎo chōu yān, rénmen jiāng měi nián de sì yuè qī rì dìngwéi \"Shìjiè Wú Yān Rì\".",
+        "vn": "Để khuyến khích mọi người hút thuốc ít đi, người ta lấy ngày 7 tháng 4 hằng năm làm \"Ngày thế giới không thuốc lá\"."
+      },
+      {
+        "zh": "孩子失败的时候，父母应该鼓励他，而不是批评他。",
+        "py": "Háizi shībài de shíhou, fùmǔ yīnggāi gǔlì tā, ér bú shì pīpíng tā.",
+        "vn": "Khi con thất bại, cha mẹ nên khuyến khích nó, chứ không phải phê bình."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "鼓",
+        "p": "gǔ",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "壴 trái → 支 phải",
+        "rad": "鼓 (cổ)",
+        "mean": "trống",
+        "tip": "壴(cái trống) + 支(tay cầm dùi) → ĐÁNH TRỐNG cổ vũ → 鼓励 = KHUYẾN KHÍCH, 鼓掌 = vỗ tay.",
+        "cf": "支 (zhī – cành, chi)",
+        "w": "鼓励 / 鼓掌"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Khi con thất bại, cha mẹ nên khuyến khích nó, chứ không phải phê bình.",
+        "answer": "孩子失败的时候，父母应该鼓励他，而不是批评他。",
+        "answerPy": "Háizi shībài de shíhou, fùmǔ yīnggāi gǔlì tā, ér bú shì pīpíng tā.",
+        "note": "而不是 (Bài 8), 批评 (Bài 6).",
+        "pair": "而不是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "鼓励孩子",
+        "py": "gǔlì háizi",
+        "vn": "động viên con"
+      },
+      {
+        "zh": "鼓励大家",
+        "py": "gǔlì dàjiā",
+        "vn": "khuyến khích mọi người"
+      },
+      {
+        "zh": "老师的鼓励",
+        "py": "lǎoshī de gǔlì",
+        "vn": "sự động viên của thầy"
+      },
+      {
+        "zh": "鼓励他努力",
+        "py": "gǔlì tā nǔlì",
+        "vn": "khích lệ anh ấy cố gắng"
+      },
+      {
+        "zh": "受到鼓励",
+        "py": "shòudào gǔlì",
+        "vn": "được động viên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "鼓励 + ai + V",
+        "m": "Khuyến khích ai làm gì"
+      },
+      {
+        "s": "鼓励 ↔ 批评",
+        "m": "Động viên ↔ phê bình"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "拒绝",
+    "py": "jùjué",
+    "pos": "Động từ",
+    "vn": "từ chối",
+    "hv": "cự tuyệt",
+    "em": "🙅",
+    "lesson": 4,
+    "explain": [
+      "Không nhận, không đồng ý. Trái nghĩa: 接受 (Bài 6)."
+    ],
+    "usage": "拒绝使用……, 拒绝朋友的要求, 被拒绝.",
+    "collo": [
+      "拒绝使用塑料袋",
+      "拒绝别人的要求",
+      "不好意思拒绝"
+    ],
+    "ex_zh": "甚至拒绝使用塑料袋。",
+    "ex_py": "Shènzhì jùjué shǐyòng sùliàodài.",
+    "ex_vn": "Thậm chí từ chối dùng túi nilông.",
+    "exList": [
+      {
+        "zh": "请大家节约使用塑料袋，或者购物时自备购物袋，甚至拒绝使用塑料袋。",
+        "py": "Qǐng dàjiā jiéyuē shǐyòng sùliàodài, huòzhě gòuwù shí zì bèi gòuwùdài, shènzhì jùjué shǐyòng sùliàodài.",
+        "vn": "Mong mọi người tiết kiệm dùng túi nilông, hoặc tự mang túi khi mua sắm, thậm chí từ chối dùng túi nilông."
+      },
+      {
+        "zh": "有的人总是不好意思拒绝朋友的要求，害怕这样会影响两个人的感情。",
+        "py": "Yǒude rén zǒngshì bù hǎoyìsi jùjué péngyou de yāoqiú, hàipà zhèyàng huì yǐngxiǎng liǎng ge rén de gǎnqíng.",
+        "vn": "Có người luôn ngại từ chối yêu cầu của bạn bè, sợ như vậy sẽ ảnh hưởng tình cảm hai người."
+      },
+      {
+        "zh": "他申请了那份工作，可惜被拒绝了。",
+        "py": "Tā shēnqǐngle nà fèn gōngzuò, kěxī bèi jùjué le.",
+        "vn": "Anh ấy xin công việc đó, tiếc là bị từ chối."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "拒",
+        "p": "jù",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "扌 trái → 巨 phải",
+        "rad": "扌 (thủ)",
+        "mean": "cự tuyệt",
+        "tip": "Tay 扌 + 巨(to lớn) → giơ tay đẩy ra → CỰ TUYỆT, TỪ CHỐI.",
+        "cf": "距 (jù – khoảng cách)",
+        "w": "拒绝"
+      },
+      {
+        "c": "绝",
+        "p": "jué",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "纟 trái → 色 phải",
+        "rad": "纟 (mịch)",
+        "mean": "dứt",
+        "tip": "Sợi tơ 纟 bị cắt ĐỨT → TUYỆT, DỨT HẲN. 拒绝 = từ chối dứt khoát.",
+        "cf": "色 (sè – màu)",
+        "w": "拒绝 / 绝对"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Có người luôn ngại từ chối yêu cầu của bạn bè, sợ như vậy sẽ ảnh hưởng tình cảm hai người.",
+        "answer": "有的人总是不好意思拒绝朋友的要求，害怕这样会影响两个人的感情。",
+        "answerPy": "Yǒude rén zǒngshì bù hǎoyìsi jùjué péngyou de yāoqiú, hàipà zhèyàng huì yǐngxiǎng liǎng ge rén de gǎnqíng.",
+        "note": "害怕 (Bài 9), 影响 (Bài 4).",
+        "pair": "总是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy đã xin công việc đó, tiếc là bị từ chối, nhưng anh ấy vẫn không bỏ cuộc.",
+        "answer": "他申请了那份工作，可惜被拒绝了，但是他还是没有放弃。",
+        "answerPy": "Tā shēnqǐngle nà fèn gōngzuò, kěxī bèi jùjué le, dànshì tā háishi méiyǒu fàngqì.",
+        "note": "申请 là từ bài 13, 可惜 là từ bài 12, 放弃 là từ bài 9.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "拒绝使用",
+        "py": "jùjué shǐyòng",
+        "vn": "từ chối sử dụng"
+      },
+      {
+        "zh": "拒绝别人",
+        "py": "jùjué biérén",
+        "vn": "từ chối người khác"
+      },
+      {
+        "zh": "被拒绝了",
+        "py": "bèi jùjué le",
+        "vn": "bị từ chối"
+      },
+      {
+        "zh": "不好意思拒绝",
+        "py": "bù hǎoyìsi jùjué",
+        "vn": "ngại từ chối"
+      },
+      {
+        "zh": "拒绝要求",
+        "py": "jùjué yāoqiú",
+        "vn": "từ chối yêu cầu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "拒绝 + V / N",
+        "m": "Từ chối làm gì, từ chối cái gì"
+      },
+      {
+        "s": "被 + 拒绝",
+        "m": "Bị từ chối — câu bị động"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "减少",
+    "py": "jiǎnshǎo",
+    "pos": "Động từ",
+    "vn": "giảm bớt",
+    "hv": "giảm thiểu",
+    "em": "📉",
+    "lesson": 4,
+    "explain": [
+      "Làm ít đi. Trái nghĩa: 增加 (Bài 9). 减少污染, 减少数量."
+    ],
+    "usage": "减少污染, 减少使用数量, 大大减少.",
+    "collo": [
+      "减少污染",
+      "减少塑料袋的使用数量",
+      "减少压力"
+    ],
+    "ex_zh": "这样做可以减少塑料袋的使用数量，对环境保护有很大的作用。",
+    "ex_py": "Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, duì huánjìng bǎohù yǒu hěn dà de zuòyòng.",
+    "ex_vn": "Làm như vậy có thể giảm số lượng túi nilông sử dụng, có tác dụng rất lớn đối với bảo vệ môi trường.",
+    "exList": [
+      {
+        "zh": "这样做可以减少塑料袋的使用数量，对环境保护有很大的作用。",
+        "py": "Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, duì huánjìng bǎohù yǒu hěn dà de zuòyòng.",
+        "vn": "Làm như vậy có thể giảm số lượng túi nilông sử dụng, có tác dụng rất lớn đối với bảo vệ môi trường."
+      },
+      {
+        "zh": "只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。",
+        "py": "Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.",
+        "vn": "Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, bảo vệ môi trường, mới khiến ngôi nhà chúng ta đẹp hơn."
+      },
+      {
+        "zh": "幽默不但可以减轻你工作上的压力，还可以拉近人与人之间的距离。",
+        "py": "Yōumò búdàn kěyǐ jiǎnqīng nǐ gōngzuò shang de yālì, hái kěyǐ lājìn rén yǔ rén zhījiān de jùlí.",
+        "vn": "Hài hước không những giảm nhẹ áp lực công việc, mà còn kéo gần khoảng cách giữa người với người."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "减",
+        "p": "jiǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "冫 trái → 咸 phải",
+        "rad": "冫 (băng)",
+        "mean": "giảm",
+        "tip": "Bộ băng 冫 (lạnh, co lại) + 咸 → GIẢM, BỚT. 减少 = giảm ít đi; 减肥 = giảm béo (Bài 7).",
+        "cf": "感 (gǎn – cảm, bộ 心)",
+        "w": "减少 / 减肥 / 减轻"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Làm như vậy không những giảm được số lượng túi nilông, mà còn có tác dụng rất lớn với việc bảo vệ môi trường.",
+        "answer": "这样做不但可以减少塑料袋的使用数量，而且对环境保护有很大的作用。",
+        "answerPy": "Zhèyàng zuò búdàn kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, érqiě duì huánjìng bǎohù yǒu hěn dà de zuòyòng.",
+        "note": "作用 là từ bài 12 — 对……有作用.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "减少污染",
+        "py": "jiǎnshǎo wūrǎn",
+        "vn": "giảm ô nhiễm"
+      },
+      {
+        "zh": "减少数量",
+        "py": "jiǎnshǎo shùliàng",
+        "vn": "giảm số lượng"
+      },
+      {
+        "zh": "减少压力",
+        "py": "jiǎnshǎo yālì",
+        "vn": "giảm áp lực"
+      },
+      {
+        "zh": "减少烦恼",
+        "py": "jiǎnshǎo fánnǎo",
+        "vn": "bớt phiền muộn"
+      },
+      {
+        "zh": "大大减少",
+        "py": "dàdà jiǎnshǎo",
+        "vn": "giảm mạnh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "减少 + N",
+        "m": "Giảm bớt cái gì"
+      },
+      {
+        "s": "减少 ↔ 增加 (bài 11)",
+        "m": "Giảm ↔ tăng"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "数量",
+    "py": "shùliàng",
+    "pos": "Danh từ",
+    "vn": "số lượng",
+    "hv": "số lượng",
+    "em": "🔢",
+    "lesson": 4,
+    "explain": [
+      "Lượng nhiều hay ít của sự vật. 数量 (số lượng) vs 质量 (chất lượng, Bài 6)."
+    ],
+    "usage": "使用数量, 数量很多, 减少数量.",
+    "collo": [
+      "塑料袋的使用数量",
+      "数量不多",
+      "增加数量"
+    ],
+    "ex_zh": "这样做可以减少塑料袋的使用数量。",
+    "ex_py": "Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng.",
+    "ex_vn": "Làm như vậy có thể giảm số lượng túi nilông sử dụng.",
+    "exList": [
+      {
+        "zh": "这样做可以减少塑料袋的使用数量。",
+        "py": "Zhèyàng zuò kěyǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng.",
+        "vn": "Làm như vậy có thể giảm số lượng túi nilông sử dụng."
+      },
+      {
+        "zh": "这家公司的产品数量不多，但是质量很好。",
+        "py": "Zhè jiā gōngsī de chǎnpǐn shùliàng bù duō, dànshì zhìliàng hěn hǎo.",
+        "vn": "Sản phẩm của công ty này số lượng không nhiều, nhưng chất lượng rất tốt."
+      },
+      {
+        "zh": "随着汽车数量的增加，空气污染越来越严重。",
+        "py": "Suízhe qìchē shùliàng de zēngjiā, kōngqì wūrǎn yuè lái yuè yánzhòng.",
+        "vn": "Cùng với số lượng ô tô tăng lên, ô nhiễm không khí ngày càng nghiêm trọng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "量",
+        "p": "liàng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "日 → 一 → 里",
+        "rad": "里 (lý)",
+        "mean": "lượng",
+        "tip": "Hình cái cân đo lường → LƯỢNG (liàng). Đọc liáng = đo (量体温). 数量, 质量, 力量.",
+        "cf": "重 (zhòng – nặng)",
+        "w": "数量 / 质量 / 商量 (liang)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cùng với số lượng ô tô tăng lên, ô nhiễm không khí ngày càng nghiêm trọng.",
+        "answer": "随着汽车数量的增加，空气污染越来越严重。",
+        "answerPy": "Suízhe qìchē shùliàng de zēngjiā, kōngqì wūrǎn yuè lái yuè yánzhòng.",
+        "note": "随着 (Bài 13), 增加 (Bài 9).",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "使用数量",
+        "py": "shǐyòng shùliàng",
+        "vn": "số lượng sử dụng"
+      },
+      {
+        "zh": "数量不多",
+        "py": "shùliàng bù duō",
+        "vn": "số lượng không nhiều"
+      },
+      {
+        "zh": "增加数量",
+        "py": "zēngjiā shùliàng",
+        "vn": "tăng số lượng"
+      },
+      {
+        "zh": "减少数量",
+        "py": "jiǎnshǎo shùliàng",
+        "vn": "giảm số lượng"
+      },
+      {
+        "zh": "数量和质量",
+        "py": "shùliàng hé zhìliàng",
+        "vn": "số lượng và chất lượng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "数量 + 多 / 少",
+        "m": "Số lượng nhiều / ít"
+      },
+      {
+        "s": "数量 ↔ 质量 (bài 5)",
+        "m": "Số lượng ↔ chất lượng"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "温度",
+    "py": "wēndù",
+    "pos": "Danh từ",
+    "vn": "nhiệt độ",
+    "hv": "ôn độ",
+    "em": "🌡️",
+    "lesson": 5,
+    "explain": [
+      "Mức nóng lạnh. 温度高/低, 空调的温度, 温度较低."
+    ],
+    "usage": "温度很高, 把温度开得高一些, 温度较低.",
+    "collo": [
+      "空调的温度",
+      "温度比较低",
+      "温度上升"
+    ],
+    "ex_zh": "夏天把空调的温度开得高一些，出门时记得关空调和电脑，这样可以节约用电。",
+    "ex_py": "Xiàtiān bǎ kōngtiáo de wēndù kāi de gāo yìxiē, chū mén shí jìde guān kōngtiáo hé diànnǎo, zhèyàng kěyǐ jiéyuē yòng diàn.",
+    "ex_vn": "Mùa hè để nhiệt độ điều hòa cao hơn một chút, ra khỏi nhà nhớ tắt điều hòa và máy tính, như vậy có thể tiết kiệm điện.",
+    "exList": [
+      {
+        "zh": "夏天把空调的温度开得高一些，出门时记得关空调和电脑，这样可以节约用电。",
+        "py": "Xiàtiān bǎ kōngtiáo de wēndù kāi de gāo yìxiē, chū mén shí jìde guān kōngtiáo hé diànnǎo, zhèyàng kěyǐ jiéyuē yòng diàn.",
+        "vn": "Mùa hè để nhiệt độ điều hòa cao hơn một chút, ra khỏi nhà nhớ tắt điều hòa và máy tính, như vậy có thể tiết kiệm điện."
+      },
+      {
+        "zh": "这个月底，我和丈夫准备开车去长白山，那边温度比较低，所以要提前准备几件厚一些的衣服。",
+        "py": "Zhège yuèdǐ, wǒ hé zhàngfu zhǔnbèi kāi chē qù Chángbái Shān, nàbiān wēndù bǐjiào dī, suǒyǐ yào tíqián zhǔnbèi jǐ jiàn hòu yìxiē de yīfu.",
+        "vn": "Cuối tháng này, tôi và chồng định lái xe đi Trường Bạch Sơn, bên đó nhiệt độ khá thấp, nên phải chuẩn bị trước mấy bộ đồ dày."
+      },
+      {
+        "zh": "室外锻炼并不是越早越好，尤其是冬天，日出前温度较低，并不适合运动。",
+        "py": "Shìwài duànliàn bìng bú shì yuè zǎo yuè hǎo, yóuqí shì dōngtiān, rìchū qián wēndù jiào dī, bìng bú shìhé yùndòng.",
+        "vn": "Tập ngoài trời không phải càng sớm càng tốt, nhất là mùa đông, trước bình minh nhiệt độ khá thấp, không thích hợp vận động."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "温",
+        "p": "wēn",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "氵 trái → 昷 phải",
+        "rad": "氵 (thủy)",
+        "mean": "ấm",
+        "tip": "Nước 氵 + 昷(hơi nóng bốc lên từ đồ đựng) → nước ẤM → ÔN. 温度 = nhiệt độ, 温暖 = ấm áp.",
+        "cf": "湿 (shī – ẩm)",
+        "w": "温度 / 温暖 / 体温"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mùa hè chỉ cần để nhiệt độ điều hoà cao hơn một chút là tiết kiệm được điện.",
+        "answer": "夏天只要把空调的温度开得高一些，就可以节约用电。",
+        "answerPy": "Xiàtiān zhǐyào bǎ kōngtiáo de wēndù kāi de gāo yìxiē, jiù kěyǐ jiéyuē yòngdiàn.",
+        "note": "节约 là từ bài 12; 把 + 温度 + 开得 + Adj.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bên đó nhiệt độ khá thấp, nên phải chuẩn bị trước mấy bộ đồ dày.",
+        "answer": "那边温度比较低，所以要提前准备几件厚一些的衣服。",
+        "answerPy": "Nàbiān wēndù bǐjiào dī, suǒyǐ yào tíqián zhǔnbèi jǐ jiàn hòu yìxiē de yīfu.",
+        "note": "提前 (Bài 4), 厚 (Bài 13).",
+        "pair": "……，所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "空调的温度",
+        "py": "kōngtiáo de wēndù",
+        "vn": "nhiệt độ điều hoà"
+      },
+      {
+        "zh": "温度很低",
+        "py": "wēndù hěn dī",
+        "vn": "nhiệt độ rất thấp"
+      },
+      {
+        "zh": "温度上升",
+        "py": "wēndù shàngshēng",
+        "vn": "nhiệt độ tăng"
+      },
+      {
+        "zh": "温度开高一些",
+        "py": "wēndù kāi gāo yìxiē",
+        "vn": "để nhiệt độ cao hơn"
+      },
+      {
+        "zh": "今天的温度",
+        "py": "jīntiān de wēndù",
+        "vn": "nhiệt độ hôm nay"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "温度 + 高 / 低",
+        "m": "Nhiệt độ cao / thấp — 低 là từ bài 10"
+      },
+      {
+        "s": "把 + 温度 + 开高 / 调低",
+        "m": "Chỉnh nhiệt độ lên / xuống"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "乘坐",
+    "py": "chéngzuò",
+    "pos": "Động từ",
+    "vn": "đi, đáp (xe buýt, máy bay…)",
+    "hv": "thừa tọa",
+    "em": "🚌",
+    "lesson": 5,
+    "explain": [
+      "Đi bằng phương tiện (văn viết, trang trọng hơn 坐). 乘坐地铁/飞机/火车."
+    ],
+    "usage": "乘坐地铁, 乘坐飞机, 乘坐公共汽车.",
+    "collo": [
+      "乘坐地铁",
+      "乘坐飞机",
+      "乘坐火车"
+    ],
+    "ex_zh": "少开车，多骑车或者乘坐地铁和公共汽车，这样能降低空气污染。",
+    "ex_py": "Shǎo kāi chē, duō qí chē huòzhě chéngzuò dìtiě hé gōnggòng qìchē, zhèyàng néng jiàngdī kōngqì wūrǎn.",
+    "ex_vn": "Ít lái xe, đi xe đạp nhiều hơn hoặc đi tàu điện ngầm và xe buýt, như vậy có thể giảm ô nhiễm không khí.",
+    "exList": [
+      {
+        "zh": "少开车，多骑车或者乘坐地铁和公共汽车，这样能降低空气污染。",
+        "py": "Shǎo kāi chē, duō qí chē huòzhě chéngzuò dìtiě hé gōnggòng qìchē, zhèyàng néng jiàngdī kōngqì wūrǎn.",
+        "vn": "Ít lái xe, đi xe đạp nhiều hơn hoặc đi tàu điện ngầm và xe buýt, như vậy có thể giảm ô nhiễm không khí."
+      },
+      {
+        "zh": "现在火车的速度非常快，有时乘坐火车甚至比乘坐飞机更节约时间。",
+        "py": "Xiànzài huǒchē de sùdù fēicháng kuài, yǒushí chéngzuò huǒchē shènzhì bǐ chéngzuò fēijī gèng jiéyuē shíjiān.",
+        "vn": "Bây giờ tốc độ tàu hỏa rất nhanh, có lúc đi tàu thậm chí còn tiết kiệm thời gian hơn đi máy bay."
+      },
+      {
+        "zh": "乘坐飞机时，请把手机关掉或者调成飞行模式。",
+        "py": "Chéngzuò fēijī shí, qǐng bǎ shǒujī guāndiào huòzhě tiáochéng fēixíng móshì.",
+        "vn": "Khi đi máy bay, xin tắt điện thoại hoặc chuyển sang chế độ máy bay."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "乘",
+        "p": "chéng",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 10,
+        "ord": "禾 → 北 (hai bên)",
+        "rad": "丿 (phiệt)",
+        "mean": "cưỡi, đi",
+        "tip": "Hình người trèo lên cây 木 → LEO LÊN, CƯỠI, ĐI (xe). 乘坐 = đáp (phương tiện), 乘客 = hành khách.",
+        "cf": "剩 (shèng – thừa)",
+        "w": "乘坐 / 乘客"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Càng ít lái xe, càng đi tàu điện và xe buýt nhiều thì ô nhiễm không khí càng giảm.",
+        "answer": "开车开得越少，乘坐地铁和公共汽车越多，空气污染就越低。",
+        "answerPy": "Kāichē kāi de yuè shǎo, chéngzuò dìtiě hé gōnggòng qìchē yuè duō, kōngqì wūrǎn jiù yuè dī.",
+        "note": "乘坐 trang trọng, hay gặp trên biển báo và thông báo.",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "乘坐地铁",
+        "py": "chéngzuò dìtiě",
+        "vn": "đi tàu điện ngầm"
+      },
+      {
+        "zh": "乘坐飞机",
+        "py": "chéngzuò fēijī",
+        "vn": "đi máy bay"
+      },
+      {
+        "zh": "乘坐火车",
+        "py": "chéngzuò huǒchē",
+        "vn": "đi tàu hoả"
+      },
+      {
+        "zh": "乘坐公共汽车",
+        "py": "chéngzuò gōnggòngqìchē",
+        "vn": "đi xe buýt"
+      },
+      {
+        "zh": "欢迎乘坐",
+        "py": "huānyíng chéngzuò",
+        "vn": "hoan nghênh quý khách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "乘坐 + phương tiện",
+        "m": "Đi bằng phương tiện gì"
+      },
+      {
+        "s": "乘坐 ≈ 坐",
+        "m": "乘坐 trang trọng, dùng trong thông báo, biển báo"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "丢",
+    "py": "diū",
+    "pos": "Động từ",
+    "vn": "ném, vứt; mất",
+    "hv": "đâu",
+    "em": "🔑",
+    "lesson": 5,
+    "explain": [
+      "(1) Vứt, ném (把垃圾丢进垃圾桶). (2) Đánh mất (钥匙丢了, 丢东西)."
+    ],
+    "usage": "把垃圾丢进垃圾桶, 钥匙丢了, 丢东西.",
+    "collo": [
+      "丢进垃圾桶",
+      "钥匙丢了",
+      "别丢了"
+    ],
+    "ex_zh": "还有养成把垃圾丢进垃圾桶的习惯什么的。",
+    "ex_py": "Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.",
+    "ex_vn": "Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân.",
+    "exList": [
+      {
+        "zh": "还有养成把垃圾丢进垃圾桶的习惯什么的。",
+        "py": "Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.",
+        "vn": "Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân."
+      },
+      {
+        "zh": "喂，你还在逛街吗？我的钥匙丢了，进不了门，你快回来吧。",
+        "py": "Wèi, nǐ hái zài guàng jiē ma? Wǒ de yàoshi diū le, jìnbuliǎo mén, nǐ kuài huílai ba.",
+        "vn": "Alô, em còn đang dạo phố à? Anh làm mất chìa khóa rồi, không vào được nhà, em mau về đi."
+      },
+      {
+        "zh": "旅行时要小心，别把护照丢了。",
+        "py": "Lǚxíng shí yào xiǎoxīn, bié bǎ hùzhào diū le.",
+        "vn": "Khi đi du lịch phải cẩn thận, đừng làm mất hộ chiếu."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "丢",
+        "p": "diū",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "丿 → 去",
+        "rad": "丿 (phiệt)",
+        "mean": "mất, vứt",
+        "tip": "丿 + 去(đi) → đồ vật ĐI MẤT → MẤT, VỨT. Chỉ 6 nét, viết như 去 thêm một phẩy trên.",
+        "cf": "去 (qù – đi)",
+        "w": "丢 / 丢了 / 丢掉"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì anh làm mất chìa khoá nên không vào được nhà, em mau về đi.",
+        "answer": "因为我的钥匙丢了，所以进不了门，你快回来吧。",
+        "answerPy": "Yīnwèi wǒ de yàoshi diū le, suǒyǐ jìn bu liǎo mén, nǐ kuài huílai ba.",
+        "note": "V + 不了 — không thể làm được: 进不了门.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "钥匙丢了",
+        "py": "yàoshi diū le",
+        "vn": "mất chìa khoá"
+      },
+      {
+        "zh": "丢进垃圾桶",
+        "py": "diū jìn lājītǒng",
+        "vn": "ném vào thùng rác"
+      },
+      {
+        "zh": "别丢了",
+        "py": "bié diū le",
+        "vn": "đừng làm mất"
+      },
+      {
+        "zh": "丢东西",
+        "py": "diū dōngxi",
+        "vn": "mất đồ"
+      },
+      {
+        "zh": "把垃圾丢掉",
+        "py": "bǎ lājī diū diào",
+        "vn": "vứt rác đi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 丢了",
+        "m": "Cái gì đó bị mất"
+      },
+      {
+        "s": "丢 vừa là \"vứt\" vừa là \"mất\" — phân biệt theo ngữ cảnh"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "垃圾桶",
+    "py": "lājītǒng",
+    "pos": "Danh từ",
+    "vn": "thùng rác",
+    "hv": "lạp ngập dũng",
+    "em": "🗑️",
+    "lesson": 5,
+    "explain": [
+      "Thùng đựng rác. 垃圾 = rác (Bài 11), 桶 = thùng. 垃圾箱 cũng dùng."
+    ],
+    "usage": "丢进垃圾桶, 垃圾桶满了, 倒垃圾.",
+    "collo": [
+      "丢进垃圾桶",
+      "垃圾桶又满了",
+      "找垃圾桶"
+    ],
+    "ex_zh": "还有养成把垃圾丢进垃圾桶的习惯什么的。",
+    "ex_py": "Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.",
+    "ex_vn": "Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân.",
+    "exList": [
+      {
+        "zh": "还有养成把垃圾丢进垃圾桶的习惯什么的。",
+        "py": "Hái yǒu yǎngchéng bǎ lājī diūjìn lājītǒng de xíguàn shénme de.",
+        "vn": "Còn có hình thành thói quen bỏ rác vào thùng rác, vân vân."
+      },
+      {
+        "zh": "A：垃圾桶又满了，你去扔一下垃圾吧。B：好的，看完这个节目我就去。",
+        "py": "A: Lājītǒng yòu mǎn le, nǐ qù rēng yíxià lājī ba. B: Hǎo de, kànwán zhège jiémù wǒ jiù qù.",
+        "vn": "A: Thùng rác lại đầy rồi, anh đi đổ rác đi. B: Được, xem xong chương trình này anh đi ngay."
+      },
+      {
+        "zh": "公园里每隔几十米就有一个垃圾桶，非常方便。",
+        "py": "Gōngyuán li měi gé jǐ shí mǐ jiù yǒu yí ge lājītǒng, fēicháng fāngbiàn.",
+        "vn": "Trong công viên cứ cách vài chục mét lại có một thùng rác, rất tiện."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "桶",
+        "p": "tǒng",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "木 trái → 甬 phải",
+        "rad": "木 (mộc)",
+        "mean": "thùng",
+        "tip": "Gỗ 木 + 甬(biểu âm) → THÙNG gỗ. 垃圾桶 = thùng rác, 水桶 = thùng nước.",
+        "cf": "通 (tōng – thông, bộ 辶)",
+        "w": "垃圾桶 / 水桶"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thùng rác lại đầy rồi, nếu anh rảnh thì đi đổ rác giúp em nhé.",
+        "answer": "垃圾桶又满了，要是你有空，就去扔一下垃圾吧。",
+        "answerPy": "Lājītǒng yòu mǎn le, yàoshi nǐ yǒu kòng, jiù qù rēng yíxià lājī ba.",
+        "note": "满 là từ bài 6, 空儿 là từ bài 10.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "丢进垃圾桶",
+        "py": "diū jìn lājītǒng",
+        "vn": "bỏ vào thùng rác"
+      },
+      {
+        "zh": "垃圾桶满了",
+        "py": "lājītǒng mǎn le",
+        "vn": "thùng rác đầy rồi"
+      },
+      {
+        "zh": "找垃圾桶",
+        "py": "zhǎo lājītǒng",
+        "vn": "tìm thùng rác"
+      },
+      {
+        "zh": "倒垃圾",
+        "py": "dào lājī",
+        "vn": "đổ rác"
+      },
+      {
+        "zh": "垃圾桶在门口",
+        "py": "lājītǒng zài ménkǒu",
+        "vn": "thùng rác ở cửa"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + 垃圾 + 丢进 + 垃圾桶",
+        "m": "Bỏ rác vào thùng rác"
+      },
+      {
+        "s": "垃圾 + 桶",
+        "m": "Thùng (桶) rác (垃圾)"
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "zh": "美丽",
+    "py": "měilì",
+    "pos": "Tính từ",
+    "vn": "đẹp",
+    "hv": "mỹ lệ",
+    "em": "🌸",
+    "lesson": 5,
+    "explain": [
+      "Đẹp (thường dùng cho cảnh vật, thiên nhiên, văn viết). So với 漂亮 (khẩu ngữ, người/đồ vật)."
+    ],
+    "usage": "美丽的家, 变得更美丽, 美丽的风景.",
+    "collo": [
+      "变得更美丽",
+      "美丽的地球",
+      "美丽的风景"
+    ],
+    "ex_zh": "只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。",
+    "ex_py": "Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.",
+    "ex_vn": "Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, bảo vệ môi trường, mới có thể khiến ngôi nhà chúng ta đẹp hơn.",
+    "exList": [
+      {
+        "zh": "只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。",
+        "py": "Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.",
+        "vn": "Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, bảo vệ môi trường, mới có thể khiến ngôi nhà chúng ta đẹp hơn."
+      },
+      {
+        "zh": "怎样才能使地球变得更美丽？",
+        "py": "Zěnyàng cái néng shǐ dìqiú biàn de gèng měilì?",
+        "vn": "Làm thế nào mới có thể khiến Trái đất đẹp hơn?"
+      },
+      {
+        "zh": "这里的风景太美丽了，我们多拍几张照片吧。",
+        "py": "Zhèlǐ de fēngjǐng tài měilì le, wǒmen duō pāi jǐ zhāng zhàopiàn ba.",
+        "vn": "Phong cảnh ở đây đẹp quá, chúng ta chụp thêm mấy tấm ảnh đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "丽",
+        "p": "lì",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 7,
+        "ord": "一 → 冂丶 → 冂丶",
+        "rad": "一 (nhất)",
+        "mean": "đẹp",
+        "tip": "Giản thể của 麗 (con hươu có cặp sừng đẹp). 美丽 = MỸ LỆ = đẹp.",
+        "cf": "两 (liǎng – hai)",
+        "w": "美丽 / 华丽"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Làm thế nào mới khiến Trái đất đẹp hơn? Chỉ cần mỗi người làm một chút là đủ.",
+        "answer": "怎样才能使地球变得更美丽？只要每个人都做一点儿，就够了。",
+        "answerPy": "Zěnyàng cái néng shǐ dìqiú biàn de gèng měilì? Zhǐyào měi ge rén dōu zuò yìdiǎnr, jiù gòu le.",
+        "note": "使 là từ bài 8 — 使 + N + 变得 + Adj.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "美丽的地球",
+        "py": "měilì de dìqiú",
+        "vn": "Trái đất tươi đẹp"
+      },
+      {
+        "zh": "美丽的风景",
+        "py": "měilì de fēngjǐng",
+        "vn": "phong cảnh đẹp"
+      },
+      {
+        "zh": "变得更美丽",
+        "py": "biàn de gèng měilì",
+        "vn": "trở nên đẹp hơn"
+      },
+      {
+        "zh": "美丽的城市",
+        "py": "měilì de chéngshì",
+        "vn": "thành phố xinh đẹp"
+      },
+      {
+        "zh": "又年轻又美丽",
+        "py": "yòu niánqīng yòu měilì",
+        "vn": "vừa trẻ vừa đẹp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "美丽的 + N",
+        "m": "… tươi đẹp"
+      },
+      {
+        "s": "美丽 ≈ 漂亮",
+        "m": "美丽 trang trọng, dùng cho phong cảnh, thiên nhiên"
+      }
+    ]
+  }
 ];
 
 var wuData = [

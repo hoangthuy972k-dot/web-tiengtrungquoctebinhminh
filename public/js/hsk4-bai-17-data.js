@@ -3,599 +3,2956 @@
 // Nguồn: HSK标准教程4下 (Giáo trình chuẩn HSK 4 Tập 2 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'凉快',py:'liángkuai',pos:'Tính từ',vn:'mát mẻ', hv: 'lương khoái',em:'🍃',lesson:1,
-   explain:['Mát (thời tiết). 天气凉快, 凉快多了. So sánh 凉 (mát, lạnh): 凉茶 (Bài 13).'],
-   usage:'天气凉快, 凉快多了, 越来越凉快.',
-   collo:['越来越凉快','凉快多了','这儿很凉快'],
-   ex_zh:'最近天气越来越凉快了，风一刮，草地上就会有一层厚厚的黄叶，看来秋天已经到了。',ex_py:'Zuìjìn tiānqì yuè lái yuè liángkuai le, fēng yì guā, cǎodì shang jiù huì yǒu yì céng hòuhòu de huángyè, kànlái qiūtiān yǐjīng dào le.',ex_vn:'Dạo này thời tiết ngày càng mát, gió vừa thổi, trên bãi cỏ đã có một lớp lá vàng dày, xem ra mùa thu đã đến.',
-   exList:[
-     {zh:'最近天气越来越凉快了，风一刮，草地上就会有一层厚厚的黄叶，看来秋天已经到了。',py:'Zuìjìn tiānqì yuè lái yuè liángkuai le, fēng yì guā, cǎodì shang jiù huì yǒu yì céng hòuhòu de huángyè, kànlái qiūtiān yǐjīng dào le.',vn:'Dạo này thời tiết ngày càng mát, gió vừa thổi, trên bãi cỏ đã có một lớp lá vàng dày, xem ra mùa thu đã đến.'},
-     {zh:'A：下了雨，凉快多了，前几天实在是太热了。B：是啊，前两天晚上热得都睡不着，今天终于能睡个好觉了。',py:'A: Xiàle yǔ, liángkuai duō le, qián jǐ tiān shízài shì tài rè le. B: Shì a, qián liǎng tiān wǎnshang rè de dōu shuìbuzháo, jīntiān zhōngyú néng shuì ge hǎo jiào le.',vn:'A: Mưa xong mát hơn nhiều, mấy hôm trước thật sự quá nóng. B: Đúng, hai đêm trước nóng đến không ngủ được, hôm nay cuối cùng được ngủ ngon.'},
-     {zh:'夏天去郊区住几天，那儿比城市凉快多了。',py:'Xiàtiān qù jiāoqū zhù jǐ tiān, nàr bǐ chéngshì liángkuai duō le.',vn:'Mùa hè ra ngoại ô ở vài ngày, ở đó mát hơn thành phố nhiều.'},
-   ],
-   hanzi:[
-     {c:'凉',p:'liáng',type:'左右结构 · Trái-phải',st:10,ord:'冫 trái → 京 phải',rad:'冫 (băng)',mean:'mát',
-      tip:'Bộ băng 冫 (lạnh) + 京 → MÁT, LẠNH. 凉快 = mát mẻ; 凉茶 = trà mát (Bài 13).',
-      cf:'谅 (liàng – lượng thứ, Bài 16)',w:'凉快 / 凉茶 / 凉水'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mưa xong mát hơn nhiều, mấy hôm trước thật sự quá nóng.',answer:'下了雨，凉快多了，前几天实在是太热了。',answerPy:'Xiàle yǔ, liángkuai duō le, qián jǐ tiān shízài shì tài rè le.',
-      note:'Tính từ + 多了 (Bài 8), 实在 (Bài 11).'},
-   ]},
-
-  {n:2,zh:'热闹',py:'rènao',pos:'Tính từ',vn:'náo nhiệt', hv: 'nhiệt náo',em:'🎉',lesson:1,
-   explain:['Đông vui, nhộn nhịp. 热闹极了, 特别热闹, 不喜欢热闹.'],
-   usage:'特别热闹, 热闹极了, 喜欢热闹.',
-   collo:['香山特别热闹','动物园里热闹极了','不太喜欢热闹'],
-   ex_zh:'这几天香山特别热闹，随着气温的降低，那里许多植物的叶子都由绿变黄或者变红，吸引了很多游客参观。',ex_py:'Zhè jǐ tiān Xiāng Shān tèbié rènao, suízhe qìwēn de jiàngdī, nàli xǔduō zhíwù de yèzi dōu yóu lǜ biàn huáng huòzhě biàn hóng, xīyǐnle hěn duō yóukè cānguān.',ex_vn:'Mấy hôm nay Hương Sơn rất náo nhiệt, cùng với nhiệt độ giảm, lá nhiều cây ở đó chuyển từ xanh sang vàng hoặc đỏ, thu hút nhiều du khách tham quan.',
-   exList:[
-     {zh:'这几天香山特别热闹，随着气温的降低，那里许多植物的叶子都由绿变黄或者变红，吸引了很多游客参观。',py:'Zhè jǐ tiān Xiāng Shān tèbié rènao, suízhe qìwēn de jiàngdī, nàli xǔduō zhíwù de yèzi dōu yóu lǜ biàn huáng huòzhě biàn hóng, xīyǐnle hěn duō yóukè cānguān.',vn:'Mấy hôm nay Hương Sơn rất náo nhiệt, cùng với nhiệt độ giảm, lá nhiều cây ở đó chuyển từ xanh sang vàng hoặc đỏ, thu hút nhiều du khách tham quan.'},
-     {zh:'入口处排队的人很多，动物园里热闹极了。',py:'Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.',vn:'Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng.'},
-     {zh:'A：你经常参加学校举办的舞会吗？B：不，我从来没参加过，我不太喜欢热闹。',py:'A: Nǐ jīngcháng cānjiā xuéxiào jǔbàn de wǔhuì ma? B: Bù, wǒ cónglái méi cānjiāguo, wǒ bú tài xǐhuan rènao.',vn:'A: Bạn hay dự vũ hội trường tổ chức không? B: Không, tôi chưa từng dự, tôi không thích náo nhiệt lắm.'},
-   ],
-   hanzi:[
-     {c:'闹',p:'nào',type:'半包围结构 · Nửa bao quanh',st:8,ord:'门 bao → 市 trong',rad:'门 (môn)',mean:'ồn ào',
-      tip:'Cửa 门 + chợ 市 → ỒN ÀO, NÁO. 热闹 = nóng và ồn = náo nhiệt; 闹钟 = báo thức (Bài 15).',
-      cf:'闻 (wén – nghe)',w:'热闹 / 闹钟'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng.',answer:'入口处排队的人很多，动物园里热闹极了。',answerPy:'Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.',
-      note:'极了 (Bài 4), 入口/排队 (từ mới).'},
-   ]},
-
-  {n:3,zh:'云',py:'yún',pos:'Danh từ',vn:'mây', hv: 'vân',em:'☁️',lesson:1,
-   explain:['Mây trên trời. 天上的云, 一朵云, 白云.'],
-   usage:'天上的云, 白云, 云很多.',
-   collo:['天上的云','一朵白云','云越来越厚'],
-   ex_zh:'你看天上的云，今天肯定有大雨。',ex_py:'Nǐ kàn tiānshang de yún, jīntiān kěndìng yǒu dà yǔ.',ex_vn:'Bạn xem mây trên trời kìa, hôm nay chắc chắn có mưa to.',
-   exList:[
-     {zh:'你看天上的云，今天肯定有大雨。再说，香山上看红叶的人太多了。',py:'Nǐ kàn tiānshang de yún, jīntiān kěndìng yǒu dà yǔ. Zàishuō, Xiāng Shān shang kàn hóngyè de rén tài duō le.',vn:'Bạn xem mây trên trời kìa, hôm nay chắc chắn mưa to. Hơn nữa, người xem lá đỏ trên Hương Sơn đông quá.'},
-     {zh:'今天天气真好，蓝蓝的天上一朵云也没有。',py:'Jīntiān tiānqì zhēn hǎo, lánlán de tiānshang yì duǒ yún yě méiyǒu.',vn:'Hôm nay trời đẹp thật, bầu trời xanh không một gợn mây.'},
-     {zh:'云越来越厚，恐怕一会儿要下雨了。',py:'Yún yuè lái yuè hòu, kǒngpà yíhuìr yào xià yǔ le.',vn:'Mây ngày càng dày, e là lát nữa sẽ mưa.'},
-   ],
-   hanzi:[
-     {c:'云',p:'yún',type:'独体字 · Chữ đơn thể',st:4,ord:'一 → 一 → 厶',rad:'二 (nhị)',mean:'mây',
-      tip:'Tượng hình đám MÂY cuộn (厶 là mây cuộn dưới trời 二). Giản thể của 雲.',
-      cf:'去 (qù – đi)',w:'云 / 白云 / 云南'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mây ngày càng dày, e là lát nữa sẽ mưa.',answer:'云越来越厚，恐怕一会儿要下雨了。',answerPy:'Yún yuè lái yuè hòu, kǒngpà yíhuìr yào xià yǔ le.',
-      note:'厚 (Bài 13), 恐怕 (Bài 16), 要……了.'},
-   ]},
-
-  {n:4,zh:'广播',py:'guǎngbō',pos:'Danh từ',vn:'chương trình phát thanh/truyền hình', hv: 'quảng bá',em:'📻',lesson:1,
-   explain:['Phát thanh, chương trình phát trên đài. 听广播, 广播里说, 广播说.'],
-   usage:'听广播, 广播里说, 广播说明天……',
-   collo:['广播里说','刚才听广播说','学校广播'],
-   ex_zh:'咱们改天去长城吧，广播里说那里也有不少专门看红叶的好地方。',ex_py:'Zánmen gǎitiān qù Chángchéng ba, guǎngbō li shuō nàli yě yǒu bù shǎo zhuānmén kàn hóngyè de hǎo dìfang.',ex_vn:'Chúng ta để hôm khác đi Trường Thành đi, đài nói ở đó cũng có nhiều chỗ ngắm lá đỏ rất đẹp.',
-   exList:[
-     {zh:'咱们改天去长城吧，广播里说那里也有不少专门看红叶的好地方。',py:'Zánmen gǎitiān qù Chángchéng ba, guǎngbō li shuō nàli yě yǒu bù shǎo zhuānmén kàn hóngyè de hǎo dìfang.',vn:'Chúng ta để hôm khác đi Trường Thành đi, đài nói ở đó cũng có nhiều chỗ ngắm lá đỏ rất đẹp.'},
-     {zh:'刚才听广播说明天可能会下大雨，足球比赛恐怕要推迟了。',py:'Gāngcái tīng guǎngbō shuō míngtiān kěnéng huì xià dà yǔ, zúqiú bǐsài kǒngpà yào tuīchí le.',vn:'Vừa nghe đài nói mai có thể mưa to, trận bóng e là phải hoãn.'},
-     {zh:'爷爷每天早上都一边喝茶一边听广播。',py:'Yéye měi tiān zǎoshang dōu yìbiān hē chá yìbiān tīng guǎngbō.',vn:'Ông ngày nào cũng vừa uống trà vừa nghe đài vào buổi sáng.'},
-   ],
-   hanzi:[
-     {c:'播',p:'bō',type:'左右结构 · Trái-phải',st:15,ord:'扌 trái → 番 phải',rad:'扌 (thủ)',mean:'gieo, phát',
-      tip:'Tay 扌 + 番 → tay GIEO hạt → mở rộng thành PHÁT (sóng). 广播 = phát rộng = phát thanh; 播放 = phát.',
-      cf:'番 (fān – lượt)',w:'广播 / 播放 / 直播'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vừa nghe đài nói mai có thể mưa to, trận bóng e là phải hoãn.',answer:'刚才听广播说明天可能会下大雨，足球比赛恐怕要推迟了。',answerPy:'Gāngcái tīng guǎngbō shuō míngtiān kěnéng huì xià dà yǔ, zúqiú bǐsài kǒngpà yào tuīchí le.',
-      note:'恐怕 (Bài 16), 推迟 (Bài 4).'},
-   ]},
-
-  {n:5,zh:'照',py:'zhào',pos:'Động từ',vn:'chụp (ảnh); chiếu', hv: 'chiếu',em:'📷',lesson:1,
-   explain:['(1) Chụp ảnh: 照相, 照照片. (2) Chiếu sáng: 灯光照到, 阳光照在.'],
-   usage:'照照片, 照相, 照到.',
-   collo:['多照点儿照片','给它们照照片','灯光照到'],
-   ex_zh:'真可惜，我还想多照点儿香山的照片呢。',ex_py:'Zhēn kěxī, wǒ hái xiǎng duō zhào diǎnr Xiāng Shān de zhàopiàn ne.',ex_vn:'Tiếc thật, tôi còn muốn chụp thêm ảnh Hương Sơn.',
-   exList:[
-     {zh:'真可惜，我还想多照点儿香山的照片呢。',py:'Zhēn kěxī, wǒ hái xiǎng duō zhào diǎnr Xiāng Shān de zhàopiàn ne.',vn:'Tiếc thật, tôi còn muốn chụp thêm ảnh Hương Sơn.'},
-     {zh:'熊猫们也变得特别活泼，我还给它们照了不少照片呢。',py:'Xióngmāomen yě biànde tèbié huópō, wǒ hái gěi tāmen zhàole bù shǎo zhàopiàn ne.',vn:'Gấu trúc cũng trở nên rất hoạt bát, tôi còn chụp cho chúng khá nhiều ảnh.'},
-     {zh:'每当后面汽车的灯光照到它时，它就会反光，这样就能提醒司机前方有人。',py:'Měi dāng hòumiàn qìchē de dēngguāng zhàodào tā shí, tā jiù huì fǎnguāng, zhèyàng jiù néng tíxǐng sījī qiánfāng yǒu rén.',vn:'Mỗi khi đèn xe phía sau chiếu vào nó, nó sẽ phản quang, như vậy nhắc tài xế phía trước có người.'},
-   ],
-   hanzi:[
-     {c:'照',p:'zhào',type:'上下结构 · Trên-dưới',st:13,ord:'昭 trên → 灬 dưới',rad:'灬 (hỏa)',mean:'chiếu',
-      tip:'昭(sáng) + 灬(lửa) → ánh sáng CHIẾU. 照片 = ảnh; 照顾 = chăm sóc (Bài 3); 护照 = hộ chiếu; 按照 = theo (Bài 4).',
-      cf:'昭 (zhāo – sáng)',w:'照 / 照片 / 照顾 / 护照 / 按照'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tiếc thật, tôi còn muốn chụp thêm ảnh Hương Sơn.',answer:'真可惜，我还想多照点儿香山的照片呢。',answerPy:'Zhēn kěxī, wǒ hái xiǎng duō zhào diǎnr Xiāng Shān de zhàopiàn ne.',
-      note:'可惜 (Bài 12), 多 + động từ + 点儿.'},
-   ]},
-
-  {n:6,zh:'倒',py:'dào',pos:'Phó từ',vn:'nhưng, lại (chỉ sự tương phản)', hv: 'đảo',em:'🔄',lesson:1,
-   explain:['Phó từ: trái với dự đoán, ngữ khí trách móc hoặc nhượng bộ (倒是). Động từ: đổ, rót (倒水, 倒茶). Ngữ pháp trọng tâm.'],
-   usage:'倒是……，就是……; 倒比……还……; 倒杯水.',
-   collo:['倒是一个好主意','倒比骑车还慢','给我倒杯水'],
-   ex_zh:'去长城倒是一个好主意，那我们明天去吧。',ex_py:'Qù Chángchéng dào shì yí ge hǎo zhǔyi, nà wǒmen míngtiān qù ba.',ex_vn:'Đi Trường Thành thì đúng là ý hay, vậy mai chúng ta đi nhé.',
-   exList:[
-     {zh:'去长城倒是一个好主意，那我们明天去吧。',py:'Qù Chángchéng dào shì yí ge hǎo zhǔyi, nà wǒmen míngtiān qù ba.',vn:'Đi Trường Thành thì đúng là ý hay, vậy mai chúng ta đi nhé.'},
-     {zh:'我以为坐出租车会快些，没想到倒比骑车还慢。',py:'Wǒ yǐwéi zuò chūzūchē huì kuài xiē, méi xiǎngdào dào bǐ qí chē hái màn.',vn:'Tôi tưởng đi taxi nhanh hơn, không ngờ lại còn chậm hơn đi xe đạp.'},
-     {zh:'麻烦你给我倒杯咖啡吧，困死我了。',py:'Máfan nǐ gěi wǒ dào bēi kāfēi ba, kùn sǐ wǒ le.',vn:'Làm phiền rót cho tôi cốc cà phê, tôi buồn ngủ chết mất.'},
-   ],
-   hanzi:[
-     {c:'倒',p:'dào',type:'左右结构 · Trái-phải',st:10,ord:'亻 trái → 到 phải',rad:'亻 (nhân)',mean:'ngược; đổ',
-      tip:'Người 亻 + 到 → NGƯỢC LẠI, ĐỔ (dào). Đọc dǎo = ngã (摔倒). Phó từ 倒 = lại, trái dự đoán.',
-      cf:'到 (dào – đến)',w:'倒 / 倒是 / 倒水 / 摔倒 (dǎo)'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi tưởng đi taxi nhanh hơn, không ngờ lại còn chậm hơn đi xe đạp.',answer:'我以为坐出租车会快些，没想到倒比骑车还慢。',answerPy:'Wǒ yǐwéi zuò chūzūchē huì kuài xiē, méi xiǎngdào dào bǐ qí chē hái màn.',
-      note:'以为 (Bài 4), 比……还 (Bài 5).'},
-     {promptLang:'vi',prompt:'Làm phiền rót cho tôi cốc cà phê, tôi buồn ngủ chết mất.',answer:'麻烦你给我倒杯咖啡吧，困死我了。',answerPy:'Máfan nǐ gěi wǒ dào bēi kāfēi ba, kùn sǐ wǒ le.',
-      note:'困 (Bài 4), 死 (Bài 12) làm bổ ngữ mức độ.'},
-   ]},
-
-  {n:7,zh:'毛',py:'máo',pos:'Danh từ',vn:'lông', hv: 'mao',em:'🐕',lesson:2,
-   explain:['Lông động vật, tóc (头发 = 毛发). 毛巾 (Bài 14) = khăn bông; 毛 cũng là đơn vị tiền (一毛钱).'],
-   usage:'狗毛, 毛很漂亮, 动物的皮毛.',
-   collo:['毛真漂亮','狗毛','用动物的皮毛做的衣服'],
-   ex_zh:'你的这只大黑狗毛真漂亮，而且这么聪明，每次见了都想抱一抱它。',ex_py:'Nǐ de zhè zhī dà hēi gǒu máo zhēn piàoliang, érqiě zhème cōngming, měi cì jiànle dōu xiǎng bào yi bào tā.',ex_vn:'Con chó đen to của bạn lông đẹp thật, lại còn thông minh thế, lần nào gặp cũng muốn ôm nó.',
-   exList:[
-     {zh:'你的这只大黑狗毛真漂亮，而且这么聪明，每次见了都想抱一抱它。',py:'Nǐ de zhè zhī dà hēi gǒu máo zhēn piàoliang, érqiě zhème cōngming, měi cì jiànle dōu xiǎng bào yi bào tā.',vn:'Con chó đen to của bạn lông đẹp thật, lại còn thông minh thế, lần nào gặp cũng muốn ôm nó.'},
-     {zh:'你会买用动物的皮毛做的衣服吗？为什么？',py:'Nǐ huì mǎi yòng dòngwù de pímáo zuò de yīfu ma? Wèishénme?',vn:'Bạn có mua quần áo làm từ lông thú không? Vì sao?'},
-     {zh:'这只猫的毛又白又长，摸起来很舒服。',py:'Zhè zhī māo de máo yòu bái yòu cháng, mō qilai hěn shūfu.',vn:'Lông con mèo này vừa trắng vừa dài, sờ vào rất thích.'},
-   ],
-   hanzi:[
-     {c:'毛',p:'máo',type:'独体字 · Chữ đơn thể',st:4,ord:'丿 → 一 → 一 → 乚',rad:'毛 (mao)',mean:'lông',
-      tip:'Tượng hình túm LÔNG. 毛巾 (Bài 14), 毛衣 (áo len), 一毛钱 (hào), 毛病.',
-      cf:'手 (shǒu – tay)',w:'毛 / 毛巾 / 毛衣 / 毛病'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lông con mèo này vừa trắng vừa dài, sờ vào rất thích.',answer:'这只猫的毛又白又长，摸起来很舒服。',answerPy:'Zhè zhī māo de máo yòu bái yòu cháng, mō qilai hěn shūfu.',
-      note:'又……又 (Bài 1), 起来 (Bài 15).'},
-   ]},
-
-  {n:8,zh:'抱',py:'bào',pos:'Động từ',vn:'bế, bồng, ôm', hv: 'bão',em:'🤗',lesson:2,
-   explain:['Ôm vào lòng. 抱一抱, 抱着孩子, 抱歉 (Bài 14) = ôm nỗi áy náy.'],
-   usage:'抱一抱, 抱着, 抱孩子.',
-   collo:['想抱一抱它','抱着孩子','紧紧地抱住'],
-   ex_zh:'每次见了都想抱一抱它。',ex_py:'Měi cì jiànle dōu xiǎng bào yi bào tā.',ex_vn:'Lần nào gặp cũng muốn ôm nó.',
-   exList:[
-     {zh:'你的这只大黑狗毛真漂亮，而且这么聪明，每次见了都想抱一抱它。',py:'Nǐ de zhè zhī dà hēi gǒu máo zhēn piàoliang, érqiě zhème cōngming, měi cì jiànle dōu xiǎng bào yi bào tā.',vn:'Con chó đen to của bạn lông đẹp thật, lại còn thông minh thế, lần nào gặp cũng muốn ôm nó.'},
-     {zh:'妈妈抱着孩子，一边走一边给他讲故事。',py:'Māma bàozhe háizi, yìbiān zǒu yìbiān gěi tā jiǎng gùshi.',vn:'Mẹ bế con, vừa đi vừa kể chuyện cho bé.'},
-     {zh:'很久没见，两个老朋友激动地抱在了一起。',py:'Hěn jiǔ méi jiàn, liǎng ge lǎo péngyou jīdòng de bào zài le yìqǐ.',vn:'Lâu ngày không gặp, hai người bạn cũ xúc động ôm lấy nhau.'},
-   ],
-   hanzi:[
-     {c:'抱',p:'bào',type:'左右结构 · Trái-phải',st:8,ord:'扌 trái → 包 phải',rad:'扌 (thủ)',mean:'ôm',
-      tip:'Tay 扌 + 包(bọc) → hai tay BỌC lấy → ÔM. 抱歉 (Bài 14) = ôm lỗi = xin lỗi.',
-      cf:'包 (bāo – bọc, túi)',w:'抱 / 抱歉 / 拥抱'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Lâu ngày không gặp, hai người bạn cũ xúc động ôm lấy nhau.',answer:'很久没见，两个老朋友激动地抱在了一起。',answerPy:'Hěn jiǔ méi jiàn, liǎng ge lǎo péngyou jīdòng de bào zài le yìqǐ.',
-      note:'激动 (Bài 16), 地 (trạng ngữ).'},
-   ]},
-
-  {n:9,zh:'干',py:'gàn',pos:'Động từ',vn:'làm', hv: 'cán',em:'🛠️',lesson:2,
-   explain:['Làm (việc, sự nghiệp) — khẩu ngữ. 干什么, 干工作, 好好儿干. Đọc gān = khô (擦干, 牛肉干). Ngữ pháp trọng tâm.'],
-   usage:'干什么, 好好儿干, 干活儿.',
-   collo:['让它干什么','好好儿干','干工作'],
-   ex_zh:'每次你让它干什么，它就像能听懂你的话一样去做。',ex_py:'Měi cì nǐ ràng tā gàn shénme, tā jiù xiàng néng tīngdǒng nǐ de huà yíyàng qù zuò.',ex_vn:'Mỗi lần bạn bảo nó làm gì, nó làm như thể hiểu lời bạn vậy.',
-   exList:[
-     {zh:'每次你让它干什么，它就像能听懂你的话一样去做。',py:'Měi cì nǐ ràng tā gàn shénme, tā jiù xiàng néng tīngdǒng nǐ de huà yíyàng qù zuò.',vn:'Mỗi lần bạn bảo nó làm gì, nó làm như thể hiểu lời bạn vậy.'},
-     {zh:'A：你这篇报道写得很好，以后要继续努力。B：谢谢您，我一定会好好儿干的。',py:'A: Nǐ zhè piān bàodào xiě de hěn hǎo, yǐhòu yào jìxù nǔlì. B: Xièxie nín, wǒ yídìng huì hǎohāor gàn de.',vn:'A: Bài báo này bạn viết rất tốt, sau này tiếp tục cố gắng. B: Cảm ơn, tôi nhất định sẽ làm tốt.'},
-     {zh:'干工作的时候一定要认真、仔细，要注意到计划上的每一个地方，否则就很容易出问题。',py:'Gàn gōngzuò de shíhou yídìng yào rènzhēn, zǐxì, yào zhùyì dào jìhuà shang de měi yí ge dìfang, fǒuzé jiù hěn róngyì chū wèntí.',vn:'Khi làm việc nhất định phải nghiêm túc, cẩn thận, chú ý từng chỗ trong kế hoạch, nếu không dễ xảy ra vấn đề.'},
-   ],
-   hanzi:[
-     {c:'干',p:'gàn',type:'独体字 · Chữ đơn thể',st:3,ord:'一 → 一 → 丨',rad:'干 (can)',mean:'làm; khô',
-      tip:'Chữ 3 nét. Đọc gàn = LÀM (干活儿, 干杯); đọc gān = KHÔ (干净, 擦干, 饼干). Đa âm quan trọng!',
-      cf:'千 (qiān – nghìn)',w:'干 (gàn) / 干净 (gān) / 饼干 / 干杯'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cảm ơn, tôi nhất định sẽ làm tốt.',answer:'谢谢您，我一定会好好儿干的。',answerPy:'Xièxie nín, wǒ yídìng huì hǎohāor gàn de.',
-      note:'一定 (Bài 15), 好好儿.'},
-     {promptLang:'vi',prompt:'Khi làm việc nhất định phải nghiêm túc, cẩn thận, nếu không dễ xảy ra vấn đề.',answer:'干工作的时候一定要认真、仔细，否则就很容易出问题。',answerPy:'Gàn gōngzuò de shíhou yídìng yào rènzhēn, zǐxì, fǒuzé jiù hěn róngyì chū wèntí.',
-      note:'仔细 (Bài 12), 否则 (Bài 11).'},
-   ]},
-
-  {n:10,zh:'严格',py:'yángé',pos:'Tính từ',vn:'nghiêm khắc, nghiêm ngặt', hv: 'nghiêm cách',em:'📏',lesson:2,
-   explain:['Yêu cầu chặt chẽ, không dễ dãi. 严格按照, 严格要求, 对……很严格.'],
-   usage:'严格按照要求, 严格要求自己, 对学生很严格.',
-   collo:['严格按照你的要求','严格要求自己','老师很严格'],
-   ex_zh:'然后它就会严格按照你的要求做了。',ex_py:'Ránhòu tā jiù huì yángé ànzhào nǐ de yāoqiú zuò le.',ex_vn:'Sau đó nó sẽ làm nghiêm ngặt theo yêu cầu của bạn.',
-   exList:[
-     {zh:'应该耐心地一遍一遍地教给它，使它熟悉，然后它就会严格按照你的要求做了。',py:'Yīnggāi nàixīn de yí biàn yí biàn de jiāo gěi tā, shǐ tā shúxī, ránhòu tā jiù huì yángé ànzhào nǐ de yāoqiú zuò le.',vn:'Nên kiên nhẫn dạy nó từng lần một, để nó quen, sau đó nó sẽ làm nghiêm ngặt theo yêu cầu của bạn.'},
-     {zh:'只有以严格的标准来要求自己才会让自己变得更优秀。',py:'Zhǐyǒu yǐ yángé de biāozhǔn lái yāoqiú zìjǐ cái huì ràng zìjǐ biànde gèng yōuxiù.',vn:'Chỉ khi lấy tiêu chuẩn nghiêm khắc yêu cầu bản thân mới trở nên xuất sắc hơn.'},
-     {zh:'我们老师对学生很严格，但是大家都很尊重他。',py:'Wǒmen lǎoshī duì xuésheng hěn yángé, dànshì dàjiā dōu hěn zūnzhòng tā.',vn:'Thầy chúng tôi rất nghiêm với học sinh, nhưng mọi người đều tôn trọng thầy.'},
-   ],
-   hanzi:[
-     {c:'严',p:'yán',type:'上下结构 · Trên-dưới',st:7,ord:'一 → 业 → 厂',rad:'一 (nhất)',mean:'nghiêm',
-      tip:'Giản thể của 嚴 → NGHIÊM. 严格 = nghiêm ngặt; 严重 = nghiêm trọng (Bài 8).',
-      cf:'亚 (yà – Á)',w:'严格 / 严重'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thầy chúng tôi rất nghiêm với học sinh, nhưng mọi người đều tôn trọng thầy.',answer:'我们老师对学生很严格，但是大家都很尊重他。',answerPy:'Wǒmen lǎoshī duì xuésheng hěn yángé, dànshì dàjiā dōu hěn zūnzhòng tā.',
-      note:'对……严格, 尊重 (Bài 16).'},
-   ]},
-
-  {n:11,zh:'难受',py:'nánshòu',pos:'Tính từ',vn:'bực bội, buồn rầu; khó chịu', hv: 'nan thụ',em:'😣',lesson:2,
-   explain:['(1) Trong lòng buồn, khó chịu: 心里难受. (2) Cơ thể khó chịu: 头疼得难受. Trái nghĩa: 舒服.'],
-   usage:'心里难受, 有些难受, 难受极了.',
-   collo:['在你心里难受的时候','坐久了有些难受','难受得吃不下饭'],
-   ex_zh:'狗是我们的好朋友，它能听懂人的话，明白人的心情。在你心里难受的时候，它会一直陪着你。',ex_py:'Gǒu shì wǒmen de hǎo péngyou, tā néng tīngdǒng rén de huà, míngbai rén de xīnqíng. Zài nǐ xīnli nánshòu de shíhou, tā huì yìzhí péizhe nǐ.',ex_vn:'Chó là bạn tốt của chúng ta, nó hiểu lời người, hiểu tâm trạng người. Khi bạn buồn, nó sẽ luôn ở bên bạn.',
-   exList:[
-     {zh:'狗是我们的好朋友，它能听懂人的话，明白人的心情。在你心里难受的时候，它会一直陪着你。',py:'Gǒu shì wǒmen de hǎo péngyou, tā néng tīngdǒng rén de huà, míngbai rén de xīnqíng. Zài nǐ xīnli nánshòu de shíhou, tā huì yìzhí péizhe nǐ.',vn:'Chó là bạn tốt của chúng ta, nó hiểu lời người, hiểu tâm trạng người. Khi bạn buồn, nó sẽ luôn ở bên bạn.'},
-     {zh:'A：工作半天了，起来活动活动。B：好，坐久了确实有些难受。',py:'A: Gōngzuò bàntiān le, qǐlai huódòng huódòng. B: Hǎo, zuò jiǔ le quèshí yǒuxiē nánshòu.',vn:'A: Làm việc nửa ngày rồi, đứng dậy vận động đi. B: Ừ, ngồi lâu quả thật hơi khó chịu.'},
-     {zh:'听到这个消息，她难受得一整天都没吃饭。',py:'Tīngdào zhège xiāoxi, tā nánshòu de yì zhěng tiān dōu méi chī fàn.',vn:'Nghe tin này, cô ấy buồn đến cả ngày không ăn cơm.'},
-   ],
-   hanzi:[
-     {c:'受',p:'shòu',type:'上下结构 · Trên-dưới',st:8,ord:'爫 → 冖 → 又',rad:'又 (hựu)',mean:'chịu, nhận',
-      tip:'Tay trên 爫 đưa, tay dưới 又 NHẬN → CHỊU, NHẬN. 难受 = khó chịu; 受到 (Bài 8); 接受 (Bài 6).',
-      cf:'爱 (ài – yêu)',w:'难受 / 受到 / 接受 / 受欢迎'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ừ, ngồi lâu quả thật hơi khó chịu.',answer:'好，坐久了确实有些难受。',answerPy:'Hǎo, zuò jiǔ le quèshí yǒuxiē nánshòu.',
-      note:'确实 (Bài 9), 有些 (Bài 4).'},
-   ]},
-
-  {n:12,zh:'趟',py:'tàng',pos:'Lượng từ',vn:'lần, chuyến (số lần đi lại)', hv: 'thảng',em:'🚶',lesson:3,
-   explain:['Lượng từ động lượng cho hành động đi–về: 去一趟, 回一趟家, 出趟差. Cũng dùng cho chuyến xe/tàu (好几趟公共汽车). Ngữ pháp trọng tâm: 趟 vs 次.'],
-   usage:'去了趟……, 回一趟家, 出趟差.',
-   collo:['去了趟北京动物园','回一趟家','出趟差'],
-   ex_zh:'上个月我去了趟北京动物园，那里约有500种动物。',ex_py:'Shàng ge yuè wǒ qùle tàng Běijīng Dòngwùyuán, nàli yuē yǒu wǔbǎi zhǒng dòngwù.',ex_vn:'Tháng trước tôi đi một chuyến sở thú Bắc Kinh, ở đó có khoảng 500 loài động vật.',
-   exList:[
-     {zh:'上个月我去了趟北京动物园，那里约有500种动物，听导游说北京动物园是亚洲最大的动物园之一。',py:'Shàng ge yuè wǒ qùle tàng Běijīng Dòngwùyuán, nàli yuē yǒu wǔbǎi zhǒng dòngwù, tīng dǎoyóu shuō Běijīng Dòngwùyuán shì Yàzhōu zuì dà de dòngwùyuán zhī yī.',vn:'Tháng trước tôi đi một chuyến sở thú Bắc Kinh, ở đó có khoảng 500 loài, nghe hướng dẫn viên nói đây là một trong những sở thú lớn nhất châu Á.'},
-     {zh:'我要出趟差，你能帮我照顾一下我的小狗吗？',py:'Wǒ yào chū tàng chāi, nǐ néng bāng wǒ zhàogù yíxià wǒ de xiǎo gǒu ma?',vn:'Tôi phải đi công tác một chuyến, bạn giúp tôi chăm con chó nhỏ được không?'},
-     {zh:'A：马上就要放暑假了，你有什么安排吗？B：我打算先回一趟家，看看我奶奶，然后回学校准备研究生考试。',py:'A: Mǎshàng jiù yào fàng shǔjià le, nǐ yǒu shénme ānpái ma? B: Wǒ dǎsuàn xiān huí yí tàng jiā, kànkan wǒ nǎinai, ránhòu huí xuéxiào zhǔnbèi yánjiūshēng kǎoshì.',vn:'A: Sắp nghỉ hè rồi, bạn có sắp xếp gì không? B: Tôi định về nhà một chuyến thăm bà, rồi về trường ôn thi cao học.'},
-   ],
-   hanzi:[
-     {c:'趟',p:'tàng',type:'半包围结构 · Nửa bao quanh',st:15,ord:'走 bao → 尚 trong',rad:'走 (tẩu)',mean:'chuyến',
-      tip:'Bộ chạy 走 + 尚 → CHUYẾN đi. Lượng từ cho hành động đi-về (去/来/回 + 一趟).',
-      cf:'尚 (shàng – còn)',w:'一趟 / 去一趟 / 回一趟家'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi phải đi công tác một chuyến, bạn giúp tôi chăm con chó nhỏ được không?',answer:'我要出趟差，你能帮我照顾一下我的小狗吗？',answerPy:'Wǒ yào chū tàng chāi, nǐ néng bāng wǒ zhàogù yíxià wǒ de xiǎo gǒu ma?',
-      note:'出差 (Bài 14, ly hợp chèn 趟), 照顾 (Bài 3).'},
-     {promptLang:'vi',prompt:'Tôi định về nhà một chuyến thăm bà, rồi về trường ôn thi cao học.',answer:'我打算先回一趟家，看看我奶奶，然后回学校准备研究生考试。',answerPy:'Wǒ dǎsuàn xiān huí yí tàng jiā, kànkan wǒ nǎinai, ránhòu huí xuéxiào zhǔnbèi yánjiūshēng kǎoshì.',
-      note:'先……然后 (Bài 3), 研究生 (Bài 9).'},
-   ]},
-
-  {n:13,zh:'放暑假',py:'fàng shǔjià',pos:'Cụm động từ',vn:'nghỉ hè', hv: 'phóng thử giá',em:'🏖️',lesson:3,
-   explain:['Được nghỉ hè. 暑假 = kỳ nghỉ hè (Bài 1); 放寒假 (Bài 15) = nghỉ đông.'],
-   usage:'放暑假的时候, 马上就要放暑假了, 放暑假了.',
-   collo:['去年放暑假的时候','马上就要放暑假了','放暑假回家'],
-   ex_zh:'去年放暑假的时候，我也去过一次，我在那儿看了马、熊猫、老虎等动物。',ex_py:'Qùnián fàng shǔjià de shíhou, wǒ yě qùguo yí cì, wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù.',ex_vn:'Nghỉ hè năm ngoái tôi cũng đi một lần, ở đó tôi xem ngựa, gấu trúc, hổ và các động vật khác.',
-   exList:[
-     {zh:'去年放暑假的时候，我也去过一次，我在那儿看了马、熊猫、老虎等动物。',py:'Qùnián fàng shǔjià de shíhou, wǒ yě qùguo yí cì, wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù.',vn:'Nghỉ hè năm ngoái tôi cũng đi một lần, ở đó tôi xem ngựa, gấu trúc, hổ và các động vật khác.'},
-     {zh:'马上就要放暑假了，你有什么安排吗？',py:'Mǎshàng jiù yào fàng shǔjià le, nǐ yǒu shénme ānpái ma?',vn:'Sắp nghỉ hè rồi, bạn có sắp xếp gì không?'},
-     {zh:'去年放暑假的时候我去了一趟云南。现在回忆起来，我仍然觉得那是一次愉快的旅行。',py:'Qùnián fàng shǔjià de shíhou wǒ qùle yí tàng Yúnnán. Xiànzài huíyì qilai, wǒ réngrán juéde nà shì yí cì yúkuài de lǚxíng.',vn:'Nghỉ hè năm ngoái tôi đi Vân Nam một chuyến. Giờ nhớ lại, tôi vẫn thấy đó là chuyến đi vui vẻ.'},
-   ],
-   hanzi:[
-     {c:'暑',p:'shǔ',type:'上下结构 · Trên-dưới',st:12,ord:'日 trên → 者 dưới',rad:'日 (nhật)',mean:'nóng, hè',
-      tip:'Mặt trời 日 + 者 → NÓNG BỨC → mùa hè. 暑假 = nghỉ hè; đối lập 寒假 (Bài 15).',
-      cf:'署 (shǔ – sở, cơ quan)',w:'暑假 / 放暑假 / 暑期'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sắp nghỉ hè rồi, bạn có sắp xếp gì không?',answer:'马上就要放暑假了，你有什么安排吗？',answerPy:'Mǎshàng jiù yào fàng shǔjià le, nǐ yǒu shénme ānpái ma?',
-      note:'就要……了 (Bài 2), 安排 (Bài 6).'},
-   ]},
-
-  {n:14,zh:'老虎',py:'lǎohǔ',pos:'Danh từ',vn:'hổ, cọp', hv: 'lão hổ',em:'🐯',lesson:3,
-   explain:['Con hổ. Lượng từ: 只. 马虎 (Bài 16) có chữ 虎.'],
-   usage:'一只老虎, 看老虎, 老虎很厉害.',
-   collo:['一只老虎','动物园里的老虎','老虎和熊猫'],
-   ex_zh:'我在那儿看了马、熊猫、老虎等动物。',ex_py:'Wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù.',ex_vn:'Ở đó tôi xem ngựa, gấu trúc, hổ và các động vật khác.',
-   exList:[
-     {zh:'我在那儿看了马、熊猫、老虎等动物。我特别喜欢熊猫，可惜它们当时大多在睡觉。',py:'Wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù. Wǒ tèbié xǐhuan xióngmāo, kěxī tāmen dāngshí dàduō zài shuì jiào.',vn:'Ở đó tôi xem ngựa, gấu trúc, hổ. Tôi đặc biệt thích gấu trúc, tiếc là lúc đó chúng phần lớn đang ngủ.'},
-     {zh:'老虎是森林里最厉害的动物之一。',py:'Lǎohǔ shì sēnlín li zuì lìhai de dòngwù zhī yī.',vn:'Hổ là một trong những động vật lợi hại nhất trong rừng.'},
-     {zh:'孩子第一次看到老虎，害怕得抱住了妈妈。',py:'Háizi dì-yī cì kàndào lǎohǔ, hàipà de bàozhùle māma.',vn:'Đứa bé lần đầu thấy hổ, sợ đến ôm chặt lấy mẹ.'},
-   ],
-   hanzi:[
-     {c:'虎',p:'hǔ',type:'半包围结构 · Nửa bao quanh',st:8,ord:'虍 bao → 几 trong',rad:'虍 (hổ)',mean:'hổ',
-      tip:'Tượng hình con HỔ há miệng. 老虎 (thêm 老 như 老鼠, 老师); 马虎 (Bài 16) = cẩu thả.',
-      cf:'虚 (xū – hư)',w:'老虎 / 马虎'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Hổ là một trong những động vật lợi hại nhất trong rừng.',answer:'老虎是森林里最厉害的动物之一。',answerPy:'Lǎohǔ shì sēnlín li zuì lìhai de dòngwù zhī yī.',
-      note:'……之一 (Bài 10), 厉害 (Bài 11), 森林 (từ mới).'},
-   ]},
-
-  {n:15,zh:'入口',py:'rùkǒu',pos:'Danh từ',vn:'cổng vào, lối vào', hv: 'nhập khẩu',em:'🚪',lesson:3,
-   explain:['Lối vào. Trái nghĩa: 出口 (lối ra). 入口处 = chỗ cổng vào.'],
-   usage:'入口处, 在入口等你, 动物园的入口.',
-   collo:['入口处排队','在入口等','找到入口'],
-   ex_zh:'入口处排队的人很多，动物园里热闹极了。',ex_py:'Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.',ex_vn:'Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng.',
-   exList:[
-     {zh:'入口处排队的人很多，动物园里热闹极了。',py:'Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.',vn:'Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng.'},
-     {zh:'我们十点在博物馆的入口见面吧。',py:'Wǒmen shí diǎn zài bówùguǎn de rùkǒu jiànmiàn ba.',vn:'Chúng ta 10 giờ gặp ở cổng vào bảo tàng nhé.'},
-     {zh:'请问，地铁站的入口在哪儿？',py:'Qǐngwèn, dìtiě zhàn de rùkǒu zài nǎr?',vn:'Xin hỏi, lối vào ga tàu điện ngầm ở đâu?'},
-   ],
-   hanzi:[
-     {c:'入',p:'rù',type:'独体字 · Chữ đơn thể',st:2,ord:'丿 → 乀',rad:'入 (nhập)',mean:'vào',
-      tip:'Hình mũi tên đi VÀO. Phân biệt 入 (nét phải dài hơn) với 人 (nét trái dài). 入口 = cổng vào; 收入 = thu nhập (Bài 10).',
-      cf:'人 (rén – người)',w:'入口 / 收入 / 进入'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chúng ta 10 giờ gặp ở cổng vào bảo tàng nhé.',answer:'我们十点在博物馆的入口见面吧。',answerPy:'Wǒmen shí diǎn zài bówùguǎn de rùkǒu jiànmiàn ba.',
-      note:'博物馆 (Bài 16 chữ 博), 见面.'},
-   ]},
-
-  {n:16,zh:'排队',py:'pái duì',pos:'Động từ',vn:'xếp hàng', hv: 'bài đội',em:'🧍‍♂️🧍‍♀️',lesson:3,
-   explain:['Đứng thành hàng chờ. Động từ ly hợp: 排了很长的队, 排队买票.'],
-   usage:'排队买票, 排队的人很多, 排了很长时间的队.',
-   collo:['排队的人很多','排队买票','排很长的队'],
-   ex_zh:'入口处排队的人很多。',ex_py:'Rùkǒu chù pái duì de rén hěn duō.',ex_vn:'Ở cổng vào rất nhiều người xếp hàng.',
-   exList:[
-     {zh:'我去的那天正赶上六一儿童节，许多父母带着孩子去动物园。入口处排队的人很多，动物园里热闹极了。',py:'Wǒ qù de nà tiān zhèng gǎnshang Liùyī Értóngjié, xǔduō fùmǔ dàizhe háizi qù dòngwùyuán. Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.',vn:'Hôm tôi đi đúng vào ngày Quốc tế thiếu nhi, nhiều cha mẹ đưa con đến sở thú. Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng.'},
-     {zh:'为了买到演出的票，我排了两个小时的队。',py:'Wèile mǎidào yǎnchū de piào, wǒ páile liǎng ge xiǎoshí de duì.',vn:'Để mua được vé buổi biểu diễn, tôi xếp hàng hai tiếng.'},
-     {zh:'请大家排队上车，不要挤。',py:'Qǐng dàjiā pái duì shàng chē, búyào jǐ.',vn:'Mời mọi người xếp hàng lên xe, đừng chen.'},
-   ],
-   hanzi:[
-     {c:'排',p:'pái',type:'左右结构 · Trái-phải',st:11,ord:'扌 trái → 非 phải',rad:'扌 (thủ)',mean:'xếp',
-      tip:'Tay 扌 + 非(hai hàng đối nhau) → XẾP thành hàng. 排队 = xếp hàng; 排列 = sắp xếp; 安排 = sắp đặt (Bài 6).',
-      cf:'非 (fēi – không)',w:'排队 / 排列 / 安排'},
-     {c:'队',p:'duì',type:'左右结构 · Trái-phải',st:4,ord:'阝 trái → 人 phải',rad:'阝 (phụ)',mean:'đội, hàng',
-      tip:'Giản thể của 隊 → ĐỘI, HÀNG. 排队, 队员 (thành viên đội), 足球队.',
-      cf:'认 (rèn – nhận)',w:'排队 / 队员 / 球队'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Để mua được vé buổi biểu diễn, tôi xếp hàng hai tiếng.',answer:'为了买到演出的票，我排了两个小时的队。',answerPy:'Wèile mǎidào yǎnchū de piào, wǒ páile liǎng ge xiǎoshí de duì.',
-      note:'为了 (Bài 4), 演出 (Bài 13), ly hợp 排……队.'},
-   ]},
-
-  {n:17,zh:'活泼',py:'huópō',pos:'Tính từ',vn:'hoạt bát, nhanh nhẹn', hv: 'hoạt bát',em:'🐼',lesson:3,
-   explain:['Nhanh nhẹn, sinh động (người, động vật, không khí). 活泼可爱, 性格活泼.'],
-   usage:'性格活泼, 活泼可爱, 变得活泼.',
-   collo:['变得特别活泼','活泼可爱的女孩子','性格活泼'],
-   ex_zh:'熊猫们也变得特别活泼，我还给它们照了不少照片呢。',ex_py:'Xióngmāomen yě biànde tèbié huópō, wǒ hái gěi tāmen zhàole bù shǎo zhàopiàn ne.',ex_vn:'Gấu trúc cũng trở nên rất hoạt bát, tôi còn chụp cho chúng khá nhiều ảnh.',
-   exList:[
-     {zh:'熊猫们也变得特别活泼，我还给它们照了不少照片呢。',py:'Xióngmāomen yě biànde tèbié huópō, wǒ hái gěi tāmen zhàole bù shǎo zhàopiàn ne.',vn:'Gấu trúc cũng trở nên rất hoạt bát, tôi còn chụp cho chúng khá nhiều ảnh.'},
-     {zh:'A：小李，我给你介绍个女朋友吧，说说你有什么条件。B：我，我喜欢活泼可爱的女孩子。',py:'A: Xiǎo Lǐ, wǒ gěi nǐ jièshào ge nǚ péngyou ba, shuōshuo nǐ yǒu shénme tiáojiàn. B: Wǒ, wǒ xǐhuan huópō kě\'ài de nǚ háizi.',vn:'A: Tiểu Lý, tôi giới thiệu bạn gái cho cậu nhé, nói xem cậu có điều kiện gì. B: Tôi, tôi thích cô gái hoạt bát đáng yêu.'},
-     {zh:'七岁左右的儿童普遍活泼好动，坐不住。',py:'Qī suì zuǒyòu de értóng pǔbiàn huópō hào dòng, zuòbuzhù.',vn:'Trẻ khoảng bảy tuổi thường hoạt bát hiếu động, không ngồi yên.'},
-   ],
-   hanzi:[
-     {c:'泼',p:'pō',type:'左右结构 · Trái-phải',st:8,ord:'氵 trái → 发 phải',rad:'氵 (thủy)',mean:'hắt nước',
-      tip:'Nước 氵 + 发 → HẮT nước tung tóe → sống động. 活泼 = hoạt bát; 泼水节 = Tết té nước.',
-      cf:'发 (fā – phát)',w:'活泼 / 泼水'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi, tôi thích cô gái hoạt bát đáng yêu.',answer:'我，我喜欢活泼可爱的女孩子。',answerPy:'Wǒ, wǒ xǐhuan huópō kě\'ài de nǚ háizi.',
-      note:'可爱 (Bài 15), 条件 (Bài 6).'},
-   ]},
-
-  {n:18,zh:'社会',py:'shèhuì',pos:'Danh từ',vn:'xã hội', hv: 'xã hội',em:'🏙️',lesson:4,
-   explain:['Cộng đồng người. 社会上, 社会的发展, 进入社会.'],
-   usage:'社会上的人, 随着社会的发展, 社会问题.',
-   collo:['社会上的人与人之间','社会的发展','进入社会'],
-   ex_zh:'不仅社会上的人与人之间有竞争，森林里的各种植物之间也有竞争，这一点儿也不奇怪。',ex_py:'Bùjǐn shèhuì shang de rén yǔ rén zhījiān yǒu jìngzhēng, sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng, zhè yìdiǎnr yě bù qíguài.',ex_vn:'Không chỉ giữa người với người trong xã hội có cạnh tranh, giữa các loài cây trong rừng cũng có cạnh tranh, điều này chẳng có gì lạ.',
-   exList:[
-     {zh:'不仅社会上的人与人之间有竞争，森林里的各种植物之间也有竞争，这一点儿也不奇怪。',py:'Bùjǐn shèhuì shang de rén yǔ rén zhījiān yǒu jìngzhēng, sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng, zhè yìdiǎnr yě bù qíguài.',vn:'Không chỉ giữa người với người trong xã hội có cạnh tranh, giữa các loài cây trong rừng cũng có cạnh tranh, điều này chẳng có gì lạ.'},
-     {zh:'随着社会的发展，京剧也在改变。',py:'Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn.',vn:'Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi.'},
-     {zh:'大学毕业后进入社会，才发现要学的东西还很多。',py:'Dàxué bì yè hòu jìnrù shèhuì, cái fāxiàn yào xué de dōngxi hái hěn duō.',vn:'Sau khi tốt nghiệp bước vào xã hội, mới phát hiện còn nhiều điều phải học.'},
-   ],
-   hanzi:[
-     {c:'社',p:'shè',type:'左右结构 · Trái-phải',st:7,ord:'礻 trái → 土 phải',rad:'礻 (thị)',mean:'xã',
-      tip:'礻(thần) + 土(đất) → thần đất, nơi dân làng tụ họp → XÃ. 社会 = xã hội; 报社 = tòa soạn.',
-      cf:'土 (tǔ – đất)',w:'社会 / 报社 / 社区'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sau khi tốt nghiệp bước vào xã hội, mới phát hiện còn nhiều điều phải học.',answer:'大学毕业后进入社会，才发现要学的东西还很多。',answerPy:'Dàxué bì yè hòu jìnrù shèhuì, cái fāxiàn yào xué de dōngxi hái hěn duō.',
-      note:'毕业 (Bài 9), 才 (Bài 3).'},
-   ]},
-
-  {n:19,zh:'竞争',py:'jìngzhēng',pos:'Động từ',vn:'cạnh tranh', hv: 'cạnh tranh',em:'🏁',lesson:4,
-   explain:['Ganh đua để giành phần hơn. Cũng làm danh từ: 有竞争, 竞争很激烈.'],
-   usage:'为了……而竞争, 有竞争, 竞争激烈.',
-   collo:['为了阳光、空气和水而竞争','人与人之间有竞争','竞争很激烈'],
-   ex_zh:'植物会为了阳光、空气和水而竞争。',ex_py:'Zhíwù huì wèile yángguāng, kōngqì hé shuǐ ér jìngzhēng.',ex_vn:'Cây cối sẽ cạnh tranh vì ánh nắng, không khí và nước.',
-   exList:[
-     {zh:'植物会为了阳光、空气和水而竞争。一些高大的植物往往能获得更多的阳光、空气和水。',py:'Zhíwù huì wèile yángguāng, kōngqì hé shuǐ ér jìngzhēng. Yìxiē gāodà de zhíwù wǎngwǎng néng huòdé gèng duō de yángguāng, kōngqì hé shuǐ.',vn:'Cây cối cạnh tranh vì ánh nắng, không khí và nước. Những cây cao lớn thường giành được nhiều nắng, không khí và nước hơn.'},
-     {zh:'现在找工作的竞争越来越激烈，你一定要重视平时的积累。',py:'Xiànzài zhǎo gōngzuò de jìngzhēng yuè lái yuè jīliè, nǐ yídìng yào zhòngshì píngshí de jīlěi.',vn:'Bây giờ cạnh tranh tìm việc ngày càng gay gắt, bạn nhất định phải chú trọng tích lũy thường ngày.'},
-     {zh:'有竞争才有进步，没有人会永远赢。',py:'Yǒu jìngzhēng cái yǒu jìnbù, méiyǒu rén huì yǒngyuǎn yíng.',vn:'Có cạnh tranh mới có tiến bộ, không ai thắng mãi.'},
-   ],
-   hanzi:[
-     {c:'竞',p:'jìng',type:'上下结构 · Trên-dưới',st:10,ord:'立 trên → 兄 dưới',rad:'立 (lập)',mean:'thi đua',
-      tip:'Hai người đứng 立 cạnh nhau ganh đua → CẠNH (thi đua). 竞争 = cạnh tranh; 竞赛 = thi đấu.',
-      cf:'竟 (jìng – rốt cuộc, 竟然 Bài 6)',w:'竞争 / 竞赛'},
-     {c:'争',p:'zhēng',type:'上下结构 · Trên-dưới',st:6,ord:'⺈ trên → 尹 dưới',rad:'刀 (đao)',mean:'tranh giành',
-      tip:'Hai bàn tay giằng co một vật → TRANH. 竞争, 争取, 争论.',
-      cf:'净 (jìng – sạch)',w:'竞争 / 争取 / 争论'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bây giờ cạnh tranh tìm việc ngày càng gay gắt, bạn nhất định phải chú trọng tích lũy thường ngày.',answer:'现在找工作的竞争越来越激烈，你一定要重视平时的积累。',answerPy:'Xiànzài zhǎo gōngzuò de jìngzhēng yuè lái yuè jīliè, nǐ yídìng yào zhòngshì píngshí de jīlěi.',
-      note:'重视/积累 (Bài 16), 越来越 (Bài 1).'},
-   ]},
-
-  {n:20,zh:'森林',py:'sēnlín',pos:'Danh từ',vn:'rừng rậm', hv: 'sâm lâm',em:'🌲',lesson:4,
-   explain:['Rừng lớn nhiều cây. 森林里的植物, 保护森林.'],
-   usage:'森林里, 保护森林, 一片森林.',
-   collo:['森林里的各种植物','保护森林','如果没有森林'],
-   ex_zh:'森林里的各种植物之间也有竞争。',ex_py:'Sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng.',ex_vn:'Giữa các loài cây trong rừng cũng có cạnh tranh.',
-   exList:[
-     {zh:'森林里的各种植物之间也有竞争，这一点儿也不奇怪。',py:'Sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng, zhè yìdiǎnr yě bù qíguài.',vn:'Giữa các loài cây trong rừng cũng có cạnh tranh, điều này chẳng có gì lạ.'},
-     {zh:'如果没有森林，世界会变成什么样子？',py:'Rúguǒ méiyǒu sēnlín, shìjiè huì biànchéng shénme yàngzi?',vn:'Nếu không có rừng, thế giới sẽ thành ra thế nào?'},
-     {zh:'森林是地球的"肺"，我们每个人都有责任保护它。',py:'Sēnlín shì dìqiú de "fèi", wǒmen měi ge rén dōu yǒu zérèn bǎohù tā.',vn:'Rừng là "lá phổi" của Trái đất, mỗi người đều có trách nhiệm bảo vệ nó.'},
-   ],
-   hanzi:[
-     {c:'森',p:'sēn',type:'品字结构 · Ba chữ chồng',st:12,ord:'木 trên → 木木 dưới',rad:'木 (mộc)',mean:'rừng rậm',
-      tip:'Ba cây 木 → RỪNG RẬM (nhiều hơn 林 = hai cây). 森林 = rừng rậm.',
-      cf:'林 (lín – rừng)',w:'森林 / 森林公园'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Rừng là "lá phổi" của Trái đất, mỗi người đều có trách nhiệm bảo vệ nó.',answer:'森林是地球的"肺"，我们每个人都有责任保护它。',answerPy:'Sēnlín shì dìqiú de "fèi", wǒmen měi ge rén dōu yǒu zérèn bǎohù tā.',
-      note:'地球 (Bài 14), 责任 (Bài 10), 保护 (Bài 12).'},
-   ]},
-
-  {n:21,zh:'剩',py:'shèng',pos:'Động từ',vn:'còn lại, thừa', hv: 'thặng',em:'🍚',lesson:4,
-   explain:['Còn dư lại sau khi dùng. 剩下, 剩下的, 还剩……'],
-   usage:'剩下的植物, 还剩十几页, 剩了很多菜.',
-   collo:['剩下的一些植物','就剩十几页了','剩了很多'],
-   ex_zh:'而剩下的一些比较低矮的植物就只能长在这些高大植物的下面。',ex_py:'Ér shèngxià de yìxiē bǐjiào dī\'ǎi de zhíwù jiù zhǐ néng zhǎng zài zhèxiē gāodà zhíwù de xiàmiàn.',ex_vn:'Còn những cây thấp bé còn lại chỉ có thể mọc dưới những cây cao lớn này.',
-   exList:[
-     {zh:'而剩下的一些比较低矮的植物就只能长在这些高大植物的下面。',py:'Ér shèngxià de yìxiē bǐjiào dī\'ǎi de zhíwù jiù zhǐ néng zhǎng zài zhèxiē gāodà zhíwù de xiàmiàn.',vn:'Còn những cây thấp bé còn lại chỉ có thể mọc dưới những cây cao lớn này.'},
-     {zh:'这本小说就剩十几页了，我想看看最后到底怎么样了。',py:'Zhè běn xiǎoshuō jiù shèng shí jǐ yè le, wǒ xiǎng kànkan zuìhòu dàodǐ zěnmeyàng le.',vn:'Cuốn tiểu thuyết này chỉ còn hơn chục trang, tôi muốn xem rốt cuộc kết thúc thế nào.'},
-     {zh:'昨天的菜剩了不少，今天中午热一热再吃吧。',py:'Zuótiān de cài shèngle bù shǎo, jīntiān zhōngwǔ rè yi rè zài chī ba.',vn:'Đồ ăn hôm qua còn thừa nhiều, trưa nay hâm lại ăn nhé.'},
-   ],
-   hanzi:[
-     {c:'剩',p:'shèng',type:'左右结构 · Trái-phải',st:12,ord:'乘 trái → 刂 phải',rad:'刂 (đao)',mean:'thừa',
-      tip:'乘 + 刂(dao) → cắt đi phần dùng, phần THỪA còn lại. 剩下 = còn lại.',
-      cf:'乘 (chéng – đi xe, Bài 14)',w:'剩 / 剩下 / 剩菜'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cuốn tiểu thuyết này chỉ còn hơn chục trang, tôi muốn xem rốt cuộc kết thúc thế nào.',answer:'这本小说就剩十几页了，我想看看最后到底怎么样了。',answerPy:'Zhè běn xiǎoshuō jiù shèng shí jǐ yè le, wǒ xiǎng kànkan zuìhòu dàodǐ zěnmeyàng le.',
-      note:'页 (Bài 11), 到底 (Bài 16).'},
-   ]},
-
-  {n:22,zh:'暖和',py:'nuǎnhuo',pos:'Tính từ',vn:'ấm áp', hv: 'noãn hòa',em:'🌤️',lesson:4,
-   explain:['Ấm (thời tiết, nơi chốn, quần áo). 暖 (Bài 14) + 和. 天气暖和, 屋里很暖和.'],
-   usage:'天气暖和, 暖和的地方, 越来越暖和.',
-   collo:['在暖和、水分比较多的地方','那儿非常暖和','越来越暖和'],
-   ex_zh:'在暖和、水分比较多的地方，叶子往往长得又大又厚。',ex_py:'Zài nuǎnhuo, shuǐfèn bǐjiào duō de dìfang, yèzi wǎngwǎng zhǎng de yòu dà yòu hòu.',ex_vn:'Ở nơi ấm áp, nhiều nước, lá thường mọc vừa to vừa dày.',
-   exList:[
-     {zh:'在暖和、水分比较多的地方，叶子往往长得又大又厚；在阳光特别厉害、水分少的地方，叶子就会长得又细又长。',py:'Zài nuǎnhuo, shuǐfèn bǐjiào duō de dìfang, yèzi wǎngwǎng zhǎng de yòu dà yòu hòu; zài yángguāng tèbié lìhai, shuǐfèn shǎo de dìfang, yèzi jiù huì zhǎng de yòu xì yòu cháng.',vn:'Ở nơi ấm áp, nhiều nước, lá thường vừa to vừa dày; ở nơi nắng gắt, ít nước, lá sẽ vừa mảnh vừa dài.'},
-     {zh:'今年寒假我去了一趟广东，那里的气候和北方不同，尽管现在是冬天，但那儿非常暖和。',py:'Jīnnián hánjià wǒ qùle yí tàng Guǎngdōng, nàli de qìhòu hé běifāng bù tóng, jǐnguǎn xiànzài shì dōngtiān, dàn nàr fēicháng nuǎnhuo.',vn:'Nghỉ đông năm nay tôi đi Quảng Đông một chuyến, khí hậu ở đó khác miền Bắc, dù đang mùa đông nhưng rất ấm.'},
-     {zh:'A：今天很暖和，外面一点儿也不冷，你不用穿这么多衣服。B：好的，那我脱掉一件。',py:'A: Jīntiān hěn nuǎnhuo, wàimiàn yìdiǎnr yě bù lěng, nǐ búyòng chuān zhème duō yīfu. B: Hǎo de, nà wǒ tuōdiào yí jiàn.',vn:'A: Hôm nay rất ấm, ngoài trời không lạnh chút nào, bạn không cần mặc nhiều thế. B: Được, vậy tôi cởi bớt một cái.'},
-   ],
-   hanzi:[
-     {c:'暖',p:'nuǎn',type:'左右结构 · Trái-phải',st:13,ord:'日 trái → 爰 phải',rad:'日 (nhật)',mean:'ấm',
-      tip:'Mặt trời 日 + 爰 → có nắng → ẤM (Bài 14). 暖和 = ấm áp; 温暖 = ấm áp (tình cảm).',
-      cf:'缓 (huǎn – chậm)',w:'暖和 / 暖 / 温暖'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Hôm nay rất ấm, ngoài trời không lạnh chút nào, bạn không cần mặc nhiều thế.',answer:'今天很暖和，外面一点儿也不冷，你不用穿这么多衣服。',answerPy:'Jīntiān hěn nuǎnhuo, wàimiàn yìdiǎnr yě bù lěng, nǐ búyòng chuān zhème duō yīfu.',
-      note:'一点儿也不 (Bài 6), 不用.'},
-   ]},
-
-  {n:23,zh:'海洋',py:'hǎiyáng',pos:'Danh từ',vn:'biển, đại dương', hv: 'hải dương',em:'🌊',lesson:5,
-   explain:['Biển lớn, đại dương. 海洋底部, 蓝色的海洋, 海洋动物.'],
-   usage:'蓝色的海洋, 海洋底部, 保护海洋.',
-   collo:['蓝色的海洋','海洋底部','海洋跟我们的生活'],
-   ex_zh:'地球上大约71%的地方是蓝色的海洋，在美丽的海底世界里，生活着各种各样的植物和动物。',ex_py:'Dìqiú shang dàyuē bǎifēnzhī qīshíyī de dìfang shì lánsè de hǎiyáng, zài měilì de hǎidǐ shìjiè li, shēnghuózhe gè zhǒng gè yàng de zhíwù hé dòngwù.',ex_vn:'Khoảng 71% Trái đất là đại dương xanh, trong thế giới đáy biển xinh đẹp, sinh sống đủ loại thực vật và động vật.',
-   exList:[
-     {zh:'地球上大约71%的地方是蓝色的海洋，在美丽的海底世界里，生活着各种各样的植物和动物。',py:'Dìqiú shang dàyuē bǎifēnzhī qīshíyī de dìfang shì lánsè de hǎiyáng, zài měilì de hǎidǐ shìjiè li, shēnghuózhe gè zhǒng gè yàng de zhíwù hé dòngwù.',vn:'Khoảng 71% Trái đất là đại dương xanh, trong thế giới đáy biển xinh đẹp, sinh sống đủ loại thực vật và động vật.'},
-     {zh:'科学研究发现，海洋底部看上去非常安静，然而却不是一点儿声音也没有。',py:'Kēxué yánjiū fāxiàn, hǎiyáng dǐbù kàn shangqu fēicháng ānjìng, rán\'ér què bú shì yìdiǎnr shēngyīn yě méiyǒu.',vn:'Nghiên cứu khoa học phát hiện, đáy đại dương trông rất yên tĩnh, nhưng không phải không có chút âm thanh nào.'},
-     {zh:'海洋跟我们的生活有什么关系？',py:'Hǎiyáng gēn wǒmen de shēnghuó yǒu shénme guānxi?',vn:'Đại dương có quan hệ gì với cuộc sống của chúng ta?'},
-   ],
-   hanzi:[
-     {c:'洋',p:'yáng',type:'左右结构 · Trái-phải',st:9,ord:'氵 trái → 羊 phải',rad:'氵 (thủy)',mean:'đại dương',
-      tip:'Nước 氵 + 羊(biểu âm) → nước mênh mông → DƯƠNG (biển lớn). 海洋, 太平洋, 洋葱.',
-      cf:'样 (yàng – dạng)',w:'海洋 / 太平洋 / 洋葱'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đáy đại dương trông rất yên tĩnh, nhưng không phải không có chút âm thanh nào.',answer:'海洋底部看上去非常安静，然而却不是一点儿声音也没有。',answerPy:'Hǎiyáng dǐbù kàn shangqu fēicháng ānjìng, rán\'ér què bú shì yìdiǎnr shēngyīn yě méiyǒu.',
-      note:'然而 (Bài 11), 却 (Bài 2), 一点儿也没有.'},
-   ]},
-
-  {n:24,zh:'底',py:'dǐ',pos:'Danh từ',vn:'đáy', hv: 'để',em:'⬇️',lesson:5,
-   explain:['Phần thấp nhất. 海底, 底部, 底下; cũng là "cuối": 月底 (Bài 11), 年底; 到底 (Bài 16).'],
-   usage:'海底, 底部, 年底.',
-   collo:['海底世界','海洋底部','桌子底下'],
-   ex_zh:'在美丽的海底世界里，生活着各种各样的植物和动物。',ex_py:'Zài měilì de hǎidǐ shìjiè li, shēnghuózhe gè zhǒng gè yàng de zhíwù hé dòngwù.',ex_vn:'Trong thế giới đáy biển xinh đẹp, sinh sống đủ loại thực vật và động vật.',
-   exList:[
-     {zh:'我们小时候都听过美人鱼的故事，其实真正的海底世界比故事里写的更美。',py:'Wǒmen xiǎoshíhou dōu tīngguo Měirényú de gùshi, qíshí zhēnzhèng de hǎidǐ shìjiè bǐ gùshi li xiě de gèng měi.',vn:'Hồi nhỏ chúng ta đều nghe chuyện Người cá, thực ra thế giới đáy biển thật còn đẹp hơn trong truyện.'},
-     {zh:'很多自行车后面都有一个灯，每当后面汽车的灯光照到它时，它就会反光。——那个灯装在车的底部。',py:'Hěn duō zìxíngchē hòumiàn dōu yǒu yí ge dēng, měi dāng hòumiàn qìchē de dēngguāng zhàodào tā shí, tā jiù huì fǎnguāng.',vn:'Nhiều xe đạp phía sau có một đèn, mỗi khi đèn ô tô phía sau chiếu vào, nó sẽ phản quang.'},
-     {zh:'钥匙可能掉到沙发底下了，你找找看。',py:'Yàoshi kěnéng diàodào shāfā dǐxia le, nǐ zhǎozhao kàn.',vn:'Chìa khóa có thể rơi xuống dưới gầm sofa, bạn tìm thử xem.'},
-   ],
-   hanzi:[
-     {c:'底',p:'dǐ',type:'半包围结构 · Nửa bao quanh',st:8,ord:'广 bao → 氐 trong',rad:'广 (nghiễm)',mean:'đáy',
-      tip:'Mái 广 + 氐(thấp) → phần thấp nhất → ĐÁY. 海底, 月底 (Bài 11), 到底 (Bài 16), 底下.',
-      cf:'低 (dī – thấp)',w:'底 / 海底 / 月底 / 到底 / 底下'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chìa khóa có thể rơi xuống dưới gầm sofa, bạn tìm thử xem.',answer:'钥匙可能掉到沙发底下了，你找找看。',answerPy:'Yàoshi kěnéng diàodào shāfā dǐxia le, nǐ zhǎozhao kàn.',
-      note:'掉 (Bài 5), 沙发 (Bài 11), động từ lặp + 看.'},
-   ]},
-
-  {n:25,zh:'美人鱼',py:'Měirényú',pos:'Danh từ',vn:'người cá', hv: 'Mỹ Nhân Ngư',em:'🧜‍♀️',lesson:5,
-   explain:['Nhân vật trong truyện cổ tích Andersen. 美人鱼的故事.'],
-   usage:'美人鱼的故事, 听过美人鱼.',
-   collo:['美人鱼的故事','听过美人鱼','像美人鱼一样'],
-   ex_zh:'我们小时候都听过美人鱼的故事。',ex_py:'Wǒmen xiǎoshíhou dōu tīngguo Měirényú de gùshi.',ex_vn:'Hồi nhỏ chúng ta đều nghe chuyện Người cá.',
-   exList:[
-     {zh:'我们小时候都听过美人鱼的故事，其实真正的海底世界比故事里写的更美。',py:'Wǒmen xiǎoshíhou dōu tīngguo Měirényú de gùshi, qíshí zhēnzhèng de hǎidǐ shìjiè bǐ gùshi li xiě de gèng měi.',vn:'Hồi nhỏ chúng ta đều nghe chuyện Người cá, thực ra thế giới đáy biển thật còn đẹp hơn trong truyện.'},
-     {zh:'《美人鱼》是安徒生写的一个著名的童话故事。',py:'"Měirényú" shì Āntúshēng xiě de yí ge zhùmíng de tónghuà gùshi.',vn:'"Nàng tiên cá" là một truyện cổ tích nổi tiếng do Andersen viết.'},
-     {zh:'女儿最喜欢听我给她讲美人鱼的故事。',py:'Nǚ\'ér zuì xǐhuan tīng wǒ gěi tā jiǎng Měirényú de gùshi.',vn:'Con gái thích nhất nghe tôi kể chuyện Người cá.'},
-   ],
-   hanzi:[
-     {c:'鱼',p:'yú',type:'上下结构 · Trên-dưới',st:8,ord:'⺈ → 田 → 一',rad:'鱼 (ngư)',mean:'cá',
-      tip:'Tượng hình con CÁ (đầu ⺈, thân 田, đuôi 一). 美人鱼 = người đẹp cá = người cá.',
-      cf:'渔 (yú – đánh cá)',w:'鱼 / 美人鱼 / 鱼汤'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'"Nàng tiên cá" là một truyện cổ tích nổi tiếng do Andersen viết.',answer:'《美人鱼》是安徒生写的一个著名的童话故事。',answerPy:'"Měirényú" shì Āntúshēng xiě de yí ge zhùmíng de tónghuà gùshi.',
-      note:'著名 (Bài 10), 童 (Bài 15).'},
-   ]},
-
-  {n:26,zh:'公里',py:'gōnglǐ',pos:'Lượng từ',vn:'kilômét', hv: 'công lí',em:'📏',lesson:5,
-   explain:['Đơn vị chiều dài = 1000 mét. 几公里深, 三公里远, 每小时100公里.'],
-   usage:'几公里深, 离这儿三公里, 一万米 = 10公里.',
-   collo:['几公里深的海底','离学校两公里','每小时120公里'],
-   ex_zh:'就算在几公里深的海底也仍然能看到东西。',ex_py:'Jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi.',ex_vn:'Cho dù ở đáy biển sâu mấy kilômét vẫn có thể nhìn thấy đồ vật.',
-   exList:[
-     {zh:'另外，就算在几公里深的海底也仍然能看到东西，许多鱼会发出各种颜色的亮光。',py:'Lìngwài, jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi, xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng.',vn:'Ngoài ra, cho dù ở đáy biển sâu mấy kilômét vẫn nhìn thấy, nhiều cá phát ra ánh sáng đủ màu.'},
-     {zh:'我家离公司大约五公里，骑车二十分钟左右就到。',py:'Wǒ jiā lí gōngsī dàyuē wǔ gōnglǐ, qí chē èrshí fēnzhōng zuǒyòu jiù dào.',vn:'Nhà tôi cách công ty khoảng 5 km, đạp xe khoảng 20 phút là đến.'},
-     {zh:'高速公路上汽车的速度不能超过每小时120公里。',py:'Gāosù gōnglù shang qìchē de sùdù bù néng chāoguò měi xiǎoshí yìbǎi èrshí gōnglǐ.',vn:'Trên đường cao tốc tốc độ ô tô không được vượt quá 120 km/giờ.'},
-   ],
-   hanzi:[
-     {c:'里',p:'lǐ',type:'上下结构 · Trên-dưới',st:7,ord:'日 trên → 土 dưới',rad:'里 (lý)',mean:'dặm; trong',
-      tip:'田(ruộng) + 土(đất) → thôn xóm → dặm LÝ (500m). 公里 = km. Cũng là "bên trong" (里面).',
-      cf:'理 (lǐ – lý lẽ)',w:'公里 / 里面 / 这里'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nhà tôi cách công ty khoảng 5 km, đạp xe khoảng 20 phút là đến.',answer:'我家离公司大约五公里，骑车二十分钟左右就到。',answerPy:'Wǒ jiā lí gōngsī dàyuē wǔ gōnglǐ, qí chē èrshí fēnzhōng zuǒyòu jiù dào.',
-      note:'大约 (Bài 13), 左右 (Bài 15).'},
-   ]},
-
-  {n:27,zh:'仍然',py:'réngrán',pos:'Phó từ',vn:'vẫn', hv: 'nhưng nhiên',em:'♾️',lesson:5,
-   explain:['Tình huống như cũ, không thay đổi (= 还是). Ngữ pháp trọng tâm. Cùng nhóm 然: 既然 (Bài 14), 竟然 (Bài 6), 突然 (Bài 8).'],
-   usage:'仍然能……, 仍然是……, 仍然觉得.',
-   collo:['仍然能看到东西','仍然有很多值得学习的地方','仍然是0比0'],
-   ex_zh:'就算在几公里深的海底也仍然能看到东西。',ex_py:'Jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi.',ex_vn:'Cho dù ở đáy biển sâu mấy kilômét vẫn có thể nhìn thấy đồ vật.',
-   exList:[
-     {zh:'就算在几公里深的海底也仍然能看到东西。',py:'Jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi.',vn:'Cho dù ở đáy biển sâu mấy kilômét vẫn có thể nhìn thấy đồ vật.'},
-     {zh:'人比动物聪明，但动物仍然有很多值得人学习的地方。',py:'Rén bǐ dòngwù cōngming, dàn dòngwù réngrán yǒu hěn duō zhídé rén xuéxí de dìfang.',vn:'Người thông minh hơn động vật, nhưng động vật vẫn có nhiều điểm đáng để người học.'},
-     {zh:'足球决赛时，如果90分钟后仍然是0比0，按照规定，可以进行加时赛来决定输赢。',py:'Zúqiú juésài shí, rúguǒ jiǔshí fēnzhōng hòu réngrán shì líng bǐ líng, ànzhào guīdìng, kěyǐ jìnxíng jiāshísài lái juédìng shū yíng.',vn:'Chung kết bóng đá, nếu sau 90 phút vẫn 0-0, theo quy định có thể đá hiệp phụ để quyết định thắng thua.'},
-   ],
-   hanzi:[
-     {c:'仍',p:'réng',type:'左右结构 · Trái-phải',st:4,ord:'亻 trái → 乃 phải',rad:'亻 (nhân)',mean:'vẫn',
-      tip:'Người 亻 + 乃 → VẪN, như cũ. Phân biệt với 扔 (rēng – vứt, Bài 14, bộ 扌).',
-      cf:'扔 (rēng – vứt)',w:'仍然 / 仍'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Người thông minh hơn động vật, nhưng động vật vẫn có nhiều điểm đáng để người học.',answer:'人比动物聪明，但动物仍然有很多值得人学习的地方。',answerPy:'Rén bǐ dòngwù cōngming, dàn dòngwù réngrán yǒu hěn duō zhídé rén xuéxí de dìfang.',
-      note:'值得 (Bài 7), 比 (Bài 5).'},
-     {promptLang:'vi',prompt:'Nếu sau 90 phút vẫn 0-0, theo quy định có thể đá hiệp phụ để quyết định thắng thua.',answer:'如果90分钟后仍然是0比0，按照规定，可以进行加时赛来决定输赢。',answerPy:'Rúguǒ jiǔshí fēnzhōng hòu réngrán shì líng bǐ líng, ànzhào guīdìng, kěyǐ jìnxíng jiāshísài lái juédìng shū yíng.',
-      note:'按照 (Bài 4), 规定 (Bài 12), 进行 (Bài 13), 来 (Bài 15), 输/赢 (Bài 16, 9).'},
-   ]},
-
-  {n:28,zh:'排列',py:'páiliè',pos:'Động từ',vn:'sắp xếp (theo thứ tự)', hv: 'bài liệt',em:'🔢',lesson:5,
-   explain:['Xếp theo thứ tự, hàng lối. 排列起来, 按……排列, 排列整齐.'],
-   usage:'排列起来, 按大小排列, 排列得很整齐.',
-   collo:['像一个个排列起来的灯','按顺序排列','排列整齐'],
-   ex_zh:'许多鱼会发出各种颜色的亮光，像一个个排列起来的灯，美极了，就像在梦里一样。',ex_py:'Xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng, xiàng yí gègè páiliè qilai de dēng, měi jíle, jiù xiàng zài mèng li yíyàng.',ex_vn:'Nhiều cá phát ra ánh sáng đủ màu, như những ngọn đèn xếp thành hàng, đẹp vô cùng, như trong mơ vậy.',
-   exList:[
-     {zh:'许多鱼会发出各种颜色的亮光，像一个个排列起来的灯，美极了，就像在梦里一样。',py:'Xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng, xiàng yí gègè páiliè qilai de dēng, měi jíle, jiù xiàng zài mèng li yíyàng.',vn:'Nhiều cá phát ra ánh sáng đủ màu, như những ngọn đèn xếp thành hàng, đẹp vô cùng, như trong mơ vậy.'},
-     {zh:'请把这些书按照大小排列好，放在书架上。',py:'Qǐng bǎ zhèxiē shū ànzhào dàxiǎo páiliè hǎo, fàng zài shūjià shang.',vn:'Hãy sắp xếp những cuốn sách này theo kích thước, đặt lên giá sách.'},
-     {zh:'学生们排列得整整齐齐，等着老师来照相。',py:'Xuéshengmen páiliè de zhěngzhěng qíqí, děngzhe lǎoshī lái zhào xiàng.',vn:'Học sinh xếp hàng ngay ngắn, đợi thầy đến chụp ảnh.'},
-   ],
-   hanzi:[
-     {c:'列',p:'liè',type:'左右结构 · Trái-phải',st:6,ord:'歹 trái → 刂 phải',rad:'刂 (đao)',mean:'hàng, liệt kê',
-      tip:'歹 + 刂(dao) → chia thành từng HÀNG → LIỆT. 排列 = sắp xếp; 列车 = đoàn tàu.',
-      cf:'例 (lì – ví dụ, Bài 10)',w:'排列 / 列车 / 列'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Hãy sắp xếp những cuốn sách này theo kích thước, đặt lên giá sách.',answer:'请把这些书按照大小排列好，放在书架上。',answerPy:'Qǐng bǎ zhèxiē shū ànzhào dàxiǎo páiliè hǎo, fàng zài shūjià shang.',
-      note:'把 + 按照 (Bài 4) + bổ ngữ 好.'},
-   ]},
-
-  {n:29,zh:'梦',py:'mèng',pos:'Danh từ',vn:'giấc mơ', hv: 'mộng',em:'💭',lesson:5,
-   explain:['Giấc mơ khi ngủ; ước mơ. 做梦 = nằm mơ; 在梦里; 有梦的老人 = người có ước mơ.'],
-   usage:'做梦, 在梦里, 有梦.',
-   collo:['就像在梦里一样','做了一个梦','有梦的老人'],
-   ex_zh:'美极了，就像在梦里一样。',ex_py:'Měi jíle, jiù xiàng zài mèng li yíyàng.',ex_vn:'Đẹp vô cùng, như trong mơ vậy.',
-   exList:[
-     {zh:'许多鱼会发出各种颜色的亮光，像一个个排列起来的灯，美极了，就像在梦里一样。',py:'Xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng, xiàng yí gègè páiliè qilai de dēng, měi jíle, jiù xiàng zài mèng li yíyàng.',vn:'Nhiều cá phát ra ánh sáng đủ màu, như những ngọn đèn xếp hàng, đẹp vô cùng, như trong mơ vậy.'},
-     {zh:'一个70岁还有梦的老人，仍然是年轻的；一个20岁就放弃了理想的人，心已经老了。',py:'Yí ge qīshí suì hái yǒu mèng de lǎorén, réngrán shì niánqīng de; yí ge èrshí suì jiù fàngqìle lǐxiǎng de rén, xīn yǐjīng lǎo le.',vn:'Người 70 tuổi còn có ước mơ vẫn trẻ; người 20 tuổi đã từ bỏ lý tưởng, tim đã già rồi.'},
-     {zh:'昨晚我做了一个奇怪的梦，梦见自己在海底跟鱼说话。',py:'Zuó wǎn wǒ zuòle yí ge qíguài de mèng, mèngjiàn zìjǐ zài hǎidǐ gēn yú shuō huà.',vn:'Tối qua tôi mơ một giấc mơ kỳ lạ, mơ thấy mình nói chuyện với cá dưới đáy biển.'},
-   ],
-   hanzi:[
-     {c:'梦',p:'mèng',type:'上下结构 · Trên-dưới',st:11,ord:'林 trên → 夕 dưới',rad:'夕 (tịch)',mean:'mơ',
-      tip:'Rừng 林 + đêm 夕 → ban đêm thấy cảnh rừng mờ ảo → MỘNG, MƠ. 做梦, 梦想.',
-      cf:'林 (lín – rừng)',w:'梦 / 做梦 / 梦想 / 梦见'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Người 70 tuổi còn có ước mơ vẫn trẻ; người 20 tuổi đã từ bỏ lý tưởng, tim đã già rồi.',answer:'一个70岁还有梦的老人，仍然是年轻的；一个20岁就放弃了理想的人，心已经老了。',answerPy:'Yí ge qīshí suì hái yǒu mèng de lǎorén, réngrán shì niánqīng de; yí ge èrshí suì jiù fàngqìle lǐxiǎng de rén, xīn yǐjīng lǎo le.',
-      note:'仍然 (ngữ pháp bài), 放弃/理想 (Bài 9).'},
-   ]},
+  {
+    "n": 1,
+    "zh": "凉快",
+    "py": "liángkuai",
+    "pos": "Tính từ",
+    "vn": "mát mẻ",
+    "hv": "lương khoái",
+    "em": "🍃",
+    "lesson": 1,
+    "explain": [
+      "Mát (thời tiết). 天气凉快, 凉快多了. So sánh 凉 (mát, lạnh): 凉茶 (Bài 13)."
+    ],
+    "usage": "天气凉快, 凉快多了, 越来越凉快.",
+    "collo": [
+      "越来越凉快",
+      "凉快多了",
+      "这儿很凉快"
+    ],
+    "ex_zh": "最近天气越来越凉快了，风一刮，草地上就会有一层厚厚的黄叶，看来秋天已经到了。",
+    "ex_py": "Zuìjìn tiānqì yuè lái yuè liángkuai le, fēng yì guā, cǎodì shang jiù huì yǒu yì céng hòuhòu de huángyè, kànlái qiūtiān yǐjīng dào le.",
+    "ex_vn": "Dạo này thời tiết ngày càng mát, gió vừa thổi, trên bãi cỏ đã có một lớp lá vàng dày, xem ra mùa thu đã đến.",
+    "exList": [
+      {
+        "zh": "最近天气越来越凉快了，风一刮，草地上就会有一层厚厚的黄叶，看来秋天已经到了。",
+        "py": "Zuìjìn tiānqì yuè lái yuè liángkuai le, fēng yì guā, cǎodì shang jiù huì yǒu yì céng hòuhòu de huángyè, kànlái qiūtiān yǐjīng dào le.",
+        "vn": "Dạo này thời tiết ngày càng mát, gió vừa thổi, trên bãi cỏ đã có một lớp lá vàng dày, xem ra mùa thu đã đến."
+      },
+      {
+        "zh": "A：下了雨，凉快多了，前几天实在是太热了。B：是啊，前两天晚上热得都睡不着，今天终于能睡个好觉了。",
+        "py": "A: Xiàle yǔ, liángkuai duō le, qián jǐ tiān shízài shì tài rè le. B: Shì a, qián liǎng tiān wǎnshang rè de dōu shuìbuzháo, jīntiān zhōngyú néng shuì ge hǎo jiào le.",
+        "vn": "A: Mưa xong mát hơn nhiều, mấy hôm trước thật sự quá nóng. B: Đúng, hai đêm trước nóng đến không ngủ được, hôm nay cuối cùng được ngủ ngon."
+      },
+      {
+        "zh": "夏天去郊区住几天，那儿比城市凉快多了。",
+        "py": "Xiàtiān qù jiāoqū zhù jǐ tiān, nàr bǐ chéngshì liángkuai duō le.",
+        "vn": "Mùa hè ra ngoại ô ở vài ngày, ở đó mát hơn thành phố nhiều."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "凉",
+        "p": "liáng",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "冫 trái → 京 phải",
+        "rad": "冫 (băng)",
+        "mean": "mát",
+        "tip": "Bộ băng 冫 (lạnh) + 京 → MÁT, LẠNH. 凉快 = mát mẻ; 凉茶 = trà mát (Bài 13).",
+        "cf": "谅 (liàng – lượng thứ, Bài 16)",
+        "w": "凉快 / 凉茶 / 凉水"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mưa xong thì mát hơn nhiều, vì mấy hôm trước thật sự quá nóng.",
+        "answer": "下了雨，凉快多了，因为前几天实在是太热了。",
+        "answerPy": "Xiàle yǔ, liángkuai duō le, yīnwèi qián jǐ tiān shízài shì tài rè le.",
+        "note": "实在 là từ bài 5; Adj + 多了 — hơn hẳn.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "凉快多了",
+        "py": "liángkuai duō le",
+        "vn": "mát hơn nhiều"
+      },
+      {
+        "zh": "越来越凉快",
+        "py": "yuè lái yuè liángkuai",
+        "vn": "ngày càng mát"
+      },
+      {
+        "zh": "这儿很凉快",
+        "py": "zhèr hěn liángkuai",
+        "vn": "ở đây rất mát"
+      },
+      {
+        "zh": "凉快一下",
+        "py": "liángkuai yíxià",
+        "vn": "hóng mát một chút"
+      },
+      {
+        "zh": "凉快的地方",
+        "py": "liángkuai de dìfang",
+        "vn": "chỗ mát mẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 多了",
+        "m": "Mát hơn nhiều — so sánh có mức độ"
+      },
+      {
+        "s": "凉快 ↔ 热",
+        "m": "Mát mẻ ↔ nóng; 暖和 là ấm áp"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "热闹",
+    "py": "rènao",
+    "pos": "Tính từ",
+    "vn": "náo nhiệt",
+    "hv": "nhiệt náo",
+    "em": "🎉",
+    "lesson": 1,
+    "explain": [
+      "Đông vui, nhộn nhịp. 热闹极了, 特别热闹, 不喜欢热闹."
+    ],
+    "usage": "特别热闹, 热闹极了, 喜欢热闹.",
+    "collo": [
+      "香山特别热闹",
+      "动物园里热闹极了",
+      "不太喜欢热闹"
+    ],
+    "ex_zh": "这几天香山特别热闹，随着气温的降低，那里许多植物的叶子都由绿变黄或者变红，吸引了很多游客参观。",
+    "ex_py": "Zhè jǐ tiān Xiāng Shān tèbié rènao, suízhe qìwēn de jiàngdī, nàli xǔduō zhíwù de yèzi dōu yóu lǜ biàn huáng huòzhě biàn hóng, xīyǐnle hěn duō yóukè cānguān.",
+    "ex_vn": "Mấy hôm nay Hương Sơn rất náo nhiệt, cùng với nhiệt độ giảm, lá nhiều cây ở đó chuyển từ xanh sang vàng hoặc đỏ, thu hút nhiều du khách tham quan.",
+    "exList": [
+      {
+        "zh": "这几天香山特别热闹，随着气温的降低，那里许多植物的叶子都由绿变黄或者变红，吸引了很多游客参观。",
+        "py": "Zhè jǐ tiān Xiāng Shān tèbié rènao, suízhe qìwēn de jiàngdī, nàli xǔduō zhíwù de yèzi dōu yóu lǜ biàn huáng huòzhě biàn hóng, xīyǐnle hěn duō yóukè cānguān.",
+        "vn": "Mấy hôm nay Hương Sơn rất náo nhiệt, cùng với nhiệt độ giảm, lá nhiều cây ở đó chuyển từ xanh sang vàng hoặc đỏ, thu hút nhiều du khách tham quan."
+      },
+      {
+        "zh": "入口处排队的人很多，动物园里热闹极了。",
+        "py": "Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.",
+        "vn": "Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng."
+      },
+      {
+        "zh": "A：你经常参加学校举办的舞会吗？B：不，我从来没参加过，我不太喜欢热闹。",
+        "py": "A: Nǐ jīngcháng cānjiā xuéxiào jǔbàn de wǔhuì ma? B: Bù, wǒ cónglái méi cānjiāguo, wǒ bú tài xǐhuan rènao.",
+        "vn": "A: Bạn hay dự vũ hội trường tổ chức không? B: Không, tôi chưa từng dự, tôi không thích náo nhiệt lắm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "闹",
+        "p": "nào",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 8,
+        "ord": "门 bao → 市 trong",
+        "rad": "门 (môn)",
+        "mean": "ồn ào",
+        "tip": "Cửa 门 + chợ 市 → ỒN ÀO, NÁO. 热闹 = nóng và ồn = náo nhiệt; 闹钟 = báo thức (Bài 15).",
+        "cf": "闻 (wén – nghe)",
+        "w": "热闹 / 闹钟"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những cổng vào rất đông người xếp hàng, mà trong sở thú cũng náo nhiệt vô cùng.",
+        "answer": "不但入口处排队的人很多，而且动物园里也热闹极了。",
+        "answerPy": "Búdàn rùkǒu chù páiduì de rén hěn duō, érqiě dòngwùyuán li yě rènao jí le.",
+        "note": "Adj + 极了 — mức độ cao nhất.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "特别热闹",
+        "py": "tèbié rènao",
+        "vn": "cực kỳ náo nhiệt"
+      },
+      {
+        "zh": "热闹极了",
+        "py": "rènao jí le",
+        "vn": "náo nhiệt vô cùng"
+      },
+      {
+        "zh": "不喜欢热闹",
+        "py": "bù xǐhuan rènao",
+        "vn": "không thích ồn ào"
+      },
+      {
+        "zh": "很热闹的地方",
+        "py": "hěn rènao de dìfang",
+        "vn": "nơi nhộn nhịp"
+      },
+      {
+        "zh": "热闹起来",
+        "py": "rènao qǐlai",
+        "vn": "nhộn nhịp hẳn lên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 极了",
+        "m": "Cực kỳ … — mức độ cao nhất"
+      },
+      {
+        "s": "热闹 ≠ 吵",
+        "m": "热闹 mang nghĩa tích cực, vui vẻ đông người"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "云",
+    "py": "yún",
+    "pos": "Danh từ",
+    "vn": "mây",
+    "hv": "vân",
+    "em": "☁️",
+    "lesson": 1,
+    "explain": [
+      "Mây trên trời. 天上的云, 一朵云, 白云."
+    ],
+    "usage": "天上的云, 白云, 云很多.",
+    "collo": [
+      "天上的云",
+      "一朵白云",
+      "云越来越厚"
+    ],
+    "ex_zh": "你看天上的云，今天肯定有大雨。",
+    "ex_py": "Nǐ kàn tiānshang de yún, jīntiān kěndìng yǒu dà yǔ.",
+    "ex_vn": "Bạn xem mây trên trời kìa, hôm nay chắc chắn có mưa to.",
+    "exList": [
+      {
+        "zh": "你看天上的云，今天肯定有大雨。再说，香山上看红叶的人太多了。",
+        "py": "Nǐ kàn tiānshang de yún, jīntiān kěndìng yǒu dà yǔ. Zàishuō, Xiāng Shān shang kàn hóngyè de rén tài duō le.",
+        "vn": "Bạn xem mây trên trời kìa, hôm nay chắc chắn mưa to. Hơn nữa, người xem lá đỏ trên Hương Sơn đông quá."
+      },
+      {
+        "zh": "今天天气真好，蓝蓝的天上一朵云也没有。",
+        "py": "Jīntiān tiānqì zhēn hǎo, lánlán de tiānshang yì duǒ yún yě méiyǒu.",
+        "vn": "Hôm nay trời đẹp thật, bầu trời xanh không một gợn mây."
+      },
+      {
+        "zh": "云越来越厚，恐怕一会儿要下雨了。",
+        "py": "Yún yuè lái yuè hòu, kǒngpà yíhuìr yào xià yǔ le.",
+        "vn": "Mây ngày càng dày, e là lát nữa sẽ mưa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "云",
+        "p": "yún",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 4,
+        "ord": "一 → 一 → 厶",
+        "rad": "二 (nhị)",
+        "mean": "mây",
+        "tip": "Tượng hình đám MÂY cuộn (厶 là mây cuộn dưới trời 二). Giản thể của 雲.",
+        "cf": "去 (qù – đi)",
+        "w": "云 / 白云 / 云南"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mây ngày càng dày, e là lát nữa sẽ mưa.",
+        "answer": "云越来越厚，恐怕一会儿要下雨了。",
+        "answerPy": "Yún yuè lái yuè hòu, kǒngpà yíhuìr yào xià yǔ le.",
+        "note": "厚 (Bài 13), 恐怕 (Bài 16), 要……了.",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "天上的云",
+        "py": "tiān shàng de yún",
+        "vn": "mây trên trời"
+      },
+      {
+        "zh": "一朵白云",
+        "py": "yī duo bái yún",
+        "vn": "một đám mây trắng"
+      },
+      {
+        "zh": "云越来越厚",
+        "py": "yún yuè lái yuè hòu",
+        "vn": "mây ngày càng dày"
+      },
+      {
+        "zh": "乌云",
+        "py": "wūyún",
+        "vn": "mây đen"
+      },
+      {
+        "zh": "云很多",
+        "py": "yún hěn duō",
+        "vn": "nhiều mây"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 朵 + 云",
+        "m": "Lượng từ 朵 cho mây và hoa"
+      },
+      {
+        "s": "云 + 厚 / 多",
+        "m": "Mây dày / nhiều — 厚 là từ bài 13"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "广播",
+    "py": "guǎngbō",
+    "pos": "Danh từ",
+    "vn": "chương trình phát thanh/truyền hình",
+    "hv": "quảng bá",
+    "em": "📻",
+    "lesson": 1,
+    "explain": [
+      "Phát thanh, chương trình phát trên đài. 听广播, 广播里说, 广播说."
+    ],
+    "usage": "听广播, 广播里说, 广播说明天……",
+    "collo": [
+      "广播里说",
+      "刚才听广播说",
+      "学校广播"
+    ],
+    "ex_zh": "咱们改天去长城吧，广播里说那里也有不少专门看红叶的好地方。",
+    "ex_py": "Zánmen gǎitiān qù Chángchéng ba, guǎngbō li shuō nàli yě yǒu bù shǎo zhuānmén kàn hóngyè de hǎo dìfang.",
+    "ex_vn": "Chúng ta để hôm khác đi Trường Thành đi, đài nói ở đó cũng có nhiều chỗ ngắm lá đỏ rất đẹp.",
+    "exList": [
+      {
+        "zh": "咱们改天去长城吧，广播里说那里也有不少专门看红叶的好地方。",
+        "py": "Zánmen gǎitiān qù Chángchéng ba, guǎngbō li shuō nàli yě yǒu bù shǎo zhuānmén kàn hóngyè de hǎo dìfang.",
+        "vn": "Chúng ta để hôm khác đi Trường Thành đi, đài nói ở đó cũng có nhiều chỗ ngắm lá đỏ rất đẹp."
+      },
+      {
+        "zh": "刚才听广播说明天可能会下大雨，足球比赛恐怕要推迟了。",
+        "py": "Gāngcái tīng guǎngbō shuō míngtiān kěnéng huì xià dà yǔ, zúqiú bǐsài kǒngpà yào tuīchí le.",
+        "vn": "Vừa nghe đài nói mai có thể mưa to, trận bóng e là phải hoãn."
+      },
+      {
+        "zh": "爷爷每天早上都一边喝茶一边听广播。",
+        "py": "Yéye měi tiān zǎoshang dōu yìbiān hē chá yìbiān tīng guǎngbō.",
+        "vn": "Ông ngày nào cũng vừa uống trà vừa nghe đài vào buổi sáng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "播",
+        "p": "bō",
+        "type": "左右结构 · Trái-phải",
+        "st": 15,
+        "ord": "扌 trái → 番 phải",
+        "rad": "扌 (thủ)",
+        "mean": "gieo, phát",
+        "tip": "Tay 扌 + 番 → tay GIEO hạt → mở rộng thành PHÁT (sóng). 广播 = phát rộng = phát thanh; 播放 = phát.",
+        "cf": "番 (fān – lượt)",
+        "w": "广播 / 播放 / 直播"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vừa nghe đài nói mai có thể mưa to, nên trận bóng e là phải hoãn.",
+        "answer": "刚才听广播说明天可能会下大雨，所以足球比赛恐怕要推迟了。",
+        "answerPy": "Gāngcái tīng guǎngbō shuō míngtiān kěnéng huì xià dàyǔ, suǒyǐ zúqiú bǐsài kǒngpà yào tuīchí le.",
+        "note": "恐怕 và 推 đều là từ bài 16.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "听广播",
+        "py": "tīng guǎngbō",
+        "vn": "nghe đài"
+      },
+      {
+        "zh": "广播里说",
+        "py": "guǎngbō li shuō",
+        "vn": "trên đài nói"
+      },
+      {
+        "zh": "学校广播",
+        "py": "xuéxiào guǎngbō",
+        "vn": "loa phát thanh của trường"
+      },
+      {
+        "zh": "广播节目",
+        "py": "guǎngbō jiémù",
+        "vn": "chương trình phát thanh"
+      },
+      {
+        "zh": "刚才听广播说",
+        "py": "gāngcái tīng guǎngbō shuō",
+        "vn": "vừa nghe đài nói"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "听 + 广播",
+        "m": "Nghe đài phát thanh"
+      },
+      {
+        "s": "广播里 + 说 + mệnh đề",
+        "m": "Trên đài nói rằng…"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "照",
+    "py": "zhào",
+    "pos": "Động từ",
+    "vn": "chụp (ảnh); chiếu",
+    "hv": "chiếu",
+    "em": "📷",
+    "lesson": 1,
+    "explain": [
+      "(1) Chụp ảnh: 照相, 照照片. (2) Chiếu sáng: 灯光照到, 阳光照在."
+    ],
+    "usage": "照照片, 照相, 照到.",
+    "collo": [
+      "多照点儿照片",
+      "给它们照照片",
+      "灯光照到"
+    ],
+    "ex_zh": "真可惜，我还想多照点儿香山的照片呢。",
+    "ex_py": "Zhēn kěxī, wǒ hái xiǎng duō zhào diǎnr Xiāng Shān de zhàopiàn ne.",
+    "ex_vn": "Tiếc thật, tôi còn muốn chụp thêm ảnh Hương Sơn.",
+    "exList": [
+      {
+        "zh": "真可惜，我还想多照点儿香山的照片呢。",
+        "py": "Zhēn kěxī, wǒ hái xiǎng duō zhào diǎnr Xiāng Shān de zhàopiàn ne.",
+        "vn": "Tiếc thật, tôi còn muốn chụp thêm ảnh Hương Sơn."
+      },
+      {
+        "zh": "熊猫们也变得特别活泼，我还给它们照了不少照片呢。",
+        "py": "Xióngmāomen yě biànde tèbié huópō, wǒ hái gěi tāmen zhàole bù shǎo zhàopiàn ne.",
+        "vn": "Gấu trúc cũng trở nên rất hoạt bát, tôi còn chụp cho chúng khá nhiều ảnh."
+      },
+      {
+        "zh": "每当后面汽车的灯光照到它时，它就会反光，这样就能提醒司机前方有人。",
+        "py": "Měi dāng hòumiàn qìchē de dēngguāng zhàodào tā shí, tā jiù huì fǎnguāng, zhèyàng jiù néng tíxǐng sījī qiánfāng yǒu rén.",
+        "vn": "Mỗi khi đèn xe phía sau chiếu vào nó, nó sẽ phản quang, như vậy nhắc tài xế phía trước có người."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "照",
+        "p": "zhào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "昭 trên → 灬 dưới",
+        "rad": "灬 (hỏa)",
+        "mean": "chiếu",
+        "tip": "昭(sáng) + 灬(lửa) → ánh sáng CHIẾU. 照片 = ảnh; 照顾 = chăm sóc (Bài 3); 护照 = hộ chiếu; 按照 = theo (Bài 4).",
+        "cf": "昭 (zhāo – sáng)",
+        "w": "照 / 照片 / 照顾 / 护照 / 按照"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tiếc thật, vì trời mưa nên tôi không chụp thêm được ảnh Hương Sơn.",
+        "answer": "真可惜，因为下雨了，所以我没能多照点儿香山的照片。",
+        "answerPy": "Zhēn kěxī, yīnwèi xiàyǔ le, suǒyǐ wǒ méi néng duō zhào diǎnr Xiāngshān de zhàopiàn.",
+        "note": "可惜 là từ bài 12; 照照片 — 照 cũng dùng cho 照镜子 (bài 2).",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "照照片",
+        "py": "zhào zhàopiàn",
+        "vn": "chụp ảnh"
+      },
+      {
+        "zh": "多照点儿",
+        "py": "duō zhào diǎn ér",
+        "vn": "chụp thêm chút"
+      },
+      {
+        "zh": "给它们照照片",
+        "py": "gěi tāmen zhào zhàopiàn",
+        "vn": "chụp ảnh cho chúng"
+      },
+      {
+        "zh": "照镜子",
+        "py": "zhào jìngzi",
+        "vn": "soi gương"
+      },
+      {
+        "zh": "灯光照到",
+        "py": "dēng guāng zhào dào",
+        "vn": "ánh đèn chiếu tới"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "给 + ai / cái gì + 照照片",
+        "m": "Chụp ảnh cho ai"
+      },
+      {
+        "s": "照 vừa là \"chụp\" vừa là \"chiếu, soi\" — 照镜子 là từ bài 2"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "倒",
+    "py": "dào",
+    "pos": "Phó từ",
+    "vn": "nhưng, lại (chỉ sự tương phản)",
+    "hv": "đảo",
+    "em": "🔄",
+    "lesson": 1,
+    "explain": [
+      "Phó từ: trái với dự đoán, ngữ khí trách móc hoặc nhượng bộ (倒是). Động từ: đổ, rót (倒水, 倒茶). Ngữ pháp trọng tâm."
+    ],
+    "usage": "倒是……，就是……; 倒比……还……; 倒杯水.",
+    "collo": [
+      "倒是一个好主意",
+      "倒比骑车还慢",
+      "给我倒杯水"
+    ],
+    "ex_zh": "去长城倒是一个好主意，那我们明天去吧。",
+    "ex_py": "Qù Chángchéng dào shì yí ge hǎo zhǔyi, nà wǒmen míngtiān qù ba.",
+    "ex_vn": "Đi Trường Thành thì đúng là ý hay, vậy mai chúng ta đi nhé.",
+    "exList": [
+      {
+        "zh": "去长城倒是一个好主意，那我们明天去吧。",
+        "py": "Qù Chángchéng dào shì yí ge hǎo zhǔyi, nà wǒmen míngtiān qù ba.",
+        "vn": "Đi Trường Thành thì đúng là ý hay, vậy mai chúng ta đi nhé."
+      },
+      {
+        "zh": "我以为坐出租车会快些，没想到倒比骑车还慢。",
+        "py": "Wǒ yǐwéi zuò chūzūchē huì kuài xiē, méi xiǎngdào dào bǐ qí chē hái màn.",
+        "vn": "Tôi tưởng đi taxi nhanh hơn, không ngờ lại còn chậm hơn đi xe đạp."
+      },
+      {
+        "zh": "麻烦你给我倒杯咖啡吧，困死我了。",
+        "py": "Máfan nǐ gěi wǒ dào bēi kāfēi ba, kùn sǐ wǒ le.",
+        "vn": "Làm phiền rót cho tôi cốc cà phê, tôi buồn ngủ chết mất."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "倒",
+        "p": "dào",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "亻 trái → 到 phải",
+        "rad": "亻 (nhân)",
+        "mean": "ngược; đổ",
+        "tip": "Người 亻 + 到 → NGƯỢC LẠI, ĐỔ (dào). Đọc dǎo = ngã (摔倒). Phó từ 倒 = lại, trái dự đoán.",
+        "cf": "到 (dào – đến)",
+        "w": "倒 / 倒是 / 倒水 / 摔倒 (dǎo)"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi tưởng đi taxi nhanh hơn, không ngờ lại còn chậm hơn đi xe đạp.",
+        "answer": "我以为坐出租车会快些，没想到倒比骑车还慢。",
+        "answerPy": "Wǒ yǐwéi zuò chūzūchē huì kuài xiē, méi xiǎngdào dào bǐ qí chē hái màn.",
+        "note": "以为 (Bài 4), 比……还 (Bài 5).",
+        "pair": "比……还……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Phiền bạn rót cho tôi cốc cà phê, vì tôi buồn ngủ chết đi được.",
+        "answer": "麻烦你给我倒杯咖啡吧，因为我困死了。",
+        "answerPy": "Máfan nǐ gěi wǒ dào bēi kāfēi ba, yīnwèi wǒ kùn sǐ le.",
+        "note": "困 là từ bài 10; 倒 ở đây là dào — rót, khác 倒 (lại).",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "倒是一个好主意",
+        "py": "dào shì yí gè hǎo zhǔyi",
+        "vn": "lại là ý hay đấy"
+      },
+      {
+        "zh": "倒比骑车还慢",
+        "py": "dào bǐ qí chē hái màn",
+        "vn": "lại còn chậm hơn đạp xe"
+      },
+      {
+        "zh": "倒杯水",
+        "py": "dào bēi shuǐ",
+        "vn": "rót cốc nước"
+      },
+      {
+        "zh": "倒垃圾",
+        "py": "dào lājī",
+        "vn": "đổ rác"
+      },
+      {
+        "zh": "你说得倒容易",
+        "py": "nǐ shuō de dào róngyì",
+        "vn": "anh nói thì dễ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 倒 + V / Adj (dào)",
+        "m": "Lại … — trái với điều người ta tưởng"
+      },
+      {
+        "s": "倒 (dào, lại) ≠ 倒 (dào, rót, đổ) — cùng âm, khác nghĩa"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "毛",
+    "py": "máo",
+    "pos": "Danh từ",
+    "vn": "lông",
+    "hv": "mao",
+    "em": "🐕",
+    "lesson": 2,
+    "explain": [
+      "Lông động vật, tóc (头发 = 毛发). 毛巾 (Bài 14) = khăn bông; 毛 cũng là đơn vị tiền (一毛钱)."
+    ],
+    "usage": "狗毛, 毛很漂亮, 动物的皮毛.",
+    "collo": [
+      "毛真漂亮",
+      "狗毛",
+      "用动物的皮毛做的衣服"
+    ],
+    "ex_zh": "你的这只大黑狗毛真漂亮，而且这么聪明，每次见了都想抱一抱它。",
+    "ex_py": "Nǐ de zhè zhī dà hēi gǒu máo zhēn piàoliang, érqiě zhème cōngming, měi cì jiànle dōu xiǎng bào yi bào tā.",
+    "ex_vn": "Con chó đen to của bạn lông đẹp thật, lại còn thông minh thế, lần nào gặp cũng muốn ôm nó.",
+    "exList": [
+      {
+        "zh": "你的这只大黑狗毛真漂亮，而且这么聪明，每次见了都想抱一抱它。",
+        "py": "Nǐ de zhè zhī dà hēi gǒu máo zhēn piàoliang, érqiě zhème cōngming, měi cì jiànle dōu xiǎng bào yi bào tā.",
+        "vn": "Con chó đen to của bạn lông đẹp thật, lại còn thông minh thế, lần nào gặp cũng muốn ôm nó."
+      },
+      {
+        "zh": "你会买用动物的皮毛做的衣服吗？为什么？",
+        "py": "Nǐ huì mǎi yòng dòngwù de pímáo zuò de yīfu ma? Wèishénme?",
+        "vn": "Bạn có mua quần áo làm từ lông thú không? Vì sao?"
+      },
+      {
+        "zh": "这只猫的毛又白又长，摸起来很舒服。",
+        "py": "Zhè zhī māo de máo yòu bái yòu cháng, mō qilai hěn shūfu.",
+        "vn": "Lông con mèo này vừa trắng vừa dài, sờ vào rất thích."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "毛",
+        "p": "máo",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 4,
+        "ord": "丿 → 一 → 一 → 乚",
+        "rad": "毛 (mao)",
+        "mean": "lông",
+        "tip": "Tượng hình túm LÔNG. 毛巾 (Bài 14), 毛衣 (áo len), 一毛钱 (hào), 毛病.",
+        "cf": "手 (shǒu – tay)",
+        "w": "毛 / 毛巾 / 毛衣 / 毛病"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Lông con mèo này vừa trắng vừa dài, sờ vào rất thích.",
+        "answer": "这只猫的毛又白又长，摸起来很舒服。",
+        "answerPy": "Zhè zhī māo de máo yòu bái yòu cháng, mō qilai hěn shūfu.",
+        "note": "又……又 (Bài 1), 起来 (Bài 15).",
+        "pair": "又……又……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "毛很漂亮",
+        "py": "máo hěn piàoliang",
+        "vn": "lông rất đẹp"
+      },
+      {
+        "zh": "狗毛",
+        "py": "gǒu máo",
+        "vn": "lông chó"
+      },
+      {
+        "zh": "皮毛",
+        "py": "pímáo",
+        "vn": "da lông"
+      },
+      {
+        "zh": "白色的毛",
+        "py": "báisè de máo",
+        "vn": "lông trắng"
+      },
+      {
+        "zh": "毛衣",
+        "py": "máoyī",
+        "vn": "áo len"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "动物 + 的 + 毛",
+        "m": "Lông của con vật nào"
+      },
+      {
+        "s": "毛 + 衣",
+        "m": "Áo (衣) làm bằng lông (毛) = áo len"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "抱",
+    "py": "bào",
+    "pos": "Động từ",
+    "vn": "bế, bồng, ôm",
+    "hv": "bão",
+    "em": "🤗",
+    "lesson": 2,
+    "explain": [
+      "Ôm vào lòng. 抱一抱, 抱着孩子, 抱歉 (Bài 14) = ôm nỗi áy náy."
+    ],
+    "usage": "抱一抱, 抱着, 抱孩子.",
+    "collo": [
+      "想抱一抱它",
+      "抱着孩子",
+      "紧紧地抱住"
+    ],
+    "ex_zh": "每次见了都想抱一抱它。",
+    "ex_py": "Měi cì jiànle dōu xiǎng bào yi bào tā.",
+    "ex_vn": "Lần nào gặp cũng muốn ôm nó.",
+    "exList": [
+      {
+        "zh": "你的这只大黑狗毛真漂亮，而且这么聪明，每次见了都想抱一抱它。",
+        "py": "Nǐ de zhè zhī dà hēi gǒu máo zhēn piàoliang, érqiě zhème cōngming, měi cì jiànle dōu xiǎng bào yi bào tā.",
+        "vn": "Con chó đen to của bạn lông đẹp thật, lại còn thông minh thế, lần nào gặp cũng muốn ôm nó."
+      },
+      {
+        "zh": "妈妈抱着孩子，一边走一边给他讲故事。",
+        "py": "Māma bàozhe háizi, yìbiān zǒu yìbiān gěi tā jiǎng gùshi.",
+        "vn": "Mẹ bế con, vừa đi vừa kể chuyện cho bé."
+      },
+      {
+        "zh": "很久没见，两个老朋友激动地抱在了一起。",
+        "py": "Hěn jiǔ méi jiàn, liǎng ge lǎo péngyou jīdòng de bào zài le yìqǐ.",
+        "vn": "Lâu ngày không gặp, hai người bạn cũ xúc động ôm lấy nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "抱",
+        "p": "bào",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "扌 trái → 包 phải",
+        "rad": "扌 (thủ)",
+        "mean": "ôm",
+        "tip": "Tay 扌 + 包(bọc) → hai tay BỌC lấy → ÔM. 抱歉 (Bài 14) = ôm lỗi = xin lỗi.",
+        "cf": "包 (bāo – bọc, túi)",
+        "w": "抱 / 抱歉 / 拥抱"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hai người bạn cũ lâu ngày không gặp, vừa thấy nhau là xúc động ôm chầm lấy nhau.",
+        "answer": "很久没见的两个老朋友，一见面就激动地抱在了一起。",
+        "answerPy": "Hěn jiǔ méi jiàn de liǎng ge lǎo péngyou, yí jiànmiàn jiù jīdòng de bào zàile yìqǐ.",
+        "note": "激动 là từ bài 16 — 激动地 + V.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "抱一抱它",
+        "py": "bào yí bào tā",
+        "vn": "ôm nó một cái"
+      },
+      {
+        "zh": "抱着孩子",
+        "py": "bào zhe háizi",
+        "vn": "bế đứa bé"
+      },
+      {
+        "zh": "紧紧地抱住",
+        "py": "jǐnjǐn de bào zhù",
+        "vn": "ôm chặt lấy"
+      },
+      {
+        "zh": "抱在一起",
+        "py": "bào zài yìqǐ",
+        "vn": "ôm lấy nhau"
+      },
+      {
+        "zh": "抱起来",
+        "py": "bào qǐlai",
+        "vn": "bế lên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "抱 + 着 + ai",
+        "m": "Đang bế, đang ôm ai"
+      },
+      {
+        "s": "抱一抱",
+        "m": "Ôm một cái — động từ lặp làm nhẹ đi"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "干",
+    "py": "gàn",
+    "pos": "Động từ",
+    "vn": "làm",
+    "hv": "cán",
+    "em": "🛠️",
+    "lesson": 2,
+    "explain": [
+      "Làm (việc, sự nghiệp) — khẩu ngữ. 干什么, 干工作, 好好儿干. Đọc gān = khô (擦干, 牛肉干). Ngữ pháp trọng tâm."
+    ],
+    "usage": "干什么, 好好儿干, 干活儿.",
+    "collo": [
+      "让它干什么",
+      "好好儿干",
+      "干工作"
+    ],
+    "ex_zh": "每次你让它干什么，它就像能听懂你的话一样去做。",
+    "ex_py": "Měi cì nǐ ràng tā gàn shénme, tā jiù xiàng néng tīngdǒng nǐ de huà yíyàng qù zuò.",
+    "ex_vn": "Mỗi lần bạn bảo nó làm gì, nó làm như thể hiểu lời bạn vậy.",
+    "exList": [
+      {
+        "zh": "每次你让它干什么，它就像能听懂你的话一样去做。",
+        "py": "Měi cì nǐ ràng tā gàn shénme, tā jiù xiàng néng tīngdǒng nǐ de huà yíyàng qù zuò.",
+        "vn": "Mỗi lần bạn bảo nó làm gì, nó làm như thể hiểu lời bạn vậy."
+      },
+      {
+        "zh": "A：你这篇报道写得很好，以后要继续努力。B：谢谢您，我一定会好好儿干的。",
+        "py": "A: Nǐ zhè piān bàodào xiě de hěn hǎo, yǐhòu yào jìxù nǔlì. B: Xièxie nín, wǒ yídìng huì hǎohāor gàn de.",
+        "vn": "A: Bài báo này bạn viết rất tốt, sau này tiếp tục cố gắng. B: Cảm ơn, tôi nhất định sẽ làm tốt."
+      },
+      {
+        "zh": "干工作的时候一定要认真、仔细，要注意到计划上的每一个地方，否则就很容易出问题。",
+        "py": "Gàn gōngzuò de shíhou yídìng yào rènzhēn, zǐxì, yào zhùyì dào jìhuà shang de měi yí ge dìfang, fǒuzé jiù hěn róngyì chū wèntí.",
+        "vn": "Khi làm việc nhất định phải nghiêm túc, cẩn thận, chú ý từng chỗ trong kế hoạch, nếu không dễ xảy ra vấn đề."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "干",
+        "p": "gàn",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 3,
+        "ord": "一 → 一 → 丨",
+        "rad": "干 (can)",
+        "mean": "làm; khô",
+        "tip": "Chữ 3 nét. Đọc gàn = LÀM (干活儿, 干杯); đọc gān = KHÔ (干净, 擦干, 饼干). Đa âm quan trọng!",
+        "cf": "千 (qiān – nghìn)",
+        "w": "干 (gàn) / 干净 (gān) / 饼干 / 干杯"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn ngài, chỉ cần ngài tin tôi thì tôi nhất định sẽ làm cho tốt.",
+        "answer": "谢谢您，只要您相信我，我就一定会好好儿干的。",
+        "answerPy": "Xièxie nín, zhǐyào nín xiāngxìn wǒ, wǒ jiù yídìng huì hǎohāor gàn de.",
+        "note": "干 (gàn) là làm, khác 干 (gān) là khô.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Khi làm việc nhất định phải nghiêm túc, cẩn thận, nếu không dễ xảy ra vấn đề.",
+        "answer": "干工作的时候一定要认真、仔细，否则就很容易出问题。",
+        "answerPy": "Gàn gōngzuò de shíhou yídìng yào rènzhēn, zǐxì, fǒuzé jiù hěn róngyì chū wèntí.",
+        "note": "仔细 (Bài 12), 否则 (Bài 11).",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "好好儿干",
+        "py": "hǎohǎo ér gàn",
+        "vn": "làm cho tốt"
+      },
+      {
+        "zh": "干工作",
+        "py": "gàn gōngzuò",
+        "vn": "làm việc"
+      },
+      {
+        "zh": "干什么",
+        "py": "gàn shénme",
+        "vn": "làm gì"
+      },
+      {
+        "zh": "干得不错",
+        "py": "gàn de búcuò",
+        "vn": "làm khá tốt"
+      },
+      {
+        "zh": "让它干什么",
+        "py": "ràng tā gàn shénme",
+        "vn": "bắt nó làm gì"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "干 (gàn, làm) ≠ 干 (gān, khô)"
+      },
+      {
+        "s": "干 ≈ 做",
+        "m": "干 thiên khẩu ngữ, dùng cho việc chân tay"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "严格",
+    "py": "yángé",
+    "pos": "Tính từ",
+    "vn": "nghiêm khắc, nghiêm ngặt",
+    "hv": "nghiêm cách",
+    "em": "📏",
+    "lesson": 2,
+    "explain": [
+      "Yêu cầu chặt chẽ, không dễ dãi. 严格按照, 严格要求, 对……很严格."
+    ],
+    "usage": "严格按照要求, 严格要求自己, 对学生很严格.",
+    "collo": [
+      "严格按照你的要求",
+      "严格要求自己",
+      "老师很严格"
+    ],
+    "ex_zh": "然后它就会严格按照你的要求做了。",
+    "ex_py": "Ránhòu tā jiù huì yángé ànzhào nǐ de yāoqiú zuò le.",
+    "ex_vn": "Sau đó nó sẽ làm nghiêm ngặt theo yêu cầu của bạn.",
+    "exList": [
+      {
+        "zh": "应该耐心地一遍一遍地教给它，使它熟悉，然后它就会严格按照你的要求做了。",
+        "py": "Yīnggāi nàixīn de yí biàn yí biàn de jiāo gěi tā, shǐ tā shúxī, ránhòu tā jiù huì yángé ànzhào nǐ de yāoqiú zuò le.",
+        "vn": "Nên kiên nhẫn dạy nó từng lần một, để nó quen, sau đó nó sẽ làm nghiêm ngặt theo yêu cầu của bạn."
+      },
+      {
+        "zh": "只有以严格的标准来要求自己才会让自己变得更优秀。",
+        "py": "Zhǐyǒu yǐ yángé de biāozhǔn lái yāoqiú zìjǐ cái huì ràng zìjǐ biànde gèng yōuxiù.",
+        "vn": "Chỉ khi lấy tiêu chuẩn nghiêm khắc yêu cầu bản thân mới trở nên xuất sắc hơn."
+      },
+      {
+        "zh": "我们老师对学生很严格，但是大家都很尊重他。",
+        "py": "Wǒmen lǎoshī duì xuésheng hěn yángé, dànshì dàjiā dōu hěn zūnzhòng tā.",
+        "vn": "Thầy chúng tôi rất nghiêm với học sinh, nhưng mọi người đều tôn trọng thầy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "严",
+        "p": "yán",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "一 → 业 → 厂",
+        "rad": "一 (nhất)",
+        "mean": "nghiêm",
+        "tip": "Giản thể của 嚴 → NGHIÊM. 严格 = nghiêm ngặt; 严重 = nghiêm trọng (Bài 8).",
+        "cf": "亚 (yà – Á)",
+        "w": "严格 / 严重"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy chúng tôi rất nghiêm với học sinh, nhưng mọi người đều tôn trọng thầy.",
+        "answer": "我们老师对学生很严格，但是大家都很尊重他。",
+        "answerPy": "Wǒmen lǎoshī duì xuésheng hěn yángé, dànshì dàjiā dōu hěn zūnzhòng tā.",
+        "note": "对……严格, 尊重 (Bài 16).",
+        "pair": "……，但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "严格要求自己",
+        "py": "yángé yāoqiú zìjǐ",
+        "vn": "nghiêm khắc với bản thân"
+      },
+      {
+        "zh": "老师很严格",
+        "py": "lǎoshī hěn yángé",
+        "vn": "thầy rất nghiêm"
+      },
+      {
+        "zh": "严格按照要求",
+        "py": "yángé ànzhào yāoqiú",
+        "vn": "nghiêm ngặt theo yêu cầu"
+      },
+      {
+        "zh": "严格的标准",
+        "py": "yángé de biāozhǔn",
+        "vn": "tiêu chuẩn nghiêm ngặt"
+      },
+      {
+        "zh": "对他很严格",
+        "py": "duì tā hěn yángé",
+        "vn": "rất nghiêm với anh ấy"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "对 + ai + 严格",
+        "m": "Nghiêm khắc với ai"
+      },
+      {
+        "s": "严格 + 要求 + ai",
+        "m": "Yêu cầu ai một cách nghiêm khắc"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "难受",
+    "py": "nánshòu",
+    "pos": "Tính từ",
+    "vn": "bực bội, buồn rầu; khó chịu",
+    "hv": "nan thụ",
+    "em": "😣",
+    "lesson": 2,
+    "explain": [
+      "(1) Trong lòng buồn, khó chịu: 心里难受. (2) Cơ thể khó chịu: 头疼得难受. Trái nghĩa: 舒服."
+    ],
+    "usage": "心里难受, 有些难受, 难受极了.",
+    "collo": [
+      "在你心里难受的时候",
+      "坐久了有些难受",
+      "难受得吃不下饭"
+    ],
+    "ex_zh": "狗是我们的好朋友，它能听懂人的话，明白人的心情。在你心里难受的时候，它会一直陪着你。",
+    "ex_py": "Gǒu shì wǒmen de hǎo péngyou, tā néng tīngdǒng rén de huà, míngbai rén de xīnqíng. Zài nǐ xīnli nánshòu de shíhou, tā huì yìzhí péizhe nǐ.",
+    "ex_vn": "Chó là bạn tốt của chúng ta, nó hiểu lời người, hiểu tâm trạng người. Khi bạn buồn, nó sẽ luôn ở bên bạn.",
+    "exList": [
+      {
+        "zh": "狗是我们的好朋友，它能听懂人的话，明白人的心情。在你心里难受的时候，它会一直陪着你。",
+        "py": "Gǒu shì wǒmen de hǎo péngyou, tā néng tīngdǒng rén de huà, míngbai rén de xīnqíng. Zài nǐ xīnli nánshòu de shíhou, tā huì yìzhí péizhe nǐ.",
+        "vn": "Chó là bạn tốt của chúng ta, nó hiểu lời người, hiểu tâm trạng người. Khi bạn buồn, nó sẽ luôn ở bên bạn."
+      },
+      {
+        "zh": "A：工作半天了，起来活动活动。B：好，坐久了确实有些难受。",
+        "py": "A: Gōngzuò bàntiān le, qǐlai huódòng huódòng. B: Hǎo, zuò jiǔ le quèshí yǒuxiē nánshòu.",
+        "vn": "A: Làm việc nửa ngày rồi, đứng dậy vận động đi. B: Ừ, ngồi lâu quả thật hơi khó chịu."
+      },
+      {
+        "zh": "听到这个消息，她难受得一整天都没吃饭。",
+        "py": "Tīngdào zhège xiāoxi, tā nánshòu de yì zhěng tiān dōu méi chī fàn.",
+        "vn": "Nghe tin này, cô ấy buồn đến cả ngày không ăn cơm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "受",
+        "p": "shòu",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "爫 → 冖 → 又",
+        "rad": "又 (hựu)",
+        "mean": "chịu, nhận",
+        "tip": "Tay trên 爫 đưa, tay dưới 又 NHẬN → CHỊU, NHẬN. 难受 = khó chịu; 受到 (Bài 8); 接受 (Bài 6).",
+        "cf": "爱 (ài – yêu)",
+        "w": "难受 / 受到 / 接受 / 受欢迎"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ừ, ngồi lâu quả thật hơi khó chịu, chúng ta xuống đi bộ một lát đi.",
+        "answer": "好，坐久了确实有些难受，咱们就下去走走吧。",
+        "answerPy": "Hǎo, zuò jiǔ le quèshí yǒuxiē nánshòu, zánmen jiù xiàqu zǒuzou ba.",
+        "note": "确实 là từ bài 10; 难受 thiên về thân thể, 难过 thiên tâm trạng.",
+        "pair": "……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "心里难受",
+        "py": "xīn li nánshòu",
+        "vn": "trong lòng khó chịu"
+      },
+      {
+        "zh": "有些难受",
+        "py": "yǒuxiē nánshòu",
+        "vn": "hơi khó chịu"
+      },
+      {
+        "zh": "难受得吃不下饭",
+        "py": "nánshòu de chī bú xià fàn",
+        "vn": "khó chịu đến không ăn nổi"
+      },
+      {
+        "zh": "很难受",
+        "py": "hěn nánshòu",
+        "vn": "rất khó chịu"
+      },
+      {
+        "zh": "坐久了难受",
+        "py": "zuò jiǔ le nánshòu",
+        "vn": "ngồi lâu thấy mỏi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "难受 + 得 + kết quả",
+        "m": "Khó chịu đến mức nào"
+      },
+      {
+        "s": "难受 ≠ 难过",
+        "m": "难受 thiên về thân thể; 难过 thiên về tâm trạng"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "趟",
+    "py": "tàng",
+    "pos": "Lượng từ",
+    "vn": "lần, chuyến (số lần đi lại)",
+    "hv": "thảng",
+    "em": "🚶",
+    "lesson": 3,
+    "explain": [
+      "Lượng từ động lượng cho hành động đi–về: 去一趟, 回一趟家, 出趟差. Cũng dùng cho chuyến xe/tàu (好几趟公共汽车). Ngữ pháp trọng tâm: 趟 vs 次."
+    ],
+    "usage": "去了趟……, 回一趟家, 出趟差.",
+    "collo": [
+      "去了趟北京动物园",
+      "回一趟家",
+      "出趟差"
+    ],
+    "ex_zh": "上个月我去了趟北京动物园，那里约有500种动物。",
+    "ex_py": "Shàng ge yuè wǒ qùle tàng Běijīng Dòngwùyuán, nàli yuē yǒu wǔbǎi zhǒng dòngwù.",
+    "ex_vn": "Tháng trước tôi đi một chuyến sở thú Bắc Kinh, ở đó có khoảng 500 loài động vật.",
+    "exList": [
+      {
+        "zh": "上个月我去了趟北京动物园，那里约有500种动物，听导游说北京动物园是亚洲最大的动物园之一。",
+        "py": "Shàng ge yuè wǒ qùle tàng Běijīng Dòngwùyuán, nàli yuē yǒu wǔbǎi zhǒng dòngwù, tīng dǎoyóu shuō Běijīng Dòngwùyuán shì Yàzhōu zuì dà de dòngwùyuán zhī yī.",
+        "vn": "Tháng trước tôi đi một chuyến sở thú Bắc Kinh, ở đó có khoảng 500 loài, nghe hướng dẫn viên nói đây là một trong những sở thú lớn nhất châu Á."
+      },
+      {
+        "zh": "我要出趟差，你能帮我照顾一下我的小狗吗？",
+        "py": "Wǒ yào chū tàng chāi, nǐ néng bāng wǒ zhàogù yíxià wǒ de xiǎo gǒu ma?",
+        "vn": "Tôi phải đi công tác một chuyến, bạn giúp tôi chăm con chó nhỏ được không?"
+      },
+      {
+        "zh": "A：马上就要放暑假了，你有什么安排吗？B：我打算先回一趟家，看看我奶奶，然后回学校准备研究生考试。",
+        "py": "A: Mǎshàng jiù yào fàng shǔjià le, nǐ yǒu shénme ānpái ma? B: Wǒ dǎsuàn xiān huí yí tàng jiā, kànkan wǒ nǎinai, ránhòu huí xuéxiào zhǔnbèi yánjiūshēng kǎoshì.",
+        "vn": "A: Sắp nghỉ hè rồi, bạn có sắp xếp gì không? B: Tôi định về nhà một chuyến thăm bà, rồi về trường ôn thi cao học."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "趟",
+        "p": "tàng",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 15,
+        "ord": "走 bao → 尚 trong",
+        "rad": "走 (tẩu)",
+        "mean": "chuyến",
+        "tip": "Bộ chạy 走 + 尚 → CHUYẾN đi. Lượng từ cho hành động đi-về (去/来/回 + 一趟).",
+        "cf": "尚 (shàng – còn)",
+        "w": "一趟 / 去一趟 / 回一趟家"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì tôi phải đi công tác một chuyến, nên nhờ bạn trông giúp con chó nhỏ được không?",
+        "answer": "因为我要出趟差，所以你能帮我照顾一下我的小狗吗？",
+        "answerPy": "Yīnwèi wǒ yào chū tàng chāi, suǒyǐ nǐ néng bāng wǒ zhàogù yíxià wǒ de xiǎo gǒu ma?",
+        "note": "出差 là từ bài 14 — 出趟差 là dạng chèn lượng từ vào từ ly hợp.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi định về nhà một chuyến thăm bà, rồi về trường ôn thi cao học.",
+        "answer": "我打算先回一趟家，看看我奶奶，然后回学校准备研究生考试。",
+        "answerPy": "Wǒ dǎsuàn xiān huí yí tàng jiā, kànkan wǒ nǎinai, ránhòu huí xuéxiào zhǔnbèi yánjiūshēng kǎoshì.",
+        "note": "先……然后 (Bài 3), 研究生 (Bài 9).",
+        "pair": "先……然后……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "去一趟",
+        "py": "qù yí tàng",
+        "vn": "đi một chuyến"
+      },
+      {
+        "zh": "回一趟家",
+        "py": "huí yí tàng jiā",
+        "vn": "về nhà một chuyến"
+      },
+      {
+        "zh": "出趟差",
+        "py": "chū tàng chà",
+        "vn": "đi công tác một chuyến"
+      },
+      {
+        "zh": "去了趟北京",
+        "py": "qù le tàng Běijīng",
+        "vn": "đi Bắc Kinh một chuyến"
+      },
+      {
+        "zh": "跑了三趟",
+        "py": "pǎo le sān tàng",
+        "vn": "chạy ba chuyến"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 一趟 + nơi chốn",
+        "m": "Đi đâu một chuyến"
+      },
+      {
+        "s": "趟 ≠ 次",
+        "m": "趟 dùng cho việc ĐI LẠI; 次 đếm mọi hành động"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "放暑假",
+    "py": "fàng shǔjià",
+    "pos": "Cụm động từ",
+    "vn": "nghỉ hè",
+    "hv": "phóng thử giá",
+    "em": "🏖️",
+    "lesson": 3,
+    "explain": [
+      "Được nghỉ hè. 暑假 = kỳ nghỉ hè (Bài 1); 放寒假 (Bài 15) = nghỉ đông."
+    ],
+    "usage": "放暑假的时候, 马上就要放暑假了, 放暑假了.",
+    "collo": [
+      "去年放暑假的时候",
+      "马上就要放暑假了",
+      "放暑假回家"
+    ],
+    "ex_zh": "去年放暑假的时候，我也去过一次，我在那儿看了马、熊猫、老虎等动物。",
+    "ex_py": "Qùnián fàng shǔjià de shíhou, wǒ yě qùguo yí cì, wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù.",
+    "ex_vn": "Nghỉ hè năm ngoái tôi cũng đi một lần, ở đó tôi xem ngựa, gấu trúc, hổ và các động vật khác.",
+    "exList": [
+      {
+        "zh": "去年放暑假的时候，我也去过一次，我在那儿看了马、熊猫、老虎等动物。",
+        "py": "Qùnián fàng shǔjià de shíhou, wǒ yě qùguo yí cì, wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù.",
+        "vn": "Nghỉ hè năm ngoái tôi cũng đi một lần, ở đó tôi xem ngựa, gấu trúc, hổ và các động vật khác."
+      },
+      {
+        "zh": "马上就要放暑假了，你有什么安排吗？",
+        "py": "Mǎshàng jiù yào fàng shǔjià le, nǐ yǒu shénme ānpái ma?",
+        "vn": "Sắp nghỉ hè rồi, bạn có sắp xếp gì không?"
+      },
+      {
+        "zh": "去年放暑假的时候我去了一趟云南。现在回忆起来，我仍然觉得那是一次愉快的旅行。",
+        "py": "Qùnián fàng shǔjià de shíhou wǒ qùle yí tàng Yúnnán. Xiànzài huíyì qilai, wǒ réngrán juéde nà shì yí cì yúkuài de lǚxíng.",
+        "vn": "Nghỉ hè năm ngoái tôi đi Vân Nam một chuyến. Giờ nhớ lại, tôi vẫn thấy đó là chuyến đi vui vẻ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "暑",
+        "p": "shǔ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "日 trên → 者 dưới",
+        "rad": "日 (nhật)",
+        "mean": "nóng, hè",
+        "tip": "Mặt trời 日 + 者 → NÓNG BỨC → mùa hè. 暑假 = nghỉ hè; đối lập 寒假 (Bài 15).",
+        "cf": "署 (shǔ – sở, cơ quan)",
+        "w": "暑假 / 放暑假 / 暑期"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sắp nghỉ hè rồi, nếu bạn chưa có kế hoạch thì cùng đi du lịch với tôi nhé.",
+        "answer": "马上就要放暑假了，要是你还没有安排，就跟我一起去旅行吧。",
+        "answerPy": "Mǎshàng jiù yào fàng shǔjià le, yàoshi nǐ hái méiyǒu ānpái, jiù gēn wǒ yìqǐ qù lǚxíng ba.",
+        "note": "安排 là từ bài 3; 马上就要……了 — sắp sửa.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "放暑假",
+        "py": "fàng shǔjià",
+        "vn": "nghỉ hè"
+      },
+      {
+        "zh": "去年放暑假的时候",
+        "py": "qùnián fàng shǔjià de shíhou",
+        "vn": "hồi nghỉ hè năm ngoái"
+      },
+      {
+        "zh": "马上就要放暑假了",
+        "py": "mǎshàng jiù yào fàng shǔjià le",
+        "vn": "sắp nghỉ hè rồi"
+      },
+      {
+        "zh": "放暑假回家",
+        "py": "fàng shǔjià huí jiā",
+        "vn": "nghỉ hè về nhà"
+      },
+      {
+        "zh": "暑假作业",
+        "py": "shǔjià zuòyè",
+        "vn": "bài tập hè"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "放 + 暑假 / 寒假 (bài 15)",
+        "m": "Nghỉ hè / nghỉ đông"
+      },
+      {
+        "s": "马上就要……了",
+        "m": "Sắp … rồi — 快要……了 cùng nghĩa"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "老虎",
+    "py": "lǎohǔ",
+    "pos": "Danh từ",
+    "vn": "hổ, cọp",
+    "hv": "lão hổ",
+    "em": "🐯",
+    "lesson": 3,
+    "explain": [
+      "Con hổ. Lượng từ: 只. 马虎 (Bài 16) có chữ 虎."
+    ],
+    "usage": "一只老虎, 看老虎, 老虎很厉害.",
+    "collo": [
+      "一只老虎",
+      "动物园里的老虎",
+      "老虎和熊猫"
+    ],
+    "ex_zh": "我在那儿看了马、熊猫、老虎等动物。",
+    "ex_py": "Wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù.",
+    "ex_vn": "Ở đó tôi xem ngựa, gấu trúc, hổ và các động vật khác.",
+    "exList": [
+      {
+        "zh": "我在那儿看了马、熊猫、老虎等动物。我特别喜欢熊猫，可惜它们当时大多在睡觉。",
+        "py": "Wǒ zài nàr kànle mǎ, xióngmāo, lǎohǔ děng dòngwù. Wǒ tèbié xǐhuan xióngmāo, kěxī tāmen dāngshí dàduō zài shuì jiào.",
+        "vn": "Ở đó tôi xem ngựa, gấu trúc, hổ. Tôi đặc biệt thích gấu trúc, tiếc là lúc đó chúng phần lớn đang ngủ."
+      },
+      {
+        "zh": "老虎是森林里最厉害的动物之一。",
+        "py": "Lǎohǔ shì sēnlín li zuì lìhai de dòngwù zhī yī.",
+        "vn": "Hổ là một trong những động vật lợi hại nhất trong rừng."
+      },
+      {
+        "zh": "孩子第一次看到老虎，害怕得抱住了妈妈。",
+        "py": "Háizi dì-yī cì kàndào lǎohǔ, hàipà de bàozhùle māma.",
+        "vn": "Đứa bé lần đầu thấy hổ, sợ đến ôm chặt lấy mẹ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "虎",
+        "p": "hǔ",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 8,
+        "ord": "虍 bao → 几 trong",
+        "rad": "虍 (hổ)",
+        "mean": "hổ",
+        "tip": "Tượng hình con HỔ há miệng. 老虎 (thêm 老 như 老鼠, 老师); 马虎 (Bài 16) = cẩu thả.",
+        "cf": "虚 (xū – hư)",
+        "w": "老虎 / 马虎"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hổ không những là một trong những loài lợi hại nhất trong rừng, mà còn chạy rất nhanh.",
+        "answer": "老虎不但是森林里最厉害的动物之一，而且跑得非常快。",
+        "answerPy": "Lǎohǔ búdàn shì sēnlín li zuì lìhai de dòngwù zhī yī, érqiě pǎo de fēicháng kuài.",
+        "note": "……之一 — 之 là từ bài 11; 厉害 là từ bài 11.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一只老虎",
+        "py": "yì zhī lǎohǔ",
+        "vn": "một con hổ"
+      },
+      {
+        "zh": "老虎和熊猫",
+        "py": "lǎohǔ hé xióngmāo",
+        "vn": "hổ và gấu trúc"
+      },
+      {
+        "zh": "动物园里的老虎",
+        "py": "dòngwù yuán li de lǎohǔ",
+        "vn": "hổ trong sở thú"
+      },
+      {
+        "zh": "怕老虎",
+        "py": "pà lǎohǔ",
+        "vn": "sợ hổ"
+      },
+      {
+        "zh": "老虎很厉害",
+        "py": "lǎohǔ hěn lìhai",
+        "vn": "hổ rất lợi hại"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "một + 只 + 老虎",
+        "m": "Lượng từ 只 cho con vật"
+      },
+      {
+        "s": "老虎 + 厉害 (bài 11)",
+        "m": "Hổ lợi hại"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "入口",
+    "py": "rùkǒu",
+    "pos": "Danh từ",
+    "vn": "cổng vào, lối vào",
+    "hv": "nhập khẩu",
+    "em": "🚪",
+    "lesson": 3,
+    "explain": [
+      "Lối vào. Trái nghĩa: 出口 (lối ra). 入口处 = chỗ cổng vào."
+    ],
+    "usage": "入口处, 在入口等你, 动物园的入口.",
+    "collo": [
+      "入口处排队",
+      "在入口等",
+      "找到入口"
+    ],
+    "ex_zh": "入口处排队的人很多，动物园里热闹极了。",
+    "ex_py": "Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.",
+    "ex_vn": "Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng.",
+    "exList": [
+      {
+        "zh": "入口处排队的人很多，动物园里热闹极了。",
+        "py": "Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.",
+        "vn": "Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng."
+      },
+      {
+        "zh": "我们十点在博物馆的入口见面吧。",
+        "py": "Wǒmen shí diǎn zài bówùguǎn de rùkǒu jiànmiàn ba.",
+        "vn": "Chúng ta 10 giờ gặp ở cổng vào bảo tàng nhé."
+      },
+      {
+        "zh": "请问，地铁站的入口在哪儿？",
+        "py": "Qǐngwèn, dìtiě zhàn de rùkǒu zài nǎr?",
+        "vn": "Xin hỏi, lối vào ga tàu điện ngầm ở đâu?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "入",
+        "p": "rù",
+        "type": "独体字 · Chữ đơn thể",
+        "st": 2,
+        "ord": "丿 → 乀",
+        "rad": "入 (nhập)",
+        "mean": "vào",
+        "tip": "Hình mũi tên đi VÀO. Phân biệt 入 (nét phải dài hơn) với 人 (nét trái dài). 入口 = cổng vào; 收入 = thu nhập (Bài 10).",
+        "cf": "人 (rén – người)",
+        "w": "入口 / 收入 / 进入"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng ta cứ gặp nhau ở cổng vào bảo tàng lúc 10 giờ, nếu tôi đến muộn thì bạn đợi một chút nhé.",
+        "answer": "我们十点在博物馆的入口见面吧，要是我晚到了，你就等一会儿。",
+        "answerPy": "Wǒmen shí diǎn zài bówùguǎn de rùkǒu jiànmiàn ba, yàoshi wǒ wǎn dào le, nǐ jiù děng yíhuìr.",
+        "note": "入口 ↔ 出口.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "在入口等",
+        "py": "zài rùkǒu děng",
+        "vn": "đợi ở cổng vào"
+      },
+      {
+        "zh": "入口处",
+        "py": "rùkǒu chù",
+        "vn": "khu vực cổng vào"
+      },
+      {
+        "zh": "找到入口",
+        "py": "zhǎo dào rùkǒu",
+        "vn": "tìm thấy lối vào"
+      },
+      {
+        "zh": "博物馆的入口",
+        "py": "bó wù guǎn de rùkǒu",
+        "vn": "cổng vào bảo tàng"
+      },
+      {
+        "zh": "入口排队",
+        "py": "rùkǒu pái duì",
+        "vn": "xếp hàng ở cổng vào"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "入口 ↔ 出口",
+        "m": "Lối vào ↔ lối ra"
+      },
+      {
+        "s": "在 + 入口 + 见面",
+        "m": "Gặp nhau ở cổng vào"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "排队",
+    "py": "pái duì",
+    "pos": "Động từ",
+    "vn": "xếp hàng",
+    "hv": "bài đội",
+    "em": "🧍‍♂️🧍‍♀️",
+    "lesson": 3,
+    "explain": [
+      "Đứng thành hàng chờ. Động từ ly hợp: 排了很长的队, 排队买票."
+    ],
+    "usage": "排队买票, 排队的人很多, 排了很长时间的队.",
+    "collo": [
+      "排队的人很多",
+      "排队买票",
+      "排很长的队"
+    ],
+    "ex_zh": "入口处排队的人很多。",
+    "ex_py": "Rùkǒu chù pái duì de rén hěn duō.",
+    "ex_vn": "Ở cổng vào rất nhiều người xếp hàng.",
+    "exList": [
+      {
+        "zh": "我去的那天正赶上六一儿童节，许多父母带着孩子去动物园。入口处排队的人很多，动物园里热闹极了。",
+        "py": "Wǒ qù de nà tiān zhèng gǎnshang Liùyī Értóngjié, xǔduō fùmǔ dàizhe háizi qù dòngwùyuán. Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.",
+        "vn": "Hôm tôi đi đúng vào ngày Quốc tế thiếu nhi, nhiều cha mẹ đưa con đến sở thú. Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng."
+      },
+      {
+        "zh": "为了买到演出的票，我排了两个小时的队。",
+        "py": "Wèile mǎidào yǎnchū de piào, wǒ páile liǎng ge xiǎoshí de duì.",
+        "vn": "Để mua được vé buổi biểu diễn, tôi xếp hàng hai tiếng."
+      },
+      {
+        "zh": "请大家排队上车，不要挤。",
+        "py": "Qǐng dàjiā pái duì shàng chē, búyào jǐ.",
+        "vn": "Mời mọi người xếp hàng lên xe, đừng chen."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "排",
+        "p": "pái",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "扌 trái → 非 phải",
+        "rad": "扌 (thủ)",
+        "mean": "xếp",
+        "tip": "Tay 扌 + 非(hai hàng đối nhau) → XẾP thành hàng. 排队 = xếp hàng; 排列 = sắp xếp; 安排 = sắp đặt (Bài 6).",
+        "cf": "非 (fēi – không)",
+        "w": "排队 / 排列 / 安排"
+      },
+      {
+        "c": "队",
+        "p": "duì",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "阝 trái → 人 phải",
+        "rad": "阝 (phụ)",
+        "mean": "đội, hàng",
+        "tip": "Giản thể của 隊 → ĐỘI, HÀNG. 排队, 队员 (thành viên đội), 足球队.",
+        "cf": "认 (rèn – nhận)",
+        "w": "排队 / 队员 / 球队"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Để mua được vé buổi biểu diễn, tôi xếp hàng hai tiếng.",
+        "answer": "为了买到演出的票，我排了两个小时的队。",
+        "answerPy": "Wèile mǎidào yǎnchū de piào, wǒ páile liǎng ge xiǎoshí de duì.",
+        "note": "为了 (Bài 4), 演出 (Bài 13), ly hợp 排……队.",
+        "pair": "为了……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "排队买票",
+        "py": "pái duì mǎi piào",
+        "vn": "xếp hàng mua vé"
+      },
+      {
+        "zh": "排队的人很多",
+        "py": "pái duì de rén hěn duō",
+        "vn": "nhiều người xếp hàng"
+      },
+      {
+        "zh": "排很长的队",
+        "py": "pái hěn zhǎng de duì",
+        "vn": "xếp hàng rất dài"
+      },
+      {
+        "zh": "排了半小时队",
+        "py": "pái le bàn xiǎoshí duì",
+        "vn": "xếp hàng nửa tiếng"
+      },
+      {
+        "zh": "不用排队",
+        "py": "bú yòng pái duì",
+        "vn": "không phải xếp hàng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "排 + 了 + thời lượng + 队",
+        "m": "排队 là từ ly hợp: 排了半小时队 ✓"
+      },
+      {
+        "s": "排队 + V",
+        "m": "Xếp hàng để làm gì"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "活泼",
+    "py": "huópō",
+    "pos": "Tính từ",
+    "vn": "hoạt bát, nhanh nhẹn",
+    "hv": "hoạt bát",
+    "em": "🐼",
+    "lesson": 3,
+    "explain": [
+      "Nhanh nhẹn, sinh động (người, động vật, không khí). 活泼可爱, 性格活泼."
+    ],
+    "usage": "性格活泼, 活泼可爱, 变得活泼.",
+    "collo": [
+      "变得特别活泼",
+      "活泼可爱的女孩子",
+      "性格活泼"
+    ],
+    "ex_zh": "熊猫们也变得特别活泼，我还给它们照了不少照片呢。",
+    "ex_py": "Xióngmāomen yě biànde tèbié huópō, wǒ hái gěi tāmen zhàole bù shǎo zhàopiàn ne.",
+    "ex_vn": "Gấu trúc cũng trở nên rất hoạt bát, tôi còn chụp cho chúng khá nhiều ảnh.",
+    "exList": [
+      {
+        "zh": "熊猫们也变得特别活泼，我还给它们照了不少照片呢。",
+        "py": "Xióngmāomen yě biànde tèbié huópō, wǒ hái gěi tāmen zhàole bù shǎo zhàopiàn ne.",
+        "vn": "Gấu trúc cũng trở nên rất hoạt bát, tôi còn chụp cho chúng khá nhiều ảnh."
+      },
+      {
+        "zh": "A：小李，我给你介绍个女朋友吧，说说你有什么条件。B：我，我喜欢活泼可爱的女孩子。",
+        "py": "A: Xiǎo Lǐ, wǒ gěi nǐ jièshào ge nǚ péngyou ba, shuōshuo nǐ yǒu shénme tiáojiàn. B: Wǒ, wǒ xǐhuan huópō kě'ài de nǚ háizi.",
+        "vn": "A: Tiểu Lý, tôi giới thiệu bạn gái cho cậu nhé, nói xem cậu có điều kiện gì. B: Tôi, tôi thích cô gái hoạt bát đáng yêu."
+      },
+      {
+        "zh": "七岁左右的儿童普遍活泼好动，坐不住。",
+        "py": "Qī suì zuǒyòu de értóng pǔbiàn huópō hào dòng, zuòbuzhù.",
+        "vn": "Trẻ khoảng bảy tuổi thường hoạt bát hiếu động, không ngồi yên."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "泼",
+        "p": "pō",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "氵 trái → 发 phải",
+        "rad": "氵 (thủy)",
+        "mean": "hắt nước",
+        "tip": "Nước 氵 + 发 → HẮT nước tung tóe → sống động. 活泼 = hoạt bát; 泼水节 = Tết té nước.",
+        "cf": "发 (fā – phát)",
+        "w": "活泼 / 泼水"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi thích cô gái hoạt bát đáng yêu, chứ không phải người quá rụt rè.",
+        "answer": "我喜欢活泼可爱的女孩子，而不是太害羞的人。",
+        "answerPy": "Wǒ xǐhuan huópō kě'ài de nǚháizi, ér bú shì tài hàixiū de rén.",
+        "note": "害羞 là từ bài 15 — 活泼 ↔ 害羞.",
+        "pair": "不是……而是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "性格活泼",
+        "py": "xìnggé huópō",
+        "vn": "tính cách hoạt bát"
+      },
+      {
+        "zh": "活泼可爱",
+        "py": "huópō kě'ài",
+        "vn": "hoạt bát đáng yêu"
+      },
+      {
+        "zh": "变得特别活泼",
+        "py": "biàn de tèbié huópō",
+        "vn": "trở nên rất lanh lợi"
+      },
+      {
+        "zh": "活泼的孩子",
+        "py": "huópō de háizi",
+        "vn": "đứa trẻ hiếu động"
+      },
+      {
+        "zh": "不太活泼",
+        "py": "bú tài huópō",
+        "vn": "không lanh lợi lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "性格 + 活泼",
+        "m": "Tính cách hoạt bát — 性格 là từ bài 1"
+      },
+      {
+        "s": "活泼 ↔ 害羞 (bài 15)",
+        "m": "Hoạt bát ↔ rụt rè"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "社会",
+    "py": "shèhuì",
+    "pos": "Danh từ",
+    "vn": "xã hội",
+    "hv": "xã hội",
+    "em": "🏙️",
+    "lesson": 4,
+    "explain": [
+      "Cộng đồng người. 社会上, 社会的发展, 进入社会."
+    ],
+    "usage": "社会上的人, 随着社会的发展, 社会问题.",
+    "collo": [
+      "社会上的人与人之间",
+      "社会的发展",
+      "进入社会"
+    ],
+    "ex_zh": "不仅社会上的人与人之间有竞争，森林里的各种植物之间也有竞争，这一点儿也不奇怪。",
+    "ex_py": "Bùjǐn shèhuì shang de rén yǔ rén zhījiān yǒu jìngzhēng, sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng, zhè yìdiǎnr yě bù qíguài.",
+    "ex_vn": "Không chỉ giữa người với người trong xã hội có cạnh tranh, giữa các loài cây trong rừng cũng có cạnh tranh, điều này chẳng có gì lạ.",
+    "exList": [
+      {
+        "zh": "不仅社会上的人与人之间有竞争，森林里的各种植物之间也有竞争，这一点儿也不奇怪。",
+        "py": "Bùjǐn shèhuì shang de rén yǔ rén zhījiān yǒu jìngzhēng, sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng, zhè yìdiǎnr yě bù qíguài.",
+        "vn": "Không chỉ giữa người với người trong xã hội có cạnh tranh, giữa các loài cây trong rừng cũng có cạnh tranh, điều này chẳng có gì lạ."
+      },
+      {
+        "zh": "随着社会的发展，京剧也在改变。",
+        "py": "Suízhe shèhuì de fāzhǎn, jīngjù yě zài gǎibiàn.",
+        "vn": "Cùng với sự phát triển của xã hội, Kinh kịch cũng đang thay đổi."
+      },
+      {
+        "zh": "大学毕业后进入社会，才发现要学的东西还很多。",
+        "py": "Dàxué bì yè hòu jìnrù shèhuì, cái fāxiàn yào xué de dōngxi hái hěn duō.",
+        "vn": "Sau khi tốt nghiệp bước vào xã hội, mới phát hiện còn nhiều điều phải học."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "社",
+        "p": "shè",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "礻 trái → 土 phải",
+        "rad": "礻 (thị)",
+        "mean": "xã",
+        "tip": "礻(thần) + 土(đất) → thần đất, nơi dân làng tụ họp → XÃ. 社会 = xã hội; 报社 = tòa soạn.",
+        "cf": "土 (tǔ – đất)",
+        "w": "社会 / 报社 / 社区"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sau khi tốt nghiệp bước vào xã hội, mới phát hiện còn nhiều điều phải học.",
+        "answer": "大学毕业后进入社会，才发现要学的东西还很多。",
+        "answerPy": "Dàxué bì yè hòu jìnrù shèhuì, cái fāxiàn yào xué de dōngxi hái hěn duō.",
+        "note": "毕业 (Bài 9), 才 (Bài 3).",
+        "pair": "……，才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "社会的发展",
+        "py": "shèhuì de fāzhǎn",
+        "vn": "sự phát triển xã hội"
+      },
+      {
+        "zh": "进入社会",
+        "py": "jìn rù shèhuì",
+        "vn": "bước vào xã hội"
+      },
+      {
+        "zh": "社会上的人",
+        "py": "shèhuì shàng de rén",
+        "vn": "người trong xã hội"
+      },
+      {
+        "zh": "社会问题",
+        "py": "shèhuì wèntí",
+        "vn": "vấn đề xã hội"
+      },
+      {
+        "zh": "适应社会",
+        "py": "shìyìng shèhuì",
+        "vn": "thích nghi với xã hội"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "随着 + 社会 + 的发展",
+        "m": "Cùng với sự phát triển xã hội — 随着 là từ bài 13"
+      },
+      {
+        "s": "进入 + 社会",
+        "m": "Bước vào đời"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "竞争",
+    "py": "jìngzhēng",
+    "pos": "Động từ",
+    "vn": "cạnh tranh",
+    "hv": "cạnh tranh",
+    "em": "🏁",
+    "lesson": 4,
+    "explain": [
+      "Ganh đua để giành phần hơn. Cũng làm danh từ: 有竞争, 竞争很激烈."
+    ],
+    "usage": "为了……而竞争, 有竞争, 竞争激烈.",
+    "collo": [
+      "为了阳光、空气和水而竞争",
+      "人与人之间有竞争",
+      "竞争很激烈"
+    ],
+    "ex_zh": "植物会为了阳光、空气和水而竞争。",
+    "ex_py": "Zhíwù huì wèile yángguāng, kōngqì hé shuǐ ér jìngzhēng.",
+    "ex_vn": "Cây cối sẽ cạnh tranh vì ánh nắng, không khí và nước.",
+    "exList": [
+      {
+        "zh": "植物会为了阳光、空气和水而竞争。一些高大的植物往往能获得更多的阳光、空气和水。",
+        "py": "Zhíwù huì wèile yángguāng, kōngqì hé shuǐ ér jìngzhēng. Yìxiē gāodà de zhíwù wǎngwǎng néng huòdé gèng duō de yángguāng, kōngqì hé shuǐ.",
+        "vn": "Cây cối cạnh tranh vì ánh nắng, không khí và nước. Những cây cao lớn thường giành được nhiều nắng, không khí và nước hơn."
+      },
+      {
+        "zh": "现在找工作的竞争越来越激烈，你一定要重视平时的积累。",
+        "py": "Xiànzài zhǎo gōngzuò de jìngzhēng yuè lái yuè jīliè, nǐ yídìng yào zhòngshì píngshí de jīlěi.",
+        "vn": "Bây giờ cạnh tranh tìm việc ngày càng gay gắt, bạn nhất định phải chú trọng tích lũy thường ngày."
+      },
+      {
+        "zh": "有竞争才有进步，没有人会永远赢。",
+        "py": "Yǒu jìngzhēng cái yǒu jìnbù, méiyǒu rén huì yǒngyuǎn yíng.",
+        "vn": "Có cạnh tranh mới có tiến bộ, không ai thắng mãi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "竞",
+        "p": "jìng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "立 trên → 兄 dưới",
+        "rad": "立 (lập)",
+        "mean": "thi đua",
+        "tip": "Hai người đứng 立 cạnh nhau ganh đua → CẠNH (thi đua). 竞争 = cạnh tranh; 竞赛 = thi đấu.",
+        "cf": "竟 (jìng – rốt cuộc, 竟然 Bài 6)",
+        "w": "竞争 / 竞赛"
+      },
+      {
+        "c": "争",
+        "p": "zhēng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "⺈ trên → 尹 dưới",
+        "rad": "刀 (đao)",
+        "mean": "tranh giành",
+        "tip": "Hai bàn tay giằng co một vật → TRANH. 竞争, 争取, 争论.",
+        "cf": "净 (jìng – sạch)",
+        "w": "竞争 / 争取 / 争论"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bây giờ cạnh tranh tìm việc ngày càng gay gắt, bạn nhất định phải chú trọng tích lũy thường ngày.",
+        "answer": "现在找工作的竞争越来越激烈，你一定要重视平时的积累。",
+        "answerPy": "Xiànzài zhǎo gōngzuò de jìngzhēng yuè lái yuè jīliè, nǐ yídìng yào zhòngshì píngshí de jīlěi.",
+        "note": "重视/积累 (Bài 16), 越来越 (Bài 1).",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "竞争很激烈",
+        "py": "jìngzhēng hěn jīliè",
+        "vn": "cạnh tranh gay gắt"
+      },
+      {
+        "zh": "人与人之间有竞争",
+        "py": "rén yǔ rén zhī jiān yǒu jìngzhēng",
+        "vn": "người với người có cạnh tranh"
+      },
+      {
+        "zh": "为……而竞争",
+        "py": "wèi ér jìngzhēng",
+        "vn": "cạnh tranh vì cái gì"
+      },
+      {
+        "zh": "市场竞争",
+        "py": "shì chǎng jìngzhēng",
+        "vn": "cạnh tranh thị trường"
+      },
+      {
+        "zh": "参加竞争",
+        "py": "cānjiā jìngzhēng",
+        "vn": "tham gia cạnh tranh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "为了 + N + 而 + 竞争",
+        "m": "Cạnh tranh vì cái gì"
+      },
+      {
+        "s": "A 与 B 之间的竞争",
+        "m": "Sự cạnh tranh giữa A và B — 之 là từ bài 11"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "森林",
+    "py": "sēnlín",
+    "pos": "Danh từ",
+    "vn": "rừng rậm",
+    "hv": "sâm lâm",
+    "em": "🌲",
+    "lesson": 4,
+    "explain": [
+      "Rừng lớn nhiều cây. 森林里的植物, 保护森林."
+    ],
+    "usage": "森林里, 保护森林, 一片森林.",
+    "collo": [
+      "森林里的各种植物",
+      "保护森林",
+      "如果没有森林"
+    ],
+    "ex_zh": "森林里的各种植物之间也有竞争。",
+    "ex_py": "Sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng.",
+    "ex_vn": "Giữa các loài cây trong rừng cũng có cạnh tranh.",
+    "exList": [
+      {
+        "zh": "森林里的各种植物之间也有竞争，这一点儿也不奇怪。",
+        "py": "Sēnlín li de gè zhǒng zhíwù zhījiān yě yǒu jìngzhēng, zhè yìdiǎnr yě bù qíguài.",
+        "vn": "Giữa các loài cây trong rừng cũng có cạnh tranh, điều này chẳng có gì lạ."
+      },
+      {
+        "zh": "如果没有森林，世界会变成什么样子？",
+        "py": "Rúguǒ méiyǒu sēnlín, shìjiè huì biànchéng shénme yàngzi?",
+        "vn": "Nếu không có rừng, thế giới sẽ thành ra thế nào?"
+      },
+      {
+        "zh": "森林是地球的\"肺\"，我们每个人都有责任保护它。",
+        "py": "Sēnlín shì dìqiú de \"fèi\", wǒmen měi ge rén dōu yǒu zérèn bǎohù tā.",
+        "vn": "Rừng là \"lá phổi\" của Trái đất, mỗi người đều có trách nhiệm bảo vệ nó."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "森",
+        "p": "sēn",
+        "type": "品字结构 · Ba chữ chồng",
+        "st": 12,
+        "ord": "木 trên → 木木 dưới",
+        "rad": "木 (mộc)",
+        "mean": "rừng rậm",
+        "tip": "Ba cây 木 → RỪNG RẬM (nhiều hơn 林 = hai cây). 森林 = rừng rậm.",
+        "cf": "林 (lín – rừng)",
+        "w": "森林 / 森林公园"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Rừng là \"lá phổi\" của Trái đất, cho nên mỗi người đều có trách nhiệm bảo vệ nó.",
+        "answer": "因为森林是地球的\"肺\"，所以我们每个人都有责任保护它。",
+        "answerPy": "Yīnwèi sēnlín shì dìqiú de \"fèi\", suǒyǐ wǒmen měi ge rén dōu yǒu zérèn bǎohù tā.",
+        "note": "地球 là từ bài 14, 责任 là từ bài 4.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "保护森林",
+        "py": "bǎohù sēnlín",
+        "vn": "bảo vệ rừng"
+      },
+      {
+        "zh": "森林里的植物",
+        "py": "sēnlín li de zhíwù",
+        "vn": "cây cối trong rừng"
+      },
+      {
+        "zh": "一片森林",
+        "py": "yí piàn sēnlín",
+        "vn": "một khu rừng"
+      },
+      {
+        "zh": "在森林里迷路",
+        "py": "zài sēnlín li mí lù",
+        "vn": "lạc trong rừng"
+      },
+      {
+        "zh": "没有森林",
+        "py": "méiyǒu sēnlín",
+        "vn": "không có rừng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一 + 片 + 森林",
+        "m": "Lượng từ 片 cho vùng rộng"
+      },
+      {
+        "s": "保护 + 森林",
+        "m": "Bảo vệ rừng — 保护 là từ bài 12"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "剩",
+    "py": "shèng",
+    "pos": "Động từ",
+    "vn": "còn lại, thừa",
+    "hv": "thặng",
+    "em": "🍚",
+    "lesson": 4,
+    "explain": [
+      "Còn dư lại sau khi dùng. 剩下, 剩下的, 还剩……"
+    ],
+    "usage": "剩下的植物, 还剩十几页, 剩了很多菜.",
+    "collo": [
+      "剩下的一些植物",
+      "就剩十几页了",
+      "剩了很多"
+    ],
+    "ex_zh": "而剩下的一些比较低矮的植物就只能长在这些高大植物的下面。",
+    "ex_py": "Ér shèngxià de yìxiē bǐjiào dī'ǎi de zhíwù jiù zhǐ néng zhǎng zài zhèxiē gāodà zhíwù de xiàmiàn.",
+    "ex_vn": "Còn những cây thấp bé còn lại chỉ có thể mọc dưới những cây cao lớn này.",
+    "exList": [
+      {
+        "zh": "而剩下的一些比较低矮的植物就只能长在这些高大植物的下面。",
+        "py": "Ér shèngxià de yìxiē bǐjiào dī'ǎi de zhíwù jiù zhǐ néng zhǎng zài zhèxiē gāodà zhíwù de xiàmiàn.",
+        "vn": "Còn những cây thấp bé còn lại chỉ có thể mọc dưới những cây cao lớn này."
+      },
+      {
+        "zh": "这本小说就剩十几页了，我想看看最后到底怎么样了。",
+        "py": "Zhè běn xiǎoshuō jiù shèng shí jǐ yè le, wǒ xiǎng kànkan zuìhòu dàodǐ zěnmeyàng le.",
+        "vn": "Cuốn tiểu thuyết này chỉ còn hơn chục trang, tôi muốn xem rốt cuộc kết thúc thế nào."
+      },
+      {
+        "zh": "昨天的菜剩了不少，今天中午热一热再吃吧。",
+        "py": "Zuótiān de cài shèngle bù shǎo, jīntiān zhōngwǔ rè yi rè zài chī ba.",
+        "vn": "Đồ ăn hôm qua còn thừa nhiều, trưa nay hâm lại ăn nhé."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "剩",
+        "p": "shèng",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "乘 trái → 刂 phải",
+        "rad": "刂 (đao)",
+        "mean": "thừa",
+        "tip": "乘 + 刂(dao) → cắt đi phần dùng, phần THỪA còn lại. 剩下 = còn lại.",
+        "cf": "乘 (chéng – đi xe, Bài 14)",
+        "w": "剩 / 剩下 / 剩菜"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cuốn tiểu thuyết này chỉ còn hơn chục trang, tôi muốn xem rốt cuộc kết cục thế nào.",
+        "answer": "这本小说就剩十几页了，我想看看到底最后怎么样。",
+        "answerPy": "Zhè běn xiǎoshuō jiù shèng shí jǐ yè le, wǒ xiǎng kànkan dàodǐ zuìhòu zěnmeyàng.",
+        "note": "小说 là từ bài 6, 页 là từ bài 11, 到底 là từ bài 16.",
+        "pair": "到底……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "剩下的",
+        "py": "shèng xià de",
+        "vn": "phần còn lại"
+      },
+      {
+        "zh": "就剩十几页了",
+        "py": "jiù shèng shí jǐ yè le",
+        "vn": "chỉ còn hơn chục trang"
+      },
+      {
+        "zh": "剩了很多",
+        "py": "shèng le hěn duō",
+        "vn": "thừa rất nhiều"
+      },
+      {
+        "zh": "没剩多少",
+        "py": "méi shèng duōshao",
+        "vn": "chẳng còn bao nhiêu"
+      },
+      {
+        "zh": "把剩的菜带走",
+        "py": "bǎ shèng de cài dài zǒu",
+        "vn": "mang đồ ăn thừa về"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "就 + 剩 + số lượng + 了",
+        "m": "Chỉ còn lại bấy nhiêu"
+      },
+      {
+        "s": "剩 + 下",
+        "m": "Còn lại — 下 là bổ ngữ xu hướng"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "暖和",
+    "py": "nuǎnhuo",
+    "pos": "Tính từ",
+    "vn": "ấm áp",
+    "hv": "noãn hòa",
+    "em": "🌤️",
+    "lesson": 4,
+    "explain": [
+      "Ấm (thời tiết, nơi chốn, quần áo). 暖 (Bài 14) + 和. 天气暖和, 屋里很暖和."
+    ],
+    "usage": "天气暖和, 暖和的地方, 越来越暖和.",
+    "collo": [
+      "在暖和、水分比较多的地方",
+      "那儿非常暖和",
+      "越来越暖和"
+    ],
+    "ex_zh": "在暖和、水分比较多的地方，叶子往往长得又大又厚。",
+    "ex_py": "Zài nuǎnhuo, shuǐfèn bǐjiào duō de dìfang, yèzi wǎngwǎng zhǎng de yòu dà yòu hòu.",
+    "ex_vn": "Ở nơi ấm áp, nhiều nước, lá thường mọc vừa to vừa dày.",
+    "exList": [
+      {
+        "zh": "在暖和、水分比较多的地方，叶子往往长得又大又厚；在阳光特别厉害、水分少的地方，叶子就会长得又细又长。",
+        "py": "Zài nuǎnhuo, shuǐfèn bǐjiào duō de dìfang, yèzi wǎngwǎng zhǎng de yòu dà yòu hòu; zài yángguāng tèbié lìhai, shuǐfèn shǎo de dìfang, yèzi jiù huì zhǎng de yòu xì yòu cháng.",
+        "vn": "Ở nơi ấm áp, nhiều nước, lá thường vừa to vừa dày; ở nơi nắng gắt, ít nước, lá sẽ vừa mảnh vừa dài."
+      },
+      {
+        "zh": "今年寒假我去了一趟广东，那里的气候和北方不同，尽管现在是冬天，但那儿非常暖和。",
+        "py": "Jīnnián hánjià wǒ qùle yí tàng Guǎngdōng, nàli de qìhòu hé běifāng bù tóng, jǐnguǎn xiànzài shì dōngtiān, dàn nàr fēicháng nuǎnhuo.",
+        "vn": "Nghỉ đông năm nay tôi đi Quảng Đông một chuyến, khí hậu ở đó khác miền Bắc, dù đang mùa đông nhưng rất ấm."
+      },
+      {
+        "zh": "A：今天很暖和，外面一点儿也不冷，你不用穿这么多衣服。B：好的，那我脱掉一件。",
+        "py": "A: Jīntiān hěn nuǎnhuo, wàimiàn yìdiǎnr yě bù lěng, nǐ búyòng chuān zhème duō yīfu. B: Hǎo de, nà wǒ tuōdiào yí jiàn.",
+        "vn": "A: Hôm nay rất ấm, ngoài trời không lạnh chút nào, bạn không cần mặc nhiều thế. B: Được, vậy tôi cởi bớt một cái."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "暖",
+        "p": "nuǎn",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "日 trái → 爰 phải",
+        "rad": "日 (nhật)",
+        "mean": "ấm",
+        "tip": "Mặt trời 日 + 爰 → có nắng → ẤM (Bài 14). 暖和 = ấm áp; 温暖 = ấm áp (tình cảm).",
+        "cf": "缓 (huǎn – chậm)",
+        "w": "暖和 / 暖 / 温暖"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hôm nay rất ấm, ngoài trời không lạnh chút nào, bạn không cần mặc nhiều thế.",
+        "answer": "今天很暖和，外面一点儿也不冷，你不用穿这么多衣服。",
+        "answerPy": "Jīntiān hěn nuǎnhuo, wàimiàn yìdiǎnr yě bù lěng, nǐ búyòng chuān zhème duō yīfu.",
+        "note": "一点儿也不 (Bài 6), 不用.",
+        "pair": "一……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "非常暖和",
+        "py": "fēicháng nuǎnhuo",
+        "vn": "rất ấm áp"
+      },
+      {
+        "zh": "越来越暖和",
+        "py": "yuè lái yuè nuǎnhuo",
+        "vn": "ngày càng ấm"
+      },
+      {
+        "zh": "暖和的地方",
+        "py": "nuǎnhuo de dìfang",
+        "vn": "nơi ấm áp"
+      },
+      {
+        "zh": "天气暖和了",
+        "py": "tiānqì nuǎnhuo le",
+        "vn": "trời ấm lên rồi"
+      },
+      {
+        "zh": "屋里很暖和",
+        "py": "wū li hěn nuǎnhuo",
+        "vn": "trong nhà rất ấm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "暖和 ↔ 凉快 / 冷",
+        "m": "Ấm áp ↔ mát mẻ, lạnh"
+      },
+      {
+        "s": "暖 (bài 14) là gốc, 暖和 là dạng hai âm tiết hay dùng"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "海洋",
+    "py": "hǎiyáng",
+    "pos": "Danh từ",
+    "vn": "biển, đại dương",
+    "hv": "hải dương",
+    "em": "🌊",
+    "lesson": 5,
+    "explain": [
+      "Biển lớn, đại dương. 海洋底部, 蓝色的海洋, 海洋动物."
+    ],
+    "usage": "蓝色的海洋, 海洋底部, 保护海洋.",
+    "collo": [
+      "蓝色的海洋",
+      "海洋底部",
+      "海洋跟我们的生活"
+    ],
+    "ex_zh": "地球上大约71%的地方是蓝色的海洋，在美丽的海底世界里，生活着各种各样的植物和动物。",
+    "ex_py": "Dìqiú shang dàyuē bǎifēnzhī qīshíyī de dìfang shì lánsè de hǎiyáng, zài měilì de hǎidǐ shìjiè li, shēnghuózhe gè zhǒng gè yàng de zhíwù hé dòngwù.",
+    "ex_vn": "Khoảng 71% Trái đất là đại dương xanh, trong thế giới đáy biển xinh đẹp, sinh sống đủ loại thực vật và động vật.",
+    "exList": [
+      {
+        "zh": "地球上大约71%的地方是蓝色的海洋，在美丽的海底世界里，生活着各种各样的植物和动物。",
+        "py": "Dìqiú shang dàyuē bǎifēnzhī qīshíyī de dìfang shì lánsè de hǎiyáng, zài měilì de hǎidǐ shìjiè li, shēnghuózhe gè zhǒng gè yàng de zhíwù hé dòngwù.",
+        "vn": "Khoảng 71% Trái đất là đại dương xanh, trong thế giới đáy biển xinh đẹp, sinh sống đủ loại thực vật và động vật."
+      },
+      {
+        "zh": "科学研究发现，海洋底部看上去非常安静，然而却不是一点儿声音也没有。",
+        "py": "Kēxué yánjiū fāxiàn, hǎiyáng dǐbù kàn shangqu fēicháng ānjìng, rán'ér què bú shì yìdiǎnr shēngyīn yě méiyǒu.",
+        "vn": "Nghiên cứu khoa học phát hiện, đáy đại dương trông rất yên tĩnh, nhưng không phải không có chút âm thanh nào."
+      },
+      {
+        "zh": "海洋跟我们的生活有什么关系？",
+        "py": "Hǎiyáng gēn wǒmen de shēnghuó yǒu shénme guānxi?",
+        "vn": "Đại dương có quan hệ gì với cuộc sống của chúng ta?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "洋",
+        "p": "yáng",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "氵 trái → 羊 phải",
+        "rad": "氵 (thủy)",
+        "mean": "đại dương",
+        "tip": "Nước 氵 + 羊(biểu âm) → nước mênh mông → DƯƠNG (biển lớn). 海洋, 太平洋, 洋葱.",
+        "cf": "样 (yàng – dạng)",
+        "w": "海洋 / 太平洋 / 洋葱"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đáy đại dương trông rất yên tĩnh, nhưng không phải không có chút âm thanh nào.",
+        "answer": "海洋底部看上去非常安静，然而却不是一点儿声音也没有。",
+        "answerPy": "Hǎiyáng dǐbù kàn shangqu fēicháng ānjìng, rán'ér què bú shì yìdiǎnr shēngyīn yě méiyǒu.",
+        "note": "然而 (Bài 11), 却 (Bài 2), 一点儿也没有.",
+        "pair": "一……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "蓝色的海洋",
+        "py": "lán sè de hǎiyáng",
+        "vn": "đại dương xanh"
+      },
+      {
+        "zh": "海洋底部",
+        "py": "hǎiyáng dǐ bù",
+        "vn": "đáy đại dương"
+      },
+      {
+        "zh": "保护海洋",
+        "py": "bǎohù hǎiyáng",
+        "vn": "bảo vệ biển"
+      },
+      {
+        "zh": "海洋生物",
+        "py": "hǎiyáng shēngwù",
+        "vn": "sinh vật biển"
+      },
+      {
+        "zh": "海洋跟生活",
+        "py": "hǎiyáng gēn shēnghuó",
+        "vn": "biển và cuộc sống"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "海洋 ≈ 海",
+        "m": "海洋 trang trọng, dùng trong văn viết khoa học"
+      },
+      {
+        "s": "海洋 + 底部",
+        "m": "Đáy đại dương"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "底",
+    "py": "dǐ",
+    "pos": "Danh từ",
+    "vn": "đáy",
+    "hv": "để",
+    "em": "⬇️",
+    "lesson": 5,
+    "explain": [
+      "Phần thấp nhất. 海底, 底部, 底下; cũng là \"cuối\": 月底 (Bài 11), 年底; 到底 (Bài 16)."
+    ],
+    "usage": "海底, 底部, 年底.",
+    "collo": [
+      "海底世界",
+      "海洋底部",
+      "桌子底下"
+    ],
+    "ex_zh": "在美丽的海底世界里，生活着各种各样的植物和动物。",
+    "ex_py": "Zài měilì de hǎidǐ shìjiè li, shēnghuózhe gè zhǒng gè yàng de zhíwù hé dòngwù.",
+    "ex_vn": "Trong thế giới đáy biển xinh đẹp, sinh sống đủ loại thực vật và động vật.",
+    "exList": [
+      {
+        "zh": "我们小时候都听过美人鱼的故事，其实真正的海底世界比故事里写的更美。",
+        "py": "Wǒmen xiǎoshíhou dōu tīngguo Měirényú de gùshi, qíshí zhēnzhèng de hǎidǐ shìjiè bǐ gùshi li xiě de gèng měi.",
+        "vn": "Hồi nhỏ chúng ta đều nghe chuyện Người cá, thực ra thế giới đáy biển thật còn đẹp hơn trong truyện."
+      },
+      {
+        "zh": "很多自行车后面都有一个灯，每当后面汽车的灯光照到它时，它就会反光。——那个灯装在车的底部。",
+        "py": "Hěn duō zìxíngchē hòumiàn dōu yǒu yí ge dēng, měi dāng hòumiàn qìchē de dēngguāng zhàodào tā shí, tā jiù huì fǎnguāng.",
+        "vn": "Nhiều xe đạp phía sau có một đèn, mỗi khi đèn ô tô phía sau chiếu vào, nó sẽ phản quang."
+      },
+      {
+        "zh": "钥匙可能掉到沙发底下了，你找找看。",
+        "py": "Yàoshi kěnéng diàodào shāfā dǐxia le, nǐ zhǎozhao kàn.",
+        "vn": "Chìa khóa có thể rơi xuống dưới gầm sofa, bạn tìm thử xem."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "底",
+        "p": "dǐ",
+        "type": "半包围结构 · Nửa bao quanh",
+        "st": 8,
+        "ord": "广 bao → 氐 trong",
+        "rad": "广 (nghiễm)",
+        "mean": "đáy",
+        "tip": "Mái 广 + 氐(thấp) → phần thấp nhất → ĐÁY. 海底, 月底 (Bài 11), 到底 (Bài 16), 底下.",
+        "cf": "低 (dī – thấp)",
+        "w": "底 / 海底 / 月底 / 到底 / 底下"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chìa khoá có lẽ rơi xuống gầm sô pha rồi, nếu bạn rảnh thì tìm giúp mình nhé.",
+        "answer": "钥匙可能掉到沙发底下了，要是你有空，就帮我找找看。",
+        "answerPy": "Yàoshi kěnéng diào dào shāfā dǐxia le, yàoshi nǐ yǒu kòng, jiù bāng wǒ zhǎozhao kàn.",
+        "note": "掉 là từ bài 7, 沙发 là từ bài 5.",
+        "pair": "要是……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "海底",
+        "py": "hǎi dǐ",
+        "vn": "đáy biển"
+      },
+      {
+        "zh": "桌子底下",
+        "py": "zhuōzi dǐ xià",
+        "vn": "dưới gầm bàn"
+      },
+      {
+        "zh": "海洋底部",
+        "py": "hǎiyáng dǐ bù",
+        "vn": "đáy đại dương"
+      },
+      {
+        "zh": "沙发底下",
+        "py": "shāfā dǐ xià",
+        "vn": "dưới gầm sô pha"
+      },
+      {
+        "zh": "月底",
+        "py": "yuèdǐ",
+        "vn": "cuối tháng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 底下",
+        "m": "Phía dưới cái gì"
+      },
+      {
+        "s": "月 / 年 + 底",
+        "m": "Cuối tháng, cuối năm"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "美人鱼",
+    "py": "Měirényú",
+    "pos": "Danh từ",
+    "vn": "người cá",
+    "hv": "Mỹ Nhân Ngư",
+    "em": "🧜‍♀️",
+    "lesson": 5,
+    "explain": [
+      "Nhân vật trong truyện cổ tích Andersen. 美人鱼的故事."
+    ],
+    "usage": "美人鱼的故事, 听过美人鱼.",
+    "collo": [
+      "美人鱼的故事",
+      "听过美人鱼",
+      "像美人鱼一样"
+    ],
+    "ex_zh": "我们小时候都听过美人鱼的故事。",
+    "ex_py": "Wǒmen xiǎoshíhou dōu tīngguo Měirényú de gùshi.",
+    "ex_vn": "Hồi nhỏ chúng ta đều nghe chuyện Người cá.",
+    "exList": [
+      {
+        "zh": "我们小时候都听过美人鱼的故事，其实真正的海底世界比故事里写的更美。",
+        "py": "Wǒmen xiǎoshíhou dōu tīngguo Měirényú de gùshi, qíshí zhēnzhèng de hǎidǐ shìjiè bǐ gùshi li xiě de gèng měi.",
+        "vn": "Hồi nhỏ chúng ta đều nghe chuyện Người cá, thực ra thế giới đáy biển thật còn đẹp hơn trong truyện."
+      },
+      {
+        "zh": "《美人鱼》是安徒生写的一个著名的童话故事。",
+        "py": "\"Měirényú\" shì Āntúshēng xiě de yí ge zhùmíng de tónghuà gùshi.",
+        "vn": "\"Nàng tiên cá\" là một truyện cổ tích nổi tiếng do Andersen viết."
+      },
+      {
+        "zh": "女儿最喜欢听我给她讲美人鱼的故事。",
+        "py": "Nǚ'ér zuì xǐhuan tīng wǒ gěi tā jiǎng Měirényú de gùshi.",
+        "vn": "Con gái thích nhất nghe tôi kể chuyện Người cá."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "鱼",
+        "p": "yú",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "⺈ → 田 → 一",
+        "rad": "鱼 (ngư)",
+        "mean": "cá",
+        "tip": "Tượng hình con CÁ (đầu ⺈, thân 田, đuôi 一). 美人鱼 = người đẹp cá = người cá.",
+        "cf": "渔 (yú – đánh cá)",
+        "w": "鱼 / 美人鱼 / 鱼汤"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "\"Nàng tiên cá\" không những là truyện cổ tích nổi tiếng của Andersen, mà còn được dịch sang rất nhiều thứ tiếng.",
+        "answer": "《美人鱼》不但是安徒生写的一个著名的童话故事，而且还被翻译成了很多种语言。",
+        "answerPy": "《Měirényú》 búdàn shì Āntúshēng xiě de yí ge zhùmíng de tónghuà gùshi, érqiě hái bèi fānyì chéngle hěn duō zhǒng yǔyán.",
+        "note": "著名 là từ bài 11, 翻译 là từ bài 10, 语言 là từ bài 12.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "美人鱼的故事",
+        "py": "Měirényú de gùshi",
+        "vn": "câu chuyện nàng tiên cá"
+      },
+      {
+        "zh": "听过美人鱼",
+        "py": "tīng guo Měirényú",
+        "vn": "từng nghe nàng tiên cá"
+      },
+      {
+        "zh": "像美人鱼一样",
+        "py": "xiàng Měirényú yíyàng",
+        "vn": "giống như nàng tiên cá"
+      },
+      {
+        "zh": "《美人鱼》",
+        "py": "Měirényú",
+        "vn": "truyện \"Nàng tiên cá\""
+      },
+      {
+        "zh": "海里的美人鱼",
+        "py": "hǎi li de Měirényú",
+        "vn": "nàng tiên cá dưới biển"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "美人 + 鱼",
+        "m": "Cá (鱼) người đẹp (美人)"
+      },
+      {
+        "s": "像 + N + 一样",
+        "m": "Giống như … — khung so sánh của bài 2"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "公里",
+    "py": "gōnglǐ",
+    "pos": "Lượng từ",
+    "vn": "kilômét",
+    "hv": "công lí",
+    "em": "📏",
+    "lesson": 5,
+    "explain": [
+      "Đơn vị chiều dài = 1000 mét. 几公里深, 三公里远, 每小时100公里."
+    ],
+    "usage": "几公里深, 离这儿三公里, 一万米 = 10公里.",
+    "collo": [
+      "几公里深的海底",
+      "离学校两公里",
+      "每小时120公里"
+    ],
+    "ex_zh": "就算在几公里深的海底也仍然能看到东西。",
+    "ex_py": "Jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi.",
+    "ex_vn": "Cho dù ở đáy biển sâu mấy kilômét vẫn có thể nhìn thấy đồ vật.",
+    "exList": [
+      {
+        "zh": "另外，就算在几公里深的海底也仍然能看到东西，许多鱼会发出各种颜色的亮光。",
+        "py": "Lìngwài, jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi, xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng.",
+        "vn": "Ngoài ra, cho dù ở đáy biển sâu mấy kilômét vẫn nhìn thấy, nhiều cá phát ra ánh sáng đủ màu."
+      },
+      {
+        "zh": "我家离公司大约五公里，骑车二十分钟左右就到。",
+        "py": "Wǒ jiā lí gōngsī dàyuē wǔ gōnglǐ, qí chē èrshí fēnzhōng zuǒyòu jiù dào.",
+        "vn": "Nhà tôi cách công ty khoảng 5 km, đạp xe khoảng 20 phút là đến."
+      },
+      {
+        "zh": "高速公路上汽车的速度不能超过每小时120公里。",
+        "py": "Gāosù gōnglù shang qìchē de sùdù bù néng chāoguò měi xiǎoshí yìbǎi èrshí gōnglǐ.",
+        "vn": "Trên đường cao tốc tốc độ ô tô không được vượt quá 120 km/giờ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "里",
+        "p": "lǐ",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "日 trên → 土 dưới",
+        "rad": "里 (lý)",
+        "mean": "dặm; trong",
+        "tip": "田(ruộng) + 土(đất) → thôn xóm → dặm LÝ (500m). 公里 = km. Cũng là \"bên trong\" (里面).",
+        "cf": "理 (lǐ – lý lẽ)",
+        "w": "公里 / 里面 / 这里"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhà tôi cách công ty khoảng năm cây số, chỉ cần đạp xe hai mươi phút là tới.",
+        "answer": "我家离公司大约五公里，只要骑车二十分钟左右就到。",
+        "answerPy": "Wǒ jiā lí gōngsī dàyuē wǔ gōnglǐ, zhǐyào qíchē èrshí fēnzhōng zuǒyòu jiù dào.",
+        "note": "大约 là từ bài 13, 左右 là từ bài 15.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "五公里",
+        "py": "wǔ gōnglǐ",
+        "vn": "năm ki-lô-mét"
+      },
+      {
+        "zh": "离学校两公里",
+        "py": "lí xuéxiào liǎng gōnglǐ",
+        "vn": "cách trường hai cây số"
+      },
+      {
+        "zh": "每小时120公里",
+        "py": "měi xiǎoshí gōnglǐ",
+        "vn": "120 km một giờ"
+      },
+      {
+        "zh": "几公里深",
+        "py": "jǐ gōnglǐ shēn",
+        "vn": "sâu mấy cây số"
+      },
+      {
+        "zh": "走了十公里",
+        "py": "zǒu le shí gōnglǐ",
+        "vn": "đi bộ mười cây"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "离 + nơi chốn + số + 公里",
+        "m": "Cách nơi nào bao nhiêu km"
+      },
+      {
+        "s": "公里 (km) / 米 (m) / 厘米 (cm)"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "仍然",
+    "py": "réngrán",
+    "pos": "Phó từ",
+    "vn": "vẫn",
+    "hv": "nhưng nhiên",
+    "em": "♾️",
+    "lesson": 5,
+    "explain": [
+      "Tình huống như cũ, không thay đổi (= 还是). Ngữ pháp trọng tâm. Cùng nhóm 然: 既然 (Bài 14), 竟然 (Bài 6), 突然 (Bài 8)."
+    ],
+    "usage": "仍然能……, 仍然是……, 仍然觉得.",
+    "collo": [
+      "仍然能看到东西",
+      "仍然有很多值得学习的地方",
+      "仍然是0比0"
+    ],
+    "ex_zh": "就算在几公里深的海底也仍然能看到东西。",
+    "ex_py": "Jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi.",
+    "ex_vn": "Cho dù ở đáy biển sâu mấy kilômét vẫn có thể nhìn thấy đồ vật.",
+    "exList": [
+      {
+        "zh": "就算在几公里深的海底也仍然能看到东西。",
+        "py": "Jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi.",
+        "vn": "Cho dù ở đáy biển sâu mấy kilômét vẫn có thể nhìn thấy đồ vật."
+      },
+      {
+        "zh": "人比动物聪明，但动物仍然有很多值得人学习的地方。",
+        "py": "Rén bǐ dòngwù cōngming, dàn dòngwù réngrán yǒu hěn duō zhídé rén xuéxí de dìfang.",
+        "vn": "Người thông minh hơn động vật, nhưng động vật vẫn có nhiều điểm đáng để người học."
+      },
+      {
+        "zh": "足球决赛时，如果90分钟后仍然是0比0，按照规定，可以进行加时赛来决定输赢。",
+        "py": "Zúqiú juésài shí, rúguǒ jiǔshí fēnzhōng hòu réngrán shì líng bǐ líng, ànzhào guīdìng, kěyǐ jìnxíng jiāshísài lái juédìng shū yíng.",
+        "vn": "Chung kết bóng đá, nếu sau 90 phút vẫn 0-0, theo quy định có thể đá hiệp phụ để quyết định thắng thua."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "仍",
+        "p": "réng",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "亻 trái → 乃 phải",
+        "rad": "亻 (nhân)",
+        "mean": "vẫn",
+        "tip": "Người 亻 + 乃 → VẪN, như cũ. Phân biệt với 扔 (rēng – vứt, Bài 14, bộ 扌).",
+        "cf": "扔 (rēng – vứt)",
+        "w": "仍然 / 仍"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Người tuy thông minh hơn động vật, nhưng động vật vẫn có nhiều điểm đáng để người học.",
+        "answer": "人虽然比动物聪明，但是动物仍然有很多值得人学习的地方。",
+        "answerPy": "Rén suīrán bǐ dòngwù cōngming, dànshì dòngwù réngrán yǒu hěn duō zhídé rén xuéxí de dìfang.",
+        "note": "值得 là từ bài 6; 仍然 thiên văn viết hơn 还是.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu sau 90 phút vẫn 0-0, theo quy định có thể đá hiệp phụ để quyết định thắng thua.",
+        "answer": "如果90分钟后仍然是0比0，按照规定，可以进行加时赛来决定输赢。",
+        "answerPy": "Rúguǒ jiǔshí fēnzhōng hòu réngrán shì líng bǐ líng, ànzhào guīdìng, kěyǐ jìnxíng jiāshísài lái juédìng shū yíng.",
+        "note": "按照 (Bài 4), 规定 (Bài 12), 进行 (Bài 13), 来 (Bài 15), 输/赢 (Bài 16, 9).",
+        "pair": "如果……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "仍然能看到",
+        "py": "réngrán néng kàn dào",
+        "vn": "vẫn nhìn thấy được"
+      },
+      {
+        "zh": "仍然是0比0",
+        "py": "réngrán shì bǐ",
+        "vn": "vẫn là 0-0"
+      },
+      {
+        "zh": "仍然有很多",
+        "py": "réngrán yǒu hěn duō",
+        "vn": "vẫn còn rất nhiều"
+      },
+      {
+        "zh": "仍然不明白",
+        "py": "réngrán bù míngbai",
+        "vn": "vẫn không hiểu"
+      },
+      {
+        "zh": "仍然没有变",
+        "py": "réngrán méiyǒu biàn",
+        "vn": "vẫn chưa đổi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 仍然 + V",
+        "m": "Ai đó vẫn …"
+      },
+      {
+        "s": "仍然 ≈ 还是",
+        "m": "仍然 thiên văn viết hơn 还是"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "排列",
+    "py": "páiliè",
+    "pos": "Động từ",
+    "vn": "sắp xếp (theo thứ tự)",
+    "hv": "bài liệt",
+    "em": "🔢",
+    "lesson": 5,
+    "explain": [
+      "Xếp theo thứ tự, hàng lối. 排列起来, 按……排列, 排列整齐."
+    ],
+    "usage": "排列起来, 按大小排列, 排列得很整齐.",
+    "collo": [
+      "像一个个排列起来的灯",
+      "按顺序排列",
+      "排列整齐"
+    ],
+    "ex_zh": "许多鱼会发出各种颜色的亮光，像一个个排列起来的灯，美极了，就像在梦里一样。",
+    "ex_py": "Xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng, xiàng yí gègè páiliè qilai de dēng, měi jíle, jiù xiàng zài mèng li yíyàng.",
+    "ex_vn": "Nhiều cá phát ra ánh sáng đủ màu, như những ngọn đèn xếp thành hàng, đẹp vô cùng, như trong mơ vậy.",
+    "exList": [
+      {
+        "zh": "许多鱼会发出各种颜色的亮光，像一个个排列起来的灯，美极了，就像在梦里一样。",
+        "py": "Xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng, xiàng yí gègè páiliè qilai de dēng, měi jíle, jiù xiàng zài mèng li yíyàng.",
+        "vn": "Nhiều cá phát ra ánh sáng đủ màu, như những ngọn đèn xếp thành hàng, đẹp vô cùng, như trong mơ vậy."
+      },
+      {
+        "zh": "请把这些书按照大小排列好，放在书架上。",
+        "py": "Qǐng bǎ zhèxiē shū ànzhào dàxiǎo páiliè hǎo, fàng zài shūjià shang.",
+        "vn": "Hãy sắp xếp những cuốn sách này theo kích thước, đặt lên giá sách."
+      },
+      {
+        "zh": "学生们排列得整整齐齐，等着老师来照相。",
+        "py": "Xuéshengmen páiliè de zhěngzhěng qíqí, děngzhe lǎoshī lái zhào xiàng.",
+        "vn": "Học sinh xếp hàng ngay ngắn, đợi thầy đến chụp ảnh."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "列",
+        "p": "liè",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "歹 trái → 刂 phải",
+        "rad": "刂 (đao)",
+        "mean": "hàng, liệt kê",
+        "tip": "歹 + 刂(dao) → chia thành từng HÀNG → LIỆT. 排列 = sắp xếp; 列车 = đoàn tàu.",
+        "cf": "例 (lì – ví dụ, Bài 10)",
+        "w": "排列 / 列车 / 列"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hãy sắp xếp những cuốn sách này theo kích thước, đặt lên giá sách.",
+        "answer": "请把这些书按照大小排列好，放在书架上。",
+        "answerPy": "Qǐng bǎ zhèxiē shū ànzhào dàxiǎo páiliè hǎo, fàng zài shūjià shang.",
+        "note": "把 + 按照 (Bài 4) + bổ ngữ 好.",
+        "pair": "按照……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "按顺序排列",
+        "py": "àn shùnxù páiliè",
+        "vn": "xếp theo thứ tự"
+      },
+      {
+        "zh": "排列整齐",
+        "py": "páiliè zhěngqí",
+        "vn": "xếp ngay ngắn"
+      },
+      {
+        "zh": "排列起来",
+        "py": "páiliè qǐlai",
+        "vn": "xếp thành hàng"
+      },
+      {
+        "zh": "像灯一样排列",
+        "py": "xiàng dēng yíyàng páiliè",
+        "vn": "xếp như những ngọn đèn"
+      },
+      {
+        "zh": "重新排列",
+        "py": "chóngxīn páiliè",
+        "vn": "xếp lại"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "按照 + 顺序 + 排列",
+        "m": "Xếp theo thứ tự — 顺序 là từ bài 11"
+      },
+      {
+        "s": "排列 ≠ 排队",
+        "m": "排列 là xếp đồ vật; 排队 là người xếp hàng"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "梦",
+    "py": "mèng",
+    "pos": "Danh từ",
+    "vn": "giấc mơ",
+    "hv": "mộng",
+    "em": "💭",
+    "lesson": 5,
+    "explain": [
+      "Giấc mơ khi ngủ; ước mơ. 做梦 = nằm mơ; 在梦里; 有梦的老人 = người có ước mơ."
+    ],
+    "usage": "做梦, 在梦里, 有梦.",
+    "collo": [
+      "就像在梦里一样",
+      "做了一个梦",
+      "有梦的老人"
+    ],
+    "ex_zh": "美极了，就像在梦里一样。",
+    "ex_py": "Měi jíle, jiù xiàng zài mèng li yíyàng.",
+    "ex_vn": "Đẹp vô cùng, như trong mơ vậy.",
+    "exList": [
+      {
+        "zh": "许多鱼会发出各种颜色的亮光，像一个个排列起来的灯，美极了，就像在梦里一样。",
+        "py": "Xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng, xiàng yí gègè páiliè qilai de dēng, měi jíle, jiù xiàng zài mèng li yíyàng.",
+        "vn": "Nhiều cá phát ra ánh sáng đủ màu, như những ngọn đèn xếp hàng, đẹp vô cùng, như trong mơ vậy."
+      },
+      {
+        "zh": "一个70岁还有梦的老人，仍然是年轻的；一个20岁就放弃了理想的人，心已经老了。",
+        "py": "Yí ge qīshí suì hái yǒu mèng de lǎorén, réngrán shì niánqīng de; yí ge èrshí suì jiù fàngqìle lǐxiǎng de rén, xīn yǐjīng lǎo le.",
+        "vn": "Người 70 tuổi còn có ước mơ vẫn trẻ; người 20 tuổi đã từ bỏ lý tưởng, tim đã già rồi."
+      },
+      {
+        "zh": "昨晚我做了一个奇怪的梦，梦见自己在海底跟鱼说话。",
+        "py": "Zuó wǎn wǒ zuòle yí ge qíguài de mèng, mèngjiàn zìjǐ zài hǎidǐ gēn yú shuō huà.",
+        "vn": "Tối qua tôi mơ một giấc mơ kỳ lạ, mơ thấy mình nói chuyện với cá dưới đáy biển."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "梦",
+        "p": "mèng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "林 trên → 夕 dưới",
+        "rad": "夕 (tịch)",
+        "mean": "mơ",
+        "tip": "Rừng 林 + đêm 夕 → ban đêm thấy cảnh rừng mờ ảo → MỘNG, MƠ. 做梦, 梦想.",
+        "cf": "林 (lín – rừng)",
+        "w": "梦 / 做梦 / 梦想 / 梦见"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Người 70 tuổi còn có ước mơ vẫn trẻ; người 20 tuổi đã từ bỏ lý tưởng, tim đã già rồi.",
+        "answer": "一个70岁还有梦的老人，仍然是年轻的；一个20岁就放弃了理想的人，心已经老了。",
+        "answerPy": "Yí ge qīshí suì hái yǒu mèng de lǎorén, réngrán shì niánqīng de; yí ge èrshí suì jiù fàngqìle lǐxiǎng de rén, xīn yǐjīng lǎo le.",
+        "note": "仍然 (ngữ pháp bài), 放弃/理想 (Bài 9).",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "做了一个梦",
+        "py": "zuò le yí gè mèng",
+        "vn": "nằm mơ một giấc"
+      },
+      {
+        "zh": "像在梦里一样",
+        "py": "xiàng zài mèng li yíyàng",
+        "vn": "như trong mơ"
+      },
+      {
+        "zh": "做梦",
+        "py": "zuò mèng",
+        "vn": "nằm mơ"
+      },
+      {
+        "zh": "美好的梦",
+        "py": "měi hǎo de mèng",
+        "vn": "giấc mơ đẹp"
+      },
+      {
+        "zh": "有梦的人",
+        "py": "yǒu mèng de rén",
+        "vn": "người có ước mơ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "做 + 梦",
+        "m": "Nằm mơ — dùng động từ 做"
+      },
+      {
+        "s": "梦 vừa là \"giấc mơ\" khi ngủ, vừa là \"ước mơ\""
+      }
+    ]
+  }
 ];
 
 var wuData = [

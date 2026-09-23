@@ -2835,7 +2835,14 @@ body.idiom-open { overflow: hidden; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+/* Bao cho hoc sinh biet lam MOT tab la du — de khoi nghi phai lam het bon tab */
+.vp-tabs-hint {
+  margin: 0 0 var(--space-5);
+  font-size: 0.88rem;
+  color: var(--color-gray-500);
 }
 
 .vp-tab {

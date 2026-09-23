@@ -75,16 +75,21 @@
 .h4-tb th{background:var(--sky);color:#fff;font-size:0.8rem;font-weight:600;padding:8px 12px;text-align:left;}
 .h4-tb td{padding:8px 12px;border-top:1px solid var(--border);font-size:0.92rem;}
 .h4-tb tbody tr:nth-child(odd){background:#fdfaff;}
-.h4-tb-zh{font-family:var(--font-hanzi-display);color:var(--sky-d);font-weight:600;white-space:nowrap;}
-.h4-tb-py{color:var(--soft);font-size:0.85rem;}
-.h4-tb-vn{color:var(--mid);}
+/* Chu Han trong bang ket hop tu de to hon han pinyin/nghia: day la phan
+   hoc sinh phai nhin ky va doc thanh tieng.
+   Phai viet '.h4-tb td.h4-tb-zh' chu khong phai '.h4-tb-zh': co size cua
+   '.h4-tb td' o tren manh hon, de mot minh ten lop thi co chu khong doi. */
+.h4-tb td.h4-tb-zh{font-family:var(--font-hanzi-display);color:var(--sky-d);font-weight:600;
+  white-space:nowrap;font-size:1.3rem;line-height:1.5;}
+.h4-tb td.h4-tb-py{color:var(--soft);font-size:0.85rem;}
+.h4-tb td.h4-tb-vn{color:var(--mid);}
 .h4-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
 .h4-chip{background:#fdfaff;border:1px solid #e4dcf0;border-radius:999px;padding:5px 14px;
-  font-family:var(--font-hanzi-display);font-size:1rem;color:var(--sky-d);}
+  font-family:var(--font-hanzi-display);font-size:1.18rem;color:var(--sky-d);}
 .h4-pats{display:flex;flex-direction:column;gap:8px;}
 .h4-pat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center;
   background:var(--green-l);border-radius:11px;padding:10px 14px;}
-.h4-pat-s{font-family:var(--font-hanzi-display);font-size:1rem;color:var(--ink);}
+.h4-pat-s{font-family:var(--font-hanzi-display);font-size:1.12rem;color:var(--ink);}
 .h4-pat-m{font-size:0.87rem;color:var(--mid);}
 .h4-usage{font-size:0.87rem;color:var(--mid);line-height:1.6;background:var(--bg);border-radius:10px;padding:10px 14px;}
 

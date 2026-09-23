@@ -3,714 +3,3440 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'提',py:'tí',pos:'Động từ',vn:'nhắc đến', hv: 'đề',em:'🗣️',lesson:1,
-   explain:['Nhắc đến, đề cập đến một chuyện gì đó (thường trong lời nói).'],
-   usage:'Động từ; thường đi với 别提了 (đừng nhắc đến nữa — thán từ tỏ ý chán nản).',
-   collo:['别提了','提工作','提这件事'],
-   ex_zh:'别提了！我以为新工作比以前的好，没想到还没有以前好呢。',ex_py:'Bié tí le! Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.',ex_vn:'Đừng nhắc đến nữa! Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.',
-   exList:[
-     {zh:'别提了！我以为新工作比以前的好，没想到还没有以前好呢。',py:'Bié tí le! Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.',vn:'Đừng nhắc đến nữa! Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.'},
-     {zh:'这件事你别提了，我心里正难受呢。',py:'Zhè jiàn shì nǐ bié tí le, wǒ xīnli zhèng nánshòu ne.',vn:'Chuyện này bạn đừng nhắc nữa, tôi đang buồn lắm.'},
-     {zh:'他从来没跟我提过这件事。',py:'Tā cónglái méi gēn wǒ tíguo zhè jiàn shì.',vn:'Anh ấy chưa từng nhắc với tôi về chuyện này.'},
-   ],
-   hanzi:[
-     {c:'提',p:'tí',type:'左右结构 · Trái-phải',st:12,ord:'扌 (thủ) trái → 是 phải',rad:'扌 (thủ – tay)',mean:'xách, nhắc đến',
-      tip:'Bộ tay 扌 (hành động cầm/xách) + 是 (biểu âm) → dùng tay XÁCH lên, mở rộng thành NHẮC ĐẾN (đưa một chuyện ra).',
-      cf:'题 (tí – "đề bài", có bộ 页")',w:'提到 / 别提了 / 提问'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đừng nhắc đến chuyện đó nữa, tôi nghe xong lại thấy hồi hộp.',answer:'别提那件事了，我一听就觉得紧张。',answerPy:'Bié tí nà jiàn shì le, wǒ yì tīng jiù juéde jǐnzhāng.',
-      note:'别提了 — thán từ tỏ ý chán nản/không muốn nhắc lại.'},
-     {promptLang:'vi',prompt:'Anh ấy chưa từng nhắc đến chuyện lương của mình.',answer:'他从来没提过自己的工资。',answerPy:'Tā cónglái méi tíguo zìjǐ de gōngzī.',
-      note:'提过 — đã từng nhắc đến, ôn lại trợ từ 过.'},
-   ]},
-
-  {n:2,zh:'以为',py:'yǐwéi',pos:'Động từ',vn:'cho rằng, tưởng là', hv: 'dĩ vi',em:'🤔',lesson:1,
-   explain:['Diễn tả điều người nói cho là đúng nhưng thực tế không phải như vậy (khác với thực tế).'],
-   usage:'Động từ, mang mệnh đề làm tân ngữ: 以为 + mệnh đề, thường đi cùng 没想到/其实/原来 ở vế sau để chỉ ra sự thật khác với suy nghĩ ban đầu.',
-   collo:['我以为','以为……没想到……','还以为'],
-   ex_zh:'我以为新工作比以前的好，没想到还没有以前好呢。',ex_py:'Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.',ex_vn:'Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.',
-   exList:[
-     {zh:'我以为新工作比以前的好，没想到还没有以前好呢。',py:'Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.',vn:'Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.'},
-     {zh:'她汉语说得那么好，我还以为她是中国人。',py:'Tā Hànyǔ shuō de nàme hǎo, wǒ hái yǐwéi tā shì Zhōngguórén.',vn:'Cô ấy nói tiếng Trung giỏi như vậy, tôi còn tưởng cô ấy là người Trung Quốc.'},
-     {zh:'马克以为今天是星期一，到了学校一看，没人来上课，才发现今天是星期天。',py:'Mǎkè yǐwéi jīntiān shì xīngqīyī, dàole xuéxiào yí kàn, méi rén lái shàngkè, cái fāxiàn jīntiān shì xīngqītiān.',vn:'Mark cứ tưởng hôm nay là thứ Hai, đến trường nhìn thì không có ai đi học, mới phát hiện ra hôm nay là chủ nhật.'},
-   ],
-   hanzi:[
-     {c:'以',p:'yǐ',type:'独体字 · Chữ đơn',st:4,ord:'nét liền',rad:'人 (biến thể)',mean:'lấy, dùng',
-      tip:'以 (lấy, dùng) + 为 (cho là) → LẤY LÀM, CHO LÀ, mở rộng thành CHO RẰNG (nhưng sai với thực tế).',
-      cf:'已 (yǐ – "đã", gần giống hình chữ 以 nhưng không hở đầu)',w:'以为 / 可以 / 以后'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi cứ tưởng còn nửa tiếng nữa mới đến, ai ngờ xe đến sớm hơn.',answer:'我以为还有半小时就到了，没想到车提前到了。',answerPy:'Wǒ yǐwéi hái yǒu bàn xiǎoshí jiù dào le, méi xiǎngdào chē tíqián dào le.',
-      note:'以为……没想到…… — nghĩ là … nhưng không ngờ ….'},
-     {promptLang:'vi',prompt:'Tôi cứ tưởng làm sếp rất đơn giản, thực ra lại không dễ chút nào.',answer:'我以为当经理很简单，其实并不容易。',answerPy:'Wǒ yǐwéi dāng jīnglǐ hěn jiǎndān, qíshí bìng bù róngyì.',
-      note:'以为……其实……并不…… kết hợp 并, ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:3,zh:'份',py:'fèn',pos:'Lượng từ',vn:'tờ, bản, phần (việc)', hv: 'phần',em:'📋',lesson:1,
-   explain:['Lượng từ dùng cho công việc, báo chí, tài liệu, quà tặng...'],
-   usage:'Lượng từ; đi với 工作/报纸/礼物: 一份工作, 那份材料.',
-   collo:['一份工作','那份材料','这份调查'],
-   ex_zh:'上次那份工作你只做了两个月就离开了。',ex_py:'Shàng cì nà fèn gōngzuò nǐ zhǐ zuòle liǎng ge yuè jiù líkāi le.',ex_vn:'Công việc lần trước bạn chỉ làm được hai tháng đã nghỉ rồi.',
-   exList:[
-     {zh:'上次那份工作你只做了两个月就离开了。',py:'Shàng cì nà fèn gōngzuò nǐ zhǐ zuòle liǎng ge yuè jiù líkāi le.',vn:'Công việc lần trước bạn chỉ làm được hai tháng đã nghỉ rồi.'},
-     {zh:'那份调查还要多长时间才能做完？',py:'Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?',vn:'Bản điều tra đó còn cần bao lâu nữa mới làm xong?'},
-     {zh:'这份材料我已经按照您的要求改好了。',py:'Zhè fèn cáiliào wǒ yǐjīng ànzhào nín de yāoqiú gǎihǎo le.',vn:'Tài liệu này tôi đã sửa xong theo yêu cầu của anh rồi.'},
-   ],
-   hanzi:[
-     {c:'份',p:'fèn',type:'左右结构 · Trái-phải',st:6,ord:'亻 (nhân) trái → 分 (phân) phải',rad:'亻 (nhân – người)',mean:'phần, suất',
-      tip:'Bộ người 亻 + 分 (chia phần) → PHẦN được chia cho một người, mở rộng thành lượng từ đếm công việc/tài liệu/quà tặng.',
-      cf:'纷 (fēn – "rối ren", bộ 纟")',w:'一份工作 / 一份礼物 / 部份'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Công việc này thu nhập tuy không cao, nhưng tôi rất thích.',answer:'这份工作收入虽然不高，但我很喜欢。',answerPy:'Zhè fèn gōngzuò shōurù suīrán bù gāo, dàn wǒ hěn xǐhuan.',
-      note:'一份/这份 + danh từ — lượng từ đếm công việc.'},
-     {promptLang:'vi',prompt:'Bản điều tra này theo kế hoạch ban đầu phải làm trong hai tuần.',answer:'这份调查按原来的计划要用两周时间做完。',answerPy:'Zhè fèn diàochá àn yuánlái de jìhuà yào yòng liǎng zhōu shíjiān zuòwán.',
-      note:'按 + 原来的计划 — ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:4,zh:'完全',py:'wánquán',pos:'Phó từ',vn:'hoàn toàn', hv: 'hoàn toàn',em:'💯',lesson:1,
-   explain:['Diễn tả mức độ trọn vẹn, đầy đủ, không thiếu sót.'],
-   usage:'Phó từ, đứng trước động từ/tính từ: 完全适应, 完全不一样.',
-   collo:['完全适应','完全不一样','完全明白'],
-   ex_zh:'完全适应一个新的工作需要一年时间。',ex_py:'Wánquán shìyìng yí ge xīn de gōngzuò xūyào yì nián shíjiān.',ex_vn:'Hoàn toàn thích nghi với một công việc mới cần một năm thời gian.',
-   exList:[
-     {zh:'完全适应一个新的工作需要一年时间。',py:'Wánquán shìyìng yí ge xīn de gōngzuò xūyào yì nián shíjiān.',vn:'Hoàn toàn thích nghi với một công việc mới cần một năm thời gian.'},
-     {zh:'她们虽然是姐妹，但是性格完全不一样。',py:'Tāmen suīrán shì jiěmèi, dànshì xìnggé wánquán bù yíyàng.',vn:'Họ tuy là chị em, nhưng tính cách hoàn toàn không giống nhau.'},
-     {zh:'我完全明白你的意思了。',py:'Wǒ wánquán míngbai nǐ de yìsi le.',vn:'Tôi hoàn toàn hiểu ý của bạn rồi.'},
-   ],
-   hanzi:[
-     {c:'完',p:'wán',type:'上下结构 · Trên-dưới',st:7,ord:'宀 (miên) trên → 元 (nguyên) dưới',rad:'宀 (miên – mái nhà)',mean:'xong, đầy đủ',
-      tip:'Bộ mái nhà 宀 + 元 (đầu, gốc) → một ngôi nhà XÂY XONG TRỌN VẸN, mở rộng thành HOÀN TOÀN, XONG.',
-      cf:'莞 (wǎn – địa danh, có bộ 艹")',w:'完全 / 完成 / 完了'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Sự việc luôn thay đổi, chúng ta cần kịp thời thay đổi hoàn toàn kế hoạch.',answer:'事情总是变化着的，我们需要及时对计划做出完全的改变。',answerPy:'Shìqing zǒngshì biànhuà zhe de, wǒmen xūyào jíshí duì jìhuà zuòchū wánquán de gǎibiàn.',
-      note:'完全 + danh từ/động từ — hoàn toàn.'},
-     {promptLang:'vi',prompt:'Tôi cứ tưởng làm quen với công việc mới rất nhanh, ai ngờ hoàn toàn không đơn giản.',answer:'我以为适应新工作很快，没想到完全不简单。',answerPy:'Wǒ yǐwéi shìyìng xīn gōngzuò hěn kuài, méi xiǎngdào wánquán bù jiǎndān.',
-      note:'以为……没想到……完全…… — kết hợp nhiều từ vựng của bài.'},
-   ]},
-
-  {n:5,zh:'赚',py:'zhuàn',pos:'Động từ',vn:'kiếm (tiền)', hv: 'trám',em:'💵',lesson:1,
-   explain:['Thu được lợi nhuận, kiếm được tiền từ công việc/kinh doanh.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 赚钱, 太着急赚钱.',
-   collo:['赚钱','太着急赚钱','赚钱越来越难'],
-   ex_zh:'你才到新公司，不要太急着赚钱，多学习才是最重要的。',ex_py:'Nǐ cái dào xīn gōngsī, búyào tài jízhe zhuàn qián, duō xuéxí cái shì zuì zhòngyào de.',ex_vn:'Bạn mới đến công ty mới, đừng quá nôn nóng kiếm tiền, học hỏi nhiều mới là điều quan trọng nhất.',
-   exList:[
-     {zh:'你才到新公司，不要太急着赚钱，多学习才是最重要的。',py:'Nǐ cái dào xīn gōngsī, búyào tài jízhe zhuàn qián, duō xuéxí cái shì zuì zhòngyào de.',vn:'Bạn mới đến công ty mới, đừng quá nôn nóng kiếm tiền, học hỏi nhiều mới là điều quan trọng nhất.'},
-     {zh:'现在赚钱越来越难了。',py:'Xiànzài zhuàn qián yuè lái yuè nán le.',vn:'Bây giờ kiếm tiền ngày càng khó.'},
-     {zh:'年轻人刚开始工作的时候，不要太急着赚钱。',py:'Niánqīng rén gāng kāishǐ gōngzuò de shíhou, búyào tài jízhe zhuàn qián.',vn:'Người trẻ khi mới bắt đầu đi làm, đừng quá nôn nóng kiếm tiền.'},
-   ],
-   hanzi:[
-     {c:'赚',p:'zhuàn',type:'左右结构 · Trái-phải (giản thể)',st:12,ord:'贝 (bối) trái → 兼 (kiêm) phải',rad:'贝 (bối – tiền, của cải)',mean:'kiếm lời',
-      tip:'Bộ 贝 (tiền của) + 兼 (gồm thêm) → có THÊM tiền của, mở rộng thành KIẾM (lời/tiền).',
-      cf:'谦 (qiān – "khiêm tốn", bộ 讠")',w:'赚钱 / 赚了 / 净赚'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bất kể công việc gì, đừng quá nôn nóng kiếm tiền, tích lũy kinh nghiệm mới quan trọng hơn.',answer:'不管是什么工作，都不要太着急赚钱，积累经验才更重要。',answerPy:'Bùguǎn shì shénme gōngzuò, dōu búyào tài zháojí zhuàn qián, jīlěi jīngyàn cái gèng zhòngyào.',
-      note:'不管……都不要……才…… kết hợp từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Anh ấy vốn cho rằng kinh doanh rất dễ kiếm tiền, ai ngờ hoàn toàn không phải vậy.',answer:'他本来以为做生意很容易赚钱，没想到完全不是这样。',answerPy:'Tā běnlái yǐwéi zuò shēngyi hěn róngyì zhuàn qián, méi xiǎngdào wánquán bú shì zhèyàng.',
-      note:'本来以为……没想到……完全…… kết hợp nhiều từ vựng.'},
-   ]},
-
-  {n:6,zh:'调查',py:'diàochá',pos:'Động từ',vn:'điều tra, khảo sát', hv: 'điều tra',em:'🔍',lesson:2,
-   explain:['Thu thập thông tin, tìm hiểu kỹ về một vấn đề/sự việc.'],
-   usage:'Động từ/danh từ; thường đi với 那份调查, 做调查.',
-   collo:['那份调查','做调查','调查完成'],
-   ex_zh:'那份调查还要多长时间才能做完？',ex_py:'Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?',ex_vn:'Bản điều tra đó còn cần bao lâu nữa mới làm xong?',
-   exList:[
-     {zh:'那份调查还要多长时间才能做完？',py:'Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?',vn:'Bản điều tra đó còn cần bao lâu nữa mới làm xong?'},
-     {zh:'用一个星期的时间调查1000个人换工作的原因。',py:'Yòng yí ge xīngqī de shíjiān diàochá yìqiān ge rén huàn gōngzuò de yuányīn.',vn:'Dùng một tuần thời gian điều tra nguyên nhân 1000 người đổi việc.'},
-     {zh:'这份调查明天上午交，你写好了吗？',py:'Zhè fèn diàochá míngtiān shàngwǔ jiāo, nǐ xiěhǎole ma?',vn:'Bản điều tra này nộp sáng mai, bạn viết xong chưa?'},
-   ],
-   hanzi:[
-     {c:'调',p:'diào',type:'左右结构 · Trái-phải',st:10,ord:'讠 (ngôn) trái → 周 (chu) phải',rad:'讠 (ngôn – lời nói)',mean:'điều tra, phối hợp',
-      tip:'Bộ lời nói 讠 + 周 (khắp, đầy đủ) → HỎI KHẮP để tìm hiểu, kết hợp 查 (tra xét) thành 调查 = ĐIỀU TRA.',
-      cf:'调 khi đọc "tiáo" nghĩa là "điều chỉnh" (调整)',w:'调查 / 空调 / 调整'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Theo kế hoạch ban đầu, bản điều tra này nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn.',answer:'按原来的计划，这份调查应该是两周，但是我们可以提前完成。',answerPy:'Àn yuánlái de jìhuà, zhè fèn diàochá yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.',
-      note:'按原来的计划……但是…… kết hợp 提前, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Theo bản điều tra, mỗi người mỗi ngày nên ngủ ít nhất 7 tiếng.',answer:'根据调查，人每天晚上最少应该睡7个小时。',answerPy:'Gēnjù diàochá, rén měitiān wǎnshang zuìshǎo yīnggāi shuì qī ge xiǎoshí.',
-      note:'根据调查 — theo điều tra.'},
-   ]},
-
-  {n:7,zh:'原来',py:'yuánlái',pos:'Danh từ/Tính từ/Phó từ',vn:'ban đầu, trước đây; nguyên bản; hóa ra là', hv: 'nguyên lai',em:'⏮️',lesson:2,
-   explain:['1. (Danh từ) Ban đầu, trước đây — nêu tình huống khác với hiện tại.','2. (Tính từ) Nguyên bản, không thay đổi — không đứng một mình làm vị ngữ, bổ nghĩa danh từ phải có 的.','3. (Phó từ) Chỉ khoảng thời gian trước đây (khác hiện tại), hoặc diễn tả phát hiện ra điều trước đây không biết — đứng trước/sau chủ ngữ đều được.'],
-   usage:'按原来的计划 (tính từ + 的); 原来是……(phó từ, phát hiện sự thật); 原来 + mệnh đề (danh từ, thời điểm ban đầu).',
-   collo:['原来的计划','原来是你啊','原来最快'],
-   ex_zh:'按原来的计划应该是两周，但是我们可以提前完成。',ex_py:'Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.',ex_vn:'Theo kế hoạch ban đầu nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn.',
-   exList:[
-     {zh:'按原来的计划应该是两周，但是我们可以提前完成。',py:'Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.',vn:'Theo kế hoạch ban đầu nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn.'},
-     {zh:'坐火车从北京到上海，原来最快差不多需要12个小时，现在有了高铁，5个小时就能到。',py:'Zuò huǒchē cóng Běijīng dào Shànghǎi, yuánlái zuì kuài chàbuduō xūyào shí\'èr ge xiǎoshí, xiànzài yǒule gāotiě, wǔ ge xiǎoshí jiù néng dào.',vn:'Đi tàu từ Bắc Kinh đến Thượng Hải, trước đây nhanh nhất cần khoảng 12 tiếng, bây giờ có tàu cao tốc, 5 tiếng là đến.'},
-     {zh:'我还以为是谁帮我打扫房间呢，原来是你啊！',py:'Wǒ hái yǐwéi shì shéi bāng wǒ dǎsǎo fángjiān ne, yuánlái shì nǐ a!',vn:'Tôi còn tưởng là ai giúp tôi dọn phòng, hóa ra là bạn à!'},
-   ],
-   hanzi:[
-     {c:'原',p:'yuán',type:'半包围结构 · Bán bao vây',st:10,ord:'厂 bao ngoài → 泉 trong',rad:'厂 (xưởng, vách núi)',mean:'nguồn gốc, ban đầu',
-      tip:'Chữ mô phỏng NGUỒN NƯỚC chảy ra từ vách núi 厂 → NGUỒN GỐC, BAN ĐẦU; kết hợp 来(đến) thành 原来 = BAN ĐẦU/HÓA RA.',
-      cf:'愿 (yuàn – "nguyện vọng", có 心 dưới)',w:'原来 / 原因 / 原谅'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nhà tôi trước đây ở gần đây, chỉ là trước kia không có nhiều tòa nhà như bây giờ.',answer:'我家原来住这儿附近，不过这里以前不像现在有这么多楼房。',answerPy:'Wǒ jiā yuánlái zhù zhèr fùjìn, búguò zhèli yǐqián bú xiàng xiànzài yǒu zhème duō lóufáng.',
-      note:'原来 (phó từ) — trước đây, khác với hiện tại.'},
-     {promptLang:'vi',prompt:'Mark cứ đợi Lý Minh gọi lại, nhưng cả tối không thấy gọi, hóa ra Lý Minh nhớ nhầm số điện thoại của Mark.',answer:'马克一直等李明回电话，可是电话一晚上都没来，原来李明把马克的电话号码记错了。',answerPy:'Mǎkè yìzhí děng Lǐ Míng huí diànhuà, kěshì diànhuà yì wǎnshang dōu méi lái, yuánlái Lǐ Míng bǎ Mǎkè de diànhuà hàomǎ jì cuò le.',
-      note:'原来 (phó từ) — phát hiện sự thật trước đây không biết.'},
-   ]},
-
-  {n:8,zh:'计划',py:'jìhuà',pos:'Danh từ/Động từ',vn:'kế hoạch; vạch kế hoạch', hv: 'kế hoạch',em:'📅',lesson:2,
-   explain:['1. (Danh từ) Bản dự định công việc theo trình tự thời gian.','2. (Động từ) Lập dự định, sắp xếp trước cho việc gì.'],
-   usage:'Danh từ: 原来的计划, 当天计划; động từ: 计划要做的事情.',
-   collo:['原来的计划','当天计划','工作计划'],
-   ex_zh:'每天早上我都把当天计划要做的事情写在笔记本上。',ex_py:'Měitiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà yào zuò de shìqing xiě zài bǐjìběn shang.',ex_vn:'Mỗi sáng tôi đều viết những việc dự định làm trong ngày vào sổ tay.',
-   exList:[
-     {zh:'每天早上我都把当天计划要做的事情写在笔记本上。',py:'Měitiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà yào zuò de shìqing xiě zài bǐjìběn shang.',vn:'Mỗi sáng tôi đều viết những việc dự định làm trong ngày vào sổ tay.'},
-     {zh:'一个人用一天时间写一份公司全年的工作计划。',py:'Yí ge rén yòng yì tiān shíjiān xiě yí fèn gōngsī quánnián de gōngzuò jìhuà.',vn:'Một người dùng một ngày để viết một bản kế hoạch làm việc cả năm cho công ty.'},
-     {zh:'按原来的计划应该是两周。',py:'Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu.',vn:'Theo kế hoạch ban đầu nên là hai tuần.'},
-   ],
-   hanzi:[
-     {c:'划',p:'huà',type:'左右结构 · Trái-phải (giản thể)',st:6,ord:'戈 (qua) trái → 刂 (đao) phải',rad:'刂 (đao – dao)',mean:'vạch ra, hoạch định',
-      tip:'Bộ dao 刂 (dùng để VẠCH, khắc) → VẠCH RA đường hướng, kết hợp 计(tính toán) thành 计划 = LẬP KẾ HOẠCH.',
-      cf:'话 (huà – "lời nói", bộ 讠")',w:'计划 / 划船 / 规划'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cô ấy vốn không có kế hoạch đi công tác, nhưng công ty đột nhiên bảo cô ấy đi.',answer:'她本来没有出差的计划，但是公司突然让她去。',answerPy:'Tā běnlái méiyǒu chūchāi de jìhuà, dànshì gōngsī tūrán ràng tā qù.',
-      note:'本来……但是…… ôn lại điểm ngữ pháp Bài 3.'},
-     {promptLang:'vi',prompt:'Sự việc luôn thay đổi, chúng ta cần kịp thời điều chỉnh kế hoạch.',answer:'事情总是变化着的，我们需要及时对计划做出改变。',answerPy:'Shìqing zǒngshì biànhuà zhe de, wǒmen xūyào jíshí duì jìhuà zuòchū gǎibiàn.',
-      note:'对计划做出改变 — điều chỉnh kế hoạch.'},
-   ]},
-
-  {n:9,zh:'提前',py:'tíqián',pos:'Động từ',vn:'làm sớm hơn dự định, trước thời hạn', hv: 'đề tiền',em:'⏩',lesson:2,
-   explain:['Làm việc gì đó sớm hơn so với thời gian đã định trước.'],
-   usage:'Động từ; thường đi với 提前完成, 提前一个小时.',
-   collo:['提前完成','提前到','提前一个小时'],
-   ex_zh:'但是我们可以提前完成，周末保证做完。',ex_py:'Dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.',ex_vn:'Nhưng chúng tôi có thể hoàn thành sớm hơn, cuối tuần cam đoan làm xong.',
-   exList:[
-     {zh:'但是我们可以提前完成，周末保证做完。',py:'Dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.',vn:'Nhưng chúng tôi có thể hoàn thành sớm hơn, cuối tuần cam đoan làm xong.'},
-     {zh:'每天提前半个小时到公司。',py:'Měitiān tíqián bàn ge xiǎoshí dào gōngsī.',vn:'Mỗi ngày đến công ty sớm hơn nửa tiếng.'},
-     {zh:'今天下午的会议提前一个小时，改在两点开。',py:'Jīntiān xiàwǔ de huìyì tíqián yí ge xiǎoshí, gǎi zài liǎng diǎn kāi.',vn:'Cuộc họp chiều nay dời sớm một tiếng, đổi thành 2 giờ họp.'},
-   ],
-   hanzi:[
-     {c:'提',p:'tí',type:'左右结构 · Trái-phải',st:12,ord:'扌 (thủ) trái → 是 phải',rad:'扌 (thủ – tay)',mean:'kéo lên trước',
-      tip:'Bộ tay 扌 (kéo, đưa) + 前(trước) → ĐƯA lên phía TRƯỚC (về thời gian), mở rộng thành LÀM SỚM HƠN DỰ ĐỊNH.',
-      cf:'题 (tí – "đề bài")',w:'提前 / 提高 / 提出'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cuộc họp chiều nay dời sớm một tiếng, tôi đã xem thông báo rồi, cảm ơn bạn.',answer:'今天下午的会议提前一个小时，我已经看到通知了，谢谢你。',answerPy:'Jīntiān xiàwǔ de huìyì tíqián yí ge xiǎoshí, wǒ yǐjīng kàndào tōngzhī le, xièxie nǐ.',
-      note:'提前 + số lượng — làm sớm hơn bao lâu.'},
-     {promptLang:'vi',prompt:'Bạn yên tâm, tôi cam đoan sẽ giao sớm hơn cho anh trước 9 giờ sáng mai.',answer:'您放心，我保证明天9点前提前给您。',answerPy:'Nín fàngxīn, wǒ bǎozhèng míngtiān jiǔ diǎn qián tíqián gěi nín.',
-      note:'保证……提前…… kết hợp từ vựng của bài.'},
-   ]},
-
-  {n:10,zh:'保证',py:'bǎozhèng',pos:'Động từ',vn:'cam đoan, bảo đảm', hv: 'bảo chứng',em:'🤝',lesson:2,
-   explain:['Cam kết chắc chắn sẽ thực hiện đúng điều gì đó.'],
-   usage:'Động từ, mang mệnh đề làm tân ngữ: 保证做完, 我保证.',
-   collo:['保证做完','我保证','周末保证'],
-   ex_zh:'周末保证做完。',ex_py:'Zhōumò bǎozhèng zuòwán.',ex_vn:'Cuối tuần cam đoan làm xong.',
-   exList:[
-     {zh:'周末保证做完。',py:'Zhōumò bǎozhèng zuòwán.',vn:'Cuối tuần cam đoan làm xong.'},
-     {zh:'您放心，我保证明天9点前给您。',py:'Nín fàngxīn, wǒ bǎozhèng míngtiān jiǔ diǎn qián gěi nín.',vn:'Anh yên tâm, tôi cam đoan sẽ giao trước 9 giờ sáng mai cho anh.'},
-     {zh:'我保证以后不会再迟到了。',py:'Wǒ bǎozhèng yǐhòu bú huì zài chídào le.',vn:'Tôi cam đoan sau này sẽ không đến muộn nữa.'},
-   ],
-   hanzi:[
-     {c:'证',p:'zhèng',type:'左右结构 · Trái-phải (giản thể)',st:8,ord:'讠 (ngôn) trái → 正 (chính) phải',rad:'讠 (ngôn – lời nói)',mean:'chứng minh, xác nhận',
-      tip:'Bộ lời nói 讠 + 正 (đúng đắn) → LỜI NÓI ĐÚNG ĐẮN, xác nhận, kết hợp 保(giữ, đảm bảo) thành 保证 = CAM ĐOAN.',
-      cf:'征 (zhēng – "chinh phạt/trưng thu")',w:'保证 / 证明 / 保护'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn cam đoan hoàn thành đúng hạn, tôi liền tin tưởng bạn.',answer:'只要你保证按时完成，我就相信你。',answerPy:'Zhǐyào nǐ bǎozhèng ànshí wánchéng, wǒ jiù xiāngxìn nǐ.',
-      note:'只要……就…… kết hợp 保证/按时.'},
-     {promptLang:'vi',prompt:'Anh yên tâm, tất cả tôi đều sắp xếp ổn thỏa rồi.',answer:'您放心，一切我都安排好了。',answerPy:'Nín fàngxīn, yíqiè wǒ dōu ānpái hǎo le.',
-      note:'一切 + 都 — tất cả đều.'},
-   ]},
-
-  {n:11,zh:'提醒',py:'tíxǐng',pos:'Động từ',vn:'nhắc nhở', hv: 'đề tỉnh',em:'🔔',lesson:2,
-   explain:['Nói cho ai đó nhớ lại hoặc chú ý đến điều gì.'],
-   usage:'Động từ, mang tân ngữ kép: 提醒 + Người + Nội dung.',
-   collo:['提醒自己','谢谢提醒','提醒安排时间'],
-   ex_zh:'提醒自己安排好时间。',ex_py:'Tíxǐng zìjǐ ānpái hǎo shíjiān.',ex_vn:'Nhắc nhở bản thân sắp xếp thời gian tốt.',
-   exList:[
-     {zh:'提醒自己安排好时间。',py:'Tíxǐng zìjǐ ānpái hǎo shíjiān.',vn:'Nhắc nhở bản thân sắp xếp thời gian tốt.'},
-     {zh:'谢谢你的提醒，我差点儿忘记了。',py:'Xièxie nǐ de tíxǐng, wǒ chàdiǎnr wàngjì le.',vn:'Cảm ơn bạn đã nhắc nhở, tôi suýt quên mất.'},
-     {zh:'今天是王红的生日，记得给她打个电话。',py:'Jīntiān shì Wáng Hóng de shēngrì, jìde gěi tā dǎ ge diànhuà.',vn:'Hôm nay là sinh nhật Vương Hồng, nhớ gọi điện cho cô ấy.'},
-   ],
-   hanzi:[
-     {c:'醒',p:'xǐng',type:'左右结构 · Trái-phải',st:16,ord:'酉 (dậu) trái → 星 (tinh) phải',rad:'酉 (dậu – rượu)',mean:'tỉnh, nhắc nhở',
-      tip:'Bộ 酉 (rượu, say) + 星(sao, biểu âm) → TỈNH khỏi cơn say, mở rộng thành TỈNH TÁO/NHẮC NHỞ (làm ai tỉnh ra để nhớ).',
-      cf:'醉 (zuì – "say", cũng bộ 酉")',w:'提醒 / 醒来 / 睡醒'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mỗi sáng tôi đều viết kế hoạch trong ngày vào sổ tay, nhắc nhở bản thân sắp xếp tốt thời gian.',answer:'每天早上我都把当天计划写在笔记本上，提醒自己安排好时间。',answerPy:'Měitiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà xiě zài bǐjìběn shang, tíxǐng zìjǐ ānpái hǎo shíjiān.',
-      note:'提醒自己 — nhắc nhở bản thân.'},
-     {promptLang:'vi',prompt:'Cảm ơn bạn nhắc tôi, nếu không tôi đã quên hoàn toàn chuyện này.',answer:'谢谢你提醒我，不然我完全忘了这件事。',answerPy:'Xièxie nǐ tíxǐng wǒ, bùrán wǒ wánquán wàngle zhè jiàn shì.',
-      note:'提醒 + 完全 — kết hợp từ vựng của bài.'},
-   ]},
-
-  {n:12,zh:'乱',py:'luàn',pos:'Tính từ',vn:'lộn xộn, lúng túng', hv: 'loạn',em:'😵',lesson:2,
-   explain:['Trạng thái không có trật tự, rối loạn; hoặc tâm trạng bối rối, mất bình tĩnh.'],
-   usage:'Tính từ; thường đi trong cụm 手忙脚乱 (tay chân luống cuống).',
-   collo:['手忙脚乱','很乱','别乱'],
-   ex_zh:'这样我就不会手忙脚乱了。',ex_py:'Zhèyàng wǒ jiù bú huì shǒumáng-jiǎoluàn le.',ex_vn:'Như vậy tôi sẽ không còn luống cuống nữa.',
-   exList:[
-     {zh:'这样我就不会手忙脚乱了。',py:'Zhèyàng wǒ jiù bú huì shǒumáng-jiǎoluàn le.',vn:'Như vậy tôi sẽ không còn luống cuống nữa.'},
-     {zh:'房间里的东西太乱了，我们收拾一下吧。',py:'Fángjiān li de dōngxi tài luàn le, wǒmen shōushi yíxià ba.',vn:'Đồ đạc trong phòng lộn xộn quá, chúng ta dọn dẹp một chút đi.'},
-     {zh:'别着急，慢慢说，不要乱。',py:'Bié zháojí, mànman shuō, búyào luàn.',vn:'Đừng vội, từ từ nói, đừng luống cuống.'},
-   ],
-   hanzi:[
-     {c:'乱',p:'luàn',type:'左右结构 · Trái-phải (giản thể)',st:7,ord:'舌 trái → 乚 phải',rad:'乙 (ất, biến thể)',mean:'rối loạn',
-      tip:'Chữ giản thể mô phỏng sợi dây bị RỐI, không gỡ được → mở rộng thành LỘN XỘN, LÚNG TÚNG.',
-      cf:'乱 dễ nhầm với 舌 (shé – "cái lưỡi") do có phần giống nhau bên trái',w:'手忙脚乱 / 乱七八糟 / 别乱'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu mỗi ngày đều nhắc nhở bản thân sắp xếp thời gian, thì sẽ không luống cuống nữa.',answer:'如果每天都提醒自己安排时间，就不会手忙脚乱了。',answerPy:'Rúguǒ měitiān dōu tíxǐng zìjǐ ānpái shíjiān, jiù bú huì shǒumáng-jiǎoluàn le.',
-      note:'如果……就不会……了 — kết hợp 提醒/安排.'},
-     {promptLang:'vi',prompt:'Việc quá nhiều khiến tôi luống cuống, không biết nên làm cái nào trước.',answer:'事情太多，让我手忙脚乱，不知道该先做哪个。',answerPy:'Shìqing tài duō, ràng wǒ shǒumáng-jiǎoluàn, bù zhīdào gāi xiān zuò nǎge.',
-      note:'手忙脚乱 — cụm cố định, tay chân luống cuống.'},
-   ]},
-
-  {n:13,zh:'生意',py:'shēngyi',pos:'Danh từ',vn:'việc kinh doanh, buôn bán', hv: 'sinh ý',em:'💼',lesson:3,
-   explain:['Hoạt động buôn bán, kinh doanh để kiếm lời.'],
-   usage:'Danh từ; thường đi với 做生意, 生意谈成.',
-   collo:['做生意','谈生意','生意好'],
-   ex_zh:'我们和上次那个公司的生意终于谈成了。',ex_py:'Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.',ex_vn:'Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.',
-   exList:[
-     {zh:'我们和上次那个公司的生意终于谈成了。',py:'Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.',vn:'Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.'},
-     {zh:'我原来以为做生意很简单，后来才发现其实并不容易。',py:'Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.',vn:'Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.'},
-     {zh:'公司的生意会越做越大。',py:'Gōngsī de shēngyi huì yuè zuò yuè dà.',vn:'Việc kinh doanh của công ty sẽ ngày càng phát triển lớn hơn.'},
-   ],
-   hanzi:[
-     {c:'意',p:'yì',type:'上下结构 · Trên-dưới',st:13,ord:'音 trên → 心 dưới',rad:'心 (tâm)',mean:'ý nghĩ',
-      tip:'Bộ 音(âm thanh, lời) trên 心(tâm) → Ý NGHĨ phát ra từ trong lòng; kết hợp 生 (sinh sôi) thành 生意 = việc SINH LỢI, KINH DOANH.',
-      cf:'意 dễ nhầm với 竟 (jìng – "rốt cuộc")',w:'生意 / 意思 / 注意'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh làm việc chăm chỉ như vậy, việc kinh doanh của công ty sẽ ngày càng tốt hơn.',answer:'你工作那么努力，公司的生意会越来越好的。',answerPy:'Nǐ gōngzuò nàme nǔlì, gōngsī de shēngyi huì yuè lái yuè hǎo de.',
-      note:'越来越…… — ngày càng, ôn lại cấu trúc HSK3.'},
-     {promptLang:'vi',prompt:'Tôi tin rằng nhờ nỗ lực của mọi người, việc kinh doanh sẽ ngày càng phát triển.',answer:'我相信经过大家的努力，生意会越做越大。',answerPy:'Wǒ xiāngxìn jīngguò dàjiā de nǔlì, shēngyi huì yuè zuò yuè dà.',
-      note:'越做越大 — càng làm càng lớn.'},
-   ]},
-
-  {n:14,zh:'谈',py:'tán',pos:'Động từ',vn:'nói chuyện, thảo luận', hv: 'đàm',em:'💬',lesson:3,
-   explain:['Trao đổi, bàn bạc về một vấn đề nào đó.'],
-   usage:'Động từ; thường đi với 谈生意, 谈成, 谈工作.',
-   collo:['谈生意','谈成了','谈工作'],
-   ex_zh:'我们和上次那个公司的生意终于谈成了。',ex_py:'Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.',ex_vn:'Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.',
-   exList:[
-     {zh:'我们和上次那个公司的生意终于谈成了。',py:'Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.',vn:'Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.'},
-     {zh:'我们谈了很长时间，终于谈成了这次合作。',py:'Wǒmen tánle hěn cháng shíjiān, zhōngyú tánchéngle zhè cì hézuò.',vn:'Chúng tôi đã bàn bạc rất lâu, cuối cùng đàm phán thành công hợp tác lần này.'},
-     {zh:'我们找时间谈谈这个问题吧。',py:'Wǒmen zhǎo shíjiān tántan zhège wèntí ba.',vn:'Chúng ta tìm thời gian bàn bạc về vấn đề này đi.'},
-   ],
-   hanzi:[
-     {c:'谈',p:'tán',type:'左右结构 · Trái-phải (giản thể)',st:10,ord:'讠 (ngôn) trái → 炎 (viêm) phải',rad:'讠 (ngôn – lời nói)',mean:'nói chuyện',
-      tip:'Bộ lời nói 讠 + 炎 (lửa cháy bừng, biểu âm) → LỜI NÓI qua lại sôi nổi, mở rộng thành NÓI CHUYỆN, THẢO LUẬN.',
-      cf:'淡 (dàn – "nhạt", bộ 氵")',w:'谈生意 / 谈话 / 谈成'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chúng tôi cuối cùng đã bàn xong việc kinh doanh này, mọi người đều rất vui.',answer:'我们终于把这次生意谈成了，大家都很高兴。',answerPy:'Wǒmen zhōngyú bǎ zhè cì shēngyi tánchéng le, dàjiā dōu hěn gāoxìng.',
-      note:'把……谈成 — bàn xong, đàm phán thành công.'},
-     {promptLang:'vi',prompt:'Điều gì khiến bạn vui như vậy, có phải việc kinh doanh đã đàm phán xong không?',answer:'什么事让你这么高兴啊，是不是生意谈成了？',answerPy:'Shénme shì ràng nǐ zhème gāoxìng a, shì bu shì shēngyi tánchéng le?',
-      note:'什么事让你这么…… — điều gì khiến bạn….'},
-   ]},
-
-  {n:15,zh:'并',py:'bìng',pos:'Phó từ',vn:'(nhấn mạnh phủ định)', hv: 'tịnh',em:'❗',lesson:3,
-   explain:['Đứng trước từ phủ định 不/没(有) để tăng cường ngữ khí phủ định, thường dùng trong câu tỏ ý chuyển ngoặt, phủ định một cách nhìn nào đó và giải thích tình hình thực tế.'],
-   usage:'并 + 不/没(有) + V/Adj: 并不容易, 并没有.',
-   collo:['并不容易','并没有','并不是'],
-   ex_zh:'我原来以为做生意很简单，后来才发现其实并不容易。',ex_py:'Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.',ex_vn:'Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.',
-   exList:[
-     {zh:'我原来以为做生意很简单，后来才发现其实并不容易。',py:'Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.',vn:'Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.'},
-     {zh:'其实，人们将来做什么工作可能和上学学的专业并没有太大关系。',py:'Qíshí, rénmen jiānglái zuò shénme gōngzuò kěnéng hé shàngxué xué de zhuānyè bìng méiyǒu tài dà guānxi.',vn:'Thực ra, sau này người ta làm công việc gì có thể không liên quan nhiều lắm đến chuyên ngành đã học.'},
-     {zh:'根据调查，人每天晚上最少应该睡7个小时，但是这并不适合每一个人。',py:'Gēnjù diàochá, rén měitiān wǎnshang zuìshǎo yīnggāi shuì qī ge xiǎoshí, dànshì zhè bìng bú shìhé měi yí ge rén.',vn:'Theo điều tra, mỗi người mỗi tối nên ngủ ít nhất 7 tiếng, nhưng điều này không hề phù hợp với tất cả mọi người.'},
-   ],
-   hanzi:[
-     {c:'并',p:'bìng',type:'独体字 · Chữ đơn (giản thể)',st:6,ord:'nét liền',rad:'干 (biến thể)',mean:'cùng, gộp lại',
-      tip:'Chữ mô phỏng hai vật GHÉP LIỀN nhau → nghĩa gốc là GỘP LẠI, mượn dùng làm phó từ nhấn mạnh phủ định (không hề).',
-      cf:'并 dễ nhầm với 开 (kāi – "mở")',w:'并不 / 并且 / 合并'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi cứ tưởng làm sếp rất dễ, ai ngờ hoàn toàn không hề đơn giản.',answer:'我以为当经理很容易，没想到并不简单。',answerPy:'Wǒ yǐwéi dāng jīnglǐ hěn róngyì, méi xiǎngdào bìng bù jiǎndān.',
-      note:'以为……没想到……并不…… kết hợp nhiều điểm ngữ pháp.'},
-     {promptLang:'vi',prompt:'Nghe nói việc kinh doanh của công ty đó rất tốt, nhưng thực ra không hề như vậy.',answer:'听说那家公司的生意很好，但其实并不是这样。',answerPy:'Tīngshuō nà jiā gōngsī de shēngyi hěn hǎo, dàn qíshí bìng bú shì zhèyàng.',
-      note:'并不是这样 — không hề như vậy.'},
-   ]},
-
-  {n:16,zh:'积累',py:'jīlěi',pos:'Động từ',vn:'tích lũy', hv: 'tích lụy',em:'📈',lesson:3,
-   explain:['Tích góp dần dần theo thời gian (kinh nghiệm, kiến thức, tiền bạc...).'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 积累经验, 积累知识.',
-   collo:['积累经验','积累知识','多积累'],
-   ex_zh:'慢慢来，万事开头难，重要的是要多积累经验。',ex_py:'Mànmàn lái, wànshì kāitóu nán, zhòngyào de shì yào duō jīlěi jīngyàn.',ex_vn:'Từ từ thôi, vạn sự khởi đầu nan, quan trọng là phải tích lũy nhiều kinh nghiệm.',
-   exList:[
-     {zh:'慢慢来，万事开头难，重要的是要多积累经验。',py:'Mànmàn lái, wànshì kāitóu nán, zhòngyào de shì yào duō jīlěi jīngyàn.',vn:'Từ từ thôi, vạn sự khởi đầu nan, quan trọng là phải tích lũy nhiều kinh nghiệm.'},
-     {zh:'学习与同事交流的方法，积累专业知识，这些比收入重要多了。',py:'Xuéxí yǔ tóngshì jiāoliú de fāngfǎ, jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.',vn:'Học cách trao đổi với đồng nghiệp, tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều.'},
-     {zh:'这让我积累了很多工作经验。',py:'Zhè ràng wǒ jīlěile hěn duō gōngzuò jīngyàn.',vn:'Điều này khiến tôi tích lũy được rất nhiều kinh nghiệm làm việc.'},
-   ],
-   hanzi:[
-     {c:'积',p:'jī',type:'左右结构 · Trái-phải (giản thể)',st:10,ord:'禾 (hòa) trái → 只 phải',rad:'禾 (hòa – lúa)',mean:'chất chứa, tích góp',
-      tip:'Bộ lúa 禾 (thu hoạch dần) + 只 (biểu âm) → CHẤT lúa thành đống dần dần, mở rộng thành TÍCH LŨY, kết hợp 累(chồng chất) thành 积累.',
-      cf:'积 dễ nhầm với 只 riêng lẻ (không có bộ 禾)',w:'积累 / 面积 / 积极'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nghe nói bạn bắt đầu làm việc ở công ty này từ năm hai đại học, điều đó cho bạn tích lũy nhiều kinh nghiệm làm việc phải không?',answer:'听说你大学二年级的时候就开始在这个公司工作了，这让你积累了很多工作经验吧？',answerPy:'Tīngshuō nǐ dàxué èr niánjí de shíhou jiù kāishǐ zài zhège gōngsī gōngzuò le, zhè ràng nǐ jīlěile hěn duō gōngzuò jīngyàn ba?',
-      note:'这让我/你积累了…… — điều này khiến … tích lũy được….'},
-     {promptLang:'vi',prompt:'Điều quan trọng nhất trong mấy năm đầu đi làm là tích lũy kinh nghiệm chuyên môn, chứ không phải thu nhập.',answer:'工作前几年最重要的是积累专业经验，而不是收入。',answerPy:'Gōngzuò qián jǐ nián zuì zhòngyào de shì jīlěi zhuānyè jīngyàn, ér bú shì shōurù.',
-      note:'最重要的是……而不是…… — quan trọng nhất là … chứ không phải….'},
-   ]},
-
-  {n:17,zh:'经验',py:'jīngyàn',pos:'Danh từ',vn:'kinh nghiệm', hv: 'kinh nghiệm',em:'🎓',lesson:3,
-   explain:['Những điều học được, tích lũy được qua thực tế làm việc/trải nghiệm.'],
-   usage:'Danh từ; thường đi với 积累经验, 工作经验.',
-   collo:['积累经验','工作经验','有经验'],
-   ex_zh:'重要的是要多积累经验。',ex_py:'Zhòngyào de shì yào duō jīlěi jīngyàn.',ex_vn:'Quan trọng là phải tích lũy nhiều kinh nghiệm.',
-   exList:[
-     {zh:'重要的是要多积累经验。',py:'Zhòngyào de shì yào duō jīlěi jīngyàn.',vn:'Quan trọng là phải tích lũy nhiều kinh nghiệm.'},
-     {zh:'按照经验，这个问题应该可以很快解决，请大家放心。',py:'Ànzhào jīngyàn, zhège wèntí yīnggāi kěyǐ hěn kuài jiějué, qǐng dàjiā fàngxīn.',vn:'Theo kinh nghiệm, vấn đề này chắc có thể giải quyết nhanh, mọi người cứ yên tâm.'},
-     {zh:'一个人即使能力再高，经验再丰富，如果对工作没有责任心，也很难把工作做好。',py:'Yí ge rén jíshǐ nénglì zài gāo, jīngyàn zài fēngfù, rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.',vn:'Một người dù năng lực có cao đến đâu, kinh nghiệm có phong phú đến đâu, nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.'},
-   ],
-   hanzi:[
-     {c:'验',p:'yàn',type:'左右结构 · Trái-phải (giản thể)',st:10,ord:'马 (mã) trái → 佥 phải',rad:'马 (mã – ngựa)',mean:'kiểm nghiệm, trải qua',
-      tip:'Bộ 马 (liên quan kiểm tra ngựa xưa) + 佥(biểu âm) → KIỂM NGHIỆM qua thực tế, kết hợp 经(trải qua) thành 经验 = KINH NGHIỆM.',
-      cf:'验 dễ nhầm với 检 (jiǎn – "kiểm tra")',w:'经验 / 经历 / 考验'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Điều quan trọng nhất trong mấy năm đầu là làm phong phú kinh nghiệm làm việc của bản thân.',answer:'在工作的前几年，重要的是丰富自己的工作经验。',answerPy:'Zài gōngzuò de qián jǐ nián, zhòngyào de shì fēngfù zìjǐ de gōngzuò jīngyàn.',
-      note:'丰富……经验 — làm phong phú kinh nghiệm.'},
-     {promptLang:'vi',prompt:'Bất kể năng lực cao đến đâu, nếu không có kinh nghiệm cũng khó làm tốt công việc.',answer:'不管能力多高，如果没有经验，也很难把工作做好。',answerPy:'Bùguǎn nénglì duō gāo, rúguǒ méiyǒu jīngyàn, yě hěn nán bǎ gōngzuò zuòhǎo.',
-      note:'不管……如果……也很难…… kết hợp nhiều cấu trúc.'},
-   ]},
-
-  {n:18,zh:'一切',py:'yíqiè',pos:'Đại từ',vn:'tất cả', hv: 'nhất thiết',em:'🌐',lesson:3,
-   explain:['Đại từ chỉ toàn bộ sự vật/sự việc, không sót cái nào.'],
-   usage:'Đại từ, làm chủ ngữ/định ngữ: 一切都会好的, 一切安排好了.',
-   collo:['一切都会好的','一切顺利','一切安排好了'],
-   ex_zh:'我相信经过我们大家的努力，公司的生意会越做越大，一切都会好的。',ex_py:'Wǒ xiāngxìn jīngguò wǒmen dàjiā de nǔlì, gōngsī de shēngyi huì yuè zuò yuè dà, yíqiè dōu huì hǎo de.',ex_vn:'Tôi tin rằng nhờ nỗ lực của tất cả chúng ta, việc kinh doanh của công ty sẽ ngày càng lớn mạnh, mọi thứ sẽ ổn thôi.',
-   exList:[
-     {zh:'我相信经过我们大家的努力，公司的生意会越做越大，一切都会好的。',py:'Wǒ xiāngxìn jīngguò wǒmen dàjiā de nǔlì, gōngsī de shēngyi huì yuè zuò yuè dà, yíqiè dōu huì hǎo de.',vn:'Tôi tin rằng nhờ nỗ lực của tất cả chúng ta, việc kinh doanh của công ty sẽ ngày càng lớn mạnh, mọi thứ sẽ ổn thôi.'},
-     {zh:'我非常满意，一切都安排得很好。',py:'Wǒ fēicháng mǎnyì, yíqiè dōu ānpái de hěn hǎo.',vn:'Tôi rất hài lòng, mọi thứ đều được sắp xếp rất tốt.'},
-     {zh:'希望一切顺利。',py:'Xīwàng yíqiè shùnlì.',vn:'Hy vọng mọi thứ suôn sẻ.'},
-   ],
-   hanzi:[
-     {c:'切',p:'qiè',type:'左右结构 · Trái-phải',st:4,ord:'七 trái → 刀 (đao) phải',rad:'刀 (đao – dao)',mean:'cắt, toàn bộ',
-      tip:'Bộ dao 刀 (cắt) + 七(biểu âm) → CẮT ra từng phần, kết hợp 一(một, toàn bộ) thành 一切 = TẤT CẢ (mọi phần).',
-      cf:'切 khi đọc "qiē" nghĩa là hành động cắt (切菜)',w:'一切 / 亲切 / 迫切'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh làm việc chăm chỉ như vậy, tôi tin mọi thứ sẽ ngày càng tốt hơn.',answer:'你工作那么努力，我相信一切都会越来越好的。',answerPy:'Nǐ gōngzuò nàme nǔlì, wǒ xiāngxìn yíqiè dōu huì yuè lái yuè hǎo de.',
-      note:'一切都会……的 — mọi thứ sẽ ….'},
-     {promptLang:'vi',prompt:'Cảm ơn mọi người, mọi việc đều đã hoàn thành thuận lợi.',answer:'谢谢大家，一切事情都顺利完成了。',answerPy:'Xièxie dàjiā, yíqiè shìqing dōu shùnlì wánchéng le.',
-      note:'一切 + danh từ + 都 — mọi … đều.'},
-   ]},
-
-  {n:19,zh:'按照',py:'ànzhào',pos:'Giới từ',vn:'theo, dựa vào', hv: 'án chiếu',em:'📐',lesson:4,
-   explain:['Dựa theo, căn cứ vào một tiêu chuẩn/quy định/kế hoạch nào đó.'],
-   usage:'Giới từ, đứng trước danh từ: 按照计划, 按照要求.',
-   collo:['按照计划','按照要求','按照经验'],
-   ex_zh:'我们今年的工作都已经按照计划完成了。',ex_py:'Wǒmen jīnnián de gōngzuò dōu yǐjīng ànzhào jìhuà wánchéng le.',ex_vn:'Công việc năm nay của chúng tôi đều đã hoàn thành theo kế hoạch.',
-   exList:[
-     {zh:'我们今年的工作都已经按照计划完成了。',py:'Wǒmen jīnnián de gōngzuò dōu yǐjīng ànzhào jìhuà wánchéng le.',vn:'Công việc năm nay của chúng tôi đều đã hoàn thành theo kế hoạch.'},
-     {zh:'这回材料都按照银行的要求准备好了吧？',py:'Zhè huí cáiliào dōu ànzhào yínháng de yāoqiú zhǔnbèi hǎole ba?',vn:'Lần này tài liệu đều đã chuẩn bị theo yêu cầu của ngân hàng rồi chứ?'},
-     {zh:'按照经验，这个问题应该可以很快解决，请大家放心。',py:'Ànzhào jīngyàn, zhège wèntí yīnggāi kěyǐ hěn kuài jiějué, qǐng dàjiā fàngxīn.',vn:'Theo kinh nghiệm, vấn đề này chắc có thể giải quyết nhanh, mọi người cứ yên tâm.'},
-   ],
-   hanzi:[
-     {c:'照',p:'zhào',type:'上下结构 · Trên-dưới',st:13,ord:'昭 trên → 灬 (hỏa) dưới',rad:'灬 (hỏa – lửa)',mean:'chiếu rọi, theo',
-      tip:'Bộ lửa 灬 (ánh sáng chiếu rọi) + 昭(sáng tỏ) → CHIẾU RỌI cho rõ, mở rộng thành ĐỐI CHIẾU/DỰA THEO, kết hợp 按(dựa vào) thành 按照 = THEO, DỰA VÀO.',
-      cf:'照 dễ nhầm với 熙 (xī – ít dùng)',w:'按照 / 照顾 / 照片'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cứ theo cách này mà làm, đừng viết sai nữa.',answer:'按照这个办法做，别再写错了。',answerPy:'Ànzhào zhège bànfǎ zuò, bié zài xiě cuò le.',
-      note:'按照 + danh từ + động từ — theo … mà làm.'},
-     {promptLang:'vi',prompt:'Nếu không theo kế hoạch mà làm, chúng ta có thể không hoàn thành công việc năm nay.',answer:'如果不按照计划做，我们可能完不成今年的工作了。',answerPy:'Rúguǒ bú ànzhào jìhuà zuò, wǒmen kěnéng wánbùchéng jīnnián de gōngzuò le.',
-      note:'如果不按照……可能…… — kết hợp cấu trúc giả thiết.'},
-   ]},
-
-  {n:20,zh:'成功',py:'chénggōng',pos:'Tính từ/Động từ',vn:'thành công', hv: 'thành công',em:'🏆',lesson:4,
-   explain:['Đạt được kết quả mong muốn, hoàn thành tốt đẹp việc gì đó.'],
-   usage:'Tính từ/động từ; thường đi với 成功地解决, 谈成功.',
-   collo:['成功地解决','谈成功','取得成功'],
-   ex_zh:'我们成功地解决了问题，顺利地完成了工作。',ex_py:'Wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò.',ex_vn:'Chúng tôi đã giải quyết vấn đề thành công, hoàn thành công việc thuận lợi.',
-   exList:[
-     {zh:'我们成功地解决了问题，顺利地完成了工作。',py:'Wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò.',vn:'Chúng tôi đã giải quyết vấn đề thành công, hoàn thành công việc thuận lợi.'},
-     {zh:'成功解决问题让大家都很高兴。',py:'Chénggōng jiějué wèntí ràng dàjiā dōu hěn gāoxìng.',vn:'Giải quyết vấn đề thành công khiến mọi người đều rất vui.'},
-     {zh:'这次合作终于成功了。',py:'Zhè cì hézuò zhōngyú chénggōng le.',vn:'Sự hợp tác lần này cuối cùng đã thành công.'},
-   ],
-   hanzi:[
-     {c:'功',p:'gōng',type:'左右结构 · Trái-phải',st:5,ord:'工 (công) trái → 力 (lực) phải',rad:'力 (lực – sức)',mean:'công lao, thành tựu',
-      tip:'Bộ 工 (công việc) + 力(sức lực) → dùng SỨC LỰC làm nên CÔNG LAO, kết hợp 成(nên) thành 成功 = THÀNH CÔNG.',
-      cf:'攻 (gōng – "tấn công", bộ 攵")',w:'成功 / 功课 / 用功'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nhờ nỗ lực của mọi người, chúng tôi cuối cùng đã giải quyết vấn đề thành công.',answer:'因为有大家的努力，我们终于成功地解决了问题。',answerPy:'Yīnwèi yǒu dàjiā de nǔlì, wǒmen zhōngyú chénggōng de jiějuéle wèntí.',
-      note:'成功地 + động từ — trạng ngữ chỉ cách thức.'},
-     {promptLang:'vi',prompt:'Muốn thành công, trước hết phải tích lũy kinh nghiệm, tiếp theo phải có trách nhiệm với công việc.',answer:'想要成功，首先要积累经验，其次要对工作有责任心。',answerPy:'Xiǎng yào chénggōng, shǒuxiān yào jīlěi jīngyàn, qícì yào duì gōngzuò yǒu zérènxīn.',
-      note:'首先……其次…… ôn lại điểm ngữ pháp Bài 3.'},
-   ]},
-
-  {n:21,zh:'顺利',py:'shùnlì',pos:'Tính từ',vn:'thuận lợi, suôn sẻ', hv: 'thuận lợi',em:'✅',lesson:4,
-   explain:['Diễn ra thuận lợi, không gặp trở ngại.'],
-   usage:'Tính từ; thường đi với 顺利地完成, 一切顺利.',
-   collo:['顺利地完成','一切顺利','很顺利'],
-   ex_zh:'顺利地完成了工作。',ex_py:'Shùnlì de wánchéngle gōngzuò.',ex_vn:'Hoàn thành công việc một cách thuận lợi.',
-   exList:[
-     {zh:'顺利地完成了工作。',py:'Shùnlì de wánchéngle gōngzuò.',vn:'Hoàn thành công việc một cách thuận lợi.'},
-     {zh:'我本来以为这件事会很顺利，没想到遇到这么多困难。',py:'Wǒ běnlái yǐwéi zhè jiàn shì huì hěn shùnlì, méi xiǎngdào yùdào zhème duō kùnnan.',vn:'Tôi vốn tưởng việc này sẽ rất thuận lợi, ai ngờ gặp phải nhiều khó khăn như vậy.'},
-     {zh:'希望一切顺利。',py:'Xīwàng yíqiè shùnlì.',vn:'Hy vọng mọi thứ suôn sẻ.'},
-   ],
-   hanzi:[
-     {c:'顺',p:'shùn',type:'左右结构 · Trái-phải (giản thể)',st:9,ord:'川 (xuyên) trái → 页 (hiệt) phải',rad:'页 (hiệt – đầu)',mean:'thuận theo, suôn sẻ',
-      tip:'Bộ 页(đầu, hướng) + 川(dòng sông chảy xuôi) → theo DÒNG CHẢY THUẬN, mở rộng thành THUẬN LỢI.',
-      cf:'须 (xū – "cần phải", cũng có 页")',w:'顺利 / 顺便 / 顺序'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cảm ơn nỗ lực làm việc chăm chỉ mấy tháng qua của mọi người, hy vọng năm sau có thành tích lớn hơn.',answer:'感谢大家这几个月的努力工作，希望明年能有更大的成绩！',answerPy:'Gǎnxiè dàjiā zhè jǐ ge yuè de nǔlì gōngzuò, xīwàng míngnián néng yǒu gèng dà de chéngjì!',
-      note:'感谢大家…… — cảm ơn mọi người….'},
-     {promptLang:'vi',prompt:'Nếu mọi việc đều thuận lợi, chúng ta có thể hoàn thành sớm hơn kế hoạch.',answer:'如果一切都很顺利，我们可以提前完成计划。',answerPy:'Rúguǒ yíqiè dōu hěn shùnlì, wǒmen kěyǐ tíqián wánchéng jìhuà.',
-      note:'如果一切都……我们可以…… kết hợp nhiều từ vựng của bài.'},
-   ]},
-
-  {n:22,zh:'感谢',py:'gǎnxiè',pos:'Động từ',vn:'cảm ơn', hv: 'cảm tạ',em:'🙏',lesson:4,
-   explain:['Bày tỏ lòng biết ơn với ai đó vì đã giúp đỡ.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 感谢大家, 非常感谢.',
-   collo:['非常感谢','感谢大家','感谢帮助'],
-   ex_zh:'非常感谢大家对我的帮助！',ex_py:'Fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!',ex_vn:'Vô cùng cảm ơn sự giúp đỡ của mọi người dành cho tôi!',
-   exList:[
-     {zh:'非常感谢大家对我的帮助！',py:'Fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!',vn:'Vô cùng cảm ơn sự giúp đỡ của mọi người dành cho tôi!'},
-     {zh:'感谢大家这三个多月的努力工作。',py:'Gǎnxiè dàjiā zhè sān ge duō yuè de nǔlì gōngzuò.',vn:'Cảm ơn sự nỗ lực làm việc hơn ba tháng qua của mọi người.'},
-     {zh:'我想感谢我的老师，是他教会了我很多知识。',py:'Wǒ xiǎng gǎnxiè wǒ de lǎoshī, shì tā jiāohuìle wǒ hěn duō zhīshi.',vn:'Tôi muốn cảm ơn thầy của tôi, chính thầy đã dạy tôi rất nhiều kiến thức.'},
-   ],
-   hanzi:[
-     {c:'谢',p:'xiè',type:'左右结构 · Trái-phải',st:12,ord:'讠 (ngôn) trái → 射 (xạ) phải',rad:'讠 (ngôn – lời nói)',mean:'cảm ơn',
-      tip:'Bộ lời nói 讠 + 射(bắn ra, biểu âm) → LỜI NÓI bày tỏ lòng biết ơn, kết hợp 感(cảm nhận) thành 感谢 = CẢM ƠN.',
-      cf:'榭 (xiè – "đình tạ", bộ 木")',w:'感谢 / 谢谢 / 道谢'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Cảm ơn sự giúp đỡ của mọi người, nếu không có mọi người tôi không thể hoàn thành công việc thuận lợi.',answer:'感谢大家的帮助，没有大家我不能顺利完成工作。',answerPy:'Gǎnxiè dàjiā de bāngzhù, méiyǒu dàjiā wǒ bù néng shùnlì wánchéng gōngzuò.',
-      note:'感谢……的帮助 — cảm ơn sự giúp đỡ của….'},
-     {promptLang:'vi',prompt:'Tôi muốn cảm ơn tất cả mọi người đã cùng tôi nỗ lực trong ba tháng qua.',answer:'我想感谢这三个月来和我一起努力的所有人。',answerPy:'Wǒ xiǎng gǎnxiè zhè sān ge yuè lái hé wǒ yìqǐ nǔlì de suǒyǒu rén.',
-      note:'感谢……的所有人 — cảm ơn tất cả những người….'},
-   ]},
-
-  {n:23,zh:'消息',py:'xiāoxi',pos:'Danh từ',vn:'tin tức', hv: 'tiêu tức',em:'📰',lesson:4,
-   explain:['Thông tin mới được truyền đạt về một sự việc nào đó.'],
-   usage:'Danh từ; thường đi với 好消息, 告诉……消息.',
-   collo:['好消息','告诉消息','听到消息'],
-   ex_zh:'马经理让我告诉大家一个好消息。',ex_py:'Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi.',ex_vn:'Giám đốc Mã bảo tôi báo cho mọi người một tin tốt.',
-   exList:[
-     {zh:'马经理让我告诉大家一个好消息。',py:'Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi.',vn:'Giám đốc Mã bảo tôi báo cho mọi người một tin tốt.'},
-     {zh:'因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。',py:'Yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.',vn:'Vì mọi người hoàn thành công việc đúng hạn, công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.'},
-     {zh:'听到这个消息，大家都非常高兴。',py:'Tīngdào zhège xiāoxi, dàjiā dōu fēicháng gāoxìng.',vn:'Nghe được tin này, mọi người đều rất vui.'},
-   ],
-   hanzi:[
-     {c:'息',p:'xī',type:'上下结构 · Trên-dưới',st:10,ord:'自 trên → 心 dưới',rad:'心 (tâm)',mean:'hơi thở, tin tức',
-      tip:'Bộ 自(mũi, hơi thở) trên 心(tâm) → HƠI THỞ từ trong lòng, mở rộng thành TIN TỨC (thông tin được truyền đi như hơi thở).',
-      cf:'息 dễ nhầm với 思 (sī – "suy nghĩ")',w:'消息 / 休息 / 信息'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Ngoài ra, giám đốc Mã còn bảo tôi báo cho mọi người một tin tốt nữa.',answer:'另外，马经理还让我告诉大家一个好消息。',answerPy:'Lìngwài, Mǎ jīnglǐ hái ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi.',
-      note:'另外 ôn lại điểm ngữ pháp Bài 3.'},
-     {promptLang:'vi',prompt:'Nghe được tin công ty phát tiền thưởng, mọi người đều vô cùng vui mừng.',answer:'听到公司发奖金的消息，大家都非常高兴。',answerPy:'Tīngdào gōngsī fā jiǎngjīn de xiāoxi, dàjiā dōu fēicháng gāoxìng.',
-      note:'听到……的消息 — nghe được tin….'},
-   ]},
-
-  {n:24,zh:'按时',py:'ànshí',pos:'Phó từ',vn:'đúng hạn', hv: 'án thời',em:'⏰',lesson:4,
-   explain:['Đúng theo thời gian đã quy định, không sớm không muộn.'],
-   usage:'Phó từ, đứng trước động từ: 按时完成, 按时到.',
-   collo:['按时完成','按时到','按时起飞'],
-   ex_zh:'因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。',ex_py:'Yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.',ex_vn:'Vì mọi người hoàn thành công việc đúng hạn, công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.',
-   exList:[
-     {zh:'因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。',py:'Yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.',vn:'Vì mọi người hoàn thành công việc đúng hạn, công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.'},
-     {zh:'飞机10点按时起飞，请大家不要着急。',py:'Fēijī shí diǎn ànshí qǐfēi, qǐng dàjiā búyào zháojí.',vn:'Máy bay 10 giờ cất cánh đúng giờ, mời mọi người đừng vội.'},
-     {zh:'我保证以后会按时到公司。',py:'Wǒ bǎozhèng yǐhòu huì ànshí dào gōngsī.',vn:'Tôi cam đoan sau này sẽ đến công ty đúng giờ.'},
-   ],
-   hanzi:[
-     {c:'按',p:'àn',type:'左右结构 · Trái-phải',st:9,ord:'扌 (thủ) trái → 安 (an) phải',rad:'扌 (thủ – tay)',mean:'theo, ấn',
-      tip:'Bộ tay 扌 + 安(yên ổn) → dùng TAY giữ cho YÊN, mở rộng thành TUÂN THEO, kết hợp 时(thời gian) thành 按时 = ĐÚNG GIỜ, ĐÚNG HẠN.',
-      cf:'安 (ān – "yên", không có bộ 扌")',w:'按时 / 按照 / 按不住'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ cần bạn hoàn thành đúng hạn, công ty sẽ phát tiền thưởng cho bạn.',answer:'只要你按时完成，公司就会给你发奖金。',answerPy:'Zhǐyào nǐ ànshí wánchéng, gōngsī jiù huì gěi nǐ fā jiǎngjīn.',
-      note:'只要……就…… kết hợp 按时/奖金.'},
-     {promptLang:'vi',prompt:'Máy bay 10 giờ cất cánh đúng giờ, mời mọi người đừng vội.',answer:'飞机10点按时起飞，请大家不要着急。',answerPy:'Fēijī shí diǎn ànshí qǐfēi, qǐng dàjiā búyào zháojí.',
-      note:'按时 + động từ — đúng giờ làm gì.'},
-   ]},
-
-  {n:25,zh:'奖金',py:'jiǎngjīn',pos:'Danh từ',vn:'tiền thưởng', hv: 'tưởng kim',em:'💰',lesson:4,
-   explain:['Số tiền công ty/tổ chức thưởng thêm cho nhân viên khi làm tốt.'],
-   usage:'Danh từ; thường đi với 发奖金, 多发奖金.',
-   collo:['发奖金','多发奖金','三千元奖金'],
-   ex_zh:'公司决定这个月给每人多发三千元奖金。',ex_py:'Gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.',ex_vn:'Công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.',
-   exList:[
-     {zh:'公司决定这个月给每人多发三千元奖金。',py:'Gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.',vn:'Công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.'},
-     {zh:'因为工作做得好，我们都拿到了奖金。',py:'Yīnwèi gōngzuò zuò de hǎo, wǒmen dōu nádàole jiǎngjīn.',vn:'Vì công việc làm tốt, chúng tôi đều nhận được tiền thưởng.'},
-     {zh:'谢谢你的提醒，我差点儿忘记了发奖金的事。',py:'Xièxie nǐ de tíxǐng, wǒ chàdiǎnr wàngjìle fā jiǎngjīn de shì.',vn:'Cảm ơn bạn nhắc nhở, tôi suýt quên chuyện phát tiền thưởng.'},
-   ],
-   hanzi:[
-     {c:'奖',p:'jiǎng',type:'上下结构 · Trên-dưới (giản thể)',st:9,ord:'将 trên → 大 dưới',rad:'大 (đại)',mean:'khen thưởng',
-      tip:'Chữ giản thể mang nghĩa KHEN THƯỞNG, kết hợp 金(tiền, vàng) thành 奖金 = TIỀN THƯỞNG.',
-      cf:'桨 (jiǎng – "mái chèo", bộ 木")',w:'奖金 / 奖励 / 得奖'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Vì mọi người hoàn thành đúng hạn, công ty quyết định phát thêm tiền thưởng cho mỗi người.',answer:'因为大家按时完成了，公司决定给每人多发奖金。',answerPy:'Yīnwèi dàjiā ànshí wánchéng le, gōngsī juédìng gěi měi rén duō fā jiǎngjīn.',
-      note:'按时 + 奖金 — kết hợp từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Cảm ơn công ty đã phát tiền thưởng, tôi cảm thấy nỗ lực của mình rất đáng giá.',answer:'感谢公司发奖金，我觉得自己的努力很值得。',answerPy:'Gǎnxiè gōngsī fā jiǎngjīn, wǒ juéde zìjǐ de nǔlì hěn zhíde.',
-      note:'感谢……发奖金 — kết hợp từ vựng của bài.'},
-   ]},
-
-  {n:26,zh:'工资',py:'gōngzī',pos:'Danh từ',vn:'tiền lương', hv: 'công tư',em:'💵',lesson:5,
-   explain:['Số tiền được trả định kỳ cho công việc đã làm.'],
-   usage:'Danh từ; thường đi với 工资和奖金, 工资比较低.',
-   collo:['工资和奖金','工资比较低','眼睛里只有工资'],
-   ex_zh:'不要眼睛里只有工资和奖金。',ex_py:'Búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.',ex_vn:'Đừng để trong mắt chỉ có tiền lương và tiền thưởng.',
-   exList:[
-     {zh:'不要眼睛里只有工资和奖金。',py:'Búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.',vn:'Đừng để trong mắt chỉ có tiền lương và tiền thưởng.'},
-     {zh:'如果工资比较低，你会换工作吗？',py:'Rúguǒ gōngzī bǐjiào dī, nǐ huì huàn gōngzuò ma?',vn:'Nếu lương khá thấp, bạn có đổi việc không?'},
-     {zh:'这份工作的工资虽然不高，但是我能学到很多东西。',py:'Zhè fèn gōngzuò de gōngzī suīrán bù gāo, dànshì wǒ néng xuédào hěn duō dōngxi.',vn:'Công việc này lương tuy không cao, nhưng tôi có thể học được rất nhiều thứ.'},
-   ],
-   hanzi:[
-     {c:'资',p:'zī',type:'上下结构 · Trên-dưới',st:10,ord:'次 trên → 贝 (bối) dưới',rad:'贝 (bối – tiền của)',mean:'tiền của, vốn liếng',
-      tip:'Bộ 贝(tiền của) + 次(thứ tự, biểu âm) → khoản TIỀN được cấp theo kỳ, kết hợp 工(công việc) thành 工资 = TIỀN LƯƠNG.',
-      cf:'姿 (zī – "dáng vẻ", bộ 女")',w:'工资 / 资料 / 投资'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Người trẻ khi mới đi làm, đừng để trong mắt chỉ có tiền lương và tiền thưởng.',answer:'年轻人刚开始工作的时候，不要眼睛里只有工资和奖金。',answerPy:'Niánqīng rén gāng kāishǐ gōngzuò de shíhou, búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.',
-      note:'眼睛里只有…… — trong mắt chỉ có….'},
-     {promptLang:'vi',prompt:'Cho dù lương không cao, tôi cũng không quá nôn nóng đổi việc.',answer:'尽管工资不高，我也不会太着急换工作。',answerPy:'Jǐnguǎn gōngzī bù gāo, wǒ yě bú huì tài zháojí huàn gōngzuò.',
-      note:'尽管……也不会…… ôn lại cấu trúc HSK4.'},
-   ]},
-
-  {n:27,zh:'方法',py:'fāngfǎ',pos:'Danh từ',vn:'phương pháp, cách thức', hv: 'phương pháp',em:'🧭',lesson:5,
-   explain:['Cách thức, biện pháp để làm việc gì đó.'],
-   usage:'Danh từ; thường đi với 交流的方法, 找方法.',
-   collo:['交流的方法','找方法','好方法'],
-   ex_zh:'学习与同事交流的方法。',ex_py:'Xuéxí yǔ tóngshì jiāoliú de fāngfǎ.',ex_vn:'Học cách trao đổi với đồng nghiệp.',
-   exList:[
-     {zh:'学习与同事交流的方法。',py:'Xuéxí yǔ tóngshì jiāoliú de fāngfǎ.',vn:'Học cách trao đổi với đồng nghiệp.'},
-     {zh:'要想完全解决这个难题，还需要找更好的办法。',py:'Yào xiǎng wánquán jiějué zhège nántí, hái xūyào zhǎo gèng hǎo de bànfǎ.',vn:'Muốn giải quyết hoàn toàn vấn đề khó này, còn cần tìm cách tốt hơn.'},
-     {zh:'在工作中，应该根据不同的人、不同的事选择不同的方法。',py:'Zài gōngzuò zhōng, yīnggāi gēnjù bùtóng de rén, bùtóng de shì xuǎnzé bùtóng de fāngfǎ.',vn:'Trong công việc, nên căn cứ vào từng người, từng việc khác nhau để chọn phương pháp khác nhau.'},
-   ],
-   hanzi:[
-     {c:'法',p:'fǎ',type:'左右结构 · Trái-phải',st:8,ord:'氵 (thủy) trái → 去 (khứ) phải',rad:'氵 (thủy – nước)',mean:'phép tắc, cách thức',
-      tip:'Bộ nước 氵 (công bằng như mặt nước) + 去(đi theo) → PHÉP TẮC công bằng để noi theo, kết hợp 方(phương hướng) thành 方法 = PHƯƠNG PHÁP.',
-      cf:'法 dễ nhầm với 去 (qù – "đi")',w:'方法 / 办法 / 法律'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nên căn cứ vào tính cách, năng lực của từng người để chọn phương pháp phù hợp giúp họ giải quyết vấn đề.',answer:'要了解每个人的性格、能力，这样才能选择合适的方法帮助他们解决问题。',answerPy:'Yào liǎojiě měi ge rén de xìnggé, nénglì, zhèyàng cái néng xuǎnzé héshì de fāngfǎ bāngzhù tāmen jiějué wèntí.',
-      note:'选择合适的方法 — chọn phương pháp phù hợp.'},
-     {promptLang:'vi',prompt:'Nếu bạn có vấn đề về luật pháp, tôi có thể giới thiệu cho bạn một luật sư.',answer:'如果你在法律上有什么问题，我可以给你介绍一位律师。',answerPy:'Rúguǒ nǐ zài fǎlǜ shang yǒu shénme wèntí, wǒ kěyǐ gěi nǐ jièshào yí wèi lǜshī.',
-      note:'法律 (cùng chữ 法 với 方法), ôn lại từ vựng Bài 3.'},
-   ]},
-
-  {n:28,zh:'知识',py:'zhīshi',pos:'Danh từ',vn:'kiến thức', hv: 'tri thức',em:'📚',lesson:5,
-   explain:['Những điều hiểu biết, học được qua học tập/trải nghiệm.'],
-   usage:'Danh từ; thường đi với 专业知识, 积累知识.',
-   collo:['专业知识','积累知识','学到知识'],
-   ex_zh:'积累专业知识，这些比收入重要多了。',ex_py:'Jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.',ex_vn:'Tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều.',
-   exList:[
-     {zh:'积累专业知识，这些比收入重要多了。',py:'Jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.',vn:'Tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều.'},
-     {zh:'这份工作能让我学到很多新知识。',py:'Zhè fèn gōngzuò néng ràng wǒ xuédào hěn duō xīn zhīshi.',vn:'Công việc này có thể giúp tôi học được nhiều kiến thức mới.'},
-     {zh:'我想用我的知识帮助别人。',py:'Wǒ xiǎng yòng wǒ de zhīshi bāngzhù biéren.',vn:'Tôi muốn dùng kiến thức của mình để giúp đỡ người khác.'},
-   ],
-   hanzi:[
-     {c:'识',p:'shí',type:'左右结构 · Trái-phải (giản thể)',st:7,ord:'讠 (ngôn) trái → 只 phải',rad:'讠 (ngôn – lời nói)',mean:'biết, nhận thức',
-      tip:'Bộ lời nói 讠 + 只(biểu âm) → dùng LỜI để truyền đạt hiểu biết, kết hợp 知(biết) thành 知识 = KIẾN THỨC.',
-      cf:'织 (zhī – "dệt", bộ 纟")',w:'知识 / 认识 / 常识'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trong mấy năm đầu đi làm, học phương pháp trao đổi với đồng nghiệp, tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều.',answer:'工作的前几年，学习与同事交流的方法，积累专业知识，这些比收入重要多了。',answerPy:'Gōngzuò de qián jǐ nián, xuéxí yǔ tóngshì jiāoliú de fāngfǎ, jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.',
-      note:'这些比……重要多了 — những điều này quan trọng hơn … nhiều.'},
-     {promptLang:'vi',prompt:'Cho dù kiến thức chuyên môn phong phú đến đâu, cũng cần có trách nhiệm với công việc.',answer:'不管专业知识多丰富，也需要对工作有责任心。',answerPy:'Bùguǎn zhuānyè zhīshi duō fēngfù, yě xūyào duì gōngzuò yǒu zérènxīn.',
-      note:'不管……也需要…… kết hợp nhiều từ vựng của bài.'},
-   ]},
-
-  {n:29,zh:'不得不',py:'bùdébù',pos:'Phó từ',vn:'phải, không thể không', hv: 'bất đắc bất',em:'😤',lesson:5,
-   explain:['Diễn tả việc bắt buộc phải làm điều gì đó dù không muốn, không còn lựa chọn khác.'],
-   usage:'Phó từ, đứng trước động từ: 不得不去做, 不得不换工作.',
-   collo:['不得不去做','不得不换','不得不接受'],
-   ex_zh:'我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。',ex_py:'Wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.',ex_vn:'Chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích.',
-   exList:[
-     {zh:'我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。',py:'Wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.',vn:'Chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích.'},
-     {zh:'没想到那天突然下起了大雨，所以他不得不又在这里住了一晚上。',py:'Méi xiǎngdào nà tiān tūrán xiàqǐle dàyǔ, suǒyǐ tā bù dé bù yòu zài zhèli zhùle yì wǎnshang.',vn:'Không ngờ hôm đó đột nhiên đổ mưa to, nên anh ấy đành phải ở lại đây thêm một đêm nữa.'},
-     {zh:'因为公司需要，我不得不换一个新的工作环境。',py:'Yīnwèi gōngsī xūyào, wǒ bùdébù huàn yí ge xīn de gōngzuò huánjìng.',vn:'Vì công ty cần, tôi phải đổi sang một môi trường làm việc mới.'},
-   ],
-   hanzi:[
-     {c:'得',p:'dé',type:'左右结构 · Trái-phải',st:11,ord:'彳 (xích) trái → 旦+寸 phải',rad:'彳 (xích – bước chân)',mean:'được, phải',
-      tip:'Cụm cố định 不得不 (không được không) = PHẢI, BẤT ĐẮC DĨ — hai lần phủ định tạo thành ý khẳng định mạnh về sự bắt buộc.',
-      cf:'待 (dài – "chờ đợi", cũng có bộ 彳")',w:'不得不 / 得到 / 舍不得'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Rất nhiều lúc, chúng ta phải làm những việc bản thân không muốn làm.',answer:'很多时候，我们不得不去做自己不愿意做的工作。',answerPy:'Hěn duō shíhou, wǒmen bùdébù qù zuò zìjǐ bú yuànyì zuò de gōngzuò.',
-      note:'不得不 + động từ — không thể không làm, bắt buộc phải làm.'},
-     {promptLang:'vi',prompt:'Cho dù không muốn, cô ấy cũng phải chấp nhận công việc mới này.',answer:'尽管不愿意，她也不得不接受这份新工作。',answerPy:'Jǐnguǎn bú yuànyì, tā yě bùdébù jiēshòu zhè fèn xīn gōngzuò.',
-      note:'尽管……也不得不…… ôn lại cấu trúc HSK4.'},
-   ]},
-
-  {n:30,zh:'甚至',py:'shènzhì',pos:'Liên từ',vn:'thậm chí', hv: 'thậm chí',em:'‼️',lesson:5,
-   explain:['Nhấn mạnh một trường hợp nổi bật, đặt trước ví dụ cuối cùng của danh từ/động từ/vế câu song song để làm nổi bật mục này.'],
-   usage:'甚至 + (是) + trường hợp nổi bật; có thể kết hợp 甚至连……都/也.',
-   collo:['甚至可以','甚至是','甚至会'],
-   ex_zh:'很多时候，我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。',ex_py:'Hěn duō shíhou, wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.',ex_vn:'Rất nhiều lúc, chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích.',
-   exList:[
-     {zh:'很多时候，我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。',py:'Hěn duō shíhou, wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.',vn:'Rất nhiều lúc, chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích.'},
-     {zh:'这个房子离您公司也不远，您可以坐公共汽车甚至可以骑自行车上班。',py:'Zhège fángzi lí nín gōngsī yě bù yuǎn, nín kěyǐ zuò gōnggòng qìchē shènzhì kěyǐ qí zìxíngchē shàngbān.',vn:'Ngôi nhà này cách công ty anh cũng không xa, anh có thể đi xe buýt thậm chí có thể đạp xe đạp đi làm.'},
-     {zh:'迟到会让别人觉得你没有责任心，使你错过重要的机会，甚至会让别人不再相信你。',py:'Chídào huì ràng biéren juéde nǐ méiyǒu zérènxīn, shǐ nǐ cuòguò zhòngyào de jīhuì, shènzhì huì ràng biéren bú zài xiāngxìn nǐ.',vn:'Đến muộn sẽ khiến người khác cảm thấy bạn không có trách nhiệm, khiến bạn bỏ lỡ cơ hội quan trọng, thậm chí sẽ khiến người khác không còn tin bạn nữa.'},
-   ],
-   hanzi:[
-     {c:'甚',p:'shèn',type:'上下结构 · Trên-dưới',st:9,ord:'甘 trên → 匹 (biến thể) dưới',rad:'甘 (cam – ngọt)',mean:'quá mức, rất',
-      tip:'Chữ mang nghĩa QUÁ MỨC, RẤT NHIỀU; kết hợp 至(đến mức) thành 甚至 = THẬM CHÍ (đến mức độ nổi bật nhất).',
-      cf:'甚 dễ nhầm với 其 (qí – "cái đó")',w:'甚至 / 甚至于 / 幸甚'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Họ giống nhau đến mức thậm chí người thân cũng không phân biệt được.',answer:'她们俩长得太像了，甚至连家人都认不出来。',answerPy:'Tāmen liǎ zhǎng de tài xiàng le, shènzhì lián jiārén dōu rènbuchūlái.',
-      note:'甚至连……都…… — thậm chí ngay cả … cũng….'},
-     {promptLang:'vi',prompt:'Bạn thân của tôi thậm chí không đến tham gia lễ cưới của tôi, điều đó khiến tôi rất buồn.',answer:'我的好朋友甚至没有来参加我的婚礼，这让我很难过。',answerPy:'Wǒ de hǎo péngyou shènzhì méiyǒu lái cānjiā wǒ de hūnlǐ, zhè ràng wǒ hěn nánguò.',
-      note:'甚至 nhấn mạnh trường hợp bất ngờ/nổi bật.'},
-   ]},
-
-  {n:31,zh:'责任',py:'zérèn',pos:'Danh từ',vn:'trách nhiệm', hv: 'trách nhiệm',em:'🎯',lesson:5,
-   explain:['Nghĩa vụ phải hoàn thành, phải chịu trách nhiệm về việc gì đó.'],
-   usage:'Danh từ; thường đi với 责任心, 有责任.',
-   collo:['责任心','有责任','没有责任心'],
-   ex_zh:'如果对工作没有责任心，也很难把工作做好。',ex_py:'Rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.',ex_vn:'Nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.',
-   exList:[
-     {zh:'如果对工作没有责任心，也很难把工作做好。',py:'Rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.',vn:'Nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.'},
-     {zh:'两个人在一起生活，都要对家有责任感。',py:'Liǎng ge rén zài yìqǐ shēnghuó, dōu yào duì jiā yǒu zérèngǎn.',vn:'Hai người sống cùng nhau, đều phải có trách nhiệm với gia đình.'},
-     {zh:'你觉得常常换工作的人没有责任心吗？',py:'Nǐ juéde chángcháng huàn gōngzuò de rén méiyǒu zérènxīn ma?',vn:'Bạn thấy người thường xuyên đổi việc là không có trách nhiệm à?'},
-   ],
-   hanzi:[
-     {c:'责',p:'zé',type:'上下结构 · Trên-dưới',st:8,ord:'龶 trên → 贝 (bối) dưới',rad:'贝 (bối – tiền, của cải)',mean:'trách nhiệm',
-      tip:'Bộ 贝 (nghĩa vụ liên quan của cải) → mở rộng thành TRÁCH NHIỆM, kết hợp 任(gánh vác) thành 责任 = TRÁCH NHIỆM.',
-      cf:'责 dễ nhầm với 素 (sù – "tố chất")',w:'责任 / 负责 / 责任心'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Một người dù năng lực cao đến đâu, nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.',answer:'一个人即使能力再高，如果对工作没有责任心，也很难把工作做好。',answerPy:'Yí ge rén jíshǐ nénglì zài gāo, rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.',
-      note:'即使……如果……也…… — kết hợp nhiều cấu trúc câu phức.'},
-     {promptLang:'vi',prompt:'Hai người sống chung, đều cần có trách nhiệm với gia đình.',answer:'两个人在一起生活，都要对家有责任感。',answerPy:'Liǎng ge rén zài yìqǐ shēnghuó, dōu yào duì jiā yǒu zérèngǎn.',
-      note:'对……有责任感 — có trách nhiệm với….'},
-   ]},
-
-  {n:32,zh:'王',py:'Wáng',pos:'Danh từ riêng',vn:'Vương (họ)', hv: 'Vương',em:'🧑‍💼',lesson:2,
-   explain:['Họ của nhân vật 王经理 trong hội thoại 2 và 3.'],
-   usage:'Danh từ riêng chỉ họ người, thường ghép với 经理 thành 王经理.',
-   collo:['王经理','王经理说'],
-   ex_zh:'王经理和小李在说工作。',ex_py:'Wáng jīnglǐ hé Xiǎo Lǐ zài shuō gōngzuò.',ex_vn:'Giám đốc Vương và Tiểu Lý đang nói chuyện công việc.',
-   exList:[
-     {zh:'王经理和小李在说工作。',py:'Wáng jīnglǐ hé Xiǎo Lǐ zài shuō gōngzuò.',vn:'Giám đốc Vương và Tiểu Lý đang nói chuyện công việc.'},
-   ]},
-
-  {n:33,zh:'马',py:'Mǎ',pos:'Danh từ riêng',vn:'Mã (họ)', hv: 'Mã',em:'🧑‍💻',lesson:3,
-   explain:['Họ của nhân vật 马经理 trong hội thoại 3 và bài khoá 4.'],
-   usage:'Danh từ riêng chỉ họ người, thường ghép với 经理 thành 马经理.',
-   collo:['马经理','马经理说'],
-   ex_zh:'王经理和马经理在说工作。',ex_py:'Wáng jīnglǐ hé Mǎ jīnglǐ zài shuō gōngzuò.',ex_vn:'Giám đốc Vương và giám đốc Mã đang nói chuyện công việc.',
-   exList:[
-     {zh:'王经理和马经理在说工作。',py:'Wáng jīnglǐ hé Mǎ jīnglǐ zài shuō gōngzuò.',vn:'Giám đốc Vương và giám đốc Mã đang nói chuyện công việc.'},
-   ]},
-
-  {n:34,zh:'王红',py:'Wáng Hóng',pos:'Danh từ riêng',vn:'Vương Hồng (tên người)', hv: 'Vương Hồng',em:'👩',lesson:2,
-   explain:['Tên riêng nhắc đến trong bài tập luyện 甚至/提醒 (bạn của người nói).'],
-   usage:'Danh từ riêng chỉ tên người.',
-   collo:['王红的生日'],
-   ex_zh:'今天是王红的生日，记得给她打个电话。',ex_py:'Jīntiān shì Wáng Hóng de shēngrì, jìde gěi tā dǎ ge diànhuà.',ex_vn:'Hôm nay là sinh nhật Vương Hồng, nhớ gọi điện cho cô ấy.',
-   exList:[
-     {zh:'今天是王红的生日，记得给她打个电话。',py:'Jīntiān shì Wáng Hóng de shēngrì, jìde gěi tā dǎ ge diànhuà.',vn:'Hôm nay là sinh nhật Vương Hồng, nhớ gọi điện cho cô ấy.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "提",
+    "py": "tí",
+    "pos": "Động từ",
+    "vn": "nhắc đến",
+    "hv": "đề",
+    "em": "🗣️",
+    "lesson": 1,
+    "explain": [
+      "Nhắc đến, đề cập đến một chuyện gì đó (thường trong lời nói)."
+    ],
+    "usage": "Động từ; thường đi với 别提了 (đừng nhắc đến nữa — thán từ tỏ ý chán nản).",
+    "collo": [
+      "别提了",
+      "提工作",
+      "提这件事"
+    ],
+    "ex_zh": "别提了！我以为新工作比以前的好，没想到还没有以前好呢。",
+    "ex_py": "Bié tí le! Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.",
+    "ex_vn": "Đừng nhắc đến nữa! Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.",
+    "exList": [
+      {
+        "zh": "别提了！我以为新工作比以前的好，没想到还没有以前好呢。",
+        "py": "Bié tí le! Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.",
+        "vn": "Đừng nhắc đến nữa! Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ."
+      },
+      {
+        "zh": "这件事你别提了，我心里正难受呢。",
+        "py": "Zhè jiàn shì nǐ bié tí le, wǒ xīnli zhèng nánshòu ne.",
+        "vn": "Chuyện này bạn đừng nhắc nữa, tôi đang buồn lắm."
+      },
+      {
+        "zh": "他从来没跟我提过这件事。",
+        "py": "Tā cónglái méi gēn wǒ tíguo zhè jiàn shì.",
+        "vn": "Anh ấy chưa từng nhắc với tôi về chuyện này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "提",
+        "p": "tí",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "扌 (thủ) trái → 是 phải",
+        "rad": "扌 (thủ – tay)",
+        "mean": "xách, nhắc đến",
+        "tip": "Bộ tay 扌 (hành động cầm/xách) + 是 (biểu âm) → dùng tay XÁCH lên, mở rộng thành NHẮC ĐẾN (đưa một chuyện ra).",
+        "cf": "题 (tí – \"đề bài\", có bộ 页\")",
+        "w": "提到 / 别提了 / 提问"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng nhắc đến chuyện đó nữa, tôi nghe xong lại thấy hồi hộp.",
+        "answer": "别提那件事了，我一听就觉得紧张。",
+        "answerPy": "Bié tí nà jiàn shì le, wǒ yì tīng jiù juéde jǐnzhāng.",
+        "note": "别提了 — thán từ tỏ ý chán nản/không muốn nhắc lại.",
+        "pair": "一……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mặc dù lương của anh ấy không thấp, nhưng anh ấy chưa bao giờ nhắc đến chuyện đó trước mặt đồng nghiệp.",
+        "answer": "尽管他的工资并不低，但他从来没在同事面前提过这件事。",
+        "answerPy": "Jǐnguǎn tā de gōngzī bìng bù dī, dàn tā cónglái méi zài tóngshì miànqián tíguo zhè jiàn shì.",
+        "note": "从来没 + V + 过 — chưa từng; 并不 phản bác điều người ta tưởng.",
+        "pair": "尽管……但……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "别提了",
+        "py": "bié tí le",
+        "vn": "thôi đừng nhắc nữa"
+      },
+      {
+        "zh": "提工作",
+        "py": "tí gōngzuò",
+        "vn": "nhắc đến công việc"
+      },
+      {
+        "zh": "提这件事",
+        "py": "tí zhè jiàn shì",
+        "vn": "nhắc chuyện này"
+      },
+      {
+        "zh": "提意见",
+        "py": "tí yìjiàn",
+        "vn": "góp ý"
+      },
+      {
+        "zh": "提起",
+        "py": "tí qǐ",
+        "vn": "nhắc đến"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 提 + N",
+        "m": "Ai đó nhắc đến chuyện gì"
+      },
+      {
+        "s": "别提了",
+        "m": "Thôi đừng nhắc nữa (khẩu ngữ, ý ngán ngẩm)"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "以为",
+    "py": "yǐwéi",
+    "pos": "Động từ",
+    "vn": "cho rằng, tưởng là",
+    "hv": "dĩ vi",
+    "em": "🤔",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả điều người nói cho là đúng nhưng thực tế không phải như vậy (khác với thực tế)."
+    ],
+    "usage": "Động từ, mang mệnh đề làm tân ngữ: 以为 + mệnh đề, thường đi cùng 没想到/其实/原来 ở vế sau để chỉ ra sự thật khác với suy nghĩ ban đầu.",
+    "collo": [
+      "我以为",
+      "以为……没想到……",
+      "还以为"
+    ],
+    "ex_zh": "我以为新工作比以前的好，没想到还没有以前好呢。",
+    "ex_py": "Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.",
+    "ex_vn": "Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.",
+    "exList": [
+      {
+        "zh": "我以为新工作比以前的好，没想到还没有以前好呢。",
+        "py": "Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.",
+        "vn": "Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ."
+      },
+      {
+        "zh": "她汉语说得那么好，我还以为她是中国人。",
+        "py": "Tā Hànyǔ shuō de nàme hǎo, wǒ hái yǐwéi tā shì Zhōngguórén.",
+        "vn": "Cô ấy nói tiếng Trung giỏi như vậy, tôi còn tưởng cô ấy là người Trung Quốc."
+      },
+      {
+        "zh": "马克以为今天是星期一，到了学校一看，没人来上课，才发现今天是星期天。",
+        "py": "Mǎkè yǐwéi jīntiān shì xīngqīyī, dàole xuéxiào yí kàn, méi rén lái shàngkè, cái fāxiàn jīntiān shì xīngqītiān.",
+        "vn": "Mark cứ tưởng hôm nay là thứ Hai, đến trường nhìn thì không có ai đi học, mới phát hiện ra hôm nay là chủ nhật."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "以",
+        "p": "yǐ",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "nét liền",
+        "rad": "人 (biến thể)",
+        "mean": "lấy, dùng",
+        "tip": "以 (lấy, dùng) + 为 (cho là) → LẤY LÀM, CHO LÀ, mở rộng thành CHO RẰNG (nhưng sai với thực tế).",
+        "cf": "已 (yǐ – \"đã\", gần giống hình chữ 以 nhưng không hở đầu)",
+        "w": "以为 / 可以 / 以后"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cứ tưởng còn nửa tiếng nữa mới đến, ai ngờ xe đến sớm hơn.",
+        "answer": "我以为还有半小时就到了，没想到车提前到了。",
+        "answerPy": "Wǒ yǐwéi hái yǒu bàn xiǎoshí jiù dào le, méi xiǎngdào chē tíqián dào le.",
+        "note": "以为……没想到…… — nghĩ là … nhưng không ngờ ….",
+        "pair": "以为……没想到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cứ tưởng làm sếp rất đơn giản, thực ra lại không dễ chút nào.",
+        "answer": "我以为当经理很简单，其实并不容易。",
+        "answerPy": "Wǒ yǐwéi dāng jīnglǐ hěn jiǎndān, qíshí bìng bù róngyì.",
+        "note": "以为……其实……并不…… kết hợp 并, ôn lại điểm ngữ pháp của bài.",
+        "pair": "以为……其实……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我以为",
+        "py": "wǒ yǐwéi",
+        "vn": "tôi cứ tưởng"
+      },
+      {
+        "zh": "还以为",
+        "py": "hái yǐwéi",
+        "vn": "còn tưởng là"
+      },
+      {
+        "zh": "以为……没想到……",
+        "py": "yǐwéi méi xiǎng dào",
+        "vn": "cứ tưởng… ai ngờ…"
+      },
+      {
+        "zh": "本来以为",
+        "py": "běnlái yǐwéi",
+        "vn": "vốn cho rằng"
+      },
+      {
+        "zh": "以为是",
+        "py": "yǐwéi shì",
+        "vn": "tưởng là"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 以为 + mệnh đề，其实/没想到 + mệnh đề",
+        "m": "Cứ tưởng … thực ra / ai ngờ …"
+      },
+      {
+        "s": "以为 ≠ 认为",
+        "m": "以为 là nghĩ SAI; 认为 là quan điểm, không nhất thiết sai"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "份",
+    "py": "fèn",
+    "pos": "Lượng từ",
+    "vn": "tờ, bản, phần (việc)",
+    "hv": "phần",
+    "em": "📋",
+    "lesson": 1,
+    "explain": [
+      "Lượng từ dùng cho công việc, báo chí, tài liệu, quà tặng..."
+    ],
+    "usage": "Lượng từ; đi với 工作/报纸/礼物: 一份工作, 那份材料.",
+    "collo": [
+      "一份工作",
+      "那份材料",
+      "这份调查"
+    ],
+    "ex_zh": "上次那份工作你只做了两个月就离开了。",
+    "ex_py": "Shàng cì nà fèn gōngzuò nǐ zhǐ zuòle liǎng ge yuè jiù líkāi le.",
+    "ex_vn": "Công việc lần trước bạn chỉ làm được hai tháng đã nghỉ rồi.",
+    "exList": [
+      {
+        "zh": "上次那份工作你只做了两个月就离开了。",
+        "py": "Shàng cì nà fèn gōngzuò nǐ zhǐ zuòle liǎng ge yuè jiù líkāi le.",
+        "vn": "Công việc lần trước bạn chỉ làm được hai tháng đã nghỉ rồi."
+      },
+      {
+        "zh": "那份调查还要多长时间才能做完？",
+        "py": "Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?",
+        "vn": "Bản điều tra đó còn cần bao lâu nữa mới làm xong?"
+      },
+      {
+        "zh": "这份材料我已经按照您的要求改好了。",
+        "py": "Zhè fèn cáiliào wǒ yǐjīng ànzhào nín de yāoqiú gǎihǎo le.",
+        "vn": "Tài liệu này tôi đã sửa xong theo yêu cầu của anh rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "份",
+        "p": "fèn",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "亻 (nhân) trái → 分 (phân) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "phần, suất",
+        "tip": "Bộ người 亻 + 分 (chia phần) → PHẦN được chia cho một người, mở rộng thành lượng từ đếm công việc/tài liệu/quà tặng.",
+        "cf": "纷 (fēn – \"rối ren\", bộ 纟\")",
+        "w": "一份工作 / 一份礼物 / 部份"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Công việc này thu nhập tuy không cao, nhưng tôi rất thích.",
+        "answer": "这份工作收入虽然不高，但我很喜欢。",
+        "answerPy": "Zhè fèn gōngzuò shōurù suīrán bù gāo, dàn wǒ hěn xǐhuan.",
+        "note": "一份/这份 + danh từ — lượng từ đếm công việc.",
+        "pair": "虽然……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bản khảo sát này theo kế hoạch ban đầu phải làm hai tuần, nhưng chúng tôi đã hoàn thành sớm.",
+        "answer": "这份调查按照原来的计划要用两周时间，可是我们提前完成了。",
+        "answerPy": "Zhè fèn diàochá ànzhào yuánlái de jìhuà yào yòng liǎng zhōu shíjiān, kěshì wǒmen tíqián wánchéng le.",
+        "note": "按照 + 计划 — làm theo kế hoạch; 提前完成 là kết hợp cố định.",
+        "pair": "虽然……可是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一份工作",
+        "py": "yí fèn gōngzuò",
+        "vn": "một công việc"
+      },
+      {
+        "zh": "那份材料",
+        "py": "nà fèn cáiliào",
+        "vn": "bản tài liệu đó"
+      },
+      {
+        "zh": "这份调查",
+        "py": "zhè fèn diàochá",
+        "vn": "bản khảo sát này"
+      },
+      {
+        "zh": "一份报纸",
+        "py": "yí fèn bàozhǐ",
+        "vn": "một tờ báo"
+      },
+      {
+        "zh": "两份礼物",
+        "py": "liǎng fèn lǐwù",
+        "vn": "hai phần quà"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一 + 份 + 工作 / 材料 / 报纸",
+        "m": "Lượng từ cho việc làm, tài liệu, báo"
+      },
+      {
+        "s": "✗ 一个工作 → ✓ 一份工作",
+        "m": "Nói về việc làm thì dùng 份"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "完全",
+    "py": "wánquán",
+    "pos": "Phó từ",
+    "vn": "hoàn toàn",
+    "hv": "hoàn toàn",
+    "em": "💯",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả mức độ trọn vẹn, đầy đủ, không thiếu sót."
+    ],
+    "usage": "Phó từ, đứng trước động từ/tính từ: 完全适应, 完全不一样.",
+    "collo": [
+      "完全适应",
+      "完全不一样",
+      "完全明白"
+    ],
+    "ex_zh": "完全适应一个新的工作需要一年时间。",
+    "ex_py": "Wánquán shìyìng yí ge xīn de gōngzuò xūyào yì nián shíjiān.",
+    "ex_vn": "Hoàn toàn thích nghi với một công việc mới cần một năm thời gian.",
+    "exList": [
+      {
+        "zh": "完全适应一个新的工作需要一年时间。",
+        "py": "Wánquán shìyìng yí ge xīn de gōngzuò xūyào yì nián shíjiān.",
+        "vn": "Hoàn toàn thích nghi với một công việc mới cần một năm thời gian."
+      },
+      {
+        "zh": "她们虽然是姐妹，但是性格完全不一样。",
+        "py": "Tāmen suīrán shì jiěmèi, dànshì xìnggé wánquán bù yíyàng.",
+        "vn": "Họ tuy là chị em, nhưng tính cách hoàn toàn không giống nhau."
+      },
+      {
+        "zh": "我完全明白你的意思了。",
+        "py": "Wǒ wánquán míngbai nǐ de yìsi le.",
+        "vn": "Tôi hoàn toàn hiểu ý của bạn rồi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "完",
+        "p": "wán",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "宀 (miên) trên → 元 (nguyên) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "xong, đầy đủ",
+        "tip": "Bộ mái nhà 宀 + 元 (đầu, gốc) → một ngôi nhà XÂY XONG TRỌN VẸN, mở rộng thành HOÀN TOÀN, XONG.",
+        "cf": "莞 (wǎn – địa danh, có bộ 艹\")",
+        "w": "完全 / 完成 / 完了"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Sự việc luôn thay đổi, chúng ta cần kịp thời thay đổi hoàn toàn kế hoạch.",
+        "answer": "事情总是变化着的，我们需要及时对计划做出完全的改变。",
+        "answerPy": "Shìqing zǒngshì biànhuà zhe de, wǒmen xūyào jíshí duì jìhuà zuòchū wánquán de gǎibiàn.",
+        "note": "完全 + danh từ/động từ — hoàn toàn.",
+        "pair": "总是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cứ tưởng làm quen với công việc mới rất nhanh, ai ngờ hoàn toàn không đơn giản.",
+        "answer": "我以为适应新工作很快，没想到完全不简单。",
+        "answerPy": "Wǒ yǐwéi shìyìng xīn gōngzuò hěn kuài, méi xiǎngdào wánquán bù jiǎndān.",
+        "note": "以为……没想到……完全…… — kết hợp nhiều từ vựng của bài.",
+        "pair": "以为……没想到……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "完全不一样",
+        "py": "wánquán bù yíyàng",
+        "vn": "hoàn toàn khác nhau"
+      },
+      {
+        "zh": "完全明白",
+        "py": "wánquán míngbai",
+        "vn": "hiểu hoàn toàn"
+      },
+      {
+        "zh": "完全适应",
+        "py": "wánquán shìyìng",
+        "vn": "thích nghi hoàn toàn"
+      },
+      {
+        "zh": "完全不是这样",
+        "py": "wánquán bú shì zhèyàng",
+        "vn": "hoàn toàn không phải vậy"
+      },
+      {
+        "zh": "完全同意",
+        "py": "wánquán tóngyì",
+        "vn": "hoàn toàn đồng ý"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "完全 + V / Adj",
+        "m": "Hoàn toàn …"
+      },
+      {
+        "s": "完全 + 不 + V / Adj",
+        "m": "Hoàn toàn không …"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "赚",
+    "py": "zhuàn",
+    "pos": "Động từ",
+    "vn": "kiếm (tiền)",
+    "hv": "trám",
+    "em": "💵",
+    "lesson": 1,
+    "explain": [
+      "Thu được lợi nhuận, kiếm được tiền từ công việc/kinh doanh."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 赚钱, 太着急赚钱.",
+    "collo": [
+      "赚钱",
+      "太着急赚钱",
+      "赚钱越来越难"
+    ],
+    "ex_zh": "你才到新公司，不要太急着赚钱，多学习才是最重要的。",
+    "ex_py": "Nǐ cái dào xīn gōngsī, búyào tài jízhe zhuàn qián, duō xuéxí cái shì zuì zhòngyào de.",
+    "ex_vn": "Bạn mới đến công ty mới, đừng quá nôn nóng kiếm tiền, học hỏi nhiều mới là điều quan trọng nhất.",
+    "exList": [
+      {
+        "zh": "你才到新公司，不要太急着赚钱，多学习才是最重要的。",
+        "py": "Nǐ cái dào xīn gōngsī, búyào tài jízhe zhuàn qián, duō xuéxí cái shì zuì zhòngyào de.",
+        "vn": "Bạn mới đến công ty mới, đừng quá nôn nóng kiếm tiền, học hỏi nhiều mới là điều quan trọng nhất."
+      },
+      {
+        "zh": "现在赚钱越来越难了。",
+        "py": "Xiànzài zhuàn qián yuè lái yuè nán le.",
+        "vn": "Bây giờ kiếm tiền ngày càng khó."
+      },
+      {
+        "zh": "年轻人刚开始工作的时候，不要太急着赚钱。",
+        "py": "Niánqīng rén gāng kāishǐ gōngzuò de shíhou, búyào tài jízhe zhuàn qián.",
+        "vn": "Người trẻ khi mới bắt đầu đi làm, đừng quá nôn nóng kiếm tiền."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "赚",
+        "p": "zhuàn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 12,
+        "ord": "贝 (bối) trái → 兼 (kiêm) phải",
+        "rad": "贝 (bối – tiền, của cải)",
+        "mean": "kiếm lời",
+        "tip": "Bộ 贝 (tiền của) + 兼 (gồm thêm) → có THÊM tiền của, mở rộng thành KIẾM (lời/tiền).",
+        "cf": "谦 (qiān – \"khiêm tốn\", bộ 讠\")",
+        "w": "赚钱 / 赚了 / 净赚"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể công việc gì, đừng quá nôn nóng kiếm tiền, tích lũy kinh nghiệm mới quan trọng hơn.",
+        "answer": "不管是什么工作，都不要太着急赚钱，积累经验才更重要。",
+        "answerPy": "Bùguǎn shì shénme gōngzuò, dōu búyào tài zháojí zhuàn qián, jīlěi jīngyàn cái gèng zhòngyào.",
+        "note": "不管……都不要……才…… kết hợp từ vựng của bài.",
+        "pair": "不管……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy vốn cho rằng kinh doanh rất dễ kiếm tiền, ai ngờ hoàn toàn không phải vậy.",
+        "answer": "他本来以为做生意很容易赚钱，没想到完全不是这样。",
+        "answerPy": "Tā běnlái yǐwéi zuò shēngyi hěn róngyì zhuàn qián, méi xiǎngdào wánquán bú shì zhèyàng.",
+        "note": "本来以为……没想到……完全…… kết hợp nhiều từ vựng.",
+        "pair": "以为……没想到……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "赚钱",
+        "py": "zhuàn qián",
+        "vn": "kiếm tiền"
+      },
+      {
+        "zh": "赚得多",
+        "py": "zhuàn de duō",
+        "vn": "kiếm được nhiều"
+      },
+      {
+        "zh": "太着急赚钱",
+        "py": "tài zháojí zhuàn qián",
+        "vn": "quá vội kiếm tiền"
+      },
+      {
+        "zh": "赚钱越来越难",
+        "py": "zhuàn qián yuè lái yuè nán",
+        "vn": "kiếm tiền ngày càng khó"
+      },
+      {
+        "zh": "赚了不少",
+        "py": "zhuàn le bù shǎo",
+        "vn": "kiếm được không ít"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 赚 + 钱",
+        "m": "Ai đó kiếm tiền"
+      },
+      {
+        "s": "赚 + 得 + Adj",
+        "m": "Kiếm được nhiều / ít thế nào"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "调查",
+    "py": "diàochá",
+    "pos": "Động từ",
+    "vn": "điều tra, khảo sát",
+    "hv": "điều tra",
+    "em": "🔍",
+    "lesson": 2,
+    "explain": [
+      "Thu thập thông tin, tìm hiểu kỹ về một vấn đề/sự việc."
+    ],
+    "usage": "Động từ/danh từ; thường đi với 那份调查, 做调查.",
+    "collo": [
+      "那份调查",
+      "做调查",
+      "调查完成"
+    ],
+    "ex_zh": "那份调查还要多长时间才能做完？",
+    "ex_py": "Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?",
+    "ex_vn": "Bản điều tra đó còn cần bao lâu nữa mới làm xong?",
+    "exList": [
+      {
+        "zh": "那份调查还要多长时间才能做完？",
+        "py": "Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?",
+        "vn": "Bản điều tra đó còn cần bao lâu nữa mới làm xong?"
+      },
+      {
+        "zh": "用一个星期的时间调查1000个人换工作的原因。",
+        "py": "Yòng yí ge xīngqī de shíjiān diàochá yìqiān ge rén huàn gōngzuò de yuányīn.",
+        "vn": "Dùng một tuần thời gian điều tra nguyên nhân 1000 người đổi việc."
+      },
+      {
+        "zh": "这份调查明天上午交，你写好了吗？",
+        "py": "Zhè fèn diàochá míngtiān shàngwǔ jiāo, nǐ xiěhǎole ma?",
+        "vn": "Bản điều tra này nộp sáng mai, bạn viết xong chưa?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "调",
+        "p": "diào",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "讠 (ngôn) trái → 周 (chu) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "điều tra, phối hợp",
+        "tip": "Bộ lời nói 讠 + 周 (khắp, đầy đủ) → HỎI KHẮP để tìm hiểu, kết hợp 查 (tra xét) thành 调查 = ĐIỀU TRA.",
+        "cf": "调 khi đọc \"tiáo\" nghĩa là \"điều chỉnh\" (调整)",
+        "w": "调查 / 空调 / 调整"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Theo kế hoạch ban đầu, bản điều tra này nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn.",
+        "answer": "按原来的计划，这份调查应该是两周，但是我们可以提前完成。",
+        "answerPy": "Àn yuánlái de jìhuà, zhè fèn diàochá yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.",
+        "note": "按原来的计划……但是…… kết hợp 提前, ôn lại từ vựng của bài.",
+        "pair": "……，但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Theo bản điều tra, mỗi người mỗi ngày nên ngủ ít nhất 7 tiếng.",
+        "answer": "根据调查，人每天晚上最少应该睡7个小时。",
+        "answerPy": "Gēnjù diàochá, rén měitiān wǎnshang zuìshǎo yīnggāi shuì qī ge xiǎoshí.",
+        "note": "根据调查 — theo điều tra.",
+        "pair": "根据……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "做调查",
+        "py": "zuò diàochá",
+        "vn": "làm khảo sát"
+      },
+      {
+        "zh": "那份调查",
+        "py": "nà fèn diàochá",
+        "vn": "bản khảo sát đó"
+      },
+      {
+        "zh": "调查结果",
+        "py": "diàochá jiéguǒ",
+        "vn": "kết quả khảo sát"
+      },
+      {
+        "zh": "根据调查",
+        "py": "gēnjù diàochá",
+        "vn": "theo khảo sát"
+      },
+      {
+        "zh": "调查完成",
+        "py": "diàochá wán chéng",
+        "vn": "khảo sát hoàn thành"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "做 / 完成 + 调查",
+        "m": "Làm / hoàn thành cuộc khảo sát"
+      },
+      {
+        "s": "根据 + 调查，……",
+        "m": "Theo khảo sát thì …"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "原来",
+    "py": "yuánlái",
+    "pos": "Danh từ/Tính từ/Phó từ",
+    "vn": "ban đầu, trước đây; nguyên bản; hóa ra là",
+    "hv": "nguyên lai",
+    "em": "⏮️",
+    "lesson": 2,
+    "explain": [
+      "1. (Danh từ) Ban đầu, trước đây — nêu tình huống khác với hiện tại.",
+      "2. (Tính từ) Nguyên bản, không thay đổi — không đứng một mình làm vị ngữ, bổ nghĩa danh từ phải có 的.",
+      "3. (Phó từ) Chỉ khoảng thời gian trước đây (khác hiện tại), hoặc diễn tả phát hiện ra điều trước đây không biết — đứng trước/sau chủ ngữ đều được."
+    ],
+    "usage": "按原来的计划 (tính từ + 的); 原来是……(phó từ, phát hiện sự thật); 原来 + mệnh đề (danh từ, thời điểm ban đầu).",
+    "collo": [
+      "原来的计划",
+      "原来是你啊",
+      "原来最快"
+    ],
+    "ex_zh": "按原来的计划应该是两周，但是我们可以提前完成。",
+    "ex_py": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.",
+    "ex_vn": "Theo kế hoạch ban đầu nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn.",
+    "exList": [
+      {
+        "zh": "按原来的计划应该是两周，但是我们可以提前完成。",
+        "py": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.",
+        "vn": "Theo kế hoạch ban đầu nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn."
+      },
+      {
+        "zh": "坐火车从北京到上海，原来最快差不多需要12个小时，现在有了高铁，5个小时就能到。",
+        "py": "Zuò huǒchē cóng Běijīng dào Shànghǎi, yuánlái zuì kuài chàbuduō xūyào shí'èr ge xiǎoshí, xiànzài yǒule gāotiě, wǔ ge xiǎoshí jiù néng dào.",
+        "vn": "Đi tàu từ Bắc Kinh đến Thượng Hải, trước đây nhanh nhất cần khoảng 12 tiếng, bây giờ có tàu cao tốc, 5 tiếng là đến."
+      },
+      {
+        "zh": "我还以为是谁帮我打扫房间呢，原来是你啊！",
+        "py": "Wǒ hái yǐwéi shì shéi bāng wǒ dǎsǎo fángjiān ne, yuánlái shì nǐ a!",
+        "vn": "Tôi còn tưởng là ai giúp tôi dọn phòng, hóa ra là bạn à!"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "原",
+        "p": "yuán",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "厂 bao ngoài → 泉 trong",
+        "rad": "厂 (xưởng, vách núi)",
+        "mean": "nguồn gốc, ban đầu",
+        "tip": "Chữ mô phỏng NGUỒN NƯỚC chảy ra từ vách núi 厂 → NGUỒN GỐC, BAN ĐẦU; kết hợp 来(đến) thành 原来 = BAN ĐẦU/HÓA RA.",
+        "cf": "愿 (yuàn – \"nguyện vọng\", có 心 dưới)",
+        "w": "原来 / 原因 / 原谅"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhà tôi trước đây ở gần đây, chỉ là trước kia không có nhiều tòa nhà như bây giờ.",
+        "answer": "我家原来住这儿附近，不过这里以前不像现在有这么多楼房。",
+        "answerPy": "Wǒ jiā yuánlái zhù zhèr fùjìn, búguò zhèli yǐqián bú xiàng xiànzài yǒu zhème duō lóufáng.",
+        "note": "原来 (phó từ) — trước đây, khác với hiện tại.",
+        "pair": "……，不过……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mark cứ đợi Lý Minh gọi lại, nhưng cả tối không thấy gọi, hóa ra Lý Minh nhớ nhầm số điện thoại của Mark.",
+        "answer": "马克一直等李明回电话，可是电话一晚上都没来，原来李明把马克的电话号码记错了。",
+        "answerPy": "Mǎkè yìzhí děng Lǐ Míng huí diànhuà, kěshì diànhuà yì wǎnshang dōu méi lái, yuánlái Lǐ Míng bǎ Mǎkè de diànhuà hàomǎ jì cuò le.",
+        "note": "原来 (phó từ) — phát hiện sự thật trước đây không biết.",
+        "pair": "……，可是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "原来的计划",
+        "py": "yuánlái de jìhuà",
+        "vn": "kế hoạch ban đầu"
+      },
+      {
+        "zh": "原来是你啊",
+        "py": "yuánlái shì nǐ a",
+        "vn": "hóa ra là bạn"
+      },
+      {
+        "zh": "原来最快",
+        "py": "yuánlái zuì kuài",
+        "vn": "vốn là nhanh nhất"
+      },
+      {
+        "zh": "原来的地方",
+        "py": "yuánlái de dìfang",
+        "vn": "chỗ cũ"
+      },
+      {
+        "zh": "原来不知道",
+        "py": "yuánlái bù zhīdào",
+        "vn": "trước đây không biết"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "原来的 + N",
+        "m": "… ban đầu, … vốn có"
+      },
+      {
+        "s": "原来 + mệnh đề (vỡ lẽ)",
+        "m": "Hóa ra là … — vừa mới biết"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "计划",
+    "py": "jìhuà",
+    "pos": "Danh từ/Động từ",
+    "vn": "kế hoạch; vạch kế hoạch",
+    "hv": "kế hoạch",
+    "em": "📅",
+    "lesson": 2,
+    "explain": [
+      "1. (Danh từ) Bản dự định công việc theo trình tự thời gian.",
+      "2. (Động từ) Lập dự định, sắp xếp trước cho việc gì."
+    ],
+    "usage": "Danh từ: 原来的计划, 当天计划; động từ: 计划要做的事情.",
+    "collo": [
+      "原来的计划",
+      "当天计划",
+      "工作计划"
+    ],
+    "ex_zh": "每天早上我都把当天计划要做的事情写在笔记本上。",
+    "ex_py": "Měitiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà yào zuò de shìqing xiě zài bǐjìběn shang.",
+    "ex_vn": "Mỗi sáng tôi đều viết những việc dự định làm trong ngày vào sổ tay.",
+    "exList": [
+      {
+        "zh": "每天早上我都把当天计划要做的事情写在笔记本上。",
+        "py": "Měitiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà yào zuò de shìqing xiě zài bǐjìběn shang.",
+        "vn": "Mỗi sáng tôi đều viết những việc dự định làm trong ngày vào sổ tay."
+      },
+      {
+        "zh": "一个人用一天时间写一份公司全年的工作计划。",
+        "py": "Yí ge rén yòng yì tiān shíjiān xiě yí fèn gōngsī quánnián de gōngzuò jìhuà.",
+        "vn": "Một người dùng một ngày để viết một bản kế hoạch làm việc cả năm cho công ty."
+      },
+      {
+        "zh": "按原来的计划应该是两周。",
+        "py": "Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu.",
+        "vn": "Theo kế hoạch ban đầu nên là hai tuần."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "划",
+        "p": "huà",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 6,
+        "ord": "戈 (qua) trái → 刂 (đao) phải",
+        "rad": "刂 (đao – dao)",
+        "mean": "vạch ra, hoạch định",
+        "tip": "Bộ dao 刂 (dùng để VẠCH, khắc) → VẠCH RA đường hướng, kết hợp 计(tính toán) thành 计划 = LẬP KẾ HOẠCH.",
+        "cf": "话 (huà – \"lời nói\", bộ 讠\")",
+        "w": "计划 / 划船 / 规划"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy vốn không có kế hoạch đi công tác, nhưng công ty đột nhiên bảo cô ấy đi.",
+        "answer": "她本来没有出差的计划，但是公司突然让她去。",
+        "answerPy": "Tā běnlái méiyǒu chūchāi de jìhuà, dànshì gōngsī tūrán ràng tā qù.",
+        "note": "本来……但是…… ôn lại điểm ngữ pháp Bài 3.",
+        "pair": "……，但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Sự việc luôn thay đổi, chúng ta cần kịp thời điều chỉnh kế hoạch.",
+        "answer": "事情总是变化着的，我们需要及时对计划做出改变。",
+        "answerPy": "Shìqing zǒngshì biànhuà zhe de, wǒmen xūyào jíshí duì jìhuà zuòchū gǎibiàn.",
+        "note": "对计划做出改变 — điều chỉnh kế hoạch.",
+        "pair": "总是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "原来的计划",
+        "py": "yuánlái de jìhuà",
+        "vn": "kế hoạch ban đầu"
+      },
+      {
+        "zh": "当天计划",
+        "py": "dāng tiān jìhuà",
+        "vn": "kế hoạch trong ngày"
+      },
+      {
+        "zh": "工作计划",
+        "py": "gōngzuò jìhuà",
+        "vn": "kế hoạch công việc"
+      },
+      {
+        "zh": "改变计划",
+        "py": "gǎibiàn jìhuà",
+        "vn": "thay đổi kế hoạch"
+      },
+      {
+        "zh": "按照计划",
+        "py": "ànzhào jìhuà",
+        "vn": "theo kế hoạch"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "按照 + 计划 + V",
+        "m": "Làm theo kế hoạch"
+      },
+      {
+        "s": "Sub + 计划 + V (động từ)",
+        "m": "Ai đó dự định làm gì"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "提前",
+    "py": "tíqián",
+    "pos": "Động từ",
+    "vn": "làm sớm hơn dự định, trước thời hạn",
+    "hv": "đề tiền",
+    "em": "⏩",
+    "lesson": 2,
+    "explain": [
+      "Làm việc gì đó sớm hơn so với thời gian đã định trước."
+    ],
+    "usage": "Động từ; thường đi với 提前完成, 提前一个小时.",
+    "collo": [
+      "提前完成",
+      "提前到",
+      "提前一个小时"
+    ],
+    "ex_zh": "但是我们可以提前完成，周末保证做完。",
+    "ex_py": "Dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.",
+    "ex_vn": "Nhưng chúng tôi có thể hoàn thành sớm hơn, cuối tuần cam đoan làm xong.",
+    "exList": [
+      {
+        "zh": "但是我们可以提前完成，周末保证做完。",
+        "py": "Dànshì wǒmen kěyǐ tíqián wánchéng, zhōumò bǎozhèng zuòwán.",
+        "vn": "Nhưng chúng tôi có thể hoàn thành sớm hơn, cuối tuần cam đoan làm xong."
+      },
+      {
+        "zh": "每天提前半个小时到公司。",
+        "py": "Měitiān tíqián bàn ge xiǎoshí dào gōngsī.",
+        "vn": "Mỗi ngày đến công ty sớm hơn nửa tiếng."
+      },
+      {
+        "zh": "今天下午的会议提前一个小时，改在两点开。",
+        "py": "Jīntiān xiàwǔ de huìyì tíqián yí ge xiǎoshí, gǎi zài liǎng diǎn kāi.",
+        "vn": "Cuộc họp chiều nay dời sớm một tiếng, đổi thành 2 giờ họp."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "提",
+        "p": "tí",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "扌 (thủ) trái → 是 phải",
+        "rad": "扌 (thủ – tay)",
+        "mean": "kéo lên trước",
+        "tip": "Bộ tay 扌 (kéo, đưa) + 前(trước) → ĐƯA lên phía TRƯỚC (về thời gian), mở rộng thành LÀM SỚM HƠN DỰ ĐỊNH.",
+        "cf": "题 (tí – \"đề bài\")",
+        "w": "提前 / 提高 / 提出"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cuộc họp chiều nay dời sớm một tiếng, nên tôi phải sắp xếp lại thời gian.",
+        "answer": "因为今天下午的会议提前了一个小时，所以我不得不重新安排时间。",
+        "answerPy": "Yīnwèi jīntiān xiàwǔ de huìyì tíqiánle yí gè xiǎoshí, suǒyǐ wǒ bùdébù chóngxīn ānpái shíjiān.",
+        "note": "重新 là từ bài 2, 安排 là từ bài 3 — ôn lại trong ngữ cảnh mới.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh cứ yên tâm, chỉ cần tài liệu chuẩn bị xong là tôi sẽ đưa anh trước 9 giờ sáng mai.",
+        "answer": "您放心，只要材料准备好，我就提前在明天9点前给您。",
+        "answerPy": "Nín fàngxīn, zhǐyào cáiliào zhǔnbèi hǎo, wǒ jiù tíqián zài míngtiān 9 diǎn qián gěi nín.",
+        "note": "您 là cách xưng hô lịch sự với cấp trên, khách hàng.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "提前完成",
+        "py": "tíqián wán chéng",
+        "vn": "hoàn thành sớm"
+      },
+      {
+        "zh": "提前到",
+        "py": "tíqián dào",
+        "vn": "đến sớm"
+      },
+      {
+        "zh": "提前一个小时",
+        "py": "tíqián yí gè xiǎoshí",
+        "vn": "sớm hơn một tiếng"
+      },
+      {
+        "zh": "提前准备",
+        "py": "tíqián zhǔnbèi",
+        "vn": "chuẩn bị trước"
+      },
+      {
+        "zh": "提前通知",
+        "py": "tíqián tōngzhī",
+        "vn": "báo trước"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "提前 + V",
+        "m": "Làm gì sớm hơn dự định"
+      },
+      {
+        "s": "提前 + khoảng thời gian + V",
+        "m": "Làm gì sớm hơn bao lâu"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "保证",
+    "py": "bǎozhèng",
+    "pos": "Động từ",
+    "vn": "cam đoan, bảo đảm",
+    "hv": "bảo chứng",
+    "em": "🤝",
+    "lesson": 2,
+    "explain": [
+      "Cam kết chắc chắn sẽ thực hiện đúng điều gì đó."
+    ],
+    "usage": "Động từ, mang mệnh đề làm tân ngữ: 保证做完, 我保证.",
+    "collo": [
+      "保证做完",
+      "我保证",
+      "周末保证"
+    ],
+    "ex_zh": "周末保证做完。",
+    "ex_py": "Zhōumò bǎozhèng zuòwán.",
+    "ex_vn": "Cuối tuần cam đoan làm xong.",
+    "exList": [
+      {
+        "zh": "周末保证做完。",
+        "py": "Zhōumò bǎozhèng zuòwán.",
+        "vn": "Cuối tuần cam đoan làm xong."
+      },
+      {
+        "zh": "您放心，我保证明天9点前给您。",
+        "py": "Nín fàngxīn, wǒ bǎozhèng míngtiān jiǔ diǎn qián gěi nín.",
+        "vn": "Anh yên tâm, tôi cam đoan sẽ giao trước 9 giờ sáng mai cho anh."
+      },
+      {
+        "zh": "我保证以后不会再迟到了。",
+        "py": "Wǒ bǎozhèng yǐhòu bú huì zài chídào le.",
+        "vn": "Tôi cam đoan sau này sẽ không đến muộn nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "证",
+        "p": "zhèng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 8,
+        "ord": "讠 (ngôn) trái → 正 (chính) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "chứng minh, xác nhận",
+        "tip": "Bộ lời nói 讠 + 正 (đúng đắn) → LỜI NÓI ĐÚNG ĐẮN, xác nhận, kết hợp 保(giữ, đảm bảo) thành 保证 = CAM ĐOAN.",
+        "cf": "征 (zhēng – \"chinh phạt/trưng thu\")",
+        "w": "保证 / 证明 / 保护"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn cam đoan hoàn thành đúng hạn, tôi liền tin tưởng bạn.",
+        "answer": "只要你保证按时完成，我就相信你。",
+        "answerPy": "Zhǐyào nǐ bǎozhèng ànshí wánchéng, wǒ jiù xiāngxìn nǐ.",
+        "note": "只要……就…… kết hợp 保证/按时.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh yên tâm, bất kể việc nhiều đến đâu tôi cũng cam đoan sắp xếp ổn thỏa mọi thứ.",
+        "answer": "您放心，不管事情多少，我都保证把一切安排好。",
+        "answerPy": "Nín fàngxīn, bùguǎn shìqing duōshao, wǒ dōu bǎozhèng bǎ yíqiè ānpái hǎo.",
+        "note": "不管 + từ nghi vấn，都…… — bất kể thế nào cũng vậy.",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "我保证",
+        "py": "wǒ bǎozhèng",
+        "vn": "tôi cam đoan"
+      },
+      {
+        "zh": "保证做完",
+        "py": "bǎozhèng zuò wán",
+        "vn": "bảo đảm làm xong"
+      },
+      {
+        "zh": "保证质量",
+        "py": "bǎozhèng zhìliàng",
+        "vn": "bảo đảm chất lượng"
+      },
+      {
+        "zh": "保证按时",
+        "py": "bǎozhèng ànshí",
+        "vn": "bảo đảm đúng hạn"
+      },
+      {
+        "zh": "向您保证",
+        "py": "xiàng nín bǎozhèng",
+        "vn": "cam đoan với anh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 保证 + mệnh đề",
+        "m": "Ai đó cam đoan rằng …"
+      },
+      {
+        "s": "向 + ai + 保证",
+        "m": "Cam đoan với ai"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "提醒",
+    "py": "tíxǐng",
+    "pos": "Động từ",
+    "vn": "nhắc nhở",
+    "hv": "đề tỉnh",
+    "em": "🔔",
+    "lesson": 2,
+    "explain": [
+      "Nói cho ai đó nhớ lại hoặc chú ý đến điều gì."
+    ],
+    "usage": "Động từ, mang tân ngữ kép: 提醒 + Người + Nội dung.",
+    "collo": [
+      "提醒自己",
+      "谢谢提醒",
+      "提醒安排时间"
+    ],
+    "ex_zh": "提醒自己安排好时间。",
+    "ex_py": "Tíxǐng zìjǐ ānpái hǎo shíjiān.",
+    "ex_vn": "Nhắc nhở bản thân sắp xếp thời gian tốt.",
+    "exList": [
+      {
+        "zh": "提醒自己安排好时间。",
+        "py": "Tíxǐng zìjǐ ānpái hǎo shíjiān.",
+        "vn": "Nhắc nhở bản thân sắp xếp thời gian tốt."
+      },
+      {
+        "zh": "谢谢你的提醒，我差点儿忘记了。",
+        "py": "Xièxie nǐ de tíxǐng, wǒ chàdiǎnr wàngjì le.",
+        "vn": "Cảm ơn bạn đã nhắc nhở, tôi suýt quên mất."
+      },
+      {
+        "zh": "今天是王红的生日，记得给她打个电话。",
+        "py": "Jīntiān shì Wáng Hóng de shēngrì, jìde gěi tā dǎ ge diànhuà.",
+        "vn": "Hôm nay là sinh nhật Vương Hồng, nhớ gọi điện cho cô ấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "醒",
+        "p": "xǐng",
+        "type": "左右结构 · Trái-phải",
+        "st": 16,
+        "ord": "酉 (dậu) trái → 星 (tinh) phải",
+        "rad": "酉 (dậu – rượu)",
+        "mean": "tỉnh, nhắc nhở",
+        "tip": "Bộ 酉 (rượu, say) + 星(sao, biểu âm) → TỈNH khỏi cơn say, mở rộng thành TỈNH TÁO/NHẮC NHỞ (làm ai tỉnh ra để nhớ).",
+        "cf": "醉 (zuì – \"say\", cũng bộ 酉\")",
+        "w": "提醒 / 醒来 / 睡醒"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mỗi sáng tôi đều ghi kế hoạch trong ngày vào sổ tay, như vậy vừa nhắc mình sắp xếp thời gian, vừa khỏi cuống quýt.",
+        "answer": "每天早上我都把当天计划写在笔记本上，这样又能提醒自己安排时间，又不会手忙脚乱。",
+        "answerPy": "Měi tiān zǎoshang wǒ dōu bǎ dàngtiān jìhuà xiě zài bǐjìběn shang, zhèyàng yòu néng tíxǐng zìjǐ ānpái shíjiān, yòu bú huì shǒumáng-jiǎoluàn.",
+        "note": "Câu chữ 把: 把 + tân ngữ + V + 在 + nơi chốn.",
+        "pair": "又……又……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn bạn nhắc tôi, nếu không tôi đã quên hoàn toàn chuyện này.",
+        "answer": "谢谢你提醒我，不然我完全忘了这件事。",
+        "answerPy": "Xièxie nǐ tíxǐng wǒ, bùrán wǒ wánquán wàngle zhè jiàn shì.",
+        "note": "提醒 + 完全 — kết hợp từ vựng của bài.",
+        "pair": "不然……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "提醒自己",
+        "py": "tíxǐng zìjǐ",
+        "vn": "tự nhắc mình"
+      },
+      {
+        "zh": "谢谢提醒",
+        "py": "xièxie tíxǐng",
+        "vn": "cảm ơn đã nhắc"
+      },
+      {
+        "zh": "提醒他",
+        "py": "tíxǐng tā",
+        "vn": "nhắc anh ấy"
+      },
+      {
+        "zh": "提醒一下",
+        "py": "tíxǐng yíxià",
+        "vn": "nhắc một tiếng"
+      },
+      {
+        "zh": "提醒安排时间",
+        "py": "tíxǐng ānpái shíjiān",
+        "vn": "nhắc sắp xếp thời gian"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "提醒 + ai + V",
+        "m": "Nhắc ai làm gì"
+      },
+      {
+        "s": "提醒 ≠ 告诉",
+        "m": "提醒 là nhắc việc người ta ĐÃ biết nhưng dễ quên"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "乱",
+    "py": "luàn",
+    "pos": "Tính từ",
+    "vn": "lộn xộn, lúng túng",
+    "hv": "loạn",
+    "em": "😵",
+    "lesson": 2,
+    "explain": [
+      "Trạng thái không có trật tự, rối loạn; hoặc tâm trạng bối rối, mất bình tĩnh."
+    ],
+    "usage": "Tính từ; thường đi trong cụm 手忙脚乱 (tay chân luống cuống).",
+    "collo": [
+      "手忙脚乱",
+      "很乱",
+      "别乱"
+    ],
+    "ex_zh": "这样我就不会手忙脚乱了。",
+    "ex_py": "Zhèyàng wǒ jiù bú huì shǒumáng-jiǎoluàn le.",
+    "ex_vn": "Như vậy tôi sẽ không còn luống cuống nữa.",
+    "exList": [
+      {
+        "zh": "这样我就不会手忙脚乱了。",
+        "py": "Zhèyàng wǒ jiù bú huì shǒumáng-jiǎoluàn le.",
+        "vn": "Như vậy tôi sẽ không còn luống cuống nữa."
+      },
+      {
+        "zh": "房间里的东西太乱了，我们收拾一下吧。",
+        "py": "Fángjiān li de dōngxi tài luàn le, wǒmen shōushi yíxià ba.",
+        "vn": "Đồ đạc trong phòng lộn xộn quá, chúng ta dọn dẹp một chút đi."
+      },
+      {
+        "zh": "别着急，慢慢说，不要乱。",
+        "py": "Bié zháojí, mànman shuō, búyào luàn.",
+        "vn": "Đừng vội, từ từ nói, đừng luống cuống."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "乱",
+        "p": "luàn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 7,
+        "ord": "舌 trái → 乚 phải",
+        "rad": "乙 (ất, biến thể)",
+        "mean": "rối loạn",
+        "tip": "Chữ giản thể mô phỏng sợi dây bị RỐI, không gỡ được → mở rộng thành LỘN XỘN, LÚNG TÚNG.",
+        "cf": "乱 dễ nhầm với 舌 (shé – \"cái lưỡi\") do có phần giống nhau bên trái",
+        "w": "手忙脚乱 / 乱七八糟 / 别乱"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu mỗi ngày đều nhắc nhở bản thân sắp xếp thời gian, thì sẽ không luống cuống nữa.",
+        "answer": "如果每天都提醒自己安排时间，就不会手忙脚乱了。",
+        "answerPy": "Rúguǒ měitiān dōu tíxǐng zìjǐ ānpái shíjiān, jiù bú huì shǒumáng-jiǎoluàn le.",
+        "note": "如果……就不会……了 — kết hợp 提醒/安排.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Việc càng nhiều tôi càng luống cuống, không biết nên làm cái nào trước.",
+        "answer": "事情越多，我就越手忙脚乱，不知道该先做哪个。",
+        "answerPy": "Shìqing yuè duō, wǒ jiù yuè shǒumáng-jiǎoluàn, bù zhīdào gāi xiān zuò nǎge.",
+        "note": "手忙脚乱 — thành ngữ bốn chữ, chỉ sự cuống quýt.",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很乱",
+        "py": "hěn luàn",
+        "vn": "rất lộn xộn"
+      },
+      {
+        "zh": "别乱",
+        "py": "bié luàn",
+        "vn": "đừng làm loạn"
+      },
+      {
+        "zh": "手忙脚乱",
+        "py": "shǒumáng-jiǎoluàn",
+        "vn": "cuống quýt luống cuống"
+      },
+      {
+        "zh": "房间很乱",
+        "py": "fángjiān hěn luàn",
+        "vn": "phòng rất bừa bộn"
+      },
+      {
+        "zh": "心里很乱",
+        "py": "xīn li hěn luàn",
+        "vn": "trong lòng rối bời"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 + 乱",
+        "m": "Cái gì đó rất lộn xộn"
+      },
+      {
+        "s": "手忙脚乱 (thành ngữ)",
+        "m": "Cuống quýt tay chân, luống cuống"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "生意",
+    "py": "shēngyi",
+    "pos": "Danh từ",
+    "vn": "việc kinh doanh, buôn bán",
+    "hv": "sinh ý",
+    "em": "💼",
+    "lesson": 3,
+    "explain": [
+      "Hoạt động buôn bán, kinh doanh để kiếm lời."
+    ],
+    "usage": "Danh từ; thường đi với 做生意, 生意谈成.",
+    "collo": [
+      "做生意",
+      "谈生意",
+      "生意好"
+    ],
+    "ex_zh": "我们和上次那个公司的生意终于谈成了。",
+    "ex_py": "Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.",
+    "ex_vn": "Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.",
+    "exList": [
+      {
+        "zh": "我们和上次那个公司的生意终于谈成了。",
+        "py": "Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.",
+        "vn": "Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công."
+      },
+      {
+        "zh": "我原来以为做生意很简单，后来才发现其实并不容易。",
+        "py": "Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.",
+        "vn": "Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng."
+      },
+      {
+        "zh": "公司的生意会越做越大。",
+        "py": "Gōngsī de shēngyi huì yuè zuò yuè dà.",
+        "vn": "Việc kinh doanh của công ty sẽ ngày càng phát triển lớn hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "意",
+        "p": "yì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "音 trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "ý nghĩ",
+        "tip": "Bộ 音(âm thanh, lời) trên 心(tâm) → Ý NGHĨ phát ra từ trong lòng; kết hợp 生 (sinh sôi) thành 生意 = việc SINH LỢI, KINH DOANH.",
+        "cf": "意 dễ nhầm với 竟 (jìng – \"rốt cuộc\")",
+        "w": "生意 / 意思 / 注意"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh làm việc chăm chỉ như vậy, việc kinh doanh của công ty sẽ ngày càng tốt hơn.",
+        "answer": "你工作那么努力，公司的生意会越来越好的。",
+        "answerPy": "Nǐ gōngzuò nàme nǔlì, gōngsī de shēngyi huì yuè lái yuè hǎo de.",
+        "note": "越来越…… — ngày càng, ôn lại cấu trúc HSK3.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi tin rằng nhờ nỗ lực của mọi người, việc kinh doanh sẽ ngày càng phát triển.",
+        "answer": "我相信经过大家的努力，生意会越做越大。",
+        "answerPy": "Wǒ xiāngxìn jīngguò dàjiā de nǔlì, shēngyi huì yuè zuò yuè dà.",
+        "note": "越做越大 — càng làm càng lớn.",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "做生意",
+        "py": "zuò shēngyi",
+        "vn": "làm ăn buôn bán"
+      },
+      {
+        "zh": "谈生意",
+        "py": "tán shēngyi",
+        "vn": "đàm phán việc kinh doanh"
+      },
+      {
+        "zh": "生意好",
+        "py": "shēngyi hǎo",
+        "vn": "buôn bán tốt"
+      },
+      {
+        "zh": "生意谈成了",
+        "py": "shēngyi tán chéng le",
+        "vn": "đàm phán xong việc kinh doanh"
+      },
+      {
+        "zh": "小生意",
+        "py": "xiǎo shēngyi",
+        "vn": "việc buôn bán nhỏ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "做 / 谈 + 生意",
+        "m": "Làm ăn / đàm phán kinh doanh"
+      },
+      {
+        "s": "生意 + 好 / 不好",
+        "m": "Buôn bán được / ế ẩm"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "谈",
+    "py": "tán",
+    "pos": "Động từ",
+    "vn": "nói chuyện, thảo luận",
+    "hv": "đàm",
+    "em": "💬",
+    "lesson": 3,
+    "explain": [
+      "Trao đổi, bàn bạc về một vấn đề nào đó."
+    ],
+    "usage": "Động từ; thường đi với 谈生意, 谈成, 谈工作.",
+    "collo": [
+      "谈生意",
+      "谈成了",
+      "谈工作"
+    ],
+    "ex_zh": "我们和上次那个公司的生意终于谈成了。",
+    "ex_py": "Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.",
+    "ex_vn": "Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.",
+    "exList": [
+      {
+        "zh": "我们和上次那个公司的生意终于谈成了。",
+        "py": "Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.",
+        "vn": "Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công."
+      },
+      {
+        "zh": "我们谈了很长时间，终于谈成了这次合作。",
+        "py": "Wǒmen tánle hěn cháng shíjiān, zhōngyú tánchéngle zhè cì hézuò.",
+        "vn": "Chúng tôi đã bàn bạc rất lâu, cuối cùng đàm phán thành công hợp tác lần này."
+      },
+      {
+        "zh": "我们找时间谈谈这个问题吧。",
+        "py": "Wǒmen zhǎo shíjiān tántan zhège wèntí ba.",
+        "vn": "Chúng ta tìm thời gian bàn bạc về vấn đề này đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "谈",
+        "p": "tán",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "讠 (ngôn) trái → 炎 (viêm) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "nói chuyện",
+        "tip": "Bộ lời nói 讠 + 炎 (lửa cháy bừng, biểu âm) → LỜI NÓI qua lại sôi nổi, mở rộng thành NÓI CHUYỆN, THẢO LUẬN.",
+        "cf": "淡 (dàn – \"nhạt\", bộ 氵\")",
+        "w": "谈生意 / 谈话 / 谈成"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những chúng tôi đã đàm phán xong vụ làm ăn này, mà mọi người còn được thưởng nữa.",
+        "answer": "我们不但把这次生意谈成了，而且大家还拿到了奖金。",
+        "answerPy": "Wǒmen búdàn bǎ zhè cì shēngyi tánchéng le, érqiě dàjiā hái nádàole jiǎngjīn.",
+        "note": "谈成 — bổ ngữ kết quả 成 nghĩa là \"đạt tới thành công\".",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chuyện gì khiến bạn vui thế, có phải việc làm ăn đã bàn xong rồi không?",
+        "answer": "什么事让你这么高兴啊，是不是生意已经谈成了？",
+        "answerPy": "Shénme shì ràng nǐ zhème gāoxìng a, shì bu shì shēngyi yǐjīng tánchéng le?",
+        "note": "Câu hỏi 是不是 — đoán và mong được xác nhận.",
+        "pair": "是不是……？"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "谈生意",
+        "py": "tán shēngyi",
+        "vn": "bàn chuyện kinh doanh"
+      },
+      {
+        "zh": "谈成了",
+        "py": "tán chéng le",
+        "vn": "bàn xong, thỏa thuận xong"
+      },
+      {
+        "zh": "谈工作",
+        "py": "tán gōngzuò",
+        "vn": "bàn công việc"
+      },
+      {
+        "zh": "跟他谈",
+        "py": "gēn tā tán",
+        "vn": "nói chuyện với anh ấy"
+      },
+      {
+        "zh": "谈一谈",
+        "py": "tán yì tán",
+        "vn": "trao đổi một chút"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "跟 + ai + 谈 + N",
+        "m": "Bàn với ai về việc gì"
+      },
+      {
+        "s": "谈 + 成 (bổ ngữ kết quả)",
+        "m": "Bàn đến chỗ thành công"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "并",
+    "py": "bìng",
+    "pos": "Phó từ",
+    "vn": "(nhấn mạnh phủ định)",
+    "hv": "tịnh",
+    "em": "❗",
+    "lesson": 3,
+    "explain": [
+      "Đứng trước từ phủ định 不/没(有) để tăng cường ngữ khí phủ định, thường dùng trong câu tỏ ý chuyển ngoặt, phủ định một cách nhìn nào đó và giải thích tình hình thực tế."
+    ],
+    "usage": "并 + 不/没(有) + V/Adj: 并不容易, 并没有.",
+    "collo": [
+      "并不容易",
+      "并没有",
+      "并不是"
+    ],
+    "ex_zh": "我原来以为做生意很简单，后来才发现其实并不容易。",
+    "ex_py": "Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.",
+    "ex_vn": "Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.",
+    "exList": [
+      {
+        "zh": "我原来以为做生意很简单，后来才发现其实并不容易。",
+        "py": "Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.",
+        "vn": "Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng."
+      },
+      {
+        "zh": "其实，人们将来做什么工作可能和上学学的专业并没有太大关系。",
+        "py": "Qíshí, rénmen jiānglái zuò shénme gōngzuò kěnéng hé shàngxué xué de zhuānyè bìng méiyǒu tài dà guānxi.",
+        "vn": "Thực ra, sau này người ta làm công việc gì có thể không liên quan nhiều lắm đến chuyên ngành đã học."
+      },
+      {
+        "zh": "根据调查，人每天晚上最少应该睡7个小时，但是这并不适合每一个人。",
+        "py": "Gēnjù diàochá, rén měitiān wǎnshang zuìshǎo yīnggāi shuì qī ge xiǎoshí, dànshì zhè bìng bú shìhé měi yí ge rén.",
+        "vn": "Theo điều tra, mỗi người mỗi tối nên ngủ ít nhất 7 tiếng, nhưng điều này không hề phù hợp với tất cả mọi người."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "并",
+        "p": "bìng",
+        "type": "独体字 · Chữ đơn (giản thể)",
+        "st": 6,
+        "ord": "nét liền",
+        "rad": "干 (biến thể)",
+        "mean": "cùng, gộp lại",
+        "tip": "Chữ mô phỏng hai vật GHÉP LIỀN nhau → nghĩa gốc là GỘP LẠI, mượn dùng làm phó từ nhấn mạnh phủ định (không hề).",
+        "cf": "并 dễ nhầm với 开 (kāi – \"mở\")",
+        "w": "并不 / 并且 / 合并"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi cứ tưởng làm sếp rất dễ, ai ngờ hoàn toàn không hề đơn giản.",
+        "answer": "我以为当经理很容易，没想到并不简单。",
+        "answerPy": "Wǒ yǐwéi dāng jīnglǐ hěn róngyì, méi xiǎngdào bìng bù jiǎndān.",
+        "note": "以为……没想到……并不…… kết hợp nhiều điểm ngữ pháp.",
+        "pair": "以为……没想到……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nghe nói việc kinh doanh của công ty đó rất tốt, nhưng thực ra không hề như vậy.",
+        "answer": "听说那家公司的生意很好，但其实并不是这样。",
+        "answerPy": "Tīngshuō nà jiā gōngsī de shēngyi hěn hǎo, dàn qíshí bìng bú shì zhèyàng.",
+        "note": "并不是这样 — không hề như vậy.",
+        "pair": "听说……其实……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "并不容易",
+        "py": "bìng bù róngyì",
+        "vn": "thật ra không dễ"
+      },
+      {
+        "zh": "并没有",
+        "py": "bìng méiyǒu",
+        "vn": "thật ra không hề"
+      },
+      {
+        "zh": "并不是",
+        "py": "bìng bú shì",
+        "vn": "hoàn toàn không phải"
+      },
+      {
+        "zh": "并不知道",
+        "py": "bìng bù zhīdào",
+        "vn": "thật ra không biết"
+      },
+      {
+        "zh": "并不喜欢",
+        "py": "bìng bù xǐhuan",
+        "vn": "thật ra không thích"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "并 + 不 / 没有 + V",
+        "m": "Thật ra không … (phản bác điều người khác tưởng)"
+      },
+      {
+        "s": "✗ 并很容易 → ✓ 并不容易",
+        "m": "并 chỉ đứng trước phủ định 不 / 没"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "积累",
+    "py": "jīlěi",
+    "pos": "Động từ",
+    "vn": "tích lũy",
+    "hv": "tích lụy",
+    "em": "📈",
+    "lesson": 3,
+    "explain": [
+      "Tích góp dần dần theo thời gian (kinh nghiệm, kiến thức, tiền bạc...)."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 积累经验, 积累知识.",
+    "collo": [
+      "积累经验",
+      "积累知识",
+      "多积累"
+    ],
+    "ex_zh": "慢慢来，万事开头难，重要的是要多积累经验。",
+    "ex_py": "Mànmàn lái, wànshì kāitóu nán, zhòngyào de shì yào duō jīlěi jīngyàn.",
+    "ex_vn": "Từ từ thôi, vạn sự khởi đầu nan, quan trọng là phải tích lũy nhiều kinh nghiệm.",
+    "exList": [
+      {
+        "zh": "慢慢来，万事开头难，重要的是要多积累经验。",
+        "py": "Mànmàn lái, wànshì kāitóu nán, zhòngyào de shì yào duō jīlěi jīngyàn.",
+        "vn": "Từ từ thôi, vạn sự khởi đầu nan, quan trọng là phải tích lũy nhiều kinh nghiệm."
+      },
+      {
+        "zh": "学习与同事交流的方法，积累专业知识，这些比收入重要多了。",
+        "py": "Xuéxí yǔ tóngshì jiāoliú de fāngfǎ, jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.",
+        "vn": "Học cách trao đổi với đồng nghiệp, tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều."
+      },
+      {
+        "zh": "这让我积累了很多工作经验。",
+        "py": "Zhè ràng wǒ jīlěile hěn duō gōngzuò jīngyàn.",
+        "vn": "Điều này khiến tôi tích lũy được rất nhiều kinh nghiệm làm việc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "积",
+        "p": "jī",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "禾 (hòa) trái → 只 phải",
+        "rad": "禾 (hòa – lúa)",
+        "mean": "chất chứa, tích góp",
+        "tip": "Bộ lúa 禾 (thu hoạch dần) + 只 (biểu âm) → CHẤT lúa thành đống dần dần, mở rộng thành TÍCH LŨY, kết hợp 累(chồng chất) thành 积累.",
+        "cf": "积 dễ nhầm với 只 riêng lẻ (không có bộ 禾)",
+        "w": "积累 / 面积 / 积极"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bạn bắt đầu làm ở công ty này từ năm hai đại học, nên đã tích lũy được nhiều kinh nghiệm phải không?",
+        "answer": "因为你大学二年级就开始在这个公司工作，所以积累了很多工作经验吧？",
+        "answerPy": "Yīnwèi nǐ dàxué èr niánjí jiù kāishǐ zài zhège gōngsī gōngzuò, suǒyǐ jīlěile hěn duō gōngzuò jīngyàn ba?",
+        "note": "吧 cuối câu — đoán và mong được xác nhận.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Điều quan trọng nhất trong mấy năm đầu đi làm là tích lũy kinh nghiệm chuyên môn, chứ không phải thu nhập.",
+        "answer": "工作前几年最重要的是积累专业经验，而不是收入。",
+        "answerPy": "Gōngzuò qián jǐ nián zuì zhòngyào de shì jīlěi zhuānyè jīngyàn, ér bú shì shōurù.",
+        "note": "最重要的是……而不是…… — quan trọng nhất là … chứ không phải….",
+        "pair": "而不是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "积累经验",
+        "py": "jīlěi jīngyàn",
+        "vn": "tích lũy kinh nghiệm"
+      },
+      {
+        "zh": "积累知识",
+        "py": "jīlěi zhīshi",
+        "vn": "tích lũy kiến thức"
+      },
+      {
+        "zh": "多积累",
+        "py": "duō jīlěi",
+        "vn": "tích lũy nhiều"
+      },
+      {
+        "zh": "慢慢积累",
+        "py": "mànmàn jīlěi",
+        "vn": "tích lũy dần"
+      },
+      {
+        "zh": "积累了很多",
+        "py": "jīlěi le hěn duō",
+        "vn": "đã tích lũy được nhiều"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 积累 + 经验 / 知识",
+        "m": "Ai đó tích lũy kinh nghiệm, kiến thức"
+      },
+      {
+        "s": "慢慢 / 一点一点 + 积累",
+        "m": "Tích lũy dần dần"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "经验",
+    "py": "jīngyàn",
+    "pos": "Danh từ",
+    "vn": "kinh nghiệm",
+    "hv": "kinh nghiệm",
+    "em": "🎓",
+    "lesson": 3,
+    "explain": [
+      "Những điều học được, tích lũy được qua thực tế làm việc/trải nghiệm."
+    ],
+    "usage": "Danh từ; thường đi với 积累经验, 工作经验.",
+    "collo": [
+      "积累经验",
+      "工作经验",
+      "有经验"
+    ],
+    "ex_zh": "重要的是要多积累经验。",
+    "ex_py": "Zhòngyào de shì yào duō jīlěi jīngyàn.",
+    "ex_vn": "Quan trọng là phải tích lũy nhiều kinh nghiệm.",
+    "exList": [
+      {
+        "zh": "重要的是要多积累经验。",
+        "py": "Zhòngyào de shì yào duō jīlěi jīngyàn.",
+        "vn": "Quan trọng là phải tích lũy nhiều kinh nghiệm."
+      },
+      {
+        "zh": "按照经验，这个问题应该可以很快解决，请大家放心。",
+        "py": "Ànzhào jīngyàn, zhège wèntí yīnggāi kěyǐ hěn kuài jiějué, qǐng dàjiā fàngxīn.",
+        "vn": "Theo kinh nghiệm, vấn đề này chắc có thể giải quyết nhanh, mọi người cứ yên tâm."
+      },
+      {
+        "zh": "一个人即使能力再高，经验再丰富，如果对工作没有责任心，也很难把工作做好。",
+        "py": "Yí ge rén jíshǐ nénglì zài gāo, jīngyàn zài fēngfù, rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.",
+        "vn": "Một người dù năng lực có cao đến đâu, kinh nghiệm có phong phú đến đâu, nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "验",
+        "p": "yàn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "马 (mã) trái → 佥 phải",
+        "rad": "马 (mã – ngựa)",
+        "mean": "kiểm nghiệm, trải qua",
+        "tip": "Bộ 马 (liên quan kiểm tra ngựa xưa) + 佥(biểu âm) → KIỂM NGHIỆM qua thực tế, kết hợp 经(trải qua) thành 经验 = KINH NGHIỆM.",
+        "cf": "验 dễ nhầm với 检 (jiǎn – \"kiểm tra\")",
+        "w": "经验 / 经历 / 考验"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trong mấy năm đầu đi làm, điều quan trọng không phải là thu nhập, mà là làm phong phú kinh nghiệm làm việc của mình.",
+        "answer": "在工作的前几年，重要的不是收入，而是丰富自己的工作经验。",
+        "answerPy": "Zài gōngzuò de qián jǐ nián, zhòngyào de bú shì shōurù, ér shì fēngfù zìjǐ de gōngzuò jīngyàn.",
+        "note": "收入 là từ bài 3, 丰富 là từ bài 2 — ôn lại cùng lúc.",
+        "pair": "不是……而是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể năng lực cao đến đâu, nếu không có kinh nghiệm cũng khó làm tốt công việc.",
+        "answer": "不管能力多高，如果没有经验，也很难把工作做好。",
+        "answerPy": "Bùguǎn nénglì duō gāo, rúguǒ méiyǒu jīngyàn, yě hěn nán bǎ gōngzuò zuòhǎo.",
+        "note": "不管……如果……也很难…… kết hợp nhiều cấu trúc.",
+        "pair": "不管……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "积累经验",
+        "py": "jīlěi jīngyàn",
+        "vn": "tích lũy kinh nghiệm"
+      },
+      {
+        "zh": "工作经验",
+        "py": "gōngzuò jīngyàn",
+        "vn": "kinh nghiệm làm việc"
+      },
+      {
+        "zh": "有经验",
+        "py": "yǒu jīngyàn",
+        "vn": "có kinh nghiệm"
+      },
+      {
+        "zh": "经验丰富",
+        "py": "jīngyàn fēngfù",
+        "vn": "giàu kinh nghiệm"
+      },
+      {
+        "zh": "交流经验",
+        "py": "jiāoliú jīngyàn",
+        "vn": "trao đổi kinh nghiệm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 有 / 没有 + 经验",
+        "m": "Ai đó có / không có kinh nghiệm"
+      },
+      {
+        "s": "经验 + 丰富",
+        "m": "Kinh nghiệm phong phú — 丰富 là từ bài 2"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "一切",
+    "py": "yíqiè",
+    "pos": "Đại từ",
+    "vn": "tất cả",
+    "hv": "nhất thiết",
+    "em": "🌐",
+    "lesson": 3,
+    "explain": [
+      "Đại từ chỉ toàn bộ sự vật/sự việc, không sót cái nào."
+    ],
+    "usage": "Đại từ, làm chủ ngữ/định ngữ: 一切都会好的, 一切安排好了.",
+    "collo": [
+      "一切都会好的",
+      "一切顺利",
+      "一切安排好了"
+    ],
+    "ex_zh": "我相信经过我们大家的努力，公司的生意会越做越大，一切都会好的。",
+    "ex_py": "Wǒ xiāngxìn jīngguò wǒmen dàjiā de nǔlì, gōngsī de shēngyi huì yuè zuò yuè dà, yíqiè dōu huì hǎo de.",
+    "ex_vn": "Tôi tin rằng nhờ nỗ lực của tất cả chúng ta, việc kinh doanh của công ty sẽ ngày càng lớn mạnh, mọi thứ sẽ ổn thôi.",
+    "exList": [
+      {
+        "zh": "我相信经过我们大家的努力，公司的生意会越做越大，一切都会好的。",
+        "py": "Wǒ xiāngxìn jīngguò wǒmen dàjiā de nǔlì, gōngsī de shēngyi huì yuè zuò yuè dà, yíqiè dōu huì hǎo de.",
+        "vn": "Tôi tin rằng nhờ nỗ lực của tất cả chúng ta, việc kinh doanh của công ty sẽ ngày càng lớn mạnh, mọi thứ sẽ ổn thôi."
+      },
+      {
+        "zh": "我非常满意，一切都安排得很好。",
+        "py": "Wǒ fēicháng mǎnyì, yíqiè dōu ānpái de hěn hǎo.",
+        "vn": "Tôi rất hài lòng, mọi thứ đều được sắp xếp rất tốt."
+      },
+      {
+        "zh": "希望一切顺利。",
+        "py": "Xīwàng yíqiè shùnlì.",
+        "vn": "Hy vọng mọi thứ suôn sẻ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "切",
+        "p": "qiè",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "七 trái → 刀 (đao) phải",
+        "rad": "刀 (đao – dao)",
+        "mean": "cắt, toàn bộ",
+        "tip": "Bộ dao 刀 (cắt) + 七(biểu âm) → CẮT ra từng phần, kết hợp 一(một, toàn bộ) thành 一切 = TẤT CẢ (mọi phần).",
+        "cf": "切 khi đọc \"qiē\" nghĩa là hành động cắt (切菜)",
+        "w": "一切 / 亲切 / 迫切"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh làm việc chăm chỉ như vậy, tôi tin mọi thứ sẽ ngày càng tốt hơn.",
+        "answer": "你工作那么努力，我相信一切都会越来越好的。",
+        "answerPy": "Nǐ gōngzuò nàme nǔlì, wǒ xiāngxìn yíqiè dōu huì yuè lái yuè hǎo de.",
+        "note": "一切都会……的 — mọi thứ sẽ ….",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn mọi người, nhờ có sự giúp đỡ của mọi người mà mọi việc mới hoàn thành thuận lợi.",
+        "answer": "谢谢大家，只有大家的帮助，一切才能顺利完成。",
+        "answerPy": "Xièxie dàjiā, zhǐyǒu dàjiā de bāngzhù, yíqiè cái néng shùnlì wánchéng.",
+        "note": "一切 chỉ sự việc nói chung, luôn đi với 都 / 才 ở vế sau.",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一切顺利",
+        "py": "yíqiè shùnlì",
+        "vn": "mọi việc thuận lợi"
+      },
+      {
+        "zh": "一切都会好的",
+        "py": "yíqiè dōu huì hǎo de",
+        "vn": "rồi mọi chuyện sẽ ổn"
+      },
+      {
+        "zh": "一切安排好了",
+        "py": "yíqiè ānpái hǎo le",
+        "vn": "mọi thứ đã sắp xếp xong"
+      },
+      {
+        "zh": "一切正常",
+        "py": "yíqiè zhèngcháng",
+        "vn": "tất cả bình thường"
+      },
+      {
+        "zh": "一切都变了",
+        "py": "yíqiè dōu biàn le",
+        "vn": "mọi thứ đã thay đổi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一切 + 都 + V / Adj",
+        "m": "Tất cả đều …"
+      },
+      {
+        "s": "一切 ≈ 所有的事情",
+        "m": "Chỉ sự việc nói chung, không đếm được"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "按照",
+    "py": "ànzhào",
+    "pos": "Giới từ",
+    "vn": "theo, dựa vào",
+    "hv": "án chiếu",
+    "em": "📐",
+    "lesson": 4,
+    "explain": [
+      "Dựa theo, căn cứ vào một tiêu chuẩn/quy định/kế hoạch nào đó."
+    ],
+    "usage": "Giới từ, đứng trước danh từ: 按照计划, 按照要求.",
+    "collo": [
+      "按照计划",
+      "按照要求",
+      "按照经验"
+    ],
+    "ex_zh": "我们今年的工作都已经按照计划完成了。",
+    "ex_py": "Wǒmen jīnnián de gōngzuò dōu yǐjīng ànzhào jìhuà wánchéng le.",
+    "ex_vn": "Công việc năm nay của chúng tôi đều đã hoàn thành theo kế hoạch.",
+    "exList": [
+      {
+        "zh": "我们今年的工作都已经按照计划完成了。",
+        "py": "Wǒmen jīnnián de gōngzuò dōu yǐjīng ànzhào jìhuà wánchéng le.",
+        "vn": "Công việc năm nay của chúng tôi đều đã hoàn thành theo kế hoạch."
+      },
+      {
+        "zh": "这回材料都按照银行的要求准备好了吧？",
+        "py": "Zhè huí cáiliào dōu ànzhào yínháng de yāoqiú zhǔnbèi hǎole ba?",
+        "vn": "Lần này tài liệu đều đã chuẩn bị theo yêu cầu của ngân hàng rồi chứ?"
+      },
+      {
+        "zh": "按照经验，这个问题应该可以很快解决，请大家放心。",
+        "py": "Ànzhào jīngyàn, zhège wèntí yīnggāi kěyǐ hěn kuài jiějué, qǐng dàjiā fàngxīn.",
+        "vn": "Theo kinh nghiệm, vấn đề này chắc có thể giải quyết nhanh, mọi người cứ yên tâm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "照",
+        "p": "zhào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 13,
+        "ord": "昭 trên → 灬 (hỏa) dưới",
+        "rad": "灬 (hỏa – lửa)",
+        "mean": "chiếu rọi, theo",
+        "tip": "Bộ lửa 灬 (ánh sáng chiếu rọi) + 昭(sáng tỏ) → CHIẾU RỌI cho rõ, mở rộng thành ĐỐI CHIẾU/DỰA THEO, kết hợp 按(dựa vào) thành 按照 = THEO, DỰA VÀO.",
+        "cf": "照 dễ nhầm với 熙 (xī – ít dùng)",
+        "w": "按照 / 照顾 / 照片"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cứ theo cách này mà làm, đừng viết sai nữa.",
+        "answer": "按照这个办法做，别再写错了。",
+        "answerPy": "Ànzhào zhège bànfǎ zuò, bié zài xiě cuò le.",
+        "note": "按照 + danh từ + động từ — theo … mà làm.",
+        "pair": "按照……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu không theo kế hoạch mà làm, chúng ta có thể không hoàn thành công việc năm nay.",
+        "answer": "如果不按照计划做，我们可能完不成今年的工作了。",
+        "answerPy": "Rúguǒ bú ànzhào jìhuà zuò, wǒmen kěnéng wánbùchéng jīnnián de gōngzuò le.",
+        "note": "如果不按照……可能…… — kết hợp cấu trúc giả thiết.",
+        "pair": "如果……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "按照计划",
+        "py": "ànzhào jìhuà",
+        "vn": "theo kế hoạch"
+      },
+      {
+        "zh": "按照要求",
+        "py": "ànzhào yāoqiú",
+        "vn": "theo yêu cầu"
+      },
+      {
+        "zh": "按照经验",
+        "py": "ànzhào jīngyàn",
+        "vn": "theo kinh nghiệm"
+      },
+      {
+        "zh": "按照规定",
+        "py": "ànzhào guīdìng",
+        "vn": "theo quy định"
+      },
+      {
+        "zh": "按照这个办法",
+        "py": "ànzhào zhège bànfǎ",
+        "vn": "theo cách này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "按照 + N + V",
+        "m": "Làm theo cái gì"
+      },
+      {
+        "s": "✗ 按照他很努力 → ✓ 按照计划做",
+        "m": "按照 chỉ dẫn danh từ, không dẫn mệnh đề"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "成功",
+    "py": "chénggōng",
+    "pos": "Tính từ/Động từ",
+    "vn": "thành công",
+    "hv": "thành công",
+    "em": "🏆",
+    "lesson": 4,
+    "explain": [
+      "Đạt được kết quả mong muốn, hoàn thành tốt đẹp việc gì đó."
+    ],
+    "usage": "Tính từ/động từ; thường đi với 成功地解决, 谈成功.",
+    "collo": [
+      "成功地解决",
+      "谈成功",
+      "取得成功"
+    ],
+    "ex_zh": "我们成功地解决了问题，顺利地完成了工作。",
+    "ex_py": "Wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò.",
+    "ex_vn": "Chúng tôi đã giải quyết vấn đề thành công, hoàn thành công việc thuận lợi.",
+    "exList": [
+      {
+        "zh": "我们成功地解决了问题，顺利地完成了工作。",
+        "py": "Wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò.",
+        "vn": "Chúng tôi đã giải quyết vấn đề thành công, hoàn thành công việc thuận lợi."
+      },
+      {
+        "zh": "成功解决问题让大家都很高兴。",
+        "py": "Chénggōng jiějué wèntí ràng dàjiā dōu hěn gāoxìng.",
+        "vn": "Giải quyết vấn đề thành công khiến mọi người đều rất vui."
+      },
+      {
+        "zh": "这次合作终于成功了。",
+        "py": "Zhè cì hézuò zhōngyú chénggōng le.",
+        "vn": "Sự hợp tác lần này cuối cùng đã thành công."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "功",
+        "p": "gōng",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "工 (công) trái → 力 (lực) phải",
+        "rad": "力 (lực – sức)",
+        "mean": "công lao, thành tựu",
+        "tip": "Bộ 工 (công việc) + 力(sức lực) → dùng SỨC LỰC làm nên CÔNG LAO, kết hợp 成(nên) thành 成功 = THÀNH CÔNG.",
+        "cf": "攻 (gōng – \"tấn công\", bộ 攵\")",
+        "w": "成功 / 功课 / 用功"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nhờ nỗ lực của mọi người, chúng tôi cuối cùng đã giải quyết vấn đề thành công.",
+        "answer": "因为有大家的努力，我们终于成功地解决了问题。",
+        "answerPy": "Yīnwèi yǒu dàjiā de nǔlì, wǒmen zhōngyú chénggōng de jiějuéle wèntí.",
+        "note": "成功地 + động từ — trạng ngữ chỉ cách thức.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Muốn thành công, trước hết phải tích lũy kinh nghiệm, tiếp theo phải có trách nhiệm với công việc.",
+        "answer": "想要成功，首先要积累经验，其次要对工作有责任心。",
+        "answerPy": "Xiǎng yào chénggōng, shǒuxiān yào jīlěi jīngyàn, qícì yào duì gōngzuò yǒu zérènxīn.",
+        "note": "首先……其次…… ôn lại điểm ngữ pháp Bài 3.",
+        "pair": "首先……其次……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "取得成功",
+        "py": "qǔdé chénggōng",
+        "vn": "đạt được thành công"
+      },
+      {
+        "zh": "成功地解决",
+        "py": "chénggōng de jiějué",
+        "vn": "giải quyết thành công"
+      },
+      {
+        "zh": "谈成功",
+        "py": "tán chénggōng",
+        "vn": "đàm phán thành công"
+      },
+      {
+        "zh": "很成功",
+        "py": "hěn chénggōng",
+        "vn": "rất thành công"
+      },
+      {
+        "zh": "成功的人",
+        "py": "chénggōng de rén",
+        "vn": "người thành công"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "成功地 + V",
+        "m": "Làm gì một cách thành công"
+      },
+      {
+        "s": "取得 + 成功 (danh từ)",
+        "m": "Đạt được thành công"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "顺利",
+    "py": "shùnlì",
+    "pos": "Tính từ",
+    "vn": "thuận lợi, suôn sẻ",
+    "hv": "thuận lợi",
+    "em": "✅",
+    "lesson": 4,
+    "explain": [
+      "Diễn ra thuận lợi, không gặp trở ngại."
+    ],
+    "usage": "Tính từ; thường đi với 顺利地完成, 一切顺利.",
+    "collo": [
+      "顺利地完成",
+      "一切顺利",
+      "很顺利"
+    ],
+    "ex_zh": "顺利地完成了工作。",
+    "ex_py": "Shùnlì de wánchéngle gōngzuò.",
+    "ex_vn": "Hoàn thành công việc một cách thuận lợi.",
+    "exList": [
+      {
+        "zh": "顺利地完成了工作。",
+        "py": "Shùnlì de wánchéngle gōngzuò.",
+        "vn": "Hoàn thành công việc một cách thuận lợi."
+      },
+      {
+        "zh": "我本来以为这件事会很顺利，没想到遇到这么多困难。",
+        "py": "Wǒ běnlái yǐwéi zhè jiàn shì huì hěn shùnlì, méi xiǎngdào yùdào zhème duō kùnnan.",
+        "vn": "Tôi vốn tưởng việc này sẽ rất thuận lợi, ai ngờ gặp phải nhiều khó khăn như vậy."
+      },
+      {
+        "zh": "希望一切顺利。",
+        "py": "Xīwàng yíqiè shùnlì.",
+        "vn": "Hy vọng mọi thứ suôn sẻ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "顺",
+        "p": "shùn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 9,
+        "ord": "川 (xuyên) trái → 页 (hiệt) phải",
+        "rad": "页 (hiệt – đầu)",
+        "mean": "thuận theo, suôn sẻ",
+        "tip": "Bộ 页(đầu, hướng) + 川(dòng sông chảy xuôi) → theo DÒNG CHẢY THUẬN, mở rộng thành THUẬN LỢI.",
+        "cf": "须 (xū – \"cần phải\", cũng có 页\")",
+        "w": "顺利 / 顺便 / 顺序"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn mọi người đã nỗ lực mấy tháng qua, chỉ cần năm sau chúng ta tiếp tục cố gắng thì nhất định sẽ thuận lợi hơn.",
+        "answer": "感谢大家这几个月的努力，只要明年继续努力，工作就一定会更顺利。",
+        "answerPy": "Gǎnxiè dàjiā zhè jǐ gè yuè de nǔlì, zhǐyào míngnián jìxù nǔlì, gōngzuò jiù yídìng huì gèng shùnlì.",
+        "note": "感谢 trang trọng hơn 谢谢 — dùng khi phát biểu trước tập thể.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu mọi việc đều thuận lợi, chúng ta có thể hoàn thành sớm hơn kế hoạch.",
+        "answer": "如果一切都很顺利，我们可以提前完成计划。",
+        "answerPy": "Rúguǒ yíqiè dōu hěn shùnlì, wǒmen kěyǐ tíqián wánchéng jìhuà.",
+        "note": "如果一切都……我们可以…… kết hợp nhiều từ vựng của bài.",
+        "pair": "如果……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一切顺利",
+        "py": "yíqiè shùnlì",
+        "vn": "mọi sự thuận lợi"
+      },
+      {
+        "zh": "顺利地完成",
+        "py": "shùnlì de wán chéng",
+        "vn": "hoàn thành thuận lợi"
+      },
+      {
+        "zh": "很顺利",
+        "py": "hěn shùnlì",
+        "vn": "rất suôn sẻ"
+      },
+      {
+        "zh": "工作顺利",
+        "py": "gōngzuò shùnlì",
+        "vn": "công việc thuận lợi"
+      },
+      {
+        "zh": "不太顺利",
+        "py": "bú tài shùnlì",
+        "vn": "không được suôn sẻ lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "顺利地 + V",
+        "m": "Làm gì một cách suôn sẻ"
+      },
+      {
+        "s": "N + 很 + 顺利",
+        "m": "Việc gì đó rất thuận lợi"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "感谢",
+    "py": "gǎnxiè",
+    "pos": "Động từ",
+    "vn": "cảm ơn",
+    "hv": "cảm tạ",
+    "em": "🙏",
+    "lesson": 4,
+    "explain": [
+      "Bày tỏ lòng biết ơn với ai đó vì đã giúp đỡ."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 感谢大家, 非常感谢.",
+    "collo": [
+      "非常感谢",
+      "感谢大家",
+      "感谢帮助"
+    ],
+    "ex_zh": "非常感谢大家对我的帮助！",
+    "ex_py": "Fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!",
+    "ex_vn": "Vô cùng cảm ơn sự giúp đỡ của mọi người dành cho tôi!",
+    "exList": [
+      {
+        "zh": "非常感谢大家对我的帮助！",
+        "py": "Fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!",
+        "vn": "Vô cùng cảm ơn sự giúp đỡ của mọi người dành cho tôi!"
+      },
+      {
+        "zh": "感谢大家这三个多月的努力工作。",
+        "py": "Gǎnxiè dàjiā zhè sān ge duō yuè de nǔlì gōngzuò.",
+        "vn": "Cảm ơn sự nỗ lực làm việc hơn ba tháng qua của mọi người."
+      },
+      {
+        "zh": "我想感谢我的老师，是他教会了我很多知识。",
+        "py": "Wǒ xiǎng gǎnxiè wǒ de lǎoshī, shì tā jiāohuìle wǒ hěn duō zhīshi.",
+        "vn": "Tôi muốn cảm ơn thầy của tôi, chính thầy đã dạy tôi rất nhiều kiến thức."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "谢",
+        "p": "xiè",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "讠 (ngôn) trái → 射 (xạ) phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "cảm ơn",
+        "tip": "Bộ lời nói 讠 + 射(bắn ra, biểu âm) → LỜI NÓI bày tỏ lòng biết ơn, kết hợp 感(cảm nhận) thành 感谢 = CẢM ƠN.",
+        "cf": "榭 (xiè – \"đình tạ\", bộ 木\")",
+        "w": "感谢 / 谢谢 / 道谢"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cảm ơn sự giúp đỡ của mọi người, nếu không có mọi người tôi không thể hoàn thành công việc thuận lợi.",
+        "answer": "感谢大家的帮助，没有大家我不能顺利完成工作。",
+        "answerPy": "Gǎnxiè dàjiā de bāngzhù, méiyǒu dàjiā wǒ bù néng shùnlì wánchéng gōngzuò.",
+        "note": "感谢……的帮助 — cảm ơn sự giúp đỡ của….",
+        "pair": "没有……不能……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi muốn cảm ơn tất cả những người ba tháng qua không những đã cùng tôi nỗ lực, mà còn giúp tôi rất nhiều.",
+        "answer": "我想感谢这三个月来不但和我一起努力，而且还帮了我很多的所有人。",
+        "answerPy": "Wǒ xiǎng gǎnxiè zhè sān gè yuè lái búdàn hé wǒ yìqǐ nǔlì, érqiě hái bāngle wǒ hěn duō de suǒyǒu rén.",
+        "note": "Định ngữ dài đứng trước 所有人 — đặc điểm của tiếng Trung.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "非常感谢",
+        "py": "fēicháng gǎnxiè",
+        "vn": "vô cùng cảm ơn"
+      },
+      {
+        "zh": "感谢大家",
+        "py": "gǎnxiè dàjiā",
+        "vn": "cảm ơn mọi người"
+      },
+      {
+        "zh": "感谢帮助",
+        "py": "gǎnxiè bāngzhù",
+        "vn": "cảm ơn sự giúp đỡ"
+      },
+      {
+        "zh": "表示感谢",
+        "py": "biǎoshì gǎnxiè",
+        "vn": "bày tỏ lòng cảm ơn"
+      },
+      {
+        "zh": "感谢你的关心",
+        "py": "gǎnxiè nǐ de guānxīn",
+        "vn": "cảm ơn sự quan tâm của bạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "感谢 + ai + (的 + N)",
+        "m": "Cảm ơn ai (vì điều gì)"
+      },
+      {
+        "s": "感谢 > 谢谢",
+        "m": "感谢 trang trọng hơn, dùng trong phát biểu"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "消息",
+    "py": "xiāoxi",
+    "pos": "Danh từ",
+    "vn": "tin tức",
+    "hv": "tiêu tức",
+    "em": "📰",
+    "lesson": 4,
+    "explain": [
+      "Thông tin mới được truyền đạt về một sự việc nào đó."
+    ],
+    "usage": "Danh từ; thường đi với 好消息, 告诉……消息.",
+    "collo": [
+      "好消息",
+      "告诉消息",
+      "听到消息"
+    ],
+    "ex_zh": "马经理让我告诉大家一个好消息。",
+    "ex_py": "Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi.",
+    "ex_vn": "Giám đốc Mã bảo tôi báo cho mọi người một tin tốt.",
+    "exList": [
+      {
+        "zh": "马经理让我告诉大家一个好消息。",
+        "py": "Mǎ jīnglǐ ràng wǒ gàosu dàjiā yí ge hǎo xiāoxi.",
+        "vn": "Giám đốc Mã bảo tôi báo cho mọi người một tin tốt."
+      },
+      {
+        "zh": "因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。",
+        "py": "Yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+        "vn": "Vì mọi người hoàn thành công việc đúng hạn, công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng."
+      },
+      {
+        "zh": "听到这个消息，大家都非常高兴。",
+        "py": "Tīngdào zhège xiāoxi, dàjiā dōu fēicháng gāoxìng.",
+        "vn": "Nghe được tin này, mọi người đều rất vui."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "息",
+        "p": "xī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "自 trên → 心 dưới",
+        "rad": "心 (tâm)",
+        "mean": "hơi thở, tin tức",
+        "tip": "Bộ 自(mũi, hơi thở) trên 心(tâm) → HƠI THỞ từ trong lòng, mở rộng thành TIN TỨC (thông tin được truyền đi như hơi thở).",
+        "cf": "息 dễ nhầm với 思 (sī – \"suy nghĩ\")",
+        "w": "消息 / 休息 / 信息"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngoài tin này ra, giám đốc Mã còn bảo tôi báo với mọi người một tin vui nữa.",
+        "answer": "除了这件事以外，马经理还让我告诉大家一个好消息。",
+        "answerPy": "Chúle zhè jiàn shì yǐwài, Mǎ jīnglǐ hái ràng wǒ gàosu dàjiā yí gè hǎo xiāoxi.",
+        "note": "让 + ai + V — câu kiêm ngữ, nghĩa là bảo ai làm gì.",
+        "pair": "除了……以外……还……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vừa nghe tin công ty phát thưởng là mọi người đều vui mừng khôn xiết.",
+        "answer": "大家一听到公司发奖金的消息，就都非常高兴。",
+        "answerPy": "Dàjiā yì tīngdào gōngsī fā jiǎngjīn de xiāoxi, jiù dōu fēicháng gāoxìng.",
+        "note": "一 + V + 就 — nghe xong là phản ứng ngay.",
+        "pair": "一……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "好消息",
+        "py": "hǎo xiāoxi",
+        "vn": "tin vui"
+      },
+      {
+        "zh": "听到消息",
+        "py": "tīng dào xiāoxi",
+        "vn": "nghe được tin"
+      },
+      {
+        "zh": "告诉消息",
+        "py": "gàosu xiāoxi",
+        "vn": "báo tin"
+      },
+      {
+        "zh": "坏消息",
+        "py": "huài xiāoxi",
+        "vn": "tin xấu"
+      },
+      {
+        "zh": "一个消息",
+        "py": "yí gè xiāoxi",
+        "vn": "một tin"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "听到 / 告诉 + 消息",
+        "m": "Nghe được / báo tin"
+      },
+      {
+        "s": "好 / 坏 + 消息",
+        "m": "Tin vui / tin xấu"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "按时",
+    "py": "ànshí",
+    "pos": "Phó từ",
+    "vn": "đúng hạn",
+    "hv": "án thời",
+    "em": "⏰",
+    "lesson": 4,
+    "explain": [
+      "Đúng theo thời gian đã quy định, không sớm không muộn."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 按时完成, 按时到.",
+    "collo": [
+      "按时完成",
+      "按时到",
+      "按时起飞"
+    ],
+    "ex_zh": "因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。",
+    "ex_py": "Yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+    "ex_vn": "Vì mọi người hoàn thành công việc đúng hạn, công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.",
+    "exList": [
+      {
+        "zh": "因为大家按时完成了工作，公司决定这个月给每人多发三千元奖金。",
+        "py": "Yīnwèi dàjiā ànshí wánchéngle gōngzuò, gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+        "vn": "Vì mọi người hoàn thành công việc đúng hạn, công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng."
+      },
+      {
+        "zh": "飞机10点按时起飞，请大家不要着急。",
+        "py": "Fēijī shí diǎn ànshí qǐfēi, qǐng dàjiā búyào zháojí.",
+        "vn": "Máy bay 10 giờ cất cánh đúng giờ, mời mọi người đừng vội."
+      },
+      {
+        "zh": "我保证以后会按时到公司。",
+        "py": "Wǒ bǎozhèng yǐhòu huì ànshí dào gōngsī.",
+        "vn": "Tôi cam đoan sau này sẽ đến công ty đúng giờ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "按",
+        "p": "àn",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "扌 (thủ) trái → 安 (an) phải",
+        "rad": "扌 (thủ – tay)",
+        "mean": "theo, ấn",
+        "tip": "Bộ tay 扌 + 安(yên ổn) → dùng TAY giữ cho YÊN, mở rộng thành TUÂN THEO, kết hợp 时(thời gian) thành 按时 = ĐÚNG GIỜ, ĐÚNG HẠN.",
+        "cf": "安 (ān – \"yên\", không có bộ 扌\")",
+        "w": "按时 / 按照 / 按不住"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần bạn hoàn thành đúng hạn, công ty sẽ phát tiền thưởng cho bạn.",
+        "answer": "只要你按时完成，公司就会给你发奖金。",
+        "answerPy": "Zhǐyào nǐ ànshí wánchéng, gōngsī jiù huì gěi nǐ fā jiǎngjīn.",
+        "note": "只要……就…… kết hợp 按时/奖金.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần thời tiết tốt là máy bay sẽ cất cánh đúng giờ lúc 10 giờ, mọi người đừng sốt ruột.",
+        "answer": "只要天气好，飞机10点就会按时起飞，请大家不要着急。",
+        "answerPy": "Zhǐyào tiānqì hǎo, fēijī 10 diǎn jiù huì ànshí qǐfēi, qǐng dàjiā búyào zháojí.",
+        "note": "按时 nhấn việc theo đúng quy định; 准时 (bài 3) nhấn đúng thời điểm.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "按时完成",
+        "py": "ànshí wán chéng",
+        "vn": "hoàn thành đúng hạn"
+      },
+      {
+        "zh": "按时到",
+        "py": "ànshí dào",
+        "vn": "đến đúng giờ"
+      },
+      {
+        "zh": "按时起飞",
+        "py": "ànshí qǐfēi",
+        "vn": "cất cánh đúng giờ"
+      },
+      {
+        "zh": "按时吃药",
+        "py": "ànshí chī yào",
+        "vn": "uống thuốc đúng giờ"
+      },
+      {
+        "zh": "按时上班",
+        "py": "ànshí shàngbān",
+        "vn": "đi làm đúng giờ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "按时 + V",
+        "m": "Làm gì đúng hạn, đúng giờ"
+      },
+      {
+        "s": "按时 ≈ 准时",
+        "m": "准时 nhấn đúng thời điểm, 按时 nhấn đúng quy định"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "奖金",
+    "py": "jiǎngjīn",
+    "pos": "Danh từ",
+    "vn": "tiền thưởng",
+    "hv": "tưởng kim",
+    "em": "💰",
+    "lesson": 4,
+    "explain": [
+      "Số tiền công ty/tổ chức thưởng thêm cho nhân viên khi làm tốt."
+    ],
+    "usage": "Danh từ; thường đi với 发奖金, 多发奖金.",
+    "collo": [
+      "发奖金",
+      "多发奖金",
+      "三千元奖金"
+    ],
+    "ex_zh": "公司决定这个月给每人多发三千元奖金。",
+    "ex_py": "Gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+    "ex_vn": "Công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.",
+    "exList": [
+      {
+        "zh": "公司决定这个月给每人多发三千元奖金。",
+        "py": "Gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.",
+        "vn": "Công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng."
+      },
+      {
+        "zh": "因为工作做得好，我们都拿到了奖金。",
+        "py": "Yīnwèi gōngzuò zuò de hǎo, wǒmen dōu nádàole jiǎngjīn.",
+        "vn": "Vì công việc làm tốt, chúng tôi đều nhận được tiền thưởng."
+      },
+      {
+        "zh": "谢谢你的提醒，我差点儿忘记了发奖金的事。",
+        "py": "Xièxie nǐ de tíxǐng, wǒ chàdiǎnr wàngjìle fā jiǎngjīn de shì.",
+        "vn": "Cảm ơn bạn nhắc nhở, tôi suýt quên chuyện phát tiền thưởng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "奖",
+        "p": "jiǎng",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 9,
+        "ord": "将 trên → 大 dưới",
+        "rad": "大 (đại)",
+        "mean": "khen thưởng",
+        "tip": "Chữ giản thể mang nghĩa KHEN THƯỞNG, kết hợp 金(tiền, vàng) thành 奖金 = TIỀN THƯỞNG.",
+        "cf": "桨 (jiǎng – \"mái chèo\", bộ 木\")",
+        "w": "奖金 / 奖励 / 得奖"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì mọi người hoàn thành đúng hạn, công ty quyết định phát thêm tiền thưởng cho mỗi người.",
+        "answer": "因为大家按时完成了，公司决定给每人多发奖金。",
+        "answerPy": "Yīnwèi dàjiā ànshí wánchéng le, gōngsī juédìng gěi měi rén duō fā jiǎngjīn.",
+        "note": "按时 + 奖金 — kết hợp từ vựng của bài.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì công ty đã phát tiền thưởng, nên tôi thấy nỗ lực của mình rất đáng giá.",
+        "answer": "因为公司发了奖金，所以我觉得自己的努力很值得。",
+        "answerPy": "Yīnwèi gōngsī fāle jiǎngjīn, suǒyǐ wǒ juéde zìjǐ de nǔlì hěn zhídé.",
+        "note": "值得 — đáng, xứng đáng với công sức bỏ ra.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "发奖金",
+        "py": "fā jiǎngjīn",
+        "vn": "phát tiền thưởng"
+      },
+      {
+        "zh": "多发奖金",
+        "py": "duō fā jiǎngjīn",
+        "vn": "thưởng nhiều hơn"
+      },
+      {
+        "zh": "三千元奖金",
+        "py": "sānqiān yuán jiǎngjīn",
+        "vn": "tiền thưởng ba nghìn tệ"
+      },
+      {
+        "zh": "拿到奖金",
+        "py": "ná dào jiǎngjīn",
+        "vn": "nhận được thưởng"
+      },
+      {
+        "zh": "工资和奖金",
+        "py": "gōngzī hé jiǎngjīn",
+        "vn": "lương và thưởng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "发 / 拿到 + 奖金",
+        "m": "Phát / nhận tiền thưởng"
+      },
+      {
+        "s": "số tiền + 奖金",
+        "m": "Tiền thưởng bao nhiêu"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "工资",
+    "py": "gōngzī",
+    "pos": "Danh từ",
+    "vn": "tiền lương",
+    "hv": "công tư",
+    "em": "💵",
+    "lesson": 5,
+    "explain": [
+      "Số tiền được trả định kỳ cho công việc đã làm."
+    ],
+    "usage": "Danh từ; thường đi với 工资和奖金, 工资比较低.",
+    "collo": [
+      "工资和奖金",
+      "工资比较低",
+      "眼睛里只有工资"
+    ],
+    "ex_zh": "不要眼睛里只有工资和奖金。",
+    "ex_py": "Búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.",
+    "ex_vn": "Đừng để trong mắt chỉ có tiền lương và tiền thưởng.",
+    "exList": [
+      {
+        "zh": "不要眼睛里只有工资和奖金。",
+        "py": "Búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.",
+        "vn": "Đừng để trong mắt chỉ có tiền lương và tiền thưởng."
+      },
+      {
+        "zh": "如果工资比较低，你会换工作吗？",
+        "py": "Rúguǒ gōngzī bǐjiào dī, nǐ huì huàn gōngzuò ma?",
+        "vn": "Nếu lương khá thấp, bạn có đổi việc không?"
+      },
+      {
+        "zh": "这份工作的工资虽然不高，但是我能学到很多东西。",
+        "py": "Zhè fèn gōngzuò de gōngzī suīrán bù gāo, dànshì wǒ néng xuédào hěn duō dōngxi.",
+        "vn": "Công việc này lương tuy không cao, nhưng tôi có thể học được rất nhiều thứ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "资",
+        "p": "zī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 10,
+        "ord": "次 trên → 贝 (bối) dưới",
+        "rad": "贝 (bối – tiền của)",
+        "mean": "tiền của, vốn liếng",
+        "tip": "Bộ 贝(tiền của) + 次(thứ tự, biểu âm) → khoản TIỀN được cấp theo kỳ, kết hợp 工(công việc) thành 工资 = TIỀN LƯƠNG.",
+        "cf": "姿 (zī – \"dáng vẻ\", bộ 女\")",
+        "w": "工资 / 资料 / 投资"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Người trẻ khi mới đi làm, đừng để trong mắt chỉ có tiền lương và tiền thưởng.",
+        "answer": "年轻人刚开始工作的时候，不要眼睛里只有工资和奖金。",
+        "answerPy": "Niánqīng rén gāng kāishǐ gōngzuò de shíhou, búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.",
+        "note": "眼睛里只有…… — trong mắt chỉ có….",
+        "pair": "只有……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù lương không cao, tôi cũng không quá nôn nóng đổi việc.",
+        "answer": "尽管工资不高，我也不会太着急换工作。",
+        "answerPy": "Jǐnguǎn gōngzī bù gāo, wǒ yě bú huì tài zháojí huàn gōngzuò.",
+        "note": "尽管……也不会…… ôn lại cấu trúc HSK4.",
+        "pair": "尽管……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "工资比较低",
+        "py": "gōngzī bǐjiào dī",
+        "vn": "lương khá thấp"
+      },
+      {
+        "zh": "工资和奖金",
+        "py": "gōngzī hé jiǎngjīn",
+        "vn": "lương và thưởng"
+      },
+      {
+        "zh": "发工资",
+        "py": "fā gōngzī",
+        "vn": "phát lương"
+      },
+      {
+        "zh": "工资很高",
+        "py": "gōngzī hěn gāo",
+        "vn": "lương rất cao"
+      },
+      {
+        "zh": "一个月的工资",
+        "py": "yí gè yuè de gōngzī",
+        "vn": "lương một tháng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "工资 + 高 / 低",
+        "m": "Lương cao / thấp"
+      },
+      {
+        "s": "发 + 工资",
+        "m": "Trả lương"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "方法",
+    "py": "fāngfǎ",
+    "pos": "Danh từ",
+    "vn": "phương pháp, cách thức",
+    "hv": "phương pháp",
+    "em": "🧭",
+    "lesson": 5,
+    "explain": [
+      "Cách thức, biện pháp để làm việc gì đó."
+    ],
+    "usage": "Danh từ; thường đi với 交流的方法, 找方法.",
+    "collo": [
+      "交流的方法",
+      "找方法",
+      "好方法"
+    ],
+    "ex_zh": "学习与同事交流的方法。",
+    "ex_py": "Xuéxí yǔ tóngshì jiāoliú de fāngfǎ.",
+    "ex_vn": "Học cách trao đổi với đồng nghiệp.",
+    "exList": [
+      {
+        "zh": "学习与同事交流的方法。",
+        "py": "Xuéxí yǔ tóngshì jiāoliú de fāngfǎ.",
+        "vn": "Học cách trao đổi với đồng nghiệp."
+      },
+      {
+        "zh": "要想完全解决这个难题，还需要找更好的办法。",
+        "py": "Yào xiǎng wánquán jiějué zhège nántí, hái xūyào zhǎo gèng hǎo de bànfǎ.",
+        "vn": "Muốn giải quyết hoàn toàn vấn đề khó này, còn cần tìm cách tốt hơn."
+      },
+      {
+        "zh": "在工作中，应该根据不同的人、不同的事选择不同的方法。",
+        "py": "Zài gōngzuò zhōng, yīnggāi gēnjù bùtóng de rén, bùtóng de shì xuǎnzé bùtóng de fāngfǎ.",
+        "vn": "Trong công việc, nên căn cứ vào từng người, từng việc khác nhau để chọn phương pháp khác nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "法",
+        "p": "fǎ",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "氵 (thủy) trái → 去 (khứ) phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "phép tắc, cách thức",
+        "tip": "Bộ nước 氵 (công bằng như mặt nước) + 去(đi theo) → PHÉP TẮC công bằng để noi theo, kết hợp 方(phương hướng) thành 方法 = PHƯƠNG PHÁP.",
+        "cf": "法 dễ nhầm với 去 (qù – \"đi\")",
+        "w": "方法 / 办法 / 法律"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nên căn cứ vào tính cách, năng lực của từng người để chọn phương pháp phù hợp giúp họ giải quyết vấn đề.",
+        "answer": "要了解每个人的性格、能力，这样才能选择合适的方法帮助他们解决问题。",
+        "answerPy": "Yào liǎojiě měi ge rén de xìnggé, nénglì, zhèyàng cái néng xuǎnzé héshì de fāngfǎ bāngzhù tāmen jiějué wèntí.",
+        "note": "选择合适的方法 — chọn phương pháp phù hợp.",
+        "pair": "……，才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có vấn đề về luật pháp, tôi có thể giới thiệu cho bạn một luật sư.",
+        "answer": "如果你在法律上有什么问题，我可以给你介绍一位律师。",
+        "answerPy": "Rúguǒ nǐ zài fǎlǜ shang yǒu shénme wèntí, wǒ kěyǐ gěi nǐ jièshào yí wèi lǜshī.",
+        "note": "法律 (cùng chữ 法 với 方法), ôn lại từ vựng Bài 3.",
+        "pair": "如果……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "好方法",
+        "py": "hǎo fāngfǎ",
+        "vn": "cách hay"
+      },
+      {
+        "zh": "找方法",
+        "py": "zhǎo fāngfǎ",
+        "vn": "tìm cách"
+      },
+      {
+        "zh": "交流的方法",
+        "py": "jiāoliú de fāngfǎ",
+        "vn": "cách giao tiếp"
+      },
+      {
+        "zh": "学习方法",
+        "py": "xuéxí fāngfǎ",
+        "vn": "phương pháp học"
+      },
+      {
+        "zh": "用这个方法",
+        "py": "yòng zhège fāngfǎ",
+        "vn": "dùng cách này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 的 + 方法",
+        "m": "Cách / phương pháp làm gì"
+      },
+      {
+        "s": "用 + 方法 + V",
+        "m": "Dùng cách nào để làm gì"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "知识",
+    "py": "zhīshi",
+    "pos": "Danh từ",
+    "vn": "kiến thức",
+    "hv": "tri thức",
+    "em": "📚",
+    "lesson": 5,
+    "explain": [
+      "Những điều hiểu biết, học được qua học tập/trải nghiệm."
+    ],
+    "usage": "Danh từ; thường đi với 专业知识, 积累知识.",
+    "collo": [
+      "专业知识",
+      "积累知识",
+      "学到知识"
+    ],
+    "ex_zh": "积累专业知识，这些比收入重要多了。",
+    "ex_py": "Jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.",
+    "ex_vn": "Tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều.",
+    "exList": [
+      {
+        "zh": "积累专业知识，这些比收入重要多了。",
+        "py": "Jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào duō le.",
+        "vn": "Tích lũy kiến thức chuyên môn, những điều này quan trọng hơn thu nhập nhiều."
+      },
+      {
+        "zh": "这份工作能让我学到很多新知识。",
+        "py": "Zhè fèn gōngzuò néng ràng wǒ xuédào hěn duō xīn zhīshi.",
+        "vn": "Công việc này có thể giúp tôi học được nhiều kiến thức mới."
+      },
+      {
+        "zh": "我想用我的知识帮助别人。",
+        "py": "Wǒ xiǎng yòng wǒ de zhīshi bāngzhù biéren.",
+        "vn": "Tôi muốn dùng kiến thức của mình để giúp đỡ người khác."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "识",
+        "p": "shí",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 7,
+        "ord": "讠 (ngôn) trái → 只 phải",
+        "rad": "讠 (ngôn – lời nói)",
+        "mean": "biết, nhận thức",
+        "tip": "Bộ lời nói 讠 + 只(biểu âm) → dùng LỜI để truyền đạt hiểu biết, kết hợp 知(biết) thành 知识 = KIẾN THỨC.",
+        "cf": "织 (zhī – \"dệt\", bộ 纟\")",
+        "w": "知识 / 认识 / 常识"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mấy năm đầu đi làm, không những phải học cách trao đổi với đồng nghiệp, mà còn phải tích lũy kiến thức chuyên môn — những cái đó quan trọng hơn thu nhập nhiều.",
+        "answer": "工作的前几年，不但要学习与同事交流的方法，而且要积累专业知识，这些比收入重要得多。",
+        "answerPy": "Gōngzuò de qián jǐ nián, búdàn yào xuéxí yǔ tóngshì jiāoliú de fāngfǎ, érqiě yào jīlěi zhuānyè zhīshi, zhèxiē bǐ shōurù zhòngyào de duō.",
+        "note": "Ba từ bài 3 quay lại: 与, 专业, 收入.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù kiến thức chuyên môn phong phú đến đâu, cũng cần có trách nhiệm với công việc.",
+        "answer": "不管专业知识多丰富，也需要对工作有责任心。",
+        "answerPy": "Bùguǎn zhuānyè zhīshi duō fēngfù, yě xūyào duì gōngzuò yǒu zérènxīn.",
+        "note": "不管……也需要…… kết hợp nhiều từ vựng của bài.",
+        "pair": "不管……也……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "专业知识",
+        "py": "zhuānyè zhīshi",
+        "vn": "kiến thức chuyên môn"
+      },
+      {
+        "zh": "积累知识",
+        "py": "jīlěi zhīshi",
+        "vn": "tích lũy kiến thức"
+      },
+      {
+        "zh": "学到知识",
+        "py": "xué dào zhīshi",
+        "vn": "học được kiến thức"
+      },
+      {
+        "zh": "知识丰富",
+        "py": "zhīshi fēngfù",
+        "vn": "kiến thức phong phú"
+      },
+      {
+        "zh": "书上的知识",
+        "py": "shū shàng de zhīshi",
+        "vn": "kiến thức trong sách"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "积累 / 学到 + 知识",
+        "m": "Tích lũy / học được kiến thức"
+      },
+      {
+        "s": "专业 + 知识",
+        "m": "Kiến thức chuyên môn — 专业 là từ bài 3"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "不得不",
+    "py": "bùdébù",
+    "pos": "Phó từ",
+    "vn": "phải, không thể không",
+    "hv": "bất đắc bất",
+    "em": "😤",
+    "lesson": 5,
+    "explain": [
+      "Diễn tả việc bắt buộc phải làm điều gì đó dù không muốn, không còn lựa chọn khác."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 不得不去做, 不得不换工作.",
+    "collo": [
+      "不得不去做",
+      "不得不换",
+      "不得不接受"
+    ],
+    "ex_zh": "我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。",
+    "ex_py": "Wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.",
+    "ex_vn": "Chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích.",
+    "exList": [
+      {
+        "zh": "我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。",
+        "py": "Wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.",
+        "vn": "Chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích."
+      },
+      {
+        "zh": "没想到那天突然下起了大雨，所以他不得不又在这里住了一晚上。",
+        "py": "Méi xiǎngdào nà tiān tūrán xiàqǐle dàyǔ, suǒyǐ tā bù dé bù yòu zài zhèli zhùle yì wǎnshang.",
+        "vn": "Không ngờ hôm đó đột nhiên đổ mưa to, nên anh ấy đành phải ở lại đây thêm một đêm nữa."
+      },
+      {
+        "zh": "因为公司需要，我不得不换一个新的工作环境。",
+        "py": "Yīnwèi gōngsī xūyào, wǒ bùdébù huàn yí ge xīn de gōngzuò huánjìng.",
+        "vn": "Vì công ty cần, tôi phải đổi sang một môi trường làm việc mới."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "得",
+        "p": "dé",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "彳 (xích) trái → 旦+寸 phải",
+        "rad": "彳 (xích – bước chân)",
+        "mean": "được, phải",
+        "tip": "Cụm cố định 不得不 (không được không) = PHẢI, BẤT ĐẮC DĨ — hai lần phủ định tạo thành ý khẳng định mạnh về sự bắt buộc.",
+        "cf": "待 (dài – \"chờ đợi\", cũng có bộ 彳\")",
+        "w": "不得不 / 得到 / 舍不得"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Rất nhiều khi, dù không muốn làm chúng ta vẫn buộc phải làm những công việc đó.",
+        "answer": "很多时候，即使我们不愿意，也不得不去做那些工作。",
+        "answerPy": "Hěn duō shíhou, jíshǐ wǒmen bú yuànyì, yě bùdébù qù zuò nàxiē gōngzuò.",
+        "note": "即使……也…… — nhượng bộ việc giả định; 不得不 mang ý miễn cưỡng.",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù không muốn, cô ấy cũng phải chấp nhận công việc mới này.",
+        "answer": "尽管不愿意，她也不得不接受这份新工作。",
+        "answerPy": "Jǐnguǎn bú yuànyì, tā yě bùdébù jiēshòu zhè fèn xīn gōngzuò.",
+        "note": "尽管……也不得不…… ôn lại cấu trúc HSK4.",
+        "pair": "尽管……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "不得不去做",
+        "py": "bùdébù qù zuò",
+        "vn": "buộc phải làm"
+      },
+      {
+        "zh": "不得不换",
+        "py": "bùdébù huàn",
+        "vn": "đành phải đổi"
+      },
+      {
+        "zh": "不得不接受",
+        "py": "bùdébù jiēshòu",
+        "vn": "buộc phải chấp nhận"
+      },
+      {
+        "zh": "不得不走",
+        "py": "bùdébù zǒu",
+        "vn": "đành phải đi"
+      },
+      {
+        "zh": "不得不承认",
+        "py": "bùdébù chéngrèn",
+        "vn": "buộc phải thừa nhận"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 不得不 + V",
+        "m": "Ai đó buộc phải làm gì (không còn cách khác)"
+      },
+      {
+        "s": "不得不 ≠ 必须",
+        "m": "不得不 mang ý miễn cưỡng; 必须 là yêu cầu bắt buộc"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "甚至",
+    "py": "shènzhì",
+    "pos": "Liên từ",
+    "vn": "thậm chí",
+    "hv": "thậm chí",
+    "em": "‼️",
+    "lesson": 5,
+    "explain": [
+      "Nhấn mạnh một trường hợp nổi bật, đặt trước ví dụ cuối cùng của danh từ/động từ/vế câu song song để làm nổi bật mục này."
+    ],
+    "usage": "甚至 + (是) + trường hợp nổi bật; có thể kết hợp 甚至连……都/也.",
+    "collo": [
+      "甚至可以",
+      "甚至是",
+      "甚至会"
+    ],
+    "ex_zh": "很多时候，我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。",
+    "ex_py": "Hěn duō shíhou, wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.",
+    "ex_vn": "Rất nhiều lúc, chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích.",
+    "exList": [
+      {
+        "zh": "很多时候，我们不得不去做一些自己不愿意做甚至是非常不喜欢的工作。",
+        "py": "Hěn duō shíhou, wǒmen bù dé bú qù zuò yìxiē zìjǐ bú yuànyì zuò shènzhì shì fēicháng bù xǐhuan de gōngzuò.",
+        "vn": "Rất nhiều lúc, chúng ta không thể không làm một số việc mà bản thân không muốn thậm chí rất không thích."
+      },
+      {
+        "zh": "这个房子离您公司也不远，您可以坐公共汽车甚至可以骑自行车上班。",
+        "py": "Zhège fángzi lí nín gōngsī yě bù yuǎn, nín kěyǐ zuò gōnggòng qìchē shènzhì kěyǐ qí zìxíngchē shàngbān.",
+        "vn": "Ngôi nhà này cách công ty anh cũng không xa, anh có thể đi xe buýt thậm chí có thể đạp xe đạp đi làm."
+      },
+      {
+        "zh": "迟到会让别人觉得你没有责任心，使你错过重要的机会，甚至会让别人不再相信你。",
+        "py": "Chídào huì ràng biéren juéde nǐ méiyǒu zérènxīn, shǐ nǐ cuòguò zhòngyào de jīhuì, shènzhì huì ràng biéren bú zài xiāngxìn nǐ.",
+        "vn": "Đến muộn sẽ khiến người khác cảm thấy bạn không có trách nhiệm, khiến bạn bỏ lỡ cơ hội quan trọng, thậm chí sẽ khiến người khác không còn tin bạn nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "甚",
+        "p": "shèn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "甘 trên → 匹 (biến thể) dưới",
+        "rad": "甘 (cam – ngọt)",
+        "mean": "quá mức, rất",
+        "tip": "Chữ mang nghĩa QUÁ MỨC, RẤT NHIỀU; kết hợp 至(đến mức) thành 甚至 = THẬM CHÍ (đến mức độ nổi bật nhất).",
+        "cf": "甚 dễ nhầm với 其 (qí – \"cái đó\")",
+        "w": "甚至 / 甚至于 / 幸甚"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Họ giống nhau đến mức thậm chí người thân cũng không phân biệt được.",
+        "answer": "她们俩长得太像了，甚至连家人都认不出来。",
+        "answerPy": "Tāmen liǎ zhǎng de tài xiàng le, shènzhì lián jiārén dōu rènbuchūlái.",
+        "note": "甚至连……都…… — thậm chí ngay cả … cũng….",
+        "pair": "连……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn thân của tôi thậm chí không đến tham gia lễ cưới của tôi, điều đó khiến tôi rất buồn.",
+        "answer": "我的好朋友甚至没有来参加我的婚礼，这让我很难过。",
+        "answerPy": "Wǒ de hǎo péngyou shènzhì méiyǒu lái cānjiā wǒ de hūnlǐ, zhè ràng wǒ hěn nánguò.",
+        "note": "甚至 nhấn mạnh trường hợp bất ngờ/nổi bật.",
+        "pair": "甚至……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "甚至可以",
+        "py": "shènzhì kěyǐ",
+        "vn": "thậm chí có thể"
+      },
+      {
+        "zh": "甚至是",
+        "py": "shènzhì shì",
+        "vn": "thậm chí là"
+      },
+      {
+        "zh": "甚至会",
+        "py": "shènzhì huì",
+        "vn": "thậm chí sẽ"
+      },
+      {
+        "zh": "甚至没有",
+        "py": "shènzhì méiyǒu",
+        "vn": "thậm chí không có"
+      },
+      {
+        "zh": "甚至忘了",
+        "py": "shènzhì wàng le",
+        "vn": "thậm chí quên mất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "……，甚至 + mệnh đề",
+        "m": "…, thậm chí … (nêu mức cao nhất)"
+      },
+      {
+        "s": "不但……，甚至……",
+        "m": "Không những …, thậm chí …"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "责任",
+    "py": "zérèn",
+    "pos": "Danh từ",
+    "vn": "trách nhiệm",
+    "hv": "trách nhiệm",
+    "em": "🎯",
+    "lesson": 5,
+    "explain": [
+      "Nghĩa vụ phải hoàn thành, phải chịu trách nhiệm về việc gì đó."
+    ],
+    "usage": "Danh từ; thường đi với 责任心, 有责任.",
+    "collo": [
+      "责任心",
+      "有责任",
+      "没有责任心"
+    ],
+    "ex_zh": "如果对工作没有责任心，也很难把工作做好。",
+    "ex_py": "Rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.",
+    "ex_vn": "Nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.",
+    "exList": [
+      {
+        "zh": "如果对工作没有责任心，也很难把工作做好。",
+        "py": "Rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.",
+        "vn": "Nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc."
+      },
+      {
+        "zh": "两个人在一起生活，都要对家有责任感。",
+        "py": "Liǎng ge rén zài yìqǐ shēnghuó, dōu yào duì jiā yǒu zérèngǎn.",
+        "vn": "Hai người sống cùng nhau, đều phải có trách nhiệm với gia đình."
+      },
+      {
+        "zh": "你觉得常常换工作的人没有责任心吗？",
+        "py": "Nǐ juéde chángcháng huàn gōngzuò de rén méiyǒu zérènxīn ma?",
+        "vn": "Bạn thấy người thường xuyên đổi việc là không có trách nhiệm à?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "责",
+        "p": "zé",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "龶 trên → 贝 (bối) dưới",
+        "rad": "贝 (bối – tiền, của cải)",
+        "mean": "trách nhiệm",
+        "tip": "Bộ 贝 (nghĩa vụ liên quan của cải) → mở rộng thành TRÁCH NHIỆM, kết hợp 任(gánh vác) thành 责任 = TRÁCH NHIỆM.",
+        "cf": "责 dễ nhầm với 素 (sù – \"tố chất\")",
+        "w": "责任 / 负责 / 责任心"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Một người dù năng lực cao đến đâu, nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.",
+        "answer": "一个人即使能力再高，如果对工作没有责任心，也很难把工作做好。",
+        "answerPy": "Yí ge rén jíshǐ nénglì zài gāo, rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.",
+        "note": "即使……如果……也…… — kết hợp nhiều cấu trúc câu phức.",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hai người sống chung, không những phải hiểu nhau, mà còn phải có trách nhiệm với gia đình.",
+        "answer": "两个人在一起生活，不仅要互相理解，而且都要对家有责任心。",
+        "answerPy": "Liǎng gè rén zài yìqǐ shēnghuó, bùjǐn yào hùxiāng lǐjiě, érqiě dōu yào duì jiā yǒu zérènxīn.",
+        "note": "互相理解 là từ bài 2 — 对 + N + 有责任心 là kết hợp cố định.",
+        "pair": "不仅……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "责任心",
+        "py": "zérènxīn",
+        "vn": "tinh thần trách nhiệm"
+      },
+      {
+        "zh": "有责任",
+        "py": "yǒu zérèn",
+        "vn": "có trách nhiệm"
+      },
+      {
+        "zh": "没有责任心",
+        "py": "méiyǒu zérènxīn",
+        "vn": "thiếu tinh thần trách nhiệm"
+      },
+      {
+        "zh": "负责任",
+        "py": "fùzé rèn",
+        "vn": "chịu trách nhiệm"
+      },
+      {
+        "zh": "对家有责任",
+        "py": "duì jiā yǒu zérèn",
+        "vn": "có trách nhiệm với gia đình"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "对 + N + 有责任",
+        "m": "Có trách nhiệm với cái gì"
+      },
+      {
+        "s": "有 / 没有 + 责任心",
+        "m": "Có / thiếu tinh thần trách nhiệm"
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "zh": "王",
+    "py": "Wáng",
+    "pos": "Danh từ riêng",
+    "vn": "Vương (họ)",
+    "hv": "Vương",
+    "em": "🧑‍💼",
+    "lesson": 2,
+    "explain": [
+      "Họ của nhân vật 王经理 trong hội thoại 2 và 3."
+    ],
+    "usage": "Danh từ riêng chỉ họ người, thường ghép với 经理 thành 王经理.",
+    "collo": [
+      "王经理",
+      "王经理说"
+    ],
+    "ex_zh": "王经理和小李在说工作。",
+    "ex_py": "Wáng jīnglǐ hé Xiǎo Lǐ zài shuō gōngzuò.",
+    "ex_vn": "Giám đốc Vương và Tiểu Lý đang nói chuyện công việc.",
+    "exList": [
+      {
+        "zh": "王经理和小李在说工作。",
+        "py": "Wáng jīnglǐ hé Xiǎo Lǐ zài shuō gōngzuò.",
+        "vn": "Giám đốc Vương và Tiểu Lý đang nói chuyện công việc."
+      }
+    ]
+  },
+  {
+    "n": 33,
+    "zh": "马",
+    "py": "Mǎ",
+    "pos": "Danh từ riêng",
+    "vn": "Mã (họ)",
+    "hv": "Mã",
+    "em": "🧑‍💻",
+    "lesson": 3,
+    "explain": [
+      "Họ của nhân vật 马经理 trong hội thoại 3 và bài khoá 4."
+    ],
+    "usage": "Danh từ riêng chỉ họ người, thường ghép với 经理 thành 马经理.",
+    "collo": [
+      "马经理",
+      "马经理说"
+    ],
+    "ex_zh": "王经理和马经理在说工作。",
+    "ex_py": "Wáng jīnglǐ hé Mǎ jīnglǐ zài shuō gōngzuò.",
+    "ex_vn": "Giám đốc Vương và giám đốc Mã đang nói chuyện công việc.",
+    "exList": [
+      {
+        "zh": "王经理和马经理在说工作。",
+        "py": "Wáng jīnglǐ hé Mǎ jīnglǐ zài shuō gōngzuò.",
+        "vn": "Giám đốc Vương và giám đốc Mã đang nói chuyện công việc."
+      }
+    ]
+  },
+  {
+    "n": 34,
+    "zh": "王红",
+    "py": "Wáng Hóng",
+    "pos": "Danh từ riêng",
+    "vn": "Vương Hồng (tên người)",
+    "hv": "Vương Hồng",
+    "em": "👩",
+    "lesson": 2,
+    "explain": [
+      "Tên riêng nhắc đến trong bài tập luyện 甚至/提醒 (bạn của người nói)."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "王红的生日"
+    ],
+    "ex_zh": "今天是王红的生日，记得给她打个电话。",
+    "ex_py": "Jīntiān shì Wáng Hóng de shēngrì, jìde gěi tā dǎ ge diànhuà.",
+    "ex_vn": "Hôm nay là sinh nhật Vương Hồng, nhớ gọi điện cho cô ấy.",
+    "exList": [
+      {
+        "zh": "今天是王红的生日，记得给她打个电话。",
+        "py": "Jīntiān shì Wáng Hóng de shēngrì, jìde gěi tā dǎ ge diànhuà.",
+        "vn": "Hôm nay là sinh nhật Vương Hồng, nhớ gọi điện cho cô ấy."
+      }
+    ]
+  }
 ];
 
 var wuData = [

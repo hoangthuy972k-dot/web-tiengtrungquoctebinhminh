@@ -3,3413 +3,3440 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
- {
-  "n": 1,
-  "zh": "法律",
-  "py": "fǎlǜ",
-  "pos": "Danh từ",
-  "vn": "pháp luật, luật",
-  "hv": "pháp luật",
-  "em": "⚖️",
-  "lesson": 1,
-  "explain": [
-   "Hệ thống quy tắc do nhà nước ban hành, mọi người phải tuân theo."
-  ],
-  "usage": "Danh từ; thường đi với động từ 学/懂/了解: 学法律, 懂法律.",
-  "collo": [
-   "学法律",
-   "懂法律",
-   "法律专业"
-  ],
-  "ex_zh": "他学的是新闻，我学的是法律。",
-  "ex_py": "Tā xué de shì xīnwén, wǒ xué de shì fǎlǜ.",
-  "ex_vn": "Anh ấy học báo chí, tôi học luật.",
-  "exList": [
-   {
-    "zh": "他学的是新闻，我学的是法律，我和他不是一个班。",
-    "py": "Tā xué de shì xīnwén, wǒ xué de shì fǎlǜ, wǒ hé tā bú shì yí ge bān.",
-    "vn": "Anh ấy học báo chí, tôi học luật, tôi và anh ấy không cùng lớp."
-   },
-   {
-    "zh": "你家里怎么有这么多关于法律的书？",
-    "py": "Nǐ jiā li zěnme yǒu zhème duō guānyú fǎlǜ de shū?",
-    "vn": "Sao nhà bạn có nhiều sách về pháp luật vậy?"
-   },
-   {
-    "zh": "我最近对法律特别感兴趣。",
-    "py": "Wǒ zuìjìn duì fǎlǜ tèbié gǎn xìngqù.",
-    "vn": "Gần đây tôi rất hứng thú với pháp luật."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "律",
-    "p": "lǜ",
-    "type": "左右结构 · Trái-phải",
-    "st": 9,
-    "ord": "彳 (xích) trái → 聿 (duật) phải",
-    "rad": "彳 (xích – bước chân nhỏ)",
-    "mean": "luật lệ, quy tắc",
-    "tip": "Bộ 彳 (đi, hành động) + 聿 (cây bút, ghi chép) → những điều được VIẾT RA để mọi người phải THEO đó mà hành động = LUẬT.",
-    "cf": "律 dễ nhầm với 津 (jīn – bến đò, cũng có nét tương tự bên phải)",
-    "w": "法律 / 规律 / 律师"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Cô ấy không những học giỏi mà tính cách cũng rất tốt.",
-    "answer": "她不仅学习好，性格也很好。",
-    "answerPy": "Tā bùjǐn xuéxí hǎo, xìnggé yě hěn hǎo.",
-    "note": "不仅……也…… — không những … mà còn ….",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Anh ấy học luật, còn tôi học báo chí.",
-    "answer": "他学法律，我学新闻。",
-    "answerPy": "Tā xué fǎlǜ, wǒ xué xīnwén.",
-    "note": "Câu so sánh song song đơn giản, ôn lại cấu trúc HSK2-3."
-   }
-  ],
-  "note": "法 = pháp, 律 = luật. Hệ thống quy tắc do nhà nước đặt ra.",
-  "colloFull": [
-   {
-    "zh": "学法律",
-    "py": "xué fǎlǜ",
-    "vn": "học luật"
-   },
-   {
-    "zh": "懂法律",
-    "py": "dǒng fǎlǜ",
-    "vn": "hiểu luật"
-   },
-   {
-    "zh": "法律专业",
-    "py": "fǎlǜ zhuānyè",
-    "vn": "chuyên ngành luật"
-   },
-   {
-    "zh": "遵守法律",
-    "py": "zūnshǒu fǎlǜ",
-    "vn": "tuân thủ pháp luật"
-   },
-   {
-    "zh": "法律问题",
-    "py": "fǎlǜ wèntí",
-    "vn": "vấn đề pháp lý"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 学 / 懂 + 法律",
-    "m": "Ai đó học / hiểu luật"
-   },
-   {
-    "s": "……的是法律",
-    "m": "Cái mà … học là luật"
-   }
-  ]
- },
- {
-  "n": 2,
-  "zh": "俩",
-  "py": "liǎ",
-  "pos": "Số từ",
-  "vn": "hai (người)",
-  "hv": "lưỡng",
-  "em": "👫",
-  "lesson": 1,
-  "explain": [
-   "= 两个, thường đi kèm đại từ nhân xưng (我们俩, 你们俩, 他们俩), không dùng thêm lượng từ 个 sau nó."
-  ],
-  "usage": "Đại từ + 俩: 我们俩, 你们俩, 他们俩 — KHÔNG nói 我们俩个.",
-  "collo": [
-   "我们俩",
-   "你们俩",
-   "他们俩"
-  ],
-  "ex_zh": "那你们俩是怎么认识的？",
-  "ex_py": "Nà nǐmen liǎ shì zěnme rènshi de?",
-  "ex_vn": "Vậy hai bạn quen nhau thế nào?",
-  "exList": [
-   {
-    "zh": "那你们俩是怎么认识的？",
-    "py": "Nà nǐmen liǎ shì zěnme rènshi de?",
-    "vn": "Vậy hai bạn quen nhau thế nào?"
-   },
-   {
-    "zh": "我们俩有很多共同的爱好。",
-    "py": "Wǒmen liǎ yǒu hěn duō gòngtóng de àihào.",
-    "vn": "Hai chúng tôi có nhiều sở thích chung."
-   },
-   {
-    "zh": "他们俩几乎没因为什么事红过脸。",
-    "py": "Tāmen liǎ jīhū méi yīnwèi shénme shì hóngguo liǎn.",
-    "vn": "Hai người họ hầu như chưa từng cãi nhau vì chuyện gì."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "俩",
-    "p": "liǎ",
-    "type": "左右结构 · Trái-phải",
-    "st": 9,
-    "ord": "亻 (nhân) trái → 两 (lưỡng) phải",
-    "rad": "亻 (nhân – người)",
-    "mean": "hai người",
-    "tip": "Bộ người 亻 + 两 (hai) → chỉ HAI NGƯỜI, đã có sẵn nghĩa \"hai\" nên không cần thêm lượng từ 个 phía sau nữa.",
-    "cf": "俩 khác 两 ở chỗ 俩 luôn đi với đại từ nhân xưng, không đứng trước danh từ trực tiếp",
-    "w": "我们俩 / 你们俩 / 哥俩"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Hai chúng tôi vừa mới quen nhau, còn chưa hiểu rõ về nhau lắm.",
-    "answer": "我们俩刚认识，还不太熟悉。",
-    "answerPy": "Wǒmen liǎ gāng rènshi, hái bú tài shúxi.",
-    "note": "刚 — vừa mới (hành động xảy ra không lâu trước đó)."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Hai bạn đó từ trước đến giờ chưa từng cãi nhau.",
-    "answer": "他们俩从来没吵过架。",
-    "answerPy": "Tāmen liǎ cónglái méi chǎoguo jià.",
-    "note": "从来 + 没…过 — từ trước đến giờ chưa từng."
-   }
-  ],
-  "note": "= 两个. Đã có sẵn nghĩa \"hai\" nên KHÔNG thêm 个 phía sau.",
-  "colloFull": [
-   {
-    "zh": "我们俩",
-    "py": "wǒmen liǎ",
-    "vn": "hai chúng tôi"
-   },
-   {
-    "zh": "你们俩",
-    "py": "nǐmen liǎ",
-    "vn": "hai bạn"
-   },
-   {
-    "zh": "他们俩",
-    "py": "tāmen liǎ",
-    "vn": "hai người họ"
-   },
-   {
-    "zh": "咱们俩",
-    "py": "zánmen liǎ",
-    "vn": "hai ta"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Đại từ + 俩 + V",
-    "m": "Hai người ai đó làm gì"
-   },
-   {
-    "s": "✗ 我们俩个 → ✓ 我们俩",
-    "m": "Không thêm 个 sau 俩"
-   }
-  ]
- },
- {
-  "n": 3,
-  "zh": "印象",
-  "py": "yìnxiàng",
-  "pos": "Danh từ",
-  "vn": "ấn tượng",
-  "hv": "ấn tượng",
-  "em": "💭",
-  "lesson": 1,
-  "explain": [
-   "Cảm nhận, hình ảnh còn đọng lại trong đầu về một người/sự việc sau khi tiếp xúc."
-  ],
-  "usage": "Danh từ; thường đi với 对…印象(很)深/好/不错: 对他印象很深.",
-  "collo": [
-   "印象很深",
-   "第一印象",
-   "对……印象不错"
-  ],
-  "ex_zh": "我对他印象很深。",
-  "ex_py": "Wǒ duì tā yìnxiàng hěn shēn.",
-  "ex_vn": "Tôi có ấn tượng rất sâu sắc về anh ấy.",
-  "exList": [
-   {
-    "zh": "他一个人踢进两个球，我对他印象很深。",
-    "py": "Tā yí ge rén tījìn liǎng ge qiú, wǒ duì tā yìnxiàng hěn shēn.",
-    "vn": "Anh ấy một mình đá lọt hai bàn, tôi có ấn tượng rất sâu sắc về anh ấy."
-   },
-   {
-    "zh": "经理对我印象不错。",
-    "py": "Jīnglǐ duì wǒ yìnxiàng búcuò.",
-    "vn": "Giám đốc có ấn tượng khá tốt về tôi."
-   },
-   {
-    "zh": "第一印象很难改变。",
-    "py": "Dì-yī yìnxiàng hěn nán gǎibiàn.",
-    "vn": "Ấn tượng ban đầu rất khó thay đổi."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "印",
-    "p": "yìn",
-    "type": "左右结构 · Trái-phải",
-    "st": 5,
-    "ord": "爫 trên trái → 卩 dưới phải",
-    "rad": "卩 (tiết – dấu triện, đầu gối quỳ)",
-    "mean": "in, dấu ấn",
-    "tip": "Hình tượng bàn tay 爫 ấn con dấu 卩 xuống → để lại DẤU VẾT, mở rộng thành ẤN TƯỢNG (dấu vết trong tâm trí).",
-    "cf": "却 (què – cũng có bộ 卩 bên phải)",
-    "w": "印象 / 打印 / 印章"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Anh ấy không những đá bóng giỏi, mà tính cách cũng rất tốt, nên tôi có ấn tượng rất sâu sắc.",
-    "answer": "他不仅足球踢得好，性格也很好，所以我对他印象很深。",
-    "answerPy": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě hěn hǎo, suǒyǐ wǒ duì tā yìnxiàng hěn shēn.",
-    "note": "不仅……也…… kết hợp với 所以 nêu kết quả.",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Ngay từ lần đầu gặp mặt, cô ấy đã để lại cho tôi một ấn tượng rất tốt.",
-    "answer": "第一次见面，她就给我留下了很好的印象。",
-    "answerPy": "Dì-yī cì jiànmiàn, tā jiù gěi wǒ liúxiàle hěn hǎo de yìnxiàng.",
-    "note": "给……留下印象 — để lại ấn tượng cho ai."
-   }
-  ],
-  "note": "Hình ảnh còn đọng lại trong đầu sau khi tiếp xúc.",
-  "colloFull": [
-   {
-    "zh": "印象很深",
-    "py": "yìnxiàng hěn shēn",
-    "vn": "ấn tượng rất sâu"
-   },
-   {
-    "zh": "第一印象",
-    "py": "dì-yī yìnxiàng",
-    "vn": "ấn tượng đầu tiên"
-   },
-   {
-    "zh": "留下印象",
-    "py": "liúxià yìnxiàng",
-    "vn": "để lại ấn tượng"
-   },
-   {
-    "zh": "印象不错",
-    "py": "yìnxiàng búcuò",
-    "vn": "ấn tượng khá tốt"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 对 + O + 印象 + 很深 / 不错",
-    "m": "Ai đó có ấn tượng … về ai/cái gì"
-   },
-   {
-    "s": "给 + người + 留下 + … 的印象",
-    "m": "Để lại cho ai ấn tượng …"
-   }
-  ]
- },
- {
-  "n": 4,
-  "zh": "深",
-  "py": "shēn",
-  "pos": "Tính từ",
-  "vn": "sâu sắc",
-  "hv": "thâm",
-  "em": "🌊",
-  "lesson": 1,
-  "explain": [
-   "Mức độ lớn, mạnh của cảm xúc/ấn tượng; nghĩa gốc chỉ độ sâu vật lý."
-  ],
-  "usage": "Tính từ; thường đi sau 很/印象: 印象很深, 爱得很深.",
-  "collo": [
-   "印象很深",
-   "很深的感情",
-   "水很深"
-  ],
-  "ex_zh": "我对他印象很深。",
-  "ex_py": "Wǒ duì tā yìnxiàng hěn shēn.",
-  "ex_vn": "Tôi có ấn tượng rất sâu sắc về anh ấy.",
-  "exList": [
-   {
-    "zh": "我对他印象很深。",
-    "py": "Wǒ duì tā yìnxiàng hěn shēn.",
-    "vn": "Tôi có ấn tượng rất sâu sắc về anh ấy."
-   },
-   {
-    "zh": "这条河很深，你别下去游泳。",
-    "py": "Zhè tiáo hé hěn shēn, nǐ bié xiàqu yóuyǒng.",
-    "vn": "Con sông này sâu lắm, bạn đừng xuống bơi."
-   },
-   {
-    "zh": "他们俩的感情很深。",
-    "py": "Tāmen liǎ de gǎnqíng hěn shēn.",
-    "vn": "Tình cảm của hai người họ rất sâu đậm."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "深",
-    "p": "shēn",
-    "type": "左右结构 · Trái-phải",
-    "st": 11,
-    "ord": "氵 (thủy) trái → 罙 phải",
-    "rad": "氵 (thủy – nước)",
-    "mean": "sâu",
-    "tip": "Bộ nước 氵 + phần biểu âm 罙 → chỉ mực NƯỚC SÂU, mở rộng nghĩa thành SÂU SẮC (tình cảm, ấn tượng).",
-    "cf": "探 (tàn – \"thăm dò\", cũng có phần bên phải gần giống)",
-    "w": "很深 / 深夜 / 加深"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Ngay cả khi thất bại, ấn tượng sâu sắc mà cô ấy để lại vẫn khiến mọi người ngưỡng mộ.",
-    "answer": "即使失败了，她留下的深刻印象也让人羡慕。",
-    "answerPy": "Jíshǐ shībài le, tā liúxià de shēnkè yìnxiàng yě ràng rén xiànmù.",
-    "note": "即使……也…… — cho dù … thì vẫn ….",
-    "pair": "即使……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cuộc thi bóng đá đó đã để lại ấn tượng sâu sắc trong lòng tôi.",
-    "answer": "那场足球比赛在我心里留下了很深的印象。",
-    "answerPy": "Nà chǎng zúqiú bǐsài zài wǒ xīnli liúxiàle hěn shēn de yìnxiàng.",
-    "note": "(在)……上/里 — chỉ phạm vi (在我心里 = trong lòng tôi)."
-   }
-  ],
-  "note": "Nghĩa gốc: sâu (nước, hố). Nghĩa mở rộng: sâu sắc (tình cảm, ấn tượng).",
-  "colloFull": [
-   {
-    "zh": "印象很深",
-    "py": "yìnxiàng hěn shēn",
-    "vn": "ấn tượng rất sâu"
-   },
-   {
-    "zh": "很深的感情",
-    "py": "hěn shēn de gǎnqíng",
-    "vn": "tình cảm sâu đậm"
-   },
-   {
-    "zh": "水很深",
-    "py": "shuǐ hěn shēn",
-    "vn": "nước rất sâu"
-   },
-   {
-    "zh": "深刻",
-    "py": "shēnkè",
-    "vn": "sâu sắc"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 很 / 特别 + 深",
-    "m": "… rất sâu / sâu sắc"
-   },
-   {
-    "s": "很深的 + N",
-    "m": "… sâu đậm (làm định ngữ)"
-   }
-  ]
- },
- {
-  "n": 5,
-  "zh": "熟悉",
-  "py": "shúxi",
-  "pos": "Động từ",
-  "vn": "hiểu rõ",
-  "hv": "thục tất",
-  "em": "🤝",
-  "lesson": 1,
-  "explain": [
-   "Biết rõ, quen thuộc với một người/sự việc/nơi chốn do đã tiếp xúc nhiều lần."
-  ],
-  "usage": "Động từ; có thể dùng làm tính từ bổ nghĩa: 熟悉 + Đối tượng, hoặc 对……很熟悉.",
-  "collo": [
-   "慢慢熟悉",
-   "对环境熟悉",
-   "熟悉起来"
-  ],
-  "ex_zh": "后来就慢慢熟悉了。",
-  "ex_py": "Hòulái jiù mànman shúxi le.",
-  "ex_vn": "Sau đó thì dần dần quen thân.",
-  "exList": [
-   {
-    "zh": "后来就慢慢熟悉了。",
-    "py": "Hòulái jiù mànman shúxi le.",
-    "vn": "Sau đó thì dần dần quen thân."
-   },
-   {
-    "zh": "我对这儿的环境还不太熟悉。",
-    "py": "Wǒ duì zhèr de huánjìng hái bú tài shúxi.",
-    "vn": "Tôi vẫn chưa quen lắm với môi trường ở đây."
-   },
-   {
-    "zh": "你对这个城市熟悉吗？",
-    "py": "Nǐ duì zhège chéngshì shúxi ma?",
-    "vn": "Bạn có quen thuộc với thành phố này không?"
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "悉",
-    "p": "xī",
-    "type": "上下结构 · Trên-dưới",
-    "st": 11,
-    "ord": "釆 trên → 心 dưới",
-    "rad": "心 (tâm – trái tim)",
-    "mean": "biết rõ, tường tận",
-    "tip": "Bộ tâm 心 (suy nghĩ, để tâm) ở dưới + 釆 (phân biệt từng chi tiết) → ĐỂ TÂM phân biệt kỹ từng chi tiết = HIỂU RÕ, TƯỜNG TẬN.",
-    "cf": "恶 (è – \"xấu\", cũng có bộ 心\" nhưng nghĩa khác hẳn)",
-    "w": "熟悉 / 悉心 / 获悉"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chúng tôi vừa mới chuyển đến đây một tuần, vẫn chưa quen thuộc lắm với môi trường xung quanh.",
-    "answer": "我们刚搬来一个星期，对周围的环境还不太熟悉。",
-    "answerPy": "Wǒmen gāng bānlái yí ge xīngqī, duì zhōuwéi de huánjìng hái bú tài shúxi.",
-    "note": "刚 — vừa mới (nhấn mạnh thời điểm gần đây)."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Dù đã sống ở đây hai mươi năm, anh ấy vẫn chưa quen hết mọi con đường.",
-    "answer": "即使在这儿住了二十年，他也没熟悉所有的路。",
-    "answerPy": "Jíshǐ zài zhèr zhùle èrshí nián, tā yě méi shúxi suǒyǒu de lù.",
-    "note": "即使……也…… — nhấn mạnh việc dù điều kiện lớn (20 năm) vẫn chưa đạt kết quả.",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Biết rõ do đã tiếp xúc nhiều — người, đường sá, môi trường.",
-  "colloFull": [
-   {
-    "zh": "慢慢熟悉",
-    "py": "mànmàn shúxi",
-    "vn": "dần dần quen"
-   },
-   {
-    "zh": "对环境熟悉",
-    "py": "duì huánjìng shúxi",
-    "vn": "quen với môi trường"
-   },
-   {
-    "zh": "熟悉起来",
-    "py": "shúxi qǐlái",
-    "vn": "quen dần lên"
-   },
-   {
-    "zh": "不太熟悉",
-    "py": "bú tài shúxi",
-    "vn": "chưa quen lắm"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 对 + O + (不太) 熟悉",
-    "m": "Ai đó (chưa) quen với cái gì"
-   },
-   {
-    "s": "Sub + 熟悉 + O",
-    "m": "Ai đó hiểu rõ cái gì"
-   }
-  ]
- },
- {
-  "n": 6,
-  "zh": "不仅",
-  "py": "bùjǐn",
-  "pos": "Liên từ",
-  "vn": "không những, chẳng những",
-  "hv": "bất cận",
-  "em": "➕",
-  "lesson": 1,
-  "explain": [
-   "Liên từ dùng ở vế câu thứ nhất, vế câu thứ hai thường dùng 也/还/而且 hô ứng, diễn tả ngoài điều vừa nêu còn có thêm ý khác."
-  ],
-  "usage": "Khi chủ ngữ hai vế giống nhau: Chủ ngữ + 不仅 + VP1，也/还/而且 + VP2. Khi chủ ngữ khác nhau: 不仅 đứng trước chủ ngữ.",
-  "collo": [
-   "不仅……也……",
-   "不仅……还……",
-   "不仅……而且……"
-  ],
-  "ex_zh": "他不仅足球踢得好，性格也不错。",
-  "ex_py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
-  "ex_vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt.",
-  "exList": [
-   {
-    "zh": "他不仅足球踢得好，性格也不错。",
-    "py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
-    "vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt."
-   },
-   {
-    "zh": "两个人共同生活，不仅需要浪漫的爱情，更需要性格上互相吸引。",
-    "py": "Liǎng ge rén gòngtóng shēnghuó, bùjǐn xūyào làngmàn de àiqíng, gèng xūyào xìnggé shang hùxiāng xīyǐn.",
-    "vn": "Hai người sống chung, không những cần tình yêu lãng mạn, mà càng cần sự thu hút lẫn nhau về tính cách."
-   },
-   {
-    "zh": "他不仅身体健康，还成了一名长跑运动员。",
-    "py": "Tā bùjǐn shēntǐ jiànkāng, hái chéngle yì míng chángpǎo yùndòngyuán.",
-    "vn": "Anh ấy không những cơ thể khỏe mạnh, còn trở thành một vận động viên chạy đường dài."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "仅",
-    "p": "jǐn",
-    "type": "左右结构 · Trái-phải",
-    "st": 4,
-    "ord": "亻 (nhân) trái → 又 (hựu) phải",
-    "rad": "亻 (nhân – người)",
-    "mean": "chỉ, chỉ có",
-    "tip": "Bộ người 亻 + 又 (thêm một lần nữa, ít ỏi) → CHỈ CÓ (một người, một chút), kết hợp với 不 thành 不仅 = KHÔNG CHỈ (có nhiêu đó).",
-    "cf": "仅 dễ nhầm với 仪 (yí – \"nghi thức\")",
-    "w": "不仅 / 仅仅 / 仅有"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Cô ấy không những xinh đẹp, mà còn rất thông minh.",
-    "answer": "她不仅长得漂亮，也很聪明。",
-    "answerPy": "Tā bùjǐn zhǎng de piàoliang, yě hěn cōngming.",
-    "note": "不仅……也…… — chủ ngữ giống nhau, 不仅 đứng sau chủ ngữ.",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Không những tôi thích xem phim, mà bạn tôi cũng thích.",
-    "answer": "不仅我喜欢看电影，我朋友也喜欢。",
-    "answerPy": "Bùjǐn wǒ xǐhuan kàn diànyǐng, wǒ péngyou yě xǐhuan.",
-    "note": "不仅……也…… — chủ ngữ khác nhau, 不仅 đứng trước chủ ngữ của vế 1.",
-    "pair": "不仅……也……"
-   }
-  ],
-  "note": "Liên từ. Vế sau hô ứng bằng 也 / 还 / 而且 — KHÔNG đi với 但是.",
-  "colloFull": [
-   {
-    "zh": "不仅……也……",
-    "py": "bùjǐn… yě…",
-    "vn": "không những… mà cũng…"
-   },
-   {
-    "zh": "不仅……还……",
-    "py": "bùjǐn… hái…",
-    "vn": "không những… mà còn…"
-   },
-   {
-    "zh": "不仅……而且……",
-    "py": "bùjǐn… érqiě…",
-    "vn": "không những… hơn nữa…"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 不仅 + VP1，也 / 还 + VP2",
-    "m": "Cùng chủ ngữ: 不仅 đứng SAU chủ ngữ"
-   },
-   {
-    "s": "不仅 + Sub1 + VP1，Sub2 + 也 + VP2",
-    "m": "Khác chủ ngữ: 不仅 đứng TRƯỚC chủ ngữ"
-   }
-  ]
- },
- {
-  "n": 7,
-  "zh": "性格",
-  "py": "xìnggé",
-  "pos": "Danh từ",
-  "vn": "tính cách, tính nết",
-  "hv": "tính cách",
-  "em": "🧩",
-  "lesson": 1,
-  "explain": [
-   "Đặc điểm tâm lý ổn định của một người, thể hiện qua cách ứng xử, suy nghĩ."
-  ],
-  "usage": "Danh từ; thường đi với 好/不错/合得来: 性格好, 性格上互相吸引.",
-  "collo": [
-   "性格好",
-   "性格上",
-   "性格合得来"
-  ],
-  "ex_zh": "他不仅足球踢得好，性格也不错。",
-  "ex_py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
-  "ex_vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt.",
-  "exList": [
-   {
-    "zh": "他不仅足球踢得好，性格也不错。",
-    "py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
-    "vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt."
-   },
-   {
-    "zh": "更需要性格上互相吸引。",
-    "py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
-    "vn": "Càng cần sự thu hút lẫn nhau về tính cách."
-   },
-   {
-    "zh": "我们俩性格很像。",
-    "py": "Wǒmen liǎ xìnggé hěn xiàng.",
-    "vn": "Tính cách hai chúng tôi rất giống nhau."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "格",
-    "p": "gé",
-    "type": "左右结构 · Trái-phải",
-    "st": 10,
-    "ord": "木 (mộc) trái → 各 (các) phải",
-    "rad": "木 (mộc – cây, gỗ)",
-    "mean": "tiêu chuẩn, khuôn phép",
-    "tip": "Bộ gỗ 木 (khung, cây thước) + 各 (mỗi, riêng biệt) → mỗi thứ có KHUÔN KHỔ riêng, mở rộng thành TÍNH CÁCH (khuôn mẫu riêng của mỗi người).",
-    "cf": "恪 (kè – \"cẩn thận\", có bộ 忄 khác)",
-    "w": "性格 / 格式 / 合格"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Hai người sống chung cần thu hút lẫn nhau về tính cách.",
-    "answer": "两个人共同生活需要性格上互相吸引。",
-    "answerPy": "Liǎng ge rén gòngtóng shēnghuó xūyào xìnggé shang hùxiāng xīyǐn.",
-    "note": "(在)……上 — chỉ phương diện, khía cạnh (性格上 = về mặt tính cách)."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Anh ấy từ trước đến giờ tính cách đều rất tốt, chưa từng nổi giận với ai.",
-    "answer": "他性格从来都很好，没跟谁生过气。",
-    "answerPy": "Tā xìnggé cónglái dōu hěn hǎo, méi gēn shéi shēngguo qì.",
-    "note": "从来 + 都/不/没 — từ trước đến nay luôn/chưa từng."
-   }
-  ],
-  "note": "Tính nết vốn có của một người.",
-  "colloFull": [
-   {
-    "zh": "性格好",
-    "py": "xìnggé hǎo",
-    "vn": "tính cách tốt"
-   },
-   {
-    "zh": "性格上",
-    "py": "xìnggé shang",
-    "vn": "về mặt tính cách"
-   },
-   {
-    "zh": "性格合得来",
-    "py": "xìnggé hédelái",
-    "vn": "hợp tính nhau"
-   },
-   {
-    "zh": "性格不同",
-    "py": "xìnggé bùtóng",
-    "vn": "tính cách khác nhau"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 性格 + 好 / 不错",
-    "m": "Tính cách của ai đó tốt"
-   },
-   {
-    "s": "在性格上 + …",
-    "m": "Về mặt tính cách thì …"
-   }
-  ]
- },
- {
-  "n": 8,
-  "zh": "开玩笑",
-  "py": "kāi wánxiào",
-  "pos": "Cụm động từ",
-  "vn": "nói đùa, đùa",
-  "hv": "khai ngoạn tiếu",
-  "em": "😄",
-  "lesson": 1,
-  "explain": [
-   "Nói/làm gì đó không nghiêm túc, cho vui, không có ý thật."
-  ],
-  "usage": "Cụm động từ; thường ở dạng nghi vấn 是不是/是在开玩笑吧, hoặc phủ định 别跟我开玩笑.",
-  "collo": [
-   "开玩笑吧",
-   "跟……开玩笑",
-   "爱开玩笑"
-  ],
-  "ex_zh": "你是在开玩笑吧？",
-  "ex_py": "Nǐ shì zài kāi wánxiào ba?",
-  "ex_vn": "Bạn đang đùa đấy à?",
-  "exList": [
-   {
-    "zh": "你是在开玩笑吧？你们不是才认识一个月？",
-    "py": "Nǐ shì zài kāi wánxiào ba? Nǐmen bú shì cái rènshi yí ge yuè?",
-    "vn": "Bạn đang đùa đấy à? Chẳng phải các bạn mới quen nhau một tháng thôi sao?"
-   },
-   {
-    "zh": "你还是这么爱开玩笑。",
-    "py": "Nǐ háishi zhème ài kāi wánxiào.",
-    "vn": "Bạn vẫn hay đùa như vậy."
-   },
-   {
-    "zh": "你别跟我开玩笑了。",
-    "py": "Nǐ bié gēn wǒ kāi wánxiào le.",
-    "vn": "Bạn đừng đùa với tôi nữa."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "玩",
-    "p": "wán",
-    "type": "左右结构 · Trái-phải",
-    "st": 8,
-    "ord": "王 (vương) trái → 元 (nguyên) phải",
-    "rad": "王 (vương – bộ ngọc)",
-    "mean": "chơi, đùa",
-    "tip": "Bộ ngọc 王 (đồ chơi quý) + 元 → cầm ĐỒ QUÝ để CHƠI ĐÙA, mở rộng thành mọi hoạt động vui chơi, nói đùa.",
-    "cf": "顽 (wán – \"ngoan cố\", cũng đọc gần giống\")",
-    "w": "玩笑 / 玩儿 / 好玩"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Tôi mới quen anh ấy một tháng, bạn đừng đùa nữa, chúng tôi chưa kết hôn đâu.",
-    "answer": "我跟他才认识一个月，你别开玩笑了，我们还没结婚呢。",
-    "answerPy": "Wǒ gēn tā cái rènshi yí ge yuè, nǐ bié kāi wánxiào le, wǒmen hái méi jié hūn ne.",
-    "note": "才 — mới (nhấn mạnh thời gian ngắn), ôn lại từ HSK2-3."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù đang nói đùa, anh ấy cũng không nên nói những lời như vậy.",
-    "answer": "即使是在开玩笑，他也不应该说那样的话。",
-    "answerPy": "Jíshǐ shì zài kāi wánxiào, tā yě bù yīnggāi shuō nàyàng de huà.",
-    "note": "即使……也…… — cho dù … cũng không nên ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "LY HỢP TỪ: 开了个玩笑, 开过玩笑. Không nói 开玩笑他.",
-  "colloFull": [
-   {
-    "zh": "开玩笑吧",
-    "py": "kāi wánxiào ba",
-    "vn": "đùa đấy à"
-   },
-   {
-    "zh": "跟……开玩笑",
-    "py": "gēn… kāi wánxiào",
-    "vn": "đùa với ai"
-   },
-   {
-    "zh": "爱开玩笑",
-    "py": "ài kāi wánxiào",
-    "vn": "thích đùa"
-   },
-   {
-    "zh": "开个玩笑",
-    "py": "kāi ge wánxiào",
-    "vn": "đùa một câu"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 跟 + người + 开玩笑",
-    "m": "Ai đó đùa với ai"
-   },
-   {
-    "s": "你是在开玩笑吧？",
-    "m": "Bạn đùa đấy à?"
-   }
-  ]
- },
- {
-  "n": 9,
-  "zh": "从来",
-  "py": "cónglái",
-  "pos": "Phó từ",
-  "vn": "từ trước đến nay, từ trước đến giờ",
-  "hv": "tòng lai",
-  "em": "⏳",
-  "lesson": 1,
-  "explain": [
-   "Diễn tả từ quá khứ đến hiện tại luôn luôn như vậy, thường dùng trong câu phủ định."
-  ],
-  "usage": "Phó từ; đứng trước 不/没: 从来不……, 从来没……过.",
-  "collo": [
-   "从来不",
-   "从来没……过",
-   "从来都"
-  ],
-  "ex_zh": "我从来没这么快乐过。",
-  "ex_py": "Wǒ cónglái méi zhème kuàilèguo.",
-  "ex_vn": "Từ trước đến giờ tôi chưa bao giờ vui như vậy.",
-  "exList": [
-   {
-    "zh": "我从来没这么快乐过。",
-    "py": "Wǒ cónglái méi zhème kuàilèguo.",
-    "vn": "Từ trước đến giờ tôi chưa bao giờ vui như vậy."
-   },
-   {
-    "zh": "老张这个人开会从来不迟到。",
-    "py": "Lǎo Zhāng zhège rén kāihuì cónglái bù chídào.",
-    "vn": "Ông Trương này họp hành từ trước đến giờ chưa bao giờ đến muộn."
-   },
-   {
-    "zh": "这家面馆从来只卖一种东西。",
-    "py": "Zhè jiā miànguǎn cónglái zhǐ mài yì zhǒng dōngxi.",
-    "vn": "Quán mì này từ trước đến giờ chỉ bán một loại."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "从",
-    "p": "cóng",
-    "type": "左右结构 · Trái-phải (giản thể)",
-    "st": 4,
-    "ord": "人 trái → 人 phải",
-    "rad": "人 (nhân – người)",
-    "mean": "từ, theo",
-    "tip": "Hai chữ 人 nối tiếp nhau → người này ĐI THEO người kia, mở rộng thành TỪ (một mốc thời gian/nơi chốn) đến nay.",
-    "cf": "丛 (cóng – \"bụi cây\", hình gần giống nhưng bộ khác\")",
-    "w": "从来 / 从……到…… / 自从"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Tuy chúng tôi quen nhau chưa lâu, nhưng tôi từ trước đến giờ chưa từng vui như vậy.",
-    "answer": "虽然我们认识的时间不长，但我从来没这么快乐过。",
-    "answerPy": "Suīrán wǒmen rènshi de shíjiān bù cháng, dàn wǒ cónglái méi zhème kuàilèguo.",
-    "note": "虽然……但…… ôn lại từ HSK3, kết hợp với 从来没……过.",
-    "pair": "虽然……但是……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Anh ấy từ trước đến giờ đều rất đúng giờ, hôm nay sao lại đến muộn vậy?",
-    "answer": "他从来都很准时，今天怎么迟到了？",
-    "answerPy": "Tā cónglái dōu hěn zhǔnshí, jīntiān zěnme chídào le?",
-    "note": "从来都 + tính từ — nhấn mạnh tính ổn định lâu dài."
-   }
-  ],
-  "note": "Luôn đi với phủ định: 从来不 (thói quen) / 从来没…过 (kinh nghiệm).",
-  "colloFull": [
-   {
-    "zh": "从来不",
-    "py": "cónglái bù",
-    "vn": "chưa bao giờ (thói quen)"
-   },
-   {
-    "zh": "从来没……过",
-    "py": "cónglái méi… guo",
-    "vn": "từ trước đến giờ chưa từng"
-   },
-   {
-    "zh": "从来都",
-    "py": "cónglái dōu",
-    "vn": "từ trước đến nay đều"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 从来不 + V",
-    "m": "Ai đó chưa bao giờ làm gì (thói quen)"
-   },
-   {
-    "s": "Sub + 从来没 + V + 过",
-    "m": "Ai đó chưa từng làm gì (kinh nghiệm)"
-   }
-  ]
- },
- {
-  "n": 10,
-  "zh": "最好",
-  "py": "zuìhǎo",
-  "pos": "Phó từ",
-  "vn": "tốt nhất",
-  "hv": "tối hảo",
-  "em": "👍",
-  "lesson": 1,
-  "explain": [
-   "Diễn tả lựa chọn/đề nghị tốt nhất trong hoàn cảnh hiện tại, thường dùng để khuyên nhủ."
-  ],
-  "usage": "Phó từ; đứng đầu câu hoặc trước động từ: 最好 + V, mang tính đề nghị nhẹ nhàng.",
-  "collo": [
-   "最好能……",
-   "最好先……",
-   "最好去医院"
-  ],
-  "ex_zh": "两个人在一起，最好能有共同的兴趣和爱好。",
-  "ex_py": "Liǎng ge rén zài yìqǐ, zuìhǎo néng yǒu gòngtóng de xìngqù hé àihào.",
-  "ex_vn": "Hai người ở bên nhau, tốt nhất là nên có sở thích chung.",
-  "exList": [
-   {
-    "zh": "两个人在一起，最好能有共同的兴趣和爱好。",
-    "py": "Liǎng ge rén zài yìqǐ, zuìhǎo néng yǒu gòngtóng de xìngqù hé àihào.",
-    "vn": "Hai người ở bên nhau, tốt nhất là nên có sở thích chung."
-   },
-   {
-    "zh": "你最好去医院看一下。",
-    "py": "Nǐ zuìhǎo qù yīyuàn kàn yíxià.",
-    "vn": "Bạn tốt nhất nên đi bệnh viện khám một chút."
-   },
-   {
-    "zh": "这件事你最好先问一下李老师。",
-    "py": "Zhè jiàn shì nǐ zuìhǎo xiān wènyíxià Lǐ lǎoshī.",
-    "vn": "Việc này bạn tốt nhất nên hỏi cô Lý trước."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "最",
-    "p": "zuì",
-    "type": "上下结构 · Trên-dưới",
-    "st": 12,
-    "ord": "曰 trên → 取 dưới",
-    "rad": "曰 (viết – nói)",
-    "mean": "nhất",
-    "tip": "Phần trên 曰 (nói ra) + 取 (lấy, chọn) → CHỌN RA điều được nói đến nhiều nhất/hàng đầu → NHẤT.",
-    "cf": "冣 (dạng cổ, ít dùng)",
-    "w": "最好 / 最近 / 最喜欢"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù bận đến mấy, bạn cũng tốt nhất nên dành thời gian nghỉ ngơi.",
-    "answer": "即使再忙，你也最好留点儿时间休息。",
-    "answerPy": "Jíshǐ zài máng, nǐ yě zuìhǎo liú diǎnr shíjiān xiūxi.",
-    "note": "即使……也…… kết hợp với 最好 nêu lời khuyên.",
-    "pair": "即使……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về vấn đề này, hai người tốt nhất nên hiểu nhau nhiều hơn.",
-    "answer": "在这件事上，两个人最好多互相理解。",
-    "answerPy": "Zài zhè jiàn shì shang, liǎng ge rén zuìhǎo duō hùxiāng lǐjiě.",
-    "note": "在……上 — về phương diện, vấn đề nào đó."
-   }
-  ],
-  "note": "Phó từ nêu lời khuyên, không phải \"tốt nhất\" so sánh.",
-  "colloFull": [
-   {
-    "zh": "最好能……",
-    "py": "zuìhǎo néng…",
-    "vn": "tốt nhất là có thể…"
-   },
-   {
-    "zh": "最好先……",
-    "py": "zuìhǎo xiān…",
-    "vn": "tốt nhất là trước hết…"
-   },
-   {
-    "zh": "最好去医院",
-    "py": "zuìhǎo qù yīyuàn",
-    "vn": "tốt nhất nên đi bệnh viện"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "(Sub +) 最好 + V",
-    "m": "Tốt nhất là nên làm gì"
-   },
-   {
-    "s": "最好 + 别 / 不要 + V",
-    "m": "Tốt nhất là đừng làm gì"
-   }
-  ]
- },
- {
-  "n": 11,
-  "zh": "共同",
-  "py": "gòngtóng",
-  "pos": "Tính từ",
-  "vn": "chung, cùng",
-  "hv": "cộng đồng",
-  "em": "🤲",
-  "lesson": 1,
-  "explain": [
-   "Cùng nhau có/làm, thuộc về nhiều người/vật cùng lúc, không của riêng ai."
-  ],
-  "usage": "Tính từ, thường làm định ngữ: 共同的爱好, 共同生活, 共同努力.",
-  "collo": [
-   "共同的爱好",
-   "共同生活",
-   "共同努力"
-  ],
-  "ex_zh": "我们有很多共同的爱好。",
-  "ex_py": "Wǒmen yǒu hěn duō gòngtóng de àihào.",
-  "ex_vn": "Chúng tôi có rất nhiều sở thích chung.",
-  "exList": [
-   {
-    "zh": "我们有很多共同的爱好，经常一起打球、唱歌、做菜。",
-    "py": "Wǒmen yǒu hěn duō gòngtóng de àihào, jīngcháng yìqǐ dǎqiú, chàng gē, zuò cài.",
-    "vn": "Chúng tôi có rất nhiều sở thích chung, thường cùng nhau chơi thể thao, hát, nấu ăn."
-   },
-   {
-    "zh": "两个人共同生活，不仅需要浪漫的爱情。",
-    "py": "Liǎng ge rén gòngtóng shēnghuó, bùjǐn xūyào làngmàn de àiqíng.",
-    "vn": "Hai người sống chung, không những cần tình yêu lãng mạn."
-   },
-   {
-    "zh": "他们两个人共同努力，终于完成了工作。",
-    "py": "Tāmen liǎng ge rén gòngtóng nǔlì, zhōngyú wánchéngle gōngzuò.",
-    "vn": "Hai người họ cùng nhau cố gắng, cuối cùng đã hoàn thành công việc."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "共",
-    "p": "gòng",
-    "type": "独体字 · Chữ đơn",
-    "st": 6,
-    "ord": "廿 trên → 八 dưới",
-    "rad": "八 (bát – chia)",
-    "mean": "cùng, chung",
-    "tip": "Hình tượng nhiều tay CÙNG NÂNG một vật → CÙNG NHAU, CHUNG.",
-    "cf": "共 dễ nhầm với 兵 (bīng – \"binh lính\")",
-    "w": "共同 / 一共 / 公共"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chúng tôi không những có sở thích chung, mà tính cách cũng rất hợp nhau.",
-    "answer": "我们不仅有共同的爱好，性格也很合得来。",
-    "answerPy": "Wǒmen bùjǐn yǒu gòngtóng de àihào, xìnggé yě hěn hédelái.",
-    "note": "不仅……也…… — không những … mà còn ….",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về phương diện công việc, chúng tôi luôn cùng nhau cố gắng.",
-    "answer": "在工作上，我们一直共同努力。",
-    "answerPy": "Zài gōngzuò shang, wǒmen yìzhí gòngtóng nǔlì.",
-    "note": "在……上 — về phương diện công việc."
-   }
-  ],
-  "note": "Làm định ngữ hoặc trạng ngữ, không làm vị ngữ (không nói 我们很共同).",
-  "colloFull": [
-   {
-    "zh": "共同的爱好",
-    "py": "gòngtóng de àihào",
-    "vn": "sở thích chung"
-   },
-   {
-    "zh": "共同生活",
-    "py": "gòngtóng shēnghuó",
-    "vn": "sống chung"
-   },
-   {
-    "zh": "共同努力",
-    "py": "gòngtóng nǔlì",
-    "vn": "cùng nhau cố gắng"
-   },
-   {
-    "zh": "共同语言",
-    "py": "gòngtóng yǔyán",
-    "vn": "tiếng nói chung"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "共同的 + N",
-    "m": "… chung (làm định ngữ)"
-   },
-   {
-    "s": "Sub + 共同 + V",
-    "m": "Cùng nhau làm gì"
-   }
-  ]
- },
- {
-  "n": 12,
-  "zh": "适合",
-  "py": "shìhé",
-  "pos": "Động từ",
-  "vn": "phù hợp",
-  "hv": "thích hợp",
-  "em": "✅",
-  "lesson": 1,
-  "explain": [
-   "Phù hợp, thích hợp với điều kiện/hoàn cảnh/con người nào đó."
-  ],
-  "usage": "Động từ, có thể trực tiếp mang tân ngữ: 适合 + Đối tượng, không cần giới từ.",
-  "collo": [
-   "适合你的人",
-   "适合自己",
-   "适合工作"
-  ],
-  "ex_zh": "看来你真的找到适合你的人了。",
-  "ex_py": "Kànlái nǐ zhēn de zhǎodào shìhé nǐ de rén le.",
-  "ex_vn": "Xem ra bạn thật sự đã tìm được người phù hợp với mình rồi.",
-  "exList": [
-   {
-    "zh": "看来你真的找到适合你的人了。",
-    "py": "Kànlái nǐ zhēn de zhǎodào shìhé nǐ de rén le.",
-    "vn": "Xem ra bạn thật sự đã tìm được người phù hợp với mình rồi."
-   },
-   {
-    "zh": "怎么样才能找到适合自己的人？",
-    "py": "Zěnmeyàng cái néng zhǎodào shìhé zìjǐ de rén?",
-    "vn": "Làm thế nào mới có thể tìm được người phù hợp với mình?"
-   },
-   {
-    "zh": "这份工作很适合他。",
-    "py": "Zhè fèn gōngzuò hěn shìhé tā.",
-    "vn": "Công việc này rất phù hợp với anh ấy."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "适",
-    "p": "shì",
-    "type": "半包围结构 · Bán bao vây (giản thể)",
-    "st": 9,
-    "ord": "辶 bao ngoài → 舌 trong",
-    "rad": "辶 (sước – đi, chạy)",
-    "mean": "vừa, hợp",
-    "tip": "Bộ 辶 (đi tới) + 舌 (biểu âm) → ĐI ĐẾN ĐÚNG chỗ, mở rộng thành VỪA VẶN, PHÙ HỢP.",
-    "cf": "话 (huà – \"lời nói\", cũng có 舌\")",
-    "w": "适合 / 适应 / 合适"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chỉ cần hai người phù hợp với nhau về tính cách, thì sẽ dễ dàng sống hạnh phúc.",
-    "answer": "只要两个人性格上适合，就容易幸福地生活。",
-    "answerPy": "Zhǐyào liǎng ge rén xìnggé shang shìhé, jiù róngyì xìngfú de shēnghuó.",
-    "note": "只要……就…… ôn lại từ HSK3, kết hợp 在……上.",
-    "pair": "只要……就……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cô ấy từ trước đến giờ chưa tìm được công việc phù hợp với mình.",
-    "answer": "她从来没找到适合自己的工作。",
-    "answerPy": "Tā cónglái méi zhǎodào shìhé zìjǐ de gōngzuò.",
-    "note": "从来 + 没……过/没 — chưa từng."
-   }
-  ],
-  "note": "Không dùng 很适合了; muốn nhấn mạnh thì 很适合 / 非常适合.",
-  "colloFull": [
-   {
-    "zh": "适合自己",
-    "py": "shìhé zìjǐ",
-    "vn": "phù hợp với bản thân"
-   },
-   {
-    "zh": "适合你的人",
-    "py": "shìhé nǐ de rén",
-    "vn": "người phù hợp với bạn"
-   },
-   {
-    "zh": "适合工作",
-    "py": "shìhé gōngzuò",
-    "vn": "phù hợp để làm việc"
-   },
-   {
-    "zh": "不适合",
-    "py": "bú shìhé",
-    "vn": "không phù hợp"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "A + 适合 + B",
-    "m": "A phù hợp với B"
-   },
-   {
-    "s": "适合 + V 的 + N",
-    "m": "… phù hợp để làm gì"
-   }
-  ]
- },
- {
-  "n": 13,
-  "zh": "幸福",
-  "py": "xìngfú",
-  "pos": "Tính từ",
-  "vn": "hạnh phúc",
-  "hv": "hạnh phúc",
-  "em": "💖",
-  "lesson": 1,
-  "explain": [
-   "Trạng thái cảm thấy hài lòng, vui vẻ, mãn nguyện trong cuộc sống."
-  ],
-  "usage": "Tính từ, có thể làm vị ngữ hoặc danh từ: 祝你们幸福！, 幸福的生活.",
-  "collo": [
-   "祝你们幸福",
-   "幸福的生活",
-   "觉得很幸福"
-  ],
-  "ex_zh": "祝你们幸福！",
-  "ex_py": "Zhù nǐmen xìngfú!",
-  "ex_vn": "Chúc hai bạn hạnh phúc!",
-  "exList": [
-   {
-    "zh": "看来你真的找到适合你的人了。祝你们幸福！",
-    "py": "Kànlái nǐ zhēn de zhǎodào shìhé nǐ de rén le. Zhù nǐmen xìngfú!",
-    "vn": "Xem ra bạn thật sự đã tìm được người phù hợp với mình rồi. Chúc hai bạn hạnh phúc!"
-   },
-   {
-    "zh": "我们的生活一直挺幸福的。",
-    "py": "Wǒmen de shēnghuó yìzhí tǐng xìngfú de.",
-    "vn": "Cuộc sống của chúng tôi luôn khá hạnh phúc."
-   },
-   {
-    "zh": "有时候，简单就是最大的幸福。",
-    "py": "Yǒu shíhou, jiǎndān jiù shì zuì dà de xìngfú.",
-    "vn": "Có lúc, đơn giản chính là hạnh phúc lớn nhất."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "福",
-    "p": "fú",
-    "type": "左右结构 · Trái-phải",
-    "st": 13,
-    "ord": "礻 (kỳ) trái → 畐 phải",
-    "rad": "礻 (kỳ – thần linh, cúng tế)",
-    "mean": "phúc, may mắn",
-    "tip": "Bộ 礻 (thần linh phù hộ) + 畐 (đầy đủ, sung túc) → được THẦN PHÙ HỘ cho ĐẦY ĐỦ, sung túc = PHÚC, HẠNH PHÚC.",
-    "cf": "副 (fù – \"phó, phụ\", cũng có 畐\" nhưng bộ khác)",
-    "w": "幸福 / 福气 / 祝福"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Ngay cả khi không giàu có, họ vẫn cảm thấy rất hạnh phúc.",
-    "answer": "即使不富有，他们也觉得很幸福。",
-    "answerPy": "Jíshǐ bú fùyǒu, tāmen yě juéde hěn xìngfú.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về mặt tình cảm, tôi cảm thấy mình rất hạnh phúc.",
-    "answer": "在感情上，我觉得自己很幸福。",
-    "answerPy": "Zài gǎnqíng shang, wǒ juéde zìjǐ hěn xìngfú.",
-    "note": "在……上 — về phương diện tình cảm."
-   }
-  ],
-  "note": "Tính từ, cũng làm danh từ: 幸福的生活 / 什么是幸福？",
-  "colloFull": [
-   {
-    "zh": "祝你们幸福",
-    "py": "zhù nǐmen xìngfú",
-    "vn": "chúc hai bạn hạnh phúc"
-   },
-   {
-    "zh": "幸福的生活",
-    "py": "xìngfú de shēnghuó",
-    "vn": "cuộc sống hạnh phúc"
-   },
-   {
-    "zh": "觉得很幸福",
-    "py": "juéde hěn xìngfú",
-    "vn": "cảm thấy rất hạnh phúc"
-   },
-   {
-    "zh": "幸福的家庭",
-    "py": "xìngfú de jiātíng",
-    "vn": "gia đình hạnh phúc"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 觉得 / 感到 + 很幸福",
-    "m": "Ai đó thấy rất hạnh phúc"
-   },
-   {
-    "s": "祝 + người + 幸福",
-    "m": "Chúc ai hạnh phúc"
-   }
-  ]
- },
- {
-  "n": 14,
-  "zh": "生活",
-  "py": "shēnghuó",
-  "pos": "Danh từ/Động từ",
-  "vn": "cuộc sống; sống",
-  "hv": "sinh hoạt",
-  "em": "🏡",
-  "lesson": 1,
-  "explain": [
-   "1. (Danh từ) Toàn bộ những hoạt động, sinh hoạt hằng ngày của con người.",
-   "2. (Động từ) Sinh sống, tồn tại theo một cách nào đó."
-  ],
-  "usage": "Khi làm động từ: 生活 + trạng ngữ (共同生活, 幸福地生活); khi làm danh từ: 我们的生活.",
-  "collo": [
-   "我们的生活",
-   "共同生活",
-   "生活得怎么样"
-  ],
-  "ex_zh": "我们的生活一直挺幸福的。",
-  "ex_py": "Wǒmen de shēnghuó yìzhí tǐng xìngfú de.",
-  "ex_vn": "Cuộc sống của chúng tôi luôn khá hạnh phúc.",
-  "exList": [
-   {
-    "zh": "我们的生活一直挺幸福的。",
-    "py": "Wǒmen de shēnghuó yìzhí tǐng xìngfú de.",
-    "vn": "Cuộc sống của chúng tôi luôn khá hạnh phúc."
-   },
-   {
-    "zh": "两个人共同生活，只有浪漫和新鲜感是不够的。",
-    "py": "Liǎng ge rén gòngtóng shēnghuó, zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
-    "vn": "Hai người sống chung, chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ."
-   },
-   {
-    "zh": "两个人在一起时间长了，就会有很多问题，只有接受了他的缺点，你们才能更好地一起生活。",
-    "py": "Liǎng ge rén zài yìqǐ shíjiān cháng le, jiù huì yǒu hěn duō wèntí, zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
-    "vn": "Hai người ở bên nhau lâu, sẽ nảy sinh nhiều vấn đề, chỉ khi chấp nhận khuyết điểm của đối phương, hai bạn mới có thể sống cùng nhau tốt hơn."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "活",
-    "p": "huó",
-    "type": "左右结构 · Trái-phải",
-    "st": 9,
-    "ord": "氵 (thủy) trái → 舌 (thiệt) phải",
-    "rad": "氵 (thủy – nước)",
-    "mean": "sống, hoạt động",
-    "tip": "Bộ nước 氵 (nguồn sống) + 舌 (lưỡi, biểu âm) → có NƯỚC để duy trì sự SỐNG, mở rộng thành SINH HOẠT, CUỘC SỐNG.",
-    "cf": "话 (huà – \"lời nói\", cũng có 舌\" nhưng bộ 讠 khác)",
-    "w": "生活 / 活动 / 干活"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chỉ có tình yêu lãng mạn thôi thì không đủ, hai người còn cần hiểu nhau mới sống hạnh phúc được.",
-    "answer": "只有浪漫的爱情是不够的，两个人还需要互相理解才能幸福地生活。",
-    "answerPy": "Zhǐyǒu làngmàn de àiqíng shì bú gòu de, liǎng ge rén hái xūyào hùxiāng lǐjiě cái néng xìngfú de shēnghuó.",
-    "note": "只有……才…… — chỉ có … mới ….",
-    "pair": "只有……才……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về mặt cuộc sống, chúng tôi luôn giúp đỡ lẫn nhau.",
-    "answer": "在生活上，我们一直互相帮助。",
-    "answerPy": "Zài shēnghuó shang, wǒmen yìzhí hùxiāng bāngzhù.",
-    "note": "在……上 — về phương diện cuộc sống."
-   }
-  ],
-  "note": "Vừa là danh từ (cuộc sống) vừa là động từ (sinh sống).",
-  "colloFull": [
-   {
-    "zh": "我们的生活",
-    "py": "wǒmen de shēnghuó",
-    "vn": "cuộc sống của chúng tôi"
-   },
-   {
-    "zh": "共同生活",
-    "py": "gòngtóng shēnghuó",
-    "vn": "sống chung"
-   },
-   {
-    "zh": "生活得怎么样",
-    "py": "shēnghuó de zěnmeyàng",
-    "vn": "sống thế nào"
-   },
-   {
-    "zh": "生活习惯",
-    "py": "shēnghuó xíguàn",
-    "vn": "thói quen sinh hoạt"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 在 + nơi chốn + 生活",
-    "m": "Ai đó sống ở đâu"
-   },
-   {
-    "s": "……的生活 + Adj",
-    "m": "Cuộc sống của … thì thế nào"
-   }
-  ]
- },
- {
-  "n": 15,
-  "zh": "刚",
-  "py": "gāng",
-  "pos": "Phó từ",
-  "vn": "vừa, vừa mới",
-  "hv": "cương",
-  "em": "🕐",
-  "lesson": 1,
-  "explain": [
-   "Diễn tả hành động/tình huống xảy ra cách đây không lâu, đứng sau chủ ngữ, trước động từ."
-  ],
-  "usage": "Phó từ: Chủ ngữ + 刚 + Động từ. So với 刚才 (danh từ chỉ thời gian): 刚 KHÔNG thể đứng đầu câu, không dùng phủ định phía sau, có thể có thời lượng phía sau động từ.",
-  "collo": [
-   "刚认识",
-   "刚结婚",
-   "刚搬来"
-  ],
-  "ex_zh": "我和丈夫刚结婚的时候，每天都觉得很新鲜。",
-  "ex_py": "Wǒ hé zhàngfu gāng jié hūn de shíhou, měitiān dōu juéde hěn xīnxiān.",
-  "ex_vn": "Lúc tôi và chồng vừa mới kết hôn, ngày nào cũng cảm thấy mới mẻ.",
-  "exList": [
-   {
-    "zh": "我和丈夫刚结婚的时候，每天都觉得很新鲜。",
-    "py": "Wǒ hé zhàngfu gāng jié hūn de shíhou, měitiān dōu juéde hěn xīnxiān.",
-    "vn": "Lúc tôi và chồng vừa mới kết hôn, ngày nào cũng cảm thấy mới mẻ."
-   },
-   {
-    "zh": "我上午刚借的那本书，怎么找不到了？",
-    "py": "Wǒ shàngwǔ gāng jiè de nà běn shū, zěnme zhǎo bú dào le?",
-    "vn": "Quyển sách tôi vừa mượn sáng nay sao lại không tìm thấy?"
-   },
-   {
-    "zh": "我刚从会议室过来，怎么一个人也没有？",
-    "py": "Wǒ gāng cóng huìyìshì guòlai, zěnme yí ge rén yě méiyǒu?",
-    "vn": "Tôi vừa từ phòng họp qua đây, sao chẳng có ai vậy?"
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "刚",
-    "p": "gāng",
-    "type": "左右结构 · Trái-phải (giản thể)",
-    "st": 6,
-    "ord": "冈 trái → 刂 (đao) phải",
-    "rad": "刂 (đao – dao)",
-    "mean": "vừa mới; cứng",
-    "tip": "Bộ dao 刂 + 冈 (núi cứng) → hành động vừa mới XẢY RA, còn \"SẮC/MỚI\" như lưỡi dao vừa mài.",
-    "cf": "刚 dễ nhầm với 冈 (gāng – \"núi, gò\", không có bộ 刂\")",
-    "w": "刚才 / 刚刚 / 刚好"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chúng tôi vừa mới quen nhau, nhưng tôi từ trước đến giờ chưa vui như vậy.",
-    "answer": "我们刚认识，但我从来没这么快乐过。",
-    "answerPy": "Wǒmen gāng rènshi, dàn wǒ cónglái méi zhème kuàilèguo.",
-    "note": "刚 kết hợp với 从来没……过."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù vừa mới quen nhau, hai người họ vẫn có rất nhiều sở thích chung.",
-    "answer": "即使刚认识，他们俩也有很多共同的爱好。",
-    "answerPy": "Jíshǐ gāng rènshi, tāmen liǎ yě yǒu hěn duō gòngtóng de àihào.",
-    "note": "即使……也…… kết hợp với 刚.",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Phó từ chỉ việc VỪA xảy ra. Khác 刚才 (danh từ chỉ thời điểm).",
-  "colloFull": [
-   {
-    "zh": "刚认识",
-    "py": "gāng rènshi",
-    "vn": "vừa mới quen"
-   },
-   {
-    "zh": "刚结婚",
-    "py": "gāng jiéhūn",
-    "vn": "vừa mới cưới"
-   },
-   {
-    "zh": "刚搬来",
-    "py": "gāng bānlái",
-    "vn": "vừa chuyển đến"
-   },
-   {
-    "zh": "刚下课",
-    "py": "gāng xiàkè",
-    "vn": "vừa tan học"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 刚 + V",
-    "m": "Ai đó vừa mới làm gì"
-   },
-   {
-    "s": "刚 + V + 了 + thời lượng",
-    "m": "Vừa làm gì được bao lâu"
-   }
-  ]
- },
- {
-  "n": 16,
-  "zh": "浪漫",
-  "py": "làngmàn",
-  "pos": "Tính từ",
-  "vn": "lãng mạn",
-  "hv": "lãng mạn",
-  "em": "🌹",
-  "lesson": 1,
-  "explain": [
-   "Đầy cảm xúc, mộng mơ, khác biệt với sự thực dụng thông thường."
-  ],
-  "usage": "Tính từ; thường đi với 爱情/生活: 浪漫的爱情.",
-  "collo": [
-   "浪漫的爱情",
-   "很浪漫",
-   "羨慕浪漫"
-  ],
-  "ex_zh": "很多女孩子羡慕浪漫的爱情。",
-  "ex_py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
-  "ex_vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn.",
-  "exList": [
-   {
-    "zh": "很多女孩子羡慕浪漫的爱情。",
-    "py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
-    "vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn."
-   },
-   {
-    "zh": "只有浪漫和新鲜感是不够的。",
-    "py": "Zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
-    "vn": "Chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ."
-   },
-   {
-    "zh": "这个电影讲了一个爱情故事，很浪漫。",
-    "py": "Zhège diànyǐng jiǎngle yí ge àiqíng gùshi, hěn làngmàn.",
-    "vn": "Bộ phim này kể một câu chuyện tình yêu, rất lãng mạn."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "漫",
-    "p": "màn",
-    "type": "左右结构 · Trái-phải",
-    "st": 14,
-    "ord": "氵 (thủy) trái → 曼 (mạn) phải",
-    "rad": "氵 (thủy – nước)",
-    "mean": "tràn lan, mênh mông",
-    "tip": "Bộ nước 氵 (lan tràn khắp nơi) + 曼 (kéo dài) → nước TRÀN LAN không giới hạn, mở rộng thành cảm xúc BAY BỔNG, LÃNG MẠN.",
-    "cf": "慢 (màn – \"chậm\", bộ 忄 khác)",
-    "w": "浪漫 / 漫画 / 弥漫"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Không những cô ấy ngưỡng mộ tình yêu lãng mạn, mà còn rất thích xem phim tình cảm.",
-    "answer": "她不仅羡慕浪漫的爱情，还很喜欢看爱情电影。",
-    "answerPy": "Tā bùjǐn xiànmù làngmàn de àiqíng, hái hěn xǐhuan kàn àiqíng diànyǐng.",
-    "note": "不仅……还…… — không những … mà còn ….",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù công việc bận rộn, anh ấy cũng vẫn nhớ những ngày lãng mạn đó.",
-    "answer": "即使工作很忙，他也一直记得那些浪漫的日子。",
-    "answerPy": "Jíshǐ gōngzuò hěn máng, tā yě yìzhí jìde nàxiē làngmàn de rìzi.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Từ mượn âm (romantic). Tính từ.",
-  "colloFull": [
-   {
-    "zh": "浪漫的爱情",
-    "py": "làngmàn de àiqíng",
-    "vn": "tình yêu lãng mạn"
-   },
-   {
-    "zh": "很浪漫",
-    "py": "hěn làngmàn",
-    "vn": "rất lãng mạn"
-   },
-   {
-    "zh": "浪漫的地方",
-    "py": "làngmàn de dìfang",
-    "vn": "nơi lãng mạn"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 很 / 非常 + 浪漫",
-    "m": "… rất lãng mạn"
-   },
-   {
-    "s": "浪漫的 + N",
-    "m": "… lãng mạn (làm định ngữ)"
-   }
-  ]
- },
- {
-  "n": 17,
-  "zh": "够",
-  "py": "gòu",
-  "pos": "Động từ",
-  "vn": "đủ",
-  "hv": "cú",
-  "em": "🆗",
-  "lesson": 1,
-  "explain": [
-   "Đạt đến mức cần thiết, không thiếu."
-  ],
-  "usage": "Động từ, thường dùng với 不够 (không đủ): 是不够的.",
-  "collo": [
-   "不够的",
-   "够了",
-   "够用"
-  ],
-  "ex_zh": "只有浪漫和新鲜感是不够的。",
-  "ex_py": "Zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
-  "ex_vn": "Chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ.",
-  "exList": [
-   {
-    "zh": "只有浪漫和新鲜感是不够的。",
-    "py": "Zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
-    "vn": "Chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ."
-   },
-   {
-    "zh": "这些钱够不够？",
-    "py": "Zhèxiē qián gòu bu gòu?",
-    "vn": "Số tiền này có đủ không?"
-   },
-   {
-    "zh": "只知道理论是不够的，还要多练习。",
-    "py": "Zhǐ zhīdào lǐlùn shì bú gòu de, hái yào duō liànxí.",
-    "vn": "Chỉ biết lý thuyết thôi thì không đủ, còn phải luyện tập nhiều."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "够",
-    "p": "gòu",
-    "type": "左右结构 · Trái-phải (giản thể)",
-    "st": 11,
-    "ord": "夕 trái → 多 phải (biến thể)",
-    "rad": "夕 (tịch – buổi tối)",
-    "mean": "đủ",
-    "tip": "Chữ giản thể mô phỏng số lượng ĐÃ ĐẠT MỨC cần có, mở rộng nghĩa từ \"nhiều\" (多) thành ĐỦ, KHÔNG THIẾU.",
-    "cf": "够 dễ nhầm với 岁 (suì – \"tuổi\")",
-    "w": "不够 / 够用 / 能够"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chỉ có tình yêu thôi thì không đủ, còn cần phải hiểu nhau nữa.",
-    "answer": "只有爱情是不够的，还需要互相理解。",
-    "answerPy": "Zhǐyǒu àiqíng shì bú gòu de, hái xūyào hùxiāng lǐjiě.",
-    "note": "只有……(是不够的)，还…… — chỉ có … thì không đủ, còn cần ….",
-    "pair": "只有……才……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về mặt tiền bạc, hiện tại vẫn chưa đủ để mua nhà.",
-    "answer": "在钱上，现在还不够买房子。",
-    "answerPy": "Zài qián shang, xiànzài hái bú gòu mǎi fángzi.",
-    "note": "在……上 — về phương diện tiền bạc."
-   }
-  ],
-  "note": "Động từ chỉ mức đủ. 够 + N hoặc Adj + 够.",
-  "colloFull": [
-   {
-    "zh": "够了",
-    "py": "gòu le",
-    "vn": "đủ rồi"
-   },
-   {
-    "zh": "不够",
-    "py": "bú gòu",
-    "vn": "không đủ"
-   },
-   {
-    "zh": "够用",
-    "py": "gòu yòng",
-    "vn": "đủ dùng"
-   },
-   {
-    "zh": "时间不够",
-    "py": "shíjiān bú gòu",
-    "vn": "không đủ thời gian"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "N + 够 / 不够",
-    "m": "Cái gì đủ / không đủ"
-   },
-   {
-    "s": "够 + V",
-    "m": "Đủ để làm gì"
-   }
-  ]
- },
- {
-  "n": 18,
-  "zh": "缺点",
-  "py": "quēdiǎn",
-  "pos": "Danh từ",
-  "vn": "khuyết điểm, thiếu sót",
-  "hv": "khuyết điểm",
-  "em": "⚠️",
-  "lesson": 1,
-  "explain": [
-   "Điểm chưa tốt, hạn chế của một người/sự vật, trái nghĩa với 优点."
-  ],
-  "usage": "Danh từ; thường đi với 接受/看到: 接受他的缺点.",
-  "collo": [
-   "他的缺点",
-   "接受缺点",
-   "看到缺点"
-  ],
-  "ex_zh": "我现在每天看到的都是他的缺点。",
-  "ex_py": "Wǒ xiànzài měitiān kàndào de dōu shì tā de quēdiǎn.",
-  "ex_vn": "Bây giờ mỗi ngày tôi nhìn thấy đều là khuyết điểm của anh ấy.",
-  "exList": [
-   {
-    "zh": "我现在每天看到的都是他的缺点。",
-    "py": "Wǒ xiànzài měitiān kàndào de dōu shì tā de quēdiǎn.",
-    "vn": "Bây giờ mỗi ngày tôi nhìn thấy đều là khuyết điểm của anh ấy."
-   },
-   {
-    "zh": "只有接受了他的缺点，你们才能更好地一起生活。",
-    "py": "Zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
-    "vn": "Chỉ khi chấp nhận khuyết điểm của anh ấy, hai bạn mới có thể sống cùng nhau tốt hơn."
-   },
-   {
-    "zh": "每个人都有缺点。",
-    "py": "Měi ge rén dōu yǒu quēdiǎn.",
-    "vn": "Ai cũng có khuyết điểm."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "缺",
-    "p": "quē",
-    "type": "左右结构 · Trái-phải",
-    "st": 10,
-    "ord": "缶 (phẫu) trái → 夬 (quải) phải",
-    "rad": "缶 (phẫu – đồ sành sứ)",
-    "mean": "thiếu, khuyết",
-    "tip": "Bộ 缶 (đồ gốm) bị 夬 (cắt, khuyết một góc) → đồ gốm bị SỨT MẺ, mở rộng thành THIẾU, KHUYẾT.",
-    "cf": "缺 dễ nhầm với 铁 (tiě – \"sắt\", bộ kim loại khác)",
-    "w": "缺点 / 缺少 / 缺席"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Ai cũng có khuyết điểm, chỉ cần biết cách chấp nhận là được.",
-    "answer": "谁都有缺点，只要知道怎么接受就行了。",
-    "answerPy": "Shéi dōu yǒu quēdiǎn, zhǐyào zhīdào zěnme jiēshòu jiù xíng le.",
-    "note": "只要……就…… ôn lại từ HSK3.",
-    "pair": "只要……就……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Từ trước đến giờ anh ấy chưa từng chê khuyết điểm của tôi.",
-    "answer": "他从来没批评过我的缺点。",
-    "answerPy": "Tā cónglái méi pīpíngguo wǒ de quēdiǎn.",
-    "note": "从来 + 没……过 — chưa từng."
-   }
-  ],
-  "note": "Trái nghĩa với 优点 (ưu điểm).",
-  "colloFull": [
-   {
-    "zh": "他的缺点",
-    "py": "tā de quēdiǎn",
-    "vn": "khuyết điểm của anh ấy"
-   },
-   {
-    "zh": "接受缺点",
-    "py": "jiēshòu quēdiǎn",
-    "vn": "chấp nhận khuyết điểm"
-   },
-   {
-    "zh": "看到缺点",
-    "py": "kàndào quēdiǎn",
-    "vn": "nhìn ra khuyết điểm"
-   },
-   {
-    "zh": "优点和缺点",
-    "py": "yōudiǎn hé quēdiǎn",
-    "vn": "ưu điểm và khuyết điểm"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 接受 + người + 的缺点",
-    "m": "Chấp nhận khuyết điểm của ai"
-   },
-   {
-    "s": "每个人都有缺点",
-    "m": "Ai cũng có khuyết điểm"
-   }
-  ]
- },
- {
-  "n": 19,
-  "zh": "接受",
-  "py": "jiēshòu",
-  "pos": "Động từ",
-  "vn": "chấp nhận",
-  "hv": "tiếp thụ",
-  "em": "🤗",
-  "lesson": 1,
-  "explain": [
-   "Đồng ý nhận lấy, thừa nhận điều gì đó (thường là điều không hoàn hảo hoặc khó khăn)."
-  ],
-  "usage": "Động từ, mang tân ngữ trực tiếp: 接受 + Đối tượng (接受缺点, 接受意见).",
-  "collo": [
-   "接受缺点",
-   "接受意见",
-   "不能接受"
-  ],
-  "ex_zh": "只有接受了他的缺点，你们才能更好地一起生活。",
-  "ex_py": "Zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
-  "ex_vn": "Chỉ khi chấp nhận khuyết điểm của anh ấy, hai bạn mới có thể sống cùng nhau tốt hơn.",
-  "exList": [
-   {
-    "zh": "只有接受了他的缺点，你们才能更好地一起生活。",
-    "py": "Zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
-    "vn": "Chỉ khi chấp nhận khuyết điểm của anh ấy, hai bạn mới có thể sống cùng nhau tốt hơn."
-   },
-   {
-    "zh": "我是一个南方人，很难接受每天吃面条。",
-    "py": "Wǒ shì yí ge nánfāngrén, hěn nán jiēshòu měitiān chī miàntiáo.",
-    "vn": "Tôi là người miền Nam, rất khó chấp nhận việc ngày nào cũng ăn mì."
-   },
-   {
-    "zh": "他不能接受这个结果。",
-    "py": "Tā bù néng jiēshòu zhège jiéguǒ.",
-    "vn": "Anh ấy không thể chấp nhận kết quả này."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "受",
-    "p": "shòu",
-    "type": "独体字 · Chữ đơn",
-    "st": 8,
-    "ord": "爫 trên → 又 dưới",
-    "rad": "又 (hựu – lại, tay)",
-    "mean": "nhận, chịu",
-    "tip": "Hình tượng hai tay 爫/又 trao và nhận một vật ở giữa → hành động TRAO NHẬN, mở rộng thành CHẤP NHẬN, CHỊU ĐỰNG.",
-    "cf": "爱 (ài – \"yêu\", phần trên cũng có nét tương tự)",
-    "w": "接受 / 感受 / 受到"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chỉ có chấp nhận khuyết điểm của đối phương, hai người mới có thể sống hạnh phúc cùng nhau.",
-    "answer": "只有接受对方的缺点，两个人才能幸福地生活在一起。",
-    "answerPy": "Zhǐyǒu jiēshòu duìfāng de quēdiǎn, liǎng ge rén cái néng xìngfú de shēnghuó zài yìqǐ.",
-    "note": "只有……才…… — chỉ có … mới ….",
-    "pair": "只有……才……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù rất khó, cô ấy cũng chấp nhận rồi.",
-    "answer": "即使很难，她也接受了。",
-    "answerPy": "Jíshǐ hěn nán, tā yě jiēshòu le.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Nhận và đồng ý — khác 收到 (nhận được về mặt vật chất).",
-  "colloFull": [
-   {
-    "zh": "接受缺点",
-    "py": "jiēshòu quēdiǎn",
-    "vn": "chấp nhận khuyết điểm"
-   },
-   {
-    "zh": "接受意见",
-    "py": "jiēshòu yìjiàn",
-    "vn": "tiếp thu ý kiến"
-   },
-   {
-    "zh": "不能接受",
-    "py": "bù néng jiēshòu",
-    "vn": "không thể chấp nhận"
-   },
-   {
-    "zh": "接受邀请",
-    "py": "jiēshòu yāoqǐng",
-    "vn": "nhận lời mời"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 接受 + O",
-    "m": "Ai đó chấp nhận cái gì"
-   },
-   {
-    "s": "Sub + 不能 / 无法 + 接受 + O",
-    "m": "Ai đó không thể chấp nhận cái gì"
-   }
-  ]
- },
- {
-  "n": 20,
-  "zh": "羡慕",
-  "py": "xiànmù",
-  "pos": "Động từ",
-  "vn": "ước ao, ngưỡng mộ",
-  "hv": "tiện mộ",
-  "em": "😍",
-  "lesson": 2,
-  "explain": [
-   "Mong muốn có được điều tốt đẹp mà người khác đang có."
-  ],
-  "usage": "Động từ, mang tân ngữ trực tiếp: 羡慕 + Đối tượng/Người.",
-  "collo": [
-   "羡慕浪漫的爱情",
-   "很羡慕",
-   "让人羡慕"
-  ],
-  "ex_zh": "很多女孩子羡慕浪漫的爱情。",
-  "ex_py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
-  "ex_vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn.",
-  "exList": [
-   {
-    "zh": "很多女孩子羡慕浪漫的爱情。",
-    "py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
-    "vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn."
-   },
-   {
-    "zh": "很多人都特别羡慕我们。",
-    "py": "Hěn duō rén dōu tèbié xiànmù wǒmen.",
-    "vn": "Rất nhiều người đặc biệt ngưỡng mộ chúng tôi."
-   },
-   {
-    "zh": "我们总是羡慕别人有个好工作。",
-    "py": "Wǒmen zǒngshì xiànmù biéren yǒu ge hǎo gōngzuò.",
-    "vn": "Chúng ta luôn ngưỡng mộ người khác có công việc tốt."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "慕",
-    "p": "mù",
-    "type": "上下结构 · Trên-dưới",
-    "st": 14,
-    "ord": "莫 trên → 心 dưới",
-    "rad": "心 (tâm – trái tim)",
-    "mean": "ngưỡng mộ, mến mộ",
-    "tip": "Bộ tâm 心 (trong lòng) ở dưới + 莫 (không gì bằng) → trong lòng cho rằng KHÔNG GÌ BẰNG điều đó, mở rộng thành NGƯỠNG MỘ.",
-    "cf": "幕 (mù – \"màn che\", cũng có 莫\" trên nhưng bộ 巾 dưới)",
-    "w": "羡慕 / 慕名 / 爱慕"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Đừng lúc nào cũng ngưỡng mộ người khác, mà quên mất hạnh phúc mình đang có.",
-    "answer": "不要总是羡慕别人，而忘记了自己已经有的幸福。",
-    "answerPy": "Búyào zǒngshì xiànmù biéren, ér wàngjìle zìjǐ yǐjīng yǒu de xìngfú.",
-    "note": "不要……而…… — đừng … mà (lại) …."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về mặt tình cảm, rất nhiều người ngưỡng mộ hai vợ chồng họ.",
-    "answer": "在感情上，很多人羡慕他们两口子。",
-    "answerPy": "Zài gǎnqíng shang, hěn duō rén xiànmù tāmen liǎngkǒuzi.",
-    "note": "在……上 — về phương diện tình cảm."
-   }
-  ],
-  "note": "Ngưỡng mộ mà mong mình cũng được như vậy — sắc thái tích cực.",
-  "colloFull": [
-   {
-    "zh": "很羡慕",
-    "py": "hěn xiànmù",
-    "vn": "rất ngưỡng mộ"
-   },
-   {
-    "zh": "让人羡慕",
-    "py": "ràng rén xiànmù",
-    "vn": "khiến người ta ước ao"
-   },
-   {
-    "zh": "羡慕别人",
-    "py": "xiànmù biéren",
-    "vn": "ước ao như người khác"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 羡慕 + O",
-    "m": "Ai đó ngưỡng mộ ai/cái gì"
-   },
-   {
-    "s": "……让人羡慕",
-    "m": "… khiến người ta phải ước ao"
-   }
-  ]
- },
- {
-  "n": 21,
-  "zh": "爱情",
-  "py": "àiqíng",
-  "pos": "Danh từ",
-  "vn": "tình yêu (giữa nam và nữ)",
-  "hv": "ái tình",
-  "em": "❤️",
-  "lesson": 2,
-  "explain": [
-   "Tình cảm yêu thương sâu sắc giữa hai người yêu nhau, khác với 爱 (yêu nói chung) và 友谊 (tình bạn)."
-  ],
-  "usage": "Danh từ; thường đi với 浪漫的爱情, 简单的爱情, 爱情故事.",
-  "collo": [
-   "浪漫的爱情",
-   "简单的爱情",
-   "爱情故事"
-  ],
-  "ex_zh": "很多女孩子羡慕浪漫的爱情。",
-  "ex_py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
-  "ex_vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn.",
-  "exList": [
-   {
-    "zh": "很多女孩子羡慕浪漫的爱情。",
-    "py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
-    "vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn."
-   },
-   {
-    "zh": "让我们感动的，就是生活中简单的爱情。",
-    "py": "Ràng wǒmen gǎndòng de, jiù shì shēnghuó zhōng jiǎndān de àiqíng.",
-    "vn": "Điều khiến chúng ta cảm động, chính là tình yêu đơn giản trong cuộc sống."
-   },
-   {
-    "zh": "爱情是结婚的重要原因。",
-    "py": "Àiqíng shì jié hūn de zhòngyào yuányīn.",
-    "vn": "Tình yêu là nguyên nhân quan trọng của việc kết hôn."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "情",
-    "p": "qíng",
-    "type": "左右结构 · Trái-phải",
-    "st": 11,
-    "ord": "忄 (tâm) trái → 青 (thanh) phải",
-    "rad": "忄 (tâm – trái tim, đứng)",
-    "mean": "tình cảm",
-    "tip": "Bộ tâm 忄 (cảm xúc trong lòng) + 青 (trong trẻo, biểu âm) → cảm xúc TRONG SÁNG, CHÂN THẬT trong lòng = TÌNH CẢM.",
-    "cf": "请 (qǐng – \"mời\", cũng có 青\" nhưng bộ 讠 khác)",
-    "w": "爱情 / 感情 / 心情"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Không những cần tình yêu lãng mạn, mà càng cần sự thu hút lẫn nhau về tính cách.",
-    "answer": "不仅需要浪漫的爱情，更需要性格上互相吸引。",
-    "answerPy": "Bùjǐn xūyào làngmàn de àiqíng, gèng xūyào xìnggé shang hùxiāng xīyǐn.",
-    "note": "不仅……更…… — không những … mà càng ….",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Ngay cả khi tình yêu rất bình thường, nó cũng có thể khiến người ta cảm động.",
-    "answer": "即使爱情很普通，它也能让人感动。",
-    "answerPy": "Jíshǐ àiqíng hěn pǔtōng, tā yě néng ràng rén gǎndòng.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "CHỈ dùng cho tình yêu nam nữ. Tình cảm gia đình là 亲情, bạn bè là 友情.",
-  "colloFull": [
-   {
-    "zh": "浪漫的爱情",
-    "py": "làngmàn de àiqíng",
-    "vn": "tình yêu lãng mạn"
-   },
-   {
-    "zh": "简单的爱情",
-    "py": "jiǎndān de àiqíng",
-    "vn": "tình yêu giản dị"
-   },
-   {
-    "zh": "爱情故事",
-    "py": "àiqíng gùshi",
-    "vn": "chuyện tình"
-   },
-   {
-    "zh": "相信爱情",
-    "py": "xiāngxìn àiqíng",
-    "vn": "tin vào tình yêu"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Adj + 的爱情",
-    "m": "Tình yêu … (làm định ngữ)"
-   },
-   {
-    "s": "Sub + 相信 + 爱情",
-    "m": "Ai đó tin vào tình yêu"
-   }
-  ]
- },
- {
-  "n": 22,
-  "zh": "星星",
-  "py": "xīngxing",
-  "pos": "Danh từ",
-  "vn": "ngôi sao",
-  "hv": "tinh tinh",
-  "em": "⭐",
-  "lesson": 2,
-  "explain": [
-   "Thiên thể phát sáng trên bầu trời đêm; trong bài dùng ẩn dụ cho món quà xa vời, không thực tế."
-  ],
-  "usage": "Danh từ; thường xuất hiện trong thành ngữ, câu ví von: 想要月亮/星星.",
-  "collo": [
-   "想要星星",
-   "天上的星星",
-   "数星星"
-  ],
-  "ex_zh": "她想要月亮时，你不会给她星星。",
-  "ex_py": "Tā xiǎng yào yuèliang shí, nǐ bú huì gěi tā xīngxing.",
-  "ex_vn": "Khi cô ấy muốn mặt trăng, bạn sẽ không đưa cho cô ấy ngôi sao.",
-  "exList": [
-   {
-    "zh": "浪漫是她想要月亮时，你不会给她星星。",
-    "py": "Làngmàn shì tā xiǎng yào yuèliang shí, nǐ bú huì gěi tā xīngxing.",
-    "vn": "Lãng mạn là khi cô ấy muốn mặt trăng, bạn sẽ không đưa cho cô ấy ngôi sao."
-   },
-   {
-    "zh": "晚上天上有很多星星。",
-    "py": "Wǎnshang tiānshang yǒu hěn duō xīngxing.",
-    "vn": "Buổi tối trên trời có rất nhiều ngôi sao."
-   },
-   {
-    "zh": "孩子们喜欢在院子里数星星。",
-    "py": "Háizimen xǐhuan zài yuànzi li shǔ xīngxing.",
-    "vn": "Bọn trẻ thích đếm sao ở trong sân."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "星",
-    "p": "xīng",
-    "type": "上下结构 · Trên-dưới",
-    "st": 9,
-    "ord": "日 trên → 生 dưới",
-    "rad": "日 (nhật – mặt trời)",
-    "mean": "ngôi sao",
-    "tip": "Bộ 日 (vật thể phát sáng) + 生 (sinh ra, biểu âm) → vật thể SÁNG xuất hiện trên trời = NGÔI SAO.",
-    "cf": "猩 (xīng – \"tinh tinh\", cũng có phần 星\" nhưng thêm bộ 犭)",
-    "w": "星星 / 明星 / 星期"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Ngay cả khi trời tối, những ngôi sao đó vẫn tỏa sáng.",
-    "answer": "即使天黑了，那些星星也还亮着。",
-    "answerPy": "Jíshǐ tiān hēi le, nàxiē xīngxing yě hái liàngzhe.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về phương diện lãng mạn, mỗi người có cách hiểu khác nhau.",
-    "answer": "在浪漫这件事上，每个人的理解都不一样。",
-    "answerPy": "Zài làngmàn zhè jiàn shì shang, měi ge rén de lǐjiě dōu bù yíyàng.",
-    "note": "在……上 — về phương diện, khía cạnh."
-   }
-  ],
-  "note": "Từ lặp âm, đọc nhẹ âm thứ hai: xīngxing.",
-  "colloFull": [
-   {
-    "zh": "天上的星星",
-    "py": "tiān shàng de xīngxing",
-    "vn": "ngôi sao trên trời"
-   },
-   {
-    "zh": "数星星",
-    "py": "shǔ xīngxing",
-    "vn": "đếm sao"
-   },
-   {
-    "zh": "星星很亮",
-    "py": "xīngxing hěn liàng",
-    "vn": "sao rất sáng"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "天上的星星 + Adj",
-    "m": "Sao trên trời thì thế nào"
-   },
-   {
-    "s": "Sub + 想要 + 星星",
-    "m": "Ai đó đòi cả ngôi sao (ví von)"
-   }
-  ]
- },
- {
-  "n": 23,
-  "zh": "即使",
-  "py": "jíshǐ",
-  "pos": "Liên từ",
-  "vn": "cho dù",
-  "hv": "tức sử",
-  "em": "🔀",
-  "lesson": 2,
-  "explain": [
-   "Liên từ dùng ở vế câu thứ nhất, vế câu thứ hai thường dùng 也 hô ứng, diễn tả quan hệ nhượng bộ giả thiết hoặc điều đã xảy ra/tồn tại."
-  ],
-  "usage": "即使 có thể đứng trước hoặc sau chủ ngữ của vế câu thứ nhất: 即使 + Chủ ngữ + VP1，Chủ ngữ + 也 + VP2.",
-  "collo": [
-   "即使……也……",
-   "即使只是……",
-   "即使晚上……也……"
-  ],
-  "ex_zh": "浪漫是即使晚上加班到零点，到家时，自己家里也还亮着灯。",
-  "ex_py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn, dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
-  "ex_vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ, khi về đến nhà, đèn nhà mình vẫn còn sáng.",
-  "exList": [
-   {
-    "zh": "浪漫是即使晚上加班到零点，到家时，自己家里也还亮着灯。",
-    "py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn, dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
-    "vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ, khi về đến nhà, đèn nhà mình vẫn còn sáng."
-   },
-   {
-    "zh": "即使只是跟他们吃吃饭、聊聊天，他们也会觉得很幸福。",
-    "py": "Jíshǐ zhǐshì gēn tāmen chīchi fàn, liáoliao tiān, tāmen yě huì juéde hěn xìngfú.",
-    "vn": "Cho dù chỉ là ăn cơm, trò chuyện với họ, họ cũng sẽ cảm thấy rất hạnh phúc."
-   },
-   {
-    "zh": "即使我们认识的时间不长，我从来没这么快乐过。",
-    "py": "Jíshǐ wǒmen rènshi de shíjiān bù cháng, wǒ cónglái méi zhème kuàilèguo.",
-    "vn": "Cho dù chúng tôi quen nhau chưa lâu, tôi từ trước đến giờ chưa từng vui như vậy."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "即",
-    "p": "jí",
-    "type": "左右结构 · Trái-phải",
-    "st": 7,
-    "ord": "皀 trái → 卩 phải",
-    "rad": "卩 (tiết – quỳ gối)",
-    "mean": "liền, ngay",
-    "tip": "Hình tượng người 卩 quỳ NGAY bên mâm thức ăn 皀 để ăn → hành động xảy ra NGAY LẬP TỨC, mở rộng thành LIÊN TỪ nhượng bộ \"cho dù ngay cả khi\".",
-    "cf": "既 (jì – \"đã\", hình gần giống nhưng nghĩa khác hẳn)",
-    "w": "即使 / 立即 / 即将"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù mỗi ngày đều tăng ca, anh ấy cũng không hề than phiền.",
-    "answer": "即使每天都加班，他也从来不抱怨。",
-    "answerPy": "Jíshǐ měitiān dōu jiābān, tā yě cónglái bù bàoyuàn.",
-    "note": "即使……也…… kết hợp với 从来不.",
-    "pair": "即使……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù mọi việc rất bình thường, chúng cũng có thể khiến người ta cảm động.",
-    "answer": "即使事情很普通，它们也能让人感动。",
-    "answerPy": "Jíshǐ shìqing hěn pǔtōng, tāmen yě néng ràng rén gǎndòng.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Giả thiết nhượng bộ — việc CHƯA xảy ra. Vế sau bắt buộc có 也.",
-  "colloFull": [
-   {
-    "zh": "即使……也……",
-    "py": "jíshǐ… yě…",
-    "vn": "cho dù… thì vẫn…"
-   },
-   {
-    "zh": "即使这样",
-    "py": "jíshǐ zhèyàng",
-    "vn": "cho dù vậy"
-   },
-   {
-    "zh": "即使很忙",
-    "py": "jíshǐ hěn máng",
-    "vn": "cho dù rất bận"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "即使 + mệnh đề 1，Sub + 也 + VP2",
-    "m": "Cho dù … thì vẫn …"
-   },
-   {
-    "s": "✗ 即使……但是…… → ✓ 即使……也……",
-    "m": "Không hô ứng với 但是"
-   }
-  ]
- },
- {
-  "n": 24,
-  "zh": "加班",
-  "py": "jiā bān",
-  "pos": "Cụm động từ",
-  "vn": "tăng ca, làm thêm giờ",
-  "hv": "gia ban",
-  "em": "💼",
-  "lesson": 2,
-  "explain": [
-   "Làm việc thêm ngoài giờ quy định."
-  ],
-  "usage": "Cụm động từ ly hợp (离合词): có thể chèn thời lượng/bổ ngữ ở giữa 加 và 班: 加了一天班.",
-  "collo": [
-   "晚上加班",
-   "加班到……",
-   "不用加班"
-  ],
-  "ex_zh": "浪漫是即使晚上加班到零点。",
-  "ex_py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn.",
-  "ex_vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ.",
-  "exList": [
-   {
-    "zh": "浪漫是即使晚上加班到零点。",
-    "py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn.",
-    "vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ."
-   },
-   {
-    "zh": "今天晚上大家要加班。",
-    "py": "Jīntiān wǎnshang dàjiā yào jiābān.",
-    "vn": "Tối nay mọi người phải tăng ca."
-   },
-   {
-    "zh": "他不会又要加班吧？",
-    "py": "Tā bú huì yòu yào jiābān ba?",
-    "vn": "Anh ấy sẽ không lại phải tăng ca chứ?"
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "班",
-    "p": "bān",
-    "type": "左右结构 · Trái-phải",
-    "st": 10,
-    "ord": "王 trái → 刂 → 王 (biến thể lặp)",
-    "rad": "王 (vương – bộ ngọc)",
-    "mean": "ca làm việc, lớp",
-    "tip": "Hai bộ 王 (ngọc) được 刂 (dao) CHIA thành từng phần đều nhau → chia thành từng NHÓM, từng CA làm việc.",
-    "cf": "班 dễ nhầm với 斑 (bān – \"đốm, vằn\")",
-    "w": "加班 / 上班 / 班级"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù phải tăng ca đến nửa đêm, anh ấy cũng vẫn gọi điện cho tôi mỗi ngày.",
-    "answer": "即使要加班到半夜，他也每天都给我打电话。",
-    "answerPy": "Jíshǐ yào jiābān dào bànyè, tā yě měitiān dōu gěi wǒ dǎ diànhuà.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về mặt công việc, gần đây chúng tôi thường xuyên phải tăng ca.",
-    "answer": "在工作上，我们最近经常要加班。",
-    "answerPy": "Zài gōngzuò shang, wǒmen zuìjìn jīngcháng yào jiābān.",
-    "note": "在……上 — về phương diện công việc."
-   }
-  ],
-  "note": "LY HỢP TỪ: 加了两个小时班. Không nói 加班两个小时.",
-  "colloFull": [
-   {
-    "zh": "晚上加班",
-    "py": "wǎnshang jiābān",
-    "vn": "tăng ca buổi tối"
-   },
-   {
-    "zh": "不用加班",
-    "py": "búyòng jiābān",
-    "vn": "không phải tăng ca"
-   },
-   {
-    "zh": "经常加班",
-    "py": "jīngcháng jiābān",
-    "vn": "thường xuyên tăng ca"
-   },
-   {
-    "zh": "加了三个小时班",
-    "py": "jiāle sān ge xiǎoshí bān",
-    "vn": "đã tăng ca ba tiếng"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 加班",
-    "m": "Ai đó tăng ca"
-   },
-   {
-    "s": "Sub + 加了 + thời lượng + 班",
-    "m": "Ai đó đã tăng ca bao lâu"
-   }
-  ]
- },
- {
-  "n": 25,
-  "zh": "亮",
-  "py": "liàng",
-  "pos": "Động từ",
-  "vn": "chiếu sáng, tỏa sáng",
-  "hv": "lượng",
-  "em": "💡",
-  "lesson": 2,
-  "explain": [
-   "Phát ra ánh sáng; cũng dùng làm tính từ chỉ độ sáng."
-  ],
-  "usage": "Động từ/Tính từ: 灯还亮着 (đèn vẫn đang sáng), 天亮了 (trời sáng rồi).",
-  "collo": [
-   "灯亮着",
-   "天亮了",
-   "很亮"
-  ],
-  "ex_zh": "到家时，自己家里也还亮着灯。",
-  "ex_py": "Dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
-  "ex_vn": "Khi về đến nhà, đèn nhà mình vẫn còn sáng.",
-  "exList": [
-   {
-    "zh": "到家时，自己家里也还亮着灯。",
-    "py": "Dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
-    "vn": "Khi về đến nhà, đèn nhà mình vẫn còn sáng."
-   },
-   {
-    "zh": "天还没亮，他就起床了。",
-    "py": "Tiān hái méi liàng, tā jiù qǐchuáng le.",
-    "vn": "Trời còn chưa sáng, anh ấy đã dậy rồi."
-   },
-   {
-    "zh": "这个房间很亮。",
-    "py": "Zhège fángjiān hěn liàng.",
-    "vn": "Căn phòng này rất sáng."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "亮",
-    "p": "liàng",
-    "type": "上下结构 · Trên-dưới",
-    "st": 9,
-    "ord": "亠 trên → 冖+几 dưới",
-    "rad": "亠 (đầu – nắp)",
-    "mean": "sáng",
-    "tip": "Hình tượng ánh sáng phát ra từ trên cao chiếu xuống → SÁNG, TỎA SÁNG.",
-    "cf": "亮 dễ nhầm với 京 (jīng – \"kinh đô\", phần trên giống nhau)",
-    "w": "亮 / 明亮 / 天亮"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù về nhà rất muộn, đèn phòng khách vẫn luôn sáng để đợi anh ấy.",
-    "answer": "即使回家很晚，客厅的灯也一直亮着等他。",
-    "answerPy": "Jíshǐ huí jiā hěn wǎn, kètīng de dēng yě yìzhí liàngzhe děng tā.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Từ trước đến giờ, đèn nhà tôi vào buổi tối luôn sáng đến rất muộn.",
-    "answer": "从来，我家的灯晚上都亮到很晚。",
-    "answerPy": "Cónglái, wǒ jiā de dēng wǎnshang dōu liàngdào hěn wǎn.",
-    "note": "从来 — từ trước đến nay (nhấn mạnh thói quen lâu dài)."
-   }
-  ],
-  "note": "Vừa là tính từ (sáng) vừa là động từ (bật sáng, hửng sáng).",
-  "colloFull": [
-   {
-    "zh": "灯亮着",
-    "py": "dēng liàngzhe",
-    "vn": "đèn đang sáng"
-   },
-   {
-    "zh": "天亮了",
-    "py": "tiān liàng le",
-    "vn": "trời sáng rồi"
-   },
-   {
-    "zh": "很亮",
-    "py": "hěn liàng",
-    "vn": "rất sáng"
-   },
-   {
-    "zh": "眼睛一亮",
-    "py": "yǎnjing yí liàng",
-    "vn": "mắt sáng lên"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "N + 亮着",
-    "m": "Cái gì đang sáng"
-   },
-   {
-    "s": "天 + 亮 + 了",
-    "m": "Trời đã sáng"
-   }
-  ]
- },
- {
-  "n": 26,
-  "zh": "感动",
-  "py": "gǎndòng",
-  "pos": "Động từ",
-  "vn": "cảm động, làm xúc động",
-  "hv": "cảm động",
-  "em": "🥹",
-  "lesson": 2,
-  "explain": [
-   "Cảm xúc dâng trào, xúc động khi tiếp xúc với điều gì đó tốt đẹp/ý nghĩa."
-  ],
-  "usage": "Động từ; có thể dùng bị động 被……感动, hoặc làm 让/使 người khác cảm động.",
-  "collo": [
-   "让人感动",
-   "很感动",
-   "被……感动"
-  ],
-  "ex_zh": "让我们感动的，就是生活中简单的爱情。",
-  "ex_py": "Ràng wǒmen gǎndòng de, jiù shì shēnghuó zhōng jiǎndān de àiqíng.",
-  "ex_vn": "Điều khiến chúng ta cảm động, chính là tình yêu đơn giản trong cuộc sống.",
-  "exList": [
-   {
-    "zh": "让我们感动的，就是生活中简单的爱情。",
-    "py": "Ràng wǒmen gǎndòng de, jiù shì shēnghuó zhōng jiǎndān de àiqíng.",
-    "vn": "Điều khiến chúng ta cảm động, chính là tình yêu đơn giản trong cuộc sống."
-   },
-   {
-    "zh": "这个电影很浪漫，让人特别感动。",
-    "py": "Zhège diànyǐng hěn làngmàn, ràng rén tèbié gǎndòng.",
-    "vn": "Bộ phim này rất lãng mạn, khiến người ta đặc biệt cảm động."
-   },
-   {
-    "zh": "虽然不长，但是让我很感动。",
-    "py": "Suīrán bù cháng, dànshì ràng wǒ hěn gǎndòng.",
-    "vn": "Tuy không dài, nhưng khiến tôi rất cảm động."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "动",
-    "p": "dòng",
-    "type": "左右结构 · Trái-phải (giản thể)",
-    "st": 6,
-    "ord": "云 trái → 力 phải",
-    "rad": "力 (lực – sức mạnh)",
-    "mean": "động, xúc động",
-    "tip": "Bộ lực 力 (sức mạnh, tác động) → chịu tác động mà THAY ĐỔI trạng thái, mở rộng thành CẢM ĐỘNG (cảm xúc bị lay động).",
-    "cf": "动 dễ nhầm với 云 (yún – \"mây\", chỉ khác bộ 力\")",
-    "w": "感动 / 运动 / 动作"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Không những khiến tôi cảm động, mà còn khiến tôi hiểu ra nhiều điều.",
-    "answer": "不仅让我感动，还让我明白了很多道理。",
-    "answerPy": "Bùjǐn ràng wǒ gǎndòng, hái ràng wǒ míngbaile hěn duō dàolǐ.",
-    "note": "不仅……还…… — không những … mà còn ….",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù chỉ là một chuyện nhỏ bình thường, nó cũng có thể khiến người ta cảm động.",
-    "answer": "即使只是一件普通的小事，它也能让人感动。",
-    "answerPy": "Jíshǐ zhǐshì yí jiàn pǔtōng de xiǎo shì, tā yě néng ràng rén gǎndòng.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Bị lay động tình cảm. Câu bị động hay gặp: 被……感动.",
-  "colloFull": [
-   {
-    "zh": "很感动",
-    "py": "hěn gǎndòng",
-    "vn": "rất cảm động"
-   },
-   {
-    "zh": "让人感动",
-    "py": "ràng rén gǎndòng",
-    "vn": "khiến người ta cảm động"
-   },
-   {
-    "zh": "被……感动",
-    "py": "bèi… gǎndòng",
-    "vn": "bị/được … làm cảm động"
-   },
-   {
-    "zh": "感动得哭了",
-    "py": "gǎndòng de kū le",
-    "vn": "cảm động đến phát khóc"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 很 / 非常 + 感动",
-    "m": "Ai đó rất cảm động"
-   },
-   {
-    "s": "……让 / 使 + người + 感动",
-    "m": "… khiến ai cảm động"
-   }
-  ]
- },
- {
-  "n": 27,
-  "zh": "自然",
-  "py": "zìrán",
-  "pos": "Phó từ",
-  "vn": "đương nhiên, hiển nhiên",
-  "hv": "tự nhiên",
-  "em": "🌿",
-  "lesson": 2,
-  "explain": [
-   "Diễn tả điều xảy ra một cách hợp lý, không cần cố gắng, đương nhiên là vậy."
-  ],
-  "usage": "Phó từ, đứng trước động từ: 会很自然地 + V.",
-  "collo": [
-   "很自然地",
-   "自然想起",
-   "大自然"
-  ],
-  "ex_zh": "说到结婚，人们就会很自然地想起爱情。",
-  "ex_py": "Shuōdào jié hūn, rénmen jiù huì hěn zìrán de xiǎngqǐ àiqíng.",
-  "ex_vn": "Nói đến kết hôn, người ta sẽ tự nhiên nghĩ đến tình yêu.",
-  "exList": [
-   {
-    "zh": "说到结婚，人们就会很自然地想起爱情。",
-    "py": "Shuōdào jié hūn, rénmen jiù huì hěn zìrán de xiǎngqǐ àiqíng.",
-    "vn": "Nói đến kết hôn, người ta sẽ tự nhiên nghĩ đến tình yêu."
-   },
-   {
-    "zh": "两个人熟悉了以后，说话就自然多了。",
-    "py": "Liǎng ge rén shúxile yǐhòu, shuōhuà jiù zìrán duō le.",
-    "vn": "Sau khi hai người quen nhau, nói chuyện tự nhiên hơn nhiều."
-   },
-   {
-    "zh": "他喜欢周末去大自然里走走。",
-    "py": "Tā xǐhuan zhōumò qù dàzìrán li zǒuzou.",
-    "vn": "Anh ấy thích cuối tuần đi dạo trong thiên nhiên."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "然",
-    "p": "rán",
-    "type": "上下结构 · Trên-dưới",
-    "st": 12,
-    "ord": "月+犬 trên → 灬 dưới",
-    "rad": "灬 (hỏa – lửa)",
-    "mean": "như vậy, đúng vậy",
-    "tip": "Bộ lửa 灬 (đốt thịt 月+犬) vốn nghĩa gốc là \"đốt cháy\", mượn âm để chỉ Ý NHƯ VẬY, ĐÚNG LÀ VẬY, mở rộng thành TỰ NHIÊN.",
-    "cf": "燃 (rán – \"cháy\", thêm bộ 火\" bên trái, giữ nghĩa gốc)",
-    "w": "自然 / 然后 / 突然"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Vừa mới nói đến kỳ nghỉ, mọi người tự nhiên nghĩ ngay đến việc đi du lịch.",
-    "answer": "刚说到放假，大家就自然想到了去旅游。",
-    "answerPy": "Gāng shuōdào fàngjià, dàjiā jiù zìrán xiǎngdàole qù lǚyóu.",
-    "note": "刚 — vừa mới, ôn lại điểm ngữ pháp của bài."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về mặt cách nói chuyện, cô ấy ngày càng tự nhiên hơn.",
-    "answer": "在说话上，她越来越自然了。",
-    "answerPy": "Zài shuōhuà shang, tā yuè lái yuè zìrán le.",
-    "note": "在……上 — về phương diện."
-   }
-  ],
-  "note": "Ở bài này là PHÓ TỪ (đương nhiên). Còn 大自然 là danh từ (thiên nhiên).",
-  "colloFull": [
-   {
-    "zh": "很自然地",
-    "py": "hěn zìrán de",
-    "vn": "một cách rất tự nhiên"
-   },
-   {
-    "zh": "自然想起",
-    "py": "zìrán xiǎngqǐ",
-    "vn": "tự nhiên nhớ tới"
-   },
-   {
-    "zh": "大自然",
-    "py": "dà zìrán",
-    "vn": "thiên nhiên"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 自然 + 会 / 就 + V",
-    "m": "Ai đó đương nhiên sẽ làm gì"
-   },
-   {
-    "s": "很自然地 + V",
-    "m": "Làm gì một cách rất tự nhiên"
-   }
-  ]
- },
- {
-  "n": 28,
-  "zh": "原因",
-  "py": "yuányīn",
-  "pos": "Danh từ",
-  "vn": "nguyên nhân",
-  "hv": "nguyên nhân",
-  "em": "❓",
-  "lesson": 2,
-  "explain": [
-   "Điều dẫn đến một kết quả, sự việc nào đó."
-  ],
-  "usage": "Danh từ; thường đi với 重要原因, 主要原因.",
-  "collo": [
-   "重要原因",
-   "主要原因",
-   "原因是……"
-  ],
-  "ex_zh": "爱情是结婚的重要原因。",
-  "ex_py": "Àiqíng shì jié hūn de zhòngyào yuányīn.",
-  "ex_vn": "Tình yêu là nguyên nhân quan trọng của việc kết hôn.",
-  "exList": [
-   {
-    "zh": "爱情是结婚的重要原因，但只有爱情是不够的。",
-    "py": "Àiqíng shì jié hūn de zhòngyào yuányīn, dàn zhǐyǒu àiqíng shì bú gòu de.",
-    "vn": "Tình yêu là nguyên nhân quan trọng của việc kết hôn, nhưng chỉ có tình yêu thôi thì không đủ."
-   },
-   {
-    "zh": "他没告诉我原因。",
-    "py": "Tā méi gàosu wǒ yuányīn.",
-    "vn": "Anh ấy không nói cho tôi biết nguyên nhân."
-   },
-   {
-    "zh": "这就是他离开的主要原因。",
-    "py": "Zhè jiù shì tā líkāi de zhǔyào yuányīn.",
-    "vn": "Đây chính là nguyên nhân chính khiến anh ấy rời đi."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "原",
-    "p": "yuán",
-    "type": "半包围结构 · Bán bao vây",
-    "st": 10,
-    "ord": "厂 bao ngoài → 白+小 trong",
-    "rad": "厂 (hán – vách núi)",
-    "mean": "nguồn gốc, ban đầu",
-    "tip": "Hình tượng dòng nước chảy ra từ khe núi 厂 → NGUỒN GỐC, mở rộng thành NGUYÊN NHÂN (nguồn gốc của sự việc).",
-    "cf": "源 (yuán – \"nguồn\", thêm bộ 氵\" giữ nghĩa gốc \"nguồn nước\")",
-    "w": "原因 / 原来 / 原谅"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chỉ có hiểu rõ nguyên nhân, chúng ta mới có thể giải quyết vấn đề.",
-    "answer": "只有弄清楚原因，我们才能解决问题。",
-    "answerPy": "Zhǐyǒu nòngqīngchu yuányīn, wǒmen cái néng jiějué wèntí.",
-    "note": "只有……才…… — chỉ có … mới ….",
-    "pair": "只有……才……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù nguyên nhân rất đơn giản, kết quả cũng rất nghiêm trọng.",
-    "answer": "即使原因很简单，结果也很严重。",
-    "answerPy": "Jíshǐ yuányīn hěn jiǎndān, jiéguǒ yě hěn yánzhòng.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Trái nghĩa: 结果 (kết quả). 原因是…… nêu lý do.",
-  "colloFull": [
-   {
-    "zh": "重要原因",
-    "py": "zhòngyào yuányīn",
-    "vn": "nguyên nhân quan trọng"
-   },
-   {
-    "zh": "主要原因",
-    "py": "zhǔyào yuányīn",
-    "vn": "nguyên nhân chủ yếu"
-   },
-   {
-    "zh": "原因是……",
-    "py": "yuányīn shì…",
-    "vn": "nguyên nhân là…"
-   },
-   {
-    "zh": "找出原因",
-    "py": "zhǎochū yuányīn",
-    "vn": "tìm ra nguyên nhân"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "……的原因是……",
-    "m": "Nguyên nhân của … là …"
-   },
-   {
-    "s": "因为 + nguyên nhân，所以 + kết quả",
-    "m": "Vì … nên …"
-   }
-  ]
- },
- {
-  "n": 29,
-  "zh": "互相",
-  "py": "hùxiāng",
-  "pos": "Phó từ",
-  "vn": "lẫn nhau, qua lại",
-  "hv": "hỗ tương",
-  "em": "🔄",
-  "lesson": 2,
-  "explain": [
-   "Diễn tả hành động qua lại giữa hai bên, cả hai bên cùng làm với nhau."
-  ],
-  "usage": "Phó từ, đứng trước động từ: 互相 + V (互相理解, 互相关心, 互相吸引).",
-  "collo": [
-   "互相理解",
-   "互相关心",
-   "互相吸引"
-  ],
-  "ex_zh": "两个人还应该互相理解、互相关心。",
-  "ex_py": "Liǎng ge rén hái yīnggāi hùxiāng lǐjiě, hùxiāng guānxīn.",
-  "ex_vn": "Hai người còn nên hiểu nhau, quan tâm lẫn nhau.",
-  "exList": [
-   {
-    "zh": "两个人还应该互相理解、互相关心，只有这样才能很好地生活在一起。",
-    "py": "Liǎng ge rén hái yīnggāi hùxiāng lǐjiě, hùxiāng guānxīn, zhǐyǒu zhèyàng cái néng hěn hǎo de shēnghuó zài yìqǐ.",
-    "vn": "Hai người còn nên hiểu nhau, quan tâm lẫn nhau, chỉ có như vậy mới có thể sống tốt cùng nhau."
-   },
-   {
-    "zh": "更需要性格上互相吸引。",
-    "py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
-    "vn": "Càng cần sự thu hút lẫn nhau về tính cách."
-   },
-   {
-    "zh": "朋友之间要互相帮助。",
-    "py": "Péngyou zhījiān yào hùxiāng bāngzhù.",
-    "vn": "Bạn bè với nhau phải giúp đỡ lẫn nhau."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "互",
-    "p": "hù",
-    "type": "独体字 · Chữ đơn",
-    "st": 4,
-    "ord": "nét liền, hình sợi dây tết chéo",
-    "rad": "一 (nhất)",
-    "mean": "lẫn nhau, qua lại",
-    "tip": "Hình tượng cổ mô phỏng một dụng cụ đan XEN KẼ qua lại → mở rộng nghĩa thành LẪN NHAU.",
-    "cf": "瓦 (wǎ – \"ngói\", hình gần giống nhưng không liên quan nghĩa)",
-    "w": "互相 / 相互 / 互联网"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Chỉ có hiểu nhau, hai người mới có thể sống hạnh phúc cùng nhau.",
-    "answer": "只有互相理解，两个人才能幸福地生活在一起。",
-    "answerPy": "Zhǐyǒu hùxiāng lǐjiě, liǎng ge rén cái néng xìngfú de shēnghuó zài yìqǐ.",
-    "note": "只有……才…… — chỉ có … mới ….",
-    "pair": "只有……才……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Về phương diện tính cách, hai người thu hút lẫn nhau.",
-    "answer": "在性格上，两个人互相吸引。",
-    "answerPy": "Zài xìnggé shang, liǎng ge rén hùxiāng xīyǐn.",
-    "note": "在……上 — về phương diện tính cách."
-   }
-  ],
-  "note": "Phó từ, đứng TRƯỚC động từ hai âm tiết: 互相帮助 (không nói 互相帮).",
-  "colloFull": [
-   {
-    "zh": "互相理解",
-    "py": "hùxiāng lǐjiě",
-    "vn": "hiểu nhau"
-   },
-   {
-    "zh": "互相关心",
-    "py": "hùxiāng guānxīn",
-    "vn": "quan tâm lẫn nhau"
-   },
-   {
-    "zh": "互相吸引",
-    "py": "hùxiāng xīyǐn",
-    "vn": "thu hút lẫn nhau"
-   },
-   {
-    "zh": "互相帮助",
-    "py": "hùxiāng bāngzhù",
-    "vn": "giúp đỡ lẫn nhau"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub (số nhiều) + 互相 + V (2 âm tiết)",
-    "m": "Họ … lẫn nhau"
-   },
-   {
-    "s": "只有互相……，才能……",
-    "m": "Chỉ có … lẫn nhau mới có thể …"
-   }
-  ]
- },
- {
-  "n": 30,
-  "zh": "吸引",
-  "py": "xīyǐn",
-  "pos": "Động từ",
-  "vn": "hấp dẫn, thu hút",
-  "hv": "hấp dẫn",
-  "em": "🧲",
-  "lesson": 2,
-  "explain": [
-   "Làm cho người khác chú ý đến, muốn tiếp cận vì có sức hút."
-  ],
-  "usage": "Động từ, mang tân ngữ trực tiếp: 吸引 + Đối tượng.",
-  "collo": [
-   "互相吸引",
-   "很吸引人",
-   "吸引游客"
-  ],
-  "ex_zh": "更需要性格上互相吸引。",
-  "ex_py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
-  "ex_vn": "Càng cần sự thu hút lẫn nhau về tính cách.",
-  "exList": [
-   {
-    "zh": "更需要性格上互相吸引。",
-    "py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
-    "vn": "Càng cần sự thu hút lẫn nhau về tính cách."
-   },
-   {
-    "zh": "那个地方特别漂亮，每年都会吸引很多国内外的游客。",
-    "py": "Nàge dìfang tèbié piàoliang, měinián dōu huì xīyǐn hěn duō guónèiwài de yóukè.",
-    "vn": "Nơi đó rất đẹp, mỗi năm đều thu hút nhiều du khách trong và ngoài nước."
-   },
-   {
-    "zh": "她的幽默很吸引我。",
-    "py": "Tā de yōumò hěn xīyǐn wǒ.",
-    "vn": "Sự hài hước của cô ấy rất thu hút tôi."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "吸",
-    "p": "xī",
-    "type": "左右结构 · Trái-phải",
-    "st": 6,
-    "ord": "口 (khẩu) trái → 及 (cập) phải",
-    "rad": "口 (khẩu – miệng)",
-    "mean": "hút vào",
-    "tip": "Bộ miệng 口 (hít thở) + 及 (đạt tới, kéo tới) → dùng MIỆNG kéo không khí vào = HÍT, mở rộng thành THU HÚT.",
-    "cf": "吸 dễ nhầm với 极 (jí – \"cực kỳ\", bộ khác)",
-    "w": "吸引 / 呼吸 / 吸烟"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Không những phong cảnh ở đó đẹp, mà văn hóa cũng rất thu hút du khách.",
-    "answer": "那儿不仅风景漂亮，文化也很吸引游客。",
-    "answerPy": "Nàr bùjǐn fēngjǐng piàoliang, wénhuà yě hěn xīyǐn yóukè.",
-    "note": "不仅……也…… — không những … mà còn ….",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù đã quen nhau lâu rồi, anh ấy vẫn luôn bị cô ấy thu hút.",
-    "answer": "即使认识很久了，他也一直被她吸引。",
-    "answerPy": "Jíshǐ rènshi hěn jiǔ le, tā yě yìzhí bèi tā xīyǐn.",
-    "note": "即使……也…… kết hợp với câu bị động 被.",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Làm cho người khác chú ý và muốn đến gần.",
-  "colloFull": [
-   {
-    "zh": "互相吸引",
-    "py": "hùxiāng xīyǐn",
-    "vn": "thu hút lẫn nhau"
-   },
-   {
-    "zh": "很吸引人",
-    "py": "hěn xīyǐn rén",
-    "vn": "rất hấp dẫn"
-   },
-   {
-    "zh": "吸引游客",
-    "py": "xīyǐn yóukè",
-    "vn": "thu hút du khách"
-   },
-   {
-    "zh": "吸引注意",
-    "py": "xīyǐn zhùyì",
-    "vn": "thu hút sự chú ý"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "A + 吸引 + B",
-    "m": "A thu hút B"
-   },
-   {
-    "s": "……很吸引人",
-    "m": "… rất hấp dẫn"
-   }
-  ]
- },
- {
-  "n": 31,
-  "zh": "幽默",
-  "py": "yōumò",
-  "pos": "Tính từ",
-  "vn": "hóm hỉnh, khôi hài",
-  "hv": "u mặc",
-  "em": "😂",
-  "lesson": 2,
-  "explain": [
-   "Có khả năng nói/làm cho người khác thấy vui, buồn cười một cách nhẹ nhàng, thông minh."
-  ],
-  "usage": "Tính từ; thường đi với 很幽默的人, 幽默感.",
-  "collo": [
-   "很幽默",
-   "幽默的人",
-   "有幽默感"
-  ],
-  "ex_zh": "我丈夫是个很幽默的人。",
-  "ex_py": "Wǒ zhàngfu shì ge hěn yōumò de rén.",
-  "ex_vn": "Chồng tôi là một người rất hóm hỉnh.",
-  "exList": [
-   {
-    "zh": "我丈夫是个很幽默的人。",
-    "py": "Wǒ zhàngfu shì ge hěn yōumò de rén.",
-    "vn": "Chồng tôi là một người rất hóm hỉnh."
-   },
-   {
-    "zh": "每个人都希望自己有幽默感。",
-    "py": "Měi ge rén dōu xīwàng zìjǐ yǒu yōumògǎn.",
-    "vn": "Ai cũng mong mình có khiếu hài hước."
-   },
-   {
-    "zh": "幽默能帮助人们打开友谊的大门。",
-    "py": "Yōumò néng bāngzhù rénmen dǎkāi yǒuyì de dàmén.",
-    "vn": "Sự hóm hỉnh có thể giúp người ta mở cánh cửa tình bạn."
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "幽",
-    "p": "yōu",
-    "type": "半包围结构 · Bán bao vây",
-    "st": 9,
-    "ord": "山 bao ngoài → 幺+幺 trong",
-    "rad": "山 (sơn – núi)",
-    "mean": "sâu kín, u tịch",
-    "tip": "Bộ núi 山 bao quanh hai sợi tơ nhỏ 幺幺 (mờ nhạt) → nơi SÂU KÍN trong núi, mượn âm để phiên âm từ \"humor\" thành 幽默.",
-    "cf": "幽 dễ nhầm với 幼 (yòu – \"trẻ nhỏ\", bộ 力 khác)",
-    "w": "幽默 / 幽静 / 幽会"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Không những anh ấy hóm hỉnh, mà tính cách cũng rất tốt.",
-    "answer": "他不仅很幽默，性格也很好。",
-    "answerPy": "Tā bùjǐn hěn yōumò, xìnggé yě hěn hǎo.",
-    "note": "不仅……也…… — không những … mà còn ….",
-    "pair": "不仅……也……"
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù chuyện rất bình thường, anh ấy nói ra cũng rất hài hước.",
-    "answer": "即使是很普通的事情，他说出来也很幽默。",
-    "answerPy": "Jíshǐ shì hěn pǔtōng de shìqing, tā shuō chulai yě hěn yōumò.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "Từ mượn âm (humour). Danh từ hoá: 幽默感 (khiếu hài hước).",
-  "colloFull": [
-   {
-    "zh": "很幽默",
-    "py": "hěn yōumò",
-    "vn": "rất hóm hỉnh"
-   },
-   {
-    "zh": "幽默的人",
-    "py": "yōumò de rén",
-    "vn": "người hài hước"
-   },
-   {
-    "zh": "有幽默感",
-    "py": "yǒu yōumògǎn",
-    "vn": "có khiếu hài hước"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 很 / 特别 + 幽默",
-    "m": "Ai đó rất hóm hỉnh"
-   },
-   {
-    "s": "Sub + 很有幽默感",
-    "m": "Ai đó rất có khiếu hài hước"
-   }
-  ]
- },
- {
-  "n": 32,
-  "zh": "脾气",
-  "py": "píqi",
-  "pos": "Danh từ",
-  "vn": "tính tình, tính khí",
-  "hv": "tì khí",
-  "em": "😤",
-  "lesson": 2,
-  "explain": [
-   "Tính cách, thói quen phản ứng cảm xúc của một người, đặc biệt là dễ/khó nổi giận."
-  ],
-  "usage": "Danh từ; thường đi với 脾气好/不错/大: 脾气也不错.",
-  "collo": [
-   "脾气不错",
-   "发脾气",
-   "脾气好"
-  ],
-  "ex_zh": "而且他的脾气也不错。",
-  "ex_py": "Érqiě tā de píqi yě búcuò.",
-  "ex_vn": "Hơn nữa tính tình anh ấy cũng khá tốt.",
-  "exList": [
-   {
-    "zh": "而且他的脾气也不错，结婚快十年了，我们俩几乎没因为什么事红过脸。",
-    "py": "Érqiě tā de píqi yě búcuò, jié hūn kuài shí nián le, wǒmen liǎ jīhū méi yīnwèi shénme shì hóngguo liǎn.",
-    "vn": "Hơn nữa tính tình anh ấy cũng khá tốt, kết hôn gần mười năm rồi, hai chúng tôi hầu như chưa từng cãi nhau vì chuyện gì."
-   },
-   {
-    "zh": "他虽然脾气很大，但工作很认真。",
-    "py": "Tā suīrán píqi hěn dà, dàn gōngzuò hěn rènzhēn.",
-    "vn": "Tuy anh ấy tính khí hơi nóng nảy, nhưng làm việc rất nghiêm túc."
-   },
-   {
-    "zh": "孩子为什么喜欢发脾气呢？",
-    "py": "Háizi wèishénme xǐhuan fā píqi ne?",
-    "vn": "Vì sao trẻ con thích nổi cáu vậy?"
-   }
-  ],
-  "hanzi": [
-   {
-    "c": "脾",
-    "p": "pí",
-    "type": "左右结构 · Trái-phải",
-    "st": 12,
-    "ord": "月 (nhục) trái → 卑 (ti) phải",
-    "rad": "月 (nhục – thịt, bộ phận cơ thể)",
-    "mean": "lá lách",
-    "tip": "Bộ thịt 月 (bộ phận cơ thể) + 卑 (biểu âm) → LÁ LÁCH, theo y học cổ truyền lá lách liên quan đến tính khí, mở rộng thành TÍNH TÌNH.",
-    "cf": "脾 dễ nhầm với 啤 (pí – \"bia\", bộ 口 khác)",
-    "w": "脾气 / 脾胃"
-   }
-  ],
-  "checkList": [
-   {
-    "promptLang": "vi",
-    "prompt": "Từ trước đến giờ tính tình anh ấy đều rất tốt, chưa từng nổi giận với ai.",
-    "answer": "他脾气从来都很好，没跟谁发过脾气。",
-    "answerPy": "Tā píqi cónglái dōu hěn hǎo, méi gēn shéi fāguo píqi.",
-    "note": "从来 + 都 — từ trước đến nay luôn luôn."
-   },
-   {
-    "promptLang": "vi",
-    "prompt": "Cho dù tính tình anh ấy không tốt lắm, tôi vẫn rất thích anh ấy.",
-    "answer": "即使他脾气不太好，我也还是很喜欢他。",
-    "answerPy": "Jíshǐ tā píqi bú tài hǎo, wǒ yě háishi hěn xǐhuan tā.",
-    "note": "即使……也…… — cho dù … vẫn ….",
-    "pair": "即使……也……"
-   }
-  ],
-  "note": "发脾气 = nổi nóng (ly hợp từ: 发了脾气).",
-  "colloFull": [
-   {
-    "zh": "脾气好",
-    "py": "píqi hǎo",
-    "vn": "tính tình tốt"
-   },
-   {
-    "zh": "脾气不错",
-    "py": "píqi búcuò",
-    "vn": "tính nết khá"
-   },
-   {
-    "zh": "发脾气",
-    "py": "fā píqi",
-    "vn": "nổi nóng"
-   },
-   {
-    "zh": "脾气不好",
-    "py": "píqi bù hǎo",
-    "vn": "tính khí không tốt"
-   }
-  ],
-  "patterns": [
-   {
-    "s": "Sub + 脾气 + 好 / 不好",
-    "m": "Tính tình của ai đó thế nào"
-   },
-   {
-    "s": "Sub + 对 + người + 发脾气",
-    "m": "Ai đó nổi nóng với ai"
-   }
-  ]
- },
- {
-  "n": 33,
-  "zh": "孙月",
-  "py": "Sūn Yuè",
-  "pos": "Danh từ riêng",
-  "vn": "Tôn Nguyệt (tên người)",
-  "hv": "Tôn Nguyệt",
-  "em": "👩",
-  "lesson": 1,
-  "explain": [
-   "Tên riêng của một nhân vật nữ trong bài hội thoại 1."
-  ],
-  "usage": "Danh từ riêng chỉ tên người.",
-  "collo": [
-   "孙月说",
-   "跟孙月聊天"
-  ],
-  "ex_zh": "孙月：听说你男朋友李进跟你是一个学校的，是你同学吗？",
-  "ex_py": "Sūn Yuè: Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de, shì nǐ tóngxué ma?",
-  "ex_vn": "Tôn Nguyệt: Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu, có phải là bạn học của cậu không?",
-  "exList": [
-   {
-    "zh": "孙月：听说你男朋友李进跟你是一个学校的，是你同学吗？",
-    "py": "Sūn Yuè: Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de, shì nǐ tóngxué ma?",
-    "vn": "Tôn Nguyệt: Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu, có phải là bạn học của cậu không?"
-   }
-  ],
-  "note": "Tên người: họ 孙 (Tôn) + tên 月 (Nguyệt)."
- },
- {
-  "n": 34,
-  "zh": "王静",
-  "py": "Wáng Jìng",
-  "pos": "Danh từ riêng",
-  "vn": "Vương Tịnh (tên người)",
-  "hv": "Vương Tĩnh",
-  "em": "👩",
-  "lesson": 1,
-  "explain": [
-   "Tên riêng của nhân vật nữ chính, xuất hiện xuyên suốt cả 3 đoạn hội thoại của bài."
-  ],
-  "usage": "Danh từ riêng chỉ tên người.",
-  "collo": [
-   "王静说",
-   "王静跟李进"
-  ],
-  "ex_zh": "王静：是的，他学的是新闻，我学的是法律。",
-  "ex_py": "Wáng Jìng: Shì de, tā xué de shì xīnwén, wǒ xué de shì fǎlǜ.",
-  "ex_vn": "Vương Tịnh: Đúng vậy, anh ấy học báo chí, mình học luật.",
-  "exList": [
-   {
-    "zh": "王静：是的，他学的是新闻，我学的是法律。",
-    "py": "Wáng Jìng: Shì de, tā xué de shì xīnwén, wǒ xué de shì fǎlǜ.",
-    "vn": "Vương Tịnh: Đúng vậy, anh ấy học báo chí, mình học luật."
-   }
-  ],
-  "note": "Tên người: họ 王 (Vương) + tên 静 (Tịnh)."
- },
- {
-  "n": 35,
-  "zh": "李进",
-  "py": "Lǐ Jìn",
-  "pos": "Danh từ riêng",
-  "vn": "Lý Tiến (tên người)",
-  "hv": "Lý Tiến",
-  "em": "🧑",
-  "lesson": 1,
-  "explain": [
-   "Tên riêng của bạn trai Vương Tịnh, nhân vật được nhắc đến trong hội thoại 1 và 2."
-  ],
-  "usage": "Danh từ riêng chỉ tên người.",
-  "collo": [
-   "李进跟你",
-   "认识李进"
-  ],
-  "ex_zh": "听说你男朋友李进跟你是一个学校的。",
-  "ex_py": "Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de.",
-  "ex_vn": "Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu.",
-  "exList": [
-   {
-    "zh": "听说你男朋友李进跟你是一个学校的。",
-    "py": "Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de.",
-    "vn": "Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu."
-   }
-  ],
-  "note": "Tên người: họ 李 (Lý) + tên 进 (Tiến)."
- },
- {
-  "n": 36,
-  "zh": "李",
-  "py": "Lǐ",
-  "pos": "Danh từ riêng",
-  "vn": "Lý (họ)",
-  "hv": "Lý",
-  "em": "🧑‍🏫",
-  "lesson": 1,
-  "explain": [
-   "Họ của giáo viên (李老师) và cũng của李进; trong bài dùng làm 李老师 — cô/thầy giáo Lý."
-  ],
-  "usage": "Danh từ riêng chỉ họ người, thường ghép với 老师 thành 李老师.",
-  "collo": [
-   "李老师",
-   "李老师说"
-  ],
-  "ex_zh": "王静跟李老师聊她要结婚的事情。",
-  "ex_py": "Wáng Jìng gēn Lǐ lǎoshī liáo tā yào jié hūn de shìqing.",
-  "ex_vn": "Vương Tịnh nói chuyện với cô Lý về việc mình sắp kết hôn.",
-  "exList": [
-   {
-    "zh": "王静跟李老师聊她要结婚的事情。",
-    "py": "Wáng Jìng gēn Lǐ lǎoshī liáo tā yào jié hūn de shìqing.",
-    "vn": "Vương Tịnh nói chuyện với cô Lý về việc mình sắp kết hôn."
-   }
-  ],
-  "note": "Một trong những họ phổ biến nhất Trung Quốc. 李老师 = thầy/cô Lý."
- },
- {
-  "n": 37,
-  "zh": "高",
-  "py": "Gāo",
-  "pos": "Danh từ riêng",
-  "vn": "Cao (họ)",
-  "hv": "Cao",
-  "em": "🧑‍🏫",
-  "lesson": 1,
-  "explain": [
-   "Họ của nhân vật 高老师 trong hội thoại 3, nói chuyện với 李老师 về cuộc sống sau khi kết hôn."
-  ],
-  "usage": "Danh từ riêng chỉ họ người, thường ghép với 老师 thành 高老师.",
-  "collo": [
-   "高老师",
-   "高老师问"
-  ],
-  "ex_zh": "高老师：听说您跟妻子结婚快二十年了？",
-  "ex_py": "Gāo lǎoshī: Tīngshuō nín gēn qīzi jié hūn kuài èrshí nián le?",
-  "ex_vn": "Thầy Cao: Nghe nói thầy kết hôn với vợ đã gần hai mươi năm rồi?",
-  "exList": [
-   {
-    "zh": "高老师：听说您跟妻子结婚快二十年了？",
-    "py": "Gāo lǎoshī: Tīngshuō nín gēn qīzi jié hūn kuài èrshí nián le?",
-    "vn": "Thầy Cao: Nghe nói thầy kết hôn với vợ đã gần hai mươi năm rồi?"
-   }
-  ],
-  "note": "Vừa là họ (Cao) vừa là tính từ 高 = cao."
- }
+  {
+    "n": 1,
+    "zh": "法律",
+    "py": "fǎlǜ",
+    "pos": "Danh từ",
+    "vn": "pháp luật, luật",
+    "hv": "pháp luật",
+    "em": "⚖️",
+    "lesson": 1,
+    "explain": [
+      "Hệ thống quy tắc do nhà nước ban hành, mọi người phải tuân theo."
+    ],
+    "usage": "Danh từ; thường đi với động từ 学/懂/了解: 学法律, 懂法律.",
+    "collo": [
+      "学法律",
+      "懂法律",
+      "法律专业"
+    ],
+    "ex_zh": "他学的是新闻，我学的是法律。",
+    "ex_py": "Tā xué de shì xīnwén, wǒ xué de shì fǎlǜ.",
+    "ex_vn": "Anh ấy học báo chí, tôi học luật.",
+    "exList": [
+      {
+        "zh": "他学的是新闻，我学的是法律，我和他不是一个班。",
+        "py": "Tā xué de shì xīnwén, wǒ xué de shì fǎlǜ, wǒ hé tā bú shì yí ge bān.",
+        "vn": "Anh ấy học báo chí, tôi học luật, tôi và anh ấy không cùng lớp."
+      },
+      {
+        "zh": "你家里怎么有这么多关于法律的书？",
+        "py": "Nǐ jiā li zěnme yǒu zhème duō guānyú fǎlǜ de shū?",
+        "vn": "Sao nhà bạn có nhiều sách về pháp luật vậy?"
+      },
+      {
+        "zh": "我最近对法律特别感兴趣。",
+        "py": "Wǒ zuìjìn duì fǎlǜ tèbié gǎn xìngqù.",
+        "vn": "Gần đây tôi rất hứng thú với pháp luật."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "律",
+        "p": "lǜ",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "彳 (xích) trái → 聿 (duật) phải",
+        "rad": "彳 (xích – bước chân nhỏ)",
+        "mean": "luật lệ, quy tắc",
+        "tip": "Bộ 彳 (đi, hành động) + 聿 (cây bút, ghi chép) → những điều được VIẾT RA để mọi người phải THEO đó mà hành động = LUẬT.",
+        "cf": "律 dễ nhầm với 津 (jīn – bến đò, cũng có nét tương tự bên phải)",
+        "w": "法律 / 规律 / 律师"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy không những học giỏi mà tính cách cũng rất tốt.",
+        "answer": "她不仅学习好，性格也很好。",
+        "answerPy": "Tā bùjǐn xuéxí hǎo, xìnggé yě hěn hǎo.",
+        "note": "不仅……也…… — không những … mà còn ….",
+        "pair": "不仅……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái tôi học không phải báo chí, mà là luật.",
+        "answer": "我学的不是新闻，而是法律。",
+        "answerPy": "Wǒ xué de bú shì xīnwén, ér shì fǎlǜ.",
+        "note": "不是 A，而是 B — phủ định A rồi khẳng định B, không phải \"vừa… vừa…\".",
+        "pair": "不是……而是……"
+      }
+    ],
+    "note": "法 = pháp, 律 = luật. Hệ thống quy tắc do nhà nước đặt ra.",
+    "colloFull": [
+      {
+        "zh": "学法律",
+        "py": "xué fǎlǜ",
+        "vn": "học luật"
+      },
+      {
+        "zh": "懂法律",
+        "py": "dǒng fǎlǜ",
+        "vn": "hiểu luật"
+      },
+      {
+        "zh": "法律专业",
+        "py": "fǎlǜ zhuānyè",
+        "vn": "chuyên ngành luật"
+      },
+      {
+        "zh": "遵守法律",
+        "py": "zūnshǒu fǎlǜ",
+        "vn": "tuân thủ pháp luật"
+      },
+      {
+        "zh": "法律问题",
+        "py": "fǎlǜ wèntí",
+        "vn": "vấn đề pháp lý"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 学 / 懂 + 法律",
+        "m": "Ai đó học / hiểu luật"
+      },
+      {
+        "s": "……的是法律",
+        "m": "Cái mà … học là luật"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "俩",
+    "py": "liǎ",
+    "pos": "Số từ",
+    "vn": "hai (người)",
+    "hv": "lưỡng",
+    "em": "👫",
+    "lesson": 1,
+    "explain": [
+      "= 两个, thường đi kèm đại từ nhân xưng (我们俩, 你们俩, 他们俩), không dùng thêm lượng từ 个 sau nó."
+    ],
+    "usage": "Đại từ + 俩: 我们俩, 你们俩, 他们俩 — KHÔNG nói 我们俩个.",
+    "collo": [
+      "我们俩",
+      "你们俩",
+      "他们俩"
+    ],
+    "ex_zh": "那你们俩是怎么认识的？",
+    "ex_py": "Nà nǐmen liǎ shì zěnme rènshi de?",
+    "ex_vn": "Vậy hai bạn quen nhau thế nào?",
+    "exList": [
+      {
+        "zh": "那你们俩是怎么认识的？",
+        "py": "Nà nǐmen liǎ shì zěnme rènshi de?",
+        "vn": "Vậy hai bạn quen nhau thế nào?"
+      },
+      {
+        "zh": "我们俩有很多共同的爱好。",
+        "py": "Wǒmen liǎ yǒu hěn duō gòngtóng de àihào.",
+        "vn": "Hai chúng tôi có nhiều sở thích chung."
+      },
+      {
+        "zh": "他们俩几乎没因为什么事红过脸。",
+        "py": "Tāmen liǎ jīhū méi yīnwèi shénme shì hóngguo liǎn.",
+        "vn": "Hai người họ hầu như chưa từng cãi nhau vì chuyện gì."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "俩",
+        "p": "liǎ",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "亻 (nhân) trái → 两 (lưỡng) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "hai người",
+        "tip": "Bộ người 亻 + 两 (hai) → chỉ HAI NGƯỜI, đã có sẵn nghĩa \"hai\" nên không cần thêm lượng từ 个 phía sau nữa.",
+        "cf": "俩 khác 两 ở chỗ 俩 luôn đi với đại từ nhân xưng, không đứng trước danh từ trực tiếp",
+        "w": "我们俩 / 你们俩 / 哥俩"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hai chúng tôi tuy mới quen, nhưng đã thân như bạn cũ rồi.",
+        "answer": "我们俩虽然刚认识，但是已经像老朋友一样了。",
+        "answerPy": "Wǒmen liǎ suīrán gāng rènshi, dànshì yǐjīng xiàng lǎo péngyou yíyàng le.",
+        "note": "像……一样 — so sánh ngang bằng; sau 俩 không dùng thêm lượng từ.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hai người họ không những chưa bao giờ cãi nhau, mà tính cách cũng rất hợp.",
+        "answer": "他们俩不但从来没吵过架，而且性格也很合适。",
+        "answerPy": "Tāmen liǎ búdàn cónglái méi chǎoguo jià, érqiě xìnggé yě hěn héshì.",
+        "note": "吵架 là từ ly hợp: 吵过架 chứ không phải 吵架过.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "note": "= 两个. Đã có sẵn nghĩa \"hai\" nên KHÔNG thêm 个 phía sau.",
+    "colloFull": [
+      {
+        "zh": "我们俩",
+        "py": "wǒmen liǎ",
+        "vn": "hai chúng tôi"
+      },
+      {
+        "zh": "你们俩",
+        "py": "nǐmen liǎ",
+        "vn": "hai bạn"
+      },
+      {
+        "zh": "他们俩",
+        "py": "tāmen liǎ",
+        "vn": "hai người họ"
+      },
+      {
+        "zh": "咱们俩",
+        "py": "zánmen liǎ",
+        "vn": "hai ta"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Đại từ + 俩 + V",
+        "m": "Hai người ai đó làm gì"
+      },
+      {
+        "s": "✗ 我们俩个 → ✓ 我们俩",
+        "m": "Không thêm 个 sau 俩"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "印象",
+    "py": "yìnxiàng",
+    "pos": "Danh từ",
+    "vn": "ấn tượng",
+    "hv": "ấn tượng",
+    "em": "💭",
+    "lesson": 1,
+    "explain": [
+      "Cảm nhận, hình ảnh còn đọng lại trong đầu về một người/sự việc sau khi tiếp xúc."
+    ],
+    "usage": "Danh từ; thường đi với 对…印象(很)深/好/不错: 对他印象很深.",
+    "collo": [
+      "印象很深",
+      "第一印象",
+      "对……印象不错"
+    ],
+    "ex_zh": "我对他印象很深。",
+    "ex_py": "Wǒ duì tā yìnxiàng hěn shēn.",
+    "ex_vn": "Tôi có ấn tượng rất sâu sắc về anh ấy.",
+    "exList": [
+      {
+        "zh": "他一个人踢进两个球，我对他印象很深。",
+        "py": "Tā yí ge rén tījìn liǎng ge qiú, wǒ duì tā yìnxiàng hěn shēn.",
+        "vn": "Anh ấy một mình đá lọt hai bàn, tôi có ấn tượng rất sâu sắc về anh ấy."
+      },
+      {
+        "zh": "经理对我印象不错。",
+        "py": "Jīnglǐ duì wǒ yìnxiàng búcuò.",
+        "vn": "Giám đốc có ấn tượng khá tốt về tôi."
+      },
+      {
+        "zh": "第一印象很难改变。",
+        "py": "Dì-yī yìnxiàng hěn nán gǎibiàn.",
+        "vn": "Ấn tượng ban đầu rất khó thay đổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "印",
+        "p": "yìn",
+        "type": "左右结构 · Trái-phải",
+        "st": 5,
+        "ord": "爫 trên trái → 卩 dưới phải",
+        "rad": "卩 (tiết – dấu triện, đầu gối quỳ)",
+        "mean": "in, dấu ấn",
+        "tip": "Hình tượng bàn tay 爫 ấn con dấu 卩 xuống → để lại DẤU VẾT, mở rộng thành ẤN TƯỢNG (dấu vết trong tâm trí).",
+        "cf": "却 (què – cũng có bộ 卩 bên phải)",
+        "w": "印象 / 打印 / 印章"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy không những đá bóng giỏi, mà tính cách cũng rất tốt, nên tôi có ấn tượng rất sâu sắc.",
+        "answer": "他不仅足球踢得好，性格也很好，所以我对他印象很深。",
+        "answerPy": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě hěn hǎo, suǒyǐ wǒ duì tā yìnxiàng hěn shēn.",
+        "note": "不仅……也…… kết hợp với 所以 nêu kết quả.",
+        "pair": "不仅……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ngay từ lần đầu gặp mặt, cô ấy đã để lại cho tôi một ấn tượng rất tốt.",
+        "answer": "第一次见面，她就给我留下了很好的印象。",
+        "answerPy": "Dì-yī cì jiànmiàn, tā jiù gěi wǒ liúxiàle hěn hǎo de yìnxiàng.",
+        "note": "给……留下印象 — để lại ấn tượng cho ai.",
+        "pair": "一……就……"
+      }
+    ],
+    "note": "Hình ảnh còn đọng lại trong đầu sau khi tiếp xúc.",
+    "colloFull": [
+      {
+        "zh": "印象很深",
+        "py": "yìnxiàng hěn shēn",
+        "vn": "ấn tượng rất sâu"
+      },
+      {
+        "zh": "第一印象",
+        "py": "dì-yī yìnxiàng",
+        "vn": "ấn tượng đầu tiên"
+      },
+      {
+        "zh": "留下印象",
+        "py": "liúxià yìnxiàng",
+        "vn": "để lại ấn tượng"
+      },
+      {
+        "zh": "印象不错",
+        "py": "yìnxiàng búcuò",
+        "vn": "ấn tượng khá tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 对 + O + 印象 + 很深 / 不错",
+        "m": "Ai đó có ấn tượng … về ai/cái gì"
+      },
+      {
+        "s": "给 + người + 留下 + … 的印象",
+        "m": "Để lại cho ai ấn tượng …"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "深",
+    "py": "shēn",
+    "pos": "Tính từ",
+    "vn": "sâu sắc",
+    "hv": "thâm",
+    "em": "🌊",
+    "lesson": 1,
+    "explain": [
+      "Mức độ lớn, mạnh của cảm xúc/ấn tượng; nghĩa gốc chỉ độ sâu vật lý."
+    ],
+    "usage": "Tính từ; thường đi sau 很/印象: 印象很深, 爱得很深.",
+    "collo": [
+      "印象很深",
+      "很深的感情",
+      "水很深"
+    ],
+    "ex_zh": "我对他印象很深。",
+    "ex_py": "Wǒ duì tā yìnxiàng hěn shēn.",
+    "ex_vn": "Tôi có ấn tượng rất sâu sắc về anh ấy.",
+    "exList": [
+      {
+        "zh": "我对他印象很深。",
+        "py": "Wǒ duì tā yìnxiàng hěn shēn.",
+        "vn": "Tôi có ấn tượng rất sâu sắc về anh ấy."
+      },
+      {
+        "zh": "这条河很深，你别下去游泳。",
+        "py": "Zhè tiáo hé hěn shēn, nǐ bié xiàqu yóuyǒng.",
+        "vn": "Con sông này sâu lắm, bạn đừng xuống bơi."
+      },
+      {
+        "zh": "他们俩的感情很深。",
+        "py": "Tāmen liǎ de gǎnqíng hěn shēn.",
+        "vn": "Tình cảm của hai người họ rất sâu đậm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "深",
+        "p": "shēn",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "氵 (thủy) trái → 罙 phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "sâu",
+        "tip": "Bộ nước 氵 + phần biểu âm 罙 → chỉ mực NƯỚC SÂU, mở rộng nghĩa thành SÂU SẮC (tình cảm, ấn tượng).",
+        "cf": "探 (tàn – \"thăm dò\", cũng có phần bên phải gần giống)",
+        "w": "很深 / 深夜 / 加深"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngay cả khi thất bại, ấn tượng sâu sắc mà cô ấy để lại vẫn khiến mọi người ngưỡng mộ.",
+        "answer": "即使失败了，她留下的深刻印象也让人羡慕。",
+        "answerPy": "Jíshǐ shībài le, tā liúxià de shēnkè yìnxiàng yě ràng rén xiànmù.",
+        "note": "即使……也…… — cho dù … thì vẫn ….",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trận bóng đá đó không những rất hay, mà còn để lại trong lòng tôi một ấn tượng rất sâu.",
+        "answer": "那场足球比赛不仅很精彩，而且在我心里留下了很深的印象。",
+        "answerPy": "Nà chǎng zúqiú bǐsài bùjǐn hěn jīngcǎi, érqiě zài wǒ xīnli liúxiàle hěn shēn de yìnxiàng.",
+        "note": "留下……印象 — kết hợp cố định; 深 dùng cho ấn tượng, không dùng 高.",
+        "pair": "不仅……而且……"
+      }
+    ],
+    "note": "Nghĩa gốc: sâu (nước, hố). Nghĩa mở rộng: sâu sắc (tình cảm, ấn tượng).",
+    "colloFull": [
+      {
+        "zh": "印象很深",
+        "py": "yìnxiàng hěn shēn",
+        "vn": "ấn tượng rất sâu"
+      },
+      {
+        "zh": "很深的感情",
+        "py": "hěn shēn de gǎnqíng",
+        "vn": "tình cảm sâu đậm"
+      },
+      {
+        "zh": "水很深",
+        "py": "shuǐ hěn shēn",
+        "vn": "nước rất sâu"
+      },
+      {
+        "zh": "深刻",
+        "py": "shēnkè",
+        "vn": "sâu sắc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 很 / 特别 + 深",
+        "m": "… rất sâu / sâu sắc"
+      },
+      {
+        "s": "很深的 + N",
+        "m": "… sâu đậm (làm định ngữ)"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "熟悉",
+    "py": "shúxi",
+    "pos": "Động từ",
+    "vn": "hiểu rõ",
+    "hv": "thục tất",
+    "em": "🤝",
+    "lesson": 1,
+    "explain": [
+      "Biết rõ, quen thuộc với một người/sự việc/nơi chốn do đã tiếp xúc nhiều lần."
+    ],
+    "usage": "Động từ; có thể dùng làm tính từ bổ nghĩa: 熟悉 + Đối tượng, hoặc 对……很熟悉.",
+    "collo": [
+      "慢慢熟悉",
+      "对环境熟悉",
+      "熟悉起来"
+    ],
+    "ex_zh": "后来就慢慢熟悉了。",
+    "ex_py": "Hòulái jiù mànman shúxi le.",
+    "ex_vn": "Sau đó thì dần dần quen thân.",
+    "exList": [
+      {
+        "zh": "后来就慢慢熟悉了。",
+        "py": "Hòulái jiù mànman shúxi le.",
+        "vn": "Sau đó thì dần dần quen thân."
+      },
+      {
+        "zh": "我对这儿的环境还不太熟悉。",
+        "py": "Wǒ duì zhèr de huánjìng hái bú tài shúxi.",
+        "vn": "Tôi vẫn chưa quen lắm với môi trường ở đây."
+      },
+      {
+        "zh": "你对这个城市熟悉吗？",
+        "py": "Nǐ duì zhège chéngshì shúxi ma?",
+        "vn": "Bạn có quen thuộc với thành phố này không?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "悉",
+        "p": "xī",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "釆 trên → 心 dưới",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "biết rõ, tường tận",
+        "tip": "Bộ tâm 心 (suy nghĩ, để tâm) ở dưới + 釆 (phân biệt từng chi tiết) → ĐỂ TÂM phân biệt kỹ từng chi tiết = HIỂU RÕ, TƯỜNG TẬN.",
+        "cf": "恶 (è – \"xấu\", cũng có bộ 心\" nhưng nghĩa khác hẳn)",
+        "w": "熟悉 / 悉心 / 获悉"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì chúng tôi mới chuyển đến được một tuần, nên chưa quen lắm với môi trường xung quanh.",
+        "answer": "因为我们刚搬来一个星期，所以对周围的环境还不太熟悉。",
+        "answerPy": "Yīnwèi wǒmen gāng bānlái yí gè xīngqī, suǒyǐ duì zhōuwéi de huánjìng hái bú tài shúxi.",
+        "note": "对 + N + 熟悉 — quen thuộc với cái gì.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Dù đã sống ở đây hai mươi năm, anh ấy vẫn chưa quen hết mọi con đường.",
+        "answer": "即使在这儿住了二十年，他也没熟悉所有的路。",
+        "answerPy": "Jíshǐ zài zhèr zhùle èrshí nián, tā yě méi shúxi suǒyǒu de lù.",
+        "note": "即使……也…… — nhấn mạnh việc dù điều kiện lớn (20 năm) vẫn chưa đạt kết quả.",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Biết rõ do đã tiếp xúc nhiều — người, đường sá, môi trường.",
+    "colloFull": [
+      {
+        "zh": "慢慢熟悉",
+        "py": "mànmàn shúxi",
+        "vn": "dần dần quen"
+      },
+      {
+        "zh": "对环境熟悉",
+        "py": "duì huánjìng shúxi",
+        "vn": "quen với môi trường"
+      },
+      {
+        "zh": "熟悉起来",
+        "py": "shúxi qǐlái",
+        "vn": "quen dần lên"
+      },
+      {
+        "zh": "不太熟悉",
+        "py": "bú tài shúxi",
+        "vn": "chưa quen lắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 对 + O + (不太) 熟悉",
+        "m": "Ai đó (chưa) quen với cái gì"
+      },
+      {
+        "s": "Sub + 熟悉 + O",
+        "m": "Ai đó hiểu rõ cái gì"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "不仅",
+    "py": "bùjǐn",
+    "pos": "Liên từ",
+    "vn": "không những, chẳng những",
+    "hv": "bất cận",
+    "em": "➕",
+    "lesson": 1,
+    "explain": [
+      "Liên từ dùng ở vế câu thứ nhất, vế câu thứ hai thường dùng 也/还/而且 hô ứng, diễn tả ngoài điều vừa nêu còn có thêm ý khác."
+    ],
+    "usage": "Khi chủ ngữ hai vế giống nhau: Chủ ngữ + 不仅 + VP1，也/还/而且 + VP2. Khi chủ ngữ khác nhau: 不仅 đứng trước chủ ngữ.",
+    "collo": [
+      "不仅……也……",
+      "不仅……还……",
+      "不仅……而且……"
+    ],
+    "ex_zh": "他不仅足球踢得好，性格也不错。",
+    "ex_py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
+    "ex_vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt.",
+    "exList": [
+      {
+        "zh": "他不仅足球踢得好，性格也不错。",
+        "py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
+        "vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt."
+      },
+      {
+        "zh": "两个人共同生活，不仅需要浪漫的爱情，更需要性格上互相吸引。",
+        "py": "Liǎng ge rén gòngtóng shēnghuó, bùjǐn xūyào làngmàn de àiqíng, gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "vn": "Hai người sống chung, không những cần tình yêu lãng mạn, mà càng cần sự thu hút lẫn nhau về tính cách."
+      },
+      {
+        "zh": "他不仅身体健康，还成了一名长跑运动员。",
+        "py": "Tā bùjǐn shēntǐ jiànkāng, hái chéngle yì míng chángpǎo yùndòngyuán.",
+        "vn": "Anh ấy không những cơ thể khỏe mạnh, còn trở thành một vận động viên chạy đường dài."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "仅",
+        "p": "jǐn",
+        "type": "左右结构 · Trái-phải",
+        "st": 4,
+        "ord": "亻 (nhân) trái → 又 (hựu) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "chỉ, chỉ có",
+        "tip": "Bộ người 亻 + 又 (thêm một lần nữa, ít ỏi) → CHỈ CÓ (một người, một chút), kết hợp với 不 thành 不仅 = KHÔNG CHỈ (có nhiêu đó).",
+        "cf": "仅 dễ nhầm với 仪 (yí – \"nghi thức\")",
+        "w": "不仅 / 仅仅 / 仅有"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy không những xinh đẹp, mà còn rất thông minh.",
+        "answer": "她不仅长得漂亮，也很聪明。",
+        "answerPy": "Tā bùjǐn zhǎng de piàoliang, yě hěn cōngming.",
+        "note": "不仅……也…… — chủ ngữ giống nhau, 不仅 đứng sau chủ ngữ.",
+        "pair": "不仅……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Không những tôi thích xem phim, mà bạn tôi cũng thích.",
+        "answer": "不仅我喜欢看电影，我朋友也喜欢。",
+        "answerPy": "Bùjǐn wǒ xǐhuan kàn diànyǐng, wǒ péngyou yě xǐhuan.",
+        "note": "不仅……也…… — chủ ngữ khác nhau, 不仅 đứng trước chủ ngữ của vế 1.",
+        "pair": "不仅……也……"
+      }
+    ],
+    "note": "Liên từ. Vế sau hô ứng bằng 也 / 还 / 而且 — KHÔNG đi với 但是.",
+    "colloFull": [
+      {
+        "zh": "不仅……也……",
+        "py": "bùjǐn… yě…",
+        "vn": "không những… mà cũng…"
+      },
+      {
+        "zh": "不仅……还……",
+        "py": "bùjǐn… hái…",
+        "vn": "không những… mà còn…"
+      },
+      {
+        "zh": "不仅……而且……",
+        "py": "bùjǐn… érqiě…",
+        "vn": "không những… hơn nữa…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 不仅 + VP1，也 / 还 + VP2",
+        "m": "Cùng chủ ngữ: 不仅 đứng SAU chủ ngữ"
+      },
+      {
+        "s": "不仅 + Sub1 + VP1，Sub2 + 也 + VP2",
+        "m": "Khác chủ ngữ: 不仅 đứng TRƯỚC chủ ngữ"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "性格",
+    "py": "xìnggé",
+    "pos": "Danh từ",
+    "vn": "tính cách, tính nết",
+    "hv": "tính cách",
+    "em": "🧩",
+    "lesson": 1,
+    "explain": [
+      "Đặc điểm tâm lý ổn định của một người, thể hiện qua cách ứng xử, suy nghĩ."
+    ],
+    "usage": "Danh từ; thường đi với 好/不错/合得来: 性格好, 性格上互相吸引.",
+    "collo": [
+      "性格好",
+      "性格上",
+      "性格合得来"
+    ],
+    "ex_zh": "他不仅足球踢得好，性格也不错。",
+    "ex_py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
+    "ex_vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt.",
+    "exList": [
+      {
+        "zh": "他不仅足球踢得好，性格也不错。",
+        "py": "Tā bùjǐn zúqiú tī de hǎo, xìnggé yě búcuò.",
+        "vn": "Anh ấy không những đá bóng giỏi, tính cách cũng tốt."
+      },
+      {
+        "zh": "更需要性格上互相吸引。",
+        "py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "vn": "Càng cần sự thu hút lẫn nhau về tính cách."
+      },
+      {
+        "zh": "我们俩性格很像。",
+        "py": "Wǒmen liǎ xìnggé hěn xiàng.",
+        "vn": "Tính cách hai chúng tôi rất giống nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "格",
+        "p": "gé",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "木 (mộc) trái → 各 (các) phải",
+        "rad": "木 (mộc – cây, gỗ)",
+        "mean": "tiêu chuẩn, khuôn phép",
+        "tip": "Bộ gỗ 木 (khung, cây thước) + 各 (mỗi, riêng biệt) → mỗi thứ có KHUÔN KHỔ riêng, mở rộng thành TÍNH CÁCH (khuôn mẫu riêng của mỗi người).",
+        "cf": "恪 (kè – \"cẩn thận\", có bộ 忄 khác)",
+        "w": "性格 / 格式 / 合格"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Hai người sống chung với nhau, không những cần tính cách hút nhau, mà còn phải hiểu cho nhau.",
+        "answer": "两个人共同生活，不但需要性格上互相吸引，而且要互相理解。",
+        "answerPy": "Liǎng gè rén gòngtóng shēnghuó, búdàn xūyào xìnggé shang hùxiāng xīyǐn, érqiě yào hùxiāng lǐjiě.",
+        "note": "性格上 — về mặt tính cách; 互相 + động từ hai âm tiết.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tính cách anh ấy xưa nay đều rất tốt, ở cùng ai anh ấy cũng chưa từng nổi giận.",
+        "answer": "他性格从来都很好，不管跟谁在一起都没生过气。",
+        "answerPy": "Tā xìnggé cónglái dōu hěn hǎo, bùguǎn gēn shéi zài yìqǐ dōu méi shēngguo qì.",
+        "note": "不管 + 谁 (từ nghi vấn phiếm chỉ)，都…… — với ai cũng vậy.",
+        "pair": "不管……都……"
+      }
+    ],
+    "note": "Tính nết vốn có của một người.",
+    "colloFull": [
+      {
+        "zh": "性格好",
+        "py": "xìnggé hǎo",
+        "vn": "tính cách tốt"
+      },
+      {
+        "zh": "性格上",
+        "py": "xìnggé shang",
+        "vn": "về mặt tính cách"
+      },
+      {
+        "zh": "性格合得来",
+        "py": "xìnggé hédelái",
+        "vn": "hợp tính nhau"
+      },
+      {
+        "zh": "性格不同",
+        "py": "xìnggé bùtóng",
+        "vn": "tính cách khác nhau"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 性格 + 好 / 不错",
+        "m": "Tính cách của ai đó tốt"
+      },
+      {
+        "s": "在性格上 + …",
+        "m": "Về mặt tính cách thì …"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "开玩笑",
+    "py": "kāi wánxiào",
+    "pos": "Cụm động từ",
+    "vn": "nói đùa, đùa",
+    "hv": "khai ngoạn tiếu",
+    "em": "😄",
+    "lesson": 1,
+    "explain": [
+      "Nói/làm gì đó không nghiêm túc, cho vui, không có ý thật."
+    ],
+    "usage": "Cụm động từ; thường ở dạng nghi vấn 是不是/是在开玩笑吧, hoặc phủ định 别跟我开玩笑.",
+    "collo": [
+      "开玩笑吧",
+      "跟……开玩笑",
+      "爱开玩笑"
+    ],
+    "ex_zh": "你是在开玩笑吧？",
+    "ex_py": "Nǐ shì zài kāi wánxiào ba?",
+    "ex_vn": "Bạn đang đùa đấy à?",
+    "exList": [
+      {
+        "zh": "你是在开玩笑吧？你们不是才认识一个月？",
+        "py": "Nǐ shì zài kāi wánxiào ba? Nǐmen bú shì cái rènshi yí ge yuè?",
+        "vn": "Bạn đang đùa đấy à? Chẳng phải các bạn mới quen nhau một tháng thôi sao?"
+      },
+      {
+        "zh": "你还是这么爱开玩笑。",
+        "py": "Nǐ háishi zhème ài kāi wánxiào.",
+        "vn": "Bạn vẫn hay đùa như vậy."
+      },
+      {
+        "zh": "你别跟我开玩笑了。",
+        "py": "Nǐ bié gēn wǒ kāi wánxiào le.",
+        "vn": "Bạn đừng đùa với tôi nữa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "玩",
+        "p": "wán",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "王 (vương) trái → 元 (nguyên) phải",
+        "rad": "王 (vương – bộ ngọc)",
+        "mean": "chơi, đùa",
+        "tip": "Bộ ngọc 王 (đồ chơi quý) + 元 → cầm ĐỒ QUÝ để CHƠI ĐÙA, mở rộng thành mọi hoạt động vui chơi, nói đùa.",
+        "cf": "顽 (wán – \"ngoan cố\", cũng đọc gần giống\")",
+        "w": "玩笑 / 玩儿 / 好玩"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy tôi mới quen anh ấy một tháng, nhưng bạn đừng đùa, chúng tôi chưa cưới đâu.",
+        "answer": "虽然我跟他才认识一个月，但是你别开玩笑，我们还没结婚呢。",
+        "answerPy": "Suīrán wǒ gēn tā cái rènshi yí gè yuè, dànshì nǐ bié kāi wánxiào, wǒmen hái méi jiéhūn ne.",
+        "note": "开玩笑 là từ ly hợp: 开了一个玩笑, 别开玩笑.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù đang nói đùa, anh ấy cũng không nên nói những lời như vậy.",
+        "answer": "即使是在开玩笑，他也不应该说那样的话。",
+        "answerPy": "Jíshǐ shì zài kāi wánxiào, tā yě bù yīnggāi shuō nàyàng de huà.",
+        "note": "即使……也…… — cho dù … cũng không nên ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "LY HỢP TỪ: 开了个玩笑, 开过玩笑. Không nói 开玩笑他.",
+    "colloFull": [
+      {
+        "zh": "开玩笑吧",
+        "py": "kāi wánxiào ba",
+        "vn": "đùa đấy à"
+      },
+      {
+        "zh": "跟……开玩笑",
+        "py": "gēn… kāi wánxiào",
+        "vn": "đùa với ai"
+      },
+      {
+        "zh": "爱开玩笑",
+        "py": "ài kāi wánxiào",
+        "vn": "thích đùa"
+      },
+      {
+        "zh": "开个玩笑",
+        "py": "kāi ge wánxiào",
+        "vn": "đùa một câu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 跟 + người + 开玩笑",
+        "m": "Ai đó đùa với ai"
+      },
+      {
+        "s": "你是在开玩笑吧？",
+        "m": "Bạn đùa đấy à?"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "从来",
+    "py": "cónglái",
+    "pos": "Phó từ",
+    "vn": "từ trước đến nay, từ trước đến giờ",
+    "hv": "tòng lai",
+    "em": "⏳",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả từ quá khứ đến hiện tại luôn luôn như vậy, thường dùng trong câu phủ định."
+    ],
+    "usage": "Phó từ; đứng trước 不/没: 从来不……, 从来没……过.",
+    "collo": [
+      "从来不",
+      "从来没……过",
+      "从来都"
+    ],
+    "ex_zh": "我从来没这么快乐过。",
+    "ex_py": "Wǒ cónglái méi zhème kuàilèguo.",
+    "ex_vn": "Từ trước đến giờ tôi chưa bao giờ vui như vậy.",
+    "exList": [
+      {
+        "zh": "我从来没这么快乐过。",
+        "py": "Wǒ cónglái méi zhème kuàilèguo.",
+        "vn": "Từ trước đến giờ tôi chưa bao giờ vui như vậy."
+      },
+      {
+        "zh": "老张这个人开会从来不迟到。",
+        "py": "Lǎo Zhāng zhège rén kāihuì cónglái bù chídào.",
+        "vn": "Ông Trương này họp hành từ trước đến giờ chưa bao giờ đến muộn."
+      },
+      {
+        "zh": "这家面馆从来只卖一种东西。",
+        "py": "Zhè jiā miànguǎn cónglái zhǐ mài yì zhǒng dōngxi.",
+        "vn": "Quán mì này từ trước đến giờ chỉ bán một loại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "从",
+        "p": "cóng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 4,
+        "ord": "人 trái → 人 phải",
+        "rad": "人 (nhân – người)",
+        "mean": "từ, theo",
+        "tip": "Hai chữ 人 nối tiếp nhau → người này ĐI THEO người kia, mở rộng thành TỪ (một mốc thời gian/nơi chốn) đến nay.",
+        "cf": "丛 (cóng – \"bụi cây\", hình gần giống nhưng bộ khác\")",
+        "w": "从来 / 从……到…… / 自从"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy chúng tôi quen nhau chưa lâu, nhưng tôi từ trước đến giờ chưa từng vui như vậy.",
+        "answer": "虽然我们认识的时间不长，但我从来没这么快乐过。",
+        "answerPy": "Suīrán wǒmen rènshi de shíjiān bù cháng, dàn wǒ cónglái méi zhème kuàilèguo.",
+        "note": "虽然……但…… ôn lại từ HSK3, kết hợp với 从来没……过.",
+        "pair": "虽然……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy từ trước đến giờ đều rất đúng giờ, hôm nay sao lại đến muộn vậy?",
+        "answer": "他从来都很准时，今天怎么迟到了？",
+        "answerPy": "Tā cónglái dōu hěn zhǔnshí, jīntiān zěnme chídào le?",
+        "note": "从来都 + tính từ — nhấn mạnh tính ổn định lâu dài.",
+        "pair": "从……到……"
+      }
+    ],
+    "note": "Luôn đi với phủ định: 从来不 (thói quen) / 从来没…过 (kinh nghiệm).",
+    "colloFull": [
+      {
+        "zh": "从来不",
+        "py": "cónglái bù",
+        "vn": "chưa bao giờ (thói quen)"
+      },
+      {
+        "zh": "从来没……过",
+        "py": "cónglái méi… guo",
+        "vn": "từ trước đến giờ chưa từng"
+      },
+      {
+        "zh": "从来都",
+        "py": "cónglái dōu",
+        "vn": "từ trước đến nay đều"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 从来不 + V",
+        "m": "Ai đó chưa bao giờ làm gì (thói quen)"
+      },
+      {
+        "s": "Sub + 从来没 + V + 过",
+        "m": "Ai đó chưa từng làm gì (kinh nghiệm)"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "最好",
+    "py": "zuìhǎo",
+    "pos": "Phó từ",
+    "vn": "tốt nhất",
+    "hv": "tối hảo",
+    "em": "👍",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả lựa chọn/đề nghị tốt nhất trong hoàn cảnh hiện tại, thường dùng để khuyên nhủ."
+    ],
+    "usage": "Phó từ; đứng đầu câu hoặc trước động từ: 最好 + V, mang tính đề nghị nhẹ nhàng.",
+    "collo": [
+      "最好能……",
+      "最好先……",
+      "最好去医院"
+    ],
+    "ex_zh": "两个人在一起，最好能有共同的兴趣和爱好。",
+    "ex_py": "Liǎng ge rén zài yìqǐ, zuìhǎo néng yǒu gòngtóng de xìngqù hé àihào.",
+    "ex_vn": "Hai người ở bên nhau, tốt nhất là nên có sở thích chung.",
+    "exList": [
+      {
+        "zh": "两个人在一起，最好能有共同的兴趣和爱好。",
+        "py": "Liǎng ge rén zài yìqǐ, zuìhǎo néng yǒu gòngtóng de xìngqù hé àihào.",
+        "vn": "Hai người ở bên nhau, tốt nhất là nên có sở thích chung."
+      },
+      {
+        "zh": "你最好去医院看一下。",
+        "py": "Nǐ zuìhǎo qù yīyuàn kàn yíxià.",
+        "vn": "Bạn tốt nhất nên đi bệnh viện khám một chút."
+      },
+      {
+        "zh": "这件事你最好先问一下李老师。",
+        "py": "Zhè jiàn shì nǐ zuìhǎo xiān wènyíxià Lǐ lǎoshī.",
+        "vn": "Việc này bạn tốt nhất nên hỏi cô Lý trước."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "最",
+        "p": "zuì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "曰 trên → 取 dưới",
+        "rad": "曰 (viết – nói)",
+        "mean": "nhất",
+        "tip": "Phần trên 曰 (nói ra) + 取 (lấy, chọn) → CHỌN RA điều được nói đến nhiều nhất/hàng đầu → NHẤT.",
+        "cf": "冣 (dạng cổ, ít dùng)",
+        "w": "最好 / 最近 / 最喜欢"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù bận đến mấy, bạn cũng tốt nhất nên dành thời gian nghỉ ngơi.",
+        "answer": "即使再忙，你也最好留点儿时间休息。",
+        "answerPy": "Jíshǐ zài máng, nǐ yě zuìhǎo liú diǎnr shíjiān xiūxi.",
+        "note": "即使……也…… kết hợp với 最好 nêu lời khuyên.",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu muốn giải quyết chuyện này thì hai người tốt nhất nên hiểu cho nhau.",
+        "answer": "如果想解决这件事，两个人就最好互相理解。",
+        "answerPy": "Rúguǒ xiǎng jiějué zhè jiàn shì, liǎng gè rén jiù zuìhǎo hùxiāng lǐjiě.",
+        "note": "最好 ở đây là phó từ khuyên nhủ: \"tốt nhất là nên…\".",
+        "pair": "如果……就……"
+      }
+    ],
+    "note": "Phó từ nêu lời khuyên, không phải \"tốt nhất\" so sánh.",
+    "colloFull": [
+      {
+        "zh": "最好能……",
+        "py": "zuìhǎo néng…",
+        "vn": "tốt nhất là có thể…"
+      },
+      {
+        "zh": "最好先……",
+        "py": "zuìhǎo xiān…",
+        "vn": "tốt nhất là trước hết…"
+      },
+      {
+        "zh": "最好去医院",
+        "py": "zuìhǎo qù yīyuàn",
+        "vn": "tốt nhất nên đi bệnh viện"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "(Sub +) 最好 + V",
+        "m": "Tốt nhất là nên làm gì"
+      },
+      {
+        "s": "最好 + 别 / 不要 + V",
+        "m": "Tốt nhất là đừng làm gì"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "共同",
+    "py": "gòngtóng",
+    "pos": "Tính từ",
+    "vn": "chung, cùng",
+    "hv": "cộng đồng",
+    "em": "🤲",
+    "lesson": 1,
+    "explain": [
+      "Cùng nhau có/làm, thuộc về nhiều người/vật cùng lúc, không của riêng ai."
+    ],
+    "usage": "Tính từ, thường làm định ngữ: 共同的爱好, 共同生活, 共同努力.",
+    "collo": [
+      "共同的爱好",
+      "共同生活",
+      "共同努力"
+    ],
+    "ex_zh": "我们有很多共同的爱好。",
+    "ex_py": "Wǒmen yǒu hěn duō gòngtóng de àihào.",
+    "ex_vn": "Chúng tôi có rất nhiều sở thích chung.",
+    "exList": [
+      {
+        "zh": "我们有很多共同的爱好，经常一起打球、唱歌、做菜。",
+        "py": "Wǒmen yǒu hěn duō gòngtóng de àihào, jīngcháng yìqǐ dǎqiú, chàng gē, zuò cài.",
+        "vn": "Chúng tôi có rất nhiều sở thích chung, thường cùng nhau chơi thể thao, hát, nấu ăn."
+      },
+      {
+        "zh": "两个人共同生活，不仅需要浪漫的爱情。",
+        "py": "Liǎng ge rén gòngtóng shēnghuó, bùjǐn xūyào làngmàn de àiqíng.",
+        "vn": "Hai người sống chung, không những cần tình yêu lãng mạn."
+      },
+      {
+        "zh": "他们两个人共同努力，终于完成了工作。",
+        "py": "Tāmen liǎng ge rén gòngtóng nǔlì, zhōngyú wánchéngle gōngzuò.",
+        "vn": "Hai người họ cùng nhau cố gắng, cuối cùng đã hoàn thành công việc."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "共",
+        "p": "gòng",
+        "type": "独体字 · Chữ đơn",
+        "st": 6,
+        "ord": "廿 trên → 八 dưới",
+        "rad": "八 (bát – chia)",
+        "mean": "cùng, chung",
+        "tip": "Hình tượng nhiều tay CÙNG NÂNG một vật → CÙNG NHAU, CHUNG.",
+        "cf": "共 dễ nhầm với 兵 (bīng – \"binh lính\")",
+        "w": "共同 / 一共 / 公共"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chúng tôi không những có sở thích chung, mà tính cách cũng rất hợp nhau.",
+        "answer": "我们不仅有共同的爱好，性格也很合得来。",
+        "answerPy": "Wǒmen bùjǐn yǒu gòngtóng de àihào, xìnggé yě hěn hédelái.",
+        "note": "不仅……也…… — không những … mà còn ….",
+        "pair": "不仅……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy công việc rất bận, nhưng chúng tôi vẫn luôn cùng nhau cố gắng.",
+        "answer": "虽然工作很忙，但是我们一直共同努力。",
+        "answerPy": "Suīrán gōngzuò hěn máng, dànshì wǒmen yìzhí gòngtóng nǔlì.",
+        "note": "共同 + V — cùng nhau làm gì, thiên văn viết hơn 一起.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "note": "Làm định ngữ hoặc trạng ngữ, không làm vị ngữ (không nói 我们很共同).",
+    "colloFull": [
+      {
+        "zh": "共同的爱好",
+        "py": "gòngtóng de àihào",
+        "vn": "sở thích chung"
+      },
+      {
+        "zh": "共同生活",
+        "py": "gòngtóng shēnghuó",
+        "vn": "sống chung"
+      },
+      {
+        "zh": "共同努力",
+        "py": "gòngtóng nǔlì",
+        "vn": "cùng nhau cố gắng"
+      },
+      {
+        "zh": "共同语言",
+        "py": "gòngtóng yǔyán",
+        "vn": "tiếng nói chung"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "共同的 + N",
+        "m": "… chung (làm định ngữ)"
+      },
+      {
+        "s": "Sub + 共同 + V",
+        "m": "Cùng nhau làm gì"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "适合",
+    "py": "shìhé",
+    "pos": "Động từ",
+    "vn": "phù hợp",
+    "hv": "thích hợp",
+    "em": "✅",
+    "lesson": 1,
+    "explain": [
+      "Phù hợp, thích hợp với điều kiện/hoàn cảnh/con người nào đó."
+    ],
+    "usage": "Động từ, có thể trực tiếp mang tân ngữ: 适合 + Đối tượng, không cần giới từ.",
+    "collo": [
+      "适合你的人",
+      "适合自己",
+      "适合工作"
+    ],
+    "ex_zh": "看来你真的找到适合你的人了。",
+    "ex_py": "Kànlái nǐ zhēn de zhǎodào shìhé nǐ de rén le.",
+    "ex_vn": "Xem ra bạn thật sự đã tìm được người phù hợp với mình rồi.",
+    "exList": [
+      {
+        "zh": "看来你真的找到适合你的人了。",
+        "py": "Kànlái nǐ zhēn de zhǎodào shìhé nǐ de rén le.",
+        "vn": "Xem ra bạn thật sự đã tìm được người phù hợp với mình rồi."
+      },
+      {
+        "zh": "怎么样才能找到适合自己的人？",
+        "py": "Zěnmeyàng cái néng zhǎodào shìhé zìjǐ de rén?",
+        "vn": "Làm thế nào mới có thể tìm được người phù hợp với mình?"
+      },
+      {
+        "zh": "这份工作很适合他。",
+        "py": "Zhè fèn gōngzuò hěn shìhé tā.",
+        "vn": "Công việc này rất phù hợp với anh ấy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "适",
+        "p": "shì",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 9,
+        "ord": "辶 bao ngoài → 舌 trong",
+        "rad": "辶 (sước – đi, chạy)",
+        "mean": "vừa, hợp",
+        "tip": "Bộ 辶 (đi tới) + 舌 (biểu âm) → ĐI ĐẾN ĐÚNG chỗ, mở rộng thành VỪA VẶN, PHÙ HỢP.",
+        "cf": "话 (huà – \"lời nói\", cũng có 舌\")",
+        "w": "适合 / 适应 / 合适"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần hai người phù hợp với nhau về tính cách, thì sẽ dễ dàng sống hạnh phúc.",
+        "answer": "只要两个人性格上适合，就容易幸福地生活。",
+        "answerPy": "Zhǐyào liǎng ge rén xìnggé shang shìhé, jiù róngyì xìngfú de shēnghuó.",
+        "note": "只要……就…… ôn lại từ HSK3, kết hợp 在……上.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cô ấy từ trước đến giờ chưa tìm được công việc phù hợp với mình.",
+        "answer": "她从来没找到适合自己的工作。",
+        "answerPy": "Tā cónglái méi zhǎodào shìhé zìjǐ de gōngzuò.",
+        "note": "从来 + 没……过/没 — chưa từng.",
+        "pair": "从……到……"
+      }
+    ],
+    "note": "Không dùng 很适合了; muốn nhấn mạnh thì 很适合 / 非常适合.",
+    "colloFull": [
+      {
+        "zh": "适合自己",
+        "py": "shìhé zìjǐ",
+        "vn": "phù hợp với bản thân"
+      },
+      {
+        "zh": "适合你的人",
+        "py": "shìhé nǐ de rén",
+        "vn": "người phù hợp với bạn"
+      },
+      {
+        "zh": "适合工作",
+        "py": "shìhé gōngzuò",
+        "vn": "phù hợp để làm việc"
+      },
+      {
+        "zh": "不适合",
+        "py": "bú shìhé",
+        "vn": "không phù hợp"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A + 适合 + B",
+        "m": "A phù hợp với B"
+      },
+      {
+        "s": "适合 + V 的 + N",
+        "m": "… phù hợp để làm gì"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "幸福",
+    "py": "xìngfú",
+    "pos": "Tính từ",
+    "vn": "hạnh phúc",
+    "hv": "hạnh phúc",
+    "em": "💖",
+    "lesson": 1,
+    "explain": [
+      "Trạng thái cảm thấy hài lòng, vui vẻ, mãn nguyện trong cuộc sống."
+    ],
+    "usage": "Tính từ, có thể làm vị ngữ hoặc danh từ: 祝你们幸福！, 幸福的生活.",
+    "collo": [
+      "祝你们幸福",
+      "幸福的生活",
+      "觉得很幸福"
+    ],
+    "ex_zh": "祝你们幸福！",
+    "ex_py": "Zhù nǐmen xìngfú!",
+    "ex_vn": "Chúc hai bạn hạnh phúc!",
+    "exList": [
+      {
+        "zh": "看来你真的找到适合你的人了。祝你们幸福！",
+        "py": "Kànlái nǐ zhēn de zhǎodào shìhé nǐ de rén le. Zhù nǐmen xìngfú!",
+        "vn": "Xem ra bạn thật sự đã tìm được người phù hợp với mình rồi. Chúc hai bạn hạnh phúc!"
+      },
+      {
+        "zh": "我们的生活一直挺幸福的。",
+        "py": "Wǒmen de shēnghuó yìzhí tǐng xìngfú de.",
+        "vn": "Cuộc sống của chúng tôi luôn khá hạnh phúc."
+      },
+      {
+        "zh": "有时候，简单就是最大的幸福。",
+        "py": "Yǒu shíhou, jiǎndān jiù shì zuì dà de xìngfú.",
+        "vn": "Có lúc, đơn giản chính là hạnh phúc lớn nhất."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "福",
+        "p": "fú",
+        "type": "左右结构 · Trái-phải",
+        "st": 13,
+        "ord": "礻 (kỳ) trái → 畐 phải",
+        "rad": "礻 (kỳ – thần linh, cúng tế)",
+        "mean": "phúc, may mắn",
+        "tip": "Bộ 礻 (thần linh phù hộ) + 畐 (đầy đủ, sung túc) → được THẦN PHÙ HỘ cho ĐẦY ĐỦ, sung túc = PHÚC, HẠNH PHÚC.",
+        "cf": "副 (fù – \"phó, phụ\", cũng có 畐\" nhưng bộ khác)",
+        "w": "幸福 / 福气 / 祝福"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngay cả khi không giàu có, họ vẫn cảm thấy rất hạnh phúc.",
+        "answer": "即使不富有，他们也觉得很幸福。",
+        "answerPy": "Jíshǐ bú fùyǒu, tāmen yě juéde hěn xìngfú.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Về mặt tình cảm, chỉ cần hai người hiểu cho nhau là sẽ thấy rất hạnh phúc.",
+        "answer": "在感情上，只要两个人互相理解，就会觉得很幸福。",
+        "answerPy": "Zài gǎnqíng shang, zhǐyào liǎng gè rén hùxiāng lǐjiě, jiù huì juéde hěn xìngfú.",
+        "note": "在……上 — về mặt nào đó.",
+        "pair": "只要……就……"
+      }
+    ],
+    "note": "Tính từ, cũng làm danh từ: 幸福的生活 / 什么是幸福？",
+    "colloFull": [
+      {
+        "zh": "祝你们幸福",
+        "py": "zhù nǐmen xìngfú",
+        "vn": "chúc hai bạn hạnh phúc"
+      },
+      {
+        "zh": "幸福的生活",
+        "py": "xìngfú de shēnghuó",
+        "vn": "cuộc sống hạnh phúc"
+      },
+      {
+        "zh": "觉得很幸福",
+        "py": "juéde hěn xìngfú",
+        "vn": "cảm thấy rất hạnh phúc"
+      },
+      {
+        "zh": "幸福的家庭",
+        "py": "xìngfú de jiātíng",
+        "vn": "gia đình hạnh phúc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 觉得 / 感到 + 很幸福",
+        "m": "Ai đó thấy rất hạnh phúc"
+      },
+      {
+        "s": "祝 + người + 幸福",
+        "m": "Chúc ai hạnh phúc"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "生活",
+    "py": "shēnghuó",
+    "pos": "Danh từ/Động từ",
+    "vn": "cuộc sống; sống",
+    "hv": "sinh hoạt",
+    "em": "🏡",
+    "lesson": 1,
+    "explain": [
+      "1. (Danh từ) Toàn bộ những hoạt động, sinh hoạt hằng ngày của con người.",
+      "2. (Động từ) Sinh sống, tồn tại theo một cách nào đó."
+    ],
+    "usage": "Khi làm động từ: 生活 + trạng ngữ (共同生活, 幸福地生活); khi làm danh từ: 我们的生活.",
+    "collo": [
+      "我们的生活",
+      "共同生活",
+      "生活得怎么样"
+    ],
+    "ex_zh": "我们的生活一直挺幸福的。",
+    "ex_py": "Wǒmen de shēnghuó yìzhí tǐng xìngfú de.",
+    "ex_vn": "Cuộc sống của chúng tôi luôn khá hạnh phúc.",
+    "exList": [
+      {
+        "zh": "我们的生活一直挺幸福的。",
+        "py": "Wǒmen de shēnghuó yìzhí tǐng xìngfú de.",
+        "vn": "Cuộc sống của chúng tôi luôn khá hạnh phúc."
+      },
+      {
+        "zh": "两个人共同生活，只有浪漫和新鲜感是不够的。",
+        "py": "Liǎng ge rén gòngtóng shēnghuó, zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
+        "vn": "Hai người sống chung, chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ."
+      },
+      {
+        "zh": "两个人在一起时间长了，就会有很多问题，只有接受了他的缺点，你们才能更好地一起生活。",
+        "py": "Liǎng ge rén zài yìqǐ shíjiān cháng le, jiù huì yǒu hěn duō wèntí, zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
+        "vn": "Hai người ở bên nhau lâu, sẽ nảy sinh nhiều vấn đề, chỉ khi chấp nhận khuyết điểm của đối phương, hai bạn mới có thể sống cùng nhau tốt hơn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "活",
+        "p": "huó",
+        "type": "左右结构 · Trái-phải",
+        "st": 9,
+        "ord": "氵 (thủy) trái → 舌 (thiệt) phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "sống, hoạt động",
+        "tip": "Bộ nước 氵 (nguồn sống) + 舌 (lưỡi, biểu âm) → có NƯỚC để duy trì sự SỐNG, mở rộng thành SINH HOẠT, CUỘC SỐNG.",
+        "cf": "话 (huà – \"lời nói\", cũng có 舌\" nhưng bộ 讠 khác)",
+        "w": "生活 / 活动 / 干活"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có tình yêu lãng mạn thôi thì không đủ, hai người còn cần hiểu nhau mới sống hạnh phúc được.",
+        "answer": "只有浪漫的爱情是不够的，两个人还需要互相理解才能幸福地生活。",
+        "answerPy": "Zhǐyǒu làngmàn de àiqíng shì bú gòu de, liǎng ge rén hái xūyào hùxiāng lǐjiě cái néng xìngfú de shēnghuó.",
+        "note": "只有……才…… — chỉ có … mới ….",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Trong cuộc sống, chúng tôi không những giúp đỡ nhau, mà còn chưa bao giờ cãi vã.",
+        "answer": "在生活上，我们不但互相帮助，而且从来没吵过架。",
+        "answerPy": "Zài shēnghuó shang, wǒmen búdàn hùxiāng bāngzhù, érqiě cónglái méi chǎoguo jià.",
+        "note": "从来没 + V + 过 — chưa từng bao giờ.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "note": "Vừa là danh từ (cuộc sống) vừa là động từ (sinh sống).",
+    "colloFull": [
+      {
+        "zh": "我们的生活",
+        "py": "wǒmen de shēnghuó",
+        "vn": "cuộc sống của chúng tôi"
+      },
+      {
+        "zh": "共同生活",
+        "py": "gòngtóng shēnghuó",
+        "vn": "sống chung"
+      },
+      {
+        "zh": "生活得怎么样",
+        "py": "shēnghuó de zěnmeyàng",
+        "vn": "sống thế nào"
+      },
+      {
+        "zh": "生活习惯",
+        "py": "shēnghuó xíguàn",
+        "vn": "thói quen sinh hoạt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 在 + nơi chốn + 生活",
+        "m": "Ai đó sống ở đâu"
+      },
+      {
+        "s": "……的生活 + Adj",
+        "m": "Cuộc sống của … thì thế nào"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "刚",
+    "py": "gāng",
+    "pos": "Phó từ",
+    "vn": "vừa, vừa mới",
+    "hv": "cương",
+    "em": "🕐",
+    "lesson": 1,
+    "explain": [
+      "Diễn tả hành động/tình huống xảy ra cách đây không lâu, đứng sau chủ ngữ, trước động từ."
+    ],
+    "usage": "Phó từ: Chủ ngữ + 刚 + Động từ. So với 刚才 (danh từ chỉ thời gian): 刚 KHÔNG thể đứng đầu câu, không dùng phủ định phía sau, có thể có thời lượng phía sau động từ.",
+    "collo": [
+      "刚认识",
+      "刚结婚",
+      "刚搬来"
+    ],
+    "ex_zh": "我和丈夫刚结婚的时候，每天都觉得很新鲜。",
+    "ex_py": "Wǒ hé zhàngfu gāng jié hūn de shíhou, měitiān dōu juéde hěn xīnxiān.",
+    "ex_vn": "Lúc tôi và chồng vừa mới kết hôn, ngày nào cũng cảm thấy mới mẻ.",
+    "exList": [
+      {
+        "zh": "我和丈夫刚结婚的时候，每天都觉得很新鲜。",
+        "py": "Wǒ hé zhàngfu gāng jié hūn de shíhou, měitiān dōu juéde hěn xīnxiān.",
+        "vn": "Lúc tôi và chồng vừa mới kết hôn, ngày nào cũng cảm thấy mới mẻ."
+      },
+      {
+        "zh": "我上午刚借的那本书，怎么找不到了？",
+        "py": "Wǒ shàngwǔ gāng jiè de nà běn shū, zěnme zhǎo bú dào le?",
+        "vn": "Quyển sách tôi vừa mượn sáng nay sao lại không tìm thấy?"
+      },
+      {
+        "zh": "我刚从会议室过来，怎么一个人也没有？",
+        "py": "Wǒ gāng cóng huìyìshì guòlai, zěnme yí ge rén yě méiyǒu?",
+        "vn": "Tôi vừa từ phòng họp qua đây, sao chẳng có ai vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "刚",
+        "p": "gāng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 6,
+        "ord": "冈 trái → 刂 (đao) phải",
+        "rad": "刂 (đao – dao)",
+        "mean": "vừa mới; cứng",
+        "tip": "Bộ dao 刂 + 冈 (núi cứng) → hành động vừa mới XẢY RA, còn \"SẮC/MỚI\" như lưỡi dao vừa mài.",
+        "cf": "刚 dễ nhầm với 冈 (gāng – \"núi, gò\", không có bộ 刂\")",
+        "w": "刚才 / 刚刚 / 刚好"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mặc dù chúng tôi mới quen nhau, nhưng tôi chưa bao giờ vui đến thế.",
+        "answer": "尽管我们刚认识，但我从来没这么快乐过。",
+        "answerPy": "Jǐnguǎn wǒmen gāng rènshi, dàn wǒ cónglái méi zhème kuàilè guo.",
+        "note": "刚 + V — vừa mới làm gì, không dùng với khoảng thời gian dài.",
+        "pair": "尽管……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù vừa mới quen nhau, hai người họ vẫn có rất nhiều sở thích chung.",
+        "answer": "即使刚认识，他们俩也有很多共同的爱好。",
+        "answerPy": "Jíshǐ gāng rènshi, tāmen liǎ yě yǒu hěn duō gòngtóng de àihào.",
+        "note": "即使……也…… kết hợp với 刚.",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Phó từ chỉ việc VỪA xảy ra. Khác 刚才 (danh từ chỉ thời điểm).",
+    "colloFull": [
+      {
+        "zh": "刚认识",
+        "py": "gāng rènshi",
+        "vn": "vừa mới quen"
+      },
+      {
+        "zh": "刚结婚",
+        "py": "gāng jiéhūn",
+        "vn": "vừa mới cưới"
+      },
+      {
+        "zh": "刚搬来",
+        "py": "gāng bānlái",
+        "vn": "vừa chuyển đến"
+      },
+      {
+        "zh": "刚下课",
+        "py": "gāng xiàkè",
+        "vn": "vừa tan học"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 刚 + V",
+        "m": "Ai đó vừa mới làm gì"
+      },
+      {
+        "s": "刚 + V + 了 + thời lượng",
+        "m": "Vừa làm gì được bao lâu"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "浪漫",
+    "py": "làngmàn",
+    "pos": "Tính từ",
+    "vn": "lãng mạn",
+    "hv": "lãng mạn",
+    "em": "🌹",
+    "lesson": 1,
+    "explain": [
+      "Đầy cảm xúc, mộng mơ, khác biệt với sự thực dụng thông thường."
+    ],
+    "usage": "Tính từ; thường đi với 爱情/生活: 浪漫的爱情.",
+    "collo": [
+      "浪漫的爱情",
+      "很浪漫",
+      "羨慕浪漫"
+    ],
+    "ex_zh": "很多女孩子羡慕浪漫的爱情。",
+    "ex_py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+    "ex_vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn.",
+    "exList": [
+      {
+        "zh": "很多女孩子羡慕浪漫的爱情。",
+        "py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+        "vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn."
+      },
+      {
+        "zh": "只有浪漫和新鲜感是不够的。",
+        "py": "Zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
+        "vn": "Chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ."
+      },
+      {
+        "zh": "这个电影讲了一个爱情故事，很浪漫。",
+        "py": "Zhège diànyǐng jiǎngle yí ge àiqíng gùshi, hěn làngmàn.",
+        "vn": "Bộ phim này kể một câu chuyện tình yêu, rất lãng mạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "漫",
+        "p": "màn",
+        "type": "左右结构 · Trái-phải",
+        "st": 14,
+        "ord": "氵 (thủy) trái → 曼 (mạn) phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "tràn lan, mênh mông",
+        "tip": "Bộ nước 氵 (lan tràn khắp nơi) + 曼 (kéo dài) → nước TRÀN LAN không giới hạn, mở rộng thành cảm xúc BAY BỔNG, LÃNG MẠN.",
+        "cf": "慢 (màn – \"chậm\", bộ 忄 khác)",
+        "w": "浪漫 / 漫画 / 弥漫"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những cô ấy ngưỡng mộ tình yêu lãng mạn, mà còn rất thích xem phim tình cảm.",
+        "answer": "她不仅羡慕浪漫的爱情，还很喜欢看爱情电影。",
+        "answerPy": "Tā bùjǐn xiànmù làngmàn de àiqíng, hái hěn xǐhuan kàn àiqíng diànyǐng.",
+        "note": "不仅……还…… — không những … mà còn ….",
+        "pair": "不仅……还……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù công việc bận rộn, anh ấy cũng vẫn nhớ những ngày lãng mạn đó.",
+        "answer": "即使工作很忙，他也一直记得那些浪漫的日子。",
+        "answerPy": "Jíshǐ gōngzuò hěn máng, tā yě yìzhí jìde nàxiē làngmàn de rìzi.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Từ mượn âm (romantic). Tính từ.",
+    "colloFull": [
+      {
+        "zh": "浪漫的爱情",
+        "py": "làngmàn de àiqíng",
+        "vn": "tình yêu lãng mạn"
+      },
+      {
+        "zh": "很浪漫",
+        "py": "hěn làngmàn",
+        "vn": "rất lãng mạn"
+      },
+      {
+        "zh": "浪漫的地方",
+        "py": "làngmàn de dìfang",
+        "vn": "nơi lãng mạn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 很 / 非常 + 浪漫",
+        "m": "… rất lãng mạn"
+      },
+      {
+        "s": "浪漫的 + N",
+        "m": "… lãng mạn (làm định ngữ)"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "够",
+    "py": "gòu",
+    "pos": "Động từ",
+    "vn": "đủ",
+    "hv": "cú",
+    "em": "🆗",
+    "lesson": 1,
+    "explain": [
+      "Đạt đến mức cần thiết, không thiếu."
+    ],
+    "usage": "Động từ, thường dùng với 不够 (không đủ): 是不够的.",
+    "collo": [
+      "不够的",
+      "够了",
+      "够用"
+    ],
+    "ex_zh": "只有浪漫和新鲜感是不够的。",
+    "ex_py": "Zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
+    "ex_vn": "Chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ.",
+    "exList": [
+      {
+        "zh": "只有浪漫和新鲜感是不够的。",
+        "py": "Zhǐyǒu làngmàn hé xīnxiāngǎn shì bú gòu de.",
+        "vn": "Chỉ có lãng mạn và cảm giác mới mẻ thôi thì không đủ."
+      },
+      {
+        "zh": "这些钱够不够？",
+        "py": "Zhèxiē qián gòu bu gòu?",
+        "vn": "Số tiền này có đủ không?"
+      },
+      {
+        "zh": "只知道理论是不够的，还要多练习。",
+        "py": "Zhǐ zhīdào lǐlùn shì bú gòu de, hái yào duō liànxí.",
+        "vn": "Chỉ biết lý thuyết thôi thì không đủ, còn phải luyện tập nhiều."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "够",
+        "p": "gòu",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 11,
+        "ord": "夕 trái → 多 phải (biến thể)",
+        "rad": "夕 (tịch – buổi tối)",
+        "mean": "đủ",
+        "tip": "Chữ giản thể mô phỏng số lượng ĐÃ ĐẠT MỨC cần có, mở rộng nghĩa từ \"nhiều\" (多) thành ĐỦ, KHÔNG THIẾU.",
+        "cf": "够 dễ nhầm với 岁 (suì – \"tuổi\")",
+        "w": "不够 / 够用 / 能够"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có tình yêu thôi thì không đủ, còn cần phải hiểu nhau nữa.",
+        "answer": "只有爱情是不够的，还需要互相理解。",
+        "answerPy": "Zhǐyǒu àiqíng shì bú gòu de, hái xūyào hùxiāng lǐjiě.",
+        "note": "只有……(是不够的)，还…… — chỉ có … thì không đủ, còn cần ….",
+        "pair": "只有……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy về tiền bạc hiện giờ vẫn chưa đủ mua nhà, nhưng chúng tôi sẽ cùng nhau cố gắng.",
+        "answer": "虽然在钱上现在还不够买房子，但是我们会一起努力。",
+        "answerPy": "Suīrán zài qián shang xiànzài hái bú gòu mǎi fángzi, dànshì wǒmen huì yìqǐ nǔlì.",
+        "note": "不够 + V — không đủ để làm gì.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "note": "Động từ chỉ mức đủ. 够 + N hoặc Adj + 够.",
+    "colloFull": [
+      {
+        "zh": "够了",
+        "py": "gòu le",
+        "vn": "đủ rồi"
+      },
+      {
+        "zh": "不够",
+        "py": "bú gòu",
+        "vn": "không đủ"
+      },
+      {
+        "zh": "够用",
+        "py": "gòu yòng",
+        "vn": "đủ dùng"
+      },
+      {
+        "zh": "时间不够",
+        "py": "shíjiān bú gòu",
+        "vn": "không đủ thời gian"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 够 / 不够",
+        "m": "Cái gì đủ / không đủ"
+      },
+      {
+        "s": "够 + V",
+        "m": "Đủ để làm gì"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "缺点",
+    "py": "quēdiǎn",
+    "pos": "Danh từ",
+    "vn": "khuyết điểm, thiếu sót",
+    "hv": "khuyết điểm",
+    "em": "⚠️",
+    "lesson": 1,
+    "explain": [
+      "Điểm chưa tốt, hạn chế của một người/sự vật, trái nghĩa với 优点."
+    ],
+    "usage": "Danh từ; thường đi với 接受/看到: 接受他的缺点.",
+    "collo": [
+      "他的缺点",
+      "接受缺点",
+      "看到缺点"
+    ],
+    "ex_zh": "我现在每天看到的都是他的缺点。",
+    "ex_py": "Wǒ xiànzài měitiān kàndào de dōu shì tā de quēdiǎn.",
+    "ex_vn": "Bây giờ mỗi ngày tôi nhìn thấy đều là khuyết điểm của anh ấy.",
+    "exList": [
+      {
+        "zh": "我现在每天看到的都是他的缺点。",
+        "py": "Wǒ xiànzài měitiān kàndào de dōu shì tā de quēdiǎn.",
+        "vn": "Bây giờ mỗi ngày tôi nhìn thấy đều là khuyết điểm của anh ấy."
+      },
+      {
+        "zh": "只有接受了他的缺点，你们才能更好地一起生活。",
+        "py": "Zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
+        "vn": "Chỉ khi chấp nhận khuyết điểm của anh ấy, hai bạn mới có thể sống cùng nhau tốt hơn."
+      },
+      {
+        "zh": "每个人都有缺点。",
+        "py": "Měi ge rén dōu yǒu quēdiǎn.",
+        "vn": "Ai cũng có khuyết điểm."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "缺",
+        "p": "quē",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "缶 (phẫu) trái → 夬 (quải) phải",
+        "rad": "缶 (phẫu – đồ sành sứ)",
+        "mean": "thiếu, khuyết",
+        "tip": "Bộ 缶 (đồ gốm) bị 夬 (cắt, khuyết một góc) → đồ gốm bị SỨT MẺ, mở rộng thành THIẾU, KHUYẾT.",
+        "cf": "缺 dễ nhầm với 铁 (tiě – \"sắt\", bộ kim loại khác)",
+        "w": "缺点 / 缺少 / 缺席"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ai cũng có khuyết điểm, chỉ cần biết cách chấp nhận là được.",
+        "answer": "谁都有缺点，只要知道怎么接受就行了。",
+        "answerPy": "Shéi dōu yǒu quēdiǎn, zhǐyào zhīdào zěnme jiēshòu jiù xíng le.",
+        "note": "只要……就…… ôn lại từ HSK3.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh ấy không những chưa bao giờ phê bình khuyết điểm của tôi, mà còn luôn động viên tôi.",
+        "answer": "他不但从来没批评过我的缺点，而且总是鼓励我。",
+        "answerPy": "Tā búdàn cónglái méi pīpíngguo wǒ de quēdiǎn, érqiě zǒngshì gǔlì wǒ.",
+        "note": "缺点 ↔ 优点 — cặp từ trái nghĩa hay đi cùng nhau.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "note": "Trái nghĩa với 优点 (ưu điểm).",
+    "colloFull": [
+      {
+        "zh": "他的缺点",
+        "py": "tā de quēdiǎn",
+        "vn": "khuyết điểm của anh ấy"
+      },
+      {
+        "zh": "接受缺点",
+        "py": "jiēshòu quēdiǎn",
+        "vn": "chấp nhận khuyết điểm"
+      },
+      {
+        "zh": "看到缺点",
+        "py": "kàndào quēdiǎn",
+        "vn": "nhìn ra khuyết điểm"
+      },
+      {
+        "zh": "优点和缺点",
+        "py": "yōudiǎn hé quēdiǎn",
+        "vn": "ưu điểm và khuyết điểm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 接受 + người + 的缺点",
+        "m": "Chấp nhận khuyết điểm của ai"
+      },
+      {
+        "s": "每个人都有缺点",
+        "m": "Ai cũng có khuyết điểm"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "接受",
+    "py": "jiēshòu",
+    "pos": "Động từ",
+    "vn": "chấp nhận",
+    "hv": "tiếp thụ",
+    "em": "🤗",
+    "lesson": 1,
+    "explain": [
+      "Đồng ý nhận lấy, thừa nhận điều gì đó (thường là điều không hoàn hảo hoặc khó khăn)."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 接受 + Đối tượng (接受缺点, 接受意见).",
+    "collo": [
+      "接受缺点",
+      "接受意见",
+      "不能接受"
+    ],
+    "ex_zh": "只有接受了他的缺点，你们才能更好地一起生活。",
+    "ex_py": "Zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
+    "ex_vn": "Chỉ khi chấp nhận khuyết điểm của anh ấy, hai bạn mới có thể sống cùng nhau tốt hơn.",
+    "exList": [
+      {
+        "zh": "只有接受了他的缺点，你们才能更好地一起生活。",
+        "py": "Zhǐyǒu jiēshòule tā de quēdiǎn, nǐmen cái néng gèng hǎo de yìqǐ shēnghuó.",
+        "vn": "Chỉ khi chấp nhận khuyết điểm của anh ấy, hai bạn mới có thể sống cùng nhau tốt hơn."
+      },
+      {
+        "zh": "我是一个南方人，很难接受每天吃面条。",
+        "py": "Wǒ shì yí ge nánfāngrén, hěn nán jiēshòu měitiān chī miàntiáo.",
+        "vn": "Tôi là người miền Nam, rất khó chấp nhận việc ngày nào cũng ăn mì."
+      },
+      {
+        "zh": "他不能接受这个结果。",
+        "py": "Tā bù néng jiēshòu zhège jiéguǒ.",
+        "vn": "Anh ấy không thể chấp nhận kết quả này."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "受",
+        "p": "shòu",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "爫 trên → 又 dưới",
+        "rad": "又 (hựu – lại, tay)",
+        "mean": "nhận, chịu",
+        "tip": "Hình tượng hai tay 爫/又 trao và nhận một vật ở giữa → hành động TRAO NHẬN, mở rộng thành CHẤP NHẬN, CHỊU ĐỰNG.",
+        "cf": "爱 (ài – \"yêu\", phần trên cũng có nét tương tự)",
+        "w": "接受 / 感受 / 受到"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có chấp nhận khuyết điểm của đối phương, hai người mới có thể sống hạnh phúc cùng nhau.",
+        "answer": "只有接受对方的缺点，两个人才能幸福地生活在一起。",
+        "answerPy": "Zhǐyǒu jiēshòu duìfāng de quēdiǎn, liǎng ge rén cái néng xìngfú de shēnghuó zài yìqǐ.",
+        "note": "只有……才…… — chỉ có … mới ….",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù rất khó, cô ấy cũng chấp nhận rồi.",
+        "answer": "即使很难，她也接受了。",
+        "answerPy": "Jíshǐ hěn nán, tā yě jiēshòu le.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Nhận và đồng ý — khác 收到 (nhận được về mặt vật chất).",
+    "colloFull": [
+      {
+        "zh": "接受缺点",
+        "py": "jiēshòu quēdiǎn",
+        "vn": "chấp nhận khuyết điểm"
+      },
+      {
+        "zh": "接受意见",
+        "py": "jiēshòu yìjiàn",
+        "vn": "tiếp thu ý kiến"
+      },
+      {
+        "zh": "不能接受",
+        "py": "bù néng jiēshòu",
+        "vn": "không thể chấp nhận"
+      },
+      {
+        "zh": "接受邀请",
+        "py": "jiēshòu yāoqǐng",
+        "vn": "nhận lời mời"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 接受 + O",
+        "m": "Ai đó chấp nhận cái gì"
+      },
+      {
+        "s": "Sub + 不能 / 无法 + 接受 + O",
+        "m": "Ai đó không thể chấp nhận cái gì"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "羡慕",
+    "py": "xiànmù",
+    "pos": "Động từ",
+    "vn": "ước ao, ngưỡng mộ",
+    "hv": "tiện mộ",
+    "em": "😍",
+    "lesson": 2,
+    "explain": [
+      "Mong muốn có được điều tốt đẹp mà người khác đang có."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 羡慕 + Đối tượng/Người.",
+    "collo": [
+      "羡慕浪漫的爱情",
+      "很羡慕",
+      "让人羡慕"
+    ],
+    "ex_zh": "很多女孩子羡慕浪漫的爱情。",
+    "ex_py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+    "ex_vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn.",
+    "exList": [
+      {
+        "zh": "很多女孩子羡慕浪漫的爱情。",
+        "py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+        "vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn."
+      },
+      {
+        "zh": "很多人都特别羡慕我们。",
+        "py": "Hěn duō rén dōu tèbié xiànmù wǒmen.",
+        "vn": "Rất nhiều người đặc biệt ngưỡng mộ chúng tôi."
+      },
+      {
+        "zh": "我们总是羡慕别人有个好工作。",
+        "py": "Wǒmen zǒngshì xiànmù biéren yǒu ge hǎo gōngzuò.",
+        "vn": "Chúng ta luôn ngưỡng mộ người khác có công việc tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "慕",
+        "p": "mù",
+        "type": "上下结构 · Trên-dưới",
+        "st": 14,
+        "ord": "莫 trên → 心 dưới",
+        "rad": "心 (tâm – trái tim)",
+        "mean": "ngưỡng mộ, mến mộ",
+        "tip": "Bộ tâm 心 (trong lòng) ở dưới + 莫 (không gì bằng) → trong lòng cho rằng KHÔNG GÌ BẰNG điều đó, mở rộng thành NGƯỠNG MỘ.",
+        "cf": "幕 (mù – \"màn che\", cũng có 莫\" trên nhưng bộ 巾 dưới)",
+        "w": "羡慕 / 慕名 / 爱慕"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng lúc nào cũng ngưỡng mộ người khác, mà quên mất hạnh phúc mình đang có.",
+        "answer": "不要总是羡慕别人，而忘记了自己已经有的幸福。",
+        "answerPy": "Búyào zǒngshì xiànmù biéren, ér wàngjìle zìjǐ yǐjīng yǒu de xìngfú.",
+        "note": "不要……而…… — đừng … mà (lại) ….",
+        "pair": "总是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì họ chưa bao giờ cãi nhau, nên rất nhiều người ngưỡng mộ hai vợ chồng họ.",
+        "answer": "因为他们从来不吵架，所以很多人都羡慕他们两口子。",
+        "answerPy": "Yīnwèi tāmen cónglái bù chǎojià, suǒyǐ hěn duō rén dōu xiànmù tāmen liǎngkǒuzi.",
+        "note": "羡慕 mang nghĩa tích cực, khác 嫉妒 (ghen tị).",
+        "pair": "因为……所以……"
+      }
+    ],
+    "note": "Ngưỡng mộ mà mong mình cũng được như vậy — sắc thái tích cực.",
+    "colloFull": [
+      {
+        "zh": "很羡慕",
+        "py": "hěn xiànmù",
+        "vn": "rất ngưỡng mộ"
+      },
+      {
+        "zh": "让人羡慕",
+        "py": "ràng rén xiànmù",
+        "vn": "khiến người ta ước ao"
+      },
+      {
+        "zh": "羡慕别人",
+        "py": "xiànmù biéren",
+        "vn": "ước ao như người khác"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 羡慕 + O",
+        "m": "Ai đó ngưỡng mộ ai/cái gì"
+      },
+      {
+        "s": "……让人羡慕",
+        "m": "… khiến người ta phải ước ao"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "爱情",
+    "py": "àiqíng",
+    "pos": "Danh từ",
+    "vn": "tình yêu (giữa nam và nữ)",
+    "hv": "ái tình",
+    "em": "❤️",
+    "lesson": 2,
+    "explain": [
+      "Tình cảm yêu thương sâu sắc giữa hai người yêu nhau, khác với 爱 (yêu nói chung) và 友谊 (tình bạn)."
+    ],
+    "usage": "Danh từ; thường đi với 浪漫的爱情, 简单的爱情, 爱情故事.",
+    "collo": [
+      "浪漫的爱情",
+      "简单的爱情",
+      "爱情故事"
+    ],
+    "ex_zh": "很多女孩子羡慕浪漫的爱情。",
+    "ex_py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+    "ex_vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn.",
+    "exList": [
+      {
+        "zh": "很多女孩子羡慕浪漫的爱情。",
+        "py": "Hěn duō nǚháizi xiànmù làngmàn de àiqíng.",
+        "vn": "Nhiều cô gái ngưỡng mộ tình yêu lãng mạn."
+      },
+      {
+        "zh": "让我们感动的，就是生活中简单的爱情。",
+        "py": "Ràng wǒmen gǎndòng de, jiù shì shēnghuó zhōng jiǎndān de àiqíng.",
+        "vn": "Điều khiến chúng ta cảm động, chính là tình yêu đơn giản trong cuộc sống."
+      },
+      {
+        "zh": "爱情是结婚的重要原因。",
+        "py": "Àiqíng shì jié hūn de zhòngyào yuányīn.",
+        "vn": "Tình yêu là nguyên nhân quan trọng của việc kết hôn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "情",
+        "p": "qíng",
+        "type": "左右结构 · Trái-phải",
+        "st": 11,
+        "ord": "忄 (tâm) trái → 青 (thanh) phải",
+        "rad": "忄 (tâm – trái tim, đứng)",
+        "mean": "tình cảm",
+        "tip": "Bộ tâm 忄 (cảm xúc trong lòng) + 青 (trong trẻo, biểu âm) → cảm xúc TRONG SÁNG, CHÂN THẬT trong lòng = TÌNH CẢM.",
+        "cf": "请 (qǐng – \"mời\", cũng có 青\" nhưng bộ 讠 khác)",
+        "w": "爱情 / 感情 / 心情"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những cần tình yêu lãng mạn, mà càng cần sự thu hút lẫn nhau về tính cách.",
+        "answer": "不仅需要浪漫的爱情，更需要性格上互相吸引。",
+        "answerPy": "Bùjǐn xūyào làngmàn de àiqíng, gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "note": "不仅……更…… — không những … mà càng ….",
+        "pair": "不仅……更……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ngay cả khi tình yêu rất bình thường, nó cũng có thể khiến người ta cảm động.",
+        "answer": "即使爱情很普通，它也能让人感动。",
+        "answerPy": "Jíshǐ àiqíng hěn pǔtōng, tā yě néng ràng rén gǎndòng.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "CHỈ dùng cho tình yêu nam nữ. Tình cảm gia đình là 亲情, bạn bè là 友情.",
+    "colloFull": [
+      {
+        "zh": "浪漫的爱情",
+        "py": "làngmàn de àiqíng",
+        "vn": "tình yêu lãng mạn"
+      },
+      {
+        "zh": "简单的爱情",
+        "py": "jiǎndān de àiqíng",
+        "vn": "tình yêu giản dị"
+      },
+      {
+        "zh": "爱情故事",
+        "py": "àiqíng gùshi",
+        "vn": "chuyện tình"
+      },
+      {
+        "zh": "相信爱情",
+        "py": "xiāngxìn àiqíng",
+        "vn": "tin vào tình yêu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Adj + 的爱情",
+        "m": "Tình yêu … (làm định ngữ)"
+      },
+      {
+        "s": "Sub + 相信 + 爱情",
+        "m": "Ai đó tin vào tình yêu"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "星星",
+    "py": "xīngxing",
+    "pos": "Danh từ",
+    "vn": "ngôi sao",
+    "hv": "tinh tinh",
+    "em": "⭐",
+    "lesson": 2,
+    "explain": [
+      "Thiên thể phát sáng trên bầu trời đêm; trong bài dùng ẩn dụ cho món quà xa vời, không thực tế."
+    ],
+    "usage": "Danh từ; thường xuất hiện trong thành ngữ, câu ví von: 想要月亮/星星.",
+    "collo": [
+      "想要星星",
+      "天上的星星",
+      "数星星"
+    ],
+    "ex_zh": "她想要月亮时，你不会给她星星。",
+    "ex_py": "Tā xiǎng yào yuèliang shí, nǐ bú huì gěi tā xīngxing.",
+    "ex_vn": "Khi cô ấy muốn mặt trăng, bạn sẽ không đưa cho cô ấy ngôi sao.",
+    "exList": [
+      {
+        "zh": "浪漫是她想要月亮时，你不会给她星星。",
+        "py": "Làngmàn shì tā xiǎng yào yuèliang shí, nǐ bú huì gěi tā xīngxing.",
+        "vn": "Lãng mạn là khi cô ấy muốn mặt trăng, bạn sẽ không đưa cho cô ấy ngôi sao."
+      },
+      {
+        "zh": "晚上天上有很多星星。",
+        "py": "Wǎnshang tiānshang yǒu hěn duō xīngxing.",
+        "vn": "Buổi tối trên trời có rất nhiều ngôi sao."
+      },
+      {
+        "zh": "孩子们喜欢在院子里数星星。",
+        "py": "Háizimen xǐhuan zài yuànzi li shǔ xīngxing.",
+        "vn": "Bọn trẻ thích đếm sao ở trong sân."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "星",
+        "p": "xīng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "日 trên → 生 dưới",
+        "rad": "日 (nhật – mặt trời)",
+        "mean": "ngôi sao",
+        "tip": "Bộ 日 (vật thể phát sáng) + 生 (sinh ra, biểu âm) → vật thể SÁNG xuất hiện trên trời = NGÔI SAO.",
+        "cf": "猩 (xīng – \"tinh tinh\", cũng có phần 星\" nhưng thêm bộ 犭)",
+        "w": "星星 / 明星 / 星期"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Ngay cả khi trời tối, những ngôi sao đó vẫn tỏa sáng.",
+        "answer": "即使天黑了，那些星星也还亮着。",
+        "answerPy": "Jíshǐ tiān hēi le, nàxiē xīngxing yě hái liàngzhe.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể là ngắm sao hay xem phim, mỗi người hiểu về sự lãng mạn một khác.",
+        "answer": "不管是看星星还是看电影，每个人对浪漫的理解都不一样。",
+        "answerPy": "Bùguǎn shì kàn xīngxing háishi kàn diànyǐng, měi gè rén duì làngmàn de lǐjiě dōu bù yíyàng.",
+        "note": "不管是 A 还是 B，都…… — nêu hai khả năng, kết quả vẫn như nhau.",
+        "pair": "不管是……还是……"
+      }
+    ],
+    "note": "Từ lặp âm, đọc nhẹ âm thứ hai: xīngxing.",
+    "colloFull": [
+      {
+        "zh": "天上的星星",
+        "py": "tiān shàng de xīngxing",
+        "vn": "ngôi sao trên trời"
+      },
+      {
+        "zh": "数星星",
+        "py": "shǔ xīngxing",
+        "vn": "đếm sao"
+      },
+      {
+        "zh": "星星很亮",
+        "py": "xīngxing hěn liàng",
+        "vn": "sao rất sáng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "天上的星星 + Adj",
+        "m": "Sao trên trời thì thế nào"
+      },
+      {
+        "s": "Sub + 想要 + 星星",
+        "m": "Ai đó đòi cả ngôi sao (ví von)"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "即使",
+    "py": "jíshǐ",
+    "pos": "Liên từ",
+    "vn": "cho dù",
+    "hv": "tức sử",
+    "em": "🔀",
+    "lesson": 2,
+    "explain": [
+      "Liên từ dùng ở vế câu thứ nhất, vế câu thứ hai thường dùng 也 hô ứng, diễn tả quan hệ nhượng bộ giả thiết hoặc điều đã xảy ra/tồn tại."
+    ],
+    "usage": "即使 có thể đứng trước hoặc sau chủ ngữ của vế câu thứ nhất: 即使 + Chủ ngữ + VP1，Chủ ngữ + 也 + VP2.",
+    "collo": [
+      "即使……也……",
+      "即使只是……",
+      "即使晚上……也……"
+    ],
+    "ex_zh": "浪漫是即使晚上加班到零点，到家时，自己家里也还亮着灯。",
+    "ex_py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn, dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
+    "ex_vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ, khi về đến nhà, đèn nhà mình vẫn còn sáng.",
+    "exList": [
+      {
+        "zh": "浪漫是即使晚上加班到零点，到家时，自己家里也还亮着灯。",
+        "py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn, dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
+        "vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ, khi về đến nhà, đèn nhà mình vẫn còn sáng."
+      },
+      {
+        "zh": "即使只是跟他们吃吃饭、聊聊天，他们也会觉得很幸福。",
+        "py": "Jíshǐ zhǐshì gēn tāmen chīchi fàn, liáoliao tiān, tāmen yě huì juéde hěn xìngfú.",
+        "vn": "Cho dù chỉ là ăn cơm, trò chuyện với họ, họ cũng sẽ cảm thấy rất hạnh phúc."
+      },
+      {
+        "zh": "即使我们认识的时间不长，我从来没这么快乐过。",
+        "py": "Jíshǐ wǒmen rènshi de shíjiān bù cháng, wǒ cónglái méi zhème kuàilèguo.",
+        "vn": "Cho dù chúng tôi quen nhau chưa lâu, tôi từ trước đến giờ chưa từng vui như vậy."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "即",
+        "p": "jí",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "皀 trái → 卩 phải",
+        "rad": "卩 (tiết – quỳ gối)",
+        "mean": "liền, ngay",
+        "tip": "Hình tượng người 卩 quỳ NGAY bên mâm thức ăn 皀 để ăn → hành động xảy ra NGAY LẬP TỨC, mở rộng thành LIÊN TỪ nhượng bộ \"cho dù ngay cả khi\".",
+        "cf": "既 (jì – \"đã\", hình gần giống nhưng nghĩa khác hẳn)",
+        "w": "即使 / 立即 / 即将"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù mỗi ngày đều tăng ca, anh ấy cũng không hề than phiền.",
+        "answer": "即使每天都加班，他也从来不抱怨。",
+        "answerPy": "Jíshǐ měitiān dōu jiābān, tā yě cónglái bù bàoyuàn.",
+        "note": "即使……也…… kết hợp với 从来不.",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù mọi việc rất bình thường, chúng cũng có thể khiến người ta cảm động.",
+        "answer": "即使事情很普通，它们也能让人感动。",
+        "answerPy": "Jíshǐ shìqing hěn pǔtōng, tāmen yě néng ràng rén gǎndòng.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Giả thiết nhượng bộ — việc CHƯA xảy ra. Vế sau bắt buộc có 也.",
+    "colloFull": [
+      {
+        "zh": "即使……也……",
+        "py": "jíshǐ… yě…",
+        "vn": "cho dù… thì vẫn…"
+      },
+      {
+        "zh": "即使这样",
+        "py": "jíshǐ zhèyàng",
+        "vn": "cho dù vậy"
+      },
+      {
+        "zh": "即使很忙",
+        "py": "jíshǐ hěn máng",
+        "vn": "cho dù rất bận"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "即使 + mệnh đề 1，Sub + 也 + VP2",
+        "m": "Cho dù … thì vẫn …"
+      },
+      {
+        "s": "✗ 即使……但是…… → ✓ 即使……也……",
+        "m": "Không hô ứng với 但是"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "加班",
+    "py": "jiā bān",
+    "pos": "Cụm động từ",
+    "vn": "tăng ca, làm thêm giờ",
+    "hv": "gia ban",
+    "em": "💼",
+    "lesson": 2,
+    "explain": [
+      "Làm việc thêm ngoài giờ quy định."
+    ],
+    "usage": "Cụm động từ ly hợp (离合词): có thể chèn thời lượng/bổ ngữ ở giữa 加 và 班: 加了一天班.",
+    "collo": [
+      "晚上加班",
+      "加班到……",
+      "不用加班"
+    ],
+    "ex_zh": "浪漫是即使晚上加班到零点。",
+    "ex_py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn.",
+    "ex_vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ.",
+    "exList": [
+      {
+        "zh": "浪漫是即使晚上加班到零点。",
+        "py": "Làngmàn shì jíshǐ wǎnshang jiābān dào língdiǎn.",
+        "vn": "Lãng mạn là cho dù buổi tối tăng ca đến 0 giờ."
+      },
+      {
+        "zh": "今天晚上大家要加班。",
+        "py": "Jīntiān wǎnshang dàjiā yào jiābān.",
+        "vn": "Tối nay mọi người phải tăng ca."
+      },
+      {
+        "zh": "他不会又要加班吧？",
+        "py": "Tā bú huì yòu yào jiābān ba?",
+        "vn": "Anh ấy sẽ không lại phải tăng ca chứ?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "班",
+        "p": "bān",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "王 trái → 刂 → 王 (biến thể lặp)",
+        "rad": "王 (vương – bộ ngọc)",
+        "mean": "ca làm việc, lớp",
+        "tip": "Hai bộ 王 (ngọc) được 刂 (dao) CHIA thành từng phần đều nhau → chia thành từng NHÓM, từng CA làm việc.",
+        "cf": "班 dễ nhầm với 斑 (bān – \"đốm, vằn\")",
+        "w": "加班 / 上班 / 班级"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù phải tăng ca đến nửa đêm, anh ấy cũng vẫn gọi điện cho tôi mỗi ngày.",
+        "answer": "即使要加班到半夜，他也每天都给我打电话。",
+        "answerPy": "Jíshǐ yào jiābān dào bànyè, tā yě měitiān dōu gěi wǒ dǎ diànhuà.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy dạo này chúng tôi thường phải tăng ca, nhưng cuối tuần vẫn cùng nhau đi xem phim.",
+        "answer": "虽然我们最近经常要加班，但是周末还是会一起去看电影。",
+        "answerPy": "Suīrán wǒmen zuìjìn jīngcháng yào jiābān, dànshì zhōumò háishi huì yìqǐ qù kàn diànyǐng.",
+        "note": "加班 là từ ly hợp: 加了三个小时的班.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "note": "LY HỢP TỪ: 加了两个小时班. Không nói 加班两个小时.",
+    "colloFull": [
+      {
+        "zh": "晚上加班",
+        "py": "wǎnshang jiābān",
+        "vn": "tăng ca buổi tối"
+      },
+      {
+        "zh": "不用加班",
+        "py": "búyòng jiābān",
+        "vn": "không phải tăng ca"
+      },
+      {
+        "zh": "经常加班",
+        "py": "jīngcháng jiābān",
+        "vn": "thường xuyên tăng ca"
+      },
+      {
+        "zh": "加了三个小时班",
+        "py": "jiāle sān ge xiǎoshí bān",
+        "vn": "đã tăng ca ba tiếng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 加班",
+        "m": "Ai đó tăng ca"
+      },
+      {
+        "s": "Sub + 加了 + thời lượng + 班",
+        "m": "Ai đó đã tăng ca bao lâu"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "亮",
+    "py": "liàng",
+    "pos": "Động từ",
+    "vn": "chiếu sáng, tỏa sáng",
+    "hv": "lượng",
+    "em": "💡",
+    "lesson": 2,
+    "explain": [
+      "Phát ra ánh sáng; cũng dùng làm tính từ chỉ độ sáng."
+    ],
+    "usage": "Động từ/Tính từ: 灯还亮着 (đèn vẫn đang sáng), 天亮了 (trời sáng rồi).",
+    "collo": [
+      "灯亮着",
+      "天亮了",
+      "很亮"
+    ],
+    "ex_zh": "到家时，自己家里也还亮着灯。",
+    "ex_py": "Dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
+    "ex_vn": "Khi về đến nhà, đèn nhà mình vẫn còn sáng.",
+    "exList": [
+      {
+        "zh": "到家时，自己家里也还亮着灯。",
+        "py": "Dào jiā shí, zìjǐ jiā li yě hái liàngzhe dēng.",
+        "vn": "Khi về đến nhà, đèn nhà mình vẫn còn sáng."
+      },
+      {
+        "zh": "天还没亮，他就起床了。",
+        "py": "Tiān hái méi liàng, tā jiù qǐchuáng le.",
+        "vn": "Trời còn chưa sáng, anh ấy đã dậy rồi."
+      },
+      {
+        "zh": "这个房间很亮。",
+        "py": "Zhège fángjiān hěn liàng.",
+        "vn": "Căn phòng này rất sáng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "亮",
+        "p": "liàng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 9,
+        "ord": "亠 trên → 冖+几 dưới",
+        "rad": "亠 (đầu – nắp)",
+        "mean": "sáng",
+        "tip": "Hình tượng ánh sáng phát ra từ trên cao chiếu xuống → SÁNG, TỎA SÁNG.",
+        "cf": "亮 dễ nhầm với 京 (jīng – \"kinh đô\", phần trên giống nhau)",
+        "w": "亮 / 明亮 / 天亮"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù về nhà rất muộn, đèn phòng khách vẫn luôn sáng để đợi anh ấy.",
+        "answer": "即使回家很晚，客厅的灯也一直亮着等他。",
+        "answerPy": "Jíshǐ huí jiā hěn wǎn, kètīng de dēng yě yìzhí liàngzhe děng tā.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Từ trước đến giờ, đèn nhà tôi vào buổi tối luôn sáng đến rất muộn.",
+        "answer": "从来，我家的灯晚上都亮到很晚。",
+        "answerPy": "Cónglái, wǒ jiā de dēng wǎnshang dōu liàngdào hěn wǎn.",
+        "note": "从来 — từ trước đến nay (nhấn mạnh thói quen lâu dài).",
+        "pair": "从……到……"
+      }
+    ],
+    "note": "Vừa là tính từ (sáng) vừa là động từ (bật sáng, hửng sáng).",
+    "colloFull": [
+      {
+        "zh": "灯亮着",
+        "py": "dēng liàngzhe",
+        "vn": "đèn đang sáng"
+      },
+      {
+        "zh": "天亮了",
+        "py": "tiān liàng le",
+        "vn": "trời sáng rồi"
+      },
+      {
+        "zh": "很亮",
+        "py": "hěn liàng",
+        "vn": "rất sáng"
+      },
+      {
+        "zh": "眼睛一亮",
+        "py": "yǎnjing yí liàng",
+        "vn": "mắt sáng lên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 亮着",
+        "m": "Cái gì đang sáng"
+      },
+      {
+        "s": "天 + 亮 + 了",
+        "m": "Trời đã sáng"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "感动",
+    "py": "gǎndòng",
+    "pos": "Động từ",
+    "vn": "cảm động, làm xúc động",
+    "hv": "cảm động",
+    "em": "🥹",
+    "lesson": 2,
+    "explain": [
+      "Cảm xúc dâng trào, xúc động khi tiếp xúc với điều gì đó tốt đẹp/ý nghĩa."
+    ],
+    "usage": "Động từ; có thể dùng bị động 被……感动, hoặc làm 让/使 người khác cảm động.",
+    "collo": [
+      "让人感动",
+      "很感动",
+      "被……感动"
+    ],
+    "ex_zh": "让我们感动的，就是生活中简单的爱情。",
+    "ex_py": "Ràng wǒmen gǎndòng de, jiù shì shēnghuó zhōng jiǎndān de àiqíng.",
+    "ex_vn": "Điều khiến chúng ta cảm động, chính là tình yêu đơn giản trong cuộc sống.",
+    "exList": [
+      {
+        "zh": "让我们感动的，就是生活中简单的爱情。",
+        "py": "Ràng wǒmen gǎndòng de, jiù shì shēnghuó zhōng jiǎndān de àiqíng.",
+        "vn": "Điều khiến chúng ta cảm động, chính là tình yêu đơn giản trong cuộc sống."
+      },
+      {
+        "zh": "这个电影很浪漫，让人特别感动。",
+        "py": "Zhège diànyǐng hěn làngmàn, ràng rén tèbié gǎndòng.",
+        "vn": "Bộ phim này rất lãng mạn, khiến người ta đặc biệt cảm động."
+      },
+      {
+        "zh": "虽然不长，但是让我很感动。",
+        "py": "Suīrán bù cháng, dànshì ràng wǒ hěn gǎndòng.",
+        "vn": "Tuy không dài, nhưng khiến tôi rất cảm động."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "动",
+        "p": "dòng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 6,
+        "ord": "云 trái → 力 phải",
+        "rad": "力 (lực – sức mạnh)",
+        "mean": "động, xúc động",
+        "tip": "Bộ lực 力 (sức mạnh, tác động) → chịu tác động mà THAY ĐỔI trạng thái, mở rộng thành CẢM ĐỘNG (cảm xúc bị lay động).",
+        "cf": "动 dễ nhầm với 云 (yún – \"mây\", chỉ khác bộ 力\")",
+        "w": "感动 / 运动 / 动作"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những khiến tôi cảm động, mà còn khiến tôi hiểu ra nhiều điều.",
+        "answer": "不仅让我感动，还让我明白了很多道理。",
+        "answerPy": "Bùjǐn ràng wǒ gǎndòng, hái ràng wǒ míngbaile hěn duō dàolǐ.",
+        "note": "不仅……还…… — không những … mà còn ….",
+        "pair": "不仅……还……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù chỉ là một chuyện nhỏ bình thường, nó cũng có thể khiến người ta cảm động.",
+        "answer": "即使只是一件普通的小事，它也能让人感动。",
+        "answerPy": "Jíshǐ zhǐshì yí jiàn pǔtōng de xiǎo shì, tā yě néng ràng rén gǎndòng.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Bị lay động tình cảm. Câu bị động hay gặp: 被……感动.",
+    "colloFull": [
+      {
+        "zh": "很感动",
+        "py": "hěn gǎndòng",
+        "vn": "rất cảm động"
+      },
+      {
+        "zh": "让人感动",
+        "py": "ràng rén gǎndòng",
+        "vn": "khiến người ta cảm động"
+      },
+      {
+        "zh": "被……感动",
+        "py": "bèi… gǎndòng",
+        "vn": "bị/được … làm cảm động"
+      },
+      {
+        "zh": "感动得哭了",
+        "py": "gǎndòng de kū le",
+        "vn": "cảm động đến phát khóc"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 很 / 非常 + 感动",
+        "m": "Ai đó rất cảm động"
+      },
+      {
+        "s": "……让 / 使 + người + 感动",
+        "m": "… khiến ai cảm động"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "自然",
+    "py": "zìrán",
+    "pos": "Phó từ",
+    "vn": "đương nhiên, hiển nhiên",
+    "hv": "tự nhiên",
+    "em": "🌿",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả điều xảy ra một cách hợp lý, không cần cố gắng, đương nhiên là vậy."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 会很自然地 + V.",
+    "collo": [
+      "很自然地",
+      "自然想起",
+      "大自然"
+    ],
+    "ex_zh": "说到结婚，人们就会很自然地想起爱情。",
+    "ex_py": "Shuōdào jié hūn, rénmen jiù huì hěn zìrán de xiǎngqǐ àiqíng.",
+    "ex_vn": "Nói đến kết hôn, người ta sẽ tự nhiên nghĩ đến tình yêu.",
+    "exList": [
+      {
+        "zh": "说到结婚，人们就会很自然地想起爱情。",
+        "py": "Shuōdào jié hūn, rénmen jiù huì hěn zìrán de xiǎngqǐ àiqíng.",
+        "vn": "Nói đến kết hôn, người ta sẽ tự nhiên nghĩ đến tình yêu."
+      },
+      {
+        "zh": "两个人熟悉了以后，说话就自然多了。",
+        "py": "Liǎng ge rén shúxile yǐhòu, shuōhuà jiù zìrán duō le.",
+        "vn": "Sau khi hai người quen nhau, nói chuyện tự nhiên hơn nhiều."
+      },
+      {
+        "zh": "他喜欢周末去大自然里走走。",
+        "py": "Tā xǐhuan zhōumò qù dàzìrán li zǒuzou.",
+        "vn": "Anh ấy thích cuối tuần đi dạo trong thiên nhiên."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "然",
+        "p": "rán",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "月+犬 trên → 灬 dưới",
+        "rad": "灬 (hỏa – lửa)",
+        "mean": "như vậy, đúng vậy",
+        "tip": "Bộ lửa 灬 (đốt thịt 月+犬) vốn nghĩa gốc là \"đốt cháy\", mượn âm để chỉ Ý NHƯ VẬY, ĐÚNG LÀ VẬY, mở rộng thành TỰ NHIÊN.",
+        "cf": "燃 (rán – \"cháy\", thêm bộ 火\" bên trái, giữ nghĩa gốc)",
+        "w": "自然 / 然后 / 突然"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vừa mới nói đến kỳ nghỉ, mọi người tự nhiên nghĩ ngay đến việc đi du lịch.",
+        "answer": "刚说到放假，大家就自然想到了去旅游。",
+        "answerPy": "Gāng shuōdào fàngjià, dàjiā jiù zìrán xiǎngdàole qù lǚyóu.",
+        "note": "刚 — vừa mới, ôn lại điểm ngữ pháp của bài.",
+        "pair": "刚……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Về mặt cách nói chuyện, cô ấy ngày càng tự nhiên hơn.",
+        "answer": "在说话上，她越来越自然了。",
+        "answerPy": "Zài shuōhuà shang, tā yuè lái yuè zìrán le.",
+        "note": "在……上 — về phương diện.",
+        "pair": "越……越……"
+      }
+    ],
+    "note": "Ở bài này là PHÓ TỪ (đương nhiên). Còn 大自然 là danh từ (thiên nhiên).",
+    "colloFull": [
+      {
+        "zh": "很自然地",
+        "py": "hěn zìrán de",
+        "vn": "một cách rất tự nhiên"
+      },
+      {
+        "zh": "自然想起",
+        "py": "zìrán xiǎngqǐ",
+        "vn": "tự nhiên nhớ tới"
+      },
+      {
+        "zh": "大自然",
+        "py": "dà zìrán",
+        "vn": "thiên nhiên"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 自然 + 会 / 就 + V",
+        "m": "Ai đó đương nhiên sẽ làm gì"
+      },
+      {
+        "s": "很自然地 + V",
+        "m": "Làm gì một cách rất tự nhiên"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "原因",
+    "py": "yuányīn",
+    "pos": "Danh từ",
+    "vn": "nguyên nhân",
+    "hv": "nguyên nhân",
+    "em": "❓",
+    "lesson": 2,
+    "explain": [
+      "Điều dẫn đến một kết quả, sự việc nào đó."
+    ],
+    "usage": "Danh từ; thường đi với 重要原因, 主要原因.",
+    "collo": [
+      "重要原因",
+      "主要原因",
+      "原因是……"
+    ],
+    "ex_zh": "爱情是结婚的重要原因。",
+    "ex_py": "Àiqíng shì jié hūn de zhòngyào yuányīn.",
+    "ex_vn": "Tình yêu là nguyên nhân quan trọng của việc kết hôn.",
+    "exList": [
+      {
+        "zh": "爱情是结婚的重要原因，但只有爱情是不够的。",
+        "py": "Àiqíng shì jié hūn de zhòngyào yuányīn, dàn zhǐyǒu àiqíng shì bú gòu de.",
+        "vn": "Tình yêu là nguyên nhân quan trọng của việc kết hôn, nhưng chỉ có tình yêu thôi thì không đủ."
+      },
+      {
+        "zh": "他没告诉我原因。",
+        "py": "Tā méi gàosu wǒ yuányīn.",
+        "vn": "Anh ấy không nói cho tôi biết nguyên nhân."
+      },
+      {
+        "zh": "这就是他离开的主要原因。",
+        "py": "Zhè jiù shì tā líkāi de zhǔyào yuányīn.",
+        "vn": "Đây chính là nguyên nhân chính khiến anh ấy rời đi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "原",
+        "p": "yuán",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 10,
+        "ord": "厂 bao ngoài → 白+小 trong",
+        "rad": "厂 (hán – vách núi)",
+        "mean": "nguồn gốc, ban đầu",
+        "tip": "Hình tượng dòng nước chảy ra từ khe núi 厂 → NGUỒN GỐC, mở rộng thành NGUYÊN NHÂN (nguồn gốc của sự việc).",
+        "cf": "源 (yuán – \"nguồn\", thêm bộ 氵\" giữ nghĩa gốc \"nguồn nước\")",
+        "w": "原因 / 原来 / 原谅"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có hiểu rõ nguyên nhân, chúng ta mới có thể giải quyết vấn đề.",
+        "answer": "只有弄清楚原因，我们才能解决问题。",
+        "answerPy": "Zhǐyǒu nòngqīngchu yuányīn, wǒmen cái néng jiějué wèntí.",
+        "note": "只有……才…… — chỉ có … mới ….",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù nguyên nhân rất đơn giản, kết quả cũng rất nghiêm trọng.",
+        "answer": "即使原因很简单，结果也很严重。",
+        "answerPy": "Jíshǐ yuányīn hěn jiǎndān, jiéguǒ yě hěn yánzhòng.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Trái nghĩa: 结果 (kết quả). 原因是…… nêu lý do.",
+    "colloFull": [
+      {
+        "zh": "重要原因",
+        "py": "zhòngyào yuányīn",
+        "vn": "nguyên nhân quan trọng"
+      },
+      {
+        "zh": "主要原因",
+        "py": "zhǔyào yuányīn",
+        "vn": "nguyên nhân chủ yếu"
+      },
+      {
+        "zh": "原因是……",
+        "py": "yuányīn shì…",
+        "vn": "nguyên nhân là…"
+      },
+      {
+        "zh": "找出原因",
+        "py": "zhǎochū yuányīn",
+        "vn": "tìm ra nguyên nhân"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "……的原因是……",
+        "m": "Nguyên nhân của … là …"
+      },
+      {
+        "s": "因为 + nguyên nhân，所以 + kết quả",
+        "m": "Vì … nên …"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "互相",
+    "py": "hùxiāng",
+    "pos": "Phó từ",
+    "vn": "lẫn nhau, qua lại",
+    "hv": "hỗ tương",
+    "em": "🔄",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả hành động qua lại giữa hai bên, cả hai bên cùng làm với nhau."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 互相 + V (互相理解, 互相关心, 互相吸引).",
+    "collo": [
+      "互相理解",
+      "互相关心",
+      "互相吸引"
+    ],
+    "ex_zh": "两个人还应该互相理解、互相关心。",
+    "ex_py": "Liǎng ge rén hái yīnggāi hùxiāng lǐjiě, hùxiāng guānxīn.",
+    "ex_vn": "Hai người còn nên hiểu nhau, quan tâm lẫn nhau.",
+    "exList": [
+      {
+        "zh": "两个人还应该互相理解、互相关心，只有这样才能很好地生活在一起。",
+        "py": "Liǎng ge rén hái yīnggāi hùxiāng lǐjiě, hùxiāng guānxīn, zhǐyǒu zhèyàng cái néng hěn hǎo de shēnghuó zài yìqǐ.",
+        "vn": "Hai người còn nên hiểu nhau, quan tâm lẫn nhau, chỉ có như vậy mới có thể sống tốt cùng nhau."
+      },
+      {
+        "zh": "更需要性格上互相吸引。",
+        "py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "vn": "Càng cần sự thu hút lẫn nhau về tính cách."
+      },
+      {
+        "zh": "朋友之间要互相帮助。",
+        "py": "Péngyou zhījiān yào hùxiāng bāngzhù.",
+        "vn": "Bạn bè với nhau phải giúp đỡ lẫn nhau."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "互",
+        "p": "hù",
+        "type": "独体字 · Chữ đơn",
+        "st": 4,
+        "ord": "nét liền, hình sợi dây tết chéo",
+        "rad": "一 (nhất)",
+        "mean": "lẫn nhau, qua lại",
+        "tip": "Hình tượng cổ mô phỏng một dụng cụ đan XEN KẼ qua lại → mở rộng nghĩa thành LẪN NHAU.",
+        "cf": "瓦 (wǎ – \"ngói\", hình gần giống nhưng không liên quan nghĩa)",
+        "w": "互相 / 相互 / 互联网"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ có hiểu nhau, hai người mới có thể sống hạnh phúc cùng nhau.",
+        "answer": "只有互相理解，两个人才能幸福地生活在一起。",
+        "answerPy": "Zhǐyǒu hùxiāng lǐjiě, liǎng ge rén cái néng xìngfú de shēnghuó zài yìqǐ.",
+        "note": "只有……才…… — chỉ có … mới ….",
+        "pair": "只有……才……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Hai người ở bên nhau, không những tính cách phải hút nhau, mà còn phải hiểu cho nhau.",
+        "answer": "两个人在一起，不仅性格要互相吸引，也要互相理解。",
+        "answerPy": "Liǎng gè rén zài yìqǐ, bùjǐn xìnggé yào hùxiāng xīyǐn, yě yào hùxiāng lǐjiě.",
+        "note": "互相 chỉ đi với động từ hai âm tiết: 互相理解 ✓, 互相帮 ✗.",
+        "pair": "不仅……也……"
+      }
+    ],
+    "note": "Phó từ, đứng TRƯỚC động từ hai âm tiết: 互相帮助 (không nói 互相帮).",
+    "colloFull": [
+      {
+        "zh": "互相理解",
+        "py": "hùxiāng lǐjiě",
+        "vn": "hiểu nhau"
+      },
+      {
+        "zh": "互相关心",
+        "py": "hùxiāng guānxīn",
+        "vn": "quan tâm lẫn nhau"
+      },
+      {
+        "zh": "互相吸引",
+        "py": "hùxiāng xīyǐn",
+        "vn": "thu hút lẫn nhau"
+      },
+      {
+        "zh": "互相帮助",
+        "py": "hùxiāng bāngzhù",
+        "vn": "giúp đỡ lẫn nhau"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub (số nhiều) + 互相 + V (2 âm tiết)",
+        "m": "Họ … lẫn nhau"
+      },
+      {
+        "s": "只有互相……，才能……",
+        "m": "Chỉ có … lẫn nhau mới có thể …"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "吸引",
+    "py": "xīyǐn",
+    "pos": "Động từ",
+    "vn": "hấp dẫn, thu hút",
+    "hv": "hấp dẫn",
+    "em": "🧲",
+    "lesson": 2,
+    "explain": [
+      "Làm cho người khác chú ý đến, muốn tiếp cận vì có sức hút."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 吸引 + Đối tượng.",
+    "collo": [
+      "互相吸引",
+      "很吸引人",
+      "吸引游客"
+    ],
+    "ex_zh": "更需要性格上互相吸引。",
+    "ex_py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+    "ex_vn": "Càng cần sự thu hút lẫn nhau về tính cách.",
+    "exList": [
+      {
+        "zh": "更需要性格上互相吸引。",
+        "py": "Gèng xūyào xìnggé shang hùxiāng xīyǐn.",
+        "vn": "Càng cần sự thu hút lẫn nhau về tính cách."
+      },
+      {
+        "zh": "那个地方特别漂亮，每年都会吸引很多国内外的游客。",
+        "py": "Nàge dìfang tèbié piàoliang, měinián dōu huì xīyǐn hěn duō guónèiwài de yóukè.",
+        "vn": "Nơi đó rất đẹp, mỗi năm đều thu hút nhiều du khách trong và ngoài nước."
+      },
+      {
+        "zh": "她的幽默很吸引我。",
+        "py": "Tā de yōumò hěn xīyǐn wǒ.",
+        "vn": "Sự hài hước của cô ấy rất thu hút tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "吸",
+        "p": "xī",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "口 (khẩu) trái → 及 (cập) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "hút vào",
+        "tip": "Bộ miệng 口 (hít thở) + 及 (đạt tới, kéo tới) → dùng MIỆNG kéo không khí vào = HÍT, mở rộng thành THU HÚT.",
+        "cf": "吸 dễ nhầm với 极 (jí – \"cực kỳ\", bộ khác)",
+        "w": "吸引 / 呼吸 / 吸烟"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những phong cảnh ở đó đẹp, mà văn hóa cũng rất thu hút du khách.",
+        "answer": "那儿不仅风景漂亮，文化也很吸引游客。",
+        "answerPy": "Nàr bùjǐn fēngjǐng piàoliang, wénhuà yě hěn xīyǐn yóukè.",
+        "note": "不仅……也…… — không những … mà còn ….",
+        "pair": "不仅……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù đã quen nhau lâu rồi, anh ấy vẫn luôn bị cô ấy thu hút.",
+        "answer": "即使认识很久了，他也一直被她吸引。",
+        "answerPy": "Jíshǐ rènshi hěn jiǔ le, tā yě yìzhí bèi tā xīyǐn.",
+        "note": "即使……也…… kết hợp với câu bị động 被.",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Làm cho người khác chú ý và muốn đến gần.",
+    "colloFull": [
+      {
+        "zh": "互相吸引",
+        "py": "hùxiāng xīyǐn",
+        "vn": "thu hút lẫn nhau"
+      },
+      {
+        "zh": "很吸引人",
+        "py": "hěn xīyǐn rén",
+        "vn": "rất hấp dẫn"
+      },
+      {
+        "zh": "吸引游客",
+        "py": "xīyǐn yóukè",
+        "vn": "thu hút du khách"
+      },
+      {
+        "zh": "吸引注意",
+        "py": "xīyǐn zhùyì",
+        "vn": "thu hút sự chú ý"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "A + 吸引 + B",
+        "m": "A thu hút B"
+      },
+      {
+        "s": "……很吸引人",
+        "m": "… rất hấp dẫn"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "幽默",
+    "py": "yōumò",
+    "pos": "Tính từ",
+    "vn": "hóm hỉnh, khôi hài",
+    "hv": "u mặc",
+    "em": "😂",
+    "lesson": 2,
+    "explain": [
+      "Có khả năng nói/làm cho người khác thấy vui, buồn cười một cách nhẹ nhàng, thông minh."
+    ],
+    "usage": "Tính từ; thường đi với 很幽默的人, 幽默感.",
+    "collo": [
+      "很幽默",
+      "幽默的人",
+      "有幽默感"
+    ],
+    "ex_zh": "我丈夫是个很幽默的人。",
+    "ex_py": "Wǒ zhàngfu shì ge hěn yōumò de rén.",
+    "ex_vn": "Chồng tôi là một người rất hóm hỉnh.",
+    "exList": [
+      {
+        "zh": "我丈夫是个很幽默的人。",
+        "py": "Wǒ zhàngfu shì ge hěn yōumò de rén.",
+        "vn": "Chồng tôi là một người rất hóm hỉnh."
+      },
+      {
+        "zh": "每个人都希望自己有幽默感。",
+        "py": "Měi ge rén dōu xīwàng zìjǐ yǒu yōumògǎn.",
+        "vn": "Ai cũng mong mình có khiếu hài hước."
+      },
+      {
+        "zh": "幽默能帮助人们打开友谊的大门。",
+        "py": "Yōumò néng bāngzhù rénmen dǎkāi yǒuyì de dàmén.",
+        "vn": "Sự hóm hỉnh có thể giúp người ta mở cánh cửa tình bạn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "幽",
+        "p": "yōu",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 9,
+        "ord": "山 bao ngoài → 幺+幺 trong",
+        "rad": "山 (sơn – núi)",
+        "mean": "sâu kín, u tịch",
+        "tip": "Bộ núi 山 bao quanh hai sợi tơ nhỏ 幺幺 (mờ nhạt) → nơi SÂU KÍN trong núi, mượn âm để phiên âm từ \"humor\" thành 幽默.",
+        "cf": "幽 dễ nhầm với 幼 (yòu – \"trẻ nhỏ\", bộ 力 khác)",
+        "w": "幽默 / 幽静 / 幽会"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Không những anh ấy hóm hỉnh, mà tính cách cũng rất tốt.",
+        "answer": "他不仅很幽默，性格也很好。",
+        "answerPy": "Tā bùjǐn hěn yōumò, xìnggé yě hěn hǎo.",
+        "note": "不仅……也…… — không những … mà còn ….",
+        "pair": "不仅……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù chuyện rất bình thường, anh ấy nói ra cũng rất hài hước.",
+        "answer": "即使是很普通的事情，他说出来也很幽默。",
+        "answerPy": "Jíshǐ shì hěn pǔtōng de shìqing, tā shuō chulai yě hěn yōumò.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "Từ mượn âm (humour). Danh từ hoá: 幽默感 (khiếu hài hước).",
+    "colloFull": [
+      {
+        "zh": "很幽默",
+        "py": "hěn yōumò",
+        "vn": "rất hóm hỉnh"
+      },
+      {
+        "zh": "幽默的人",
+        "py": "yōumò de rén",
+        "vn": "người hài hước"
+      },
+      {
+        "zh": "有幽默感",
+        "py": "yǒu yōumògǎn",
+        "vn": "có khiếu hài hước"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 很 / 特别 + 幽默",
+        "m": "Ai đó rất hóm hỉnh"
+      },
+      {
+        "s": "Sub + 很有幽默感",
+        "m": "Ai đó rất có khiếu hài hước"
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "zh": "脾气",
+    "py": "píqi",
+    "pos": "Danh từ",
+    "vn": "tính tình, tính khí",
+    "hv": "tì khí",
+    "em": "😤",
+    "lesson": 2,
+    "explain": [
+      "Tính cách, thói quen phản ứng cảm xúc của một người, đặc biệt là dễ/khó nổi giận."
+    ],
+    "usage": "Danh từ; thường đi với 脾气好/不错/大: 脾气也不错.",
+    "collo": [
+      "脾气不错",
+      "发脾气",
+      "脾气好"
+    ],
+    "ex_zh": "而且他的脾气也不错。",
+    "ex_py": "Érqiě tā de píqi yě búcuò.",
+    "ex_vn": "Hơn nữa tính tình anh ấy cũng khá tốt.",
+    "exList": [
+      {
+        "zh": "而且他的脾气也不错，结婚快十年了，我们俩几乎没因为什么事红过脸。",
+        "py": "Érqiě tā de píqi yě búcuò, jié hūn kuài shí nián le, wǒmen liǎ jīhū méi yīnwèi shénme shì hóngguo liǎn.",
+        "vn": "Hơn nữa tính tình anh ấy cũng khá tốt, kết hôn gần mười năm rồi, hai chúng tôi hầu như chưa từng cãi nhau vì chuyện gì."
+      },
+      {
+        "zh": "他虽然脾气很大，但工作很认真。",
+        "py": "Tā suīrán píqi hěn dà, dàn gōngzuò hěn rènzhēn.",
+        "vn": "Tuy anh ấy tính khí hơi nóng nảy, nhưng làm việc rất nghiêm túc."
+      },
+      {
+        "zh": "孩子为什么喜欢发脾气呢？",
+        "py": "Háizi wèishénme xǐhuan fā píqi ne?",
+        "vn": "Vì sao trẻ con thích nổi cáu vậy?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "脾",
+        "p": "pí",
+        "type": "左右结构 · Trái-phải",
+        "st": 12,
+        "ord": "月 (nhục) trái → 卑 (ti) phải",
+        "rad": "月 (nhục – thịt, bộ phận cơ thể)",
+        "mean": "lá lách",
+        "tip": "Bộ thịt 月 (bộ phận cơ thể) + 卑 (biểu âm) → LÁ LÁCH, theo y học cổ truyền lá lách liên quan đến tính khí, mở rộng thành TÍNH TÌNH.",
+        "cf": "脾 dễ nhầm với 啤 (pí – \"bia\", bộ 口 khác)",
+        "w": "脾气 / 脾胃"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tính khí anh ấy xưa nay đều rất tốt, gặp chuyện gì cũng chưa từng nổi nóng.",
+        "answer": "他脾气从来都很好，不管遇到什么事都没发过脾气。",
+        "answerPy": "Tā píqi cónglái dōu hěn hǎo, bùguǎn yùdào shénme shì dōu méi fāguo píqi.",
+        "note": "发脾气 là từ ly hợp: 发过脾气, 发了一次脾气.",
+        "pair": "不管……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cho dù tính tình anh ấy không tốt lắm, tôi vẫn rất thích anh ấy.",
+        "answer": "即使他脾气不太好，我也还是很喜欢他。",
+        "answerPy": "Jíshǐ tā píqi bú tài hǎo, wǒ yě háishi hěn xǐhuan tā.",
+        "note": "即使……也…… — cho dù … vẫn ….",
+        "pair": "即使……也……"
+      }
+    ],
+    "note": "发脾气 = nổi nóng (ly hợp từ: 发了脾气).",
+    "colloFull": [
+      {
+        "zh": "脾气好",
+        "py": "píqi hǎo",
+        "vn": "tính tình tốt"
+      },
+      {
+        "zh": "脾气不错",
+        "py": "píqi búcuò",
+        "vn": "tính nết khá"
+      },
+      {
+        "zh": "发脾气",
+        "py": "fā píqi",
+        "vn": "nổi nóng"
+      },
+      {
+        "zh": "脾气不好",
+        "py": "píqi bù hǎo",
+        "vn": "tính khí không tốt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 脾气 + 好 / 不好",
+        "m": "Tính tình của ai đó thế nào"
+      },
+      {
+        "s": "Sub + 对 + người + 发脾气",
+        "m": "Ai đó nổi nóng với ai"
+      }
+    ]
+  },
+  {
+    "n": 33,
+    "zh": "孙月",
+    "py": "Sūn Yuè",
+    "pos": "Danh từ riêng",
+    "vn": "Tôn Nguyệt (tên người)",
+    "hv": "Tôn Nguyệt",
+    "em": "👩",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của một nhân vật nữ trong bài hội thoại 1."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "孙月说",
+      "跟孙月聊天"
+    ],
+    "ex_zh": "孙月：听说你男朋友李进跟你是一个学校的，是你同学吗？",
+    "ex_py": "Sūn Yuè: Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de, shì nǐ tóngxué ma?",
+    "ex_vn": "Tôn Nguyệt: Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu, có phải là bạn học của cậu không?",
+    "exList": [
+      {
+        "zh": "孙月：听说你男朋友李进跟你是一个学校的，是你同学吗？",
+        "py": "Sūn Yuè: Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de, shì nǐ tóngxué ma?",
+        "vn": "Tôn Nguyệt: Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu, có phải là bạn học của cậu không?"
+      }
+    ],
+    "note": "Tên người: họ 孙 (Tôn) + tên 月 (Nguyệt)."
+  },
+  {
+    "n": 34,
+    "zh": "王静",
+    "py": "Wáng Jìng",
+    "pos": "Danh từ riêng",
+    "vn": "Vương Tịnh (tên người)",
+    "hv": "Vương Tĩnh",
+    "em": "👩",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của nhân vật nữ chính, xuất hiện xuyên suốt cả 3 đoạn hội thoại của bài."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "王静说",
+      "王静跟李进"
+    ],
+    "ex_zh": "王静：是的，他学的是新闻，我学的是法律。",
+    "ex_py": "Wáng Jìng: Shì de, tā xué de shì xīnwén, wǒ xué de shì fǎlǜ.",
+    "ex_vn": "Vương Tịnh: Đúng vậy, anh ấy học báo chí, mình học luật.",
+    "exList": [
+      {
+        "zh": "王静：是的，他学的是新闻，我学的是法律。",
+        "py": "Wáng Jìng: Shì de, tā xué de shì xīnwén, wǒ xué de shì fǎlǜ.",
+        "vn": "Vương Tịnh: Đúng vậy, anh ấy học báo chí, mình học luật."
+      }
+    ],
+    "note": "Tên người: họ 王 (Vương) + tên 静 (Tịnh)."
+  },
+  {
+    "n": 35,
+    "zh": "李进",
+    "py": "Lǐ Jìn",
+    "pos": "Danh từ riêng",
+    "vn": "Lý Tiến (tên người)",
+    "hv": "Lý Tiến",
+    "em": "🧑",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của bạn trai Vương Tịnh, nhân vật được nhắc đến trong hội thoại 1 và 2."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "李进跟你",
+      "认识李进"
+    ],
+    "ex_zh": "听说你男朋友李进跟你是一个学校的。",
+    "ex_py": "Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de.",
+    "ex_vn": "Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu.",
+    "exList": [
+      {
+        "zh": "听说你男朋友李进跟你是一个学校的。",
+        "py": "Tīngshuō nǐ nánpéngyou Lǐ Jìn gēn nǐ shì yí ge xuéxiào de.",
+        "vn": "Nghe nói bạn trai cậu là Lý Tiến học cùng trường với cậu."
+      }
+    ],
+    "note": "Tên người: họ 李 (Lý) + tên 进 (Tiến)."
+  },
+  {
+    "n": 36,
+    "zh": "李",
+    "py": "Lǐ",
+    "pos": "Danh từ riêng",
+    "vn": "Lý (họ)",
+    "hv": "Lý",
+    "em": "🧑‍🏫",
+    "lesson": 1,
+    "explain": [
+      "Họ của giáo viên (李老师) và cũng của李进; trong bài dùng làm 李老师 — cô/thầy giáo Lý."
+    ],
+    "usage": "Danh từ riêng chỉ họ người, thường ghép với 老师 thành 李老师.",
+    "collo": [
+      "李老师",
+      "李老师说"
+    ],
+    "ex_zh": "王静跟李老师聊她要结婚的事情。",
+    "ex_py": "Wáng Jìng gēn Lǐ lǎoshī liáo tā yào jié hūn de shìqing.",
+    "ex_vn": "Vương Tịnh nói chuyện với cô Lý về việc mình sắp kết hôn.",
+    "exList": [
+      {
+        "zh": "王静跟李老师聊她要结婚的事情。",
+        "py": "Wáng Jìng gēn Lǐ lǎoshī liáo tā yào jié hūn de shìqing.",
+        "vn": "Vương Tịnh nói chuyện với cô Lý về việc mình sắp kết hôn."
+      }
+    ],
+    "note": "Một trong những họ phổ biến nhất Trung Quốc. 李老师 = thầy/cô Lý."
+  },
+  {
+    "n": 37,
+    "zh": "高",
+    "py": "Gāo",
+    "pos": "Danh từ riêng",
+    "vn": "Cao (họ)",
+    "hv": "Cao",
+    "em": "🧑‍🏫",
+    "lesson": 1,
+    "explain": [
+      "Họ của nhân vật 高老师 trong hội thoại 3, nói chuyện với 李老师 về cuộc sống sau khi kết hôn."
+    ],
+    "usage": "Danh từ riêng chỉ họ người, thường ghép với 老师 thành 高老师.",
+    "collo": [
+      "高老师",
+      "高老师问"
+    ],
+    "ex_zh": "高老师：听说您跟妻子结婚快二十年了？",
+    "ex_py": "Gāo lǎoshī: Tīngshuō nín gēn qīzi jié hūn kuài èrshí nián le?",
+    "ex_vn": "Thầy Cao: Nghe nói thầy kết hôn với vợ đã gần hai mươi năm rồi?",
+    "exList": [
+      {
+        "zh": "高老师：听说您跟妻子结婚快二十年了？",
+        "py": "Gāo lǎoshī: Tīngshuō nín gēn qīzi jié hūn kuài èrshí nián le?",
+        "vn": "Thầy Cao: Nghe nói thầy kết hôn với vợ đã gần hai mươi năm rồi?"
+      }
+    ],
+    "note": "Vừa là họ (Cao) vừa là tính từ 高 = cao."
+  }
 ];
 
 var dialogData = [

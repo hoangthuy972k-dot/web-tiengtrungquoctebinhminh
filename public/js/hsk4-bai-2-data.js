@@ -278,7 +278,7 @@ var vocabData = [
         "answer": "平时他很忙，但周末还是会花时间见朋友。",
         "answerPy": "Píngshí tā hěn máng, dàn zhōumò háishi huì huā shíjiān jiàn péngyou.",
         "note": "平时……但…… — lúc thường … nhưng ….",
-        "pair": "还是……"
+        "pair": "……，还是……"
       },
       {
         "promptLang": "vi",
@@ -716,11 +716,11 @@ var vocabData = [
       },
       {
         "promptLang": "vi",
-        "prompt": "Buổi họp mặt ngay tại nhà hàng trước cổng trường, đừng đến muộn nhé.",
-        "answer": "聚会就在学校门口的饭店，别迟到啊。",
-        "answerPy": "Jùhuì jiù zài xuéxiào ménkǒu de fàndiàn, bié chídào a.",
-        "note": "就在 + địa điểm — nhấn mạnh vị trí chính xác.",
-        "pair": "就……"
+        "prompt": "Vì buổi họp mặt ngay tại nhà hàng trước cổng trường, nên mọi người đừng đến muộn nhé.",
+        "answer": "因为聚会就在学校门口的饭店，所以大家别迟到啊。",
+        "answerPy": "Yīnwèi jùhuì jiù zài xuéxiào ménkǒu de fàndiàn, suǒyǐ dàjiā bié chídào a.",
+        "note": "就在 — nhấn mạnh \"ngay tại\", gần và tiện.",
+        "pair": "因为……所以……"
       }
     ],
     "colloFull": [
@@ -1141,11 +1141,11 @@ var vocabData = [
     "checkList": [
       {
         "promptLang": "vi",
-        "prompt": "Cô ấy tốt nghiệp xong liền đi làm ở Thượng Hải, chúng tôi đã lâu không liên lạc.",
-        "answer": "她毕业后就去上海工作了，我们好久没联系了。",
-        "answerPy": "Tā bì yè hòu jiù qù Shànghǎi gōngzuò le, wǒmen hǎojiǔ méi liánxì le.",
-        "note": "V后就…… — sau khi làm gì đó liền ….",
-        "pair": "就……"
+        "prompt": "Cô ấy vừa tốt nghiệp là đi Thượng Hải làm việc ngay, nên chúng tôi đã lâu không liên lạc.",
+        "answer": "她一毕业就去上海工作了，所以我们好久没联系了。",
+        "answerPy": "Tā yí bìyè jiù qù Shànghǎi gōngzuò le, suǒyǐ wǒmen hǎojiǔ méi liánxì le.",
+        "note": "毕业 là từ ly hợp nên 一毕业就…… chứ không phải 一毕业了就…….",
+        "pair": "一……就……"
       },
       {
         "promptLang": "vi",
@@ -2119,7 +2119,7 @@ var vocabData = [
         "answer": "没有人会喜欢跟一个总是说谎的人在一起。",
         "answerPy": "Méiyǒu rén huì xǐhuan gēn yí ge zǒngshì shuōhuǎng de rén zài yìqǐ.",
         "note": "没有人会喜欢跟……在一起 — cụm cố định phủ định hoàn toàn.",
-        "pair": "是……的……"
+        "pair": "总是……"
       },
       {
         "promptLang": "vi",
@@ -2227,7 +2227,7 @@ var vocabData = [
         "answer": "他喜欢锻炼身体，他弟弟却很懒得运动。",
         "answerPy": "Tā xǐhuan duànliàn shēntǐ, tā dìdi què hěn lǎnde yùndòng.",
         "note": "却 nêu sự tương phản nhẹ nhàng giữa hai chủ thể khác nhau.",
-        "pair": "却……"
+        "pair": "……，却……"
       },
       {
         "promptLang": "vi",
@@ -2235,7 +2235,7 @@ var vocabData = [
         "answer": "有的人吃得很少，但不瘦，却让人羡慕。",
         "answerPy": "Yǒude rén chī de hěn shǎo, dàn bú shòu, què ràng rén xiànmù.",
         "note": "但……却…… — nhưng lại….",
-        "pair": "却……"
+        "pair": "……，却……"
       }
     ],
     "colloFull": [
@@ -2559,7 +2559,7 @@ var vocabData = [
         "answer": "朋友需要互相理解，那才是真正的友谊。",
         "answerPy": "Péngyou xūyào hùxiāng lǐjiě, nà cái shì zhēnzhèng de yǒuyì.",
         "note": "那才是…… — đó mới là ….",
-        "pair": "是……的……"
+        "pair": "……，才……"
       }
     ],
     "colloFull": [
@@ -2767,7 +2767,7 @@ var vocabData = [
         "answer": "有人喜欢待在家里，而有人喜欢出去逛街。",
         "answerPy": "Yǒurén xǐhuan dāi zài jiā li, ér yǒurén xǐhuan chūqu guàng jiē.",
         "note": "而 nối hai vế song song, đối lập nhẹ nhàng.",
-        "pair": "而……"
+        "pair": "……，而……"
       },
       {
         "promptLang": "vi",

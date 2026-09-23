@@ -3,705 +3,3412 @@
 // Nguồn: HSK标准教程4上 (Giáo trình chuẩn HSK 4 — nhantriviet.com)
 // ══════════════════════════════════════════
 var vocabData = [
-  {n:1,zh:'家具',py:'jiājù',pos:'Danh từ',vn:'đồ dùng trong nhà', hv: 'gia cụ',em:'🛋️',lesson:1,
-   explain:['Đồ vật dùng để trang trí/sử dụng trong nhà như bàn ghế, tủ, giường...'],
-   usage:'Danh từ; thường đi với 买家具, 家具店.',
-   collo:['买家具','家具店','这些家具'],
-   ex_zh:'小姐，您好！您想买什么家具？',ex_py:'Xiǎojiě, nín hǎo! Nín xiǎng mǎi shénme jiājù?',ex_vn:'Chào chị! Chị muốn mua đồ nội thất gì?',
-   exList:[
-     {zh:'小姐，您好！您想买什么家具？',py:'Xiǎojiě, nín hǎo! Nín xiǎng mǎi shénme jiājù?',vn:'Chào chị! Chị muốn mua đồ nội thất gì?'},
-     {zh:'咱们这些家具都旧了，这次搬家，我们换新的。',py:'Zánmen zhèxiē jiājù dōu jiù le, zhè cì bān jiā, wǒmen huàn xīn de.',vn:'Những đồ nội thất này của chúng ta đều cũ rồi, lần chuyển nhà này, chúng ta đổi cái mới.'},
-     {zh:'在网上几乎什么都可以买到，还可以买家具、买手机。',py:'Zài wǎngshang jīhū shénme dōu kěyǐ mǎidào, hái kěyǐ mǎi jiājù, mǎi shǒujī.',vn:'Trên mạng gần như cái gì cũng có thể mua được, còn có thể mua đồ nội thất, mua điện thoại.'},
-   ],
-   hanzi:[
-     {c:'具',p:'jù',type:'独体字 · Chữ đơn',st:8,ord:'nét liền',rad:'八 (bát, biến thể)',mean:'dụng cụ, đồ dùng',
-      tip:'Chữ tượng hình hai tay bưng một cái đỉnh (vật dụng) → mở rộng thành DỤNG CỤ, ĐỒ DÙNG; kết hợp 家(nhà) thành 家具 = ĐỒ DÙNG TRONG NHÀ.',
-      cf:'具 dễ nhầm với 真 (zhēn – "chân thật")',w:'家具 / 工具 / 具体'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trên mạng có thể mua sách, quần áo, còn có thể mua đồ nội thất, điện thoại.',answer:'在网上可以买书、买衣服，还可以买家具、买手机。',answerPy:'Zài wǎngshang kěyǐ mǎi shū, mǎi yīfu, hái kěyǐ mǎi jiājù, mǎi shǒujī.',
-      note:'还可以 + động từ — còn có thể….'},
-     {promptLang:'vi',prompt:'Đồ nội thất này chất lượng tốt, giá cả cũng phù hợp.',answer:'这个家具质量很好，价格也合适。',answerPy:'Zhège jiājù zhìliàng hěn hǎo, jiàgé yě héshì.',
-      note:'质量/价格 — ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:2,zh:'沙发',py:'shāfā',pos:'Danh từ',vn:'ghế sô pha', hv: 'sa phát',em:'🛋️',lesson:1,
-   explain:['Loại ghế ngồi/nằm êm, có đệm, thường đặt trong phòng khách.'],
-   usage:'Danh từ; thường đi với 买沙发, 这个沙发.',
-   collo:['买沙发','这个沙发','沙发的颜色'],
-   ex_zh:'谢谢，我想买沙发。',ex_py:'Xièxie, wǒ xiǎng mǎi shāfā.',ex_vn:'Cảm ơn, tôi muốn mua ghế sô pha.',
-   exList:[
-     {zh:'谢谢，我想买沙发。',py:'Xièxie, wǒ xiǎng mǎi shāfā.',vn:'Cảm ơn, tôi muốn mua ghế sô pha.'},
-     {zh:'您看这个沙发怎么样？现在正在打折，比平时便宜了一千块。',py:'Nín kàn zhège shāfā zěnmeyàng? Xiànzài zhèngzài dǎzhé, bǐ píngshí piányile yìqiān kuài.',vn:'Anh xem chiếc ghế sô pha này thế nào? Hiện đang giảm giá, rẻ hơn bình thường một nghìn tệ.'},
-     {zh:'上个星期光买沙发就花了两千多。',py:'Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.',vn:'Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn.'},
-   ],
-   hanzi:[
-     {c:'沙',p:'shā',type:'左右结构 · Trái-phải',st:7,ord:'氵 (thủy) trái → 少 (thiểu) phải',rad:'氵 (thủy – nước)',mean:'cát',
-      tip:'Bộ nước 氵 + 少(ít, biểu âm) → hạt CÁT nhỏ mịn theo dòng nước; 沙发 là từ mượn âm (phiên âm "sofa" tiếng Anh).',
-      cf:'沙 dễ nhầm với 妙 (miào – "tuyệt diệu")',w:'沙发 / 沙子 / 黄沙'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chiếc ghế sô pha màu xanh này trông không tệ, mua cái này đi.',answer:'这个蓝色的沙发看上去不错，就要这个吧。',answerPy:'Zhège lánsè de shāfā kàn shangqu búcuò, jiù yào zhège ba.',
-      note:'看上去 + tính từ — trông có vẻ….'},
-     {promptLang:'vi',prompt:'Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn tệ.',answer:'上个星期光买沙发就花了两千多块。',answerPy:'Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō kuài.',
-      note:'光……就…… — chỉ riêng … đã….'},
-   ]},
-
-  {n:3,zh:'打折',py:'dǎzhé',pos:'Động từ',vn:'giảm giá', hv: 'đả chiết',em:'🏷️',lesson:1,
-   explain:['Bán hàng với giá thấp hơn giá gốc theo một tỷ lệ phần trăm.'],
-   usage:'Động từ ly hợp; thường đi với 正在打折, 商场打折.',
-   collo:['正在打折','商场打折','质量打折'],
-   ex_zh:'现在正在打折，比平时便宜了一千块。',ex_py:'Xiànzài zhèngzài dǎzhé, bǐ píngshí piányile yìqiān kuài.',ex_vn:'Hiện đang giảm giá, rẻ hơn bình thường một nghìn tệ.',
-   exList:[
-     {zh:'现在正在打折，比平时便宜了一千块。',py:'Xiànzài zhèngzài dǎzhé, bǐ píngshí piányile yìqiān kuài.',vn:'Hiện đang giảm giá, rẻ hơn bình thường một nghìn tệ.'},
-     {zh:'您放心，质量肯定不"打折"。',py:'Nín fàngxīn, zhìliàng kěndìng bù "dǎzhé".',vn:'Anh yên tâm, chất lượng chắc chắn không "giảm giá" (không bị kém đi).'},
-     {zh:'现在正是换季，好多商店都在打折。',py:'Xiànzài zhèng shì huànjì, hǎoduō shāngdiàn dōu zài dǎzhé.',vn:'Bây giờ đúng lúc chuyển mùa, rất nhiều cửa hàng đều đang giảm giá.'},
-   ],
-   hanzi:[
-     {c:'折',p:'zhé',type:'左右结构 · Trái-phải',st:7,ord:'扌 (thủ) trái → 斤 (cân) phải',rad:'扌 (thủ – tay)',mean:'bẻ gãy, chiết khấu',
-      tip:'Bộ tay 扌 + 斤(rìu, cắt) → dùng tay BẺ GÃY, mở rộng thành CHIẾT KHẤU (bẻ giảm giá xuống), kết hợp 打(đánh, làm) thành 打折 = GIẢM GIÁ.',
-      cf:'拆 (chāi – "tháo dỡ", bộ 扌 + 斥")',w:'打折 / 折扣 / 打八折'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Anh yên tâm, chất lượng của chiếc sô pha này chắc chắn tốt, hơn nữa hiện đang giảm giá.',answer:'您放心，这个沙发的质量肯定好，而且现在正在打折。',answerPy:'Nín fàngxīn, zhège shāfā de zhìliàng kěndìng hǎo, érqiě xiànzài zhèngzài dǎzhé.',
-      note:'肯定 + tính từ — chắc chắn, ôn lại điểm ngữ pháp của bài.'},
-     {promptLang:'vi',prompt:'Bây giờ đúng lúc chuyển mùa, rất nhiều cửa hàng đều đang giảm giá.',answer:'现在正是换季，好多商店都在打折。',answerPy:'Xiànzài zhèng shì huànjì, hǎoduō shāngdiàn dōu zài dǎzhé.',
-      note:'正是……都在打折 — đúng lúc … đều đang giảm giá.'},
-   ]},
-
-  {n:4,zh:'价格',py:'jiàgé',pos:'Danh từ',vn:'giá cả', hv: 'giá cách',em:'🏷️',lesson:1,
-   explain:['Số tiền cần trả để mua một món hàng.'],
-   usage:'Danh từ; thường đi với 价格还可以, 价格合适.',
-   collo:['价格还可以','价格合适','价格太高'],
-   ex_zh:'价格还可以，就是不知道质量有没有保证。',ex_py:'Jiàgé hái kěyǐ, jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.',ex_vn:'Giá cả cũng được, chỉ là không biết chất lượng có được đảm bảo không.',
-   exList:[
-     {zh:'价格还可以，就是不知道质量有没有保证。',py:'Jiàgé hái kěyǐ, jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.',vn:'Giá cả cũng được, chỉ là không biết chất lượng có được đảm bảo không.'},
-     {zh:'买衣服只考虑价格当然不好。',py:'Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo.',vn:'Mua quần áo chỉ cân nhắc giá cả đương nhiên không tốt.'},
-     {zh:'网上的东西很多，而且比去商店买便宜，这是吸引人们购买的主要原因。',py:'Wǎngshang de dōngxi hěn duō, érqiě bǐ qù shāngdiàn mǎi piányi, zhè shì xīyǐn rénmen gòumǎi de zhǔyào yuányīn.',vn:'Đồ trên mạng rất nhiều, hơn nữa rẻ hơn ra cửa hàng mua, đây là nguyên nhân chính thu hút mọi người mua.'},
-   ],
-   hanzi:[
-     {c:'格',p:'gé',type:'左右结构 · Trái-phải',st:10,ord:'木 (mộc) trái → 各 (các) phải',rad:'木 (mộc – cây)',mean:'khuôn khổ, tiêu chuẩn',
-      tip:'Bộ cây 木 (khung gỗ) + 各(mỗi loại) → KHUÔN KHỔ đo lường mỗi loại, kết hợp 价(giá trị) thành 价格 = GIÁ CẢ (mức giá theo khuôn khổ quy định).',
-      cf:'格 dễ nhầm với 洛 (luò – địa danh, bộ 氵")',w:'价格 / 格子 / 性格'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Giá cả của chiếc sô pha này khá phù hợp, nhưng tôi không biết chất lượng có được đảm bảo không.',answer:'这个沙发的价格比较合适，但是我不知道质量有没有保证。',answerPy:'Zhège shāfā de jiàgé bǐjiào héshì, dànshì wǒ bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.',
-      note:'价格合适 kết hợp 质量/保证, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Đối với tôi mà nói, giá cả không phải là điều quan trọng nhất, chất lượng mới là quan trọng nhất.',answer:'对我来说，价格并不是最重要的，质量才是最重要的。',answerPy:'Duì wǒ láishuō, jiàgé bìng bú shì zuì zhòngyào de, zhìliàng cái shì zuì zhòngyào de.',
-      note:'对……来说 ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:5,zh:'质量',py:'zhìliàng',pos:'Danh từ',vn:'chất lượng', hv: 'chất lượng',em:'✅',lesson:1,
-   explain:['Mức độ tốt/xấu của một sản phẩm hoặc dịch vụ.'],
-   usage:'Danh từ; thường đi với 质量有保证, 质量好.',
-   collo:['质量有保证','质量好','质量不好'],
-   ex_zh:'就是不知道质量有没有保证。',ex_py:'Jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.',ex_vn:'Chỉ là không biết chất lượng có được đảm bảo không.',
-   exList:[
-     {zh:'就是不知道质量有没有保证。',py:'Jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.',vn:'Chỉ là không biết chất lượng có được đảm bảo không.'},
-     {zh:'您放心，质量肯定不"打折"。',py:'Nín fàngxīn, zhìliàng kěndìng bù "dǎzhé".',vn:'Anh yên tâm, chất lượng chắc chắn không "giảm giá".'},
-     {zh:'衣服的质量要好，而且又不能太贵。',py:'Yīfu de zhìliàng yào hǎo, érqiě yòu bù néng tài guì.',vn:'Chất lượng quần áo phải tốt, hơn nữa lại không thể quá đắt.'},
-   ],
-   hanzi:[
-     {c:'量',p:'liàng',type:'上下结构 · Trên-dưới',st:12,ord:'日 trên → 里(biến thể) dưới',rad:'里 (lý – dặm)',mean:'đo lường, mức độ',
-      tip:'Chữ mô phỏng dụng cụ ĐO LƯỜNG → mở rộng thành MỨC ĐỘ, kết hợp 质(bản chất) thành 质量 = CHẤT LƯỢNG (mức độ tốt về bản chất).',
-      cf:'量 khi đọc "liáng" nghĩa là hành động ĐO (量身高)',w:'质量 / 数量 / 力量'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đồ nội thất chất lượng phải tốt, hơn nữa lại không thể quá đắt.',answer:'家具的质量要好，而且又不能太贵。',answerPy:'Jiājù de zhìliàng yào hǎo, érqiě yòu bù néng tài guì.',
-      note:'质量要好 kết hợp 家具, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Anh yên tâm, chất lượng chiếc sô pha này chắc chắn được đảm bảo, đây là kiểu thịnh hành nhất năm nay.',answer:'您放心，这个沙发的质量肯定有保证，这是今年最流行的样子。',answerPy:'Nín fàngxīn, zhège shāfā de zhìliàng kěndìng yǒu bǎozhèng, zhè shì jīnnián zuì liúxíng de yàngzi.',
-      note:'肯定 + 保证 kết hợp 流行/样子, ôn lại nhiều từ vựng của bài.'},
-   ]},
-
-  {n:6,zh:'肯定',py:'kěndìng',pos:'Phó từ/Tính từ',vn:'chắc chắn, nhất định; xác định, thừa nhận', hv: 'khẳng định',em:'👍',lesson:1,
-   explain:['1. (Phó từ) Diễn tả sự chắc chắn, không nghi ngờ.','2. (Tính từ) Xác định, rõ ràng; hoặc thừa nhận, tích cực (đối lập với phủ định).'],
-   usage:'Phó từ: 肯定 + động từ/tính từ (肯定不好); tính từ: 肯定的 + danh từ, hoặc 是肯定的.',
-   collo:['肯定不好','肯定的事','回答是肯定的'],
-   ex_zh:'您放心，质量肯定不"打折"。',ex_py:'Nín fàngxīn, zhìliàng kěndìng bù "dǎzhé".',ex_vn:'Anh yên tâm, chất lượng chắc chắn không "giảm giá".',
-   exList:[
-     {zh:'您放心，质量肯定不"打折"。',py:'Nín fàngxīn, zhìliàng kěndìng bù "dǎzhé".',vn:'Anh yên tâm, chất lượng chắc chắn không "giảm giá".'},
-     {zh:'每天喝一点儿葡萄酒，对身体是有好处的。但是不能喝太多，喝太多酒肯定对身体不好。',py:'Měitiān hē yìdiǎnr pútaojiǔ, duì shēntǐ shì yǒu hǎochù de. Dànshì bù néng hē tài duō, hē tài duō jiǔ kěndìng duì shēntǐ bù hǎo.',vn:'Mỗi ngày uống một chút rượu vang, có lợi cho sức khỏe. Nhưng không được uống quá nhiều, uống quá nhiều rượu chắc chắn không tốt cho sức khỏe.'},
-     {zh:'不能肯定的事、没发生过的事，最好不要说。',py:'Bù néng kěndìng de shì, méi fāshēngguo de shì, zuìhǎo búyào shuō.',vn:'Việc không thể xác định, việc chưa từng xảy ra, tốt nhất đừng nói.'},
-   ],
-   hanzi:[
-     {c:'肯',p:'kěn',type:'上下结构 · Trên-dưới',st:8,ord:'止 trên → 月 (nhục) dưới',rad:'月 (nhục – thịt)',mean:'bằng lòng, chắc chắn',
-      tip:'Chữ mô phỏng phần THỊT dính chặt vào xương → mở rộng thành BẰNG LÒNG, CHẮC CHẮN (gắn chặt với ý kiến); kết hợp 定(cố định) thành 肯定 = CHẮC CHẮN, XÁC ĐỊNH.',
-      cf:'肯 dễ nhầm với 冒 (mào – "liều lĩnh")',w:'肯定 / 肯 / 不肯'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Công viên đó có thể là 6 giờ, cũng có thể là 6 giờ rưỡi đóng cửa, không thể xác định chính xác.',answer:'那个公园可能是六点，也可能是六点半关门，不能肯定。',answerPy:'Nàge gōngyuán kěnéng shì liù diǎn, yě kěnéng shì liù diǎn bàn guānmén, bù néng kěndìng.',
-      note:'不能肯定 — không thể xác định chắc chắn.'},
-     {promptLang:'vi',prompt:'Bạn yên tâm, chúng ta nhất định sẽ không đến muộn đâu.',answer:'你放心，我们肯定不会迟到的。',answerPy:'Nǐ fàngxīn, wǒmen kěndìng bú huì chídào de.',
-      note:'肯定 (phó từ) + 不会……的 — chắc chắn sẽ không….'},
-   ]},
-
-  {n:7,zh:'流行',py:'liúxíng',pos:'Động từ/Tính từ',vn:'được nhiều người ưa chuộng, thịnh hành', hv: 'lưu hành',em:'✨',lesson:1,
-   explain:['Được nhiều người yêu thích, sử dụng rộng rãi trong một khoảng thời gian.'],
-   usage:'Động từ/tính từ; thường đi với 最流行, 流行不流行.',
-   collo:['最流行','流行的样子','越来越流行'],
-   ex_zh:'这种沙发是今年最流行的。',ex_py:'Zhè zhǒng shāfā shì jīnnián zuì liúxíng de.',ex_vn:'Loại ghế sô pha này là kiểu được ưa chuộng nhất năm nay.',
-   exList:[
-     {zh:'这种沙发是今年最流行的。',py:'Zhè zhǒng shāfā shì jīnnián zuì liúxíng de.',vn:'Loại ghế sô pha này là kiểu được ưa chuộng nhất năm nay.'},
-     {zh:'对我来说，衣服的样子流行不流行并不是很重要。',py:'Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.',vn:'Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không phải là điều quan trọng.'},
-     {zh:'现在网上购物变得越来越流行了。',py:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le.',vn:'Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành.'},
-   ],
-   hanzi:[
-     {c:'流',p:'liú',type:'左右结构 · Trái-phải',st:10,ord:'氵 (thủy) trái → 㐬 phải',rad:'氵 (thủy – nước)',mean:'chảy, lan truyền',
-      tip:'Bộ nước 氵 (dòng chảy) + 㐬(biểu âm) → dòng nước CHẢY LAN, mở rộng thành LAN TRUYỀN, kết hợp 行(đi, phổ biến) thành 流行 = THỊNH HÀNH.',
-      cf:'流 dễ nhầm với 沉 (chén – "chìm")',w:'流行 / 流水 / 交流'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bây giờ mua sắm trên mạng ngày càng thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.',answer:'现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。',answerPy:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.',
-      note:'越来越流行 kết hợp 尤其, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Đối với tôi mà nói, kiểu dáng có thịnh hành hay không không quan trọng, quan trọng là mặc vào có thoải mái không.',answer:'对我来说，样子流行不流行不重要，重要的是穿着舒不舒服。',answerPy:'Duì wǒ láishuō, yàngzi liúxíng bu liúxíng bú zhòngyào, zhòngyào de shì chuānzhe shū bu shūfu.',
-      note:'对……来说 ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:8,zh:'顺便',py:'shùnbiàn',pos:'Phó từ',vn:'nhân tiện', hv: 'thuận tiện',em:'👉',lesson:2,
-   explain:['Nhân lúc làm việc gì đó, tiện thể làm thêm việc khác.'],
-   usage:'Phó từ, đứng trước động từ: 顺便买, 顺便看看.',
-   collo:['顺便买','顺便看看','顺便问一下'],
-   ex_zh:'商场正好打折，我们顺便也买一台吧。',ex_py:'Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.',ex_vn:'Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi.',
-   exList:[
-     {zh:'商场正好打折，我们顺便也买一台吧。',py:'Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.',vn:'Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi.'},
-     {zh:'他搬新家了，晚上请老同学们去家里吃饭，顺便看看他的新房子。',py:'Tā bān xīn jiā le, wǎnshang qǐng lǎo tóngxuémen qù jiā li chīfàn, shùnbiàn kànkan tā de xīn fángzi.',vn:'Anh ấy chuyển nhà mới rồi, tối nay mời các bạn học cũ đến nhà ăn cơm, nhân tiện xem qua nhà mới của anh ấy.'},
-     {zh:'你去超市的时候，顺便帮我买瓶葡萄酒吧。',py:'Nǐ qù chāoshì de shíhou, shùnbiàn bāng wǒ mǎi píng pútaojiǔ ba.',vn:'Lúc bạn đi siêu thị, nhân tiện mua giúp tôi chai rượu vang nhé.'},
-   ],
-   hanzi:[
-     {c:'顺',p:'shùn',type:'左右结构 · Trái-phải (giản thể)',st:9,ord:'川 (xuyên) trái → 页 (hiệt) phải',rad:'页 (hiệt – đầu)',mean:'thuận theo',
-      tip:'Bộ 页(hướng, đầu) + 川(dòng chảy thuận) → THUẬN THEO dòng chảy, kết hợp 便(tiện lợi) thành 顺便 = NHÂN TIỆN, THUẬN TIỆN LÀM LUÔN.',
-      cf:'须 (xū – "cần phải")',w:'顺便 / 顺利 / 顺序'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nhân tiện đi siêu thị, chúng ta mua thêm hai chai rượu vang đi.',answer:'顺便去超市的时候，我们多买两瓶葡萄酒吧。',answerPy:'Shùnbiàn qù chāoshì de shíhou, wǒmen duō mǎi liǎng píng pútaojiǔ ba.',
-      note:'顺便 + động từ — nhân tiện làm gì.'},
-     {promptLang:'vi',prompt:'Nhà bếp đúng lúc đang giảm giá tủ lạnh, chúng ta nhân tiện mua một cái mới đi.',answer:'商场正好在打折冰箱，我们顺便买个新的吧。',answerPy:'Shāngchǎng zhènghǎo zài dǎzhé bīngxiāng, wǒmen shùnbiàn mǎi ge xīn de ba.',
-      note:'正好……顺便…… — kết hợp cấu trúc câu.'},
-   ]},
-
-  {n:9,zh:'台',py:'tái',pos:'Lượng từ',vn:'cái, chiếc (máy móc)', hv: 'đài',em:'💻',lesson:2,
-   explain:['Lượng từ dùng cho máy móc, thiết bị điện tử như tủ lạnh, máy tính, tivi...'],
-   usage:'Lượng từ; đi với danh từ máy móc: 一台冰箱, 一台电脑.',
-   collo:['一台冰箱','一台电脑','买一台'],
-   ex_zh:'商场正好打折，我们顺便也买一台吧。',ex_py:'Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.',ex_vn:'Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi.',
-   exList:[
-     {zh:'商场正好打折，我们顺便也买一台吧。',py:'Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.',vn:'Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi.'},
-     {zh:'我想换台笔记本电脑，你知道哪种好吗？',py:'Wǒ xiǎng huàn tái bǐjìběn diànnǎo, nǐ zhīdào nǎ zhǒng hǎo ma?',vn:'Tôi muốn đổi một cái máy tính xách tay, bạn biết loại nào tốt không?'},
-     {zh:'家里有一台新买的电视。',py:'Jiā li yǒu yì tái xīn mǎi de diànshì.',vn:'Trong nhà có một cái ti vi mới mua.'},
-   ],
-   hanzi:[
-     {c:'台',p:'tái',type:'上下结构 · Trên-dưới (giản thể)',st:5,ord:'厶 trên → 口 dưới',rad:'口 (khẩu)',mean:'đài, bệ; lượng từ máy móc',
-      tip:'Chữ giản thể mô phỏng cái ĐÀI/BỆ cao → mở rộng thành lượng từ đếm MÁY MÓC đặt trên bệ (tivi, tủ lạnh, máy tính).',
-      cf:'台 dễ nhầm với 苔 (tái – "rêu", bộ 艹")',w:'一台 / 电台 / 台风'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tủ lạnh nhà chúng ta thực sự cũ quá rồi, vẫn nên mua một cái mới thôi.',answer:'咱家的冰箱实在太旧了，还是买一台新的吧。',answerPy:'Zán jiā de bīngxiāng shízài tài jiù le, háishi mǎi yì tái xīn de ba.',
-      note:'一台 + danh từ máy móc, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Tôi muốn đổi một cái máy tính xách tay, bạn có thể giới thiệu cho tôi không?',answer:'我想换一台笔记本电脑，你可以给我介绍一下吗？',answerPy:'Wǒ xiǎng huàn yì tái bǐjìběn diànnǎo, nǐ kěyǐ gěi wǒ jièshào yíxià ma?',
-      note:'一台 + 电脑 — lượng từ máy móc.'},
-   ]},
-
-  {n:10,zh:'光',py:'guāng',pos:'Phó từ',vn:'chỉ (riêng)', hv: 'quang',em:'☝️',lesson:2,
-   explain:['Chỉ, riêng một việc/khoản nào đó (không tính những cái khác), thường kết hợp 就 ở vế sau.'],
-   usage:'光 + danh từ/động từ + 就……: 光买沙发就花了两千多.',
-   collo:['光买沙发就','光……就','光是'],
-   ex_zh:'上个星期光买沙发就花了两千多。',ex_py:'Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.',ex_vn:'Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn.',
-   exList:[
-     {zh:'上个星期光买沙发就花了两千多。',py:'Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.',vn:'Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn.'},
-     {zh:'光说不练是没有用的，得真正去做。',py:'Guāng shuō bú liàn shì méiyǒu yòng de, děi zhēnzhèng qù zuò.',vn:'Chỉ nói không làm thì vô ích, phải thực sự bắt tay vào làm.'},
-     {zh:'光是这个月，我们家就花了五千多。',py:'Guāng shì zhège yuè, wǒmen jiā jiù huāle wǔqiān duō.',vn:'Chỉ riêng tháng này, nhà chúng tôi đã tiêu hơn năm nghìn.'},
-   ],
-   hanzi:[
-     {c:'光',p:'guāng',type:'上下结构 · Trên-dưới',st:6,ord:'⺌ trên → 儿 dưới',rad:'儿 (nhân, biến thể)',mean:'ánh sáng; chỉ, riêng',
-      tip:'Chữ tượng hình ÁNH SÁNG tỏa ra từ một điểm → mở rộng nghĩa CHỈ MỘT ĐIỂM DUY NHẤT, mượn làm phó từ CHỈ, RIÊNG.',
-      cf:'光 dễ nhầm với 先 (xiān – "trước")',w:'光……就…… / 阳光 / 光是'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Chỉ riêng mua đồ nội thất tháng này đã tốn hơn ba nghìn tệ.',answer:'光是这个月买家具就花了三千多块。',answerPy:'Guāng shì zhège yuè mǎi jiājù jiù huāle sānqiān duō kuài.',
-      note:'光是……就…… kết hợp 家具, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Chỉ riêng xem quảng cáo thì không biết được chất lượng thực sự thế nào.',answer:'光看广告是不知道实际质量怎么样的。',answerPy:'Guāng kàn guǎnggào shì bù zhīdào shíjì zhìliàng zěnmeyàng de.',
-      note:'光 + động từ — chỉ làm một việc (không đủ).'},
-   ]},
-
-  {n:11,zh:'实在',py:'shízài',pos:'Phó từ',vn:'kỳ thực, quả thực', hv: 'thực tại',em:'💯',lesson:2,
-   explain:['Diễn tả mức độ thực sự, đúng như vậy, nhấn mạnh tính chân thực.'],
-   usage:'Phó từ, đứng trước tính từ: 实在太旧了, 实在不容易.',
-   collo:['实在太旧了','实在不容易','实在对不起'],
-   ex_zh:'但是咱家的冰箱实在太旧了，制冷效果也不太好了。',ex_py:'Dànshì zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le.',ex_vn:'Nhưng tủ lạnh nhà chúng ta thực sự cũ quá rồi, hiệu quả làm lạnh cũng không tốt lắm nữa.',
-   exList:[
-     {zh:'但是咱家的冰箱实在太旧了，制冷效果也不太好了。',py:'Dànshì zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le.',vn:'Nhưng tủ lạnh nhà chúng ta thực sự cũ quá rồi, hiệu quả làm lạnh cũng không tốt lắm nữa.'},
-     {zh:'这件事实在对不起，让你久等了。',py:'Zhè jiàn shì shízài duìbuqǐ, ràng nǐ jiǔ děng le.',vn:'Việc này thực sự xin lỗi, để bạn đợi lâu rồi.'},
-     {zh:'完全适应一个新的工作实在不容易。',py:'Wánquán shìyìng yí ge xīn de gōngzuò shízài bù róngyì.',vn:'Hoàn toàn thích nghi với một công việc mới thực sự không dễ dàng.'},
-   ],
-   hanzi:[
-     {c:'实',p:'shí',type:'上下结构 · Trên-dưới (giản thể)',st:8,ord:'宀 (miên) trên → 头 (đầu) dưới',rad:'宀 (miên – mái nhà)',mean:'thực tế, chân thật',
-      tip:'Bộ mái nhà 宀 (nơi cất giữ của cải THỰC) → mở rộng thành THỰC TẾ, CHÂN THẬT, kết hợp 在(tồn tại) thành 实在 = KỲ THỰC, QUẢ THỰC.',
-      cf:'实 dễ nhầm với 买 (mǎi – "mua")',w:'实在 / 现实 / 事实'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tủ lạnh nhà chúng ta thực sự cũ quá rồi, vẫn nên mua một cái mới thôi.',answer:'咱家的冰箱实在太旧了，还是买个新的吧。',answerPy:'Zán jiā de bīngxiāng shízài tài jiù le, háishi mǎi ge xīn de ba.',
-      note:'实在 + tính từ — thực sự, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Kinh doanh thực sự không đơn giản như tôi từng nghĩ.',answer:'做生意实在不像我原来想的那么简单。',answerPy:'Zuò shēngyi shízài bú xiàng wǒ yuánlái xiǎng de nàme jiǎndān.',
-      note:'实在 + 不像……那么…… kết hợp 原来, ôn lại điểm ngữ pháp Bài 4.'},
-   ]},
-
-  {n:12,zh:'制冷',py:'zhìlěng',pos:'Động từ',vn:'làm lạnh, ướp lạnh', hv: 'chế lãnh',em:'❄️',lesson:2,
-   explain:['Làm cho nhiệt độ giảm xuống, tạo môi trường lạnh (thường nói về thiết bị điện lạnh).'],
-   usage:'Động từ; thường đi với 制冷效果.',
-   collo:['制冷效果','制冷好不好'],
-   ex_zh:'制冷效果也不太好了。',ex_py:'Zhìlěng xiàoguǒ yě bú tài hǎo le.',ex_vn:'Hiệu quả làm lạnh cũng không tốt lắm nữa.',
-   exList:[
-     {zh:'制冷效果也不太好了。',py:'Zhìlěng xiàoguǒ yě bú tài hǎo le.',vn:'Hiệu quả làm lạnh cũng không tốt lắm nữa.'},
-     {zh:'这台冰箱制冷效果特别好。',py:'Zhè tái bīngxiāng zhìlěng xiàoguǒ tèbié hǎo.',vn:'Cái tủ lạnh này hiệu quả làm lạnh đặc biệt tốt.'},
-     {zh:'夏天买空调要看它的制冷效果怎么样。',py:'Xiàtiān mǎi kōngtiáo yào kàn tā de zhìlěng xiàoguǒ zěnmeyàng.',vn:'Mùa hè mua máy lạnh phải xem hiệu quả làm lạnh của nó thế nào.'},
-   ],
-   hanzi:[
-     {c:'冷',p:'lěng',type:'左右结构 · Trái-phải',st:7,ord:'冫 (băng) trái → 令 (lệnh) phải',rad:'冫 (băng – nước đá)',mean:'lạnh',
-      tip:'Bộ băng 冫 (nước đá) + 令(biểu âm) → LẠNH LẼO như băng, kết hợp 制(chế tạo) thành 制冷 = LÀM LẠNH.',
-      cf:'冷 dễ nhầm với 冶 (yě – "luyện kim")',w:'制冷 / 冷藏 / 寒冷'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tủ lạnh này hiệu quả làm lạnh không tốt lắm, chúng ta đổi cái mới đi.',answer:'这台冰箱制冷效果不太好，我们换个新的吧。',answerPy:'Zhè tái bīngxiāng zhìlěng xiàoguǒ bú tài hǎo, wǒmen huàn ge xīn de ba.',
-      note:'制冷效果 kết hợp 台, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Mùa hè, hiệu quả làm lạnh của máy lạnh rất quan trọng.',answer:'夏天，空调的制冷效果很重要。',answerPy:'Xiàtiān, kōngtiáo de zhìlěng xiàoguǒ hěn zhòngyào.',
-      note:'制冷效果 — hiệu quả làm lạnh.'},
-   ]},
-
-  {n:13,zh:'效果',py:'xiàoguǒ',pos:'Danh từ',vn:'hiệu quả', hv: 'hiệu quả',em:'📊',lesson:2,
-   explain:['Kết quả đạt được sau khi thực hiện một hành động/biện pháp.'],
-   usage:'Danh từ; thường đi với 制冷效果, 效果不错.',
-   collo:['制冷效果','效果不错','广告效果'],
-   ex_zh:'制冷效果也不太好了。',ex_py:'Zhìlěng xiàoguǒ yě bú tài hǎo le.',ex_vn:'Hiệu quả làm lạnh cũng không tốt lắm nữa.',
-   exList:[
-     {zh:'制冷效果也不太好了。',py:'Zhìlěng xiàoguǒ yě bú tài hǎo le.',vn:'Hiệu quả làm lạnh cũng không tốt lắm nữa.'},
-     {zh:'我觉得电影院的效果更好，那儿更吸引我。',py:'Wǒ juéde diànyǐngyuàn de xiàoguǒ gèng hǎo, nàr gèng xīyǐn wǒ.',vn:'Tôi thấy hiệu ứng của rạp chiếu phim tốt hơn, ở đó thu hút tôi hơn.'},
-     {zh:'这个方法的效果怎么样？',py:'Zhège fāngfǎ de xiàoguǒ zěnmeyàng?',vn:'Hiệu quả của phương pháp này thế nào?'},
-   ],
-   hanzi:[
-     {c:'效',p:'xiào',type:'左右结构 · Trái-phải',st:10,ord:'交 (giao) trái → 攵 (phốc) phải',rad:'攵 (phốc – hành động)',mean:'kết quả, hiệu lực',
-      tip:'Bộ 攵(hành động) + 交(giao thoa, tương tác) → hành động tạo ra KẾT QUẢ, kết hợp 果(quả, kết quả) thành 效果 = HIỆU QUẢ.',
-      cf:'郊 (jiāo – "ngoại ô", bộ 阝")',w:'效果 / 有效 / 效率'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi thấy hiệu quả của phương pháp này không tệ, chúng ta có thể thử xem.',answer:'我觉得这个方法的效果不错，我们可以试试看。',answerPy:'Wǒ juéde zhège fāngfǎ de xiàoguǒ búcuò, wǒmen kěyǐ shìshi kàn.',
-      note:'效果不错 kết hợp 方法, ôn lại từ vựng Bài 4.'},
-     {promptLang:'vi',prompt:'Tủ lạnh này chất lượng không tốt, hiệu quả làm lạnh cũng rất kém.',answer:'这台冰箱质量不好，制冷效果也很差。',answerPy:'Zhè tái bīngxiāng zhìliàng bù hǎo, zhìlěng xiàoguǒ yě hěn chà.',
-      note:'质量/效果 kết hợp nhiều từ vựng của bài.'},
-   ]},
-
-  {n:14,zh:'现金',py:'xiànjīn',pos:'Danh từ',vn:'tiền mặt', hv: 'hiện kim',em:'💵',lesson:2,
-   explain:['Tiền dùng để thanh toán trực tiếp, không qua thẻ hay chuyển khoản.'],
-   usage:'Danh từ; thường đi với 带现金, 现金不够.',
-   collo:['带现金','现金不够','用现金'],
-   ex_zh:'我带的现金不够，用你的信用卡吧。',ex_py:'Wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.',ex_vn:'Tiền mặt tôi mang không đủ, dùng thẻ tín dụng của bạn đi.',
-   exList:[
-     {zh:'我带的现金不够，用你的信用卡吧。',py:'Wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.',vn:'Tiền mặt tôi mang không đủ, dùng thẻ tín dụng của bạn đi.'},
-     {zh:'现在很多人出门不带现金，都用手机付款。',py:'Xiànzài hěn duō rén chūmén bú dài xiànjīn, dōu yòng shǒujī fùkuǎn.',vn:'Bây giờ nhiều người ra ngoài không mang tiền mặt, đều dùng điện thoại để thanh toán.'},
-     {zh:'这家店只收现金，不能刷卡。',py:'Zhè jiā diàn zhǐ shōu xiànjīn, bù néng shuākǎ.',vn:'Cửa hàng này chỉ nhận tiền mặt, không quẹt thẻ được.'},
-   ],
-   hanzi:[
-     {c:'现',p:'xiàn',type:'左右结构 · Trái-phải (giản thể)',st:8,ord:'王 (biến thể ngọc) trái → 见 (kiến) phải',rad:'王 (ngọc, biến thể)',mean:'hiện tại, hiện có',
-      tip:'Bộ ngọc 王 (của quý, giá trị) + 见(nhìn thấy) → của cải NHÌN THẤY được ngay, mở rộng thành TIỀN MẶT (现金), HIỆN TẠI.',
-      cf:'现 dễ nhầm với 环 (huán – "vòng")',w:'现金 / 现在 / 出现'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tiền mặt tôi mang không đủ để mua chiếc sô pha này, dùng thẻ tín dụng của bạn được không?',answer:'我带的现金不够买这个沙发，可以用你的信用卡吗？',answerPy:'Wǒ dài de xiànjīn bú gòu mǎi zhège shāfā, kěyǐ yòng nǐ de xìnyòngkǎ ma?',
-      note:'现金不够 kết hợp 信用卡, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Cửa hàng này không nhận tiền mặt, chỉ có thể quẹt thẻ hoặc dùng điện thoại thanh toán.',answer:'这家店不收现金，只能刷卡或者用手机付款。',answerPy:'Zhè jiā diàn bù shōu xiànjīn, zhǐ néng shuākǎ huòzhě yòng shǒujī fùkuǎn.',
-      note:'不收现金 — không nhận tiền mặt.'},
-   ]},
-
-  {n:15,zh:'邀请',py:'yāoqǐng',pos:'Động từ',vn:'mời', hv: 'yêu thỉnh',em:'✉️',lesson:3,
-   explain:['Mời ai đó đến tham gia một hoạt động/sự kiện.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 邀请咱们, 邀请去做客.',
-   collo:['邀请咱们','邀请去做客','受到邀请'],
-   ex_zh:'李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？',ex_py:'Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, gěi tā dài diǎnr shénme lǐwù hǎo ne?',ex_vn:'Thầy Lý mời chúng ta đến nhà thầy chơi, mang cho thầy chút quà gì thì tốt nhỉ?',
-   exList:[
-     {zh:'李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？',py:'Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, gěi tā dài diǎnr shénme lǐwù hǎo ne?',vn:'Thầy Lý mời chúng ta đến nhà thầy chơi, mang cho thầy chút quà gì thì tốt nhỉ?'},
-     {zh:'邀请别人吃饭，最好提前几天联系。',py:'Yāoqǐng biéren chīfàn, zuìhǎo tíqián jǐ tiān liánxì.',vn:'Mời người khác ăn cơm, tốt nhất nên liên hệ trước vài ngày.'},
-     {zh:'谢谢你的邀请，我一定会去参加的。',py:'Xièxie nǐ de yāoqǐng, wǒ yídìng huì qù cānjiā de.',vn:'Cảm ơn lời mời của bạn, tôi nhất định sẽ đến tham gia.'},
-   ],
-   hanzi:[
-     {c:'邀',p:'yāo',type:'半包围结构 · Bán bao vây',st:16,ord:'白+方 trên → 辶 (sước) bao ngoài',rad:'辶 (sước – đi)',mean:'mời gọi',
-      tip:'Bộ 辶(đi, hành động) + 敫(biểu âm) → hành động ĐI MỜI GỌI ai đó, kết hợp 请(mời) thành 邀请 = MỜI.',
-      cf:'邀 dễ nhầm với 遥 (yáo – "xa xôi")',w:'邀请 / 邀请函 / 受邀'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mời người khác ăn cơm, tốt nhất nên liên hệ trước vài ngày.',answer:'邀请别人吃饭，最好提前几天联系。',answerPy:'Yāoqǐng biéren chīfàn, zuìhǎo tíqián jǐ tiān liánxì.',
-      note:'邀请 + 别人 + 吃饭 — mời ai đó làm gì.'},
-     {promptLang:'vi',prompt:'Thầy Lý mời chúng ta đến nhà thầy chơi, chúng ta nên mang gì làm quà đây?',answer:'李老师邀请咱们去他家做客，咱们该带什么礼物呢？',answerPy:'Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, zánmen gāi dài shénme lǐwù ne?',
-      note:'邀请……做客 kết hợp 咱们, ôn lại từ vựng Bài 3.'},
-   ]},
-
-  {n:16,zh:'葡萄',py:'pútao',pos:'Danh từ',vn:'quả nho', hv: 'bồ đào',em:'🍇',lesson:3,
-   explain:['Loại quả nhỏ, mọc thành chùm, thường dùng để ăn hoặc làm rượu vang.'],
-   usage:'Danh từ; thường đi với 葡萄酒 (rượu vang).',
-   collo:['葡萄酒','两瓶葡萄酒','吃葡萄'],
-   ex_zh:'他很喜欢葡萄酒，我们就给他买两瓶葡萄酒吧。',ex_py:'Tā hěn xǐhuan pútaojiǔ, wǒmen jiù gěi tā mǎi liǎng píng pútaojiǔ ba.',ex_vn:'Thầy rất thích rượu vang, chúng ta mua cho thầy hai chai rượu vang đi.',
-   exList:[
-     {zh:'他很喜欢葡萄酒，我们就给他买两瓶葡萄酒吧。',py:'Tā hěn xǐhuan pútaojiǔ, wǒmen jiù gěi tā mǎi liǎng píng pútaojiǔ ba.',vn:'Thầy rất thích rượu vang, chúng ta mua cho thầy hai chai rượu vang đi.'},
-     {zh:'每天喝一点儿葡萄酒，对身体是有好处的。',py:'Měitiān hē yìdiǎnr pútaojiǔ, duì shēntǐ shì yǒu hǎochù de.',vn:'Mỗi ngày uống một chút rượu vang, có lợi cho sức khỏe.'},
-     {zh:'这些葡萄看起来很新鲜。',py:'Zhèxiē pútao kàn qǐlai hěn xīnxiān.',vn:'Những quả nho này trông rất tươi.'},
-   ],
-   hanzi:[
-     {c:'萄',p:'táo',type:'上下结构 · Trên-dưới',st:11,ord:'艹 (thảo) trên → 匋 dưới',rad:'艹 (thảo – cỏ)',mean:'(dùng trong từ 葡萄)',
-      tip:'Bộ cỏ 艹 (thực vật) + 匋(biểu âm) → chỉ loại CÂY LEO có quả; 葡萄 là từ láy đôi âm tiết, không tách nghĩa riêng từng chữ.',
-      cf:'萄 chỉ xuất hiện trong từ 葡萄, không dùng độc lập',w:'葡萄 / 葡萄酒 / 葡萄干'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thầy Lý rất thích rượu vang, chúng ta nhân tiện mua cho thầy hai chai đi.',answer:'李老师很喜欢葡萄酒，我们顺便给他买两瓶吧。',answerPy:'Lǐ lǎoshī hěn xǐhuan pútaojiǔ, wǒmen shùnbiàn gěi tā mǎi liǎng píng ba.',
-      note:'葡萄酒 kết hợp 顺便, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Mỗi ngày uống một chút rượu vang có lợi cho sức khỏe, nhưng không nên uống quá nhiều.',answer:'每天喝一点儿葡萄酒对身体有好处，但不应该喝太多。',answerPy:'Měitiān hē yìdiǎnr pútaojiǔ duì shēntǐ yǒu hǎochù, dàn bù yīnggāi hē tài duō.',
-      note:'对身体有好处 — có lợi cho sức khỏe.'},
-   ]},
-
-  {n:17,zh:'艺术',py:'yìshù',pos:'Danh từ/Tính từ',vn:'nghệ thuật; có tính nghệ thuật', hv: 'nghệ thuật',em:'🎨',lesson:3,
-   explain:['1. (Danh từ) Lĩnh vực sáng tạo cái đẹp (hội họa, âm nhạc, điêu khắc...).','2. (Tính từ) Có tính thẩm mỹ, được làm khéo léo, đẹp mắt.'],
-   usage:'Danh từ: 艺术品; tính từ: 做得都这么艺术.',
-   collo:['很艺术','艺术品','这么艺术'],
-   ex_zh:'你看它酒瓶做得都这么艺术。',ex_py:'Nǐ kàn tā jiǔpíng zuò de dōu zhème yìshù.',ex_vn:'Bạn xem vỏ chai rượu của nó làm đẹp như một tác phẩm nghệ thuật vậy.',
-   exList:[
-     {zh:'你看它酒瓶做得都这么艺术。',py:'Nǐ kàn tā jiǔpíng zuò de dōu zhème yìshù.',vn:'Bạn xem vỏ chai rượu của nó làm đẹp như một tác phẩm nghệ thuật vậy.'},
-     {zh:'她对艺术很感兴趣，经常去看画展。',py:'Tā duì yìshù hěn gǎn xìngqù, jīngcháng qù kàn huàzhǎn.',vn:'Cô ấy rất hứng thú với nghệ thuật, thường xuyên đi xem triển lãm tranh.'},
-     {zh:'这张海报设计得很艺术。',py:'Zhè zhāng hǎibào shèjì de hěn yìshù.',vn:'Tấm áp phích này được thiết kế rất nghệ thuật.'},
-   ],
-   hanzi:[
-     {c:'艺',p:'yì',type:'上下结构 · Trên-dưới (giản thể)',st:4,ord:'艹 (thảo) trên → 乙 dưới',rad:'艹 (thảo – cỏ)',mean:'tài nghệ, nghệ thuật',
-      tip:'Chữ giản thể mang nghĩa TÀI NGHỆ, KỸ NĂNG, kết hợp 术(kỹ thuật) thành 艺术 = NGHỆ THUẬT.',
-      cf:'艺 dễ nhầm với 艾 (ài – "cây ngải")',w:'艺术 / 手艺 / 艺人'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bạn xem vỏ chai rượu vang này được làm đẹp như tác phẩm nghệ thuật vậy, thảo nào quảng cáo lúc nào cũng có nó.',answer:'你看这个葡萄酒瓶做得都这么艺术，怪不得广告上经常有它。',answerPy:'Nǐ kàn zhège pútaojiǔ píng zuò de dōu zhème yìshù, guàibude guǎnggào shang jīngcháng yǒu tā.',
-      note:'做得……艺术 kết hợp 葡萄/广告, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Tôi thấy chiếc sô pha này thiết kế rất nghệ thuật, màu sắc cũng rất thịnh hành.',answer:'我觉得这个沙发设计得很艺术，颜色也很流行。',answerPy:'Wǒ juéde zhège shāfā shèjì de hěn yìshù, yánsè yě hěn liúxíng.',
-      note:'设计得很艺术 kết hợp 流行, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:18,zh:'广告',py:'guǎnggào',pos:'Danh từ',vn:'quảng cáo', hv: 'quảng cáo',em:'📢',lesson:3,
-   explain:['Thông tin quảng bá về sản phẩm/dịch vụ nhằm thu hút khách hàng.'],
-   usage:'Danh từ; thường đi với 电视上的广告, 相信广告.',
-   collo:['电视上的广告','相信广告','广告的影响'],
-   ex_zh:'而且电视上经常有它的广告，我想味道应该不错。',ex_py:'Érqiě diànshì shang jīngcháng yǒu tā de guǎnggào, wǒ xiǎng wèidào yīnggāi búcuò.',ex_vn:'Hơn nữa trên tivi thường xuyên có quảng cáo của nó, tôi nghĩ mùi vị chắc không tệ.',
-   exList:[
-     {zh:'而且电视上经常有它的广告，我想味道应该不错。',py:'Érqiě diànshì shang jīngcháng yǒu tā de guǎnggào, wǒ xiǎng wèidào yīnggāi búcuò.',vn:'Hơn nữa trên tivi thường xuyên có quảng cáo của nó, tôi nghĩ mùi vị chắc không tệ.'},
-     {zh:'广告只会介绍优点，却不会说它的缺点。',py:'Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.',vn:'Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó.'},
-     {zh:'调查发现：购买我们电脑的人中，有75%是因为受到我们广告的影响。',py:'Diàochá fāxiàn: gòumǎi wǒmen diànnǎo de rén zhōng, yǒu bǎifēnzhī qīshíwǔ shì yīnwèi shòudào wǒmen guǎnggào de yǐngxiǎng.',vn:'Điều tra phát hiện: trong số người mua máy tính của chúng tôi, có 75% là do chịu ảnh hưởng từ quảng cáo của chúng tôi.'},
-   ],
-   hanzi:[
-     {c:'告',p:'gào',type:'上下结构 · Trên-dưới',st:7,ord:'牛 (biến thể) trên → 口 (khẩu) dưới',rad:'口 (khẩu – miệng)',mean:'báo cho biết',
-      tip:'Bộ miệng 口 (nói ra) → BÁO CHO BIẾT, kết hợp 广(rộng khắp) thành 广告 = QUẢNG CÁO (báo rộng khắp cho mọi người biết).',
-      cf:'吉 (jí – "may mắn", không có 口 dưới cùng vị trí)',w:'广告 / 告诉 / 报告'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Quảng cáo chỉ giới thiệu ưu điểm, thực tế thì rất nhiều thứ không được như quảng cáo nói.',answer:'广告只会介绍优点，实际上很多东西并不像广告上说的那么好。',answerPy:'Guǎnggào zhǐ huì jièshào yōudiǎn, shíjìshang hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo.',
-      note:'广告……实际上……并不像……那么…… kết hợp nhiều điểm ngữ pháp của bài.'},
-     {promptLang:'vi',prompt:'Điều tra phát hiện, có 75% khách hàng là do chịu ảnh hưởng từ quảng cáo của chúng tôi.',answer:'调查发现，有75%的顾客是因为受到我们广告的影响。',answerPy:'Diàochá fāxiàn, yǒu bǎifēnzhī qīshíwǔ de gùkè shì yīnwèi shòudào wǒmen guǎnggào de yǐngxiǎng.',
-      note:'受到……的影响 — chịu ảnh hưởng từ….'},
-   ]},
-
-  {n:19,zh:'味道',py:'wèidào',pos:'Danh từ',vn:'mùi vị', hv: 'vị đạo',em:'😋',lesson:3,
-   explain:['Cảm nhận về hương vị của đồ ăn/thức uống.'],
-   usage:'Danh từ; thường đi với 味道不错, 味道应该不错.',
-   collo:['味道不错','味道很好','味道怎么样'],
-   ex_zh:'我想味道应该不错。',ex_py:'Wǒ xiǎng wèidào yīnggāi búcuò.',ex_vn:'Tôi nghĩ mùi vị chắc không tệ.',
-   exList:[
-     {zh:'我想味道应该不错。',py:'Wǒ xiǎng wèidào yīnggāi búcuò.',vn:'Tôi nghĩ mùi vị chắc không tệ.'},
-     {zh:'这家饭馆的面味道很好，在当地非常受欢迎。',py:'Zhè jiā fànguǎn de miàn wèidào hěn hǎo, zài dāngdì fēicháng shòu huānyíng.',vn:'Món mì của quán ăn này mùi vị rất ngon, ở địa phương rất được yêu thích.'},
-     {zh:'这瓶葡萄酒味道怎么样？',py:'Zhè píng pútaojiǔ wèidào zěnmeyàng?',vn:'Chai rượu vang này mùi vị thế nào?'},
-   ],
-   hanzi:[
-     {c:'味',p:'wèi',type:'左右结构 · Trái-phải',st:8,ord:'口 (khẩu) trái → 未 (vị) phải',rad:'口 (khẩu – miệng)',mean:'mùi vị',
-      tip:'Bộ miệng 口 (nếm) + 未(biểu âm) → cảm nhận bằng MIỆNG, mở rộng thành MÙI VỊ, kết hợp 道(con đường/cách) thành 味道 = MÙI VỊ, HƯƠNG VỊ.',
-      cf:'昧 (mèi – "mờ ám", bộ 日")',w:'味道 / 口味 / 有味儿'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Trên tivi thường có quảng cáo của chai rượu vang này, tôi nghĩ mùi vị chắc không tệ.',answer:'电视上经常有这瓶葡萄酒的广告，我想味道应该不错。',answerPy:'Diànshì shang jīngcháng yǒu zhè píng pútaojiǔ de guǎnggào, wǒ xiǎng wèidào yīnggāi búcuò.',
-      note:'味道应该不错 kết hợp 广告/葡萄酒, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Đừng chỉ tin quảng cáo, thực tế mùi vị thế nào phải tự mình thử mới biết.',answer:'不要只相信广告，实际味道怎么样得自己尝尝才知道。',answerPy:'Búyào zhǐ xiāngxìn guǎnggào, shíjì wèidào zěnmeyàng děi zìjǐ chángchang cái zhīdào.',
-      note:'不要只相信广告 kết hợp 实际, ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:20,zh:'优点',py:'yōudiǎn',pos:'Danh từ',vn:'ưu điểm', hv: 'ưu điểm',em:'👍',lesson:3,
-   explain:['Điểm tốt, điểm mạnh của một người/sự vật.'],
-   usage:'Danh từ; thường đi với 介绍优点, 有优点.',
-   collo:['介绍优点','有优点','优点和缺点'],
-   ex_zh:'广告只会介绍优点，却不会说它的缺点。',ex_py:'Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.',ex_vn:'Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó.',
-   exList:[
-     {zh:'广告只会介绍优点，却不会说它的缺点。',py:'Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.',vn:'Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó.'},
-     {zh:'每个人都有自己的优点和缺点。',py:'Měi ge rén dōu yǒu zìjǐ de yōudiǎn hé quēdiǎn.',vn:'Mỗi người đều có ưu điểm và khuyết điểm riêng của mình.'},
-     {zh:'这台冰箱的优点是制冷效果特别好。',py:'Zhè tái bīngxiāng de yōudiǎn shì zhìlěng xiàoguǒ tèbié hǎo.',vn:'Ưu điểm của tủ lạnh này là hiệu quả làm lạnh đặc biệt tốt.'},
-   ],
-   hanzi:[
-     {c:'优',p:'yōu',type:'左右结构 · Trái-phải (giản thể)',st:6,ord:'亻 (nhân) trái → 尤(vưu) phải',rad:'亻 (nhân – người)',mean:'ưu tú, tốt đẹp',
-      tip:'Bộ người 亻 + 尤(đặc biệt, nổi trội) → NGƯỜI có điểm NỔI TRỘI, mở rộng thành ƯU TÚ, kết hợp 点(điểm) thành 优点 = ƯU ĐIỂM.',
-      cf:'忧 (yōu – "lo lắng", bộ 忄")',w:'优点 / 优秀 / 优势'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Quảng cáo chỉ giới thiệu ưu điểm của sản phẩm, không nói đến khuyết điểm.',answer:'广告只介绍产品的优点，不说缺点。',answerPy:'Guǎnggào zhǐ jièshào chǎnpǐn de yōudiǎn, bù shuō quēdiǎn.',
-      note:'只介绍优点 kết hợp 广告, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Chiếc sô pha này ưu điểm là giá cả phù hợp, chất lượng cũng có đảm bảo.',answer:'这个沙发的优点是价格合适，质量也有保证。',answerPy:'Zhège shāfā de yōudiǎn shì jiàgé héshì, zhìliàng yě yǒu bǎozhèng.',
-      note:'优点是……价格/质量 kết hợp nhiều từ vựng của bài.'},
-   ]},
-
-  {n:21,zh:'实际',py:'shíjì',pos:'Danh từ/Tính từ',vn:'thực tế', hv: 'thực tế',em:'📌',lesson:3,
-   explain:['1. (Danh từ) Sự vật/tình huống tồn tại khách quan.','2. (Tính từ) Chân thực, cụ thể.','3. (实际上, phó từ) Trong thực tế, thường mang ý chuyển ngoặt.'],
-   usage:'实际上 + mệnh đề (phó từ, thường chuyển ý); 联系实际 (danh từ); 实际工作 (tính từ).',
-   collo:['实际上','联系实际','实际工作'],
-   ex_zh:'实际上，很多东西并不像广告上说的那么好，所以不能完全相信广告。',ex_py:'Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.',ex_vn:'Thực tế thì, rất nhiều thứ không được như quảng cáo nói, vì vậy không thể hoàn toàn tin vào quảng cáo.',
-   exList:[
-     {zh:'实际上，很多东西并不像广告上说的那么好，所以不能完全相信广告。',py:'Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.',vn:'Thực tế thì, rất nhiều thứ không được như quảng cáo nói, vì vậy không thể hoàn toàn tin vào quảng cáo.'},
-     {zh:'你们做计划应该联系实际。',py:'Nǐmen zuò jìhuà yīnggāi liánxì shíjì.',vn:'Các bạn lập kế hoạch nên gắn liền với thực tế.'},
-     {zh:'实际工作能让我更理解书本上的知识。',py:'Shíjì gōngzuò néng ràng wǒ gèng lǐjiě shūběn shang de zhīshi.',vn:'Công việc thực tế có thể giúp tôi hiểu rõ hơn kiến thức trong sách vở.'},
-   ],
-   hanzi:[
-     {c:'际',p:'jì',type:'左右结构 · Trái-phải (giản thể)',st:7,ord:'阝(phụ) trái → 示(thị, biến thể) phải',rad:'阝 (phụ – gò đất)',mean:'ranh giới, thực tại',
-      tip:'Bộ 阝(gò đất, ranh giới) → nơi TIẾP GIÁP giữa hai vùng, mở rộng thành THỰC TẠI (nơi lý thuyết gặp thực tế); kết hợp 实(chân thực) thành 实际 = THỰC TẾ.',
-      cf:'察 (chá – "xem xét", bộ 宀")',w:'实际 / 国际 / 实际上'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Thực tế thì, kinh doanh không đơn giản như tôi từng nghĩ.',answer:'实际上，做生意并不像我原来想的那么简单。',answerPy:'Shíjìshang, zuò shēngyi bìng bú xiàng wǒ yuánlái xiǎng de nàme jiǎndān.',
-      note:'实际上……并不像……那么…… kết hợp 原来, ôn lại điểm ngữ pháp Bài 4.'},
-     {promptLang:'vi',prompt:'Các bạn lập kế hoạch nên gắn liền với thực tế, không thể chỉ nói suông trên giấy.',answer:'你们做计划应该联系实际，不能只在纸上说说。',answerPy:'Nǐmen zuò jìhuà yīnggāi liánxì shíjì, bù néng zhǐ zài zhǐ shang shuōshuo.',
-      note:'联系实际 — gắn liền với thực tế.'},
-   ]},
-
-  {n:22,zh:'考虑',py:'kǎolǜ',pos:'Động từ',vn:'suy xét, cân nhắc', hv: 'khảo lự',em:'🤔',lesson:4,
-   explain:['Suy nghĩ kỹ trước khi đưa ra quyết định.'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 只考虑价格, 认真考虑.',
-   collo:['只考虑价格','认真考虑','考虑一下'],
-   ex_zh:'买衣服只考虑价格当然不好。',ex_py:'Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo.',ex_vn:'Mua quần áo chỉ cân nhắc giá cả đương nhiên không tốt.',
-   exList:[
-     {zh:'买衣服只考虑价格当然不好。',py:'Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo.',vn:'Mua quần áo chỉ cân nhắc giá cả đương nhiên không tốt.'},
-     {zh:'我认真考虑了一个晚上，最后还是决定不去那家公司了。',py:'Wǒ rènzhēn kǎolǜle yí ge wǎnshang, zuìhòu háishi juédìng bú qù nà jiā gōngsī le.',vn:'Tôi đã suy nghĩ nghiêm túc suốt một tối, cuối cùng vẫn quyết định không đến công ty đó nữa.'},
-     {zh:'考试做题前首先要想清楚问题的意思，尤其是在做数学题的时候。',py:'Kǎoshì zuò tí qián shǒuxiān yào xiǎng qīngchu wèntí de yìsi, yóuqí shì zài zuò shùxué tí de shíhou.',vn:'Trước khi làm bài thi trước hết phải nghĩ rõ ý nghĩa câu hỏi, đặc biệt là khi làm bài toán.'},
-   ],
-   hanzi:[
-     {c:'虑',p:'lǜ',type:'半包围结构 · Bán bao vây (giản thể)',st:9,ord:'虍 bao ngoài → 心(biến thể) trong',rad:'心 (tâm – lòng)',mean:'lo nghĩ, suy xét',
-      tip:'Bộ tâm 心 (suy nghĩ trong lòng) → SUY XÉT, kết hợp 考(xem xét) thành 考虑 = CÂN NHẮC, SUY XÉT.',
-      cf:'虚 (xū – "hư không", cũng bộ 虍")',w:'考虑 / 考试 / 思考'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mua đồ nội thất chỉ cân nhắc giá cả đương nhiên không tốt, chất lượng cũng rất quan trọng.',answer:'买家具只考虑价格当然不好，质量也很重要。',answerPy:'Mǎi jiājù zhǐ kǎolǜ jiàgé dāngrán bù hǎo, zhìliàng yě hěn zhòngyào.',
-      note:'只考虑……当然不好 kết hợp 家具/价格/质量, ôn lại nhiều từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Tôi suy nghĩ nghiêm túc suốt một tối, cuối cùng quyết định mua chiếc sô pha màu xanh này.',answer:'我认真考虑了一个晚上，最后决定买这个蓝色的沙发。',answerPy:'Wǒ rènzhēn kǎolǜle yí ge wǎnshang, zuìhòu juédìng mǎi zhège lánsè de shāfā.',
-      note:'认真考虑了……最后决定…… — suy xét kỹ rồi quyết định.'},
-   ]},
-
-  {n:23,zh:'标准',py:'biāozhǔn',pos:'Danh từ',vn:'tiêu chuẩn, chuẩn mực', hv: 'tiêu chuẩn',em:'📏',lesson:4,
-   explain:['Chuẩn mực dùng để đánh giá/lựa chọn theo một mức độ nhất định.'],
-   usage:'Danh từ; thường đi với 买衣服的标准, 幸福的标准.',
-   collo:['买衣服的标准','幸福的标准','标准是……'],
-   ex_zh:'我买衣服的标准是"只买对的，不买贵的"。',ex_py:'Wǒ mǎi yīfu de biāozhǔn shì "zhǐ mǎi duì de, bù mǎi guì de".',ex_vn:'Tiêu chuẩn mua quần áo của tôi là "chỉ mua cái đúng, không mua cái đắt".',
-   exList:[
-     {zh:'我买衣服的标准是"只买对的，不买贵的"。',py:'Wǒ mǎi yīfu de biāozhǔn shì "zhǐ mǎi duì de, bù mǎi guì de".',vn:'Tiêu chuẩn mua quần áo của tôi là "chỉ mua cái đúng, không mua cái đắt".'},
-     {zh:'幸福的标准是不同的。有人觉得有房子和汽车就是幸福，有人认为找到真正的爱情就是幸福。',py:'Xìngfú de biāozhǔn shì bùtóng de. Yǒurén juéde yǒu fángzi hé qìchē jiùshì xìngfú, yǒurén rènwéi zhǎodào zhēnzhèng de àiqíng jiùshì xìngfú.',vn:'Tiêu chuẩn hạnh phúc mỗi người mỗi khác. Có người thấy có nhà có xe là hạnh phúc, có người cho rằng tìm được tình yêu chân chính mới là hạnh phúc.'},
-     {zh:'美女的标准一直在变，但是不管什么时候，最重要的都是健康。',py:'Měinǚ de biāozhǔn yìzhí zài biàn, dànshì bùguǎn shénme shíhou, zuì zhòngyào de dōu shì jiànkāng.',vn:'Tiêu chuẩn cái đẹp luôn thay đổi, nhưng bất kể lúc nào, quan trọng nhất vẫn là sức khỏe.'},
-   ],
-   hanzi:[
-     {c:'准',p:'zhǔn',type:'左右结构 · Trái-phải (giản thể)',st:10,ord:'冫 (băng) trái → 隹 (chuy) phải',rad:'冫 (băng – nước đá)',mean:'chuẩn xác',
-      tip:'Bộ 冫(bằng phẳng) + 隹(chim) → CHUẨN XÁC, mở rộng thành CHUẨN MỰC; kết hợp 标(mốc, dấu hiệu) thành 标准 = TIÊU CHUẨN.',
-      cf:'准 dễ nhầm với 淮 (huái – "sông Hoài")',w:'标准 / 准时 / 准备'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tiêu chuẩn mua quần áo của cô ấy là chất lượng phải tốt, hơn nữa lại không thể quá đắt.',answer:'她买衣服的标准是质量要好，而且又不能太贵。',answerPy:'Tā mǎi yīfu de biāozhǔn shì zhìliàng yào hǎo, érqiě yòu bù néng tài guì.',
-      note:'买衣服的标准 kết hợp 质量, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Tiêu chuẩn hạnh phúc của mỗi người không giống nhau, đối với tôi mà nói, sức khỏe là quan trọng nhất.',answer:'每个人幸福的标准不一样，对我来说，健康是最重要的。',answerPy:'Měi ge rén xìngfú de biāozhǔn bù yíyàng, duì wǒ láishuō, jiànkāng shì zuì zhòngyào de.',
-      note:'对……来说 ôn lại điểm ngữ pháp của bài.'},
-   ]},
-
-  {n:24,zh:'样子',py:'yàngzi',pos:'Danh từ',vn:'kiểu dáng', hv: 'dạng tử',em:'👗',lesson:4,
-   explain:['Hình dáng, kiểu cách bên ngoài của một vật.'],
-   usage:'Danh từ; thường đi với 衣服的样子, 样子流行.',
-   collo:['衣服的样子','样子流行','这个样子'],
-   ex_zh:'对我来说，衣服的样子流行不流行并不是很重要。',ex_py:'Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.',ex_vn:'Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không phải là điều quan trọng.',
-   exList:[
-     {zh:'对我来说，衣服的样子流行不流行并不是很重要。',py:'Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.',vn:'Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không phải là điều quan trọng.'},
-     {zh:'这种沙发是今年最流行的样子。',py:'Zhè zhǒng shāfā shì jīnnián zuì liúxíng de yàngzi.',vn:'Loại ghế sô pha này là kiểu dáng được ưa chuộng nhất năm nay.'},
-     {zh:'她换上了新买的那双鞋，看上去样子好看极了。',py:'Tā huànshangle xīn mǎi de nà shuāng xié, kàn shangqu yàngzi hǎokàn jíle.',vn:'Cô ấy đổi sang đôi giày mới mua, trông kiểu dáng đẹp cực kỳ.'},
-   ],
-   hanzi:[
-     {c:'样',p:'yàng',type:'左右结构 · Trái-phải (giản thể)',st:10,ord:'木 (mộc) trái → 羊 (dương) phải',rad:'木 (mộc – cây)',mean:'kiểu mẫu, dáng vẻ',
-      tip:'Bộ cây 木 (khuôn mẫu bằng gỗ) + 羊(biểu âm) → KHUÔN MẪU để tạo hình, mở rộng thành KIỂU DÁNG, DÁNG VẺ.',
-      cf:'洋 (yáng – "đại dương", bộ 氵")',w:'样子 / 一样 / 怎么样'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Đối với tôi mà nói, kiểu dáng của đồ nội thất không quan trọng bằng chất lượng.',answer:'对我来说，家具的样子没有质量重要。',answerPy:'Duì wǒ láishuō, jiājù de yàngzi méiyǒu zhìliàng zhòngyào.',
-      note:'样子 kết hợp 家具/质量, ôn lại nhiều từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Chiếc sô pha màu xanh này kiểu dáng rất thịnh hành, giá cả cũng phù hợp.',answer:'这个蓝色沙发的样子很流行，价格也合适。',answerPy:'Zhège lánsè shāfā de yàngzi hěn liúxíng, jiàgé yě héshì.',
-      note:'样子很流行 kết hợp 价格, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:25,zh:'年龄',py:'niánlíng',pos:'Danh từ',vn:'tuổi', hv: 'niên linh',em:'🎂',lesson:4,
-   explain:['Số tuổi của một người.'],
-   usage:'Danh từ; thường đi với 年龄大, 不同年龄.',
-   collo:['年龄大','不同年龄','年龄大的人'],
-   ex_zh:'很多年龄大的人喜欢在打折的时候买便宜的衣服。',ex_py:'Hěn duō niánlíng dà de rén xǐhuan zài dǎzhé de shíhou mǎi piányi de yīfu.',ex_vn:'Rất nhiều người lớn tuổi thích mua quần áo rẻ vào lúc giảm giá.',
-   exList:[
-     {zh:'很多年龄大的人喜欢在打折的时候买便宜的衣服。',py:'Hěn duō niánlíng dà de rén xǐhuan zài dǎzhé de shíhou mǎi piányi de yīfu.',vn:'Rất nhiều người lớn tuổi thích mua quần áo rẻ vào lúc giảm giá.'},
-     {zh:'不同年龄的人有不同的想法。',py:'Bùtóng niánlíng de rén yǒu bùtóng de xiǎngfǎ.',vn:'Người ở độ tuổi khác nhau có suy nghĩ khác nhau.'},
-     {zh:'请问，您的年龄是多少？',py:'Qǐngwèn, nín de niánlíng shì duōshao?',vn:'Xin hỏi, tuổi của anh là bao nhiêu?'},
-   ],
-   hanzi:[
-     {c:'龄',p:'líng',type:'左右结构 · Trái-phải (giản thể)',st:8,ord:'齿 (xỉ, biến thể) trái → 令 (lệnh) phải',rad:'齿 (xỉ – răng)',mean:'tuổi tác',
-      tip:'Bộ răng 齿 (xưa xem răng để đoán tuổi động vật) + 令(biểu âm) → TUỔI TÁC, kết hợp 年(năm) thành 年龄 = TUỔI.',
-      cf:'龄 dễ nhầm với 铃 (líng – "cái chuông")',w:'年龄 / 高龄 / 年纪'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Rất nhiều người lớn tuổi thích mua đồ giảm giá, nhưng lại không cân nhắc nhiều về việc có phù hợp với mình không.',answer:'很多年龄大的人喜欢买打折的东西，但对是不是适合自己却考虑得不多。',answerPy:'Hěn duō niánlíng dà de rén xǐhuan mǎi dǎzhé de dōngxi, dàn duì shì bu shì shìhé zìjǐ què kǎolǜ de bù duō.',
-      note:'年龄大的人 kết hợp 打折/考虑, ôn lại nhiều từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Người ở độ tuổi khác nhau, tiêu chuẩn mua quần áo cũng không giống nhau.',answer:'不同年龄的人，买衣服的标准也不一样。',answerPy:'Bùtóng niánlíng de rén, mǎi yīfu de biāozhǔn yě bù yíyàng.',
-      note:'不同年龄 kết hợp 标准, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:26,zh:'浪费',py:'làngfèi',pos:'Động từ',vn:'lãng phí, hoang phí', hv: 'lãng phí',em:'🗑️',lesson:4,
-   explain:['Sử dụng tiền bạc/thời gian/tài nguyên không hợp lý, gây hao tổn không cần thiết.'],
-   usage:'Động từ/danh từ; thường đi với 是一种浪费, 浪费钱.',
-   collo:['是一种浪费','浪费钱','浪费时间'],
-   ex_zh:'如果不适合自己，即使花钱很少，也是一种浪费。',ex_py:'Rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.',ex_vn:'Nếu không phù hợp với bản thân, dù chi tiêu rất ít tiền, cũng là một sự lãng phí.',
-   exList:[
-     {zh:'如果不适合自己，即使花钱很少，也是一种浪费。',py:'Rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.',vn:'Nếu không phù hợp với bản thân, dù chi tiêu rất ít tiền, cũng là một sự lãng phí.'},
-     {zh:'买了不适合的衣服，就是浪费钱。',py:'Mǎile bú shìhé de yīfu, jiùshì làngfèi qián.',vn:'Mua quần áo không phù hợp, chính là lãng phí tiền.'},
-     {zh:'不要浪费时间做没有意义的事情。',py:'Búyào làngfèi shíjiān zuò méiyǒu yìyì de shìqing.',vn:'Đừng lãng phí thời gian làm những việc không có ý nghĩa.'},
-   ],
-   hanzi:[
-     {c:'浪',p:'làng',type:'左右结构 · Trái-phải',st:10,ord:'氵 (thủy) trái → 良 (lương) phải',rad:'氵 (thủy – nước)',mean:'sóng nước, buông thả',
-      tip:'Bộ nước 氵 (sóng nước tràn lan, không kiểm soát) + 良(biểu âm) → mở rộng thành BUÔNG THẢ, KHÔNG TIẾT KIỆM, kết hợp 费(tiêu tốn) thành 浪费 = LÃNG PHÍ.',
-      cf:'狼 (láng – "chó sói", bộ 犭")',w:'浪费 / 浪漫 / 波浪'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Nếu không phù hợp với bản thân, dù giá rất rẻ, mua về cũng là lãng phí.',answer:'如果不适合自己，即使价格很便宜，买了也是浪费。',answerPy:'Rúguǒ bú shìhé zìjǐ, jíshǐ jiàgé hěn piányi, mǎile yě shì làngfèi.',
-      note:'即使……也是浪费 kết hợp 价格, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Cô ấy không cân nhắc nhiều về việc có phù hợp hay không, mua rất nhiều quần áo không mặc, thật là lãng phí.',answer:'她对是不是合适考虑得不多，买了很多不穿的衣服，真是浪费。',answerPy:'Tā duì shì bu shì héshì kǎolǜ de bù duō, mǎile hěn duō bù chuān de yīfu, zhēnshi làngfèi.',
-      note:'考虑得不多……真是浪费 kết hợp 考虑, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:27,zh:'购物',py:'gòuwù',pos:'Động từ',vn:'mua sắm, mua hàng', hv: 'cấu vật',em:'🛍️',lesson:5,
-   explain:['Đi mua đồ, mua sắm hàng hóa.'],
-   usage:'Động từ ly hợp; thường đi với 网上购物, 购物变得流行.',
-   collo:['网上购物','购物变得流行','喜欢购物'],
-   ex_zh:'现在网上购物变得越来越流行了。',ex_py:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le.',ex_vn:'Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành.',
-   exList:[
-     {zh:'现在网上购物变得越来越流行了。',py:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le.',vn:'Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành.'},
-     {zh:'购物在我们的生活中是必不可少的。',py:'Gòuwù zài wǒmen de shēnghuó zhōng shì bì bù kě shǎo de.',vn:'Mua sắm trong cuộc sống của chúng ta là không thể thiếu.'},
-     {zh:'网上购物能够受到人们的喜爱，原因主要有两个。',py:'Wǎngshang gòuwù nénggòu shòudào rénmen de xǐ\'ài, yuányīn zhǔyào yǒu liǎng ge.',vn:'Mua sắm trên mạng được mọi người yêu thích, nguyên nhân chủ yếu có hai điều.'},
-   ],
-   hanzi:[
-     {c:'购',p:'gòu',type:'左右结构 · Trái-phải (giản thể)',st:8,ord:'贝 (bối) trái → 勾 (câu) phải',rad:'贝 (bối – tiền của)',mean:'mua',
-      tip:'Bộ 贝(tiền của) + 勾(biểu âm) → dùng TIỀN để MUA, kết hợp 物(vật phẩm) thành 购物 = MUA SẮM.',
-      cf:'钩 (gōu – "cái móc", bộ 钅")',w:'购物 / 购买 / 采购'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Bây giờ mua sắm trên mạng ngày càng thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.',answer:'现在网上购物变得越来越流行，年轻人尤其喜欢在网上买东西。',answerPy:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.',
-      note:'网上购物 kết hợp 流行/尤其, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Mua sắm trên mạng có thể nhận được rất nhiều sự yêu thích của mọi người, vì nó tiện lợi và rẻ hơn.',answer:'网上购物受到很多人的喜爱，因为它方便又便宜。',answerPy:'Wǎngshang gòuwù shòudào hěn duō rén de xǐ\'ài, yīnwèi tā fāngbiàn yòu piányi.',
-      note:'受到……的喜爱 — được yêu thích bởi….'},
-   ]},
-
-  {n:28,zh:'尤其',py:'yóuqí',pos:'Phó từ',vn:'đặc biệt là, nhất là', hv: 'vưu kỳ',em:'⭐',lesson:5,
-   explain:['Diễn tả khía cạnh nổi bật nhất trong một tình huống tổng thể, thường đứng ở vế câu thứ hai sau khi vế đầu nêu tình huống chung.'],
-   usage:'Phó từ, đứng đầu vế sau: ……，尤其(是) + khía cạnh nổi bật nhất.',
-   collo:['尤其喜欢','尤其是','尤其是那些'],
-   ex_zh:'现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。',ex_py:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.',ex_vn:'Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.',
-   exList:[
-     {zh:'现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。',py:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.',vn:'Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.'},
-     {zh:'您女儿真可爱，长得真像您，尤其是眼睛。',py:'Nín nǚ\'ér zhēn kě\'ài, zhǎng de zhēn xiàng nín, yóuqí shì yǎnjing.',vn:'Con gái anh thật đáng yêu, trông rất giống anh, đặc biệt là đôi mắt.'},
-     {zh:'为了健康，我们应该每年都去医院做一次身体检查，尤其是那些四五十岁的人。',py:'Wèile jiànkāng, wǒmen yīnggāi měinián dōu qù yīyuàn zuò yí cì shēntǐ jiǎnchá, yóuqí shì nàxiē sì-wǔ shí suì de rén.',vn:'Vì sức khỏe, chúng ta nên mỗi năm đều đi bệnh viện khám sức khỏe một lần, đặc biệt là những người bốn năm mươi tuổi.'},
-   ],
-   hanzi:[
-     {c:'尤',p:'yóu',type:'半包围结构 · Bán bao vây',st:4,ord:'尢 bao ngoài → 丶 trong',rad:'尢 (uông)',mean:'đặc biệt, nổi trội',
-      tip:'Chữ mang nghĩa NỔI TRỘI, KHÁC BIỆT so với thông thường, kết hợp 其(cái đó) thành 尤其 = ĐẶC BIỆT LÀ (nhấn mạnh cái nổi bật nhất).',
-      cf:'龙 (lóng – "rồng", không liên quan)',w:'尤其 / 尤为 / 尤其是'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Tôi rất thích thể thao, đặc biệt là bóng đá.',answer:'我特别喜欢运动，尤其是踢足球。',answerPy:'Wǒ tèbié xǐhuan yùndòng, yóuqí shì tī zúqiú.',
-      note:'尤其是 — đặc biệt là.'},
-     {promptLang:'vi',prompt:'Bất kể làm việc gì đều phải chú ý phương pháp, đặc biệt là khi gặp vấn đề khó.',answer:'无论做什么事情，都要注意方法，尤其是遇到难题的时候。',answerPy:'Wúlùn zuò shénme shìqing, dōu yào zhùyì fāngfǎ, yóuqí shì yùdào nántí de shíhou.',
-      note:'尤其是……的时候 kết hợp 方法, ôn lại từ vựng Bài 4.'},
-   ]},
-
-  {n:29,zh:'受到',py:'shòudào',pos:'Động từ',vn:'nhận được, chịu (ảnh hưởng)', hv: 'thụ đáo',em:'📥',lesson:5,
-   explain:['Tiếp nhận, chịu tác động từ bên ngoài (ảnh hưởng, sự yêu thích, sự giúp đỡ...).'],
-   usage:'Động từ, mang tân ngữ trực tiếp: 受到喜爱, 受到影响.',
-   collo:['受到喜爱','受到影响','受到欢迎'],
-   ex_zh:'网上购物能够受到人们的喜爱，原因主要有两个。',ex_py:'Wǎngshang gòuwù nénggòu shòudào rénmen de xǐ\'ài, yuányīn zhǔyào yǒu liǎng ge.',ex_vn:'Mua sắm trên mạng được mọi người yêu thích, nguyên nhân chủ yếu có hai điều.',
-   exList:[
-     {zh:'网上购物能够受到人们的喜爱，原因主要有两个。',py:'Wǎngshang gòuwù nénggòu shòudào rénmen de xǐ\'ài, yuányīn zhǔyào yǒu liǎng ge.',vn:'Mua sắm trên mạng được mọi người yêu thích, nguyên nhân chủ yếu có hai điều.'},
-     {zh:'调查发现：购买我们电脑的人中，有75%是因为受到我们广告的影响。',py:'Diàochá fāxiàn: gòumǎi wǒmen diànnǎo de rén zhōng, yǒu bǎifēnzhī qīshíwǔ shì yīnwèi shòudào wǒmen guǎnggào de yǐngxiǎng.',vn:'Điều tra phát hiện: trong số người mua máy tính của chúng tôi, có 75% là do chịu ảnh hưởng từ quảng cáo của chúng tôi.'},
-     {zh:'这家饭馆的面很受欢迎。',py:'Zhè jiā fànguǎn de miàn hěn shòu huānyíng.',vn:'Món mì của quán ăn này rất được ưa chuộng.'},
-   ],
-   hanzi:[
-     {c:'受',p:'shòu',type:'上下结构 · Trên-dưới',st:8,ord:'爫 trên → 又 dưới',rad:'又 (hựu – tay phải)',mean:'nhận, chịu',
-      tip:'Chữ tượng hình hai bàn tay trao và nhận vật gì đó → mở rộng thành NHẬN, TIẾP NHẬN, kết hợp 到(đạt tới) thành 受到 = NHẬN ĐƯỢC, CHỊU (tác động).',
-      cf:'爱 (ài – "yêu", cũng có 爫 trên)',w:'受到 / 感受 / 接受'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mua sắm trên mạng có thể nhận được rất nhiều sự yêu thích của mọi người, vì nó tiện lợi và rẻ hơn.',answer:'网上购物能够受到很多人的喜爱，因为它方便又便宜。',answerPy:'Wǎngshang gòuwù nénggòu shòudào hěn duō rén de xǐ\'ài, yīnwèi tā fāngbiàn yòu piányi.',
-      note:'受到……的喜爱 kết hợp 购物, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Rất nhiều người mua sản phẩm này là do chịu ảnh hưởng từ quảng cáo trên tivi.',answer:'很多人买这个产品是因为受到电视广告的影响。',answerPy:'Hěn duō rén mǎi zhège chǎnpǐn shì yīnwèi shòudào diànshì guǎnggào de yǐngxiǎng.',
-      note:'受到……的影响 kết hợp 广告, ôn lại từ vựng của bài.'},
-   ]},
-
-  {n:30,zh:'任何',py:'rènhé',pos:'Đại từ',vn:'bất cứ, bất kỳ', hv: 'nhiệm hà',em:'🔘',lesson:5,
-   explain:['Đại từ chỉ định bất kỳ đối tượng nào, không có ngoại lệ.'],
-   usage:'Đại từ, đứng trước danh từ: 任何时间, 任何问题.',
-   collo:['任何时间','任何问题','任何东西'],
-   ex_zh:'人们可以在任何时间上网购买自己喜欢的东西。',ex_py:'Rénmen kěyǐ zài rènhé shíjiān shàngwǎng gòumǎi zìjǐ xǐhuan de dōngxi.',ex_vn:'Mọi người có thể lên mạng mua thứ mình thích vào bất kỳ thời gian nào.',
-   exList:[
-     {zh:'人们可以在任何时间上网购买自己喜欢的东西。',py:'Rénmen kěyǐ zài rènhé shíjiān shàngwǎng gòumǎi zìjǐ xǐhuan de dōngxi.',vn:'Mọi người có thể lên mạng mua thứ mình thích vào bất kỳ thời gian nào.'},
-     {zh:'我把我的手机号写给你，以后遇到任何问题，你都可以和我联系。',py:'Wǒ bǎ wǒ de shǒujī hào xiěgěi nǐ, yǐhòu yùdào rènhé wèntí, nǐ dōu kěyǐ hé wǒ liánxì.',vn:'Tôi viết số điện thoại của tôi cho bạn, sau này gặp bất kỳ vấn đề gì, bạn đều có thể liên hệ với tôi.'},
-     {zh:'如果您有什么特别要求或任何不清楚的地方，请和我们联系。',py:'Rúguǒ nín yǒu shénme tèbié yāoqiú huò rènhé bù qīngchu de dìfang, qǐng hé wǒmen liánxì.',vn:'Nếu anh có yêu cầu đặc biệt gì hoặc bất kỳ chỗ nào chưa rõ, xin liên hệ với chúng tôi.'},
-   ],
-   hanzi:[
-     {c:'任',p:'rèn',type:'左右结构 · Trái-phải',st:6,ord:'亻 (nhân) trái → 壬 phải',rad:'亻 (nhân – người)',mean:'bất kể, để mặc',
-      tip:'Bộ người 亻 + 壬(biểu âm) → NGƯỜI bất kể ai, mở rộng thành BẤT KỂ, kết hợp 何(nào, gì) thành 任何 = BẤT CỨ, BẤT KỲ.',
-      cf:'任 dễ nhầm với 仕 (shì – "làm quan")',w:'任何 / 任务 / 责任'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Mọi người có thể lên mạng mua bất cứ thứ gì mình thích vào bất kỳ thời gian nào, rất tiện lợi.',answer:'人们可以在任何时间上网买自己喜欢的任何东西，非常方便。',answerPy:'Rénmen kěyǐ zài rènhé shíjiān shàngwǎng mǎi zìjǐ xǐhuan de rènhé dōngxi, fēicháng fāngbiàn.',
-      note:'任何 + danh từ (2 lần) — bất kỳ.'},
-     {promptLang:'vi',prompt:'Nếu bạn có bất kỳ câu hỏi nào, đều có thể liên hệ với chúng tôi.',answer:'如果你有任何问题，都可以跟我们联系。',answerPy:'Rúguǒ nǐ yǒu rènhé wèntí, dōu kěyǐ gēn wǒmen liánxì.',
-      note:'任何 + 问题 + 都可以…… — bất kỳ … đều có thể….'},
-   ]},
-
-  {n:31,zh:'寄',py:'jì',pos:'Động từ',vn:'gửi', hv: 'ký',em:'📦',lesson:5,
-   explain:['Chuyển đồ vật/thư từ đến một địa điểm khác thông qua bưu điện/dịch vụ vận chuyển.'],
-   usage:'Động từ, mang tân ngữ + 到 + địa điểm: 寄到办公室.',
-   collo:['寄到办公室','寄到家里','寄快递'],
-   ex_zh:'卖家可以把你买的东西寄到你办公室或者家里，非常方便。',ex_py:'Màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiā li, fēicháng fāngbiàn.',ex_vn:'Người bán có thể gửi đồ bạn mua đến văn phòng hoặc nhà bạn, rất tiện lợi.',
-   exList:[
-     {zh:'卖家可以把你买的东西寄到你办公室或者家里，非常方便。',py:'Màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiā li, fēicháng fāngbiàn.',vn:'Người bán có thể gửi đồ bạn mua đến văn phòng hoặc nhà bạn, rất tiện lợi.'},
-     {zh:'我想把这些照片寄给你。',py:'Wǒ xiǎng bǎ zhèxiē zhàopiàn jìgěi nǐ.',vn:'Tôi muốn gửi những tấm ảnh này cho bạn.'},
-     {zh:'这个包裹已经寄出去了，大概三天能到。',py:'Zhège bāoguǒ yǐjīng jì chuqu le, dàgài sān tiān néng dào.',vn:'Kiện hàng này đã gửi đi rồi, khoảng ba ngày là đến.'},
-   ],
-   hanzi:[
-     {c:'寄',p:'jì',type:'上下结构 · Trên-dưới',st:11,ord:'宀 (miên) trên → 奇 (kỳ) dưới',rad:'宀 (miên – mái nhà)',mean:'gửi, ký gửi',
-      tip:'Bộ mái nhà 宀 (nơi tạm gửi) + 奇(biểu âm) → KÝ GỬI đồ vật đến một nơi khác, mở rộng thành GỬI (thư, hàng hóa).',
-      cf:'奇 (qí – "kỳ lạ", không có bộ 宀")',w:'寄 / 寄给 / 邮寄'},
-   ],
-   checkList:[
-     {promptLang:'vi',prompt:'Người bán có thể gửi đồ bạn mua đến bất kỳ địa chỉ nào, rất tiện lợi.',answer:'卖家可以把你买的东西寄到任何地址，非常方便。',answerPy:'Màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào rènhé dìzhǐ, fēicháng fāngbiàn.',
-      note:'寄到 kết hợp 任何, ôn lại từ vựng của bài.'},
-     {promptLang:'vi',prompt:'Tôi đã gửi tài liệu đến văn phòng của bạn rồi, bạn kiểm tra xem đã nhận được chưa.',answer:'我已经把材料寄到你的办公室了，你看看收到了没有。',answerPy:'Wǒ yǐjīng bǎ cáiliào jìdào nǐ de bàngōngshì le, nǐ kànkan shōudàole méiyǒu.',
-      note:'寄到……办公室 — gửi đến văn phòng.'},
-   ]},
-
-  {n:32,zh:'王静',py:'Wáng Jìng',pos:'Danh từ riêng',vn:'Vương Tĩnh (tên người)', hv: 'Vương Tĩnh',em:'👩',lesson:1,
-   explain:['Tên riêng của nhân vật nữ chính trong các hội thoại của bài.'],
-   usage:'Danh từ riêng chỉ tên người.',
-   collo:['王静说','王静和李进'],
-   ex_zh:'王静在家具店买沙发。',ex_py:'Wáng Jìng zài jiājùdiàn mǎi shāfā.',ex_vn:'Vương Tĩnh mua ghế sô pha ở cửa hàng nội thất.',
-   exList:[
-     {zh:'王静在家具店买沙发。',py:'Wáng Jìng zài jiājùdiàn mǎi shāfā.',vn:'Vương Tĩnh mua ghế sô pha ở cửa hàng nội thất.'},
-   ]},
-
-  {n:33,zh:'李进',py:'Lǐ Jìn',pos:'Danh từ riêng',vn:'Lý Tiến (tên người)', hv: 'Lý Tiến',em:'🧑',lesson:2,
-   explain:['Tên riêng của chồng/bạn王静 trong hội thoại 2 và 3.'],
-   usage:'Danh từ riêng chỉ tên người.',
-   collo:['李进说','王静和李进'],
-   ex_zh:'王静和李进在商场买东西。',ex_py:'Wáng Jìng hé Lǐ Jìn zài shāngchǎng mǎi dōngxi.',ex_vn:'Vương Tĩnh và Lý Tiến mua đồ ở trung tâm mua sắm.',
-   exList:[
-     {zh:'王静和李进在商场买东西。',py:'Wáng Jìng hé Lǐ Jìn zài shāngchǎng mǎi dōngxi.',vn:'Vương Tĩnh và Lý Tiến mua đồ ở trung tâm mua sắm.'},
-   ]},
+  {
+    "n": 1,
+    "zh": "家具",
+    "py": "jiājù",
+    "pos": "Danh từ",
+    "vn": "đồ dùng trong nhà",
+    "hv": "gia cụ",
+    "em": "🛋️",
+    "lesson": 1,
+    "explain": [
+      "Đồ vật dùng để trang trí/sử dụng trong nhà như bàn ghế, tủ, giường..."
+    ],
+    "usage": "Danh từ; thường đi với 买家具, 家具店.",
+    "collo": [
+      "买家具",
+      "家具店",
+      "这些家具"
+    ],
+    "ex_zh": "小姐，您好！您想买什么家具？",
+    "ex_py": "Xiǎojiě, nín hǎo! Nín xiǎng mǎi shénme jiājù?",
+    "ex_vn": "Chào chị! Chị muốn mua đồ nội thất gì?",
+    "exList": [
+      {
+        "zh": "小姐，您好！您想买什么家具？",
+        "py": "Xiǎojiě, nín hǎo! Nín xiǎng mǎi shénme jiājù?",
+        "vn": "Chào chị! Chị muốn mua đồ nội thất gì?"
+      },
+      {
+        "zh": "咱们这些家具都旧了，这次搬家，我们换新的。",
+        "py": "Zánmen zhèxiē jiājù dōu jiù le, zhè cì bān jiā, wǒmen huàn xīn de.",
+        "vn": "Những đồ nội thất này của chúng ta đều cũ rồi, lần chuyển nhà này, chúng ta đổi cái mới."
+      },
+      {
+        "zh": "在网上几乎什么都可以买到，还可以买家具、买手机。",
+        "py": "Zài wǎngshang jīhū shénme dōu kěyǐ mǎidào, hái kěyǐ mǎi jiājù, mǎi shǒujī.",
+        "vn": "Trên mạng gần như cái gì cũng có thể mua được, còn có thể mua đồ nội thất, mua điện thoại."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "具",
+        "p": "jù",
+        "type": "独体字 · Chữ đơn",
+        "st": 8,
+        "ord": "nét liền",
+        "rad": "八 (bát, biến thể)",
+        "mean": "dụng cụ, đồ dùng",
+        "tip": "Chữ tượng hình hai tay bưng một cái đỉnh (vật dụng) → mở rộng thành DỤNG CỤ, ĐỒ DÙNG; kết hợp 家(nhà) thành 家具 = ĐỒ DÙNG TRONG NHÀ.",
+        "cf": "具 dễ nhầm với 真 (zhēn – \"chân thật\")",
+        "w": "家具 / 工具 / 具体"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Trên mạng không những mua được sách, quần áo, mà còn mua được cả nội thất và điện thoại.",
+        "answer": "在网上不但可以买书、买衣服，而且还可以买家具、买手机。",
+        "answerPy": "Zài wǎngshang búdàn kěyǐ mǎi shū, mǎi yīfu, érqiě hái kěyǐ mǎi jiājù, mǎi shǒujī.",
+        "note": "Vế sau thêm 还 để nhấn mức tăng tiến.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Món nội thất này không những chất lượng tốt, mà giá cả cũng phải chăng.",
+        "answer": "这个家具不但质量很好，而且价格也合适。",
+        "answerPy": "Zhège jiājù búdàn zhìliàng hěn hǎo, érqiě jiàgé yě héshì.",
+        "note": "质量 và 价格 là cặp từ hay đi cùng nhau khi nói về hàng hóa.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买家具",
+        "py": "mǎi jiājù",
+        "vn": "mua đồ nội thất"
+      },
+      {
+        "zh": "家具店",
+        "py": "jiājù diàn",
+        "vn": "cửa hàng nội thất"
+      },
+      {
+        "zh": "这些家具",
+        "py": "zhèxiē jiājù",
+        "vn": "những món nội thất này"
+      },
+      {
+        "zh": "家具的样子",
+        "py": "jiājù de yàngzi",
+        "vn": "kiểu dáng nội thất"
+      },
+      {
+        "zh": "一套家具",
+        "py": "yí tào jiājù",
+        "vn": "một bộ nội thất"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "买 / 换 + 家具",
+        "m": "Mua / đổi đồ nội thất"
+      },
+      {
+        "s": "一套 + 家具",
+        "m": "Một bộ nội thất — dùng lượng từ 套"
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "zh": "沙发",
+    "py": "shāfā",
+    "pos": "Danh từ",
+    "vn": "ghế sô pha",
+    "hv": "sa phát",
+    "em": "🛋️",
+    "lesson": 1,
+    "explain": [
+      "Loại ghế ngồi/nằm êm, có đệm, thường đặt trong phòng khách."
+    ],
+    "usage": "Danh từ; thường đi với 买沙发, 这个沙发.",
+    "collo": [
+      "买沙发",
+      "这个沙发",
+      "沙发的颜色"
+    ],
+    "ex_zh": "谢谢，我想买沙发。",
+    "ex_py": "Xièxie, wǒ xiǎng mǎi shāfā.",
+    "ex_vn": "Cảm ơn, tôi muốn mua ghế sô pha.",
+    "exList": [
+      {
+        "zh": "谢谢，我想买沙发。",
+        "py": "Xièxie, wǒ xiǎng mǎi shāfā.",
+        "vn": "Cảm ơn, tôi muốn mua ghế sô pha."
+      },
+      {
+        "zh": "您看这个沙发怎么样？现在正在打折，比平时便宜了一千块。",
+        "py": "Nín kàn zhège shāfā zěnmeyàng? Xiànzài zhèngzài dǎzhé, bǐ píngshí piányile yìqiān kuài.",
+        "vn": "Anh xem chiếc ghế sô pha này thế nào? Hiện đang giảm giá, rẻ hơn bình thường một nghìn tệ."
+      },
+      {
+        "zh": "上个星期光买沙发就花了两千多。",
+        "py": "Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.",
+        "vn": "Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "沙",
+        "p": "shā",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "氵 (thủy) trái → 少 (thiểu) phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "cát",
+        "tip": "Bộ nước 氵 + 少(ít, biểu âm) → hạt CÁT nhỏ mịn theo dòng nước; 沙发 là từ mượn âm (phiên âm \"sofa\" tiếng Anh).",
+        "cf": "沙 dễ nhầm với 妙 (miào – \"tuyệt diệu\")",
+        "w": "沙发 / 沙子 / 黄沙"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc sô pha xanh này không những trông đẹp, mà giá cũng phải chăng, lấy cái này đi.",
+        "answer": "这个蓝色的沙发不但看上去不错，而且价格也合适，就要这个吧。",
+        "answerPy": "Zhège lánsè de shāfā búdàn kàn shangqu búcuò, érqiě jiàgé yě héshì, jiù yào zhège ba.",
+        "note": "看上去 — nhìn bề ngoài thì thấy thế nào.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn tệ.",
+        "answer": "上个星期光买沙发就花了两千多块。",
+        "answerPy": "Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō kuài.",
+        "note": "光……就…… — chỉ riêng … đã….",
+        "pair": "光……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买沙发",
+        "py": "mǎi shāfā",
+        "vn": "mua ghế sô pha"
+      },
+      {
+        "zh": "这个沙发",
+        "py": "zhège shāfā",
+        "vn": "chiếc sô pha này"
+      },
+      {
+        "zh": "沙发的颜色",
+        "py": "shāfā de yánsè",
+        "vn": "màu của sô pha"
+      },
+      {
+        "zh": "坐在沙发上",
+        "py": "zuò zài shāfā shàng",
+        "vn": "ngồi trên sô pha"
+      },
+      {
+        "zh": "蓝色的沙发",
+        "py": "lán sè de shāfā",
+        "vn": "sô pha màu xanh"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "坐在 + 沙发 + 上",
+        "m": "Ngồi trên ghế sô pha"
+      },
+      {
+        "s": "sắc màu + 的 + 沙发",
+        "m": "Sô pha màu gì"
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "zh": "打折",
+    "py": "dǎzhé",
+    "pos": "Động từ",
+    "vn": "giảm giá",
+    "hv": "đả chiết",
+    "em": "🏷️",
+    "lesson": 1,
+    "explain": [
+      "Bán hàng với giá thấp hơn giá gốc theo một tỷ lệ phần trăm."
+    ],
+    "usage": "Động từ ly hợp; thường đi với 正在打折, 商场打折.",
+    "collo": [
+      "正在打折",
+      "商场打折",
+      "质量打折"
+    ],
+    "ex_zh": "现在正在打折，比平时便宜了一千块。",
+    "ex_py": "Xiànzài zhèngzài dǎzhé, bǐ píngshí piányile yìqiān kuài.",
+    "ex_vn": "Hiện đang giảm giá, rẻ hơn bình thường một nghìn tệ.",
+    "exList": [
+      {
+        "zh": "现在正在打折，比平时便宜了一千块。",
+        "py": "Xiànzài zhèngzài dǎzhé, bǐ píngshí piányile yìqiān kuài.",
+        "vn": "Hiện đang giảm giá, rẻ hơn bình thường một nghìn tệ."
+      },
+      {
+        "zh": "您放心，质量肯定不\"打折\"。",
+        "py": "Nín fàngxīn, zhìliàng kěndìng bù \"dǎzhé\".",
+        "vn": "Anh yên tâm, chất lượng chắc chắn không \"giảm giá\" (không bị kém đi)."
+      },
+      {
+        "zh": "现在正是换季，好多商店都在打折。",
+        "py": "Xiànzài zhèng shì huànjì, hǎoduō shāngdiàn dōu zài dǎzhé.",
+        "vn": "Bây giờ đúng lúc chuyển mùa, rất nhiều cửa hàng đều đang giảm giá."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "折",
+        "p": "zhé",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "扌 (thủ) trái → 斤 (cân) phải",
+        "rad": "扌 (thủ – tay)",
+        "mean": "bẻ gãy, chiết khấu",
+        "tip": "Bộ tay 扌 + 斤(rìu, cắt) → dùng tay BẺ GÃY, mở rộng thành CHIẾT KHẤU (bẻ giảm giá xuống), kết hợp 打(đánh, làm) thành 打折 = GIẢM GIÁ.",
+        "cf": "拆 (chāi – \"tháo dỡ\", bộ 扌 + 斥\")",
+        "w": "打折 / 折扣 / 打八折"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Anh yên tâm, chất lượng của chiếc sô pha này chắc chắn tốt, hơn nữa hiện đang giảm giá.",
+        "answer": "您放心，这个沙发的质量肯定好，而且现在正在打折。",
+        "answerPy": "Nín fàngxīn, zhège shāfā de zhìliàng kěndìng hǎo, érqiě xiànzài zhèngzài dǎzhé.",
+        "note": "肯定 + tính từ — chắc chắn, ôn lại điểm ngữ pháp của bài.",
+        "pair": "……，而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì bây giờ đang đúng lúc chuyển mùa, nên rất nhiều cửa hàng đều giảm giá.",
+        "answer": "因为现在正是换季，所以好多商店都在打折。",
+        "answerPy": "Yīnwèi xiànzài zhèng shì huànjì, suǒyǐ hǎoduō shāngdiàn dōu zài dǎzhé.",
+        "note": "在 + V — đang làm gì; 打折 là từ ly hợp: 打八折.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "正在打折",
+        "py": "zhèngzài dǎzhé",
+        "vn": "đang giảm giá"
+      },
+      {
+        "zh": "商场打折",
+        "py": "shāngchǎng dǎzhé",
+        "vn": "trung tâm thương mại giảm giá"
+      },
+      {
+        "zh": "打七五折",
+        "py": "dǎ qīwǔ zhé",
+        "vn": "giảm 25% (còn 75%)"
+      },
+      {
+        "zh": "打折活动",
+        "py": "dǎzhé huódòng",
+        "vn": "chương trình giảm giá"
+      },
+      {
+        "zh": "不打折",
+        "py": "bù dǎzhé",
+        "vn": "không giảm giá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "打 + số + 折",
+        "m": "Giảm còn bao nhiêu phần mười — 打八折 = còn 80%"
+      },
+      {
+        "s": "✗ 打折了20% → ✓ 打八折",
+        "m": "Tiếng Trung nói phần CÒN LẠI, không nói phần giảm"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "zh": "价格",
+    "py": "jiàgé",
+    "pos": "Danh từ",
+    "vn": "giá cả",
+    "hv": "giá cách",
+    "em": "🏷️",
+    "lesson": 1,
+    "explain": [
+      "Số tiền cần trả để mua một món hàng."
+    ],
+    "usage": "Danh từ; thường đi với 价格还可以, 价格合适.",
+    "collo": [
+      "价格还可以",
+      "价格合适",
+      "价格太高"
+    ],
+    "ex_zh": "价格还可以，就是不知道质量有没有保证。",
+    "ex_py": "Jiàgé hái kěyǐ, jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.",
+    "ex_vn": "Giá cả cũng được, chỉ là không biết chất lượng có được đảm bảo không.",
+    "exList": [
+      {
+        "zh": "价格还可以，就是不知道质量有没有保证。",
+        "py": "Jiàgé hái kěyǐ, jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.",
+        "vn": "Giá cả cũng được, chỉ là không biết chất lượng có được đảm bảo không."
+      },
+      {
+        "zh": "买衣服只考虑价格当然不好。",
+        "py": "Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo.",
+        "vn": "Mua quần áo chỉ cân nhắc giá cả đương nhiên không tốt."
+      },
+      {
+        "zh": "网上的东西很多，而且比去商店买便宜，这是吸引人们购买的主要原因。",
+        "py": "Wǎngshang de dōngxi hěn duō, érqiě bǐ qù shāngdiàn mǎi piányi, zhè shì xīyǐn rénmen gòumǎi de zhǔyào yuányīn.",
+        "vn": "Đồ trên mạng rất nhiều, hơn nữa rẻ hơn ra cửa hàng mua, đây là nguyên nhân chính thu hút mọi người mua."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "格",
+        "p": "gé",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "木 (mộc) trái → 各 (các) phải",
+        "rad": "木 (mộc – cây)",
+        "mean": "khuôn khổ, tiêu chuẩn",
+        "tip": "Bộ cây 木 (khung gỗ) + 各(mỗi loại) → KHUÔN KHỔ đo lường mỗi loại, kết hợp 价(giá trị) thành 价格 = GIÁ CẢ (mức giá theo khuôn khổ quy định).",
+        "cf": "格 dễ nhầm với 洛 (luò – địa danh, bộ 氵\")",
+        "w": "价格 / 格子 / 性格"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Giá cả của chiếc sô pha này khá phù hợp, nhưng tôi không biết chất lượng có được đảm bảo không.",
+        "answer": "这个沙发的价格比较合适，但是我不知道质量有没有保证。",
+        "answerPy": "Zhège shāfā de jiàgé bǐjiào héshì, dànshì wǒ bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.",
+        "note": "价格合适 kết hợp 质量/保证, ôn lại từ vựng của bài.",
+        "pair": "……，但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đối với tôi mà nói, giá cả không phải là điều quan trọng nhất, chất lượng mới là quan trọng nhất.",
+        "answer": "对我来说，价格并不是最重要的，质量才是最重要的。",
+        "answerPy": "Duì wǒ láishuō, jiàgé bìng bú shì zuì zhòngyào de, zhìliàng cái shì zuì zhòngyào de.",
+        "note": "对……来说 ôn lại điểm ngữ pháp của bài.",
+        "pair": "对……来说……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "价格合适",
+        "py": "jiàgé héshì",
+        "vn": "giá cả phù hợp"
+      },
+      {
+        "zh": "价格太高",
+        "py": "jiàgé tài gāo",
+        "vn": "giá quá cao"
+      },
+      {
+        "zh": "价格还可以",
+        "py": "jiàgé hái kěyǐ",
+        "vn": "giá cũng được"
+      },
+      {
+        "zh": "降低价格",
+        "py": "jiàngdī jiàgé",
+        "vn": "hạ giá"
+      },
+      {
+        "zh": "价格和质量",
+        "py": "jiàgé hé zhìliàng",
+        "vn": "giá cả và chất lượng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "价格 + 高 / 低 / 合适",
+        "m": "Giá cao / thấp / phải chăng"
+      },
+      {
+        "s": "降低 + 价格",
+        "m": "Hạ giá xuống"
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "zh": "质量",
+    "py": "zhìliàng",
+    "pos": "Danh từ",
+    "vn": "chất lượng",
+    "hv": "chất lượng",
+    "em": "✅",
+    "lesson": 1,
+    "explain": [
+      "Mức độ tốt/xấu của một sản phẩm hoặc dịch vụ."
+    ],
+    "usage": "Danh từ; thường đi với 质量有保证, 质量好.",
+    "collo": [
+      "质量有保证",
+      "质量好",
+      "质量不好"
+    ],
+    "ex_zh": "就是不知道质量有没有保证。",
+    "ex_py": "Jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.",
+    "ex_vn": "Chỉ là không biết chất lượng có được đảm bảo không.",
+    "exList": [
+      {
+        "zh": "就是不知道质量有没有保证。",
+        "py": "Jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.",
+        "vn": "Chỉ là không biết chất lượng có được đảm bảo không."
+      },
+      {
+        "zh": "您放心，质量肯定不\"打折\"。",
+        "py": "Nín fàngxīn, zhìliàng kěndìng bù \"dǎzhé\".",
+        "vn": "Anh yên tâm, chất lượng chắc chắn không \"giảm giá\"."
+      },
+      {
+        "zh": "衣服的质量要好，而且又不能太贵。",
+        "py": "Yīfu de zhìliàng yào hǎo, érqiě yòu bù néng tài guì.",
+        "vn": "Chất lượng quần áo phải tốt, hơn nữa lại không thể quá đắt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "量",
+        "p": "liàng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 12,
+        "ord": "日 trên → 里(biến thể) dưới",
+        "rad": "里 (lý – dặm)",
+        "mean": "đo lường, mức độ",
+        "tip": "Chữ mô phỏng dụng cụ ĐO LƯỜNG → mở rộng thành MỨC ĐỘ, kết hợp 质(bản chất) thành 质量 = CHẤT LƯỢNG (mức độ tốt về bản chất).",
+        "cf": "量 khi đọc \"liáng\" nghĩa là hành động ĐO (量身高)",
+        "w": "质量 / 数量 / 力量"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đồ nội thất chất lượng phải tốt, hơn nữa lại không thể quá đắt.",
+        "answer": "家具的质量要好，而且又不能太贵。",
+        "answerPy": "Jiājù de zhìliàng yào hǎo, érqiě yòu bù néng tài guì.",
+        "note": "质量要好 kết hợp 家具, ôn lại từ vựng của bài.",
+        "pair": "……，而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Anh yên tâm, chiếc sô pha này không những chất lượng chắc chắn được bảo đảm, mà còn là kiểu thịnh hành nhất năm nay.",
+        "answer": "您放心，这个沙发不但质量肯定有保证，而且是今年最流行的样子。",
+        "answerPy": "Nín fàngxīn, zhège shāfā búdàn zhìliàng kěndìng yǒu bǎozhèng, érqiě shì jīnnián zuì liúxíng de yàngzi.",
+        "note": "肯定 ở đây là phó từ, đứng trước 有.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "质量好",
+        "py": "zhìliàng hǎo",
+        "vn": "chất lượng tốt"
+      },
+      {
+        "zh": "质量不好",
+        "py": "zhìliàng bù hǎo",
+        "vn": "chất lượng kém"
+      },
+      {
+        "zh": "质量有保证",
+        "py": "zhìliàng yǒu bǎozhèng",
+        "vn": "chất lượng có bảo đảm"
+      },
+      {
+        "zh": "保证质量",
+        "py": "bǎozhèng zhìliàng",
+        "vn": "bảo đảm chất lượng"
+      },
+      {
+        "zh": "质量和价格",
+        "py": "zhìliàng hé jiàgé",
+        "vn": "chất lượng và giá cả"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "质量 + 好 / 不好",
+        "m": "Chất lượng tốt / kém"
+      },
+      {
+        "s": "质量 + 有保证",
+        "m": "Chất lượng có bảo đảm — 保证 là từ bài 4"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "zh": "肯定",
+    "py": "kěndìng",
+    "pos": "Phó từ/Tính từ",
+    "vn": "chắc chắn, nhất định; xác định, thừa nhận",
+    "hv": "khẳng định",
+    "em": "👍",
+    "lesson": 1,
+    "explain": [
+      "1. (Phó từ) Diễn tả sự chắc chắn, không nghi ngờ.",
+      "2. (Tính từ) Xác định, rõ ràng; hoặc thừa nhận, tích cực (đối lập với phủ định)."
+    ],
+    "usage": "Phó từ: 肯定 + động từ/tính từ (肯定不好); tính từ: 肯定的 + danh từ, hoặc 是肯定的.",
+    "collo": [
+      "肯定不好",
+      "肯定的事",
+      "回答是肯定的"
+    ],
+    "ex_zh": "您放心，质量肯定不\"打折\"。",
+    "ex_py": "Nín fàngxīn, zhìliàng kěndìng bù \"dǎzhé\".",
+    "ex_vn": "Anh yên tâm, chất lượng chắc chắn không \"giảm giá\".",
+    "exList": [
+      {
+        "zh": "您放心，质量肯定不\"打折\"。",
+        "py": "Nín fàngxīn, zhìliàng kěndìng bù \"dǎzhé\".",
+        "vn": "Anh yên tâm, chất lượng chắc chắn không \"giảm giá\"."
+      },
+      {
+        "zh": "每天喝一点儿葡萄酒，对身体是有好处的。但是不能喝太多，喝太多酒肯定对身体不好。",
+        "py": "Měitiān hē yìdiǎnr pútaojiǔ, duì shēntǐ shì yǒu hǎochù de. Dànshì bù néng hē tài duō, hē tài duō jiǔ kěndìng duì shēntǐ bù hǎo.",
+        "vn": "Mỗi ngày uống một chút rượu vang, có lợi cho sức khỏe. Nhưng không được uống quá nhiều, uống quá nhiều rượu chắc chắn không tốt cho sức khỏe."
+      },
+      {
+        "zh": "不能肯定的事、没发生过的事，最好不要说。",
+        "py": "Bù néng kěndìng de shì, méi fāshēngguo de shì, zuìhǎo búyào shuō.",
+        "vn": "Việc không thể xác định, việc chưa từng xảy ra, tốt nhất đừng nói."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "肯",
+        "p": "kěn",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "止 trên → 月 (nhục) dưới",
+        "rad": "月 (nhục – thịt)",
+        "mean": "bằng lòng, chắc chắn",
+        "tip": "Chữ mô phỏng phần THỊT dính chặt vào xương → mở rộng thành BẰNG LÒNG, CHẮC CHẮN (gắn chặt với ý kiến); kết hợp 定(cố định) thành 肯定 = CHẮC CHẮN, XÁC ĐỊNH.",
+        "cf": "肯 dễ nhầm với 冒 (mào – \"liều lĩnh\")",
+        "w": "肯定 / 肯 / 不肯"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Công viên đó có thể đóng cửa lúc 6 giờ, cũng có thể 6 rưỡi; bất kể là mấy giờ, chúng ta cứ đi sớm một chút.",
+        "answer": "那个公园可能六点关门，也可能六点半关门，不管是几点，我们都早点儿去吧。",
+        "answerPy": "Nàge gōngyuán kěnéng liù diǎn guānmén, yě kěnéng liù diǎn bàn guānmén, bùguǎn shì jǐ diǎn, wǒmen dōu zǎodiǎnr qù ba.",
+        "note": "不管 + từ nghi vấn (几点)，都…… — bất kể thế nào cũng vậy.",
+        "pair": "不管……都……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bạn yên tâm, chỉ cần xuất phát sớm một chút là chúng ta chắc chắn không đến muộn.",
+        "answer": "你放心，只要早点儿出发，我们就肯定不会迟到。",
+        "answerPy": "Nǐ fàngxīn, zhǐyào zǎodiǎnr chūfā, wǒmen jiù kěndìng bú huì chídào.",
+        "note": "肯定 ở đây là phó từ — đứng trước động từ.",
+        "pair": "只要……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "肯定不会",
+        "py": "kěndìng bú huì",
+        "vn": "chắc chắn sẽ không"
+      },
+      {
+        "zh": "肯定的事",
+        "py": "kěndìng de shì",
+        "vn": "chuyện chắc chắn"
+      },
+      {
+        "zh": "不能肯定",
+        "py": "bù néng kěndìng",
+        "vn": "không thể khẳng định"
+      },
+      {
+        "zh": "肯定不好",
+        "py": "kěndìng bù hǎo",
+        "vn": "chắc chắn không tốt"
+      },
+      {
+        "zh": "回答是肯定的",
+        "py": "huídá shì kěndìng de",
+        "vn": "câu trả lời là khẳng định"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 肯定 + V (phó từ)",
+        "m": "Ai đó chắc chắn sẽ làm gì"
+      },
+      {
+        "s": "不能 + 肯定 (động từ)",
+        "m": "Không dám khẳng định"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "zh": "流行",
+    "py": "liúxíng",
+    "pos": "Động từ/Tính từ",
+    "vn": "được nhiều người ưa chuộng, thịnh hành",
+    "hv": "lưu hành",
+    "em": "✨",
+    "lesson": 1,
+    "explain": [
+      "Được nhiều người yêu thích, sử dụng rộng rãi trong một khoảng thời gian."
+    ],
+    "usage": "Động từ/tính từ; thường đi với 最流行, 流行不流行.",
+    "collo": [
+      "最流行",
+      "流行的样子",
+      "越来越流行"
+    ],
+    "ex_zh": "这种沙发是今年最流行的。",
+    "ex_py": "Zhè zhǒng shāfā shì jīnnián zuì liúxíng de.",
+    "ex_vn": "Loại ghế sô pha này là kiểu được ưa chuộng nhất năm nay.",
+    "exList": [
+      {
+        "zh": "这种沙发是今年最流行的。",
+        "py": "Zhè zhǒng shāfā shì jīnnián zuì liúxíng de.",
+        "vn": "Loại ghế sô pha này là kiểu được ưa chuộng nhất năm nay."
+      },
+      {
+        "zh": "对我来说，衣服的样子流行不流行并不是很重要。",
+        "py": "Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.",
+        "vn": "Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không phải là điều quan trọng."
+      },
+      {
+        "zh": "现在网上购物变得越来越流行了。",
+        "py": "Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le.",
+        "vn": "Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "流",
+        "p": "liú",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "氵 (thủy) trái → 㐬 phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "chảy, lan truyền",
+        "tip": "Bộ nước 氵 (dòng chảy) + 㐬(biểu âm) → dòng nước CHẢY LAN, mở rộng thành LAN TRUYỀN, kết hợp 行(đi, phổ biến) thành 流行 = THỊNH HÀNH.",
+        "cf": "流 dễ nhầm với 沉 (chén – \"chìm\")",
+        "w": "流行 / 流水 / 交流"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bây giờ mua sắm trên mạng ngày càng thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.",
+        "answer": "现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。",
+        "answerPy": "Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.",
+        "note": "越来越流行 kết hợp 尤其, ôn lại từ vựng của bài.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đối với tôi mà nói, kiểu dáng có thịnh hành hay không không quan trọng, quan trọng là mặc vào có thoải mái không.",
+        "answer": "对我来说，样子流行不流行不重要，重要的是穿着舒不舒服。",
+        "answerPy": "Duì wǒ láishuō, yàngzi liúxíng bu liúxíng bú zhòngyào, zhòngyào de shì chuānzhe shū bu shūfu.",
+        "note": "对……来说 ôn lại điểm ngữ pháp của bài.",
+        "pair": "对……来说……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "最流行",
+        "py": "zuì liúxíng",
+        "vn": "thịnh hành nhất"
+      },
+      {
+        "zh": "流行的样子",
+        "py": "liúxíng de yàngzi",
+        "vn": "kiểu dáng thịnh hành"
+      },
+      {
+        "zh": "越来越流行",
+        "py": "yuè lái yuè liúxíng",
+        "vn": "ngày càng thịnh hành"
+      },
+      {
+        "zh": "流行音乐",
+        "py": "liúxíng yīnyuè",
+        "vn": "nhạc thịnh hành"
+      },
+      {
+        "zh": "很流行",
+        "py": "hěn liúxíng",
+        "vn": "rất được ưa chuộng"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 很 / 最 + 流行",
+        "m": "Cái gì đó rất / thịnh hành nhất"
+      },
+      {
+        "s": "越来越 + 流行",
+        "m": "Ngày càng được ưa chuộng"
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "zh": "顺便",
+    "py": "shùnbiàn",
+    "pos": "Phó từ",
+    "vn": "nhân tiện",
+    "hv": "thuận tiện",
+    "em": "👉",
+    "lesson": 2,
+    "explain": [
+      "Nhân lúc làm việc gì đó, tiện thể làm thêm việc khác."
+    ],
+    "usage": "Phó từ, đứng trước động từ: 顺便买, 顺便看看.",
+    "collo": [
+      "顺便买",
+      "顺便看看",
+      "顺便问一下"
+    ],
+    "ex_zh": "商场正好打折，我们顺便也买一台吧。",
+    "ex_py": "Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+    "ex_vn": "Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi.",
+    "exList": [
+      {
+        "zh": "商场正好打折，我们顺便也买一台吧。",
+        "py": "Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+        "vn": "Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi."
+      },
+      {
+        "zh": "他搬新家了，晚上请老同学们去家里吃饭，顺便看看他的新房子。",
+        "py": "Tā bān xīn jiā le, wǎnshang qǐng lǎo tóngxuémen qù jiā li chīfàn, shùnbiàn kànkan tā de xīn fángzi.",
+        "vn": "Anh ấy chuyển nhà mới rồi, tối nay mời các bạn học cũ đến nhà ăn cơm, nhân tiện xem qua nhà mới của anh ấy."
+      },
+      {
+        "zh": "你去超市的时候，顺便帮我买瓶葡萄酒吧。",
+        "py": "Nǐ qù chāoshì de shíhou, shùnbiàn bāng wǒ mǎi píng pútaojiǔ ba.",
+        "vn": "Lúc bạn đi siêu thị, nhân tiện mua giúp tôi chai rượu vang nhé."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "顺",
+        "p": "shùn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 9,
+        "ord": "川 (xuyên) trái → 页 (hiệt) phải",
+        "rad": "页 (hiệt – đầu)",
+        "mean": "thuận theo",
+        "tip": "Bộ 页(hướng, đầu) + 川(dòng chảy thuận) → THUẬN THEO dòng chảy, kết hợp 便(tiện lợi) thành 顺便 = NHÂN TIỆN, THUẬN TIỆN LÀM LUÔN.",
+        "cf": "须 (xū – \"cần phải\")",
+        "w": "顺便 / 顺利 / 顺序"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đã tiện đường ghé siêu thị thì chúng ta mua thêm hai chai rượu vang luôn đi.",
+        "answer": "既然顺便去超市，我们就多买两瓶葡萄酒吧。",
+        "answerPy": "Jìrán shùnbiàn qù chāoshì, wǒmen jiù duō mǎi liǎng píng pútaojiǔ ba.",
+        "note": "既然……就…… — đã có sự thật A rồi thì làm B.",
+        "pair": "既然……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trung tâm thương mại đúng lúc đang giảm giá tủ lạnh, nên chúng ta tiện thể mua một cái mới đi.",
+        "answer": "因为商场正好在打折冰箱，所以我们顺便买个新的吧。",
+        "answerPy": "Yīnwèi shāngchǎng zhènghǎo zài dǎzhé bīngxiāng, suǒyǐ wǒmen shùnbiàn mǎi ge xīn de ba.",
+        "note": "正好 là từ bài 2 — vừa đúng dịp.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "顺便买",
+        "py": "shùnbiàn mǎi",
+        "vn": "tiện thể mua"
+      },
+      {
+        "zh": "顺便看看",
+        "py": "shùnbiàn kànkàn",
+        "vn": "tiện thể xem thử"
+      },
+      {
+        "zh": "顺便问一下",
+        "py": "shùnbiàn wèn yíxià",
+        "vn": "tiện thể hỏi một chút"
+      },
+      {
+        "zh": "顺便带给他",
+        "py": "shùnbiàn dài gěi tā",
+        "vn": "tiện thể mang cho anh ấy"
+      },
+      {
+        "zh": "顺便去超市",
+        "py": "shùnbiàn qù chāoshì",
+        "vn": "tiện đường ghé siêu thị"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 顺便 + V",
+        "m": "Nhân tiện làm gì (việc phụ, đi kèm việc chính)"
+      },
+      {
+        "s": "✗ 我顺便去买菜，别的事没做 → 顺便 phải có việc CHÍNH đi trước"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "zh": "台",
+    "py": "tái",
+    "pos": "Lượng từ",
+    "vn": "cái, chiếc (máy móc)",
+    "hv": "đài",
+    "em": "💻",
+    "lesson": 2,
+    "explain": [
+      "Lượng từ dùng cho máy móc, thiết bị điện tử như tủ lạnh, máy tính, tivi..."
+    ],
+    "usage": "Lượng từ; đi với danh từ máy móc: 一台冰箱, 一台电脑.",
+    "collo": [
+      "一台冰箱",
+      "一台电脑",
+      "买一台"
+    ],
+    "ex_zh": "商场正好打折，我们顺便也买一台吧。",
+    "ex_py": "Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+    "ex_vn": "Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi.",
+    "exList": [
+      {
+        "zh": "商场正好打折，我们顺便也买一台吧。",
+        "py": "Shāngchǎng zhènghǎo dǎzhé, wǒmen shùnbiàn yě mǎi yì tái ba.",
+        "vn": "Trung tâm mua sắm đúng lúc giảm giá, chúng ta nhân tiện mua một cái luôn đi."
+      },
+      {
+        "zh": "我想换台笔记本电脑，你知道哪种好吗？",
+        "py": "Wǒ xiǎng huàn tái bǐjìběn diànnǎo, nǐ zhīdào nǎ zhǒng hǎo ma?",
+        "vn": "Tôi muốn đổi một cái máy tính xách tay, bạn biết loại nào tốt không?"
+      },
+      {
+        "zh": "家里有一台新买的电视。",
+        "py": "Jiā li yǒu yì tái xīn mǎi de diànshì.",
+        "vn": "Trong nhà có một cái ti vi mới mua."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "台",
+        "p": "tái",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 5,
+        "ord": "厶 trên → 口 dưới",
+        "rad": "口 (khẩu)",
+        "mean": "đài, bệ; lượng từ máy móc",
+        "tip": "Chữ giản thể mô phỏng cái ĐÀI/BỆ cao → mở rộng thành lượng từ đếm MÁY MÓC đặt trên bệ (tivi, tủ lạnh, máy tính).",
+        "cf": "台 dễ nhầm với 苔 (tái – \"rêu\", bộ 艹\")",
+        "w": "一台 / 电台 / 台风"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tủ lạnh nhà chúng ta thực sự cũ quá rồi, vẫn nên mua một cái mới thôi.",
+        "answer": "咱家的冰箱实在太旧了，还是买一台新的吧。",
+        "answerPy": "Zán jiā de bīngxiāng shízài tài jiù le, háishi mǎi yì tái xīn de ba.",
+        "note": "一台 + danh từ máy móc, ôn lại từ vựng của bài.",
+        "pair": "……，还是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì máy tính xách tay của tôi thật sự quá cũ rồi, nên tôi muốn đổi một cái mới, bạn giới thiệu giúp tôi được không?",
+        "answer": "因为我的笔记本电脑实在太旧了，所以我想换一台新的，你可以给我介绍一下吗？",
+        "answerPy": "Yīnwèi wǒ de bǐjìběn diànnǎo shízài tài jiù le, suǒyǐ wǒ xiǎng huàn yì tái xīn de, nǐ kěyǐ gěi wǒ jièshào yíxià ma?",
+        "note": "一台 — lượng từ dành cho máy móc, thiết bị.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "一台冰箱",
+        "py": "yì tái bīngxiāng",
+        "vn": "một cái tủ lạnh"
+      },
+      {
+        "zh": "一台电脑",
+        "py": "yì tái diànnǎo",
+        "vn": "một cái máy tính"
+      },
+      {
+        "zh": "买一台",
+        "py": "mǎi yì tái",
+        "vn": "mua một cái"
+      },
+      {
+        "zh": "两台空调",
+        "py": "liǎng tái kōngtiáo",
+        "vn": "hai cái máy lạnh"
+      },
+      {
+        "zh": "这台机器",
+        "py": "zhè tái jīqì",
+        "vn": "cái máy này"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "一 + 台 + máy móc",
+        "m": "Lượng từ cho máy móc, thiết bị"
+      },
+      {
+        "s": "✗ 一个冰箱 → ✓ 一台冰箱",
+        "m": "Đồ điện máy dùng lượng từ 台"
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "zh": "光",
+    "py": "guāng",
+    "pos": "Phó từ",
+    "vn": "chỉ (riêng)",
+    "hv": "quang",
+    "em": "☝️",
+    "lesson": 2,
+    "explain": [
+      "Chỉ, riêng một việc/khoản nào đó (không tính những cái khác), thường kết hợp 就 ở vế sau."
+    ],
+    "usage": "光 + danh từ/động từ + 就……: 光买沙发就花了两千多.",
+    "collo": [
+      "光买沙发就",
+      "光……就",
+      "光是"
+    ],
+    "ex_zh": "上个星期光买沙发就花了两千多。",
+    "ex_py": "Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.",
+    "ex_vn": "Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn.",
+    "exList": [
+      {
+        "zh": "上个星期光买沙发就花了两千多。",
+        "py": "Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.",
+        "vn": "Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn."
+      },
+      {
+        "zh": "光说不练是没有用的，得真正去做。",
+        "py": "Guāng shuō bú liàn shì méiyǒu yòng de, děi zhēnzhèng qù zuò.",
+        "vn": "Chỉ nói không làm thì vô ích, phải thực sự bắt tay vào làm."
+      },
+      {
+        "zh": "光是这个月，我们家就花了五千多。",
+        "py": "Guāng shì zhège yuè, wǒmen jiā jiù huāle wǔqiān duō.",
+        "vn": "Chỉ riêng tháng này, nhà chúng tôi đã tiêu hơn năm nghìn."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "光",
+        "p": "guāng",
+        "type": "上下结构 · Trên-dưới",
+        "st": 6,
+        "ord": "⺌ trên → 儿 dưới",
+        "rad": "儿 (nhân, biến thể)",
+        "mean": "ánh sáng; chỉ, riêng",
+        "tip": "Chữ tượng hình ÁNH SÁNG tỏa ra từ một điểm → mở rộng nghĩa CHỈ MỘT ĐIỂM DUY NHẤT, mượn làm phó từ CHỈ, RIÊNG.",
+        "cf": "光 dễ nhầm với 先 (xiān – \"trước\")",
+        "w": "光……就…… / 阳光 / 光是"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ riêng mua đồ nội thất tháng này đã tốn hơn ba nghìn tệ.",
+        "answer": "光是这个月买家具就花了三千多块。",
+        "answerPy": "Guāng shì zhège yuè mǎi jiājù jiù huāle sānqiān duō kuài.",
+        "note": "光是……就…… kết hợp 家具, ôn lại từ vựng của bài.",
+        "pair": "光……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu chỉ xem quảng cáo thì không biết được chất lượng thực tế ra sao.",
+        "answer": "如果光看广告，就不知道实际质量怎么样。",
+        "answerPy": "Rúguǒ guāng kàn guǎnggào, jiù bù zhīdào shíjì zhìliàng zěnmeyàng.",
+        "note": "光 ≈ 只 nhưng thiên khẩu ngữ hơn.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "光买沙发就",
+        "py": "guāng mǎi shāfā jiù",
+        "vn": "chỉ riêng mua sô pha đã"
+      },
+      {
+        "zh": "光是",
+        "py": "guāng shì",
+        "vn": "chỉ riêng"
+      },
+      {
+        "zh": "光说不做",
+        "py": "guāng shuō bú zuò",
+        "vn": "chỉ nói không làm"
+      },
+      {
+        "zh": "光……就……",
+        "py": "guāng jiù",
+        "vn": "chỉ riêng… đã…"
+      },
+      {
+        "zh": "光看价格",
+        "py": "guāng kàn jiàgé",
+        "vn": "chỉ nhìn giá"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "光 + V + 就 + số lượng",
+        "m": "Chỉ riêng … đã … (nhấn số lượng lớn)"
+      },
+      {
+        "s": "光 ≈ 只",
+        "m": "光 thiên khẩu ngữ hơn 只"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "zh": "实在",
+    "py": "shízài",
+    "pos": "Phó từ",
+    "vn": "kỳ thực, quả thực",
+    "hv": "thực tại",
+    "em": "💯",
+    "lesson": 2,
+    "explain": [
+      "Diễn tả mức độ thực sự, đúng như vậy, nhấn mạnh tính chân thực."
+    ],
+    "usage": "Phó từ, đứng trước tính từ: 实在太旧了, 实在不容易.",
+    "collo": [
+      "实在太旧了",
+      "实在不容易",
+      "实在对不起"
+    ],
+    "ex_zh": "但是咱家的冰箱实在太旧了，制冷效果也不太好了。",
+    "ex_py": "Dànshì zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le.",
+    "ex_vn": "Nhưng tủ lạnh nhà chúng ta thực sự cũ quá rồi, hiệu quả làm lạnh cũng không tốt lắm nữa.",
+    "exList": [
+      {
+        "zh": "但是咱家的冰箱实在太旧了，制冷效果也不太好了。",
+        "py": "Dànshì zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le.",
+        "vn": "Nhưng tủ lạnh nhà chúng ta thực sự cũ quá rồi, hiệu quả làm lạnh cũng không tốt lắm nữa."
+      },
+      {
+        "zh": "这件事实在对不起，让你久等了。",
+        "py": "Zhè jiàn shì shízài duìbuqǐ, ràng nǐ jiǔ děng le.",
+        "vn": "Việc này thực sự xin lỗi, để bạn đợi lâu rồi."
+      },
+      {
+        "zh": "完全适应一个新的工作实在不容易。",
+        "py": "Wánquán shìyìng yí ge xīn de gōngzuò shízài bù róngyì.",
+        "vn": "Hoàn toàn thích nghi với một công việc mới thực sự không dễ dàng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "实",
+        "p": "shí",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 8,
+        "ord": "宀 (miên) trên → 头 (đầu) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "thực tế, chân thật",
+        "tip": "Bộ mái nhà 宀 (nơi cất giữ của cải THỰC) → mở rộng thành THỰC TẾ, CHÂN THẬT, kết hợp 在(tồn tại) thành 实在 = KỲ THỰC, QUẢ THỰC.",
+        "cf": "实 dễ nhầm với 买 (mǎi – \"mua\")",
+        "w": "实在 / 现实 / 事实"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tủ lạnh nhà chúng ta thực sự cũ quá rồi, vẫn nên mua một cái mới thôi.",
+        "answer": "咱家的冰箱实在太旧了，还是买个新的吧。",
+        "answerPy": "Zán jiā de bīngxiāng shízài tài jiù le, háishi mǎi ge xīn de ba.",
+        "note": "实在 + tính từ — thực sự, ôn lại từ vựng của bài.",
+        "pair": "……，还是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy ai cũng nói kinh doanh dễ kiếm tiền, nhưng thật sự không đơn giản như tôi từng nghĩ.",
+        "answer": "虽然大家都说做生意容易赚钱，但是实在不像我原来想的那么简单。",
+        "answerPy": "Suīrán dàjiā dōu shuō zuò shēngyi róngyì zhuànqián, dànshì shízài bú xiàng wǒ yuánlái xiǎng de nàme jiǎndān.",
+        "note": "做生意, 赚钱, 原来 đều là từ bài 4 — ôn lại trong ngữ cảnh mua bán.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "实在太旧了",
+        "py": "shízài tài jiù le",
+        "vn": "thật sự quá cũ"
+      },
+      {
+        "zh": "实在不容易",
+        "py": "shízài bù róngyì",
+        "vn": "quả thực không dễ"
+      },
+      {
+        "zh": "实在对不起",
+        "py": "shízài duìbuqǐ",
+        "vn": "thành thật xin lỗi"
+      },
+      {
+        "zh": "实在没办法",
+        "py": "shízài méi bànfǎ",
+        "vn": "thật sự không còn cách"
+      },
+      {
+        "zh": "实在太贵",
+        "py": "shízài tài guì",
+        "vn": "quả thực quá đắt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "实在 + Adj / V",
+        "m": "Quả thực …, thật sự … (nhấn mạnh sự thật)"
+      },
+      {
+        "s": "实在 ≠ 实际上",
+        "m": "实在 nhấn mức độ; 实际上 nêu sự thật trái với điều tưởng"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "zh": "制冷",
+    "py": "zhìlěng",
+    "pos": "Động từ",
+    "vn": "làm lạnh, ướp lạnh",
+    "hv": "chế lãnh",
+    "em": "❄️",
+    "lesson": 2,
+    "explain": [
+      "Làm cho nhiệt độ giảm xuống, tạo môi trường lạnh (thường nói về thiết bị điện lạnh)."
+    ],
+    "usage": "Động từ; thường đi với 制冷效果.",
+    "collo": [
+      "制冷效果",
+      "制冷好不好"
+    ],
+    "ex_zh": "制冷效果也不太好了。",
+    "ex_py": "Zhìlěng xiàoguǒ yě bú tài hǎo le.",
+    "ex_vn": "Hiệu quả làm lạnh cũng không tốt lắm nữa.",
+    "exList": [
+      {
+        "zh": "制冷效果也不太好了。",
+        "py": "Zhìlěng xiàoguǒ yě bú tài hǎo le.",
+        "vn": "Hiệu quả làm lạnh cũng không tốt lắm nữa."
+      },
+      {
+        "zh": "这台冰箱制冷效果特别好。",
+        "py": "Zhè tái bīngxiāng zhìlěng xiàoguǒ tèbié hǎo.",
+        "vn": "Cái tủ lạnh này hiệu quả làm lạnh đặc biệt tốt."
+      },
+      {
+        "zh": "夏天买空调要看它的制冷效果怎么样。",
+        "py": "Xiàtiān mǎi kōngtiáo yào kàn tā de zhìlěng xiàoguǒ zěnmeyàng.",
+        "vn": "Mùa hè mua máy lạnh phải xem hiệu quả làm lạnh của nó thế nào."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "冷",
+        "p": "lěng",
+        "type": "左右结构 · Trái-phải",
+        "st": 7,
+        "ord": "冫 (băng) trái → 令 (lệnh) phải",
+        "rad": "冫 (băng – nước đá)",
+        "mean": "lạnh",
+        "tip": "Bộ băng 冫 (nước đá) + 令(biểu âm) → LẠNH LẼO như băng, kết hợp 制(chế tạo) thành 制冷 = LÀM LẠNH.",
+        "cf": "冷 dễ nhầm với 冶 (yě – \"luyện kim\")",
+        "w": "制冷 / 冷藏 / 寒冷"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Cái tủ lạnh này không những làm lạnh kém, mà tiếng ồn cũng rất to, chúng ta đổi cái mới đi.",
+        "answer": "这台冰箱不但制冷效果不太好，而且声音也很大，我们换个新的吧。",
+        "answerPy": "Zhè tái bīngxiāng búdàn zhìlěng xiàoguǒ bú tài hǎo, érqiě shēngyīn yě hěn dà, wǒmen huàn ge xīn de ba.",
+        "note": "Hai vế cùng nêu nhược điểm — nối bằng 不但……而且.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mùa hè càng nóng thì hiệu quả làm lạnh của máy lạnh càng quan trọng.",
+        "answer": "夏天越热，空调的制冷效果就越重要。",
+        "answerPy": "Xiàtiān yuè rè, kōngtiáo de zhìlěng xiàoguǒ jiù yuè zhòngyào.",
+        "note": "Hai vế 越 ở hai mệnh đề, vế sau thêm 就.",
+        "pair": "越……越……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "制冷效果",
+        "py": "zhìlěng xiàoguǒ",
+        "vn": "hiệu quả làm lạnh"
+      },
+      {
+        "zh": "制冷好不好",
+        "py": "zhìlěng hǎo bù hǎo",
+        "vn": "làm lạnh có tốt không"
+      },
+      {
+        "zh": "制冷很快",
+        "py": "zhìlěng hěn kuài",
+        "vn": "làm lạnh rất nhanh"
+      },
+      {
+        "zh": "空调制冷",
+        "py": "kōngtiáo zhìlěng",
+        "vn": "máy lạnh làm lạnh"
+      },
+      {
+        "zh": "制冷效果差",
+        "py": "zhìlěng xiàoguǒ chà",
+        "vn": "hiệu quả làm lạnh kém"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "制冷 + 效果 + 好 / 差",
+        "m": "Hiệu quả làm lạnh tốt / kém"
+      },
+      {
+        "s": "máy + 制冷",
+        "m": "Tủ lạnh, máy lạnh làm lạnh"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "zh": "效果",
+    "py": "xiàoguǒ",
+    "pos": "Danh từ",
+    "vn": "hiệu quả",
+    "hv": "hiệu quả",
+    "em": "📊",
+    "lesson": 2,
+    "explain": [
+      "Kết quả đạt được sau khi thực hiện một hành động/biện pháp."
+    ],
+    "usage": "Danh từ; thường đi với 制冷效果, 效果不错.",
+    "collo": [
+      "制冷效果",
+      "效果不错",
+      "广告效果"
+    ],
+    "ex_zh": "制冷效果也不太好了。",
+    "ex_py": "Zhìlěng xiàoguǒ yě bú tài hǎo le.",
+    "ex_vn": "Hiệu quả làm lạnh cũng không tốt lắm nữa.",
+    "exList": [
+      {
+        "zh": "制冷效果也不太好了。",
+        "py": "Zhìlěng xiàoguǒ yě bú tài hǎo le.",
+        "vn": "Hiệu quả làm lạnh cũng không tốt lắm nữa."
+      },
+      {
+        "zh": "我觉得电影院的效果更好，那儿更吸引我。",
+        "py": "Wǒ juéde diànyǐngyuàn de xiàoguǒ gèng hǎo, nàr gèng xīyǐn wǒ.",
+        "vn": "Tôi thấy hiệu ứng của rạp chiếu phim tốt hơn, ở đó thu hút tôi hơn."
+      },
+      {
+        "zh": "这个方法的效果怎么样？",
+        "py": "Zhège fāngfǎ de xiàoguǒ zěnmeyàng?",
+        "vn": "Hiệu quả của phương pháp này thế nào?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "效",
+        "p": "xiào",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "交 (giao) trái → 攵 (phốc) phải",
+        "rad": "攵 (phốc – hành động)",
+        "mean": "kết quả, hiệu lực",
+        "tip": "Bộ 攵(hành động) + 交(giao thoa, tương tác) → hành động tạo ra KẾT QUẢ, kết hợp 果(quả, kết quả) thành 效果 = HIỆU QUẢ.",
+        "cf": "郊 (jiāo – \"ngoại ô\", bộ 阝\")",
+        "w": "效果 / 有效 / 效率"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần hiệu quả của cách này khá tốt là chúng ta có thể thử xem.",
+        "answer": "只要这个方法的效果不错，我们就可以试试看。",
+        "answerPy": "Zhǐyào zhège fāngfǎ de xiàoguǒ búcuò, wǒmen jiù kěyǐ shìshi kàn.",
+        "note": "方法 là từ bài 4; V + 试试看 — thử xem sao.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cái tủ lạnh này không những chất lượng kém, mà hiệu quả làm lạnh cũng rất tệ.",
+        "answer": "这台冰箱不但质量不好，而且制冷效果也很差。",
+        "answerPy": "Zhè tái bīngxiāng búdàn zhìliàng bù hǎo, érqiě zhìlěng xiàoguǒ yě hěn chà.",
+        "note": "效果 đi với 好 / 差, không đi với 多 / 少.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "效果不错",
+        "py": "xiàoguǒ búcuò",
+        "vn": "hiệu quả khá tốt"
+      },
+      {
+        "zh": "制冷效果",
+        "py": "zhìlěng xiàoguǒ",
+        "vn": "hiệu quả làm lạnh"
+      },
+      {
+        "zh": "广告效果",
+        "py": "guǎnggào xiàoguǒ",
+        "vn": "hiệu quả quảng cáo"
+      },
+      {
+        "zh": "效果很差",
+        "py": "xiàoguǒ hěn chà",
+        "vn": "hiệu quả rất kém"
+      },
+      {
+        "zh": "学习效果",
+        "py": "xuéxí xiàoguǒ",
+        "vn": "hiệu quả học tập"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 的 + 效果 + 好 / 差",
+        "m": "Hiệu quả của cái gì tốt / kém"
+      },
+      {
+        "s": "✗ 效果很多 → ✓ 效果很好",
+        "m": "效果 đi với 好 / 差, không đi với 多 / 少"
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "zh": "现金",
+    "py": "xiànjīn",
+    "pos": "Danh từ",
+    "vn": "tiền mặt",
+    "hv": "hiện kim",
+    "em": "💵",
+    "lesson": 2,
+    "explain": [
+      "Tiền dùng để thanh toán trực tiếp, không qua thẻ hay chuyển khoản."
+    ],
+    "usage": "Danh từ; thường đi với 带现金, 现金不够.",
+    "collo": [
+      "带现金",
+      "现金不够",
+      "用现金"
+    ],
+    "ex_zh": "我带的现金不够，用你的信用卡吧。",
+    "ex_py": "Wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.",
+    "ex_vn": "Tiền mặt tôi mang không đủ, dùng thẻ tín dụng của bạn đi.",
+    "exList": [
+      {
+        "zh": "我带的现金不够，用你的信用卡吧。",
+        "py": "Wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.",
+        "vn": "Tiền mặt tôi mang không đủ, dùng thẻ tín dụng của bạn đi."
+      },
+      {
+        "zh": "现在很多人出门不带现金，都用手机付款。",
+        "py": "Xiànzài hěn duō rén chūmén bú dài xiànjīn, dōu yòng shǒujī fùkuǎn.",
+        "vn": "Bây giờ nhiều người ra ngoài không mang tiền mặt, đều dùng điện thoại để thanh toán."
+      },
+      {
+        "zh": "这家店只收现金，不能刷卡。",
+        "py": "Zhè jiā diàn zhǐ shōu xiànjīn, bù néng shuākǎ.",
+        "vn": "Cửa hàng này chỉ nhận tiền mặt, không quẹt thẻ được."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "现",
+        "p": "xiàn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 8,
+        "ord": "王 (biến thể ngọc) trái → 见 (kiến) phải",
+        "rad": "王 (ngọc, biến thể)",
+        "mean": "hiện tại, hiện có",
+        "tip": "Bộ ngọc 王 (của quý, giá trị) + 见(nhìn thấy) → của cải NHÌN THẤY được ngay, mở rộng thành TIỀN MẶT (现金), HIỆN TẠI.",
+        "cf": "现 dễ nhầm với 环 (huán – \"vòng\")",
+        "w": "现金 / 现在 / 出现"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu tiền mặt tôi mang không đủ mua chiếc sô pha này thì tôi dùng thẻ tín dụng của bạn, được không?",
+        "answer": "如果我带的现金不够买这个沙发，我就用你的信用卡，好吗？",
+        "answerPy": "Rúguǒ wǒ dài de xiànjīn bú gòu mǎi zhège shāfā, wǒ jiù yòng nǐ de xìnyòngkǎ, hǎo ma?",
+        "note": "不够 + V — không đủ để làm gì.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Cửa hàng này tuy không nhận tiền mặt, nhưng có thể quẹt thẻ hoặc thanh toán bằng điện thoại.",
+        "answer": "这家店虽然不收现金，但是可以刷卡或者用手机付款。",
+        "answerPy": "Zhè jiā diàn suīrán bù shōu xiànjīn, dànshì kěyǐ shuākǎ huòzhě yòng shǒujī fùkuǎn.",
+        "note": "或者 dùng trong câu trần thuật; 还是 dùng trong câu hỏi.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "带现金",
+        "py": "dài xiànjīn",
+        "vn": "mang tiền mặt"
+      },
+      {
+        "zh": "现金不够",
+        "py": "xiànjīn bú gòu",
+        "vn": "không đủ tiền mặt"
+      },
+      {
+        "zh": "用现金",
+        "py": "yòng xiànjīn",
+        "vn": "trả bằng tiền mặt"
+      },
+      {
+        "zh": "不收现金",
+        "py": "bù shōu xiànjīn",
+        "vn": "không nhận tiền mặt"
+      },
+      {
+        "zh": "付现金",
+        "py": "fù xiànjīn",
+        "vn": "trả tiền mặt"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "用 / 付 + 现金",
+        "m": "Trả bằng tiền mặt"
+      },
+      {
+        "s": "收 / 不收 + 现金",
+        "m": "Nhận / không nhận tiền mặt"
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "zh": "邀请",
+    "py": "yāoqǐng",
+    "pos": "Động từ",
+    "vn": "mời",
+    "hv": "yêu thỉnh",
+    "em": "✉️",
+    "lesson": 3,
+    "explain": [
+      "Mời ai đó đến tham gia một hoạt động/sự kiện."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 邀请咱们, 邀请去做客.",
+    "collo": [
+      "邀请咱们",
+      "邀请去做客",
+      "受到邀请"
+    ],
+    "ex_zh": "李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？",
+    "ex_py": "Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, gěi tā dài diǎnr shénme lǐwù hǎo ne?",
+    "ex_vn": "Thầy Lý mời chúng ta đến nhà thầy chơi, mang cho thầy chút quà gì thì tốt nhỉ?",
+    "exList": [
+      {
+        "zh": "李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？",
+        "py": "Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, gěi tā dài diǎnr shénme lǐwù hǎo ne?",
+        "vn": "Thầy Lý mời chúng ta đến nhà thầy chơi, mang cho thầy chút quà gì thì tốt nhỉ?"
+      },
+      {
+        "zh": "邀请别人吃饭，最好提前几天联系。",
+        "py": "Yāoqǐng biéren chīfàn, zuìhǎo tíqián jǐ tiān liánxì.",
+        "vn": "Mời người khác ăn cơm, tốt nhất nên liên hệ trước vài ngày."
+      },
+      {
+        "zh": "谢谢你的邀请，我一定会去参加的。",
+        "py": "Xièxie nǐ de yāoqǐng, wǒ yídìng huì qù cānjiā de.",
+        "vn": "Cảm ơn lời mời của bạn, tôi nhất định sẽ đến tham gia."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "邀",
+        "p": "yāo",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 16,
+        "ord": "白+方 trên → 辶 (sước) bao ngoài",
+        "rad": "辶 (sước – đi)",
+        "mean": "mời gọi",
+        "tip": "Bộ 辶(đi, hành động) + 敫(biểu âm) → hành động ĐI MỜI GỌI ai đó, kết hợp 请(mời) thành 邀请 = MỜI.",
+        "cf": "邀 dễ nhầm với 遥 (yáo – \"xa xôi\")",
+        "w": "邀请 / 邀请函 / 受邀"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu muốn mời người khác đi ăn thì tốt nhất nên liên hệ trước vài ngày.",
+        "answer": "如果要邀请别人吃饭，就最好提前几天联系。",
+        "answerPy": "Rúguǒ yào yāoqǐng biéren chīfàn, jiù zuìhǎo tíqián jǐ tiān liánxì.",
+        "note": "提前 và 联系 là từ bài 4 và bài 2.",
+        "pair": "如果……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Thầy Lý đã mời chúng mình đến nhà chơi thì chúng mình nên mang chút quà chứ nhỉ?",
+        "answer": "既然李老师邀请咱们去他家做客，咱们就该带点儿礼物吧？",
+        "answerPy": "Jìrán Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, zánmen jiù gāi dài diǎnr lǐwù ba?",
+        "note": "咱们 là từ bài 3 — bao gồm cả người nghe.",
+        "pair": "既然……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "邀请咱们",
+        "py": "yāoqǐng zánmen",
+        "vn": "mời chúng mình"
+      },
+      {
+        "zh": "邀请去做客",
+        "py": "yāoqǐng qù zuò kè",
+        "vn": "mời đến nhà chơi"
+      },
+      {
+        "zh": "受到邀请",
+        "py": "shòudào yāoqǐng",
+        "vn": "được mời"
+      },
+      {
+        "zh": "邀请朋友",
+        "py": "yāoqǐng péngyou",
+        "vn": "mời bạn bè"
+      },
+      {
+        "zh": "邀请别人吃饭",
+        "py": "yāoqǐng biérén chī fàn",
+        "vn": "mời người khác ăn cơm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "邀请 + ai + V",
+        "m": "Mời ai làm gì"
+      },
+      {
+        "s": "受到 + 邀请",
+        "m": "Được mời — 受到 cũng là từ bài này"
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "zh": "葡萄",
+    "py": "pútao",
+    "pos": "Danh từ",
+    "vn": "quả nho",
+    "hv": "bồ đào",
+    "em": "🍇",
+    "lesson": 3,
+    "explain": [
+      "Loại quả nhỏ, mọc thành chùm, thường dùng để ăn hoặc làm rượu vang."
+    ],
+    "usage": "Danh từ; thường đi với 葡萄酒 (rượu vang).",
+    "collo": [
+      "葡萄酒",
+      "两瓶葡萄酒",
+      "吃葡萄"
+    ],
+    "ex_zh": "他很喜欢葡萄酒，我们就给他买两瓶葡萄酒吧。",
+    "ex_py": "Tā hěn xǐhuan pútaojiǔ, wǒmen jiù gěi tā mǎi liǎng píng pútaojiǔ ba.",
+    "ex_vn": "Thầy rất thích rượu vang, chúng ta mua cho thầy hai chai rượu vang đi.",
+    "exList": [
+      {
+        "zh": "他很喜欢葡萄酒，我们就给他买两瓶葡萄酒吧。",
+        "py": "Tā hěn xǐhuan pútaojiǔ, wǒmen jiù gěi tā mǎi liǎng píng pútaojiǔ ba.",
+        "vn": "Thầy rất thích rượu vang, chúng ta mua cho thầy hai chai rượu vang đi."
+      },
+      {
+        "zh": "每天喝一点儿葡萄酒，对身体是有好处的。",
+        "py": "Měitiān hē yìdiǎnr pútaojiǔ, duì shēntǐ shì yǒu hǎochù de.",
+        "vn": "Mỗi ngày uống một chút rượu vang, có lợi cho sức khỏe."
+      },
+      {
+        "zh": "这些葡萄看起来很新鲜。",
+        "py": "Zhèxiē pútao kàn qǐlai hěn xīnxiān.",
+        "vn": "Những quả nho này trông rất tươi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "萄",
+        "p": "táo",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "艹 (thảo) trên → 匋 dưới",
+        "rad": "艹 (thảo – cỏ)",
+        "mean": "(dùng trong từ 葡萄)",
+        "tip": "Bộ cỏ 艹 (thực vật) + 匋(biểu âm) → chỉ loại CÂY LEO có quả; 葡萄 là từ láy đôi âm tiết, không tách nghĩa riêng từng chữ.",
+        "cf": "萄 chỉ xuất hiện trong từ 葡萄, không dùng độc lập",
+        "w": "葡萄 / 葡萄酒 / 葡萄干"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì thầy Lý rất thích rượu vang, nên chúng ta tiện thể mua cho thầy hai chai đi.",
+        "answer": "因为李老师很喜欢葡萄酒，所以我们顺便给他买两瓶吧。",
+        "answerPy": "Yīnwèi Lǐ lǎoshī hěn xǐhuan pútaojiǔ, suǒyǐ wǒmen shùnbiàn gěi tā mǎi liǎng píng ba.",
+        "note": "给 + ai + V — làm gì cho ai.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy mỗi ngày uống một chút rượu vang có lợi cho sức khỏe, nhưng không nên uống quá nhiều.",
+        "answer": "虽然每天喝一点儿葡萄酒对身体有好处，但是不应该喝太多。",
+        "answerPy": "Suīrán měitiān hē yìdiǎnr pútaojiǔ duì shēntǐ yǒu hǎochù, dànshì bù yīnggāi hē tài duō.",
+        "note": "对 + N + 有好处 — có lợi cho cái gì.",
+        "pair": "虽然……但是……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "葡萄酒",
+        "py": "pútaojiǔ",
+        "vn": "rượu vang"
+      },
+      {
+        "zh": "吃葡萄",
+        "py": "chī pútao",
+        "vn": "ăn nho"
+      },
+      {
+        "zh": "两瓶葡萄酒",
+        "py": "liǎng píng pútaojiǔ",
+        "vn": "hai chai rượu vang"
+      },
+      {
+        "zh": "葡萄很甜",
+        "py": "pútao hěn tián",
+        "vn": "nho rất ngọt"
+      },
+      {
+        "zh": "一串葡萄",
+        "py": "yí chuàn pútao",
+        "vn": "một chùm nho"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "葡萄 + 酒",
+        "m": "Rượu làm từ nho = rượu vang"
+      },
+      {
+        "s": "số + 瓶 + 葡萄酒",
+        "m": "Mấy chai rượu vang"
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "zh": "艺术",
+    "py": "yìshù",
+    "pos": "Danh từ/Tính từ",
+    "vn": "nghệ thuật; có tính nghệ thuật",
+    "hv": "nghệ thuật",
+    "em": "🎨",
+    "lesson": 3,
+    "explain": [
+      "1. (Danh từ) Lĩnh vực sáng tạo cái đẹp (hội họa, âm nhạc, điêu khắc...).",
+      "2. (Tính từ) Có tính thẩm mỹ, được làm khéo léo, đẹp mắt."
+    ],
+    "usage": "Danh từ: 艺术品; tính từ: 做得都这么艺术.",
+    "collo": [
+      "很艺术",
+      "艺术品",
+      "这么艺术"
+    ],
+    "ex_zh": "你看它酒瓶做得都这么艺术。",
+    "ex_py": "Nǐ kàn tā jiǔpíng zuò de dōu zhème yìshù.",
+    "ex_vn": "Bạn xem vỏ chai rượu của nó làm đẹp như một tác phẩm nghệ thuật vậy.",
+    "exList": [
+      {
+        "zh": "你看它酒瓶做得都这么艺术。",
+        "py": "Nǐ kàn tā jiǔpíng zuò de dōu zhème yìshù.",
+        "vn": "Bạn xem vỏ chai rượu của nó làm đẹp như một tác phẩm nghệ thuật vậy."
+      },
+      {
+        "zh": "她对艺术很感兴趣，经常去看画展。",
+        "py": "Tā duì yìshù hěn gǎn xìngqù, jīngcháng qù kàn huàzhǎn.",
+        "vn": "Cô ấy rất hứng thú với nghệ thuật, thường xuyên đi xem triển lãm tranh."
+      },
+      {
+        "zh": "这张海报设计得很艺术。",
+        "py": "Zhè zhāng hǎibào shèjì de hěn yìshù.",
+        "vn": "Tấm áp phích này được thiết kế rất nghệ thuật."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "艺",
+        "p": "yì",
+        "type": "上下结构 · Trên-dưới (giản thể)",
+        "st": 4,
+        "ord": "艹 (thảo) trên → 乙 dưới",
+        "rad": "艹 (thảo – cỏ)",
+        "mean": "tài nghệ, nghệ thuật",
+        "tip": "Chữ giản thể mang nghĩa TÀI NGHỆ, KỸ NĂNG, kết hợp 术(kỹ thuật) thành 艺术 = NGHỆ THUẬT.",
+        "cf": "艺 dễ nhầm với 艾 (ài – \"cây ngải\")",
+        "w": "艺术 / 手艺 / 艺人"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chính vì vỏ chai rượu vang này làm đẹp như một tác phẩm nghệ thuật, nên trên tivi lúc nào cũng có quảng cáo của nó.",
+        "answer": "正因为这个葡萄酒瓶做得这么艺术，所以电视上经常有它的广告。",
+        "answerPy": "Zhèng yīnwèi zhège pútaojiǔ píng zuò de zhème yìshù, suǒyǐ diànshì shang jīngcháng yǒu tā de guǎnggào.",
+        "note": "正因为 — nhấn mạnh đúng là vì lý do đó.",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc sô pha này không những thiết kế rất nghệ thuật, mà màu sắc cũng rất thịnh hành.",
+        "answer": "这个沙发不但设计得很艺术，而且颜色也很流行。",
+        "answerPy": "Zhège shāfā búdàn shèjì de hěn yìshù, érqiě yánsè yě hěn liúxíng.",
+        "note": "V + 得 + 很艺术 — bổ ngữ trạng thái đánh giá cách làm.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "很艺术",
+        "py": "hěn yìshù",
+        "vn": "rất nghệ thuật"
+      },
+      {
+        "zh": "艺术品",
+        "py": "yìshùpǐn",
+        "vn": "tác phẩm nghệ thuật"
+      },
+      {
+        "zh": "这么艺术",
+        "py": "zhème yìshù",
+        "vn": "nghệ thuật đến vậy"
+      },
+      {
+        "zh": "艺术家",
+        "py": "yìshùjiā",
+        "vn": "nghệ sĩ"
+      },
+      {
+        "zh": "设计得很艺术",
+        "py": "shèjì de hěn yìshù",
+        "vn": "thiết kế rất nghệ thuật"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 得 + 很艺术 (tính từ)",
+        "m": "Làm rất có tính nghệ thuật"
+      },
+      {
+        "s": "艺术 + 品 / 家",
+        "m": "Tác phẩm nghệ thuật / nghệ sĩ"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "zh": "广告",
+    "py": "guǎnggào",
+    "pos": "Danh từ",
+    "vn": "quảng cáo",
+    "hv": "quảng cáo",
+    "em": "📢",
+    "lesson": 3,
+    "explain": [
+      "Thông tin quảng bá về sản phẩm/dịch vụ nhằm thu hút khách hàng."
+    ],
+    "usage": "Danh từ; thường đi với 电视上的广告, 相信广告.",
+    "collo": [
+      "电视上的广告",
+      "相信广告",
+      "广告的影响"
+    ],
+    "ex_zh": "而且电视上经常有它的广告，我想味道应该不错。",
+    "ex_py": "Érqiě diànshì shang jīngcháng yǒu tā de guǎnggào, wǒ xiǎng wèidào yīnggāi búcuò.",
+    "ex_vn": "Hơn nữa trên tivi thường xuyên có quảng cáo của nó, tôi nghĩ mùi vị chắc không tệ.",
+    "exList": [
+      {
+        "zh": "而且电视上经常有它的广告，我想味道应该不错。",
+        "py": "Érqiě diànshì shang jīngcháng yǒu tā de guǎnggào, wǒ xiǎng wèidào yīnggāi búcuò.",
+        "vn": "Hơn nữa trên tivi thường xuyên có quảng cáo của nó, tôi nghĩ mùi vị chắc không tệ."
+      },
+      {
+        "zh": "广告只会介绍优点，却不会说它的缺点。",
+        "py": "Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.",
+        "vn": "Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó."
+      },
+      {
+        "zh": "调查发现：购买我们电脑的人中，有75%是因为受到我们广告的影响。",
+        "py": "Diàochá fāxiàn: gòumǎi wǒmen diànnǎo de rén zhōng, yǒu bǎifēnzhī qīshíwǔ shì yīnwèi shòudào wǒmen guǎnggào de yǐngxiǎng.",
+        "vn": "Điều tra phát hiện: trong số người mua máy tính của chúng tôi, có 75% là do chịu ảnh hưởng từ quảng cáo của chúng tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "告",
+        "p": "gào",
+        "type": "上下结构 · Trên-dưới",
+        "st": 7,
+        "ord": "牛 (biến thể) trên → 口 (khẩu) dưới",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "báo cho biết",
+        "tip": "Bộ miệng 口 (nói ra) → BÁO CHO BIẾT, kết hợp 广(rộng khắp) thành 广告 = QUẢNG CÁO (báo rộng khắp cho mọi người biết).",
+        "cf": "吉 (jí – \"may mắn\", không có 口 dưới cùng vị trí)",
+        "w": "广告 / 告诉 / 报告"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy quảng cáo chỉ giới thiệu ưu điểm, nhưng thực tế nhiều thứ không hề tốt như quảng cáo nói.",
+        "answer": "虽然广告只会介绍优点，但是实际上很多东西并不像广告上说的那么好。",
+        "answerPy": "Suīrán guǎnggào zhǐ huì jièshào yōudiǎn, dànshì shíjìshang hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo.",
+        "note": "并不 là từ bài 4 — phản bác điều người ta tưởng.",
+        "pair": "虽然……但是……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Điều tra phát hiện, có 75% khách hàng là do chịu ảnh hưởng từ quảng cáo của chúng tôi.",
+        "answer": "调查发现，有75%的顾客是因为受到我们广告的影响。",
+        "answerPy": "Diàochá fāxiàn, yǒu bǎifēnzhī qīshíwǔ de gùkè shì yīnwèi shòudào wǒmen guǎnggào de yǐngxiǎng.",
+        "note": "受到……的影响 — chịu ảnh hưởng từ….",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "电视上的广告",
+        "py": "diànshì shàng de guǎnggào",
+        "vn": "quảng cáo trên tivi"
+      },
+      {
+        "zh": "相信广告",
+        "py": "xiāngxìn guǎnggào",
+        "vn": "tin vào quảng cáo"
+      },
+      {
+        "zh": "广告的影响",
+        "py": "guǎnggào de yǐngxiǎng",
+        "vn": "ảnh hưởng của quảng cáo"
+      },
+      {
+        "zh": "看广告",
+        "py": "kàn guǎnggào",
+        "vn": "xem quảng cáo"
+      },
+      {
+        "zh": "做广告",
+        "py": "zuò guǎnggào",
+        "vn": "làm quảng cáo"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "给 + N + 做广告",
+        "m": "Làm quảng cáo cho cái gì"
+      },
+      {
+        "s": "广告 + 上 + 说",
+        "m": "Trên quảng cáo nói rằng…"
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "zh": "味道",
+    "py": "wèidào",
+    "pos": "Danh từ",
+    "vn": "mùi vị",
+    "hv": "vị đạo",
+    "em": "😋",
+    "lesson": 3,
+    "explain": [
+      "Cảm nhận về hương vị của đồ ăn/thức uống."
+    ],
+    "usage": "Danh từ; thường đi với 味道不错, 味道应该不错.",
+    "collo": [
+      "味道不错",
+      "味道很好",
+      "味道怎么样"
+    ],
+    "ex_zh": "我想味道应该不错。",
+    "ex_py": "Wǒ xiǎng wèidào yīnggāi búcuò.",
+    "ex_vn": "Tôi nghĩ mùi vị chắc không tệ.",
+    "exList": [
+      {
+        "zh": "我想味道应该不错。",
+        "py": "Wǒ xiǎng wèidào yīnggāi búcuò.",
+        "vn": "Tôi nghĩ mùi vị chắc không tệ."
+      },
+      {
+        "zh": "这家饭馆的面味道很好，在当地非常受欢迎。",
+        "py": "Zhè jiā fànguǎn de miàn wèidào hěn hǎo, zài dāngdì fēicháng shòu huānyíng.",
+        "vn": "Món mì của quán ăn này mùi vị rất ngon, ở địa phương rất được yêu thích."
+      },
+      {
+        "zh": "这瓶葡萄酒味道怎么样？",
+        "py": "Zhè píng pútaojiǔ wèidào zěnmeyàng?",
+        "vn": "Chai rượu vang này mùi vị thế nào?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "味",
+        "p": "wèi",
+        "type": "左右结构 · Trái-phải",
+        "st": 8,
+        "ord": "口 (khẩu) trái → 未 (vị) phải",
+        "rad": "口 (khẩu – miệng)",
+        "mean": "mùi vị",
+        "tip": "Bộ miệng 口 (nếm) + 未(biểu âm) → cảm nhận bằng MIỆNG, mở rộng thành MÙI VỊ, kết hợp 道(con đường/cách) thành 味道 = MÙI VỊ, HƯƠNG VỊ.",
+        "cf": "昧 (mèi – \"mờ ám\", bộ 日\")",
+        "w": "味道 / 口味 / 有味儿"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Vì trên tivi thường có quảng cáo chai rượu vang này, nên tôi nghĩ mùi vị chắc là khá ngon.",
+        "answer": "因为电视上经常有这瓶葡萄酒的广告，所以我想味道应该不错。",
+        "answerPy": "Yīnwèi diànshì shang jīngcháng yǒu zhè píng pútaojiǔ de guǎnggào, suǒyǐ wǒ xiǎng wèidào yīnggāi búcuò.",
+        "note": "应该 ở đây là phỏng đoán: \"chắc là\", không phải \"nên\".",
+        "pair": "因为……所以……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Đừng chỉ tin quảng cáo, thực tế mùi vị thế nào phải tự mình thử mới biết.",
+        "answer": "不要只相信广告，实际味道怎么样得自己尝尝才知道。",
+        "answerPy": "Búyào zhǐ xiāngxìn guǎnggào, shíjì wèidào zěnmeyàng děi zìjǐ chángchang cái zhīdào.",
+        "note": "不要只相信广告 kết hợp 实际, ôn lại điểm ngữ pháp của bài.",
+        "pair": "……，才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "味道不错",
+        "py": "wèidào búcuò",
+        "vn": "vị khá ngon"
+      },
+      {
+        "zh": "味道很好",
+        "py": "wèidào hěn hǎo",
+        "vn": "vị rất ngon"
+      },
+      {
+        "zh": "味道怎么样",
+        "py": "wèidào zěnmeyàng",
+        "vn": "mùi vị thế nào"
+      },
+      {
+        "zh": "味道太咸",
+        "py": "wèidào tài xián",
+        "vn": "vị quá mặn"
+      },
+      {
+        "zh": "尝尝味道",
+        "py": "chángcháng wèidào",
+        "vn": "nếm thử mùi vị"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 的 + 味道 + Adj",
+        "m": "Mùi vị của cái gì thế nào"
+      },
+      {
+        "s": "味道 + 怎么样？",
+        "m": "Mùi vị ra sao?"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "zh": "优点",
+    "py": "yōudiǎn",
+    "pos": "Danh từ",
+    "vn": "ưu điểm",
+    "hv": "ưu điểm",
+    "em": "👍",
+    "lesson": 3,
+    "explain": [
+      "Điểm tốt, điểm mạnh của một người/sự vật."
+    ],
+    "usage": "Danh từ; thường đi với 介绍优点, 有优点.",
+    "collo": [
+      "介绍优点",
+      "有优点",
+      "优点和缺点"
+    ],
+    "ex_zh": "广告只会介绍优点，却不会说它的缺点。",
+    "ex_py": "Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.",
+    "ex_vn": "Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó.",
+    "exList": [
+      {
+        "zh": "广告只会介绍优点，却不会说它的缺点。",
+        "py": "Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.",
+        "vn": "Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó."
+      },
+      {
+        "zh": "每个人都有自己的优点和缺点。",
+        "py": "Měi ge rén dōu yǒu zìjǐ de yōudiǎn hé quēdiǎn.",
+        "vn": "Mỗi người đều có ưu điểm và khuyết điểm riêng của mình."
+      },
+      {
+        "zh": "这台冰箱的优点是制冷效果特别好。",
+        "py": "Zhè tái bīngxiāng de yōudiǎn shì zhìlěng xiàoguǒ tèbié hǎo.",
+        "vn": "Ưu điểm của tủ lạnh này là hiệu quả làm lạnh đặc biệt tốt."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "优",
+        "p": "yōu",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 6,
+        "ord": "亻 (nhân) trái → 尤(vưu) phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "ưu tú, tốt đẹp",
+        "tip": "Bộ người 亻 + 尤(đặc biệt, nổi trội) → NGƯỜI có điểm NỔI TRỘI, mở rộng thành ƯU TÚ, kết hợp 点(điểm) thành 优点 = ƯU ĐIỂM.",
+        "cf": "忧 (yōu – \"lo lắng\", bộ 忄\")",
+        "w": "优点 / 优秀 / 优势"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Quảng cáo không những chỉ giới thiệu ưu điểm của sản phẩm, mà còn chẳng bao giờ nói đến khuyết điểm.",
+        "answer": "广告不但只介绍产品的优点，而且从来不说缺点。",
+        "answerPy": "Guǎnggào búdàn zhǐ jièshào chǎnpǐn de yōudiǎn, érqiě cónglái bù shuō quēdiǎn.",
+        "note": "从来不 + V — chưa bao giờ, không bao giờ.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Ưu điểm của chiếc sô pha này là không những giá cả phải chăng, mà chất lượng cũng có bảo đảm.",
+        "answer": "这个沙发的优点是不但价格合适，而且质量也有保证。",
+        "answerPy": "Zhège shāfā de yōudiǎn shì búdàn jiàgé héshì, érqiě zhìliàng yě yǒu bǎozhèng.",
+        "note": "保证 là từ bài 4 — 质量有保证 là kết hợp cố định.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "介绍优点",
+        "py": "jièshào yōudiǎn",
+        "vn": "giới thiệu ưu điểm"
+      },
+      {
+        "zh": "有优点",
+        "py": "yǒu yōudiǎn",
+        "vn": "có ưu điểm"
+      },
+      {
+        "zh": "优点和缺点",
+        "py": "yōudiǎn hé quēdiǎn",
+        "vn": "ưu điểm và khuyết điểm"
+      },
+      {
+        "zh": "最大的优点",
+        "py": "zuì dà de yōudiǎn",
+        "vn": "ưu điểm lớn nhất"
+      },
+      {
+        "zh": "优点是……",
+        "py": "yōudiǎn shì",
+        "vn": "ưu điểm là…"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 的优点 + 是 + …",
+        "m": "Ưu điểm của cái gì là …"
+      },
+      {
+        "s": "优点 ↔ 缺点",
+        "m": "Cặp từ trái nghĩa — thường đi cùng nhau"
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "zh": "实际",
+    "py": "shíjì",
+    "pos": "Danh từ/Tính từ",
+    "vn": "thực tế",
+    "hv": "thực tế",
+    "em": "📌",
+    "lesson": 3,
+    "explain": [
+      "1. (Danh từ) Sự vật/tình huống tồn tại khách quan.",
+      "2. (Tính từ) Chân thực, cụ thể.",
+      "3. (实际上, phó từ) Trong thực tế, thường mang ý chuyển ngoặt."
+    ],
+    "usage": "实际上 + mệnh đề (phó từ, thường chuyển ý); 联系实际 (danh từ); 实际工作 (tính từ).",
+    "collo": [
+      "实际上",
+      "联系实际",
+      "实际工作"
+    ],
+    "ex_zh": "实际上，很多东西并不像广告上说的那么好，所以不能完全相信广告。",
+    "ex_py": "Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.",
+    "ex_vn": "Thực tế thì, rất nhiều thứ không được như quảng cáo nói, vì vậy không thể hoàn toàn tin vào quảng cáo.",
+    "exList": [
+      {
+        "zh": "实际上，很多东西并不像广告上说的那么好，所以不能完全相信广告。",
+        "py": "Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo, suǒyǐ bù néng wánquán xiāngxìn guǎnggào.",
+        "vn": "Thực tế thì, rất nhiều thứ không được như quảng cáo nói, vì vậy không thể hoàn toàn tin vào quảng cáo."
+      },
+      {
+        "zh": "你们做计划应该联系实际。",
+        "py": "Nǐmen zuò jìhuà yīnggāi liánxì shíjì.",
+        "vn": "Các bạn lập kế hoạch nên gắn liền với thực tế."
+      },
+      {
+        "zh": "实际工作能让我更理解书本上的知识。",
+        "py": "Shíjì gōngzuò néng ràng wǒ gèng lǐjiě shūběn shang de zhīshi.",
+        "vn": "Công việc thực tế có thể giúp tôi hiểu rõ hơn kiến thức trong sách vở."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "际",
+        "p": "jì",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 7,
+        "ord": "阝(phụ) trái → 示(thị, biến thể) phải",
+        "rad": "阝 (phụ – gò đất)",
+        "mean": "ranh giới, thực tại",
+        "tip": "Bộ 阝(gò đất, ranh giới) → nơi TIẾP GIÁP giữa hai vùng, mở rộng thành THỰC TẠI (nơi lý thuyết gặp thực tế); kết hợp 实(chân thực) thành 实际 = THỰC TẾ.",
+        "cf": "察 (chá – \"xem xét\", bộ 宀\")",
+        "w": "实际 / 国际 / 实际上"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tuy ai cũng nói kinh doanh dễ, nhưng thực tế không hề đơn giản như tôi từng nghĩ.",
+        "answer": "虽然大家都说做生意容易，但实际上并不像我原来想的那么简单。",
+        "answerPy": "Suīrán dàjiā dōu shuō zuò shēngyi róngyì, dàn shíjìshang bìng bú xiàng wǒ yuánlái xiǎng de nàme jiǎndān.",
+        "note": "实际上 nêu sự thật trái với điều người ta tưởng.",
+        "pair": "虽然……但……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Các bạn lập kế hoạch không những phải gắn với thực tế, mà còn không thể chỉ nói suông trên giấy.",
+        "answer": "你们做计划不但应该联系实际，而且不能只在纸上说说。",
+        "answerPy": "Nǐmen zuò jìhuà búdàn yīnggāi liánxì shíjì, érqiě bù néng zhǐ zài zhǐ shang shuōshuo.",
+        "note": "计划 là từ bài 4; 联系实际 là kết hợp cố định.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "实际上",
+        "py": "shíjì shàng",
+        "vn": "thực tế là"
+      },
+      {
+        "zh": "联系实际",
+        "py": "liánxì shíjì",
+        "vn": "gắn với thực tế"
+      },
+      {
+        "zh": "实际工作",
+        "py": "shíjì gōngzuò",
+        "vn": "công việc thực tế"
+      },
+      {
+        "zh": "实际情况",
+        "py": "shíjì qíngkuàng",
+        "vn": "tình hình thực tế"
+      },
+      {
+        "zh": "不实际",
+        "py": "bù shíjì",
+        "vn": "không thực tế"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "实际上，……",
+        "m": "Thực tế thì … (trái với điều người ta tưởng)"
+      },
+      {
+        "s": "联系 + 实际",
+        "m": "Gắn liền với thực tế"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "zh": "考虑",
+    "py": "kǎolǜ",
+    "pos": "Động từ",
+    "vn": "suy xét, cân nhắc",
+    "hv": "khảo lự",
+    "em": "🤔",
+    "lesson": 4,
+    "explain": [
+      "Suy nghĩ kỹ trước khi đưa ra quyết định."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 只考虑价格, 认真考虑.",
+    "collo": [
+      "只考虑价格",
+      "认真考虑",
+      "考虑一下"
+    ],
+    "ex_zh": "买衣服只考虑价格当然不好。",
+    "ex_py": "Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo.",
+    "ex_vn": "Mua quần áo chỉ cân nhắc giá cả đương nhiên không tốt.",
+    "exList": [
+      {
+        "zh": "买衣服只考虑价格当然不好。",
+        "py": "Mǎi yīfu zhǐ kǎolǜ jiàgé dāngrán bù hǎo.",
+        "vn": "Mua quần áo chỉ cân nhắc giá cả đương nhiên không tốt."
+      },
+      {
+        "zh": "我认真考虑了一个晚上，最后还是决定不去那家公司了。",
+        "py": "Wǒ rènzhēn kǎolǜle yí ge wǎnshang, zuìhòu háishi juédìng bú qù nà jiā gōngsī le.",
+        "vn": "Tôi đã suy nghĩ nghiêm túc suốt một tối, cuối cùng vẫn quyết định không đến công ty đó nữa."
+      },
+      {
+        "zh": "考试做题前首先要想清楚问题的意思，尤其是在做数学题的时候。",
+        "py": "Kǎoshì zuò tí qián shǒuxiān yào xiǎng qīngchu wèntí de yìsi, yóuqí shì zài zuò shùxué tí de shíhou.",
+        "vn": "Trước khi làm bài thi trước hết phải nghĩ rõ ý nghĩa câu hỏi, đặc biệt là khi làm bài toán."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "虑",
+        "p": "lǜ",
+        "type": "半包围结构 · Bán bao vây (giản thể)",
+        "st": 9,
+        "ord": "虍 bao ngoài → 心(biến thể) trong",
+        "rad": "心 (tâm – lòng)",
+        "mean": "lo nghĩ, suy xét",
+        "tip": "Bộ tâm 心 (suy nghĩ trong lòng) → SUY XÉT, kết hợp 考(xem xét) thành 考虑 = CÂN NHẮC, SUY XÉT.",
+        "cf": "虚 (xū – \"hư không\", cũng bộ 虍\")",
+        "w": "考虑 / 考试 / 思考"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mua đồ nội thất không những phải cân nhắc giá cả, mà còn phải cân nhắc cả chất lượng.",
+        "answer": "买家具不但要考虑价格，而且要考虑质量。",
+        "answerPy": "Mǎi jiājù búdàn yào kǎolǜ jiàgé, érqiě yào kǎolǜ zhìliàng.",
+        "note": "Hai vế dùng cùng một động từ 考虑 — cấu trúc song song rất hay gặp.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ sau khi cân nhắc nghiêm túc suốt một tối, tôi mới quyết định mua chiếc sô pha màu xanh này.",
+        "answer": "只有认真考虑了一个晚上，我才决定买这个蓝色的沙发。",
+        "answerPy": "Zhǐyǒu rènzhēn kǎolǜle yí gè wǎnshang, wǒ cái juédìng mǎi zhège lánsè de shāfā.",
+        "note": "只有……才…… — điều kiện duy nhất mới dẫn đến kết quả.",
+        "pair": "只有……才……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "认真考虑",
+        "py": "rènzhēn kǎolǜ",
+        "vn": "cân nhắc nghiêm túc"
+      },
+      {
+        "zh": "考虑一下",
+        "py": "kǎolǜ yíxià",
+        "vn": "cân nhắc một chút"
+      },
+      {
+        "zh": "只考虑价格",
+        "py": "zhī kǎolǜ jiàgé",
+        "vn": "chỉ nghĩ đến giá"
+      },
+      {
+        "zh": "值得考虑",
+        "py": "zhídé kǎolǜ",
+        "vn": "đáng cân nhắc"
+      },
+      {
+        "zh": "考虑清楚",
+        "py": "kǎolǜ qīngchu",
+        "vn": "cân nhắc cho rõ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "Sub + 考虑 + N / mệnh đề",
+        "m": "Ai đó cân nhắc điều gì"
+      },
+      {
+        "s": "考虑 + 一下 / 清楚",
+        "m": "Cân nhắc một chút / cho kỹ"
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "zh": "标准",
+    "py": "biāozhǔn",
+    "pos": "Danh từ",
+    "vn": "tiêu chuẩn, chuẩn mực",
+    "hv": "tiêu chuẩn",
+    "em": "📏",
+    "lesson": 4,
+    "explain": [
+      "Chuẩn mực dùng để đánh giá/lựa chọn theo một mức độ nhất định."
+    ],
+    "usage": "Danh từ; thường đi với 买衣服的标准, 幸福的标准.",
+    "collo": [
+      "买衣服的标准",
+      "幸福的标准",
+      "标准是……"
+    ],
+    "ex_zh": "我买衣服的标准是\"只买对的，不买贵的\"。",
+    "ex_py": "Wǒ mǎi yīfu de biāozhǔn shì \"zhǐ mǎi duì de, bù mǎi guì de\".",
+    "ex_vn": "Tiêu chuẩn mua quần áo của tôi là \"chỉ mua cái đúng, không mua cái đắt\".",
+    "exList": [
+      {
+        "zh": "我买衣服的标准是\"只买对的，不买贵的\"。",
+        "py": "Wǒ mǎi yīfu de biāozhǔn shì \"zhǐ mǎi duì de, bù mǎi guì de\".",
+        "vn": "Tiêu chuẩn mua quần áo của tôi là \"chỉ mua cái đúng, không mua cái đắt\"."
+      },
+      {
+        "zh": "幸福的标准是不同的。有人觉得有房子和汽车就是幸福，有人认为找到真正的爱情就是幸福。",
+        "py": "Xìngfú de biāozhǔn shì bùtóng de. Yǒurén juéde yǒu fángzi hé qìchē jiùshì xìngfú, yǒurén rènwéi zhǎodào zhēnzhèng de àiqíng jiùshì xìngfú.",
+        "vn": "Tiêu chuẩn hạnh phúc mỗi người mỗi khác. Có người thấy có nhà có xe là hạnh phúc, có người cho rằng tìm được tình yêu chân chính mới là hạnh phúc."
+      },
+      {
+        "zh": "美女的标准一直在变，但是不管什么时候，最重要的都是健康。",
+        "py": "Měinǚ de biāozhǔn yìzhí zài biàn, dànshì bùguǎn shénme shíhou, zuì zhòngyào de dōu shì jiànkāng.",
+        "vn": "Tiêu chuẩn cái đẹp luôn thay đổi, nhưng bất kể lúc nào, quan trọng nhất vẫn là sức khỏe."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "准",
+        "p": "zhǔn",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "冫 (băng) trái → 隹 (chuy) phải",
+        "rad": "冫 (băng – nước đá)",
+        "mean": "chuẩn xác",
+        "tip": "Bộ 冫(bằng phẳng) + 隹(chim) → CHUẨN XÁC, mở rộng thành CHUẨN MỰC; kết hợp 标(mốc, dấu hiệu) thành 标准 = TIÊU CHUẨN.",
+        "cf": "准 dễ nhầm với 淮 (huái – \"sông Hoài\")",
+        "w": "标准 / 准时 / 准备"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tiêu chuẩn mua quần áo của cô ấy là chất lượng phải tốt, hơn nữa lại không thể quá đắt.",
+        "answer": "她买衣服的标准是质量要好，而且又不能太贵。",
+        "answerPy": "Tā mǎi yīfu de biāozhǔn shì zhìliàng yào hǎo, érqiě yòu bù néng tài guì.",
+        "note": "买衣服的标准 kết hợp 质量, ôn lại từ vựng của bài.",
+        "pair": "……，而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tiêu chuẩn hạnh phúc của mỗi người không giống nhau, đối với tôi mà nói, sức khỏe là quan trọng nhất.",
+        "answer": "每个人幸福的标准不一样，对我来说，健康是最重要的。",
+        "answerPy": "Měi ge rén xìngfú de biāozhǔn bù yíyàng, duì wǒ láishuō, jiànkāng shì zuì zhòngyào de.",
+        "note": "对……来说 ôn lại điểm ngữ pháp của bài.",
+        "pair": "对……来说……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "买衣服的标准",
+        "py": "mǎi yīfu de biāozhǔn",
+        "vn": "tiêu chuẩn mua quần áo"
+      },
+      {
+        "zh": "幸福的标准",
+        "py": "xìngfú de biāozhǔn",
+        "vn": "tiêu chuẩn hạnh phúc"
+      },
+      {
+        "zh": "符合标准",
+        "py": "fúhé biāozhǔn",
+        "vn": "đạt tiêu chuẩn"
+      },
+      {
+        "zh": "标准不一样",
+        "py": "biāozhǔn bù yíyàng",
+        "vn": "tiêu chuẩn khác nhau"
+      },
+      {
+        "zh": "降低标准",
+        "py": "jiàngdī biāozhǔn",
+        "vn": "hạ tiêu chuẩn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "V + 的 + 标准",
+        "m": "Tiêu chuẩn để làm gì"
+      },
+      {
+        "s": "符合 + 标准",
+        "m": "Đạt tiêu chuẩn — 符合 là từ bài 3"
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "zh": "样子",
+    "py": "yàngzi",
+    "pos": "Danh từ",
+    "vn": "kiểu dáng",
+    "hv": "dạng tử",
+    "em": "👗",
+    "lesson": 4,
+    "explain": [
+      "Hình dáng, kiểu cách bên ngoài của một vật."
+    ],
+    "usage": "Danh từ; thường đi với 衣服的样子, 样子流行.",
+    "collo": [
+      "衣服的样子",
+      "样子流行",
+      "这个样子"
+    ],
+    "ex_zh": "对我来说，衣服的样子流行不流行并不是很重要。",
+    "ex_py": "Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.",
+    "ex_vn": "Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không phải là điều quan trọng.",
+    "exList": [
+      {
+        "zh": "对我来说，衣服的样子流行不流行并不是很重要。",
+        "py": "Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.",
+        "vn": "Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không phải là điều quan trọng."
+      },
+      {
+        "zh": "这种沙发是今年最流行的样子。",
+        "py": "Zhè zhǒng shāfā shì jīnnián zuì liúxíng de yàngzi.",
+        "vn": "Loại ghế sô pha này là kiểu dáng được ưa chuộng nhất năm nay."
+      },
+      {
+        "zh": "她换上了新买的那双鞋，看上去样子好看极了。",
+        "py": "Tā huànshangle xīn mǎi de nà shuāng xié, kàn shangqu yàngzi hǎokàn jíle.",
+        "vn": "Cô ấy đổi sang đôi giày mới mua, trông kiểu dáng đẹp cực kỳ."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "样",
+        "p": "yàng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 10,
+        "ord": "木 (mộc) trái → 羊 (dương) phải",
+        "rad": "木 (mộc – cây)",
+        "mean": "kiểu mẫu, dáng vẻ",
+        "tip": "Bộ cây 木 (khuôn mẫu bằng gỗ) + 羊(biểu âm) → KHUÔN MẪU để tạo hình, mở rộng thành KIỂU DÁNG, DÁNG VẺ.",
+        "cf": "洋 (yáng – \"đại dương\", bộ 氵\")",
+        "w": "样子 / 一样 / 怎么样"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Đối với tôi mà nói, kiểu dáng của đồ nội thất không quan trọng bằng chất lượng.",
+        "answer": "对我来说，家具的样子没有质量重要。",
+        "answerPy": "Duì wǒ láishuō, jiājù de yàngzi méiyǒu zhìliàng zhòngyào.",
+        "note": "样子 kết hợp 家具/质量, ôn lại nhiều từ vựng của bài.",
+        "pair": "对……来说……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Chiếc sô pha xanh này không những kiểu dáng rất thịnh hành, mà giá cả cũng phải chăng.",
+        "answer": "这个蓝色沙发不但样子很流行，而且价格也合适。",
+        "answerPy": "Zhège lánsè shāfā búdàn yàngzi hěn liúxíng, érqiě jiàgé yě héshì.",
+        "note": "样子 + 流行 — nói về kiểu dáng hợp mốt.",
+        "pair": "不但……而且……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "衣服的样子",
+        "py": "yīfu de yàngzi",
+        "vn": "kiểu dáng quần áo"
+      },
+      {
+        "zh": "样子流行",
+        "py": "yàngzi liúxíng",
+        "vn": "kiểu dáng thịnh hành"
+      },
+      {
+        "zh": "这个样子",
+        "py": "zhège yàngzi",
+        "vn": "dáng vẻ thế này"
+      },
+      {
+        "zh": "样子好看",
+        "py": "yàngzi hǎokàn",
+        "vn": "kiểu dáng đẹp"
+      },
+      {
+        "zh": "看样子",
+        "py": "kàn yàngzi",
+        "vn": "xem chừng, có vẻ"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "N + 的 + 样子",
+        "m": "Kiểu dáng, dáng vẻ của cái gì"
+      },
+      {
+        "s": "看样子 + mệnh đề",
+        "m": "Xem chừng … (phán đoán)"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "zh": "年龄",
+    "py": "niánlíng",
+    "pos": "Danh từ",
+    "vn": "tuổi",
+    "hv": "niên linh",
+    "em": "🎂",
+    "lesson": 4,
+    "explain": [
+      "Số tuổi của một người."
+    ],
+    "usage": "Danh từ; thường đi với 年龄大, 不同年龄.",
+    "collo": [
+      "年龄大",
+      "不同年龄",
+      "年龄大的人"
+    ],
+    "ex_zh": "很多年龄大的人喜欢在打折的时候买便宜的衣服。",
+    "ex_py": "Hěn duō niánlíng dà de rén xǐhuan zài dǎzhé de shíhou mǎi piányi de yīfu.",
+    "ex_vn": "Rất nhiều người lớn tuổi thích mua quần áo rẻ vào lúc giảm giá.",
+    "exList": [
+      {
+        "zh": "很多年龄大的人喜欢在打折的时候买便宜的衣服。",
+        "py": "Hěn duō niánlíng dà de rén xǐhuan zài dǎzhé de shíhou mǎi piányi de yīfu.",
+        "vn": "Rất nhiều người lớn tuổi thích mua quần áo rẻ vào lúc giảm giá."
+      },
+      {
+        "zh": "不同年龄的人有不同的想法。",
+        "py": "Bùtóng niánlíng de rén yǒu bùtóng de xiǎngfǎ.",
+        "vn": "Người ở độ tuổi khác nhau có suy nghĩ khác nhau."
+      },
+      {
+        "zh": "请问，您的年龄是多少？",
+        "py": "Qǐngwèn, nín de niánlíng shì duōshao?",
+        "vn": "Xin hỏi, tuổi của anh là bao nhiêu?"
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "龄",
+        "p": "líng",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 8,
+        "ord": "齿 (xỉ, biến thể) trái → 令 (lệnh) phải",
+        "rad": "齿 (xỉ – răng)",
+        "mean": "tuổi tác",
+        "tip": "Bộ răng 齿 (xưa xem răng để đoán tuổi động vật) + 令(biểu âm) → TUỔI TÁC, kết hợp 年(năm) thành 年龄 = TUỔI.",
+        "cf": "龄 dễ nhầm với 铃 (líng – \"cái chuông\")",
+        "w": "年龄 / 高龄 / 年纪"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Rất nhiều người lớn tuổi thích mua đồ giảm giá, nhưng lại không cân nhắc nhiều về việc có phù hợp với mình không.",
+        "answer": "很多年龄大的人喜欢买打折的东西，但对是不是适合自己却考虑得不多。",
+        "answerPy": "Hěn duō niánlíng dà de rén xǐhuan mǎi dǎzhé de dōngxi, dàn duì shì bu shì shìhé zìjǐ què kǎolǜ de bù duō.",
+        "note": "年龄大的人 kết hợp 打折/考虑, ôn lại nhiều từ vựng của bài.",
+        "pair": "……，却……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể người ở độ tuổi nào, tiêu chuẩn mua quần áo đều không giống nhau.",
+        "answer": "不管是什么年龄的人，买衣服的标准都不一样。",
+        "answerPy": "Bùguǎn shì shénme niánlíng de rén, mǎi yīfu de biāozhǔn dōu bù yíyàng.",
+        "note": "不管 là từ bài 3 — ôn lại; 年龄 đi với 大 / 小 chứ không với 多 / 少.",
+        "pair": "不管……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "年龄大",
+        "py": "niánlíng dà",
+        "vn": "lớn tuổi"
+      },
+      {
+        "zh": "不同年龄",
+        "py": "bù tóng niánlíng",
+        "vn": "độ tuổi khác nhau"
+      },
+      {
+        "zh": "年龄小",
+        "py": "niánlíng xiǎo",
+        "vn": "ít tuổi"
+      },
+      {
+        "zh": "年龄大的人",
+        "py": "niánlíng dà de rén",
+        "vn": "người lớn tuổi"
+      },
+      {
+        "zh": "同年龄的人",
+        "py": "tóng niánlíng de rén",
+        "vn": "người cùng tuổi"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "年龄 + 大 / 小",
+        "m": "Tuổi lớn / nhỏ — KHÔNG nói 年龄多 / 少"
+      },
+      {
+        "s": "不同 + 年龄 + 的人",
+        "m": "Người ở các độ tuổi khác nhau"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "zh": "浪费",
+    "py": "làngfèi",
+    "pos": "Động từ",
+    "vn": "lãng phí, hoang phí",
+    "hv": "lãng phí",
+    "em": "🗑️",
+    "lesson": 4,
+    "explain": [
+      "Sử dụng tiền bạc/thời gian/tài nguyên không hợp lý, gây hao tổn không cần thiết."
+    ],
+    "usage": "Động từ/danh từ; thường đi với 是一种浪费, 浪费钱.",
+    "collo": [
+      "是一种浪费",
+      "浪费钱",
+      "浪费时间"
+    ],
+    "ex_zh": "如果不适合自己，即使花钱很少，也是一种浪费。",
+    "ex_py": "Rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.",
+    "ex_vn": "Nếu không phù hợp với bản thân, dù chi tiêu rất ít tiền, cũng là một sự lãng phí.",
+    "exList": [
+      {
+        "zh": "如果不适合自己，即使花钱很少，也是一种浪费。",
+        "py": "Rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.",
+        "vn": "Nếu không phù hợp với bản thân, dù chi tiêu rất ít tiền, cũng là một sự lãng phí."
+      },
+      {
+        "zh": "买了不适合的衣服，就是浪费钱。",
+        "py": "Mǎile bú shìhé de yīfu, jiùshì làngfèi qián.",
+        "vn": "Mua quần áo không phù hợp, chính là lãng phí tiền."
+      },
+      {
+        "zh": "不要浪费时间做没有意义的事情。",
+        "py": "Búyào làngfèi shíjiān zuò méiyǒu yìyì de shìqing.",
+        "vn": "Đừng lãng phí thời gian làm những việc không có ý nghĩa."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "浪",
+        "p": "làng",
+        "type": "左右结构 · Trái-phải",
+        "st": 10,
+        "ord": "氵 (thủy) trái → 良 (lương) phải",
+        "rad": "氵 (thủy – nước)",
+        "mean": "sóng nước, buông thả",
+        "tip": "Bộ nước 氵 (sóng nước tràn lan, không kiểm soát) + 良(biểu âm) → mở rộng thành BUÔNG THẢ, KHÔNG TIẾT KIỆM, kết hợp 费(tiêu tốn) thành 浪费 = LÃNG PHÍ.",
+        "cf": "狼 (láng – \"chó sói\", bộ 犭\")",
+        "w": "浪费 / 浪漫 / 波浪"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu không phù hợp với bản thân, dù giá rất rẻ, mua về cũng là lãng phí.",
+        "answer": "如果不适合自己，即使价格很便宜，买了也是浪费。",
+        "answerPy": "Rúguǒ bú shìhé zìjǐ, jíshǐ jiàgé hěn piányi, mǎile yě shì làngfèi.",
+        "note": "即使……也是浪费 kết hợp 价格, ôn lại từ vựng của bài.",
+        "pair": "即使……也……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Vì cô ấy không cân nhắc nhiều xem có hợp hay không, nên đã mua rất nhiều quần áo không mặc, thật lãng phí.",
+        "answer": "因为她对合不合适考虑得不多，所以买了很多不穿的衣服，真是浪费。",
+        "answerPy": "Yīnwèi tā duì hé bu héshì kǎolǜ de bù duō, suǒyǐ mǎile hěn duō bù chuān de yīfu, zhēnshì làngfèi.",
+        "note": "合不合适 — dạng hỏi chính phản dùng làm tân ngữ.",
+        "pair": "因为……所以……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "浪费钱",
+        "py": "làngfèi qián",
+        "vn": "lãng phí tiền"
+      },
+      {
+        "zh": "浪费时间",
+        "py": "làngfèi shíjiān",
+        "vn": "lãng phí thời gian"
+      },
+      {
+        "zh": "是一种浪费",
+        "py": "shì yì zhǒng làngfèi",
+        "vn": "là một sự lãng phí"
+      },
+      {
+        "zh": "别浪费",
+        "py": "bié làngfèi",
+        "vn": "đừng lãng phí"
+      },
+      {
+        "zh": "浪费食物",
+        "py": "làngfèi shíwù",
+        "vn": "lãng phí thức ăn"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "浪费 + 钱 / 时间",
+        "m": "Lãng phí tiền bạc, thời gian"
+      },
+      {
+        "s": "是一种 + 浪费 (danh từ)",
+        "m": "Là một sự lãng phí"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "zh": "购物",
+    "py": "gòuwù",
+    "pos": "Động từ",
+    "vn": "mua sắm, mua hàng",
+    "hv": "cấu vật",
+    "em": "🛍️",
+    "lesson": 5,
+    "explain": [
+      "Đi mua đồ, mua sắm hàng hóa."
+    ],
+    "usage": "Động từ ly hợp; thường đi với 网上购物, 购物变得流行.",
+    "collo": [
+      "网上购物",
+      "购物变得流行",
+      "喜欢购物"
+    ],
+    "ex_zh": "现在网上购物变得越来越流行了。",
+    "ex_py": "Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le.",
+    "ex_vn": "Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành.",
+    "exList": [
+      {
+        "zh": "现在网上购物变得越来越流行了。",
+        "py": "Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le.",
+        "vn": "Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành."
+      },
+      {
+        "zh": "购物在我们的生活中是必不可少的。",
+        "py": "Gòuwù zài wǒmen de shēnghuó zhōng shì bì bù kě shǎo de.",
+        "vn": "Mua sắm trong cuộc sống của chúng ta là không thể thiếu."
+      },
+      {
+        "zh": "网上购物能够受到人们的喜爱，原因主要有两个。",
+        "py": "Wǎngshang gòuwù nénggòu shòudào rénmen de xǐ'ài, yuányīn zhǔyào yǒu liǎng ge.",
+        "vn": "Mua sắm trên mạng được mọi người yêu thích, nguyên nhân chủ yếu có hai điều."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "购",
+        "p": "gòu",
+        "type": "左右结构 · Trái-phải (giản thể)",
+        "st": 8,
+        "ord": "贝 (bối) trái → 勾 (câu) phải",
+        "rad": "贝 (bối – tiền của)",
+        "mean": "mua",
+        "tip": "Bộ 贝(tiền của) + 勾(biểu âm) → dùng TIỀN để MUA, kết hợp 物(vật phẩm) thành 购物 = MUA SẮM.",
+        "cf": "钩 (gōu – \"cái móc\", bộ 钅\")",
+        "w": "购物 / 购买 / 采购"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Bây giờ mua sắm trên mạng ngày càng thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.",
+        "answer": "现在网上购物变得越来越流行，年轻人尤其喜欢在网上买东西。",
+        "answerPy": "Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.",
+        "note": "网上购物 kết hợp 流行/尤其, ôn lại từ vựng của bài.",
+        "pair": "越……越……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Mua sắm trên mạng có thể nhận được rất nhiều sự yêu thích của mọi người, vì nó tiện lợi và rẻ hơn.",
+        "answer": "网上购物受到很多人的喜爱，因为它方便又便宜。",
+        "answerPy": "Wǎngshang gòuwù shòudào hěn duō rén de xǐ'ài, yīnwèi tā fāngbiàn yòu piányi.",
+        "note": "受到……的喜爱 — được yêu thích bởi….",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "网上购物",
+        "py": "wǎngshang gòuwù",
+        "vn": "mua sắm trên mạng"
+      },
+      {
+        "zh": "喜欢购物",
+        "py": "xǐhuan gòuwù",
+        "vn": "thích mua sắm"
+      },
+      {
+        "zh": "购物变得流行",
+        "py": "gòuwù biàn de liúxíng",
+        "vn": "mua sắm trở nên thịnh hành"
+      },
+      {
+        "zh": "去购物",
+        "py": "qù gòuwù",
+        "vn": "đi mua sắm"
+      },
+      {
+        "zh": "购物中心",
+        "py": "gòuwù zhōngxīn",
+        "vn": "trung tâm mua sắm"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "在网上 + 购物",
+        "m": "Mua sắm trên mạng"
+      },
+      {
+        "s": "购物 ≈ 买东西",
+        "m": "购物 thiên văn viết, 买东西 thiên khẩu ngữ"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "zh": "尤其",
+    "py": "yóuqí",
+    "pos": "Phó từ",
+    "vn": "đặc biệt là, nhất là",
+    "hv": "vưu kỳ",
+    "em": "⭐",
+    "lesson": 5,
+    "explain": [
+      "Diễn tả khía cạnh nổi bật nhất trong một tình huống tổng thể, thường đứng ở vế câu thứ hai sau khi vế đầu nêu tình huống chung."
+    ],
+    "usage": "Phó từ, đứng đầu vế sau: ……，尤其(是) + khía cạnh nổi bật nhất.",
+    "collo": [
+      "尤其喜欢",
+      "尤其是",
+      "尤其是那些"
+    ],
+    "ex_zh": "现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。",
+    "ex_py": "Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.",
+    "ex_vn": "Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.",
+    "exList": [
+      {
+        "zh": "现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。",
+        "py": "Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.",
+        "vn": "Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng."
+      },
+      {
+        "zh": "您女儿真可爱，长得真像您，尤其是眼睛。",
+        "py": "Nín nǚ'ér zhēn kě'ài, zhǎng de zhēn xiàng nín, yóuqí shì yǎnjing.",
+        "vn": "Con gái anh thật đáng yêu, trông rất giống anh, đặc biệt là đôi mắt."
+      },
+      {
+        "zh": "为了健康，我们应该每年都去医院做一次身体检查，尤其是那些四五十岁的人。",
+        "py": "Wèile jiànkāng, wǒmen yīnggāi měinián dōu qù yīyuàn zuò yí cì shēntǐ jiǎnchá, yóuqí shì nàxiē sì-wǔ shí suì de rén.",
+        "vn": "Vì sức khỏe, chúng ta nên mỗi năm đều đi bệnh viện khám sức khỏe một lần, đặc biệt là những người bốn năm mươi tuổi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "尤",
+        "p": "yóu",
+        "type": "半包围结构 · Bán bao vây",
+        "st": 4,
+        "ord": "尢 bao ngoài → 丶 trong",
+        "rad": "尢 (uông)",
+        "mean": "đặc biệt, nổi trội",
+        "tip": "Chữ mang nghĩa NỔI TRỘI, KHÁC BIỆT so với thông thường, kết hợp 其(cái đó) thành 尤其 = ĐẶC BIỆT LÀ (nhấn mạnh cái nổi bật nhất).",
+        "cf": "龙 (lóng – \"rồng\", không liên quan)",
+        "w": "尤其 / 尤为 / 尤其是"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi không những rất thích thể thao, mà còn đặc biệt thích đá bóng.",
+        "answer": "我不但特别喜欢运动，而且尤其喜欢踢足球。",
+        "answerPy": "Wǒ búdàn tèbié xǐhuan yùndòng, érqiě yóuqí xǐhuan tī zúqiú.",
+        "note": "尤其 đứng SAU chủ ngữ, trước động từ.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Bất kể làm việc gì đều phải chú ý phương pháp, đặc biệt là khi gặp vấn đề khó.",
+        "answer": "无论做什么事情，都要注意方法，尤其是遇到难题的时候。",
+        "answerPy": "Wúlùn zuò shénme shìqing, dōu yào zhùyì fāngfǎ, yóuqí shì yùdào nántí de shíhou.",
+        "note": "尤其是……的时候 kết hợp 方法, ôn lại từ vựng Bài 4.",
+        "pair": "无论……都……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "尤其喜欢",
+        "py": "yóuqí xǐhuan",
+        "vn": "đặc biệt thích"
+      },
+      {
+        "zh": "尤其是",
+        "py": "yóuqí shì",
+        "vn": "nhất là"
+      },
+      {
+        "zh": "尤其是那些",
+        "py": "yóuqí shì nàxiē",
+        "vn": "nhất là những cái đó"
+      },
+      {
+        "zh": "尤其重要",
+        "py": "yóuqí zhòngyào",
+        "vn": "đặc biệt quan trọng"
+      },
+      {
+        "zh": "尤其在夏天",
+        "py": "yóuqí zài xià tiān",
+        "vn": "nhất là vào mùa hè"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "……，尤其是 + N",
+        "m": "…, đặc biệt là … (nêu cái nổi bật trong nhóm)"
+      },
+      {
+        "s": "✗ 尤其我喜欢 → ✓ 我尤其喜欢",
+        "m": "尤其 đứng sau chủ ngữ"
+      }
+    ]
+  },
+  {
+    "n": 29,
+    "zh": "受到",
+    "py": "shòudào",
+    "pos": "Động từ",
+    "vn": "nhận được, chịu (ảnh hưởng)",
+    "hv": "thụ đáo",
+    "em": "📥",
+    "lesson": 5,
+    "explain": [
+      "Tiếp nhận, chịu tác động từ bên ngoài (ảnh hưởng, sự yêu thích, sự giúp đỡ...)."
+    ],
+    "usage": "Động từ, mang tân ngữ trực tiếp: 受到喜爱, 受到影响.",
+    "collo": [
+      "受到喜爱",
+      "受到影响",
+      "受到欢迎"
+    ],
+    "ex_zh": "网上购物能够受到人们的喜爱，原因主要有两个。",
+    "ex_py": "Wǎngshang gòuwù nénggòu shòudào rénmen de xǐ'ài, yuányīn zhǔyào yǒu liǎng ge.",
+    "ex_vn": "Mua sắm trên mạng được mọi người yêu thích, nguyên nhân chủ yếu có hai điều.",
+    "exList": [
+      {
+        "zh": "网上购物能够受到人们的喜爱，原因主要有两个。",
+        "py": "Wǎngshang gòuwù nénggòu shòudào rénmen de xǐ'ài, yuányīn zhǔyào yǒu liǎng ge.",
+        "vn": "Mua sắm trên mạng được mọi người yêu thích, nguyên nhân chủ yếu có hai điều."
+      },
+      {
+        "zh": "调查发现：购买我们电脑的人中，有75%是因为受到我们广告的影响。",
+        "py": "Diàochá fāxiàn: gòumǎi wǒmen diànnǎo de rén zhōng, yǒu bǎifēnzhī qīshíwǔ shì yīnwèi shòudào wǒmen guǎnggào de yǐngxiǎng.",
+        "vn": "Điều tra phát hiện: trong số người mua máy tính của chúng tôi, có 75% là do chịu ảnh hưởng từ quảng cáo của chúng tôi."
+      },
+      {
+        "zh": "这家饭馆的面很受欢迎。",
+        "py": "Zhè jiā fànguǎn de miàn hěn shòu huānyíng.",
+        "vn": "Món mì của quán ăn này rất được ưa chuộng."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "受",
+        "p": "shòu",
+        "type": "上下结构 · Trên-dưới",
+        "st": 8,
+        "ord": "爫 trên → 又 dưới",
+        "rad": "又 (hựu – tay phải)",
+        "mean": "nhận, chịu",
+        "tip": "Chữ tượng hình hai bàn tay trao và nhận vật gì đó → mở rộng thành NHẬN, TIẾP NHẬN, kết hợp 到(đạt tới) thành 受到 = NHẬN ĐƯỢC, CHỊU (tác động).",
+        "cf": "爱 (ài – \"yêu\", cũng có 爫 trên)",
+        "w": "受到 / 感受 / 接受"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Mua sắm trên mạng có thể nhận được rất nhiều sự yêu thích của mọi người, vì nó tiện lợi và rẻ hơn.",
+        "answer": "网上购物能够受到很多人的喜爱，因为它方便又便宜。",
+        "answerPy": "Wǎngshang gòuwù nénggòu shòudào hěn duō rén de xǐ'ài, yīnwèi tā fāngbiàn yòu piányi.",
+        "note": "受到……的喜爱 kết hợp 购物, ôn lại từ vựng của bài.",
+        "pair": "因为……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Rất nhiều người mua sản phẩm này là do chịu ảnh hưởng từ quảng cáo trên tivi.",
+        "answer": "很多人买这个产品是因为受到电视广告的影响。",
+        "answerPy": "Hěn duō rén mǎi zhège chǎnpǐn shì yīnwèi shòudào diànshì guǎnggào de yǐngxiǎng.",
+        "note": "受到……的影响 kết hợp 广告, ôn lại từ vựng của bài.",
+        "pair": "因为……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "受到欢迎",
+        "py": "shòudào huānyíng",
+        "vn": "được hoan nghênh"
+      },
+      {
+        "zh": "受到影响",
+        "py": "shòudào yǐngxiǎng",
+        "vn": "chịu ảnh hưởng"
+      },
+      {
+        "zh": "受到喜爱",
+        "py": "shòudào xǐ ài",
+        "vn": "được yêu thích"
+      },
+      {
+        "zh": "受到邀请",
+        "py": "shòudào yāoqǐng",
+        "vn": "được mời"
+      },
+      {
+        "zh": "受到表扬",
+        "py": "shòudào biǎoyáng",
+        "vn": "được khen"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "受到 + danh từ hai âm tiết",
+        "m": "Nhận được, chịu … (mang sắc thái bị động)"
+      },
+      {
+        "s": "✗ 受到高兴 → ✓ 受到欢迎",
+        "m": "Sau 受到 phải là danh từ, không phải tính từ"
+      }
+    ]
+  },
+  {
+    "n": 30,
+    "zh": "任何",
+    "py": "rènhé",
+    "pos": "Đại từ",
+    "vn": "bất cứ, bất kỳ",
+    "hv": "nhiệm hà",
+    "em": "🔘",
+    "lesson": 5,
+    "explain": [
+      "Đại từ chỉ định bất kỳ đối tượng nào, không có ngoại lệ."
+    ],
+    "usage": "Đại từ, đứng trước danh từ: 任何时间, 任何问题.",
+    "collo": [
+      "任何时间",
+      "任何问题",
+      "任何东西"
+    ],
+    "ex_zh": "人们可以在任何时间上网购买自己喜欢的东西。",
+    "ex_py": "Rénmen kěyǐ zài rènhé shíjiān shàngwǎng gòumǎi zìjǐ xǐhuan de dōngxi.",
+    "ex_vn": "Mọi người có thể lên mạng mua thứ mình thích vào bất kỳ thời gian nào.",
+    "exList": [
+      {
+        "zh": "人们可以在任何时间上网购买自己喜欢的东西。",
+        "py": "Rénmen kěyǐ zài rènhé shíjiān shàngwǎng gòumǎi zìjǐ xǐhuan de dōngxi.",
+        "vn": "Mọi người có thể lên mạng mua thứ mình thích vào bất kỳ thời gian nào."
+      },
+      {
+        "zh": "我把我的手机号写给你，以后遇到任何问题，你都可以和我联系。",
+        "py": "Wǒ bǎ wǒ de shǒujī hào xiěgěi nǐ, yǐhòu yùdào rènhé wèntí, nǐ dōu kěyǐ hé wǒ liánxì.",
+        "vn": "Tôi viết số điện thoại của tôi cho bạn, sau này gặp bất kỳ vấn đề gì, bạn đều có thể liên hệ với tôi."
+      },
+      {
+        "zh": "如果您有什么特别要求或任何不清楚的地方，请和我们联系。",
+        "py": "Rúguǒ nín yǒu shénme tèbié yāoqiú huò rènhé bù qīngchu de dìfang, qǐng hé wǒmen liánxì.",
+        "vn": "Nếu anh có yêu cầu đặc biệt gì hoặc bất kỳ chỗ nào chưa rõ, xin liên hệ với chúng tôi."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "任",
+        "p": "rèn",
+        "type": "左右结构 · Trái-phải",
+        "st": 6,
+        "ord": "亻 (nhân) trái → 壬 phải",
+        "rad": "亻 (nhân – người)",
+        "mean": "bất kể, để mặc",
+        "tip": "Bộ người 亻 + 壬(biểu âm) → NGƯỜI bất kể ai, mở rộng thành BẤT KỂ, kết hợp 何(nào, gì) thành 任何 = BẤT CỨ, BẤT KỲ.",
+        "cf": "任 dễ nhầm với 仕 (shì – \"làm quan\")",
+        "w": "任何 / 任务 / 责任"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Chỉ cần có mạng là mọi người có thể mua bất cứ thứ gì mình thích vào bất cứ lúc nào, rất tiện.",
+        "answer": "只要有网络，人们就可以在任何时间买自己喜欢的任何东西，非常方便。",
+        "answerPy": "Zhǐyào yǒu wǎngluò, rénmen jiù kěyǐ zài rènhé shíjiān mǎi zìjǐ xǐhuan de rènhé dōngxi, fēicháng fāngbiàn.",
+        "note": "Sau 任何 không dùng 的: ✓ 任何人 / ✗ 任何的人.",
+        "pair": "只要……就……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Nếu bạn có bất kỳ câu hỏi nào, đều có thể liên hệ với chúng tôi.",
+        "answer": "如果你有任何问题，都可以跟我们联系。",
+        "answerPy": "Rúguǒ nǐ yǒu rènhé wèntí, dōu kěyǐ gēn wǒmen liánxì.",
+        "note": "任何 + 问题 + 都可以…… — bất kỳ … đều có thể….",
+        "pair": "如果……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "任何时间",
+        "py": "rènhé shíjiān",
+        "vn": "bất cứ lúc nào"
+      },
+      {
+        "zh": "任何问题",
+        "py": "rènhé wèntí",
+        "vn": "bất cứ vấn đề gì"
+      },
+      {
+        "zh": "任何东西",
+        "py": "rènhé dōngxi",
+        "vn": "bất cứ thứ gì"
+      },
+      {
+        "zh": "任何人",
+        "py": "rènhé rén",
+        "vn": "bất cứ ai"
+      },
+      {
+        "zh": "任何地方",
+        "py": "rènhé dìfang",
+        "vn": "bất cứ nơi đâu"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "任何 + N + 都 / 也 + V",
+        "m": "Bất cứ … cũng …"
+      },
+      {
+        "s": "✗ 任何的人 → ✓ 任何人",
+        "m": "Sau 任何 không dùng 的"
+      }
+    ]
+  },
+  {
+    "n": 31,
+    "zh": "寄",
+    "py": "jì",
+    "pos": "Động từ",
+    "vn": "gửi",
+    "hv": "ký",
+    "em": "📦",
+    "lesson": 5,
+    "explain": [
+      "Chuyển đồ vật/thư từ đến một địa điểm khác thông qua bưu điện/dịch vụ vận chuyển."
+    ],
+    "usage": "Động từ, mang tân ngữ + 到 + địa điểm: 寄到办公室.",
+    "collo": [
+      "寄到办公室",
+      "寄到家里",
+      "寄快递"
+    ],
+    "ex_zh": "卖家可以把你买的东西寄到你办公室或者家里，非常方便。",
+    "ex_py": "Màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiā li, fēicháng fāngbiàn.",
+    "ex_vn": "Người bán có thể gửi đồ bạn mua đến văn phòng hoặc nhà bạn, rất tiện lợi.",
+    "exList": [
+      {
+        "zh": "卖家可以把你买的东西寄到你办公室或者家里，非常方便。",
+        "py": "Màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiā li, fēicháng fāngbiàn.",
+        "vn": "Người bán có thể gửi đồ bạn mua đến văn phòng hoặc nhà bạn, rất tiện lợi."
+      },
+      {
+        "zh": "我想把这些照片寄给你。",
+        "py": "Wǒ xiǎng bǎ zhèxiē zhàopiàn jìgěi nǐ.",
+        "vn": "Tôi muốn gửi những tấm ảnh này cho bạn."
+      },
+      {
+        "zh": "这个包裹已经寄出去了，大概三天能到。",
+        "py": "Zhège bāoguǒ yǐjīng jì chuqu le, dàgài sān tiān néng dào.",
+        "vn": "Kiện hàng này đã gửi đi rồi, khoảng ba ngày là đến."
+      }
+    ],
+    "hanzi": [
+      {
+        "c": "寄",
+        "p": "jì",
+        "type": "上下结构 · Trên-dưới",
+        "st": 11,
+        "ord": "宀 (miên) trên → 奇 (kỳ) dưới",
+        "rad": "宀 (miên – mái nhà)",
+        "mean": "gửi, ký gửi",
+        "tip": "Bộ mái nhà 宀 (nơi tạm gửi) + 奇(biểu âm) → KÝ GỬI đồ vật đến một nơi khác, mở rộng thành GỬI (thư, hàng hóa).",
+        "cf": "奇 (qí – \"kỳ lạ\", không có bộ 宀\")",
+        "w": "寄 / 寄给 / 邮寄"
+      }
+    ],
+    "checkList": [
+      {
+        "promptLang": "vi",
+        "prompt": "Người bán không những có thể gửi hàng bạn mua đến bất kỳ địa chỉ nào, mà tốc độ cũng rất nhanh.",
+        "answer": "卖家不但可以把你买的东西寄到任何地址，而且速度也非常快。",
+        "answerPy": "Màijiā búdàn kěyǐ bǎ nǐ mǎi de dōngxi jì dào rènhé dìzhǐ, érqiě sùdù yě fēicháng kuài.",
+        "note": "Câu chữ 把: 把 + tân ngữ + 寄到 + nơi chốn.",
+        "pair": "不但……而且……"
+      },
+      {
+        "promptLang": "vi",
+        "prompt": "Tôi đã gửi tài liệu đến văn phòng bạn rồi, nếu nhận được thì báo tôi một tiếng nhé.",
+        "answer": "我已经把材料寄到你的办公室了，如果你收到了就告诉我一声。",
+        "answerPy": "Wǒ yǐjīng bǎ cáiliào jì dào nǐ de bàngōngshì le, rúguǒ nǐ shōudào le jiù gàosu wǒ yì shēng.",
+        "note": "材料 là từ bài 3; 一声 — lượng từ cho một lời nhắn ngắn.",
+        "pair": "如果……就……"
+      }
+    ],
+    "colloFull": [
+      {
+        "zh": "寄到办公室",
+        "py": "jì dào bàngōngshì",
+        "vn": "gửi đến văn phòng"
+      },
+      {
+        "zh": "寄到家里",
+        "py": "jì dào jiā li",
+        "vn": "gửi về nhà"
+      },
+      {
+        "zh": "寄快递",
+        "py": "jì kuài dì",
+        "vn": "gửi chuyển phát nhanh"
+      },
+      {
+        "zh": "寄给他",
+        "py": "jì gěi tā",
+        "vn": "gửi cho anh ấy"
+      },
+      {
+        "zh": "寄信",
+        "py": "jì xìn",
+        "vn": "gửi thư"
+      }
+    ],
+    "patterns": [
+      {
+        "s": "把 + N + 寄到 + nơi chốn",
+        "m": "Gửi cái gì đến đâu"
+      },
+      {
+        "s": "寄给 + ai",
+        "m": "Gửi cho ai"
+      }
+    ]
+  },
+  {
+    "n": 32,
+    "zh": "王静",
+    "py": "Wáng Jìng",
+    "pos": "Danh từ riêng",
+    "vn": "Vương Tĩnh (tên người)",
+    "hv": "Vương Tĩnh",
+    "em": "👩",
+    "lesson": 1,
+    "explain": [
+      "Tên riêng của nhân vật nữ chính trong các hội thoại của bài."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "王静说",
+      "王静和李进"
+    ],
+    "ex_zh": "王静在家具店买沙发。",
+    "ex_py": "Wáng Jìng zài jiājùdiàn mǎi shāfā.",
+    "ex_vn": "Vương Tĩnh mua ghế sô pha ở cửa hàng nội thất.",
+    "exList": [
+      {
+        "zh": "王静在家具店买沙发。",
+        "py": "Wáng Jìng zài jiājùdiàn mǎi shāfā.",
+        "vn": "Vương Tĩnh mua ghế sô pha ở cửa hàng nội thất."
+      }
+    ]
+  },
+  {
+    "n": 33,
+    "zh": "李进",
+    "py": "Lǐ Jìn",
+    "pos": "Danh từ riêng",
+    "vn": "Lý Tiến (tên người)",
+    "hv": "Lý Tiến",
+    "em": "🧑",
+    "lesson": 2,
+    "explain": [
+      "Tên riêng của chồng/bạn王静 trong hội thoại 2 và 3."
+    ],
+    "usage": "Danh từ riêng chỉ tên người.",
+    "collo": [
+      "李进说",
+      "王静和李进"
+    ],
+    "ex_zh": "王静和李进在商场买东西。",
+    "ex_py": "Wáng Jìng hé Lǐ Jìn zài shāngchǎng mǎi dōngxi.",
+    "ex_vn": "Vương Tĩnh và Lý Tiến mua đồ ở trung tâm mua sắm.",
+    "exList": [
+      {
+        "zh": "王静和李进在商场买东西。",
+        "py": "Wáng Jìng hé Lǐ Jìn zài shāngchǎng mǎi dōngxi.",
+        "vn": "Vương Tĩnh và Lý Tiến mua đồ ở trung tâm mua sắm."
+      }
+    ]
+  }
 ];
 
 var wuData = [

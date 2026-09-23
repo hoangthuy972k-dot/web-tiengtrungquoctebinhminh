@@ -498,11 +498,11 @@ var vocabData = [
       },
       {
         "promptLang": "vi",
-        "prompt": "Ai phụ trách đợt tuyển dụng này vậy?",
-        "answer": "这次招聘是谁负责的？",
-        "answerPy": "Zhè cì zhāopìn shì shéi fùzé de?",
-        "note": "是……的 — cấu trúc nhấn mạnh, ôn lại HSK3.",
-        "pair": "是……的……"
+        "prompt": "Bất kể đợt tuyển dụng này do ai phụ trách, chúng ta đều phải nộp hồ sơ đúng hạn.",
+        "answer": "不管这次招聘是谁负责的，我们都要按时交材料。",
+        "answerPy": "Bùguǎn zhè cì zhāopìn shì shéi fùzé de, wǒmen dōu yào ànshí jiāo cáiliào.",
+        "note": "不管 + 谁 (nghi vấn phiếm chỉ)，都…… — ai cũng vậy.",
+        "pair": "不管……都……"
       }
     ],
     "colloFull": [
@@ -819,7 +819,7 @@ var vocabData = [
         "answer": "这件事本来是他负责的，但最后却交给我做了。",
         "answerPy": "Zhè jiàn shì běnlái shì tā fùzé de, dàn zuìhòu què jiāogěi wǒ zuò le.",
         "note": "本来……但……却…… — kết hợp với 却, ôn lại điểm ngữ pháp Bài 2.",
-        "pair": "是……的……"
+        "pair": "……，却……"
       },
       {
         "promptLang": "vi",
@@ -1031,11 +1031,11 @@ var vocabData = [
     "checkList": [
       {
         "promptLang": "vi",
-        "prompt": "Năng lực của hai người này khá phù hợp với yêu cầu, đây là tài liệu của họ, mời chị xem qua.",
-        "answer": "这两个人的能力都比较符合要求，这是他们的材料，您看看。",
-        "answerPy": "Zhè liǎng ge rén de nénglì dōu bǐjiào fúhé yāoqiú, zhè shì tāmen de cáiliào, nín kànkan.",
-        "note": "能力符合要求 — năng lực phù hợp yêu cầu, ôn lại từ vựng bài học.",
-        "pair": "是……的……"
+        "prompt": "Vì năng lực của hai người này đều khá phù hợp với yêu cầu, nên tôi đưa hồ sơ của họ cho chị xem.",
+        "answer": "因为这两个人的能力都比较符合要求，所以我把他们的材料给您看看。",
+        "answerPy": "Yīnwèi zhè liǎng gè rén de nénglì dōu bǐjiào fúhé yāoqiú, suǒyǐ wǒ bǎ tāmen de cáiliào gěi nín kànkan.",
+        "note": "Câu chữ 把: 把 + tân ngữ + 给 + người nhận + V.",
+        "pair": "因为……所以……"
       },
       {
         "promptLang": "vi",
@@ -1686,7 +1686,7 @@ var vocabData = [
         "answer": "首先她喜欢这份工作，其次是收入也挺好的。",
         "answerPy": "Shǒuxiān tā xǐhuan zhè fèn gōngzuò, qícì shì shōurù yě tǐng hǎo de.",
         "note": "首先……其次…… ôn lại điểm ngữ pháp của bài.",
-        "pair": "是……的……"
+        "pair": "首先……其次……"
       },
       {
         "promptLang": "vi",
@@ -2551,7 +2551,7 @@ var vocabData = [
         "answer": "第一印象本来不一定是对的，但想改变却很困难。",
         "answerPy": "Dì-yī yìnxiàng běnlái bùyídìng shì duì de, dàn xiǎng gǎibiàn què hěn kùnnan.",
         "note": "本来……但……却…… — kết hợp 本来 và 却, ôn lại điểm ngữ pháp của bài và Bài 2.",
-        "pair": "是……的……"
+        "pair": "……，却……"
       },
       {
         "promptLang": "vi",
@@ -2668,7 +2668,7 @@ var vocabData = [
         "answer": "不管别人感觉怎么样，我还是相信自己的决定。",
         "answerPy": "Bùguǎn biéren gǎnjué zěnmeyàng, wǒ háishi xiāngxìn zìjǐ de juédìng.",
         "note": "不管……还是…… ôn lại điểm ngữ pháp của bài.",
-        "pair": "是……的……"
+        "pair": "不管……"
       }
     ],
     "colloFull": [
@@ -2764,11 +2764,11 @@ var vocabData = [
     "checkList": [
       {
         "promptLang": "vi",
-        "prompt": "Nhìn cách anh ấy làm việc, tôi có thể dễ dàng đánh giá được anh ấy là người thế nào.",
-        "answer": "看他怎么做事，我可以比较容易地判断出他是什么样的人。",
-        "answerPy": "Kàn tā zěnme zuò shì, wǒ kěyǐ bǐjiào róngyì de pànduàn chū tā shì shénmeyàng de rén.",
-        "note": "判断出 + kết quả — đánh giá ra được….",
-        "pair": "是……的……"
+        "prompt": "Chỉ cần nhìn cách anh ấy làm việc là tôi có thể khá dễ dàng đánh giá anh ấy là người thế nào.",
+        "answer": "只要看他怎么做事，我就可以比较容易地判断出他是什么样的人。",
+        "answerPy": "Zhǐyào kàn tā zěnme zuòshì, wǒ jiù kěyǐ bǐjiào róngyì de pànduàn chū tā shì shénme yàng de rén.",
+        "note": "判断出 — bổ ngữ xu hướng 出 mang nghĩa \"nhận ra, tìm ra\".",
+        "pair": "只要……就……"
       },
       {
         "promptLang": "vi",

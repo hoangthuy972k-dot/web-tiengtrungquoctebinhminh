@@ -3336,7 +3336,7 @@
   // Khong hien chiet tu Han tu — len HSK 4 hoc sinh da thuoc mat chu.
   // ══════════════════════════════════════════════════════════
   function vpIsHsk4() {
-    return !!(currentHubLesson && /\/hsk4-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    return !!(currentHubLesson && /\/hsk[34]-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
   }
 
   function vpH4Say(t) {
@@ -3387,6 +3387,8 @@
   }
 
   function renderVpListHsk4() {
+    // Chi HSK 3 giu chiet tu Han tu; HSK 4 tro len da bo
+    var giuHanTu = !!(currentHubLesson && /\/hsk3-bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
     var wrap = $('#vpContent');
     wrap.innerHTML =
       '<div class="h4-list">' +
@@ -3427,6 +3429,13 @@
                 '</div>' +
               '</div>' +
               vpH4Examples(v) +
+              // HSK 3 giu khoi chiet tu Han tu, dat cuoi cung: doc nghia va
+              // cach dung truoc, xong moi soi tung chu
+              (giuHanTu && v.hanzi && v.hanzi.length
+                ? '<div class="h4-block"><div class="h4-sec-h"><span class="h4-sec-zh">汉字</span> Chiết tự Hán tự (' + v.hanzi.length + ' chữ)</div>' +
+                  '<div class="hz-panel open" id="vphzp' + vi + '">' +
+                  v.hanzi.map(function (h, hi) { return vpHzItemHtml(h, vi, hi); }).join('') + '</div></div>'
+                : '') +
               // Luyen dich: giu o go bai cua hoc sinh (khac trang may chieu tren lop)
               (v.checkList
                 ? '<div class="h4-block"><div class="h4-sec-h"><span class="h4-sec-zh">翻译练习</span> Luyện dịch Việt → Trung</div>' +
@@ -3467,6 +3476,14 @@
     $all('[data-speak]', list).forEach(function (btn) {
       btn.addEventListener('click', function (e) { e.stopPropagation(); vpSpeak(btn.getAttribute('data-speak')); });
     });
+    $all('[data-hz-quiz]', list).forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var parts = btn.getAttribute('data-hz-quiz').split('_');
+        vpHzQuiz(parseInt(parts[0], 10), parseInt(parts[1], 10));
+      });
+    });
+    if (giuHanTu) vpObserveHzBoxes(list);
     wireVpCheckWidgets(list);
   }
 

@@ -285,10 +285,33 @@ document.addEventListener('click',function(e){
 // TU MOI HSK 4 — mot tu mot o, bo cuc theo slide giang cua thay/co
 //   the dong : so thu tu · chu Han lon · pinyin · tu loai · nghia
 //   the mo   : the tu (trai) + 搭配 va 句型 (phai) + 例句 + 翻译练习
-// Bo han phan chiet tu Han tu: len HSK 4 hoc sinh da thuoc mat chu,
-// phan do lam trang dai ra ma it ai doc.
+// HSK 3 dung CUNG bo cuc nay, chi khac mot diem: van giu khoi chiet tu
+// Han tu o cuoi phan mo ra. Len HSK 4 hoc sinh da thuoc mat chu nen bo,
+// nhung o HSK 3 thi mat chu VAN DANG hoc — bo di la mat bai.
 // ══════════════════════════════════════════════════════════════
-function isHsk4Page(){ return /hsk4-bai-\d+/.test(location.pathname); }
+function isHsk4Page(){ return /hsk[34]-bai-\d+/.test(location.pathname); }
+function hsk3GiuHanTu(){ return /hsk3-bai-\d+/.test(location.pathname); }
+
+// Khoi chiet tu Han tu — dung chung cho ca hai bo cuc (the cu va o HSK 3/4)
+function hzListHtml(v,vi){
+  return (v.hanzi||[]).map(function(h,hi){
+    const hasWriter=(typeof STROKE_DATA!=='undefined')&&!!STROKE_DATA[h.c]&&(typeof HanziWriter!=='undefined');
+    return '<div class="hz-item"><div class="hz-writer-wrap">'+
+      '<div class="hz-writer-box" id="hzw'+vi+'_'+hi+'"><span class="hz-fallback">'+h.c+'</span></div>'+
+      '<div class="hz-writer-under"><span class="hzw-py">'+h.p+'</span>'+
+      (hasWriter?'<button type="button" class="hz-quiz-btn" data-action="hz-quiz" data-vi="'+vi+'" data-hi="'+hi+'">✏️ Luyện viết</button>':'')+
+      '<div class="hz-quiz-fb" id="hzfb'+vi+'_'+hi+'"></div>'+
+      '</div></div>'+
+      '<div class="hz-info">'+
+      '<div class="hz-row"><span class="hz-k">Loại:</span> '+h.type+' <span class="hz-strokes">'+h.st+' nét</span></div>'+
+      '<div class="hz-row"><span class="hz-k">Bộ thủ:</span> '+(hasWriter?'<span class="hz-rad-dot"></span> ':'')+'<span class="hz-rad">'+h.rad+'</span></div>'+
+      '<div class="hz-row"><span class="hz-k">Nghĩa:</span> '+h.mean+'</div>'+
+      '<div class="hz-row"><span class="hz-k">Bút thuận:</span> '+h.ord+'</div>'+
+      '<div class="hz-row"><span class="hz-k">Dễ nhầm:</span> '+h.cf+'</div>'+
+      '</div><div class="hz-tip"><b>💡 Mẹo nhớ:</b> '+h.tip+'</div>'+
+      '<div class="hz-words"><span class="hz-wl">Từ đại diện:</span> '+h.w+'</div></div>';
+  }).join('');
+}
 
 function h4Collo(v){
   var list = v.colloFull && v.colloFull.length
@@ -357,6 +380,7 @@ function h4Say(t){
 }
 
 function buildVocabHsk4(){
+  const giuHanTu=hsk3GiuHanTu();
   const g=document.getElementById('vocab-grid');
   g.className='h4-list';
   g.innerHTML=
@@ -395,6 +419,12 @@ function buildVocabHsk4(){
           '</div>'+
           h4Examples(v,vi)+
           h4Translate(v,vi)+
+          // HSK 3: giu khoi chiet tu Han tu, dat cuoi cung vi hoc sinh doc
+          // nghia va cach dung truoc, xong moi soi tung chu
+          (giuHanTu&&v.hanzi&&v.hanzi.length
+            ? '<div class="h4-block"><div class="h4-sec-h"><span class="h4-sec-zh">汉字</span> Chiết tự Hán tự ('+v.hanzi.length+' chữ)</div>'+
+              '<div class="hz-panel open" id="hzp'+vi+'">'+hzListHtml(v,vi)+'</div></div>'
+            : '')+
         '</div>'+
       '</article>';
     }).join('');
@@ -432,6 +462,8 @@ function buildVocabHsk4(){
   }
   if(openAll) openAll.addEventListener('click',function(){ datTatCa(true); });
   if(closeAll) closeAll.addEventListener('click',function(){ datTatCa(false); });
+  // O chu Han viet tay chi ve khi lot vao man hinh — goi sau khi da dung xong DOM
+  if(giuHanTu) observeHzBoxes(g);
 }
 
 // ══════════════════════════════════════════
@@ -465,23 +497,7 @@ function buildVocab(){
         : '<div class="vc-ex-py">'+e.py+'</div><div class="vc-ex-vn">'+e.vn+'</div>';
       return '<div class="vc-ex-item"><div class="vc-ex-zh">'+e.zh+'</div>'+detail+'</div>';
     }).join('');
-    const hzs=(v.hanzi||[]).map(function(h,hi){
-      const hasWriter=(typeof STROKE_DATA!=='undefined')&&!!STROKE_DATA[h.c]&&(typeof HanziWriter!=='undefined');
-      return '<div class="hz-item"><div class="hz-writer-wrap">'+
-        '<div class="hz-writer-box" id="hzw'+vi+'_'+hi+'"><span class="hz-fallback">'+h.c+'</span></div>'+
-        '<div class="hz-writer-under"><span class="hzw-py">'+h.p+'</span>'+
-        (hasWriter?'<button type="button" class="hz-quiz-btn" data-action="hz-quiz" data-vi="'+vi+'" data-hi="'+hi+'">✏️ Luyện viết</button>':'')+
-        '<div class="hz-quiz-fb" id="hzfb'+vi+'_'+hi+'"></div>'+
-        '</div></div>'+
-        '<div class="hz-info">'+
-        '<div class="hz-row"><span class="hz-k">Loại:</span> '+h.type+' <span class="hz-strokes">'+h.st+' nét</span></div>'+
-        '<div class="hz-row"><span class="hz-k">Bộ thủ:</span> '+(hasWriter?'<span class="hz-rad-dot"></span> ':'')+'<span class="hz-rad">'+h.rad+'</span></div>'+
-        '<div class="hz-row"><span class="hz-k">Nghĩa:</span> '+h.mean+'</div>'+
-        '<div class="hz-row"><span class="hz-k">Bút thuận:</span> '+h.ord+'</div>'+
-        '<div class="hz-row"><span class="hz-k">Dễ nhầm:</span> '+h.cf+'</div>'+
-        '</div><div class="hz-tip"><b>💡 Mẹo nhớ:</b> '+h.tip+'</div>'+
-        '<div class="hz-words"><span class="hz-wl">Từ đại diện:</span> '+h.w+'</div></div>';
-    }).join('');
+    const hzs=hzListHtml(v,vi);
     // O hinh cua tu: uu tien anh minh hoa (v.img), khong co thi dung emoji.
     // Anh loi (chua ve kip) se tu an di va emoji hien lai, nen khong bao gio vo o.
     const icon=v.img

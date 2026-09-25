@@ -15,6 +15,14 @@ var PHAT_AM_BAI = [
     ten: 'Thanh điệu · a o e i u ü',
     am: 'a o e i u ü + 4 thanh',
     y: 'Bốn thanh và sáu nguyên âm đơn. Trọng tâm: nghe ra thanh 2 và thanh 3.',
+    tu2: [
+      { zh: '妈妈', py: 'māma', vn: 'mẹ' },
+      { zh: '爸爸', py: 'bàba', vn: 'bố' },
+      { zh: '骑马', py: 'qímǎ', vn: 'cưỡi ngựa' },
+      { zh: '鸭子', py: 'yāzi', vn: 'con vịt' },
+      { zh: '衣服', py: 'yīfu', vn: 'quần áo' },
+      { zh: '雨衣', py: 'yǔyī', vn: 'áo mưa' }
+    ],
     tu: [
       { zh: '妈', py: 'mā', vn: 'mẹ' },
       { zh: '麻', py: 'má', vn: 'cây gai; tê' },
@@ -35,6 +43,16 @@ var PHAT_AM_BAI = [
     ten: 'b p m f',
     am: 'b p m f',
     y: 'Cặp dễ nhầm nhất: b – p (bật hơi hay không).',
+    tu2: [
+      { zh: '爸爸', py: 'bàba', vn: 'bố' },
+      { zh: '妈妈', py: 'māma', vn: 'mẹ' },
+      { zh: '米饭', py: 'mǐfàn', vn: 'cơm' },
+      { zh: '面包', py: 'miànbāo', vn: 'bánh mì' },
+      { zh: '朋友', py: 'péngyou', vn: 'bạn bè' },
+      { zh: '毛笔', py: 'máobǐ', vn: 'bút lông' },
+      { zh: '豆腐', py: 'dòufu', vn: 'đậu phụ' },
+      { zh: '方便', py: 'fāngbiàn', vn: 'tiện lợi' }
+    ],
     tu: [
       { zh: '八', py: 'bā', vn: 'số tám' },
       { zh: '拔', py: 'bá', vn: 'nhổ, rút' },
@@ -57,6 +75,16 @@ var PHAT_AM_BAI = [
     ten: 'd t n l',
     am: 'd t n l',
     y: 'Cặp dễ nhầm: d – t, và n – l (học sinh Việt hay đọc lẫn).',
+    tu2: [
+      { zh: '弟弟', py: 'dìdi', vn: 'em trai' },
+      { zh: '努力', py: 'nǔlì', vn: 'chăm chỉ' },
+      { zh: '电脑', py: 'diànnǎo', vn: 'máy tính' },
+      { zh: '你们', py: 'nǐmen', vn: 'các bạn' },
+      { zh: '大家', py: 'dàjiā', vn: 'mọi người' },
+      { zh: '旅游', py: 'lǚyóu', vn: 'du lịch' },
+      { zh: '天天', py: 'tiāntiān', vn: 'ngày nào cũng' },
+      { zh: '老师', py: 'lǎoshī', vn: 'giáo viên' }
+    ],
     tu: [
       { zh: '大', py: 'dà', vn: 'to, lớn' },
       { zh: '地', py: 'dì', vn: 'đất' },
@@ -79,6 +107,16 @@ var PHAT_AM_BAI = [
     ten: 'g k h',
     am: 'g k h',
     y: 'Cặp dễ nhầm: g – k. Chú ý h tiếng Trung xát mạnh hơn h tiếng Việt.',
+    tu2: [
+      { zh: '哥哥', py: 'gēge', vn: 'anh trai' },
+      { zh: '高兴', py: 'gāoxìng', vn: 'vui' },
+      { zh: '汉语', py: 'Hànyǔ', vn: 'tiếng Trung' },
+      { zh: '开心', py: 'kāixīn', vn: 'vui vẻ' },
+      { zh: '公司', py: 'gōngsī', vn: 'công ty' },
+      { zh: '咖啡', py: 'kāfēi', vn: 'cà phê' },
+      { zh: '回家', py: 'huí jiā', vn: 'về nhà' },
+      { zh: '可乐', py: 'kělè', vn: 'nước ngọt' }
+    ],
     tu: [
       { zh: '哥', py: 'gē', vn: 'anh trai' },
       { zh: '歌', py: 'gē', vn: 'bài hát' },
@@ -100,6 +138,16 @@ var PHAT_AM_BAI = [
     ten: 'j q x',
     am: 'j q x',
     y: 'Ba âm mặt lưỡi, luôn đi với i hoặc ü. Cặp dễ nhầm: j – q.',
+    tu2: [
+      { zh: '今天', py: 'jīntiān', vn: 'hôm nay' },
+      { zh: '学习', py: 'xuéxí', vn: 'học tập' },
+      { zh: '星期', py: 'xīngqī', vn: 'tuần lễ' },
+      { zh: '现在', py: 'xiànzài', vn: 'bây giờ' },
+      { zh: '姐姐', py: 'jiějie', vn: 'chị gái' },
+      { zh: '起床', py: 'qǐchuáng', vn: 'ngủ dậy' },
+      { zh: '喜欢', py: 'xǐhuan', vn: 'thích' },
+      { zh: '谢谢', py: 'xièxie', vn: 'cảm ơn' }
+    ],
     tu: [
       { zh: '鸡', py: 'jī', vn: 'con gà' },
       { zh: '挤', py: 'jǐ', vn: 'chen, bóp' },
@@ -120,6 +168,16 @@ var PHAT_AM_BAI = [
     ten: 'zh ch sh r',
     am: 'zh ch sh r',
     y: 'Bốn âm cuốn lưỡi — khó nhất với học sinh Việt vì tiếng Việt không có.',
+    tu2: [
+      { zh: '老师', py: 'lǎoshī', vn: 'giáo viên' },
+      { zh: '中国', py: 'Zhōngguó', vn: 'Trung Quốc' },
+      { zh: '吃饭', py: 'chīfàn', vn: 'ăn cơm' },
+      { zh: '时间', py: 'shíjiān', vn: 'thời gian' },
+      { zh: '认识', py: 'rènshi', vn: 'quen biết' },
+      { zh: '知道', py: 'zhīdào', vn: 'biết' },
+      { zh: '车站', py: 'chēzhàn', vn: 'bến xe' },
+      { zh: '书包', py: 'shūbāo', vn: 'cặp sách' }
+    ],
     tu: [
       { zh: '竹', py: 'zhú', vn: 'tre' },
       { zh: '桌', py: 'zhuō', vn: 'cái bàn' },
@@ -144,6 +202,16 @@ var PHAT_AM_BAI = [
     ten: 'z c s y w',
     am: 'z c s y w',
     y: 'z c s (đầu lưỡi) đối lại zh ch sh (cuốn lưỡi) — trọng tâm phân biệt.',
+    tu2: [
+      { zh: '我们', py: 'wǒmen', vn: 'chúng tôi' },
+      { zh: '再见', py: 'zàijiàn', vn: 'tạm biệt' },
+      { zh: '工作', py: 'gōngzuò', vn: 'công việc' },
+      { zh: '颜色', py: 'yánsè', vn: 'màu sắc' },
+      { zh: '一起', py: 'yìqǐ', vn: 'cùng nhau' },
+      { zh: '早上', py: 'zǎoshang', vn: 'buổi sáng' },
+      { zh: '医院', py: 'yīyuàn', vn: 'bệnh viện' },
+      { zh: '词典', py: 'cídiǎn', vn: 'từ điển' }
+    ],
     tu: [
       { zh: '字', py: 'zì', vn: 'chữ' },
       { zh: '足', py: 'zú', vn: 'chân; đủ' },
@@ -170,6 +238,16 @@ var PHAT_AM_BAI = [
     ten: 'ai ei ui',
     am: 'ai ei ui',
     y: 'Ba vận mẫu kép. Chú ý ui đọc đầy đủ là u-e-i, dấu thanh đặt trên i.',
+    tu2: [
+      { zh: '爱好', py: 'àihào', vn: 'sở thích' },
+      { zh: '北京', py: 'Běijīng', vn: 'Bắc Kinh' },
+      { zh: '水果', py: 'shuǐguǒ', vn: 'hoa quả' },
+      { zh: '快乐', py: 'kuàilè', vn: 'vui vẻ' },
+      { zh: '回来', py: 'huílái', vn: 'trở về' },
+      { zh: '明白', py: 'míngbai', vn: 'hiểu rõ' },
+      { zh: '黑板', py: 'hēibǎn', vn: 'bảng đen' },
+      { zh: '杯子', py: 'bēizi', vn: 'cái cốc' }
+    ],
     tu: [
       { zh: '爱', py: 'ài', vn: 'yêu' },
       { zh: '海', py: 'hǎi', vn: 'biển' },
@@ -194,6 +272,16 @@ var PHAT_AM_BAI = [
     ten: 'ao ou iu',
     am: 'ao ou iu',
     y: 'Chú ý iu đọc đầy đủ là i-o-u, dấu thanh đặt trên u.',
+    tu2: [
+      { zh: '朋友', py: 'péngyou', vn: 'bạn bè' },
+      { zh: '好吃', py: 'hǎochī', vn: 'ngon' },
+      { zh: '手机', py: 'shǒujī', vn: 'điện thoại' },
+      { zh: '小狗', py: 'xiǎogǒu', vn: 'con chó nhỏ' },
+      { zh: '牛奶', py: 'niúnǎi', vn: 'sữa bò' },
+      { zh: '跑步', py: 'pǎobù', vn: 'chạy bộ' },
+      { zh: '休息', py: 'xiūxi', vn: 'nghỉ ngơi' },
+      { zh: '报纸', py: 'bàozhǐ', vn: 'báo' }
+    ],
     tu: [
       { zh: '猫', py: 'māo', vn: 'con mèo' },
       { zh: '抱', py: 'bào', vn: 'ôm' },
@@ -214,6 +302,16 @@ var PHAT_AM_BAI = [
     ten: 'ie üe er',
     am: 'ie üe er',
     y: 'üe chỉ đi sau j q x y (viết thành ue) và n l. er là vận mẫu đứng riêng.',
+    tu2: [
+      { zh: '谢谢', py: 'xièxie', vn: 'cảm ơn' },
+      { zh: '学习', py: 'xuéxí', vn: 'học tập' },
+      { zh: '月亮', py: 'yuèliang', vn: 'mặt trăng' },
+      { zh: '姐姐', py: 'jiějie', vn: 'chị gái' },
+      { zh: '儿子', py: 'érzi', vn: 'con trai' },
+      { zh: '写字', py: 'xiě zì', vn: 'viết chữ' },
+      { zh: '音乐', py: 'yīnyuè', vn: 'âm nhạc' },
+      { zh: '决定', py: 'juédìng', vn: 'quyết định' }
+    ],
     tu: [
       { zh: '切', py: 'qiē', vn: 'cắt, thái' },
       { zh: '灭', py: 'miè', vn: 'dập tắt' },
@@ -233,6 +331,16 @@ var PHAT_AM_BAI = [
     ten: 'an en in un ün',
     am: 'an en in un ün',
     y: 'Bốn vận mẫu đuôi -n. Trọng tâm: phân biệt với đuôi -ng ở bài 12.',
+    tu2: [
+      { zh: '现在', py: 'xiànzài', vn: 'bây giờ' },
+      { zh: '银行', py: 'yínháng', vn: 'ngân hàng' },
+      { zh: '春天', py: 'chūntiān', vn: 'mùa xuân' },
+      { zh: '新闻', py: 'xīnwén', vn: 'tin tức' },
+      { zh: '身体', py: 'shēntǐ', vn: 'sức khoẻ' },
+      { zh: '晚饭', py: 'wǎnfàn', vn: 'cơm tối' },
+      { zh: '裙子', py: 'qúnzi', vn: 'cái váy' },
+      { zh: '分钟', py: 'fēnzhōng', vn: 'phút' }
+    ],
     tu: [
       { zh: '男', py: 'nán', vn: 'nam, con trai' },
       { zh: '半', py: 'bàn', vn: 'một nửa' },
@@ -270,6 +378,16 @@ var PHAT_AM_BAI = [
     ten: 'ang eng ing ong',
     am: 'ang eng ing ong',
     y: 'Bốn vận mẫu đuôi -ng. Đây là chỗ học sinh Việt sai nhiều nhất: an/ang, in/ing.',
+    tu2: [
+      { zh: '中国', py: 'Zhōngguó', vn: 'Trung Quốc' },
+      { zh: '房间', py: 'fángjiān', vn: 'căn phòng' },
+      { zh: '电影', py: 'diànyǐng', vn: 'bộ phim' },
+      { zh: '红色', py: 'hóngsè', vn: 'màu đỏ' },
+      { zh: '上课', py: 'shàngkè', vn: 'vào học' },
+      { zh: '名字', py: 'míngzi', vn: 'tên' },
+      { zh: '东西', py: 'dōngxi', vn: 'đồ vật' },
+      { zh: '朋友', py: 'péngyou', vn: 'bạn bè' }
+    ],
     tu: [
       { zh: '昂', py: 'áng', vn: 'ngẩng cao' },
       { zh: '棒', py: 'bàng', vn: 'cái gậy; tuyệt' },
@@ -306,6 +424,20 @@ var PHAT_AM_BAI = [
     am: '轻声 · 变调 · 儿化',
     y: 'Ba hiện tượng biến âm khi nói: thanh nhẹ, biến điệu của 不 / 一, và âm nhi hoá.',
     onTap: true,
+    tu2: [
+      { zh: '妈妈', py: 'māma', vn: 'mẹ (thanh nhẹ)' },
+      { zh: '爷爷', py: 'yéye', vn: 'ông (thanh nhẹ)' },
+      { zh: '奶奶', py: 'nǎinai', vn: 'bà (thanh nhẹ)' },
+      { zh: '桌子', py: 'zhuōzi', vn: 'cái bàn (thanh nhẹ)' },
+      { zh: '不是', py: 'bú shì', vn: 'không phải (biến điệu)' },
+      { zh: '不好', py: 'bù hǎo', vn: 'không tốt (giữ nguyên)' },
+      { zh: '一个', py: 'yí ge', vn: 'một cái (biến điệu)' },
+      { zh: '一天', py: 'yì tiān', vn: 'một ngày (biến điệu)' },
+      { zh: '小孩儿', py: 'xiǎoháir', vn: 'trẻ con (nhi hoá)' },
+      { zh: '鸟儿', py: 'niǎor', vn: 'con chim (nhi hoá)' },
+      { zh: '饭馆儿', py: 'fànguǎnr', vn: 'quán ăn (nhi hoá)' },
+      { zh: '花儿', py: 'huār', vn: 'bông hoa (nhi hoá)' }
+    ],
     tu: [
       { zh: '妈妈', py: 'māma', vn: 'mẹ (thanh nhẹ)' },
       { zh: '爷爷', py: 'yéye', vn: 'ông (thanh nhẹ)' },

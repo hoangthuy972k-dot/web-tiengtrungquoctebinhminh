@@ -205,11 +205,23 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
       </div>
       <p class="gh-count" id="lopPaCount">Chưa chọn bài nào.</p>
       <div id="lopPaList" class="lop-lessons"></div>
-      <div class="lop-pa-kieu" id="lopPaKieu">
-        <button type="button" data-pk="viet" class="on">✍️ Nghe – viết phiên âm</button>
-        <button type="button" data-pk="chon">🅰️ Nghe – chọn đáp án</button>
-        <button type="button" data-pk="doc">🗣️ Chiếu – gọi đọc to</button>
+      <div class="lop-pa-dong2">
+        <span class="lop-pa-nhan">Kiểm cái gì</span>
+        <div class="lop-pa-kieu" id="lopPaNguon">
+          <button type="button" data-pn="tu2" class="on">Từ 2 âm tiết</button>
+          <button type="button" data-pn="tu1">Âm tiết đơn</button>
+          <button type="button" data-pn="tron">Trộn cả hai</button>
+        </div>
       </div>
+      <div class="lop-pa-dong2">
+        <span class="lop-pa-nhan">Kiểm thế nào</span>
+        <div class="lop-pa-kieu" id="lopPaKieu">
+          <button type="button" data-pk="doc" class="on">🗣️ Chiếu – em đọc to</button>
+          <button type="button" data-pk="viet">✍️ Nghe – em viết</button>
+          <button type="button" data-pk="chon">🅰️ Nghe – em chọn</button>
+        </div>
+      </div>
+      <p class="lop-pa-giai">Mỗi lượt gọi <b>một em</b> lên kiểm <b>3 từ</b>. Chấm ✓ / ✗ từng từ rồi bấm “Em tiếp theo”.</p>
       <button type="button" class="lop-act" id="lopPaStart">Bắt đầu kiểm tra →</button>
     </div>
 

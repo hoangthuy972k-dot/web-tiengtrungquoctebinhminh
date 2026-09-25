@@ -1722,12 +1722,13 @@
        chon — may doc, chieu 4 lua chon, ca lop gio the A/B/C/D
        doc  — chieu am tiet, goi hoc sinh doc, thay co cham Dung/Sai   */
   var paChon = {};          // so bai -> 1
-  var paKieu = 'viet';
+  var paKieu = 'doc';
+  var paNguon = 'tu2';        // mac dinh kiem tra tu HAI AM TIET
   var paBai = (typeof PHAT_AM_BAI !== 'undefined') ? PHAT_AM_BAI : [];
 
   function paLuu() {
     try {
-      localStorage.setItem('hyv_pa', JSON.stringify({ bai: Object.keys(paChon), kieu: paKieu }));
+      localStorage.setItem('hyv_pa', JSON.stringify({ bai: Object.keys(paChon), kieu: paKieu, nguon: paNguon }));
     } catch (e) { /* bo qua */ }
   }
   function paDoc() {
@@ -1735,6 +1736,7 @@
       var d = JSON.parse(localStorage.getItem('hyv_pa') || '{}');
       (d.bai || []).forEach(function (s) { paChon[s] = 1; });
       if (d.kieu) paKieu = d.kieu;
+      if (d.nguon) paNguon = d.nguon;
     } catch (e) { /* bo qua */ }
   }
 
@@ -1763,18 +1765,22 @@
     if (!ds.length) { p.textContent = 'Chưa chọn bài nào — bấm vào số bài bên dưới.'; p.classList.remove('on'); }
     else {
       p.innerHTML = '✓ Đang chọn: <b>' + ds.map(function (b) { return 'Bài ' + b.so; }).join(' · ') +
-        '</b> — ' + paKho().length + ' âm tiết';
+        '</b> — ' + paKho().length + (paNguon === 'tu1' ? ' âm tiết' : ' từ');
       p.classList.add('on');
     }
     var nut = $('#lopPaStart');
     if (nut) nut.disabled = !ds.length;
   }
-  /* Gom toan bo tu cua cac bai da chon. */
+  /* Kho tu cua cac bai da chon, theo nguon dang chon:
+     tu1 = am tiet don · tu2 = tu hai am tiet · tron = ca hai. */
   function paKho() {
     var ra = [], thay = {};
     paBai.forEach(function (b) {
       if (!paChon[b.so]) return;
-      b.tu.forEach(function (t) {
+      var nguon = [];
+      if (paNguon === 'tu1' || paNguon === 'tron') nguon = nguon.concat(b.tu || []);
+      if (paNguon === 'tu2' || paNguon === 'tron') nguon = nguon.concat(b.tu2 || []);
+      nguon.forEach(function (t) {
         var k = t.zh + '|' + t.py;
         if (thay[k]) return;
         thay[k] = 1;
@@ -1784,124 +1790,148 @@
     return ra;
   }
 
-  function paBatDau() {
+  function paBoMoi() {
     var kho = paKho();
-    if (!kho.length) return;
+    return {
+      luot: (state.pa ? state.pa.luot : 0) + 1,
+      bo: shuffle(kho).slice(0, 3),
+      ket: [null, null, null],
+      hien: false,
+      de: null,
+      tong: state.pa ? state.pa.tong : { hs: 0, dung: 0, tong: 0 }
+    };
+  }
+
+  function paBatDau() {
+    if (!paKho().length) return;
     state.game = 'phatam';
-    state.pa = { deck: shuffle(kho).slice(0, 12), pos: 0, key: false, de: null, dePos: -1 };
+    state.pa = null;
+    state.pa = paBoMoi();
+    state.pa.tong = { hs: 0, dung: 0, tong: 0 };
     $('#lopTitle').textContent = TEST_TITLE.phatam;
     $('#lopSub').textContent = 'Phát âm · ' + paBai.filter(function (b) { return paChon[b.so]; })
       .map(function (b) { return 'Bài ' + b.so; }).join(' · ');
     resetScores();
     renderScorebar();
-    state.timer.secs = 25;
-    $('#lopScorebar').hidden = paKieu !== 'doc';
+    state.timer.secs = 30;
+    $('#lopScorebar').hidden = false;
     resetTimer();
     $('#lopSetup').hidden = true;
     $('#lopPlay').hidden = false;
     paVe();
   }
 
+  /* ---- mot luot: ba tu cho mot hoc sinh ---- */
   function paVe() {
     var d = state.pa;
     if (!d) return;
-    if (d.key) return paVeDapAn();
-    var t = d.deck[d.pos];
-    var head = '<div class="lop-stage-head"><span>Âm tiết <b>' + (d.pos + 1) + '</b> / ' + d.deck.length +
-      ' · bài ' + t.bai + '</span></div>';
+    var t = d.tong;
+    var xong = d.ket.every(function (x) { return x !== null; });
+    var dungLuot = d.ket.filter(function (x) { return x === true; }).length;
 
-    if (paKieu === 'viet') {
-      $('#lopStage').innerHTML = head +
-        '<div class="lop-dict-box">' +
-          '<div class="lop-dict-no">' + (d.pos + 1) + '</div>' +
-          '<div class="lop-dict-vn">' + esc(t.vn) + '</div>' +
-          '<button type="button" class="lop-write-play" id="lopPaPlay">🔊 Đọc lại</button>' +
-          '<p class="lop-pa-nhac">Nghe rồi viết <b>phiên âm có dấu thanh</b> vào vở.</p>' +
-        '</div>' + paNut();
-    } else if (paKieu === 'chon') {
-      // Sinh de MOT LAN cho moi cau roi giu lai. Neu sinh lai moi lan ve
-      // thi bam "Hien dap an" se xao lai A/B/C/D — ca lop vua gio the B
-      // xong dap an nhay sang D, khong cham duoc.
-      if (!d.de || d.dePos !== d.pos) {
-        d.de = window.PhatAmDe.raDe(t.py, 4);
-        d.dePos = d.pos;
-      }
-      var de = d.de;
-      $('#lopStage').innerHTML = head +
-        '<div class="lop-pa-hop">' +
-          '<button type="button" class="lop-write-play" id="lopPaPlay">🔊 Nghe lại</button>' +
-          '<div class="lop-pa-lua">' + de.luaChon.map(function (x, i) {
-            return '<span class="lop-pa-o' + (d.hien ? (i === de.dung ? ' dung' : ' mo') : '') + '">' +
-              '<b>' + 'ABCD'[i] + '</b>' + esc(x) + '</span>';
-          }).join('') + '</div>' +
-          (d.hien ? '<p class="lop-pa-nhac">Đáp án: <b>' + 'ABCD'[de.dung] + ' · ' + esc(t.py) +
-                    '</b> — ' + esc(t.zh) + ' (' + esc(t.vn) + ')</p>'
-                  : '<p class="lop-pa-nhac">Cả lớp giơ thẻ A / B / C / D.</p>') +
-        '</div>' + paNut(true);
-    } else {
-      $('#lopStage').innerHTML = head +
-        '<div class="lop-pa-hop">' +
-          '<div class="lop-pa-to">' + esc(t.py) + '</div>' +
-          (d.hien ? '<div class="lop-pa-zh">' + esc(t.zh) + ' · ' + esc(t.vn) + '</div>'
-                  : '<p class="lop-pa-nhac">Gọi một em đọc to âm tiết này.</p>') +
-          '<button type="button" class="lop-write-play" id="lopPaPlay">🔊 Nghe mẫu</button>' +
-        '</div>' + paNut(true);
-    }
-
-    var pl = $('#lopPaPlay');
-    if (pl) pl.addEventListener('click', function () { speakZh(t.zh || t.py); });
-    paGanNut();
-    if (paKieu !== 'doc') speakZh(t.zh || t.py);
-  }
-
-  function paNut(coHien) {
-    var d = state.pa;
-    return '<div class="lop-stage-actions">' +
-      '<button type="button" class="lop-act ghost" id="lopPaPrev">← Quay lại</button>' +
-      (coHien ? '<button type="button" class="lop-act ghost" id="lopPaHien">' +
-        (d.hien ? 'Ẩn đáp án' : 'Hiện đáp án') + '</button>' : '') +
-      '<button type="button" class="lop-act" id="lopPaNext">' +
-        (d.pos === d.deck.length - 1 ? 'Xong — hiện bảng đáp án' : 'Âm tiết tiếp theo →') +
-      '</button>' +
-      '<button type="button" class="lop-act ghost" id="lopPaLai">Bộ khác</button>' +
-    '</div>';
-  }
-  function paGanNut() {
-    var d = state.pa;
-    var p = $('#lopPaPrev');
-    if (p) p.addEventListener('click', function () {
-      if (d.pos > 0) { d.pos--; d.hien = false; paVe(); resetTimer(); }
-    });
-    var h = $('#lopPaHien');
-    if (h) h.addEventListener('click', function () { d.hien = !d.hien; paVe(); });
-    var n = $('#lopPaNext');
-    if (n) n.addEventListener('click', function () {
-      if (d.pos < d.deck.length - 1) { d.pos++; d.hien = false; paVe(); resetTimer(); }
-      else { d.key = true; paVeDapAn(); }
-    });
-    var l = $('#lopPaLai');
-    if (l) l.addEventListener('click', function () {
-      state.pa = { deck: shuffle(paKho()).slice(0, 12), pos: 0, key: false, de: null, dePos: -1 };
-      paVe(); resetTimer();
-    });
-  }
-
-  function paVeDapAn() {
-    var d = state.pa;
-    $('#lopStage').innerHTML =
-      '<div class="lop-stage-head"><span>Bảng đáp án — đổi vở chấm chéo</span></div>' +
-      '<div class="lop-pa-bang">' + d.deck.map(function (t, i) {
-        return '<div class="lop-pa-dong"><span class="lop-pa-so">' + (i + 1) + '</span>' +
-          '<b>' + esc(t.py) + '</b><i>' + esc(t.zh) + '</i><u>' + esc(t.vn) + '</u></div>';
-      }).join('') + '</div>' +
-      '<div class="lop-stage-actions">' +
-        '<button type="button" class="lop-act ghost" id="lopPaBack">← Xem lại</button>' +
-        '<button type="button" class="lop-act" id="lopPaMoi">Bộ mới</button>' +
+    var head =
+      '<div class="lop-stage-head">' +
+        '<span>Lượt <b>' + d.luot + '</b> · gọi <b>một em</b> lên kiểm tra <b>3 từ</b></span>' +
+        '<span class="lop-pa-tong">Đã kiểm <b>' + t.hs + '</b> em · đúng <b>' + t.dung + '/' + t.tong + '</b> từ</span>' +
       '</div>';
-    $('#lopPaBack').addEventListener('click', function () { d.key = false; paVe(); });
-    $('#lopPaMoi').addEventListener('click', function () {
-      state.pa = { deck: shuffle(paKho()).slice(0, 12), pos: 0, key: false, de: null, dePos: -1 };
-      paVe(); resetTimer();
+
+    var the = d.bo.map(function (w, i) {
+      var k = d.ket[i];
+      var hienPy = paKieu === 'doc' || d.hien;
+      var o = '';
+      if (paKieu === 'chon') {
+        if (!d.de) d.de = d.bo.map(function (x) { return window.PhatAmDe.raDe(x.py, 4); });
+        var de = d.de[i];
+        o = '<div class="lop-pa-lua nho">' + de.luaChon.map(function (x, j) {
+          return '<span class="lop-pa-o' + (d.hien ? (j === de.dung ? ' dung' : ' mo') : '') + '">' +
+            '<b>' + 'ABCD'[j] + '</b>' + esc(x) + '</span>';
+        }).join('') + '</div>';
+      } else {
+        o = '<div class="lop-pa-py' + (hienPy ? '' : ' an') + '">' +
+              (hienPy ? esc(w.py) : '· · ·') + '</div>' +
+            '<div class="lop-pa-zh2">' + (d.hien ? esc(w.zh) + ' · ' + esc(w.vn) : '&nbsp;') + '</div>';
+      }
+      return '<div class="lop-pa-the' + (k === true ? ' dung' : k === false ? ' sai' : '') + '">' +
+        '<span class="lop-pa-stt">' + (i + 1) + '</span>' + o +
+        '<div class="lop-pa-cham">' +
+          '<button type="button" class="lop-pa-v" data-cham="' + i + '" data-ok="1">✓</button>' +
+          '<button type="button" class="lop-pa-x" data-cham="' + i + '" data-ok="0">✗</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    $('#lopStage').innerHTML = head +
+      '<div class="lop-pa-bo">' + the + '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act ghost" id="lopPaPlay">🔊 Đọc 3 từ</button>' +
+        '<button type="button" class="lop-act ghost" id="lopPaHien">' +
+          (d.hien ? 'Ẩn đáp án' : 'Hiện đáp án') + '</button>' +
+        '<button type="button" class="lop-act" id="lopPaNext">' +
+          (xong ? 'Em này ' + dungLuot + '/3 — gọi em tiếp theo →' : 'Em tiếp theo →') + '</button>' +
+        '<button type="button" class="lop-act ghost" id="lopPaKetThuc">Xong — xem tổng kết</button>' +
+      '</div>';
+
+    $all('[data-cham]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var i = +b.getAttribute('data-cham');
+        var ok = b.getAttribute('data-ok') === '1';
+        d.ket[i] = (d.ket[i] === ok) ? null : ok;   // bam lai lan nua thi bo cham
+        paVe();
+      });
+    });
+    $('#lopPaPlay').addEventListener('click', function () { paDocBo(d.bo); });
+    $('#lopPaHien').addEventListener('click', function () { d.hien = !d.hien; paVe(); });
+    $('#lopPaNext').addEventListener('click', paLuotSau);
+    $('#lopPaKetThuc').addEventListener('click', paTongKet);
+
+    if (paKieu !== 'doc' && !d.daDoc) { d.daDoc = true; paDocBo(d.bo); }
+  }
+
+  /* Doc lan luot ba tu, cach nhau mot nhip cho hoc sinh kip viet. */
+  function paDocBo(bo) {
+    bo.forEach(function (w, i) {
+      setTimeout(function () { speakZh(w.zh || w.py); }, i * 1800);
+    });
+  }
+
+  function paLuotSau() {
+    var d = state.pa;
+    var cham = d.ket.filter(function (x) { return x !== null; });
+    if (cham.length) {
+      d.tong.hs++;
+      d.tong.dung += d.ket.filter(function (x) { return x === true; }).length;
+      d.tong.tong += cham.length;
+    }
+    state.pa = paBoMoi();
+    paVe();
+    resetTimer();
+  }
+
+  function paTongKet() {
+    var d = state.pa;
+    var cham = d.ket.filter(function (x) { return x !== null; });
+    if (cham.length) {
+      d.tong.hs++;
+      d.tong.dung += d.ket.filter(function (x) { return x === true; }).length;
+      d.tong.tong += cham.length;
+      d.ket = [null, null, null];
+    }
+    var t = d.tong;
+    var pt = t.tong ? Math.round(t.dung / t.tong * 100) : 0;
+    $('#lopStage').innerHTML =
+      '<div class="lop-stage-head"><span>Tổng kết buổi kiểm tra phát âm</span></div>' +
+      '<div class="lop-pa-hop">' +
+        '<div class="lop-pa-tk">' + t.hs + '</div>' +
+        '<p class="lop-pa-nhac">em đã kiểm tra · đúng <b>' + t.dung + '/' + t.tong + '</b> từ (' + pt + '%)</p>' +
+      '</div>' +
+      '<div class="lop-stage-actions">' +
+        '<button type="button" class="lop-act" id="lopPaLai">Kiểm tra tiếp →</button>' +
+      '</div>';
+    $('#lopPaLai').addEventListener('click', function () {
+      state.pa = paBoMoi();
+      state.pa.tong = t;
+      paVe();
+      resetTimer();
     });
   }
 
@@ -2369,6 +2399,14 @@
     });
     $('#lopPaNone').addEventListener('click', function () {
       paChon = {}; paVeBai(); paLuu();
+    });
+    $all('#lopPaNguon button').forEach(function (b) {
+      b.classList.toggle('on', b.getAttribute('data-pn') === paNguon);
+      b.addEventListener('click', function () {
+        paNguon = b.getAttribute('data-pn');
+        $all('#lopPaNguon button').forEach(function (x) { x.classList.toggle('on', x === b); });
+        paDem(); paLuu();
+      });
     });
     $('#lopPaStart').addEventListener('click', paBatDau);
 

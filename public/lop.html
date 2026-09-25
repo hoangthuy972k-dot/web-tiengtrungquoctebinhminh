@@ -85,6 +85,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-desc">Chiếu lần lượt 10 câu trắc nghiệm, học sinh ghi A/B/C vào vở. Hết giờ hiện cả bảng đáp án — chấm chéo lấy điểm miệng.</span>
           <span class="lop-game-count" id="lopCountQuiz">—</span>
         </button>
+        <button type="button" class="lop-test-card" data-test="phatam">
+          <span class="lop-game-emoji">🗣️</span>
+          <span class="lop-game-name">Kiểm tra phát âm 拼音</span>
+          <span class="lop-game-desc">Kiểm tra riêng phần phát âm — chọn từng bài trong 13 bài hoặc cả khoá. Nghe viết phiên âm, nghe chọn đáp án, hoặc chiếu lên gọi đọc to.</span>
+          <span class="lop-game-count" id="lopCountPa">13 bài</span>
+        </button>
         <button type="button" class="lop-test-card" data-test="paper">
           <span class="lop-game-emoji">📄</span>
           <span class="lop-game-name">Đề giấy — in ra, 4 mã đề</span>
@@ -188,6 +194,23 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-count lop-count-vocab">từ vựng</span>
         </button>
       </div>
+    </div>
+
+    <!-- Bộ chọn bài phát âm — chỉ hiện khi bấm thẻ "Kiểm tra phát âm" -->
+    <div class="lop-field" id="lopPaField" hidden>
+      <label>Chọn bài phát âm để kiểm tra</label>
+      <div class="lop-lesson-tools">
+        <button type="button" class="lop-mini" id="lopPaAll">Cả 13 bài</button>
+        <button type="button" class="lop-mini" id="lopPaNone">Bỏ chọn</button>
+      </div>
+      <p class="gh-count" id="lopPaCount">Chưa chọn bài nào.</p>
+      <div id="lopPaList" class="lop-lessons"></div>
+      <div class="lop-pa-kieu" id="lopPaKieu">
+        <button type="button" data-pk="viet" class="on">✍️ Nghe – viết phiên âm</button>
+        <button type="button" data-pk="chon">🅰️ Nghe – chọn đáp án</button>
+        <button type="button" data-pk="doc">🗣️ Chiếu – gọi đọc to</button>
+      </div>
+      <button type="button" class="lop-act" id="lopPaStart">Bắt đầu kiểm tra →</button>
     </div>
 
     <p class="lop-note">💡 Mẹo: bấm <b>F11</b> để chiếu toàn màn hình. Trong lúc chơi dùng phím <b>Space</b> để lật đáp án, phím <b>1…6</b> để cộng điểm cho tổ.</p>
@@ -305,6 +328,8 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
   <div class="lop-paper-sheets" id="lopPaperSheets"></div>
 </div>
 
+<script src="/js/phat-am-bai.js"></script>
+<script src="/js/phat-am-de.js"></script>
 <script src="/js/lop.js"></script>
 </body>
 </html>

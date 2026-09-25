@@ -1425,3 +1425,115 @@
   .lop-build-row { grid-template-columns: 30px 1fr auto auto auto; gap: 6px; padding: 8px 10px; }
   .lop-build-name { font-size: 0.95rem; }
 }
+
+/* ══════════════ KIỂM TRA PHÁT ÂM ══════════════ */
+#lopPaField { border-top: 1px dashed var(--color-gray-300); padding-top: 16px; }
+#lopPaList .lop-lesson-chip { display: inline-flex; flex-direction: column; align-items: center; gap: 1px; }
+#lopPaList .lop-lesson-chip i {
+  font-style: normal;
+  font-size: 0.68rem;
+  opacity: 0.7;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.lop-pa-kieu { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+.lop-pa-kieu button {
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-gray-200);
+  background: #fff;
+  color: var(--color-gray-600);
+}
+.lop-pa-kieu button.on {
+  border-color: var(--color-red-600);
+  background: var(--color-red-50);
+  color: var(--color-red-700);
+  font-weight: 600;
+}
+
+/* trong lúc kiểm tra */
+.lop-pa-hop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: clamp(16px, 3vw, 32px);
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+}
+.lop-pa-to {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-gray-900);
+  letter-spacing: 0.02em;
+}
+.lop-pa-zh {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  color: var(--color-red-700);
+}
+.lop-pa-nhac { margin: 0; color: var(--color-gray-500); font-size: clamp(0.9rem, 2vw, 1.15rem); }
+.lop-pa-nhac b { color: var(--color-gray-900); }
+
+.lop-pa-lua { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(10px, 2vw, 20px); }
+.lop-pa-o {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: clamp(10px, 1.8vw, 18px) clamp(16px, 2.6vw, 30px);
+  border-radius: 16px;
+  border: 2px solid var(--color-gray-200);
+  background: #fff;
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.5rem, 4.4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+.lop-pa-o b {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.42em;
+  color: var(--color-gray-400);
+}
+.lop-pa-o.dung { border-color: var(--color-green-500); background: var(--color-green-50); }
+.lop-pa-o.dung b { color: var(--color-green-600); }
+.lop-pa-o.mo { opacity: 0.4; }
+
+/* bảng đáp án cuối bài */
+.lop-pa-bang {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 8px;
+}
+.lop-pa-dong {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 10px 13px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--color-gray-200);
+}
+.lop-pa-so {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-gray-100);
+  color: var(--color-gray-500);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+.lop-pa-dong b {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+  color: var(--color-red-700);
+}
+.lop-pa-dong i { font-style: normal; font-family: 'Noto Serif SC', serif; font-size: 1.1rem; }
+.lop-pa-dong u { text-decoration: none; font-size: 0.8rem; color: var(--color-gray-500); margin-left: auto; }

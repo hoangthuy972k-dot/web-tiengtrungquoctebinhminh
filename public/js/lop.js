@@ -1692,7 +1692,9 @@
     $('#lopCallHint').textContent = 'Đang lưu…';
     apiAdmin('/api/admin/oral', { method: 'POST', body: JSON.stringify({ classId: call.classId, rosterId: r.id, score: score }) })
       .then(function () {
-        flashNote(score === null ? ('Đã ghi: ' + r.name + ' vắng/bỏ qua') : ('✓ ' + r.name + ' — ' + score + ' điểm'));
+        // Diem nay len thang cot "Miệng" o bang lop, hoc sinh mo trang chu la thay
+        flashNote(score === null ? ('Đã ghi: ' + r.name + ' vắng/bỏ qua')
+          : ('✓ ' + r.name + ' — ' + score + ' điểm · đã lên bảng lớp'));
         return loadCallRoster();
       })
       .then(function () {

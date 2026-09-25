@@ -14584,9 +14584,10 @@
     todo: ['is-todo', '', 'Chưa làm']
   };
 
-  /* Bon cot tong ket cuoi bang lop.
+  /* Nam cot tong ket cuoi bang lop.
      Chuyen can tu dong theo so bai da lam; Xay dung do thay/co cong tay o
-     che do lop hoc; Giua ki / Cuoi ki do thay/co nhap o trang bao cao. */
+     che do lop hoc; Mieng la diem goi len bang dau gio (trung binh cac lan);
+     Giua ki / Cuoi ki do thay/co nhap o trang bao cao. */
   function boardScoreCells(r, soBuoi) {
     var d = r.diem || {};
     var cc = d.chuyenCan || 0;
@@ -14596,6 +14597,10 @@
     }
     return o(soBuoi ? cc + '<i>/' + soBuoi + '</i>' : '—', cc > 0 ? 'is-ok' : '', 'Đã hoàn thành ' + cc + '/' + soBuoi + ' bài được giao') +
       o(xd > 0 ? '+' + xd : '—', xd > 0 ? 'is-plus' : '', xd > 0 ? 'Được cộng ' + xd + ' điểm xây dựng bài' : 'Chưa có điểm xây dựng bài') +
+      o(d.mieng == null ? '—' : d.mieng, d.mieng != null ? 'is-oral' : '',
+        d.mieng == null ? 'Chưa được gọi lên bảng lần nào'
+          : 'Trung bình ' + d.mieng + ' điểm sau ' + d.miengSo + ' lần gọi lên bảng' +
+            (d.miengLan != null ? ' · lần gần nhất ' + d.miengLan : '')) +
       o(d.mid == null ? '—' : d.mid, d.mid != null ? 'is-exam' : '', 'Điểm kiểm tra giữa kì') +
       o(d.final == null ? '—' : d.final, d.final != null ? 'is-exam' : '', 'Điểm kiểm tra cuối kì');
   }
@@ -14616,6 +14621,7 @@
       }).join('') +
       '<th class="ab-sep" title="Mỗi bài tập làm xong được +1">Chuyên cần<small>/' + ses.length + '</small></th>' +
       '<th title="Thầy/cô cộng khi em giơ tay xây dựng bài">Xây dựng<small>điểm</small></th>' +
+      '<th title="Điểm những lần được gọi lên bảng kiểm tra đầu giờ — lấy trung bình">Miệng<small>/10</small></th>' +
       '<th>Giữa kì<small>/10</small></th>' +
       '<th>Cuối kì<small>/10</small></th>' +
       '</tr>';

@@ -7765,6 +7765,9 @@ body.pinyin-hidden .py-inline {
 .ab-table td.ab-s.is-ok, .ab-table tr.is-me td.ab-s.is-ok { color: var(--color-green-600); background: var(--color-green-50); }
 .ab-table td.ab-s.is-plus, .ab-table tr.is-me td.ab-s.is-plus { color: #fff; background: var(--color-gold-500); }
 .ab-table td.ab-s.is-exam, .ab-table tr.is-me td.ab-s.is-exam { color: var(--color-red-700); background: var(--color-red-50); }
+/* Diem mieng — mau ngoc rieng, de phan biet voi diem thi (do) va diem
+   xay dung bai (vang), vi ba cot nay nam canh nhau.                        */
+.ab-table td.ab-s.is-oral, .ab-table tr.is-me td.ab-s.is-oral { color: var(--color-teal-600); background: var(--color-teal-50); }
 @media (max-width: 640px) {
   .ab-s { min-width: 56px; font-size: 0.85rem; }
 }

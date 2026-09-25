@@ -149,6 +149,10 @@
         '<td class="dm-name">' + esc(s.name) + (s.joined ? '' : ' <small class="dm-out">chưa vào lớp</small>') + '</td>' +
         '<td class="dm-auto">' + s.chuyenCan + '<i>/' + s.tongBai + '</i></td>' +
         '<td class="dm-auto' + (s.build > 0 ? ' is-plus' : '') + '">' + (s.build > 0 ? '+' + s.build : '—') + '</td>' +
+        '<td class="dm-auto' + (s.mieng != null ? ' is-oral' : '') + '" title="' +
+          (s.mieng == null ? 'Chưa gọi lên bảng lần nào'
+            : s.miengSo + ' lần gọi · lần gần nhất ' + s.miengLan) + '">' +
+          (s.mieng == null ? '—' : s.mieng) + '</td>' +
         '<td><input type="number" class="dm-in" min="0" max="10" data-diem="mid" data-id="' + esc(s.id) + '" value="' + (s.mid == null ? '' : s.mid) + '" placeholder="—"></td>' +
         '<td><input type="number" class="dm-in" min="0" max="10" data-diem="final" data-id="' + esc(s.id) + '" value="' + (s.final == null ? '' : s.final) + '" placeholder="—"></td>' +
       '</tr>';
@@ -158,9 +162,10 @@
       '<div class="admin-section-title">🎒 Sổ điểm lớp</div>' +
       '<p class="tc-hint"><b>Chuyên cần</b> và <b>Xây dựng bài</b> máy tự tính — chuyên cần +1 mỗi bài tập em làm xong, ' +
         'xây dựng bài cộng ở <a href="/lop" target="_blank" rel="noopener">Chế độ lớp học</a> khi em giơ tay. ' +
+        '<b>Miệng</b> là trung bình các lần thầy/cô gọi em lên bảng đầu giờ ở Chế độ lớp học. ' +
         'Hai cột kiểm tra thì thầy/cô gõ vào đây, gõ xong bấm ra ngoài là tự lưu.</p>' +
       '<div class="admin-table-wrap"><table class="admin-table dm-table">' +
-        '<thead><tr><th>#</th><th>Học sinh</th><th>Chuyên cần</th><th>Xây dựng</th><th>Giữa kì</th><th>Cuối kì</th></tr></thead>' +
+        '<thead><tr><th>#</th><th>Học sinh</th><th>Chuyên cần</th><th>Xây dựng</th><th>Miệng</th><th>Giữa kì</th><th>Cuối kì</th></tr></thead>' +
         '<tbody>' + rows + '</tbody>' +
       '</table></div>' +
       '<p class="tc-hint" id="dmSaved"></p>' +

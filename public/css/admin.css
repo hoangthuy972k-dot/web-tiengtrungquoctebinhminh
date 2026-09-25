@@ -329,6 +329,7 @@
 .dm-auto { font-weight: 700; color: var(--color-green-600); background: var(--color-green-50); }
 .dm-auto i { font-style: normal; font-weight: 500; font-size: 0.8em; opacity: 0.7; }
 .dm-auto.is-plus { color: #fff; background: var(--color-gold-500); }
+.dm-auto.is-oral { color: var(--color-teal-600); background: var(--color-teal-50); }
 .dm-in {
   width: 62px; padding: 7px 8px; text-align: center;
   border: 1px solid var(--color-gray-200); border-radius: 9px;

@@ -2394,12 +2394,16 @@ async function classBoard(st, classId, meId) {
   }
   // So diem cua lop — de hoc sinh thay minh duoc cong bao nhieu
   const tongDiem = sumPoints(await readClassPoints(), classId);
+  // Diem goi len bang dau gio — cham o che do lop thi len thang bang nay
+  const tongMieng = sumOral(await readOralChecks(), classId);
   function diem(r) {
     const m = marks(r.userId);
     // Chuyen can = so bai tap da lam xong; tinh thang tu marks nen luon khop bang tren
     const chuyenCan = m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0;
     const p = tongDiem[r.id] || { build: 0, mid: null, final: null };
-    return { chuyenCan, build: p.build, mid: p.mid, final: p.final };
+    const o = tongMieng[r.id] || { mieng: null, so: 0, lan: null };
+    return { chuyenCan, build: p.build, mid: p.mid, final: p.final,
+      mieng: o.mieng, miengSo: o.so, miengLan: o.lan };
   }
   const rows = roster.map((r) => ({ name: r.name, me: !!meId && r.userId === meId, joined: !!(r.userId && st.members[r.userId] && st.members[r.userId].classId === classId), marks: marks(r.userId), diem: diem(r) }));
   // Hoc sinh da vao lop nhung chua co ten trong danh sach (hoac lop chua co danh sach)
@@ -2410,7 +2414,7 @@ async function classBoard(st, classId, meId) {
       // nhung chuyen can van tinh duoc tu bai da lam.
       rows.push({
         name: nameById[u], me: u === meId, joined: true, extra: roster.length > 0, marks: m,
-        diem: { chuyenCan: m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0, build: 0, mid: null, final: null }
+        diem: { chuyenCan: m ? m.filter((x) => x.s === 'done' || x.s === 'late').length : 0, build: 0, mid: null, final: null, mieng: null, miengSo: 0, miengLan: null }
       });
     });
   return {
@@ -2731,6 +2735,22 @@ function sumPoints(points, classId) {
   return out;
 }
 
+// Diem kiem tra dau gio (goi ten len bang). Hoc sinh nhin thay diem TRUNG BINH
+// va so lan da goi, khong hien tung lan mot de khong bien bang lop thanh so
+// theo doi tung em.
+function sumOral(checks, classId) {
+  const out = {};
+  checks.filter((c) => c.classId === classId && typeof c.score === 'number').forEach((c) => {
+    const e = out[c.rosterId] = out[c.rosterId] || { so: 0, tong: 0, lan: null, lanMs: 0 };
+    e.so++; e.tong += c.score;
+    if (c.ms >= e.lanMs) { e.lan = c.score; e.lanMs = c.ms; }
+  });
+  Object.keys(out).forEach((k) => {
+    out[k].mieng = Math.round((out[k].tong / out[k].so) * 10) / 10;
+  });
+  return out;
+}
+
 // ---------------- Kiem tra khoa AI (chi quan tri) ----------------
 // De thay/co tu biet khoa con dung duoc khong, khong phai doan qua thong bao
 // hien cho hoc sinh. KHONG bao gio tra ve gia tri khoa.
@@ -2835,6 +2855,7 @@ app.get('/api/admin/points', requireAdmin, asyncRoute(async (req, res) => {
   const done = await loadPartDone(memberIds);
   const points = await readClassPoints();
   const tong = sumPoints(points, classId);
+  const mieng = sumOral(await readOralChecks(), classId);
   const now = Date.now();
 
   const out = roster.map((r, i) => {
@@ -2849,11 +2870,13 @@ app.get('/api/admin/points', requireAdmin, asyncRoute(async (req, res) => {
       });
     }
     const p = tong[r.id] || { build: 0, mid: null, final: null };
+    const o = mieng[r.id] || { mieng: null, so: 0, lan: null };
     return {
       id: r.id, no: i + 1, name: r.name,
       joined: !!d,
       chuyenCan, tongBai: list.length,
-      build: p.build, mid: p.mid, final: p.final
+      build: p.build, mid: p.mid, final: p.final,
+      mieng: o.mieng, miengSo: o.so, miengLan: o.lan
     };
   });
   res.json({ classes, classId, sessions: list.length, roster: out });

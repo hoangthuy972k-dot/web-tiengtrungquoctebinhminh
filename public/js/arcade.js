@@ -539,6 +539,209 @@
   };
 
   /* ══════════════════════════════════════════════════════════════
+     6 · RẮN ĂN CHỮ  (小蛇吃球 · rắn tham ăn)
+     Lái con rắn đi ăn chữ Hán ứng với nghĩa đang hỏi. Ăn đúng thì
+     rắn dài thêm, ăn nhầm thì bị trừ điểm.
+     Phím mũi tên / WASD, vuốt trên điện thoại, hoặc bấm bốn nút.
+     ══════════════════════════════════════════════════════════════ */
+  var snake = {
+    key: 'snake',
+    ten: 'Rắn ăn chữ',
+    emoji: '🐍',
+    mau: 'green',
+    moTa: 'Lái rắn đi ăn chữ Hán đúng nghĩa — ăn đúng rắn dài thêm, đụng tường là hết.',
+    moTaLop: 'Gọi một em lên lái rắn bằng phím mũi tên, cả lớp đọc chữ và hô hướng đi. Chiếu lớp thì rắn đi chậm và xuyên tường.',
+    canToiThieu: 4,
+    mo: function (hop, o) {
+      var sk = dungKhung(hop, snake, o);
+      var vocab = o.vocab;
+      // Man hep thi luoi thua hon, khong o be xiu doc khong ra chu.
+      var hep = (window.innerWidth || 1024) < 620;
+      var COT = hep ? 11 : 15, HANG = hep ? 9 : 11;
+      var o_ = [], ran = [], huong = { x: 1, y: 0 }, huongMoi = { x: 1, y: 0 };
+      var moi_ = [], dich = null;
+      var diem = 0, dung = 0, tong = 0, chuoi = 0, chuoiMax = 0;
+      var nhip = 0, song = true;
+
+      sk.san.classList.add('ar-ran');
+      sk.anGio();
+
+      // Luoi o — tao mot lan, moi nhip chi doi class cho nhanh.
+      var luoi = tao('div', 'ar-ran-luoi');
+      luoi.style.setProperty('--cot', COT);
+      luoi.style.setProperty('--hang', HANG);
+      for (var i = 0; i < COT * HANG; i++) {
+        var c = tao('div', 'ar-o');
+        luoi.appendChild(c);
+        o_.push(c);
+      }
+      sk.san.appendChild(luoi);
+
+      // Bon nut huong — de choi tren dien thoai va tren bang cham.
+      var dpad = tao('div', 'ar-dpad');
+      [['↑', 0, -1], ['←', -1, 0], ['→', 1, 0], ['↓', 0, 1]].forEach(function (d, k) {
+        var n = tao('button', 'ar-dnut ar-d' + k, d[0]);
+        n.type = 'button';
+        n.addEventListener('click', function () { doiHuong(d[1], d[2]); });
+        dpad.appendChild(n);
+      });
+      sk.duoi.appendChild(dpad);
+
+      function chiSo(x, y) { return y * COT + x; }
+      function trong(x, y) {
+        if (ran.some(function (p) { return p.x === x && p.y === y; })) return false;
+        if (moi_.some(function (m) { return m.x === x && m.y === y; })) return false;
+        return true;
+      }
+
+      function keDich() {
+        dich = vocab[Math.floor(Math.random() * vocab.length)];
+        sk.deBai('<span class="ar-p-nhan">Ăn chữ có nghĩa</span><b>' + esc(dich.vn) + '</b>');
+      }
+
+      function raMoi() {
+        moi_ = [];
+        var ds = moi(vocab, dich, 3);       // 1 chu dung + 2 chu nhieu
+        ds.forEach(function (v) {
+          for (var thu = 0; thu < 200; thu++) {
+            var x = Math.floor(Math.random() * COT), y = Math.floor(Math.random() * HANG);
+            if (trong(x, y)) { moi_.push({ x: x, y: y, tu: v }); return; }
+          }
+        });
+      }
+
+      function doiHuong(dx, dy) {
+        // Khong cho quay dau 180 do — rắn se tu can vao minh.
+        if (dx === -huong.x && dy === -huong.y) return;
+        huongMoi = { x: dx, y: dy };
+      }
+
+      function ve() {
+        o_.forEach(function (c) {
+          c.className = 'ar-o';
+          c.textContent = '';
+        });
+        moi_.forEach(function (m) {
+          var c = o_[chiSo(m.x, m.y)];
+          c.classList.add('ar-o-moi');
+          c.textContent = m.tu.zh;
+        });
+        ran.forEach(function (p, i) {
+          var c = o_[chiSo(p.x, p.y)];
+          if (!c) return;
+          c.classList.add(i === 0 ? 'ar-o-dau' : 'ar-o-than');
+        });
+      }
+
+      function buoc() {
+        if (!song) return;
+        huong = huongMoi;
+        var dau = { x: ran[0].x + huong.x, y: ran[0].y + huong.y };
+
+        if (dau.x < 0 || dau.x >= COT || dau.y < 0 || dau.y >= HANG) {
+          // Chieu lop thi xuyen tuong cho de choi, tu hoc thi thua.
+          if (sk.lop) {
+            dau.x = (dau.x + COT) % COT;
+            dau.y = (dau.y + HANG) % HANG;
+          } else return het();
+        }
+        if (ran.some(function (p, i) { return i && p.x === dau.x && p.y === dau.y; })) {
+          if (!sk.lop) return het();
+          return;                                   // chieu lop: dung yen cho de
+        }
+
+        ran.unshift(dau);
+        var an = -1;
+        moi_.forEach(function (m, i) { if (m.x === dau.x && m.y === dau.y) an = i; });
+        if (an < 0) {
+          ran.pop();
+        } else {
+          var m = moi_[an];
+          tong++;
+          if (m.tu.zh === dich.zh) {
+            dung++; chuoi++; chuoiMax = Math.max(chuoiMax, chuoi);
+            diem += sk.lop ? 1 : 10 + Math.min(chuoi, 5) * 2;
+            keuDung(); doc(m.tu.zh);
+            keDich(); raMoi();
+          } else {
+            chuoi = 0;
+            ran.pop();
+            if (!sk.lop) diem = Math.max(0, diem - 5);
+            keuSai();
+            moi_.splice(an, 1);
+          }
+          sk.diem(diem);
+          if (o.onDiem) o.onDiem(diem);
+        }
+        ve();
+      }
+
+      function phim(e) {
+        var k = e.key;
+        var d = null;
+        if (k === 'ArrowUp' || k === 'w' || k === 'W') d = [0, -1];
+        else if (k === 'ArrowDown' || k === 's' || k === 'S') d = [0, 1];
+        else if (k === 'ArrowLeft' || k === 'a' || k === 'A') d = [-1, 0];
+        else if (k === 'ArrowRight' || k === 'd' || k === 'D') d = [1, 0];
+        if (!d) return;
+        e.preventDefault();
+        doiHuong(d[0], d[1]);
+      }
+      var vuotX = 0, vuotY = 0;
+      function chamDau(e) { vuotX = e.touches[0].clientX; vuotY = e.touches[0].clientY; }
+      function chamHet(e) {
+        var t = e.changedTouches[0];
+        var dx = t.clientX - vuotX, dy = t.clientY - vuotY;
+        if (Math.abs(dx) < 24 && Math.abs(dy) < 24) return;
+        if (Math.abs(dx) > Math.abs(dy)) doiHuong(dx > 0 ? 1 : -1, 0);
+        else doiHuong(0, dy > 0 ? 1 : -1);
+      }
+
+      function batDau() {
+        song = true;
+        diem = 0; dung = 0; tong = 0; chuoi = 0; chuoiMax = 0;
+        sk.diem(0);
+        huong = { x: 1, y: 0 };
+        huongMoi = { x: 1, y: 0 };
+        var gx = 3, gy = Math.floor(HANG / 2);
+        ran = [{ x: gx, y: gy }, { x: gx - 1, y: gy }, { x: gx - 2, y: gy }];
+        keDich(); raMoi(); ve();
+        clearInterval(nhip);
+        nhip = setInterval(buoc, sk.lop ? 420 : 240);
+      }
+
+      function het() {
+        song = false;
+        clearInterval(nhip);
+        var giuLuoi = luoi, giuPad = dpad;
+        sk.duoi.innerHTML = '';
+        sk.san.className = 'ar-stage';
+        ketQua(sk, { diem: diem, dung: dung, tong: tong, chuoi: chuoiMax }, function () {
+          sk.san.className = 'ar-stage ar-ran';
+          sk.san.innerHTML = '';
+          sk.san.appendChild(giuLuoi);
+          sk.duoi.appendChild(giuPad);
+          batDau();
+        });
+        if (o.onXong) o.onXong({ diem: diem, dung: dung, tong: tong });
+      }
+
+      document.addEventListener('keydown', phim);
+      sk.san.addEventListener('touchstart', chamDau, { passive: true });
+      sk.san.addEventListener('touchend', chamHet, { passive: true });
+
+      batDau();
+      return {
+        dung: function () {
+          song = false;
+          clearInterval(nhip);
+          document.removeEventListener('keydown', phim);
+        }
+      };
+    }
+  };
+
+  /* ══════════════════════════════════════════════════════════════
      3 · LẬT THẺ TRÍ NHỚ  (LUCKY CARDS 翻牌游戏)
      Úp các thẻ, lật hai thẻ một lượt. Chữ Hán ghép với nghĩa
      tiếng Việt thì cặp đó ở lại.
@@ -877,9 +1080,216 @@
   };
   function $allTrong(g) { return Array.prototype.slice.call(g.querySelectorAll('.ar-opt')); }
 
+  /* ══════════════════════════════════════════════════════════════
+     7 · MÊ CUNG ĐỌC CHỮ  (tìm lối ra mê cung)
+     Đi từ 起点 tới 终点. Mỗi bước chỉ được bước sang ô kề bên mang
+     chữ đúng nghĩa đang hỏi — bước sai thì bật lại.
+
+     Duong di duoc dung san TRUOC khi rai chu, nen me cung luon co
+     loi ra; chu dung dat vao o ke tiep tren duong di do.
+     ══════════════════════════════════════════════════════════════ */
+  var maze = {
+    key: 'maze',
+    ten: 'Mê cung đọc chữ',
+    emoji: '🧭',
+    mau: 'blue',
+    moTa: 'Đi từ điểm xuất phát tới cửa ra, mỗi bước chọn ô kề bên mang chữ đúng nghĩa.',
+    moTaLop: 'Chiếu mê cung, cả lớp đọc các ô kề bên rồi chỉ hướng đi. Thầy/cô bấm ô mà lớp chọn.',
+    canToiThieu: 5,
+    mo: function (hop, o) {
+      var sk = dungKhung(hop, maze, o);
+      var vocab = o.vocab;
+      var COT = 6, HANG = 5;
+      var o_ = [], tu_ = [], duong = [], buoc = 0, tai = null;
+      var diem = 0, dung = 0, tong = 0, song = true, hen = [];
+
+      sk.san.classList.add('ar-me');
+      sk.anGio();
+
+      function xoaHen() { hen.forEach(clearTimeout); hen = []; }
+      function chiSo(x, y) { return y * COT + x; }
+
+      /* Dung mot duong di ngau nhien tu goc duoi-trai len goc tren-phai.
+         Chi di sang phai hoac len tren nen chac chan toi noi, khong quanh. */
+      function veDuong() {
+        var p = [{ x: 0, y: HANG - 1 }];
+        var x = 0, y = HANG - 1;
+        while (x < COT - 1 || y > 0) {
+          var sangPhai;
+          if (x >= COT - 1) sangPhai = false;
+          else if (y <= 0) sangPhai = true;
+          else sangPhai = Math.random() < 0.5;
+          if (sangPhai) x++; else y--;
+          p.push({ x: x, y: y });
+        }
+        return p;
+      }
+
+      function raiChu() {
+        // Moi o mot chu; hai o ke nhau khong trung chu de con phan biet duoc.
+        tu_ = [];
+        for (var i = 0; i < COT * HANG; i++) tu_.push(null);
+        duong.forEach(function (p, i) {
+          var cam = {};
+          [[1, 0], [-1, 0], [0, 1], [0, -1]].forEach(function (d) {
+            var k = chiSo(p.x + d[0], p.y + d[1]);
+            if (tu_[k]) cam[tu_[k].zh] = 1;
+          });
+          if (i > 0 && tu_[chiSo(duong[i - 1].x, duong[i - 1].y)]) {
+            cam[tu_[chiSo(duong[i - 1].x, duong[i - 1].y)].zh] = 1;
+          }
+          var con = vocab.filter(function (v) { return !cam[v.zh]; });
+          tu_[chiSo(p.x, p.y)] = (con.length ? con : vocab)[Math.floor(Math.random() * (con.length ? con.length : vocab.length))];
+        });
+        for (var k2 = 0; k2 < tu_.length; k2++) {
+          if (tu_[k2]) continue;
+          tu_[k2] = vocab[Math.floor(Math.random() * vocab.length)];
+        }
+        // Quet lai ca luoi: khong de hai o KE NHAU mang cung mot chu —
+        // bai it tu thi chu se lap lai, nhung lap canh nhau thi roi mat.
+        for (var y2 = 0; y2 < HANG; y2++) {
+          for (var x2 = 0; x2 < COT; x2++) {
+            var k3 = chiSo(x2, y2);
+            var tren = y2 > 0 ? tu_[chiSo(x2, y2 - 1)] : null;
+            var trai = x2 > 0 ? tu_[chiSo(x2 - 1, y2)] : null;
+            var lan2 = 0;
+            while (lan2++ < 60 &&
+              ((tren && tren.zh === tu_[k3].zh) || (trai && trai.zh === tu_[k3].zh))) {
+              tu_[k3] = vocab[Math.floor(Math.random() * vocab.length)];
+            }
+          }
+        }
+        // Bao dam o ke tiep tren duong khac han cac o ke ben con lai.
+        duong.forEach(function (p, i) {
+          if (i === 0) return;
+          var dungO = chiSo(p.x, p.y);
+          var truoc = duong[i - 1];
+          [[1, 0], [-1, 0], [0, 1], [0, -1]].forEach(function (d) {
+            var nx = truoc.x + d[0], ny = truoc.y + d[1];
+            if (nx < 0 || nx >= COT || ny < 0 || ny >= HANG) return;
+            var k = chiSo(nx, ny);
+            if (k === dungO) return;
+            // Thay chu o nay neu no trung chu dich, va khi thay thi tranh
+            // luon cac o ke ben no — khong lai de ra mot cap trung moi.
+            var lan = 0;
+            while (tu_[k] && tu_[k].zh === tu_[dungO].zh && lan++ < 60) {
+              var cam2 = {};
+              [[1, 0], [-1, 0], [0, 1], [0, -1]].forEach(function (e) {
+                var ax = nx + e[0], ay = ny + e[1];
+                if (ax < 0 || ax >= COT || ay < 0 || ay >= HANG) return;
+                var t2 = tu_[chiSo(ax, ay)];
+                if (t2) cam2[t2.zh] = 1;
+              });
+              cam2[tu_[dungO].zh] = 1;
+              var con2 = vocab.filter(function (v) { return !cam2[v.zh]; });
+              if (!con2.length) break;
+              tu_[k] = con2[Math.floor(Math.random() * con2.length)];
+            }
+          });
+        });
+      }
+
+      function ve() {
+        sk.san.innerHTML = '';
+        var luoi = tao('div', 'ar-me-luoi');
+        luoi.style.setProperty('--cot', COT);
+        luoi.style.setProperty('--hang', HANG);
+        o_ = [];
+        for (var y = 0; y < HANG; y++) {
+          for (var x = 0; x < COT; x++) {
+            var k = chiSo(x, y);
+            var n = tao('button', 'ar-me-o');
+            n.type = 'button';
+            n.innerHTML = '<b>' + esc(tu_[k].zh) + '</b><i>' + esc(tu_[k].py) + '</i>';
+            if (x === 0 && y === HANG - 1) n.classList.add('is-dau');
+            if (x === COT - 1 && y === 0) n.classList.add('is-cuoi');
+            (function (xx, yy, nut) {
+              nut.addEventListener('click', function () { buocToi(xx, yy, nut); });
+            })(x, y, n);
+            luoi.appendChild(n);
+            o_.push(n);
+          }
+        }
+        sk.san.appendChild(luoi);
+        veDau();
+      }
+
+      function veDau() {
+        o_.forEach(function (n) { n.classList.remove('is-dangO', 'is-daDi'); });
+        for (var i = 0; i <= buoc; i++) {
+          var p = duong[i];
+          o_[chiSo(p.x, p.y)].classList.add(i === buoc ? 'is-dangO' : 'is-daDi');
+        }
+        tai = duong[buoc];
+        var ke = duong[buoc + 1];
+        if (!ke) return;
+        sk.deBai('<span class="ar-p-nhan">Bước ' + (buoc + 1) + '/' + (duong.length - 1) +
+          ' · đi sang ô kề bên có nghĩa</span><b>' + esc(tu_[chiSo(ke.x, ke.y)].vn) + '</b>');
+      }
+
+      function buocToi(x, y, nut) {
+        if (!song) return;
+        var keBen = Math.abs(x - tai.x) + Math.abs(y - tai.y) === 1;
+        if (!keBen) {
+          nut.classList.remove('is-xa');
+          void nut.offsetWidth;
+          nut.classList.add('is-xa');
+          return;
+        }
+        var ke = duong[buoc + 1];
+        tong++;
+        if (ke && x === ke.x && y === ke.y) {
+          dung++;
+          diem += sk.lop ? 1 : 12;
+          keuDung(); doc(tu_[chiSo(x, y)].zh);
+          buoc++;
+          sk.diem(diem);
+          if (o.onDiem) o.onDiem(diem);
+          veDau();
+          if (buoc >= duong.length - 1) {
+            sk.deBai('<span class="ar-p-nhan">Tới nơi rồi</span><b>Ra khỏi mê cung 🎉</b>');
+            hen.push(setTimeout(het, 1200));
+          }
+        } else {
+          if (!sk.lop) diem = Math.max(0, diem - 4);
+          sk.diem(diem);
+          keuSai();
+          nut.classList.remove('is-sai');
+          void nut.offsetWidth;
+          nut.classList.add('is-sai');
+          hen.push(setTimeout(function () { nut.classList.remove('is-sai'); }, 500));
+        }
+      }
+
+      function batDau() {
+        song = true;
+        xoaHen();
+        diem = 0; dung = 0; tong = 0; buoc = 0;
+        sk.diem(0);
+        duong = veDuong();
+        raiChu();
+        ve();
+      }
+
+      function het() {
+        song = false;
+        xoaHen();
+        sk.san.className = 'ar-stage';
+        ketQua(sk, { diem: diem, dung: dung, tong: tong, chuoi: 0 }, function () {
+          sk.san.className = 'ar-stage ar-me';
+          batDau();
+        });
+        if (o.onXong) o.onXong({ diem: diem, dung: dung, tong: tong });
+      }
+
+      batDau();
+      return { dung: function () { song = false; xoaHen(); } };
+    }
+  };
+
   /* ---------------- dang ky ---------------- */
   var KHO = {};
-  [quiz, bubble, mole, memory, vanish].forEach(function (g) { KHO[g.key] = g; });
+  [quiz, bubble, mole, snake, maze, memory, vanish].forEach(function (g) { KHO[g.key] = g; });
 
   window.Arcade = {
     kho: KHO,

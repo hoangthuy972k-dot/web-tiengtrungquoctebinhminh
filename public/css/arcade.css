@@ -489,3 +489,140 @@
 .ar-opt-rong { min-width: 120px; max-width: 100%; }
 .ar-foot-dien, .ar-foot-dungsai { flex-direction: column; align-items: stretch; }
 .ar-foot-dien .ar-opt, .ar-foot-dungsai .ar-opt { align-items: flex-start; text-align: left; }
+
+/* ══════════════ 6 · RẮN ĂN CHỮ ══════════════ */
+.ar-stage.ar-ran {
+  display: grid;
+  place-items: center;
+  padding: clamp(8px, 1.6vw, 16px);
+  background: radial-gradient(120% 90% at 50% 0%, #eef6ef 0%, #e2eee4 100%);
+}
+.ar-ran-luoi {
+  display: grid;
+  grid-template-columns: repeat(var(--cot), 1fr);
+  grid-template-rows: repeat(var(--hang), 1fr);
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: var(--cot) / var(--hang);
+  max-width: 100%;
+  max-height: 100%;
+}
+.ar-o {
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: clamp(0.62rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1;
+  overflow: hidden;
+}
+.ar-o-than { background: var(--color-green-500); border-radius: 5px; }
+.ar-o-dau {
+  background: var(--color-green-600);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+/* Chu moi duoc phep tran ra ngoai o cho doc duoc — o luoi rat nho,
+   nhot chu trong o thi tu hai am tiet bi xuong dong, khong doc noi. */
+.ar-o-moi {
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+  white-space: nowrap;
+  padding: 1px 5px;
+  background: #fff;
+  color: var(--color-gray-900);
+  border: 2px solid var(--color-gold-500);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(31, 26, 23, 0.12);
+}
+.ar-lop .ar-o { font-size: clamp(0.8rem, 1.9vw, 1.4rem); }
+
+.ar-dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  grid-template-rows: repeat(2, 42px);
+  gap: 6px;
+  justify-content: center;
+}
+.ar-dnut {
+  font: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid var(--color-gray-300);
+  background: #fff;
+  color: var(--color-gray-700);
+}
+.ar-dnut:hover { border-color: var(--color-green-500); color: var(--color-green-600); }
+.ar-d0 { grid-area: 1 / 2; }   /* lên */
+.ar-d1 { grid-area: 2 / 1; }   /* trái */
+.ar-d2 { grid-area: 2 / 3; }   /* phải */
+.ar-d3 { grid-area: 2 / 2; }   /* xuống */
+
+/* ══════════════ 7 · MÊ CUNG ĐỌC CHỮ ══════════════ */
+.ar-stage.ar-me {
+  display: grid;
+  place-items: center;
+  padding: clamp(10px, 2vw, 22px);
+  background: radial-gradient(120% 90% at 50% 0%, #eef1fb 0%, #e4e9f7 100%);
+}
+.ar-me-luoi {
+  display: grid;
+  grid-template-columns: repeat(var(--cot), 1fr);
+  grid-template-rows: repeat(var(--hang), 1fr);
+  gap: clamp(4px, 1vw, 9px);
+  /* Giu o gan vuong: cao bao nhieu thi rong bay nhieu, khong keo det ra. */
+  aspect-ratio: var(--cot) / var(--hang);
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.ar-me-o {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
+  min-height: 0;
+  padding: 2px;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid var(--color-gray-200);
+  background: #fff;
+  overflow: hidden;
+}
+.ar-me-o b {
+  font-size: clamp(0.85rem, 2.1vw, 1.5rem);
+  color: var(--color-gray-900);
+  line-height: 1.1;
+}
+.ar-me-o i {
+  font-style: normal;
+  font-size: clamp(0.5rem, 1.1vw, 0.75rem);
+  color: var(--color-teal-600);
+  line-height: 1.1;
+}
+.ar-lop .ar-me-o b { font-size: clamp(1.1rem, 2.8vw, 2.1rem); }
+.ar-lop .ar-me-o i { font-size: clamp(0.62rem, 1.4vw, 0.98rem); }
+
+.ar-me-o.is-dau { border-style: dashed; border-color: var(--color-gray-400); }
+.ar-me-o.is-cuoi {
+  border-color: var(--color-gold-500);
+  background: var(--color-gold-50);
+}
+.ar-me-o.is-daDi { background: var(--color-blue-50); border-color: var(--color-blue-500); }
+.ar-me-o.is-dangO {
+  background: var(--color-blue-500);
+  border-color: var(--color-blue-600);
+  box-shadow: 0 0 0 3px rgba(68, 114, 234, 0.25);
+}
+.ar-me-o.is-dangO b { color: #fff; }
+.ar-me-o.is-dangO i { color: rgba(255, 255, 255, 0.82); }
+.ar-me-o.is-sai { animation: ar-lac 0.3s ease; border-color: var(--color-red-500); background: var(--color-red-50); }
+.ar-me-o.is-xa { animation: ar-lac 0.3s ease; }

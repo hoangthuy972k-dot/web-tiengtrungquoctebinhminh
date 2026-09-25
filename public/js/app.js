@@ -1,6 +1,16 @@
 (function () {
   'use strict';
 
+  // Ma phien ban cua lan deploy nay — may chu gan ?v=... vao the <script> cua
+  // app.js. Cac file tai sau (ngu phap tung cap...) dung chung ma nay, khong thi
+  // CDN Hostinger giu ban cu mai sau moi lan cap nhat du lieu.
+  if (!window.__assetVersion) {
+    try {
+      var tuApp = (document.currentScript && document.currentScript.src) || '';
+      window.__assetVersion = (tuApp.match(/[?&]v=([^&#]+)/) || [])[1] || String(Date.now());
+    } catch (e) { window.__assetVersion = String(Date.now()); }
+  }
+
   var STORAGE_KEYS = {
     visitedLessons: 'hyv_visited_lessons',
     studyDays: 'hyv_study_days',
@@ -9817,6 +9827,49 @@
     grMode = 'lesson';
     grQuiz = null;
     rsHideNotice('#grContent');
+
+    // Bai nao da co ngu phap CHIA THEO DIEM (moi tab mot diem, bai tap di kem
+    // ngay ben duoi) thi dung giao dien moi; bai khac giu nguyen nhu cu.
+    ensureNptFiles(levelId).then(function () {
+      var diem = window.NGU_PHAP_TAB && window.NGU_PHAP_TAB[lesson.fullPageUrl];
+      if (diem && diem.length && window.NguPhapTab) {
+        $('#grSubtitle').textContent = diem.length + ' điểm ngữ pháp · mỗi điểm kèm bài tập ngay bên dưới';
+        window.NguPhapTab.render($('#grTabs'), $('#grContent'), diem, {
+          key: lesson.fullPageUrl,
+          speak: vpSpeak,
+          onScore: function (d) { recordLessonScore(currentHubLesson, 'grammar', d); }
+        });
+        return;
+      }
+      showGrammarPracticeCu(lesson);
+    });
+    $('#grammarPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Ngu phap chia theo diem — trinh ve dung chung + du lieu tung cap
+  var NPT_FILES = { hsk2: '/js/ngu-phap-tab-hsk2.js' };
+  var nptState = {};
+  function napScript(src) {
+    return new Promise(function (resolve) {
+      var el = document.createElement('script');
+      el.src = src + '?v=' + (window.__assetVersion || '1');
+      el.onload = resolve;
+      el.onerror = function () { resolve(); };
+      document.head.appendChild(el);
+    });
+  }
+  function ensureNptFiles(levelId) {
+    var src = NPT_FILES[levelId];
+    if (!src) return Promise.resolve();
+    if (!nptState[levelId]) {
+      nptState[levelId] = (window.NguPhapTab ? Promise.resolve() : (nptState._ve || (nptState._ve = napScript('/js/ngu-phap-tab.js'))))
+        .then(function () { return napScript(src); });
+    }
+    return nptState[levelId];
+  }
+
+  function showGrammarPracticeCu(lesson) {
+    $('#grTabs').classList.remove('npt-tabs');
     var savedGrMode = rsGet('grammar:mode');
     if (savedGrMode && /^ex_\w+$/.test(savedGrMode)) {
       var savedType = savedGrMode.slice(3);
@@ -9832,8 +9885,6 @@
     }).catch(function () {
       $('#grContent').innerHTML = '<p style="color:var(--color-gray-500);">Không tải được nội dung ngữ pháp của bài này.</p>';
     });
-
-    $('#grammarPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   // Du lieu bai tap ngu phap co 2 dang: mang PHANG (cu — 1 tab "Bai tap" duy

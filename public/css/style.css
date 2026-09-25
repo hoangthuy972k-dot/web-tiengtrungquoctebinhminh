@@ -7849,3 +7849,249 @@ body.pinyin-hidden .py-inline {
 @media (max-width: 640px) {
   .ab-s { min-width: 56px; font-size: 0.85rem; }
 }
+
+/* ══ Ngữ pháp chia theo điểm (ngu-phap-tab.js) ════════════════════════
+   Mỗi điểm ngữ pháp một tab; lý thuyết ở trên, ba dạng bài tập của chính
+   điểm đó nối ngay bên dưới — đúng thứ tự tài liệu của cô: cấu trúc →
+   giải thích → ví dụ → lỗi hay mắc → bài tập 1 · 2 · 3.                 */
+.npt-tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+.npt-tabbtn {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 52px; padding: 6px 16px 6px 8px;
+  border: 1.5px solid var(--color-gray-200); border-radius: var(--radius-pill);
+  background: var(--color-white); color: var(--color-gray-800);
+  font: inherit; cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.npt-tabbtn:hover { border-color: var(--color-red-500); }
+.npt-tabbtn:focus-visible { outline: 3px solid var(--color-gold-400); outline-offset: 2px; }
+.npt-tab-so {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--color-red-50); color: var(--color-red-600); font-weight: 800; font-size: 0.95rem;
+}
+.npt-tab-han { font-family: var(--font-hanzi-display); font-size: 1.45rem; font-weight: 700; line-height: 1; }
+.npt-tab-dem { font-size: 0.8rem; font-weight: 700; color: var(--color-gray-500); font-variant-numeric: tabular-nums; }
+.npt-tab-dem.xong { color: var(--color-green-600); }
+.npt-tabbtn.active { background: var(--color-red-600); border-color: var(--color-red-600); color: #fff; }
+.npt-tabbtn.active .npt-tab-so { background: #fff; color: var(--color-red-600); }
+.npt-tabbtn.active .npt-tab-dem { color: rgba(255, 255, 255, 0.85); }
+
+.npt { display: flex; flex-direction: column; gap: var(--space-4); }
+.npt-head {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-white); border: 1.5px solid var(--color-gray-200); border-radius: var(--radius-lg);
+}
+.npt-so {
+  flex-shrink: 0; padding: 4px 10px; border-radius: var(--radius-sm);
+  background: var(--color-red-600); color: #fff; font-weight: 800; font-size: 0.95rem; font-variant-numeric: tabular-nums;
+}
+.npt-ten { margin: 0; font-family: var(--font-hanzi-display); font-size: 1.7rem; line-height: 1.25; color: var(--color-red-700); }
+.npt-tenvn { margin: 4px 0 0; font-size: 1.05rem; font-weight: 600; color: var(--color-gray-600); }
+
+.npt-khoi {
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-white); border: 1px solid var(--color-gray-200); border-radius: var(--radius-lg);
+}
+.npt-h {
+  margin: 0 0 var(--space-3); font-size: 0.82rem; font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-red-600);
+}
+
+/* Cấu trúc — nền vàng nhạt như khung công thức trên bảng */
+.npt-cautruc { background: var(--color-gold-50); border-color: var(--color-gold-400); }
+.npt-cautruc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.npt-cautruc li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; font-size: 1.25rem; line-height: 1.6; color: var(--color-gray-800); }
+.npt-ct-nhan { font-size: 0.9rem; font-weight: 700; color: var(--color-gray-600); min-width: 5.5em; }
+.npt-ct-cong { font-weight: 600; }
+.npt-han { font-family: var(--font-hanzi); color: var(--color-red-600); font-weight: 800; }
+.npt-tag {
+  display: inline-block; padding: 0 6px; margin: 0 1px; border-radius: 6px;
+  background: var(--color-white); border: 1px solid var(--color-gold-400);
+  font-size: 0.8em; font-weight: 700; color: var(--color-gold-700); line-height: 1.5;
+}
+.npt-tuy { color: var(--color-gray-500); }
+.npt-ngoac { font-family: var(--font-hanzi); color: var(--color-gray-500); font-weight: 500; font-size: 0.9em; }
+
+.npt-giai { margin: 0; max-width: 72ch; font-size: 1.05rem; line-height: 1.75; color: var(--color-gray-800); }
+
+.npt-vidu { margin: 0; padding-left: 1.4em; display: grid; gap: var(--space-3); }
+.npt-vidu li::marker { color: var(--color-gray-400); font-weight: 700; }
+.npt-vd-zh { font-family: var(--font-hanzi-display); font-size: 1.4rem; font-weight: 700; color: var(--color-gray-900); line-height: 1.4; }
+.npt-vd-py { font-size: 1rem; color: var(--color-gold-600); font-weight: 600; }
+.npt-vd-vn { font-size: 1rem; color: var(--color-gray-600); }
+.npt-loa {
+  border: none; background: var(--color-red-50); border-radius: 50%;
+  width: 36px; height: 36px; font-size: 1rem; cursor: pointer; vertical-align: middle;
+}
+.npt-loa:hover { background: var(--color-red-100); }
+
+.npt-loi { display: grid; gap: var(--space-3); }
+.npt-loi .npt-h { margin-bottom: 0; }
+.npt-loi-mot { padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); background: var(--color-gray-50); display: grid; gap: 4px; }
+.npt-loi-sai { font-size: 1.2rem; color: var(--color-red-600); text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.npt-loi-sai span, .npt-loi-dung span { display: inline-block; text-decoration: none; font-weight: 800; margin-right: 4px; }
+.npt-loi-vi { font-size: 0.98rem; line-height: 1.6; color: var(--color-gray-600); }
+.npt-loi-dung { font-size: 1.2rem; font-weight: 700; color: var(--color-green-600); }
+
+/* ---- Bài tập ---- */
+.npt-bt { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-2); }
+.npt-bt-h {
+  margin: 0; display: flex; align-items: center; gap: var(--space-3);
+  font-size: 1.25rem; font-weight: 800; color: var(--color-gray-900);
+}
+.npt-bt-h::after { content: ""; flex: 1; height: 1px; background: var(--color-gray-200); }
+
+.npt-card {
+  background: var(--color-white); border: 1.5px solid var(--color-gray-200); border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5); box-shadow: var(--shadow-sm);
+}
+.npt-card-h h4 { margin: 6px 0 4px; font-size: 1.15rem; font-weight: 800; color: var(--color-gray-900); }
+.npt-hd { margin: 0 0 var(--space-3); font-size: 0.95rem; color: var(--color-gray-500); line-height: 1.55; }
+.npt-cap {
+  display: inline-block; padding: 3px 10px; border-radius: var(--radius-pill);
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.02em;
+}
+.npt-cap-1 { background: var(--color-gray-100); color: var(--color-gray-700); }
+.npt-cap-2 { background: var(--color-gold-50); color: var(--color-gold-700); }
+.npt-cap-3 { background: var(--color-teal-50); color: var(--color-teal-600); }
+
+.npt-bank { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: var(--space-3); font-size: 0.9rem; color: var(--color-gray-500); font-weight: 600; }
+.npt-bank b { padding: 2px 12px; border-radius: var(--radius-sm); background: var(--color-red-50); color: var(--color-red-700); font-size: 1.15rem; }
+
+.npt-ds { margin: 0; padding: 0; list-style: none; counter-reset: npt; display: grid; gap: var(--space-3); }
+.npt-q {
+  counter-increment: npt; position: relative; min-width: 0;
+  padding: var(--space-3) var(--space-4) var(--space-3) 3rem;
+  border: 1.5px solid var(--color-gray-100); border-radius: var(--radius-md); background: var(--color-gray-50);
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.npt-q::before {
+  content: counter(npt); position: absolute; left: 12px; top: 14px;
+  display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--color-white); border: 1px solid var(--color-gray-200);
+  font-size: 0.82rem; font-weight: 800; color: var(--color-gray-500);
+}
+.npt-q.dung { border-color: var(--color-green-500); background: var(--color-green-50); }
+.npt-q.sai { border-color: var(--color-red-500); background: var(--color-red-50); }
+.npt-q.mau { border-color: var(--color-gold-400); background: var(--color-gold-50); }
+
+.npt-cau { font-size: 1.4rem; line-height: 2.1; color: var(--color-gray-900); }
+.npt-o {
+  display: inline-block; min-width: 3.2em; min-height: 1.6em; margin: 0 4px; padding: 0 8px;
+  vertical-align: baseline; border: none; border-bottom: 2.5px dashed var(--color-gray-400);
+  background: var(--color-white); border-radius: 6px 6px 0 0;
+  font: inherit; font-weight: 700; color: var(--color-red-700); line-height: 1.5; cursor: pointer;
+}
+.npt-o.co { border-bottom-style: solid; border-bottom-color: var(--color-red-500); }
+.npt-o.dung { color: var(--color-green-600); border-bottom-color: var(--color-green-600); background: #fff; }
+.npt-o.sai { color: var(--color-red-600); border-bottom-color: var(--color-red-600); text-decoration: line-through; }
+.npt-chon { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.npt-chip {
+  min-width: 64px; min-height: 46px; padding: 6px 16px;
+  border: 1.5px solid var(--color-gray-200); border-radius: var(--radius-md); background: var(--color-white);
+  font-size: 1.25rem; font-weight: 700; color: var(--color-gray-800); cursor: pointer;
+}
+.npt-chip:hover { border-color: var(--color-red-500); color: var(--color-red-700); }
+.npt-q.dung .npt-chon { display: none; }
+
+.npt-kq { margin-top: 6px; font-size: 1rem; color: var(--color-gray-700); }
+.npt-kq:empty { display: none; }
+.npt-ok { color: var(--color-green-600); font-weight: 800; }
+.npt-no { color: var(--color-red-600); font-weight: 800; }
+.npt-kq b.hanzi { font-size: 1.15rem; }
+
+/* Sắp xếp: khay câu đang ghép + các mảnh */
+.npt-khay {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  min-height: 56px; padding: 6px 8px;
+  border: 2px dashed var(--color-gray-300); border-radius: var(--radius-md); background: var(--color-white);
+}
+.npt-q.dung .npt-khay { border-style: solid; border-color: var(--color-green-500); }
+.npt-q.sai .npt-khay { border-style: solid; border-color: var(--color-red-500); }
+.npt-khay-trong { font-size: 0.92rem; color: var(--color-gray-400); padding: 0 6px; }
+.npt-manh { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.npt-manh1 {
+  min-height: 46px; padding: 6px 14px;
+  border: 1.5px solid var(--color-gray-200); border-bottom-width: 3px; border-radius: var(--radius-md);
+  background: var(--color-white); font-family: var(--font-hanzi); font-size: 1.3rem; font-weight: 700;
+  color: var(--color-gray-900); cursor: pointer;
+}
+.npt-manh1:hover { border-color: var(--color-red-500); }
+.npt-manh1.da { background: var(--color-red-50); border-color: var(--color-red-100); color: var(--color-red-700); }
+.npt-manh1.an { visibility: hidden; }
+.npt-q.dung .npt-manh { display: none; }
+
+/* Viết lại / hội thoại / dịch */
+.npt-yc { font-size: 0.9rem; font-weight: 700; color: var(--color-gray-500); margin-bottom: 4px; }
+.npt-goc { font-size: 1.35rem; color: var(--color-gray-900); margin-bottom: 8px; }
+.npt-dich { font-size: 1.15rem; font-weight: 600; color: var(--color-gray-900); margin-bottom: 8px; line-height: 1.5; }
+.npt-hoi { display: flex; align-items: baseline; gap: 10px; font-size: 1.35rem; line-height: 1.6; color: var(--color-gray-900); }
+.npt-ai {
+  flex-shrink: 0; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--color-red-600); color: #fff; font-family: var(--font-latin); font-size: 0.85rem; font-weight: 800;
+}
+.npt-ai.is-b { background: var(--color-teal-600); }
+.npt-hoi-b { flex-wrap: wrap; align-items: center; margin-top: 6px; }
+.npt-hoi-b .npt-nhap { flex: 1 1 220px; min-width: 0; margin-top: 0; }
+.npt-bdau { white-space: nowrap; }
+.npt-nhap { display: flex; gap: 8px; margin-top: 8px; }
+.npt-in {
+  /* width 0 + flex 1: bo be rong mac dinh ~20 ky tu cua o nhap, khong thi
+     o nhap day the rong tran man hinh dien thoai */
+  flex: 1 1 auto; width: 0; min-width: 0; min-height: 50px; padding: 8px 14px;
+  border: 2px solid var(--color-gray-200); border-radius: var(--radius-md); background: var(--color-white);
+  font-size: 1.3rem; color: var(--color-gray-900);
+}
+.npt-in::placeholder { font-family: var(--font-latin); font-size: 0.95rem; color: var(--color-gray-400); }
+.npt-in:focus { outline: none; border-color: var(--color-red-500); box-shadow: 0 0 0 3px var(--color-red-50); }
+.npt-goiy { margin-top: 6px; font-size: 0.92rem; color: var(--color-gray-500); font-style: italic; }
+.npt-mau-nhan {
+  display: inline-block; padding: 1px 8px; margin-right: 4px; border-radius: var(--radius-sm);
+  background: var(--color-gold-500); color: #fff; font-size: 0.8rem; font-weight: 800;
+}
+.npt-mau-ghi { display: block; margin-top: 4px; font-size: 0.9rem; color: var(--color-gold-700); }
+
+.npt-nut {
+  flex-shrink: 0; min-height: 46px; padding: 0 18px;
+  border: none; border-radius: var(--radius-md); background: var(--color-red-600); color: #fff;
+  font: inherit; font-size: 1rem; font-weight: 700; cursor: pointer;
+}
+.npt-nut:hover { background: var(--color-red-700); }
+.npt-nut:focus-visible, .npt-chip:focus-visible, .npt-manh1:focus-visible, .npt-o:focus-visible, .npt-loa:focus-visible {
+  outline: 3px solid var(--color-gold-400); outline-offset: 2px;
+}
+.npt-nut-phu { background: var(--color-gray-100); color: var(--color-gray-700); }
+.npt-nut-phu:hover { background: var(--color-gray-200); }
+.npt-card-f { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: var(--space-4); }
+.npt-card-dem { margin-left: auto; font-size: 0.95rem; font-weight: 700; color: var(--color-gray-600); font-variant-numeric: tabular-nums; }
+.npt-dapan {
+  margin-top: 8px; padding: 8px 12px; border-radius: var(--radius-sm);
+  background: var(--color-white); border: 1px dashed var(--color-green-500);
+  font-size: 1.15rem; font-weight: 700; color: var(--color-green-600);
+}
+.npt-dapan span { font-family: var(--font-latin); font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-gray-500); margin-right: 6px; }
+.npt-dapan small { display: block; margin-top: 2px; font-size: 0.85rem; font-weight: 500; color: var(--color-gray-500); }
+
+.npt-cuoi { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-2) 0; }
+.npt-tongket { margin: 0; font-size: 1rem; color: var(--color-gray-600); }
+.npt-nut-lon { min-height: 52px; padding: 0 22px; font-size: 1.05rem; }
+
+@media (max-width: 640px) {
+  .npt-head, .npt-khoi, .npt-card { padding: var(--space-3) var(--space-4); }
+  .npt-ten { font-size: 1.45rem; }
+  .npt-cautruc li { font-size: 1.1rem; }
+  .npt-q { padding-left: 2.6rem; }
+  .npt-q::before { left: 8px; }
+  .npt-cau, .npt-hoi, .npt-goc { font-size: 1.25rem; }
+  .npt-tabbtn { padding-right: 12px; }
+  .npt-nut-lon { width: 100%; }
+  /* Dien thoai: o nhap chiem ca dong, nut Kiem tra xuong duoi rong het the */
+  .npt-nhap { flex-wrap: wrap; }
+  .npt-in { flex: 1 1 150px; }
+  .npt-nhap .npt-nut { flex: 1 1 100%; }
+  .npt-hoi-b .npt-nhap { flex-basis: 150px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .npt-tabbtn, .npt-q { transition: none; }
+}

@@ -1554,9 +1554,264 @@
     'Kéo từng chữ Hán vào đúng kết cấu: trái–phải, trên–dưới, chữ đơn hay bao nửa.',
     'Chiếu các chữ Hán, cả lớp đọc rồi chỉ kết cấu. Thầy cô bấm thẻ rồi bấm giỏ lớp chọn.');
 
+  /* ══════════════════════════════════════════════════════════════
+     9 · VÒNG QUAY MAY MẮN  (抽奖合集 · bốc thăm trúng thưởng · tik tok)
+     Quay để bốc ngẫu nhiên. Bốn thứ có thể đặt lên vòng quay:
+       · từ vựng của bài đã chọn — quay trúng từ nào thì đọc từ đó
+       · số thứ tự               — gọi học sinh theo số trong sổ
+       · tổ                      — chọn tổ đi trước
+       · danh sách tự nhập       — tên học sinh, ghi chú của thầy cô
+
+     Ten hoc sinh CHI nam trong trinh duyet cua may thay co (localStorage),
+     khong gui di dau, khong nam trong ma nguon.
+     ══════════════════════════════════════════════════════════════ */
+  var MAU_VQ = ['#c8372d', '#e9a23b', '#1f8a4c', '#2f5fdb', '#8a241d',
+                '#b7791f', '#0d8a80', '#7c3aed', '#d9580c', '#db2777'];
+
+  var wheel = {
+    key: 'wheel',
+    ten: 'Vòng quay may mắn',
+    emoji: '🎯',
+    chu: '运',
+    anh: '',
+    nen: 'linear-gradient(160deg,#f6d67a 0%,#c8372d 100%)',
+    mau: 'gold',
+    moTa: 'Quay để bốc ngẫu nhiên một từ — trúng từ nào thì đọc và đặt câu với từ đó.',
+    moTaLop: 'Quay để bốc từ, gọi số thứ tự, chọn tổ đi trước hay bốc tên học sinh. Gạt “bỏ ra sau khi trúng” để không gọi trùng.',
+    canToiThieu: 2,
+    mo: function (hop, o) {
+      var sk = dungKhung(hop, wheel, o);
+      sk.san.classList.add('ar-vq');
+      sk.anGio();
+
+      var KIEU = [
+        { id: 'tu', ten: 'Từ vựng' },
+        { id: 'so', ten: 'Số thứ tự' },
+        { id: 'to', ten: 'Tổ' },
+        { id: 'tay', ten: 'Tự nhập' }
+      ];
+      var kieu = 'tu', siSo = 30, soTo = 4, boRa = false, tayTho = '';
+      var danhSach = [], daTrung = [], dang = false, hen = [], canVeLai = false;
+      var oQuay, oKim, oNut, oKetQua;
+
+      try {
+        var d = JSON.parse(localStorage.getItem('hyv_vq') || '{}');
+        if (d.kieu) kieu = d.kieu;
+        if (d.siSo) siSo = d.siSo;
+        if (d.soTo) soTo = d.soTo;
+        if (typeof d.boRa === 'boolean') boRa = d.boRa;
+        if (typeof d.tay === 'string') tayTho = d.tay;
+      } catch (e) { /* bo qua */ }
+      function luu() {
+        try {
+          localStorage.setItem('hyv_vq', JSON.stringify(
+            { kieu: kieu, siSo: siSo, soTo: soTo, boRa: boRa, tay: tayTho }));
+        } catch (e) { /* bo qua */ }
+      }
+      function xoaHen() { hen.forEach(clearTimeout); hen = []; }
+
+      /* Lap danh sach o tren vong quay theo kieu dang chon. */
+      function lapDanhSach() {
+        var ds = [];
+        if (kieu === 'tu') {
+          ds = tron(o.vocab).map(function (v) { return { chinh: v.zh, phu: v.py, goi: v.vn }; });
+        } else if (kieu === 'so') {
+          for (var i = 1; i <= siSo; i++) ds.push({ chinh: String(i), phu: '', goi: 'Số ' + i });
+        } else if (kieu === 'to') {
+          for (var t = 1; t <= soTo; t++) ds.push({ chinh: 'Tổ ' + t, phu: '', goi: 'Tổ ' + t });
+        } else {
+          ds = tayTho.split('\n').map(function (x) { return x.trim(); })
+            .filter(Boolean).map(function (x) { return { chinh: x, phu: '', goi: x }; });
+        }
+        // Bo nhung o da trung neu thay co bat "bo ra sau khi trung".
+        if (boRa && daTrung.length) {
+          ds = ds.filter(function (x) { return daTrung.indexOf(x.chinh) < 0; });
+        }
+        return ds;
+      }
+
+      function ve() {
+        danhSach = lapDanhSach();
+        // Vong quay nhieu hon 12 o thi chu be li ti — boc ngau nhien 12 o.
+        var hien = danhSach.length > 12 ? tron(danhSach).slice(0, 12) : danhSach;
+        oQuay.innerHTML = '';
+        oQuay.style.transform = 'rotate(0deg)';
+        oQuay.__hien = hien;
+
+        if (!hien.length) {
+          oQuay.style.background = 'var(--color-gray-200)';
+          oKetQua.innerHTML = '<span class="ar-vq-het">Hết mất rồi — bấm “Quay lại từ đầu”.</span>';
+          return;
+        }
+        var buoc = 360 / hien.length;
+        var mieng = hien.map(function (x, i) {
+          return MAU_VQ[i % MAU_VQ.length] + ' ' + (i * buoc).toFixed(2) + 'deg ' + ((i + 1) * buoc).toFixed(2) + 'deg';
+        }).join(', ');
+        oQuay.style.background = 'conic-gradient(' + mieng + ')';
+
+        hien.forEach(function (x, i) {
+          var n = tao('span', 'ar-vq-nhan');
+          n.style.transform = 'rotate(' + (i * buoc + buoc / 2) + 'deg)';
+          n.innerHTML = '<b>' + esc(x.chinh) + '</b>' + (x.phu ? '<i>' + esc(x.phu) + '</i>' : '');
+          oQuay.appendChild(n);
+        });
+      }
+
+      function quay() {
+        if (dang) return;
+        // Danh sach dai hon so o tren vong thi CHIA LAI truoc moi lan quay —
+        // neu khong, si so 30 ma vong chi co 12 o thi 18 em con lai khong
+        // bao gio duoc goi.
+        if (canVeLai || (danhSach || []).length > 12) {
+          canVeLai = false;
+          oQuay.style.transition = 'none';
+          ve();
+          void oQuay.offsetWidth;
+        }
+        var hien = oQuay.__hien || [];
+        if (!hien.length) return;
+        dang = true;
+        oNut.disabled = true;
+        oKetQua.innerHTML = '';
+        var buoc = 360 / hien.length;
+        var i = Math.floor(Math.random() * hien.length);
+        // Kim o dinh (goc 0). Quay nguoc lai de tam o thu i dung duoi kim.
+        var dich = 360 * (4 + Math.floor(Math.random() * 3)) - (i * buoc + buoc / 2);
+        oQuay.style.transition = 'transform 4.1s cubic-bezier(.12,.66,.16,1)';
+        oQuay.style.transform = 'rotate(' + dich + 'deg)';
+        oKim.classList.add('is-quay');
+        hen.push(setTimeout(function () {
+          dang = false;
+          oNut.disabled = false;
+          oKim.classList.remove('is-quay');
+          xong(hien[i]);
+        }, 4250));
+      }
+
+      function xong(x) {
+        keuDung();
+        if (kieu === 'tu') doc(x.chinh);
+        oKetQua.innerHTML = '<span class="ar-vq-nhan-kq">Trúng</span>' +
+          '<b>' + esc(x.chinh) + '</b>' +
+          (x.goi && x.goi !== x.chinh ? '<i>' + esc(x.goi) + '</i>' : '');
+        oKetQua.classList.remove('is-hien');
+        void oKetQua.offsetWidth;
+        oKetQua.classList.add('is-hien');
+        // Giu nguyen o vua trung tren vong cho ca lop con nhin thay; den
+        // dau luot quay sau moi go ra. KHONG hen gio go, vi hen gio co the
+        // no dung luc dang quay lan sau — vong bi ve lai giua chung va ket
+        // qua cong bo lech khoi o dang hien.
+        if (boRa) {
+          daTrung.push(x.chinh);
+          canVeLai = true;
+        }
+      }
+
+      function veBangDieuKhien() {
+        sk.duoi.innerHTML = '';
+        var hang = tao('div', 'ar-vq-dk');
+
+        var nhom = tao('div', 'ar-vq-kieu');
+        KIEU.forEach(function (k) {
+          var b = tao('button', 'ar-vq-k' + (k.id === kieu ? ' on' : ''), k.ten);
+          b.type = 'button';
+          b.addEventListener('click', function () {
+            kieu = k.id; daTrung = []; canVeLai = false;
+            luu(); veBangDieuKhien();
+            oQuay.style.transition = 'none';
+            ve();
+          });
+          nhom.appendChild(b);
+        });
+        hang.appendChild(nhom);
+
+        if (kieu === 'so') {
+          var l1 = tao('label', 'ar-vq-so', 'Sĩ số ');
+          var i1 = tao('input');
+          i1.type = 'number'; i1.min = '2'; i1.max = '60'; i1.value = siSo;
+          i1.addEventListener('change', function () {
+            siSo = Math.max(2, Math.min(60, +i1.value || 30));
+            i1.value = siSo; daTrung = []; canVeLai = false; luu();
+            oQuay.style.transition = 'none'; ve();
+          });
+          l1.appendChild(i1);
+          hang.appendChild(l1);
+        } else if (kieu === 'to') {
+          var l2 = tao('label', 'ar-vq-so', 'Số tổ ');
+          var i2 = tao('input');
+          i2.type = 'number'; i2.min = '2'; i2.max = '8'; i2.value = soTo;
+          i2.addEventListener('change', function () {
+            soTo = Math.max(2, Math.min(8, +i2.value || 4));
+            i2.value = soTo; daTrung = []; canVeLai = false; luu();
+            oQuay.style.transition = 'none'; ve();
+          });
+          l2.appendChild(i2);
+          hang.appendChild(l2);
+        }
+
+        var l3 = tao('label', 'ar-vq-gat');
+        var i3 = tao('input');
+        i3.type = 'checkbox'; i3.checked = boRa;
+        i3.addEventListener('change', function () {
+          boRa = i3.checked; daTrung = []; canVeLai = false; luu();
+          oQuay.style.transition = 'none'; ve();
+        });
+        l3.appendChild(i3);
+        l3.appendChild(document.createTextNode(' Bỏ ra sau khi trúng'));
+        hang.appendChild(l3);
+
+        var lam = tao('button', 'ar-btn', 'Quay lại từ đầu');
+        lam.type = 'button';
+        lam.addEventListener('click', function () {
+          daTrung = []; canVeLai = false; oQuay.style.transition = 'none'; ve();
+          oKetQua.innerHTML = '';
+        });
+        hang.appendChild(lam);
+        sk.duoi.appendChild(hang);
+
+        if (kieu === 'tay') {
+          var ta = tao('textarea', 'ar-vq-nhap');
+          ta.rows = 3;
+          ta.placeholder = 'Mỗi dòng một tên hoặc một việc…\nLan\nMinh\nHà';
+          ta.value = tayTho;
+          ta.addEventListener('input', function () {
+            tayTho = ta.value; daTrung = []; canVeLai = false; luu();
+            oQuay.style.transition = 'none'; ve();
+          });
+          sk.duoi.appendChild(ta);
+          var ghi = tao('p', 'ar-vq-ghi',
+            'Danh sách này chỉ nằm trong trình duyệt của máy này, không gửi đi đâu.');
+          sk.duoi.appendChild(ghi);
+        }
+      }
+
+      function batDau() {
+        sk.deBai('<span class="ar-p-nhan">Vòng quay may mắn</span><b>Bấm giữa vòng để quay</b>');
+        sk.san.innerHTML = '';
+        var khung = tao('div', 'ar-vq-khung');
+        oKim = tao('div', 'ar-vq-kim');
+        oQuay = tao('div', 'ar-vq-dia');
+        oNut = tao('button', 'ar-vq-nut', 'QUAY');
+        oNut.type = 'button';
+        oNut.addEventListener('click', quay);
+        khung.appendChild(oQuay);
+        khung.appendChild(oKim);
+        khung.appendChild(oNut);
+        oKetQua = tao('div', 'ar-vq-kq');
+        sk.san.appendChild(khung);
+        sk.san.appendChild(oKetQua);
+        ve();
+        veBangDieuKhien();
+      }
+
+      batDau();
+      return { dung: function () { dang = false; xoaHen(); } };
+    }
+  };
+
   /* ---------------- dang ky ---------------- */
   var KHO = {};
-  [quiz, bubble, mole, snake, maze, plTuLoai, plKetCau, memory, vanish].forEach(function (g) { KHO[g.key] = g; });
+  [quiz, bubble, mole, snake, maze, plTuLoai, plKetCau, memory, vanish, wheel].forEach(function (g) { KHO[g.key] = g; });
 
   window.Arcade = {
     kho: KHO,

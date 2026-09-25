@@ -2364,6 +2364,13 @@
     state.timer.running = false;
     $('#lopPlay').hidden = true;
     $('#lopSetup').hidden = false;
+    // Kiem tra phat am co bang chon bai rieng — quay ra thi ve dung bang
+    // do va cuon toi noi, khong bat thay/co tim lai tu dau trang.
+    if (state.game === 'phatam') {
+      var pf = $('#lopPaField');
+      pf.hidden = false;
+      pf.scrollIntoView({ block: 'center' });
+    }
   }
 
   /* ---------------- khoi tao ---------------- */

@@ -118,10 +118,9 @@
   font-weight: 600;
 }
 
-.lop-team-pick { display: flex; gap: 10px; }
+.lop-team-pick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .lop-team-pick button {
-  flex: 1;
-  padding: 12px;
+  padding: 12px 6px;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-gray-200);
   background: #fff;

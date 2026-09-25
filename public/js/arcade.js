@@ -80,6 +80,122 @@
     return tron(ds);
   }
 
+  /* ══════════════ BO SINH CAU HOI ══════════════
+     Bien du lieu bai hoc thanh cau trac nghiem. Hai nguon:
+       · tu vung  — tu dong ra 4 kieu hoi (nghia↔chu, pinyin↔chu)
+       · ngu phap — lay thang cau dien tu / cau dung-sai cua bai
+     Cau hoi deu ve cung mot dang de tro choi chi viec hien ra.        */
+  function chuoiKhacNhau(ds) {
+    var thay = {}, ra = [];
+    ds.forEach(function (x) {
+      if (thay[x.hien]) return;
+      thay[x.hien] = 1;
+      ra.push(x);
+    });
+    return ra;
+  }
+
+  // Tra ve null khi khong du 4 lua chon KHAC NHAU (vd ca bai cung mot pinyin).
+  function raMot(vocab, dich, layDe, layLua, nhan, loai) {
+    var de = layDe(dich);
+    if (!de) return null;
+    var lua = chuoiKhacNhau(moi(vocab, dich, 6).map(function (v) {
+      return { hien: layLua(v), zh: v.zh };
+    }).filter(function (x) { return x.hien; }));
+    var dungO = -1;
+    lua.forEach(function (x, i) { if (x.zh === dich.zh) dungO = i; });
+    if (dungO < 0 || lua.length < 3) return null;
+    // Giu lai dung 4 lua chon, chac chan con dap an.
+    if (lua.length > 4) {
+      var giu = [lua[dungO]];
+      lua.forEach(function (x, i) { if (i !== dungO && giu.length < 4) giu.push(x); });
+      lua = tron(giu);
+      dungO = -1;
+      lua.forEach(function (x, i) { if (x.zh === dich.zh) dungO = i; });
+    }
+    return {
+      loai: loai, nhan: nhan, de: de,
+      luaChon: lua.map(function (x) { return x.hien; }),
+      dung: dungO, giai: ''
+    };
+  }
+
+  function cauTuVung(vocab) {
+    var ra = [];
+    vocab.forEach(function (v) {
+      ra.push(raMot(vocab, v,
+        function (d) { return esc(d.vn); },
+        function (x) { return esc(x.zh); },
+        'Chọn chữ Hán đúng nghĩa', 'vn2zh'));
+      ra.push(raMot(vocab, v,
+        function (d) { return '<span class="ar-de-zh">' + esc(d.zh) + '</span>'; },
+        function (x) { return esc(x.vn); },
+        'Chữ này nghĩa là gì', 'zh2vn'));
+      ra.push(raMot(vocab, v,
+        function (d) { return d.py ? '<span class="ar-de-py">' + esc(d.py) + '</span>' : ''; },
+        function (x) { return esc(x.zh); },
+        'Nhìn pinyin, chọn chữ', 'py2zh'));
+      ra.push(raMot(vocab, v,
+        function (d) { return d.py ? '<span class="ar-de-zh">' + esc(d.zh) + '</span>' : ''; },
+        function (x) { return esc(x.py); },
+        'Chữ này đọc thế nào', 'zh2py'));
+    });
+    return ra.filter(Boolean);
+  }
+
+  /* Boc `so` cau nhung trai deu tren cac nhom (diem ngu phap, kieu hoi)
+     thay vi tron phang — tron phang hay ra ba bon cau lien tiep cung mot
+     diem ngu phap, hoc sinh doan duoc dap an ma khong can hieu. */
+  function traiDeu(ds, khoa, so) {
+    if (so <= 0) return [];
+    var nhom = {}, ten = [];
+    tron(ds).forEach(function (c) {
+      var k = c[khoa] || '';
+      if (!nhom[k]) { nhom[k] = []; ten.push(k); }
+      nhom[k].push(c);
+    });
+    ten = tron(ten);
+    var ra = [], con = true;
+    while (ra.length < so && con) {
+      con = false;
+      for (var i = 0; i < ten.length && ra.length < so; i++) {
+        var g = nhom[ten[i]];
+        if (g.length) { ra.push(g.shift()); con = true; }
+      }
+    }
+    return ra;
+  }
+
+  function cauNguPhap(ds) {
+    var ra = [];
+    (ds || []).forEach(function (g) {
+      if (g.kieu === 'dien') {
+        if (!g.options || g.options.length < 2 || typeof g.answer !== 'number') return;
+        ra.push({
+          loai: 'dien',
+          nhan: g.point ? 'Ngữ pháp · ' + esc(g.point) : 'Điền vào chỗ trống',
+          de: (g.context ? '<span class="ar-de-viet">' + esc(g.context) + '</span>' : '') +
+              '<span class="ar-de-zh">' + esc(g.pre || '') +
+              '<em class="ar-de-trong">____</em>' + esc(g.post || '') + '</span>',
+          luaChon: g.options.map(esc),
+          dung: g.answer,
+          giai: esc(g.explanation || '')
+        });
+      } else if (g.kieu === 'dungsai') {
+        var hai = tron([{ t: g.wrong, ok: false }, { t: g.right, ok: true }]);
+        ra.push({
+          loai: 'dungsai',
+          nhan: g.point ? 'Câu nào đúng · ' + esc(g.point) : 'Câu nào đúng',
+          de: '<span class="ar-de-viet">Hai câu dưới đây, câu nào viết đúng?</span>',
+          luaChon: hai.map(function (x) { return '<span class="ar-de-zh">' + esc(x.t) + '</span>'; }),
+          dung: hai[0].ok ? 0 : 1,
+          giai: esc(g.why || '')
+        });
+      }
+    });
+    return ra;
+  }
+
   /* ══════════════ KHUNG CHUNG ══════════════
      Moi tro nhan mot doi tuong `sanKhau` co san: thanh tren (de bai +
      diem + dong ho), vung choi, thanh duoi (nut). Tro chi lo phan choi. */
@@ -643,9 +759,127 @@
     }
   };
 
+  /* ══════════════════════════════════════════════════════════════
+     5 · BẮN MẶT TRỜI  (后羿射日 · 狼来了 · 功夫熊猫 · 稻子熟了 …)
+     Chín mặt trời thiêu cháy mặt đất. Mỗi câu trả lời đúng là một
+     mũi tên — bắn rụng một mặt trời. Rụng hết chín thì thắng.
+
+     Cau hoi tron ca TU VUNG (tu sinh) va NGU PHAP (lay tu bai hoc),
+     nen mot tro nay thay duoc ca cum file trac nghiem co cot truyen.
+     ══════════════════════════════════════════════════════════════ */
+  var quiz = {
+    key: 'quiz',
+    ten: 'Hậu Nghệ bắn mặt trời',
+    emoji: '🏹',
+    mau: 'red',
+    moTa: 'Chín mặt trời thiêu cháy mặt đất — mỗi câu trả lời đúng bắn rụng một mặt trời.',
+    moTaLop: 'Chiếu câu hỏi cho cả lớp, tổ nào trả lời đúng thì bắn rụng một mặt trời. Có cả câu từ vựng lẫn câu ngữ pháp của bài.',
+    canToiThieu: 4,
+    mo: function (hop, o) {
+      var sk = dungKhung(hop, quiz, o);
+      var SO_TROI = 9;
+      var ds = [], vt = 0, diem = 0, dung = 0, chuoi = 0, chuoiMax = 0, song = true;
+      var troi = [], hen = [];
+
+      sk.san.classList.add('ar-troi');
+      sk.anGio();
+
+      function xoaHen() { hen.forEach(clearTimeout); hen = []; }
+
+      function veTroi() {
+        sk.san.innerHTML = '<div class="ar-nui"></div>';
+        troi = [];
+        for (var i = 0; i < SO_TROI; i++) {
+          var m = tao('div', 'ar-mt');
+          // Rai chin mat troi thanh vong cung tren bau troi.
+          var t = (i + 0.5) / SO_TROI;
+          m.style.left = (6 + t * 88) + '%';
+          m.style.top = (46 - Math.sin(t * Math.PI) * 30) + '%';
+          m.style.setProperty('--tre', (i * 0.09) + 's');
+          sk.san.appendChild(m);
+          troi.push(m);
+        }
+      }
+
+      function batDau() {
+        song = true;
+        xoaHen();
+        vt = 0; diem = 0; dung = 0; chuoi = 0; chuoiMax = 0;
+        sk.diem(0);
+        ds = tron(o.cauHoi || []).slice(0, SO_TROI);
+        veTroi();
+        hoi();
+      }
+
+      function hoi() {
+        if (!song) return;
+        if (vt >= ds.length) return het();
+        var c = ds[vt];
+        sk.deBai('<span class="ar-p-nhan">Câu ' + (vt + 1) + '/' + ds.length + ' · ' + c.nhan + '</span><b>' + c.de + '</b>');
+        sk.duoi.innerHTML = '';
+        sk.duoi.className = 'ar-foot ar-foot-' + c.loai;
+        c.luaChon.forEach(function (t, i) {
+          var n = tao('button', 'ar-opt ar-opt-rong', t);
+          n.type = 'button';
+          n.addEventListener('click', function () { tra(n, i, c); });
+          sk.duoi.appendChild(n);
+        });
+      }
+
+      function tra(nut, i, c) {
+        if (!song || nut.disabled) return;
+        $allTrong(sk.duoi).forEach(function (x) { x.disabled = true; });
+        var ok = i === c.dung;
+        if (ok) {
+          dung++; chuoi++; chuoiMax = Math.max(chuoiMax, chuoi);
+          diem += sk.lop ? 1 : 10 + Math.min(chuoi, 5) * 2;
+          nut.classList.add('is-dung');
+          keuDung();
+          var m = troi[dung - 1];
+          if (m) { m.classList.add('is-ban'); }
+        } else {
+          chuoi = 0;
+          nut.classList.add('is-sai');
+          $allTrong(sk.duoi).forEach(function (x, k) { if (k === c.dung) x.classList.add('is-dung'); });
+          keuSai();
+        }
+        sk.diem(diem);
+        if (o.onDiem) o.onDiem(diem);
+        if (c.giai) {
+          var g = tao('div', 'ar-giai', (ok ? '✓ ' : '✗ ') + c.giai);
+          sk.san.appendChild(g);
+        }
+        vt++;
+        hen.push(setTimeout(function () {
+          var g2 = sk.san.querySelector('.ar-giai');
+          if (g2) g2.parentNode.removeChild(g2);
+          hoi();
+        }, c.giai ? (sk.lop ? 4200 : 2600) : (sk.lop ? 2000 : 1200)));
+      }
+
+      function het() {
+        song = false;
+        xoaHen();
+        sk.duoi.innerHTML = '';
+        sk.duoi.className = 'ar-foot';
+        sk.san.className = 'ar-stage';
+        sk.deBai('<span class="ar-p-nhan">Xong rồi</span><b>Bắn được ' + dung + '/' + ds.length + ' mặt trời</b>');
+        ketQua(sk, { diem: diem, dung: dung, tong: ds.length, chuoi: chuoiMax }, function () {
+          sk.san.className = 'ar-stage ar-troi';
+          batDau();
+        });
+        if (o.onXong) o.onXong({ diem: diem, dung: dung, tong: ds.length });
+      }
+
+      batDau();
+      return { dung: function () { song = false; xoaHen(); } };
+    }
+  };
+  function $allTrong(g) { return Array.prototype.slice.call(g.querySelectorAll('.ar-opt')); }
+
   /* ---------------- dang ky ---------------- */
   var KHO = {};
-  [bubble, mole, memory, vanish].forEach(function (g) { KHO[g.key] = g; });
+  [quiz, bubble, mole, memory, vanish].forEach(function (g) { KHO[g.key] = g; });
 
   window.Arcade = {
     kho: KHO,
@@ -654,6 +888,14 @@
     duTu: function (key, vocab) {
       var g = KHO[key];
       return !!(g && vocab && vocab.length >= g.canToiThieu);
+    },
+    /* Tron cau tu vung voi cau ngu phap. Uu tien cho ngu phap len truoc
+       (neu bai co) vi do la phan hoc sinh hay quen nhat, con cau tu vung
+       thi luon san — lay bu cho du so cau. */
+    raCau: function (vocab, nguPhap, so) {
+      var np = traiDeu(cauNguPhap(nguPhap), 'nhan', Math.ceil(so / 2));
+      var tv = traiDeu(cauTuVung(vocab), 'loai', Math.max(0, so - np.length));
+      return tron(np.concat(tv));
     },
     mo: function (hop, key, o) {
       var g = KHO[key];
@@ -667,6 +909,13 @@
       }
       o.vocab = vocab;
       o.cheDo = o.cheDo === 'lop' ? 'lop' : 'hoc';
+      if (key === 'quiz') {
+        o.cauHoi = window.Arcade.raCau(vocab, o.nguPhap, 9);
+        if (o.cauHoi.length < 4) {
+          hop.innerHTML = '<p class="ar-thieu">Chưa đủ câu hỏi cho những bài vừa chọn. Chọn thêm bài rồi chơi lại nhé.</p>';
+          return { dung: function () { } };
+        }
+      }
       return g.mo(hop, o);
     }
   };

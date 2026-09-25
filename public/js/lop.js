@@ -1723,12 +1723,13 @@
        doc  — chieu am tiet, goi hoc sinh doc, thay co cham Dung/Sai   */
   var paChon = {};          // so bai -> 1
   var paKieu = 'doc';
+  var paSoTu = 3;             // moi luot kiem may tu
   var paNguon = 'tu2';        // mac dinh kiem tra tu HAI AM TIET
   var paBai = (typeof PHAT_AM_BAI !== 'undefined') ? PHAT_AM_BAI : [];
 
   function paLuu() {
     try {
-      localStorage.setItem('hyv_pa', JSON.stringify({ bai: Object.keys(paChon), kieu: paKieu, nguon: paNguon }));
+      localStorage.setItem('hyv_pa', JSON.stringify({ bai: Object.keys(paChon), kieu: paKieu, nguon: paNguon, soTu: paSoTu }));
     } catch (e) { /* bo qua */ }
   }
   function paDoc() {
@@ -1737,6 +1738,7 @@
       (d.bai || []).forEach(function (s) { paChon[s] = 1; });
       if (d.kieu) paKieu = d.kieu;
       if (d.nguon) paNguon = d.nguon;
+      if (d.soTu) paSoTu = Math.max(1, Math.min(6, d.soTu));
     } catch (e) { /* bo qua */ }
   }
 
@@ -1790,12 +1792,18 @@
     return ra;
   }
 
+  function paTrong() {
+    var a = [];
+    for (var i = 0; i < paSoTu; i++) a.push(null);
+    return a;
+  }
+
   function paBoMoi() {
     var kho = paKho();
     return {
       luot: (state.pa ? state.pa.luot : 0) + 1,
-      bo: shuffle(kho).slice(0, 3),
-      ket: [null, null, null],
+      bo: shuffle(kho).slice(0, paSoTu),
+      ket: paTrong(),
       hien: false,
       de: null,
       tong: state.pa ? state.pa.tong : { hs: 0, dung: 0, tong: 0 }
@@ -1831,7 +1839,7 @@
 
     var head =
       '<div class="lop-stage-head">' +
-        '<span>Lượt <b>' + d.luot + '</b> · gọi <b>một em</b> lên kiểm tra <b>3 từ</b></span>' +
+        '<span>Lượt <b>' + d.luot + '</b> · gọi <b>một em</b> lên kiểm tra <b>' + d.bo.length + ' từ</b></span>' +
         '<span class="lop-pa-tong">Đã kiểm <b>' + t.hs + '</b> em · đúng <b>' + t.dung + '/' + t.tong + '</b> từ</span>' +
       '</div>';
 
@@ -1867,7 +1875,7 @@
         '<button type="button" class="lop-act ghost" id="lopPaHien">' +
           (d.hien ? 'Ẩn đáp án' : 'Hiện đáp án') + '</button>' +
         '<button type="button" class="lop-act" id="lopPaNext">' +
-          (xong ? 'Em này ' + dungLuot + '/3 — gọi em tiếp theo →' : 'Em tiếp theo →') + '</button>' +
+          (xong ? 'Em này ' + dungLuot + '/' + d.bo.length + ' — gọi em tiếp theo →' : 'Em tiếp theo →') + '</button>' +
         '<button type="button" class="lop-act ghost" id="lopPaKetThuc">Xong — xem tổng kết</button>' +
       '</div>';
 
@@ -1914,7 +1922,7 @@
       d.tong.hs++;
       d.tong.dung += d.ket.filter(function (x) { return x === true; }).length;
       d.tong.tong += cham.length;
-      d.ket = [null, null, null];
+      d.ket = paTrong();
     }
     var t = d.tong;
     var pt = t.tong ? Math.round(t.dung / t.tong * 100) : 0;
@@ -2408,6 +2416,18 @@
         paDem(); paLuu();
       });
     });
+    $all('#lopPaSoTu button').forEach(function (b) {
+      b.classList.toggle('on', +b.getAttribute('data-ps') === paSoTu);
+      b.addEventListener('click', function () {
+        paSoTu = +b.getAttribute('data-ps');
+        $all('#lopPaSoTu button').forEach(function (x) { x.classList.toggle('on', x === b); });
+        var g = $('#lopPaGiaiSo');
+        if (g) g.textContent = paSoTu;
+        paDem(); paLuu();
+      });
+    });
+    var g0 = $('#lopPaGiaiSo');
+    if (g0) g0.textContent = paSoTu;
     $('#lopPaStart').addEventListener('click', paBatDau);
 
     $all('.lop-test-card').forEach(function (c) {

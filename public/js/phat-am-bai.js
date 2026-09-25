@@ -1,13 +1,15 @@
 /* ══════════════════════════════════════════════════════════════════
    GIÁO TRÌNH PHÁT ÂM — 13 bài
    ------------------------------------------------------------------
-   Bam theo bo giao an phat am dang day tren lop: moi bai mot nhom
-   thanh mau hoac van mau, kem tu vi du da dung trong bai giang.
+   tu  — AM TIET DON, rut THANG tu slide cua 13 file bai giang:
+         chu Han va phien am ghep theo TOA DO tren slide (doc theo thu
+         tu XML thi lech cap), roi soat cheo voi kho tu vung cua site.
+   tu2 — TU HAI AM TIET. Trong bo slide chi co vai tu (休息 va nhom
+         轻声 / 儿化 o bai 13), nen phan con lai la soan them, moi bai
+         dung dung thanh mau hoac van mau cua bai do.
 
    Dung cho phan "Kiem tra dau gio" o trang /lop — chon tung bai hoac
-   ca 13 bai. Cac lua chon nhieu (dap an nhieu) KHONG viet tay o day
-   ma may tu sinh bang cach doi thanh dieu / doi thanh mau / doi van
-   mau, nen luon ra dung cap de nham cua hoc sinh Viet.
+   ca 13 bai. Dap an nhieu KHONG viet tay ma may tu sinh (phat-am-de.js).
    ══════════════════════════════════════════════════════════════════ */
 var PHAT_AM_BAI = [
   {
@@ -29,13 +31,14 @@ var PHAT_AM_BAI = [
       { zh: '马', py: 'mǎ', vn: 'con ngựa' },
       { zh: '骂', py: 'mà', vn: 'mắng' },
       { zh: '爸', py: 'bà', vn: 'bố' },
+      { zh: '我', py: 'wǒ', vn: 'tôi' },
       { zh: '鹅', py: 'é', vn: 'con ngỗng' },
       { zh: '衣', py: 'yī', vn: 'áo' },
+      { zh: '路', py: 'lù', vn: 'con đường' },
       { zh: '鱼', py: 'yú', vn: 'con cá' },
       { zh: '鸭', py: 'yā', vn: 'con vịt' },
-      { zh: '五', py: 'wǔ', vn: 'số năm' },
-      { zh: '三', py: 'sān', vn: 'số ba' },
-      { zh: '四', py: 'sì', vn: 'số bốn' }
+      { zh: '挖', py: 'wā', vn: 'đào' },
+      { zh: '窝', py: 'wō', vn: 'cái tổ' }
     ]
   },
   {
@@ -54,9 +57,9 @@ var PHAT_AM_BAI = [
       { zh: '方便', py: 'fāngbiàn', vn: 'tiện lợi' }
     ],
     tu: [
+      { zh: '笔', py: 'bǐ', vn: 'cây bút' },
       { zh: '八', py: 'bā', vn: 'số tám' },
       { zh: '拔', py: 'bá', vn: 'nhổ, rút' },
-      { zh: '笔', py: 'bǐ', vn: 'cây bút' },
       { zh: '鼻', py: 'bí', vn: 'cái mũi' },
       { zh: '皮', py: 'pí', vn: 'da, vỏ' },
       { zh: '破', py: 'pò', vn: 'vỡ, rách' },
@@ -65,7 +68,7 @@ var PHAT_AM_BAI = [
       { zh: '马', py: 'mǎ', vn: 'con ngựa' },
       { zh: '木', py: 'mù', vn: 'gỗ, cây' },
       { zh: '米', py: 'mǐ', vn: 'gạo; mét' },
-      { zh: '发', py: 'fā', vn: 'phát ra' },
+      { zh: '发', py: 'fà', vn: 'phát ra' },
       { zh: '斧', py: 'fǔ', vn: 'cái rìu' },
       { zh: '佛', py: 'fó', vn: 'Phật' }
     ]
@@ -87,7 +90,7 @@ var PHAT_AM_BAI = [
     ],
     tu: [
       { zh: '大', py: 'dà', vn: 'to, lớn' },
-      { zh: '地', py: 'dì', vn: 'đất' },
+      { zh: '读', py: 'dú', vn: 'đọc' },
       { zh: '多', py: 'duō', vn: 'nhiều' },
       { zh: '兔', py: 'tù', vn: 'con thỏ' },
       { zh: '特', py: 'tè', vn: 'đặc biệt' },
@@ -95,6 +98,7 @@ var PHAT_AM_BAI = [
       { zh: '踢', py: 'tī', vn: 'đá (bóng)' },
       { zh: '女', py: 'nǚ', vn: 'nữ' },
       { zh: '拿', py: 'ná', vn: 'cầm, lấy' },
+      { zh: '你', py: 'nǐ', vn: 'bạn' },
       { zh: '怒', py: 'nù', vn: 'giận dữ' },
       { zh: '辣', py: 'là', vn: 'cay' },
       { zh: '乐', py: 'lè', vn: 'vui' },
@@ -122,7 +126,6 @@ var PHAT_AM_BAI = [
       { zh: '歌', py: 'gē', vn: 'bài hát' },
       { zh: '锅', py: 'guō', vn: 'cái nồi' },
       { zh: '瓜', py: 'guā', vn: 'quả dưa' },
-      { zh: '鸽', py: 'gē', vn: 'chim bồ câu' },
       { zh: '渴', py: 'kě', vn: 'khát' },
       { zh: '跨', py: 'kuà', vn: 'bước qua' },
       { zh: '哭', py: 'kū', vn: 'khóc' },
@@ -157,9 +160,9 @@ var PHAT_AM_BAI = [
       { zh: '去', py: 'qù', vn: 'đi' },
       { zh: '掐', py: 'qiā', vn: 'véo, bấm' },
       { zh: '棋', py: 'qí', vn: 'cờ' },
-      { zh: '骑', py: 'qí', vn: 'cưỡi' },
       { zh: '洗', py: 'xǐ', vn: 'rửa, giặt' },
       { zh: '席', py: 'xí', vn: 'cái chiếu' },
+      { zh: '嘘', py: 'xū', vn: 'suỵt (im lặng)' },
       { zh: '虾', py: 'xiā', vn: 'con tôm' }
     ]
   },
@@ -225,11 +228,13 @@ var PHAT_AM_BAI = [
       { zh: '洒', py: 'sǎ', vn: 'vãi, rắc' },
       { zh: '酥', py: 'sū', vn: 'giòn, xốp' },
       { zh: '四', py: 'sì', vn: 'số bốn' },
+      { zh: '一', py: 'yī', vn: 'số một' },
       { zh: '牙', py: 'yá', vn: 'răng' },
       { zh: '爷', py: 'yé', vn: 'ông' },
       { zh: '雨', py: 'yǔ', vn: 'mưa' },
       { zh: '五', py: 'wǔ', vn: 'số năm' },
       { zh: '挖', py: 'wā', vn: 'đào' },
+      { zh: '我', py: 'wǒ', vn: 'tôi' },
       { zh: '屋', py: 'wū', vn: 'căn nhà' }
     ]
   },
@@ -291,10 +296,14 @@ var PHAT_AM_BAI = [
       { zh: '肉', py: 'ròu', vn: 'thịt' },
       { zh: '手', py: 'shǒu', vn: 'bàn tay' },
       { zh: '楼', py: 'lóu', vn: 'tầng, toà nhà' },
-      { zh: '休', py: 'xiū', vn: 'nghỉ' },
+      { zh: '休息', py: 'xiūxi', vn: 'nghỉ ngơi' },
       { zh: '牛', py: 'niú', vn: 'con bò' },
       { zh: '六', py: 'liù', vn: 'số sáu' },
-      { zh: '球', py: 'qiú', vn: 'quả bóng' }
+      { zh: '球', py: 'qiú', vn: 'quả bóng' },
+      { zh: '鸟', py: 'niǎo', vn: 'con chim' },
+      { zh: '表', py: 'biǎo', vn: 'đồng hồ đeo tay' },
+      { zh: '庙', py: 'miào', vn: 'ngôi miếu' },
+      { zh: '桥', py: 'qiáo', vn: 'cây cầu' }
     ]
   },
   {
@@ -355,6 +364,7 @@ var PHAT_AM_BAI = [
       { zh: '暖', py: 'nuǎn', vn: 'ấm' },
       { zh: '穿', py: 'chuān', vn: 'mặc' },
       { zh: '圈', py: 'quān', vn: 'cái vòng' },
+      { zh: '卷', py: 'juǎn', vn: 'cuộn, cuốn' },
       { zh: '泉', py: 'quán', vn: 'suối' },
       { zh: '圆', py: 'yuán', vn: 'tròn' },
       { zh: '门', py: 'mén', vn: 'cái cửa' },

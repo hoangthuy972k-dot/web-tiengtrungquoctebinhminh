@@ -221,7 +221,17 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <button type="button" data-pk="chon">🅰️ Nghe – em chọn</button>
         </div>
       </div>
-      <p class="lop-pa-giai">Mỗi lượt gọi <b>một em</b> lên kiểm <b>3 từ</b>. Chấm ✓ / ✗ từng từ rồi bấm “Em tiếp theo”.</p>
+      <div class="lop-pa-dong2">
+        <span class="lop-pa-nhan">Mỗi lượt mấy từ</span>
+        <div class="lop-pa-kieu lop-pa-so" id="lopPaSoTu">
+          <button type="button" data-ps="2">2</button>
+          <button type="button" data-ps="3" class="on">3</button>
+          <button type="button" data-ps="4">4</button>
+          <button type="button" data-ps="5">5</button>
+          <button type="button" data-ps="6">6</button>
+        </div>
+      </div>
+      <p class="lop-pa-giai">Mỗi lượt gọi <b>một em</b> lên kiểm <b id="lopPaGiaiSo">3</b> từ. Chấm ✓ / ✗ từng từ rồi bấm “Em tiếp theo”.</p>
       <button type="button" class="lop-act" id="lopPaStart">Bắt đầu kiểm tra →</button>
     </div>
 

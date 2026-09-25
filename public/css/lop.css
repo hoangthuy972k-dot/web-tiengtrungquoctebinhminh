@@ -1553,10 +1553,13 @@
 .lop-stage-head .lop-pa-tong { margin-left: auto; color: var(--color-gray-500); }
 .lop-stage-head .lop-pa-tong b { color: var(--color-gray-900); }
 
+/* Số thẻ đổi theo cài đặt (2…6) nên để lưới tự giãn, đừng chốt 3 cột —
+   chốt 3 cột thì 5 thẻ xếp thành 3+2 lệch hẳn một bên. */
 .lop-pa-bo {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 17vw, 230px), 1fr));
   gap: clamp(10px, 2vw, 20px);
+  justify-content: center;
 }
 .lop-pa-the {
   position: relative;

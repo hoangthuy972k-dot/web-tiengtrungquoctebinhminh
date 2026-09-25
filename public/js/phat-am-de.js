@@ -56,7 +56,7 @@
   var THANH_MAU = ['zh', 'ch', 'sh', 'b', 'p', 'm', 'f', 'd', 't', 'n', 'l',
                    'g', 'k', 'h', 'j', 'q', 'x', 'r', 'z', 'c', 's', 'y', 'w'];
   function tach(py) {
-    var g = boThanh(py);
+    var g = boThanh(py).toLowerCase();
     for (var i = 0; i < THANH_MAU.length; i++) {
       var t = THANH_MAU[i];
       if (g.indexOf(t) === 0) return { dau: t, cuoi: g.slice(t.length) };
@@ -113,7 +113,14 @@
   ).split(' ');
   var COTHAT = {};
   BANG.forEach(function (x) { if (x) COTHAT[x] = 1; });
-  function laAmTiet(x) { return !!COTHAT[boThanh(x)]; }
+  /* So voi bang: bo dau thanh, ha chu thuong (ten rieng viet hoa nhu
+     Zhōngguó), va bo duoi -r cua am nhi hoa (niǎor -> niǎo). */
+  function chanAm(x) {
+    var g = boThanh(x).toLowerCase();
+    if (g.length > 2 && g.slice(-1) === 'r' && !COTHAT[g]) g = g.slice(0, -1);
+    return g;
+  }
+  function laAmTiet(x) { return !!COTHAT[chanAm(x)]; }
 
   function tron(a) {
     var b = a.slice();
@@ -124,9 +131,57 @@
     return b;
   }
 
-  /* Tra ve { luaChon: [...], dung: index } — n lua chon, luon co dap an. */
+  /* Tach mot tu NHIEU AM TIET thanh tung am tiet: māma -> [mā, ma].
+     Thu moi cho cat, chi nhan khi CA HAI nua deu la am tiet co that. */
+  function tachTu(py) {
+    // Co dau cach san (xiě zì · bú shì · yí ge) thi cat luon theo dau cach.
+    if (/\s/.test(py)) {
+      var p2 = py.split(/\s+/).filter(Boolean);
+      if (p2.length > 1) return p2;
+    }
+    if (laAmTiet(py)) return [py];
+    var g = boThanh(py).toLowerCase();
+    for (var i = g.length - 1; i >= 1; i--) {
+      var a = g.slice(0, i), b = g.slice(i);
+      // nua sau co the mang duoi -r cua am nhi hoa
+      var b2 = (b.length > 2 && b.slice(-1) === 'r' && !COTHAT[b]) ? b.slice(0, -1) : b;
+      if (COTHAT[a] && COTHAT[b2]) return [py.slice(0, i), py.slice(i)];
+    }
+    return [py];
+  }
+
+  /* Tra ve { luaChon: [...], dung: index } — n lua chon, luon co dap an.
+     Tu hai am tiet thi doi MOT am tiet, giu nguyen am con lai: mǐfàn ra
+     mǐfán · mǐfàng · pǐfàn — dung kieu sai hoc sinh hay mac. */
+  function raDeNhieu(py, n) {
+    var am = tachTu(py);
+    var coCach = /\s/.test(py);
+    var ds = [py], co = {};
+    co[py] = 1;
+    // Uu tien doi am tiet CUOI (hoc sinh hay nuot thanh o am cuoi),
+    // roi den am tiet dau.
+    [am.length - 1, 0].forEach(function (k) {
+      var con = raDe(am[k], 6).luaChon;
+      con.forEach(function (x) {
+        if (x === am[k] || ds.length >= n) return;
+        var moi = am.slice();
+        moi[k] = x;
+        // Tu goc viet roi (bú shì) thi dap an nhieu cung phai viet roi —
+        // khong thi chi minh dap an dung co dau cach, nhin la doan ra.
+        var s = moi.join(coCach ? ' ' : '');
+        if (co[s]) return;
+        co[s] = 1;
+        ds.push(s);
+      });
+    });
+    var ra = tron(ds.slice(0, n));
+    return { luaChon: ra, dung: ra.indexOf(py) };
+  }
+
   function raDe(py, n) {
     n = n || 4;
+    // Tu nhieu am tiet di duong rieng (tranh de quy vo han).
+    if (tachTu(py).length > 1) return raDeNhieu(py, n);
     var goc = boThanh(py), thanh = layThanh(py);
     var p = tach(py);
     var ds = [py], co = {};

@@ -257,6 +257,9 @@
      ══════════════════════════════════════════════════════════════ */
   var bubble = {
     key: 'bubble',
+    chu: '泡',
+    anh: '/img/game/bong-bong.png',
+    nen: 'linear-gradient(160deg,#5fd0c6 0%,#17a89f 100%)',
     ten: 'Bắn bong bóng chữ',
     emoji: '🎈',
     mau: 'teal',
@@ -406,6 +409,9 @@
      ══════════════════════════════════════════════════════════════ */
   var mole = {
     key: 'mole',
+    chu: '鼠',
+    anh: '/img/game/chuot.png',
+    nen: 'linear-gradient(160deg,#e8c99a 0%,#c99a62 100%)',
     ten: 'Đập chuột chọn chữ',
     emoji: '🐹',
     mau: 'orange',
@@ -547,6 +553,9 @@
      ══════════════════════════════════════════════════════════════ */
   var snake = {
     key: 'snake',
+    chu: '蛇',
+    anh: '',
+    nen: 'linear-gradient(160deg,#7fd39b 0%,#2f9c5c 100%)',
     ten: 'Rắn ăn chữ',
     emoji: '🐍',
     mau: 'green',
@@ -749,6 +758,9 @@
      ══════════════════════════════════════════════════════════════ */
   var memory = {
     key: 'memory',
+    chu: '忆',
+    anh: '',
+    nen: 'linear-gradient(160deg,#c49af0 0%,#8248c9 100%)',
     ten: 'Lật thẻ trí nhớ',
     emoji: '🎴',
     mau: 'purple',
@@ -849,6 +861,9 @@
      ══════════════════════════════════════════════════════════════ */
   var vanish = {
     key: 'vanish',
+    chu: '隐',
+    anh: '',
+    nen: 'linear-gradient(160deg,#9fa9f2 0%,#5a63c6 100%)',
     ten: 'Từ nào biến mất',
     emoji: '👀',
     mau: 'indigo',
@@ -973,6 +988,9 @@
      ══════════════════════════════════════════════════════════════ */
   var quiz = {
     key: 'quiz',
+    chu: '射',
+    anh: '/img/game/mat-troi.png',
+    nen: 'linear-gradient(160deg,#f6c97a 0%,#e08a3c 100%)',
     ten: 'Hậu Nghệ bắn mặt trời',
     emoji: '🏹',
     mau: 'red',
@@ -1100,6 +1118,9 @@
      ══════════════════════════════════════════════════════════════ */
   var maze = {
     key: 'maze',
+    chu: '迷',
+    anh: '/img/game/ruong.png',
+    nen: 'linear-gradient(160deg,#8fa8ef 0%,#4a63c9 100%)',
     ten: 'Mê cung đọc chữ',
     emoji: '🧭',
     mau: 'blue',
@@ -1297,9 +1318,245 @@
     }
   };
 
+  /* ══════════════════════════════════════════════════════════════
+     8 · PHÂN LOẠI KÉO THẢ  (词语归类 · thỏ ăn cà rốt · 部首星际争霸)
+     Kéo (hoặc bấm chọn rồi bấm giỏ) từng thẻ chữ vào đúng giỏ.
+
+     Mot ban may, hai cach phan loai:
+       · theo TU LOAI     — lay tu truong `pos` cua tu vung
+       · theo KET CAU chu — lay tu `hanzi[].type` cua tung chu Han
+     ══════════════════════════════════════════════════════════════ */
+
+  /* Gom tu vung thanh cac muc {zh, py, phu, nhom} theo mot cach phan loai. */
+  function gomNhom(vocab, cach) {
+    var muc = [], thay = {};
+    if (cach === 'tuloai') {
+      vocab.forEach(function (v) {
+        var p = (v.pos || '');
+        // Tu ghi hai tu loai (vd "Danh từ / Động từ") thi bo — xep vao dau cung dung.
+        if (/[\/]/.test(p)) return;
+        // Danh tu RIENG (ten nguoi, ten dat) cung bo — xep 小刚 vao o danh tu
+        // thi hoc sinh khong hoc duoc gi ve tu loai.
+        if (/riêng/i.test(p)) return;
+        var n = null;
+        if (/Danh/i.test(p)) n = 'Danh từ';
+        else if (/Động/i.test(p)) n = 'Động từ';
+        else if (/Tính/i.test(p)) n = 'Tính từ';
+        // Hu tu = pho tu · gioi tu · lien tu · tro tu.
+        // Luong tu va so tu KHONG xep vao day (khac han ve ban chat), va cung
+        // khong lam gio rieng — bon nhom la vua suc mot van choi.
+        else if (/Phó|Giới|Liên|Trợ/i.test(p)) n = 'Hư từ';
+        if (!n || thay[v.zh]) return;
+        thay[v.zh] = 1;
+        muc.push({ zh: v.zh, py: v.py, phu: v.vn, nhom: n });
+      });
+    } else {
+      vocab.forEach(function (v) {
+        (v.hanzi || []).forEach(function (h) {
+          if (!h || !h.c || thay[h.c]) return;
+          var t = (h.type || '');
+          var n = null;
+          if (/左右/.test(t)) n = 'Trái – phải';
+          else if (/上下/.test(t)) n = 'Trên – dưới';
+          else if (/半包围/.test(t)) n = 'Bao nửa';
+          else if (/独体/.test(t)) n = 'Chữ đơn';
+          if (!n) return;                       // bo 形声字 · 会意字 · 象形字
+          thay[h.c] = 1;
+          muc.push({ zh: h.c, py: h.p || '', phu: h.mean || '', nhom: n });
+        });
+      });
+    }
+    return muc;
+  }
+
+  function taoPhanLoai(key, ten, emoji, chu, nen, mau, cach, moTa, moTaLop) {
+    return {
+      key: key, ten: ten, emoji: emoji, chu: chu, anh: '', nen: nen, mau: mau,
+      moTa: moTa, moTaLop: moTaLop, canToiThieu: 4, cach: cach,
+      mo: function (hop, o) {
+        var g = this;
+        var muc = gomNhom(o.vocab, cach);
+        // Chi giu nhom nao co it nhat 2 muc — mot muc le loi thi doan mo cung trung.
+        var dem = {};
+        muc.forEach(function (m) { dem[m.nhom] = (dem[m.nhom] || 0) + 1; });
+        var nhom = Object.keys(dem).filter(function (n) { return dem[n] >= 2; });
+        if (nhom.length < 2) {
+          hop.innerHTML = '<p class="ar-thieu">Những bài vừa chọn chưa đủ chữ để chia nhóm cho trò “' +
+            esc(ten) + '”. Chọn thêm bài rồi chơi lại nhé.</p>';
+          return { dung: function () { } };
+        }
+        muc = muc.filter(function (m) { return nhom.indexOf(m.nhom) >= 0; });
+
+        var sk = dungKhung(hop, g, o);
+        sk.san.classList.add('ar-pl');
+        sk.anGio();
+
+        var SO_THE = Math.min(10, muc.length);
+        var the = [], gio = [], dung = 0, tong = 0, diem = 0, song = true, hen = [];
+        var chonDang = null, keo = null;
+        var oGio, oKhay;
+
+        function xoaHen() { hen.forEach(clearTimeout); hen = []; }
+
+        function batDau() {
+          song = true;
+          xoaHen();
+          dung = 0; tong = 0; diem = 0;
+          sk.diem(0);
+          chonDang = null;
+
+          the = tron(muc).slice(0, SO_THE);
+          var dungNhom = {};
+          the.forEach(function (m) { dungNhom[m.nhom] = 1; });
+          gio = tron(Object.keys(dungNhom));
+
+          sk.deBai('<span class="ar-p-nhan">' + (cach === 'tuloai' ? 'Xếp từ vào đúng loại' : 'Xếp chữ vào đúng kết cấu') +
+            '</span><b>Còn ' + the.length + ' thẻ</b>');
+
+          sk.san.innerHTML = '';
+          oGio = tao('div', 'ar-pl-gio');
+          gio.forEach(function (n) {
+            var b = tao('div', 'ar-gio');
+            b.setAttribute('data-nhom', n);
+            b.innerHTML = '<span class="ar-gio-ten">' + esc(n) + '</span><span class="ar-gio-dem">0</span>';
+            b.addEventListener('click', function () { if (chonDang) tha(chonDang, b); });
+            oGio.appendChild(b);
+          });
+          oKhay = tao('div', 'ar-pl-khay');
+          the.forEach(function (m) {
+            var t = tao('button', 'ar-the');
+            t.type = 'button';
+            t.innerHTML = '<b>' + esc(m.zh) + '</b>' +
+              (m.py ? '<i>' + esc(m.py) + '</i>' : '') +
+              (m.phu ? '<u>' + esc(m.phu) + '</u>' : '');
+            t.__muc = m;
+            ganKeo(t);
+            oKhay.appendChild(t);
+          });
+          sk.san.appendChild(oGio);
+          sk.san.appendChild(oKhay);
+        }
+
+        /* Cho phep CA HAI cach: keo tha bang chuot/ngon tay, va bam chon
+           the roi bam gio — chieu len lop thi bam de hon nhieu. */
+        function ganKeo(t) {
+          t.addEventListener('pointerdown', function (e) {
+            if (!song || t.disabled) return;
+            keo = { t: t, x0: e.clientX, y0: e.clientY, di: false };
+            t.setPointerCapture(e.pointerId);
+          });
+          t.addEventListener('pointermove', function (e) {
+            if (!keo || keo.t !== t) return;
+            var dx = e.clientX - keo.x0, dy = e.clientY - keo.y0;
+            if (!keo.di && Math.abs(dx) + Math.abs(dy) < 8) return;
+            keo.di = true;
+            t.classList.add('is-keo');
+            t.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(1.06)';
+            roiVao(e.clientX, e.clientY);
+          });
+          t.addEventListener('pointerup', function (e) {
+            if (!keo || keo.t !== t) return;
+            var daDi = keo.di;
+            t.classList.remove('is-keo');
+            t.style.transform = '';
+            keo = null;
+            if (!daDi) { chon(t); return; }
+            var b = roiVao(e.clientX, e.clientY, true);
+            if (b) tha(t, b);
+          });
+          t.addEventListener('pointercancel', function () {
+            if (keo && keo.t === t) { t.classList.remove('is-keo'); t.style.transform = ''; keo = null; }
+          });
+          t.addEventListener('click', function () { if (!keo) chon(t); });
+        }
+
+        function roiVao(x, y, xoa) {
+          var ra = null;
+          Array.prototype.forEach.call(oGio.children, function (b) {
+            var r = b.getBoundingClientRect();
+            var trong = x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+            b.classList.toggle('is-hong', trong && !xoa);
+            if (trong) ra = b;
+          });
+          return ra;
+        }
+
+        function chon(t) {
+          if (!song || t.disabled) return;
+          if (chonDang === t) { chonDang = null; t.classList.remove('is-chon'); return; }
+          if (chonDang) chonDang.classList.remove('is-chon');
+          chonDang = t;
+          t.classList.add('is-chon');
+          doc(t.__muc.zh);
+        }
+
+        function tha(t, b) {
+          if (!song || t.disabled) return;
+          Array.prototype.forEach.call(oGio.children, function (x) { x.classList.remove('is-hong'); });
+          t.classList.remove('is-chon');
+          chonDang = null;
+          tong++;
+          var ok = t.__muc.nhom === b.getAttribute('data-nhom');
+          if (ok) {
+            dung++;
+            diem += sk.lop ? 1 : 12;
+            t.disabled = true;
+            t.classList.add('is-xong');
+            keuDung(); doc(t.__muc.zh);
+            b.classList.add('is-nhan');
+            hen.push(setTimeout(function () { b.classList.remove('is-nhan'); }, 420));
+            var d = b.querySelector('.ar-gio-dem');
+            d.textContent = (+d.textContent) + 1;
+            sk.diem(diem);
+            if (o.onDiem) o.onDiem(diem);
+            var con = the.length - dung;
+            sk.deBai('<span class="ar-p-nhan">' + (cach === 'tuloai' ? 'Xếp từ vào đúng loại' : 'Xếp chữ vào đúng kết cấu') +
+              '</span><b>' + (con ? 'Còn ' + con + ' thẻ' : 'Xếp xong hết rồi 🎉') + '</b>');
+            if (!con) hen.push(setTimeout(het, 900));
+          } else {
+            if (!sk.lop) { diem = Math.max(0, diem - 4); sk.diem(diem); }
+            keuSai();
+            t.classList.remove('is-sai');
+            void t.offsetWidth;
+            t.classList.add('is-sai');
+            b.classList.add('is-truot');
+            hen.push(setTimeout(function () {
+              t.classList.remove('is-sai');
+              b.classList.remove('is-truot');
+            }, 480));
+          }
+        }
+
+        function het() {
+          song = false;
+          xoaHen();
+          sk.san.className = 'ar-stage';
+          ketQua(sk, { diem: diem, dung: dung, tong: tong, chuoi: 0 }, function () {
+            sk.san.className = 'ar-stage ar-pl';
+            batDau();
+          });
+          if (o.onXong) o.onXong({ diem: diem, dung: dung, tong: tong });
+        }
+
+        batDau();
+        return { dung: function () { song = false; xoaHen(); } };
+      }
+    };
+  }
+
+  var plTuLoai = taoPhanLoai('plTuLoai', 'Xếp từ theo từ loại', '🧺', '类',
+    'linear-gradient(160deg,#f0a6a0 0%,#c8372d 100%)', 'red', 'tuloai',
+    'Kéo từng từ vào đúng giỏ: danh từ, động từ, tính từ hay hư từ.',
+    'Chiếu các thẻ từ, gọi học sinh lên bấm thẻ rồi bấm giỏ. Tổ nào xếp đúng nhiều hơn thì thắng.');
+
+  var plKetCau = taoPhanLoai('plKetCau', 'Xếp chữ theo kết cấu', '🧩', '构',
+    'linear-gradient(160deg,#9fd8c6 0%,#1f8a4c 100%)', 'green', 'ketcau',
+    'Kéo từng chữ Hán vào đúng kết cấu: trái–phải, trên–dưới, chữ đơn hay bao nửa.',
+    'Chiếu các chữ Hán, cả lớp đọc rồi chỉ kết cấu. Thầy cô bấm thẻ rồi bấm giỏ lớp chọn.');
+
   /* ---------------- dang ky ---------------- */
   var KHO = {};
-  [quiz, bubble, mole, snake, maze, memory, vanish].forEach(function (g) { KHO[g.key] = g; });
+  [quiz, bubble, mole, snake, maze, plTuLoai, plKetCau, memory, vanish].forEach(function (g) { KHO[g.key] = g; });
 
   window.Arcade = {
     kho: KHO,

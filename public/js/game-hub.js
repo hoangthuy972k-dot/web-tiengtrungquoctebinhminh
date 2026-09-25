@@ -160,7 +160,8 @@
         tra(raw.filter(function (v) { return v && v.zh && v.vn; }).map(function (v) {
           return {
             zh: v.zh, py: v.py || '', vn: v.vn, hv: v.hv || '',
-            em: v.em || '', hanzi: Array.isArray(v.hanzi) ? v.hanzi : []
+            em: v.em || '', pos: v.pos || '',     // pos: tro xep tu theo tu loai can
+            hanzi: Array.isArray(v.hanzi) ? v.hanzi : []
           };
         }));
       };
@@ -212,10 +213,10 @@
       return;
     }
     wrap.innerHTML = state.lessons.map(function (l) {
-      return '<button type="button" class="lop-lesson-chip' + (state.picked[l.url] ? ' on' : '') +
+      return '<button type="button" class="gh-bai-o' + (state.picked[l.url] ? ' on' : '') +
         '" data-url="' + l.url + '" title="' + String(l.ten).replace(/"/g, '&quot;') + '">Bài ' + l.so + '</button>';
     }).join('');
-    $all('.lop-lesson-chip', wrap).forEach(function (b) {
+    $all('.gh-bai-o', wrap).forEach(function (b) {
       b.addEventListener('click', function () {
         var u = b.getAttribute('data-url');
         if (state.picked[u]) delete state.picked[u]; else state.picked[u] = 1;
@@ -246,10 +247,19 @@
     var soBai = state.lessons.filter(function (l) { return state.picked[l.url]; }).length;
     wrap.innerHTML = window.Arcade.danhSach().map(function (g) {
       var moTa = state.cheDo === 'lop' ? (g.moTaLop || g.moTa) : g.moTa;
+      // Tro nao co tranh rieng thi dung tranh, khong thi dung emoji co lon.
+      var hinh = g.anh
+        ? '<span class="gh-game-hinh" style="background-image:url(\'' + g.anh + '\')"></span>'
+        : '<span class="gh-game-emoji">' + g.emoji + '</span>';
       return '<button type="button" class="gh-game" data-game="' + g.key + '"' + (soBai ? '' : ' disabled') + '>' +
-        '<span class="gh-game-emoji" style="background:var(--color-' + g.mau + '-50)">' + g.emoji + '</span>' +
-        '<span class="gh-game-ten">' + g.ten + '</span>' +
-        '<span class="gh-game-mo">' + moTa + '</span>' +
+        '<span class="gh-game-tranh" style="--nen:' + (g.nen || '') + '">' +
+          '<span class="gh-game-chu" aria-hidden="true">' + (g.chu || '') + '</span>' +
+          hinh +
+        '</span>' +
+        '<span class="gh-game-duoi">' +
+          '<span class="gh-game-ten">' + g.ten + '</span>' +
+          '<span class="gh-game-mo">' + moTa + '</span>' +
+        '</span>' +
       '</button>';
     }).join('');
     if (!soBai) {

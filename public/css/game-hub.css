@@ -1,85 +1,364 @@
-/* Trang /game — man chuan bi va man choi.
-   Dung lai khung the cua /lop (lop.css) nen o day chi them phan rieng. */
+/* ══════════════════════════════════════════════════════════════════
+   SÂN CHƠI CHỮ HÁN — giao diện trang /game
+   ------------------------------------------------------------------
+   Hướng thị giác: một tấm bảng trò chơi kiểu hội chợ Á Đông.
+   Nền giấy kem ấm, hoạ tiết mây tường vân mờ, con dấu đỏ 喜汉 làm
+   điểm nhấn, chữ Hán cỡ lớn làm hoạ tiết chìm trên từng thẻ trò chơi.
+   Tất cả hoạ tiết vẽ bằng CSS nên nhẹ và nét ở mọi độ phân giải.
+   ══════════════════════════════════════════════════════════════════ */
 
-/* ---------------- chon kieu choi ---------------- */
+.gh-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  color: var(--color-gray-900);
+  background: var(--color-gray-50);
+}
+
+/* Hoạ tiết mây tường vân — vẽ bằng gradient, chỉ hiện rất mờ. */
+.gh-setup {
+  position: relative;
+  z-index: 1;
+  padding: clamp(14px, 3vw, 40px) clamp(12px, 3vw, 28px) 60px;
+}
+.gh-tam {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 3vw, 30px);
+}
+
+/* ─────────── Băng đầu trang ─────────── */
+.gh-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 26px);
+  padding: clamp(20px, 4vw, 38px) clamp(18px, 4vw, 40px);
+  border-radius: 26px;
+  color: #fff8ec;
+  background:
+    radial-gradient(90% 150% at 100% 0%, rgba(233, 162, 59, 0.42) 0%, transparent 58%),
+    linear-gradient(135deg, #8a241d 0%, #b5352a 46%, #c8372d 100%);
+  box-shadow: 0 16px 40px rgba(104, 30, 22, 0.32);
+}
+/* mây tường vân chìm ở góc */
+.gh-hero::after {
+  content: '';
+  position: absolute;
+  right: -6%;
+  bottom: -62%;
+  width: 58%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 38%, rgba(255, 240, 210, 0.16) 39% 44%, transparent 45%),
+    radial-gradient(circle at 50% 50%, transparent 0 56%, rgba(255, 240, 210, 0.12) 57% 62%, transparent 63%),
+    radial-gradient(circle at 50% 50%, transparent 0 74%, rgba(255, 240, 210, 0.09) 75% 80%, transparent 81%);
+  pointer-events: none;
+}
+.gh-hero-dau {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(58px, 9vw, 84px);
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background: #fdf5e6;
+  color: #a82d24;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  line-height: 1.05;
+  text-align: center;
+  letter-spacing: -0.02em;
+  box-shadow: 0 6px 18px rgba(60, 14, 10, 0.34), inset 0 0 0 3px rgba(168, 45, 36, 0.22);
+}
+.gh-hero-chu { position: relative; z-index: 1; min-width: 0; }
+.gh-hero h1 {
+  margin: 0 0 4px;
+  font-family: 'Noto Serif SC', 'Be Vietnam Pro', serif;
+  font-weight: 900;
+  font-size: clamp(1.55rem, 4.4vw, 2.7rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.gh-hero p {
+  margin: 0;
+  font-size: clamp(0.88rem, 1.9vw, 1.05rem);
+  color: rgba(255, 244, 228, 0.86);
+  line-height: 1.45;
+}
+
+/* ─────────── Khối từng bước ─────────── */
+.gh-buoc {
+  background: rgba(255, 253, 249, 0.93);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 22px;
+  padding: clamp(15px, 3vw, 26px);
+  box-shadow: 0 6px 22px rgba(31, 26, 23, 0.07);
+}
+.gh-buoc h2 {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0 0 14px;
+  font-size: clamp(1rem, 2.2vw, 1.22rem);
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+/* số bước trong con dấu đỏ */
+.gh-so {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #c8372d, #8a241d);
+  color: #fff3df;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(138, 36, 29, 0.35);
+}
+
+/* ─────────── Bước 1 · kiểu chơi ─────────── */
 .gh-mode {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 .gh-mode button {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  text-align: left;
-  padding: 12px 14px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-gray-200);
-  background: #fff;
-  font: inherit;
-  cursor: pointer;
-}
-.gh-mode button b { font-size: 1rem; color: var(--color-gray-900); }
-.gh-mode button i { font-style: normal; font-size: 0.82rem; color: var(--color-gray-500); line-height: 1.35; }
-.gh-mode button.active {
-  border-color: var(--color-gold-600);
-  background: var(--color-gold-50);
-  box-shadow: inset 0 0 0 1px var(--color-gold-500);
-}
-.gh-mode button.active i { color: var(--color-gold-700); }
-
-/* ---------------- dem bai da chon ---------------- */
-.gh-count {
-  margin: 0 0 8px;
-  font-size: 0.9rem;
-  color: var(--color-gray-500);
-}
-.gh-count.on { color: var(--color-green-600); }
-.gh-count b { color: inherit; }
-.gh-trong { color: var(--color-gray-500); }
-
-/* ---------------- danh sach tro ---------------- */
-.gh-games { display: grid; gap: 12px; }
-@media (min-width: 620px) {
-  .gh-games { grid-template-columns: repeat(2, 1fr); }
-}
-.gh-nhac {
-  grid-column: 1 / -1;
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--color-gray-500);
-}
-.gh-game {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto;
   column-gap: 12px;
   row-gap: 2px;
-  align-items: center;
   text-align: left;
-  padding: 14px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-gray-200);
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 2px solid var(--color-gray-200);
   background: #fff;
   font: inherit;
   cursor: pointer;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
 }
-.gh-game:hover:not(:disabled) { border-color: var(--color-red-500); transform: translateY(-1px); }
-.gh-game:disabled { opacity: 0.5; cursor: default; }
-.gh-game-emoji {
+.gh-mode-bt {
   grid-row: 1 / 3;
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  font-size: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  background: var(--color-gray-100);
 }
-.gh-game-ten { font-weight: 700; color: var(--color-gray-900); }
-.gh-game-mo { font-size: 0.85rem; color: var(--color-gray-500); line-height: 1.4; }
+.gh-mode button b { font-size: 1.02rem; color: var(--color-gray-900); align-self: end; }
+.gh-mode button i {
+  font-style: normal;
+  font-size: 0.82rem;
+  color: var(--color-gray-500);
+  line-height: 1.35;
+}
+.gh-mode button:hover { border-color: var(--color-gold-400); transform: translateY(-1px); }
+.gh-mode button.active {
+  border-color: var(--color-red-600);
+  background: linear-gradient(180deg, #fff 0%, var(--color-red-50) 100%);
+}
+.gh-mode button.active .gh-mode-bt { background: var(--color-red-100); }
+.gh-mode button.active i { color: var(--color-red-700); }
 
-/* ---------------- man choi ---------------- */
+/* ─────────── Bước 2 · cấp độ và bài ─────────── */
+.gh-hang {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.gh-sel { display: flex; flex-direction: column; gap: 5px; min-width: 210px; flex: 1 1 210px; }
+.gh-sel span {
+  font-size: 0.74rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+}
+.gh-sel select {
+  font: inherit;
+  font-weight: 600;
+  padding: 11px 13px;
+  border-radius: 13px;
+  border: 2px solid var(--color-gray-200);
+  background: #fff;
+  color: var(--color-gray-900);
+  cursor: pointer;
+}
+.gh-sel select:focus-visible { outline: 3px solid var(--color-gold-500); outline-offset: 1px; }
+
+.gh-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.gh-mini {
+  font: inherit;
+  font-size: 0.86rem;
+  cursor: pointer;
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--color-gray-300);
+  background: #fff;
+  color: var(--color-gray-600);
+  transition: border-color 0.14s ease, color 0.14s ease;
+}
+.gh-mini:hover { border-color: var(--color-red-500); color: var(--color-red-600); }
+.gh-mini-vui {
+  border-color: var(--color-gold-500);
+  background: var(--color-gold-50);
+  color: var(--color-gold-700);
+  font-weight: 600;
+}
+
+.gh-bai { display: flex; flex-wrap: wrap; gap: 8px; }
+.gh-bai-o {
+  position: relative;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 62px;
+  padding: 9px 13px;
+  border-radius: 13px;
+  border: 2px solid var(--color-gray-200);
+  background: #fff;
+  color: var(--color-gray-700);
+  transition: transform 0.14s ease, border-color 0.14s ease;
+}
+.gh-bai-o:hover { border-color: var(--color-gold-500); transform: translateY(-2px); }
+.gh-bai-o.on {
+  border-color: var(--color-red-600);
+  background: linear-gradient(180deg, var(--color-red-600), var(--color-red-700));
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(168, 45, 36, 0.3);
+}
+.gh-bai-o.on::after {
+  content: '✓';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-gold-500);
+  color: #4a2c05;
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+.gh-trong { color: var(--color-gray-500); }
+
+.gh-count {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+}
+.gh-count.on { color: var(--color-green-600); font-weight: 600; }
+
+/* ─────────── Bước 3 · thẻ trò chơi ─────────── */
+.gh-games {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: clamp(11px, 2vw, 16px);
+}
+.gh-nhac {
+  grid-column: 1 / -1;
+  margin: 0 0 2px;
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+}
+.gh-game {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  background: #fff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(31, 26, 23, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.gh-game:hover:not(:disabled) {
+  transform: translateY(-4px);
+  border-color: var(--color-gold-500);
+  box-shadow: 0 14px 30px rgba(31, 26, 23, 0.17);
+}
+.gh-game:focus-visible { outline: 3px solid var(--color-gold-500); outline-offset: 2px; }
+.gh-game:disabled { opacity: 0.45; cursor: default; }
+
+/* nửa trên: khung tranh, có chữ Hán chìm và hình của trò */
+.gh-game-tranh {
+  position: relative;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--nen, linear-gradient(160deg, #f4ede0, #e8dcc6));
+}
+.gh-game-chu {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: 6.4rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.34);
+  user-select: none;
+}
+.gh-game-hinh {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  background: center / contain no-repeat;
+  filter: drop-shadow(0 4px 8px rgba(40, 24, 12, 0.28));
+  transition: transform 0.22s cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+.gh-game:hover:not(:disabled) .gh-game-hinh { transform: scale(1.13) rotate(-3deg); }
+/* trò chưa có tranh riêng thì dùng emoji cỡ lớn */
+.gh-game-emoji {
+  position: relative;
+  font-size: 3.1rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(40, 24, 12, 0.24));
+  transition: transform 0.22s cubic-bezier(0.34, 1.35, 0.64, 1);
+}
+.gh-game:hover:not(:disabled) .gh-game-emoji { transform: scale(1.13) rotate(-3deg); }
+
+.gh-game-duoi { padding: 13px 15px 15px; display: flex; flex-direction: column; gap: 4px; }
+.gh-game-ten {
+  font-family: 'Noto Serif SC', 'Be Vietnam Pro', serif;
+  font-weight: 700;
+  font-size: 1.04rem;
+  color: var(--color-gray-900);
+  line-height: 1.25;
+}
+.gh-game-mo { font-size: 0.83rem; color: var(--color-gray-500); line-height: 1.42; }
+
+.gh-meo {
+  margin: 0;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--color-gray-500);
+}
+.gh-meo b { color: var(--color-gray-700); }
+
+/* ══════════════ MÀN CHƠI ══════════════ */
 .gh-play {
   position: relative;
   z-index: 1;
@@ -87,52 +366,74 @@
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: clamp(12px, 2.5vw, 26px);
-  gap: 14px;
+  gap: 12px;
+  padding: clamp(10px, 2vw, 20px);
 }
 .gh-play-top {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 .gh-back {
   font: inherit;
+  font-size: 0.9rem;
   cursor: pointer;
   border-radius: 999px;
   border: 1px solid var(--color-gray-300);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 9px 17px;
   color: var(--color-gray-700);
+  transition: border-color 0.14s ease, color 0.14s ease;
 }
 .gh-back:hover { border-color: var(--color-red-500); color: var(--color-red-600); }
-.gh-play-ten { font-weight: 700; color: var(--color-gray-900); }
-.gh-play-bai {
-  font-size: 0.85rem;
-  color: var(--color-gray-500);
-  padding: 3px 10px;
-  border-radius: 999px;
-  background: var(--color-gray-100);
+.gh-play-nhan { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; min-width: 0; }
+.gh-play-nhan b {
+  font-family: 'Noto Serif SC', 'Be Vietnam Pro', serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  color: var(--color-gray-900);
 }
-.gh-play-body {
+.gh-play-nhan span {
+  font-size: 0.8rem;
+  color: var(--color-gray-600);
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--color-gray-200);
+}
+
+/* Sân chơi: khung cuốn thư — viền vàng mảnh, bo góc lớn. */
+.gh-san {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.94);
+  padding: clamp(10px, 1.8vw, 18px);
+  border-radius: 24px;
+  background: rgba(255, 253, 249, 0.96);
   border: 1px solid var(--color-gray-200);
-  border-radius: 20px;
-  padding: clamp(14px, 2.6vw, 26px);
-  box-shadow: 0 10px 34px rgba(31, 26, 23, 0.08);
+  box-shadow: 0 14px 40px rgba(31, 26, 23, 0.13), inset 0 0 0 3px rgba(233, 162, 59, 0.16);
 }
-.gh-play-body .ar { flex: 1; min-height: 0; }
-.gh-play-body .ar-stage { flex: 1; min-height: 0; }
-.gh-dangtai { color: var(--color-gray-500); text-align: center; padding: 40px; }
+.gh-san .ar { flex: 1; min-height: 0; }
+.gh-san .ar-stage { flex: 1; min-height: 0; }
+.gh-dangtai { margin: auto; color: var(--color-gray-500); }
 
-/* Che do chieu lop: bo nen tranh cho do roi mat, de chu to len het man. */
-body.gh-dang-lop .scene { opacity: 0.25; }
-body.gh-dang-lop .gh-play-body { background: #fff; }
-body.gh-dang-lop .gh-play-ten { font-size: 1.15rem; }
+/* Chiếu lớp: nền tranh lùi xuống cho chữ nổi hẳn lên. */
+body.gh-dang-lop .scene { opacity: 0.2; }
+body.gh-dang-lop .gh-san { background: #fff; }
 
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   .gh-mode { grid-template-columns: 1fr; }
+  .gh-games { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .gh-game-tranh { height: 92px; }
+  .gh-game-chu { font-size: 5rem; }
+  .gh-game-hinh { width: 58px; height: 58px; }
+  .gh-game-emoji { font-size: 2.5rem; }
+  .gh-game-ten { font-size: 0.95rem; }
+  .gh-game-mo { font-size: 0.78rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gh-game, .gh-game-hinh, .gh-game-emoji, .gh-bai-o, .gh-mode button { transition: none; }
 }

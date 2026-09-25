@@ -1,0 +1,138 @@
+/* Trang /game — man chuan bi va man choi.
+   Dung lai khung the cua /lop (lop.css) nen o day chi them phan rieng. */
+
+/* ---------------- chon kieu choi ---------------- */
+.gh-mode {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.gh-mode button {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.gh-mode button b { font-size: 1rem; color: var(--color-gray-900); }
+.gh-mode button i { font-style: normal; font-size: 0.82rem; color: var(--color-gray-500); line-height: 1.35; }
+.gh-mode button.active {
+  border-color: var(--color-gold-600);
+  background: var(--color-gold-50);
+  box-shadow: inset 0 0 0 1px var(--color-gold-500);
+}
+.gh-mode button.active i { color: var(--color-gold-700); }
+
+/* ---------------- dem bai da chon ---------------- */
+.gh-count {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+}
+.gh-count.on { color: var(--color-green-600); }
+.gh-count b { color: inherit; }
+.gh-trong { color: var(--color-gray-500); }
+
+/* ---------------- danh sach tro ---------------- */
+.gh-games { display: grid; gap: 12px; }
+@media (min-width: 620px) {
+  .gh-games { grid-template-columns: repeat(2, 1fr); }
+}
+.gh-nhac {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+}
+.gh-game {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 2px;
+  align-items: center;
+  text-align: left;
+  padding: 14px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.gh-game:hover:not(:disabled) { border-color: var(--color-red-500); transform: translateY(-1px); }
+.gh-game:disabled { opacity: 0.5; cursor: default; }
+.gh-game-emoji {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 1.5rem;
+}
+.gh-game-ten { font-weight: 700; color: var(--color-gray-900); }
+.gh-game-mo { font-size: 0.85rem; color: var(--color-gray-500); line-height: 1.4; }
+
+/* ---------------- man choi ---------------- */
+.gh-play {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(12px, 2.5vw, 26px);
+  gap: 14px;
+}
+.gh-play-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.gh-back {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 1px solid var(--color-gray-300);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  color: var(--color-gray-700);
+}
+.gh-back:hover { border-color: var(--color-red-500); color: var(--color-red-600); }
+.gh-play-ten { font-weight: 700; color: var(--color-gray-900); }
+.gh-play-bai {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-gray-100);
+}
+.gh-play-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+  padding: clamp(14px, 2.6vw, 26px);
+  box-shadow: 0 10px 34px rgba(31, 26, 23, 0.08);
+}
+.gh-play-body .ar { flex: 1; min-height: 0; }
+.gh-play-body .ar-stage { flex: 1; min-height: 0; }
+.gh-dangtai { color: var(--color-gray-500); text-align: center; padding: 40px; }
+
+/* Che do chieu lop: bo nen tranh cho do roi mat, de chu to len het man. */
+body.gh-dang-lop .scene { opacity: 0.25; }
+body.gh-dang-lop .gh-play-body { background: #fff; }
+body.gh-dang-lop .gh-play-ten { font-size: 1.15rem; }
+
+@media (max-width: 520px) {
+  .gh-mode { grid-template-columns: 1fr; }
+}

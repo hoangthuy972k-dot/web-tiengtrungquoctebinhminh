@@ -95,7 +95,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/bao-cao': 'admin.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/game': 'game.html', '/bao-cao': 'admin.html' };
 
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next();

@@ -1456,12 +1456,15 @@ async function openStream(provider, url, init, signal) {
 // Groq (API kieu OpenAI). Tai lieu Groq khuyen khong dung system prompt voi Qwen
 // nen gop huong dan vao tin nhan dau; tat suy nghi (reasoning_effort none) de
 // khong ton token cua goi mien phi.
-async function* streamGroq(messages, signal) {
+// o (tuy chon): { sys, temperature } — dung khi goi AI cho viec khac tro chuyen
+// (vd. cham cau). Bo trong thi giu nguyen hanh vi cua Tro ly AI.
+async function* streamGroq(messages, signal, o) {
+  const sys = (o && o.sys) || AI_SYSTEM_PROMPT;
   const recent = messages.slice(-6);
   while (recent.length && recent[0].role !== 'user') recent.shift();
   const msgs = recent.map((m, i) => ({
     role: m.role,
-    content: i === 0 ? AI_SYSTEM_PROMPT + '\n\n---\n\nCâu hỏi của học sinh:\n' + m.content : m.content,
+    content: i === 0 ? sys + '\n\n---\n\n' + (o && o.sys ? '' : 'Câu hỏi của học sinh:\n') + m.content : m.content,
   }));
   const res = await openStream('groq', GROQ_BASE_URL + '/chat/completions', {
     method: 'POST',
@@ -1470,7 +1473,7 @@ async function* streamGroq(messages, signal) {
       model: GROQ_MODEL,
       messages: msgs,
       stream: true,
-      temperature: 0.6,
+      temperature: o && o.temperature != null ? o.temperature : 0.6,
       max_completion_tokens: 2048,
       reasoning_effort: 'none',
     }),
@@ -1488,16 +1491,16 @@ async function* streamGroq(messages, signal) {
 }
 
 // Google Gemini qua generateContent (Google xac nhan API nay van duoc ho tro day du).
-async function* streamGemini(messages, signal) {
+async function* streamGemini(messages, signal, o) {
   const url = GEMINI_BASE_URL + '/models/' + encodeURIComponent(GEMINI_MODEL) + ':streamGenerateContent?alt=sse';
   const res = await openStream('gemini', url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': GEMINI_API_KEY },
     body: JSON.stringify({
-      system_instruction: { parts: [{ text: AI_SYSTEM_PROMPT }] },
+      system_instruction: { parts: [{ text: (o && o.sys) || AI_SYSTEM_PROMPT }] },
       contents: messages.map((m) => ({ role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }] })),
       // du cho ca phan suy nghi noi bo cua mo hinh, tranh cau tra loi bi cat cut
-      generationConfig: { maxOutputTokens: 8192, temperature: 0.7 },
+      generationConfig: { maxOutputTokens: 8192, temperature: o && o.temperature != null ? o.temperature : 0.7 },
     }),
   }, signal);
   let yielded = false;
@@ -1521,7 +1524,7 @@ async function* streamGemini(messages, signal) {
 }
 
 // Claude qua thu vien chinh thuc @anthropic-ai/sdk (tuy chon, tra phi).
-async function* streamAnthropic(messages, signal) {
+async function* streamAnthropic(messages, signal, o) {
   const stream = anthropic.beta.messages.stream({
     model: ANTHROPIC_MODEL,
     max_tokens: 16000,
@@ -1529,7 +1532,7 @@ async function* streamAnthropic(messages, signal) {
     output_config: { effort: 'low' },
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',
-    system: AI_SYSTEM_PROMPT + '\nLatency-sensitive; begin your visible answer immediately.',
+    system: ((o && o.sys) || AI_SYSTEM_PROMPT) + '\nLatency-sensitive; begin your visible answer immediately.',
     messages,
   });
   const onAbort = () => stream.abort();
@@ -1680,6 +1683,109 @@ app.post('/api/ai/chat', asyncRoute(async (req, res) => {
     res.write((wroteText ? '\n\n' : '') + '⚠️ ' + msg);
   }
   res.end();
+}));
+
+// ---------------- AI cham cau van dung ngu phap ----------------
+// Hoc sinh viet cau dung mot diem ngu phap (HSK 4) -> AI cham thang 10, chi ra
+// tung loi kem cach sua. Dung chung nha cung cap va han muc voi Tro ly AI.
+const CHAM_CAU_SYS = [
+  'Bạn là giáo viên tiếng Trung, chấm câu viết của học sinh Việt Nam trình độ HSK 4 để luyện một điểm ngữ pháp.',
+  'Thang điểm 10:',
+  '- 9–10: dùng đúng điểm ngữ pháp, câu đúng ngữ pháp, tự nhiên, đúng ý đề.',
+  '- 7–8: dùng đúng điểm ngữ pháp nhưng còn lỗi nhỏ (chọn từ chưa hay, viết sai chữ, hơi thiếu tự nhiên).',
+  '- 5–6: có dùng điểm ngữ pháp nhưng sai vị trí, sai từ hô ứng, hoặc còn lỗi ngữ pháp khác rõ ràng.',
+  '- 3–4: không dùng điểm ngữ pháp được yêu cầu, hoặc câu sai nhiều chỗ.',
+  '- 0–2: không phải câu tiếng Trung, lạc đề hoặc không hiểu được.',
+  'Cách nói khác đáp án mẫu mà vẫn đúng ngữ pháp, đúng ý và dùng đúng điểm ngữ pháp thì vẫn được điểm tối đa. Không trừ điểm vì thiếu dấu câu cuối câu.',
+  'Liệt kê TỪNG lỗi cụ thể: đoạn sai, sửa thành gì, giải thích ngắn gọn bằng tiếng Việt (một câu). Câu đã đúng thì "loi" là mảng rỗng — không bịa lỗi.',
+  '"cauSua" là câu của học sinh sau khi sửa, giữ ý và cách nói của em nhiều nhất có thể; câu đã đúng thì chép lại nguyên câu.',
+  '"nhanXet" là một câu tiếng Việt ngắn, khích lệ, nói rõ em làm tốt gì hoặc cần nhớ gì.',
+  'Chỉ trả về DUY NHẤT một đối tượng JSON, không thêm chữ nào khác, không bọc trong ```:',
+  '{"diem": 0-10, "dungCauTruc": true|false, "loi": [{"sai": "...", "sua": "...", "giai": "..."}], "cauSua": "...", "nhanXet": "..."}',
+].join('\n');
+
+function docKetQuaCham(text) {
+  const t = String(text || '');
+  const a = t.indexOf('{'), b = t.lastIndexOf('}');
+  if (a < 0 || b <= a) return null;
+  let j;
+  try { j = JSON.parse(t.slice(a, b + 1)); } catch (e) { return null; }
+  const diem = Math.round(Number(j.diem));
+  if (!Number.isFinite(diem)) return null;
+  const cat = (s, n) => String(s == null ? '' : s).trim().slice(0, n);
+  return {
+    diem: Math.max(0, Math.min(10, diem)),
+    dungCauTruc: j.dungCauTruc === true || j.dungCauTruc === 'true',
+    loi: (Array.isArray(j.loi) ? j.loi : []).slice(0, 6).map((l) => ({ sai: cat(l && l.sai, 120), sua: cat(l && l.sua, 120), giai: cat(l && l.giai, 240) }))
+      .filter((l) => l.sai || l.sua || l.giai),
+    cauSua: cat(j.cauSua, 300),
+    nhanXet: cat(j.nhanXet, 300),
+  };
+}
+
+app.post('/api/ai/cham-cau', asyncRoute(async (req, res) => {
+  const b = req.body || {};
+  const cat = (s, n) => String(s == null ? '' : s).trim().slice(0, n);
+  const tra = cat(b.tra, 300);
+  if (!tra) return res.status(400).json({ error: 'Em chưa viết câu trả lời.' });
+  if (!/[㐀-鿿]/.test(tra)) return res.status(400).json({ error: 'Em hãy viết câu bằng chữ Hán nhé.' });
+  const providers = aiProviders();
+  if (!providers.length) return res.status(503).json({ error: 'AI chấm bài chưa được bật trên máy chủ.' });
+
+  // Han muc: dung chung voi Tro ly AI (moi lan cham = 1 luot)
+  const q = await aiQuotaFor(req);
+  if (!q.unlimited && q.remaining <= 0) {
+    return res.status(429).json({ error: 'Hôm nay em đã dùng hết lượt AI. Em so với đáp án mẫu nhé, mai AI chấm tiếp.' });
+  }
+  if (AI_PER_MINUTE > 0) {
+    const now = Date.now();
+    const recent = (aiBurst.get(q.key) || []).filter((t) => now - t < 60000);
+    if (recent.length >= AI_PER_MINUTE) {
+      return res.status(429).json({ error: 'Em bấm chấm nhanh quá, đợi khoảng một phút rồi chấm tiếp nhé.' });
+    }
+    recent.push(now);
+    aiBurst.set(q.key, recent);
+  }
+  if (!q.unlimited) aiUsage.set(q.mapKey, q.used + 1);
+  const refund = () => { if (!q.unlimited) aiUsage.set(q.mapKey, Math.max(0, (aiUsage.get(q.mapKey) || 1) - 1)); };
+
+  const cauTruc = (Array.isArray(b.cauTruc) ? b.cauTruc : []).slice(0, 8).map((x) => cat(x, 200)).filter(Boolean);
+  const de = cat(b.de, 300), goiY = cat(b.goiY, 300), mau = cat(b.mau, 300);
+  const noiDung = [
+    'ĐIỂM NGỮ PHÁP: ' + cat(b.diem, 200),
+    cauTruc.length ? 'CẤU TRÚC: ' + cauTruc.join(' | ') : '',
+    b.tuDo
+      ? 'ĐỀ: Học sinh tự đặt một câu có dùng điểm ngữ pháp trên.' + (goiY ? ' (' + goiY + ')' : '')
+      : 'ĐỀ: Hoàn thành câu 「' + de + '」' + (goiY ? ' — ý cần diễn đạt: ' + goiY : ''),
+    mau ? 'ĐÁP ÁN MẪU (chỉ để tham khảo): ' + mau : '',
+    'CÂU CỦA HỌC SINH: ' + tra,
+  ].filter(Boolean).join('\n');
+  const messages = [{ role: 'user', content: noiDung }];
+
+  let lastErr = null;
+  for (const p of providers) {
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 30000);
+    try {
+      let text = '';
+      for await (const t of p.stream(messages, ctl.signal, { sys: CHAM_CAU_SYS, temperature: 0.2 })) text += t;
+      clearTimeout(timer);
+      const kq = docKetQuaCham(text);
+      if (kq) return res.json(Object.assign(kq, { nguon: p.name }));
+      lastErr = new AiProviderError(p.name, 502, 'không đọc được JSON: ' + text.slice(0, 120));
+      console.error('Cham cau AI: ' + p.name + ' tra loi sai dinh dang');
+    } catch (err) {
+      clearTimeout(timer);
+      lastErr = err;
+      console.error('Cham cau AI: ' + p.name + ' loi', err.status != null ? err.status : '', err.message);
+    }
+  }
+  refund();
+  let msg = 'AI chấm bài đang bận, em so với đáp án mẫu hoặc thử lại sau ít phút nhé.';
+  if (lastErr && lastErr.status === 429) msg = 'AI đã dùng hết lượt miễn phí hoặc đang quá tải, em thử lại sau nhé.';
+  else if (lastErr && lastErr.status === 402) msg = 'AI chấm bài đang tạm dừng vì khoá AI của website đã hết hạn mức. Báo thầy/cô nạp thêm hoặc đổi khoá nhé!';
+  else if (lastErr && (lastErr.status === 401 || lastErr.status === 403)) msg = 'Khoá AI của website chưa đúng hoặc đã bị thu hồi. Báo thầy/cô kiểm tra lại nhé!';
+  res.status(502).json({ error: msg });
 }));
 
 // ---------------- Trang thai truc tuyen ----------------

@@ -8032,8 +8032,6 @@ body.pinyin-hidden .py-inline {
   background: var(--color-red-600); color: #fff; font-family: var(--font-latin); font-size: 0.85rem; font-weight: 800;
 }
 .npt-ai.is-b { background: var(--color-teal-600); }
-.npt-hoi-b { flex-wrap: wrap; align-items: center; margin-top: 6px; }
-.npt-hoi-b .npt-nhap { flex: 1 1 220px; min-width: 0; margin-top: 0; }
 .npt-bdau { white-space: nowrap; }
 .npt-nhap { display: flex; gap: 8px; margin-top: 8px; }
 .npt-in {
@@ -8090,8 +8088,83 @@ body.pinyin-hidden .py-inline {
   .npt-nhap { flex-wrap: wrap; }
   .npt-in { flex: 1 1 150px; }
   .npt-nhap .npt-nut { flex: 1 1 100%; }
-  .npt-hoi-b .npt-nhap { flex-basis: 150px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .npt-tabbtn, .npt-q { transition: none; }
+}
+
+/* ---- Ngữ pháp theo điểm: các dạng câu mới (HSK 1–4) ---- */
+/* Tên điểm có chữ Việt (HSK 1, 3, 4…): font Latin, chữ Hán bọc riêng */
+.npt-ten.is-vn { font-family: var(--font-latin); font-size: 1.4rem; font-weight: 800; color: var(--color-gray-900); }
+.npt-ten-han { font-family: var(--font-hanzi-display); color: var(--color-red-700); }
+.npt-tab-han.is-vn { font-family: var(--font-latin); font-size: 0.95rem; font-weight: 700; line-height: 1.25; max-width: 16ch; text-align: left; }
+
+.npt-ngucanh { margin-bottom: 4px; font-size: 0.98rem; color: var(--color-gray-600); line-height: 1.5; }
+.npt-giai-ngan { margin-top: 4px; font-size: 0.95rem; color: var(--color-gray-600); line-height: 1.55; }
+.npt-py { margin-top: 2px; font-size: 0.95rem; color: var(--color-gold-600); }
+
+/* Chọn vị trí A / B / C */
+.npt-vt {
+  display: inline-grid; place-items: center; width: 1.5em; height: 1.5em; margin: 0 2px;
+  border-radius: 6px; background: var(--color-gold-50); border: 1.5px dashed var(--color-gold-400);
+  font-family: var(--font-latin); font-size: 0.75em; font-weight: 800; color: var(--color-gold-700); vertical-align: middle;
+}
+.npt-chip-chu { font-family: var(--font-latin); min-width: 56px; }
+.npt-chip.da { border-color: var(--color-red-500); background: var(--color-red-50); color: var(--color-red-700); }
+.npt-q.dung .npt-chip.da { border-color: var(--color-green-600); background: var(--color-green-50); color: var(--color-green-600); }
+.npt-q.dung .npt-k-vitri .npt-chon, .npt-q.dung.npt-k-vitri .npt-chon, .npt-q.dung.npt-k-dungsai .npt-chon { pointer-events: none; }
+.npt-ds { font-family: var(--font-latin); font-size: 1.05rem; min-width: 96px; }
+
+/* Ô nhập nằm ngay trên dòng hội thoại / câu vận dụng */
+.npt-hoi-o, .npt-vd { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 6px; font-size: 1.35rem; line-height: 1.6; color: var(--color-gray-900); }
+.npt-hoi-o .npt-nhap, .npt-vd .npt-nhap { flex: 1 1 220px; min-width: 0; margin-top: 0; }
+.npt-in-dai { resize: vertical; min-height: 64px; line-height: 1.5; font-family: var(--font-hanzi); }
+.npt-nhap-dai .npt-in { width: 100%; }
+.npt-vd-nut { margin-top: 10px; }
+.npt-nut-ai { background: var(--color-teal-600); }
+.npt-nut-ai:hover { background: #0a7068; }
+.npt-nut-ai:disabled { opacity: 0.65; cursor: progress; }
+.npt-cap-4 { background: var(--color-teal-600); color: #fff; }
+.npt-card-4 { border-color: var(--color-teal-50); box-shadow: 0 0 0 3px var(--color-teal-50); }
+.npt-q.dang { border-color: var(--color-teal-600); }
+.npt-dang { color: var(--color-teal-600); font-weight: 700; }
+
+/* Kết quả AI chấm */
+.npt-ai-kq { margin-top: 4px; padding: 12px 14px; border-radius: var(--radius-md); background: var(--color-white); border: 1.5px solid var(--color-gray-200); display: grid; gap: 8px; }
+.npt-ai-dau { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.npt-ai-diem { display: inline-flex; align-items: baseline; gap: 2px; padding: 2px 12px; border-radius: var(--radius-pill); font-size: 1rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.npt-ai-diem b { font-size: 1.6rem; line-height: 1.1; }
+.npt-ai-tot .npt-ai-diem { background: var(--color-green-50); color: var(--color-green-600); }
+.npt-ai-kha .npt-ai-diem { background: var(--color-teal-50); color: var(--color-teal-600); }
+.npt-ai-tb .npt-ai-diem { background: var(--color-gold-50); color: var(--color-gold-700); }
+.npt-ai-yeu .npt-ai-diem { background: var(--color-red-50); color: var(--color-red-600); }
+.npt-ai-ct { font-size: 0.95rem; font-weight: 700; color: var(--color-gray-700); }
+.npt-ai-nx { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--color-gray-800); }
+.npt-ai-tu { margin: 0; font-size: 0.98rem; color: var(--color-gray-700); }
+.npt-ai-loi { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.npt-ai-loi li { font-size: 1.1rem; line-height: 1.5; }
+.npt-ai-sai { color: var(--color-red-600); text-decoration: line-through; }
+.npt-ai-sua { color: var(--color-green-600); font-weight: 700; }
+.npt-ai-giai { font-size: 0.95rem; color: var(--color-gray-600); }
+.npt-ai-sua-cau, .npt-ai-mau { display: grid; gap: 2px; padding: 8px 12px; border-radius: var(--radius-sm); }
+.npt-ai-sua-cau { background: var(--color-green-50); }
+.npt-ai-mau { background: var(--color-gray-50); }
+.npt-ai-sua-cau span, .npt-ai-mau span { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-gray-500); }
+.npt-ai-sua-cau b { font-size: 1.2rem; color: var(--color-green-600); }
+.npt-ai-mau b { font-size: 1.15rem; color: var(--color-gray-800); font-weight: 600; }
+.npt-ai-nghi { border-color: var(--color-gold-400); background: var(--color-gold-50); }
+
+@media (max-width: 640px) {
+  .npt-hoi-o, .npt-vd { font-size: 1.2rem; }
+  .npt-hoi-o .npt-nhap, .npt-vd .npt-nhap { flex-basis: 150px; }
+  .npt-ten.is-vn { font-size: 1.2rem; }
+}
+
+/* Dien thoai: tab diem ngu phap thanh MOT hang truot ngang, khong chiem ca man hinh */
+@media (max-width: 640px) {
+  .npt-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x proximity; padding-bottom: 4px; margin-left: -4px; margin-right: -4px; padding-left: 4px; padding-right: 4px; }
+  .npt-tabs::-webkit-scrollbar { display: none; }
+  .npt-tabbtn { flex: 0 0 auto; scroll-snap-align: start; min-height: 48px; }
+  .npt-tab-han { font-size: 1.2rem; }
+  .npt-tab-han.is-vn { font-size: 0.88rem; }
 }

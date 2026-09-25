@@ -9847,7 +9847,11 @@
   }
 
   // Ngu phap chia theo diem — trinh ve dung chung + du lieu tung cap
-  var NPT_FILES = { hsk2: '/js/ngu-phap-tab-hsk2.js' };
+  var NPT_FILES = {
+    hsk1: '/js/ngu-phap-tab-hsk1.js', hsk1v3: '/js/ngu-phap-tab-hsk1v3.js',
+    hsk2: '/js/ngu-phap-tab-hsk2.js', hsk2v3: '/js/ngu-phap-tab-hsk2v3.js',
+    hsk3: '/js/ngu-phap-tab-hsk3.js', hsk4: '/js/ngu-phap-tab-hsk4.js'
+  };
   var nptState = {};
   function napScript(src) {
     return new Promise(function (resolve) {

@@ -5400,51 +5400,84 @@ body.idiom-open { overflow: hidden; }
   color: var(--color-gray-700);
 }
 
+/* ══ Bài tập sách bài tập ═════════════════════════════════════════════
+   Hai dạng bài này trước xếp thành hàng ngang chạy suốt bề ngang màn
+   hình nên chữ bé, mắt phải quét ngang rất xa mới hết một câu. Nay mỗi
+   câu là một thẻ trong lưới: chữ to, ô bấm rộng tay, và số thứ tự để
+   thầy/cô gọi "câu 5" là cả lớp nhìn đúng chỗ.                        */
+
 .wb-drill-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-bottom: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 15vw, 210px), 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
+/* Chu va o dien nam cung mot hang; dap an duoc day xuong hang duoi bang
+   flex-basis 100%. Khong boc them the quanh <input> — o dien phai la con
+   truc tiep cua chip thi mau dung/sai moi an dung.                        */
 .wb-drill-chip {
-  display: inline-flex;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 4px 8px;
+  min-height: 104px;
+  padding: var(--space-5) var(--space-3) var(--space-3);
   background: var(--color-white);
   border: 1.5px solid var(--color-gray-200);
-  border-radius: var(--radius-md);
-  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(43, 43, 43, 0.05);
   font-family: var(--font-hanzi);
-  font-size: 0.95rem;
-  color: var(--color-gray-700);
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--color-gray-800);
+}
+
+.wb-drill-no,
+.wb-tonemc-no {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-gray-400);
+  font-variant-numeric: tabular-nums;
 }
 
 .wb-drill-input {
-  width: 44px;
-  border: 1.5px solid var(--color-gray-200);
+  width: 3.2em;
+  border: 2px solid var(--color-gray-200);
   border-radius: var(--radius-sm);
-  padding: 4px 6px;
+  padding: 6px 4px;
   font-family: var(--font-hanzi);
-  font-size: 0.95rem;
+  font-size: 1em;
+  font-weight: 600;
   text-align: center;
   background: var(--color-gray-50);
+  color: var(--color-gray-800);
 }
 
 .wb-drill-input:focus {
   outline: none;
   border-color: var(--color-green-600);
   background: var(--color-white);
+  box-shadow: 0 0 0 3px var(--color-green-50);
 }
 
 .wb-drill-answer {
+  flex-basis: 100%;
+  text-align: center;
+  font-family: var(--font-hanzi);
+  font-size: 1.05rem;
   color: var(--color-green-600);
   font-weight: 700;
   display: none;
 }
 
 .wb-block.is-revealed .wb-drill-answer {
-  display: inline;
+  display: block;
 }
 
 .wb-reveal-btn {
@@ -5452,9 +5485,10 @@ body.idiom-open { overflow: hidden; }
   color: var(--color-white);
   border: none;
   border-radius: var(--radius-pill);
-  padding: var(--space-2) var(--space-5);
-  font-weight: 600;
-  font-size: 0.88rem;
+  padding: var(--space-3) var(--space-5);
+  font-weight: 700;
+  font-size: 1rem;
+  min-height: 46px;
   cursor: pointer;
 }
 
@@ -5463,27 +5497,30 @@ body.idiom-open { overflow: hidden; }
 }
 
 .wb-tonemc-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(260px, 26vw, 340px), 1fr));
   gap: var(--space-3);
 }
 
 .wb-tonemc-item {
+  position: relative;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--space-3);
   background: var(--color-white);
-  border: 1px solid var(--color-gray-100);
-  border-radius: var(--radius-md);
-  padding: var(--space-2) var(--space-3);
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  box-shadow: 0 1px 3px rgba(43, 43, 43, 0.05);
 }
 
 .wb-tonemc-prompt {
   font-family: var(--font-hanzi);
-  font-size: 0.95rem;
-  color: var(--color-gray-700);
-  min-width: 70px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-gray-800);
+  text-align: center;
 }
 
 .wb-tonemc-blank {
@@ -5492,25 +5529,30 @@ body.idiom-open { overflow: hidden; }
   font-weight: 700;
 }
 
+/* Bon dap an chia deu thanh mot hang — bam bang ngon tay cung trung */
 .wb-tonemc-opts {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   gap: var(--space-2);
 }
 
 .wb-tonemc-opt {
   background: var(--color-gray-50);
-  border: 1.5px solid var(--color-gray-200);
-  border-radius: var(--radius-sm);
-  padding: 6px 14px;
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: 10px 6px;
+  min-height: 48px;
   font-family: var(--font-hanzi);
-  font-size: 0.95rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--color-gray-800);
   cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
 }
 
 .wb-tonemc-opt:hover:not(:disabled) {
   border-color: var(--color-green-600);
+  background: var(--color-white);
 }
 
 .wb-tonemc-opt.is-correct {
@@ -5524,6 +5566,13 @@ body.idiom-open { overflow: hidden; }
   border-color: var(--color-red-600);
   background: var(--color-red-50);
   color: var(--color-red-600);
+}
+
+@media (max-width: 640px) {
+  .wb-drill-chips { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); }
+  .wb-drill-chip { font-size: 1.3rem; }
+  .wb-tonemc-list { grid-template-columns: 1fr; }
+  .wb-tonemc-prompt { font-size: 1.35rem; }
 }
 
 .wb-dlgpic-grid {

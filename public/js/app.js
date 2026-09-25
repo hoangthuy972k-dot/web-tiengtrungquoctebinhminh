@@ -2574,7 +2574,9 @@
       '<p class="wb-note">Nghe audio phía trên, điền trực tiếp vào ô trống rồi bấm "Xem đáp án" để đối chiếu.</p>' +
       '<div class="wb-drill-chips">' +
       block.items.map(function (it, ii) {
-        return '<span class="wb-drill-chip">' + it.before +
+        return '<span class="wb-drill-chip">' +
+          '<span class="wb-drill-no">' + (ii + 1) + '</span>' +
+          it.before +
           '<input type="text" class="wb-drill-input" maxlength="6" autocomplete="off" spellcheck="false" data-wbq="' + wbQid(si, bi, ii) + '" data-wbans="' + String(it.answer).replace(/"/g, '&quot;') + '">' +
           it.after +
           '<span class="wb-drill-answer">→ ' + it.answer + '</span></span>';
@@ -2592,6 +2594,7 @@
       block.items.map(function (it, i) {
         var blankHtml = block.noBlank ? '' : '<span class="wb-tonemc-blank">？</span>';
         return '<div class="wb-tonemc-item" data-wbq="' + wbQid(si, bi, i) + '">' +
+          '<span class="wb-tonemc-no">' + (i + 1) + '</span>' +
           '<span class="wb-tonemc-prompt' + (block.noBlank ? ' hanzi' : '') + '">' + it.before + blankHtml + it.after + '</span>' +
           '<div class="wb-tonemc-opts">' +
           it.options.map(function (opt) {

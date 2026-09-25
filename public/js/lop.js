@@ -1724,7 +1724,7 @@
   var paChon = {};          // so bai -> 1
   var paKieu = 'doc';
   var paSoTu = 3;             // moi luot kiem may tu
-  var paNguon = 'tu2';        // mac dinh kiem tra tu HAI AM TIET
+  var paNguon = 'ghep';        // mac dinh kiem tra tu HAI AM TIET
   var paBai = (typeof PHAT_AM_BAI !== 'undefined') ? PHAT_AM_BAI : [];
 
   function paLuu() {
@@ -1737,7 +1737,9 @@
       var d = JSON.parse(localStorage.getItem('hyv_pa') || '{}');
       (d.bai || []).forEach(function (s) { paChon[s] = 1; });
       if (d.kieu) paKieu = d.kieu;
-      if (d.nguon) paNguon = d.nguon;
+      // Ten nguon da doi (tu1/tu2 -> ghep/don/tu) nen phai kiem lai,
+      // khong thi ban cu luu trong may thay co se ra 0 muc.
+      if (['ghep', 'don', 'tu', 'tron'].indexOf(d.nguon) >= 0) paNguon = d.nguon;
       if (d.soTu) paSoTu = Math.max(1, Math.min(6, d.soTu));
     } catch (e) { /* bo qua */ }
   }
@@ -1767,7 +1769,7 @@
     if (!ds.length) { p.textContent = 'Chưa chọn bài nào — bấm vào số bài bên dưới.'; p.classList.remove('on'); }
     else {
       p.innerHTML = '✓ Đang chọn: <b>' + ds.map(function (b) { return 'Bài ' + b.so; }).join(' · ') +
-        '</b> — ' + paKho().length + (paNguon === 'tu1' ? ' âm tiết' : ' từ');
+        '</b> — ' + paKho().length + (paNguon === 'don' ? ' âm tiết' : ' mục');
       p.classList.add('on');
     }
     var nut = $('#lopPaStart');
@@ -1780,13 +1782,14 @@
     paBai.forEach(function (b) {
       if (!paChon[b.so]) return;
       var nguon = [];
-      if (paNguon === 'tu1' || paNguon === 'tron') nguon = nguon.concat(b.tu || []);
-      if (paNguon === 'tu2' || paNguon === 'tron') nguon = nguon.concat(b.tu2 || []);
+      if (paNguon === 'ghep' || paNguon === 'tron') nguon = nguon.concat(b.ghep || []);
+      if (paNguon === 'don' || paNguon === 'tron') nguon = nguon.concat(b.don || []);
+      if (paNguon === 'tu' || paNguon === 'tron') nguon = nguon.concat(b.tu || []);
       nguon.forEach(function (t) {
-        var k = t.zh + '|' + t.py;
+        var k = (t.zh || '') + '|' + t.py;
         if (thay[k]) return;
         thay[k] = 1;
-        ra.push({ zh: t.zh, py: t.py, vn: t.vn, bai: b.so });
+        ra.push({ zh: t.zh || '', py: t.py, vn: t.vn || '', anh: t.anh || '', bai: b.so });
       });
     });
     return ra;
@@ -1855,9 +1858,12 @@
             '<b>' + 'ABCD'[j] + '</b>' + esc(x) + '</span>';
         }).join('') + '</div>';
       } else {
-        o = '<div class="lop-pa-py' + (hienPy ? '' : ' an') + '">' +
+        // Tranh cat tu chinh slide — co thi hien, khong co thi thoi.
+        o = (w.anh ? '<img class="lop-pa-anh" src="' + esc(w.anh) + '" alt="" loading="lazy">' : '') +
+            '<div class="lop-pa-py' + (hienPy ? '' : ' an') + '">' +
               (hienPy ? esc(w.py) : '· · ·') + '</div>' +
-            '<div class="lop-pa-zh2">' + (d.hien ? esc(w.zh) + ' · ' + esc(w.vn) : '&nbsp;') + '</div>';
+            '<div class="lop-pa-zh2">' +
+              (d.hien ? esc([w.zh, w.vn].filter(Boolean).join(' · ')) || '&nbsp;' : '&nbsp;') + '</div>';
       }
       return '<div class="lop-pa-the' + (k === true ? ' dung' : k === false ? ' sai' : '') + '">' +
         '<span class="lop-pa-stt">' + (i + 1) + '</span>' + o +

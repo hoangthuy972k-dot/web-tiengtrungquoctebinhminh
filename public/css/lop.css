@@ -1643,3 +1643,18 @@
   .lop-pa-py { font-size: clamp(1.4rem, 7vw, 2rem); }
   .lop-pa-stt { position: static; }
 }
+
+/* Tranh minh hoạ cắt từ slide bài giảng */
+.lop-pa-anh {
+  display: block;
+  width: 100%;
+  max-width: clamp(110px, 15vw, 190px);
+  height: clamp(74px, 11vh, 132px);
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+}
+.lop-pa-the:has(.lop-pa-anh) .lop-pa-py { font-size: clamp(1.3rem, 3.6vw, 2.5rem); }
+@media (max-width: 720px) {
+  .lop-pa-anh { max-width: 92px; height: 64px; }
+}

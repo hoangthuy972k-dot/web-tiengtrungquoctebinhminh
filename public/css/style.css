@@ -1202,13 +1202,13 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
 /* Nut chuyen "Tuan nay / Tu truoc toi nay" cua bang sao */
 .star-period { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0 0 12px; }
 .sp-btn {
-  min-height: 40px;
-  padding: 0 14px;
+  min-height: 44px;
+  padding: 0 16px;
   border: 1px solid var(--color-gray-200);
   border-radius: var(--radius-pill);
   background: #fff;
   font: inherit;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-gray-600);
   cursor: pointer;
@@ -3323,7 +3323,7 @@ body.idiom-open { overflow: hidden; }
 
 .vp-quiz-counter {
   color: var(--color-gray-500);
-  font-size: 0.88rem;
+  font-size: 1rem;
   margin-bottom: var(--space-5);
 }
 
@@ -3369,9 +3369,10 @@ body.idiom-open { overflow: hidden; }
   color: var(--color-red-600);
   font-weight: 700;
   padding: var(--space-3) var(--space-5);
+  min-height: 48px;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -3396,7 +3397,8 @@ body.idiom-open { overflow: hidden; }
   border: 1.5px solid var(--color-gray-200);
   background: var(--color-white);
   font-family: var(--font-hanzi);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
   font-weight: 600;
   cursor: pointer;
   transition: border-color 0.15s var(--ease-standard), background-color 0.15s var(--ease-standard);
@@ -3644,11 +3646,11 @@ body.idiom-open { overflow: hidden; }
 
 .fc-btn {
   flex: 1;
-  min-height: 52px;
+  min-height: 56px;
   border: none;
   border-radius: var(--radius-md);
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   cursor: pointer;
   color: var(--color-white);
 }
@@ -4074,9 +4076,13 @@ body.idiom-open { overflow: hidden; }
   margin-top: var(--space-4);
 }
 
+/* Cau hoi va dap an cua cac man luyen dung chung cho moi cap do — truoc
+   deu quanh 1rem, doc tren may chieu hoac tren dien thoai deu phai nheo
+   mat, nen nang len va noi rong o bam.                                  */
 .lp-question-text {
   font-family: var(--font-hanzi);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
   font-weight: 700;
   margin-bottom: var(--space-3);
 }
@@ -4095,11 +4101,12 @@ body.idiom-open { overflow: hidden; }
 
 .lp-opt-btn {
   padding: var(--space-3) var(--space-4);
+  min-height: 56px;
   border-radius: var(--radius-md);
   border: 1.5px solid var(--color-gray-200);
   background: var(--color-white);
   font-family: var(--font-hanzi);
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   text-align: left;
@@ -4178,15 +4185,21 @@ body.idiom-open { overflow: hidden; }
   margin-bottom: var(--space-3);
 }
 
+/* Man Luyen nghe sach bai tap dung chung cho HSK 2 bo cu · HSK 3 · HSK 4.
+   Chu truoc hoi nho so voi luong chu Han phai doc khi vua nghe vua dien,
+   nen phong to toan bo va noi rong cac o bam.                           */
 .lp-dict-num {
-  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-red-600);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .lp-dict-result {
-  font-size: 0.78rem;
+  font-size: 0.95rem;
   font-weight: 700;
   margin-left: 6px;
 }
@@ -4206,7 +4219,7 @@ body.idiom-open { overflow: hidden; }
 
 .lp-judge-stmt {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   color: var(--color-gray-800);
   flex: 1 1 200px;
 }
@@ -4214,11 +4227,12 @@ body.idiom-open { overflow: hidden; }
 .lp-judge-btns { display: inline-flex; gap: var(--space-2); }
 
 .lp-judge-btn {
-  border: 1px solid var(--color-gray-300);
+  border: 1.5px solid var(--color-gray-300);
   background: var(--color-white);
   border-radius: var(--radius-md);
-  padding: 4px 12px;
-  font-size: 0.85rem;
+  padding: 8px 18px;
+  min-height: 44px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -4228,14 +4242,16 @@ body.idiom-open { overflow: hidden; }
 .lp-judge.done .lp-judge-btn.chosen { opacity: 1; }
 .lp-judge.is-correct .lp-judge-btn.chosen { border-color: var(--color-green-600); background: var(--color-green-50); color: var(--color-green-600); }
 .lp-judge.is-wrong .lp-judge-btn.chosen { border-color: var(--color-red-600); background: var(--color-red-50); color: var(--color-red-600); }
-.lp-judge-result { font-size: 0.8rem; font-weight: 700; }
+.lp-judge-result { font-size: 0.95rem; font-weight: 700; }
 .lp-judge.is-correct .lp-judge-result { color: var(--color-green-600); }
 .lp-judge.is-wrong .lp-judge-result { color: var(--color-red-600); }
 
 .lp-mc-q {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1.4;
   color: var(--color-gray-800);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .lp-dict-result.is-correct { color: var(--color-green-600); }
@@ -4257,9 +4273,10 @@ body.idiom-open { overflow: hidden; }
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
-  font-size: 1.05rem;
-  margin-bottom: var(--space-2);
+  gap: 8px;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-3);
 }
 
 .lp-dict-speaker {
@@ -4268,14 +4285,15 @@ body.idiom-open { overflow: hidden; }
 }
 
 .lp-dict-input {
-  min-width: 110px;
-  flex: 1 1 110px;
+  min-width: 150px;
+  flex: 1 1 150px;
+  min-height: 44px;
   border: none;
-  border-bottom: 2px solid var(--color-gold-400);
+  border-bottom: 2.5px solid var(--color-gold-400);
   background: var(--color-gold-50);
-  padding: 4px 8px;
+  padding: 6px 10px;
   font-family: var(--font-hanzi);
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-align: center;
 }
 
@@ -4291,7 +4309,8 @@ body.idiom-open { overflow: hidden; }
   background: var(--color-gray-100);
   color: var(--color-gray-700);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  min-height: 44px;
   cursor: pointer;
   margin-top: var(--space-1);
 }
@@ -4311,19 +4330,17 @@ body.idiom-open { overflow: hidden; }
   border-top: 1px dashed var(--color-gray-200);
 }
 
-.lp-dict-answer-line {
-  margin-bottom: var(--space-2);
-}
+.lp-dict-answer-line { margin-bottom: var(--space-3); font-size: 1.2rem; line-height: 1.5; }
 
 .lp-dict-answer-py {
   color: var(--color-gold-500);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .lp-dict-answer-vn {
   color: var(--color-gray-600);
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .lp-mc-opts {
@@ -4347,7 +4364,8 @@ body.idiom-open { overflow: hidden; }
   background: var(--color-gray-100);
   color: var(--color-gray-700);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  min-height: 44px;
   cursor: pointer;
   margin-top: var(--space-1);
 }
@@ -4366,9 +4384,10 @@ body.idiom-open { overflow: hidden; }
   border: 1.5px solid var(--color-gray-200);
   border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-4);
+  min-height: 56px;
   background: var(--color-white);
   font-family: var(--font-hanzi);
-  font-size: 1rem;
+  font-size: 1.25rem;
   cursor: pointer;
 }
 
@@ -4391,7 +4410,8 @@ body.idiom-open { overflow: hidden; }
 .lp-mc-explain {
   margin-top: var(--space-3);
   color: var(--color-gray-600);
-  font-size: 0.85rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* ---------- Speaking practice (Luyen noi) ---------- */
@@ -4409,7 +4429,8 @@ body.idiom-open { overflow: hidden; }
 
 .sp-q-zh {
   font-family: var(--font-hanzi);
-  font-size: 1.15rem;
+  font-size: 1.45rem;
+  line-height: 1.45;
   font-weight: 700;
   color: var(--color-gray-800);
   margin-top: var(--space-3);
@@ -4417,8 +4438,9 @@ body.idiom-open { overflow: hidden; }
 
 .sp-q-vn {
   color: var(--color-gray-600);
-  font-size: 0.9rem;
-  margin-top: 4px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-top: 6px;
 }
 
 .sp-hint {
@@ -4428,7 +4450,8 @@ body.idiom-open { overflow: hidden; }
   border-radius: var(--radius-md);
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-hanzi);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
   font-weight: 600;
   margin-bottom: var(--space-3);
 }
@@ -4439,10 +4462,11 @@ body.idiom-open { overflow: hidden; }
   border: none;
   color: var(--color-red-600);
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 1rem;
   cursor: pointer;
-  padding: 0;
-  margin-bottom: var(--space-3);
+  padding: 6px 0;
+  min-height: 40px;
+  margin-bottom: var(--space-2);
 }
 
 .sp-sample {
@@ -4455,15 +4479,17 @@ body.idiom-open { overflow: hidden; }
 
 .sp-sample-zh {
   font-family: var(--font-hanzi);
-  font-size: 1.05rem;
+  font-size: 1.35rem;
+  line-height: 1.5;
   font-weight: 700;
   color: var(--color-gray-800);
 }
 
 .sp-sample-vn {
   color: var(--color-gray-600);
-  font-size: 0.88rem;
-  margin-top: 2px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-top: 4px;
 }
 
 .sp-note {
@@ -4490,10 +4516,11 @@ body.idiom-open { overflow: hidden; }
 
 .sp-rec-btn {
   padding: var(--space-2) var(--space-4);
+  min-height: 48px;
   border-radius: var(--radius-md);
   border: none;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -4643,16 +4670,17 @@ body.idiom-open { overflow: hidden; }
   background: var(--color-red-50);
   color: var(--color-red-600);
   border-radius: var(--radius-md);
-  padding: var(--space-1) var(--space-3);
+  padding: 6px var(--space-3);
   font-family: var(--font-hanzi);
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
 .sp-drill-sample {
   font-family: var(--font-hanzi);
   color: var(--color-gray-700);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
   margin-top: var(--space-2);
 }
 
@@ -5093,7 +5121,8 @@ body.idiom-open { overflow: hidden; }
   padding: var(--space-3) var(--space-4);
   margin-bottom: var(--space-2);
   font-family: var(--font-hanzi);
-  font-size: 1rem;
+  font-size: 1.2rem;
+  min-height: 52px;
   font-weight: 600;
   text-align: left;
   cursor: pointer;
@@ -7360,7 +7389,7 @@ body.pinyin-hidden .py-inline {
 .qr-card.is-correct-card { border-color: var(--color-green-500); }
 .qr-card.is-wrong-card { border-color: var(--color-red-500); }
 .qr-kind { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-gray-500, #8a7d74); margin-bottom: 6px; }
-.qr-prompt { margin: 0 0 var(--space-3); font-size: 1.02rem; font-weight: 600; color: var(--color-gray-800); }
+.qr-prompt { margin: 0 0 var(--space-3); font-size: 1.2rem; line-height: 1.45; font-weight: 600; color: var(--color-gray-800); }
 .qr-hint { font-weight: 500; color: var(--color-gray-500, #8a7d74); }
 .qr-big { font-size: 2.6rem; font-weight: 800; text-align: center; color: var(--color-gray-900); line-height: 1.2; }
 .qr-big-py { text-align: center; color: var(--color-gray-500, #8a7d74); margin-bottom: var(--space-3); }
@@ -7369,9 +7398,9 @@ body.pinyin-hidden .py-inline {
 .qr-blank { display: inline-block; min-width: 3em; margin: 0 4px; border-bottom: 3px solid var(--color-red-600); color: transparent; }
 .qr-wrong-sentence { background: var(--color-red-50); color: var(--color-red-700); text-decoration: line-through; text-decoration-thickness: 2px; }
 .qr-quote .py-inline { display: block; margin-top: 2px; font-size: 0.85rem; color: var(--color-gray-500, #8a7d74); }
-.qr-transcript { margin: 0 0 var(--space-3); padding: 12px 16px; border-radius: var(--radius-md); background: var(--color-gray-50); display: grid; gap: 4px; font-size: 1.02rem; }
+.qr-transcript { margin: 0 0 var(--space-3); padding: 12px 16px; border-radius: var(--radius-md); background: var(--color-gray-50); display: grid; gap: 4px; font-size: 1.2rem; line-height: 1.5; }
 .qr-transcript b { color: var(--color-red-600); }
-.qr-question { margin: 0 0 var(--space-3); font-size: 1.15rem; font-weight: 700; }
+.qr-question { margin: 0 0 var(--space-3); font-size: 1.35rem; line-height: 1.4; font-weight: 700; }
 .qr-listen { display: block; margin: 0 auto var(--space-4); min-height: 48px; padding: 0 24px; border: none; border-radius: var(--radius-pill); background: var(--color-blue-50); color: var(--color-blue-600); font: inherit; font-size: 1.05rem; font-weight: 800; cursor: pointer; }
 
 .qr-opts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
@@ -7379,8 +7408,8 @@ body.pinyin-hidden .py-inline {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 60px;
-  padding: 10px 14px;
+  min-height: 64px;
+  padding: 12px 16px;
   border: 1.5px solid var(--color-gray-200);
   border-radius: var(--radius-md);
   background: var(--color-white);
@@ -7393,7 +7422,7 @@ body.pinyin-hidden .py-inline {
 .qr-opt:hover:not(:disabled) { border-color: var(--color-red-500); transform: translateY(-1px); }
 .qr-opt:focus-visible, .qr-token:focus-visible, .qr-next:focus-visible, .qr-start:focus-visible, .qr-check:focus-visible { outline: 3px solid var(--color-gold-400); outline-offset: 2px; }
 .qr-opt-key { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-gray-100); font-size: 0.8rem; font-weight: 800; color: var(--color-gray-600); }
-.qr-opt-text { font-size: 1rem; line-height: 1.4; }
+.qr-opt-text { font-size: 1.2rem; line-height: 1.4; }
 .qr-opts.is-zh .qr-opt-text { font-size: 1.2rem; }
 .qr-opt.is-right { border-color: var(--color-green-600); background: var(--color-green-50); }
 .qr-opt.is-right .qr-opt-key { background: var(--color-green-600); color: #fff; }

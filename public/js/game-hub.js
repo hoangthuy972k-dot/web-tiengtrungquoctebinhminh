@@ -53,73 +53,6 @@
       return (D.lessons && D.lessons[l.id] || []).length;
     });
   }
-  /* ---------------- nap ngu phap cua mot cap ----------------
-     Moi cap co hai file: cau dien tu (GRAMMAR_EXTRA, rieng HSK2 bo cu
-     dung HSK2_GRAMMAR_EXERCISES) va loi hay mac (GRAMMAR_ERRORS).
-     Cap nao thieu file thi bo qua — tro choi van chay bang tu vung.  */
-  var FILE_NP = {
-    hsk1:   ['/js/grammar-hsk1.js', '/js/grammar-errors-hsk1.js'],
-    hsk1v3: ['/js/grammar-hsk1v3.js', '/js/grammar-errors-hsk1v3.js'],
-    hsk2:   ['/js/hsk2-grammar-exercises.js', '/js/grammar-errors-hsk2.js'],
-    hsk2v3: ['/js/grammar-hsk2v3.js', '/js/grammar-errors-hsk2v3.js'],
-    hsk3:   ['/js/grammar-hsk3.js', '/js/grammar-errors-hsk3.js'],
-    hsk4:   ['/js/grammar-hsk4.js', '/js/grammar-errors-hsk4.js'],
-    yct:    ['/js/grammar-yct.js', '/js/grammar-errors-yct.js']
-  };
-  var daNap = {};
-  function napNguPhap(level) {
-    var ds = FILE_NP[level];
-    if (!ds || daNap[level]) return Promise.resolve();
-    daNap[level] = 1;
-    return Promise.all(ds.map(function (src) {
-      return new Promise(function (xong) {
-        var s = document.createElement('script');
-        s.src = src;
-        s.onload = xong;
-        s.onerror = function () { xong(); };   // thieu file thi bo qua
-        document.head.appendChild(s);
-      });
-    }));
-  }
-
-  /* Gom cau ngu phap cua dung nhung bai da chon, doi ve dang chung
-     cho bo sinh cau hoi trong arcade.js. */
-  function nguPhapDaChon() {
-    var urls = {};
-    state.lessons.forEach(function (l) { if (state.picked[l.url]) urls[l.url] = 1; });
-    var ra = [];
-    [window.GRAMMAR_EXTRA, window.HSK2_GRAMMAR_EXERCISES].forEach(function (nguon) {
-      if (!nguon) return;
-      Object.keys(nguon).forEach(function (u) {
-        if (!urls[u]) return;
-        (nguon[u] || []).forEach(function (nhom) {
-          (nhom.items || []).forEach(function (q) {
-            if (q.type && q.type !== 'mc') return;          // bo cau dung/sai, sap xep
-            if (!q.options || q.options.length < 2) return;
-            if (typeof q.answer !== 'number') return;
-            ra.push({
-              kieu: 'dien', point: nhom.point || '',
-              context: q.context || '', pre: q.pre || '', post: q.post || '',
-              options: q.options, answer: q.answer, explanation: q.explanation || ''
-            });
-          });
-        });
-      });
-    });
-    if (window.GRAMMAR_ERRORS) {
-      Object.keys(window.GRAMMAR_ERRORS).forEach(function (u) {
-        if (!urls[u]) return;
-        (window.GRAMMAR_ERRORS[u] || []).forEach(function (e) {
-          if (!e.wrong || !e.right) return;
-          // Chi lay loi la CAU tieng Trung, bo nhung ghi chu bang tieng Viet.
-          if (!/[一-鿿]/.test(e.wrong) || !/[一-鿿]/.test(e.right)) return;
-          ra.push({ kieu: 'dungsai', point: e.point || '', wrong: e.wrong, right: e.right, why: e.why || '' });
-        });
-      });
-    }
-    return ra;
-  }
-
   function baiCua(level) {
     var D = duLieu();
     var ds = (D.lessons && D.lessons[level]) || [];
@@ -281,9 +214,7 @@
     $('#ghStage').innerHTML = '<p class="gh-dangtai">Đang lấy từ vựng…</p>';
     document.body.classList.toggle('gh-dang-lop', state.cheDo === 'lop');
 
-    // Tro trac nghiem con can them cau ngu phap cua bai, nen nap song song.
-    Promise.all([napDaChon(), napNguPhap(state.level)]).then(function (ra) {
-      var vocab = ra[0];
+    napDaChon().then(function (vocab) {
       if (!vocab.length) {
         $('#ghStage').innerHTML = '<p class="ar-thieu">Những bài vừa chọn chưa có dữ liệu từ vựng. Chọn bài khác giúp mình nhé.</p>';
         return;
@@ -291,7 +222,6 @@
       if (state.phien) state.phien.dung();
       state.phien = window.Arcade.mo($('#ghStage'), key, {
         vocab: vocab,
-        nguPhap: nguPhapDaChon(),
         cheDo: state.cheDo
       });
     });

@@ -265,6 +265,7 @@
     canToiThieu: 4,
     mo: function (hop, o) {
       var sk = dungKhung(hop, bubble, o);
+      sk.san.classList.add('ar-bong-nen');
       var vocab = o.vocab;
       var diem = 0, dung = 0, tong = 0, chuoi = 0, chuoiMax = 0;
       var bong = [], dich = null, raf = 0, dongHo = 0, conLai = o.cheDo === 'lop' ? 0 : 75;
@@ -1039,7 +1040,16 @@
           nut.classList.add('is-dung');
           keuDung();
           var m = troi[dung - 1];
-          if (m) { m.classList.add('is-ban'); }
+          if (m) {
+            // Mui ten bay ngang troi truoc, mat troi rung theo sau.
+            var t = tao('div', 'ar-ten');
+            t.style.top = m.style.top;
+            sk.san.appendChild(t);
+            hen.push(setTimeout(function () {
+              if (t.parentNode) t.parentNode.removeChild(t);
+            }, 700));
+            hen.push(setTimeout(function () { m.classList.add('is-ban'); }, 260));
+          }
         } else {
           chuoi = 0;
           nut.classList.add('is-sai');

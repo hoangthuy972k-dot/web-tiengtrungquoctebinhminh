@@ -1,0 +1,78 @@
+{
+ "zh": "支教行动",
+ "py": "Zhījiào xíngdòng",
+ "vn": "Hoạt động dạy học tình nguyện",
+ "topic": "Unit 8 体会教育 · Dạy học tình nguyện &amp; trách nhiệm xây dựng quê hương",
+ "vocabCount": 40,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "行动",
+   "explain": "行动 có ba cách dùng: (1) Động từ — đi lại, cử động thân thể (行动不便, 单独行动). (2) Động từ — tiến hành hoạt động vì một mục đích nào đó (提前行动, 开始行动). (3) Danh từ — hoạt động, hành vi (支教行动, 采取行动). Khi là động từ, 行动 KHÔNG mang tân ngữ.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">行动</strong>不便 / 单独<strong style=\"color:var(--sky-d)\">行动</strong> (đi lại)　|　提前 / 开始 / 迅速 + <strong style=\"color:var(--sky-d)\">行动</strong> (hành động vì mục đích)　|　采取 / 参加 + ……<strong style=\"color:var(--sky-d)\">行动</strong> (danh từ)",
+   "examples": [
+    {
+     "zh": "他运动时受伤了，行动不便。",
+     "py": "Tā yùndòng shí shòushāng le, xíngdòng búbiàn.",
+     "vn": "Anh ấy bị thương khi chơi thể thao, đi lại bất tiện."
+    },
+    {
+     "zh": "做什么事他都喜欢提前行动，早做准备。",
+     "py": "Zuò shénme shì tā dōu xǐhuan tíqián xíngdòng, zǎo zuò zhǔnbèi.",
+     "vn": "Làm việc gì anh ấy cũng thích hành động trước, chuẩn bị sớm."
+    },
+    {
+     "zh": "我们应该勇敢面对困难，迅速采取行动，主动承担责任。",
+     "py": "Wǒmen yīnggāi yǒnggǎn miànduì kùnnan, xùnsù cǎiqǔ xíngdòng, zhǔdòng chéngdān zérèn.",
+     "vn": "Chúng ta nên dũng cảm đối mặt với khó khăn, nhanh chóng hành động, chủ động gánh vác trách nhiệm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "遇到困难，我们要马上采用行动。",
+     "why": "Cụm cố định là 采取行动; 采用 đi với 方法 / 技术 / 意见.",
+     "right": "遇到困难，我们要马上采取行动。"
+    },
+    {
+     "wrong": "我们明天就行动这个计划。",
+     "why": "行动 là động từ không mang tân ngữ. Muốn nói \"thực hiện kế hoạch\" dùng 按……行动 hoặc 实行.",
+     "right": "我们明天就按这个计划行动。"
+    }
+   ]
+  },
+  {
+   "point": "义务",
+   "explain": "义务 là danh từ, chỉ trách nhiệm phải gánh vác về mặt pháp luật hoặc đạo đức (承担义务, 权利和义务). 义务 còn làm tính từ, nghĩa là không nhận thù lao, làm không công (义务劳动, 义务演出); 义务教育 = giáo dục bắt buộc (nhà nước chi trả).",
+   "rule": "承担 / 尽 + <strong style=\"color:var(--sky-d)\">义务</strong>　|　……是每个人的<strong style=\"color:var(--sky-d)\">义务</strong>　|　<strong style=\"color:var(--sky-d)\">义务</strong> + 劳动 / 演出 / 教育 (tính từ: không lấy thù lao)",
+   "examples": [
+    {
+     "zh": "不过，现在我们明白了，建设家乡，人人有责，我们也要承担这个义务。",
+     "py": "Búguò, xiànzài wǒmen míngbai le, jiànshè jiāxiāng, rénrén yǒu zé, wǒmen yě yào chéngdān zhège yìwù.",
+     "vn": "Nhưng bây giờ chúng em đã hiểu: xây dựng quê hương là trách nhiệm của mọi người, chúng em cũng phải gánh vác nghĩa vụ này."
+    },
+    {
+     "zh": "参与社会事务和促进社会进步是每个人的权利，也是每个人的义务和责任。",
+     "py": "Cānyù shèhuì shìwù hé cùjìn shèhuì jìnbù shì měi ge rén de quánlì, yě shì měi ge rén de yìwù hé zérèn.",
+     "vn": "Tham gia công việc xã hội và thúc đẩy xã hội tiến bộ là quyền lợi, cũng là nghĩa vụ và trách nhiệm của mỗi người."
+    },
+    {
+     "zh": "我们每个学期都要至少参加三次义务劳动。",
+     "py": "Wǒmen měi ge xuéqī dōu yào zhìshǎo cānjiā sān cì yìwù láodòng.",
+     "vn": "Mỗi học kỳ chúng tôi đều phải tham gia ít nhất ba lần lao động công ích."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他义务我们打扫教室。",
+     "why": "义务 không phải động từ. \"Làm không công cho ai\" nói 义务 + 为 + người + V.",
+     "right": "他义务为我们打扫教室。"
+    },
+    {
+     "wrong": "参加这次活动是我们的义务的事。",
+     "why": "义务 đã là danh từ, không thêm 的事 phía sau.",
+     "right": "参加这次活动是我们的义务。"
+    }
+   ]
+  }
+ ]
+}

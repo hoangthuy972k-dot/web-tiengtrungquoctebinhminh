@@ -21387,3 +21387,627 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-22.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-24.html"] = [
+ {
+  "so": "1",
+  "ten": "「行动」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 行动不便 / 单独行动 (đi lại, cử động)",
+   "提前 / 开始 / 迅速 + 行动 (hành động vì một mục đích)",
+   "采取 / 参加 + ……行动 (danh từ: hoạt động, hành vi)"
+  ],
+  "giaiThich": "行动 có ba cách dùng: (1) Động từ — đi lại, cử động thân thể (行动不便, 单独行动). (2) Động từ — tiến hành hoạt động vì một mục đích nào đó (提前行动, 开始行动). (3) Danh từ — hoạt động, hành vi (支教行动, 采取行动). Khi là động từ, 行动 KHÔNG mang tân ngữ.",
+  "viDu": [
+   {
+    "zh": "他运动时受伤了，行动不便。",
+    "py": "Tā yùndòng shí shòushāng le, xíngdòng búbiàn.",
+    "vn": "Anh ấy bị thương khi chơi thể thao, đi lại bất tiện."
+   },
+   {
+    "zh": "做什么事他都喜欢提前行动，早做准备。",
+    "py": "Zuò shénme shì tā dōu xǐhuan tíqián xíngdòng, zǎo zuò zhǔnbèi.",
+    "vn": "Làm việc gì anh ấy cũng thích hành động trước, chuẩn bị sớm."
+   },
+   {
+    "zh": "我们应该勇敢面对困难，迅速采取行动，主动承担责任。",
+    "py": "Wǒmen yīnggāi yǒnggǎn miànduì kùnnan, xùnsù cǎiqǔ xíngdòng, zhǔdòng chéngdān zérèn.",
+    "vn": "Chúng ta nên dũng cảm đối mặt với khó khăn, nhanh chóng hành động, chủ động gánh vác trách nhiệm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "遇到困难，我们要马上采用行动。",
+    "why": "Cụm cố định là 采取行动; 采用 đi với 方法 / 技术 / 意见.",
+    "dung": "遇到困难，我们要马上采取行动。"
+   },
+   {
+    "sai": "我们明天就行动这个计划。",
+    "why": "行动 là động từ không mang tân ngữ. Muốn nói \"thực hiện kế hoạch\" dùng 按……行动 hoặc 实行.",
+    "dung": "我们明天就按这个计划行动。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他运动时受伤了，",
+       "不便。"
+      ],
+      "dap": [
+       [
+        "行动"
+       ]
+      ],
+      "chon": [
+       "行动",
+       "活动",
+       "运动"
+      ],
+      "goiY": "“Anh ấy bị thương, đi lại bất tiện.” — câu của sách",
+      "giai": "行动不便 = đi lại bất tiện (行动 = cử động thân thể)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "做什么事他都喜欢提前",
+       "，早做准备。"
+      ],
+      "dap": [
+       [
+        "行动"
+       ]
+      ],
+      "chon": [
+       "行动",
+       "动作",
+       "运动"
+      ],
+      "goiY": "“Hành động trước, chuẩn bị sớm.” — câu của sách",
+      "giai": "提前 + 行动: tiến hành hoạt động vì một mục đích."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们应该勇敢面对困难，迅速采取",
+       "，主动承担责任。"
+      ],
+      "dap": [
+       [
+        "行动"
+       ]
+      ],
+      "chon": [
+       "行动",
+       "活动",
+       "动作"
+      ],
+      "goiY": "Cụm cố định với 采取.",
+      "giai": "采取行动 — 行动 làm danh từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "郝老师到云南参加支教",
+       "。"
+      ],
+      "dap": [
+       [
+        "行动"
+       ]
+      ],
+      "chon": [
+       "行动",
+       "运动",
+       "动作"
+      ],
+      "goiY": "Tên hoạt động trong bài khoá.",
+      "giai": "支教行动 — 行动 là danh từ: hoạt động."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个舞蹈的",
+       "很难，我学了很久。"
+      ],
+      "dap": [
+       [
+        "动作"
+       ]
+      ],
+      "chon": [
+       "动作",
+       "行动",
+       "活动"
+      ],
+      "goiY": "Điệu múa có những “động tác” khó.",
+      "giai": "Động tác cụ thể của cơ thể khi múa → 动作, không dùng 行动."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "计划都做好了，我们明天就开始",
+       "吧！"
+      ],
+      "dap": [
+       [
+        "行动"
+       ]
+      ],
+      "chon": [
+       "行动",
+       "动作",
+       "运动"
+      ],
+      "goiY": "“Kế hoạch xong rồi, mai bắt đầu hành động thôi!”",
+      "giai": "开始 + 行动 (không mang tân ngữ)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "应该",
+       "迅速",
+       "采取",
+       "行动",
+       "。"
+      ],
+      "dap": [
+       "我们应该迅速采取行动。"
+      ],
+      "goiY": "Chúng ta nên nhanh chóng hành động.",
+      "giai": "应该 → 迅速 → 采取行动."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "运动时",
+       "受伤了",
+       "，",
+       "行动",
+       "不便",
+       "。"
+      ],
+      "dap": [
+       "他运动时受伤了，行动不便。"
+      ],
+      "goiY": "Anh ấy bị thương khi chơi thể thao, đi lại bất tiện.",
+      "giai": "Vế sau: 行动 + 不便."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "郝老师",
+       "到云南",
+       "参加",
+       "支教",
+       "行动",
+       "。"
+      ],
+      "dap": [
+       "郝老师到云南参加支教行动。"
+      ],
+      "goiY": "Cô Hách đến Vân Nam tham gia hoạt động dạy học tình nguyện.",
+      "giai": "参加 + 支教行动 (danh từ)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "遇到问题，我们要马上采用行动。",
+      "dung": false,
+      "sua": "遇到问题，我们要马上采取行动。",
+      "giai": "Cụm cố định là 采取行动, không phải 采用."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "有的人总是怀疑计划不够准确而迟迟不能开始行动。",
+      "dung": true,
+      "giai": "Đúng — câu của sách: 开始行动."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们明天就行动这个计划。",
+      "dung": false,
+      "sua": "我们明天就按这个计划行动。",
+      "giai": "行动 không mang tân ngữ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Gặp khó khăn, chúng ta nên nhanh chóng hành động.",
+      "dap": [
+       "遇到困难，我们应该迅速采取行动。",
+       "遇到困难，我们应该马上采取行动。",
+       "遇到困难，我们应该迅速行动。"
+      ],
+      "py": "Yùdào kùnnan, wǒmen yīnggāi xùnsù cǎiqǔ xíngdòng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 行动.",
+      "giai": "采取行动 hoặc 迅速行动."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bà tôi tuổi cao rồi, đi lại bất tiện.",
+      "dap": [
+       "奶奶年纪大了，行动不便。",
+       "奶奶年纪大了，行动不方便。",
+       "我奶奶年纪大了，行动不便。"
+      ],
+      "py": "Nǎinai niánjì dà le, xíngdòng búbiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 行动.",
+      "giai": "行动不便 = đi lại bất tiện."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：小赵呢？他今天怎么没来上班？　B：＿＿＿。",
+      "goiY": "nói Tiểu Triệu bị thương ở chân, đi lại bất tiện (dùng 行动) — bài 练一练 của sách",
+      "mau": "他昨天踢球时腿受伤了，行动不便，今天请假了。",
+      "can": [
+       [
+        "行动"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，避免不必要的浪费。",
+      "goiY": "khuyên làm kế hoạch trước rồi mới hành động (dùng 行动) — bài 练一练 của sách",
+      "mau": "我们应该先做好计划再开始行动，避免不必要的浪费。",
+      "can": [
+       [
+        "行动"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「行动」 (采取行动 / 行动起来 / 行动不便), nói về một vấn đề ở trường hoặc khu em sống",
+      "mau": "看到河里有这么多垃圾，我们班决定马上采取行动，每周去河边打扫一次。",
+      "can": [
+       [
+        "行动"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「义务」",
+  "tenVn": "",
+  "cauTruc": [
+   "承担 / 尽 + 义务",
+   "……是每个人的义务",
+   "义务 + 劳动 / 演出 / 教育 (tính từ: không lấy thù lao)"
+  ],
+  "giaiThich": "义务 là danh từ, chỉ trách nhiệm phải gánh vác về mặt pháp luật hoặc đạo đức (承担义务, 权利和义务). 义务 còn làm tính từ, nghĩa là không nhận thù lao, làm không công (义务劳动, 义务演出); 义务教育 = giáo dục bắt buộc (nhà nước chi trả).",
+  "viDu": [
+   {
+    "zh": "不过，现在我们明白了，建设家乡，人人有责，我们也要承担这个义务。",
+    "py": "Búguò, xiànzài wǒmen míngbai le, jiànshè jiāxiāng, rénrén yǒu zé, wǒmen yě yào chéngdān zhège yìwù.",
+    "vn": "Nhưng bây giờ chúng em đã hiểu: xây dựng quê hương là trách nhiệm của mọi người, chúng em cũng phải gánh vác nghĩa vụ này."
+   },
+   {
+    "zh": "参与社会事务和促进社会进步是每个人的权利，也是每个人的义务和责任。",
+    "py": "Cānyù shèhuì shìwù hé cùjìn shèhuì jìnbù shì měi ge rén de quánlì, yě shì měi ge rén de yìwù hé zérèn.",
+    "vn": "Tham gia công việc xã hội và thúc đẩy xã hội tiến bộ là quyền lợi, cũng là nghĩa vụ và trách nhiệm của mỗi người."
+   },
+   {
+    "zh": "我们每个学期都要至少参加三次义务劳动。",
+    "py": "Wǒmen měi ge xuéqī dōu yào zhìshǎo cānjiā sān cì yìwù láodòng.",
+    "vn": "Mỗi học kỳ chúng tôi đều phải tham gia ít nhất ba lần lao động công ích."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他义务我们打扫教室。",
+    "why": "义务 không phải động từ. \"Làm không công cho ai\" nói 义务 + 为 + người + V.",
+    "dung": "他义务为我们打扫教室。"
+   },
+   {
+    "sai": "参加这次活动是我们的义务的事。",
+    "why": "义务 đã là danh từ, không thêm 的事 phía sau.",
+    "dung": "参加这次活动是我们的义务。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "建设家乡，人人有责，我们也要承担这个",
+       "。"
+      ],
+      "dap": [
+       [
+        "义务"
+       ]
+      ],
+      "chon": [
+       "义务",
+       "任务",
+       "主题"
+      ],
+      "goiY": "Câu của bài khoá.",
+      "giai": "承担 + 义务 (trách nhiệm về đạo đức)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们每个学期都要至少参加三次",
+       "劳动。"
+      ],
+      "dap": [
+       [
+        "义务"
+       ]
+      ],
+      "chon": [
+       "义务",
+       "主题",
+       "收获"
+      ],
+      "goiY": "Lao động không lấy tiền.",
+      "giai": "义务劳动 — 义务 làm tính từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "中国有关于九年制",
+       "教育的法律。"
+      ],
+      "dap": [
+       [
+        "义务"
+       ]
+      ],
+      "chon": [
+       "义务",
+       "主题",
+       "题目"
+      ],
+      "goiY": "Giáo dục bắt buộc.",
+      "giai": "义务教育 = giáo dục bắt buộc (câu của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "公司把一个艰巨的",
+       "交给了他。"
+      ],
+      "dap": [
+       [
+        "任务"
+       ]
+      ],
+      "chon": [
+       "任务",
+       "义务",
+       "主题"
+      ],
+      "goiY": "Một việc cụ thể được giao.",
+      "giai": "Việc cụ thể được giao → 任务; 义务 là trách nhiệm chung về pháp luật / đạo đức."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "父母有",
+       "照顾自己的孩子。"
+      ],
+      "dap": [
+       [
+        "义务"
+       ]
+      ],
+      "chon": [
+       "义务",
+       "任务",
+       "力量"
+      ],
+      "goiY": "Trách nhiệm của bố mẹ.",
+      "giai": "有义务 + V = có nghĩa vụ làm gì."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天来参加演出的演员都是",
+       "演出，一分钱也不要。"
+      ],
+      "dap": [
+       [
+        "义务"
+       ]
+      ],
+      "chon": [
+       "义务",
+       "主题",
+       "收获"
+      ],
+      "goiY": "Biểu diễn không lấy tiền.",
+      "giai": "义务演出 — 义务 làm tính từ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "促进",
+       "社会进步",
+       "是",
+       "每个人的",
+       "义务",
+       "。"
+      ],
+      "dap": [
+       "促进社会进步是每个人的义务。"
+      ],
+      "goiY": "Thúc đẩy xã hội tiến bộ là nghĩa vụ của mỗi người.",
+      "giai": "Câu 29 sách bài tập."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "也要",
+       "承担",
+       "这个",
+       "义务",
+       "。"
+      ],
+      "dap": [
+       "我们也要承担这个义务。"
+      ],
+      "goiY": "Chúng ta cũng phải gánh vác nghĩa vụ này.",
+      "giai": "承担 + 这个义务."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "每个学期",
+       "都要",
+       "参加",
+       "三次",
+       "义务劳动",
+       "。"
+      ],
+      "dap": [
+       "我们每个学期都要参加三次义务劳动。"
+      ],
+      "goiY": "Mỗi học kỳ chúng tôi đều phải tham gia ba lần lao động công ích.",
+      "giai": "Thời gian → 都要 → 参加 → số lần → 义务劳动."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "保护环境是每个人的义务。",
+      "dung": true,
+      "giai": "Đúng: ……是每个人的义务."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他义务我们打扫教室。",
+      "dung": false,
+      "sua": "他义务为我们打扫教室。",
+      "giai": "义务 không phải động từ; cần 为 + người."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "参加这次活动是我们的义务的事。",
+      "dung": false,
+      "sua": "参加这次活动是我们的义务。",
+      "giai": "义务 là danh từ, không thêm 的事."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bảo vệ môi trường là nghĩa vụ của mỗi người.",
+      "dap": [
+       "保护环境是每个人的义务。",
+       "保护环境是每一个人的义务。",
+       "保护环境是大家的义务。"
+      ],
+      "py": "Bǎohù huánjìng shì měi ge rén de yìwù.",
+      "goiY": "Dịch sang tiếng Trung, dùng 义务.",
+      "giai": "……是每个人的义务."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Các diễn viên hôm nay đều biểu diễn không lấy tiền.",
+      "dap": [
+       "今天的演员都是义务演出的。",
+       "今天的演员都是来义务演出的。",
+       "今天的演员都是义务演出。"
+      ],
+      "py": "Jīntiān de yǎnyuán dōu shì yìwù yǎnchū de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 义务.",
+      "giai": "义务 làm tính từ: 义务演出."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：父母对子女有哪些义务？　B：＿＿＿。",
+      "goiY": "nói bố mẹ có nghĩa vụ chăm sóc, cho con đi học (dùng 义务) — bài 练一练 của sách",
+      "mau": "父母有义务照顾子女，让他们接受教育。",
+      "can": [
+       [
+        "义务"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：＿＿＿？　B：对，今天来参加演出的演员都不要钱。",
+      "goiY": "hỏi xem buổi biểu diễn có phải không lấy tiền không (义务 — tính từ) — bài 练一练 của sách",
+      "mau": "今天的演出是义务演出吗？",
+      "can": [
+       [
+        "义务"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「义务」 (danh từ hoặc tính từ), nói về trách nhiệm của học sinh hoặc một hoạt động tình nguyện",
+      "mau": "作为学生，好好学习是我们的义务，参加义务劳动也是。",
+      "can": [
+       [
+        "义务"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

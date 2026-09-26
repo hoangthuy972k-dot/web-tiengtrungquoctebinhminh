@@ -1611,6 +1611,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-22.html'
+      },
+      {
+        id: 'hsk5-l24',
+        number: 24,
+        title: 'Hoạt động dạy học tình nguyện',
+        titleHanzi: '支教行动',
+        titlePinyin: 'Zhījiào xíngdòng',
+        topic: 'Unit 8 体会教育 · Dạy học tình nguyện & trách nhiệm xây dựng quê hương',
+        vocabCount: 40,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk5-bai-24.html'
       }
     ],
     yct: [

@@ -140,23 +140,12 @@
       <section class="assign-card" id="assignCard" hidden aria-live="polite"></section>
 
       <div class="dash-row">
-        <div class="dash-cta-card" id="continueCard">
-          <div class="dash-cta-text">
-            <p class="dash-cta-eyebrow">Nhiệm vụ hôm nay</p>
-            <h2 id="taskTitle">3 việc nhỏ · khoảng 11 phút</h2>
-            <div class="task-goal" id="taskGoal">
-              <span class="task-goal-label"><b id="taskGoalText">Hôm nay: 0/15 phút</b><small id="taskGoalHint">Mục tiêu 15 phút mỗi ngày</small></span>
-              <div class="task-goal-bar"><span id="taskGoalFill" style="width:0%"></span></div>
-            </div>
-            <ol class="task-list" id="taskList"></ol>
-            <p class="task-reward" id="taskReward">Làm xong cả 3 việc: <b>+10 ⭐</b> và giữ chuỗi ngày học 🔥</p>
-          </div>
-          <div class="idiom-today" id="idiomToday" aria-label="Mỗi ngày học 1 thành ngữ"></div>
-        </div>
+        <section class="dash-cta-card resume-card" id="homeResume" aria-labelledby="resumeTitle"></section>
 
         <div class="dash-streak-card">
+          <p class="dash-card-eyebrow">Tiến độ</p>
           <div class="dash-streak-main">
-            <span class="dash-streak-big-flame" aria-hidden="true">🔥</span>
+            <span class="dash-streak-big-flame" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c.5 3.5 4.5 5.5 4.5 10a4.5 4.5 0 0 1-9 0c0-2 1-3.5 2-4.5.3 1.6 1 2.6 2 3 0-3 .5-6 .5-8.5z"/></svg></span>
             <div>
               <strong id="streakCount">0 ngày</strong>
               <span>học liên tiếp</span>
@@ -165,12 +154,29 @@
           <div class="dash-streak-days" id="streakDays"></div>
           <div class="dash-streak-badge" id="streakBadge"></div>
           <button type="button" class="dash-star-row" id="starRow" title="Xem bảng xếp hạng người chăm chỉ">
-            <span class="dash-star-icon" aria-hidden="true">⭐</span>
+            <span class="dash-star-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.5 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.8l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z"/></svg></span>
             <span class="dash-star-text"><strong id="starTotal">Tích sao chăm chỉ</strong><span id="starHint">Đăng nhập để bắt đầu tích sao</span></span>
           </button>
-          <button class="btn btn-dark btn-block" id="ctaStreak" type="button">Học ngay hôm nay</button>
+          <button type="button" class="dash-stats-link" id="statsOpen">Xem thống kê và huy hiệu</button>
+          <button class="btn btn-dark btn-block" id="ctaStreak" type="button" hidden>Học ngay hôm nay</button>
         </div>
       </div>
+
+      <section class="task-card" id="continueCard" aria-labelledby="taskTitle">
+        <div class="task-card-head">
+          <div>
+            <p class="dash-card-eyebrow">Nhiệm vụ hôm nay</p>
+            <h2 id="taskTitle">3 việc nhỏ · khoảng 11 phút</h2>
+          </div>
+          <div class="task-goal" id="taskGoal">
+            <span class="task-goal-label"><b id="taskGoalText">Hôm nay: 0/15 phút</b><small id="taskGoalHint">Mục tiêu 15 phút mỗi ngày</small></span>
+            <div class="task-goal-bar"><span id="taskGoalFill" style="width:0%"></span></div>
+          </div>
+        </div>
+        <ol class="task-list" id="taskList"></ol>
+        <p class="task-reward" id="taskReward">Làm xong cả 3 việc: <b>+10 sao</b> và giữ chuỗi ngày học</p>
+        <div class="idiom-today" id="idiomToday" hidden></div>
+      </section>
 
       <div class="dash-auth-banner" id="authBanner" hidden>
         <div class="dash-auth-banner-text">
@@ -186,22 +192,28 @@
       <div class="home-section-head levels-head" id="levelsHead">
         <div>
           <h2>Chọn cấp độ</h2>
-          <p>Chọn giáo trình bạn đang học. Thanh màu cho biết bạn đã học bao nhiêu bài.</p>
+          <p>Chọn giáo trình bạn đang học. Thanh tiến độ cho biết bạn đã học bao nhiêu bài.</p>
         </div>
-        <button type="button" class="levels-quiz-btn" id="levelQuizBtn">🧭 Mình nên học cấp nào?</button>
+        <button type="button" class="levels-quiz-btn" id="levelQuizBtn">Mình nên học cấp nào?</button>
       </div>
       <div class="level-grid" id="levelGrid"></div>
 
-      <div class="home-section-head home-section-head-sm" id="statsHead">
-        <h2>Bạn đã học được</h2>
-      </div>
-      <div class="dash-stat-tiles" id="statTiles"></div>
-      <div class="badge-row" id="badgeRow"></div>
+      <details class="home-fold" id="statsFold">
+        <summary><span class="home-fold-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span class="home-fold-t"><b>Thống kê và huy hiệu</b><small>Số từ, số bài, điểm và huy hiệu bạn đã có</small></span><svg class="home-fold-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="home-fold-body">
+          <div class="dash-stat-tiles" id="statTiles"></div>
+          <div class="badge-row" id="badgeRow"></div>
+        </div>
+      </details>
+
+      <details class="home-fold" id="boardsFold" open>
+        <summary><span class="home-fold-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></span><span class="home-fold-t"><b>Bảng vàng</b><small>Top học sinh hôm nay và bảng sao chăm chỉ</small></span><svg class="home-fold-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="home-fold-body">
 
       <section class="home-boards" id="homeBoards" aria-label="Bảng xếp hạng">
       <div class="boards-tabs" role="tablist" aria-label="Chọn bảng xếp hạng">
-        <button type="button" class="boards-tab is-active" role="tab" aria-selected="true" data-board="today">🏅 Bảng vàng hôm nay</button>
-        <button type="button" class="boards-tab" role="tab" aria-selected="false" data-board="stars">⭐ Sao chăm chỉ</button>
+        <button type="button" class="boards-tab is-active" role="tab" aria-selected="true" data-board="today">Bảng vàng hôm nay</button>
+        <button type="button" class="boards-tab" role="tab" aria-selected="false" data-board="stars">Sao chăm chỉ</button>
       </div>
       <section class="hb" id="todayLbCard" aria-labelledby="hbTitle">
         <div class="hb-head">
@@ -229,6 +241,8 @@
         <div id="starLbContent"><p class="sb-loading">Đang tải bảng sao…</p></div>
       </section>
       </section>
+        </div>
+      </details>
     </section>
 
     <section class="dash-section" id="levelDetail" hidden>
@@ -264,7 +278,7 @@
         Về trang chủ
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,#1f6f5c,#154f41)">🧠</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg></div>
         <div>
           <h1>Ôn tập ngắt quãng</h1>
           <p>Ôn đúng lúc bạn sắp quên: đúng thì lần sau cách xa hơn (1 → 2 → 4 → 7 → 15 → 30 ngày), sai thì ôn lại ngày mai.</p>
@@ -279,7 +293,7 @@
         Quay lại lộ trình bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-red-600),var(--color-red-800))">🎓</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg></div>
         <div>
           <h1>Kiểm tra cuối bài</h1>
           <p id="fqSubtitle">10 câu trộn từ cả bài · đạt 7/10 để nhận chứng nhận</p>
@@ -294,7 +308,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-pink-600),#b91c5c)">🎯</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
         <div>
           <h1 id="wpTitle">Khởi động</h1>
           <p id="wpSubtitle">Bấm 1 hình ảnh, rồi bấm chữ Hán tương ứng bên dưới để ghép đúng</p>
@@ -309,7 +323,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-green-600),#166a3d)">📓</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/></svg></div>
         <div>
           <h1 id="wbTitle">Luyện tập sách bài tập</h1>
           <p id="wbSubtitle">Nội dung từ New HSK Course 1 Workbook</p>
@@ -326,7 +340,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon">📖</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/></svg></div>
         <div>
           <h1 id="vpTitle">Từ vựng</h1>
           <p id="vpSubtitle">0 từ trong bài học này</p>
@@ -343,7 +357,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-gold-500),#d99400)">🃏</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5zM2 13l10 5 10-5"/></svg></div>
         <div>
           <h1 id="fcTitle">Flashcard</h1>
           <p id="fcSubtitle">Thẻ 1/8</p>
@@ -358,7 +372,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-blue-500),var(--color-blue-600))">🎓</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1M16 4h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg></div>
         <div>
           <h1 id="grTitle">Ngữ pháp</h1>
           <p id="grSubtitle">0 cấu trúc trong bài học này</p>
@@ -374,7 +388,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-red-500),var(--color-red-700))">💬</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div>
         <div>
           <h1 id="dpTitle">Hội thoại</h1>
           <p id="dpSubtitle">0 đoạn hội thoại</p>
@@ -390,7 +404,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-teal-600),#0a7a70)">🎧</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-5a9 9 0 0 1 18 0v5M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg></div>
         <div>
           <h1>Luyện nghe</h1>
           <p>Nghe và chọn đáp án đúng</p>
@@ -410,7 +424,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-red-500),var(--color-red-700))">🗣️</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div>
         <div>
           <h1 id="spTitle">Luyện nói</h1>
           <p id="spSubtitle">Nghe câu hỏi rồi tự ghi âm câu trả lời</p>
@@ -426,7 +440,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-indigo-600),#4338ca)">🎮</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/></svg></div>
         <div>
           <h1>Game ôn tập</h1>
           <p>Hãy hoàn thành tất cả các trò chơi bên dưới để ôn tập toàn diện!</p>
@@ -441,7 +455,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-pink-600),#a3175a)">🔄</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg></div>
         <div>
           <h1>Luyện dịch</h1>
           <p>Không cần dịch giống 100% mẫu — hiểu đúng nghĩa là được</p>
@@ -460,7 +474,7 @@
         Quay lại danh sách bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-gold-400),#8a5a00)">🔄</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg></div>
         <div>
           <h1 id="rvTitle">Ôn tập tổng hợp</h1>
           <p id="rvSubtitle">Trộn từ vựng nhiều bài để kiểm tra lại toàn diện.</p>
@@ -484,7 +498,7 @@
         Quay lại bài học
       </button>
       <div class="vp-header">
-        <div class="vp-icon" style="background:linear-gradient(135deg,var(--color-gold-500),#c9860a)">🏆</div>
+        <div class="vp-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></div>
         <div>
           <h1>Kết quả cuối bài</h1>
         </div>

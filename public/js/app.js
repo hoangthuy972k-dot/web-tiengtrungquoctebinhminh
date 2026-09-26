@@ -526,7 +526,8 @@
   /* ---------------- Level cards ---------------- */
 
   var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'yct'];
-  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'orange', hsk2v3: 'teal', hsk2: 'gold', hsk3: 'green', hsk4: 'teal', hsk5: 'blue', yct: 'purple' };
+  // Moi cap do cung mot mau nhan (do) — phan biet bang ten, khong bang mau
+  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'red', hsk2v3: 'red', hsk2: 'red', hsk3: 'red', hsk4: 'red', hsk5: 'red', yct: 'red' };
   // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
   var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], yct: ['YCT', '1'] };
   var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT Thiếu nhi' };
@@ -738,6 +739,43 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+
+  /* ---------------- Bo icon net manh (thay emoji) ----------------
+     Cung mot net ve (24x24, net 1.8, dau tron) de moi man nhin dong bo. */
+  var UI_ICONS = {
+    warmup: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    vocab: '<path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2zM22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/>',
+    flash: '<path d="M12 3 2 8l10 5 10-5zM2 13l10 5 10-5"/>',
+    grammar: '<path d="M8 4H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1M16 4h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/>',
+    dialog: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+    match: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+    listen: '<path d="M3 18v-5a9 9 0 0 1 18 0v5M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/>',
+    fill: '<path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/>',
+    sort: '<path d="M4 6h9M4 12h6M4 18h12M18 4v10M15 11l3 3 3-3"/>',
+    errfix: '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11l2 2 4-4"/>',
+    errfixWord: '<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5"/>',
+    mc: '<path d="M3 6l1.5 1.5L7 5M3 12l1.5 1.5L7 11M3 18l1.5 1.5L7 17M11 6h10M11 12h10M11 18h10"/>',
+    game: '<rect x="2" y="6" width="20" height="12" rx="6"/><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/>',
+    speak: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
+    translate: '<path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/>',
+    workbook: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/>',
+    hanviet: '<path d="M7 7h13l-3-3M17 17H4l3 3"/>',
+    synonym: '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+    writing: '<path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+    quick: '<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>',
+    final: '<circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/>',
+    trophy: '<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/>',
+    teacher: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+    review: '<path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/>',
+    idiom: '<path d="M6 4h12v16H6zM6 4a2 2 0 0 0-2 2v1h2M18 20a2 2 0 0 0 2-2v-1h-2M9 9h6M9 13h6"/>',
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>'
+  };
+  function uiIcon(name, cls) {
+    return '<svg class="ui-ico' + (cls ? ' ' + cls : '') + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      (UI_ICONS[name] || UI_ICONS.vocab) + '</svg>';
+  }
+
   /* ---------------- Trang chu: loi chao + the "Tiep tuc hoc" ---------------- */
 
   var LAST_LESSON_KEY = 'hyv_last_lesson';
@@ -819,6 +857,79 @@
     return { levelId: last.levelId, lesson: last.lesson, step: null, finished: true };
   }
 
+  // The do lon dau trang chu: MOT viec quan trong nhat — hoc tiep dung cho dang do
+  function renderResumeCard() {
+    var box = $('#homeResume');
+    if (!box) return;
+    var target = nextLearnTarget();
+    if (!target) {
+      var pick = readJSON(LEVEL_PICK_KEY, null);
+      var tryId = pick && READY_LEVELS[pick.id] ? pick.id : 'hsk1v3';
+      box.innerHTML =
+        '<div class="dash-cta-text">' +
+          '<p class="dash-cta-eyebrow">Bắt đầu học</p>' +
+          '<h2 id="resumeTitle">Học bài đầu tiên của bạn</h2>' +
+          '<p class="dash-cta-sub">Mỗi bài là một lộ trình 7 bước, khoảng 30 phút. Chưa biết học cấp nào? Làm bài kiểm tra nhanh 2 phút.</p>' +
+          '<div class="resume-actions">' +
+            '<button type="button" class="btn btn-white" data-resume="start">Học thử ' + (PRACTICE_LEVEL_LABEL[tryId] || tryId) + ' · bài 1</button>' +
+            '<button type="button" class="btn btn-outline-white" data-resume="quiz">Mình nên học cấp nào?</button>' +
+          '</div>' +
+        '</div>';
+      box.querySelector('[data-resume="start"]').addEventListener('click', function () { startFirstLesson(tryId); });
+      box.querySelector('[data-resume="quiz"]').addEventListener('click', openLevelQuiz);
+      return;
+    }
+    var l = target.lesson;
+    var levelName = PRACTICE_LEVEL_LABEL[target.levelId] || target.levelId.toUpperCase();
+    var done = target.isNext ? 0 : PATH_STEPS.filter(function (st) { return pathStepDone(l, st); }).length;
+    var pct = Math.round(done / PATH_STEPS.length * 100);
+    var eyebrow = target.finished ? 'Đã học xong ' + levelName : (target.isNext ? 'Bài tiếp theo' : 'Tiếp tục học');
+    var next = target.finished ? 'Bạn đã học hết các bài của cấp này — ôn lại hoặc chọn cấp tiếp theo.'
+      : 'Tiếp theo: <b>Bước ' + target.stepNo + ' · ' + target.step.title + '</b> · khoảng ' + target.step.min + ' phút';
+    box.innerHTML =
+      '<div class="dash-cta-text">' +
+        '<p class="dash-cta-eyebrow">' + eyebrow + ' · ' + levelName + '</p>' +
+        '<h2 id="resumeTitle">Bài ' + l.number + ': ' + rsEsc(l.title || '') +
+          (l.titleHanzi ? ' <span class="hanzi">' + rsEsc(l.titleHanzi) + '</span>' : '') + '</h2>' +
+        '<div class="dash-cta-progress" aria-label="Đã xong ' + done + ' trên ' + PATH_STEPS.length + ' bước">' +
+          '<div class="dash-cta-progress-bar"><span style="width:' + pct + '%"></span></div>' +
+          '<span>' + done + '/' + PATH_STEPS.length + ' bước</span>' +
+        '</div>' +
+        '<p class="dash-cta-sub">' + next + '</p>' +
+        '<div class="resume-actions">' +
+          '<button type="button" class="btn btn-white" data-resume="go">' + (target.finished ? 'Ôn lại bài ' + l.number : 'Học tiếp') + uiIcon('arrow') + '</button>' +
+          '<button type="button" class="btn btn-outline-white" data-resume="levels">Chọn bài khác</button>' +
+        '</div>' +
+      '</div>';
+    box.querySelector('[data-resume="go"]').addEventListener('click', function () { runTask('learn'); });
+    box.querySelector('[data-resume="levels"]').addEventListener('click', function () {
+      practiceLevel = target.levelId;
+      selectLevel(target.levelId);
+    });
+  }
+
+  // Hai muc gap o cuoi trang chu (Thong ke / Bang vang): nho hoc sinh da mo hay dong
+  function initHomeFolds() {
+    var saved = readJSON('hyv_home_folds', {});
+    ['statsFold', 'boardsFold'].forEach(function (id) {
+      var el = $('#' + id);
+      if (!el) return;
+      if (typeof saved[id] === 'boolean') el.open = saved[id];
+      el.addEventListener('toggle', function () {
+        var cur = readJSON('hyv_home_folds', {});
+        cur[id] = el.open;
+        writeJSON('hyv_home_folds', cur);
+      });
+    });
+    var link = $('#statsOpen');
+    if (link) link.addEventListener('click', function () {
+      var f = $('#statsFold');
+      if (!f) return;
+      f.open = true;
+      f.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
   function renderTaskCard() {
     var list = $('#taskList');
     if (!list) return;
@@ -829,25 +940,25 @@
 
     var srs = srsStats();
     var reviewItem = srs.total >= 4
-      ? { key: 'review', num: '①', title: srs.due ? 'Ôn ' + Math.min(srs.due, 15) + ' từ đến hạn hôm nay' : 'Ôn nhanh 10 từ', time: '3 phút',
-          sub: srs.due ? 'Ôn đúng lúc sắp quên để nhớ lâu · ' + srs.known + '/' + srs.total + ' từ đã thuộc' : 'Hôm nay không có từ đến hạn 🎉 · ' + srs.known + '/' + srs.total + ' từ đã thuộc' }
-      : { key: 'review', num: '①', title: 'Ôn 10 từ cũ', time: '2 phút',
+      ? { key: 'review', ico: 'review', title: srs.due ? 'Ôn ' + Math.min(srs.due, 15) + ' từ đến hạn hôm nay' : 'Ôn nhanh 10 từ', time: '3 phút',
+          sub: srs.due ? 'Ôn đúng lúc sắp quên để nhớ lâu · ' + srs.known + '/' + srs.total + ' từ đã thuộc' : 'Hôm nay không có từ đến hạn · ' + srs.known + '/' + srs.total + ' từ đã thuộc' }
+      : { key: 'review', ico: 'review', title: 'Ôn 10 từ cũ', time: '2 phút',
           sub: last ? 'Từ vựng ' + levelName + ' bạn đã học' : 'Học bài đầu tiên trước, rồi ôn từ ở đây' };
     var items = [
       reviewItem,
-      { key: 'learn', num: '②', title: target
+      { key: 'learn', ico: 'vocab', title: target
           ? (target.finished ? 'Ôn lại bài ' + target.lesson.number : (target.isNext ? 'Học bài ' + target.lesson.number + ': ' + target.lesson.title : 'Học tiếp: Bước ' + target.stepNo + ' · ' + target.step.title))
           : 'Học bài đầu tiên', time: target && target.step ? target.step.min + ' phút' : '8 phút',
         sub: target ? 'Bài ' + target.lesson.number + ' · ' + levelName : 'Chọn cấp độ phù hợp với bạn' },
-      { key: 'idiom', num: '③', title: 'Đọc thành ngữ hôm nay', time: '1 phút', sub: 'Bấm để đọc nghĩa và câu chuyện' }
+      { key: 'idiom', ico: 'idiom', title: 'Thành ngữ hôm nay' + (idiomOfToday() ? ': <span class="hanzi">' + rsEsc(idiomOfToday().zh) + '</span>' : ''), time: '1 phút', sub: 'Bấm để đọc nghĩa và câu chuyện' }
     ];
     list.innerHTML = items.map(function (it) {
       var done = !!t[it.key];
       return '<li class="task-item' + (done ? ' is-done' : '') + '">' +
         '<button type="button" class="task-btn" data-task="' + it.key + '"' + (done ? ' aria-pressed="true"' : '') + '>' +
-          '<span class="task-check" aria-hidden="true">' + (done ? '✓' : it.num) + '</span>' +
+          '<span class="task-check" aria-hidden="true">' + uiIcon(done ? 'check' : it.ico) + '</span>' +
           '<span class="task-body"><b>' + it.title + '</b><small>' + it.time + ' · ' + it.sub + '</small></span>' +
-          '<span class="task-arrow" aria-hidden="true">' + (done ? 'Xong' : '→') + '</span>' +
+          '<span class="task-arrow" aria-hidden="true">' + (done ? 'Xong' : uiIcon('arrow')) + '</span>' +
         '</button></li>';
     }).join('');
     $all('[data-task]', list).forEach(function (btn) {
@@ -856,17 +967,18 @@
 
     var doneCount = ['review', 'learn', 'idiom'].filter(function (k) { return t[k]; }).length;
     var title = $('#taskTitle');
-    if (doneCount === 3) title.textContent = '🎉 Xong nhiệm vụ hôm nay!';
+    if (doneCount === 3) title.textContent = 'Xong nhiệm vụ hôm nay!';
     else if (doneCount > 0) title.textContent = 'Còn ' + (3 - doneCount) + ' việc nữa thôi';
     else title.textContent = '3 việc nhỏ · khoảng 11 phút';
     var reward = $('#taskReward');
     if (reward) {
       var auth = readJSON(STORAGE_KEYS.auth, null);
       reward.innerHTML = doneCount === 3
-        ? (auth && auth.token ? 'Đã nhận <b>+10 ⭐</b> · chuỗi ngày học được giữ 🔥 · Mai gặp lại nhé!' : 'Chuỗi ngày học được giữ 🔥 · <b>Đăng nhập</b> để nhận +10 ⭐ mỗi ngày')
-        : 'Làm xong cả 3 việc: <b>+10 ⭐</b> và giữ chuỗi ngày học 🔥';
+        ? (auth && auth.token ? 'Đã nhận <b>+10 sao</b> · chuỗi ngày học được giữ · Mai gặp lại nhé!' : 'Chuỗi ngày học được giữ · <b>Đăng nhập</b> để nhận +10 sao mỗi ngày')
+        : 'Làm xong cả 3 việc: <b>+10 sao</b> và giữ chuỗi ngày học';
     }
     renderTaskGoal();
+    renderResumeCard();
   }
 
   // "Hom nay: 12/15 phut" — so phut do widgets.js dem (hw:stars / hwDayMinutes)
@@ -880,7 +992,7 @@
     text.textContent = 'Hôm nay: ' + min + '/' + goal + ' phút';
     $('#taskGoalFill').style.width = pct + '%';
     var hint = $('#taskGoalHint');
-    if (hint) hint.textContent = min >= goal ? '🎯 Đã đạt mục tiêu hôm nay!' : 'Mục tiêu ' + goal + ' phút mỗi ngày · tính khi bạn đang học';
+    if (hint) hint.textContent = min >= goal ? 'Đã đạt mục tiêu hôm nay!' : 'Mục tiêu ' + goal + ' phút mỗi ngày · tính khi bạn đang học';
     $('#taskGoal').classList.toggle('is-reached', min >= goal);
   }
 
@@ -1655,7 +1767,7 @@
       tile.className = 'hub-tile' + (done ? ' is-done' : '');
       tile.href = lessonHref(lesson.fullPageUrl) + '#' + tabId;
       tile.innerHTML =
-        '<div class="hub-tile-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
+        '<div class="hub-tile-icon">' + uiIcon(tabId) + '</div>' +
         '<span class="hub-tile-label">' + def.label + '</span>' +
         (rsHasPrefix(lesson, HUB_RESUME_PREFIX[tabId] || [tabId])
           ? '<span class="hub-tile-resume">⏳ Đang làm dở</span>'
@@ -1725,7 +1837,7 @@
       var cta = document.createElement('button');
       cta.type = 'button';
       cta.className = 'hub-cta';
-      cta.innerHTML = '🏆 Xem kết quả cuối bài';
+      cta.innerHTML = uiIcon('trophy') + 'Xem kết quả cuối bài';
       cta.addEventListener('click', function () { showResultsPractice(levelId, lesson); });
       ctaWrap.appendChild(cta);
     } else if (!tabIds) {
@@ -1816,7 +1928,7 @@
         '<button type="button" class="lp-btn" data-path-step="' + i + '">' +
           '<span class="lp-node" aria-hidden="true">' + (done ? '✓' : (i + 1)) + '</span>' +
           '<span class="lp-body">' +
-            '<span class="lp-top"><span class="lp-stage">' + s.stage + '</span><b>' + s.icon + ' Bước ' + (i + 1) + ' · ' + s.title + '</b><span class="lp-min">' + s.min + "'</span></span>" +
+            '<span class="lp-top"><b>' + s.title + '</b><span class="lp-min">' + s.min + "'</span></span>" +
             '<span class="lp-desc">' + s.desc + '</span>' +
             (badge ? '<span class="lp-badge">' + badge + '</span>' : '') +
           '</span>' +
@@ -1830,14 +1942,14 @@
     // Luyen them + che do giao vien + ket qua
     var extra = pathExtras(levelId).map(function (k) {
       var d = HUB_TAB_DEFS[k];
-      return '<button type="button" class="lp-extra-btn" data-path-extra="' + k + '">' + d.emoji + ' ' + d.label + (isHubTileDone(lesson, k) ? ' ✓' : '') + '</button>';
+      return '<button type="button" class="lp-extra-btn" data-path-extra="' + k + '">' + uiIcon(k) + d.label + (isHubTileDone(lesson, k) ? ' ✓' : '') + '</button>';
     }).join('');
     var cta = $('#hubCtaWrap');
     cta.innerHTML =
       '<div class="lp-extra"><p class="lp-extra-title">Luyện thêm (không bắt buộc)</p><div class="lp-extra-row">' + extra + '</div></div>' +
       '<div class="lp-foot">' +
-        '<button type="button" class="hub-cta" id="lpResults">🏆 Xem kết quả cuối bài</button>' +
-        '<a class="lp-teacher" href="' + lessonHref(lesson.fullPageUrl) + '" target="_blank" rel="noopener">🖥️ Chế độ giáo viên / trình chiếu (toàn bộ bài trên 1 trang)</a>' +
+        '<button type="button" class="hub-cta" id="lpResults">' + uiIcon('trophy') + 'Xem kết quả cuối bài</button>' +
+        '<a class="lp-teacher" href="' + lessonHref(lesson.fullPageUrl) + '" target="_blank" rel="noopener">' + uiIcon('teacher') + 'Chế độ giáo viên / trình chiếu (toàn bộ bài trên 1 trang)</a>' +
       '</div>';
     $('#lpResults').addEventListener('click', function () { showResultsPractice(levelId, lesson); });
     $all('[data-path-extra]', cta).forEach(function (btn) {
@@ -12068,7 +12180,7 @@
       var def = type === 'errfix' ? errfixDef() : GAME_TYPE_DEFS[type];
       var count = (gpGameData && gpGameData[type] || []).length;
       return '<button type="button" class="game-picker-card"' + (count ? ' data-game-type="' + type + '"' : ' disabled') + '>' +
-        '<div class="game-picker-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</div>' +
+        '<div class="game-picker-icon">' + uiIcon(type) + '</div>' +
         '<div class="game-picker-title">' + def.label + '</div>' +
         '<div class="game-picker-desc">' + (count ? def.desc : 'Chưa có nội dung') + '</div>' +
       '</button>';
@@ -12092,7 +12204,7 @@
         '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>' +
         'Chọn trò chơi khác' +
       '</button>' +
-      '<div class="game-type-header"><span class="game-type-icon" style="background:var(--color-' + def.color + '-50);color:var(--color-' + def.color + '-600)">' + def.emoji + '</span><h2>' + def.label + '</h2></div>' +
+      '<div class="game-type-header"><span class="game-type-icon">' + uiIcon(type) + '</span><h2>' + def.label + '</h2></div>' +
       '<div id="gpGameArea"></div>';
     $('#gpBackToPicker').addEventListener('click', function () { gpMode = null; rsHideNotice('#gpContent'); rsSet('game:mode', null); renderGameScreen(); });
 
@@ -12792,14 +12904,14 @@
     var rowsHtml = sectionResults.map(function (s) {
       if (s.scored) {
         return '<div class="rp-row">' +
-          '<span class="rp-row-icon is-' + s.def.color + '">' + s.def.emoji + '</span>' +
+          '<span class="rp-row-icon">' + uiIcon(s.def.key) + '</span>' +
           '<span class="rp-row-label">' + s.def.label + '</span>' +
           '<div class="rp-row-bar"><div class="rp-row-bar-fill is-' + s.def.color + '" style="width:' + s.pct + '%"></div></div>' +
           '<span class="rp-row-pct">' + s.pct + '%</span>' +
         '</div>';
       }
       return '<div class="rp-row">' +
-        '<span class="rp-row-icon is-' + s.def.color + '">' + s.def.emoji + '</span>' +
+        '<span class="rp-row-icon">' + uiIcon(s.def.key) + '</span>' +
         '<span class="rp-row-label">' + s.def.label + '</span>' +
         '<span class="rp-row-done">✓ Đã hoàn thành</span>' +
       '</div>';
@@ -14971,6 +15083,7 @@
       showLeaderboard();
     });
     $('#ctaStreak').addEventListener('click', continueLearning);
+    initHomeFolds();
     // Bang vang hom nay / Sao cham chi: mot khoi, hai tab
     $all('[data-board]').forEach(function (btn) {
       btn.addEventListener('click', function () { showBoard(btn.getAttribute('data-board')); });

@@ -37,7 +37,7 @@
   align-items: center;
   gap: clamp(14px, 3vw, 26px);
   padding: clamp(20px, 4vw, 38px) clamp(18px, 4vw, 40px);
-  border-radius: 26px;
+  border-radius: var(--radius-lg);
   color: #fff8ec;
   background:
     radial-gradient(90% 150% at 100% 0%, rgba(233, 162, 59, 0.42) 0%, transparent 58%),
@@ -65,7 +65,7 @@
   place-items: center;
   width: clamp(58px, 9vw, 84px);
   aspect-ratio: 1;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   background: #fdf5e6;
   color: #a82d24;
   font-family: 'Noto Serif SC', serif;
@@ -96,7 +96,7 @@
 .gh-buoc {
   background: rgba(255, 253, 249, 0.93);
   border: 1px solid var(--color-gray-200);
-  border-radius: 22px;
+  border-radius: var(--radius-lg);
   padding: clamp(15px, 3vw, 26px);
   box-shadow: 0 6px 22px rgba(31, 26, 23, 0.07);
 }
@@ -116,7 +116,7 @@
   width: 30px;
   height: 30px;
   flex-shrink: 0;
-  border-radius: 9px;
+  border-radius: var(--radius-md);
   background: linear-gradient(145deg, #c8372d, #8a241d);
   color: #fff3df;
   font-family: 'Noto Serif SC', serif;
@@ -140,7 +140,7 @@
   row-gap: 2px;
   text-align: left;
   padding: 14px 16px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   border: 2px solid var(--color-gray-200);
   background: #fff;
   font: inherit;
@@ -153,7 +153,7 @@
   place-items: center;
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   font-size: 1.35rem;
   background: var(--color-gray-100);
 }
@@ -161,7 +161,7 @@
 .gh-mode button i {
   font-style: normal;
   font-size: 0.82rem;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
   line-height: 1.35;
 }
 .gh-mode button:hover { border-color: var(--color-gold-400); transform: translateY(-1px); }
@@ -185,19 +185,19 @@
   font-size: 0.74rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 .gh-sel select {
   font: inherit;
   font-weight: 600;
   padding: 11px 13px;
-  border-radius: 13px;
+  border-radius: var(--radius-md);
   border: 2px solid var(--color-gray-200);
   background: #fff;
   color: var(--color-gray-900);
   cursor: pointer;
 }
-.gh-sel select:focus-visible { outline: 3px solid var(--color-gold-500); outline-offset: 1px; }
+.gh-sel select:focus-visible { outline: 3px solid var(--color-red-500); outline-offset: 1px; }
 
 .gh-tools { display: flex; gap: 8px; flex-wrap: wrap; }
 .gh-mini {
@@ -205,7 +205,7 @@
   font-size: 0.86rem;
   cursor: pointer;
   padding: 9px 15px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--color-gray-300);
   background: #fff;
   color: var(--color-gray-600);
@@ -227,13 +227,13 @@
   cursor: pointer;
   min-width: 62px;
   padding: 9px 13px;
-  border-radius: 13px;
+  border-radius: var(--radius-md);
   border: 2px solid var(--color-gray-200);
   background: #fff;
   color: var(--color-gray-700);
   transition: transform 0.14s ease, border-color 0.14s ease;
 }
-.gh-bai-o:hover { border-color: var(--color-gold-500); transform: translateY(-2px); }
+.gh-bai-o:hover { border-color: var(--color-red-500); transform: translateY(-2px); }
 .gh-bai-o.on {
   border-color: var(--color-red-600);
   background: linear-gradient(180deg, var(--color-red-600), var(--color-red-700));
@@ -256,12 +256,12 @@
   font-size: 0.62rem;
   font-weight: 700;
 }
-.gh-trong { color: var(--color-gray-500); }
+.gh-trong { color: var(--color-text-muted); }
 
 .gh-count {
   margin: 12px 0 0;
   font-size: 0.9rem;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 .gh-count.on { color: var(--color-green-600); font-weight: 600; }
 
@@ -275,7 +275,7 @@
   grid-column: 1 / -1;
   margin: 0 0 2px;
   font-size: 0.9rem;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 .gh-game {
   position: relative;
@@ -284,7 +284,7 @@
   flex-direction: column;
   padding: 0;
   border: 1px solid var(--color-gray-200);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   background: #fff;
   font: inherit;
   text-align: left;
@@ -348,13 +348,13 @@
   color: var(--color-gray-900);
   line-height: 1.25;
 }
-.gh-game-mo { font-size: 0.83rem; color: var(--color-gray-500); line-height: 1.42; }
+.gh-game-mo { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.42; }
 
 .gh-meo {
   margin: 0;
   text-align: center;
   font-size: 0.86rem;
-  color: var(--color-gray-500);
+  color: var(--color-text-muted);
 }
 .gh-meo b { color: var(--color-gray-700); }
 
@@ -379,7 +379,7 @@
   font: inherit;
   font-size: 0.9rem;
   cursor: pointer;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--color-gray-300);
   background: rgba(255, 255, 255, 0.94);
   padding: 9px 17px;
@@ -398,7 +398,7 @@
   font-size: 0.8rem;
   color: var(--color-gray-600);
   padding: 3px 11px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid var(--color-gray-200);
 }
@@ -410,14 +410,14 @@
   display: flex;
   flex-direction: column;
   padding: clamp(10px, 1.8vw, 18px);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   background: rgba(255, 253, 249, 0.96);
   border: 1px solid var(--color-gray-200);
   box-shadow: 0 14px 40px rgba(31, 26, 23, 0.13), inset 0 0 0 3px rgba(233, 162, 59, 0.16);
 }
 .gh-san .ar { flex: 1; min-height: 0; }
 .gh-san .ar-stage { flex: 1; min-height: 0; }
-.gh-dangtai { margin: auto; color: var(--color-gray-500); }
+.gh-dangtai { margin: auto; color: var(--color-text-muted); }
 
 /* Chiếu lớp: nền tranh lùi xuống cho chữ nổi hẳn lên. */
 body.gh-dang-lop .scene { opacity: 0.2; }

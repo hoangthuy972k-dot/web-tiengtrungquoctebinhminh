@@ -8179,3 +8179,159 @@ body.pinyin-hidden .py-inline {
 @media (max-width: 640px) {
   :root { --zh-hero: 2rem; --zh-word: 1.45rem; --zh-text: 1.2rem; --zh-small: 1rem; }
 }
+
+/* ============================================================
+   DOT 2 — trang chu 5 khoi, icon net manh, mot mau nhan
+   ============================================================ */
+
+/* Icon net manh dung chung (thay emoji) */
+.ui-ico { width: 1.15em; height: 1.15em; flex-shrink: 0; vertical-align: -0.2em; }
+.hub-tile-icon,
+.game-picker-icon,
+.game-type-icon,
+.rp-row-icon { background: var(--color-red-50); color: var(--color-red-700); }
+.hub-tile-icon .ui-ico, .game-picker-icon .ui-ico { width: 24px; height: 24px; }
+.game-type-icon .ui-ico { width: 20px; height: 20px; }
+.rp-row-icon .ui-ico { width: 18px; height: 18px; }
+.lp-extra-btn { display: inline-flex; align-items: center; gap: 8px; }
+.lp-extra-btn .ui-ico { width: 18px; height: 18px; color: var(--color-red-700); }
+.hub-cta .ui-ico { width: 20px; height: 20px; }
+.lp-teacher { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.lp-teacher .ui-ico { width: 18px; height: 18px; }
+
+/* Lo trinh bai: moi buoc chi con mot dau hieu — vong so thu tu */
+.lp-top b { font-size: 1.05rem; }
+
+/* ---------- Khoi 1: Tiep tuc hoc (the do duy nhat tren trang) ---------- */
+.resume-card { align-items: stretch; min-height: 220px; }
+.resume-card .dash-cta-text { display: flex; flex-direction: column; justify-content: center; width: 100%; }
+.resume-card h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
+.resume-card h2 .hanzi { font-family: var(--font-hanzi); font-weight: 600; opacity: 0.92; }
+.resume-card .dash-cta-sub b { color: #fff; }
+.resume-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.resume-actions .btn { min-height: 48px; display: inline-flex; align-items: center; gap: 8px; }
+.resume-actions .btn-white { font-weight: 800; padding-left: 22px; padding-right: 20px; }
+.resume-actions .ui-ico { width: 18px; height: 18px; }
+
+/* Nhan nho dau moi the (Tien do / Nhiem vu hom nay) */
+.dash-card-eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Khoi 2: Tien do (cot phai) ---------- */
+.dash-streak-big-flame { color: var(--color-gold-700); }
+.dash-streak-big-flame svg { width: 26px; height: 26px; }
+.dash-star-icon { display: grid; place-items: center; color: var(--color-gold-700); }
+.dash-star-icon svg { width: 26px; height: 26px; }
+.dash-stats-link {
+  align-self: flex-start;
+  margin-top: auto;
+  min-height: 44px;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-red-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.dash-stats-link:hover { color: var(--color-red-600); }
+.dash-stats-link:focus-visible { outline: 2px solid var(--color-red-500); outline-offset: 2px; border-radius: var(--radius-sm); }
+
+/* ---------- Khoi 3: Nhiem vu hom nay (the trang, gon) ---------- */
+.task-card {
+  margin-top: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-md);
+}
+.task-card-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; margin-bottom: var(--space-4); }
+.task-card-head h2 { margin: 0; font-size: 1.2rem; font-weight: 800; color: var(--color-gray-900); }
+.task-card .task-goal { flex: 0 1 320px; margin: 0; }
+.task-card .task-goal-label b { color: var(--color-gray-800); }
+.task-card .task-goal-label small { color: var(--color-text-muted); }
+.task-card .task-goal-bar { background: var(--color-gray-100); }
+.task-card .task-goal-bar span { background: var(--color-red-600); }
+.task-card .task-goal.is-reached .task-goal-bar span { background: var(--color-green-600); }
+.task-card .task-list { max-width: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.task-card .task-btn {
+  height: 100%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface, #fff);
+  color: var(--color-gray-900);
+}
+.task-card .task-btn:hover { background: var(--color-red-50); border-color: rgba(200, 50, 40, 0.3); transform: none; }
+.task-card .task-btn:focus-visible { outline: 2px solid var(--color-red-500); }
+.task-card .task-check { background: var(--color-red-50); color: var(--color-red-700); }
+.task-card .task-check .ui-ico { width: 18px; height: 18px; }
+.task-card .task-body b .hanzi { font-family: var(--font-hanzi); font-weight: 600; }
+.task-card .task-body small { color: var(--color-text-muted); }
+.task-card .task-arrow { color: var(--color-red-700); }
+.task-card .task-arrow .ui-ico { width: 18px; height: 18px; }
+.task-card .task-item.is-done .task-btn { background: var(--color-green-50); border-color: transparent; }
+.task-card .task-item.is-done .task-check { background: var(--color-green-600); color: #fff; }
+.task-card .task-item.is-done .task-arrow { color: var(--color-green-600); }
+.task-card .task-reward { margin-top: var(--space-3); color: var(--color-text-muted); }
+.task-card .task-reward b { color: var(--color-gold-700); }
+
+/* Banner dang ky: mong hon */
+.dash-auth-banner { padding: var(--space-3) var(--space-5); }
+.dash-auth-banner-text p { font-size: 0.84rem; }
+
+/* ---------- Khoi 5: muc gap (Thong ke / Bang vang) ---------- */
+.home-fold {
+  margin-top: var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-sm);
+}
+.home-fold > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px var(--space-5);
+  list-style: none;
+  cursor: pointer;
+  border-radius: inherit;
+}
+.home-fold > summary::-webkit-details-marker { display: none; }
+.home-fold > summary:hover { background: var(--color-gray-50); }
+.home-fold > summary:focus-visible { outline: 2px solid var(--color-red-500); outline-offset: 2px; }
+.home-fold-ico { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; border-radius: var(--radius-md); background: var(--color-red-50); color: var(--color-red-700); }
+.home-fold-ico svg { width: 22px; height: 22px; }
+.home-fold-t { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.home-fold-t b { font-size: 1.05rem; color: var(--color-gray-900); }
+.home-fold-t small { font-size: 0.84rem; color: var(--color-text-muted); }
+.home-fold-chev { width: 22px; height: 22px; flex-shrink: 0; color: var(--color-text-muted); transition: transform 0.2s var(--ease-standard); }
+.home-fold[open] > summary .home-fold-chev { transform: rotate(180deg); }
+.home-fold-body { padding: 0 var(--space-5) var(--space-5); }
+.home-fold .dash-stat-tiles { margin-top: 0; }
+.home-fold .home-boards { margin-top: 0; }
+@media (max-width: 640px) {
+  .home-fold > summary, .home-fold-body { padding-left: var(--space-4); padding-right: var(--space-4); }
+  .task-card { padding: var(--space-4); }
+  .resume-card { min-height: 0; }
+  .resume-actions .btn { flex: 1 1 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .home-fold-chev { transition: none; } }
+
+/* Dien thoai / may tinh bang doc: viec can lam truoc (Tiep tuc hoc -> Nhiem vu), Tien do sau */
+@media (max-width: 900px) {
+  #home:not([hidden]) { display: flex; flex-direction: column; }
+  #home .dash-row { display: contents; }
+  #home .dash-streak-card { order: 1; margin-top: var(--space-4); }
+  #home .dash-row ~ :not(.task-card) { order: 2; }
+}
+.vp-icon svg { width: 28px; height: 28px; }

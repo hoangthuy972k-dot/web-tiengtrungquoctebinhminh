@@ -1,0 +1,112 @@
+{
+ "zh": "纸上谈兵",
+ "py": "Zhǐshàng tánbīng",
+ "vn": "Đánh trận trên giấy",
+ "topic": "Unit 5 放眼世界 · Điển tích lịch sử &amp; lý thuyết – thực tế",
+ "vocabCount": 45,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "过",
+   "explain": "过 ở đây là động từ xu hướng, đọc guò, dùng theo dạng “Động từ + 得 / 不 + 过” làm bổ ngữ, biểu thị HƠN ĐƯỢC / KHÔNG HƠN ĐƯỢC ai trong một việc (thắng nổi, bì kịp). Người / vật bị so đứng SAU 过: 说得过他 (nói lại được hắn), 比不过你们 (không bằng các bạn). Dạng phủ định 不过 dùng nhiều hơn.",
+   "rule": "① V + 得 + <strong style=\"color:var(--sky-d)\">过</strong> + người / vật (hơn được)　② V + 不 + <strong style=\"color:var(--sky-d)\">过</strong> + người / vật (không hơn được)",
+   "examples": [
+    {
+     "zh": "……跟别人谈论起军事来，没有人说得过他，……",
+     "py": "…… gēn biéren tánlùn qǐ jūnshì lai, méiyǒu rén shuō de guò tā, ……",
+     "vn": "… hễ bàn chuyện quân sự với người khác thì không ai nói lại được hắn, …"
+    },
+    {
+     "zh": "年轻人记忆力好，这一点我比不过你们。",
+     "py": "Niánqīngrén jìyìlì hǎo, zhè yì diǎn wǒ bǐ bu guò nǐmen.",
+     "vn": "Người trẻ trí nhớ tốt, điểm này tôi không bì được với các bạn."
+    },
+    {
+     "zh": "我们的原材料贵，人工费用高，产品在价格上肯定竞争不过他们。",
+     "py": "Wǒmen de yuáncáiliào guì, réngōng fèiyòng gāo, chǎnpǐn zài jiàgé shang kěndìng jìngzhēng bu guò tāmen.",
+     "vn": "Nguyên liệu của chúng ta đắt, chi phí nhân công cao, về giá cả sản phẩm chắc chắn không cạnh tranh nổi với họ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我不过比他。",
+     "why": "过 là BỔ NGỮ, đứng sau động từ: V + 不 + 过. Không đặt 不过 trước động từ.",
+     "right": "我比不过他。"
+    },
+    {
+     "wrong": "在价格上我们竞争他们不过。",
+     "why": "Người / vật bị so đứng SAU 不过, không chen giữa động từ và bổ ngữ.",
+     "right": "在价格上我们竞争不过他们。"
+    }
+   ]
+  },
+  {
+   "point": "迟早",
+   "explain": "迟早 là phó từ (= 早晚), nghĩa “sớm muộn gì, trước sau gì”: khẳng định một hành động, sự việc CHẮC CHẮN SẼ xảy ra, chỉ là sớm hay muộn. Đứng sau chủ ngữ, trước động từ, thường đi với 会 / 要 / 都会, cuối câu hay có 的. Không dùng cho việc đã xảy ra.",
+   "rule": "Sub + <strong style=\"color:var(--sky-d)\">迟早</strong> + 会 / 要 + V (+ 的)　|　……是<strong style=\"color:var(--sky-d)\">迟早</strong>的事",
+   "examples": [
+    {
+     "zh": "如果让他当了大将，迟早会害了赵国。",
+     "py": "Rúguǒ ràng tā dāngle dàjiàng, chízǎo huì hài le Zhàoguó.",
+     "vn": "Nếu để nó làm đại tướng, sớm muộn gì cũng hại nước Triệu."
+    },
+    {
+     "zh": "随着网络技术的发展，这些问题迟早都会得到解决。",
+     "py": "Suízhe wǎngluò jìshù de fāzhǎn, zhèxiē wèntí chízǎo dōu huì dédào jiějué.",
+     "vn": "Cùng với sự phát triển của công nghệ mạng, những vấn đề này sớm muộn đều sẽ được giải quyết."
+    },
+    {
+     "zh": "如果不重视技术研究和产品开发，我们迟早会被别人挤出市场。",
+     "py": "Rúguǒ bú zhòngshì jìshù yánjiū hé chǎnpǐn kāifā, wǒmen chízǎo huì bèi biéren jǐchū shìchǎng.",
+     "vn": "Nếu không coi trọng nghiên cứu kỹ thuật và phát triển sản phẩm, sớm muộn gì chúng ta cũng bị người khác đẩy ra khỏi thị trường."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这个问题昨天迟早解决了。",
+     "why": "迟早 nói việc CHẮC CHẮN SẼ xảy ra, không dùng cho việc đã xảy ra (昨天……了).",
+     "right": "这个问题迟早会解决的。"
+    },
+    {
+     "wrong": "你迟早后悔。",
+     "why": "迟早 thường đi với 会 / 要 (cuối câu hay có 的); thiếu 会 câu nghe cụt.",
+     "right": "你迟早会后悔的。"
+    }
+   ]
+  },
+  {
+   "point": "再三",
+   "explain": "再三 là phó từ, nghĩa “一次又一次” — hết lần này đến lần khác, nhiều lần. Thường đứng TRƯỚC động từ (再三阻止, 再三邀请); khi động từ KHÔNG mang tân ngữ thì còn có thể đứng SAU động từ (考虑再三, 犹豫再三).",
+   "rule": "① <strong style=\"color:var(--sky-d)\">再三</strong> + V (+ O)　② V (không tân ngữ) + <strong style=\"color:var(--sky-d)\">再三</strong>",
+   "examples": [
+    {
+     "zh": "赵括的母亲再三阻止赵王任命儿子为大将，……",
+     "py": "Zhào Kuò de mǔqīn zàisān zǔzhǐ Zhào wáng rènmìng érzi wéi dàjiàng, ……",
+     "vn": "Mẹ Triệu Quát nhiều lần can ngăn vua Triệu bổ nhiệm con mình làm đại tướng, …"
+    },
+    {
+     "zh": "我最近这段时间特别忙，实在没时间参加小王的活动，可他再三邀请，出于礼貌，我只好答应了。",
+     "py": "Wǒ zuìjìn zhè duàn shíjiān tèbié máng, shízài méi shíjiān cānjiā Xiǎo Wáng de huódòng, kě tā zàisān yāoqǐng, chūyú lǐmào, wǒ zhǐhǎo dāying le.",
+     "vn": "Dạo này tôi đặc biệt bận, thật sự không có thời gian tham gia hoạt động của Tiểu Vương, nhưng cậu ấy mời đi mời lại, vì phép lịch sự tôi đành nhận lời."
+    },
+    {
+     "zh": "朋友请他做公司的总经理，他考虑再三，最后还是客气地拒绝了。",
+     "py": "Péngyou qǐng tā zuò gōngsī de zǒngjīnglǐ, tā kǎolǜ zàisān, zuìhòu háishi kèqi de jùjué le.",
+     "vn": "Bạn mời anh ấy làm tổng giám đốc công ty, anh cân nhắc nhiều lần, cuối cùng vẫn lịch sự từ chối."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他考虑了再三这个问题。",
+     "why": "V + 再三 chỉ dùng khi động từ KHÔNG mang tân ngữ. Có tân ngữ thì 再三 đứng trước động từ.",
+     "right": "他再三考虑这个问题。"
+    },
+    {
+     "wrong": "明天我再三给你打电话。",
+     "why": "再三 = hết lần này đến lần khác (việc lặp đi lặp lại), không dùng để hẹn làm lại MỘT lần.",
+     "right": "明天我再给你打个电话。"
+    }
+   ]
+  }
+ ]
+}

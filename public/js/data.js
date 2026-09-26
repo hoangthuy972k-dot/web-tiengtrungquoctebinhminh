@@ -1515,6 +1515,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-13.html'
+      },
+      {
+        id: 'hsk5-l15',
+        number: 15,
+        title: 'Đánh trận trên giấy',
+        titleHanzi: '纸上谈兵',
+        titlePinyin: 'Zhǐshàng tánbīng',
+        topic: 'Unit 5 放眼世界 · Điển tích lịch sử & lý thuyết – thực tế',
+        vocabCount: 45,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-15.html'
       }
     ],
     yct: [

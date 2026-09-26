@@ -1575,6 +1575,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-18.html'
+      },
+      {
+        id: 'hsk5-l19',
+        number: 19,
+        title: 'Bánh củ cải quê nhà',
+        titleHanzi: '家乡的萝卜饼',
+        titlePinyin: 'Jiāxiāng de luóbobǐng',
+        topic: 'Unit 7 交流文化 · Ẩm thực quê hương & cách làm bánh củ cải',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-19.html'
       }
     ],
     yct: [

@@ -27954,3 +27954,945 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-29.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-30.html"] = [
+ {
+  "so": "1",
+  "ten": "「无意」",
+  "tenVn": "",
+  "cauTruc": [
+   "无意 + V (động từ: không muốn, không có ý định làm gì)",
+   "无意中 / 无意地 + V (phó từ: tình cờ, không cố ý)",
+   "Trái nghĩa: 有意 / 故意"
+  ],
+  "giaiThich": "无意 có hai cách dùng: (1) Động từ — \"không muốn, không có ý định\" (不愿、没有打算): 他无意伤害任何人, 我无意打扰您. (2) Phó từ — \"không phải cố ý\" (不是故意的), hay nói 无意中 / 无意地 + V: 无意中发现, 无意地找到. BẪY: 无意 KHÔNG phải \"vô ý\" (sơ ý, bất cẩn) của tiếng Việt — sơ ý là 不小心.",
+  "viDu": [
+   {
+    "zh": "他无意伤害任何人。",
+    "py": "Tā wúyì shānghài rènhé rén.",
+    "vn": "Anh ấy không có ý làm tổn thương bất kỳ ai."
+   },
+   {
+    "zh": "我无意打扰您，不过我可以跟您谈一会儿吗？",
+    "py": "Wǒ wúyì dǎrǎo nín, búguò wǒ kěyǐ gēn nín tán yíhuìr ma?",
+    "vn": "Tôi không có ý làm phiền ngài, nhưng tôi có thể nói chuyện với ngài một lát được không?"
+   },
+   {
+    "zh": "后来一位渔民无意中发现了一种巧妙而实用的方法。",
+    "py": "Hòulái yí wèi yúmín wúyì zhōng fāxiànle yì zhǒng qiǎomiào ér shíyòng de fāngfǎ.",
+    "vn": "Sau đó một người đánh cá tình cờ phát hiện ra một phương pháp khéo léo mà thiết thực."
+   },
+   {
+    "zh": "她在收拾花园时，无意地找到了这只耳环。",
+    "py": "Tā zài shōushi huāyuán shí, wúyì de zhǎodàole zhè zhī ěrhuán.",
+    "vn": "Khi dọn dẹp khu vườn, cô ấy tình cờ tìm thấy chiếc khuyên tai này."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "对不起，我太无意了，把你的杯子打破了。",
+    "why": "无意 không có nghĩa \"sơ ý, bất cẩn\" và không đi sau 太. Sơ ý là 不小心.",
+    "dung": "对不起，我太不小心了，把你的杯子打破了。"
+   },
+   {
+    "sai": "我无意中打扰您，不过我可以跟您谈一会儿吗？",
+    "why": "\"Không có ý định làm gì\" dùng động từ 无意 + V, không thêm 中. 无意中 là \"tình cờ\" — chỉ việc đã xảy ra.",
+    "dung": "我无意打扰您，不过我可以跟您谈一会儿吗？"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "伤害任何人。"
+      ],
+      "dap": [
+       [
+        "无意"
+       ]
+      ],
+      "chon": [
+       "无意",
+       "无意中",
+       "故意"
+      ],
+      "goiY": "“Anh ấy không có ý làm hại ai.” — câu của sách",
+      "giai": "Động từ 无意 + V: không có ý định làm gì."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "后来一位渔民",
+       "发现了一种巧妙而实用的方法。"
+      ],
+      "dap": [
+       [
+        "无意中"
+       ]
+      ],
+      "chon": [
+       "无意中",
+       "故意",
+       "有意"
+      ],
+      "goiY": "“Tình cờ phát hiện ra” — câu của bài khoá",
+      "giai": "无意中 + 发现: tình cờ phát hiện (phó từ)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她在收拾花园时，",
+       "地找到了这只耳环。"
+      ],
+      "dap": [
+       [
+        "无意"
+       ]
+      ],
+      "chon": [
+       "无意",
+       "故意",
+       "有意"
+      ],
+      "goiY": "“Tình cờ tìm thấy chiếc khuyên tai” — câu của sách",
+      "giai": "无意地 + V: không cố ý mà tìm thấy."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我",
+       "打扰您，不过我可以跟您谈一会儿吗？"
+      ],
+      "dap": [
+       [
+        "无意"
+       ]
+      ],
+      "chon": [
+       "无意",
+       "无意中",
+       "不小心"
+      ],
+      "goiY": "“Tôi không có ý làm phiền ngài…” — câu của sách",
+      "giai": "Việc chưa xảy ra, \"không định\" → động từ 无意, không thêm 中."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对不起，我太",
+       "了，把你的杯子打破了。"
+      ],
+      "dap": [
+       [
+        "不小心"
+       ]
+      ],
+      "chon": [
+       "不小心",
+       "无意",
+       "无意中"
+      ],
+      "goiY": "“Xin lỗi, tôi sơ ý quá…”",
+      "giai": "Sơ ý, bất cẩn → 不小心. 无意 không có nghĩa này và không đi sau 太."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他是",
+       "的，你别生他的气了。"
+      ],
+      "dap": [
+       [
+        "无意"
+       ]
+      ],
+      "chon": [
+       "无意",
+       "有意",
+       "故意"
+      ],
+      "goiY": "“Cậu ấy không cố ý đâu, đừng giận nữa.”",
+      "giai": "是无意的 = không cố ý; nếu 有意 / 故意 thì vế sau 别生气 không hợp lý."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他的这些话",
+       "无意中",
+       "接近了",
+       "事实",
+       "。"
+      ],
+      "dap": [
+       "他的这些话无意中接近了事实。"
+      ],
+      "goiY": "Những lời này của anh ấy vô tình lại gần đúng sự thật.",
+      "giai": "Câu 29 sách bài tập: chủ ngữ → 无意中 → 接近了事实."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "无意中",
+       "听到了",
+       "他们的",
+       "谈话",
+       "。"
+      ],
+      "dap": [
+       "我无意中听到了他们的谈话。"
+      ],
+      "goiY": "Tôi tình cờ nghe được cuộc nói chuyện của họ.",
+      "giai": "无意中 đứng trước động từ 听到."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "无意",
+       "伤害",
+       "任何人",
+       "。"
+      ],
+      "dap": [
+       "他无意伤害任何人。"
+      ],
+      "goiY": "Anh ấy không có ý làm tổn thương ai.",
+      "giai": "Động từ 无意 + V + O."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "对不起，我太无意了，把你的书弄脏了。",
+      "dung": false,
+      "sua": "对不起，我太不小心了，把你的书弄脏了。",
+      "giai": "\"Sơ ý\" là 不小心; 无意 không đi sau 太."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我在旧书里无意中发现了一张老照片。",
+      "dung": true,
+      "giai": "Đúng — 无意中 + 发现: tình cờ phát hiện."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "明天我无意中去参加他的生日晚会。",
+      "dung": false,
+      "sua": "明天我无意去参加他的生日晚会。",
+      "giai": "Việc chưa xảy ra, \"không định làm\" → 无意 + V; 无意中 chỉ việc tình cờ đã xảy ra."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi không có ý làm phiền bạn, chỉ muốn hỏi một câu.",
+      "dap": [
+       "我无意打扰你，只想问一个问题。",
+       "我无意打扰你，只是想问一个问题。",
+       "我无意打扰您，只想问一个问题。"
+      ],
+      "py": "Wǒ wúyì dǎrǎo nǐ, zhǐ xiǎng wèn yí ge wèntí.",
+      "goiY": "Dịch sang tiếng Trung, dùng 无意.",
+      "giai": "\"Không có ý\" → động từ 无意 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi tình cờ phát hiện ra một quán cà phê rất đẹp.",
+      "dap": [
+       "我无意中发现了一家很漂亮的咖啡馆。",
+       "我无意中发现了一个很漂亮的咖啡馆。",
+       "我无意间发现了一家很漂亮的咖啡馆。"
+      ],
+      "py": "Wǒ wúyì zhōng fāxiànle yì jiā hěn piàoliang de kāfēiguǎn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 无意中.",
+      "giai": "\"Tình cờ\" → phó từ 无意中 + 发现."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "售货员看他＿＿＿，就拿出另外一款更便宜的手机。",
+      "goiY": "người bán hàng thấy anh ta không định mua chiếc đắt tiền (dùng 无意) — bài 练一练 của sách",
+      "mau": "售货员看他无意买那款贵的，就拿出另外一款更便宜的手机。",
+      "can": [
+       [
+        "无意"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你怎么知道他去找了刘经理？　B：＿＿＿。",
+      "goiY": "nói em tình cờ nghe / thấy được (dùng 无意中) — bài 练一练 của sách",
+      "mau": "我无意中听到他跟同事说的。",
+      "can": [
+       [
+        "无意"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「无意中」, kể một lần em tình cờ phát hiện điều gì đó thú vị",
+      "mau": "上周整理房间时，我无意中发现了小时候写给自己的一封信。",
+      "can": [
+       [
+        "无意"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「有利」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 有利于 + B (A có lợi cho B)",
+   "A + 对 + B + 有利 / 不利",
+   "有利的 + 条件 / 形势 / 地位 / 环境",
+   "Phủ định: 不利 / 不利于 (không nói 不有利)"
+  ],
+  "giaiThich": "有利 là tính từ, nghĩa là \"có lợi, có ích\" (有好处、有帮助). Thường dùng 有利于 để chỉ có lợi đối với người hoặc sự vật nào đó; cũng nói 对……有利. Phủ định là 不利 / 不利于 (không nói 不有利). 有利 không mang tân ngữ trực tiếp: ✗ 有利身体 → 有利于身体.",
+  "viDu": [
+   {
+    "zh": "高高的个子、漂亮的外表，都是他的有利条件。",
+    "py": "Gāogāo de gèzi, piàoliang de wàibiǎo, dōu shì tā de yǒulì tiáojiàn.",
+    "vn": "Dáng người cao ráo, vẻ ngoài ưa nhìn đều là điều kiện thuận lợi của anh ấy."
+   },
+   {
+    "zh": "很多研究发现，适度的压力有利于我们保持良好的状态。",
+    "py": "Hěn duō yánjiū fāxiàn, shìdù de yālì yǒulì yú wǒmen bǎochí liánghǎo de zhuàngtài.",
+    "vn": "Nhiều nghiên cứu phát hiện, áp lực vừa phải có lợi cho việc chúng ta giữ được trạng thái tốt."
+   },
+   {
+    "zh": "笑能促进心肺活动，改善肌肉紧张状况，对睡眠也是有利的。",
+    "py": "Xiào néng cùjìn xīnfèi huódòng, gǎishàn jīròu jǐnzhāng zhuàngkuàng, duì shuìmián yě shì yǒulì de.",
+    "vn": "Cười có thể thúc đẩy hoạt động của tim phổi, cải thiện tình trạng căng cơ, cũng có lợi cho giấc ngủ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "多吃蔬菜有利身体健康。",
+    "why": "有利 không mang tân ngữ trực tiếp, phải thêm 于.",
+    "dung": "多吃蔬菜有利于身体健康。"
+   },
+   {
+    "sai": "经常熬夜对身体不有利。",
+    "why": "Phủ định của 有利 là 不利, không nói 不有利.",
+    "dung": "经常熬夜对身体不利。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "高高的个子、漂亮的外表，都是他的",
+       "条件。"
+      ],
+      "dap": [
+       [
+        "有利"
+       ]
+      ],
+      "chon": [
+       "有利",
+       "有用",
+       "利用"
+      ],
+      "goiY": "“Điều kiện thuận lợi” — câu của sách",
+      "giai": "有利 + 条件: 有利 làm định ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "很多研究发现，适度的压力",
+       "我们保持良好的状态。"
+      ],
+      "dap": [
+       [
+        "有利于"
+       ]
+      ],
+      "chon": [
+       "有利于",
+       "有利",
+       "对于"
+      ],
+      "goiY": "“Có lợi cho việc chúng ta giữ trạng thái tốt” — câu của bài khoá",
+      "giai": "Phía sau có đối tượng → 有利于 + B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "笑能促进心肺活动，对睡眠也是",
+       "的。"
+      ],
+      "dap": [
+       [
+        "有利"
+       ]
+      ],
+      "chon": [
+       "有利",
+       "有利于",
+       "利用"
+      ],
+      "goiY": "“Cũng có lợi cho giấc ngủ” — câu của sách",
+      "giai": "对 + B + 是有利的: đối tượng đã nêu bằng 对, nên không cần 于."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果他不紧张、没压力感，则",
+       "于出成绩。"
+      ],
+      "dap": [
+       [
+        "不利"
+       ]
+      ],
+      "chon": [
+       "不利",
+       "不有利",
+       "没有利"
+      ],
+      "goiY": "“Thì bất lợi cho việc đạt thành tích” — câu của bài khoá",
+      "giai": "Phủ định của 有利 là 不利: 不利于……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我听人介绍，苹果是最",
+       "于健康的水果。"
+      ],
+      "dap": [
+       [
+        "有利"
+       ]
+      ],
+      "chon": [
+       "有利",
+       "有用",
+       "利用"
+      ],
+      "goiY": "“Loại quả có lợi nhất cho sức khỏe” — bài 练一练 của sách",
+      "giai": "最 + 有利于 + 健康."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经常熬夜",
+       "身体健康。"
+      ],
+      "dap": [
+       [
+        "不利于"
+       ]
+      ],
+      "chon": [
+       "不利于",
+       "不有利",
+       "没有利"
+      ],
+      "goiY": "“Thường xuyên thức khuya bất lợi cho sức khỏe.”",
+      "giai": "不利于 + B; không nói 不有利 / 没有利."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "适度的压力",
+       "有利于",
+       "我们",
+       "保持",
+       "良好的状态",
+       "。"
+      ],
+      "dap": [
+       "适度的压力有利于我们保持良好的状态。"
+      ],
+      "goiY": "Áp lực vừa phải có lợi cho việc chúng ta giữ trạng thái tốt.",
+      "giai": "A + 有利于 + (chủ thể + V + O)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "经常",
+       "熬夜",
+       "对",
+       "身体",
+       "不利",
+       "。"
+      ],
+      "dap": [
+       "经常熬夜对身体不利。"
+      ],
+      "goiY": "Thường xuyên thức khuya bất lợi cho cơ thể.",
+      "giai": "A + 对 + B + 不利."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "高高的个子",
+       "是",
+       "他的",
+       "有利条件",
+       "。"
+      ],
+      "dap": [
+       "高高的个子是他的有利条件。"
+      ],
+      "goiY": "Dáng cao là điều kiện thuận lợi của anh ấy.",
+      "giai": "有利条件 làm tân ngữ của 是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "多吃水果有利身体健康。",
+      "dung": false,
+      "sua": "多吃水果有利于身体健康。",
+      "giai": "Thiếu 于: 有利于 + đối tượng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考试时，适度的紧张有利于考生集中精力。",
+      "dung": true,
+      "giai": "Đúng — A 有利于 B (dựa theo bài 练一练 của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "长时间看手机对眼睛不有利。",
+      "dung": false,
+      "sua": "长时间看手机对眼睛不利。",
+      "giai": "Phủ định là 不利, không nói 不有利."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ngủ đủ giấc có lợi cho sức khỏe.",
+      "dap": [
+       "睡眠充足有利于身体健康。",
+       "睡眠充足对身体健康有利。",
+       "睡眠充足有利于健康。"
+      ],
+      "py": "Shuìmián chōngzú yǒulì yú shēntǐ jiànkāng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 有利.",
+      "giai": "有利于 + 身体健康, hoặc 对……有利."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Thường xuyên thức khuya bất lợi cho việc học.",
+      "dap": [
+       "经常熬夜不利于学习。",
+       "经常熬夜对学习不利。",
+       "常常熬夜不利于学习。"
+      ],
+      "py": "Jīngcháng áoyè búlì yú xuéxí.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不利.",
+      "giai": "不利于 + 学习, hoặc 对学习不利."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我听人介绍，苹果是对健康最有好处的水果。→ 我听人介绍，＿＿＿。",
+      "goiY": "viết lại câu, dùng 有利 — bài 练一练 của sách",
+      "mau": "我听人介绍，苹果是最有利于健康的水果。",
+      "can": [
+       [
+        "有利"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "与电子阅读相比，纸质阅读对保护眼睛更有帮助。→ 与电子阅读相比，＿＿＿。",
+      "goiY": "viết lại câu, dùng 有利 — bài 练一练 của sách",
+      "mau": "与电子阅读相比，纸质阅读更有利于保护眼睛。",
+      "can": [
+       [
+        "有利"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「有利于」 hoặc 「不利于」, nói về một thói quen sinh hoạt của học sinh",
+      "mau": "每天运动半个小时有利于我们保持良好的学习状态。",
+      "can": [
+       [
+        "有利",
+        "不利"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「的确」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 的确 + V / tính từ / 是……",
+   "的的确确 + …… (lặp lại để nhấn mạnh)",
+   "的确 chỉ là phó từ — không làm vị ngữ, định ngữ (khác 确实)"
+  ],
+  "giaiThich": "的确 là phó từ, nghĩa là \"hoàn toàn xác thực, quả thật\" (完全确实，实在), dùng để khẳng định chắc chắn điều mình nói. Có thể lặp lại thành 的的确确. Chữ 的 ở đây đọc dí. Khác với 确实 (vừa là phó từ vừa là tính từ), 的确 không làm vị ngữ hay định ngữ: ✗ 消息的确吗？ → 消息确实吗？",
+  "viDu": [
+   {
+    "zh": "因此，“鲇鱼效应”的确对挖掘员工潜力、提高企业活力具有积极的意义。",
+    "py": "Yīncǐ, “niányú xiàoyìng” díquè duì wājué yuángōng qiánlì, tígāo qǐyè huólì jùyǒu jījí de yìyì.",
+    "vn": "Vì vậy, “hiệu ứng cá nheo” quả thực có ý nghĩa tích cực đối với việc khai thác tiềm năng nhân viên, nâng cao sức sống doanh nghiệp."
+   },
+   {
+    "zh": "他的确是我所教过的学生中最聪明的。",
+    "py": "Tā díquè shì wǒ suǒ jiāoguo de xuésheng zhōng zuì cōngming de.",
+    "vn": "Cậu ấy quả thực là người thông minh nhất trong số những học sinh tôi từng dạy."
+   },
+   {
+    "zh": "咱们总裁选择李阳负责的的确确有些冒险，因为他太年轻了。",
+    "py": "Zánmen zǒngcái xuǎnzé Lǐ Yáng fùzé dídíquèquè yǒuxiē màoxiǎn, yīnwèi tā tài niánqīng le.",
+    "vn": "Tổng giám đốc chọn Lý Dương phụ trách quả thật có phần mạo hiểm, vì cậu ấy còn quá trẻ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你听谁说的？这个消息的确吗？",
+    "why": "的确 chỉ là phó từ, không làm vị ngữ. Làm vị ngữ phải dùng tính từ 确实.",
+    "dung": "你听谁说的？这个消息确实吗？"
+   },
+   {
+    "sai": "这个方法很的确有用。",
+    "why": "的确 đứng TRƯỚC 很, không đứng sau 很.",
+    "dung": "这个方法的确很有用。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "因此，“鲇鱼效应”",
+       "对挖掘员工潜力具有积极的意义。"
+      ],
+      "dap": [
+       [
+        "的确",
+        "确实"
+       ]
+      ],
+      "chon": [
+       "的确",
+       "确定",
+       "准确"
+      ],
+      "goiY": "“Quả thực có ý nghĩa tích cực” — câu của bài khoá",
+      "giai": "Phó từ 的确 đứng sau chủ ngữ, trước vị ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "是我所教过的学生中最聪明的。"
+      ],
+      "dap": [
+       [
+        "的确",
+        "确实"
+       ]
+      ],
+      "chon": [
+       "的确",
+       "确定",
+       "准确"
+      ],
+      "goiY": "“Cậu ấy quả thực là người thông minh nhất” — câu của sách",
+      "giai": "的确 + 是…… : khẳng định chắc chắn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "咱们总裁选择李阳负责",
+       "有些冒险，因为他太年轻了。"
+      ],
+      "dap": [
+       [
+        "的的确确",
+        "的确",
+        "确实"
+       ]
+      ],
+      "chon": [
+       "的的确确",
+       "确确定定",
+       "准准确确"
+      ],
+      "goiY": "Dạng lặp lại để nhấn mạnh — câu của sách",
+      "giai": "的确 lặp lại thành 的的确确 (không phải 的确确)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你听谁说刘方要结婚了？消息",
+       "吗？"
+      ],
+      "dap": [
+       [
+        "确实"
+       ]
+      ],
+      "chon": [
+       "确实",
+       "的确",
+       "的的确确"
+      ],
+      "goiY": "Chỗ trống làm vị ngữ — bài tập 2 của sách",
+      "giai": "Làm vị ngữ → tính từ 确实; 的确 chỉ là phó từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我听他说了他的想法，觉得",
+       "很巧妙。"
+      ],
+      "dap": [
+       [
+        "的确",
+        "确实"
+       ]
+      ],
+      "chon": [
+       "的确",
+       "确定",
+       "正确"
+      ],
+      "goiY": "“Tôi thấy quả thật rất khéo” — bài nghe số 5",
+      "giai": "的确 đứng trước 很 + tính từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "丽丽的歌声优美动人，听她唱歌",
+       "是一种享受。"
+      ],
+      "dap": [
+       [
+        "的确",
+        "确实"
+       ]
+      ],
+      "chon": [
+       "的确",
+       "确定",
+       "准确"
+      ],
+      "goiY": "“Nghe cô ấy hát quả là một sự hưởng thụ” — bài 练一练 của sách",
+      "giai": "的确 + 是……."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "的确",
+       "是",
+       "我教过的",
+       "最聪明的",
+       "学生",
+       "。"
+      ],
+      "dap": [
+       "他的确是我教过的最聪明的学生。"
+      ],
+      "goiY": "Cậu ấy quả thực là học sinh thông minh nhất tôi từng dạy.",
+      "giai": "Chủ ngữ → 的确 → 是 + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个",
+       "方法",
+       "的确",
+       "很",
+       "实用",
+       "。"
+      ],
+      "dap": [
+       "这个方法的确很实用。"
+      ],
+      "goiY": "Phương pháp này quả thực rất thiết thực.",
+      "giai": "的确 đứng trước 很 + tính từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "卧室的窗帘",
+       "的确",
+       "有些日子",
+       "没洗了",
+       "。"
+      ],
+      "dap": [
+       "卧室的窗帘的确有些日子没洗了。"
+      ],
+      "goiY": "Rèm phòng ngủ quả là đã lâu chưa giặt.",
+      "giai": "的确 đứng sau chủ ngữ, trước cụm thời gian + động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个消息很的确，是经理亲口说的。",
+      "dung": false,
+      "sua": "这个消息很确实，是经理亲口说的。",
+      "giai": "Sau 很, làm vị ngữ → tính từ 确实; 的确 không làm vị ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "九寨沟的风景的的确确美极了。",
+      "dung": true,
+      "giai": "Đúng — 的的确确 là dạng lặp để nhấn mạnh."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他说的话的确。",
+      "dung": false,
+      "sua": "他说的话的确没错。",
+      "giai": "的确 là phó từ, phía sau phải có vị ngữ (没错, 很对…)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Phương pháp này quả thực rất thiết thực.",
+      "dap": [
+       "这个方法的确很实用。",
+       "这个方法确实很实用。",
+       "这种方法的确很实用。"
+      ],
+      "py": "Zhège fāngfǎ díquè hěn shíyòng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 的确.",
+      "giai": "Chủ ngữ + 的确 + 很 + tính từ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy quả thực là học sinh thông minh nhất lớp.",
+      "dap": [
+       "她的确是班里最聪明的学生。",
+       "她确实是班里最聪明的学生。",
+       "她的确是我们班最聪明的学生。"
+      ],
+      "py": "Tā díquè shì bān li zuì cōngming de xuésheng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 的确.",
+      "giai": "的确 + 是……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "丽丽的歌声优美动人，听她唱歌＿＿＿。",
+      "goiY": "khen nghe Lệ Lệ hát là một sự hưởng thụ (dùng 的确) — bài 练一练 của sách",
+      "mau": "丽丽的歌声优美动人，听她唱歌的确是一种享受。",
+      "can": [
+       [
+        "的确"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：卧室的窗帘有些日子没洗了吧？　B：＿＿＿。",
+      "goiY": "xác nhận rèm đã lâu chưa giặt (dùng 的确) — bài 练一练 của sách",
+      "mau": "是啊，的确有一个多月没洗了，明天就洗。",
+      "can": [
+       [
+        "的确"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「的确」, khen một món ăn / bộ phim / nơi chốn em thích (gợi ý: trả lời câu 我这次去九寨沟拍的照片你看了吗？)",
+      "mau": "看了，九寨沟的风景的确太美了，我也想去。",
+      "can": [
+       [
+        "的确"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

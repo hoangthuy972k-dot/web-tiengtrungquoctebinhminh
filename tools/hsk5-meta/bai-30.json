@@ -1,0 +1,112 @@
+{
+ "zh": "竞争让市场更高效",
+ "py": "Jìngzhēng ràng shìchǎng gèng gāoxiào",
+ "vn": "Cạnh tranh khiến thị trường hiệu quả hơn",
+ "topic": "Unit 10 关注经济 · Cạnh tranh &amp; “hiệu ứng cá nheo” trong kinh tế thị trường",
+ "vocabCount": 36,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "无意",
+   "explain": "无意 có hai cách dùng: (1) Động từ — \"không muốn, không có ý định\" (不愿、没有打算): 他无意伤害任何人, 我无意打扰您. (2) Phó từ — \"không phải cố ý\" (不是故意的), hay nói 无意中 / 无意地 + V: 无意中发现, 无意地找到. BẪY: 无意 KHÔNG phải \"vô ý\" (sơ ý, bất cẩn) của tiếng Việt — sơ ý là 不小心.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">无意</strong> + V (không định làm gì)　|　Chủ ngữ + <strong style=\"color:var(--sky-d)\">无意中</strong> / <strong style=\"color:var(--sky-d)\">无意地</strong> + V (tình cờ làm gì)　|　是<strong style=\"color:var(--sky-d)\">无意</strong>的 = không cố ý",
+   "examples": [
+    {
+     "zh": "他无意伤害任何人。",
+     "py": "Tā wúyì shānghài rènhé rén.",
+     "vn": "Anh ấy không có ý làm tổn thương bất kỳ ai."
+    },
+    {
+     "zh": "我无意打扰您，不过我可以跟您谈一会儿吗？",
+     "py": "Wǒ wúyì dǎrǎo nín, búguò wǒ kěyǐ gēn nín tán yíhuìr ma?",
+     "vn": "Tôi không có ý làm phiền ngài, nhưng tôi có thể nói chuyện với ngài một lát được không?"
+    },
+    {
+     "zh": "后来一位渔民无意中发现了一种巧妙而实用的方法。",
+     "py": "Hòulái yí wèi yúmín wúyì zhōng fāxiànle yì zhǒng qiǎomiào ér shíyòng de fāngfǎ.",
+     "vn": "Sau đó một người đánh cá tình cờ phát hiện ra một phương pháp khéo léo mà thiết thực."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "对不起，我太无意了，把你的杯子打破了。",
+     "why": "无意 không có nghĩa \"sơ ý, bất cẩn\" và không đi sau 太. Sơ ý là 不小心.",
+     "right": "对不起，我太不小心了，把你的杯子打破了。"
+    },
+    {
+     "wrong": "我无意中打扰您，不过我可以跟您谈一会儿吗？",
+     "why": "\"Không có ý định làm gì\" dùng động từ 无意 + V, không thêm 中. 无意中 là \"tình cờ\" — chỉ việc đã xảy ra.",
+     "right": "我无意打扰您，不过我可以跟您谈一会儿吗？"
+    }
+   ]
+  },
+  {
+   "point": "有利",
+   "explain": "有利 là tính từ, nghĩa là \"có lợi, có ích\" (有好处、有帮助). Thường dùng 有利于 để chỉ có lợi đối với người hoặc sự vật nào đó; cũng nói 对……有利. Phủ định là 不利 / 不利于 (không nói 不有利). 有利 không mang tân ngữ trực tiếp: ✗ 有利身体 → 有利于身体.",
+   "rule": "A + <strong style=\"color:var(--sky-d)\">有利于</strong> + B　|　A + 对 + B + <strong style=\"color:var(--sky-d)\">有利</strong> / <strong style=\"color:var(--sky-d)\">不利</strong>　|　<strong style=\"color:var(--sky-d)\">有利的</strong> + 条件 / 形势 / 地位",
+   "examples": [
+    {
+     "zh": "高高的个子、漂亮的外表，都是他的有利条件。",
+     "py": "Gāogāo de gèzi, piàoliang de wàibiǎo, dōu shì tā de yǒulì tiáojiàn.",
+     "vn": "Dáng người cao ráo, vẻ ngoài ưa nhìn đều là điều kiện thuận lợi của anh ấy."
+    },
+    {
+     "zh": "很多研究发现，适度的压力有利于我们保持良好的状态。",
+     "py": "Hěn duō yánjiū fāxiàn, shìdù de yālì yǒulì yú wǒmen bǎochí liánghǎo de zhuàngtài.",
+     "vn": "Nhiều nghiên cứu phát hiện, áp lực vừa phải có lợi cho việc chúng ta giữ được trạng thái tốt."
+    },
+    {
+     "zh": "笑能促进心肺活动，改善肌肉紧张状况，对睡眠也是有利的。",
+     "py": "Xiào néng cùjìn xīnfèi huódòng, gǎishàn jīròu jǐnzhāng zhuàngkuàng, duì shuìmián yě shì yǒulì de.",
+     "vn": "Cười có thể thúc đẩy hoạt động của tim phổi, cải thiện tình trạng căng cơ, cũng có lợi cho giấc ngủ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "多吃蔬菜有利身体健康。",
+     "why": "有利 không mang tân ngữ trực tiếp, phải thêm 于.",
+     "right": "多吃蔬菜有利于身体健康。"
+    },
+    {
+     "wrong": "经常熬夜对身体不有利。",
+     "why": "Phủ định của 有利 là 不利, không nói 不有利.",
+     "right": "经常熬夜对身体不利。"
+    }
+   ]
+  },
+  {
+   "point": "的确",
+   "explain": "的确 là phó từ, nghĩa là \"hoàn toàn xác thực, quả thật\" (完全确实，实在), dùng để khẳng định chắc chắn điều mình nói. Có thể lặp lại thành 的的确确. Chữ 的 ở đây đọc dí. Khác với 确实 (vừa là phó từ vừa là tính từ), 的确 không làm vị ngữ hay định ngữ: ✗ 消息的确吗？ → 消息确实吗？",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">的确</strong> + V / tính từ　|　<strong style=\"color:var(--sky-d)\">的的确确</strong> (nhấn mạnh)　|　✗ 消息的确吗 → 消息确实吗",
+   "examples": [
+    {
+     "zh": "因此，“鲇鱼效应”的确对挖掘员工潜力、提高企业活力具有积极的意义。",
+     "py": "Yīncǐ, “niányú xiàoyìng” díquè duì wājué yuángōng qiánlì, tígāo qǐyè huólì jùyǒu jījí de yìyì.",
+     "vn": "Vì vậy, “hiệu ứng cá nheo” quả thực có ý nghĩa tích cực đối với việc khai thác tiềm năng nhân viên, nâng cao sức sống doanh nghiệp."
+    },
+    {
+     "zh": "他的确是我所教过的学生中最聪明的。",
+     "py": "Tā díquè shì wǒ suǒ jiāoguo de xuésheng zhōng zuì cōngming de.",
+     "vn": "Cậu ấy quả thực là người thông minh nhất trong số những học sinh tôi từng dạy."
+    },
+    {
+     "zh": "咱们总裁选择李阳负责的的确确有些冒险，因为他太年轻了。",
+     "py": "Zánmen zǒngcái xuǎnzé Lǐ Yáng fùzé dídíquèquè yǒuxiē màoxiǎn, yīnwèi tā tài niánqīng le.",
+     "vn": "Tổng giám đốc chọn Lý Dương phụ trách quả thật có phần mạo hiểm, vì cậu ấy còn quá trẻ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你听谁说的？这个消息的确吗？",
+     "why": "的确 chỉ là phó từ, không làm vị ngữ. Làm vị ngữ phải dùng tính từ 确实.",
+     "right": "你听谁说的？这个消息确实吗？"
+    },
+    {
+     "wrong": "这个方法很的确有用。",
+     "why": "的确 đứng TRƯỚC 很, không đứng sau 很.",
+     "right": "这个方法的确很有用。"
+    }
+   ]
+  }
+ ]
+}

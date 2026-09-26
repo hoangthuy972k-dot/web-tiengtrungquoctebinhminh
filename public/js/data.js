@@ -1707,6 +1707,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-29.html'
+      },
+      {
+        id: 'hsk5-l30',
+        number: 30,
+        title: 'Cạnh tranh khiến thị trường hiệu quả hơn',
+        titleHanzi: '竞争让市场更高效',
+        titlePinyin: 'Jìngzhēng ràng shìchǎng gèng gāoxiào',
+        topic: 'Unit 10 关注经济 · Cạnh tranh & “hiệu ứng cá nheo” trong kinh tế thị trường',
+        vocabCount: 36,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-30.html'
       }
     ],
     yct: [

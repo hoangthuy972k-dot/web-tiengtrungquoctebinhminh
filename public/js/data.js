@@ -1601,6 +1601,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-20.html'
       },
       {
+        id: 'hsk5-l21',
+        number: 21,
+        title: 'Tình yêu chữ Hán của “ông chú người Mỹ”',
+        titleHanzi: '汉字叔叔：一个美国人的汉字情缘',
+        titlePinyin: 'Hànzì shūshu: yí ge Měiguórén de Hànzì qíngyuán',
+        topic: 'Unit 7 交流文化 · Giao lưu văn hoá — chữ Hán & ước mơ',
+        vocabCount: 45,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-21.html'
+      },
+      {
         id: 'hsk5-l22',
         number: 22,
         title: 'Đọc và suy nghĩ',

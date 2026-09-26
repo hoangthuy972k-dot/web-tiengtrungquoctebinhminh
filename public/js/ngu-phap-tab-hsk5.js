@@ -20441,6 +20441,948 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-20.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-21.html"] = [
+ {
+  "so": "1",
+  "ten": "「硬」",
+  "tenVn": "",
+  "cauTruc": [
+   "① Sub + 硬 + V (硬说 / 硬要) — khăng khăng",
+   "② Sub + 硬(是) + (把 + O) + V — gắng gượng"
+  ],
+  "giaiThich": "硬 ở bài này là PHÓ TỪ (khác 硬 tính từ “cứng” của bài 7), có hai nghĩa: ① kiên quyết, khăng khăng làm một việc — kể cả khi việc đó vô lý, trái ý người khác: 硬说, 硬要; ② năng lực, điều kiện không đủ nhưng vẫn gắng gượng làm: 硬挺过来, 硬把药喝下去. 硬 đứng ngay trước động từ (hoặc trước 把); khẩu ngữ hay nói 硬是. Thành ngữ 死记硬背 (học vẹt) cũng dùng 硬 theo nghĩa này.",
+  "viDu": [
+   {
+    "zh": "在中国历史故事“指鹿为马”中，赵高把鹿硬说成马。",
+    "py": "Zài Zhōngguó lìshǐ gùshi “zhǐ lù wéi mǎ” zhōng, Zhào Gāo bǎ lù yìng shuōchéng mǎ.",
+    "vn": "Trong câu chuyện lịch sử Trung Quốc “chỉ hươu bảo ngựa”, Triệu Cao cứ khăng khăng nói con hươu là con ngựa."
+   },
+   {
+    "zh": "你不知道这一年我是怎么硬挺过来的。",
+    "py": "Nǐ bù zhīdào zhè yì nián wǒ shì zěnme yìng tǐng guolai de.",
+    "vn": "Cậu không biết năm nay tôi đã gắng gượng vượt qua như thế nào đâu."
+   },
+   {
+    "zh": "虽然中药汤有点儿苦，但为了治病，他还是硬把它喝下去了。",
+    "py": "Suīrán zhōngyào tāng yǒudiǎnr kǔ, dàn wèile zhì bìng, tā háishi yìng bǎ tā hē xiaqu le.",
+    "vn": "Tuy thuốc bắc hơi đắng, nhưng để chữa bệnh, anh ấy vẫn cố uống hết."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他说硬是我拿的。",
+    "why": "硬 là phó từ, đứng TRƯỚC động từ 说: 硬说 = khăng khăng nói.",
+    "dung": "他硬说是我拿的。"
+   },
+   {
+    "sai": "药太苦了，他硬地喝下去了。",
+    "why": "Phó từ 硬 đứng thẳng trước động từ, không thêm 地; có thể dùng 硬是 hoặc 硬把……",
+    "dung": "药太苦了，他硬是把药喝下去了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "明明是他忘了，他却",
+       "说是我没提醒他。"
+      ],
+      "dap": [
+       [
+        "硬"
+       ]
+      ],
+      "chon": [
+       "硬",
+       "偶然",
+       "尽快"
+      ],
+      "goiY": "“Rõ ràng anh ta quên, thế mà cứ KHĂNG KHĂNG nói là tôi không nhắc.”",
+      "giai": "硬说 = khăng khăng nói điều không đúng (nghĩa ①)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在“指鹿为马”的故事中，赵高把鹿",
+       "说成马。"
+      ],
+      "dap": [
+       [
+        "硬"
+       ]
+      ],
+      "chon": [
+       "硬",
+       "最初",
+       "偶尔"
+      ],
+      "goiY": "“Triệu Cao CỐ TÌNH nói con hươu là con ngựa.”",
+      "giai": "Câu 注释 của sách: 把鹿硬说成马."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然中药汤有点儿苦，他还是",
+       "把它喝下去了。"
+      ],
+      "dap": [
+       [
+        "硬"
+       ]
+      ],
+      "chon": [
+       "硬",
+       "尽快",
+       "偶然"
+      ],
+      "goiY": "“Thuốc đắng nhưng anh ấy vẫn GẮNG uống hết.”",
+      "giai": "Nghĩa ②: không muốn / không nổi nhưng vẫn gắng gượng làm. 硬 đứng trước 把."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "汉字的一笔一画没有任何逻辑，只能死记",
+       "背。"
+      ],
+      "dap": [
+       [
+        "硬"
+       ]
+      ],
+      "chon": [
+       "硬",
+       "难",
+       "死"
+      ],
+      "goiY": "“Chỉ có thể học vẹt (nhớ cứng, CỐ thuộc).”",
+      "giai": "Thành ngữ 死记硬背: 硬背 = cố học thuộc."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我说不想去，妈妈",
+       "要我去。"
+      ],
+      "dap": [
+       [
+        "硬"
+       ]
+      ],
+      "chon": [
+       "硬",
+       "偶然",
+       "最初"
+      ],
+      "goiY": "“Mẹ cứ NHẤT QUYẾT bắt tôi đi.”",
+      "giai": "硬要 + người + V = nhất quyết bắt ai làm gì."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "多年没见了，我们俩",
+       "聊了一夜都没睡。"
+      ],
+      "dap": [
+       [
+        "硬是",
+        "硬"
+       ]
+      ],
+      "chon": [
+       "硬是",
+       "偶然",
+       "尽快"
+      ],
+      "goiY": "“Hai đứa CỨ THẾ nói chuyện suốt đêm không ngủ.”",
+      "giai": "硬是 — khẩu ngữ, câu nghe số 7 của 练习册."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "赵高",
+       "把鹿",
+       "硬",
+       "说成了",
+       "马",
+       "。"
+      ],
+      "dap": [
+       "赵高把鹿硬说成了马。",
+       "赵高硬把鹿说成了马。"
+      ],
+      "goiY": "Triệu Cao cứ khăng khăng nói con hươu thành con ngựa.",
+      "giai": "硬 đứng trước động từ 说 hoặc trước cả cụm 把鹿."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "还是",
+       "硬",
+       "把药",
+       "喝下去了",
+       "。"
+      ],
+      "dap": [
+       "他还是硬把药喝下去了。",
+       "他还是把药硬喝下去了。"
+      ],
+      "goiY": "Anh ấy vẫn cố uống hết thuốc.",
+      "giai": "还是 + 硬 + 把 … V; 硬 cũng có thể đứng ngay trước động từ 喝."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我说",
+       "不想去",
+       "，",
+       "妈妈",
+       "硬要",
+       "我",
+       "去",
+       "。"
+      ],
+      "dap": [
+       "我说不想去，妈妈硬要我去。"
+      ],
+      "goiY": "Tôi nói không muốn đi, mẹ cứ nhất quyết bắt tôi đi.",
+      "giai": "硬要 + người + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他硬说那本书是他的。",
+      "dung": true,
+      "giai": "Đúng: 硬说 = khăng khăng nói (dù không đúng)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他说硬是我拿的。",
+      "dung": false,
+      "sua": "他硬说是我拿的。",
+      "giai": "硬 là phó từ, phải đứng trước động từ 说."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "药太苦了，他硬地喝下去了。",
+      "dung": false,
+      "sua": "药太苦了，他硬是把药喝下去了。",
+      "giai": "Phó từ 硬 không thêm 地; dùng 硬是 hoặc 硬把……"
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Rõ ràng là lỗi của cậu ấy, thế mà cậu ấy cứ khăng khăng nói là tôi sai.",
+      "dap": [
+       "明明是他的错，他却硬说是我错了。",
+       "明明是他错了，他却硬说是我错了。",
+       "明明是他的错，可是他硬说是我的错。"
+      ],
+      "py": "Míngmíng shì tā de cuò, tā què yìng shuō shì wǒ cuò le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 硬说 và 明明……却…….",
+      "giai": "明明……却…… (rõ ràng … thế mà …) + 硬说 (nghĩa ①)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chân bị đau nhưng anh ấy vẫn gắng gượng chạy hết cuộc thi.",
+      "dap": [
+       "脚受伤了，他还是硬跑完了比赛。",
+       "虽然脚受伤了，但是他还是硬跑完了比赛。",
+       "他的脚受伤了，可是他硬是跑完了比赛。"
+      ],
+      "py": "Jiǎo shòushāng le, tā háishi yìng pǎowánle bǐsài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 硬 (nghĩa gắng gượng).",
+      "giai": "硬 + V + 完 = gắng gượng làm cho xong (nghĩa ②)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "明明是他忘了，他却＿＿＿。（硬）",
+      "goiY": "khăng khăng đổ lỗi cho người khác (dùng 硬说) — câu 练一练 của sách",
+      "mau": "明明是他忘了，他却硬说是我没告诉他。",
+      "can": [
+       [
+        "硬"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：谢谢你的好意，饭就不吃了，早点儿回去还要收拾行李呢。　B：既然你还有事，＿＿＿。（硬）",
+      "goiY": "không ép giữ bạn ở lại nữa (dùng 硬) — câu 练一练 của sách",
+      "mau": "既然你还有事，我就不硬留你吃饭了。",
+      "can": [
+       [
+        "硬"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu dùng 硬 theo nghĩa “gắng gượng”, ví dụ viết tiếp câu của sách: 快递员的工作很辛苦，……",
+      "mau": "快递员的工作很辛苦，就算下大雨，他们也得硬撑着把快递送到。",
+      "can": [
+       [
+        "硬"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「偶然」",
+  "tenVn": "",
+  "cauTruc": [
+   "① 一个偶然的机会 / ……并非偶然 (tính từ — bất ngờ)",
+   "② Sub + 偶然 + 也(会) + V (phó từ — thỉnh thoảng)"
+  ],
+  "giaiThich": "偶然 là TÍNH TỪ: sự việc xảy ra ngoài dự liệu, hoặc theo quy luật thông thường thì khó xảy ra (trái nghĩa 必然 — tất nhiên). Làm định ngữ (偶然的机会), vị ngữ (并非偶然, 非常偶然), trạng ngữ (偶然发现); trước có thể thêm phó từ mức độ. 偶然 còn làm PHÓ TỪ với nghĩa “thỉnh thoảng, có lúc” (= 偶尔), hay đi với 也: 偶然也会……. Phân biệt với 偶尔 xem mục 词语辨析.",
+  "viDu": [
+   {
+    "zh": "一个偶然的机会，他发现如果了解汉字的来源和演变过程，再学习它就变得轻松、容易。",
+    "py": "Yí ge ǒurán de jīhuì, tā fāxiàn rúguǒ liǎojiě Hànzì de láiyuán hé yǎnbiàn guòchéng, zài xuéxí tā jiù biàn de qīngsōng, róngyì.",
+    "vn": "Một dịp tình cờ, anh ấy phát hiện ra nếu hiểu nguồn gốc và quá trình biến đổi của chữ Hán thì học nó sẽ trở nên nhẹ nhàng, dễ dàng."
+   },
+   {
+    "zh": "虽然桂花偶然也能长成18米高的大树，但是绝大多数情况下它们都很矮。",
+    "py": "Suīrán guìhuā ǒurán yě néng zhǎngchéng shíbā mǐ gāo de dà shù, dànshì jué dà duōshù qíngkuàng xià tāmen dōu hěn ǎi.",
+    "vn": "Tuy cây hoa quế đôi khi cũng có thể mọc thành cây lớn cao 18 mét, nhưng tuyệt đại đa số trường hợp chúng đều rất thấp."
+   },
+   {
+    "zh": "她专心地织着毛衣，偶然也会抬眼看一下墙上的挂钟。",
+    "py": "Tā zhuānxīn de zhīzhe máoyī, ǒurán yě huì tái yǎn kàn yíxià qiáng shang de guàzhōng.",
+    "vn": "Bà chăm chú đan áo len, thỉnh thoảng cũng ngước mắt nhìn chiếc đồng hồ treo tường."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "一个偶尔的机会，我认识了他。",
+    "why": "Dịp BẤT NGỜ, không định trước → 偶然的机会. 偶尔 nhấn mạnh số lần ít.",
+    "dung": "一个偶然的机会，我认识了他。"
+   },
+   {
+    "sai": "我们见面的机会很偶尔。",
+    "why": "偶尔 không làm vị ngữ, không thêm phó từ mức độ 很. Muốn nói “ít khi gặp” thì dùng 偶尔 làm trạng ngữ.",
+    "dung": "我们偶尔才见一次面。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "一个",
+       "的机会，他发现了学习汉字的好方法。"
+      ],
+      "dap": [
+       [
+        "偶然"
+       ]
+      ],
+      "chon": [
+       "偶然",
+       "偶尔",
+       "经常"
+      ],
+      "goiY": "“Nhân một dịp TÌNH CỜ, anh ấy phát hiện ra …”",
+      "giai": "一个偶然的机会 — cụm cố định trong bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这本书是她一次逛书市时",
+       "发现的。"
+      ],
+      "dap": [
+       [
+        "偶然"
+       ]
+      ],
+      "chon": [
+       "偶然",
+       "经常",
+       "必然"
+      ],
+      "goiY": "“Cuốn sách này cô ấy TÌNH CỜ phát hiện ra.”",
+      "giai": "偶然 làm trạng ngữ: 偶然发现."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "李阳的父亲是一位画家，所以，李阳喜欢画画儿并非",
+       "。"
+      ],
+      "dap": [
+       [
+        "偶然"
+       ]
+      ],
+      "chon": [
+       "偶然",
+       "偶尔",
+       "经常"
+      ],
+      "goiY": "“Lý Dương thích vẽ tranh không phải NGẪU NHIÊN.”",
+      "giai": "并非偶然 — 偶然 làm vị ngữ; 偶尔 không làm vị ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "和刘峰在上海的那次碰面非常",
+       "。"
+      ],
+      "dap": [
+       [
+        "偶然"
+       ]
+      ],
+      "chon": [
+       "偶然",
+       "偶尔",
+       "经常"
+      ],
+      "goiY": "“Lần gặp Lưu Phong ở Thượng Hải rất TÌNH CỜ.”",
+      "giai": "Có phó từ mức độ 非常 và làm vị ngữ → chỉ 偶然."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她专心地织着毛衣，",
+       "也会抬眼看一下墙上的挂钟。"
+      ],
+      "dap": [
+       [
+        "偶然",
+        "偶尔"
+       ]
+      ],
+      "chon": [
+       "偶然",
+       "必然",
+       "经常"
+      ],
+      "goiY": "“THỈNH THOẢNG bà cũng ngước mắt nhìn đồng hồ.”",
+      "giai": "偶然 làm phó từ = 偶尔 (thỉnh thoảng), hay đi với 也会."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那些我生活过的地方，",
+       "也会在我梦中出现。"
+      ],
+      "dap": [
+       [
+        "偶然",
+        "偶尔"
+       ]
+      ],
+      "chon": [
+       "偶然",
+       "必然",
+       "一定"
+      ],
+      "goiY": "“Những nơi tôi từng sống, THỈNH THOẢNG cũng xuất hiện trong giấc mơ.”",
+      "giai": "Câu 注释 của sách: 偶然也会…… (phó từ)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "一个",
+       "偶然的",
+       "机会",
+       "，",
+       "我",
+       "爱上了",
+       "汉语",
+       "。"
+      ],
+      "dap": [
+       "一个偶然的机会，我爱上了汉语。"
+      ],
+      "goiY": "Nhân một dịp tình cờ, tôi đã phải lòng tiếng Trung.",
+      "giai": "一个偶然的机会 làm trạng ngữ đầu câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这本书",
+       "是",
+       "我",
+       "偶然",
+       "在书店里",
+       "发现的",
+       "。"
+      ],
+      "dap": [
+       "这本书是我偶然在书店里发现的。",
+       "这本书是我在书店里偶然发现的。"
+      ],
+      "goiY": "Cuốn sách này là tôi tình cờ phát hiện ở hiệu sách.",
+      "giai": "是……的 nhấn mạnh; 偶然 đứng trước cụm giới từ hoặc ngay trước động từ đều được."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "考上",
+       "北京大学",
+       "并非",
+       "偶然",
+       "。"
+      ],
+      "dap": [
+       "他考上北京大学并非偶然。"
+      ],
+      "goiY": "Cậu ấy đỗ Đại học Bắc Kinh không phải ngẫu nhiên.",
+      "giai": "并非偶然 làm vị ngữ ở cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "那次见面非常偶然。",
+      "dung": true,
+      "giai": "Đúng: 偶然 là tính từ, làm vị ngữ, thêm được 非常."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "一个偶尔的机会，我认识了他。",
+      "dung": false,
+      "sua": "一个偶然的机会，我认识了他。",
+      "giai": "Dịp BẤT NGỜ → 偶然的机会; 偶尔 nhấn mạnh số lần ít."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们见面的机会很偶尔。",
+      "dung": false,
+      "sua": "我们偶尔才见一次面。",
+      "giai": "偶尔 không làm vị ngữ, không thêm 很."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi tình cờ gặp lại cô giáo tiểu học ở siêu thị.",
+      "dap": [
+       "我在超市偶然碰到了小学老师。",
+       "我偶然在超市碰到了小学老师。",
+       "我在超市偶然遇到了我的小学老师。"
+      ],
+      "py": "Wǒ zài chāoshì ǒurán pèngdàole xiǎoxué lǎoshī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 偶然 làm trạng ngữ.",
+      "giai": "偶然 + 碰到 / 遇到 = tình cờ gặp."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy thi đỗ không phải là ngẫu nhiên, vì ngày nào cậu ấy cũng học rất chăm chỉ.",
+      "dap": [
+       "他考上并非偶然，因为他每天都学习很努力。",
+       "他考上不是偶然的，因为他每天都很努力地学习。",
+       "他考上大学并非偶然，因为他每天都很努力。"
+      ],
+      "py": "Tā kǎoshang bìngfēi ǒurán, yīnwèi tā měi tiān dōu xuéxí hěn nǔlì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 并非偶然.",
+      "giai": "偶然 làm vị ngữ: 并非偶然 / 不是偶然的."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿彻底改变了他的命运。（偶然—形）",
+      "goiY": "một dịp tình cờ đã thay đổi số phận anh ấy — câu 练一练 của sách",
+      "mau": "一次偶然的机会彻底改变了他的命运。",
+      "can": [
+       [
+        "偶然"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你是怎么知道那家时装店在招聘的？　B：＿＿＿。（偶然—形）",
+      "goiY": "tình cờ nhìn thấy quảng cáo tuyển người — câu 练一练 của sách",
+      "mau": "我是逛街的时候偶然看到他们门口的招聘广告的。",
+      "can": [
+       [
+        "偶然"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu dùng 偶然 làm PHÓ TỪ (= thỉnh thoảng), ví dụ trả lời câu của sách: “你不是不喜欢吃方便面吗？”",
+      "mau": "我是不太喜欢，不过忙的时候，偶然也会吃一包。",
+      "can": [
+       [
+        "偶然"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「尽快」",
+  "tenVn": "",
+  "cauTruc": [
+   "Sub + 尽快 + V (+ O)",
+   "Sub + 尽快 + 把 + O + V……",
+   "请尽快 + V"
+  ],
+  "giaiThich": "尽快 là PHÓ TỪ, nghĩa 尽量加快 — cố gắng làm nhanh nhất có thể, càng sớm càng tốt. Đứng sau chủ ngữ, trước động từ hoặc trước 把; hay dùng trong lời yêu cầu, dặn dò, kế hoạch: 请尽快回复, 我要尽快把……. Đọc jǐnkuài (thanh 3, như 尽管, 尽量). Khác 赶快: 赶快 giục làm NGAY lập tức trong tình huống gấp, mang tính khẩu ngữ (着火了，赶快跑！).",
+  "viDu": [
+   {
+    "zh": "……我要抓紧时间尽快把《说文解字》电脑化。",
+    "py": "…… wǒ yào zhuājǐn shíjiān jǐnkuài bǎ 《Shuōwén Jiězì》 diànnǎohuà.",
+    "vn": "… tôi phải tranh thủ thời gian số hoá 《Thuyết văn giải tự》 càng sớm càng tốt."
+   },
+   {
+    "zh": "新产品出了点儿问题，你和严经理尽快商量一下这事。",
+    "py": "Xīn chǎnpǐn chūle diǎnr wèntí, nǐ hé Yán jīnglǐ jǐnkuài shāngliang yíxià zhè shì.",
+    "vn": "Sản phẩm mới có chút vấn đề, anh với giám đốc Nghiêm bàn ngay việc này đi."
+   },
+   {
+    "zh": "趁这两天天气好，你尽快把过季的衣服洗一洗，收起来。",
+    "py": "Chèn zhè liǎng tiān tiānqì hǎo, nǐ jǐnkuài bǎ guò jì de yīfu xǐ yi xǐ, shōu qilai.",
+    "vn": "Nhân hai hôm nay trời đẹp, con giặt ngay quần áo trái mùa rồi cất đi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我做尽快作业。",
+    "why": "尽快 là phó từ, đứng TRƯỚC động từ, không chen giữa động từ và tân ngữ.",
+    "dung": "我尽快做作业。"
+   },
+   {
+    "sai": "着火了！大家尽快跑啊！",
+    "why": "Tình huống khẩn cấp, giục chạy NGAY → 赶快 / 快. 尽快 hợp với yêu cầu, kế hoạch.",
+    "dung": "着火了！大家赶快跑啊！"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果我还能活一年，我要抓紧时间",
+       "把《说文解字》电脑化。"
+      ],
+      "dap": [
+       [
+        "尽快"
+       ]
+      ],
+      "chon": [
+       "尽快",
+       "偶然",
+       "最初"
+      ],
+      "goiY": "“… tranh thủ thời gian số hoá CÀNG SỚM CÀNG TỐT.”",
+      "giai": "Câu bài khoá: 抓紧时间尽快 + 把……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "新产品出了点儿问题，你和严经理",
+       "商量一下这事。"
+      ],
+      "dap": [
+       [
+        "尽快"
+       ]
+      ],
+      "chon": [
+       "尽快",
+       "偶尔",
+       "硬"
+      ],
+      "goiY": "“Anh với giám đốc Nghiêm bàn NGAY việc này đi.”",
+      "giai": "Lời dặn dò, yêu cầu → 尽快 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "收到邮件后，请",
+       "回复。"
+      ],
+      "dap": [
+       [
+        "尽快"
+       ]
+      ],
+      "chon": [
+       "尽快",
+       "偶然",
+       "最初"
+      ],
+      "goiY": "“Nhận được thư xin trả lời SỚM NHẤT CÓ THỂ.”",
+      "giai": "请尽快回复 — câu rất hay gặp trong email."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "趁这两天天气好，你",
+       "把过季的衣服洗一洗，收起来。"
+      ],
+      "dap": [
+       [
+        "尽快"
+       ]
+      ],
+      "chon": [
+       "尽快",
+       "偶尔",
+       "最初"
+      ],
+      "goiY": "“Nhân trời đẹp, con giặt NGAY quần áo trái mùa.”",
+      "giai": "尽快 đứng trước 把 (câu của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "病人的情况很危险，必须",
+       "做手术。"
+      ],
+      "dap": [
+       [
+        "尽快",
+        "马上"
+       ]
+      ],
+      "chon": [
+       "尽快",
+       "偶尔",
+       "最初"
+      ],
+      "goiY": "“Bệnh nhân nguy kịch, phải phẫu thuật CÀNG SỚM CÀNG TỐT.”",
+      "giai": "必须尽快 + V (câu 练一练 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "着火了！大家",
+       "跑啊！"
+      ],
+      "dap": [
+       [
+        "赶快",
+        "快"
+       ]
+      ],
+      "chon": [
+       "赶快",
+       "尽快",
+       "偶然"
+      ],
+      "goiY": "“Cháy rồi! Mọi người chạy NGAY đi!”",
+      "giai": "Tình huống khẩn cấp, lời giục khẩu ngữ → 赶快; 尽快 dùng cho yêu cầu, kế hoạch."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "请",
+       "你",
+       "尽快",
+       "把报告",
+       "交给我",
+       "。"
+      ],
+      "dap": [
+       "请你尽快把报告交给我。"
+      ],
+      "goiY": "Xin anh nộp báo cáo cho tôi càng sớm càng tốt.",
+      "giai": "请 + người + 尽快 + 把 + O + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "会",
+       "尽快",
+       "给您",
+       "答复",
+       "。"
+      ],
+      "dap": [
+       "我们会尽快给您答复。"
+      ],
+      "goiY": "Chúng tôi sẽ trả lời ông / bà sớm nhất có thể.",
+      "giai": "Động từ năng nguyện 会 đứng trước 尽快."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "尽快",
+       "去",
+       "医院",
+       "看看吧",
+       "。"
+      ],
+      "dap": [
+       "你尽快去医院看看吧。"
+      ],
+      "goiY": "Cậu đi bệnh viện khám ngay đi.",
+      "giai": "尽快 + V (去医院)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "一有消息，我就尽快通知你。",
+      "dung": true,
+      "giai": "Đúng: 尽快 đứng ngay trước động từ 通知."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我做尽快作业。",
+      "dung": false,
+      "sua": "我尽快做作业。",
+      "giai": "尽快 là phó từ, đứng TRƯỚC động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "请你把这件事尽快办完。",
+      "dung": true,
+      "giai": "Đúng: 尽快 có thể đứng trước 把 hoặc ngay trước động từ sau cụm 把."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Có tin tức gì xin hãy thông báo cho tôi càng sớm càng tốt.",
+      "dap": [
+       "有什么消息请尽快通知我。",
+       "一有消息，请尽快通知我。",
+       "有消息的话，请尽快告诉我。"
+      ],
+      "py": "Yǒu shénme xiāoxi qǐng jǐnkuài tōngzhī wǒ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 尽快.",
+      "giai": "请 + 尽快 + 通知 / 告诉."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi phải tranh thủ thời gian học xong những từ mới này càng sớm càng tốt.",
+      "dap": [
+       "我要抓紧时间尽快把这些生词学完。",
+       "我要抓紧时间，尽快学完这些生词。",
+       "我要抓紧时间尽快学完这些生词。"
+      ],
+      "py": "Wǒ yào zhuājǐn shíjiān jǐnkuài bǎ zhèxiē shēngcí xuéwán.",
+      "goiY": "Dịch sang tiếng Trung, dùng 抓紧时间 và 尽快.",
+      "giai": "Khung câu của bài khoá: 抓紧时间尽快 + 把 … V."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "下个月就开会讨论计划了，我＿＿＿。（尽快）",
+      "goiY": "phải viết xong bản kế hoạch sớm — câu 练一练 của sách",
+      "mau": "下个月就开会讨论计划了，我得尽快把计划书写好。",
+      "can": [
+       [
+        "尽快"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "病人的情况很危险，＿＿＿。（尽快）",
+      "goiY": "phải đưa đi phẫu thuật càng sớm càng tốt — câu 练一练 của sách",
+      "mau": "病人的情况很危险，必须尽快做手术。",
+      "can": [
+       [
+        "尽快"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu dùng 尽快, ví dụ đáp lại câu của sách: “小刘已经联系好了客人，就等你这边安排酒店了。”",
+      "mau": "好的，我今天就尽快把酒店订好，订好了马上告诉你。",
+      "can": [
+       [
+        "尽快"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk5-bai-22.html"] = [
  {
   "so": "1",

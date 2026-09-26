@@ -1721,6 +1721,7 @@
     hsk2: ['match', 'fill', 'sort', 'errfix'],
     hsk3: ['match', 'fill', 'sort', 'errfix'],
     hsk4: ['match', 'fill', 'sort', 'errfix'],
+    hsk5: ['match', 'fill', 'sort', 'errfix'],
     yct: ['match', 'fill', 'sort', 'mc']
   };
 

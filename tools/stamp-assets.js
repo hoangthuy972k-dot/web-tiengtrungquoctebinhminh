@@ -32,7 +32,8 @@ const SHARED = [
   'css/luyen-viet.css',
   'js/luyen-viet.js',
   'js/ke-lai.js',
-  'js/phan-biet.js'
+  'js/phan-biet.js',
+  'js/khong-goi-y.js'
 ];
 
 const h = crypto.createHash('sha1');

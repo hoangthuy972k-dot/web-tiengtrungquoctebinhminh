@@ -1440,3 +1440,23 @@ vocabData.forEach(function (v) {
   if (x.patterns) v.patterns = x.patterns;
   if (x.checkList) v.checkList = (v.checkList || []).concat(x.checkList).slice(0, 2);
 });
+
+// ══════════════════════════════════════════
+// LUYỆN TẬP — bổ sung cho bằng số câu của HSK 4 (điền 15 · sắp xếp 8 · chọn từ 10)
+// ══════════════════════════════════════════
+fillData.push(
+  {pre:'他在城里打工，一个月能',blank:'挣',post:'五千多块钱。',hint:'(kiếm (tiền))',ans:'挣'},
+  {pre:'房子',blank:'装修',post:'好以后，父母就搬进来住了。',hint:'(sửa sang, trang trí nhà)',ans:'装修'},
+  {pre:'桌子上全是',blank:'灰尘',post:'，好久没人打扫了。',hint:'(bụi)',ans:'灰尘'},
+  {pre:'外面太冷了，我的手都',blank:'冻',post:'红了。',hint:'(lạnh cóng)',ans:'冻'},
+  {pre:'出门以前别忘了把门',blank:'锁',post:'好。',hint:'(khoá)',ans:'锁'}
+);
+sortData.push(
+  {words:['妈妈','把','被子','拿到','外面','去','晒了','。'],ans:'妈妈把被子拿到外面去晒了。',audio:'妈妈把被子拿到外面去晒了。'}
+);
+errorFixData.push(
+  {wrong:'我真不敢____，二十年前这里还是一片农村。',opts:['想象','感受','打算','记得'],ans:0,
+   exp:'不敢想象 (không dám tưởng tượng) là cách nói quen dùng để bày tỏ sự ngạc nhiên. 感受 (cảm nhận) đi với cảm giác, không khí; 打算, 记得 không hợp nghĩa.'},
+  {wrong:'很多居民对这个计划表示____反对。',opts:['强烈','温暖','悄悄','一辈子'],ans:0,
+   exp:'强烈反对 (phản đối mạnh mẽ) là kết hợp cố định. 温暖 (ấm áp) không đi với 反对; 悄悄 (lặng lẽ) trái với "bày tỏ" công khai; 一辈子 chỉ thời gian cả đời, không hợp.'}
+);

@@ -1729,3 +1729,23 @@ vocabData.forEach(function (v) {
   if (x.patterns) v.patterns = x.patterns;
   if (x.checkList) v.checkList = (v.checkList || []).concat(x.checkList).slice(0, 2);
 });
+
+// ══════════════════════════════════════════
+// LUYỆN TẬP — bổ sung cho bằng số câu của HSK 4 (điền 15 · sắp xếp 8 · chọn từ 10)
+// ══════════════════════════════════════════
+fillData.push(
+  {pre:'这件事不是一两句话就能',blank:'叙述',post:'清楚的。',hint:'(kể lại, thuật lại)',ans:'叙述'},
+  {pre:'妈妈一直',blank:'催',post:'我快点儿起床，不然就要迟到了。',hint:'(giục)',ans:'催'},
+  {pre:'他们结婚二十年了，一直',blank:'相敬如宾',post:'，从来没吵过架。',hint:'(tôn trọng nhau như khách)',ans:'相敬如宾'},
+  {pre:'请你把那本书',blank:'递',post:'给我，好吗？',hint:'(đưa, chuyển cho)',ans:'递'},
+  {pre:'夫妻之间应该',blank:'患难与共',post:'，不管遇到什么困难都不离开对方。',hint:'(hoạn nạn có nhau)',ans:'患难与共'}
+);
+sortData.push(
+  {words:['他们','被','评委','选为','最恩爱的','夫妻','。'],ans:'他们被评委选为最恩爱的夫妻。',audio:'他们被评委选为最恩爱的夫妻。'}
+);
+errorFixData.push(
+  {wrong:'孩子们应该从小学会____小动物。',opts:['爱护','爱情','恩爱','婚姻'],ans:0,
+   exp:'爱护 (yêu quý, bảo vệ) là động từ, mang được tân ngữ 小动物. 爱情 (tình yêu) và 婚姻 (hôn nhân) là danh từ; 恩爱 chỉ dùng cho vợ chồng và không mang tân ngữ.'},
+  {wrong:'等了半个小时，他开始有点儿____了。',opts:['不耐烦','不得了','不客气','不要紧'],ans:0,
+   exp:'不耐烦 (mất kiên nhẫn) hợp với tình huống chờ lâu và đi được sau 有点儿. 不得了 (ghê gớm, vô cùng) thường làm bổ ngữ: 高兴得不得了; 不客气, 不要紧 không hợp nghĩa.'}
+);

@@ -1563,6 +1563,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-17.html'
+      },
+      {
+        id: 'hsk5-l18',
+        number: 18,
+        title: 'Nghệ thuật trừu tượng đẹp hay xấu?',
+        titleHanzi: '抽象艺术美不美？',
+        titlePinyin: 'Chōuxiàng yìshù měi bu měi?',
+        topic: 'Unit 6 修身养性 · Nghệ thuật trừu tượng & cách não bộ cảm nhận cái đẹp',
+        vocabCount: 40,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-18.html'
       }
     ],
     yct: [

@@ -17639,3 +17639,940 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-17.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-18.html"] = [
+ {
+  "so": "1",
+  "ten": "「极其」",
+  "tenVn": "",
+  "cauTruc": [
+   "极其 + tính từ / động từ hai âm tiết trở lên"
+  ],
+  "giaiThich": "极其 là phó từ, nghĩa như 非常 (vô cùng, hết sức), thường dùng trong VĂN VIẾT. 极其 chỉ bổ nghĩa cho tính từ (hoặc động từ tâm lý) HAI âm tiết trở lên — không đứng trước từ một âm tiết như 好, 丑, 美.",
+  "viDu": [
+   {
+    "zh": "在中国，餐桌上放一把刀是极其少见的现象。",
+    "py": "Zài Zhōngguó, cānzhuō shang fàng yì bǎ dāo shì jíqí shǎojiàn de xiànxiàng.",
+    "vn": "Ở Trung Quốc, đặt một con dao trên bàn ăn là hiện tượng cực kỳ hiếm gặp."
+   },
+   {
+    "zh": "每天说“太糟糕了”“太讨厌了”“真倒霉”的人，遇到的困难也格外多，运气也显得极其糟糕。",
+    "py": "Měi tiān shuō “tài zāogāo le” “tài tǎoyàn le” “zhēn dǎoméi” de rén, yùdào de kùnnan yě géwài duō, yùnqi yě xiǎnde jíqí zāogāo.",
+    "vn": "Người ngày nào cũng nói \"tệ quá\", \"ghét quá\", \"xui thật\" thì gặp khó khăn cũng đặc biệt nhiều, vận may cũng có vẻ vô cùng tệ."
+   },
+   {
+    "zh": "抽象派画家的作品中经常见到好像随便洒上颜料而形成的画作，在有人看来极其神秘甚至丑陋。",
+    "py": "Chōuxiàngpài huàjiā de zuòpǐn zhōng jīngcháng jiàndào hǎoxiàng suíbiàn sǎshàng yánliào ér xíngchéng de huàzuò, zài yǒu rén kànlái jíqí shénmì shènzhì chǒulòu.",
+    "vn": "Trong tác phẩm của hoạ sĩ trường phái trừu tượng thường gặp những bức tranh như được vẩy màu tuỳ tiện, trong mắt có người chúng vô cùng bí ẩn, thậm chí xấu xí."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "那个人长得极其丑。",
+    "why": "丑 là tính từ MỘT âm tiết, 极其 không bổ nghĩa được. Dùng 非常 hoặc đổi thành từ hai âm tiết 丑陋.",
+    "dung": "那个人长得非常丑。／那个人长得极其丑陋。"
+   },
+   {
+    "sai": "这道题很极其难。",
+    "why": "极其 đã là phó từ mức độ, không chồng thêm 很; và 难 là từ một âm tiết.",
+    "dung": "这道题极其困难。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次考试对我来说",
+       "重要。"
+      ],
+      "dap": [
+       [
+        "极其"
+       ]
+      ],
+      "chon": [
+       "极其",
+       "其余",
+       "可见"
+      ],
+      "goiY": "“Kỳ thi này với tôi vô cùng quan trọng.”",
+      "giai": "极其 + tính từ hai âm tiết 重要."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在中国，餐桌上放一把刀是",
+       "少见的现象。"
+      ],
+      "dap": [
+       [
+        "极其"
+       ]
+      ],
+      "chon": [
+       "极其",
+       "随手",
+       "其余"
+      ],
+      "goiY": "Câu của sách: hiện tượng “cực kỳ hiếm gặp”.",
+      "giai": "极其 + 少见 (hai âm tiết), giọng văn viết."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那个人长得",
+       "丑。"
+      ],
+      "dap": [
+       [
+        "非常"
+       ]
+      ],
+      "chon": [
+       "非常",
+       "极其",
+       "其余"
+      ],
+      "goiY": "丑 là tính từ MỘT âm tiết.",
+      "giai": "Từ một âm tiết không đi với 极其 → dùng 非常 (bài tập 2 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "上海给我留下了",
+       "深刻的印象。"
+      ],
+      "dap": [
+       [
+        "极其"
+       ]
+      ],
+      "chon": [
+       "极其",
+       "哪怕",
+       "可见"
+      ],
+      "goiY": "Câu 29 sách bài tập.",
+      "giai": "极其 + 深刻 làm định ngữ cho 印象."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我对这个人",
+       "欣赏，我认为他很有才华。"
+      ],
+      "dap": [
+       [
+        "极其"
+       ]
+      ],
+      "chon": [
+       "极其",
+       "其余",
+       "随手"
+      ],
+      "goiY": "Bài tập 3 của sách: “tôi vô cùng đánh giá cao người này”.",
+      "giai": "极其 đứng trước động từ tâm lý hai âm tiết 欣赏."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "会议室里的气氛",
+       "紧张，谁也不说话。"
+      ],
+      "dap": [
+       [
+        "极其"
+       ]
+      ],
+      "chon": [
+       "极其",
+       "可见",
+       "其余"
+      ],
+      "goiY": "“Không khí vô cùng căng thẳng, không ai nói gì.”",
+      "giai": "极其 + 紧张 (ôn từ 气氛 bài 13)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这是",
+       "一个",
+       "极其",
+       "重要的",
+       "决定",
+       "。"
+      ],
+      "dap": [
+       "这是一个极其重要的决定。"
+      ],
+      "goiY": "Đây là một quyết định vô cùng quan trọng.",
+      "giai": "一个 → 极其重要的 → 决定."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "上海",
+       "给我",
+       "留下了",
+       "极其深刻的",
+       "印象",
+       "。"
+      ],
+      "dap": [
+       "上海给我留下了极其深刻的印象。"
+      ],
+      "goiY": "Thượng Hải để lại cho tôi ấn tượng vô cùng sâu sắc.",
+      "giai": "Câu 29 sách bài tập."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这些画作",
+       "在有人看来",
+       "极其",
+       "神秘",
+       "。"
+      ],
+      "dap": [
+       "这些画作在有人看来极其神秘。"
+      ],
+      "goiY": "Trong mắt có người, những bức tranh này vô cùng bí ẩn.",
+      "giai": "Câu của bài khoá: 在有人看来 + 极其 + tính từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "今天的作业极其多。",
+      "dung": false,
+      "sua": "今天的作业非常多。",
+      "giai": "多 là từ một âm tiết, không đi với 极其."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "那里的风景极其美丽，我们都舍不得离开。",
+      "dung": true,
+      "giai": "Đúng: 美丽 hai âm tiết, 极其美丽 tự nhiên trong văn viết."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个消息很极其重要。",
+      "dung": false,
+      "sua": "这个消息极其重要。",
+      "giai": "Không chồng hai phó từ mức độ 很 + 极其."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Kỳ thi này đối với tôi vô cùng quan trọng.",
+      "dap": [
+       "这次考试对我来说极其重要。",
+       "这次考试对我极其重要。",
+       "对我来说，这次考试极其重要。"
+      ],
+      "py": "Zhè cì kǎoshì duì wǒ lái shuō jíqí zhòngyào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 极其.",
+      "giai": "对……来说 (ôn HSK 4) + 极其 + 重要."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Hiện tượng này ở Việt Nam cực kỳ hiếm gặp.",
+      "dap": [
+       "这种现象在越南极其少见。",
+       "这个现象在越南极其少见。",
+       "在越南，这种现象极其少见。"
+      ],
+      "py": "Zhè zhǒng xiànxiàng zài Yuènán jíqí shǎojiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 极其.",
+      "giai": "极其 + 少见 (hai âm tiết)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这个项目是我们用了三年时间才谈下来的，＿＿＿。",
+      "goiY": "nói dự án này rất quan trọng với công ty (dùng 极其) — câu của sách",
+      "mau": "这个项目是我们用了三年时间才谈下来的，对公司来说极其重要。",
+      "can": [
+       [
+        "极其"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你知道孔子吗？　B：＿＿＿。",
+      "goiY": "nói Khổng Tử là người vô cùng nổi tiếng (dùng 极其) — câu của sách",
+      "mau": "当然知道，他是中国历史上极其有名的思想家。",
+      "can": [
+       [
+        "极其"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「极其」 + tính từ hai âm tiết, nói về một tác phẩm nghệ thuật em thích",
+      "mau": "我第一次听这首古典音乐的时候，觉得它极其优美。",
+      "can": [
+       [
+        "极其"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「其余」",
+  "tenVn": "",
+  "cauTruc": [
+   "只有 / 其中 + một phần……，其余(的) + N + 都……",
+   "……，而其余的则……"
+  ],
+  "giaiThich": "其余 là đại từ, chỉ phần CÒN LẠI, phần khác ngoài phần đã nói trước đó. Vế trước nêu một phần (只有……, 其中……), vế sau dùng 其余(的) để nói về phần còn lại; hay đi với 都 hoặc 则.",
+  "viDu": [
+   {
+    "zh": "怎么只有你们两个人？其余的同学呢？",
+    "py": "Zěnme zhǐ yǒu nǐmen liǎng ge rén? Qíyú de tóngxué ne?",
+    "vn": "Sao chỉ có hai em thôi? Các bạn còn lại đâu?"
+   },
+   {
+    "zh": "只有一个房间亮着灯，其余窗户都是黑的。",
+    "py": "Zhǐ yǒu yí ge fángjiān liàngzhe dēng, qíyú chuānghu dōu shì hēi de.",
+    "vn": "Chỉ có một phòng sáng đèn, các cửa sổ còn lại đều tối om."
+   },
+   {
+    "zh": "其中三分之一的画作作者没有签名，而其余的则标明了身份。",
+    "py": "Qízhōng sān fēn zhī yī de huàzuò zuòzhě méiyǒu qiānmíng, ér qíyú de zé biāomíngle shēnfèn.",
+    "vn": "Trong đó một phần ba số tranh không có chữ ký tác giả, số còn lại thì ghi rõ thân phận."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我们班有四十个同学，其余的同学都参加了比赛。",
+    "why": "其余 phải có \"phần đã nêu\" ở trước để đối chiếu; câu này chưa tách ra phần nào nên không có \"phần còn lại\".",
+    "dung": "我们班除了小王，其余的同学都参加了比赛。"
+   },
+   {
+    "sai": "我只认识这两个字，其余字的我都不认识。",
+    "why": "其余 đứng trước danh từ (其余的字) hoặc dùng 其余的 thay cho danh từ; không nói 其余字的.",
+    "dung": "我只认识这两个字，其余的都不认识。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "怎么只有你们两个人？",
+       "的同学呢？"
+      ],
+      "dap": [
+       [
+        "其余"
+       ]
+      ],
+      "chon": [
+       "其余",
+       "其中",
+       "其实"
+      ],
+      "goiY": "Câu của sách: “các bạn còn lại đâu?”",
+      "giai": "其余的 + N = phần còn lại ngoài hai người đã nói."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只有一个房间亮着灯，",
+       "窗户都是黑的。"
+      ],
+      "dap": [
+       [
+        "其余"
+       ]
+      ],
+      "chon": [
+       "其余",
+       "极其",
+       "其实"
+      ],
+      "goiY": "Vế trước nói “chỉ một phòng”, vế sau nói phần còn lại.",
+      "giai": "只有……，其余……都……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我只认识这两个字，",
+       "的都不认识。"
+      ],
+      "dap": [
+       [
+        "其余"
+       ]
+      ],
+      "chon": [
+       "其余",
+       "其中",
+       "可见"
+      ],
+      "goiY": "Bài tập 3 của sách.",
+      "giai": "其余的 thay cho danh từ (其余的字)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "其中三分之一的画作作者没有签名，而",
+       "的则标明了身份。"
+      ],
+      "dap": [
+       [
+        "其余"
+       ]
+      ],
+      "chon": [
+       "其余",
+       "其实",
+       "极其"
+      ],
+      "goiY": "Câu của bài khoá.",
+      "giai": "其中……，而其余的则…… — đối chiếu hai phần."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次考试只有两道题比较难，",
+       "都很简单。"
+      ],
+      "dap": [
+       [
+        "其余"
+       ]
+      ],
+      "chon": [
+       "其余",
+       "其中",
+       "可见"
+      ],
+      "goiY": "“Chỉ hai câu khó, còn lại đều dễ.”",
+      "giai": "其余 + 都 (ôn cách dùng 都 tổng quát)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你拿这两个小箱子，把",
+       "的行李交给我吧。"
+      ],
+      "dap": [
+       [
+        "其余"
+       ]
+      ],
+      "chon": [
+       "其余",
+       "其实",
+       "随手"
+      ],
+      "goiY": "Kết hợp câu 把 (ôn HSK 3–4).",
+      "giai": "把 + 其余的行李 + 交给我."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "怎么",
+       "只有",
+       "你们两个人",
+       "？",
+       "其余的",
+       "同学",
+       "呢",
+       "？"
+      ],
+      "dap": [
+       "怎么只有你们两个人？其余的同学呢？"
+      ],
+      "goiY": "Sao chỉ có hai em? Các bạn còn lại đâu?",
+      "giai": "Câu hỏi thứ hai dùng 其余的 + N + 呢？"
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "只有",
+       "一个房间",
+       "亮着灯",
+       "，",
+       "其余",
+       "窗户",
+       "都是黑的",
+       "。"
+      ],
+      "dap": [
+       "只有一个房间亮着灯，其余窗户都是黑的。"
+      ],
+      "goiY": "Chỉ có một phòng sáng đèn, các cửa sổ còn lại đều tối.",
+      "giai": "只有…… trước, 其余……都…… sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "只认识",
+       "这两个字",
+       "，",
+       "其余的",
+       "都",
+       "不认识",
+       "。"
+      ],
+      "dap": [
+       "我只认识这两个字，其余的都不认识。"
+      ],
+      "goiY": "Tôi chỉ biết hai chữ này, còn lại đều không biết.",
+      "giai": "其余的 + 都 + 不 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这些菜我只喜欢鱼，其余的都不太喜欢。",
+      "dung": true,
+      "giai": "Đúng: vế trước nêu 鱼, vế sau 其余的 chỉ các món còn lại."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们班有四十个同学，其余的同学都去了。",
+      "dung": false,
+      "sua": "我们班除了两个同学，其余的都去了。",
+      "giai": "Chưa tách ra phần nào ở vế trước nên không có \"phần còn lại\"."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "只有小王没来，其余的人都到了。",
+      "dung": true,
+      "giai": "Đúng: 只有…… (một phần) → 其余的人都…… (phần còn lại)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Sao chỉ có hai bạn thôi? Các bạn còn lại đâu?",
+      "dap": [
+       "怎么只有你们两个人？其余的同学呢？",
+       "怎么只有你们两个？其余的同学呢？",
+       "怎么只有你们俩？其余的同学呢？"
+      ],
+      "py": "Zěnme zhǐ yǒu nǐmen liǎng ge rén? Qíyú de tóngxué ne?",
+      "goiY": "Dịch sang tiếng Trung, dùng 其余.",
+      "giai": "其余的 + N + 呢？ để hỏi về phần còn lại."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ngoài môn Toán, các môn còn lại cậu ấy đều học rất giỏi.",
+      "dap": [
+       "除了数学，其余的课他都学得很好。",
+       "除了数学，其余的科目他都学得很好。",
+       "除了数学以外，其余的课他都学得很好。"
+      ],
+      "py": "Chúle shùxué, qíyú de kè tā dōu xué de hěn hǎo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 除了……，其余……都…….",
+      "giai": "除了 (ôn HSK 3) + 其余……都……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：这些行李怎么拿？　B：＿＿＿。",
+      "goiY": "em cầm hai cái nhỏ, phần còn lại để bạn cầm (dùng 其余) — câu của sách",
+      "mau": "我拿这两个小的，其余的你帮我拿吧。",
+      "can": [
+       [
+        "其余"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "你们几个负责新产品的宣传，＿＿＿。",
+      "goiY": "những người còn lại phụ trách liên hệ khách hàng (dùng 其余) — câu của sách",
+      "mau": "你们几个负责新产品的宣传，其余的人负责联系客户。",
+      "can": [
+       [
+        "其余"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「其余」, nói về lớp học hoặc môn học của em",
+      "mau": "我们班只有三个同学参加了美术比赛，其余的都参加了篮球比赛。",
+      "can": [
+       [
+        "其余"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「可见」",
+  "tenVn": "",
+  "cauTruc": [
+   "Căn cứ……，可见 + kết luận",
+   "……，由此可见……"
+  ],
+  "giaiThich": "可见 là liên từ, thường dùng theo mẫu \"……，(由此)可见……\": căn cứ vào tình hình đã nói ở phía trước để đưa ra phán đoán, kết luận. Phần căn cứ luôn đứng TRƯỚC 可见.",
+  "viDu": [
+   {
+    "zh": "他已经住院好几天了，一直诊断不出是什么问题，可见情况不太好。",
+    "py": "Tā yǐjīng zhùyuàn hǎo jǐ tiān le, yìzhí zhěnduàn bu chū shì shénme wèntí, kějiàn qíngkuàng bú tài hǎo.",
+    "vn": "Anh ấy nằm viện mấy ngày rồi mà vẫn chưa chẩn đoán ra bệnh gì, có thể thấy tình hình không tốt lắm."
+   },
+   {
+    "zh": "汉语中有个成语叫“自知之明”，把“自知”称为“明”，可见“自知”是一种智慧。",
+    "py": "Hànyǔ zhōng yǒu ge chéngyǔ jiào “zì zhī zhī míng”, bǎ “zìzhī” chēngwéi “míng”, kějiàn “zìzhī” shì yì zhǒng zhìhuì.",
+    "vn": "Tiếng Hán có thành ngữ \"tự tri chi minh\", gọi \"biết mình\" là \"sáng suốt\", có thể thấy \"biết mình\" là một loại trí tuệ."
+   },
+   {
+    "zh": "由此可见，志愿者能够从画作中感知艺术家的用心，哪怕他们不能够解释原因。",
+    "py": "Yóucǐ kějiàn, zhìyuànzhě nénggòu cóng huàzuò zhōng gǎnzhī yìshùjiā de yòngxīn, nǎpà tāmen bù nénggòu jiěshì yuányīn.",
+    "vn": "Từ đó có thể thấy, tình nguyện viên có thể cảm nhận tâm huyết của người nghệ sĩ qua bức tranh, dù họ không giải thích được lý do."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "可见他很努力，他每天学习到十二点。",
+    "why": "Căn cứ phải đứng TRƯỚC, 可见 + kết luận đứng SAU.",
+    "dung": "他每天学习到十二点，可见他很努力。"
+   },
+   {
+    "sai": "我可见他很累。",
+    "why": "可见 là liên từ, không làm động từ \"nhìn thấy\" và không có chủ ngữ người đứng trước.",
+    "dung": "他一直打哈欠，可见他很累。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "连这么简单的题你都不会，",
+       "你上课没有认真听。"
+      ],
+      "dap": [
+       [
+        "可见"
+       ]
+      ],
+      "chon": [
+       "可见",
+       "哪怕",
+       "其余"
+      ],
+      "goiY": "Bài tập của sách: rút kết luận từ vế trước.",
+      "giai": "连……都…… (ôn HSK 4) làm căn cứ, 可见 + kết luận."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他已经住院好几天了，一直诊断不出是什么问题，",
+       "情况不太好。"
+      ],
+      "dap": [
+       [
+        "可见"
+       ]
+      ],
+      "chon": [
+       "可见",
+       "极其",
+       "随手"
+      ],
+      "goiY": "Câu của sách.",
+      "giai": "Căn cứ → 可见 + phán đoán."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "由此",
+       "，志愿者能够从画作中感知艺术家的用心。"
+      ],
+      "dap": [
+       [
+        "可见"
+       ]
+      ],
+      "chon": [
+       "可见",
+       "看见",
+       "其余"
+      ],
+      "goiY": "Câu của bài khoá: 由此 + ?",
+      "giai": "由此可见 = từ đó có thể thấy. 看见 là \"nhìn thấy\" — không dùng ở đây."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他一有时间就去看父母，",
+       "他很孝敬父母。"
+      ],
+      "dap": [
+       [
+        "可见"
+       ]
+      ],
+      "chon": [
+       "可见",
+       "哪怕",
+       "极其"
+      ],
+      "goiY": "“Hễ rảnh là về thăm bố mẹ → hiếu thảo.”",
+      "giai": "一……就…… (ôn HSK 4) + 可见."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这家饭馆每天都坐满了人，",
+       "菜做得很好吃。"
+      ],
+      "dap": [
+       [
+        "可见"
+       ]
+      ],
+      "chon": [
+       "可见",
+       "其余",
+       "随手"
+      ],
+      "goiY": "“Quán lúc nào cũng kín chỗ → món ăn ngon.”",
+      "giai": "Sự việc quan sát được → kết luận."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "哪怕下着大雨，他也按时来上课了，",
+       "他是一个很认真的人。"
+      ],
+      "dap": [
+       [
+        "可见"
+       ]
+      ],
+      "chon": [
+       "可见",
+       "其余",
+       "极其"
+      ],
+      "goiY": "Kết hợp 哪怕……也…… của bài.",
+      "giai": "哪怕……也…… làm căn cứ, 可见 rút kết luận."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "连这么简单的题",
+       "你都不会",
+       "，",
+       "可见",
+       "你上课",
+       "没有认真听",
+       "。"
+      ],
+      "dap": [
+       "连这么简单的题你都不会，可见你上课没有认真听。"
+      ],
+      "goiY": "Câu dễ thế này mà cũng không làm được, có thể thấy em không chăm chú nghe giảng.",
+      "giai": "Căn cứ trước, 可见 sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "由此",
+       "可见",
+       "，",
+       "志愿者",
+       "能够",
+       "感知",
+       "艺术家的用心",
+       "。"
+      ],
+      "dap": [
+       "由此可见，志愿者能够感知艺术家的用心。"
+      ],
+      "goiY": "Từ đó có thể thấy, tình nguyện viên cảm nhận được tâm huyết của nghệ sĩ.",
+      "giai": "由此可见 đứng đầu câu kết luận."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "一有时间",
+       "就去看父母",
+       "，",
+       "可见",
+       "他",
+       "很孝敬父母",
+       "。"
+      ],
+      "dap": [
+       "他一有时间就去看父母，可见他很孝敬父母。"
+      ],
+      "goiY": "Hễ có thời gian là anh ấy về thăm bố mẹ, có thể thấy anh ấy rất hiếu thảo.",
+      "giai": "一……就…… + 可见."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "可见他很喜欢画画儿，他每天都去画室。",
+      "dung": false,
+      "sua": "他每天都去画室，可见他很喜欢画画儿。",
+      "giai": "Căn cứ phải đứng trước 可见."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "教室里一个人也没有，可见大家都去上体育课了。",
+      "dung": true,
+      "giai": "Đúng: căn cứ (教室里没人) trước, kết luận sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我可见了他在图书馆学习。",
+      "dung": false,
+      "sua": "我看见他在图书馆学习了。",
+      "giai": "可见 không phải động từ \"nhìn thấy\", không mang 了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Câu dễ thế này mà cậu cũng làm sai, có thể thấy cậu quá cẩu thả.",
+      "dap": [
+       "连这么容易的题你都做错了，可见你太粗心了。",
+       "这么容易的题你都做错了，可见你太粗心了。",
+       "连这么简单的题你都做错了，可见你太粗心了。"
+      ],
+      "py": "Lián zhème róngyì de tí nǐ dōu zuòcuò le, kějiàn nǐ tài cūxīn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 连……都……，可见…….",
+      "giai": "Căn cứ (连……都……) + 可见 + kết luận."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ai cũng thích bản gốc hơn, từ đó có thể thấy não bộ đã chú ý đến bố cục.",
+      "dap": [
+       "每个人都更喜欢原作，由此可见，大脑注意到了布局。",
+       "大家都更喜欢原作，由此可见，大脑注意到了布局。",
+       "每个人都更喜欢原作，可见大脑注意到了布局。"
+      ],
+      "py": "Měi ge rén dōu gèng xǐhuan yuánzuò, yóucǐ kějiàn, dànǎo zhùyì dàole bùjú.",
+      "goiY": "Dịch sang tiếng Trung, dùng 由此可见.",
+      "giai": "Nội dung bài khoá: căn cứ + 由此可见 + kết luận."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你觉得周末的活动他会参加吗？　B：＿＿＿。",
+      "goiY": "anh ấy đã hỏi thời gian hai lần rồi → chắc chắn sẽ tham gia (dùng 可见) — câu của sách",
+      "mau": "他已经问了我两次活动的时间，可见他很想参加。",
+      "can": [
+       [
+        "可见"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：＿＿＿。　B：是啊，我也觉得他很孝敬父母。",
+      "goiY": "nêu một việc anh ấy làm cho bố mẹ rồi rút kết luận (dùng 可见) — câu của sách",
+      "mau": "他每个周末都回家陪父母，可见他很孝敬父母。",
+      "can": [
+       [
+        "可见"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「可见」 (căn cứ trước, kết luận sau), nói về một người bạn của em",
+      "mau": "小林每天都在画室画到很晚，可见他真的很喜欢画画儿。",
+      "can": [
+       [
+        "可见"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

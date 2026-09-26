@@ -97,6 +97,9 @@ function sendVersionedHtml(res, filePath) {
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
 const CLEAN_PAGES = { '/lop': 'lop.html', '/game': 'game.html', '/bao-cao': 'admin.html' };
 
+// Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
+app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));
+
 app.use((req, res, next) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') return next();
   let p = decodeURIComponent(req.path);

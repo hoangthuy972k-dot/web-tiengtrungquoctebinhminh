@@ -1683,6 +1683,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-28.html'
+      },
+      {
+        id: 'hsk5-l29',
+        number: 29,
+        title: 'Đào tạo đối thủ',
+        titleHanzi: '培养对手',
+        titlePinyin: 'Péiyǎng duìshǒu',
+        topic: 'Unit 10 关注经济 · Cạnh tranh trong kinh doanh: "nuôi" đối thủ để cùng phát triển',
+        vocabCount: 37,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-29.html'
       }
     ],
     yct: [

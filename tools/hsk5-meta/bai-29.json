@@ -1,0 +1,112 @@
+{
+ "zh": "培养对手",
+ "py": "Péiyǎng duìshǒu",
+ "vn": "Đào tạo đối thủ",
+ "topic": "Unit 10 关注经济 · Cạnh tranh trong kinh doanh: \"nuôi\" đối thủ để cùng phát triển",
+ "vocabCount": 37,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "不如",
+   "explain": "不如 là ĐỘNG TỪ, biểu thị \"so không bằng\" (比不上): A 不如 B = A kém B. Sau B có thể thêm tính từ mang nghĩa TÍCH CỰC (好 / 高 / 快 / 便宜) hoặc kết thúc câu luôn (求人不如求己, 我的发音不如她). Hay đi với 还 / 连……都 để nhấn mạnh: 还不如, 连……都不如. Ngoài ra, ……，不如…… dùng để đề xuất một lựa chọn tốt hơn (= chi bằng): 在房间睡觉不如出去走走. Không dùng chung với 比, không đặt tính từ tiêu cực sau B.",
+   "rule": "A + <strong style=\"color:var(--sky-d)\">不如</strong> + B (+ Adj tích cực)　|　A + 还 + <strong style=\"color:var(--sky-d)\">不如</strong> + B　|　(làm X)，<strong style=\"color:var(--sky-d)\">不如</strong> + (làm Y) — chi bằng",
+   "examples": [
+    {
+     "zh": "求人不如求己。",
+     "py": "Qiú rén bùrú qiú jǐ.",
+     "vn": "Nhờ người không bằng tự mình lo liệu."
+    },
+    {
+     "zh": "……由于受到了建伟书店的影响，这三家书店的经营空间越来越小，三家的营业额加起来还不如他一家高。",
+     "py": "……Yóuyú shòudàole Jiànwěi shūdiàn de yǐngxiǎng, zhè sān jiā shūdiàn de jīngyíng kōngjiān yuè lái yuè xiǎo, sān jiā de yíngyè'é jiā qilai hái bùrú tā yì jiā gāo.",
+     "vn": "…Do bị hiệu sách của Kiến Vĩ ảnh hưởng, không gian kinh doanh của ba hiệu sách ấy ngày càng thu hẹp, doanh thu của cả ba cộng lại còn không bằng một mình hiệu của anh."
+    },
+    {
+     "zh": "如果找一个棋艺不如你或者和你差不多的人下棋，虽然你可能会轻易地战胜对手，但并不能使你的棋艺得到提高。",
+     "py": "Rúguǒ zhǎo yí ge qíyì bùrú nǐ huòzhě hé nǐ chàbuduō de rén xiàqí, suīrán nǐ kěnéng huì qīngyì de zhànshèng duìshǒu, dàn bìng bù néng shǐ nǐ de qíyì dédào tígāo.",
+     "vn": "Nếu tìm một người đánh cờ kém bạn hoặc ngang bạn để chơi, tuy bạn có thể dễ dàng thắng đối thủ, nhưng không thể giúp tài đánh cờ của bạn được nâng cao."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我的发音不如她差。",
+     "why": "Sau 不如 + B chỉ dùng tính từ mang nghĩa tích cực (好, 高, 快…). Muốn nói \"tôi kém\" thì đảo: 我的发音不如她好.",
+     "right": "我的发音不如她好。"
+    },
+    {
+     "wrong": "他的成绩不如我比较高。",
+     "why": "不如 đã mang nghĩa so sánh, không dùng thêm 比 / 比较.",
+     "right": "他的成绩不如我高。"
+    }
+   ]
+  },
+  {
+   "point": "干脆",
+   "explain": "干脆 có hai cách dùng. ① TÍNH TỪ: nói năng, làm việc gọn gàng, dứt khoát, không do dự (痛快、不犹豫) — làm vị ngữ (他这人很干脆) hoặc bổ ngữ (答应得很干脆). ② PHÓ TỪ: đơn giản, quả quyết mà làm luôn (简单、果断地) — đứng trước động từ, thường đưa ra một cách giải quyết triệt để sau khi đã thử cách khác không được: 干脆放弃, 干脆把……挤垮, 干脆不来了. Phó từ 干脆 đứng TRƯỚC 把 / 不 / 别.",
+   "rule": "① S + 很<strong style=\"color:var(--sky-d)\">干脆</strong>　|　V + 得很<strong style=\"color:var(--sky-d)\">干脆</strong>　② (……，) S + <strong style=\"color:var(--sky-d)\">干脆</strong> + V / 把……V / 不 + V",
+   "examples": [
+    {
+     "zh": "他这人很干脆，说行就行，说不行就不行。",
+     "py": "Tā zhè rén hěn gāncuì, shuō xíng jiù xíng, shuō bù xíng jiù bù xíng.",
+     "vn": "Anh ấy là người rất dứt khoát, nói được là được, nói không là không."
+    },
+    {
+     "zh": "我已经试了六次了，还是不行，我看我干脆放弃好了。",
+     "py": "Wǒ yǐjīng shìle liù cì le, háishi bù xíng, wǒ kàn wǒ gāncuì fàngqì hǎo le.",
+     "vn": "Tôi đã thử sáu lần rồi mà vẫn không được, tôi thấy thôi dứt khoát bỏ cho xong."
+    },
+    {
+     "zh": "这时，许多亲朋好友便建议他干脆把另三家书店挤垮，垄断这个市场。",
+     "py": "Zhè shí, xǔduō qīnpéng hǎoyǒu biàn jiànyì tā gāncuì bǎ lìng sān jiā shūdiàn jǐkuǎ, lǒngduàn zhège shìchǎng.",
+     "vn": "Lúc này, nhiều người thân bạn bè liền khuyên anh dứt khoát chèn cho ba hiệu sách kia sập, độc chiếm thị trường này."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你把这件事干脆忘了吧。",
+     "why": "Phó từ 干脆 đứng TRƯỚC 把, không chen giữa 把 + tân ngữ và động từ.",
+     "right": "你干脆把这件事忘了吧。"
+    },
+    {
+     "wrong": "他答应很干脆。",
+     "why": "干脆 làm bổ ngữ trạng thái phải có 得: V + 得 + 很干脆.",
+     "right": "他答应得很干脆。"
+    }
+   ]
+  },
+  {
+   "point": "万一",
+   "explain": "万一 có hai cách dùng. ① LIÊN TỪ: nêu một khả năng rất nhỏ, thường là chuyện ngoài ý muốn, BẤT LỢI (lỡ như, ngộ nhỡ) — đứng đầu vế giả thiết, trước hoặc sau chủ ngữ; vế sau hay có (那)就 / 怎么办, hoặc hỏi 万一……呢？ ② DANH TỪ: tình huống bất ngờ hiếm gặp, thường trong cụm cố định 就怕万一, 以防万一. Chỉ dùng cho việc không mong muốn — việc tốt dùng 如果 / 要是.",
+   "rule": "<strong style=\"color:var(--sky-d)\">万一</strong> + (S) + việc xấu，(那) + 就 + hậu quả　|　……，<strong style=\"color:var(--sky-d)\">万一</strong>……呢？　|　以防<strong style=\"color:var(--sky-d)\">万一</strong> / 就怕<strong style=\"color:var(--sky-d)\">万一</strong>",
+   "examples": [
+    {
+     "zh": "……万一他们自己跑到其他图书市场去“货比三家”，那我的生意就完了。",
+     "py": "……Wànyī tāmen zìjǐ pǎodào qítā túshū shìchǎng qù \"huò bǐ sān jiā\", nà wǒ de shēngyi jiù wán le.",
+     "vn": "…Lỡ như họ tự chạy sang chợ sách khác để \"so hàng ba nhà\", thì việc làm ăn của tôi coi như xong."
+    },
+    {
+     "zh": "不要将所有的鸡蛋都放在一个篮子里，因为万一不小心，鸡蛋就有可能全部打碎。",
+     "py": "Bú yào jiāng suǒyǒu de jīdàn dōu fàng zài yí ge lánzi li, yīnwèi wànyī bù xiǎoxīn, jīdàn jiù yǒu kěnéng quánbù dǎsuì.",
+     "vn": "Đừng bỏ tất cả trứng vào một giỏ, vì lỡ không cẩn thận thì trứng có thể vỡ hết."
+    },
+    {
+     "zh": "不怕一万，就怕万一。",
+     "py": "Bú pà yíwàn, jiù pà wànyī.",
+     "vn": "Không sợ vạn lần, chỉ sợ một lần bất trắc (cẩn tắc vô áy náy)."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "万一我考上了大学，我就请你吃饭。",
+     "why": "万一 chỉ dùng cho khả năng XẤU, không mong muốn. Việc tốt dùng 如果 / 要是.",
+     "right": "如果我考上了大学，我就请你吃饭。"
+    },
+    {
+     "wrong": "万一下雨，所以我带了伞。",
+     "why": "万一 là giả thiết, vế sau không dùng 所以. Nói: 带上伞，万一下雨呢？ hoặc 我带了伞，以防万一.",
+     "right": "我带了伞，以防万一。"
+    }
+   ]
+  }
+ ]
+}

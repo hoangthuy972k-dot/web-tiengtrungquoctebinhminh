@@ -1757,6 +1757,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-33.html'
       },
       {
+        id: 'hsk5-l34',
+        number: 34,
+        title: 'Cách loài chim bảo vệ da',
+        titleHanzi: '鸟儿的护肤术',
+        titlePinyin: 'Niǎor de hùfū shù',
+        topic: 'Unit 12 亲近自然 · Thế giới loài chim: bộ lông và cách chăm sóc bộ lông',
+        vocabCount: 34,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-34.html'
+      },
+      {
         id: 'hsk5-l35',
         number: 35,
         title: 'Thực vật cũng đổ mồ hôi',

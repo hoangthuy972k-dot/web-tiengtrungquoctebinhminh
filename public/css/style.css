@@ -1689,7 +1689,7 @@ body.pinyin-hidden .vocab-table td.pinyin-cell {
   width: 100%;
   min-height: 72px;
   padding: 12px 16px 12px 14px;
-  border: 1px solid var(--color-gray-200);
+  border: 2px solid var(--color-red-600);
   border-radius: var(--radius-lg);
   background: rgba(var(--rgbn-255-255-255), 0.97);
   font: inherit;

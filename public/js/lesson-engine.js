@@ -1415,7 +1415,17 @@ document.addEventListener('click', function(e){
 // ══════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════
-if(typeof wuData!=='undefined')buildWarmup();
+if(typeof wuData!=='undefined'&&wuData&&wuData.length)buildWarmup();
+// Bai khong co phan Khoi dong (du lieu rong) thi bo han the do, mo the ke tiep
+(function boKhoiDongRong(){
+  if(typeof wuData!=='undefined'&&wuData&&wuData.length) return;
+  var sec=document.getElementById('warmup');
+  if(!sec) return;
+  var dangMo=sec.classList.contains('active');
+  document.querySelectorAll('[data-tab="warmup"]').forEach(function(b){ b.remove(); });
+  sec.remove();
+  if(dangMo){ var b=document.querySelector('.tab-btn[data-tab]'); if(b) showTab(b.dataset.tab,b); }
+})();
 if(typeof vocabData!=='undefined'){ isHsk4Page()?buildVocabHsk4():buildVocab(); }
 buildHanViet();
 if(typeof vocabData!=='undefined')updateFlash();

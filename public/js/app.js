@@ -1930,8 +1930,30 @@
     }
   });
   function pathStepsOfLevel(levelId) { return levelId === 'hsk5' ? PATH_STEPS_HSK5 : PATH_STEPS; }
+  // Bai khong co phan Khoi dong (wuData rong) thi bo han buoc do khoi lo trinh.
+  // Ket qua kiem tra luu theo phien ban web (hyv_khoi_dong) de the "Tiep tuc hoc"
+  // o trang chu dung ngay; web cap nhat (co the bai vua duoc them Khoi dong) thi kiem lai.
+  var KD_KEY = 'hyv_khoi_dong';
+  var kdBang = null;
+  function kdMap() { // doc tre: ASSET_VERSION duoc gan o duoi file
+    if (!kdBang) { var l = readJSON(KD_KEY, null); kdBang = (l && l.v === ASSET_VERSION && l.m) || {}; }
+    return kdBang;
+  }
+  var buocBoKd = {};
   function pathStepsOf(lesson) {
-    return /\/lessons\/hsk5-bai-\d+\.html$/.test((lesson && lesson.fullPageUrl) || '') ? PATH_STEPS_HSK5 : PATH_STEPS;
+    var url = (lesson && lesson.fullPageUrl) || '';
+    var goc = /\/lessons\/hsk5-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK5 : PATH_STEPS;
+    if (kdMap()[url] !== false) return goc;
+    var k = goc === PATH_STEPS_HSK5 ? 'hsk5' : 'chung';
+    return buocBoKd[k] || (buocBoKd[k] = goc.filter(function (s) { return s.key !== 'warmup'; }));
+  }
+  function kiemKhoiDong(lesson) {
+    var url = lesson.fullPageUrl;
+    if (url in kdMap()) return Promise.resolve();
+    return loadLessonRawData(lesson).then(function (d) {
+      kdMap()[url] = !!(d.wuData && d.wuData.length);
+      writeJSON(KD_KEY, { v: ASSET_VERSION, m: kdMap() });
+    }).catch(function () { kdMap()[url] = true; });
   }
 
   // Luyen them = cac o cua cap do khong nam trong 7 buoc (flash, nghe, dich, sach bai tap...)
@@ -1959,6 +1981,16 @@
   }
 
   function renderLessonPath(levelId, lesson) {
+    // Chua biet bai co phan Khoi dong khong -> kiem truoc roi moi ve (khoi nhay tu 8 buoc xuong 7)
+    if (!(lesson.fullPageUrl in kdMap())) {
+      var cho = $('#lessonPath');
+      cho.hidden = false;
+      cho.innerHTML = '<li class="lp-step"><p style="color:var(--color-gray-500);margin:8px 4px;">Đang tải lộ trình…</p></li>';
+      kiemKhoiDong(lesson).then(function () {
+        if (!$('#lessonHub').hidden && currentHubLesson === lesson) renderLessonPath(levelId, lesson);
+      });
+      return;
+    }
     var cur = pathCurrentIndex(lesson);
     var ps = pathStepsOf(lesson);
     var doneCount = ps.filter(function (s) { return pathStepDone(lesson, s); }).length;

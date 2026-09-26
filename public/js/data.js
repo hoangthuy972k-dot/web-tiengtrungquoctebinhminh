@@ -1491,6 +1491,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 4,
         fullPageUrl: '/lessons/hsk5-bai-11.html'
+      },
+      {
+        id: 'hsk5-l13',
+        number: 13,
+        title: 'Cưa bỏ “đáy giỏ” của cuộc sống',
+        titleHanzi: '锯掉生活的“筐底”',
+        titlePinyin: 'Jùdiào shēnghuó de “kuāngdǐ”',
+        topic: 'Unit 5 放眼世界 · Bóng rổ ra đời & cách tư duy đơn giản',
+        vocabCount: 39,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-13.html'
       }
     ],
     yct: [

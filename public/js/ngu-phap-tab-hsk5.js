@@ -19504,3 +19504,940 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-19.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-20.html"] = [
+ {
+  "so": "1",
+  "ten": "「动词 + 得 / 不 + 起」",
+  "tenVn": "",
+  "cauTruc": [
+   "V + 得 + 起 (có khả năng, đủ điều kiện)",
+   "V + 不 + 起 (không đủ khả năng, điều kiện)"
+  ],
+  "giaiThich": "起 ở đây là bổ ngữ khả năng: “Động từ + 得 / 不 + 起” biểu thị về mặt CHỦ QUAN có (hoặc không có) năng lực, điều kiện để thực hiện — hoặc để CHỊU ĐỰNG — một động tác. Hay gặp nhất là chuyện tiền bạc: 买得起 / 买不起 (mua nổi / không mua nổi), 吃不起, 住不起; còn có 经得起 (chịu được thử thách), 看不起 (coi thường). Dạng phủ định 不起 dùng nhiều hơn.",
+  "viDu": [
+   {
+    "zh": "……这对于那些想看又买不起书的人来说，毫无疑问是件大好事。",
+    "py": "…… zhè duìyú nàxiē xiǎng kàn yòu mǎi bu qǐ shū de rén lái shuō, háowú yíwèn shì jiàn dà hǎoshì.",
+    "vn": "… với những người muốn đọc mà không mua nổi sách, đây không nghi ngờ gì là một điều cực kỳ tốt."
+   },
+   {
+    "zh": "古时候，有个十分好学的年轻人，但他家里很穷，买不起灯，一到晚上就不能读书。",
+    "py": "Gǔ shíhou, yǒu ge shífēn hàoxué de niánqīng rén, dàn tā jiā li hěn qióng, mǎi bu qǐ dēng, yí dào wǎnshang jiù bù néng dú shū.",
+    "vn": "Ngày xưa có một chàng trai rất ham học, nhưng nhà anh rất nghèo, không mua nổi đèn, cứ tối đến là không đọc sách được."
+   },
+   {
+    "zh": "只有经得起困难和时间考验的朋友才算是真正的朋友。",
+    "py": "Zhǐyǒu jīng de qǐ kùnnan hé shíjiān kǎoyàn de péngyou cái suàn shì zhēnzhèng de péngyou.",
+    "vn": "Chỉ những người bạn chịu được thử thách của khó khăn và thời gian mới được coi là bạn thật sự."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这本书太贵了，我不买起。",
+    "why": "起 là BỔ NGỮ khả năng, 不 phải chen giữa động từ và 起: V + 不 + 起. Không nói 不买起.",
+    "dung": "这本书太贵了，我买不起。"
+   },
+   {
+    "sai": "商店里的面包卖完了，我买不起。",
+    "why": "买不起 = không đủ TIỀN mua. Hết hàng nên không mua được thì dùng 买不到.",
+    "dung": "商店里的面包卖完了，我买不到。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这对于那些想看又买不",
+       "书的人来说，毫无疑问是件大好事。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "完",
+       "到"
+      ],
+      "goiY": "“Với những người muốn đọc mà không mua NỔI sách…”",
+      "giai": "买不起 = không đủ tiền mua (câu bài khoá). 买不完 là mua không hết; 买不到 là không có hàng để mua."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他家里很穷，买",
+       "灯，一到晚上就不能读书。"
+      ],
+      "dap": [
+       [
+        "不起"
+       ]
+      ],
+      "chon": [
+       "不起",
+       "不完",
+       "不动"
+      ],
+      "goiY": "“Nhà nghèo, không mua nổi đèn.”",
+      "giai": "V + 不 + 起: không đủ điều kiện (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只有经得",
+       "困难和时间考验的朋友才算是真正的朋友。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "完",
+       "到"
+      ],
+      "goiY": "“Chịu ĐƯỢC thử thách của khó khăn và thời gian.”",
+      "giai": "经得起 = chịu đựng được — V + 得 + 起 biểu thị có khả năng chịu đựng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这家饭店太贵了，我们学生可吃",
+       "。"
+      ],
+      "dap": [
+       [
+        "不起"
+       ]
+      ],
+      "chon": [
+       "不起",
+       "不完",
+       "不下"
+      ],
+      "goiY": "“Học sinh bọn mình ăn không NỔI (không đủ tiền).”",
+      "giai": "吃不起 = không đủ tiền ăn. 吃不完 là ăn không hết; 吃不下 là no, không ăn thêm được."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "现在房子这么贵，年轻人哪儿买得",
+       "啊？"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "完",
+       "动"
+      ],
+      "goiY": "“Người trẻ làm sao mua nổi?” (câu phản vấn)",
+      "giai": "Câu phản vấn 哪儿 + V得起 = không thể mua nổi. Ôn 哪儿…… (phản vấn, HSK 4)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你别看不",
+       "他，他虽然成绩不好，可是很会画画儿。"
+      ],
+      "dap": [
+       [
+        "起"
+       ]
+      ],
+      "chon": [
+       "起",
+       "完",
+       "见"
+      ],
+      "goiY": "“Đừng COI THƯỜNG cậu ấy.”",
+      "giai": "看不起 = coi thường (nghĩa đã cố định). Ôn 虽然……可是……."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他家里",
+       "很穷",
+       "，",
+       "买不起",
+       "灯",
+       "。"
+      ],
+      "dap": [
+       "他家里很穷，买不起灯。"
+      ],
+      "goiY": "Nhà anh ấy rất nghèo, không mua nổi đèn.",
+      "giai": "买不起 + tân ngữ (灯)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这么贵的",
+       "手机",
+       "，",
+       "我",
+       "可",
+       "买不起",
+       "。"
+      ],
+      "dap": [
+       "这么贵的手机，我可买不起。",
+       "我可买不起这么贵的手机。"
+      ],
+      "goiY": "Điện thoại đắt thế này, tôi không mua nổi đâu.",
+      "giai": "Tân ngữ dài có thể đưa lên đầu câu làm chủ đề; 可 nhấn mạnh."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "只有",
+       "经得起",
+       "考验的",
+       "朋友",
+       "才算是",
+       "真正的朋友",
+       "。"
+      ],
+      "dap": [
+       "只有经得起考验的朋友才算是真正的朋友。"
+      ],
+      "goiY": "Chỉ bạn chịu được thử thách mới là bạn thật.",
+      "giai": "只有……才…… (HSK 4) + 经得起."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "那时候我家很穷，买不起小人书，只能去书摊租着看。",
+      "dung": true,
+      "giai": "Đúng: 买不起 = không đủ tiền mua."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这本书太贵了，我不买起。",
+      "dung": false,
+      "sua": "这本书太贵了，我买不起。",
+      "giai": "不 phải chen giữa động từ và 起: 买不起."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "面包都卖完了，我买不起。",
+      "dung": false,
+      "sua": "面包都卖完了，我买不到。",
+      "giai": "Hết hàng → 买不到. 买不起 chỉ dùng khi không đủ tiền / điều kiện."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Hồi nhỏ nhà tôi nghèo, không mua nổi truyện tranh.",
+      "dap": [
+       "小时候我家很穷，买不起小人书。",
+       "小时候我家很穷，买不起连环画。",
+       "我小时候家里很穷，买不起小人书。"
+      ],
+      "py": "Xiǎo shíhou wǒ jiā hěn qióng, mǎi bu qǐ xiǎorénshū.",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 不 + 起.",
+      "giai": "买不起 + tân ngữ (小人书)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Khách sạn này đắt quá, sinh viên chúng tôi không ở nổi.",
+      "dap": [
+       "这家酒店太贵了，我们学生住不起。",
+       "这个酒店太贵了，我们学生住不起。",
+       "这家宾馆太贵了，我们学生住不起。"
+      ],
+      "py": "Zhè jiā jiǔdiàn tài guì le, wǒmen xuésheng zhù bu qǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 住不起.",
+      "giai": "Động từ 住 + 不起 = không đủ tiền ở."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：寒假去旅游，我们是坐火车还是坐飞机呢？　B：＿＿＿。",
+      "goiY": "trả lời: vé máy bay đắt quá, không đi nổi (dùng 动词 + 不 + 起) — câu 练一练 của sách",
+      "mau": "坐飞机太贵了，我们坐不起，还是坐火车吧。",
+      "can": [
+       [
+        "坐不起",
+        "买不起"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我们应该降低价格，＿＿＿。",
+      "goiY": "nếu không, khách hàng bình thường mua không nổi (dùng 动词 + 得 / 不 + 起) — câu 练一练 của sách",
+      "mau": "我们应该降低价格，要不然普通顾客买不起。",
+      "can": [
+       [
+        "买不起",
+        "买得起",
+        "用不起",
+        "用得起"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「V + 得 / 不 + 起」 nói về một thứ em (hoặc gia đình em) mua / dùng / chịu nổi hoặc không nổi",
+      "mau": "A：你们这种新产品的质量怎么样？　B：放心吧，我们的产品经得起时间的考验。",
+      "can": [
+       [
+        "不起",
+        "得起"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「支」",
+  "tenVn": "",
+  "cauTruc": [
+   "(用 A) + 支 + 着 / 起来 + B (động từ: chống, đỡ)",
+   "数词 + 支 + 曲子 / 军队 / 笔 / 枪 (lượng từ)"
+  ],
+  "giaiThich": "支 có hai cách dùng. ① ĐỘNG TỪ: dùng một vật chống, đỡ cho vật khác không rơi, không đổ: 支着脑袋 (chống đầu), 用砖头支着木头板子 (kê gạch đỡ ván gỗ); hay đi với 着 hoặc 起来. ② LƯỢNG TỪ: dùng cho tác phẩm âm nhạc (一支曲子, 一支歌), đội ngũ (一支军队, 一支球队) và vật hình que dài (一支笔, 一支枪, 一支烟).",
+  "viDu": [
+   {
+    "zh": "他的两只手放在桌上，支着脑袋，正在想事情。",
+    "py": "Tā de liǎng zhī shǒu fàng zài zhuō shang, zhīzhe nǎodai, zhèngzài xiǎng shìqing.",
+    "vn": "Anh ấy đặt hai tay lên bàn, chống đầu, đang nghĩ ngợi."
+   },
+   {
+    "zh": "……里面用几块砖头支着粗糙的木头板子供人们坐着看书。",
+    "py": "…… lǐmiàn yòng jǐ kuài zhuāntóu zhīzhe cūcāo de mùtou bǎnzi gōng rénmen zuòzhe kàn shū.",
+    "vn": "… bên trong kê mấy viên gạch đỡ những tấm ván gỗ thô ráp cho mọi người ngồi đọc sách."
+   },
+   {
+    "zh": "给他十支枪，他就能拉起一支军队来。",
+    "py": "Gěi tā shí zhī qiāng, tā jiù néng lā qǐ yì zhī jūnduì lai.",
+    "vn": "Cho anh ta mười khẩu súng, anh ta có thể dựng lên cả một đội quân."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我买了两支书。",
+    "why": "支 dùng cho vật hình que dài (bút, súng, thuốc lá), bản nhạc, đội ngũ. Sách dùng 本 / 册.",
+    "dung": "我买了两本书。"
+   },
+   {
+    "sai": "桌子要倒了，快用砖头支。",
+    "why": "支 (động từ) thường cần tân ngữ hoặc bổ ngữ đi kèm: 支着 / 支起来 / 把它支住.",
+    "dung": "桌子要倒了，快用砖头把它支起来。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的两只手放在桌上，",
+       "着脑袋，正在想事情。"
+      ],
+      "dap": [
+       [
+        "支"
+       ]
+      ],
+      "chon": [
+       "支",
+       "搭",
+       "翻"
+      ],
+      "goiY": "“Hai tay đặt lên bàn, CHỐNG đầu.”",
+      "giai": "支着脑袋 = chống đầu (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "里面用几块砖头",
+       "着粗糙的木头板子供人们坐着看书。"
+      ],
+      "dap": [
+       [
+        "支"
+       ]
+      ],
+      "chon": [
+       "支",
+       "涨",
+       "翻"
+      ],
+      "goiY": "“Kê gạch ĐỠ tấm ván gỗ.”",
+      "giai": "用 A 支着 B = dùng A đỡ B (câu bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他弹第二",
+       "曲子时引起了牛的注意。"
+      ],
+      "dap": [
+       [
+        "支"
+       ]
+      ],
+      "chon": [
+       "支",
+       "册",
+       "张"
+      ],
+      "goiY": "“Khi ông gảy BẢN nhạc thứ hai…”",
+      "giai": "支 là lượng từ cho tác phẩm âm nhạc (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "给他十支枪，他就能拉起一",
+       "军队来。"
+      ],
+      "dap": [
+       [
+        "支"
+       ]
+      ],
+      "chon": [
+       "支",
+       "册",
+       "本"
+      ],
+      "goiY": "“Dựng lên cả một ĐỘI quân.”",
+      "giai": "支 là lượng từ cho đội ngũ: 一支军队."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一般来说，一包香烟有二十",
+       "。"
+      ],
+      "dap": [
+       [
+        "支"
+       ]
+      ],
+      "chon": [
+       "支",
+       "册",
+       "张"
+      ],
+      "goiY": "“Một bao thuốc có hai mươi ĐIẾU.”",
+      "giai": "Vật hình que dài → 支 (câu 练习 2 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我的笔坏了，能借我一",
+       "笔吗？"
+      ],
+      "dap": [
+       [
+        "支"
+       ]
+      ],
+      "chon": [
+       "支",
+       "本",
+       "张"
+      ],
+      "goiY": "“Cho mình mượn một CÂY bút.”",
+      "giai": "Bút là vật hình que → 一支笔."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他的",
+       "两只手",
+       "放在桌上",
+       "，",
+       "支着",
+       "脑袋",
+       "。"
+      ],
+      "dap": [
+       "他的两只手放在桌上，支着脑袋。"
+      ],
+      "goiY": "Anh ấy đặt hai tay lên bàn, chống đầu.",
+      "giai": "支着 + tân ngữ (脑袋)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "快",
+       "拿几块砖头",
+       "把桌子",
+       "支起来",
+       "。"
+      ],
+      "dap": [
+       "快拿几块砖头把桌子支起来。"
+      ],
+      "goiY": "Mau lấy mấy viên gạch chống cái bàn lên.",
+      "giai": "把 + tân ngữ + 支起来."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们学校",
+       "有",
+       "一支",
+       "很厉害的",
+       "篮球队",
+       "。"
+      ],
+      "dap": [
+       "我们学校有一支很厉害的篮球队。"
+      ],
+      "goiY": "Trường chúng tôi có một đội bóng rổ rất mạnh.",
+      "giai": "一支 + (định ngữ) + 队."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他唱了一支很好听的曲子。",
+      "dung": true,
+      "giai": "Đúng: 支 là lượng từ cho bài hát, bản nhạc."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我在书店买了两支小人书。",
+      "dung": false,
+      "sua": "我在书店买了两本小人书。",
+      "giai": "Sách dùng 本 / 册, không dùng 支."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "桌子要倒了，快用砖头支。",
+      "dung": false,
+      "sua": "桌子要倒了，快用砖头把它支起来。",
+      "giai": "支 (động từ) thường cần tân ngữ / bổ ngữ đi kèm: 把它支起来."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cái bàn này hỏng rồi, mau lấy mấy viên gạch chống nó lên.",
+      "dap": [
+       "这张桌子坏了，快拿几块砖头把它支起来。",
+       "这张桌子坏了，快用几块砖头把它支起来。",
+       "桌子坏了，快拿几块砖头支起来。"
+      ],
+      "py": "Zhè zhāng zhuōzi huài le, kuài ná jǐ kuài zhuāntóu bǎ tā zhī qǐlái.",
+      "goiY": "Dịch sang tiếng Trung, dùng 支 (động từ).",
+      "giai": "把 + 它 + 支起来; ôn câu 把."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đây là bản nhạc tôi thích nhất.",
+      "dap": [
+       "这是我最喜欢的一支曲子。",
+       "这支曲子是我最喜欢的。",
+       "这是我最喜欢的曲子。"
+      ],
+      "py": "Zhè shì wǒ zuì xǐhuan de yì zhī qǔzi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 支 (lượng từ).",
+      "giai": "一支曲子 = một bản nhạc."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "快，这张桌子坏了，＿＿＿。",
+      "goiY": "bảo người khác lấy gì đó chống bàn lên (dùng 支 — động từ) — câu 练一练 của sách",
+      "mau": "快，这张桌子坏了，拿几块砖头把它支起来吧。",
+      "can": [
+       [
+        "支"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：这是什么曲子啊？这么好听。　B：＿＿＿。",
+      "goiY": "giới thiệu bản nhạc (dùng 支 — lượng từ) — câu 练一练 của sách",
+      "mau": "这是我最喜欢的一支曲子，叫《茉莉花》。",
+      "can": [
+       [
+        "支"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「支」 — động từ hoặc lượng từ (bút, bài hát, đội bóng…)",
+      "mau": "A：这支笔写起来特别顺手，而且不贵。　B：是吗？那我就买这个吧。",
+      "can": [
+       [
+        "支"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「凭」",
+  "tenVn": "",
+  "cauTruc": [
+   "(全 / 光) 凭 + N (động từ: dựa vào)",
+   "凭 + N + V (giới từ: căn cứ vào)",
+   "凭什么 + V？ (chất vấn)"
+  ],
+  "giaiThich": "凭 ① ĐỘNG TỪ: dựa vào, nhờ vào (依靠): 全凭信用, 光凭经验. ② GIỚI TỪ: căn cứ vào, bằng — cấu trúc thường gặp “凭 + tân ngữ + động từ”: 凭票进站 (vào ga bằng vé), 凭身份证领取. 凭什么 + V? là câu chất vấn “dựa vào đâu mà…”, giọng không hài lòng.",
+  "viDu": [
+   {
+    "zh": "干工作不能光凭经验，还要有创新。",
+    "py": "Gàn gōngzuò bù néng guāng píng jīngyàn, hái yào yǒu chuàngxīn.",
+    "vn": "Làm việc không thể chỉ dựa vào kinh nghiệm, còn phải có sự đổi mới."
+   },
+   {
+    "zh": "印象中似乎没有什么押金，全凭信用。",
+    "py": "Yìnxiàng zhōng sìhū méiyǒu shénme yājīn, quán píng xìnyòng.",
+    "vn": "Trong ấn tượng của tôi hình như chẳng có tiền đặt cọc gì cả, hoàn toàn dựa vào chữ tín."
+   },
+   {
+    "zh": "请旅客们准备好车票，凭票进站。",
+    "py": "Qǐng lǚkèmen zhǔnbèi hǎo chēpiào, píng piào jìn zhàn.",
+    "vn": "Mời hành khách chuẩn bị sẵn vé, vào ga bằng vé."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "请旅客们进站凭票。",
+    "why": "凭 là giới từ: cụm 凭 + tân ngữ đứng TRƯỚC động từ chính.",
+    "dung": "请旅客们凭票进站。"
+   },
+   {
+    "sai": "你凭什么怀疑我偷了东西。",
+    "why": "凭什么 là câu hỏi chất vấn, cuối câu phải dùng dấu hỏi (？), đọc với giọng hỏi vặn.",
+    "dung": "你凭什么怀疑我偷了东西？"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "印象中似乎没有什么押金，全",
+       "信用。"
+      ],
+      "dap": [
+       [
+        "凭"
+       ]
+      ],
+      "chon": [
+       "凭",
+       "把",
+       "被"
+      ],
+      "goiY": "“Hoàn toàn DỰA VÀO chữ tín.”",
+      "giai": "全凭 + N = hoàn toàn dựa vào (câu bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "请旅客们准备好车票，",
+       "票进站。"
+      ],
+      "dap": [
+       [
+        "凭"
+       ]
+      ],
+      "chon": [
+       "凭",
+       "把",
+       "对"
+      ],
+      "goiY": "“Vào ga BẰNG vé.”",
+      "giai": "凭 + N + V: căn cứ vào … mà làm … (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你",
+       "什么怀疑我偷了东西？"
+      ],
+      "dap": [
+       [
+        "凭"
+       ]
+      ],
+      "chon": [
+       "凭",
+       "为",
+       "把"
+      ],
+      "goiY": "“Anh DỰA VÀO ĐÂU mà nghi tôi?”",
+      "giai": "凭什么 + V？ = câu chất vấn. 为什么 chỉ hỏi lý do, không mang ý phản bác mạnh như 凭什么."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "干工作不能光",
+       "经验，还要有创新。"
+      ],
+      "dap": [
+       [
+        "凭"
+       ]
+      ],
+      "chon": [
+       "凭",
+       "给",
+       "跟"
+      ],
+      "goiY": "“Không thể CHỈ DỰA VÀO kinh nghiệm.”",
+      "giai": "光凭 + N = chỉ dựa vào."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他没有看地图，只",
+       "记忆就找到了那家书摊。"
+      ],
+      "dap": [
+       [
+        "凭"
+       ]
+      ],
+      "chon": [
+       "凭",
+       "把",
+       "被"
+      ],
+      "goiY": "“Chỉ DỰA VÀO trí nhớ mà tìm ra.”",
+      "giai": "凭 + 记忆 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "观众可以",
+       "学生证免费参观博物馆。"
+      ],
+      "dap": [
+       [
+        "凭"
+       ]
+      ],
+      "chon": [
+       "凭",
+       "对",
+       "给"
+      ],
+      "goiY": "“Khán giả có thể tham quan miễn phí BẰNG thẻ học sinh.”",
+      "giai": "凭 + 证件 + V: căn cứ vào giấy tờ mà được làm gì."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "请",
+       "旅客们",
+       "凭票",
+       "进站",
+       "。"
+      ],
+      "dap": [
+       "请旅客们凭票进站。"
+      ],
+      "goiY": "Mời hành khách vào ga bằng vé.",
+      "giai": "Cụm 凭票 đứng TRƯỚC động từ 进站."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "凭什么",
+       "说",
+       "这是",
+       "我的错",
+       "？"
+      ],
+      "dap": [
+       "你凭什么说这是我的错？"
+      ],
+      "goiY": "Anh dựa vào đâu mà bảo đây là lỗi của tôi?",
+      "giai": "凭什么 + V: chất vấn."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个结论",
+       "全凭",
+       "经验和想象",
+       "，",
+       "不科学",
+       "。"
+      ],
+      "dap": [
+       "这个结论全凭经验和想象，不科学。"
+      ],
+      "goiY": "Kết luận này hoàn toàn dựa vào kinh nghiệm và tưởng tượng, không khoa học.",
+      "giai": "全凭 + N (câu 练习 3 của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他凭着自己的努力考上了大学。",
+      "dung": true,
+      "giai": "Đúng: 凭(着) + N + V = dựa vào … mà làm được …."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "请旅客们进站凭票。",
+      "dung": false,
+      "sua": "请旅客们凭票进站。",
+      "giai": "Cụm giới từ 凭票 phải đứng trước động từ chính."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这次成功全凭着大家的帮助的。",
+      "dung": false,
+      "sua": "这次成功全凭大家的帮助。",
+      "giai": "Thừa 的 cuối câu; 全凭 + N là đủ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Làm việc không thể chỉ dựa vào kinh nghiệm.",
+      "dap": [
+       "干工作不能光凭经验。",
+       "工作不能光凭经验。",
+       "做事不能只凭经验。"
+      ],
+      "py": "Gàn gōngzuò bù néng guāng píng jīngyàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 光凭 / 只凭.",
+      "giai": "光凭 + N = chỉ dựa vào."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Học sinh có thể vào cửa miễn phí bằng thẻ học sinh.",
+      "dap": [
+       "学生可以凭学生证免费入场。",
+       "学生凭学生证可以免费进去。",
+       "学生可以凭学生证免费进门。"
+      ],
+      "py": "Xuésheng kěyǐ píng xuéshengzhèng miǎnfèi rùchǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 凭 + N + V.",
+      "giai": "凭学生证 đứng trước động từ 入场."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你以前去过吗？你是怎么找到那个房子的？　B：＿＿＿。",
+      "goiY": "trả lời: chưa từng đến, dựa vào bản đồ trên điện thoại (dùng 凭) — câu 练一练 của sách",
+      "mau": "我以前没去过，是凭手机上的地图找到的。",
+      "can": [
+       [
+        "凭"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：我以前见过他跟别人吵架，所以我对他印象不太好。　B：＿＿＿。",
+      "goiY": "khuyên đừng chỉ dựa vào một lần mà đánh giá người khác (dùng 凭) — câu 练一练 của sách",
+      "mau": "你不能光凭一次吵架就说他不好啊。",
+      "can": [
+       [
+        "凭"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「凭」 (凭 + N + V, 全凭……, hoặc 凭什么……？)",
+      "mau": "A：你看这几张照片，很漂亮吧！我们去那儿旅行怎么样？　B：光凭几张照片可不能决定，我们先上网查查吧。",
+      "can": [
+       [
+        "凭"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

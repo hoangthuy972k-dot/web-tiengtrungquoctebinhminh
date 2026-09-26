@@ -1587,6 +1587,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-19.html'
+      },
+      {
+        id: 'hsk5-l20',
+        number: 20,
+        title: 'Quầy truyện tranh',
+        titleHanzi: '小人书摊',
+        titlePinyin: 'Xiǎorénshū tān',
+        topic: 'Unit 7 交流文化 · Ký ức văn hoá & tuổi thơ',
+        vocabCount: 38,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-20.html'
       }
     ],
     yct: [

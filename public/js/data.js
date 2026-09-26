@@ -1366,21 +1366,21 @@ const APP_DATA = {
         title: 'Chi tiết của tình yêu',
         titleHanzi: '爱的细节',
         titlePinyin: 'Ài de xìjié',
-        topic: 'Unit 1 了解生活 · Hôn nhân, tình cảm vợ chồng & những chi tiết nhỏ',
+        topic: 'Unit 1 了解生活 · Hôn nhân & tình cảm vợ chồng',
         vocabCount: 38,
-        dialogueCount: 6,
+        dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-1.html'
       },
       {
         id: 'hsk5-l2',
         number: 2,
-        title: 'Để lại cho bố mẹ một chùm chìa khoá',
+        title: 'Để chìa khoá cho bố mẹ',
         titleHanzi: '留串钥匙给父母',
         titlePinyin: 'Liú chuàn yàoshi gěi fùmǔ',
-        topic: 'Unit 1 了解生活 · Cha mẹ, con cái & hơi ấm gia đình',
-        vocabCount: 38,
-        dialogueCount: 5,
+        topic: 'Unit 1 了解生活 · Tình cảm gia đình & tình yêu của cha mẹ',
+        vocabCount: 39,
+        dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-2.html'
       }

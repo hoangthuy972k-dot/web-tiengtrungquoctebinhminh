@@ -36,7 +36,7 @@ fs.writeFileSync(path.join(ROOT, 'public', 'js', 'ngu-phap-tab-hsk5.js'), js);
 const META = path.join(__dirname, 'hsk5-meta');
 const bai = fs.readdirSync(META).map((f) => (f.match(/^bai-(\d+)\.json$/) || [])[1]).filter(Boolean).map(Number).sort((a, b) => a - b)
   .filter((n) => fs.existsSync(path.join(ROOT, 'public', 'lessons', 'hsk5-bai-' + n + '.html')));
-const q = (s) => "'" + String(s).replace(/\/g, '\\').replace(/'/g, "\'").replace(/&amp;/g, '&') + "'";
+const q = (s) => "'" + String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/&amp;/g, '&') + "'";
 const entries = bai.map(function (n) {
   const m = JSON.parse(fs.readFileSync(path.join(META, 'bai-' + n + '.json'), 'utf8'));
   return '      {\n' +

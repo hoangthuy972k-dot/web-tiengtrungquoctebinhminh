@@ -1385,6 +1385,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-2.html'
       },
       {
+        id: 'hsk5-l3',
+        number: 3,
+        title: 'Đời người có lựa chọn, mọi thứ có thể đổi thay',
+        titleHanzi: '人生有选择，一切可改变',
+        titlePinyin: 'Rénshēng yǒu xuǎnzé, yíqiè kě gǎibiàn',
+        topic: 'Unit 1 了解生活 · Lựa chọn cuộc đời & đam mê',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk5-bai-3.html'
+      },
+      {
         id: 'hsk5-l4',
         number: 4,
         title: 'Tử Lộ vác gạo',

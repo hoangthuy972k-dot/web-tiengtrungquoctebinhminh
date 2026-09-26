@@ -1659,6 +1659,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk5-bai-25.html'
+      },
+      {
+        id: 'hsk5-l26',
+        number: 26,
+        title: 'Bạn thuộc kiểu “bận rộn” nào?',
+        titleHanzi: '你属于哪一种“忙”？',
+        titlePinyin: 'Nǐ shǔyú nǎ yì zhǒng “máng”?',
+        topic: 'Unit 9 感受人生 · Cảm nhận cuộc sống',
+        vocabCount: 37,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-26.html'
       }
     ],
     yct: [

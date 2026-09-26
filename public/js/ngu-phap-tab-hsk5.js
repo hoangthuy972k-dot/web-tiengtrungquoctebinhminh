@@ -24508,3 +24508,946 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-25.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-26.html"] = [
+ {
+  "so": "1",
+  "ten": "「来」",
+  "tenVn": "",
+  "cauTruc": [
+   "十 / 百 / 千 + 来 + lượng từ + N (20来个人)",
+   "số + lượng từ + 来 + 重 / 长 / 高 (5斤来重)",
+   "一来……，二来…… (liệt kê lý do)"
+  ],
+  "giaiThich": "来 ở đây là TRỢ TỪ. ① Đứng sau số chẵn chục 十、百、千… hoặc sau số lượng từ, biểu thị số ƯỚC LƯỢNG — khoảng, chừng, xấp xỉ: 20来个 (khoảng hai mươi), 一千来块钱, 5斤来重. ② Đứng sau 一、二、三 tạo khung “一来……，二来……” để LIỆT KÊ LÝ DO: một là …, hai là ….",
+  "viDu": [
+   {
+    "zh": "他雇了20来个当地人为他带路和搬运行李。",
+    "py": "Tā gùle èrshí lái ge dāngdìrén wèi tā dài lù hé bānyùn xíngli.",
+    "vn": "Ông thuê khoảng hai mươi người địa phương dẫn đường và khuân vác hành lý cho mình."
+   },
+   {
+    "zh": "按照老人教的方法，他几乎每天都能钓到5斤来重的大鱼。",
+    "py": "Ànzhào lǎorén jiāo de fāngfǎ, tā jīhū měi tiān dōu néng diàodào wǔ jīn lái zhòng de dà yú.",
+    "vn": "Theo cách ông lão dạy, gần như ngày nào anh ấy cũng câu được cá to nặng chừng 5 cân."
+   },
+   {
+    "zh": "我对上海很有感情，一来上大学时在那里住过几年，二来我太太也是上海人。",
+    "py": "Wǒ duì Shànghǎi hěn yǒu gǎnqíng, yī lái shàng dàxué shí zài nàli zhùguo jǐ nián, èr lái wǒ tàitai yě shì Shànghǎirén.",
+    "vn": "Tôi rất có tình cảm với Thượng Hải, một là hồi đại học từng sống ở đó mấy năm, hai là vợ tôi cũng là người Thượng Hải."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他雇了20个来当地人。",
+    "why": "Với số chẵn chục, 来 đứng GIỮA số và lượng từ: 20来个. Không đặt 来 sau lượng từ.",
+    "dung": "他雇了20来个当地人。"
+   },
+   {
+    "sai": "我们班有二十五来个学生。",
+    "why": "来 chỉ dùng sau số CHẴN chục (十、二十、一百…) để ước lượng; 25 là số cụ thể, không dùng 来.",
+    "dung": "我们班有二十来个学生。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他雇了20",
+       "个当地人为他带路和搬运行李。"
+      ],
+      "dap": [
+       [
+        "来"
+       ]
+      ],
+      "chon": [
+       "来",
+       "去",
+       "过"
+      ],
+      "goiY": "“Thuê KHOẢNG hai mươi người địa phương.”",
+      "giai": "Số chẵn chục + 来 + lượng từ = số ước lượng (câu bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他几乎每天都能钓到5斤",
+       "重的大鱼。"
+      ],
+      "dap": [
+       [
+        "来"
+       ]
+      ],
+      "chon": [
+       "来",
+       "去",
+       "把"
+      ],
+      "goiY": "“Cá nặng CHỪNG 5 cân.”",
+      "giai": "Số + lượng từ đo lường + 来 + 重 (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我对上海很有感情，一",
+       "上大学时在那里住过几年，二来我太太也是上海人。"
+      ],
+      "dap": [
+       [
+        "来"
+       ]
+      ],
+      "chon": [
+       "来",
+       "是",
+       "方面"
+      ],
+      "goiY": "“MỘT LÀ …, hai là …”",
+      "giai": "一来……，二来……: liệt kê lý do. 一方面 phải đi với 另一方面."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们来看看大家，一来是给大家送水果，二",
+       "是看看大家过节还有什么难处。"
+      ],
+      "dap": [
+       [
+        "来"
+       ]
+      ],
+      "chon": [
+       "来",
+       "是",
+       "又"
+      ],
+      "goiY": "“… HAI LÀ xem mọi người ăn Tết còn khó khăn gì.”",
+      "giai": "Vế sau của khung 一来……，二来…… (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件衬衫一千",
+       "块钱，比那件贵多了。"
+      ],
+      "dap": [
+       [
+        "来"
+       ]
+      ],
+      "chon": [
+       "来",
+       "去",
+       "过"
+      ],
+      "goiY": "“Khoảng một nghìn tệ.” Ôn câu 比 (HSK 3).",
+      "giai": "一千来块 = khoảng một nghìn tệ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我不想去，一来太远，",
+       "来我明天还有考试。"
+      ],
+      "dap": [
+       [
+        "二"
+       ]
+      ],
+      "chon": [
+       "二",
+       "两",
+       "第二"
+      ],
+      "goiY": "“Một là xa quá, HAI LÀ mai tớ còn có bài thi.”",
+      "giai": "Khung cố định 一来……，二来……, không nói 两来 / 第二来."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "雇了",
+       "20来个",
+       "当地人",
+       "。"
+      ],
+      "dap": [
+       "他雇了20来个当地人。"
+      ],
+      "goiY": "Ông ấy thuê khoảng hai mươi người địa phương.",
+      "giai": "20来个 là một khối: số + 来 + lượng từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们班",
+       "有",
+       "三十",
+       "来个",
+       "学生",
+       "。"
+      ],
+      "dap": [
+       "我们班有三十来个学生。"
+      ],
+      "goiY": "Lớp chúng tôi có khoảng ba mươi học sinh.",
+      "giai": "三十 + 来个 + 学生."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我喜欢住在这儿",
+       "，",
+       "一来",
+       "空气好",
+       "，",
+       "二来",
+       "很安静",
+       "。"
+      ],
+      "dap": [
+       "我喜欢住在这儿，一来空气好，二来很安静。",
+       "一来空气好，二来很安静，我喜欢住在这儿。"
+      ],
+      "goiY": "Tôi thích sống ở đây, một là không khí trong lành, hai là rất yên tĩnh.",
+      "giai": "Kết luận có thể đứng trước hoặc sau hai lý do."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这条鱼有5斤来重。",
+      "dung": true,
+      "giai": "Đúng: số + lượng từ đo lường + 来 + 重."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他雇了20个来当地人。",
+      "dung": false,
+      "sua": "他雇了20来个当地人。",
+      "giai": "Số chẵn chục: 来 đứng trước lượng từ — 20来个."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们班有二十五来个学生。",
+      "dung": false,
+      "sua": "我们班有二十来个学生。",
+      "giai": "来 chỉ dùng sau số chẵn chục; 25 là số cụ thể."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Lớp chúng tôi có khoảng hai mươi học sinh.",
+      "dap": [
+       "我们班有二十来个学生。",
+       "我们班有20来个学生。",
+       "我们班有二十来名学生。"
+      ],
+      "py": "Wǒmen bān yǒu èrshí lái ge xuésheng.",
+      "goiY": "Dịch sang tiếng Trung, dùng số + 来 + lượng từ.",
+      "giai": "二十来个 = khoảng hai mươi."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi thích đi bộ đi học, một là rèn luyện được sức khoẻ, hai là không bị tắc đường.",
+      "dap": [
+       "我喜欢走路上学，一来可以锻炼身体，二来不会堵车。",
+       "我喜欢走路上学，一来能锻炼身体，二来不会堵车。",
+       "我喜欢走路去学校，一来可以锻炼身体，二来不会堵车。"
+      ],
+      "py": "Wǒ xǐhuan zǒu lù shàngxué, yī lái kěyǐ duànliàn shēntǐ, èr lái bú huì dǔchē.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一来……，二来…….",
+      "giai": "Kết luận trước, hai lý do sau."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这所学校是小班上课，每个班＿＿＿。",
+      "goiY": "mỗi lớp chỉ khoảng hai mươi học sinh (dùng 来) — câu 练一练 của sách",
+      "mau": "这所学校是小班上课，每个班只有二十来个学生。",
+      "can": [
+       [
+        "来个",
+        "来名"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "四川好玩儿的地方可多了，去旅游＿＿＿。",
+      "goiY": "đi du lịch ít nhất phải chơi chừng mười ngày (dùng 来) — câu 练一练 của sách",
+      "mau": "四川好玩儿的地方可多了，去旅游至少得玩儿十来天。",
+      "can": [
+       [
+        "来天"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：你下班走路回家？为什么不坐车呢？　B：＿＿＿。",
+      "goiY": "Tự trả lời bằng khung 一来……，二来…… (câu 练一练 3 của sách), nêu hai lý do của em",
+      "mau": "B：一来走路可以锻炼身体，二来这个时候坐车太挤了。",
+      "can": [
+       [
+        "一来"
+       ],
+       [
+        "二来"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「至于」",
+  "tenVn": "",
+  "cauTruc": [
+   "(不 / 哪) + 至于 + V / tính từ (+ 吗？) — đến mức",
+   "A……，至于 + B，…… — còn về B thì …"
+  ],
+  "giaiThich": "至于 có hai cách dùng. ① ĐỘNG TỪ: biểu thị đạt tới một mức độ nào đó, phần lớn dùng trong câu PHẢN VẤN (你至于……吗？/ 哪至于……？) hoặc dạng phủ định 不至于 (chưa đến mức). ② GIỚI TỪ: dùng trong khung “(A)……，至于(B)……”, nói xong việc A rồi chuyển sang nhắc tới một việc B có liên quan — “còn về B thì …”.",
+  "viDu": [
+   {
+    "zh": "我只是和你开个玩笑，你至于生那么大的气吗？",
+    "py": "Wǒ zhǐshì hé nǐ kāi ge wánxiào, nǐ zhìyú shēng nàme dà de qì ma?",
+    "vn": "Tôi chỉ đùa với cậu thôi, có đến mức phải giận dữ thế không?"
+   },
+   {
+    "zh": "……至于这部影片的投资人，可是一位大人物，他可不敢得罪。",
+    "py": "…… zhìyú zhè bù yǐngpiàn de tóuzīrén, kě shì yí wèi dà rénwù, tā kě bù gǎn dézuì.",
+    "vn": "… còn nhà đầu tư của bộ phim này thì đúng là một nhân vật lớn, ông không dám làm phật lòng."
+   },
+   {
+    "zh": "我只知道他是六班的学生，至于住在哪儿，我就不清楚了。",
+    "py": "Wǒ zhǐ zhīdào tā shì liù bān de xuésheng, zhìyú zhù zài nǎr, wǒ jiù bù qīngchu le.",
+    "vn": "Tôi chỉ biết cậu ấy là học sinh lớp 6, còn ở đâu thì tôi không rõ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他只是感冒，至于不能来上课吧。",
+    "why": "Câu trần thuật “chưa đến mức” phải dùng 不至于. 至于 (động từ) dạng khẳng định chỉ dùng trong câu phản vấn (至于……吗？).",
+    "dung": "他只是感冒，不至于不能来上课吧。"
+   },
+   {
+    "sai": "我喜欢数学，至于我也喜欢物理。",
+    "why": "至于 dùng để chuyển sang một việc KHÁC, sau đó nói nhận xét riêng về việc ấy; thêm ý song song thì dùng 也 / 而且.",
+    "dung": "我喜欢数学，也喜欢物理。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我只是和你开个玩笑，你",
+       "生那么大的气吗？"
+      ],
+      "dap": [
+       [
+        "至于"
+       ]
+      ],
+      "chon": [
+       "至于",
+       "关于",
+       "对于"
+      ],
+      "goiY": "“Có ĐẾN MỨC phải giận thế không?”",
+      "giai": "至于 (động từ) + V + 吗: câu phản vấn. 关于 / 对于 là giới từ, không đứng trước động từ như vậy."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "什么？一件衬衫要一千来块钱。哪",
+       "那么贵呢？"
+      ],
+      "dap": [
+       [
+        "至于"
+       ]
+      ],
+      "chon": [
+       "至于",
+       "终于",
+       "由于"
+      ],
+      "goiY": "“Đâu ĐẾN MỨC đắt thế?”",
+      "giai": "哪至于 = đâu đến mức (câu ví dụ của sách). Ôn 来 chỉ số ước lượng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我只知道他是六班的学生，",
+       "住在哪儿，我就不清楚了。"
+      ],
+      "dap": [
+       [
+        "至于"
+       ]
+      ],
+      "chon": [
+       "至于",
+       "甚至",
+       "以及"
+      ],
+      "goiY": "“… CÒN ở đâu thì tôi không rõ.”",
+      "giai": "A……，至于 B……: chuyển sang việc khác."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大导演非常着急，",
+       "这部影片的投资人，可是一位大人物，他可不敢得罪。"
+      ],
+      "dap": [
+       [
+        "至于"
+       ]
+      ],
+      "chon": [
+       "至于",
+       "甚至",
+       "终于"
+      ],
+      "goiY": "“Còn nhà đầu tư của bộ phim thì …”",
+      "giai": "Câu bài khoá: 至于 dẫn ra đối tượng mới được bàn tới."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你们两口子吵架归吵架，不",
+       "要闹离婚吧？"
+      ],
+      "dap": [
+       [
+        "至于"
+       ]
+      ],
+      "chon": [
+       "至于",
+       "终于",
+       "关于"
+      ],
+      "goiY": "“Không ĐẾN MỨC phải đòi ly hôn chứ?”",
+      "giai": "不至于 + V = chưa đến mức (bài tập 1 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他只是有点儿感冒，",
+       "不能参加比赛吧？"
+      ],
+      "dap": [
+       [
+        "不至于"
+       ]
+      ],
+      "chon": [
+       "不至于",
+       "不过",
+       "不如"
+      ],
+      "goiY": "“Chưa đến mức không thi đấu được chứ?”",
+      "giai": "不至于 + V: phủ định mức độ; 吧 làm giọng phỏng đoán nhẹ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "至于",
+       "生",
+       "那么大的气",
+       "吗",
+       "？"
+      ],
+      "dap": [
+       "你至于生那么大的气吗？"
+      ],
+      "goiY": "Cậu có đến mức giận thế không?",
+      "giai": "Chủ ngữ + 至于 + V + 吗？"
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我只知道",
+       "他姓王",
+       "，",
+       "至于",
+       "他在哪儿工作",
+       "，",
+       "我就不清楚了",
+       "。"
+      ],
+      "dap": [
+       "我只知道他姓王，至于他在哪儿工作，我就不清楚了。"
+      ],
+      "goiY": "Tôi chỉ biết anh ấy họ Vương, còn làm ở đâu thì không rõ.",
+      "giai": "Việc đã biết trước, 至于 + việc khác sau; vế cuối có 就."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "只是",
+       "感冒",
+       "，",
+       "不至于",
+       "住院",
+       "吧",
+       "？"
+      ],
+      "dap": [
+       "他只是感冒，不至于住院吧？"
+      ],
+      "goiY": "Cậu ấy chỉ bị cảm, chưa đến mức phải nằm viện chứ?",
+      "giai": "不至于 + V + 吧？"
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我只记得他说过要去买礼物，至于买什么，我就不知道了。",
+      "dung": true,
+      "giai": "Đúng: nói việc đã biết, rồi 至于 chuyển sang việc chưa biết."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他只是感冒，至于不能来上课吧。",
+      "dung": false,
+      "sua": "他只是感冒，不至于不能来上课吧。",
+      "giai": "Câu trần thuật “chưa đến mức” dùng 不至于."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我喜欢数学，至于我也喜欢物理。",
+      "dung": false,
+      "sua": "我喜欢数学，也喜欢物理。",
+      "giai": "Ý song song dùng 也, không dùng 至于."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi chỉ biết cậu ấy là học sinh lớp 6, còn cậu ấy ở đâu thì tôi không rõ.",
+      "dap": [
+       "我只知道他是六班的学生，至于他住在哪儿，我就不清楚了。",
+       "我只知道他是六班的学生，至于住在哪儿，我就不清楚了。",
+       "我只知道他是六班的学生，至于他住哪儿，我就不清楚了。"
+      ],
+      "py": "Wǒ zhǐ zhīdào tā shì liù bān de xuésheng, zhìyú tā zhù zài nǎr, wǒ jiù bù qīngchu le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 至于.",
+      "giai": "A……，至于 B，我就不清楚了."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỉ là đùa thôi, có đến mức phải giận thế không?",
+      "dap": [
+       "只是开个玩笑，至于生那么大的气吗？",
+       "只是开个玩笑，你至于生那么大的气吗？",
+       "只是开个玩笑，至于生这么大的气吗？"
+      ],
+      "py": "Zhǐshì kāi ge wánxiào, zhìyú shēng nàme dà de qì ma?",
+      "goiY": "Dịch sang tiếng Trung, dùng 至于……吗？",
+      "giai": "至于 + V + 吗: câu phản vấn."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我只记得他说过要去买礼物，＿＿＿。",
+      "goiY": "còn mua quà gì thì không biết (dùng 至于) — câu 练一练 của sách",
+      "mau": "我只记得他说过要去买礼物，至于买什么礼物，我就不知道了。",
+      "can": [
+       [
+        "至于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我刚毕业，现在最重要的是找到工作，＿＿＿。",
+      "goiY": "còn lương cao hay thấp thì không quan trọng lắm (dùng 至于) — câu 练一练 của sách",
+      "mau": "我刚毕业，现在最重要的是找到工作，至于工资高不高，我倒不太在乎。",
+      "can": [
+       [
+        "至于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：听说李阳病了，明天的活动他恐怕参加不了了。　B：＿＿＿。",
+      "goiY": "Tự trả lời bằng 至于 / 不至于 (câu 练一练 3 của sách)",
+      "mau": "B：他只是有点儿感冒，不至于参加不了吧？",
+      "can": [
+       [
+        "至于"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「总算」",
+  "tenVn": "",
+  "cauTruc": [
+   "(经过……，) 总算 + V + 了 — cuối cùng cũng",
+   "(虽然……，但) 总算 + 有 / 不错…… — dù sao cũng tạm được"
+  ],
+  "giaiThich": "总算 là PHÓ TỪ. ① Biểu thị sau một thời gian khá dài (chờ đợi, cố gắng), một mong muốn cuối cùng cũng thành hiện thực: 总算搞明白了, 总算干完了. ② Biểu thị nhìn chung cũng tạm được, cũng coi là qua được: 总算有个睡觉的地方了, 总算不错了. 总算 chỉ dùng cho kết quả MONG MUỐN; kết quả không như ý phải dùng 终于.",
+  "viDu": [
+   {
+    "zh": "经过沟通，大导演总算搞明白了，……",
+    "py": "Jīngguò gōutōng, dà dǎoyǎn zǒngsuàn gǎo míngbai le, ……",
+    "vn": "Qua trao đổi, vị đạo diễn lớn cuối cùng cũng hiểu ra, …"
+   },
+   {
+    "zh": "总算把活儿干完了，可把我累坏了。",
+    "py": "Zǒngsuàn bǎ huór gànwán le, kě bǎ wǒ lèihuài le.",
+    "vn": "Cuối cùng cũng làm xong việc, mệt muốn chết."
+   },
+   {
+    "zh": "虽然我对这家宾馆不太满意，但总算有个睡觉的地方了。",
+    "py": "Suīrán wǒ duì zhè jiā bīnguǎn bú tài mǎnyì, dàn zǒngsuàn yǒu ge shuìjiào de dìfang le.",
+    "vn": "Tuy tôi không hài lòng lắm với khách sạn này, nhưng dù sao cũng có chỗ ngủ rồi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我担心的事总算发生了。",
+    "why": "总算 chỉ dùng cho điều MONG MUỐN. Điều lo lắng xảy ra là không như ý → 终于 (还是).",
+    "dung": "我担心的事终于还是发生了。"
+   },
+   {
+    "sai": "我们等了一个小时，他总算来。",
+    "why": "Việc đã thành hiện thực, sau 总算 + V cần 了.",
+    "dung": "我们等了一个小时，他总算来了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "经过沟通，大导演",
+       "搞明白了。"
+      ],
+      "dap": [
+       [
+        "总算"
+       ]
+      ],
+      "chon": [
+       "总算",
+       "总是",
+       "一共"
+      ],
+      "goiY": "“CUỐI CÙNG CŨNG hiểu ra.”",
+      "giai": "Sau quá trình trao đổi, điều mong muốn thành hiện thực → 总算 (câu bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "把活儿干完了，可把我累坏了。"
+      ],
+      "dap": [
+       [
+        "总算"
+       ]
+      ],
+      "chon": [
+       "总算",
+       "总共",
+       "总之"
+      ],
+      "goiY": "“Cuối cùng cũng làm xong việc.”",
+      "giai": "总算 đứng trước cụm 把. 总共 là tổng cộng, 总之 là tóm lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然我对这家宾馆不太满意，但",
+       "有个睡觉的地方了。"
+      ],
+      "dap": [
+       [
+        "总算"
+       ]
+      ],
+      "chon": [
+       "总算",
+       "究竟",
+       "几乎"
+      ],
+      "goiY": "“… nhưng DÙ SAO CŨNG có chỗ ngủ.”",
+      "giai": "Nghĩa 2: nhìn chung cũng tạm được."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "临走前能和你见上一面，这趟",
+       "没有白来！"
+      ],
+      "dap": [
+       [
+        "总算"
+       ]
+      ],
+      "chon": [
+       "总算",
+       "一律",
+       "一连"
+      ],
+      "goiY": "“Chuyến này DÙ SAO CŨNG không uổng công.”",
+      "giai": "总算没有白来 (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他才学了半年外语，能说成这样，",
+       "不错了。"
+      ],
+      "dap": [
+       [
+        "总算"
+       ]
+      ],
+      "chon": [
+       "总算",
+       "终于",
+       "总是"
+      ],
+      "goiY": "“Nói được thế này CŨNG COI LÀ khá rồi.”",
+      "giai": "Nghĩa “tạm được” chỉ 总算 có; 终于 không có nghĩa này (词语辨析)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他多次想告诉她，但",
+       "没说出口。"
+      ],
+      "dap": [
+       [
+        "终于"
+       ]
+      ],
+      "chon": [
+       "终于",
+       "总算",
+       "总是"
+      ],
+      "goiY": "“… nhưng RỐT CUỘC vẫn không nói ra.” (câu đối chiếu)",
+      "giai": "Kết quả KHÔNG như ý → 终于, không dùng 总算."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "经过",
+       "一个月的",
+       "努力",
+       "，",
+       "我的成绩",
+       "总算",
+       "提高了",
+       "。"
+      ],
+      "dap": [
+       "经过一个月的努力，我的成绩总算提高了。"
+      ],
+      "goiY": "Sau một tháng cố gắng, cuối cùng điểm của tôi cũng tiến bộ.",
+      "giai": "经过…… đứng đầu; 总算 đứng trước động từ 提高了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "总算",
+       "把",
+       "作业",
+       "写完了",
+       "。"
+      ],
+      "dap": [
+       "总算把作业写完了。"
+      ],
+      "goiY": "Cuối cùng cũng viết xong bài tập.",
+      "giai": "总算 + 把 + O + V + 完了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "虽然",
+       "不太满意",
+       "，",
+       "但",
+       "总算",
+       "有个",
+       "睡觉的地方了",
+       "。"
+      ],
+      "dap": [
+       "虽然不太满意，但总算有个睡觉的地方了。"
+      ],
+      "goiY": "Tuy không hài lòng lắm, nhưng dù sao cũng có chỗ ngủ.",
+      "giai": "虽然……，但总算…… (nghĩa 2)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "等了一个小时，他总算来了。",
+      "dung": true,
+      "giai": "Đúng: chờ lâu, điều mong muốn xảy ra → 总算……了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我担心的事总算发生了。",
+      "dung": false,
+      "sua": "我担心的事终于还是发生了。",
+      "giai": "Kết quả không mong muốn → 终于."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们等了一个小时，他总算来。",
+      "dung": false,
+      "sua": "我们等了一个小时，他总算来了。",
+      "giai": "Việc đã xảy ra, cần 了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Sau một tháng cố gắng, cuối cùng điểm của tôi cũng tiến bộ.",
+      "dap": [
+       "经过一个月的努力，我的成绩总算提高了。",
+       "经过一个月的努力，我的成绩总算进步了。",
+       "努力了一个月，我的成绩总算提高了。"
+      ],
+      "py": "Jīngguò yí ge yuè de nǔlì, wǒ de chéngjì zǒngsuàn tígāo le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 经过……，总算…….",
+      "giai": "总算 đứng sau chủ ngữ, trước động từ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tuy phòng hơi nhỏ, nhưng dù sao cũng có chỗ ngủ rồi.",
+      "dap": [
+       "虽然房间有点儿小，但总算有个睡觉的地方了。",
+       "虽然房间有点儿小，但是总算有睡觉的地方了。",
+       "房间虽然有点儿小，但总算有个睡觉的地方了。"
+      ],
+      "py": "Suīrán fángjiān yǒudiǎnr xiǎo, dàn zǒngsuàn yǒu ge shuìjiào de dìfang le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 总算 với nghĩa “dù sao cũng”.",
+      "giai": "虽然……，但总算……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，但没有选择回老家，而是留在这里打工。",
+      "goiY": "cuối cùng anh ấy cũng tốt nghiệp đại học (dùng 总算) — câu 练一练 của sách",
+      "mau": "他总算大学毕业了，但没有选择回老家，而是留在这里打工。",
+      "can": [
+       [
+        "总算"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：李强的咖啡馆准备了半年，又是装修，又是办各种手续，真不容易。　B：是啊！＿＿＿。",
+      "goiY": "cuối cùng cũng khai trương rồi (dùng 总算) — câu 练一练 của sách",
+      "mau": "B：是啊！现在总算开业了。",
+      "can": [
+       [
+        "总算"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：琳琳这次化学考了78分，比期中考试提高了10分呢。　B：化学是她最头疼的科目了，＿＿＿。",
+      "goiY": "Tự hoàn thành câu bằng 总算 (câu 练一练 3 của sách)",
+      "mau": "B：化学是她最头疼的科目了，这次总算考得不错了。",
+      "can": [
+       [
+        "总算"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

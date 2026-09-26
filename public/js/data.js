@@ -1671,6 +1671,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-26.html'
+      },
+      {
+        id: 'hsk5-l28',
+        number: 28,
+        title: 'Người tốt nghiệp được hoan nghênh nhất',
+        titleHanzi: '最受欢迎的毕业生',
+        titlePinyin: 'Zuì shòu huānyíng de bìyèshēng',
+        topic: 'Unit 10 关注经济 · Việc làm của sinh viên & sức mạnh của sự chuyên tâm',
+        vocabCount: 46,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-28.html'
       }
     ],
     yct: [

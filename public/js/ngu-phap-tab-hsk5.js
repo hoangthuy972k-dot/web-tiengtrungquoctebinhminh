@@ -25451,3 +25451,941 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-26.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-28.html"] = [
+ {
+  "so": "1",
+  "ten": "「从此」",
+  "tenVn": "",
+  "cauTruc": [
+   "Sự việc làm mốc，从此 + (S) + (就 / 一直 / 不再) + V",
+   "……。从此 + S + ……"
+  ],
+  "giaiThich": "从此 là phó từ, nghĩa là \"từ đó (trở đi)\" — kể từ thời điểm này hoặc thời điểm vừa được nhắc đến. Vế trước kể một sự việc làm MỐC; 从此 đứng đầu vế sau (trước chủ ngữ hoặc trước động từ), nói về sự thay đổi / trạng thái kéo dài từ đó về sau. Sau 从此 thường có 就 / 一直 / 再也不 / 不再. Không đặt mốc thời gian cụ thể sau 从此 (muốn nói \"từ lớp 6\" dùng 从……起 / 从……开始).",
+  "viDu": [
+   {
+    "zh": "李白听了老婆婆的话，很受感动。从此他刻苦用功，最后成了一位伟大的诗人。",
+    "py": "Lǐ Bái tīngle lǎo pópo de huà, hěn shòu gǎndòng. Cóngcǐ tā kèkǔ yònggōng, zuìhòu chéngle yí wèi wěidà de shīrén.",
+    "vn": "Lý Bạch nghe lời bà cụ, rất cảm động. Từ đó ông chăm chỉ khổ luyện, cuối cùng trở thành một nhà thơ vĩ đại."
+   },
+   {
+    "zh": "因为小学六年级的时候，他迷上了公交车，从此，就一直关注公交线路。",
+    "py": "Yīnwèi xiǎoxué liù niánjí de shíhou, tā míshangle gōngjiāochē, cóngcǐ, jiù yìzhí guānzhù gōngjiāo xiànlù.",
+    "vn": "Số là hồi học lớp sáu, cậu ấy mê xe buýt, từ đó luôn để ý các tuyến xe buýt."
+   },
+   {
+    "zh": "嫦娥自己吃下了不死药，结果她飞到了月亮上，从此与后羿分离。",
+    "py": "Cháng'é zìjǐ chīxiàle bù sǐ yào, jiéguǒ tā fēidàole yuèliang shang, cóngcǐ yǔ Hòuyì fēnlí.",
+    "vn": "Hằng Nga tự mình uống thuốc trường sinh, kết quả bay lên cung trăng, từ đó chia lìa với Hậu Nghệ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "从此小学六年级，他就一直关注公交线路。",
+    "why": "从此 không đi kèm mốc thời gian cụ thể phía sau. Mốc thời gian dùng 从……起 / 从……开始.",
+    "dung": "从小学六年级起，他就一直关注公交线路。"
+   },
+   {
+    "sai": "他每天都锻炼，从此身体很好。",
+    "why": "从此 nói về MỐC THỜI GIAN (từ lúc đó trở đi), không diễn đạt quan hệ nhân quả. Ở đây là nguyên nhân → kết quả nên dùng 因此 / 所以.",
+    "dung": "他每天都锻炼，因此身体很好。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "李白听了老婆婆的话，很受感动。",
+       "他刻苦用功，最后成了一位伟大的诗人。"
+      ],
+      "dap": [
+       [
+        "从此"
+       ]
+      ],
+      "chon": [
+       "从此",
+       "从来",
+       "从前"
+      ],
+      "goiY": "“Từ đó ông chăm chỉ khổ luyện.” — câu của sách",
+      "giai": "Vế trước là sự việc làm mốc → 从此: từ đó trở đi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "小学六年级的时候，他迷上了公交车，",
+       "，就一直关注公交线路。"
+      ],
+      "dap": [
+       [
+        "从此"
+       ]
+      ],
+      "chon": [
+       "从此",
+       "因此",
+       "从来"
+      ],
+      "goiY": "“Từ đó luôn để ý các tuyến xe buýt.” — câu của bài khoá",
+      "giai": "从此 + 就一直……: thay đổi kéo dài từ mốc đó."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "嫦娥飞到了月亮上，",
+       "与后羿分离。"
+      ],
+      "dap": [
+       [
+        "从此"
+       ]
+      ],
+      "chon": [
+       "从此",
+       "从前",
+       "于是"
+      ],
+      "goiY": "“Từ đó chia lìa với Hậu Nghệ.” — câu của sách",
+      "giai": "Kết quả kéo dài mãi về sau → 从此."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "小学六年级起，他就一直关注公交线路。"
+      ],
+      "dap": [
+       [
+        "从"
+       ]
+      ],
+      "chon": [
+       "从",
+       "从此",
+       "从来"
+      ],
+      "goiY": "Phía sau có mốc thời gian cụ thể + 起.",
+      "giai": "Mốc thời gian cụ thể dùng 从……起, không dùng 从此."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我以前",
+       "没吃过中国菜。"
+      ],
+      "dap": [
+       [
+        "从来"
+       ]
+      ],
+      "chon": [
+       "从来",
+       "从此",
+       "从前"
+      ],
+      "goiY": "“Trước đây tôi chưa bao giờ ăn món Trung Quốc.”",
+      "giai": "从来没……过 = chưa bao giờ; 从此 nói về thời gian SAU một mốc."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "去年他去了一趟北京，",
+       "就爱上了中国文化。"
+      ],
+      "dap": [
+       [
+        "从此"
+       ]
+      ],
+      "chon": [
+       "从此",
+       "从来",
+       "因此"
+      ],
+      "goiY": "“Từ đó đem lòng yêu văn hoá Trung Quốc.”",
+      "giai": "Chuyến đi là mốc; 从此 + 就 + thay đổi."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "十年前",
+       "来到中国",
+       "，",
+       "从此",
+       "爱上了",
+       "中国菜",
+       "。"
+      ],
+      "dap": [
+       "他十年前来到中国，从此爱上了中国菜。"
+      ],
+      "goiY": "Anh ấy đến Trung Quốc mười năm trước, từ đó mê món Trung Quốc.",
+      "giai": "Vế 1: mốc; vế 2: 从此 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "李白",
+       "很受感动",
+       "，",
+       "从此",
+       "刻苦用功",
+       "。"
+      ],
+      "dap": [
+       "李白很受感动，从此刻苦用功。"
+      ],
+      "goiY": "Lý Bạch rất cảm động, từ đó chăm chỉ khổ luyện.",
+      "giai": "从此 đứng đầu vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "迷上了",
+       "公交车",
+       "，",
+       "从此",
+       "一直",
+       "关注",
+       "公交线路",
+       "。"
+      ],
+      "dap": [
+       "他迷上了公交车，从此一直关注公交线路。"
+      ],
+      "goiY": "Cậu ấy mê xe buýt, từ đó luôn để ý các tuyến xe.",
+      "giai": "从此 + 一直 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "从此初中，他就是同学们的出行顾问。",
+      "dung": false,
+      "sua": "从上初中起，他就是同学们的出行顾问。",
+      "giai": "从此 không đi với mốc thời gian cụ thể; dùng 从……起."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "医生说他太胖了，他从此每天都去跑步。",
+      "dung": true,
+      "giai": "Đúng: vế trước là mốc (lời bác sĩ), vế sau 从此 + thói quen mới."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他从此没去过上海。",
+      "dung": false,
+      "sua": "他从来没去过上海。",
+      "giai": "\"Chưa bao giờ\" là 从来没……过; câu này lại không có sự việc làm mốc cho 从此."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy xem một bộ phim Trung Quốc, từ đó thích tiếng Trung.",
+      "dap": [
+       "她看了一部中国电影，从此喜欢上了汉语。",
+       "她看了一部中国电影，从此就喜欢上了汉语。",
+       "她看了一部中国电影，从此爱上了汉语。"
+      ],
+      "py": "Tā kànle yí bù Zhōngguó diànyǐng, cóngcǐ xǐhuan shangle Hànyǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从此.",
+      "giai": "Vế trước là mốc, 从此 mở đầu vế sau."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Hồi nhỏ cậu ấy bị chó cắn, từ đó không dám lại gần chó nữa.",
+      "dap": [
+       "他小时候被狗咬过，从此不敢靠近狗了。",
+       "他小时候被狗咬过，从此再也不敢靠近狗了。",
+       "他小时候被狗咬了，从此不敢再靠近狗了。"
+      ],
+      "py": "Tā xiǎoshíhou bèi gǒu yǎoguo, cóngcǐ bù gǎn kàojìn gǒu le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从此.",
+      "giai": "Câu 被 làm mốc + 从此 + 不敢……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他是十年前来的中国，＿＿＿。",
+      "goiY": "nói từ đó anh ấy ở lại làm việc tại Trung Quốc (dùng 从此) — bài 练一练 của sách",
+      "mau": "他是十年前来的中国，从此就留在中国工作了。",
+      "can": [
+       [
+        "从此"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你跟原来的同屋还有联系吗？　B：＿＿＿。",
+      "goiY": "nói sau khi tốt nghiệp thì mất liên lạc từ đó (dùng 从此) — bài 练一练 của sách",
+      "mau": "毕业以后他回国了，从此我们就没有联系了。",
+      "can": [
+       [
+        "从此"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「从此」 kể một sự việc đã thay đổi thói quen / sở thích của em",
+      "mau": "初二的时候我参加了一次演讲比赛，从此就不怕在别人面前说话了。",
+      "can": [
+       [
+        "从此"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「假设」",
+  "tenVn": "",
+  "cauTruc": [
+   "假设 + tình huống，(那么) + ……？(động từ)",
+   "S + 假设 + mệnh đề",
+   "一种 / 大胆的 / 当年的 + 假设 (danh từ)"
+  ],
+  "giaiThich": "假设 là động từ, nghĩa là coi một tình huống nào đó như là thật (giả sử) để suy luận hoặc đặt câu hỏi; thường đứng đầu câu: 假设 + tình huống，……? Có thể có chủ ngữ phía trước (我们假设……). 假设 còn làm danh từ, chỉ tình huống được đặt ra, giả thuyết: 大胆的假设, 这种假设被证明是对的. Khác 假如 (liên từ, chỉ đứng đầu vế câu, không làm danh từ).",
+  "viDu": [
+   {
+    "zh": "假设我要从国贸到鼓楼大街，该怎么乘车？",
+    "py": "Jiǎshè wǒ yào cóng Guómào dào Gǔlóu Dàjiē, gāi zěnme chéng chē?",
+    "vn": "Giả sử tôi muốn đi từ Quốc Mậu đến đường Cổ Lâu, thì nên đi xe thế nào?"
+   },
+   {
+    "zh": "假设汽水两块钱一瓶，两个空瓶可以换一瓶汽水，如果给你6块钱，你最多能喝几瓶汽水？",
+    "py": "Jiǎshè qìshuǐ liǎng kuài qián yì píng, liǎng ge kōng píng kěyǐ huàn yì píng qìshuǐ, rúguǒ gěi nǐ liù kuài qián, nǐ zuì duō néng hē jǐ píng qìshuǐ?",
+    "vn": "Giả sử nước ngọt hai đồng một chai, hai vỏ chai đổi được một chai nước ngọt, nếu cho bạn 6 đồng, bạn uống được nhiều nhất mấy chai?"
+   },
+   {
+    "zh": "这是一种大胆的假设，但不一定是科学的。",
+    "py": "Zhè shì yì zhǒng dàdǎn de jiǎshè, dàn bù yídìng shì kēxué de.",
+    "vn": "Đây là một giả thuyết táo bạo, nhưng chưa chắc đã khoa học."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我们假如他明天9点能出发。",
+    "why": "假如 là liên từ, không đứng sau chủ ngữ làm vị ngữ. Sau chủ ngữ cần động từ 假设.",
+    "dung": "我们假设他明天9点能出发。"
+   },
+   {
+    "sai": "您当年的假如已经被证明是对的。",
+    "why": "假如 không làm danh từ. \"Giả thuyết\" phải dùng 假设.",
+    "dung": "您当年的假设已经被证明是对的。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "我要从国贸到鼓楼大街，该怎么乘车？"
+      ],
+      "dap": [
+       [
+        "假设"
+       ]
+      ],
+      "chon": [
+       "假设",
+       "假期",
+       "假装"
+      ],
+      "goiY": "“Giả sử tôi muốn đi từ Quốc Mậu …” — câu của bài khoá",
+      "giai": "假设 đầu câu: đặt tình huống để hỏi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们",
+       "他明天9点能出发，那么10点可以到这儿。"
+      ],
+      "dap": [
+       [
+        "假设"
+       ]
+      ],
+      "chon": [
+       "假设",
+       "假如",
+       "如果"
+      ],
+      "goiY": "Sau chủ ngữ 我们 cần một động từ — bài tập 2 của sách",
+      "giai": "我们 + 假设 (động từ); 假如 / 如果 là liên từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "您当年的",
+       "已经被证明是对的。"
+      ],
+      "dap": [
+       [
+        "假设"
+       ]
+      ],
+      "chon": [
+       "假设",
+       "假如",
+       "要是"
+      ],
+      "goiY": "Cần một DANH TỪ (当年的……) — câu của sách",
+      "giai": "Chỉ 假设 làm được danh từ: giả thuyết."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这是一种大胆的",
+       "，但不一定是科学的。"
+      ],
+      "dap": [
+       [
+        "假设"
+       ]
+      ],
+      "chon": [
+       "假设",
+       "如果",
+       "假如"
+      ],
+      "goiY": "一种 + danh từ — câu của sách",
+      "giai": "一种大胆的假设 = một giả thuyết táo bạo."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "汽水两块钱一瓶，两个空瓶可以换一瓶汽水，你最多能喝几瓶？"
+      ],
+      "dap": [
+       [
+        "假设"
+       ]
+      ],
+      "chon": [
+       "假设",
+       "假话",
+       "假期"
+      ],
+      "goiY": "Đặt tình huống cho bài toán — câu của sách",
+      "giai": "假设 + điều kiện của bài toán."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "明天下雨的话，我们就不去了。"
+      ],
+      "dap": [
+       [
+        "要是"
+       ]
+      ],
+      "chon": [
+       "要是",
+       "假设",
+       "只要"
+      ],
+      "goiY": "Có 的话 ở cuối vế, khẩu ngữ.",
+      "giai": "要是……的话 là mẫu khẩu ngữ; 假设 không đi với 的话."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "假设",
+       "明天",
+       "下雨",
+       "，",
+       "我们",
+       "怎么办",
+       "？"
+      ],
+      "dap": [
+       "假设明天下雨，我们怎么办？"
+      ],
+      "goiY": "Giả sử mai trời mưa, chúng ta làm sao?",
+      "giai": "假设 đứng đầu câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "您",
+       "当年的",
+       "假设",
+       "已经",
+       "被",
+       "证明",
+       "是对的",
+       "。"
+      ],
+      "dap": [
+       "您当年的假设已经被证明是对的。"
+      ],
+      "goiY": "Giả thuyết năm đó của ông đã được chứng minh là đúng.",
+      "giai": "假设 làm danh từ, chủ ngữ câu 被."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这是",
+       "一种",
+       "大胆的",
+       "假设",
+       "。"
+      ],
+      "dap": [
+       "这是一种大胆的假设。"
+      ],
+      "goiY": "Đây là một giả thuyết táo bạo.",
+      "giai": "一种 + 大胆的 + 假设."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "您当年的假如已经被证明是对的。",
+      "dung": false,
+      "sua": "您当年的假设已经被证明是对的。",
+      "giai": "假如 không làm danh từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "假设你是老板，你会录用什么样的人？",
+      "dung": true,
+      "giai": "Đúng: 假设 đặt tình huống ở đầu câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们假如他明天能出发。",
+      "dung": false,
+      "sua": "我们假设他明天能出发。",
+      "giai": "Sau chủ ngữ cần động từ 假设."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Giả sử bạn là hiệu trưởng, bạn sẽ làm gì?",
+      "dap": [
+       "假设你是校长，你会做什么？",
+       "假设你是校长，你会怎么做？",
+       "假设你是校长的话，你会做什么？"
+      ],
+      "py": "Jiǎshè nǐ shì xiàozhǎng, nǐ huì zuò shénme?",
+      "goiY": "Dịch sang tiếng Trung, dùng 假设.",
+      "giai": "假设 + tình huống, câu hỏi ở vế sau."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Giả thuyết này cần được chứng minh.",
+      "dap": [
+       "这个假设需要被证明。",
+       "这个假设需要证明。",
+       "这种假设需要证明。"
+      ],
+      "py": "Zhège jiǎshè xūyào zhèngmíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 假设 (danh từ).",
+      "giai": "假设 làm danh từ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "假设他说的是真话，＿＿＿。",
+      "goiY": "suy luận hệ quả nếu lời anh ấy là thật (dùng 假设 — câu đã cho) — bài 练一练 của sách",
+      "mau": "假设他说的是真话，那么我们都误会他了。",
+      "can": [
+       [
+        "假设"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：马上就要毕业了，你有什么想法？　B：＿＿＿。",
+      "goiY": "dùng 假设 làm ĐỘNG TỪ: đặt một tình huống cho bản thân — bài 练一练 của sách",
+      "mau": "假设我找不到满意的工作，我就先去读研究生。",
+      "can": [
+       [
+        "假设"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「假设」 làm DANH TỪ (大胆的假设 / 这个假设), nói về một vấn đề khoa học hoặc một dự đoán",
+      "mau": "关于人为什么做梦，科学家提出了很多大胆的假设。",
+      "can": [
+       [
+        "假设"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「堆」",
+  "tenVn": "",
+  "cauTruc": [
+   "一 (大) + 堆 + N (lượng từ)",
+   "把 + N + 堆在 / 堆成 + …… (động từ)",
+   "N + 堆 (danh từ: 石头堆)"
+  ],
+  "giaiThich": "堆 có ba cách dùng. (1) Lượng từ: dùng cho vật hoặc người tụ thành đống, thành đám — 一堆垃圾, 一大堆名字, 一堆人 (KHÔNG dùng cho người đáng kính: ✗ 一堆老师). (2) Động từ: dùng tay hoặc công cụ gom đồ vật lại một chỗ — 堆在这儿, 堆成山. (3) Danh từ: đống đồ chất lại — 建筑材料堆, 石头堆.",
+  "viDu": [
+   {
+    "zh": "他有问必答，不但准确无误地按顺序报了一大堆公交车、地铁站的名字，而且还给一对情侣制订了北京休闲一日游的具体方案。",
+    "py": "Tā yǒu wèn bì dá, búdàn zhǔnquè wú wù de àn shùnxù bàole yí dà duī gōngjiāochē, dìtiězhàn de míngzi, érqiě hái gěi yí duì qínglǚ zhìdìngle Běijīng xiūxián yí rì yóu de jùtǐ fāng'àn.",
+    "vn": "Cậu ấy hỏi gì đáp nấy, không những đọc chính xác, theo đúng thứ tự cả một loạt tên tuyến xe buýt, ga tàu điện ngầm, mà còn lập cho một cặp đôi phương án cụ thể cho một ngày du lịch thư giãn ở Bắc Kinh."
+   },
+   {
+    "zh": "今年真不错！你看这粮食，都堆成山了。",
+    "py": "Jīnnián zhēn búcuò! Nǐ kàn zhè liángshi, dōu duīchéng shān le.",
+    "vn": "Năm nay được mùa thật! Anh xem lương thực này, chất thành núi rồi."
+   },
+   {
+    "zh": "叔叔把手指上的金戒指取了下来，扔到石头堆里。",
+    "py": "Shūshu bǎ shǒuzhǐ shang de jīn jièzhi qǔle xiàlai, rēngdào shítou duī li.",
+    "vn": "Chú tháo chiếc nhẫn vàng trên ngón tay ra, ném vào đống đá."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "门口站着一堆老师，在等校长。",
+    "why": "堆 (lượng từ) không dùng cho người đáng kính. Dùng 几位 / 一些.",
+    "dung": "门口站着几位老师，在等校长。"
+   },
+   {
+    "sai": "别把东西堆门口。",
+    "why": "堆 làm động từ chỉ nơi chốn cần 在: 堆在 + nơi chốn.",
+    "dung": "别把东西堆在门口。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他准确无误地报了一大",
+       "公交车、地铁站的名字。"
+      ],
+      "dap": [
+       [
+        "堆"
+       ]
+      ],
+      "chon": [
+       "堆",
+       "群",
+       "份"
+      ],
+      "goiY": "“Cả một loạt tên xe buýt …” — câu của bài khoá",
+      "giai": "一大堆 + danh từ (lượng từ)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这些零件怎么都",
+       "在这儿啊？"
+      ],
+      "dap": [
+       [
+        "堆"
+       ]
+      ],
+      "chon": [
+       "堆",
+       "放",
+       "摆"
+      ],
+      "goiY": "Đồ vật chất đống lộn xộn — câu của sách",
+      "giai": "堆 làm động từ: 堆在 + nơi chốn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你看这粮食，都",
+       "成山了。"
+      ],
+      "dap": [
+       [
+        "堆"
+       ]
+      ],
+      "chon": [
+       "堆",
+       "长",
+       "变"
+      ],
+      "goiY": "“Chất thành núi” — câu của sách",
+      "giai": "堆成山 = chất thành núi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "工厂旁边有一个建筑材料",
+       "。"
+      ],
+      "dap": [
+       [
+        "堆"
+       ]
+      ],
+      "chon": [
+       "堆",
+       "群",
+       "块"
+      ],
+      "goiY": "Danh từ: đống vật liệu — câu của sách",
+      "giai": "N + 堆 = đống …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "门口站着几",
+       "老师，在等校长。"
+      ],
+      "dap": [
+       [
+        "位"
+       ]
+      ],
+      "chon": [
+       "位",
+       "堆",
+       "群"
+      ],
+      "goiY": "Người đáng kính.",
+      "giai": "堆 không dùng cho người đáng kính → 几位老师."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妻子几乎每天都要挑出他一大",
+       "毛病。"
+      ],
+      "dap": [
+       [
+        "堆"
+       ]
+      ],
+      "chon": [
+       "堆",
+       "份",
+       "届"
+      ],
+      "goiY": "Cả đống tật xấu — câu của sách",
+      "giai": "一大堆毛病."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "报了",
+       "一大堆",
+       "公交车",
+       "的",
+       "名字",
+       "。"
+      ],
+      "dap": [
+       "他报了一大堆公交车的名字。"
+      ],
+      "goiY": "Cậu ấy kể cả một loạt tên xe buýt.",
+      "giai": "一大堆 + định ngữ + danh từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "桌子上",
+       "堆着",
+       "一大堆",
+       "作业",
+       "。"
+      ],
+      "dap": [
+       "桌子上堆着一大堆作业。"
+      ],
+      "goiY": "Trên bàn chất cả một đống bài tập.",
+      "giai": "Câu tồn hiện: nơi chốn + 堆着 + N."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "叔叔",
+       "把",
+       "戒指",
+       "扔到",
+       "石头堆里",
+       "。"
+      ],
+      "dap": [
+       "叔叔把戒指扔到石头堆里。"
+      ],
+      "goiY": "Chú ném chiếc nhẫn vào đống đá.",
+      "giai": "石头堆 là danh từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "门口站着一堆老师。",
+      "dung": false,
+      "sua": "门口站着几位老师。",
+      "giai": "堆 không dùng cho người đáng kính."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "那边怎么有一堆人围在那儿？",
+      "dung": true,
+      "giai": "Đúng: 一堆人 dùng cho đám đông bình thường — câu của sách."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "别把东西堆门口。",
+      "dung": false,
+      "sua": "别把东西堆在门口。",
+      "giai": "堆 + 在 + nơi chốn."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trên bàn cậu ấy có cả một đống sách.",
+      "dap": [
+       "他的桌子上有一大堆书。",
+       "他桌子上有一大堆书。",
+       "他的桌子上堆着一大堆书。"
+      ],
+      "py": "Tā de zhuōzi shang yǒu yí dà duī shū.",
+      "goiY": "Dịch sang tiếng Trung, dùng 堆.",
+      "giai": "一大堆 đọc yí dà duī."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đừng chất đồ ở cửa.",
+      "dap": [
+       "别把东西堆在门口。",
+       "不要把东西堆在门口。",
+       "别把东西堆在门口了。"
+      ],
+      "py": "Bié bǎ dōngxi duī zài ménkǒu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 堆 (động từ).",
+      "giai": "把 + N + 堆在 + nơi chốn."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "下雪了，＿＿＿。",
+      "goiY": "kể chuyện đắp / chất tuyết (dùng 堆 làm ĐỘNG TỪ) — bài 练一练 của sách",
+      "mau": "下雪了，孩子们在院子里堆雪人。",
+      "can": [
+       [
+        "堆"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你知道我上个星期买的那本书可能放在哪儿了吗？　B：＿＿＿。",
+      "goiY": "nói cuốn sách có thể nằm trong đống sách (dùng 堆 làm DANH TỪ) — bài 练一练 của sách",
+      "mau": "可能在你桌子上那个书堆里吧，你找找。",
+      "can": [
+       [
+        "堆"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「堆」 (一大堆 / 堆在 / ……堆), tả căn phòng hoặc góc học tập của em",
+      "mau": "我的房间里堆着一大堆旧书，妈妈让我周末整理一下。",
+      "can": [
+       [
+        "堆"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

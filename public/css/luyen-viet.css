@@ -224,3 +224,33 @@ html.ho-tro-toi[data-theme="dark"] {
 .kl-miss { color: var(--lv-mid); font-size: 0.9rem; }
 .kl-check { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; cursor: pointer; }
 .kl-check input { margin-top: 5px; width: 18px; height: 18px; accent-color: var(--lv-accent); flex: none; }
+
+/* Phân biệt từ gần nghĩa (phan-biet.js) */
+.pb-card { display: flex; flex-direction: column; gap: 12px; }
+.pb-head { display: flex; gap: 10px; align-items: center; }
+.pb-head .lv-num { margin-top: 0; background: var(--lv-accent); color: var(--lv-on-accent); }
+.pb-head h3 { margin: 0; font-size: 1.35rem; color: var(--lv-accent); }
+.pb-same { background: var(--lv-tint); border-radius: 12px; padding: 12px 14px; }
+.pb-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pb-col { border: 1px solid var(--lv-line); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.pb-word { font-size: 1.5rem; font-weight: 700; color: var(--lv-accent); display: flex; align-items: center; gap: 6px; }
+.pb-points { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 3px; }
+.pb-ex { border-top: 1px dashed var(--lv-line); padding-top: 8px; margin-top: 4px; font-size: 1.02rem; }
+.pb-same .pb-ex { border-top: 0; background: var(--lv-card); border-radius: 10px; padding: 8px 12px; margin-top: 8px; }
+.pb-vn { color: var(--lv-mid); font-size: 0.9rem; }
+.pb-loa { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 0; background: transparent; color: var(--lv-soft); cursor: pointer; vertical-align: middle; }
+.pb-loa:hover { color: var(--lv-accent); background: var(--lv-accent-l); }
+.pb-loa svg { width: 17px; height: 17px; }
+.pb-q { display: flex; flex-direction: column; gap: 8px; padding: 10px 0; border-top: 1px solid var(--lv-line); }
+.pb-q-cau { font-size: 1.08rem; }
+.pb-q-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.pb-opt:disabled { opacity: 0.55; }
+.pb-opt.is-right { background: var(--lv-ok-l); border-color: var(--lv-ok); color: var(--lv-ok); font-weight: 700; opacity: 1; }
+.pb-opt.is-wrong { background: var(--lv-bad-l); border-color: var(--lv-bad); color: var(--lv-bad); opacity: 1; }
+.pb-why { font-size: 0.92rem; border-radius: 10px; padding: 8px 12px; }
+.pb-why.ok { background: var(--lv-ok-l); }
+.pb-why.bad { background: var(--lv-bad-l); }
+.pb-why.ok b { color: var(--lv-ok); }
+.pb-why.bad b { color: var(--lv-bad); }
+#pbSum { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 600px) { .pb-cols { grid-template-columns: 1fr; } }

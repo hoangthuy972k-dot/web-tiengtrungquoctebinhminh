@@ -2034,6 +2034,7 @@
         else if (k === 'speak') showSpeakPractice(levelId, lesson);
         else if (k === 'writing') showWritingPractice(levelId, lesson);
         else if (k === 'retell') showRetellPractice(levelId, lesson);
+        else if (k === 'synonym') showSynonymPractice(levelId, lesson);
         else if (k === 'listen') showListenPractice(levelId, lesson);
         else if (k === 'translate') showTranslatePractice(levelId, lesson);
         else if (k === 'workbook') showWorkbookPractice(levelId, lesson);
@@ -2102,7 +2103,7 @@
     new MutationObserver(function () {
       // Man "Kiem tra cuoi bai" moi: cac ham show* cu khong biet de an no —
       // hoc sinh sang man khac (menu, trang chu...) thi tu an
-      ['finalPractice', 'srsPractice', 'writingPractice', 'retellPractice'].forEach(function (id) {
+      ['finalPractice', 'srsPractice', 'writingPractice', 'retellPractice', 'synonymPractice'].forEach(function (id) {
         var fq = document.getElementById(id);
         if (fq && !fq.hidden) {
           var others = $all('#main > .dash-section').filter(function (s) { return s !== fq && !s.hidden; });
@@ -3194,7 +3195,8 @@
             translateData: iframe.contentWindow.translateData || [],
             translateDataRev: iframe.contentWindow.translateDataRev || [],
             writingData: iframe.contentWindow.writingData || null,
-            retellData: iframe.contentWindow.retellData || null
+            retellData: iframe.contentWindow.retellData || null,
+            synonymData: iframe.contentWindow.synonymData || null
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -11509,6 +11511,30 @@
     $('#writingPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  /* ---------------- Phan biet tu gan nghia (HSK 5 · Luyen them): public/js/phan-biet.js ---------------- */
+  function showSynonymPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $all('#main > .dash-section').forEach(function (s) { s.hidden = s.id !== 'synonymPractice'; });
+    var hop = $('#pbContent');
+    hop.className = '';
+    hop.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    loadLessonRawData(lesson).then(function (data) {
+      if (!data.synonymData || !data.synonymData.length || !window.PhanBiet) {
+        hop.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có phần phân biệt từ gần nghĩa.</p>';
+        return;
+      }
+      var ten = (lesson.fullPageUrl.match(/([\w-]+)\.html$/) || [])[1] || lesson.fullPageUrl;
+      window.PhanBiet.mount(hop, data.synonymData, {
+        key: ten, say: vpSpeak,
+        onDone: function (r) { recordLessonScore(lesson, 'synonym', { done: true, correct: r.correct, total: r.total }); }
+      });
+    }).catch(function () {
+      hop.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được phần phân biệt từ của bài này.</p>';
+    });
+    $('#synonymPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   /* ---------------- Ke lai bai doc (HSK 5 · buoc 7): public/js/ke-lai.js ---------------- */
   function showRetellPractice(levelId, lesson) {
     currentHubLevelId = levelId;
@@ -15179,6 +15205,12 @@
         tab.classList.add('active');
         renderListenContent();
       });
+    });
+    $('#pbBack').addEventListener('click', function () {
+      pathState = null;
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
     });
     $('#rtBack').addEventListener('click', function () {
       pathState = null;

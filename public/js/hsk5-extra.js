@@ -27,6 +27,13 @@
     var box = document.getElementById('synonym-wrap');
     if (!box || typeof synonymData === 'undefined') return;
 
+    // Co phan-biet.js thi dung chung ban voi app (cau da lam luu lai, dung chung ket qua)
+    if (window.PhanBiet) {
+      var ten = (location.pathname.match(/([\w-]+?)(?:\.html)?$/) || [])[1] || location.pathname;
+      window.PhanBiet.mount(box, synonymData, { key: ten, say: say });
+      return;
+    }
+
     box.innerHTML = synonymData.map(function (g, gi) {
       var cols = g.items.map(function (it) {
         return '<div class="h5-col">' +

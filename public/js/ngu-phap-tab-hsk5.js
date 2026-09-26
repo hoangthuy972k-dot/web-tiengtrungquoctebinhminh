@@ -29517,6 +29517,944 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-31.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-32.html"] = [
+ {
+  "so": "1",
+  "ten": "「密切」",
+  "tenVn": "",
+  "cauTruc": [
+   "A 和 B + 密切相关 / 关系密切 (tính từ — quan hệ gần gũi)",
+   "密切(地) + 观察 / 关注 / 配合 / 合作 (làm trạng ngữ — sát sao, chặt chẽ)",
+   "密切 + 了 + ……的联系 / 关系 / 友谊 (động từ — làm cho gắn bó hơn)"
+  ],
+  "giaiThich": "密切 có ba cách dùng. ① TÍNH TỪ: quan hệ gần gũi, mật thiết — 关系密切, 来往密切, 和……密切相关. ② TÍNH TỪ làm trạng ngữ: (đối với vấn đề) chú ý kỹ, chu đáo, sát sao — 密切(地)观察 / 关注 / 配合. ③ ĐỘNG TỪ: làm cho quan hệ gần gũi hơn — 密切了两国人民之间的友谊 (thường có 了, tân ngữ là 联系 / 关系 / 友谊).",
+  "viDu": [
+   {
+    "zh": "还有一部分污染和我们的日常生活密切相关。",
+    "py": "Hái yǒu yí bùfen wūrǎn hé wǒmen de rìcháng shēnghuó mìqiè xiāngguān.",
+    "vn": "Còn một phần ô nhiễm có liên quan mật thiết đến sinh hoạt hằng ngày của chúng ta."
+   },
+   {
+    "zh": "刘医生密切地观察着李妈妈病情的发展。",
+    "py": "Liú yīshēng mìqiè de guānchá zhe Lǐ māma bìngqíng de fāzhǎn.",
+    "vn": "Bác sĩ Lưu theo dõi sát sao diễn biến bệnh tình của bà Lý."
+   },
+   {
+    "zh": "友好城市之间的交往密切了两国人民之间的友谊。",
+    "py": "Yǒuhǎo chéngshì zhījiān de jiāowǎng mìqièle liǎng guó rénmín zhījiān de yǒuyì.",
+    "vn": "Sự giao lưu giữa các thành phố kết nghĩa đã làm tình hữu nghị giữa nhân dân hai nước thêm gắn bó."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他们俩的关系非常密切相关。",
+    "why": "密切相关 dùng khi hai SỰ VIỆC liên quan nhau (污染和生活密切相关). Nói quan hệ giữa hai người thì chỉ dùng tính từ: 关系很密切.",
+    "dung": "他们俩的关系非常密切。"
+   },
+   {
+    "sai": "我们要密切老师配合。",
+    "why": "Khi làm trạng ngữ, 密切 đứng ngay trước động từ; đối tượng phối hợp phải đi với giới từ 和 / 跟: 和老师密切配合.",
+    "dung": "我们要和老师密切配合。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "还有一部分污染和我们的日常生活",
+       "相关。"
+      ],
+      "dap": [
+       [
+        "密切"
+       ]
+      ],
+      "chon": [
+       "密切",
+       "亲切",
+       "仔细"
+      ],
+      "goiY": "“Liên quan MẬT THIẾT đến sinh hoạt hằng ngày.”",
+      "giai": "密切相关 = liên quan mật thiết (câu bài khoá). 亲切 là thân thiện; 仔细 là tỉ mỉ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "刘医生",
+       "地观察着李妈妈病情的发展。"
+      ],
+      "dap": [
+       [
+        "密切"
+       ]
+      ],
+      "chon": [
+       "密切",
+       "亲密",
+       "亲切"
+      ],
+      "goiY": "“Theo dõi SÁT SAO diễn biến bệnh.”",
+      "giai": "密切地 + 观察: chú ý kỹ, sát sao (câu ví dụ của sách). 亲密 / 亲切 nói tình cảm giữa người với người."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "参加了这次环保活动后，两人便有了共同语言，来往也比先前",
+       "了。"
+      ],
+      "dap": [
+       [
+        "密切"
+       ]
+      ],
+      "chon": [
+       "密切",
+       "仔细",
+       "认真"
+      ],
+      "goiY": "“Qua lại cũng THÂN THIẾT hơn trước.”",
+      "giai": "来往密切 = qua lại thân thiết; câu so sánh 比……密切了 (ôn câu 比)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "家长应和老师密切",
+       "，形成合力，保持教育的一致性。"
+      ],
+      "dap": [
+       [
+        "配合"
+       ]
+      ],
+      "chon": [
+       "配合",
+       "相关",
+       "关心"
+      ],
+      "goiY": "“Phụ huynh nên PHỐI HỢP chặt chẽ với giáo viên.”",
+      "giai": "密切配合 (bảng 搭配). 和……相关 là “liên quan”, không hợp nghĩa ở đây."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "友好城市之间的交往",
+       "了两国人民之间的友谊。"
+      ],
+      "dap": [
+       [
+        "密切"
+       ]
+      ],
+      "chon": [
+       "密切",
+       "亲切",
+       "关心"
+      ],
+      "goiY": "“… làm cho tình hữu nghị thêm GẮN BÓ.”",
+      "giai": "密切 làm ĐỘNG TỪ: 密切了 + 友谊 (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这种病传染性很强，我们要",
+       "关注和病人接触过的人。"
+      ],
+      "dap": [
+       [
+        "密切"
+       ]
+      ],
+      "chon": [
+       "密切",
+       "亲密",
+       "严格"
+      ],
+      "goiY": "“Phải theo dõi SÁT SAO những người đã tiếp xúc với bệnh nhân.”",
+      "giai": "密切关注 = theo dõi sát sao (bảng 搭配)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这种病",
+       "和",
+       "空气污染",
+       "密切相关",
+       "。"
+      ],
+      "dap": [
+       "这种病和空气污染密切相关。",
+       "空气污染和这种病密切相关。"
+      ],
+      "goiY": "Bệnh này có liên quan mật thiết đến ô nhiễm không khí.",
+      "giai": "A 和 B 密切相关 — A, B đổi chỗ được."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "医生",
+       "正在",
+       "密切地",
+       "观察着",
+       "他的病情",
+       "。"
+      ],
+      "dap": [
+       "医生正在密切地观察着他的病情。"
+      ],
+      "goiY": "Bác sĩ đang theo dõi sát sao bệnh tình của anh ấy.",
+      "giai": "正在 + 密切地 + V着 + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "两国",
+       "人民的",
+       "来往",
+       "越来越",
+       "密切了",
+       "。"
+      ],
+      "dap": [
+       "两国人民的来往越来越密切了。"
+      ],
+      "goiY": "Sự qua lại giữa nhân dân hai nước ngày càng mật thiết.",
+      "giai": "越来越 + 密切 + 了 (ôn 越来越, HSK 3)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "家长应和老师密切配合。",
+      "dung": true,
+      "giai": "Đúng: 和 + người + 密切配合."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他们俩的关系非常密切相关。",
+      "dung": false,
+      "sua": "他们俩的关系非常密切。",
+      "giai": "Quan hệ giữa người với người: 关系很密切; 密切相关 dùng cho hai sự việc."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们要密切老师配合。",
+      "dung": false,
+      "sua": "我们要和老师密切配合。",
+      "giai": "Thiếu giới từ 和; 密切 đứng ngay trước 配合."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Sức khoẻ có liên quan mật thiết với thói quen ăn uống.",
+      "dap": [
+       "健康和饮食习惯密切相关。",
+       "健康跟饮食习惯密切相关。",
+       "健康与饮食习惯密切相关。"
+      ],
+      "py": "Jiànkāng hé yǐnshí xíguàn mìqiè xiāngguān.",
+      "goiY": "Dịch sang tiếng Trung, dùng 密切相关.",
+      "giai": "A 和 / 跟 / 与 B 密切相关."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bác sĩ đang theo dõi sát sao tình hình của bệnh nhân.",
+      "dap": [
+       "医生正在密切地观察病人的情况。",
+       "医生正在密切观察病人的情况。",
+       "医生正密切地观察着病人的情况。"
+      ],
+      "py": "Yīshēng zhèngzài mìqiè de guānchá bìngrén de qíngkuàng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 密切 làm trạng ngữ.",
+      "giai": "密切(地) + 观察: theo dõi sát sao."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这种病传染性很强，＿＿＿。",
+      "goiY": "phải theo dõi sát sao những người đã tiếp xúc với bệnh nhân (dùng 密切) — câu 练一练 của sách",
+      "mau": "这种病传染性很强，我们要密切关注和病人接触过的人。",
+      "can": [
+       [
+        "密切"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "经济全球化＿＿＿。",
+      "goiY": "làm cho liên hệ kinh tế giữa các nước gắn bó hơn (密切 làm động từ) — câu 练一练 của sách",
+      "mau": "经济全球化密切了世界各国之间的经济联系。",
+      "can": [
+       [
+        "密切"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：这两年，李雪飞来咱们家的次数好像少多了？　B：＿＿＿。",
+      "goiY": "Tự trả lời bằng 密切 (câu 练一练 3 của sách): giải thích vì sao quan hệ không còn thân như trước",
+      "mau": "B：是啊，自从他搬家以后，我们的来往就没有以前那么密切了。",
+      "can": [
+       [
+        "密切"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「尽量」",
+  "tenVn": "",
+  "cauTruc": [
+   "尽量 + V / cụm động từ",
+   "尽量 + 多 / 少 / 早 + V",
+   "尽量 + 不 / 别 + V"
+  ],
+  "giaiThich": "尽量 là PHÓ TỪ, biểu thị cố gắng trong một phạm vi nhất định để đạt tới mức cao nhất — “cố hết mức có thể, càng … càng tốt”. Đứng trước động từ hoặc cụm động từ, rất hay đi với 多 / 少 / 早 + V (尽量多骑自行车, 尽量少吃油炸食品) và với phủ định 不 / 别 (尽量不迟到). Đọc jǐnliàng; khác 尽力 (dốc hết sức: 我会尽力的) và 尽快 (càng nhanh càng tốt).",
+  "viDu": [
+   {
+    "zh": "同时，尽量多骑自行车，多选择公共交通，少使用私家车。",
+    "py": "Tóngshí, jǐnliàng duō qí zìxíngchē, duō xuǎnzé gōnggòng jiāotōng, shǎo shǐyòng sījiāchē.",
+    "vn": "Đồng thời, cố gắng đi xe đạp nhiều hơn, chọn phương tiện công cộng nhiều hơn, dùng xe riêng ít đi."
+   },
+   {
+    "zh": "老年人要尽量少吃油炸食品。",
+    "py": "Lǎoniánrén yào jǐnliàng shǎo chī yóuzhá shípǐn.",
+    "vn": "Người cao tuổi nên cố gắng ăn ít đồ chiên rán."
+   },
+   {
+    "zh": "为了节约能源，请大家都尽量使用节能电器。",
+    "py": "Wèile jiéyuē néngyuán, qǐng dàjiā dōu jǐnliàng shǐyòng jiénéng diànqì.",
+    "vn": "Để tiết kiệm năng lượng, mời mọi người cố gắng dùng thiết bị điện tiết kiệm năng lượng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "老年人要少吃尽量油炸食品。",
+    "why": "尽量 là phó từ, đứng TRƯỚC cả cụm 少 + V, không chen giữa động từ và tân ngữ.",
+    "dung": "老年人要尽量少吃油炸食品。"
+   },
+   {
+    "sai": "请大家尽量使用节能电器多。",
+    "why": "多 / 少 phải đứng TRƯỚC động từ (多使用), không đặt cuối câu như tiếng Việt “dùng nhiều”.",
+    "dung": "请大家尽量多使用节能电器。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "同时，",
+       "多骑自行车，多选择公共交通，少使用私家车。"
+      ],
+      "dap": [
+       [
+        "尽量"
+       ]
+      ],
+      "chon": [
+       "尽量",
+       "尽管",
+       "尽快"
+      ],
+      "goiY": "“CỐ GẮNG đi xe đạp nhiều hơn.”",
+      "giai": "尽量 + 多 + V (câu bài khoá). 尽管 là mặc dù; 尽快 là càng nhanh càng tốt."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老年人要尽量",
+       "吃油炸食品。"
+      ],
+      "dap": [
+       [
+        "少"
+       ]
+      ],
+      "chon": [
+       "少",
+       "多",
+       "不少"
+      ],
+      "goiY": "“Cố gắng ăn ÍT đồ chiên rán.”",
+      "giai": "尽量 + 少 + V: cố gắng làm ít đi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了节约能源，请大家都",
+       "使用节能电器。"
+      ],
+      "dap": [
+       [
+        "尽量"
+       ]
+      ],
+      "chon": [
+       "尽量",
+       "尽力",
+       "尽管"
+      ],
+      "goiY": "“Mời mọi người CỐ GẮNG dùng thiết bị tiết kiệm điện.”",
+      "giai": "尽量 + V (câu ví dụ của sách). 尽力 thường đứng cuối (我会尽力的) hoặc 尽力 + 做."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "明天的会很重要，你",
+       "别迟到。"
+      ],
+      "dap": [
+       [
+        "尽量"
+       ]
+      ],
+      "chon": [
+       "尽量",
+       "尽管",
+       "几乎"
+      ],
+      "goiY": "“Cố gắng ĐỪNG đến muộn.”",
+      "giai": "尽量 + 别 / 不 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你放心，我会",
+       "早点儿把资料发给你。"
+      ],
+      "dap": [
+       [
+        "尽量"
+       ]
+      ],
+      "chon": [
+       "尽量",
+       "尽快",
+       "尽力"
+      ],
+      "goiY": "“Tôi sẽ cố gắng gửi SỚM một chút.” Ôn câu 把.",
+      "giai": "尽量 + 早点儿 + V. 尽快 đã mang nghĩa “sớm”, không đi với 早点儿."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "买东西的时候，我们应该尽量",
+       "用塑料袋。"
+      ],
+      "dap": [
+       [
+        "少"
+       ]
+      ],
+      "chon": [
+       "少",
+       "多",
+       "很少"
+      ],
+      "goiY": "“Cố gắng dùng ÍT túi nilon.”",
+      "giai": "尽量少 + V; không nói 尽量很少用."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "应该",
+       "尽量",
+       "少用",
+       "塑料袋",
+       "。"
+      ],
+      "dap": [
+       "我们应该尽量少用塑料袋。"
+      ],
+      "goiY": "Chúng ta nên cố gắng dùng ít túi nilon.",
+      "giai": "应该 + 尽量 + 少 + V + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "明天",
+       "尽量",
+       "早点儿",
+       "来",
+       "吧",
+       "。"
+      ],
+      "dap": [
+       "你明天尽量早点儿来吧。",
+       "明天你尽量早点儿来吧。"
+      ],
+      "goiY": "Mai cậu cố gắng đến sớm một chút nhé.",
+      "giai": "Thời gian đứng trước hoặc sau chủ ngữ; 尽量 + 早点儿 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我会",
+       "尽量",
+       "按时",
+       "完成",
+       "任务的",
+       "。"
+      ],
+      "dap": [
+       "我会尽量按时完成任务的。"
+      ],
+      "goiY": "Tôi sẽ cố gắng hoàn thành nhiệm vụ đúng hạn.",
+      "giai": "会……的: khẳng định, hứa hẹn; 尽量 đứng trước trạng ngữ 按时."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "老年人要尽量少吃油炸食品。",
+      "dung": true,
+      "giai": "Đúng: 尽量 + 少 + V + tân ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "老年人要少吃尽量油炸食品。",
+      "dung": false,
+      "sua": "老年人要尽量少吃油炸食品。",
+      "giai": "尽量 phải đứng trước 少吃."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "请大家尽量使用节能电器多。",
+      "dung": false,
+      "sua": "请大家尽量多使用节能电器。",
+      "giai": "多 đứng trước động từ, không đặt cuối câu."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Để tiết kiệm năng lượng, mọi người hãy cố gắng dùng ít điều hoà.",
+      "dap": [
+       "为了节约能源，大家尽量少用空调。",
+       "为了节约能源，请大家尽量少用空调。",
+       "为了节约能源，大家要尽量少开空调。"
+      ],
+      "py": "Wèile jiéyuē néngyuán, dàjiā jǐnliàng shǎo yòng kōngtiáo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 尽量少 + V.",
+      "giai": "为了 + mục đích, 尽量少 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi sẽ cố gắng không đến muộn.",
+      "dap": [
+       "我会尽量不迟到的。",
+       "我会尽量不迟到。",
+       "我尽量不迟到。"
+      ],
+      "py": "Wǒ huì jǐnliàng bù chídào de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 尽量不 + V.",
+      "giai": "尽量 + 不 + V; 会……的 làm lời hứa chắc chắn hơn."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "为了培养孩子的自理能力，＿＿＿。",
+      "goiY": "cố gắng để con tự làm việc của mình (dùng 尽量) — câu 练一练 của sách",
+      "mau": "为了培养孩子的自理能力，家长应该尽量让孩子自己的事情自己做。",
+      "can": [
+       [
+        "尽量"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "明天单位有个活动，可能不能按时下班，＿＿＿。",
+      "goiY": "nhưng sẽ cố gắng về nhà trước 8 giờ (dùng 尽量) — câu 练一练 của sách",
+      "mau": "明天单位有个活动，可能不能按时下班，不过我会尽量八点以前回家。",
+      "can": [
+       [
+        "尽量"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：要是他们问的问题我答不上来，怎么办？　B：＿＿＿。",
+      "goiY": "Tự trả lời bằng 尽量 (câu 练一练 3 của sách): khuyên bạn bình tĩnh, cố gắng trả lời",
+      "mau": "B：别紧张，能回答的尽量回答，实在答不上来，就说以后再告诉他们。",
+      "can": [
+       [
+        "尽量"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「逐步」",
+  "tenVn": "",
+  "cauTruc": [
+   "逐步 + V (扩大 / 恢复 / 提高 / 完善 / 实现)",
+   "逐步 + 向 + N + 转变",
+   "✗ 逐步 + tính từ → dùng 逐渐"
+  ],
+  "giaiThich": "逐步 là PHÓ TỪ, nghĩa “từng bước một” — sự thay đổi diễn ra theo trình tự, có kế hoạch. Phần nhiều dùng cho tình huống do CON NGƯỜI tác động: 逐步扩大, 逐步恢复, 逐步完善, 逐步向……转变. Thường KHÔNG bổ nghĩa cho từ mang tính chất tính từ: ✗天气逐步暖和了 → 天气逐渐暖和了 (nhưng bản tin thời tiết vẫn nói 气温逐步回升 vì 回升 là động từ).",
+  "viDu": [
+   {
+    "zh": "云计算应用市场规模正在逐步扩大。",
+    "py": "Yúnjìsuàn yìngyòng shìchǎng guīmó zhèngzài zhúbù kuòdà.",
+    "vn": "Quy mô thị trường ứng dụng điện toán đám mây đang từng bước mở rộng."
+   },
+   {
+    "zh": "……调整能源消费结构，逐步向可再生能源转变。",
+    "py": "…… tiáozhěng néngyuán xiāofèi jiégòu, zhúbù xiàng kě zàishēng néngyuán zhuǎnbiàn.",
+    "vn": "… điều chỉnh cơ cấu tiêu thụ năng lượng, từng bước chuyển sang năng lượng tái tạo."
+   },
+   {
+    "zh": "记者了解到，现在受灾群众已逐步恢复了正常的生产生活。",
+    "py": "Jìzhě liǎojiě dào, xiànzài shòuzāi qúnzhòng yǐ zhúbù huīfùle zhèngcháng de shēngchǎn shēnghuó.",
+    "vn": "Phóng viên được biết, hiện nay người dân vùng bị thiên tai đã từng bước khôi phục sản xuất và sinh hoạt bình thường."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "春天来了，天气逐步暖和了。",
+    "why": "逐步 thường không bổ nghĩa cho tính từ (暖和), và thời tiết thay đổi TỰ NHIÊN → dùng 逐渐.",
+    "dung": "春天来了，天气逐渐暖和了。"
+   },
+   {
+    "sai": "他的汉语水平提高逐步了。",
+    "why": "Phó từ 逐步 đứng TRƯỚC động từ, không đứng sau.",
+    "dung": "他的汉语水平逐步提高了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "云计算应用市场规模正在",
+       "扩大。"
+      ],
+      "dap": [
+       [
+        "逐步"
+       ]
+      ],
+      "chon": [
+       "逐步",
+       "尽量",
+       "一再"
+      ],
+      "goiY": "“Đang TỪNG BƯỚC mở rộng.”",
+      "giai": "正在 + 逐步 + V (câu ví dụ của sách). 一再 (bài 13) là hết lần này đến lần khác."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "调整能源消费结构，逐步向可再生能源",
+       "。"
+      ],
+      "dap": [
+       [
+        "转变"
+       ]
+      ],
+      "chon": [
+       "转变",
+       "变化",
+       "改变"
+      ],
+      "goiY": "“Từng bước CHUYỂN SANG năng lượng tái tạo.”",
+      "giai": "向 + N + 转变 = chuyển hướng sang …; 改变 cần tân ngữ trực tiếp (改变习惯), không đi với 向."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "记者了解到，现在受灾群众已逐步",
+       "了正常的生产生活。"
+      ],
+      "dap": [
+       [
+        "恢复"
+       ]
+      ],
+      "chon": [
+       "恢复",
+       "回复",
+       "回来"
+      ],
+      "goiY": "“Đã từng bước KHÔI PHỤC sản xuất và sinh hoạt.”",
+      "giai": "逐步恢复 (câu ví dụ của sách). 回复 là trả lời (tin nhắn, thư)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "秋天到了，天气",
+       "冷了起来。"
+      ],
+      "dap": [
+       [
+        "逐渐"
+       ]
+      ],
+      "chon": [
+       "逐渐",
+       "逐步",
+       "尽量"
+      ],
+      "goiY": "“Trời DẦN DẦN lạnh lên” — biến đổi tự nhiên.",
+      "giai": "Tính từ 冷 + biến đổi tự nhiên → 逐渐, không dùng 逐步."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "学校计划用两年时间",
+       "完善各种体育设施。"
+      ],
+      "dap": [
+       [
+        "逐步"
+       ]
+      ],
+      "chon": [
+       "逐步",
+       "尽量",
+       "几乎"
+      ],
+      "goiY": "“Có kế hoạch, TỪNG BƯỚC hoàn thiện.”",
+      "giai": "Việc có kế hoạch (计划用两年时间) → 逐步 + 完善."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "随着人们生活水平的不断提高，绿色食品",
+       "受到了大家的欢迎。"
+      ],
+      "dap": [
+       [
+        "逐步",
+        "逐渐"
+       ]
+      ],
+      "chon": [
+       "逐步",
+       "几乎",
+       "尽量"
+      ],
+      "goiY": "“Thực phẩm xanh DẦN DẦN được mọi người đón nhận.”",
+      "giai": "逐步 + 受到 (động từ); 逐渐 cũng được."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "受灾群众",
+       "已",
+       "逐步",
+       "恢复了",
+       "正常的",
+       "生活",
+       "。"
+      ],
+      "dap": [
+       "受灾群众已逐步恢复了正常的生活。"
+      ],
+      "goiY": "Người dân vùng bị thiên tai đã từng bước khôi phục cuộc sống bình thường.",
+      "giai": "已 + 逐步 + V了 + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "要",
+       "逐步",
+       "向",
+       "可再生能源",
+       "转变",
+       "。"
+      ],
+      "dap": [
+       "我们要逐步向可再生能源转变。",
+       "我们要向可再生能源逐步转变。"
+      ],
+      "goiY": "Chúng ta phải từng bước chuyển sang năng lượng tái tạo.",
+      "giai": "逐步 thường đứng trước cụm 向……转变 (như bài khoá)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "市场",
+       "规模",
+       "正在",
+       "逐步",
+       "扩大",
+       "。"
+      ],
+      "dap": [
+       "市场规模正在逐步扩大。"
+      ],
+      "goiY": "Quy mô thị trường đang từng bước mở rộng.",
+      "giai": "正在 + 逐步 + 扩大."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "学校计划逐步完善各种设施。",
+      "dung": true,
+      "giai": "Đúng: việc có kế hoạch + 逐步 + động từ 完善."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "春天来了，天气逐步暖和了。",
+      "dung": false,
+      "sua": "春天来了，天气逐渐暖和了。",
+      "giai": "Tính từ + biến đổi tự nhiên → 逐渐."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的汉语水平提高逐步了。",
+      "dung": false,
+      "sua": "他的汉语水平逐步提高了。",
+      "giai": "逐步 đứng trước động từ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chúng ta nên từng bước chuyển sang dùng năng lượng tái tạo.",
+      "dap": [
+       "我们应该逐步向可再生能源转变。",
+       "我们应该逐步转向可再生能源。",
+       "我们要逐步向可再生能源转变。"
+      ],
+      "py": "Wǒmen yīnggāi zhúbù xiàng kě zàishēng néngyuán zhuǎnbiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 逐步向……转变.",
+      "giai": "逐步 + 向 + N + 转变."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Trình độ tiếng Trung của tôi đang từng bước nâng cao.",
+      "dap": [
+       "我的汉语水平正在逐步提高。",
+       "我的汉语水平在逐步提高。",
+       "我的中文水平正在逐步提高。"
+      ],
+      "py": "Wǒ de Hànyǔ shuǐpíng zhèngzài zhúbù tígāo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 逐步.",
+      "giai": "正在 + 逐步 + 提高."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "未来两天国内无明显冷空气活动，大部分地区天气晴和，＿＿＿。",
+      "goiY": "nhiệt độ sẽ từng bước tăng trở lại (dùng 逐步 + động từ 回升) — câu 练一练 của sách",
+      "mau": "未来两天国内无明显冷空气活动，大部分地区天气晴和，气温将逐步回升。",
+      "can": [
+       [
+        "逐步"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "随着人们生活水平的不断提高，绿色食品＿＿＿。",
+      "goiY": "từng bước đi vào các gia đình bình thường (dùng 逐步) — câu 练一练 của sách",
+      "mau": "随着人们生活水平的不断提高，绿色食品逐步走进了普通家庭。",
+      "can": [
+       [
+        "逐步"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "A：你知道吗？现在，上网校的人越来越多。　B：＿＿＿。",
+      "goiY": "Tự trả lời bằng 逐步 (câu 练一练 3 của sách)",
+      "mau": "B：是啊，网上学习又方便又便宜，网校的规模也在逐步扩大。",
+      "can": [
+       [
+        "逐步"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk5-bai-33.html"] = [
  {
   "so": "1",

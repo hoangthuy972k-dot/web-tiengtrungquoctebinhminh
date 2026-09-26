@@ -1733,6 +1733,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-31.html'
       },
       {
+        id: 'hsk5-l32',
+        number: 32,
+        title: 'Bảo vệ môi trường quanh ta',
+        titleHanzi: '身边的环保',
+        titlePinyin: 'Shēnbiān de huánbǎo',
+        topic: 'Unit 11 观察社会 · Quan sát xã hội',
+        vocabCount: 39,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-32.html'
+      },
+      {
         id: 'hsk5-l33',
         number: 33,
         title: 'Dùng tắc trị tắc — tuyệt chiêu giảm tải giao thông',

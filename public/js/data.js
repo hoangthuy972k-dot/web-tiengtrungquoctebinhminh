@@ -1719,6 +1719,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-30.html'
+      },
+      {
+        id: 'hsk5-l31',
+        number: 31,
+        title: 'Hiệu ứng “bước chân qua ngưỡng cửa”',
+        titleHanzi: '登门槛效应',
+        titlePinyin: 'Dēng Ménkǎn Xiàoyìng',
+        topic: 'Unit 11 观察社会 · Quan sát xã hội',
+        vocabCount: 29,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk5-bai-31.html'
       }
     ],
     yct: [

@@ -1551,6 +1551,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-16.html'
+      },
+      {
+        id: 'hsk5-l17',
+        number: 17,
+        title: 'Rời đi vào thời khắc tốt đẹp nhất',
+        titleHanzi: '在最美好的时刻离开',
+        titlePinyin: 'Zài zuì měihǎo de shíkè líkāi',
+        topic: 'Unit 6 修身养性 · Quy luật cao điểm – điểm cuối & nghệ thuật kết thúc',
+        vocabCount: 36,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-17.html'
       }
     ],
     yct: [

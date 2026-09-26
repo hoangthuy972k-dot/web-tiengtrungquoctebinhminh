@@ -1755,6 +1755,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-33.html'
+      },
+      {
+        id: 'hsk5-l35',
+        number: 35,
+        title: 'Thực vật cũng đổ mồ hôi',
+        titleHanzi: '植物会出汗',
+        titlePinyin: 'Zhíwù huì chū hàn',
+        topic: 'Unit 12 亲近自然 · Khoa học quanh ta: cây cối "đổ mồ hôi" và bí ẩn của lực kéo thoát hơi nước',
+        vocabCount: 35,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-35.html'
       }
     ],
     yct: [

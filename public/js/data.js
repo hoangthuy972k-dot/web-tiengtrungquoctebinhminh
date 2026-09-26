@@ -1673,6 +1673,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-26.html'
       },
       {
+        id: 'hsk5-l27',
+        number: 27,
+        title: 'Đánh cờ',
+        titleHanzi: '下棋',
+        titlePinyin: 'Xià qí',
+        topic: 'Unit 9 感受人生 · Đánh cờ & bài học được mất',
+        vocabCount: 35,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk5-bai-27.html'
+      },
+      {
         id: 'hsk5-l28',
         number: 28,
         title: 'Người tốt nghiệp được hoan nghênh nhất',

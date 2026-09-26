@@ -12113,9 +12113,14 @@
   var gmOrder = [];
 
   // Co chu theo do dai: o ngan (tu vung) chu rat to, o dai (nua cau, giai thich) vua phai
-  function gmSizeClass(text) {
-    var len = Array.from(String(text)).length;
-    return len <= 6 ? ' mg-sz-lg' : (len <= 14 ? ' mg-sz-md' : ' mg-sz-sm');
+  // Mot co chu cho CA van (ca hai cot): truoc day moi o tu co theo do dai cua
+  // no nen cau ngan chu to, cau dai chu nho, nhin lech nhau. Nay chi khi moi o
+  // deu la tu ngan (<= 4 ky tu) moi dung co cap tu, con lai tat ca co cap cau.
+  function gmSizeClass(data) {
+    var ngan = data.every(function (p) {
+      return Array.from(String(p.left)).length <= 4 && Array.from(String(p.right)).length <= 4;
+    });
+    return ngan ? ' mg-sz-tu' : '';
   }
 
   function renderGameMatch(data, fresh) {
@@ -12144,10 +12149,11 @@
 
     var leftWrap = $('#mgLeft');
     var rightWrap = $('#mgRight');
+    var coChu = gmSizeClass(data);
     data.forEach(function (pair, i) {
       var item = document.createElement('button');
       item.type = 'button';
-      item.className = 'mg-item' + gmSizeClass(pair.left);
+      item.className = 'mg-item' + coChu;
       item.textContent = pair.left;
       item.setAttribute('data-li', i);
       item.addEventListener('click', function () { gmClickLeft(parseInt(item.getAttribute('data-li'), 10)); });
@@ -12156,7 +12162,7 @@
     gmOrder.forEach(function (ri) {
       var item = document.createElement('button');
       item.type = 'button';
-      item.className = 'mg-item' + gmSizeClass(data[ri].right);
+      item.className = 'mg-item' + coChu;
       item.textContent = data[ri].right;
       item.setAttribute('data-ri', ri);
       item.addEventListener('click', function () { gmClickRight(ri, data); });

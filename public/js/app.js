@@ -768,6 +768,7 @@
     teacher: '<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
     review: '<path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/>',
     idiom: '<path d="M6 4h12v16H6zM6 4a2 2 0 0 0-2 2v1h2M18 20a2 2 0 0 0 2-2v-1h-2M9 9h6M9 13h6"/>',
+    loa: '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
     check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>'
   };
@@ -1181,7 +1182,7 @@
         (reverse
           ? '<div class="fq-q">Chữ Hán nào nghĩa là: <b>' + w.vn + '</b></div>'
           : '<div class="fq-zh hanzi">' + zh + '</div><div class="fq-py">' + (w.py || '') + '</div>' +
-            '<button type="button" class="vp-speak-btn" data-speak="' + zh + '">🔊</button>') +
+            '<button type="button" class="vp-speak-btn" data-speak="' + zh + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button>') +
       '</div><div class="vp-quiz-options">' + opts.map(function (k, i) {
         return '<button type="button" class="vp-option-btn' + (reverse ? ' hanzi' : '') + '" data-i="' + i + '">' + (reverse ? k : a[k].vn) + '</button>';
       }).join('') + '</div>' +
@@ -1282,7 +1283,7 @@
       '<p class="idiom-eyebrow"><span class="idiom-seal">每日成语</span>Mỗi ngày học 1 thành ngữ</p>' +
       idiomSceneHtml(d, false) +
       '<div class="idiom-zh-row"><span class="idiom-zh">' + idiomEsc(d.zh) + '</span>' +
-        '<button type="button" class="idiom-speak" data-idiom-speak="' + idiomEsc(d.zh) + '" aria-label="Nghe đọc ' + idiomEsc(d.zh) + '">🔊</button></div>' +
+        '<button type="button" class="idiom-speak" data-idiom-speak="' + idiomEsc(d.zh) + '" aria-label="Nghe đọc ' + idiomEsc(d.zh) + '">' + uiIcon('loa') + '</button></div>' +
       '<p class="idiom-py">' + idiomEsc(d.py) + '</p>' +
       '<p class="idiom-vn">' + idiomEsc(d.tv || d.vn) + '</p>' +
       '<button type="button" class="idiom-more" id="idiomMore">Bấm vào xem giải thích chi tiết</button>';
@@ -1309,7 +1310,7 @@
       });
     }
     var video = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(d.zh + ' 成语故事');
-    var sp = function (zh) { return '<button type="button" class="idiom-speak sm" data-idiom-speak="' + idiomEsc(zh) + '" aria-label="Nghe đọc">🔊</button>'; };
+    var sp = function (zh) { return '<button type="button" class="idiom-speak sm" data-idiom-speak="' + idiomEsc(zh) + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button>'; };
     ov.innerHTML =
       '<div class="idiom-dialog">' +
         '<button type="button" class="idiom-close" data-idiom-close aria-label="Đóng">✕</button>' +
@@ -2155,7 +2156,7 @@
     wrap.innerHTML = pgbHtml('fq', total) +
       '<div class="vp-quiz-counter">Câu ' + (st.pos + 1) + '/' + total + ' · ' + it.kind + '</div>' +
       '<div class="vp-quiz-card"><div class="vp-quiz-prompt">' + it.prompt +
-        (it.speak ? '<button type="button" class="vp-speak-btn" data-speak="' + it.speak + '">🔊</button>' : '') + '</div>' +
+        (it.speak ? '<button type="button" class="vp-speak-btn" data-speak="' + it.speak + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button>' : '') + '</div>' +
         '<div class="vp-quiz-options">' + it.opts.map(function (o, i) {
           return '<button type="button" class="vp-option-btn' + (it.zhOpts ? ' hanzi' : '') + '" data-i="' + i + '">' + o + '</button>';
         }).join('') + '</div></div>';
@@ -3482,7 +3483,7 @@
     if (!list.length) return '';
     var items = list.map(function (ex) {
       return '<li><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.15rem;">' + ex.zh + '</span>' +
-        '<button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         vpExampleDetailHtml(ex, opts) + '</li>';
     }).join('');
     return '<div class="vp-word-example vp-word-examples-all"><div class="vp-examples-label">Ví dụ:</div><ol class="vp-examples-list">' + items + '</ol></div>';
@@ -3501,7 +3502,7 @@
   }
 
   function vpH4Say(t) {
-    return '<button type="button" class="h4-spk" data-speak="' + String(t).replace(/"/g, '&quot;') + '">🔊</button>';
+    return '<button type="button" class="h4-spk" data-speak="' + String(t).replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button>';
   }
 
   function vpH4Collo(v) {
@@ -3676,13 +3677,13 @@
         : '';
       card.innerHTML =
         imgHtml +
-        '<div class="vp-word-row"><span class="vp-word-zh hanzi">' + v.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + v.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<div class="vp-word-row"><span class="vp-word-zh hanzi">' + v.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + v.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         '<div class="' + pyCls + '">' + v.py + '</div>' +
         (v.hv ? '<div class="vp-word-hv">Hán Việt: <b>' + v.hv + '</b></div>' : '') +
         '<div class="vp-word-vn">' + v.vn + '</div>' +
         (v.pos ? '<span class="vp-word-pos">' + v.pos + '</span>' : '') +
         vpWordRichHtml(v) +
-        (v.explain ? vpWordAllExamplesHtml(v, opts) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' + vpExampleDetailHtml(ex, opts) + '</div>' : '')) +
+        (v.explain ? vpWordAllExamplesHtml(v, opts) : (ex ? '<div class="vp-word-example"><div class="vp-word-row"><span class="vp-word-zh hanzi" style="font-size:1.3rem;">' + ex.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + ex.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' + vpExampleDetailHtml(ex, opts) + '</div>' : '')) +
         (hzs ? '<div class="vc-hz"><div class="vp-examples-label">🀄 Hán tự (' + v.hanzi.length + ' chữ)</div><div class="hz-panel open" id="vphzp' + vi + '">' + hzs + '</div></div>' : '') +
         (v.checkList ? v.checkList.map(function (c, ci) { return renderVpCheckHtml(c, vi + '_' + ci); }).join('') : (v.check ? renderVpCheckHtml(v.check, vi) : ''));
       grid.appendChild(card);
@@ -3848,13 +3849,13 @@
 
     var promptHtml;
     if (mode === 'zh-vn') {
-      promptHtml = '<div class="vp-quiz-prompt-zh hanzi">' + word.zh + '<button type="button" class="vp-speak-btn" data-speak="' + word.zh.replace(/"/g, '&quot;') + '">🔊</button></div><div class="vp-quiz-prompt-py">' + word.py + '</div>';
+      promptHtml = '<div class="vp-quiz-prompt-zh hanzi">' + word.zh + '<button type="button" class="vp-speak-btn" data-speak="' + word.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div><div class="vp-quiz-prompt-py">' + word.py + '</div>';
     } else if (mode === 'vn-zh') {
       promptHtml = '<div class="vp-quiz-prompt-vn">' + word.vn + '</div>';
     } else if (mode === 'py-zh') {
       promptHtml = '<div class="vp-quiz-prompt-vn">' + word.py + '</div>';
     } else {
-      promptHtml = '<button type="button" class="vp-quiz-play-btn" data-speak="' + word.zh.replace(/"/g, '&quot;') + '">🔊 Nghe</button>';
+      promptHtml = '<button type="button" class="vp-quiz-play-btn" data-speak="' + word.zh.replace(/"/g, '&quot;') + '">' + uiIcon('loa') + 'Nghe</button>';
     }
 
     // Dap an la chu Han thi danh dau "hanzi" de CSS phong to va dung font serif —
@@ -4028,7 +4029,7 @@
 
   function rvWordPromptHtml(zh, py) {
     return '<div class="vp-quiz-prompt"><div class="vp-quiz-prompt-zh hanzi">' + zh +
-      '<button type="button" class="vp-speak-btn" data-speak="' + zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+      '<button type="button" class="vp-speak-btn" data-speak="' + zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
       (py ? '<div class="vp-quiz-prompt-py">' + py + '</div>' : '') + '</div>';
   }
 
@@ -4043,7 +4044,7 @@
     wrap.innerHTML = '<div class="vp-list-grid">' + rvVocab.map(function (w) {
       return '<div class="vp-word-card"><div class="vp-word-row">' +
         '<span class="vp-word-zh hanzi">' + w.zh + '</span>' +
-        '<button type="button" class="vp-speak-btn" data-speak="' + w.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<button type="button" class="vp-speak-btn" data-speak="' + w.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         '<div class="vp-quiz-prompt-py" style="margin-top:4px;">' + w.py + '</div>' +
         '<div style="margin-top:4px;">' + w.vn + '</div>' +
         '<span class="rv-word-badge">Bài ' + w.__lessonNumber + '</span>' +
@@ -4303,7 +4304,7 @@
       '<div class="fc-card-wrap"><div class="fc-card" id="fcCard">' +
         '<div class="fc-face fc-front">' +
           '<span class="fc-zh hanzi">' + word.zh + '</span>' +
-          '<button type="button" class="vp-speak-btn" id="fcSpeakBtn">🔊</button>' +
+          '<button type="button" class="vp-speak-btn" id="fcSpeakBtn" aria-label="Nghe đọc">' + uiIcon('loa') + '</button>' +
           '<span class="fc-hint">❓ Chạm để lật thẻ</span>' +
         '</div>' +
         '<div class="fc-face fc-back">' +
@@ -10154,7 +10155,7 @@
     wrap.innerHTML = grPoints.map(function (p, i) {
       var examplesHtml = p.rows.map(function (row) {
         return '<div class="gr-example-item"><div class="gr-example-zh hanzi">' + row.zh +
-          ' <button type="button" class="vp-speak-btn" data-speak="' + row.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          ' <button type="button" class="vp-speak-btn" data-speak="' + row.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
           '<div class="gr-example-py">' + row.py + '</div>' +
           '<div class="gr-example-vn">' + row.vn + '</div></div>';
       }).join('');
@@ -10805,9 +10806,9 @@
     if (!isMine) {
       html += '<div class="rp-line' + ((cur.sp || 0) % 2 ? ' is-b' : '') + ' is-now">' +
         '<span class="rp-av dp-sp' + (cur.sp || 0) + '">' + letter(cur.sp || 0) + '</span>' +
-        '<div class="rp-bub"><div class="rp-speaking">🔊 Vai ' + letter(cur.sp || 0) + ' đang nói…</div>' +
+        '<div class="rp-bub"><div class="rp-speaking">' + uiIcon('loa') + 'Vai ' + letter(cur.sp || 0) + ' đang nói…</div>' +
         '<div class="hanzi rp-zh">' + cur.zh + '</div><div class="rp-py">' + cur.py + '</div><div class="rp-vn">' + cur.vn + '</div></div></div>' +
-        '<div class="rp-actions"><button type="button" class="rp-btn" id="rpReplay">🔊 Nghe lại</button>' +
+        '<div class="rp-actions"><button type="button" class="rp-btn" id="rpReplay">' + uiIcon('loa') + 'Nghe lại</button>' +
         '<button type="button" class="rp-btn is-main" id="rpNext">Tiếp →</button></div>';
     } else {
       var res = st.heard;
@@ -10838,7 +10839,7 @@
         '<div class="rp-status" id="rpStatus"></div>' +
         '<div class="rp-actions">' +
           (SR ? '<button type="button" class="rp-btn is-mic" id="rpMic">🎙️ ' + (res ? 'Nói lại' : 'Bấm để nói') + '</button>' : '') +
-          '<button type="button" class="rp-btn" id="rpModel">🔊 Nghe mẫu</button>' +
+          '<button type="button" class="rp-btn" id="rpModel">' + uiIcon('loa') + 'Nghe mẫu</button>' +
           (res || !SR ? '<button type="button" class="rp-btn is-main" id="rpNext">' + (SR ? 'Tiếp →' : 'Mình đã nói xong →') + '</button>'
                       : '<button type="button" class="rp-btn is-ghost" id="rpSkip">Bỏ qua</button>') +
         '</div>' +
@@ -11350,7 +11351,7 @@
       '<div class="vp-quiz-progress">' + segs + '</div>' +
       '<div class="vp-quiz-counter">Câu ' + (lpQuiz.pos + 1) + '/' + total + '</div>' +
       '<div class="vp-quiz-card">' +
-        '<div class="vp-quiz-prompt"><button type="button" class="vp-quiz-play-btn" id="lpPlayBtn">🔊 Nghe</button></div>' +
+        '<div class="vp-quiz-prompt"><button type="button" class="vp-quiz-play-btn" id="lpPlayBtn">' + uiIcon('loa') + 'Nghe</button></div>' +
         '<div class="vp-quiz-options">' + optionsHtml + '</div>' +
       '</div>';
 
@@ -11389,7 +11390,7 @@
         return '<div class="lp-question"><div class="lp-question-text">' + (qi + 1) + '. ' + q.q + '</div><div class="lp-question-opts">' + optsHtml + '</div></div>';
       }).join('');
       return '<div class="lp-passage">' +
-        '<button type="button" class="vp-quiz-play-btn" data-audio="' + group.audio.replace(/"/g, '&quot;') + '">🔊 Nghe đoạn ' + (gi + 1) + '</button>' +
+        '<button type="button" class="vp-quiz-play-btn" data-audio="' + group.audio.replace(/"/g, '&quot;') + '">' + uiIcon('loa') + 'Nghe đoạn ' + (gi + 1) + '</button>' +
         questionsHtml +
         '</div>';
     }).join('');
@@ -11624,7 +11625,7 @@
         '<span class="spai-sit">' + spEsc(task.situation || '') + '</span></div>' +
       '<div class="spai-q">' +
         '<div class="spai-q-zh hanzi">' + spEsc(task.q_zh) +
-          ' <button type="button" class="vp-speak-btn" data-speak="' + spEsc(task.q_zh) + '">🔊</button></div>' +
+          ' <button type="button" class="vp-speak-btn" data-speak="' + spEsc(task.q_zh) + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         '<div class="spai-q-py">' + spEsc(task.q_py || '') + '</div>' +
         '<div class="spai-q-vn">' + spEsc(task.q_vn || '') + '</div>' +
       '</div>' +
@@ -11639,7 +11640,7 @@
       '<div class="spai-result" id="spAiResult' + i + '"></div>' +
       '<div class="spai-sample" id="spAiSample' + i + '" hidden>' +
         '<div class="spai-sample-zh hanzi">' + spEsc(task.sample) +
-          ' <button type="button" class="vp-speak-btn" data-speak="' + spEsc(task.sample) + '">🔊</button></div>' +
+          ' <button type="button" class="vp-speak-btn" data-speak="' + spEsc(task.sample) + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         '<div class="spai-sample-py">' + spEsc(task.sample_py || '') + '</div>' +
         '<div class="spai-sample-vn">' + spEsc(task.sample_vn || '') + '</div>' +
         (task.tip ? '<div class="spai-tip">💡 ' + spEsc(task.tip) + '</div>' : '') +
@@ -11985,14 +11986,14 @@
     wrap.innerHTML = questions.map(function (q, i) {
       return '<div class="sp-card">' +
         '<div class="sp-question">' +
-          '<button type="button" class="vp-quiz-play-btn" data-speak="' + q.q_zh.replace(/"/g, '&quot;') + '">🔊 Nghe câu hỏi</button>' +
+          '<button type="button" class="vp-quiz-play-btn" data-speak="' + q.q_zh.replace(/"/g, '&quot;') + '">' + uiIcon('loa') + 'Nghe câu hỏi</button>' +
           '<div class="sp-q-zh hanzi">' + q.q_zh + '</div>' +
           '<div class="sp-q-vn">' + q.q_vn + '</div>' +
         '</div>' +
         (q.hint ? '<div class="sp-hint">' + q.hint + '</div>' : '') +
         '<button type="button" class="sp-toggle-btn" data-target="spSample' + i + '">Xem câu trả lời gợi ý ▾</button>' +
         '<div class="sp-sample" id="spSample' + i + '" hidden>' +
-          '<div class="sp-sample-zh hanzi">' + q.sample + ' <button type="button" class="vp-speak-btn" data-speak="' + q.sample.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          '<div class="sp-sample-zh hanzi">' + q.sample + ' <button type="button" class="vp-speak-btn" data-speak="' + q.sample.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
           '<div class="sp-sample-vn">' + q.sample_vn + '</div>' +
         '</div>' +
         (q.note ? '<div class="sp-note">💡 ' + q.note + '</div>' : '') +
@@ -12008,7 +12009,7 @@
   function renderSpeakTier1(wrap, t1) {
     var models = (t1.models || []).map(function (m) {
       return '<div class="sp-model-card">' +
-        '<div class="sp-model-zh hanzi">' + m.zh + ' <button type="button" class="vp-speak-btn" data-speak="' + m.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+        '<div class="sp-model-zh hanzi">' + m.zh + ' <button type="button" class="vp-speak-btn" data-speak="' + m.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         '<div class="sp-model-py">' + m.py + '</div>' +
         '<div class="sp-model-vn">' + m.vn + '</div>' +
       '</div>';
@@ -12022,7 +12023,7 @@
       var frame = (dr.frame || '').replace(/＿＿/g, '<b>＿＿</b>');
       var optsHtml = (dr.options || []).map(function (o) { return '<span class="sp-drill-opt">' + o + '</span>'; }).join('');
       var samplesHtml = (dr.samples || []).map(function (s) {
-        return '<div class="sp-drill-sample">✓ ' + s + ' <button type="button" class="vp-speak-btn" data-speak="' + s.replace(/"/g, '&quot;') + '">🔊</button></div>';
+        return '<div class="sp-drill-sample">✓ ' + s + ' <button type="button" class="vp-speak-btn" data-speak="' + s.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>';
       }).join('');
       return '<div class="sp-drill-card">' +
         '<div class="sp-drill-frame hanzi">' + frame + '</div>' +
@@ -12046,7 +12047,7 @@
         '<div class="sp-hint-row">' + chips + '</div>' +
         '<button type="button" class="sp-toggle-btn" data-target="spSample' + i + '">Xem đoạn nói mẫu ▾</button>' +
         '<div class="sp-sample" id="spSample' + i + '" hidden>' +
-          '<div class="sp-sample-zh hanzi">' + t.sample + ' <button type="button" class="vp-speak-btn" data-speak="' + t.sample.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          '<div class="sp-sample-zh hanzi">' + t.sample + ' <button type="button" class="vp-speak-btn" data-speak="' + t.sample.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
           '<div class="sp-sample-vn">' + t.sample_vn + '</div>' +
         '</div>' +
         (t.note ? '<div class="sp-note">💡 ' + t.note + '</div>' : '') +
@@ -12492,7 +12493,7 @@
       pgbHtml('gmSort', data.length) +
       data.map(function (s, i) {
       return '<div class="sp-card sg-card" id="sgCard' + i + '">' +
-        '<button type="button" class="vp-quiz-play-btn" data-speak="' + (s.audio || s.ans).replace(/"/g, '&quot;') + '">🔊 Nghe câu cần sắp xếp</button>' +
+        '<button type="button" class="vp-quiz-play-btn" data-speak="' + (s.audio || s.ans).replace(/"/g, '&quot;') + '">' + uiIcon('loa') + 'Nghe câu cần sắp xếp</button>' +
         '<div class="sg-bank" id="sgBank' + i + '"></div>' +
         '<div class="sg-answer" id="sgAnswer' + i + '"></div>' +
         '<div class="sg-fb" id="sgFb' + i + '"></div>' +
@@ -12758,7 +12759,7 @@
 
     var promptHtml = tpDirection === 'vi2zh'
       ? '<div class="tp-prompt-vi">“' + item.vi + '”</div>'
-      : '<div class="tp-prompt-zh"><span class="hanzi">' + item.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + item.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+      : '<div class="tp-prompt-zh"><span class="hanzi">' + item.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + item.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         '<div class="tp-prompt-py">' + item.py + '</div>';
 
     wrap.innerHTML =
@@ -12795,7 +12796,7 @@
       answerEl.hidden = false;
       if (tpDirection === 'vi2zh') {
         answerEl.innerHTML =
-          '<div class="tp-answer-zh hanzi">' + item.zh + ' <button type="button" class="vp-speak-btn" data-speak="' + item.zh.replace(/"/g, '&quot;') + '">🔊</button></div>' +
+          '<div class="tp-answer-zh hanzi">' + item.zh + ' <button type="button" class="vp-speak-btn" data-speak="' + item.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
           '<div class="tp-answer-py">' + item.py + '</div>';
         vpSpeak(item.zh);
       } else {
@@ -14044,7 +14045,7 @@
         return '<div><b>' + (l.sp === 0 ? 'A' : 'B') + ':</b> <span class="hanzi">' + qrEsc(l.zh) + '</span></div>';
       }).join('') + '</div><p class="qr-question hanzi">' + qrEsc(q.question) + '</p>';
     }
-    if (q.speak) body += '<button type="button" class="qr-listen" id="qrListen">🔊 Nghe lại</button>';
+    if (q.speak) body += '<button type="button" class="qr-listen" id="qrListen">' + uiIcon('loa') + 'Nghe lại</button>';
 
     if (q.type === 'mc') {
       body += '<div class="qr-opts' + (q.optZh ? ' is-zh' : '') + '">' + q.opts.map(function (o, oi) {

@@ -636,6 +636,8 @@
 .gd-ex-py{color:var(--xt-a8691a, #a8691a);font-size:0.88rem;margin-top:2px;}
 .gd-ex-vn{color:var(--xt-5f5952, #5f5952);font-size:0.9rem;margin-top:2px;}
 .gd-say{border:none;background:none;cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:8px;vertical-align:middle;}
+.gd-say{display:inline-flex;align-items:center;color:var(--xt-c8372d, #c8372d);}
+.gd-say svg{width:18px;height:18px;}
 .gd-say:hover{background:var(--xb-fdefec, #fdefec);}
 .gd-reveal{margin-top:16px;min-height:44px;padding:10px 20px;border:none;border-radius:999px;background:#c8372d;color:#fff;font:inherit;font-weight:600;font-size:0.95rem;cursor:pointer;box-shadow:0 4px 12px rgba(200,55,45,0.2);}
 .gd-reveal:hover{background:#a82d24;}

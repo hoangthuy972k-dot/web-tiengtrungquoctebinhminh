@@ -8794,6 +8794,20 @@ body.pinyin-hidden .py-inline {
   .app-topbar:has(#sfxToggle:not([hidden])) .app-topbar-logo { display: none; }
 }
 
+/* Nut loa: icon net manh thay emoji 🔊 */
+.vp-speak-btn { width: 36px; height: 36px; }
+.npt-loa { display: inline-grid; place-items: center; padding: 0; color: var(--fg-red-600); }
+.vp-speak-btn .ui-ico, .idiom-speak .ui-ico, .npt-loa .ui-ico { width: 18px; height: 18px; }
+.idiom-speak.sm .ui-ico { width: 16px; height: 16px; }
+.h4-spk { display: inline-flex; align-items: center; vertical-align: middle; padding: 4px; color: var(--fg-red-600); opacity: 0.8; }
+.h4-spk .ui-ico { width: 16px; height: 16px; }
+.vp-quiz-play-btn .ui-ico, .qr-listen .ui-ico { width: 20px; height: 20px; }
+.rp-btn, .qr-listen { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.qr-listen { margin-left: auto; margin-right: auto; display: flex; }
+.rp-btn .ui-ico { width: 18px; height: 18px; }
+.rp-speaking { display: flex; align-items: center; gap: 6px; }
+.rp-speaking .ui-ico { width: 15px; height: 15px; }
+
 /* === CHE DO TOI: luat rieng tung thanh phan (sinh tu scratchpad/toi/rieng.css) === */
 @media (prefers-color-scheme: dark) {
   html.ho-tro-toi:not([data-theme="light"]) .scene-layer { filter: brightness(0.42) saturate(0.7) contrast(1.05); }

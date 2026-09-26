@@ -280,7 +280,7 @@
         (p.viDu && p.viDu.length ? '<section class="npt-khoi"><h3 class="npt-h">Ví dụ</h3><ol class="npt-vidu">' +
           p.viDu.map(function (v) {
             return '<li><div class="npt-vd-zh hanzi">' + esc(v.zh) +
-              (opts.speak ? ' <button type="button" class="npt-loa" data-npt-noi="' + esc(v.zh) + '" aria-label="Nghe câu này">🔊</button>' : '') +
+              (opts.speak ? ' <button type="button" class="npt-loa" data-npt-noi="' + esc(v.zh) + '" aria-label="Nghe câu này"><svg class="ui-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></button>' : '') +
               '</div>' + (v.py ? '<div class="npt-vd-py">' + esc(v.py) + '</div>' : '') +
               (v.vn ? '<div class="npt-vd-vn">' + esc(v.vn) + '</div>' : '') + '</li>';
           }).join('') + '</ol></section>' : '') +

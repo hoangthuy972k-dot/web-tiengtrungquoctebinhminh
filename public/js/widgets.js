@@ -1142,7 +1142,7 @@
     var exHtml = shown.map(function (r) {
       return '<div class="gd-ex">' +
         '<div class="gd-ex-zh">' + highlight(r.zh, toks) +
-        ' <button type="button" class="gd-say" data-say="' + esc(r.zh) + '" aria-label="Nghe câu này">🔊</button></div>' +
+        ' <button type="button" class="gd-say" data-say="' + esc(r.zh) + '" aria-label="Nghe câu này"><svg class="ui-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg></button></div>' +
         (r.py ? '<div class="gd-ex-py">' + esc(r.py) + '</div>' : '') +
         (r.vn ? '<div class="gd-ex-vn">' + esc(r.vn) + '</div>' : '') +
       '</div>';

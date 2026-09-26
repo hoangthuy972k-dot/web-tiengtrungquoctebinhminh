@@ -148,7 +148,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai vậy?'},
       {zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'},
@@ -158,7 +158,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
       {frame:'＿＿是谁？',frame_py:'___ shì shéi?',vn:'＿＿ là ai vậy?',options:['他','她'],samples:['他是谁？','她是谁？']},
     ],

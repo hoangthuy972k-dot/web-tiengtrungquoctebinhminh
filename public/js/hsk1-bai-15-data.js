@@ -845,7 +845,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'你和李小姐是什么时候认识的？',py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',vn:'Cô và cô Lý quen nhau khi nào vậy?'},
       {zh:'我们是2011年9月认识的。',py:'Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.',vn:'Chúng tôi quen nhau vào tháng 9 năm 2011.'},
@@ -855,7 +855,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'我们是坐＿＿来的。',frame_py:'Wǒmen shì zuò ___ lái de.',vn:'Chúng tôi đi ＿＿ đến.',options:['出租车','飞机'],samples:['我们是坐出租车来的。','我们是坐飞机来的。']},
       {frame:'我们是在＿＿认识的。',frame_py:'Wǒmen shì zài ___ rènshi de.',vn:'Chúng tôi quen nhau ở ＿＿.',options:['学校','公司'],samples:['我们是在学校认识的。','我们是在公司认识的。']},

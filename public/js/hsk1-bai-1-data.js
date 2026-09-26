@@ -515,7 +515,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý biến điệu thanh 3 khi "你" và "好" đứng liền nhau (đọc gần giống "ní hǎo").',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý biến điệu thanh 3 khi "你" và "好" đứng liền nhau (đọc gần giống "ní hǎo").',
     models:[
       {zh:'你好！',py:'Nǐ hǎo!',vn:'Chào bạn!'},
       {zh:'您好！',py:'Nín hǎo!',vn:'Chào ngài!'},
@@ -525,7 +525,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu chào phù hợp với từng đối tượng. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để tạo câu chào phù hợp với từng đối tượng. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'＿＿好！',frame_py:'___ hǎo!',vn:'Chào ＿＿! (thay đổi theo đối tượng giao tiếp)',options:['你','您','你们'],samples:['你好！ (chào 1 người, ngang hàng)','您好！ (chào 1 người, kính trọng)','你们好！ (chào từ 2 người trở lên)']},
     ],

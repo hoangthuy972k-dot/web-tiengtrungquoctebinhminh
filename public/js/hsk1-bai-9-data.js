@@ -1215,7 +1215,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'小猫在哪儿？',py:'Xiǎo māo zài nǎr?',vn:'Con mèo đâu rồi?'},
       {zh:'小猫在那儿。',py:'Xiǎo māo zài nàr.',vn:'Nó ở đó kìa.'},
@@ -1225,7 +1225,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'我在＿＿工作。',frame_py:'Wǒ zài ___ gōngzuò.',vn:'Tôi làm việc ở ＿＿.',options:['学校','医院'],samples:['我在学校工作。','我在医院工作。']},
       {frame:'小狗在椅子＿＿。',frame_py:'Xiǎo gǒu zài yǐzi ___.',vn:'Con chó ở ＿＿ ghế dựa.',options:['下面','上面'],samples:['小狗在椅子下面。','小狗在椅子上面。']},

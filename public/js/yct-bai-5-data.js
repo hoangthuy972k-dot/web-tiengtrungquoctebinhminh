@@ -127,7 +127,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'你几岁？',py:'Nǐ jǐ suì?',vn:'Bạn mấy tuổi?'},
       {zh:'我六岁。',py:'Wǒ liù suì.',vn:'Mình sáu tuổi.'},
@@ -137,7 +137,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
       {frame:'我＿＿岁。',frame_py:'Wǒ ___ suì.',vn:'Mình ＿＿ tuổi.',options:['六','七','八'],samples:['我六岁。','我七岁。','我八岁。']},
     ],

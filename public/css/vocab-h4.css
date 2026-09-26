@@ -11,8 +11,8 @@
 .h4-list{
   --ink:#1f1a17;--mid:#5f5952;--soft:#7d776e;--border:#e6e2da;
   --bg:#fafaf7;--sky:#c8372d;--sky-l:#fdefec;--sky-d:#a82d24;
-  --warm:#d9580c;--green:#1f8a4c;--green-l:#e9f6ee;
-  --gold:#b7791f;--teal:#0d8a80;--py:#a8691a;
+  --warm:#c2410c;--green:#1f8a4c;--green-l:#e9f6ee;
+  --gold:#b7791f;--teal:#0b7a71;--py:#a8691a;
   --font-hanzi-display:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
 }
 .h4-list{display:flex;flex-direction:column;gap:10px;}

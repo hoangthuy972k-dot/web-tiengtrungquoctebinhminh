@@ -2681,7 +2681,7 @@ var mcData = [
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn 🔊 nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
   questions: [
     {q_zh: '有人问你："现在几点？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Bây giờ mấy giờ rồi?" Bạn trả lời thế nào?',
      hint: '现在……点。', sample: '现在早上八点四十。', sample_vn: 'Bây giờ là 8 giờ 40 sáng.',

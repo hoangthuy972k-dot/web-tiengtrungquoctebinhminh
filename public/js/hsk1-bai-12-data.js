@@ -1164,7 +1164,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'今天天气怎么样？',py:'Jīntiān tiānqì zěnmeyàng?',vn:'Hôm nay thời tiết thế nào?'},
       {zh:'明天天气很好，不冷不热。',py:'Míngtiān tiānqì hěn hǎo, bù lěng bú rè.',vn:'Ngày mai thời tiết rất đẹp, không lạnh cũng không nóng.'},
@@ -1174,7 +1174,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'今天天气很＿＿。',frame_py:'Jīntiān tiānqì hěn ___.',vn:'Hôm nay thời tiết rất ＿＿.',options:['冷','热','好'],samples:['今天天气很冷。','今天天气很热。','今天天气很好。']},
       {frame:'你多吃些＿＿。',frame_py:'Nǐ duō chī xiē ___.',vn:'Bạn hãy ăn thêm một ít ＿＿.',options:['水果','米饭'],samples:['你多吃些水果。','你多吃些米饭。']},

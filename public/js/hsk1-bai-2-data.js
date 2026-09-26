@@ -384,7 +384,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý biến điệu: "不谢" đọc là "bú xiè" (不 đổi sang thanh 2 vì 谢 mang thanh 4).',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý biến điệu: "不谢" đọc là "bú xiè" (不 đổi sang thanh 2 vì 谢 mang thanh 4).',
     models:[
       {zh:'谢谢！',py:'Xièxie!',vn:'Cảm ơn!'},
       {zh:'不谢！',py:'Bú xiè!',vn:'Không cần cảm ơn đâu!'},
@@ -394,7 +394,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung hội thoại cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để thấy rõ sự khác biệt về mức độ thân mật khi đáp lời cảm ơn. Nhấn 🔊 để nghe rồi nói to.',
+    intro:'Dùng khung hội thoại cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để thấy rõ sự khác biệt về mức độ thân mật khi đáp lời cảm ơn. Nhấn nút loa để nghe rồi nói to.',
     drills:[
       {frame:'A: 谢谢你！ B: ＿＿！',frame_py:'A: Xièxie nǐ! B: ___!',vn:'A: Cảm ơn bạn! B: ＿＿! (chọn cách đáp phù hợp với mối quan hệ)',options:['不谢','不客气'],samples:['不谢！ (đáp thân mật — dùng giữa bạn bè, người thân)','不客气！ (đáp lịch sự — dùng với người lạ, khách hàng, cấp trên)']},
     ],

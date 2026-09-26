@@ -2379,7 +2379,7 @@ var mcData = [
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn 🔊 nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
   questions: [
     {q_zh: '售货员问："您想买什么？" 你怎么回答？', q_vn: 'Nhân viên bán hàng hỏi: "Chị muốn mua gì?" Bạn trả lời thế nào?',
      hint: '我想买……', sample: '我想买两斤苹果。', sample_vn: 'Tôi muốn mua hai cân táo.',

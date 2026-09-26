@@ -1,0 +1,303 @@
+/* Che do toi cho trang bai hoc day du — SINH TU DONG (scratchpad/toi/sinh-toi-bai.js), dung sua tay.
+   Khong co file nay trang bai hoc van nguyen nen sang: moi mau trong lesson-template.css,
+   hsk5.css, vocab-h4.css, widgets.css deu co gia tri du phong la mau cu. */
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) {
+    --ink: #ece6dc;
+    --ink2: #ddd6cc;
+    --mid: #b3aaa0;
+    --soft: #a89f95;
+    --py: #e2b563;
+    --border: #3d3631;
+    --line: #3d3631;
+    --bg: #1c1917;
+    --card: #292522;
+    --paper: #292522;
+    --sky: #f0786b;
+    --sky-d: #f0786b;
+    --sky-l: #3a2320;
+    --snow: #352a18;
+    --warm: #f5a15f;
+    --warm-l: #3a2817;
+    --green: #6fcf97;
+    --green-l: #1c3324;
+    --red: #f0786b;
+    --red-l: #3a2320;
+    --gold: #e2b563;
+    --gold-d: #e2b563;
+    --gold-l: #352a18;
+    --teal: #5cc8bd;
+    --teal-l: #163331;
+    --purple: #c4a3ff;
+    --purple-l: #2c2140;
+    --gold-50: #352a18;
+    --green-50: #1c3324;
+    --nen-gold: #b7791f;
+    --nen-green: #1a7d44;
+    --nen-ink: #4d4540;
+    --nen-red: #c62828;
+    --nen-sky: #c8372d;
+    --nen-sky-d: #a82d24;
+    --nen-teal: #0d8a80;
+    --nen-warm: #d9580c;
+    --xt-15803d: #73de9b;
+    --xt-16a34a: #73de9a;
+    --xt-17693a: #73dea0;
+    --xt-1d4ed8: #839ce2;
+    --xt-1f1a17: #ece6dc;
+    --xt-1f6f8b: #73c2de;
+    --xt-1f8a4c: #73dea0;
+    --xt-2b2b2b: #ece6dc;
+    --xt-2e8b57: #7dd4a3;
+    --xt-38332e: #ece6dc;
+    --xt-5a4bb5: #9f96d4;
+    --xt-5b5249: #b2a89f;
+    --xt-5f5952: #afa9a2;
+    --xt-7a4f12: #deb273;
+    --xt-8a1c14: #e0827b;
+    --xt-8a5a00: #deb973;
+    --xt-8a5a0f: #deb473;
+    --xt-8a5a12: #deb373;
+    --xt-8d8279: #afa8a1;
+    --xt-a82d24: #e0827b;
+    --xt-a8691a: #deae73;
+    --xt-a86a12: #deb273;
+    --xt-b45309: #dea173;
+    --xt-b7791f: #deb273;
+    --xt-be185d: #e17fa8;
+    --xt-c0392b: #e0847b;
+    --xt-c62828: #e28383;
+    --xt-c8372d: #e0817b;
+    --xt-d9971f: #d9971f;
+    --xt-f2bf6b: #f2bf6b;
+    --xt-fde2b8: #fde2b8;
+    --xt-ffd98a: #ffd98a;
+    --xb-bbf7d0: #233e2c;
+    --xb-dbeafe: #1d2734;
+    --xb-dcfce7: #1e3425;
+    --xb-e6f7ea: #1d3322;
+    --xb-e7d5cf: #382b27;
+    --xb-e8f6ee: #1e3126;
+    --xb-e9e6f7: #211d33;
+    --xb-e9f6ee: #1e3025;
+    --xb-ede9fe: #1f1b30;
+    --xb-eef8f6: #1d2f2b;
+    --xb-f0fdf4: #1a2f21;
+    --xb-f1e3d3: #392e20;
+    --xb-f1efe9: #2d2b23;
+    --xb-f4f2fb: #1f1a2f;
+    --xb-f5f3ee: #2c2921;
+    --xb-f6efe6: #32291e;
+    --xb-f6f1fb: #251b2f;
+    --xb-faf6f1: #2f261b;
+    --xb-faf7f2: #2e271c;
+    --xb-faf8f5: #2b251e;
+    --xb-fbe3c1: #3b3122;
+    --xb-fbe4e0: #33201d;
+    --xb-fce7f3: #311c28;
+    --xb-fde68a: #494229;
+    --xb-fdeaea: #301b1b;
+    --xb-fdecea: #301e1b;
+    --xb-fdefec: #301f1b;
+    --xb-fdf0d9: #342c1e;
+    --xb-fdf3f1: #2e1e1a;
+    --xb-fdf5e6: #312a1c;
+    --xb-fdf6e6: #312b1c;
+    --xb-fdf7ff: #28192c;
+    --xb-fdf8ee: #2f281b;
+    --xb-fdfaf6: #2d251a;
+    --xb-fdfaff: #24192c;
+    --xb-fdfbff: #22192b;
+    --xb-fef9c3: #3a3821;
+    --xb-fff1d2: #362f1f;
+    --xb-fff6e5: #312a1c;
+    --xb-fff7ed: #2f261b;
+    --xb-fff8ea: #30291b;
+    --xb-fff9ec: #2f291b;
+    --xb-fffaf0: #2e271a;
+    --xb-fffaf9: #2c1c19;
+    --xb-fffdf5: #2d2919;
+    --xb-fffdf7: #2c2819;
+    --xv-5eead4: #4a8279;
+    --xv-86efac: #437555;
+    --xv-b8e0c8: #426651;
+    --xv-bbbbbb: #5c5c5c;
+    --xv-bfe3cd: #40644e;
+    --xv-c4b5fd: #423964;
+    --xv-e3b768: #816d4a;
+    --xv-e4dcf0: #453958;
+    --xv-e6e0d8: #554d43;
+    --xv-e6e2da: #534e43;
+    --xv-eee8de: #554c3c;
+    --xv-f0b8b0: #69413c;
+    --xv-f1d9a8: #6b5c3d;
+    --xv-f2bf6b: #7c6847;
+    --xv-f2c4bd: #653f39;
+    --xv-fdba74: #765d43;
+    --xv-fde68a: #706640;
+    --xv-fed7aa: #67523a;
+    --rgbn-255-255-255: 41, 37, 34;
+    --color-white: #292522;
+    color-scheme: dark;
+  }
+  html.ho-tro-toi:not([data-theme="light"]) img:not([src$=".svg"]) { filter: brightness(0.92); }
+  html.ho-tro-toi:not([data-theme="light"]) .h4-list { --ink: #ece6dc; --mid: #b3aaa0; --soft: #a89f95; --border: #3d3631; --bg: #221e1b; --sky-l: #3a2320; --sky-d: #f0786b; --green: #6fcf97; --green-l: #1c3324; --gold: #e2b563; --py: #e2b563; }
+  html.ho-tro-toi:not([data-theme="light"]) .hw-root { --hw-red-soft: #3a2320; --hw-ink: #ece6dc; --hw-mid: #b3aaa0; --hw-soft: #978d84; --hw-line: #3d3631; --hw-bg: #292522; --hw-bg-soft: #221e1b; --hw-green: #6fcf97; --hw-shadow: 0 18px 48px rgba(0, 0, 0, 0.55); }
+  html.ho-tro-toi:not([data-theme="light"]) .hw-gy-chip.is-on { color: #f0786b; }
+  html.ho-tro-toi:not([data-theme="light"]) .hw-gy-muc-tl { background: #1c3324; }
+  html.ho-tro-toi:not([data-theme="light"]) .hw-gy-kq.is-ok,
+  html.ho-tro-toi:not([data-theme="light"]) .hw-gy-tt.is-rep { color: #6fcf97; }
+  html.ho-tro-toi:not([data-theme="light"]) .hw-gy-tt.is-read { color: #e2b563; }
+  html.ho-tro-toi:not([data-theme="light"]) .gd-key { color: #ffc2b8; }
+  html.ho-tro-toi:not([data-theme="light"]) .h4-peek { color: #5cc8bd; }
+  html.ho-tro-toi:not([data-theme="light"]) body { background: #1c1917; }
+}
+html.ho-tro-toi[data-theme="dark"] {
+  --ink: #ece6dc;
+  --ink2: #ddd6cc;
+  --mid: #b3aaa0;
+  --soft: #a89f95;
+  --py: #e2b563;
+  --border: #3d3631;
+  --line: #3d3631;
+  --bg: #1c1917;
+  --card: #292522;
+  --paper: #292522;
+  --sky: #f0786b;
+  --sky-d: #f0786b;
+  --sky-l: #3a2320;
+  --snow: #352a18;
+  --warm: #f5a15f;
+  --warm-l: #3a2817;
+  --green: #6fcf97;
+  --green-l: #1c3324;
+  --red: #f0786b;
+  --red-l: #3a2320;
+  --gold: #e2b563;
+  --gold-d: #e2b563;
+  --gold-l: #352a18;
+  --teal: #5cc8bd;
+  --teal-l: #163331;
+  --purple: #c4a3ff;
+  --purple-l: #2c2140;
+  --gold-50: #352a18;
+  --green-50: #1c3324;
+  --nen-gold: #b7791f;
+  --nen-green: #1a7d44;
+  --nen-ink: #4d4540;
+  --nen-red: #c62828;
+  --nen-sky: #c8372d;
+  --nen-sky-d: #a82d24;
+  --nen-teal: #0d8a80;
+  --nen-warm: #d9580c;
+  --xt-15803d: #73de9b;
+  --xt-16a34a: #73de9a;
+  --xt-17693a: #73dea0;
+  --xt-1d4ed8: #839ce2;
+  --xt-1f1a17: #ece6dc;
+  --xt-1f6f8b: #73c2de;
+  --xt-1f8a4c: #73dea0;
+  --xt-2b2b2b: #ece6dc;
+  --xt-2e8b57: #7dd4a3;
+  --xt-38332e: #ece6dc;
+  --xt-5a4bb5: #9f96d4;
+  --xt-5b5249: #b2a89f;
+  --xt-5f5952: #afa9a2;
+  --xt-7a4f12: #deb273;
+  --xt-8a1c14: #e0827b;
+  --xt-8a5a00: #deb973;
+  --xt-8a5a0f: #deb473;
+  --xt-8a5a12: #deb373;
+  --xt-8d8279: #afa8a1;
+  --xt-a82d24: #e0827b;
+  --xt-a8691a: #deae73;
+  --xt-a86a12: #deb273;
+  --xt-b45309: #dea173;
+  --xt-b7791f: #deb273;
+  --xt-be185d: #e17fa8;
+  --xt-c0392b: #e0847b;
+  --xt-c62828: #e28383;
+  --xt-c8372d: #e0817b;
+  --xt-d9971f: #d9971f;
+  --xt-f2bf6b: #f2bf6b;
+  --xt-fde2b8: #fde2b8;
+  --xt-ffd98a: #ffd98a;
+  --xb-bbf7d0: #233e2c;
+  --xb-dbeafe: #1d2734;
+  --xb-dcfce7: #1e3425;
+  --xb-e6f7ea: #1d3322;
+  --xb-e7d5cf: #382b27;
+  --xb-e8f6ee: #1e3126;
+  --xb-e9e6f7: #211d33;
+  --xb-e9f6ee: #1e3025;
+  --xb-ede9fe: #1f1b30;
+  --xb-eef8f6: #1d2f2b;
+  --xb-f0fdf4: #1a2f21;
+  --xb-f1e3d3: #392e20;
+  --xb-f1efe9: #2d2b23;
+  --xb-f4f2fb: #1f1a2f;
+  --xb-f5f3ee: #2c2921;
+  --xb-f6efe6: #32291e;
+  --xb-f6f1fb: #251b2f;
+  --xb-faf6f1: #2f261b;
+  --xb-faf7f2: #2e271c;
+  --xb-faf8f5: #2b251e;
+  --xb-fbe3c1: #3b3122;
+  --xb-fbe4e0: #33201d;
+  --xb-fce7f3: #311c28;
+  --xb-fde68a: #494229;
+  --xb-fdeaea: #301b1b;
+  --xb-fdecea: #301e1b;
+  --xb-fdefec: #301f1b;
+  --xb-fdf0d9: #342c1e;
+  --xb-fdf3f1: #2e1e1a;
+  --xb-fdf5e6: #312a1c;
+  --xb-fdf6e6: #312b1c;
+  --xb-fdf7ff: #28192c;
+  --xb-fdf8ee: #2f281b;
+  --xb-fdfaf6: #2d251a;
+  --xb-fdfaff: #24192c;
+  --xb-fdfbff: #22192b;
+  --xb-fef9c3: #3a3821;
+  --xb-fff1d2: #362f1f;
+  --xb-fff6e5: #312a1c;
+  --xb-fff7ed: #2f261b;
+  --xb-fff8ea: #30291b;
+  --xb-fff9ec: #2f291b;
+  --xb-fffaf0: #2e271a;
+  --xb-fffaf9: #2c1c19;
+  --xb-fffdf5: #2d2919;
+  --xb-fffdf7: #2c2819;
+  --xv-5eead4: #4a8279;
+  --xv-86efac: #437555;
+  --xv-b8e0c8: #426651;
+  --xv-bbbbbb: #5c5c5c;
+  --xv-bfe3cd: #40644e;
+  --xv-c4b5fd: #423964;
+  --xv-e3b768: #816d4a;
+  --xv-e4dcf0: #453958;
+  --xv-e6e0d8: #554d43;
+  --xv-e6e2da: #534e43;
+  --xv-eee8de: #554c3c;
+  --xv-f0b8b0: #69413c;
+  --xv-f1d9a8: #6b5c3d;
+  --xv-f2bf6b: #7c6847;
+  --xv-f2c4bd: #653f39;
+  --xv-fdba74: #765d43;
+  --xv-fde68a: #706640;
+  --xv-fed7aa: #67523a;
+  --rgbn-255-255-255: 41, 37, 34;
+  --color-white: #292522;
+  color-scheme: dark;
+}
+html.ho-tro-toi[data-theme="dark"] img:not([src$=".svg"]) { filter: brightness(0.92); }
+html.ho-tro-toi[data-theme="dark"] .h4-list { --ink: #ece6dc; --mid: #b3aaa0; --soft: #a89f95; --border: #3d3631; --bg: #221e1b; --sky-l: #3a2320; --sky-d: #f0786b; --green: #6fcf97; --green-l: #1c3324; --gold: #e2b563; --py: #e2b563; }
+html.ho-tro-toi[data-theme="dark"] .hw-root { --hw-red-soft: #3a2320; --hw-ink: #ece6dc; --hw-mid: #b3aaa0; --hw-soft: #978d84; --hw-line: #3d3631; --hw-bg: #292522; --hw-bg-soft: #221e1b; --hw-green: #6fcf97; --hw-shadow: 0 18px 48px rgba(0, 0, 0, 0.55); }
+html.ho-tro-toi[data-theme="dark"] .hw-gy-chip.is-on { color: #f0786b; }
+html.ho-tro-toi[data-theme="dark"] .hw-gy-muc-tl { background: #1c3324; }
+html.ho-tro-toi[data-theme="dark"] .hw-gy-kq.is-ok,
+html.ho-tro-toi[data-theme="dark"] .hw-gy-tt.is-rep { color: #6fcf97; }
+html.ho-tro-toi[data-theme="dark"] .hw-gy-tt.is-read { color: #e2b563; }
+html.ho-tro-toi[data-theme="dark"] .gd-key { color: #ffc2b8; }
+html.ho-tro-toi[data-theme="dark"] .h4-peek { color: #5cc8bd; }
+html.ho-tro-toi[data-theme="dark"] body { background: #1c1917; }

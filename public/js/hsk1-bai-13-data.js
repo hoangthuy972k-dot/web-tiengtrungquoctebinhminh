@@ -934,7 +934,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'喂，你在做什么呢？',py:'Wèi, nǐ zài zuò shénme ne?',vn:'A lô, anh đang làm gì vậy?'},
       {zh:'我在看书呢。',py:'Wǒ zài kàn shū ne.',vn:'Tôi đang đọc sách.'},
@@ -944,7 +944,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'我在＿＿呢。',frame_py:'Wǒ zài ___ ne.',vn:'Tôi đang ＿＿.',options:['看书','睡觉','看电视'],samples:['我在看书呢。','我在睡觉呢。','我在看电视呢。']},
       {frame:'我喜欢＿＿。',frame_py:'Wǒ xǐhuan ___.',vn:'Tôi thích ＿＿.',options:['看电视','看电影'],samples:['我喜欢看电视。','我喜欢看电影。']},

@@ -1506,7 +1506,7 @@ var mcData = [
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn 🔊 nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
   questions: [
     {q_zh: '有人问你："请问，你叫什么名字？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Xin hỏi, bạn tên là gì?" Bạn trả lời thế nào?',
      hint: '我叫……', sample: '我叫李文。', sample_vn: 'Mình tên là Lý Văn.',

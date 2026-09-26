@@ -2536,7 +2536,7 @@ var mcData = [
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn 🔊 nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
   questions: [
     {q_zh: '有人问你："你在做什么呢？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Bạn đang làm gì đấy?" Bạn trả lời thế nào?',
      hint: '我正在……呢。', sample: '我正在找饭店呢。', sample_vn: 'Tôi đang tìm nhà hàng đây.',

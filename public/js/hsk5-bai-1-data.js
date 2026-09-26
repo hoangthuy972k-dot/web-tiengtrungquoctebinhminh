@@ -693,7 +693,7 @@ var writingData = {
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Bốn câu hỏi mở về chủ đề của bài. Bấm 🔊 nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 恩爱 · 细节 · 抱怨 · 居然 · 相敬如宾 · 患难与共.',
+  intro:'Bốn câu hỏi mở về chủ đề của bài. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được từ mới của bài: 恩爱 · 细节 · 抱怨 · 居然 · 相敬如宾 · 患难与共.',
   questions:[
     {q_zh:'你觉得什么样的夫妻算恩爱？',
      q_vn:'Em thấy vợ chồng thế nào thì gọi là đằm thắm?',
@@ -734,7 +734,7 @@ var speakingData = {
 // Mục tiêu: nghe TRƯỚC khi nhìn chữ — đúng như phòng thi.
 // ══════════════════════════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 5 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm 🔊 nghe, ' +
+  intro: 'Đề HSK 5 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
          'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
   source: 'Nguyên văn: 《HSK标准教程5上·练习册》第1课 听力',
   items: [

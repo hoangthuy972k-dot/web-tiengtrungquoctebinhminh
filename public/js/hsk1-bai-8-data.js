@@ -1372,7 +1372,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'你想喝什么？',py:'Nǐ xiǎng hē shénme?',vn:'Cô muốn uống gì?'},
       {zh:'我想喝茶。',py:'Wǒ xiǎng hē chá.',vn:'Tôi muốn uống trà.'},
@@ -1382,7 +1382,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'我想买＿＿。',frame_py:'Wǒ xiǎng mǎi ___.',vn:'Tôi muốn mua ＿＿.',options:['一个杯子','一本书'],samples:['我想买一个杯子。','我想买一本书。']},
       {frame:'这个＿＿多少钱？',frame_py:'Zhège ___ duōshao qián?',vn:'Cái ＿＿ này bao nhiêu tiền?',options:['杯子','书'],samples:['这个杯子多少钱？','这本书多少钱？']},

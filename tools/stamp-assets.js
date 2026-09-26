@@ -24,9 +24,11 @@ const SHARED = [
   'css/widgets.css',
   'css/hsk5.css',
   'css/vocab-h4.css',
+  'css/toi-bai.css',
   'js/lesson-engine.js',
   'js/widgets.js',
-  'js/hsk5-extra.js'
+  'js/hsk5-extra.js',
+  'js/theme.js'
 ];
 
 const h = crypto.createHash('sha1');

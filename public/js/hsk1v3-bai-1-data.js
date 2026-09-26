@@ -1362,7 +1362,7 @@ var mcData = [
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn 🔊 nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
   questions: [
     {q_zh: '老师走进教室，你应该对老师说什么？', q_vn: 'Thầy giáo bước vào lớp, bạn nên chào thầy thế nào?',
      hint: '老师，您好！', sample: '老师，您好！', sample_vn: 'Chào thầy ạ!',

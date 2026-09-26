@@ -2446,7 +2446,7 @@ var mcData = [
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn 🔊 nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
   questions: [
     {q_zh: '有人问你："你的手机号是多少？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Số điện thoại di động của bạn là bao nhiêu?" Bạn trả lời thế nào?',
      hint: '我的手机号是……', sample: '我的手机号是13801234567。', sample_vn: 'Số điện thoại di động của tôi là 13801234567.',

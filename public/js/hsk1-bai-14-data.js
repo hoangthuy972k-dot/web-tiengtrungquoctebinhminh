@@ -1373,7 +1373,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'昨天上午你去哪儿了？',py:'Zuótiān shàngwù nǐ qù nǎr le?',vn:'Sáng hôm qua bạn đi đâu vậy?'},
       {zh:'我去商店买东西了。',py:'Wǒ qù shāngdiàn mǎi dōngxi le.',vn:'Mình đến cửa hàng để mua đồ.'},
@@ -1383,7 +1383,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'我买了一点儿＿＿。',frame_py:'Wǒ mǎile yìdiǎnr ___.',vn:'Tôi mua một ít ＿＿.',options:['苹果','水果'],samples:['我买了一点儿苹果。','我买了一点儿水果。']},
       {frame:'我去商店买＿＿了。',frame_py:'Wǒ qù shāngdiàn mǎi ___ le.',vn:'Tôi đến cửa hàng mua ＿＿.',options:['东西','衣服'],samples:['我去商店买东西了。','我去商店买衣服了。']},

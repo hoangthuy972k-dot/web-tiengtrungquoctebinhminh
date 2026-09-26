@@ -1083,7 +1083,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'桌子上有什么？',py:'Zhuōzi shang yǒu shénme?',vn:'Trên bàn có gì vậy?'},
       {zh:'桌子上有一个电脑和一本书。',py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.',vn:'Có một chiếc máy vi tính và một quyển sách.'},
@@ -1093,7 +1093,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'桌子上有一个＿＿。',frame_py:'Zhuōzi shang yǒu yí ge ___.',vn:'Trên bàn có một cái ＿＿.',options:['电脑','杯子'],samples:['桌子上有一个电脑。','桌子上有一个杯子。']},
       {frame:'桌子＿＿有钱。',frame_py:'Zhuōzi ___ yǒu qián.',vn:'＿＿ bàn có tiền.',options:['里','上'],samples:['桌子里有钱。','桌子上有钱。']},

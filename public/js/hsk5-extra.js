@@ -11,6 +11,7 @@
    ══════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
+  var LOA_SVG = '<svg class="loa-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -18,7 +19,7 @@
   }
   function say(t) { if (typeof speakZh === 'function') speakZh(t); }
   function spk(t) {
-    return '<button type="button" class="h5-spk" data-h5-say="' + esc(t).replace(/"/g, '&quot;') + '">🔊</button>';
+    return '<button type="button" class="h5-spk" data-h5-say="' + esc(t).replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + LOA_SVG + '</button>';
   }
 
   /* ---------- 1. Phân biệt từ gần nghĩa ---------- */
@@ -164,7 +165,7 @@
       d.items.map(function (it, i) {
         return '<div class="h5-card h5-le" data-i="' + i + '">' +
           '<div class="h5-card-head"><span class="h5-num">' + it.n + '</span>' +
-            '<button type="button" class="h5-play" data-le-play="' + i + '">🔊 Nghe đoạn hội thoại</button>' +
+            '<button type="button" class="h5-play" data-le-play="' + i + '">' + LOA_SVG + 'Nghe đoạn hội thoại</button>' +
           '</div>' +
           '<div class="h5-le-q">' + esc(it.q) + '<span class="h5-le-qvn">' + esc(it.qvn) + '</span></div>' +
           '<div class="h5-q-opts">' + it.opts.map(function (o, oi) {

@@ -190,7 +190,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'妹妹的眼睛很小，耳朵很小。',py:'Mèimei de yǎnjing hěn xiǎo, ěrduo hěn xiǎo.',vn:'Mắt em gái mình rất nhỏ, tai rất nhỏ.'},
       {zh:'妹妹的头发不长。',py:'Mèimei de tóufa bù cháng.',vn:'Tóc em gái mình không dài.'},
@@ -200,7 +200,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
       {frame:'妹妹的眼睛很＿＿。',frame_py:'Mèimei de yǎnjing hěn ___.',vn:'Mắt em gái mình rất ＿＿.',options:['小','大'],samples:['妹妹的眼睛很小。','妹妹的眼睛很大。']},
     ],

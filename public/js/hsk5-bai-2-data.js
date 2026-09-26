@@ -709,7 +709,7 @@ var writingData = {
 // LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Bốn câu hỏi mở về chủ đề gia đình. Bấm 🔊 nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng từ mới của bài: 一辈子 · 打工 · 坚决 · 悄悄 · 温暖 · 感受到.',
+  intro:'Bốn câu hỏi mở về chủ đề gia đình. Bấm nút loa nghe câu hỏi, rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng từ mới của bài: 一辈子 · 打工 · 坚决 · 悄悄 · 温暖 · 感受到.',
   questions:[
     {q_zh:'你的父母是做什么工作的？他们辛苦吗？',
      q_vn:'Bố mẹ em làm nghề gì? Có vất vả không?',

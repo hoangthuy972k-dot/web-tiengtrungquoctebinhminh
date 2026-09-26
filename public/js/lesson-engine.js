@@ -50,7 +50,8 @@ function speakSeq(texts){
     window.speechSynthesis.speak(u);
   });
 }
-function miniSpeakBtn(text){return '<button type="button" class="speak-mini" data-action="speak" data-text="'+text.replace(/"/g,'&quot;')+'">🔊</button>';}
+var LOA_SVG='<svg class="loa-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
+function miniSpeakBtn(text){return '<button type="button" class="speak-mini" data-action="speak" data-text="'+text.replace(/"/g,'&quot;')+'" aria-label="Nghe đọc">'+LOA_SVG+'</button>';}
 
 // ══════════════════════════════════════════
 // REAL AUDIO (bản ghi âm gốc từ giáo trình HSK标准教程 2)
@@ -228,7 +229,7 @@ function hvHelps(hv,vn){
   });
 }
 function hvSpeakBtn(t){
-  return '<button type="button" class="h5-spk" data-hv-say="'+String(t).replace(/"/g,'&quot;')+'">🔊</button>';
+  return '<button type="button" class="h5-spk" data-hv-say="'+String(t).replace(/"/g,'&quot;')+'" aria-label="Nghe đọc">'+LOA_SVG+'</button>';
 }
 function hvRow(x,warn){
   return '<div class="h5-hv'+(warn?' trap':'')+'">'+
@@ -380,7 +381,7 @@ function h4Translate(v,vi){
 }
 
 function h4Say(t){
-  return '<button type="button" class="h4-spk" data-h4-say="'+String(t).replace(/"/g,'&quot;')+'" aria-label="Nghe">🔊</button>';
+  return '<button type="button" class="h4-spk" data-h4-say="'+String(t).replace(/"/g,'&quot;')+'" aria-label="Nghe đọc">'+LOA_SVG+'</button>';
 }
 
 function buildVocabHsk4(){
@@ -476,7 +477,7 @@ function buildVocabHsk4(){
 // ══════════════════════════════════════════
 // VOCAB
 // ══════════════════════════════════════════
-const posStyle={'Danh từ':'background:#dbeafe;color:#1d4ed8','Động từ':'background:#dcfce7;color:#16a34a','Tính từ':'background:#fef9c3;color:#b45309','Đại từ':'background:#fce7f3;color:#be185d','Lượng từ':'background:#f0fdf4;color:#15803d'};
+const posStyle={'Danh từ':'background:#dbeafe;color:#1d4ed8','Động từ':'background:#dcfce7;color:#15803d','Tính từ':'background:#fef9c3;color:#b45309','Đại từ':'background:#fce7f3;color:#be185d','Lượng từ':'background:#f0fdf4;color:#15803d'};
 function buildVocab(){
   const g=document.getElementById('vocab-grid');
   if(AUDIO_BASE && !document.getElementById('vocab-audio-box')){
@@ -762,7 +763,7 @@ function buildSort(){
       return '<span class="w-chip'+(isPunc?' punc-chip':'')+'" id="wc'+i+'_'+j+'" data-action="place-word" data-si="'+i+'" data-wi="'+j+'" data-word="'+w+'">'+w+'</span>';
     }).join('');
     l.innerHTML+='<div class="sort-q">'+
-      '<div class="sort-lbl">'+miniSpeakBtn(s.audio)+' <span>Nhấn 🔊 để nghe câu cần sắp xếp</span></div>'+
+      '<div class="sort-lbl">'+miniSpeakBtn(s.audio)+' <span>Nhấn nút loa để nghe câu cần sắp xếp</span></div>'+
       '<div class="word-bank" id="wb'+i+'">'+chips+'</div>'+
       '<div class="ans-zone" id="az'+i+'"></div>'+
       '<div class="q-fb" id="sf'+i+'"></div></div>';
@@ -928,7 +929,7 @@ function buildSpeaking(tier){
       return '<div class="task-card">'+
         '<div class="task-role">'+(i+1)+'. '+t.situation+'</div>'+
         '<div class="qa-question">'+
-          '<button type="button" class="speak-box-btn" data-action="speak" data-text="'+t.q_zh.replace(/"/g,'&quot;')+'">🔊 Nghe câu hỏi</button>'+
+          '<button type="button" class="speak-box-btn" data-action="speak" data-text="'+t.q_zh.replace(/"/g,'&quot;')+'">'+LOA_SVG+'Nghe câu hỏi</button>'+
           '<div class="qa-zh">'+t.q_zh+'</div><div class="qa-py">'+t.q_py+'</div><div class="qa-vn">'+t.q_vn+'</div>'+
         '</div>'+
         '<div class="task-guide">Câu trả lời của bạn cần có đủ những ý sau:</div>'+
@@ -947,7 +948,7 @@ function buildSpeaking(tier){
     const items=d.questions.map(function(q,i){
       return '<div class="task-card">'+
         '<div class="qa-question">'+
-          '<button type="button" class="speak-box-btn" data-action="speak" data-text="'+q.q_zh.replace(/"/g,'&quot;')+'">🔊 Nghe câu hỏi</button>'+
+          '<button type="button" class="speak-box-btn" data-action="speak" data-text="'+q.q_zh.replace(/"/g,'&quot;')+'">'+LOA_SVG+'Nghe câu hỏi</button>'+
           '<div class="qa-zh">'+q.q_zh+'</div><div class="qa-vn">'+q.q_vn+'</div>'+
         '</div>'+
         (q.hint?'<div class="task-struct"><span class="task-chip">'+q.hint+'</span></div>':'')+
@@ -1118,7 +1119,7 @@ function buildListen(){
         '<div class="q-fb" id="lf'+gi+'_'+qi+'"></div></div>';
     }).join('');
     return '<div class="listen-passage">'+
-      '<button type="button" class="listen-play-btn" data-action="speak" data-text="'+g.audio.replace(/"/g,'&quot;')+'">🔊 Nghe đoạn '+(gi+1)+'</button>'+
+      '<button type="button" class="listen-play-btn" data-action="speak" data-text="'+g.audio.replace(/"/g,'&quot;')+'">'+LOA_SVG+'Nghe đoạn '+(gi+1)+'</button>'+
       qs+'</div>';
   }).join('');
   document.getElementById('listen-score').style.display='none';
@@ -1181,7 +1182,7 @@ function buildListenWorkbook(){
       '<span class="wb-judge-result" id="judgefb'+i+'"></span></div>':'';
     return '<div class="quiz-card" id="dictcard'+i+'">'+
       '<div class="q-text" style="margin-bottom:8px;"><span class="q-num">'+item.num+'</span>'+
-      '<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button></div>'+
+      '<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'" aria-label="Nghe đọc">'+LOA_SVG+'</button></div>'+
       judge+
       lines+
       '<div class="btn-row" style="margin-top:8px;"><button class="btn-s" data-action="check-dictation" data-idx="'+i+'">Kiểm tra</button></div>'+
@@ -1196,7 +1197,7 @@ function buildListenWorkbook(){
     const opts=item.options.map(function(o,ci){return '<button class="q-opt" id="mco'+i+'_'+ci+'" data-action="check-listen-mc" data-idx="'+i+'" data-ci="'+ci+'">'+o+'</button>';}).join('');
     return '<div class="quiz-card" id="mccard'+i+'">'+
       '<div class="q-text" style="margin-bottom:8px;"><span class="q-num">'+item.num+'</span>'+
-      (hasLines?'<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'">🔊</button>':'')+
+      (hasLines?'<button type="button" class="speak-mini" data-action="speak" data-text="'+fullZh.replace(/"/g,'&quot;')+'" aria-label="Nghe đọc">'+LOA_SVG+'</button>':'')+
       (item.q?'<span class="wb-mc-q">问：'+item.q+'</span>':'')+'</div>'+
       (hasLines?'<div style="font-size:0.85rem;color:var(--soft);margin:0 0 10px 30px;">'+transcript+'</div>':'')+
       '<div class="q-opts">'+opts+'</div>'+

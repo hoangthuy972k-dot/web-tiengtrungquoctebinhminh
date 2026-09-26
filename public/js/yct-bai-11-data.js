@@ -170,7 +170,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'你吃米饭吗？',py:'Nǐ chī mǐfàn ma?',vn:'Bạn ăn cơm không?'},
       {zh:'我吃米饭，也吃面条。',py:'Wǒ chī mǐfàn, yě chī miàntiáo.',vn:'Mình ăn cơm, cũng ăn mì.'},
@@ -180,7 +180,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
       {frame:'我爱吃＿＿。',frame_py:'Wǒ ài chī ___.',vn:'Mình rất thích ăn ＿＿.',options:['苹果','蛋糕','米饭'],samples:['我爱吃苹果。','我爱吃蛋糕。','我爱吃米饭。']},
     ],

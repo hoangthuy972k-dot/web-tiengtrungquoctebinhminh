@@ -157,7 +157,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'你看，这是猫。',py:'Nǐ kàn, zhè shì māo.',vn:'Bạn xem, đây là con mèo.'},
       {zh:'那是狗。',py:'Nà shì gǒu.',vn:'Đó là con chó.'},
@@ -167,7 +167,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu con tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
       {frame:'这是＿＿。',frame_py:'Zhè shì ___.',vn:'Đây là ＿＿.',options:['猫','狗','鱼'],samples:['这是猫。','这是狗。','这是鱼。']},
     ],

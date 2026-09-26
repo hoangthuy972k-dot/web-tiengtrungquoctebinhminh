@@ -2139,7 +2139,7 @@ var mcData = [
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn 🔊 nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
   questions: [
     {q_zh: '朋友问你："你爱吃哪个菜？" 你怎么回答？', q_vn: 'Bạn của bạn hỏi: "Bạn thích ăn món nào?" Bạn trả lời thế nào?',
      hint: '我喜欢……，也喜欢……', sample: '我喜欢这个，也喜欢那个。', sample_vn: 'Mình thích món này, cũng thích món kia nữa.',

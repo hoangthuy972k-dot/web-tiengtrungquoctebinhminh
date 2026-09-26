@@ -264,17 +264,17 @@
     --xt-16a34a: #73de9a;
     --xt-17693a: #73dea0;
     --xt-1d4ed8: #839ce2;
-    --xt-1f1a17: #b5a59b;
+    --xt-1f1a17: #ece6dc;
     --xt-1f6b3d: #79d89e;
     --xt-1f6f5c: #77d9c2;
     --xt-1f8a4c: #73dea0;
     --xt-2f6fd0: #739dde;
-    --xt-38332e: #b1a8a0;
+    --xt-38332e: #ece6dc;
     --xt-5a4e49: #b1a59f;
     --xt-5f5952: #afa9a2;
     --xt-6b4a00: #debd73;
     --xt-7a4f12: #deb273;
-    --xt-7ee0a4: #73dd9c;
+    --xt-7ee0a4: #7ee0a4;
     --xt-8a1c14: #e0827b;
     --xt-8a5a00: #deb973;
     --xt-8a5a0f: #deb473;
@@ -291,13 +291,13 @@
     --xt-c62828: #e28383;
     --xt-c8372d: #e0817b;
     --xt-c98a00: #debc73;
-    --xt-d9971f: #deb873;
+    --xt-d9971f: #d9971f;
     --xt-e0413a: #e1837f;
-    --xt-f2b01e: #debd73;
-    --xt-f2bf6b: #deb573;
-    --xt-ffd98a: #debb73;
-    --xt-ffe19a: #debe73;
-    --xt-fff4dc: #debc73;
+    --xt-f2b01e: #f2b01e;
+    --xt-f2bf6b: #f2bf6b;
+    --xt-ffd98a: #ffd98a;
+    --xt-ffe19a: #ffe19a;
+    --xt-fff4dc: #fff4dc;
     --xb-d7ebe3: #25352f;
     --xb-dbeafe: #1d2734;
     --xb-dcfce7: #1e3425;
@@ -409,17 +409,17 @@ html.ho-tro-toi[data-theme="dark"] {
   --xt-16a34a: #73de9a;
   --xt-17693a: #73dea0;
   --xt-1d4ed8: #839ce2;
-  --xt-1f1a17: #b5a59b;
+  --xt-1f1a17: #ece6dc;
   --xt-1f6b3d: #79d89e;
   --xt-1f6f5c: #77d9c2;
   --xt-1f8a4c: #73dea0;
   --xt-2f6fd0: #739dde;
-  --xt-38332e: #b1a8a0;
+  --xt-38332e: #ece6dc;
   --xt-5a4e49: #b1a59f;
   --xt-5f5952: #afa9a2;
   --xt-6b4a00: #debd73;
   --xt-7a4f12: #deb273;
-  --xt-7ee0a4: #73dd9c;
+  --xt-7ee0a4: #7ee0a4;
   --xt-8a1c14: #e0827b;
   --xt-8a5a00: #deb973;
   --xt-8a5a0f: #deb473;
@@ -436,13 +436,13 @@ html.ho-tro-toi[data-theme="dark"] {
   --xt-c62828: #e28383;
   --xt-c8372d: #e0817b;
   --xt-c98a00: #debc73;
-  --xt-d9971f: #deb873;
+  --xt-d9971f: #d9971f;
   --xt-e0413a: #e1837f;
-  --xt-f2b01e: #debd73;
-  --xt-f2bf6b: #deb573;
-  --xt-ffd98a: #debb73;
-  --xt-ffe19a: #debe73;
-  --xt-fff4dc: #debc73;
+  --xt-f2b01e: #f2b01e;
+  --xt-f2bf6b: #f2bf6b;
+  --xt-ffd98a: #ffd98a;
+  --xt-ffe19a: #ffe19a;
+  --xt-fff4dc: #fff4dc;
   --xb-d7ebe3: #25352f;
   --xb-dbeafe: #1d2734;
   --xb-dcfce7: #1e3425;
@@ -8832,6 +8832,8 @@ body.pinyin-hidden .py-inline {
   html.ho-tro-toi:not([data-theme="light"]) .hw-gy-kq.is-ok,
     html.ho-tro-toi:not([data-theme="light"]) .hw-gy-tt.is-rep { color: #6fcf97; }
   html.ho-tro-toi:not([data-theme="light"]) .hw-gy-tt.is-read { color: #e2b563; }
+  html.ho-tro-toi:not([data-theme="light"]) .gd-key { color: #ffc2b8; }
+  html.ho-tro-toi:not([data-theme="light"]) .h4-peek { color: #5cc8bd; }
 }
 html.ho-tro-toi[data-theme="dark"] .scene-layer { filter: brightness(0.42) saturate(0.7) contrast(1.05); }
 html.ho-tro-toi[data-theme="dark"] .scene-petals { opacity: 0.35; }
@@ -8855,4 +8857,6 @@ html.ho-tro-toi[data-theme="dark"] .hw-gy-muc-tl { background: #1c3324; }
 html.ho-tro-toi[data-theme="dark"] .hw-gy-kq.is-ok,
 html.ho-tro-toi[data-theme="dark"] .hw-gy-tt.is-rep { color: #6fcf97; }
 html.ho-tro-toi[data-theme="dark"] .hw-gy-tt.is-read { color: #e2b563; }
+html.ho-tro-toi[data-theme="dark"] .gd-key { color: #ffc2b8; }
+html.ho-tro-toi[data-theme="dark"] .h4-peek { color: #5cc8bd; }
 /* === het luat rieng che do toi === */

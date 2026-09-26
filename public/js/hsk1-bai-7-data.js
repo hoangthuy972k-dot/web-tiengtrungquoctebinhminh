@@ -1095,7 +1095,7 @@ var mcData = [
 
 var speakingData = {
   t1:{
-    intro:'Nhấn 🔊 nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
     models:[
       {zh:'请问，今天几号？',py:'Qǐngwèn, jīntiān jǐ hào?',vn:'Xin hỏi hôm nay là ngày mấy?'},
       {zh:'今天9月1号，星期三。',py:'Jīntiān jiǔ yuè yī hào, xīngqī sān.',vn:'Hôm nay ngày 1 tháng 9, thứ tư.'},
@@ -1105,7 +1105,7 @@ var speakingData = {
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng số trong ô gợi ý. Nhấn 🔊 để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng số trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
       {frame:'今天是星期＿＿。',frame_py:'Jīntiān shì xīngqī ___.',vn:'Hôm nay là thứ ＿＿.',options:['一','三','五'],samples:['今天是星期一。','今天是星期三。','今天是星期五。']},
     ],

@@ -23892,3 +23892,619 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-24.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-25.html"] = [
+ {
+  "so": "1",
+  "ten": "「朝」",
+  "tenVn": "",
+  "cauTruc": [
+   "(Động từ) N + 朝 + phương hướng",
+   "(Giới từ) 朝 + phương hướng / người + V",
+   "V + 向 + N (không dùng V + 朝)"
+  ],
+  "giaiThich": "朝 có hai cách dùng. ĐỘNG TỪ: quay mặt về phía, hướng về (坐西朝东, 脸朝里). GIỚI TỪ: chỉ phương hướng của động tác — 朝 + phương hướng / người + động từ (朝里面放水, 朝我们走来). Khác 向: 朝 KHÔNG làm bổ ngữ đứng sau động từ — nói 走向未来, không nói 走朝未来. Cụm 朝 + … luôn đứng TRƯỚC động từ chính.",
+  "viDu": [
+   {
+    "zh": "我们学校的正门坐西朝东。",
+    "py": "Wǒmen xuéxiào de zhèngmén zuò xī cháo dōng.",
+    "vn": "Cổng chính trường chúng tôi quay mặt về hướng đông."
+   },
+   {
+    "zh": "……老船长命令水手们立刻打开货舱，使劲儿朝里面放水。",
+    "py": "…… lǎo chuánzhǎng mìnglìng shuǐshǒumen lìkè dǎkāi huòcāng, shǐjìnr cháo lǐmiàn fàng shuǐ.",
+    "vn": "… ông thuyền trưởng già ra lệnh cho các thủy thủ lập tức mở khoang hàng, ra sức xả nước vào trong."
+   },
+   {
+    "zh": "我仿佛看到胜利正朝我们走来。",
+    "py": "Wǒ fǎngfú kàndào shènglì zhèng cháo wǒmen zǒulai.",
+    "vn": "Tôi như thấy chiến thắng đang tiến về phía chúng ta."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我们一起走朝美好的未来。",
+    "why": "朝 không làm bổ ngữ đứng sau động từ. Muốn đặt sau động từ phải dùng 向.",
+    "dung": "我们一起走向美好的未来。"
+   },
+   {
+    "sai": "他笑朝我。",
+    "why": "Cụm giới từ 朝 + người phải đứng TRƯỚC động từ, không đặt sau như tiếng Việt “cười với tôi”.",
+    "dung": "他朝我笑了笑。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "老船长命令水手们立刻打开货舱，使劲儿",
+       "里面放水。"
+      ],
+      "dap": [
+       [
+        "朝"
+       ]
+      ],
+      "chon": [
+       "朝",
+       "在",
+       "对"
+      ],
+      "goiY": "Xả nước vào phía trong khoang.",
+      "giai": "朝 + phương hướng + V — câu trong bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们学校的正门坐西",
+       "东。"
+      ],
+      "dap": [
+       [
+        "朝"
+       ]
+      ],
+      "chon": [
+       "朝",
+       "在",
+       "到"
+      ],
+      "goiY": "Cổng trường quay mặt về hướng đông.",
+      "giai": "Động từ 朝: quay mặt về phía (坐西朝东)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我仿佛看到胜利正",
+       "我们走来。"
+      ],
+      "dap": [
+       [
+        "朝"
+       ]
+      ],
+      "chon": [
+       "朝",
+       "给",
+       "跟"
+      ],
+      "goiY": "Chiến thắng đang tiến về phía chúng ta.",
+      "giai": "朝 + người + 走来 (ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我进去时，他正脸",
+       "里和李主任商量着什么。"
+      ],
+      "dap": [
+       [
+        "朝"
+       ]
+      ],
+      "chon": [
+       "朝",
+       "在",
+       "从"
+      ],
+      "goiY": "Mặt quay vào phía trong.",
+      "giai": "脸朝里 — 朝 là động từ (ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "小女孩一看见我，就",
+       "我笑了笑。"
+      ],
+      "dap": [
+       [
+        "朝"
+       ]
+      ],
+      "chon": [
+       "朝",
+       "被",
+       "把"
+      ],
+      "goiY": "Cười với tôi.",
+      "giai": "朝 + người + V; ôn 一……就……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们一起走",
+       "美好的未来。"
+      ],
+      "dap": [
+       [
+        "向"
+       ]
+      ],
+      "chon": [
+       "向",
+       "朝",
+       "往"
+      ],
+      "goiY": "Ô trống đứng SAU động từ 走.",
+      "giai": "朝 không làm bổ ngữ sau động từ → 走向未来."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "小女孩",
+       "朝我",
+       "笑了笑",
+       "。"
+      ],
+      "dap": [
+       "小女孩朝我笑了笑。"
+      ],
+      "goiY": "Cô bé cười với tôi.",
+      "giai": "Cụm 朝我 đứng trước động từ 笑."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我仿佛看到",
+       "胜利",
+       "正朝我们",
+       "走来",
+       "。"
+      ],
+      "dap": [
+       "我仿佛看到胜利正朝我们走来。"
+      ],
+      "goiY": "Tôi như thấy chiến thắng đang tiến về phía chúng ta.",
+      "giai": "正 + 朝我们 + 走来."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我的卧室",
+       "朝南",
+       "，",
+       "冬天",
+       "特别暖和",
+       "。"
+      ],
+      "dap": [
+       "我的卧室朝南，冬天特别暖和。"
+      ],
+      "goiY": "Phòng ngủ của tôi hướng nam, mùa đông rất ấm.",
+      "giai": "朝 làm động từ: 卧室朝南."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他朝我挥了挥手。",
+      "dung": true,
+      "giai": "Đúng: 朝 + người đứng trước động từ 挥手."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们一起走朝美好的未来。",
+      "dung": false,
+      "sua": "我们一起走向美好的未来。",
+      "giai": "朝 không làm bổ ngữ sau động từ; dùng 向."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他笑朝我。",
+      "dung": false,
+      "sua": "他朝我笑了笑。",
+      "giai": "Cụm 朝我 phải đứng trước động từ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cổng chính trường chúng tôi quay về hướng nam.",
+      "dap": [
+       "我们学校的正门朝南。",
+       "我们学校的大门朝南。",
+       "我们学校的正门坐北朝南。"
+      ],
+      "py": "Wǒmen xuéxiào de zhèngmén cháo nán.",
+      "goiY": "Dịch sang tiếng Trung, dùng 朝 làm động từ.",
+      "giai": "N + 朝 + phương hướng."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Vừa thấy tôi, cô ấy liền vẫy tay với tôi.",
+      "dap": [
+       "她一看见我，就朝我挥了挥手。",
+       "她一看到我就朝我挥手。",
+       "她一看见我就朝我挥了挥手。"
+      ],
+      "py": "Tā yí kànjiàn wǒ, jiù cháo wǒ huīle huī shǒu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 朝 làm giới từ.",
+      "giai": "朝我 + 挥手; ôn 一……就……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "小林，我进你们家的小区了，你住的5号楼＿＿＿？",
+      "goiY": "dùng 朝 — hỏi đường (练一练 1 của sách)",
+      "mau": "小林，我进你们家的小区了，你住的5号楼是朝东走还是朝西走？",
+      "can": [
+       [
+        "朝"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：请问，去国家图书馆＿＿＿？　B：没错，大概过两个路口就到了。",
+      "goiY": "dùng 朝 — hỏi đường (练一练 3 của sách)",
+      "mau": "A：请问，去国家图书馆是一直朝前走吗？",
+      "can": [
+       [
+        "朝"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「朝」 để tả hướng phòng em hoặc một hành động của ai đó",
+      "mau": "我的房间朝南，每天早上阳光都会照进来。",
+      "can": [
+       [
+        "朝"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「简直」",
+  "tenVn": "",
+  "cauTruc": [
+   "简直 + (是 / 像) + N / cụm từ",
+   "简直 + 太 + Adj + 了",
+   "简直 + 不 / 没 + V (不敢相信 · 没法儿比)"
+  ],
+  "giaiThich": "简直 là phó từ, biểu thị gần như hoàn toàn là như vậy (nhưng thực ra chưa hẳn), mang giọng PHÓNG ĐẠI, nhấn mạnh. Hay đi với 是 / 像 / 太……了 / 不敢…… / 没法……. Đứng sau chủ ngữ, trước vị ngữ. Không dùng cùng phó từ mức độ 很 / 非常, và không dùng cho câu kể sự thật khách quan.",
+  "viDu": [
+   {
+    "zh": "听到刘方离婚的消息时，我简直不敢相信自己的耳朵。",
+    "py": "Tīngdào Liú Fāng líhūn de xiāoxi shí, wǒ jiǎnzhí bù gǎn xiāngxìn zìjǐ de ěrduo.",
+    "vn": "Khi nghe tin Lưu Phương ly hôn, tôi quả thực không dám tin vào tai mình."
+   },
+   {
+    "zh": "这次张小姐变得格外客气、礼貌，与从前相比，简直像换了个人。",
+    "py": "Zhè cì Zhāng xiǎojiě biàn de géwài kèqi, lǐmào, yǔ cóngqián xiāngbǐ, jiǎnzhí xiàng huànle ge rén.",
+    "vn": "Lần này cô Trương trở nên đặc biệt khách sáo, lịch sự, so với trước kia cứ như biến thành người khác."
+   },
+   {
+    "zh": "“船长简直是疯了，这样做只会增加船的压力，船就会下沉得更快，这不是找死吗？”",
+    "py": "\"Chuánzhǎng jiǎnzhí shì fēng le, zhèyàng zuò zhǐ huì zēngjiā chuán de yālì, chuán jiù huì xiàchén de gèng kuài, zhè bú shì zhǎo sǐ ma?\"",
+    "vn": "\"Thuyền trưởng đúng là điên rồi, làm thế chỉ tăng thêm sức ép cho tàu, tàu sẽ chìm nhanh hơn, thế chẳng phải tự tìm đường chết sao?\""
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这道题简直很难。",
+    "why": "简直 đã mang giọng phóng đại, không đi cùng 很 / 非常. Dùng 简直太……了 hoặc bỏ 简直.",
+    "dung": "这道题简直太难了。"
+   },
+   {
+    "sai": "他简直是我们班的学生。",
+    "why": "Đây là sự thật khách quan, không có ý phóng đại “gần như là” → không dùng 简直.",
+    "dung": "他是我们班的学生。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "船长",
+       "是疯了，这样做只会增加船的压力。"
+      ],
+      "dap": [
+       [
+        "简直"
+       ]
+      ],
+      "chon": [
+       "简直",
+       "几乎",
+       "一直"
+      ],
+      "goiY": "Giọng phóng đại: “đúng là điên rồi”.",
+      "giai": "简直 + 是 + … — câu trong bài khoá."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "听到刘方离婚的消息时，我",
+       "不敢相信自己的耳朵。"
+      ],
+      "dap": [
+       [
+        "简直"
+       ]
+      ],
+      "chon": [
+       "简直",
+       "一直",
+       "终于"
+      ],
+      "goiY": "Quả thực không dám tin.",
+      "giai": "简直 + 不敢相信 (ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "与从前相比，张小姐",
+       "像换了个人。"
+      ],
+      "dap": [
+       [
+        "简直"
+       ]
+      ],
+      "chon": [
+       "简直",
+       "差不多",
+       "已经"
+      ],
+      "goiY": "Cứ như biến thành người khác.",
+      "giai": "简直像…… — so sánh phóng đại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "昨晚的比赛太精彩了，林丹",
+       "太厉害了！"
+      ],
+      "dap": [
+       [
+        "简直"
+       ]
+      ],
+      "chon": [
+       "简直",
+       "几乎",
+       "很"
+      ],
+      "goiY": "Cảm thán mạnh.",
+      "giai": "简直 + 太……了 (bài tập 1 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "李老师的书房",
+       "就是一个小图书馆。"
+      ],
+      "dap": [
+       [
+        "简直"
+       ]
+      ],
+      "chon": [
+       "简直",
+       "终于",
+       "刚才"
+      ],
+      "goiY": "Phóng đại: như một thư viện.",
+      "giai": "Câu 31 sách bài tập."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这道题",
+       "太难了，我想了一个小时也没做出来。"
+      ],
+      "dap": [
+       [
+        "简直"
+       ]
+      ],
+      "chon": [
+       "简直",
+       "非常",
+       "很"
+      ],
+      "goiY": "Sau ô trống đã có 太……了.",
+      "giai": "非常 / 很 không đi với 太……了; chỉ 简直 hợp."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "船长",
+       "简直",
+       "是",
+       "疯了",
+       "。"
+      ],
+      "dap": [
+       "船长简直是疯了。"
+      ],
+      "goiY": "Thuyền trưởng đúng là điên rồi.",
+      "giai": "简直 đứng sau chủ ngữ, trước 是."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "简直",
+       "不敢相信",
+       "自己的耳朵",
+       "。"
+      ],
+      "dap": [
+       "我简直不敢相信自己的耳朵。"
+      ],
+      "goiY": "Tôi quả thực không dám tin vào tai mình.",
+      "giai": "简直 + 不敢 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "李老师的书房",
+       "简直",
+       "就是",
+       "一个小图书馆",
+       "。"
+      ],
+      "dap": [
+       "李老师的书房简直就是一个小图书馆。"
+      ],
+      "goiY": "Phòng đọc của thầy Lý quả thực là một thư viện nhỏ.",
+      "giai": "简直就是 + N (câu 31 sách bài tập)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这里的风景简直像一幅画。",
+      "dung": true,
+      "giai": "Đúng: 简直像…… so sánh phóng đại."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这道题简直很难。",
+      "dung": false,
+      "sua": "这道题简直太难了。",
+      "giai": "简直 không đi với 很."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他简直是我们班的学生。",
+      "dung": false,
+      "sua": "他是我们班的学生。",
+      "giai": "Sự thật khách quan, không có ý phóng đại → không dùng 简直."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nghe tin này, tôi quả thực không dám tin vào tai mình.",
+      "dap": [
+       "听到这个消息，我简直不敢相信自己的耳朵。",
+       "听到这个消息时，我简直不敢相信自己的耳朵。",
+       "听了这个消息，我简直不敢相信自己的耳朵。"
+      ],
+      "py": "Tīngdào zhège xiāoxi, wǒ jiǎnzhí bù gǎn xiāngxìn zìjǐ de ěrduo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 简直.",
+      "giai": "简直 + 不敢相信."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy thay đổi nhiều quá, cứ như biến thành người khác.",
+      "dap": [
+       "她变化太大了，简直像换了个人。",
+       "她的变化太大了，简直像换了一个人。",
+       "她变得太多了，简直像换了个人。"
+      ],
+      "py": "Tā biànhuà tài dà le, jiǎnzhí xiàng huànle ge rén.",
+      "goiY": "Dịch sang tiếng Trung, dùng 简直像…….",
+      "giai": "简直像换了个人 (ví dụ của sách)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "眼前的情景让在场的所有人都惊呆了，＿＿＿。",
+      "goiY": "dùng 简直 (练一练 1 của sách)",
+      "mau": "眼前的情景让在场的所有人都惊呆了，简直像在做梦一样。",
+      "can": [
+       [
+        "简直"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：今天，老板要跟我们商量下半年的计划，我得去一趟。　B：你病成这样还要去上班，＿＿＿。",
+      "goiY": "dùng 简直 (练一练 3 của sách)",
+      "mau": "B：你病成这样还要去上班，简直是不要命了。",
+      "can": [
+       [
+        "简直"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「简直」 để tả áp lực học tập hoặc một cảnh đẹp em từng thấy",
+      "mau": "下龙湾的风景简直像一幅画，我一辈子都忘不了。",
+      "can": [
+       [
+        "简直"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

@@ -1647,6 +1647,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk5-bai-24.html'
+      },
+      {
+        id: 'hsk5-l25',
+        number: 25,
+        title: 'Bơm nước vào tàu',
+        titleHanzi: '给自己加满水',
+        titlePinyin: 'Gěi zìjǐ jiāmǎn shuǐ',
+        topic: 'Unit 9 感受人生 · Áp lực, trách nhiệm và bản lĩnh vượt sóng gió',
+        vocabCount: 40,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk5-bai-25.html'
       }
     ],
     yct: [

@@ -10,22 +10,79 @@
   var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var pad = function (x) { return (x < 10 ? '0' : '') + x; };
 
-  // ---------- Kết quả lần gần nhất + nhãn nút ----------
+  // ---------- Trạng thái từng đề: kết quả gần nhất, đang làm dở ----------
   var hist = {};
   try { hist = JSON.parse(localStorage.getItem('hyv_exam_results') || '{}'); } catch (e) { hist = {}; }
+  function dangLam(id) {
+    try {
+      var st = JSON.parse(localStorage.getItem('hyv_exam_' + id) || 'null');
+      if (st && !st.submitted && Object.keys(st.answers || {}).length) return 'doing';
+      if (st && st.submitted) return 'done';
+    } catch (e) { /* ignore */ }
+    return '';
+  }
   $all('[data-last]').forEach(function (el) {
-    var r = hist[el.getAttribute('data-last')];
-    if (!r) return;
+    var id = el.getAttribute('data-last');
+    var r = hist[id];
+    var doing = dangLam(id) === 'doing';
+    if (!r) {
+      if (doing) el.innerHTML = '<span class="ex-st is-doing">Đang làm dở</span>';
+      return;
+    }
     var d = new Date(r.at);
-    el.innerHTML = 'Lần gần nhất: <b>' + r.score + '/' + r.max + ' điểm</b> (' + r.correct + '/' + r.total + ' câu, ' + (r.pass ? 'Đạt' : 'Chưa đạt') + ') · ' + pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear();
+    el.innerHTML = '<span class="ex-st ' + (r.pass ? 'is-pass' : 'is-fail') + '">' + r.score + '/' + r.max + ' · ' + (r.pass ? 'Đạt' : 'Chưa đạt') + '</span>' +
+      '<small>' + r.correct + '/' + r.total + ' câu đúng · ' + pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear() + '</small>' +
+      (doing ? '<span class="ex-st is-doing">Đang làm lại</span>' : '');
   });
   $all('[data-start]').forEach(function (a) {
-    try {
-      var st = JSON.parse(localStorage.getItem('hyv_exam_' + a.getAttribute('data-start')) || 'null');
-      if (st && !st.submitted && Object.keys(st.answers || {}).length) a.textContent = 'Làm tiếp';
-      else if (st && st.submitted) a.textContent = 'Xem kết quả / Làm lại';
-    } catch (e) { /* ignore */ }
+    var s = dangLam(a.getAttribute('data-start'));
+    if (s === 'doing') { a.textContent = 'Làm tiếp'; a.classList.add('is-doing'); }
+    else if (s === 'done') { a.textContent = 'Xem kết quả'; a.classList.add('is-done'); }
   });
+
+  // ---------- Thư mục cấp độ: bấm mới mở danh sách đề ----------
+  var FOLDER_KEY = 'hyv_exam_folder';
+  // Tiến độ trên từng thư mục: đã thi bao nhiêu đề, điểm cao nhất
+  $all('[data-prog]').forEach(function (el) {
+    var lv = el.getAttribute('data-prog');
+    var ids = $all('#lv-' + lv + ' [data-test]').map(function (t) { return t.getAttribute('data-test'); });
+    var xong = ids.filter(function (id) { return hist[id]; });
+    var best = null;
+    xong.forEach(function (id) { if (!best || hist[id].score > best.score) best = hist[id]; });
+    el.querySelector('i').style.width = Math.round(xong.length / (ids.length || 1) * 100) + '%';
+    el.querySelector('small').textContent = xong.length
+      ? 'Đã thi ' + xong.length + '/' + ids.length + ' đề · cao nhất ' + best.score + '/' + best.max
+      : 'Chưa thi đề nào';
+  });
+  function moThuMuc(lv, cuon) {
+    $all('[data-folder]').forEach(function (b) {
+      var on = b.getAttribute('data-folder') === lv;
+      b.setAttribute('aria-expanded', on ? 'true' : 'false');
+      b.classList.toggle('is-open', on);
+      var panel = document.getElementById('lv-' + b.getAttribute('data-folder'));
+      if (panel) panel.hidden = !on;
+    });
+    try { if (lv) sessionStorage.setItem(FOLDER_KEY, lv); else sessionStorage.removeItem(FOLDER_KEY); } catch (e) { /* ignore */ }
+    if (lv && cuon) {
+      var p = document.getElementById('lv-' + lv);
+      if (p && p.getBoundingClientRect().top > window.innerHeight * 0.6) p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  $all('[data-folder]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      moThuMuc(b.getAttribute('aria-expanded') === 'true' ? '' : b.getAttribute('data-folder'), true);
+    });
+  });
+  $all('[data-close-folder]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var lv = b.closest('[data-level]').getAttribute('data-level');
+      moThuMuc('', false);
+      var f = document.querySelector('[data-folder="' + lv + '"]');
+      if (f) f.focus();
+    });
+  });
+  // Quay lại từ phòng thi (cùng phiên): mở lại thư mục vừa xem
+  try { var daMo = sessionStorage.getItem(FOLDER_KEY); if (daMo && document.getElementById('lv-' + daMo)) moThuMuc(daMo, false); } catch (e) { /* ignore */ }
 
   // ---------- Bảng xếp hạng ----------
   var rankEl = $('#rank');

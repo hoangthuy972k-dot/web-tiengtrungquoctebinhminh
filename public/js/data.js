@@ -1731,6 +1731,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk5-bai-31.html'
+      },
+      {
+        id: 'hsk5-l33',
+        number: 33,
+        title: 'Dùng tắc trị tắc — tuyệt chiêu giảm tải giao thông',
+        titleHanzi: '以堵治堵——缓解交通有妙招',
+        titlePinyin: 'Yǐ dǔ zhì dǔ——huǎnjiě jiāotōng yǒu miàozhāo',
+        topic: 'Unit 11 观察社会 · Ùn tắc giao thông đô thị & cách giải quyết',
+        vocabCount: 40,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-33.html'
       }
     ],
     yct: [

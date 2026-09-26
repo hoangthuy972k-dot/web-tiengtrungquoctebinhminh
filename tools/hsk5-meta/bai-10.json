@@ -1,0 +1,112 @@
+{
+ "zh": "争论的奇迹",
+ "py": "Zhēnglùn de qíjì",
+ "vn": "Kỳ tích của cuộc tranh luận",
+ "topic": "Unit 4 走近科学 · Khoa học &amp; phát minh",
+ "vocabCount": 42,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "毕竟",
+   "explain": "毕竟 là phó từ. Nghĩa 1: \"rốt cuộc, cuối cùng thì\" (= 到底, 终于) — dù có khó khăn nhưng kết quả vẫn đạt được, hay đi trong câu 虽然……但毕竟……. Nghĩa 2 (hay gặp hơn): chỉ ra điểm QUAN TRỌNG, cái bản chất không thay đổi, để giải thích cho một kết luận — dịch là \"dù sao, suy cho cùng\". Đứng sau chủ ngữ hoặc ở đầu vế nêu lý do.",
+   "rule": "① 虽然……，但 + <strong style=\"color:var(--sky-d)\">毕竟</strong> + V (rốt cuộc đã…)　② A + <strong style=\"color:var(--sky-d)\">毕竟</strong> + 是 + A　|　Kết luận，<strong style=\"color:var(--sky-d)\">毕竟</strong> + lý do",
+   "examples": [
+    {
+     "zh": "虽然我们遇到了很多困难，但毕竟完成了任务。",
+     "py": "Suīrán wǒmen yùdàole hěn duō kùnnan, dàn bìjìng wánchéngle rènwu.",
+     "vn": "Tuy gặp rất nhiều khó khăn nhưng rốt cuộc chúng tôi đã hoàn thành nhiệm vụ."
+    },
+    {
+     "zh": "不过摄影师毕竟是摄影师，主意还是有的。",
+     "py": "Búguò shèyǐngshī bìjìng shì shèyǐngshī, zhǔyi háishi yǒu de.",
+     "vn": "Nhưng nhiếp ảnh gia dù sao vẫn là nhiếp ảnh gia, cách thì vẫn có."
+    },
+    {
+     "zh": "他不高兴是正常的，毕竟没有人能在摔得头破血流的时候，还高兴得起来。",
+     "py": "Tā bù gāoxìng shì zhèngcháng de, bìjìng méiyǒu rén néng zài shuāi de tóu pò xuè liú de shíhou, hái gāoxìng de qǐlái.",
+     "vn": "Anh ấy không vui là chuyện bình thường, suy cho cùng chẳng ai ngã đến vỡ đầu chảy máu mà còn vui nổi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "毕竟你明天来不来？",
+     "why": "毕竟 không dùng trong câu hỏi. Hỏi \"rốt cuộc là…?\" phải dùng 究竟 / 到底.",
+     "right": "你明天究竟来不来？"
+    },
+    {
+     "wrong": "等了三个小时，他毕竟来了。",
+     "why": "Chỉ kể \"cuối cùng anh ấy cũng đến\" sau khi chờ đợi thì dùng 终于. 毕竟 (nghĩa \"rốt cuộc\") thường nằm trong câu nhượng bộ 虽然……但毕竟…….",
+     "right": "等了三个小时，他终于来了。"
+    }
+   ]
+  },
+  {
+   "point": "逐渐",
+   "explain": "逐渐 là phó từ, biểu thị mức độ hoặc số lượng tăng lên / giảm đi TỪNG CHÚT MỘT theo thời gian (\"dần dần\"). Đứng sau chủ ngữ, trước động từ hoặc tính từ; hay đi với 改进, 习惯, 增加, 减少, A + 起来.",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">逐渐</strong> + Động từ　|　Chủ ngữ + <strong style=\"color:var(--sky-d)\">逐渐</strong> + Tính từ + 起来 / 了",
+   "examples": [
+    {
+     "zh": "食物越来越少，老人不得不逐渐限制猴子的食量。",
+     "py": "Shíwù yuè lái yuè shǎo, lǎorén bùdébù zhújiàn xiànzhì hóuzi de shíliàng.",
+     "vn": "Thức ăn ngày càng ít, ông lão đành phải hạn chế dần khẩu phần của lũ khỉ."
+    },
+    {
+     "zh": "这项运动首先在亚太地区流行，并逐渐受到世界各地人们的欢迎。",
+     "py": "Zhè xiàng yùndòng shǒuxiān zài Yà-Tài dìqū liúxíng, bìng zhújiàn shòudào shìjiè gè dì rénmen de huānyíng.",
+     "vn": "Môn thể thao này trước tiên thịnh hành ở khu vực châu Á – Thái Bình Dương, rồi dần dần được mọi người khắp thế giới yêu thích."
+    },
+    {
+     "zh": "经过艰苦的试验，电影拍摄技术逐渐改进、成熟。",
+     "py": "Jīngguò jiānkǔ de shìyàn, diànyǐng pāishè jìshù zhújiàn gǎijìn, chéngshú.",
+     "vn": "Trải qua những thử nghiệm gian khổ, kỹ thuật quay phim dần dần được cải tiến và hoàn thiện."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "逐渐天气暖和起来了。",
+     "why": "逐渐 là phó từ, phải đứng SAU chủ ngữ, trước động từ / tính từ.",
+     "right": "天气逐渐暖和起来了。"
+    },
+    {
+     "wrong": "听到这个好消息，他逐渐跳了起来。",
+     "why": "逐渐 chỉ sự thay đổi TỪ TỪ theo thời gian; phản ứng tức thì phải dùng 一下子 / 马上.",
+     "right": "听到这个好消息，他一下子跳了起来。"
+    }
+   ]
+  },
+  {
+   "point": "或许",
+   "explain": "或许 là phó từ, nghĩa là \"có lẽ, có thể\" (= 也许, 可能), biểu thị phỏng đoán, không chắc chắn; hơi thiên về văn viết. Đứng sau chủ ngữ hoặc ở đầu câu, hay đi với 会, 能, 是, 就. Đừng nhầm với 或者 (liên từ \"hoặc\" — nối hai lựa chọn).",
+   "rule": "(Chủ ngữ) + <strong style=\"color:var(--sky-d)\">或许</strong> + (会 / 能 / 是) + V　|　<strong style=\"color:var(--sky-d)\">或许</strong> + cả câu",
+   "examples": [
+    {
+     "zh": "虽然以前她不支持你，但或许这次会有变化。",
+     "py": "Suīrán yǐqián tā bù zhīchí nǐ, dàn huòxǔ zhè cì huì yǒu biànhuà.",
+     "vn": "Tuy trước đây cô ấy không ủng hộ cậu, nhưng có lẽ lần này sẽ khác."
+    },
+    {
+     "zh": "或许正是因为这一点一滴的努力，你就会走在别人的前面。",
+     "py": "Huòxǔ zhèng shì yīnwèi zhè yìdiǎn-yìdī de nǔlì, nǐ jiù huì zǒu zài biérén de qiánmiàn.",
+     "vn": "Có lẽ chính nhờ những nỗ lực từng chút một ấy mà bạn sẽ đi trước người khác."
+    },
+    {
+     "zh": "留心生活的每一瞬间，并为之争论，适时请求帮助、认真研究，或许重大发现就在你的眼前。",
+     "py": "Liúxīn shēnghuó de měi yí shùnjiān, bìng wèi zhī zhēnglùn, shìshí qǐngqiú bāngzhù, rènzhēn yánjiū, huòxǔ zhòngdà fāxiàn jiù zài nǐ de yǎnqián.",
+     "vn": "Để ý từng khoảnh khắc của cuộc sống và tranh luận về nó, nhờ giúp đỡ đúng lúc, nghiên cứu nghiêm túc — có lẽ phát hiện trọng đại đang ở ngay trước mắt bạn."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你喝茶或许喝咖啡？",
+     "why": "Hỏi chọn một trong hai phải dùng 还是 (câu trần thuật dùng 或者); 或许 chỉ có nghĩa \"có lẽ\".",
+     "right": "你喝茶还是喝咖啡？"
+    },
+    {
+     "wrong": "明天或许一定会下雨。",
+     "why": "或许 (có lẽ, không chắc) mâu thuẫn với 一定 (chắc chắn), không dùng cùng nhau.",
+     "right": "明天或许会下雨。"
+    }
+   ]
+  }
+ ]
+}

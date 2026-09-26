@@ -1467,6 +1467,30 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-9.html'
+      },
+      {
+        id: 'hsk5-l10',
+        number: 10,
+        title: 'Kỳ tích của cuộc tranh luận',
+        titleHanzi: '争论的奇迹',
+        titlePinyin: 'Zhēnglùn de qíjì',
+        topic: 'Unit 4 走近科学 · Khoa học & phát minh',
+        vocabCount: 42,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-10.html'
+      },
+      {
+        id: 'hsk5-l11',
+        number: 11,
+        title: 'Tác hại của đồng hồ báo thức',
+        titleHanzi: '闹钟的危害',
+        titlePinyin: 'Nàozhōng de wēihài',
+        topic: 'Unit 4 走近科学 · Giấc ngủ & sức khỏe',
+        vocabCount: 45,
+        dialogueCount: 1,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk5-bai-11.html'
       }
     ],
     yct: [

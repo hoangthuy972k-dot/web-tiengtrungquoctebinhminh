@@ -1,0 +1,936 @@
+[
+ {
+  "so": "1",
+  "ten": "「毕竟」",
+  "tenVn": "",
+  "cauTruc": [
+   "虽然……，但 + 毕竟 + V (rốt cuộc đã…)",
+   "A + 毕竟 + 是 + A",
+   "Kết luận，毕竟 + lý do"
+  ],
+  "giaiThich": "毕竟 là phó từ. Nghĩa 1: \"rốt cuộc, cuối cùng thì\" (= 到底, 终于) — dù có khó khăn nhưng kết quả vẫn đạt được, hay đi trong câu 虽然……但毕竟……. Nghĩa 2 (hay gặp hơn): chỉ ra điểm QUAN TRỌNG, cái bản chất không thay đổi, để giải thích cho một kết luận — dịch là \"dù sao, suy cho cùng\". Đứng sau chủ ngữ hoặc ở đầu vế nêu lý do.",
+  "viDu": [
+   {
+    "zh": "虽然我们遇到了很多困难，但毕竟完成了任务。",
+    "py": "Suīrán wǒmen yùdàole hěn duō kùnnan, dàn bìjìng wánchéngle rènwu.",
+    "vn": "Tuy gặp rất nhiều khó khăn nhưng rốt cuộc chúng tôi đã hoàn thành nhiệm vụ."
+   },
+   {
+    "zh": "不过摄影师毕竟是摄影师，主意还是有的。",
+    "py": "Búguò shèyǐngshī bìjìng shì shèyǐngshī, zhǔyi háishi yǒu de.",
+    "vn": "Nhưng nhiếp ảnh gia dù sao vẫn là nhiếp ảnh gia, cách thì vẫn có."
+   },
+   {
+    "zh": "他不高兴是正常的，毕竟没有人能在摔得头破血流的时候，还高兴得起来。",
+    "py": "Tā bù gāoxìng shì zhèngcháng de, bìjìng méiyǒu rén néng zài shuāi de tóu pò xuè liú de shíhou, hái gāoxìng de qǐlái.",
+    "vn": "Anh ấy không vui là chuyện bình thường, suy cho cùng chẳng ai ngã đến vỡ đầu chảy máu mà còn vui nổi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "毕竟你明天来不来？",
+    "why": "毕竟 không dùng trong câu hỏi. Hỏi \"rốt cuộc là…?\" phải dùng 究竟 / 到底.",
+    "dung": "你明天究竟来不来？"
+   },
+   {
+    "sai": "等了三个小时，他毕竟来了。",
+    "why": "Chỉ kể \"cuối cùng anh ấy cũng đến\" sau khi chờ đợi thì dùng 终于. 毕竟 (nghĩa \"rốt cuộc\") thường nằm trong câu nhượng bộ 虽然……但毕竟…….",
+    "dung": "等了三个小时，他终于来了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "别怪他了，他",
+       "还是个孩子。"
+      ],
+      "dap": [
+       [
+        "毕竟"
+       ]
+      ],
+      "chon": [
+       "毕竟",
+       "究竟",
+       "终于"
+      ],
+      "goiY": "Nêu lý do để tha thứ: \"dù sao nó vẫn còn là trẻ con\".",
+      "giai": "毕竟 + lý do bản chất. 究竟 dùng trong câu hỏi; 终于 là \"cuối cùng thì\" sau chờ đợi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你",
+       "去不去？快点儿决定吧！"
+      ],
+      "dap": [
+       [
+        "究竟",
+        "到底"
+       ]
+      ],
+      "chon": [
+       "究竟",
+       "毕竟",
+       "终于"
+      ],
+      "goiY": "Câu HỎI: \"Rốt cuộc cậu có đi không?\"",
+      "giai": "毕竟 không dùng trong câu hỏi → 究竟 / 到底."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然我们遇到了很多困难，但",
+       "完成了任务。"
+      ],
+      "dap": [
+       [
+        "毕竟",
+        "终于"
+       ]
+      ],
+      "chon": [
+       "毕竟",
+       "究竟",
+       "竟然"
+      ],
+      "goiY": "Tuy khó khăn nhưng RỐT CUỘC đã hoàn thành.",
+      "giai": "Nghĩa 1 của 毕竟 (= 到底, 终于), hay đi trong câu 虽然……但……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "摄影师",
+       "是摄影师，主意还是有的。"
+      ],
+      "dap": [
+       [
+        "毕竟"
+       ]
+      ],
+      "chon": [
+       "毕竟",
+       "究竟",
+       "或许"
+      ],
+      "goiY": "Mẫu A……是A: \"dù sao vẫn là…\".",
+      "giai": "A毕竟是A: bản chất không đổi, nên vẫn có cách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "现在",
+       "是秋天了，再热也不会像夏天那样。"
+      ],
+      "dap": [
+       [
+        "毕竟"
+       ]
+      ],
+      "chon": [
+       "毕竟",
+       "逐渐",
+       "始终"
+      ],
+      "goiY": "Nêu lý do: \"dù sao cũng đã là mùa thu\".",
+      "giai": "毕竟 + 是 + lý do bản chất (câu vitri trong SGK)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他不高兴是正常的，",
+       "没有人被批评了还能高兴得起来。"
+      ],
+      "dap": [
+       [
+        "毕竟"
+       ]
+      ],
+      "chon": [
+       "毕竟",
+       "或许",
+       "逐渐"
+      ],
+      "goiY": "Vế sau GIẢI THÍCH vì sao \"không vui là bình thường\".",
+      "giai": "Kết luận，毕竟 + lý do: biện giải cho kết luận ở vế trước."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "毕竟",
+       "还是",
+       "一个",
+       "孩子"
+      ],
+      "dap": [
+       "他毕竟还是一个孩子。",
+       "毕竟他还是一个孩子。"
+      ],
+      "goiY": "Dù sao nó vẫn còn là một đứa trẻ.",
+      "giai": "毕竟 đứng sau chủ ngữ (hoặc đầu câu), trước 还是 + danh từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "虽然输了",
+       "但",
+       "这毕竟是",
+       "我们第一次",
+       "参加比赛"
+      ],
+      "dap": [
+       "虽然输了，但这毕竟是我们第一次参加比赛。"
+      ],
+      "goiY": "Tuy thua, nhưng dù sao đây cũng là lần đầu chúng ta dự thi.",
+      "giai": "虽然……但…… + 毕竟: an ủi bằng một lý do bản chất."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "连老师",
+       "都不会做",
+       "这道题",
+       "别怪他了",
+       "毕竟"
+      ],
+      "dap": [
+       "别怪他了，毕竟连老师都不会做这道题。",
+       "别怪他了，毕竟这道题连老师都不会做。"
+      ],
+      "goiY": "Đừng trách cậu ấy, dù sao ngay cả thầy cũng không làm được câu này.",
+      "giai": "毕竟 mở đầu vế lý do; ôn 连……都……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他毕竟是你的弟弟，你就原谅他吧。",
+      "dung": true,
+      "giai": "毕竟 + 是 + lý do bản chất, đứng sau chủ ngữ — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "毕竟你明天去不去？",
+      "dung": false,
+      "sua": "你明天究竟去不去？",
+      "giai": "毕竟 không dùng trong câu hỏi; hỏi \"rốt cuộc\" dùng 究竟 / 到底."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "毕竟他们是好朋友，吵几句也没关系。",
+      "dung": true,
+      "giai": "毕竟 đặt ở đầu vế lý do cũng được — đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Đừng giận nữa, dù sao cậu ấy cũng đã xin lỗi rồi.",
+      "dap": [
+       "别生气了，他毕竟已经道歉了。",
+       "别生气了，毕竟他已经道歉了。",
+       "别生气了，他毕竟已经向你道歉了。"
+      ],
+      "py": "Bié shēngqì le, tā bìjìng yǐjīng dàoqiàn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 毕竟.",
+      "giai": "毕竟 + lý do, đứng sau chủ ngữ 他 hoặc đầu vế."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Học sinh dù sao vẫn là học sinh, việc quan trọng nhất là học tập.",
+      "dap": [
+       "学生毕竟是学生，最重要的事是学习。",
+       "学生毕竟是学生，最重要的是学习。",
+       "学生毕竟是学生，最重要的事情是学习。"
+      ],
+      "py": "Xuésheng bìjìng shì xuésheng, zuì zhòngyào de shì shì xuéxí.",
+      "goiY": "Dịch sang tiếng Trung, dùng mẫu A毕竟是A.",
+      "giai": "A毕竟是A: nhấn mạnh bản chất không đổi."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：这孩子真是太淘气了！我快被他烦死了！　B：＿＿＿。",
+      "goiY": "khuyên mẹ bớt giận vì dù sao nó vẫn là trẻ con (dùng 毕竟)",
+      "mau": "别生气了，他毕竟还是个孩子嘛。",
+      "can": [
+       [
+        "毕竟"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：他最近脾气真是太差了，一点儿小事就发火！　B：＿＿＿。",
+      "goiY": "bảo bạn thông cảm vì dù sao dạo này anh ấy áp lực rất lớn (dùng 毕竟)",
+      "mau": "你别怪他，毕竟他最近工作压力太大了。",
+      "can": [
+       [
+        "毕竟"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「毕竟」 (mẫu A毕竟是A, hoặc ……，毕竟 + lý do), nói về bạn bè hoặc gia đình em",
+      "mau": "你们毕竟是好朋友，别为了这点儿小事争论了。",
+      "can": [
+       [
+        "毕竟"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「逐渐」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 逐渐 + Động từ",
+   "Chủ ngữ + 逐渐 + Tính từ + 起来 / 了"
+  ],
+  "giaiThich": "逐渐 là phó từ, biểu thị mức độ hoặc số lượng tăng lên / giảm đi TỪNG CHÚT MỘT theo thời gian (\"dần dần\"). Đứng sau chủ ngữ, trước động từ hoặc tính từ; hay đi với 改进, 习惯, 增加, 减少, A + 起来.",
+  "viDu": [
+   {
+    "zh": "食物越来越少，老人不得不逐渐限制猴子的食量。",
+    "py": "Shíwù yuè lái yuè shǎo, lǎorén bùdébù zhújiàn xiànzhì hóuzi de shíliàng.",
+    "vn": "Thức ăn ngày càng ít, ông lão đành phải hạn chế dần khẩu phần của lũ khỉ."
+   },
+   {
+    "zh": "这项运动首先在亚太地区流行，并逐渐受到世界各地人们的欢迎。",
+    "py": "Zhè xiàng yùndòng shǒuxiān zài Yà-Tài dìqū liúxíng, bìng zhújiàn shòudào shìjiè gè dì rénmen de huānyíng.",
+    "vn": "Môn thể thao này trước tiên thịnh hành ở khu vực châu Á – Thái Bình Dương, rồi dần dần được mọi người khắp thế giới yêu thích."
+   },
+   {
+    "zh": "经过艰苦的试验，电影拍摄技术逐渐改进、成熟。",
+    "py": "Jīngguò jiānkǔ de shìyàn, diànyǐng pāishè jìshù zhújiàn gǎijìn, chéngshú.",
+    "vn": "Trải qua những thử nghiệm gian khổ, kỹ thuật quay phim dần dần được cải tiến và hoàn thiện."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "逐渐天气暖和起来了。",
+    "why": "逐渐 là phó từ, phải đứng SAU chủ ngữ, trước động từ / tính từ.",
+    "dung": "天气逐渐暖和起来了。"
+   },
+   {
+    "sai": "听到这个好消息，他逐渐跳了起来。",
+    "why": "逐渐 chỉ sự thay đổi TỪ TỪ theo thời gian; phản ứng tức thì phải dùng 一下子 / 马上.",
+    "dung": "听到这个好消息，他一下子跳了起来。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "来中国半年以后，我",
+       "习惯了这里的生活。"
+      ],
+      "dap": [
+       [
+        "逐渐"
+       ]
+      ],
+      "chon": [
+       "逐渐",
+       "突然",
+       "马上"
+      ],
+      "goiY": "Quen DẦN DẦN sau nửa năm.",
+      "giai": "Sự thay đổi từ từ theo thời gian → 逐渐. 突然 / 马上 chỉ việc xảy ra tức thì."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "听到这个好消息，他",
+       "跳了起来。"
+      ],
+      "dap": [
+       [
+        "一下子",
+        "马上",
+        "立刻"
+       ]
+      ],
+      "chon": [
+       "一下子",
+       "逐渐",
+       "始终"
+      ],
+      "goiY": "Phản ứng TỨC THÌ khi nghe tin vui.",
+      "giai": "逐渐 chỉ thay đổi từ từ; phản ứng ngay lập tức dùng 一下子 / 马上."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经过艰苦的试验，电影拍摄技术",
+       "改进、成熟。"
+      ],
+      "dap": [
+       [
+        "逐渐"
+       ]
+      ],
+      "chon": [
+       "逐渐",
+       "始终",
+       "或许"
+      ],
+      "goiY": "Câu của bài khoá: kỹ thuật được cải tiến DẦN DẦN.",
+      "giai": "逐渐 + 改进: quá trình tiến bộ từng bước."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "进入十一月以后，天气",
+       "冷起来了。"
+      ],
+      "dap": [
+       [
+        "逐渐"
+       ]
+      ],
+      "chon": [
+       "逐渐",
+       "毕竟",
+       "或许"
+      ],
+      "goiY": "Trời lạnh dần theo thời gian.",
+      "giai": "逐渐 + tính từ + 起来: bắt đầu và tăng dần."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "食物越来越少，老人不得不",
+       "限制猴子的食量。"
+      ],
+      "dap": [
+       [
+        "逐渐"
+       ]
+      ],
+      "chon": [
+       "逐渐",
+       "突然",
+       "毕竟"
+      ],
+      "goiY": "Ôn câu chuyện 朝三暮四 (bài 8): hạn chế khẩu phần từng chút một.",
+      "giai": "越来越 (HSK 3) + 逐渐: cùng chỉ sự thay đổi theo thời gian."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这项运动首先在亚太地区流行，并",
+       "受到世界各地人们的欢迎。"
+      ],
+      "dap": [
+       [
+        "逐渐"
+       ]
+      ],
+      "chon": [
+       "逐渐",
+       "立刻",
+       "或许"
+      ],
+      "goiY": "Được yêu thích lan DẦN ra thế giới.",
+      "giai": "并 + 逐渐 + V: tiếp nối và tăng dần."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "逐渐",
+       "明白了",
+       "他的想法",
+       "听了他的解释以后"
+      ],
+      "dap": [
+       "听了他的解释以后，我逐渐明白了他的想法。",
+       "我听了他的解释以后，逐渐明白了他的想法。"
+      ],
+      "goiY": "Nghe anh ấy giải thích xong, tôi dần dần hiểu ra suy nghĩ của anh ấy.",
+      "giai": "Trạng ngữ thời gian đầu câu → chủ ngữ → 逐渐 → động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "城市和农村的",
+       "差距",
+       "正在",
+       "逐渐",
+       "缩小"
+      ],
+      "dap": [
+       "城市和农村的差距正在逐渐缩小。"
+      ],
+      "goiY": "Khoảng cách giữa thành thị và nông thôn đang dần thu hẹp.",
+      "giai": "正在 + 逐渐 + V: đang dần dần…; 缩小差距 là cụm của bài."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "越来越多的人",
+       "逐渐",
+       "意识到了",
+       "环保的重要性"
+      ],
+      "dap": [
+       "越来越多的人逐渐意识到了环保的重要性。"
+      ],
+      "goiY": "Ngày càng nhiều người dần dần nhận ra tầm quan trọng của bảo vệ môi trường.",
+      "giai": "逐渐 đứng trước 意识到 (từ mới của bài)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "逐渐天气暖和起来了。",
+      "dung": false,
+      "sua": "天气逐渐暖和起来了。",
+      "giai": "逐渐 là phó từ, phải đứng sau chủ ngữ 天气."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "来越南以后，他的越南语水平逐渐提高了。",
+      "dung": true,
+      "giai": "Trình độ nâng lên từng chút theo thời gian → 逐渐 + 提高 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "一听到下课铃声，学生们就逐渐跑出了教室。",
+      "dung": false,
+      "sua": "一听到下课铃声，学生们就跑出了教室。",
+      "giai": "一……就…… là phản ứng tức thì, mâu thuẫn với 逐渐 (từ từ)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trời dần dần tối lại.",
+      "dap": [
+       "天逐渐黑了。",
+       "天逐渐黑了下来。",
+       "天色逐渐暗了下来。",
+       "天逐渐黑下来了。"
+      ],
+      "py": "Tiān zhújiàn hēi le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 逐渐.",
+      "giai": "Chủ ngữ 天 + 逐渐 + 黑了."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Sau khi lên cấp ba, tôi dần dần thích tiếng Trung.",
+      "dap": [
+       "上高中以后，我逐渐喜欢上了汉语。",
+       "上高中以后，我逐渐喜欢上了中文。",
+       "上了高中以后，我逐渐喜欢上了汉语。",
+       "上高中以后，我逐渐喜欢汉语了。"
+      ],
+      "py": "Shàng gāozhōng yǐhòu, wǒ zhújiàn xǐhuan shangle Hànyǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 逐渐.",
+      "giai": "逐渐 đứng sau chủ ngữ 我; 喜欢上 = bắt đầu thích."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：刚来北京的时候，你习惯吗？　B：＿＿＿。",
+      "goiY": "lúc đầu chưa quen, về sau dần dần quen (dùng 逐渐)",
+      "mau": "刚来的时候不太习惯，后来就逐渐习惯了。",
+      "can": [
+       [
+        "逐渐"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "茶首先在中国出现，＿＿＿。",
+      "goiY": "sau đó dần dần truyền ra khắp thế giới (dùng 逐渐)",
+      "mau": "茶首先在中国出现，后来逐渐传到了世界各地。",
+      "can": [
+       [
+        "逐渐"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「逐渐」 (một thay đổi từ từ của em: thói quen, sở thích, trình độ…)",
+      "mau": "上高中以后，我逐渐喜欢上了跑步。",
+      "can": [
+       [
+        "逐渐"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「或许」",
+  "tenVn": "",
+  "cauTruc": [
+   "(Chủ ngữ) + 或许 + (会 / 能 / 是) + V",
+   "或许 + cả câu"
+  ],
+  "giaiThich": "或许 là phó từ, nghĩa là \"có lẽ, có thể\" (= 也许, 可能), biểu thị phỏng đoán, không chắc chắn; hơi thiên về văn viết. Đứng sau chủ ngữ hoặc ở đầu câu, hay đi với 会, 能, 是, 就. Đừng nhầm với 或者 (liên từ \"hoặc\" — nối hai lựa chọn).",
+  "viDu": [
+   {
+    "zh": "虽然以前她不支持你，但或许这次会有变化。",
+    "py": "Suīrán yǐqián tā bù zhīchí nǐ, dàn huòxǔ zhè cì huì yǒu biànhuà.",
+    "vn": "Tuy trước đây cô ấy không ủng hộ cậu, nhưng có lẽ lần này sẽ khác."
+   },
+   {
+    "zh": "或许正是因为这一点一滴的努力，你就会走在别人的前面。",
+    "py": "Huòxǔ zhèng shì yīnwèi zhè yìdiǎn-yìdī de nǔlì, nǐ jiù huì zǒu zài biérén de qiánmiàn.",
+    "vn": "Có lẽ chính nhờ những nỗ lực từng chút một ấy mà bạn sẽ đi trước người khác."
+   },
+   {
+    "zh": "留心生活的每一瞬间，并为之争论，适时请求帮助、认真研究，或许重大发现就在你的眼前。",
+    "py": "Liúxīn shēnghuó de měi yí shùnjiān, bìng wèi zhī zhēnglùn, shìshí qǐngqiú bāngzhù, rènzhēn yánjiū, huòxǔ zhòngdà fāxiàn jiù zài nǐ de yǎnqián.",
+    "vn": "Để ý từng khoảnh khắc của cuộc sống và tranh luận về nó, nhờ giúp đỡ đúng lúc, nghiên cứu nghiêm túc — có lẽ phát hiện trọng đại đang ở ngay trước mắt bạn."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你喝茶或许喝咖啡？",
+    "why": "Hỏi chọn một trong hai phải dùng 还是 (câu trần thuật dùng 或者); 或许 chỉ có nghĩa \"có lẽ\".",
+    "dung": "你喝茶还是喝咖啡？"
+   },
+   {
+    "sai": "明天或许一定会下雨。",
+    "why": "或许 (có lẽ, không chắc) mâu thuẫn với 一定 (chắc chắn), không dùng cùng nhau.",
+    "dung": "明天或许会下雨。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然以前她不支持你，但",
+       "这次会有变化。"
+      ],
+      "dap": [
+       [
+        "或许",
+        "也许"
+       ]
+      ],
+      "chon": [
+       "或许",
+       "或者",
+       "还是"
+      ],
+      "goiY": "Phỏng đoán: \"có lẽ lần này sẽ khác\".",
+      "giai": "或许 = có lẽ. 或者 nối hai lựa chọn; 还是 dùng trong câu hỏi lựa chọn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "吃中餐",
+       "西餐都可以，只是我不能吃太辣的。"
+      ],
+      "dap": [
+       [
+        "或者"
+       ]
+      ],
+      "chon": [
+       "或者",
+       "或许",
+       "还是"
+      ],
+      "goiY": "Nối HAI LỰA CHỌN trong câu trần thuật.",
+      "giai": "A或者B都可以 → 或者. 或许 chỉ là \"có lẽ\" (câu 2.4 phần 练习 SGK)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他今天没来上课，",
+       "是生病了。"
+      ],
+      "dap": [
+       [
+        "或许",
+        "也许",
+        "可能"
+       ]
+      ],
+      "chon": [
+       "或许",
+       "或者",
+       "毕竟"
+      ],
+      "goiY": "Đoán lý do bạn nghỉ học.",
+      "giai": "或许 + 是 + lý do phỏng đoán."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你想喝茶",
+       "喝咖啡？"
+      ],
+      "dap": [
+       [
+        "还是"
+       ]
+      ],
+      "chon": [
+       "还是",
+       "或许",
+       "或者"
+      ],
+      "goiY": "Câu HỎI chọn một trong hai.",
+      "giai": "Câu hỏi lựa chọn dùng 还是; 或者 dùng trong câu trần thuật; 或许 không nối hai lựa chọn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只要坚持下去，",
+       "就能创造奇迹。"
+      ],
+      "dap": [
+       [
+        "或许",
+        "也许"
+       ]
+      ],
+      "chon": [
+       "或许",
+       "逐渐",
+       "或者"
+      ],
+      "goiY": "\"Chỉ cần kiên trì, có lẽ sẽ tạo nên kỳ tích.\"",
+      "giai": "或许 + 就能 + V; ôn 只要……就……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "留心生活的每一瞬间，",
+       "重大发现就在你的眼前。"
+      ],
+      "dap": [
+       [
+        "或许",
+        "也许"
+       ]
+      ],
+      "chon": [
+       "或许",
+       "始终",
+       "或者"
+      ],
+      "goiY": "Câu cuối bài khoá.",
+      "giai": "或许 đặt đầu vế câu, phỏng đoán nhẹ nhàng."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "或许",
+       "这次",
+       "她",
+       "会同意"
+      ],
+      "dap": [
+       "或许这次她会同意。",
+       "这次她或许会同意。",
+       "她这次或许会同意。",
+       "或许她这次会同意。"
+      ],
+      "goiY": "Có lẽ lần này cô ấy sẽ đồng ý.",
+      "giai": "或许 đứng đầu câu hoặc sau chủ ngữ, trước 会."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你再试一次",
+       "就",
+       "成功了",
+       "或许"
+      ],
+      "dap": [
+       "你再试一次或许就成功了。",
+       "或许你再试一次就成功了。"
+      ],
+      "goiY": "Có lẽ cậu thử thêm một lần nữa là thành công.",
+      "giai": "或许 đứng trước 就, hoặc đầu câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "没回我的短信",
+       "或许是",
+       "太忙了"
+      ],
+      "dap": [
+       "他没回我的短信，或许是太忙了。"
+      ],
+      "goiY": "Anh ấy không trả lời tin nhắn của tôi, có lẽ là bận quá.",
+      "giai": "或许是 + lý do phỏng đoán, đặt ở vế sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "明天或许会下雨，你带把伞吧。",
+      "dung": true,
+      "giai": "或许 + 会 + V: phỏng đoán — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你周末去看电影或许去逛街？",
+      "dung": false,
+      "sua": "你周末去看电影还是去逛街？",
+      "giai": "Câu hỏi lựa chọn phải dùng 还是, không dùng 或许."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他或许一定会来的。",
+      "dung": false,
+      "sua": "他或许会来的。",
+      "giai": "或许 (không chắc) mâu thuẫn với 一定 (chắc chắn)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Có lẽ cậu ấy quên rồi.",
+      "dap": [
+       "他或许忘了。",
+       "或许他忘了。",
+       "他或许已经忘了。",
+       "或许他已经忘了。"
+      ],
+      "py": "Tā huòxǔ wàng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 或许.",
+      "giai": "或许 đứng sau chủ ngữ hoặc đầu câu."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nếu cậu nhờ thầy giúp, có lẽ vấn đề sẽ được giải quyết nhanh hơn.",
+      "dap": [
+       "如果你请求老师帮助，问题或许会解决得更快。",
+       "如果你请老师帮忙，问题或许会解决得更快。",
+       "如果你请求老师的帮助，问题或许能更快地解决。",
+       "要是你请老师帮忙，或许问题能更快地解决。"
+      ],
+      "py": "Rúguǒ nǐ qǐngqiú lǎoshī bāngzhù, wèntí huòxǔ huì jiějué de gèng kuài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 或许 (có thể dùng thêm 请求).",
+      "giai": "如果……，或许会……: giả thiết + phỏng đoán kết quả."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他的妻子前几年瘫痪了，＿＿＿。",
+      "goiY": "đoán rằng có lẽ bây giờ cô ấy đã khoẻ lại (dùng 或许) — ôn 瘫痪 bài 1",
+      "mau": "他的妻子前几年瘫痪了，现在或许已经能站起来了。",
+      "can": [
+       [
+        "或许"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你猜这场比赛的结果会怎么样？　B：＿＿＿。",
+      "goiY": "phỏng đoán kết quả, không khẳng định chắc chắn (dùng 或许)",
+      "mau": "两个队水平差不多，或许会打平吧。",
+      "can": [
+       [
+        "或许"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「或许」 (phỏng đoán một việc về học tập hoặc tương lai của em)",
+      "mau": "如果我每天坚持练习口语，或许明年就能通过HSK五级考试。",
+      "can": [
+       [
+        "或许"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

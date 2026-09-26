@@ -297,3 +297,46 @@ svg { flex-shrink: 0; }
 }
 .t3-dongho.is-dem { background: transparent; color: #cfc6b8; font-size: 1rem; }
 .t3-dongho.is-dem svg { color: #cfc6b8; }
+
+/* ---------- Dang cau HSK 2–4: doan van, anh de, viet chu, dat cau, viet doan ---------- */
+.t3-doan { margin: 0 0 14px; padding: 14px 16px; border-left: 4px solid #e0a59f; border-radius: 0 12px 12px 0; background: var(--t3-gold-l); max-height: 46vh; overflow-y: auto; }
+.t3-doan .t3-zp .t3-zh { font-size: 1.15rem; line-height: 1.9; }
+.t3-doan-nhan { display: block; margin-bottom: 6px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--t3-py); }
+.t3-de-anh { display: block; max-width: min(360px, 100%); max-height: 260px; margin: 0 0 14px; border-radius: 10px; object-fit: contain; background: #fff; }
+.t3-de-anh.is-o-chu { max-width: 220px; }
+.t3-bothu-py { margin: 0 0 12px; color: var(--t3-muted); }
+.t3-bothu-py b { color: var(--t3-py); font-size: 1.1rem; }
+.t3-tu { margin: 0 0 12px; font-size: 1rem; }
+.t3-tu b { display: inline-block; padding: 2px 12px; border-radius: 8px; background: var(--t3-red-l); color: var(--t3-red-d); font-size: 1.35rem; }
+.t3-chung-anh { display: block; max-width: 100%; margin: 0 0 10px; }
+.t3-chon-dai { grid-template-columns: 1fr; }
+.t3-chon-dai .t3-op .t3-zh { font-size: 1.1rem; }
+.t3-de-vietchu { line-height: 2.6; }
+.t3-de-vietchu .t3-zh { font-size: 1.4rem; }
+.t3-py-cau { display: block; margin-bottom: 2px; font-size: 0.9rem; }
+.t3-o-trong { position: relative; display: inline-block; }
+.t3-py-luon { position: absolute; left: 50%; top: -1.35em; transform: translateX(-50%); white-space: nowrap; font-family: var(--t3-vn); font-size: 0.95rem; font-weight: 700; color: var(--t3-red-d); line-height: 1; }
+.t3-nhap-nhan { display: block; margin: 4px 0 6px; font-size: 0.88rem; font-weight: 700; color: var(--t3-muted); }
+.t3-nhap { width: 100%; padding: 12px 14px; border: 2px solid var(--t3-line); border-radius: 12px; background: #fff; font-family: var(--t3-zh-f), var(--t3-vn); font-size: 1.3rem; color: var(--t3-ink); }
+.t3-nhap:focus { outline: none; border-color: var(--t3-red); box-shadow: 0 0 0 3px var(--t3-red-l); }
+.t3-nhap:disabled { background: var(--t3-bg); }
+.t3-nhap-chu { width: 110px; text-align: center; font-size: 1.8rem; }
+.t3-nhap-van { resize: vertical; line-height: 1.7; font-size: 1.15rem; }
+.t3-dem-chu { margin: 4px 0 0; font-size: 0.82rem; color: var(--t3-muted); text-align: right; font-variant-numeric: tabular-nums; }
+.t3-hang-kiem { margin-top: 12px; }
+.t3-giai.is-mau { border-color: #f0d9a8; background: var(--t3-gold-l); }
+.t3-giai.is-mau .t3-giai-kq { color: var(--t3-py); }
+.t3-giai-kq small { display: block; font-weight: 500; font-size: 0.8rem; color: var(--t3-muted); }
+.t3-ai-kq { margin: 8px 0 10px; }
+.t3-ai-diem { margin: 0 0 6px; font-weight: 700; }
+.t3-ai-diem b { color: var(--t3-red-d); font-size: 1.15rem; }
+.t3-ai-loi { margin: 0 0 6px; padding-left: 20px; font-size: 0.92rem; }
+.t3-ai-loi s { color: var(--t3-red-d); }
+.t3-ai-sua, .t3-ai-nx { margin: 0 0 4px; font-size: 0.95rem; }
+.t3-ai-loi-mang { margin: 0; font-size: 0.88rem; color: var(--t3-muted); }
+.t3-kq-phan-3 { grid-template-columns: repeat(3, 1fr); }
+.t3-xem .t3-de-anh { max-height: 160px; }
+@media (max-width: 900px) {
+  .t3-kq-phan-3 { grid-template-columns: 1fr; }
+  .t3-doan { max-height: 38vh; }
+}

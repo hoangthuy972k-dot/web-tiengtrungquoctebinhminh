@@ -7998,3 +7998,918 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-7.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-9.html"] = [
+ {
+  "so": "1",
+  "ten": "「算」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 算(是) + B",
+   "……算了(吧)",
+   "A + 算得上 / 算不上 + B"
+  ],
+  "giaiThich": "算 là động từ, nghĩa “认作，当作” — coi là, xem như là: A 算(是) B. Sau 算 có thể thêm 了 (算了) để biểu thị thôi, bỏ qua, không so đo nữa. Dạng bổ ngữ: 算得上 / 算不上 — đáng / không đáng được coi là.",
+  "viDu": [
+   {
+    "zh": "例如著名的文学家鲁迅，在吃喝这件事上，就算是个地道的行家。",
+    "py": "Lìrú zhùmíng de wénxuéjiā Lǔ Xùn, zài chīhē zhè jiàn shì shang, jiù suàn shì ge dìdao de hángjia.",
+    "vn": "Ví dụ như nhà văn nổi tiếng Lỗ Tấn, trong chuyện ăn uống cũng được coi là một người sành sỏi thực thụ."
+   },
+   {
+    "zh": "这钱就算我借给你的，将来你有了的时候再还我。",
+    "py": "Zhè qián jiù suàn wǒ jiè gěi nǐ de, jiānglái nǐ yǒule de shíhou zài huán wǒ.",
+    "vn": "Tiền này coi như tớ cho cậu mượn, sau này khi nào có thì trả tớ."
+   },
+   {
+    "zh": "不就是一个空瓶子吗？扔掉算了。",
+    "py": "Bú jiù shì yí ge kōng píngzi ma? Rēngdiào suàn le.",
+    "vn": "Chẳng phải chỉ là một cái chai rỗng thôi sao? Vứt đi cho xong."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "广和居不算上豪华。",
+    "why": "dạng bổ ngữ phải là 算不上 — 不 chen vào giữa 算 và 上.",
+    "dung": "广和居算不上豪华。"
+   },
+   {
+    "sai": "不就是一个空瓶子吗？扔掉算。",
+    "why": "nghĩa “thôi, bỏ đi cho xong” phải có 了: 算了.",
+    "dung": "不就是一个空瓶子吗？扔掉算了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这里的菜",
+       "不上高档，但样样都让人有胃口。"
+      ],
+      "dap": [
+       [
+        "算"
+       ]
+      ],
+      "chon": [
+       "算",
+       "看",
+       "找"
+      ],
+      "goiY": "“Món ở đây không thể coi là cao cấp, nhưng món nào cũng khiến người ta thèm ăn.”",
+      "giai": "算不上 + tính từ: không đáng được coi là …. 看不上 là “coi thường” — không hợp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这本书就",
+       "我送给你的生日礼物吧。"
+      ],
+      "dap": [
+       [
+        "算"
+       ]
+      ],
+      "chon": [
+       "算",
+       "把",
+       "让"
+      ],
+      "goiY": "“Cuốn sách này coi như là quà sinh nhật tớ tặng cậu nhé.”",
+      "giai": "就算……的 = cứ coi như là …, đúng như câu 这钱就算我借给你的 của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他不想去就",
+       "了，我们自己去。"
+      ],
+      "dap": [
+       [
+        "算"
+       ]
+      ],
+      "chon": [
+       "算",
+       "对",
+       "完"
+      ],
+      "goiY": "“Cậu ấy không muốn đi thì thôi, chúng ta tự đi.”",
+      "giai": "算了 = thôi, bỏ qua, không so đo nữa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在我们班，他的汉语",
+       "得上最好的。"
+      ],
+      "dap": [
+       [
+        "算"
+       ]
+      ],
+      "chon": [
+       "算",
+       "讲",
+       "听"
+      ],
+      "goiY": "“Trong lớp mình, tiếng Trung của cậu ấy đáng được coi là giỏi nhất.”",
+      "giai": "算得上 = đáng được coi là."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次考试考了85分，也",
+       "是不错的成绩了。"
+      ],
+      "dap": [
+       [
+        "算"
+       ]
+      ],
+      "chon": [
+       "算",
+       "被",
+       "给"
+      ],
+      "goiY": "“Kỳ thi này được 85 điểm, cũng coi là thành tích không tệ rồi.”",
+      "giai": "算是 + đánh giá: tạm coi là …; ôn lại 了 cuối câu chỉ sự thay đổi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "别生气了，这件事就这么",
+       "了吧。"
+      ],
+      "dap": [
+       [
+        "算"
+       ]
+      ],
+      "chon": [
+       "算",
+       "多",
+       "对"
+      ],
+      "goiY": "“Đừng giận nữa, chuyện này thôi bỏ qua đi.”",
+      "giai": "就这么算了吧 = thôi cứ thế cho qua."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这钱",
+       "就算",
+       "我",
+       "借给你的"
+      ],
+      "dap": [
+       "这钱就算我借给你的。"
+      ],
+      "goiY": "Tiền này coi như tớ cho cậu mượn.",
+      "giai": "就算 đứng trước cả mệnh đề 我借给你的 (khung ……的)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "广和居",
+       "算不上",
+       "豪华",
+       "但很热闹"
+      ],
+      "dap": [
+       "广和居算不上豪华，但很热闹。"
+      ],
+      "goiY": "Quảng Hòa Cư không thể coi là sang trọng, nhưng rất náo nhiệt.",
+      "giai": "A + 算不上 + B, vế sau 但 lật lại."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "在吃喝方面",
+       "他",
+       "算得上",
+       "是个行家"
+      ],
+      "dap": [
+       "在吃喝方面他算得上是个行家。",
+       "他在吃喝方面算得上是个行家。"
+      ],
+      "goiY": "Về mặt ăn uống, ông ấy đáng được coi là người sành sỏi.",
+      "giai": "算得上 + (是) + N: đáng được coi là …."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这家店不算上豪华，但菜很地道。",
+      "dung": false,
+      "sua": "这家店算不上豪华，但菜很地道。",
+      "giai": "Bổ ngữ khả năng phải là 算不上 — 不 đứng giữa 算 và 上."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "算了吧，你跑得再快，也追不上会飞的鸟啊。",
+      "dung": true,
+      "giai": "算了吧 đứng đầu câu khuyên người khác thôi, bỏ đi — đúng (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不就是一个空瓶子吗？扔掉算。",
+      "dung": false,
+      "sua": "不就是一个空瓶子吗？扔掉算了。",
+      "giai": "Nghĩa “thôi, bỏ đi cho xong” phải có 了: 扔掉算了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nhà hàng này không thể coi là sang trọng, nhưng rất hợp để bạn bè tụ họp.",
+      "dap": [
+       "这家餐馆算不上豪华，但很适合朋友聚会。",
+       "这家餐馆算不上豪华，但是很适合朋友聚会。",
+       "这家饭馆算不上豪华，但很适合朋友聚会。"
+      ],
+      "py": "Zhè jiā cānguǎn suàn bu shàng háohuá, dàn hěn shìhé péngyou jùhuì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 算不上.",
+      "giai": "A 算不上 B: A không đáng gọi là B; “hợp để …” = 适合."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Thôi bỏ đi, đừng buồn nữa.",
+      "dap": [
+       "算了吧，别难过了。",
+       "算了，别难过了。",
+       "算了吧，不要难过了。"
+      ],
+      "py": "Suàn le ba, bié nánguò le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 算了.",
+      "giai": "算了(吧) đứng đầu câu để khuyên người khác bỏ qua."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：后天是孩子的生日，你打算怎么表示一下呀？ B：＿＿＿。",
+      "goiY": "tặng con một món đồ, “coi như” quà sinh nhật (dùng 算)",
+      "mau": "我给他买一本书，就算是生日礼物吧。",
+      "can": [
+       [
+        "算"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：电影几点开始？吃好饭再去，时间是不是有点儿紧张啊？ B：＿＿＿。",
+      "goiY": "đề nghị thôi không ăn trước nữa (dùng 算了)",
+      "mau": "那就算了，我们看完电影再吃饭吧。",
+      "can": [
+       [
+        "算了"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「算」 (算是 / 算了 / 算不上), nói về em, bạn bè hoặc một quán ăn em hay đến",
+      "mau": "学校门口的小饭馆算不上豪华，但菜很地道。",
+      "can": [
+       [
+        "算"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「作为」",
+  "tenVn": "",
+  "cauTruc": [
+   "把 A + 作为 + B",
+   "作为 + thân phận / tính chất，Chủ ngữ + ……"
+  ],
+  "giaiThich": "作为 làm động từ nghĩa “看作，认为是……” — coi là, lấy làm: 把 A 作为 B. Làm giới từ, 作为 dẫn ra THÂN PHẬN của người hoặc TÍNH CHẤT của sự vật, thường đứng đầu câu; chủ ngữ của vế sau phải chính là người/vật mang thân phận đó.",
+  "viDu": [
+   {
+    "zh": "北海公园离家最近，所以我把那儿作为每晚散步的去处。",
+    "py": "Běihǎi Gōngyuán lí jiā zuì jìn, suǒyǐ wǒ bǎ nàr zuòwéi měi wǎn sànbù de qùchù.",
+    "vn": "Công viên Bắc Hải gần nhà nhất, nên tôi lấy đó làm nơi đi dạo mỗi tối."
+   },
+   {
+    "zh": "经理要请我去吃顿饭，说是作为我加班的表扬。",
+    "py": "Jīnglǐ yào qǐng wǒ qù chī dùn fàn, shuō shì zuòwéi wǒ jiābān de biǎoyáng.",
+    "vn": "Giám đốc muốn mời tôi đi ăn một bữa, nói là để khen việc tôi làm thêm giờ."
+   },
+   {
+    "zh": "作为大作家、大学问家，鲁迅对吃很讲究，吃的内容在他的日记里占了很大一部分。",
+    "py": "Zuòwéi dà zuòjiā, dà xuéwenjiā, Lǔ Xùn duì chī hěn jiǎngjiu, chī de nèiróng zài tā de rìjì li zhànle hěn dà yí bùfen.",
+    "vn": "Là nhà văn lớn, nhà học giả lớn, Lỗ Tấn rất cầu kỳ chuyện ăn, chuyện ăn uống chiếm một phần rất lớn trong nhật ký của ông."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "作为一个学生，老师要求我们每天复习。",
+    "why": "vế sau phải có chủ ngữ CHÍNH LÀ người mang thân phận “học sinh” (我们), không phải 老师.",
+    "dung": "作为学生，我们应该每天复习。"
+   },
+   {
+    "sai": "作为是一名医生，他工作非常忙。",
+    "why": "作为 đã có nghĩa “với tư cách là”, không thêm 是 phía sau.",
+    "dung": "作为一名医生，他工作非常忙。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我觉得，",
+       "学生，最重要的是学习。"
+      ],
+      "dap": [
+       [
+        "作为"
+       ]
+      ],
+      "chon": [
+       "作为",
+       "成为",
+       "认为"
+      ],
+      "goiY": "“Tôi thấy, là học sinh thì quan trọng nhất là học.”",
+      "giai": "作为 + thân phận: với tư cách là …. 成为 là “trở thành”, 认为 là “cho rằng”."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "北海公园离家最近，所以我把那儿",
+       "每晚散步的去处。"
+      ],
+      "dap": [
+       [
+        "作为"
+       ]
+      ],
+      "chon": [
+       "作为",
+       "成为",
+       "认为"
+      ],
+      "goiY": "“Công viên Bắc Hải gần nhà nhất nên tôi lấy đó làm nơi đi dạo mỗi tối.”",
+      "giai": "把 A 作为 B: lấy A làm B (động từ). Ôn câu 把."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经理请我吃饭，说是",
+       "我加班的表扬。"
+      ],
+      "dap": [
+       [
+        "作为"
+       ]
+      ],
+      "chon": [
+       "作为",
+       "因为",
+       "成为"
+      ],
+      "goiY": "“Giám đốc mời tôi ăn cơm, nói là để khen việc tôi làm thêm giờ.”",
+      "giai": "作为 + N: coi như là …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家要记住：",
+       "医生，治病救人是我们的职责。"
+      ],
+      "dap": [
+       [
+        "作为"
+       ]
+      ],
+      "chon": [
+       "作为",
+       "认为",
+       "以为"
+      ],
+      "goiY": "“Mọi người phải nhớ: là bác sĩ, chữa bệnh cứu người là trách nhiệm của chúng ta.”",
+      "giai": "作为 + thân phận đứng đầu vế; vế sau có 我们 — chính là bác sĩ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我把这本书",
+       "生日礼物送给了妹妹。"
+      ],
+      "dap": [
+       [
+        "作为"
+       ]
+      ],
+      "chon": [
+       "作为",
+       "以为",
+       "因为"
+      ],
+      "goiY": "“Tôi lấy cuốn sách này làm quà sinh nhật tặng em gái.”",
+      "giai": "把 + A + 作为 + B + V: lấy A làm B rồi làm gì."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "西红柿很受欢迎。",
+       "主要生产国之一，中国也在扩大它的种植面积。"
+      ],
+      "dap": [
+       [
+        "作为"
+       ]
+      ],
+      "chon": [
+       "作为",
+       "成为",
+       "认为"
+      ],
+      "goiY": "“Là một trong những nước sản xuất chính, Trung Quốc cũng đang mở rộng diện tích trồng cà chua.”",
+      "giai": "作为 dẫn ra TÍNH CHẤT / thân phận của chủ ngữ 中国 (câu ví dụ của sách)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "作为",
+       "大作家",
+       "鲁迅",
+       "对吃很讲究"
+      ],
+      "dap": [
+       "作为大作家，鲁迅对吃很讲究。",
+       "鲁迅作为大作家，对吃很讲究。"
+      ],
+      "goiY": "Là nhà văn lớn, Lỗ Tấn rất cầu kỳ chuyện ăn.",
+      "giai": "作为 + thân phận đặt đầu câu hoặc ngay sau chủ ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "把那儿",
+       "作为",
+       "散步的去处"
+      ],
+      "dap": [
+       "我把那儿作为散步的去处。"
+      ],
+      "goiY": "Tôi lấy chỗ đó làm nơi đi dạo.",
+      "giai": "Câu 把: chủ ngữ + 把 + A + 作为 + B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "作为",
+       "班长",
+       "我",
+       "应该帮助同学"
+      ],
+      "dap": [
+       "作为班长，我应该帮助同学。",
+       "我作为班长，应该帮助同学。"
+      ],
+      "goiY": "Là lớp trưởng, tôi nên giúp đỡ các bạn.",
+      "giai": "Chủ ngữ 我 chính là 班长."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "作为学生，我们应该认真学习。",
+      "dung": true,
+      "giai": "Chủ ngữ 我们 chính là 学生 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "作为一个学生，老师要求我们每天复习。",
+      "dung": false,
+      "sua": "作为学生，我们应该每天复习。",
+      "giai": "Chủ ngữ vế sau là 老师 — không phải người mang thân phận “học sinh”. Phải đổi chủ ngữ thành 我们."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "作为是一名医生，他工作非常忙。",
+      "dung": false,
+      "sua": "作为一名医生，他工作非常忙。",
+      "giai": "作为 không đi với 是 phía sau."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Là người Việt Nam, tôi rất thích ăn phở.",
+      "dap": [
+       "作为越南人，我很喜欢吃河粉。",
+       "作为一个越南人，我很喜欢吃河粉。",
+       "作为越南人，我非常喜欢吃河粉。"
+      ],
+      "py": "Zuòwéi Yuènánrén, wǒ hěn xǐhuan chī héfěn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 作为 đầu câu.",
+      "giai": "作为 + thân phận，chủ ngữ 我 + …."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi lấy bức tranh này làm quà tặng mẹ.",
+      "dap": [
+       "我把这幅画作为礼物送给妈妈。",
+       "我把这张画作为礼物送给妈妈。",
+       "我把这幅画作为礼物送给了妈妈。"
+      ],
+      "py": "Wǒ bǎ zhè fú huà zuòwéi lǐwù sòng gěi māma.",
+      "goiY": "Dịch sang tiếng Trung, dùng 把……作为…….",
+      "giai": "把 A 作为 B + 送给 + người."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，治病救人是我们的职责。",
+      "goiY": "nêu thân phận “là bác sĩ” ở đầu câu (dùng 作为)",
+      "mau": "作为医生，治病救人是我们的职责。",
+      "can": [
+       [
+        "作为"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你做的面包比外边卖的都好吃，你真应该开个店。 B：我喜欢现在的工作，＿＿＿。",
+      "goiY": "làm bánh chỉ coi như một sở thích (dùng 把……作为……)",
+      "mau": "我喜欢现在的工作，只是把做面包作为一个爱好。",
+      "can": [
+       [
+        "作为"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「作为」 (作为 + thân phận của em: học sinh, con, lớp trưởng…)",
+      "mau": "作为学生，我们不仅要学好功课，而且要锻炼身体。",
+      "can": [
+       [
+        "作为"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「曾经」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 曾经 + Động từ + 过 / 了 (+ Tân ngữ)"
+  ],
+  "giaiThich": "曾经 là phó từ, biểu thị TRƯỚC ĐÂY đã từng có một hành vi nào đó hoặc từng xuất hiện một tình huống nào đó (nay thường đã kết thúc). Sau động từ thường có 过 (đôi khi 了). Phủ định dùng 没(有)……过 hoặc 不曾, không nói 曾经没.",
+  "viDu": [
+   {
+    "zh": "郁达夫在1933年曾经作诗形容他：“醉眼蒙眬上酒楼，彷徨呐喊两悠悠”，描写得十分形象。",
+    "py": "Yù Dáfū zài yī jiǔ sān sān nián céngjīng zuò shī xíngróng tā: “Zuì yǎn ménglóng shàng jiǔlóu, Pánghuáng Nàhǎn liǎng yōuyōu”, miáoxiě de shífēn xíngxiàng.",
+    "vn": "Năm 1933 Úc Đạt Phu từng làm thơ miêu tả ông: “Mắt say lờ đờ lên lầu rượu, ‘Bàng hoàng’, ‘Gào thét’ hai điều thong dong”, miêu tả vô cùng sinh động."
+   },
+   {
+    "zh": "鲁迅曾经说他是将别人喝牛奶、咖啡的时间用来学习。",
+    "py": "Lǔ Xùn céngjīng shuō tā shì jiāng biérén hē niúnǎi, kāfēi de shíjiān yònglái xuéxí.",
+    "vn": "Lỗ Tấn từng nói ông đem thời gian người khác uống sữa, uống cà phê ra để học."
+   },
+   {
+    "zh": "孔子曾经带着学生周游各国14年，传播他的思想。",
+    "py": "Kǒngzǐ céngjīng dàizhe xuésheng zhōuyóu gè guó shísì nián, chuánbō tā de sīxiǎng.",
+    "vn": "Khổng Tử từng dẫn học trò chu du các nước 14 năm, truyền bá tư tưởng của mình."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我曾经没去过北京。",
+    "why": "曾经 không đi với phủ định 没; muốn phủ định thì bỏ 曾经 hoặc dùng 不曾.",
+    "dung": "我没去过北京。/ 我不曾去过北京。"
+   },
+   {
+    "sai": "快走吧，电影曾经开始了！",
+    "why": "việc vừa xảy ra, trạng thái còn kéo dài đến hiện tại phải dùng 已经; 曾经 chỉ chuyện đã qua.",
+    "dung": "快走吧，电影已经开始了！"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "郁达夫在1933年",
+       "作诗形容鲁迅。"
+      ],
+      "dap": [
+       [
+        "曾经"
+       ]
+      ],
+      "chon": [
+       "曾经",
+       "已经",
+       "正在"
+      ],
+      "goiY": "“Năm 1933 Úc Đạt Phu từng làm thơ miêu tả Lỗ Tấn.”",
+      "giai": "Chuyện trong quá khứ xa → 曾经."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我",
+       "在北京学过一年汉语，所以说得比较地道。"
+      ],
+      "dap": [
+       [
+        "曾经"
+       ]
+      ],
+      "chon": [
+       "曾经",
+       "正在",
+       "马上"
+      ],
+      "goiY": "“Tôi từng học tiếng Trung ở Bắc Kinh một năm, nên nói khá chuẩn.”",
+      "giai": "曾经 + V + 过: đã từng. Ôn 因为……所以……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "人们",
+       "把西红柿当做有害的果子。"
+      ],
+      "dap": [
+       [
+        "曾经"
+       ]
+      ],
+      "chon": [
+       "曾经",
+       "已经",
+       "刚才"
+      ],
+      "goiY": "“Người ta từng coi cà chua là loại quả có hại.”",
+      "giai": "Nay không còn nghĩ vậy → 曾经 chứ không phải 已经."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们以前",
+       "是同事，所以很熟。"
+      ],
+      "dap": [
+       [
+        "曾经"
+       ]
+      ],
+      "chon": [
+       "曾经",
+       "已经",
+       "正在"
+      ],
+      "goiY": "“Trước đây chúng tôi từng là đồng nghiệp nên rất thân.”",
+      "giai": "Quan hệ trong quá khứ, nay đã khác → 曾经."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "戒过烟，可现在又抽上了。"
+      ],
+      "dap": [
+       [
+        "曾经"
+       ]
+      ],
+      "chon": [
+       "曾经",
+       "正在",
+       "终于"
+      ],
+      "goiY": "“Anh ấy từng bỏ thuốc, nhưng bây giờ lại hút rồi.”",
+      "giai": "曾经 + V + 过, vế sau cho thấy việc đó đã không còn nữa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "孔子",
+       "带着学生周游各国14年。"
+      ],
+      "dap": [
+       [
+        "曾经"
+       ]
+      ],
+      "chon": [
+       "曾经",
+       "正在",
+       "将要"
+      ],
+      "goiY": "“Khổng Tử từng dẫn học trò chu du các nước 14 năm.”",
+      "giai": "Sự kiện lịch sử đã qua → 曾经."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "郁达夫",
+       "曾经",
+       "作诗",
+       "形容他"
+      ],
+      "dap": [
+       "郁达夫曾经作诗形容他。"
+      ],
+      "goiY": "Úc Đạt Phu từng làm thơ miêu tả ông.",
+      "giai": "Chủ ngữ + 曾经 + V (作诗) + V (形容他)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "曾经",
+       "在一个班",
+       "学习过"
+      ],
+      "dap": [
+       "我们曾经在一个班学习过。",
+       "我们在一个班曾经学习过。"
+      ],
+      "goiY": "Chúng tôi từng học cùng một lớp.",
+      "giai": "曾经 thường đứng trước cụm giới từ 在……; V + 过."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这位作家",
+       "曾经",
+       "住过",
+       "这条胡同"
+      ],
+      "dap": [
+       "这位作家曾经住过这条胡同。"
+      ],
+      "goiY": "Nhà văn này từng sống ở con ngõ này.",
+      "giai": "Chủ ngữ + 曾经 + V + 过 + O."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我曾经没去过上海。",
+      "dung": false,
+      "sua": "我没去过上海。",
+      "giai": "曾经 không đi với phủ định 没."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他曾经在日本学过医。",
+      "dung": true,
+      "giai": "曾经 + 在 + nơi chốn + V + 过 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "快走吧，电影曾经开始了！",
+      "dung": false,
+      "sua": "快走吧，电影已经开始了！",
+      "giai": "Việc vừa xảy ra, còn kéo dài đến hiện tại → 已经, không dùng 曾经."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi từng học tiếng Trung ở Bắc Kinh một năm.",
+      "dap": [
+       "我曾经在北京学过一年汉语。",
+       "我曾经在北京学习过一年汉语。",
+       "我曾经在北京学了一年汉语。"
+      ],
+      "py": "Wǒ céngjīng zài Běijīng xuéguo yì nián Hànyǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 曾经.",
+      "giai": "曾经 + 在 + nơi chốn + V + 过 + thời lượng + O."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Lỗ Tấn từng học y ở Nhật Bản.",
+      "dap": [
+       "鲁迅曾经在日本学过医。",
+       "鲁迅曾经在日本学习过医学。",
+       "鲁迅曾经在日本学医。"
+      ],
+      "py": "Lǔ Xùn céngjīng zài Rìběn xuéguo yī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 曾经.",
+      "giai": "曾经 đứng sau chủ ngữ, trước cụm 在日本."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你和李阳好像很熟啊，你们以前就认识？ B：对，＿＿＿。",
+      "goiY": "kể rằng trước đây hai người từng làm việc cùng một công ty (dùng 曾经)",
+      "mau": "对，我们曾经在一个公司工作过。",
+      "can": [
+       [
+        "曾经"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你来北京才半年，汉语怎么说得这么好？ B：哦，是这样的，＿＿＿。",
+      "goiY": "giải thích rằng trước đây em từng học tiếng Trung ở Việt Nam (dùng 曾经)",
+      "mau": "哦，是这样的，我曾经在越南学过三年汉语。",
+      "can": [
+       [
+        "曾经"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「曾经」, kể một việc em hoặc người thân từng làm",
+      "mau": "我爸爸曾经在上海工作过两年。",
+      "can": [
+       [
+        "曾经"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

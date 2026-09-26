@@ -1443,6 +1443,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 4,
         fullPageUrl: '/lessons/hsk5-bai-7.html'
+      },
+      {
+        id: 'hsk5-l9',
+        number: 9,
+        title: 'Một Lỗ Tấn khác',
+        titleHanzi: '别样鲁迅',
+        titlePinyin: 'Biéyàng Lǔ Xùn',
+        topic: 'Unit 3 倾听故事 · Người nổi tiếng & văn hoá ẩm thực',
+        vocabCount: 46,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-9.html'
       }
     ],
     yct: [

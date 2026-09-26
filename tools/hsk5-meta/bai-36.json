@@ -1,0 +1,112 @@
+{
+ "zh": "老舍与养花",
+ "py": "Lǎo Shě yǔ yǎng huā",
+ "vn": "Lão Xá và hoa",
+ "topic": "Unit 12 亲近自然 · Gần gũi thiên nhiên — nhà văn Lão Xá và thú trồng hoa",
+ "vocabCount": 38,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "除非",
+   "explain": "除非 là liên từ, nêu ĐIỀU KIỆN DUY NHẤT, tương đương 只有; phía sau thường có 否则 / 不然 (nếu không thì) hoặc 才 (mới) phối hợp. 除非 còn là giới từ, nghĩa \"không tính, ngoại trừ\", tương đương 除了: 这种机器，除非李阳，没人修得好. BẪY: 除非 KHÔNG đi với 就 như 只要 (✗ 除非……就……), và không thay được 除了 trong mẫu 除了……还 / 都…….",
+   "rule": "<strong style=\"color:var(--sky-d)\">除非</strong> + điều kiện，<strong style=\"color:var(--sky-d)\">否则</strong> / <strong style=\"color:var(--sky-d)\">不然</strong> + kết quả　|　<strong style=\"color:var(--sky-d)\">除非</strong> + điều kiện，Sub + <strong style=\"color:var(--sky-d)\">才</strong> + V　|　<strong style=\"color:var(--sky-d)\">除非</strong> + N，没人 / 谁都不…… (ngoại trừ)",
+   "examples": [
+    {
+     "zh": "可除非是那些好种易活、自己会奋斗的花草，否则他是不养的。",
+     "py": "Kě chúfēi shì nàxiē hǎo zhòng yì huó, zìjǐ huì fèndòu de huācǎo, fǒuzé tā shì bù yǎng de.",
+     "vn": "Nhưng trừ phi là những loài hoa cỏ dễ trồng dễ sống, tự biết \"phấn đấu\", còn không thì ông không trồng."
+    },
+    {
+     "zh": "除非急需一大笔钱，我才会考虑卖了这房子。",
+     "py": "Chúfēi jíxū yí dà bǐ qián, wǒ cái huì kǎolǜ màile zhè fángzi.",
+     "vn": "Chỉ khi cần gấp một khoản tiền lớn, tôi mới tính đến chuyện bán căn nhà này."
+    },
+    {
+     "zh": "这种机器，除非李阳，没人修得好。",
+     "py": "Zhè zhǒng jīqì, chúfēi Lǐ Yáng, méi rén xiū de hǎo.",
+     "vn": "Loại máy này, ngoài Lý Dương ra, không ai sửa được."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "除非你每天练习，你就能说得很流利。",
+     "why": "除非 nêu điều kiện DUY NHẤT, không đi với 就. Muốn nói điều kiện đủ thì dùng 只要……就……; giữ 除非 thì dùng 才 / 否则.",
+     "right": "除非你每天练习，否则说不流利。 / 只要你每天练习，就能说得很流利。"
+    },
+    {
+     "wrong": "他是个工作狂，生活中除非工作还是工作。",
+     "why": "Mẫu \"ngoài A ra vẫn là A\" dùng 除了……还是……; 除非 không dùng như vậy.",
+     "right": "他是个工作狂，生活中除了工作还是工作。"
+    }
+   ]
+  },
+  {
+   "point": "直",
+   "explain": "直 làm phó từ có hai nghĩa: (1) một mạch, thẳng, trực tiếp (一直、径直、直接): 直达北京, 前边路口直走, 直到今天; (2) động tác, hành vi diễn ra liên tục, không ngừng (连续不停地、不断地): 热汗直流, 气得直发抖, 他朝我直摇头, 闹钟直响. Sau 直 thường là động từ ĐƠN ÂM TIẾT. Nghĩa (2) hay đứng sau cấu trúc \"… 得\" chỉ mức độ: 累得……热汗直流, 气得直发抖.",
+   "rule": "<strong style=\"color:var(--sky-d)\">直</strong> + V đơn âm (thẳng, trực tiếp: <strong style=\"color:var(--sky-d)\">直</strong>达 / <strong style=\"color:var(--sky-d)\">直</strong>走)　|　V / Adj + 得 + <strong style=\"color:var(--sky-d)\">直</strong> + V đơn âm (liên tục: 气得<strong style=\"color:var(--sky-d)\">直</strong>发抖, 热汗<strong style=\"color:var(--sky-d)\">直</strong>流)",
+   "examples": [
+    {
+     "zh": "这趟车可以直达北京，非常方便。",
+     "py": "Zhè tàng chē kěyǐ zhídá Běijīng, fēicháng fāngbiàn.",
+     "vn": "Chuyến xe này có thể đi thẳng tới Bắc Kinh, rất tiện."
+    },
+    {
+     "zh": "直到今天，我也不明白他当时为什么发那么大脾气。",
+     "py": "Zhídào jīntiān, wǒ yě bù míngbai tā dāngshí wèi shénme fā nàme dà píqi.",
+     "vn": "Mãi đến hôm nay, tôi vẫn không hiểu vì sao hồi đó anh ấy lại nổi giận như vậy."
+    },
+    {
+     "zh": "父亲听说儿子卖了房子，气得直发抖。",
+     "py": "Fùqīn tīngshuō érzi màile fángzi, qì de zhí fādǒu.",
+     "vn": "Người cha nghe nói con trai bán nhà, tức đến run bắn cả người."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他听了这个笑话，直大笑起来了。",
+     "why": "直 (liên tục) thường đi với động từ ĐƠN ÂM TIẾT, không kèm bổ ngữ xu hướng 起来.",
+     "right": "他听了这个笑话，直笑。"
+    },
+    {
+     "wrong": "我们直地往前走，到路口就看见了。",
+     "why": "Phó từ 直 đứng thẳng trước động từ, không thêm 地.",
+     "right": "我们一直往前走，到路口就看见了。 / 你直走，到路口就看见了。"
+    }
+   ]
+  },
+  {
+   "point": "反正",
+   "explain": "反正 là phó từ, có hai cách dùng: (1) chỉ tình huống tuy khác nhau nhưng kết quả không có gì khác, hay đi sau 不管 / 无论 hoặc câu dạng \"A 不 A\": 不管你们谁去，反正我不会去; 感谢我不感谢，反正我要感谢它们. (2) biểu thị ngữ khí kiên quyết, khẳng định; thường nêu một lý do hiển nhiên để dẫn tới đề nghị / kết luận: 你别再说了，反正我是不会考虑的; 算了，反正不是什么要紧事. 反正 đứng trước hoặc sau chủ ngữ đều được.",
+   "rule": "不管 / 无论……，<strong style=\"color:var(--sky-d)\">反正</strong>……　|　A 不 A，<strong style=\"color:var(--sky-d)\">反正</strong>……　|　<strong style=\"color:var(--sky-d)\">反正</strong> + lý do，(đề nghị / kết luận)",
+   "examples": [
+    {
+     "zh": "不管你们谁去，反正我不会去。",
+     "py": "Bùguǎn nǐmen shéi qù, fǎnzhèng wǒ bú huì qù.",
+     "vn": "Dù các cậu ai đi, dù sao tôi cũng sẽ không đi."
+    },
+    {
+     "zh": "我不知道花草们受我的照顾，感谢我不感谢，反正我要感谢它们。",
+     "py": "Wǒ bù zhīdào huācǎomen shòu wǒ de zhàogù, gǎnxiè wǒ bù gǎnxiè, fǎnzhèng wǒ yào gǎnxiè tāmen.",
+     "vn": "Tôi không biết hoa cỏ được tôi chăm sóc có cảm ơn tôi hay không, dù sao thì tôi cũng phải cảm ơn chúng."
+    },
+    {
+     "zh": "你别再说了，反正我是不会考虑的。",
+     "py": "Nǐ bié zài shuō le, fǎnzhèng wǒ shì bú huì kǎolǜ de.",
+     "vn": "Cậu đừng nói nữa, dù sao tôi cũng sẽ không cân nhắc đâu."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "虽然你们谁去，反正我不会去。",
+     "why": "Nêu mọi khả năng (ai đi cũng thế) phải dùng 不管 / 无论, không dùng 虽然 (tuy … nhưng — sự thật đã xác định).",
+     "right": "不管你们谁去，反正我不会去。"
+    },
+    {
+     "wrong": "反正你信不信，我没说谎。",
+     "why": "反正 đứng ở vế nêu KẾT QUẢ không đổi, không đứng trước vế \"A 不 A\".",
+     "right": "你信不信都行，反正我没说谎。"
+    }
+   ]
+  }
+ ]
+}

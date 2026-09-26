@@ -1779,6 +1779,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-35.html'
+      },
+      {
+        id: 'hsk5-l36',
+        number: 36,
+        title: 'Lão Xá và hoa',
+        titleHanzi: '老舍与养花',
+        titlePinyin: 'Lǎo Shě yǔ yǎng huā',
+        topic: 'Unit 12 亲近自然 · Gần gũi thiên nhiên — nhà văn Lão Xá và thú trồng hoa',
+        vocabCount: 38,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-36.html'
       }
     ],
     yct: [

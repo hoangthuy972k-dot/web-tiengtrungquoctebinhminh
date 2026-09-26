@@ -33288,3 +33288,953 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-35.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-36.html"] = [
+ {
+  "so": "1",
+  "ten": "「除非」",
+  "tenVn": "",
+  "cauTruc": [
+   "除非 + điều kiện，否则 / 不然 + kết quả (trừ phi …, nếu không thì …)",
+   "除非 + điều kiện，(Sub) + 才 + V (chỉ khi … mới …)",
+   "除非 + N，没人 / 谁都不…… (giới từ: ngoại trừ, = 除了)"
+  ],
+  "giaiThich": "除非 là liên từ, nêu ĐIỀU KIỆN DUY NHẤT, tương đương 只有; phía sau thường có 否则 / 不然 (nếu không thì) hoặc 才 (mới) phối hợp. 除非 còn là giới từ, nghĩa \"không tính, ngoại trừ\", tương đương 除了: 这种机器，除非李阳，没人修得好. BẪY: 除非 KHÔNG đi với 就 như 只要 (✗ 除非……就……), và không thay được 除了 trong mẫu 除了……还 / 都…….",
+  "viDu": [
+   {
+    "zh": "可除非是那些好种易活、自己会奋斗的花草，否则他是不养的。",
+    "py": "Kě chúfēi shì nàxiē hǎo zhòng yì huó, zìjǐ huì fèndòu de huācǎo, fǒuzé tā shì bù yǎng de.",
+    "vn": "Nhưng trừ phi là những loài hoa cỏ dễ trồng dễ sống, tự biết \"phấn đấu\", còn không thì ông không trồng."
+   },
+   {
+    "zh": "除非急需一大笔钱，我才会考虑卖了这房子。",
+    "py": "Chúfēi jíxū yí dà bǐ qián, wǒ cái huì kǎolǜ màile zhè fángzi.",
+    "vn": "Chỉ khi cần gấp một khoản tiền lớn, tôi mới tính đến chuyện bán căn nhà này."
+   },
+   {
+    "zh": "这种机器，除非李阳，没人修得好。",
+    "py": "Zhè zhǒng jīqì, chúfēi Lǐ Yáng, méi rén xiū de hǎo.",
+    "vn": "Loại máy này, ngoài Lý Dương ra, không ai sửa được."
+   },
+   {
+    "zh": "日常工作他从来不过问，除非极特殊的问题。",
+    "py": "Rìcháng gōngzuò tā cónglái bú guòwèn, chúfēi jí tèshū de wèntí.",
+    "vn": "Công việc thường ngày ông ấy không bao giờ hỏi đến, trừ những vấn đề cực kỳ đặc biệt."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "除非你每天练习，你就能说得很流利。",
+    "why": "除非 nêu điều kiện DUY NHẤT, không đi với 就. Muốn nói điều kiện đủ thì dùng 只要……就……; giữ 除非 thì dùng 才 / 否则.",
+    "dung": "除非你每天练习，否则说不流利。 / 只要你每天练习，就能说得很流利。"
+   },
+   {
+    "sai": "他是个工作狂，生活中除非工作还是工作。",
+    "why": "Mẫu \"ngoài A ra vẫn là A\" dùng 除了……还是……; 除非 không dùng như vậy.",
+    "dung": "他是个工作狂，生活中除了工作还是工作。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "可",
+       "是那些好种易活、自己会奋斗的花草，否则他是不养的。"
+      ],
+      "dap": [
+       [
+        "除非"
+       ]
+      ],
+      "chon": [
+       "除非",
+       "除了",
+       "只要"
+      ],
+      "goiY": "“Trừ phi là những loài hoa dễ trồng …, nếu không thì ông không trồng.” — câu của bài khoá",
+      "giai": "Vế sau có 否则 → vế trước dùng 除非."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "除非急需一大笔钱，我",
+       "会考虑卖了这房子。"
+      ],
+      "dap": [
+       [
+        "才"
+       ]
+      ],
+      "chon": [
+       "才",
+       "就",
+       "也"
+      ],
+      "goiY": "“Chỉ khi cần gấp … tôi mới tính đến …” — câu của sách",
+      "giai": "除非……才…… = 只有……才……; không dùng 就."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "除非下雨，",
+       "他每天都去跑步。"
+      ],
+      "dap": [
+       [
+        "否则"
+       ]
+      ],
+      "chon": [
+       "否则",
+       "所以",
+       "而且"
+      ],
+      "goiY": "“Trừ phi trời mưa, nếu không thì ngày nào anh ấy cũng chạy bộ.”",
+      "giai": "除非……，否则……: nếu không có điều kiện đó thì …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这种机器，",
+       "李阳，没人修得好。"
+      ],
+      "dap": [
+       [
+        "除非"
+       ]
+      ],
+      "chon": [
+       "除非",
+       "只要",
+       "虽然"
+      ],
+      "goiY": "“Loại máy này, ngoài Lý Dương ra, không ai sửa được.” — câu của sách",
+      "giai": "Giới từ 除非 = 除了: ngoại trừ ai."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他是个工作狂，生活中",
+       "工作还是工作。"
+      ],
+      "dap": [
+       [
+        "除了"
+       ]
+      ],
+      "chon": [
+       "除了",
+       "除非",
+       "不然"
+      ],
+      "goiY": "“Ngoài công việc ra vẫn là công việc.” — bài tập 2 của sách",
+      "giai": "Mẫu cố định 除了 A 还是 A; 除非 không dùng ở đây."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "除非你每天坚持练习，",
+       "口语是提高不了的。"
+      ],
+      "dap": [
+       [
+        "不然"
+       ]
+      ],
+      "chon": [
+       "不然",
+       "就",
+       "所以"
+      ],
+      "goiY": "“Trừ phi bạn kiên trì luyện mỗi ngày, nếu không khẩu ngữ không tiến bộ được.”",
+      "giai": "除非……，不然……: 不然 = 否则."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "除非",
+       "急需",
+       "一大笔钱",
+       "，",
+       "我",
+       "才会考虑",
+       "卖了这房子",
+       "。"
+      ],
+      "dap": [
+       "除非急需一大笔钱，我才会考虑卖了这房子。"
+      ],
+      "goiY": "Chỉ khi cần gấp một khoản tiền lớn, tôi mới tính đến chuyện bán căn nhà này.",
+      "giai": "除非 + điều kiện, chủ ngữ + 才 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "除非下雨",
+       "，",
+       "否则",
+       "他",
+       "每天",
+       "都去跑步",
+       "。"
+      ],
+      "dap": [
+       "除非下雨，否则他每天都去跑步。"
+      ],
+      "goiY": "Trừ phi trời mưa, nếu không thì ngày nào anh ấy cũng đi chạy bộ.",
+      "giai": "除非 + điều kiện，否则 + kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这种机器",
+       "，",
+       "除非李阳",
+       "，",
+       "没人",
+       "修得好",
+       "。"
+      ],
+      "dap": [
+       "这种机器，除非李阳，没人修得好。"
+      ],
+      "goiY": "Loại máy này, ngoài Lý Dương ra, không ai sửa được.",
+      "giai": "Giới từ 除非 + N (ngoại trừ) + 没人……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "除非你答应我一个条件，我就陪你去。",
+      "dung": false,
+      "sua": "除非你答应我一个条件，我才陪你去。",
+      "giai": "除非 không đi với 就; dùng 才 (chỉ khi … mới …)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "除非有紧急的事，否则别给他打电话。",
+      "dung": true,
+      "giai": "Đúng — 除非……，否则……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们班除非小王，别的同学都去了。",
+      "dung": false,
+      "sua": "我们班除了小王，别的同学都去了。",
+      "giai": "\"Ngoài … ra, những người khác đều …\" dùng mẫu 除了……都……; 除非 (giới từ) chỉ dùng khi vế sau là phủ định kiểu 没人 / 谁都不."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trừ phi có việc khẩn cấp, nếu không thì anh ấy không nghe điện thoại.",
+      "dap": [
+       "除非有紧急的事，否则他不接电话。",
+       "除非有紧急的事，不然他不接电话。",
+       "除非有急事，否则他不接电话。"
+      ],
+      "py": "Chúfēi yǒu jǐnjí de shì, fǒuzé tā bù jiē diànhuà.",
+      "goiY": "Dịch sang tiếng Trung, dùng 除非.",
+      "giai": "除非 + điều kiện，否则 / 不然 + kết quả."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỉ khi thầy giáo đồng ý, chúng tôi mới có thể về sớm.",
+      "dap": [
+       "除非老师同意，我们才能早点儿回家。",
+       "除非老师同意，我们才可以早点儿回家。",
+       "除非老师同意，我们才能早回家。"
+      ],
+      "py": "Chúfēi lǎoshī tóngyì, wǒmen cái néng zǎo diǎnr huí jiā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 除非……才…….",
+      "giai": "\"Chỉ khi … mới …\" → 除非……才……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他工作时不喜欢别人打扰，＿＿＿，别人的电话他都不接。",
+      "goiY": "nêu trường hợp ngoại lệ duy nhất (dùng 除非) — bài 练一练 của sách",
+      "mau": "他工作时不喜欢别人打扰，除非有特别紧急的事，别人的电话他都不接。",
+      "can": [
+       [
+        "除非"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：这个周末你陪我去看场电影，行吗？　B：想让我答应你，＿＿＿。",
+      "goiY": "đặt ra một điều kiện (dùng 除非) — bài 练一练 của sách",
+      "mau": "想让我答应你，除非你先帮我把作业做完。",
+      "can": [
+       [
+        "除非"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「除非……否则／才……」, nói về một việc em chỉ làm trong một điều kiện đặc biệt (ví dụ: 我平时一般都不看电视)",
+      "mau": "除非有足球比赛，否则我平时一般都不看电视。",
+      "can": [
+       [
+        "除非"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「直」",
+  "tenVn": "",
+  "cauTruc": [
+   "直 + V đơn âm tiết (thẳng, trực tiếp): 直达, 直走, 直到……",
+   "(Adj / V + 得) + 直 + V đơn âm tiết (liên tục, không ngừng): 热汗直流, 直发抖, 直摇头"
+  ],
+  "giaiThich": "直 làm phó từ có hai nghĩa: (1) một mạch, thẳng, trực tiếp (一直、径直、直接): 直达北京, 前边路口直走, 直到今天; (2) động tác, hành vi diễn ra liên tục, không ngừng (连续不停地、不断地): 热汗直流, 气得直发抖, 他朝我直摇头, 闹钟直响. Sau 直 thường là động từ ĐƠN ÂM TIẾT. Nghĩa (2) hay đứng sau cấu trúc \"… 得\" chỉ mức độ: 累得……热汗直流, 气得直发抖.",
+  "viDu": [
+   {
+    "zh": "这趟车可以直达北京，非常方便。",
+    "py": "Zhè tàng chē kěyǐ zhídá Běijīng, fēicháng fāngbiàn.",
+    "vn": "Chuyến xe này có thể đi thẳng tới Bắc Kinh, rất tiện."
+   },
+   {
+    "zh": "直到今天，我也不明白他当时为什么发那么大脾气。",
+    "py": "Zhídào jīntiān, wǒ yě bù míngbai tā dāngshí wèi shénme fā nàme dà píqi.",
+    "vn": "Mãi đến hôm nay, tôi vẫn không hiểu vì sao hồi đó anh ấy lại nổi giận như vậy."
+   },
+   {
+    "zh": "父亲听说儿子卖了房子，气得直发抖。",
+    "py": "Fùqīn tīngshuō érzi màile fángzi, qì de zhí fādǒu.",
+    "vn": "Người cha nghe nói con trai bán nhà, tức đến run bắn cả người."
+   },
+   {
+    "zh": "几百盆花，要很快地抢到屋里去，累得腰酸腿疼，热汗直流。",
+    "py": "Jǐ bǎi pén huā, yào hěn kuài de qiǎngdào wū li qu, lèi de yāo suān tuǐ téng, rè hàn zhí liú.",
+    "vn": "Mấy trăm chậu hoa phải nhanh chóng đưa vào nhà, mệt đến lưng mỏi chân đau, mồ hôi chảy ròng ròng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他听了这个笑话，直大笑起来了。",
+    "why": "直 (liên tục) thường đi với động từ ĐƠN ÂM TIẾT, không kèm bổ ngữ xu hướng 起来.",
+    "dung": "他听了这个笑话，直笑。"
+   },
+   {
+    "sai": "我们直地往前走，到路口就看见了。",
+    "why": "Phó từ 直 đứng thẳng trước động từ, không thêm 地.",
+    "dung": "我们一直往前走，到路口就看见了。 / 你直走，到路口就看见了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "累得腰酸腿疼，热汗",
+       "流。"
+      ],
+      "dap": [
+       [
+        "直"
+       ]
+      ],
+      "chon": [
+       "直",
+       "很",
+       "真"
+      ],
+      "goiY": "“Mồ hôi chảy ròng ròng” — câu của bài khoá",
+      "giai": "直 + V đơn âm: liên tục không ngừng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这趟车可以",
+       "达北京，非常方便。"
+      ],
+      "dap": [
+       [
+        "直"
+       ]
+      ],
+      "chon": [
+       "直",
+       "一",
+       "到"
+      ],
+      "goiY": "“Đi thẳng tới Bắc Kinh” — câu của sách",
+      "giai": "直达 = đi thẳng, không dừng / không đổi chuyến."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "父亲听说儿子卖了房子，气得",
+       "发抖。"
+      ],
+      "dap": [
+       [
+        "直"
+       ]
+      ],
+      "chon": [
+       "直",
+       "一直地",
+       "真"
+      ],
+      "goiY": "“Tức đến run bắn người” — câu của sách",
+      "giai": "V/Adj + 得 + 直 + V: mức độ đến mức cứ … mãi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他朝我直摇头 — 「直」 ở đây nghĩa là: ",
+       ""
+      ],
+      "dap": [
+       [
+        "连续不停地"
+       ]
+      ],
+      "chon": [
+       "连续不停地",
+       "直接"
+      ],
+      "goiY": "Bài 练一练 của sách: chỉ ra cách dùng của 「直」",
+      "giai": "Lắc đầu lia lịa = động tác lặp lại liên tục → nghĩa B (连续不停地)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "参观者乘电梯可以直达大楼顶层的观光餐厅 — 「直」 ở đây nghĩa là: ",
+       ""
+      ],
+      "dap": [
+       [
+        "直接"
+       ]
+      ],
+      "chon": [
+       "直接",
+       "连续不停地"
+      ],
+      "goiY": "Bài 练一练 của sách: chỉ ra cách dùng của 「直」",
+      "giai": "Thang máy đi thẳng lên tầng thượng → nghĩa A (直接)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "早晨6点，闹钟在我头上直响 — 「直」 ở đây nghĩa là: ",
+       ""
+      ],
+      "dap": [
+       [
+        "连续不停地"
+       ]
+      ],
+      "chon": [
+       "连续不停地",
+       "直接"
+      ],
+      "goiY": "Bài 练一练 của sách: chỉ ra cách dùng của 「直」",
+      "giai": "Đồng hồ báo thức kêu mãi không ngừng → nghĩa B (连续不停地). (Câu 4 của sách: 前边路口直走 → nghĩa A.)"
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "父亲",
+       "听说",
+       "儿子卖了房子",
+       "，",
+       "气得",
+       "直",
+       "发抖",
+       "。"
+      ],
+      "dap": [
+       "父亲听说儿子卖了房子，气得直发抖。"
+      ],
+      "goiY": "Người cha nghe nói con trai bán nhà, tức đến run bắn người.",
+      "giai": "Adj + 得 + 直 + V đơn âm."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这趟车",
+       "可以",
+       "直达",
+       "北京",
+       "。"
+      ],
+      "dap": [
+       "这趟车可以直达北京。"
+      ],
+      "goiY": "Chuyến xe này có thể đi thẳng tới Bắc Kinh.",
+      "giai": "Động từ năng nguyện 可以 đứng trước 直达."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "朝我",
+       "直",
+       "摇头",
+       "。"
+      ],
+      "dap": [
+       "他朝我直摇头。"
+      ],
+      "goiY": "Anh ấy lắc đầu lia lịa với tôi.",
+      "giai": "Trạng ngữ giới từ 朝我 đứng trước 直 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "司机师傅，前边路口直走，别拐弯。",
+      "dung": true,
+      "giai": "Đúng — 直走 = đi thẳng (nghĩa \"trực tiếp, thẳng\")."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "孩子饿得直地哭。",
+      "dung": false,
+      "sua": "孩子饿得直哭。",
+      "giai": "Phó từ 直 đứng thẳng trước động từ đơn âm, không thêm 地."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "看到这么美的风景，大家高兴得直叫。",
+      "dung": true,
+      "giai": "Đúng — Adj + 得 + 直 + V đơn âm: vui đến mức reo lên mãi."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Em trai nghe chuyện cười này, cười mãi không thôi.",
+      "dap": [
+       "弟弟听了这个笑话，直笑。",
+       "弟弟听了这个笑话，笑得直不起腰。",
+       "弟弟听了这个笑话以后直笑。"
+      ],
+      "py": "Dìdi tīngle zhège xiàohua, zhí xiào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 直.",
+      "giai": "\"Cười mãi\" → 直 + 笑 (động từ đơn âm)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chuyến bay này bay thẳng tới Thượng Hải.",
+      "dap": [
+       "这趟航班直达上海。",
+       "这个航班直飞上海。",
+       "这趟航班直飞上海。"
+      ],
+      "py": "Zhè tàng hángbān zhídá Shànghǎi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 直.",
+      "giai": "\"Bay thẳng\" → 直达 / 直飞."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "爬到山顶的时候，我累得＿＿＿。",
+      "goiY": "tả mồ hôi chảy / chân run liên tục (dùng 直)",
+      "mau": "爬到山顶的时候，我累得热汗直流，腿也直发抖。",
+      "can": [
+       [
+        "直"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：从这儿去火车站怎么走？　B：＿＿＿。",
+      "goiY": "chỉ đường đi thẳng (dùng 直)",
+      "mau": "你一直往前走，到第二个路口再往右拐，火车站就在那儿。 / 前边路口直走就到了。",
+      "can": [
+       [
+        "直"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「……得直 + V」, tả một lần em rất vui / rất tức / rất sợ",
+      "mau": "看恐怖电影的时候，妹妹吓得直哭。",
+      "can": [
+       [
+        "直"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「反正」",
+  "tenVn": "",
+  "cauTruc": [
+   "不管 / 无论……，反正…… (dù thế nào, dù sao thì kết quả vẫn …)",
+   "A 不 A，反正…… (dù có A hay không, …)",
+   "反正 + lý do / thái độ kiên quyết (đằng nào thì …, dù sao thì …)"
+  ],
+  "giaiThich": "反正 là phó từ, có hai cách dùng: (1) chỉ tình huống tuy khác nhau nhưng kết quả không có gì khác, hay đi sau 不管 / 无论 hoặc câu dạng \"A 不 A\": 不管你们谁去，反正我不会去; 感谢我不感谢，反正我要感谢它们. (2) biểu thị ngữ khí kiên quyết, khẳng định; thường nêu một lý do hiển nhiên để dẫn tới đề nghị / kết luận: 你别再说了，反正我是不会考虑的; 算了，反正不是什么要紧事. 反正 đứng trước hoặc sau chủ ngữ đều được.",
+  "viDu": [
+   {
+    "zh": "不管你们谁去，反正我不会去。",
+    "py": "Bùguǎn nǐmen shéi qù, fǎnzhèng wǒ bú huì qù.",
+    "vn": "Dù các cậu ai đi, dù sao tôi cũng sẽ không đi."
+   },
+   {
+    "zh": "我不知道花草们受我的照顾，感谢我不感谢，反正我要感谢它们。",
+    "py": "Wǒ bù zhīdào huācǎomen shòu wǒ de zhàogù, gǎnxiè wǒ bù gǎnxiè, fǎnzhèng wǒ yào gǎnxiè tāmen.",
+    "vn": "Tôi không biết hoa cỏ được tôi chăm sóc có cảm ơn tôi hay không, dù sao thì tôi cũng phải cảm ơn chúng."
+   },
+   {
+    "zh": "你别再说了，反正我是不会考虑的。",
+    "py": "Nǐ bié zài shuō le, fǎnzhèng wǒ shì bú huì kǎolǜ de.",
+    "vn": "Cậu đừng nói nữa, dù sao tôi cũng sẽ không cân nhắc đâu."
+   },
+   {
+    "zh": "算了，反正不是什么要紧事，还是别打扰他们了。",
+    "py": "Suàn le, fǎnzhèng bú shì shénme yàojǐn shì, háishi bié dǎrǎo tāmen le.",
+    "vn": "Thôi, dù sao cũng chẳng phải việc gì gấp, đừng làm phiền họ nữa."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "虽然你们谁去，反正我不会去。",
+    "why": "Nêu mọi khả năng (ai đi cũng thế) phải dùng 不管 / 无论, không dùng 虽然 (tuy … nhưng — sự thật đã xác định).",
+    "dung": "不管你们谁去，反正我不会去。"
+   },
+   {
+    "sai": "反正你信不信，我没说谎。",
+    "why": "反正 đứng ở vế nêu KẾT QUẢ không đổi, không đứng trước vế \"A 不 A\".",
+    "dung": "你信不信都行，反正我没说谎。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "不管你们谁去，",
+       "我不会去。"
+      ],
+      "dap": [
+       [
+        "反正"
+       ]
+      ],
+      "chon": [
+       "反正",
+       "虽然",
+       "除非"
+      ],
+      "goiY": "“Dù các cậu ai đi, dù sao tôi cũng không đi.” — câu của sách",
+      "giai": "不管……，反正……: kết quả không đổi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "感谢我不感谢，",
+       "我要感谢它们。"
+      ],
+      "dap": [
+       [
+        "反正"
+       ]
+      ],
+      "chon": [
+       "反正",
+       "不然",
+       "除非"
+      ],
+      "goiY": "“Có cảm ơn tôi hay không, dù sao tôi cũng phải cảm ơn chúng.” — câu của bài khoá",
+      "giai": "A 不 A，反正……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "算了，反正不是什么",
+       "事，还是别打扰他们了。"
+      ],
+      "dap": [
+       [
+        "要紧"
+       ]
+      ],
+      "chon": [
+       "要紧",
+       "紧急",
+       "熟练"
+      ],
+      "goiY": "“Dù sao cũng chẳng phải việc gì gấp.” — câu của sách",
+      "giai": "要紧事 = việc quan trọng, gấp; 反正 nêu lý do."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "下不下雨，反正我都得去上学。"
+      ],
+      "dap": [
+       [
+        "不管"
+       ]
+      ],
+      "chon": [
+       "不管",
+       "虽然",
+       "因为"
+      ],
+      "goiY": "“Dù trời có mưa hay không, dù sao tôi cũng phải đi học.”",
+      "giai": "不管 + A 不 A，反正 / 都……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你别问那么多了，反正你也",
+       "。"
+      ],
+      "dap": [
+       [
+        "帮不上忙"
+       ]
+      ],
+      "chon": [
+       "帮不上忙",
+       "帮得上忙",
+       "不帮忙了"
+      ],
+      "goiY": "“Cậu đừng hỏi nhiều, dù sao cậu cũng không giúp được.” — bài 练一练 của sách",
+      "giai": "反正 + lý do hiển nhiên dẫn tới lời khuyên \"đừng hỏi nữa\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "今天没事，我们去逛街吧。"
+      ],
+      "dap": [
+       [
+        "反正"
+       ]
+      ],
+      "chon": [
+       "反正",
+       "除非",
+       "不然"
+      ],
+      "goiY": "“Đằng nào hôm nay cũng rảnh, đi dạo phố đi.”",
+      "giai": "反正 + lý do, đề nghị ở vế sau."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "不管",
+       "你们",
+       "谁去",
+       "，",
+       "反正",
+       "我",
+       "不会去",
+       "。"
+      ],
+      "dap": [
+       "不管你们谁去，反正我不会去。"
+      ],
+      "goiY": "Dù các cậu ai đi, dù sao tôi cũng không đi.",
+      "giai": "不管……，反正……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "别再说了",
+       "，",
+       "反正",
+       "我",
+       "是不会",
+       "考虑的",
+       "。"
+      ],
+      "dap": [
+       "你别再说了，反正我是不会考虑的。"
+      ],
+      "goiY": "Cậu đừng nói nữa, dù sao tôi cũng không cân nhắc đâu.",
+      "giai": "反正 + thái độ kiên quyết; 是……的 nhấn mạnh."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "算了",
+       "，",
+       "反正",
+       "不是",
+       "什么",
+       "要紧事",
+       "。"
+      ],
+      "dap": [
+       "算了，反正不是什么要紧事。"
+      ],
+      "goiY": "Thôi, dù sao cũng chẳng phải việc gì gấp.",
+      "giai": "反正 + lý do."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你信不信都行，反正我说的是真的。",
+      "dung": true,
+      "giai": "Đúng — 反正 ở vế nêu điều không đổi."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "虽然你们去不去，反正我要去。",
+      "dung": false,
+      "sua": "不管你们去不去，反正我要去。",
+      "giai": "\"A 不 A\" đi với 不管 / 无论, không đi với 虽然."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "反正时间还早，我们走着去吧。",
+      "dung": true,
+      "giai": "Đúng — 反正 + lý do (thời gian còn sớm), đề nghị ở vế sau."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Dù bạn có tin hay không, dù sao tôi cũng không nói dối.",
+      "dap": [
+       "不管你信不信，反正我没说谎。",
+       "不管你信不信，反正我没有说谎。",
+       "无论你信不信，反正我没说谎。"
+      ],
+      "py": "Bùguǎn nǐ xìn bu xìn, fǎnzhèng wǒ méi shuōhuǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 反正.",
+      "giai": "不管 + A 不 A，反正 + kết quả."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đằng nào hôm nay cũng không có bài tập, chúng ta đi xem phim đi.",
+      "dap": [
+       "反正今天没有作业，我们去看电影吧。",
+       "反正今天没作业，我们去看电影吧。",
+       "今天反正没有作业，我们去看电影吧。"
+      ],
+      "py": "Fǎnzhèng jīntiān méiyǒu zuòyè, wǒmen qù kàn diànyǐng ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 反正.",
+      "giai": "反正 + lý do, đề nghị 吧 ở vế sau."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，信不信，你随便吧。",
+      "goiY": "khẳng định điều mình nói là thật (dùng 反正) — bài 练一练 của sách",
+      "mau": "反正我说的都是真的，信不信，你随便吧。",
+      "can": [
+       [
+        "反正"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：这是今年最流行的颜色，你真没眼力。　B：＿＿＿。",
+      "goiY": "khẳng định em vẫn thích theo ý mình (dùng 反正) — bài 练一练 của sách",
+      "mau": "流行不流行我不管，反正我不喜欢这个颜色。",
+      "can": [
+       [
+        "反正"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「不管……，反正……」, nói về một quyết định của em mà ai nói gì em cũng không đổi",
+      "mau": "不管爸爸妈妈同意不同意，反正我要学中文。",
+      "can": [
+       [
+        "反正"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

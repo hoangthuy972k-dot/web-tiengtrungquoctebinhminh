@@ -1,0 +1,146 @@
+{
+ "zh": "除夕的由来",
+ "py": "Chúxī de yóulái",
+ "vn": "Nguồn gốc đêm giao thừa",
+ "topic": "Unit 2 谈古说今 · Truyền thuyết &amp; phong tục Tết",
+ "vocabCount": 43,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "替",
+   "explain": "替 có hai cách dùng. ① ĐỘNG TỪ, nghĩa là 代替 (thay thế): A 替 B — A làm thay B. ② GIỚI TỪ, nghĩa là 给 / 为 (cho, vì, giúp): 替 + người + động từ, hoặc 替 + người + tính từ chỉ tâm trạng (替他高兴, 替他着急).",
+   "rule": "① A + <strong style=\"color:var(--sky-d)\">替</strong> + B (thay thế)　② <strong style=\"color:var(--sky-d)\">替</strong> + người + V / 高兴 / 着急 (cho, vì)",
+   "examples": [
+    {
+     "zh": "见了外公，你替我向他问好。",
+     "py": "Jiànle wàigōng, nǐ tì wǒ xiàng tā wènhǎo.",
+     "vn": "Gặp ông ngoại thì con gửi lời hỏi thăm ông giúp mẹ nhé."
+    },
+    {
+     "zh": "刘老师今天有点儿事来不了了，你能替替他吗？",
+     "py": "Liú lǎoshī jīntiān yǒudiǎnr shì lái bu liǎo le, nǐ néng tìti tā ma?",
+     "vn": "Hôm nay thầy Lưu có chút việc không đến được, bạn dạy thay thầy ấy được không?"
+    },
+    {
+     "zh": "李阳要去留学了，我们都替他高兴。",
+     "py": "Lǐ Yáng yào qù liúxué le, wǒmen dōu tì tā gāoxìng.",
+     "vn": "Lý Dương sắp đi du học, chúng tôi đều mừng cho cậu ấy."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我高兴替你。",
+     "why": "替 + người phải đứng TRƯỚC động từ / tính từ, không đặt ở cuối câu như tiếng Việt “mừng cho cậu”.",
+     "right": "我替你高兴。"
+    },
+    {
+     "wrong": "你替我问好他。",
+     "why": "问好 không mang tân ngữ chỉ người; người được hỏi thăm đi với 向: 向 + người + 问好.",
+     "right": "你替我向他问好。"
+    }
+   ]
+  },
+  {
+   "point": "说不定",
+   "explain": "说不定 có hai cách dùng. ① ĐỘNG TỪ: không thể nói rõ, nói chắc được — thường đứng cuối câu: ……还说不定. ② PHÓ TỪ: phỏng đoán, khả năng khá lớn — đứng trước hoặc sau chủ ngữ, trước động từ. Chữ 不 đọc nhẹ: shuōbudìng.",
+   "rule": "① …… 还<strong style=\"color:var(--sky-d)\">说不定</strong>。　② (Chủ ngữ) + <strong style=\"color:var(--sky-d)\">说不定</strong> + V",
+   "examples": [
+    {
+     "zh": "这事儿经理已经同意了，只是出发的时间还说不定。",
+     "py": "Zhè shìr jīnglǐ yǐjīng tóngyì le, zhǐshì chūfā de shíjiān hái shuōbudìng.",
+     "vn": "Việc này giám đốc đã đồng ý rồi, chỉ là thời gian xuất phát vẫn chưa nói chắc được."
+    },
+    {
+     "zh": "周末他起得晚，这会儿说不定还在睡觉呢。",
+     "py": "Zhōumò tā qǐ de wǎn, zhè huìr shuōbudìng hái zài shuìjiào ne.",
+     "vn": "Cuối tuần cậu ấy dậy muộn, giờ này không chừng vẫn đang ngủ."
+    },
+    {
+     "zh": "别随随便便就说放弃，说不定下次就成功了。",
+     "py": "Bié suísuíbiànbiàn jiù shuō fàngqì, shuōbudìng xià cì jiù chénggōng le.",
+     "vn": "Đừng dễ dàng nói bỏ cuộc, không chừng lần sau sẽ thành công."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他明天说不定会来吗？",
+     "why": "说不定 đã là câu PHỎNG ĐOÁN (trần thuật), không thêm 吗 để hỏi.",
+     "right": "他明天说不定会来。"
+    },
+    {
+     "wrong": "出发的时间还不说定。",
+     "why": "Không tách thành 不说定. Dạng phủ định cố định là 说不定 (hoặc 还没定).",
+     "right": "出发的时间还说不定。"
+    }
+   ]
+  },
+  {
+   "point": "似的",
+   "explain": "似的 (shìde) là trợ từ. ① 像 / 跟 / 好像 + …… + 似的: giống như …, dùng để so sánh; thiên về văn viết. ② ……得 + 什么似的: “什么似的” thay cho trạng thái muốn nói, mang giọng KHOA TRƯƠNG — vô cùng, hết mức.",
+   "rule": "① 像 / 跟 / 好像 + …… + <strong style=\"color:var(--sky-d)\">似的</strong>　② V / Adj + 得 + <strong style=\"color:var(--sky-d)\">什么似的</strong>",
+   "examples": [
+    {
+     "zh": "消息一出来，询问情况的电话雪片似的纷纷打来。",
+     "py": "Xiāoxi yì chūlái, xúnwèn qíngkuàng de diànhuà xuěpiàn shìde fēnfēn dǎlái.",
+     "vn": "Tin vừa đưa ra, điện thoại hỏi thăm tình hình gọi đến tới tấp như hoa tuyết."
+    },
+    {
+     "zh": "我不敢相信这是真的，好像做梦似的。",
+     "py": "Wǒ bù gǎn xiāngxìn zhè shì zhēn de, hǎoxiàng zuòmèng shìde.",
+     "vn": "Tôi không dám tin đây là thật, cứ như đang nằm mơ vậy."
+    },
+    {
+     "zh": "“夕”吓得什么似的，急忙往外逃。",
+     "py": "\"Xī\" xià de shénme shìde, jímáng wǎng wài táo.",
+     "vn": "\"Tịch\" sợ hết hồn, vội vàng chạy trốn ra ngoài."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他好像似的生病了。",
+     "why": "似的 đứng CUỐI phần được so sánh, không đứng ngay sau 好像.",
+     "right": "他好像生病了似的。"
+    },
+    {
+     "wrong": "我饿得很似的。",
+     "why": "Cấu trúc khoa trương cố định là 得 + 什么似的; 很 không đi với 似的.",
+     "right": "我饿得什么似的。"
+    }
+   ]
+  },
+  {
+   "point": "纷纷",
+   "explain": "纷纷 có hai cách dùng. ① TÍNH TỪ: động từ / tính từ + 纷纷 — (lời bàn tán, vật rơi xuống) nhiều mà lộn xộn: 议论纷纷, 落叶纷纷. ② PHÓ TỪ: 纷纷 + động từ — nhiều người hoặc sự vật nối tiếp nhau làm cùng một việc; chủ ngữ phải là SỐ NHIỀU.",
+   "rule": "① V / Adj + <strong style=\"color:var(--sky-d)\">纷纷</strong>　② Chủ ngữ số nhiều + <strong style=\"color:var(--sky-d)\">纷纷</strong> + V",
+   "examples": [
+    {
+     "zh": "秋风刮起，落叶纷纷。",
+     "py": "Qiūfēng guāqǐ, luòyè fēnfēn.",
+     "vn": "Gió thu nổi lên, lá rụng lả tả."
+    },
+    {
+     "zh": "除掉“夕”以后，百姓纷纷对七郎表达谢意。",
+     "py": "Chúdiào \"Xī\" yǐhòu, bǎixìng fēnfēn duì Qīláng biǎodá xièyì.",
+     "vn": "Sau khi trừ được \"Tịch\", dân chúng nối nhau bày tỏ lòng biết ơn với Thất Lang."
+    },
+    {
+     "zh": "要下雨了，路上的人纷纷往家里跑。",
+     "py": "Yào xià yǔ le, lù shang de rén fēnfēn wǎng jiā li pǎo.",
+     "vn": "Sắp mưa rồi, người đi đường nhao nhao chạy về nhà."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他纷纷给我打电话。",
+     "why": "纷纷 cần chủ ngữ SỐ NHIỀU. Một người gọi nhiều lần thì dùng 不停地 / 一次次.",
+     "right": "朋友们纷纷给我打电话。"
+    },
+    {
+     "wrong": "人们议论得很纷纷。",
+     "why": "Tính từ 纷纷 đứng ngay sau động từ, không dùng bổ ngữ 得很.",
+     "right": "人们议论纷纷。"
+    }
+   ]
+  }
+ ]
+}

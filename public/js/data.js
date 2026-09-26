@@ -1383,6 +1383,30 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-2.html'
+      },
+      {
+        id: 'hsk5-l6',
+        number: 6,
+        title: 'Nguồn gốc đêm giao thừa',
+        titleHanzi: '除夕的由来',
+        titlePinyin: 'Chúxī de yóulái',
+        topic: 'Unit 2 谈古说今 · Truyền thuyết & phong tục Tết',
+        vocabCount: 43,
+        dialogueCount: 1,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk5-bai-6.html'
+      },
+      {
+        id: 'hsk5-l7',
+        number: 7,
+        title: 'Hai câu chuyện thành ngữ',
+        titleHanzi: '成语故事两则',
+        titlePinyin: 'Chéngyǔ gùshi liǎng zé',
+        topic: 'Unit 3 倾听故事 · Truyện thành ngữ & đạo lý',
+        vocabCount: 48,
+        dialogueCount: 1,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk5-bai-7.html'
       }
     ],
     yct: [

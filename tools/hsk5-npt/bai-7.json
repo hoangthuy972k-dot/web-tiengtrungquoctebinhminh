@@ -1,0 +1,1226 @@
+[
+ {
+  "so": "1",
+  "ten": "「瞎」",
+  "tenVn": "",
+  "cauTruc": [
+   "(眼睛) + 瞎 + 了 — động từ: bị mù",
+   "瞎 + Động từ — phó từ: bừa, vô căn cứ, vô ích"
+  ],
+  "giaiThich": "瞎 vốn là ĐỘNG TỪ: mắt không nhìn thấy, bị mù (眼睛瞎了). Khi làm PHÓ TỪ (khẩu ngữ), 瞎 đứng trước động từ, biểu thị làm việc gì KHÔNG có lý do, không có căn cứ hoặc không có tác dụng: 瞎说 (nói bậy), 瞎担心 (lo hão), 瞎着急 (cuống lên vô ích), 瞎猜 (đoán mò).",
+  "viDu": [
+   {
+    "zh": "一天，他让士兵们去找一头大象和一些出生时眼睛就瞎了的人回来。",
+    "py": "Yì tiān, tā ràng shìbīngmen qù zhǎo yì tóu dàxiàng hé yìxiē chūshēng shí yǎnjing jiù xiā le de rén huílái.",
+    "vn": "Một hôm, ông sai binh lính đi tìm về một con voi và mấy người bị mù từ lúc mới sinh."
+   },
+   {
+    "zh": "别听他瞎说，不用害怕。我们不会这么倒霉的。",
+    "py": "Bié tīng tā xiā shuō, búyòng hàipà. Wǒmen bú huì zhème dǎoméi de.",
+    "vn": "Đừng nghe cậu ta nói bậy, không cần sợ. Chúng ta không xui xẻo thế đâu."
+   },
+   {
+    "zh": "他自己的问题，他会想办法的，你就别替他瞎担心了。",
+    "py": "Tā zìjǐ de wèntí, tā huì xiǎng bànfǎ de, nǐ jiù bié tì tā xiā dānxīn le.",
+    "vn": "Chuyện của cậu ấy thì cậu ấy sẽ tự tìm cách, cậu đừng lo hão thay cậu ấy nữa."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你别担心瞎了。",
+    "why": "Phó từ 瞎 phải đứng TRƯỚC động từ, không đứng sau.",
+    "dung": "你别瞎担心了。"
+   },
+   {
+    "sai": "他的眼睛很瞎。",
+    "why": "瞎 (bị mù) là động từ chỉ sự việc đã xảy ra, không đi với 很; nói 瞎了.",
+    "dung": "他的眼睛瞎了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "别听他",
+       "说，他根本不知道这件事。"
+      ],
+      "dap": [
+       [
+        "瞎"
+       ]
+      ],
+      "chon": [
+       "瞎",
+       "盲",
+       "片面"
+      ],
+      "goiY": "\"Đừng nghe cậu ta nói bậy, cậu ta chẳng biết gì về chuyện này.\"",
+      "giai": "瞎 phó từ + 说 = nói bậy, nói không căn cứ. 盲 không làm phó từ; 片面 không đi với 说 theo nghĩa này."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他出生时眼睛就",
+       "了，但是他的耳朵特别灵。"
+      ],
+      "dap": [
+       [
+        "瞎"
+       ]
+      ],
+      "chon": [
+       "瞎",
+       "盲人",
+       "胡说"
+      ],
+      "goiY": "\"Cậu ấy bị mù từ lúc mới sinh, nhưng tai cực kỳ thính.\"",
+      "giai": "Ở đây 瞎 là ĐỘNG TỪ (bị mù), sau có 了. 盲人 là danh từ, 胡说 là \"nói bậy\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考试成绩明天才出来，你现在",
+       "着急也没用。"
+      ],
+      "dap": [
+       [
+        "瞎"
+       ]
+      ],
+      "chon": [
+       "瞎",
+       "胡说",
+       "忽然"
+      ],
+      "goiY": "\"Mai mới có điểm, giờ cậu cuống lên cũng vô ích.\"",
+      "giai": "瞎着急 = cuống lên vô ích. 忽然着急 không hợp với \"cũng vô ích\"; 胡说 không đứng trước 着急."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "不知道答案就别",
+       "猜，先认真想一想。"
+      ],
+      "dap": [
+       [
+        "瞎"
+       ]
+      ],
+      "chon": [
+       "瞎",
+       "分别",
+       "便"
+      ],
+      "goiY": "\"Không biết đáp án thì đừng đoán mò, nghĩ kỹ trước đã.\"",
+      "giai": "瞎猜 = đoán mò, đoán bừa (ôn điểm ngữ pháp 瞎)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事你不了解，别跟着",
+       "说。"
+      ],
+      "dap": [
+       [
+        "瞎"
+       ]
+      ],
+      "chon": [
+       "瞎",
+       "盲",
+       "平"
+      ],
+      "goiY": "\"Chuyện này cậu không hiểu thì đừng nói theo bừa.\"",
+      "giai": "瞎说 = nói bừa. 盲, 平 không làm phó từ trước 说."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他自己会想办法的，你就别替他",
+       "担心了。"
+      ],
+      "dap": [
+       [
+        "瞎"
+       ]
+      ],
+      "chon": [
+       "瞎",
+       "胡说",
+       "片面"
+      ],
+      "goiY": "\"Cậu ấy sẽ tự tìm cách, cậu đừng lo hão thay cậu ấy nữa.\"",
+      "giai": "瞎担心 = lo hão. Câu gốc trong phần chú thích của sách."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "别",
+       "瞎着急",
+       "了"
+      ],
+      "dap": [
+       "你别瞎着急了。"
+      ],
+      "goiY": "Cậu đừng cuống lên vô ích nữa.",
+      "giai": "别 + 瞎 + động từ + 了: lời khuyên đừng làm vô ích."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "那位老人",
+       "眼睛",
+       "瞎了",
+       "年轻时",
+       "就"
+      ],
+      "dap": [
+       "那位老人年轻时眼睛就瞎了。",
+       "那位老人眼睛年轻时就瞎了。"
+      ],
+      "goiY": "Cụ già ấy bị mù từ hồi trẻ.",
+      "giai": "瞎 là động từ: 眼睛 + 瞎了; trạng ngữ thời gian 年轻时 đứng trước."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "在",
+       "瞎忙",
+       "一整天",
+       "都"
+      ],
+      "dap": [
+       "他一整天都在瞎忙。"
+      ],
+      "goiY": "Cả ngày cậu ấy bận rộn vô ích.",
+      "giai": "Thời lượng 一整天 + 都 + 在 + 瞎忙."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "别瞎说，他今天没有生病。",
+      "dung": true,
+      "giai": "瞎 phó từ đứng trước 说 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你别担心瞎了。",
+      "dung": false,
+      "sua": "你别瞎担心了。",
+      "giai": "Phó từ 瞎 phải đứng TRƯỚC động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的眼睛很瞎。",
+      "dung": false,
+      "sua": "他的眼睛瞎了。",
+      "giai": "瞎 (bị mù) không đi với 很; nói 瞎了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Đừng nghe cậu ta nói bậy.",
+      "dap": [
+       "别听他瞎说。",
+       "你别听他瞎说。",
+       "不要听他瞎说。"
+      ],
+      "py": "Bié tīng tā xiā shuō.",
+      "goiY": "Dịch sang tiếng Trung, dùng 瞎 làm phó từ.",
+      "giai": "瞎 + 说 = nói bậy, nói không căn cứ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy sẽ tự tìm cách, cậu đừng lo hão nữa.",
+      "dap": [
+       "他会自己想办法的，你别瞎担心了。",
+       "他自己会想办法的，你就别瞎担心了。",
+       "他会自己想办法的，你就别瞎担心了。",
+       "他自己会想办法的，你别瞎担心了。"
+      ],
+      "py": "Tā zìjǐ huì xiǎng bànfǎ de, nǐ jiù bié xiā dānxīn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 瞎担心.",
+      "giai": "\"Lo hão\" = 瞎担心; lời khuyên dùng 别……了."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，但她的脸上总是有美丽的微笑。",
+      "goiY": "cô ấy bị mù từ nhỏ (dùng 瞎 — động từ) — 练一练 (1) của sách",
+      "mau": "她从小眼睛就瞎了，但她的脸上总是有美丽的微笑。",
+      "can": [
+       [
+        "瞎"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "你少跟他打交道，＿＿＿。",
+      "goiY": "cậu ta hay nói bừa, đừng tin (dùng 瞎 + động từ) — 练一练 (3) của sách",
+      "mau": "你少跟他打交道，他总是瞎说。",
+      "can": [
+       [
+        "瞎"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「瞎」 (bị mù, hoặc 瞎 + động từ: làm bừa, vô ích), nói về em hoặc bạn bè em",
+      "mau": "考试前别瞎担心，只要认真复习就好了。",
+      "can": [
+       [
+        "瞎"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「分别」",
+  "tenVn": "",
+  "cauTruc": [
+   "A 和 B + 分别 (+ thời gian) — động từ: chia tay",
+   "Chủ ngữ số nhiều + 分别 + V — phó từ: mỗi người làm riêng",
+   "……，分别是 X、Y 和 Z — phó từ: lần lượt là",
+   "有 / 没有 + 什么 + 分别 — danh từ: chỗ khác nhau"
+  ],
+  "giaiThich": "分别 có ba cách dùng. ① ĐỘNG TỪ: chia tay, xa nhau (= 离别). ② PHÓ TỪ: mỗi người / mỗi bên làm riêng (= 分头、各自), hoặc lần lượt nêu từng cái một (分别是……). ③ DANH TỪ: chỗ khác nhau (= 区别). Lưu ý bẫy Hán–Việt: \"phân biệt (nhận ra chỗ khác)\" tiếng Trung là 区分/分辨.",
+  "viDu": [
+   {
+    "zh": "分别是暂时的，我们以后一定会再见。",
+    "py": "Fēnbié shì zànshí de, wǒmen yǐhòu yídìng huì zài jiàn.",
+    "vn": "Chia tay chỉ là tạm thời, sau này chúng ta nhất định sẽ gặp lại."
+   },
+   {
+    "zh": "士兵们分别去不同地方寻找，把找到的大象和盲人带到他面前。",
+    "py": "Shìbīngmen fēnbié qù bù tóng dìfang xúnzhǎo, bǎ zhǎodào de dàxiàng hé mángrén dàidào tā miànqián.",
+    "vn": "Binh lính chia nhau đi tìm ở những nơi khác nhau, rồi đưa con voi và những người mù tìm được đến trước mặt vua."
+   },
+   {
+    "zh": "我不知道这两种做法有什么分别。",
+    "py": "Wǒ bù zhīdào zhè liǎng zhǒng zuòfǎ yǒu shénme fēnbié.",
+    "vn": "Tôi không biết hai cách làm này có gì khác nhau."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他们去分别不同的城市。",
+    "why": "Phó từ 分别 đứng sau chủ ngữ, TRƯỚC động từ 去.",
+    "dung": "他们分别去不同的城市。"
+   },
+   {
+    "sai": "我分别不出这两个字的意思。",
+    "why": "Bẫy Hán–Việt: \"phân biệt được / nhận ra chỗ khác\" là 分辨 / 区分, không dùng 分别 + bổ ngữ khả năng.",
+    "dung": "我分辨不出这两个字的意思。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "士兵们",
+       "去不同地方寻找。"
+      ],
+      "dap": [
+       [
+        "分别"
+       ]
+      ],
+      "chon": [
+       "分别",
+       "区别",
+       "告别"
+      ],
+      "goiY": "\"Binh lính chia nhau đi tìm ở những nơi khác nhau.\"",
+      "giai": "Phó từ 分别 = mỗi người làm riêng, đứng trước động từ 去."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "桌子上有三本书，",
+       "是汉语书、英语书和数学书。"
+      ],
+      "dap": [
+       [
+        "分别"
+       ]
+      ],
+      "chon": [
+       "分别",
+       "各自",
+       "一起"
+      ],
+      "goiY": "\"Trên bàn có ba cuốn sách, lần lượt là sách tiếng Trung, tiếng Anh và toán.\"",
+      "giai": "Liệt kê lần lượt từng thứ → 分别是……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "从毕业到现在，我们已经",
+       "二十年了。"
+      ],
+      "dap": [
+       [
+        "分别"
+       ]
+      ],
+      "chon": [
+       "分别",
+       "区别",
+       "特别"
+      ],
+      "goiY": "\"Từ lúc tốt nghiệp đến giờ, chúng tôi đã xa nhau hai mươi năm.\"",
+      "giai": "Động từ 分别 = chia tay, xa nhau; thời lượng đặt sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这两张照片看起来一样，其实有很大的",
+       "。"
+      ],
+      "dap": [
+       [
+        "分别"
+       ]
+      ],
+      "chon": [
+       "分别",
+       "特别",
+       "告别"
+      ],
+      "goiY": "\"Hai tấm ảnh trông giống nhau, thật ra khác nhau nhiều.\"",
+      "giai": "Danh từ 分别 = chỗ khác nhau (= 区别)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老师",
+       "找我们三个人谈话，每个人谈了十分钟。"
+      ],
+      "dap": [
+       [
+        "分别"
+       ]
+      ],
+      "chon": [
+       "分别",
+       "连续",
+       "便"
+      ],
+      "goiY": "\"Thầy lần lượt gọi riêng ba chúng tôi ra nói chuyện, mỗi người mười phút.\"",
+      "giai": "Gặp riêng từng người → phó từ 分别."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们俩",
+       "的时候，她送了我一本书。"
+      ],
+      "dap": [
+       [
+        "分别"
+       ]
+      ],
+      "chon": [
+       "分别",
+       "区别",
+       "特别"
+      ],
+      "goiY": "\"Lúc hai chúng tôi chia tay, cô ấy tặng tôi một cuốn sách.\"",
+      "giai": "Động từ 分别 = chia tay (……的时候)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他们",
+       "去",
+       "分别",
+       "上海和北京"
+      ],
+      "dap": [
+       "他们分别去上海和北京。"
+      ],
+      "goiY": "Họ mỗi người đi Thượng Hải và Bắc Kinh.",
+      "giai": "Chủ ngữ số nhiều + 分别 + 去."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "分别",
+       "已经",
+       "十年了"
+      ],
+      "dap": [
+       "我们已经分别十年了。"
+      ],
+      "goiY": "Chúng tôi đã xa nhau mười năm rồi.",
+      "giai": "已经 + 分别 + thời lượng + 了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这两种做法",
+       "分别",
+       "没有",
+       "什么"
+      ],
+      "dap": [
+       "这两种做法没有什么分别。"
+      ],
+      "goiY": "Hai cách làm này chẳng có gì khác nhau.",
+      "giai": "没有 + 什么 + 分别 (danh từ)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "士兵们分别去不同地方寻找。",
+      "dung": true,
+      "giai": "Phó từ 分别 đứng trước động từ — đúng (câu trong bài)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他们去分别不同的城市。",
+      "dung": false,
+      "sua": "他们分别去不同的城市。",
+      "giai": "Phó từ 分别 phải đứng TRƯỚC động từ 去."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我分别不出这两个字的意思。",
+      "dung": false,
+      "sua": "我分辨不出这两个字的意思。",
+      "giai": "\"Phân biệt được\" dùng 分辨/区分, không dùng 分别 + bổ ngữ khả năng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ba đứa trẻ này lần lượt 5 tuổi, 7 tuổi và 9 tuổi.",
+      "dap": [
+       "这三个孩子分别是五岁、七岁和九岁。",
+       "这三个孩子分别五岁、七岁和九岁。",
+       "这三个孩子分别是5岁、7岁和9岁。"
+      ],
+      "py": "Zhè sān ge háizi fēnbié shì wǔ suì, qī suì hé jiǔ suì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 分别 (lần lượt là).",
+      "giai": "Liệt kê lần lượt → 分别(是)……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chúng tôi đã xa nhau ba năm rồi.",
+      "dap": [
+       "我们已经分别三年了。",
+       "我们分别已经三年了。"
+      ],
+      "py": "Wǒmen yǐjīng fēnbié sān nián le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 分别 (động từ).",
+      "giai": "Động từ 分别 + thời lượng + 了."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "时间过得真快，＿＿＿。",
+      "goiY": "chúng ta đã xa nhau mấy năm rồi (分别 — động từ) — 练一练 (1) của sách",
+      "mau": "时间过得真快，我们已经分别五年了。",
+      "can": [
+       [
+        "分别"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：快放寒假了，你们假期有什么打算？　B：＿＿＿。",
+      "goiY": "hai chị em mỗi người về một nơi (分别 — phó từ) — 练一练 (2) của sách",
+      "mau": "我和妹妹打算分别去爷爷家和外婆家住几天。",
+      "can": [
+       [
+        "分别"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「分别」 (chia tay / mỗi người làm riêng / lần lượt là / chỗ khác nhau), nói về em hoặc bạn bè em",
+      "mau": "毕业以后，我和好朋友分别去了两个城市上大学。",
+      "can": [
+       [
+        "分别"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「根」",
+  "tenVn": "",
+  "cauTruc": [
+   "N + 的 + 根 — danh từ: rễ cây",
+   "从根上 + V — danh từ: gốc rễ, nền tảng",
+   "Số từ + 根 + N — lượng từ: vật dài, mảnh"
+  ],
+  "giaiThich": "根 ① DANH TỪ: rễ cây — phần mọc xuống dưới đất. ② DANH TỪ: gốc, nền tảng của sự vật (牙根, 从根上解决). ③ LƯỢNG TỪ: dùng cho vật DÀI và MẢNH: 一根绳子, 一根尾巴, 一根筷子, 几根箭, 一根头发.",
+  "viDu": [
+   {
+    "zh": "这棵树的根又粗又长。",
+    "py": "Zhè kē shù de gēn yòu cū yòu cháng.",
+    "vn": "Rễ của cái cây này vừa to vừa dài."
+   },
+   {
+    "zh": "这件事还是得从根上解决，只解决表面问题是不行的。",
+    "py": "Zhè jiàn shì háishi děi cóng gēn shang jiějué, zhǐ jiějué biǎomiàn wèntí shì bù xíng de.",
+    "vn": "Việc này vẫn phải giải quyết tận gốc, chỉ giải quyết bề mặt là không được."
+   },
+   {
+    "zh": "可是，这次他连续换了几根箭，都没能再射进去。",
+    "py": "Kěshì, zhè cì tā liánxù huànle jǐ gēn jiàn, dōu méi néng zài shè jìnqù.",
+    "vn": "Thế nhưng lần này ông liên tiếp thay mấy mũi tên mà đều không bắn ngập vào được nữa."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我买了一根书。",
+    "why": "根 chỉ dùng cho vật dài, mảnh; sách dùng lượng từ 本.",
+    "dung": "我买了一本书。"
+   },
+   {
+    "sai": "桌子上放着三根杯子。",
+    "why": "Cốc không phải vật dài mảnh; dùng 个.",
+    "dung": "桌子上放着三个杯子。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "摸到尾巴的盲人说大象像一",
+       "绳子。"
+      ],
+      "dap": [
+       [
+        "根"
+       ]
+      ],
+      "chon": [
+       "根",
+       "把",
+       "面"
+      ],
+      "goiY": "\"Người mù sờ trúng đuôi nói con voi giống một sợi dây.\"",
+      "giai": "Dây là vật dài, mảnh → lượng từ 根 (cũng nói 一条绳子). 把 cho đồ có tay cầm, 面 cho vật phẳng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这棵树的",
+       "又粗又长。"
+      ],
+      "dap": [
+       [
+        "根"
+       ]
+      ],
+      "chon": [
+       "根",
+       "杆",
+       "尾巴"
+      ],
+      "goiY": "\"Rễ của cái cây này vừa to vừa dài.\"",
+      "giai": "Danh từ 根 = rễ cây."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我第一次用筷子，一",
+       "筷子掉到了地上。"
+      ],
+      "dap": [
+       [
+        "根"
+       ]
+      ],
+      "chon": [
+       "根",
+       "把",
+       "块"
+      ],
+      "goiY": "\"Lần đầu dùng đũa, một chiếc đũa rơi xuống đất.\"",
+      "giai": "Một chiếc đũa → 一根筷子 (một đôi đũa là 一双筷子)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事得从",
+       "上解决，不能只解决表面问题。"
+      ],
+      "dap": [
+       [
+        "根"
+       ]
+      ],
+      "chon": [
+       "根",
+       "墙",
+       "石头"
+      ],
+      "goiY": "\"Việc này phải giải quyết tận gốc, không thể chỉ giải quyết bề mặt.\"",
+      "giai": "从根上 = từ gốc rễ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他连续换了几",
+       "箭，都没能再射进去。"
+      ],
+      "dap": [
+       [
+        "根"
+       ]
+      ],
+      "chon": [
+       "根",
+       "头",
+       "面"
+      ],
+      "goiY": "\"Ông liên tiếp thay mấy mũi tên mà đều không bắn vào được nữa.\"",
+      "giai": "Câu trong bài: 几根箭. 头 cho thú lớn; 面 cho vật phẳng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈头上长了几",
+       "白头发。"
+      ],
+      "dap": [
+       [
+        "根"
+       ]
+      ],
+      "chon": [
+       "根",
+       "块",
+       "张"
+      ],
+      "goiY": "\"Trên đầu mẹ mọc mấy sợi tóc bạc.\"",
+      "giai": "Sợi tóc → 一根头发."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "买了",
+       "三根",
+       "香蕉"
+      ],
+      "dap": [
+       "他买了三根香蕉。"
+      ],
+      "goiY": "Cậu ấy mua ba quả chuối.",
+      "giai": "Số từ + 根 + 香蕉 làm tân ngữ đứng sau động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "植物",
+       "靠",
+       "根",
+       "吸水"
+      ],
+      "dap": [
+       "植物靠根吸水。"
+      ],
+      "goiY": "Thực vật hút nước nhờ rễ.",
+      "giai": "靠 + 根 (danh từ) + 吸水; ôn 靠 bài 1."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "借我",
+       "一根",
+       "绳子",
+       "吧"
+      ],
+      "dap": [
+       "你借我一根绳子吧。"
+      ],
+      "goiY": "Cậu cho tớ mượn một sợi dây nhé.",
+      "giai": "借 + người + 一根绳子 + 吧."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他连续换了几根箭。",
+      "dung": true,
+      "giai": "根 dùng cho tên (vật dài, mảnh) — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我买了一根书。",
+      "dung": false,
+      "sua": "我买了一本书。",
+      "giai": "Sách dùng lượng từ 本, không dùng 根."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "桌子上放着三根杯子。",
+      "dung": false,
+      "sua": "桌子上放着三个杯子。",
+      "giai": "Cốc dùng 个, không phải vật dài mảnh."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu có dây không? Cho tớ mượn một sợi.",
+      "dap": [
+       "你有绳子吗？借我一根吧。",
+       "你有没有绳子？借我一根吧。",
+       "你有绳子吗？借给我一根吧。"
+      ],
+      "py": "Nǐ yǒu shéngzi ma? Jiè wǒ yì gēn ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 根 làm lượng từ.",
+      "giai": "Lượng từ 根 có thể đứng một mình khi danh từ đã nhắc ở trước: 借我一根."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Vấn đề này phải giải quyết tận gốc.",
+      "dap": [
+       "这个问题要从根上解决。",
+       "这个问题得从根上解决。",
+       "这个问题必须从根上解决。"
+      ],
+      "py": "Zhège wèntí yào cóng gēn shang jiějué.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从根上.",
+      "giai": "根 danh từ, nghĩa bóng: nền tảng, gốc rễ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "植物靠＿＿＿。",
+      "goiY": "cây hút nước, chất dinh dưỡng bằng rễ (根 — danh từ) — 练一练 (1) của sách",
+      "mau": "植物靠根吸收水分和营养。",
+      "can": [
+       [
+        "根"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "第一次用筷子的时候，＿＿＿。",
+      "goiY": "kể chuyện làm rơi một chiếc đũa (根 — lượng từ) — 练一练 (2) của sách",
+      "mau": "第一次用筷子的时候，我把一根筷子掉到了地上。",
+      "can": [
+       [
+        "根"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「根」 (rễ cây, gốc rễ, hoặc lượng từ cho vật dài mảnh), nói về em hoặc gia đình em",
+      "mau": "我妹妹一顿饭能吃两根香蕉。",
+      "can": [
+       [
+        "根"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "4",
+  "ten": "「便」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 便 + V (= 就, văn viết)",
+   "一 + V1，便 + V2",
+   "只要 / 如果……，便……"
+  ],
+  "giaiThich": "便 là PHÓ TỪ, nghĩa như 就, thường dùng trong VĂN VIẾT. Biểu thị việc xảy ra một cách tự nhiên trong một điều kiện hoặc hoàn cảnh nào đó. 便 đứng SAU chủ ngữ, TRƯỚC động từ; hay đi với 一……便……, 只要/如果……便…….",
+  "viDu": [
+   {
+    "zh": "楼上新买了一架钢琴，我们家便多了一些不安静。",
+    "py": "Lóu shàng xīn mǎile yí jià gāngqín, wǒmen jiā biàn duōle yìxiē bù ānjìng.",
+    "vn": "Nhà tầng trên mới mua một cây đàn piano, nhà chúng tôi thế là bớt yên tĩnh hẳn."
+   },
+   {
+    "zh": "很多时候，仅仅是换一种心情，换一个角度，便可以从困境中走出来。",
+    "py": "Hěn duō shíhou, jǐnjǐn shì huàn yì zhǒng xīnqíng, huàn yí ge jiǎodù, biàn kěyǐ cóng kùnjìng zhōng zǒu chūlái.",
+    "vn": "Nhiều khi chỉ cần đổi tâm trạng, đổi góc nhìn là có thể bước ra khỏi khốn cảnh."
+   },
+   {
+    "zh": "“精诚所至，金石为开”这一成语也便由此流传下来。",
+    "py": "\"Jīngchéng suǒ zhì, jīnshí wéi kāi\" zhè yì chéngyǔ yě biàn yóucǐ liúchuán xiàlái.",
+    "vn": "Thành ngữ \"lòng thành cảm động đá vàng\" cũng từ đó mà lưu truyền lại."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "便他转身回去拿钥匙。",
+    "why": "便 là phó từ, phải đứng SAU chủ ngữ, trước động từ.",
+    "dung": "他便转身回去拿钥匙。"
+   },
+   {
+    "sai": "他一到学校，老师便就来了。",
+    "why": "便 đã có nghĩa là 就, dùng cả hai là thừa.",
+    "dung": "他一到学校，老师便来了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "“精诚所至，金石为开”这一成语也",
+       "由此流传下来。"
+      ],
+      "dap": [
+       [
+        "便"
+       ]
+      ],
+      "chon": [
+       "便",
+       "才",
+       "又"
+      ],
+      "goiY": "\"Thành ngữ này cũng từ đó mà lưu truyền.\"",
+      "giai": "便 = 就 (văn viết): sự việc xảy ra tự nhiên từ nguyên nhân trước đó."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他一回到家，",
+       "打开电脑开始工作。"
+      ],
+      "dap": [
+       [
+        "便"
+       ]
+      ],
+      "chon": [
+       "便",
+       "才",
+       "再"
+      ],
+      "goiY": "\"Vừa về đến nhà, anh ấy liền mở máy tính làm việc.\"",
+      "giai": "一……便…… = 一……就…… (văn viết)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只要换一个角度，",
+       "可以从困境中走出来。"
+      ],
+      "dap": [
+       [
+        "便"
+       ]
+      ],
+      "chon": [
+       "便",
+       "才",
+       "还"
+      ],
+      "goiY": "\"Chỉ cần đổi góc nhìn là có thể thoát khỏi khốn cảnh.\"",
+      "giai": "只要……便…… = 只要……就……; 才 đi với 只有."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "楼上新买了一架钢琴，我们家",
+       "多了一些不安静。"
+      ],
+      "dap": [
+       [
+        "便"
+       ]
+      ],
+      "chon": [
+       "便",
+       "才",
+       "再"
+      ],
+      "goiY": "\"Tầng trên mới mua đàn piano, nhà tôi thế là bớt yên tĩnh.\"",
+      "giai": "Kết quả tự nhiên → 便 (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天一亮，他们",
+       "出发了。"
+      ],
+      "dap": [
+       [
+        "便"
+       ]
+      ],
+      "chon": [
+       "便",
+       "才",
+       "又"
+      ],
+      "goiY": "\"Trời vừa sáng, họ liền lên đường.\"",
+      "giai": "一……便……: hai việc nối tiếp nhau ngay."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "听完扬雄的解释，大家",
+       "明白了。"
+      ],
+      "dap": [
+       [
+        "便"
+       ]
+      ],
+      "chon": [
+       "便",
+       "再",
+       "还"
+      ],
+      "goiY": "\"Nghe Dương Hùng giải thích xong, mọi người liền hiểu ra.\"",
+      "giai": "Điều kiện đã có → kết quả tự nhiên: 便明白了."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "发现",
+       "便",
+       "没带钥匙",
+       "一出门"
+      ],
+      "dap": [
+       "他一出门便发现没带钥匙。"
+      ],
+      "goiY": "Anh ấy vừa ra khỏi cửa liền phát hiện không mang chìa khoá.",
+      "giai": "Chủ ngữ + 一 + V1 + 便 + V2."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个成语",
+       "流传下来",
+       "便",
+       "由此"
+      ],
+      "dap": [
+       "这个成语便由此流传下来。"
+      ],
+      "goiY": "Thành ngữ này từ đó được lưu truyền.",
+      "giai": "便 đứng sau chủ ngữ, trước trạng ngữ 由此 và động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "只要",
+       "便",
+       "努力",
+       "能成功"
+      ],
+      "dap": [
+       "只要努力便能成功。"
+      ],
+      "goiY": "Chỉ cần nỗ lực là có thể thành công.",
+      "giai": "只要 + điều kiện + 便 + kết quả."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他刚出门，发现没带钥匙，便转身回去拿。",
+      "dung": true,
+      "giai": "便 = 就, đứng trước động từ 转身 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "便他转身回去拿钥匙。",
+      "dung": false,
+      "sua": "他便转身回去拿钥匙。",
+      "giai": "便 là phó từ, phải đứng SAU chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他一到学校，老师便就来了。",
+      "dung": false,
+      "sua": "他一到学校，老师便来了。",
+      "giai": "便 đã mang nghĩa 就, dùng cả hai là thừa."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Vừa về đến nhà, anh ấy liền đi ngủ.",
+      "dap": [
+       "他一回到家便去睡觉了。",
+       "他一回家便睡觉了。",
+       "他一到家便去睡觉了。",
+       "他一回到家，便去睡觉了。",
+       "他一回家便去睡觉了。"
+      ],
+      "py": "Tā yì huídào jiā biàn qù shuìjiào le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一……便…….",
+      "giai": "一 + V1 + 便 + V2: vừa … liền …."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỉ cần kiên trì thì có thể thành công.",
+      "dap": [
+       "只要坚持，便能成功。",
+       "只要坚持便可以成功。",
+       "只要坚持，便可以成功。",
+       "只要坚持便能成功。"
+      ],
+      "py": "Zhǐyào jiānchí, biàn néng chénggōng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 只要……便…….",
+      "giai": "只要……便…… = 只要……就…… (văn viết)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他刚出门，发现没带钥匙，＿＿＿。",
+      "goiY": "viết lại vế \"就转身回去拿\" bằng 便 — 练一练 (1) của sách",
+      "mau": "他刚出门，发现没带钥匙，便转身回去拿。",
+      "can": [
+       [
+        "便"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "如果我们坚持原来的想法，＿＿＿。",
+      "goiY": "viết lại vế \"这个工作是不可能完成的\" bằng 便 — 练一练 (3) của sách",
+      "mau": "如果我们坚持原来的想法，这个工作便不可能完成。",
+      "can": [
+       [
+        "便"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「便」 (= 就, văn viết), ví dụ với 一……便…… hoặc 只要……便……, nói về việc học của em",
+      "mau": "我一放学便去图书馆复习。",
+      "can": [
+       [
+        "便"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

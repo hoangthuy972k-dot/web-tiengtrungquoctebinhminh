@@ -1539,6 +1539,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-15.html'
+      },
+      {
+        id: 'hsk5-l16',
+        number: 16,
+        title: 'Cân nặng và ăn kiêng',
+        titleHanzi: '体重与节食',
+        titlePinyin: 'Tǐzhòng yǔ jiéshí',
+        topic: 'Unit 6 修身养性 · Cân nặng & chuyện ăn kiêng',
+        vocabCount: 41,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-16.html'
       }
     ],
     yct: [

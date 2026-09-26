@@ -15765,3 +15765,941 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-15.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-16.html"] = [
+ {
+  "so": "1",
+  "ten": "「即」",
+  "tenVn": "",
+  "cauTruc": [
+   "A，即 B (B giải thích A)",
+   "(一) V₁ + 即 + V₂ (= 就)"
+  ],
+  "giaiThich": "即 là từ VĂN VIẾT. ① Động từ = 就是 (tức là, nghĩa là): vế sau giải thích, cụ thể hoá cho vế trước. ② Phó từ = 就, 便 (liền, ngay): đứng trước động từ thứ hai, hay gặp trong các cụm bốn chữ như 不懂即问, 一学即会, 一拍即合. Đừng nhầm với 既 jì (既……又……).",
+  "viDu": [
+   {
+    "zh": "“旦”是象形字，即太阳从地平线上升起。",
+    "py": "“Dàn” shì xiàngxíngzì, jí tàiyáng cóng dìpíngxiàn shang shēngqǐ.",
+    "vn": "“旦” là chữ tượng hình, tức là mặt trời mọc lên từ đường chân trời."
+   },
+   {
+    "zh": "这些人的体重变化表现出清晰的模式，即周末之后体重升高，在工作日体重减轻（周五达到最低点）。",
+    "py": "Zhèxiē rén de tǐzhòng biànhuà biǎoxiàn chū qīngxī de móshì, jí zhōumò zhīhòu tǐzhòng shēnggāo, zài gōngzuòrì tǐzhòng jiǎnqīng (zhōuwǔ dádào zuì dī diǎn).",
+    "vn": "Sự thay đổi cân nặng của những người này thể hiện một mô hình rõ ràng, tức là sau cuối tuần cân nặng tăng lên, còn ngày làm việc thì giảm (thứ Sáu thấp nhất)."
+   },
+   {
+    "zh": "不懂即问是他最大的优点，也是他成功的主要原因。",
+    "py": "Bù dǒng jí wèn shì tā zuì dà de yōudiǎn, yě shì tā chénggōng de zhǔyào yuányīn.",
+    "vn": "Không hiểu là hỏi ngay là ưu điểm lớn nhất của anh ấy, cũng là nguyên nhân chính khiến anh ấy thành công."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他可聪明了，什么东西一学即就会。",
+    "why": "即 (phó từ) đã có nghĩa là 就, dùng cả hai là thừa.",
+    "dung": "他可聪明了，什么东西一学即会。"
+   },
+   {
+    "sai": "这些人的体重变化有清晰的模式，既周末之后体重升高。",
+    "why": "Nhầm 既 jì (既……又……) với 即 jí (tức là).",
+    "dung": "这些人的体重变化有清晰的模式，即周末之后体重升高。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这些人的体重变化表现出清晰的模式，",
+       "周末之后体重升高。"
+      ],
+      "dap": [
+       [
+        "即"
+       ]
+      ],
+      "chon": [
+       "即",
+       "既",
+       "立即"
+      ],
+      "goiY": "“… một mô hình rõ ràng, TỨC LÀ sau cuối tuần cân nặng tăng.”",
+      "giai": "即 = 就是, dẫn ra phần giải thích (câu của bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他可聪明了，什么东西一学",
+       "会。"
+      ],
+      "dap": [
+       [
+        "即",
+        "就"
+       ]
+      ],
+      "chon": [
+       "即",
+       "既",
+       "非"
+      ],
+      "goiY": "“Học một lần là biết NGAY.”",
+      "giai": "一 V₁ 即 V₂ — 即 làm phó từ = 就 (练一练 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "不懂",
+       "问是他最大的优点。"
+      ],
+      "dap": [
+       [
+        "即",
+        "就"
+       ]
+      ],
+      "chon": [
+       "即",
+       "非",
+       "个别"
+      ],
+      "goiY": "“Không hiểu là hỏi ngay.”",
+      "giai": "不懂即问 — cụm bốn chữ, 即 = 就."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "汉字“宇”代表上下四方，",
+       "所有的空间。"
+      ],
+      "dap": [
+       [
+        "即"
+       ]
+      ],
+      "chon": [
+       "即",
+       "既",
+       "非"
+      ],
+      "goiY": "“… tức là toàn bộ không gian.”",
+      "giai": "即 = 就是 (练一练 của sách: 意思是 → 即)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在鸟爸爸、鸟妈妈的精心照顾下，小鸟30～35天",
+       "可独立生活。"
+      ],
+      "dap": [
+       [
+        "即",
+        "便"
+       ]
+      ],
+      "chon": [
+       "即",
+       "既",
+       "非"
+      ],
+      "goiY": "“… 30–35 ngày là có thể sống độc lập.”",
+      "giai": "即可 = 便可 = 就可以 (练一练 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在办公司这件事上，两人早都有打算，这次的机会让他俩一拍",
+       "合。"
+      ],
+      "dap": [
+       [
+        "即"
+       ]
+      ],
+      "chon": [
+       "即",
+       "既",
+       "非"
+      ],
+      "goiY": "Thành ngữ “vừa vỗ đã khớp”.",
+      "giai": "一拍即合 — thành ngữ cố định, 即 = 就."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这些人的体重变化",
+       "表现出清晰的模式",
+       "，",
+       "即",
+       "周末之后",
+       "体重升高",
+       "。"
+      ],
+      "dap": [
+       "这些人的体重变化表现出清晰的模式，即周末之后体重升高。"
+      ],
+      "goiY": "Sự thay đổi cân nặng có một mô hình rõ ràng, tức là sau cuối tuần cân tăng.",
+      "giai": "A，即 B — B giải thích A."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "什么东西",
+       "一学",
+       "即会",
+       "。"
+      ],
+      "dap": [
+       "他什么东西一学即会。",
+       "什么东西他一学即会。"
+      ],
+      "goiY": "Cậu ấy cái gì học một lần là biết.",
+      "giai": "一学即会 = 一学就会."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我的生日",
+       "是",
+       "十月一日",
+       "，",
+       "即",
+       "国庆节",
+       "。"
+      ],
+      "dap": [
+       "我的生日是十月一日，即国庆节。"
+      ],
+      "goiY": "Sinh nhật tôi là ngày 1 tháng 10, tức là ngày Quốc khánh.",
+      "giai": "即 + phần giải thích đứng sau dấu phẩy."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他一学即会，真聪明。",
+      "dung": true,
+      "giai": "Đúng: 即 = 就, đứng giữa hai động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他一学即就会。",
+      "dung": false,
+      "sua": "他一学即会。",
+      "giai": "即 và 就 cùng nghĩa, không dùng cả hai."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "明天既周六，我们不上课。",
+      "dung": false,
+      "sua": "明天即周六，我们不上课。",
+      "giai": "Nhầm 既 (jì) với 即 (jí). “Tức là” phải viết 即."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Người ăn kiêng này có một thói quen, tức là không ăn tối.",
+      "dap": [
+       "这个节食者有一个习惯，即不吃晚饭。",
+       "这个节食者有一个习惯，即不吃晚餐。",
+       "这位节食者有一个习惯，即不吃晚饭。"
+      ],
+      "py": "Zhège jiéshízhě yǒu yí ge xíguàn, jí bù chī wǎnfàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 即 (tức là).",
+      "giai": "A，即 B — B cụ thể hoá “thói quen”."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chữ “旦” là chữ tượng hình, tức là mặt trời mọc lên từ đường chân trời.",
+      "dap": [
+       "“旦”是象形字，即太阳从地平线上升起。",
+       "旦是象形字，即太阳从地平线上升起。"
+      ],
+      "py": "“Dàn” shì xiàngxíngzì, jí tàiyáng cóng dìpíngxiàn shang shēngqǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 即.",
+      "giai": "Câu ví dụ của sách."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他可聪明了，＿＿＿。",
+      "goiY": "viết lại “什么东西一学就会” bằng 即 — câu của sách",
+      "mau": "他可聪明了，什么东西一学即会。",
+      "can": [
+       [
+        "即"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "汉字“宇”代表上下四方，＿＿＿。",
+      "goiY": "viết lại “意思是所有的空间” bằng 即 — câu của sách",
+      "mau": "汉字“宇”代表上下四方，即所有的空间。",
+      "can": [
+       [
+        "即"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 即 (A，即 B), giải thích một quy định hoặc thói quen ở trường em",
+      "mau": "我们学校有一个规定，即上课时不能用手机。",
+      "can": [
+       [
+        "即"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「个别」",
+  "tenVn": "",
+  "cauTruc": [
+   "个别 + 谈话 / 训练 / 辅导 (riêng từng người)",
+   "个别 + 人 / 地区 / 现象 (số ít) · 除了个别……以外，……都……"
+  ],
+  "giaiThich": "个别 là tính từ (thuộc tính), thường đứng ngay trước danh từ / động từ, không làm vị ngữ, không đi với 很. ① = 单个、各个: riêng lẻ, riêng từng người — 个别谈话, 个别训练. ② Chỉ số rất ít, hiếm có — 个别人, 个别地区; hay dùng trong khung 除了个别……以外，……都…….",
+  "viDu": [
+   {
+    "zh": "他经常采取个别谈话的方式了解情况和解决问题。",
+    "py": "Tā jīngcháng cǎiqǔ gèbié tánhuà de fāngshì liǎojiě qíngkuàng hé jiějué wèntí.",
+    "vn": "Anh ấy thường dùng cách nói chuyện riêng để nắm tình hình và giải quyết vấn đề."
+   },
+   {
+    "zh": "……除了个别人以外，多数人体重的增加会从周六开始，……",
+    "py": "…… chúle gèbié rén yǐwài, duōshù rén tǐzhòng de zēngjiā huì cóng zhōuliù kāishǐ, ……",
+    "vn": "… ngoài một vài người cá biệt, cân nặng của đa số người bắt đầu tăng từ thứ Bảy, …"
+   },
+   {
+    "zh": "天气预报说今晚有小到中雨，个别地区可能有大雨。",
+    "py": "Tiānqì yùbào shuō jīnwǎn yǒu xiǎo dào zhōng yǔ, gèbié dìqū kěnéng yǒu dà yǔ.",
+    "vn": "Dự báo thời tiết nói tối nay có mưa nhỏ đến vừa, một vài khu vực có thể mưa to."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这种问题很个别，大家不用担心。",
+    "why": "个别 là tính từ thuộc tính, không làm vị ngữ và không đi với 很.",
+    "dung": "这只是个别问题，大家不用担心。"
+   },
+   {
+    "sai": "我们班个别同学都没交作业。",
+    "why": "个别 = số rất ít; 都 nhấn mạnh toàn bộ — hai ý mâu thuẫn.",
+    "dung": "我们班只有个别同学没交作业。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "……除了",
+       "人以外，多数人体重的增加会从周六开始。"
+      ],
+      "dap": [
+       [
+        "个别"
+       ]
+      ],
+      "chon": [
+       "个别",
+       "非",
+       "临时"
+      ],
+      "goiY": "“Ngoài một vài người …”",
+      "giai": "除了个别……以外 — số ít (câu của bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天气预报说今晚有小到中雨，",
+       "地区可能有大雨。"
+      ],
+      "dap": [
+       [
+        "个别"
+       ]
+      ],
+      "chon": [
+       "个别",
+       "临时",
+       "相对"
+      ],
+      "goiY": "“Một vài khu vực có thể mưa to.”",
+      "giai": "个别 + 地区 (câu của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他经常采取",
+       "谈话的方式了解情况和解决问题。"
+      ],
+      "dap": [
+       [
+        "个别"
+       ]
+      ],
+      "chon": [
+       "个别",
+       "明显",
+       "即"
+      ],
+      "goiY": "“Nói chuyện riêng từng người.”",
+      "giai": "个别谈话 — nghĩa ① riêng lẻ, từng người."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "教练针对他的技术特点进行了",
+       "训练，达到了比较好的效果。"
+      ],
+      "dap": [
+       [
+        "个别"
+       ]
+      ],
+      "chon": [
+       "个别",
+       "意外",
+       "即"
+      ],
+      "goiY": "“Luyện tập riêng.”",
+      "giai": "个别训练 (câu của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次考试大家都考得不错，只有",
+       "同学没及格。"
+      ],
+      "dap": [
+       [
+        "个别"
+       ]
+      ],
+      "chon": [
+       "个别",
+       "临时",
+       "非"
+      ],
+      "goiY": "“Chỉ có vài bạn không đạt.”",
+      "giai": "只有个别 + N — số rất ít."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这只是",
+       "现象，大多数人都很遵守规定。"
+      ],
+      "dap": [
+       [
+        "个别"
+       ]
+      ],
+      "chon": [
+       "个别",
+       "清晰",
+       "可靠"
+      ],
+      "goiY": "“Chỉ là hiện tượng cá biệt.”",
+      "giai": "个别现象 (bảng 词语搭配)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "除了",
+       "个别人",
+       "以外",
+       "，",
+       "大家",
+       "都",
+       "来了",
+       "。"
+      ],
+      "dap": [
+       "除了个别人以外，大家都来了。"
+      ],
+      "goiY": "Ngoài vài người ra, mọi người đều đến rồi.",
+      "giai": "除了个别……以外，……都……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "天气预报说",
+       "个别地区",
+       "可能有",
+       "大雨",
+       "。"
+      ],
+      "dap": [
+       "天气预报说个别地区可能有大雨。"
+      ],
+      "goiY": "Dự báo nói một vài khu vực có thể mưa to.",
+      "giai": "个别 + 地区 làm chủ ngữ của mệnh đề sau 说."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "老师",
+       "给我们",
+       "进行了",
+       "个别辅导",
+       "。"
+      ],
+      "dap": [
+       "老师给我们进行了个别辅导。"
+      ],
+      "goiY": "Cô giáo phụ đạo riêng cho chúng tôi.",
+      "giai": "进行 + 个别辅导 (nghĩa ① từng người)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "课文里的汉字，除了个别字以外，我都认识。",
+      "dung": true,
+      "giai": "Đúng: 个别字 = một vài chữ; khung 除了……以外，……都……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这种问题很个别，大家不用担心。",
+      "dung": false,
+      "sua": "这只是个别问题，大家不用担心。",
+      "giai": "个别 không làm vị ngữ, không đi với 很."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们班个别同学都没交作业。",
+      "dung": false,
+      "sua": "我们班只有个别同学没交作业。",
+      "giai": "个别 (số rất ít) mâu thuẫn với 都 (toàn bộ)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ngoài vài bạn ra, cả lớp đều đến rồi.",
+      "dap": [
+       "除了个别同学以外，全班都来了。",
+       "除了个别同学，全班都来了。",
+       "除了个别同学以外，全班同学都来了。"
+      ],
+      "py": "Chúle gèbié tóngxué yǐwài, quán bān dōu lái le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 除了个别……以外.",
+      "giai": "Khung 除了……以外，……都…… (ôn HSK 3)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Dự báo thời tiết nói một vài khu vực có thể có mưa to.",
+      "dap": [
+       "天气预报说个别地区可能有大雨。",
+       "天气预报说个别地区可能会有大雨。"
+      ],
+      "py": "Tiānqì yùbào shuō gèbié dìqū kěnéng yǒu dà yǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 个别.",
+      "giai": "个别 + 地区, không cần 的."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "旅行团里有几个小朋友，＿＿＿。",
+      "goiY": "vài em bị say xe (dùng 个别) — câu của sách",
+      "mau": "旅行团里有几个小朋友，个别小朋友有点儿晕车。",
+      "can": [
+       [
+        "个别"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：看课文时你有没有遇到不懂的地方或不认识的汉字？　B：＿＿＿。",
+      "goiY": "trả lời: chỉ vài chữ không biết (dùng 个别) — câu của sách",
+      "mau": "除了个别汉字不认识以外，其他的都看懂了。",
+      "can": [
+       [
+        "个别"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 「个别」, nói về lớp học hoặc bạn bè của em",
+      "mau": "我们班的同学都很努力，只有个别同学上课爱说话。",
+      "can": [
+       [
+        "个别"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「非」",
+  "tenVn": "",
+  "cauTruc": [
+   "非 + N (非工作人员)",
+   "A，而非 B · 并非……",
+   "非(要) + V · 非 + V + 不可"
+  ],
+  "giaiThich": "非 có ba cách dùng. ① Tiền tố đứng trước thành phần danh từ: \"không thuộc phạm vi này\" — 非语言, 非专业人员, 非工作人员. ② Động từ (văn viết) = 不是: hay gặp trong 而非 (chứ không phải), 并非 (hoàn toàn không phải). ③ Phó từ: chủ quan khăng khăng, nhất định làm (非要……); khung 非 + V + 不可 = 必须 (nhất định phải).",
+  "viDu": [
+   {
+    "zh": "在非语言的交流中，眼睛起着重要的作用。",
+    "py": "Zài fēi yǔyán de jiāoliú zhōng, yǎnjing qǐzhe zhòngyào de zuòyòng.",
+    "vn": "Trong giao tiếp phi ngôn ngữ, đôi mắt đóng vai trò quan trọng."
+   },
+   {
+    "zh": "……工作日和周末体重的临时变化应该被视为正常现象，而非真正的体重增加，……",
+    "py": "…… gōngzuòrì hé zhōumò tǐzhòng de línshí biànhuà yīnggāi bèi shìwéi zhèngcháng xiànxiàng, ér fēi zhēnzhèng de tǐzhòng zēngjiā, ……",
+    "vn": "… những thay đổi tạm thời của cân nặng giữa ngày làm việc và cuối tuần nên được coi là hiện tượng bình thường, chứ không phải tăng cân thật sự, …"
+   },
+   {
+    "zh": "补办学生证的事非你本人去不可。",
+    "py": "Bǔbàn xuéshengzhèng de shì fēi nǐ běnrén qù bùkě.",
+    "vn": "Việc làm lại thẻ học sinh nhất định phải chính em đi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他非要去不，谁也拦不住。",
+    "why": "Khung \"nhất định phải\" là 非……不可, không kết thúc bằng 不.",
+    "dung": "他非要去不可，谁也拦不住。"
+   },
+   {
+    "sai": "成功有时候非想象中那么难。",
+    "why": "Nghĩa \"không phải\" dùng 并非 (hoặc 而非); 非 đứng trơ trọi trước cụm so sánh nghe cụt, sai văn phong.",
+    "dung": "成功有时候并非想象中那么难。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "门口的牌子上写着：",
+       "工作人员请勿入内。"
+      ],
+      "dap": [
+       [
+        "非"
+       ]
+      ],
+      "chon": [
+       "非",
+       "不",
+       "没"
+      ],
+      "goiY": "“Người không phải nhân viên miễn vào.”",
+      "giai": "非 + N: tiền tố “không thuộc phạm vi này” (练一练 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "工作日和周末体重的临时变化应该被视为正常现象，而",
+       "真正的体重增加。"
+      ],
+      "dap": [
+       [
+        "非"
+       ]
+      ],
+      "chon": [
+       "非",
+       "即",
+       "不"
+      ],
+      "goiY": "“… chứ không phải tăng cân thật.”",
+      "giai": "A，而非 B (câu của bài khoá)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "成功有时候并",
+       "想象中那么难。"
+      ],
+      "dap": [
+       [
+        "非"
+       ]
+      ],
+      "chon": [
+       "非",
+       "不",
+       "没"
+      ],
+      "goiY": "“… hoàn toàn không khó như tưởng tượng.”",
+      "giai": "并非 = 并不是."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "听说你住院了，他",
+       "要来看看你不可。"
+      ],
+      "dap": [
+       [
+        "非"
+       ]
+      ],
+      "chon": [
+       "非",
+       "即",
+       "必"
+      ],
+      "goiY": "“Anh ấy nhất định phải đến thăm bạn.”",
+      "giai": "非……不可 = nhất định phải (练一练 của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "补办学生证的事非你本人去",
+       "。"
+      ],
+      "dap": [
+       [
+        "不可",
+        "不行"
+       ]
+      ],
+      "chon": [
+       "不可",
+       "可以",
+       "即可"
+      ],
+      "goiY": "Hoàn chỉnh khung “nhất định phải”.",
+      "giai": "非 + V + 不可."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在",
+       "语言的交流中，眼睛起着重要的作用。"
+      ],
+      "dap": [
+       [
+        "非"
+       ]
+      ],
+      "chon": [
+       "非",
+       "不",
+       "没"
+      ],
+      "goiY": "“Giao tiếp phi ngôn ngữ.”",
+      "giai": "非语言 — 非 làm tiền tố trước danh từ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "门口",
+       "写着",
+       "：",
+       "非工作人员",
+       "请勿入内",
+       "。"
+      ],
+      "dap": [
+       "门口写着：非工作人员请勿入内。"
+      ],
+      "goiY": "Ở cửa ghi: Người không phận sự miễn vào.",
+      "giai": "非 + 工作人员."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这件事",
+       "非",
+       "你本人",
+       "去",
+       "不可",
+       "。"
+      ],
+      "dap": [
+       "这件事非你本人去不可。"
+      ],
+      "goiY": "Việc này nhất định phải chính em đi.",
+      "giai": "非 + (người) + V + 不可."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这",
+       "是",
+       "正常现象",
+       "，",
+       "而非",
+       "真正的",
+       "体重增加",
+       "。"
+      ],
+      "dap": [
+       "这是正常现象，而非真正的体重增加。"
+      ],
+      "goiY": "Đây là hiện tượng bình thường, chứ không phải tăng cân thật.",
+      "giai": "A，而非 B."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "世界上并非只有人类才会骗人，动物也会。",
+      "dung": true,
+      "giai": "Đúng: 并非 = 并不是 (练一练 của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他非要去不，谁也拦不住。",
+      "dung": false,
+      "sua": "他非要去不可，谁也拦不住。",
+      "giai": "Khung đúng là 非……不可."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "非工作人员请勿入内。",
+      "dung": true,
+      "giai": "Đúng: 非 làm tiền tố trước danh từ 工作人员."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bác sĩ nói bệnh này nhất định phải phẫu thuật.",
+      "dap": [
+       "医生说这个病非做手术不可。",
+       "医生说这种病非做手术不可。",
+       "医生说这个病非手术不可。"
+      ],
+      "py": "Yīshēng shuō zhège bìng fēi zuò shǒushù bùkě.",
+      "goiY": "Dịch sang tiếng Trung, dùng 非……不可.",
+      "giai": "非 + V + 不可 = 必须."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chuyện này hoàn toàn không phải lỗi của cậu ấy.",
+      "dap": [
+       "这件事并非他的错。",
+       "这件事并非她的错。",
+       "这并非他的错。"
+      ],
+      "py": "Zhè jiàn shì bìngfēi tā de cuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 并非.",
+      "giai": "并非 = 并不是, văn viết."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "门口的牌子上写着：＿＿＿。",
+      "goiY": "viết lại “不是工作人员请勿入内” bằng 非 — câu của sách",
+      "mau": "门口的牌子上写着：非工作人员请勿入内。",
+      "can": [
+       [
+        "非"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "听说你住院了，＿＿＿。",
+      "goiY": "viết lại “他一定要来看看你” bằng 非……不可 — câu của sách",
+      "mau": "听说你住院了，他非要来看看你不可。",
+      "can": [
+       [
+        "非"
+       ],
+       [
+        "不可"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 「非」 (非……不可 hoặc 而非 / 并非), nói về việc học của em",
+      "mau": "想学好汉语，非每天坚持练习不可。",
+      "can": [
+       [
+        "非"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

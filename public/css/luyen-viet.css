@@ -254,3 +254,38 @@ html.ho-tro-toi[data-theme="dark"] {
 .pb-why.bad b { color: var(--lv-bad); }
 #pbSum { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 @media (max-width: 600px) { .pb-cols { grid-template-columns: 1fr; } }
+
+/* Nghe và điền từ trên bài khoá (nghe-dien.js) */
+.nd { display: flex; flex-direction: column; gap: 12px; margin: 16px 0; }
+.nd-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.nd-head .lv-label { margin: 0; }
+.nd-diem { font-size: 1.1rem; color: var(--lv-accent); font-variant-numeric: tabular-nums; }
+.nd-kho { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; border-radius: 12px; background: var(--lv-tint); position: sticky; top: 64px; z-index: 2; border: 1px solid var(--lv-line); }
+.nd-bai { display: flex; flex-direction: column; gap: 10px; }
+.nd-doan { margin: 0; font-size: 1.12rem; line-height: 2.3; }
+.nd-o {
+  display: inline-flex; align-items: baseline; justify-content: center; gap: 2px; min-width: 3.4em; min-height: 34px;
+  margin: 0 3px; padding: 0 8px; font: inherit; font-family: var(--lv-hanzi); color: var(--lv-ink);
+  background: var(--lv-card); border: 0; border-bottom: 2px solid var(--lv-soft); border-radius: 6px 6px 0 0; cursor: pointer; vertical-align: baseline;
+}
+.nd-o sup { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.62rem; font-weight: 700; color: var(--lv-soft); margin-right: 2px; }
+.nd-o.is-active { background: var(--lv-accent-l); border-bottom-color: var(--lv-accent); box-shadow: 0 0 0 2px var(--lv-accent) inset; }
+.nd-o.is-full { font-weight: 700; color: var(--lv-accent); }
+.nd-o.is-ok { background: var(--lv-ok-l); border-bottom-color: var(--lv-ok); color: var(--lv-ok); }
+.nd-o.is-bad { background: var(--lv-bad-l); border-bottom-color: var(--lv-bad); color: var(--lv-bad); text-decoration: line-through; }
+.nd-o:disabled { cursor: default; }
+.nd-o:focus-visible { outline: 3px solid var(--lv-accent); outline-offset: 2px; }
+.nd-sua { font-family: var(--lv-hanzi); color: var(--lv-ok); font-weight: 700; margin-right: 4px; }
+
+/* Bài khoá HSK 5: đoạn văn liền, không phải hội thoại */
+.dp-lines.dp-passage .dp-avatar { display: none; }
+.dp-lines.dp-passage .dp-line, .dp-lines.dp-passage .dp-line.is-b { justify-content: flex-start; }
+.dp-lines.dp-passage .dp-bubble { max-width: 100%; width: 100%; }
+.dp-fulltext { margin-top: 12px; }
+.dp-fulltext > summary { cursor: pointer; font-weight: 700; padding: 10px 0; color: var(--lv-ink); }
+.dp-fulltext > summary small { font-weight: 500; color: var(--lv-soft); }
+@media (max-width: 600px) {
+  .nd-kho { flex-wrap: nowrap; overflow-x: auto; top: 56px; padding: 8px; gap: 6px; -webkit-overflow-scrolling: touch; }
+  .nd-kho .lv-chip { flex: none; font-size: 1rem; min-height: 38px; padding: 4px 10px; }
+  .nd-doan { font-size: 1.05rem; line-height: 2.2; }
+}

@@ -1797,3 +1797,13 @@ matchData.push(
   {left:'完成',right:'一项任务'},
   {left:'半夜',right:'被吵醒'}
 );
+
+// ══════════════════════════════════════════
+// BÀI KHOÁ HSK 5 là MỘT bài liền và file nghe của giáo trình đọc liền cả bài —
+// gộp các đoạn soạn ở trên thành một bài (giữ nguyên từng đoạn văn bên trong).
+// ══════════════════════════════════════════
+dialogData = [{
+  scene: '课文 · 爱的细节',
+  preQuiz: dialogData.reduce(function (a, d) { return a.concat(d.preQuiz || []); }, []),
+  lines: dialogData.reduce(function (a, d) { return a.concat(d.lines || []); }, [])
+}];

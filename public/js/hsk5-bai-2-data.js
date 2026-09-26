@@ -1513,3 +1513,13 @@ matchData.push(
 sortData.forEach(function (s) {
   if (s.ans === '临走的时候，他给我打了电话。') s.alt = ['他临走的时候，给我打了电话。'];
 });
+
+// ══════════════════════════════════════════
+// BÀI KHOÁ HSK 5 là MỘT bài liền và file nghe của giáo trình đọc liền cả bài —
+// gộp các đoạn soạn ở trên thành một bài (giữ nguyên từng đoạn văn bên trong).
+// ══════════════════════════════════════════
+dialogData = [{
+  scene: '课文 · 留串钥匙给父母',
+  preQuiz: dialogData.reduce(function (a, d) { return a.concat(d.preQuiz || []); }, []),
+  lines: dialogData.reduce(function (a, d) { return a.concat(d.lines || []); }, [])
+}];

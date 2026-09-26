@@ -1,0 +1,112 @@
+{
+ "zh": "阅读与思考",
+ "py": "Yuèdú yǔ sīkǎo",
+ "vn": "Đọc và suy nghĩ",
+ "topic": "Unit 8 体会教育 · Đọc sách &amp; biết suy nghĩ",
+ "vocabCount": 36,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "一旦",
+   "explain": "一旦 là phó từ, chỉ một thời điểm KHÔNG xác định: \"một ngày nào đó bỗng …\" hoặc giả định \"nếu có ngày …\". Đứng ở vế trước (trước hoặc sau chủ ngữ), vế sau thường có 就 / 便 nêu kết quả tất yếu. Không đi với từ chỉ thời gian xác định (明天, 明年…) và vế sau không nối bằng 所以 / 但是.",
+   "rule": "<strong style=\"color:var(--sky-d)\">一旦</strong> + điều kiện / sự việc，(S) + 就 / 便 + kết quả",
+   "examples": [
+    {
+     "zh": "长大后，我终于明白了这个道理：女人一旦做了母亲，就变得矛盾了。",
+     "py": "Zhǎngdà hòu, wǒ zhōngyú míngbaile zhège dàolǐ: nǚrén yídàn zuòle mǔqīn, jiù biàn de máodùn le.",
+     "vn": "Lớn lên, tôi cuối cùng cũng hiểu ra đạo lý này: người phụ nữ một khi đã làm mẹ thì trở nên đầy mâu thuẫn."
+    },
+    {
+     "zh": "灰姑娘一旦进了这个王宫，……应该怎样对待她的继母，应该怎样对待她的两个姐姐？",
+     "py": "Huīgūniang yídàn jìnle zhège wánggōng, …… yīnggāi zěnyàng duìdài tā de jìmǔ, yīnggāi zěnyàng duìdài tā de liǎng ge jiějie?",
+     "vn": "Lọ Lem một khi đã vào hoàng cung, … thì nên đối xử với mẹ kế thế nào, nên đối xử với hai người chị thế nào?"
+    },
+    {
+     "zh": "所谓私人空间，是指我们身体周围的一定的空间，一旦有人闯入这个空间，我们就会感觉不舒服、不自在。",
+     "py": "Suǒwèi sīrén kōngjiān, shì zhǐ wǒmen shēntǐ zhōuwéi de yídìng de kōngjiān, yídàn yǒu rén chuǎngrù zhège kōngjiān, wǒmen jiù huì gǎnjué bù shūfu, bú zìzai.",
+     "vn": "Cái gọi là không gian riêng là khoảng không gian nhất định quanh cơ thể ta; một khi có người xông vào khoảng không gian này, ta sẽ thấy khó chịu, không thoải mái."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "资料一旦提交，所以不能更改了。",
+     "why": "Vế sau của 一旦 nêu kết quả tất yếu, dùng 就 / 便, không dùng 所以.",
+     "right": "资料一旦提交，就不能更改了。"
+    },
+    {
+     "wrong": "一旦明年毕业，我就去中国留学。",
+     "why": "一旦 chỉ thời điểm không xác định; việc chắc chắn xảy ra vào lúc xác định (明年毕业) dùng 一……就…… hoặc 等……以后.",
+     "right": "明年一毕业，我就去中国留学。"
+    }
+   ]
+  },
+  {
+   "point": "难免",
+   "explain": "难免 là tính từ: không dễ tránh được, khó tránh khỏi. ① Làm vị ngữ trong khung 是难免的. ② Đứng trước động từ / tính từ làm trạng ngữ, thường kèm 会 / 要: 难免会紧张. Hay dùng khi nói về điều không mong muốn nhưng tự nhiên, dễ thông cảm (lỗi, căng thẳng, mâu thuẫn). Không nói 很难免.",
+   "rule": "① N + 是<strong style=\"color:var(--sky-d)\">难免</strong>的　② <strong style=\"color:var(--sky-d)\">难免</strong> + 会 / 要 + V",
+   "examples": [
+    {
+     "zh": "刚开始工作，这样的错误是难免的。",
+     "py": "Gāng kāishǐ gōngzuò, zhèyàng de cuòwù shì nánmiǎn de.",
+     "vn": "Mới bắt đầu đi làm, lỗi như thế là khó tránh khỏi."
+    },
+    {
+     "zh": "朋友间难免会产生矛盾、误会甚至是伤害。",
+     "py": "Péngyou jiān nánmiǎn huì chǎnshēng máodùn, wùhuì shènzhì shì shānghài.",
+     "vn": "Giữa bạn bè khó tránh khỏi nảy sinh mâu thuẫn, hiểu lầm, thậm chí là tổn thương."
+    },
+    {
+     "zh": "……作为一个母亲，在自己的亲生女儿和不是亲生的灰姑娘之间，难免会更疼爱自己亲生的女儿，很难完全平等地对待她们。",
+     "py": "…… zuòwéi yí ge mǔqīn, zài zìjǐ de qīnshēng nǚ'ér hé bú shì qīnshēng de Huīgūniang zhījiān, nánmiǎn huì gèng téng'ài zìjǐ qīnshēng de nǚ'ér, hěn nán wánquán píngděng de duìdài tāmen.",
+     "vn": "… là một người mẹ, giữa con gái ruột và Lọ Lem không phải con ruột, khó tránh khỏi việc thương con ruột hơn, rất khó đối xử với các cô hoàn toàn bình đẳng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这样的错误很难免。",
+     "why": "难免 đã mang nghĩa \"khó tránh\", không đi với 很; làm vị ngữ phải dùng khung 是难免的.",
+     "right": "这样的错误是难免的。"
+    },
+    {
+     "wrong": "考试的时候他难免的紧张。",
+     "why": "Đứng trước động từ / tính từ thì dùng 难免 (会) + V, không thêm 的.",
+     "right": "考试的时候他难免会紧张。"
+    }
+   ]
+  },
+  {
+   "point": "自从",
+   "explain": "自从 là giới từ, chỉ thời gian bắt đầu từ một thời điểm trong QUÁ KHỨ và kéo dài đến nay. Sau 自从 là từ chỉ thời gian hoặc một sự việc đã xảy ra, thường thêm 以后 / 之后 / 后; vế sau hay có 就, 一直, 再也没……. Cụm 自从…… đứng đầu câu hoặc sau chủ ngữ, không đặt cuối câu. Nói về tương lai phải dùng 从 (从明天开始).",
+   "rule": "<strong style=\"color:var(--sky-d)\">自从</strong> + sự việc / thời điểm quá khứ + (以后 / 之后 / 后)，S + 就 / 一直 ……",
+   "examples": [
+    {
+     "zh": "自从城市出现后，它就成为人类生活的中心。",
+     "py": "Zìcóng chéngshì chūxiàn hòu, tā jiù chéngwéi rénlèi shēnghuó de zhōngxīn.",
+     "vn": "Từ khi thành phố xuất hiện, nó đã trở thành trung tâm của đời sống loài người."
+    },
+    {
+     "zh": "自从有了长大后成为作家这个理想之后，他每天都坚持写作。",
+     "py": "Zìcóng yǒule zhǎngdà hòu chéngwéi zuòjiā zhège lǐxiǎng zhīhòu, tā měi tiān dōu jiānchí xiězuò.",
+     "vn": "Từ khi có ước mơ lớn lên trở thành nhà văn, ngày nào cậu ấy cũng kiên trì viết."
+    },
+    {
+     "zh": "自从我听说了这件事，就开始思考应该如何阅读，除了阅读还应该做什么。",
+     "py": "Zìcóng wǒ tīngshuōle zhè jiàn shì, jiù kāishǐ sīkǎo yīnggāi rúhé yuèdú, chúle yuèdú hái yīnggāi zuò shénme.",
+     "vn": "Từ khi nghe chuyện này, tôi bắt đầu suy nghĩ nên đọc như thế nào, ngoài đọc ra còn nên làm gì."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "自从明天开始，我每天早上跑步。",
+     "why": "自从 chỉ dùng cho thời điểm trong quá khứ. Tương lai dùng 从.",
+     "right": "从明天开始，我每天早上跑步。"
+    },
+    {
+     "wrong": "我们一直是好朋友自从去年。",
+     "why": "Cụm 自从…… phải đứng đầu câu hoặc sau chủ ngữ, trước động từ chính — không đặt cuối câu như \"từ năm ngoái\" trong tiếng Việt.",
+     "right": "自从去年认识以后，我们一直是好朋友。"
+    }
+   ]
+  }
+ ]
+}

@@ -1599,6 +1599,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-20.html'
+      },
+      {
+        id: 'hsk5-l22',
+        number: 22,
+        title: 'Đọc và suy nghĩ',
+        titleHanzi: '阅读与思考',
+        titlePinyin: 'Yuèdú yǔ sīkǎo',
+        topic: 'Unit 8 体会教育 · Đọc sách & biết suy nghĩ',
+        vocabCount: 36,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-22.html'
       }
     ],
     yct: [

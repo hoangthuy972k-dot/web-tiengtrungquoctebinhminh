@@ -1517,6 +1517,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-13.html'
       },
       {
+        id: 'hsk5-l14',
+        number: 14,
+        title: 'Tứ hợp viện Bắc Kinh',
+        titleHanzi: '北京的四合院',
+        titlePinyin: 'Běijīng de sìhéyuàn',
+        topic: 'Unit 5 放眼世界 · Tứ hợp viện — kiến trúc nhà ở truyền thống của Bắc Kinh',
+        vocabCount: 42,
+        dialogueCount: 1,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk5-bai-14.html'
+      },
+      {
         id: 'hsk5-l15',
         number: 15,
         title: 'Đánh trận trên giấy',

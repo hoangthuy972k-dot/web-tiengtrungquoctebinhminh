@@ -1,0 +1,146 @@
+{
+ "zh": "北京的四合院",
+ "py": "Běijīng de sìhéyuàn",
+ "vn": "Tứ hợp viện Bắc Kinh",
+ "topic": "Unit 5 放眼世界 · Tứ hợp viện — kiến trúc nhà ở truyền thống của Bắc Kinh",
+ "vocabCount": 42,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "所谓",
+   "explain": "所谓 là tính từ, có hai cách dùng. ① “Cái thường được gọi là …” — đưa ra một từ ngữ, khái niệm rồi giải thích nó. ② “Cái mà (ai đó) gọi là …” — nhắc lại lời người khác, hàm ý KHÔNG đồng ý, không thừa nhận (hay có ngoặc kép, giọng mỉa mai).",
+   "rule": "① <strong style=\"color:var(--sky-d)\">所谓</strong> A，(就是)……　|　这就是<strong style=\"color:var(--sky-d)\">所谓</strong>的“……”　② (某人) <strong style=\"color:var(--sky-d)\">所谓</strong>的“……”，其实……",
+   "examples": [
+    {
+     "zh": "很多时候，烦恼是自己找来的，这就是所谓的“自寻烦恼”。",
+     "py": "Hěn duō shíhou, fánnǎo shì zìjǐ zhǎolái de, zhè jiù shì suǒwèi de “zì xún fánnǎo”.",
+     "vn": "Nhiều khi phiền não là do mình tự chuốc lấy, đó chính là cái gọi là “tự tìm phiền não”."
+    },
+    {
+     "zh": "所谓四合，“四”指东、西、南、北四面，“合”就是四面房屋围在一起，中间形成一个方形的院子。",
+     "py": "Suǒwèi sìhé, “sì” zhǐ dōng, xī, nán, běi sìmiàn, “hé” jiù shì sìmiàn fángwū wéi zài yìqǐ, zhōngjiān xíngchéng yí ge fāngxíng de yuànzi.",
+     "vn": "Cái gọi là “tứ hợp”: “tứ” chỉ bốn phía đông, tây, nam, bắc; “hợp” là nhà cửa bốn phía quây lại với nhau, ở giữa tạo thành một khoảng sân vuông."
+    },
+    {
+     "zh": "他所谓的“新闻”，其实我们早就知道了！",
+     "py": "Tā suǒwèi de “xīnwén”, qíshí wǒmen zǎo jiù zhīdao le!",
+     "vn": "Cái mà anh ta gọi là “tin mới” ấy, thật ra chúng tôi biết từ lâu rồi!"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这就是所以的“自寻烦恼”。",
+     "why": "Nhầm 所谓 (sở vị — cái gọi là) với 所以 (sở dĩ — cho nên). Trước ngoặc kép để gọi tên một khái niệm phải dùng 所谓.",
+     "right": "这就是所谓的“自寻烦恼”。"
+    },
+    {
+     "wrong": "我所谓他说得不对。",
+     "why": "所谓 là tính từ, không làm động từ “cho rằng”. Muốn nêu ý kiến dùng 认为 / 觉得.",
+     "right": "我认为他说得不对。"
+    }
+   ]
+  },
+  {
+   "point": "则",
+   "explain": "则 có ba cách dùng. ① Lượng từ: dùng cho những đoạn văn ngắn thành bài, thành mục (新闻, 故事, 广告, 消息). ② Liên từ ĐỐI CHIẾU: A……，(而) B 则…… — “còn B thì …”. ③ Liên từ NHÂN QUẢ trong văn viết, tương đương 就 của khẩu ngữ (有风则寒, 欲速则不达).",
+   "rule": "① 一<strong style=\"color:var(--sky-d)\">则</strong> + 新闻 / 故事 / 广告　② A……，(而) B <strong style=\"color:var(--sky-d)\">则</strong>……　③ (条件) + <strong style=\"color:var(--sky-d)\">则</strong> + (结果) = 就",
+   "examples": [
+    {
+     "zh": "今天的报纸上有一则非常重要的新闻。",
+     "py": "Jīntiān de bàozhǐ shang yǒu yì zé fēicháng zhòngyào de xīnwén.",
+     "vn": "Trên báo hôm nay có một mẩu tin vô cùng quan trọng."
+    },
+    {
+     "zh": "有的人家喜欢种草、养花、种竹子，有的人家则喜欢用大盆养金鱼。",
+     "py": "Yǒu de rénjiā xǐhuan zhòng cǎo, yǎng huā, zhòng zhúzi, yǒu de rénjiā zé xǐhuan yòng dà pén yǎng jīnyú.",
+     "vn": "Có nhà thích trồng cỏ, nuôi hoa, trồng trúc, còn có nhà thì lại thích nuôi cá vàng trong chậu lớn."
+    },
+    {
+     "zh": "北京的冬天，有风则寒，无风则暖。",
+     "py": "Běijīng de dōngtiān, yǒu fēng zé hán, wú fēng zé nuǎn.",
+     "vn": "Mùa đông Bắc Kinh, có gió thì lạnh, không gió thì ấm."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我喜欢喝茶，则他喜欢喝咖啡。",
+     "why": "则 đối chiếu đứng SAU chủ ngữ của vế thứ hai, không đứng đầu vế như 但是 / 而.",
+     "right": "我喜欢喝茶，他则喜欢喝咖啡。"
+    },
+    {
+     "wrong": "昨天我看了一则电影。",
+     "why": "Lượng từ 则 chỉ dùng cho văn bản ngắn (新闻, 故事, 广告, 消息, 日记). Phim dùng 部.",
+     "right": "昨天我看了一部电影。"
+    }
+   ]
+  },
+  {
+   "point": "为……所……",
+   "explain": "为……所…… là cấu trúc cố định của VĂN VIẾT, ở đây 为 (đọc wéi) có nghĩa như 被: chủ ngữ là đối tượng chịu tác động, sau 为 là người / sự vật gây ra tác động, sau 所 là động từ. Hay đi với động từ tâm lý (感动, 喜爱, 吸引) hoặc 知, 用; trước 为 có thể thêm 最 / 深 / 广.",
+   "rule": "A + (最 / 深 / 广) <strong style=\"color:var(--sky-d)\">为</strong> + B + <strong style=\"color:var(--sky-d)\">所</strong> + V　(= A 被 B + V)",
+   "examples": [
+    {
+     "zh": "认识他的人，没有人不为他认真的工作态度所感动。",
+     "py": "Rènshi tā de rén, méiyǒu rén bù wéi tā rènzhēn de gōngzuò tàidu suǒ gǎndòng.",
+     "vn": "Người quen biết anh ấy, không ai không cảm động trước thái độ làm việc nghiêm túc của anh."
+    },
+    {
+     "zh": "有了科学，大自然就可以更好地为人所用。",
+     "py": "Yǒule kēxué, dàzìrán jiù kěyǐ gèng hǎo de wéi rén suǒ yòng.",
+     "vn": "Có khoa học, thiên nhiên có thể được con người sử dụng tốt hơn."
+    },
+    {
+     "zh": "院子不仅拉近了人与自然的关系，也让家里人在此得到了感情的交流，对创造生活情趣起了很大作用，因而最为人们所喜爱。",
+     "py": "Yuànzi bùjǐn lājìnle rén yǔ zìrán de guānxi, yě ràng jiā li rén zài cǐ dédàole gǎnqíng de jiāoliú, duì chuàngzào shēnghuó qíngqù qǐle hěn dà zuòyòng, yīn'ér zuì wéi rénmen suǒ xǐ'ài.",
+     "vn": "Khoảng sân không những kéo gần con người với thiên nhiên mà còn giúp người trong nhà giao lưu tình cảm, góp phần lớn tạo nên thú vui cuộc sống, vì thế được mọi người yêu thích nhất."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他的故事为我所感动。",
+     "why": "Đảo lộn vai: chủ ngữ phải là người BỊ tác động (我), sau 为 là cái gây tác động (他的故事).",
+     "right": "我为他的故事所感动。"
+    },
+    {
+     "wrong": "他为老师批评了。",
+     "why": "为 (wéi) mang nghĩa bị động phải đi cùng 所 trước động từ. Nói khẩu ngữ thì dùng 被.",
+     "right": "他被老师批评了。"
+    }
+   ]
+  },
+  {
+   "point": "起 (động từ + 起)",
+   "explain": "起 là động từ, đặt sau một động từ khác (V + 起) để biểu thị sự NỐI KẾT, KẾT HỢP và CỐ ĐỊNH lại: 拉起手 (nắm lấy tay nhau), 关闭起大门 (đóng chặt cổng lại), 建立起制度 (dựng nên một chế độ). Tân ngữ đứng SAU 起; 了 đặt sau 起.",
+   "rule": "V + <strong style=\"color:var(--sky-d)\">起</strong> (+ 了) + O　—　拉<strong style=\"color:var(--sky-d)\">起</strong>手 · 关闭<strong style=\"color:var(--sky-d)\">起</strong>大门 · 建立<strong style=\"color:var(--sky-d)\">起</strong>制度",
+   "examples": [
+    {
+     "zh": "拉起手，我们就是好朋友。",
+     "py": "Lāqǐ shǒu, wǒmen jiù shì hǎo péngyou.",
+     "vn": "Nắm tay nhau rồi, chúng ta là bạn tốt."
+    },
+    {
+     "zh": "只要关闭起大门，四合院内便形成一个封闭式的小环境。",
+     "py": "Zhǐyào guānbì qǐ dàmén, sìhéyuàn nèi biàn xíngchéng yí ge fēngbìshì de xiǎo huánjìng.",
+     "vn": "Chỉ cần đóng cổng lớn lại, bên trong tứ hợp viện liền thành một môi trường nhỏ khép kín."
+    },
+    {
+     "zh": "对公司来说，最重要的是建立起一套行之有效的制度。",
+     "py": "Duì gōngsī lái shuō, zuì zhòngyào de shì jiànlì qǐ yí tào xíng zhī yǒu xiào de zhìdù.",
+     "vn": "Đối với công ty, quan trọng nhất là xây dựng được một chế độ thiết thực, hiệu quả."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他们建立了起深厚的友谊。",
+     "why": "了 phải đặt SAU cả cụm V + 起, không chen vào giữa.",
+     "right": "他们建立起了深厚的友谊。"
+    },
+    {
+     "wrong": "他拉手起我。",
+     "why": "Tân ngữ đứng SAU 起: V + 起 + O.",
+     "right": "他拉起我的手。"
+    }
+   ]
+  }
+ ]
+}

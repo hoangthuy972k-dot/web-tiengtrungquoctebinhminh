@@ -12687,7 +12687,7 @@
       var ok = 0;
       data.forEach(function (s, i) {
         var placed = gsState[i].placed.map(function (p) { return p.word; }).join('');
-        var correct = placed === s.ans;
+        var correct = placed === s.ans || (s.alt || []).indexOf(placed) >= 0; // alt: cach xep khac cung dung
         var card = $('#sgCard' + i);
         var fb = $('#sgFb' + i);
         card.classList.remove('is-correct', 'is-wrong');

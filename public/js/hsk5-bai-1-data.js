@@ -1749,3 +1749,51 @@ errorFixData.push(
   {wrong:'等了半个小时，他开始有点儿____了。',opts:['不耐烦','不得了','不客气','不要紧'],ans:0,
    exp:'不耐烦 (mất kiên nhẫn) hợp với tình huống chờ lâu và đi được sau 有点儿. 不得了 (ghê gớm, vô cùng) thường làm bổ ngữ: 高兴得不得了; 不客气, 不要紧 không hợp nghĩa.'}
 );
+
+// ══════════════════════════════════════════
+// LUYỆN TẬP — phủ đủ 38 từ và các điểm ngữ pháp của bài
+// ══════════════════════════════════════════
+fillData.push(
+  {pre:'爷爷每天早上一起床就听',blank:'电台',post:'的新闻节目。',hint:'(đài phát thanh)',ans:'电台'},
+  {pre:'虽然他们结婚三十年了，但是还像年轻时一样',blank:'恩爱',post:'。',hint:'(vợ chồng mặn nồng)',ans:'恩爱'},
+  {pre:'生了一场大病以后，爷爷的腿',blank:'瘫痪',post:'了，可是他一直很乐观。',hint:'(bị liệt)',ans:'瘫痪'},
+  {pre:'他们虽然有时候意见不同，但是从来没想过要',blank:'离婚',post:'。',hint:'(ly hôn)',ans:'离婚'},
+  {pre:'她生病以后曾经想过',blank:'自杀',post:'，是丈夫的爱让她重新有了生活的勇气。',hint:'(tự sát)',ans:'自杀'},
+  {pre:'幸福的',blank:'婚姻',post:'不是靠运气，而是靠两个人一起努力。',hint:'(hôn nhân)',ans:'婚姻'},
+  {pre:'他拍了拍我的',blank:'肩膀',post:'，说：“别担心，一切都会好起来的。”',hint:'(vai)',ans:'肩膀'},
+  {pre:'外面有人在大声',blank:'喊',post:'我的名字。',hint:'(gọi to)',ans:'喊'},
+  {pre:'妹妹才三岁，就会用',blank:'手指',post:'数到十了。',hint:'(ngón tay)',ans:'手指'},
+  {pre:'这道题太难了，我想得',blank:'脑袋',post:'都疼了，还是不会做。',hint:'(cái đầu)',ans:'脑袋'},
+  {pre:'这位',blank:'女士',post:'，请问您需要什么帮助？',hint:'(quý bà, quý cô — cách gọi lịch sự)',ans:'女士'},
+  {pre:'夏天一到，',blank:'蚊子',post:'就越来越多了。',hint:'(con muỗi)',ans:'蚊子'},
+  {pre:'他昨天学习到',blank:'半夜',post:'，所以今天上课的时候特别困。',hint:'(nửa đêm)',ans:'半夜'}
+);
+errorFixData.push(
+  {wrong:'比赛结束后，三位____一起选出了第一名。',opts:['评委','记者','电台','作者'],ans:0,
+   exp:'Người chấm và chọn ra người thắng trong cuộc thi là 评委 (giám khảo). 记者 (phóng viên) chỉ đưa tin; 电台 là đài phát thanh, không phải người nên không đi với 位; 作者 (tác giả) không liên quan đến cuộc thi.'},
+  {wrong:'你把这两张照片____一下，就能发现它们的不同。',opts:['对比','比如','对待','比赛'],ans:0,
+   exp:'Đặt hai thứ cạnh nhau để tìm chỗ khác → 对比 (đối chiếu), dùng được trong câu 把: 把A对比一下. 比如 là "ví dụ", không làm động từ; 对待 là "đối xử" (对待别人); 比赛 là "thi đấu", không mang nghĩa so sánh hai bức ảnh.'},
+  {wrong:'楼下的音乐太____了，我连一个字都看不进去。',opts:['吵','吵架','喊','叮'],ans:0,
+   exp:'吵 là tính từ "ồn ào", đứng được sau 太. 吵架 là động từ li hợp "cãi nhau", không nói 太吵架了; 喊 (gọi to) và 叮 (muỗi đốt) là động từ, không đi với 太……了 để tả âm thanh.'},
+  {wrong:'这个月，他们完成了三____重要的任务。',opts:['项','位','张','本'],ans:0,
+   exp:'项 là lượng từ cho công việc, nhiệm vụ, hạng mục: 一项任务, 一项工作. 位 dùng cho người (một cách lịch sự); 张 dùng cho vật phẳng (giấy, bàn); 本 dùng cho sách vở.'},
+  {wrong:'他一到家就对妻子说：“____，我回来了！”',opts:['老婆','老公','女士','婚姻'],ans:0,
+   exp:'Chồng gọi vợ thân mật trong khẩu ngữ → 老婆. 老公 là vợ gọi chồng, sai vai; 女士 là cách gọi lịch sự với người lạ, không dùng để gọi vợ; 婚姻 là danh từ "hôn nhân", không dùng để gọi người.'},
+  {wrong:'她____出手，接过了妈妈递过来的书。',opts:['伸','递','喊','靠'],ans:0,
+   exp:'Duỗi tay ra → 伸出手. 递 là "đưa vật cho người khác" (递书), không nói 递出手 với nghĩa này; 喊 là "gọi to"; 靠 là "tựa vào", đều không kết hợp với 出手 ở đây.'}
+);
+sortData.push(
+  {words:['她瘫痪以后','是','如何','重新','站起来的','？'],ans:'她瘫痪以后是如何重新站起来的？',audio:'她瘫痪以后是如何重新站起来的？'},
+  {words:['你们','的','婚姻生活','如何','？'],ans:'你们的婚姻生活如何？',audio:'你们的婚姻生活如何？'},
+  {words:['孩子','把','脑袋','靠在','妈妈的','肩膀上','睡着了','。'],ans:'孩子把脑袋靠在妈妈的肩膀上睡着了。',audio:'孩子把脑袋靠在妈妈的肩膀上睡着了。'},
+  {words:['他们结婚十几年','，','居然','从来','没','吵过','架','。'],ans:'他们结婚十几年，居然从来没吵过架。',audio:'他们结婚十几年，居然从来没吵过架。'},
+  {words:['昨天半夜','，','我','居然','被','一只蚊子','叮醒了','。'],ans:'昨天半夜，我居然被一只蚊子叮醒了。',audio:'昨天半夜，我居然被一只蚊子叮醒了。'}
+);
+matchData.push(
+  {left:'幸福的',right:'婚姻'},
+  {left:'递给',right:'评委'},
+  {left:'大声地',right:'喊'},
+  {left:'摇了摇',right:'脑袋'},
+  {left:'完成',right:'一项任务'},
+  {left:'半夜',right:'被吵醒'}
+);

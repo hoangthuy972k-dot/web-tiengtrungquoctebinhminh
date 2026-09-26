@@ -789,7 +789,7 @@ function checkSort(){
   let ok=0;
   sortData.forEach(function(s,i){
     const placed=sortState[i].placed.map(function(p){return p.word;}).join('');
-    const c=placed===s.ans;
+    const c=placed===s.ans||(s.alt||[]).indexOf(placed)>=0;
     const az=document.getElementById('az'+i),fb=document.getElementById('sf'+i);
     az.classList.remove('ok-z','err-z');az.classList.add(c?'ok-z':'err-z');
     fb.className='q-fb '+(c?'ok':'err');

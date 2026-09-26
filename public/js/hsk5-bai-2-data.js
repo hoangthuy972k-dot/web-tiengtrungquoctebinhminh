@@ -1460,3 +1460,56 @@ errorFixData.push(
   {wrong:'很多居民对这个计划表示____反对。',opts:['强烈','温暖','悄悄','一辈子'],ans:0,
    exp:'强烈反对 (phản đối mạnh mẽ) là kết hợp cố định. 温暖 (ấm áp) không đi với 反对; 悄悄 (lặng lẽ) trái với "bày tỏ" công khai; 一辈子 chỉ thời gian cả đời, không hợp.'}
 );
+
+// ══════════════════════════════════════════
+// LUYỆN TẬP — phủ đủ 38 từ và các điểm ngữ pháp của bài
+// ══════════════════════════════════════════
+fillData.push(
+  {pre:'虽然他在城里住了十年，但是还是觉得',blank:'农村',post:'的生活更舒服。',hint:'(nông thôn)',ans:'农村'},
+  {pre:'他把',blank:'屋子',post:'打扫得干干净净，等父母回来。',hint:'(căn phòng, gian nhà)',ans:'屋子'},
+  {pre:'我小时候是跟着',blank:'姥姥',post:'长大的。',hint:'(bà ngoại)',ans:'姥姥'},
+  {pre:'他们家不在北京，在河北的一个小',blank:'县',post:'里。',hint:'(huyện)',ans:'县'},
+  {pre:'聚会上他喝',blank:'醉',post:'了，是朋友把他送回家的。',hint:'(say (rượu))',ans:'醉'},
+  {pre:'我们在姥姥家住了一',blank:'夜',post:'，第二天就回来了。',hint:'(đêm)',ans:'夜'},
+  {pre:'天越来越冷了，妈妈给我换了一床厚',blank:'被子',post:'。',hint:'(cái chăn)',ans:'被子'},
+  {pre:'坐了十几个小时的',blank:'长途',post:'汽车，大家都累极了。',hint:'(đường dài)',ans:'长途'},
+  {pre:'她总是',blank:'微笑',post:'着跟每个人打招呼。',hint:'(mỉm cười)',ans:'微笑'},
+  {pre:'一回到家，我就感到特别',blank:'温暖',post:'。',hint:'(ấm áp)',ans:'温暖'},
+  {pre:'这套房子有两间',blank:'卧室',post:'，一间给父母，一间给我。',hint:'(phòng ngủ)',ans:'卧室'},
+  {pre:'窗外',blank:'飘',post:'着雪花，屋子里却很暖和。',hint:'(bay lượn, lả tả)',ans:'飘'},
+  {pre:'第一次离开家，我才真正',blank:'感受',post:'到父母的不容易。',hint:'(cảm nhận)',ans:'感受'}
+);
+errorFixData.push(
+  {wrong:'妈妈的哥哥是我的____，他每年春节都来我们家。',opts:['舅舅','叔叔','姑姑','姥姥'],ans:0,
+   exp:'舅舅 là anh/em trai của MẸ → đúng. 叔叔 là em trai của bố; 姑姑 là chị/em gái của bố (nữ); 姥姥 là bà ngoại — đều không phải "anh trai của mẹ".'},
+  {wrong:'爸爸的妹妹是我的____，她在医院当护士。',opts:['姑姑','阿姨','舅舅','奶奶'],ans:0,
+   exp:'姑姑 là chị/em gái của BỐ → đúng. 阿姨 là dì (em gái của mẹ) hoặc cách gọi phụ nữ lớn tuổi nói chung; 舅舅 là cậu (nam, bên mẹ); 奶奶 là bà nội.'},
+  {wrong:'哥哥为了参加面试，特意买了一____新衣服。',opts:['套','串','阵','条'],ans:0,
+   exp:'套 là lượng từ cho một BỘ gồm nhiều món (一套衣服, 一套房子) → đúng. 串 dùng cho chùm/chuỗi (一串钥匙); 阵 cho cơn/trận (一阵风); 条 dùng cho quần, váy từng chiếc chứ không nói 一条衣服.'},
+  {wrong:'下午突然刮起了一____大风，把晒着的被子都吹到了地上。',opts:['阵','套','串','片'],ans:0,
+   exp:'阵 dùng cho hiện tượng xảy ra trong một khoảng ngắn: 一阵风, 一阵笑声 → đúng. 套 là bộ; 串 là chuỗi; 片 dùng cho mảnh, vùng (一片树叶), không dùng cho gió.'},
+  {wrong:'小狗一看见主人回家，就____了过去。',opts:['扑','铺','飘','晒'],ans:0,
+   exp:'扑 = lao tới, nhào tới (扑过去) → đúng. 铺 cùng đọc pū nhưng nghĩa là trải ra (铺被子); 飘 là bay lơ lửng, dùng cho vật nhẹ; 晒 là phơi nắng.'},
+  {wrong:'已经晚上十点了，姥姥家的灯还____着。',opts:['亮','晒','飘','醉'],ans:0,
+   exp:'灯亮着 = đèn vẫn đang sáng → 亮 đúng. 晒 là phơi; 飘 là bay lượn; 醉 là say rượu — không thể đi với 灯.'},
+  {wrong:'绳子太细了，一拉就____了。',opts:['断','锁','铺','扑'],ans:0,
+   exp:'绳子断了 = sợi dây bị đứt → 断 đúng. 锁 là khoá; 铺 là trải; 扑 là lao tới — không nói về sợi dây bị kéo.'}
+);
+sortData.push(
+  {words:['姑姑','结婚','以来','，','一直','住在','县城','。'],ans:'姑姑结婚以来，一直住在县城。',audio:'姑姑结婚以来，一直住在县城。'},
+  {words:['临','睡','前','别','在','卧室','里','玩','手机','。'],ans:'临睡前别在卧室里玩手机。',audio:'临睡前别在卧室里玩手机。'},
+  {words:['姥姥','立刻','露出了','温暖的','微笑','。'],ans:'姥姥立刻露出了温暖的微笑。',audio:'姥姥立刻露出了温暖的微笑。'}
+);
+matchData.push(
+  {left:'打扫',right:'屋子'},
+  {left:'一套',right:'家具'},
+  {left:'脸上带着',right:'微笑'},
+  {left:'雪花',right:'飘下来'},
+  {left:'绳子',right:'断了'},
+  {left:'农村',right:'生活'}
+);
+
+// Cau sap xep co hai trat tu deu dung: chu ngu 他 dung truoc hoac sau 临走的时候
+sortData.forEach(function (s) {
+  if (s.ans === '临走的时候，他给我打了电话。') s.alt = ['他临走的时候，给我打了电话。'];
+});

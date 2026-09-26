@@ -7998,6 +7998,941 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-7.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-8.html"] = [
+ {
+  "so": "1",
+  "ten": "「倒」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 倒 + V/Adj (trái lẽ thường)",
+   "A 倒是 + Adj，就是 / 可是 + B (nhượng bộ)",
+   "你倒是 + V + 呀！(thúc giục)"
+  ],
+  "giaiThich": "倒 là PHÓ TỪ, đứng sau chủ ngữ, trước động từ/tính từ (rất hay dùng dạng 倒是). Có bốn cách dùng: ① trái với lẽ thường, với điều người ta nghĩ; ② không ngờ tới; ③ NHƯỢNG BỘ — khẳng định một mặt bằng 倒 rồi nói sang mặt khác (就是 / 可是 / 不过…); ④ hỏi hoặc giục một cách sốt ruột.",
+  "viDu": [
+   {
+    "zh": "在其他粮食不足的情况下，用橡子喂猴子倒是个办法。",
+    "py": "Zài qítā liángshi bùzú de qíngkuàng xià, yòng xiàngzi wèi hóuzi dàoshì ge bànfǎ.",
+    "vn": "Trong tình hình các loại lương thực khác không đủ, cho khỉ ăn hạt dẻ lại là một cách hay."
+   },
+   {
+    "zh": "质量倒是挺好，就是价格太贵了。",
+    "py": "Zhìliàng dàoshì tǐng hǎo, jiùshì jiàgé tài guì le.",
+    "vn": "Chất lượng thì tốt đấy, chỉ có điều giá đắt quá."
+   },
+   {
+    "zh": "你究竟去还是不去？倒是说句话呀！",
+    "py": "Nǐ jiūjìng qù háishi bú qù? Dàoshì shuō jù huà ya!",
+    "vn": "Rốt cuộc cậu đi hay không đi? Nói một câu đi chứ!"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "倒他是挺聪明的，就是不努力。",
+    "why": "倒 là phó từ, phải đứng SAU chủ ngữ.",
+    "dung": "他倒是挺聪明的，就是不努力。"
+   },
+   {
+    "sai": "这件衣服倒是很漂亮，而且很便宜。",
+    "why": "倒是 nhượng bộ thì vế sau phải CHUYỂN Ý (就是 / 可是 / 不过), không nối bằng 而且.",
+    "dung": "这件衣服倒是很漂亮，就是有点儿贵。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这家饭馆的菜",
+       "是挺好吃的，就是服务员的态度不太好。"
+      ],
+      "dap": [
+       [
+        "倒"
+       ]
+      ],
+      "chon": [
+       "倒",
+       "就",
+       "才"
+      ],
+      "goiY": "Khen một mặt trước, chê một mặt sau.",
+      "giai": "Nhượng bộ: A 倒是 + Adj，就是 + B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在粮食不足的情况下，用橡子喂猴子",
+       "是个办法。"
+      ],
+      "dap": [
+       [
+        "倒"
+       ]
+      ],
+      "chon": [
+       "倒",
+       "又",
+       "再"
+      ],
+      "goiY": "“Trong lúc thiếu lương thực, cho khỉ ăn hạt dẻ lại là một cách hay.”",
+      "giai": "倒 biểu thị điều trái với suy nghĩ thông thường: tưởng không được mà lại được."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你究竟去还是不去？",
+       "是说句话呀！"
+      ],
+      "dap": [
+       [
+        "倒"
+       ]
+      ],
+      "chon": [
+       "倒",
+       "就",
+       "还"
+      ],
+      "goiY": "Người nói đang SỐT RUỘT giục người kia.",
+      "giai": "倒是 + V + 呀: thúc giục một cách mất kiên nhẫn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我",
+       "是很愿意参加这次活动，就是暂时无法确定是否有时间。"
+      ],
+      "dap": [
+       [
+        "倒"
+       ]
+      ],
+      "chon": [
+       "倒",
+       "却",
+       "才"
+      ],
+      "goiY": "Khẳng định \"rất muốn\" trước, rồi nêu khó khăn.",
+      "giai": "Nhượng bộ: 我倒是很愿意……，就是……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这套房子大",
+       "是挺大的，可是离学校太远了。"
+      ],
+      "dap": [
+       [
+        "倒"
+       ]
+      ],
+      "chon": [
+       "倒",
+       "也",
+       "都"
+      ],
+      "goiY": "Dạng lặp: A 倒是 A — \"rộng thì rộng đấy\".",
+      "giai": "Adj + 倒是 + (挺) + Adj + 的，可是……: nhượng bộ rồi chuyển ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你",
+       "是说说看，这件事你不负责谁负责？"
+      ],
+      "dap": [
+       [
+        "倒"
+       ]
+      ],
+      "chon": [
+       "倒",
+       "都",
+       "也"
+      ],
+      "goiY": "Câu hỏi vặn, giục người kia trả lời.",
+      "giai": "倒是 + 说说看: yêu cầu, thúc giục (ôn câu hỏi phản vấn 不……谁……)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这件衣服",
+       "倒是",
+       "挺好看",
+       "就是",
+       "有点儿贵"
+      ],
+      "dap": [
+       "这件衣服倒是挺好看，就是有点儿贵。"
+      ],
+      "goiY": "Chiếc áo này đẹp thì đẹp đấy, chỉ có điều hơi đắt.",
+      "giai": "Chủ ngữ + 倒是 + Adj，就是 + mặt chưa tốt."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "倒是",
+       "快",
+       "说",
+       "呀"
+      ],
+      "dap": [
+       "你倒是快说呀！"
+      ],
+      "goiY": "Cậu nói nhanh lên đi chứ!",
+      "giai": "倒是 đứng sau chủ ngữ 你, trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "用橡子",
+       "喂猴子",
+       "倒是",
+       "个好办法"
+      ],
+      "dap": [
+       "用橡子喂猴子倒是个好办法。"
+      ],
+      "goiY": "Cho khỉ ăn hạt dẻ lại là một cách hay.",
+      "giai": "Cả cụm 用橡子喂猴子 làm chủ ngữ; 倒是 đứng trước vị ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "质量倒是挺好，就是价格太贵了。",
+      "dung": true,
+      "giai": "Nhượng bộ đúng khuôn: 倒是……，就是……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "倒他是挺聪明的，就是不努力。",
+      "dung": false,
+      "sua": "他倒是挺聪明的，就是不努力。",
+      "giai": "倒 là phó từ, phải đứng SAU chủ ngữ 他."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件衣服倒是很漂亮，而且很便宜。",
+      "dung": false,
+      "sua": "这件衣服倒是很漂亮，就是有点儿贵。",
+      "giai": "Sau 倒是 nhượng bộ phải chuyển ý (就是 / 可是), không dùng 而且."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Căn nhà này sửa sang đẹp thì đẹp đấy, chỉ có điều hơi nhỏ.",
+      "dap": [
+       "这套房子装修得倒是挺漂亮，就是有点儿小。",
+       "这套房子倒是装修得挺漂亮，就是有点儿小。",
+       "这套房子装修得倒是很漂亮，就是有点儿小。",
+       "这套房子装修得倒是挺漂亮的，就是有点儿小。"
+      ],
+      "py": "Zhè tào fángzi zhuāngxiū de dàoshì tǐng piàoliang, jiùshì yǒudiǎnr xiǎo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 倒是……，就是…….",
+      "giai": "Nhượng bộ: khen trước bằng 倒是, chê sau bằng 就是."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mọi người đều đang đợi, cậu nói một câu đi chứ!",
+      "dap": [
+       "大家都在等，你倒是说句话呀！",
+       "大家都在等你，你倒是说句话呀！",
+       "大家都在等，你倒是说句话啊！",
+       "大家都在等你，你倒是说话呀！"
+      ],
+      "py": "Dàjiā dōu zài děng, nǐ dàoshì shuō jù huà ya!",
+      "goiY": "Dịch sang tiếng Trung, dùng 倒是 để thúc giục.",
+      "giai": "倒是 + V + 呀: giục người khác một cách sốt ruột."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你觉得这套房子装修得怎么样？B：＿＿＿。",
+      "goiY": "khen một điểm, góp ý một điểm (倒是……就是……)",
+      "mau": "B：装修得倒是挺漂亮的，就是颜色有点儿深。",
+      "can": [
+       [
+        "倒"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，做起来可就难了。",
+      "goiY": "nói thì dễ (dùng 倒)",
+      "mau": "说倒是容易，做起来可就难了。",
+      "can": [
+       [
+        "倒"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「倒」 (nhượng bộ: 倒是……就是……, hoặc thúc giục: 你倒是……呀), nói về em hoặc bạn bè",
+      "mau": "这个成语的意思倒是不难，就是用法有点儿复杂。",
+      "can": [
+       [
+        "倒"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「……来……去」",
+  "tenVn": "",
+  "cauTruc": [
+   "V来V去 (跑来跑去 · 想来想去)",
+   "V₁来V₂去 (V₁, V₂ gần nghĩa: 研究来讨论去)"
+  ],
+  "giaiThich": "……来……去 biểu thị một động tác lặp đi lặp lại nhiều lần. Hai động từ đứng trước 来 và 去 thường là CÙNG MỘT TỪ (跑来跑去) hoặc hai từ GẦN NGHĨA (研究来讨论去). Cả cụm không mang tân ngữ phía sau; hay nối tiếp bằng 还是 / 也 + kết quả.",
+  "viDu": [
+   {
+    "zh": "小狗追着自己的尾巴，在草地上跑来跑去。",
+    "py": "Xiǎo gǒu zhuīzhe zìjǐ de wěiba, zài cǎodì shang pǎo lái pǎo qù.",
+    "vn": "Con chó nhỏ đuổi theo đuôi mình, chạy qua chạy lại trên bãi cỏ."
+   },
+   {
+    "zh": "猴子们似乎只弄懂了主人前面说的一个“三”，觉得自己吃了亏，一个个立起身子跳来跳去，对着老人大喊大叫地发脾气。",
+    "py": "Hóuzimen sìhū zhǐ nòngdǒngle zhǔrén qiánmiàn shuō de yí ge “sān”, juéde zìjǐ chīle kuī, yí gègè lìqǐ shēnzi tiào lái tiào qù, duìzhe lǎorén dà hǎn dà jiào de fā píqi.",
+    "vn": "Lũ khỉ dường như chỉ hiểu mỗi chữ “ba” chủ nhân nói lúc đầu, cho rằng mình bị thiệt, con nào con nấy đứng thẳng người nhảy qua nhảy lại, la hét ầm ĩ nổi giận với ông lão."
+   },
+   {
+    "zh": "他们研究来讨论去，还是没找出原因。",
+    "py": "Tāmen yánjiū lái tǎolùn qù, háishi méi zhǎochū yuányīn.",
+    "vn": "Họ nghiên cứu tới thảo luận lui mà vẫn chưa tìm ra nguyên nhân."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他找来找去手机，也没找到。",
+    "why": "V来V去 không mang tân ngữ phía sau; tân ngữ chuyển sang vế kết quả.",
+    "dung": "他找来找去，也没找到手机。"
+   },
+   {
+    "sai": "他在房间里来走去走，很着急。",
+    "why": "Động từ phải đứng TRƯỚC 来 và 去: 走来走去.",
+    "dung": "他在房间里走来走去，很着急。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "小狗追着自己的尾巴，在草地上",
+       "。"
+      ],
+      "dap": [
+       [
+        "跑来跑去"
+       ]
+      ],
+      "chon": [
+       "跑来跑去",
+       "跑去跑来",
+       "来跑去跑"
+      ],
+      "goiY": "“Chạy qua chạy lại trên bãi cỏ.”",
+      "giai": "Động từ đứng TRƯỚC 来 và 去, thứ tự cố định: V来V去."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "猴子们觉得自己吃了亏，一个个立起身子",
+       "。"
+      ],
+      "dap": [
+       [
+        "跳来跳去"
+       ]
+      ],
+      "chon": [
+       "跳来跳去",
+       "跳去跳来",
+       "跳跳来去"
+      ],
+      "goiY": "“Nhảy qua nhảy lại.”",
+      "giai": "V来V去: 跳来跳去, không đảo thành 跳去跳来."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们研究",
+       "讨论去，还是没找出原因。"
+      ],
+      "dap": [
+       [
+        "来"
+       ]
+      ],
+      "chon": [
+       "来",
+       "去",
+       "过"
+      ],
+      "goiY": "Hai động từ gần nghĩa: 研究 … 讨论 ….",
+      "giai": "V₁来V₂去: 研究来讨论去 — 来 đi với động từ thứ nhất."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我想来",
+       "，还是决定参加这次比赛。"
+      ],
+      "dap": [
+       [
+        "想去"
+       ]
+      ],
+      "chon": [
+       "想去",
+       "去想",
+       "想来"
+      ],
+      "goiY": "“Nghĩ đi nghĩ lại, tôi vẫn quyết định tham gia.”",
+      "giai": "V来V去: 想来想去 + 还是 + quyết định."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的手机不见了，很着急，在房间里",
+       "。"
+      ],
+      "dap": [
+       [
+        "找来找去"
+       ]
+      ],
+      "chon": [
+       "找来找去",
+       "找去找来",
+       "找找来去"
+      ],
+      "goiY": "“Tìm đi tìm lại trong phòng.”",
+      "giai": "V来V去 = làm đi làm lại nhiều lần."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个问题我们说来说",
+       "，还是没有结果。"
+      ],
+      "dap": [
+       [
+        "去"
+       ]
+      ],
+      "chon": [
+       "去",
+       "来",
+       "到"
+      ],
+      "goiY": "Thành phần còn thiếu của khung ……来……去.",
+      "giai": "V来V去 luôn kết thúc bằng 去: 说来说去."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他的手机不见了",
+       "急得",
+       "在房间里",
+       "走来走去"
+      ],
+      "dap": [
+       "他的手机不见了，急得在房间里走来走去。"
+      ],
+      "goiY": "Điện thoại của anh ấy mất rồi, sốt ruột đến mức đi qua đi lại trong phòng.",
+      "giai": "V来V去 đứng cuối, sau trạng ngữ nơi chốn 在房间里."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "研究来",
+       "讨论去",
+       "还是",
+       "没找出原因"
+      ],
+      "dap": [
+       "我们研究来讨论去，还是没找出原因。"
+      ],
+      "goiY": "Chúng tôi nghiên cứu tới thảo luận lui mà vẫn chưa tìm ra nguyên nhân.",
+      "giai": "V₁来V₂去 + 还是 + kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "孩子们",
+       "在公园里",
+       "跑来跑去",
+       "玩儿得",
+       "特别开心"
+      ],
+      "dap": [
+       "孩子们在公园里跑来跑去，玩儿得特别开心。",
+       "在公园里孩子们跑来跑去，玩儿得特别开心。"
+      ],
+      "goiY": "Bọn trẻ chạy qua chạy lại trong công viên, chơi rất vui.",
+      "giai": "V来V去 đứng sau trạng ngữ nơi chốn."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "小狗在草地上跑来跑去。",
+      "dung": true,
+      "giai": "Đúng khuôn V来V去, không có tân ngữ phía sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他找来找去手机，也没找到。",
+      "dung": false,
+      "sua": "他找来找去，也没找到手机。",
+      "giai": "V来V去 không mang tân ngữ; tân ngữ chuyển sang vế sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他在门口来走去走，很着急。",
+      "dung": false,
+      "sua": "他在门口走来走去，很着急。",
+      "giai": "Động từ phải đứng TRƯỚC 来 và 去."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi nghĩ đi nghĩ lại, vẫn quyết định học tiếng Trung.",
+      "dap": [
+       "我想来想去，还是决定学汉语。",
+       "我想来想去，还是决定学中文。",
+       "想来想去，我还是决定学汉语。",
+       "想来想去，我还是决定学中文。"
+      ],
+      "py": "Wǒ xiǎng lái xiǎng qù, háishi juédìng xué Hànyǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng V来V去.",
+      "giai": "想来想去 + 还是 + quyết định cuối cùng."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bọn trẻ chạy qua chạy lại trên bãi cỏ.",
+      "dap": [
+       "孩子们在草地上跑来跑去。",
+       "孩子们在草地上跑来跑去的。",
+       "小孩子们在草地上跑来跑去。"
+      ],
+      "py": "Háizimen zài cǎodì shang pǎo lái pǎo qù.",
+      "goiY": "Dịch sang tiếng Trung, dùng V来V去.",
+      "giai": "Trạng ngữ nơi chốn 在草地上 đứng trước V来V去."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他的手机不见了，很着急，＿＿＿。",
+      "goiY": "tìm khắp nơi mãi không thấy (……来……去)",
+      "mau": "他的手机不见了，很着急，在房间里找来找去。",
+      "can": [
+       [
+        "来"
+       ],
+       [
+        "去"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "公园里，＿＿＿。",
+      "goiY": "tả trẻ con hoặc con chó chạy nhảy (……来……去)",
+      "mau": "公园里，孩子们跑来跑去，玩儿得特别开心。",
+      "can": [
+       [
+        "来"
+       ],
+       [
+        "去"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「……来……去」 (việc làm đi làm lại nhiều lần), nói về em hoặc gia đình em",
+      "mau": "周末我想来想去，还是决定在家复习。",
+      "can": [
+       [
+        "来"
+       ],
+       [
+        "去"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「要不」",
+  "tenVn": "",
+  "cauTruc": [
+   "……，要不(然) + (chủ ngữ) + kết quả",
+   "要不 + (chủ ngữ) + V + 吧 (đề nghị)"
+  ],
+  "giaiThich": "要不 là LIÊN TỪ, nghĩa như 要不然: ① \"nếu không (như vậy) thì…\" — nêu kết quả xảy ra khi điều ở trước không thành; ② \"hay là…\" — đưa ra một lựa chọn khác, một đề nghị (thường có 吧 cuối câu). 要不 / 要不然 thường đặt ở đầu vế sau, TRƯỚC chủ ngữ.",
+  "viDu": [
+   {
+    "zh": "还好碰见你了，要不然我今天肯定要迟到了。",
+    "py": "Háihǎo pèngjiàn nǐ le, yàoburán wǒ jīntiān kěndìng yào chídào le.",
+    "vn": "May mà gặp được cậu, không thì hôm nay tớ chắc chắn bị muộn rồi."
+   },
+   {
+    "zh": "今天太晚了，要不你明天再走吧。",
+    "py": "Jīntiān tài wǎn le, yàobu nǐ míngtiān zài zǒu ba.",
+    "vn": "Hôm nay muộn quá rồi, hay là mai bạn hẵng đi."
+   },
+   {
+    "zh": "要不这样吧，既然你们觉得少，那就改成每天早上四颗，晚上三颗，这样总够了吧？",
+    "py": "Yàobu zhèyàng ba, jìrán nǐmen juéde shǎo, nà jiù gǎichéng měi tiān zǎoshang sì kē, wǎnshang sān kē, zhèyàng zǒng gòu le ba?",
+    "vn": "Hay là thế này nhé, các con đã thấy ít thì đổi thành mỗi ngày sáng bốn hạt, tối ba hạt, thế này chắc là đủ rồi chứ?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "快点儿走，我们要不就迟到了。",
+    "why": "要不 đứng ĐẦU vế sau, trước chủ ngữ 我们.",
+    "dung": "快点儿走，要不我们就迟到了。"
+   },
+   {
+    "sai": "要不你不来，我们就走了。",
+    "why": "Vế ĐIỀU KIỆN phải dùng 要是 / 如果; 要不 chỉ mở đầu vế KẾT QUẢ (nếu không thì…).",
+    "dung": "要是你不来，我们就走了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "老太太说：“4块，",
+       "我不买。”"
+      ],
+      "dap": [
+       [
+        "要不",
+        "要不然"
+       ]
+      ],
+      "chon": [
+       "要不",
+       "只要",
+       "要是"
+      ],
+      "goiY": "“4 tệ, không thì tôi không mua.”",
+      "giai": "要不 mở đầu vế sau: nếu không (bán 4 tệ) thì …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "还好碰见你了，",
+       "我今天肯定要迟到了。"
+      ],
+      "dap": [
+       [
+        "要不然",
+        "要不"
+       ]
+      ],
+      "chon": [
+       "要不然",
+       "要是",
+       "只要"
+      ],
+      "goiY": "“May mà gặp cậu, không thì hôm nay tớ muộn chắc.”",
+      "giai": "要不然 = 要不: nêu kết quả nếu điều trước không xảy ra."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天太晚了，",
+       "你明天再走吧。"
+      ],
+      "dap": [
+       [
+        "要不"
+       ]
+      ],
+      "chon": [
+       "要不",
+       "要是",
+       "不要"
+      ],
+      "goiY": "Đưa ra một ĐỀ NGHỊ khác, cuối câu có 吧.",
+      "giai": "要不 + chủ ngữ + V + 吧: hay là …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "快点儿吃，",
+       "就要迟到了。"
+      ],
+      "dap": [
+       [
+        "要不",
+        "要不然"
+       ]
+      ],
+      "chon": [
+       "要不",
+       "只要",
+       "不要"
+      ],
+      "goiY": "“Ăn nhanh lên, không thì muộn mất.”",
+      "giai": "要不 + (就) + kết quả xấu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "这样吧，我们明天早上再去。"
+      ],
+      "dap": [
+       [
+        "要不"
+       ]
+      ],
+      "chon": [
+       "要不",
+       "不要",
+       "要是"
+      ],
+      "goiY": "Mở đầu một lời đề nghị.",
+      "giai": "要不这样吧 = hay là thế này nhé (câu y như trong bài đọc)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你得每天复习，",
+       "考试的时候就会忘。"
+      ],
+      "dap": [
+       [
+        "要不",
+        "要不然"
+       ]
+      ],
+      "chon": [
+       "要不",
+       "除非",
+       "只要"
+      ],
+      "goiY": "“Phải ôn mỗi ngày, không thì lúc thi sẽ quên.”",
+      "giai": "要不 nêu hậu quả nếu KHÔNG làm theo vế trước."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "快点儿走",
+       "要不",
+       "我们",
+       "就迟到了"
+      ],
+      "dap": [
+       "快点儿走，要不我们就迟到了。"
+      ],
+      "goiY": "Đi nhanh lên, không thì chúng ta muộn mất.",
+      "giai": "要不 đứng TRƯỚC chủ ngữ 我们 của vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "今天太晚了",
+       "要不",
+       "你明天",
+       "再走吧"
+      ],
+      "dap": [
+       "今天太晚了，要不你明天再走吧。"
+      ],
+      "goiY": "Hôm nay muộn quá rồi, hay là mai bạn hẵng đi.",
+      "giai": "要不 + chủ ngữ + V + 吧: đề nghị."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "谢谢你",
+       "提醒我",
+       "要不",
+       "我",
+       "肯定忘了"
+      ],
+      "dap": [
+       "谢谢你提醒我，要不我肯定忘了。"
+      ],
+      "goiY": "Cảm ơn cậu đã nhắc, không thì tớ quên chắc rồi.",
+      "giai": "Vế trước là việc đã xảy ra, 要不 nêu kết quả nếu nó không xảy ra."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "还好碰见你了，要不然我今天肯定要迟到了。",
+      "dung": true,
+      "giai": "要不然 đứng đầu vế sau, trước chủ ngữ 我 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "快点儿走，我们要不就迟到了。",
+      "dung": false,
+      "sua": "快点儿走，要不我们就迟到了。",
+      "giai": "要不 phải đứng TRƯỚC chủ ngữ 我们."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "要不这样吧，我们改天再去。",
+      "dung": true,
+      "giai": "要不 mở đầu lời đề nghị, cuối có 吧 — đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cảm ơn tối qua bạn nhắn tin cho tôi, không thì tôi đã quên mất rồi.",
+      "dap": [
+       "谢谢你昨晚给我发了个短信，要不我就忘了。",
+       "谢谢你昨晚给我发短信，要不然我就忘了。",
+       "谢谢你昨晚给我发了个短信，要不我早就忘了。",
+       "谢谢你昨晚给我发短信，要不我就忘了。"
+      ],
+      "py": "Xièxie nǐ zuó wǎn gěi wǒ fāle ge duǎnxìn, yàobu wǒ jiù wàng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 要不 (nếu không thì).",
+      "giai": "要不 + chủ ngữ + (就) + kết quả."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Hay là chúng ta đi xem phim đi?",
+      "dap": [
+       "要不我们去看电影吧？",
+       "要不咱们去看电影吧？",
+       "要不我们去看电影吧。",
+       "要不我们一起去看电影吧？"
+      ],
+      "py": "Yàobu wǒmen qù kàn diànyǐng ba?",
+      "goiY": "Dịch sang tiếng Trung, dùng 要不 (đề nghị).",
+      "giai": "要不 + chủ ngữ + V + 吧."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "谢谢你昨晚给我发了个短信，＿＿＿。",
+      "goiY": "nêu điều sẽ xảy ra nếu không có tin nhắn (要不)",
+      "mau": "谢谢你昨晚给我发了个短信，要不我就忘了今天有考试。",
+      "can": [
+       [
+        "要不"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：＿＿＿。B：我都行，看你什么时候方便吧。",
+      "goiY": "A đưa ra một đề nghị đổi thời gian (要不……吧)",
+      "mau": "A：今天我有点儿忙，要不我们明天再见面吧。",
+      "can": [
+       [
+        "要不"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「要不」 (nếu không thì…, hoặc hay là…), nói về em hoặc gia đình em",
+      "mau": "外面下大雨了，要不我们在家看电影吧。",
+      "can": [
+       [
+        "要不"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk5-bai-9.html"] = [
  {
   "so": "1",

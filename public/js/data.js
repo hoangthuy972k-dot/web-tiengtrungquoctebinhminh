@@ -1445,6 +1445,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-7.html'
       },
       {
+        id: 'hsk5-l8',
+        number: 8,
+        title: 'Thành ngữ “Sáng ba chiều bốn” — nghĩa xưa và nay',
+        titleHanzi: '“朝三暮四”的古今义',
+        titlePinyin: '“Zhāosān-mùsì” de gǔ jīn yì',
+        topic: 'Unit 3 倾听故事 · Thành ngữ & sự thay đổi nghĩa của từ',
+        vocabCount: 43,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-8.html'
+      },
+      {
         id: 'hsk5-l9',
         number: 9,
         title: 'Một Lỗ Tấn khác',

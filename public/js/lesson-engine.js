@@ -291,7 +291,7 @@ document.addEventListener('click',function(e){
 // nhung o HSK 3 thi mat chu VAN DANG hoc — bo di la mat bai.
 // ══════════════════════════════════════════════════════════════
 // HSK 2 bo cu nam o /lessons/bai-N.html — khong co tien to cap do
-function isHsk4Page(){ return /hsk(?:[134]|[12]v3)-bai-\d+|\/bai-\d+\.html/.test(location.pathname); }
+function isHsk4Page(){ return /hsk(?:[1345]|[12]v3)-bai-\d+|\/bai-\d+\.html/.test(location.pathname); }
 // HSK 1 · HSK 2 · HSK 3 con dang hoc mat chu, nen giu khoi chiet tu Han tu
 function hsk3GiuHanTu(){ return /hsk(?:[13]|[12]v3)-bai-\d+|\/bai-\d+\.html/.test(location.pathname); }
 

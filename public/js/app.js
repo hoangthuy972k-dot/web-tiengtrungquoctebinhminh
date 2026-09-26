@@ -3543,7 +3543,7 @@
   // Khong hien chiet tu Han tu — len HSK 4 hoc sinh da thuoc mat chu.
   // ══════════════════════════════════════════════════════════
   function vpIsHsk4() {
-    return !!(currentHubLesson && /\/(?:hsk(?:[134]|[12]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
+    return !!(currentHubLesson && /\/(?:hsk(?:[1345]|[12]v3)-)?bai-\d+\.html/.test(currentHubLesson.fullPageUrl || ''));
   }
 
   function vpH4Say(t) {
@@ -10044,7 +10044,7 @@
   var NPT_FILES = {
     hsk1: '/js/ngu-phap-tab-hsk1.js', hsk1v3: '/js/ngu-phap-tab-hsk1v3.js',
     hsk2: '/js/ngu-phap-tab-hsk2.js', hsk2v3: '/js/ngu-phap-tab-hsk2v3.js',
-    hsk3: '/js/ngu-phap-tab-hsk3.js', hsk4: '/js/ngu-phap-tab-hsk4.js'
+    hsk3: '/js/ngu-phap-tab-hsk3.js', hsk4: '/js/ngu-phap-tab-hsk4.js', hsk5: '/js/ngu-phap-tab-hsk5.js'
   };
   var nptState = {};
   function napScript(src) {

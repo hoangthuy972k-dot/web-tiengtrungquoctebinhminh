@@ -982,3 +982,750 @@ var retellData = {
     'Có kể bằng LỜI MÌNH, hay đang đọc thuộc nguyên văn?'
   ]
 };
+
+// ══════════════════════════════════════════
+// TỪ VỰNG — phần bổ sung theo format HSK 4 (bảng kết hợp từ, cấu trúc câu, luyện dịch)
+// ══════════════════════════════════════════
+var vocabExtra = {
+  '细节': {
+    colloFull: [
+      {zh:'故事的细节', py:'gùshi de xìjié', vn:'chi tiết của câu chuyện'},
+      {zh:'生活的细节', py:'shēnghuó de xìjié', vn:'chi tiết của cuộc sống'},
+      {zh:'注意细节', py:'zhùyì xìjié', vn:'chú ý chi tiết'},
+      {zh:'描写细节', py:'miáoxiě xìjié', vn:'miêu tả chi tiết'},
+      {zh:'关注细节', py:'guānzhù xìjié', vn:'quan tâm đến chi tiết'}
+    ],
+    patterns: [
+      {s:'注意 / 关注 / 描写 + 细节', m:'Chú ý / quan tâm / miêu tả chi tiết'},
+      {s:'N + 的 + 细节', m:'Chi tiết của … (故事的细节, 生活的细节)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chỉ cần bạn chú ý đến chi tiết thì sẽ không làm sai nhiều câu như vậy.', answer:'只要你注意细节，就不会做错那么多题。', answerPy:'Zhǐyào nǐ zhùyì xìjié, jiù bú huì zuòcuò nàme duō tí.',
+       note:'注意细节 là cụm động–tân cố định; 只要 ở vế trước, 就 đứng trước động từ vế sau.', pair:'只要……就……'},
+      {promptLang:'vi', prompt:'Câu chuyện này tuy ngắn nhưng các chi tiết rất cảm động.', answer:'这个故事虽然很短，但是细节很感人。', answerPy:'Zhège gùshi suīrán hěn duǎn, dànshì xìjié hěn gǎnrén.',
+       note:'细节 làm chủ ngữ, vị ngữ là tính từ: 细节很感人.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '电台': {
+    colloFull: [
+      {zh:'一家电台', py:'yì jiā diàntái', vn:'một đài phát thanh'},
+      {zh:'电台记者', py:'diàntái jìzhě', vn:'phóng viên đài phát thanh'},
+      {zh:'电台广播', py:'diàntái guǎngbō', vn:'chương trình phát thanh'},
+      {zh:'电台新闻', py:'diàntái xīnwén', vn:'tin tức trên đài'},
+      {zh:'听电台', py:'tīng diàntái', vn:'nghe đài'}
+    ],
+    patterns: [
+      {s:'Sub + 听 + 电台', m:'Ai đó nghe đài'},
+      {s:'一家 / 一个 + 电台', m:'Lượng từ của 电台 là 家 hoặc 个'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Sáng nào ông tôi cũng vừa dậy là nghe đài.', answer:'我爷爷每天早上一起床就听电台。', answerPy:'Wǒ yéye měi tiān zǎoshang yì qǐchuáng jiù tīng diàntái.',
+       note:'听电台 = nghe đài; 一 + động từ + 就: vừa … là ….', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Tin này là tôi nghe được trên đài phát thanh.', answer:'这个消息是我从电台听到的。', answerPy:'Zhège xiāoxi shì wǒ cóng diàntái tīngdào de.',
+       note:'"Nghe trên đài" nói là 从电台听到, không dịch từng chữ thành 在电台上.', pair:'是……的'}
+    ]
+  },
+
+  '恩爱': {
+    colloFull: [
+      {zh:'很恩爱', py:'hěn ēn\'ài', vn:'rất đằm thắm'},
+      {zh:'最恩爱的夫妻', py:'zuì ēn\'ài de fūqī', vn:'cặp vợ chồng đằm thắm nhất'},
+      {zh:'秀恩爱', py:'xiù ēn\'ài', vn:'khoe tình cảm'},
+      {zh:'恩爱夫妻', py:'ēn\'ài fūqī', vn:'vợ chồng mặn nồng'}
+    ],
+    patterns: [
+      {s:'夫妻 + 很 / 非常 + 恩爱', m:'Vợ chồng rất đằm thắm'},
+      {s:'✗ 我和朋友很恩爱 → ✓ 我和朋友关系很好', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chú Vương và cô Vương nhà hàng xóm cưới nhau hai mươi năm rồi mà càng ngày càng đằm thắm.', answer:'邻居王叔叔和王阿姨结婚二十年了，越来越恩爱。', answerPy:'Línjū Wáng shūshu hé Wáng āyí jiéhūn èrshí nián le, yuè lái yuè ēn\'ài.',
+       note:'恩爱 chỉ dùng cho vợ chồng; 越来越 + tính từ.', pair:'越来越……'},
+      {promptLang:'vi', prompt:'Tuy họ hay cãi nhau nhưng thật ra rất đằm thắm.', answer:'他们虽然常常吵架，但是其实很恩爱。', answerPy:'Tāmen suīrán chángcháng chǎojià, dànshì qíshí hěn ēn\'ài.',
+       note:'恩爱 đối lập với 吵架 — hai từ cùng bài.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '对比': {
+    colloFull: [
+      {zh:'对比一下', py:'duìbǐ yíxià', vn:'so sánh thử'},
+      {zh:'进行对比', py:'jìnxíng duìbǐ', vn:'tiến hành đối chiếu'},
+      {zh:'详细地对比', py:'xiángxì de duìbǐ', vn:'đối chiếu kỹ lưỡng'},
+      {zh:'对比两张照片', py:'duìbǐ liǎng zhāng zhàopiàn', vn:'so hai tấm ảnh'}
+    ],
+    patterns: [
+      {s:'把 A 和 B + 对比一下', m:'Đem A và B ra so sánh'},
+      {s:'A 和 B + 进行对比', m:'Tiến hành đối chiếu A với B (văn viết)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Bạn đem hai bài văn này ra so sánh một chút, xem bài nào viết hay hơn.', answer:'你把这两篇文章对比一下，看看哪篇写得更好。', answerPy:'Nǐ bǎ zhè liǎng piān wénzhāng duìbǐ yíxià, kànkan nǎ piān xiě de gèng hǎo.',
+       note:'把 + tân ngữ + 对比一下: đưa hai thứ ra so sánh.', pair:'把'},
+      {promptLang:'vi', prompt:'Vì mẹ đã so sánh kỹ giá ở ba cửa hàng nên mua được chiếc máy giặt rẻ nhất.', answer:'因为妈妈详细地对比了三家商店的价格，所以买到了最便宜的洗衣机。', answerPy:'Yīnwèi māma xiángxì de duìbǐle sān jiā shāngdiàn de jiàgé, suǒyǐ mǎidàole zuì piányi de xǐyījī.',
+       note:'详细地 + 对比: trạng ngữ chỉ cách thức, cần có 地.', pair:'因为……所以……'}
+    ]
+  },
+
+  '入围': {
+    colloFull: [
+      {zh:'……入围', py:'…… rùwéi', vn:'… lọt vào vòng trong'},
+      {zh:'入围名单', py:'rùwéi míngdān', vn:'danh sách lọt vào vòng trong'},
+      {zh:'三对夫妻入围', py:'sān duì fūqī rùwéi', vn:'ba cặp vợ chồng lọt vào vòng trong'},
+      {zh:'没有入围', py:'méiyǒu rùwéi', vn:'không lọt vào vòng trong'}
+    ],
+    patterns: [
+      {s:'Sub + 入围', m:'Ai đó lọt vào vòng trong (nội động từ)'},
+      {s:'✗ 入围比赛 → ✓ 在比赛中入围', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Lần này không những tôi lọt vào vòng trong mà bạn cùng bàn của tôi cũng lọt vào.', answer:'这次不仅我入围了，我的同桌也入围了。', answerPy:'Zhè cì bùjǐn wǒ rùwéi le, wǒ de tóngzhuō yě rùwéi le.',
+       note:'入围 là nội động từ, phía sau không mang tân ngữ.', pair:'不仅……也……'},
+      {promptLang:'vi', prompt:'Tôi chưa từng lọt vào vòng trong ở cuộc thi nào cả.', answer:'我从来没在任何比赛中入围过。', answerPy:'Wǒ cónglái méi zài rènhé bǐsài zhōng rùwéiguo.',
+       note:'Muốn nói "cuộc thi" phải đưa ra trước: 在比赛中入围, không nói 入围比赛.', pair:'从来没……过'}
+    ]
+  },
+
+  '评委': {
+    colloFull: [
+      {zh:'三个评委', py:'sān ge píngwěi', vn:'ba giám khảo'},
+      {zh:'评委们', py:'píngwěimen', vn:'các giám khảo'},
+      {zh:'担任评委', py:'dānrèn píngwěi', vn:'làm giám khảo'},
+      {zh:'一位评委', py:'yí wèi píngwěi', vn:'một vị giám khảo'},
+      {zh:'评委打分', py:'píngwěi dǎfēn', vn:'giám khảo chấm điểm'}
+    ],
+    patterns: [
+      {s:'担任 / 当 + 评委', m:'Làm giám khảo'},
+      {s:'评委 + 给 + Sub + 打分', m:'Giám khảo chấm điểm cho ai'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Cô giáo chúng tôi được mời làm giám khảo cuộc thi hát.', answer:'我们老师被邀请担任唱歌比赛的评委。', answerPy:'Wǒmen lǎoshī bèi yāoqǐng dānrèn chànggē bǐsài de píngwěi.',
+       note:'担任 + 评委 = làm giám khảo; 被邀请 = được mời.', pair:'被'},
+      {promptLang:'vi', prompt:'Cậu ấy hát hay quá, ngay cả giám khảo cũng vỗ tay.', answer:'他的歌唱得太好了，连评委都鼓掌了。', answerPy:'Tā de gē chàng de tài hǎo le, lián píngwěi dōu gǔzhǎng le.',
+       note:'评委 là danh từ chỉ người, ở đây đứng sau 连 để nhấn mạnh.', pair:'连……都……'}
+    ]
+  },
+
+  '如何': {
+    colloFull: [
+      {zh:'如何解决', py:'rúhé jiějué', vn:'giải quyết thế nào'},
+      {zh:'该如何', py:'gāi rúhé', vn:'nên thế nào'},
+      {zh:'情况如何', py:'qíngkuàng rúhé', vn:'tình hình ra sao'},
+      {zh:'如何学习', py:'rúhé xuéxí', vn:'học như thế nào'},
+      {zh:'不知如何是好', py:'bù zhī rúhé shì hǎo', vn:'không biết làm sao cho phải'}
+    ],
+    patterns: [
+      {s:'如何 + V', m:'Làm (V) như thế nào — cách nói văn viết của 怎么'},
+      {s:'N + 如何？', m:'… ra sao? — hỏi tình hình, = 怎么样'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Thầy giáo không những dạy chúng tôi kiến thức mà còn dạy chúng tôi học như thế nào.', answer:'老师不仅教我们知识，而且教我们如何学习。', answerPy:'Lǎoshī bùjǐn jiāo wǒmen zhīshi, érqiě jiāo wǒmen rúhé xuéxí.',
+       note:'如何 + động từ: nói về cách thức, trang trọng hơn 怎么.', pair:'不仅……而且……'},
+      {promptLang:'vi', prompt:'Tuy đã họp hai tiếng nhưng chúng tôi vẫn chưa biết nên giải quyết vấn đề này thế nào.', answer:'虽然开了两个小时的会，但是我们还不知道该如何解决这个问题。', answerPy:'Suīrán kāile liǎng ge xiǎoshí de huì, dànshì wǒmen hái bù zhīdào gāi rúhé jiějué zhège wèntí.',
+       note:'该如何 + động từ = nên … thế nào.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '瘫痪': {
+    colloFull: [
+      {zh:'全身瘫痪', py:'quánshēn tānhuàn', vn:'liệt toàn thân'},
+      {zh:'半身瘫痪', py:'bànshēn tānhuàn', vn:'liệt nửa người'},
+      {zh:'交通瘫痪', py:'jiāotōng tānhuàn', vn:'giao thông tê liệt'},
+      {zh:'瘫痪在床', py:'tānhuàn zài chuáng', vn:'liệt nằm trên giường'}
+    ],
+    patterns: [
+      {s:'Sub + 全身 / 半身 + 瘫痪 + 了', m:'Ai đó bị liệt toàn thân / nửa người'},
+      {s:'交通 / 系统 + 瘫痪', m:'Nghĩa bóng: giao thông, hệ thống bị tê liệt'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vì gặp một tai nạn giao thông nên ông ấy bị liệt nửa người.', answer:'因为出了一次交通事故，所以他半身瘫痪了。', answerPy:'Yīnwèi chūle yí cì jiāotōng shìgù, suǒyǐ tā bànshēn tānhuàn le.',
+       note:'半身瘫痪 = liệt nửa người; 了 cuối câu chỉ sự thay đổi.', pair:'因为……所以……'},
+      {promptLang:'vi', prompt:'Ở đây cứ mưa to là giao thông tê liệt.', answer:'这里一下大雨，交通就瘫痪。', answerPy:'Zhèlǐ yí xià dàyǔ, jiāotōng jiù tānhuàn.',
+       note:'瘫痪 nghĩa bóng: giao thông, hệ thống ngừng hoạt động.', pair:'一……就……'}
+    ]
+  },
+
+  '离婚': {
+    colloFull: [
+      {zh:'跟……离婚', py:'gēn…… líhūn', vn:'ly hôn với …'},
+      {zh:'离过婚', py:'líguo hūn', vn:'đã từng ly hôn'},
+      {zh:'办离婚手续', py:'bàn líhūn shǒuxù', vn:'làm thủ tục ly hôn'},
+      {zh:'离了婚', py:'líle hūn', vn:'đã ly hôn'}
+    ],
+    patterns: [
+      {s:'A + 跟 / 和 + B + 离婚', m:'A ly hôn với B'},
+      {s:'✗ 离婚他 / 离婚过 → ✓ 跟他离婚 / 离过婚', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Bố mẹ cậu ấy tuy đã ly hôn nhưng vẫn rất quan tâm đến cậu ấy.', answer:'他的父母虽然离婚了，但是还很关心他。', answerPy:'Tā de fùmǔ suīrán líhūn le, dànshì hái hěn guānxīn tā.',
+       note:'离婚 là ly hợp từ, không mang tân ngữ trực tiếp.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '自杀': {
+    colloFull: [
+      {zh:'想自杀', py:'xiǎng zìshā', vn:'muốn tự sát'},
+      {zh:'自杀行为', py:'zìshā xíngwéi', vn:'hành vi tự sát'},
+      {zh:'想过要自杀', py:'xiǎngguo yào zìshā', vn:'từng nghĩ đến tự sát'},
+      {zh:'防止自杀', py:'fángzhǐ zìshā', vn:'phòng ngừa tự sát'}
+    ],
+    patterns: [
+      {s:'Sub + 想过 + (要) + 自杀', m:'Ai đó từng nghĩ đến chuyện tự sát'},
+      {s:'✗ 自杀自己 → ✓ 自杀', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tuy cô ấy từng nghĩ đến tự sát nhưng chồng cô luôn động viên cô.', answer:'虽然她想过要自杀，但是丈夫一直鼓励她。', answerPy:'Suīrán tā xiǎngguo yào zìshā, dànshì zhàngfu yìzhí gǔlì tā.',
+       note:'自杀 là nội động từ, không mang tân ngữ; 想过要自杀 = từng nghĩ đến tự sát.', pair:'虽然……但是……'},
+      {promptLang:'vi', prompt:'Chỉ cần người nhà quan tâm và trò chuyện nhiều hơn thì rất nhiều hành vi tự sát có thể ngăn chặn được.', answer:'只要家人多关心、多沟通，很多自杀行为就能防止。', answerPy:'Zhǐyào jiārén duō guānxīn, duō gōutōng, hěn duō zìshā xíngwéi jiù néng fángzhǐ.',
+       note:'自杀行为 = hành vi tự sát; 防止 + điều xấu = phòng ngừa.', pair:'只要……就……'}
+    ]
+  },
+
+  '抱怨': {
+    colloFull: [
+      {zh:'抱怨别人', py:'bàoyuàn biérén', vn:'than phiền người khác'},
+      {zh:'抱怨妻子', py:'bàoyuàn qīzi', vn:'trách móc vợ'},
+      {zh:'从不抱怨', py:'cóng bù bàoyuàn', vn:'chưa bao giờ than phiền'},
+      {zh:'抱怨天气', py:'bàoyuàn tiānqì', vn:'than thở về thời tiết'},
+      {zh:'总是抱怨', py:'zǒngshì bàoyuàn', vn:'lúc nào cũng than phiền'}
+    ],
+    patterns: [
+      {s:'Sub + 抱怨 + người / việc', m:'Than phiền về ai / việc gì'},
+      {s:'Sub + 从不 / 从来不 + 抱怨', m:'Chưa bao giờ than phiền'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Em trai tôi không những không làm bài tập mà còn than bài tập quá nhiều.', answer:'我弟弟不仅不做作业，而且还抱怨作业太多。', answerPy:'Wǒ dìdi bùjǐn bú zuò zuòyè, érqiě hái bàoyuàn zuòyè tài duō.',
+       note:'抱怨 có thể mang cả một mệnh đề làm tân ngữ: 抱怨作业太多.', pair:'不仅……而且……'},
+      {promptLang:'vi', prompt:'Tuy ngày nào mẹ tôi đi làm cũng vất vả nhưng chưa từng than phiền.', answer:'我妈妈虽然每天工作都很辛苦，但是从来没抱怨过。', answerPy:'Wǒ māma suīrán měi tiān gōngzuò dōu hěn xīnkǔ, dànshì cónglái méi bàoyuànguo.',
+       note:'从来没 + 抱怨 + 过 = chưa từng than phiền.', pair:'从来没……过'}
+    ]
+  },
+
+  '爱护': {
+    colloFull: [
+      {zh:'爱护环境', py:'àihù huánjìng', vn:'giữ gìn môi trường'},
+      {zh:'爱护花草树木', py:'àihù huācǎo shùmù', vn:'yêu quý cây cỏ'},
+      {zh:'爱护公物', py:'àihù gōngwù', vn:'giữ gìn của công'},
+      {zh:'爱护学生', py:'àihù xuésheng', vn:'yêu thương học sinh'},
+      {zh:'爱护动物', py:'àihù dòngwù', vn:'bảo vệ động vật'}
+    ],
+    patterns: [
+      {s:'Sub + 爱护 + N (环境 / 公物 / 学生…)', m:'Yêu quý, giữ gìn cái gì / ai'},
+      {s:'在 + người + 的爱护下', m:'Dưới sự yêu thương chăm sóc của ai'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chỉ cần mọi người đều giữ gìn của công thì trường chúng ta sẽ ngày càng đẹp hơn.', answer:'只要大家都爱护公物，我们的学校就会越来越漂亮。', answerPy:'Zhǐyào dàjiā dōu àihù gōngwù, wǒmen de xuéxiào jiù huì yuè lái yuè piàoliang.',
+       note:'爱护公物 = giữ gìn tài sản chung, câu rất hay gặp ở trường học.', pair:'只要……就……'},
+      {promptLang:'vi', prompt:'Cô chủ nhiệm lớp tôi vừa nghiêm khắc vừa rất thương yêu học sinh.', answer:'我们班主任既严格又很爱护学生。', answerPy:'Wǒmen bānzhǔrèn jì yángé yòu hěn àihù xuésheng.',
+       note:'爱护学生 = thương yêu, chăm lo học sinh; 爱护 dùng được cho người.', pair:'既……又……'}
+    ]
+  },
+
+  '婚姻': {
+    colloFull: [
+      {zh:'婚姻生活', py:'hūnyīn shēnghuó', vn:'đời sống hôn nhân'},
+      {zh:'幸福的婚姻', py:'xìngfú de hūnyīn', vn:'cuộc hôn nhân hạnh phúc'},
+      {zh:'婚姻问题', py:'hūnyīn wèntí', vn:'vấn đề hôn nhân'},
+      {zh:'婚姻法', py:'hūnyīnfǎ', vn:'luật hôn nhân'}
+    ],
+    patterns: [
+      {s:'……的 + 婚姻 / 婚姻 + 生活 / 问题', m:'婚姻 là danh từ: làm trung tâm ngữ hoặc định ngữ'},
+      {s:'✗ 他们下个月婚姻 → ✓ 他们下个月结婚', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Một cuộc hôn nhân hạnh phúc không phải dựa vào tiền mà là dựa vào sự thấu hiểu lẫn nhau.', answer:'幸福的婚姻不是靠钱，而是靠互相理解。', answerPy:'Xìngfú de hūnyīn bú shì kào qián, ér shì kào hùxiāng lǐjiě.',
+       note:'婚姻 là danh từ, khác 结婚 (động từ); 靠 = dựa vào.', pair:'不是……而是……'},
+      {promptLang:'vi', prompt:'Bố mẹ tôi tuy đôi khi cãi nhau nhưng đời sống hôn nhân rất hạnh phúc.', answer:'我父母虽然有时候吵架，但是婚姻生活很幸福。', answerPy:'Wǒ fùmǔ suīrán yǒu shíhou chǎojià, dànshì hūnyīn shēnghuó hěn xìngfú.',
+       note:'婚姻生活 = đời sống hôn nhân.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '吵架': {
+    colloFull: [
+      {zh:'A和B吵架', py:'A hé B chǎojià', vn:'A cãi nhau với B'},
+      {zh:'吵过架', py:'chǎoguo jià', vn:'đã từng cãi nhau'},
+      {zh:'跟……吵架', py:'gēn…… chǎojià', vn:'cãi nhau với …'},
+      {zh:'吵了一架', py:'chǎole yí jià', vn:'cãi nhau một trận'}
+    ],
+    patterns: [
+      {s:'A + 和 / 跟 + B + 吵架', m:'A cãi nhau với B'},
+      {s:'✗ 吵架他 → ✓ 跟他吵架', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tôi bị tiếng cãi nhau của hàng xóm đánh thức.', answer:'我被邻居吵架的声音吵醒了。', answerPy:'Wǒ bèi línjū chǎojià de shēngyīn chǎoxǐng le.',
+       note:'吵架 (cãi nhau) khác 吵醒 (làm ồn đánh thức): cùng chữ 吵 nhưng nghĩa khác.', pair:'被'}
+    ]
+  },
+
+  '相敬如宾': {
+    colloFull: [
+      {zh:'相亲相爱、相敬如宾', py:'xiāng qīn xiāng ài, xiāng jìng rú bīn', vn:'yêu thương nhau, tôn trọng nhau như khách'},
+      {zh:'夫妻相敬如宾', py:'fūqī xiāng jìng rú bīn', vn:'vợ chồng tương kính như tân'},
+      {zh:'一直相敬如宾', py:'yìzhí xiāng jìng rú bīn', vn:'luôn tôn trọng nhau như khách'},
+      {zh:'相敬如宾夫妻', py:'xiāng jìng rú bīn fūqī', vn:'cặp vợ chồng tương kính như tân'}
+    ],
+    patterns: [
+      {s:'夫妻 + (一直) + 相敬如宾', m:'Vợ chồng (luôn) tôn trọng nhau như khách quý'},
+      {s:'✗ 我和同学相敬如宾 → ✓ 我和同学互相尊重', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Ông bà tôi cưới nhau năm mươi năm, chưa từng to tiếng với nhau, luôn tôn trọng nhau như khách.', answer:'我爷爷奶奶结婚五十年，从来没红过脸，一直相敬如宾。', answerPy:'Wǒ yéye nǎinai jiéhūn wǔshí nián, cónglái méi hóngguo liǎn, yìzhí xiāng jìng rú bīn.',
+       note:'相敬如宾 làm vị ngữ, chủ ngữ là một cặp vợ chồng.', pair:'从来没……过'},
+      {promptLang:'vi', prompt:'Họ không những yêu thương nhau mà còn tôn trọng nhau như khách quý.', answer:'他们不仅相亲相爱，而且相敬如宾。', answerPy:'Tāmen bùjǐn xiāng qīn xiāng ài, érqiě xiāng jìng rú bīn.',
+       note:'相敬如宾 hay đi cặp với 相亲相爱.', pair:'不仅……而且……'}
+    ]
+  },
+
+  '暗暗': {
+    colloFull: [
+      {zh:'暗暗决定', py:'àn\'àn juédìng', vn:'thầm quyết định'},
+      {zh:'暗暗点头', py:'àn\'àn diǎntóu', vn:'thầm gật đầu'},
+      {zh:'暗暗下决心', py:'àn\'àn xià juéxīn', vn:'thầm hạ quyết tâm'},
+      {zh:'暗暗高兴', py:'àn\'àn gāoxìng', vn:'thầm vui'},
+      {zh:'暗暗吃惊', py:'àn\'àn chījīng', vn:'thầm kinh ngạc'}
+    ],
+    patterns: [
+      {s:'Sub + 暗暗 + V / tính từ tâm lý', m:'Thầm làm gì / thầm cảm thấy gì'},
+      {s:'✗ 他决定暗暗 → ✓ 他暗暗决定', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vừa nhìn thấy điểm thi, cậu ấy liền thầm hạ quyết tâm phải học chăm chỉ.', answer:'他一看到考试成绩，就暗暗下决心要努力学习。', answerPy:'Tā yí kàndào kǎoshì chéngjì, jiù àn\'àn xià juéxīn yào nǔlì xuéxí.',
+       note:'暗暗 đứng trước động từ, sau 就.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Được cô giáo khen, cô ấy tuy không nói gì nhưng trong lòng thầm vui.', answer:'听到老师的表扬，她虽然没说什么，但是心里暗暗高兴。', answerPy:'Tīngdào lǎoshī de biǎoyáng, tā suīrán méi shuō shénme, dànshì xīnli àn\'àn gāoxìng.',
+       note:'暗暗 + tính từ tâm lý: niềm vui giấu trong lòng.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '轮': {
+    colloFull: [
+      {zh:'轮到', py:'lúndào', vn:'đến lượt'},
+      {zh:'轮流', py:'lúnliú', vn:'lần lượt, thay phiên'},
+      {zh:'轮到我了', py:'lúndào wǒ le', vn:'đến lượt tôi rồi'},
+      {zh:'轮到谁', py:'lúndào shéi', vn:'đến lượt ai'}
+    ],
+    patterns: [
+      {s:'轮到 + người + (V) + 了', m:'Đến lượt ai (làm gì) rồi'},
+      {s:'Sub (số nhiều) + 轮流 + V', m:'Thay phiên nhau làm gì'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vừa đến lượt tôi phát biểu thì chuông hết giờ reo.', answer:'一轮到我发言，下课铃就响了。', answerPy:'Yì lúndào wǒ fāyán, xiàkè líng jiù xiǎng le.',
+       note:'轮到 + người + động từ: đến lượt ai làm gì.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Lớp tôi mọi người thay phiên nhau quét lớp, ngay cả lớp trưởng cũng không ngoại lệ.', answer:'我们班大家轮流打扫教室，连班长都不例外。', answerPy:'Wǒmen bān dàjiā lúnliú dǎsǎo jiàoshì, lián bānzhǎng dōu bú lìwài.',
+       note:'轮流 = thay phiên nhau, chủ ngữ phải là số nhiều.', pair:'连……都……'}
+    ]
+  },
+
+  '不耐烦': {
+    colloFull: [
+      {zh:'有些不耐烦', py:'yǒuxiē bú nàifán', vn:'hơi sốt ruột'},
+      {zh:'等得不耐烦', py:'děng de bú nàifán', vn:'chờ đến sốt ruột'},
+      {zh:'不耐烦地说', py:'bú nàifán de shuō', vn:'nói với vẻ mất kiên nhẫn'},
+      {zh:'越来越不耐烦', py:'yuè lái yuè bú nàifán', vn:'càng lúc càng sốt ruột'}
+    ],
+    patterns: [
+      {s:'Sub + 有点儿 / 有些 + 不耐烦', m:'Ai đó hơi sốt ruột'},
+      {s:'V + 得 + 不耐烦', m:'Làm gì đến mức mất kiên nhẫn'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Xe buýt mãi không đến, mọi người chờ càng lúc càng sốt ruột.', answer:'公共汽车一直不来，大家等得越来越不耐烦了。', answerPy:'Gōnggòng qìchē yìzhí bù lái, dàjiā děng de yuè lái yuè bú nàifán le.',
+       note:'V + 得 + 不耐烦; 不 đọc bú vì đứng trước thanh 4.', pair:'越来越……'},
+      {promptLang:'vi', prompt:'Anh trai bị em gái hỏi đến mức mất kiên nhẫn.', answer:'哥哥被妹妹问得不耐烦了。', answerPy:'Gēge bèi mèimei wèn de bú nàifán le.',
+       note:'被 + người + V + 得 + 不耐烦: bị ai làm cho mất kiên nhẫn.', pair:'被'}
+    ]
+  },
+
+  '靠': {
+    colloFull: [
+      {zh:'靠着桌子', py:'kàozhe zhuōzi', vn:'tựa vào bàn'},
+      {zh:'靠在肩膀上', py:'kào zài jiānbǎng shang', vn:'tựa lên vai'},
+      {zh:'靠父母', py:'kào fùmǔ', vn:'dựa vào bố mẹ'},
+      {zh:'靠自己', py:'kào zìjǐ', vn:'dựa vào bản thân'},
+      {zh:'靠在墙上', py:'kào zài qiáng shang', vn:'tựa vào tường'}
+    ],
+    patterns: [
+      {s:'靠着 / 靠在 + nơi chốn', m:'Tựa vào đâu (nghĩa gốc)'},
+      {s:'靠 + người / cách thức + V', m:'Nhờ vào, dựa vào ai / cái gì (nghĩa mở rộng)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Anh ấy không dựa vào bố mẹ mà dựa vào chính mình để mua được nhà.', answer:'他不是靠父母，而是靠自己买到了房子。', answerPy:'Tā bú shì kào fùmǔ, ér shì kào zìjǐ mǎidàole fángzi.',
+       note:'靠 + người = dựa vào ai (nghĩa mở rộng).', pair:'不是……而是……'},
+      {promptLang:'vi', prompt:'Cậu ấy mệt quá, vừa dựa vào tường là ngủ luôn.', answer:'他太累了，一靠在墙上就睡着了。', answerPy:'Tā tài lèi le, yí kào zài qiáng shang jiù shuìzháo le.',
+       note:'靠在 + nơi chốn + 上: nghĩa gốc là tựa vào.', pair:'一……就……'}
+    ]
+  },
+
+  '肩膀': {
+    colloFull: [
+      {zh:'靠在肩膀上', py:'kào zài jiānbǎng shang', vn:'tựa lên vai'},
+      {zh:'拍拍肩膀', py:'pāipai jiānbǎng', vn:'vỗ vai'},
+      {zh:'肩膀疼', py:'jiānbǎng téng', vn:'đau vai'},
+      {zh:'宽宽的肩膀', py:'kuānkuān de jiānbǎng', vn:'bờ vai rộng'}
+    ],
+    patterns: [
+      {s:'靠在 + 某人的 + 肩膀上', m:'Tựa lên vai ai'},
+      {s:'拍拍 + 某人的 + 肩膀', m:'Vỗ vai ai (động viên)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Em gái tựa đầu lên vai tôi rồi ngủ thiếp đi.', answer:'妹妹把头靠在我的肩膀上睡着了。', answerPy:'Mèimei bǎ tóu kào zài wǒ de jiānbǎng shang shuìzháo le.',
+       note:'把 + 头 + 靠在 + … + 肩膀上: câu 把 với bổ ngữ nơi chốn.', pair:'把'},
+      {promptLang:'vi', prompt:'Vì ngày nào cũng đeo cặp sách nặng nên vai tôi rất đau.', answer:'因为每天背很重的书包，所以我的肩膀很疼。', answerPy:'Yīnwèi měi tiān bēi hěn zhòng de shūbāo, suǒyǐ wǒ de jiānbǎng hěn téng.',
+       note:'背 đọc bēi (đeo trên lưng); 肩膀疼 = đau vai.', pair:'因为……所以……'}
+    ]
+  },
+
+  '喊': {
+    colloFull: [
+      {zh:'喊他', py:'hǎn tā', vn:'gọi anh ấy'},
+      {zh:'喊醒', py:'hǎnxǐng', vn:'gọi dậy'},
+      {zh:'大声喊', py:'dàshēng hǎn', vn:'gọi to, hét to'},
+      {zh:'喊名字', py:'hǎn míngzi', vn:'gọi tên'},
+      {zh:'喊救命', py:'hǎn jiùmìng', vn:'kêu cứu'}
+    ],
+    patterns: [
+      {s:'喊 + người + (V)', m:'Gọi ai (làm gì): 喊他吃饭'},
+      {s:'把 + người + 喊醒', m:'Gọi ai tỉnh dậy'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Sáng nay mẹ gọi ba lần mới gọi được tôi dậy.', answer:'今天早上妈妈喊了三次才把我喊醒。', answerPy:'Jīntiān zǎoshang māma hǎnle sān cì cái bǎ wǒ hǎnxǐng.',
+       note:'喊醒 = gọi cho tỉnh (bổ ngữ kết quả); 才 nhấn mạnh khó khăn, muộn.', pair:'把'},
+      {promptLang:'vi', prompt:'Tuy tôi gọi to tên cậu ấy nhưng cậu ấy không nghe thấy.', answer:'虽然我大声喊他的名字，但是他没听见。', answerPy:'Suīrán wǒ dàshēng hǎn tā de míngzi, dànshì tā méi tīngjiàn.',
+       note:'大声喊 = gọi to; 喊 + tên / người.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '伸': {
+    colloFull: [
+      {zh:'伸手', py:'shēnshǒu', vn:'đưa tay ra'},
+      {zh:'伸出手指', py:'shēnchū shǒuzhǐ', vn:'giơ ngón tay ra'},
+      {zh:'伸懒腰', py:'shēn lǎnyāo', vn:'vươn vai'},
+      {zh:'伸出舌头', py:'shēnchū shétou', vn:'thè lưỡi'},
+      {zh:'伸腿', py:'shēn tuǐ', vn:'duỗi chân'}
+    ],
+    patterns: [
+      {s:'伸 + (出) + bộ phận cơ thể', m:'Đưa / duỗi một bộ phận cơ thể ra'},
+      {s:'把 + bộ phận cơ thể + 伸出来', m:'Đưa (tay, chân…) ra'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vừa ngủ dậy, cậu ấy liền vươn vai một cái.', answer:'他一起床就伸了个懒腰。', answerPy:'Tā yì qǐchuáng jiù shēnle ge lǎnyāo.',
+       note:'伸懒腰 tách được: 伸了个懒腰.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Em đưa tay ra cho bác sĩ xem nào.', answer:'把手伸出来，让医生看看。', answerPy:'Bǎ shǒu shēn chūlái, ràng yīshēng kànkan.',
+       note:'把 + 手 + 伸出来: bổ ngữ xu hướng 出来 đi sau 伸.', pair:'把'}
+    ]
+  },
+
+  '手指': {
+    colloFull: [
+      {zh:'一根手指', py:'yì gēn shǒuzhǐ', vn:'một ngón tay'},
+      {zh:'伸出手指', py:'shēnchū shǒuzhǐ', vn:'giơ ngón tay ra'},
+      {zh:'手指受伤', py:'shǒuzhǐ shòushāng', vn:'ngón tay bị thương'},
+      {zh:'十根手指', py:'shí gēn shǒuzhǐ', vn:'mười ngón tay'}
+    ],
+    patterns: [
+      {s:'一 / 几 + 根 + 手指', m:'Lượng từ của 手指 là 根'},
+      {s:'用 + 手指 + V', m:'Dùng ngón tay làm gì'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Lúc thái rau, ngón tay mẹ bị dao cắt trúng.', answer:'切菜的时候，妈妈的手指被刀切破了。', answerPy:'Qiē cài de shíhou, māma de shǒuzhǐ bèi dāo qiēpò le.',
+       note:'手指 làm chủ ngữ của câu bị động 被.', pair:'被'},
+      {promptLang:'vi', prompt:'Anh ấy lạnh đến mức ngay cả ngón tay cũng không cử động được.', answer:'他冷得连手指都动不了了。', answerPy:'Tā lěng de lián shǒuzhǐ dōu dòng bu liǎo le.',
+       note:'连 + 手指 + 都: nhấn mạnh mức độ cực đoan.', pair:'连……都……'}
+    ]
+  },
+
+  '歪歪扭扭': {
+    colloFull: [
+      {zh:'歪歪扭扭地写', py:'wāiwāiniǔniǔ de xiě', vn:'viết nguệch ngoạc'},
+      {zh:'字写得歪歪扭扭', py:'zì xiě de wāiwāiniǔniǔ', vn:'chữ viết xiêu vẹo'},
+      {zh:'歪歪扭扭的字', py:'wāiwāiniǔniǔ de zì', vn:'chữ nguệch ngoạc'},
+      {zh:'歪歪扭扭的小路', py:'wāiwāiniǔniǔ de xiǎolù', vn:'con đường nhỏ ngoằn ngoèo'}
+    ],
+    patterns: [
+      {s:'歪歪扭扭 + 地 + V', m:'Làm gì một cách xiêu vẹo (trạng ngữ)'},
+      {s:'V + 得 + 歪歪扭扭', m:'(Viết, xếp…) đến mức xiêu vẹo (bổ ngữ)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Hồi mới học chữ Hán, chữ tôi viết nguệch ngoạc, bây giờ càng ngày càng đẹp.', answer:'刚学汉字的时候，我的字写得歪歪扭扭，现在越来越好看了。', answerPy:'Gāng xué Hànzì de shíhou, wǒ de zì xiě de wāiwāiniǔniǔ, xiànzài yuè lái yuè hǎokàn le.',
+       note:'V + 得 + 歪歪扭扭: làm bổ ngữ trạng thái.', pair:'越来越……'},
+      {promptLang:'vi', prompt:'Vì tay phải bị thương nên cậu ấy chỉ có thể dùng tay trái viết nguệch ngoạc.', answer:'因为他的右手受伤了，所以只能用左手歪歪扭扭地写字。', answerPy:'Yīnwèi tā de yòushǒu shòushāng le, suǒyǐ zhǐ néng yòng zuǒshǒu wāiwāiniǔniǔ de xiě zì.',
+       note:'歪歪扭扭 + 地 + 写: làm trạng ngữ trước động từ.', pair:'因为……所以……'}
+    ]
+  },
+
+  '递': {
+    colloFull: [
+      {zh:'递给', py:'dì gěi', vn:'đưa cho'},
+      {zh:'传递', py:'chuándì', vn:'truyền, chuyển'},
+      {zh:'递给评委', py:'dì gěi píngwěi', vn:'đưa cho giám khảo'},
+      {zh:'递纸条', py:'dì zhǐtiáo', vn:'chuyền mảnh giấy'},
+      {zh:'传递信息', py:'chuándì xìnxī', vn:'truyền tin'}
+    ],
+    patterns: [
+      {s:'递给 + người + vật', m:'Đưa vật gì cho ai'},
+      {s:'把 + vật + 递给 + người', m:'Đưa vật gì cho ai (câu 把)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Bạn đưa giúp tôi cái bút kia được không?', answer:'你能把那支笔递给我吗？', answerPy:'Nǐ néng bǎ nà zhī bǐ dì gěi wǒ ma?',
+       note:'把 + vật + 递给 + người.', pair:'把'},
+      {promptLang:'vi', prompt:'Trong giờ học cậu ta chuyền giấy cho bạn cùng bàn và bị cô giáo phát hiện.', answer:'他上课的时候给同桌递纸条，被老师发现了。', answerPy:'Tā shàngkè de shíhou gěi tóngzhuō dì zhǐtiáo, bèi lǎoshī fāxiàn le.',
+       note:'给 + người + 递 + vật cũng đúng; 递纸条 = chuyền giấy.', pair:'被'}
+    ]
+  },
+
+  '脑袋': {
+    colloFull: [
+      {zh:'摇摇脑袋', py:'yáoyao nǎodai', vn:'lắc đầu'},
+      {zh:'脑袋靠着', py:'nǎodai kàozhe', vn:'đầu tựa vào'},
+      {zh:'小脑袋', py:'xiǎo nǎodai', vn:'cái đầu nhỏ'},
+      {zh:'脑袋疼', py:'nǎodai téng', vn:'đau đầu'}
+    ],
+    patterns: [
+      {s:'摇摇 / 点点 + 脑袋', m:'Lắc / gật đầu (khẩu ngữ)'},
+      {s:'脑袋 (khẩu ngữ) ↔ 头 (văn viết)', m:'Văn viết, nơi trang trọng dùng 头'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tôi vừa hỏi, cậu ấy liền lắc đầu, chẳng nói gì cả.', answer:'我一问他，他就摇摇脑袋，什么也不说。', answerPy:'Wǒ yí wèn tā, tā jiù yáoyao nǎodai, shénme yě bù shuō.',
+       note:'摇摇脑袋 = lắc đầu, cách nói khẩu ngữ của 摇头.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Vì làm bài toán cả buổi tối nên đầu tôi đau quá.', answer:'因为做了一晚上的数学题，所以我的脑袋很疼。', answerPy:'Yīnwèi zuòle yì wǎnshang de shùxué tí, suǒyǐ wǒ de nǎodai hěn téng.',
+       note:'脑袋疼 = 头疼, sắc thái khẩu ngữ.', pair:'因为……所以……'}
+    ]
+  },
+
+  '女士': {
+    colloFull: [
+      {zh:'王女士', py:'Wáng nǚshì', vn:'bà Vương'},
+      {zh:'女士们，先生们', py:'nǚshìmen, xiānshengmen', vn:'thưa quý bà, quý ông'},
+      {zh:'这位女士', py:'zhè wèi nǚshì', vn:'vị nữ sĩ này'},
+      {zh:'女士优先', py:'nǚshì yōuxiān', vn:'ưu tiên phụ nữ'}
+    ],
+    patterns: [
+      {s:'Họ + 女士', m:'Gọi lịch sự người phụ nữ: 王女士, 李女士'},
+      {s:'一位 / 这位 + 女士', m:'Lượng từ lịch sự là 位'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vị nữ sĩ đó là do giám đốc mời đến.', answer:'那位女士是经理请来的。', answerPy:'Nà wèi nǚshì shì jīnglǐ qǐnglái de.',
+       note:'位 là lượng từ lịch sự, hợp với 女士.', pair:'是……的'},
+      {promptLang:'vi', prompt:'Bà Lý không những là giáo viên mà còn là một nhà văn.', answer:'李女士不仅是老师，而且是一位作家。', answerPy:'Lǐ nǚshì bùjǐn shì lǎoshī, érqiě shì yí wèi zuòjiā.',
+       note:'女士 đặt sau họ: 李女士.', pair:'不仅……而且……'}
+    ]
+  },
+
+  '叙述': {
+    colloFull: [
+      {zh:'叙述故事', py:'xùshù gùshi', vn:'kể lại câu chuyện'},
+      {zh:'叙述经过', py:'xùshù jīngguò', vn:'thuật lại diễn biến'},
+      {zh:'简单地叙述', py:'jiǎndān de xùshù', vn:'kể sơ lược'},
+      {zh:'叙述一下', py:'xùshù yíxià', vn:'kể lại một chút'},
+      {zh:'他的叙述', py:'tā de xùshù', vn:'lời kể của anh ấy'}
+    ],
+    patterns: [
+      {s:'叙述 + 故事 / 经过 / 内容', m:'Kể lại câu chuyện / diễn biến / nội dung'},
+      {s:'简单地 / 详细地 + 叙述', m:'Kể sơ lược / kể chi tiết'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Cảnh sát bảo anh ấy kể lại chi tiết một lượt diễn biến sự việc.', answer:'警察让他把事情的经过详细地叙述一遍。', answerPy:'Jǐngchá ràng tā bǎ shìqing de jīngguò xiángxì de xùshù yí biàn.',
+       note:'把 + 经过 + 叙述一遍: kể lại một lượt.', pair:'把'},
+      {promptLang:'vi', prompt:'Bạn có thể kể sơ qua bạn đã học giỏi tiếng Trung như thế nào không?', answer:'你能简单地叙述一下你是如何学好中文的吗？', answerPy:'Nǐ néng jiǎndān de xùshù yíxià nǐ shì rúhé xuéhǎo Zhōngwén de ma?',
+       note:'叙述 + mệnh đề chứa 如何; 是……的 nhấn mạnh cách thức.', pair:'是……的'}
+    ]
+  },
+
+  '居然': {
+    colloFull: [
+      {zh:'居然放弃', py:'jūrán fàngqì', vn:'lại từ bỏ'},
+      {zh:'居然也不会', py:'jūrán yě bú huì', vn:'vậy mà cũng không biết'},
+      {zh:'居然没有', py:'jūrán méiyǒu', vn:'vậy mà lại không'},
+      {zh:'居然忘了', py:'jūrán wàng le', vn:'lại quên mất'},
+      {zh:'居然是他', py:'jūrán shì tā', vn:'không ngờ lại là anh ấy'}
+    ],
+    patterns: [
+      {s:'Sub + 居然 + V / Adj', m:'Ai đó lại làm gì (ngoài dự đoán, ngạc nhiên)'},
+      {s:'✗ 居然他来了 → ✓ 他居然来了', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Bài dễ thế này, ngay cả em trai tôi cũng biết làm, vậy mà bạn lại không biết?', answer:'这么简单的题，连我弟弟都会做，你居然不会？', answerPy:'Zhème jiǎndān de tí, lián wǒ dìdi dōu huì zuò, nǐ jūrán bú huì?',
+       note:'居然 đứng sau chủ ngữ, trước động từ, thể hiện sự ngạc nhiên.', pair:'连……都……'},
+      {promptLang:'vi', prompt:'Tuy cậu ấy chưa từng học nấu ăn nhưng lại nấu được cả một bàn đầy món.', answer:'他虽然从来没学过做饭，但是居然做了一桌子菜。', answerPy:'Tā suīrán cónglái méi xuéguo zuòfàn, dànshì jūrán zuòle yì zhuōzi cài.',
+       note:'居然 nhấn mạnh kết quả trái với điều vế trước khiến ta dự đoán.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '催': {
+    colloFull: [
+      {zh:'催他们', py:'cuī tāmen', vn:'giục họ'},
+      {zh:'别催我', py:'bié cuī wǒ', vn:'đừng giục tôi'},
+      {zh:'催着', py:'cuīzhe', vn:'cứ giục'},
+      {zh:'催我起床', py:'cuī wǒ qǐchuáng', vn:'giục tôi dậy'}
+    ],
+    patterns: [
+      {s:'催 + người + V', m:'Giục ai làm gì'},
+      {s:'Sub + 被 + người + 催', m:'Bị ai giục'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Sáng nào tôi cũng bị mẹ giục dậy.', answer:'我每天早上都被妈妈催着起床。', answerPy:'Wǒ měi tiān zǎoshang dōu bèi māma cuīzhe qǐchuáng.',
+       note:'催着 + V: cứ giục làm gì; bị động 被 + người + 催.', pair:'被'},
+      {promptLang:'vi', prompt:'Đừng giục tôi, chỉ cần bạn đợi thêm năm phút là tôi làm xong.', answer:'别催我，只要你再等五分钟，我就做完了。', answerPy:'Bié cuī wǒ, zhǐyào nǐ zài děng wǔ fēnzhōng, wǒ jiù zuòwán le.',
+       note:'别催我 = đừng giục tôi; 催 mang tân ngữ chỉ người.', pair:'只要……就……'}
+    ]
+  },
+
+  '等待': {
+    colloFull: [
+      {zh:'等待机会', py:'děngdài jīhuì', vn:'chờ đợi cơ hội'},
+      {zh:'等待结果', py:'děngdài jiéguǒ', vn:'chờ đợi kết quả'},
+      {zh:'耐心等待', py:'nàixīn děngdài', vn:'kiên nhẫn chờ đợi'},
+      {zh:'等待一段时间', py:'děngdài yí duàn shíjiān', vn:'chờ một thời gian'}
+    ],
+    patterns: [
+      {s:'等待 + 机会 / 结果 / 消息', m:'Chờ đợi (đối tượng thường trừu tượng)'},
+      {s:'耐心 + (地) + 等待', m:'Kiên nhẫn chờ đợi'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chỉ cần kiên nhẫn chờ đợi, cơ hội nhất định sẽ đến.', answer:'只要耐心等待，机会就一定会来。', answerPy:'Zhǐyào nàixīn děngdài, jīhuì jiù yídìng huì lái.',
+       note:'耐心等待 = kiên nhẫn chờ đợi; 等待 trang trọng hơn 等.', pair:'只要……就……'},
+      {promptLang:'vi', prompt:'Vì vẫn đang chờ kết quả thi nên mấy hôm nay cậu ấy ngủ không ngon.', answer:'因为还在等待考试结果，所以他这几天都睡不好。', answerPy:'Yīnwèi hái zài děngdài kǎoshì jiéguǒ, suǒyǐ tā zhè jǐ tiān dōu shuì bu hǎo.',
+       note:'在 + 等待 + 结果: đang chờ đợi kết quả.', pair:'因为……所以……'}
+    ]
+  },
+
+  '蚊子': {
+    colloFull: [
+      {zh:'一只蚊子', py:'yì zhī wénzi', vn:'một con muỗi'},
+      {zh:'赶蚊子', py:'gǎn wénzi', vn:'đuổi muỗi'},
+      {zh:'被蚊子叮', py:'bèi wénzi dīng', vn:'bị muỗi đốt'},
+      {zh:'蚊子多', py:'wénzi duō', vn:'nhiều muỗi'},
+      {zh:'打蚊子', py:'dǎ wénzi', vn:'đập muỗi'}
+    ],
+    patterns: [
+      {s:'一 / 几 + 只 + 蚊子', m:'Lượng từ của 蚊子 là 只'},
+      {s:'被 + 蚊子 + 叮 (了 / 醒)', m:'Bị muỗi đốt'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Mùa hè vừa đến là trong phòng có rất nhiều muỗi.', answer:'夏天一到，房间里就有很多蚊子。', answerPy:'Xiàtiān yí dào, fángjiān li jiù yǒu hěn duō wénzi.',
+       note:'有很多蚊子 / 蚊子多 = nhiều muỗi.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Bố đã đuổi hết muỗi trong phòng ra ngoài.', answer:'爸爸把房间里的蚊子都赶出去了。', answerPy:'Bàba bǎ fángjiān li de wénzi dōu gǎn chūqù le.',
+       note:'赶蚊子 = đuổi muỗi; 把 + 蚊子 + 赶出去.', pair:'把'}
+    ]
+  },
+
+  '半夜': {
+    colloFull: [
+      {zh:'半夜醒来', py:'bànyè xǐnglái', vn:'nửa đêm tỉnh dậy'},
+      {zh:'后半夜', py:'hòu bànyè', vn:'nửa đêm về sáng'},
+      {zh:'大半夜', py:'dà bànyè', vn:'giữa đêm hôm'},
+      {zh:'半夜十二点', py:'bànyè shí\'èr diǎn', vn:'mười hai giờ đêm'},
+      {zh:'到半夜', py:'dào bànyè', vn:'đến nửa đêm'}
+    ],
+    patterns: [
+      {s:'半夜 + V', m:'Nửa đêm làm gì (trạng ngữ thời gian đứng trước động từ)'},
+      {s:'V + 到 + 半夜', m:'Làm gì đến tận nửa đêm'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vì mai thi nên tối qua anh tôi học đến tận nửa đêm.', answer:'因为明天考试，所以哥哥昨天晚上学习到半夜。', answerPy:'Yīnwèi míngtiān kǎoshì, suǒyǐ gēge zuótiān wǎnshang xuéxí dào bànyè.',
+       note:'V + 到 + 半夜: kéo dài đến nửa đêm.', pair:'因为……所以……'},
+      {promptLang:'vi', prompt:'Tôi chưa bao giờ nửa đêm dậy xem bóng đá.', answer:'我从来没半夜起来看过足球比赛。', answerPy:'Wǒ cónglái méi bànyè qǐlái kànguo zúqiú bǐsài.',
+       note:'半夜 làm trạng ngữ, đứng trước động từ.', pair:'从来没……过'}
+    ]
+  },
+
+  '叮': {
+    colloFull: [
+      {zh:'被蚊子叮', py:'bèi wénzi dīng', vn:'bị muỗi đốt'},
+      {zh:'叮了一口', py:'dīngle yì kǒu', vn:'đốt một phát'},
+      {zh:'叮醒', py:'dīngxǐng', vn:'đốt cho tỉnh dậy'},
+      {zh:'叮了好几个包', py:'dīngle hǎo jǐ ge bāo', vn:'đốt mấy nốt sưng'}
+    ],
+    patterns: [
+      {s:'被 + 蚊子 / 虫子 + 叮 + (了 + số lượng)', m:'Bị muỗi / côn trùng đốt'},
+      {s:'叮 + 了 + 一口', m:'Đốt một phát'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Hôm qua đi leo núi, chân tôi bị muỗi đốt mấy nốt.', answer:'昨天去爬山，我的腿被蚊子叮了好几个包。', answerPy:'Zuótiān qù páshān, wǒ de tuǐ bèi wénzi dīngle hǎo jǐ ge bāo.',
+       note:'被 + 蚊子 + 叮 + 了 + số lượng; 包 ở đây là nốt sưng.', pair:'被'},
+      {promptLang:'vi', prompt:'Em gái tôi rất sợ muỗi, hễ bị đốt là khóc.', answer:'我妹妹很怕蚊子，一被叮就哭。', answerPy:'Wǒ mèimei hěn pà wénzi, yí bèi dīng jiù kū.',
+       note:'叮 thường dùng trong câu bị động; 一被叮就…: hễ bị đốt là ….', pair:'一……就……'}
+    ]
+  },
+
+  '老婆': {
+    colloFull: [
+      {zh:'我老婆', py:'wǒ lǎopo', vn:'vợ tôi'},
+      {zh:'老婆孩子', py:'lǎopo háizi', vn:'vợ con'},
+      {zh:'他老婆', py:'tā lǎopo', vn:'vợ anh ấy'},
+      {zh:'娶老婆', py:'qǔ lǎopo', vn:'lấy vợ'}
+    ],
+    patterns: [
+      {s:'我 / 他 + 老婆', m:'Vợ tôi / vợ anh ấy (khẩu ngữ thân mật)'},
+      {s:'老婆 (khẩu ngữ) ↔ 妻子 / 爱人 (trang trọng)', m:'Văn viết, nơi trang trọng dùng 妻子'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chú tôi không những yêu vợ mà còn rất thương con.', answer:'我叔叔不仅爱老婆，而且很疼孩子。', answerPy:'Wǒ shūshu bùjǐn ài lǎopo, érqiě hěn téng háizi.',
+       note:'老婆 là khẩu ngữ, hợp với câu nói hằng ngày.', pair:'不仅……而且……'},
+      {promptLang:'vi', prompt:'Anh ấy vừa tan làm là về nhà nấu cơm cho vợ.', answer:'他一下班就回家给老婆做饭。', answerPy:'Tā yí xiàbān jiù huí jiā gěi lǎopo zuòfàn.',
+       note:'给 + 老婆 + V: làm gì cho vợ.', pair:'一……就……'}
+    ]
+  },
+
+  '吵': {
+    colloFull: [
+      {zh:'太吵了', py:'tài chǎo le', vn:'ồn quá'},
+      {zh:'吵醒', py:'chǎoxǐng', vn:'làm ồn đánh thức'},
+      {zh:'吵着别人', py:'chǎozhe biérén', vn:'làm phiền người khác'},
+      {zh:'吵得睡不着', py:'chǎo de shuì bu zháo', vn:'ồn đến không ngủ được'},
+      {zh:'别吵', py:'bié chǎo', vn:'đừng làm ồn'}
+    ],
+    patterns: [
+      {s:'把 / 被 + người + 吵醒', m:'Làm ai tỉnh giấc vì tiếng ồn / bị đánh thức'},
+      {s:'N (nơi chốn) + 太 / 很 + 吵', m:'Nơi nào đó ồn ào (tính từ)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Nói nhỏ thôi, đừng làm em bé thức giấc.', answer:'小声点儿，别把孩子吵醒了。', answerPy:'Xiǎoshēng diǎnr, bié bǎ háizi chǎoxǐng le.',
+       note:'把 + người + 吵醒: làm ai thức giấc vì tiếng ồn.', pair:'把'},
+      {promptLang:'vi', prompt:'Quán cà phê này tuy đẹp nhưng ồn quá, không hợp để học bài.', answer:'这家咖啡馆虽然很漂亮，但是太吵了，不适合学习。', answerPy:'Zhè jiā kāfēiguǎn suīrán hěn piàoliang, dànshì tài chǎo le, bú shìhé xuéxí.',
+       note:'吵 ở đây là tính từ: ồn ào.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '项': {
+    colloFull: [
+      {zh:'两项奖项', py:'liǎng xiàng jiǎngxiàng', vn:'hai hạng mục giải thưởng'},
+      {zh:'一项工作', py:'yí xiàng gōngzuò', vn:'một công việc'},
+      {zh:'几项规定', py:'jǐ xiàng guīdìng', vn:'vài quy định'},
+      {zh:'一项任务', py:'yí xiàng rènwu', vn:'một nhiệm vụ'},
+      {zh:'一项调查', py:'yí xiàng diàochá', vn:'một cuộc điều tra'}
+    ],
+    patterns: [
+      {s:'Số + 项 + N (工作 / 规定 / 任务 / 调查…)', m:'Đếm khoản, mục, hạng mục'},
+      {s:'✗ 一项书 → ✓ 一本书', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Trường tôi có một quy định mới: vừa vào giờ học là phải cất điện thoại đi.', answer:'我们学校有一项新规定：一上课就要把手机收起来。', answerPy:'Wǒmen xuéxiào yǒu yí xiàng xīn guīdìng: yí shàngkè jiù yào bǎ shǒujī shōu qǐlái.',
+       note:'项 dùng để đếm quy định, công việc, nhiệm vụ.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Nhiệm vụ này tuy rất khó nhưng chúng tôi đã hoàn thành đúng hạn.', answer:'这项任务虽然很难，但是我们按时完成了。', answerPy:'Zhè xiàng rènwu suīrán hěn nán, dànshì wǒmen ànshí wánchéng le.',
+       note:'这 + 项 + 任务: 项 đi với nhiệm vụ, công việc.', pair:'虽然……但是……'}
+    ]
+  },
+
+  '患难与共': {
+    colloFull: [
+      {zh:'患难与共的夫妻', py:'huàn nàn yǔ gòng de fūqī', vn:'vợ chồng hoạn nạn có nhau'},
+      {zh:'和……患难与共', py:'hé…… huàn nàn yǔ gòng', vn:'hoạn nạn có nhau với …'},
+      {zh:'患难与共的朋友', py:'huàn nàn yǔ gòng de péngyou', vn:'người bạn hoạn nạn có nhau'},
+      {zh:'患难与共夫妻', py:'huàn nàn yǔ gòng fūqī', vn:'(danh hiệu) vợ chồng hoạn nạn có nhau'}
+    ],
+    patterns: [
+      {s:'患难与共 + 的 + N', m:'(Người) cùng nhau vượt qua hoạn nạn — làm định ngữ'},
+      {s:'A + 和 + B + 患难与共', m:'A và B có nhau lúc hoạn nạn — làm vị ngữ'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chúng ta là bạn hoạn nạn có nhau, chỉ cần cậu gặp khó khăn thì tớ nhất định sẽ giúp.', answer:'我们是患难与共的朋友，只要你有困难，我就一定帮你。', answerPy:'Wǒmen shì huàn nàn yǔ gòng de péngyou, zhǐyào nǐ yǒu kùnnan, wǒ jiù yídìng bāng nǐ.',
+       note:'患难与共的 + N: làm định ngữ.', pair:'只要……就……'},
+      {promptLang:'vi', prompt:'Hai vợ chồng họ không những hoạn nạn có nhau mà còn rất đằm thắm.', answer:'他们夫妻不仅患难与共，而且很恩爱。', answerPy:'Tāmen fūqī bùjǐn huàn nàn yǔ gòng, érqiě hěn ēn\'ài.',
+       note:'患难与共 làm vị ngữ, chủ ngữ là hai người trở lên.', pair:'不仅……而且……'}
+    ]
+  }
+};
+vocabData.forEach(function (v) {
+  var x = vocabExtra[v.zh];
+  if (!x) return;
+  if (x.colloFull) v.colloFull = x.colloFull;
+  if (x.patterns) v.patterns = x.patterns;
+  if (x.checkList) v.checkList = (v.checkList || []).concat(x.checkList).slice(0, 2);
+});

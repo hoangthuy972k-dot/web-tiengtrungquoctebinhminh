@@ -737,3 +737,706 @@ var speakingData = {
      note:'Dạng câu hỏi ý kiến — phải chọn hẳn một bên rồi bảo vệ, đừng nói “tuỳ người”.'}
   ]
 };
+
+// ══════════════════════════════════════════
+// TỪ VỰNG — phần bổ sung theo format HSK 4 (bảng kết hợp từ, cấu trúc câu, luyện dịch)
+// ══════════════════════════════════════════
+var vocabExtra = {
+  '串': {
+    colloFull: [
+      {zh:'一串钥匙', py:'yí chuàn yàoshi', vn:'một chùm chìa khoá'},
+      {zh:'一串葡萄', py:'yí chuàn pútao', vn:'một chùm nho'},
+      {zh:'一串笑声', py:'yí chuàn xiàoshēng', vn:'một tràng tiếng cười'},
+      {zh:'一串脚印', py:'yí chuàn jiǎoyìn', vn:'một dãy dấu chân'},
+      {zh:'一串数字', py:'yí chuàn shùzì', vn:'một dãy số'}
+    ],
+    patterns: [
+      {s:'一 + 串 + N', m:'Một chùm / chuỗi / tràng … (vật xâu lại hoặc nối tiếp nhau)'},
+      {s:'留(下)一串钥匙 + 给 + người', m:'Để lại một chùm chìa khoá cho ai (câu trong bài)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chùm chìa khoá đó bị em trai tôi làm mất rồi.', answer:'那串钥匙被弟弟弄丢了。', answerPy:'Nà chuàn yàoshi bèi dìdi nòngdiū le.',
+       note:'那 + 串 + 钥匙: chỉ thị từ + lượng từ + danh từ.', pair:'被'}
+    ]
+  },
+  '一辈子': {
+    colloFull: [
+      {zh:'一辈子住在', py:'yíbèizi zhù zài', vn:'cả đời sống ở'},
+      {zh:'一辈子忘不了', py:'yíbèizi wàng bu liǎo', vn:'cả đời không quên được'},
+      {zh:'一辈子的朋友', py:'yíbèizi de péngyou', vn:'người bạn cả đời'},
+      {zh:'一辈子的梦想', py:'yíbèizi de mèngxiǎng', vn:'ước mơ cả đời'},
+      {zh:'辛苦了一辈子', py:'xīnkǔle yíbèizi', vn:'vất vả cả đời'}
+    ],
+    patterns: [
+      {s:'Sub + 一辈子(都) + V', m:'Cả đời ai đó (đều) làm gì'},
+      {s:'一辈子的 + N', m:'… của cả đời (người bạn, ước mơ…)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Bà ngoại cả đời sống ở nông thôn, chưa bao giờ đến thành phố lớn.', answer:'姥姥一辈子都住在农村，从来没去过大城市。', answerPy:'Lǎolao yíbèizi dōu zhù zài nóngcūn, cónglái méi qùguo dà chéngshì.',
+       note:'一辈子 làm trạng ngữ, đứng trước động từ và hay đi với 都.', pair:'从来没……过'}
+    ]
+  },
+  '农村': {
+    colloFull: [
+      {zh:'农村生活', py:'nóngcūn shēnghuó', vn:'cuộc sống nông thôn'},
+      {zh:'农村地区', py:'nóngcūn dìqū', vn:'vùng nông thôn'},
+      {zh:'农村家庭', py:'nóngcūn jiātíng', vn:'gia đình nông thôn'},
+      {zh:'农村孩子', py:'nóngcūn háizi', vn:'trẻ em nông thôn'},
+      {zh:'住在农村', py:'zhù zài nóngcūn', vn:'sống ở nông thôn'}
+    ],
+    patterns: [
+      {s:'农村 + N', m:'… ở nông thôn (làm định ngữ, không cần 的)'},
+      {s:'住在 / 来自 + 农村', m:'Sống ở / đến từ nông thôn (trái nghĩa: 城市)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tuy cuộc sống nông thôn không tiện bằng thành phố, nhưng không khí rất trong lành.', answer:'虽然农村生活没有城市方便，但是空气很新鲜。', answerPy:'Suīrán nóngcūn shēnghuó méiyǒu chéngshì fāngbiàn, dànshì kōngqì hěn xīnxiān.',
+       note:'农村 đứng trực tiếp trước danh từ làm định ngữ: 农村生活.', pair:'虽然……但是……'},
+      {promptLang:'vi', prompt:'Ngày càng nhiều thanh niên nông thôn lên thành phố làm thuê.', answer:'越来越多的农村年轻人去城市打工。', answerPy:'Yuè lái yuè duō de nóngcūn niánqīngrén qù chéngshì dǎgōng.',
+       note:'农村 đối lập với 城市.', pair:'越来越'}
+    ]
+  },
+  '屋子': {
+    colloFull: [
+      {zh:'打扫屋子', py:'dǎsǎo wūzi', vn:'quét dọn phòng'},
+      {zh:'收拾屋子', py:'shōushi wūzi', vn:'dọn dẹp phòng'},
+      {zh:'屋子很亮', py:'wūzi hěn liàng', vn:'căn phòng rất sáng'},
+      {zh:'老屋', py:'lǎowū', vn:'ngôi nhà cũ'},
+      {zh:'一间屋子', py:'yì jiān wūzi', vn:'một gian phòng'}
+    ],
+    patterns: [
+      {s:'一间 + 屋子', m:'Lượng từ của 屋子 là 间'},
+      {s:'把屋子 + 打扫 / 收拾 + 得 + Adj', m:'Dọn phòng đến mức …'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Mẹ đã dọn phòng sạch sẽ tinh tươm.', answer:'妈妈把屋子打扫得干干净净。', answerPy:'Māma bǎ wūzi dǎsǎo de gāngānjìngjìng.',
+       note:'屋子 là khẩu ngữ, gần nghĩa với 房间.', pair:'把'},
+      {promptLang:'vi', prompt:'Căn phòng này vừa sáng vừa yên tĩnh.', answer:'这间屋子既亮又安静。', answerPy:'Zhè jiān wūzi jì liàng yòu ānjìng.',
+       note:'Lượng từ thường dùng của 屋子 là 间.', pair:'既……又……'}
+    ]
+  },
+  '断': {
+    colloFull: [
+      {zh:'绳子断了', py:'shéngzi duàn le', vn:'sợi dây đứt rồi'},
+      {zh:'断电', py:'duàndiàn', vn:'mất điện'},
+      {zh:'断水', py:'duànshuǐ', vn:'mất nước'},
+      {zh:'断绝关系', py:'duànjué guānxi', vn:'cắt đứt quan hệ'},
+      {zh:'电话断了', py:'diànhuà duàn le', vn:'điện thoại bị ngắt'}
+    ],
+    patterns: [
+      {s:'N + 断了', m:'Cái gì đó bị đứt / bị ngắt'},
+      {s:'V + 断 (拉断 / 剪断)', m:'断 làm bổ ngữ kết quả: làm cho đứt'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tôi vừa bật máy tính thì mất điện.', answer:'我一打开电脑就断电了。', answerPy:'Wǒ yì dǎkāi diànnǎo jiù duàndiàn le.',
+       note:'断电 = mất điện, cuối câu thường có 了.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Sợi dây bị em trai kéo đứt rồi.', answer:'绳子被弟弟拉断了。', answerPy:'Shéngzi bèi dìdi lāduàn le.',
+       note:'拉断: 断 làm bổ ngữ kết quả sau động từ.', pair:'被'}
+    ]
+  },
+  '以来': {
+    colloFull: [
+      {zh:'自从……以来', py:'zìcóng……yǐlái', vn:'từ khi … đến nay'},
+      {zh:'来到中国以来', py:'láidào Zhōngguó yǐlái', vn:'từ khi đến Trung Quốc'},
+      {zh:'去年以来', py:'qùnián yǐlái', vn:'từ năm ngoái đến nay'},
+      {zh:'长年以来', py:'chángnián yǐlái', vn:'bao năm nay'},
+      {zh:'上高中以来', py:'shàng gāozhōng yǐlái', vn:'từ khi lên cấp ba'}
+    ],
+    patterns: [
+      {s:'(自从) + mốc thời gian / V + 以来，Sub + 一直 + V', m:'Từ … đến nay, ai đó luôn …'},
+      {s:'✗ 以来毕业 → ✓ 毕业以来', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Từ khi lên cấp ba đến nay, tôi ngày càng thích giờ tiếng Trung.', answer:'上高中以来，我越来越喜欢汉语课了。', answerPy:'Shàng gāozhōng yǐlái, wǒ yuè lái yuè xǐhuan Hànyǔ kè le.',
+       note:'以来 đứng SAU cụm động từ chỉ mốc thời gian.', pair:'越来越'}
+    ]
+  },
+  '姥姥': {
+    colloFull: [
+      {zh:'姥姥家', py:'lǎolao jiā', vn:'nhà bà ngoại'},
+      {zh:'看望姥姥', py:'kànwàng lǎolao', vn:'thăm bà ngoại'},
+      {zh:'姥姥做饭', py:'lǎolao zuò fàn', vn:'bà ngoại nấu cơm'},
+      {zh:'姥姥和姥爷', py:'lǎolao hé lǎoye', vn:'bà ngoại và ông ngoại'}
+    ],
+    patterns: [
+      {s:'去 / 回 + 姥姥家', m:'Đến / về nhà bà ngoại'},
+      {s:'姥姥 (miền Bắc) = 外婆 (miền Nam)', m:'Hai cách gọi bà ngoại'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chỉ cần đến nhà bà ngoại là tôi được ăn món ngon.', answer:'只要去姥姥家，我就能吃到好吃的菜。', answerPy:'Zhǐyào qù lǎolao jiā, wǒ jiù néng chīdào hǎochī de cài.',
+       note:'姥姥家 = nhà bà ngoại, giữa hai từ không cần 的.', pair:'只要……就……'},
+      {promptLang:'vi', prompt:'Bà ngoại tuy đã 80 tuổi nhưng sức khoẻ vẫn rất tốt.', answer:'姥姥虽然八十岁了，但是身体还很好。', answerPy:'Lǎolao suīrán bāshí suì le, dànshì shēntǐ hái hěn hǎo.',
+       note:'姥姥 là mẹ của mẹ.', pair:'虽然……但是……'}
+    ]
+  },
+  '舅舅': {
+    colloFull: [
+      {zh:'舅舅家', py:'jiùjiu jiā', vn:'nhà cậu'},
+      {zh:'看望舅舅', py:'kànwàng jiùjiu', vn:'thăm cậu'},
+      {zh:'舅妈', py:'jiùmā', vn:'mợ (vợ của cậu)'},
+      {zh:'舅舅和舅妈', py:'jiùjiu hé jiùmā', vn:'cậu và mợ'}
+    ],
+    patterns: [
+      {s:'舅舅 (anh/em trai của mẹ) — 舅妈 (vợ của cậu)', m:'Cặp xưng hô bên ngoại'},
+      {s:'Sub + 去 + 舅舅家 + V', m:'Đến nhà cậu làm gì'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Món quà này là cậu mua cho tôi.', answer:'这个礼物是舅舅给我买的。', answerPy:'Zhège lǐwù shì jiùjiu gěi wǒ mǎi de.',
+       note:'舅舅 chỉ anh/em trai của MẸ; anh/em trai của bố là 叔叔 / 伯伯.', pair:'是……的'},
+      {promptLang:'vi', prompt:'Cậu tôi không những biết nấu ăn mà còn nấu rất ngon.', answer:'我舅舅不仅会做饭，而且做得很好吃。', answerPy:'Wǒ jiùjiu bùjǐn huì zuò fàn, érqiě zuò de hěn hǎochī.',
+       note:'我舅舅: trước danh từ chỉ người thân không cần 的.', pair:'不仅……而且……'}
+    ]
+  },
+  '姑姑': {
+    colloFull: [
+      {zh:'姑姑家', py:'gūgu jiā', vn:'nhà cô'},
+      {zh:'看望姑姑', py:'kànwàng gūgu', vn:'thăm cô'},
+      {zh:'姑父', py:'gūfu', vn:'dượng (chồng của cô)'},
+      {zh:'姑姑和姑父', py:'gūgu hé gūfu', vn:'cô và dượng'}
+    ],
+    patterns: [
+      {s:'姑姑 (chị/em gái của bố) — 姑父 (chồng của cô)', m:'Cặp xưng hô bên nội'},
+      {s:'✗ 姑姑 = chị/em gái của mẹ → ✓ chị/em gái của mẹ là 阿姨 / 姨', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Hễ được nghỉ hè là tôi đến nhà cô chơi.', answer:'一放暑假，我就去姑姑家玩儿。', answerPy:'Yí fàng shǔjià, wǒ jiù qù gūgu jiā wánr.',
+       note:'姑姑家 = nhà cô (chị/em gái của bố).', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Cô đã gửi ảnh cho tôi rồi.', answer:'姑姑把照片发给我了。', answerPy:'Gūgu bǎ zhàopiàn fā gěi wǒ le.',
+       note:'姑姑 là chị/em gái của bố.', pair:'把'}
+    ]
+  },
+  '坚决': {
+    colloFull: [
+      {zh:'坚决反对', py:'jiānjué fǎnduì', vn:'kiên quyết phản đối'},
+      {zh:'坚决不同意', py:'jiānjué bù tóngyì', vn:'kiên quyết không đồng ý'},
+      {zh:'态度坚决', py:'tàidu jiānjué', vn:'thái độ kiên quyết'},
+      {zh:'坚决支持', py:'jiānjué zhīchí', vn:'kiên quyết ủng hộ'},
+      {zh:'坚决要求', py:'jiānjué yāoqiú', vn:'kiên quyết yêu cầu'}
+    ],
+    patterns: [
+      {s:'Sub + 坚决 + (不) + V', m:'Kiên quyết (không) làm gì'},
+      {s:'✗ 反对坚决 → ✓ 坚决反对', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tuy các con đã nói rất nhiều, nhưng bố mẹ vẫn kiên quyết không ở lại thành phố.', answer:'虽然孩子们说了很多，但是父母还是坚决不在城里住。', answerPy:'Suīrán háizimen shuōle hěn duō, dànshì fùmǔ háishi jiānjué bú zài chéng li zhù.',
+       note:'坚决 + 不 + V: kiên quyết không làm gì.', pair:'虽然……但是……'}
+    ]
+  },
+  '打工': {
+    colloFull: [
+      {zh:'外出打工', py:'wàichū dǎgōng', vn:'đi xa làm thuê'},
+      {zh:'到城市打工', py:'dào chéngshì dǎgōng', vn:'lên thành phố làm thuê'},
+      {zh:'打工挣钱', py:'dǎgōng zhèngqián', vn:'làm thuê kiếm tiền'},
+      {zh:'打工族', py:'dǎgōngzú', vn:'dân làm thuê'},
+      {zh:'打了三年工', py:'dǎle sān nián gōng', vn:'làm thuê ba năm'}
+    ],
+    patterns: [
+      {s:'去 / 到 + nơi chốn + 打工', m:'Đi đâu đó làm thuê'},
+      {s:'打 + 了 / 过 + (thời lượng) + 工', m:'Ly hợp từ: thành phần chen vào giữa'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tiền mua điện thoại là tôi tự đi làm thêm kiếm được.', answer:'买手机的钱是我自己打工挣的。', answerPy:'Mǎi shǒujī de qián shì wǒ zìjǐ dǎgōng zhèng de.',
+       note:'打工 cũng dùng cho học sinh, sinh viên đi làm thêm.', pair:'是……的'}
+    ]
+  },
+  '挣': {
+    colloFull: [
+      {zh:'挣钱养家', py:'zhèngqián yǎngjiā', vn:'kiếm tiền nuôi gia đình'},
+      {zh:'努力挣钱', py:'nǔlì zhèngqián', vn:'cố gắng kiếm tiền'},
+      {zh:'挣钱不容易', py:'zhèngqián bù róngyì', vn:'kiếm tiền không dễ'},
+      {zh:'挣了一些钱', py:'zhèngle yìxiē qián', vn:'kiếm được ít tiền'}
+    ],
+    patterns: [
+      {s:'Sub + 挣 + (了 + số lượng) + 钱', m:'Kiếm được (bao nhiêu) tiền bằng sức lao động'},
+      {s:'挣钱 ≠ 赚钱', m:'挣 nhấn vào sức lao động; 赚 thiên về lời lãi buôn bán'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vì bố mẹ kiếm tiền không dễ nên tôi không bao giờ tiêu tiền lung tung.', answer:'因为父母挣钱不容易，所以我从不乱花钱。', answerPy:'Yīnwèi fùmǔ zhèngqián bù róngyì, suǒyǐ wǒ cóng bú luàn huā qián.',
+       note:'挣钱 = kiếm tiền bằng sức lao động của mình.', pair:'因为……所以……'},
+      {promptLang:'vi', prompt:'Anh trai làm thuê ở thành phố, tiền kiếm được ngày càng nhiều.', answer:'哥哥在城里打工，挣的钱越来越多。', answerPy:'Gēge zài chéng li dǎgōng, zhèng de qián yuè lái yuè duō.',
+       note:'挣的钱 = tiền kiếm được (挣 + 的 làm định ngữ).', pair:'越来越'}
+    ]
+  },
+  '县': {
+    colloFull: [
+      {zh:'县城', py:'xiànchéng', vn:'thị trấn huyện lỵ'},
+      {zh:'县政府', py:'xiàn zhèngfǔ', vn:'uỷ ban huyện'},
+      {zh:'县医院', py:'xiàn yīyuàn', vn:'bệnh viện huyện'},
+      {zh:'在县里', py:'zài xiàn li', vn:'ở huyện'}
+    ],
+    patterns: [
+      {s:'省 → 市 → 县 → 乡 / 镇', m:'Thứ tự đơn vị hành chính từ lớn đến nhỏ'},
+      {s:'在 + 县里 / 县城 + V', m:'Làm gì ở huyện'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Căn nhà mới là năm ngoái hai vợ chồng họ mua ở huyện.', answer:'新房是他们俩去年在县里买的。', answerPy:'Xīnfáng shì tāmen liǎ qùnián zài xiàn li mǎi de.',
+       note:'县 là đơn vị hành chính dưới tỉnh, giống "huyện" của Việt Nam.', pair:'是……的'},
+      {promptLang:'vi', prompt:'Bố vừa đến huyện lỵ là gọi điện cho tôi ngay.', answer:'爸爸一到县城就给我打了电话。', answerPy:'Bàba yí dào xiànchéng jiù gěi wǒ dǎle diànhuà.',
+       note:'县城 = thị trấn huyện lỵ.', pair:'一……就……'}
+    ]
+  },
+  '套': {
+    colloFull: [
+      {zh:'一套房子', py:'yí tào fángzi', vn:'một căn nhà'},
+      {zh:'一套家具', py:'yí tào jiājù', vn:'một bộ đồ nội thất'},
+      {zh:'一套衣服', py:'yí tào yīfu', vn:'một bộ quần áo'},
+      {zh:'一套设备', py:'yí tào shèbèi', vn:'một bộ thiết bị'},
+      {zh:'一套新房', py:'yí tào xīnfáng', vn:'một căn nhà mới'}
+    ],
+    patterns: [
+      {s:'一 + 套 + N', m:'Một bộ / một căn …'},
+      {s:'买 / 租 + 一套 + 房子', m:'Mua / thuê một căn nhà'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Họ đã sửa sang căn nhà đó rất đẹp.', answer:'他们把那套房子装修得很漂亮。', answerPy:'Tāmen bǎ nà tào fángzi zhuāngxiū de hěn piàoliang.',
+       note:'套 đếm nhà theo căn (trọn một bộ phòng).', pair:'把'},
+      {promptLang:'vi', prompt:'Bộ quần áo này vừa rẻ vừa đẹp.', answer:'这套衣服既便宜又好看。', answerPy:'Zhè tào yīfu jì piányi yòu hǎokàn.',
+       note:'一套衣服 = một bộ quần áo (cả áo lẫn quần).', pair:'既……又……'}
+    ]
+  },
+  '装修': {
+    colloFull: [
+      {zh:'装修房子', py:'zhuāngxiū fángzi', vn:'sửa sang nhà'},
+      {zh:'装修新房', py:'zhuāngxiū xīnfáng', vn:'sửa sang nhà mới'},
+      {zh:'装修风格', py:'zhuāngxiū fēnggé', vn:'phong cách trang trí'},
+      {zh:'装修好了', py:'zhuāngxiū hǎo le', vn:'sửa xong rồi'},
+      {zh:'重新装修', py:'chóngxīn zhuāngxiū', vn:'sửa sang lại'}
+    ],
+    patterns: [
+      {s:'Sub + 把 + 房子 + 装修 + 得 + Adj', m:'Sửa sang nhà đến mức …'},
+      {s:'N + 装修好了', m:'Cái gì đó đã sửa sang xong'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Nhà vừa sửa xong là bố mẹ dọn vào ở.', answer:'房子一装修好，父母就搬进去住了。', answerPy:'Fángzi yì zhuāngxiū hǎo, fùmǔ jiù bān jìnqù zhù le.',
+       note:'装修好 = sửa xong (好 là bổ ngữ kết quả).', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Phòng học của chúng tôi đã được nhà trường sửa sang lại.', answer:'我们的教室被学校重新装修了。', answerPy:'Wǒmen de jiàoshì bèi xuéxiào chóngxīn zhuāngxiū le.',
+       note:'重新装修 = sửa sang lại.', pair:'被'}
+    ]
+  },
+  '不得了': {
+    colloFull: [
+      {zh:'高兴得不得了', py:'gāoxìng de bùdéliǎo', vn:'vui vô cùng'},
+      {zh:'累得不得了', py:'lèi de bùdéliǎo', vn:'mệt kinh khủng'},
+      {zh:'忙得不得了', py:'máng de bùdéliǎo', vn:'bận kinh khủng'},
+      {zh:'热得不得了', py:'rè de bùdéliǎo', vn:'nóng kinh khủng'},
+      {zh:'好得不得了', py:'hǎo de bùdéliǎo', vn:'tốt vô cùng'}
+    ],
+    patterns: [
+      {s:'Adj / V + 得 + 不得了', m:'… vô cùng, … kinh khủng (bổ ngữ trình độ)'},
+      {s:'✗ 很不得了 → ✓ 高兴得不得了', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vừa nghe tin tôi đỗ đại học, cả nhà vui mừng khôn xiết.', answer:'全家人一听说我考上了大学，就高兴得不得了。', answerPy:'Quán jiā rén yì tīngshuō wǒ kǎoshàngle dàxué, jiù gāoxìng de bùdéliǎo.',
+       note:'不得了 luôn đứng sau 得, làm bổ ngữ trình độ.', pair:'一……就……'}
+    ]
+  },
+  '醉': {
+    colloFull: [
+      {zh:'喝醉', py:'hēzuì', vn:'uống say'},
+      {zh:'醉酒', py:'zuìjiǔ', vn:'say rượu'},
+      {zh:'喝得很醉', py:'hē de hěn zuì', vn:'uống say khướt'},
+      {zh:'喝醉了', py:'hēzuì le', vn:'say rồi'}
+    ],
+    patterns: [
+      {s:'Sub + 喝醉了', m:'Ai đó uống say rồi (醉 là bổ ngữ kết quả)'},
+      {s:'醉 zuì ≠ 睡 shuì', m:'醉 = say, 睡 = ngủ — hai chữ dễ nhầm'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Bố tôi chưa bao giờ uống say.', answer:'我爸爸从来没喝醉过。', answerPy:'Wǒ bàba cónglái méi hēzuìguo.',
+       note:'喝醉 là động từ + bổ ngữ kết quả, 过 đặt sau cả cụm.', pair:'从来没……过'},
+      {promptLang:'vi', prompt:'Vì hôm đó bố uống say nên không về quê.', answer:'因为那天爸爸喝醉了，所以没回老家。', answerPy:'Yīnwèi nà tiān bàba hēzuì le, suǒyǐ méi huí lǎojiā.',
+       note:'喝醉了: 了 báo trạng thái đã thay đổi.', pair:'因为……所以……'}
+    ]
+  },
+  '强烈': {
+    colloFull: [
+      {zh:'强烈反对', py:'qiángliè fǎnduì', vn:'phản đối mạnh mẽ'},
+      {zh:'强烈要求', py:'qiángliè yāoqiú', vn:'yêu cầu mạnh mẽ'},
+      {zh:'强烈建议', py:'qiángliè jiànyì', vn:'đề nghị mạnh mẽ'},
+      {zh:'阳光强烈', py:'yángguāng qiángliè', vn:'ánh nắng gay gắt'},
+      {zh:'强烈的愿望', py:'qiángliè de yuànwàng', vn:'mong muốn mãnh liệt'}
+    ],
+    patterns: [
+      {s:'Sub + 强烈 + V (反对 / 要求 / 建议)', m:'Phản đối / yêu cầu / đề nghị mạnh mẽ'},
+      {s:'N + 很强烈', m:'Cái gì đó rất mạnh (ánh nắng, cảm xúc)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Không chỉ học sinh phản đối, phụ huynh cũng phản đối mạnh mẽ quy định này.', answer:'不仅学生反对，家长也强烈反对这个规定。', answerPy:'Bùjǐn xuésheng fǎnduì, jiāzhǎng yě qiángliè fǎnduì zhège guīdìng.',
+       note:'强烈 làm trạng ngữ, đứng trước động từ.', pair:'不仅……也……'},
+      {promptLang:'vi', prompt:'Ánh nắng buổi trưa ngày càng gay gắt.', answer:'中午的阳光越来越强烈了。', answerPy:'Zhōngwǔ de yángguāng yuè lái yuè qiángliè le.',
+       note:'强烈 cũng dùng tả ánh sáng mạnh.', pair:'越来越'}
+    ]
+  },
+  '夜': {
+    colloFull: [
+      {zh:'夜里', py:'yè li', vn:'ban đêm'},
+      {zh:'深夜', py:'shēnyè', vn:'đêm khuya'},
+      {zh:'夜晚', py:'yèwǎn', vn:'buổi đêm'},
+      {zh:'住一夜', py:'zhù yí yè', vn:'ở lại một đêm'},
+      {zh:'一夜没睡', py:'yí yè méi shuì', vn:'cả đêm không ngủ'}
+    ],
+    patterns: [
+      {s:'住 / 待 + 一夜', m:'Ở lại một đêm (夜 làm lượng từ thời lượng)'},
+      {s:'夜里 / 深夜 + V', m:'Làm gì vào ban đêm / đêm khuya'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vì mai thi nên đêm qua tôi cả đêm ngủ không ngon.', answer:'因为明天考试，所以我昨天一夜没睡好。', answerPy:'Yīnwèi míngtiān kǎoshì, suǒyǐ wǒ zuótiān yí yè méi shuìhǎo.',
+       note:'一夜 = suốt một đêm.', pair:'因为……所以……'},
+      {promptLang:'vi', prompt:'Chúng tôi giữ bố mẹ ở lại nhà mới một đêm.', answer:'我们把父母留在新房住了一夜。', answerPy:'Wǒmen bǎ fùmǔ liú zài xīnfáng zhùle yí yè.',
+       note:'住一夜: 夜 làm lượng từ chỉ thời lượng, đứng sau động từ.', pair:'把'}
+    ]
+  },
+  '锁': {
+    colloFull: [
+      {zh:'锁门', py:'suǒ mén', vn:'khoá cửa'},
+      {zh:'上锁', py:'shàngsuǒ', vn:'khoá lại'},
+      {zh:'门锁', py:'ménsuǒ', vn:'ổ khoá cửa'},
+      {zh:'密码锁', py:'mìmǎsuǒ', vn:'khoá mật mã'},
+      {zh:'锁好门', py:'suǒhǎo mén', vn:'khoá cửa cẩn thận'}
+    ],
+    patterns: [
+      {s:'把 + 门 / 箱子 + 锁上 / 锁好', m:'Khoá cửa / vali lại (động từ)'},
+      {s:'一把锁 / 门锁', m:'Cái khoá (danh từ), lượng từ là 把'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Trước khi ra khỏi nhà nhớ khoá cửa cẩn thận.', answer:'出门前，别忘了把门锁好。', answerPy:'Chūmén qián, bié wàngle bǎ mén suǒhǎo.',
+       note:'锁 làm động từ: 锁门, 锁好.', pair:'把'},
+      {promptLang:'vi', prompt:'Cửa bị bố khoá lại rồi, tôi không vào được.', answer:'门被爸爸锁上了，我进不去。', answerPy:'Mén bèi bàba suǒshàng le, wǒ jìn bu qù.',
+       note:'锁上 = khoá lại (上 là bổ ngữ).', pair:'被'}
+    ]
+  },
+  '临': {
+    colloFull: [
+      {zh:'临走', py:'lín zǒu', vn:'lúc sắp đi'},
+      {zh:'临睡前', py:'lín shuì qián', vn:'ngay trước khi ngủ'},
+      {zh:'临出发', py:'lín chūfā', vn:'lúc sắp xuất phát'},
+      {zh:'临时决定', py:'línshí juédìng', vn:'quyết định vào phút chót'},
+      {zh:'临考试前', py:'lín kǎoshì qián', vn:'ngay trước kỳ thi'}
+    ],
+    patterns: [
+      {s:'临 + V + 的时候 / 前', m:'Ngay trước khi làm gì'},
+      {s:'临 + V1，Sub + V2', m:'Sắp làm V1 thì ai đó làm V2'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Ngay trước lúc đi, mẹ đưa chìa khoá nhà cho tôi.', answer:'临走的时候，妈妈把家里的钥匙交给了我。', answerPy:'Lín zǒu de shíhou, māma bǎ jiā li de yàoshi jiāo gěile wǒ.',
+       note:'临走的时候 = ngay lúc sắp đi.', pair:'把'}
+    ]
+  },
+  '悄悄': {
+    colloFull: [
+      {zh:'悄悄地走', py:'qiāoqiāo de zǒu', vn:'lặng lẽ đi'},
+      {zh:'悄悄离开', py:'qiāoqiāo líkāi', vn:'lặng lẽ rời đi'},
+      {zh:'悄悄打开门', py:'qiāoqiāo dǎkāi mén', vn:'khẽ mở cửa'},
+      {zh:'悄悄地说', py:'qiāoqiāo de shuō', vn:'nói khẽ'},
+      {zh:'悄悄走进', py:'qiāoqiāo zǒujìn', vn:'rón rén đi vào'}
+    ],
+    patterns: [
+      {s:'Sub + 悄悄(地) + V', m:'Lặng lẽ, khẽ khàng làm gì'},
+      {s:'悄悄 (không gây tiếng động) ≠ 偷偷 (giấu giếm)', m:'Phân biệt với 偷偷'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Em gái ngủ rồi, mẹ khẽ tắt đèn.', answer:'妹妹睡着了，妈妈悄悄地把灯关了。', answerPy:'Mèimei shuìzháo le, māma qiāoqiāo de bǎ dēng guān le.',
+       note:'悄悄 đứng trước 把.', pair:'把'},
+      {promptLang:'vi', prompt:'Vì không muốn đánh thức bố mẹ nên tôi lặng lẽ ra khỏi nhà.', answer:'因为不想吵醒父母，所以我悄悄地出了门。', answerPy:'Yīnwèi bù xiǎng chǎoxǐng fùmǔ, suǒyǐ wǒ qiāoqiāo de chūle mén.',
+       note:'悄悄 nhấn vào việc không gây tiếng động để khỏi làm phiền người khác.', pair:'因为……所以……'}
+    ]
+  },
+  '晒': {
+    colloFull: [
+      {zh:'晒太阳', py:'shài tàiyáng', vn:'phơi nắng'},
+      {zh:'晒被子', py:'shài bèizi', vn:'phơi chăn'},
+      {zh:'晒衣服', py:'shài yīfu', vn:'phơi quần áo'},
+      {zh:'晒照片', py:'shài zhàopiàn', vn:'khoe ảnh (trên mạng)'},
+      {zh:'晒干', py:'shàigān', vn:'phơi khô'}
+    ],
+    patterns: [
+      {s:'晒 + N (被子 / 衣服)', m:'Phơi cái gì'},
+      {s:'把 + N + 拿出去晒(晒)', m:'Mang cái gì ra ngoài phơi'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Trời đẹp, mẹ mang chăn ra ngoài phơi.', answer:'天气很好，妈妈把被子拿出去晒了。', answerPy:'Tiānqì hěn hǎo, māma bǎ bèizi ná chūqù shài le.',
+       note:'晒被子 = phơi chăn.', pair:'把'},
+      {promptLang:'vi', prompt:'Bà ngoại ăn cơm xong là ra sân phơi nắng.', answer:'姥姥一吃完饭就去院子里晒太阳。', answerPy:'Lǎolao yì chīwán fàn jiù qù yuànzi li shài tàiyáng.',
+       note:'晒太阳 = (người) phơi nắng.', pair:'一……就……'}
+    ]
+  },
+  '被子': {
+    colloFull: [
+      {zh:'盖被子', py:'gài bèizi', vn:'đắp chăn'},
+      {zh:'铺被子', py:'pū bèizi', vn:'trải chăn'},
+      {zh:'叠被子', py:'dié bèizi', vn:'gấp chăn'},
+      {zh:'厚被子', py:'hòu bèizi', vn:'chăn dày'},
+      {zh:'一床被子', py:'yì chuáng bèizi', vn:'một cái chăn'}
+    ],
+    patterns: [
+      {s:'盖 / 铺 / 叠 / 晒 + 被子', m:'Đắp / trải / gấp / phơi chăn'},
+      {s:'一床 + 被子', m:'Lượng từ của 被子 là 床'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Ngày nào dậy xong tôi cũng gấp chăn gọn gàng.', answer:'我每天起床以后都把被子叠好。', answerPy:'Wǒ měi tiān qǐchuáng yǐhòu dōu bǎ bèizi diéhǎo.',
+       note:'叠被子 = gấp chăn.', pair:'把'},
+      {promptLang:'vi', prompt:'Trời ngày càng lạnh, đi ngủ phải đắp chăn dày.', answer:'天气越来越冷了，睡觉要盖厚被子。', answerPy:'Tiānqì yuè lái yuè lěng le, shuìjiào yào gài hòu bèizi.',
+       note:'Đắp chăn dùng 盖, không dùng 穿.', pair:'越来越'}
+    ]
+  },
+  '长途': {
+    colloFull: [
+      {zh:'长途汽车', py:'chángtú qìchē', vn:'xe khách đường dài'},
+      {zh:'长途电话', py:'chángtú diànhuà', vn:'điện thoại đường dài'},
+      {zh:'长途旅行', py:'chángtú lǚxíng', vn:'chuyến đi xa'},
+      {zh:'坐长途车', py:'zuò chángtú chē', vn:'đi xe đường dài'}
+    ],
+    patterns: [
+      {s:'长途 + N', m:'… đường dài (chỉ làm định ngữ)'},
+      {s:'✗ 路很长途 → ✓ 路很长', m:''}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tôi chưa bao giờ đi xe khách đường dài.', answer:'我从来没坐过长途汽车。', answerPy:'Wǒ cónglái méi zuòguo chángtú qìchē.',
+       note:'长途 chỉ đứng trước danh từ, không làm vị ngữ.', pair:'从来没……过'},
+      {promptLang:'vi', prompt:'Đi xe đường dài vừa mệt vừa chán.', answer:'坐长途车既累又无聊。', answerPy:'Zuò chángtú chē jì lèi yòu wúliáo.',
+       note:'长途车 là cách nói tắt của 长途汽车.', pair:'既……又……'}
+    ]
+  },
+  '冻': {
+    colloFull: [
+      {zh:'冻住', py:'dòngzhù', vn:'đóng băng'},
+      {zh:'冻坏', py:'dònghuài', vn:'rét làm hỏng'},
+      {zh:'冻得发抖', py:'dòng de fādǒu', vn:'rét run cầm cập'},
+      {zh:'被冻得大哭', py:'bèi dòng de dà kū', vn:'rét đến phát khóc'}
+    ],
+    patterns: [
+      {s:'Sub + 被冻得 + V / Adj', m:'Bị rét đến mức …'},
+      {s:'冻 + 住 / 坏', m:'Đóng băng / bị rét làm hỏng'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Trời lạnh quá, tay tôi rét đến đỏ cả lên.', answer:'天太冷了，我的手被冻得很红。', answerPy:'Tiān tài lěng le, wǒ de shǒu bèi dòng de hěn hóng.',
+       note:'被冻得 + kết quả: bị rét đến mức nào.', pair:'被'},
+      {promptLang:'vi', prompt:'Trời lạnh đến nỗi ngay cả nước trong chai cũng đóng băng.', answer:'天冷得连瓶子里的水都冻住了。', answerPy:'Tiān lěng de lián píngzi li de shuǐ dōu dòngzhù le.',
+       note:'冻住 = đóng băng (住 là bổ ngữ kết quả).', pair:'连……都……'}
+    ]
+  },
+  '想象': {
+    colloFull: [
+      {zh:'想象一下', py:'xiǎngxiàng yíxià', vn:'tưởng tượng thử'},
+      {zh:'无法想象', py:'wúfǎ xiǎngxiàng', vn:'không thể tưởng tượng'},
+      {zh:'超出想象', py:'chāochū xiǎngxiàng', vn:'vượt ngoài tưởng tượng'},
+      {zh:'想象不到', py:'xiǎngxiàng bu dào', vn:'không tưởng tượng nổi'},
+      {zh:'想象力', py:'xiǎngxiànglì', vn:'sức tưởng tượng'}
+    ],
+    patterns: [
+      {s:'Sub + 想象 + (着 / 不到) + O', m:'(Đang / không) tưởng tượng điều gì'},
+      {s:'比 + Sub + 想象的 + Adj', m:'… hơn ai đó tưởng tượng'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tuy chưa từng đến Bắc Kinh, nhưng tôi có thể tưởng tượng ra dáng vẻ nơi đó.', answer:'虽然我没去过北京，但是我能想象那里的样子。', answerPy:'Suīrán wǒ méi qùguo Běijīng, dànshì wǒ néng xiǎngxiàng nàli de yàngzi.',
+       note:'想象 + tân ngữ: hình dung điều chưa thấy.', pair:'虽然……但是……'},
+      {promptLang:'vi', prompt:'Ngay cả bố mẹ cũng không tưởng tượng nổi tôi thay đổi nhiều như vậy.', answer:'连父母都想象不到我的变化这么大。', answerPy:'Lián fùmǔ dōu xiǎngxiàng bu dào wǒ de biànhuà zhème dà.',
+       note:'想象不到 = không tưởng tượng nổi.', pair:'连……都……'}
+    ]
+  },
+  '灰尘': {
+    colloFull: [
+      {zh:'很多灰尘', py:'hěn duō huīchén', vn:'nhiều bụi'},
+      {zh:'满是灰尘', py:'mǎn shì huīchén', vn:'đầy bụi'},
+      {zh:'打扫灰尘', py:'dǎsǎo huīchén', vn:'quét bụi'},
+      {zh:'一层灰尘', py:'yì céng huīchén', vn:'một lớp bụi'}
+    ],
+    patterns: [
+      {s:'Nơi chốn + 满是灰尘', m:'Chỗ nào đó đầy bụi'},
+      {s:'N + 上有一层灰尘', m:'Trên … có một lớp bụi'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vì lâu lắm không có người ở nên trong phòng đầy bụi.', answer:'因为很久没人住，所以屋子里满是灰尘。', answerPy:'Yīnwèi hěn jiǔ méi rén zhù, suǒyǐ wūzi li mǎn shì huīchén.',
+       note:'满是灰尘 = đầy bụi.', pair:'因为……所以……'},
+      {promptLang:'vi', prompt:'Mẹ lau sạch bụi trên bàn rồi.', answer:'妈妈把桌子上的灰尘擦干净了。', answerPy:'Māma bǎ zhuōzi shang de huīchén cā gānjìng le.',
+       note:'擦 / 打扫 + 灰尘: lau / quét bụi.', pair:'把'}
+    ]
+  },
+  '亮': {
+    colloFull: [
+      {zh:'灯很亮', py:'dēng hěn liàng', vn:'đèn rất sáng'},
+      {zh:'房间很亮', py:'fángjiān hěn liàng', vn:'căn phòng rất sáng'},
+      {zh:'天亮了', py:'tiān liàng le', vn:'trời sáng rồi'},
+      {zh:'亮着灯光', py:'liàngzhe dēngguāng', vn:'đang sáng đèn'},
+      {zh:'灯亮了', py:'dēng liàng le', vn:'đèn bật sáng'}
+    ],
+    patterns: [
+      {s:'N + 很亮', m:'Cái gì rất sáng (tính từ)'},
+      {s:'N + 亮了 / 亮着', m:'(Đèn, trời) sáng lên / đang sáng (động từ)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Trời vừa sáng bà ngoại đã dậy.', answer:'天一亮，姥姥就起床了。', answerPy:'Tiān yí liàng, lǎolao jiù qǐchuáng le.',
+       note:'天亮 = trời sáng (亮 làm động từ).', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Phòng học mới vừa sáng vừa rộng.', answer:'新教室既亮又大。', answerPy:'Xīn jiàoshì jì liàng yòu dà.',
+       note:'亮 làm tính từ: sáng sủa.', pair:'既……又……'}
+    ]
+  },
+  '微笑': {
+    colloFull: [
+      {zh:'微笑着说', py:'wēixiàozhe shuō', vn:'mỉm cười nói'},
+      {zh:'露出微笑', py:'lùchū wēixiào', vn:'nở nụ cười'},
+      {zh:'脸上带着微笑', py:'liǎn shang dàizhe wēixiào', vn:'trên mặt nở nụ cười'},
+      {zh:'微笑着点头', py:'wēixiàozhe diǎntóu', vn:'mỉm cười gật đầu'}
+    ],
+    patterns: [
+      {s:'Sub + 微笑着 + V', m:'Vừa mỉm cười vừa làm gì'},
+      {s:'脸上带着 / 露出 + 微笑', m:'Nở nụ cười (微笑 làm danh từ)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Bà ngoại vừa thấy tôi là trên mặt nở ngay nụ cười.', answer:'姥姥一看见我，脸上就露出了微笑。', answerPy:'Lǎolao yí kànjiàn wǒ, liǎn shang jiù lùchūle wēixiào.',
+       note:'露出微笑 = nở nụ cười.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Tuy rất mệt, nhưng mẹ vẫn mỉm cười nói "không sao".', answer:'虽然很累，但是妈妈还是微笑着说“没关系”。', answerPy:'Suīrán hěn lèi, dànshì māma háishi wēixiàozhe shuō "méi guānxi".',
+       note:'微笑着 + động từ: vừa cười vừa làm.', pair:'虽然……但是……'}
+    ]
+  },
+  '温暖': {
+    colloFull: [
+      {zh:'温暖的家', py:'wēnnuǎn de jiā', vn:'mái nhà ấm áp'},
+      {zh:'温暖的笑容', py:'wēnnuǎn de xiàoróng', vn:'nụ cười ấm áp'},
+      {zh:'感到温暖', py:'gǎndào wēnnuǎn', vn:'cảm thấy ấm áp'},
+      {zh:'家的温暖', py:'jiā de wēnnuǎn', vn:'hơi ấm gia đình'}
+    ],
+    patterns: [
+      {s:'Sub + 感到 / 感受到 + 温暖', m:'Cảm thấy / cảm nhận được sự ấm áp'},
+      {s:'温暖 ≠ 暖和', m:'温暖 dùng được cho tình cảm; 暖和 chủ yếu nói nhiệt độ'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Chỉ cần về đến nhà là tôi thấy rất ấm áp.', answer:'只要回到家，我就觉得很温暖。', answerPy:'Zhǐyào huídào jiā, wǒ jiù juéde hěn wēnnuǎn.',
+       note:'温暖 ở đây nói về cảm xúc, không phải nhiệt độ.', pair:'只要……就……'},
+      {promptLang:'vi', prompt:'Lời của bạn không chỉ giúp tôi mà còn khiến tôi thấy rất ấm lòng.', answer:'你的话不仅帮助了我，而且让我感到很温暖。', answerPy:'Nǐ de huà bùjǐn bāngzhùle wǒ, érqiě ràng wǒ gǎndào hěn wēnnuǎn.',
+       note:'感到温暖 = thấy ấm lòng.', pair:'不仅……而且……'}
+    ]
+  },
+  '立刻': {
+    colloFull: [
+      {zh:'立刻回答', py:'lìkè huídá', vn:'trả lời ngay'},
+      {zh:'立刻行动', py:'lìkè xíngdòng', vn:'hành động ngay'},
+      {zh:'立刻出发', py:'lìkè chūfā', vn:'xuất phát ngay'},
+      {zh:'立刻安静下来', py:'lìkè ānjìng xiàlái', vn:'lập tức im lặng'}
+    ],
+    patterns: [
+      {s:'Sub + 立刻 + V', m:'Ai đó lập tức làm gì'},
+      {s:'立刻 ≠ 马上', m:'立刻 = phản ứng tức thì; 马上 còn chỉ việc sắp xảy ra'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Vừa nghe tin mẹ ốm, anh ấy lập tức về quê.', answer:'他一听说妈妈病了，就立刻回老家了。', answerPy:'Tā yì tīngshuō māma bìng le, jiù lìkè huí lǎojiā le.',
+       note:'立刻 đứng sau 就, trước động từ.', pair:'一……就……'}
+    ]
+  },
+  '扑': {
+    colloFull: [
+      {zh:'扑过来', py:'pū guòlái', vn:'lao tới'},
+      {zh:'扑到怀里', py:'pūdào huái li', vn:'lao vào lòng'},
+      {zh:'扑面而来', py:'pū miàn ér lái', vn:'ùa vào mặt'},
+      {zh:'扑到妈妈怀里', py:'pūdào māma huái li', vn:'lao vào lòng mẹ'}
+    ],
+    patterns: [
+      {s:'Sub + 扑到 + người + 怀里', m:'Ai đó lao vào lòng ai'},
+      {s:'(mùi / hơi) + 扑面而来', m:'Mùi hương, hơi ấm ùa vào mặt'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Đứa bé vừa thấy mẹ là lao ngay vào lòng mẹ.', answer:'孩子一看见妈妈，就扑到了妈妈怀里。', answerPy:'Háizi yí kànjiàn māma, jiù pūdàole māma huái li.',
+       note:'扑到……怀里 = lao vào lòng ai.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Con chó con vui vẻ lao tới, làm bẩn quần áo của tôi.', answer:'小狗高兴地扑过来，把我的衣服弄脏了。', answerPy:'Xiǎo gǒu gāoxìng de pū guòlái, bǎ wǒ de yīfu nòngzāng le.',
+       note:'扑过来 = lao về phía người nói; 扑 (bộ 扌) khác 铺 (bộ 钅).', pair:'把'}
+    ]
+  },
+  '卧室': {
+    colloFull: [
+      {zh:'打扫卧室', py:'dǎsǎo wòshì', vn:'dọn phòng ngủ'},
+      {zh:'卧室很大', py:'wòshì hěn dà', vn:'phòng ngủ rất rộng'},
+      {zh:'卧室很安静', py:'wòshì hěn ānjìng', vn:'phòng ngủ rất yên tĩnh'},
+      {zh:'两间卧室', py:'liǎng jiān wòshì', vn:'hai phòng ngủ'}
+    ],
+    patterns: [
+      {s:'Sub + 在卧室里 + V', m:'Làm gì trong phòng ngủ'},
+      {s:'(Nhà) + 有 + số + 间卧室', m:'Nhà có mấy phòng ngủ (lượng từ 间)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Căn nhà mới này có ba phòng ngủ, vừa sáng vừa yên tĩnh.', answer:'这套新房有三间卧室，既亮又安静。', answerPy:'Zhè tào xīnfáng yǒu sān jiān wòshì, jì liàng yòu ānjìng.',
+       note:'Lượng từ của 卧室 là 间.', pair:'既……又……'},
+      {promptLang:'vi', prompt:'Tôi đã dọn phòng ngủ của mình sạch sẽ.', answer:'我把自己的卧室打扫干净了。', answerPy:'Wǒ bǎ zìjǐ de wòshì dǎsǎo gānjìng le.',
+       note:'卧室 = phòng ngủ (卧 = nằm, 室 = phòng).', pair:'把'}
+    ]
+  },
+  '铺': {
+    colloFull: [
+      {zh:'铺床', py:'pū chuáng', vn:'trải giường'},
+      {zh:'铺被子', py:'pū bèizi', vn:'trải chăn'},
+      {zh:'铺地毯', py:'pū dìtǎn', vn:'trải thảm'},
+      {zh:'铺好', py:'pūhǎo', vn:'trải xong'},
+      {zh:'铺在地上', py:'pū zài dì shang', vn:'trải ra sàn'}
+    ],
+    patterns: [
+      {s:'把 + N + 铺在 + nơi chốn', m:'Trải cái gì lên đâu'},
+      {s:'N + 已(经)铺好', m:'Cái gì đã được trải sẵn'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Mẹ đã trải sẵn chăn trên giường rồi.', answer:'妈妈已经把床上的被子铺好了。', answerPy:'Māma yǐjīng bǎ chuáng shang de bèizi pūhǎo le.',
+       note:'铺 (bộ 钅) = trải ra; đừng nhầm với 扑 cùng đọc pū.', pair:'把'},
+      {promptLang:'vi', prompt:'Giường đã được mẹ trải sẵn rồi.', answer:'床已经被妈妈铺好了。', answerPy:'Chuáng yǐjīng bèi māma pūhǎo le.',
+       note:'铺床 = trải giường.', pair:'被'}
+    ]
+  },
+  '飘': {
+    colloFull: [
+      {zh:'飘来', py:'piāolái', vn:'thoảng tới'},
+      {zh:'飘香', py:'piāo xiāng', vn:'toả hương'},
+      {zh:'雪花飘', py:'xuěhuā piāo', vn:'bông tuyết bay'},
+      {zh:'飘下来', py:'piāo xiàlái', vn:'bay xuống'}
+    ],
+    patterns: [
+      {s:'Nơi chốn + 飘来 + mùi / âm thanh', m:'Từ đâu thoảng tới …'},
+      {s:'N + 飘 + 下来 / 过来', m:'Cái gì bay xuống / bay tới'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Tôi vừa về đến cổng là ngửi thấy mùi thơm từ bếp thoảng ra.', answer:'我一到门口，就闻到了厨房里飘来的香味。', answerPy:'Wǒ yí dào ménkǒu, jiù wéndàole chúfáng li piāolái de xiāngwèi.',
+       note:'飘来 = (mùi) thoảng tới.', pair:'一……就……'},
+      {promptLang:'vi', prompt:'Trời ngày càng lạnh, bông tuyết bắt đầu bay xuống.', answer:'天越来越冷，雪花开始飘下来了。', answerPy:'Tiān yuè lái yuè lěng, xuěhuā kāishǐ piāo xiàlái le.',
+       note:'飘下来 = bay lả tả xuống.', pair:'越来越'}
+    ]
+  },
+  '阵': {
+    colloFull: [
+      {zh:'一阵风', py:'yí zhèn fēng', vn:'một cơn gió'},
+      {zh:'一阵笑声', py:'yí zhèn xiàoshēng', vn:'một tràng cười'},
+      {zh:'一阵香味', py:'yí zhèn xiāngwèi', vn:'một đợt mùi thơm'},
+      {zh:'阵阵', py:'zhènzhèn', vn:'từng đợt'},
+      {zh:'一阵雨', py:'yí zhèn yǔ', vn:'một trận mưa'}
+    ],
+    patterns: [
+      {s:'一 + 阵 + N', m:'Một cơn / trận / đợt …'},
+      {s:'阵阵 + N', m:'Từng đợt … liên tiếp'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Cái cây bị một trận gió lớn thổi đổ.', answer:'树被一阵大风吹倒了。', answerPy:'Shù bèi yí zhèn dà fēng chuīdǎo le.',
+       note:'一阵 + danh từ: sự việc kéo dài một lúc rồi dứt.', pair:'被'},
+      {promptLang:'vi', prompt:'Thầy vừa nói xong, cả lớp vang lên một tràng cười.', answer:'老师一说完，教室里就响起了一阵笑声。', answerPy:'Lǎoshī yì shuōwán, jiàoshì li jiù xiǎngqǐle yí zhèn xiàoshēng.',
+       note:'一阵笑声 = một tràng cười.', pair:'一……就……'}
+    ]
+  },
+  '感受': {
+    colloFull: [
+      {zh:'感受到温暖', py:'gǎnshòu dào wēnnuǎn', vn:'cảm nhận được hơi ấm'},
+      {zh:'感受生活', py:'gǎnshòu shēnghuó', vn:'cảm nhận cuộc sống'},
+      {zh:'深刻的感受', py:'shēnkè de gǎnshòu', vn:'cảm nhận sâu sắc'},
+      {zh:'说说感受', py:'shuōshuo gǎnshòu', vn:'nói cảm nghĩ'}
+    ],
+    patterns: [
+      {s:'Sub + 感受到 + N', m:'Cảm nhận được điều gì (động từ)'},
+      {s:'对 + N + 的感受', m:'Cảm nghĩ về điều gì (danh từ)'}
+    ],
+    checkList: [
+      {promptLang:'vi', prompt:'Du lịch không những thú vị mà còn giúp ta cảm nhận được những nền văn hoá khác nhau.', answer:'旅游不仅很有意思，而且能让我们感受到不同的文化。', answerPy:'Lǚyóu bùjǐn hěn yǒu yìsi, érqiě néng ràng wǒmen gǎnshòu dào bùtóng de wénhuà.',
+       note:'感受到 + danh từ: cảm nhận được điều gì.', pair:'不仅……而且……'},
+      {promptLang:'vi', prompt:'Trước đây tôi chưa bao giờ cảm nhận tình yêu của bố mẹ sâu sắc đến thế.', answer:'以前我从来没这么深地感受过父母的爱。', answerPy:'Yǐqián wǒ cónglái méi zhème shēn de gǎnshòuguo fùmǔ de ài.',
+       note:'感受 + 过: đã từng cảm nhận.', pair:'从来没……过'}
+    ]
+  }
+};
+vocabData.forEach(function (v) {
+  var x = vocabExtra[v.zh];
+  if (!x) return;
+  if (x.colloFull) v.colloFull = x.colloFull;
+  if (x.patterns) v.patterns = x.patterns;
+  if (x.checkList) v.checkList = (v.checkList || []).concat(x.checkList).slice(0, 2);
+});

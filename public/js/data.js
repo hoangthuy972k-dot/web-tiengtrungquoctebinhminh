@@ -1409,6 +1409,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-4.html'
       },
       {
+        id: 'hsk5-l5',
+        number: 5,
+        title: 'Nước suối Tế Nam',
+        titleHanzi: '济南的泉水',
+        titlePinyin: 'Jǐnán de quánshuǐ',
+        topic: 'Unit 2 谈古说今 · Danh thắng, truyền thuyết & thiên nhiên',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk5-bai-5.html'
+      },
+      {
         id: 'hsk5-l6',
         number: 6,
         title: 'Nguồn gốc đêm giao thừa',

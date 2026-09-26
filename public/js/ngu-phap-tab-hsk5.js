@@ -4314,6 +4314,1243 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-4.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-5.html"] = [
+ {
+  "so": "1",
+  "ten": "「起来」",
+  "tenVn": "",
+  "cauTruc": [
+   "V + 起来 (từ phân tán → tập trung)",
+   "V + 起来 (từ lộ ra → giấu kín)",
+   "把 + N + V + 起来"
+  ],
+  "giaiThich": "起来 là động từ, làm bổ ngữ xu hướng đứng sau động từ khác. Bài này học hai nghĩa: ① từ PHÂN TÁN đến TẬP TRUNG (积蓄起来, 收起来, 集合起来); ② từ LỘ RA đến CHE GIẤU (藏起来, 躲起来). Tân ngữ thường đưa lên trước bằng 把, không đặt sau cả cụm 起来.",
+  "viDu": [
+   {
+    "zh": "……地下水流到这里，碰到火成岩挡住了路，就积蓄起来，越积越多。",
+    "py": "…… dìxiàshuǐ liúdào zhèli, pèngdào huǒchéngyán dǎngzhùle lù, jiù jīxù qǐlai, yuè jī yuè duō.",
+    "vn": "… nước ngầm chảy tới đây, gặp đá mác-ma chắn đường liền tích tụ lại, càng tích càng nhiều."
+   },
+   {
+    "zh": "渔夫想，这网一收起来，鱼一定可以装满整条船。",
+    "py": "Yúfū xiǎng, zhè wǎng yì shōu qǐlai, yú yídìng kěyǐ zhuāngmǎn zhěng tiáo chuán.",
+    "vn": "Người đánh cá nghĩ, tấm lưới này mà thu lại thì cá chắc chắn sẽ đầy cả thuyền."
+   },
+   {
+    "zh": "为了不被坏人抢走，他把壶埋入地下藏了起来。",
+    "py": "Wèile bú bèi huàirén qiǎngzǒu, tā bǎ hú máirù dìxià cángle qǐlai.",
+    "vn": "Để không bị kẻ xấu cướp mất, anh chôn chiếc bình xuống đất giấu đi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "为了不被发现，他躲出来了。",
+    "why": "Từ chỗ lộ ra thành giấu kín phải dùng 起来; 出来 có nghĩa ngược lại (từ trong kín ra ngoài).",
+    "dung": "为了不被发现，他躲起来了。"
+   },
+   {
+    "sai": "他藏起来钱了。",
+    "why": "Tân ngữ không đứng sau cả cụm 起来 — đưa lên trước bằng 把 (hoặc chen giữa: 藏起钱来).",
+    "dung": "他把钱藏起来了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "地下水碰到火成岩挡住了路，就积蓄",
+       "，越积越多。"
+      ],
+      "dap": [
+       [
+        "起来"
+       ]
+      ],
+      "chon": [
+       "起来",
+       "出来",
+       "下去"
+      ],
+      "goiY": "Nước ngầm TỤ LẠI một chỗ, càng lúc càng nhiều.",
+      "giai": "积蓄起来: từ phân tán → tập trung."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了不被坏人抢走，他把壶埋入地下藏了",
+       "。"
+      ],
+      "dap": [
+       [
+        "起来"
+       ]
+      ],
+      "chon": [
+       "起来",
+       "出来",
+       "过来"
+      ],
+      "goiY": "Chôn xuống đất để GIẤU đi.",
+      "giai": "藏起来: từ lộ ra → giấu kín; 出来 có nghĩa ngược lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "刘丽知道自己做得不对，躲",
+       "不敢见我。"
+      ],
+      "dap": [
+       [
+        "起来"
+       ]
+      ],
+      "chon": [
+       "起来",
+       "上去",
+       "出来"
+      ],
+      "goiY": "“Lưu Lệ biết mình sai nên trốn đi, không dám gặp tôi.”",
+      "giai": "躲起来 = trốn đi (tự giấu mình)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "下雨了，快把阳台上的衣服收",
+       "吧！"
+      ],
+      "dap": [
+       [
+        "起来"
+       ]
+      ],
+      "chon": [
+       "起来",
+       "下去",
+       "过去"
+      ],
+      "goiY": "Gom quần áo ngoài ban công VÀO một chỗ.",
+      "giai": "收起来 = thu gom lại (tập trung)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老师让同学们在操场上集合",
+       "。"
+      ],
+      "dap": [
+       [
+        "起来"
+       ]
+      ],
+      "chon": [
+       "起来",
+       "出去",
+       "下来"
+      ],
+      "goiY": "Cả lớp từ nhiều chỗ TẬP TRUNG về sân.",
+      "giai": "集合起来: nhiều người phân tán → tập trung một chỗ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈把我的手机藏",
+       "了，说考完试再给我。"
+      ],
+      "dap": [
+       [
+        "起来"
+       ]
+      ],
+      "chon": [
+       "起来",
+       "出来",
+       "上来"
+      ],
+      "goiY": "Mẹ GIẤU điện thoại đi, thi xong mới trả.",
+      "giai": "藏起来了: giấu kín; ôn câu 把 (HSK 3)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "把",
+       "壶",
+       "埋入地下",
+       "藏了起来"
+      ],
+      "dap": [
+       "他把壶埋入地下藏了起来。"
+      ],
+      "goiY": "Anh ấy chôn chiếc bình xuống đất giấu đi.",
+      "giai": "把 + tân ngữ + 埋入地下 + 藏了起来: động từ nối tiếp, 起来 ở cuối."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "刘方",
+       "喜欢",
+       "把",
+       "门票",
+       "收起来",
+       "旅游时买的"
+      ],
+      "dap": [
+       "刘方喜欢把旅游时买的门票收起来。"
+      ],
+      "goiY": "Lưu Phương thích cất giữ những vé vào cửa mua khi đi du lịch.",
+      "giai": "旅游时买的 làm định ngữ đứng trước 门票; 把……收起来 = cất giữ lại."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "同学们",
+       "把",
+       "零花钱",
+       "存起来",
+       "，",
+       "捐给了",
+       "山区的孩子"
+      ],
+      "dap": [
+       "同学们把零花钱存起来，捐给了山区的孩子。"
+      ],
+      "goiY": "Các bạn góp tiền tiêu vặt lại, quyên cho trẻ em vùng núi.",
+      "giai": "存起来: tích góp lại (phân tán → tập trung), rồi mới 捐给."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你刚工作，别太着急，经验会慢慢积累起来的。",
+      "dung": true,
+      "giai": "积累起来: kinh nghiệm dần dần tích tụ lại — nghĩa tập trung, dùng đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "孩子躲出来了，谁也找不到他。",
+      "dung": false,
+      "sua": "孩子躲起来了，谁也找不到他。",
+      "giai": "Giấu mình đi để không ai thấy → 躲起来; 出来 là lộ ra."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他藏起来钱了。",
+      "dung": false,
+      "sua": "他把钱藏起来了。",
+      "giai": "Tân ngữ không đứng sau cả cụm 起来; dùng 把 đưa tân ngữ lên trước."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Để không bị em trai tìm thấy, tôi giấu kẹo đi rồi.",
+      "dap": [
+       "为了不被弟弟找到，我把糖藏起来了。",
+       "为了不让弟弟找到，我把糖藏起来了。",
+       "为了不被弟弟发现，我把糖藏起来了。"
+      ],
+      "py": "Wèile bú bèi dìdi zhǎodào, wǒ bǎ táng cáng qǐlai le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 把……藏起来.",
+      "giai": "把 + 糖 + 藏起来了: từ lộ ra → giấu kín."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỉ cần mỗi ngày tiết kiệm một ít, tiền sẽ dần dần tích góp lại.",
+      "dap": [
+       "只要每天节约一点儿，钱就会慢慢积累起来。",
+       "只要每天省一点儿，钱就会慢慢积累起来。",
+       "只要每天节约一点儿，钱就会慢慢存起来。"
+      ],
+      "py": "Zhǐyào měi tiān jiéyuē yìdiǎnr, qián jiù huì mànmàn jīlěi qǐlai.",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 起来 (tập trung) và 只要……就…….",
+      "giai": "积累起来 / 存起来: gom góp lại; ôn 只要……就……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "刘方喜欢把旅游时买的门票＿＿＿。",
+      "goiY": "cất giữ lại những tấm vé đó (dùng 起来) — câu 练一练 (1) của sách",
+      "mau": "刘方喜欢把旅游时买的门票收藏起来。",
+      "can": [
+       [
+        "起来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：儿子，是你把爸爸的烟放在这鞋盒子里的吗？　B：＿＿＿。",
+      "goiY": "cậu con trai nhận là mình giấu đi để bố bớt hút thuốc (dùng 藏起来) — câu 练一练 (3) của sách",
+      "mau": "是我，我想让爸爸少抽点儿烟，就把烟藏起来了。",
+      "can": [
+       [
+        "起来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「V + 起来」 (gom lại hoặc giấu đi), nói về em hoặc gia đình em",
+      "mau": "我把不用的旧书都收起来，送给了山区的孩子。",
+      "can": [
+       [
+        "起来"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「于」",
+  "tenVn": "",
+  "cauTruc": [
+   "V + 于 + thời gian / nơi chốn",
+   "V + 于 + đối tượng / phạm vi",
+   "Adj + 于 + N (so sánh)"
+  ],
+  "giaiThich": "于 là giới từ của VĂN VIẾT, tương đương 在, 从, 对, 向, 比… tuỳ ngữ cảnh. Biểu thị: thời gian (成立于1997年), phạm vi (用于感冒的治疗), nơi chốn / nguồn gốc (来自于), đối tượng (有助于健康, 求助于……), so sánh (高于自己). 于 thường đứng NGAY SAU động từ hoặc tính từ.",
+  "viDu": [
+   {
+    "zh": "这家公司成立于1997年。",
+    "py": "Zhè jiā gōngsī chénglì yú yī jiǔ jiǔ qī nián.",
+    "vn": "Công ty này được thành lập năm 1997."
+   },
+   {
+    "zh": "济南的泉水，来自于济南市以南的广大山区。",
+    "py": "Jǐnán de quánshuǐ, láizì yú Jǐnán shì yǐ nán de guǎngdà shānqū.",
+    "vn": "Nước suối Tế Nam đến từ vùng núi rộng lớn phía nam thành phố Tế Nam."
+   },
+   {
+    "zh": "队员们都认为对方的水平远远高于自己。",
+    "py": "Duìyuánmen dōu rènwéi duìfāng de shuǐpíng yuǎnyuǎn gāo yú zìjǐ.",
+    "vn": "Các đội viên đều cho rằng trình độ của đối phương cao hơn mình rất nhiều."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我毕业于在北京大学。",
+    "why": "于 đã tương đương 在 / 从, không dùng chồng thêm 在.",
+    "dung": "我毕业于北京大学。"
+   },
+   {
+    "sai": "他比我高于。",
+    "why": "Adj + 于 đã mang nghĩa so sánh \"hơn\", không dùng thêm 比.",
+    "dung": "他高于我。（或：他比我高。）"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这所大学成立",
+       "1950年。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "在于",
+       "对于"
+      ],
+      "goiY": "Nói THỜI GIAN thành lập bằng giọng văn viết.",
+      "giai": "V + 于 + thời gian: 成立于1950年. 在于 = \"nằm ở\", 对于 = \"đối với\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "济南的泉水来自",
+       "济南市以南的广大山区。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "从",
+       "在"
+      ],
+      "goiY": "Nước suối đến TỪ đâu.",
+      "giai": "来自于 = đến từ (于 chỉ nguồn gốc, nơi chốn); không nói 来自从."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "多喝水有助",
+       "身体健康。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "对",
+       "给"
+      ],
+      "goiY": "“Uống nhiều nước có ích cho sức khoẻ.”",
+      "giai": "有助于 + N: có ích cho … (于 chỉ đối tượng)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这种药主要用",
+       "感冒的治疗。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "在",
+       "给"
+      ],
+      "goiY": "Thuốc dùng CHO phạm vi nào.",
+      "giai": "用于 + phạm vi: dùng cho …"
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今年夏天的气温明显高",
+       "往年。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "比",
+       "过"
+      ],
+      "goiY": "So sánh: nóng HƠN mọi năm.",
+      "giai": "Adj + 于 = so sánh \"hơn\": 高于往年. Đã có 于 thì không cần 比."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "李明半年没找到工作，只好求助",
+       "当经理的老同学。"
+      ],
+      "dap": [
+       [
+        "于"
+       ]
+      ],
+      "chon": [
+       "于",
+       "向",
+       "对"
+      ],
+      "goiY": "Nhờ ai giúp — giọng văn viết.",
+      "giai": "求助于 + người = nhờ ai giúp (于 chỉ đối tượng). 向 phải đứng trước động từ: 向……求助."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "乒乓球运动",
+       "产生",
+       "于",
+       "19世纪末"
+      ],
+      "dap": [
+       "乒乓球运动产生于19世纪末。"
+      ],
+      "goiY": "Môn bóng bàn ra đời vào cuối thế kỷ 19.",
+      "giai": "V + 于 + thời gian: 产生于19世纪末."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "刘经理",
+       "毕业于",
+       "北京大学",
+       "经济学院"
+      ],
+      "dap": [
+       "刘经理毕业于北京大学经济学院。"
+      ],
+      "goiY": "Giám đốc Lưu tốt nghiệp Học viện Kinh tế, Đại học Bắc Kinh.",
+      "giai": "毕业于 + tên trường; trường lớn đứng trước, khoa đứng sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "队员们",
+       "都认为",
+       "对方的水平",
+       "远远",
+       "高于自己"
+      ],
+      "dap": [
+       "队员们都认为对方的水平远远高于自己。"
+      ],
+      "goiY": "Các đội viên đều cho rằng trình độ đối phương cao hơn mình rất nhiều.",
+      "giai": "远远 + 高于 + N: so sánh bằng 于."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "运动有助于健康。",
+      "dung": true,
+      "giai": "有助于 + N: có ích cho … — dùng đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我毕业于在河内国家大学。",
+      "dung": false,
+      "sua": "我毕业于河内国家大学。",
+      "giai": "于 đã tương đương 在 / 从, không thêm 在."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他比我高于。",
+      "dung": false,
+      "sua": "他高于我。",
+      "giai": "Adj + 于 đã là so sánh, không dùng thêm 比; hoặc bỏ 于 nói 他比我高."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trường chúng tôi được thành lập năm 1995.",
+      "dap": [
+       "我们学校成立于1995年。",
+       "我们的学校成立于1995年。",
+       "我们学校成立于一九九五年。"
+      ],
+      "py": "Wǒmen xuéxiào chénglì yú yī jiǔ jiǔ wǔ nián.",
+      "goiY": "Dịch sang tiếng Trung, dùng 成立于.",
+      "giai": "V + 于 + thời gian — giọng văn viết."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đọc nhiều sách có ích cho việc học tiếng Trung.",
+      "dap": [
+       "多看书有助于学习汉语。",
+       "多读书有助于学习汉语。",
+       "多看书有助于学汉语。",
+       "多读书有助于学汉语。",
+       "多读书有助于学习中文。"
+      ],
+      "py": "Duō dú shū yǒuzhù yú xuéxí Hànyǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 有助于.",
+      "giai": "有助于 + N: có ích cho …."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "乒乓球运动＿＿＿。",
+      "goiY": "Viết lại câu “乒乓球运动是在19世纪末产生的，说起来还有一段有趣的故事呢。” bằng 于 — 练一练 của sách",
+      "mau": "乒乓球运动产生于19世纪末，说起来还有一段有趣的故事呢。",
+      "can": [
+       [
+        "于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，而是给自己提出更高的要求。",
+      "goiY": "Viết lại vế “工作上，对已取得的成功，他从不满足” bằng 于 (满足于……) — 练一练 của sách",
+      "mau": "工作上，他从不满足于已取得的成功，而是给自己提出更高的要求。",
+      "can": [
+       [
+        "于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「于」 (成立于 / 来自于 / 有助于 / 高于…), nói về em hoặc trường em",
+      "mau": "我们学校成立于1990年，是我们这儿最有名的高中。",
+      "can": [
+       [
+        "于"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「从而」",
+  "tenVn": "",
+  "cauTruc": [
+   "A (nguyên nhân / phương pháp)，从而 + B (kết quả / mục đích)"
+  ],
+  "giaiThich": "从而 là liên từ, dùng giữa hai phân câu: vế trước nêu nguyên nhân, phương pháp…; vế sau (mở đầu bằng 从而) nêu KẾT QUẢ hoặc MỤC ĐÍCH đạt được nhờ đó. Thiên về văn viết; vế sau thường dùng chung chủ ngữ với vế trước, và 从而 không mở đầu một câu độc lập.",
+  "viDu": [
+   {
+    "zh": "比赛前做好思想准备可以减少运动员的压力，从而取得比赛的成功。",
+    "py": "Bǐsài qián zuòhǎo sīxiǎng zhǔnbèi kěyǐ jiǎnshǎo yùndòngyuán de yālì, cóng'ér qǔdé bǐsài de chénggōng.",
+    "vn": "Chuẩn bị tốt tâm lý trước trận đấu có thể giảm áp lực cho vận động viên, nhờ đó giành thắng lợi."
+   },
+   {
+    "zh": "在学习过程中及时复习，可以尽早发现和解决问题，加深理解，从而取得更好的成绩。",
+    "py": "Zài xuéxí guòchéng zhōng jíshí fùxí, kěyǐ jǐnzǎo fāxiàn hé jiějué wèntí, jiāshēn lǐjiě, cóng'ér qǔdé gèng hǎo de chéngjì.",
+    "vn": "Trong quá trình học, ôn tập kịp thời giúp sớm phát hiện và giải quyết vấn đề, hiểu sâu hơn, nhờ đó đạt kết quả tốt hơn."
+   },
+   {
+    "zh": "而济南的老百姓住在泉边，喝着这甜美的泉水，自然对它充满感激之情，从而也产生了许多关于泉水的美丽传说。",
+    "py": "Ér Jǐnán de lǎobǎixìng zhù zài quán biān, hēzhe zhè tiánměi de quánshuǐ, zìrán duì tā chōngmǎn gǎnjī zhī qíng, cóng'ér yě chǎnshēngle xǔduō guānyú quánshuǐ de měilì chuánshuō.",
+    "vn": "Còn người dân Tế Nam sống bên suối, uống thứ nước ngọt lành này, tự nhiên chan chứa lòng biết ơn, từ đó cũng ra đời nhiều truyền thuyết đẹp về nước suối."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "从而他取得了好成绩。",
+    "why": "从而 không đứng đầu một câu độc lập; nó nối vế kết quả với vế nguyên nhân / phương pháp đứng trước.",
+    "dung": "他每天坚持复习，从而取得了好成绩。"
+   },
+   {
+    "sai": "因为下大雨，从而比赛取消了。",
+    "why": "Kết quả ngoài ý muốn, không phải nhờ một cách làm chủ động — dùng 所以. 从而 không đi cặp với 因为 như vậy.",
+    "dung": "因为下大雨，所以比赛取消了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "玩游戏可以锻炼人的脑、眼和手，",
+       "提高人的反应能力。"
+      ],
+      "dap": [
+       [
+        "从而"
+       ]
+      ],
+      "chon": [
+       "从而",
+       "虽然",
+       "但是"
+      ],
+      "goiY": "Vế sau là KẾT QUẢ của việc rèn luyện.",
+      "giai": "Cách làm (锻炼) → kết quả (提高反应能力): dùng 从而."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "公司通过引进新技术，加强管理，",
+       "提高了产品质量。"
+      ],
+      "dap": [
+       [
+        "从而"
+       ]
+      ],
+      "chon": [
+       "从而",
+       "可是",
+       "或者"
+      ],
+      "goiY": "Nhờ các biện pháp trên mà đạt kết quả gì.",
+      "giai": "通过……，从而……: vế trước là phương pháp, vế sau là kết quả."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "比赛前做好思想准备可以减少运动员的压力，",
+       "取得比赛的成功。"
+      ],
+      "dap": [
+       [
+        "从而"
+       ]
+      ],
+      "chon": [
+       "从而",
+       "然而",
+       "不过"
+      ],
+      "goiY": "Chuẩn bị tốt → giành thắng lợi.",
+      "giai": "从而 dẫn kết quả / mục đích; 然而, 不过 là chuyển ý ngược lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在学习过程中及时复习，可以尽早发现和解决问题，",
+       "取得更好的成绩。"
+      ],
+      "dap": [
+       [
+        "从而"
+       ]
+      ],
+      "chon": [
+       "从而",
+       "即使",
+       "不管"
+      ],
+      "goiY": "Ôn tập kịp thời → kết quả tốt hơn.",
+      "giai": "Vế sau cùng nêu kết quả cuối cùng → 从而."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们每天随手关好水龙头，",
+       "节约了很多水。"
+      ],
+      "dap": [
+       [
+        "从而"
+       ]
+      ],
+      "chon": [
+       "从而",
+       "如果",
+       "虽然"
+      ],
+      "goiY": "Cách làm hằng ngày → tiết kiệm được nước.",
+      "giai": "Cách làm chủ động → kết quả tốt: 从而."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老百姓对泉水充满感激之情，",
+       "也产生了许多关于泉水的美丽传说。"
+      ],
+      "dap": [
+       [
+        "从而"
+       ]
+      ],
+      "chon": [
+       "从而",
+       "只要",
+       "除非"
+      ],
+      "goiY": "Câu trong bài khoá — tình cảm biết ơn → ra đời truyền thuyết.",
+      "giai": "Nguyên nhân (充满感激之情) → kết quả (产生传说): 从而."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "每天",
+       "坚持跑步",
+       "，",
+       "从而",
+       "锻炼了身体"
+      ],
+      "dap": [
+       "他每天坚持跑步，从而锻炼了身体。"
+      ],
+      "goiY": "Anh ấy ngày nào cũng kiên trì chạy bộ, nhờ đó rèn luyện được sức khoẻ.",
+      "giai": "Vế cách làm đứng trước, 从而 mở vế kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "通过多读多写",
+       "，",
+       "从而",
+       "提高了",
+       "写作水平"
+      ],
+      "dap": [
+       "我通过多读多写，从而提高了写作水平。"
+      ],
+      "goiY": "Tôi thông qua đọc nhiều viết nhiều, nhờ đó nâng cao trình độ viết.",
+      "giai": "通过 + phương pháp，从而 + kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "公司",
+       "引进了新技术",
+       "，",
+       "从而",
+       "提高了",
+       "产品质量"
+      ],
+      "dap": [
+       "公司引进了新技术，从而提高了产品质量。"
+      ],
+      "goiY": "Công ty đưa vào công nghệ mới, nhờ đó nâng cao chất lượng sản phẩm.",
+      "giai": "Vế sau dùng chung chủ ngữ 公司, không lặp lại chủ ngữ sau 从而."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他每天复习，从而取得了好成绩。",
+      "dung": true,
+      "giai": "Cách làm (每天复习) → kết quả tốt (取得了好成绩): dùng đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "从而我们节约了很多水。",
+      "dung": false,
+      "sua": "我们随手关水龙头，从而节约了很多水。",
+      "giai": "从而 không mở đầu câu độc lập — phải có vế cách làm phía trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "因为下大雨，从而比赛取消了。",
+      "dung": false,
+      "sua": "因为下大雨，所以比赛取消了。",
+      "giai": "Kết quả ngoài ý muốn, không phải do cách làm chủ động → dùng 所以."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy ngày nào cũng nói chuyện với người Trung Quốc, nhờ đó nâng cao trình độ khẩu ngữ.",
+      "dap": [
+       "他每天跟中国人聊天，从而提高了口语水平。",
+       "他每天和中国人聊天，从而提高了口语水平。",
+       "他每天跟中国人说话，从而提高了口语水平。",
+       "他每天和中国人说话，从而提高了口语水平。"
+      ],
+      "py": "Tā měi tiān gēn Zhōngguórén liáotiān, cóng'ér tígāole kǒuyǔ shuǐpíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从而.",
+      "giai": "Cách làm (聊天) → kết quả (提高口语水平)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Thành phố trồng rất nhiều cây, nhờ đó môi trường trở nên đẹp hơn.",
+      "dap": [
+       "城市种了很多树，从而使环境变得更美了。",
+       "城市种了很多树，从而让环境变得更美了。",
+       "城市种了很多树，从而使环境更美了。",
+       "城市种了很多树，从而使环境变得更优美了。"
+      ],
+      "py": "Chéngshì zhòngle hěn duō shù, cóng'ér shǐ huánjìng biàn de gèng měi le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从而 + 使.",
+      "giai": "从而 hay đi với 使 / 让 để nêu kết quả tác động."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "玩游戏可以锻炼人的脑、眼和手，＿＿＿。",
+      "goiY": "nêu kết quả của việc rèn luyện đó (dùng 从而) — câu 练一练 (1) của sách",
+      "mau": "玩游戏可以锻炼人的脑、眼和手，从而提高人的反应能力。",
+      "can": [
+       [
+        "从而"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：时间这么紧，你们是怎么完成任务的？　B：＿＿＿。",
+      "goiY": "nêu cách làm rồi dùng 从而 dẫn ra kết quả — câu 练一练 (3) của sách",
+      "mau": "我们把任务分给了每个人，大家一起加班，从而按时完成了任务。",
+      "can": [
+       [
+        "从而"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「从而」 (cách làm → kết quả), nói về việc học của em",
+      "mau": "我每天听十分钟中文歌，从而提高了听力水平。",
+      "can": [
+       [
+        "从而"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "4",
+  "ten": "「为 (wéi)」",
+  "tenVn": "",
+  "cauTruc": [
+   "V (变 / 改 / 选) + 为 + N",
+   "以 A 为 B",
+   "称 A 为 B"
+  ],
+  "giaiThich": "为 (wéi) là động từ. ① Nghĩa \"thành, trở thành\", thường đứng sau động từ khác làm bổ ngữ: 变为, 改为, 选为. ② Nghĩa \"làm, coi là, là\": 以 A 为 B (lấy A làm B), 称 A 为 B (gọi A là B). Phân biệt với giới từ 为 (wèi) = vì, cho.",
+  "viDu": [
+   {
+    "zh": "而济南市区的地下岩石变为了火成岩，……",
+    "py": "Ér Jǐnán shìqū de dìxià yánshí biànwéile huǒchéngyán, ……",
+    "vn": "Còn đá dưới lòng đất nội thành Tế Nam đã biến thành đá mác-ma, …"
+   },
+   {
+    "zh": "每个人都会遇到各种压力，可是，压力也可以变为动力。",
+    "py": "Měi ge rén dōu huì yùdào gè zhǒng yālì, kěshì, yālì yě kěyǐ biànwéi dònglì.",
+    "vn": "Ai cũng gặp đủ loại áp lực, nhưng áp lực cũng có thể biến thành động lực."
+   },
+   {
+    "zh": "找工作时，很多人会以收入多少为第一标准，这种想法我不能接受。",
+    "py": "Zhǎo gōngzuò shí, hěn duō rén huì yǐ shōurù duōshao wéi dì-yī biāozhǔn, zhè zhǒng xiǎngfǎ wǒ bù néng jiēshòu.",
+    "vn": "Khi tìm việc, nhiều người lấy thu nhập cao thấp làm tiêu chuẩn số một, cách nghĩ này tôi không chấp nhận được."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "压力也可以变为成动力。",
+    "why": "为 đã mang nghĩa \"thành\", không thêm 成 nữa.",
+    "dung": "压力也可以变为动力。"
+   },
+   {
+    "sai": "很多人以收入多少是第一标准。",
+    "why": "Cấu trúc cố định là 以 A 为 B — không dùng 是 thay cho 为.",
+    "dung": "很多人以收入多少为第一标准。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "而济南市区的地下岩石变",
+       "了火成岩。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "成为",
+       "给"
+      ],
+      "goiY": "Đá BIẾN THÀNH đá mác-ma.",
+      "giai": "变为 = biến thành; “变成为” thừa chữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "办公室让我通知你明天下午的活动改",
+       "下周一了。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "于",
+       "给"
+      ],
+      "goiY": "Hoạt động ĐỔI THÀNH thứ Hai tuần sau.",
+      "giai": "改为 = đổi thành (为 đọc wéi)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他被同学们选",
+       "班长。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "于",
+       "对"
+      ],
+      "goiY": "Được bầu LÀM lớp trưởng.",
+      "giai": "选为 + chức vụ = bầu làm …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "找工作时，很多人会以收入多少",
+       "第一标准。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "是",
+       "于"
+      ],
+      "goiY": "Lấy A LÀM B.",
+      "giai": "以 A 为 B là cấu trúc cố định, không dùng 是."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在他看来，没有工作的生活就不能称其",
+       "生活。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "于",
+       "成"
+      ],
+      "goiY": "Gọi A LÀ B.",
+      "giai": "称 A 为 B = gọi A là B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "每个人都会遇到压力，可是压力也可以变",
+       "动力。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "于",
+       "给"
+      ],
+      "goiY": "Áp lực BIẾN THÀNH động lực.",
+      "giai": "变为 + N = biến thành …."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "压力",
+       "也可以",
+       "变为",
+       "动力"
+      ],
+      "dap": [
+       "压力也可以变为动力。"
+      ],
+      "goiY": "Áp lực cũng có thể biến thành động lực.",
+      "giai": "Chủ ngữ + 也可以 + 变为 + N."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "人们",
+       "把济南",
+       "称为",
+       "泉城"
+      ],
+      "dap": [
+       "人们把济南称为泉城。"
+      ],
+      "goiY": "Người ta gọi Tế Nam là Thành phố suối.",
+      "giai": "把 A 称为 B = gọi A là B."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这部电影",
+       "以",
+       "济南的泉水",
+       "为",
+       "背景"
+      ],
+      "dap": [
+       "这部电影以济南的泉水为背景。"
+      ],
+      "goiY": "Bộ phim này lấy suối Tế Nam làm bối cảnh.",
+      "giai": "以 A 为 B: A đứng sau 以, B đứng sau 为."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他被大家选为最受欢迎的老师。",
+      "dung": true,
+      "giai": "被……选为 + N: được bầu làm … — dùng đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "很多年轻人以手机是最好的朋友。",
+      "dung": false,
+      "sua": "很多年轻人以手机为最好的朋友。",
+      "giai": "Cấu trúc cố định 以 A 为 B, không dùng 是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "比赛时间改为成下午三点了。",
+      "dung": false,
+      "sua": "比赛时间改为下午三点了。",
+      "giai": "为 đã có nghĩa \"thành\", không thêm 成."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trận đấu đã được đổi sang chiều thứ Bảy.",
+      "dap": [
+       "比赛改为星期六下午了。",
+       "比赛时间改为星期六下午了。",
+       "比赛已经改为星期六下午了。",
+       "比赛改为周六下午了。"
+      ],
+      "py": "Bǐsài gǎiwéi xīngqīliù xiàwǔ le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 改为.",
+      "giai": "改为 + thời gian mới."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Người dân Tế Nam gọi thành phố của mình là “Thành phố suối”.",
+      "dap": [
+       "济南人把自己的城市称为“泉城”。",
+       "济南人称自己的城市为“泉城”。",
+       "济南的老百姓把自己的城市称为“泉城”。",
+       "济南人把自己的城市称为泉城。",
+       "济南人称自己的城市为泉城。"
+      ],
+      "py": "Jǐnánrén bǎ zìjǐ de chéngshì chēngwéi “Quánchéng”.",
+      "goiY": "Dịch sang tiếng Trung, dùng 称……为…….",
+      "giai": "称 A 为 B hoặc 把 A 称为 B."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "在影视作品中，＿＿＿。",
+      "goiY": "Viết lại “常常把鲨鱼描写成可怕的海洋杀手” bằng 为 — câu 练一练 (1) của sách",
+      "mau": "在影视作品中，鲨鱼常常被描写为可怕的海洋杀手。",
+      "can": [
+       [
+        "为"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "为了方便同学们报名，＿＿＿。",
+      "goiY": "Viết lại “办公室改变了报名时间，从本月一日到十日，周六、日不休” bằng 为 (改为) — câu 练一练 (2) của sách",
+      "mau": "为了方便同学们报名，办公室把报名时间改为本月一日到十日，周六、日不休。",
+      "can": [
+       [
+        "为"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「为」(wéi) (变为 / 改为 / 选为 / 以……为……), nói về em hoặc lớp em",
+      "mau": "我们班以“互相帮助”为班级口号。",
+      "can": [
+       [
+        "为"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk5-bai-6.html"] = [
  {
   "so": "1",

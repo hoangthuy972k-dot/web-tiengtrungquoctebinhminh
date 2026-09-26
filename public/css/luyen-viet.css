@@ -289,3 +289,64 @@ html.ho-tro-toi[data-theme="dark"] {
   .nd-kho .lv-chip { flex: none; font-size: 1rem; min-height: 38px; padding: 4px 10px; }
   .nd-doan { font-size: 1.05rem; line-height: 2.2; }
 }
+
+/* Phân biệt từ — bảng theo SGK + 做一做 tích ô */
+.pb-sgk-tag { align-self: flex-start; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: var(--lv-accent); background: var(--lv-accent-l); border-radius: 99px; padding: 3px 10px; }
+.pb-bang-wrap { overflow-x: auto; }
+.pb-bang, .pb-lam { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.95rem; }
+.pb-bang th, .pb-bang td, .pb-lam th, .pb-lam td { border-bottom: 1px solid var(--lv-line); padding: 10px 12px; vertical-align: top; text-align: left; }
+.pb-bang thead th, .pb-lam thead th { font-size: 1.15rem; color: var(--lv-accent); background: var(--lv-tint); text-align: center; }
+.pb-bang thead th:first-child, .pb-lam thead th:first-child { background: transparent; }
+.pb-bang tbody th { width: 2.2em; writing-mode: vertical-rl; text-orientation: upright; letter-spacing: 0.2em; text-align: center; vertical-align: middle; color: var(--lv-ink); background: var(--lv-tint); font-weight: 700; }
+.pb-bang td { width: 46%; }
+.pb-bang td + td { border-left: 1px dashed var(--lv-line); }
+.pb-chung td { background: var(--lv-card); }
+.pb-b-t { font-weight: 700; font-size: 1.02rem; }
+.pb-b-vd { margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--lv-line); }
+.pb-b-vd .lv-zh { color: var(--lv-accent-d); }
+.pb-lam td:first-child { font-size: 1.05rem; line-height: 1.8; }
+.pb-tich-o { width: 64px; text-align: center !important; vertical-align: middle !important; }
+.pb-kt-o { width: 96px; vertical-align: middle !important; }
+.pb-tich {
+  width: 40px; height: 40px; border-radius: 10px; border: 2px solid var(--lv-line); background: var(--lv-card);
+  font-size: 1.2rem; font-weight: 800; color: var(--lv-accent); cursor: pointer;
+}
+.pb-tich:hover:not(:disabled) { border-color: var(--lv-accent); }
+.pb-tich.is-on { border-color: var(--lv-accent); background: var(--lv-accent-l); }
+.pb-tich:disabled { cursor: default; }
+.pb-tich.is-dap { border-color: var(--lv-ok); background: var(--lv-ok-l); color: var(--lv-ok); }
+.pb-tich.is-thua { border-color: var(--lv-bad); background: var(--lv-bad-l); color: var(--lv-bad); }
+.pb-tich:focus-visible { outline: 3px solid var(--lv-accent); outline-offset: 2px; }
+.pb-lt.is-mau td { background: var(--lv-tint); }
+.pb-lt.is-mau .pb-tich.is-dap { opacity: 0.8; }
+.pb-mau { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.72rem; font-weight: 700; color: var(--lv-soft); border: 1px solid var(--lv-line); border-radius: 99px; padding: 1px 8px; }
+.pb-lt .pb-why { margin-top: 6px; font-family: 'Be Vietnam Pro', sans-serif; }
+@media (max-width: 600px) {
+  .pb-bang th, .pb-bang td, .pb-lam th, .pb-lam td { padding: 8px; font-size: 0.9rem; }
+  .pb-tich-o { width: 48px; }
+  .pb-kt-o { width: auto; }
+  .pb-lam .pb-kt-o .lv-btn { padding: 6px 10px; }
+}
+
+/* Bài tập SGK 练习 (bai-tap-sgk.js) */
+.sk-part { display: flex; flex-direction: column; gap: 12px; }
+.sk-head { display: flex; gap: 10px; align-items: flex-start; }
+.sk-head .lv-num { margin-top: 2px; background: var(--lv-accent); color: var(--lv-on-accent); }
+.sk-head h3 { margin: 0; font-size: 1.1rem; }
+.sk-kho { position: static; }
+.sk-list { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 14px; }
+.sk-list > li { font-size: 1.08rem; line-height: 2.2; }
+.sk-list > li::marker { font-weight: 700; color: var(--lv-soft); }
+.sk-cau { line-height: 2.2; }
+.sk-ab { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.sk-vt {
+  display: inline-grid; place-items: center; min-width: 30px; height: 30px; margin: 0 2px; padding: 0 6px;
+  font: inherit; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 800;
+  color: var(--lv-accent); background: var(--lv-accent-l); border: 1.5px solid var(--lv-accent); border-radius: 8px; cursor: pointer; vertical-align: middle;
+}
+.sk-vt:hover:not(:disabled) { background: var(--lv-accent); color: var(--lv-on-accent); }
+.sk-vt:disabled { cursor: default; opacity: 0.5; }
+.sk-vt.is-right { opacity: 1; background: var(--lv-ok-l); border-color: var(--lv-ok); color: var(--lv-ok); }
+.sk-vt.is-wrong { opacity: 1; background: var(--lv-bad-l); border-color: var(--lv-bad); color: var(--lv-bad); }
+.sk-ngoac { color: var(--lv-mid); white-space: nowrap; }
+.sk-list .pb-why { font-size: 0.9rem; line-height: 1.6; margin-top: 6px; }

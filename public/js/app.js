@@ -759,6 +759,7 @@
     speak: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
     translate: '<path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/>',
     workbook: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/>',
+    sgk: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v18M12 8h4M12 12h4"/>',
     hanviet: '<path d="M7 7h13l-3-3M17 17H4l3 3"/>',
     synonym: '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
     writing: '<path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
@@ -1721,7 +1722,7 @@
     hsk2: ['match', 'fill', 'sort', 'errfix'],
     hsk3: ['match', 'fill', 'sort', 'errfix'],
     hsk4: ['match', 'fill', 'sort', 'errfix'],
-    hsk5: ['match', 'fill', 'sort', 'errfix'],
+    hsk5: ['match', 'fill', 'sort', 'errfix', 'sgk'],
     yct: ['match', 'fill', 'sort', 'mc']
   };
 
@@ -3273,7 +3274,8 @@
             translateDataRev: iframe.contentWindow.translateDataRev || [],
             writingData: iframe.contentWindow.writingData || null,
             retellData: iframe.contentWindow.retellData || null,
-            synonymData: iframe.contentWindow.synonymData || null
+            synonymData: iframe.contentWindow.synonymData || null,
+            sgkData: iframe.contentWindow.sgkData || null
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -3327,6 +3329,7 @@
         sort: data.sortData,
         errfix: data.errorFixData,
         mc: data.mcData,
+        sgk: data.sgkData || [],
         errorFixMode: data.errorFixMode
       };
     });
@@ -12381,7 +12384,8 @@
     sort: { label: 'Sắp xếp câu', emoji: '🧩', color: 'indigo', desc: 'Sắp xếp các từ thành câu đúng' },
     errfix: { label: 'Sửa lỗi sai', emoji: '🛠️', color: 'pink', desc: 'Tìm câu đúng để sửa lỗi sai thường gặp' },
     errfixWord: { label: 'Chọn từ phù hợp với nghĩa', emoji: '📝', color: 'pink', desc: 'Đọc câu, chọn từ phù hợp với nghĩa để điền vào chỗ trống (bài gốc trong SGK)' },
-    mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal', desc: 'Chọn đáp án đúng cho mỗi câu hỏi' }
+    mc: { label: 'Trắc nghiệm', emoji: '🎯', color: 'teal', desc: 'Chọn đáp án đúng cho mỗi câu hỏi' },
+    sgk: { label: 'Bài tập SGK · 练习', emoji: '📘', color: 'red', desc: 'Đúng các bài tập trong sách: chọn từ điền trống, chọn đáp án, chọn vị trí của từ' }
   };
 
   // errorFixData được tái sử dụng theo 2 kiểu: mặc định là "sửa lỗi sai" (chọn
@@ -12389,6 +12393,8 @@
   // điền vào chỗ trống — data file đánh dấu bằng errorFixMode:'wordchoice'.
   function errfixDef() {
     var isWordChoice = gpGameData && gpGameData.errorFixMode === 'wordchoice';
+    // HSK 5 da co tro "Bai tap SGK" rieng — cau chon tu o day la bai soan them, khong phai bai goc
+    if (isWordChoice && currentHubLevelId === 'hsk5') return { label: 'Chọn từ phù hợp', desc: 'Đọc câu, chọn từ đúng nghĩa và đúng cách dùng để điền vào chỗ trống' };
     return isWordChoice ? GAME_TYPE_DEFS.errfixWord : GAME_TYPE_DEFS.errfix;
   }
 
@@ -12481,6 +12487,13 @@
     else if (type === 'sort') renderGameSort(data);
     else if (type === 'errfix') renderGameMcList(data, { wrongPrefix: gpGameData.errorFixMode !== 'wordchoice', blankMode: gpGameData.errorFixMode === 'wordchoice', gameKey: 'errfix' });
     else if (type === 'mc') renderGameMcList(data, { wrongPrefix: false, gameKey: 'mc' });
+    else if (type === 'sgk' && window.BaiTapSgk) {
+      var skBai = currentHubLesson;
+      window.BaiTapSgk.mount($('#gpGameArea'), data, {
+        key: (skBai.fullPageUrl.match(/([\w-]+)\.html$/) || [])[1] || skBai.fullPageUrl,
+        onDone: function (r) { recordGameScore(skBai, 'sgk', r.correct, r.total); }
+      });
+    }
   }
 
   var gmSel = null;

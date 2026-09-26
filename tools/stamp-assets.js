@@ -34,7 +34,8 @@ const SHARED = [
   'js/ke-lai.js',
   'js/phan-biet.js',
   'js/khong-goi-y.js',
-  'js/nghe-dien.js'
+  'js/nghe-dien.js',
+  'js/bai-tap-sgk.js'
 ];
 
 const h = crypto.createHash('sha1');

@@ -1807,3 +1807,61 @@ dialogData = [{
   preQuiz: dialogData.reduce(function (a, d) { return a.concat(d.preQuiz || []); }, []),
   lines: dialogData.reduce(function (a, d) { return a.concat(d.lines || []); }, [])
 }];
+
+// ══════════════════════════════════════════
+// SGK · 词语辨析 如何—怎么: bảng so sánh đúng như sách (共同点 / 不同点 so hàng)
+// + 做一做 đúng cách của sách: mỗi câu tích 如何, 怎么 hoặc CẢ HAI.
+// ══════════════════════════════════════════
+synonymData.forEach(function (g) {
+  if (g.pair !== '如何 — 怎么') return;
+  g.sgk = {
+    chung: {t:'都是代词，都可用于询问方式。', vn:'Đều là đại từ, đều dùng để hỏi cách thức.', vd:'只有知道如何／怎么停止的人，才知道如何／怎么高速前进。', vdVn:'Chỉ người biết dừng lại thế nào mới biết tiến nhanh ra sao.'},
+    khac: [
+      {a:{t:'多用于书面语。', vn:'Chủ yếu dùng trong văn viết.', vd:'该如何爱护我们的地球？', vdVn:'Nên gìn giữ trái đất của chúng ta như thế nào?'},
+       b:{t:'可用于口语。', vn:'Dùng được trong khẩu ngữ.', vd:'你今天是怎么来的？', vdVn:'Hôm nay bạn đến bằng cách nào?'}},
+      {a:{t:'不能用于询问原因。', vn:'Không dùng để hỏi nguyên nhân.'},
+       b:{t:'可用于询问原因。', vn:'Dùng được để hỏi nguyên nhân.', vd:'今天怎么这么冷？', vdVn:'Hôm nay sao lạnh thế?'}},
+      {a:{t:'可用于句末表示询问状况或征求意见。', vn:'Đứng cuối câu để hỏi tình hình hoặc hỏi ý kiến.', vd:'最近身体如何？', vdVn:'Dạo này sức khoẻ ra sao?'},
+       b:{t:'可用于句首表示惊讶。', vn:'Đứng đầu câu để tỏ ý ngạc nhiên.', vd:'怎么，你不认识我了？！', vdVn:'Sao thế, cậu không nhận ra tớ à?!'}}
+    ],
+    lamThu: [
+      {s:'他向经理叙述了自己是＿＿解决这个问题的。', dap:[true,true], mau:true,
+       giai:'Hỏi / thuật lại CÁCH THỨC — cả hai đều dùng được (如何 trang trọng hơn).'},
+      {s:'你＿＿这么不耐烦？', dap:[false,true],
+       giai:'Hỏi NGUYÊN NHÂN ("sao lại…") — chỉ 怎么; 如何 không hỏi nguyên nhân.'},
+      {s:'谁知道他们是＿＿吵起来的？', dap:[false,true],
+       giai:'Câu khẩu ngữ, hỏi vì sao chuyện xảy ra → 怎么.'},
+      {s:'听说你去电台工作了？情况＿＿？', dap:[true,false],
+       giai:'Đứng CUỐI câu hỏi tình hình — chỉ 如何 đứng được ở vị trí này.'}
+    ]
+  };
+});
+
+// ══════════════════════════════════════════
+// SGK · 练习 (Bài tập trong sách, trang 12) — trò "Bài tập SGK" ở bước Luyện tập
+// ══════════════════════════════════════════
+var sgkData = [
+  {kieu:'kho', de:'选择合适的词语填空', vn:'Chọn từ thích hợp điền vào chỗ trống', tu:['催','递','喊','项','爱护','抱怨','等待'],
+   cau:[
+     {s:'她从小就＿＿小动物。', dap:['爱护']},
+     {s:'关于这段对话，下面哪＿＿是正确的？', dap:['项']},
+     {s:'请大家耐心地＿＿一会儿，不要＿＿他。', dap:['等待','催']},
+     {s:'请把那本杂志＿＿给我。', dap:['递']},
+     {s:'火车快到的时候你＿＿我一声。', dap:['喊']},
+     {s:'不要总是＿＿别人，要想想能不能改变自己。', dap:['抱怨']}
+   ]},
+  {kieu:'ab', de:'选择正确答案', vn:'Chọn đáp án đúng',
+   cau:[
+     {s:'你的病都好了吗？现在感觉＿＿？', opts:['如何','怎么'], ans:0, giai:'Cuối câu hỏi tình hình → 如何. 怎么 không đứng một mình ở cuối câu (phải là 怎么样).'},
+     {s:'电视里广告太多让观众感到很不＿＿。', opts:['耐心','耐烦'], ans:1, giai:'不耐烦 = mất kiên nhẫn, bực bội. 耐心 là tính từ/danh từ "kiên nhẫn", không nói 很不耐心 trong câu này.'},
+     {s:'这儿太＿＿了，我们换个地方吧。', opts:['吵','吵架'], ans:0, giai:'吵 là tính từ "ồn ào", đi được với 太…了. 吵架 là động từ "cãi nhau".'},
+     {s:'他这么年轻，没想到＿＿是一位著名的作家。', opts:['居然','仍然'], ans:0, giai:'Việc ngoài dự liệu → 居然. 仍然 = vẫn (như cũ), không hợp nghĩa.'}
+   ]},
+  {kieu:'vitri', de:'给括号里的词选择适当的位置', vn:'Chọn vị trí thích hợp cho từ trong ngoặc',
+   cau:[
+     {s:'如果A是你B，你会C选择D呢？', tu:'如何', ans:'C', giai:'如何 đứng trước động từ được hỏi cách thức: 你会如何选择呢？'},
+     {s:'你跟A你的同屋B吵C架D吗？', tu:'过', ans:'C', giai:'Động từ ly hợp 吵架: 过 chen vào giữa → 吵过架.'},
+     {s:'A机会是要B自己努力C去D获得的。', tu:'靠', ans:'B', giai:'靠 + người = dựa vào ai: 机会是要靠自己努力去获得的。'},
+     {s:'请不要A把头B到车窗外C去D。', tu:'伸', ans:'B', giai:'Câu 把: 把 + 头 + 伸 + 到 + nơi chốn → 把头伸到车窗外去。'}
+   ]}
+];

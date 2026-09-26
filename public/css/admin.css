@@ -336,3 +336,29 @@
   font-family: inherit; font-size: 1rem; font-weight: 700; color: var(--color-red-700);
 }
 .dm-in:focus { outline: 2px solid var(--color-red-500); outline-offset: 1px; }
+
+/* ---------- Tab Gop y ---------- */
+.gy-dem { display: inline-block; min-width: 20px; padding: 0 6px; margin-left: 4px; border-radius: 999px; background: var(--color-red-600); color: #fff; font-size: 12px; font-weight: 800; line-height: 20px; text-align: center; }
+.gy-loc { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 16px; }
+.gy-loc-nut { min-height: 40px; padding: 0 16px; border: 1.5px solid var(--color-gray-200); border-radius: 999px; background: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.gy-loc-nut.is-on { border-color: var(--color-red-600); background: var(--color-red-50); color: var(--color-red-700); }
+.gy-lammoi { margin-left: auto; }
+.gy-ds { display: grid; gap: 12px; }
+.gy-muc { padding: 14px 16px; border: 1.5px solid var(--color-gray-200); border-radius: 12px; background: #fff; }
+.gy-muc.is-moi { border-color: var(--color-red-500); box-shadow: 0 0 0 3px var(--color-red-50); }
+.gy-dau { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.gy-loai { padding: 2px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 700; background: var(--color-gray-100); color: var(--color-gray-700); }
+.gy-loai-noidung { background: var(--color-red-50); color: var(--color-red-700); }
+.gy-loai-web { background: #eaf0ff; color: #2f5fdb; }
+.gy-loai-dexuat { background: var(--color-green-50); color: #17693a; }
+.gy-ten { font-size: 15px; }
+.gy-tg { font-size: 13px; color: var(--color-gray-600); }
+.gy-moi { margin-left: auto; padding: 1px 8px; border-radius: 6px; background: var(--color-red-600); color: #fff; font-size: 12px; font-weight: 800; }
+.gy-nd { margin: 10px 0 0; font-size: 15px; line-height: 1.6; white-space: pre-wrap; }
+.gy-trang { margin: 6px 0 0; font-size: 13px; color: var(--color-gray-600); overflow-wrap: anywhere; }
+.gy-tl { margin: 8px 0 0; padding: 8px 12px; border-radius: 10px; background: var(--color-green-50); font-size: 14px; white-space: pre-wrap; }
+.gy-hanh-dong { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; margin-top: 10px; }
+.gy-nhap { flex: 1 1 260px; min-height: 44px; padding: 8px 12px; border: 1.5px solid var(--color-gray-200); border-radius: 10px; font: inherit; resize: vertical; }
+.gy-nhap:focus { outline: none; border-color: var(--color-red-500); }
+.gy-khach { font-size: 13px; color: var(--color-gray-600); align-self: center; }
+.gy-kq { margin: 6px 0 0; font-size: 13px; color: var(--color-gray-600); min-height: 1em; }

@@ -40,6 +40,7 @@
   <nav class="tr-tabs" role="tablist" aria-label="Báo cáo">
     <button type="button" class="tr-tab active" data-tab="students" role="tab" aria-selected="true">👩‍🎓 Học sinh</button>
     <button type="button" class="tr-tab" data-tab="classes" role="tab" aria-selected="false">🏫 Lớp &amp; bài giao</button>
+    <button type="button" class="tr-tab" data-tab="gopy" role="tab" aria-selected="false">💬 Góp ý <span class="gy-dem" id="gyTabDem" hidden>0</span></button>
   </nav>
 
   <!-- Danh sach lop -->
@@ -104,10 +105,14 @@
 
   <!-- Lop hoc & bai giao -->
   <div id="trClasses" hidden></div>
+
+  <!-- Gop y cua hoc sinh -->
+  <div id="trGopY" hidden></div>
 </div>
 
 <script src="/js/data.js"></script>
 <script src="/js/admin.js"></script>
 <script src="/js/admin-classes.js"></script>
+<script src="/js/admin-gop-y.js"></script>
 </body>
 </html>

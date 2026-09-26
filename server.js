@@ -256,6 +256,7 @@ async function initDb() {
   await initDailyPointsTable();
   await initResumeTable();
   await initChatTables();
+  await initGopYTable();
   await initStarsTable();
   await initClassTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
@@ -1786,6 +1787,121 @@ app.post('/api/ai/cham-cau', asyncRoute(async (req, res) => {
   else if (lastErr && lastErr.status === 402) msg = 'AI chấm bài đang tạm dừng vì khoá AI của website đã hết hạn mức. Báo thầy/cô nạp thêm hoặc đổi khoá nhé!';
   else if (lastErr && (lastErr.status === 401 || lastErr.status === 403)) msg = 'Khoá AI của website chưa đúng hoặc đã bị thu hồi. Báo thầy/cô kiểm tra lại nhé!';
   res.status(502).json({ error: msg });
+}));
+
+// ---------------- Gop y cua hoc sinh gui thay/co ----------------
+// Hoc sinh gui tu nut "Tro giup" o moi trang (khong can dang nhap). Thay/co
+// doc + tra loi o trang Bao cao; em nao dang nhap thi thay cau tra loi ngay
+// trong muc Gop y. Noi dung nam trong CSDL / data/ — khong vao ma nguon.
+const GOP_Y_FILE = path.join(DATA_DIR, 'gop-y.json');
+const GOP_Y_LOAI = { noidung: 'Bài học có lỗi', web: 'Web bị lỗi', dexuat: 'Đề xuất', khac: 'Khác' };
+const gopYLog = new Map(); // "u:id" | "ip:addr" -> [ms cac lan gui trong 10 phut]
+
+async function initGopYTable() {
+  if (!USE_DB) return;
+  await dbPool.query(
+    'CREATE TABLE IF NOT EXISTS gop_y (' +
+      'id VARCHAR(16) PRIMARY KEY, ' +
+      'user_id VARCHAR(36) NULL, ' +
+      'ten VARCHAR(80) NULL, ' +
+      'loai VARCHAR(16) NOT NULL, ' +
+      'noi_dung TEXT NOT NULL, ' +
+      'trang VARCHAR(300) NULL, ' +
+      'created_ms BIGINT NOT NULL, ' +
+      'doc_ms BIGINT NULL, ' +
+      'tra_loi TEXT NULL, ' +
+      'tra_loi_ms BIGINT NULL, ' +
+      'INDEX idx_user (user_id, created_ms), ' +
+      'INDEX idx_created (created_ms)' +
+    ')'
+  );
+}
+function gopYRow(r) {
+  return {
+    id: r.id, userId: r.user_id || null, ten: r.ten || '', loai: r.loai, noiDung: r.noi_dung,
+    trang: r.trang || '', createdMs: Number(r.created_ms), docMs: r.doc_ms == null ? null : Number(r.doc_ms),
+    traLoi: r.tra_loi || '', traLoiMs: r.tra_loi_ms == null ? null : Number(r.tra_loi_ms),
+  };
+}
+async function docGopY(chiUser) {
+  if (!USE_DB) {
+    const ds = (readJsonFile(GOP_Y_FILE) || {}).items || [];
+    return ds.filter((x) => !chiUser || x.userId === chiUser).sort((a, b) => b.createdMs - a.createdMs);
+  }
+  const [rows] = chiUser
+    ? await dbPool.query('SELECT * FROM gop_y WHERE user_id = ? ORDER BY created_ms DESC LIMIT 30', [chiUser])
+    : await dbPool.query('SELECT * FROM gop_y ORDER BY created_ms DESC LIMIT 500');
+  return rows.map(gopYRow);
+}
+
+app.post('/api/gop-y', asyncRoute(async (req, res) => {
+  const b = req.body || {};
+  const loai = GOP_Y_LOAI[b.loai] ? b.loai : 'khac';
+  const noiDung = String(b.noiDung || '').trim().slice(0, 1000);
+  if (noiDung.length < 3) return res.status(400).json({ error: 'Em viết nội dung góp ý giúp cô nhé.' });
+  const userId = await optionalUserId(req);
+  const key = userId ? 'u:' + userId : 'ip:' + clientIp(req);
+  const now = Date.now();
+  const gan = (gopYLog.get(key) || []).filter((t) => now - t < 600000);
+  if (gan.length >= 5) return res.status(429).json({ error: 'Em gửi nhiều quá rồi, đợi mười phút rồi gửi tiếp nhé.' });
+  gan.push(now);
+  gopYLog.set(key, gan);
+  if (gopYLog.size > 5000) gopYLog.forEach((ds, k) => { if (!ds.some((t) => now - t < 600000)) gopYLog.delete(k); });
+
+  const row = {
+    id: newShortId(), userId: userId || null,
+    ten: userId ? '' : String(b.ten || '').trim().slice(0, 60),
+    loai, noiDung, trang: String(b.trang || '').slice(0, 300), createdMs: now,
+    docMs: null, traLoi: '', traLoiMs: null,
+  };
+  if (!USE_DB) {
+    const d = readJsonFile(GOP_Y_FILE) || {};
+    d.items = (d.items || []).concat(row);
+    writeJsonFile(GOP_Y_FILE, d);
+  } else {
+    await dbPool.query('INSERT INTO gop_y (id, user_id, ten, loai, noi_dung, trang, created_ms) VALUES (?,?,?,?,?,?,?)',
+      [row.id, row.userId, row.ten || null, row.loai, row.noiDung, row.trang || null, row.createdMs]);
+  }
+  res.json({ ok: true, id: row.id });
+}));
+
+// Gop y cua chinh em (kem cau tra loi cua thay/co)
+app.get('/api/gop-y/cua-toi', requireAuth, asyncRoute(async (req, res) => {
+  const ds = (await docGopY(req.user.id)).slice(0, 30).map((x) => ({
+    id: x.id, loai: x.loai, noiDung: x.noiDung, createdMs: x.createdMs, daDoc: !!x.docMs, traLoi: x.traLoi, traLoiMs: x.traLoiMs,
+  }));
+  res.json({ items: ds });
+}));
+
+app.get('/api/admin/gop-y', requireAdmin, asyncRoute(async (req, res) => {
+  const ds = await docGopY(null);
+  const ten = await loadUserNames();
+  res.json({
+    loai: GOP_Y_LOAI,
+    chuaDoc: ds.filter((x) => !x.docMs).length,
+    items: ds.map((x) => Object.assign({}, x, { ten: x.userId ? (ten[x.userId] || 'Học sinh') : (x.ten || 'Khách') })),
+  });
+}));
+
+// Danh dau da doc / tra loi
+app.post('/api/admin/gop-y/:id', requireAdmin, asyncRoute(async (req, res) => {
+  const id = String(req.params.id || '');
+  const now = Date.now();
+  const traLoi = req.body && req.body.traLoi != null ? String(req.body.traLoi).trim().slice(0, 1000) : null;
+  const daDoc = req.body && req.body.daDoc === false ? false : true;
+  if (!USE_DB) {
+    const d = readJsonFile(GOP_Y_FILE) || {};
+    const x = (d.items || []).find((y) => y.id === id);
+    if (!x) return res.status(404).json({ error: 'Không tìm thấy góp ý.' });
+    x.docMs = daDoc ? (x.docMs || now) : null;
+    if (traLoi != null) { x.traLoi = traLoi; x.traLoiMs = traLoi ? now : null; }
+    writeJsonFile(GOP_Y_FILE, d);
+  } else {
+    const [r] = await dbPool.query('UPDATE gop_y SET doc_ms = ? WHERE id = ?', [daDoc ? now : null, id]);
+    if (!r.affectedRows) return res.status(404).json({ error: 'Không tìm thấy góp ý.' });
+    if (traLoi != null) await dbPool.query('UPDATE gop_y SET tra_loi = ?, tra_loi_ms = ? WHERE id = ?', [traLoi || null, traLoi ? now : null, id]);
+  }
+  res.json({ ok: true });
 }));
 
 // ---------------- Trang thai truc tuyen ----------------

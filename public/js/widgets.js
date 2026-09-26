@@ -129,18 +129,27 @@
   var root = document.createElement('div');
   root.className = 'hw-root';
   root.innerHTML =
+    // Mot nut "Tro giup" duy nhat: bam ra menu (Tro ly AI · Tin nhan). Truoc
+    // day la ba nut noi chong len nhau (sao + den long + chat), che mat nut
+    // "Chưa học →" va chu ben phai tren dien thoai.
     '<div class="hw-fab-stack">' +
-      '<a class="hw-star" id="hwStar" href="/#dang-nhap" title="Đăng nhập để tích ngôi sao chăm chỉ">' +
-        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>' +
-        '<span class="hw-star-num" id="hwStarNum">Tích sao</span>' +
-        '<span class="hw-star-bar" id="hwStarBar" hidden><i id="hwStarFill"></i></span>' +
-      '</a>' +
-      '<div class="hw-mascot-wrap" id="hwMascotWrap">' +
-        '<button type="button" class="hw-mascot" id="hwAiBtn" aria-label="Mở Trợ lý AI" aria-expanded="false" aria-controls="hwAiPanel">' + I.lantern() + '</button>' +
-        '<button type="button" class="hw-mascot-hide" id="hwAiHide" aria-label="Ẩn Trợ lý AI">' + I.x + '</button>' +
+      '<div class="hw-help-menu" id="hwHelpMenu" role="menu" hidden>' +
+        '<div class="hw-star-slot-menu" id="hwStarMenuSlot"></div>' +
+        '<button type="button" class="hw-menu-item" id="hwAiBtn" role="menuitem" aria-expanded="false" aria-controls="hwAiPanel">' +
+          '<span class="hw-menu-ico hw-menu-ico-ai">' + I.lantern() + '</span>' +
+          '<span class="hw-menu-text"><b>Hỏi Trợ lý AI</b><small>Tra từ, giải thích ngữ pháp, dịch câu</small></span></button>' +
+        '<button type="button" class="hw-menu-item" id="hwGopYBtn" role="menuitem" aria-expanded="false" aria-controls="hwGopYPanel">' +
+          '<span class="hw-menu-ico hw-menu-ico-gy">' + I.chat + '</span>' +
+          '<span class="hw-menu-text"><b>Góp ý cho cô</b><small>Báo lỗi bài học, lỗi web hoặc đề xuất</small></span>' +
+          '<span class="hw-badge hw-badge-inline" id="hwGopYBadge" hidden>0</span></button>' +
+        // Tin nhan giua cac tai khoan: tam an (thay bang Gop y), giu ma de bat lai khi can
+        '<button type="button" class="hw-menu-item" id="hwChatBtn" role="menuitem" aria-expanded="false" aria-controls="hwChatPanel" hidden>' +
+          '<span class="hw-menu-ico">' + I.chat + '</span>' +
+          '<span class="hw-menu-text"><b>Tin nhắn</b><small>Nhắn thầy cô và bạn học</small></span>' +
+          '<span class="hw-badge hw-badge-inline" id="hwChatBadge" hidden>0</span></button>' +
       '</div>' +
-      '<button type="button" class="hw-chat-fab" id="hwChatBtn" aria-label="Mở Tin nhắn" aria-expanded="false" aria-controls="hwChatPanel">' +
-        I.chat + '<span class="hw-badge" id="hwChatBadge" hidden>0</span></button>' +
+      '<button type="button" class="hw-help-fab" id="hwHelpFab" aria-label="Trợ giúp" aria-expanded="false" aria-controls="hwHelpMenu">' +
+        I.lantern() + '<span class="hw-badge" id="hwHelpBadge" hidden>0</span></button>' +
     '</div>' +
 
     '<section class="hw-panel" id="hwAiPanel" role="dialog" aria-labelledby="hwAiTitle" hidden>' +
@@ -164,18 +173,143 @@
     '</section>' +
 
     '<section class="hw-panel" id="hwChatPanel" role="dialog" aria-labelledby="hwChatTitle" hidden></section>' +
+
+    '<section class="hw-panel hw-gy-panel" id="hwGopYPanel" role="dialog" aria-labelledby="hwGopYTitle" hidden>' +
+      '<header class="hw-head">' +
+        '<span class="hw-head-avatar hw-gy-avatar">' + I.chat + '</span>' +
+        '<div class="hw-head-text"><p class="hw-head-title" id="hwGopYTitle">Góp ý cho cô</p><p class="hw-head-sub">Cô đọc mọi góp ý và trả lời sớm nhất</p></div>' +
+        '<button type="button" class="hw-icon-btn" data-hw-close aria-label="Đóng">' + I.close + '</button>' +
+      '</header>' +
+      '<div class="hw-body hw-gy-body">' +
+        '<form class="hw-gy-form" id="hwGopYForm">' +
+          '<p class="hw-gy-nhan">Em muốn góp ý về</p>' +
+          '<div class="hw-gy-loai" role="radiogroup" aria-label="Loại góp ý">' +
+            '<button type="button" class="hw-gy-chip is-on" data-loai="noidung" role="radio" aria-checked="true">Bài học có lỗi</button>' +
+            '<button type="button" class="hw-gy-chip" data-loai="web" role="radio" aria-checked="false">Web bị lỗi</button>' +
+            '<button type="button" class="hw-gy-chip" data-loai="dexuat" role="radio" aria-checked="false">Đề xuất</button>' +
+            '<button type="button" class="hw-gy-chip" data-loai="khac" role="radio" aria-checked="false">Khác</button>' +
+          '</div>' +
+          '<label class="hw-gy-nhan" for="hwGopYText">Nội dung</label>' +
+          '<textarea class="hw-gy-text" id="hwGopYText" rows="5" maxlength="1000" placeholder="Ví dụ: Bài 3 HSK 2, câu 4 phần ngữ pháp đáp án hình như bị sai…"></textarea>' +
+          '<div class="hw-gy-ten" id="hwGopYTenWrap"><label class="hw-gy-nhan" for="hwGopYTen">Tên em <small>(không bắt buộc)</small></label>' +
+            '<input type="text" class="hw-gy-input" id="hwGopYTen" maxlength="60" autocomplete="name"></div>' +
+          '<p class="hw-gy-trang" id="hwGopYTrang"></p>' +
+          '<button type="submit" class="hw-gy-gui" id="hwGopYGui">Gửi góp ý</button>' +
+          '<p class="hw-gy-kq" id="hwGopYKq" role="status" aria-live="polite"></p>' +
+        '</form>' +
+        '<div class="hw-gy-cu" id="hwGopYCu"></div>' +
+      '</div>' +
+    '</section>' +
     '<div class="hw-toast" id="hwToast" role="status" aria-live="polite" hidden></div>';
   document.body.appendChild(root);
 
-  var aiBtn = $('#hwAiBtn', root), chatBtn = $('#hwChatBtn', root);
-  var aiPanel = $('#hwAiPanel', root), chatPanel = $('#hwChatPanel', root);
+  var aiBtn = $('#hwAiBtn', root), chatBtn = $('#hwChatBtn', root), gyBtn = $('#hwGopYBtn', root);
+  var aiPanel = $('#hwAiPanel', root), chatPanel = $('#hwChatPanel', root), gyPanel = $('#hwGopYPanel', root);
 
   function closePanels() {
-    [aiPanel, chatPanel].forEach(function (p) { p.hidden = true; });
+    [aiPanel, chatPanel, gyPanel].forEach(function (p) { p.hidden = true; });
     aiBtn.setAttribute('aria-expanded', 'false');
     chatBtn.setAttribute('aria-expanded', 'false');
+    gyBtn.setAttribute('aria-expanded', 'false');
     stopChatPolling();
   }
+
+  // ============================================================
+  // GOP Y CHO THAY/CO — hoc sinh bao loi / de xuat ngay luc dang hoc
+  // ============================================================
+  var gyLoai = 'noidung';
+  function trangHienTai() {
+    var h = document.querySelector('.dash-section:not([hidden]) h1, main h1, h1');
+    var ten = h ? h.textContent.replace(/\s+/g, ' ').trim() : document.title;
+    return (ten ? ten.slice(0, 120) + ' · ' : '') + location.pathname + location.hash;
+  }
+  function veGopYCu() {
+    var hop = $('#hwGopYCu', root);
+    if (!auth()) { hop.innerHTML = ''; return; }
+    getJSON('/api/gop-y/cua-toi').then(function (d) {
+      var ds = d.items || [];
+      var coTraLoi = ds.filter(function (x) { return x.traLoi; }).length;
+      var badge = $('#hwGopYBadge', root);
+      if (badge) badge.hidden = true;
+      try { localStorage.setItem('hw_gy_seen', String(coTraLoi)); } catch (e) { /* bo qua */ }
+      capNhatHuyHieu();
+      if (!ds.length) { hop.innerHTML = ''; return; }
+      hop.innerHTML = '<p class="hw-gy-nhan">Góp ý em đã gửi</p>' + ds.slice(0, 10).map(function (x) {
+        var ngay = new Date(x.createdMs).toLocaleDateString('vi-VN');
+        return '<div class="hw-gy-muc">' +
+          '<p class="hw-gy-muc-dau"><span>' + esc(ngay) + '</span><span class="hw-gy-tt' + (x.traLoi ? ' is-rep' : (x.daDoc ? ' is-read' : '')) + '">' +
+            (x.traLoi ? 'Cô đã trả lời' : (x.daDoc ? 'Cô đã đọc' : 'Đã gửi')) + '</span></p>' +
+          '<p class="hw-gy-muc-nd">' + esc(x.noiDung) + '</p>' +
+          (x.traLoi ? '<p class="hw-gy-muc-tl"><b>Cô:</b> ' + esc(x.traLoi) + '</p>' : '') +
+        '</div>';
+      }).join('');
+    }).catch(function () { hop.innerHTML = ''; });
+  }
+  gyBtn.addEventListener('click', function () {
+    if (!gyPanel.hidden) { closePanels(); return; }
+    closePanels();
+    gyPanel.hidden = false;
+    gyBtn.setAttribute('aria-expanded', 'true');
+    $('#hwGopYTenWrap', root).hidden = !!auth();
+    $('#hwGopYTrang', root).textContent = 'Kèm theo: ' + trangHienTai();
+    $('#hwGopYKq', root).textContent = '';
+    veGopYCu();
+    setTimeout(function () { $('#hwGopYText', root).focus(); }, 60);
+  });
+  gyBtn.addEventListener('click', function () { helpMenu.hidden = true; helpFab.setAttribute('aria-expanded', 'false'); });
+  $('#hwGopYForm', root).addEventListener('click', function (e) {
+    var c = e.target.closest('.hw-gy-chip');
+    if (!c) return;
+    gyLoai = c.getAttribute('data-loai');
+    Array.prototype.forEach.call(root.querySelectorAll('.hw-gy-chip'), function (x) {
+      var on = x === c;
+      x.classList.toggle('is-on', on);
+      x.setAttribute('aria-checked', String(on));
+    });
+  });
+  $('#hwGopYForm', root).addEventListener('submit', function (e) {
+    e.preventDefault();
+    var o = $('#hwGopYText', root), kq = $('#hwGopYKq', root), nut = $('#hwGopYGui', root);
+    var nd = o.value.trim();
+    if (nd.length < 3) { kq.textContent = 'Em viết nội dung góp ý giúp cô nhé.'; kq.className = 'hw-gy-kq is-loi'; o.focus(); return; }
+    nut.disabled = true; kq.className = 'hw-gy-kq'; kq.textContent = 'Đang gửi…';
+    fetch('/api/gop-y', {
+      method: 'POST', headers: headers(true),
+      body: JSON.stringify({ loai: gyLoai, noiDung: nd, trang: trangHienTai(), ten: $('#hwGopYTen', root).value.trim() })
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error || 'Chưa gửi được, em thử lại nhé.'); return j; });
+    }).then(function () {
+      o.value = '';
+      kq.className = 'hw-gy-kq is-ok';
+      kq.textContent = 'Đã gửi! Cảm ơn em — cô sẽ đọc sớm' + (auth() ? ' và trả lời ngay trong mục này.' : '.');
+      veGopYCu();
+    }).catch(function (err) {
+      kq.className = 'hw-gy-kq is-loi';
+      kq.textContent = err.message;
+    }).then(function () { nut.disabled = false; });
+  });
+
+  // So cau tra loi moi cua thay/co -> cham do tren nut Tro giup
+  var gySoTraLoi = 0;
+  function capNhatHuyHieu() {
+    var tin = +(($('#hwChatBadge', root) || {}).textContent || 0) || 0;
+    var daXem = 0;
+    try { daXem = +localStorage.getItem('hw_gy_seen') || 0; } catch (e) { /* bo qua */ }
+    var moi = Math.max(0, gySoTraLoi - daXem);
+    var gyB = $('#hwGopYBadge', root);
+    if (gyB) { gyB.hidden = moi <= 0; gyB.textContent = String(moi); }
+    var tong = moi + (chatBtn.hidden ? 0 : tin);
+    var b = $('#hwHelpBadge', root);
+    if (b) { b.hidden = tong <= 0; b.textContent = tong > 99 ? '99+' : String(tong); }
+  }
+  function kiemTraLoi() {
+    if (!auth()) return;
+    getJSON('/api/gop-y/cua-toi').then(function (d) {
+      gySoTraLoi = (d.items || []).filter(function (x) { return x.traLoi; }).length;
+      capNhatHuyHieu();
+    }).catch(function () { /* bo qua */ });
+  }
+  setTimeout(kiemTraLoi, 4000);
   root.addEventListener('click', function (e) {
     if (e.target.closest('[data-hw-close]')) closePanels();
   });
@@ -183,12 +317,37 @@
     if (e.key === 'Escape' && (!aiPanel.hidden || !chatPanel.hidden)) closePanels();
   });
 
-  if (ssGet('hw_ai_hidden', false)) $('#hwMascotWrap', root).hidden = true;
-  $('#hwAiHide', root).addEventListener('click', function () {
-    $('#hwMascotWrap', root).hidden = true;
-    if (!aiPanel.hidden) closePanels();
-    ssSet('hw_ai_hidden', true);
+  // ---- Nut "Tro giup" mo / dong menu ----
+  var helpFab = $('#hwHelpFab', root), helpMenu = $('#hwHelpMenu', root);
+  function dongMenu() { helpMenu.hidden = true; helpFab.setAttribute('aria-expanded', 'false'); }
+  helpFab.addEventListener('click', function () {
+    var mo = helpMenu.hidden;
+    if (mo) closePanels();
+    helpMenu.hidden = !mo;
+    helpFab.setAttribute('aria-expanded', String(mo));
   });
+  // Chon mot muc thi menu tu dong lai; bam ra ngoai cung dong
+  [aiBtn, chatBtn].forEach(function (b) { b.addEventListener('click', dongMenu); });
+  document.addEventListener('click', function (e) {
+    if (!helpMenu.hidden && !e.target.closest('.hw-fab-stack')) dongMenu();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !helpMenu.hidden) dongMenu(); });
+
+  // ---- Ngoi sao cham chi: len thanh tren cua app neu trang co cho dat
+  //      (#hwStarSlot), con khong thi nam dau menu Tro giup ----
+  (function () {
+    var s = document.createElement('a');
+    s.className = 'hw-star';
+    s.id = 'hwStar';
+    s.href = '/#dang-nhap';
+    s.title = 'Đăng nhập để tích ngôi sao chăm chỉ';
+    s.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>' +
+      '<span class="hw-star-num" id="hwStarNum">Tích sao</span>' +
+      '<span class="hw-star-bar" id="hwStarBar" hidden><i id="hwStarFill"></i></span>';
+    var o = document.getElementById('hwStarSlot');
+    if (o) { s.classList.add('is-top'); o.appendChild(s); }
+    else $('#hwStarMenuSlot', root).appendChild(s);
+  })();
 
   // ============================================================
   // 1) TRO LY AI
@@ -687,7 +846,9 @@
   //    hoc that. May chu giu so sao; o day chi bao "dang hoc" moi 30 giay khi
   //    tab dang mo va hoc sinh co thao tac (2 phut khong dong gi = dang nghi).
   // ============================================================
-  var starEl = $('#hwStar', root), starNum = $('#hwStarNum', root), starBar = $('#hwStarBar', root), starFill = $('#hwStarFill', root);
+  // Ngoi sao co the nam tren thanh tren cua app (ngoai khung widget) nen tim tren ca trang
+  var starEl = document.getElementById('hwStar'), starNum = document.getElementById('hwStarNum'),
+    starBar = document.getElementById('hwStarBar'), starFill = document.getElementById('hwStarFill');
   var toastEl = $('#hwToast', root), toastTimer = null;
   var star = { total: 0, secToNext: 300, blockSec: 300, perBlock: 5, capped: false, ready: false, tasksDone: false, tasksStars: 10 };
   var STAR_TICK_SEC = 30, STAR_IDLE_MS = 120000;

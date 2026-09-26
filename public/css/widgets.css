@@ -671,3 +671,132 @@
 .gd-err-bad { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: #c62828; text-decoration: line-through; text-decoration-color: rgba(198,40,40,0.4); }
 .gd-err-why { font-size: 0.86rem; color: #5f5952; margin: 2px 0; }
 .gd-err-ok { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: #1f8a4c; font-weight: 600; }
+
+/* ============================================================
+   MOT NUT "TRO GIUP" (thay ba nut noi cu) + MENU + GOP Y
+   ============================================================ */
+.hw-fab-stack { gap: 10px; align-items: flex-end; }
+.hw-help-fab {
+  position: relative;
+  display: grid; place-items: center;
+  width: 56px; height: 56px; padding: 0;
+  border: none; border-radius: 50%;
+  background: #fff6e5;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--hw-gold), 0 8px 20px rgba(43, 36, 32, 0.22);
+  cursor: pointer;
+  transition: transform 0.18s ease;
+}
+.hw-help-fab:hover { transform: translateY(-2px); }
+.hw-help-fab svg { width: 42px; height: 42px; }
+.hw-help-fab:focus-visible, .hw-menu-item:focus-visible, .hw-gy-chip:focus-visible, .hw-gy-gui:focus-visible {
+  outline: 3px solid var(--hw-gold); outline-offset: 2px;
+}
+
+.hw-help-menu {
+  width: 290px;
+  padding: 8px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--hw-shadow);
+  display: flex; flex-direction: column; gap: 4px;
+  transform-origin: bottom right;
+  animation: hwPop 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.hw-menu-item {
+  position: relative;
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; min-height: 56px; padding: 8px 10px;
+  border: none; border-radius: 12px; background: transparent;
+  text-align: left; color: var(--hw-ink); cursor: pointer;
+}
+.hw-menu-item:hover { background: var(--hw-bg-soft); }
+.hw-menu-ico {
+  flex-shrink: 0; display: grid; place-items: center;
+  width: 40px; height: 40px; border-radius: 12px;
+  background: var(--hw-red-soft); color: var(--hw-red);
+}
+.hw-menu-ico svg { width: 22px; height: 22px; }
+.hw-menu-ico-ai { background: #fff6e5; }
+.hw-menu-ico-ai svg { width: 34px; height: 34px; }
+.hw-menu-text { display: grid; gap: 1px; min-width: 0; }
+.hw-menu-text b { font-size: 15px; font-weight: 700; }
+.hw-menu-text small { font-size: 12.5px; color: var(--hw-mid); line-height: 1.35; }
+.hw-badge-inline { position: static; margin-left: auto; border: none; flex-shrink: 0; }
+
+/* Ngoi sao nam dau menu (trang khong co thanh tren) */
+.hw-star-slot-menu:empty { display: none; }
+.hw-star-slot-menu { padding: 2px 2px 6px; margin-bottom: 2px; border-bottom: 1px solid var(--hw-line); }
+.hw-star-slot-menu .hw-star { box-shadow: none; background: #fff6e5; width: 100%; justify-content: flex-start; }
+
+/* Ngoi sao tren thanh tren cua app — gon, cung co voi hai nut Am thanh / Pinyin */
+.hw-star.is-top {
+  position: relative; display: inline-flex; align-items: center; gap: 6px;
+  min-height: 36px; padding: 4px 12px 4px 8px;
+  border-radius: 999px; background: #fff6e5; color: #8a5a0f;
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif; font-size: 14px; font-weight: 800; line-height: 1;
+  text-decoration: none; box-shadow: inset 0 0 0 1.5px #f2bf6b; overflow: hidden;
+}
+.hw-star.is-top svg { width: 18px; height: 18px; fill: #f2bf6b; stroke: #b7791f; stroke-width: 1.2; flex-shrink: 0; }
+.hw-star.is-top .hw-star-bar { left: 10px; right: 10px; bottom: 3px; }
+.hw-star.is-top:hover { background: #fff1d2; }
+.hw-star.is-top:focus-visible { outline: 3px solid #f2bf6b; outline-offset: 2px; }
+
+/* Khung chat / AI / gop y mo ngay tren nut, khong con lech sang trai nua */
+.hw-panel { right: 22px; bottom: 92px; height: min(620px, calc(100vh - 120px)); }
+
+/* Dang lam bai thi an nut noi — nhuong cho cho noi dung va nut bam */
+body:has(.dash-section[id$="Practice"]:not([hidden])) .hw-fab-stack,
+body:has(#srsPractice:not([hidden])) .hw-fab-stack,
+body:has(#ghPlay:not([hidden])) .hw-fab-stack { display: none; }
+
+/* ---------- Gop y ---------- */
+.hw-gy-avatar { background: var(--hw-red-soft); color: var(--hw-red); display: grid; place-items: center; }
+.hw-gy-avatar svg { width: 22px; height: 22px; }
+.hw-gy-body { padding: 14px 18px 18px; overflow-y: auto; }
+.hw-gy-form { display: grid; gap: 8px; }
+.hw-gy-nhan { margin: 6px 0 0; font-size: 13px; font-weight: 700; color: var(--hw-mid); }
+.hw-gy-nhan small { font-weight: 500; }
+.hw-gy-loai { display: flex; flex-wrap: wrap; gap: 6px; }
+.hw-gy-chip {
+  min-height: 40px; padding: 6px 14px;
+  border: 1.5px solid var(--hw-line); border-radius: 999px; background: #fff;
+  font-size: 14px; font-weight: 600; color: var(--hw-ink); cursor: pointer;
+}
+.hw-gy-chip.is-on { border-color: var(--hw-red); background: var(--hw-red-soft); color: var(--hw-red-deep); }
+.hw-gy-text, .hw-gy-input {
+  width: 100%; padding: 10px 12px;
+  border: 1.5px solid var(--hw-line); border-radius: 12px; background: #fff;
+  font: inherit; font-size: 15px; color: var(--hw-ink); resize: vertical;
+}
+.hw-gy-text:focus, .hw-gy-input:focus { outline: none; border-color: var(--hw-red); box-shadow: 0 0 0 3px var(--hw-red-soft); }
+.hw-gy-trang { margin: 2px 0 0; font-size: 12.5px; color: var(--hw-mid); overflow-wrap: anywhere; }
+.hw-gy-gui {
+  min-height: 48px; margin-top: 4px;
+  border: none; border-radius: 12px; background: var(--hw-red); color: #fff;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+}
+.hw-gy-gui:hover { background: var(--hw-red-deep); }
+.hw-gy-gui:disabled { opacity: 0.6; cursor: progress; }
+.hw-gy-kq { margin: 0; font-size: 14px; min-height: 1.2em; }
+.hw-gy-kq.is-ok { color: #17693a; font-weight: 600; }
+.hw-gy-kq.is-loi { color: var(--hw-red-deep); font-weight: 600; }
+.hw-gy-cu { display: grid; gap: 8px; margin-top: 14px; }
+.hw-gy-muc { padding: 10px 12px; border-radius: 12px; background: var(--hw-bg-soft); }
+.hw-gy-muc p { margin: 0; }
+.hw-gy-muc-dau { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--hw-mid); }
+.hw-gy-tt { font-weight: 700; }
+.hw-gy-tt.is-read { color: #8a5a0f; }
+.hw-gy-tt.is-rep { color: #17693a; }
+.hw-gy-muc-nd { margin-top: 4px !important; font-size: 14px; white-space: pre-wrap; }
+.hw-gy-muc-tl { margin-top: 6px !important; padding: 8px 10px; border-radius: 10px; background: #e9f6ee; font-size: 14px; white-space: pre-wrap; }
+
+@media (max-width: 640px) {
+  .hw-help-fab { width: 52px; height: 52px; }
+  .hw-help-fab svg { width: 38px; height: 38px; }
+  .hw-help-menu { width: min(290px, calc(100vw - 28px)); }
+  .hw-panel { right: 0; bottom: 0; height: 88dvh; }
+  .hw-star.is-top .hw-star-num { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hw-help-menu, .hw-help-fab { animation: none; transition: none; }
+}

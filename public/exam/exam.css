@@ -579,3 +579,13 @@ button.ex-folder:hover { border-color: #e0a59f; transform: translateY(-1px); }
 .ex-h30 .tag { background: var(--ex-red-soft); color: #a82d24; }
 .ex-can-dn { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; font-weight: 600; color: var(--ex-mid); }
 .ex-can-dn svg { width: 15px; height: 15px; }
+
+/* HSK 1: chon 1 trong 3 tranh (pic-mc) + tranh kem tu (judge-pic co chu) */
+.ex-opts-pic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.ex-opt-pic { padding: 10px; min-height: 0; display: block; }
+.ex-opt-pic img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; border-radius: 10px; }
+.ex-judge-tu { flex: 1; min-width: 90px; }
+.ex-judge-tu .ex-text { text-align: center; }
+.ex-judge-tu .ex-text .zh { font-size: 2rem; line-height: 1.3; }
+.ex-judge-tu .ex-text .py { font-size: 1rem; }
+@media (max-width: 480px) { .ex-opts-pic { gap: 8px; } .ex-opt-pic { padding: 6px; } }

@@ -300,10 +300,21 @@
     var h = '<p class="ex-part-intro"><b>' + esc(part.name) + '</b> · ' + esc(part.intro || '') + '</p>';
     if (part.example && (part.type === 'arrange' || part.type === 'write')) h += '<p class="ex-example ex-example-part">' + esc(part.example) + '</p>';
     if (part.type === 'judge-pic') {
+      // HSK 1 phan Doc 1: tranh kem mot tu (chu + pinyin) — dung hay sai
       part.questions.forEach(function (q) {
         h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n, q) +
-          '<div class="ex-judge"><img src="' + data.img + q.img + '" alt="Hình câu ' + q.n + '" loading="lazy" />' + tfBtns(q.n) + '</div>' +
+          '<div class="ex-judge"><img src="' + data.img + q.img + '" alt="Hình câu ' + q.n + '" loading="lazy" />' +
+          (q.zh ? '<div class="ex-judge-tu">' + textBlock(q) + '</div>' : '') + tfBtns(q.n) + '</div>' +
           explainBox(q.n) + '</div>';
+      });
+    } else if (part.type === 'pic-mc') {
+      // HSK 1 phan Nghe 2: moi cau 3 tranh A B C, chon tranh dung
+      part.questions.forEach(function (q) {
+        var keys = Object.keys(q.pics);
+        h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n, q) +
+          '<div class="ex-opts ex-opts-pic">' + keys.map(function (k) {
+            return '<button type="button" class="ex-opt ex-opt-pic" data-n="' + q.n + '" data-v="' + k + '"><span class="ex-opt-k">' + k + '</span><img src="' + data.img + q.pics[k] + '" alt="Hình ' + k + '" /></button>';
+          }).join('') + '</div>' + explainBox(q.n) + '</div>';
       });
     } else if (part.type === 'pic-match') {
       part.groups.forEach(function (g) {

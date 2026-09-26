@@ -130,10 +130,12 @@
 
     <h2 class="ex-nhom-de">Đề HSK 2.0 <span class="tag">Cấu trúc cũ</span></h2>
     <section class="ex-folders" aria-label="Chọn cấp độ">
-      <div class="ex-folder is-soon" aria-disabled="true">
+      <button type="button" class="ex-folder" data-folder="hsk1" aria-expanded="false" aria-controls="lv-hsk1">
         <span class="ex-folder-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
-        <span class="ex-folder-t"><b>HSK 1</b><small>Sắp có<span class="ex-soon-meta"> · 40 câu · 40 phút</span></small></span>
-      </div>
+        <span class="ex-folder-t"><b>HSK 1</b><small>5 đề thi</small></span>
+        <span class="ex-folder-prog" data-prog="hsk1"><span class="ex-folder-bar"><i style="width:0%"></i></span><small>Chưa thi đề nào</small></span>
+        <svg class="ex-folder-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
       <button type="button" class="ex-folder" data-folder="hsk2" aria-expanded="false" aria-controls="lv-hsk2">
         <span class="ex-folder-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
         <span class="ex-folder-t"><b>HSK 2</b><small>9 đề thi</small></span>
@@ -150,6 +152,41 @@
         <span class="ex-folder-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
         <span class="ex-folder-t"><b>HSK 4</b><small>Sắp có<span class="ex-soon-meta"> · 100 câu · 105 phút</span></small></span>
       </div>
+    </section>
+
+    <section class="ex-level" id="lv-hsk1" data-level="hsk1" aria-labelledby="lvt-hsk1" hidden>
+      <div class="ex-level-head">
+        <div><h2 id="lvt-hsk1">HSK 1 <span class="tag">5 đề</span></h2>
+        <p class="ex-level-meta">Mỗi đề: 40 câu (Nghe 20 · Đọc 20) · 40 phút · Đạt từ 120/200 điểm</p></div>
+        <button type="button" class="ex-level-close" data-close-folder aria-label="Đóng danh sách HSK 1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <ol class="ex-tests" id="hsk1Tests">
+        <li class="ex-test" data-test="hsk1-test-1">
+          <div class="ex-test-name"><h3>Test 1</h3><span>Đề mẫu H10000</span></div>
+          <div class="last" data-last="hsk1-test-1"><span class="ex-st">Chưa thi</span></div>
+          <div class="actions"><a class="ex-btn-link" href="/exam/test/?id=hsk1-test-1" data-start="hsk1-test-1">Bắt đầu thi</a><a class="ex-btn-link ghost ex-rank-btn" href="/exam/?rank=hsk1-test-1#rank" data-rank-of="hsk1-test-1" aria-label="Xếp hạng HSK 1 Test 1" title="Xếp hạng đề này"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></a></div>
+        </li>
+        <li class="ex-test" data-test="hsk1-test-2">
+          <div class="ex-test-name"><h3>Test 2</h3><span>Đề thật H10901</span></div>
+          <div class="last" data-last="hsk1-test-2"><span class="ex-st">Chưa thi</span></div>
+          <div class="actions"><a class="ex-btn-link" href="/exam/test/?id=hsk1-test-2" data-start="hsk1-test-2">Bắt đầu thi</a><a class="ex-btn-link ghost ex-rank-btn" href="/exam/?rank=hsk1-test-2#rank" data-rank-of="hsk1-test-2" aria-label="Xếp hạng HSK 1 Test 2" title="Xếp hạng đề này"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></a></div>
+        </li>
+        <li class="ex-test" data-test="hsk1-test-3">
+          <div class="ex-test-name"><h3>Test 3</h3><span>Đề thật H11005</span></div>
+          <div class="last" data-last="hsk1-test-3"><span class="ex-st">Chưa thi</span></div>
+          <div class="actions"><a class="ex-btn-link" href="/exam/test/?id=hsk1-test-3" data-start="hsk1-test-3">Bắt đầu thi</a><a class="ex-btn-link ghost ex-rank-btn" href="/exam/?rank=hsk1-test-3#rank" data-rank-of="hsk1-test-3" aria-label="Xếp hạng HSK 1 Test 3" title="Xếp hạng đề này"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></a></div>
+        </li>
+        <li class="ex-test" data-test="hsk1-test-4">
+          <div class="ex-test-name"><h3>Test 4</h3><span>Đề thật H11006</span></div>
+          <div class="last" data-last="hsk1-test-4"><span class="ex-st">Chưa thi</span></div>
+          <div class="actions"><a class="ex-btn-link" href="/exam/test/?id=hsk1-test-4" data-start="hsk1-test-4">Bắt đầu thi</a><a class="ex-btn-link ghost ex-rank-btn" href="/exam/?rank=hsk1-test-4#rank" data-rank-of="hsk1-test-4" aria-label="Xếp hạng HSK 1 Test 4" title="Xếp hạng đề này"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></a></div>
+        </li>
+        <li class="ex-test" data-test="hsk1-test-5">
+          <div class="ex-test-name"><h3>Test 5</h3><span>Đề thật H11330</span></div>
+          <div class="last" data-last="hsk1-test-5"><span class="ex-st">Chưa thi</span></div>
+          <div class="actions"><a class="ex-btn-link" href="/exam/test/?id=hsk1-test-5" data-start="hsk1-test-5">Bắt đầu thi</a><a class="ex-btn-link ghost ex-rank-btn" href="/exam/?rank=hsk1-test-5#rank" data-rank-of="hsk1-test-5" aria-label="Xếp hạng HSK 1 Test 5" title="Xếp hạng đề này"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9 17h6"/></svg></a></div>
+        </li>
+      </ol>
     </section>
 
     <section class="ex-level" id="lv-hsk2" data-level="hsk2" aria-labelledby="lvt-hsk2" hidden>
@@ -285,6 +322,12 @@
         </div>
         <label class="rk-select"><span>Xem bảng</span>
           <select id="rankSelect">
+          <option value="level:hsk1">Tổng hợp HSK 1</option>
+          <option value="hsk1-test-1">HSK 1 - Test 1</option>
+          <option value="hsk1-test-2">HSK 1 - Test 2</option>
+          <option value="hsk1-test-3">HSK 1 - Test 3</option>
+          <option value="hsk1-test-4">HSK 1 - Test 4</option>
+          <option value="hsk1-test-5">HSK 1 - Test 5</option>
           <option value="level:hsk2">Tổng hợp HSK 2</option>
           <option value="hsk2-test-1">HSK 2 - Test 1</option>
           <option value="hsk2-test-2">HSK 2 - Test 2</option>

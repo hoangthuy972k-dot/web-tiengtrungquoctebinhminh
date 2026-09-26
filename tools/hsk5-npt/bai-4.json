@@ -1,0 +1,1236 @@
+[
+ {
+  "so": "1",
+  "ten": "「至今」",
+  "tenVn": "",
+  "cauTruc": [
+   "至今 + (还 / 仍) + (没) V",
+   "从古至今 / 流传至今"
+  ],
+  "giaiThich": "至今 là phó từ, nghĩa là “cho đến tận bây giờ”. Thường đứng đầu phân câu hoặc trước động từ. Còn kết hợp với một số từ tạo cấu trúc cố định: 从古至今 (từ xưa đến nay), 流传至今 (lưu truyền đến nay). Không dùng cho tương lai, không thêm 到 phía trước.",
+  "viDu": [
+   {
+    "zh": "我在北京出生、长大，至今还没离开过呢。",
+    "py": "Wǒ zài Běijīng chūshēng, zhǎngdà, zhìjīn hái méi líkāiguo ne.",
+    "vn": "Tôi sinh ra và lớn lên ở Bắc Kinh, đến giờ vẫn chưa rời khỏi đó."
+   },
+   {
+    "zh": "至今，很多国家并没有规定什么才是健康食品。",
+    "py": "Zhìjīn, hěn duō guójiā bìng méiyǒu guīdìng shénme cái shì jiànkāng shípǐn.",
+    "vn": "Đến nay nhiều nước vẫn chưa hề quy định thế nào mới là thực phẩm lành mạnh."
+   },
+   {
+    "zh": "流传至今的“百里背米”讲的就是他孝敬父母的故事。",
+    "py": "Liúchuán zhìjīn de “bǎi lǐ bēi mǐ” jiǎng de jiù shì tā xiàojìng fùmǔ de gùshi.",
+    "vn": "Câu chuyện “vác gạo trăm dặm” lưu truyền đến nay kể chính về việc ông hiếu kính cha mẹ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他到至今还没结婚。",
+    "why": "至今 đã mang nghĩa “đến nay”; tiếng Việt nói “ĐẾN nay” nên hay thêm 到 — thừa.",
+    "dung": "他至今还没结婚。"
+   },
+   {
+    "sai": "这件事我至今会记住。",
+    "why": "至今 chỉ khoảng thời gian từ quá khứ đến HIỆN TẠI, không đi với 会 chỉ tương lai.",
+    "dung": "这件事我至今还记得。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我在河内出生、长大，",
+       "还没去过别的城市。"
+      ],
+      "dap": [
+       [
+        "至今"
+       ]
+      ],
+      "chon": [
+       "至今",
+       "从前",
+       "以后"
+      ],
+      "goiY": "Tôi sinh ra, lớn lên ở Hà Nội, ĐẾN NAY vẫn chưa đi thành phố khác.",
+      "giai": "Kéo dài từ quá khứ đến hiện tại → 至今. 从前 chỉ quá khứ đã qua, 以后 chỉ tương lai."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“百里背米”的故事流传",
+       "，感动了很多人。"
+      ],
+      "dap": [
+       [
+        "至今"
+       ]
+      ],
+      "chon": [
+       "至今",
+       "以前",
+       "从前"
+      ],
+      "goiY": "Câu chuyện “vác gạo trăm dặm” lưu truyền ĐẾN NAY, làm cảm động rất nhiều người.",
+      "giai": "流传至今 là cụm cố định; không nói 流传以前 / 流传从前."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "从古",
+       "，孝顺父母都是一种美德。"
+      ],
+      "dap": [
+       [
+        "至今"
+       ]
+      ],
+      "chon": [
+       "至今",
+       "到今",
+       "现在"
+      ],
+      "goiY": "Từ xưa đến nay, hiếu thảo với cha mẹ luôn là một đức tính tốt.",
+      "giai": "从古至今 là cụm cố định (từ cổ chí kim)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那次旅行我",
+       "难忘。"
+      ],
+      "dap": [
+       [
+        "至今"
+       ]
+      ],
+      "chon": [
+       "至今",
+       "将来",
+       "马上"
+      ],
+      "goiY": "Chuyến đi đó đến giờ tôi vẫn khó quên.",
+      "giai": "Ấn tượng kéo dài tới hiện tại → 至今难忘."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "爷爷去世已经五年了，我",
+       "还常常想起他。"
+      ],
+      "dap": [
+       [
+        "至今"
+       ]
+      ],
+      "chon": [
+       "至今",
+       "从前",
+       "当时"
+      ],
+      "goiY": "Ông mất đã năm năm, đến giờ tôi vẫn thường nhớ ông.",
+      "giai": "至今 + 还 + V: đến nay vẫn còn. 当时 là “lúc đó”, không hợp với 还常常."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个问题科学家们研究了很多年，",
+       "还没有找到答案。"
+      ],
+      "dap": [
+       [
+        "至今"
+       ]
+      ],
+      "chon": [
+       "至今",
+       "以后",
+       "从前"
+      ],
+      "goiY": "Các nhà khoa học nghiên cứu nhiều năm, ĐẾN NAY vẫn chưa tìm ra đáp án.",
+      "giai": "至今 đứng đầu phân câu sau, nối quá khứ với hiện tại."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "已经认识多年",
+       "，",
+       "至今",
+       "还没吵过架"
+      ],
+      "dap": [
+       "我们已经认识多年，至今还没吵过架。"
+      ],
+      "goiY": "Chúng tôi quen nhau nhiều năm, đến nay vẫn chưa từng cãi nhau.",
+      "giai": "至今 đứng đầu phân câu sau; 吵过架 — ôn động từ ly hợp (bài 1)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个",
+       "流传至今的",
+       "故事",
+       "讲的是",
+       "子路孝敬父母"
+      ],
+      "dap": [
+       "这个流传至今的故事讲的是子路孝敬父母。",
+       "流传至今的这个故事讲的是子路孝敬父母。"
+      ],
+      "goiY": "Câu chuyện lưu truyền đến nay này kể về việc Tử Lộ hiếu kính cha mẹ.",
+      "giai": "流传至今的 làm định ngữ cho 故事."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "那次",
+       "旅行",
+       "我",
+       "至今",
+       "难忘"
+      ],
+      "dap": [
+       "那次旅行我至今难忘。",
+       "我至今难忘那次旅行。"
+      ],
+      "goiY": "Chuyến đi đó đến giờ tôi vẫn khó quên.",
+      "giai": "至今 đứng sau chủ ngữ 我, trước 难忘."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他到至今还没结婚。",
+      "dung": false,
+      "sua": "他至今还没结婚。",
+      "giai": "至今 đã có nghĩa “đến nay”, không thêm 到."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我在北京出生、长大，至今还没离开过呢。",
+      "dung": true,
+      "giai": "至今 + 还没 + V过 — đúng (câu của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件事我至今会记住。",
+      "dung": false,
+      "sua": "这件事我至今还记得。",
+      "giai": "至今 nói về hiện tại, không đi với 会 (tương lai)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tuy chúng tôi đã quen nhau nhiều năm, nhưng đến nay tôi vẫn chưa biết nhà cô ấy ở đâu.",
+      "dap": [
+       "虽然我们已经认识多年，但是我至今还不知道她家在哪儿。",
+       "虽然我们认识多年了，但是我至今还不知道她家在哪儿。",
+       "虽然我们已经认识很多年了，但是我至今还不知道她家在哪儿。"
+      ],
+      "py": "Suīrán wǒmen yǐjīng rènshi duō nián, dànshì wǒ zhìjīn hái bù zhīdào tā jiā zài nǎr.",
+      "goiY": "Dịch sang tiếng Trung, dùng 虽然……但是…… và 至今.",
+      "giai": "至今 + 还不知道: đến nay vẫn chưa biết."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Câu chuyện này đã lưu truyền đến nay.",
+      "dap": [
+       "这个故事已经流传至今。",
+       "这个故事流传至今。",
+       "这个故事一直流传至今。"
+      ],
+      "py": "Zhège gùshi yǐjīng liúchuán zhìjīn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 流传至今.",
+      "giai": "流传至今 là cụm cố định."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "虽然我们已经认识多年，＿＿＿。",
+      "goiY": "đến nay vẫn chưa từng … (dùng 至今)",
+      "mau": "虽然我们已经认识多年，但是我至今还没去过他家。",
+      "can": [
+       [
+        "至今"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你到中国已经一年了，能不能给我们介绍一下长城？　B：＿＿＿。",
+      "goiY": "nói rằng đến giờ mình vẫn chưa đi Trường Thành (dùng 至今)",
+      "mau": "不好意思，我至今还没去过长城呢。",
+      "can": [
+       [
+        "至今"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「至今」 về một điều em nhớ mãi hoặc một việc đến nay em vẫn chưa làm",
+      "mau": "小学老师说过的一句话，我至今还记得。",
+      "can": [
+       [
+        "至今"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「顶」",
+  "tenVn": "",
+  "cauTruc": [
+   "Danh từ: 头顶 / 山顶 / 屋顶",
+   "Động từ: 用头顶 · 顶着 + 风 / 雪 / 雨 / 压力",
+   "Lượng từ: 一顶 + 帽子 / 伞"
+  ],
+  "giaiThich": "顶 có ba cách dùng. ① Danh từ: phần cao nhất của người hoặc vật (头顶, 山顶). ② Động từ: đội, đẩy, húc bằng đầu (用头顶起, 头顶着头); còn có nghĩa đón lấy, chống chọi (顶着大雪, 顶着压力) — khi làm kèm một động tác khác thì dùng 顶着. ③ Lượng từ: dùng cho mũ, ô lớn và vật hình ô (一顶帽子).",
+  "viDu": [
+   {
+    "zh": "请把手举过头顶。",
+    "py": "Qǐng bǎ shǒu jǔguò tóudǐng.",
+    "vn": "Hãy giơ tay lên quá đầu."
+   },
+   {
+    "zh": "天气非常寒冷，子路顶着大雪往前走。",
+    "py": "Tiānqì fēicháng hánlěng, Zǐlù dǐngzhe dàxuě wǎng qián zǒu.",
+    "vn": "Trời rét buốt, Tử Lộ đội tuyết lớn đi về phía trước."
+   },
+   {
+    "zh": "我这顶新帽子怎么样？",
+    "py": "Wǒ zhè dǐng xīn màozi zěnmeyàng?",
+    "vn": "Chiếc mũ mới này của tôi thế nào?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "子路顶大雪往前走。",
+    "why": "顶 (chống chọi) đi kèm động tác khác (往前走) phải thêm 着 để chỉ trạng thái kéo dài.",
+    "dung": "子路顶着大雪往前走。"
+   },
+   {
+    "sai": "这顶计划将成为儿童健康的一项保护伞。",
+    "why": "Hai lượng từ bị đảo: 项 dùng cho kế hoạch, hạng mục (一项计划 — bài 1); 顶 dùng cho mũ, ô (一顶保护伞).",
+    "dung": "这项计划将成为儿童健康的一顶保护伞。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "请把手举过头",
+       "。"
+      ],
+      "dap": [
+       [
+        "顶"
+       ]
+      ],
+      "chon": [
+       "顶",
+       "部",
+       "发"
+      ],
+      "goiY": "Hãy giơ tay lên quá đỉnh đầu.",
+      "giai": "头顶 = đỉnh đầu (顶 là danh từ). 头部 là “phần đầu”, 头发 là tóc."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们终于爬到了山",
+       "，看到了美丽的风景。"
+      ],
+      "dap": [
+       [
+        "顶"
+       ]
+      ],
+      "chon": [
+       "顶",
+       "底",
+       "脚"
+      ],
+      "goiY": "Cuối cùng chúng tôi cũng leo lên tới ĐỈNH núi.",
+      "giai": "山顶 = đỉnh núi. 爬到 (leo tới) nên phải là chỗ cao nhất."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天气非常寒冷，子路",
+       "着大雪往前走。"
+      ],
+      "dap": [
+       [
+        "顶"
+       ]
+      ],
+      "chon": [
+       "顶",
+       "背",
+       "扶"
+      ],
+      "goiY": "Tử Lộ đội tuyết lớn đi về phía trước.",
+      "giai": "顶着 + 大雪: chống chọi với tuyết. 背 là vác, 扶 là đỡ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "着很大的压力，终于完成了这项工作。"
+      ],
+      "dap": [
+       [
+        "顶"
+       ]
+      ],
+      "chon": [
+       "顶",
+       "扶",
+       "甩"
+      ],
+      "goiY": "Anh ấy chịu áp lực rất lớn, cuối cùng hoàn thành công việc này.",
+      "giai": "顶着压力 = chịu đựng áp lực mà vẫn làm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈给我买了一",
+       "新帽子。"
+      ],
+      "dap": [
+       [
+        "顶"
+       ]
+      ],
+      "chon": [
+       "顶",
+       "条",
+       "件"
+      ],
+      "goiY": "Mẹ mua cho tôi một chiếc mũ mới.",
+      "giai": "Lượng từ của 帽子 là 顶."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "院子里有两只羊正在打架，它们头",
+       "着头，谁也不让谁。"
+      ],
+      "dap": [
+       [
+        "顶"
+       ]
+      ],
+      "chon": [
+       "顶",
+       "背",
+       "扶"
+      ],
+      "goiY": "Hai con dê húc đầu vào nhau, không con nào chịu nhường.",
+      "giai": "头顶着头 = đầu húc vào đầu (顶 là động tác của đầu)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "能",
+       "用头",
+       "顶起",
+       "20斤重的东西"
+      ],
+      "dap": [
+       "他能用头顶起20斤重的东西。"
+      ],
+      "goiY": "Anh ấy có thể dùng đầu đội lên vật nặng 20 cân.",
+      "giai": "能 + 用头 + 顶起 + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "这顶",
+       "新帽子",
+       "怎么样"
+      ],
+      "dap": [
+       "我这顶新帽子怎么样？"
+      ],
+      "goiY": "Chiếc mũ mới này của tôi thế nào?",
+      "giai": "Đại từ + 这 + 顶 + danh từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他们",
+       "顶着",
+       "大风",
+       "爬上了",
+       "山顶"
+      ],
+      "dap": [
+       "他们顶着大风爬上了山顶。"
+      ],
+      "goiY": "Họ ngược gió to leo lên đỉnh núi.",
+      "giai": "顶着大风 là trạng thái đi kèm, đứng trước động từ chính 爬上了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我买了一顶新帽子。",
+      "dung": true,
+      "giai": "一顶 + 帽子 — đúng lượng từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "子路顶大雪往前走。",
+      "dung": false,
+      "sua": "子路顶着大雪往前走。",
+      "giai": "Thiếu 着: 顶着 + 大雪 + 往前走."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这顶计划将成为儿童健康的一项保护伞。",
+      "dung": false,
+      "sua": "这项计划将成为儿童健康的一顶保护伞。",
+      "giai": "项 cho kế hoạch, 顶 cho ô (保护伞) — bị đảo chỗ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tuy hôm qua gió rất to nhưng họ vẫn ngược gió đến trường.",
+      "dap": [
+       "虽然昨天刮大风，但是他们还是顶着大风去了学校。",
+       "虽然昨天风很大，但是他们还是顶着大风去了学校。",
+       "虽然昨天刮大风，但是他们还是顶着风去了学校。",
+       "虽然昨天风很大，但是他们还是顶着风去了学校。"
+      ],
+      "py": "Suīrán zuótiān guā dàfēng, dànshì tāmen háishi dǐngzhe dàfēng qùle xuéxiào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 顶着.",
+      "giai": "顶着 + 大风 + 去了学校."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chiếc mũ này bao nhiêu tiền?",
+      "dap": [
+       "这顶帽子多少钱？"
+      ],
+      "py": "Zhè dǐng màozi duōshao qián?",
+      "goiY": "Dịch sang tiếng Trung, dùng lượng từ 顶.",
+      "giai": "这 + 顶 + 帽子."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：昨天爬山你去了吗？　B：＿＿＿。",
+      "goiY": "kể là mình đã leo lên tới đỉnh núi (顶 — danh từ)",
+      "mau": "去了，我第一个爬到了山顶。",
+      "can": [
+       [
+        "山顶"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "虽然昨天刮大风，＿＿＿。",
+      "goiY": "vẫn ngược gió đi làm việc gì đó (顶 — động từ)",
+      "mau": "虽然昨天刮大风，但是我还是顶着大风去上课了。",
+      "can": [
+       [
+        "顶着"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu dùng 「顶」 làm lượng từ (một chiếc mũ / một cái ô) để giới thiệu hoặc khen món đồ",
+      "mau": "这顶帽子又便宜又好看，你买吧。",
+      "can": [
+       [
+        "顶"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「……得 + 不行」",
+  "tenVn": "",
+  "cauTruc": [
+   "Adj / V + 得 + 不行",
+   "Adj / V + 得 + 很 / 不得了"
+  ],
+  "giaiThich": "Cấu trúc “Adj/V + 得 + 不行” biểu thị MỨC ĐỘ rất cao (… đến mức không chịu nổi). Ở đây 不行 không còn nghĩa “không được”. Cũng có thể dùng “Adj/V + 得 + 很 / 不得了”. Đã có bổ ngữ mức độ thì không thêm 很 trước tính từ.",
+  "viDu": [
+   {
+    "zh": "他顶着大雪往前走，扶着米袋的双手冻得不行，就停下来暖暖，再继续赶路。",
+    "py": "Tā dǐngzhe dàxuě wǎng qián zǒu, fúzhe mǐdài de shuāng shǒu dòng de bùxíng, jiù tíng xialai nuǎnnuan, zài jìxù gǎnlù.",
+    "vn": "Ông đội tuyết lớn đi về phía trước, hai tay giữ bao gạo lạnh cóng không chịu nổi, bèn dừng lại sưởi cho ấm rồi lại tiếp tục lên đường."
+   },
+   {
+    "zh": "这个地方这么热闹，孩子们高兴得不得了！",
+    "py": "Zhège dìfang zhème rènao, háizimen gāoxìng de bùdéliǎo!",
+    "vn": "Chỗ này náo nhiệt thế, bọn trẻ vui không tả xiết!"
+   },
+   {
+    "zh": "他心里烦得很，自言自语地抱怨：“怎么还有那么远啊！”",
+    "py": "Tā xīnli fán de hěn, zì yán zì yǔ de bàoyuàn: “Zěnme hái yǒu nàme yuǎn a!”",
+    "vn": "Trong lòng anh ấy bực bội lắm, lẩm bẩm than: “Sao vẫn còn xa thế!”"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我今天很累得不行。",
+    "why": "Đã có bổ ngữ mức độ 得不行 thì không thêm 很 trước tính từ.",
+    "dung": "我今天累得不行。"
+   },
+   {
+    "sai": "今天冷不行，多穿点儿衣服吧。",
+    "why": "Thiếu 得 — bổ ngữ mức độ phải nối bằng 得.",
+    "dung": "今天冷得不行，多穿点儿衣服吧。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "扶着米袋的双手冻",
+       "不行。"
+      ],
+      "dap": [
+       [
+        "得"
+       ]
+      ],
+      "chon": [
+       "得",
+       "的",
+       "地"
+      ],
+      "goiY": "Hai tay giữ bao gạo lạnh cóng không chịu nổi.",
+      "giai": "Bổ ngữ mức độ nối bằng 得 (không phải 的 / 地)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个地方这么热闹，孩子们高兴得",
+       "！"
+      ],
+      "dap": [
+       [
+        "不得了"
+       ]
+      ],
+      "chon": [
+       "不得了",
+       "非常",
+       "太"
+      ],
+      "goiY": "Chỗ này náo nhiệt thế, bọn trẻ vui không tả xiết!",
+      "giai": "得 + 不得了 chỉ mức độ cao; không nói 高兴得非常 / 高兴得太."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他心里烦得",
+       "，自言自语地抱怨：“怎么还有那么远啊！”"
+      ],
+      "dap": [
+       [
+        "很"
+       ]
+      ],
+      "chon": [
+       "很",
+       "非常",
+       "太"
+      ],
+      "goiY": "Trong lòng anh ấy bực bội lắm.",
+      "giai": "Adj + 得很 = … lắm. 非常, 太 không đứng sau 得 làm bổ ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "昨天只睡了三个小时，今天我困得",
+       "。"
+      ],
+      "dap": [
+       [
+        "不行",
+        "不得了",
+        "很"
+       ]
+      ],
+      "chon": [
+       "不行",
+       "不对",
+       "不好"
+      ],
+      "goiY": "Tối qua ngủ có ba tiếng, hôm nay tôi buồn ngủ kinh khủng.",
+      "giai": "困得不行 = buồn ngủ không chịu nổi. 不对, 不好 không làm bổ ngữ mức độ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "爬了一天山，大家都累得",
+       "了。"
+      ],
+      "dap": [
+       [
+        "不行"
+       ]
+      ],
+      "chon": [
+       "不行",
+       "不可以",
+       "不能"
+      ],
+      "goiY": "Leo núi cả ngày, ai cũng mệt rã rời.",
+      "giai": "累得不行了 — 不可以, 不能 không dùng làm bổ ngữ mức độ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "听说考试通过了，他高兴",
+       "不行。"
+      ],
+      "dap": [
+       [
+        "得"
+       ]
+      ],
+      "chon": [
+       "得",
+       "的",
+       "着"
+      ],
+      "goiY": "Nghe tin thi đỗ, cậu ấy vui không tả xiết.",
+      "giai": "Adj + 得 + 不行."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "扶着米袋的",
+       "双手",
+       "冻得",
+       "不行"
+      ],
+      "dap": [
+       "扶着米袋的双手冻得不行。"
+      ],
+      "goiY": "Hai tay giữ bao gạo lạnh cóng không chịu nổi.",
+      "giai": "Chủ ngữ (扶着米袋的双手) + 冻得 + 不行."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个地方",
+       "这么热闹",
+       "，",
+       "孩子们",
+       "高兴得不得了"
+      ],
+      "dap": [
+       "这个地方这么热闹，孩子们高兴得不得了。"
+      ],
+      "goiY": "Chỗ này náo nhiệt thế, bọn trẻ vui không tả xiết.",
+      "giai": "Nguyên nhân trước, kết quả + bổ ngữ mức độ sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "家里",
+       "半年没人收拾",
+       "，",
+       "脏得",
+       "不行"
+      ],
+      "dap": [
+       "家里半年没人收拾，脏得不行。"
+      ],
+      "goiY": "Nhà nửa năm không ai dọn, bẩn kinh khủng.",
+      "giai": "脏 + 得 + 不行."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我今天很累得不行。",
+      "dung": false,
+      "sua": "我今天累得不行。",
+      "giai": "Có 得不行 rồi thì bỏ 很."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "今天冷不行，多穿点儿衣服吧。",
+      "dung": false,
+      "sua": "今天冷得不行，多穿点儿衣服吧。",
+      "giai": "Thiếu 得."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "听说父母突然去世了，他难过得不得了。",
+      "dung": true,
+      "giai": "难过 + 得 + 不得了 — đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nghe nói được đi du lịch, bọn trẻ vui không tả xiết.",
+      "dap": [
+       "听说要去旅游，孩子们高兴得不得了。",
+       "听说要去旅行，孩子们高兴得不得了。",
+       "听说要去旅游，孩子们高兴得不行。",
+       "听说要去旅行，孩子们高兴得不行。"
+      ],
+      "py": "Tīngshuō yào qù lǚyóu, háizimen gāoxìng de bùdéliǎo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 得不得了 hoặc 得不行.",
+      "giai": "高兴 + 得 + 不得了 / 不行."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Hôm qua đi bộ cả ngày, chân tôi đau không chịu nổi.",
+      "dap": [
+       "昨天走了一天路，我的脚疼得不行。",
+       "昨天走了一天的路，我的脚疼得不行。",
+       "昨天走了一天路，我的脚疼得不得了。",
+       "昨天走了一天的路，我的脚疼得不得了。"
+      ],
+      "py": "Zuótiān zǒule yì tiān lù, wǒ de jiǎo téng de bùxíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 得不行.",
+      "giai": "疼 + 得 + 不行."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你们俩这次出去旅行了大半年，家里一直没人收拾。昨天回来，家里怎么样？　B：＿＿＿。",
+      "goiY": "nhà bẩn / đầy bụi kinh khủng (……得不行)",
+      "mau": "家里到处都是灰尘，脏得不行。",
+      "can": [
+       [
+        "得不行"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "学了一年多的汉语了，＿＿＿。",
+      "goiY": "nói cảm nhận của em về tiếng Trung (……得很)",
+      "mau": "学了一年多的汉语了，我觉得汉语有意思得很。",
+      "can": [
+       [
+        "得很"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu dùng 「……得不行 / 得不得了 / 得很」 kể một lần em rất vui, rất mệt hoặc rất lạnh",
+      "mau": "听说父母要来看我，我高兴得不得了。",
+      "can": [
+       [
+        "得不行",
+        "得不得了",
+        "得很"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "4",
+  "ten": "「反而」",
+  "tenVn": "",
+  "cauTruc": [
+   "(不但) 不 / 没 + A，(Chủ ngữ) + 反而 + B",
+   "没有……，反而……"
+  ],
+  "giaiThich": "反而 là phó từ, dùng ở giữa hai phân câu (đầu phân câu sau), biểu thị kết quả NGƯỢC với điều mong đợi hoặc lẽ thường. Hay đi với “不但不/没……，反而……” hoặc “没有……，反而……”. 反而 đứng SAU chủ ngữ.",
+  "viDu": [
+   {
+    "zh": "这样不但不能提高他们的阅读能力，反而有可能降低他们的阅读兴趣和热情。",
+    "py": "Zhèyàng búdàn bù néng tígāo tāmen de yuèdú nénglì, fǎn'ér yǒu kěnéng jiàngdī tāmen de yuèdú xìngqù hé rèqíng.",
+    "vn": "Làm vậy chẳng những không nâng cao được khả năng đọc của các em, trái lại còn có thể làm giảm hứng thú và nhiệt tình đọc sách."
+   },
+   {
+    "zh": "大城市的生活虽然很精彩，但一辈子生活在农村的父母反而会不适应。",
+    "py": "Dà chéngshì de shēnghuó suīrán hěn jīngcǎi, dàn yíbèizi shēnghuó zài nóngcūn de fùmǔ fǎn'ér huì bú shìyìng.",
+    "vn": "Cuộc sống thành phố lớn tuy rất sôi động, nhưng cha mẹ cả đời sống ở nông thôn trái lại sẽ không quen."
+   },
+   {
+    "zh": "但他并没有因为物质条件好而感到欢喜，反而常常诚恳地说：“多么希望父母能和我一起过好日子！……”",
+    "py": "Dàn tā bìng méiyǒu yīnwèi wùzhì tiáojiàn hǎo ér gǎndào huānxǐ, fǎn'ér chángcháng chéngkěn de shuō: “Duōme xīwàng fùmǔ néng hé wǒ yìqǐ guò hǎo rìzi! ……”",
+    "vn": "Nhưng ông không hề vì điều kiện vật chất tốt mà thấy vui mừng, trái lại thường thành khẩn nói: “Ước gì cha mẹ được cùng tôi sống những ngày tốt đẹp!…”"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他不但不帮我，反而他笑我。",
+    "why": "反而 là phó từ, phải đứng SAU chủ ngữ. Hai vế cùng chủ ngữ thì vế sau bỏ luôn chủ ngữ.",
+    "dung": "他不但不帮我，反而笑我。"
+   },
+   {
+    "sai": "他很努力，反而考得很好。",
+    "why": "Kết quả CÙNG CHIỀU với mong đợi (chăm → điểm tốt) thì không dùng 反而; 反而 chỉ dùng khi kết quả NGƯỢC lẽ thường.",
+    "dung": "他很努力，所以考得很好。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "雨不但没停，",
+       "越下越大了。"
+      ],
+      "dap": [
+       [
+        "反而"
+       ]
+      ],
+      "chon": [
+       "反而",
+       "而且",
+       "所以"
+      ],
+      "goiY": "Mưa chẳng những không tạnh, trái lại càng lúc càng to.",
+      "giai": "Kết quả ngược mong đợi → 反而. 而且 chỉ nối ý cùng chiều."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "吃了药，他的病不但没好，",
+       "更重了。"
+      ],
+      "dap": [
+       [
+        "反而"
+       ]
+      ],
+      "chon": [
+       "反而",
+       "并且",
+       "因此"
+      ],
+      "goiY": "Uống thuốc rồi, bệnh chẳng những không khỏi mà còn nặng hơn.",
+      "giai": "不但没……，反而…… — kết quả trái ngược."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他没有接受那份优厚的待遇，",
+       "辞职了。"
+      ],
+      "dap": [
+       [
+        "反而"
+       ]
+      ],
+      "chon": [
+       "反而",
+       "而且",
+       "并且"
+      ],
+      "goiY": "Anh ấy không nhận mức đãi ngộ hậu hĩnh đó, trái lại còn xin nghỉ việc.",
+      "giai": "没有……，反而…… (câu trong bài tập của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我好心帮他，他不但不感谢我，",
+       "说我多管闲事。"
+      ],
+      "dap": [
+       [
+        "反而"
+       ]
+      ],
+      "chon": [
+       "反而",
+       "而且",
+       "就"
+      ],
+      "goiY": "Tôi tốt bụng giúp cậu ta, cậu ta chẳng những không cảm ơn mà còn bảo tôi lắm chuyện.",
+      "giai": "不但不……，反而……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这样不但不能提高他们的阅读能力，",
+       "有可能降低他们的阅读兴趣。"
+      ],
+      "dap": [
+       [
+        "反而"
+       ]
+      ],
+      "chon": [
+       "反而",
+       "而且",
+       "所以"
+      ],
+      "goiY": "Làm vậy chẳng những không nâng cao khả năng đọc mà còn có thể làm giảm hứng thú đọc.",
+      "giai": "Kết quả ngược mục đích → 反而 (câu ví dụ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大城市的生活虽然很精彩，但一辈子生活在农村的父母",
+       "会不适应。"
+      ],
+      "dap": [
+       [
+        "反而"
+       ]
+      ],
+      "chon": [
+       "反而",
+       "而且",
+       "才"
+      ],
+      "goiY": "Thành phố tuy sôi động, nhưng cha mẹ cả đời ở quê trái lại sẽ không quen.",
+      "giai": "反而 đứng SAU chủ ngữ (……的父母), trước 会."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "不但",
+       "不孝顺父母",
+       "，",
+       "反而",
+       "经常跟他们吵架"
+      ],
+      "dap": [
+       "他不但不孝顺父母，反而经常跟他们吵架。"
+      ],
+      "goiY": "Hắn chẳng những không hiếu thảo mà còn hay cãi nhau với bố mẹ.",
+      "giai": "不但不……，反而……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "雨",
+       "不但没停",
+       "，",
+       "反而",
+       "越下越大了"
+      ],
+      "dap": [
+       "雨不但没停，反而越下越大了。"
+      ],
+      "goiY": "Mưa chẳng những không tạnh mà càng lúc càng to.",
+      "giai": "Chủ ngữ 雨 đứng đầu, 反而 mở đầu vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "没有因为物质条件好而感到欢喜",
+       "，",
+       "反而",
+       "更想念父母了"
+      ],
+      "dap": [
+       "他没有因为物质条件好而感到欢喜，反而更想念父母了。"
+      ],
+      "goiY": "Ông không vì vật chất đầy đủ mà vui, trái lại càng nhớ cha mẹ hơn.",
+      "giai": "没有……，反而……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他不但不帮我，反而他笑我。",
+      "dung": false,
+      "sua": "他不但不帮我，反而笑我。",
+      "giai": "反而 đứng sau chủ ngữ; vế sau cùng chủ ngữ thì bỏ 他."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他很努力，反而考得很好。",
+      "dung": false,
+      "sua": "他很努力，所以考得很好。",
+      "giai": "Kết quả cùng chiều → không dùng 反而."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我以为他会生气，没想到他反而笑了。",
+      "dung": true,
+      "giai": "Kết quả ngược với dự đoán → 反而, đứng sau chủ ngữ 他 — đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi đã xin lỗi, cô ấy chẳng những không tha thứ cho tôi mà còn giận hơn.",
+      "dap": [
+       "我道歉了，她不但没原谅我，反而更生气了。",
+       "我向她道歉了，她不但没原谅我，反而更生气了。",
+       "我已经道歉了，她不但没原谅我，反而更生气了。",
+       "我道歉了，她不但不原谅我，反而更生气了。"
+      ],
+      "py": "Wǒ dàoqiàn le, tā búdàn méi yuánliàng wǒ, fǎn'ér gèng shēngqì le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不但……反而…….",
+      "giai": "不但没原谅我，反而更生气了."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mùa đông ở đây không lạnh, trái lại còn khá ấm.",
+      "dap": [
+       "这里的冬天不冷，反而很暖和。",
+       "这儿的冬天不冷，反而很暖和。",
+       "这里的冬天不但不冷，反而很暖和。",
+       "这儿的冬天不但不冷，反而很暖和。",
+       "这里的冬天不冷，反而挺暖和的。"
+      ],
+      "py": "Zhèli de dōngtiān bù lěng, fǎn'ér hěn nuǎnhuo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 反而.",
+      "giai": "Ngược với điều người ta nghĩ (mùa đông thì lạnh) → 反而."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他是个很有本领的人，可是，＿＿＿。",
+      "goiY": "anh ấy không kiêu ngạo, trái lại … (dùng 反而)",
+      "mau": "他是个很有本领的人，可是，他一点儿也不骄傲，反而对人特别客气。",
+      "can": [
+       [
+        "反而"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：你跟你同屋关系不是很好吗？怎么今天吵架了？　B：＿＿＿。",
+      "goiY": "giải thích: mình tốt bụng giúp bạn ấy, bạn ấy trái lại còn trách mình (反而)",
+      "mau": "我好心帮她打扫房间，她反而怪我乱动她的东西。",
+      "can": [
+       [
+        "反而"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu với 「反而」 kể một chuyện có kết quả NGƯỢC với điều em mong đợi",
+      "mau": "我以为这次考试会很难，没想到反而比上次容易。",
+      "can": [
+       [
+        "反而"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

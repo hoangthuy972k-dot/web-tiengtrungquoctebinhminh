@@ -1385,6 +1385,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-2.html'
       },
       {
+        id: 'hsk5-l4',
+        number: 4,
+        title: 'Tử Lộ vác gạo',
+        titleHanzi: '子路背米',
+        titlePinyin: 'Zǐlù bēi mǐ',
+        topic: 'Unit 2 谈古说今 · Truyện xưa & lòng hiếu thảo',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 4,
+        fullPageUrl: '/lessons/hsk5-bai-4.html'
+      },
+      {
         id: 'hsk5-l6',
         number: 6,
         title: 'Nguồn gốc đêm giao thừa',

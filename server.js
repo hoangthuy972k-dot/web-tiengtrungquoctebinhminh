@@ -1832,6 +1832,117 @@ app.post('/api/ai/cham-cau', asyncRoute(async (req, res) => {
   res.status(502).json({ error: msg });
 }));
 
+// ---------------- Cham doan van viet (HSK 5 · 书写 cau 99) ----------------
+// Hoc sinh nop doan ~80 chu dung 5 tu cho san -> AI cham theo 4 tieu chi,
+// liet ke tung loi (sai -> sua -> vi sao), goi y cau truc nen dung, tra ve
+// bai da sua. May cua hoc sinh da tu soat loi hinh thuc truoc (luyen-viet.js),
+// nen AI hong thi hoc sinh van co ket qua so bo.
+const CHAM_DOAN_SYS = [
+  'Bạn là giáo viên tiếng Trung 10 năm kinh nghiệm luyện thi HSK 5 cho học sinh Việt Nam (cấp 3).',
+  'Học sinh nộp một đoạn văn khoảng 80 chữ, bắt buộc dùng đủ các từ cho sẵn (dạng câu 99 phần 书写 HSK 5). Hãy chấm theo 4 tiêu chí:',
+  '- noiDung (0–25): đúng yêu cầu đề, có câu chuyện/ý rõ ràng, logic, không lạc đề.',
+  '- tuVung (0–25): dùng ĐỦ và ĐÚNG nghĩa, đúng từ loại các từ cho sẵn; chọn từ phù hợp trình độ HSK 5. Thiếu mỗi từ cho sẵn trừ 5 điểm; dùng sai nghĩa/từ loại trừ 3 điểm mỗi từ.',
+  '- nguPhap (0–30): câu đúng ngữ pháp, trật tự từ đúng (trạng ngữ thời gian/nơi chốn trước động từ), dùng đúng 了/过/的/地/得, cặp từ nối hô ứng đúng, chữ Hán viết đúng.',
+  '- boCuc (0–20): có mở – thân – kết, có từ nối giữa các câu, độ dài 70–110 chữ (quá ngắn trừ nhiều).',
+  'Không bịa lỗi: chỗ nào đúng thì không liệt kê. Cách diễn đạt khác bài mẫu mà vẫn đúng thì không trừ điểm.',
+  'Lỗi hay gặp của học sinh Việt cần soát kỹ: trật tự từ theo kiểu tiếng Việt, thiếu/thừa 了, 是 + tính từ, 和 nối hai vế câu, 很 + thành ngữ, thành ngữ mang tân ngữ, dùng phó từ trước chủ ngữ, 比 đi với 很, dịch từng chữ từ tiếng Việt.',
+  '"loi": liệt kê TỪNG lỗi (tối đa 10): "sai" = đoạn chữ sai chép nguyên văn từ bài, "sua" = đoạn sửa lại, "loai" là một trong: "ngữ pháp", "từ vựng", "trật tự từ", "chữ viết", "dấu câu", "liên kết"; "giai" = giải thích ngắn bằng tiếng Việt vì sao sai và quy tắc đúng (một đến hai câu).',
+  '"goiY": 2–4 cấu trúc HSK 4–5 nên dùng để bài hay hơn, ưu tiên các cấu trúc của bài học được gửi kèm; mỗi mục có "cauTruc" (công thức), "viDu" (một câu ví dụ viết lại TỪ chính ý trong bài của học sinh), "giai" (nên dùng ở chỗ nào, tiếng Việt).',
+  '"baiSua": toàn bộ đoạn văn sau khi sửa, giữ ý và cách nói của học sinh nhiều nhất có thể, chỉ sửa chỗ sai và chỗ thiếu liên kết.',
+  '"nhanXet": hai đến ba câu tiếng Việt: điểm làm tốt, điều quan trọng nhất cần sửa, lời khích lệ.',
+  '"diem" = tổng 4 tiêu chí (0–100).',
+  'Chỉ trả về DUY NHẤT một đối tượng JSON, không thêm chữ nào khác, không bọc trong ```:',
+  '{"diem": 0-100, "tieuChi": {"noiDung": 0-25, "tuVung": 0-25, "nguPhap": 0-30, "boCuc": 0-20}, "loi": [{"sai": "...", "sua": "...", "loai": "...", "giai": "..."}], "goiY": [{"cauTruc": "...", "viDu": "...", "giai": "..."}], "baiSua": "...", "nhanXet": "..."}',
+].join('\n');
+
+function docKetQuaChamDoan(text) {
+  const t = String(text || '');
+  const a = t.indexOf('{'), b = t.lastIndexOf('}');
+  if (a < 0 || b <= a) return null;
+  let j;
+  try { j = JSON.parse(t.slice(a, b + 1)); } catch (e) { return null; }
+  const cat = (s, n) => String(s == null ? '' : s).trim().slice(0, n);
+  const so = (v, max) => Math.max(0, Math.min(max, Math.round(Number(v) || 0)));
+  const tc = j.tieuChi && typeof j.tieuChi === 'object' ? j.tieuChi : null;
+  const tieuChi = tc ? { noiDung: so(tc.noiDung, 25), tuVung: so(tc.tuVung, 25), nguPhap: so(tc.nguPhap, 30), boCuc: so(tc.boCuc, 20) } : null;
+  let diem = tieuChi ? tieuChi.noiDung + tieuChi.tuVung + tieuChi.nguPhap + tieuChi.boCuc : Math.round(Number(j.diem));
+  if (!Number.isFinite(diem)) return null;
+  return {
+    diem: Math.max(0, Math.min(100, diem)),
+    tieuChi,
+    loi: (Array.isArray(j.loi) ? j.loi : []).slice(0, 10).map((l) => ({
+      sai: cat(l && l.sai, 120), sua: cat(l && l.sua, 120), loai: cat(l && l.loai, 20), giai: cat(l && l.giai, 300),
+    })).filter((l) => l.sai || l.sua || l.giai),
+    goiY: (Array.isArray(j.goiY) ? j.goiY : []).slice(0, 4).map((g) => ({
+      cauTruc: cat(g && g.cauTruc, 80), viDu: cat(g && g.viDu, 160), giai: cat(g && g.giai, 240),
+    })).filter((g) => g.cauTruc),
+    baiSua: cat(j.baiSua, 600),
+    nhanXet: cat(j.nhanXet, 500),
+  };
+}
+
+app.post('/api/ai/cham-doan', asyncRoute(async (req, res) => {
+  const b = req.body || {};
+  const cat = (s, n) => String(s == null ? '' : s).trim().slice(0, n);
+  const bai = cat(b.bai, 400);
+  if (!bai) return res.status(400).json({ error: 'Em chưa viết bài.' });
+  if ((bai.match(/[㐀-鿿]/g) || []).length < 20) return res.status(400).json({ error: 'Bài còn ngắn quá (dưới 20 chữ Hán) — em viết thêm rồi nộp nhé.' });
+  const providers = aiProviders();
+  if (!providers.length) return res.status(503).json({ error: 'AI chấm bài chưa được bật trên máy chủ.' });
+
+  const q = await aiQuotaFor(req);
+  if (!q.unlimited && q.remaining <= 0) {
+    return res.status(429).json({ error: 'Hôm nay em đã dùng hết lượt AI. Em xem phần máy soát lỗi và bài mẫu nhé, mai AI chấm tiếp.' });
+  }
+  if (AI_PER_MINUTE > 0) {
+    const now = Date.now();
+    const recent = (aiBurst.get(q.key) || []).filter((t) => now - t < 60000);
+    if (recent.length >= AI_PER_MINUTE) {
+      return res.status(429).json({ error: 'Em nộp nhanh quá, đợi khoảng một phút rồi nộp lại nhé.' });
+    }
+    recent.push(now);
+    aiBurst.set(q.key, recent);
+  }
+  if (!q.unlimited) aiUsage.set(q.mapKey, q.used + 1);
+  const refund = () => { if (!q.unlimited) aiUsage.set(q.mapKey, Math.max(0, (aiUsage.get(q.mapKey) || 1) - 1)); };
+
+  const tu = (Array.isArray(b.tu) ? b.tu : []).slice(0, 6).map((x) => cat(x, 12)).filter(Boolean);
+  const cauTruc = (Array.isArray(b.cauTruc) ? b.cauTruc : []).slice(0, 8).map((x) => cat(x, 80)).filter(Boolean);
+  const noiDung = [
+    'CẤP ĐỘ: ' + (cat(b.capDo, 20) || 'HSK 5'),
+    'ĐỀ: ' + (cat(b.de, 300) || 'Viết đoạn văn khoảng 80 chữ.'),
+    tu.length ? 'TỪ CHO SẴN (phải dùng đủ): ' + tu.join('、') : '',
+    cauTruc.length ? 'CẤU TRÚC CỦA BÀI HỌC: ' + cauTruc.join(' | ') : '',
+    'BÀI CỦA HỌC SINH (' + (bai.match(/[㐀-鿿]/g) || []).length + ' chữ Hán):\n' + bai,
+  ].filter(Boolean).join('\n');
+  const messages = [{ role: 'user', content: noiDung }];
+
+  let lastErr = null;
+  for (const p of providers) {
+    const ctl = new AbortController();
+    const timer = setTimeout(() => ctl.abort(), 45000);
+    try {
+      let text = '';
+      for await (const t of p.stream(messages, ctl.signal, { sys: CHAM_DOAN_SYS, temperature: 0.2 })) text += t;
+      clearTimeout(timer);
+      const kq = docKetQuaChamDoan(text);
+      if (kq) return res.json(Object.assign(kq, { nguon: p.name }));
+      lastErr = new AiProviderError(p.name, 502, 'không đọc được JSON: ' + text.slice(0, 120));
+      console.error('Cham doan AI: ' + p.name + ' tra loi sai dinh dang');
+    } catch (err) {
+      clearTimeout(timer);
+      lastErr = err;
+      console.error('Cham doan AI: ' + p.name + ' loi', err.status != null ? err.status : '', err.message);
+    }
+  }
+  refund();
+  let msg = 'AI chấm bài đang bận — em xem phần máy soát lỗi bên dưới, hoặc nộp lại sau ít phút nhé.';
+  if (lastErr && lastErr.status === 429) msg = 'AI đã dùng hết lượt miễn phí hoặc đang quá tải — em xem phần máy soát lỗi bên dưới, thử lại sau nhé.';
+  else if (lastErr && lastErr.status === 402) msg = 'AI chấm bài đang tạm dừng vì khoá AI của website đã hết hạn mức. Em xem phần máy soát lỗi bên dưới và báo thầy/cô nhé!';
+  else if (lastErr && (lastErr.status === 401 || lastErr.status === 403)) msg = 'Khoá AI của website chưa đúng hoặc đã bị thu hồi. Em xem phần máy soát lỗi bên dưới và báo thầy/cô nhé!';
+  res.status(502).json({ error: msg });
+}));
+
 // ---------------- Gop y cua hoc sinh gui thay/co ----------------
 // Hoc sinh gui tu nut "Tro giup" o moi trang (khong can dang nhap). Thay/co
 // doc + tra loi o trang Bao cao; em nao dang nhap thi thay cau tra loi ngay

@@ -28,7 +28,9 @@ const SHARED = [
   'js/lesson-engine.js',
   'js/widgets.js',
   'js/hsk5-extra.js',
-  'js/theme.js'
+  'js/theme.js',
+  'css/luyen-viet.css',
+  'js/luyen-viet.js'
 ];
 
 const h = crypto.createHash('sha1');

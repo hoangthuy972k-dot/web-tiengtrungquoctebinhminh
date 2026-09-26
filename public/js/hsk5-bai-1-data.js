@@ -686,6 +686,65 @@ var writingData = {
     'Có ít nhất một câu ghép (虽然…但是 / 因为…所以 / 不但…而且) chưa?',
     'Có dùng 了 / 过 đúng chỗ khi kể chuyện đã xảy ra chưa?',
     'Mở đoạn lùi vào 2 ô, dấu câu chiếm một ô — đúng quy cách bài thi chưa?'
+  ],
+
+  // Đề đúng như câu 99 của đề thi (gửi kèm khi nhờ AI chấm)
+  de:'请结合下列词语（要全部使用），写一篇80字左右的短文，讲一对你认识的夫妻。',
+
+  // Cách dùng đúng của 5 từ cho sẵn — máy soát lỗi dựa vào đây
+  // (re: mẫu câu SAI hay gặp; viết dạng chuỗi RegExp)
+  tuDung:[
+    {tu:'恩爱', loai:'tính từ', cach:'一对恩爱的夫妻 · 夫妻俩很恩爱',
+     sai:[{re:'恩爱(?=他|她|我|你|对方|妻子|丈夫|老婆|老公)', sua:'很爱……', giai:'恩爱 là TÍNH TỪ (vợ chồng đằm thắm), không mang tân ngữ. Muốn nói "yêu ai đó" thì dùng 爱.'}]},
+    {tu:'细节', loai:'danh từ', cach:'生活中的细节 · 爱的细节 · 注意细节',
+     sai:[{re:'(很|非常|十分|特别)细节', sua:'很细心 / 很注意细节', giai:'细节 là DANH TỪ (chi tiết), không đi sau 很. Muốn khen ai tỉ mỉ: 很细心 hoặc 很注意细节.'}]},
+    {tu:'抱怨', loai:'động từ', cach:'从不抱怨 · 向/对 + người + 抱怨 + việc',
+     sai:[{re:'抱怨给', sua:'向……抱怨', giai:'Không nói 抱怨给 ai. Than phiền với ai: 向/对 + người + 抱怨.'},
+          {re:'抱怨(?=他|她|我|你)', sua:'对……有抱怨 / 向……抱怨', giai:'抱怨 thường không mang thẳng tân ngữ chỉ người; nói 向他抱怨 (than phiền với anh ấy) hoặc 抱怨他 + việc cụ thể.', nhe:true}]},
+    {tu:'居然', loai:'phó từ', cach:'Chủ ngữ + 居然 + động từ (việc ngoài dự liệu)',
+     sai:[{re:'居然(?=我们|你们|他们|她们|大家|我|你|他|她|丈夫|妻子|老婆|老公|爸爸|妈妈|朋友|邻居|同学|同事|老师|孩子)', sua:'他居然……', giai:'居然 là PHÓ TỪ nên đứng SAU chủ ngữ, trước động từ: 他居然…… chứ không 居然他…….'}]},
+    {tu:'相敬如宾', loai:'thành ngữ (làm vị ngữ)', cach:'夫妻俩 + 一直 + 相敬如宾',
+     sai:[{re:'(很|非常|十分|特别|太)相敬如宾', sua:'一直相敬如宾', giai:'Thành ngữ đã đủ nghĩa, không thêm 很/非常 phía trước. Có thể dùng 一直/始终 + 相敬如宾.'},
+          {re:'相敬如宾(?=他|她|我|你|对方|妻子|丈夫)', sua:'互相尊重', giai:'相敬如宾 không mang tân ngữ (đã có nghĩa "tôn trọng NHAU"). Muốn nói tôn trọng ai: 尊重他.'}]}
+  ],
+
+  // Cấu trúc của bài + cấu trúc HSK 4 nên dùng lại — gợi ý khi sửa bài
+  cauTruc:[
+    {ten:'Chủ ngữ + 居然 + V', nhan:'居然', vd:'下大雨的时候，丈夫居然走了两个小时去给她买药。', khi:'Kể một việc NGOÀI DỰ LIỆU — tạo điểm nhấn cho câu chuyện.'},
+    {ten:'……是如何……的', nhan:'如何', vd:'我问他们是如何保持恩爱的。', khi:'Hỏi/kể CÁCH THỨC, giọng văn viết.'},
+    {ten:'靠在……上', nhan:'靠在', vd:'她累了，就把头靠在丈夫的肩膀上。', khi:'Tả một chi tiết nhỏ thể hiện tình cảm.'},
+    {ten:'虽然……，但是……', nhan:'虽然', vd:'虽然生活不容易，但是他们从来不抱怨。', khi:'Nêu khó khăn rồi lật lại — thân đoạn.'},
+    {ten:'从来 + 不/没(有)……过', nhan:'从来', vd:'二十年来，他们从来没吵过架。', khi:'Nhấn mạnh "chưa từng bao giờ".'},
+    {ten:'不但……，而且……', nhan:'不但', vd:'他不但每天做早饭，而且从不抱怨。', khi:'Nối hai ý tăng tiến trong thân đoạn.'},
+    {ten:'这件事让我明白了……', nhan:'让我明白', vd:'这件事让我明白，真正的爱就在细节里。', khi:'Câu KẾT — rút ra cảm nghĩ/bài học.'}
+  ],
+
+  // 书写 第一部分 · 完成句子 — xếp các mảnh thành câu (đáp án đúng như đề thi)
+  sapXep:[
+    {manh:['一直','这对夫妻','相敬如宾','结婚以后'],
+     dap:'这对夫妻结婚以后一直相敬如宾。', chap:['结婚以后这对夫妻一直相敬如宾。'],
+     vn:'Cặp vợ chồng này từ sau khi cưới luôn tôn trọng nhau như khách.',
+     giai:'Chủ ngữ 这对夫妻 → thời gian 结婚以后 → phó từ 一直 → vị ngữ 相敬如宾. Thời gian đứng TRƯỚC động từ (không đặt cuối câu như tiếng Việt).'},
+    {manh:['忘了','居然','自己的生日','他'],
+     dap:'他居然忘了自己的生日。',
+     vn:'Anh ấy lại quên mất sinh nhật của chính mình.',
+     giai:'居然 là phó từ: Chủ ngữ + 居然 + động từ. Không đặt 居然 trước chủ ngữ.'},
+    {manh:['靠在','把头','她','丈夫的肩膀上'],
+     dap:'她把头靠在丈夫的肩膀上。',
+     vn:'Cô ấy tựa đầu lên vai chồng.',
+     giai:'Câu 把 (HSK 3–4): Chủ ngữ + 把 + tân ngữ + động từ + 在 + nơi chốn. 靠在……上 là cấu trúc của bài.'},
+    {manh:['恩爱的','想知道','评委','他们是如何'],
+     dap:'评委想知道他们是如何恩爱的。',
+     vn:'Ban giám khảo muốn biết họ đằm thắm như thế nào.',
+     giai:'是 + 如何 + tính từ/động từ + 的: hỏi CÁCH THỨC theo lối văn viết. 如何 đứng ngay trước phần được hỏi.'},
+    {manh:['抱怨过','从来','妻子','没有'],
+     dap:'妻子从来没有抱怨过。',
+     vn:'Người vợ chưa bao giờ than phiền.',
+     giai:'从来 + 没(有) + V + 过 (HSK 3–4): nhấn mạnh chưa từng. 从来 luôn đứng trước 没有.'},
+    {manh:['藏在','往往','爱的细节','生活的小事里'],
+     dap:'爱的细节往往藏在生活的小事里。',
+     vn:'Chi tiết của tình yêu thường ẩn trong những chuyện nhỏ của cuộc sống.',
+     giai:'往往 là phó từ chỉ tần suất, đứng trước động từ 藏. V + 在 + nơi chốn làm bổ ngữ (藏在……里).'}
   ]
 };
 

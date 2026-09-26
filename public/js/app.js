@@ -793,8 +793,9 @@
 
   function lessonProgressPct(levelId, lesson) {
     if (pathEnabled(lesson)) {
-      var steps = PATH_STEPS.filter(function (s) { return pathStepDone(lesson, s); }).length;
-      return Math.round(steps / PATH_STEPS.length * 100);
+      var ps = pathStepsOf(lesson);
+      var steps = ps.filter(function (s) { return pathStepDone(lesson, s); }).length;
+      return Math.round(steps / ps.length * 100);
     }
     var tabIds = LEVEL_HUB_TABS[levelId] || [];
     if (!tabIds.length) return 0;
@@ -851,10 +852,10 @@
     if (!last) return null;
     // Theo thu tu lo trinh 7 buoc: buoc dau tien chua xong cua bai dang hoc
     var i = pathCurrentIndex(last.lesson);
-    if (i < PATH_STEPS.length) return { levelId: last.levelId, lesson: last.lesson, step: PATH_STEPS[i], stepNo: i + 1 };
+    if (i < pathStepsOf(last.lesson).length) return { levelId: last.levelId, lesson: last.lesson, step: pathStepsOf(last.lesson)[i], stepNo: i + 1 };
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[last.levelId]) || [];
     var after = lessons.filter(function (l) { return l.number > last.lesson.number; }).sort(function (a, b) { return a.number - b.number; })[0];
-    if (after) return { levelId: last.levelId, lesson: after, step: PATH_STEPS[0], stepNo: 1, isNext: true };
+    if (after) return { levelId: last.levelId, lesson: after, step: pathStepsOf(after)[0], stepNo: 1, isNext: true };
     return { levelId: last.levelId, lesson: last.lesson, step: null, finished: true };
   }
 
@@ -882,8 +883,9 @@
     }
     var l = target.lesson;
     var levelName = PRACTICE_LEVEL_LABEL[target.levelId] || target.levelId.toUpperCase();
-    var done = target.isNext ? 0 : PATH_STEPS.filter(function (st) { return pathStepDone(l, st); }).length;
-    var pct = Math.round(done / PATH_STEPS.length * 100);
+    var lps = pathStepsOf(l);
+    var done = target.isNext ? 0 : lps.filter(function (st) { return pathStepDone(l, st); }).length;
+    var pct = Math.round(done / lps.length * 100);
     var eyebrow = target.finished ? 'Đã học xong ' + levelName : (target.isNext ? 'Bài tiếp theo' : 'Tiếp tục học');
     var next = target.finished ? 'Bạn đã học hết các bài của cấp này — ôn lại hoặc chọn cấp tiếp theo.'
       : 'Tiếp theo: <b>Bước ' + target.stepNo + ' · ' + target.step.title + '</b> · khoảng ' + target.step.min + ' phút';
@@ -892,9 +894,9 @@
         '<p class="dash-cta-eyebrow">' + eyebrow + ' · ' + levelName + '</p>' +
         '<h2 id="resumeTitle">Bài ' + l.number + ': ' + rsEsc(l.title || '') +
           (l.titleHanzi ? ' <span class="hanzi">' + rsEsc(l.titleHanzi) + '</span>' : '') + '</h2>' +
-        '<div class="dash-cta-progress" aria-label="Đã xong ' + done + ' trên ' + PATH_STEPS.length + ' bước">' +
+        '<div class="dash-cta-progress" aria-label="Đã xong ' + done + ' trên ' + lps.length + ' bước">' +
           '<div class="dash-cta-progress-bar"><span style="width:' + pct + '%"></span></div>' +
-          '<span>' + done + '/' + PATH_STEPS.length + ' bước</span>' +
+          '<span>' + done + '/' + lps.length + ' bước</span>' +
         '</div>' +
         '<p class="dash-cta-sub">' + next + '</p>' +
         '<div class="resume-actions">' +
@@ -1707,7 +1709,7 @@
     workbook: { label: 'Luyện tập sách bài tập', emoji: '📓', color: 'green' },
     hanviet: { label: 'Bắc cầu Hán–Việt', emoji: '🌉', color: 'gold' },
     synonym: { label: 'Phân biệt từ gần nghĩa', emoji: '🔍', color: 'blue' },
-    writing: { label: 'Viết đoạn', emoji: '✍️', color: 'purple' }
+    writing: { label: 'Luyện viết', emoji: '✍️', color: 'purple' }
   };
 
   // match/fill/sort/errfix/mc gop chung vao 1 o "Game on tap" tren giao dien chinh
@@ -1912,9 +1914,21 @@
     { key: 'final', title: 'Kiểm tra cuối bài', stage: '验', desc: '10 câu trộn → điểm, sao và chứng nhận', min: 3, icon: '🎓', section: 'finalPractice',
       open: function (l, s) { showFinalPractice(l, s); } }
   ];
+  // HSK 5: buoc 6 la Luyen viet (书写 — xep cau + viet doan 80 chu, cham diem va sua loi);
+  // phan Noi chuyen xuong "Luyen them"
+  var PATH_STEPS_HSK5 = PATH_STEPS.map(function (s) {
+    if (s.key !== 'speak') return s;
+    return { key: 'writing', title: 'Luyện viết', stage: '用', desc: 'Xếp câu, viết đoạn 80 chữ → chấm điểm và sửa lỗi chi tiết', min: 15, icon: '✍️', section: 'writingPractice',
+      open: function (l, s2) { showWritingPractice(l, s2); } };
+  });
+  function pathStepsOfLevel(levelId) { return levelId === 'hsk5' ? PATH_STEPS_HSK5 : PATH_STEPS; }
+  function pathStepsOf(lesson) {
+    return /\/lessons\/hsk5-bai-\d+\.html$/.test((lesson && lesson.fullPageUrl) || '') ? PATH_STEPS_HSK5 : PATH_STEPS;
+  }
+
   // Luyen them = cac o cua cap do khong nam trong 7 buoc (flash, nghe, dich, sach bai tap...)
   function pathExtras(levelId) {
-    var inPath = PATH_STEPS.map(function (s) { return s.key; });
+    var inPath = pathStepsOfLevel(levelId).map(function (s) { return s.key; });
     return (LEVEL_HUB_TABS[levelId] || []).filter(function (k) { return inPath.indexOf(k) === -1 && HUB_TAB_DEFS[k]; });
   }
 
@@ -1931,15 +1945,17 @@
     return isHubTileDone(lesson, step.key);
   }
   function pathCurrentIndex(lesson) {
-    for (var i = 0; i < PATH_STEPS.length; i++) if (!pathStepDone(lesson, PATH_STEPS[i])) return i;
-    return PATH_STEPS.length; // xong het
+    var ps = pathStepsOf(lesson);
+    for (var i = 0; i < ps.length; i++) if (!pathStepDone(lesson, ps[i])) return i;
+    return ps.length; // xong het
   }
 
   function renderLessonPath(levelId, lesson) {
     var cur = pathCurrentIndex(lesson);
-    var doneCount = PATH_STEPS.filter(function (s) { return pathStepDone(lesson, s); }).length;
-    var pct = Math.round(doneCount / PATH_STEPS.length * 100);
-    $('.hub-progress-label').textContent = cur >= PATH_STEPS.length ? 'Hoàn thành 7/7 bước 🎉' : 'Bước ' + (cur + 1) + '/7';
+    var ps = pathStepsOf(lesson);
+    var doneCount = ps.filter(function (s) { return pathStepDone(lesson, s); }).length;
+    var pct = Math.round(doneCount / ps.length * 100);
+    $('.hub-progress-label').textContent = cur >= ps.length ? 'Hoàn thành ' + ps.length + '/' + ps.length + ' bước 🎉' : 'Bước ' + (cur + 1) + '/' + ps.length;
     $('#hubProgressFill').style.width = pct + '%';
     $('#hubProgressPct').textContent = pct + '%';
 
@@ -1956,7 +1972,7 @@
 
     var list = $('#lessonPath');
     list.hidden = false;
-    list.innerHTML = PATH_STEPS.map(function (s, i) {
+    list.innerHTML = ps.map(function (s, i) {
       var done = pathStepDone(lesson, s);
       var skipped = pathStepSkipped(lesson, s);
       var state = done ? 'is-done' + (skipped ? ' is-skipped' : '') : (i === cur ? 'is-current' : (i > cur ? 'is-later' : 'is-open'));
@@ -1994,6 +2010,8 @@
         var k = btn.getAttribute('data-path-extra');
         pathState = null;
         if (k === 'flash') showFlashcardPractice(levelId, lesson);
+        else if (k === 'speak') showSpeakPractice(levelId, lesson);
+        else if (k === 'writing') showWritingPractice(levelId, lesson);
         else if (k === 'listen') showListenPractice(levelId, lesson);
         else if (k === 'translate') showTranslatePractice(levelId, lesson);
         else if (k === 'workbook') showWorkbookPractice(levelId, lesson);
@@ -2008,7 +2026,7 @@
     pathState = { levelId: levelId, lesson: lesson, idx: idx };
     // Dong moi man khac truoc (vai man luyen tap khong tu dong man Khoi dong)
     $all('#main > .dash-section').forEach(function (s) { s.hidden = true; });
-    PATH_STEPS[idx].open(levelId, lesson);
+    pathStepsOf(lesson)[idx].open(levelId, lesson);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     updatePathBar();
   }
@@ -2018,16 +2036,17 @@
     var bar = $('#pathBar');
     if (!bar) return;
     if (!pathState) { bar.hidden = true; document.body.classList.remove('has-path-bar'); return; }
-    var step = PATH_STEPS[pathState.idx];
+    var ps = pathStepsOf(pathState.lesson);
+    var step = ps[pathState.idx];
     var sec = document.getElementById(step.section);
     if (!sec || sec.hidden) { bar.hidden = true; document.body.classList.remove('has-path-bar'); return; }
     var done = pathStepDone(pathState.lesson, step);
-    var last = pathState.idx === PATH_STEPS.length - 1;
-    var next = last ? null : PATH_STEPS[pathState.idx + 1];
+    var last = pathState.idx === ps.length - 1;
+    var next = last ? null : ps[pathState.idx + 1];
     bar.innerHTML =
       '<div class="pb-info">' +
-        '<span class="pb-step">Bước ' + (pathState.idx + 1) + '/7 · ' + step.title + (done ? ' <em>✓ đã xong</em>' : '') + '</span>' +
-        '<span class="pb-track">' + PATH_STEPS.map(function (s, i) {
+        '<span class="pb-step">Bước ' + (pathState.idx + 1) + '/' + ps.length + ' · ' + step.title + (done ? ' <em>✓ đã xong</em>' : '') + '</span>' +
+        '<span class="pb-track">' + ps.map(function (s, i) {
           return '<i class="' + (pathStepDone(pathState.lesson, s) ? 'is-done' : '') + (i === pathState.idx ? ' is-here' : '') + '"></i>';
         }).join('') + '</span>' +
         (done || last ? '' : '<span class="pb-hint">Làm xong bước này để được đánh dấu ✓</span>') +
@@ -2043,7 +2062,7 @@
     $('#pbNext').addEventListener('click', function () {
       var st = pathState;
       if (!st) return;
-      if (st.idx < PATH_STEPS.length - 1) openPathStep(st.levelId, st.lesson, st.idx + 1);
+      if (st.idx < pathStepsOf(st.lesson).length - 1) openPathStep(st.levelId, st.lesson, st.idx + 1);
       else { pathState = null; updatePathBar(); showResultsPractice(st.levelId, st.lesson); }
     });
     $('#pbMap').addEventListener('click', function () {
@@ -2061,7 +2080,7 @@
     new MutationObserver(function () {
       // Man "Kiem tra cuoi bai" moi: cac ham show* cu khong biet de an no —
       // hoc sinh sang man khac (menu, trang chu...) thi tu an
-      ['finalPractice', 'srsPractice'].forEach(function (id) {
+      ['finalPractice', 'srsPractice', 'writingPractice'].forEach(function (id) {
         var fq = document.getElementById(id);
         if (fq && !fq.hidden) {
           var others = $all('#main > .dash-section').filter(function (s) { return s !== fq && !s.hidden; });
@@ -3151,7 +3170,8 @@
             errorFixMode: iframe.contentWindow.errorFixMode || null,
             mcData: iframe.contentWindow.mcData || [],
             translateData: iframe.contentWindow.translateData || [],
-            translateDataRev: iframe.contentWindow.translateDataRev || []
+            translateDataRev: iframe.contentWindow.translateDataRev || [],
+            writingData: iframe.contentWindow.writingData || null
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -11438,6 +11458,34 @@
   var spTierMode = 1;
   var spRecState = {};
 
+  /* ---------------- Luyen viet (HSK 5 · buoc 6): public/js/luyen-viet.js ---------------- */
+  function showWritingPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $all('#main > .dash-section').forEach(function (s) { s.hidden = s.id !== 'writingPractice'; });
+    var hop = $('#wrContent');
+    hop.className = '';
+    hop.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    loadLessonRawData(lesson).then(function (data) {
+      if (!data.writingData || !window.LuyenViet) {
+        hop.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có phần luyện viết.</p>';
+        return;
+      }
+      var ten = (lesson.fullPageUrl.match(/([\w-]+)\.html$/) || [])[1] || lesson.fullPageUrl;
+      window.LuyenViet.mount(hop, data.writingData, {
+        key: ten,
+        onDone: function (r) {
+          if (!r.coBai) return;
+          // correct/total cong vao bang xep hang -> chi tinh cac cau xep cau; diem bai viet luu rieng
+          recordLessonScore(lesson, 'writing', { done: true, correct: r.sxDung, total: r.sxTong, diem: r.diem });
+        }
+      });
+    }).catch(function () {
+      hop.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được phần luyện viết của bài này.</p>';
+    });
+    $('#writingPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   function showSpeakPractice(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
@@ -15080,6 +15128,12 @@
         tab.classList.add('active');
         renderListenContent();
       });
+    });
+    $('#wrBack').addEventListener('click', function () {
+      pathState = null;
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
     });
     $('#spBack').addEventListener('click', function () {
       if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);

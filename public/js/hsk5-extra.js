@@ -83,72 +83,13 @@
 
   /* Bac cau Han-Viet gio nam trong lesson-engine.js — dung chung cho moi bai */
 
-  /* ---------- 3. Viết đoạn 80 chữ ---------- */
+  /* ---------- 3. Luyện viết: xếp câu + đoạn 80 chữ, chấm và sửa lỗi (luyen-viet.js) ---------- */
   function buildWriting() {
     var box = document.getElementById('writing-wrap');
-    if (!box || typeof writingData === 'undefined') return;
-    var d = writingData;
-    var KEY = 'hyv_write_' + location.pathname;
-
-    box.innerHTML =
-      '<div class="h5-w-prompt">' +
-        '<div class="h5-w-label">Đề bài</div>' +
-        '<div class="h5-w-words">' + d.words.map(function (w) {
-          return '<span class="h5-w-word">' + esc(w) + '</span>';
-        }).join('') + '</div>' +
-        '<div class="h5-w-task">' + esc(d.prompt) + '</div>' +
-      '</div>' +
-
-      '<div class="h5-w-outline"><div class="h5-w-label">Dàn ý gợi ý</div><ol>' +
-        d.outline.map(function (o) { return '<li>' + esc(o) + '</li>'; }).join('') +
-      '</ol></div>' +
-
-      '<div class="h5-w-editor">' +
-        '<div class="h5-w-label">Bài làm của em</div>' +
-        '<textarea id="h5-w-text" rows="7" placeholder="Viết bằng chữ Hán vào đây…"></textarea>' +
-        '<div class="h5-w-count"><span id="h5-w-n">0</span> chữ Hán ' +
-          '<span class="h5-w-target">· mục tiêu khoảng 80</span></div>' +
-      '</div>' +
-
-      '<div class="h5-w-check"><div class="h5-w-label">Tự kiểm trước khi nộp</div>' +
-        d.checklist.map(function (c, i) {
-          return '<label class="h5-w-item"><input type="checkbox" data-i="' + i + '"> ' + esc(c) + '</label>';
-        }).join('') +
-        '<div class="h5-w-auto" id="h5-w-auto"></div>' +
-      '</div>' +
-
-      '<button type="button" class="h5-w-toggle" id="h5-w-toggle">Xem bài mẫu ▾</button>' +
-      '<div class="h5-w-model" id="h5-w-model" hidden>' +
-        '<div class="h5-w-label">Bài mẫu</div>' +
-        '<div class="h5-w-model-zh">' + esc(d.model.zh) + ' ' + spk(d.model.zh) + '</div>' +
-        '<div class="h5-w-model-py">' + esc(d.model.py) + '</div>' +
-        '<div class="h5-w-model-vn">' + esc(d.model.vn) + '</div>' +
-      '</div>';
-
-    var ta = document.getElementById('h5-w-text');
-    try { ta.value = localStorage.getItem(KEY) || ''; } catch (e) { /* bo qua */ }
-
-    function refresh() {
-      var t = ta.value;
-      var han = (t.match(/[一-鿿]/g) || []).length;
-      document.getElementById('h5-w-n').textContent = han;
-      // Kiem tra tu dong: da dung du 5 tu cho san chua
-      var missing = d.words.filter(function (w) { return t.indexOf(w) < 0; });
-      var el = document.getElementById('h5-w-auto');
-      if (!t.trim()) { el.innerHTML = ''; return; }
-      el.innerHTML = missing.length
-        ? '<span class="miss">Còn thiếu từ: <b>' + missing.map(esc).join('、') + '</b></span>'
-        : '<span class="ok">✅ Đã dùng đủ cả ' + d.words.length + ' từ cho sẵn</span>';
-      try { localStorage.setItem(KEY, t); } catch (e) { /* bo qua */ }
-    }
-    ta.addEventListener('input', refresh);
-    refresh();
-
-    document.getElementById('h5-w-toggle').addEventListener('click', function () {
-      var m = document.getElementById('h5-w-model');
-      m.hidden = !m.hidden;
-      this.textContent = m.hidden ? 'Xem bài mẫu ▾' : 'Ẩn bài mẫu ▴';
-    });
+    if (!box || typeof writingData === 'undefined' || !window.LuyenViet) return;
+    // Cung khoa luu voi buoc 6 cua lo trinh — bai dang viet do o dau cung thay
+    var ten = (location.pathname.match(/([\w-]+?)(?:\.html)?$/) || [])[1] || location.pathname;
+    window.LuyenViet.mount(box, writingData, { key: ten });
   }
 
 

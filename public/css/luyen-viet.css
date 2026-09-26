@@ -1,0 +1,182 @@
+/* Luyện viết HSK 5 (luyen-viet.js) — dùng chung cho app và trang bài */
+:root {
+  --lv-card: #fff; --lv-ink: #1f1a17; --lv-mid: #5f5952; --lv-soft: #7d776e; --lv-line: #e6e2da;
+  --lv-tint: #faf6ef; --lv-accent: #c8372d; --lv-accent-d: #a82d24; --lv-accent-l: #fdefec; --lv-on-accent: #fff;
+  --lv-ok: #1f7a45; --lv-ok-l: #e8f5ec; --lv-bad: #b3261e; --lv-bad-l: #fdecea;
+  --lv-warn: #8a5a00; --lv-warn-l: #fff4d6; --lv-mark: #ffe58a; --lv-py: #8a5a0f;
+  --lv-hanzi: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  html.ho-tro-toi:not([data-theme="light"]) {
+    --lv-card: #292522; --lv-ink: #ece6dc; --lv-mid: #bdb4a8; --lv-soft: #968e84; --lv-line: #3d3631;
+    --lv-tint: #221e1b; --lv-accent: #f0786b; --lv-accent-d: #f59a8f; --lv-accent-l: #3a2320; --lv-on-accent: #1c1917;
+    --lv-ok: #74d19c; --lv-ok-l: #1f2e25; --lv-bad: #f0786b; --lv-bad-l: #3a2320;
+    --lv-warn: #f2bf6b; --lv-warn-l: #372d1c; --lv-mark: #5c4a14; --lv-py: #e2b563;
+  }
+}
+html.ho-tro-toi[data-theme="dark"] {
+  --lv-card: #292522; --lv-ink: #ece6dc; --lv-mid: #bdb4a8; --lv-soft: #968e84; --lv-line: #3d3631;
+  --lv-tint: #221e1b; --lv-accent: #f0786b; --lv-accent-d: #f59a8f; --lv-accent-l: #3a2320; --lv-on-accent: #1c1917;
+  --lv-ok: #74d19c; --lv-ok-l: #1f2e25; --lv-bad: #f0786b; --lv-bad-l: #3a2320;
+  --lv-warn: #f2bf6b; --lv-warn-l: #372d1c; --lv-mark: #5c4a14; --lv-py: #e2b563;
+}
+
+.lv { color: var(--lv-ink); display: flex; flex-direction: column; gap: 14px; font-size: 0.98rem; line-height: 1.6; }
+.lv [hidden] { display: none !important; }
+.lv-zh { font-family: var(--lv-hanzi); }
+.lv-pane { display: flex; flex-direction: column; gap: 14px; }
+
+.lv-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.lv-tab {
+  font: inherit; font-weight: 600; font-size: 0.92rem; color: var(--lv-mid); background: var(--lv-card);
+  border: 1.5px solid var(--lv-line); border-radius: 999px; padding: 8px 16px; cursor: pointer; min-height: 40px;
+}
+.lv-tab small { font-weight: 500; color: var(--lv-soft); margin-left: 4px; }
+.lv-tab:hover { border-color: var(--lv-accent); }
+.lv-tab.active { background: var(--lv-accent); border-color: var(--lv-accent); color: var(--lv-on-accent); }
+.lv-tab.active small { color: inherit; opacity: 0.8; }
+.lv-tab:focus-visible, .lv-btn:focus-visible, .lv-chip:focus-visible { outline: 3px solid var(--lv-accent); outline-offset: 2px; }
+
+.lv-card { background: var(--lv-card); border: 1px solid var(--lv-line); border-radius: 16px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(40, 30, 20, 0.05); }
+.lv-card h3 { margin: 0 0 10px; font-size: 1.02rem; }
+.lv-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--lv-soft); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.lv-intro, .lv-note { color: var(--lv-mid); margin: 0; }
+.lv-note { font-size: 0.86rem; }
+.lv-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+
+.lv-btn {
+  font: inherit; font-weight: 700; border: 0; border-radius: 12px; padding: 11px 20px; min-height: 44px; cursor: pointer;
+  background: var(--lv-accent); color: var(--lv-on-accent);
+}
+.lv-btn:hover { background: var(--lv-accent-d); }
+.lv-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.lv-btn.ghost { background: transparent; color: var(--lv-accent); border: 1.5px solid var(--lv-accent); }
+.lv-btn.ghost:hover { background: var(--lv-accent-l); }
+.lv-btn.sm { padding: 7px 14px; min-height: 38px; font-size: 0.9rem; }
+.lv-next { display: flex; justify-content: center; }
+
+/* Hoàn thành câu */
+.lv-sx-sum { font-size: 0.9rem; color: var(--lv-mid); }
+.lv-sx { display: flex; flex-direction: column; gap: 12px; }
+.lv-sx.is-dung { border-color: var(--lv-ok); }
+.lv-sx.is-sai { border-color: var(--lv-bad); }
+.lv-sx-head { display: flex; gap: 10px; align-items: flex-start; }
+.lv-num { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--lv-tint); color: var(--lv-mid); display: grid; place-items: center; font-weight: 700; font-size: 0.85rem; margin-top: 6px; }
+.lv-sx-line { flex: 1; min-height: 44px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 6px 10px; border-bottom: 2px dashed var(--lv-line); }
+.lv-sx-ph { color: var(--lv-soft); font-size: 0.88rem; }
+.lv-sx-dot { font-family: var(--lv-hanzi); color: var(--lv-soft); }
+.lv-sx-bank { display: flex; flex-wrap: wrap; gap: 8px; padding-left: 38px; }
+.lv-chip {
+  font-family: var(--lv-hanzi); font-size: 1.12rem; color: var(--lv-ink); background: var(--lv-tint);
+  border: 1.5px solid var(--lv-line); border-radius: 10px; padding: 6px 12px; min-height: 42px; cursor: pointer;
+}
+.lv-chip:hover:not(:disabled) { border-color: var(--lv-accent); }
+.lv-chip:disabled { opacity: 0.3; cursor: default; }
+.lv-chip.is-on { background: var(--lv-accent-l); border-color: var(--lv-accent); }
+.lv-chip.is-on:disabled { opacity: 1; }
+.lv-sx-act { padding-left: 38px; }
+.lv-sx-kq { padding-left: 38px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.lv-sx-kq .ok { color: var(--lv-ok); }
+.lv-sx-kq .bad { color: var(--lv-bad); }
+.lv-sx-vn { color: var(--lv-mid); font-size: 0.92rem; }
+.lv-sx-giai { font-size: 0.9rem; background: var(--lv-tint); border-radius: 10px; padding: 8px 12px; }
+
+/* Đề + soạn bài */
+.lv-de-zh { font-size: 1.06rem; margin-bottom: 4px; }
+.lv-de-vn { color: var(--lv-mid); font-size: 0.92rem; margin-bottom: 12px; }
+.lv-words { display: flex; flex-wrap: wrap; gap: 8px; }
+.lv-word {
+  font-family: var(--lv-hanzi); font-size: 1.15rem; font-weight: 700; padding: 6px 14px; border-radius: 10px;
+  background: var(--lv-tint); border: 1.5px dashed var(--lv-line); color: var(--lv-ink);
+}
+.lv-word.is-used { background: var(--lv-ok-l); border: 1.5px solid var(--lv-ok); color: var(--lv-ok); }
+.lv-word.is-used::after { content: ' ✓'; font-size: 0.85rem; }
+.lv-fold summary { cursor: pointer; font-weight: 700; list-style-position: inside; }
+.lv-fold[open] summary { margin-bottom: 10px; }
+.lv-tudung { display: grid; gap: 8px; margin-top: 10px; }
+.lv-tudung > div { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; padding: 8px 10px; background: var(--lv-tint); border-radius: 10px; }
+.lv-tudung i { font-style: normal; font-size: 0.8rem; color: var(--lv-soft); }
+.lv-ct { display: grid; gap: 8px; }
+.lv-ct-i { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 12px; background: var(--lv-tint); }
+.lv-ct-i b { color: var(--lv-accent); }
+.lv-ct-i small { color: var(--lv-mid); font-size: 0.85rem; }
+
+.lv-editor textarea {
+  width: 100%; box-sizing: border-box; font-family: var(--lv-hanzi); font-size: 1.12rem; line-height: 1.9;
+  color: var(--lv-ink); background: var(--lv-tint); border: 1.5px solid var(--lv-line); border-radius: 12px; padding: 12px 14px; resize: vertical;
+}
+.lv-editor textarea:focus { outline: none; border-color: var(--lv-accent); }
+.lv-meter { display: flex; align-items: center; gap: 10px; margin: 10px 0 12px; font-size: 0.88rem; color: var(--lv-mid); font-variant-numeric: tabular-nums; }
+.lv-bar { flex: 1; height: 8px; border-radius: 99px; background: var(--lv-tint); overflow: hidden; border: 1px solid var(--lv-line); }
+.lv-bar i { display: block; height: 100%; width: 0; background: var(--lv-soft); border-radius: inherit; transition: width 0.2s; }
+.lv-bar i.ok { background: var(--lv-ok); }
+.lv-bar i.warn { background: var(--lv-warn); }
+.lv-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.lv-hint { font-size: 0.88rem; color: var(--lv-mid); }
+
+/* Kết quả */
+.lv-score { display: flex; flex-direction: column; gap: 10px; }
+.lv-score-top { display: flex; gap: 16px; align-items: center; margin-bottom: 4px; }
+.lv-ring {
+  flex: none; width: 84px; height: 84px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border: 6px solid var(--lv-warn); background: var(--lv-warn-l); color: var(--lv-warn);
+}
+.lv-ring.pass { border-color: var(--lv-ok); background: var(--lv-ok-l); color: var(--lv-ok); }
+.lv-ring b { font-size: 1.7rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.lv-ring small { font-size: 0.75rem; }
+.lv-src { font-weight: 800; font-size: 1.02rem; }
+.lv-meta { color: var(--lv-mid); font-size: 0.88rem; }
+.lv-tc { display: grid; grid-template-columns: 96px 1fr 58px; gap: 10px; align-items: center; font-size: 0.9rem; }
+.lv-tc b { text-align: right; font-variant-numeric: tabular-nums; }
+.lv-tc small { color: var(--lv-soft); font-weight: 500; }
+.lv-tc .lv-bar i { background: var(--lv-accent); }
+
+.lv-wait { display: flex; gap: 12px; align-items: center; color: var(--lv-mid); }
+.lv-spin { flex: none; width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--lv-line); border-top-color: var(--lv-accent); animation: lv-quay 0.9s linear infinite; }
+@keyframes lv-quay { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .lv-spin { animation-duration: 3s; } }
+.lv-warn { background: var(--lv-warn-l); border-color: var(--lv-warn); color: var(--lv-ink); }
+.lv-ok { background: var(--lv-ok-l); border-color: var(--lv-ok); }
+.lv-nx p { margin: 0; }
+
+.lv-bai { font-size: 1.12rem; line-height: 2; word-break: break-all; }
+.lv-mk { background: var(--lv-mark); color: inherit; border-radius: 4px; padding: 1px 2px; }
+.lv-mk.is-nhe { background: transparent; border-bottom: 2px dotted var(--lv-warn); border-radius: 0; }
+.lv-mk sup { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.62rem; font-weight: 700; color: var(--lv-warn); margin-left: 1px; }
+.lv-loi { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 12px; }
+.lv-loi li::marker { font-weight: 700; color: var(--lv-soft); }
+.lv-loi-top { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 4px; }
+.lv-tag { font-size: 0.74rem; font-weight: 700; padding: 2px 8px; border-radius: 99px; background: var(--lv-accent-l); color: var(--lv-accent); }
+.lv-tag.nhe { background: var(--lv-warn-l); color: var(--lv-warn); }
+.lv-by { font-size: 0.74rem; color: var(--lv-soft); }
+.lv-loi-fix { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; font-size: 1.05rem; }
+.lv-loi-fix s { color: var(--lv-bad); text-decoration-thickness: 2px; }
+.lv-loi-fix b { color: var(--lv-ok); }
+.lv-loi-why { font-size: 0.9rem; color: var(--lv-mid); }
+.lv-diff del { color: var(--lv-bad); text-decoration: line-through; text-decoration-thickness: 2px; background: var(--lv-bad-l); }
+.lv-diff ins { color: var(--lv-ok); text-decoration: none; background: var(--lv-ok-l); font-weight: 700; border-radius: 3px; }
+.lv-legend { text-transform: none; letter-spacing: 0; font-weight: 600; display: inline-flex; gap: 8px; }
+.lv-legend del { color: var(--lv-bad); }
+.lv-legend ins { color: var(--lv-ok); text-decoration: none; }
+.lv-sub { margin-top: 10px; }
+.lv-sub summary { cursor: pointer; color: var(--lv-mid); font-size: 0.9rem; }
+.lv-py { color: var(--lv-py); font-size: 0.9rem; margin-top: 6px; }
+.lv-vn { color: var(--lv-mid); font-size: 0.92rem; margin-top: 6px; }
+
+/* Hướng dẫn */
+.lv-tbl { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.lv-tbl th, .lv-tbl td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--lv-line); vertical-align: top; }
+.lv-tbl th { font-size: 0.78rem; color: var(--lv-soft); text-transform: uppercase; letter-spacing: 0.05em; }
+.lv-steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.lv-khung { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.lv-khung > div { display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 12px; background: var(--lv-tint); font-size: 0.9rem; }
+.lv-khung span { color: var(--lv-mid); }
+.lv-khung .lv-zh { color: var(--lv-accent); }
+
+@media (max-width: 600px) {
+  .lv-card { padding: 14px; border-radius: 14px; }
+  .lv-khung { grid-template-columns: 1fr; }
+  .lv-sx-bank, .lv-sx-act, .lv-sx-kq { padding-left: 0; }
+  .lv-tc { grid-template-columns: 78px 1fr 52px; font-size: 0.85rem; }
+  .lv-tab { padding: 7px 12px; font-size: 0.86rem; }
+}

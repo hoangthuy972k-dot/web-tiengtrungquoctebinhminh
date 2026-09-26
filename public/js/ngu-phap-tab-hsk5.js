@@ -12008,6 +12008,620 @@ window.NGU_PHAP_TAB["/lessons/hsk5-bai-11.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk5-bai-12.html"] = [
+ {
+  "so": "1",
+  "ten": "「以及」",
+  "tenVn": "",
+  "cauTruc": [
+   "A、B + 以及 + C",
+   "C thường là phần phụ / xếp sau (以及其他……)"
+  ],
+  "giaiThich": "以及 là liên từ, dùng để nối các từ hoặc cụm từ có quan hệ NGANG HÀNG. Các thành phần được nối thường có phân biệt chính – phụ hoặc trước – sau: phần chính / phần trước đứng trước 以及, phần phụ / phần sau đứng sau. 以及 đặt trước thành phần CUỐI của chuỗi liệt kê và mang sắc thái văn viết.",
+  "viDu": [
+   {
+    "zh": "吃饭时不要用筷子敲打碗、盘子以及桌面。",
+    "py": "Chīfàn shí búyào yòng kuàizi qiāodǎ wǎn, pánzi yǐjí zhuōmiàn.",
+    "vn": "Khi ăn đừng dùng đũa gõ vào bát, đĩa và mặt bàn."
+   },
+   {
+    "zh": "学校的领导、教师以及一些学生代表观看了演出。",
+    "py": "Xuéxiào de lǐngdǎo, jiàoshī yǐjí yìxiē xuésheng dàibiǎo guānkànle yǎnchū.",
+    "vn": "Lãnh đạo nhà trường, giáo viên cùng một số đại diện học sinh đã xem buổi biểu diễn."
+   },
+   {
+    "zh": "由于中国互联网的用户数量以及市场成熟程度等都低于发达国家，在产品创新上难有领导地位。",
+    "py": "Yóuyú Zhōngguó hùliánwǎng de yònghù shùliàng yǐjí shìchǎng chéngshú chéngdù děng dōu dīyú fādá guójiā, zài chǎnpǐn chuàngxīn shang nán yǒu lǐngdǎo dìwèi.",
+    "vn": "Do số người dùng Internet cũng như mức độ trưởng thành thị trường của Trung Quốc đều thấp hơn các nước phát triển, nên khó giành vị trí dẫn đầu về đổi mới sản phẩm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他聪明以及努力。",
+    "why": "以及 chỉ nối từ / cụm từ ngang hàng kiểu liệt kê, không nối hai tính từ làm vị ngữ.",
+    "dung": "他又聪明又努力。"
+   },
+   {
+    "sai": "本店销售其他电器以及电视、冰箱。",
+    "why": "phần chính (电视、冰箱) phải đứng TRƯỚC 以及, phần phụ / khái quát (其他电器) đứng sau.",
+    "dung": "本店销售电视、冰箱以及其他电器。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "本店销售电视、冰箱、洗衣机",
+       "其他电器。"
+      ],
+      "dap": [
+       [
+        "以及"
+       ]
+      ],
+      "chon": [
+       "以及",
+       "而且",
+       "所以"
+      ],
+      "goiY": "“Cửa hàng bán tivi, tủ lạnh, máy giặt và các đồ điện khác.”",
+      "giai": "以及 đứng trước thành phần CUỐI của chuỗi liệt kê (phần phụ / khái quát: 其他电器)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "学校的领导、教师",
+       "一些学生代表观看了演出。"
+      ],
+      "dap": [
+       [
+        "以及"
+       ]
+      ],
+      "chon": [
+       "以及",
+       "而且",
+       "但是"
+      ],
+      "goiY": "“Lãnh đạo nhà trường, giáo viên cùng một số đại diện học sinh đã xem buổi biểu diễn.”",
+      "giai": "Nối các danh từ ngang hàng, phần chính (领导、教师) trước, phần phụ (学生代表) sau → 以及."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他不但聪明，",
+       "非常努力。"
+      ],
+      "dap": [
+       [
+        "而且"
+       ]
+      ],
+      "chon": [
+       "而且",
+       "以及",
+       "或者"
+      ],
+      "goiY": "Nối hai vế tăng tiến: “Cậu ấy không những thông minh mà còn rất chăm chỉ.”",
+      "giai": "以及 không nối hai vị ngữ tính từ / hai vế câu; 不但……而且…… mới đúng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "出国前，请大家带好护照、机票",
+       "一些现金。"
+      ],
+      "dap": [
+       [
+        "以及"
+       ]
+      ],
+      "chon": [
+       "以及",
+       "而且",
+       "因为"
+      ],
+      "goiY": "“Trước khi ra nước ngoài, mọi người mang đủ hộ chiếu, vé máy bay và một ít tiền mặt.”",
+      "giai": "Liệt kê đồ vật (danh từ), 以及 đặt trước món cuối cùng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "会议讨论了新产品的价格、质量",
+       "推广计划。"
+      ],
+      "dap": [
+       [
+        "以及"
+       ]
+      ],
+      "chon": [
+       "以及",
+       "而且",
+       "所以"
+      ],
+      "goiY": "“Cuộc họp đã bàn về giá cả, chất lượng của sản phẩm mới cũng như kế hoạch quảng bá.”",
+      "giai": "以及 nối các cụm danh từ làm tân ngữ của 讨论; giọng văn viết hợp với “cuộc họp”."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "微信的用户不仅有华裔，",
+       "有很多外国人。"
+      ],
+      "dap": [
+       [
+        "还"
+       ]
+      ],
+      "chon": [
+       "还",
+       "以及",
+       "和"
+      ],
+      "goiY": "Cặp 不仅……还……: “Người dùng WeChat không chỉ có người gốc Hoa mà còn có nhiều người nước ngoài.”",
+      "giai": "Vế sau của 不仅 cần phó từ 还 đứng trước động từ 有; 以及 / 和 không đứng trước động từ để nối vế câu."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "要带",
+       "护照、机票",
+       "以及",
+       "一些现金"
+      ],
+      "dap": [
+       "我们要带护照、机票以及一些现金。"
+      ],
+      "goiY": "Chúng tôi phải mang hộ chiếu, vé máy bay và một ít tiền mặt.",
+      "giai": "以及 đứng trước thành phần cuối (一些现金)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "会上",
+       "讨论了",
+       "产品的价格、质量",
+       "以及",
+       "推广计划"
+      ],
+      "dap": [
+       "会上讨论了产品的价格、质量以及推广计划。"
+      ],
+      "goiY": "Trong cuộc họp đã bàn về giá, chất lượng sản phẩm và kế hoạch quảng bá.",
+      "giai": "Động từ 讨论了 + chuỗi tân ngữ nối bằng 、 và 以及."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "喜欢",
+       "打篮球、踢足球",
+       "以及",
+       "其他各种运动"
+      ],
+      "dap": [
+       "他喜欢打篮球、踢足球以及其他各种运动。"
+      ],
+      "goiY": "Cậu ấy thích chơi bóng rổ, đá bóng và đủ các môn thể thao khác.",
+      "giai": "Phần khái quát (其他各种运动) luôn đứng SAU 以及."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "学校的领导、教师以及一些学生代表观看了演出。",
+      "dung": true,
+      "giai": "Đúng: phần chính trước, phần phụ sau, 以及 đứng trước thành phần cuối."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他聪明以及努力。",
+      "dung": false,
+      "sua": "他又聪明又努力。",
+      "giai": "以及 không nối hai tính từ làm vị ngữ; dùng 又……又…… hoặc 聪明而且努力."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "本店销售其他电器以及电视、冰箱。",
+      "dung": false,
+      "sua": "本店销售电视、冰箱以及其他电器。",
+      "giai": "Phần chính (电视、冰箱) phải đứng trước 以及, phần khái quát (其他电器) đứng sau."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mẹ hỏi tôi thời tiết Bắc Kinh thế nào, ăn có quen không và khi nào về nhà.",
+      "dap": [
+       "妈妈问我北京的天气怎么样，吃饭习惯不习惯，以及什么时候回家。",
+       "妈妈问我北京天气怎么样、吃饭习惯不习惯以及什么时候回家。"
+      ],
+      "py": "Māma wèn wǒ Běijīng de tiānqì zěnmeyàng, chīfàn xíguàn bù xíguàn, yǐjí shénme shíhou huí jiā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以及 trước câu hỏi cuối cùng.",
+      "giai": "以及 có thể nối cả các cụm câu hỏi ngang hàng, đặt trước ý cuối."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Khi tặng quà phải chú ý đến sở thích của người nhận cũng như giá cả của món quà.",
+      "dap": [
+       "送礼物的时候要注意对方的爱好以及礼物的价格。",
+       "送人礼物的时候要注意对方的爱好以及礼物的价格。",
+       "送礼物时要注意对方的爱好以及礼物的价格。"
+      ],
+      "py": "Sòng lǐwù de shíhou yào zhùyì duìfāng de àihào yǐjí lǐwù de jiàgé.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以及.",
+      "giai": "以及 nối hai cụm danh từ làm tân ngữ của 注意."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "A：你认为学中文的重要性有哪些？　B：＿＿＿。",
+      "goiY": "nêu ba điều: tìm việc, hiểu văn hoá, kết bạn — dùng 以及 (bài 练一练 của sách)",
+      "mau": "B：学中文可以帮我们找到好工作、了解中国文化以及交到中国朋友。",
+      "can": [
+       [
+        "以及"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "妈妈在电话里问了我很多问题，如北京的天气怎么样，吃饭习惯不习惯，＿＿＿。",
+      "goiY": "thêm một câu hỏi nữa của mẹ — dùng 以及 (bài 练一练 của sách)",
+      "mau": "妈妈在电话里问了我很多问题，如北京的天气怎么样，吃饭习惯不习惯，以及什么时候放假回家。",
+      "can": [
+       [
+        "以及"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「以及」 (liệt kê ít nhất ba thứ), nói về điện thoại hoặc việc học của em",
+      "mau": "我每天用手机查词典、听中文歌以及跟朋友聊天。",
+      "can": [
+       [
+        "以及"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「程度」",
+  "tenVn": "",
+  "cauTruc": [
+   "N + 程度 (成熟程度, 文化程度)",
+   "V / Adj + 到了 + ……的程度",
+   "在很大程度上"
+  ],
+  "giaiThich": "程度 là danh từ, chỉ mức, tầng bậc mà một mặt nào đó đạt tới. Hay gặp ba cách dùng: N + 程度 (成熟程度, 文化程度); ……到了……的程度 (đến mức …); 在很大程度上 (ở mức độ lớn). Chú ý: nói năng lực ngoại ngữ thì dùng 水平, không dùng 程度.",
+  "viDu": [
+   {
+    "zh": "由于中国互联网的用户数量以及市场成熟程度等都低于发达国家，在产品创新上难有领导地位。",
+    "py": "Yóuyú Zhōngguó hùliánwǎng de yònghù shùliàng yǐjí shìchǎng chéngshú chéngdù děng dōu dīyú fādá guójiā, zài chǎnpǐn chuàngxīn shang nán yǒu lǐngdǎo dìwèi.",
+    "vn": "Do số người dùng Internet cũng như mức độ trưởng thành thị trường của Trung Quốc đều thấp hơn các nước phát triển, nên khó giành vị trí dẫn đầu về đổi mới sản phẩm."
+   },
+   {
+    "zh": "问题已经发展到了十分严重的程度。",
+    "py": "Wèntí yǐjīng fāzhǎn dàole shífēn yánzhòng de chéngdù.",
+    "vn": "Vấn đề đã phát triển đến mức hết sức nghiêm trọng."
+   },
+   {
+    "zh": "在很大程度上，一个人的未来取决于他所受的教育。",
+    "py": "Zài hěn dà chéngdù shang, yí ge rén de wèilái qǔjué yú tā suǒ shòu de jiàoyù.",
+    "vn": "Ở mức độ lớn, tương lai của một người phụ thuộc vào nền giáo dục mà người đó nhận được."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "问题已经发展到了十分严重。",
+    "why": "thiếu 的程度 — sau 到了 phải có danh từ chỉ mức độ.",
+    "dung": "问题已经发展到了十分严重的程度。"
+   },
+   {
+    "sai": "他的汉语程度很高。",
+    "why": "năng lực ngôn ngữ dùng 水平; 程度 chỉ mức độ (严重的程度, 成熟程度).",
+    "dung": "他的汉语水平很高。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "问题已经发展到了十分严重的",
+       "。"
+      ],
+      "dap": [
+       [
+        "程度"
+       ]
+      ],
+      "chon": [
+       "程度",
+       "水平",
+       "地位"
+      ],
+      "goiY": "“Vấn đề đã phát triển đến mức hết sức nghiêm trọng.”",
+      "giai": "Mẫu 到了……的程度 = đến mức …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在很大程度",
+       "，一个人的未来取决于他所受的教育。"
+      ],
+      "dap": [
+       [
+        "上"
+       ]
+      ],
+      "chon": [
+       "上",
+       "里",
+       "下"
+      ],
+      "goiY": "“Ở mức độ lớn, tương lai của một người phụ thuộc vào nền giáo dục người đó nhận được.”",
+      "giai": "Cụm cố định: 在很大程度上 — luôn là 上."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的汉语",
+       "很高，已经能看中文电影了。"
+      ],
+      "dap": [
+       [
+        "水平"
+       ]
+      ],
+      "chon": [
+       "水平",
+       "程度",
+       "地位"
+      ],
+      "goiY": "Nói NĂNG LỰC tiếng Trung.",
+      "giai": "Năng lực ngôn ngữ dùng 水平; 程度 là mức độ (严重的程度, 成熟程度)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "中国互联网的用户数量以及市场成熟",
+       "等都低于发达国家。"
+      ],
+      "dap": [
+       [
+        "程度"
+       ]
+      ],
+      "chon": [
+       "程度",
+       "背景",
+       "地位"
+      ],
+      "goiY": "“mức độ trưởng thành của thị trường” — câu trong bài đọc.",
+      "giai": "N + 程度: 成熟程度 = mức độ trưởng thành."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他累得已经到了站着都能睡着的",
+       "。"
+      ],
+      "dap": [
+       [
+        "程度"
+       ]
+      ],
+      "chon": [
+       "程度",
+       "水平",
+       "中心"
+      ],
+      "goiY": "“Cậu ấy mệt đến mức đứng cũng ngủ được.”",
+      "giai": "到了 + ……的程度; 水平 không dùng trong mẫu này."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这些年，人们对环境保护的重视",
+       "越来越高了。"
+      ],
+      "dap": [
+       [
+        "程度"
+       ]
+      ],
+      "chon": [
+       "程度",
+       "背景",
+       "中心"
+      ],
+      "goiY": "“Những năm gần đây, mức độ coi trọng bảo vệ môi trường của mọi người ngày càng cao.”",
+      "giai": "重视程度 = mức độ coi trọng (N / V + 程度)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "问题",
+       "已经",
+       "发展到了",
+       "十分严重的",
+       "程度"
+      ],
+      "dap": [
+       "问题已经发展到了十分严重的程度。"
+      ],
+      "goiY": "Vấn đề đã phát triển đến mức hết sức nghiêm trọng.",
+      "giai": "已经 + 发展到了 + ……的程度."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "玩手机",
+       "已经",
+       "到了",
+       "不吃饭的程度"
+      ],
+      "dap": [
+       "他玩手机已经到了不吃饭的程度。"
+      ],
+      "goiY": "Cậu ta chơi điện thoại đến mức bỏ cả ăn.",
+      "giai": "Chủ đề 他玩手机 + 已经到了 + ……的程度."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一个人的未来",
+       "在很大程度上",
+       "取决于",
+       "他所受的",
+       "教育"
+      ],
+      "dap": [
+       "一个人的未来在很大程度上取决于他所受的教育。",
+       "在很大程度上，一个人的未来取决于他所受的教育。"
+      ],
+      "goiY": "Tương lai của một người ở mức độ lớn phụ thuộc vào nền giáo dục người đó nhận được.",
+      "giai": "在很大程度上 làm trạng ngữ: đứng đầu câu hoặc sau chủ ngữ, trước động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "问题已经发展到了十分严重的程度。",
+      "dung": true,
+      "giai": "Đúng: 到了 + ……的程度."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "在很大程度，他的成功靠的是努力。",
+      "dung": false,
+      "sua": "在很大程度上，他的成功靠的是努力。",
+      "giai": "Thiếu 上 — cụm cố định là 在很大程度上."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他玩游戏已经到了不睡觉。",
+      "dung": false,
+      "sua": "他玩游戏已经到了不睡觉的程度。",
+      "giai": "Sau 到了 phải có danh từ chỉ mức độ: ……的程度."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bệnh của anh ấy đã nặng đến mức phải nằm viện.",
+      "dap": [
+       "他的病已经严重到了必须住院的程度。",
+       "他的病已经严重到了需要住院的程度。",
+       "他的病已经到了必须住院的程度。"
+      ],
+      "py": "Tā de bìng yǐjīng yánzhòng dàole bìxū zhùyuàn de chéngdù.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……到了……的程度.",
+      "giai": "Tính từ 严重 + 到了 + 必须住院的 + 程度."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ở mức độ lớn, thành công của một người phụ thuộc vào sự cố gắng của chính mình.",
+      "dap": [
+       "在很大程度上，一个人的成功取决于自己的努力。",
+       "一个人的成功在很大程度上取决于自己的努力。"
+      ],
+      "py": "Zài hěn dà chéngdù shang, yí ge rén de chénggōng qǔjué yú zìjǐ de nǔlì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 在很大程度上 + 取决于.",
+      "giai": "在很大程度上 đứng đầu câu hoặc sau chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，你应该马上去看医生。",
+      "goiY": "bệnh của bạn đã nặng đến mức nào đó — dùng 程度 (bài 练一练 của sách)",
+      "mau": "你的病已经严重到了这种程度，你应该马上去看医生。",
+      "can": [
+       [
+        "程度"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "A：＿＿＿。　B：我还不能完全理解。",
+      "goiY": "A hỏi B đã hiểu bài đến mức nào — dùng 程度 (bài 练一练 của sách)",
+      "mau": "A：你对这篇课文理解到了什么程度？",
+      "can": [
+       [
+        "程度"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có dùng 「程度」 (到了……的程度 hoặc 在很大程度上), nói về ảnh hưởng của điện thoại / Internet đến em",
+      "mau": "在很大程度上，手机改变了我的学习方式。",
+      "can": [
+       [
+        "程度"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk5-bai-13.html"] = [
  {
   "so": "1",

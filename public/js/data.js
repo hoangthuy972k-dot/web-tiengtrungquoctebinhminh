@@ -1493,6 +1493,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-11.html'
       },
       {
+        id: 'hsk5-l12',
+        number: 12,
+        title: 'Người dùng WeChat ở nước ngoài',
+        titleHanzi: '海外用户玩儿微信',
+        titlePinyin: 'Hǎiwài yònghù wánr Wēixìn',
+        topic: 'Unit 4 走近科学 · Công nghệ & Internet di động',
+        vocabCount: 48,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk5-bai-12.html'
+      },
+      {
         id: 'hsk5-l13',
         number: 13,
         title: 'Cưa bỏ “đáy giỏ” của cuộc sống',

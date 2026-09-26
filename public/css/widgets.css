@@ -37,8 +37,8 @@
   min-height: 40px;
   padding: 6px 14px 6px 10px;
   border-radius: 999px;
-  background: #fff;
-  color: #8a5a0f;
+  background: var(--color-white, #fff);
+  color: var(--xt-8a5a0f, #8a5a0f);
   font-weight: 800;
   font-size: 15px;
   line-height: 1;
@@ -48,8 +48,8 @@
   overflow: hidden;
 }
 .hw-star:hover { transform: translateY(-2px); }
-.hw-star svg { width: 22px; height: 22px; fill: #f2bf6b; stroke: #d9971f; stroke-width: 1.2; flex-shrink: 0; }
-.hw-star.is-on { background: linear-gradient(180deg, #fff9ec, #fff1d2); }
+.hw-star svg { width: 22px; height: 22px; fill: var(--xt-f2bf6b, #f2bf6b); stroke: var(--xt-d9971f, #d9971f); stroke-width: 1.2; flex-shrink: 0; }
+.hw-star.is-on { background: linear-gradient(180deg, var(--xb-fff9ec, #fff9ec), var(--xb-fff1d2, #fff1d2)); }
 .hw-star-num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .hw-star:not(.is-on) .hw-star-num { font-size: 13px; font-weight: 700; }
 .hw-star-bar {
@@ -62,7 +62,7 @@
   background: rgba(217, 151, 31, 0.18);
   overflow: hidden;
 }
-.hw-star-bar i { display: block; height: 100%; width: 0; border-radius: 3px; background: linear-gradient(90deg, #f2bf6b, #e9a23b); transition: width 0.9s linear; }
+.hw-star-bar i { display: block; height: 100%; width: 0; border-radius: 3px; background: linear-gradient(90deg, var(--xb-f2bf6b, #f2bf6b), #e9a23b); transition: width 0.9s linear; }
 .hw-star.is-pop { animation: hwStarPop 0.7s cubic-bezier(0.2, 1.4, 0.4, 1); }
 @keyframes hwStarPop {
   0% { transform: scale(1); }
@@ -92,7 +92,7 @@
   text-align: center;
 }
 .hw-toast.is-in { transform: translate(-50%, 0); opacity: 1; }
-.hw-toast b { color: #ffd98a; font-weight: 800; }
+.hw-toast b { color: var(--xt-ffd98a, #ffd98a); font-weight: 800; }
 .hw-toast.is-gold { background: linear-gradient(135deg, #b7791f, #8a5a0f); }
 .hw-toast.is-gold b { color: #fff; }
 @media (prefers-reduced-motion: reduce) {
@@ -122,7 +122,7 @@
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: #fff6e5;
+  background: var(--xb-fff6e5, #fff6e5);
   box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--hw-gold), 0 10px 24px rgba(168, 62, 40, 0.3);
   cursor: pointer;
   animation: hwBob 3.2s ease-in-out infinite;
@@ -153,7 +153,7 @@
   width: 22px;
   height: 22px;
   padding: 0;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-white, #fff);
   border-radius: 50%;
   background: var(--hw-red);
   color: #fff;
@@ -171,7 +171,7 @@
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: #fff;
+  background: var(--color-white, #fff);
   color: var(--hw-navy);
   box-shadow: 0 10px 26px rgba(43, 36, 32, 0.2);
   cursor: pointer;
@@ -188,7 +188,7 @@
   min-width: 20px;
   height: 20px;
   padding: 0 6px;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-white, #fff);
   border-radius: 999px;
   background: var(--hw-red);
   color: #fff;
@@ -239,7 +239,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #fff6e5;
+  background: var(--xb-fff6e5, #fff6e5);
   box-shadow: 0 0 0 2px var(--hw-gold);
 }
 
@@ -288,7 +288,7 @@
   padding: 0 16px;
   border: 1.5px solid var(--hw-line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--color-white, #fff);
   color: var(--hw-ink);
   font: inherit;
   font-size: 0.95rem;
@@ -305,7 +305,7 @@
   display: flex;
   border: 1.5px solid var(--hw-line);
   border-radius: 22px;
-  background: #fff;
+  background: var(--color-white, #fff);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 .hw-compose:focus-within { border-color: var(--hw-red); box-shadow: 0 0 0 3px rgba(200, 55, 45, 0.12); }
@@ -351,7 +351,7 @@
 
 .hw-round svg { width: 20px; height: 20px; }
 .hw-round.is-send { background: var(--hw-red); color: #fff; }
-.hw-round.is-send:disabled { background: #e7d5cf; cursor: default; }
+.hw-round.is-send:disabled { background: var(--xb-e7d5cf, #e7d5cf); cursor: default; }
 .hw-round.is-listening { background: var(--hw-red-soft); color: var(--hw-red); animation: hwPulse 1.2s ease-in-out infinite; }
 
 /* ---------- Tro ly AI ---------- */
@@ -362,7 +362,7 @@
   width: 108px;
   height: 108px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 40%, #fff6e5, #fbe3c1);
+  background: radial-gradient(circle at 50% 40%, var(--xb-fff6e5, #fff6e5), var(--xb-fbe3c1, #fbe3c1));
   box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--hw-gold);
 }
 .hw-ai-hello-mascot svg { width: 84px; height: 84px; }
@@ -388,7 +388,7 @@
   padding: 9px 16px;
   border: 1.5px solid var(--hw-line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--color-white, #fff);
   color: var(--hw-ink);
   font-size: 0.88rem;
   text-align: center;
@@ -482,7 +482,7 @@
   bottom: 1px;
   width: 12px;
   height: 12px;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-white, #fff);
   border-radius: 50%;
   background: var(--hw-green);
 }
@@ -529,7 +529,7 @@
   padding: 6px 12px;
   border: 1.5px solid var(--hw-line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--color-white, #fff);
   color: var(--hw-ink);
   font-size: 0.8rem;
   font-weight: 700;
@@ -555,7 +555,7 @@
   margin: 0 0 12px;
   padding: 12px 14px;
   border-radius: 14px;
-  background: #fff6e5;
+  background: var(--xb-fff6e5, #fff6e5);
   font-size: 0.88rem;
 }
 .hw-banner-actions { display: flex; gap: 8px; margin-top: 8px; }
@@ -568,7 +568,7 @@
   min-width: 170px;
   padding: 6px;
   border-radius: 14px;
-  background: #fff;
+  background: var(--color-white, #fff);
   box-shadow: var(--hw-shadow);
 }
 .hw-menu button {
@@ -621,56 +621,56 @@
 @media print { .hw-root { display: none; } }
 
 /* ===== Ngu phap: vi du truoc — quy tac sau ===== */
-.gd-intro{background:#fdf5e6;border:1px solid #f1d9a8;color:#7a4f12;border-radius:14px;padding:12px 16px;margin:0 0 18px;font-size:0.92rem;line-height:1.6;}
-.gd-point{background:#fff;border:1.5px solid #e6e2da;border-radius:20px;padding:24px;margin-bottom:22px;box-shadow:0 2px 10px rgba(31,26,23,0.04);}
-.gd-title{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;color:#1f1a17;margin-bottom:16px;line-height:1.4;}
+.gd-intro{background:var(--xb-fdf5e6, #fdf5e6);border:1px solid var(--xv-f1d9a8, #f1d9a8);color:var(--xt-7a4f12, #7a4f12);border-radius:14px;padding:12px 16px;margin:0 0 18px;font-size:0.92rem;line-height:1.6;}
+.gd-point{background:var(--color-white, #fff);border:1.5px solid var(--xv-e6e2da, #e6e2da);border-radius:20px;padding:24px;margin-bottom:22px;box-shadow:0 2px 10px rgba(31,26,23,0.04);}
+.gd-title{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;color:var(--xt-1f1a17, #1f1a17);margin-bottom:16px;line-height:1.4;}
 .gd-num{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#c8372d;color:#fff;font-size:0.9rem;}
-.gd-step-h{display:flex;align-items:center;gap:8px;font-weight:700;color:#a82d24;font-size:0.95rem;margin:18px 0 8px;}
+.gd-step-h{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--xt-a82d24, #a82d24);font-size:0.95rem;margin:18px 0 8px;}
 .gd-step-h:first-of-type{margin-top:0;}
-.gd-step-n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#fdefec;color:#c8372d;font-size:0.8rem;border:1.5px solid #f0b8b0;}
-.gd-ask{color:#5f5952;font-size:0.92rem;line-height:1.65;margin-bottom:12px;}
-.gd-key{background:#fde68a;color:#8a1c14;font-weight:700;border-radius:4px;padding:0 2px;}
+.gd-step-n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--xb-fdefec, #fdefec);color:var(--xt-c8372d, #c8372d);font-size:0.8rem;border:1.5px solid var(--xv-f0b8b0, #f0b8b0);}
+.gd-ask{color:var(--xt-5f5952, #5f5952);font-size:0.92rem;line-height:1.65;margin-bottom:12px;}
+.gd-key{background:var(--xb-fde68a, #fde68a);color:var(--xt-8a1c14, #8a1c14);font-weight:700;border-radius:4px;padding:0 2px;}
 .gd-exs{display:grid;gap:10px;}
-.gd-ex{background:#faf8f5;border:1px solid #eee8de;border-radius:12px;padding:12px 16px;}
-.gd-ex-zh{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:#1f1a17;line-height:1.6;}
-.gd-ex-py{color:#a8691a;font-size:0.88rem;margin-top:2px;}
-.gd-ex-vn{color:#5f5952;font-size:0.9rem;margin-top:2px;}
+.gd-ex{background:var(--xb-faf8f5, #faf8f5);border:1px solid var(--xv-eee8de, #eee8de);border-radius:12px;padding:12px 16px;}
+.gd-ex-zh{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);line-height:1.6;}
+.gd-ex-py{color:var(--xt-a8691a, #a8691a);font-size:0.88rem;margin-top:2px;}
+.gd-ex-vn{color:var(--xt-5f5952, #5f5952);font-size:0.9rem;margin-top:2px;}
 .gd-say{border:none;background:none;cursor:pointer;font-size:1rem;padding:2px 6px;border-radius:8px;vertical-align:middle;}
-.gd-say:hover{background:#fdefec;}
+.gd-say:hover{background:var(--xb-fdefec, #fdefec);}
 .gd-reveal{margin-top:16px;min-height:44px;padding:10px 20px;border:none;border-radius:999px;background:#c8372d;color:#fff;font:inherit;font-weight:600;font-size:0.95rem;cursor:pointer;box-shadow:0 4px 12px rgba(200,55,45,0.2);}
 .gd-reveal:hover{background:#a82d24;}
 .gd-reveal:focus-visible,.gd-opt:focus-visible,.gd-say:focus-visible{outline:3px solid #e9a23b;outline-offset:2px;}
 .gd-after{animation:gdIn .3s ease;}
 @keyframes gdIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
-.gd-rule{background:linear-gradient(135deg,#fdf3f1,#fbe4e0);border-left:4px solid #c8372d;border-radius:0 12px 12px 0;padding:12px 16px;line-height:1.8;font-size:0.95rem;color:#38332e;}
-.gd-sub{color:#5f5952;font-size:0.9rem;line-height:1.65;margin-top:10px;}
-.gd-try{margin-top:6px;border-top:1px dashed #e6e2da;padding-top:4px;}
-.gd-try-q{color:#5f5952;font-size:0.9rem;margin-bottom:6px;}
-.gd-try-zh{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:#1f1a17;line-height:1.6;}
-.gd-blank{display:inline-block;min-width:2.2em;text-align:center;border-bottom:2px solid #c8372d;color:#c8372d;margin:0 2px;}
-.gd-blank.is-filled{color:#1f8a4c;border-color:#1f8a4c;font-weight:700;}
+.gd-rule{background:linear-gradient(135deg,var(--xb-fdf3f1, #fdf3f1),var(--xb-fbe4e0, #fbe4e0));border-left:4px solid #c8372d;border-radius:0 12px 12px 0;padding:12px 16px;line-height:1.8;font-size:0.95rem;color:var(--xt-38332e, #38332e);}
+.gd-sub{color:var(--xt-5f5952, #5f5952);font-size:0.9rem;line-height:1.65;margin-top:10px;}
+.gd-try{margin-top:6px;border-top:1px dashed var(--xv-e6e2da, #e6e2da);padding-top:4px;}
+.gd-try-q{color:var(--xt-5f5952, #5f5952);font-size:0.9rem;margin-bottom:6px;}
+.gd-try-zh{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);line-height:1.6;}
+.gd-blank{display:inline-block;min-width:2.2em;text-align:center;border-bottom:2px solid #c8372d;color:var(--xt-c8372d, #c8372d);margin:0 2px;}
+.gd-blank.is-filled{color:var(--xt-1f8a4c, #1f8a4c);border-color:#1f8a4c;font-weight:700;}
 .gd-opts{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
-.gd-opt{min-width:56px;min-height:44px;padding:8px 18px;border:2px solid #e6e2da;border-radius:12px;background:#fff;cursor:pointer;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:#1f1a17;transition:border-color .15s,background .15s;}
+.gd-opt{min-width:56px;min-height:44px;padding:8px 18px;border:2px solid var(--xv-e6e2da, #e6e2da);border-radius:12px;background:var(--color-white, #fff);cursor:pointer;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:var(--zh-text,1.3rem);color:var(--xt-1f1a17, #1f1a17);transition:border-color .15s,background .15s;}
 .gd-opt.is-vn{font-family:inherit;font-size:0.92rem;text-align:left;flex:1 1 220px;}
-.gd-opt:hover:not(:disabled){border-color:#c8372d;color:#c8372d;}
-.gd-opt.is-ok{border-color:#1f8a4c;background:#e9f6ee;color:#1f8a4c;}
-.gd-opt.is-no{border-color:#c62828;background:#fdecea;color:#c62828;}
+.gd-opt:hover:not(:disabled){border-color:#c8372d;color:var(--xt-c8372d, #c8372d);}
+.gd-opt.is-ok{border-color:#1f8a4c;background:var(--xb-e9f6ee, #e9f6ee);color:var(--xt-1f8a4c, #1f8a4c);}
+.gd-opt.is-no{border-color:#c62828;background:var(--xb-fdecea, #fdecea);color:var(--xt-c62828, #c62828);}
 .gd-opt:disabled{cursor:default;}
 .gd-fb{margin-top:10px;font-weight:600;font-size:0.92rem;min-height:1.4em;}
-.gd-fb.is-ok{color:#1f8a4c;}
-.gd-fb.is-no{color:#c62828;}
+.gd-fb.is-ok{color:var(--xt-1f8a4c, #1f8a4c);}
+.gd-fb.is-no{color:var(--xt-c62828, #c62828);}
 @media (max-width:640px){
   .gd-point{padding:16px;border-radius:16px;}
   .gd-ex-zh{font-size:1.2rem;}
 }
 /* Loi hoc sinh Viet hay mac (trong phan Ngu phap) */
-.gd-errs { margin-top: 14px; border: 1.5px solid #f1d9a8; background: #fffaf0; border-radius: 12px; padding: 12px 16px; }
-.gd-errs-h { font-weight: 700; color: #8a5a12; font-size: 0.92rem; margin-bottom: 8px; }
-.gd-err { padding: 8px 0; border-top: 1px dashed #f1d9a8; }
+.gd-errs { margin-top: 14px; border: 1.5px solid var(--xv-f1d9a8, #f1d9a8); background: var(--xb-fffaf0, #fffaf0); border-radius: 12px; padding: 12px 16px; }
+.gd-errs-h { font-weight: 700; color: var(--xt-8a5a12, #8a5a12); font-size: 0.92rem; margin-bottom: 8px; }
+.gd-err { padding: 8px 0; border-top: 1px dashed var(--xv-f1d9a8, #f1d9a8); }
 .gd-err:first-of-type { border-top: none; padding-top: 0; }
-.gd-err-bad { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: #c62828; text-decoration: line-through; text-decoration-color: rgba(198,40,40,0.4); }
-.gd-err-why { font-size: 0.86rem; color: #5f5952; margin: 2px 0; }
-.gd-err-ok { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: #1f8a4c; font-weight: 600; }
+.gd-err-bad { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: var(--xt-c62828, #c62828); text-decoration: line-through; text-decoration-color: rgba(198,40,40,0.4); }
+.gd-err-why { font-size: 0.86rem; color: var(--xt-5f5952, #5f5952); margin: 2px 0; }
+.gd-err-ok { font-family: 'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--zh-small, 1.1rem); color: var(--xt-1f8a4c, #1f8a4c); font-weight: 600; }
 
 /* ============================================================
    MOT NUT "TRO GIUP" (thay ba nut noi cu) + MENU + GOP Y
@@ -681,7 +681,7 @@
   display: grid; place-items: center;
   width: 56px; height: 56px; padding: 0;
   border: none; border-radius: 50%;
-  background: #fff6e5;
+  background: var(--xb-fff6e5, #fff6e5);
   box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--hw-gold), 0 8px 20px rgba(43, 36, 32, 0.22);
   cursor: pointer;
   transition: transform 0.18s ease;
@@ -696,7 +696,7 @@
   width: 290px;
   padding: 8px;
   border-radius: 16px;
-  background: #fff;
+  background: var(--color-white, #fff);
   box-shadow: var(--hw-shadow);
   display: flex; flex-direction: column; gap: 4px;
   transform-origin: bottom right;
@@ -716,7 +716,7 @@
   background: var(--hw-red-soft); color: var(--hw-red);
 }
 .hw-menu-ico svg { width: 22px; height: 22px; }
-.hw-menu-ico-ai { background: #fff6e5; }
+.hw-menu-ico-ai { background: var(--xb-fff6e5, #fff6e5); }
 .hw-menu-ico-ai svg { width: 34px; height: 34px; }
 .hw-menu-text { display: grid; gap: 1px; min-width: 0; }
 .hw-menu-text b { font-size: 15px; font-weight: 700; }
@@ -726,20 +726,20 @@
 /* Ngoi sao nam dau menu (trang khong co thanh tren) */
 .hw-star-slot-menu:empty { display: none; }
 .hw-star-slot-menu { padding: 2px 2px 6px; margin-bottom: 2px; border-bottom: 1px solid var(--hw-line); }
-.hw-star-slot-menu .hw-star { box-shadow: none; background: #fff6e5; width: 100%; justify-content: flex-start; }
+.hw-star-slot-menu .hw-star { box-shadow: none; background: var(--xb-fff6e5, #fff6e5); width: 100%; justify-content: flex-start; }
 
 /* Ngoi sao tren thanh tren cua app — gon, cung co voi hai nut Am thanh / Pinyin */
 .hw-star.is-top {
   position: relative; display: inline-flex; align-items: center; gap: 6px;
   min-height: 36px; padding: 4px 12px 4px 8px;
-  border-radius: 999px; background: #fff6e5; color: #8a5a0f;
+  border-radius: 999px; background: var(--xb-fff6e5, #fff6e5); color: var(--xt-8a5a0f, #8a5a0f);
   font-family: 'Be Vietnam Pro', system-ui, sans-serif; font-size: 14px; font-weight: 800; line-height: 1;
   text-decoration: none; box-shadow: inset 0 0 0 1.5px #f2bf6b; overflow: hidden;
 }
-.hw-star.is-top svg { width: 18px; height: 18px; fill: #f2bf6b; stroke: #b7791f; stroke-width: 1.2; flex-shrink: 0; }
+.hw-star.is-top svg { width: 18px; height: 18px; fill: var(--xt-f2bf6b, #f2bf6b); stroke: var(--xt-b7791f, #b7791f); stroke-width: 1.2; flex-shrink: 0; }
 .hw-star.is-top .hw-star-bar { left: 10px; right: 10px; bottom: 3px; }
-.hw-star.is-top:hover { background: #fff1d2; }
-.hw-star.is-top:focus-visible { outline: 3px solid #f2bf6b; outline-offset: 2px; }
+.hw-star.is-top:hover { background: var(--xb-fff1d2, #fff1d2); }
+.hw-star.is-top:focus-visible { outline: 3px solid var(--xv-f2bf6b, #f2bf6b); outline-offset: 2px; }
 
 /* Khung chat / AI / gop y mo ngay tren nut, khong con lech sang trai nua */
 .hw-panel { right: 22px; bottom: 92px; height: min(620px, calc(100vh - 120px)); }
@@ -759,13 +759,13 @@ body:has(#ghPlay:not([hidden])) .hw-fab-stack { display: none; }
 .hw-gy-loai { display: flex; flex-wrap: wrap; gap: 6px; }
 .hw-gy-chip {
   min-height: 40px; padding: 6px 14px;
-  border: 1.5px solid var(--hw-line); border-radius: 999px; background: #fff;
+  border: 1.5px solid var(--hw-line); border-radius: 999px; background: var(--color-white, #fff);
   font-size: 14px; font-weight: 600; color: var(--hw-ink); cursor: pointer;
 }
 .hw-gy-chip.is-on { border-color: var(--hw-red); background: var(--hw-red-soft); color: var(--hw-red-deep); }
 .hw-gy-text, .hw-gy-input {
   width: 100%; padding: 10px 12px;
-  border: 1.5px solid var(--hw-line); border-radius: 12px; background: #fff;
+  border: 1.5px solid var(--hw-line); border-radius: 12px; background: var(--color-white, #fff);
   font: inherit; font-size: 15px; color: var(--hw-ink); resize: vertical;
 }
 .hw-gy-text:focus, .hw-gy-input:focus { outline: none; border-color: var(--hw-red); box-shadow: 0 0 0 3px var(--hw-red-soft); }
@@ -778,17 +778,17 @@ body:has(#ghPlay:not([hidden])) .hw-fab-stack { display: none; }
 .hw-gy-gui:hover { background: var(--hw-red-deep); }
 .hw-gy-gui:disabled { opacity: 0.6; cursor: progress; }
 .hw-gy-kq { margin: 0; font-size: 14px; min-height: 1.2em; }
-.hw-gy-kq.is-ok { color: #17693a; font-weight: 600; }
+.hw-gy-kq.is-ok { color: var(--xt-17693a, #17693a); font-weight: 600; }
 .hw-gy-kq.is-loi { color: var(--hw-red-deep); font-weight: 600; }
 .hw-gy-cu { display: grid; gap: 8px; margin-top: 14px; }
 .hw-gy-muc { padding: 10px 12px; border-radius: 12px; background: var(--hw-bg-soft); }
 .hw-gy-muc p { margin: 0; }
 .hw-gy-muc-dau { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--hw-mid); }
 .hw-gy-tt { font-weight: 700; }
-.hw-gy-tt.is-read { color: #8a5a0f; }
-.hw-gy-tt.is-rep { color: #17693a; }
+.hw-gy-tt.is-read { color: var(--xt-8a5a0f, #8a5a0f); }
+.hw-gy-tt.is-rep { color: var(--xt-17693a, #17693a); }
 .hw-gy-muc-nd { margin-top: 4px !important; font-size: 14px; white-space: pre-wrap; }
-.hw-gy-muc-tl { margin-top: 6px !important; padding: 8px 10px; border-radius: 10px; background: #e9f6ee; font-size: 14px; white-space: pre-wrap; }
+.hw-gy-muc-tl { margin-top: 6px !important; padding: 8px 10px; border-radius: 10px; background: var(--xb-e9f6ee, #e9f6ee); font-size: 14px; white-space: pre-wrap; }
 
 @media (max-width: 640px) {
   .hw-help-fab { width: 52px; height: 52px; }

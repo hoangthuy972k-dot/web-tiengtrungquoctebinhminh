@@ -908,6 +908,42 @@
     });
   }
 
+  // Nut nen sang / toi tren thanh tren. Bam de doi; neu lua chon trung voi cai dat
+  // cua may thi xoa lua chon (quay ve tu theo may). theme.js ap dung luc tai trang.
+  function themeHienTai() {
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t === 'dark' || t === 'light') return t;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function veNutTheme() {
+    var b = $('#themeToggle');
+    if (!b) return;
+    var toi = themeHienTai() === 'dark';
+    b.setAttribute('aria-pressed', toi ? 'true' : 'false');
+    b.setAttribute('aria-label', toi ? 'Chuyển sang nền sáng' : 'Chuyển sang nền tối');
+    b.classList.toggle('is-dark', toi);
+  }
+  function initThemeToggle() {
+    var b = $('#themeToggle');
+    if (!b) return;
+    b.addEventListener('click', function () {
+      var moi = themeHienTai() === 'dark' ? 'light' : 'dark';
+      var may = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      try {
+        if (moi === may) localStorage.removeItem('hyv_theme');
+        else localStorage.setItem('hyv_theme', moi);
+      } catch (e) { /* bo qua */ }
+      if (moi === may) document.documentElement.removeAttribute('data-theme');
+      else document.documentElement.setAttribute('data-theme', moi);
+      veNutTheme();
+    });
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mq.addEventListener) mq.addEventListener('change', veNutTheme);
+    }
+    veNutTheme();
+  }
+
   // Hai muc gap o cuoi trang chu (Thong ke / Bang vang): nho hoc sinh da mo hay dong
   function initHomeFolds() {
     var saved = readJSON('hyv_home_folds', {});
@@ -15084,6 +15120,7 @@
     });
     $('#ctaStreak').addEventListener('click', continueLearning);
     initHomeFolds();
+    initThemeToggle();
     // Bang vang hom nay / Sao cham chi: mot khoi, hai tab
     $all('[data-board]').forEach(function (btn) {
       btn.addEventListener('click', function () { showBoard(btn.getAttribute('data-board')); });

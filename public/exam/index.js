@@ -40,6 +40,31 @@
     else if (s === 'done') { a.textContent = 'Xem kết quả'; a.classList.add('is-done'); }
   });
 
+  // ---------- Đề HSK 3.0: kết quả gần nhất + bài đang làm dở (lưu trên máy, trang /hsk30) ----------
+  var kq30 = {};
+  try { kq30 = JSON.parse(localStorage.getItem('hyv_hsk30_ketqua') || '{}'); } catch (e) { kq30 = {}; }
+  $all('[data-last30]').forEach(function (el) {
+    var id = el.getAttribute('data-last30'), r = kq30[id];
+    var dangDo = null;
+    try { dangDo = JSON.parse(localStorage.getItem('hyv_hsk30_lam_' + id) || 'null'); } catch (e) { dangDo = null; }
+    if (r) {
+      var d = new Date(r.at);
+      el.innerHTML = '<span class="ex-st ' + (r.tong >= r.toiDa * 0.6 ? 'is-pass' : 'is-fail') + '">' + r.tong + '/' + r.toiDa + '</span>' +
+        '<small>Nghe ' + r.nghe + ' · Đọc ' + r.doc + ' · ' + (r.mode === 'that' ? 'Thi thật' : 'Luyện tập') + ' · ' + pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '</small>';
+    }
+    if (dangDo && dangDo.phase !== 'xong') el.innerHTML += '<span class="ex-st is-doing">Đang làm dở</span>';
+    var a = document.querySelector('[data-start30="' + id + '"]');
+    if (a && dangDo) { a.textContent = 'Làm tiếp'; }
+  });
+  $all('[data-prog30]').forEach(function (el) {
+    var ids = $all('#lv-h30-' + el.getAttribute('data-prog30') + ' [data-h30]').map(function (t) { return t.getAttribute('data-h30'); });
+    var xong = ids.filter(function (id) { return kq30[id]; });
+    var best = null;
+    xong.forEach(function (id) { if (!best || kq30[id].tong > best.tong) best = kq30[id]; });
+    el.querySelector('i').style.width = Math.round(xong.length / (ids.length || 1) * 100) + '%';
+    el.querySelector('small').textContent = xong.length ? 'Đã thi ' + xong.length + '/' + ids.length + ' đề · cao nhất ' + best.tong + '/' + best.toiDa : 'Chưa thi đề nào';
+  });
+
   // ---------- Thư mục cấp độ: bấm mới mở danh sách đề ----------
   var FOLDER_KEY = 'hyv_exam_folder';
   // Tiến độ trên từng thư mục: đã thi bao nhiêu đề, điểm cao nhất

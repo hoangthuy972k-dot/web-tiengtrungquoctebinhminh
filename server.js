@@ -49,7 +49,7 @@ app.use(
         styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
         fontSrc: ["'self'", 'https://fonts.gstatic.com'],
         scriptSrc: ["'self'"],
-        imgSrc: ["'self'", 'data:'],
+        imgSrc: ["'self'", 'data:', 'blob:'],
         mediaSrc: ["'self'", 'data:', 'blob:'],
         connectSrc: ["'self'"],
       },
@@ -78,7 +78,7 @@ const ASSET_REF_RE = /(<(?:script|link)\b[^>]*?\b(?:src|href)=")(\/(?:js|css|exa
 // sinh khong hoi AI trong luc thi, va bo qua trang quan tri.
 const WIDGET_TAGS = '<link rel="stylesheet" href="/css/widgets.css" />\n<script src="/js/widgets.js" defer></script>\n';
 // Trang lop.html la man hinh chieu len lop — khong gan nut noi cho do roi mat.
-const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html)$/;
+const WIDGET_EXCLUDE_RE = /[\\/](exam[\\/]test[\\/]index\.html|admin\.html|lop\.html|hsk30\.html)$/;
 
 function sendVersionedHtml(res, filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
@@ -95,7 +95,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/game': 'game.html', '/bao-cao': 'admin.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html' };
 
 // Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
 app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));
@@ -1335,6 +1335,46 @@ app.post('/api/exam/submit', requireAuth, asyncRoute(async (req, res) => {
     ranked: rankedAttempt ? { rankPoints: rankedAttempt.rankPoints, score: rankedAttempt.score, usedSec: rankedAttempt.usedSec, rank: pos, of: board.length } : null,
   });
 }));
+
+
+// ---------- Thi thu HSK 3.0 (bo de co ban quyen) ----------
+// Noi dung de (cau hoi, anh, am thanh) nam trong protected/hsk30/<id>/, KHONG nam trong public/:
+// chi hoc sinh da dang nhap moi tai duoc. Trang /hsk30 tai de.json + tung tep qua cac API duoi day.
+const HSK30_DIR = path.join(__dirname, 'protected', 'hsk30');
+const HSK30_ID_RE = /^hsk30-[1-9]-\d{1,2}$/;
+const HSK30_FILE_RE = /^[a-zA-Z0-9-]{1,40}\.(jpg|png|mp3)$/;
+let hsk30Cache = null;
+function hsk30List() {
+  if (hsk30Cache) return hsk30Cache;
+  let ids = [];
+  try { ids = fs.readdirSync(HSK30_DIR).filter((d) => HSK30_ID_RE.test(d)); } catch (err) { return []; }
+  hsk30Cache = ids.map((id) => {
+    try {
+      const d = JSON.parse(fs.readFileSync(path.join(HSK30_DIR, id, 'de.json'), 'utf8'));
+      return {
+        id, capDo: d.capDo, de: d.de, ten: d.ten, tenZh: d.tenZh,
+        phan: d.sections.map((s) => ({ ten: s.ten, soCau: s.parts.reduce((a, p) => a + p.cau.length, 0), phut: s.phut })),
+      };
+    } catch (err) { return null; }
+  }).filter(Boolean).sort((a, b) => a.capDo - b.capDo || a.de - b.de);
+  return hsk30Cache;
+}
+// Danh sach de (chi ten, so cau) — ai cung xem duoc de biet co de nao
+app.get('/api/hsk30/list', (req, res) => { res.json({ items: hsk30List() }); });
+app.get('/api/hsk30/de/:id', requireAuth, (req, res) => {
+  const id = req.params.id;
+  if (!HSK30_ID_RE.test(id) || !fs.existsSync(path.join(HSK30_DIR, id, 'de.json'))) return res.status(404).json({ error: 'Không tìm thấy đề thi.' });
+  res.set('Cache-Control', 'private, no-store');
+  res.sendFile(path.join(HSK30_DIR, id, 'de.json'));
+});
+app.get('/api/hsk30/tep/:id/:file', requireAuth, (req, res) => {
+  const { id, file } = req.params;
+  if (!HSK30_ID_RE.test(id) || !HSK30_FILE_RE.test(file)) return res.status(404).end();
+  const p = path.join(HSK30_DIR, id, file);
+  if (!fs.existsSync(p)) return res.status(404).end();
+  res.set('Cache-Control', 'private, max-age=86400');
+  res.sendFile(p);
+});
 
 app.get('/api/exam/leaderboard', asyncRoute(async (req, res) => {
   const meId = await optionalUserId(req);

@@ -268,7 +268,7 @@ body.py-off .ex-text .py { display: none; }
 .ex-intro { margin: 0; max-width: 70ch; color: var(--ex-mid); font-size: 0.95rem; }
 
 /* Thư mục cấp độ */
-.ex-folders { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 0 0 16px; }
+.ex-folders { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 0 0 16px; }
 .ex-folder {
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "ico t chev" "prog prog prog";
   align-items: center; gap: 10px 12px; width: 100%; padding: 16px 16px 14px;
@@ -571,3 +571,11 @@ button.ex-folder:hover { border-color: #e0a59f; transform: translateY(-1px); }
 .ex-row.no-text .ex-row-text:empty { display: none; }
 .ex-pill { white-space: nowrap; }
 @media (max-width: 420px) { .ex-pill { padding-left: 10px; padding-right: 10px; font-size: 0.85rem; } }
+
+/* Tieu de nhom de: HSK 3.0 (moi) / HSK 2.0 (cu) */
+.ex-nhom-de { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 10px; margin: 22px 0 12px; font-size: 1.15rem; }
+.ex-nhom-de:first-of-type { margin-top: 8px; }
+.ex-nhom-de .tag { font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--ex-chip); color: var(--ex-mid); }
+.ex-h30 .tag { background: var(--ex-red-soft); color: #a82d24; }
+.ex-can-dn { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; font-weight: 600; color: var(--ex-mid); }
+.ex-can-dn svg { width: 15px; height: 15px; }

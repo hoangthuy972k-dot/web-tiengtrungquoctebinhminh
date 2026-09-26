@@ -1613,6 +1613,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk5-bai-22.html'
       },
       {
+        id: 'hsk5-l23',
+        number: 23,
+        title: 'Buông tay',
+        titleHanzi: '放手',
+        titlePinyin: 'Fàngshǒu',
+        topic: 'Unit 8 体会教育 · Cha mẹ buông tay để con trưởng thành',
+        vocabCount: 45,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk5-bai-23.html'
+      },
+      {
         id: 'hsk5-l24',
         number: 24,
         title: 'Hoạt động dạy học tình nguyện',

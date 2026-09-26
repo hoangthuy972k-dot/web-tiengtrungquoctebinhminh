@@ -30,7 +30,8 @@ const SHARED = [
   'js/hsk5-extra.js',
   'js/theme.js',
   'css/luyen-viet.css',
-  'js/luyen-viet.js'
+  'js/luyen-viet.js',
+  'js/ke-lai.js'
 ];
 
 const h = crypto.createHash('sha1');

@@ -266,6 +266,16 @@
     if (!box || typeof retellData === 'undefined') return;
     var d = retellData;
 
+    // Co ke-lai.js thi dung ban co ghi am + may cham (chung bai lam voi buoc 7 cua lo trinh)
+    if (window.KeLai) {
+      var goc = (typeof dialogData !== 'undefined' ? dialogData : []).map(function (dd) {
+        return (dd.lines || []).map(function (ln) { return ln.zh || ''; }).join('');
+      }).join('');
+      var ten = (location.pathname.match(/([\w-]+?)(?:\.html)?$/) || [])[1] || location.pathname;
+      window.KeLai.mount(box, d, { key: ten, goc: goc, say: say });
+      return;
+    }
+
     box.innerHTML =
       '<div class="h5-hv-intro">' + d.intro + '</div>' +
       '<div class="h5-rt-grid">' + d.outline.map(function (o, i) {

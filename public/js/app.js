@@ -1914,12 +1914,19 @@
     { key: 'final', title: 'Kiểm tra cuối bài', stage: '验', desc: '10 câu trộn → điểm, sao và chứng nhận', min: 3, icon: '🎓', section: 'finalPractice',
       open: function (l, s) { showFinalPractice(l, s); } }
   ];
-  // HSK 5: buoc 6 la Luyen viet (书写 — xep cau + viet doan 80 chu, cham diem va sua loi);
+  // HSK 5: buoc 6 la Luyen viet (书写 — xep cau + viet doan 80 chu, cham diem va sua loi),
+  // buoc 7 la Ke lai bai doc (复述 — bai tap cuoi cua giao trinh, ghi am + may cham);
   // phan Noi chuyen xuong "Luyen them"
-  var PATH_STEPS_HSK5 = PATH_STEPS.map(function (s) {
-    if (s.key !== 'speak') return s;
-    return { key: 'writing', title: 'Luyện viết', stage: '用', desc: 'Xếp câu, viết đoạn 80 chữ → chấm điểm và sửa lỗi chi tiết', min: 15, icon: '✍️', section: 'writingPractice',
-      open: function (l, s2) { showWritingPractice(l, s2); } };
+  var PATH_STEPS_HSK5 = [];
+  PATH_STEPS.forEach(function (s) {
+    if (s.key === 'speak') {
+      PATH_STEPS_HSK5.push({ key: 'writing', title: 'Luyện viết', stage: '用', desc: 'Xếp câu, viết đoạn 80 chữ → chấm điểm và sửa lỗi chi tiết', min: 15, icon: '✍️', section: 'writingPractice',
+        open: function (l, s2) { showWritingPractice(l, s2); } });
+      PATH_STEPS_HSK5.push({ key: 'retell', title: 'Kể lại bài đọc', stage: '用', desc: 'Nhìn dàn ý, ghi âm kể lại bằng lời của em → máy chấm đủ ý, từ mới', min: 5, icon: '🗣️', section: 'retellPractice',
+        open: function (l, s2) { showRetellPractice(l, s2); } });
+    } else {
+      PATH_STEPS_HSK5.push(s);
+    }
   });
   function pathStepsOfLevel(levelId) { return levelId === 'hsk5' ? PATH_STEPS_HSK5 : PATH_STEPS; }
   function pathStepsOf(lesson) {
@@ -1970,13 +1977,27 @@
       }).catch(function () { /* ignore */ });
     }
 
+    // HSK 5: bai chua co phan luyen viet / ke lai thi bo qua buoc do (chi kiem tra 1 lan / bai)
+    if (ps === PATH_STEPS_HSK5) {
+      var vKey = lesson.fullPageUrl + '|writing', kKey = lesson.fullPageUrl + '|retell';
+      if (!(kKey in pathSkipped)) {
+        pathSkipped[vKey] = false;
+        pathSkipped[kKey] = false;
+        loadLessonRawData(lesson).then(function (data) {
+          pathSkipped[vKey] = !data.writingData;
+          pathSkipped[kKey] = !data.retellData;
+          if ((pathSkipped[vKey] || pathSkipped[kKey]) && !$('#lessonHub').hidden && currentHubLesson === lesson) renderLessonPath(levelId, lesson);
+        }).catch(function () { /* ignore */ });
+      }
+    }
+
     var list = $('#lessonPath');
     list.hidden = false;
     list.innerHTML = ps.map(function (s, i) {
       var done = pathStepDone(lesson, s);
       var skipped = pathStepSkipped(lesson, s);
       var state = done ? 'is-done' + (skipped ? ' is-skipped' : '') : (i === cur ? 'is-current' : (i > cur ? 'is-later' : 'is-open'));
-      var badge = skipped ? 'Bài mở đầu — không có phần này, bỏ qua' : done ? '✓ Đã xong' : (i === cur ? 'Bắt đầu ở đây' : (i > cur ? 'Gợi ý: làm bước ' + (cur + 1) + ' trước' : ''));
+      var badge = skipped ? 'Bài này không có phần này — bỏ qua' : done ? '✓ Đã xong' : (i === cur ? 'Bắt đầu ở đây' : (i > cur ? 'Gợi ý: làm bước ' + (cur + 1) + ' trước' : ''));
       return '<li class="lp-step ' + state + '">' +
         '<button type="button" class="lp-btn" data-path-step="' + i + '">' +
           '<span class="lp-node" aria-hidden="true">' + (done ? '✓' : (i + 1)) + '</span>' +
@@ -2012,6 +2033,7 @@
         if (k === 'flash') showFlashcardPractice(levelId, lesson);
         else if (k === 'speak') showSpeakPractice(levelId, lesson);
         else if (k === 'writing') showWritingPractice(levelId, lesson);
+        else if (k === 'retell') showRetellPractice(levelId, lesson);
         else if (k === 'listen') showListenPractice(levelId, lesson);
         else if (k === 'translate') showTranslatePractice(levelId, lesson);
         else if (k === 'workbook') showWorkbookPractice(levelId, lesson);
@@ -2080,7 +2102,7 @@
     new MutationObserver(function () {
       // Man "Kiem tra cuoi bai" moi: cac ham show* cu khong biet de an no —
       // hoc sinh sang man khac (menu, trang chu...) thi tu an
-      ['finalPractice', 'srsPractice', 'writingPractice'].forEach(function (id) {
+      ['finalPractice', 'srsPractice', 'writingPractice', 'retellPractice'].forEach(function (id) {
         var fq = document.getElementById(id);
         if (fq && !fq.hidden) {
           var others = $all('#main > .dash-section').filter(function (s) { return s !== fq && !s.hidden; });
@@ -3171,7 +3193,8 @@
             mcData: iframe.contentWindow.mcData || [],
             translateData: iframe.contentWindow.translateData || [],
             translateDataRev: iframe.contentWindow.translateDataRev || [],
-            writingData: iframe.contentWindow.writingData || null
+            writingData: iframe.contentWindow.writingData || null,
+            retellData: iframe.contentWindow.retellData || null
           }));
         } catch (e) {
           document.body.removeChild(iframe);
@@ -11486,6 +11509,34 @@
     $('#writingPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  /* ---------------- Ke lai bai doc (HSK 5 · buoc 7): public/js/ke-lai.js ---------------- */
+  function showRetellPractice(levelId, lesson) {
+    currentHubLevelId = levelId;
+    currentHubLesson = lesson;
+    $all('#main > .dash-section').forEach(function (s) { s.hidden = s.id !== 'retellPractice'; });
+    var hop = $('#rtContent');
+    hop.className = '';
+    hop.innerHTML = '<p style="color:var(--color-gray-500);">Đang tải...</p>';
+    loadLessonRawData(lesson).then(function (data) {
+      if (!data.retellData || !window.KeLai) {
+        hop.innerHTML = '<p style="color:var(--color-gray-500);">Bài học này chưa có phần kể lại bài đọc.</p>';
+        return;
+      }
+      // Nguyen van bai doc — de nhan ra khi hoc sinh doc thuoc long
+      var goc = (data.dialogData || []).map(function (dd) {
+        return (dd.lines || []).map(function (ln) { return ln.zh || ''; }).join('');
+      }).join('');
+      var ten = (lesson.fullPageUrl.match(/([\w-]+)\.html$/) || [])[1] || lesson.fullPageUrl;
+      window.KeLai.mount(hop, data.retellData, {
+        key: ten, goc: goc, say: vpSpeak,
+        onDone: function (r) { recordLessonScore(lesson, 'retell', { done: true, diem: r.diem, tuCham: r.tuCham }); }
+      });
+    }).catch(function () {
+      hop.innerHTML = '<p style="color:var(--color-gray-500);">Không tải được phần kể lại của bài này.</p>';
+    });
+    $('#retellPractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   function showSpeakPractice(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
@@ -15128,6 +15179,12 @@
         tab.classList.add('active');
         renderListenContent();
       });
+    });
+    $('#rtBack').addEventListener('click', function () {
+      pathState = null;
+      if (currentHubLevelId && currentHubLesson) showLessonHub(currentHubLevelId, currentHubLesson);
+      else if (currentLevelId) showLevelDetail(currentLevelId);
+      else showDashboard();
     });
     $('#wrBack').addEventListener('click', function () {
       pathState = null;

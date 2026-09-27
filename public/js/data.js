@@ -2151,6 +2151,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-29.html'
+      },
+      {
+        id: 'hsk6-l30',
+        number: 30,
+        title: 'Bạn ngủ ngon không?',
+        titleHanzi: '你睡好了吗？',
+        titlePinyin: 'Nǐ shuìhǎo le ma?',
+        topic: '第八单元 人体探秘 · Giấc ngủ và sức khoẻ: chỉ số giấc ngủ, nguyên nhân, biểu hiện, tác hại của mất ngủ và cách đối phó',
+        vocabCount: 52,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-30.html'
       }
     ],
     yct: [

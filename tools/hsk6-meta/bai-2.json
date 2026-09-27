@@ -1,0 +1,112 @@
+{
+ "zh": "父母之爱",
+ "py": "Fùmǔ zhī ài",
+ "vn": "Tình yêu của cha mẹ",
+ "topic": "第一单元 生活点滴 · Tình yêu thầm lặng của cha mẹ &amp; sự trưởng thành",
+ "vocabCount": 44,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "恨不得",
+   "explain": "恨不得 là ĐỘNG TỪ, biểu thị mong muốn rất gấp, rất tha thiết được làm ngay một việc — phần lớn là việc THỰC TẾ KHÔNG LÀM ĐƯỢC (một người làm việc của hai người, bay ngay về bên bố mẹ, ngủ ba ngày ba đêm). Sau 恨不得 luôn là cụm động từ, hay có 马上 / 立刻 / 一下子. Phân biệt với 巴不得 (bài 1): 巴不得 thường là mong điều có thể xảy ra.",
+   "rule": "<strong style=\"color:var(--sky-d)\">恨不得</strong> + (马上 / 立刻 / 一下子) + cụm động từ　|　……得不得了，<strong style=\"color:var(--sky-d)\">恨不得</strong>……",
+   "examples": [
+    {
+     "zh": "工作忙的时候，她恨不得一个人干两个人的活儿。",
+     "py": "Gōngzuò máng de shíhou, tā hènbude yí ge rén gàn liǎng ge rén de huór.",
+     "vn": "Lúc bận, chị ấy chỉ mong một mình làm được việc của hai người."
+    },
+    {
+     "zh": "他累坏了，恨不得一下子倒在床上，睡上三天三夜。",
+     "py": "Tā lèihuài le, hènbude yíxiàzi dǎo zài chuáng shang, shuìshang sān tiān sān yè.",
+     "vn": "Anh ấy mệt rã rời, chỉ muốn đổ ngay xuống giường ngủ ba ngày ba đêm."
+    },
+    {
+     "zh": "回家的快乐和被亲情包围的幸福感染了我，我也恨不得马上飞到父母跟前，与他们团圆。",
+     "py": "Huí jiā de kuàilè hé bèi qīnqíng bāowéi de xìngfú gǎnrǎnle wǒ, wǒ yě hènbude mǎshàng fēidào fùmǔ gēnqián, yǔ tāmen tuányuán.",
+     "vn": "Niềm vui được về nhà và hạnh phúc được tình thân bao bọc đã lây sang tôi, tôi cũng nóng lòng muốn bay ngay về bên bố mẹ, đoàn tụ với họ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我恨不得这个礼物。",
+     "why": "Sau 恨不得 phải là cụm ĐỘNG TỪ (việc mình nóng lòng muốn làm), không đi thẳng với danh từ.",
+     "right": "我恨不得马上收到这个礼物。"
+    },
+    {
+     "wrong": "我很恨不得马上回家。",
+     "why": "恨不得 đã mang nghĩa rất mạnh, không thêm phó từ mức độ 很 phía trước.",
+     "right": "我恨不得马上回家。"
+    }
+   ]
+  },
+  {
+   "point": "顿时",
+   "explain": "顿时 là PHÓ TỪ, biểu thị động tác, hành vi, sự thay đổi xảy ra NGAY trong một tình huống nào đó hoặc liền sau một việc khác. Dùng nhiều trong VĂN VIẾT, chỉ để kể việc ĐÃ xảy ra — không dùng trong câu mệnh lệnh hay cho việc tương lai (khi đó dùng 立刻 / 马上). 顿时 có thể đứng trước động từ hoặc đứng riêng đầu vế, trước chủ ngữ.",
+   "rule": "(Tình huống / việc trước)，chủ ngữ + <strong style=\"color:var(--sky-d)\">顿时</strong> + sự thay đổi　|　……，<strong style=\"color:var(--sky-d)\">顿时</strong>，chủ ngữ + V",
+   "examples": [
+    {
+     "zh": "傍晚，我们在大山里迷路了，能够和外面联系的手机成了唯一救命的工具。大家拿出手机看了看，居然都快没电了，两个女生顿时急得哭了起来。",
+     "py": "Bàngwǎn, wǒmen zài dàshān li mílù le, nénggòu hé wàimiàn liánxì de shǒujī chéngle wéiyī jiùmìng de gōngjù. Dàjiā náchū shǒujī kànle kàn, jūrán dōu kuài méi diàn le, liǎng ge nǚshēng dùnshí jí de kūle qǐlai.",
+     "vn": "Chạng vạng, chúng tôi lạc đường trong núi, chiếc điện thoại liên lạc được với bên ngoài trở thành công cụ cứu mạng duy nhất. Mọi người lấy điện thoại ra xem, vậy mà máy nào cũng sắp hết pin, hai bạn nữ lập tức cuống đến bật khóc."
+    },
+    {
+     "zh": "我悄悄走出卧室，看到灯光下父母不舍的目光、头上新增的白发和眼角越来越深的皱纹，顿时什么都明白了。",
+     "py": "Wǒ qiāoqiāo zǒuchū wòshì, kàndào dēngguāng xià fùmǔ bù shě de mùguāng, tóu shang xīn zēng de báifà hé yǎnjiǎo yuèláiyuè shēn de zhòuwén, dùnshí shénme dōu míngbai le.",
+     "vn": "Tôi khẽ bước ra khỏi phòng ngủ, nhìn thấy dưới ánh đèn ánh mắt lưu luyến của bố mẹ, tóc bạc mới thêm trên đầu và nếp nhăn nơi khóe mắt ngày một sâu, bỗng chốc hiểu ra tất cả."
+    },
+    {
+     "zh": "听了医生的话，顿时，他的心里又燃起了希望。",
+     "py": "Tīngle yīshēng de huà, dùnshí, tā de xīn li yòu ránqǐle xīwàng.",
+     "vn": "Nghe bác sĩ nói, ngay lập tức, trong lòng anh ấy lại nhen nhóm hy vọng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "你顿时给我回来！",
+     "why": "顿时 chỉ kể lại việc đã xảy ra, không dùng trong câu mệnh lệnh; dùng 立刻 / 马上.",
+     "right": "你立刻给我回来！"
+    },
+    {
+     "wrong": "明天下课以后，我们顿时出发。",
+     "why": "顿时 không dùng cho việc trong tương lai.",
+     "right": "明天下课以后，我们马上出发。"
+    }
+   ]
+  },
+  {
+   "point": "不由得",
+   "explain": "不由得 là PHÓ TỪ, biểu thị không kiềm chế được bản thân, không nhịn được, bất giác — cảm xúc hay phản ứng tự trào ra. Ngữ cảnh thường có nguyên nhân khiến mình không kìm được (看到 / 听到 / 想到……). Cấu trúc thường gặp: 不由得 + cụm động từ / cụm chủ–vị. Đừng nhầm với 不得不 (buộc phải, không có lựa chọn).",
+   "rule": "(Nguyên nhân)，(chủ ngữ +) <strong style=\"color:var(--sky-d)\">不由得</strong> + cụm động từ / cụm chủ–vị",
+   "examples": [
+    {
+     "zh": "李朋带病上场参加比赛了，我不由得有些担心。",
+     "py": "Lǐ Péng dài bìng shàngchǎng cānjiā bǐsài le, wǒ bùyóude yǒuxiē dānxīn.",
+     "vn": "Lý Bằng mang bệnh ra sân thi đấu, tôi không khỏi có chút lo lắng."
+    },
+    {
+     "zh": "书中描写的情景，让我不由得回想起和圆圆谈恋爱时的幸福和快乐。",
+     "py": "Shū zhōng miáoxiě de qíngjǐng, ràng wǒ bùyóude huíxiǎng qǐ hé Yuányuan tán liàn'ài shí de xìngfú hé kuàilè.",
+     "vn": "Khung cảnh miêu tả trong sách khiến tôi bất giác nhớ lại niềm hạnh phúc, vui vẻ hồi yêu Viên Viên."
+    },
+    {
+     "zh": "我悄悄走出卧室，看到灯光下父母不舍的目光、头上新增的白发和眼角越来越深的皱纹，顿时什么都明白了，不由得热泪盈眶。",
+     "py": "Wǒ qiāoqiāo zǒuchū wòshì, kàndào dēngguāng xià fùmǔ bù shě de mùguāng, tóu shang xīn zēng de báifà hé yǎnjiǎo yuèláiyuè shēn de zhòuwén, dùnshí shénme dōu míngbai le, bùyóude rèlèi yíng kuàng.",
+     "vn": "Tôi khẽ bước ra khỏi phòng ngủ, nhìn thấy dưới ánh đèn ánh mắt lưu luyến của bố mẹ, tóc bạc mới thêm và nếp nhăn nơi khóe mắt ngày một sâu, bỗng chốc hiểu ra tất cả, không kìm được nước mắt lưng tròng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "下大雨了，我们不由得取消了比赛。",
+     "why": "Hủy trận đấu là quyết định có chủ ý do hoàn cảnh ép buộc → 不得不 (buộc phải); 不由得 chỉ phản ứng, cảm xúc tự trào ra.",
+     "right": "下大雨了，我们不得不取消了比赛。"
+    },
+    {
+     "wrong": "听到这个好消息，他笑了不由得。",
+     "why": "不由得 là phó từ, phải đứng TRƯỚC động từ.",
+     "right": "听到这个好消息，他不由得笑了。"
+    }
+   ]
+  }
+ ]
+}

@@ -1817,6 +1817,30 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-1.html'
       },
       {
+        id: 'hsk6-l2',
+        number: 2,
+        title: 'Tình yêu của cha mẹ',
+        titleHanzi: '父母之爱',
+        titlePinyin: 'Fùmǔ zhī ài',
+        topic: '第一单元 生活点滴 · Tình yêu thầm lặng của cha mẹ & sự trưởng thành',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-2.html'
+      },
+      {
+        id: 'hsk6-l3',
+        number: 3,
+        title: 'Một hộp bánh Trung thu',
+        titleHanzi: '一盒月饼',
+        titlePinyin: 'Yì hé yuèbing',
+        topic: '第一单元 生活点滴 · Những chuyện nhỏ trong cuộc sống',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-3.html'
+      },
+      {
         id: 'hsk6-l4',
         number: 4,
         title: 'Chiến thắng hoàn hảo',

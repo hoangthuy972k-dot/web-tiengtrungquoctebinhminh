@@ -2139,6 +2139,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-28.html'
+      },
+      {
+        id: 'hsk6-l29',
+        number: 29,
+        title: 'Bản ghi nhớ về tiếng cười',
+        titleHanzi: '“笑”的备忘录',
+        titlePinyin: '“Xiào” de Bèiwànglù',
+        topic: '第八单元 人体探秘 · Khám phá cơ thể người — não bộ nhận ra tiếng cười thật giả và lợi – hại của tiếng cười',
+        vocabCount: 53,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-29.html'
       }
     ],
     yct: [

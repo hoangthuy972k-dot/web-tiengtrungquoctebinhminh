@@ -41,6 +41,8 @@
     });
     var tongCau = dsCau.length;
 
+    function dungHet(t, d) { return d.every(function (x, j) { return !!t[j] === !!x; }); }
+
     function oBang(o) {
       if (!o) return '';
       return '<div class="pb-b-t lv-zh">' + esc(o.t) + '</div><div class="pb-vn">' + esc(o.vn || '') + '</div>' +
@@ -57,27 +59,30 @@
             '<td>' + (i + 1) + '. ' + oBang(r.a) + '</td><td>' + (i + 1) + '. ' + oBang(r.b) + '</td></tr>';
         }).join('') +
         '</tbody></table></div>';
+      // Cot tich: mac dinh la 2 tu cua cap; HSK 6 co bang nhieu cot (sgk.cot), vd "人家" chi ai / dung-sai
+      var cot = s.cot || [w1, w2];
+      var tatCaCot = cot.map(function (_, j) { return j; });
       var lam = (s.lamThu || []).map(function (c, qi) {
         var k = gi + '_' + qi;
-        var tich = c.mau ? c.dap : (st.tich[k] || [false, false]);
+        var tich = c.mau ? c.dap : (st.tich[k] || cot.map(function () { return false; }));
         var xong = c.mau || st.xong[k];
-        var dung = xong && tich[0] === c.dap[0] && tich[1] === c.dap[1];
+        var dung = xong && dungHet(tich, c.dap);
         return '<tr class="pb-lt' + (c.mau ? ' is-mau' : xong ? (dung ? ' is-dung' : ' is-sai') : '') + '" data-g="' + gi + '" data-q="' + qi + '">' +
           '<td class="lv-zh">(' + (qi + 1) + ') ' + esc(c.s) + (c.mau ? ' <span class="pb-mau">Ví dụ</span>' : '') +
             (xong && !c.mau ? '<div class="pb-why ' + (dung ? 'ok' : 'bad') + '"><b>' + (dung ? '✓ Đúng.' : '✗ Chưa đúng — đáp án: ' +
-              [w1, w2].filter(function (_, j) { return c.dap[j]; }).join(' và ') + '.') + '</b> ' + esc(c.giai || '') + '</div>' : '') +
+              cot.filter(function (_, j) { return c.dap[j]; }).join(' và ') + '.') + '</b> ' + esc(c.giai || '') + '</div>' : '') +
             (c.mau ? '<div class="pb-vn">' + esc(c.giai || '') + '</div>' : '') + '</td>' +
-          [0, 1].map(function (j) {
+          tatCaCot.map(function (j) {
             return '<td class="pb-tich-o"><button type="button" class="pb-tich' + (tich[j] ? ' is-on' : '') +
               (xong ? (c.dap[j] ? ' is-dap' : (tich[j] ? ' is-thua' : '')) : '') + '" data-j="' + j + '"' + (xong ? ' disabled' : '') +
-              ' aria-pressed="' + (tich[j] ? 'true' : 'false') + '" aria-label="' + esc([w1, w2][j]) + '">' + (tich[j] || (xong && c.dap[j]) ? '✓' : '') + '</button></td>';
+              ' aria-pressed="' + (tich[j] ? 'true' : 'false') + '" aria-label="' + esc(cot[j]) + '">' + (tich[j] || (xong && c.dap[j]) ? '✓' : '') + '</button></td>';
           }).join('') +
-          '<td class="pb-kt-o">' + (xong ? '' : '<button type="button" class="lv-btn sm pb-kt"' + (tich[0] || tich[1] ? '' : ' disabled') + '>Kiểm tra</button>') + '</td>' +
+          '<td class="pb-kt-o">' + (xong ? '' : '<button type="button" class="lv-btn sm pb-kt"' + (tich.some(Boolean) ? '' : ' disabled') + '>Kiểm tra</button>') + '</td>' +
         '</tr>';
       }).join('');
       return '<div class="pb-sgk-tag">Theo SGK · 词语辨析</div>' + bang +
-        (lam ? '<div class="lv-label">做一做 · Chọn từ điền vào chỗ trống — tích một hoặc CẢ HAI từ nếu cả hai đều đúng</div>' +
-          '<div class="pb-bang-wrap"><table class="pb-lam"><thead><tr><th></th><th class="lv-zh">' + esc(w1) + '</th><th class="lv-zh">' + esc(w2) + '</th><th></th></tr></thead><tbody>' +
+        (lam ? '<div class="lv-label">做一做 · ' + esc(s.deLam || (s.cot ? 'Tích vào cột đúng với từng câu' : 'Chọn từ điền vào chỗ trống — tích một hoặc CẢ HAI từ nếu cả hai đều đúng')) + '</div>' +
+          '<div class="pb-bang-wrap"><table class="pb-lam' + (s.cot ? ' is-nhieu-cot' : '') + '"><thead><tr><th></th>' + cot.map(function (t) { return '<th class="lv-zh">' + esc(t) + '</th>'; }).join('') + '<th></th></tr></thead><tbody>' +
           lam + '</tbody></table></div>' : '');
     }
 
@@ -147,8 +152,7 @@
           if (v != null) { lam++; if (v === g.quiz[c.q].answer) dung++; }
         } else if (st.xong[k]) {
           lam++;
-          var d = g.sgk.lamThu[c.q].dap, t = st.tich[k] || [];
-          if (!!t[0] === d[0] && !!t[1] === d[1]) dung++;
+          if (dungHet(st.tich[k] || [], g.sgk.lamThu[c.q].dap)) dung++;
         }
       });
       if (el) el.innerHTML = 'Đã làm <b>' + lam + '/' + tongCau + '</b> câu · đúng <b>' + dung + '</b>' +
@@ -173,7 +177,8 @@
       var k = tr.getAttribute('data-g') + '_' + tr.getAttribute('data-q');
       var t = e.target.closest('.pb-tich');
       if (t && !t.disabled) {
-        var arr = (st.tich[k] || [false, false]).slice();
+        var gT = data[+tr.getAttribute('data-g')].sgk;
+        var arr = (st.tich[k] || (gT.cot || [0, 0]).map(function () { return false; })).slice();
         arr[+t.getAttribute('data-j')] = !arr[+t.getAttribute('data-j')];
         st.tich[k] = arr; luu(); ve();
         return;

@@ -14,6 +14,7 @@
   'use strict';
 
   var HAN = /[㐀-鿿]/g;
+  var HAN_CUM = /[㐀-鿿]+/g; // cum chu Han lien nhau: "别提多……了" -> ["别提多", "了"]
   var LS_PREFIX = 'hyv_luyenviet:';
 
   function esc(s) {
@@ -185,7 +186,13 @@
     var coMo = MO.some(function (w) { return cauDau.indexOf(w) >= 0; });
 
     var diemTu = tu.length ? Math.round(25 * (tu.length - thieu.length) / tu.length) - 2 * Object.keys(tuSai).length : 25;
-    var diemDai = n < 40 ? 3 : n < 60 ? 8 : n < 70 ? 12 : n <= 120 ? 15 : 12;
+    // De SGK (HSK 6): khong co tu bat buoc — dung duoc khoang 60% tu/cau truc nen dung la du diem
+    if (d.kieu === 'sgk' && (d.tuNen || []).length) {
+      var daDung = d.tuNen.filter(function (w) { var m = String(w).match(HAN_CUM) || []; return m.length && m.every(function (x) { return t.indexOf(x) >= 0; }); }).length;
+      diemTu = Math.round(25 * Math.min(1, daDung / Math.max(1, d.tuNen.length * 0.6)));
+    }
+    var T = d.soChu || 80;
+    var diemDai = n < T * 0.5 ? 3 : n < T * 0.75 ? 8 : n < T * 0.88 ? 12 : n <= T * 1.5 ? 15 : 12;
     var diemNoi = [4, 9, 13, 16][Math.min(3, noiDung.length)] + (coMo ? 2 : 0) + (coKet ? 2 : 0);
     var loiNang = ds.filter(function (l) { return !l.nhe; }).length;
     var loiNhe = ds.length - loiNang;
@@ -256,6 +263,18 @@
     return out + esc(t.slice(p));
   }
 
+  /* ---------- Hướng dẫn cho đề 运用 · 写一写 của SGK HSK 6 (thường là 缩写) ---------- */
+  var HUONG_DAN_SGK =
+    '<div class="lv-card"><h3>Viết theo đề 运用 · 写一写</h3>' +
+      '<p>Đề SGK HSK 6 thường yêu cầu <b>缩写</b> — viết lại bài khoá thật ngắn gọn (khoảng 300 chữ) bằng lời của em. Đây cũng là dạng câu 101 phần 书写 của đề thi HSK 6 (đọc 1000 chữ, viết lại khoảng 400 chữ).</p></div>' +
+    '<div class="lv-card"><h3>Các bước làm</h3><ol class="lv-list">' +
+      '<li><b>Nắm khung câu chuyện:</b> thời gian, địa điểm, nhân vật; chuyện bắt đầu → diễn biến → kết thúc. Bảng gợi ý (bài tập 5 của sách) chính là dàn ý.</li>' +
+      '<li><b>Giữ ý chính, bỏ chi tiết phụ:</b> bỏ lời thoại dài, miêu tả, ví dụ lặp lại; lời thoại quan trọng thì chuyển thành lời kể (他说… → 他告诉我…).</li>' +
+      '<li><b>Dùng lời của em nhưng giữ từ khoá của bài:</b> các từ mới, cấu trúc của bài (khung "Từ, cấu trúc nên dùng") giúp bài chính xác và được điểm từ vựng.</li>' +
+      '<li><b>Nối ý cho mạch lạc:</b> 起初 / 后来 / 于是 / 结果 / 从此; kết bằng một câu nêu ý nghĩa (这个故事告诉我们……).</li>' +
+      '<li><b>Tự soát:</b> đủ ý chưa, có thêm ý của mình không (缩写 không bình luận dài), số chữ khoảng 250–350.</li>' +
+    '</ol></div>';
+
   /* ---------- Hướng dẫn cách làm bài (theo tài liệu tiết viết HSK 5) ---------- */
   var HUONG_DAN =
     '<div class="lv-card"><h3>Phần 书写 HSK 5 gồm những gì</h3>' +
@@ -289,6 +308,8 @@
     var key = opts.key || 'mac-dinh';
     var st = doc(key);
     st.sx = st.sx || {};
+    var laSgk = d.kieu === 'sgk';
+    var T = d.soChu || 80;
     var coSX = !!(d.sapXep && d.sapXep.length);
     var tab = st.tab || (coSX && !allSxDone() ? 'sx' : 'doan');
 
@@ -299,12 +320,12 @@
     hop.innerHTML =
       '<div class="lv-tabs" role="tablist">' +
         (coSX ? '<button type="button" class="lv-tab" data-lv-tab="sx" role="tab">Hoàn thành câu <small>91–98</small></button>' : '') +
-        '<button type="button" class="lv-tab" data-lv-tab="doan" role="tab">Viết đoạn 80 chữ <small>99</small></button>' +
+        '<button type="button" class="lv-tab" data-lv-tab="doan" role="tab">' + (laSgk ? 'Viết theo đề SGK <small>~' + T + ' chữ</small>' : 'Viết đoạn 80 chữ <small>99</small>') + '</button>' +
         '<button type="button" class="lv-tab" data-lv-tab="hd" role="tab">Cách làm bài</button>' +
       '</div>' +
       '<div class="lv-pane" data-lv-pane="sx"></div>' +
       '<div class="lv-pane" data-lv-pane="doan"></div>' +
-      '<div class="lv-pane" data-lv-pane="hd">' + HUONG_DAN + '</div>';
+      '<div class="lv-pane" data-lv-pane="hd">' + (laSgk ? HUONG_DAN_SGK : HUONG_DAN) + '</div>';
 
     function chonTab(t) {
       tab = t; st.tab = t; luu();
@@ -378,10 +399,35 @@
       }
     });
 
+    // Từ/cấu trúc đã dùng chưa: "别提多……了" coi là dùng khi có đủ mọi mảnh chữ Hán
+    function coDung(t, w) {
+      var manh = String(w || '').match(/[\u3400-\u9fff]+/g) || [];
+      return manh.length > 0 && manh.every(function (m) { return t.indexOf(m) >= 0; });
+    }
+
+    // Đề 运用 · 写一写 của SGK HSK 6: đề + bảng gợi ý (bài tập 5) + từ nên dùng
+    function deSgk() {
+      return '<div class="lv-card lv-de">' +
+          '<div class="lv-label">Đề bài · 运用 写一写</div>' +
+          '<div class="lv-de-zh lv-zh">' + esc(d.de || '') + '</div>' +
+          '<div class="lv-de-vn">' + esc(d.prompt || '') + '</div>' +
+          ((d.tuNen || []).length ? '<div class="lv-label lv-label-sub">Từ, cấu trúc nên dùng</div><div class="lv-words" id="lvWords">' + d.tuNen.map(function (w) {
+            return '<span class="lv-word" data-w="' + esc(w) + '">' + esc(w) + '</span>';
+          }).join('') + '</div>' : '') +
+        '</div>' +
+        ((d.dan || []).length ? '<details class="lv-card lv-fold"' + (st.kq ? '' : ' open') + '><summary>Dàn ý theo gợi ý của sách (bài tập 5)</summary>' +
+          '<div class="lv-dan">' + d.dan.map(function (x, i) {
+            return '<div class="lv-dan-r"><div class="lv-dan-h lv-zh"><span class="lv-num">' + (i + 1) + '</span>' + esc(x.hoi) + '</div>' +
+              '<div class="lv-dan-g lv-zh">' + esc(x.goiY) + '</div></div>';
+          }).join('') + '</div>' +
+          (d.checklist ? '<div class="lv-label lv-label-sub">Tự kiểm tra trước khi nộp</div><ul class="lv-list">' + d.checklist.map(function (c) { return '<li>' + esc(c) + '</li>'; }).join('') + '</ul>' : '') +
+        '</details>' : '');
+    }
+
     /* ----- Viết đoạn ----- */
     function veDoan() {
       var p = hop.querySelector('[data-lv-pane="doan"]');
-      p.innerHTML =
+      p.innerHTML = (laSgk ? deSgk() :
         '<div class="lv-card lv-de">' +
           '<div class="lv-label">Đề bài · câu 99</div>' +
           (d.de ? '<div class="lv-de-zh lv-zh">' + esc(d.de) + '</div>' : '') +
@@ -396,13 +442,14 @@
             return '<div><b class="lv-zh">' + esc(w.tu) + '</b> <i>' + esc(w.loai) + '</i><span class="lv-zh">' + esc(w.cach) + '</span></div>';
           }).join('') + '</div>' : '') +
         '</details>' +
+        '') +
         (d.cauTruc ? '<details class="lv-card lv-fold"><summary>Cấu trúc nên dùng để bài hay hơn</summary><div class="lv-ct">' + d.cauTruc.map(function (c) {
           return '<div class="lv-ct-i"><b class="lv-zh">' + esc(c.ten) + '</b><span class="lv-zh">' + esc(c.vd) + '</span><small>' + esc(c.khi) + '</small></div>';
         }).join('') + '</div></details>' : '') +
         '<div class="lv-card lv-editor">' +
           '<label class="lv-label" for="lvText">Bài làm của em</label>' +
-          '<textarea id="lvText" rows="7" placeholder="Viết bằng chữ Hán vào đây…" spellcheck="false"></textarea>' +
-          '<div class="lv-meter"><div class="lv-bar"><i id="lvBar"></i></div><span id="lvCount">0 / 80 chữ</span></div>' +
+          '<textarea id="lvText" rows="' + (laSgk ? 12 : 7) + '" placeholder="Viết bằng chữ Hán vào đây…" spellcheck="false"></textarea>' +
+          '<div class="lv-meter"><div class="lv-bar"><i id="lvBar"></i></div><span id="lvCount">0 / ' + T + ' chữ</span></div>' +
           '<div class="lv-actions"><button type="button" class="lv-btn" id="lvNop">Nộp bài để chấm</button>' +
             '<span class="lv-hint" id="lvHint"></span></div>' +
         '</div>' +
@@ -412,13 +459,18 @@
       ta.value = st.bai || '';
       function capNhat() {
         var t = ta.value, n = demHan(t);
-        p.querySelector('#lvCount').textContent = n + ' / 80 chữ';
+        p.querySelector('#lvCount').textContent = n + ' / ' + T + ' chữ';
         var bar = p.querySelector('#lvBar');
-        bar.style.width = Math.min(100, n / 80 * 100) + '%';
-        bar.className = n >= 70 && n <= 120 ? 'ok' : n > 120 ? 'warn' : '';
-        p.querySelectorAll('.lv-word').forEach(function (el) { el.classList.toggle('is-used', t.indexOf(el.getAttribute('data-w')) >= 0); });
-        var thieu = (d.words || []).filter(function (w) { return t.indexOf(w) < 0; });
-        p.querySelector('#lvHint').textContent = !t.trim() ? '' : thieu.length ? 'Còn thiếu: ' + thieu.join('、') : 'Đã dùng đủ ' + d.words.length + ' từ ✓';
+        bar.style.width = Math.min(100, n / T * 100) + '%';
+        bar.className = n >= T * 0.85 && n <= T * 1.5 ? 'ok' : n > T * 1.5 ? 'warn' : '';
+        p.querySelectorAll('.lv-word').forEach(function (el) { el.classList.toggle('is-used', coDung(t, el.getAttribute('data-w'))); });
+        if (laSgk) {
+          var da = (d.tuNen || []).filter(function (w) { return coDung(t, w); }).length;
+          p.querySelector('#lvHint').textContent = !t.trim() ? '' : 'Đã dùng ' + da + '/' + (d.tuNen || []).length + ' từ, cấu trúc nên dùng';
+        } else {
+          var thieu = (d.words || []).filter(function (w) { return t.indexOf(w) < 0; });
+          p.querySelector('#lvHint').textContent = !t.trim() ? '' : thieu.length ? 'Còn thiếu: ' + thieu.join('、') : 'Đã dùng đủ ' + d.words.length + ' từ ✓';
+        }
         st.bai = t; luu();
       }
       ta.addEventListener('input', capNhat);
@@ -430,8 +482,9 @@
     function nop(t) {
       t = String(t || '').trim();
       var kqHop = hop.querySelector('#lvKq');
-      if (demHan(t) < 20) {
-        kqHop.innerHTML = '<div class="lv-card lv-warn">Bài mới có ' + demHan(t) + ' chữ Hán — viết ít nhất khoảng 60 chữ rồi hãy nộp nhé.</div>';
+      var toiThieu = laSgk ? Math.round(T * 0.4) : 20;
+      if (demHan(t) < toiThieu) {
+        kqHop.innerHTML = '<div class="lv-card lv-warn">Bài mới có ' + demHan(t) + ' chữ Hán — viết ít nhất khoảng ' + (laSgk ? Math.round(T * 0.75) : 60) + ' chữ rồi hãy nộp nhé.</div>';
         return;
       }
       var may = soatBai(t, d);
@@ -446,8 +499,11 @@
       fetch('/api/ai/cham-doan', {
         method: 'POST', headers: h,
         body: JSON.stringify({
-          capDo: d.capDo || 'HSK 5', de: (d.de || '') + ' ' + (d.prompt || ''), tu: d.words || [], bai: t,
-          cauTruc: (d.cauTruc || []).map(function (c) { return c.ten; })
+          capDo: d.capDo || (laSgk ? 'HSK 6' : 'HSK 5'), de: (d.de || '') + ' ' + (d.prompt || ''), tu: d.words || [], bai: t,
+          cauTruc: (d.cauTruc || []).map(function (c) { return c.ten; }),
+          kieu: laSgk ? 'sgk' : undefined, soChu: laSgk ? T : undefined,
+          dan: laSgk ? (d.dan || []).map(function (x) { return x.hoi + ' — ' + x.goiY; }) : undefined,
+          tuNen: laSgk ? d.tuNen : undefined, goc: laSgk ? opts.goc : undefined
         })
       }).then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; });
@@ -487,13 +543,15 @@
       var h = '<div class="lv-card lv-score">' +
         '<div class="lv-score-top"><div class="lv-ring' + (diem >= 60 ? ' pass' : '') + '"><b>' + diem + '</b><small>/100</small></div>' +
           '<div><div class="lv-src">' + nguon + (ai && ai.nguon ? '' : '') + '</div>' +
-          '<div class="lv-meta">' + may.n + ' chữ Hán · ' + ((d.words || []).length - may.thieu.length) + '/' + (d.words || []).length + ' từ cho sẵn · ' +
+          '<div class="lv-meta">' + may.n + ' chữ Hán · ' + (laSgk
+            ? (d.tuNen || []).filter(function (w) { return coDung(kq.bai, w); }).length + '/' + (d.tuNen || []).length + ' từ nên dùng · '
+            : ((d.words || []).length - may.thieu.length) + '/' + (d.words || []).length + ' từ cho sẵn · ') +
             loi.length + ' chỗ cần sửa</div>' +
-          (ai ? '' : '<div class="lv-note">Máy chỉ soát được hình thức (đủ từ, độ dài, từ nối, lỗi hay gặp) nên điểm sơ bộ tối đa 80; nội dung và cách diễn đạt cần AI hoặc thầy/cô chấm.</div>') +
+          (ai ? '' : '<div class="lv-note">Máy chỉ soát được hình thức (' + (laSgk ? 'độ dài' : 'đủ từ, độ dài') + ', từ nối, lỗi hay gặp) nên điểm sơ bộ tối đa 80; ' + (laSgk ? 'đủ ý của bài khoá' : 'nội dung') + ' và cách diễn đạt cần AI hoặc thầy/cô chấm.</div>') +
           '</div></div>' +
         (ai && ai.tieuChi
           ? thanh('Nội dung', ai.tieuChi.noiDung, 25) + thanh('Từ vựng', ai.tieuChi.tuVung, 25) + thanh('Ngữ pháp', ai.tieuChi.nguPhap, 30) + thanh('Bố cục', ai.tieuChi.boCuc, 20)
-          : thanh('Từ cho sẵn', may.tieuChi.tu, 25) + thanh('Độ dài', may.tieuChi.dai, 15) + thanh('Liên kết', may.tieuChi.noi, 20) + thanh('Lỗi hay gặp', may.tieuChi.np, 20)) +
+          : thanh(laSgk ? 'Từ nên dùng' : 'Từ cho sẵn', may.tieuChi.tu, 25) + thanh('Độ dài', may.tieuChi.dai, 15) + thanh('Liên kết', may.tieuChi.noi, 20) + thanh('Lỗi hay gặp', may.tieuChi.np, 20)) +
         '</div>';
 
       if (kq.dangCho) h += '<div class="lv-card lv-wait"><span class="lv-spin" aria-hidden="true"></span>AI đang đọc bài và chấm chi tiết (khoảng 10–30 giây)… Kết quả của máy soát lỗi đã có ngay bên dưới.</div>';

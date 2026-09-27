@@ -350,3 +350,50 @@ html.ho-tro-toi[data-theme="dark"] {
 .sk-vt.is-wrong { opacity: 1; background: var(--lv-bad-l); border-color: var(--lv-bad); color: var(--lv-bad); }
 .sk-ngoac { color: var(--lv-mid); white-space: nowrap; }
 .sk-list .pb-why { font-size: 0.9rem; line-height: 1.6; margin-top: 6px; }
+
+/* HSK 6 — các dạng 练习 mới: mr (写出更多的词语) · gx (改写句子) · mp (模仿造句) · bc (病句) */
+.sk-doan > li { line-height: 2.4; }
+.sk-dot { font-style: normal; position: relative; color: var(--lv-accent); font-weight: 700; }
+.sk-dot::after { content: ''; position: absolute; left: 50%; bottom: -0.3em; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: currentColor; }
+.sk-vd { font-size: 1.02rem; color: var(--lv-mid); display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 8px 12px; background: var(--lv-tint); border-radius: 10px; }
+.sk-vd-w { color: var(--lv-ink); }
+.sk-mr > li, .sk-viet > li { line-height: 1.8; display: flex; flex-direction: column; gap: 8px; }
+.sk-mr-tu { font-size: 1.1rem; font-weight: 700; }
+.sk-mr-nhap { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.sk-input, .sk-ta {
+  font: inherit; font-size: 1.02rem; color: var(--lv-ink); background: var(--lv-card);
+  border: 1.5px solid var(--lv-line); border-radius: 10px; padding: 8px 12px; min-height: 42px;
+}
+.sk-input { flex: 1 1 220px; min-width: 0; }
+.sk-ta { width: 100%; box-sizing: border-box; resize: vertical; line-height: 1.7; }
+.sk-input:focus, .sk-ta:focus { outline: none; border-color: var(--lv-accent); box-shadow: 0 0 0 3px var(--lv-accent-l); }
+.sk-nhac { font-size: 0.86rem; color: var(--lv-bad); line-height: 1.5; }
+.sk-mr-kq { display: flex; flex-wrap: wrap; gap: 6px; }
+.sk-w { padding: 2px 10px; border-radius: 99px; font-size: 1rem; border: 1.5px solid transparent; }
+.sk-w.is-ok { background: var(--lv-ok-l); color: var(--lv-ok); border-color: var(--lv-ok); }
+.sk-w.is-bad { background: var(--lv-bad-l); color: var(--lv-bad); border-color: var(--lv-bad); text-decoration: line-through; }
+.sk-w.is-hoi { background: var(--lv-warn-l); color: var(--lv-warn); border-color: var(--lv-warn); }
+.sk-bai { display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; border-radius: 10px; background: var(--lv-tint); }
+.sk-nhan { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--lv-soft); }
+.sk-mau { font-size: 1rem; color: var(--lv-mid); padding: 10px 12px; border-left: 3px solid var(--lv-line); background: var(--lv-tint); border-radius: 0 10px 10px 0; line-height: 1.9; }
+.sk-u { text-decoration: underline 2px var(--lv-accent); text-underline-offset: 4px; color: var(--lv-ink); font-weight: 600; }
+.sk-khung { font-size: 1.05rem; line-height: 2.6; }
+.sk-o-mp { display: inline-block; flex: none; width: min(15em, 100%); min-height: 36px; padding: 4px 10px; margin: 0 4px; vertical-align: middle; }
+.sk-dien { color: var(--lv-accent); font-weight: 700; }
+.sk-sai { background: var(--lv-mark); color: inherit; border-radius: 3px; padding: 0 2px; }
+.sk-tdg { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 0.9rem; color: var(--lv-mid); }
+.sk-tdg-kq { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 0.9rem; font-weight: 600; }
+.sk-tdg-kq.ok { color: var(--lv-ok); }
+.sk-tdg-kq.bad { color: var(--lv-bad); }
+
+/* HSK 6 · đề 运用 写一写: bảng dàn ý theo bài tập 5 của sách */
+.lv-label-sub { margin: 12px 0 6px; }
+.lv-dan { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.lv-dan-r { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px 14px; padding: 10px 12px; border: 1px solid var(--lv-line); border-radius: 12px; background: var(--lv-card); }
+.lv-dan-h { display: flex; gap: 8px; align-items: flex-start; font-weight: 600; line-height: 1.6; }
+.lv-dan-h .lv-num { flex: none; }
+.lv-dan-g { color: var(--lv-mid); line-height: 1.7; white-space: pre-line; }
+@media (max-width: 620px) { .lv-dan-r { grid-template-columns: minmax(0, 1fr); } }
+
+/* 做一做 nhieu cot (HSK 6): tieu de cot la cum chu, khong de xuong dong tung chu */
+.pb-lam.is-nhieu-cot thead th { min-width: 5.5em; font-size: 0.85rem; line-height: 1.35; vertical-align: bottom; }

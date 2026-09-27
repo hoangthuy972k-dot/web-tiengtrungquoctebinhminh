@@ -525,13 +525,13 @@
 
   /* ---------------- Level cards ---------------- */
 
-  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'yct'];
+  var DASHBOARD_LEVEL_IDS = ['hsk1', 'hsk1v3', 'hsk2v3', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6', 'yct'];
   // Moi cap do cung mot mau nhan (do) — phan biet bang ten, khong bang mau
-  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'red', hsk2v3: 'red', hsk2: 'red', hsk3: 'red', hsk4: 'red', hsk5: 'red', yct: 'red' };
+  var LEVEL_COLOR = { hsk1: 'red', hsk1v3: 'red', hsk2v3: 'red', hsk2: 'red', hsk3: 'red', hsk4: 'red', hsk5: 'red', hsk6: 'red', yct: 'red' };
   // Nhan hien trong o vuong mau cua the cap do: [dong nho, so lon]
-  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], yct: ['YCT', '1'] };
-  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT Thiếu nhi' };
-  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, yct: true };
+  var LEVEL_MARK = { hsk1: ['HSK', '1'], hsk1v3: ['HSK 3.0', '1'], hsk2v3: ['HSK 3.0', '2'], hsk2: ['HSK', '2'], hsk3: ['HSK', '3'], hsk4: ['HSK', '4'], hsk5: ['HSK', '5'], hsk6: ['HSK', '6'], yct: ['YCT', '1'] };
+  var LEVEL_CARD_NAME = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 · 3.0', hsk2v3: 'HSK 2 · 3.0', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT Thiếu nhi' };
+  var READY_LEVELS = { hsk1: true, hsk1v3: true, hsk2v3: true, hsk2: true, hsk3: true, hsk4: true, hsk5: true, hsk6: true, yct: true };
   var practiceLevel = 'hsk2';
 
   // Dem so bai da hoc (da mo hoac co diem) trong 1 cap do
@@ -551,7 +551,8 @@
     hsk2: 'Đã xong HSK 1 · giáo trình HSK cũ',
     hsk3: 'Đã xong HSK 2 · giao tiếp hằng ngày',
     hsk4: 'Đã xong HSK 3 · giao tiếp khá, đọc hiểu',
-    hsk5: 'Đã xong HSK 4 · trình độ cao cấp'
+    hsk5: 'Đã xong HSK 4 · trình độ cao cấp',
+    hsk6: 'Đã xong HSK 5 · đọc hiểu, tóm tắt văn bản dài'
   };
   /* Trang bai hoc co duoi .html nen CDN phuc vu thang, khong qua Node va
      KHONG co header cache — trinh duyet giu ban cu hang ngay troi. Gan them
@@ -1418,7 +1419,7 @@
     if (bnMenu) bnMenu.addEventListener('click', function () { $('#sidebarToggle').click(); });
   }
 
-  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2v3: 'HSK 2 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', yct: 'YCT 1' };
+  var PRACTICE_LEVEL_LABEL = { hsk1: 'HSK 1', hsk1v3: 'HSK 1 (3.0 Mới)', hsk2v3: 'HSK 2 (3.0 Mới)', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5', hsk6: 'HSK 6', yct: 'YCT 1' };
 
   function selectLevel(id) {
     if (!READY_LEVELS[id]) {
@@ -1723,6 +1724,7 @@
     hsk3: ['match', 'fill', 'sort', 'errfix'],
     hsk4: ['match', 'fill', 'sort', 'errfix'],
     hsk5: ['match', 'fill', 'sort', 'errfix', 'sgk'],
+    hsk6: ['match', 'fill', 'sort', 'errfix', 'sgk'],
     yct: ['match', 'fill', 'sort', 'mc']
   };
 
@@ -1735,7 +1737,8 @@
     hsk3: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
     hsk4: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'listen', 'speak', 'translate', 'hanviet'],
     yct: ['vocab', 'flash', 'grammar', 'dialog', 'listen', 'game', 'speak', 'translate', 'hanviet'],
-    hsk5: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'speak', 'translate', 'hanviet', 'synonym', 'writing']
+    hsk5: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'speak', 'translate', 'hanviet', 'synonym', 'writing'],
+    hsk6: ['vocab', 'flash', 'grammar', 'dialog', 'game', 'speak', 'translate', 'hanviet', 'synonym', 'writing']
   };
 
   var currentHubLevelId = null;
@@ -1933,7 +1936,14 @@
       PATH_STEPS_HSK5.push(s);
     }
   });
-  function pathStepsOfLevel(levelId) { return levelId === 'hsk5' ? PATH_STEPS_HSK5 : PATH_STEPS; }
+  // HSK 6 cung lo trinh voi HSK 5; buoc 6 la de 运用·写一写 cua sach, buoc 7 ke lai theo bang 练习5
+  var PATH_STEPS_HSK6 = PATH_STEPS_HSK5.map(function (s) {
+    if (s.key === 'writing') return Object.assign({}, s, { desc: 'Viết theo đề 写一写 của sách (tóm tắt bài ~300 chữ) → chấm điểm và sửa lỗi chi tiết', min: 25 });
+    if (s.key === 'retell') return Object.assign({}, s, { desc: 'Nhìn gợi ý của sách (bài tập 5), ghi âm kể lại nội dung chính → máy chấm đủ ý' });
+    return s;
+  });
+  function laLoTrinhCaoCap(ps) { return ps === PATH_STEPS_HSK5 || ps === PATH_STEPS_HSK6; }
+  function pathStepsOfLevel(levelId) { return levelId === 'hsk6' ? PATH_STEPS_HSK6 : levelId === 'hsk5' ? PATH_STEPS_HSK5 : PATH_STEPS; }
   // Bai khong co phan Khoi dong (wuData rong) thi bo han buoc do khoi lo trinh.
   // Ket qua kiem tra luu theo phien ban web (hyv_khoi_dong) de the "Tiep tuc hoc"
   // o trang chu dung ngay; web cap nhat (co the bai vua duoc them Khoi dong) thi kiem lai.
@@ -1946,9 +1956,9 @@
   var buocBoKd = {};
   function pathStepsOf(lesson) {
     var url = (lesson && lesson.fullPageUrl) || '';
-    var goc = /\/lessons\/hsk5-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK5 : PATH_STEPS;
+    var goc = /\/lessons\/hsk6-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK6 : /\/lessons\/hsk5-bai-\d+\.html$/.test(url) ? PATH_STEPS_HSK5 : PATH_STEPS;
     if (kdMap()[url] !== false) return goc;
-    var k = goc === PATH_STEPS_HSK5 ? 'hsk5' : 'chung';
+    var k = goc === PATH_STEPS_HSK6 ? 'hsk6' : goc === PATH_STEPS_HSK5 ? 'hsk5' : 'chung';
     return buocBoKd[k] || (buocBoKd[k] = goc.filter(function (s) { return s.key !== 'warmup'; }));
   }
   function kiemKhoiDong(lesson) {
@@ -2014,8 +2024,8 @@
       }).catch(function () { /* ignore */ });
     }
 
-    // HSK 5: bai chua co phan luyen viet / ke lai thi bo qua buoc do (chi kiem tra 1 lan / bai)
-    if (ps === PATH_STEPS_HSK5) {
+    // HSK 5–6: bai chua co phan luyen viet / ke lai thi bo qua buoc do (chi kiem tra 1 lan / bai)
+    if (laLoTrinhCaoCap(ps)) {
       var vKey = lesson.fullPageUrl + '|writing', kKey = lesson.fullPageUrl + '|retell';
       if (!(kKey in pathSkipped)) {
         pathSkipped[vKey] = false;
@@ -3342,7 +3352,7 @@
   }
 
   function audioBaseFor(lesson) {
-    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk2-|hsk3-|hsk4-|hsk5-)?bai-(\d+)\.html/);
+    var m = lesson.fullPageUrl.match(/\/lessons\/(hsk1-|hsk1v3-|hsk2v3-|hsk2-|hsk3-|hsk4-|hsk5-|hsk6-)?bai-(\d+)\.html/);
     if (!m) return null;
     return m[1] ? '/audio/' + m[1] + 'bai-' + m[2] : '/audio/bai-' + m[2];
   }
@@ -10124,7 +10134,7 @@
   var NPT_FILES = {
     hsk1: '/js/ngu-phap-tab-hsk1.js', hsk1v3: '/js/ngu-phap-tab-hsk1v3.js',
     hsk2: '/js/ngu-phap-tab-hsk2.js', hsk2v3: '/js/ngu-phap-tab-hsk2v3.js',
-    hsk3: '/js/ngu-phap-tab-hsk3.js', hsk4: '/js/ngu-phap-tab-hsk4.js', hsk5: '/js/ngu-phap-tab-hsk5.js'
+    hsk3: '/js/ngu-phap-tab-hsk3.js', hsk4: '/js/ngu-phap-tab-hsk4.js', hsk5: '/js/ngu-phap-tab-hsk5.js', hsk6: '/js/ngu-phap-tab-hsk6.js'
   };
   var nptState = {};
   function napScript(src) {
@@ -10572,7 +10582,7 @@
       }
       // HSK 5: bai khoa la MOT bai doc lien (file nghe doc lien ca bai) — khong goi la "hoi thoai",
       // khong hien hang nut chia doan
-      var laBaiKhoa = /\/hsk5-bai-\d+\.html/.test(lesson.fullPageUrl || '');
+      var laBaiKhoa = /\/hsk[56]-bai-\d+\.html/.test(lesson.fullPageUrl || '');
       $('#dpTitle').textContent = laBaiKhoa ? 'Bài khoá' : 'Hội thoại';
       $('#dpSubtitle').textContent = laBaiKhoa ? (dialogData[0] && dialogData[0].scene || '课文') + ' · đọc liền cả bài' : dialogData.length + ' đoạn hội thoại';
       renderDialogueTabs();
@@ -10632,7 +10642,7 @@
     }
     var audioBase = audioBaseFor(currentHubLesson);
     var audioSrc = audioBase ? audioBase + '/dlg-' + (dpIndex + 1) + '.mp3' : null;
-    var laBaiKhoaDp = /\/hsk5-bai-\d+\.html/.test((currentHubLesson && currentHubLesson.fullPageUrl) || '');
+    var laBaiKhoaDp = /\/hsk[56]-bai-\d+\.html/.test((currentHubLesson && currentHubLesson.fullPageUrl) || '');
 
     var audioHtml = audioSrc
       ? '<div class="dp-audio-box"><div class="dp-audio-label">🎙️ Audio gốc giáo trình</div><audio controls preload="none" src="' + audioSrc + '"></audio></div>'
@@ -11601,8 +11611,14 @@
         return;
       }
       var ten = (lesson.fullPageUrl.match(/([\w-]+)\.html$/) || [])[1] || lesson.fullPageUrl;
+      var sub = $('#wrSub');
+      if (sub) sub.textContent = data.writingData.kieu === 'sgk'
+        ? '运用 · 写一写 — viết theo đề của sách (khoảng ' + (data.writingData.soChu || 300) + ' chữ) → chấm điểm và sửa lỗi chi tiết'
+        : '书写 · Xếp câu, viết đoạn 80 chữ — nộp bài để được chấm và sửa lỗi chi tiết';
       window.LuyenViet.mount(hop, data.writingData, {
         key: ten,
+        // De SGK HSK 6 thuong la 缩写 bai khoa -> gui kem nguyen van de AI doi chieu du y
+        goc: (data.dialogData || []).map(function (sc) { return (sc.lines || []).map(function (l) { return l.zh; }).join(''); }).join('\n'),
         onDone: function (r) {
           if (!r.coBai) return;
           // correct/total cong vao bang xep hang -> chi tinh cac cau xep cau; diem bai viet luu rieng
@@ -12394,7 +12410,7 @@
   function errfixDef() {
     var isWordChoice = gpGameData && gpGameData.errorFixMode === 'wordchoice';
     // HSK 5 da co tro "Bai tap SGK" rieng — cau chon tu o day la bai soan them, khong phai bai goc
-    if (isWordChoice && currentHubLevelId === 'hsk5') return { label: 'Chọn từ phù hợp', desc: 'Đọc câu, chọn từ đúng nghĩa và đúng cách dùng để điền vào chỗ trống' };
+    if (isWordChoice && (currentHubLevelId === 'hsk5' || currentHubLevelId === 'hsk6')) return { label: 'Chọn từ phù hợp', desc: 'Đọc câu, chọn từ đúng nghĩa và đúng cách dùng để điền vào chỗ trống' };
     return isWordChoice ? GAME_TYPE_DEFS.errfixWord : GAME_TYPE_DEFS.errfix;
   }
 

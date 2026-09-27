@@ -1,0 +1,112 @@
+{
+ "zh": "怀念慢生活",
+ "py": "Huáiniàn Màn Shēnghuó",
+ "vn": "Nhớ lúc sống chậm",
+ "topic": "第九单元 古今博览 · Xưa và nay — nhịp sống nhanh của thời hiện đại và niềm vui của \"sống chậm\"",
+ "vocabCount": 57,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "A的A，B的B",
+   "explain": "Khuôn \"A的A，B的B\" dùng để LIỆT KÊ vài tình huống, vài kiểu hành động khác nhau của một nhóm người / sự vật — \"người thì A, người thì B\"; mang sắc thái KHẨU NGỮ, sinh động. A, B thường là động từ / cụm động từ (看电影的看电影，打电话的打电话 — bài khoá), cũng có thể là tính từ (红的红，绿的绿; 老的老，小的小，病的病). Phía trước thường có chủ ngữ chỉ một tập thể (大家 / 人们 / 一家子 / 一树的桃); có thể liệt kê 2–3 vế, sau đó hay có một vế tổng kết (漂亮极了 / 妈妈愁得不得了). Hai phần của mỗi vế phải GIỐNG HỆT nhau (跑的跑, không nói *跑的跳).",
+   "rule": "Chủ ngữ tập thể + <strong style=\"color:var(--sky-d)\">A的A</strong>，<strong style=\"color:var(--sky-d)\">B的B</strong>（，<strong style=\"color:var(--sky-d)\">C的C</strong>）+ (vế tổng kết)　|　A, B = V / cụm V / Adj — hai phần mỗi vế giống hệt nhau",
+   "examples": [
+    {
+     "zh": "进了果园，大家看到一树的桃，红的红，绿的绿，漂亮极了。",
+     "py": "Jìnle guǒyuán, dàjiā kàndào yí shù de táo, hóng de hóng, lǜ de lǜ, piàoliang jí le.",
+     "vn": "Vào vườn cây, mọi người thấy cả cây đào, quả thì đỏ, quả thì xanh, đẹp vô cùng."
+    },
+    {
+     "zh": "坐在宽敞座椅中的人们，享受着齐全的软硬件设施，看电影的看电影，打电话的打电话……",
+     "py": "Zuò zài kuānchang zuòyǐ zhōng de rénmen, xiǎngshòuzhe qíquán de ruǎn-yìngjiàn shèshī, kàn diànyǐng de kàn diànyǐng, dǎ diànhuà de dǎ diànhuà……",
+     "vn": "Những người ngồi trên các ghế rộng rãi tận hưởng đầy đủ tiện nghi, người thì xem phim, người thì gọi điện…"
+    },
+    {
+     "zh": "信号灯变绿了，前面的汽车还是不走，后面一长串汽车的司机按喇叭的按喇叭，探头的探头。",
+     "py": "Xìnhàodēng biàn lǜ le, qiánmiàn de qìchē háishi bù zǒu, hòumiàn yì cháng chuàn qìchē de sījī àn lǎba de àn lǎba, tàn tóu de tàn tóu.",
+     "vn": "Đèn đã chuyển xanh, xe phía trước vẫn không đi, tài xế cả dãy xe dài phía sau người thì bấm còi, người thì thò đầu ra nhìn."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "晚会上，大家唱的跳，跳的唱。",
+     "why": "Mỗi vế phải lặp lại CÙNG một từ ở hai bên 的: 唱的唱, 跳的跳.",
+     "right": "晚会上，大家唱的唱，跳的跳。"
+    },
+    {
+     "wrong": "我唱的唱，跳的跳，高兴极了。",
+     "why": "Khuôn này liệt kê hoạt động của NHIỀU người (người thì…, người thì…); chủ ngữ phải là tập thể, không dùng cho một người.",
+     "right": "我们唱的唱，跳的跳，高兴极了。"
+    }
+   ]
+  },
+  {
+   "point": "一时",
+   "explain": "\"一时\" làm PHÓ TỪ có hai nghĩa chính. ① Biểu thị hành vi xảy ra TẠM THỜI, NGẪU NHIÊN hoặc ĐỘT NGỘT (nhất thời, trong chốc lát): 一时竟忘了他叫什么名字 (bài khoá), 一时心急 / 一时冲动 / 一时想不起来 / 一时动弹不得 — hay đi với phủ định (想不起来, 没法, 说不出) và với 竟 để nhấn mạnh bất ngờ. ② Dùng LẶP LẠI \"一时……一时……\" biểu thị các hành vi, trạng thái khác nhau XEN KẼ nhau (lúc thì…, lúc thì…), giống \"时而……时而……\": 一时冷，一时热; 一时太阳当空，一时阴雨绵绵. Vị trí: sau chủ ngữ, trước vị ngữ (他一时心急), hoặc làm định ngữ trước danh từ trừu tượng (一时冲动).",
+   "rule": "① Chủ ngữ + <strong style=\"color:var(--sky-d)\">一时</strong> + (竟 / 没 / 不) + V — nhất thời, tạm thời, bất chợt　|　② <strong style=\"color:var(--sky-d)\">一时</strong> A，<strong style=\"color:var(--sky-d)\">一时</strong> B — lúc thì A lúc thì B (= 时而……时而……)",
+   "examples": [
+    {
+     "zh": "我感叹初中时，班里那个贵族气十足的男生，他叫……唉，一时竟忘了他叫什么名字。",
+     "py": "Wǒ gǎntàn chūzhōng shí, bān li nàge guìzúqì shízú de nánshēng, tā jiào…… ài, yìshí jìng wàngle tā jiào shénme míngzi.",
+     "vn": "Tôi cảm thán về cậu bạn đầy vẻ quý tộc hồi cấp hai, cậu ấy tên là… ôi, nhất thời lại quên mất tên cậu ấy."
+    },
+    {
+     "zh": "接到丈夫病危的电话，她一时心急，连门都没有锁，就冲出家门，直奔医院而去。",
+     "py": "Jiēdào zhàngfu bìngwēi de diànhuà, tā yìshí xīnjí, lián mén dōu méiyǒu suǒ, jiù chōngchū jiāmén, zhí bèn yīyuàn ér qù.",
+     "vn": "Nhận được điện thoại báo chồng nguy kịch, chị ấy nhất thời cuống lên, đến cửa cũng không khoá, lao ra khỏi nhà chạy thẳng đến bệnh viện."
+    },
+    {
+     "zh": "高原上天气变化大，一时太阳当空，一时阴雨绵绵是常有的事。",
+     "py": "Gāoyuán shang tiānqì biànhuà dà, yìshí tàiyáng dāngkōng, yìshí yīnyǔ miánmián shì cháng yǒu de shì.",
+     "vn": "Trên cao nguyên thời tiết thay đổi thất thường, lúc thì nắng chang chang, lúc thì mưa dầm dề là chuyện thường."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他一时每天都去跑步。",
+     "why": "一时 chỉ sự việc tạm thời, bất chợt; không dùng với thói quen lâu dài (每天都).",
+     "right": "他每天都去跑步。（或：他一时想不起来今天有没有跑步。）"
+    },
+    {
+     "wrong": "他的病好些了，身上一时冷，时而热的情况没有了。",
+     "why": "Khuôn lặp phải đồng bộ: 一时……一时…… hoặc 时而……时而……, không trộn lẫn.",
+     "right": "他的病好些了，身上一时冷，一时热的情况没有了。"
+    }
+   ]
+  },
+  {
+   "point": "修辞（9）借代",
+   "explain": "Phần 篇章修辞 của bài: \"借代\" (hoán dụ) là KHÔNG gọi thẳng tên sự vật, mà mượn một cách gọi khác có liên quan chặt chẽ với nó để thay thế. Các kiểu hay gặp: ① lấy ĐẶC ĐIỂM nổi bật thay cho người: 小眼镜 = người (bé) đeo kính, 大胡子 / 花白胡子 = người có râu, 小黄帽 / 小红帽 = em nhỏ đội mũ vàng / đỏ; ② lấy BỘ PHẬN thay cho toàn thể: 几千双眼睛 = mấy nghìn người; ③ lấy TÊN NGƯỜI TIÊU BIỂU thay cho loại người: 诸葛亮 = người thông minh, liệu việc như thần (bài khoá: 我们班那个料事如神的诸葛亮); ④ lấy VẬT CỤ THỂ thay cho khái niệm: 面包 = cái ăn, cuộc sống; 一草一木、一针一线 = mọi tài sản của dân. Khác 比喻 (so sánh, có 像 / 好像): 借代 không có từ so sánh, cái thay thế ĐỨNG THẲNG vào vị trí của sự vật. Khi đọc hiểu: \"“X”借代“Y”\".",
+   "rule": "<strong style=\"color:var(--sky-d)\">“X”借代“Y”</strong>　|　đặc điểm → người (小眼镜 / 大胡子 / 小黄帽)　|　bộ phận → toàn thể (几千双眼睛)　|　tên tiêu biểu → loại người (诸葛亮)　|　vật cụ thể → khái niệm (面包)",
+   "examples": [
+    {
+     "zh": "还有，中学我们班那个料事如神的诸葛亮……",
+     "py": "Hái yǒu, zhōngxué wǒmen bān nàge liàoshì-rúshén de Zhūgě Liàng……",
+     "vn": "Còn nữa, \"Gia Cát Lượng\" liệu việc như thần của lớp cấp hai chúng tôi… (诸葛亮 thay cho \"bạn học liệu việc như thần\")"
+    },
+    {
+     "zh": "这个小眼镜就是我的儿子。",
+     "py": "Zhège xiǎo yǎnjìng jiù shì wǒ de érzi.",
+     "vn": "Cậu bé đeo kính này chính là con trai tôi. (小眼镜 thay cho \"người đeo kính nhỏ\")"
+    },
+    {
+     "zh": "汽车停下来，等待放了学的小黄帽们过马路。",
+     "py": "Qìchē tíng xialai, děngdài fàngle xué de xiǎo huángmàomen guò mǎlù.",
+     "vn": "Ô tô dừng lại, chờ các em nhỏ đội mũ vàng vừa tan học qua đường. (小黄帽 thay cho \"học sinh tiểu học đội mũ vàng\")"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他像大胡子一样边说话边朝我走来。",
+     "why": "Có từ so sánh 像……一样 thì là 比喻, không còn là 借代; 借代 phải dùng cái thay thế đứng thẳng vào vị trí người.",
+     "right": "大胡子边说话边乐呵呵地朝我走来。"
+    },
+    {
+     "wrong": "（在正式的请假条里）那个白大褂让我在家休息两天。",
+     "why": "借代 kiểu biệt danh (白大褂, 小眼镜) mang sắc thái khẩu ngữ, đùa vui; văn bản trang trọng phải gọi đúng tên.",
+     "right": "医生建议我在家休息两天。"
+    }
+   ]
+  }
+ ]
+}

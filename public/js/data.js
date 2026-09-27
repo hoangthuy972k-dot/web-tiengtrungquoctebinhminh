@@ -2175,6 +2175,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk6-bai-31.html'
+      },
+      {
+        id: 'hsk6-l33',
+        number: 33,
+        title: 'Nhớ lúc sống chậm',
+        titleHanzi: '怀念慢生活',
+        titlePinyin: 'Huáiniàn Màn Shēnghuó',
+        topic: '第九单元 古今博览 · Xưa và nay — nhịp sống nhanh của thời hiện đại và niềm vui của "sống chậm"',
+        vocabCount: 57,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-33.html'
       }
     ],
     yct: [

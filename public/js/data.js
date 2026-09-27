@@ -2067,6 +2067,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk6-bai-22.html'
+      },
+      {
+        id: 'hsk6-l23',
+        number: 23,
+        title: 'Thời đại dữ liệu lớn',
+        titleHanzi: '大数据时代',
+        titlePinyin: 'Dà shùjù shídài',
+        topic: '第六单元 趣味世界 · Dữ liệu lớn: dự đoán tương lai và y tế thông minh',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-23.html'
       }
     ],
     yct: [

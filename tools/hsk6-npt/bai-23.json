@@ -1,0 +1,617 @@
+[
+ {
+  "so": "1",
+  "ten": "「加以」",
+  "tenVn": "",
+  "cauTruc": [
+   "对 / 对于 + N，（认真 / 好好）+ 加以 + V song âm tiết: tiến hành … đối với …",
+   "N (đối tượng đã nêu)，…… + 加以 + V song âm tiết (说明 / 利用 / 改正)"
+  ],
+  "giaiThich": "加以 là ĐỘNG TỪ HÌNH THỨC, biểu thị thái độ hoặc cách xử lý đối với sự vật đã được nhắc đến ở phía trước. Sau 加以 BẮT BUỘC là một ĐỘNG TỪ SONG ÂM TIẾT làm tân ngữ (研究, 说明, 利用, 改正, 分析…); động tác thực sự là động từ phía sau, 加以 không mang nghĩa cụ thể. Đối tượng được xử lý thường đã nêu ở trước (làm chủ đề) hoặc đưa lên bằng 对 / 对于, nên động từ sau 加以 KHÔNG mang tân ngữ nữa. Trước 加以 hay có 认真, 好好, 必须, 应该, 不妨…. Dùng trong văn viết.",
+  "viDu": [
+   {
+    "zh": "对于你的意见和建议，我们会认真加以研究。",
+    "py": "Duìyú nǐ de yìjiàn hé jiànyì, wǒmen huì rènzhēn jiāyǐ yánjiū.",
+    "vn": "Đối với ý kiến và đề xuất của bạn, chúng tôi sẽ nghiêm túc nghiên cứu."
+   },
+   {
+    "zh": "大数据如何连接未来？我们不妨以大数据与健康为例加以说明。",
+    "py": "Dà shùjù rúhé liánjiē wèilái? Wǒmen bùfáng yǐ dà shùjù yǔ jiànkāng wéi lì jiāyǐ shuōmíng.",
+    "vn": "Dữ liệu lớn kết nối với tương lai như thế nào? Chúng ta thử lấy dữ liệu lớn và sức khoẻ làm ví dụ để giải thích."
+   },
+   {
+    "zh": "学校为我们提供了这么好的图书馆和自习室，我们应该好好加以利用。",
+    "py": "Xuéxiào wèi wǒmen tígōngle zhème hǎo de túshūguǎn hé zìxíshì, wǒmen yīnggāi hǎohāo jiāyǐ lìyòng.",
+    "vn": "Nhà trường cung cấp cho chúng ta thư viện và phòng tự học tốt như vậy, chúng ta nên tận dụng thật tốt."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "老师对这个问题加以说。",
+    "why": "Sau 加以 phải là động từ SONG ÂM TIẾT; 说 là động từ đơn âm tiết.",
+    "dung": "老师对这个问题加以说明。"
+   },
+   {
+    "sai": "我们要加以研究这个问题。",
+    "why": "Động từ sau 加以 không mang tân ngữ; đưa đối tượng lên trước bằng 对.",
+    "dung": "我们要对这个问题加以研究。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "对于你的意见和建议，我们会认真",
+       "研究。"
+      ],
+      "dap": [
+       [
+        "加以"
+       ]
+      ],
+      "chon": [
+       "加以",
+       "以便",
+       "给以"
+      ],
+      "goiY": "\"Chúng tôi sẽ nghiêm túc nghiên cứu ý kiến và đề xuất của bạn.\" (ví dụ (1) của sách)",
+      "giai": "加以 + 研究 (động từ song âm tiết). 以便 = để (đầu vế sau); 给以 dùng khi dành cho ai điều có lợi (给以帮助)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们不妨以大数据与健康为例加以",
+       "。"
+      ],
+      "dap": [
+       [
+        "说明"
+       ]
+      ],
+      "chon": [
+       "说明",
+       "说",
+       "讲"
+      ],
+      "goiY": "\"Chúng ta thử lấy dữ liệu lớn và sức khoẻ làm ví dụ để giải thích.\" (câu bài khoá)",
+      "giai": "Sau 加以 bắt buộc là động từ SONG ÂM TIẾT → 说明; 说, 讲 là đơn âm tiết."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "学校提供的图书馆和自习室，我们应该好好加以",
+       "。"
+      ],
+      "dap": [
+       [
+        "利用"
+       ]
+      ],
+      "chon": [
+       "利用",
+       "用",
+       "使"
+      ],
+      "goiY": "\"… chúng ta nên tận dụng thật tốt.\" (ví dụ (3) của sách)",
+      "giai": "加以利用 = tận dụng; 用 / 使 đơn âm tiết không đứng sau 加以."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们要",
+       "这个问题加以研究。"
+      ],
+      "dap": [
+       [
+        "对"
+       ]
+      ],
+      "chon": [
+       "对",
+       "把",
+       "被"
+      ],
+      "goiY": "\"Chúng ta phải nghiên cứu vấn đề này.\"",
+      "giai": "Đưa đối tượng lên trước bằng 对: 对 + N + 加以 + V; không dùng 把 với 加以."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "下面这些句子都有问题，请",
+       "改正。"
+      ],
+      "dap": [
+       [
+        "加以"
+       ]
+      ],
+      "chon": [
+       "加以",
+       "加上",
+       "加入"
+      ],
+      "goiY": "\"Những câu dưới đây đều có vấn đề, hãy sửa lại.\" (练一练 (1))",
+      "giai": "加以改正 = sửa lại; 加上 = cộng thêm; 加入 = gia nhập."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家都根据自身不同的需求加以",
+       "，使读书进入真正的理性时代。"
+      ],
+      "dap": [
+       [
+        "选择"
+       ]
+      ],
+      "chon": [
+       "选择",
+       "选",
+       "挑"
+      ],
+      "goiY": "\"Mọi người đều chọn lựa theo nhu cầu khác nhau của bản thân …\" (练一练 (3))",
+      "giai": "加以 + 选择 (song âm tiết); 选 / 挑 là đơn âm tiết."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "对于",
+       "大家的建议",
+       "，",
+       "我们",
+       "会",
+       "认真",
+       "加以",
+       "考虑"
+      ],
+      "dap": [
+       "对于大家的建议，我们会认真加以考虑。"
+      ],
+      "goiY": "Đối với đề xuất của mọi người, chúng tôi sẽ nghiêm túc cân nhắc.",
+      "giai": "对于 + N đặt đầu câu; 认真 + 加以 + 考虑."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "应该",
+       "对",
+       "这些问题",
+       "加以",
+       "分析"
+      ],
+      "dap": [
+       "我们应该对这些问题加以分析。"
+      ],
+      "goiY": "Chúng ta nên phân tích những vấn đề này.",
+      "giai": "Chủ ngữ + năng nguyện 应该 + 对 + N + 加以 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "请",
+       "把",
+       "错误的地方",
+       "找出来",
+       "并",
+       "加以",
+       "改正"
+      ],
+      "dap": [
+       "请把错误的地方找出来并加以改正。"
+      ],
+      "goiY": "Hãy tìm ra chỗ sai và sửa lại.",
+      "giai": "并 nối hai động tác; đối tượng của 加以改正 là 错误的地方 đã nêu trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "老师对这个问题加以说。",
+      "dung": false,
+      "sua": "老师对这个问题加以说明。",
+      "giai": "Sau 加以 phải là động từ song âm tiết."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们要加以研究这个问题。",
+      "dung": false,
+      "sua": "我们要对这个问题加以研究。",
+      "giai": "Động từ sau 加以 không mang tân ngữ; dùng 对 đưa đối tượng lên trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "对于同学们的意见，学校会认真加以处理。",
+      "dung": true,
+      "giai": "对于 + N đặt đầu câu, 加以 + 处理 (song âm tiết), không có tân ngữ phía sau → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Đối với những ý kiến này, chúng tôi sẽ nghiêm túc xem xét.",
+      "dap": [
+       "对于这些意见，我们会认真加以考虑。",
+       "对这些意见，我们会认真加以考虑。",
+       "对于这些意见，我们会认真加以研究。"
+      ],
+      "py": "Duìyú zhèxiē yìjiàn, wǒmen huì rènzhēn jiāyǐ kǎolǜ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 加以.",
+      "giai": "对于 + N，……加以 + 考虑 / 研究."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Thư viện của trường rất tốt, chúng ta nên tận dụng thật tốt.",
+      "dap": [
+       "学校的图书馆很好，我们应该好好加以利用。",
+       "学校的图书馆很好，我们应该充分加以利用。"
+      ],
+      "py": "Xuéxiào de túshūguǎn hěn hǎo, wǒmen yīnggāi hǎohāo jiāyǐ lìyòng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 加以.",
+      "giai": "Đối tượng (图书馆) đã nêu ở vế trước → 好好加以利用, không lặp lại tân ngữ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "下面这些句子都有问题，请＿＿。（用“加以”完成句子）",
+      "goiY": "đáp án sách — 练一练 (1)",
+      "mau": "下面这些句子都有问题，请加以改正。",
+      "can": [
+       [
+        "加以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "为什么男生没有学习健美操的兴趣？应采取什么措施＿＿。（用“加以”完成句子）",
+      "goiY": "đáp án sách — 练一练 (2)",
+      "mau": "为什么男生没有学习健美操的兴趣？应采取什么措施加以培养。",
+      "can": [
+       [
+        "加以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "现在人们的读书生活更加多元化，大家都根据自身不同的需求＿＿，使读书进入真正的理性时代。（用“加以”完成句子）",
+      "goiY": "đáp án sách — 练一练 (3)",
+      "mau": "现在人们的读书生活更加多元化，大家都根据自身不同的需求加以选择，使读书进入真正的理性时代。",
+      "can": [
+       [
+        "加以"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「大大、远远」",
+  "tenVn": "",
+  "cauTruc": [
+   "大大（地）+ V song âm tiết / cụm động từ: … rất nhiều, đáng kể (大大提高 / 增加 / 减少)",
+   "远远（地）+ 超出 / 超过 / 不如 / 不能 + …: vượt xa …; còn xa mới …"
+  ],
+  "giaiThich": "大大 và 远远 đều là PHÓ TỪ, là dạng lặp của tính từ đơn âm tiết 大 và 远. 大大 biểu thị mức độ rất sâu hoặc số lượng rất lớn (\"rất nhiều, đáng kể\"), thường bổ nghĩa cho ĐỘNG TỪ SONG ÂM TIẾT hoặc CỤM ĐỘNG TỪ (提高, 增加, 减少, 改变, 避免了分歧), dùng nhiều trong văn viết. 远远 sau khi lặp lại nghĩa cơ bản không đổi (\"xa, vượt xa, còn xa mới\"), hay đi với 超出, 超过, 高于, 不如, 不能, 落后. Sau 大大, 远远 đều có thể thêm 地.",
+  "viDu": [
+   {
+    "zh": "大数据的优越之处就在于，能够大大（地）提高医生的工作效率，将医生的能量发挥到最大。",
+    "py": "Dà shùjù de yōuyuè zhī chù jiù zàiyú, nénggòu dàdà (de) tígāo yīshēng de gōngzuò xiàolǜ, jiāng yīshēng de néngliàng fāhuī dào zuì dà.",
+    "vn": "Điểm ưu việt của dữ liệu lớn chính là có thể nâng cao đáng kể hiệu suất làm việc của bác sĩ, phát huy tối đa năng lực của bác sĩ."
+   },
+   {
+    "zh": "实事求是地讲，即便仅仅做到这一点，大数据为人类做出的贡献也远远（地）超出了我们的期盼。",
+    "py": "Shíshì-qiúshì de jiǎng, jíbiàn jǐnjǐn zuòdào zhè yì diǎn, dà shùjù wèi rénlèi zuòchū de gòngxiàn yě yuǎnyuǎn (de) chāochūle wǒmen de qīpàn.",
+    "vn": "Nói một cách khách quan, cho dù chỉ làm được điều này, đóng góp của dữ liệu lớn cho nhân loại cũng đã vượt xa sự mong đợi của chúng ta."
+   },
+   {
+    "zh": "你现在的任务就是认真读书，因为你现在的知识、能力都远远不能胜任你理想中的工作。",
+    "py": "Nǐ xiànzài de rènwu jiù shì rènzhēn dúshū, yīnwèi nǐ xiànzài de zhīshi, nénglì dōu yuǎnyuǎn bù néng shèngrèn nǐ lǐxiǎng zhōng de gōngzuò.",
+    "vn": "Nhiệm vụ hiện giờ của em chính là chăm chỉ học hành, vì kiến thức và năng lực hiện nay của em còn lâu mới đảm đương được công việc mơ ước."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他的成绩大大好。",
+    "why": "大大 bổ nghĩa cho động từ / cụm động từ, không đứng trước một tính từ đơn như 好.",
+    "dung": "他的成绩大大提高了。"
+   },
+   {
+    "sai": "我的水平大大不能胜任这份工作。",
+    "why": "Ý \"còn xa mới …\" (phủ định) dùng 远远不能; 大大 không đi với 不能.",
+    "dung": "我的水平远远不能胜任这份工作。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "大数据能够",
+       "提高医生的工作效率。"
+      ],
+      "dap": [
+       [
+        "大大"
+       ]
+      ],
+      "chon": [
+       "大大",
+       "远远",
+       "多多"
+      ],
+      "goiY": "\"Dữ liệu lớn có thể nâng cao đáng kể hiệu suất làm việc của bác sĩ.\" (câu bài khoá)",
+      "giai": "大大 + 提高 (động từ song âm tiết) = nâng cao đáng kể."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大数据为人类做出的贡献也",
+       "超出了我们的期盼。"
+      ],
+      "dap": [
+       [
+        "远远"
+       ]
+      ],
+      "chon": [
+       "远远",
+       "大大",
+       "深深"
+      ],
+      "goiY": "\"… cũng đã vượt xa sự mong đợi của chúng ta.\" (câu bài khoá)",
+      "giai": "远远超出 = vượt xa — 远远 hay đi với 超出 / 超过."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你现在的知识、能力都",
+       "不能胜任你理想中的工作。"
+      ],
+      "dap": [
+       [
+        "远远"
+       ]
+      ],
+      "chon": [
+       "远远",
+       "大大",
+       "多么"
+      ],
+      "goiY": "\"… còn lâu mới đảm đương được công việc mơ ước.\" (ví dụ (3) của sách)",
+      "giai": "Phủ định \"còn xa mới\" → 远远不能; 大大 không đi với 不能."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "散步时身体挺直，能使肺的换气量",
+       "增加。"
+      ],
+      "dap": [
+       [
+        "大大"
+       ]
+      ],
+      "chon": [
+       "大大",
+       "远远",
+       "高高"
+      ],
+      "goiY": "\"… làm lượng trao đổi khí của phổi tăng lên đáng kể.\" (练一练 (1))",
+      "giai": "大大增加 = tăng lên đáng kể."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "使用新方法以后，我们的工作效率",
+       "提高了。"
+      ],
+      "dap": [
+       [
+        "大大"
+       ]
+      ],
+      "chon": [
+       "大大",
+       "远远",
+       "很"
+      ],
+      "goiY": "\"Sau khi dùng phương pháp mới, hiệu suất làm việc của chúng tôi nâng lên đáng kể.\"",
+      "giai": "大大提高了 — 很 không đứng trước động từ 提高 như vậy; 远远 không đi với 提高."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的汉语水平",
+       "高于班里的其他同学。"
+      ],
+      "dap": [
+       [
+        "远远"
+       ]
+      ],
+      "chon": [
+       "远远",
+       "大大",
+       "非常"
+      ],
+      "goiY": "\"Trình độ tiếng Trung của cậu ấy cao hơn hẳn các bạn khác trong lớp.\"",
+      "giai": "远远 + 高于 / 超过 = hơn xa (so sánh khoảng cách lớn)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这种新药",
+       "大大",
+       "减少了",
+       "病人的",
+       "痛苦"
+      ],
+      "dap": [
+       "这种新药大大减少了病人的痛苦。"
+      ],
+      "goiY": "Loại thuốc mới này giảm đáng kể nỗi đau của bệnh nhân.",
+      "giai": "大大 + 减少了 + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "今年的",
+       "报名人数",
+       "远远",
+       "超过了",
+       "去年"
+      ],
+      "dap": [
+       "今年的报名人数远远超过了去年。"
+      ],
+      "goiY": "Số người đăng ký năm nay vượt xa năm ngoái.",
+      "giai": "远远 + 超过 + đối tượng so sánh."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "随着经济的发展",
+       "，",
+       "物资的",
+       "运输量",
+       "大大",
+       "增加了"
+      ],
+      "dap": [
+       "随着经济的发展，物资的运输量大大增加了。"
+      ],
+      "goiY": "Cùng với sự phát triển kinh tế, lượng vận chuyển hàng hoá tăng lên đáng kể.",
+      "giai": "随着……，主语 + 大大 + 增加了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的成绩大大好。",
+      "dung": false,
+      "sua": "他的成绩大大提高了。",
+      "giai": "大大 bổ nghĩa cho động từ / cụm động từ, không đứng trước tính từ đơn 好."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我的水平大大不能胜任这份工作。",
+      "dung": false,
+      "sua": "我的水平远远不能胜任这份工作。",
+      "giai": "\"Còn xa mới …\" dùng 远远不能."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "网络的发展大大地改变了我们的生活。",
+      "dung": true,
+      "giai": "大大 + 地 + 改变了 (động từ song âm tiết) → đúng; sau 大大 có thể thêm 地."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Điện thoại thông minh đã thay đổi rất nhiều cách học của chúng ta.",
+      "dap": [
+       "智能手机大大改变了我们的学习方式。",
+       "智能手机大大地改变了我们的学习方式。"
+      ],
+      "py": "Zhìnéng shǒujī dàdà gǎibiànle wǒmen de xuéxí fāngshì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 大大.",
+      "giai": "\"thay đổi rất nhiều\" = 大大改变."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Kết quả lần này vượt xa dự liệu của mọi người.",
+      "dap": [
+       "这次的结果远远超出了大家的预料。",
+       "这次的结果远远超过了大家的预料。",
+       "这次的结果远远超出了大家的预测。"
+      ],
+      "py": "Zhè cì de jiéguǒ yuǎnyuǎn chāochūle dàjiā de yùliào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 远远.",
+      "giai": "\"vượt xa\" = 远远超出 / 超过."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "散步时，身体挺直，胳膊自由摆动，能使肺的换气量＿＿。（用“大大”或者“远远”完成句子）",
+      "goiY": "đáp án sách — 练一练 (1)",
+      "mau": "散步时，身体挺直，胳膊自由摆动，能使肺的换气量大大增加。",
+      "can": [
+       [
+        "大大"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我们之间的共同点＿＿分歧，我相信我们这次合作一定能够成功。（用“大大”或者“远远”完成句子）",
+      "goiY": "đáp án sách — 练一练 (2)",
+      "mau": "我们之间的共同点大大避免了分歧，我相信我们这次合作一定能够成功。",
+      "can": [
+       [
+        "大大"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "随着经济的发展，来往物资的运输量＿＿，这条道路原有的运输能力已＿＿满足需求。（用“大大”或者“远远”完成句子）",
+      "goiY": "đáp án sách — 练一练 (3): 大大增加 / 远远不能",
+      "mau": "随着经济的发展，来往物资的运输量大大增加，这条道路原有的运输能力已远远不能满足需求。",
+      "can": [
+       [
+        "远远"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

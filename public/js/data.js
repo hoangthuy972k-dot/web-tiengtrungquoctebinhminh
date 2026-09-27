@@ -2189,6 +2189,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-33.html'
       },
       {
+        id: 'hsk6-l34',
+        number: 34,
+        title: 'Một người dành cả cuộc đời cho các di vật văn hoá',
+        titleHanzi: '为文物而生的人',
+        titlePinyin: 'Wèi Wénwù ér Shēng de Rén',
+        topic: '第九单元 古今博览 · Xưa và nay — nhà sưu tầm, giám định gốm sứ Tôn Doanh Châu',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-34.html'
+      },
+      {
         id: 'hsk6-l35',
         number: 35,
         title: 'Đến với tranh Tết mộc bản',

@@ -143,7 +143,7 @@
     function veAb(p, pi) {
       return '<ol class="sk-list">' + p.cau.map(function (c, ci) {
         var v = st.ab[pi + '_' + ci], xong = v != null;
-        return '<li><div class="lv-zh sk-cau">' + esc(c.s) + '</div><div class="sk-ab">' + c.opts.map(function (o, oi) {
+        return '<li><div class="lv-zh sk-cau">' + gachChan(c.s) + '</div><div class="sk-ab">' + c.opts.map(function (o, oi) {
             var cls = 'lv-chip pb-opt' + (xong ? (oi === c.ans ? ' is-right' : (oi === v ? ' is-wrong' : '')) : '');
             return '<button type="button" class="' + cls + '" data-sk-ab="' + pi + '_' + ci + '_' + oi + '"' + (xong ? ' disabled' : '') + '>' + 'ABCDEF'.charAt(oi) + '. ' + esc(o) + '</button>';
           }).join('') + '</div>' +

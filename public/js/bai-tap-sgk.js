@@ -33,6 +33,8 @@
   }
   function gachChan(t) { return esc(t).replace(/【/g, '<u class="sk-u">').replace(/】/g, '</u>'); }
   var TU_DANH_GIA = ['gx', 'mp', 'bc'];
+  // Vi tri dung co the nhieu hon mot (sach ghi "A/B")
+  function dungViTri(c, v) { return v != null && String(c.ans).split('/').indexOf(v) >= 0; }
 
   function mount(hop, parts, opts) {
     opts = opts || {};
@@ -98,7 +100,7 @@
           p.cau.forEach(function (c, ci) {
             tong++;
             var v = (p.kieu === 'ab' ? st.ab : st.vt)[pi + '_' + ci];
-            if (v != null) { lam++; if (v === c.ans) dung++; }
+            if (v != null) { lam++; if (p.kieu === 'ab' ? v === c.ans : dungViTri(c, v)) dung++; }
           });
         }
       });
@@ -154,12 +156,13 @@
       return '<ol class="sk-list">' + p.cau.map(function (c, ci) {
         var v = st.vt[pi + '_' + ci], xong = v != null;
         var html = esc(c.s).replace(/[ABCD]/g, function (L) {
-          var cls = 'sk-vt' + (xong ? (L === c.ans ? ' is-right' : (L === v ? ' is-wrong' : '')) : '');
+          var cls = 'sk-vt' + (xong ? (dungViTri(c, L) ? ' is-right' : (L === v ? ' is-wrong' : '')) : '');
           return '<button type="button" class="' + cls + '" data-sk-vt="' + pi + '_' + ci + '_' + L + '"' + (xong ? ' disabled' : '') + '>' + L + '</button>';
         });
-        var dungCau = xong ? c.s.replace(c.ans, c.tu).replace(/[ABCD]/g, '') : '';
+        var dauTien = String(c.ans).split('/')[0], dungV = xong && dungViTri(c, v);
+        var dungCau = xong ? c.s.replace(dungV ? v : dauTien, c.tu).replace(/[ABCD]/g, '') : '';
         return '<li><div class="lv-zh sk-cau">' + html + ' <span class="sk-ngoac">（' + esc(c.tu) + '）</span></div>' +
-          (xong ? '<div class="pb-why ' + (v === c.ans ? 'ok' : 'bad') + '"><b>' + (v === c.ans ? '✓ Đúng.' : '✗ Chưa đúng — vị trí ' + c.ans + '.') + '</b> <span class="lv-zh">' + esc(dungCau) + '</span><br>' + esc(c.giai || '') + '</div>' : '') +
+          (xong ? '<div class="pb-why ' + (dungV ? 'ok' : 'bad') + '"><b>' + (dungV ? '✓ Đúng.' : '✗ Chưa đúng — vị trí ' + String(c.ans).split('/').join(' hoặc ') + '.') + '</b> <span class="lv-zh">' + esc(dungCau) + '</span><br>' + esc(c.giai || '') + '</div>' : '') +
         '</li>';
       }).join('') + '</ol>';
     }

@@ -1694,72 +1694,221 @@ var speakingData = {
 // 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
 // ══════════════════════════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 6',
-  items: [
-    {n:1,
-     lines:[{sp:'女',zh:'新来的小李怎么样？'},
-            {sp:'男',zh:'别看他刚上任，业务能力可一点儿也不比那些资深员工差。'}],
-     q:'男的认为小李怎么样？',qvn:'Người đàn ông thấy Tiểu Lý thế nào?',
-     opts:['能力很强','经验丰富','态度不好','不太敬业'],ans:0,
-     why:'别看……，……不比资深员工差 = đừng thấy mới nhận chức mà coi thường, năng lực không kém nhân viên thâm niên → năng lực rất mạnh. "Kinh nghiệm phong phú" sai vì cậu ấy mới đến.',
-     words:['上任','资深']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'今天办公室怎么这么安静？'},
-            {sp:'女',zh:'经理刚才发了一通火，大家都不敢出声，屋子里鸦雀无声。'}],
-     q:'办公室为什么很安静？',qvn:'Vì sao văn phòng rất yên tĩnh?',
-     opts:['大家都下班了','经理发火了','大家在开会','大家在休息'],ans:1,
-     why:'经理刚才发了一通火 (giám đốc vừa nổi giận) → mọi người không dám lên tiếng. 鸦雀无声 = im phăng phắc (thành ngữ trong bài khoá).',
-     words:[]},
-
-    {n:3,
-     lines:[{sp:'女',zh:'这个月的指标你完成了吗？'},
-            {sp:'男',zh:'别提了，客户接连投诉，我忙了一个月，还差一大截呢。'}],
-     q:'男的这个月情况怎么样？',qvn:'Tháng này tình hình của người đàn ông thế nào?',
-     opts:['提前完成了指标','没有完成指标','受到了表扬','被公司辞退了'],ans:1,
-     why:'还差一大截 = còn thiếu một khoảng lớn → chưa hoàn thành chỉ tiêu. 别提了 mở đầu là dấu hiệu tin không vui. 接连 ôn bài 5.',
-     words:['指标','投诉']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'王经理，您怎么又把最难的活儿交给新人了？'},
-            {sp:'女',zh:'我这是在锻炼他们。能把这单业务做好，才能说明他们真有才干。'}],
-     q:'女的为什么把最难的工作交给新人？',qvn:'Vì sao người phụ nữ giao việc khó nhất cho người mới?',
-     opts:['她在欺负新人','她想锻炼新人','她自己不想做','新人主动要求的'],ans:1,
-     why:'我这是在锻炼他们 — nói thẳng mục đích là rèn luyện. Phương án "bắt nạt" là cách Tiểu Lâm trong bài nghĩ, nhưng không phải ý của người nói.',
-     words:['才干']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'他们这样欺负你，你就这么忍着？'},
-            {sp:'男',zh:'不跟他们计较。大不了多干点儿活儿，我还能多学点儿东西呢。'}],
-     q:'男的是什么态度？',qvn:'Người đàn ông có thái độ gì?',
-     opts:['非常愤怒','打算辞职','不计较，看得开','要找领导讨公道'],ans:2,
-     why:'不跟他们计较 + 大不了多干点儿 + 还能多学点儿 → bình thản, nhìn mặt tích cực. 愤怒 (bài 4) và 讨公道 là cách phản ứng ngược lại.',
-     words:['欺负','计较','大不了']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'听说你们部门年度考核又拿了第一？'},
-            {sp:'女',zh:'主要是大家都很敬业，不管多忙，谁都不凑合。'}],
-     q:'女的认为部门成绩好的主要原因是什么？',qvn:'Người phụ nữ cho rằng nguyên nhân chính khiến phòng đạt thành tích tốt là gì?',
-     opts:['领导很严格','大家很敬业','客户很少','工作很轻松'],ans:1,
-     why:'主要是大家都很敬业 — câu trả lời nằm ngay sau 主要是. 不管多忙，谁都不凑合 bổ sung cho ý "tận tuỵ".',
-     words:['年度','考核','敬业','凑合']},
-
-    {n:7,
-     lines:[{sp:'男',zh:'刚进入一个新集体时，很多人会觉得自己被边缘化了，这其实很正常。与其抱怨，不如想方设法展示自己的能力。时间长了，大家自然会认可你。'}],
-     q:'说话人建议刚进入新集体的人怎么做？',qvn:'Người nói khuyên người mới vào tập thể nên làm gì?',
-     opts:['向领导抱怨','马上换一个集体','想办法展示自己的能力','等别人来帮助自己'],ans:2,
-     why:'与其抱怨，不如想方设法展示自己的能力 — 与其 A 不如 B: người nói chọn B. Nghe thấy 抱怨 trước dễ chọn nhầm phương án 1.',
-     words:['边缘','想方设法','展示']},
-
-    {n:8,
-     lines:[{sp:'女',zh:'你明明知道客户今天要来，怎么还溜出去逛街了？'},
-            {sp:'男',zh:'我以为他下午才到，没想到上午就来了。'}],
-     q:'男的为什么不在公司？',qvn:'Vì sao người đàn ông không có mặt ở công ty?',
-     opts:['他去见客户了','他以为客户下午才来','他生病了','他忘了客户要来'],ans:1,
-     why:'我以为他下午才到 — 以为 = tưởng (sai). Cô gái nói 你明明知道客户今天要来 nên phương án "quên" sai.',
-     words:['明明','溜']}
+  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
+  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 6",
+  "items": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "新来的小李怎么样？"
+        },
+        {
+          "sp": "男",
+          "zh": "别看他刚上任，业务能力可一点儿也不比那些资深员工差。"
+        }
+      ],
+      "q": "男的认为小李怎么样？",
+      "qvn": "Người đàn ông thấy Tiểu Lý thế nào?",
+      "opts": [
+        "态度不好",
+        "经验丰富",
+        "能力很强",
+        "不太敬业"
+      ],
+      "ans": 2,
+      "why": "别看……，……不比资深员工差 = đừng thấy mới nhận chức mà coi thường, năng lực không kém nhân viên thâm niên → năng lực rất mạnh. \"Kinh nghiệm phong phú\" sai vì cậu ấy mới đến.",
+      "words": [
+        "上任",
+        "资深"
+      ]
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "今天办公室怎么这么安静？"
+        },
+        {
+          "sp": "女",
+          "zh": "经理刚才发了一通火，大家都不敢出声，屋子里鸦雀无声。"
+        }
+      ],
+      "q": "办公室为什么很安静？",
+      "qvn": "Vì sao văn phòng rất yên tĩnh?",
+      "opts": [
+        "经理发火了",
+        "大家都下班了",
+        "大家在开会",
+        "大家在休息"
+      ],
+      "ans": 0,
+      "why": "经理刚才发了一通火 (giám đốc vừa nổi giận) → mọi người không dám lên tiếng. 鸦雀无声 = im phăng phắc (thành ngữ trong bài khoá).",
+      "words": []
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "这个月的指标你完成了吗？"
+        },
+        {
+          "sp": "男",
+          "zh": "别提了，客户接连投诉，我忙了一个月，还差一大截呢。"
+        }
+      ],
+      "q": "男的这个月情况怎么样？",
+      "qvn": "Tháng này tình hình của người đàn ông thế nào?",
+      "opts": [
+        "提前完成了指标",
+        "被公司辞退了",
+        "受到了表扬",
+        "没有完成指标"
+      ],
+      "ans": 3,
+      "why": "还差一大截 = còn thiếu một khoảng lớn → chưa hoàn thành chỉ tiêu. 别提了 mở đầu là dấu hiệu tin không vui. 接连 ôn bài 5.",
+      "words": [
+        "指标",
+        "投诉"
+      ]
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "王经理，您怎么又把最难的活儿交给新人了？"
+        },
+        {
+          "sp": "女",
+          "zh": "我这是在锻炼他们。能把这单业务做好，才能说明他们真有才干。"
+        }
+      ],
+      "q": "女的为什么把最难的工作交给新人？",
+      "qvn": "Vì sao người phụ nữ giao việc khó nhất cho người mới?",
+      "opts": [
+        "她在欺负新人",
+        "她想锻炼新人",
+        "她自己不想做",
+        "新人主动要求的"
+      ],
+      "ans": 1,
+      "why": "我这是在锻炼他们 — nói thẳng mục đích là rèn luyện. Phương án \"bắt nạt\" là cách Tiểu Lâm trong bài nghĩ, nhưng không phải ý của người nói.",
+      "words": [
+        "才干"
+      ]
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "他们这样欺负你，你就这么忍着？"
+        },
+        {
+          "sp": "男",
+          "zh": "不跟他们计较。大不了多干点儿活儿，我还能多学点儿东西呢。"
+        }
+      ],
+      "q": "男的是什么态度？",
+      "qvn": "Người đàn ông có thái độ gì?",
+      "opts": [
+        "非常愤怒",
+        "不计较，看得开",
+        "打算辞职",
+        "要找领导讨公道"
+      ],
+      "ans": 1,
+      "why": "不跟他们计较 + 大不了多干点儿 + 还能多学点儿 → bình thản, nhìn mặt tích cực. 愤怒 (bài 4) và 讨公道 là cách phản ứng ngược lại.",
+      "words": [
+        "欺负",
+        "计较",
+        "大不了"
+      ]
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "听说你们部门年度考核又拿了第一？"
+        },
+        {
+          "sp": "女",
+          "zh": "主要是大家都很敬业，不管多忙，谁都不凑合。"
+        }
+      ],
+      "q": "女的认为部门成绩好的主要原因是什么？",
+      "qvn": "Người phụ nữ cho rằng nguyên nhân chính khiến phòng đạt thành tích tốt là gì?",
+      "opts": [
+        "领导很严格",
+        "工作很轻松",
+        "客户很少",
+        "大家很敬业"
+      ],
+      "ans": 3,
+      "why": "主要是大家都很敬业 — câu trả lời nằm ngay sau 主要是. 不管多忙，谁都不凑合 bổ sung cho ý \"tận tuỵ\".",
+      "words": [
+        "年度",
+        "考核",
+        "敬业",
+        "凑合"
+      ]
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "刚进入一个新集体时，很多人会觉得自己被边缘化了，这其实很正常。与其抱怨，不如想方设法展示自己的能力。时间长了，大家自然会认可你。"
+        }
+      ],
+      "q": "说话人建议刚进入新集体的人怎么做？",
+      "qvn": "Người nói khuyên người mới vào tập thể nên làm gì?",
+      "opts": [
+        "想办法展示自己的能力",
+        "马上换一个集体",
+        "向领导抱怨",
+        "等别人来帮助自己"
+      ],
+      "ans": 0,
+      "why": "与其抱怨，不如想方设法展示自己的能力 — 与其 C 不如 B: người nói chọn B. Nghe thấy 抱怨 trước dễ chọn nhầm phương án 1.",
+      "words": [
+        "边缘",
+        "想方设法",
+        "展示"
+      ]
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "你明明知道客户今天要来，怎么还溜出去逛街了？"
+        },
+        {
+          "sp": "男",
+          "zh": "我以为他下午才到，没想到上午就来了。"
+        }
+      ],
+      "q": "男的为什么不在公司？",
+      "qvn": "Vì sao người đàn ông không có mặt ở công ty?",
+      "opts": [
+        "他去见客户了",
+        "他生病了",
+        "他以为客户下午才来",
+        "他忘了客户要来"
+      ],
+      "ans": 2,
+      "why": "我以为他下午才到 — 以为 = tưởng (sai). Cô gái nói 你明明知道客户今天要来 nên phương án \"quên\" sai.",
+      "words": [
+        "明明",
+        "溜"
+      ]
+    }
   ]
 };
 

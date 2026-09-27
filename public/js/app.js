@@ -3251,6 +3251,30 @@
     return m ? m[1] : '';
   })();
 
+  // Nguoi soan hay de dap an dung o cung mot vi tri (vd luon la phuong an 1) -> hoc sinh
+  // chon mo cung dung. Dao thu tu phuong an cua cau chon tu va cau hoi doc truoc bai
+  // khoa theo mot hoan vi CO DINH cho tung cau (bam theo noi dung cau) — tai lai trang
+  // van cung thu tu nen tien do da luu khong bi lech.
+  function tronPhuongAn(data) {
+    function bam(s) { var h = 2166136261; s = String(s); for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+    function dao(q, opts, ans, khoa) {
+      if (!Array.isArray(q[opts]) || q[opts].length < 2 || typeof q[ans] !== 'number') return;
+      var h = bam(khoa + '|' + q[opts].join('|'));
+      var thuTu = q[opts].map(function (_, i) { return i; });
+      for (var i = thuTu.length - 1; i > 0; i--) {
+        h = Math.imul(h ^ (h >>> 15), 2246822519) >>> 0;
+        var j = h % (i + 1), t = thuTu[i]; thuTu[i] = thuTu[j]; thuTu[j] = t;
+      }
+      var cu = q[opts].slice();
+      q[opts] = thuTu.map(function (k) { return cu[k]; });
+      q[ans] = thuTu.indexOf(q[ans]);
+    }
+    (data.errorFixData || []).forEach(function (q) { dao(q, 'opts', 'ans', q.wrong || ''); });
+    (data.dialogData || []).forEach(function (sc) {
+      (sc.preQuiz || []).forEach(function (q) { dao(q, 'opts', 'ans', q.q || ''); });
+    });
+  }
+
   function loadLessonRawData(lesson) {
     if (lessonDataCache[lesson.fullPageUrl]) return Promise.resolve(lessonDataCache[lesson.fullPageUrl]);
     var dataUrl = lesson.fullPageUrl.replace('/lessons/', '/js/').replace('.html', '-data.js') + (ASSET_VERSION ? '?v=' + ASSET_VERSION : '');
@@ -3293,6 +3317,7 @@
           return;
         }
         document.body.removeChild(iframe);
+        tronPhuongAn(data);
         lessonDataCache[lesson.fullPageUrl] = data;
         resolve(data);
       };

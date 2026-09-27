@@ -1538,72 +1538,218 @@ var speakingData = {
 // Sách HSK 6 không có sách bài tập nghe: tự soạn 8 câu theo chủ đề bài 1
 // ══════════════════════════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 1',
-  items: [
-    {n:1,
-     lines:[{sp:'女',zh:'听说你们把邻居家的孩子接到家里住了？'},
-            {sp:'男',zh:'是啊，她父母出差了，请我们帮忙照看几天。我女儿巴不得呢，天天有人陪她玩儿。'}],
-     q:'男的的女儿对这件事是什么态度？',qvn:'Con gái của người đàn ông có thái độ thế nào với việc này?',
-     opts:['很不愿意','非常欢迎','无所谓','有点儿担心'],ans:1,
-     why:'巴不得呢 = mong còn chẳng được → rất hoan nghênh. Ba phương án kia đều trái nghĩa hoặc không được nhắc tới.',
-     words:['巴不得']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'你最近怎么这么勤劳？又洗衣服又打扫房间的。'},
-            {sp:'女',zh:'下个星期我同学要来我家住，我可不想让她觉得我家乱七八糟的。'}],
-     q:'女的为什么变得勤劳了？',qvn:'Vì sao cô gái trở nên siêng năng?',
-     opts:['妈妈督促她','同学要来她家住','她要搬家了','她想讨好父母'],ans:1,
-     why:'Lý do nằm ở câu trả lời: 下个星期我同学要来我家住 — giống Lâm Lâm trong bài khoá. Không ai nhắc đến mẹ đốc thúc hay chuyển nhà.',
-     words:['勤劳']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'这两个孩子天天在一起，从来不打架，也不闹别扭。'},
-            {sp:'男',zh:'是啊，她们的关系别提多融洽了，连我都有点儿嫉妒了。'}],
-     q:'关于两个孩子，可以知道什么？',qvn:'Về hai đứa trẻ, có thể biết được điều gì?',
-     opts:['经常吵架','关系很好','互相嫉妒','很少见面'],ans:1,
-     why:'别提多融洽了 = hoà hợp khỏi phải nói. Người "ghen tị" là người đàn ông (连我都……嫉妒), không phải hai đứa trẻ ghen tị nhau — phương án C là bẫy.',
-     words:['打架','别扭','融洽','嫉妒']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'你听说了吗？小王在背后说你的坏话。'},
-            {sp:'女',zh:'我不信，我们俩那么亲密。明天我当面问问她就知道了。'}],
-     q:'女的打算怎么做？',qvn:'Người phụ nữ định làm gì?',
-     opts:['和小王吵架','不再理小王','直接去问小王','让男的去问'],ans:2,
-     why:'当面问问她 = hỏi thẳng cô ấy trước mặt → trực tiếp đi hỏi Tiểu Vương. Cô không tin tin đồn nên không cãi nhau hay cạch mặt bạn.',
-     words:['亲密','当面']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'昨天开会的时候，你怎么一句话也没说？'},
-            {sp:'男',zh:'我本来想反驳经理的观点，可看到大家都在附和他，我就没开口。'}],
-     q:'男的为什么没说话？',qvn:'Vì sao người đàn ông không nói gì?',
-     opts:['他同意经理的观点','他身体不舒服','大家都支持经理','他不知道说什么'],ans:2,
-     why:'大家都在附和他 = mọi người đều hùa theo (ủng hộ) giám đốc. Anh ấy vốn muốn 反驳 (phản bác) nên A sai.',
-     words:['反驳','附和']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'王老师上课的时候，教室里总是鸦雀无声。'},
-            {sp:'女',zh:'那当然，她可是出了名的严厉，谁敢说话啊？'}],
-     q:'关于王老师，可以知道什么？',qvn:'Về cô giáo Vương, có thể biết được điều gì?',
-     opts:['很宽容','很严厉','很年轻','很幽默'],ans:1,
-     why:'出了名的严厉 = nổi tiếng nghiêm khắc; 谁敢说话啊 là câu hỏi tu từ = không ai dám nói. 宽容 trái nghĩa.',
-     words:['鸦雀无声','严厉']},
-
-    {n:7,
-     lines:[{sp:'男',zh:'很多父母要求孩子不要玩儿手机，自己却整天拿着手机不放。其实，父母就是孩子的第一任老师，孩子会模仿父母的一言一行。所以，想让孩子做到的事，父母首先要自己做到，约束好自己的言行。'}],
-     q:'这段话主要想告诉我们什么？',qvn:'Đoạn nói này chủ yếu muốn cho chúng ta biết điều gì?',
-     opts:['孩子不应该玩儿手机','父母要约束好自己的言行','父母应该对孩子严厉','孩子要多向老师学习'],ans:1,
-     why:'Dạng "đoạn nói ngắn" của HSK 6: ý chính thường nằm ở câu kết — 父母首先要自己做到，约束好自己的言行. A chỉ là ví dụ mở đầu.',
-     words:['任','约束']},
-
-    {n:8,
-     lines:[{sp:'女',zh:'儿子今天问我：“你不是说说谎不好吗？那你为什么让我跟打电话的人说你不在家？”'},
-            {sp:'男',zh:'哈哈，被他问得说不出话来了吧？这孩子可给我们上了一课。'}],
-     q:'从对话中可以知道什么？',qvn:'Từ đoạn hội thoại có thể biết được điều gì?',
-     opts:['儿子说了谎','女的被儿子问住了','男的在批评儿子','女的不在家'],ans:1,
-     why:'Câu hỏi vặn 你不是说……吗？ của con khiến mẹ cứng họng (被他问得说不出话来) — giống tình huống trong bài khoá. Người bảo con nói dối là mẹ, và mẹ đang ở nhà.',
-     words:[]}
+  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
+  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 1",
+  "items": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "听说你们把邻居家的孩子接到家里住了？"
+        },
+        {
+          "sp": "男",
+          "zh": "是啊，她父母出差了，请我们帮忙照看几天。我女儿巴不得呢，天天有人陪她玩儿。"
+        }
+      ],
+      "q": "男的的女儿对这件事是什么态度？",
+      "qvn": "Con gái của người đàn ông có thái độ thế nào với việc này?",
+      "opts": [
+        "很不愿意",
+        "无所谓",
+        "非常欢迎",
+        "有点儿担心"
+      ],
+      "ans": 2,
+      "why": "巴不得呢 = mong còn chẳng được → rất hoan nghênh. Ba phương án kia đều trái nghĩa hoặc không được nhắc tới.",
+      "words": [
+        "巴不得"
+      ]
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "你最近怎么这么勤劳？又洗衣服又打扫房间的。"
+        },
+        {
+          "sp": "女",
+          "zh": "下个星期我同学要来我家住，我可不想让她觉得我家乱七八糟的。"
+        }
+      ],
+      "q": "女的为什么变得勤劳了？",
+      "qvn": "Vì sao cô gái trở nên siêng năng?",
+      "opts": [
+        "同学要来她家住",
+        "妈妈督促她",
+        "她要搬家了",
+        "她想讨好父母"
+      ],
+      "ans": 0,
+      "why": "Lý do nằm ở câu trả lời: 下个星期我同学要来我家住 — giống Lâm Lâm trong bài khoá. Không ai nhắc đến mẹ đốc thúc hay chuyển nhà.",
+      "words": [
+        "勤劳"
+      ]
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "这两个孩子天天在一起，从来不打架，也不闹别扭。"
+        },
+        {
+          "sp": "男",
+          "zh": "是啊，她们的关系别提多融洽了，连我都有点儿嫉妒了。"
+        }
+      ],
+      "q": "关于两个孩子，可以知道什么？",
+      "qvn": "Về hai đứa trẻ, có thể biết được điều gì?",
+      "opts": [
+        "经常吵架",
+        "很少见面",
+        "互相嫉妒",
+        "关系很好"
+      ],
+      "ans": 3,
+      "why": "别提多融洽了 = hoà hợp khỏi phải nói. Người \"ghen tị\" là người đàn ông (连我都……嫉妒), không phải hai đứa trẻ ghen tị nhau — phương án C là bẫy.",
+      "words": [
+        "打架",
+        "别扭",
+        "融洽",
+        "嫉妒"
+      ]
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "你听说了吗？小王在背后说你的坏话。"
+        },
+        {
+          "sp": "女",
+          "zh": "我不信，我们俩那么亲密。明天我当面问问她就知道了。"
+        }
+      ],
+      "q": "女的打算怎么做？",
+      "qvn": "Người phụ nữ định làm gì?",
+      "opts": [
+        "和小王吵架",
+        "直接去问小王",
+        "不再理小王",
+        "让男的去问"
+      ],
+      "ans": 1,
+      "why": "当面问问她 = hỏi thẳng cô ấy trước mặt → trực tiếp đi hỏi Tiểu Vương. Cô không tin tin đồn nên không cãi nhau hay cạch mặt bạn.",
+      "words": [
+        "亲密",
+        "当面"
+      ]
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "昨天开会的时候，你怎么一句话也没说？"
+        },
+        {
+          "sp": "男",
+          "zh": "我本来想反驳经理的观点，可看到大家都在附和他，我就没开口。"
+        }
+      ],
+      "q": "男的为什么没说话？",
+      "qvn": "Vì sao người đàn ông không nói gì?",
+      "opts": [
+        "他同意经理的观点",
+        "大家都支持经理",
+        "他身体不舒服",
+        "他不知道说什么"
+      ],
+      "ans": 1,
+      "why": "大家都在附和他 = mọi người đều hùa theo (ủng hộ) giám đốc. Anh ấy vốn muốn 反驳 (phản bác) nên A sai.",
+      "words": [
+        "反驳",
+        "附和"
+      ]
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "王老师上课的时候，教室里总是鸦雀无声。"
+        },
+        {
+          "sp": "女",
+          "zh": "那当然，她可是出了名的严厉，谁敢说话啊？"
+        }
+      ],
+      "q": "关于王老师，可以知道什么？",
+      "qvn": "Về cô giáo Vương, có thể biết được điều gì?",
+      "opts": [
+        "很宽容",
+        "很幽默",
+        "很年轻",
+        "很严厉"
+      ],
+      "ans": 3,
+      "why": "出了名的严厉 = nổi tiếng nghiêm khắc; 谁敢说话啊 là câu hỏi tu từ = không ai dám nói. 宽容 trái nghĩa.",
+      "words": [
+        "鸦雀无声",
+        "严厉"
+      ]
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "很多父母要求孩子不要玩儿手机，自己却整天拿着手机不放。其实，父母就是孩子的第一任老师，孩子会模仿父母的一言一行。所以，想让孩子做到的事，父母首先要自己做到，约束好自己的言行。"
+        }
+      ],
+      "q": "这段话主要想告诉我们什么？",
+      "qvn": "Đoạn nói này chủ yếu muốn cho chúng ta biết điều gì?",
+      "opts": [
+        "父母要约束好自己的言行",
+        "孩子不应该玩儿手机",
+        "父母应该对孩子严厉",
+        "孩子要多向老师学习"
+      ],
+      "ans": 0,
+      "why": "Dạng \"đoạn nói ngắn\" của HSK 6: ý chính thường nằm ở câu kết — 父母首先要自己做到，约束好自己的言行. B chỉ là ví dụ mở đầu.",
+      "words": [
+        "任",
+        "约束"
+      ]
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "儿子今天问我：“你不是说说谎不好吗？那你为什么让我跟打电话的人说你不在家？”"
+        },
+        {
+          "sp": "男",
+          "zh": "哈哈，被他问得说不出话来了吧？这孩子可给我们上了一课。"
+        }
+      ],
+      "q": "从对话中可以知道什么？",
+      "qvn": "Từ đoạn hội thoại có thể biết được điều gì?",
+      "opts": [
+        "儿子说了谎",
+        "男的在批评儿子",
+        "女的被儿子问住了",
+        "女的不在家"
+      ],
+      "ans": 2,
+      "why": "Câu hỏi vặn 你不是说……吗？ của con khiến mẹ cứng họng (被他问得说不出话来) — giống tình huống trong bài khoá. Người bảo con nói dối là mẹ, và mẹ đang ở nhà.",
+      "words": []
+    }
   ]
 };
 

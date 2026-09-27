@@ -1658,72 +1658,219 @@ var speakingData = {
 // Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 3
 // ══════════════════════════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 3',
-  items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么浑身都是汗？外面下雨了？'},
-            {sp:'男',zh:'别提了，电梯坏了，我是一口气走上十八楼的。'}],
-     q:'男的为什么浑身是汗？',qvn:'Vì sao người đàn ông mồ hôi đầm đìa?',
-     opts:['刚跑完步','电梯坏了，走楼梯上来的','被雨淋了','刚打完球'],ans:1,
-     why:'Anh ấy nói 电梯坏了，我是一口气走上十八楼的 (thang máy hỏng, leo một mạch lên tầng 18). Mưa chỉ là câu đoán của cô gái.',
-     words:['浑身']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这盒月饼是什么馅儿的？'},
-            {sp:'女',zh:'豆沙的。我知道你不爱吃五仁的，特意挑了这种。'}],
-     q:'女的为什么买这盒月饼？',qvn:'Vì sao người phụ nữ mua hộp bánh này?',
-     opts:['因为最便宜','因为男的不喜欢五仁馅儿的','因为是自己做的','因为包装漂亮'],ans:1,
-     why:'你不爱吃五仁的，特意挑了这种 — cô chọn nhân đậu đỏ vì biết anh không thích nhân thập cẩm.',
-     words:['月饼','馅儿']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'你还记得小李吗？他最近怎么样？'},
-            {sp:'男',zh:'人家现在可是公司的骨干了，手下还有两个助手呢。'}],
-     q:'关于小李，可以知道什么？',qvn:'Về Tiểu Lý, có thể biết được điều gì?',
-     opts:['刚进公司','在公司很重要','想换工作','是男的的助手'],ans:1,
-     why:'骨干 = trụ cột; 手下还有两个助手 = dưới quyền còn có hai trợ lý → Tiểu Lý rất quan trọng ở công ty.',
-     words:['骨干','助手']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'我给他拨了一下午电话，一直没人接，不会出什么事吧？'},
-            {sp:'女',zh:'别瞎担心了，他下午在开会，手机可能调成静音了。'}],
-     q:'女的是什么意思？',qvn:'Ý người phụ nữ là gì?',
-     opts:['他可能出事了','男的应该马上去找他','男的不必过于担心','他换了手机号码'],ans:2,
-     why:'别瞎担心了 (đừng lo hão — ôn 瞎 HSK 5) + lý do anh ta đang họp → không cần lo quá.',
-     words:['拨']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这家网店的东西能买吗？我怕被骗。'},
-            {sp:'男',zh:'放心吧，这家店信誉很好，我在那儿买过好几次了，从来没被欺骗过。'}],
-     q:'男的觉得这家网店怎么样？',qvn:'Người đàn ông thấy cửa hàng online này thế nào?',
-     opts:['东西太贵','可以相信','送货太慢','常常欺骗顾客'],ans:1,
-     why:'信誉很好 + 从来没被欺骗过 → cửa hàng uy tín, tin được.',
-     words:['信誉','欺骗']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'听说你女儿考上一流大学了？真了不起！'},
-            {sp:'女',zh:'哪里哪里，她就是运气好。不过这孩子要面子着呢，从来不让我们操心。'}],
-     q:'女的觉得女儿怎么样？',qvn:'Người phụ nữ thấy con gái mình thế nào?',
-     opts:['运气很差','常让父母操心','很懂事，不让父母操心','不爱面子'],ans:2,
-     why:'要面子着呢 (rất có chí, biết giữ thể diện) + 从来不让我们操心 (chưa bao giờ để bố mẹ phải lo) → con rất hiểu chuyện. 哪里哪里 chỉ là lời khiêm tốn.',
-     words:['一流','面子']},
-
-    {n:7,
-     lines:[{sp:'男',zh:'中秋节是中国的传统节日。这一天，在外地工作的人都盼着回家和家人团圆，一边吃月饼，一边赏月。即使不能回家，很多人也会给家里寄一盒月饼，表达自己的心意。'}],
-     q:'根据这段话，不能回家的人常常会怎么做？',qvn:'Theo đoạn này, người không về nhà được thường sẽ làm gì?',
-     opts:['给家里寄月饼','在外地赏月','给朋友打电话','去旅游'],ans:0,
-     why:'即使不能回家，很多人也会给家里寄一盒月饼 — dù không về được cũng gửi bánh Trung thu về nhà.',
-     words:['月饼']},
-
-    {n:8,
-     lines:[{sp:'女',zh:'老张，女儿给你打电话了？看你笑得多灿烂！'},
-            {sp:'男',zh:'是啊，她说下个月回来看我。这孩子，从来没辜负过我的期望。'}],
-     q:'老张为什么这么高兴？',qvn:'Vì sao ông Trương vui như vậy?',
-     opts:['女儿升职了','女儿下个月回来看他','女儿给他寄了月饼','他找到了新工作'],ans:1,
-     why:'她说下个月回来看我 — con gái nói tháng sau về thăm. Các phương án khác không được nhắc tới.',
-     words:['灿烂','辜负','期望']}
+  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
+  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 3",
+  "items": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "你怎么浑身都是汗？外面下雨了？"
+        },
+        {
+          "sp": "男",
+          "zh": "别提了，电梯坏了，我是一口气走上十八楼的。"
+        }
+      ],
+      "q": "男的为什么浑身是汗？",
+      "qvn": "Vì sao người đàn ông mồ hôi đầm đìa?",
+      "opts": [
+        "刚跑完步",
+        "被雨淋了",
+        "电梯坏了，走楼梯上来的",
+        "刚打完球"
+      ],
+      "ans": 2,
+      "why": "Anh ấy nói 电梯坏了，我是一口气走上十八楼的 (thang máy hỏng, leo một mạch lên tầng 18). Mưa chỉ là câu đoán của cô gái.",
+      "words": [
+        "浑身"
+      ]
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "这盒月饼是什么馅儿的？"
+        },
+        {
+          "sp": "女",
+          "zh": "豆沙的。我知道你不爱吃五仁的，特意挑了这种。"
+        }
+      ],
+      "q": "女的为什么买这盒月饼？",
+      "qvn": "Vì sao người phụ nữ mua hộp bánh này?",
+      "opts": [
+        "因为男的不喜欢五仁馅儿的",
+        "因为最便宜",
+        "因为是自己做的",
+        "因为包装漂亮"
+      ],
+      "ans": 0,
+      "why": "你不爱吃五仁的，特意挑了这种 — cô chọn nhân đậu đỏ vì biết anh không thích nhân thập cẩm.",
+      "words": [
+        "月饼",
+        "馅儿"
+      ]
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "你还记得小李吗？他最近怎么样？"
+        },
+        {
+          "sp": "男",
+          "zh": "人家现在可是公司的骨干了，手下还有两个助手呢。"
+        }
+      ],
+      "q": "关于小李，可以知道什么？",
+      "qvn": "Về Tiểu Lý, có thể biết được điều gì?",
+      "opts": [
+        "刚进公司",
+        "是男的的助手",
+        "想换工作",
+        "在公司很重要"
+      ],
+      "ans": 3,
+      "why": "骨干 = trụ cột; 手下还有两个助手 = dưới quyền còn có hai trợ lý → Tiểu Lý rất quan trọng ở công ty.",
+      "words": [
+        "骨干",
+        "助手"
+      ]
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "我给他拨了一下午电话，一直没人接，不会出什么事吧？"
+        },
+        {
+          "sp": "女",
+          "zh": "别瞎担心了，他下午在开会，手机可能调成静音了。"
+        }
+      ],
+      "q": "女的是什么意思？",
+      "qvn": "Ý người phụ nữ là gì?",
+      "opts": [
+        "他可能出事了",
+        "男的不必过于担心",
+        "男的应该马上去找他",
+        "他换了手机号码"
+      ],
+      "ans": 1,
+      "why": "别瞎担心了 (đừng lo hão — ôn 瞎 HSK 5) + lý do anh ta đang họp → không cần lo quá.",
+      "words": [
+        "拨"
+      ]
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "这家网店的东西能买吗？我怕被骗。"
+        },
+        {
+          "sp": "男",
+          "zh": "放心吧，这家店信誉很好，我在那儿买过好几次了，从来没被欺骗过。"
+        }
+      ],
+      "q": "男的觉得这家网店怎么样？",
+      "qvn": "Người đàn ông thấy cửa hàng online này thế nào?",
+      "opts": [
+        "东西太贵",
+        "可以相信",
+        "送货太慢",
+        "常常欺骗顾客"
+      ],
+      "ans": 1,
+      "why": "信誉很好 + 从来没被欺骗过 → cửa hàng uy tín, tin được.",
+      "words": [
+        "信誉",
+        "欺骗"
+      ]
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "听说你女儿考上一流大学了？真了不起！"
+        },
+        {
+          "sp": "女",
+          "zh": "哪里哪里，她就是运气好。不过这孩子要面子着呢，从来不让我们操心。"
+        }
+      ],
+      "q": "女的觉得女儿怎么样？",
+      "qvn": "Người phụ nữ thấy con gái mình thế nào?",
+      "opts": [
+        "运气很差",
+        "常让父母操心",
+        "不爱面子",
+        "很懂事，不让父母操心"
+      ],
+      "ans": 3,
+      "why": "要面子着呢 (rất có chí, biết giữ thể diện) + 从来不让我们操心 (chưa bao giờ để bố mẹ phải lo) → con rất hiểu chuyện. 哪里哪里 chỉ là lời khiêm tốn.",
+      "words": [
+        "一流",
+        "面子"
+      ]
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "中秋节是中国的传统节日。这一天，在外地工作的人都盼着回家和家人团圆，一边吃月饼，一边赏月。即使不能回家，很多人也会给家里寄一盒月饼，表达自己的心意。"
+        }
+      ],
+      "q": "根据这段话，不能回家的人常常会怎么做？",
+      "qvn": "Theo đoạn này, người không về nhà được thường sẽ làm gì?",
+      "opts": [
+        "给家里寄月饼",
+        "在外地赏月",
+        "给朋友打电话",
+        "去旅游"
+      ],
+      "ans": 0,
+      "why": "即使不能回家，很多人也会给家里寄一盒月饼 — dù không về được cũng gửi bánh Trung thu về nhà.",
+      "words": [
+        "月饼"
+      ]
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "老张，女儿给你打电话了？看你笑得多灿烂！"
+        },
+        {
+          "sp": "男",
+          "zh": "是啊，她说下个月回来看我。这孩子，从来没辜负过我的期望。"
+        }
+      ],
+      "q": "老张为什么这么高兴？",
+      "qvn": "Vì sao ông Trương vui như vậy?",
+      "opts": [
+        "女儿升职了",
+        "女儿给他寄了月饼",
+        "女儿下个月回来看他",
+        "他找到了新工作"
+      ],
+      "ans": 2,
+      "why": "她说下个月回来看我 — con gái nói tháng sau về thăm. Các phương án khác không được nhắc tới.",
+      "words": [
+        "灿烂",
+        "辜负",
+        "期望"
+      ]
+    }
   ]
 };
 

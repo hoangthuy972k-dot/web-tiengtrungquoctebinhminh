@@ -1657,74 +1657,230 @@ var speakingData = {
 // Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 5.
 // ══════════════════════════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 5',
-  items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你学日语多久了？怎么进步这么快？'},
-            {sp:'男',zh:'也没什么秘诀，我无非是每天坚持看一集日本电视剧而已。'}],
-     q:'男的是怎么学日语的？',qvn:'Người đàn ông học tiếng Nhật bằng cách nào?',
-     opts:['上培训班','每天看日本电视剧','请了家教','去日本留学'],ans:1,
-     why:'无非是……而已 = chẳng qua chỉ là…: anh ấy chỉ kiên trì mỗi ngày xem một tập phim Nhật. Các phương án khác không được nhắc tới.',
-     words:['无非','而已']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'你说的那家语言机构离你家远吗？'},
-            {sp:'女',zh:'不远，就在我家对面那栋办公楼的十二层。'}],
-     q:'那家语言机构在哪儿？',qvn:'Trung tâm ngoại ngữ đó ở đâu?',
-     opts:['女的家里','学校旁边','女的家对面的办公楼里','十二路车站旁边'],ans:2,
-     why:'对面那栋办公楼的十二层 = tầng 12 của tòa văn phòng đối diện nhà cô ấy. Nghe thấy 十二 dễ chọn nhầm "bến xe số 12".',
-     words:['机构','栋']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'刚才那个工作人员一直问你的收入和家庭情况，你怎么不高兴了？'},
-            {sp:'男',zh:'这些都是我的隐私，跟学外语有什么关系？'}],
-     q:'男的为什么不高兴？',qvn:'Vì sao người đàn ông không vui?',
-     opts:['学费太贵了','对方问了他的隐私','工作人员迟到了','他不想学外语'],ans:1,
-     why:'Anh ấy nói 这些都是我的隐私 — nhân viên hỏi thu nhập, gia đình là đụng đến đời tư, giống "tôi" trong bài khoá.',
-     words:['隐私']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'我觉得在线学习固然方便，可是没有人督促，我坚持不了多久。'},
-            {sp:'女',zh:'那你还是报个班吧。'}],
-     q:'男的觉得在线学习怎么样？',qvn:'Người đàn ông thấy học trực tuyến thế nào?',
-     opts:['又贵又不方便','方便但难以坚持','比上课效果好','一点儿也不方便'],ans:1,
-     why:'固然方便，可是……坚持不了多久 → tiện nhưng khó kiên trì. Nghe được cấu trúc 固然……可是…… là chọn đúng.',
-     words:['固然']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你怎么又把汉语书搁在一边了？'},
-            {sp:'男',zh:'最近工作太忙了，等忙完这阵子，我一定拼命学。'}],
-     q:'关于男的，可以知道什么？',qvn:'Về người đàn ông, có thể biết điều gì?',
-     opts:['最近很忙','已经不学汉语了','汉语书丢了','工作不太忙'],ans:0,
-     why:'最近工作太忙了 → gần đây rất bận. Anh ấy chỉ tạm gác sách (搁在一边), sau này vẫn sẽ học cật lực, nên "đã bỏ học" là sai.',
-     words:['搁','拼命']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'听说你们俩第一次见面就聊了三个小时？'},
-            {sp:'女',zh:'是啊，我们都喜欢古典音乐，她真是我的知音。'}],
-     q:'她们为什么聊得那么久？',qvn:'Vì sao hai cô ấy nói chuyện lâu như vậy?',
-     opts:['她们是老同学','她们有共同的爱好','她们在讨论工作','她们很久没见了'],ans:1,
-     why:'我们都喜欢古典音乐 + 知音 (tri âm) → có chung sở thích. 第一次见面 cho thấy không phải bạn cũ, cũng không phải lâu ngày gặp lại.',
-     words:['知音']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'这份工作薪水那么高，你为什么不去？'},
-            {sp:'男',zh:'我权衡了一下利弊。'},
-            {sp:'女',zh:'有什么弊端？'},
-            {sp:'男',zh:'每天要加班到很晚，而且离家太远，我觉得不值得。'}],
-     q:'男的为什么不接受那份工作？',qvn:'Vì sao người đàn ông không nhận công việc đó?',
-     opts:['薪水太低','要经常加班，离家也远','他不会做那份工作','公司不要他'],ans:1,
-     why:'Anh ấy nêu 弊端: 每天要加班到很晚，而且离家太远. Lương lại rất CAO (薪水那么高) nên phương án "lương thấp" là bẫy.',
-     words:['薪水','权衡','弊端']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'学外语需要理由吗？我觉得需要，但理由不一定要很远大。有的人学外语是为了找工作，有的人无非是想看懂原文电影。不管是什么理由，光凭一时的热情恐怕难以持久。只有给自己设置清楚的目标，并且严格执行学习计划，才能一直保持学习的动力。'}],
-     q:'说话人认为怎样才能一直保持学习的动力？',qvn:'Người nói cho rằng làm thế nào mới luôn giữ được động lực học tập?',
-     opts:['只要有热情就行','要找到远大的理由','设置清楚的目标并严格执行计划','去语言机构学习'],ans:2,
-     why:'Câu then chốt: 只有……设置清楚的目标，并且严格执行学习计划，才能…… Người nói còn nói rõ 光凭热情难以持久 và lý do 不一定要很远大, nên A, B sai.',
-     words:['无非','持久','设置','执行','动力']}
+  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
+  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 5",
+  "items": [
+    {
+      "n": 1,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "你学日语多久了？怎么进步这么快？"
+        },
+        {
+          "sp": "男",
+          "zh": "也没什么秘诀，我无非是每天坚持看一集日本电视剧而已。"
+        }
+      ],
+      "q": "男的是怎么学日语的？",
+      "qvn": "Người đàn ông học tiếng Nhật bằng cách nào?",
+      "opts": [
+        "上培训班",
+        "请了家教",
+        "每天看日本电视剧",
+        "去日本留学"
+      ],
+      "ans": 2,
+      "why": "无非是……而已 = chẳng qua chỉ là…: anh ấy chỉ kiên trì mỗi ngày xem một tập phim Nhật. Các phương án khác không được nhắc tới.",
+      "words": [
+        "无非",
+        "而已"
+      ]
+    },
+    {
+      "n": 2,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "你说的那家语言机构离你家远吗？"
+        },
+        {
+          "sp": "女",
+          "zh": "不远，就在我家对面那栋办公楼的十二层。"
+        }
+      ],
+      "q": "那家语言机构在哪儿？",
+      "qvn": "Trung tâm ngoại ngữ đó ở đâu?",
+      "opts": [
+        "女的家对面的办公楼里",
+        "学校旁边",
+        "女的家里",
+        "十二路车站旁边"
+      ],
+      "ans": 0,
+      "why": "对面那栋办公楼的十二层 = tầng 12 của tòa văn phòng đối diện nhà cô ấy. Nghe thấy 十二 dễ chọn nhầm \"bến xe số 12\".",
+      "words": [
+        "机构",
+        "栋"
+      ]
+    },
+    {
+      "n": 3,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "刚才那个工作人员一直问你的收入和家庭情况，你怎么不高兴了？"
+        },
+        {
+          "sp": "男",
+          "zh": "这些都是我的隐私，跟学外语有什么关系？"
+        }
+      ],
+      "q": "男的为什么不高兴？",
+      "qvn": "Vì sao người đàn ông không vui?",
+      "opts": [
+        "学费太贵了",
+        "他不想学外语",
+        "工作人员迟到了",
+        "对方问了他的隐私"
+      ],
+      "ans": 3,
+      "why": "Anh ấy nói 这些都是我的隐私 — nhân viên hỏi thu nhập, gia đình là đụng đến đời tư, giống \"tôi\" trong bài khoá.",
+      "words": [
+        "隐私"
+      ]
+    },
+    {
+      "n": 4,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "我觉得在线学习固然方便，可是没有人督促，我坚持不了多久。"
+        },
+        {
+          "sp": "女",
+          "zh": "那你还是报个班吧。"
+        }
+      ],
+      "q": "男的觉得在线学习怎么样？",
+      "qvn": "Người đàn ông thấy học trực tuyến thế nào?",
+      "opts": [
+        "又贵又不方便",
+        "方便但难以坚持",
+        "比上课效果好",
+        "一点儿也不方便"
+      ],
+      "ans": 1,
+      "why": "固然方便，可是……坚持不了多久 → tiện nhưng khó kiên trì. Nghe được cấu trúc 固然……可是…… là chọn đúng.",
+      "words": [
+        "固然"
+      ]
+    },
+    {
+      "n": 5,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "你怎么又把汉语书搁在一边了？"
+        },
+        {
+          "sp": "男",
+          "zh": "最近工作太忙了，等忙完这阵子，我一定拼命学。"
+        }
+      ],
+      "q": "关于男的，可以知道什么？",
+      "qvn": "Về người đàn ông, có thể biết điều gì?",
+      "opts": [
+        "已经不学汉语了",
+        "最近很忙",
+        "汉语书丢了",
+        "工作不太忙"
+      ],
+      "ans": 1,
+      "why": "最近工作太忙了 → gần đây rất bận. Anh ấy chỉ tạm gác sách (搁在一边), sau này vẫn sẽ học cật lực, nên \"đã bỏ học\" là sai.",
+      "words": [
+        "搁",
+        "拼命"
+      ]
+    },
+    {
+      "n": 6,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "听说你们俩第一次见面就聊了三个小时？"
+        },
+        {
+          "sp": "女",
+          "zh": "是啊，我们都喜欢古典音乐，她真是我的知音。"
+        }
+      ],
+      "q": "她们为什么聊得那么久？",
+      "qvn": "Vì sao hai cô ấy nói chuyện lâu như vậy?",
+      "opts": [
+        "她们是老同学",
+        "她们很久没见了",
+        "她们在讨论工作",
+        "她们有共同的爱好"
+      ],
+      "ans": 3,
+      "why": "我们都喜欢古典音乐 + 知音 (tri âm) → có chung sở thích. 第一次见面 cho thấy không phải bạn cũ, cũng không phải lâu ngày gặp lại.",
+      "words": [
+        "知音"
+      ]
+    },
+    {
+      "n": 7,
+      "lines": [
+        {
+          "sp": "女",
+          "zh": "这份工作薪水那么高，你为什么不去？"
+        },
+        {
+          "sp": "男",
+          "zh": "我权衡了一下利弊。"
+        },
+        {
+          "sp": "女",
+          "zh": "有什么弊端？"
+        },
+        {
+          "sp": "男",
+          "zh": "每天要加班到很晚，而且离家太远，我觉得不值得。"
+        }
+      ],
+      "q": "男的为什么不接受那份工作？",
+      "qvn": "Vì sao người đàn ông không nhận công việc đó?",
+      "opts": [
+        "要经常加班，离家也远",
+        "薪水太低",
+        "他不会做那份工作",
+        "公司不要他"
+      ],
+      "ans": 0,
+      "why": "Anh ấy nêu 弊端: 每天要加班到很晚，而且离家太远. Lương lại rất CAO (薪水那么高) nên phương án \"lương thấp\" là bẫy.",
+      "words": [
+        "薪水",
+        "权衡",
+        "弊端"
+      ]
+    },
+    {
+      "n": 8,
+      "lines": [
+        {
+          "sp": "男",
+          "zh": "学外语需要理由吗？我觉得需要，但理由不一定要很远大。有的人学外语是为了找工作，有的人无非是想看懂原文电影。不管是什么理由，光凭一时的热情恐怕难以持久。只有给自己设置清楚的目标，并且严格执行学习计划，才能一直保持学习的动力。"
+        }
+      ],
+      "q": "说话人认为怎样才能一直保持学习的动力？",
+      "qvn": "Người nói cho rằng làm thế nào mới luôn giữ được động lực học tập?",
+      "opts": [
+        "只要有热情就行",
+        "要找到远大的理由",
+        "设置清楚的目标并严格执行计划",
+        "去语言机构学习"
+      ],
+      "ans": 2,
+      "why": "Câu then chốt: 只有……设置清楚的目标，并且严格执行学习计划，才能…… Người nói còn nói rõ 光凭热情难以持久 và lý do 不一定要很远大, nên A, B sai.",
+      "words": [
+        "无非",
+        "持久",
+        "设置",
+        "执行",
+        "动力"
+      ]
+    }
   ]
 };
 

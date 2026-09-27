@@ -2007,6 +2007,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-17.html'
+      },
+      {
+        id: 'hsk6-l18',
+        number: 18,
+        title: 'Quả mướp thần kỳ',
+        titleHanzi: '神奇的丝瓜',
+        titlePinyin: 'Shénqí de sīguā',
+        topic: '第五单元 美丽家园 · Sức sống kỳ diệu của cây mướp',
+        vocabCount: 48,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-18.html'
       }
     ],
     yct: [

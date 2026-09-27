@@ -589,3 +589,21 @@ button.ex-folder:hover { border-color: #e0a59f; transform: translateY(-1px); }
 .ex-judge-tu .ex-text .zh { font-size: 2rem; line-height: 1.3; }
 .ex-judge-tu .ex-text .py { font-size: 1rem; }
 @media (max-width: 480px) { .ex-opts-pic { gap: 8px; } .ex-opt-pic { padding: 6px; } }
+
+/* ---------- HSK 4–5: 4 phuong an, doan van dung chung, sap xep cau A/B/C, nhin tranh viet cau ---------- */
+.ex-opts-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) { .ex-opts-4 { grid-template-columns: minmax(0, 1fr); } }
+.ex-group > .ex-passage { margin-bottom: 14px; }
+.ex-card.ex-sub { box-shadow: none; border: 1px solid var(--ex-line); margin: 12px 0 0; }
+.ex-card.ex-sub.is-correct { box-shadow: 0 0 0 2px var(--ex-green) inset; }
+.ex-card.ex-sub.is-wrong { box-shadow: 0 0 0 2px var(--ex-red) inset; }
+.ex-card.ex-sub.is-skip { box-shadow: 0 0 0 2px #e0b400 inset; }
+.ex-order { display: flex; flex-direction: column; gap: 8px; }
+.ex-chip.ex-order-item { display: flex; gap: 10px; align-items: baseline; text-align: left; width: 100%; line-height: 1.6; }
+.ex-order-item b, .ex-order-line b { font-family: var(--font-vn, sans-serif); color: var(--ex-navy); }
+.ex-order-line { align-items: center; }
+.ex-order-arrow { color: var(--ex-soft); margin: 0 2px; }
+.ex-picwrite { display: flex; align-items: center; gap: 18px; padding: 14px; border-radius: var(--ex-radius-sm); background: var(--ex-chip); margin-bottom: 12px; }
+.ex-picwrite img { width: 220px; max-width: 45%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; background: #fff; }
+.ex-picwrite-tu { font-size: 1.5rem; font-weight: 600; }
+.ex-input.ex-textarea { display: block; width: 100%; box-sizing: border-box; height: auto; min-height: 120px; padding: 14px 18px; border-radius: 18px; resize: vertical; line-height: 1.7; }

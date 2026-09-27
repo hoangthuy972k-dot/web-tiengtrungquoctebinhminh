@@ -158,6 +158,7 @@
         qs.forEach(function (it) {
           it.part = part; it.section = sec;
           it.text = part.type === 'arrange' || part.type === 'write';
+          it.pw = part.type === 'pic-write';
           questionIndex[it.q.n] = it;
           allQuestions.push(it);
         });
@@ -169,9 +170,17 @@
   function normText(v) {
     return String(v == null ? '' : v).replace(/[\s，。！？、,.!?；;：:“”"'‘’（）()]/g, '');
   }
+  // Nhin tranh viet cau (HSK 4 cau 96–100): cham so bo — cau co dung tu cho san, du dai
+  // (>= minHan chu Han, mac dinh 5) va khong qua 40 chu. Sau khi nop hien cau mau de tu so.
+  function hanCount(v) { return (String(v || '').match(/[\u3400-\u9fff]/g) || []).length; }
+  function picWriteOk(q, v) {
+    var t = normText(v), n = hanCount(t);
+    return !!t && t.indexOf(q.word) !== -1 && n >= (q.minHan || 5) && n <= 40;
+  }
   function isRight(n, v) {
     var it = questionIndex[n];
     if (!it || v === undefined) return false;
+    if (it.pw) return picWriteOk(it.q, v);
     if (it.text) {
       var got = normText(v);
       // q.accept: cac cach viet dung khac (dap an chinh thuc cho phep 2 cach xep cau)
@@ -329,16 +338,26 @@
         h += '</div>';
       });
     } else if (part.type === 'mc') {
-      part.questions.forEach(function (q) {
-        h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n, q) +
+      var mcCard = function (q, sub) {
+        return '<div class="ex-card' + (sub ? ' ex-sub' : '') + '" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n, q) +
           (q.zh ? textBlock(q, 'ex-passage') : '') +
           (q.star ? '<div class="ex-text ex-star-q"><div class="zh">★' + esc(q.star) + '</div></div>' : '') +
           (q.zh || q.star ? '<div style="height:10px"></div>' : '') +
-          '<div class="ex-opts">' + q.options.map(function (o, i) {
-            var k = 'ABC'[i];
+          '<div class="ex-opts' + (q.options.length > 3 ? ' ex-opts-4' : '') + '">' + q.options.map(function (o, i) {
+            var k = 'ABCDEF'[i];
             return '<button type="button" class="ex-opt" data-n="' + q.n + '" data-v="' + k + '"><span class="ex-opt-k">' + k + '</span>' + (o.py ? '<div class="py">' + esc(o.py) + '</div>' : '') + '<div class="zh">' + esc(o.zh) + '</div></button>';
           }).join('') + '</div>' + explainBox(q.n) + '</div>';
-      });
+      };
+      if (part.groups) {
+        // Mot doan van dung chung cho nhieu cau (HSK 4 doc 80–85, nghe 36–45)
+        part.groups.forEach(function (g) {
+          if (g.questions.length === 1 && !g.zh) { h += mcCard(g.questions[0], false); return; }
+          h += '<div class="ex-card ex-group" id="q-g' + g.range[0] + '" data-group="' + g.range[0] + '">' +
+            '<div class="ex-card-head"><h3>Câu ' + g.range[0] + ' - ' + g.range[1] + '</h3>' + (g.audio ? playBtn({ n: g.range[0], audio: g.audio }) : '') + '</div>' +
+            (g.zh ? '<div class="ex-text ex-passage"><div class="zh">' + zhHtml(g.zh) + '</div></div>' : '') +
+            g.questions.map(function (q) { return mcCard(q, true); }).join('') + '</div>';
+        });
+      } else part.questions.forEach(function (q) { h += mcCard(q, false); });
     } else if (part.type === 'word-fill') {
       if (part.groups) part.groups.forEach(function (g) { h += renderWordFillGroup(g); });
       else h += renderWordFillGroup({ range: part.range, words: part.words, example: part.example, questions: part.questions });
@@ -368,6 +387,25 @@
           }).join('') + '</div>' +
           '<div class="ex-arrange-line" data-line="' + q.n + '"><span class="ex-arrange-ph">Bấm các từ ở trên theo đúng thứ tự…</span></div>' +
           '<button type="button" class="ex-arrange-clear" data-clear="' + q.n + '" hidden>Xếp lại</button>' +
+          explainBox(q.n) + '</div>';
+      });
+    } else if (part.type === 'order') {
+      // HSK 4 doc 56–65: sap xep 3 cau A B C thanh doan van dung
+      part.questions.forEach(function (q) {
+        h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n) +
+          '<div class="ex-order" data-chips="' + q.n + '">' + q.items.map(function (it, i) {
+            return '<button type="button" class="ex-chip ex-order-item" data-chip="' + q.n + '" data-ci="' + i + '"><b>' + esc(it.k) + '</b><span class="zh">' + esc(it.zh) + '</span></button>';
+          }).join('') + '</div>' +
+          '<div class="ex-arrange-line ex-order-line" data-line="' + q.n + '"><span class="ex-arrange-ph">Bấm các câu A, B, C theo đúng thứ tự…</span></div>' +
+          '<button type="button" class="ex-arrange-clear" data-clear="' + q.n + '" hidden>Xếp lại</button>' +
+          explainBox(q.n) + '</div>';
+      });
+    } else if (part.type === 'pic-write') {
+      // HSK 4 viet 96–100: nhin tranh, dung tu cho san viet mot cau
+      part.questions.forEach(function (q) {
+        h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n) +
+          '<div class="ex-picwrite"><img src="' + data.img + q.img + '" alt="Hình câu ' + q.n + '" loading="lazy" /><div class="ex-picwrite-tu zh">' + esc(q.word) + '</div></div>' +
+          '<textarea class="ex-input ex-textarea" data-input="' + q.n + '" rows="3" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nhập vào câu trả lời của bạn..." aria-label="Câu trả lời câu ' + q.n + '"></textarea>' +
           explainBox(q.n) + '</div>';
       });
     } else if (part.type === 'write') {
@@ -438,7 +476,7 @@
     state.order = state.order || {};
     if (order.length) {
       state.order[n] = order;
-      state.answers[n] = order.map(function (i) { return q.words[i]; }).join('');
+      state.answers[n] = q.items ? order.map(function (i) { return q.items[i].k; }).join('') : order.map(function (i) { return q.words[i]; }).join('');
     } else {
       delete state.order[n];
       delete state.answers[n];
@@ -549,8 +587,10 @@
       var q = questionIndex[n].q;
       var ord = arrangeOrder(n);
       line.innerHTML = ord.length
-        ? ord.map(function (i) { return '<button type="button" class="ex-chip is-placed" data-placed="' + n + '" data-ci="' + i + '">' + esc(q.words[i]) + '</button>'; }).join('')
-        : '<span class="ex-arrange-ph">Bấm các từ ở trên theo đúng thứ tự…</span>';
+        ? ord.map(function (i) {
+            return '<button type="button" class="ex-chip is-placed" data-placed="' + n + '" data-ci="' + i + '">' + (q.items ? '<b>' + esc(q.items[i].k) + '</b>' : esc(q.words[i])) + '</button>';
+          }).join(q.items ? '<span class="ex-order-arrow">→</span>' : '')
+        : '<span class="ex-arrange-ph">' + (q.items ? 'Bấm các câu A, B, C theo đúng thứ tự…' : 'Bấm các từ ở trên theo đúng thứ tự…') + '</span>';
       $all('[data-chip="' + n + '"]').forEach(function (c) {
         c.classList.toggle('is-used', ord.indexOf(parseInt(c.getAttribute('data-ci'), 10)) !== -1);
       });
@@ -674,9 +714,17 @@
       var ex = $('[data-explain="' + q.n + '"]');
       if (ex) {
         var ansTxt = typeof q.answer === 'boolean' ? (q.answer ? '✓ Đúng' : '✗ Sai') : q.answer;
-        var h = it.text
+        var h = it.pw
+          ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : ok ? 'Chấm sơ bộ: đạt (có dùng 「' + esc(q.word) + '」, câu đủ ý)' : 'Chấm sơ bộ: chưa đạt — câu phải dùng 「' + esc(q.word) + '」 và dài khoảng 5–40 chữ') + '</div>' +
+            '<div class="ans">Câu mẫu: <span class="hanzi">' + esc(q.answer) + '</span>' + (q.accept && q.accept.length ? '<br>Cách khác: <span class="hanzi">' + esc(q.accept.join(' / ')) + '</span>' : '') + '</div>'
+          : it.text
           ? '<div class="ans">Đáp án: <span class="hanzi">' + esc(q.answer) + '</span>' + (chosen === undefined ? ' · Bạn chưa làm' : ok ? ' · Bạn làm đúng' : ' · Bạn viết: <span class="hanzi">' + esc(chosen) + '</span>') + '</div>'
           : '<div class="ans">Đáp án: ' + esc(ansTxt) + (chosen === undefined ? ' · Bạn chưa chọn' : ok ? ' · Bạn chọn đúng' : ' · Bạn chọn: ' + esc(typeof chosen === 'boolean' ? (chosen ? '✓' : '✗') : chosen)) + '</div>';
+        if (q.items) {
+          // Ghep ba cau theo dung thu tu; cau nao khong co dau cau o cuoi thi noi bang dau phay
+          var doan = String(q.answer).split('').map(function (k) { var x = q.items.filter(function (y) { return y.k === k; })[0]; return x ? x.zh : ''; });
+          h += '<div class="zh hanzi">' + esc(doan.map(function (c, i) { return i < doan.length - 1 && !/[，。！？；：、”…]$/.test(c) ? c + '，' : c; }).join('')) + '</div>';
+        }
         if (q.script) h += '<div class="zh hanzi">' + esc(q.script) + '</div>';
         if (q.scriptVn) h += '<div class="vn">' + esc(q.scriptVn) + '</div>';
         if (q.scriptVn && q.starVn) h += '<div class="vn">★ ' + esc(q.starVn) + '</div>';

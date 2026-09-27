@@ -1092,6 +1092,11 @@ function loadExamDef(examId) {
       const qs = part.groups ? [].concat(...part.groups.map((g) => g.questions || [])) : (part.questions || []);
       // Cau tu viet (sap xep cau, viet chu Han) cham theo chu, bo khoang trang + dau cau
       const isText = part.type === 'arrange' || part.type === 'write';
+      // Nhin tranh viet cau (HSK 4): cham so bo giong exam.js — co tu cho san + du dai
+      if (part.type === 'pic-write') {
+        qs.forEach((q) => answers.push([String(q.n), { word: String(q.word || ''), min: Number(q.minHan) || 5 }, 'pw']));
+        return;
+      }
       qs.forEach((q) => answers.push([String(q.n), isText ? [q.answer].concat(q.accept || []) : q.answer, isText]));
     });
     return { id: sec.id, name: sec.name, answers };
@@ -1132,7 +1137,12 @@ function gradeExam(def, answers) {
     let c = 0;
     sec.answers.forEach(([n, ans, isText]) => {
       if (!Object.prototype.hasOwnProperty.call(answers, n)) return;
-      if (isText) {
+      if (isText === 'pw') {
+        const got = typeof answers[n] === 'string' ? normExamText(answers[n]) : '';
+        const han = (got.match(/[\u3400-\u9fff]/g) || []).length;
+        if (got && ans.word && got.includes(ans.word) && han >= ans.min && han <= 40) c++;
+      }
+      else if (isText) {
         const got = typeof answers[n] === 'string' ? normExamText(answers[n]) : '';
         if (got !== '' && ans.some((a) => got === normExamText(a))) c++;
       }

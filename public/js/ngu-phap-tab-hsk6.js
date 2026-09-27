@@ -3665,6 +3665,938 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-4.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-5.html"] = [
+ {
+  "so": "1",
+  "ten": "「而已」",
+  "tenVn": "",
+  "cauTruc": [
+   "不过 / 只（是）/ 仅仅 + …… + 而已 — chỉ… mà thôi",
+   "= ……罢了 / ……就是了 (khẩu ngữ)"
+  ],
+  "giaiThich": "而已 là TRỢ TỪ, đặt ở CUỐI câu trần thuật, mang ý làm nhỏ đi, làm nhẹ đi sự việc (\"chỉ… mà thôi\"). Thường phối hợp với 不过, 只, 只是, 仅, 仅仅 ở phía trước. Nghĩa tương đương 罢了, 就是了 (khẩu ngữ).",
+  "viDu": [
+   {
+    "zh": "你怎么做的，谁心里都明白，大家不过嘴上说说而已。",
+    "py": "Nǐ zěnme zuò de, shéi xīnli dōu míngbai, dàjiā búguò zuǐ shang shuōshuo éryǐ.",
+    "vn": "Cậu làm thế nào thì ai trong lòng cũng rõ, mọi người chỉ nói ngoài miệng mà thôi."
+   },
+   {
+    "zh": "他的工作是警察，写小说仅仅是他的业余爱好而已。",
+    "py": "Tā de gōngzuò shì jǐngchá, xiě xiǎoshuō jǐnjǐn shì tā de yèyú àihào éryǐ.",
+    "vn": "Công việc của anh ấy là cảnh sát, viết tiểu thuyết chỉ là sở thích lúc rảnh mà thôi."
+   },
+   {
+    "zh": "我没什么具体目标。就是找一个班插班听课，随意学学而已。",
+    "py": "Wǒ méi shénme jùtǐ mùbiāo. Jiùshì zhǎo yí ge bān chābān tīng kè, suíyì xuéxue éryǐ.",
+    "vn": "Tôi chẳng có mục tiêu cụ thể gì. Chỉ là tìm một lớp để học xen vào, học tùy thích mà thôi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他而已是开个玩笑。",
+    "why": "而已 là trợ từ, chỉ đứng CUỐI câu, không đứng trước động từ.",
+    "dung": "他只是开个玩笑而已。"
+   },
+   {
+    "sai": "你只是随便问问而已吗？",
+    "why": "而已 dùng trong câu trần thuật, không dùng trong câu hỏi.",
+    "dung": "我只是随便问问而已。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "别生气，我只是开个玩笑",
+       "。"
+      ],
+      "dap": [
+       [
+        "而已"
+       ]
+      ],
+      "chon": [
+       "而已",
+       "无非",
+       "固然"
+      ],
+      "goiY": "\"Đừng giận, tớ chỉ đùa chút thôi.\"",
+      "giai": "而已 đứng cuối câu trần thuật, hô ứng với 只是 ở phía trước."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我没什么具体目标，就是随意学学",
+       "。"
+      ],
+      "dap": [
+       [
+        "而已"
+       ]
+      ],
+      "chon": [
+       "而已",
+       "无非",
+       "以及"
+      ],
+      "goiY": "\"Tôi chẳng có mục tiêu cụ thể gì, chỉ học tùy thích thôi.\"",
+      "giai": "Câu trong bài khoá: 就是……而已. 无非 là phó từ, không đứng cuối câu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他并不比别人聪明，只是比别人更努力",
+       "。"
+      ],
+      "dap": [
+       [
+        "而已"
+       ]
+      ],
+      "chon": [
+       "而已",
+       "固然",
+       "无非"
+      ],
+      "goiY": "\"Cậu ấy không thông minh hơn người khác, chỉ là chăm hơn mà thôi.\"",
+      "giai": "只是……而已 (câu 练习 2 ④ của sách)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的工作是警察，写小说仅仅是他的业余爱好",
+       "。"
+      ],
+      "dap": [
+       [
+        "而已"
+       ]
+      ],
+      "chon": [
+       "而已",
+       "无非",
+       "固然"
+      ],
+      "goiY": "\"Anh ấy làm cảnh sát, viết tiểu thuyết chỉ là sở thích mà thôi.\"",
+      "giai": "仅仅是……而已 — câu ví dụ (2) của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我不过是去看看",
+       "，还没决定买不买。"
+      ],
+      "dap": [
+       [
+        "而已",
+        "罢了"
+       ]
+      ],
+      "chon": [
+       "而已",
+       "固然",
+       "以及"
+      ],
+      "goiY": "\"Tôi chỉ đi xem thử thôi, chưa quyết định mua hay không.\"",
+      "giai": "不过……而已: 而已 đứng cuối vế câu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我",
+       "是随便问问而已，你别紧张。"
+      ],
+      "dap": [
+       [
+        "只",
+        "只不过",
+        "不过"
+       ]
+      ],
+      "chon": [
+       "只",
+       "固然",
+       "难怪"
+      ],
+      "goiY": "\"Tôi chỉ tiện hỏi thôi, cậu đừng căng thẳng.\"",
+      "giai": "而已 thường có 只 / 不过 phía trước làm hô ứng."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "只是",
+       "随便",
+       "问问",
+       "而已"
+      ],
+      "dap": [
+       "我只是随便问问而已。"
+      ],
+      "goiY": "Tôi chỉ tiện hỏi thôi.",
+      "giai": "只是 + V + 而已: 而已 luôn ở cuối."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "开个玩笑",
+       "不过是",
+       "而已"
+      ],
+      "dap": [
+       "他不过是开个玩笑而已。"
+      ],
+      "goiY": "Cậu ấy chẳng qua là đùa thôi.",
+      "giai": "不过是 đứng trước động từ, 而已 ở cuối câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "仅仅是",
+       "而已",
+       "他的业余爱好",
+       "写小说"
+      ],
+      "dap": [
+       "写小说仅仅是他的业余爱好而已。"
+      ],
+      "goiY": "Viết tiểu thuyết chỉ là sở thích lúc rảnh của anh ấy mà thôi.",
+      "giai": "Chủ ngữ 写小说 + 仅仅是 + tân ngữ + 而已."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我只是随意学学而已。",
+      "dung": true,
+      "giai": "而已 đứng cuối câu trần thuật, có 只是 hô ứng — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他而已是开个玩笑。",
+      "dung": false,
+      "sua": "他只是开个玩笑而已。",
+      "giai": "而已 là trợ từ, chỉ đứng CUỐI câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你只是问问而已吗？",
+      "dung": false,
+      "sua": "我只是问问而已。",
+      "giai": "而已 không dùng trong câu hỏi."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi chỉ tiện hỏi thôi, cậu đừng để ý.",
+      "dap": [
+       "我只是随便问问而已，你别在意。",
+       "我只是随便问问而已，你别介意。",
+       "我不过是随便问问而已，你别在意。",
+       "我不过是随便问问而已，你别介意。"
+      ],
+      "py": "Wǒ zhǐshì suíbiàn wènwen éryǐ, nǐ bié zàiyì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 只是……而已.",
+      "giai": "\"Chỉ… thôi\" = 只是 / 不过 + V + 而已."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy không thông minh hơn người khác, chỉ là chăm chỉ hơn mà thôi.",
+      "dap": [
+       "他并不比别人聪明，只是比别人更努力而已。",
+       "他不比别人聪明，只是比别人更努力而已。",
+       "他并不比别人聪明，只是更努力而已。",
+       "他不比别人聪明，只是更努力而已。"
+      ],
+      "py": "Tā bìng bù bǐ biérén cōngming, zhǐshì bǐ biérén gèng nǔlì éryǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 只是……而已.",
+      "giai": "Phủ định so sánh: 不比……聪明; 而已 đặt cuối câu."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他心中的家乡“美食”，在大多数人眼里，＿＿＿。",
+      "goiY": "Viết lại câu 练一练 (1) của sách: 他心中的家乡“美食”，在大多数人眼里，是再大众不过的食品了。 — dùng 而已",
+      "mau": "他心中的家乡“美食”，在大多数人眼里，不过是很大众的食品而已。",
+      "can": [
+       [
+        "而已"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "谁都不想做饭，到外面吃去吧，＿＿＿！",
+      "goiY": "Viết lại câu 练一练 (2): 谁都不想做饭，到外面吃去吧，不就是多花点儿钱吗！ — dùng 而已",
+      "mau": "谁都不想做饭，到外面吃去吧，不过是多花点儿钱而已！",
+      "can": [
+       [
+        "而已"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 「……而已」 nói về việc học hoặc sở thích của em",
+      "mau": "我学吉他不是为了当歌手，只是觉得好玩儿而已。",
+      "can": [
+       [
+        "而已"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「固然」",
+  "tenVn": "",
+  "cauTruc": [
+   "A 固然……，可是 / 但是 / 却 / 然而 B…… — chuyển ý mạnh",
+   "A 固然……，B 也…… — chuyển ý nhẹ, nhấn vào vế sau"
+  ],
+  "giaiThich": "固然 là LIÊN TỪ, dùng ở vế TRƯỚC để xác nhận một sự thật. ① Vế sau CHUYỂN Ý, nêu một sự thật đối lập, thường có 可是, 但是, 却, 然而. ② Vế sau THUẬN THEO, nêu thêm một sự thật khác cũng phải thừa nhận; ý chuyển nhẹ, nhấn vào vế sau, thường dùng 也 (đôi khi 但是, 可是).",
+  "viDu": [
+   {
+    "zh": "没有目标就缺乏动力，这道理我固然懂，可是，我的确说不出她所说的目标。",
+    "py": "Méiyǒu mùbiāo jiù quēfá dònglì, zhè dàolǐ wǒ gùrán dǒng, kěshì, wǒ díquè shuō bu chū tā suǒ shuō de mùbiāo.",
+    "vn": "Không có mục tiêu thì thiếu động lực, đạo lý này tất nhiên tôi hiểu, nhưng quả thật tôi không nói ra được cái mục tiêu mà cô ấy nói."
+   },
+   {
+    "zh": "这么做，好固然是好，可是又费时间，成本又高，肯定不行。",
+    "py": "Zhème zuò, hǎo gùrán shì hǎo, kěshì yòu fèi shíjiān, chéngběn yòu gāo, kěndìng bù xíng.",
+    "vn": "Làm như vậy tốt thì tất nhiên là tốt, nhưng vừa tốn thời gian, chi phí lại cao, chắc chắn không được."
+   },
+   {
+    "zh": "考上大学固然好，没考上大学也不是就没有出路了。",
+    "py": "Kǎoshàng dàxué gùrán hǎo, méi kǎoshàng dàxué yě bú shì jiù méiyǒu chūlù le.",
+    "vn": "Đỗ đại học tất nhiên là tốt, không đỗ đại học cũng không phải là hết đường."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这个方法固然好，所以我们就用它吧。",
+    "why": "固然 cần vế sau CHUYỂN Ý (可是 / 但是) hoặc bổ sung (也), không đi với 所以.",
+    "dung": "这个方法固然好，可是太费时间了。"
+   },
+   {
+    "sai": "考上大学固然好，没考上大学固然也不错。",
+    "why": "固然 chỉ dùng ở vế TRƯỚC; vế sau dùng 也 hoặc 可是 / 但是.",
+    "dung": "考上大学固然好，没考上大学也不错。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个方法",
+       "好，可实施起来太难了。"
+      ],
+      "dap": [
+       [
+        "固然"
+       ]
+      ],
+      "chon": [
+       "固然",
+       "而已",
+       "无非"
+      ],
+      "goiY": "\"Cách này tất nhiên hay, nhưng thực hiện thì khó quá.\"",
+      "giai": "固然 ở vế trước thừa nhận, vế sau 可 chuyển ý (练习 2 ⑤)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考上大学",
+       "好，没考上大学也不是就没有出路了。"
+      ],
+      "dap": [
+       [
+        "固然"
+       ]
+      ],
+      "chon": [
+       "固然",
+       "而已",
+       "以及"
+      ],
+      "goiY": "\"Đỗ đại học tất nhiên tốt, không đỗ cũng không phải hết đường.\"",
+      "giai": "固然……也……: chuyển ý nhẹ, nhấn vào vế sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这道理我固然懂，",
+       "，我的确说不出她所说的目标。"
+      ],
+      "dap": [
+       [
+        "可是",
+        "但是",
+        "然而"
+       ]
+      ],
+      "chon": [
+       "可是",
+       "所以",
+       "而且"
+      ],
+      "goiY": "\"Đạo lý này tôi tất nhiên hiểu, nhưng quả thật tôi không nói ra được mục tiêu.\"",
+      "giai": "Vế sau của 固然 cần từ chuyển ý: 可是 / 但是 / 然而 — không dùng 所以, 而且."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "出国留学固然好，在国内学习",
+       "能学好汉语。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "才"
+      ],
+      "goiY": "\"Du học tất nhiên tốt, học trong nước cũng học giỏi được tiếng Trung.\"",
+      "giai": "固然……，B 也……: thừa nhận thêm một sự thật khác."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考试成绩",
+       "重要，但是身体健康更重要。"
+      ],
+      "dap": [
+       [
+        "固然"
+       ]
+      ],
+      "chon": [
+       "固然",
+       "无非",
+       "而已"
+      ],
+      "goiY": "\"Điểm thi tất nhiên quan trọng, nhưng sức khỏe còn quan trọng hơn.\"",
+      "giai": "固然 + tính từ, vế sau 但是 chuyển ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "用手机学汉语固然方便，",
+       "弊端在于容易分心。"
+      ],
+      "dap": [
+       [
+        "但是",
+        "可是",
+        "然而"
+       ]
+      ],
+      "chon": [
+       "但是",
+       "因此",
+       "于是"
+      ],
+      "goiY": "\"Học bằng điện thoại tất nhiên tiện, nhưng nhược điểm là dễ phân tâm.\"",
+      "giai": "因此, 于是 chỉ kết quả — không hợp với ý đối lập sau 固然."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "固然",
+       "这个方法",
+       "好",
+       "可是",
+       "太费时间了"
+      ],
+      "dap": [
+       "这个方法固然好，可是太费时间了。"
+      ],
+      "goiY": "Cách này tất nhiên tốt, nhưng tốn thời gian quá.",
+      "giai": "Chủ ngữ + 固然 + tính từ，可是 + ý ngược lại."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "兴趣",
+       "固然",
+       "重要",
+       "坚持",
+       "更重要",
+       "但是"
+      ],
+      "dap": [
+       "兴趣固然重要，但是坚持更重要。"
+      ],
+      "goiY": "Hứng thú tất nhiên quan trọng, nhưng kiên trì còn quan trọng hơn.",
+      "giai": "固然 đứng sau chủ ngữ 兴趣."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "好固然是好",
+       "这么做",
+       "可是",
+       "成本太高"
+      ],
+      "dap": [
+       "这么做，好固然是好，可是成本太高。"
+      ],
+      "goiY": "Làm vậy tốt thì tốt thật, nhưng chi phí cao quá.",
+      "giai": "Dạng lặp \"Adj 固然是 Adj\" — câu ví dụ (2) của sách."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "在线学习固然方便，可是没有人督促。",
+      "dung": true,
+      "giai": "固然 thừa nhận mặt lợi, 可是 chuyển sang mặt hạn chế — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个方法固然好，所以我们就用它吧。",
+      "dung": false,
+      "sua": "这个方法固然好，可是太费时间了。",
+      "giai": "固然 không đi với 所以; vế sau phải chuyển ý hoặc dùng 也."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考上大学固然好，没考上大学固然也不错。",
+      "dung": false,
+      "sua": "考上大学固然好，没考上大学也不错。",
+      "giai": "固然 chỉ dùng ở vế trước."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Điểm thi tất nhiên quan trọng, nhưng sức khỏe còn quan trọng hơn.",
+      "dap": [
+       "考试成绩固然重要，但是身体健康更重要。",
+       "考试成绩固然重要，可是身体健康更重要。",
+       "成绩固然重要，但是健康更重要。",
+       "成绩固然重要，可是健康更重要。"
+      ],
+      "py": "Kǎoshì chéngjì gùrán zhòngyào, dànshì shēntǐ jiànkāng gèng zhòngyào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 固然……但是…….",
+      "giai": "固然 đứng sau chủ ngữ; 更 = hơn nữa."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Du học tất nhiên tốt, học ở trong nước cũng có thể học giỏi tiếng Trung.",
+      "dap": [
+       "出国留学固然好，在国内学习也能学好汉语。",
+       "出国留学固然好，在国内也能学好汉语。",
+       "留学固然好，在国内学习也能学好汉语。",
+       "留学固然好，在国内也能学好汉语。"
+      ],
+      "py": "Chūguó liúxué gùrán hǎo, zài guónèi xuéxí yě néng xuéhǎo Hànyǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 固然……也…….",
+      "giai": "Chuyển ý nhẹ: vế sau dùng 也."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "搬家以后新家离单位固然是远了许多，可是＿＿＿。",
+      "goiY": "练一练 (1) của sách: hoàn thành câu — nêu một điều tốt của nhà mới bù lại",
+      "mau": "搬家以后新家离单位固然是远了许多，可是房子大多了，环境也安静多了。",
+      "can": [
+       [
+        "固然"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "谁有意见大胆地提，说得对，固然好，说错了，＿＿＿。",
+      "goiY": "练一练 (2) của sách: vế sau thừa nhận thêm — \"nói sai cũng không sao\"",
+      "mau": "谁有意见大胆地提，说得对，固然好，说错了，也没关系。",
+      "can": [
+       [
+        "固然"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 「A 固然……，可是 / 也……」 nói về cách học của em",
+      "mau": "上补习班固然有老师督促，可是太花时间了，我更喜欢自己在家学。",
+      "can": [
+       [
+        "固然"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「无非」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 无非（是）+ V / N — chẳng qua là…",
+   "无非是…… + 而已 / 罢了 — chẳng qua chỉ là… mà thôi"
+  ],
+  "giaiThich": "无非 là PHÓ TỪ, biểu thị không vượt ra ngoài một phạm vi nhất định, nghĩa là \"chỉ, chẳng qua\" (只, 不过), mang ý làm nhỏ, làm nhẹ sự việc. Thường dùng 无非是; có thể kết hợp với 而已 / 罢了 ở cuối câu.",
+  "viDu": [
+   {
+    "zh": "他这么努力地工作，无非想多挣些钱，让妻子、孩子生活得更舒适。",
+    "py": "Tā zhème nǔlì de gōngzuò, wúfēi xiǎng duō zhèng xiē qián, ràng qīzi, háizi shēnghuó de gèng shūshì.",
+    "vn": "Anh ấy làm việc chăm chỉ như vậy chẳng qua là muốn kiếm thêm ít tiền để vợ con sống thoải mái hơn."
+   },
+   {
+    "zh": "我喜欢这个国家的文化，学习语言无非是为了看原文电影、读文学作品……",
+    "py": "Wǒ xǐhuan zhège guójiā de wénhuà, xuéxí yǔyán wúfēi shì wèile kàn yuánwén diànyǐng, dú wénxué zuòpǐn……",
+    "vn": "Tôi thích văn hóa của đất nước này, học ngôn ngữ chẳng qua là để xem phim nguyên bản, đọc tác phẩm văn học…"
+   },
+   {
+    "zh": "我们把汉语口语称作“说的汉语”，把汉语书面语称作“看的汉语”，无非是强调汉语两种不同的语言形式具有不同的特性和使用场合。",
+    "py": "Wǒmen bǎ Hànyǔ kǒuyǔ chēngzuò “shuō de Hànyǔ”, bǎ Hànyǔ shūmiànyǔ chēngzuò “kàn de Hànyǔ”, wúfēi shì qiángdiào Hànyǔ liǎng zhǒng bù tóng de yǔyán xíngshì jùyǒu bù tóng de tèxìng hé shǐyòng chǎnghé.",
+    "vn": "Chúng ta gọi khẩu ngữ tiếng Hán là \"tiếng Hán để nói\", gọi văn viết là \"tiếng Hán để đọc\", chẳng qua là để nhấn mạnh hai hình thức ngôn ngữ khác nhau có đặc tính và hoàn cảnh sử dụng khác nhau."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他学汉语是为了看电影无非。",
+    "why": "无非 là phó từ, đứng TRƯỚC động từ / cụm vị ngữ, không đứng cuối câu (đứng cuối là 而已).",
+    "dung": "他学汉语无非是为了看电影。"
+   },
+   {
+    "sai": "他无非是全班最聪明的学生。",
+    "why": "无非 làm NHẸ sự việc (\"chẳng qua chỉ\"), không dùng để khen, nhấn mạnh điều to lớn.",
+    "dung": "他是全班最聪明的学生。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "学习语言",
+       "是为了看原文电影、读文学作品。"
+      ],
+      "dap": [
+       [
+        "无非"
+       ]
+      ],
+      "chon": [
+       "无非",
+       "而已",
+       "固然"
+      ],
+      "goiY": "\"Học ngôn ngữ chẳng qua là để xem phim nguyên bản, đọc tác phẩm văn học.\"",
+      "giai": "无非 là phó từ, đứng trước 是 + mục đích."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他这么努力地工作，",
+       "想多挣些钱，让孩子生活得更舒适。"
+      ],
+      "dap": [
+       [
+        "无非"
+       ]
+      ],
+      "chon": [
+       "无非",
+       "而已",
+       "以及"
+      ],
+      "goiY": "\"Anh ấy làm việc chăm như vậy chẳng qua là muốn kiếm thêm tiền cho con sống thoải mái hơn.\"",
+      "giai": "无非 + 想 + V; 而已 không đứng trước động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "是不小心碰了你一下，你干吗生那么大的气啊？"
+      ],
+      "dap": [
+       [
+        "无非",
+        "只不过",
+        "不过"
+       ]
+      ],
+      "chon": [
+       "无非",
+       "固然",
+       "于是"
+      ],
+      "goiY": "\"Cậu ấy chẳng qua là vô ý va vào cậu một cái, sao cậu giận thế?\"",
+      "giai": "无非是 = 只不过是 (练习 2 ③)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "父母唠叨这么多，无非是担心你",
+       "。"
+      ],
+      "dap": [
+       [
+        "而已",
+        "罢了"
+       ]
+      ],
+      "chon": [
+       "而已",
+       "无非",
+       "固然"
+      ],
+      "goiY": "\"Bố mẹ cằn nhằn nhiều như vậy chẳng qua là lo cho con thôi.\"",
+      "giai": "无非是……而已: hô ứng đầu – cuối câu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "周末我",
+       "是在家看看书、打打球。"
+      ],
+      "dap": [
+       [
+        "无非"
+       ]
+      ],
+      "chon": [
+       "无非",
+       "固然",
+       "而已"
+      ],
+      "goiY": "\"Cuối tuần tôi chẳng qua là ở nhà đọc sách, chơi bóng.\"",
+      "giai": "无非是 + liệt kê những việc bình thường."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "高中生聊天，",
+       "是考试、朋友和手机。"
+      ],
+      "dap": [
+       [
+        "无非"
+       ]
+      ],
+      "chon": [
+       "无非",
+       "以及",
+       "而已"
+      ],
+      "goiY": "\"Học sinh cấp ba nói chuyện với nhau chẳng qua là thi cử, bạn bè và điện thoại.\"",
+      "giai": "无非是 + danh từ: phạm vi chỉ quanh quẩn mấy thứ đó."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "无非",
+       "学汉语",
+       "是为了",
+       "他",
+       "找工作"
+      ],
+      "dap": [
+       "他学汉语无非是为了找工作。"
+      ],
+      "goiY": "Cậu ấy học tiếng Trung chẳng qua là để tìm việc.",
+      "giai": "Chủ ngữ + V + 无非是为了 + mục đích."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "无非是",
+       "担心你",
+       "父母",
+       "而已"
+      ],
+      "dap": [
+       "父母无非是担心你而已。"
+      ],
+      "goiY": "Bố mẹ chẳng qua là lo cho con thôi.",
+      "giai": "无非是 (trước) + 而已 (cuối câu)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "聊的",
+       "无非是",
+       "考试和游戏"
+      ],
+      "dap": [
+       "我们聊的无非是考试和游戏。"
+      ],
+      "goiY": "Những gì chúng tôi nói chẳng qua là thi cử và game.",
+      "giai": "Cụm 我们聊的 làm chủ ngữ + 无非是 + danh từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他学外语无非是为了看懂原文小说。",
+      "dung": true,
+      "giai": "无非是 + 为了 + mục đích — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他学汉语是为了看电影无非。",
+      "dung": false,
+      "sua": "他学汉语无非是为了看电影。",
+      "giai": "无非 là phó từ, đứng trước cụm vị ngữ, không đứng cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他无非是全班最聪明的学生。",
+      "dung": false,
+      "sua": "他是全班最聪明的学生。",
+      "giai": "无非 làm nhẹ sự việc, không dùng khi khen ngợi, nhấn mạnh → bỏ 无非."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Học ngôn ngữ chẳng qua là để xem phim nguyên bản.",
+      "dap": [
+       "学习语言无非是为了看原文电影。",
+       "学语言无非是为了看原文电影。",
+       "学习语言无非是为了看原版电影。",
+       "学语言无非是为了看原版电影。"
+      ],
+      "py": "Xuéxí yǔyán wúfēi shì wèile kàn yuánwén diànyǐng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 无非是为了.",
+      "giai": "\"Chẳng qua là để…\" = 无非是为了 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy chẳng qua là vô ý va vào cậu một cái, sao cậu giận thế?",
+      "dap": [
+       "他无非是不小心碰了你一下，你干吗生那么大的气？",
+       "他无非是不小心碰了你一下，你为什么生那么大的气？",
+       "他无非是不小心碰了你一下，你干吗这么生气？",
+       "他无非是不小心碰了你一下，你为什么这么生气？"
+      ],
+      "py": "Tā wúfēi shì bù xiǎoxīn pèngle nǐ yíxià, nǐ gànmá shēng nàme dà de qì?",
+      "goiY": "Dịch sang tiếng Trung, dùng 无非是.",
+      "giai": "无非是 làm nhẹ việc va chạm; 干吗 = 为什么 (khẩu ngữ)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "父母们在一起也实在没什么好谈的，＿＿＿。",
+      "goiY": "Viết lại câu 练一练 (1) của sách: vế sau \"就是孩子的成长、教育问题\" — dùng 无非",
+      "mau": "父母们在一起也实在没什么好谈的，无非是孩子的成长、教育问题。",
+      "can": [
+       [
+        "无非"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他的菜谱特别单调，＿＿＿。",
+      "goiY": "Viết lại câu 练一练 (2): \"只有西红柿炒鸡蛋，偶尔还可能有黄瓜炒鸡蛋\" — dùng 无非",
+      "mau": "他的菜谱特别单调，无非是西红柿炒鸡蛋，偶尔还可能有黄瓜炒鸡蛋。",
+      "can": [
+       [
+        "无非"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "tuDo": true,
+      "de": "＿＿＿",
+      "goiY": "Tự đặt một câu có 「无非（是）」 nói về lý do học ngoại ngữ của em hoặc bạn bè",
+      "mau": "我学汉语无非是想以后能去中国旅行，跟中国人聊聊天。",
+      "can": [
+       [
+        "无非"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk6-bai-6.html"] = [
  {
   "so": "1",

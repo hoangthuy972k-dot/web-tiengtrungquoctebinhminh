@@ -1853,6 +1853,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-4.html'
       },
       {
+        id: 'hsk6-l5',
+        number: 5,
+        title: 'Học ngoại ngữ cần lý do ư?',
+        titleHanzi: '学一门外语需要理由吗？',
+        titlePinyin: 'Xué yì mén wàiyǔ xūyào lǐyóu ma?',
+        topic: '第二单元 不甘平庸 · Không cam chịu tầm thường — Động lực & cách học ngoại ngữ',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-5.html'
+      },
+      {
         id: 'hsk6-l6',
         number: 6,
         title: 'Làm tốt vai "học sinh chuyển lớp" nơi công sở',

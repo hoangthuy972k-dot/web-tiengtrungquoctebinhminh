@@ -2019,6 +2019,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-18.html'
+      },
+      {
+        id: 'hsk6-l19',
+        number: 19,
+        title: 'Thế giới biển sâu không ánh mặt trời',
+        titleHanzi: '无阳光的深海世界',
+        titlePinyin: 'Wú yángguāng de shēnhǎi shìjiè',
+        topic: '第五单元 美丽家园 · Sự sống dưới đáy biển sâu và khám phá khoa học',
+        vocabCount: 46,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-19.html'
       }
     ],
     yct: [

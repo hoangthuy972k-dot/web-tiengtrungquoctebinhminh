@@ -16632,3 +16632,929 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-18.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-19.html"] = [
+ {
+  "so": "1",
+  "ten": "「进而」",
+  "tenVn": "",
+  "cauTruc": [
+   "Vế 1 (bước cơ sở)，进而 + V (bước tiến thêm): rồi từ đó, tiến tới …",
+   "先 / 首先……，进而……: trước …, rồi tiến thêm một bước … (văn viết)"
+  ],
+  "giaiThich": "进而 là LIÊN TỪ, dùng ở PHÂN CÂU SAU, biểu thị trên cơ sở điều đã có ở vế trước mà TIẾN THÊM MỘT BƯỚC — \"rồi từ đó, tiến tới\". Dùng trong VĂN VIẾT. Vế trước là bước cơ sở, vế sau là bước cao hơn, sâu hơn; hai vế thường cùng chủ ngữ, vế trước hay có 先 / 首先. Khác 然后 (chỉ trình tự thời gian thuần tuý) và 从而 (nêu kết quả / mục đích đạt được nhờ vế trước).",
+  "viDu": [
+   {
+    "zh": "人是在改造环境的实践中认识环境并接受环境的影响，进而改造自己的。",
+    "py": "Rén shì zài gǎizào huánjìng de shíjiàn zhōng rènshi huánjìng bìng jiēshòu huánjìng de yǐngxiǎng, jìn'ér gǎizào zìjǐ de.",
+    "vn": "Con người nhận thức môi trường và chịu ảnh hưởng của môi trường trong thực tiễn cải tạo môi trường, rồi từ đó cải tạo chính mình."
+   },
+   {
+    "zh": "想象是维持儿童心理健康的重要手段。想象有减轻心理压力，维持心理平衡，进而促进心理健康的作用。",
+    "py": "Xiǎngxiàng shì wéichí értóng xīnlǐ jiànkāng de zhòngyào shǒuduàn. Xiǎngxiàng yǒu jiǎnqīng xīnlǐ yālì, wéichí xīnlǐ pínghéng, jìn'ér cùjìn xīnlǐ jiànkāng de zuòyòng.",
+    "vn": "Trí tưởng tượng là phương tiện quan trọng để duy trì sức khoẻ tâm lý của trẻ em. Tưởng tượng có tác dụng giảm áp lực tâm lý, duy trì cân bằng tâm lý, rồi từ đó thúc đẩy sức khoẻ tâm lý."
+   },
+   {
+    "zh": "科学家取出从深海带回的样品，一股带有刺鼻臭蛋气味的硫化氢气体立即冲了出来，科学家恍然大悟，进而提出了这样的假说。",
+    "py": "Kēxuéjiā qǔchū cóng shēnhǎi dàihuí de yàngpǐn, yì gǔ dàiyǒu cìbí chòu dàn qìwèi de liúhuàqīng qìtǐ lìjí chōngle chūlái, kēxuéjiā huǎngrán-dàwù, jìn'ér tíchūle zhèyàng de jiǎshuō.",
+    "vn": "Các nhà khoa học lấy ra mẫu vật mang về từ biển sâu, một luồng khí hydro sunfua mang mùi trứng thối hắc mũi lập tức xộc ra; các nhà khoa học chợt vỡ lẽ, rồi từ đó đưa ra giả thuyết như sau."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "进而科学家提出了这样的假说，他们恍然大悟。",
+    "why": "进而 đứng đầu VẾ SAU để nêu bước tiếp theo; thứ tự phải là \"bước cơ sở → bước tiến thêm\", không đặt 进而 ở vế đầu.",
+    "dung": "科学家恍然大悟，进而提出了这样的假说。"
+   },
+   {
+    "sai": "我先吃了早饭，进而去上学了。",
+    "why": "进而 chỉ dùng khi bước sau là sự PHÁT TRIỂN, nâng cao trên cơ sở bước trước (văn viết); hai việc chỉ nối tiếp về thời gian thì dùng 然后.",
+    "dung": "我先吃了早饭，然后去上学了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "科学家恍然大悟，",
+       "提出了这样的假说。"
+      ],
+      "dap": [
+       [
+        "进而"
+       ]
+      ],
+      "chon": [
+       "进而",
+       "然而",
+       "反而"
+      ],
+      "goiY": "\"Các nhà khoa học chợt vỡ lẽ, rồi từ đó đưa ra giả thuyết như sau.\" (câu bài khoá)",
+      "giai": "进而 nối bước tiếp theo xây trên bước trước. 然而 = thế nhưng; 反而 = trái lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "通过调查研究发现问题，",
+       "找到解决问题的方法。"
+      ],
+      "dap": [
+       [
+        "进而"
+       ]
+      ],
+      "chon": [
+       "进而",
+       "何况",
+       "否则"
+      ],
+      "goiY": "\"… phát hiện vấn đề, rồi từ đó tìm ra cách giải quyết.\" (练习4 ②)",
+      "giai": "Phát hiện vấn đề là cơ sở → tìm cách giải quyết là bước tiến thêm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "想象有减轻心理压力，维持心理平衡，",
+       "促进心理健康的作用。"
+      ],
+      "dap": [
+       [
+        "进而"
+       ]
+      ],
+      "chon": [
+       "进而",
+       "以免",
+       "不然"
+      ],
+      "goiY": "\"… rồi từ đó thúc đẩy sức khoẻ tâm lý.\" (ví dụ (2) của sách)",
+      "giai": "Giảm áp lực, giữ cân bằng → tiến tới thúc đẩy sức khoẻ tâm lý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "新的教学方法要",
+       "在个别班级进行实验，进而在全校推广。"
+      ],
+      "dap": [
+       [
+        "先"
+       ]
+      ],
+      "chon": [
+       "先",
+       "才",
+       "再"
+      ],
+      "goiY": "\"… trước tiên thử nghiệm ở vài lớp, rồi tiến tới mở rộng toàn trường.\" (练一练 (1))",
+      "giai": "先……，进而…… là cặp hay đi cùng nhau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我先吃了早饭，",
+       "去上学了。"
+      ],
+      "dap": [
+       [
+        "然后"
+       ]
+      ],
+      "chon": [
+       "然后",
+       "进而",
+       "从而"
+      ],
+      "goiY": "\"Tôi ăn sáng xong, rồi đi học.\" — hai việc chỉ nối tiếp về thời gian",
+      "giai": "Chỉ trình tự thời gian thường ngày → 然后; 进而 dùng khi bước sau là sự nâng cao của bước trước."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他七十岁时赶上了古人的水平，后来继续努力，",
+       "超越了古人。"
+      ],
+      "dap": [
+       [
+        "进而"
+       ]
+      ],
+      "chon": [
+       "进而",
+       "反而",
+       "然而"
+      ],
+      "goiY": "\"… tiếp tục cố gắng, rồi từ đó vượt qua người xưa.\" (练一练 (3))",
+      "giai": "Đuổi kịp → vượt qua: bước sau cao hơn bước trước."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "科学家",
+       "恍然大悟",
+       "，",
+       "进而",
+       "提出了",
+       "假说"
+      ],
+      "dap": [
+       "科学家恍然大悟，进而提出了假说。"
+      ],
+      "goiY": "Các nhà khoa học chợt vỡ lẽ, rồi từ đó đưa ra giả thuyết.",
+      "giai": "进而 đứng đầu vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们要",
+       "先",
+       "了解学生的需求",
+       "，",
+       "进而",
+       "改进",
+       "教学方法"
+      ],
+      "dap": [
+       "我们要先了解学生的需求，进而改进教学方法。"
+      ],
+      "goiY": "Chúng ta phải tìm hiểu nhu cầu của học sinh trước, rồi từ đó cải tiến phương pháp dạy.",
+      "giai": "先……，进而……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "人",
+       "认识环境",
+       "并接受环境的影响",
+       "，",
+       "进而",
+       "改造",
+       "自己"
+      ],
+      "dap": [
+       "人认识环境并接受环境的影响，进而改造自己。"
+      ],
+      "goiY": "Con người nhận thức môi trường và chịu ảnh hưởng của nó, rồi từ đó cải tạo chính mình.",
+      "giai": "Rút gọn từ ví dụ (1) của sách."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他先学好了汉语，进而开始研究中国文学。",
+      "dung": true,
+      "giai": "Học giỏi tiếng Trung là cơ sở, nghiên cứu văn học Trung Quốc là bước tiến thêm → đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "进而他提出了新的看法，他仔细分析了数据。",
+      "dung": false,
+      "sua": "他仔细分析了数据，进而提出了新的看法。",
+      "giai": "进而 phải đứng đầu vế SAU, sau bước cơ sở (phân tích số liệu)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他洗完澡，进而上床睡觉了。",
+      "dung": false,
+      "sua": "他洗完澡，然后上床睡觉了。",
+      "giai": "Chỉ là trình tự thời gian thường ngày, không có ý \"tiến thêm một bước\" → dùng 然后."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trước hết chúng ta phải tìm hiểu nguyên nhân của vấn đề, rồi từ đó tìm ra cách giải quyết.",
+      "dap": [
+       "我们首先要了解问题的原因，进而找到解决的办法。",
+       "我们要先弄清楚问题的原因，进而找出解决的方法。",
+       "首先要了解问题的原因，进而找到解决问题的办法。"
+      ],
+      "py": "Wǒmen shǒuxiān yào liǎojiě wèntí de yuányīn, jìn'ér zhǎodào jiějué de bànfǎ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 进而.",
+      "giai": "首先……，进而……: bước cơ sở → bước tiến thêm."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy đọc kỹ nguyên tác trước, rồi từ đó hiểu sâu hơn tư tưởng của tác giả.",
+      "dap": [
+       "他先仔细阅读原著，进而更深入地理解了作者的思想。",
+       "他先认真读了原著，进而更好地理解了作者的思想。"
+      ],
+      "py": "Tā xiān zǐxì yuèdú yuánzhù, jìn'ér gèng shēnrù de lǐjiěle zuòzhě de sīxiǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 进而.",
+      "giai": "先 + V1，进而 + V2 (更深入地理解)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "新的教学方法要先在个别班级进行实验，之后在全校推广。（用“进而”改写）",
+      "goiY": "đổi 之后 thành 进而 — 练一练 (1) của sách",
+      "mau": "新的教学方法要先在个别班级进行实验，进而在全校推广。",
+      "can": [
+       [
+        "进而"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "要先把原著表达的思想弄清楚，在此基础上，很好地去理解原著。（用“进而”改写）",
+      "goiY": "\"在此基础上\" chính là nghĩa của 进而 — 练一练 (2) của sách",
+      "mau": "要先把原著表达的思想弄清楚，进而更好地理解原著。",
+      "can": [
+       [
+        "进而"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "据说，著名画家齐白石画虾数十年，到了七十岁时赶上了古人的水平，后来继续努力，超越了古人。（用“进而”改写）",
+      "goiY": "từ \"đuổi kịp\" tiến thêm thành \"vượt qua\" — 练一练 (3) của sách",
+      "mau": "据说，著名画家齐白石画虾数十年，到了七十岁时赶上了古人的水平，后来继续努力，进而超越了古人。",
+      "can": [
+       [
+        "进而"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「得以」",
+  "tenVn": "",
+  "cauTruc": [
+   "Điều kiện，(chủ ngữ) + (才) + 得以 + V: nhờ đó mà … được",
+   "……使 / 让 + N + 得以 + V: khiến … có thể … (văn viết)"
+  ],
+  "giaiThich": "得以 là ĐỘNG TỪ, nghĩa là \"nhờ đó mà đạt được, nhờ đó mà có thể; có thể\" (借以达到，借此可以；能够). Ngữ cảnh phía trước thường nêu ĐIỀU KIỆN giúp việc đó xảy ra được; sau 得以 là KẾT QUẢ đã thực hiện được, cũng có thể là kết quả mong đợi. Chủ yếu bổ nghĩa cho ĐỘNG TỪ / cụm động từ (得以繁殖, 得以实现, 得以解脱), ít khi bổ nghĩa cho cụm tính từ. Dùng trong VĂN VIẾT. Đừng nhầm với 不得已 (bất đắc dĩ).",
+  "viDu": [
+   {
+    "zh": "在高温和高压的作用下，水里所含的硫酸盐转化成了硫化氢，某些细菌借硫化氢代谢变化，吸收温泉的热量得以繁殖。",
+    "py": "Zài gāowēn hé gāoyā de zuòyòng xià, shuǐ li suǒ hán de liúsuānyán zhuǎnhuà chéngle liúhuàqīng, mǒuxiē xìjūn jiè liúhuàqīng dàixiè biànhuà, xīshōu wēnquán de rèliàng déyǐ fánzhí.",
+    "vn": "Dưới tác dụng của nhiệt độ cao và áp suất cao, muối sunfat chứa trong nước chuyển hoá thành hydro sunfua; một số vi khuẩn nhờ hydro sunfua mà trao đổi chất, hấp thụ nhiệt lượng của suối nước nóng nên sinh sôi được."
+   },
+   {
+    "zh": "警察用最简单易懂的语言，把自首和逃跑的两种结果分析给他听，使他明白，只有自首，才是他和家人得以解脱的唯一途径。",
+    "py": "Jǐngchá yòng zuì jiǎndān yì dǒng de yǔyán, bǎ zìshǒu hé táopǎo de liǎng zhǒng jiéguǒ fēnxī gěi tā tīng, shǐ tā míngbai, zhǐyǒu zìshǒu, cái shì tā hé jiārén déyǐ jiětuō de wéiyī tújìng.",
+    "vn": "Cảnh sát dùng lời lẽ đơn giản dễ hiểu nhất phân tích cho anh ta nghe hai kết cục của việc đầu thú và bỏ trốn, khiến anh ta hiểu rằng chỉ có đầu thú mới là con đường duy nhất để anh ta và gia đình được giải thoát."
+   },
+   {
+    "zh": "幸亏列车上有位经验丰富的医生，使他得以清醒过来。",
+    "py": "Xìngkuī lièchē shang yǒu wèi jīngyàn fēngfù de yīshēng, shǐ tā déyǐ qīngxǐng guòlái.",
+    "vn": "May mà trên tàu có một bác sĩ giàu kinh nghiệm, nhờ vậy anh ấy mới tỉnh lại được."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "由于大家的努力，这个计划得以很顺利。",
+    "why": "得以 chủ yếu đứng trước ĐỘNG TỪ; 很顺利 là cụm tính từ → thêm động từ: 得以顺利实现 / 顺利进行.",
+    "dung": "由于大家的努力，这个计划得以顺利实现。"
+   },
+   {
+    "sai": "因为下大雨，比赛得以推迟。",
+    "why": "Vế trước của 得以 phải là điều kiện giúp đạt KẾT QUẢ MONG MUỐN; mưa to khiến trận đấu phải hoãn là chuyện bất đắc dĩ → dùng 不得不.",
+    "dung": "因为下大雨，比赛不得不推迟。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "某些细菌吸收温泉的热量",
+       "繁殖。"
+      ],
+      "dap": [
+       [
+        "得以"
+       ]
+      ],
+      "chon": [
+       "得以",
+       "难以",
+       "以便"
+      ],
+      "goiY": "\"… hấp thụ nhiệt lượng của suối nước nóng mà sinh sôi được.\" (câu bài khoá)",
+      "giai": "得以 + V: nhờ điều kiện đó mà đạt được. 难以 = khó mà (ngược nghĩa); 以便 = để."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "幸亏列车上有位经验丰富的医生，使他",
+       "清醒过来。"
+      ],
+      "dap": [
+       [
+        "得以"
+       ]
+      ],
+      "chon": [
+       "得以",
+       "不得已",
+       "免得"
+      ],
+      "goiY": "\"May mà trên tàu có bác sĩ giàu kinh nghiệm, nhờ vậy anh ấy mới tỉnh lại.\" (ví dụ (3))",
+      "giai": "使 + N + 得以 + V. 不得已 = bất đắc dĩ — đừng nhầm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只有不断努力，梦想才能",
+       "实现。"
+      ],
+      "dap": [
+       [
+        "得以"
+       ]
+      ],
+      "chon": [
+       "得以",
+       "所以",
+       "可以"
+      ],
+      "goiY": "\"Chỉ có không ngừng cố gắng, ước mơ mới có thể thành hiện thực.\" (练习4 ①)",
+      "giai": "才能得以实现: 得以 đứng ngay trước động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只有自首，才是他和家人得以",
+       "的唯一途径。"
+      ],
+      "dap": [
+       [
+        "解脱"
+       ]
+      ],
+      "chon": [
+       "解脱",
+       "轻松",
+       "愉快"
+      ],
+      "goiY": "\"… con đường duy nhất để anh ta và gia đình được giải thoát.\" (ví dụ (2))",
+      "giai": "得以 + ĐỘNG TỪ (解脱); 轻松 / 愉快 là tính từ, ít đi sau 得以."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "由于建立了保护区，这种珍稀动物",
+       "得以大量繁殖。"
+      ],
+      "dap": [
+       [
+        "才"
+       ]
+      ],
+      "chon": [
+       "才",
+       "就",
+       "也"
+      ],
+      "goiY": "\"Nhờ lập khu bảo tồn, loài động vật quý này mới sinh sôi được nhiều.\"",
+      "giai": "由于……，……才得以……: nhờ … mới có thể …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大机器代替了手工工场，科学技术在生产上才得以",
+       "运用。"
+      ],
+      "dap": [
+       [
+        "广泛"
+       ]
+      ],
+      "chon": [
+       "广泛",
+       "广阔",
+       "广大"
+      ],
+      "goiY": "\"… khoa học kỹ thuật mới được ứng dụng rộng rãi trong sản xuất.\" (练一练 (2))",
+      "giai": "广泛运用 = ứng dụng rộng rãi; 广阔 chỉ không gian (từ của bài), 广大 = đông đảo."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "长寿的一生",
+       "使他",
+       "得以",
+       "见证",
+       "中国历史上的",
+       "伟大年代"
+      ],
+      "dap": [
+       "长寿的一生使他得以见证中国历史上的伟大年代。"
+      ],
+      "goiY": "Cuộc đời trường thọ giúp ông có thể chứng kiến thời đại vĩ đại trong lịch sử Trung Quốc.",
+      "giai": "使 + N + 得以 + V (练一练 (1))."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "在大家的帮助下",
+       "，",
+       "这个计划",
+       "终于",
+       "得以",
+       "顺利实现"
+      ],
+      "dap": [
+       "在大家的帮助下，这个计划终于得以顺利实现。"
+      ],
+      "goiY": "Nhờ sự giúp đỡ của mọi người, kế hoạch này cuối cùng đã được thực hiện suôn sẻ.",
+      "giai": "Điều kiện (在……帮助下) + 得以 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这次联欢会",
+       "让",
+       "所有孩子的特长",
+       "都",
+       "得以",
+       "发挥"
+      ],
+      "dap": [
+       "这次联欢会让所有孩子的特长都得以发挥。"
+      ],
+      "goiY": "Buổi liên hoan này giúp năng khiếu của mọi đứa trẻ đều được phát huy.",
+      "giai": "让 + N + 都得以 + V (练一练 (3))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "经过医生的抢救，病人的生命得以保住了。",
+      "dung": true,
+      "giai": "Điều kiện thuận lợi (bác sĩ cấp cứu) → kết quả đạt được (giữ được mạng sống) → đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "由于大家的努力，这个计划得以很顺利。",
+      "dung": false,
+      "sua": "由于大家的努力，这个计划得以顺利实现。",
+      "giai": "Sau 得以 cần động từ; 很顺利 là cụm tính từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "因为下大雨，比赛得以推迟。",
+      "dung": false,
+      "sua": "因为下大雨，比赛不得不推迟。",
+      "giai": "Mưa to là điều kiện bất lợi, hoãn trận đấu là chuyện bất đắc dĩ → không dùng 得以."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nhờ sự giúp đỡ của mọi người, ước mơ của cô ấy cuối cùng đã được thực hiện.",
+      "dap": [
+       "在大家的帮助下，她的梦想终于得以实现。",
+       "多亏了大家的帮助，她的梦想终于得以实现。",
+       "由于大家的帮助，她的梦想终于得以实现。"
+      ],
+      "py": "Zài dàjiā de bāngzhù xià, tā de mèngxiǎng zhōngyú déyǐ shíxiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 得以.",
+      "giai": "Điều kiện + 得以实现; không dịch \"được\" bằng 被."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Sau khi khu bảo tồn được thành lập, loài chim quý này mới có thể sinh sôi trở lại.",
+      "dap": [
+       "保护区建立以后，这种珍贵的鸟才得以重新繁殖。",
+       "建立保护区以后，这种珍稀鸟类才得以重新繁殖。"
+      ],
+      "py": "Bǎohùqū jiànlì yǐhòu, zhè zhǒng zhēnguì de niǎo cái déyǐ chóngxīn fánzhí.",
+      "goiY": "Dịch sang tiếng Trung, dùng 得以.",
+      "giai": "……以后，……才得以 + V: nhờ điều kiện mới xuất hiện mà có thể …."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "长寿的一生使他有机会见证中国历史上的伟大年代。（用“得以”改写）",
+      "goiY": "有机会 + V → 得以 + V — 练一练 (1) của sách",
+      "mau": "长寿的一生使他得以见证中国历史上的伟大年代。",
+      "can": [
+       [
+        "得以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "大机器代替了手工工场，科学技术在生产上才能广泛运用。（用“得以”改写）",
+      "goiY": "才能 → 才得以 — 练一练 (2) của sách",
+      "mau": "大机器代替了手工工场，科学技术在生产上才得以广泛运用。",
+      "can": [
+       [
+        "得以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这个联欢会，希望孩子们能唱的唱，能跳的跳，能写的写，能画的画，就是要让所有孩子的特长都能够发挥出来。（用“得以”改写）",
+      "goiY": "能够发挥出来 → 得以发挥 — 练一练 (3) của sách",
+      "mau": "这个联欢会，希望孩子们能唱的唱，能跳的跳，能写的写，能画的画，就是要让所有孩子的特长都得以发挥。",
+      "can": [
+       [
+        "得以"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「偏偏」",
+  "tenVn": "",
+  "cauTruc": [
+   "① (người khác muốn A)，chủ ngữ + 偏偏 + 要 / 不 + V: cứ nhất định … (cố ý làm ngược)",
+   "② ……，(可 / 却) + 偏偏 + (chủ ngữ) + V: trớ trêu thay lại … (trái mong muốn, lẽ thường)"
+  ],
+  "giaiThich": "偏偏 là PHÓ TỪ, có hai cách dùng chính. ① Chủ quan CỐ Ý làm trái với yêu cầu hoặc tình hình khách quan — \"cứ nhất định, lại cứ\"; thường đi với 要 / 不: 大家劝他别去，他偏偏要去. ② Sự thật TRÁI NGƯỢC với mong muốn, yêu cầu hoặc lẽ thường — \"trớ trêu thay, lại đúng lúc, riêng … lại\": 我正要出门，天偏偏下起了雨; 为什么偏偏这种细菌能够存活下来? 偏偏 đứng trước động từ hoặc trước chủ ngữ (为什么偏偏这种细菌……, 可偏偏他……), hay đi với 可 / 却 / 可是 ở vế có ý chuyển.",
+  "viDu": [
+   {
+    "zh": "那里太危险了，大家都劝他不要去，他偏偏要去。",
+    "py": "Nàli tài wēixiǎn le, dàjiā dōu quàn tā bú yào qù, tā piānpiān yào qù.",
+    "vn": "Chỗ đó nguy hiểm quá, ai cũng khuyên anh ta đừng đi, vậy mà anh ta cứ nhất định đòi đi."
+   },
+   {
+    "zh": "30年前我们班那个最不爱说话、最不起眼儿的女生，今天偏偏最成功。",
+    "py": "Sānshí nián qián wǒmen bān nàge zuì bú ài shuōhuà, zuì bù qǐyǎnr de nǚshēng, jīntiān piānpiān zuì chénggōng.",
+    "vn": "Cô bạn ít nói nhất, mờ nhạt nhất lớp chúng tôi 30 năm trước, hôm nay lại chính là người thành công nhất."
+   },
+   {
+    "zh": "高于40℃，大部分植物和动物就无法成活；高于65℃，多数细菌会丧失生命，可是，为什么偏偏这种细菌能够存活下来？",
+    "py": "Gāoyú sìshí shèshìdù, dà bùfen zhíwù hé dòngwù jiù wúfǎ chénghuó; gāoyú liùshíwǔ shèshìdù, duōshù xìjūn huì sàngshī shēngmìng, kěshì, wèi shénme piānpiān zhè zhǒng xìjūn nénggòu cúnhuó xiàlái?",
+    "vn": "Cao hơn 40℃, phần lớn thực vật và động vật không sống nổi; cao hơn 65℃, đa số vi khuẩn sẽ chết; thế nhưng, tại sao riêng loại vi khuẩn này lại sống sót được?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他偏偏喜欢学习，所以成绩很好。",
+    "why": "偏偏 phải mang ý TRÁI với mong muốn, yêu cầu hoặc lẽ thường; \"thích học nên học giỏi\" là thuận chiều, không có gì trái ngược → bỏ 偏偏.",
+    "dung": "他特别喜欢学习，所以成绩很好。"
+   },
+   {
+    "sai": "我让他早点儿睡，他偏偏睡。",
+    "why": "Cách dùng ① (cố ý làm ngược) cần 要 / 不: người khác bảo ngủ sớm → cố tình không ngủ = 偏偏不睡.",
+    "dung": "我让他早点儿睡，他偏偏不睡。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "为什么",
+       "这种细菌能够存活下来？"
+      ],
+      "dap": [
+       [
+        "偏偏"
+       ]
+      ],
+      "chon": [
+       "偏偏",
+       "果然",
+       "终于"
+      ],
+      "goiY": "\"Tại sao riêng loại vi khuẩn này lại sống sót được?\" (câu bài khoá)",
+      "giai": "偏偏 cách dùng ②: trái với lẽ thường (đa số vi khuẩn đều chết)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家都劝他不要去，他偏偏",
+       "去。"
+      ],
+      "dap": [
+       [
+        "要"
+       ]
+      ],
+      "chon": [
+       "要",
+       "不",
+       "没"
+      ],
+      "goiY": "\"Ai cũng khuyên đừng đi, vậy mà anh ta cứ nhất định đi.\" (ví dụ (1))",
+      "giai": "偏偏要 = cố ý làm ngược lời khuyên 不要去."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我让他早点儿睡，他偏偏",
+       "睡。"
+      ],
+      "dap": [
+       [
+        "不"
+       ]
+      ],
+      "chon": [
+       "不",
+       "要",
+       "没"
+      ],
+      "goiY": "\"Tôi bảo nó ngủ sớm, nó lại cứ không chịu ngủ.\"",
+      "giai": "Người khác muốn ngủ sớm → cố ý làm ngược = 偏偏不睡."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我正要出门，天",
+       "下起了大雨。"
+      ],
+      "dap": [
+       [
+        "偏偏"
+       ]
+      ],
+      "chon": [
+       "偏偏",
+       "幸亏",
+       "难怪"
+      ],
+      "goiY": "\"Tôi vừa định ra ngoài thì trời lại đổ mưa to.\"",
+      "giai": "Sự thật trái mong muốn (cách dùng ②). 幸亏 = may mà; 难怪 = thảo nào."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经过讨论，大家的意见都统一了，可",
+       "他不同意。"
+      ],
+      "dap": [
+       [
+        "偏偏"
+       ]
+      ],
+      "chon": [
+       "偏偏",
+       "果然",
+       "幸亏"
+      ],
+      "goiY": "\"… ý kiến mọi người đã thống nhất, thế mà riêng anh ta lại không đồng ý.\" (练习4 ③)",
+      "giai": "可偏偏 + chủ ngữ: nhấn \"riêng người này lại …\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我爱做的事，偏偏不让我做；我不爱做的事，倒",
+       "做不可，真让人生气！"
+      ],
+      "dap": [
+       [
+        "非"
+       ]
+      ],
+      "chon": [
+       "非",
+       "不",
+       "没"
+      ],
+      "goiY": "\"Việc tôi thích thì lại không cho làm; việc tôi không thích thì lại bắt buộc phải làm.\" (ví dụ (2))",
+      "giai": "非……不可 = nhất định phải; đối lập với 偏偏不让我做."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "那里",
+       "太危险了",
+       "，",
+       "大家都劝他别去",
+       "，",
+       "他",
+       "偏偏",
+       "要去"
+      ],
+      "dap": [
+       "那里太危险了，大家都劝他别去，他偏偏要去。"
+      ],
+      "goiY": "Chỗ đó nguy hiểm quá, ai cũng khuyên đừng đi, anh ta cứ nhất định đi.",
+      "giai": "Chủ ngữ + 偏偏 + 要 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我正想",
+       "给他打电话",
+       "，",
+       "他的手机",
+       "偏偏",
+       "没电了"
+      ],
+      "dap": [
+       "我正想给他打电话，他的手机偏偏没电了。"
+      ],
+      "goiY": "Tôi đang định gọi cho anh ấy thì điện thoại anh ấy lại hết pin.",
+      "giai": "Sự thật trái mong muốn (cách dùng ②)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "为什么",
+       "偏偏",
+       "是我",
+       "被老师",
+       "叫到了",
+       "办公室"
+      ],
+      "dap": [
+       "为什么偏偏是我被老师叫到了办公室？"
+      ],
+      "goiY": "Sao lại đúng là tôi bị thầy gọi lên văn phòng?",
+      "giai": "为什么偏偏 + chủ ngữ: \"sao lại đúng là …\"."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "30年前班里最不起眼儿的女生，今天偏偏最成功。",
+      "dung": true,
+      "giai": "Sự thật trái với dự đoán thông thường (cách dùng ②, ví dụ (3) của sách) → đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他偏偏喜欢学习，所以成绩很好。",
+      "dung": false,
+      "sua": "他特别喜欢学习，所以成绩很好。",
+      "giai": "Không có ý trái ngược nào → không dùng 偏偏."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我让他早点儿睡，他偏偏睡。",
+      "dung": false,
+      "sua": "我让他早点儿睡，他偏偏不睡。",
+      "giai": "Cách dùng ① cần 要 / 不: cố ý làm ngược = 偏偏不睡."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mẹ bảo em trai đừng ăn vặt, thế mà nó cứ nhất định đòi ăn.",
+      "dap": [
+       "妈妈让弟弟别吃零食，他偏偏要吃。",
+       "妈妈不让弟弟吃零食，弟弟偏偏要吃。"
+      ],
+      "py": "Māma ràng dìdi bié chī língshí, tā piānpiān yào chī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 偏偏.",
+      "giai": "Cách dùng ①: 偏偏要 + V (cố ý làm ngược lời mẹ)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi đang vội đi thi thì trớ trêu thay xe buýt lại đến muộn.",
+      "dap": [
+       "我正急着去考试，公共汽车偏偏来晚了。",
+       "我正赶着去考试，偏偏公交车晚点了。"
+      ],
+      "py": "Wǒ zhèng jízhe qù kǎoshì, gōnggòng qìchē piānpiān láiwǎn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 偏偏.",
+      "giai": "Cách dùng ②: sự thật trái với mong muốn; 偏偏 đứng trước động từ hoặc trước chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他从小就喜欢画画儿，也有绘画的天赋，没想到＿＿＿。",
+      "goiY": "điều trái mong muốn (dùng 偏偏) — 练一练 (1) của sách",
+      "mau": "他从小就喜欢画画儿，也有绘画的天赋，没想到父母偏偏不让他学画画儿。",
+      "can": [
+       [
+        "偏偏"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "去南方旅游的火车票也买了，旅馆也订了，＿＿＿。",
+      "goiY": "chuyện bất ngờ phá kế hoạch (dùng 偏偏) — 练一练 (2) của sách",
+      "mau": "去南方旅游的火车票也买了，旅馆也订了，偏偏这时候公司让我去出差。",
+      "can": [
+       [
+        "偏偏"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "跟他说好有急事要联系，可他＿＿＿。",
+      "goiY": "anh ta làm ngược điều đã hẹn (dùng 偏偏) — 练一练 (3) của sách",
+      "mau": "跟他说好有急事要联系，可他偏偏把手机关了。",
+      "can": [
+       [
+        "偏偏"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

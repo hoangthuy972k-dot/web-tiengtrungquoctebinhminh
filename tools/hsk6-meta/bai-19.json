@@ -1,0 +1,112 @@
+{
+ "zh": "无阳光的深海世界",
+ "py": "Wú yángguāng de shēnhǎi shìjiè",
+ "vn": "Thế giới biển sâu không ánh mặt trời",
+ "topic": "第五单元 美丽家园 · Sự sống dưới đáy biển sâu và khám phá khoa học",
+ "vocabCount": 46,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "进而",
+   "explain": "进而 là LIÊN TỪ, dùng ở PHÂN CÂU SAU, biểu thị trên cơ sở điều đã có ở vế trước mà TIẾN THÊM MỘT BƯỚC — \"rồi từ đó, tiến tới\". Dùng trong VĂN VIẾT. Vế trước là bước cơ sở, vế sau là bước cao hơn, sâu hơn; hai vế thường cùng chủ ngữ, vế trước hay có 先 / 首先. Khác 然后 (chỉ trình tự thời gian thuần tuý) và 从而 (nêu kết quả / mục đích đạt được nhờ vế trước).",
+   "rule": "Vế 1 (bước cơ sở)，<strong style=\"color:var(--sky-d)\">进而</strong> + V (bước tiến thêm)　|　先……，<strong style=\"color:var(--sky-d)\">进而</strong>……",
+   "examples": [
+    {
+     "zh": "人是在改造环境的实践中认识环境并接受环境的影响，进而改造自己的。",
+     "py": "Rén shì zài gǎizào huánjìng de shíjiàn zhōng rènshi huánjìng bìng jiēshòu huánjìng de yǐngxiǎng, jìn'ér gǎizào zìjǐ de.",
+     "vn": "Con người nhận thức môi trường và chịu ảnh hưởng của môi trường trong thực tiễn cải tạo môi trường, rồi từ đó cải tạo chính mình."
+    },
+    {
+     "zh": "想象是维持儿童心理健康的重要手段。想象有减轻心理压力，维持心理平衡，进而促进心理健康的作用。",
+     "py": "Xiǎngxiàng shì wéichí értóng xīnlǐ jiànkāng de zhòngyào shǒuduàn. Xiǎngxiàng yǒu jiǎnqīng xīnlǐ yālì, wéichí xīnlǐ pínghéng, jìn'ér cùjìn xīnlǐ jiànkāng de zuòyòng.",
+     "vn": "Trí tưởng tượng là phương tiện quan trọng để duy trì sức khoẻ tâm lý của trẻ em. Tưởng tượng có tác dụng giảm áp lực tâm lý, duy trì cân bằng tâm lý, rồi từ đó thúc đẩy sức khoẻ tâm lý."
+    },
+    {
+     "zh": "科学家取出从深海带回的样品，一股带有刺鼻臭蛋气味的硫化氢气体立即冲了出来，科学家恍然大悟，进而提出了这样的假说。",
+     "py": "Kēxuéjiā qǔchū cóng shēnhǎi dàihuí de yàngpǐn, yì gǔ dàiyǒu cìbí chòu dàn qìwèi de liúhuàqīng qìtǐ lìjí chōngle chūlái, kēxuéjiā huǎngrán-dàwù, jìn'ér tíchūle zhèyàng de jiǎshuō.",
+     "vn": "Các nhà khoa học lấy ra mẫu vật mang về từ biển sâu, một luồng khí hydro sunfua mang mùi trứng thối hắc mũi lập tức xộc ra; các nhà khoa học chợt vỡ lẽ, rồi từ đó đưa ra giả thuyết như sau."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "进而科学家提出了这样的假说，他们恍然大悟。",
+     "why": "进而 đứng đầu VẾ SAU để nêu bước tiếp theo; thứ tự phải là \"bước cơ sở → bước tiến thêm\", không đặt 进而 ở vế đầu.",
+     "right": "科学家恍然大悟，进而提出了这样的假说。"
+    },
+    {
+     "wrong": "我先吃了早饭，进而去上学了。",
+     "why": "进而 chỉ dùng khi bước sau là sự PHÁT TRIỂN, nâng cao trên cơ sở bước trước (văn viết); hai việc chỉ nối tiếp về thời gian thì dùng 然后.",
+     "right": "我先吃了早饭，然后去上学了。"
+    }
+   ]
+  },
+  {
+   "point": "得以",
+   "explain": "得以 là ĐỘNG TỪ, nghĩa là \"nhờ đó mà đạt được, nhờ đó mà có thể; có thể\" (借以达到，借此可以；能够). Ngữ cảnh phía trước thường nêu ĐIỀU KIỆN giúp việc đó xảy ra được; sau 得以 là KẾT QUẢ đã thực hiện được, cũng có thể là kết quả mong đợi. Chủ yếu bổ nghĩa cho ĐỘNG TỪ / cụm động từ (得以繁殖, 得以实现, 得以解脱), ít khi bổ nghĩa cho cụm tính từ. Dùng trong VĂN VIẾT. Đừng nhầm với 不得已 (bất đắc dĩ).",
+   "rule": "Điều kiện，(chủ ngữ) + (才) + <strong style=\"color:var(--sky-d)\">得以</strong> + V　|　……使 / 让 + N + <strong style=\"color:var(--sky-d)\">得以</strong> + V",
+   "examples": [
+    {
+     "zh": "在高温和高压的作用下，水里所含的硫酸盐转化成了硫化氢，某些细菌借硫化氢代谢变化，吸收温泉的热量得以繁殖。",
+     "py": "Zài gāowēn hé gāoyā de zuòyòng xià, shuǐ li suǒ hán de liúsuānyán zhuǎnhuà chéngle liúhuàqīng, mǒuxiē xìjūn jiè liúhuàqīng dàixiè biànhuà, xīshōu wēnquán de rèliàng déyǐ fánzhí.",
+     "vn": "Dưới tác dụng của nhiệt độ cao và áp suất cao, muối sunfat chứa trong nước chuyển hoá thành hydro sunfua; một số vi khuẩn nhờ hydro sunfua mà trao đổi chất, hấp thụ nhiệt lượng của suối nước nóng nên sinh sôi được."
+    },
+    {
+     "zh": "警察用最简单易懂的语言，把自首和逃跑的两种结果分析给他听，使他明白，只有自首，才是他和家人得以解脱的唯一途径。",
+     "py": "Jǐngchá yòng zuì jiǎndān yì dǒng de yǔyán, bǎ zìshǒu hé táopǎo de liǎng zhǒng jiéguǒ fēnxī gěi tā tīng, shǐ tā míngbai, zhǐyǒu zìshǒu, cái shì tā hé jiārén déyǐ jiětuō de wéiyī tújìng.",
+     "vn": "Cảnh sát dùng lời lẽ đơn giản dễ hiểu nhất phân tích cho anh ta nghe hai kết cục của việc đầu thú và bỏ trốn, khiến anh ta hiểu rằng chỉ có đầu thú mới là con đường duy nhất để anh ta và gia đình được giải thoát."
+    },
+    {
+     "zh": "幸亏列车上有位经验丰富的医生，使他得以清醒过来。",
+     "py": "Xìngkuī lièchē shang yǒu wèi jīngyàn fēngfù de yīshēng, shǐ tā déyǐ qīngxǐng guòlái.",
+     "vn": "May mà trên tàu có một bác sĩ giàu kinh nghiệm, nhờ vậy anh ấy mới tỉnh lại được."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "由于大家的努力，这个计划得以很顺利。",
+     "why": "得以 chủ yếu đứng trước ĐỘNG TỪ; 很顺利 là cụm tính từ → thêm động từ: 得以顺利实现 / 顺利进行.",
+     "right": "由于大家的努力，这个计划得以顺利实现。"
+    },
+    {
+     "wrong": "因为下大雨，比赛得以推迟。",
+     "why": "Vế trước của 得以 phải là điều kiện giúp đạt KẾT QUẢ MONG MUỐN; mưa to khiến trận đấu phải hoãn là chuyện bất đắc dĩ → dùng 不得不.",
+     "right": "因为下大雨，比赛不得不推迟。"
+    }
+   ]
+  },
+  {
+   "point": "偏偏",
+   "explain": "偏偏 là PHÓ TỪ, có hai cách dùng chính. ① Chủ quan CỐ Ý làm trái với yêu cầu hoặc tình hình khách quan — \"cứ nhất định, lại cứ\"; thường đi với 要 / 不: 大家劝他别去，他偏偏要去. ② Sự thật TRÁI NGƯỢC với mong muốn, yêu cầu hoặc lẽ thường — \"trớ trêu thay, lại đúng lúc, riêng … lại\": 我正要出门，天偏偏下起了雨; 为什么偏偏这种细菌能够存活下来? 偏偏 đứng trước động từ hoặc trước chủ ngữ (为什么偏偏这种细菌……, 可偏偏他……), hay đi với 可 / 却 / 可是 ở vế có ý chuyển.",
+   "rule": "① (người khác muốn A)，chủ ngữ + <strong style=\"color:var(--sky-d)\">偏偏</strong> + 要 / 不 + V　|　② ……，(可 / 却) + <strong style=\"color:var(--sky-d)\">偏偏</strong> + (chủ ngữ) + V",
+   "examples": [
+    {
+     "zh": "那里太危险了，大家都劝他不要去，他偏偏要去。",
+     "py": "Nàli tài wēixiǎn le, dàjiā dōu quàn tā bú yào qù, tā piānpiān yào qù.",
+     "vn": "Chỗ đó nguy hiểm quá, ai cũng khuyên anh ta đừng đi, vậy mà anh ta cứ nhất định đòi đi."
+    },
+    {
+     "zh": "30年前我们班那个最不爱说话、最不起眼儿的女生，今天偏偏最成功。",
+     "py": "Sānshí nián qián wǒmen bān nàge zuì bú ài shuōhuà, zuì bù qǐyǎnr de nǚshēng, jīntiān piānpiān zuì chénggōng.",
+     "vn": "Cô bạn ít nói nhất, mờ nhạt nhất lớp chúng tôi 30 năm trước, hôm nay lại chính là người thành công nhất."
+    },
+    {
+     "zh": "高于40℃，大部分植物和动物就无法成活；高于65℃，多数细菌会丧失生命，可是，为什么偏偏这种细菌能够存活下来？",
+     "py": "Gāoyú sìshí shèshìdù, dà bùfen zhíwù hé dòngwù jiù wúfǎ chénghuó; gāoyú liùshíwǔ shèshìdù, duōshù xìjūn huì sàngshī shēngmìng, kěshì, wèi shénme piānpiān zhè zhǒng xìjūn nénggòu cúnhuó xiàlái?",
+     "vn": "Cao hơn 40℃, phần lớn thực vật và động vật không sống nổi; cao hơn 65℃, đa số vi khuẩn sẽ chết; thế nhưng, tại sao riêng loại vi khuẩn này lại sống sót được?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他偏偏喜欢学习，所以成绩很好。",
+     "why": "偏偏 phải mang ý TRÁI với mong muốn, yêu cầu hoặc lẽ thường; \"thích học nên học giỏi\" là thuận chiều, không có gì trái ngược → bỏ 偏偏.",
+     "right": "他特别喜欢学习，所以成绩很好。"
+    },
+    {
+     "wrong": "我让他早点儿睡，他偏偏睡。",
+     "why": "Cách dùng ① (cố ý làm ngược) cần 要 / 不: người khác bảo ngủ sớm → cố tình không ngủ = 偏偏不睡.",
+     "right": "我让他早点儿睡，他偏偏不睡。"
+    }
+   ]
+  }
+ ]
+}

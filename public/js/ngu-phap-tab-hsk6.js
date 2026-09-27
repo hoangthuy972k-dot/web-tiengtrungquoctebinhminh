@@ -18488,3 +18488,945 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-20.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-21.html"] = [
+ {
+  "so": "1",
+  "ten": "「以免」",
+  "tenVn": "",
+  "cauTruc": [
+   "A，以免 + B (điều không mong muốn) — để tránh B",
+   "以免 đứng đầu phân câu sau (văn viết)",
+   "So sánh: 以便 + điều mong muốn; 免得 (khẩu ngữ)"
+  ],
+  "giaiThich": "\"以免\" là LIÊN TỪ, biểu thị làm việc ở vế trước là để TRÁNH xảy ra một tình huống không mong muốn (以 = để, 免 = tránh). Thường đứng ở ĐẦU PHÂN CÂU SAU; phía sau là điều xấu, điều bất lợi (发生事故, 丢失, 被淘汰, 错过…). Dùng nhiều trong văn viết, lời nhắc nhở, quy định. Gần nghĩa: 免得 (khẩu ngữ hơn, ôn HSK 6 bài 14), 省得; đối lập về mục đích: 以便 (để tiện làm điều TỐT, ôn bài 16). Không dùng 以免 ở đầu câu thứ nhất, cũng không nói 为了以免.",
+  "viDu": [
+   {
+    "zh": "重要的是，要学会从失败中吸取教训，以免今后再发生类似的问题。",
+    "py": "Zhòngyào de shì, yào xuéhuì cóng shībài zhōng xīqǔ jiàoxùn, yǐmiǎn jīnhòu zài fāshēng lèisì de wèntí.",
+    "vn": "Điều quan trọng là phải học cách rút ra bài học từ thất bại, để sau này khỏi xảy ra vấn đề tương tự nữa."
+   },
+   {
+    "zh": "感冒时应尽量少去公共场所，必须去的话，最好戴上口罩，以免传染别人。",
+    "py": "Gǎnmào shí yīng jǐnliàng shǎo qù gōnggòng chǎngsuǒ, bìxū qù dehuà, zuìhǎo dàishang kǒuzhào, yǐmiǎn chuánrǎn biérén.",
+    "vn": "Khi bị cảm nên hạn chế đến nơi công cộng; nếu buộc phải đi thì tốt nhất đeo khẩu trang, để tránh lây cho người khác."
+   },
+   {
+    "zh": "消费者想买哪种商品，小屏幕上就会显示商品所在的位置，当消费者走到相应货架时，仪器会发出提示音，以免消费者错过商品。",
+    "py": "Xiāofèizhě xiǎng mǎi nǎ zhǒng shāngpǐn, xiǎo píngmù shang jiù huì xiǎnshì shāngpǐn suǒzài de wèizhi, dāng xiāofèizhě zǒudào xiāngyìng huòjià shí, yíqì huì fāchū tíshìyīn, yǐmiǎn xiāofèizhě cuòguò shāngpǐn.",
+    "vn": "Người tiêu dùng muốn mua loại hàng nào, màn hình nhỏ sẽ hiện vị trí của món hàng; khi đi tới kệ tương ứng, thiết bị sẽ phát âm báo để người tiêu dùng khỏi bỏ lỡ món hàng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "以免迟到，我们早点儿出发吧。",
+    "why": "以免 là liên từ nối vế SAU, không đứng đầu câu thứ nhất như 为了.",
+    "dung": "我们早点儿出发吧，以免迟到。（或：为了不迟到，我们早点儿出发吧。）"
+   },
+   {
+    "sai": "请大家提前报名，以免我们统计人数。",
+    "why": "统计人数 là việc MONG MUỐN làm cho thuận tiện, không phải điều cần tránh → dùng 以便.",
+    "dung": "请大家提前报名，以便我们统计人数。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "当消费者走到相应货架时，仪器会发出提示音，",
+       "消费者错过商品。"
+      ],
+      "dap": [
+       [
+        "以免"
+       ]
+      ],
+      "chon": [
+       "以免",
+       "以便",
+       "何况"
+      ],
+      "goiY": "\"Thiết bị phát âm báo để người tiêu dùng khỏi bỏ lỡ hàng.\" (câu bài khoá)",
+      "giai": "Bỏ lỡ hàng là điều cần TRÁNH → 以免. 以便 dùng cho mục đích tốt."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "感冒时最好戴上口罩，",
+       "传染别人。"
+      ],
+      "dap": [
+       [
+        "以免"
+       ]
+      ],
+      "chon": [
+       "以免",
+       "从而",
+       "于是"
+      ],
+      "goiY": "\"Khi cảm tốt nhất đeo khẩu trang, để tránh lây cho người khác.\" (ví dụ của sách)",
+      "giai": "以免 + điều xấu (传染别人); 从而, 于是 chỉ kết quả."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "请大家提前报名，",
+       "我们统计人数。"
+      ],
+      "dap": [
+       [
+        "以便"
+       ]
+      ],
+      "chon": [
+       "以便",
+       "以免",
+       "免得"
+      ],
+      "goiY": "\"Mời mọi người đăng ký trước, để chúng tôi tiện thống kê số người.\"",
+      "giai": "Thống kê số người là việc MONG MUỐN → 以便 (ôn bài 16), không dùng 以免."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "过马路时要看清红绿灯，以免",
+       "交通事故。"
+      ],
+      "dap": [
+       [
+        "发生"
+       ]
+      ],
+      "chon": [
+       "发生",
+       "产生",
+       "出生"
+      ],
+      "goiY": "\"Sang đường phải nhìn rõ đèn, để tránh xảy ra tai nạn.\"",
+      "giai": "以免发生 + 事故 / 危险 / 问题 là cụm rất thường gặp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "重要的是要学会吸取教训，以免今后",
+       "发生类似的问题。"
+      ],
+      "dap": [
+       [
+        "再"
+       ]
+      ],
+      "chon": [
+       "再",
+       "又",
+       "还"
+      ],
+      "goiY": "\"Phải biết rút kinh nghiệm để sau này khỏi xảy ra lại vấn đề tương tự.\" (ví dụ của sách)",
+      "giai": "Việc chưa xảy ra lại trong tương lai → 再; 又 dùng cho việc đã lặp lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们必须不断学习，以免",
+       "社会淘汰。"
+      ],
+      "dap": [
+       [
+        "被"
+       ]
+      ],
+      "chon": [
+       "被",
+       "把",
+       "给"
+      ],
+      "goiY": "\"Chúng ta phải không ngừng học tập, để khỏi bị xã hội đào thải.\" (练一练 (3))",
+      "giai": "以免 + 被 + V: tránh bị …."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "以免",
+       "定好了闹钟",
+       "他",
+       "耽误考试",
+       "，"
+      ],
+      "dap": [
+       "他定好了闹钟，以免耽误考试。"
+      ],
+      "goiY": "Cậu ấy đã đặt sẵn báo thức để khỏi lỡ buổi thi.",
+      "giai": "以免 đứng đầu vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "经常",
+       "以免",
+       "保存文件",
+       "丢失",
+       "，",
+       "要"
+      ],
+      "dap": [
+       "要经常保存文件，以免丢失。"
+      ],
+      "goiY": "Phải thường xuyên lưu tệp, kẻo bị mất.",
+      "giai": "Vế sau 以免 có thể chỉ là một động từ (丢失)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "以免",
+       "被淋湿",
+       "带把伞吧",
+       "你",
+       "，"
+      ],
+      "dap": [
+       "你带把伞吧，以免被淋湿。"
+      ],
+      "goiY": "Cậu mang theo ô đi, kẻo bị ướt.",
+      "giai": "以免 + 被 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "以免迟到，我们早点儿出发吧。",
+      "dung": false,
+      "sua": "我们早点儿出发吧，以免迟到。",
+      "giai": "以免 không đứng đầu câu thứ nhất; nó mở đầu vế sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "机动车和非机动车应该各行其道，以免发生交通事故。",
+      "dung": true,
+      "giai": "Đúng: vế trước nêu việc cần làm, 以免 + điều cần tránh (练一练 (1))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "为了以免忘记，我把生词写在本子上。",
+      "dung": false,
+      "sua": "我把生词写在本子上，以免忘记。",
+      "giai": "Không nói 为了以免. Dùng 为了不…… hoặc đặt 以免 ở vế sau."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ra khỏi nhà nhớ khoá cửa, kẻo bị trộm.",
+      "dap": [
+       "出门记得锁好门，以免被偷。",
+       "出门的时候记得把门锁好，以免被偷。",
+       "出门记得锁门，以免东西被偷。"
+      ],
+      "py": "Chūmén jìde suǒhǎo mén, yǐmiǎn bèi tōu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以免.",
+      "giai": "以免 + 被 + V; câu tỉnh lược chủ ngữ (你)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chúng ta nên xuất phát sớm một chút, để khỏi bị kẹt xe dọc đường.",
+      "dap": [
+       "我们应该早点儿出发，以免在路上堵车。",
+       "我们最好早点儿出发，以免路上堵车。",
+       "咱们早点儿走吧，以免在路上堵车。"
+      ],
+      "py": "Wǒmen yīnggāi zǎo diǎnr chūfā, yǐmiǎn zài lù shang dǔchē.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以免.",
+      "giai": "Adj + 点儿 + V; 以免 mở đầu vế sau."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "机动车和非机动车应该各行其道，以免＿＿＿。",
+      "goiY": "Dùng 以免 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "机动车和非机动车应该各行其道，以免发生交通事故。",
+      "can": [
+       [
+        "发生",
+        "事故",
+        "危险"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "使用电脑工作时，不要忘了经常保存你的文件，以免＿＿＿。",
+      "goiY": "Dùng 以免 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "使用电脑工作时，不要忘了经常保存你的文件，以免丢失。",
+      "can": [
+       [
+        "丢失",
+        "丢",
+        "没了",
+        "找不到"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我们必须不断地看书、学习、充实自己，以免＿＿＿。",
+      "goiY": "Dùng 以免 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "我们必须不断地看书、学习、充实自己，以免被社会淘汰。",
+      "can": [
+       [
+        "淘汰",
+        "落后"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「嫌」",
+  "tenVn": "",
+  "cauTruc": [
+   "嫌 + N / Adj: 嫌腥, 嫌麻烦, 嫌贵",
+   "嫌 + mệnh đề: 嫌这个计划不够合理",
+   "从不嫌 / 没嫌过 + …: không ngại, chưa từng chê"
+  ],
+  "giaiThich": "\"嫌\" là ĐỘNG TỪ, biểu thị KHÔNG THÍCH, KHÔNG HÀI LÒNG (chê, ngại) vì một đặc điểm nào đó. Khuôn thường dùng: \"嫌 + danh từ / tính từ / mệnh đề\" — 嫌腥, 嫌麻烦, 嫌这个计划不够合理. Tân ngữ của 嫌 chính là LÝ DO khiến ta không hài lòng; vế sau thường nêu hành động do không hài lòng mà ra (不愿……, 就……, 所以……). Phủ định: 不嫌 / 从不嫌 / 没嫌过 (không ngại, chưa từng chê). Khác 讨厌 (ghét nói chung) — 嫌 luôn gắn với một điểm cụ thể bị chê.",
+  "viDu": [
+   {
+    "zh": "我从来没嫌你，也没嫌过孩子哭。",
+    "py": "Wǒ cónglái méi xián nǐ, yě méi xiánguo háizi kū.",
+    "vn": "Tôi chưa bao giờ chê anh, cũng chưa từng khó chịu vì con khóc."
+   },
+   {
+    "zh": "如果你想吃鲜鱼，又嫌腥，不愿自己加工，可以在触摸屏上留言，等店员把鱼清理好后，再去领取，不必排队等候。",
+    "py": "Rúguǒ nǐ xiǎng chī xiānyú, yòu xián xīng, bú yuàn zìjǐ jiāgōng, kěyǐ zài chùmōpíng shang liúyán, děng diànyuán bǎ yú qīnglǐ hǎo hòu, zài qù lǐngqǔ, búbì páiduì děnghòu.",
+    "vn": "Nếu bạn muốn ăn cá tươi mà lại ngại tanh, không muốn tự sơ chế, có thể để lại lời nhắn trên màn hình cảm ứng, đợi nhân viên làm sạch cá xong rồi hẵng đến lấy, không cần xếp hàng chờ."
+   },
+   {
+    "zh": "大家都嫌这个旅行计划不够合理，几个最值得去的地方都不在计划之内。",
+    "py": "Dàjiā dōu xián zhège lǚxíng jìhuà bú gòu hélǐ, jǐ ge zuì zhíde qù de dìfang dōu bú zài jìhuà zhī nèi.",
+    "vn": "Mọi người đều chê kế hoạch du lịch này chưa hợp lý, mấy nơi đáng đi nhất đều không có trong kế hoạch."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我很嫌他。",
+    "why": "嫌 thường cần nêu ĐIỂM bị chê; nói chung chung \"ghét ai\" thì dùng 讨厌.",
+    "dung": "我嫌他说话太啰唆。（或：我很讨厌他。）"
+   },
+   {
+    "sai": "她嫌这件衣服很漂亮，就买了。",
+    "why": "嫌 chỉ dùng cho đặc điểm KHÔNG hài lòng; khen đẹp rồi mua thì dùng 觉得.",
+    "dung": "她觉得这件衣服很漂亮，就买了。（或：她嫌这件衣服太贵，就没买。）"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果你想吃鲜鱼，又",
+       "腥，不愿自己加工……"
+      ],
+      "dap": [
+       [
+        "嫌"
+       ]
+      ],
+      "chon": [
+       "嫌",
+       "怕",
+       "爱"
+      ],
+      "goiY": "\"Nếu bạn muốn ăn cá tươi mà lại ngại tanh…\" (câu bài khoá)",
+      "giai": "嫌 + Adj: chê / ngại vì đặc điểm đó (嫌腥)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她喜欢为大家做事，从不嫌",
+       "。"
+      ],
+      "dap": [
+       [
+        "麻烦"
+       ]
+      ],
+      "chon": [
+       "麻烦",
+       "高兴",
+       "热闹"
+      ],
+      "goiY": "\"Cô ấy thích làm việc cho mọi người, chưa bao giờ ngại phiền.\" (练一练 (1))",
+      "giai": "Sau 嫌 là đặc điểm KHÔNG thích (麻烦); 高兴, 热闹 không phải điều bị chê."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家都",
+       "这个旅行计划不够合理。"
+      ],
+      "dap": [
+       [
+        "嫌"
+       ]
+      ],
+      "chon": [
+       "嫌",
+       "喜欢",
+       "希望"
+      ],
+      "goiY": "\"Mọi người đều chê kế hoạch du lịch này chưa hợp lý.\" (ví dụ của sách)",
+      "giai": "嫌 + mệnh đề (这个旅行计划不够合理)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我从来没嫌你，也没嫌",
+       "孩子哭。"
+      ],
+      "dap": [
+       [
+        "过"
+       ]
+      ],
+      "chon": [
+       "过",
+       "了",
+       "着"
+      ],
+      "goiY": "\"Tôi chưa từng chê anh, cũng chưa từng khó chịu vì con khóc.\" (ví dụ của sách)",
+      "giai": "没 + V过 = chưa từng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他嫌那家饭馆太贵，",
+       "去了便宜的小店。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "再"
+      ],
+      "goiY": "\"Anh ấy chê quán đó đắt, nên đi quán nhỏ rẻ hơn.\"",
+      "giai": "Vế sau nêu hành động do không hài lòng → 就 (liền, thế là)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她",
+       "宿舍条件太差，决定搬出学校。"
+      ],
+      "dap": [
+       [
+        "嫌"
+       ]
+      ],
+      "chon": [
+       "嫌",
+       "讨厌",
+       "担心"
+      ],
+      "goiY": "\"Cô ấy chê điều kiện ký túc xá kém, quyết định dọn ra khỏi trường.\" (练一练 (3))",
+      "giai": "嫌 + mệnh đề lý do; 讨厌 không đi với mệnh đề đánh giá kiểu này tự nhiên bằng."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "嫌",
+       "我",
+       "太油腻",
+       "食堂的饭菜"
+      ],
+      "dap": [
+       "我嫌食堂的饭菜太油腻。"
+      ],
+      "goiY": "Tôi chê đồ ăn căng tin quá nhiều dầu mỡ.",
+      "giai": "S + 嫌 + mệnh đề."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "从不",
+       "嫌",
+       "她",
+       "累"
+      ],
+      "dap": [
+       "她从不嫌累。"
+      ],
+      "goiY": "Cô ấy chưa bao giờ ngại mệt.",
+      "giai": "从不 đứng trước 嫌."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "衣服款式",
+       "嫌",
+       "他",
+       "过时"
+      ],
+      "dap": [
+       "他嫌衣服款式过时。"
+      ],
+      "goiY": "Anh ấy chê kiểu quần áo lỗi mốt.",
+      "giai": "嫌 + N + Adj."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她嫌这件衣服很漂亮，就买了。",
+      "dung": false,
+      "sua": "她觉得这件衣服很漂亮，就买了。",
+      "giai": "嫌 chỉ dùng cho đặc điểm không hài lòng; khen thì dùng 觉得."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他嫌房子离公司太远，所以一直没租。",
+      "dung": true,
+      "giai": "嫌 + mệnh đề lý do + 所以 kết quả — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我嫌去超市买东西。",
+      "dung": false,
+      "sua": "我嫌超市人太多，不想去买东西。",
+      "giai": "Sau 嫌 cần đặc điểm bị chê, không phải hành động mình định làm."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Em gái tôi ngại tanh nên chẳng bao giờ ăn hải sản.",
+      "dap": [
+       "我妹妹嫌腥，所以从来不吃海鲜。",
+       "我妹妹嫌海鲜腥，从来不吃。",
+       "我妹妹嫌腥，从来都不吃海鲜。"
+      ],
+      "py": "Wǒ mèimei xián xīng, suǒyǐ cónglái bù chī hǎixiān.",
+      "goiY": "Dịch sang tiếng Trung, dùng 嫌.",
+      "giai": "嫌 + Adj (腥); 从来不 + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỉ cần giúp được mọi người, anh ấy chưa bao giờ ngại phiền.",
+      "dap": [
+       "只要能帮上大家的忙，他从来不嫌麻烦。",
+       "只要能帮助大家，他从不嫌麻烦。",
+       "只要能帮上大家，他从来都不嫌麻烦。"
+      ],
+      "py": "Zhǐyào néng bāngshang dàjiā de máng, tā cónglái bù xián máfan.",
+      "goiY": "Dịch sang tiếng Trung, dùng 嫌.",
+      "giai": "从来不嫌 / 从不嫌 + Adj."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "她喜欢为大家做事，从不嫌＿＿＿。",
+      "goiY": "Hoàn thành câu (练一练 (1) của sách).",
+      "mau": "她喜欢为大家做事，从不嫌麻烦。",
+      "can": [
+       [
+        "麻烦",
+        "累",
+        "辛苦"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他嫌＿＿＿，衣服送来以后就放在那儿，一次都没穿过。",
+      "goiY": "Hoàn thành câu (练一练 (2) của sách).",
+      "mau": "他嫌衣服款式过时，衣服送来以后就放在那儿，一次都没穿过。",
+      "can": [
+       [
+        "过时",
+        "难看",
+        "不好看",
+        "颜色",
+        "太"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "她嫌＿＿＿，决定搬出学校，和朋友一块儿在外面合租房子。",
+      "goiY": "Hoàn thành câu (练一练 (3) của sách).",
+      "mau": "她嫌宿舍条件太差，决定搬出学校，和朋友一块儿在外面合租房子。",
+      "can": [
+       [
+        "宿舍",
+        "条件",
+        "太",
+        "吵",
+        "小"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「篇章：省略主语」",
+  "tenVn": "",
+  "cauTruc": [
+   "Các phân câu cùng chủ ngữ: chỉ nêu chủ ngữ ở phân câu đầu",
+   "Chủ ngữ đổi: phải nêu chủ ngữ mới",
+   "Lỗi thường gặp: 主语重复 (lặp chủ ngữ)"
+  ],
+  "giaiThich": "Đây là phần 篇章修辞 (tu từ văn bản) đầu tiên của quyển 下. Khi các phân câu trước sau có CÙNG CHỦ NGỮ, vì phân câu đầu đã nêu chủ ngữ nên các phân câu sau thường TỈNH LƯỢC chủ ngữ — câu văn gọn, liền mạch. Lặp lại chủ ngữ không cần thiết (他……，他……，他……) là lỗi \"主语重复\" hay gặp của học sinh Việt Nam (vì tiếng Việt thường nhắc lại chủ ngữ). Ngược lại, khi chủ ngữ ĐỔI (我在前面走，它在后面跟着) thì phải nêu chủ ngữ mới; sau khi đổi, nếu quay lại chủ ngữ cũ cũng nên nêu lại cho rõ.",
+  "viDu": [
+   {
+    "zh": "如果你想吃鲜鱼，（你）又嫌腥，（你）不愿自己加工，（你）可以在触摸屏上留言，（你）等店员把鱼清理好后，（你）再去领取，（你）不必排队等候。",
+    "py": "Rúguǒ nǐ xiǎng chī xiānyú, (nǐ) yòu xián xīng, (nǐ) bú yuàn zìjǐ jiāgōng, (nǐ) kěyǐ zài chùmōpíng shang liúyán, (nǐ) děng diànyuán bǎ yú qīnglǐ hǎo hòu, (nǐ) zài qù lǐngqǔ, (nǐ) búbì páiduì děnghòu.",
+    "vn": "Nếu bạn muốn ăn cá tươi, (bạn) lại ngại tanh, (bạn) không muốn tự sơ chế, (bạn) có thể để lại lời nhắn trên màn hình cảm ứng, (bạn) đợi nhân viên làm sạch cá xong, (bạn) rồi đến lấy, (bạn) không cần xếp hàng chờ. — Chủ ngữ trong ngoặc được tỉnh lược."
+   },
+   {
+    "zh": "你登录到虚拟设计室，（你）进入设计过程，（你）对颜色、外观等设计内容进行投票，这样设计出来的衣服保管你满意。",
+    "py": "Nǐ dēnglù dào xūnǐ shèjìshì, (nǐ) jìnrù shèjì guòchéng, (nǐ) duì yánsè, wàiguān děng shèjì nèiróng jìnxíng tóupiào, zhèyàng shèjì chūlái de yīfu bǎoguǎn nǐ mǎnyì.",
+    "vn": "Bạn đăng nhập vào phòng thiết kế ảo, (bạn) bước vào quá trình thiết kế, (bạn) bỏ phiếu cho các nội dung như màu sắc, kiểu dáng; quần áo thiết kế ra như vậy đảm bảo bạn hài lòng."
+   },
+   {
+    "zh": "他们先从学校去了车站，然后（他们）坐了6个小时的火车到了林县，（他们）又从林县坐了2个小时的大巴才终于到了红旗渠。",
+    "py": "Tāmen xiān cóng xuéxiào qùle chēzhàn, ránhòu (tāmen) zuòle liù ge xiǎoshí de huǒchē dàole Lín Xiàn, (tāmen) yòu cóng Lín Xiàn zuòle liǎng ge xiǎoshí de dàbā cái zhōngyú dàole Hóngqí Qú.",
+    "vn": "Họ trước tiên đi từ trường ra ga, sau đó (họ) ngồi tàu 6 tiếng đến huyện Lâm, (họ) lại từ huyện Lâm đi xe khách 2 tiếng mới đến được kênh Hồng Kỳ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他八岁起就喜欢上了足球，他天天在球场上一直泡到天黑，后来他终于进了国家队。",
+    "why": "Ba phân câu cùng chủ ngữ 他 — lặp lại là thừa (主语重复).",
+    "dung": "他八岁起就喜欢上了足球，天天在球场上一直泡到天黑，后来终于进了国家队。"
+   },
+   {
+    "sai": "我在前面走，在后面跟着，两只大眼睛看着我。",
+    "why": "Chủ ngữ ĐỔI từ 我 sang con mèo (它) → phải nêu chủ ngữ mới, không được tỉnh lược.",
+    "dung": "我在前面走，它在后面跟着，两只大眼睛看着我。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果你想吃鲜鱼，（",
+       "）又嫌腥，不愿自己加工。"
+      ],
+      "dap": [
+       [
+        "你"
+       ]
+      ],
+      "chon": [
+       "你",
+       "我",
+       "店员"
+      ],
+      "goiY": "\"Nếu bạn muốn ăn cá tươi, (bạn) lại ngại tanh…\" — điền chủ ngữ đã tỉnh lược (ví dụ của sách).",
+      "giai": "Cùng chủ ngữ 你 với phân câu đầu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们先从学校去了车站，然后（",
+       "）坐了6个小时的火车到了林县。"
+      ],
+      "dap": [
+       [
+        "他们"
+       ]
+      ],
+      "chon": [
+       "他们",
+       "我们",
+       "火车"
+      ],
+      "goiY": "\"Họ đi từ trường ra ga, rồi (họ) ngồi tàu 6 tiếng.\" (ví dụ của sách)",
+      "giai": "Chủ ngữ 他们 xuyên suốt, được tỉnh lược ở phân câu sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他到了就业的年龄，（",
+       "）没有找工作，一天到晚四处闲逛。"
+      ],
+      "dap": [
+       [
+        "他"
+       ]
+      ],
+      "chon": [
+       "他",
+       "我",
+       "他们"
+      ],
+      "goiY": "\"Anh ta đến tuổi đi làm, (anh ta) không tìm việc…\" (练习4 ②)",
+      "giai": "Chủ ngữ 他 nêu một lần ở đầu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "作为演员，我非常渴望观众的掌声，（",
+       "）把它看作是对我演艺事业最高的奖赏。"
+      ],
+      "dap": [
+       [
+        "我"
+       ]
+      ],
+      "chon": [
+       "我",
+       "观众",
+       "掌声"
+      ],
+      "goiY": "\"Là diễn viên, tôi rất khao khát tràng vỗ tay, (tôi) coi đó là phần thưởng cao nhất.\" (练习4 ③)",
+      "giai": "Người \"coi\" là 我, không phải 观众."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我在前面走，",
+       "在后面跟着，两只大眼睛看着我。"
+      ],
+      "dap": [
+       [
+        "它"
+       ]
+      ],
+      "chon": [
+       "它",
+       "我",
+       "（不填）"
+      ],
+      "goiY": "\"Tôi đi phía trước, nó đi theo phía sau…\" (练一练 (3))",
+      "giai": "Chủ ngữ ĐỔI (我 → 它) nên phải nêu 它, không được bỏ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "从前有一个男孩，（",
+       "）和我们年纪一样大，当然也有很多想法。"
+      ],
+      "dap": [
+       [
+        "他"
+       ]
+      ],
+      "chon": [
+       "他",
+       "我们",
+       "我"
+      ],
+      "goiY": "\"Ngày xưa có một cậu bé, (cậu ấy) bằng tuổi chúng ta…\" (练习4 ①)",
+      "giai": "Chủ thể được giới thiệu là 男孩 → chủ ngữ tỉnh lược là 他."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "登录到虚拟设计室",
+       "你",
+       "进入设计过程",
+       "，"
+      ],
+      "dap": [
+       "你登录到虚拟设计室，进入设计过程。"
+      ],
+      "goiY": "Bạn đăng nhập phòng thiết kế ảo, bước vào quá trình thiết kế.",
+      "giai": "Chủ ngữ 你 chỉ đứng đầu; phân câu sau tỉnh lược."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "后来",
+       "终于",
+       "进了国家队",
+       "他",
+       "天天练球",
+       "，"
+      ],
+      "dap": [
+       "他天天练球，后来终于进了国家队。"
+      ],
+      "goiY": "Ngày nào cậu ấy cũng tập bóng, sau này cuối cùng vào được đội tuyển quốc gia.",
+      "giai": "Không lặp lại 他 trước 终于."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "又擦玻璃",
+       "全家人",
+       "又打扫卫生",
+       "，"
+      ],
+      "dap": [
+       "全家人又打扫卫生，又擦玻璃。"
+      ],
+      "goiY": "Cả nhà vừa dọn vệ sinh vừa lau kính.",
+      "giai": "又……，又…… cùng chủ ngữ 全家人."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他八岁起就喜欢上了足球，他天天在球场上一直泡到天黑。",
+      "dung": false,
+      "sua": "他八岁起就喜欢上了足球，天天在球场上一直泡到天黑。",
+      "giai": "Lặp chủ ngữ 他 (主语重复)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你登录到虚拟设计室，进入设计过程，对颜色进行投票。",
+      "dung": true,
+      "giai": "Các phân câu cùng chủ ngữ 你 đã tỉnh lược đúng — câu gọn, liền mạch."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我在前面走，在后面跟着。",
+      "dung": false,
+      "sua": "我在前面走，它在后面跟着。",
+      "giai": "Người đi trước là 我, kẻ theo sau là con mèo — chủ ngữ ĐỔI nên phải nêu chủ ngữ mới, không được tỉnh lược."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy về đến nhà, cởi áo khoác, rồi liền ngồi vào bàn học bài.",
+      "dap": [
+       "他回到家，脱了外套，就坐到书桌前学习。",
+       "他回到家，脱下外套，然后就坐在书桌前学习了。",
+       "他一回家就脱了外套，坐到书桌前学习。"
+      ],
+      "py": "Tā huídào jiā, tuōle wàitào, jiù zuòdào shūzhuō qián xuéxí.",
+      "goiY": "Dịch sang tiếng Trung, chú ý TỈNH LƯỢC chủ ngữ ở các phân câu sau.",
+      "giai": "Ba hành động cùng chủ ngữ 他 → chỉ nêu 他 một lần."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chị ấy mở cửa hàng online, tự thiết kế quần áo, tự chụp ảnh, sau này việc làm ăn ngày càng phát đạt.",
+      "dap": [
+       "她开了一家网店，自己设计衣服，自己拍照片，后来生意越来越兴隆。",
+       "她开了个网店，自己设计衣服、自己拍照，后来生意越来越兴隆了。",
+       "她开了一家网店，自己设计服装，自己拍照，后来生意越做越兴隆。"
+      ],
+      "py": "Tā kāile yì jiā wǎngdiàn, zìjǐ shèjì yīfu, zìjǐ pāi zhàopiàn, hòulái shēngyi yuè lái yuè xīnglóng.",
+      "goiY": "Dịch sang tiếng Trung, tỉnh lược chủ ngữ 她 ở các phân câu sau; dùng 兴隆.",
+      "giai": "Chỉ nêu 她 ở đầu; vế cuối chủ ngữ đổi thành 生意 nên phải nêu."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "新年的临近给全家带来了节日的气氛，全家人又打扫卫生，全家人又擦玻璃，还买来了花瓶，插上了鲜花。",
+      "goiY": "Chỉ ra vấn đề của câu và sửa lại (篇章修辞 · 练一练 (1) của sách).",
+      "mau": "新年的临近给全家带来了节日的气氛，全家人又打扫卫生，又擦玻璃，还买来了花瓶，插上了鲜花。",
+      "can": [
+       [
+        "又打扫卫生，又擦玻璃"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他八岁起就喜欢上了足球，他天天在球场上一直泡到天黑，后来他终于进了国家队。",
+      "goiY": "Chỉ ra vấn đề của câu và sửa lại (篇章修辞 · 练一练 (2) của sách).",
+      "mau": "他八岁起就喜欢上了足球，天天在球场上一直泡到天黑，后来终于进了国家队。",
+      "can": [
+       [
+        "足球，天天"
+       ],
+       [
+        "后来终于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那是一只黄色的小猫，它只比我的手掌大一点儿，我给它起了个名字叫宝宝。我在前面走，它在后面跟着，它两只大眼睛看着我，它眼中充满无知、天真、信任和快乐。",
+      "goiY": "Chỉ ra vấn đề của câu và sửa lại (篇章修辞 · 练一练 (3) của sách).",
+      "mau": "那是一只黄色的小猫，只比我的手掌大一点儿，我给它起了个名字叫宝宝。我在前面走，它在后面跟着，两只大眼睛看着我，眼中充满无知、天真、信任和快乐。",
+      "can": [
+       [
+        "小猫，只比"
+       ],
+       [
+        "跟着，两只"
+       ],
+       [
+        "我，眼中"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

@@ -1,0 +1,112 @@
+{
+ "zh": "未来商店",
+ "py": "Wèilái shāngdiàn",
+ "vn": "Cửa hàng tương lai",
+ "topic": "第六单元 趣味世界 · Mua sắm trong thời đại số và cửa hàng tương lai",
+ "vocabCount": 54,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "以免",
+   "explain": "\"以免\" là LIÊN TỪ, biểu thị làm việc ở vế trước là để TRÁNH xảy ra một tình huống không mong muốn (以 = để, 免 = tránh). Thường đứng ở ĐẦU PHÂN CÂU SAU; phía sau là điều xấu, điều bất lợi (发生事故, 丢失, 被淘汰, 错过…). Dùng nhiều trong văn viết, lời nhắc nhở, quy định. Gần nghĩa: 免得 (khẩu ngữ hơn, ôn HSK 6 bài 14), 省得; đối lập về mục đích: 以便 (để tiện làm điều TỐT, ôn bài 16). Không dùng 以免 ở đầu câu thứ nhất, cũng không nói 为了以免.",
+   "rule": "A (việc cần làm)，<strong style=\"color:var(--sky-d)\">以免</strong> + B (điều không mong muốn)　|　<strong style=\"color:var(--sky-d)\">以免</strong> + 被 + V / 发生…… / 再……　|　so sánh: ……，<strong style=\"color:var(--sky-d)\">以便</strong> + điều mong muốn",
+   "examples": [
+    {
+     "zh": "重要的是，要学会从失败中吸取教训，以免今后再发生类似的问题。",
+     "py": "Zhòngyào de shì, yào xuéhuì cóng shībài zhōng xīqǔ jiàoxùn, yǐmiǎn jīnhòu zài fāshēng lèisì de wèntí.",
+     "vn": "Điều quan trọng là phải học cách rút ra bài học từ thất bại, để sau này khỏi xảy ra vấn đề tương tự nữa."
+    },
+    {
+     "zh": "感冒时应尽量少去公共场所，必须去的话，最好戴上口罩，以免传染别人。",
+     "py": "Gǎnmào shí yīng jǐnliàng shǎo qù gōnggòng chǎngsuǒ, bìxū qù dehuà, zuìhǎo dàishang kǒuzhào, yǐmiǎn chuánrǎn biérén.",
+     "vn": "Khi bị cảm nên hạn chế đến nơi công cộng; nếu buộc phải đi thì tốt nhất đeo khẩu trang, để tránh lây cho người khác."
+    },
+    {
+     "zh": "消费者想买哪种商品，小屏幕上就会显示商品所在的位置，当消费者走到相应货架时，仪器会发出提示音，以免消费者错过商品。",
+     "py": "Xiāofèizhě xiǎng mǎi nǎ zhǒng shāngpǐn, xiǎo píngmù shang jiù huì xiǎnshì shāngpǐn suǒzài de wèizhi, dāng xiāofèizhě zǒudào xiāngyìng huòjià shí, yíqì huì fāchū tíshìyīn, yǐmiǎn xiāofèizhě cuòguò shāngpǐn.",
+     "vn": "Người tiêu dùng muốn mua loại hàng nào, màn hình nhỏ sẽ hiện vị trí của món hàng; khi đi tới kệ tương ứng, thiết bị sẽ phát âm báo để người tiêu dùng khỏi bỏ lỡ món hàng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "以免迟到，我们早点儿出发吧。",
+     "why": "以免 là liên từ nối vế SAU, không đứng đầu câu thứ nhất như 为了.",
+     "right": "我们早点儿出发吧，以免迟到。（或：为了不迟到，我们早点儿出发吧。）"
+    },
+    {
+     "wrong": "请大家提前报名，以免我们统计人数。",
+     "why": "统计人数 là việc MONG MUỐN làm cho thuận tiện, không phải điều cần tránh → dùng 以便.",
+     "right": "请大家提前报名，以便我们统计人数。"
+    }
+   ]
+  },
+  {
+   "point": "嫌",
+   "explain": "\"嫌\" là ĐỘNG TỪ, biểu thị KHÔNG THÍCH, KHÔNG HÀI LÒNG (chê, ngại) vì một đặc điểm nào đó. Khuôn thường dùng: \"嫌 + danh từ / tính từ / mệnh đề\" — 嫌腥, 嫌麻烦, 嫌这个计划不够合理. Tân ngữ của 嫌 chính là LÝ DO khiến ta không hài lòng; vế sau thường nêu hành động do không hài lòng mà ra (不愿……, 就……, 所以……). Phủ định: 不嫌 / 从不嫌 / 没嫌过 (không ngại, chưa từng chê). Khác 讨厌 (ghét nói chung) — 嫌 luôn gắn với một điểm cụ thể bị chê.",
+   "rule": "<strong style=\"color:var(--sky-d)\">嫌</strong> + N / Adj（嫌腥 · 嫌麻烦 · 嫌贵）　|　<strong style=\"color:var(--sky-d)\">嫌</strong> + 小句（嫌这个计划不够合理）　|　<strong style=\"color:var(--sky-d)\">从不嫌</strong> / <strong style=\"color:var(--sky-d)\">没嫌过</strong> + ……",
+   "examples": [
+    {
+     "zh": "我从来没嫌你，也没嫌过孩子哭。",
+     "py": "Wǒ cónglái méi xián nǐ, yě méi xiánguo háizi kū.",
+     "vn": "Tôi chưa bao giờ chê anh, cũng chưa từng khó chịu vì con khóc."
+    },
+    {
+     "zh": "如果你想吃鲜鱼，又嫌腥，不愿自己加工，可以在触摸屏上留言，等店员把鱼清理好后，再去领取，不必排队等候。",
+     "py": "Rúguǒ nǐ xiǎng chī xiānyú, yòu xián xīng, bú yuàn zìjǐ jiāgōng, kěyǐ zài chùmōpíng shang liúyán, děng diànyuán bǎ yú qīnglǐ hǎo hòu, zài qù lǐngqǔ, búbì páiduì děnghòu.",
+     "vn": "Nếu bạn muốn ăn cá tươi mà lại ngại tanh, không muốn tự sơ chế, có thể để lại lời nhắn trên màn hình cảm ứng, đợi nhân viên làm sạch cá xong rồi hẵng đến lấy, không cần xếp hàng chờ."
+    },
+    {
+     "zh": "大家都嫌这个旅行计划不够合理，几个最值得去的地方都不在计划之内。",
+     "py": "Dàjiā dōu xián zhège lǚxíng jìhuà bú gòu hélǐ, jǐ ge zuì zhíde qù de dìfang dōu bú zài jìhuà zhī nèi.",
+     "vn": "Mọi người đều chê kế hoạch du lịch này chưa hợp lý, mấy nơi đáng đi nhất đều không có trong kế hoạch."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我很嫌他。",
+     "why": "嫌 thường cần nêu ĐIỂM bị chê; nói chung chung \"ghét ai\" thì dùng 讨厌.",
+     "right": "我嫌他说话太啰唆。（或：我很讨厌他。）"
+    },
+    {
+     "wrong": "她嫌这件衣服很漂亮，就买了。",
+     "why": "嫌 chỉ dùng cho đặc điểm KHÔNG hài lòng; khen đẹp rồi mua thì dùng 觉得.",
+     "right": "她觉得这件衣服很漂亮，就买了。（或：她嫌这件衣服太贵，就没买。）"
+    }
+   ]
+  },
+  {
+   "point": "篇章（1）省略主语",
+   "explain": "Đây là phần 篇章修辞 (tu từ văn bản) đầu tiên của quyển 下. Khi các phân câu trước sau có CÙNG CHỦ NGỮ, vì phân câu đầu đã nêu chủ ngữ nên các phân câu sau thường TỈNH LƯỢC chủ ngữ — câu văn gọn, liền mạch. Lặp lại chủ ngữ không cần thiết (他……，他……，他……) là lỗi \"主语重复\" hay gặp của học sinh Việt Nam (vì tiếng Việt thường nhắc lại chủ ngữ). Ngược lại, khi chủ ngữ ĐỔI (我在前面走，它在后面跟着) thì phải nêu chủ ngữ mới; sau khi đổi, nếu quay lại chủ ngữ cũ cũng nên nêu lại cho rõ.",
+   "rule": "S + V1，(<strong style=\"color:var(--sky-d)\">S</strong>) + V2，(<strong style=\"color:var(--sky-d)\">S</strong>) + V3　→　<strong style=\"color:var(--sky-d)\">cùng chủ ngữ: chỉ nêu một lần</strong>　|　S1 + V1，<strong style=\"color:var(--sky-d)\">S2</strong> + V2 → <strong style=\"color:var(--sky-d)\">chủ ngữ đổi: phải nêu</strong>",
+   "examples": [
+    {
+     "zh": "如果你想吃鲜鱼，（你）又嫌腥，（你）不愿自己加工，（你）可以在触摸屏上留言，（你）等店员把鱼清理好后，（你）再去领取，（你）不必排队等候。",
+     "py": "Rúguǒ nǐ xiǎng chī xiānyú, (nǐ) yòu xián xīng, (nǐ) bú yuàn zìjǐ jiāgōng, (nǐ) kěyǐ zài chùmōpíng shang liúyán, (nǐ) děng diànyuán bǎ yú qīnglǐ hǎo hòu, (nǐ) zài qù lǐngqǔ, (nǐ) búbì páiduì děnghòu.",
+     "vn": "Nếu bạn muốn ăn cá tươi, (bạn) lại ngại tanh, (bạn) không muốn tự sơ chế, (bạn) có thể để lại lời nhắn trên màn hình cảm ứng, (bạn) đợi nhân viên làm sạch cá xong, (bạn) rồi đến lấy, (bạn) không cần xếp hàng chờ. — Chủ ngữ trong ngoặc được tỉnh lược."
+    },
+    {
+     "zh": "你登录到虚拟设计室，（你）进入设计过程，（你）对颜色、外观等设计内容进行投票，这样设计出来的衣服保管你满意。",
+     "py": "Nǐ dēnglù dào xūnǐ shèjìshì, (nǐ) jìnrù shèjì guòchéng, (nǐ) duì yánsè, wàiguān děng shèjì nèiróng jìnxíng tóupiào, zhèyàng shèjì chūlái de yīfu bǎoguǎn nǐ mǎnyì.",
+     "vn": "Bạn đăng nhập vào phòng thiết kế ảo, (bạn) bước vào quá trình thiết kế, (bạn) bỏ phiếu cho các nội dung như màu sắc, kiểu dáng; quần áo thiết kế ra như vậy đảm bảo bạn hài lòng."
+    },
+    {
+     "zh": "他们先从学校去了车站，然后（他们）坐了6个小时的火车到了林县，（他们）又从林县坐了2个小时的大巴才终于到了红旗渠。",
+     "py": "Tāmen xiān cóng xuéxiào qùle chēzhàn, ránhòu (tāmen) zuòle liù ge xiǎoshí de huǒchē dàole Lín Xiàn, (tāmen) yòu cóng Lín Xiàn zuòle liǎng ge xiǎoshí de dàbā cái zhōngyú dàole Hóngqí Qú.",
+     "vn": "Họ trước tiên đi từ trường ra ga, sau đó (họ) ngồi tàu 6 tiếng đến huyện Lâm, (họ) lại từ huyện Lâm đi xe khách 2 tiếng mới đến được kênh Hồng Kỳ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他八岁起就喜欢上了足球，他天天在球场上一直泡到天黑，后来他终于进了国家队。",
+     "why": "Ba phân câu cùng chủ ngữ 他 — lặp lại là thừa (主语重复).",
+     "right": "他八岁起就喜欢上了足球，天天在球场上一直泡到天黑，后来终于进了国家队。"
+    },
+    {
+     "wrong": "我在前面走，在后面跟着，两只大眼睛看着我。",
+     "why": "Chủ ngữ ĐỔI từ 我 sang con mèo (它) → phải nêu chủ ngữ mới, không được tỉnh lược.",
+     "right": "我在前面走，它在后面跟着，两只大眼睛看着我。"
+    }
+   ]
+  }
+ ]
+}

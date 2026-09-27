@@ -2043,6 +2043,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-20.html'
+      },
+      {
+        id: 'hsk6-l21',
+        number: 21,
+        title: 'Cửa hàng tương lai',
+        titleHanzi: '未来商店',
+        titlePinyin: 'Wèilái shāngdiàn',
+        topic: '第六单元 趣味世界 · Mua sắm trong thời đại số và cửa hàng tương lai',
+        vocabCount: 54,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-21.html'
       }
     ],
     yct: [

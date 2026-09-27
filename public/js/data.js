@@ -1817,6 +1817,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-1.html'
       },
       {
+        id: 'hsk6-l4',
+        number: 4,
+        title: 'Chiến thắng hoàn hảo',
+        titleHanzi: '完美的胜利',
+        titlePinyin: 'Wánměi de shènglì',
+        topic: '第一单元 生活点滴 · Ngụ ngôn: biến kẻ thù thành bạn',
+        vocabCount: 48,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-4.html'
+      },
+      {
         id: 'hsk6-l6',
         number: 6,
         title: 'Làm tốt vai "học sinh chuyển lớp" nơi công sở',

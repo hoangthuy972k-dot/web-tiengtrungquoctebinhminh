@@ -1887,6 +1887,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-7.html'
+      },
+      {
+        id: 'hsk6-l8',
+        number: 8,
+        title: 'Gặp lại tôi của ngày xưa',
+        titleHanzi: '遇见原来的我',
+        titlePinyin: 'Yùjiàn yuánlái de wǒ',
+        topic: '第二单元 不甘平庸 · Bản thể, cái tôi và sự thay đổi của con người',
+        vocabCount: 41,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-8.html'
       }
     ],
     yct: [

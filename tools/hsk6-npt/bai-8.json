@@ -1,0 +1,902 @@
+[
+ {
+  "so": "1",
+  "ten": "「对……而言」",
+  "tenVn": "",
+  "cauTruc": [
+   "对 + người / sự việc + 而言，+ nhận định",
+   "khẩu ngữ: 对……来说 / 对……说来"
+  ],
+  "giaiThich": "\"对……而言\" biểu thị nhìn nhận từ GÓC ĐỘ của một người, một sự việc nào đó — \"đối với … mà nói\". Dùng trong văn viết; khẩu ngữ thường nói \"对……来说\", \"对……说来\". Giữa 对 và 而言 là danh từ / đại từ / cụm danh từ; cả khung thường đứng đầu câu (hoặc sau chủ ngữ), sau có dấu phẩy, vế sau nêu nhận định.",
+  "viDu": [
+   {
+    "zh": "对今天的中国而言，经济发展必须坚持走可持续发展的道路。",
+    "py": "Duì jīntiān de Zhōngguó ér yán, jīngjì fāzhǎn bìxū jiānchí zǒu kě chíxù fāzhǎn de dàolù.",
+    "vn": "Đối với Trung Quốc ngày nay, phát triển kinh tế phải kiên trì đi theo con đường phát triển bền vững."
+   },
+   {
+    "zh": "对年轻的我们而言，面对困难是件快乐的事情——那意味着挑战。",
+    "py": "Duì niánqīng de wǒmen ér yán, miànduì kùnnan shì jiàn kuàilè de shìqing — nà yìwèizhe tiǎozhàn.",
+    "vn": "Đối với lớp trẻ chúng ta, đối mặt với khó khăn là một việc vui — điều đó có nghĩa là thử thách."
+   },
+   {
+    "zh": "你用电脑生成了一张你50岁时的图片，对你而言，就像看一个陌生人。",
+    "py": "Nǐ yòng diànnǎo shēngchéngle yì zhāng nǐ wǔshí suì shí de túpiàn, duì nǐ ér yán, jiù xiàng kàn yí ge mòshēngrén.",
+    "vn": "Bạn dùng máy tính tạo ra một bức ảnh bạn lúc 50 tuổi, đối với bạn, nhìn nó chẳng khác gì nhìn một người lạ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我而言，学汉语很有意思。",
+    "why": "Thiếu 对 — khung phải đủ hai phần 对……而言.",
+    "dung": "对我而言，学汉语很有意思。"
+   },
+   {
+    "sai": "对我而言说，这个问题很重要。",
+    "why": "而言 đã mang nghĩa \"mà nói\", không thêm 说; muốn dùng 说 thì nói 对我来说.",
+    "dung": "对我而言，这个问题很重要。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "对今天的年轻人",
+       "，网络已经成了生活的一部分。"
+      ],
+      "dap": [
+       [
+        "而言"
+       ]
+      ],
+      "chon": [
+       "而言",
+       "来看",
+       "而已"
+      ],
+      "goiY": "\"Đối với giới trẻ ngày nay, mạng đã thành một phần cuộc sống.\"",
+      "giai": "Khung cố định 对……而言. 而已 = mà thôi (ôn bài 5); 对……来看 không có."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对我们高中生",
+       "，睡眠比什么都重要。"
+      ],
+      "dap": [
+       [
+        "而言"
+       ]
+      ],
+      "chon": [
+       "而言",
+       "而是",
+       "而且"
+      ],
+      "goiY": "\"Đối với học sinh cấp ba chúng tôi, giấc ngủ quan trọng hơn tất cả.\"",
+      "giai": "对 + đối tượng + 而言; 而是, 而且 là liên từ nối vế câu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "我而言，这次比赛的结果并不重要。"
+      ],
+      "dap": [
+       [
+        "对"
+       ]
+      ],
+      "chon": [
+       "对",
+       "把",
+       "被"
+      ],
+      "goiY": "\"Đối với tôi, kết quả trận đấu này không quan trọng.\"",
+      "giai": "Phần đầu của khung phải là 对."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对他",
+       "，最大的困难是语言问题。"
+      ],
+      "dap": [
+       [
+        "而言"
+       ]
+      ],
+      "chon": [
+       "而言",
+       "以来",
+       "为止"
+      ],
+      "goiY": "\"Đối với anh ấy, khó khăn lớn nhất là ngôn ngữ.\"",
+      "giai": "以来 (từ … đến nay), 为止 (cho đến) chỉ thời gian, không ghép với 对."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对孩子",
+       "，父母的陪伴比礼物更珍贵。"
+      ],
+      "dap": [
+       [
+        "而言"
+       ]
+      ],
+      "chon": [
+       "而言",
+       "而已",
+       "然而"
+      ],
+      "goiY": "\"Đối với con trẻ, sự bầu bạn của bố mẹ quý hơn quà.\"",
+      "giai": "对……而言 nêu góc nhìn của đứa trẻ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你用电脑生成了一张你50岁时的图片，对你",
+       "，就像看一个陌生人。"
+      ],
+      "dap": [
+       [
+        "而言"
+       ]
+      ],
+      "chon": [
+       "而言",
+       "来看",
+       "以为"
+      ],
+      "goiY": "\"… đối với bạn, như đang nhìn một người lạ.\" (câu bài khoá)",
+      "giai": "Câu nguyên văn bài khoá: 对你而言."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "而言",
+       "对母亲",
+       "，",
+       "孩子的健康",
+       "最重要"
+      ],
+      "dap": [
+       "对母亲而言，孩子的健康最重要。"
+      ],
+      "goiY": "Đối với người mẹ, sức khoẻ của con là quan trọng nhất.",
+      "giai": "对 + người + 而言 đứng đầu câu, sau là nhận định."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "对",
+       "学生",
+       "而言",
+       "，",
+       "最重要的",
+       "是学习"
+      ],
+      "dap": [
+       "对学生而言，最重要的是学习。"
+      ],
+      "goiY": "Đối với học sinh, điều quan trọng nhất là học tập.",
+      "giai": "对……而言 kẹp danh từ 学生 ở giữa."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一辈子的遗憾",
+       "对球迷而言",
+       "，",
+       "不看那场球",
+       "简直就是",
+       "，"
+      ],
+      "dap": [
+       "对球迷而言，不看那场球，简直就是一辈子的遗憾。"
+      ],
+      "goiY": "Đối với người hâm mộ, không xem trận bóng đó quả thực là nỗi tiếc cả đời.",
+      "giai": "Câu 练一练 (3) của sách: 对……而言 + giả thiết + 简直就是……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "对我而言，学汉语很有意思。",
+      "dung": true,
+      "giai": "Đủ khung 对……而言, đứng đầu câu — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我而言，学汉语很有意思。",
+      "dung": false,
+      "sua": "对我而言，学汉语很有意思。",
+      "giai": "Thiếu 对."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "对我而言说，这个问题很重要。",
+      "dung": false,
+      "sua": "对我而言，这个问题很重要。",
+      "giai": "而言 đã có nghĩa \"mà nói\", không thêm 说."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Đối với tôi, gia đình quan trọng hơn tất cả.",
+      "dap": [
+       "对我而言，家庭比什么都重要。",
+       "对我而言，家庭比一切都重要。",
+       "对我而言，家比什么都重要。"
+      ],
+      "py": "Duì wǒ ér yán, jiātíng bǐ shénme dōu zhòngyào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 对……而言.",
+      "giai": "对我而言 đứng đầu câu; \"hơn tất cả\" = 比什么都."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đối với người mới học, phát âm là khó nhất.",
+      "dap": [
+       "对初学者而言，发音是最难的。",
+       "对初学者而言，发音最难。",
+       "对刚开始学的人而言，发音是最难的。"
+      ],
+      "py": "Duì chūxuézhě ér yán, fāyīn shì zuì nán de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 对……而言.",
+      "giai": "对 + 初学者 + 而言; 是……的 nhấn mạnh nhận định."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "对母亲而言＿＿＿。",
+      "goiY": "người mẹ coi trọng điều gì nhất — 练一练 (1) của sách",
+      "mau": "对母亲而言，孩子的健康和快乐比什么都重要。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "对年轻人而言，＿＿＿。",
+      "goiY": "điều gì quý giá nhất / quan trọng nhất đối với người trẻ — 练一练 (2) của sách",
+      "mau": "对年轻人而言，最宝贵的不是金钱，而是时间。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，不看那场球，简直就是一辈子的遗憾。",
+      "goiY": "đối với ai thì không xem trận bóng là nỗi tiếc cả đời (dùng 对……而言) — 练一练 (3) của sách",
+      "mau": "对真正的球迷而言，不看那场球，简直就是一辈子的遗憾。",
+      "can": [
+       [
+        "而言",
+        "来说"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「有关」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 和 / 跟 / 与 + B + 有关 (động từ: có liên quan)",
+   "有关 + N (+ 的) + N (giới từ: liên quan đến, = 涉及)"
+  ],
+  "giaiThich": "① 有关 là ĐỘNG TỪ, nghĩa là \"có liên quan\" (= 有关系): A 和 / 跟 / 与 B 有关; phủ định là 与……无关 / 没有关系. ② 有关 còn là GIỚI TỪ, nghĩa là \"liên quan đến, đề cập tới\" (= 涉及): 有关 + N (+ 的) + N làm định ngữ — 有关病例的记载, 有关服饰问题的资料; hoặc đứng ngay trước danh từ: 有关部门, 有关专家, 有关记载.",
+  "viDu": [
+   {
+    "zh": "有关本体的问题，困扰了哲学家2500多年。",
+    "py": "Yǒuguān běntǐ de wèntí, kùnrǎole zhéxuéjiā liǎngqiān wǔbǎi duō nián.",
+    "vn": "Vấn đề liên quan đến bản thể đã làm các nhà triết học trăn trở hơn 2500 năm."
+   },
+   {
+    "zh": "中国的语文教学向来重视识字，这固然和汉字的特点有关。",
+    "py": "Zhōngguó de yǔwén jiàoxué xiànglái zhòngshì shízì, zhè gùrán hé Hànzì de tèdiǎn yǒuguān.",
+    "vn": "Việc dạy ngữ văn ở Trung Quốc xưa nay coi trọng việc học chữ, điều này dĩ nhiên có liên quan đến đặc điểm của chữ Hán."
+   },
+   {
+    "zh": "手术前，他仔细研究了中外有关病例的文字记载。",
+    "py": "Shǒushù qián, tā zǐxì yánjiūle Zhōng-wài yǒuguān bìnglì de wénzì jìzǎi.",
+    "vn": "Trước ca mổ, anh ấy nghiên cứu kỹ những ghi chép về các ca bệnh liên quan trong và ngoài nước."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这件事有关他。",
+    "why": "Động từ 有关 không mang tân ngữ trực tiếp; đối tượng phải đưa lên trước bằng 和 / 跟 / 与.",
+    "dung": "这件事跟他有关。"
+   },
+   {
+    "sai": "这次失败跟他的态度没有关。",
+    "why": "Phủ định của 有关 là 无关 hoặc 没有关系, không nói 没有关.",
+    "dung": "这次失败跟他的态度无关。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事跟他",
+       "，你去问问他吧。"
+      ],
+      "dap": [
+       [
+        "有关"
+       ]
+      ],
+      "chon": [
+       "有关",
+       "关于",
+       "关心"
+      ],
+      "goiY": "\"Chuyện này có liên quan đến cậu ấy, cậu đi hỏi cậu ấy đi.\"",
+      "giai": "跟 + người + 有关 (động từ làm vị ngữ). 关于 là giới từ, không làm vị ngữ; 关心 = quan tâm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他查阅了大量",
+       "服饰问题的资料。"
+      ],
+      "dap": [
+       [
+        "有关"
+       ]
+      ],
+      "chon": [
+       "有关",
+       "关心",
+       "关系"
+      ],
+      "goiY": "\"Anh ấy đã tra cứu rất nhiều tài liệu liên quan đến trang phục.\"",
+      "giai": "有关 + N + 的 + N (giới từ, = 涉及) — ví dụ (4) của sách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "部门已经对这件事展开了调查。"
+      ],
+      "dap": [
+       [
+        "有关"
+       ]
+      ],
+      "chon": [
+       "有关",
+       "关于",
+       "对于"
+      ],
+      "goiY": "\"Các cơ quan hữu quan đã mở cuộc điều tra về việc này.\"",
+      "giai": "有关部门 là cụm cố định; 关于, 对于 không đứng ngay trước 部门."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这次失败与他的态度",
+       "。"
+      ],
+      "dap": [
+       [
+        "有关"
+       ]
+      ],
+      "chon": [
+       "有关",
+       "关于",
+       "关心"
+      ],
+      "goiY": "\"Thất bại lần này có liên quan đến thái độ của anh ấy.\"",
+      "giai": "与 + N + 有关 — động từ đứng cuối câu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我的身体不好，可能跟经常熬夜",
+       "。"
+      ],
+      "dap": [
+       [
+        "有关"
+       ]
+      ],
+      "chon": [
+       "有关",
+       "关于",
+       "关心"
+      ],
+      "goiY": "\"Sức khoẻ tôi không tốt, có lẽ liên quan đến việc hay thức khuya.\"",
+      "giai": "跟……有关; 熬夜 ôn bài 2."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "本体的问题，困扰了哲学家2500多年。"
+      ],
+      "dap": [
+       [
+        "有关"
+       ]
+      ],
+      "chon": [
+       "有关",
+       "关心",
+       "由于"
+      ],
+      "goiY": "\"Vấn đề liên quan đến bản thể đã làm các nhà triết học trăn trở hơn 2500 năm.\" (câu bài khoá)",
+      "giai": "有关 + 本体 + 的问题."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "跟",
+       "汉字的特点",
+       "有关",
+       "这",
+       "固然"
+      ],
+      "dap": [
+       "这固然跟汉字的特点有关。"
+      ],
+      "goiY": "Điều này dĩ nhiên có liên quan đến đặc điểm của chữ Hán.",
+      "giai": "固然 (bài 5) đứng trước cụm 跟……有关."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "有关",
+       "的资料",
+       "他查阅了",
+       "大量",
+       "服饰问题"
+      ],
+      "dap": [
+       "他查阅了大量有关服饰问题的资料。"
+      ],
+      "goiY": "Anh ấy đã tra cứu rất nhiều tài liệu liên quan đến trang phục.",
+      "giai": "大量 + 有关……的 + 资料 — định ngữ nhiều tầng."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "有关",
+       "手术前",
+       "病例的记载",
+       "他研究了",
+       "，"
+      ],
+      "dap": [
+       "手术前，他研究了有关病例的记载。"
+      ],
+      "goiY": "Trước ca mổ, anh ấy đã nghiên cứu các ghi chép về ca bệnh liên quan.",
+      "giai": "有关 + 病例 + 的记载."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件事跟他有关。",
+      "dung": true,
+      "giai": "A 跟 B 有关 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件事有关他。",
+      "dung": false,
+      "sua": "这件事跟他有关。",
+      "giai": "有关 không mang tân ngữ trực tiếp; phải dùng 跟 / 和 / 与."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这次失败跟他的态度没有关。",
+      "dung": false,
+      "sua": "这次失败跟他的态度无关。",
+      "giai": "Phủ định là 无关 hoặc 没有关系."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chuyện cậu ấy đi muộn có liên quan đến việc thức khuya.",
+      "dap": [
+       "他迟到跟熬夜有关。",
+       "他迟到和熬夜有关。",
+       "他迟到与熬夜有关。"
+      ],
+      "py": "Tā chídào gēn áoyè yǒuguān.",
+      "goiY": "Dịch sang tiếng Trung, dùng 跟……有关.",
+      "giai": "A 跟 B 有关 — 有关 đứng cuối làm vị ngữ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Các cơ quan hữu quan đang điều tra chuyện này.",
+      "dap": [
+       "有关部门正在调查这件事。",
+       "有关部门正在对这件事进行调查。",
+       "有关部门正在调查此事。"
+      ],
+      "py": "Yǒuguān bùmén zhèngzài diàochá zhè jiàn shì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 有关.",
+      "giai": "有关部门 = các cơ quan hữu quan (cụm cố định trong văn bản)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "据＿＿＿记载，从明代中后期始，中国的丝绸、瓷器等商品已由中外商人贩运到拉美地区。",
+      "goiY": "điền 有关 vào đúng chỗ — 练一练 (1) của sách (đáp án: vị trí A)",
+      "mau": "据有关记载，从明代中后期始，中国的丝绸、瓷器等商品已由中外商人贩运到拉美地区。",
+      "can": [
+       [
+        "有关"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿专家提出，办好没有围墙的大学，是中国高等教育迈入大众化时代的关键一步。",
+      "goiY": "điền 有关 vào đúng chỗ — 练一练 (2) của sách (đáp án: vị trí A)",
+      "mau": "有关专家提出，办好没有围墙的大学，是中国高等教育迈入大众化时代的关键一步。",
+      "can": [
+       [
+        "有关"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "人们仿照“酒吧”一词，在汉语中复制出了很多“吧”。其中与原意稍为近似、与“喝”＿＿＿的营业性场所就有：“啤酒吧”“水吧”“咖啡吧”“茶吧”“鲜果吧”等。",
+      "goiY": "điền 有关 vào đúng chỗ — 练一练 (3) của sách (đáp án: vị trí D)",
+      "mau": "人们仿照“酒吧”一词，在汉语中复制出了很多“吧”。其中与原意稍为近似、与“喝”有关的营业性场所就有：“啤酒吧”“水吧”“咖啡吧”“茶吧”“鲜果吧”等。",
+      "can": [
+       [
+        "有关"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「不瞒你说」",
+  "tenVn": "",
+  "cauTruc": [
+   "不瞒你说，+ suy nghĩ / ý kiến thật của người nói",
+   "cùng loại: 我看 / 我想 / 说实在的 / 说真的 / 依我看 / 依我说 / 依我之见"
+  ],
+  "giaiThich": "\"不瞒你说\" là XEN NGỮ (插入语), nghĩa \"nói thật với bạn, không giấu gì bạn\", dùng để biểu thị suy nghĩ, cách nhìn, ý kiến hoặc thái độ chủ quan của người nói — thường là điều thật lòng, hơi khó nói. Thường đứng đầu câu, sau có dấu phẩy. Các xen ngữ cùng loại hay dùng: 我看, 我想, 说实在的, 说真的, 依我看, 依我说, 依我之见.",
+  "viDu": [
+   {
+    "zh": "不瞒你说，对这个问题，我是这样想的。",
+    "py": "Bù mán nǐ shuō, duì zhège wèntí, wǒ shì zhèyàng xiǎng de.",
+    "vn": "Nói thật với bạn, về vấn đề này, tôi nghĩ thế này."
+   },
+   {
+    "zh": "不瞒你说，书法方面，本人虽称不上“家”，但水平还是有一些的。",
+    "py": "Bù mán nǐ shuō, shūfǎ fāngmiàn, běnrén suī chēng bu shàng \"jiā\", dàn shuǐpíng háishi yǒu yìxiē de.",
+    "vn": "Nói thật với bạn, về mặt thư pháp, bản thân tôi tuy chưa đáng gọi là \"nhà\", nhưng trình độ cũng có đôi chút."
+   },
+   {
+    "zh": "说实在的，她的问题涉及了我的隐私，我很反感，话也变得火药味十足。",
+    "py": "Shuō shízài de, tā de wèntí shèjíle wǒ de yǐnsī, wǒ hěn fǎngǎn, huà yě biàn de huǒyàowèi shízú.",
+    "vn": "Nói thật, câu hỏi của cô ấy động chạm tới chuyện riêng tư của tôi, tôi rất khó chịu, lời nói cũng trở nên đầy mùi thuốc súng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "不瞒他说，我也不知道答案。",
+    "why": "Xen ngữ cố định là 不瞒你说 (nói với người đối diện), không đổi thành 他.",
+    "dung": "不瞒你说，我也不知道答案。"
+   },
+   {
+    "sai": "说实在，这部电影一点儿也不好看。",
+    "why": "Xen ngữ cùng loại phải đủ 的: 说实在的 / 说真的.",
+    "dung": "说实在的，这部电影一点儿也不好看。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "不",
+       "你说，对这个问题，我是这样想的。"
+      ],
+      "dap": [
+       [
+        "瞒"
+       ]
+      ],
+      "chon": [
+       "瞒",
+       "满",
+       "骗"
+      ],
+      "goiY": "\"Nói thật với bạn, về vấn đề này tôi nghĩ thế này.\" (câu bài khoá)",
+      "giai": "瞒 (mán) = giấu; 满 đồng âm khác nghĩa; không có 不骗你说 theo nghĩa xen ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "，这道题我也不会做。"
+      ],
+      "dap": [
+       [
+        "不瞒你说"
+       ]
+      ],
+      "chon": [
+       "不瞒你说",
+       "不像话",
+       "不得了"
+      ],
+      "goiY": "\"Nói thật với cậu, câu này tớ cũng không làm được.\"",
+      "giai": "Lời thú nhận thật lòng → xen ngữ 不瞒你说."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "，这次真是孩子给我上了一课。"
+      ],
+      "dap": [
+       [
+        "说真的"
+       ]
+      ],
+      "chon": [
+       "说真的",
+       "真的说",
+       "说是真的"
+      ],
+      "goiY": "\"Nói thật, lần này đúng là con đã dạy tôi một bài học.\" (ví dụ (3) của sách)",
+      "giai": "Xen ngữ cố định 说真的 = nói thật."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "说",
+       "的，她的问题涉及了我的隐私，我很反感。"
+      ],
+      "dap": [
+       [
+        "实在"
+       ]
+      ],
+      "chon": [
+       "实在",
+       "现在",
+       "存在"
+      ],
+      "goiY": "\"Nói thật, câu hỏi của cô ấy động chạm tới chuyện riêng tư của tôi.\" (ví dụ (4) của sách)",
+      "giai": "Xen ngữ 说实在的; 涉及, 隐私, 反感 ôn bài 5."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "依我之",
+       "，你还是先跟父母商量一下吧。"
+      ],
+      "dap": [
+       [
+        "见"
+       ]
+      ],
+      "chon": [
+       "见",
+       "看",
+       "说"
+      ],
+      "goiY": "\"Theo ý tôi, cậu nên bàn với bố mẹ trước đã.\"",
+      "giai": "依我之见 (văn viết) — có 之 thì đi với 见; không nói 依我之看 / 依我之说."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "看，这件事不能全怪他。"
+      ],
+      "dap": [
+       [
+        "依我"
+       ]
+      ],
+      "chon": [
+       "依我",
+       "对我",
+       "让我"
+      ],
+      "goiY": "\"Theo tôi thấy, chuyện này không thể trách hết cậu ấy.\"",
+      "giai": "Xen ngữ 依我看 = theo tôi thấy."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "不瞒你说",
+       "，",
+       "这个歌儿",
+       "我",
+       "一句也",
+       "不会唱"
+      ],
+      "dap": [
+       "不瞒你说，这个歌儿我一句也不会唱。"
+      ],
+      "goiY": "Nói thật với cậu, bài hát này tớ một câu cũng không biết hát.",
+      "giai": "不瞒你说 đứng đầu câu; 一句也不…… nhấn mạnh phủ định hoàn toàn."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "说实在的",
+       "，",
+       "我",
+       "不太",
+       "同意",
+       "你的看法"
+      ],
+      "dap": [
+       "说实在的，我不太同意你的看法。"
+      ],
+      "goiY": "Nói thật, tôi không đồng ý lắm với quan điểm của bạn.",
+      "giai": "Xen ngữ đứng đầu, có dấu phẩy ngăn cách."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "依我看",
+       "，",
+       "这件事",
+       "不能",
+       "全怪他"
+      ],
+      "dap": [
+       "依我看，这件事不能全怪他。"
+      ],
+      "goiY": "Theo tôi thấy, chuyện này không thể trách hết cậu ấy.",
+      "giai": "依我看 nêu ý kiến chủ quan."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不瞒你说，我第一次上台演讲时紧张得说不出话来。",
+      "dung": true,
+      "giai": "Xen ngữ + lời thú nhận thật lòng — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不瞒他说，我也不知道答案。",
+      "dung": false,
+      "sua": "不瞒你说，我也不知道答案。",
+      "giai": "Xen ngữ cố định là 不瞒你说."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "说实在，这部电影一点儿也不好看。",
+      "dung": false,
+      "sua": "说实在的，这部电影一点儿也不好看。",
+      "giai": "Phải là 说实在的."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nói thật với cậu, tớ cũng chẳng hiểu câu này nghĩa là gì.",
+      "dap": [
+       "不瞒你说，我也不明白这句话是什么意思。",
+       "不瞒你说，我也不懂这句话是什么意思。",
+       "不瞒你说，这句话是什么意思我也不明白。"
+      ],
+      "py": "Bù mán nǐ shuō, wǒ yě bù míngbai zhè jù huà shì shénme yìsi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不瞒你说.",
+      "giai": "不瞒你说 + dấu phẩy + lời thú nhận."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nói thật, tôi thấy cách làm này quá cực đoan.",
+      "dap": [
+       "说实在的，我觉得这种做法太极端了。",
+       "说真的，我觉得这种做法太极端了。",
+       "不瞒你说，我觉得这种做法太极端了。"
+      ],
+      "py": "Shuō shízài de, wǒ juéde zhè zhǒng zuòfǎ tài jíduān le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 说实在的 / 说真的.",
+      "giai": "Xen ngữ cùng loại với 不瞒你说; 太极端了 ôn từ 极端 của bài."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "依我之见，无论你怎么选择，＿＿＿。",
+      "goiY": "nêu ý kiến riêng: dù chọn thế nào thì cũng phải … — 练一练 (1) của sách",
+      "mau": "依我之见，无论你怎么选择，都要为自己的决定负责。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "不瞒你说，这个歌儿＿＿＿。",
+      "goiY": "thú nhận một điều thật về bài hát — 练一练 (2) của sách",
+      "mau": "不瞒你说，这个歌儿我一句也不会唱。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "他淡淡地说：“我写文章，说真的，就是玩儿，＿＿＿。”",
+      "goiY": "nói thật lòng: viết văn chỉ để chơi, không vì … — 练一练 (3) của sách",
+      "mau": "他淡淡地说：“我写文章，说真的，就是玩儿，从来没想过要出名。”",
+      "can": []
+     }
+    ]
+   }
+  ]
+ }
+]

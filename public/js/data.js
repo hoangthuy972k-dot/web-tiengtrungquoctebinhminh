@@ -1935,6 +1935,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-11.html'
+      },
+      {
+        id: 'hsk6-l12',
+        number: 12,
+        title: 'Chúng ta đều yêu tiếng ồn trắng.',
+        titleHanzi: '我们都爱白噪音。',
+        titlePinyin: 'Wǒmen dōu ài bái zàoyīn.',
+        topic: '第三单元 多彩社会 · Tiếng ồn trắng và bản năng an toàn',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-12.html'
       }
     ],
     yct: [

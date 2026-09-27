@@ -10129,3 +10129,914 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-11.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-12.html"] = [
+ {
+  "so": "1",
+  "ten": "「不妨」",
+  "tenVn": "",
+  "cauTruc": [
+   "(Chủ ngữ +) 不妨 + V (试试 / V一下 / V一V): cứ thử …, không ngại …",
+   "有……，你不妨……: có … thì cứ … (lời khuyến khích, gợi ý)"
+  ],
+  "giaiThich": "不妨 là PHÓ TỪ, biểu thị có thể làm như vậy, không có gì trở ngại (没有妨碍). Hàm ý người nói cho rằng làm như vậy thì TỐT HƠN, nên dùng trong lời khuyến khích, gợi ý (鼓励、建议). Đứng sau chủ ngữ, trước động từ; động từ phía sau hay ở dạng lặp (试试, 试一试) hoặc kèm 一下. Sắc thái nhẹ nhàng, lịch sự hơn 应该 / 必须.",
+  "viDu": [
+   {
+    "zh": "有什么意见，你不妨直说。",
+    "py": "Yǒu shénme yìjiàn, nǐ bùfáng zhí shuō.",
+    "vn": "Có ý kiến gì thì anh cứ nói thẳng."
+   },
+   {
+    "zh": "什么是白噪音？我们不妨形象地描绘一下。",
+    "py": "Shénme shì bái zàoyīn? Wǒmen bùfáng xíngxiàng de miáohuì yíxià.",
+    "vn": "Tiếng ồn trắng là gì? Chúng ta thử miêu tả một cách hình ảnh xem."
+   },
+   {
+    "zh": "改变人们的传统观念可能不容易，但我们不妨试一试。",
+    "py": "Gǎibiàn rénmen de chuántǒng guānniàn kěnéng bù róngyì, dàn wǒmen bùfáng shì yi shì.",
+    "vn": "Thay đổi quan niệm truyền thống của mọi người có thể không dễ, nhưng chúng ta cứ thử xem."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "考试的时候，你不妨必须带准考证。",
+    "why": "不妨 là lời gợi ý nhẹ nhàng, không đi với ý bắt buộc (必须); việc bắt buộc thì dùng 务必.",
+    "dung": "考试的时候，你务必带准考证。"
+   },
+   {
+    "sai": "不妨你试试这个办法。",
+    "why": "不妨 là phó từ, đứng SAU chủ ngữ, trước động từ.",
+    "dung": "你不妨试试这个办法。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "有什么意见，你",
+       "直说。"
+      ],
+      "dap": [
+       [
+        "不妨"
+       ]
+      ],
+      "chon": [
+       "不妨",
+       "不必",
+       "不免"
+      ],
+      "goiY": "\"Có ý kiến gì thì anh cứ nói thẳng.\" (câu mẫu của sách)",
+      "giai": "不妨 + V: gợi ý \"cứ …\"."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "什么是白噪音？我们",
+       "形象地描绘一下。"
+      ],
+      "dap": [
+       [
+        "不妨"
+       ]
+      ],
+      "chon": [
+       "不妨",
+       "务必",
+       "何必"
+      ],
+      "goiY": "\"Chúng ta thử miêu tả một cách hình ảnh xem.\" (câu bài khoá)",
+      "giai": "不妨 + V一下: lời gợi ý nhẹ nhàng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "改变传统观念可能不容易，但我们",
+       "试一试。"
+      ],
+      "dap": [
+       [
+        "不妨"
+       ]
+      ],
+      "chon": [
+       "不妨",
+       "不得不",
+       "不得已"
+      ],
+      "goiY": "\"… nhưng chúng ta cứ thử xem.\"",
+      "giai": "不妨 + V一V; 不得不 / 不得已 mang nghĩa \"buộc phải\", ngược ý khuyến khích."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她说的方法也许可行，你",
+       "试试。"
+      ],
+      "dap": [
+       [
+        "不妨"
+       ]
+      ],
+      "chon": [
+       "不妨",
+       "不必",
+       "未必"
+      ],
+      "goiY": "\"Phương pháp cô ấy nói có lẽ được, cậu cứ thử xem.\"",
+      "giai": "不妨试试 = cứ thử xem (练一练 1)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果觉得背单词枯燥，你",
+       "一边听音乐一边学。"
+      ],
+      "dap": [
+       [
+        "不妨"
+       ]
+      ],
+      "chon": [
+       "不妨",
+       "不免",
+       "不但"
+      ],
+      "goiY": "\"Nếu thấy học từ nhàm chán, cậu cứ thử vừa nghe nhạc vừa học.\"",
+      "giai": "如果……，不妨……: nêu hoàn cảnh rồi gợi ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事你一个人拿不定主意，",
+       "问问老师。"
+      ],
+      "dap": [
+       [
+        "不妨"
+       ]
+      ],
+      "chon": [
+       "不妨",
+       "何况",
+       "难怪"
+      ],
+      "goiY": "\"Việc này một mình cậu không quyết được thì cứ hỏi thầy xem.\"",
+      "giai": "不妨 + V lặp (问问)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "不妨",
+       "试试",
+       "这个",
+       "新方法"
+      ],
+      "dap": [
+       "你不妨试试这个新方法。"
+      ],
+      "goiY": "Cậu cứ thử phương pháp mới này xem.",
+      "giai": "不妨 đứng sau chủ ngữ, trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "有什么意见",
+       "，",
+       "你",
+       "不妨",
+       "当面",
+       "提出来"
+      ],
+      "dap": [
+       "有什么意见，你不妨当面提出来。"
+      ],
+      "goiY": "Có ý kiến gì thì cậu cứ nói thẳng trước mặt.",
+      "giai": "不妨 + trạng ngữ (当面) + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "想了解社会",
+       "，",
+       "你",
+       "不妨",
+       "从做志愿者",
+       "入手"
+      ],
+      "dap": [
+       "想了解社会，你不妨从做志愿者入手。"
+      ],
+      "goiY": "Muốn tìm hiểu xã hội thì cậu cứ bắt đầu từ việc làm tình nguyện viên.",
+      "giai": "不妨 + 从……入手 (bắt đầu từ …)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "累了的话，你不妨休息一会儿。",
+      "dung": true,
+      "giai": "不妨 + V + 一会儿 — gợi ý nhẹ nhàng, đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不妨你先看看说明书。",
+      "dung": false,
+      "sua": "你不妨先看看说明书。",
+      "giai": "不妨 là phó từ, phải đứng sau chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考试的时候，你不妨必须带准考证。",
+      "dung": false,
+      "sua": "考试的时候，你务必带准考证。",
+      "giai": "Việc bắt buộc dùng 务必; 不妨 chỉ là gợi ý, không đi với 必须."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nếu không ngủ được, cậu cứ thử nghe tiếng ồn trắng xem.",
+      "dap": [
+       "如果睡不着，你不妨听听白噪音。",
+       "睡不着的话，你不妨听听白噪音。",
+       "如果睡不着，你不妨试试听白噪音。"
+      ],
+      "py": "Rúguǒ shuì bu zháo, nǐ bùfáng tīngting bái zàoyīn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不妨.",
+      "giai": "不妨 + V lặp (听听): gợi ý nhẹ nhàng."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Có khó khăn gì, em cứ nói thẳng với cô.",
+      "dap": [
+       "有什么困难，你不妨直接跟老师说。",
+       "有什么困难，你不妨直接告诉老师。",
+       "有什么困难，你不妨跟老师直说。"
+      ],
+      "py": "Yǒu shénme kùnnan, nǐ bùfáng zhíjiē gēn lǎoshī shuō.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不妨.",
+      "giai": "有……，你不妨……: có … thì cứ …."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "她说的方法也许可行，你＿＿＿。",
+      "goiY": "cứ thử xem (dùng 不妨) — 练一练 (1) của sách: 你试试也可以",
+      "mau": "她说的方法也许可行，你不妨试试。",
+      "can": [
+       [
+        "不妨"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "想接触社会、了解社会，你＿＿＿。",
+      "goiY": "cứ bắt đầu từ việc làm tình nguyện viên (dùng 不妨) — 练一练 (2) của sách",
+      "mau": "想接触社会、了解社会，你不妨从做志愿者入手。",
+      "can": [
+       [
+        "不妨"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "从目前我们掌握的证据来看，我们＿＿＿。",
+      "goiY": "cứ thử đưa ra giả thiết như vậy (dùng 不妨) — 练一练 (3) của sách",
+      "mau": "从目前我们掌握的证据来看，我们不妨做这样的假设。",
+      "can": [
+       [
+        "不妨"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「务必」",
+  "tenVn": "",
+  "cauTruc": [
+   "(Chủ ngữ +) 务必(要) + V: nhất thiết phải …",
+   "请务必 + V: xin nhất định … (lời dặn, thông báo)"
+  ],
+  "giaiThich": "务必 là PHÓ TỪ, biểu thị thái độ kiên quyết: nhất định phải, nhất thiết phải (必须、一定要). Thường tu sức động từ, cụm động từ; hay đi với 要 (务必要). Dùng nhiều trong lời dặn dò, yêu cầu, thông báo (请务必……). Mạnh và trang trọng hơn 一定要; không dùng để phỏng đoán.",
+  "viDu": [
+   {
+    "zh": "鸟叫停止，意味着有了险情，务必要提高警惕了。",
+    "py": "Niǎo jiào tíngzhǐ, yìwèizhe yǒule xiǎnqíng, wùbì yào tígāo jǐngtì le.",
+    "vn": "Chim ngừng hót có nghĩa là đã có nguy hiểm, nhất thiết phải nâng cao cảnh giác."
+   },
+   {
+    "zh": "50岁以上的人容易骨折，因此进行跳跃或其他剧烈活动时务必注意了。",
+    "py": "Wǔshí suì yǐshàng de rén róngyì gǔzhé, yīncǐ jìnxíng tiàoyuè huò qítā jùliè huódòng shí wùbì zhùyì le.",
+    "vn": "Người trên 50 tuổi dễ gãy xương, vì vậy khi nhảy hoặc vận động mạnh khác nhất thiết phải chú ý."
+   },
+   {
+    "zh": "海带凉拌菜做法超级简单，不过务必将海带多泡些时间，不然不易消化。",
+    "py": "Hǎidài liángbàncài zuòfǎ chāojí jiǎndān, búguò wùbì jiāng hǎidài duō pào xiē shíjiān, bùrán bú yì xiāohuà.",
+    "vn": "Món rong biển trộn làm cực kỳ đơn giản, nhưng nhất thiết phải ngâm rong biển lâu hơn một chút, nếu không sẽ khó tiêu."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "明天务必会下雨。",
+    "why": "务必 là yêu cầu con người PHẢI làm gì, không dùng để phỏng đoán; phỏng đoán chắc chắn dùng 一定 / 肯定.",
+    "dung": "明天一定会下雨。"
+   },
+   {
+    "sai": "务必大家要准时到。",
+    "why": "务必 là phó từ, đứng sau chủ ngữ, trước động từ.",
+    "dung": "大家务必要准时到。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "鸟叫停止，意味着有了险情，",
+       "要提高警惕了。"
+      ],
+      "dap": [
+       [
+        "务必"
+       ]
+      ],
+      "chon": [
+       "务必",
+       "未必",
+       "何必"
+      ],
+      "goiY": "\"Chim ngừng hót nghĩa là có nguy hiểm, nhất thiết phải cảnh giác.\" (câu bài khoá)",
+      "giai": "务必要 + V: thái độ kiên quyết."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "明天的会非常重要，大家",
+       "要参加。"
+      ],
+      "dap": [
+       [
+        "务必"
+       ]
+      ],
+      "chon": [
+       "务必",
+       "不妨",
+       "不必"
+      ],
+      "goiY": "\"Cuộc họp mai rất quan trọng, mọi người nhất thiết phải tham gia.\" (练习2 ②)",
+      "giai": "Việc bắt buộc → 务必; 不妨 chỉ là gợi ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考试时请",
+       "带好准考证。"
+      ],
+      "dap": [
+       [
+        "务必"
+       ]
+      ],
+      "chon": [
+       "务必",
+       "不妨",
+       "势必"
+      ],
+      "goiY": "\"Khi thi xin nhất định mang theo thẻ dự thi.\"",
+      "giai": "请务必 + V: lời dặn trang trọng; 势必 = ắt sẽ (dự đoán)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "山路不好走，开车",
+       "要小心。"
+      ],
+      "dap": [
+       [
+        "务必"
+       ]
+      ],
+      "chon": [
+       "务必",
+       "未必",
+       "何必"
+      ],
+      "goiY": "\"Đường núi khó đi, lái xe nhất định phải cẩn thận.\" (练一练 3)",
+      "giai": "一定要 → 务必要."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "进行剧烈活动时",
+       "注意安全。"
+      ],
+      "dap": [
+       [
+        "务必"
+       ]
+      ],
+      "chon": [
+       "务必",
+       "不免",
+       "难免"
+      ],
+      "goiY": "\"Khi vận động mạnh nhất thiết phải chú ý an toàn.\"",
+      "giai": "务必 + V; 不免 / 难免 = khó tránh khỏi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "请转告他，明天",
+       "出席会议。"
+      ],
+      "dap": [
+       [
+        "务必"
+       ]
+      ],
+      "chon": [
+       "务必",
+       "不妨",
+       "未必"
+      ],
+      "goiY": "\"Xin nhắn anh ấy, mai nhất định phải dự họp.\" (练一练 2)",
+      "giai": "务必 + V (có thể bỏ 要)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "明天的会",
+       "很重要",
+       "，",
+       "大家",
+       "务必",
+       "参加"
+      ],
+      "dap": [
+       "明天的会很重要，大家务必参加。"
+      ],
+      "goiY": "Cuộc họp mai rất quan trọng, mọi người nhất thiết phải tham gia.",
+      "giai": "务必 đứng sau chủ ngữ 大家, trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "请",
+       "务必",
+       "在周五以前",
+       "把报告",
+       "交上来"
+      ],
+      "dap": [
+       "请务必在周五以前把报告交上来。"
+      ],
+      "goiY": "Xin nhất định nộp báo cáo trước thứ Sáu.",
+      "giai": "请务必 + trạng ngữ thời gian + câu 把."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "危险来临时",
+       "，",
+       "大家",
+       "务必要",
+       "保持镇静"
+      ],
+      "dap": [
+       "危险来临时，大家务必要保持镇静。"
+      ],
+      "goiY": "Khi nguy hiểm đến, mọi người nhất thiết phải giữ bình tĩnh.",
+      "giai": "Trạng ngữ thời gian đầu câu, 务必要 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "出门前请务必关好门窗。",
+      "dung": true,
+      "giai": "请务必 + V — lời dặn đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "明天务必会下雨。",
+      "dung": false,
+      "sua": "明天一定会下雨。",
+      "giai": "务必 là yêu cầu con người phải làm; phỏng đoán dùng 一定 / 肯定."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "务必大家要准时到。",
+      "dung": false,
+      "sua": "大家务必要准时到。",
+      "giai": "务必 là phó từ, đứng sau chủ ngữ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Về đến nhà rồi, con nhất định phải gọi điện cho mẹ.",
+      "dap": [
+       "到家以后，你务必给妈妈打个电话。",
+       "到家以后，务必给妈妈打电话。",
+       "回到家以后，你务必要给妈妈打个电话。"
+      ],
+      "py": "Dào jiā yǐhòu, nǐ wùbì gěi māma dǎ ge diànhuà.",
+      "goiY": "Dịch sang tiếng Trung, dùng 务必.",
+      "giai": "务必 + V: lời dặn dò kiên quyết."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tài liệu này rất quan trọng, mọi người nhất thiết phải giữ bí mật.",
+      "dap": [
+       "这份材料非常重要，大家务必保密。",
+       "这份资料很重要，大家务必要保密。",
+       "这份材料很重要，请大家务必保密。"
+      ],
+      "py": "Zhè fèn cáiliào fēicháng zhòngyào, dàjiā wùbì bǎomì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 务必.",
+      "giai": "务必(要) + V; 保密 = giữ bí mật."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "危险来临的时候，大家＿＿＿。",
+      "goiY": "nhất thiết phải bình tĩnh (dùng 务必) — 练一练 (1) của sách: 一定要镇静",
+      "mau": "危险来临的时候，大家务必要镇静。",
+      "can": [
+       [
+        "务必"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "请转告他，明天＿＿＿。",
+      "goiY": "nhất định phải dự họp (dùng 务必) — 练一练 (2) của sách",
+      "mau": "请转告他，明天务必出席会议。",
+      "can": [
+       [
+        "务必"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "山路不好走，开车＿＿＿。",
+      "goiY": "nhất định phải cẩn thận (dùng 务必) — 练一练 (3) của sách",
+      "mau": "山路不好走，开车务必要小心。",
+      "can": [
+       [
+        "务必"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「鉴于」",
+  "tenVn": "",
+  "cauTruc": [
+   "鉴于 + tình hình / lý do，(chủ ngữ) + quyết định / biện pháp",
+   "鉴于以上情况 / 鉴于这种情况，……决定……"
+  ],
+  "giaiThich": "鉴于 ① là GIỚI TỪ, nghĩa là \"觉察到、考虑到\" (nhận thấy, xét đến): 鉴于 + danh từ / cụm từ. ② là LIÊN TỪ, dùng ở ĐẦU phân câu trước của câu phức nhân quả, chỉ ra căn cứ, nguyên nhân hay lý do cho hành động ở phân câu sau. Vế sau thường là một quyết định, biện pháp (决定……, 成了……). Dùng trong văn viết.",
+  "viDu": [
+   {
+    "zh": "鉴于农村教师严重缺乏，他决定大学毕业以后，到农村去当老师。",
+    "py": "Jiànyú nóngcūn jiàoshī yánzhòng quēfá, tā juédìng dàxué bìyè yǐhòu, dào nóngcūn qù dāng lǎoshī.",
+    "vn": "Xét thấy giáo viên nông thôn thiếu trầm trọng, anh ấy quyết định sau khi tốt nghiệp đại học sẽ về nông thôn dạy học."
+   },
+   {
+    "zh": "鉴于白噪音有这样的功效，它理所当然地成了医生的好帮手。",
+    "py": "Jiànyú bái zàoyīn yǒu zhèyàng de gōngxiào, tā lǐsuǒdāngrán de chéngle yīshēng de hǎo bāngshǒu.",
+    "vn": "Xét thấy tiếng ồn trắng có công hiệu như vậy, nó đương nhiên trở thành trợ thủ đắc lực của bác sĩ."
+   },
+   {
+    "zh": "鉴于中国的娱乐片起步较晚，创作人员在把握观众心理、掌握特定技巧等方面尚有欠缺，这样的研讨会无疑给创作者提供了极大的帮助。",
+    "py": "Jiànyú Zhōngguó de yúlèpiàn qǐbù jiào wǎn, chuàngzuò rényuán zài bǎwò guānzhòng xīnlǐ, zhǎngwò tèdìng jìqiǎo děng fāngmiàn shàng yǒu qiànquē, zhèyàng de yántǎohuì wúyí gěi chuàngzuòzhě tígōngle jí dà de bāngzhù.",
+    "vn": "Xét thấy phim giải trí Trung Quốc khởi đầu khá muộn, người sáng tác còn thiếu sót ở các mặt như nắm bắt tâm lý khán giả, làm chủ những kỹ xảo đặc thù, những hội thảo như thế này chắc chắn đã giúp ích rất nhiều cho người sáng tác."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "公司决定让他担任经理，鉴于他出色的表现。",
+    "why": "鉴于 đứng ĐẦU phân câu TRƯỚC (nêu căn cứ), không đặt ra sau như 因为.",
+    "dung": "鉴于他出色的表现，公司决定让他担任经理。"
+   },
+   {
+    "sai": "鉴于今天下雨了，我很不开心。",
+    "why": "Vế sau của 鉴于 phải là quyết định / biện pháp có căn cứ, không phải cảm xúc; câu thường ngày dùng 因为.",
+    "dung": "因为今天下雨了，我很不开心。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "白噪音有这样的功效，它理所当然地成了医生的好帮手。"
+      ],
+      "dap": [
+       [
+        "鉴于"
+       ]
+      ],
+      "chon": [
+       "鉴于",
+       "关于",
+       "对于"
+      ],
+      "goiY": "\"Xét thấy tiếng ồn trắng có công hiệu như vậy, …\" (câu bài khoá)",
+      "giai": "鉴于 đứng đầu vế trước nêu căn cứ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "农村教师严重缺乏，他决定毕业后到农村去当老师。"
+      ],
+      "dap": [
+       [
+        "鉴于"
+       ]
+      ],
+      "chon": [
+       "鉴于",
+       "至于",
+       "对于"
+      ],
+      "goiY": "\"Xét thấy giáo viên nông thôn thiếu trầm trọng, …\"",
+      "giai": "鉴于 + lý do，决定……; 至于 = còn về."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "他出色的表现，公司决定让他担任部门经理。"
+      ],
+      "dap": [
+       [
+        "鉴于"
+       ]
+      ],
+      "chon": [
+       "鉴于",
+       "关于",
+       "至于"
+      ],
+      "goiY": "\"Xét thấy biểu hiện xuất sắc của anh ấy, …\" (练习2 ④)",
+      "giai": "鉴于 = 考虑到; 关于 = về (chủ đề)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "天气恶劣，比赛推迟到下周举行。"
+      ],
+      "dap": [
+       [
+        "鉴于"
+       ]
+      ],
+      "chon": [
+       "鉴于",
+       "对于",
+       "以便"
+      ],
+      "goiY": "\"Do thời tiết xấu, trận đấu dời sang tuần sau.\"",
+      "giai": "鉴于 + nguyên nhân; 以便 = để tiện (mục đích)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "以上情况，我们决定暂停这个项目。"
+      ],
+      "dap": [
+       [
+        "鉴于"
+       ]
+      ],
+      "chon": [
+       "鉴于",
+       "关于",
+       "以免"
+      ],
+      "goiY": "\"Xét tình hình nêu trên, chúng tôi quyết định tạm dừng dự án.\"",
+      "giai": "鉴于以上情况 — cụm văn bản hay gặp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "篇幅所限，本章仅讨论几个主要问题。"
+      ],
+      "dap": [
+       [
+        "鉴于"
+       ]
+      ],
+      "chon": [
+       "鉴于",
+       "对于",
+       "至于"
+      ],
+      "goiY": "\"Do khuôn khổ có hạn, chương này chỉ bàn vài vấn đề chính.\" (练一练 2)",
+      "giai": "鉴于篇幅所限 = do khuôn khổ có hạn."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "鉴于",
+       "天气恶劣",
+       "，",
+       "比赛",
+       "推迟到",
+       "下周"
+      ],
+      "dap": [
+       "鉴于天气恶劣，比赛推迟到下周。"
+      ],
+      "goiY": "Do thời tiết xấu, trận đấu hoãn đến tuần sau.",
+      "giai": "鉴于 + lý do đứng đầu câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "鉴于",
+       "这种情况",
+       "，",
+       "学校",
+       "决定",
+       "停课一天"
+      ],
+      "dap": [
+       "鉴于这种情况，学校决定停课一天。"
+      ],
+      "goiY": "Xét tình hình này, nhà trường quyết định nghỉ học một ngày.",
+      "giai": "Vế sau là quyết định 决定……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "鉴于",
+       "他的表现",
+       "，",
+       "公司",
+       "决定",
+       "给他加薪"
+      ],
+      "dap": [
+       "鉴于他的表现，公司决定给他加薪。"
+      ],
+      "goiY": "Xét biểu hiện của anh ấy, công ty quyết định tăng lương cho anh.",
+      "giai": "鉴于 + N (giới từ), vế sau là quyết định."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "鉴于以上情况，我们决定取消这次活动。",
+      "dung": true,
+      "giai": "鉴于 + căn cứ, vế sau là quyết định — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "公司决定让他担任经理，鉴于他出色的表现。",
+      "dung": false,
+      "sua": "鉴于他出色的表现，公司决定让他担任经理。",
+      "giai": "鉴于 phải đứng đầu phân câu TRƯỚC."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "鉴于今天下雨了，我很不开心。",
+      "dung": false,
+      "sua": "因为今天下雨了，我很不开心。",
+      "giai": "Vế sau của 鉴于 phải là quyết định / biện pháp; nói cảm xúc thường ngày dùng 因为."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Xét thấy nhiều học sinh phản ánh bài tập quá nhiều, nhà trường quyết định giảm lượng bài tập.",
+      "dap": [
+       "鉴于很多学生反映作业太多，学校决定减少作业量。",
+       "鉴于不少学生反映作业太多，学校决定减少作业。",
+       "鉴于很多学生反映作业太多，学校决定减少作业的数量。"
+      ],
+      "py": "Jiànyú hěn duō xuésheng fǎnyìng zuòyè tài duō, xuéxiào juédìng jiǎnshǎo zuòyè liàng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 鉴于.",
+      "giai": "鉴于 + lý do，决定 + biện pháp."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Do thời tiết xấu, chuyến bay bị hoãn đến ngày mai.",
+      "dap": [
+       "鉴于天气恶劣，航班推迟到明天。",
+       "鉴于天气不好，航班推迟到明天起飞。",
+       "鉴于天气恶劣，航班推迟到了明天。"
+      ],
+      "py": "Jiànyú tiānqì èliè, hángbān tuīchí dào míngtiān.",
+      "goiY": "Dịch sang tiếng Trung, dùng 鉴于.",
+      "giai": "鉴于 văn viết, hợp với thông báo; 推迟到 + thời gian."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "鉴于近来生意清淡，大家讨论决定＿＿＿。",
+      "goiY": "nêu một biện pháp phù hợp (vd: làm khuyến mãi thu hút khách) — 练一练 (1) của sách",
+      "mau": "鉴于近来生意清淡，大家讨论决定推出一些优惠活动来吸引顾客。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "鉴于篇幅所限，本章仅＿＿＿。",
+      "goiY": "chỉ bàn / giới thiệu phần chính — 练一练 (2) của sách",
+      "mau": "鉴于篇幅所限，本章仅讨论几个最主要的问题。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "鉴于＿＿＿，学校决定明天停课一天。",
+      "goiY": "nêu một lý do khách quan (bão, dịch bệnh…) — 练一练 (3) của sách",
+      "mau": "鉴于台风即将到来，学校决定明天停课一天。",
+      "can": []
+     }
+    ]
+   }
+  ]
+ }
+];

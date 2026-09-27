@@ -2079,6 +2079,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk6-bai-23.html'
+      },
+      {
+        id: 'hsk6-l25',
+        number: 25,
+        title: 'Thuyền cỏ mượn tên',
+        titleHanzi: '草船借箭',
+        titlePinyin: 'Cǎo Chuán Jiè Jiàn',
+        topic: '第七单元 经典阅读 · Đọc tác phẩm kinh điển — trí tuệ của Gia Cát Lượng trong 《三国演义》',
+        vocabCount: 53,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-25.html'
       }
     ],
     yct: [

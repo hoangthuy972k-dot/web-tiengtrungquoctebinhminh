@@ -20677,3 +20677,917 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-23.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-25.html"] = [
+ {
+  "so": "1",
+  "ten": "「即将」",
+  "tenVn": "",
+  "cauTruc": [
+   "即将 + V — sắp (văn viết)",
+   "即将 + V + 的 + N — làm định ngữ",
+   "Khẩu ngữ: 就要 / 快要……了"
+  ],
+  "giaiThich": "\"即将\" là PHÓ TỪ, nghĩa là \"sắp, sắp sửa\" (= 将要, 就要), biểu thị sự việc sắp xảy ra trong thời gian gần. Dùng nhiều trong VĂN VIẾT: thông báo, tin tức, lời phát biểu. Đứng trước động từ (即将到达 / 开始 / 起飞 / 交战 / 毕业) hoặc cùng động từ làm định ngữ: 即将开始的冬眠, 即将到来的考试. Không đứng trực tiếp trước danh từ (*即将的考试) và không đi với thời gian quá khứ. Khẩu ngữ thường nói 就要 / 快要……了.",
+  "viDu": [
+   {
+    "zh": "诸葛亮说：“您委托的事，当然要办好。箭什么时候用？”周瑜说：“即将交战，十天怎么样？”",
+    "py": "Zhūgě Liàng shuō: “Nín wěituō de shì, dāngrán yào bànhǎo. Jiàn shénme shíhou yòng?” Zhōu Yú shuō: “Jíjiāng jiāozhàn, shí tiān zěnmeyàng?”",
+    "vn": "Gia Cát Lượng nói: \"Việc ngài giao phó đương nhiên phải làm tốt. Khi nào cần dùng tên?\" Chu Du nói: \"Sắp giao chiến rồi, mười ngày thì thế nào?\""
+   },
+   {
+    "zh": "我们已经完成了学业，即将走上工作岗位，开始人生新的一页。",
+    "py": "Wǒmen yǐjīng wánchéngle xuéyè, jíjiāng zǒushang gōngzuò gǎngwèi, kāishǐ rénshēng xīn de yí yè.",
+    "vn": "Chúng tôi đã hoàn thành việc học, sắp bước vào vị trí công tác, mở ra trang mới của cuộc đời."
+   },
+   {
+    "zh": "熊妈妈和她的孩子们胖起来了，他们每天都吃得饱饱的，正在为即将开始的冬眠储存脂肪。",
+    "py": "Xióng māma hé tā de háizimen pàng qǐlai le, tāmen měi tiān dōu chī de bǎobǎo de, zhèngzài wèi jíjiāng kāishǐ de dōngmián chǔcún zhīfáng.",
+    "vn": "Gấu mẹ và các con đã béo lên, ngày nào chúng cũng ăn no căng, đang tích trữ mỡ cho kỳ ngủ đông sắp bắt đầu."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他去年即将毕业。",
+    "why": "即将 chỉ việc SẮP xảy ra (tương lai gần), không đi với thời gian quá khứ (去年).",
+    "dung": "他即将毕业。（或：他明年就要毕业了。）"
+   },
+   {
+    "sai": "即将的考试让我很紧张。",
+    "why": "即将 là phó từ, phải đứng trước động từ; không nối thẳng 的 + danh từ.",
+    "dung": "即将到来的考试让我很紧张。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "周瑜说：“",
+       "交战，十天怎么样？”"
+      ],
+      "dap": [
+       [
+        "即将"
+       ]
+      ],
+      "chon": [
+       "即将",
+       "曾经",
+       "刚才"
+      ],
+      "goiY": "\"Sắp giao chiến rồi, mười ngày thế nào?\" (câu bài khoá)",
+      "giai": "Việc sắp xảy ra → 即将; 曾经, 刚才 chỉ quá khứ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "各位乘客，飞机",
+       "起飞，请大家系好安全带。"
+      ],
+      "dap": [
+       [
+        "即将"
+       ]
+      ],
+      "chon": [
+       "即将",
+       "已经",
+       "终于"
+      ],
+      "goiY": "\"Máy bay sắp cất cánh, xin thắt dây an toàn.\" (练习2)",
+      "giai": "Thông báo văn viết → 即将 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "8点40分，列车即将",
+       "终点。"
+      ],
+      "dap": [
+       [
+        "到达"
+       ]
+      ],
+      "chon": [
+       "到达",
+       "达到",
+       "到来"
+      ],
+      "goiY": "\"8 giờ 40, đoàn tàu sắp đến ga cuối.\" (练一练 2)",
+      "giai": "到达 + nơi chốn; 达到 + mục tiêu, mức độ; 到来 không mang tân ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们已经完成了学业，即将",
+       "工作岗位。"
+      ],
+      "dap": [
+       [
+        "走上"
+       ]
+      ],
+      "chon": [
+       "走上",
+       "走过",
+       "走开"
+      ],
+      "goiY": "\"Chúng tôi sắp bước vào vị trí công tác.\" (ví dụ của sách)",
+      "giai": "走上工作岗位 = bắt đầu đi làm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "面对",
+       "到来的高考，她一点儿也不紧张。"
+      ],
+      "dap": [
+       [
+        "即将"
+       ]
+      ],
+      "chon": [
+       "即将",
+       "刚刚",
+       "曾经"
+      ],
+      "goiY": "\"Đối mặt kỳ thi đại học sắp đến, cô ấy chẳng hề căng thẳng.\"",
+      "giai": "即将 + V + 的 + N làm định ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大学毕业那年，她心里只有即将开始",
+       "的兴奋与希望。"
+      ],
+      "dap": [
+       [
+        "新生活"
+       ]
+      ],
+      "chon": [
+       "新生活",
+       "旧东西",
+       "老朋友"
+      ],
+      "goiY": "\"…chỉ có niềm hân hoan và hy vọng về cuộc sống mới sắp bắt đầu.\" (练一练 3)",
+      "giai": "即将开始新生活 — việc sắp tới gắn với hy vọng."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "即将",
+       "终点",
+       "列车",
+       "到达",
+       "8点40分，"
+      ],
+      "dap": [
+       "8点40分，列车即将到达终点。"
+      ],
+      "goiY": "8 giờ 40, đoàn tàu sắp đến ga cuối.",
+      "giai": "即将 đứng trước động từ 到达."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "即将",
+       "新的一页",
+       "我们",
+       "开始",
+       "人生"
+      ],
+      "dap": [
+       "我们即将开始人生新的一页。"
+      ],
+      "goiY": "Chúng ta sắp mở ra trang mới của cuộc đời.",
+      "giai": "Chủ ngữ + 即将 + V + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "即将",
+       "的",
+       "高考",
+       "到来",
+       "让他很紧张"
+      ],
+      "dap": [
+       "即将到来的高考让他很紧张。"
+      ],
+      "goiY": "Kỳ thi đại học sắp đến khiến cậu ấy rất căng thẳng.",
+      "giai": "即将到来的 + N làm chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他去年即将毕业。",
+      "dung": false,
+      "sua": "他即将毕业。",
+      "giai": "即将 chỉ tương lai gần, không đi với 去年."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "飞机即将起飞，请关闭手机。",
+      "dung": true,
+      "giai": "Đúng: thông báo văn viết, 即将 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "即将的考试让我很紧张。",
+      "dung": false,
+      "sua": "即将到来的考试让我很紧张。",
+      "giai": "即将 là phó từ, cần động từ: 即将到来的考试."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Kỳ nghỉ hè sắp kết thúc mà cậu ấy vẫn chưa làm xong bài tập.",
+      "dap": [
+       "暑假即将结束，他还没做完作业。",
+       "暑假即将结束了，他的作业还没做完。",
+       "暑假即将结束，他作业还没写完。"
+      ],
+      "py": "Shǔjià jíjiāng jiéshù, tā hái méi zuòwán zuòyè.",
+      "goiY": "Dịch sang tiếng Trung, dùng 即将.",
+      "giai": "即将 + V; 还没 + V + 完 (ôn HSK 4)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Buổi biểu diễn sắp bắt đầu, xin mời khán giả tắt điện thoại.",
+      "dap": [
+       "演出即将开始，请观众关闭手机。",
+       "演出即将开始，请观众把手机关掉。",
+       "演出即将开始，请各位观众关闭手机。"
+      ],
+      "py": "Yǎnchū jíjiāng kāishǐ, qǐng guānzhòng guānbì shǒujī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 即将.",
+      "giai": "Lời thông báo → 即将 (văn viết) hợp hơn 快要……了."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他＿＿＿，参加在多伦多举行的国际摄影展。",
+      "goiY": "Dùng 即将 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "他即将去加拿大，参加在多伦多举行的国际摄影展。",
+      "can": [
+       [
+        "即将"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "8点40分，列车＿＿＿终点。",
+      "goiY": "Dùng 即将 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "8点40分，列车即将到达终点。",
+      "can": [
+       [
+        "即将到达",
+        "即将抵达"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "大学毕业那一年，她扔掉了所有的旧东西，不管是衣物还是书，没有丝毫的留恋，只有＿＿＿新生活的兴奋与希望。",
+      "goiY": "Dùng 即将 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "大学毕业那一年，她扔掉了所有的旧东西，不管是衣物还是书，没有丝毫的留恋，只有即将开始新生活的兴奋与希望。",
+      "can": [
+       [
+        "即将开始",
+        "即将迎来",
+        "即将到来"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「能A就A」",
+  "tenVn": "",
+  "cauTruc": [
+   "能 + A + 就 + A — cố hết mức (hai A giống nhau)",
+   "能 + V + 多少 + 就 + V + 多少",
+   "能多 + Adj + 就多 + Adj / 能 + V + 多远 + 就 + V + 多远"
+  ],
+  "giaiThich": "\"能A就A\" biểu thị \"cố hết mức, được đến đâu thì làm đến đó\" (= 尽量……). A có thể là động từ, tính từ hoặc cụm có động từ / tính từ; HAI A PHẢI GIỐNG HỆT NHAU. Dùng trong khẩu ngữ. Dạng mở rộng hay gặp: 能 + V + 多少 + 就 + V + 多少 (能拿多少就拿多少); 能多 + Adj + 就多 + Adj (声音能多响亮就多响亮); 能 + V + 多 + Adj + 就 + V + 多 + Adj (能走多远就走多远). Khi viết lại câu có 尽量, bỏ 尽量 và 都, đặt 能……就…… vào.",
+  "viDu": [
+   {
+    "zh": "这个手机没用多久，能修就修，尽量别换新的。",
+    "py": "Zhège shǒujī méi yòng duō jiǔ, néng xiū jiù xiū, jǐnliàng bié huàn xīn de.",
+    "vn": "Cái điện thoại này dùng chưa được bao lâu, sửa được thì sửa, cố đừng đổi cái mới."
+   },
+   {
+    "zh": "这是我们家树上结的苹果，挺多的，你能拿多少就拿多少吧。",
+    "py": "Zhè shì wǒmen jiā shù shang jiē de píngguǒ, tǐng duō de, nǐ néng ná duōshao jiù ná duōshao ba.",
+    "vn": "Đây là táo cây nhà tôi, nhiều lắm, cậu lấy được bao nhiêu thì cứ lấy bấy nhiêu."
+   },
+   {
+    "zh": "船上的士兵奋力敲鼓，齐声高喊，声音能多响亮就多响亮。",
+    "py": "Chuán shang de shìbīng fènlì qiāo gǔ, qíshēng gāo hǎn, shēngyīn néng duō xiǎngliàng jiù duō xiǎngliàng.",
+    "vn": "Binh sĩ trên thuyền ra sức đánh trống, đồng thanh hò hét, tiếng càng vang dội càng tốt."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这本书设计的时候能薄就很薄。",
+    "why": "Hai A phải giống hệt nhau (薄 — 薄), không thêm 很 vào A thứ hai.",
+    "dung": "这本书设计的时候能薄就薄。"
+   },
+   {
+    "sai": "你能多拿就拿多少吧。",
+    "why": "Trộn hai dạng khác nhau; phải dùng đúng một khuôn: 能拿多少就拿多少 hoặc 能多拿就多拿.",
+    "dung": "你能拿多少就拿多少吧。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个手机没用多久，能修就",
+       "，尽量别换新的。"
+      ],
+      "dap": [
+       [
+        "修"
+       ]
+      ],
+      "chon": [
+       "修",
+       "换",
+       "买"
+      ],
+      "goiY": "\"Sửa được thì sửa, cố đừng đổi mới.\" (ví dụ của sách)",
+      "giai": "Hai A phải giống nhau: 能修就修."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这本书设计的时候能薄",
+       "薄，方便携带。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "也"
+      ],
+      "goiY": "\"Cuốn sách thiết kế mỏng được bao nhiêu thì mỏng.\" (ví dụ của sách)",
+      "giai": "Khuôn cố định 能……就……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "苹果挺多的，你能拿多少就拿",
+       "吧。"
+      ],
+      "dap": [
+       [
+        "多少"
+       ]
+      ],
+      "chon": [
+       "多少",
+       "一点",
+       "很多"
+      ],
+      "goiY": "\"Lấy được bao nhiêu thì lấy bấy nhiêu.\" (ví dụ của sách)",
+      "giai": "能 V 多少就 V 多少 — hai phần giống nhau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "士兵们齐声高喊，声音能",
+       "响亮就多响亮。"
+      ],
+      "dap": [
+       [
+        "多"
+       ]
+      ],
+      "chon": [
+       "多",
+       "很",
+       "太"
+      ],
+      "goiY": "\"Tiếng càng vang dội càng tốt.\" (câu bài khoá)",
+      "giai": "能多 Adj 就多 Adj."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "做任何事情都不要浪费，",
+       "省一点就省一点。"
+      ],
+      "dap": [
+       [
+        "能"
+       ]
+      ],
+      "chon": [
+       "能",
+       "会",
+       "要"
+      ],
+      "goiY": "\"Tiết kiệm được chút nào thì tiết kiệm.\" (练习2)",
+      "giai": "Mở đầu khuôn bằng 能."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那时候我就想离开家，希望能走多远就走",
+       "。"
+      ],
+      "dap": [
+       [
+        "多远"
+       ]
+      ],
+      "chon": [
+       "多远",
+       "很远",
+       "远一点"
+      ],
+      "goiY": "\"Đi được xa bao nhiêu thì đi.\" (练一练 3)",
+      "giai": "能走多远就走多远: hai phần giống hệt."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "尽量别换新的",
+       "就修",
+       "这个手机",
+       "能修",
+       "，"
+      ],
+      "dap": [
+       "这个手机能修就修，尽量别换新的。"
+      ],
+      "goiY": "Cái điện thoại này sửa được thì sửa, cố đừng đổi mới.",
+      "giai": "能修就修 đứng sau chủ đề 这个手机."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "就吃多少",
+       "你",
+       "能吃多少",
+       "吧"
+      ],
+      "dap": [
+       "你能吃多少就吃多少吧。"
+      ],
+      "goiY": "Cậu ăn được bao nhiêu thì ăn bấy nhiêu nhé.",
+      "giai": "能 V 多少就 V 多少."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "能自己做",
+       "这是你自己的事，",
+       "就自己做吧"
+      ],
+      "dap": [
+       "这是你自己的事，能自己做就自己做吧。"
+      ],
+      "goiY": "Đây là việc của cậu, tự làm được thì tự làm đi.",
+      "giai": "A = 自己做 (cụm động từ)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这本书能薄就很薄。",
+      "dung": false,
+      "sua": "这本书能薄就薄。",
+      "giai": "Hai A phải giống hệt nhau, không thêm 很."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你能早来就早来吧，大家都在等你。",
+      "dung": true,
+      "giai": "Đúng: A = 早来, hai A giống nhau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你能多拿就拿多少吧。",
+      "dung": false,
+      "sua": "你能拿多少就拿多少吧。",
+      "giai": "Không trộn hai khuôn 能多V就多V và 能V多少就V多少."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Thời gian không còn nhiều, làm được bao nhiêu thì làm bấy nhiêu nhé.",
+      "dap": [
+       "时间不多了，能做多少就做多少吧。",
+       "时间不多，能做多少就做多少。",
+       "时间不多了，你能做多少就做多少吧。"
+      ],
+      "py": "Shíjiān bù duō le, néng zuò duōshao jiù zuò duōshao ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 能A就A.",
+      "giai": "能 V 多少就 V 多少."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đây là tiền mẹ vất vả kiếm được, tiết kiệm được chừng nào thì tiết kiệm chừng ấy.",
+      "dap": [
+       "这是妈妈辛辛苦苦挣的钱，能省就省吧。",
+       "这些钱是妈妈辛苦挣来的，能省就省。",
+       "这是妈妈辛苦赚的钱，能省一点就省一点吧。"
+      ],
+      "py": "Zhè shì māma xīnxīnkǔkǔ zhèng de qián, néng shěng jiù shěng ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 能A就A.",
+      "giai": "能省就省 = tiết kiệm được thì tiết kiệm."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这是你自己的事，你尽量自己做吧。",
+      "goiY": "Dùng 能A就A viết lại câu (练一练 (1) của sách).",
+      "mau": "这是你自己的事，能自己做就自己做吧。",
+      "can": [
+       [
+        "能自己做就自己做"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他是个追求完美的人，什么事都尽量做到最好。",
+      "goiY": "Dùng 能A就A viết lại câu (练一练 (2) của sách).",
+      "mau": "他是个追求完美的人，什么事能做到最好就做到最好。",
+      "can": [
+       [
+        "能做到最好就做到最好"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那时候，我就想离开家，而且希望尽量走得远一点。",
+      "goiY": "Dùng 能A就A viết lại câu (练一练 (3) của sách).",
+      "mau": "那时候，我就想离开家，而且希望能走多远就走多远。",
+      "can": [
+       [
+        "能走多远就走多远"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「篇章：替代」",
+  "tenVn": "",
+  "cauTruc": [
+   "Dùng 这 / 此 / 如此 / 这样 / 当时 / 从此 / 否则 / 前者… thay cho một phần nội dung",
+   "Tác dụng: tránh lặp, câu gọn, liên kết trước sau",
+   "Đọc hiểu: xác định hình thức thay thế thay cho nội dung nào"
+  ],
+  "giaiThich": "Phần 篇章修辞 thứ ba của quyển 下. \"替代\" (thay thế) là dùng một HÌNH THỨC THAY THẾ để thay cho một phần nội dung trong văn bản: đại từ 这 / 那 / 此 / 如此 / 这样 / 其, từ chỉ thời gian 当时 / 从此, liên từ 否则 (= nếu không như thế), 前者 / 后者… Thay thế giúp TRÁNH LẶP, câu văn gọn hơn, đồng thời có tác dụng LIÊN KẾT trước sau không thể xem nhẹ. Thường thay cho nội dung đã nói ở trước (这话 = 用弓箭最好); đôi khi thay cho nội dung nói ngay sau (这样一句广告语：“……”). Khi đọc hiểu phải xác định được hình thức thay thế thay cho nội dung cụ thể nào.",
+  "viDu": [
+   {
+    "zh": "周瑜说：“这话不假。可现在我们缺箭，当务之急是赶造十万支箭。”（“这话”替代“（水上作战，）（用）弓箭（最好）”。）",
+    "py": "Zhōu Yú shuō: “Zhè huà bù jiǎ. Kě xiànzài wǒmen quē jiàn, dāngwùzhījí shì gǎnzào shíwàn zhī jiàn.”",
+    "vn": "Chu Du nói: \"Lời này không sai…\" — 这话 thay cho \"(đánh trên sông nước) dùng cung tên là tốt nhất\"."
+   },
+   {
+    "zh": "不过这是机密，你得替我保密，不要走漏消息，否则我性命难保。（“否则”替代“（如果）走漏了消息”。）",
+    "py": "Búguò zhè shì jīmì, nǐ děi tì wǒ bǎo mì, búyào zǒulòu xiāoxi, fǒuzé wǒ xìngmìng nán bǎo.",
+    "vn": "Có điều đây là cơ mật, ông phải giữ bí mật giúp tôi, đừng để lộ tin, nếu không tính mạng tôi khó giữ. — 否则 thay cho \"(nếu) để lộ tin\"."
+   },
+   {
+    "zh": "“你喜欢《红楼梦》还是《三国演义》？”“前者吧，我想”，莉莉说。（“前者”替代“《红楼梦》”。）",
+    "py": "“Nǐ xǐhuan 《Hónglóu Mèng》 háishi 《Sānguó Yǎnyì》?” “Qiánzhě ba, wǒ xiǎng”, Lìli shuō.",
+    "vn": "\"Cậu thích Hồng lâu mộng hay Tam Quốc diễn nghĩa?\" \"Cái trước, chắc vậy\", Lili nói. — 前者 thay cho 《红楼梦》."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我喜欢《红楼梦》和《三国演义》，尤其喜欢前者《红楼梦》。",
+    "why": "Đã dùng 前者 để thay thế thì không nhắc lại tên sách — lặp thừa, mất tác dụng thay thế.",
+    "dung": "我喜欢《红楼梦》和《三国演义》，尤其喜欢前者。"
+   },
+   {
+    "sai": "你不要走漏消息，如果你走漏了消息，我性命难保。",
+    "why": "Lặp lại nguyên vế \"走漏消息\" làm câu dài dòng; dùng 否则 để thay thế.",
+    "dung": "你不要走漏消息，否则我性命难保。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "“你喜欢《红楼梦》还是《三国演义》？”“",
+       "吧，我想。”（指《红楼梦》）"
+      ],
+      "dap": [
+       [
+        "前者"
+       ]
+      ],
+      "chon": [
+       "前者",
+       "后者",
+       "这个"
+      ],
+      "goiY": "Thay cho cái được nêu TRƯỚC (《红楼梦》). (ví dụ của sách)",
+      "giai": "前者 = cái trước; 后者 = cái sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你得替我保密，不要走漏消息，",
+       "我性命难保。"
+      ],
+      "dap": [
+       [
+        "否则"
+       ]
+      ],
+      "chon": [
+       "否则",
+       "因此",
+       "从此"
+      ],
+      "goiY": "Thay cho \"nếu để lộ tin\" (câu bài khoá).",
+      "giai": "否则 = nếu không như thế."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "“水上作战，用弓箭最好。”“",
+       "话不假。”"
+      ],
+      "dap": [
+       [
+        "这"
+       ]
+      ],
+      "chon": [
+       "这",
+       "哪",
+       "谁"
+      ],
+      "goiY": "\"Lời này không sai.\" (câu bài khoá)",
+      "giai": "这话 thay cho lời vừa nói."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这里交通不便，连一条像样儿的路都没有。尽管",
+       "，风景还是吸引了不少游客。"
+      ],
+      "dap": [
+       [
+        "如此"
+       ]
+      ],
+      "chon": [
+       "如此",
+       "因此",
+       "从此"
+      ],
+      "goiY": "Thay cho cả câu trước (练习4 ①).",
+      "giai": "尽管如此 = dù vậy."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "1949年8月他离开了中国，",
+       "再也没有回去过。"
+      ],
+      "dap": [
+       [
+        "从此"
+       ]
+      ],
+      "chon": [
+       "从此",
+       "因此",
+       "如此"
+      ],
+      "goiY": "Thay cho mốc \"từ tháng 8/1949\" (练一练 2).",
+      "giai": "从此 = từ đó trở đi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "去年八月他们离婚了，",
+       "他没要任何东西。"
+      ],
+      "dap": [
+       [
+        "当时"
+       ]
+      ],
+      "chon": [
+       "当时",
+       "现在",
+       "将来"
+      ],
+      "goiY": "Thay cho \"tháng 8 năm ngoái\" (练习4 ③).",
+      "giai": "当时 = lúc đó."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "尤其喜欢",
+       "我喜欢《红楼梦》和《三国演义》，",
+       "前者"
+      ],
+      "dap": [
+       "我喜欢《红楼梦》和《三国演义》，尤其喜欢前者。"
+      ],
+      "goiY": "Tôi thích Hồng lâu mộng và Tam Quốc diễn nghĩa, nhất là cuốn trước.",
+      "giai": "前者 thay cho 《红楼梦》."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "否则",
+       "你得替我保密，",
+       "我性命难保"
+      ],
+      "dap": [
+       "你得替我保密，否则我性命难保。"
+      ],
+      "goiY": "Ông phải giữ bí mật giúp tôi, nếu không tính mạng tôi khó giữ.",
+      "giai": "否则 thay cho vế giả thiết."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "因此",
+       "他们的产品质优价廉，",
+       "卖得特别好"
+      ],
+      "dap": [
+       "他们的产品质优价廉，因此卖得特别好。"
+      ],
+      "goiY": "Sản phẩm của họ chất lượng tốt giá rẻ, vì thế bán rất chạy.",
+      "giai": "此 trong 因此 thay cho nguyên nhân ở trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我喜欢《红楼梦》和《三国演义》，尤其喜欢前者《红楼梦》。",
+      "dung": false,
+      "sua": "我喜欢《红楼梦》和《三国演义》，尤其喜欢前者。",
+      "giai": "Đã dùng 前者 thì không lặp tên sách."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你不要走漏消息，否则我性命难保。",
+      "dung": true,
+      "giai": "Đúng: 否则 thay cho \"如果走漏了消息\"."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你不要走漏消息，如果你走漏了消息，我性命难保。",
+      "dung": false,
+      "sua": "你不要走漏消息，否则我性命难保。",
+      "giai": "Lặp nguyên vế, dài dòng → dùng 否则 thay thế."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu thích mùa hè hay mùa đông? — Mùa sau, vì tớ thích tuyết.",
+      "dap": [
+       "你喜欢夏天还是冬天？——后者，因为我喜欢雪。",
+       "你喜欢夏天还是冬天？——后者吧，因为我喜欢下雪。",
+       "你喜欢夏天还是冬天？——我喜欢后者，因为我喜欢雪。"
+      ],
+      "py": "Nǐ xǐhuan xiàtiān háishi dōngtiān? — Hòuzhě, yīnwèi wǒ xǐhuan xuě.",
+      "goiY": "Dịch sang tiếng Trung, dùng 前者 / 后者.",
+      "giai": "后者 thay cho 冬天 (cái được nêu sau)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Năm 2015 anh ấy đến Hà Nội, từ đó không rời đi nữa.",
+      "dap": [
+       "2015年他来到了河内，从此再也没有离开过。",
+       "2015年他来到河内，从此再也没离开。",
+       "2015年他到了河内，从此就再也没有离开。"
+      ],
+      "py": "Èr líng yī wǔ nián tā láidàole Hénèi, cóngcǐ zài yě méiyǒu líkāiguo.",
+      "goiY": "Dịch sang tiếng Trung, dùng 从此.",
+      "giai": "从此 thay cho mốc \"từ năm 2015\"."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "“大数据”全在于发现和理解信息内容及信息与信息之间的关系，然而，直到最近，我们对此似乎还是难以把握。——“此”替代：＿＿＿",
+      "goiY": "Chỉ ra \"此\" thay cho nội dung gì (篇章修辞 · 练一练 (1) của sách).",
+      "mau": "此：大数据",
+      "can": [
+       [
+        "大数据"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "1949年8月他离开生活了45年的中国，从此再也没有踏上中国的土地。——“从此”替代：＿＿＿",
+      "goiY": "Chỉ ra \"从此\" thay cho nội dung gì (篇章修辞 · 练一练 (2) của sách).",
+      "mau": "从此：从1949年8月",
+      "can": [
+       [
+        "1949年8月"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "东芝公司在中国曾有这样一句广告语：“东芝，东芝，大家的东芝。”……——“这样”替代：＿＿＿",
+      "goiY": "Chỉ ra \"这样\" thay cho nội dung gì (篇章修辞 · 练一练 (3) của sách).",
+      "mau": "这样：东芝，东芝，大家的东芝。",
+      "can": [
+       [
+        "大家的东芝"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

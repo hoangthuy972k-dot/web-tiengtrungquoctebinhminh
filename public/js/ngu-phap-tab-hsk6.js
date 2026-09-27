@@ -32701,3 +32701,632 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-38.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-40.html"] = [
+ {
+  "so": "1",
+  "ten": "「（把）……放在眼里」",
+  "tenVn": "",
+  "cauTruc": [
+   "不把 + O + 放在眼里: 博尔特简直就不把世界纪录放在眼里",
+   "O + (S) + 都不放在眼里: 这些苦他都不放在眼里 / 他谁都不放在眼里",
+   "怎么会把……放在眼里？(phản vấn = không coi ra gì)"
+  ],
+  "giaiThich": "\"(把)……放在眼里\" nghĩa là COI TRỌNG, COI RA GÌ, để tâm đến (重视; 看得起). Dùng nhiều trong KHẨU NGỮ và chủ yếu ở dạng PHỦ ĐỊNH: 不把……放在眼里 = không coi … ra gì, chẳng để … vào mắt (coi thường người khác — thường chê); hoặc không để tâm đến khó khăn, nguy hiểm (có thể khen: 这些苦他都不放在眼里). Hai cách đặt: ① 不 + 把 + đối tượng + 放在眼里 (不 đứng TRƯỚC 把); ② đưa đối tượng lên đầu: 谁都不放在眼里 / 这些苦他都不放在眼里. Dạng khẳng định thường xuất hiện trong câu phản vấn: 他怎么会把这个毛头小子放在眼里？ (= không coi ra gì).",
+  "viDu": [
+   {
+    "zh": "在那条狭窄的跑道上，任性的牙买加田径比赛选手博尔特简直就不把世界纪录放在眼里！",
+    "py": "Zài nà tiáo xiázhǎi de pǎodào shang, rènxìng de Yámǎijiā tiánjìng bǐsài xuǎnshǒu Bó'ěrtè jiǎnzhí jiù bù bǎ shìjiè jìlù fàng zài yǎn li!",
+    "vn": "Trên đường chạy chật hẹp ấy, vận động viên điền kinh người Jamaica ngang tàng Bolt quả thật chẳng coi kỷ lục thế giới ra gì!"
+   },
+   {
+    "zh": "一时间，大家都想挣钱，而且是想短时间挣大钱，以致一些商家根本不把10%的利润率放在眼里。",
+    "py": "Yìshíjiān, dàjiā dōu xiǎng zhèngqián, érqiě shì xiǎng duǎn shíjiān zhèng dà qián, yǐzhì yìxiē shāngjiā gēnběn bù bǎ bǎi fēn zhī shí de lìrùnlǜ fàng zài yǎn li.",
+    "vn": "Có một dạo ai cũng muốn kiếm tiền, lại còn muốn kiếm tiền lớn trong thời gian ngắn, đến nỗi một số nhà buôn hoàn toàn chẳng coi mức lợi nhuận 10% ra gì."
+   },
+   {
+    "zh": "烈日暴晒、大雨浇头、蚊虫叮咬，这些别人吃不了的苦他都不放在眼里，他心里只有一个念头：这次只能成功，不能失败。",
+    "py": "Lièrì bàoshài, dàyǔ jiāo tóu, wénchóng dīngyǎo, zhèxiē biérén chī bu liǎo de kǔ tā dōu bú fàng zài yǎn li, tā xīnli zhǐ yǒu yí ge niàntou: zhè cì zhǐ néng chénggōng, bù néng shībài.",
+    "vn": "Nắng gắt thiêu đốt, mưa lớn xối đầu, muỗi côn trùng đốt — những cái khổ người khác không chịu nổi ấy anh đều chẳng để tâm; trong lòng anh chỉ có một ý nghĩ: lần này chỉ được thành công, không được thất bại."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他把谁都不放在眼里。",
+    "why": "Khi đối tượng là 谁都 (ai cũng) thì đưa lên trước, không dùng 把: 谁都不放在眼里. 把 cần một đối tượng xác định (把世界纪录 / 把对手).",
+    "dung": "他谁都不放在眼里。"
+   },
+   {
+    "sai": "他把对手不放在眼里。",
+    "why": "Phủ định đặt TRƯỚC 把: 不把 + O + 放在眼里 (quy tắc chung của câu chữ 把: 不 / 没 đứng trước 把).",
+    "dung": "他不把对手放在眼里。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "任性的博尔特简直就不",
+       "世界纪录放在眼里！"
+      ],
+      "dap": [
+       [
+        "把"
+       ]
+      ],
+      "chon": [
+       "把",
+       "被",
+       "让"
+      ],
+      "goiY": "\"Bolt ngang tàng quả thật chẳng coi kỷ lục thế giới ra gì!\" (câu bài khoá)",
+      "giai": "Cấu trúc 不把 + O + 放在眼里; 被 / 让 là bị động — sai nghĩa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他仗着自己业务好，谁都不放在",
+       "，经理来了也一样。"
+      ],
+      "dap": [
+       [
+        "眼里"
+       ]
+      ],
+      "chon": [
+       "眼里",
+       "心里",
+       "手里"
+      ],
+      "goiY": "\"Anh ta cậy nghiệp vụ giỏi, chẳng coi ai ra gì, giám đốc đến cũng vậy.\" (练一练 (1))",
+      "giai": "Thành ngữ cố định 放在眼里 = coi ra gì; 放在心里 = để trong lòng (nghĩa khác)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这些别人吃不了的苦他都",
+       "放在眼里。"
+      ],
+      "dap": [
+       [
+        "不"
+       ]
+      ],
+      "chon": [
+       "不",
+       "没",
+       "别"
+      ],
+      "goiY": "\"Những cái khổ người khác không chịu nổi ấy anh đều chẳng để tâm.\" (ví dụ (3))",
+      "giai": "Dạng thường dùng là 不放在眼里 (thói quen, thái độ)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一些商家根本",
+       "10%的利润率放在眼里。"
+      ],
+      "dap": [
+       [
+        "不把"
+       ]
+      ],
+      "chon": [
+       "不把",
+       "把不",
+       "没被"
+      ],
+      "goiY": "\"Một số nhà buôn hoàn toàn chẳng coi mức lợi nhuận 10% ra gì.\" (ví dụ (2))",
+      "giai": "不 phải đứng TRƯỚC 把: 不把……放在眼里."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他这位世界冠军怎么会把这个毛头小子",
+       "？"
+      ],
+      "dap": [
+       [
+        "放在眼里"
+       ]
+      ],
+      "chon": [
+       "放在眼里",
+       "放在心上",
+       "看在眼里"
+      ],
+      "goiY": "\"Nhà vô địch thế giới như anh ta làm sao lại coi thằng nhóc này ra gì?\" (练一练 (3))",
+      "giai": "Câu phản vấn 怎么会把……放在眼里 = không coi ra gì. 看在眼里 = nhìn thấy hết (nghĩa khác)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "，让老板恼羞成怒。"
+      ],
+      "dap": [
+       [
+        "不把工作放在眼里"
+       ]
+      ],
+      "chon": [
+       "不把工作放在眼里",
+       "把工作不放在眼里",
+       "不放在眼里工作"
+      ],
+      "goiY": "\"Anh ta chẳng coi công việc ra gì, khiến sếp xấu hổ quá hoá giận.\" (练习2 ③)",
+      "giai": "Trật tự đúng: 不 + 把 + O + 放在眼里."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "仗着自己业务好",
+       "，",
+       "谁都",
+       "不",
+       "放在眼里",
+       "。"
+      ],
+      "dap": [
+       "他仗着自己业务好，谁都不放在眼里。"
+      ],
+      "goiY": "Anh ta cậy nghiệp vụ giỏi, chẳng coi ai ra gì.",
+      "giai": "Đối tượng 谁都 đưa lên trước, không dùng 把."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "博尔特",
+       "简直",
+       "就",
+       "不",
+       "把",
+       "世界纪录",
+       "放在眼里",
+       "。"
+      ],
+      "dap": [
+       "博尔特简直就不把世界纪录放在眼里。"
+      ],
+      "goiY": "Bolt quả thật chẳng coi kỷ lục thế giới ra gì.",
+      "giai": "简直就 + 不把 + O + 放在眼里."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "心里",
+       "只有训练",
+       "，",
+       "这些苦",
+       "他",
+       "都",
+       "不放在眼里",
+       "。"
+      ],
+      "dap": [
+       "他心里只有训练，这些苦他都不放在眼里。"
+      ],
+      "goiY": "Trong lòng anh chỉ có luyện tập, những cái khổ ấy anh đều chẳng để tâm.",
+      "giai": "O (这些苦) + S (他) + 都不放在眼里 — nghĩa khen: không để tâm đến khó khăn."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他把对手不放在眼里，结果输了比赛。",
+      "dung": false,
+      "sua": "他不把对手放在眼里，结果输了比赛。",
+      "giai": "不 phải đứng trước 把."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "刚进公司的时候，他谁都不放在眼里。",
+      "dung": true,
+      "giai": "Đúng: đối tượng 谁 đứng trước, 都不放在眼里."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他把谁都不放在眼里。",
+      "dung": false,
+      "sua": "他谁都不放在眼里。",
+      "giai": "谁都 là đối tượng phiếm chỉ, đưa lên trước, không dùng 把."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy vừa giành giải nhất đã chẳng coi ai ra gì.",
+      "dap": [
+       "他刚拿了第一名，就谁都不放在眼里了。",
+       "他刚得了第一，就谁也不放在眼里了。",
+       "他一拿了第一名，就谁都不放在眼里了。"
+      ],
+      "py": "Tā gāng nále dì-yī míng, jiù shéi dōu bú fàng zài yǎn li le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 放在眼里.",
+      "giai": "谁都 / 谁也 + 不放在眼里; 刚……就…… = vừa … đã."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đừng coi thường đối thủ, nếu không sẽ phải chịu thiệt.",
+      "dap": [
+       "别不把对手放在眼里，否则会吃亏的。",
+       "不要不把对手放在眼里，不然会吃亏。",
+       "千万别不把对手放在眼里，否则你会吃亏的。"
+      ],
+      "py": "Bié bù bǎ duìshǒu fàng zài yǎn li, fǒuzé huì chīkuī de.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不把……放在眼里.",
+      "giai": "别 + 不把 + O + 放在眼里 (đừng coi thường); 否则 = nếu không thì."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他对工作一点儿也不重视，让老板恼羞成怒。（用“把……放在眼里”改写）",
+      "goiY": "Viết lại câu bằng (把)……放在眼里 (练习2 ③ của sách).",
+      "mau": "他不把工作放在眼里，让老板恼羞成怒。",
+      "can": [
+       [
+        "放在眼里"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他知道，现在忠诚、勇敢、智慧的全部内容就是：保持头脑清醒；沉着，＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 把……放在眼里 (练一练 (2): 任何危险).",
+      "mau": "他知道，现在忠诚、勇敢、智慧的全部内容就是：保持头脑清醒；沉着，把任何危险都不放在眼里。",
+      "can": [
+       [
+        "放在眼里"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他这位世界冠军怎么会＿＿＿，可是几个回合下来就发现，这毛头小子还真是轻视不得。",
+      "goiY": "Hoàn thành câu bằng câu phản vấn 怎么会把……放在眼里 (练一练 (3)).",
+      "mau": "他这位世界冠军怎么会把这个毛头小子放在眼里，可是几个回合下来就发现，这毛头小子还真是轻视不得。",
+      "can": [
+       [
+        "放在眼里"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「不无」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + (也) 不无 + 道理 / 关系 / 好处 / 效果: 其观点也不无道理",
+   "对……是不无好处的",
+   "不无 + adj + 地 + V: 经理不无得意地宣布……"
+  ],
+  "giaiThich": "不无 (động từ, văn viết) = \"不是没有, 多少有些\" — không phải không có, ít nhiều cũng có. Đây là cách nói phủ định hai lần để KHẲNG ĐỊNH một cách uyển chuyển, nhẹ nhàng (mức độ thấp hơn 有). Sau 不无 thường là danh từ / động từ HAI ÂM TIẾT: 不无道理 (cũng có lý), 不无关系 (có liên quan phần nào), 不无好处 / 不无效果 / 不无遗憾 / 不无担心; còn làm trạng ngữ: 不无得意地宣布 (có phần đắc ý tuyên bố). Hay đi với 也 / 是……的: 其观点也不无道理; 对……是不无好处的.",
+  "viDu": [
+   {
+    "zh": "也有人从运动医学和心理学角度出发，其观点也不无道理。",
+    "py": "Yě yǒu rén cóng yùndòng yīxué hé xīnlǐxué jiǎodù chūfā, qí guāndiǎn yě bùwú dàolǐ.",
+    "vn": "Cũng có người xuất phát từ góc độ y học thể thao và tâm lý học, quan điểm của họ cũng không phải không có lý."
+   },
+   {
+    "zh": "他写的剧本里有很多关于股市及金融的内容，大概和他曾经从商不无关系。",
+    "py": "Tā xiě de jùběn li yǒu hěn duō guānyú gǔshì jí jīnróng de nèiróng, dàgài hé tā céngjīng cóngshāng bùwú guānxi.",
+    "vn": "Kịch bản anh ấy viết có nhiều nội dung về chứng khoán và tài chính, có lẽ không phải không liên quan đến việc anh từng kinh doanh."
+   },
+   {
+    "zh": "会上，经理不无得意地宣布，我们的产品被评为“消费者信得过产品”。",
+    "py": "Huì shang, jīnglǐ bùwú déyì de xuānbù, wǒmen de chǎnpǐn bèi píngwéi “xiāofèizhě xìndeguò chǎnpǐn”.",
+    "vn": "Trong cuộc họp, giám đốc có phần đắc ý tuyên bố: sản phẩm của chúng ta được bình chọn là \"sản phẩm người tiêu dùng tin cậy\"."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你说的话不无有道理。",
+    "why": "不无 đã bao hàm \"có\" (= 不是没有), không thêm 有 nữa; sau 不无 đặt thẳng danh từ: 不无道理.",
+    "dung": "你说的话不无道理。"
+   },
+   {
+    "sai": "这件事和他不无。",
+    "why": "不无 phải có thành phần đi sau (danh từ / động từ hai âm tiết), không đứng một mình cuối câu: 不无关系.",
+    "dung": "这件事和他不无关系。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "也有人从运动医学和心理学角度出发，其观点也",
+       "道理。"
+      ],
+      "dap": [
+       [
+        "不无"
+       ]
+      ],
+      "chon": [
+       "不无",
+       "不必",
+       "无非"
+      ],
+      "goiY": "\"… quan điểm của họ cũng không phải không có lý.\" (câu bài khoá)",
+      "giai": "不无 = không phải không có; 不必 = không cần; 无非 = chẳng qua là."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的剧本里有很多金融的内容，大概和他曾经从商不无",
+       "。"
+      ],
+      "dap": [
+       [
+        "关系"
+       ]
+      ],
+      "chon": [
+       "关系",
+       "关心",
+       "关于"
+      ],
+      "goiY": "\"… có lẽ không phải không liên quan đến việc anh từng kinh doanh.\" (ví dụ (2))",
+      "giai": "和……不无关系 = có liên quan phần nào đến …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "会上，经理不无",
+       "地宣布，我们的产品被评为优秀产品。"
+      ],
+      "dap": [
+       [
+        "得意"
+       ]
+      ],
+      "chon": [
+       "得意",
+       "得到",
+       "意思"
+      ],
+      "goiY": "\"… giám đốc có phần đắc ý tuyên bố …\" (ví dụ (3))",
+      "giai": "不无 + adj + 地 + V: 不无得意地 = có phần đắc ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "羊奶产业的发展，对于人类的可持续发展是不无",
+       "的。"
+      ],
+      "dap": [
+       [
+        "好处"
+       ]
+      ],
+      "chon": [
+       "好处",
+       "道理",
+       "效果"
+      ],
+      "goiY": "\"… đối với sự phát triển bền vững của loài người là có lợi.\" (练一练 (1))",
+      "giai": "Nói về lợi ích của ngành → 好处."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "自然香料对预防癌症的发生不无",
+       "。"
+      ],
+      "dap": [
+       [
+        "效果"
+       ]
+      ],
+      "chon": [
+       "效果",
+       "好处",
+       "道理"
+      ],
+      "goiY": "\"Hương liệu tự nhiên có hiệu quả phần nào trong việc phòng ung thư.\" (练一练 (2))",
+      "giai": "Nói về tác dụng phòng bệnh → 效果."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "男人爱车，女人爱房，这话",
+       "。"
+      ],
+      "dap": [
+       [
+        "不无道理"
+       ]
+      ],
+      "chon": [
+       "不无道理",
+       "不无有道理",
+       "无不道理"
+      ],
+      "goiY": "\"Đàn ông mê xe, phụ nữ mê nhà — câu này không phải không có lý.\" (练一练 (3))",
+      "giai": "不无 đã gồm nghĩa \"có\", không thêm 有; 无不 = không gì không (nghĩa khác)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "老友的",
+       "这些话",
+       "不无",
+       "道理",
+       "，",
+       "我会",
+       "谨记心间",
+       "。"
+      ],
+      "dap": [
+       "老友的这些话不无道理，我会谨记心间。"
+      ],
+      "goiY": "Những lời này của bạn cũ không phải không có lý, tôi sẽ ghi nhớ trong lòng.",
+      "giai": "S + 不无道理 (练习2 ⑤)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他的成功",
+       "和",
+       "家人的支持",
+       "不无",
+       "关系",
+       "。"
+      ],
+      "dap": [
+       "他的成功和家人的支持不无关系。"
+      ],
+      "goiY": "Thành công của anh ấy không phải không liên quan đến sự ủng hộ của gia đình.",
+      "giai": "A 和 B 不无关系."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "适当的运动",
+       "对",
+       "身体健康",
+       "是",
+       "不无好处",
+       "的",
+       "。"
+      ],
+      "dap": [
+       "适当的运动对身体健康是不无好处的。"
+      ],
+      "goiY": "Vận động vừa phải đối với sức khoẻ là có lợi.",
+      "giai": "对……是不无好处的."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你说的话不无有道理。",
+      "dung": false,
+      "sua": "你说的话不无道理。",
+      "giai": "Không thêm 有 sau 不无."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她不无担心地看着窗外的大雨。",
+      "dung": true,
+      "giai": "Đúng: 不无 + adj/V + 地 + V (có phần lo lắng nhìn …)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件事的失败和他不无。",
+      "dung": false,
+      "sua": "这件事的失败和他不无关系。",
+      "giai": "不无 phải có danh từ đi sau."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ý kiến của cậu ấy tuy hơi cực đoan, nhưng cũng không phải không có lý.",
+      "dap": [
+       "他的意见虽然有点儿极端，但也不无道理。",
+       "他的看法虽然有些极端，可是也不无道理。",
+       "虽然他的意见有点儿极端，但也不无道理。"
+      ],
+      "py": "Tā de yìjiàn suīrán yǒudiǎnr jíduān, dàn yě bùwú dàolǐ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 不无道理.",
+      "giai": "虽然……但也不无道理; 不无 = 不是没有."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Thành tích của em ấy tiến bộ nhanh như vậy, không phải không liên quan đến việc luyện tập chính quy.",
+      "dap": [
+       "他的成绩进步这么快，和正规的训练不无关系。",
+       "她的成绩提高得这么快，跟正规训练不无关系。",
+       "他成绩进步得这么快，与正规的训练不无关系。"
+      ],
+      "py": "Tā de chéngjì jìnbù zhème kuài, hé zhèngguī de xùnliàn bùwú guānxi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 和……不无关系.",
+      "giai": "A 和 / 与 B 不无关系; 正规 = chính quy (từ mới bài 40)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "老友的这些话有一些道理，我会谨记心间。（用“不无”改写）",
+      "goiY": "Viết lại câu bằng 不无 (练习2 ⑤ của sách).",
+      "mau": "老友的这些话不无道理，我会谨记心间。",
+      "can": [
+       [
+        "不无"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "有研究成果证实，自然香料具有抑制霉菌生长的作用，对预防癌症的发生＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 不无 + danh từ (练一练 (2)).",
+      "mau": "有研究成果证实，自然香料具有抑制霉菌生长的作用，对预防癌症的发生不无效果。",
+      "can": [
+       [
+        "不无"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "羊奶产业的发展，对于人类的可持续发展＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 是不无……的 (练一练 (1)).",
+      "mau": "羊奶产业的发展，对于人类的可持续发展是不无好处的。",
+      "can": [
+       [
+        "不无"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

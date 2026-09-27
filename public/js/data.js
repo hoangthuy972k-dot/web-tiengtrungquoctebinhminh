@@ -2259,6 +2259,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-38.html'
+      },
+      {
+        id: 'hsk6-l40',
+        number: 40,
+        title: 'Siêu năng lực của con người có làm thay đổi kỷ lục thế giới?',
+        titleHanzi: '人类超能力会改变世界纪录吗？',
+        titlePinyin: 'Rénlèi chāo nénglì huì gǎibiàn shìjiè jìlù ma?',
+        topic: '第十单元 热点追踪 · Giới hạn vận động của con người: kỷ lục thế giới, ví dụ Bolt, phân tích cơ thể và luyện tập khoa học',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-40.html'
       }
     ],
     yct: [

@@ -2177,6 +2177,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-31.html'
       },
       {
+        id: 'hsk6-l32',
+        number: 32,
+        title: 'Đôi lúc cũng nên buồn',
+        titleHanzi: '有时，不妨悲伤',
+        titlePinyin: 'Yǒushí, bùfáng bēishāng',
+        topic: '第八单元 人体探秘 · Nước mắt và sức khoẻ: đàn ông cũng có quyền khóc, giải toả cảm xúc đúng mức',
+        vocabCount: 52,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-32.html'
+      },
+      {
         id: 'hsk6-l33',
         number: 33,
         title: 'Nhớ lúc sống chậm',

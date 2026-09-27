@@ -26875,6 +26875,623 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-31.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-32.html"] = [
+ {
+  "so": "1",
+  "ten": "「哪怕」",
+  "tenVn": "",
+  "cauTruc": [
+   "哪怕 + tình huống giả thiết (thường cực đoan / bất lợi)，（S +）也 / 都 + kết quả không đổi",
+   "Kết quả ……，哪怕 + tình huống giả thiết (vế 哪怕 đặt sau để bổ sung)",
+   "哪怕是 + N / tình huống，也……: ngay cả … cũng …"
+  ],
+  "giaiThich": "“哪怕” là LIÊN TỪ, nghĩa giống “即使” (dù, cho dù). Sau 哪怕 là một tình huống GIẢ THIẾT — thường là tình huống cực đoan, bất lợi nhất; vế sau phối hợp với “也” hoặc “都”, biểu thị tình huống ấy không làm thay đổi kết quả hay kết luận. Hay dùng trong khẩu ngữ. Vế 哪怕 có thể đứng trước, hoặc đứng sau để bổ sung ý: 我们一定会尽全力抢救病人，哪怕只有一线希望. So sánh: 即使 (văn viết hơn), 就算 / 就是 (khẩu ngữ); 哪怕 hay đi với 只有 / 一点儿 / 再 + Adj để nhấn \"dù chỉ …\" hoặc \"dù … đến mấy\".",
+  "viDu": [
+   {
+    "zh": "哪怕遭受打击、面对失败、受尽委屈，也一定要坚强，这是什么时候都不能含糊的。",
+    "py": "Nǎpà zāoshòu dǎjī, miànduì shībài, shòujìn wěiqu, yě yídìng yào jiānqiáng, zhè shì shénme shíhou dōu bù néng hánhu de.",
+    "vn": "Dù gặp cú sốc, đối mặt thất bại, chịu đủ mọi uất ức cũng nhất định phải kiên cường, đó là điều lúc nào cũng không được qua loa."
+   },
+   {
+    "zh": "她真的老了，记忆力越来越差，哪怕两三天以前的事情，也会记不清。",
+    "py": "Tā zhēn de lǎo le, jìyìlì yuè lái yuè chà, nǎpà liǎng-sān tiān yǐqián de shìqing, yě huì jì bu qīng.",
+    "vn": "Bà ấy già thật rồi, trí nhớ ngày càng kém, ngay cả chuyện hai ba hôm trước cũng không nhớ rõ."
+   },
+   {
+    "zh": "您放心，我们一定会尽全力抢救病人，哪怕只有一线希望。",
+    "py": "Nín fàngxīn, wǒmen yídìng huì jìn quánlì qiǎngjiù bìngrén, nǎpà zhǐyǒu yí xiàn xīwàng.",
+    "vn": "Xin yên tâm, chúng tôi nhất định sẽ dốc toàn lực cứu chữa bệnh nhân, dù chỉ còn một tia hy vọng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "哪怕遭受打击，他一定要坚强。",
+    "why": "Vế sau thiếu 也 / 都 hô ứng với 哪怕.",
+    "dung": "哪怕遭受打击，他也一定要坚强。"
+   },
+   {
+    "sai": "哪怕天气很好，我们也去爬山了。",
+    "why": "哪怕 nêu tình huống GIẢ THIẾT, thường bất lợi, trái với kết quả; trời đẹp mà đi leo núi là chuyện bình thường, không có ý nhượng bộ.",
+    "dung": "哪怕天气不好，我们也要去爬山。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "哪怕遭受打击、面对失败，",
+       "一定要坚强。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "才"
+      ],
+      "goiY": "\"Dù gặp cú sốc, đối mặt thất bại cũng nhất định phải kiên cường.\" (câu bài khoá)",
+      "giai": "哪怕……也……: vế sau dùng 也 hô ứng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她真的老了，",
+       "两三天以前的事情，也会记不清。"
+      ],
+      "dap": [
+       [
+        "哪怕"
+       ]
+      ],
+      "chon": [
+       "哪怕",
+       "因为",
+       "只要"
+      ],
+      "goiY": "\"… ngay cả chuyện hai ba hôm trước cũng không nhớ rõ.\" (ví dụ (2) của sách)",
+      "giai": "哪怕 + tình huống cực đoan + 也 = nhượng bộ; 因为 / 只要 không kết hợp với 也 theo nghĩa này."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们一定会尽全力抢救病人，哪怕只有一线",
+       "。"
+      ],
+      "dap": [
+       [
+        "希望"
+       ]
+      ],
+      "chon": [
+       "希望",
+       "失望",
+       "愿望"
+      ],
+      "goiY": "\"… dù chỉ còn một tia hy vọng.\" (ví dụ (3) của sách)",
+      "giai": "一线希望 = một tia hy vọng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "渴死了，哪怕有一口水",
+       "是好的。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "还",
+       "才"
+      ],
+      "goiY": "\"Khát chết mất, dù chỉ một ngụm nước cũng tốt.\" (练一练 (2))",
+      "giai": "哪怕 + 有一口水 (dù chỉ một chút) + 也……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "说好了啊，",
+       "晚点儿，你也一定要来。"
+      ],
+      "dap": [
+       [
+        "哪怕"
+       ]
+      ],
+      "chon": [
+       "哪怕",
+       "虽然",
+       "既然"
+      ],
+      "goiY": "\"Hẹn rồi nhé, dù muộn một chút cậu cũng nhất định phải đến.\" (练一练 (3))",
+      "giai": "虽然 nói sự thật (không phải giả thiết); 既然 = đã … thì …; chỉ 哪怕 là giả thiết nhượng bộ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "衣服只要干净就行，哪怕旧点儿",
+       "没关系。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "又"
+      ],
+      "goiY": "\"Quần áo chỉ cần sạch là được, dù cũ một chút cũng không sao.\" (练习2 (4))",
+      "giai": "哪怕……也没关系 = dù … cũng không sao."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "哪怕",
+       "遭受打击",
+       "也",
+       "一定要",
+       "坚强"
+      ],
+      "dap": [
+       "哪怕遭受打击也一定要坚强。",
+       "哪怕遭受打击，也一定要坚强。"
+      ],
+      "goiY": "Dù gặp cú sốc cũng nhất định phải kiên cường.",
+      "giai": "哪怕 + tình huống + 也 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "会尽全力",
+       "抢救病人",
+       "哪怕",
+       "只有一线希望"
+      ],
+      "dap": [
+       "我们会尽全力抢救病人，哪怕只有一线希望。"
+      ],
+      "goiY": "Chúng tôi sẽ dốc toàn lực cứu bệnh nhân, dù chỉ còn một tia hy vọng.",
+      "giai": "Vế 哪怕 đặt sau để bổ sung."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "哪怕",
+       "是看书",
+       "她",
+       "也要",
+       "听音乐"
+      ],
+      "dap": [
+       "哪怕是看书，她也要听音乐。",
+       "她哪怕是看书，也要听音乐。",
+       "她哪怕是看书也要听音乐。"
+      ],
+      "goiY": "Ngay cả lúc đọc sách cô ấy cũng phải nghe nhạc.",
+      "giai": "哪怕是 + tình huống + 也……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "哪怕再累，他每天坚持跑步。",
+      "dung": false,
+      "sua": "哪怕再累，他也每天坚持跑步。",
+      "giai": "Thiếu 也 / 都 hô ứng với 哪怕."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "哪怕今天是晴天，我们也去公园散步了。",
+      "dung": false,
+      "sua": "哪怕今天下雨，我们也要去公园散步。",
+      "giai": "哪怕 nêu tình huống giả thiết bất lợi; trời nắng là điều thuận lợi và là sự thật → không có ý nhượng bộ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "哪怕只有一点儿希望，我们也不能放弃。",
+      "dung": true,
+      "giai": "Giả thiết cực đoan (chỉ còn chút hy vọng) + 也 → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Dù bận đến đâu, cậu ấy cũng gọi điện cho mẹ mỗi tuần.",
+      "dap": [
+       "哪怕再忙，他也每个星期给妈妈打电话。",
+       "哪怕再忙，他每个星期也给妈妈打电话。",
+       "哪怕工作再忙，他也每个星期给妈妈打电话。",
+       "哪怕再忙，他每个星期都给妈妈打电话。"
+      ],
+      "py": "Nǎpà zài máng, tā yě měi ge xīngqī gěi māma dǎ diànhuà.",
+      "goiY": "Dịch sang tiếng Trung, dùng 哪怕.",
+      "giai": "哪怕 + 再 + Adj，也 / 都…… = dù … đến đâu cũng …."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Dù chỉ có một phần trăm hy vọng, chúng tôi cũng sẽ dốc toàn lực.",
+      "dap": [
+       "哪怕只有百分之一的希望，我们也会尽全力。",
+       "哪怕只有百分之一的希望，我们也要尽全力。",
+       "哪怕只有百分之一的希望，我们也会尽最大的努力。",
+       "我们会尽全力，哪怕只有百分之一的希望。"
+      ],
+      "py": "Nǎpà zhǐyǒu bǎi fēn zhī yī de xīwàng, wǒmen yě huì jìn quánlì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 哪怕.",
+      "giai": "\"dù chỉ có\" = 哪怕只有; \"dốc toàn lực\" = 尽全力."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "她这个人真奇怪，走路的时候听音乐，吃饭的时候听音乐，＿＿，也要听音乐。（用“哪怕”改写“就是看书”）",
+      "goiY": "đáp án sách — 练一练 (1)",
+      "mau": "她这个人真奇怪，走路的时候听音乐，吃饭的时候听音乐，哪怕是看书，也要听音乐。",
+      "can": [
+       [
+        "哪怕"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "渴死了，＿＿也是好的。（用“哪怕”改写“就算有一口水”）",
+      "goiY": "đáp án sách — 练一练 (2)",
+      "mau": "渴死了，哪怕有一口水也是好的。",
+      "can": [
+       [
+        "哪怕"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "说好了啊，＿＿，你也一定要来。（用“哪怕”改写“即使晚点儿”）",
+      "goiY": "đáp án sách — 练一练 (3)",
+      "mau": "说好了啊，哪怕晚点儿，你也一定要来。",
+      "can": [
+       [
+        "哪怕"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「反之」",
+  "tenVn": "",
+  "cauTruc": [
+   "A，（就）B；反之，（就）C — C trái ngược với B (thường lược điều kiện \"không A\")",
+   "……，反之亦然 — ngược lại cũng thế",
+   "反之 chỉ làm liên từ; muốn bổ nghĩa cho danh từ dùng 相反 (相反的方向)"
+  ],
+  "giaiThich": "“反之” là LIÊN TỪ (văn viết), nghĩa \"从相反的方面说\" — nói từ mặt ngược lại. Dùng giữa hai vế câu, hai câu hay hai đoạn văn, có tác dụng chuyển ý, dẫn ra nội dung TRÁI NGƯỢC với phía trước; sau “反之” có ngắt (dấu phẩy). Khung hay gặp: A，（就）B；反之，（就）C — vế sau thường lược điều kiện \"không A\" vì người đọc tự hiểu. Gần nghĩa 相反, nhưng 相反 còn làm tính từ (相反的方向), còn 反之 chỉ làm liên từ. Cụm cố định: 反之亦然 = ngược lại cũng thế.",
+  "viDu": [
+   {
+    "zh": "事实表明，长期的压抑、隐忍对健康只有坏处，没有好处，反之，以适当的方式将情绪释放一下，人的心绪才会变得平和。",
+    "py": "Shìshí biǎomíng, chángqī de yāyì, yǐnrěn duì jiànkāng zhǐyǒu huàichù, méiyǒu hǎochù, fǎnzhī, yǐ shìdàng de fāngshì jiāng qíngxù shìfàng yíxià, rén de xīnxù cái huì biàn de pínghé.",
+    "vn": "Thực tế cho thấy, dồn nén, nhẫn nhịn lâu dài chỉ có hại chứ không có lợi cho sức khoẻ; ngược lại, giải toả cảm xúc bằng cách thích hợp thì tâm trạng con người mới trở nên bình hoà."
+   },
+   {
+    "zh": "有些东西，越是一心想要得到，越是不能如愿，反之，不去在意的时候倒会有意外来临。",
+    "py": "Yǒuxiē dōngxi, yuè shì yìxīn xiǎng yào dédào, yuè shì bù néng rúyuàn, fǎnzhī, bú qù zàiyì de shíhou dào huì yǒu yìwài láilín.",
+    "vn": "Có những thứ càng một lòng muốn có thì càng không được như ý; ngược lại, lúc không để tâm thì lại có bất ngờ ập đến."
+   },
+   {
+    "zh": "经济发展了，百姓的收入增加了，消费能力就强，反之，百姓的消费能力就差。",
+    "py": "Jīngjì fāzhǎn le, bǎixìng de shōurù zēngjiā le, xiāofèi nénglì jiù qiáng, fǎnzhī, bǎixìng de xiāofèi nénglì jiù chà.",
+    "vn": "Kinh tế phát triển, thu nhập người dân tăng thì sức tiêu dùng mạnh; ngược lại, sức tiêu dùng của người dân sẽ kém."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "雨水多，气候就比较湿润，反之，气候就比较潮湿。",
+    "why": "Vế sau 反之 phải nói điều NGƯỢC LẠI; 潮湿 cùng nghĩa với 湿润 nên mâu thuẫn.",
+    "dung": "雨水多，气候就比较湿润，反之，气候就比较干燥。"
+   },
+   {
+    "sai": "他们俩朝反之的方向走了。",
+    "why": "反之 chỉ là liên từ, không bổ nghĩa cho danh từ; phải dùng tính từ 相反.",
+    "dung": "他们俩朝相反的方向走了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "长期的压抑对健康只有坏处，",
+       "，以适当的方式释放情绪，心绪才会变得平和。"
+      ],
+      "dap": [
+       [
+        "反之"
+       ]
+      ],
+      "chon": [
+       "反之",
+       "总之",
+       "加之"
+      ],
+      "goiY": "\"… ngược lại, giải toả cảm xúc đúng cách thì tâm trạng mới bình hoà.\" (câu bài khoá)",
+      "giai": "反之 = ngược lại; 总之 = tóm lại; 加之 = thêm vào đó."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "雨水多，气候就比较湿润，反之，气候就比较",
+       "。"
+      ],
+      "dap": [
+       [
+        "干燥"
+       ]
+      ],
+      "chon": [
+       "干燥",
+       "潮湿",
+       "温暖"
+      ],
+      "goiY": "\"… ngược lại, khí hậu sẽ khô hanh.\" (练一练 (1))",
+      "giai": "Vế sau 反之 phải trái nghĩa: 湿润 ↔ 干燥."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "经济发展了，百姓的消费能力就强，反之，百姓的消费能力就",
+       "。"
+      ],
+      "dap": [
+       [
+        "差"
+       ]
+      ],
+      "chon": [
+       "差",
+       "强",
+       "高"
+      ],
+      "goiY": "\"… ngược lại, sức tiêu dùng sẽ kém.\" (ví dụ (3) của sách)",
+      "giai": "强 ↔ 差."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一切从实际出发，事业就能顺利发展，",
+       "，就会遇到挫折。"
+      ],
+      "dap": [
+       [
+        "反之"
+       ]
+      ],
+      "chon": [
+       "反之",
+       "因此",
+       "何况"
+      ],
+      "goiY": "\"… ngược lại thì sẽ gặp trắc trở.\" (练习2 (5))",
+      "giai": "因此 = vì vậy (kết quả thuận chiều); 何况 = huống hồ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "父母尊重孩子，孩子就会尊重父母，反之",
+       "然。"
+      ],
+      "dap": [
+       [
+        "亦"
+       ]
+      ],
+      "chon": [
+       "亦",
+       "也",
+       "必"
+      ],
+      "goiY": "\"… ngược lại cũng vậy.\"",
+      "giai": "Cụm cố định 反之亦然 (亦 = cũng — bài 27)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "不断地积累，经验就会丰富起来，",
+       "，永远不会有经验可谈。"
+      ],
+      "dap": [
+       [
+        "反之"
+       ]
+      ],
+      "chon": [
+       "反之",
+       "于是",
+       "而且"
+      ],
+      "goiY": "\"… ngược lại, mãi mãi chẳng có kinh nghiệm gì để nói.\" (练一练 (3))",
+      "giai": "于是 = thế là (tiếp nối); 而且 = hơn nữa (tăng tiến)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "雨水多",
+       "气候就比较湿润",
+       "反之",
+       "气候就比较干燥"
+      ],
+      "dap": [
+       "雨水多，气候就比较湿润，反之，气候就比较干燥。"
+      ],
+      "goiY": "Mưa nhiều thì khí hậu ẩm ướt, ngược lại thì khô hanh.",
+      "giai": "A 就 B，反之，C."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "有了充足的阳光",
+       "植物就能生长好",
+       "反之",
+       "植物就没有生机"
+      ],
+      "dap": [
+       "有了充足的阳光，植物就能生长好，反之，植物就没有生机。"
+      ],
+      "goiY": "Có đủ nắng thì cây lớn tốt, ngược lại thì cây không có sức sống.",
+      "giai": "反之 đứng giữa hai vế đối lập."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "父母尊重孩子",
+       "孩子就会尊重父母",
+       "反之亦然"
+      ],
+      "dap": [
+       "父母尊重孩子，孩子就会尊重父母，反之亦然。"
+      ],
+      "goiY": "Cha mẹ tôn trọng con thì con sẽ tôn trọng cha mẹ, ngược lại cũng vậy.",
+      "giai": "反之亦然 đặt cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "多运动身体就好，反之，身体就更健康。",
+      "dung": false,
+      "sua": "多运动身体就好，反之，身体就差。",
+      "giai": "Vế sau 反之 phải TRÁI NGƯỢC với vế trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他们俩朝反之的方向走了。",
+      "dung": false,
+      "sua": "他们俩朝相反的方向走了。",
+      "giai": "反之 chỉ là liên từ, không bổ nghĩa cho danh từ → dùng 相反."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "只要坚持努力，就会有进步；反之，就会退步。",
+      "dung": true,
+      "giai": "Hai vế đối lập, 反之 đứng giữa, sau có dấu phẩy → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nếu ngủ đủ giấc thì làm việc hiệu quả cao; ngược lại, hiệu quả sẽ rất thấp.",
+      "dap": [
+       "如果睡眠充足，工作效率就高；反之，效率就会很低。",
+       "睡眠充足，工作效率就高，反之，效率就很低。",
+       "如果睡眠充足，工作效率就会很高；反之，效率就会很低。",
+       "睡眠充足的话，工作效率就高；反之，效率就会很低。"
+      ],
+      "py": "Rúguǒ shuìmián chōngzú, gōngzuò xiàolǜ jiù gāo; fǎnzhī, xiàolǜ jiù huì hěn dī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 反之.",
+      "giai": "\"ngược lại\" nối hai vế đối lập = 反之 (ôn chủ đề giấc ngủ — bài 30)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Em tôn trọng người khác thì người khác sẽ tôn trọng em, ngược lại cũng vậy.",
+      "dap": [
+       "你尊重别人，别人就会尊重你，反之亦然。",
+       "你尊重别人，别人就尊重你，反之亦然。",
+       "你尊重别人，别人也会尊重你，反之亦然。",
+       "如果你尊重别人，别人就会尊重你，反之亦然。"
+      ],
+      "py": "Nǐ zūnzhòng biérén, biérén jiù huì zūnzhòng nǐ, fǎnzhī yì rán.",
+      "goiY": "Dịch sang tiếng Trung, dùng 反之亦然.",
+      "giai": "反之亦然 = ngược lại cũng thế."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "雨水多，气候就比较湿润，反之，＿＿。（用“反之”完成句子）",
+      "goiY": "đáp án sách — 练一练 (1)",
+      "mau": "雨水多，气候就比较湿润，反之，气候就比较干燥。",
+      "can": [
+       [
+        "反之"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "有了充足的阳光、水分和空气，植物就能生长好，反之，＿＿。（用“反之”完成句子）",
+      "goiY": "đáp án sách — 练一练 (2)",
+      "mau": "有了充足的阳光、水分和空气，植物就能生长好，反之，植物就没有生机。",
+      "can": [
+       [
+        "反之"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "不断地积累，经验就会丰富起来，反之，＿＿。（用“反之”完成句子）",
+      "goiY": "đáp án sách — 练一练 (3)",
+      "mau": "不断地积累，经验就会丰富起来，反之，永远不会有经验可谈。",
+      "can": [
+       [
+        "反之"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk6-bai-33.html"] = [
  {
   "so": "1",

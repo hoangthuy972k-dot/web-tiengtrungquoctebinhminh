@@ -10,6 +10,7 @@
    · gx — 用所给词语或结构改写句子: viết lại câu có dùng từ/cấu trúc cho sẵn → so đáp án, tự đánh giá
    · mp — 阅读语段，模仿造句: đọc đoạn mẫu, điền vào câu khung → xem câu mẫu, tự đánh giá
    · bc — 扩展 病句: sửa câu sai → xem chỗ sai + câu đúng, tự đánh giá
+   · sx — 把句子按照正确顺序组成语段: bấm các câu A–E theo đúng thứ tự
    ══════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
@@ -43,7 +44,8 @@
       st.ab = st.ab || {};     // "p_c" -> chi so
       st.vt = st.vt || {};     // "p_c" -> 'A'..'D'
       st.mr = st.mr || {};     // "p_c" -> { t: chuoi em go, kt: bool }
-      st.vl = st.vl || {};     // "p_c" -> { t: bai em viet | [o khung], xem: bool, tu: true|false (tu danh gia) }
+      st.vl = st.vl || {};
+      st.sx = st.sx || {};     // "p_c" -> { chon: ['B','C',...], kt: bool }     // "p_c" -> { t: bai em viet | [o khung], xem: bool, tu: true|false (tu danh gia) }
     }
     chuan();
     var chon = {};           // "p" -> chi so o trong dang chon (phan kho)
@@ -79,6 +81,12 @@
             tong++;
             var s = st.mr[pi + '_' + ci];
             if (s && s.kt) { lam++; if (mrDat(c, s)) dung++; }
+          });
+        } else if (p.kieu === 'sx') {
+          p.cau.forEach(function (c, ci) {
+            tong++;
+            var s = st.sx[pi + '_' + ci];
+            if (s && s.kt) { lam++; if (s.chon.join('') === c.dap.join('')) dung++; }
           });
         } else if (TU_DANH_GIA.indexOf(p.kieu) >= 0) {
           p.cau.forEach(function (c, ci) {
@@ -258,6 +266,36 @@
       }).join('') + '</ol>';
     }
 
+    /* ----- sx: sắp xếp câu thành đoạn ----- */
+    function veSx(p, pi) {
+      return '<ol class="sk-list sk-viet">' + p.cau.map(function (c, ci) {
+        var k = pi + '_' + ci, s = st.sx[k] || { chon: [], kt: false };
+        var theoKhoa = {};
+        c.manh.forEach(function (m) { theoKhoa[m.k] = m.s; });
+        var bank = '<div class="sk-sx-bank">' + c.manh.map(function (m) {
+          var da = s.chon.indexOf(m.k) >= 0;
+          return '<button type="button" class="sk-sx-m lv-zh' + (da ? ' is-used' : '') + '" data-sk-sx="' + k + '_' + m.k + '"' + (da || s.kt ? ' disabled' : '') + '>' +
+            '<b>' + esc(m.k) + '</b> ' + esc(m.s) + '</button>';
+        }).join('') + '</div>';
+        var dong = '<div class="sk-sx-dong" aria-label="Thứ tự em chọn">' + (s.chon.length ? s.chon.map(function (x, i) {
+          var cls = 'sk-sx-o' + (s.kt ? (c.dap[i] === x ? ' is-ok' : ' is-bad') : '');
+          return '<button type="button" class="' + cls + '" data-sk-sx-bo="' + k + '_' + i + '"' + (s.kt ? ' disabled' : '') + '>' + esc(x) + '</button>';
+        }).join('<span class="sk-sx-mui" aria-hidden="true">→</span>') : '<span class="lv-hint">Bấm các câu bên dưới theo đúng thứ tự.</span>') + '</div>';
+        var kq = '';
+        if (s.kt) {
+          var dung = s.chon.join('') === c.dap.join('');
+          kq = '<div class="pb-why ' + (dung ? 'ok' : 'bad') + '"><b>' + (dung ? '✓ Đúng thứ tự.' : '✗ Chưa đúng — thứ tự đúng: ' + esc(c.dap.join(' → ')) + '.') + '</b>' +
+            '<div class="lv-zh sk-sx-doan">' + esc(c.dap.map(function (x) { return theoKhoa[x] || ''; }).join('，').replace(/[，。]+$/, '') + '。') + '</div>' +
+            (c.giai ? esc(c.giai) : '') + '</div>' +
+            '<div class="lv-actions"><button type="button" class="lv-btn ghost sm" data-sk-sx-lai="' + k + '">Làm lại</button></div>';
+        } else {
+          kq = '<div class="lv-actions"><button type="button" class="lv-btn sm" data-sk-sx-kt="' + k + '"' + (s.chon.length === c.manh.length ? '' : ' disabled') + '>Kiểm tra</button>' +
+            (s.chon.length ? '<button type="button" class="lv-btn ghost sm" data-sk-sx-lai="' + k + '">Xếp lại</button>' : '') + '</div>';
+        }
+        return '<li>' + dong + (s.kt ? '' : bank) + kq + '</li>';
+      }).join('') + '</ol>';
+    }
+
     function vePhan(p, pi) {
       switch (p.kieu) {
         case 'kho': return veKho(p, pi);
@@ -266,6 +304,7 @@
         case 'gx': return veGx(p, pi);
         case 'bc': return veBc(p, pi);
         case 'mp': return veMp(p, pi);
+        case 'sx': return veSx(p, pi);
         default: return veViTri(p, pi);
       }
     }
@@ -353,6 +392,18 @@
       if ((a = b.getAttribute('data-sk-lai'))) { delete st.kho[+a]; chon[+a] = null; luu(); ve(); return; }
       if ((a = b.getAttribute('data-sk-ab'))) { var y = a.split('_'); st.ab[y[0] + '_' + y[1]] = +y[2]; luu(); ve(); return; }
       if ((a = b.getAttribute('data-sk-vt'))) { var z = a.split('_'); st.vt[z[0] + '_' + z[1]] = z[2]; luu(); ve(); return; }
+      if ((a = b.getAttribute('data-sk-sx'))) {
+        var q = a.split('_'), ks = q[0] + '_' + q[1];
+        var ss = st.sx[ks] || (st.sx[ks] = { chon: [], kt: false });
+        if (ss.chon.indexOf(q[2]) < 0) ss.chon.push(q[2]);
+        luu(); ve(); return;
+      }
+      if ((a = b.getAttribute('data-sk-sx-bo'))) {
+        var q2 = a.split('_'), ks2 = q2[0] + '_' + q2[1];
+        st.sx[ks2].chon.splice(+q2[2], 1); luu(); ve(); return;
+      }
+      if ((a = b.getAttribute('data-sk-sx-kt'))) { st.sx[a].kt = true; luu(); ve(); return; }
+      if ((a = b.getAttribute('data-sk-sx-lai'))) { st.sx[a] = { chon: [], kt: false }; luu(); ve(); return; }
       if ((a = b.getAttribute('data-sk-mr-kt'))) { kiemMr(a); return; }
       if ((a = b.getAttribute('data-sk-mr-lai'))) { st.mr[a] = { t: '', kt: false }; luu(); ve(); return; }
       if ((a = b.getAttribute('data-sk-vl-kt'))) { kiemViet(a); return; }

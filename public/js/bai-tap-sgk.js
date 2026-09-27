@@ -143,7 +143,7 @@
         var v = st.ab[pi + '_' + ci], xong = v != null;
         return '<li><div class="lv-zh sk-cau">' + esc(c.s) + '</div><div class="sk-ab">' + c.opts.map(function (o, oi) {
             var cls = 'lv-chip pb-opt' + (xong ? (oi === c.ans ? ' is-right' : (oi === v ? ' is-wrong' : '')) : '');
-            return '<button type="button" class="' + cls + '" data-sk-ab="' + pi + '_' + ci + '_' + oi + '"' + (xong ? ' disabled' : '') + '>' + 'AB'.charAt(oi) + '. ' + esc(o) + '</button>';
+            return '<button type="button" class="' + cls + '" data-sk-ab="' + pi + '_' + ci + '_' + oi + '"' + (xong ? ' disabled' : '') + '>' + 'ABCDEF'.charAt(oi) + '. ' + esc(o) + '</button>';
           }).join('') + '</div>' +
           (xong ? '<div class="pb-why ' + (v === c.ans ? 'ok' : 'bad') + '"><b>' + (v === c.ans ? '✓ Đúng.' : '✗ Chưa đúng.') + '</b> ' + esc(c.giai || '') + '</div>' : '') +
         '</li>';

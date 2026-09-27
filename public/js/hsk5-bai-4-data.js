@@ -5375,90 +5375,30 @@ var errorFixData = [
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {
-    "vi": "Tử Lộ là học trò lớn tuổi nhất của Khổng Tử.",
-    "zh": "子路是孔子最年长的学生。",
-    "py": "Zǐlù shì Kǒngzǐ zuì niánzhǎng de xuésheng."
-  },
-  {
-    "vi": "Tôi sinh ra và lớn lên ở Hà Nội, đến nay vẫn chưa từng rời khỏi đó.",
-    "zh": "我在河内出生、长大，至今还没离开过。",
-    "py": "Wǒ zài Hénèi chūshēng, zhǎngdà, zhìjīn hái méi líkāiguo."
-  },
-  {
-    "vi": "Hôm qua đi bộ cả ngày, chân tôi đau không chịu nổi.",
-    "zh": "昨天走了一天路，我的脚疼得不行。",
-    "py": "Zuótiān zǒule yì tiān lù, wǒ de jiǎo téng de bùxíng."
-  },
-  {
-    "vi": "Uống thuốc rồi, bệnh cậu ấy chẳng những không khỏi mà còn nặng hơn.",
-    "zh": "吃了药，他的病不但没好，反而更重了。",
-    "py": "Chīle yào, tā de bìng búdàn méi hǎo, fǎn'ér gèng zhòng le."
-  },
-  {
-    "vi": "Lúc bạn lên thư viện, giữ giúp tôi một chỗ ngồi nhé.",
-    "zh": "你去图书馆的时候，帮我占个座位，好吗？",
-    "py": "Nǐ qù túshūguǎn de shíhou, bāng wǒ zhàn ge zuòwèi, hǎo ma?"
-  },
-  {
-    "vi": "Chỉ cần được ăn một bữa cơm đoàn viên với cả nhà là mẹ đã mãn nguyện rồi.",
-    "zh": "只要能跟家人吃一顿团圆饭，妈妈就满足了。",
-    "py": "Zhǐyào néng gēn jiārén chī yí dùn tuányuánfàn, māma jiù mǎnzú le."
-  },
-  {
-    "vi": "Trời rét buốt, anh ấy đội tuyết lớn đi về phía trước.",
-    "zh": "天气非常寒冷，他顶着大雪往前走。",
-    "py": "Tiānqì fēicháng hánlěng, tā dǐngzhe dàxuě wǎng qián zǒu."
-  },
-  {
-    "vi": "Hiếu thảo với cha mẹ là mỹ đức truyền thống của người Việt Nam.",
-    "zh": "孝顺父母是越南人的传统美德。",
-    "py": "Xiàoshùn fùmǔ shì Yuènánrén de chuántǒng měidé."
-  }
+  {vi:'Tuy đã tốt nghiệp tiểu học nhiều năm rồi, nhưng những bài thơ cổ học thuộc hồi đó đến giờ tôi vẫn còn nhớ.',zh:'虽然小学毕业已经很多年了，但是那时背的古诗我至今还记得。',py:'Suīrán xiǎoxué bìyè yǐjīng hěn duō nián le, dànshì nà shí bèi de gǔshī wǒ zhìjīn hái jìde.',goiY:['虽然……但是……','背','至今'],giai:'至今 + 还 + V = đến nay vẫn…; không thêm 到 trước 至今. 背 (bèi) ở đây là "học thuộc".'},
+  {vi:'Ngoài trời mưa to khủng khiếp, vậy mà em trai tôi vẫn đội mưa đến trường mang ô cho tôi.',zh:'外面的雨大得不行，弟弟却顶着大雨去学校给我送伞。',py:'Wàimiàn de yǔ dà de bùxíng, dìdi què dǐngzhe dàyǔ qù xuéxiào gěi wǒ sòng sǎn.',goiY:['Adj + 得不行','却','顶着'],giai:'Adj + 得不行 = … vô cùng/khủng khiếp (khẩu ngữ); 顶着 + mưa/gió = đội, bất chấp — khi làm kèm động tác khác phải dùng 顶着.'},
+  {vi:'Nếu cậu không bằng lòng với thành tích hiện tại thì phải chăm chỉ hơn người khác một chút.',zh:'如果你不满足于现在的成绩，就应该比别人更勤奋一点儿。',py:'Rúguǒ nǐ bù mǎnzú yú xiànzài de chéngjì, jiù yīnggāi bǐ biérén gèng qínfèn yìdiǎnr.',goiY:['如果……就……','满足于','勤奋'],giai:'满足于 + danh từ = hài lòng/bằng lòng với…; câu so sánh 比别人更勤奋 — 更 đứng trước tính từ, không nói 比别人很勤奋.'},
+  {vi:'Sau khi tôi thi hỏng, mẹ chẳng những không trách móc câu nào mà ngược lại còn cười an ủi tôi, điều đó khiến tôi càng thấy hổ thẹn.',zh:'我考砸了以后，妈妈不但没有抱怨一句，反而笑着安慰我，这让我心里更加惭愧。',py:'Wǒ kǎozále yǐhòu, māma búdàn méiyǒu bàoyuàn yí jù, fǎn\'ér xiàozhe ānwèi wǒ, zhè ràng wǒ xīnli gèngjiā cánkuì.',goiY:['不但……反而……','抱怨','惭愧'],giai:'不但不/没…，反而… : vế sau trái hẳn với điều người ta chờ đợi; 反而 là phó từ, đứng sau chủ ngữ, trước động từ.'},
+  {vi:'Thấy bố mẹ vất vả làm thuê vì mình, tôi thầm quyết tâm: chỉ có thi đỗ một trường đại học tốt mới có thể không để bố mẹ phải chịu thiệt thòi nữa.',zh:'看到父母为了我辛苦打工，我暗下决心：只有考上好大学，才能不让他们再受委屈。',py:'Kàndào fùmǔ wèile wǒ xīnkǔ dǎgōng, wǒ ànxià juéxīn: zhǐyǒu kǎoshang hǎo dàxué, cái néng bú ràng tāmen zài shòu wěiqu.',goiY:['下决心','只有……才……','委屈'],giai:'只有…才… nêu điều kiện duy nhất; 受委屈 = chịu thiệt thòi/tủi thân tuỳ ngữ cảnh — ở đây nói về cha mẹ nên dịch "chịu thiệt thòi".'},
+  {vi:'Đã muốn học được bản lĩnh thật sự thì đừng chỉ mải chơi, trước hết hãy đi hỏi thăm xem huấn luyện viên nào nhiều kinh nghiệm nhất.',zh:'既然你想学到真本领，就别只顾着玩儿，先去打听一下哪位教练最有经验吧。',py:'Jìrán nǐ xiǎng xuédào zhēn běnlǐng, jiù bié zhǐ gùzhe wánr, xiān qù dǎting yíxià nǎ wèi jiàoliàn zuì yǒu jīngyàn ba.',goiY:['既然……就……','本领','打听'],giai:'既然…就… : đã có sự thật/quyết định thì nên làm gì; 打听 = hỏi thăm, dò hỏi (tin tức về người/việc), khác 问 (hỏi trực tiếp).'},
+  {vi:'Cậu ấy thà thật thà nói với thầy là chưa làm xong bài tập chứ không chịu chép bài của bạn; thái độ thành thật đó khiến thầy rất cảm động.',zh:'他宁可老老实实地告诉老师作业没写完，也不愿意抄同学的，这种诚恳的态度让老师很感动。',py:'Tā nìngkě lǎolǎoshíshí de gàosu lǎoshī zuòyè méi xiěwán, yě bú yuànyì chāo tóngxué de, zhè zhǒng chéngkěn de tàidu ràng lǎoshī hěn gǎndòng.',goiY:['宁可……也不……','老老实实','诚恳'],giai:'宁可 A，也不 B: chấp nhận A (dù thiệt) để tránh B; 老老实实地 là tính từ lặp làm trạng ngữ, đứng trước động từ, dịch "thật thà".'},
+  {vi:'Nhiều người cứ tưởng hiếu thảo là đem lại cho cha mẹ sự đầy đủ về vật chất, thật ra điều cha mẹ mong mỏi hơn không phải là tiền, mà là con cái thường xuyên về nhà ăn bữa cơm đoàn tụ.',zh:'很多人以为孝顺就是给父母物质上的满足，其实父母更盼望的不是钱，而是孩子能常回家吃顿团圆饭。',py:'Hěn duō rén yǐwéi xiàoshùn jiù shì gěi fùmǔ wùzhì shang de mǎnzú, qíshí fùmǔ gèng pànwàng de bú shì qián, ér shì háizi néng cháng huí jiā chī dùn tuányuán fàn.',goiY:['以为','物质','不是……而是……','团圆'],giai:'以为 = cứ tưởng (điều hoá ra không đúng), khác 认为; 不是 A 而是 B đặt điều cha mẹ thật sự cần ở vế sau.'},
+  {vi:'Tuy người ông cả đời làm nông của tôi đã mất mấy năm rồi, nhưng dáng vẻ cần cù, chất phác của ông đến giờ tôi vẫn nhớ rõ mồn một.',zh:'当了一辈子农民的爷爷尽管已经去世好几年了，但他勤奋、老实的样子，我至今还记得清清楚楚。',py:'Dāngle yíbèizi nóngmín de yéye jǐnguǎn yǐjīng qùshì hǎo jǐ nián le, dàn tā qínfèn, lǎoshi de yàngzi, wǒ zhìjīn hái jì de qīngqīngchǔchǔ.',goiY:['一辈子','尽管……但……','去世','至今'],giai:'尽管…但… nối sự thật đã xảy ra với điều vẫn không đổi; 至今 + 还 + V = đến nay vẫn…; 去世 là cách nói trang trọng của "mất".'},
+  {vi:'Chị họ tôi sở dĩ bỏ công việc ổn định ở thành phố lớn về thị trấn làm cô giáo là vì chị cho rằng thành tựu của một đời người không thể chỉ đo bằng vật chất.',zh:'表姐之所以放弃大城市稳定的工作回镇上当老师，是因为她认为人生的成就不能只用物质来衡量。',py:'Biǎojiě zhīsuǒyǐ fàngqì dà chéngshì wěndìng de gōngzuò huí zhèn shang dāng lǎoshī, shì yīnwèi tā rènwéi rénshēng de chéngjiù bù néng zhǐ yòng wùzhì lái héngliáng.',goiY:['之所以……是因为……','稳定','成就','物质'],giai:'之所以 + kết quả, 是因为 + nguyên nhân; 用…来衡量 = đo bằng…; 人生的成就 dịch thoát "thành tựu của một đời người".'}
 ];
 
 // Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {
-    "vi": "Câu chuyện “vác gạo trăm dặm” lưu truyền đến nay kể chính về việc ông hiếu kính cha mẹ.",
-    "zh": "流传至今的“百里背米”讲的就是他孝敬父母的故事。",
-    "py": "Liúchuán zhìjīn de “bǎi lǐ bēi mǐ” jiǎng de jiù shì tā xiàojìng fùmǔ de gùshi."
-  },
-  {
-    "vi": "Tử Lộ nghe xong, trong lòng thấy vô cùng hổ thẹn.",
-    "zh": "子路听了，心里觉得十分惭愧。",
-    "py": "Zǐlù tīng le, xīnli juéde shífēn cánkuì."
-  },
-  {
-    "vi": "Tử Lộ làm việc vô cùng chăm chỉ, chủ nhà rất quý chàng trai trẻ này.",
-    "zh": "子路干起活来十分勤奋，主人很喜欢这个小伙子。",
-    "py": "Zǐlù gànqǐ huó lai shífēn qínfèn, zhǔrén hěn xǐhuan zhège xiǎohuǒzi."
-  },
-  {
-    "vi": "Bao gạo trên lưng suýt nữa bị văng ra ngoài.",
-    "zh": "背上的米袋差点儿被甩出去。",
-    "py": "Bèi shang de mǐdài chàdiǎnr bèi shuǎi chuqu."
-  },
-  {
-    "vi": "Vua nước Sở thấy ông rất có tài, là một nhân tài, bèn giữ ông lại làm quan.",
-    "zh": "楚国国君觉得他很有本领，是个人才，就留他做了官。",
-    "py": "Chǔguó guójūn juéde tā hěn yǒu běnlǐng, shì ge réncái, jiù liú tā zuòle guān."
-  },
-  {
-    "vi": "Trái lại ông thường thành khẩn nói: “Ước gì cha mẹ được cùng tôi sống những ngày tốt đẹp!”",
-    "zh": "他反而常常诚恳地说：“多么希望父母能和我一起过好日子！”",
-    "py": "Tā fǎn'ér chángcháng chéngkěn de shuō: “Duōme xīwàng fùmǔ néng hé wǒ yìqǐ guò hǎo rìzi!”"
-  },
-  {
-    "vi": "Tính khí xấu của tôi khiến cô ấy phải chịu không ít tủi thân.",
-    "zh": "我的坏脾气让她受了不少委屈。",
-    "py": "Wǒ de huài píqi ràng tā shòule bù shǎo wěiqu."
-  },
-  {
-    "vi": "Cậu ấy dìu cụ ông qua đường.",
-    "zh": "他把那位老爷爷扶过了马路。",
-    "py": "Tā bǎ nà wèi lǎo yéye fúguòle mǎlù."
-  }
+  {vi:'Do chiến tranh liên miên, cha mẹ làm nông của Tử Lộ sống vô cùng khốn khó.',zh:'由于连年的战争，子路那对当农民的父母生活得非常困难。',py:'Yóuyú liánnián de zhànzhēng, Zǐlù nà duì dāng nóngmín de fùmǔ shēnghuó de fēicháng kùnnan.',goiY:['由于 = do','战争 = chiến tranh','农民 = nông dân'],giai:'由于 đứng đầu vế nguyên nhân; 连年 = "liên miên nhiều năm", dịch "chiến tranh liên miên".'},
+  {vi:'Nghe cha mẹ nói chỉ cần được ăn một bữa cơm là đã mãn nguyện, Tử Lộ thấy vô cùng hổ thẹn trong lòng.',zh:'听到父母说只要能吃上一顿米饭就满足了，子路心里十分惭愧。',py:'Tīngdào fùmǔ shuō zhǐyào néng chīshang yí dùn mǐfàn jiù mǎnzú le, Zǐlù xīnli shífēn cánkuì.',goiY:['只要……就…… = chỉ cần… là…','满足 = hài lòng, mãn nguyện','惭愧 = hổ thẹn'],giai:'只要…就… nằm trong lời thuật lại của cha mẹ; 惭愧 là xấu hổ vì thấy mình chưa làm tròn trách nhiệm — dịch "hổ thẹn/áy náy".'},
+  {vi:'Dù có vất vả đến đâu, Tử Lộ cũng thầm quyết tâm không để cha mẹ phải chịu khổ nữa.',zh:'无论有多辛苦，子路都暗暗下定决心不再让父母受委屈。',py:'Wúlùn yǒu duō xīnkǔ, Zǐlù dōu àn\'àn xiàdìng juéxīn bú zài ràng fùmǔ shòu wěiqu.',goiY:['无论……都…… = dù… cũng…','暗暗 = thầm','委屈 = thiệt thòi, khổ sở'],giai:'无论 + từ để hỏi (多辛苦) + 都 = dù… đến đâu cũng…; 都 đứng sau chủ ngữ 子路.'},
+  {vi:'Tử Lộ dò hỏi được rằng ở nơi cách trăm dặm có một nhà đang thiếu người làm, thế là tìm đến; chủ nhà thấy anh khoẻ mạnh rắn rỏi nên giữ anh lại.',zh:'子路打听到百里之外有户人家缺人干活儿，于是赶了过去；主人见他身体结实，就留下了他。',py:'Zǐlù dǎtingdào bǎi lǐ zhī wài yǒu hù rénjiā quē rén gàn huór, yúshì gǎnle guòqu; zhǔrén jiàn tā shēntǐ jiēshi, jiù liúxiàle tā.',goiY:['打听 = dò hỏi','于是 = thế là','结实 = rắn chắc, khoẻ mạnh'],giai:'于是 nối hành động xảy ra ngay sau; 结实 nói về cơ thể dịch "khoẻ mạnh, rắn rỏi" (nói về đồ vật mới là "chắc chắn").'},
+  {vi:'Tử Lộ làm lụng rất chăm chỉ; nửa năm sau, anh phát hiện số bạc chủ nhà trả nhiều hơn hẳn, nhưng anh lại thật thà nói với chủ nhà.',zh:'子路干活儿十分勤奋，半年后发现主人给的银子多了许多，他却老老实实地告诉了主人。',py:'Zǐlù gàn huór shífēn qínfèn, bàn nián hòu fāxiàn zhǔrén gěi de yínzi duōle xǔduō, tā què lǎolǎoshíshí de gàosule zhǔrén.',goiY:['勤奋 = chăm chỉ','银子 = bạc (tiền)','却 = lại, nhưng','老老实实 = thật thà'],giai:'却 cho thấy hành động trung thực trái với lẽ thường (có lợi mà không nhận); 多了许多 = nhiều hơn hẳn, không dịch "nhiều nhiều".'},
+  {vi:'Nền tuyết rất trơn, Tử Lộ sơ ý trượt chân một cái, suýt nữa thì bao gạo trên lưng văng ra ngoài.',zh:'雪地非常滑，子路不小心滑了一下，结果背上的米袋差点儿被甩出去。',py:'Xuědì fēicháng huá, Zǐlù bù xiǎoxīn huále yíxià, jiéguǒ bèi shang de mǐdài chàdiǎnr bèi shuǎi chuqu.',goiY:['滑 = trơn; trượt','结果 = kết quả là','差点儿 = suýt','甩 = văng, quăng'],giai:'差点儿 + V = suýt nữa thì (việc không xảy ra); 背上 (bèi) là "trên lưng", phân biệt với 被 (bèi) bị động ngay sau.'},
+  {vi:'Anh đội tuyết lớn mà đi, đôi tay giữ bao gạo tuy lạnh cóng đến tê dại nhưng anh chỉ dừng lại hơ cho ấm một chút rồi lại tiếp tục lên đường.',zh:'他顶着大雪往前走，扶着米袋的双手虽然冻得不行，但他只停下来暖一暖，又继续赶路。',py:'Tā dǐngzhe dàxuě wǎng qián zǒu, fúzhe mǐdài de shuāngshǒu suīrán dòng de bùxíng, dàn tā zhǐ tíng xialai nuǎn yi nuǎn, yòu jìxù gǎnlù.',goiY:['顶着 = đội, bất chấp','扶 = đỡ, giữ','冻得不行 = lạnh cóng','虽然……但…… = tuy… nhưng…'],giai:'顶着大雪 = đội tuyết/bất chấp tuyết (顶着 + thời tiết); V/Adj + 得不行 chỉ mức độ cực độ — "lạnh cóng đến tê dại".'},
+  {vi:'Tử Lộ vác gạo đi trăm dặm chỉ để cha mẹ được ăn một bữa cơm đoàn viên, thảo nào câu chuyện này được lưu truyền từ thời Xuân Thu cho đến tận ngày nay.',zh:'子路背米百里只为让父母吃上一顿团圆饭，难怪这个故事从春秋时期一直流传至今。',py:'Zǐlù bēi mǐ bǎi lǐ zhǐ wèi ràng fùmǔ chīshang yí dùn tuányuán fàn, nánguài zhège gùshi cóng Chūnqiū shíqī yìzhí liúchuán zhìjīn.',goiY:['背 (bēi) = vác, cõng','团圆饭 = bữa cơm đoàn viên','难怪 = thảo nào','流传至今 = lưu truyền đến nay'],giai:'难怪 rút ra điều đã hiểu từ vế trước; 流传至今 là cụm cố định "lưu truyền đến nay" — không thêm 到.'},
+  {vi:'Vua nước Sở giữ Tử Lộ lại làm quan, nhưng ông chẳng hề vì điều kiện vật chất sung túc mà vui mừng, ngược lại còn thường xuyên nhớ về cha mẹ đã khuất.',zh:'楚国国君留子路做了官，可是他并没有因为物质条件好而感到高兴，反而常常怀念去世的父母。',py:'Chǔguó guójūn liú Zǐlù zuòle guān, kěshì tā bìng méiyǒu yīnwèi wùzhì tiáojiàn hǎo ér gǎndào gāoxìng, fǎn\'ér chángcháng huáiniàn qùshì de fùmǔ.',goiY:['国君 = vua (một nước)','并没有 = chẳng hề','反而 = ngược lại','去世 = qua đời'],giai:'并没有因为 A 而 B = chẳng hề vì A mà B; 反而 dẫn ra phản ứng ngược với điều người ta nghĩ.'},
+  {vi:'Tử Lộ thường thành khẩn nói rằng giờ đây tuy mình đã có chút thành tựu, nhưng cha mẹ đã qua đời, dù có muốn vác gạo trăm dặm về phụng dưỡng hai người thì cũng không thể nữa rồi.',zh:'子路常常诚恳地说，自己虽然有了一点儿成就，可是父母已经去世了，即使再想背米百里去孝敬他们，也不可能了。',py:'Zǐlù chángcháng chéngkěn de shuō, zìjǐ suīrán yǒule yìdiǎnr chéngjiù, kěshì fùmǔ yǐjīng qùshì le, jíshǐ zài xiǎng bēi mǐ bǎi lǐ qù xiàojìng tāmen, yě bù kěnéng le.',goiY:['诚恳 = thành khẩn','虽然……可是…… = tuy… nhưng…','即使……也…… = dù… cũng…','孝敬 = hiếu kính, phụng dưỡng'],giai:'Câu ghép ba tầng: 虽然…可是… (sự thật trái ngược) + 即使…也… (giả thiết không thể thay đổi kết quả); 孝敬 ở đây dịch "phụng dưỡng", không dịch từng chữ "hiếu kính".'}
 ];
 
 // ══════════════════════════════════════════

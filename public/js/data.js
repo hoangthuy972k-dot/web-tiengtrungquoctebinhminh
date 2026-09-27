@@ -2235,6 +2235,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk6-bai-36.html'
+      },
+      {
+        id: 'hsk6-l37',
+        number: 37,
+        title: 'Chuyện của cảnh sát',
+        titleHanzi: '警察的故事',
+        titlePinyin: 'Jǐngchá de Gùshi',
+        topic: '第十单元 热点追踪 · Tâm điểm thời sự — những câu chuyện về cảnh sát và chó nghiệp vụ chống ma tuý',
+        vocabCount: 55,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-37.html'
       }
     ],
     yct: [

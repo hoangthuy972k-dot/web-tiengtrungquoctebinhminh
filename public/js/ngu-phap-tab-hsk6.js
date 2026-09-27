@@ -30881,3 +30881,911 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-36.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-37.html"] = [
+ {
+  "so": "1",
+  "ten": "「为……起见」",
+  "tenVn": "",
+  "cauTruc": [
+   "为(了) + V / Adj + 起见，(chủ ngữ) + việc làm — để cho …",
+   "Phần giữa: 慎重 / 安全 / 保险 / 方便 / 叙述方便…",
+   "Đặt ở đầu câu, trước chủ ngữ; văn viết"
+  ],
+  "giaiThich": "\"为……起见\" biểu thị làm việc gì đó NHẰM ĐẠT MỘT MỤC ĐÍCH (để cho …, vì mục đích …). Cấu trúc: 为(了) + động từ / tính từ + 起见, đặt Ở ĐẦU CÂU, trước chủ ngữ (用在主语前). Phần ở giữa thường là từ chỉ mục đích chung, trừu tượng: 慎重 (bài khoá: 为了慎重起见), 安全, 保险, 方便, 叙述方便, 周到或强调…; vế sau nêu việc làm để đạt mục đích đó. Văn viết, trang trọng; khẩu ngữ có thể chỉ nói \"为了……\". Không dùng với mục đích cụ thể có tân ngữ (không nói *为了买新电脑起见), và 起见 phải đi liền sau phần mục đích, không đưa xuống cuối câu.",
+  "viDu": [
+   {
+    "zh": "为了慎重起见，她又将其他现场遗留的指尖部位指纹与王某的指纹反复比较，最终认定该系列抢劫案为王某所为。",
+    "py": "Wèile shènzhòng qǐjiàn, tā yòu jiāng qítā xiànchǎng yíliú de zhǐjiān bùwèi zhǐwén yǔ Wáng mǒu de zhǐwén fǎnfù bǐjiào, zuìzhōng rèndìng gāi xìliè qiǎngjié àn wéi Wáng mǒu suǒ wéi.",
+    "vn": "Để cho thận trọng, chị lại đem vân tay phần đầu ngón tay để lại ở các hiện trường khác so sánh nhiều lần với vân tay của Vương X, cuối cùng xác định loạt vụ cướp đó do Vương X gây ra."
+   },
+   {
+    "zh": "为安全起见，家庭购买餐具后，可将餐具放在稀释后的食用醋中煮一煮，然后再使用。",
+    "py": "Wèi ānquán qǐjiàn, jiātíng gòumǎi cānjù hòu, kě jiāng cānjù fàng zài xīshì hòu de shíyòngcù zhōng zhǔ yi zhǔ, ránhòu zài shǐyòng.",
+    "vn": "Để cho an toàn, gia đình mua bát đĩa về có thể đem luộc qua trong giấm ăn đã pha loãng, rồi mới sử dụng."
+   },
+   {
+    "zh": "在说明问题时，为了周到或强调起见，往往也从正反两方面阐述表达。",
+    "py": "Zài shuōmíng wèntí shí, wèile zhōudào huò qiángdiào qǐjiàn, wǎngwǎng yě cóng zhèng fǎn liǎng fāngmiàn chǎnshù biǎodá.",
+    "vn": "Khi trình bày một vấn đề, để cho chu đáo hoặc để nhấn mạnh, người ta thường cũng diễn đạt từ cả hai mặt thuận và nghịch."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "为了买新电脑起见，他每天都去打工。",
+    "why": "起见 chỉ đi với mục đích chung, trừu tượng (安全 / 慎重 / 方便…); mục đích cụ thể có tân ngữ thì chỉ dùng 为了.",
+    "dung": "为了买新电脑，他每天都去打工。"
+   },
+   {
+    "sai": "为了慎重，她又检查了一遍起见。",
+    "why": "起见 phải đi liền sau phần mục đích, cả cụm 为了……起见 đặt ở đầu câu.",
+    "dung": "为了慎重起见，她又检查了一遍。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了慎重",
+       "，她又将指纹反复比较了一遍。"
+      ],
+      "dap": [
+       [
+        "起见"
+       ]
+      ],
+      "chon": [
+       "起见",
+       "以来",
+       "为止"
+      ],
+      "goiY": "\"Để cho thận trọng, chị lại so sánh vân tay một lần nữa.\" (câu bài khoá)",
+      "giai": "Khuôn cố định: 为了 + 慎重 + 起见."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "安全起见，家庭购买餐具后，可先放在醋中煮一煮。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "因",
+       "由"
+      ],
+      "goiY": "\"Để cho an toàn…\" (ví dụ của sách)",
+      "giai": "Có thể dùng 为 thay 为了: 为安全起见."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了",
+       "起见，你还是把钱存在银行里吧。"
+      ],
+      "dap": [
+       [
+        "保险"
+       ]
+      ],
+      "chon": [
+       "保险",
+       "存钱",
+       "银行"
+      ],
+      "goiY": "\"Để cho chắc ăn, cậu nên gửi tiền vào ngân hàng.\" (练习2)",
+      "giai": "Phần giữa là mục đích chung (保险), không phải hành động cụ thể (存钱)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了叙述",
+       "起见，我们把世界造型艺术分为三大块。"
+      ],
+      "dap": [
+       [
+        "方便"
+       ]
+      ],
+      "chon": [
+       "方便",
+       "艺术",
+       "世界"
+      ],
+      "goiY": "\"Để tiện trình bày…\" (练一练 (1))",
+      "giai": "叙述方便 = tiện cho việc trình bày."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "加拿大人冬季驾车经验丰富，但为了",
+       "起见，大风雪时还是尽量不出门。"
+      ],
+      "dap": [
+       [
+        "安全"
+       ]
+      ],
+      "chon": [
+       "安全",
+       "开车",
+       "出门"
+      ],
+      "goiY": "\"Nhưng để cho an toàn…\" (练一练 (2))",
+      "giai": "Mục đích chung: 安全."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为了周到或强调起见，人们往往也从",
+       "两方面阐述表达。"
+      ],
+      "dap": [
+       [
+        "正反"
+       ]
+      ],
+      "chon": [
+       "正反",
+       "前后",
+       "上下"
+      ],
+      "goiY": "\"… diễn đạt từ hai mặt thuận và nghịch.\" (ví dụ của sách)",
+      "giai": "正反两方面 = hai mặt thuận – nghịch."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "为了慎重起见，",
+       "她",
+       "又将指纹反复比较了一遍"
+      ],
+      "dap": [
+       "为了慎重起见，她又将指纹反复比较了一遍。"
+      ],
+      "goiY": "Để cho thận trọng, chị lại đem vân tay so sánh thêm một lượt.",
+      "giai": "为了……起见 đứng đầu câu, trước chủ ngữ 她."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "晚上",
+       "为了安全起见，",
+       "不要一个人出门"
+      ],
+      "dap": [
+       "为了安全起见，晚上不要一个人出门。"
+      ],
+      "goiY": "Để cho an toàn, buổi tối đừng ra ngoài một mình.",
+      "giai": "Cụm mục đích → thời gian → việc làm."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "主动向书店介绍了情况",
+       "为了慎重起见，"
+      ],
+      "dap": [
+       "为了慎重起见，我们主动向书店介绍了情况。"
+      ],
+      "goiY": "Để cho thận trọng, chúng tôi chủ động trình bày tình hình với nhà sách.",
+      "giai": "练一练 (3)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "为了保险起见，你还是把钱存在银行里吧。",
+      "dung": true,
+      "giai": "Đúng: 为了 + 保险 + 起见 ở đầu câu (练习2)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "为了买新电脑起见，他每天都去打工。",
+      "dung": false,
+      "sua": "为了买新电脑，他每天都去打工。",
+      "giai": "Mục đích cụ thể có tân ngữ → chỉ dùng 为了, không thêm 起见."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "为了慎重，她又检查了一遍起见。",
+      "dung": false,
+      "sua": "为了慎重起见，她又检查了一遍。",
+      "giai": "起见 phải đi liền sau 慎重, không đưa xuống cuối câu."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Để cho an toàn, trước khi ra khỏi nhà hãy kiểm tra xem đã tắt ga chưa.",
+      "dap": [
+       "为了安全起见，出门前要检查一下煤气关了没有。",
+       "为安全起见，出门以前请检查煤气是否关好。",
+       "为了安全起见，出门前检查一下煤气关没关。"
+      ],
+      "py": "Wèile ānquán qǐjiàn, chūmén qián yào jiǎnchá yíxià méiqì guānle méiyǒu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 为……起见.",
+      "giai": "为了安全起见 đặt ở đầu câu."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Để tiện liên lạc, mọi người hãy để lại số điện thoại.",
+      "dap": [
+       "为了联系方便起见，请大家留下电话号码。",
+       "为方便联系起见，请大家留下手机号码。",
+       "为了方便联系起见，大家留一下电话号码吧。"
+      ],
+      "py": "Wèile liánxì fāngbiàn qǐjiàn, qǐng dàjiā liúxià diànhuà hàomǎ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 为……起见.",
+      "giai": "为了 + (联系)方便 + 起见."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "为了更保险，你还是把钱存在银行里吧。→ ＿＿＿。",
+      "goiY": "Dùng 为……起见 viết lại câu (练习2 (2) của sách).",
+      "mau": "为了保险起见，你还是把钱存在银行里吧。",
+      "can": [
+       [
+        "保险起见"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "加拿大人与冰雪有着不解之缘，他们在冬季驾车也有着丰富的经验。但＿＿＿，他们在大风雪的时候还是尽量不出门或少出门。",
+      "goiY": "Dùng 为……起见 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "但为了安全起见，他们在大风雪的时候还是尽量不出门或少出门。",
+      "can": [
+       [
+        "安全起见"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "人家订我们的书……可是一个地处偏僻山区的县城，这么多书，卖得出去吗？＿＿＿，我们主动向这家书店介绍了情况。",
+      "goiY": "Dùng 为……起见 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "为了慎重起见，我们主动向这家书店介绍了情况。",
+      "can": [
+       [
+        "慎重起见"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「暂且」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 暂且 + V — tạm thời cứ … đã",
+   "暂且 + 不说 / 不论 / 不提 + A，(但) B",
+   "Vế sau hay có 等……再……"
+  ],
+  "giaiThich": "\"暂且\" là PHÓ TỪ, nghĩa \"tạm thời cứ như thế đã\" (暂时先这样) — việc chính, việc lớn để sau hãy tính. Đứng sau chủ ngữ, TRƯỚC động từ / cụm động từ: 他决定暂且拖一拖这帮毒贩 (bài khoá), 只得暂且由他去, 我们暂且称她是…… Hay gặp: 暂且 + 不说 / 不论 / 不提 (tạm chưa bàn tới) để gác một ý sang bên, vế sau nói ý chính (我们暂且不说染烫发对身体的伤害，对头发巨大的影响就足以引起我们的重视了); 暂且 + V一V / 放一放; vế sau hay có 等……再…… (đợi … rồi hãy …). Sắc thái văn viết hơn 暂时 / 先; gần nghĩa 姑且 (bài 17). Không dùng cho việc kéo dài, đã hoàn thành lâu (không nói *暂且工作了二十年).",
+  "viDu": [
+   {
+    "zh": "干了几天，小王就不想干了。大家没办法，只得暂且由他去。",
+    "py": "Gànle jǐ tiān, Xiǎo Wáng jiù bù xiǎng gàn le. Dàjiā méi bànfǎ, zhǐdé zànqiě yóu tā qù.",
+    "vn": "Làm được mấy hôm, Tiểu Vương đã không muốn làm nữa. Mọi người hết cách, đành tạm mặc kệ cậu ta."
+   },
+   {
+    "zh": "时间一天天过去，志强心中十分焦急，但他清楚，必须沉着冷静，他决定暂且拖一拖这帮毒贩。",
+    "py": "Shíjiān yì tiāntiān guòqu, Zhìqiáng xīnzhōng shífēn jiāojí, dàn tā qīngchu, bìxū chénzhuó lěngjìng, tā juédìng zànqiě tuō yi tuō zhè bāng dúfàn.",
+    "vn": "Thời gian trôi qua từng ngày, Chí Cường vô cùng sốt ruột, nhưng anh hiểu phải bình tĩnh, anh quyết định tạm kéo dài thời gian với bọn buôn ma tuý này đã."
+   },
+   {
+    "zh": "我们暂且不说染烫发对身体的伤害，对头发巨大的影响就足以引起我们的重视了。",
+    "py": "Wǒmen zànqiě bù shuō rǎn tàng fà duì shēntǐ de shānghài, duì tóufa jùdà de yǐngxiǎng jiù zúyǐ yǐnqǐ wǒmen de zhòngshì le.",
+    "vn": "Tạm chưa nói đến tác hại của việc nhuộm, uốn tóc đối với cơ thể, chỉ riêng ảnh hưởng to lớn đối với mái tóc cũng đủ khiến chúng ta phải coi trọng rồi."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "暂且我们把这个问题放一放。",
+    "why": "暂且 là phó từ, đứng sau chủ ngữ, trước động từ.",
+    "dung": "我们暂且把这个问题放一放。"
+   },
+   {
+    "sai": "他暂且在这家公司工作了二十年。",
+    "why": "暂且 chỉ sự sắp xếp TẠM THỜI, không đi với một khoảng thời gian dài đã hoàn thành.",
+    "dung": "他暂且在这家公司工作一段时间，以后再做打算。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他决定",
+       "拖一拖这帮毒贩。"
+      ],
+      "dap": [
+       [
+        "暂且"
+       ]
+      ],
+      "chon": [
+       "暂且",
+       "一向",
+       "从来"
+      ],
+      "goiY": "\"Anh quyết định tạm kéo dài thời gian với bọn buôn ma tuý.\" (câu bài khoá)",
+      "giai": "Tạm thời cứ thế đã → 暂且."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这其中的原因暂且不",
+       "，但没有观众的决赛总让人怅然若失。"
+      ],
+      "dap": [
+       [
+        "论"
+       ]
+      ],
+      "chon": [
+       "论",
+       "要",
+       "会"
+      ],
+      "goiY": "\"Nguyên nhân tạm chưa bàn…\" (练一练 (2))",
+      "giai": "Cụm quen: 暂且不论."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们暂且",
+       "她是穿蓝裙的小姑娘吧。"
+      ],
+      "dap": [
+       [
+        "称"
+       ]
+      ],
+      "chon": [
+       "称",
+       "说",
+       "问"
+      ],
+      "goiY": "\"Chúng ta tạm gọi cô bé là …\" (练一练 (1))",
+      "giai": "暂且称…… = tạm gọi là …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们暂且把这个问题放一放，",
+       "时机成熟了再讨论吧。"
+      ],
+      "dap": [
+       [
+        "等"
+       ]
+      ],
+      "chon": [
+       "等",
+       "到",
+       "从"
+      ],
+      "goiY": "\"… đợi thời cơ chín muồi rồi hãy bàn.\" (练习2)",
+      "giai": "暂且…… + 等……再……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们暂且不说染烫发对身体的伤害，对头发巨大的影响就",
+       "以引起我们的重视了。"
+      ],
+      "dap": [
+       [
+        "足"
+       ]
+      ],
+      "chon": [
+       "足",
+       "难",
+       "不"
+      ],
+      "goiY": "\"… cũng đủ khiến ta coi trọng.\" (ví dụ của sách)",
+      "giai": "足以 = đủ để."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "钱的事暂且不",
+       "，我们先把人找到再说。"
+      ],
+      "dap": [
+       [
+        "提"
+       ]
+      ],
+      "chon": [
+       "提",
+       "找",
+       "拿"
+      ],
+      "goiY": "\"Chuyện tiền tạm chưa nhắc tới…\"",
+      "giai": "暂且不提 = tạm không nhắc."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "暂且",
+       "他决定",
+       "拖一拖这帮毒贩"
+      ],
+      "dap": [
+       "他决定暂且拖一拖这帮毒贩。"
+      ],
+      "goiY": "Anh quyết định tạm kéo dài thời gian với bọn buôn ma tuý.",
+      "giai": "Chủ ngữ + 决定 + 暂且 + V一V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "只得暂且由他去，",
+       "大家没办法，",
+       "等他心情好了再劝他回来"
+      ],
+      "dap": [
+       "大家没办法，只得暂且由他去，等他心情好了再劝他回来。"
+      ],
+      "goiY": "Mọi người hết cách, đành tạm mặc kệ cậu ấy, đợi cậu ấy vui lại rồi khuyên về.",
+      "giai": "暂且由他去 + 等……再……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "暂且不论，",
+       "这其中的原因",
+       "但没有观众的决赛总让人失落"
+      ],
+      "dap": [
+       "这其中的原因暂且不论，但没有观众的决赛总让人失落。"
+      ],
+      "goiY": "Nguyên nhân trong đó tạm chưa bàn, nhưng trận chung kết không khán giả luôn khiến người ta hụt hẫng.",
+      "giai": "A + 暂且不论，但 + B."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们暂且把这件事放一放，明天再说。",
+      "dung": true,
+      "giai": "Đúng: chủ ngữ + 暂且 + 把 + V一V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "暂且我们把这件事放一放。",
+      "dung": false,
+      "sua": "我们暂且把这件事放一放。",
+      "giai": "暂且 là phó từ, không đứng trước chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他暂且在这家公司工作了二十年。",
+      "dung": false,
+      "sua": "他暂且在这家公司工作一段时间，以后再说。",
+      "giai": "暂且 chỉ sự tạm thời, không dùng với thời gian dài đã hoàn thành."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Việc này tạm gác lại đã, đợi ăn cơm xong rồi bàn tiếp.",
+      "dap": [
+       "这件事暂且放一放，等吃完饭再商量吧。",
+       "这件事我们暂且放一放，吃完饭再接着商量。",
+       "这件事暂且放一放，等吃完饭再说吧。"
+      ],
+      "py": "Zhè jiàn shì zànqiě fàng yi fàng, děng chīwán fàn zài shāngliang ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 暂且.",
+      "giai": "暂且 + V一V + 等……再……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chưa bàn đến giá cả, chỉ riêng chất lượng đã khiến người ta không hài lòng rồi.",
+      "dap": [
+       "价格暂且不说，光是质量就让人不满意了。",
+       "暂且不说价格，光质量就让人不满意了。",
+       "价格暂且不论，单是质量就让人很不满意。"
+      ],
+      "py": "Jiàgé zànqiě bù shuō, guāng shì zhìliàng jiù ràng rén bù mǎnyì le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 暂且不说 / 暂且不论.",
+      "giai": "A 暂且不说，光……就……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我们先把这个问题放一放，等时机成熟了再讨论吧。→ ＿＿＿。",
+      "goiY": "Dùng 暂且 viết lại câu (练习2 (5) của sách).",
+      "mau": "我们先暂且把这个问题放一放，等时机成熟了再讨论吧。",
+      "can": [
+       [
+        "暂且"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "在这个名叫《金姑娘》的童话中，她没有姓名。＿＿＿。",
+      "goiY": "Dùng 暂且 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "我们暂且称她是穿蓝裙的小姑娘吧。",
+      "can": [
+       [
+        "暂且"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "网球场内比赛进行得正激烈，却没有观众进来。＿＿＿，但没有观众的决赛，总给人一种怅然若失的感觉。",
+      "goiY": "Dùng 暂且 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "这其中的原因暂且不论",
+      "can": [
+       [
+        "暂且不论",
+        "暂且不说",
+        "暂且不提"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「篇章：照应」",
+  "tenVn": "",
+  "cauTruc": [
+   "前文的人、事、物，在后文再现",
+   "后文的情节，在前文有铺垫",
+   "题文照应 · 首尾照应 · 反复照应"
+  ],
+  "giaiThich": "Phần 篇章修辞 của bài: \"照应\" (chiếu ứng) là nội dung trước sau quan tâm, hô ứng lẫn nhau: người, việc, vật ở phần trước XUẤT HIỆN LẠI ở phần sau; tình tiết ở phần sau đã được RẢI TRƯỚC (铺垫) ở phần trước. Chiếu ứng chu đáo giúp kết cấu bài văn chặt chẽ hơn, ý chính rõ hơn, khiến người đọc suy ngẫm, dư âm. Ba kiểu trong sách: ① 题文照应 — nhan đề và nội dung hô ứng (đoạn đầu tản văn 《永久的悔》: 我这永久的悔就是……); ② 首尾照应 — mở đầu và kết thúc hô ứng (bài khoá phần 3: mở đầu 小罗是个兵，辉杰是只犬…… — kết 也给小罗的心中留下了无尽的思念), vừa trọn vẹn kết cấu, vừa khái quát toàn bài, nêu bật chủ đề; ③ 反复照应 — cố ý để một từ khoá lặp lại nhiều lần (背影 trong 《背影》), vừa tăng sức biểu đạt, làm nổi chủ đề, vừa là \"sợi chỉ\" (线索) xuyên suốt bài. Khi viết: mở bài nêu một ý / một câu hỏi → kết bài quay lại đúng ý đó.",
+  "viDu": [
+   {
+    "zh": "我这永久的悔就是：不该离开故乡，离开母亲。（散文《永久的悔》第一段：开篇紧扣主题，使题目和内容照应紧密）",
+    "py": "Wǒ zhè yǒngjiǔ de huǐ jiù shì: bù gāi líkāi gùxiāng, líkāi mǔqīn.",
+    "vn": "Nỗi hối hận mãi mãi của tôi chính là: lẽ ra không nên rời quê hương, rời xa mẹ. (Nhan đề và nội dung chiếu ứng chặt chẽ)"
+   },
+   {
+    "zh": "开头：小罗是个兵，辉杰是只犬，这原本是一个平面上两条平行而非并列的线，却在缉毒战场上交叉，创造出感人的故事。结尾：……参加过无数次大大小小“战役”的辉杰走完了它光辉的一生，也给小罗的心中留下了无尽的思念。",
+    "py": "Kāitóu: Xiǎo Luó shì ge bīng, Huījié shì zhī quǎn……chuàngzào chū gǎnrén de gùshi. Jiéwěi: ……Huījié zǒuwánle tā guānghuī de yìshēng, yě gěi Xiǎo Luó de xīnzhōng liúxiàle wújìn de sīniàn.",
+    "vn": "Mở đầu: người lính và con chó vốn là hai đường song song, lại giao nhau tạo nên câu chuyện cảm động. Kết: Huy Kiệt đi hết cuộc đời vẻ vang, để lại nỗi nhớ khôn nguôi. (Đầu cuối hô ứng, khái quát toàn bài)"
+   },
+   {
+    "zh": "我与父亲不相见已二年余了，我最不能忘记的是他的背影。……读到此处，在晶莹的泪光中，又看见那肥胖的，青布棉袍，黑布马褂的背影。",
+    "py": "Wǒ yǔ fùqin bù xiāngjiàn yǐ èr nián yú le, wǒ zuì bù néng wàngjì de shì tā de bèiyǐng. …… Dú dào cǐ chù, zài jīngyíng de lèiguāng zhōng, yòu kànjiàn nà féipàng de, qīngbù miánpáo, hēibù mǎguà de bèiyǐng.",
+    "vn": "Tôi và cha không gặp nhau đã hơn hai năm, điều tôi không thể quên nhất là bóng dáng của cha. … Đọc đến đây, trong làn nước mắt long lanh, tôi lại thấy bóng dáng mập mạp mặc áo bông vải xanh, áo khoác vải đen ấy. (Cố ý lặp 背影 để nhấn mạnh, làm \"sợi chỉ\" xuyên suốt)"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "（作文）开头写“我最喜欢的季节是春天”，结尾却写“总之，夏天是一年中最美的季节”。",
+    "why": "Đầu cuối mâu thuẫn, không chiếu ứng — kết bài phải quay lại đúng ý của mở bài.",
+    "dung": "（作文）开头写“我最喜欢的季节是春天”，结尾写“这就是我最喜欢的春天”。"
+   },
+   {
+    "sai": "（作文）结尾突然出现一个前文从没提过的人物“王叔叔”，由他解决了所有问题。",
+    "why": "Tình tiết ở phần sau phải được \"rải trước\" (铺垫) ở phần trước; nhân vật xuất hiện đột ngột khiến bài rời rạc.",
+    "dung": "（作文）前文先交代“邻居王叔叔是一名警察”，结尾再让他出场解决问题。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "开头结尾互相",
+       "，使文章结构更加完整。"
+      ],
+      "dap": [
+       [
+        "呼应"
+       ]
+      ],
+      "chon": [
+       "呼应",
+       "对比",
+       "比喻"
+      ],
+      "goiY": "\"Mở đầu và kết thúc hô ứng nhau…\"",
+      "giai": "首尾照应 = 开头结尾互相呼应."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "前文的人、事、物，在后文再",
+       "，这就是照应。"
+      ],
+      "dap": [
+       [
+        "现"
+       ]
+      ],
+      "chon": [
+       "现",
+       "说",
+       "写"
+      ],
+      "goiY": "\"… xuất hiện lại ở phần sau.\" (định nghĩa của sách)",
+      "giai": "再现 = xuất hiện lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "后文的情节，在前文要有",
+       "。"
+      ],
+      "dap": [
+       [
+        "铺垫"
+       ]
+      ],
+      "chon": [
+       "铺垫",
+       "结论",
+       "题目"
+      ],
+      "goiY": "\"… phần trước phải có sự rải trước.\" (định nghĩa của sách)",
+      "giai": "铺垫 = chuẩn bị, rải trước."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "《背影》中，作者有意让“",
+       "”反复出现，突出了中心主题。"
+      ],
+      "dap": [
+       [
+        "背影"
+       ]
+      ],
+      "chon": [
+       "背影",
+       "父亲",
+       "眼泪"
+      ],
+      "goiY": "\"Cố ý để từ … lặp lại nhiều lần.\" (ví dụ (3) của sách)",
+      "giai": "反复照应: từ khoá 背影 lặp lại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "《枣核》开头问“这是为什么呢？”，结尾写“托你带几颗",
+       "，试种一下”，首尾照应。"
+      ],
+      "dap": [
+       [
+        "种子"
+       ]
+      ],
+      "chon": [
+       "种子",
+       "枣树",
+       "礼物"
+      ],
+      "goiY": "\"… nhờ anh mang vài hạt giống.\" (练习4)",
+      "giai": "Kết bài giải đáp câu hỏi ở mở bài."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "课文第三部分开头写小罗和辉杰的相遇，结尾写辉杰给小罗留下了无尽的",
+       "。"
+      ],
+      "dap": [
+       [
+        "思念"
+       ]
+      ],
+      "chon": [
+       "思念",
+       "恐惧",
+       "包袱"
+      ],
+      "goiY": "\"… để lại nỗi nhớ khôn nguôi.\" (câu bài khoá)",
+      "giai": "Ví dụ (2) của sách: 开头结尾互相呼应."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "使文章结构",
+       "开头结尾互相呼应，",
+       "更为紧凑"
+      ],
+      "dap": [
+       "开头结尾互相呼应，使文章结构更为紧凑。"
+      ],
+      "goiY": "Đầu cuối hô ứng nhau khiến kết cấu bài văn chặt chẽ hơn.",
+      "giai": "Nguyên nhân + 使 + kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "在后文",
+       "前文的人、事、物，",
+       "再现"
+      ],
+      "dap": [
+       "前文的人、事、物，在后文再现。"
+      ],
+      "goiY": "Người, việc, vật ở phần trước xuất hiện lại ở phần sau.",
+      "giai": "Định nghĩa 照应 của sách."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我现在",
+       "想想看，",
+       "还是当人好了"
+      ],
+      "dap": [
+       "想想看，我现在还是当人好了。"
+      ],
+      "goiY": "Nghĩ lại thì bây giờ tôi vẫn nên làm người thì hơn.",
+      "giai": "Câu kết chiếu ứng câu mở đầu \"要是能做一只猫该有多好啊\" (练一练)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "《背影》让“背影”一词反复出现，这是一种照应的方法。",
+      "dung": true,
+      "giai": "Đúng: 反复照应 (ví dụ (3) của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "文章开头说“我最怕冬天”，结尾写“所以我最喜欢夏天的游泳课”，这就是首尾照应。",
+      "dung": false,
+      "sua": "文章开头说“我最怕冬天”，结尾又回到“冬天”这个话题，这才是首尾照应。",
+      "giai": "Kết bài phải quay lại đúng ý / đề tài của mở bài."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "照应只能用在文章的开头和结尾。",
+      "dung": false,
+      "sua": "照应可以是题目和内容、开头和结尾照应，也可以让一个词语在全文反复出现。",
+      "giai": "Sách nêu ba kiểu: 题文 · 首尾 · 反复."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mở đầu và kết thúc hô ứng nhau, khiến kết cấu bài văn trọn vẹn.",
+      "dap": [
+       "开头结尾互相呼应，使文章结构完整。",
+       "开头和结尾互相照应，使文章的结构更完整。",
+       "文章首尾呼应，结构完整。"
+      ],
+      "py": "Kāitóu jiéwěi hùxiāng hūyìng, shǐ wénzhāng jiégòu wánzhěng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 呼应 / 照应.",
+      "giai": "开头结尾互相呼应 = 首尾照应."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nhân vật xuất hiện ở phần trước thì phần sau nên xuất hiện lại.",
+      "dap": [
+       "前文出现的人物，在后文应该再现。",
+       "前面出现过的人物，后面应该再出现。",
+       "前文写到的人物，后文要再次出现。"
+      ],
+      "py": "Qiánwén chūxiàn de rénwù, zài hòuwén yīnggāi zàixiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 前文 / 后文.",
+      "giai": "前文……后文再现."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "（练一练）开头：“自从我家养了猫以后，我就觉得猫活得比人好，要是能做一只猫该有多好啊！”……结尾：＿＿＿。",
+      "goiY": "Viết câu kết chiếu ứng với câu mở đầu (练一练 của sách).",
+      "mau": "想想看，我现在还是当人好了。",
+      "can": [
+       [
+        "当人",
+        "做人"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "（练习4）开头：同窗来信，要我为他带几颗生枣核，“这是为什么呢？我感到很蹊跷。”……结尾：＿＿＿。",
+      "goiY": "Viết câu kết trả lời câu hỏi ở mở bài (练习4 của sách).",
+      "mau": "临别时，他感慨地说：“近来，我老是想总布胡同院里那棵枣树。所以托你带几颗种子，试种一下。”",
+      "can": [
+       [
+        "种子",
+        "枣核",
+        "枣树"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "开头：“我这永久的悔就是：不该离开故乡，离开母亲。”……结尾：＿＿＿。",
+      "goiY": "Viết một câu kết chiếu ứng với nhan đề và mở bài (ví dụ (1) của sách).",
+      "mau": "如今母亲已经不在了，每当想起故乡，我就更加后悔当年离开了她。",
+      "can": [
+       [
+        "悔",
+        "后悔"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

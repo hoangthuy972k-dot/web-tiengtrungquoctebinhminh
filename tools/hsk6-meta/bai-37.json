@@ -1,0 +1,112 @@
+{
+ "zh": "警察的故事",
+ "py": "Jǐngchá de Gùshi",
+ "vn": "Chuyện của cảnh sát",
+ "topic": "第十单元 热点追踪 · Tâm điểm thời sự — những câu chuyện về cảnh sát và chó nghiệp vụ chống ma tuý",
+ "vocabCount": 55,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "为……起见",
+   "explain": "\"为……起见\" biểu thị làm việc gì đó NHẰM ĐẠT MỘT MỤC ĐÍCH (để cho …, vì mục đích …). Cấu trúc: 为(了) + động từ / tính từ + 起见, đặt Ở ĐẦU CÂU, trước chủ ngữ (用在主语前). Phần ở giữa thường là từ chỉ mục đích chung, trừu tượng: 慎重 (bài khoá: 为了慎重起见), 安全, 保险, 方便, 叙述方便, 周到或强调…; vế sau nêu việc làm để đạt mục đích đó. Văn viết, trang trọng; khẩu ngữ có thể chỉ nói \"为了……\". Không dùng với mục đích cụ thể có tân ngữ (không nói *为了买新电脑起见), và 起见 phải đi liền sau phần mục đích, không đưa xuống cuối câu.",
+   "rule": "<strong style=\"color:var(--sky-d)\">为(了)</strong> + V / Adj (慎重 · 安全 · 保险 · 方便) + <strong style=\"color:var(--sky-d)\">起见</strong>，(chủ ngữ) + việc làm…　|　đặt ở đầu câu, trước chủ ngữ; văn viết",
+   "examples": [
+    {
+     "zh": "为了慎重起见，她又将其他现场遗留的指尖部位指纹与王某的指纹反复比较，最终认定该系列抢劫案为王某所为。",
+     "py": "Wèile shènzhòng qǐjiàn, tā yòu jiāng qítā xiànchǎng yíliú de zhǐjiān bùwèi zhǐwén yǔ Wáng mǒu de zhǐwén fǎnfù bǐjiào, zuìzhōng rèndìng gāi xìliè qiǎngjié àn wéi Wáng mǒu suǒ wéi.",
+     "vn": "Để cho thận trọng, chị lại đem vân tay phần đầu ngón tay để lại ở các hiện trường khác so sánh nhiều lần với vân tay của Vương X, cuối cùng xác định loạt vụ cướp đó do Vương X gây ra."
+    },
+    {
+     "zh": "为安全起见，家庭购买餐具后，可将餐具放在稀释后的食用醋中煮一煮，然后再使用。",
+     "py": "Wèi ānquán qǐjiàn, jiātíng gòumǎi cānjù hòu, kě jiāng cānjù fàng zài xīshì hòu de shíyòngcù zhōng zhǔ yi zhǔ, ránhòu zài shǐyòng.",
+     "vn": "Để cho an toàn, gia đình mua bát đĩa về có thể đem luộc qua trong giấm ăn đã pha loãng, rồi mới sử dụng."
+    },
+    {
+     "zh": "在说明问题时，为了周到或强调起见，往往也从正反两方面阐述表达。",
+     "py": "Zài shuōmíng wèntí shí, wèile zhōudào huò qiángdiào qǐjiàn, wǎngwǎng yě cóng zhèng fǎn liǎng fāngmiàn chǎnshù biǎodá.",
+     "vn": "Khi trình bày một vấn đề, để cho chu đáo hoặc để nhấn mạnh, người ta thường cũng diễn đạt từ cả hai mặt thuận và nghịch."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "为了买新电脑起见，他每天都去打工。",
+     "why": "起见 chỉ đi với mục đích chung, trừu tượng (安全 / 慎重 / 方便…); mục đích cụ thể có tân ngữ thì chỉ dùng 为了.",
+     "right": "为了买新电脑，他每天都去打工。"
+    },
+    {
+     "wrong": "为了慎重，她又检查了一遍起见。",
+     "why": "起见 phải đi liền sau phần mục đích, cả cụm 为了……起见 đặt ở đầu câu.",
+     "right": "为了慎重起见，她又检查了一遍。"
+    }
+   ]
+  },
+  {
+   "point": "暂且",
+   "explain": "\"暂且\" là PHÓ TỪ, nghĩa \"tạm thời cứ như thế đã\" (暂时先这样) — việc chính, việc lớn để sau hãy tính. Đứng sau chủ ngữ, TRƯỚC động từ / cụm động từ: 他决定暂且拖一拖这帮毒贩 (bài khoá), 只得暂且由他去, 我们暂且称她是…… Hay gặp: 暂且 + 不说 / 不论 / 不提 (tạm chưa bàn tới) để gác một ý sang bên, vế sau nói ý chính (我们暂且不说染烫发对身体的伤害，对头发巨大的影响就足以引起我们的重视了); 暂且 + V一V / 放一放; vế sau hay có 等……再…… (đợi … rồi hãy …). Sắc thái văn viết hơn 暂时 / 先; gần nghĩa 姑且 (bài 17). Không dùng cho việc kéo dài, đã hoàn thành lâu (không nói *暂且工作了二十年).",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">暂且</strong> + V (一V / 放一放 / 由他去)　|　<strong style=\"color:var(--sky-d)\">暂且</strong> + 不说 / 不论 / 不提 + A，(但) B……　|　đứng trước động từ, không đứng trước chủ ngữ",
+   "examples": [
+    {
+     "zh": "干了几天，小王就不想干了。大家没办法，只得暂且由他去。",
+     "py": "Gànle jǐ tiān, Xiǎo Wáng jiù bù xiǎng gàn le. Dàjiā méi bànfǎ, zhǐdé zànqiě yóu tā qù.",
+     "vn": "Làm được mấy hôm, Tiểu Vương đã không muốn làm nữa. Mọi người hết cách, đành tạm mặc kệ cậu ta."
+    },
+    {
+     "zh": "时间一天天过去，志强心中十分焦急，但他清楚，必须沉着冷静，他决定暂且拖一拖这帮毒贩。",
+     "py": "Shíjiān yì tiāntiān guòqu, Zhìqiáng xīnzhōng shífēn jiāojí, dàn tā qīngchu, bìxū chénzhuó lěngjìng, tā juédìng zànqiě tuō yi tuō zhè bāng dúfàn.",
+     "vn": "Thời gian trôi qua từng ngày, Chí Cường vô cùng sốt ruột, nhưng anh hiểu phải bình tĩnh, anh quyết định tạm kéo dài thời gian với bọn buôn ma tuý này đã."
+    },
+    {
+     "zh": "我们暂且不说染烫发对身体的伤害，对头发巨大的影响就足以引起我们的重视了。",
+     "py": "Wǒmen zànqiě bù shuō rǎn tàng fà duì shēntǐ de shānghài, duì tóufa jùdà de yǐngxiǎng jiù zúyǐ yǐnqǐ wǒmen de zhòngshì le.",
+     "vn": "Tạm chưa nói đến tác hại của việc nhuộm, uốn tóc đối với cơ thể, chỉ riêng ảnh hưởng to lớn đối với mái tóc cũng đủ khiến chúng ta phải coi trọng rồi."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "暂且我们把这个问题放一放。",
+     "why": "暂且 là phó từ, đứng sau chủ ngữ, trước động từ.",
+     "right": "我们暂且把这个问题放一放。"
+    },
+    {
+     "wrong": "他暂且在这家公司工作了二十年。",
+     "why": "暂且 chỉ sự sắp xếp TẠM THỜI, không đi với một khoảng thời gian dài đã hoàn thành.",
+     "right": "他暂且在这家公司工作一段时间，以后再做打算。"
+    }
+   ]
+  },
+  {
+   "point": "篇章（8）照应",
+   "explain": "Phần 篇章修辞 của bài: \"照应\" (chiếu ứng) là nội dung trước sau quan tâm, hô ứng lẫn nhau: người, việc, vật ở phần trước XUẤT HIỆN LẠI ở phần sau; tình tiết ở phần sau đã được RẢI TRƯỚC (铺垫) ở phần trước. Chiếu ứng chu đáo giúp kết cấu bài văn chặt chẽ hơn, ý chính rõ hơn, khiến người đọc suy ngẫm, dư âm. Ba kiểu trong sách: ① 题文照应 — nhan đề và nội dung hô ứng (đoạn đầu tản văn 《永久的悔》: 我这永久的悔就是……); ② 首尾照应 — mở đầu và kết thúc hô ứng (bài khoá phần 3: mở đầu 小罗是个兵，辉杰是只犬…… — kết 也给小罗的心中留下了无尽的思念), vừa trọn vẹn kết cấu, vừa khái quát toàn bài, nêu bật chủ đề; ③ 反复照应 — cố ý để một từ khoá lặp lại nhiều lần (背影 trong 《背影》), vừa tăng sức biểu đạt, làm nổi chủ đề, vừa là \"sợi chỉ\" (线索) xuyên suốt bài. Khi viết: mở bài nêu một ý / một câu hỏi → kết bài quay lại đúng ý đó.",
+   "rule": "<strong style=\"color:var(--sky-d)\">前文</strong> người / việc / vật → <strong style=\"color:var(--sky-d)\">后文</strong> 再现　|　<strong style=\"color:var(--sky-d)\">后文</strong> tình tiết ← <strong style=\"color:var(--sky-d)\">前文</strong> 铺垫　|　题文照应 · 首尾照应 · 反复照应",
+   "examples": [
+    {
+     "zh": "我这永久的悔就是：不该离开故乡，离开母亲。（散文《永久的悔》第一段：开篇紧扣主题，使题目和内容照应紧密）",
+     "py": "Wǒ zhè yǒngjiǔ de huǐ jiù shì: bù gāi líkāi gùxiāng, líkāi mǔqīn.",
+     "vn": "Nỗi hối hận mãi mãi của tôi chính là: lẽ ra không nên rời quê hương, rời xa mẹ. (Nhan đề và nội dung chiếu ứng chặt chẽ)"
+    },
+    {
+     "zh": "开头：小罗是个兵，辉杰是只犬，这原本是一个平面上两条平行而非并列的线，却在缉毒战场上交叉，创造出感人的故事。结尾：……参加过无数次大大小小“战役”的辉杰走完了它光辉的一生，也给小罗的心中留下了无尽的思念。",
+     "py": "Kāitóu: Xiǎo Luó shì ge bīng, Huījié shì zhī quǎn……chuàngzào chū gǎnrén de gùshi. Jiéwěi: ……Huījié zǒuwánle tā guānghuī de yìshēng, yě gěi Xiǎo Luó de xīnzhōng liúxiàle wújìn de sīniàn.",
+     "vn": "Mở đầu: người lính và con chó vốn là hai đường song song, lại giao nhau tạo nên câu chuyện cảm động. Kết: Huy Kiệt đi hết cuộc đời vẻ vang, để lại nỗi nhớ khôn nguôi. (Đầu cuối hô ứng, khái quát toàn bài)"
+    },
+    {
+     "zh": "我与父亲不相见已二年余了，我最不能忘记的是他的背影。……读到此处，在晶莹的泪光中，又看见那肥胖的，青布棉袍，黑布马褂的背影。",
+     "py": "Wǒ yǔ fùqin bù xiāngjiàn yǐ èr nián yú le, wǒ zuì bù néng wàngjì de shì tā de bèiyǐng. …… Dú dào cǐ chù, zài jīngyíng de lèiguāng zhōng, yòu kànjiàn nà féipàng de, qīngbù miánpáo, hēibù mǎguà de bèiyǐng.",
+     "vn": "Tôi và cha không gặp nhau đã hơn hai năm, điều tôi không thể quên nhất là bóng dáng của cha. … Đọc đến đây, trong làn nước mắt long lanh, tôi lại thấy bóng dáng mập mạp mặc áo bông vải xanh, áo khoác vải đen ấy. (Cố ý lặp 背影 để nhấn mạnh, làm \"sợi chỉ\" xuyên suốt)"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "（作文）开头写“我最喜欢的季节是春天”，结尾却写“总之，夏天是一年中最美的季节”。",
+     "why": "Đầu cuối mâu thuẫn, không chiếu ứng — kết bài phải quay lại đúng ý của mở bài.",
+     "right": "（作文）开头写“我最喜欢的季节是春天”，结尾写“这就是我最喜欢的春天”。"
+    },
+    {
+     "wrong": "（作文）结尾突然出现一个前文从没提过的人物“王叔叔”，由他解决了所有问题。",
+     "why": "Tình tiết ở phần sau phải được \"rải trước\" (铺垫) ở phần trước; nhân vật xuất hiện đột ngột khiến bài rời rạc.",
+     "right": "（作文）前文先交代“邻居王叔叔是一名警察”，结尾再让他出场解决问题。"
+    }
+   ]
+  }
+ ]
+}

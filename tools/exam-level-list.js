@@ -1,5 +1,5 @@
 /* Dung lai thu muc + danh sach de cua mot cap trong /exam/index.html tu cac file tests/<cap>-test-N.js.
-   Cach dung: node tools/exam-level-list.js hsk4        (tu HSK 4 tro len; HSK 1–3 soan tay truoc do)
+   Cach dung: node tools/exam-level-list.js hsk4 [so de dang dua len ...]   (tu HSK 4 tro len)
    · the thu muc (nut "HSK 4 · N de thi") thay cho o "Sap co"
    · khoi <section id="lv-hsk4"> liet ke tung de
    · muc trong o chon bang xep hang
@@ -17,7 +17,11 @@ const META = {
   hsk6: { cau: '101 câu (Nghe 50 · Đọc 50 · Viết 1)', phut: 140 },
 }[LV];
 
-const de = fs.readdirSync(path.join(ROOT, 'tests'))
+// Chi liet ke de DA dua len (git dang theo doi) + cac de dang dua len lan nay (tham so sau cap do),
+// de de con dang soan do dang khong lot ra trang danh sach.
+const daDua = new Set(require('child_process').execSync('git ls-files public/exam/tests', { cwd: path.join(__dirname, '..') }).toString().split(String.fromCharCode(10)).map((x) => path.basename(x.trim())));
+process.argv.slice(3).forEach((n) => daDua.add(LV + '-test-' + n + '.js'));
+const de = fs.readdirSync(path.join(ROOT, 'tests')).filter((f) => daDua.has(f))
   .map((f) => (f.match(new RegExp('^' + LV + '-test-(\\d+)\\.js$')) || [])[1]).filter(Boolean).map(Number).sort((a, b) => a - b)
   .map((n) => {
     const g = { window: {} };

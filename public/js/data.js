@@ -2127,6 +2127,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk6-bai-27.html'
+      },
+      {
+        id: 'hsk6-l28',
+        number: 28,
+        title: 'Cao sơn lưu thủy gặp tri âm',
+        titleHanzi: '高山流水遇知音',
+        titlePinyin: 'Gāoshān Liúshuǐ Yù Zhīyīn',
+        topic: '第七单元 经典阅读 · Đọc tác phẩm kinh điển — tình tri âm của Bá Nha và Tử Kỳ',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-28.html'
       }
     ],
     yct: [

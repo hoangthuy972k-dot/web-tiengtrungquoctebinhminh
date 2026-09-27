@@ -23780,3 +23780,923 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-27.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-28.html"] = [
+ {
+  "so": "1",
+  "ten": "「与“个”相关的格式」",
+  "tenVn": "",
+  "cauTruc": [
+   "一个 + N / 不小心 / 不留神 + V — xảy ra nhanh, đột ngột",
+   "V + (了) + 个 + Adj / V — 个 ≈ 得, dẫn bổ ngữ",
+   "摔了个粉碎 · 笑个不停 · 弄了个乱七八糟"
+  ],
+  "giaiThich": "Bài này học hai khuôn có chữ \"个\" (không phải lượng từ thông thường). ① 一个 + danh từ / cụm động từ, đặt TRƯỚC động từ vị ngữ, biểu thị sự việc xảy ra RẤT NHANH hoặc ĐỘT NGỘT, bất ngờ: 一个跟头栽了下来 (lộn nhào một cái ngã xuống), 一个不小心 / 一个不留神 / 一个失手 (lơ đễnh một cái, lỡ tay một cái) — sau đó thường là hậu quả. ② Động từ + (了) + 个 + tính từ / động từ: ở đây \"个\" có tác dụng giống \"得\", dẫn ra BỔ NGỮ chỉ kết quả / mức độ: 摔了个粉碎 (= 摔得粉碎), 笑个不停 (= 笑得不停), 打个落花流水, 弄了个乱七八糟. Sau 个 thường là thành ngữ, cụm cố định hoặc tính từ trần — không thêm 很 / 非常 trước tính từ, không thêm 了 sau 一个不小心.",
+  "viDu": [
+   {
+    "zh": "他手没抓住栏杆，一个跟头栽了下来。",
+    "py": "Tā shǒu méi zhuāzhù lángān, yí ge gēntou zāile xiàlai.",
+    "vn": "Tay anh ấy không bám được lan can, lộn nhào một cái ngã xuống."
+   },
+   {
+    "zh": "俞伯牙一个不留神，“啪”的一声，琴弦拨断了一根。",
+    "py": "Yú Bóyá yí ge bù liúshén, “pā” de yì shēng, qínxián bōduànle yì gēn.",
+    "vn": "Bá Nha lơ đễnh một cái, \"phựt\" một tiếng, một dây đàn bị gảy đứt."
+   },
+   {
+    "zh": "他把心爱的琴摔了个粉碎。",
+    "py": "Tā bǎ xīn'ài de qín shuāile ge fěnsuì.",
+    "vn": "Ông đập vỡ tan tành cây đàn yêu quý của mình."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他把花瓶摔了个很粉碎。",
+    "why": "Sau \"个\" dùng tính từ / cụm cố định trần, không thêm phó từ mức độ 很 / 非常.",
+    "dung": "他把花瓶摔了个粉碎。"
+   },
+   {
+    "sai": "我一个不小心了，打碎了妈妈的花瓶。",
+    "why": "\"一个不小心\" làm trạng ngữ chỉ sự đột ngột, không mang 了; 了 đặt sau động từ chính (打碎了).",
+    "dung": "我一个不小心，打碎了妈妈最心爱的花瓶。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "俞伯牙一",
+       "不留神，“啪”的一声，琴弦拨断了一根。"
+      ],
+      "dap": [
+       [
+        "个"
+       ]
+      ],
+      "chon": [
+       "个",
+       "次",
+       "下"
+      ],
+      "goiY": "\"Bá Nha lơ đễnh một cái…\" (câu bài khoá)",
+      "giai": "Khuôn 一个 + 不留神: xảy ra đột ngột."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他把心爱的琴摔了",
+       "粉碎。"
+      ],
+      "dap": [
+       [
+        "个"
+       ]
+      ],
+      "chon": [
+       "个",
+       "着",
+       "过"
+      ],
+      "goiY": "\"Ông đập vỡ tan cây đàn.\" (câu bài khoá)",
+      "giai": "V + 了 + 个 + Adj: 个 dẫn bổ ngữ như 得."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "开会的时候张总一张嘴，大家就会笑",
+       "不停。"
+      ],
+      "dap": [
+       [
+        "个"
+       ]
+      ],
+      "chon": [
+       "个",
+       "着",
+       "过"
+      ],
+      "goiY": "\"Giám đốc Trương vừa mở miệng, mọi người cười không ngớt.\" (ví dụ của sách)",
+      "giai": "V + 个 + 不停."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他手没抓住栏杆，一个",
+       "栽了下来。"
+      ],
+      "dap": [
+       [
+        "跟头"
+       ]
+      ],
+      "chon": [
+       "跟头",
+       "小心",
+       "时候"
+      ],
+      "goiY": "\"Lộn nhào một cái ngã xuống.\" (ví dụ của sách)",
+      "giai": "一个 + danh từ (跟头) + V: động tác nhanh, bất ngờ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我一个不",
+       "，打碎了妈妈最心爱的花瓶。"
+      ],
+      "dap": [
+       [
+        "小心"
+       ]
+      ],
+      "chon": [
+       "小心",
+       "认真",
+       "仔细"
+      ],
+      "goiY": "\"Tôi sơ ý một cái, làm vỡ bình hoa mẹ yêu nhất.\" (ví dụ của sách)",
+      "giai": "Cụm cố định 一个不小心."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们的武力太弱，我们一定能够把他们打个",
+       "。"
+      ],
+      "dap": [
+       [
+        "落花流水"
+       ]
+      ],
+      "chon": [
+       "落花流水",
+       "高山流水",
+       "人山人海"
+      ],
+      "goiY": "\"Chắc chắn đánh cho chúng tan tác.\" (ví dụ của sách)",
+      "giai": "打个落花流水 = đánh cho tơi bời (个 + thành ngữ làm bổ ngữ)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "摔了个",
+       "碗掉在地上，",
+       "粉碎",
+       "他一个失手，"
+      ],
+      "dap": [
+       "他一个失手，碗掉在地上，摔了个粉碎。"
+      ],
+      "goiY": "Anh ấy lỡ tay một cái, bát rơi xuống đất vỡ tan tành.",
+      "giai": "一个失手 (đột ngột) → hậu quả → 摔了个粉碎."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一个不留神",
+       "弟弟",
+       "把杯子",
+       "打碎了",
+       "，"
+      ],
+      "dap": [
+       "弟弟一个不留神，把杯子打碎了。"
+      ],
+      "goiY": "Em trai lơ đễnh một cái, làm vỡ cái cốc.",
+      "giai": "Chủ ngữ + 一个不留神 + vế hậu quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "下个不停",
+       "瓢泼大雨",
+       "天阴沉沉的，"
+      ],
+      "dap": [
+       "天阴沉沉的，瓢泼大雨下个不停。"
+      ],
+      "goiY": "Trời âm u, mưa như trút nước không ngớt.",
+      "giai": "V + 个 + 不停."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "孩子们把房间弄了个乱七八糟。",
+      "dung": true,
+      "giai": "Đúng: V + 了 + 个 + thành ngữ (乱七八糟)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他把花瓶摔了个很粉碎。",
+      "dung": false,
+      "sua": "他把花瓶摔了个粉碎。",
+      "giai": "Sau 个 không thêm 很."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我一个不小心了，把牛奶洒了。",
+      "dung": false,
+      "sua": "我一个不小心，把牛奶洒了。",
+      "giai": "一个不小心 không mang 了."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi lơ đễnh một cái, làm rơi vỡ tan tành chiếc đĩa.",
+      "dap": [
+       "我一个不留神，把盘子摔了个粉碎。",
+       "我一个不小心，把盘子摔了个粉碎。",
+       "我一个不留神，盘子摔了个粉碎。"
+      ],
+      "py": "Wǒ yí ge bù liúshén, bǎ pánzi shuāile ge fěnsuì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一个…… và V了个 + Adj.",
+      "giai": "Kết hợp hai khuôn của bài."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh ấy kể một câu chuyện cười, cả lớp cười không ngớt.",
+      "dap": [
+       "他讲了一个笑话，全班同学笑个不停。",
+       "他讲了个笑话，全班笑个不停。",
+       "他讲了一个笑话，全班同学都笑个不停。"
+      ],
+      "py": "Tā jiǎngle yí ge xiàohua, quán bān tóngxué xiào ge bù tíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng V + 个 + 不停.",
+      "giai": "笑个不停 = cười không ngớt."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他一个失手，碗掉在地上，＿＿＿。",
+      "goiY": "Dùng mẫu V了个 + Adj hoàn thành đoạn (练一练 (1) của sách: A + D).",
+      "mau": "他一个失手，碗掉在地上，摔了个粉碎。",
+      "can": [
+       [
+        "个粉碎"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "儿子放学，和小伙伴在家里玩儿起了捉迷藏，＿＿＿。",
+      "goiY": "Dùng mẫu V了个 + thành ngữ hoàn thành đoạn (练一练 (2) của sách: E + B).",
+      "mau": "儿子放学，和小伙伴在家里玩儿起了捉迷藏，不一会儿就把屋子弄了个乱七八糟。",
+      "can": [
+       [
+        "个乱七八糟"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "天阴沉沉的，瓢泼大雨＿＿＿，大家的心里都很着急。",
+      "goiY": "Dùng mẫu V个 + 不停 hoàn thành đoạn (练一练 (3) của sách: C + F).",
+      "mau": "天阴沉沉的，瓢泼大雨下个不停，大家的心里都很着急。",
+      "can": [
+       [
+        "个不停"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「向来」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 向来 + V / Adj — xưa nay luôn như vậy",
+   "向来 + 不…… (phủ định cũng được)",
+   "向来 + chủ ngữ + vị ngữ"
+  ],
+  "giaiThich": "\"向来\" là PHÓ TỪ, biểu thị từ quá khứ đến hiện tại vẫn luôn như vậy, chưa hề thay đổi (= 一向, 从来都). Thường đứng trước vị ngữ: 他们向来忠厚、老实; cũng có thể đứng đầu vế câu: 他们家的事，向来他说了不算. Dùng được cả câu khẳng định (向来认真) lẫn phủ định (向来不爱说话) — khác 从来 chủ yếu đi với phủ định (从来不 / 从来没). Vì chỉ thói quen, tính chất lâu dài nên KHÔNG dùng cho sự việc xảy ra một lần (*向来去过一次) hay việc tương lai (*明天向来……).",
+  "viDu": [
+   {
+    "zh": "他们向来忠厚、老实，为人诚恳。",
+    "py": "Tāmen xiànglái zhōnghòu, lǎoshi, wéirén chéngkěn.",
+    "vn": "Họ xưa nay vẫn trung hậu, thật thà, đối xử với người khác chân thành."
+   },
+   {
+    "zh": "他教汉语向来重视识字，这样可以使留学生熟悉语素，进而掌握大量的词汇。",
+    "py": "Tā jiāo Hànyǔ xiànglái zhòngshì shí zì, zhèyàng kěyǐ shǐ liúxuéshēng shúxī yǔsù, jìn'ér zhǎngwò dàliàng de cíhuì.",
+    "vn": "Ông dạy tiếng Hán xưa nay luôn coi trọng việc nhận mặt chữ, như vậy có thể giúp du học sinh quen với các yếu tố cấu tạo từ, từ đó nắm được lượng lớn từ vựng."
+   },
+   {
+    "zh": "琴向来是要弹给知音听的，如今我唯一的知音已不在人世，这琴还弹给谁听呢？",
+    "py": "Qín xiànglái shì yào tán gěi zhīyīn tīng de, rújīn wǒ wéiyī de zhīyīn yǐ bú zài rénshì, zhè qín hái tán gěi shéi tīng ne?",
+    "vn": "Đàn xưa nay là để gảy cho tri âm nghe, nay người tri âm duy nhất của ta đã không còn trên cõi đời, cây đàn này còn gảy cho ai nghe nữa?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我向来去过一次长城。",
+    "why": "向来 chỉ thói quen, tính chất kéo dài từ trước đến nay; không dùng cho việc chỉ xảy ra một lần.",
+    "dung": "我去过一次长城。"
+   },
+   {
+    "sai": "他明天向来去北京出差。",
+    "why": "向来 nói về quá khứ đến hiện tại, không dùng cho sự việc cụ thể trong tương lai.",
+    "dung": "他明天去北京出差。（或：他向来喜欢去北京出差。）"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "琴",
+       "是要弹给知音听的。"
+      ],
+      "dap": [
+       [
+        "向来"
+       ]
+      ],
+      "chon": [
+       "向来",
+       "将来",
+       "后来"
+      ],
+      "goiY": "\"Đàn xưa nay là để gảy cho tri âm nghe.\" (câu bài khoá)",
+      "giai": "Từ trước đến nay luôn như vậy → 向来."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们",
+       "忠厚、老实，为人诚恳。"
+      ],
+      "dap": [
+       [
+        "向来"
+       ]
+      ],
+      "chon": [
+       "向来",
+       "原来",
+       "未来"
+      ],
+      "goiY": "\"Họ xưa nay trung hậu, thật thà.\" (ví dụ của sách)",
+      "giai": "向来 + Adj."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他这个人向来做事",
+       "，交给他的事你就放心吧。"
+      ],
+      "dap": [
+       [
+        "认真"
+       ]
+      ],
+      "chon": [
+       "认真",
+       "马虎",
+       "粗心"
+      ],
+      "goiY": "\"Anh ấy xưa nay làm việc cẩn thận.\" (练习2)",
+      "giai": "Vế sau \"cứ yên tâm\" → đức tính tốt: 认真."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这地方向来",
+       "，买东西的、逛街的、看热闹的，人山人海。"
+      ],
+      "dap": [
+       [
+        "热闹"
+       ]
+      ],
+      "chon": [
+       "热闹",
+       "安静",
+       "荒凉"
+      ],
+      "goiY": "\"Chỗ này xưa nay nhộn nhịp.\" (练一练)",
+      "giai": "Vế sau tả cảnh đông người → 热闹."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们家的事向来他说了",
+       "，得问他爱人。"
+      ],
+      "dap": [
+       [
+        "不算"
+       ]
+      ],
+      "chon": [
+       "不算",
+       "算数",
+       "算了"
+      ],
+      "goiY": "\"Việc nhà họ xưa nay anh ấy nói chẳng có giá trị.\" (练一练)",
+      "giai": "说了不算 = nói không có giá trị."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她",
+       "不爱说话，今天却主动发言了。"
+      ],
+      "dap": [
+       [
+        "向来"
+       ]
+      ],
+      "chon": [
+       "向来",
+       "曾经",
+       "刚才"
+      ],
+      "goiY": "\"Cô ấy xưa nay không thích nói, hôm nay lại chủ động phát biểu.\"",
+      "giai": "向来 + 不…… (phủ định), đối lập với 却."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "向来",
+       "他这个人",
+       "做事认真"
+      ],
+      "dap": [
+       "他这个人向来做事认真。"
+      ],
+      "goiY": "Anh ấy xưa nay làm việc cẩn thận.",
+      "giai": "向来 đứng trước vị ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "是要",
+       "琴",
+       "弹给知音听的",
+       "向来"
+      ],
+      "dap": [
+       "琴向来是要弹给知音听的。"
+      ],
+      "goiY": "Đàn xưa nay là để gảy cho tri âm nghe.",
+      "giai": "Chủ ngữ + 向来 + 是要……的."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "向来",
+       "为别人考虑得少",
+       "他太自私，"
+      ],
+      "dap": [
+       "他太自私，向来为别人考虑得少。"
+      ],
+      "goiY": "Anh ta quá ích kỷ, xưa nay ít nghĩ cho người khác.",
+      "giai": "向来 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他向来喜欢帮助别人。",
+      "dung": true,
+      "giai": "Đúng: thói quen lâu dài."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我向来去过一次上海。",
+      "dung": false,
+      "sua": "我去过一次上海。",
+      "giai": "Việc xảy ra một lần không dùng 向来."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他明天向来去北京出差。",
+      "dung": false,
+      "sua": "他明天去北京出差。",
+      "giai": "向来 không dùng cho việc tương lai."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bố tôi xưa nay nói được làm được.",
+      "dap": [
+       "我爸爸向来说到做到。",
+       "我爸爸向来说话算数。",
+       "我父亲向来说到做到。"
+      ],
+      "py": "Wǒ bàba xiànglái shuōdào zuòdào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 向来.",
+      "giai": "向来 + V; 说话算数 (bài 25)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỗ này xưa nay rất yên tĩnh, hôm nay sao đông người thế?",
+      "dap": [
+       "这里向来很安静，今天怎么这么多人？",
+       "这地方向来很安静，今天怎么有这么多人？",
+       "这儿向来很安静，今天怎么人这么多？"
+      ],
+      "py": "Zhèlǐ xiànglái hěn ānjìng, jīntiān zěnme zhème duō rén?",
+      "goiY": "Dịch sang tiếng Trung, dùng 向来.",
+      "giai": "向来 + 很 + Adj, đối lập với tình hình hôm nay."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，买东西的、逛街的、看热闹的，人山人海。",
+      "goiY": "Dùng 向来 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "这地方向来热闹，买东西的、逛街的、看热闹的，人山人海。",
+      "can": [
+       [
+        "向来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他的缺点就是太自私，＿＿＿，为自己想得多。",
+      "goiY": "Dùng 向来 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "他的缺点就是太自私，向来为别人考虑得少，为自己想得多。",
+      "can": [
+       [
+        "向来"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他这个人＿＿＿。",
+      "goiY": "Dùng 向来 hoàn thành câu (练习2 (6) của sách).",
+      "mau": "他这个人向来做事认真。",
+      "can": [
+       [
+        "向来"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「修辞：婉曲」",
+  "tenVn": "",
+  "cauTruc": [
+   "不直说“X”，以“Y”代替",
+   "死 → 走 / 去世 / 逝世 / 告别人世",
+   "上厕所 → 方便 · 老 → 长得着急 · 婚姻问题 → 个人问题"
+  ],
+  "giaiThich": "Phần 篇章修辞 của bài: \"婉曲\" (nói uyển chuyển, nói tránh) là cố ý KHÔNG nói thẳng một sự việc, mà mượn một cách nói khác có cùng ý nghĩa, diễn đạt một cách mềm mại, quanh co. Thường dùng khi nói về điều khó nói, đau buồn hoặc không lịch sự: cái chết (死 → 走 / 去世 / 逝世 / 告别人世 / 不在人世 / 写下生命的休止符), việc đi vệ sinh (上厕所 → 方便), tuổi già (老 → 长得着急), chuyện hôn nhân (婚姻问题 → 个人问题), vợ chồng (丈夫 / 妻子 → 那位). Khi đọc hiểu cần nhận ra: câu nói tránh \"不直说 X，以 Y 代替\".",
+  "viDu": [
+   {
+    "zh": "临走前，他留下遗言，把坟墓修在江边，到八月十五，好听俞伯牙弹琴。（不直说“死”，以“走”代替）",
+    "py": "Lín zǒu qián, tā liúxià yíyán, bǎ fénmù xiū zài jiāngbiān, dào bāyuè shíwǔ, hǎo tīng Yú Bóyá tán qín.",
+    "vn": "Trước lúc \"đi\", anh để lại di ngôn, xin đặt mộ bên bờ sông, để rằm tháng Tám được nghe Bá Nha gảy đàn. — Không nói thẳng \"chết\", dùng \"đi\" thay thế."
+   },
+   {
+    "zh": "各位先聊，我去方便一下。（不直说“上厕所”，以“方便”代替）",
+    "py": "Gè wèi xiān liáo, wǒ qù fāngbiàn yíxià.",
+    "vn": "Mọi người cứ nói chuyện, tôi đi \"giải quyết\" chút. — Không nói thẳng \"đi vệ sinh\", dùng \"方便\" thay thế."
+   },
+   {
+    "zh": "您刚40岁，长得好像有点儿着急。（不直说“老”，以“长得着急”代替）",
+    "py": "Nín gāng sìshí suì, zhǎng de hǎoxiàng yǒudiǎnr zháojí.",
+    "vn": "Anh mới 40 tuổi mà trông có vẻ hơi \"vội lớn\". — Không nói thẳng \"già\", dùng \"长得着急\" thay thế."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "（安慰朋友）听说你奶奶死了，你别太难过。",
+    "why": "Nói về người thân vừa mất của người khác mà dùng 死 là quá thẳng, thiếu tế nhị; nên dùng lối nói tránh.",
+    "dung": "听说你奶奶去世了，你要节哀。"
+   },
+   {
+    "sai": "（在饭桌上）大家先吃，我去上个厕所。",
+    "why": "Trên bàn ăn nói thẳng 上厕所 không lịch sự; nên nói uyển chuyển.",
+    "dung": "大家先吃，我去方便一下。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "各位先聊，我去",
+       "一下。"
+      ],
+      "dap": [
+       [
+        "方便"
+       ]
+      ],
+      "chon": [
+       "方便",
+       "厕所",
+       "简单"
+      ],
+      "goiY": "\"Mọi người cứ nói chuyện, tôi đi vệ sinh chút.\" (ví dụ của sách)",
+      "giai": "方便一下 thay cho 上厕所."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "临走前，他留下遗言。（不直说“死”，以“",
+       "”代替）"
+      ],
+      "dap": [
+       [
+        "走"
+       ]
+      ],
+      "chon": [
+       "走",
+       "来",
+       "睡"
+      ],
+      "goiY": "Câu bài khoá: 临走前 = trước lúc mất.",
+      "giai": "走 thay cho 死."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "您刚40岁，长得好像有点儿",
+       "。"
+      ],
+      "dap": [
+       [
+        "着急"
+       ]
+      ],
+      "chon": [
+       "着急",
+       "年轻",
+       "漂亮"
+      ],
+      "goiY": "\"Anh mới 40 mà trông hơi vội lớn.\" (ví dụ của sách)",
+      "giai": "长得着急 thay cho 老."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈，我的",
+       "问题自己解决好不好，您就别操心了！"
+      ],
+      "dap": [
+       [
+        "个人"
+       ]
+      ],
+      "chon": [
+       "个人",
+       "婚姻",
+       "学习"
+      ],
+      "goiY": "Không nói thẳng chuyện cưới xin (篇章修辞 · 练一练).",
+      "giai": "个人问题 thay cho 婚姻问题."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "著名作家王先生于昨日因病",
+       "，享年八十五岁。"
+      ],
+      "dap": [
+       [
+        "逝世"
+       ]
+      ],
+      "chon": [
+       "逝世",
+       "死了",
+       "没了"
+      ],
+      "goiY": "Văn tin tức, trang trọng.",
+      "giai": "逝世 là lối nói tránh trang trọng của 死."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们家那",
+       "啊，真是懒得不成样子。"
+      ],
+      "dap": [
+       [
+        "位"
+       ]
+      ],
+      "chon": [
+       "位",
+       "本",
+       "些"
+      ],
+      "goiY": "\"Ông / bà nhà tôi ấy à…\" (练习4)",
+      "giai": "那位 thay cho 丈夫 / 妻子."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "一下",
+       "先聊，",
+       "我去方便",
+       "各位"
+      ],
+      "dap": [
+       "各位先聊，我去方便一下。"
+      ],
+      "goiY": "Mọi người cứ nói chuyện, tôi đi vệ sinh chút.",
+      "giai": "Lối nói tránh 方便一下."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "告别人世",
+       "从出生到",
+       "有的人",
+       "，从来没离开过村庄"
+      ],
+      "dap": [
+       "有的人从出生到告别人世，从来没离开过村庄。"
+      ],
+      "goiY": "Có người từ lúc sinh ra đến khi từ giã cõi đời chưa từng rời làng.",
+      "giai": "告别人世 thay cho 死."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "已经不在人世",
+       "如今",
+       "我唯一的知音",
+       "，"
+      ],
+      "dap": [
+       "如今我唯一的知音已经不在人世。"
+      ],
+      "goiY": "Nay người tri âm duy nhất của tôi đã không còn trên cõi đời.",
+      "giai": "不在人世 thay cho 死了 (câu bài khoá)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "（在饭桌上）大家先吃，我去方便一下。",
+      "dung": true,
+      "giai": "Đúng và tế nhị: 方便 thay cho 上厕所."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "（安慰朋友）听说你爷爷死了，你别太难过。",
+      "dung": false,
+      "sua": "听说你爷爷去世了，你别太难过。",
+      "giai": "An ủi người khác nên nói tránh: 去世."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "（新闻）这位老艺术家昨天死了。",
+      "dung": false,
+      "sua": "这位老艺术家于昨日逝世。",
+      "giai": "Tin tức về người được kính trọng dùng 逝世."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mọi người cứ ăn trước, tôi đi vệ sinh một chút. (nói uyển chuyển)",
+      "dap": [
+       "大家先吃，我去方便一下。",
+       "你们先吃，我去方便一下。",
+       "大家先吃吧，我去方便一下。"
+      ],
+      "py": "Dàjiā xiān chī, wǒ qù fāngbiàn yíxià.",
+      "goiY": "Dịch sang tiếng Trung, dùng lối nói 婉曲.",
+      "giai": "方便一下 thay cho 上厕所."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ông ấy đã rời xa chúng ta mười năm rồi, nhưng chúng ta vẫn luôn nhớ ông.",
+      "dap": [
+       "他已经离开我们十年了，可是我们一直很想念他。",
+       "他离开我们已经十年了，但我们一直很想念他。",
+       "他已经离开我们十年了，我们还是一直想念他。"
+      ],
+      "py": "Tā yǐjīng líkāi wǒmen shí nián le, kěshì wǒmen yìzhí hěn xiǎngniàn tā.",
+      "goiY": "Dịch sang tiếng Trung, dùng lối nói tránh cho \"chết\".",
+      "giai": "离开我们 thay cho 死."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "有的人从出生到告别人世，从来没离开过自己生活的村庄。——不直说“＿＿”，以“＿＿”代替。",
+      "goiY": "Chỉ ra cách dùng 婉曲 (练习4 (1) của sách).",
+      "mau": "不直说“死”，以“告别人世”代替。",
+      "can": [
+       [
+        "死"
+       ],
+       [
+        "告别人世"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "因为喝水太多，他没过多久就要去方便一下。——不直说“＿＿”，以“＿＿”代替。",
+      "goiY": "Chỉ ra cách dùng 婉曲 (练习4 (3) của sách).",
+      "mau": "不直说“上厕所”，以“方便”代替。",
+      "can": [
+       [
+        "上厕所",
+        "去厕所"
+       ],
+       [
+        "方便"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我们家那位啊，真是懒得不成样子。——不直说“＿＿”，以“＿＿”代替。",
+      "goiY": "Chỉ ra cách dùng 婉曲 (练习4 (4) của sách).",
+      "mau": "不直说“丈夫”或是“妻子”，以“那位”代替。",
+      "can": [
+       [
+        "丈夫",
+        "妻子"
+       ],
+       [
+        "那位"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

@@ -1,0 +1,112 @@
+{
+ "zh": "高山流水遇知音",
+ "py": "Gāoshān Liúshuǐ Yù Zhīyīn",
+ "vn": "Cao sơn lưu thủy gặp tri âm",
+ "topic": "第七单元 经典阅读 · Đọc tác phẩm kinh điển — tình tri âm của Bá Nha và Tử Kỳ",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "与“个”相关的格式",
+   "explain": "Bài này học hai khuôn có chữ \"个\" (không phải lượng từ thông thường). ① 一个 + danh từ / cụm động từ, đặt TRƯỚC động từ vị ngữ, biểu thị sự việc xảy ra RẤT NHANH hoặc ĐỘT NGỘT, bất ngờ: 一个跟头栽了下来 (lộn nhào một cái ngã xuống), 一个不小心 / 一个不留神 / 一个失手 (lơ đễnh một cái, lỡ tay một cái) — sau đó thường là hậu quả. ② Động từ + (了) + 个 + tính từ / động từ: ở đây \"个\" có tác dụng giống \"得\", dẫn ra BỔ NGỮ chỉ kết quả / mức độ: 摔了个粉碎 (= 摔得粉碎), 笑个不停 (= 笑得不停), 打个落花流水, 弄了个乱七八糟. Sau 个 thường là thành ngữ, cụm cố định hoặc tính từ trần — không thêm 很 / 非常 trước tính từ, không thêm 了 sau 一个不小心.",
+   "rule": "<strong style=\"color:var(--sky-d)\">一个</strong> + N / cụm V (不小心 / 不留神 / 跟头) + V vị ngữ — nhanh, đột ngột　|　V + (了) + <strong style=\"color:var(--sky-d)\">个</strong> + Adj / V (粉碎 / 不停 / 乱七八糟) — 个 ≈ 得",
+   "examples": [
+    {
+     "zh": "他手没抓住栏杆，一个跟头栽了下来。",
+     "py": "Tā shǒu méi zhuāzhù lángān, yí ge gēntou zāile xiàlai.",
+     "vn": "Tay anh ấy không bám được lan can, lộn nhào một cái ngã xuống."
+    },
+    {
+     "zh": "俞伯牙一个不留神，“啪”的一声，琴弦拨断了一根。",
+     "py": "Yú Bóyá yí ge bù liúshén, “pā” de yì shēng, qínxián bōduànle yì gēn.",
+     "vn": "Bá Nha lơ đễnh một cái, \"phựt\" một tiếng, một dây đàn bị gảy đứt."
+    },
+    {
+     "zh": "他把心爱的琴摔了个粉碎。",
+     "py": "Tā bǎ xīn'ài de qín shuāile ge fěnsuì.",
+     "vn": "Ông đập vỡ tan tành cây đàn yêu quý của mình."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他把花瓶摔了个很粉碎。",
+     "why": "Sau \"个\" dùng tính từ / cụm cố định trần, không thêm phó từ mức độ 很 / 非常.",
+     "right": "他把花瓶摔了个粉碎。"
+    },
+    {
+     "wrong": "我一个不小心了，打碎了妈妈的花瓶。",
+     "why": "\"一个不小心\" làm trạng ngữ chỉ sự đột ngột, không mang 了; 了 đặt sau động từ chính (打碎了).",
+     "right": "我一个不小心，打碎了妈妈最心爱的花瓶。"
+    }
+   ]
+  },
+  {
+   "point": "向来",
+   "explain": "\"向来\" là PHÓ TỪ, biểu thị từ quá khứ đến hiện tại vẫn luôn như vậy, chưa hề thay đổi (= 一向, 从来都). Thường đứng trước vị ngữ: 他们向来忠厚、老实; cũng có thể đứng đầu vế câu: 他们家的事，向来他说了不算. Dùng được cả câu khẳng định (向来认真) lẫn phủ định (向来不爱说话) — khác 从来 chủ yếu đi với phủ định (从来不 / 从来没). Vì chỉ thói quen, tính chất lâu dài nên KHÔNG dùng cho sự việc xảy ra một lần (*向来去过一次) hay việc tương lai (*明天向来……).",
+   "rule": "Chủ ngữ + <strong style=\"color:var(--sky-d)\">向来</strong> + V / Adj (向来热闹 / 向来做事认真)　|　<strong style=\"color:var(--sky-d)\">向来</strong> + 不 / 很……　|　<strong style=\"color:var(--sky-d)\">向来</strong> + chủ ngữ + vị ngữ (向来他说了不算)",
+   "examples": [
+    {
+     "zh": "他们向来忠厚、老实，为人诚恳。",
+     "py": "Tāmen xiànglái zhōnghòu, lǎoshi, wéirén chéngkěn.",
+     "vn": "Họ xưa nay vẫn trung hậu, thật thà, đối xử với người khác chân thành."
+    },
+    {
+     "zh": "他教汉语向来重视识字，这样可以使留学生熟悉语素，进而掌握大量的词汇。",
+     "py": "Tā jiāo Hànyǔ xiànglái zhòngshì shí zì, zhèyàng kěyǐ shǐ liúxuéshēng shúxī yǔsù, jìn'ér zhǎngwò dàliàng de cíhuì.",
+     "vn": "Ông dạy tiếng Hán xưa nay luôn coi trọng việc nhận mặt chữ, như vậy có thể giúp du học sinh quen với các yếu tố cấu tạo từ, từ đó nắm được lượng lớn từ vựng."
+    },
+    {
+     "zh": "琴向来是要弹给知音听的，如今我唯一的知音已不在人世，这琴还弹给谁听呢？",
+     "py": "Qín xiànglái shì yào tán gěi zhīyīn tīng de, rújīn wǒ wéiyī de zhīyīn yǐ bú zài rénshì, zhè qín hái tán gěi shéi tīng ne?",
+     "vn": "Đàn xưa nay là để gảy cho tri âm nghe, nay người tri âm duy nhất của ta đã không còn trên cõi đời, cây đàn này còn gảy cho ai nghe nữa?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我向来去过一次长城。",
+     "why": "向来 chỉ thói quen, tính chất kéo dài từ trước đến nay; không dùng cho việc chỉ xảy ra một lần.",
+     "right": "我去过一次长城。"
+    },
+    {
+     "wrong": "他明天向来去北京出差。",
+     "why": "向来 nói về quá khứ đến hiện tại, không dùng cho sự việc cụ thể trong tương lai.",
+     "right": "他明天去北京出差。（或：他向来喜欢去北京出差。）"
+    }
+   ]
+  },
+  {
+   "point": "修辞（5）婉曲",
+   "explain": "Phần 篇章修辞 của bài: \"婉曲\" (nói uyển chuyển, nói tránh) là cố ý KHÔNG nói thẳng một sự việc, mà mượn một cách nói khác có cùng ý nghĩa, diễn đạt một cách mềm mại, quanh co. Thường dùng khi nói về điều khó nói, đau buồn hoặc không lịch sự: cái chết (死 → 走 / 去世 / 逝世 / 告别人世 / 不在人世 / 写下生命的休止符), việc đi vệ sinh (上厕所 → 方便), tuổi già (老 → 长得着急), chuyện hôn nhân (婚姻问题 → 个人问题), vợ chồng (丈夫 / 妻子 → 那位). Khi đọc hiểu cần nhận ra: câu nói tránh \"不直说 X，以 Y 代替\".",
+   "rule": "<strong style=\"color:var(--sky-d)\">不直说</strong> “X”，<strong style=\"color:var(--sky-d)\">以</strong> “Y” <strong style=\"color:var(--sky-d)\">代替</strong>　|　死 → 走 / 去世 / 逝世　|　上厕所 → 方便　|　老 → 长得着急　|　婚姻问题 → 个人问题",
+   "examples": [
+    {
+     "zh": "临走前，他留下遗言，把坟墓修在江边，到八月十五，好听俞伯牙弹琴。（不直说“死”，以“走”代替）",
+     "py": "Lín zǒu qián, tā liúxià yíyán, bǎ fénmù xiū zài jiāngbiān, dào bāyuè shíwǔ, hǎo tīng Yú Bóyá tán qín.",
+     "vn": "Trước lúc \"đi\", anh để lại di ngôn, xin đặt mộ bên bờ sông, để rằm tháng Tám được nghe Bá Nha gảy đàn. — Không nói thẳng \"chết\", dùng \"đi\" thay thế."
+    },
+    {
+     "zh": "各位先聊，我去方便一下。（不直说“上厕所”，以“方便”代替）",
+     "py": "Gè wèi xiān liáo, wǒ qù fāngbiàn yíxià.",
+     "vn": "Mọi người cứ nói chuyện, tôi đi \"giải quyết\" chút. — Không nói thẳng \"đi vệ sinh\", dùng \"方便\" thay thế."
+    },
+    {
+     "zh": "您刚40岁，长得好像有点儿着急。（不直说“老”，以“长得着急”代替）",
+     "py": "Nín gāng sìshí suì, zhǎng de hǎoxiàng yǒudiǎnr zháojí.",
+     "vn": "Anh mới 40 tuổi mà trông có vẻ hơi \"vội lớn\". — Không nói thẳng \"già\", dùng \"长得着急\" thay thế."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "（安慰朋友）听说你奶奶死了，你别太难过。",
+     "why": "Nói về người thân vừa mất của người khác mà dùng 死 là quá thẳng, thiếu tế nhị; nên dùng lối nói tránh.",
+     "right": "听说你奶奶去世了，你要节哀。"
+    },
+    {
+     "wrong": "（在饭桌上）大家先吃，我去上个厕所。",
+     "why": "Trên bàn ăn nói thẳng 上厕所 không lịch sự; nên nói uyển chuyển.",
+     "right": "大家先吃，我去方便一下。"
+    }
+   ]
+  }
+ ]
+}

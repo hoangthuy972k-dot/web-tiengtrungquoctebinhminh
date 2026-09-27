@@ -69,6 +69,16 @@ const APP_DATA = {
       color: 'red'
     },
     {
+      id: 'hsk6',
+      name: 'HSK 6',
+      subtitle: 'Cao cấp 2',
+      description: 'Đọc hiểu văn bản dài, tóm tắt và bàn luận các chủ đề xã hội, văn hoá bằng tiếng Trung.',
+      // HSK标准教程6 gom hai quyen: 上 bai 1-20, 下 bai 21-40
+      totalLessons: 40,
+      totalVocab: 5000,
+      color: 'red'
+    },
+    {
       id: 'yct',
       name: 'YCT - Thiếu nhi',
       subtitle: 'Dành cho trẻ em',
@@ -1791,6 +1801,20 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk5-bai-36.html'
+      }
+    ],
+    hsk6: [
+      {
+        id: 'hsk6-l1',
+        number: 1,
+        title: 'Điều con trẻ dạy chúng ta',
+        titleHanzi: '孩子给我们的启示',
+        titlePinyin: 'Háizi gěi wǒmen de qǐshì',
+        topic: '第一单元 生活点滴 · Những chuyện nhỏ trong cuộc sống',
+        vocabCount: 40,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-1.html'
       }
     ],
     yct: [

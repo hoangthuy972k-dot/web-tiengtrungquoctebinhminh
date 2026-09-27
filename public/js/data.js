@@ -1973,6 +1973,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-14.html'
       },
       {
+        id: 'hsk6-l15',
+        number: 15,
+        title: 'Tác phẩm điêu khắc trên dãy núi',
+        titleHanzi: '山脉上的雕刻',
+        titlePinyin: 'Shānmài shang de diāokè',
+        topic: '第四单元 走遍天下 · Danh thắng & ruộng bậc thang Hà Nhì',
+        vocabCount: 47,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-15.html'
+      },
+      {
         id: 'hsk6-l16',
         number: 16,
         title: 'Từ Kiện và các nhà nhiếp ảnh động vật hoang dã',

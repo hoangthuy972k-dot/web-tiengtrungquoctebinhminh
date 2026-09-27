@@ -10745,6 +10745,16 @@
     top.innerHTML =
       (dpTotalQuiz > 0 ? pgbHtml('dpq', dpTotalQuiz) : '') +
       '<div class="dp-scene-label">🎭 ' + scene.scene + '</div>';
+    // Khung tu cua phan nghe-dien (.nd-kho) cung ghim o tren: dat ngay DUOI thanh audio
+    // dang ghim (neu khong se bi thanh audio che). Theo doi chieu cao thanh audio.
+    if (!host._ndTop) {
+      host._ndTop = function () {
+        var top = parseFloat(getComputedStyle(host).top) || 0;
+        wrap.style.setProperty('--nd-top', Math.round(top + host.offsetHeight + 8) + 'px');
+      };
+      if (window.ResizeObserver) new ResizeObserver(host._ndTop).observe(host);
+      window.addEventListener('resize', host._ndTop);
+    }
     if (host.getAttribute('data-src') !== (audioSrc || '')) {
       host.setAttribute('data-src', audioSrc || '');
       host.innerHTML = audioHtml;

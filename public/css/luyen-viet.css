@@ -411,3 +411,6 @@ html.ho-tro-toi[data-theme="dark"] {
 .sk-sx-m:hover:not(:disabled) { border-color: var(--lv-accent); }
 .sk-sx-m.is-used { opacity: 0.35; }
 .sk-sx-doan { margin: 6px 0; font-size: 1rem; line-height: 1.8; }
+
+/* Bai khoa trong app: thanh audio da ghim o tren, khung tu nghe-dien ghim ngay ben duoi (--nd-top do app.js tinh) */
+#dpContent .nd-kho { top: var(--nd-top, 64px); }

@@ -1875,6 +1875,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-6.html'
+      },
+      {
+        id: 'hsk6-l7',
+        number: 7,
+        title: 'Tôi làm chủ cuộc đời tôi',
+        titleHanzi: '我的人生我做主',
+        titlePinyin: 'Wǒ de rénshēng wǒ zuò zhǔ',
+        topic: '第二单元 不甘平庸 · Chọn nghề & năng lực ra quyết định',
+        vocabCount: 45,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-7.html'
       }
     ],
     yct: [

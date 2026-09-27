@@ -1933,15 +1933,72 @@ var sgkData = [
       dap:['快活','扑','趴','凝视','统统']}
    ]},
 
-  {kieu:'ab', de:'把下列分句按叙述的次序排列成完整的句子', vn:'Sắp xếp các vế câu theo trình tự kể thành câu hoàn chỉnh — chọn thứ tự đúng (đáp án sách)',
-   cau:[
-     {s:'A. 小王压不住火气　B. 然后，又把脸趴在他的肩上　C. 突然用拳头打丈夫的肩膀　D. 哭了起来',
-      opts:['A C B D：小王压不住火气，突然用拳头打丈夫的肩膀，然后，又把脸趴在他的肩上，哭了起来。','A B C D：小王压不住火气，然后，又把脸趴在他的肩上，突然用拳头打丈夫的肩膀，哭了起来。'],
-      ans:0, giai:'Đáp án sách: A C B D. Nguyên nhân (压不住火气) → hành động đầu tiên (突然……打) → 然后，又…… (hành động tiếp theo) → kết quả (哭了起来). 然后 và 又 cho biết vế B đứng sau C.'},
-     {s:'A. 山上住着个种树的老爷爷　B. 他的胡子很长　C. 听说在很远很远的地方有一座山　D. 白头发白眉毛白胡子　E. 一直拖到地上',
-      opts:['A C D B E：山上住着个种树的老爷爷，听说在很远很远的地方有一座山，白头发白眉毛白胡子，他的胡子很长，一直拖到地上。','C A D B E：听说在很远很远的地方有一座山，山上住着个种树的老爷爷，白头发白眉毛白胡子，他的胡子很长，一直拖到地上。'],
-      ans:1, giai:'Đáp án sách: C A D B E. Đi từ xa đến gần: nơi chốn (有一座山) → người (山上住着……) → ngoại hình chung (白头发白眉毛白胡子) → chi tiết (胡子很长) → 一直拖到地上 nối tiếp 胡子. Vế A mở đầu bằng 山上 nên phải đứng sau C (câu nhắc tới 一座山).'}
-   ]},
+  {
+  "kieu": "sx",
+  "de": "把下列分句按叙述的次序排列成完整的句子",
+  "vn": "Sắp xếp các vế câu theo trình tự kể thành câu hoàn chỉnh",
+  "cau": [
+    {
+      "manh": [
+        {
+          "k": "A",
+          "s": "小王压不住火气"
+        },
+        {
+          "k": "B",
+          "s": "然后，又把脸趴在他的肩上"
+        },
+        {
+          "k": "C",
+          "s": "突然用拳头打丈夫的肩膀"
+        },
+        {
+          "k": "D",
+          "s": "哭了起来"
+        }
+      ],
+      "dap": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "giai": "Nguyên nhân (压不住火气) → hành động đầu tiên (突然……打) → 然后，又…… (hành động tiếp theo) → kết quả (哭了起来). 然后 và 又 cho biết vế B đứng sau C."
+    },
+    {
+      "manh": [
+        {
+          "k": "A",
+          "s": "山上住着个种树的老爷爷"
+        },
+        {
+          "k": "B",
+          "s": "他的胡子很长"
+        },
+        {
+          "k": "C",
+          "s": "听说在很远很远的地方有一座山"
+        },
+        {
+          "k": "D",
+          "s": "白头发白眉毛白胡子"
+        },
+        {
+          "k": "E",
+          "s": "一直拖到地上"
+        }
+      ],
+      "dap": [
+        "C",
+        "A",
+        "D",
+        "B",
+        "E"
+      ],
+      "giai": "Đi từ xa đến gần: nơi chốn (有一座山) → người (山上住着……) → ngoại hình chung (白头发白眉毛白胡子) → chi tiết (胡子很长) → 一直拖到地上 nối tiếp 胡子. Vế A mở đầu bằng 山上 nên phải đứng sau C (câu nhắc tới 一座山)."
+    }
+  ]
+},
 
   {kieu:'bc', de:'指出下列句子的错误，并提出修改建议', vn:'Chỉ ra lỗi sai của các câu sau và đề xuất cách sửa (病句类型：表意不明 — ý diễn đạt không rõ, chủ yếu do đại từ chỉ không rõ)',
    cau:[

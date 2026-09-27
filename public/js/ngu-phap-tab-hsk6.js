@@ -26259,3 +26259,619 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-30.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-31.html"] = [
+ {
+  "so": "1",
+  "ten": "「逐」",
+  "tenVn": "",
+  "cauTruc": [
+   "逐 + 年 / 月 / 日 + V biến đổi (增加, 提高, 提升…): thay đổi dần theo từng năm / tháng / ngày",
+   "逐 + 个 / 一 / 步 + V hành động (检查, 完善…): làm lần lượt từng cái, từng bước; 逐字逐句地 + V"
+  ],
+  "giaiThich": "“逐” là GIỚI TỪ, nghĩa là \"lần lượt theo thứ tự\" (挨着次序). Kết hợp với danh từ / lượng từ chỉ đơn vị để làm trạng ngữ đứng trước động từ: 逐年 (từng năm), 逐月, 逐日, 逐个 / 逐一 (từng cái một), 逐步 (từng bước), 逐字逐句 (từng chữ từng câu). Với động từ chỉ sự biến đổi (增加, 提高, 提升, 减少) nó nhấn sự thay đổi DẦN DẦN theo từng đơn vị thời gian; với động từ hành động (检查, 修改, 核对) nó nhấn làm LẦN LƯỢT, không bỏ sót. Mang sắc thái văn viết; phía sau bắt buộc có động từ.",
+  "viDu": [
+   {
+    "zh": "最近有个调查，广大群众的健身意识在逐年提升。",
+    "py": "Zuìjìn yǒu ge diàochá, guǎngdà qúnzhòng de jiànshēn yìshi zài zhúnián tíshēng.",
+    "vn": "Gần đây có một cuộc điều tra, ý thức rèn luyện sức khoẻ của đông đảo quần chúng đang tăng lên từng năm."
+   },
+   {
+    "zh": "雨季快到了，对大大小小的水库，要逐个检查，以排除安全隐患。",
+    "py": "Yǔjì kuài dào le, duì dàdà-xiǎoxiǎo de shuǐkù, yào zhúgè jiǎnchá, yǐ páichú ānquán yǐnhuàn.",
+    "vn": "Mùa mưa sắp đến, các hồ chứa lớn nhỏ đều phải kiểm tra từng cái một để loại bỏ nguy cơ mất an toàn."
+   },
+   {
+    "zh": "他花了一年多时间，逐字逐句地反复推敲，再三修改，终于完成了整套书的翻译工作。",
+    "py": "Tā huāle yì nián duō shíjiān, zhú zì zhú jù de fǎnfù tuīqiāo, zàisān xiūgǎi, zhōngyú wánchéngle zhěng tào shū de fānyì gōngzuò.",
+    "vn": "Anh ấy mất hơn một năm, cân nhắc từng chữ từng câu, sửa đi sửa lại nhiều lần, cuối cùng đã hoàn thành việc dịch cả bộ sách."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他的汉语水平逐年。",
+    "why": "逐年 là trạng ngữ, phía sau bắt buộc phải có động từ.",
+    "dung": "他的汉语水平逐年提高。"
+   },
+   {
+    "sai": "雨季快到了，要检查逐个水库。",
+    "why": "逐个 đứng TRƯỚC động từ làm trạng ngữ, không đặt sau động từ như định ngữ của tân ngữ.",
+    "dung": "雨季快到了，要逐个检查水库。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "广大群众的健身意识在逐",
+       "提升。"
+      ],
+      "dap": [
+       [
+        "年"
+       ]
+      ],
+      "chon": [
+       "年",
+       "每",
+       "常"
+      ],
+      "goiY": "\"Ý thức rèn luyện của quần chúng đang tăng lên từng năm.\" (câu bài khoá)",
+      "giai": "逐年 = theo từng năm; 逐每 / 逐常 không tồn tại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "雨季快到了，对大大小小的水库，要逐",
+       "检查，以排除安全隐患。"
+      ],
+      "dap": [
+       [
+        "个"
+       ]
+      ],
+      "chon": [
+       "个",
+       "们",
+       "些"
+      ],
+      "goiY": "\"… các hồ chứa phải kiểm tra từng cái một …\" (ví dụ (2) của sách)",
+      "giai": "逐个 = từng cái một; 逐 + lượng từ đơn vị, không đi với 们 / 些 (số nhiều)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他花了一年多时间，逐字逐",
+       "地反复推敲，终于完成了翻译工作。"
+      ],
+      "dap": [
+       [
+        "句"
+       ]
+      ],
+      "chon": [
+       "句",
+       "本",
+       "页"
+      ],
+      "goiY": "\"… cân nhắc từng chữ từng câu …\" (ví dụ (3) của sách)",
+      "giai": "Cụm cố định 逐字逐句 (chữ — câu)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "由于经营有道，小店的营业额",
+       "日增加。"
+      ],
+      "dap": [
+       [
+        "逐"
+       ]
+      ],
+      "chon": [
+       "逐",
+       "多",
+       "全"
+      ],
+      "goiY": "\"… doanh thu tăng lên từng ngày.\" (练一练 E)",
+      "giai": "逐日增加 = tăng dần từng ngày."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "产品产量逐",
+       "提高，资金迅速回笼。"
+      ],
+      "dap": [
+       [
+        "月"
+       ]
+      ],
+      "chon": [
+       "月",
+       "期",
+       "号"
+      ],
+      "goiY": "\"Sản lượng tăng lên từng tháng, vốn nhanh chóng thu hồi.\" (练一练 F)",
+      "giai": "逐月 = theo từng tháng; 逐期 / 逐号 không dùng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "人类必须将积累起来的经验",
+       "步完善起来。"
+      ],
+      "dap": [
+       [
+        "逐"
+       ]
+      ],
+      "chon": [
+       "逐",
+       "进",
+       "跑"
+      ],
+      "goiY": "\"… phải từng bước hoàn thiện những kinh nghiệm tích luỹ được.\" (练一练 A)",
+      "giai": "逐步 = từng bước; 进步 / 跑步 là từ khác nghĩa."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "广大群众",
+       "的",
+       "健身意识",
+       "在",
+       "逐年",
+       "提升"
+      ],
+      "dap": [
+       "广大群众的健身意识在逐年提升。"
+      ],
+      "goiY": "Ý thức rèn luyện sức khoẻ của đông đảo quần chúng đang tăng lên từng năm.",
+      "giai": "在 + 逐年 + V: đang … dần theo từng năm."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "要",
+       "逐个",
+       "检查",
+       "大大小小的",
+       "水库"
+      ],
+      "dap": [
+       "要逐个检查大大小小的水库。"
+      ],
+      "goiY": "Phải kiểm tra từng cái một các hồ chứa lớn nhỏ.",
+      "giai": "逐个 đứng trước động từ 检查."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "营业额",
+       "由于经营有道",
+       "，",
+       "逐日",
+       "增加"
+      ],
+      "dap": [
+       "由于经营有道，营业额逐日增加。"
+      ],
+      "goiY": "Nhờ kinh doanh có phương pháp, doanh thu tăng lên từng ngày.",
+      "giai": "Vế nguyên nhân 由于…… đứng trước; 逐日 + 增加."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的汉语水平逐年。",
+      "dung": false,
+      "sua": "他的汉语水平逐年提高。",
+      "giai": "逐年 là trạng ngữ, phải có động từ phía sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "雨季快到了，要检查逐个水库。",
+      "dung": false,
+      "sua": "雨季快到了，要逐个检查水库。",
+      "giai": "逐个 phải đứng trước động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他逐字逐句地修改了三遍，终于完成了论文。",
+      "dung": true,
+      "giai": "逐字逐句地 + V làm trạng ngữ → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Doanh số sản phẩm tăng lên từng năm.",
+      "dap": [
+       "产品的销量逐年增加。",
+       "产品的销量逐年提高。",
+       "产品的销量逐年上升。",
+       "产品销量逐年增加。"
+      ],
+      "py": "Chǎnpǐn de xiāoliàng zhúnián zēngjiā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 逐.",
+      "giai": "\"tăng lên từng năm\" = 逐年增加 (đáp án sách 练习2 (2))."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bác sĩ kiểm tra lần lượt từng bệnh nhân.",
+      "dap": [
+       "医生逐个检查病人。",
+       "医生逐一检查病人。",
+       "医生对病人逐个进行检查。",
+       "医生逐个给病人检查。"
+      ],
+      "py": "Yīshēng zhúgè jiǎnchá bìngrén.",
+      "goiY": "Dịch sang tiếng Trung, dùng 逐.",
+      "giai": "\"lần lượt từng người\" = 逐个 / 逐一, đặt trước động từ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "产品的销量＿＿。（用“逐年”完成句子）",
+      "goiY": "đáp án sách — 练习2 (2)",
+      "mau": "产品的销量逐年增加。",
+      "can": [
+       [
+        "逐年"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他们的小店开门了，由于经营有道，同时符合市场需求，＿＿。（用“逐日”完成句子）",
+      "goiY": "đáp án sách — 练一练 B + E",
+      "mau": "他们的小店开门了，由于经营有道，同时符合市场需求，营业额逐日增加。",
+      "can": [
+       [
+        "逐日"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "想当年他们的企业也是国内名牌，短短几个月就开发了十来个新品投放市场，＿＿，资金迅速回笼。（用“逐月”完成句子）",
+      "goiY": "đáp án sách — 练一练 D + F",
+      "mau": "想当年他们的企业也是国内名牌，短短几个月就开发了十来个新品投放市场，产品产量逐月提高，资金迅速回笼。",
+      "can": [
+       [
+        "逐月"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「归根到底」",
+  "tenVn": "",
+  "cauTruc": [
+   "（S +）归根到底 / 归根结底（，）+ 是 / 就是…… — suy cho cùng (nêu kết luận bản chất)",
+   "Gần nghĩa: 说到底 · 从根本上说 · 一句话 · 说白了 · 说穿了 (đặt trước phần kết luận)"
+  ],
+  "giaiThich": "“归根到底” là XEN NGỮ (插入语), nghĩa \"xét từ gốc rễ mà nói, suy cho cùng\" — dùng khi rút ra kết luận căn bản, bản chất của vấn đề. Cũng nói “归根结底”. Có thể đặt đầu câu (sau có dấu phẩy) hoặc giữa chủ ngữ và vị ngữ: 运动健身归根到底是自己的事. Các cách nói gần nghĩa: 说到底, 从根本上说, 一句话, 说白了, 说穿了 (ba cách sau mang tính khẩu ngữ; 说白了 / 说穿了 còn hàm ý \"nói trắng ra điều bị che giấu\"). Xen ngữ không làm thành phần ngữ pháp — bỏ đi câu vẫn đúng, nhưng mất sắc thái kết luận; phía sau vẫn phải có vị ngữ đầy đủ.",
+  "viDu": [
+   {
+    "zh": "运动健身归根到底是自己的事，胡乱对付其实是在骗自己。",
+    "py": "Yùndòng jiànshēn guīgēn-dàodǐ shì zìjǐ de shì, húluàn duìfu qíshí shì zài piàn zìjǐ.",
+    "vn": "Vận động rèn luyện sức khoẻ suy cho cùng là việc của bản thân, làm qua loa chiếu lệ thật ra là tự lừa mình."
+   },
+   {
+    "zh": "世界是你们的，也是我们的，但归根结底是你们的。",
+    "py": "Shìjiè shì nǐmen de, yě shì wǒmen de, dàn guīgēn-jiédǐ shì nǐmen de.",
+    "vn": "Thế giới là của các bạn, cũng là của chúng tôi, nhưng suy cho cùng là của các bạn."
+   },
+   {
+    "zh": "据说国外很多街头艺人都是技艺超群，但为什么他们会在街头表演呢？说白了就是一种生活方式。",
+    "py": "Jùshuō guówài hěn duō jiētóu yìrén dōu shì jìyì chāoqún, dàn wèi shénme tāmen huì zài jiētóu biǎoyǎn ne? Shuō bái le jiù shì yì zhǒng shēnghuó fāngshì.",
+    "vn": "Nghe nói nhiều nghệ sĩ đường phố ở nước ngoài có tay nghề xuất chúng, vậy tại sao họ lại biểu diễn trên phố? Nói trắng ra, đó là một lối sống."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "运动健身归根到底自己的事。",
+    "why": "Xen ngữ không thay được vị ngữ — sau 归根到底 vẫn phải có 是.",
+    "dung": "运动健身归根到底是自己的事。"
+   },
+   {
+    "sai": "他却告诉我没钱，就是说穿了不想借。",
+    "why": "Xen ngữ 说穿了 đặt TRƯỚC phần kết luận (就是……), không chen giữa 就是 và nội dung.",
+    "dung": "他却告诉我没钱，说穿了就是不想借。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "运动健身归根到",
+       "是自己的事。"
+      ],
+      "dap": [
+       [
+        "底"
+       ]
+      ],
+      "chon": [
+       "底",
+       "头",
+       "尾"
+      ],
+      "goiY": "\"Vận động rèn luyện suy cho cùng là việc của bản thân.\" (câu bài khoá)",
+      "giai": "Thành ngữ cố định 归根到底."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "世界是你们的，也是我们的，但归根结",
+       "是你们的。"
+      ],
+      "dap": [
+       [
+        "底"
+       ]
+      ],
+      "chon": [
+       "底",
+       "果",
+       "束"
+      ],
+      "goiY": "\"… nhưng suy cho cùng là của các bạn.\" (ví dụ (2) của sách)",
+      "giai": "归根结底 = 归根到底; không nói 归根结果 / 归根结束."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "地区差别、城乡差别等问题，从根本上",
+       "，都是经济社会发展不平衡的问题。"
+      ],
+      "dap": [
+       [
+        "说"
+       ]
+      ],
+      "chon": [
+       "说",
+       "做",
+       "来"
+      ],
+      "goiY": "\"… xét về căn bản, đều là vấn đề phát triển không cân bằng.\" (ví dụ (3) của sách)",
+      "giai": "Cụm cố định 从根本上说."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为什么他们会在街头表演呢？说",
+       "了就是一种生活方式。"
+      ],
+      "dap": [
+       [
+        "白"
+       ]
+      ],
+      "chon": [
+       "白",
+       "好",
+       "完"
+      ],
+      "goiY": "\"Nói trắng ra, đó là một lối sống.\" (ví dụ (4) của sách)",
+      "giai": "说白了 = nói trắng ra."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他爸爸刚给他寄来了生活费，他却告诉我没钱，说",
+       "了就是不想借。"
+      ],
+      "dap": [
+       [
+        "穿"
+       ]
+      ],
+      "chon": [
+       "穿",
+       "过",
+       "好"
+      ],
+      "goiY": "\"… nói toạc ra là không muốn cho mượn.\" (练一练 (1))",
+      "giai": "说穿了 = nói toạc ra (vạch trần điều bị che giấu)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "所谓史学，说到",
+       "就是研究人类社会历史发展过程及其规律的一门学科。"
+      ],
+      "dap": [
+       [
+        "底"
+       ]
+      ],
+      "chon": [
+       "底",
+       "头",
+       "家"
+      ],
+      "goiY": "\"Sử học, nói cho cùng, chính là …\" (练一练 (3))",
+      "giai": "说到底 = nói cho cùng."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "运动健身",
+       "归根到底",
+       "是",
+       "自己的事"
+      ],
+      "dap": [
+       "运动健身归根到底是自己的事。"
+      ],
+      "goiY": "Vận động rèn luyện suy cho cùng là việc của bản thân.",
+      "giai": "Xen ngữ đứng giữa chủ ngữ và vị ngữ 是……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "说白了",
+       "就是",
+       "一种",
+       "生活方式"
+      ],
+      "dap": [
+       "说白了就是一种生活方式。"
+      ],
+      "goiY": "Nói trắng ra đó là một lối sống.",
+      "giai": "说白了 + 就是……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "归根结底",
+       "，",
+       "健康",
+       "比金钱",
+       "更重要"
+      ],
+      "dap": [
+       "归根结底，健康比金钱更重要。",
+       "健康归根结底比金钱更重要。"
+      ],
+      "goiY": "Suy cho cùng, sức khoẻ quan trọng hơn tiền bạc.",
+      "giai": "Đầu câu + dấu phẩy, hoặc sau chủ ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "运动健身归根到底自己的事。",
+      "dung": false,
+      "sua": "运动健身归根到底是自己的事。",
+      "giai": "Sau xen ngữ vẫn phải có vị ngữ 是."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他却告诉我没钱，就是说穿了不想借。",
+      "dung": false,
+      "sua": "他却告诉我没钱，说穿了就是不想借。",
+      "giai": "说穿了 đặt trước phần kết luận 就是……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "学习成绩不好，归根到底是因为方法不对。",
+      "dung": true,
+      "giai": "Xen ngữ + 是因为…… nêu nguyên nhân căn bản → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Suy cho cùng, sức khoẻ là việc của chính mình.",
+      "dap": [
+       "归根到底，健康是自己的事。",
+       "健康归根到底是自己的事。",
+       "归根结底，健康是自己的事。",
+       "说到底，健康是自己的事。"
+      ],
+      "py": "Guīgēn-dàodǐ, jiànkāng shì zìjǐ de shì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 归根到底 (hoặc cách nói gần nghĩa).",
+      "giai": "\"suy cho cùng\" = 归根到底 / 归根结底 / 说到底."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nói trắng ra, cậu ấy chỉ là không muốn đi.",
+      "dap": [
+       "说白了，他就是不想去。",
+       "说穿了，他就是不想去。",
+       "说白了他就是不想去。",
+       "说穿了他就是不想去。"
+      ],
+      "py": "Shuō bái le, tā jiù shì bù xiǎng qù.",
+      "goiY": "Dịch sang tiếng Trung, dùng 说白了 / 说穿了.",
+      "giai": "\"nói trắng ra\" = 说白了 / 说穿了 + 就是……."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他爸爸上周刚给他寄来了生活费，他却告诉我没钱，＿＿就是不想借。（用“说穿了”完成句子）",
+      "goiY": "đáp án sách — 练一练 (1)：vị trí D",
+      "mau": "他爸爸上周刚给他寄来了生活费，他却告诉我没钱，说穿了就是不想借。",
+      "can": [
+       [
+        "说穿了"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "从今天起，她的电话、短信、邮件，我一概不理，＿＿凡是与她有关的消息我也不听，我和她彻底绝交了。（用“一句话”完成句子）",
+      "goiY": "đáp án sách — 练一练 (2)：vị trí C",
+      "mau": "从今天起，她的电话、短信、邮件，我一概不理，一句话，凡是与她有关的消息我也不听，我和她彻底绝交了。",
+      "can": [
+       [
+        "一句话"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "所谓史学，＿＿就是研究和阐述人类社会历史发展过程及其规律的一门学科和科学。（用“说到底”完成句子）",
+      "goiY": "đáp án sách — 练一练 (3)：vị trí A",
+      "mau": "所谓史学，说到底就是研究和阐述人类社会历史发展过程及其规律的一门学科和科学。",
+      "can": [
+       [
+        "说到底"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

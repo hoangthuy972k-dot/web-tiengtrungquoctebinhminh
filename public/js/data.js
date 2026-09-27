@@ -2163,6 +2163,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk6-bai-30.html'
+      },
+      {
+        id: 'hsk6-l31',
+        number: 31,
+        title: 'Kiến thức tập thể dục',
+        titleHanzi: '运动的学问',
+        titlePinyin: 'Yùndòng de xuéwen',
+        topic: '第八单元 人体探秘 · Kiến thức vận động: sức khoẻ toàn diện, rèn luyện trí não và cách tập luyện khoa học',
+        vocabCount: 54,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-31.html'
       }
     ],
     yct: [

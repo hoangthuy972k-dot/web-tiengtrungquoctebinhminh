@@ -12919,3 +12919,928 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-14.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-16.html"] = [
+ {
+  "so": "1",
+  "ten": "「换句话说」",
+  "tenVn": "",
+  "cauTruc": [
+   "Câu A，换句话说，câu B: nói cách khác (B giải thích lại A)",
+   "……。也就是说／就是说，……: tức là, nghĩa là (thành phần chen cùng loại)"
+  ],
+  "giaiThich": "换句话说 là THÀNH PHẦN CHEN (插入语), nghĩa \"nói cách khác\". Dùng để GIẢI THÍCH, NÓI RÕ lại điều vừa nói bằng một cách diễn đạt khác (cụ thể hơn, dễ hiểu hơn, hoặc nêu hệ quả). Thường đứng giữa hai phân câu / hai câu, hai bên có dấu phẩy. Vế trước và vế sau nói về CÙNG MỘT sự việc. Các thành phần chen cùng loại hay gặp: 也就是说, 就是说.",
+  "viDu": [
+   {
+    "zh": "雪豹，这种皮毛上带着美丽花斑的大型猫科动物正濒临消亡，换句话说，在不久的将来我们很可能再也见不到这种动物。",
+    "py": "Xuěbào, zhè zhǒng pímáo shang dàizhe měilì huābān de dàxíng māokē dòngwù zhèng bīnlín xiāowáng, huàn jù huà shuō, zài bùjiǔ de jiānglái wǒmen hěn kěnéng zài yě jiàn bu dào zhè zhǒng dòngwù.",
+    "vn": "Báo tuyết — loài họ mèo cỡ lớn có bộ lông điểm đốm hoa tuyệt đẹp này — đang đứng bên bờ diệt vong; nói cách khác, trong tương lai không xa rất có thể chúng ta sẽ không bao giờ còn thấy loài vật này nữa."
+   },
+   {
+    "zh": "推销产品靠的是广告，但是做广告需要高额资金，这笔广告费最终还是会转嫁到产品上。换句话说，一个产品的广告越多，它的零售价格也会越高。",
+    "py": "Tuīxiāo chǎnpǐn kào de shì guǎnggào, dànshì zuò guǎnggào xūyào gāo'é zījīn, zhè bǐ guǎnggàofèi zuìzhōng háishi huì zhuǎnjià dào chǎnpǐn shang. Huàn jù huà shuō, yí ge chǎnpǐn de guǎnggào yuè duō, tā de língshòu jiàgé yě huì yuè gāo.",
+    "vn": "Tiêu thụ sản phẩm dựa vào quảng cáo, nhưng quảng cáo cần khoản vốn lớn, khoản phí quảng cáo này rốt cuộc vẫn bị đẩy sang sản phẩm. Nói cách khác, sản phẩm càng quảng cáo nhiều thì giá bán lẻ càng cao."
+   },
+   {
+    "zh": "每个国家都应与他国和睦相处，尽其该尽的国际义务。就是说，国家拥有主权，但并不是可以为所欲为的。",
+    "py": "Měi ge guójiā dōu yīng yǔ tāguó hémù xiāngchǔ, jìn qí gāi jìn de guójì yìwù. Jiùshì shuō, guójiā yōngyǒu zhǔquán, dàn bìng bú shì kěyǐ wéisuǒyùwéi de.",
+    "vn": "Mỗi quốc gia đều nên chung sống hoà thuận với nước khác, làm tròn nghĩa vụ quốc tế của mình. Nghĩa là, quốc gia có chủ quyền, nhưng không phải muốn làm gì thì làm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他很喜欢看书，换句话说，他也喜欢运动。",
+    "why": "Vế sau của 换句话说 phải giải thích lại CÙNG một ý với vế trước; \"thích vận động\" là ý mới → dùng 另外 / 同时.",
+    "dung": "他很喜欢看书，换句话说，他是个名副其实的书迷。"
+   },
+   {
+    "sai": "换句话说，雪豹正濒临消亡，我们很可能再也见不到它了。",
+    "why": "换句话说 đứng giữa hai vế (sau điều cần giải thích), không đứng đầu câu khi chưa có ý nào trước nó.",
+    "dung": "雪豹正濒临消亡，换句话说，我们很可能再也见不到它了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "雪豹正濒临消亡，",
+       "，我们很可能再也见不到这种动物了。"
+      ],
+      "dap": [
+       [
+        "换句话说"
+       ]
+      ],
+      "chon": [
+       "换句话说",
+       "总而言之",
+       "与此同时"
+      ],
+      "goiY": "\"Báo tuyết đang bên bờ diệt vong, nói cách khác, …\" (câu bài khoá)",
+      "giai": "换句话说 nối hai vế nói cùng một sự việc — vế sau giải thích hệ quả."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他所有的辛劳都是心甘情愿的，",
+       "，没有人强迫他。"
+      ],
+      "dap": [
+       [
+        "换句话说"
+       ]
+      ],
+      "chon": [
+       "换句话说",
+       "除此之外",
+       "不瞒你说"
+      ],
+      "goiY": "\"… nói cách khác, không ai ép anh ấy.\" (练习4 ②)",
+      "giai": "心甘情愿 = không ai ép → giải thích lại cùng ý."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他一个月的工资是我的三倍，",
+       "，相当于我三个月的。"
+      ],
+      "dap": [
+       [
+        "也就是说"
+       ]
+      ],
+      "chon": [
+       "也就是说",
+       "再说",
+       "比如说"
+      ],
+      "goiY": "\"… tức là bằng ba tháng lương của tôi.\" (练习4 ①)",
+      "giai": "也就是说 = tức là — cùng loại với 换句话说."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "现在很多年轻人都是“月光族”，",
+       "，到了月底，钱就都花光了。"
+      ],
+      "dap": [
+       [
+        "也就是说"
+       ]
+      ],
+      "chon": [
+       "也就是说",
+       "总之",
+       "不过"
+      ],
+      "goiY": "\"… tức là đến cuối tháng thì tiêu sạch tiền.\" (练习4 ④)",
+      "giai": "Giải thích từ mới 月光族 bằng 也就是说."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他非名牌不穿，",
+       "，他只穿名牌。"
+      ],
+      "dap": [
+       [
+        "就是说"
+       ]
+      ],
+      "chon": [
+       "就是说",
+       "可是",
+       "于是"
+      ],
+      "goiY": "\"… nghĩa là anh ấy chỉ mặc đồ hiệu.\" (练习4 ③)",
+      "giai": "就是说 giải thích cấu trúc phủ định kép 非……不……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "现在世界上每小时就有五千个孩子出生，",
+       "，每天地球上就要多出十二万人。"
+      ],
+      "dap": [
+       [
+        "换句话说"
+       ]
+      ],
+      "chon": [
+       "换句话说",
+       "相反",
+       "然而"
+      ],
+      "goiY": "\"… nói cách khác, mỗi ngày trái đất có thêm 120.000 người.\" (练一练 C+F)",
+      "giai": "Đổi cách tính (giờ → ngày) — cùng một sự việc."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "雪豹",
+       "正濒临消亡",
+       "，",
+       "换句话说",
+       "，",
+       "我们",
+       "很可能",
+       "再也见不到它了"
+      ],
+      "dap": [
+       "雪豹正濒临消亡，换句话说，我们很可能再也见不到它了。"
+      ],
+      "goiY": "Báo tuyết đang bên bờ diệt vong, nói cách khác, chúng ta rất có thể sẽ không bao giờ còn thấy nó nữa.",
+      "giai": "换句话说 đứng giữa hai vế, có dấu phẩy hai bên."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "赤手空拳",
+       "打死了老虎",
+       "，",
+       "换句话说",
+       "，",
+       "他",
+       "什么武器都没用"
+      ],
+      "dap": [
+       "他赤手空拳打死了老虎，换句话说，他什么武器都没用。"
+      ],
+      "goiY": "Anh ta tay không đánh chết hổ, nói cách khác, anh ta chẳng dùng vũ khí gì.",
+      "giai": "Vế sau giải thích thành ngữ 赤手空拳 ở vế trước."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "广告费",
+       "会转嫁到产品上",
+       "，",
+       "也就是说",
+       "，",
+       "广告越多",
+       "，",
+       "价格越高"
+      ],
+      "dap": [
+       "广告费会转嫁到产品上，也就是说，广告越多，价格越高。"
+      ],
+      "goiY": "Phí quảng cáo bị đẩy sang sản phẩm, tức là quảng cáo càng nhiều thì giá càng cao.",
+      "giai": "也就是说 + 越……越……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他是个名副其实的中国通，换句话说，他对中国非常了解。",
+      "dung": true,
+      "giai": "Vế sau giải thích lại \"中国通\" bằng lời khác → đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他很喜欢看书，换句话说，他也很喜欢运动。",
+      "dung": false,
+      "sua": "他很喜欢看书，另外，他也很喜欢运动。",
+      "giai": "Vế sau là ý mới, không giải thích vế trước → không dùng 换句话说."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "换句话说，这些照片足以说明问题，我们不用再调查了。",
+      "dung": false,
+      "sua": "这些照片足以说明问题，换句话说，我们不用再调查了。",
+      "giai": "换句话说 không đứng đầu câu khi trước đó chưa có ý nào; phải nêu ý A trước."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bạn ấy là \"cú đêm\", nói cách khác, bạn ấy thường thức đến hai ba giờ sáng mới ngủ.",
+      "dap": [
+       "他是个“夜猫子”，换句话说，他常常熬夜到凌晨两三点才睡。",
+       "他是个“夜猫子”，换句话说，他经常到凌晨两三点才睡觉。"
+      ],
+      "py": "Tā shì ge \"yèmāozi\", huàn jù huà shuō, tā chángcháng áoyè dào língchén liǎng-sān diǎn cái shuì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 换句话说.",
+      "giai": "换句话说 giải thích từ lóng 夜猫子 bằng hành động cụ thể."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Đội bóng của chúng tôi thua cả ba trận, nói cách khác, chúng tôi đã bị loại.",
+      "dap": [
+       "我们队三场比赛都输了，换句话说，我们已经被淘汰了。",
+       "我们队三场比赛全输了，换句话说，我们被淘汰了。"
+      ],
+      "py": "Wǒmen duì sān chǎng bǐsài dōu shū le, huàn jù huà shuō, wǒmen yǐjīng bèi táotài le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 换句话说.",
+      "giai": "Vế sau nêu hệ quả tất yếu của vế trước; 淘汰 ôn bài 12."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "有人这样说，结婚前要睁大眼睛仔细瞧，结婚后就要睁一只眼闭一只眼。＿＿＿。",
+      "goiY": "Nối với câu E bằng 换句话说 — 练一练 (1) của sách (đáp án A+E)",
+      "mau": "有人这样说，结婚前要睁大眼睛仔细瞧，结婚后就要睁一只眼闭一只眼。换句话说，婚前要多看看对方的短处，婚后要多想想对方的长处。",
+      "can": [
+       [
+        "换句话说"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "中国古典小说《水浒传》中的武松赤手空拳打死了老虎。＿＿＿。",
+      "goiY": "Nối với câu D bằng 换句话说 — 练一练 (2) của sách (đáp án B+D)",
+      "mau": "中国古典小说《水浒传》中的武松赤手空拳打死了老虎。换句话说，武松什么武器都没用，就用拳头打死了老虎。",
+      "can": [
+       [
+        "换句话说"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "现在，世界上每小时就有五千个孩子出生。＿＿＿。",
+      "goiY": "Nối với câu F bằng 换句话说 — 练一练 (3) của sách (đáp án C+F)",
+      "mau": "现在，世界上每小时就有五千个孩子出生。换句话说，每天地球上就要多出十二万人。",
+      "can": [
+       [
+        "换句话说"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「为……所……」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 为 + N + 所 + V: được / bị N … (bị động, văn viết; 为 đọc wéi)",
+   "Chủ ngữ + 不 + 为 + N + 所 + V: không bị / không được N …"
+  ],
+  "giaiThich": "为……所…… giới thiệu CHỦ THỂ hành động (施事), tạo thành CÂU BỊ ĐỘNG, dùng trong VĂN VIẾT (为 đọc wéi). Dạng khẳng định: 为 + danh từ / cụm danh từ + 所 + động từ; dạng phủ định: 不 + 为 + danh từ / cụm danh từ + 所 + động từ. Động từ sau 所 thường là động từ hai âm tiết (了解, 掌握, 感动, 利用) hoặc động từ đơn âm văn viết (惑, 困, 动). Nghĩa tương đương 被……（所）……, nhưng trang trọng hơn.",
+  "viDu": [
+   {
+    "zh": "更严峻的是自然保护区的影像空白，很多特有物种，还没来得及为我们所了解，就消失了。",
+    "py": "Gèng yánjùn de shì zìrán bǎohùqū de yǐngxiàng kòngbái, hěn duō tèyǒu wùzhǒng, hái méi láidejí wéi wǒmen suǒ liǎojiě, jiù xiāoshī le.",
+    "vn": "Nghiêm trọng hơn là các khu bảo tồn thiên nhiên còn trống trơn về hình ảnh, rất nhiều loài đặc hữu còn chưa kịp được chúng ta biết đến thì đã biến mất."
+   },
+   {
+    "zh": "我们要通过教育，使原来为少数人所掌握的科学知识，在较短的时间内为更多的人所掌握，并不断扩大其传播范围。",
+    "py": "Wǒmen yào tōngguò jiàoyù, shǐ yuánlái wéi shǎoshù rén suǒ zhǎngwò de kēxué zhīshi, zài jiào duǎn de shíjiān nèi wéi gèng duō de rén suǒ zhǎngwò, bìng búduàn kuòdà qí chuánbō fànwéi.",
+    "vn": "Chúng ta phải thông qua giáo dục, khiến những kiến thức khoa học vốn chỉ số ít người nắm được, trong thời gian khá ngắn được nhiều người hơn nắm vững, và không ngừng mở rộng phạm vi truyền bá của nó."
+   },
+   {
+    "zh": "他是个有原则的人，绝不会为金钱所惑。",
+    "py": "Tā shì ge yǒu yuánzé de rén, jué bú huì wéi jīnqián suǒ huò.",
+    "vn": "Anh ấy là người có nguyên tắc, tuyệt đối không bị đồng tiền mê hoặc."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "很多特有物种还没来得及被我们所了解，就消失了。",
+    "why": "Trong bài dùng cặp cố định 为……所……; muốn dùng 被 thì thường bỏ 所 (被我们了解) — trộn \"被……所\" nghe không chuẩn ở trình độ này.",
+    "dung": "很多特有物种还没来得及为我们所了解，就消失了。"
+   },
+   {
+    "sai": "没有一个人为电影中的人物不所感动。",
+    "why": "Phủ định đặt 不 TRƯỚC 为: 不 + 为 + N + 所 + V.",
+    "dung": "没有一个人不为电影中的人物所感动。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "很多特有物种还没来得及",
+       "我们所了解，就消失了。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "被",
+       "让"
+      ],
+      "goiY": "\"… còn chưa kịp được chúng ta biết đến thì đã biến mất.\" (câu bài khoá)",
+      "giai": "Cặp cố định 为 + N + 所 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "京酱肉丝这道菜",
+       "很多人所称道。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "被",
+       "给"
+      ],
+      "goiY": "\"Món thịt xào tương Bắc Kinh được nhiều người khen ngợi.\" (练一练 1)",
+      "giai": "为……所称道: văn viết, không dùng 被……所 ở đây."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他是个有原则的人，绝不会为金钱",
+       "惑。"
+      ],
+      "dap": [
+       [
+        "所"
+       ]
+      ],
+      "chon": [
+       "所",
+       "而",
+       "以"
+      ],
+      "goiY": "\"… tuyệt đối không bị đồng tiền mê hoặc.\"",
+      "giai": "为 + N + 所 + V (惑 = mê hoặc)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "连日大雪，部分牧民为大雪所",
+       "。"
+      ],
+      "dap": [
+       [
+        "困"
+       ]
+      ],
+      "chon": [
+       "困",
+       "累",
+       "难"
+      ],
+      "goiY": "\"… một số dân du mục bị tuyết lớn vây khốn.\" (练一练 2)",
+      "giai": "为大雪所困 = bị tuyết vây khốn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "说到那个电影，没有一个人",
+       "为电影中的人物所感动。"
+      ],
+      "dap": [
+       [
+        "不"
+       ]
+      ],
+      "chon": [
+       "不",
+       "没",
+       "别"
+      ],
+      "goiY": "\"… không ai là không cảm động vì nhân vật trong phim.\"",
+      "giai": "Phủ định: 不 + 为 + N + 所 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "废气、废水有望变废为宝，为人们所",
+       "。"
+      ],
+      "dap": [
+       [
+        "利用"
+       ]
+      ],
+      "chon": [
+       "利用",
+       "使用者",
+       "用处"
+      ],
+      "goiY": "\"… được con người tận dụng.\" (练一练 3)",
+      "giai": "Sau 所 là ĐỘNG TỪ (利用), không phải danh từ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这种方法",
+       "已经",
+       "为",
+       "越来越多的人",
+       "所",
+       "接受"
+      ],
+      "dap": [
+       "这种方法已经为越来越多的人所接受。"
+      ],
+      "goiY": "Phương pháp này đã được ngày càng nhiều người chấp nhận.",
+      "giai": "为 + cụm danh từ dài + 所 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他的作品",
+       "深深地",
+       "为",
+       "读者",
+       "所",
+       "喜爱"
+      ],
+      "dap": [
+       "他的作品深深地为读者所喜爱。"
+      ],
+      "goiY": "Tác phẩm của anh ấy được độc giả vô cùng yêu thích.",
+      "giai": "Trạng ngữ (深深地) đứng trước 为."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "不能",
+       "为",
+       "眼前的困难",
+       "所",
+       "吓倒"
+      ],
+      "dap": [
+       "我们不能为眼前的困难所吓倒。"
+      ],
+      "goiY": "Chúng ta không thể để khó khăn trước mắt quật ngã.",
+      "giai": "Động từ năng nguyện + 不 đứng trước 为."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这些科学知识原来只为少数人所掌握。",
+      "dung": true,
+      "giai": "为 + 少数人 + 所 + 掌握 → đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个秘密终于为大家所知道了。",
+      "dung": true,
+      "giai": "Đúng: 为……所知 / 所知道 — hay rút gọn thành 为大家所知."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "很多人都为这个故事感动所。",
+      "dung": false,
+      "sua": "很多人都为这个故事所感动。",
+      "giai": "所 phải đứng NGAY TRƯỚC động từ: 为 + N + 所 + V."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Rất nhiều loài động vật quý hiếm còn chưa được con người biết đến thì đã tuyệt chủng.",
+      "dap": [
+       "很多珍稀动物还没为人们所了解，就灭绝了。",
+       "许多珍稀动物还没来得及为人们所了解，就已经灭绝了。"
+      ],
+      "py": "Hěn duō zhēnxī dòngwù hái méi wéi rénmen suǒ liǎojiě, jiù mièjué le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 为……所…….",
+      "giai": "为人们所了解 = được con người biết đến; 还没……就……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy là người rất có chủ kiến, không dễ bị lời nói của người khác ảnh hưởng.",
+      "dap": [
+       "她是个很有主见的人，不容易为别人的话所影响。",
+       "她很有主见，不会轻易为别人的话所左右。"
+      ],
+      "py": "Tā shì ge hěn yǒu zhǔjiàn de rén, bù róngyì wéi biérén de huà suǒ yǐngxiǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 为……所…….",
+      "giai": "Phủ định: 不 (容易) + 为 + N + 所 + V."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "京酱肉丝这道菜＿＿＿。（很多人，称道）",
+      "goiY": "được nhiều người khen ngợi (dùng 为……所……) — 练一练 (1) của sách",
+      "mau": "京酱肉丝这道菜为很多人所称道。",
+      "can": [
+       [
+        "为",
+        "所"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "连日大雪，部分牧民＿＿＿，日前，救助他们的队伍已经出发，会给他们带去食品和衣物。（大雪，困）",
+      "goiY": "bị tuyết lớn vây khốn (dùng 为……所……) — 练一练 (2) của sách",
+      "mau": "连日大雪，部分牧民为大雪所困，日前，救助他们的队伍已经出发，会给他们带去食品和衣物。",
+      "can": [
+       [
+        "为",
+        "所"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "废气、废水有望真正变废为宝，＿＿＿。（人们，利用）",
+      "goiY": "được con người tận dụng (dùng 为……所……) — 练一练 (3) của sách",
+      "mau": "废气、废水有望真正变废为宝，为人们所利用。",
+      "can": [
+       [
+        "为",
+        "所"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「足以」",
+  "tenVn": "",
+  "cauTruc": [
+   "Chủ ngữ + 足以 + V / 使(让) + ai + V: hoàn toàn đủ để …",
+   "……不足以 + V: không đủ để …"
+  ],
+  "giaiThich": "足以 là ĐỘNG TỪ, nghĩa là hoàn toàn có thể, hoàn toàn đủ để (完全可以、完全能够). Phía sau là CỤM ĐỘNG TỪ: 足以 + V (说明, 证明, 使……, 让……). Dạng phủ định: 不足以 + V (không đủ để …). Văn viết; khẩu ngữ tương đương 完全能 / 够……. Không đứng một mình làm vị ngữ, không mang danh từ trực tiếp.",
+  "viDu": [
+   {
+    "zh": "他们不分昼夜地奔波，渴望拍出足以使人疯狂的照片，吸引大家心甘情愿地去购买，以便支撑他们深入野外的巨大开支。",
+    "py": "Tāmen bù fēn zhòuyè de bēnbō, kěwàng pāichū zúyǐ shǐ rén fēngkuáng de zhàopiàn, xīyǐn dàjiā xīngān-qíngyuàn de qù gòumǎi, yǐbiàn zhīchēng tāmen shēnrù yěwài de jùdà kāizhī.",
+    "vn": "Họ bôn ba không kể ngày đêm, khao khát chụp được những bức ảnh đủ sức khiến người ta phát cuồng, thu hút mọi người cam tâm tình nguyện bỏ tiền mua, để trang trải khoản chi phí khổng lồ khi đi sâu vào vùng hoang dã."
+   },
+   {
+    "zh": "对这样的坏人不严惩就不足以平民愤。",
+    "py": "Duì zhèyàng de huàirén bù yánchéng jiù bù zúyǐ píng mínfèn.",
+    "vn": "Với kẻ xấu như vậy, không trừng trị nghiêm thì không đủ để dẹp cơn phẫn nộ của dân chúng."
+   },
+   {
+    "zh": "跟儿童谈话很讲究技巧，必须随机应变，要能够随时提出足以了解儿童心理状态而又不会引起儿童反感的问题。",
+    "py": "Gēn értóng tánhuà hěn jiǎngjiu jìqiǎo, bìxū suíjī-yìngbiàn, yào nénggòu suíshí tíchū zúyǐ liǎojiě értóng xīnlǐ zhuàngtài ér yòu bú huì yǐnqǐ értóng fǎngǎn de wèntí.",
+    "vn": "Trò chuyện với trẻ em rất cần kỹ năng, phải tuỳ cơ ứng biến, phải có thể bất cứ lúc nào đưa ra những câu hỏi đủ để hiểu trạng thái tâm lý của trẻ mà lại không khiến trẻ phản cảm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这些钱足以了。",
+    "why": "足以 là động từ phải có cụm động từ theo sau; muốn nói \"đủ rồi\" thì dùng 足够 / 够.",
+    "dung": "这些钱足够了。／这些钱足以支付学费了。"
+   },
+   {
+    "sai": "只看一次考试成绩，足以不评估一个学生。",
+    "why": "Phủ định là 不足以 + V (不 đứng trước 足以).",
+    "dung": "只看一次考试成绩，不足以评估一个学生。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "这些材料",
+       "说明问题了。"
+      ],
+      "dap": [
+       [
+        "足以"
+       ]
+      ],
+      "chon": [
+       "足以",
+       "足够",
+       "充足"
+      ],
+      "goiY": "\"Những tài liệu này đủ để nói rõ vấn đề rồi.\" (练一练 2)",
+      "giai": "足以 + V; 足够 / 充足 không đứng trực tiếp trước động từ như vậy."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们渴望拍出",
+       "使人疯狂的照片。"
+      ],
+      "dap": [
+       [
+        "足以"
+       ]
+      ],
+      "chon": [
+       "足以",
+       "以便",
+       "难以"
+      ],
+      "goiY": "\"… những bức ảnh đủ sức khiến người ta phát cuồng.\" (câu bài khoá)",
+      "giai": "足以 + 使 + người + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "对这样的坏人不严惩就",
+       "平民愤。"
+      ],
+      "dap": [
+       [
+        "不足以"
+       ]
+      ],
+      "chon": [
+       "不足以",
+       "足以不",
+       "不足够"
+      ],
+      "goiY": "\"… không trừng trị nghiêm thì không đủ để dẹp cơn giận của dân.\"",
+      "giai": "Phủ định: 不足以 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们一年浪费掉的粮食",
+       "让50万人吃一天。"
+      ],
+      "dap": [
+       [
+        "足以"
+       ]
+      ],
+      "chon": [
+       "足以",
+       "满足",
+       "足足"
+      ],
+      "goiY": "\"Số lương thực chúng ta lãng phí mỗi năm đủ cho 50 vạn người ăn một ngày.\" (练一练 1)",
+      "giai": "足以让 + người + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只靠一次考试，",
+       "评估一个学生的能力。"
+      ],
+      "dap": [
+       [
+        "不足以"
+       ]
+      ],
+      "chon": [
+       "不足以",
+       "不以便",
+       "不至于"
+      ],
+      "goiY": "\"Chỉ dựa vào một lần thi thì không đủ để đánh giá năng lực học sinh.\"",
+      "giai": "不足以 + 评估; 不至于 = không đến mức (nghĩa khác)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这些事实",
+       "证明他是无辜的。"
+      ],
+      "dap": [
+       [
+        "足以"
+       ]
+      ],
+      "chon": [
+       "足以",
+       "以为",
+       "所以"
+      ],
+      "goiY": "\"Những sự thật này đủ để chứng minh anh ấy vô tội.\" (练习2 ④)",
+      "giai": "足以 + 证明."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这些照片",
+       "足以",
+       "证明",
+       "这里的",
+       "生物多样性"
+      ],
+      "dap": [
+       "这些照片足以证明这里的生物多样性。"
+      ],
+      "goiY": "Những bức ảnh này đủ để chứng minh sự đa dạng sinh học ở đây.",
+      "giai": "足以 + 证明 + tân ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "几个小时的领先",
+       "就",
+       "足以",
+       "使一个企业",
+       "利润剧增"
+      ],
+      "dap": [
+       "几个小时的领先就足以使一个企业利润剧增。"
+      ],
+      "goiY": "Chỉ dẫn trước vài giờ cũng đủ khiến lợi nhuận một doanh nghiệp tăng vọt.",
+      "giai": "就 đứng trước 足以; 足以 + 使 + N + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "光有热情",
+       "还",
+       "不足以",
+       "成为",
+       "一名优秀的摄影师"
+      ],
+      "dap": [
+       "光有热情还不足以成为一名优秀的摄影师。"
+      ],
+      "goiY": "Chỉ có nhiệt tình thì chưa đủ để trở thành một nhiếp ảnh gia giỏi.",
+      "giai": "还 + 不足以 + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他的一句话足以让大家放心了。",
+      "dung": true,
+      "giai": "足以 + 让 + người + V → đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们的时间足以了，不用着急。",
+      "dung": false,
+      "sua": "我们的时间足够了，不用着急。",
+      "giai": "足以 phải có động từ theo sau; nói \"đủ rồi\" dùng 足够 / 够."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这点儿证据足以不说明问题。",
+      "dung": false,
+      "sua": "这点儿证据不足以说明问题。",
+      "giai": "Phủ định là 不足以, 不 đứng trước 足以."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chỉ một tấm ảnh thôi đã đủ để khiến mọi người nhớ đến loài động vật này.",
+      "dap": [
+       "只一张照片就足以让大家记住这种动物。",
+       "一张照片就足以使大家记住这种动物。"
+      ],
+      "py": "Zhǐ yì zhāng zhàopiàn jiù zúyǐ ràng dàjiā jìzhù zhè zhǒng dòngwù.",
+      "goiY": "Dịch sang tiếng Trung, dùng 足以.",
+      "giai": "就足以让 + người + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tiền tiết kiệm của tôi không đủ để mua một chiếc máy ảnh chuyên nghiệp.",
+      "dap": [
+       "我的存款不足以买一台专业相机。",
+       "我攒的钱不足以买一台专业的相机。"
+      ],
+      "py": "Wǒ de cúnkuǎn bù zúyǐ mǎi yì tái zhuānyè xiàngjī.",
+      "goiY": "Dịch sang tiếng Trung, dùng 足以.",
+      "giai": "Phủ định 不足以 + V (买)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "听说我们一年浪费掉的粮食够50万人吃一天了。→ ＿＿＿",
+      "goiY": "viết lại câu, dùng 足以 — 练一练 (1) của sách",
+      "mau": "听说我们一年浪费掉的粮食足以让50万人吃一天。",
+      "can": [
+       [
+        "足以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这些材料完全能够说明问题了。→ ＿＿＿",
+      "goiY": "viết lại câu, dùng 足以 — 练一练 (2) của sách",
+      "mau": "这些材料足以说明问题了。",
+      "can": [
+       [
+        "足以"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "哪怕在知识或信息方面只领先或落后几个星期、几天，甚至几个小时，就＿＿＿。",
+      "goiY": "đủ để khiến doanh nghiệp lãi tăng vọt hoặc đứng trước phá sản (dùng 足以) — 练一练 (3) của sách",
+      "mau": "哪怕在知识或信息方面只领先或落后几个星期、几天，甚至几个小时，就足以使一个企业利润剧增或面临破产。",
+      "can": [
+       [
+        "足以"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

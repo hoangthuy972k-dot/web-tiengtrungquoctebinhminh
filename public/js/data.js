@@ -1971,6 +1971,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-14.html'
+      },
+      {
+        id: 'hsk6-l16',
+        number: 16,
+        title: 'Từ Kiện và các nhà nhiếp ảnh động vật hoang dã',
+        titleHanzi: '徐健和他的野生动物摄影师们',
+        titlePinyin: 'Xú Jiàn hé tā de yěshēng dòngwù shèyǐngshīmen',
+        topic: '第四单元 走遍天下 · Nhiếp ảnh động vật hoang dã và bảo tồn đa dạng sinh học',
+        vocabCount: 45,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-16.html'
       }
     ],
     yct: [

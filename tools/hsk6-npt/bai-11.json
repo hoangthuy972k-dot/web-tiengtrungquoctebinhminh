@@ -1,0 +1,934 @@
+[
+ {
+  "so": "1",
+  "ten": "「统统」",
+  "tenVn": "",
+  "cauTruc": [
+   "把 + đối tượng + 统统 + V",
+   "Đối tượng (chủ ngữ / chủ đề) + 统统 + V / 不……"
+  ],
+  "giaiThich": "统统 là PHÓ TỪ, biểu thị hành động bao trùm TOÀN BỘ đối tượng, nghĩa là \"không có ngoại lệ, không sót cái nào\" (= 毫无例外地、一个不剩地). Dùng nhiều trong khẩu ngữ; cũng có thể nói 通通. Đối tượng được bao trùm thường nêu ra TRƯỚC 统统 (làm chủ ngữ, chủ đề, hoặc tân ngữ của 把), còn 统统 đứng ngay trước động từ.",
+  "viDu": [
+   {
+    "zh": "我把随身携带着的DV小摄像机、录音机以及照相机统统从包里取了出来。",
+    "py": "Wǒ bǎ suíshēn xiédàizhe de DV xiǎo shèxiàngjī, lùyīnjī yǐjí zhàoxiàngjī tǒngtǒng cóng bāo li qǔle chūlái.",
+    "vn": "Tôi lấy hết máy quay DV nhỏ, máy ghi âm và máy ảnh mang theo người ra khỏi túi."
+   },
+   {
+    "zh": "钱小奇一回家，它就扑上来，亲热地撞主人的腿，还要把钱小奇和他带回来的东西统统闻一遍。",
+    "py": "Qián Xiǎoqí yì huí jiā, tā jiù pū shànglái, qīnrè de zhuàng zhǔrén de tuǐ, hái yào bǎ Qián Xiǎoqí hé tā dài huílái de dōngxi tǒngtǒng wén yí biàn.",
+    "vn": "Tiền Tiểu Kỳ vừa về nhà, nó đã nhào tới, thân thiết cọ vào chân chủ, còn phải ngửi hết một lượt cả Tiền Tiểu Kỳ lẫn đồ anh mang về."
+   },
+   {
+    "zh": "他不抽烟、不喝酒、不喝茶、不喝咖啡、不讲究饮食，什么电影院、酒吧，统统与他无缘。",
+    "py": "Tā bù chōuyān, bù hē jiǔ, bù hē chá, bù hē kāfēi, bù jiǎngjiu yǐnshí, shénme diànyǐngyuàn, jiǔbā, tǒngtǒng yǔ tā wúyuán.",
+    "vn": "Anh ấy không hút thuốc, không uống rượu, không uống trà, không uống cà phê, không cầu kỳ chuyện ăn uống; nào rạp chiếu phim, nào quán bar, tất cả đều chẳng dính dáng gì tới anh."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我统统把作业做完了。",
+    "why": "统统 đứng SAU cụm 把 + tân ngữ, ngay trước động từ, vì nó bao trùm chính tân ngữ đó.",
+    "dung": "我把作业统统做完了。"
+   },
+   {
+    "sai": "统统同学都来了。",
+    "why": "统统 là phó từ, không đứng trước danh từ làm định ngữ như 所有 / 全部.",
+    "dung": "同学们统统来了。（或：所有同学都来了。）"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "它把主人带回来的东西",
+       "闻了一遍。"
+      ],
+      "dap": [
+       [
+        "统统"
+       ]
+      ],
+      "chon": [
+       "统统",
+       "一共",
+       "通常"
+      ],
+      "goiY": "\"Nó ngửi hết một lượt đồ chủ mang về.\" (ý bài khoá)",
+      "giai": "统统 + V: bao trùm toàn bộ đối tượng. 一共 đi với con số; 通常 = thường thường."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这回我想把放假的时间",
+       "用来打工。"
+      ],
+      "dap": [
+       [
+        "统统"
+       ]
+      ],
+      "chon": [
+       "统统",
+       "总共",
+       "平时"
+      ],
+      "goiY": "\"Lần này tôi muốn dùng hết thời gian nghỉ để đi làm thêm.\"",
+      "giai": "把 + 时间 + 统统 + 用来……: dùng toàn bộ. 总共 đi với số lượng; 平时 = ngày thường."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "什么电影院、酒吧，",
+       "与他无缘。"
+      ],
+      "dap": [
+       [
+        "统统"
+       ]
+      ],
+      "chon": [
+       "统统",
+       "一共",
+       "尤其"
+      ],
+      "goiY": "\"Nào rạp phim, nào quán bar, tất cả đều không dính dáng gì tới anh ấy.\" (ví dụ của sách)",
+      "giai": "Liệt kê đối tượng trước, 统统 tổng kết \"tất cả\". 尤其 = nhất là."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我把不要的旧书",
+       "卖掉了。"
+      ],
+      "dap": [
+       [
+        "统统"
+       ]
+      ],
+      "chon": [
+       "统统",
+       "几乎",
+       "通常"
+      ],
+      "goiY": "\"Tôi bán sạch mấy cuốn sách cũ không cần nữa.\"",
+      "giai": "把 + N + 统统 + V掉: làm sạch, không sót. 几乎 = gần như (không trọn vẹn)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "节目还没演完，剧场里的人就",
+       "走光了。"
+      ],
+      "dap": [
+       [
+        "统统"
+       ]
+      ],
+      "chon": [
+       "统统",
+       "一共",
+       "毫无"
+      ],
+      "goiY": "\"Tiết mục còn chưa diễn xong, người trong nhà hát đã về sạch.\" (练一练 (2))",
+      "giai": "Chủ ngữ (剧场里的人) + 统统 + V光 — nhấn mạnh không còn ai."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "桌上的几块蛋糕",
+       "被弟弟吃完了。"
+      ],
+      "dap": [
+       [
+        "统统"
+       ]
+      ],
+      "chon": [
+       "统统",
+       "总共",
+       "至于"
+      ],
+      "goiY": "\"Mấy miếng bánh trên bàn bị em trai ăn hết sạch.\"",
+      "giai": "Trong câu 被, 统统 đứng trước 被. 至于 = còn về."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "把",
+       "旧衣服",
+       "统统",
+       "送给了",
+       "别人"
+      ],
+      "dap": [
+       "我把旧衣服统统送给了别人。"
+      ],
+      "goiY": "Tôi đem hết quần áo cũ tặng người khác.",
+      "giai": "把 + tân ngữ + 统统 + V + 给 + người."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "统统",
+       "他",
+       "把",
+       "作业",
+       "做完了"
+      ],
+      "dap": [
+       "他把作业统统做完了。"
+      ],
+      "goiY": "Cậu ấy làm xong hết bài tập rồi.",
+      "giai": "统统 đứng sau cụm 把 + 作业, trước động từ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "与他",
+       "无缘",
+       "统统",
+       "什么电影院、酒吧",
+       "，"
+      ],
+      "dap": [
+       "什么电影院、酒吧，统统与他无缘。"
+      ],
+      "goiY": "Nào rạp phim, nào quán bar, tất cả đều chẳng liên quan gì đến anh ấy.",
+      "giai": "Liệt kê trước (什么……), 统统 tổng kết sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我把带来的东西统统放在桌子上了。",
+      "dung": true,
+      "giai": "把 + tân ngữ + 统统 + V — đúng vị trí."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我统统把作业做完了。",
+      "dung": false,
+      "sua": "我把作业统统做完了。",
+      "giai": "统统 phải đứng sau cụm 把 + tân ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "统统同学都来了。",
+      "dung": false,
+      "sua": "同学们统统来了。",
+      "giai": "统统 là phó từ, không làm định ngữ cho danh từ; muốn nói \"tất cả các bạn\" dùng 所有同学."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi đem hết sách cũ tặng cho thư viện.",
+      "dap": [
+       "我把旧书统统送给了图书馆。",
+       "我把旧书统统捐给了图书馆。",
+       "我把旧书统统送给图书馆了。"
+      ],
+      "py": "Wǒ bǎ jiù shū tǒngtǒng sònggěile túshūguǎn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 把 và 统统.",
+      "giai": "把 + 旧书 + 统统 + 送给 + nơi nhận."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Chỗ đồ ăn vặt này đều bị em trai ăn sạch rồi.",
+      "dap": [
+       "这些零食统统被弟弟吃光了。",
+       "这些零食统统被弟弟吃完了。",
+       "弟弟把这些零食统统吃光了。"
+      ],
+      "py": "Zhèxiē língshí tǒngtǒng bèi dìdi chīguāng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 统统 (có thể dùng câu 被).",
+      "giai": "Trong câu 被, 统统 đứng trước 被; 吃光 = ăn sạch."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这回我也想把放假的时间＿＿＿。",
+      "goiY": "Câu gốc: 这回我也想把放假的时间全部用来打工。 → viết lại bằng 统统 (练一练 (1) của sách)",
+      "mau": "这回我也想把放假的时间统统用来打工。",
+      "can": [
+       [
+        "统统"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "今天的节目没意思，节目还没演完，＿＿＿。",
+      "goiY": "Câu gốc: ……剧场里的人就都走光了。 → viết lại bằng 统统 (练一练 (2) của sách)",
+      "mau": "今天的节目没意思，节目还没演完，剧场里的人就统统走光了。",
+      "can": [
+       [
+        "统统"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "二十年后再回到北京，我几乎认不出它了，到处都是高楼，＿＿＿。",
+      "goiY": "Câu gốc: ……我熟悉的胡同里的老房子全都被拆掉了。 → viết lại bằng 统统 (练一练 (3) của sách)",
+      "mau": "二十年后再回到北京，我几乎认不出它了，到处都是高楼，我熟悉的胡同里的老房子统统被拆掉了。",
+      "can": [
+       [
+        "统统"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「以……为……」",
+  "tenVn": "",
+  "cauTruc": [
+   "以 + A + 为 + B (例 / 主 / 目的 / 标准 / 对象…)",
+   "以 A 为主，(以) B 为辅 — hai cụm liền nhau thì lược 以 thứ hai"
+  ],
+  "giaiThich": "\"以 A 为 B\" là cấu trúc VĂN VIẾT, tương đương khẩu ngữ \"把 / 拿 A 作为 / 当作 B\" (lấy A làm B, coi A là B). Hay gặp: 以……为例 (lấy … làm ví dụ), 以……为主 (lấy … làm chính), 以……为目的 / 为标准 / 为对象 / 为荣. Khi hai cụm \"以……为……\" dùng liền nhau, chữ 以 thứ hai có thể lược bỏ (以学生为主，老师为辅). Chú ý 为 ở đây đọc wéi.",
+  "viDu": [
+   {
+    "zh": "猫们的行动很有规律，以其中一只猫为例，它每天下午两点左右吃饭喝水，时间误差平均不到5分钟。",
+    "py": "Māomen de xíngdòng hěn yǒu guīlǜ, yǐ qízhōng yì zhī māo wéi lì, tā měi tiān xiàwǔ liǎng diǎn zuǒyòu chīfàn hē shuǐ, shíjiān wùchā píngjūn bú dào wǔ fēnzhōng.",
+    "vn": "Hoạt động của lũ mèo rất có quy luật: lấy một con làm ví dụ, ngày nào nó cũng ăn uống vào khoảng hai giờ chiều, sai lệch thời gian trung bình chưa đến 5 phút."
+   },
+   {
+    "zh": "普通话以北京语音为标准音，以北方话为基础方言，以典范的现代白话文著作作为语法规范。",
+    "py": "Pǔtōnghuà yǐ Běijīng yǔyīn wéi biāozhǔnyīn, yǐ běifānghuà wéi jīchǔ fāngyán, yǐ diǎnfàn de xiàndài báihuàwén zhùzuò zuòwéi yǔfǎ guīfàn.",
+    "vn": "Tiếng phổ thông lấy ngữ âm Bắc Kinh làm âm chuẩn, lấy phương ngữ phương Bắc làm phương ngữ cơ sở, lấy các tác phẩm bạch thoại hiện đại mẫu mực làm chuẩn mực ngữ pháp."
+   },
+   {
+    "zh": "今天的晚会大伙准备了不少节目，当然以学生为主，老师为辅。",
+    "py": "Jīntiān de wǎnhuì dàhuǒ zhǔnbèile bùshǎo jiémù, dāngrán yǐ xuésheng wéi zhǔ, lǎoshī wéi fǔ.",
+    "vn": "Dạ hội hôm nay mọi người chuẩn bị không ít tiết mục, tất nhiên học sinh là chính, giáo viên là phụ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "以其中一只猫做例，它每天两点吃饭。",
+    "why": "Cấu trúc cố định là 以……为……; không thay 为 bằng 做 / 是.",
+    "dung": "以其中一只猫为例，它每天两点吃饭。"
+   },
+   {
+    "sai": "这次活动以学生是主。",
+    "why": "Thiếu 为: phải là 以 A 为 B (为 đọc wéi).",
+    "dung": "这次活动以学生为主。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "猫们的行动很有规律，以其中一只猫为",
+       "，它每天两点左右吃饭。"
+      ],
+      "dap": [
+       [
+        "例"
+       ]
+      ],
+      "chon": [
+       "例",
+       "主",
+       "准"
+      ],
+      "goiY": "\"… lấy một con mèo làm ví dụ, …\" (câu trong bài)",
+      "giai": "以……为例 = lấy … làm ví dụ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天的晚会",
+       "学生为主，老师为辅。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "把",
+       "对"
+      ],
+      "goiY": "\"Dạ hội hôm nay học sinh là chính, giáo viên là phụ.\"",
+      "giai": "Cấu trúc văn viết 以 A 为主; 把 A 作为…… mới là khẩu ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "今天的晚会以学生",
+       "主，老师为辅。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "是",
+       "做"
+      ],
+      "goiY": "\"… lấy học sinh làm chính …\"",
+      "giai": "以 + A + 为 + B; không thay 为 bằng 是 / 做."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考试不要",
+       "难倒学生为目的。"
+      ],
+      "dap": [
+       [
+        "以"
+       ]
+      ],
+      "chon": [
+       "以",
+       "被",
+       "给"
+      ],
+      "goiY": "\"Thi cử đừng lấy việc làm khó học sinh làm mục đích.\" (练一练 (1))",
+      "giai": "以……为目的 = lấy … làm mục đích."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这家饭店的菜以川菜",
+       "主。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "在",
+       "作"
+      ],
+      "goiY": "\"Món ăn nhà hàng này chủ yếu là món Tứ Xuyên.\"",
+      "giai": "以……为主 = chủ yếu là …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们应该以他",
+       "榜样，努力学习。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "是",
+       "成"
+      ],
+      "goiY": "\"Chúng ta nên lấy anh ấy làm tấm gương, cố gắng học tập.\"",
+      "giai": "以 + người + 为榜样 = lấy ai làm gương."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "以",
+       "学生",
+       "为主",
+       "今天的晚会",
+       "，",
+       "老师为辅"
+      ],
+      "dap": [
+       "今天的晚会以学生为主，老师为辅。"
+      ],
+      "goiY": "Dạ hội hôm nay học sinh là chính, giáo viên là phụ.",
+      "giai": "Hai cụm liền nhau, lược 以 ở cụm thứ hai."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "以",
+       "其中一只猫",
+       "为例",
+       "，",
+       "它每天两点左右吃饭"
+      ],
+      "dap": [
+       "以其中一只猫为例，它每天两点左右吃饭。"
+      ],
+      "goiY": "Lấy một con mèo làm ví dụ, ngày nào nó cũng ăn vào khoảng hai giờ.",
+      "giai": "以……为例 đặt đầu câu, vế sau nêu ví dụ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "以",
+       "教育",
+       "为",
+       "研究对象",
+       "教育学",
+       "的科学",
+       "是一门"
+      ],
+      "dap": [
+       "教育学是一门以教育为研究对象的科学。"
+      ],
+      "goiY": "Giáo dục học là một ngành khoa học lấy giáo dục làm đối tượng nghiên cứu.",
+      "giai": "Cụm 以……为…… làm định ngữ, đứng trước 的 + danh từ (练一练 (3))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这次活动以学生为主，家长为辅。",
+      "dung": true,
+      "giai": "Hai cụm liền nhau, lược 以 thứ hai — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "以其中一只猫做例，它每天两点吃饭。",
+      "dung": false,
+      "sua": "以其中一只猫为例，它每天两点吃饭。",
+      "giai": "Cấu trúc cố định 以……为例, không dùng 做."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这次活动以学生是主。",
+      "dung": false,
+      "sua": "这次活动以学生为主。",
+      "giai": "Phải dùng 为, không dùng 是."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Lấy trường chúng tôi làm ví dụ, năm nay có hơn ba trăm học sinh đỗ đại học.",
+      "dap": [
+       "以我们学校为例，今年有三百多名学生考上了大学。",
+       "以我们学校为例，今年有三百多个学生考上了大学。",
+       "以我们学校为例，今年有300多名学生考上了大学。"
+      ],
+      "py": "Yǐ wǒmen xuéxiào wéi lì, jīnnián yǒu sānbǎi duō míng xuésheng kǎoshàngle dàxué.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以……为例.",
+      "giai": "以……为例 đặt đầu câu; 考上大学 = đỗ đại học."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bữa ăn của người miền Bắc Trung Quốc lấy đồ làm từ bột mì làm chính.",
+      "dap": [
+       "中国北方人的饮食以面食为主。",
+       "中国北方人吃饭以面食为主。",
+       "中国北方人的饭菜以面食为主。"
+      ],
+      "py": "Zhōngguó běifāng rén de yǐnshí yǐ miànshí wéi zhǔ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以……为主.",
+      "giai": "以 + A + 为主 = lấy A làm chính; 面食 = đồ ăn làm từ bột mì."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "考试不要＿＿＿。",
+      "goiY": "Câu gốc: 考试不要把学生当作敌人，把难倒学生作为目的。 → viết lại bằng 以……为…… (练一练 (1) của sách)",
+      "mau": "考试不要以学生为敌人，以难倒学生为目的。",
+      "can": [
+       [
+        "以"
+       ],
+       [
+        "为"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这部短篇小说集＿＿＿。",
+      "goiY": "Câu gốc: 这部短篇小说集里描写农村生活的作品最多。 → viết lại bằng 以……为主 (练一练 (2) của sách)",
+      "mau": "这部短篇小说集以描写农村生活的作品为主。",
+      "can": [
+       [
+        "以"
+       ],
+       [
+        "为主"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "教育学是一门＿＿＿。",
+      "goiY": "Câu gốc: 教育学是一门科学，它的研究对象是教育。 → viết lại bằng 以……为…… (练一练 (3) của sách)",
+      "mau": "教育学是一门以教育为研究对象的科学。",
+      "can": [
+       [
+        "以"
+       ],
+       [
+        "为"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「该干吗干吗」",
+  "tenVn": "",
+  "cauTruc": [
+   "该 + V + O + (还 / 就得) + V + O",
+   "该 + V + V (该吃吃) · 该 + V + O + V + O (该打球打球) · 该干吗干吗"
+  ],
+  "giaiThich": "\"该干吗干吗\" là cách nói KHẨU NGỮ, rút gọn từ mẫu \"该 + V + O + 还 / 就得 + V + O\" (vd: 该学汉语还得学汉语). Nghĩa: mọi việc vẫn diễn ra như vốn có, việc gì cần làm thì cứ làm, không có gì làm thay đổi được. Cụm \"V + O\" trước và sau là cùng một động từ / cụm động từ; \"还 / 就得\" thường được lược. Biến thể linh hoạt: 该 + V + V (该吃吃，该玩儿玩儿), 该 + V + O + V + O (该打球打球), 该 + O + 还 + V + O (该什么结果还是什么结果 — khi động từ là 是 thì lược 是 phía trước).",
+  "viDu": [
+   {
+    "zh": "在中国，过年过节商店最忙了，哪儿有假呀，该开门就得开门。",
+    "py": "Zài Zhōngguó, guònián guòjié shāngdiàn zuì máng le, nǎr yǒu jià ya, gāi kāimén jiù děi kāimén.",
+    "vn": "Ở Trung Quốc, dịp lễ Tết cửa hàng bận nhất, nghỉ gì mà nghỉ, đến giờ mở cửa thì phải mở cửa."
+   },
+   {
+    "zh": "每次回家时，守在门口的大黄和白白也不是长时间在门口等他，而是在屋里该干吗干吗。",
+    "py": "Měi cì huí jiā shí, shǒu zài ménkǒu de Dàhuáng hé Báibái yě bú shì cháng shíjiān zài ménkǒu děng tā, ér shì zài wū li gāi gànmá gànmá.",
+    "vn": "Mỗi lần anh về nhà, Đại Hoàng và Bạch Bạch đón ở cửa cũng không phải đợi anh ở cửa suốt, mà ở trong nhà ai làm việc nấy."
+   },
+   {
+    "zh": "哭、着急都不管用，该什么结果还是什么结果。",
+    "py": "Kū, zháojí dōu bù guǎnyòng, gāi shénme jiéguǒ háishi shénme jiéguǒ.",
+    "vn": "Khóc hay sốt ruột đều vô ích, kết quả thế nào thì vẫn là thế ấy."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "到点了，该走了走，别等她了。",
+    "why": "Hai động từ lặp liền nhau (该走走) hoặc có 就 xen giữa (该走就走); không chen 了 vào.",
+    "dung": "到点了，该走就走，别等她了。"
+   },
+   {
+    "sai": "他遇到这么大的事，还是该干吗干什么。",
+    "why": "Hai vế phải lặp lại cùng một từ: 干吗……干吗 (hoặc 干什么……干什么).",
+    "dung": "他遇到这么大的事，还是该干吗干吗。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "每次回家时，大黄和白白都在屋里",
+       "干吗干吗。"
+      ],
+      "dap": [
+       [
+        "该"
+       ]
+      ],
+      "chon": [
+       "该",
+       "想",
+       "要"
+      ],
+      "goiY": "\"… ở trong nhà ai làm việc nấy.\" (câu trong bài)",
+      "giai": "Mẫu cố định 该干吗干吗 — bắt đầu bằng 该."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "过年过节商店最忙了，哪儿有假呀，",
+       "开门就得开门。"
+      ],
+      "dap": [
+       [
+        "该"
+       ]
+      ],
+      "chon": [
+       "该",
+       "得",
+       "想"
+      ],
+      "goiY": "\"Lễ Tết cửa hàng bận nhất, nghỉ gì mà nghỉ, đến lúc mở cửa thì phải mở.\" (ví dụ của sách)",
+      "giai": "该 + V + O + 就得 + V + O."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "哭、着急都不管用，该什么结果",
+       "什么结果。"
+      ],
+      "dap": [
+       [
+        "还是"
+       ]
+      ],
+      "chon": [
+       "还是",
+       "或者",
+       "就是"
+      ],
+      "goiY": "\"Khóc, sốt ruột đều vô ích, kết quả thế nào vẫn thế ấy.\" (ví dụ của sách)",
+      "giai": "该 + O + 还(是) + O: động từ 是 được lược ở vế trước."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "到点了，该走",
+       "走，别等她了。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "也"
+      ],
+      "goiY": "\"Đến giờ rồi, đi thì cứ đi, đừng đợi cô ấy nữa.\" (练一练 (1))",
+      "giai": "该 + V + 就 + V: việc gì cần làm thì cứ làm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "考完了就别想了，该干吗",
+       "吧！"
+      ],
+      "dap": [
+       [
+        "干吗"
+       ]
+      ],
+      "chon": [
+       "干吗",
+       "什么",
+       "怎么"
+      ],
+      "goiY": "\"Thi xong rồi thì đừng nghĩ nữa, việc gì cứ làm việc nấy đi!\"",
+      "giai": "Hai vế lặp lại cùng từ: 该干吗干吗."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "不管遇到什么事，他都",
+       "干吗干吗，一点儿也不受影响。"
+      ],
+      "dap": [
+       [
+        "该"
+       ]
+      ],
+      "chon": [
+       "该",
+       "应",
+       "能"
+      ],
+      "goiY": "\"Dù gặp chuyện gì, anh ấy vẫn sinh hoạt như thường, chẳng bị ảnh hưởng chút nào.\"",
+      "giai": "该干吗干吗 = mọi việc vẫn như cũ; không thay 该 bằng 应."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "到点了",
+       "，",
+       "该走",
+       "就",
+       "走",
+       "，",
+       "别等她了"
+      ],
+      "dap": [
+       "到点了，该走就走，别等她了。",
+       "到点了，别等她了，该走就走。"
+      ],
+      "goiY": "Đến giờ rồi, đi thì cứ đi, đừng đợi cô ấy nữa.",
+      "giai": "该 + V + 就 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "在屋里",
+       "大黄和白白",
+       "该干吗",
+       "干吗"
+      ],
+      "dap": [
+       "大黄和白白在屋里该干吗干吗。"
+      ],
+      "goiY": "Đại Hoàng và Bạch Bạch ở trong nhà ai làm việc nấy.",
+      "giai": "Chủ ngữ + nơi chốn + 该干吗干吗."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "该吃",
+       "吃",
+       "，",
+       "该玩儿",
+       "玩儿",
+       "他整天乐呵呵的",
+       "，"
+      ],
+      "dap": [
+       "他整天乐呵呵的，该吃吃，该玩儿玩儿。"
+      ],
+      "goiY": "Anh ấy suốt ngày vui vẻ, ăn thì cứ ăn, chơi thì cứ chơi.",
+      "giai": "Biến thể 该 + V + V lặp hai lần (练一练 (3))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考完了就别想了，该干吗干吗吧。",
+      "dung": true,
+      "giai": "Dùng đúng mẫu khẩu ngữ để khuyên."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "到点了，该走了走，别等她了。",
+      "dung": false,
+      "sua": "到点了，该走就走，别等她了。",
+      "giai": "Không chen 了 giữa hai động từ lặp; dùng 该走就走 hoặc 该走走."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他遇到这么大的事，还是该干吗干什么。",
+      "dung": false,
+      "sua": "他遇到这么大的事，还是该干吗干吗。",
+      "giai": "Hai vế phải cùng một từ (干吗……干吗)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nghỉ hè rồi, đừng lúc nào cũng nghĩ đến điểm số nữa, việc gì cần làm thì cứ làm đi.",
+      "dap": [
+       "放暑假了，别总想着分数了，该干吗干吗吧。",
+       "放暑假了，别老想着分数了，该干吗干吗吧。",
+       "放假了，别总想着成绩了，该干吗干吗吧。"
+      ],
+      "py": "Fàng shǔjià le, bié zǒng xiǎngzhe fēnshù le, gāi gànmá gànmá ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 该干吗干吗.",
+      "giai": "该干吗干吗 = cứ sinh hoạt như thường; 吧 làm lời khuyên nhẹ nhàng."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Dù mai thi, tối nay vẫn nên ăn thì cứ ăn, ngủ thì cứ ngủ.",
+      "dap": [
+       "即使明天考试，今天晚上也该吃就吃，该睡就睡。",
+       "就算明天考试，今晚也该吃就吃，该睡就睡。",
+       "即使明天考试，今天晚上也该吃吃，该睡睡。"
+      ],
+      "py": "Jíshǐ míngtiān kǎoshì, jīntiān wǎnshang yě gāi chī jiù chī, gāi shuì jiù shuì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 即使……也…… và 该 + V + 就 + V.",
+      "giai": "即使……也…… (giả thiết nhượng bộ) + 该吃就吃，该睡就睡 (mọi việc vẫn như thường)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "到点了，＿＿＿，别等她了。",
+      "goiY": "Câu gốc: 到点了，走吧，别等她了。 → viết lại bằng 该 + V (+ 就) + V (练一练 (1) của sách)",
+      "mau": "到点了，该走就走，别等她了。",
+      "can": [
+       [
+        "该"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "不管是和平年代还是战争年代，人们到了年龄＿＿＿。",
+      "goiY": "Câu gốc: ……人们到了年龄就会恋爱、结婚，丝毫没有改变。 → viết lại bằng 该 + V + O + V + O (练一练 (2) của sách)",
+      "mau": "不管是和平年代还是战争年代，人们到了年龄该恋爱恋爱，该结婚结婚。",
+      "can": [
+       [
+        "该"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "没有什么事情能让他发愁，他整天都是乐呵呵的，＿＿＿。",
+      "goiY": "Câu gốc: ……吃、玩儿都不耽误。 → viết lại bằng 该 + V + V (练一练 (3) của sách)",
+      "mau": "没有什么事情能让他发愁，他整天都是乐呵呵的，该吃吃，该玩儿玩儿。",
+      "can": [
+       [
+        "该"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

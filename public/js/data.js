@@ -1911,6 +1911,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-9.html'
+      },
+      {
+        id: 'hsk6-l11',
+        number: 11,
+        title: 'Các chú mèo làm gì khi tôi đi vắng?',
+        titleHanzi: '我不在时，猫在干什么？',
+        titlePinyin: 'Wǒ bú zài shí, māo zài gàn shénme?',
+        topic: '第三单元 多彩社会 · Thú cưng và công nghệ trong đời sống',
+        vocabCount: 46,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-11.html'
       }
     ],
     yct: [

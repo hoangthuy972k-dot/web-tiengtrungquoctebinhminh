@@ -1,0 +1,112 @@
+{
+ "zh": "我不在时，猫在干什么？",
+ "py": "Wǒ bú zài shí, māo zài gàn shénme?",
+ "vn": "Các chú mèo làm gì khi tôi đi vắng?",
+ "topic": "第三单元 多彩社会 · Thú cưng và công nghệ trong đời sống",
+ "vocabCount": 46,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "统统",
+   "explain": "统统 là PHÓ TỪ, biểu thị hành động bao trùm TOÀN BỘ đối tượng, nghĩa là \"không có ngoại lệ, không sót cái nào\" (= 毫无例外地、一个不剩地). Dùng nhiều trong khẩu ngữ; cũng có thể nói 通通. Đối tượng được bao trùm thường nêu ra TRƯỚC 统统 (làm chủ ngữ, chủ đề, hoặc tân ngữ của 把), còn 统统 đứng ngay trước động từ.",
+   "rule": "把 + đối tượng + <strong style=\"color:var(--sky-d)\">统统</strong> + V　|　đối tượng (chủ ngữ / chủ đề) + <strong style=\"color:var(--sky-d)\">统统</strong> + V / 不……",
+   "examples": [
+    {
+     "zh": "我把随身携带着的DV小摄像机、录音机以及照相机统统从包里取了出来。",
+     "py": "Wǒ bǎ suíshēn xiédàizhe de DV xiǎo shèxiàngjī, lùyīnjī yǐjí zhàoxiàngjī tǒngtǒng cóng bāo li qǔle chūlái.",
+     "vn": "Tôi lấy hết máy quay DV nhỏ, máy ghi âm và máy ảnh mang theo người ra khỏi túi."
+    },
+    {
+     "zh": "钱小奇一回家，它就扑上来，亲热地撞主人的腿，还要把钱小奇和他带回来的东西统统闻一遍。",
+     "py": "Qián Xiǎoqí yì huí jiā, tā jiù pū shànglái, qīnrè de zhuàng zhǔrén de tuǐ, hái yào bǎ Qián Xiǎoqí hé tā dài huílái de dōngxi tǒngtǒng wén yí biàn.",
+     "vn": "Tiền Tiểu Kỳ vừa về nhà, nó đã nhào tới, thân thiết cọ vào chân chủ, còn phải ngửi hết một lượt cả Tiền Tiểu Kỳ lẫn đồ anh mang về."
+    },
+    {
+     "zh": "他不抽烟、不喝酒、不喝茶、不喝咖啡、不讲究饮食，什么电影院、酒吧，统统与他无缘。",
+     "py": "Tā bù chōuyān, bù hē jiǔ, bù hē chá, bù hē kāfēi, bù jiǎngjiu yǐnshí, shénme diànyǐngyuàn, jiǔbā, tǒngtǒng yǔ tā wúyuán.",
+     "vn": "Anh ấy không hút thuốc, không uống rượu, không uống trà, không uống cà phê, không cầu kỳ chuyện ăn uống; nào rạp chiếu phim, nào quán bar, tất cả đều chẳng dính dáng gì tới anh."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我统统把作业做完了。",
+     "why": "统统 đứng SAU cụm 把 + tân ngữ, ngay trước động từ, vì nó bao trùm chính tân ngữ đó.",
+     "right": "我把作业统统做完了。"
+    },
+    {
+     "wrong": "统统同学都来了。",
+     "why": "统统 là phó từ, không đứng trước danh từ làm định ngữ như 所有 / 全部.",
+     "right": "同学们统统来了。（或：所有同学都来了。）"
+    }
+   ]
+  },
+  {
+   "point": "以……为……",
+   "explain": "\"以 A 为 B\" là cấu trúc VĂN VIẾT, tương đương khẩu ngữ \"把 / 拿 A 作为 / 当作 B\" (lấy A làm B, coi A là B). Hay gặp: 以……为例 (lấy … làm ví dụ), 以……为主 (lấy … làm chính), 以……为目的 / 为标准 / 为对象 / 为荣. Khi hai cụm \"以……为……\" dùng liền nhau, chữ 以 thứ hai có thể lược bỏ (以学生为主，老师为辅). Chú ý 为 ở đây đọc wéi.",
+   "rule": "<strong style=\"color:var(--sky-d)\">以</strong> + A + <strong style=\"color:var(--sky-d)\">为</strong> + B (例 / 主 / 目的 / 标准…)　|　以 A 为主，(以) B 为辅",
+   "examples": [
+    {
+     "zh": "猫们的行动很有规律，以其中一只猫为例，它每天下午两点左右吃饭喝水，时间误差平均不到5分钟。",
+     "py": "Māomen de xíngdòng hěn yǒu guīlǜ, yǐ qízhōng yì zhī māo wéi lì, tā měi tiān xiàwǔ liǎng diǎn zuǒyòu chīfàn hē shuǐ, shíjiān wùchā píngjūn bú dào wǔ fēnzhōng.",
+     "vn": "Hoạt động của lũ mèo rất có quy luật: lấy một con làm ví dụ, ngày nào nó cũng ăn uống vào khoảng hai giờ chiều, sai lệch thời gian trung bình chưa đến 5 phút."
+    },
+    {
+     "zh": "普通话以北京语音为标准音，以北方话为基础方言，以典范的现代白话文著作作为语法规范。",
+     "py": "Pǔtōnghuà yǐ Běijīng yǔyīn wéi biāozhǔnyīn, yǐ běifānghuà wéi jīchǔ fāngyán, yǐ diǎnfàn de xiàndài báihuàwén zhùzuò zuòwéi yǔfǎ guīfàn.",
+     "vn": "Tiếng phổ thông lấy ngữ âm Bắc Kinh làm âm chuẩn, lấy phương ngữ phương Bắc làm phương ngữ cơ sở, lấy các tác phẩm bạch thoại hiện đại mẫu mực làm chuẩn mực ngữ pháp."
+    },
+    {
+     "zh": "今天的晚会大伙准备了不少节目，当然以学生为主，老师为辅。",
+     "py": "Jīntiān de wǎnhuì dàhuǒ zhǔnbèile bùshǎo jiémù, dāngrán yǐ xuésheng wéi zhǔ, lǎoshī wéi fǔ.",
+     "vn": "Dạ hội hôm nay mọi người chuẩn bị không ít tiết mục, tất nhiên học sinh là chính, giáo viên là phụ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "以其中一只猫做例，它每天两点吃饭。",
+     "why": "Cấu trúc cố định là 以……为……; không thay 为 bằng 做 / 是.",
+     "right": "以其中一只猫为例，它每天两点吃饭。"
+    },
+    {
+     "wrong": "这次活动以学生是主。",
+     "why": "Thiếu 为: phải là 以 A 为 B (为 đọc wéi).",
+     "right": "这次活动以学生为主。"
+    }
+   ]
+  },
+  {
+   "point": "该干吗干吗",
+   "explain": "\"该干吗干吗\" là cách nói KHẨU NGỮ, rút gọn từ mẫu \"该 + V + O + 还 / 就得 + V + O\" (vd: 该学汉语还得学汉语). Nghĩa: mọi việc vẫn diễn ra như vốn có, việc gì cần làm thì cứ làm, không có gì làm thay đổi được. Cụm \"V + O\" trước và sau là cùng một động từ / cụm động từ; \"还 / 就得\" thường được lược. Biến thể linh hoạt: 该 + V + V (该吃吃，该玩儿玩儿), 该 + V + O + V + O (该打球打球), 该 + O + 还 + V + O (该什么结果还是什么结果 — khi động từ là 是 thì lược 是 phía trước).",
+   "rule": "<strong style=\"color:var(--sky-d)\">该</strong> + V + O + (还 / 就得) + V + O　|　<strong style=\"color:var(--sky-d)\">该</strong> + V + V (该吃吃)　|　<strong style=\"color:var(--sky-d)\">该干吗干吗</strong>",
+   "examples": [
+    {
+     "zh": "在中国，过年过节商店最忙了，哪儿有假呀，该开门就得开门。",
+     "py": "Zài Zhōngguó, guònián guòjié shāngdiàn zuì máng le, nǎr yǒu jià ya, gāi kāimén jiù děi kāimén.",
+     "vn": "Ở Trung Quốc, dịp lễ Tết cửa hàng bận nhất, nghỉ gì mà nghỉ, đến giờ mở cửa thì phải mở cửa."
+    },
+    {
+     "zh": "每次回家时，守在门口的大黄和白白也不是长时间在门口等他，而是在屋里该干吗干吗。",
+     "py": "Měi cì huí jiā shí, shǒu zài ménkǒu de Dàhuáng hé Báibái yě bú shì cháng shíjiān zài ménkǒu děng tā, ér shì zài wū li gāi gànmá gànmá.",
+     "vn": "Mỗi lần anh về nhà, Đại Hoàng và Bạch Bạch đón ở cửa cũng không phải đợi anh ở cửa suốt, mà ở trong nhà ai làm việc nấy."
+    },
+    {
+     "zh": "哭、着急都不管用，该什么结果还是什么结果。",
+     "py": "Kū, zháojí dōu bù guǎnyòng, gāi shénme jiéguǒ háishi shénme jiéguǒ.",
+     "vn": "Khóc hay sốt ruột đều vô ích, kết quả thế nào thì vẫn là thế ấy."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "到点了，该走了走，别等她了。",
+     "why": "Hai động từ lặp liền nhau (该走走) hoặc có 就 xen giữa (该走就走); không chen 了 vào.",
+     "right": "到点了，该走就走，别等她了。"
+    },
+    {
+     "wrong": "他遇到这么大的事，还是该干吗干什么。",
+     "why": "Hai vế phải lặp lại cùng một từ: 干吗……干吗 (hoặc 干什么……干什么).",
+     "right": "他遇到这么大的事，还是该干吗干吗。"
+    }
+   ]
+  }
+ ]
+}

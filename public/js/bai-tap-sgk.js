@@ -207,7 +207,7 @@
         var trung = boDau(s.t) === boDau(c.dap);
         return '<li>' + dau +
           '<div class="sk-bai"><span class="sk-nhan">Câu của em</span><span class="lv-zh">' + esc(s.t) + '</span></div>' +
-          '<div class="pb-why ok"><b>Đáp án SGK:</b> <span class="lv-zh">' + esc(c.dap) + '</span>' + (c.giai ? '<br>' + esc(c.giai) : '') + '</div>' +
+          '<div class="pb-why ok"><b>' + (p.dapSgk ? 'Đáp án SGK' : 'Đáp án tham khảo') + ':</b> <span class="lv-zh">' + esc(c.dap) + '</span>' + (c.giai ? '<br>' + esc(c.giai) : '') + '</div>' +
           (trung && s.tu == null ? '' : nutDanhGia(k, s)) + '</li>';
       }).join('') + '</ol>';
     }

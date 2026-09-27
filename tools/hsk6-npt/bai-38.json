@@ -1,0 +1,912 @@
+[
+ {
+  "so": "1",
+  "ten": "「屡次」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 屡次 + V — nhiều lần, hết lần này đến lần khác (việc đã xảy ra)",
+   "屡次……，却 / 但…… — nhiều lần … nhưng …",
+   "Không đứng sau động từ; không dùng cho tương lai"
+  ],
+  "giaiThich": "\"屡次\" là PHÓ TỪ, biểu thị động tác, hành vi xảy ra lặp đi lặp lại nhiều lần; một lần rồi một lần nữa (≈ 多次, 一次又一次). Văn viết. 屡次 đứng SAU chủ ngữ, TRƯỚC động từ (hoặc trước cụm giới từ + động từ): 屡次创业, 屡次在全国评比中名列前茅. Thường dùng cho sự việc ĐÃ xảy ra, không dùng cho dự định tương lai; hay đi với 却 / 但 để nêu kết quả trái ngược: 屡次创业，却屡次惨遭失败. Không nói *失败屡次 (屡次 không đứng sau động từ).",
+  "viDu": [
+   {
+    "zh": "屡次创业，却屡次惨遭失败的人总想知道，创业有窍门吗？",
+    "py": "Lǚcì chuàngyè, què lǚcì cǎn zāo shībài de rén zǒng xiǎng zhīdào, chuàngyè yǒu qiàomén ma?",
+    "vn": "Những người nhiều lần khởi nghiệp mà lần nào cũng thất bại thảm hại luôn muốn biết: khởi nghiệp có bí quyết không?"
+   },
+   {
+    "zh": "这些年，这里的水果种植业发展很快，无论是产量，还是品质都屡次在全国评比中名列前茅。",
+    "py": "Zhèxiē nián, zhèlǐ de shuǐguǒ zhòngzhíyè fāzhǎn hěn kuài, wúlùn shì chǎnliàng, háishi pǐnzhì dōu lǚcì zài quánguó píngbǐ zhōng míngliè-qiánmáo.",
+    "vn": "Mấy năm nay, nghề trồng hoa quả ở đây phát triển rất nhanh, dù là sản lượng hay chất lượng đều nhiều lần đứng đầu trong các kỳ bình chọn toàn quốc."
+   },
+   {
+    "zh": "有关部门屡次推出这样那样的制度或法规，目的是杜绝虚假广告的出现。",
+    "py": "Yǒuguān bùmén lǚcì tuīchū zhèyàng nàyàng de zhìdù huò fǎguī, mùdì shì dùjué xūjiǎ guǎnggào de chūxiàn.",
+    "vn": "Các cơ quan hữu quan nhiều lần đưa ra đủ loại chế độ, quy định, mục đích là chấm dứt sự xuất hiện của quảng cáo giả dối."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他失败屡次，却不灰心。",
+    "why": "屡次 là phó từ, phải đứng TRƯỚC động từ.",
+    "dung": "他屡次失败，却不灰心。"
+   },
+   {
+    "sai": "我明天要屡次去图书馆。",
+    "why": "屡次 chỉ việc ĐÃ lặp lại nhiều lần, không dùng cho dự định tương lai.",
+    "dung": "这个学期我屡次去图书馆查资料。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "屡次创业，却",
+       "惨遭失败的人总想知道，创业有窍门吗？"
+      ],
+      "dap": [
+       [
+        "屡次"
+       ]
+      ],
+      "chon": [
+       "屡次",
+       "曾经",
+       "常常"
+      ],
+      "goiY": "\"Nhiều lần khởi nghiệp mà lần nào cũng thất bại thảm hại.\" (câu bài khoá)",
+      "giai": "屡次……，却屡次…… — lặp 屡次 ở hai vế đối lập."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这里的水果",
+       "在全国评比中名列前茅。"
+      ],
+      "dap": [
+       [
+        "屡次"
+       ]
+      ],
+      "chon": [
+       "屡次",
+       "再三",
+       "连忙"
+      ],
+      "goiY": "\"Hoa quả ở đây nhiều lần đứng đầu các kỳ bình chọn toàn quốc.\" (ví dụ của sách)",
+      "giai": "屡次 + 在……中 + V; 再三 dùng cho lời dặn, yêu cầu (再三强调), 连忙 = vội vàng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "有关部门",
+       "推出这样那样的制度或法规。"
+      ],
+      "dap": [
+       [
+        "屡次"
+       ]
+      ],
+      "chon": [
+       "屡次",
+       "将要",
+       "总算"
+      ],
+      "goiY": "\"Các cơ quan hữu quan nhiều lần đưa ra đủ loại quy định.\" (ví dụ của sách)",
+      "giai": "Việc đã lặp lại nhiều lần → 屡次; 将要 = sắp; 总算 = rốt cuộc cũng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈屡次",
+       "我改掉马虎的毛病。"
+      ],
+      "dap": [
+       [
+        "提醒"
+       ]
+      ],
+      "chon": [
+       "提醒",
+       "提高",
+       "提前"
+      ],
+      "goiY": "\"Mẹ nhắc tôi nhiều lần phải bỏ tật cẩu thả.\" (练一练 (3))",
+      "giai": "屡次 + động từ: 屡次提醒."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "从开始这个课题至今，他屡次失败，",
+       "一点儿也没有灰心。"
+      ],
+      "dap": [
+       [
+        "却"
+       ]
+      ],
+      "chon": [
+       "却",
+       "就",
+       "才"
+      ],
+      "goiY": "\"Thất bại nhiều lần nhưng chẳng hề nản lòng.\" (练一练 (2))",
+      "giai": "屡次……，却…… nêu kết quả trái ngược."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他",
+       "在国际比赛中获奖，被大家称为“获奖专业户”。"
+      ],
+      "dap": [
+       [
+        "屡次"
+       ]
+      ],
+      "chon": [
+       "屡次",
+       "终于",
+       "从来"
+      ],
+      "goiY": "\"Anh ấy nhiều lần đoạt giải quốc tế, được gọi là 'chuyên gia đoạt giải'.\"",
+      "giai": "\"获奖专业户\" cho thấy đã đoạt giải nhiều lần → 屡次; 终于 chỉ một lần sau chờ đợi."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "屡次",
+       "他",
+       "失败",
+       "却不灰心"
+      ],
+      "dap": [
+       "他屡次失败却不灰心"
+      ],
+      "goiY": "Anh ấy thất bại nhiều lần nhưng không nản lòng.",
+      "giai": "S + 屡次 + V，却……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "屡次",
+       "在日记中",
+       "出现",
+       "这个主题"
+      ],
+      "dap": [
+       "这个主题在日记中屡次出现",
+       "这个主题屡次在日记中出现"
+      ],
+      "goiY": "Chủ đề này xuất hiện nhiều lần trong nhật ký.",
+      "giai": "屡次 đứng trước động từ hoặc trước cụm giới từ 在……中."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "提醒",
+       "妈妈",
+       "我",
+       "屡次"
+      ],
+      "dap": [
+       "妈妈屡次提醒我"
+      ],
+      "goiY": "Mẹ nhắc tôi nhiều lần.",
+      "giai": "Chủ ngữ + 屡次 + V + tân ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他失败屡次，却不灰心。",
+      "dung": false,
+      "sua": "他屡次失败，却不灰心。",
+      "giai": "屡次 là phó từ, đứng trước động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这位运动员屡次打破全国纪录。",
+      "dung": true,
+      "giai": "Đúng: 屡次 + 打破纪录 (việc đã xảy ra nhiều lần)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我明天要屡次去图书馆。",
+      "dung": false,
+      "sua": "这个学期我屡次去图书馆查资料。",
+      "giai": "屡次 không dùng cho dự định tương lai."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy nhiều lần đi học muộn, thầy giáo rất không hài lòng.",
+      "dap": [
+       "他屡次迟到，老师很不满意。",
+       "他屡次迟到，老师非常不满。",
+       "因为他屡次迟到，老师很不满意。"
+      ],
+      "py": "Tā lǚcì chídào, lǎoshī hěn bù mǎnyì.",
+      "goiY": "Dịch sang tiếng Trung, dùng 屡次.",
+      "giai": "屡次 + V (việc đã lặp lại nhiều lần)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bộ phim này nhiều lần đoạt giải ở nước ngoài.",
+      "dap": [
+       "这部电影屡次在国外获奖。",
+       "这部电影在国外屡次获奖。",
+       "这部电影屡次在国外得奖。"
+      ],
+      "py": "Zhè bù diànyǐng lǚcì zài guówài huòjiǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 屡次.",
+      "giai": "屡次 đứng trước cụm 在国外 + V hoặc ngay trước động từ."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng 屡次 hoàn thành câu (练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "关于亲情的主题，在他的日记中＿＿＿。",
+      "goiY": "Dùng 屡次 hoàn thành câu (练一练 (1) của sách).",
+      "mau": "关于亲情的主题，在他的日记中屡次出现。",
+      "can": [
+       [
+        "屡次出现"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "从开始这个课题至今，他＿＿＿，却一点儿也没有灰心。",
+      "goiY": "Dùng 屡次 hoàn thành câu (练一练 (2) của sách).",
+      "mau": "从开始这个课题至今，他屡次失败，却一点儿也没有灰心。",
+      "can": [
+       [
+        "屡次失败"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "妈妈＿＿＿我，改掉马虎的毛病，可我就是改不了。",
+      "goiY": "Dùng 屡次 hoàn thành câu (练一练 (3) của sách).",
+      "mau": "妈妈屡次提醒我，改掉马虎的毛病，可我就是改不了。",
+      "can": [
+       [
+        "屡次提醒"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「依据」",
+  "tenVn": "",
+  "cauTruc": [
+   "依据 + N + V — căn cứ vào … mà … (giới từ)",
+   "S + 依据 + N — dựa theo (động từ)",
+   "有 / 提供 + ……依据；以 + N + 为依据 — căn cứ (danh từ)"
+  ],
+  "giaiThich": "\"依据\" dùng được làm DANH TỪ, ĐỘNG TỪ và GIỚI TỪ. ① Danh từ: sự vật làm tiền đề cho việc phán đoán hoặc làm cơ sở cho lời nói, việc làm — căn cứ, cơ sở: 法律依据, 科学依据, 以……为依据. ② Động từ: dựa theo, căn cứ vào một sự vật nào đó: 创业必须依据市场需求. ③ Giới từ: lấy một sự vật làm tiền đề cho phán đoán hoặc cơ sở cho hành động: 依据 + N + V (依据市场规则捕捉商业机会; 依据专家的鉴定，……). 依据 trang trọng hơn 根据, hay dùng trong văn bản pháp luật, khoa học. Khi nêu ý kiến cá nhân không nói *依据我看 (nói 依我看).",
+  "viDu": [
+   {
+    "zh": "你们这样做有法律依据吗？",
+    "py": "Nǐmen zhèyàng zuò yǒu fǎlǜ yījù ma?",
+    "vn": "Các anh làm như vậy có căn cứ pháp luật không? (danh từ)"
+   },
+   {
+    "zh": "创业必须依据市场需求，这是一条永恒的真理。",
+    "py": "Chuàngyè bìxū yījù shìchǎng xūqiú, zhè shì yì tiáo yǒnghéng de zhēnlǐ.",
+    "vn": "Khởi nghiệp phải dựa vào nhu cầu thị trường, đây là một chân lý vĩnh hằng. (động từ)"
+   },
+   {
+    "zh": "依据专家的鉴定，这的确是汉代陶器真品。",
+    "py": "Yījù zhuānjiā de jiàndìng, zhè díquè shì Hàndài táoqì zhēnpǐn.",
+    "vn": "Căn cứ vào giám định của chuyên gia, đây đúng là đồ gốm thật thời Hán. (giới từ)"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "说话要有依靠，不能乱说。",
+    "why": "\"Căn cứ, cơ sở\" (danh từ) là 依据; 依靠 = chỗ dựa (người, sức mạnh).",
+    "dung": "说话要有依据，不能乱说。"
+   },
+   {
+    "sai": "依据我看，这个计划不太可行。",
+    "why": "Nêu ý kiến cá nhân dùng 依我看 / 在我看来; 依据 cần danh từ chỉ căn cứ khách quan (规则, 需求, 鉴定…).",
+    "dung": "依我看，这个计划不太可行。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "窍门就是创业不可盲目，要",
+       "市场规则捕捉商业机会。"
+      ],
+      "dap": [
+       [
+        "依据"
+       ]
+      ],
+      "chon": [
+       "依据",
+       "依然",
+       "依靠"
+      ],
+      "goiY": "\"Phải dựa vào quy luật thị trường để nắm bắt cơ hội.\" (câu bài khoá)",
+      "giai": "Giới từ 依据 + N + V; 依然 = vẫn; 依靠 = dựa dẫm (người, sức lực)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你们这样做有法律",
+       "吗？"
+      ],
+      "dap": [
+       [
+        "依据"
+       ]
+      ],
+      "chon": [
+       "依据",
+       "依赖",
+       "根本"
+      ],
+      "goiY": "\"Làm như vậy có căn cứ pháp luật không?\" (ví dụ của sách)",
+      "giai": "Danh từ: 法律依据 = căn cứ pháp luật."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "江崎公司以成年人的消费需求",
+       "依据设计产品。"
+      ],
+      "dap": [
+       [
+        "为"
+       ]
+      ],
+      "chon": [
+       "为",
+       "是",
+       "被"
+      ],
+      "goiY": "\"Lấy nhu cầu tiêu dùng của người lớn làm căn cứ.\" (câu bài khoá)",
+      "giai": "Khung cố định 以……为依据."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "专家的鉴定，这的确是汉代陶器真品。"
+      ],
+      "dap": [
+       [
+        "依据"
+       ]
+      ],
+      "chon": [
+       "依据",
+       "依赖",
+       "依然"
+      ],
+      "goiY": "\"Căn cứ vào giám định của chuyên gia, đây đúng là đồ gốm thật đời Hán.\" (ví dụ của sách)",
+      "giai": "Giới từ 依据 mở đầu câu, nêu căn cứ của phán đoán."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们要依据不同的场合，不同的交际对象，",
+       "我们的交际方式。"
+      ],
+      "dap": [
+       [
+        "变换"
+       ]
+      ],
+      "chon": [
+       "变换",
+       "变成",
+       "变化"
+      ],
+      "goiY": "\"Căn cứ vào hoàn cảnh, đối tượng khác nhau mà thay đổi cách giao tiếp.\" (练一练 (1))",
+      "giai": "依据 + N + V: động từ chính 变换 (+ tân ngữ); 变化 không mang tân ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为后来的水利工程建设，提供了确切可靠的科学",
+       "。"
+      ],
+      "dap": [
+       [
+        "依据"
+       ]
+      ],
+      "chon": [
+       "依据",
+       "依靠",
+       "根据地"
+      ],
+      "goiY": "\"Cung cấp căn cứ khoa học chính xác, đáng tin cậy.\" (练一练 (2))",
+      "giai": "Danh từ: 科学依据; 根据地 = căn cứ địa (quân sự)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "依据",
+       "我们要",
+       "不同情况",
+       "分别处理"
+      ],
+      "dap": [
+       "我们要依据不同情况分别处理"
+      ],
+      "goiY": "Chúng ta phải căn cứ vào tình hình khác nhau mà xử lý riêng.",
+      "giai": "Giới từ 依据 + N đứng trước động từ chính (练习2)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "为依据",
+       "以",
+       "市场需求",
+       "设计产品"
+      ],
+      "dap": [
+       "以市场需求为依据设计产品"
+      ],
+      "goiY": "Lấy nhu cầu thị trường làm căn cứ để thiết kế sản phẩm.",
+      "giai": "以 + N + 为依据 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "有",
+       "科学",
+       "依据",
+       "这个结论"
+      ],
+      "dap": [
+       "这个结论有科学依据"
+      ],
+      "goiY": "Kết luận này có cơ sở khoa học.",
+      "giai": "Danh từ: 有 + 科学依据."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "说话要有依靠，不能乱说。",
+      "dung": false,
+      "sua": "说话要有依据，不能乱说。",
+      "giai": "\"Căn cứ\" là 依据; 依靠 = chỗ dựa."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "依据专家的鉴定，这的确是真品。",
+      "dung": true,
+      "giai": "Đúng: giới từ 依据 + N mở đầu câu (ví dụ của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "依据我看，这个计划不太可行。",
+      "dung": false,
+      "sua": "依我看，这个计划不太可行。",
+      "giai": "Ý kiến cá nhân: 依我看, không dùng 依据."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chúng ta phải căn cứ vào nhu cầu của khách hàng để thiết kế sản phẩm.",
+      "dap": [
+       "我们要依据顾客的需求设计产品。",
+       "我们要依据顾客的需求来设计产品。",
+       "我们应该依据客户的需求设计产品。"
+      ],
+      "py": "Wǒmen yào yījù gùkè de xūqiú shèjì chǎnpǐn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 依据.",
+      "giai": "Giới từ 依据 + N + V."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Anh nói vậy có căn cứ gì không?",
+      "dap": [
+       "你这么说有什么依据吗？",
+       "你这样说有依据吗？",
+       "你这么说有什么依据？"
+      ],
+      "py": "Nǐ zhème shuō yǒu shénme yījù ma?",
+      "goiY": "Dịch sang tiếng Trung, dùng 依据.",
+      "giai": "Danh từ: 有 + (什么) + 依据."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng 依据 viết lại / hoàn thành câu (练习 · 练一练 của sách)",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "这些问题各不相同，我们要按照不同情况分别处理。→ ＿＿＿",
+      "goiY": "Dùng 依据 viết lại (练习2 (2) của sách).",
+      "mau": "这些问题各不相同，我们要依据不同情况分别处理。",
+      "can": [
+       [
+        "依据不同情况"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我们要＿＿＿不同的场合，不同的交际对象，变换我们的交际方式。",
+      "goiY": "Đặt 依据 vào đúng chỗ (练一练 (1) của sách: đáp án A).",
+      "mau": "我们要依据不同的场合，不同的交际对象，变换我们的交际方式。",
+      "can": [
+       [
+        "要依据不同的场合"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "汉语有些汉字的字义也可以＿＿＿推知一二。",
+      "goiY": "Đặt 依据 vào đúng chỗ (练一练 (3) của sách: đáp án C).",
+      "mau": "汉语有些汉字的字义也可以依据字形推知一二。",
+      "can": [
+       [
+        "依据字形"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「修辞（10）反复」",
+  "tenVn": "",
+  "cauTruc": [
+   "A！A！…… — lặp liền nhau (连续反复)",
+   "……A……，A……，A…… — lặp cách quãng (间隔反复)",
+   "Giữ nguyên dạng từ lặp; mục đích: nhấn mạnh ý, dồn nén cảm xúc"
+  ],
+  "giaiThich": "Phần 修辞 thứ mười của quyển 下: PHÉP LẶP (反复). Để làm nổi bật một ý, nhấn mạnh một tình cảm, người viết CỐ Ý dùng lặp lại một từ ngữ hoặc một câu. Có hai dạng: ① LẶP LIỀN NHAU (连续反复): 沉默啊！沉默啊！; 终于自由啦！终于自由啦！ ② LẶP CÁCH QUÃNG (间隔反复): giữa các lần lặp có câu chữ khác: 只要你细心研究市场，细心研究消费者的需求，细心研究市场产品的优劣…… (câu bài khoá). Khi lặp phải giữ NGUYÊN DẠNG từ ngữ; phép lặp có mục đích nhấn mạnh, khác với lặp thừa vô ý (啰嗦). Phân biệt với 顶真 (liên hoàn: cuối vế trước làm đầu vế sau — 车到山前必有路，有路必有丰田车) và với 重复关键词 (篇章 6, bài 35 — lặp từ khoá để đẩy chủ đề đi tới).",
+  "viDu": [
+   {
+    "zh": "这就是市场，只要你细心研究市场，细心研究消费者的需求，细心研究市场产品的优劣，对产品的不足做些局部改进，就有可能得到消费者的认可。",
+    "py": "Zhè jiù shì shìchǎng, zhǐyào nǐ xìxīn yánjiū shìchǎng, xìxīn yánjiū xiāofèizhě de xūqiú, xìxīn yánjiū shìchǎng chǎnpǐn de yōuliè, duì chǎnpǐn de bùzú zuò xiē júbù gǎijìn, jiù yǒu kěnéng dédào xiāofèizhě de rènkě.",
+    "vn": "Thị trường là như vậy: chỉ cần bạn tỉ mỉ nghiên cứu thị trường, tỉ mỉ nghiên cứu nhu cầu người tiêu dùng, tỉ mỉ nghiên cứu ưu nhược điểm của sản phẩm, cải tiến từng phần chỗ chưa tốt, thì có thể được người tiêu dùng công nhận. (lặp cách quãng 细心研究)"
+   },
+   {
+    "zh": "大山原来是这样的！月亮原来是这样的！核桃树原来是这样的！香雪走着，就像第一次认出养育她成人的山谷。",
+    "py": "Dàshān yuánlái shì zhèyàng de! Yuèliang yuánlái shì zhèyàng de! Hétaoshù yuánlái shì zhèyàng de! Xiāngxuě zǒuzhe, jiù xiàng dì-yī cì rènchū yǎngyù tā chéngrén de shāngǔ.",
+    "vn": "Núi thì ra là thế này! Trăng thì ra là thế này! Cây óc chó thì ra là thế này! Hương Tuyết vừa đi vừa ngắm, như lần đầu nhận ra thung lũng đã nuôi cô khôn lớn. (lặp 原来是这样的)"
+   },
+   {
+    "zh": "沉默啊！沉默啊！不在沉默中爆发，就在沉默中灭亡。",
+    "py": "Chénmò a! Chénmò a! Bú zài chénmò zhōng bàofā, jiù zài chénmò zhōng mièwáng.",
+    "vn": "Im lặng ư! Im lặng ư! Không bùng nổ trong im lặng thì sẽ diệt vong trong im lặng. (lặp liền nhau — 练习4)"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "只要你细心研究市场，认真分析顾客的需求，好好看看产品的优劣，就能得到认可。",
+    "why": "Đổi 细心研究 sang nhiều cách nói khác làm mất phép lặp, ý \"tỉ mỉ nghiên cứu\" không còn được nhấn mạnh.",
+    "dung": "只要你细心研究市场，细心研究顾客的需求，细心研究产品的优劣，就能得到认可。"
+   },
+   {
+    "sai": "我今天今天很高兴，因为我今天考了一百分。",
+    "why": "Lặp vô ý, không nhằm nhấn mạnh gì → lặp thừa, câu rườm rà, không phải 反复.",
+    "dung": "今天我考了一百分，真高兴啊！"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "只要你细心研究市场，",
+       "研究消费者的需求，细心研究市场产品的优劣。"
+      ],
+      "dap": [
+       [
+        "细心"
+       ]
+      ],
+      "chon": [
+       "细心",
+       "认真",
+       "仔细"
+      ],
+      "goiY": "Câu bài khoá (ví dụ (1) phần 修辞): giữ nguyên từ lặp.",
+      "giai": "Phép lặp phải giữ NGUYÊN DẠNG 细心研究; đổi sang 认真 / 仔细 là mất phép lặp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大山原来是这样的！月亮原来是这样的！核桃树",
+       "！"
+      ],
+      "dap": [
+       [
+        "原来是这样的"
+       ]
+      ],
+      "chon": [
+       "原来是这样的",
+       "也很美",
+       "真高啊"
+      ],
+      "goiY": "Ví dụ (2) của sách.",
+      "giai": "Lặp nguyên câu 原来是这样的 ba lần, diễn tả sự ngỡ ngàng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "沉默啊！",
+       "！不在沉默中爆发，就在沉默中灭亡。"
+      ],
+      "dap": [
+       [
+        "沉默啊"
+       ]
+      ],
+      "chon": [
+       "沉默啊",
+       "安静啊",
+       "说话啊"
+      ],
+      "goiY": "练习4 ② của sách.",
+      "giai": "Lặp liền nhau (连续反复)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "终于自由啦！",
+       "！感谢全能的上帝，我们终于自由啦！"
+      ],
+      "dap": [
+       [
+        "终于自由啦"
+       ]
+      ],
+      "chon": [
+       "终于自由啦",
+       "太好了",
+       "我们胜利了"
+      ],
+      "goiY": "练一练 (2) của sách.",
+      "giai": "Lặp 终于自由啦 ba lần — niềm vui vỡ oà."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "风雪一天比一天大，人们的干劲",
+       "猛。"
+      ],
+      "dap": [
+       [
+        "一天比一天"
+       ]
+      ],
+      "chon": [
+       "一天比一天",
+       "越来越",
+       "更加"
+      ],
+      "goiY": "练习4 ④ của sách.",
+      "giai": "越来越猛 đúng ngữ pháp nhưng phá mất phép lặp 一天比一天."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "如果你没有眼光，就看不到商机；",
+       "你思维平庸，就发现不了商机。"
+      ],
+      "dap": [
+       [
+        "如果"
+       ]
+      ],
+      "chon": [
+       "如果",
+       "只要",
+       "虽然"
+      ],
+      "goiY": "Câu bài khoá — lặp khung 如果……，就…….",
+      "giai": "Lặp cách quãng cả khung câu giả thiết."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "细心研究市场，",
+       "细心研究消费者的需求",
+       "只要你"
+      ],
+      "dap": [
+       "只要你细心研究市场，细心研究消费者的需求"
+      ],
+      "goiY": "Chỉ cần bạn tỉ mỉ nghiên cứu thị trường, tỉ mỉ nghiên cứu nhu cầu người tiêu dùng.",
+      "giai": "Lặp cách quãng 细心研究."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "沉默啊！",
+       "不在沉默中爆发",
+       "沉默啊！"
+      ],
+      "dap": [
+       "沉默啊！沉默啊！不在沉默中爆发"
+      ],
+      "goiY": "Im lặng ư! Im lặng ư! Không bùng nổ trong im lặng …",
+      "giai": "Lặp liền nhau 沉默啊！ ở đầu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一天比一天猛",
+       "人们的干劲",
+       "风雪一天比一天大，"
+      ],
+      "dap": [
+       "风雪一天比一天大，人们的干劲一天比一天猛"
+      ],
+      "goiY": "Gió tuyết ngày càng lớn, khí thế của mọi người ngày càng mạnh.",
+      "giai": "Lặp 一天比一天 trong các vế song song."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "只要你细心研究市场，认真分析顾客的需求，好好看看产品的优劣，就能得到认可。",
+      "dung": false,
+      "sua": "只要你细心研究市场，细心研究顾客的需求，细心研究产品的优劣，就能得到认可。",
+      "giai": "Muốn nhấn mạnh thì lặp nguyên dạng 细心研究."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "如果我拥有一片绿洲，我就用我的汗水去开垦它；如果我拥有一片绿洲，我就用我的智慧去播种它。",
+      "dung": true,
+      "giai": "Đúng: lặp cách quãng vế 如果我拥有一片绿洲 (练一练 (1))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我今天今天很高兴，因为我今天考了一百分。",
+      "dung": false,
+      "sua": "今天我考了一百分，真高兴啊！",
+      "giai": "Lặp vô ý → lặp thừa, không phải 反复."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy mỉm cười giặt quần áo, mỉm cười nấu cơm, mỉm cười đưa con đi học.",
+      "dap": [
+       "她含着笑洗衣服，含着笑做饭，含着笑送孩子上学。",
+       "她笑着洗衣服，笑着做饭，笑着送孩子上学。",
+       "她微笑着洗衣服，微笑着做饭，微笑着送孩子上学。"
+      ],
+      "py": "Tā hánzhe xiào xǐ yīfu, hánzhe xiào zuò fàn, hánzhe xiào sòng háizi shàngxué.",
+      "goiY": "Dịch sang tiếng Trung, lặp 含着笑 (hoặc 笑着).",
+      "giai": "Lặp cách quãng cụm trạng ngữ 含着笑 như ví dụ (3) của sách."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mùa xuân đến rồi! Mùa xuân đến rồi! Hoa trên núi đều nở cả rồi.",
+      "dap": [
+       "春天来了！春天来了！山上的花都开了。",
+       "春天来啦！春天来啦！山上的花都开了。",
+       "春天来了！春天来了！山上的花儿都开了。"
+      ],
+      "py": "Chūntiān lái le! Chūntiān lái le! Shān shang de huā dōu kāi le.",
+      "goiY": "Dịch sang tiếng Trung, lặp liền nhau.",
+      "giai": "Lặp liền nhau (连续反复) diễn tả niềm vui."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng phép lặp (反复) hoàn thành câu / đoạn văn",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "只要你细心研究市场，＿＿＿消费者的需求，＿＿＿市场产品的优劣，就有可能得到消费者的认可。",
+      "goiY": "Hoàn thành bằng phép lặp (ví dụ (1) của sách).",
+      "mau": "只要你细心研究市场，细心研究消费者的需求，细心研究市场产品的优劣，就有可能得到消费者的认可。",
+      "can": [
+       [
+        "细心研究消费者"
+       ],
+       [
+        "细心研究市场产品"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "如果我拥有一片绿洲，我就用我的汗水去开垦它；＿＿＿，我就用我的诚心去改造它。",
+      "goiY": "Hoàn thành bằng phép lặp (练一练 (1) của sách).",
+      "mau": "如果我拥有一片绿洲，我就用我的汗水去开垦它；如果我拥有一片绿洲，我就用我的诚心去改造它。",
+      "can": [
+       [
+        "如果我拥有一片绿洲"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我爱我的家乡：我爱家乡的山，＿＿＿，＿＿＿。",
+      "goiY": "Tự hoàn thành, lặp 我爱家乡的…….",
+      "mau": "我爱我的家乡：我爱家乡的山，我爱家乡的水，我爱家乡的人。",
+      "can": [
+       [
+        "我爱家乡的"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

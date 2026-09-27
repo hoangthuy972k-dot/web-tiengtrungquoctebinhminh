@@ -2247,6 +2247,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-37.html'
+      },
+      {
+        id: 'hsk6-l38',
+        number: 38,
+        title: '"Tuệ nhãn" nắm bắt thời cơ',
+        titleHanzi: '慧眼捕捉商机。',
+        titlePinyin: 'Huìyǎn Bǔzhuō Shāngjī.',
+        topic: '第十单元 热点追踪 · Theo dõi điểm nóng — khởi nghiệp: dựa vào quy luật thị trường, dùng "con mắt tinh tường" nắm bắt cơ hội kinh doanh (máy phục hồi pin, kẹo cao su Ezaki, xe in ảnh lưu động)',
+        vocabCount: 53,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-38.html'
       }
     ],
     yct: [

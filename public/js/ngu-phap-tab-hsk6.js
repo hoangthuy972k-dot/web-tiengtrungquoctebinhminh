@@ -17558,3 +17558,933 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-19.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-20.html"] = [
+ {
+  "so": "1",
+  "ten": "「况且」",
+  "tenVn": "",
+  "cauTruc": [
+   "Lý do 1，况且 + lý do 2，(kết luận): hơn nữa, vả lại",
+   "……，况且 + (chủ ngữ) + 又 / 也 / 还……: hay đi kèm 又 / 也 / 还"
+  ],
+  "giaiThich": "况且 là LIÊN TỪ, dùng ở ĐẦU phân câu sau, biểu thị ngoài lý do đã có còn BỔ SUNG thêm một lý do mới (hơn nữa, vả lại, huống hồ). Vế có 况且 thường đi với 又 / 也 / 还; hai lý do cùng chiều, cùng dẫn tới một kết luận / đánh giá ở cuối câu. Khẩu ngữ tương đương 再说 / 而且. 况且 không đứng ở phân câu đầu tiên và không nối hai ý trái ngược nhau.",
+  "viDu": [
+   {
+    "zh": "那小鸡仿佛刚出窝没几天，况且是乌黑乌黑的身子，可爱极了。",
+    "py": "Nà xiǎo jī fǎngfú gāng chū wō méi jǐ tiān, kuàngqiě shì wūhēi wūhēi de shēnzi, kě'ài jí le.",
+    "vn": "Mấy con gà con ấy dường như mới rời ổ chưa được mấy ngày, hơn nữa thân mình lại đen nhánh, đáng yêu vô cùng."
+   },
+   {
+    "zh": "这套房子交通方便，附近有书店，况且房租又不贵，真是再合适不过了。",
+    "py": "Zhè tào fángzi jiāotōng fāngbiàn, fùjìn yǒu shūdiàn, kuàngqiě fángzū yòu bú guì, zhēn shì zài héshì búguò le.",
+    "vn": "Căn nhà này giao thông thuận tiện, gần đó có hiệu sách, hơn nữa tiền thuê lại không đắt, thật là không gì hợp hơn."
+   },
+   {
+    "zh": "虽然这工作很苦，但我不想离开现在的岗位。原因很简单，我在石油行业工作了20多年，有份难舍的情感，况且我也热爱自己的专业，还想有所成就。",
+    "py": "Suīrán zhè gōngzuò hěn kǔ, dàn wǒ bù xiǎng líkāi xiànzài de gǎngwèi. Yuányīn hěn jiǎndān, wǒ zài shíyóu hángyè gōngzuòle èrshí duō nián, yǒu fèn nánshě de qínggǎn, kuàngqiě wǒ yě rè'ài zìjǐ de zhuānyè, hái xiǎng yǒu suǒ chéngjiù.",
+    "vn": "Tuy công việc này rất vất vả, nhưng tôi không muốn rời vị trí hiện tại. Lý do rất đơn giản: tôi đã làm trong ngành dầu khí hơn 20 năm, có một thứ tình cảm khó dứt bỏ, hơn nữa tôi cũng yêu chuyên ngành của mình, còn muốn làm nên chút thành tựu."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "况且这套房子房租不贵，交通也很方便。",
+    "why": "况且 không đứng ở phân câu đầu tiên; phải nêu một lý do trước rồi mới dùng 况且 bổ sung.",
+    "dung": "这套房子交通很方便，况且房租也不贵。"
+   },
+   {
+    "sai": "他学习很努力，况且成绩一直不太好。",
+    "why": "Vế sau của 况且 phải CÙNG CHIỀU với vế trước (thêm lý do cho cùng một kết luận); ý ngược lại thì dùng 可是 / 但是 / 却.",
+    "dung": "他学习很努力，可是成绩一直不太好。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "上海那么大，",
+       "你又不知道地址，怎么能找到他呢？"
+      ],
+      "dap": [
+       [
+        "况且"
+       ]
+      ],
+      "chon": [
+       "况且",
+       "所以",
+       "然而"
+      ],
+      "goiY": "\"Thượng Hải rộng thế, huống hồ cậu lại không biết địa chỉ…\" (练习2 ②)",
+      "giai": "况且 bổ sung lý do thứ hai, đi với 又."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "父亲年龄大了，",
+       "身体也不好，我不放心他一个人去旅行。"
+      ],
+      "dap": [
+       [
+        "况且"
+       ]
+      ],
+      "chon": [
+       "况且",
+       "于是",
+       "可是"
+      ],
+      "goiY": "\"Bố đã lớn tuổi, vả lại sức khỏe cũng không tốt…\" (练习4 ③)",
+      "giai": "Hai lý do cùng chiều → 况且; 于是 chỉ kết quả, 可是 chỉ ý ngược."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那小鸡仿佛刚出窝没几天，",
+       "是乌黑乌黑的身子，可爱极了。"
+      ],
+      "dap": [
+       [
+        "况且"
+       ]
+      ],
+      "chon": [
+       "况且",
+       "因此",
+       "不过"
+      ],
+      "goiY": "\"… hơn nữa thân mình lại đen nhánh…\" (câu bài khoá)",
+      "giai": "Thêm một đặc điểm khiến gà con đáng yêu → 况且."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这套房子交通方便，附近有书店，",
+       "房租又不贵，真是再合适不过了。"
+      ],
+      "dap": [
+       [
+        "况且"
+       ]
+      ],
+      "chon": [
+       "况且",
+       "否则",
+       "尽管"
+      ],
+      "goiY": "\"… hơn nữa tiền thuê lại không đắt…\" (ví dụ 2 của sách)",
+      "giai": "Lý do thứ ba cùng chiều → 况且……又……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "时间已经很晚了，况且外面还下着雨，你今晚",
+       "住在这儿吧。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "却"
+      ],
+      "goiY": "\"… tối nay cậu cứ ở lại đây đi.\" — sau hai lý do là kết luận",
+      "giai": "Sau các lý do (…，况且……), vế kết luận hay dùng 就 = thế thì cứ …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件衣服颜色太艳，",
+       "价格也太贵，我不买了。"
+      ],
+      "dap": [
+       [
+        "况且"
+       ]
+      ],
+      "chon": [
+       "况且",
+       "而是",
+       "只要"
+      ],
+      "goiY": "\"Màu áo quá chói, vả lại giá cũng đắt quá…\"",
+      "giai": "况且 + 也: bổ sung lý do không mua."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "假期很短",
+       "，",
+       "况且",
+       "车票",
+       "也不好买",
+       "，",
+       "我",
+       "不想去旅行了",
+       "。"
+      ],
+      "dap": [
+       "假期很短，况且车票也不好买，我不想去旅行了。"
+      ],
+      "goiY": "Kỳ nghỉ ngắn, vả lại vé xe cũng khó mua, tôi không muốn đi du lịch nữa.",
+      "giai": "Lý do 1 → 况且 + lý do 2 → kết luận."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "已经年过50了",
+       "，",
+       "况且",
+       "原本",
+       "就有心脏病",
+       "，",
+       "不能太累",
+       "。"
+      ],
+      "dap": [
+       "他已经年过50了，况且原本就有心脏病，不能太累。"
+      ],
+      "goiY": "Ông ấy đã ngoài 50, hơn nữa vốn có bệnh tim, không thể quá mệt.",
+      "giai": "况且 đứng đầu phân câu thứ hai."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "今天",
+       "太晚了",
+       "，",
+       "况且",
+       "你",
+       "还生着病",
+       "，",
+       "就别出去了",
+       "。"
+      ],
+      "dap": [
+       "今天太晚了，况且你还生着病，就别出去了。"
+      ],
+      "goiY": "Hôm nay muộn quá rồi, vả lại cậu còn đang ốm, đừng ra ngoài nữa.",
+      "giai": "况且 + 还; vế cuối là lời khuyên."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天这么冷，况且你又没穿外套，还是别出门了。",
+      "dung": true,
+      "giai": "Hai lý do cùng chiều (trời lạnh, không mặc áo khoác) → lời khuyên: đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "况且房租不贵，这套房子交通也很方便。",
+      "dung": false,
+      "sua": "这套房子交通很方便，况且房租也不贵。",
+      "giai": "况且 không đứng ở phân câu đầu; phải nêu lý do 1 trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他学习很努力，况且成绩一直不太好。",
+      "dung": false,
+      "sua": "他学习很努力，可是成绩一直不太好。",
+      "giai": "Vế sau ngược chiều với vế trước → dùng 可是, không dùng 况且."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trời đã tối rồi, hơn nữa đường núi lại khó đi, chúng ta nghỉ lại đây một đêm đi.",
+      "dap": [
+       "天已经黑了，况且山路又不好走，我们在这儿住一晚吧。",
+       "天已经黑了，况且山路也不好走，我们就在这儿住一晚吧。"
+      ],
+      "py": "Tiān yǐjīng hēi le, kuàngqiě shānlù yòu bù hǎo zǒu, wǒmen zài zhèr zhù yì wǎn ba.",
+      "goiY": "Dịch sang tiếng Trung, dùng 况且.",
+      "giai": "Lý do 1 (天黑了) + 况且 + lý do 2 (山路又不好走) → lời đề nghị."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tôi không muốn đổi việc, tôi đã làm ở đây mười năm rồi, vả lại tôi cũng rất thích công việc này.",
+      "dap": [
+       "我不想换工作，我在这儿已经工作十年了，况且我也很喜欢这份工作。",
+       "我不想换工作，我已经在这里工作了十年，况且我也很喜欢这份工作。"
+      ],
+      "py": "Wǒ bù xiǎng huàn gōngzuò, wǒ zài zhèr yǐjīng gōngzuò shí nián le, kuàngqiě wǒ yě hěn xǐhuan zhè fèn gōngzuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 况且.",
+      "giai": "况且 + 也: thêm lý do thứ hai cho quyết định không đổi việc."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "上海那么大，再说你又不知道地址，怎么能找到他呢？→ ＿＿＿",
+      "goiY": "viết lại câu, dùng 况且 — 练习2 ② của sách",
+      "mau": "上海那么大，况且你又不知道地址，怎么能找到他呢？",
+      "can": [
+       [
+        "况且"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "飞行员驾机到目的地时，能见度不到500米，大大低于规定标准，＿＿＿，只有4个马灯照明。",
+      "goiY": "bổ sung lý do \"sân bay không có thiết bị bay đêm\" bằng 况且 — 练一练 ① (đáp án sách: D)",
+      "mau": "飞行员驾机到目的地时，能见度不到500米，大大低于规定标准，况且该机场没有夜航设备，只有4个马灯照明。",
+      "can": [
+       [
+        "况且"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "这次假期我不想去旅行了，一来假期短，二来车票也不好买，＿＿＿，我想好好休息休息，复习复习功课。",
+      "goiY": "bổ sung lý do \"sau kỳ nghỉ là thi\" bằng 况且 — 练一练 ② (đáp án sách: C)",
+      "mau": "这次假期我不想去旅行了，一来假期短，二来车票也不好买，况且假期过后就是考试，我想好好休息休息，复习复习功课。",
+      "can": [
+       [
+        "况且"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「大」",
+  "tenVn": "",
+  "cauTruc": [
+   "大 + thời tiết / thời gian / ngày lễ + 的，……: nhấn mạnh \"đang là lúc …\"",
+   "大冬天的 / 大热天的 / 大晴天的 / 大清早 / 大周末的 / 大过年的 / 大年初一的"
+  ],
+  "giaiThich": "大 là tính từ, dùng TRƯỚC một số từ chỉ thời tiết – mùa (时令), thời gian, ngày lễ, thường có dạng 大 + N + 的, để NHẤN MẠNH \"đang là lúc ấy\" (ngụ ý: lúc như thế thì không nên / không thể / lẽ ra phải khác). Hay gặp: 大冬天的, 大热天的, 大晴天的, 大清早, 大白天的, 大周末的, 大过年的, 大年初一的. Vế sau thường là câu hỏi tu từ, câu trách, lời khuyên hoặc sự ngạc nhiên. Khác với 大 so sánh kích thước, tuổi tác (哥哥比弟弟大三岁).",
+  "viDu": [
+   {
+    "zh": "他一大清早就不知道忙什么去了。",
+    "py": "Tā yí dà qīngzǎo jiù bù zhīdào máng shénme qù le.",
+    "vn": "Mới sáng tinh mơ anh ấy đã chẳng biết đi bận việc gì rồi."
+   },
+   {
+    "zh": "大周末的，让人家多睡会吧。",
+    "py": "Dà zhōumò de, ràng rénjia duō shuì huìr ba.",
+    "vn": "Cuối tuần cơ mà, cho người ta ngủ thêm một lát đi."
+   },
+   {
+    "zh": "三祖爷颇感诧异，大冬天的，这里离村子又远，分明不该有这么小的鸡仔呀！",
+    "py": "Sān zǔyé pō gǎn chàyì, dà dōngtiān de, zhèli lí cūnzi yòu yuǎn, fēnmíng bù gāi yǒu zhème xiǎo de jīzǎi ya!",
+    "vn": "Ông cụ Ba lấy làm lạ lắm: giữa mùa đông giá rét, chỗ này lại xa làng, rõ ràng không thể có gà con nhỏ như vậy!"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "很冬天的，你怎么穿这么少？",
+    "why": "Nhấn mạnh thời điểm phải dùng 大 + N + 的; 很 / 非常 là phó từ mức độ, không đứng trước danh từ thời gian.",
+    "dung": "大冬天的，你怎么穿这么少？"
+   },
+   {
+    "sai": "大星期三的，我们去看电影吧！",
+    "why": "大……的 đi với thời gian \"đặc biệt\" (thời tiết khắc nghiệt, ngày nghỉ, ngày lễ, sáng sớm, ban ngày) để nhấn \"lúc như thế này\"; một ngày thường như thứ Tư không có gì để nhấn mạnh.",
+    "dung": "大周末的，我们去看电影吧！"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "三祖爷颇感诧异，",
+       "冬天的，这里离村子又远，分明不该有这么小的鸡仔呀！"
+      ],
+      "dap": [
+       [
+        "大"
+       ]
+      ],
+      "chon": [
+       "大",
+       "很",
+       "太"
+      ],
+      "goiY": "\"… giữa mùa đông giá rét…\" (câu bài khoá)",
+      "giai": "大 + mùa + 的 nhấn mạnh thời điểm; 很 / 太 không đứng trước danh từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "妈妈，",
+       "周末的，让人家多睡会吧。"
+      ],
+      "dap": [
+       [
+        "大"
+       ]
+      ],
+      "chon": [
+       "大",
+       "好",
+       "最"
+      ],
+      "goiY": "\"Cuối tuần cơ mà, cho con ngủ thêm chút…\" (ví dụ 2 của sách)",
+      "giai": "大周末的 = cuối tuần cơ mà."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他一",
+       "清早就不知道忙什么去了。"
+      ],
+      "dap": [
+       [
+        "大"
+       ]
+      ],
+      "chon": [
+       "大",
+       "很",
+       "最"
+      ],
+      "goiY": "\"Mới sáng tinh mơ anh ấy đã …\" (ví dụ 1 của sách)",
+      "giai": "一大清早 = từ sáng tinh mơ (cụm cố định)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "你真奇怪，",
+       "晴天的，带什么雨伞呀！"
+      ],
+      "dap": [
+       [
+        "大"
+       ]
+      ],
+      "chon": [
+       "大",
+       "太",
+       "真"
+      ],
+      "goiY": "\"Trời nắng đẹp thế này, mang ô làm gì!\" (练一练 (1))",
+      "giai": "大晴天的 nhấn mạnh thời tiết đẹp → mang ô là thừa."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "别工作了，",
+       "年初一的，也该好好休息休息啦。"
+      ],
+      "dap": [
+       [
+        "大"
+       ]
+      ],
+      "chon": [
+       "大",
+       "新",
+       "老"
+      ],
+      "goiY": "\"Mùng Một Tết cơ mà, cũng nên nghỉ ngơi…\" (练一练 (2))",
+      "giai": "大年初一的 = mùng Một Tết cơ mà."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大热天",
+       "，你怎么还穿着毛衣？"
+      ],
+      "dap": [
+       [
+        "的"
+       ]
+      ],
+      "chon": [
+       "的",
+       "地",
+       "得"
+      ],
+      "goiY": "\"Trời nóng nực thế này, sao cậu còn mặc áo len?\"",
+      "giai": "Cấu trúc 大 + N + 的 — trợ từ 的 ở cuối cụm."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "大周末的",
+       "，",
+       "让人家",
+       "多睡",
+       "会吧",
+       "。"
+      ],
+      "dap": [
+       "大周末的，让人家多睡会吧。"
+      ],
+      "goiY": "Cuối tuần cơ mà, cho người ta ngủ thêm một lát đi.",
+      "giai": "大周末的 đứng đầu câu, sau có dấu phẩy."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "大冬天的",
+       "，",
+       "你",
+       "怎么",
+       "穿这么少",
+       "？"
+      ],
+      "dap": [
+       "大冬天的，你怎么穿这么少？"
+      ],
+      "goiY": "Giữa mùa đông giá rét, sao cậu mặc ít thế?",
+      "giai": "Vế sau là câu hỏi mang ý trách."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "大过年的",
+       "，",
+       "别",
+       "说",
+       "不高兴的事了",
+       "。"
+      ],
+      "dap": [
+       "大过年的，别说不高兴的事了。"
+      ],
+      "goiY": "Tết nhất cơ mà, đừng nói chuyện không vui nữa.",
+      "giai": "Vế sau là lời khuyên 别……了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "大晴天的，带什么雨伞呀！",
+      "dung": true,
+      "giai": "大 + thời tiết + 的 + câu hỏi tu từ → đúng (练一练 (1))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "非常冬天的，你怎么还开着电扇？",
+      "dung": false,
+      "sua": "大冬天的，你怎么还开着电扇？",
+      "giai": "Nhấn mạnh thời điểm dùng 大, không dùng 非常."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他一大清早就出门了。",
+      "dung": true,
+      "giai": "一大清早 = từ sáng tinh mơ → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trời nóng nực thế này, cậu ra ngoài làm gì?",
+      "dap": [
+       "大热天的，你出去干什么？",
+       "大热天的，你出去干吗？"
+      ],
+      "py": "Dà rètiān de, nǐ chūqù gàn shénme?",
+      "goiY": "Dịch sang tiếng Trung, dùng 大……的.",
+      "giai": "大热天的 = trời nóng nực thế này; vế sau là câu hỏi mang ý can."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tết nhất cơ mà, đừng cãi nhau nữa.",
+      "dap": [
+       "大过年的，别吵架了。",
+       "大过年的，你们别吵了。"
+      ],
+      "py": "Dà guònián de, bié chǎojià le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 大……的.",
+      "giai": "大过年的 + 别……了: lời khuyên dựa vào thời điểm đặc biệt."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿晴天，你出门时干吗要带把雨伞呢？",
+      "goiY": "điền 大 vào đúng vị trí — 练习4 ① của sách (đáp án A)",
+      "mau": "大晴天，你出门时干吗要带把雨伞呢？",
+      "can": [
+       [
+        "大"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，也该好好休息休息啦。",
+      "goiY": "nhấn mạnh \"mùng Một Tết cơ mà\" bằng 大……的 — 练一练 (2) của sách",
+      "mau": "大年初一的，也该好好休息休息啦。",
+      "can": [
+       [
+        "大"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，你怎么穿这么少？",
+      "goiY": "nhấn mạnh \"giữa mùa đông giá rét\" bằng 大……的",
+      "mau": "大冬天的，你怎么穿这么少？",
+      "can": [
+       [
+        "大"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「倒不如」",
+  "tenVn": "",
+  "cauTruc": [
+   "(与其 A)，倒不如 B: A chẳng bằng B, chẳng thà B (chọn B sau khi so sánh)",
+   "与其说 A，倒不如说 B: nói là A chẳng bằng nói là B"
+  ],
+  "giaiThich": "倒不如 biểu thị sau khi SO SÁNH nhiều phương diện thì CHỌN một phương án (chẳng bằng, chẳng thà …). Đứng đầu vế sau, nêu phương án được chọn; vế trước nêu phương án (hoặc tình huống) bị gạt đi. Thường đi cặp với 与其: 与其 A，倒不如 B (A chẳng bằng B → chọn B). Dạng 与其说 A，倒不如说 B = nói là A chẳng bằng nói là B (cách nhìn B đúng hơn). 倒 làm giọng mềm hơn 不如, hàm ý \"ngược lại với điều người ta thường nghĩ\".",
+  "viDu": [
+   {
+    "zh": "假期所有的旅游景点都是人山人海，就算能买上车票，也玩儿不好，倒不如在家清清静静看看书，听听音乐。",
+    "py": "Jiàqī suǒyǒu de lǚyóu jǐngdiǎn dōu shì rénshān-rénhǎi, jiùsuàn néng mǎishang chēpiào, yě wánr bu hǎo, dào bùrú zài jiā qīngqing-jìngjìng kànkan shū, tīngting yīnyuè.",
+    "vn": "Kỳ nghỉ, điểm du lịch nào cũng đông nghịt người, dù có mua được vé xe cũng chơi chẳng ra gì, chẳng thà ở nhà yên tĩnh đọc sách, nghe nhạc."
+   },
+   {
+    "zh": "东西不是你的就不要去争夺，就是争来，也守不住。倒不如付出一分努力，得到一分收获，过平稳和顺的日子。",
+    "py": "Dōngxi bú shì nǐ de jiù búyào qù zhēngduó, jiùshì zhēnglái, yě shǒu bu zhù. Dào bùrú fùchū yì fēn nǔlì, dédào yì fēn shōuhuò, guò píngwěn héshùn de rìzi.",
+    "vn": "Thứ gì không phải của mình thì đừng đi tranh giành, dù có giành được cũng không giữ nổi. Chẳng thà bỏ ra một phần công sức, gặt hái một phần thành quả, sống những ngày bình ổn, êm ấm."
+   },
+   {
+    "zh": "翻开像册，我不禁肃然起敬，与其说这是一本像册，倒不如说这是他大半生的历史。",
+    "py": "Fānkāi xiàngcè, wǒ bùjīn sùrán qǐjìng, yǔqí shuō zhè shì yì běn xiàngcè, dào bùrú shuō zhè shì tā dà bàn shēng de lìshǐ.",
+    "vn": "Mở cuốn album ảnh, tôi không khỏi dâng lên lòng kính trọng: nói đây là một cuốn album ảnh, chẳng bằng nói đây là lịch sử hơn nửa đời người của ông."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "与其一个人生气，倒是找个朋友说出来更好。",
+    "why": "Cặp cố định là 与其……倒不如 / 不如……; thiếu 不如 thì câu mất ý so sánh – lựa chọn.",
+    "dung": "与其一个人生气，倒不如找个朋友说出来更好。"
+   },
+   {
+    "sai": "倒不如在家看看书，与其出去人挤人。",
+    "why": "Phương án bị gạt đi (与其 A) đứng TRƯỚC, phương án được chọn (倒不如 B) đứng SAU.",
+    "dung": "与其出去人挤人，倒不如在家看看书。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "与其一个人生气，",
+       "找个朋友说出来更好。"
+      ],
+      "dap": [
+       [
+        "倒不如"
+       ]
+      ],
+      "chon": [
+       "倒不如",
+       "而且",
+       "何况"
+      ],
+      "goiY": "\"Thay vì giận một mình, chẳng thà …\" (练习4 ②)",
+      "giai": "与其 A，倒不如 B → chọn B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "东西不是你的就不要去争夺，就是争来，也守不住。",
+       "付出一分努力，得到一分收获。"
+      ],
+      "dap": [
+       [
+        "倒不如"
+       ]
+      ],
+      "chon": [
+       "倒不如",
+       "况且",
+       "于是"
+      ],
+      "goiY": "\"… chẳng thà bỏ ra một phần công sức…\" (câu bài khoá)",
+      "giai": "Sau khi phủ định cách làm \"tranh giành\", nêu cách làm tốt hơn → 倒不如."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大周末的，",
+       "在家玩手机，倒不如出去走走。"
+      ],
+      "dap": [
+       [
+        "与其"
+       ]
+      ],
+      "chon": [
+       "与其",
+       "虽然",
+       "因为"
+      ],
+      "goiY": "\"Thay vì ở nhà chơi điện thoại, chẳng thà ra ngoài đi dạo.\"",
+      "giai": "与其 đi cặp với 倒不如."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "与其说这是一本像册，",
+       "这是他大半生的历史。"
+      ],
+      "dap": [
+       [
+        "倒不如说"
+       ]
+      ],
+      "chon": [
+       "倒不如说",
+       "换句话说",
+       "总而言之"
+      ],
+      "goiY": "\"… chẳng bằng nói đây là lịch sử nửa đời người của ông.\" (ví dụ 3 của sách)",
+      "giai": "与其说 A，倒不如说 B."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这么近，与其坐车，",
+       "走路去。"
+      ],
+      "dap": [
+       [
+        "倒不如"
+       ]
+      ],
+      "chon": [
+       "倒不如",
+       "不但",
+       "而且"
+      ],
+      "goiY": "\"Gần thế này, thay vì đi xe, chẳng thà đi bộ.\"",
+      "giai": "与其……倒不如……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "与其说大海是一个安静的少女，",
+       "说是一只凶猛的怪兽。"
+      ],
+      "dap": [
+       [
+        "倒不如"
+       ]
+      ],
+      "chon": [
+       "倒不如",
+       "况且",
+       "虽然"
+      ],
+      "goiY": "\"… chẳng bằng nói là một con quái thú hung dữ.\" (练一练 (3))",
+      "giai": "与其说……倒不如说……: phần 说 đã có sẵn sau chỗ trống."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "与其",
+       "在这里等",
+       "，",
+       "倒不如",
+       "自己",
+       "去找他",
+       "。"
+      ],
+      "dap": [
+       "与其在这里等，倒不如自己去找他。"
+      ],
+      "goiY": "Thay vì chờ ở đây, chẳng thà tự đi tìm anh ấy.",
+      "giai": "与其 A đứng trước, 倒不如 B đứng sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "与其说",
+       "他是老师",
+       "，",
+       "倒不如说",
+       "他是",
+       "我们的朋友",
+       "。"
+      ],
+      "dap": [
+       "与其说他是老师，倒不如说他是我们的朋友。"
+      ],
+      "goiY": "Nói thầy ấy là giáo viên, chẳng bằng nói thầy là bạn của chúng tôi.",
+      "giai": "与其说……倒不如说……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "假期",
+       "到处都是人",
+       "，",
+       "倒不如",
+       "在家",
+       "看看书",
+       "。"
+      ],
+      "dap": [
+       "假期到处都是人，倒不如在家看看书。"
+      ],
+      "goiY": "Kỳ nghỉ đâu đâu cũng đông người, chẳng thà ở nhà đọc sách.",
+      "giai": "倒不如 dùng một mình, vế trước nêu tình huống không tốt."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "与其花钱买贵的，倒不如自己动手做一个。",
+      "dung": true,
+      "giai": "与其 A，倒不如 B → đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "倒不如在家休息，与其出去排队。",
+      "dung": false,
+      "sua": "与其出去排队，倒不如在家休息。",
+      "giai": "Trật tự ngược: 与其 A phải đứng trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "与其说他聪明，倒不如说他勤奋。",
+      "dung": true,
+      "giai": "与其说……倒不如说……: đánh giá \"chăm chỉ\" đúng hơn \"thông minh\" → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Thay vì ngồi chờ ở đây, chẳng thà chúng ta tự đi tìm anh ấy.",
+      "dap": [
+       "与其在这儿等，倒不如我们自己去找他。",
+       "与其在这里等着，倒不如我们自己去找他。"
+      ],
+      "py": "Yǔqí zài zhèr děng, dào bùrú wǒmen zìjǐ qù zhǎo tā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 与其……倒不如…….",
+      "giai": "与其 + phương án bị gạt, 倒不如 + phương án được chọn."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Nói anh ấy thông minh thì chẳng bằng nói anh ấy chăm chỉ.",
+      "dap": [
+       "与其说他聪明，倒不如说他勤奋。",
+       "与其说他聪明，倒不如说他努力。"
+      ],
+      "py": "Yǔqí shuō tā cōngming, dào bùrú shuō tā qínfèn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 与其说……倒不如说…….",
+      "giai": "Cả hai vế đều có 说."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，倒不如过清贫日子。",
+      "goiY": "chọn vế thích hợp \"与其天天为钱财奔忙\" — 练一练 (1) của sách (đáp án B)",
+      "mau": "与其天天为钱财奔忙，倒不如过清贫日子。",
+      "can": [
+       [
+        "与其"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "走向大洋深处，我才发现，＿＿＿，倒不如说是一只凶猛的怪兽。",
+      "goiY": "chọn vế thích hợp \"与其说大海是一个安静的少女\" — 练一练 (3) của sách (đáp án A)",
+      "mau": "走向大洋深处，我才发现，与其说大海是一个安静的少女，倒不如说是一只凶猛的怪兽。",
+      "can": [
+       [
+        "与其说"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "与其一个人生气，＿＿＿找个朋友说出来更好。",
+      "goiY": "điền 倒 đúng vị trí — 练习4 ② của sách (đáp án B)",
+      "mau": "与其一个人生气，倒不如找个朋友说出来更好。",
+      "can": [
+       [
+        "倒不如"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

@@ -2031,6 +2031,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-19.html'
+      },
+      {
+        id: 'hsk6-l20',
+        number: 20,
+        title: 'Ổ gà vàng',
+        titleHanzi: '金鸡窝',
+        titlePinyin: 'Jīnjīwō',
+        topic: '第五单元 美丽家园 · Truyền thuyết dân gian: lòng tham và bài học "của giành được không giữ nổi"',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-20.html'
       }
     ],
     yct: [

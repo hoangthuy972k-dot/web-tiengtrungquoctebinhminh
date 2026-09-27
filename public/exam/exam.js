@@ -159,6 +159,7 @@
           it.part = part; it.section = sec;
           it.text = part.type === 'arrange' || part.type === 'write';
           it.pw = part.type === 'pic-write';
+          it.essay = part.type === 'essay';
           questionIndex[it.q.n] = it;
           allQuestions.push(it);
         });
@@ -177,10 +178,18 @@
     var t = normText(v), n = hanCount(t);
     return !!t && t.indexOf(q.word) !== -1 && n >= (q.minHan || 5) && n <= 40;
   }
+  // Viet doan (HSK 5 cau 99–100): cham so bo — du dai (>= minHan, mac dinh 60 chu Han, toi da 200)
+  // va dung du cac tu cho san (neu co). Sau khi nop co the nho AI cham chi tiet.
+  function essayCheck(q, v) {
+    var t = normText(v), n = hanCount(t);
+    var thieu = (q.words || []).filter(function (w) { return t.indexOf(w) === -1; });
+    return { n: n, thieu: thieu, ok: n >= (q.minHan || 60) && n <= 200 && !thieu.length };
+  }
   function isRight(n, v) {
     var it = questionIndex[n];
     if (!it || v === undefined) return false;
     if (it.pw) return picWriteOk(it.q, v);
+    if (it.essay) return essayCheck(it.q, v).ok;
     if (it.text) {
       var got = normText(v);
       // q.accept: cac cach viet dung khac (dap an chinh thuc cho phep 2 cach xep cau)
@@ -258,7 +267,8 @@
   function zhHtml(zh, n) {
     return esc(zh).replace(/（\s*　*\s*）|\(\s*\)/g, function () {
       return '<span class="ex-blank"' + (n ? ' data-blank="' + n + '"' : '') + '></span>';
-    }).replace(/\n/g, '<br>');
+    }).replace(/【([^【】]*)】/g, '<u class="ex-u">$1</u>') // phan gach chan trong de goc (vd HSK 5 "划线句子")
+      .replace(/\n/g, '<br>');
   }
   function textBlock(q, cls) {
     return '<div class="ex-text ' + (cls || '') + '">' + (q.py ? '<div class="py">' + esc(q.py) + '</div>' : '') + '<div class="zh">' + zhHtml(q.zh, q.n) + '</div></div>';
@@ -408,6 +418,17 @@
           '<textarea class="ex-input ex-textarea" data-input="' + q.n + '" rows="3" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nhập vào câu trả lời của bạn..." aria-label="Câu trả lời câu ' + q.n + '"></textarea>' +
           explainBox(q.n) + '</div>';
       });
+    } else if (part.type === 'essay') {
+      // HSK 5 cau 99: 5 tu cho san · cau 100: mot buc tranh — viet doan khoang 80 chu
+      part.questions.forEach(function (q) {
+        h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n) +
+          (q.words ? '<div class="ex-essay-words zh">' + q.words.map(function (w) { return '<span>' + esc(w) + '</span>'; }).join('') + '</div>' : '') +
+          (q.img ? '<div class="ex-picwrite ex-essay-pic"><img src="' + data.img + q.img + '" alt="Hình câu ' + q.n + '" loading="lazy" /></div>' : '') +
+          (q.prompt ? '<p class="ex-essay-de">' + esc(q.prompt) + '</p>' : '') +
+          '<textarea class="ex-input ex-textarea ex-essay-ta" data-input="' + q.n + '" rows="6" autocomplete="off" spellcheck="false" lang="zh" placeholder="Nhập vào câu trả lời của bạn..." aria-label="Bài viết câu ' + q.n + '"></textarea>' +
+          '<div class="ex-essay-count" data-count="' + q.n + '">0 chữ</div>' +
+          explainBox(q.n) + '</div>';
+      });
     } else if (part.type === 'write') {
       part.questions.forEach(function (q) {
         h += '<div class="ex-card" id="q-' + q.n + '" data-n="' + q.n + '">' + cardHead('Câu ' + q.n) +
@@ -510,6 +531,8 @@
     $('#exMain').addEventListener('click', function (e) {
       var goto = e.target.closest('[data-goto]');
       if (goto) { scrollToId(goto.getAttribute('data-goto')); return; }
+      var ai = e.target.closest('[data-ai-cham]');
+      if (ai) { aiCham(parseInt(ai.getAttribute('data-ai-cham'), 10)); return; }
       var play = e.target.closest('[data-play]');
       if (play) { playClip(parseInt(play.getAttribute('data-play'), 10)); return; }
       if (state.submitted) return;
@@ -545,11 +568,33 @@
       if (v) state.answers[n] = v; else delete state.answers[n];
       saveState();
       applyAnswersToDom();
+      var cnt = $('[data-count="' + n + '"]');
+      if (cnt) cnt.textContent = hanCount(v) + ' chữ';
     });
     document.addEventListener('click', function (e) {
       var goto = e.target.closest('#exSide [data-goto]');
       if (goto) scrollToId(goto.getAttribute('data-goto'));
     });
+  }
+
+  // AI cham chi tiet bai viet doan (dung chung API cham doan cua phan Luyen viet)
+  function aiCham(n) {
+    var q = questionIndex[n].q, box = $('[data-ai="' + n + '"]');
+    if (!box) return;
+    box.innerHTML = '<div class="ex-ai-wait">AI đang chấm bài (khoảng 10–30 giây)…</div>';
+    var h = { 'Content-Type': 'application/json' };
+    var tk = authToken(); if (tk) h.Authorization = 'Bearer ' + tk;
+    fetch('/api/ai/cham-doan', { method: 'POST', headers: h, body: JSON.stringify({
+      capDo: data.level || 'HSK 5', de: q.prompt || (q.words ? 'Dùng các từ cho sẵn viết một đoạn văn khoảng 80 chữ.' : 'Nhìn tranh viết một đoạn văn khoảng 80 chữ.'),
+      tu: q.words || [], bai: String(state.answers[n] || '')
+    }) }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (x) {
+        if (!x.ok || typeof x.j.diem !== 'number') { box.innerHTML = '<div class="ex-ai-err">' + esc((x.j && x.j.error) || 'AI chưa chấm được, thử lại sau nhé.') + '</div>'; return; }
+        var j = x.j;
+        box.innerHTML = '<div class="ex-ai-kq"><b>AI chấm: ' + j.diem + '/100</b>' + (j.nhanXet ? '<p>' + esc(j.nhanXet) + '</p>' : '') +
+          (j.loi && j.loi.length ? '<ol>' + j.loi.map(function (l) { return '<li><s class="hanzi">' + esc(l.sai) + '</s> → <b class="hanzi">' + esc(l.sua) + '</b><br><small>' + esc(l.giai) + '</small></li>'; }).join('') + '</ol>' : '') +
+          (j.baiSua ? '<div class="ex-ai-sua"><small>Bài sau khi sửa:</small><div class="hanzi">' + esc(j.baiSua) + '</div></div>' : '') + '</div>';
+      }).catch(function () { box.innerHTML = '<div class="ex-ai-err">Không kết nối được máy chủ.</div>'; });
   }
 
   function scrollToId(idStr) {
@@ -714,7 +759,14 @@
       var ex = $('[data-explain="' + q.n + '"]');
       if (ex) {
         var ansTxt = typeof q.answer === 'boolean' ? (q.answer ? '✓ Đúng' : '✗ Sai') : q.answer;
-        var h = it.pw
+        var ec = it.essay ? essayCheck(q, chosen) : null;
+        var h = it.essay
+          ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : 'Chấm sơ bộ: ' + (ok ? 'đạt' : 'chưa đạt') + ' — ' + ec.n + ' chữ' +
+              (q.words ? (ec.thieu.length ? ' · còn thiếu: <span class="hanzi">' + esc(ec.thieu.join('、')) + '</span>' : ' · dùng đủ 5 từ') : '') +
+              (ec.n < (q.minHan || 60) ? ' · cần khoảng 80 chữ' : '')) + '</div>' +
+            (chosen !== undefined ? '<div class="ex-ai-box" data-ai="' + q.n + '"><button type="button" class="ex-btn-ghost ex-ai-btn" data-ai-cham="' + q.n + '">Nhờ AI chấm chi tiết</button></div>' : '') +
+            '<details class="ex-essay-mau"><summary>Bài mẫu tham khảo</summary><div class="hanzi">' + esc(q.answer) + '</div>' + (q.vn ? '<div class="vn">' + esc(q.vn) + '</div>' : '') + '</details>'
+          : it.pw
           ? '<div class="ans">' + (chosen === undefined ? 'Bạn chưa làm' : ok ? 'Chấm sơ bộ: đạt (có dùng 「' + esc(q.word) + '」, câu đủ ý)' : 'Chấm sơ bộ: chưa đạt — câu phải dùng 「' + esc(q.word) + '」 và dài khoảng 5–40 chữ') + '</div>' +
             '<div class="ans">Câu mẫu: <span class="hanzi">' + esc(q.answer) + '</span>' + (q.accept && q.accept.length ? '<br>Cách khác: <span class="hanzi">' + esc(q.accept.join(' / ')) + '</span>' : '') + '</div>'
           : it.text
@@ -728,7 +780,8 @@
         if (q.script) h += '<div class="zh hanzi">' + esc(q.script) + '</div>';
         if (q.scriptVn) h += '<div class="vn">' + esc(q.scriptVn) + '</div>';
         if (q.scriptVn && q.starVn) h += '<div class="vn">★ ' + esc(q.starVn) + '</div>';
-        if (q.vn && !q.scriptVn) h += '<div class="vn">' + esc(q.vn) + (q.starVn ? '<br>★ ' + esc(q.starVn) : '') + '</div>';
+        if (q.vn && !q.scriptVn && !it.essay) h += '<div class="vn">' + esc(q.vn) + (q.starVn ? '<br>★ ' + esc(q.starVn) : '') + '</div>';
+        else if (!q.vn && !q.scriptVn && q.starVn) h += '<div class="vn">★ ' + esc(q.starVn) + '</div>';
         ex.innerHTML = h; ex.hidden = false;
       }
     });

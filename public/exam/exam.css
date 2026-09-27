@@ -607,3 +607,21 @@ button.ex-folder:hover { border-color: #e0a59f; transform: translateY(-1px); }
 .ex-picwrite img { width: 220px; max-width: 45%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; background: #fff; }
 .ex-picwrite-tu { font-size: 1.5rem; font-weight: 600; }
 .ex-input.ex-textarea { display: block; width: 100%; box-sizing: border-box; height: auto; min-height: 120px; padding: 14px 18px; border-radius: 18px; resize: vertical; line-height: 1.7; }
+
+/* HSK 5 cau 99–100: viet doan */
+.ex-essay-words { display: flex; flex-wrap: wrap; gap: 10px; padding: 12px 14px; border-radius: var(--ex-radius-sm); background: var(--ex-chip); margin-bottom: 12px; font-size: 1.25rem; }
+.ex-essay-words span { padding: 2px 6px; }
+.ex-essay-pic { justify-content: center; }
+.ex-essay-pic img { width: 320px; max-width: 100%; aspect-ratio: auto; }
+.ex-essay-de { color: var(--ex-mid); font-size: 0.9rem; margin: 0 0 10px; }
+.ex-input.ex-essay-ta { min-height: 180px; }
+.ex-essay-count { text-align: right; font-size: 0.82rem; color: var(--ex-soft); margin-top: 4px; }
+.ex-ai-box { margin: 8px 0; }
+.ex-ai-wait, .ex-ai-err { font-size: 0.9rem; color: var(--ex-mid); }
+.ex-ai-err { color: var(--ex-red); }
+.ex-ai-kq { padding: 10px 12px; border-radius: 12px; background: var(--ex-navy-soft); font-size: 0.92rem; line-height: 1.6; }
+.ex-ai-kq ol { margin: 6px 0; padding-left: 20px; }
+.ex-ai-sua { margin-top: 6px; }
+.ex-essay-mau { margin-top: 8px; }
+.ex-essay-mau summary { cursor: pointer; font-weight: 600; color: var(--ex-navy); }
+.ex-u { text-decoration: underline 2px var(--ex-navy); text-underline-offset: 4px; }

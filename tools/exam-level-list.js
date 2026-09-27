@@ -68,12 +68,20 @@ let h = fs.readFileSync(FILE, 'utf8');
 const eol = h.indexOf('\r\n') >= 0 ? '\r\n' : '\n';
 h = h.replace(/\r\n/g, '\n');
 
-// 1. The thu muc: thay o "Sap co" hoac nut da co
+// 1. The thu muc — CHI trong khoi thu muc de HSK 2.0 ("Chon cap do"); khoi HSK 3.0 phia tren
+//    cung co o "HSK 5 · Sap co" nhung la cua de 3.0, khong duoc dung vao.
+const DAU = '<section class="ex-folders" aria-label="Chọn cấp độ">';
+const a0 = h.indexOf(DAU), a1 = h.indexOf('</section>', a0);
+if (a0 < 0 || a1 < 0) throw new Error('Khong thay khoi thu muc de HSK 2.0');
+let kf = h.slice(a0, a1);
 const reSoon = new RegExp('      <div class="ex-folder is-soon" aria-disabled="true">\\n        <span class="ex-folder-ico">[\\s\\S]*?<b>HSK ' + so + '</b><small>Sắp có[\\s\\S]*?</div>');
 const reBtn = new RegExp('      <button type="button" class="ex-folder" data-folder="' + LV + '"[\\s\\S]*?</button>');
-if (reBtn.test(h)) h = h.replace(reBtn, () => folder);
-else if (reSoon.test(h)) h = h.replace(reSoon, () => folder);
+const reTruocBtn = new RegExp('      <button type="button" class="ex-folder" data-folder="hsk' + (Number(so) - 1) + '"[\\s\\S]*?</button>');
+if (reBtn.test(kf)) kf = kf.replace(reBtn, () => folder);
+else if (reSoon.test(kf)) kf = kf.replace(reSoon, () => folder);
+else if (reTruocBtn.test(kf)) kf = kf.replace(reTruocBtn, (m) => m + '\n' + folder);
 else throw new Error('Khong thay o thu muc HSK ' + so);
+h = h.slice(0, a0) + kf + h.slice(a1);
 
 // 2. Khoi danh sach de: thay neu co, khong thi chen sau khoi cap truoc
 const reSec = new RegExp('    <section class="ex-level" id="lv-' + LV + '"[\\s\\S]*?</section>');

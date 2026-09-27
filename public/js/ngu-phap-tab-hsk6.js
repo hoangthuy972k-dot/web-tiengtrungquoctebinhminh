@@ -7336,3 +7336,933 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-8.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-9.html"] = [
+ {
+  "so": "1",
+  "ten": "「通红、雪白」",
+  "tenVn": "",
+  "cauTruc": [
+   "通红 / 雪白 / 冰凉 / 笔直 / 雪亮 / 滚圆… = tính từ trạng thái (nghĩa chính ở chữ thứ hai)",
+   "Không thêm 很 / 非常 / 特别 phía trước, không thêm 极了 / 得很 phía sau",
+   "Lặp dạng ABAB: 通红通红的 · 雪白雪白的"
+  ],
+  "giaiThich": "通红, 雪白 là TÍNH TỪ TRẠNG THÁI (状态形容词): 通红 = đỏ khắp cả, đỏ bừng; 雪白 = trắng như tuyết, trắng tinh. Chúng chủ yếu dùng để miêu tả trạng thái sự vật, nghĩa chính nằm ở CHỮ THỨ HAI (红, 白), chữ đầu nói lên mức độ / hình ảnh so sánh. Vì bản thân đã hàm ý mức độ cao nên phía trước KHÔNG dùng 很, 非常, 特别…, phía sau KHÔNG thêm 极了, 得很…. Dạng lặp là ABAB (通红通红, 雪白雪白). Cùng loại: 冰凉, 笔直, 雪亮, 滚圆, 漆黑, 碧绿….",
+  "viDu": [
+   {
+    "zh": "我脸憋得通红。",
+    "py": "Wǒ liǎn biē de tōnghóng.",
+    "vn": "Mặt tôi đỏ bừng."
+   },
+   {
+    "zh": "雪白的米在沸腾的水中翻滚，屋子里渐渐弥漫着粥的香气。",
+    "py": "Xuěbái de mǐ zài fèiténg de shuǐ zhōng fāngǔn, wūzi li jiànjiàn mímànzhe zhōu de xiāngqì.",
+    "vn": "Những hạt gạo trắng tinh cuộn lên trong nước sôi sùng sục, trong phòng dần tỏa khắp mùi thơm của cháo."
+   },
+   {
+    "zh": "那几只还没断奶的小猫幸福地躺在妈妈的怀里，肚子都吃得滚圆滚圆的。",
+    "py": "Nà jǐ zhī hái méi duànnǎi de xiǎo māo xìngfú de tǎng zài māma de huái li, dùzi dōu chī de gǔnyuán gǔnyuán de.",
+    "vn": "Mấy chú mèo con còn chưa cai sữa nằm hạnh phúc trong lòng mẹ, bụng con nào cũng ăn căng tròn."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我的脸很通红。",
+    "why": "Tính từ trạng thái đã hàm mức độ cao, không thêm 很 / 非常 phía trước.",
+    "dung": "我的脸通红通红的。"
+   },
+   {
+    "sai": "外面的雪雪白极了。",
+    "why": "Không thêm bổ ngữ mức độ 极了 / 得很 phía sau; muốn nhấn mạnh thì lặp ABAB.",
+    "dung": "外面的雪雪白雪白的。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他害羞得脸都",
+       "了。"
+      ],
+      "dap": [
+       [
+        "通红",
+        "通红通红的"
+       ]
+      ],
+      "chon": [
+       "通红",
+       "非常通红",
+       "通红极了"
+      ],
+      "goiY": "\"Cậu ấy xấu hổ đến mức mặt đỏ bừng.\"",
+      "giai": "Tính từ trạng thái 通红 đã hàm mức độ cao, không thêm 非常 / 极了."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "外面下了一夜的雪，到处都是",
+       "的。"
+      ],
+      "dap": [
+       [
+        "雪白",
+        "雪白雪白"
+       ]
+      ],
+      "chon": [
+       "雪白",
+       "很雪白",
+       "雪白得很"
+      ],
+      "goiY": "\"Tuyết rơi cả đêm, khắp nơi trắng xóa.\"",
+      "giai": "雪白 = trắng như tuyết; không đi với 很, 得很."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "冬天的河水",
+       "，谁也不敢下去。"
+      ],
+      "dap": [
+       [
+        "冰凉",
+        "冰凉冰凉的"
+       ]
+      ],
+      "chon": [
+       "冰凉",
+       "特别冰凉",
+       "冰凉极了"
+      ],
+      "goiY": "\"Nước sông mùa đông lạnh buốt, chẳng ai dám xuống.\"",
+      "giai": "冰凉 = lạnh như băng — tính từ trạng thái, không thêm 特别 / 极了."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他站得",
+       "的，一动也不动。"
+      ],
+      "dap": [
+       [
+        "笔直",
+        "笔直笔直"
+       ]
+      ],
+      "chon": [
+       "笔直",
+       "很笔直",
+       "笔直极了"
+      ],
+      "goiY": "\"Cậu ấy đứng thẳng tắp, không động đậy.\"",
+      "giai": "笔直 = thẳng như bút; làm bổ ngữ sau 得 vẫn không thêm 很."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "小猫吃饱了，肚子",
+       "的。"
+      ],
+      "dap": [
+       [
+        "滚圆滚圆"
+       ]
+      ],
+      "chon": [
+       "滚圆滚圆",
+       "很滚圆",
+       "滚滚圆圆"
+      ],
+      "goiY": "\"Mèo con ăn no, bụng căng tròn.\"",
+      "giai": "Dạng lặp của tính từ trạng thái là ABAB (滚圆滚圆), không phải AABB."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "客厅里灯光",
+       "，照得跟白天一样。"
+      ],
+      "dap": [
+       [
+        "雪亮",
+        "雪亮雪亮的"
+       ]
+      ],
+      "chon": [
+       "雪亮",
+       "非常雪亮",
+       "雪亮得很"
+      ],
+      "goiY": "\"Đèn phòng khách sáng rực, soi sáng như ban ngày.\"",
+      "giai": "雪亮 = sáng như tuyết, sáng rực — không thêm 非常 / 得很."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "脸",
+       "憋得",
+       "通红"
+      ],
+      "dap": [
+       "我脸憋得通红。"
+      ],
+      "goiY": "Mặt tôi đỏ bừng.",
+      "giai": "Chủ ngữ 我脸 + 憋得 + 通红 (bổ ngữ trạng thái là tính từ trạng thái)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "小猫的",
+       "肚子",
+       "吃得",
+       "滚圆滚圆的"
+      ],
+      "dap": [
+       "小猫的肚子吃得滚圆滚圆的。"
+      ],
+      "goiY": "Bụng mèo con ăn căng tròn.",
+      "giai": "V + 得 + ABAB的."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "雪白的",
+       "米",
+       "在沸腾的水中",
+       "翻滚"
+      ],
+      "dap": [
+       "雪白的米在沸腾的水中翻滚。"
+      ],
+      "goiY": "Hạt gạo trắng tinh cuộn lên trong nước sôi.",
+      "giai": "雪白的 làm định ngữ cho 米."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他紧张得脸通红通红的。",
+      "dung": true,
+      "giai": "Dạng lặp ABAB + 的 làm bổ ngữ sau 得 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她的手非常冰凉。",
+      "dung": false,
+      "sua": "她的手冰凉冰凉的。",
+      "giai": "冰凉 là tính từ trạng thái, không thêm 非常."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "外面的雪雪白极了。",
+      "dung": false,
+      "sua": "外面的雪雪白雪白的。",
+      "giai": "Không thêm 极了 sau tính từ trạng thái; muốn nhấn mạnh thì lặp ABAB."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tôi xấu hổ đến mức mặt đỏ bừng.",
+      "dap": [
+       "我害羞得脸通红。",
+       "我羞得脸通红。",
+       "我害羞得满脸通红。",
+       "我羞得满脸通红。"
+      ],
+      "py": "Wǒ hàixiū de liǎn tōnghóng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 通红.",
+      "giai": "\"Đỏ bừng\" = 通红, đứng sau 得, không thêm 很."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cô ấy mặc một chiếc váy trắng tinh.",
+      "dap": [
+       "她穿着一条雪白的裙子。",
+       "她穿了一条雪白的裙子。",
+       "她穿着一条雪白雪白的裙子。",
+       "她穿着雪白的裙子。"
+      ],
+      "py": "Tā chuānzhe yì tiáo xuěbái de qúnzi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 雪白.",
+      "giai": "雪白的 làm định ngữ; lượng từ của 裙子 là 条."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Chọn tính từ trạng thái điền vào câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "夏天，＿＿＿的啤酒加上美味的海鲜，对很多人来讲，极具吸引力。",
+      "goiY": "Chọn 雪亮 / 冰凉 / 笔直 điền vào chỗ trống — 练一练 (1) của sách",
+      "mau": "夏天，冰凉的啤酒加上美味的海鲜，对很多人来讲，极具吸引力。",
+      "can": [
+       [
+        "冰凉"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那是一条＿＿＿的公路，她的车无精打采地在公路上前行，远处是茫茫雪山。",
+      "goiY": "Chọn 雪亮 / 冰凉 / 笔直 điền vào chỗ trống — 练一练 (2) của sách",
+      "mau": "那是一条笔直的公路，她的车无精打采地在公路上前行，远处是茫茫雪山。",
+      "can": [
+       [
+        "笔直"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "人民有自己的亲身经历，眼睛是＿＿＿的。",
+      "goiY": "Chọn 雪亮 / 冰凉 / 笔直 điền vào chỗ trống — 练一练 (3) của sách",
+      "mau": "人民有自己的亲身经历，眼睛是雪亮的。",
+      "can": [
+       [
+        "雪亮"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「说A就A」",
+  "tenVn": "",
+  "cauTruc": [
+   "说 + A + 就 + A (A = động từ / cụm động từ / tính từ, hai A giống hệt nhau)",
+   "说不 + A + 就不 + A (dạng phủ định)",
+   "Biểu thị sự việc xảy ra / tiến triển rất nhanh, bất ngờ — khẩu ngữ"
+  ],
+  "giaiThich": "\"说A就A\" là cách nói khẩu ngữ thường dùng, biểu thị sự việc xảy ra hoặc tiến triển RẤT NHANH, bất ngờ (\"nói… là… ngay\"). Hai chữ A trước và sau phải GIỐNG HỆT nhau, có thể là động từ, cụm động từ hoặc tính từ. Dạng phủ định: 说不A就不A.",
+  "viDu": [
+   {
+    "zh": "说干就干，索性这礼拜就开始。",
+    "py": "Shuō gàn jiù gàn, suǒxìng zhè lǐbài jiù kāishǐ.",
+    "vn": "Nói là làm, dứt khoát bắt đầu ngay tuần này."
+   },
+   {
+    "zh": "他辞了职去旅游，可把爸妈气坏了，天天在家唠叨：“挺好的工作，一点儿都不珍惜，说不干就不干了。”",
+    "py": "Tā cíle zhí qù lǚyóu, kě bǎ bà mā qìhuài le, tiāntiān zài jiā láodao: “Tǐng hǎo de gōngzuò, yìdiǎnr dōu bù zhēnxī, shuō bú gàn jiù bú gàn le.”",
+    "vn": "Cậu ấy nghỉ việc đi du lịch, làm bố mẹ tức điên, ngày nào cũng cằn nhằn ở nhà: \"Công việc tốt thế mà chẳng biết quý, nói bỏ là bỏ.\""
+   },
+   {
+    "zh": "六月下旬，天气说热就热了，人们争先恐后地往商店跑，去买电扇，去买空调。",
+    "py": "Liù yuè xiàxún, tiānqì shuō rè jiù rè le, rénmen zhēngxiān-kǒnghòu de wǎng shāngdiàn pǎo, qù mǎi diànshàn, qù mǎi kōngtiáo.",
+    "vn": "Hạ tuần tháng sáu, trời nói nóng là nóng ngay, mọi người tranh nhau chạy ra cửa hàng mua quạt điện, mua điều hòa."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他说干就做，马上开始了。",
+    "why": "Hai chữ A phải giống hệt nhau (说干就干), không thay bằng từ đồng nghĩa.",
+    "dung": "他说干就干，马上开始了。"
+   },
+   {
+    "sai": "天气说很热就很热了。",
+    "why": "A là tính từ trần, không thêm 很 / 非常.",
+    "dung": "天气说热就热了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "说走就",
+       "，他已经收拾好行李出发了。"
+      ],
+      "dap": [
+       [
+        "走"
+       ]
+      ],
+      "chon": [
+       "走",
+       "去",
+       "跑"
+      ],
+      "goiY": "\"Nói đi là đi, anh ấy đã thu xếp hành lý lên đường rồi.\"",
+      "giai": "Hai chữ A phải giống nhau: 说走就走."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这孩子的脸真像六月的天，说哭",
+       "哭。"
+      ],
+      "dap": [
+       [
+        "就"
+       ]
+      ],
+      "chon": [
+       "就",
+       "才",
+       "又"
+      ],
+      "goiY": "\"Mặt đứa bé như trời tháng sáu, nói khóc là khóc.\"",
+      "giai": "Khung cố định 说 A 就 A."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天气",
+       "冷就冷了，大家赶紧把厚衣服拿了出来。"
+      ],
+      "dap": [
+       [
+        "说"
+       ]
+      ],
+      "chon": [
+       "说",
+       "越",
+       "又"
+      ],
+      "goiY": "\"Trời nói lạnh là lạnh, mọi người vội lấy áo dày ra.\"",
+      "giai": "说冷就冷 = trở lạnh rất nhanh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她的脾气不好，",
+       "就生气。"
+      ],
+      "dap": [
+       [
+        "说生气"
+       ]
+      ],
+      "chon": [
+       "说生气",
+       "说气",
+       "越生气"
+      ],
+      "goiY": "\"Cô ấy tính khí không tốt, nói giận là giận.\"",
+      "giai": "Câu 练习 2 ① của sách: 说生气就生气 — hai A giống hệt nhau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "挺好的工作，说不干就",
+       "了。"
+      ],
+      "dap": [
+       [
+        "不干"
+       ]
+      ],
+      "chon": [
+       "不干",
+       "干",
+       "没干"
+      ],
+      "goiY": "\"Công việc tốt thế, nói bỏ là bỏ.\"",
+      "giai": "Dạng phủ định: 说不干就不干 — cả hai A đều mang 不."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们决定去海边，说",
+       "就去，第二天一早就出发了。"
+      ],
+      "dap": [
+       [
+        "去"
+       ]
+      ],
+      "chon": [
+       "去",
+       "走",
+       "来"
+      ],
+      "goiY": "\"Chúng tôi quyết định ra biển, nói đi là đi, sáng hôm sau đã lên đường.\"",
+      "giai": "说去就去: A trước và sau phải là cùng một từ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "说干",
+       "就干",
+       "我们",
+       "马上开始吧"
+      ],
+      "dap": [
+       "说干就干，我们马上开始吧。",
+       "我们说干就干，马上开始吧。"
+      ],
+      "goiY": "Nói là làm, chúng ta bắt đầu ngay đi.",
+      "giai": "说干就干 đứng đầu câu hoặc sau chủ ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "天气",
+       "说热",
+       "就热了"
+      ],
+      "dap": [
+       "天气说热就热了。"
+      ],
+      "goiY": "Trời nói nóng là nóng.",
+      "giai": "Chủ ngữ + 说A就A + 了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "小孩儿",
+       "说哭",
+       "就哭",
+       "说笑",
+       "就笑"
+      ],
+      "dap": [
+       "小孩儿说哭就哭，说笑就笑。"
+      ],
+      "goiY": "Trẻ con nói khóc là khóc, nói cười là cười.",
+      "giai": "Hai cụm 说A就A song song."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他说走就走，一会儿就不见了。",
+      "dung": true,
+      "giai": "Hai A giống nhau (走), diễn tả hành động rất nhanh — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天气说冷就变冷了。",
+      "dung": false,
+      "sua": "天气说冷就冷了。",
+      "giai": "A trước và sau phải giống hệt nhau: 说冷就冷."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他说辞职就不干了。",
+      "dung": false,
+      "sua": "他说不干就不干了。",
+      "giai": "Dạng phủ định phải lặp y hệt: 说不干就不干."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trời nói mưa là mưa, may mà tớ mang ô.",
+      "dap": [
+       "天说下雨就下雨了，幸亏我带了伞。",
+       "雨说下就下了，幸亏我带了伞。",
+       "天说下就下了，幸亏我带了伞。",
+       "说下雨就下雨了，幸亏我带了伞。"
+      ],
+      "py": "Tiān shuō xià yǔ jiù xià yǔ le, xìngkuī wǒ dàile sǎn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 说A就A.",
+      "giai": "说下雨就下雨 / 说下就下; 幸亏 = may mà."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy nói nghỉ việc là nghỉ, chẳng ai cản được.",
+      "dap": [
+       "他说辞职就辞职，谁也拦不住。",
+       "他说不干就不干，谁也拦不住。",
+       "他说辞职就辞职，谁都拦不住。",
+       "他说不干就不干，谁都拦不住。"
+      ],
+      "py": "Tā shuō cízhí jiù cízhí, shéi yě lán bu zhù.",
+      "goiY": "Dịch sang tiếng Trung, dùng 说A就A.",
+      "giai": "说辞职就辞职 hoặc dạng phủ định 说不干就不干; 拦不住 = cản không nổi."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để viết lại câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "你看天上，阴云密布的，＿＿＿，不带伞哪行啊！",
+      "goiY": "Viết lại câu 练一练 (1): \"……马上就得下雨，不带伞哪行啊！\" bằng 说A就A",
+      "mau": "你看天上，阴云密布的，说下雨就下雨，不带伞哪行啊！",
+      "can": [
+       [
+        "说下雨就下雨",
+        "说下就下"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "小孩儿就是这样，＿＿＿。",
+      "goiY": "Viết lại câu 练一练 (2): \"小孩儿就是这样，一会儿哭，一会儿笑。\" bằng 说A就A",
+      "mau": "小孩儿就是这样，说哭就哭，说笑就笑。",
+      "can": [
+       [
+        "说哭就哭"
+       ],
+       [
+        "说笑就笑"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，好得朝夕相伴，形影不离。",
+      "goiY": "Viết lại câu 练一练 (3): \"很快他们两个就好上了，好得朝夕相伴，形影不离。\" bằng 说A就A",
+      "mau": "他们两个说好就好上了，好得朝夕相伴，形影不离。",
+      "can": [
+       [
+        "说好就好"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「形容词/动词 + 得 + 要命」",
+  "tenVn": "",
+  "cauTruc": [
+   "Adj / V (tâm lý) + 得 + 要命 — … đến cực điểm, … chết đi được",
+   "Hay dùng: 累 / 疼 / 紧张 / 害怕 / 吓 / 空虚 / 气 + 得要命; cũng dùng với 高兴, 喜欢",
+   "Không thêm 很 trước tính từ; 要命 không đứng trước 得"
+  ],
+  "giaiThich": "\"Tính từ / động từ + 得 + 要命\" biểu thị mức độ đã đến CỰC ĐIỂM (\"… chết đi được, … kinh khủng\"). Thường dùng với tính từ / động từ tâm lý chỉ trạng thái khó chịu (累, 疼, 紧张, 害怕, 吓, 空虚, 气…), cũng có thể dùng với 高兴, 喜欢…. Là khẩu ngữ. 要命 đứng SAU 得 làm bổ ngữ; trước tính từ không thêm 很, 非常.",
+  "viDu": [
+   {
+    "zh": "五个小时没碰它，我心空虚得要命。",
+    "py": "Wǔ ge xiǎoshí méi pèng tā, wǒ xīn kōngxū de yào mìng.",
+    "vn": "Năm tiếng không đụng đến nó, lòng tôi trống rỗng kinh khủng."
+   },
+   {
+    "zh": "每次考试之前，不少同学都紧张得要命，吃不好，睡不着，有的还生病。",
+    "py": "Měi cì kǎoshì zhīqián, bù shǎo tóngxué dōu jǐnzhāng de yào mìng, chī bu hǎo, shuì bu zháo, yǒu de hái shēngbìng.",
+    "vn": "Mỗi lần trước kỳ thi, không ít bạn căng thẳng kinh khủng, ăn không ngon, ngủ không được, có bạn còn ốm."
+   },
+   {
+    "zh": "他风趣地说，自从那次让蛇咬了一口，就害怕所有的爬行动物、虫子，见了麻绳都吓得要命。",
+    "py": "Tā fēngqù de shuō, zìcóng nà cì ràng shé yǎole yì kǒu, jiù hàipà suǒyǒu de páxíng dòngwù, chóngzi, jiànle máshéng dōu xià de yào mìng.",
+    "vn": "Anh ấy hài hước kể, từ lần bị rắn cắn, anh sợ tất cả loài bò sát, sâu bọ, thấy sợi dây thừng cũng sợ chết khiếp."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我很累得要命。",
+    "why": "Đã có 要命 chỉ mức độ cực điểm thì không thêm 很 trước tính từ.",
+    "dung": "我累得要命。"
+   },
+   {
+    "sai": "今天我要命得累。",
+    "why": "要命 là bổ ngữ, đứng SAU 得: Adj + 得 + 要命.",
+    "dung": "今天我累得要命。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "爬了一天山，我累得",
+       "。"
+      ],
+      "dap": [
+       [
+        "要命"
+       ]
+      ],
+      "chon": [
+       "要命",
+       "很",
+       "非常"
+      ],
+      "goiY": "\"Leo núi cả ngày, tôi mệt chết đi được.\"",
+      "giai": "Adj + 得 + 要命: 要命 làm bổ ngữ chỉ mức độ cực điểm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "一听说明天考试，他紧张",
+       "要命。"
+      ],
+      "dap": [
+       [
+        "得"
+       ]
+      ],
+      "chon": [
+       "得",
+       "的",
+       "地"
+      ],
+      "goiY": "\"Vừa nghe mai thi, cậu ấy căng thẳng kinh khủng.\"",
+      "giai": "Bổ ngữ mức độ nối bằng 得 (dé)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "看到那条蛇，她吓",
+       "。"
+      ],
+      "dap": [
+       [
+        "得要命"
+       ]
+      ],
+      "chon": [
+       "得要命",
+       "要命得",
+       "很要命"
+      ],
+      "goiY": "\"Nhìn thấy con rắn, cô ấy sợ chết khiếp.\"",
+      "giai": "Trật tự đúng: V + 得 + 要命."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "五个小时没碰手机，我心里",
+       "得要命。"
+      ],
+      "dap": [
+       [
+        "空虚"
+       ]
+      ],
+      "chon": [
+       "空虚",
+       "很空虚",
+       "空虚了"
+      ],
+      "goiY": "\"Năm tiếng không đụng điện thoại, lòng tôi trống rỗng kinh khủng.\"",
+      "giai": "Trước 得要命 dùng tính từ trần, không thêm 很 / 了."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我的牙",
+       "得要命，一晚上都没睡着。"
+      ],
+      "dap": [
+       [
+        "疼"
+       ]
+      ],
+      "chon": [
+       "疼",
+       "很疼",
+       "疼了"
+      ],
+      "goiY": "\"Răng tôi đau chết đi được, cả đêm không ngủ được.\"",
+      "giai": "Tính từ trần + 得要命."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "收到大学的录取通知书，他高兴",
+       "。"
+      ],
+      "dap": [
+       [
+        "得要命"
+       ]
+      ],
+      "chon": [
+       "得要命",
+       "要命",
+       "得很要命"
+      ],
+      "goiY": "\"Nhận được giấy báo trúng tuyển đại học, cậu ấy vui chết đi được.\"",
+      "giai": "得要命 cũng dùng được với cảm xúc tích cực (高兴, 喜欢)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "累得",
+       "要命",
+       "爬了一天山"
+      ],
+      "dap": [
+       "爬了一天山，我累得要命。",
+       "我爬了一天山，累得要命。"
+      ],
+      "goiY": "Leo núi cả ngày, tôi mệt chết đi được.",
+      "giai": "Nguyên nhân đặt trước, Adj + 得要命 đặt sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "每次考试前",
+       "她",
+       "都",
+       "紧张得",
+       "要命"
+      ],
+      "dap": [
+       "每次考试前，她都紧张得要命。",
+       "她每次考试前都紧张得要命。"
+      ],
+      "goiY": "Lần nào trước khi thi cô ấy cũng căng thẳng kinh khủng.",
+      "giai": "都 đứng sau chủ ngữ, trước cụm 紧张得要命."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "心里",
+       "空虚得",
+       "要命"
+      ],
+      "dap": [
+       "我心里空虚得要命。"
+      ],
+      "goiY": "Lòng tôi trống rỗng kinh khủng.",
+      "giai": "Chủ ngữ + 心里 + Adj得要命."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "考试时我紧张得要命，手心里都是汗。",
+      "dung": true,
+      "giai": "Adj + 得要命 — đúng (câu 练习 2 ⑥ của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他很害怕得要命。",
+      "dung": false,
+      "sua": "他害怕得要命。",
+      "giai": "Đã có 要命 thì không thêm 很."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "今天我要命得累。",
+      "dung": false,
+      "sua": "今天我累得要命。",
+      "giai": "要命 là bổ ngữ, đứng sau 得."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Trước mỗi kỳ thi, tôi đều căng thẳng kinh khủng.",
+      "dap": [
+       "每次考试之前，我都紧张得要命。",
+       "每次考试前，我都紧张得要命。",
+       "每次考试以前，我都紧张得要命。",
+       "我每次考试之前都紧张得要命。"
+      ],
+      "py": "Měi cì kǎoshì zhīqián, wǒ dōu jǐnzhāng de yào mìng.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……得要命.",
+      "giai": "\"Kinh khủng\" = 得要命 đặt sau tính từ; 每次……都……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Không có điện thoại, cậu ấy thấy buồn chán chết đi được.",
+      "dap": [
+       "没有手机，他觉得无聊得要命。",
+       "没有手机，他无聊得要命。",
+       "没有手机，他觉得空虚得要命。",
+       "没有手机，他空虚得要命。"
+      ],
+      "py": "Méiyǒu shǒujī, tā juéde wúliáo de yào mìng.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……得要命.",
+      "giai": "无聊 / 空虚 + 得要命; không nói 很无聊得要命."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他的确是个热心肠，尽管他平日大事小事特别多，＿＿＿，可是只要有人求他，他一定会全力相助。",
+      "goiY": "Hoàn thành câu 练一练 (1) của sách bằng \"形容词/动词 + 得 + 要命\"",
+      "mau": "他的确是个热心肠，尽管他平日大事小事特别多，忙得要命，可是只要有人求他，他一定会全力相助。",
+      "can": [
+       [
+        "得要命"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那是我第一次拍戏。临拍前一晚，我＿＿＿，整晚睡不着，想戏怎么演，手势怎么摆，足足想了一夜。",
+      "goiY": "Hoàn thành câu 练一练 (2) của sách bằng \"形容词/动词 + 得 + 要命\"",
+      "mau": "那是我第一次拍戏。临拍前一晚，我紧张得要命，整晚睡不着，想戏怎么演，手势怎么摆，足足想了一夜。",
+      "can": [
+       [
+        "得要命"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "妈妈不但在生气，而且＿＿＿。",
+      "goiY": "Hoàn thành câu 练一练 (3) của sách bằng \"形容词/动词 + 得 + 要命\"",
+      "mau": "妈妈不但在生气，而且气得要命。",
+      "can": [
+       [
+        "得要命"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

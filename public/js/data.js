@@ -1899,6 +1899,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-8.html'
+      },
+      {
+        id: 'hsk6-l9',
+        number: 9,
+        title: 'Một ngày không sử dụng điện thoại di động',
+        titleHanzi: '不用手机的日子',
+        titlePinyin: 'Bú yòng shǒujī de rìzi',
+        topic: '第三单元 多彩社会 · Xã hội muôn màu — Điện thoại thông minh & cuộc sống',
+        vocabCount: 47,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-9.html'
       }
     ],
     yct: [

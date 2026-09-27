@@ -1,0 +1,78 @@
+{
+ "zh": "奇异的灯光",
+ "py": "Qíyì de dēngguāng",
+ "vn": "Ánh sáng kỳ lạ",
+ "topic": "第七单元 经典阅读 · Chuyện \"túi đom đóm soi sách\": nghèo vật chất không đáng sợ, đáng sợ là nghèo tinh thần",
+ "vocabCount": 51,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "别说",
+   "explain": "别说 (liên từ) dùng trong câu ghép NHƯỢNG BỘ – TIẾN TẦNG: hạ thấp tầm quan trọng của một người / sự việc (điều \"hiển nhiên\", khỏi phải nói) để làm nổi bật người / sự việc khác — \"đừng nói đến…, nói gì đến…, huống chi…\". Thường dùng cùng 连……都 / 也 hoặc 就是 / 即使……也……. Có hai trật tự: ① 别说 A（了），就是 / 即使 / 连 B 也 / 都……: A là điều dĩ nhiên (蜡烛 đắt tiền thì khỏi nói), B là điều \"đến mức cả…\" (ngay cả 灯油 cũng phải tiết kiệm); ② 连 B 都 / 也……，别说 A 了: nêu điều khó xảy ra trước, rồi 别说 kết luận điều hiển nhiên hơn. Chủ yếu dùng trong khẩu ngữ; tương đương 更不用说 (văn viết: 何况).",
+   "rule": "<strong style=\"color:var(--sky-d)\">别说</strong> A（了），<strong style=\"color:var(--sky-d)\">就是 / 即使 / 连</strong> B <strong style=\"color:var(--sky-d)\">也 / 都</strong>……　|　<strong style=\"color:var(--sky-d)\">连</strong> B <strong style=\"color:var(--sky-d)\">都 / 也</strong>……，<strong style=\"color:var(--sky-d)\">别说</strong> A 了",
+   "examples": [
+    {
+     "zh": "晚上看书别说蜡烛了，就是灯油也要节省着用。",
+     "py": "Wǎnshang kàn shū biéshuō làzhú le, jiùshì dēngyóu yě yào jiéshěngzhe yòng.",
+     "vn": "Buổi tối đọc sách, nói gì đến nến, ngay cả dầu đèn cũng phải dùng dè sẻn."
+    },
+    {
+     "zh": "我认识的那点儿字，别说写小说了，看小说都看不下来。",
+     "py": "Wǒ rènshi de nà diǎnr zì, biéshuō xiě xiǎoshuō le, kàn xiǎoshuō dōu kàn bu xiàlái.",
+     "vn": "Với chừng ấy chữ tôi biết, nói gì đến viết tiểu thuyết, đọc tiểu thuyết thôi cũng không đọc nổi."
+    },
+    {
+     "zh": "工厂管理很严，别说外人，即使本厂的人也不能在各个车间乱跑。",
+     "py": "Gōngchǎng guǎnlǐ hěn yán, biéshuō wàirén, jíshǐ běn chǎng de rén yě bù néng zài gège chējiān luàn pǎo.",
+     "vn": "Nhà máy quản lý rất nghiêm, đừng nói người ngoài, ngay cả người của nhà máy cũng không được chạy lung tung giữa các phân xưởng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他连自行车都不会骑，别说走路了。",
+     "why": "Ngược logic: sau 别说 phải là điều \"hiển nhiên hơn\", còn sau 连 là điều khó hơn / ít ai ngờ. Đi bộ dễ hơn đi xe đạp nên không thể \"đến xe đạp còn không biết đi, nói gì đến đi bộ\".",
+     "right": "他连路都走不稳，别说骑自行车了。"
+    },
+    {
+     "wrong": "工厂管理很严，别说外人，即使本厂的人不能乱跑。",
+     "why": "Vế sau có 即使 / 就是 / 连 thì phải có 也 / 都 đi kèm trước động từ.",
+     "right": "工厂管理很严，别说外人，即使本厂的人也不能乱跑。"
+    }
+   ]
+  },
+  {
+   "point": "来来回回",
+   "explain": "Một số động từ hai âm tiết AB có thể lặp theo kiểu AABB: 打闹 → 打打闹闹, 进出 → 进进出出, 来往 → 来来往往, 拉扯 → 拉拉扯扯, 比划 → 比比划划; đôi khi hai từ có nghĩa liên quan cũng ghép lại theo kiểu này: 嘻嘻哈哈, 磕磕碰碰, 拖拖拉拉, 来来回回. Khi dùng như vậy, hình thức và chức năng của động từ rất giống TÍNH TỪ: miêu tả trạng thái kéo dài, lặp đi lặp lại, sinh động. Làm VỊ NGỮ thì phía sau thường có 的 (整天蹦蹦跳跳、说说笑笑的); làm TRẠNG NGỮ thì phía sau thường có 地 (来来回回地飞). Dạng AABB đã mang sắc thái miêu tả nên KHÔNG thêm 很 / 非常 phía trước, không mang tân ngữ; khác với ABAB (讨论讨论, 研究研究) là \"làm thử, làm một chút\".",
+   "rule": "AB → <strong style=\"color:var(--sky-d)\">AABB</strong> (来回 → 来来回回, 说笑 → 说说笑笑)　|　Vị ngữ: S + <strong style=\"color:var(--sky-d)\">AABB + 的</strong>　|　Trạng ngữ: <strong style=\"color:var(--sky-d)\">AABB + 地</strong> + V",
+   "examples": [
+    {
+     "zh": "小孩子就喜欢打打闹闹，磕磕碰碰是难免的，过几天就好了，别担心。",
+     "py": "Xiǎoháizi jiù xǐhuan dǎdǎnàonào, kēkēpèngpèng shì nánmiǎn de, guò jǐ tiān jiù hǎo le, bié dānxīn.",
+     "vn": "Trẻ con là thích đùa nghịch chạy nhảy, va quệt chút ít là khó tránh, vài hôm là khỏi thôi, đừng lo."
+    },
+    {
+     "zh": "虽说她已经是大人了，可整天还是蹦蹦跳跳，说说笑笑的。",
+     "py": "Suīshuō tā yǐjīng shì dàren le, kě zhěngtiān háishi bèngbèngtiàotiào, shuōshuōxiàoxiào de.",
+     "vn": "Tuy cô ấy đã là người lớn rồi, nhưng suốt ngày vẫn nhảy nhót tung tăng, cười cười nói nói."
+    },
+    {
+     "zh": "只见一大群萤火虫在低空盘旋飞舞，来来回回地飞。",
+     "py": "Zhǐ jiàn yí dà qún yínghuǒchóng zài dīkōng pánxuán fēiwǔ, láiláihuíhuí de fēi.",
+     "vn": "Chỉ thấy một đàn đom đóm lớn lượn vòng nhảy múa ở tầm thấp, bay qua bay lại."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他办事很拖拖拉拉的，让人着急。",
+     "why": "Dạng lặp AABB đã mang sắc thái miêu tả (mức độ), không thêm 很 / 非常 phía trước.",
+     "right": "他办事拖拖拉拉的，让人着急。"
+    },
+    {
+     "wrong": "下课了，同学们说笑说笑地走出了教室。",
+     "why": "Miêu tả trạng thái sinh động phải lặp kiểu AABB (说说笑笑); kiểu ABAB (说笑说笑) không dùng làm trạng ngữ như vậy.",
+     "right": "下课了，同学们说说笑笑地走出了教室。"
+    }
+   ]
+  }
+ ]
+}

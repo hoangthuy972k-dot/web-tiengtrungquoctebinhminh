@@ -22522,3 +22522,638 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-25.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-26.html"] = [
+ {
+  "so": "1",
+  "ten": "「别说」",
+  "tenVn": "",
+  "cauTruc": [
+   "别说 A（了），就是 / 即使 B 也……: 别说蜡烛了，就是灯油也要节省着用",
+   "连 B 都 / 也……，别说 A 了: 连大人都爱看，别说小孩子了"
+  ],
+  "giaiThich": "别说 (liên từ) dùng trong câu ghép NHƯỢNG BỘ – TIẾN TẦNG: hạ thấp tầm quan trọng của một người / sự việc (điều \"hiển nhiên\", khỏi phải nói) để làm nổi bật người / sự việc khác — \"đừng nói đến…, nói gì đến…, huống chi…\". Thường dùng cùng 连……都 / 也 hoặc 就是 / 即使……也……. Có hai trật tự: ① 别说 A（了），就是 / 即使 / 连 B 也 / 都……: A là điều dĩ nhiên (蜡烛 đắt tiền thì khỏi nói), B là điều \"đến mức cả…\" (ngay cả 灯油 cũng phải tiết kiệm); ② 连 B 都 / 也……，别说 A 了: nêu điều khó xảy ra trước, rồi 别说 kết luận điều hiển nhiên hơn. Chủ yếu dùng trong khẩu ngữ; tương đương 更不用说 (văn viết: 何况).",
+  "viDu": [
+   {
+    "zh": "晚上看书别说蜡烛了，就是灯油也要节省着用。",
+    "py": "Wǎnshang kàn shū biéshuō làzhú le, jiùshì dēngyóu yě yào jiéshěngzhe yòng.",
+    "vn": "Buổi tối đọc sách, nói gì đến nến, ngay cả dầu đèn cũng phải dùng dè sẻn."
+   },
+   {
+    "zh": "我认识的那点儿字，别说写小说了，看小说都看不下来。",
+    "py": "Wǒ rènshi de nà diǎnr zì, biéshuō xiě xiǎoshuō le, kàn xiǎoshuō dōu kàn bu xiàlái.",
+    "vn": "Với chừng ấy chữ tôi biết, nói gì đến viết tiểu thuyết, đọc tiểu thuyết thôi cũng không đọc nổi."
+   },
+   {
+    "zh": "工厂管理很严，别说外人，即使本厂的人也不能在各个车间乱跑。",
+    "py": "Gōngchǎng guǎnlǐ hěn yán, biéshuō wàirén, jíshǐ běn chǎng de rén yě bù néng zài gège chējiān luàn pǎo.",
+    "vn": "Nhà máy quản lý rất nghiêm, đừng nói người ngoài, ngay cả người của nhà máy cũng không được chạy lung tung giữa các phân xưởng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他连自行车都不会骑，别说走路了。",
+    "why": "Ngược logic: sau 别说 phải là điều \"hiển nhiên hơn\", còn sau 连 là điều khó hơn / ít ai ngờ. Đi bộ dễ hơn đi xe đạp nên không thể \"đến xe đạp còn không biết đi, nói gì đến đi bộ\".",
+    "dung": "他连路都走不稳，别说骑自行车了。"
+   },
+   {
+    "sai": "工厂管理很严，别说外人，即使本厂的人不能乱跑。",
+    "why": "Vế sau có 即使 / 就是 / 连 thì phải có 也 / 都 đi kèm trước động từ.",
+    "dung": "工厂管理很严，别说外人，即使本厂的人也不能乱跑。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "那个动画片那么好看，连大人都爱看，",
+       "小孩子了。"
+      ],
+      "dap": [
+       [
+        "别说"
+       ]
+      ],
+      "chon": [
+       "别说",
+       "不但",
+       "虽然"
+      ],
+      "goiY": "\"Bộ phim hoạt hình ấy hay thế, đến người lớn còn mê, nói gì đến trẻ con.\" (练一练 (1))",
+      "giai": "连 B 都……，别说 A 了: nêu điều ít ai ngờ (người lớn mê) trước, 别说 dẫn ra điều hiển nhiên hơn (trẻ con)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那么破的自行车，别说卖出去，白给",
+       "未必有人要。"
+      ],
+      "dap": [
+       [
+        "也"
+       ]
+      ],
+      "chon": [
+       "也",
+       "就",
+       "才"
+      ],
+      "goiY": "\"Xe đạp nát thế, nói gì đến bán được, cho không cũng chưa chắc có người lấy.\" (练一练 (2))",
+      "giai": "Vế sau của 别说 thường có 也 / 都: 白给也未必有人要."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "别说他不在，",
+       "在，他也不会见你。"
+      ],
+      "dap": [
+       [
+        "就是"
+       ]
+      ],
+      "chon": [
+       "就是",
+       "只是",
+       "于是"
+      ],
+      "goiY": "\"Đừng nói là anh ấy không có nhà, dù có nhà anh ấy cũng không gặp anh đâu.\" (练一练 (3))",
+      "giai": "别说 A，就是 B 也……: 就是 = 即使 (cho dù)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "晚上看书别说",
+       "了，就是灯油也要节省着用。"
+      ],
+      "dap": [
+       [
+        "蜡烛"
+       ]
+      ],
+      "chon": [
+       "蜡烛",
+       "灯油",
+       "萤火虫"
+      ],
+      "goiY": "\"Buổi tối đọc sách, nói gì đến nến, ngay cả dầu đèn cũng phải dùng dè sẻn.\" (câu bài khoá)",
+      "giai": "Sau 别说 là thứ \"dĩ nhiên không dùng nổi\" (nến đắt hơn dầu đèn); sau 就是 là thứ rẻ hơn mà vẫn phải tiết kiệm."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我认识的那点儿字，别说写小说了，看小说",
+       "看不下来。"
+      ],
+      "dap": [
+       [
+        "都"
+       ]
+      ],
+      "chon": [
+       "都",
+       "才",
+       "就"
+      ],
+      "goiY": "\"Với chừng ấy chữ tôi biết, nói gì viết tiểu thuyết, đọc thôi cũng không nổi.\" (ví dụ của sách)",
+      "giai": "Vế sau dùng 都 / 也 nhấn \"ngay cả…\": 看小说都看不下来."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "工厂管理很严，别说外人，",
+       "本厂的人也不能在各个车间乱跑。"
+      ],
+      "dap": [
+       [
+        "即使"
+       ]
+      ],
+      "chon": [
+       "即使",
+       "因为",
+       "如果"
+      ],
+      "goiY": "\"Nhà máy quản lý rất nghiêm, đừng nói người ngoài, ngay cả người nhà máy cũng không được chạy lung tung.\" (ví dụ của sách)",
+      "giai": "别说 A，即使 B 也……: 即使 = 就是 (văn viết hơn)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "连",
+       "汉字",
+       "都",
+       "不认识",
+       "，",
+       "别说",
+       "写文章",
+       "了"
+      ],
+      "dap": [
+       "他连汉字都不认识，别说写文章了。"
+      ],
+      "goiY": "Nó đến chữ Hán còn không biết, nói gì đến viết văn.",
+      "giai": "连 B 都……，别说 A 了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "别说",
+       "一个月",
+       "了",
+       "，",
+       "就是",
+       "一年",
+       "我",
+       "也",
+       "等得起"
+      ],
+      "dap": [
+       "别说一个月了，就是一年我也等得起。",
+       "就是一年我也等得起，别说一个月了。"
+      ],
+      "goiY": "Đừng nói một tháng, một năm tôi cũng chờ được.",
+      "giai": "别说 A（了），就是 B 也……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这道题",
+       "连老师",
+       "都",
+       "做不出来",
+       "，",
+       "别说",
+       "我们",
+       "了"
+      ],
+      "dap": [
+       "这道题连老师都做不出来，别说我们了。"
+      ],
+      "goiY": "Bài này đến thầy giáo còn không làm ra, nói gì đến chúng em.",
+      "giai": "Điều khó tin (thầy không làm được) đứng trước, 别说 + điều hiển nhiên ở cuối."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他连路都走不稳，别说骑自行车了。",
+      "dung": true,
+      "giai": "Đúng: đi bộ còn không vững (điều dễ hơn mà cũng không làm được) → đi xe đạp (khó hơn) thì khỏi phải nói."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他连自行车都不会骑，别说走路了。",
+      "dung": false,
+      "sua": "他连路都走不稳，别说骑自行车了。",
+      "giai": "Ngược logic: điều sau 别说 phải \"hiển nhiên hơn\" điều sau 连. Đi bộ dễ hơn đi xe đạp."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "别说外人，即使本厂的人不能在车间乱跑。",
+      "dung": false,
+      "sua": "别说外人，即使本厂的人也不能在车间乱跑。",
+      "giai": "Có 即使 thì vế sau phải có 也 trước động từ."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Bài này ngay cả thầy giáo cũng thấy khó, nói gì đến học sinh chúng em.",
+      "dap": [
+       "这道题连老师都觉得难，别说我们学生了。",
+       "这道题连老师都觉得难，更别说我们学生了。",
+       "别说我们学生了，这道题连老师都觉得难。"
+      ],
+      "py": "Zhè dào tí lián lǎoshī dōu juéde nán, biéshuō wǒmen xuésheng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 连……都……，别说……了.",
+      "giai": "\"Nói gì đến …\" = 别说……了, đặt ở vế sau khi vế trước có 连……都……."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ở vùng núi này, nói gì đến máy tính, ngay cả điện cũng không có.",
+      "dap": [
+       "在这个山区，别说电脑了，连电都没有。",
+       "这个山区别说电脑了，就是电也没有。",
+       "在这个山区，别说电脑，连电都没有。"
+      ],
+      "py": "Zài zhège shānqū, biéshuō diànnǎo le, lián diàn dōu méiyǒu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 别说……，连……都…….",
+      "giai": "别说 đứng đầu vế trước, vế sau dùng 连 / 就是 + 也 / 都."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "那个动画片那么好看，连大人都爱看，＿＿＿。",
+      "goiY": "Hoàn thành câu bằng 别说 (练一练 (1) của sách).",
+      "mau": "那个动画片那么好看，连大人都爱看，别说小孩子了。",
+      "can": [
+       [
+        "别说"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那么破的自行车，＿＿＿，白给也未必有人要。",
+      "goiY": "Hoàn thành câu bằng 别说 (练一练 (2) của sách).",
+      "mau": "那么破的自行车，别说卖出去，白给也未必有人要。",
+      "can": [
+       [
+        "别说"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，就是在，他也不会见你。",
+      "goiY": "Hoàn thành câu bằng 别说 (练一练 (3) của sách).",
+      "mau": "别说他不在，就是在，他也不会见你。",
+      "can": [
+       [
+        "别说"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「来来回回」",
+  "tenVn": "",
+  "cauTruc": [
+   "AB → AABB: 来回 → 来来回回, 说笑 → 说说笑笑, 打闹 → 打打闹闹",
+   "Vị ngữ: S + AABB + 的 (整天说说笑笑的)",
+   "Trạng ngữ: AABB + 地 + V (来来回回地飞)"
+  ],
+  "giaiThich": "Một số động từ hai âm tiết AB có thể lặp theo kiểu AABB: 打闹 → 打打闹闹, 进出 → 进进出出, 来往 → 来来往往, 拉扯 → 拉拉扯扯, 比划 → 比比划划; đôi khi hai từ có nghĩa liên quan cũng ghép lại theo kiểu này: 嘻嘻哈哈, 磕磕碰碰, 拖拖拉拉, 来来回回. Khi dùng như vậy, hình thức và chức năng của động từ rất giống TÍNH TỪ: miêu tả trạng thái kéo dài, lặp đi lặp lại, sinh động. Làm VỊ NGỮ thì phía sau thường có 的 (整天蹦蹦跳跳、说说笑笑的); làm TRẠNG NGỮ thì phía sau thường có 地 (来来回回地飞). Dạng AABB đã mang sắc thái miêu tả nên KHÔNG thêm 很 / 非常 phía trước, không mang tân ngữ; khác với ABAB (讨论讨论, 研究研究) là \"làm thử, làm một chút\".",
+  "viDu": [
+   {
+    "zh": "小孩子就喜欢打打闹闹，磕磕碰碰是难免的，过几天就好了，别担心。",
+    "py": "Xiǎoháizi jiù xǐhuan dǎdǎnàonào, kēkēpèngpèng shì nánmiǎn de, guò jǐ tiān jiù hǎo le, bié dānxīn.",
+    "vn": "Trẻ con là thích đùa nghịch chạy nhảy, va quệt chút ít là khó tránh, vài hôm là khỏi thôi, đừng lo."
+   },
+   {
+    "zh": "虽说她已经是大人了，可整天还是蹦蹦跳跳，说说笑笑的。",
+    "py": "Suīshuō tā yǐjīng shì dàren le, kě zhěngtiān háishi bèngbèngtiàotiào, shuōshuōxiàoxiào de.",
+    "vn": "Tuy cô ấy đã là người lớn rồi, nhưng suốt ngày vẫn nhảy nhót tung tăng, cười cười nói nói."
+   },
+   {
+    "zh": "只见一大群萤火虫在低空盘旋飞舞，来来回回地飞。",
+    "py": "Zhǐ jiàn yí dà qún yínghuǒchóng zài dīkōng pánxuán fēiwǔ, láiláihuíhuí de fēi.",
+    "vn": "Chỉ thấy một đàn đom đóm lớn lượn vòng nhảy múa ở tầm thấp, bay qua bay lại."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他办事很拖拖拉拉的，让人着急。",
+    "why": "Dạng lặp AABB đã mang sắc thái miêu tả (mức độ), không thêm 很 / 非常 phía trước.",
+    "dung": "他办事拖拖拉拉的，让人着急。"
+   },
+   {
+    "sai": "下课了，同学们说笑说笑地走出了教室。",
+    "why": "Miêu tả trạng thái sinh động phải lặp kiểu AABB (说说笑笑); kiểu ABAB (说笑说笑) không dùng làm trạng ngữ như vậy.",
+    "dung": "下课了，同学们说说笑笑地走出了教室。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他这个人办事就是",
+       "的，让人着急。"
+      ],
+      "dap": [
+       [
+        "拖拖拉拉"
+       ]
+      ],
+      "chon": [
+       "拖拖拉拉",
+       "说说笑笑",
+       "打打闹闹"
+      ],
+      "goiY": "\"Cái người này làm việc cứ lề mà lề mề, khiến người ta sốt ruột.\" (练一练 (1))",
+      "giai": "拖拖拉拉 = lề mề, dây dưa — hợp với 让人着急."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在饭馆，吃完饭",
+       "争着付钱的准是中国人。"
+      ],
+      "dap": [
+       [
+        "吵吵嚷嚷"
+       ]
+      ],
+      "chon": [
+       "吵吵嚷嚷",
+       "拖拖拉拉",
+       "蹦蹦跳跳"
+      ],
+      "goiY": "\"Ở nhà hàng, ăn xong mà ồn ào tranh nhau trả tiền thì chắc chắn là người Trung Quốc.\" (练一练 (2))",
+      "giai": "吵吵嚷嚷 = ồn ào, nhao nhao — tả cảnh tranh nhau trả tiền."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那时我们住一个宿舍，大伙天天说说笑笑、",
+       "地，快活极了。"
+      ],
+      "dap": [
+       [
+        "打打闹闹"
+       ]
+      ],
+      "chon": [
+       "打打闹闹",
+       "拖拖拉拉",
+       "吵吵嚷嚷"
+      ],
+      "goiY": "\"Hồi ấy chúng tôi ở chung ký túc xá, cả bọn ngày nào cũng cười nói, đùa nghịch, vui ơi là vui.\" (练一练 (3))",
+      "giai": "说说笑笑、打打闹闹 + 地: hai dạng AABB song song làm trạng ngữ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只见一大群萤火虫在低空盘旋飞舞，",
+       "地飞。"
+      ],
+      "dap": [
+       [
+        "来来回回"
+       ]
+      ],
+      "chon": [
+       "来来回回",
+       "来回来回",
+       "回回来来"
+      ],
+      "goiY": "\"Chỉ thấy một đàn đom đóm lượn vòng ở tầm thấp, bay qua bay lại.\" (câu bài khoá)",
+      "giai": "AB (来回) → AABB (来来回回), không phải ABAB."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽说她已经是大人了，可整天还是蹦蹦跳跳，说说笑笑",
+       "。"
+      ],
+      "dap": [
+       [
+        "的"
+       ]
+      ],
+      "chon": [
+       "的",
+       "地",
+       "得"
+      ],
+      "goiY": "\"Tuy đã là người lớn, cô ấy vẫn suốt ngày nhảy nhót, cười nói.\" (ví dụ của sách)",
+      "giai": "AABB làm VỊ NGỮ → phía sau thường có 的."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "下课了，同学们说说笑笑",
+       "走出了教室。"
+      ],
+      "dap": [
+       [
+        "地"
+       ]
+      ],
+      "chon": [
+       "地",
+       "的",
+       "得"
+      ],
+      "goiY": "\"Tan học, các bạn cười cười nói nói đi ra khỏi lớp.\"",
+      "giai": "AABB làm TRẠNG NGỮ trước động từ (走出) → dùng 地."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "小孩子",
+       "就",
+       "喜欢",
+       "打打闹闹",
+       "，",
+       "磕磕碰碰",
+       "是",
+       "难免的"
+      ],
+      "dap": [
+       "小孩子就喜欢打打闹闹，磕磕碰碰是难免的。"
+      ],
+      "goiY": "Trẻ con là thích đùa nghịch, va quệt chút ít là khó tránh.",
+      "giai": "AABB làm tân ngữ của 喜欢 và làm chủ ngữ (磕磕碰碰是……)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "他",
+       "办事",
+       "总是",
+       "拖拖拉拉",
+       "的",
+       "，",
+       "让人",
+       "着急"
+      ],
+      "dap": [
+       "他办事总是拖拖拉拉的，让人着急。"
+      ],
+      "goiY": "Anh ta làm việc lúc nào cũng lề mề, khiến người ta sốt ruột.",
+      "giai": "AABB + 的 làm vị ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "萤火虫",
+       "在",
+       "田野上",
+       "来来回回",
+       "地",
+       "飞"
+      ],
+      "dap": [
+       "萤火虫在田野上来来回回地飞。"
+      ],
+      "goiY": "Đom đóm bay qua bay lại trên cánh đồng.",
+      "giai": "AABB + 地 + V (trạng ngữ)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他办事很拖拖拉拉的，让人着急。",
+      "dung": false,
+      "sua": "他办事拖拖拉拉的，让人着急。",
+      "giai": "Dạng lặp AABB đã mang ý miêu tả mức độ, không thêm 很."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "下课了，同学们说笑说笑地走出了教室。",
+      "dung": false,
+      "sua": "下课了，同学们说说笑笑地走出了教室。",
+      "giai": "Làm trạng ngữ miêu tả phải dùng AABB (说说笑笑), không dùng ABAB."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "每天早上，公司门口进进出出的人很多。",
+      "dung": true,
+      "giai": "Đúng: 进进出出 (AABB) + 的 làm định ngữ cho 人."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Mấy đứa trẻ nhảy nhót tung tăng, cười cười nói nói đi vào công viên.",
+      "dap": [
+       "几个孩子蹦蹦跳跳、说说笑笑地走进了公园。",
+       "几个孩子说说笑笑、蹦蹦跳跳地走进了公园。",
+       "几个孩子蹦蹦跳跳、说说笑笑地进了公园。"
+      ],
+      "py": "Jǐ ge háizi bèngbèngtiàotiào, shuōshuōxiàoxiào de zǒujìnle gōngyuán.",
+      "goiY": "Dịch sang tiếng Trung, dùng hai dạng AABB làm trạng ngữ.",
+      "giai": "AABB、AABB + 地 + V: nhiều dạng lặp đứng song song, ngăn bằng dấu 、."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy làm gì cũng lề mề, lần nào cũng là người đến cuối cùng.",
+      "dap": [
+       "他做什么事都拖拖拉拉的，每次都是最后一个到。",
+       "他干什么都拖拖拉拉的，每次都是最后一个到的。",
+       "他做事总是拖拖拉拉的，每次都是最后一个到。"
+      ],
+      "py": "Tā zuò shénme shì dōu tuōtuōlālā de, měi cì dōu shì zuìhòu yí ge dào.",
+      "goiY": "Dịch sang tiếng Trung, dùng 拖拖拉拉的.",
+      "giai": "\"Lề mề\" = 拖拖拉拉 (AABB + 的 làm vị ngữ); không nói ×很拖拖拉拉."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他这个人办事就是＿＿＿的，让人着急。",
+      "goiY": "Chọn dạng AABB thích hợp (说说笑笑 / 拖拖拉拉 / 吵吵嚷嚷 / 打打闹闹) — 练一练 (1) của sách.",
+      "mau": "他这个人办事就是拖拖拉拉的，让人着急。",
+      "can": [
+       [
+        "拖拖拉拉"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "在饭馆，吃完饭＿＿＿争着付钱的准是中国人。",
+      "goiY": "Chọn dạng AABB thích hợp — 练一练 (2) của sách.",
+      "mau": "在饭馆，吃完饭吵吵嚷嚷争着付钱的准是中国人。",
+      "can": [
+       [
+        "吵吵嚷嚷"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那时我们住一个宿舍，大伙天天＿＿＿地，快活极了。",
+      "goiY": "Điền hai dạng AABB song song — 练一练 (3) của sách.",
+      "mau": "那时我们住一个宿舍，大伙天天说说笑笑、打打闹闹地，快活极了。",
+      "can": [
+       [
+        "说说笑笑"
+       ],
+       [
+        "打打闹闹"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

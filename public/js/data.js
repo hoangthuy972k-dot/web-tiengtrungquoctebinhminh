@@ -2103,6 +2103,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-25.html'
+      },
+      {
+        id: 'hsk6-l26',
+        number: 26,
+        title: 'Ánh sáng kỳ lạ',
+        titleHanzi: '奇异的灯光',
+        titlePinyin: 'Qíyì de dēngguāng',
+        topic: '第七单元 经典阅读 · Chuyện "túi đom đóm soi sách": nghèo vật chất không đáng sợ, đáng sợ là nghèo tinh thần',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-26.html'
       }
     ],
     yct: [

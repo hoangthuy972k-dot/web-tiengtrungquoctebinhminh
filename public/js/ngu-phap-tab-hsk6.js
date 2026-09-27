@@ -23157,3 +23157,626 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-26.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-27.html"] = [
+ {
+  "so": "1",
+  "ten": "「左……右……」",
+  "tenVn": "",
+  "cauTruc": [
+   "左 + V1 + 右 + V2 (V1, V2 giống / gần nghĩa): 左看右看, 左思右想, 左顾右盼 — làm đi làm lại nhiều lần",
+   "左 + 一 + lượng từ（+ N）+ 右 + 一 + lượng từ（+ N）（+ 地 + V）: 左一遍右一遍, 左一个电话右一个电话"
+  ],
+  "giaiThich": "“左……右……” nhấn mạnh cùng một loại hành động được lặp đi lặp lại NHIỀU LẦN. Có hai mẫu: ① 左 + V1 + 右 + V2 — V1 và V2 giống nhau hoặc gần nghĩa (thường là động từ đơn âm tiết): 左看右看 (ngắm tới ngắm lui), 左思右想 (nghĩ tới nghĩ lui), 左顾右盼 (nhìn ngang ngó dọc), 左等右等 (đợi mãi). ② 左 + 一 + lượng từ (+ danh từ) + 右 + 一 + lượng từ (+ danh từ): 左一遍右一遍, 左一张右一张, 左一个电话右一个电话 — hai vế dùng CÙNG lượng từ / danh từ, sau đó hay có 地 + V. Không chen tân ngữ vào giữa mẫu ①; mẫu ② không được bỏ số từ 一.",
+  "viDu": [
+   {
+    "zh": "秦王对着和氏璧左看右看，爱不释手。",
+    "py": "Qín wáng duìzhe Héshì bì zuǒ kàn yòu kàn, àibúshìshǒu.",
+    "vn": "Vua Tần cầm ngọc họ Hoà ngắm tới ngắm lui, thích quá không nỡ buông tay."
+   },
+   {
+    "zh": "那个电影，他左一遍右一遍地看，看了七八遍也看不够。",
+    "py": "Nàge diànyǐng, tā zuǒ yí biàn yòu yí biàn de kàn, kànle qī-bā biàn yě kàn bu gòu.",
+    "vn": "Bộ phim đó, cậu ấy xem hết lượt này đến lượt khác, xem bảy tám lần rồi vẫn chưa chán."
+   },
+   {
+    "zh": "妈妈左一个电话右一个电话地催他回家。",
+    "py": "Māma zuǒ yí ge diànhuà yòu yí ge diànhuà de cuī tā huí jiā.",
+    "vn": "Mẹ gọi hết cuộc này đến cuộc khác giục anh ấy về nhà."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他左看书右看书，看了一上午。",
+    "why": "Mẫu ① chỉ ghép động từ, không chen tân ngữ vào giữa; đưa tân ngữ lên đầu câu làm chủ đề.",
+    "dung": "那本书，他左看右看，看了一上午。"
+   },
+   {
+    "sai": "妈妈左个电话右个电话地催他回家。",
+    "why": "Mẫu ② bắt buộc có số từ 一: 左 + 一 + lượng từ.",
+    "dung": "妈妈左一个电话右一个电话地催他回家。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "秦王对着和氏璧左看",
+       "看，爱不释手。"
+      ],
+      "dap": [
+       [
+        "右"
+       ]
+      ],
+      "chon": [
+       "右",
+       "又",
+       "再"
+      ],
+      "goiY": "\"Vua Tần cầm ngọc ngắm tới ngắm lui, không nỡ buông tay.\" (câu bài khoá)",
+      "giai": "Khung 左……右……: 左看右看; 又 / 再 không tạo thành khung này."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "左思右",
+       "之后，他对秦王说：“这璧有点儿小毛病。”"
+      ],
+      "dap": [
+       [
+        "想"
+       ]
+      ],
+      "chon": [
+       "想",
+       "看",
+       "说"
+      ],
+      "goiY": "\"Nghĩ tới nghĩ lui, ông nói với vua Tần …\" (câu bài khoá)",
+      "giai": "左思右想: 思 và 想 gần nghĩa (mẫu ①)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这个学生上课不专心听讲，总是左顾右",
+       "。"
+      ],
+      "dap": [
+       [
+        "盼"
+       ]
+      ],
+      "chon": [
+       "盼",
+       "想",
+       "说"
+      ],
+      "goiY": "\"Học sinh này không chú ý nghe giảng, cứ nhìn ngang ngó dọc.\" (ví dụ (3) của sách)",
+      "giai": "左顾右盼: 顾 và 盼 đều là \"nhìn\" (mẫu ①)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那个电影，他左一遍右一",
+       "地看，看了七八遍也看不够。"
+      ],
+      "dap": [
+       [
+        "遍"
+       ]
+      ],
+      "chon": [
+       "遍",
+       "个",
+       "张"
+      ],
+      "goiY": "\"Bộ phim đó, cậu ấy xem hết lượt này đến lượt khác …\" (ví dụ (4) của sách)",
+      "giai": "Mẫu ②: hai vế dùng cùng lượng từ 遍 (lượt, lần — cho động tác xem)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她爱玩儿自拍，手机里左一张右一",
+       "，都是自己的自拍照。"
+      ],
+      "dap": [
+       [
+        "张"
+       ]
+      ],
+      "chon": [
+       "张",
+       "遍",
+       "句"
+      ],
+      "goiY": "\"… trong điện thoại hết tấm này đến tấm khác đều là ảnh tự sướng.\" (ví dụ (5) của sách)",
+      "giai": "Lượng từ của ảnh là 张 → 左一张右一张."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家左一",
+       "右一句，总算把她说通了。"
+      ],
+      "dap": [
+       [
+        "句"
+       ]
+      ],
+      "chon": [
+       "句",
+       "张",
+       "趟"
+      ],
+      "goiY": "\"Mọi người mỗi người một câu, cuối cùng cũng thuyết phục được cô ấy.\" (练一练 (2))",
+      "giai": "Lượng từ của lời nói là 句; hai vế phải cùng lượng từ."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "大家",
+       "左一句",
+       "右一句",
+       "，",
+       "总算",
+       "把她",
+       "说通了"
+      ],
+      "dap": [
+       "大家左一句右一句，总算把她说通了。"
+      ],
+      "goiY": "Mọi người người một câu kẻ một câu, cuối cùng cũng thuyết phục được cô ấy.",
+      "giai": "Chủ ngữ + 左一句右一句 + kết quả (总算……)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "妈妈",
+       "拿着礼物",
+       "，",
+       "左看看",
+       "右看看",
+       "，",
+       "越看越喜欢"
+      ],
+      "dap": [
+       "妈妈拿着礼物，左看看右看看，越看越喜欢。"
+      ],
+      "goiY": "Mẹ cầm món quà ngắm tới ngắm lui, càng ngắm càng thích.",
+      "giai": "Động từ lặp 看看 vẫn đặt trong khung 左……右……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "左等",
+       "右等",
+       "，",
+       "他",
+       "就是",
+       "不来"
+      ],
+      "dap": [
+       "我左等右等，他就是不来。"
+      ],
+      "goiY": "Tôi đợi mãi đợi mãi mà anh ấy vẫn không đến.",
+      "giai": "左等右等 + vế sau nêu kết quả không như ý (就是不……)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他左看书右看书，看了一上午。",
+      "dung": false,
+      "sua": "那本书，他左看右看，看了一上午。",
+      "giai": "Mẫu ① không chen tân ngữ vào giữa; đưa tân ngữ lên trước."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "妈妈左个电话右个电话地催他回家。",
+      "dung": false,
+      "sua": "妈妈左一个电话右一个电话地催他回家。",
+      "giai": "Mẫu ② phải có số từ 一."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我左思右想，还是决定参加这次比赛。",
+      "dung": true,
+      "giai": "左思右想 (思 ≈ 想) đúng mẫu ①, vế sau nêu quyết định → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Tớ đợi mãi đợi mãi mà xe buýt vẫn không đến.",
+      "dap": [
+       "我左等右等，公交车还是不来。",
+       "我左等右等，公交车就是不来。",
+       "公交车我左等右等都不来。",
+       "我左等右等，公交车也不来。"
+      ],
+      "py": "Wǒ zuǒ děng yòu děng, gōngjiāochē háishi bù lái.",
+      "goiY": "Dịch sang tiếng Trung, dùng 左……右…….",
+      "giai": "\"đợi mãi đợi mãi\" = 左等右等 (mẫu ①)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mẹ gọi hết cuộc này đến cuộc khác giục anh ấy về nhà.",
+      "dap": [
+       "妈妈左一个电话右一个电话地催他回家。",
+       "妈妈左一个电话右一个电话催他回家。"
+      ],
+      "py": "Māma zuǒ yí ge diànhuà yòu yí ge diànhuà de cuī tā huí jiā.",
+      "goiY": "Dịch sang tiếng Trung, dùng 左……右…….",
+      "giai": "\"hết cuộc này đến cuộc khác\" = 左一个电话右一个电话 (mẫu ②)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我＿＿地去了你家五六趟了，你怎么老不在家呀！（用“左……右……”完成句子）",
+      "goiY": "đáp án sách — 练一练 (1)",
+      "mau": "我左一趟右一趟地去了你家五六趟了，你怎么老不在家呀！",
+      "can": [
+       [
+        "左"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "大家＿＿，总算把她说通了。（用“左……右……”完成句子）",
+      "goiY": "đáp án sách — 练一练 (2)",
+      "mau": "大家左一句右一句，总算把她说通了。",
+      "can": [
+       [
+        "左"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "妈妈拿着女儿买的礼物，＿＿，越看越喜欢。（用“左……右……”完成句子）",
+      "goiY": "đáp án sách — 练一练 (3)",
+      "mau": "妈妈拿着女儿买的礼物，左看看右看看，越看越喜欢。",
+      "can": [
+       [
+        "左"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「不成」",
+  "tenVn": "",
+  "cauTruc": [
+   "（难道 / 莫非）+ 小句 + 不成？ — lẽ nào … sao? (phản vấn / suy đoán)",
+   "主语 + 还 + V……不成？ — lược 难道, giọng phản vấn: 我还怕他跑了不成？"
+  ],
+  "giaiThich": "“不成” là TRỢ TỪ, dùng ở CUỐI câu, biểu thị ngữ khí suy đoán hoặc phản vấn (\"lẽ nào … sao?\", \"chẳng lẽ … à?\"). Phía trước thường có 难道, 莫非 hô ứng (难道……不成? / 莫非……不成?); cũng có thể lược 难道 vì 不成 tự mang giọng phản vấn: 我还怕他跑了不成? Câu phản vấn mang ý ngược lại: 我还会骗你不成? = ta không đời nào lừa ngươi. Đã dùng 不成 thì không thêm 吗 / 呢.",
+  "viDu": [
+   {
+    "zh": "璧都到了我这儿，我还怕他跑了不成？",
+    "py": "Bì dōu dàole wǒ zhèr, wǒ hái pà tā pǎole bùchéng?",
+    "vn": "Ngọc đã đến tay ta rồi, lẽ nào ta còn sợ hắn chạy mất sao?"
+   },
+   {
+    "zh": "我堂堂秦王，（难道）还会骗你不成？",
+    "py": "Wǒ tángtáng Qín wáng, (nándào) hái huì piàn nǐ bùchéng?",
+    "vn": "Ta đường đường là vua Tần, lẽ nào lại lừa ngươi?"
+   },
+   {
+    "zh": "他大吃一惊，头脑中一片空白——莫非受了骗不成？",
+    "py": "Tā dà chī yì jīng, tóunǎo zhōng yí piàn kòngbái —— mòfēi shòule piàn bùchéng?",
+    "vn": "Anh ta giật mình, đầu óc trống rỗng — chẳng lẽ mình đã bị lừa rồi sao?"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "难道你想一直骗下去不成吗？",
+    "why": "不成 đã là trợ từ ngữ khí cuối câu, không dùng thêm 吗.",
+    "dung": "难道你想一直骗下去不成？"
+   },
+   {
+    "sai": "不成他跑了？",
+    "why": "不成 phải đứng ở CUỐI câu; đầu câu dùng 难道 / 莫非.",
+    "dung": "莫非他跑了不成？"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "璧都到了我这儿，我还怕他跑了",
+       "？"
+      ],
+      "dap": [
+       [
+        "不成"
+       ]
+      ],
+      "chon": [
+       "不成",
+       "不行",
+       "不了"
+      ],
+      "goiY": "\"Ngọc đã đến tay ta, lẽ nào ta còn sợ hắn chạy mất?\" (câu bài khoá)",
+      "giai": "不成 đứng cuối câu biểu thị phản vấn; 不行 / 不了 không có chức năng này."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我堂堂秦王，",
+       "还会骗你不成？"
+      ],
+      "dap": [
+       [
+        "难道"
+       ]
+      ],
+      "chon": [
+       "难道",
+       "到底",
+       "究竟"
+      ],
+      "goiY": "\"Ta đường đường là vua Tần, lẽ nào lại lừa ngươi?\" (ví dụ (2) của sách)",
+      "giai": "难道 hô ứng với 不成; 到底 / 究竟 dùng trong câu hỏi thật (rốt cuộc)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他大吃一惊，头脑中一片空白——",
+       "受了骗不成？"
+      ],
+      "dap": [
+       [
+        "莫非"
+       ]
+      ],
+      "chon": [
+       "莫非",
+       "并非",
+       "除非"
+      ],
+      "goiY": "\"… chẳng lẽ mình đã bị lừa?\" (ví dụ (3) của sách)",
+      "giai": "莫非 = chẳng lẽ (suy đoán), hô ứng với 不成; 并非 = không phải; 除非 = trừ phi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "到现在你都不说出实情，难道是想一直这样骗下去",
+       "？"
+      ],
+      "dap": [
+       [
+        "不成"
+       ]
+      ],
+      "chon": [
+       "不成",
+       "没有",
+       "不是"
+      ],
+      "goiY": "\"Đến giờ vẫn không nói thật, chẳng lẽ định lừa mãi như vậy sao?\" (练一练 (1))",
+      "giai": "难道……不成? — 不成 ở cuối câu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "咱们多少年的朋友了，我会害你",
+       "？"
+      ],
+      "dap": [
+       [
+        "不成"
+       ]
+      ],
+      "chon": [
+       "不成",
+       "不会",
+       "不要"
+      ],
+      "goiY": "\"Chúng ta là bạn bao nhiêu năm rồi, lẽ nào tôi lại hại cậu?\" (练一练 (3))",
+      "giai": "Lược 难道, chỉ dùng 不成 cuối câu vẫn mang giọng phản vấn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天都这么晚了，",
+       "他又忘了带钥匙不成？"
+      ],
+      "dap": [
+       [
+        "莫非"
+       ]
+      ],
+      "chon": [
+       "莫非",
+       "无非",
+       "除非"
+      ],
+      "goiY": "\"Trời muộn thế này rồi, chẳng lẽ anh ấy lại quên mang chìa khoá?\"",
+      "giai": "莫非……不成? = chẳng lẽ … (suy đoán); 无非 (bài 5) = chẳng qua là."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "你们",
+       "都不说话",
+       "，",
+       "难道",
+       "事情",
+       "就这么",
+       "算了",
+       "不成"
+      ],
+      "dap": [
+       "你们都不说话，难道事情就这么算了不成？"
+      ],
+      "goiY": "Các cậu đều không nói gì, chẳng lẽ chuyện này cứ thế cho qua sao?",
+      "giai": "难道 đứng trước vế hỏi, 不成 đứng cuối câu."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我",
+       "堂堂秦王",
+       "，",
+       "还会",
+       "骗你",
+       "不成"
+      ],
+      "dap": [
+       "我堂堂秦王，还会骗你不成？"
+      ],
+      "goiY": "Ta đường đường là vua Tần, lẽ nào lại lừa ngươi?",
+      "giai": "还会……不成? = lẽ nào lại … (phản vấn)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "莫非",
+       "他",
+       "又",
+       "迟到了",
+       "不成"
+      ],
+      "dap": [
+       "莫非他又迟到了不成？"
+      ],
+      "goiY": "Chẳng lẽ cậu ấy lại đến muộn nữa sao?",
+      "giai": "莫非 đầu câu, 不成 cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "难道你想一直骗下去不成吗？",
+      "dung": false,
+      "sua": "难道你想一直骗下去不成？",
+      "giai": "不成 đã là trợ từ ngữ khí cuối câu, không thêm 吗."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "不成他跑了？",
+      "dung": false,
+      "sua": "莫非他跑了不成？",
+      "giai": "不成 phải đứng cuối câu."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "咱们多少年的朋友了，我会害你不成？",
+      "dung": true,
+      "giai": "Lược 难道, 不成 cuối câu vẫn tạo giọng phản vấn → đúng."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chẳng lẽ cậu định nói dối mãi sao?",
+      "dap": [
+       "难道你想一直撒谎不成？",
+       "难道你打算一直撒谎不成？",
+       "你想一直撒谎不成？",
+       "难道你要一直撒谎不成？"
+      ],
+      "py": "Nándào nǐ xiǎng yìzhí sā huǎng bùchéng?",
+      "goiY": "Dịch sang tiếng Trung, dùng 不成.",
+      "giai": "难道……不成? = chẳng lẽ … sao?"
+     },
+     {
+      "kieu": "dich",
+      "vn": "Ngọc đã ở trong tay ta rồi, lẽ nào ta còn sợ hắn chạy mất sao?",
+      "dap": [
+       "璧已经在我手里了，我还怕他跑了不成？",
+       "璧都在我手里了，我还怕他跑了不成？",
+       "璧已经在我手里了，难道我还怕他跑了不成？"
+      ],
+      "py": "Bì yǐjīng zài wǒ shǒu li le, wǒ hái pà tā pǎole bùchéng?",
+      "goiY": "Dịch sang tiếng Trung, dùng 不成.",
+      "giai": "还……不成? — phản vấn, ý thật là \"không sợ\"."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "到现在你都不说出实情，难道是想一直这样骗下去吗？（将疑问句改成带“不成”的反问句）",
+      "goiY": "đáp án sách — 练一练 (1)",
+      "mau": "到现在你都不说出实情，难道是想一直这样骗下去不成？",
+      "can": [
+       [
+        "不成"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "你们大家都不说话，事情就这么算了吗？（将疑问句改成带“不成”的反问句）",
+      "goiY": "đáp án sách — 练一练 (2)",
+      "mau": "你们大家都不说话，难道事情就这么算了不成？",
+      "can": [
+       [
+        "不成"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "咱们多少年的朋友了，难道我会害你吗？（将疑问句改成带“不成”的反问句）",
+      "goiY": "đáp án sách — 练一练 (3)",
+      "mau": "咱们多少年的朋友了，我会害你不成？",
+      "can": [
+       [
+        "不成"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

@@ -1,0 +1,78 @@
+{
+ "zh": "完璧归赵",
+ "py": "Wán bì guī Zhào",
+ "vn": "Trả ngọc nguyên vẹn cho nước Triệu",
+ "topic": "第七单元 经典阅读 · Hoàn bích quy Triệu: mưu trí và dũng khí của nhà ngoại giao nước yếu",
+ "vocabCount": 50,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "左……右……",
+   "explain": "“左……右……” nhấn mạnh cùng một loại hành động được lặp đi lặp lại NHIỀU LẦN. Có hai mẫu: ① 左 + V1 + 右 + V2 — V1 và V2 giống nhau hoặc gần nghĩa (thường là động từ đơn âm tiết): 左看右看 (ngắm tới ngắm lui), 左思右想 (nghĩ tới nghĩ lui), 左顾右盼 (nhìn ngang ngó dọc), 左等右等 (đợi mãi). ② 左 + 一 + lượng từ (+ danh từ) + 右 + 一 + lượng từ (+ danh từ): 左一遍右一遍, 左一张右一张, 左一个电话右一个电话 — hai vế dùng CÙNG lượng từ / danh từ, sau đó hay có 地 + V. Không chen tân ngữ vào giữa mẫu ①; mẫu ② không được bỏ số từ 一.",
+   "rule": "<strong style=\"color:var(--sky-d)\">左</strong> + V1 + <strong style=\"color:var(--sky-d)\">右</strong> + V2 (V1 ≈ V2)　|　<strong style=\"color:var(--sky-d)\">左</strong> + 一 + lượng từ（+ N）+ <strong style=\"color:var(--sky-d)\">右</strong> + 一 + lượng từ（+ N）（+ 地 + V）",
+   "examples": [
+    {
+     "zh": "秦王对着和氏璧左看右看，爱不释手。",
+     "py": "Qín wáng duìzhe Héshì bì zuǒ kàn yòu kàn, àibúshìshǒu.",
+     "vn": "Vua Tần cầm ngọc họ Hoà ngắm tới ngắm lui, thích quá không nỡ buông tay."
+    },
+    {
+     "zh": "那个电影，他左一遍右一遍地看，看了七八遍也看不够。",
+     "py": "Nàge diànyǐng, tā zuǒ yí biàn yòu yí biàn de kàn, kànle qī-bā biàn yě kàn bu gòu.",
+     "vn": "Bộ phim đó, cậu ấy xem hết lượt này đến lượt khác, xem bảy tám lần rồi vẫn chưa chán."
+    },
+    {
+     "zh": "妈妈左一个电话右一个电话地催他回家。",
+     "py": "Māma zuǒ yí ge diànhuà yòu yí ge diànhuà de cuī tā huí jiā.",
+     "vn": "Mẹ gọi hết cuộc này đến cuộc khác giục anh ấy về nhà."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他左看书右看书，看了一上午。",
+     "why": "Mẫu ① chỉ ghép động từ, không chen tân ngữ vào giữa; đưa tân ngữ lên đầu câu làm chủ đề.",
+     "right": "那本书，他左看右看，看了一上午。"
+    },
+    {
+     "wrong": "妈妈左个电话右个电话地催他回家。",
+     "why": "Mẫu ② bắt buộc có số từ 一: 左 + 一 + lượng từ.",
+     "right": "妈妈左一个电话右一个电话地催他回家。"
+    }
+   ]
+  },
+  {
+   "point": "不成",
+   "explain": "“不成” là TRỢ TỪ, dùng ở CUỐI câu, biểu thị ngữ khí suy đoán hoặc phản vấn (\"lẽ nào … sao?\", \"chẳng lẽ … à?\"). Phía trước thường có 难道, 莫非 hô ứng (难道……不成? / 莫非……不成?); cũng có thể lược 难道 vì 不成 tự mang giọng phản vấn: 我还怕他跑了不成? Câu phản vấn mang ý ngược lại: 我还会骗你不成? = ta không đời nào lừa ngươi. Đã dùng 不成 thì không thêm 吗 / 呢.",
+   "rule": "（<strong style=\"color:var(--sky-d)\">难道</strong> / <strong style=\"color:var(--sky-d)\">莫非</strong>）+ 小句 + <strong style=\"color:var(--sky-d)\">不成</strong>？",
+   "examples": [
+    {
+     "zh": "璧都到了我这儿，我还怕他跑了不成？",
+     "py": "Bì dōu dàole wǒ zhèr, wǒ hái pà tā pǎole bùchéng?",
+     "vn": "Ngọc đã đến tay ta rồi, lẽ nào ta còn sợ hắn chạy mất sao?"
+    },
+    {
+     "zh": "我堂堂秦王，（难道）还会骗你不成？",
+     "py": "Wǒ tángtáng Qín wáng, (nándào) hái huì piàn nǐ bùchéng?",
+     "vn": "Ta đường đường là vua Tần, lẽ nào lại lừa ngươi?"
+    },
+    {
+     "zh": "他大吃一惊，头脑中一片空白——莫非受了骗不成？",
+     "py": "Tā dà chī yì jīng, tóunǎo zhōng yí piàn kòngbái —— mòfēi shòule piàn bùchéng?",
+     "vn": "Anh ta giật mình, đầu óc trống rỗng — chẳng lẽ mình đã bị lừa rồi sao?"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "难道你想一直骗下去不成吗？",
+     "why": "不成 đã là trợ từ ngữ khí cuối câu, không dùng thêm 吗.",
+     "right": "难道你想一直骗下去不成？"
+    },
+    {
+     "wrong": "不成他跑了？",
+     "why": "不成 phải đứng ở CUỐI câu; đầu câu dùng 难道 / 莫非.",
+     "right": "莫非他跑了不成？"
+    }
+   ]
+  }
+ ]
+}

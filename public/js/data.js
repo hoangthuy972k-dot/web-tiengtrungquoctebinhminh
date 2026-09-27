@@ -2115,6 +2115,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 2,
         fullPageUrl: '/lessons/hsk6-bai-26.html'
+      },
+      {
+        id: 'hsk6-l27',
+        number: 27,
+        title: 'Trả ngọc nguyên vẹn cho nước Triệu',
+        titleHanzi: '完璧归赵',
+        titlePinyin: 'Wán bì guī Zhào',
+        topic: '第七单元 经典阅读 · Hoàn bích quy Triệu: mưu trí và dũng khí của nhà ngoại giao nước yếu',
+        vocabCount: 50,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-27.html'
       }
     ],
     yct: [

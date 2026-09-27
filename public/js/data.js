@@ -2211,6 +2211,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-35.html'
+      },
+      {
+        id: 'hsk6-l36',
+        number: 36,
+        title: 'Trường học Trung Quốc thời xưa',
+        titleHanzi: '中国古代书院',
+        titlePinyin: 'Zhōngguó gǔdài shūyuàn',
+        topic: '第九单元 古今博览 · Thư viện (书院) thời cổ: lịch sử phát triển, đào tạo nhân tài và phương pháp dạy học',
+        vocabCount: 50,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-36.html'
       }
     ],
     yct: [

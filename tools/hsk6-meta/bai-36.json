@@ -1,0 +1,78 @@
+{
+ "zh": "中国古代书院",
+ "py": "Zhōngguó gǔdài shūyuàn",
+ "vn": "Trường học Trung Quốc thời xưa",
+ "topic": "第九单元 古今博览 · Thư viện (书院) thời cổ: lịch sử phát triển, đào tạo nhân tài và phương pháp dạy học",
+ "vocabCount": 50,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "一经",
+   "explain": "一经 (phó từ, văn viết) dùng ở VẾ TRƯỚC, biểu thị: chỉ cần một hành vi, một bước nào đó đã được thực hiện thì sẽ tương ứng sinh ra một kết quả nhất định — \"một khi đã … thì …\". Vế sau thường có 就 / 便 / 即 / 当即 / 定 / 必须 … . Sau 一经 thường là động từ hai âm tiết: 发现 / 决定 / 产生 / 推出 / 发布 / 查实 / 批准; nghĩa bị động tự hiểu nên không cần 被 (一经发现 = một khi bị phát hiện). Hay gặp trong quy định, văn bản, văn phong trang trọng; việc đời thường khẩu ngữ dùng 一……就…….",
+   "rule": "<strong style=\"color:var(--sky-d)\">一经</strong> + V (hai âm tiết)，(chủ ngữ) + <strong style=\"color:var(--sky-d)\">就 / 便 / 定 / 必须</strong> + kết quả　|　<strong style=\"color:var(--sky-d)\">一经发现</strong>，……",
+   "examples": [
+    {
+     "zh": "不顺从长辈，……擅以虚伪的言辞掩饰过失的无耻之徒，一经发现，本书院定不容纳。",
+     "py": "Bú shùncóng zhǎngbèi, …… shàn yǐ xūwěi de yáncí yǎnshì guòshī de wúchǐ zhī tú, yìjīng fāxiàn, běn shūyuàn dìng bù róngnà.",
+     "vn": "Kẻ vô liêm sỉ không nghe lời bậc trên, … tự ý dùng lời dối trá che đậy lỗi lầm, một khi bị phát hiện, thư viện này nhất định không dung nạp."
+    },
+    {
+     "zh": "语言一经产生，又对人类的心理发展起了巨大的推动作用，使人类的心理产生质的飞跃。",
+     "py": "Yǔyán yìjīng chǎnshēng, yòu duì rénlèi de xīnlǐ fāzhǎn qǐle jùdà de tuīdòng zuòyòng, shǐ rénlèi de xīnlǐ chǎnshēng zhì de fēiyuè.",
+     "vn": "Ngôn ngữ một khi đã ra đời thì lại có tác dụng thúc đẩy to lớn đối với sự phát triển tâm lý con người, khiến tâm lý con người có bước nhảy vọt về chất."
+    },
+    {
+     "zh": "对重大问题，由领导集团全体成员讨论，做出决策和决定，一经决定，必须共同遵守。",
+     "py": "Duì zhòngdà wèntí, yóu lǐngdǎo jítuán quántǐ chéngyuán tǎolùn, zuòchū juécè hé juédìng, yìjīng juédìng, bìxū gòngtóng zūnshǒu.",
+     "vn": "Với vấn đề trọng đại, toàn thể thành viên ban lãnh đạo thảo luận, đưa ra quyết sách và quyết định; một khi đã quyết định thì phải cùng nhau tuân thủ."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我明天一经到北京，就给你打电话。",
+     "why": "一经 là văn viết, dùng cho quy định, sự việc trang trọng mang tính tất yếu; việc cá nhân thường ngày dùng 一……就…….",
+     "right": "我明天一到北京，就给你打电话。"
+    },
+    {
+     "wrong": "违反纪律的行为一经被发现，学校会严肃处理。",
+     "why": "Sau 一经 nghĩa bị động đã tự hiểu, không cần thêm 被 (đáp án 练习2 ②: 一经发现).",
+     "right": "违反纪律的行为一经发现，学校会严肃处理。"
+    }
+   ]
+  },
+  {
+   "point": "本着 + 名词",
+   "explain": "本着 (giới từ, văn viết) biểu thị TUÂN THEO, DỰA TRÊN một chuẩn tắc nào đó. Trong cấu trúc \"本着 + cụm danh từ\", danh từ trung tâm thường là 原则 / 精神 / 宗旨 / 态度 / 方针 / 观点 (danh từ trừu tượng chỉ nguyên tắc, tinh thần). Cụm 本着……的 + N làm trạng ngữ, đứng sau chủ ngữ hoặc đầu câu, phía sau là hành động cụ thể. Khác 按照 (theo — đi được với cả 规定 / 计划 / 要求 / 时间 cụ thể): 本着 KHÔNG đi với danh từ cụ thể và phải có danh từ trung tâm.",
+   "rule": "(Chủ ngữ) + <strong style=\"color:var(--sky-d)\">本着</strong> + …… + 的 + <strong style=\"color:var(--sky-d)\">原则 / 精神 / 宗旨 / 态度 / 方针</strong>，+ V……",
+   "examples": [
+    {
+     "zh": "书院本着贫富平等的原则，敞开大门，招收平民子弟入学，这在当时确实是令人震撼的开明之举。",
+     "py": "Shūyuàn běnzhe pínfù píngděng de yuánzé, chǎngkāi dàmén, zhāoshōu píngmín zǐdì rùxué, zhè zài dāngshí quèshí shì lìng rén zhènhàn de kāimíng zhī jǔ.",
+     "vn": "Thư viện dựa trên nguyên tắc giàu nghèo bình đẳng, mở rộng cửa, nhận con em thường dân vào học — thời đó đây thực sự là một việc làm tiến bộ gây chấn động."
+    },
+    {
+     "zh": "两国谈判代表本着互谅互让、平等协商的精神，解决了拖延多年的问题。",
+     "py": "Liǎng guó tánpàn dàibiǎo běnzhe hù liàng hù ràng, píngděng xiéshāng de jīngshén, jiějuéle tuōyán duō nián de wèntí.",
+     "vn": "Đại diện đàm phán hai nước, trên tinh thần thông cảm nhân nhượng lẫn nhau, bình đẳng hiệp thương, đã giải quyết vấn đề kéo dài nhiều năm."
+    },
+    {
+     "zh": "该公司本着“一切为用户着想，一切为用户服务”的宗旨，积极主动地征求用户意见。",
+     "py": "Gāi gōngsī běnzhe “yíqiè wèi yònghù zhuóxiǎng, yíqiè wèi yònghù fúwù” de zōngzhǐ, jījí zhǔdòng de zhēngqiú yònghù yìjiàn.",
+     "vn": "Công ty này, theo tôn chỉ \"mọi thứ vì khách hàng mà suy nghĩ, mọi thứ vì khách hàng mà phục vụ\", tích cực chủ động lấy ý kiến khách hàng."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "我们本着老师的要求完成了作业。",
+     "why": "本着 chỉ đi với danh từ trừu tượng chỉ nguyên tắc, tinh thần (原则 / 精神 / 宗旨…); 要求 / 规定 / 计划 cụ thể phải dùng 按照.",
+     "right": "我们按照老师的要求完成了作业。"
+    },
+    {
+     "wrong": "本着互相帮助，我们成了好朋友。",
+     "why": "Sau 本着 phải có danh từ trung tâm (……的精神 / 原则), không đặt trực tiếp một cụm động từ.",
+     "right": "本着互相帮助的精神，我们成了好朋友。"
+    }
+   ]
+  }
+ ]
+}

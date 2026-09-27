@@ -29637,3 +29637,630 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-35.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-36.html"] = [
+ {
+  "so": "1",
+  "ten": "「一经」",
+  "tenVn": "",
+  "cauTruc": [
+   "一经 + V，(S) + 就 / 便 / 定 + kết quả: 一经发现，本书院定不容纳",
+   "一经 + V (hai âm tiết, không cần 被): 一经决定，必须共同遵守"
+  ],
+  "giaiThich": "一经 (phó từ, văn viết) dùng ở VẾ TRƯỚC, biểu thị: chỉ cần một hành vi, một bước nào đó đã được thực hiện thì sẽ tương ứng sinh ra một kết quả nhất định — \"một khi đã … thì …\". Vế sau thường có 就 / 便 / 即 / 当即 / 定 / 必须 … . Sau 一经 thường là động từ hai âm tiết: 发现 / 决定 / 产生 / 推出 / 发布 / 查实 / 批准; nghĩa bị động tự hiểu nên không cần 被 (一经发现 = một khi bị phát hiện). Hay gặp trong quy định, văn bản, văn phong trang trọng; việc đời thường khẩu ngữ dùng 一……就…….",
+  "viDu": [
+   {
+    "zh": "不顺从长辈，……擅以虚伪的言辞掩饰过失的无耻之徒，一经发现，本书院定不容纳。",
+    "py": "Bú shùncóng zhǎngbèi, …… shàn yǐ xūwěi de yáncí yǎnshì guòshī de wúchǐ zhī tú, yìjīng fāxiàn, běn shūyuàn dìng bù róngnà.",
+    "vn": "Kẻ vô liêm sỉ không nghe lời bậc trên, … tự ý dùng lời dối trá che đậy lỗi lầm, một khi bị phát hiện, thư viện này nhất định không dung nạp."
+   },
+   {
+    "zh": "语言一经产生，又对人类的心理发展起了巨大的推动作用，使人类的心理产生质的飞跃。",
+    "py": "Yǔyán yìjīng chǎnshēng, yòu duì rénlèi de xīnlǐ fāzhǎn qǐle jùdà de tuīdòng zuòyòng, shǐ rénlèi de xīnlǐ chǎnshēng zhì de fēiyuè.",
+    "vn": "Ngôn ngữ một khi đã ra đời thì lại có tác dụng thúc đẩy to lớn đối với sự phát triển tâm lý con người, khiến tâm lý con người có bước nhảy vọt về chất."
+   },
+   {
+    "zh": "对重大问题，由领导集团全体成员讨论，做出决策和决定，一经决定，必须共同遵守。",
+    "py": "Duì zhòngdà wèntí, yóu lǐngdǎo jítuán quántǐ chéngyuán tǎolùn, zuòchū juécè hé juédìng, yìjīng juédìng, bìxū gòngtóng zūnshǒu.",
+    "vn": "Với vấn đề trọng đại, toàn thể thành viên ban lãnh đạo thảo luận, đưa ra quyết sách và quyết định; một khi đã quyết định thì phải cùng nhau tuân thủ."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我明天一经到北京，就给你打电话。",
+    "why": "一经 là văn viết, dùng cho quy định, sự việc trang trọng mang tính tất yếu; việc cá nhân thường ngày dùng 一……就…….",
+    "dung": "我明天一到北京，就给你打电话。"
+   },
+   {
+    "sai": "违反纪律的行为一经被发现，学校会严肃处理。",
+    "why": "Sau 一经 nghĩa bị động đã tự hiểu, không cần thêm 被 (đáp án 练习2 ②: 一经发现).",
+    "dung": "违反纪律的行为一经发现，学校会严肃处理。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "凡是言行不一的无耻之徒，",
+       "发现，本书院定不容纳。"
+      ],
+      "dap": [
+       [
+        "一经"
+       ]
+      ],
+      "chon": [
+       "一经",
+       "已经",
+       "曾经"
+      ],
+      "goiY": "\"Phàm là kẻ vô liêm sỉ nói một đằng làm một nẻo, một khi bị phát hiện, thư viện này nhất định không dung nạp.\" (câu bài khoá)",
+      "giai": "一经 + V = một khi đã …; 已经 = đã (chỉ thời gian), 曾经 = từng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "语言一经",
+       "，又对人类的心理发展起了巨大的推动作用。"
+      ],
+      "dap": [
+       [
+        "产生"
+       ]
+      ],
+      "chon": [
+       "产生",
+       "生",
+       "出生"
+      ],
+      "goiY": "\"Ngôn ngữ một khi đã ra đời …\" (ví dụ (2) của sách)",
+      "giai": "Sau 一经 thường là động từ hai âm tiết: 一经产生. 出生 dùng cho người, động vật."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事一经决定，大家",
+       "共同遵守。"
+      ],
+      "dap": [
+       [
+        "必须"
+       ]
+      ],
+      "chon": [
+       "必须",
+       "不必",
+       "未必"
+      ],
+      "goiY": "\"Việc này một khi đã quyết định thì mọi người phải cùng tuân thủ.\" (ví dụ (3))",
+      "giai": "Vế sau nêu kết quả tất yếu: 必须 + V. 不必 = không cần, 未必 = chưa chắc — trái logic."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他的第一张个人专辑",
+       "就突破了20万张的销售成绩。"
+      ],
+      "dap": [
+       [
+        "一经推出"
+       ]
+      ],
+      "chon": [
+       "一经推出",
+       "一经发布",
+       "一经光顾"
+      ],
+      "goiY": "\"Album cá nhân đầu tiên của anh ấy vừa tung ra đã vượt mốc 200 nghìn bản.\" (练一练 (1))",
+      "giai": "专辑 (album) đi với 推出 (tung ra thị trường)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "据报道，这是国内民间最大的一起知识产权交易，消息",
+       "，当即引起轰动。"
+      ],
+      "dap": [
+       [
+        "一经发布"
+       ]
+      ],
+      "chon": [
+       "一经发布",
+       "一经推出",
+       "一经决定"
+      ],
+      "goiY": "\"… tin vừa công bố đã lập tức gây chấn động.\" (练一练 (2))",
+      "giai": "消息 (tin tức) đi với 发布 (công bố)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "违反纪律的行为一经",
+       "，学校会毫不留情地处理。"
+      ],
+      "dap": [
+       [
+        "发现"
+       ]
+      ],
+      "chon": [
+       "发现",
+       "被发现",
+       "发现了"
+      ],
+      "goiY": "\"Hành vi vi phạm kỷ luật một khi bị phát hiện, nhà trường sẽ xử lý không nể nang.\" (练习2 ②)",
+      "giai": "Sau 一经 không thêm 被 và không thêm 了: 一经发现."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这件事",
+       "一经",
+       "决定",
+       "，",
+       "大家",
+       "就",
+       "必须",
+       "共同遵守",
+       "。"
+      ],
+      "dap": [
+       "这件事一经决定，大家就必须共同遵守。"
+      ],
+      "goiY": "Việc này một khi đã quyết định thì mọi người phải cùng tuân thủ.",
+      "giai": "一经 + V ở vế trước, 就 + kết quả ở vế sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "考试作弊的行为",
+       "一经",
+       "查实",
+       "，",
+       "成绩",
+       "一律",
+       "作废",
+       "。"
+      ],
+      "dap": [
+       "考试作弊的行为一经查实，成绩一律作废。"
+      ],
+      "goiY": "Hành vi gian lận thi cử một khi được xác minh thì bài thi bị hủy toàn bộ.",
+      "giai": "Giọng văn bản quy định: 一经查实，一律……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "食物",
+       "一经",
+       "腐败菌光顾",
+       "，",
+       "不消几天",
+       "就会",
+       "变质",
+       "。"
+      ],
+      "dap": [
+       "食物一经腐败菌光顾，不消几天就会变质。"
+      ],
+      "goiY": "Thức ăn một khi bị vi khuẩn gây thối \"ghé thăm\", chẳng mấy ngày là biến chất.",
+      "giai": "一经 + (tác nhân) + V; 不消几天 = chẳng cần mấy ngày."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我明天一经到北京，就给你打电话。",
+      "dung": false,
+      "sua": "我明天一到北京，就给你打电话。",
+      "giai": "一经 là văn viết, dùng cho quy định, sự việc trang trọng; việc cá nhân thường ngày dùng 一……就……."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这种新药一经批准，就可以在全国的医院使用。",
+      "dung": true,
+      "giai": "Đúng: 一经批准 (một khi được phê duyệt), vế sau 就可以 + kết quả tương ứng; văn phong trang trọng hợp với 一经."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "违反纪律的行为一经被发现，学校会严肃处理。",
+      "dung": false,
+      "sua": "违反纪律的行为一经发现，学校会严肃处理。",
+      "giai": "Sau 一经 nghĩa bị động tự hiểu, không cần 被."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Quy định này một khi đã ban hành thì mọi người đều phải tuân thủ.",
+      "dap": [
+       "这项规定一经颁布，大家就都必须遵守。",
+       "这条规定一经颁布，所有人都必须遵守。",
+       "这项规定一经颁布，大家都要遵守。"
+      ],
+      "py": "Zhè xiàng guīdìng yìjīng bānbù, dàjiā jiù dōu bìxū zūnshǒu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一经.",
+      "giai": "一经 + 颁布 (ban hành), vế sau 就 / 都必须 + 遵守."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Sản phẩm mới này vừa tung ra đã rất được người trẻ ưa chuộng.",
+      "dap": [
+       "这款新产品一经推出，就深受年轻人的欢迎。",
+       "这种新产品一经推出，就很受年轻人欢迎。",
+       "这款新产品一经推出，便受到了年轻人的欢迎。"
+      ],
+      "py": "Zhè kuǎn xīn chǎnpǐn yìjīng tuīchū, jiù shēn shòu niánqīngrén de huānyíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一经推出.",
+      "giai": "一经推出，就…… = vừa tung ra đã …; 深受 / 很受 + N 欢迎."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "违反纪律的行为一旦被发现，学校会毫不留情地处理。（用“一经”改写）",
+      "goiY": "Viết lại câu bằng 一经 (练习2 ② của sách).",
+      "mau": "违反纪律的行为一经发现，学校会毫不留情地处理。",
+      "can": [
+       [
+        "一经"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "许多味美可口的菜肴和食物，＿＿＿，不消几天甚至几小时，就会变酸变质。",
+      "goiY": "Điền cụm từ có 一经 (练一练 (3): vi khuẩn gây thối và vi khuẩn gây bệnh 腐败菌和病菌 \"ghé thăm\" 光顾).",
+      "mau": "许多味美可口的菜肴和食物，一经腐败菌和病菌光顾，不消几天甚至几小时，就会变酸变质。",
+      "can": [
+       [
+        "一经"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那一年的8月18日，他的第一张个人专辑＿＿＿就突破了20万张的销售成绩。",
+      "goiY": "Hoàn thành câu bằng 一经 + động từ (练一练 (1)).",
+      "mau": "那一年的8月18日，他的第一张个人专辑一经推出就突破了20万张的销售成绩。",
+      "can": [
+       [
+        "一经"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「本着 + 名词」",
+  "tenVn": "",
+  "cauTruc": [
+   "本着 + ……的原则 / 精神 / 宗旨 / 态度 + V: 书院本着贫富平等的原则，敞开大门",
+   "S + 本着……的精神，……: 两国本着平等协商的精神，解决了问题"
+  ],
+  "giaiThich": "本着 (giới từ, văn viết) biểu thị TUÂN THEO, DỰA TRÊN một chuẩn tắc nào đó. Trong cấu trúc \"本着 + cụm danh từ\", danh từ trung tâm thường là 原则 / 精神 / 宗旨 / 态度 / 方针 / 观点 (danh từ trừu tượng chỉ nguyên tắc, tinh thần). Cụm 本着……的 + N làm trạng ngữ, đứng sau chủ ngữ hoặc đầu câu, phía sau là hành động cụ thể. Khác 按照 (theo — đi được với cả 规定 / 计划 / 要求 / 时间 cụ thể): 本着 KHÔNG đi với danh từ cụ thể và phải có danh từ trung tâm.",
+  "viDu": [
+   {
+    "zh": "书院本着贫富平等的原则，敞开大门，招收平民子弟入学，这在当时确实是令人震撼的开明之举。",
+    "py": "Shūyuàn běnzhe pínfù píngděng de yuánzé, chǎngkāi dàmén, zhāoshōu píngmín zǐdì rùxué, zhè zài dāngshí quèshí shì lìng rén zhènhàn de kāimíng zhī jǔ.",
+    "vn": "Thư viện dựa trên nguyên tắc giàu nghèo bình đẳng, mở rộng cửa, nhận con em thường dân vào học — thời đó đây thực sự là một việc làm tiến bộ gây chấn động."
+   },
+   {
+    "zh": "两国谈判代表本着互谅互让、平等协商的精神，解决了拖延多年的问题。",
+    "py": "Liǎng guó tánpàn dàibiǎo běnzhe hù liàng hù ràng, píngděng xiéshāng de jīngshén, jiějuéle tuōyán duō nián de wèntí.",
+    "vn": "Đại diện đàm phán hai nước, trên tinh thần thông cảm nhân nhượng lẫn nhau, bình đẳng hiệp thương, đã giải quyết vấn đề kéo dài nhiều năm."
+   },
+   {
+    "zh": "该公司本着“一切为用户着想，一切为用户服务”的宗旨，积极主动地征求用户意见。",
+    "py": "Gāi gōngsī běnzhe “yíqiè wèi yònghù zhuóxiǎng, yíqiè wèi yònghù fúwù” de zōngzhǐ, jījí zhǔdòng de zhēngqiú yònghù yìjiàn.",
+    "vn": "Công ty này, theo tôn chỉ \"mọi thứ vì khách hàng mà suy nghĩ, mọi thứ vì khách hàng mà phục vụ\", tích cực chủ động lấy ý kiến khách hàng."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "我们本着老师的要求完成了作业。",
+    "why": "本着 chỉ đi với danh từ trừu tượng chỉ nguyên tắc, tinh thần (原则 / 精神 / 宗旨…); 要求 / 规定 / 计划 cụ thể phải dùng 按照.",
+    "dung": "我们按照老师的要求完成了作业。"
+   },
+   {
+    "sai": "本着互相帮助，我们成了好朋友。",
+    "why": "Sau 本着 phải có danh từ trung tâm (……的精神 / 原则), không đặt trực tiếp một cụm động từ.",
+    "dung": "本着互相帮助的精神，我们成了好朋友。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "书院",
+       "贫富平等的原则，敞开大门，招收平民子弟入学。"
+      ],
+      "dap": [
+       [
+        "本着"
+       ]
+      ],
+      "chon": [
+       "本着",
+       "随着",
+       "接着"
+      ],
+      "goiY": "\"Thư viện dựa trên nguyên tắc giàu nghèo bình đẳng, mở rộng cửa …\" (câu bài khoá)",
+      "giai": "本着 + 原则 = dựa trên nguyên tắc. 随着 = cùng với (sự thay đổi), 接着 = tiếp theo."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "两国谈判代表本着互谅互让、平等协商的",
+       "，解决了拖延多年的问题。"
+      ],
+      "dap": [
+       [
+        "精神"
+       ]
+      ],
+      "chon": [
+       "精神",
+       "要求",
+       "计划"
+      ],
+      "goiY": "\"… trên tinh thần thông cảm nhân nhượng, bình đẳng hiệp thương …\" (ví dụ (2))",
+      "giai": "Danh từ trung tâm sau 本着 là từ trừu tượng: 精神; 要求 / 计划 cụ thể dùng 按照."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "该公司本着“一切为用户服务”的",
+       "，积极征求用户意见。"
+      ],
+      "dap": [
+       [
+        "宗旨"
+       ]
+      ],
+      "chon": [
+       "宗旨",
+       "时间",
+       "地址"
+      ],
+      "goiY": "\"Công ty theo tôn chỉ 'mọi thứ vì khách hàng' …\" (ví dụ (3))",
+      "giai": "本着……的宗旨 = theo tôn chỉ …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们",
+       "互惠互利的原则进行协商。"
+      ],
+      "dap": [
+       [
+        "本着"
+       ]
+      ],
+      "chon": [
+       "本着",
+       "对于",
+       "关于"
+      ],
+      "goiY": "\"Chúng tôi hiệp thương trên nguyên tắc cùng có lợi.\" (练习2 ④)",
+      "giai": "本着 + 原则 + V; 对于 / 关于 nêu đối tượng, phạm vi — không hợp."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "作为一名医生，他一直",
+       "对患者高度负责的精神，积极治病救人。"
+      ],
+      "dap": [
+       [
+        "本着"
+       ]
+      ],
+      "chon": [
+       "本着",
+       "按照",
+       "根据"
+      ],
+      "goiY": "\"Là bác sĩ, anh ấy luôn mang tinh thần hết mực có trách nhiệm với bệnh nhân …\" (练一练 C–E)",
+      "giai": "精神 là danh từ trừu tượng → 本着; 按照 / 根据 hay đi với 规定 / 情况 cụ thể."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们要本着实事求是的",
+       "来分析问题。"
+      ],
+      "dap": [
+       [
+        "态度"
+       ]
+      ],
+      "chon": [
+       "态度",
+       "规定",
+       "日期"
+      ],
+      "goiY": "\"Chúng ta phải phân tích vấn đề với thái độ thực sự cầu thị.\"",
+      "giai": "本着……的态度 + V; 规定 / 日期 không đi với 本着."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "成人教育",
+       "本着",
+       "学用结合的原则",
+       "，",
+       "重视",
+       "知识更新",
+       "。"
+      ],
+      "dap": [
+       "成人教育本着学用结合的原则，重视知识更新。"
+      ],
+      "goiY": "Giáo dục người lớn dựa trên nguyên tắc học đi đôi với dùng, coi trọng cập nhật kiến thức.",
+      "giai": "S + 本着……的原则 + V (练一练 A–B)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "全国人民",
+       "本着",
+       "“一方有难，八方支持”的精神",
+       "，",
+       "为灾区",
+       "捐钱捐物",
+       "。"
+      ],
+      "dap": [
+       "全国人民本着“一方有难，八方支持”的精神，为灾区捐钱捐物。"
+      ],
+      "goiY": "Nhân dân cả nước trên tinh thần \"một nơi gặp nạn, tám phương chi viện\" quyên tiền quyên đồ cho vùng thiên tai.",
+      "giai": "本着 + 精神 (练一练 D–F)."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "本着",
+       "互惠互利的原则",
+       "进行",
+       "协商",
+       "。"
+      ],
+      "dap": [
+       "我们本着互惠互利的原则进行协商。"
+      ],
+      "goiY": "Chúng tôi hiệp thương trên nguyên tắc cùng có lợi.",
+      "giai": "本着……的原则 đứng trước động từ chính 进行."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们本着老师的要求完成了作业。",
+      "dung": false,
+      "sua": "我们按照老师的要求完成了作业。",
+      "giai": "本着 không đi với 要求 / 规定 / 计划 cụ thể — dùng 按照."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "学校本着“德业并重”的宗旨，培养品学兼优的学生。",
+      "dung": true,
+      "giai": "Đúng: 本着 + ……的宗旨 + hành động (培养……)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "本着互相帮助，我们成了好朋友。",
+      "dung": false,
+      "sua": "本着互相帮助的精神，我们成了好朋友。",
+      "giai": "Sau 本着 phải có danh từ trung tâm (……的精神 / 原则)."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Chúng tôi dựa trên nguyên tắc tự nguyện để tổ chức hoạt động tình nguyện này.",
+      "dap": [
+       "我们本着自愿的原则开展这次志愿活动。",
+       "我们本着自愿的原则，组织了这次志愿活动。",
+       "本着自愿的原则，我们开展了这次志愿活动。"
+      ],
+      "py": "Wǒmen běnzhe zìyuàn de yuánzé kāizhǎn zhè cì zhìyuàn huódòng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 本着……的原则.",
+      "giai": "本着 + ……的原则 + V; \"tổ chức hoạt động\" = 开展 / 组织活动."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Hai bên trên tinh thần hiệp thương bình đẳng đã giải quyết được bất đồng.",
+      "dap": [
+       "双方本着平等协商的精神，解决了分歧。",
+       "双方本着平等协商的精神，消除了分歧。",
+       "本着平等协商的精神，双方解决了分歧。"
+      ],
+      "py": "Shuāngfāng běnzhe píngděng xiéshāng de jīngshén, jiějuéle fēnqí.",
+      "goiY": "Dịch sang tiếng Trung, dùng 本着……的精神.",
+      "giai": "本着……的精神 + V; \"bất đồng\" = 分歧."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我们按照互惠互利的原则进行协商。（用“本着”改写）",
+      "goiY": "Viết lại câu bằng 本着 (练习2 ④ của sách).",
+      "mau": "我们本着互惠互利的原则进行协商。",
+      "can": [
+       [
+        "本着"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "成人教育＿＿＿，把岗位培训和继续教育作为重点。",
+      "goiY": "Hoàn thành câu bằng 本着 + 原则 (练一练 A–B: 学用结合).",
+      "mau": "成人教育本着学用结合的原则，把岗位培训和继续教育作为重点。",
+      "can": [
+       [
+        "本着"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "地震过后，全国人民＿＿＿，为灾区捐钱、捐物、捐食品。",
+      "goiY": "Hoàn thành câu bằng 本着 + 精神 (练一练 D–F: “一方有难，八方支持”).",
+      "mau": "地震过后，全国人民本着“一方有难，八方支持”的精神，为灾区捐钱、捐物、捐食品。",
+      "can": [
+       [
+        "本着"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

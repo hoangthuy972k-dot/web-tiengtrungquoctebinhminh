@@ -8266,6 +8266,935 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-9.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-10.html"] = [
+ {
+  "so": "1",
+  "ten": "「以至」",
+  "tenVn": "",
+  "cauTruc": [
+   "Vế nguyên nhân (mức độ cao)，以至(于) + kết quả",
+   "A、B 以至 C (cho đến C — tăng dần phạm vi)"
+  ],
+  "giaiThich": "以至 là LIÊN TỪ, đứng đầu VẾ SAU, biểu thị: do tình huống ở vế trước đạt mức độ rất sâu, rất cao nên dẫn đến một kết quả nào đó (= đến mức, đến nỗi). Cũng nói 以至于. Vế trước thường có 太, 那么, 这么, 十来遍… nêu mức độ; kết quả có thể tốt (辉煌至今) hoặc không mong muốn (忘了为什么出发). Sắc thái văn viết.",
+  "viDu": [
+   {
+    "zh": "中国的饮食文化历经数千年，始终具有魅力，是因为它不仅民族特性鲜明，而且善于吸收不同国家、不同区域、不同民族的优异之处，以至辉煌至今。",
+    "py": "Zhōngguó de yǐnshí wénhuà lìjīng shù qiān nián, shǐzhōng jùyǒu mèilì, shì yīnwèi tā bùjǐn mínzú tèxìng xiānmíng, érqiě shànyú xīshōu bù tóng guójiā, bù tóng qūyù, bù tóng mínzú de yōuyì zhī chù, yǐzhì huīhuáng zhì jīn.",
+    "vn": "Văn hoá ẩm thực Trung Quốc trải qua mấy nghìn năm vẫn luôn hấp dẫn, là vì nó không những mang bản sắc dân tộc rõ nét, mà còn giỏi tiếp thu điểm ưu tú của các quốc gia, khu vực, dân tộc khác, nhờ vậy mà huy hoàng đến tận hôm nay."
+   },
+   {
+    "zh": "那个电影她看了十来遍，以至许多台词都能背诵下来。",
+    "py": "Nàge diànyǐng tā kànle shí lái biàn, yǐzhì xǔduō táicí dōu néng bèisòng xiàlái.",
+    "vn": "Bộ phim ấy cô xem đến hơn chục lần, đến mức thuộc lòng được nhiều câu thoại."
+   },
+   {
+    "zh": "著名作家纪伯伦曾说：“我们已经走得太远，以至于忘了为什么出发。”",
+    "py": "Zhùmíng zuòjiā Jìbólún céng shuō: \"Wǒmen yǐjīng zǒu de tài yuǎn, yǐzhìyú wàngle wèi shénme chūfā.\"",
+    "vn": "Nhà văn nổi tiếng Kahlil Gibran từng nói: \"Chúng ta đã đi quá xa, đến mức quên mất vì sao mình khởi hành.\""
+   }
+  ],
+  "loi": [
+   {
+    "sai": "以至他太累了，上课睡着了。",
+    "why": "以至 đứng đầu vế SAU (vế kết quả), không đứng ở vế nêu nguyên nhân.",
+    "dung": "他太累了，以至上课睡着了。"
+   },
+   {
+    "sai": "他学习很努力，以至他是我们班的班长。",
+    "why": "Kết quả phải do MỨC ĐỘ của vế trước gây ra; \"làm lớp trưởng\" không phải hệ quả tự nhiên của \"học chăm\" → quan hệ gượng ép.",
+    "dung": "他学习非常努力，以至每次考试都是全班第一。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "他工作太忙了，",
+       "连孩子的生日都忘了。"
+      ],
+      "dap": [
+       [
+        "以至"
+       ]
+      ],
+      "chon": [
+       "以至",
+       "以便",
+       "以免"
+      ],
+      "goiY": "\"Anh ấy bận quá, đến mức quên cả sinh nhật con.\"",
+      "giai": "Vế trước nêu mức độ (太忙), 以至 dẫn kết quả. 以便 = để tiện; 以免 = để tránh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那个电影她看了十来遍，",
+       "许多台词都能背诵下来。"
+      ],
+      "dap": [
+       [
+        "以至"
+       ]
+      ],
+      "chon": [
+       "以至",
+       "即便",
+       "所在"
+      ],
+      "goiY": "\"Bộ phim ấy cô xem hơn chục lần, đến mức thuộc được nhiều câu thoại.\" (ví dụ sách)",
+      "giai": "Số lần rất nhiều (十来遍) → 以至 + kết quả."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们已经走得太远，",
+       "忘了为什么出发。"
+      ],
+      "dap": [
+       [
+        "以至于"
+       ]
+      ],
+      "chon": [
+       "以至于",
+       "以为",
+       "以免"
+      ],
+      "goiY": "\"Chúng ta đã đi quá xa, đến mức quên vì sao khởi hành.\" (ví dụ sách)",
+      "giai": "以至于 = 以至. 以为 = tưởng (sai); 以免 = để tránh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "她的变化太大了，",
+       "我跟她面对面都没认出来。"
+      ],
+      "dap": [
+       [
+        "以至"
+       ]
+      ],
+      "chon": [
+       "以至",
+       "所以说",
+       "于是"
+      ],
+      "goiY": "\"Cô ấy thay đổi nhiều quá, đến mức đối mặt tôi cũng không nhận ra.\" (练习2)",
+      "giai": "以至 nhấn mạnh kết quả do mức độ quá cao; 于是 chỉ trình tự hành động tiếp nối."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "屋子里安静极了，",
+       "连钟表的声音都听得清清楚楚。"
+      ],
+      "dap": [
+       [
+        "以至"
+       ]
+      ],
+      "chon": [
+       "以至",
+       "即便",
+       "凡是"
+      ],
+      "goiY": "\"Căn phòng yên tĩnh vô cùng, đến mức nghe rõ cả tiếng kim đồng hồ.\"",
+      "giai": "Mức độ cực cao (安静极了) → 以至 + 连……都……."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "中国饮食善于吸收不同民族的优异之处，",
+       "辉煌至今。"
+      ],
+      "dap": [
+       [
+        "以至"
+       ]
+      ],
+      "chon": [
+       "以至",
+       "即便",
+       "照样"
+      ],
+      "goiY": "\"Ẩm thực Trung Quốc giỏi tiếp thu điểm ưu tú của các dân tộc, nhờ vậy huy hoàng đến nay.\" (bài khoá)",
+      "giai": "以至 dẫn kết quả tích cực — dịch \"nhờ vậy mà\"."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "他看书",
+       "看得",
+       "太入迷",
+       "，",
+       "以至",
+       "连饭",
+       "都忘了吃"
+      ],
+      "dap": [
+       "他看书看得太入迷，以至连饭都忘了吃。"
+      ],
+      "goiY": "Cậu ấy đọc sách say quá, đến nỗi quên cả ăn.",
+      "giai": "Vế mức độ trước, 以至 + kết quả sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "以至",
+       "成绩",
+       "严重下降",
+       "他玩游戏",
+       "玩得太多了",
+       "，"
+      ],
+      "dap": [
+       "他玩游戏玩得太多了，以至成绩严重下降。"
+      ],
+      "goiY": "Cậu ấy chơi game quá nhiều, đến mức thành tích tụt dốc nghiêm trọng.",
+      "giai": "以至 đứng đầu vế kết quả."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "以至于",
+       "我们",
+       "已经走得太远",
+       "忘了",
+       "为什么出发",
+       "，"
+      ],
+      "dap": [
+       "我们已经走得太远，以至于忘了为什么出发。"
+      ],
+      "goiY": "Chúng ta đã đi quá xa, đến mức quên vì sao khởi hành.",
+      "giai": "以至于 = 以至, đặt đầu vế sau."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他太紧张了，以至说话的声音都在发抖。",
+      "dung": true,
+      "giai": "Vế trước nêu mức độ (太紧张), 以至 + kết quả — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "以至他太累了，上课睡着了。",
+      "dung": false,
+      "sua": "他太累了，以至上课睡着了。",
+      "giai": "以至 phải đứng đầu vế kết quả, không đứng ở vế nguyên nhân."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他学习很努力，以至他是我们班的班长。",
+      "dung": false,
+      "sua": "他学习非常努力，以至每次考试都是全班第一。",
+      "giai": "Kết quả phải do mức độ của vế trước gây ra; \"làm lớp trưởng\" không phải hệ quả của \"học chăm\"."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy mải nghĩ chuyện khác, đến mức đi quá cả cửa nhà mà không biết.",
+      "dap": [
+       "他一直在想别的事，以至走过了家门口都没发现。",
+       "他一直在想别的事情，以至走过了家门口都没发现。",
+       "他一直想着别的事，以至走过了家门口都不知道。"
+      ],
+      "py": "Tā yìzhí zài xiǎng bié de shì, yǐzhì zǒuguòle jiā ménkǒu dōu méi fāxiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以至.",
+      "giai": "Vế nguyên nhân (mải nghĩ) + 以至 + kết quả bất ngờ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mấy ngày nay bận quá, đến mức tôi chẳng có thời gian ngủ.",
+      "dap": [
+       "这几天太忙了，以至我连睡觉的时间都没有。",
+       "这几天太忙了，以至于我连睡觉的时间都没有。",
+       "这几天我太忙了，以至连睡觉的时间都没有。"
+      ],
+      "py": "Zhè jǐ tiān tài máng le, yǐzhì wǒ lián shuìjiào de shíjiān dōu méiyǒu.",
+      "goiY": "Dịch sang tiếng Trung, dùng 以至 và 连……都…….",
+      "giai": "太 + tính từ nêu mức độ; 以至 + 连……都…… nhấn mạnh kết quả."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "朋友告诉我，这所商学院在北美有相当的知名度，＿＿＿。",
+      "goiY": "kết quả của việc trường nổi tiếng (dùng 以至) — 练一练 (1) của sách",
+      "mau": "朋友告诉我，这所商学院在北美有相当的知名度，以至很多人专程去那里读书。",
+      "can": [
+       [
+        "以至"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "科学技术的发展实在是太快了，＿＿＿如今变为了现实。",
+      "goiY": "những thứ trước đây chỉ có trong tưởng tượng (dùng 以至) — 练一练 (2) của sách",
+      "mau": "科学技术的发展实在是太快了，以至很多过去只能在电影里看到的东西如今变为了现实。",
+      "can": [
+       [
+        "以至"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "走在路上，他脑子里一直在想别的事，＿＿＿。",
+      "goiY": "kết quả bất ngờ do mải nghĩ (dùng 以至) — 练一练 (3) của sách",
+      "mau": "走在路上，他脑子里一直在想别的事，以至走过了家门口都没发现。",
+      "can": [
+       [
+        "以至"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「即便」",
+  "tenVn": "",
+  "cauTruc": [
+   "即便 + giả thiết / điều kiện bất lợi，(chủ ngữ) + 也 / 还是 + kết quả không đổi",
+   "……。即便如此，也……"
+  ],
+  "giaiThich": "即便 là LIÊN TỪ, biểu thị GIẢ THIẾT kiêm NHƯỢNG BỘ, nghĩa như 就是 / 即使: \"cho dù, dù cho\". Vế sau thường có 也 (hoặc 还是, 照样) hô ứng, nêu kết quả / thái độ KHÔNG THAY ĐỔI. Sắc thái văn viết hơn 就是, 哪怕. Có thể dùng cho giả thiết chưa xảy ra (即便下雨) hoặc sự thật đã có nhưng không ảnh hưởng kết quả (即便薪水低).",
+  "viDu": [
+   {
+    "zh": "她最近心情不好，即便有些不讲理，你也要原谅她。",
+    "py": "Tā zuìjìn xīnqíng bù hǎo, jíbiàn yǒuxiē bù jiǎnglǐ, nǐ yě yào yuánliàng tā.",
+    "vn": "Dạo này cô ấy tâm trạng không tốt, cho dù có hơi vô lý thì cậu cũng nên tha thứ cho cô ấy."
+   },
+   {
+    "zh": "我喜欢那个工作，即便薪水低，我还是要去。",
+    "py": "Wǒ xǐhuan nàge gōngzuò, jíbiàn xīnshui dī, wǒ háishi yào qù.",
+    "vn": "Tôi thích công việc đó, cho dù lương thấp tôi vẫn muốn đi."
+   },
+   {
+    "zh": "原本中华饮食中的大量食物来自辽阔的土地，……经过精心构思，巧妙烹饪，即便仅为一餐素食，也可以让你尽享人间美味。",
+    "py": "Yuánběn Zhōnghuá yǐnshí zhōng de dàliàng shíwù láizì liáokuò de tǔdì, …… jīngguò jīngxīn gòusī, qiǎomiào pēngrèn, jíbiàn jǐn wéi yì cān sùshí, yě kěyǐ ràng nǐ jìnxiǎng rénjiān měiwèi.",
+    "vn": "Vốn dĩ phần lớn thực phẩm trong ẩm thực Trung Hoa đến từ vùng đất bao la, … qua ý tưởng tỉ mỉ, nấu nướng khéo léo, cho dù chỉ là một bữa chay cũng có thể khiến bạn tận hưởng mỹ vị nhân gian."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "即便明天下雨，我们就不去了。",
+    "why": "即便 đi với 也 (kết quả KHÔNG đổi), không đi với 就 (kết quả thay đổi theo điều kiện). Muốn nói \"nếu mưa thì không đi\" phải dùng 如果……就…….",
+    "dung": "即便明天下雨，我们也要去。"
+   },
+   {
+    "sai": "即便他很努力，所以成绩很好。",
+    "why": "即便 là quan hệ nhượng bộ, không đi với 所以 (quan hệ nhân quả).",
+    "dung": "即便他很努力，成绩也不太理想。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "明天下大雨，比赛也照常举行。"
+      ],
+      "dap": [
+       [
+        "即便"
+       ]
+      ],
+      "chon": [
+       "即便",
+       "既然",
+       "只要"
+      ],
+      "goiY": "\"Cho dù mai mưa to, trận đấu vẫn diễn ra như thường.\"",
+      "giai": "Vế sau có 也 + kết quả không đổi → 即便. 既然, 只要 đi với 就."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我喜欢那个工作，",
+       "薪水低，我还是要去。"
+      ],
+      "dap": [
+       [
+        "即便"
+       ]
+      ],
+      "chon": [
+       "即便",
+       "因为",
+       "以至"
+      ],
+      "goiY": "\"Tôi thích công việc đó, dù lương thấp vẫn muốn đi.\" (ví dụ sách)",
+      "giai": "即便……还是…… — 还是 cũng hô ứng được với 即便."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "仅为一餐素食，也可以让你尽享人间美味。"
+      ],
+      "dap": [
+       [
+        "即便"
+       ]
+      ],
+      "chon": [
+       "即便",
+       "凡是",
+       "如果"
+      ],
+      "goiY": "\"Cho dù chỉ là một bữa chay cũng khiến bạn tận hưởng mỹ vị nhân gian.\" (bài khoá)",
+      "giai": "即便 + 仅为 (văn viết) … 也 …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "我们的工作取得了很大的成绩，也不能骄傲。"
+      ],
+      "dap": [
+       [
+        "即便"
+       ]
+      ],
+      "chon": [
+       "即便",
+       "虽然",
+       "只有"
+      ],
+      "goiY": "\"Cho dù công việc đạt thành tích lớn, cũng không được kiêu ngạo.\" (练习2)",
+      "giai": "Có 也 ở vế sau, nghĩa nhượng bộ → 即便. 虽然 đi với 但是; 只有 đi với 才."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家要大胆地说汉语，",
+       "说错了也没关系。"
+      ],
+      "dap": [
+       [
+        "即便"
+       ]
+      ],
+      "chon": [
+       "即便",
+       "以至",
+       "于是"
+      ],
+      "goiY": "\"Mọi người cứ mạnh dạn nói tiếng Trung, dù có nói sai cũng không sao.\"",
+      "giai": "即便……也没关系 = dù … cũng không sao."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这件事很难，",
+       "如此，我们也不能放弃。"
+      ],
+      "dap": [
+       [
+        "即便"
+       ]
+      ],
+      "chon": [
+       "即便",
+       "所在",
+       "照样"
+      ],
+      "goiY": "\"Việc này rất khó, dù vậy chúng ta cũng không được bỏ cuộc.\"",
+      "giai": "即便如此 = dù vậy, nối với câu trước; vế sau vẫn có 也."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "即便",
+       "薪水低",
+       "，",
+       "我",
+       "还是",
+       "要去"
+      ],
+      "dap": [
+       "即便薪水低，我还是要去。"
+      ],
+      "goiY": "Cho dù lương thấp, tôi vẫn muốn đi.",
+      "giai": "即便 + điều kiện bất lợi，还是 + quyết định không đổi."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "也要",
+       "原谅她",
+       "即便",
+       "有些不讲理",
+       "，"
+      ],
+      "dap": [
+       "即便有些不讲理，你也要原谅她。"
+      ],
+      "goiY": "Cho dù có hơi vô lý, cậu cũng nên tha thứ cho cô ấy.",
+      "giai": "也 đứng sau chủ ngữ 你, trước động từ năng nguyện 要."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "即便",
+       "没有人监督",
+       "，",
+       "也",
+       "应该",
+       "严格要求自己",
+       "你"
+      ],
+      "dap": [
+       "即便没有人监督，你也应该严格要求自己。"
+      ],
+      "goiY": "Cho dù không ai giám sát, cậu cũng nên nghiêm khắc với bản thân.",
+      "giai": "Chủ ngữ vế sau 你 đứng trước 也."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "即便工作再忙，他也每天给父母打电话。",
+      "dung": true,
+      "giai": "即便 + 再 + tính từ + 也 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "即便明天下雨，我们就不去了。",
+      "dung": false,
+      "sua": "即便明天下雨，我们也要去。",
+      "giai": "即便 đi với 也 (kết quả không đổi), không đi với 就."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "即便他很努力，所以成绩很好。",
+      "dung": false,
+      "sua": "即便他很努力，成绩也不太理想。",
+      "giai": "即便 là nhượng bộ, không đi với 所以."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cho dù ngày mai trời mưa, chúng ta cũng phải đi.",
+      "dap": [
+       "即便明天下雨，我们也要去。",
+       "即便明天下雨，我们也得去。",
+       "即便明天下雨，我们也必须去。"
+      ],
+      "py": "Jíbiàn míngtiān xià yǔ, wǒmen yě yào qù.",
+      "goiY": "Dịch sang tiếng Trung, dùng 即便……也…….",
+      "giai": "即便 + giả thiết，也 + quyết tâm không đổi."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cho dù là món ăn nước ngoài, mẹ tôi vẫn nấu được theo kiểu Việt Nam.",
+      "dap": [
+       "即便是外国菜，我妈妈也能用越南的方式来做。",
+       "即便是外国菜，我妈妈照样能用越南的方式做。",
+       "即便是外国菜，我妈妈也可以做成越南风味。"
+      ],
+      "py": "Jíbiàn shì wàiguó cài, wǒ māma yě néng yòng Yuènán de fāngshì lái zuò.",
+      "goiY": "Dịch sang tiếng Trung, dùng 即便……也 / 照样…….",
+      "giai": "即便是 + danh từ; vế sau có thể dùng 也 hoặc 照样 (vẫn như thường)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "即便我们拿了冠军，＿＿＿。",
+      "goiY": "thái độ vẫn không đổi (dùng 也) — 练一练 (1) của sách",
+      "mau": "即便我们拿了冠军，也不能骄傲自满。",
+      "can": [
+       [
+        "也"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "大家＿＿＿，即便说错了也没关系。",
+      "goiY": "lời khuyến khích mạnh dạn — 练一练 (2) của sách",
+      "mau": "大家要大胆地说汉语，即便说错了也没关系。",
+      "can": [
+       [
+        "说",
+        "讲",
+        "练",
+        "开口"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "即便＿＿＿，你也应该严格要求自己。",
+      "goiY": "một giả thiết bất lợi (dùng 即便) — 练一练 (3) của sách",
+      "mau": "即便没有老师在旁边监督，你也应该严格要求自己。",
+      "can": [
+       [
+        "即便"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「所在」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 是 + (……的) + N trừu tượng + 所在 (= chính là chỗ … của …)",
+   "……的所在 (= nơi, chỗ — văn viết)"
+  ],
+  "giaiThich": "所在 là DANH TỪ, nghĩa là \"nơi, chỗ (tồn tại)\"; dùng trong văn viết. Hai cách dùng: ① chỉ một nơi chốn cụ thể: 风景秀美、气候宜人的所在 (một nơi phong cảnh đẹp, khí hậu dễ chịu); ② hay gặp hơn: đứng NGAY SAU danh từ trừu tượng, dạng A 是 B + 所在 = A chính là chỗ / điểm mấu chốt của B: 希望所在, 力量所在, 奥秘所在, 问题所在, 根本所在.",
+  "viDu": [
+   {
+    "zh": "他选择了风景秀美、气候宜人的所在，盖了房子，安下了家。",
+    "py": "Tā xuǎnzéle fēngjǐng xiùměi, qìhòu yírén de suǒzài, gàile fángzi, ānxiàle jiā.",
+    "vn": "Ông ấy chọn một nơi phong cảnh đẹp đẽ, khí hậu dễ chịu, xây nhà và an cư ở đó."
+   },
+   {
+    "zh": "培养人是教育的立足点，是教育价值的根本所在，是教育的本体功能。",
+    "py": "Péiyǎng rén shì jiàoyù de lìzúdiǎn, shì jiàoyù jiàzhí de gēnběn suǒzài, shì jiàoyù de běntǐ gōngnéng.",
+    "vn": "Bồi dưỡng con người là chỗ đứng của giáo dục, là cái gốc của giá trị giáo dục, là chức năng bản thể của giáo dục."
+   },
+   {
+    "zh": "可以说，中华饮食文化自诞生之日起，就面向世界，边继承，边改革，不断引进新元素，这也是其充满活力的奥秘所在。",
+    "py": "Kěyǐ shuō, Zhōnghuá yǐnshí wénhuà zì dànshēng zhī rì qǐ, jiù miànxiàng shìjiè, biān jìchéng, biān gǎigé, búduàn yǐnjìn xīn yuánsù, zhè yě shì qí chōngmǎn huólì de àomì suǒzài.",
+    "vn": "Có thể nói, văn hoá ẩm thực Trung Hoa ngay từ ngày ra đời đã hướng ra thế giới, vừa kế thừa vừa cải cách, không ngừng đưa vào yếu tố mới — đó cũng chính là bí quyết giúp nó tràn đầy sức sống."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "青少年所在是一个国家的希望。",
+    "why": "所在 đứng NGAY SAU danh từ trừu tượng mà nó bổ sung (希望所在), không đứng sau chủ ngữ.",
+    "dung": "青少年是一个国家的希望所在。"
+   },
+   {
+    "sai": "我找不到问题的所在在哪儿。",
+    "why": "所在 đã mang nghĩa \"chỗ, nơi\" — thêm 在哪儿 là lặp ý.",
+    "dung": "我找不到问题所在。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "大家的支持是我们的力量",
+       "。"
+      ],
+      "dap": [
+       [
+        "所在"
+       ]
+      ],
+      "chon": [
+       "所在",
+       "所有",
+       "存在"
+      ],
+      "goiY": "\"Sự ủng hộ của mọi người chính là nguồn sức mạnh của chúng tôi.\" (练一练 1)",
+      "giai": "力量所在 = chính là nguồn sức mạnh. 所有 = tất cả; 存在 = tồn tại."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "只有找到问题",
+       "，才谈得上解决问题。"
+      ],
+      "dap": [
+       [
+        "所在"
+       ]
+      ],
+      "chon": [
+       "所在",
+       "在于",
+       "所以"
+      ],
+      "goiY": "\"Chỉ khi tìm ra mấu chốt của vấn đề mới nói đến chuyện giải quyết.\" (练一练 2)",
+      "giai": "问题所在 = chỗ mấu chốt của vấn đề. 在于 cần tân ngữ phía sau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "青少年是一个国家的希望",
+       "。"
+      ],
+      "dap": [
+       [
+        "所在"
+       ]
+      ],
+      "chon": [
+       "所在",
+       "所有",
+       "在于"
+      ],
+      "goiY": "\"Thanh thiếu niên là niềm hy vọng của một đất nước.\" (练习2)",
+      "giai": "A 是 B 的希望所在."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这也是中华饮食文化充满活力的奥秘",
+       "。"
+      ],
+      "dap": [
+       [
+        "所在"
+       ]
+      ],
+      "chon": [
+       "所在",
+       "存在",
+       "现在"
+      ],
+      "goiY": "\"Đây cũng chính là bí quyết giúp văn hoá ẩm thực Trung Hoa tràn đầy sức sống.\" (bài khoá)",
+      "giai": "奥秘所在 = bí quyết (nằm ở đó)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "培养人是教育价值的根本",
+       "。"
+      ],
+      "dap": [
+       [
+        "所在"
+       ]
+      ],
+      "chon": [
+       "所在",
+       "所有",
+       "实在"
+      ],
+      "goiY": "\"Bồi dưỡng con người là cái gốc của giá trị giáo dục.\" (ví dụ sách)",
+      "giai": "根本所在 = cái gốc, điểm căn bản. 实在 = thật sự."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他选择了风景秀美、气候宜人的",
+       "，盖了房子，安下了家。"
+      ],
+      "dap": [
+       [
+        "所在"
+       ]
+      ],
+      "chon": [
+       "所在",
+       "地点",
+       "所有"
+      ],
+      "goiY": "\"Ông chọn một nơi phong cảnh đẹp, khí hậu dễ chịu, xây nhà an cư.\" (ví dụ sách)",
+      "giai": "所在 dùng như danh từ \"nơi chốn\" (văn viết), mang sắc thái văn chương hơn 地方."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "大家的支持",
+       "是",
+       "我们的",
+       "力量",
+       "所在"
+      ],
+      "dap": [
+       "大家的支持是我们的力量所在。"
+      ],
+      "goiY": "Sự ủng hộ của mọi người chính là nguồn sức mạnh của chúng tôi.",
+      "giai": "所在 đứng ngay sau danh từ trừu tượng 力量."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "青少年",
+       "所在",
+       "希望",
+       "是",
+       "一个国家的"
+      ],
+      "dap": [
+       "青少年是一个国家的希望所在。"
+      ],
+      "goiY": "Thanh thiếu niên là niềm hy vọng của một đất nước.",
+      "giai": "A 是 + định ngữ + 希望 + 所在."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "其",
+       "充满活力的",
+       "奥秘",
+       "所在",
+       "这",
+       "也是"
+      ],
+      "dap": [
+       "这也是其充满活力的奥秘所在。"
+      ],
+      "goiY": "Đây cũng chính là bí quyết giúp nó tràn đầy sức sống.",
+      "giai": "其 = 它的 (văn viết), đứng trước định ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "找不到问题所在，就无法解决问题。",
+      "dung": true,
+      "giai": "问题所在 = chỗ mấu chốt của vấn đề — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "青少年所在是一个国家的希望。",
+      "dung": false,
+      "sua": "青少年是一个国家的希望所在。",
+      "giai": "所在 phải đứng ngay sau danh từ trừu tượng 希望."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我找不到问题的所在在哪儿。",
+      "dung": false,
+      "sua": "我找不到问题所在。",
+      "giai": "所在 đã có nghĩa \"chỗ\" — thêm 在哪儿 là lặp ý."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Kiên trì mỗi ngày chính là bí quyết học tốt tiếng Trung.",
+      "dap": [
+       "每天坚持就是学好汉语的奥秘所在。",
+       "每天坚持是学好汉语的奥秘所在。",
+       "坚持每天学习就是学好汉语的奥秘所在。"
+      ],
+      "py": "Měi tiān jiānchí jiù shì xuéhǎo Hànyǔ de àomì suǒzài.",
+      "goiY": "Dịch sang tiếng Trung, dùng ……的奥秘所在.",
+      "giai": "A 就是 B 的奥秘所在 = A chính là bí quyết của B."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Gia đình là nguồn sức mạnh của tôi.",
+      "dap": [
+       "家庭是我的力量所在。",
+       "家人是我的力量所在。",
+       "家就是我的力量所在。"
+      ],
+      "py": "Jiātíng shì wǒ de lìliang suǒzài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 所在.",
+      "giai": "力量所在 = nguồn sức mạnh; 所在 đứng sau danh từ trừu tượng."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "给孩子们创造幸福美好的生活，是父亲一生为之奋斗的＿＿＿。",
+      "goiY": "động lực (dùng 所在) — 练一练 (3) của sách",
+      "mau": "给孩子们创造幸福美好的生活，是父亲一生为之奋斗的动力所在。",
+      "can": [
+       [
+        "所在"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "一个国家的希望都在青少年身上。→ 青少年＿＿＿。",
+      "goiY": "viết lại bằng 所在 — 练习2 ④ của sách",
+      "mau": "青少年是一个国家的希望所在。",
+      "can": [
+       [
+        "所在"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他每次考试都不及格，老师终于找到了问题＿＿＿。",
+      "goiY": "tìm ra chỗ mấu chốt (dùng 所在)",
+      "mau": "他每次考试都不及格，老师终于找到了问题所在：他从来不复习。",
+      "can": [
+       [
+        "所在"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
 window.NGU_PHAP_TAB["/lessons/hsk6-bai-11.html"] = [
  {
   "so": "1",

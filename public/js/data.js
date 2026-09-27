@@ -1913,6 +1913,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-9.html'
       },
       {
+        id: 'hsk6-l10',
+        number: 10,
+        title: 'Ẩm thực Trung Quốc trong tầm nhìn toàn cầu hoá',
+        titleHanzi: '全球化视野中的中国饮食',
+        titlePinyin: 'Quánqiúhuà shìyě zhōng de Zhōngguó yǐnshí',
+        topic: '第三单元 多彩社会 · Văn hoá ẩm thực & giao lưu văn hoá',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-10.html'
+      },
+      {
         id: 'hsk6-l11',
         number: 11,
         title: 'Các chú mèo làm gì khi tôi đi vắng?',

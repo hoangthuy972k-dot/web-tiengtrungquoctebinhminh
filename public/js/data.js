@@ -1995,6 +1995,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-16.html'
+      },
+      {
+        id: 'hsk6-l17',
+        number: 17,
+        title: 'Thế giới chậm trong mắt động vật nhỏ',
+        titleHanzi: '小动物眼中的慢世界',
+        titlePinyin: 'Xiǎo dòngwù yǎn zhōng de màn shìjiè',
+        topic: '第五单元 美丽家园 · Thị giác và tốc độ xử lý thông tin của động vật nhỏ',
+        vocabCount: 44,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-17.html'
       }
     ],
     yct: [

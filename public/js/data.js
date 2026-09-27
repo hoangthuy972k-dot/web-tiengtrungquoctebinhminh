@@ -1815,6 +1815,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-1.html'
+      },
+      {
+        id: 'hsk6-l6',
+        number: 6,
+        title: 'Làm tốt vai "học sinh chuyển lớp" nơi công sở',
+        titleHanzi: '当好职场插班生',
+        titlePinyin: 'Dānghǎo zhíchǎng chābānshēng',
+        topic: '第二单元 不甘平庸 · Người mới nơi công sở & thái độ làm việc',
+        vocabCount: 46,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-6.html'
       }
     ],
     yct: [

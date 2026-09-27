@@ -1,0 +1,112 @@
+{
+ "zh": "背着电饭锅拍北极",
+ "py": "Bēizhe diànfànguō pāi Běijí",
+ "vn": "Vác nồi cơm điện đi chụp ảnh Bắc Cực",
+ "topic": "第四单元 走遍天下 · Hành trình theo đuổi đam mê ở Bắc Cực",
+ "vocabCount": 50,
+ "synonymCount": 3,
+ "grammar": [
+  {
+   "point": "数量短语的重叠（一拨拨）",
+   "explain": "Cụm số lượng từ \"一 + lượng từ\" có thể LẶP LẠI thành 一 + LT + LT (一拨拨, 一个个, 一本本) hoặc 一 + LT + 一 + LT (一拨一拨), miêu tả số lượng NHIỀU, lần lượt từng cái / từng nhóm. Sự vật được miêu tả phải xuất hiện dưới dạng TỪNG CÁ THỂ riêng lẻ, vì vậy nó khác \"很多\" về nghĩa và chức năng (很多 chỉ nói số lượng lớn, không gợi hình ảnh \"từng cái một\"). Số từ CHỈ dùng \"一\"; chữ \"一\" thứ hai có thể lược bỏ (一拨一拨 → 一拨拨). Thường làm định ngữ (一拨拨同行) hoặc trạng ngữ (一口口吃).",
+   "rule": "<strong style=\"color:var(--sky-d)\">一 + LT + LT</strong> (+ N)　|　<strong style=\"color:var(--sky-d)\">一 + LT + 一 + LT</strong> (+ N)　|　N + 要 + <strong style=\"color:var(--sky-d)\">一 + LT + LT</strong> + V",
+   "examples": [
+    {
+     "zh": "每天都会有一拨拨同行前来考察访问。",
+     "py": "Měi tiān dōu huì yǒu yì bōbō tóngháng qiánlái kǎochá fǎngwèn.",
+     "vn": "Ngày nào cũng có hết tốp này đến tốp khác đồng nghiệp trong ngành đến khảo sát, thăm quan."
+    },
+    {
+     "zh": "她收集的那一幅幅图片、一本本资料、一盘盘调查录音带，都是不容置疑的铁证。",
+     "py": "Tā shōují de nà yì fúfú túpiàn, yì běnběn zīliào, yì pánpán diàochá lùyīndài, dōu shì bùróng-zhìyí de tiězhèng.",
+     "vn": "Từng bức ảnh, từng tập tài liệu, từng cuộn băng ghi âm điều tra mà bà thu thập đều là những bằng chứng không thể chối cãi."
+    },
+    {
+     "zh": "饭要一口口吃，话要一句句说，事要一件件做。",
+     "py": "Fàn yào yì kǒukǒu chī, huà yào yí jùjù shuō, shì yào yí jiànjiàn zuò.",
+     "vn": "Cơm phải ăn từng miếng, lời phải nói từng câu, việc phải làm từng việc một."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "他一个下午就看完了三本本小说。",
+     "why": "Số từ trong dạng lặp chỉ được dùng \"一\", không dùng 二, 三…",
+     "right": "他一个下午就看完了一本本小说。（或：他一个下午就看完了三本小说。）"
+    },
+    {
+     "wrong": "她那一头头长发真漂亮。",
+     "why": "一头长发 chỉ MỘT mái tóc, không phải nhiều cá thể xuất hiện lần lượt, nên không lặp được.",
+     "right": "她那一头长发真漂亮。"
+    }
+   ]
+  },
+  {
+   "point": "难以",
+   "explain": "难以 là ĐỘNG TỪ, nghĩa là \"không dễ, rất khó\" (不容易、很难). Phía sau thường là động từ hoặc tính từ HAI âm tiết trở lên (难以平静, 难以想象, 难以度过, 难以忘怀), KHÔNG đi với từ một âm tiết (không nói 难以吃, 难以做). Dùng trong văn viết; hay đi với 令人 / 让人 (令人难以想象) và làm định ngữ với 的 (难以度过的灾难).",
+   "rule": "<strong style=\"color:var(--sky-d)\">难以</strong> + V/Adj hai âm tiết　|　令人 / 让人 + <strong style=\"color:var(--sky-d)\">难以</strong> + V　|　<strong style=\"color:var(--sky-d)\">难以</strong> + V + 的 + N",
+   "examples": [
+    {
+     "zh": "事情已经过去好久了，可是每次回想起当时的情景，心情还是难以平静。",
+     "py": "Shìqing yǐjīng guòqù hǎojiǔ le, kěshì měi cì huíxiǎng qǐ dāngshí de qíngjǐng, xīnqíng háishi nányǐ píngjìng.",
+     "vn": "Chuyện đã qua lâu lắm rồi, nhưng mỗi lần nhớ lại cảnh lúc ấy, lòng vẫn khó mà bình tĩnh."
+    },
+    {
+     "zh": "这样的假话最好不要说，因为你自己都难以自圆其说，别人怎么能够相信呢？",
+     "py": "Zhèyàng de jiǎhuà zuìhǎo bú yào shuō, yīnwèi nǐ zìjǐ dōu nányǐ zìyuán-qíshuō, biérén zěnme nénggòu xiāngxìn ne?",
+     "vn": "Lời nói dối như vậy tốt nhất đừng nói, vì chính bạn còn khó mà nói cho xuôi, người khác sao tin được?"
+    },
+    {
+     "zh": "他们遇到过想象中难以度过的灾难，最后在饥饿、风暴、严寒中奇迹般地生存下来，成为北极最大的原住民部族……",
+     "py": "Tāmen yùdàoguo xiǎngxiàng zhōng nányǐ dùguò de zāinàn, zuìhòu zài jī'è, fēngbào, yánhán zhōng qíjì bān de shēngcún xiàlái, chéngwéi Běijí zuì dà de yuánzhùmín bùzú……",
+     "vn": "Họ từng gặp những tai ương tưởng chừng khó mà vượt qua, cuối cùng đã sống sót một cách kỳ diệu giữa đói khát, bão tố, giá rét, trở thành bộ tộc bản địa lớn nhất Bắc Cực…"
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "这个菜太辣了，我难以吃。",
+     "why": "难以 không đi với động từ một âm tiết (吃); câu khẩu ngữ thì dùng 很难 / 没法.",
+     "right": "这个菜太辣了，我实在难以下咽。（或：这个菜太辣了，我没法吃。）"
+    },
+    {
+     "wrong": "这件事难以让人相信得很。",
+     "why": "难以 đã mang nghĩa \"rất khó\", không thêm bổ ngữ mức độ 得很; cấu trúc đúng là 令人 / 让人 + 难以 + V.",
+     "right": "这件事令人难以相信。"
+    }
+   ]
+  },
+  {
+   "point": "免得",
+   "explain": "免得 là LIÊN TỪ, biểu thị làm việc ở vế trước để TRÁNH xảy ra một tình huống không mong muốn (= để khỏi, kẻo). Thường đứng ở đầu VẾ SAU, phía sau là điều không mong muốn. Cũng nói \"以免\" (văn viết hơn). Vì bản thân 免得 đã có nghĩa \"tránh\", phía sau KHÔNG thêm 不 / 没.",
+   "rule": "Vế trước (việc nên làm)，<strong style=\"color:var(--sky-d)\">免得</strong> + điều không mong muốn　|　……，<strong style=\"color:var(--sky-d)\">以免</strong> ……",
+   "examples": [
+    {
+     "zh": "今天大家晚点儿走，把活儿都干完，免得明天再来。",
+     "py": "Jīntiān dàjiā wǎn diǎnr zǒu, bǎ huór dōu gànwán, miǎnde míngtiān zài lái.",
+     "vn": "Hôm nay mọi người về muộn một chút, làm xong hết việc, để khỏi mai phải đến nữa."
+    },
+    {
+     "zh": "自己能做的事就自己做吧，免得麻烦别人。",
+     "py": "Zìjǐ néng zuò de shì jiù zìjǐ zuò ba, miǎnde máfan biérén.",
+     "vn": "Việc tự làm được thì tự làm đi, kẻo phiền người khác."
+    },
+    {
+     "zh": "他和妻子往返北极17次，支出很大，他们处处精打细算，千方百计节省开支，免得多年的储蓄减少得太快。",
+     "py": "Tā hé qīzi wǎngfǎn Běijí shíqī cì, zhīchū hěn dà, tāmen chùchù jīngdǎ-xìsuàn, qiānfāng-bǎijì jiéshěng kāizhī, miǎnde duō nián de chǔxù jiǎnshǎo de tài kuài.",
+     "vn": "Ông và vợ đi về Bắc Cực 17 lần, chi phí rất lớn; họ chỗ nào cũng tính toán chi li, tìm mọi cách tiết kiệm chi tiêu, để khoản dành dụm nhiều năm khỏi vơi đi quá nhanh."
+    }
+   ],
+   "errors": [
+    {
+     "wrong": "天冷了，多穿点儿衣服，免得不感冒。",
+     "why": "免得 đã mang nghĩa \"để tránh\", phía sau là điều không mong muốn, không thêm 不.",
+     "right": "天冷了，多穿点儿衣服，免得感冒。"
+    },
+    {
+     "wrong": "我们早点儿出发，免得能赶上火车。",
+     "why": "Sau 免得 phải là điều muốn TRÁNH (赶不上火车), không phải điều mong muốn.",
+     "right": "我们早点儿出发，免得赶不上火车。"
+    }
+   ]
+  }
+ ]
+}

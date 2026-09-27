@@ -1947,6 +1947,30 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-12.html'
+      },
+      {
+        id: 'hsk6-l13',
+        number: 13,
+        title: 'Nhìn thế sự đổi thay qua sách hướng dẫn du lịch',
+        titleHanzi: '从旅游指南看世事变迁',
+        titlePinyin: 'Cóng lǚyóu zhǐnán kàn shìshì biànqiān',
+        topic: '第四单元 走遍天下 · Sách hướng dẫn du lịch và những đổi thay của xã hội',
+        vocabCount: 51,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-13.html'
+      },
+      {
+        id: 'hsk6-l14',
+        number: 14,
+        title: 'Vác nồi cơm điện đi chụp ảnh Bắc Cực',
+        titleHanzi: '背着电饭锅拍北极',
+        titlePinyin: 'Bēizhe diànfànguō pāi Běijí',
+        topic: '第四单元 走遍天下 · Hành trình theo đuổi đam mê ở Bắc Cực',
+        vocabCount: 50,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-14.html'
       }
     ],
     yct: [

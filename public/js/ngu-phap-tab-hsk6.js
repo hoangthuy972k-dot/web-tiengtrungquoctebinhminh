@@ -11040,3 +11040,1882 @@ window.NGU_PHAP_TAB["/lessons/hsk6-bai-12.html"] = [
   ]
  }
 ];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-13.html"] = [
+ {
+  "so": "1",
+  "ten": "「便于」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + (很 / 更 / 不) 便于 + V: (A) dễ / tiện cho việc …",
+   "为(了) + 便于 + V，……: để tiện cho việc … (nêu mục đích)"
+  ],
+  "giaiThich": "便于 là ĐỘNG TỪ, biểu thị (làm việc gì đó) tương đối dễ dàng, thuận tiện (较容易做某事). Phía sau 便于 phần lớn là từ ngữ mang tính động từ: 便于理解, 便于携带, 便于管理, 便于利用. Sắc thái văn viết. Hay gặp hai cách dùng: ① làm vị ngữ: A (很 / 更 / 不) 便于 + V; ② đứng sau 为 / 为了 ở đầu câu để nêu mục đích: 为(了)便于……，……. Khác với 方便: 方便 là tính từ, đứng một mình được (很方便) và có thể mang tân ngữ chỉ người (方便大家); 便于 thì bắt buộc có động từ theo sau.",
+  "viDu": [
+   {
+    "zh": "科普文章应该写得简明易懂、便于理解。",
+    "py": "Kēpǔ wénzhāng yīnggāi xiě de jiǎnmíng yì dǒng, biànyú lǐjiě.",
+    "vn": "Bài viết phổ biến khoa học nên viết ngắn gọn dễ hiểu, thuận tiện cho người đọc nắm bắt."
+   },
+   {
+    "zh": "多数学者认为目前图书分类太过繁杂，不便于利用。",
+    "py": "Duōshù xuézhě rènwéi mùqián túshū fēnlèi tài guò fánzá, bú biànyú lìyòng.",
+    "vn": "Đa số học giả cho rằng cách phân loại sách hiện nay quá rườm rà, không tiện sử dụng."
+   },
+   {
+    "zh": "为便于外地人出行，他搜集了当地文化习俗以及车船码头等信息，做了简要介绍。",
+    "py": "Wèi biànyú wàidìrén chūxíng, tā sōujíle dāngdì wénhuà xísú yǐjí chē chuán mǎtou děng xìnxī, zuòle jiǎnyào jièshào.",
+    "vn": "Để người nơi khác đi lại thuận tiện, ông đã thu thập thông tin về văn hoá, phong tục địa phương cùng xe, thuyền, bến bãi…, giới thiệu một cách ngắn gọn."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这个地方交通很便于。",
+    "why": "便于 là động từ, bắt buộc có động từ theo sau; muốn nói \"thuận tiện\" đứng một mình thì dùng tính từ 方便.",
+    "dung": "这个地方交通很方便。"
+   },
+   {
+    "sai": "这样安排便于大家。",
+    "why": "Sau 便于 là động từ, không phải danh từ / đại từ chỉ người. \"Thuận tiện cho ai\" dùng 方便 + người, hoặc thêm động từ sau 便于.",
+    "dung": "这样安排便于大家参加。/ 这样安排方便大家。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "科普文章应该写得简明易懂、",
+       "理解。"
+      ],
+      "dap": [
+       [
+        "便于"
+       ]
+      ],
+      "chon": [
+       "便于",
+       "由于",
+       "对于"
+      ],
+      "goiY": "\"Bài phổ biến khoa học nên viết ngắn gọn dễ hiểu, tiện cho việc nắm bắt.\" (câu mẫu của sách)",
+      "giai": "便于 + động từ (理解); 由于 = do, 对于 = đối với."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "多数学者认为目前图书分类太过繁杂，不",
+       "利用。"
+      ],
+      "dap": [
+       [
+        "便于"
+       ]
+      ],
+      "chon": [
+       "便于",
+       "善于",
+       "在于"
+      ],
+      "goiY": "\"… phân loại sách hiện nay quá rườm rà, không tiện sử dụng.\" (câu mẫu của sách)",
+      "giai": "不便于 + V = không tiện …; 善于 = giỏi về, 在于 = ở chỗ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "为",
+       "外地人出行，他搜集了当地文化习俗以及车船码头等信息。"
+      ],
+      "dap": [
+       [
+        "便于"
+       ]
+      ],
+      "chon": [
+       "便于",
+       "至于",
+       "关于"
+      ],
+      "goiY": "\"Để người nơi khác đi lại thuận tiện, …\" (câu bài khoá)",
+      "giai": "为 + 便于 + V: nêu mục đích ở đầu câu."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "这种手机又小又轻，非常",
+       "携带。"
+      ],
+      "dap": [
+       [
+        "便于"
+       ]
+      ],
+      "chon": [
+       "便于",
+       "用于",
+       "等于"
+      ],
+      "goiY": "\"Loại điện thoại này vừa nhỏ vừa nhẹ, rất tiện mang theo.\"",
+      "giai": "便于携带 là kết hợp rất hay gặp; 用于 = dùng vào, 等于 = bằng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "把资料按时间顺序排好，",
+       "以后查找。"
+      ],
+      "dap": [
+       [
+        "便于"
+       ]
+      ],
+      "chon": [
+       "便于",
+       "属于",
+       "处于"
+      ],
+      "goiY": "\"Xếp tài liệu theo thứ tự thời gian để sau này dễ tra tìm.\"",
+      "giai": "Vế sau ……，便于 + V nêu mục đích (gần nghĩa 以便)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "老年人胃的消化力弱，吃面条更",
+       "消化吸收。"
+      ],
+      "dap": [
+       [
+        "便于"
+       ]
+      ],
+      "chon": [
+       "便于",
+       "至于",
+       "以至于"
+      ],
+      "goiY": "\"Dạ dày người già tiêu hoá yếu, ăn mì dễ tiêu hoá, hấp thu hơn.\" (练一练 3)",
+      "giai": "更 + 便于 + V: dễ … hơn."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "为了",
+       "便于",
+       "管理",
+       "，",
+       "学校",
+       "给每个学生",
+       "发了",
+       "一张卡"
+      ],
+      "dap": [
+       "为了便于管理，学校给每个学生发了一张卡。"
+      ],
+      "goiY": "Để tiện quản lý, nhà trường phát cho mỗi học sinh một tấm thẻ.",
+      "giai": "为了便于 + V đặt đầu câu chỉ mục đích."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "这种",
+       "包装",
+       "不",
+       "便于",
+       "运输"
+      ],
+      "dap": [
+       "这种包装不便于运输。"
+      ],
+      "goiY": "Kiểu đóng gói này không tiện vận chuyển.",
+      "giai": "Phủ định: 不 đứng trước 便于."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "为",
+       "便于",
+       "游客",
+       "出行",
+       "，",
+       "景区",
+       "开通了",
+       "旅游专线"
+      ],
+      "dap": [
+       "为便于游客出行，景区开通了旅游专线。"
+      ],
+      "goiY": "Để du khách đi lại thuận tiện, khu thắng cảnh đã mở tuyến xe du lịch riêng.",
+      "giai": "为便于 + chủ thể + V (mô phỏng câu bài khoá)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "为了便于推销，她给这种儿童服装起了个好听的名字。",
+      "dung": true,
+      "giai": "为了 + 便于 + V (推销) — đúng vị trí (练一练 1, đáp án B)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个地方交通很便于。",
+      "dung": false,
+      "sua": "这个地方交通很方便。",
+      "giai": "便于 phải có động từ theo sau; muốn nói \"thuận tiện\" đứng một mình dùng 方便."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这样安排便于大家。",
+      "dung": false,
+      "sua": "这样安排便于大家参加。",
+      "giai": "Sau 便于 là động từ, không phải từ chỉ người; thêm động từ hoặc đổi sang 方便大家."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Để tiện liên lạc, mời mọi người để lại số điện thoại.",
+      "dap": [
+       "为了便于联系，请大家留下电话号码。",
+       "为便于联系，请大家留下电话号码。",
+       "为了便于联系，请大家留下手机号码。"
+      ],
+      "py": "Wèile biànyú liánxì, qǐng dàjiā liúxià diànhuà hàomǎ.",
+      "goiY": "Dịch sang tiếng Trung, dùng 便于.",
+      "giai": "为(了) + 便于 + V đặt đầu câu chỉ mục đích."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Cuốn sách bỏ túi này vừa nhỏ vừa nhẹ, rất tiện mang theo.",
+      "dap": [
+       "这本口袋书又小又轻，非常便于携带。",
+       "这本口袋书又小又轻，很便于携带。",
+       "这本口袋书又小又轻，特别便于携带。"
+      ],
+      "py": "Zhè běn kǒudàishū yòu xiǎo yòu qīng, fēicháng biànyú xiédài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 便于.",
+      "giai": "便于携带 là kết hợp cố định; 又……又…… liệt kê hai đặc điểm."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "为了＿＿＿，她给这种儿童服装起了个好听的名字——帅王子。",
+      "goiY": "để tiện bán hàng (dùng 便于) — 练一练 (1) của sách, đáp án B",
+      "mau": "为了便于推销，她给这种儿童服装起了个好听的名字——帅王子。",
+      "can": [
+       [
+        "便于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "那时的建筑系只收男生，不收女生，学校的管理者说，这样更＿＿＿。",
+      "goiY": "dễ quản lý hơn (dùng 便于) — 练一练 (2) của sách, đáp án C",
+      "mau": "那时的建筑系只收男生，不收女生，学校的管理者说，这样更便于管理。",
+      "can": [
+       [
+        "便于"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "一种说法是，老年人胃的消化力弱，吃面条，更＿＿＿。",
+      "goiY": "dễ tiêu hoá, hấp thu hơn (dùng 便于) — 练一练 (3) của sách, đáp án D",
+      "mau": "一种说法是，老年人胃的消化力弱，吃面条，更便于消化吸收。",
+      "can": [
+       [
+        "便于"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「犹如」",
+  "tenVn": "",
+  "cauTruc": [
+   "A + 犹如 + B (+ 一般 / 般 + Adj): A như B (ví von, văn viết)",
+   "……变得 / 都 + 犹如 + B: trở nên như …, đều như …"
+  ],
+  "giaiThich": "犹如 là ĐỘNG TỪ, nghĩa là \"好像、如同\" (như, giống như). Dùng trong VĂN VIẾT, chủ yếu để ví von bằng hình ảnh: A 犹如 B. Phía sau thường có 一般 / 般 để hô ứng (犹如火山爆发般, 犹如白天一般). Tân ngữ của 犹如 có thể là danh từ (犹如家常便饭) hoặc cụm động từ (犹如有位随身的向导). Không dùng 犹如 để phỏng đoán (\"hình như\" → 好像) hay so sánh mức độ giữa hai người, vật cùng loại (→ 跟……一样).",
+  "viDu": [
+   {
+    "zh": "公司的劣质产品气坏了消费者，顾客的愤怒情绪犹如火山爆发般难以控制。",
+    "py": "Gōngsī de lièzhì chǎnpǐn qìhuàile xiāofèizhě, gùkè de fènnù qíngxù yóurú huǒshān bàofā bān nányǐ kòngzhì.",
+    "vn": "Sản phẩm kém chất lượng của công ty khiến người tiêu dùng tức điên, cơn giận của khách hàng như núi lửa phun trào, khó mà kiềm chế."
+   },
+   {
+    "zh": "1999年以后，中国人逐渐成为游客中的主流，国内旅游和出国旅游都变得犹如家常便饭。",
+    "py": "Yī jiǔ jiǔ jiǔ nián yǐhòu, Zhōngguórén zhújiàn chéngwéi yóukè zhōng de zhǔliú, guónèi lǚyóu hé chūguó lǚyóu dōu biàn de yóurú jiāchángbiànfàn.",
+    "vn": "Sau năm 1999, người Trung Quốc dần trở thành bộ phận chủ yếu trong du khách, du lịch trong nước và du lịch nước ngoài đều trở nên như chuyện cơm bữa."
+   },
+   {
+    "zh": "卫星导航系统的广泛应用，使得人们不管走到哪儿，都犹如有位随身的向导。",
+    "py": "Wèixīng dǎoháng xìtǒng de guǎngfàn yìngyòng, shǐde rénmen bùguǎn zǒudào nǎr, dōu yóurú yǒu wèi suíshēn de xiàngdǎo.",
+    "vn": "Hệ thống định vị vệ tinh được ứng dụng rộng rãi khiến người ta dù đi đến đâu cũng như có một người dẫn đường bên mình."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他犹如他哥哥一样高。",
+    "why": "So sánh bằng về mức độ giữa hai người dùng 跟 / 和……一样; 犹如 dành cho phép ví von bằng hình ảnh (văn viết).",
+    "dung": "他跟他哥哥一样高。"
+   },
+   {
+    "sai": "外面犹如要下雨了，带把伞吧。",
+    "why": "犹如 không mang nghĩa phỏng đoán \"hình như\"; phỏng đoán dùng 好像.",
+    "dung": "外面好像要下雨了，带把伞吧。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "顾客的愤怒情绪",
+       "火山爆发般难以控制。"
+      ],
+      "dap": [
+       [
+        "犹如"
+       ]
+      ],
+      "chon": [
+       "犹如",
+       "比如",
+       "例如"
+      ],
+      "goiY": "\"Cơn giận của khách hàng như núi lửa phun trào, khó kiềm chế.\" (câu mẫu của sách)",
+      "giai": "犹如……般 = như … vậy; 比如 / 例如 = ví dụ như (nêu ví dụ, không phải ví von)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "国内旅游和出国旅游都变得",
+       "家常便饭。"
+      ],
+      "dap": [
+       [
+        "犹如"
+       ]
+      ],
+      "chon": [
+       "犹如",
+       "假如",
+       "不如"
+      ],
+      "goiY": "\"… đều trở nên như chuyện cơm bữa.\" (câu bài khoá)",
+      "giai": "变得 + 犹如 + B; 假如 = giả sử, 不如 = không bằng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "卫星导航使得人们不管走到哪儿，都",
+       "有位随身的向导。"
+      ],
+      "dap": [
+       [
+        "犹如"
+       ]
+      ],
+      "chon": [
+       "犹如",
+       "何况",
+       "例如"
+      ],
+      "goiY": "\"… dù đi đâu cũng như có người dẫn đường bên mình.\" (câu bài khoá)",
+      "giai": "都 + 犹如 + cụm động từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "先生讲课声调不高，",
+       "温暖的春风扑面。"
+      ],
+      "dap": [
+       [
+        "犹如"
+       ]
+      ],
+      "chon": [
+       "犹如",
+       "比如",
+       "假如"
+      ],
+      "goiY": "\"Thầy giảng bài giọng không cao, như gió xuân ấm áp phả vào mặt.\" (练一练 1)",
+      "giai": "犹如 dẫn ra hình ảnh ví von."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "夕阳照耀下的古城，色彩",
+       "油画般厚重。"
+      ],
+      "dap": [
+       [
+        "犹如"
+       ]
+      ],
+      "chon": [
+       "犹如",
+       "不如",
+       "例如"
+      ],
+      "goiY": "\"Cổ thành dưới ánh hoàng hôn, màu sắc đậm đà như tranh sơn dầu.\" (练一练 2)",
+      "giai": "犹如……般 + Adj (厚重)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们的人生，",
+       "一片一望无际的大海。"
+      ],
+      "dap": [
+       [
+        "犹如"
+       ]
+      ],
+      "chon": [
+       "犹如",
+       "尤其",
+       "由于"
+      ],
+      "goiY": "\"Cuộc đời chúng ta như một biển cả mênh mông.\" (练一练 3)",
+      "giai": "犹如 (yóurú) dễ nhầm với 尤其 (yóuqí — đặc biệt là), 由于 (yóuyú — do)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "时间",
+       "犹如",
+       "流水",
+       "，",
+       "一去",
+       "不复返"
+      ],
+      "dap": [
+       "时间犹如流水，一去不复返。"
+      ],
+      "goiY": "Thời gian như dòng nước, trôi đi không trở lại.",
+      "giai": "A 犹如 B, vế sau nói điểm giống nhau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "她的",
+       "笑容",
+       "犹如",
+       "春天的",
+       "阳光",
+       "一般",
+       "温暖"
+      ],
+      "dap": [
+       "她的笑容犹如春天的阳光一般温暖。"
+      ],
+      "goiY": "Nụ cười của cô ấy ấm áp như nắng mùa xuân.",
+      "giai": "犹如 + B + 一般 + Adj."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "读一本",
+       "好书",
+       "，",
+       "犹如",
+       "和一位",
+       "智者",
+       "谈话"
+      ],
+      "dap": [
+       "读一本好书，犹如和一位智者谈话。"
+      ],
+      "goiY": "Đọc một cuốn sách hay như trò chuyện với một bậc hiền triết.",
+      "giai": "Chủ ngữ là cụm động từ + 犹如 + cụm động từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "夜晚的城市灯火通明，犹如白天一般。",
+      "dung": true,
+      "giai": "犹如……一般 — ví von hình ảnh, văn viết, đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他犹如他哥哥一样高。",
+      "dung": false,
+      "sua": "他跟他哥哥一样高。",
+      "giai": "So sánh bằng giữa hai người dùng 跟……一样; 犹如 dành cho ví von hình ảnh."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "外面犹如要下雨了，带把伞吧。",
+      "dung": false,
+      "sua": "外面好像要下雨了，带把伞吧。",
+      "giai": "犹如 không dùng để phỏng đoán \"hình như\"; dùng 好像."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Có bạn tốt ở bên, như có thêm một đôi cánh.",
+      "dap": [
+       "有好朋友在身边，犹如多了一双翅膀。",
+       "身边有好朋友，犹如多了一双翅膀。",
+       "有好朋友在身边，就犹如多了一双翅膀。"
+      ],
+      "py": "Yǒu hǎo péngyou zài shēnbiān, yóurú duōle yì shuāng chìbǎng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 犹如; \"đôi cánh\" = 一双翅膀.",
+      "giai": "犹如 + cụm động từ: ví von (văn viết)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Tin này như sét đánh ngang tai, khiến mọi người đều sững sờ.",
+      "dap": [
+       "这个消息犹如晴天霹雳，让大家都愣住了。",
+       "这个消息犹如晴天霹雳，大家都愣住了。",
+       "这个消息犹如晴天霹雳，让大家都惊呆了。"
+      ],
+      "py": "Zhège xiāoxi yóurú qíngtiān pīlì, ràng dàjiā dōu lèngzhù le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 犹如; \"sét đánh ngang tai\" = 晴天霹雳.",
+      "giai": "犹如 + thành ngữ ví von; 让 + người + V (câu kiêm ngữ)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，犹如温暖的春风扑面，智慧的清泉入心。",
+      "goiY": "chọn vế trên thích hợp: thầy giảng bài giọng không cao — 练一练 (1) của sách, đáp án B",
+      "mau": "先生讲课声调不高，犹如温暖的春风扑面，智慧的清泉入心。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，色彩犹如油画般厚重。",
+      "goiY": "chọn vế trên thích hợp: cổ thành dưới ánh hoàng hôn — 练一练 (2) của sách, đáp án C",
+      "mau": "夕阳照耀下的古城，色彩犹如油画般厚重。",
+      "can": []
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，犹如一片一望无际的大海，我们每个人，每天都在这片广阔的大海上航行。",
+      "goiY": "chọn vế trên thích hợp: cuộc đời chúng ta — 练一练 (3) của sách, đáp án A",
+      "mau": "我们的人生，犹如一片一望无际的大海，我们每个人，每天都在这片广阔的大海上航行。",
+      "can": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「和……相比」",
+  "tenVn": "",
+  "cauTruc": [
+   "和 B 相比，A + (更 / Adj + 多了 / 不再……): so với B, A …",
+   "A 和 / 与 / 同 B 相比，A……: A so với B thì … (trọng tâm là A)"
+  ],
+  "giaiThich": "Dạng đầy đủ của 和……相比 là \"A 和 B 相比，A……\": hai chữ A chỉ cùng một sự vật, trọng tâm của câu là trình bày, miêu tả đầy đủ về A (B chỉ là mốc để so sánh). Thường gặp nhất là đặt \"和 B 相比\" ở ĐẦU câu, vế sau nói về A. Cũng nói 与……相比 (văn viết hơn), 同……相比. Vế sau phải thể hiện kết quả so sánh (更, 多了, 得多, 一些, 不再……) — không lặp lại 比 + B.",
+  "viDu": [
+   {
+    "zh": "由于经济环境的不确定，企业的寿命越来越短，和10年前相比，人们要经历更多次的职业选择。",
+    "py": "Yóuyú jīngjì huánjìng de bú quèdìng, qǐyè de shòumìng yuè lái yuè duǎn, hé shí nián qián xiāngbǐ, rénmen yào jīnglì gèng duō cì de zhíyè xuǎnzé.",
+    "vn": "Do môi trường kinh tế bất ổn, tuổi thọ doanh nghiệp ngày càng ngắn, so với 10 năm trước, người ta phải trải qua nhiều lần chọn nghề hơn."
+   },
+   {
+    "zh": "走出书店的大门，他眼前一亮，和昏暗、冷清的书店相比，外面的大街既明亮又热闹。",
+    "py": "Zǒuchū shūdiàn de dàmén, tā yǎnqián yí liàng, hé hūn'àn, lěngqīng de shūdiàn xiāngbǐ, wàimiàn de dàjiē jì míngliàng yòu rènao.",
+    "vn": "Bước ra khỏi cửa hiệu sách, trước mắt anh sáng bừng lên: so với hiệu sách tối tăm, vắng vẻ, con phố bên ngoài vừa sáng sủa vừa náo nhiệt."
+   },
+   {
+    "zh": "和过去相比，游客不再仅关注著名旅游城市，偏僻省份、沿海城市、秀美的乡镇，都成了游客感兴趣的地方。",
+    "py": "Hé guòqù xiāngbǐ, yóukè bú zài jǐn guānzhù zhùmíng lǚyóu chéngshì, piānpì shěngfèn, yánhǎi chéngshì, xiùměi de xiāngzhèn, dōu chéngle yóukè gǎn xìngqù de dìfang.",
+    "vn": "So với trước đây, du khách không còn chỉ quan tâm đến những thành phố du lịch nổi tiếng; những tỉnh xa xôi, thành phố ven biển, thị trấn xinh đẹp đều trở thành nơi du khách quan tâm."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "和他相比，我比他高。",
+    "why": "和……相比 đã nêu mốc so sánh; vế sau không lặp lại 比 + đối tượng mà chỉ nói kết quả (更 / Adj + 一些).",
+    "dung": "和他相比，我更高一些。"
+   },
+   {
+    "sai": "和去年相比，今年很热。",
+    "why": "Vế sau phải thể hiện KẾT QUẢ so sánh (更, 多了, 得多…); 很 không mang nghĩa so sánh.",
+    "dung": "和去年相比，今年热多了。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "和10年前",
+       "，人们要经历更多次的职业选择。"
+      ],
+      "dap": [
+       [
+        "相比"
+       ]
+      ],
+      "chon": [
+       "相比",
+       "相同",
+       "相似"
+      ],
+      "goiY": "\"So với 10 năm trước, người ta phải trải qua nhiều lần chọn nghề hơn.\" (câu mẫu của sách)",
+      "giai": "Khung cố định 和……相比; 相同 / 相似 = giống nhau."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "昏暗、冷清的书店相比，外面的大街既明亮又热闹。"
+      ],
+      "dap": [
+       [
+        "和"
+       ]
+      ],
+      "chon": [
+       "和",
+       "把",
+       "被"
+      ],
+      "goiY": "\"So với hiệu sách tối tăm, vắng vẻ, con phố bên ngoài …\" (câu mẫu của sách)",
+      "giai": "和 + B + 相比."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "和过去",
+       "，游客不再仅关注著名旅游城市。"
+      ],
+      "dap": [
+       [
+        "相比"
+       ]
+      ],
+      "chon": [
+       "相比",
+       "相同",
+       "相反"
+      ],
+      "goiY": "\"So với trước đây, du khách không còn chỉ quan tâm …\" (câu bài khoá)",
+      "giai": "Mốc so sánh là thời gian (过去); vế sau dùng 不再 thể hiện kết quả."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "其他服装相比，影视服装有着自身的艺术形式和规律。"
+      ],
+      "dap": [
+       [
+        "与"
+       ]
+      ],
+      "chon": [
+       "与",
+       "对",
+       "给"
+      ],
+      "goiY": "\"So với các loại trang phục khác, trang phục điện ảnh có …\" (练一练 3)",
+      "giai": "与……相比 = 和……相比, sắc thái văn viết hơn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "同城市",
+       "，农村的空气要新鲜得多。"
+      ],
+      "dap": [
+       [
+        "相比"
+       ]
+      ],
+      "chon": [
+       "相比",
+       "相反",
+       "相同"
+      ],
+      "goiY": "\"So với thành phố, không khí nông thôn trong lành hơn nhiều.\"",
+      "giai": "同……相比 cũng dùng được; vế sau Adj + 得多."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "",
+       "中学生相比，大学生对自我情绪具有一定的控制能力。"
+      ],
+      "dap": [
+       [
+        "和"
+       ]
+      ],
+      "chon": [
+       "和",
+       "对",
+       "向"
+      ],
+      "goiY": "\"So với học sinh trung học, sinh viên có khả năng kiểm soát cảm xúc nhất định.\" (练一练 2)",
+      "giai": "和……相比 đặt đầu câu, vế sau nói về A (大学生)."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "和",
+       "十年前",
+       "相比",
+       "，",
+       "家乡的",
+       "交通",
+       "方便多了"
+      ],
+      "dap": [
+       "和十年前相比，家乡的交通方便多了。"
+      ],
+      "goiY": "So với mười năm trước, giao thông ở quê thuận tiện hơn nhiều.",
+      "giai": "和 + mốc + 相比，A + Adj + 多了."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "和",
+       "纸质书",
+       "相比",
+       "，",
+       "电子书",
+       "更",
+       "便于",
+       "携带"
+      ],
+      "dap": [
+       "和纸质书相比，电子书更便于携带。"
+      ],
+      "goiY": "So với sách giấy, sách điện tử tiện mang theo hơn.",
+      "giai": "Lồng điểm 1: 更 + 便于 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "同",
+       "过去",
+       "相比",
+       "，",
+       "现在的",
+       "旅游指南",
+       "越来越",
+       "人性化了"
+      ],
+      "dap": [
+       "同过去相比，现在的旅游指南越来越人性化了。"
+      ],
+      "goiY": "So với trước kia, sách hướng dẫn du lịch bây giờ ngày càng lấy con người làm gốc.",
+      "giai": "同……相比 = 和……相比."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "和过去相比，现在的旅游指南内容丰富多了。",
+      "dung": true,
+      "giai": "和……相比 + A + Adj + 多了 — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "和他相比，我比他高。",
+      "dung": false,
+      "sua": "和他相比，我更高一些。",
+      "giai": "Đã có 和……相比 thì vế sau không lặp 比 + đối tượng; chỉ nói kết quả."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "和去年相比，今年很热。",
+      "dung": false,
+      "sua": "和去年相比，今年热多了。",
+      "giai": "Vế sau phải thể hiện kết quả so sánh (更, 多了, 得多…); 很 không mang nghĩa so sánh."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "So với năm ngoái, năm nay số du khách đến thị trấn nhỏ này tăng gấp đôi.",
+      "dap": [
+       "和去年相比，今年来这个小镇的游客增加了一倍。",
+       "与去年相比，今年来这个小镇的游客增加了一倍。",
+       "和去年相比，今年到这个小镇旅游的人数增加了一倍。"
+      ],
+      "py": "Hé qùnián xiāngbǐ, jīnnián lái zhège xiǎozhèn de yóukè zēngjiāle yí bèi.",
+      "goiY": "Dịch sang tiếng Trung, dùng 和……相比; \"tăng gấp đôi\" = 增加了一倍.",
+      "giai": "和 + mốc thời gian + 相比 đặt đầu câu."
+     },
+     {
+      "kieu": "dich",
+      "vn": "So với trước kia, bây giờ đi du lịch nước ngoài đã trở nên như chuyện cơm bữa.",
+      "dap": [
+       "和以前相比，现在出国旅游已经变得犹如家常便饭。",
+       "和过去相比，现在出国旅游已经成了家常便饭。",
+       "与以前相比，现在出国旅游已经像家常便饭一样了。"
+      ],
+      "py": "Hé yǐqián xiāngbǐ, xiànzài chūguó lǚyóu yǐjīng biàn de yóurú jiāchángbiànfàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 和……相比.",
+      "giai": "Có thể lồng 犹如 (điểm 2) cho đúng văn phong bài khoá."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "今天，我们从阅读、写信、学习、购物到看病，无不依赖电脑来完成。＿＿＿，人们的生活方式、工作方式已发生了深刻的变革。",
+      "goiY": "đặt \"和昨天相比\" vào vị trí thích hợp — 练一练 (1) của sách, đáp án D",
+      "mau": "今天，我们从阅读、写信、学习、购物到看病，无不依赖电脑来完成。和昨天相比，人们的生活方式、工作方式已发生了深刻的变革。",
+      "can": [
+       [
+        "和",
+        "与",
+        "同"
+       ],
+       [
+        "相比"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "虽然，＿＿＿，大学生对自我情绪具有一定的控制能力，但在激动状态下，也常因情绪失控而产生冲动性的行为。",
+      "goiY": "đặt \"和中学生相比\" vào vị trí thích hợp — 练一练 (2) của sách, đáp án A",
+      "mau": "虽然，和中学生相比，大学生对自我情绪具有一定的控制能力，但在激动状态下，也常因情绪失控而产生冲动性的行为。",
+      "can": [
+       [
+        "和",
+        "与",
+        "同"
+       ],
+       [
+        "相比"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，影视服装有着自身的艺术形式和规律，其设计必须服从影视剧的特定时间、环境、情节和角色的身份需求。",
+      "goiY": "đặt \"和其他服装相比\" vào vị trí thích hợp — 练一练 (3) của sách, đáp án A",
+      "mau": "和其他服装相比，影视服装有着自身的艺术形式和规律，其设计必须服从影视剧的特定时间、环境、情节和角色的身份需求。",
+      "can": [
+       [
+        "和",
+        "与",
+        "同"
+       ],
+       [
+        "相比"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
+window.NGU_PHAP_TAB["/lessons/hsk6-bai-14.html"] = [
+ {
+  "so": "1",
+  "ten": "「数量短语的重叠」",
+  "tenVn": "",
+  "cauTruc": [
+   "一 + LT + LT (+ N): 一拨拨同行, 一本本资料",
+   "一 + LT + 一 + LT (+ N): 一拨一拨",
+   "N + 要 + 一 + LT + LT + V: 饭要一口口吃"
+  ],
+  "giaiThich": "Cụm số lượng từ \"一 + lượng từ\" có thể LẶP LẠI thành 一 + LT + LT (一拨拨, 一个个, 一本本) hoặc 一 + LT + 一 + LT (一拨一拨), miêu tả số lượng NHIỀU, lần lượt từng cái / từng nhóm. Sự vật được miêu tả phải xuất hiện dưới dạng TỪNG CÁ THỂ riêng lẻ, vì vậy nó khác \"很多\" về nghĩa và chức năng (很多 chỉ nói số lượng lớn, không gợi hình ảnh \"từng cái một\"). Số từ CHỈ dùng \"一\"; chữ \"一\" thứ hai có thể lược bỏ (一拨一拨 → 一拨拨). Thường làm định ngữ (一拨拨同行) hoặc trạng ngữ (一口口吃).",
+  "viDu": [
+   {
+    "zh": "每天都会有一拨拨同行前来考察访问。",
+    "py": "Měi tiān dōu huì yǒu yì bōbō tóngháng qiánlái kǎochá fǎngwèn.",
+    "vn": "Ngày nào cũng có hết tốp này đến tốp khác đồng nghiệp trong ngành đến khảo sát, thăm quan."
+   },
+   {
+    "zh": "她收集的那一幅幅图片、一本本资料、一盘盘调查录音带，都是不容置疑的铁证。",
+    "py": "Tā shōují de nà yì fúfú túpiàn, yì běnběn zīliào, yì pánpán diàochá lùyīndài, dōu shì bùróng-zhìyí de tiězhèng.",
+    "vn": "Từng bức ảnh, từng tập tài liệu, từng cuộn băng ghi âm điều tra mà bà thu thập đều là những bằng chứng không thể chối cãi."
+   },
+   {
+    "zh": "饭要一口口吃，话要一句句说，事要一件件做。",
+    "py": "Fàn yào yì kǒukǒu chī, huà yào yí jùjù shuō, shì yào yí jiànjiàn zuò.",
+    "vn": "Cơm phải ăn từng miếng, lời phải nói từng câu, việc phải làm từng việc một."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "他一个下午就看完了三本本小说。",
+    "why": "Số từ trong dạng lặp chỉ được dùng \"一\", không dùng 二, 三…",
+    "dung": "他一个下午就看完了一本本小说。（或：他一个下午就看完了三本小说。）"
+   },
+   {
+    "sai": "她那一头头长发真漂亮。",
+    "why": "一头长发 chỉ MỘT mái tóc, không phải nhiều cá thể xuất hiện lần lượt, nên không lặp được.",
+    "dung": "她那一头长发真漂亮。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "每天都会有",
+       "同行前来考察访问。"
+      ],
+      "dap": [
+       [
+        "一拨拨",
+        "一拨一拨"
+       ]
+      ],
+      "chon": [
+       "一拨拨",
+       "两拨拨",
+       "拨拨"
+      ],
+      "goiY": "\"Ngày nào cũng có hết tốp này đến tốp khác đồng nghiệp đến khảo sát.\" (câu bài khoá)",
+      "giai": "Số từ chỉ dùng 一: 一拨拨; không nói 两拨拨, cũng không bỏ hẳn 一."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "饭要",
+       "吃，话要一句句说。"
+      ],
+      "dap": [
+       [
+        "一口口",
+        "一口一口"
+       ]
+      ],
+      "chon": [
+       "一口口",
+       "很多口",
+       "口口"
+      ],
+      "goiY": "\"Cơm phải ăn từng miếng, lời phải nói từng câu.\" (ví dụ của sách)",
+      "giai": "一口口 làm trạng ngữ trước động từ 吃: từng miếng một."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他翻看着",
+       "老照片，想起了小时候的事。"
+      ],
+      "dap": [
+       [
+        "一张张",
+        "一张一张"
+       ]
+      ],
+      "chon": [
+       "一张张",
+       "三张张",
+       "很多张张"
+      ],
+      "goiY": "\"Anh ấy lật xem từng tấm ảnh cũ, nhớ lại chuyện hồi nhỏ.\"",
+      "giai": "照片 dùng lượng từ 张 → 一张张."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他所做的",
+       "看似平常的小事，感动着身边的每一个人。"
+      ],
+      "dap": [
+       [
+        "一件件",
+        "一件一件"
+       ]
+      ],
+      "chon": [
+       "一件件",
+       "一个个",
+       "一条条"
+      ],
+      "goiY": "\"Từng việc nhỏ tưởng chừng bình thường anh ấy làm đã cảm động mọi người xung quanh.\" (练一练 (3))",
+      "giai": "事 dùng lượng từ 件 → 一件件."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "学校把",
+       "中学生培养成了有用的人才。"
+      ],
+      "dap": [
+       [
+        "一个个",
+        "一个一个"
+       ]
+      ],
+      "chon": [
+       "一个个",
+       "一只只",
+       "一件件"
+      ],
+      "goiY": "\"Nhà trường đã đào tạo từng em học sinh thành người có ích.\" (theo 练一练 (2))",
+      "giai": "Người dùng lượng từ 个 → 一个个; 一只只 dùng cho loài vật."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "放学了，学生们",
+       "走出了校门。"
+      ],
+      "dap": [
+       [
+        "一个个",
+        "一个一个"
+       ]
+      ],
+      "chon": [
+       "一个个",
+       "很多",
+       "个个一"
+      ],
+      "goiY": "\"Tan học, học sinh lần lượt từng em một bước ra cổng trường.\"",
+      "giai": "一个个 làm trạng ngữ: lần lượt từng người; 很多 chỉ nói số lượng, không có nghĩa \"lần lượt\"."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "每天",
+       "都有",
+       "一拨拨",
+       "游客",
+       "来这里",
+       "参观"
+      ],
+      "dap": [
+       "每天都有一拨拨游客来这里参观。"
+      ],
+      "goiY": "Ngày nào cũng có hết tốp này đến tốp khác du khách đến đây tham quan.",
+      "giai": "一拨拨 + N làm tân ngữ của 有."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "事",
+       "要",
+       "一件件",
+       "做",
+       "，",
+       "饭",
+       "要",
+       "一口口",
+       "吃"
+      ],
+      "dap": [
+       "饭要一口口吃，事要一件件做。",
+       "事要一件件做，饭要一口口吃。"
+      ],
+      "goiY": "Cơm phải ăn từng miếng, việc phải làm từng việc.",
+      "giai": "N + 要 + 一 + LT + LT + V: dạng lặp làm trạng ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "一本本",
+       "桌子上",
+       "旧书",
+       "摆着"
+      ],
+      "dap": [
+       "桌子上摆着一本本旧书。"
+      ],
+      "goiY": "Trên bàn bày từng cuốn sách cũ.",
+      "giai": "Câu tồn hiện: nơi chốn + V着 + 一本本 + N."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们班有两个个学生去北极旅行过。",
+      "dung": false,
+      "sua": "我们班有两个学生去北极旅行过。",
+      "giai": "Số từ trong dạng lặp chỉ dùng 一; ở đây chỉ cần nói số lượng cụ thể."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "他收集的一幅幅图片，都是不容置疑的铁证。",
+      "dung": true,
+      "giai": "一幅幅 + 图片: đúng dạng lặp, số từ là 一."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "她那一头头长发真漂亮。",
+      "dung": false,
+      "sua": "她那一头长发真漂亮。",
+      "giai": "一头长发 chỉ một mái tóc, không phải nhiều cá thể nên không lặp."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Ngày nào cũng có hết tốp này đến tốp khác phụ huynh đến trường tìm hiểu tình hình.",
+      "dap": [
+       "每天都有一拨拨家长来学校了解情况。",
+       "每天都有一拨一拨的家长来学校了解情况。",
+       "每天都会有一拨拨家长到学校来了解情况。"
+      ],
+      "py": "Měi tiān dōu yǒu yì bōbō jiāzhǎng lái xuéxiào liǎojiě qíngkuàng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 一拨拨.",
+      "giai": "\"Hết tốp này đến tốp khác\" = 一拨拨 + N."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bài tập phải làm từng bài một, đừng vội.",
+      "dap": [
+       "作业要一道道做，别着急。",
+       "作业要一道一道地做，别着急。",
+       "题要一道道做，别着急。"
+      ],
+      "py": "Zuòyè yào yí dàodào zuò, bié zháojí.",
+      "goiY": "Dịch sang tiếng Trung, dùng dạng lặp số lượng từ làm trạng ngữ.",
+      "giai": "Bài tập (câu hỏi) dùng lượng từ 道 → 一道道 + V."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "他在心里努力搜寻着＿＿＿。",
+      "goiY": "Điền dạng lặp số lượng từ + danh từ (练一练 (1) của sách): \"lý do có thể thuyết phục mẹ\".",
+      "mau": "他在心里努力搜寻着一个个能够说服妈妈的理由。",
+      "can": [
+       [
+        "一个个",
+        "一条条"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "我很希望知道，学校是如何把＿＿＿十多岁的中学生培养成＿＿＿能够抗击风浪、展翅高飞的山鹰的。",
+      "goiY": "Điền hai dạng lặp: học sinh (个) và chim ưng (只) (练一练 (2) của sách).",
+      "mau": "我很希望知道，学校是如何把一个个十多岁的中学生培养成一只只能够抗击风浪、展翅高飞的山鹰的。",
+      "can": [
+       [
+        "一个个"
+       ],
+       [
+        "一只只"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他所做的＿＿＿看似平常的小事，感动着身边的每一个人。",
+      "goiY": "Điền dạng lặp phù hợp với 小事 (练一练 (3) của sách).",
+      "mau": "他所做的一件件看似平常的小事，感动着身边的每一个人。",
+      "can": [
+       [
+        "一件件"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「难以」",
+  "tenVn": "",
+  "cauTruc": [
+   "难以 + V/Adj hai âm tiết: 难以平静, 难以想象",
+   "令人 / 让人 + 难以 + V: 令人难以忘怀",
+   "难以 + V + 的 + N: 难以度过的灾难"
+  ],
+  "giaiThich": "难以 là ĐỘNG TỪ, nghĩa là \"không dễ, rất khó\" (不容易、很难). Phía sau thường là động từ hoặc tính từ HAI âm tiết trở lên (难以平静, 难以想象, 难以度过, 难以忘怀), KHÔNG đi với từ một âm tiết (không nói 难以吃, 难以做). Dùng trong văn viết; hay đi với 令人 / 让人 (令人难以想象) và làm định ngữ với 的 (难以度过的灾难).",
+  "viDu": [
+   {
+    "zh": "事情已经过去好久了，可是每次回想起当时的情景，心情还是难以平静。",
+    "py": "Shìqing yǐjīng guòqù hǎojiǔ le, kěshì měi cì huíxiǎng qǐ dāngshí de qíngjǐng, xīnqíng háishi nányǐ píngjìng.",
+    "vn": "Chuyện đã qua lâu lắm rồi, nhưng mỗi lần nhớ lại cảnh lúc ấy, lòng vẫn khó mà bình tĩnh."
+   },
+   {
+    "zh": "这样的假话最好不要说，因为你自己都难以自圆其说，别人怎么能够相信呢？",
+    "py": "Zhèyàng de jiǎhuà zuìhǎo bú yào shuō, yīnwèi nǐ zìjǐ dōu nányǐ zìyuán-qíshuō, biérén zěnme nénggòu xiāngxìn ne?",
+    "vn": "Lời nói dối như vậy tốt nhất đừng nói, vì chính bạn còn khó mà nói cho xuôi, người khác sao tin được?"
+   },
+   {
+    "zh": "他们遇到过想象中难以度过的灾难，最后在饥饿、风暴、严寒中奇迹般地生存下来，成为北极最大的原住民部族……",
+    "py": "Tāmen yùdàoguo xiǎngxiàng zhōng nányǐ dùguò de zāinàn, zuìhòu zài jī'è, fēngbào, yánhán zhōng qíjì bān de shēngcún xiàlái, chéngwéi Běijí zuì dà de yuánzhùmín bùzú……",
+    "vn": "Họ từng gặp những tai ương tưởng chừng khó mà vượt qua, cuối cùng đã sống sót một cách kỳ diệu giữa đói khát, bão tố, giá rét, trở thành bộ tộc bản địa lớn nhất Bắc Cực…"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这个菜太辣了，我难以吃。",
+    "why": "难以 không đi với động từ một âm tiết (吃); câu khẩu ngữ thì dùng 很难 / 没法.",
+    "dung": "这个菜太辣了，我实在难以下咽。（或：这个菜太辣了，我没法吃。）"
+   },
+   {
+    "sai": "这件事难以让人相信得很。",
+    "why": "难以 đã mang nghĩa \"rất khó\", không thêm bổ ngữ mức độ 得很; cấu trúc đúng là 令人 / 让人 + 难以 + V.",
+    "dung": "这件事令人难以相信。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "事情已经过去好久了，可每次想起来，心情还是",
+       "平静。"
+      ],
+      "dap": [
+       [
+        "难以"
+       ]
+      ],
+      "chon": [
+       "难以",
+       "难过",
+       "难得"
+      ],
+      "goiY": "\"Chuyện qua lâu rồi, nhưng mỗi lần nhớ lại lòng vẫn khó mà bình tĩnh.\" (ví dụ của sách)",
+      "giai": "难以 + 平静 (tính từ hai âm tiết). 难过 = buồn; 难得 = hiếm có."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们遇到过想象中",
+       "度过的灾难。"
+      ],
+      "dap": [
+       [
+        "难以"
+       ]
+      ],
+      "chon": [
+       "难以",
+       "难免",
+       "难怪"
+      ],
+      "goiY": "\"Họ từng gặp những tai ương tưởng chừng khó mà vượt qua.\" (câu bài khoá)",
+      "giai": "难以度过的 làm định ngữ cho 灾难. 难免 = khó tránh; 难怪 = chẳng trách."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "居然发生了这样的事情，真是令人难以",
+       "！"
+      ],
+      "dap": [
+       [
+        "想象"
+       ]
+      ],
+      "chon": [
+       "想象",
+       "想",
+       "信"
+      ],
+      "goiY": "\"Vậy mà lại xảy ra chuyện như thế, thật khó mà tưởng tượng!\" (练一练 (2))",
+      "giai": "难以 chỉ đi với từ hai âm tiết: 难以想象; không nói 难以想 / 难以信."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在老家度过的每一天，至今令人难以",
+       "。"
+      ],
+      "dap": [
+       [
+        "忘怀"
+       ]
+      ],
+      "chon": [
+       "忘怀",
+       "忘",
+       "记"
+      ],
+      "goiY": "\"Mỗi ngày ở quê đến nay vẫn khó mà quên.\" (练一练 (1))",
+      "giai": "难以忘怀 = khó quên; 忘 một âm tiết không đi với 难以."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "两个人的说法完全不同，让人",
+       "判断谁对谁错。"
+      ],
+      "dap": [
+       [
+        "难以"
+       ]
+      ],
+      "chon": [
+       "难以",
+       "难道",
+       "难怪"
+      ],
+      "goiY": "\"Lời hai người hoàn toàn khác nhau, khiến người ta khó mà phán đoán ai đúng ai sai.\"",
+      "giai": "让人 + 难以 + 判断. 难道 dùng trong câu hỏi tu từ."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "虽然他经历了常人难以",
+       "的痛苦，他却从未退缩过。"
+      ],
+      "dap": [
+       [
+        "忍受"
+       ]
+      ],
+      "chon": [
+       "忍受",
+       "忍",
+       "受"
+      ],
+      "goiY": "\"Tuy anh ấy đã trải qua nỗi đau người thường khó chịu đựng nổi, nhưng chưa từng lùi bước.\" (练一练 (3))",
+      "giai": "难以 + 忍受 (hai âm tiết) + 的 + N."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "这个结果",
+       "难以",
+       "令人",
+       "接受"
+      ],
+      "dap": [
+       "这个结果令人难以接受。"
+      ],
+      "goiY": "Kết quả này khiến người ta khó chấp nhận.",
+      "giai": "Chủ ngữ + 令人 + 难以 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "难以",
+       "度过的",
+       "他们",
+       "遇到过",
+       "灾难"
+      ],
+      "dap": [
+       "他们遇到过难以度过的灾难。"
+      ],
+      "goiY": "Họ từng gặp những tai ương khó mà vượt qua.",
+      "giai": "难以 + V + 的 làm định ngữ."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "心情",
+       "难以",
+       "至今",
+       "平静",
+       "我的"
+      ],
+      "dap": [
+       "我的心情至今难以平静。",
+       "至今我的心情难以平静。"
+      ],
+      "goiY": "Đến giờ lòng tôi vẫn khó bình tĩnh.",
+      "giai": "至今 làm trạng ngữ; 难以平静 làm vị ngữ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这道题太难了，我难以做。",
+      "dung": false,
+      "sua": "这道题太难了，我难以解答。",
+      "giai": "难以 không đi với động từ một âm tiết; dùng từ hai âm tiết (完成, 解答) hoặc nói 很难做."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "北极的变化之大，令人难以想象。",
+      "dung": true,
+      "giai": "令人 + 难以 + 想象 (động từ hai âm tiết) — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这件事难以让人相信得很。",
+      "dung": false,
+      "sua": "这件事令人难以相信。",
+      "giai": "难以 đã mang nghĩa \"rất khó\", không thêm 得很; dùng 令人难以相信."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Vương Kiến Nam ở Bắc Cực đã trải qua những khó khăn mà người thường khó tưởng tượng nổi.",
+      "dap": [
+       "王建男在北极经历了常人难以想象的困难。",
+       "在北极，王建男经历了常人难以想象的困难。",
+       "王建男在北极经历了一般人难以想象的困难。"
+      ],
+      "py": "Wáng Jiànnán zài Běijí jīnglìle chángrén nányǐ xiǎngxiàng de kùnnan.",
+      "goiY": "Dịch sang tiếng Trung, dùng 难以 làm định ngữ.",
+      "giai": "常人难以想象的 + 困难."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Mỗi lần nghe bài hát này, lòng tôi lại khó mà bình tĩnh.",
+      "dap": [
+       "每次听到这首歌，我的心情都难以平静。",
+       "每次听这首歌，我心里都难以平静。",
+       "一听到这首歌，我的心情就难以平静。"
+      ],
+      "py": "Měi cì tīngdào zhè shǒu gē, wǒ de xīnqíng dōu nányǐ píngjìng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 难以平静.",
+      "giai": "每次……都…… / 一……就……; 难以 + 平静."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，至今令人难以忘怀。",
+      "goiY": "Chọn vế trên thích hợp (练一练 (1) của sách): A. 居然发生了这样的事情 B. 虽然他经历了常人难以忍受的痛苦和艰辛 C. 在老家度过的每一天都很愉快",
+      "mau": "在老家度过的每一天都很愉快，至今令人难以忘怀。",
+      "can": [
+       [
+        "在老家度过的每一天都很愉快"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，真是令人难以想象！",
+      "goiY": "Chọn vế trên thích hợp (练一练 (2) của sách) từ A / B / C ở câu trên.",
+      "mau": "居然发生了这样的事情，真是令人难以想象！",
+      "can": [
+       [
+        "居然发生了这样的事情"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "＿＿＿，他却从未退缩过。",
+      "goiY": "Chọn vế trên thích hợp (练一练 (3) của sách) từ A / B / C ở câu trên.",
+      "mau": "虽然他经历了常人难以忍受的痛苦和艰辛，他却从未退缩过。",
+      "can": [
+       [
+        "虽然他经历了常人难以忍受的痛苦和艰辛"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「免得」",
+  "tenVn": "",
+  "cauTruc": [
+   "Vế trước (việc nên làm)，免得 + điều không mong muốn",
+   "……，以免…… (văn viết)"
+  ],
+  "giaiThich": "免得 là LIÊN TỪ, biểu thị làm việc ở vế trước để TRÁNH xảy ra một tình huống không mong muốn (= để khỏi, kẻo). Thường đứng ở đầu VẾ SAU, phía sau là điều không mong muốn. Cũng nói \"以免\" (văn viết hơn). Vì bản thân 免得 đã có nghĩa \"tránh\", phía sau KHÔNG thêm 不 / 没.",
+  "viDu": [
+   {
+    "zh": "今天大家晚点儿走，把活儿都干完，免得明天再来。",
+    "py": "Jīntiān dàjiā wǎn diǎnr zǒu, bǎ huór dōu gànwán, miǎnde míngtiān zài lái.",
+    "vn": "Hôm nay mọi người về muộn một chút, làm xong hết việc, để khỏi mai phải đến nữa."
+   },
+   {
+    "zh": "自己能做的事就自己做吧，免得麻烦别人。",
+    "py": "Zìjǐ néng zuò de shì jiù zìjǐ zuò ba, miǎnde máfan biérén.",
+    "vn": "Việc tự làm được thì tự làm đi, kẻo phiền người khác."
+   },
+   {
+    "zh": "他和妻子往返北极17次，支出很大，他们处处精打细算，千方百计节省开支，免得多年的储蓄减少得太快。",
+    "py": "Tā hé qīzi wǎngfǎn Běijí shíqī cì, zhīchū hěn dà, tāmen chùchù jīngdǎ-xìsuàn, qiānfāng-bǎijì jiéshěng kāizhī, miǎnde duō nián de chǔxù jiǎnshǎo de tài kuài.",
+    "vn": "Ông và vợ đi về Bắc Cực 17 lần, chi phí rất lớn; họ chỗ nào cũng tính toán chi li, tìm mọi cách tiết kiệm chi tiêu, để khoản dành dụm nhiều năm khỏi vơi đi quá nhanh."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "天冷了，多穿点儿衣服，免得不感冒。",
+    "why": "免得 đã mang nghĩa \"để tránh\", phía sau là điều không mong muốn, không thêm 不.",
+    "dung": "天冷了，多穿点儿衣服，免得感冒。"
+   },
+   {
+    "sai": "我们早点儿出发，免得能赶上火车。",
+    "why": "Sau 免得 phải là điều muốn TRÁNH (赶不上火车), không phải điều mong muốn.",
+    "dung": "我们早点儿出发，免得赶不上火车。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "自己能做的事就自己做吧，",
+       "麻烦别人。"
+      ],
+      "dap": [
+       [
+        "免得"
+       ]
+      ],
+      "chon": [
+       "免得",
+       "因为",
+       "为了"
+      ],
+      "goiY": "\"Việc tự làm được thì tự làm, kẻo phiền người khác.\" (ví dụ của sách)",
+      "giai": "免得 + điều không mong muốn (麻烦别人). 为了 + mục đích mong muốn."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他们处处精打细算，",
+       "多年的储蓄减少得太快。"
+      ],
+      "dap": [
+       [
+        "免得"
+       ]
+      ],
+      "chon": [
+       "免得",
+       "即使",
+       "何况"
+      ],
+      "goiY": "\"Họ chỗ nào cũng tính toán chi li, để tiền dành dụm khỏi vơi quá nhanh.\" (câu bài khoá)",
+      "giai": "免得 đứng đầu vế sau. 即使 = cho dù; 何况 = huống chi."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "到了以后来个电话，",
+       "家里人担心。"
+      ],
+      "dap": [
+       [
+        "免得"
+       ]
+      ],
+      "chon": [
+       "免得",
+       "于是",
+       "以便"
+      ],
+      "goiY": "\"Đến nơi thì gọi điện, kẻo nhà lo.\" (练一练 (1))",
+      "giai": "以便 + mục đích mong muốn (để tiện…); 免得 + điều muốn tránh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天气预报说有雨，你带上伞吧，免得",
+       "。"
+      ],
+      "dap": [
+       [
+        "淋湿"
+       ]
+      ],
+      "chon": [
+       "淋湿",
+       "不淋湿",
+       "带伞"
+      ],
+      "goiY": "\"Dự báo có mưa, cậu mang ô đi, kẻo bị ướt.\"",
+      "giai": "Sau 免得 là điều không mong muốn, không thêm 不."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们早点儿出发，免得",
+       "火车。"
+      ],
+      "dap": [
+       [
+        "赶不上"
+       ]
+      ],
+      "chon": [
+       "赶不上",
+       "赶得上",
+       "能赶上"
+      ],
+      "goiY": "\"Chúng ta xuất phát sớm, kẻo không kịp tàu.\"",
+      "giai": "免得 + 赶不上 (điều muốn tránh)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "快把药带上，",
+       "路上生病了没药吃。"
+      ],
+      "dap": [
+       [
+        "免得"
+       ]
+      ],
+      "chon": [
+       "免得",
+       "难怪",
+       "所以"
+      ],
+      "goiY": "\"Mang thuốc theo đi, kẻo đi đường ốm lại không có thuốc.\"",
+      "giai": "免得 nối vế sau nêu điều muốn tránh; 所以 nêu kết quả."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "免得",
+       "多穿点儿衣服",
+       "，",
+       "感冒"
+      ],
+      "dap": [
+       "多穿点儿衣服，免得感冒。"
+      ],
+      "goiY": "Mặc thêm áo vào, kẻo cảm.",
+      "giai": "Việc nên làm trước, 免得 + điều muốn tránh sau."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "把活儿都干完",
+       "，",
+       "免得",
+       "今天",
+       "明天再来"
+      ],
+      "dap": [
+       "今天把活儿都干完，免得明天再来。"
+      ],
+      "goiY": "Hôm nay làm xong hết việc, để khỏi mai phải đến nữa.",
+      "giai": "Vế trước là việc làm ngay, 免得 dẫn điều muốn tránh."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "你",
+       "跟他",
+       "解释清楚吧",
+       "，",
+       "免得",
+       "他误会"
+      ],
+      "dap": [
+       "你跟他解释清楚吧，免得他误会。"
+      ],
+      "goiY": "Cậu giải thích rõ với anh ấy đi, kẻo anh ấy hiểu lầm.",
+      "giai": "免得 + chủ ngữ + V."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "天冷了，多穿点儿衣服，免得不感冒。",
+      "dung": false,
+      "sua": "天冷了，多穿点儿衣服，免得感冒。",
+      "giai": "Sau 免得 không thêm 不 — 免得 đã có nghĩa \"để tránh\"."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "小声点儿，大伙儿都睡了，免得把他们吵醒。",
+      "dung": true,
+      "giai": "Vế trước là việc nên làm, 免得 + điều muốn tránh (吵醒他们) — đúng."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "我们早点儿出发，免得能赶上火车。",
+      "dung": false,
+      "sua": "我们早点儿出发，免得赶不上火车。",
+      "giai": "Sau 免得 phải là điều muốn tránh, không phải điều mong muốn."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Học thuộc từ mới trước khi thi đi, kẻo lúc làm bài lại quên.",
+      "dap": [
+       "考试前把生词背熟，免得做题的时候忘了。",
+       "考试之前把生词背熟吧，免得答题时忘了。",
+       "考试前先把生词背下来，免得考试的时候忘了。"
+      ],
+      "py": "Kǎoshì qián bǎ shēngcí bèishú, miǎnde zuò tí de shíhou wàng le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 免得.",
+      "giai": "Việc nên làm (把生词背熟) + 免得 + điều muốn tránh (忘了)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Họ tìm mọi cách tiết kiệm chi tiêu, để khoản tiền dành dụm khỏi vơi đi quá nhanh.",
+      "dap": [
+       "他们千方百计节省开支，免得储蓄减少得太快。",
+       "他们想尽办法节省开支，免得储蓄减少得太快。",
+       "他们千方百计地节省开支，免得储蓄花得太快。"
+      ],
+      "py": "Tāmen qiānfāng-bǎijì jiéshěng kāizhī, miǎnde chǔxù jiǎnshǎo de tài kuài.",
+      "goiY": "Dịch sang tiếng Trung, dùng 千方百计 và 免得.",
+      "giai": "Câu bài khoá: 千方百计节省开支，免得……减少得太快."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "到了以后来个电话，免得＿＿＿。",
+      "goiY": "Hoàn thành câu bằng điều muốn tránh (练一练 (1) của sách).",
+      "mau": "到了以后来个电话，免得家里人担心。",
+      "can": [
+       [
+        "担心",
+        "着急",
+        "惦记"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "小声点儿，大伙儿都睡了，免得＿＿＿。",
+      "goiY": "Hoàn thành câu bằng điều muốn tránh (练一练 (2) của sách).",
+      "mau": "小声点儿，大伙儿都睡了，免得把他们吵醒。",
+      "can": [
+       [
+        "吵醒",
+        "吵到",
+        "打扰"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "麻烦你跟他解释清楚，免得＿＿＿。",
+      "goiY": "Hoàn thành câu bằng điều muốn tránh (练一练 (3) của sách).",
+      "mau": "麻烦你跟他解释清楚，免得他误会。",
+      "can": [
+       [
+        "误会",
+        "误解",
+        "不高兴"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];

@@ -2055,6 +2055,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-21.html'
+      },
+      {
+        id: 'hsk6-l22',
+        number: 22,
+        title: 'Xe hơi năm 2050 sẽ như thế nào?',
+        titleHanzi: '2050年的汽车什么样？',
+        titlePinyin: 'Èr líng wǔ líng nián de qìchē shénme yàng?',
+        topic: '第六单元 趣味世界 · Ô tô tương lai: sạch, an toàn, tự lái và hòa nhập lối sống số',
+        vocabCount: 52,
+        dialogueCount: 1,
+        grammarCount: 2,
+        fullPageUrl: '/lessons/hsk6-bai-22.html'
       }
     ],
     yct: [

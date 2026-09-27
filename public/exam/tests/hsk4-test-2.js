@@ -195,7 +195,7 @@ window.EXAM_DATA = {
       id: 'write', name: 'Viết', icon: 'pencil',
       parts: [
         {
-          name: 'Phần 1', range: [86, 95], type: 'arrange', intro: 'Sắp xếp các từ thành câu. Bấm lần lượt các từ; bấm từ đã xếp để bỏ ra.', example: 'Ví dụ: 那座桥 800 年的 历史 有 了 → 那座桥有800年的历史了。',
+          name: 'Phần 1', range: [86, 95], type: 'arrange', intro: 'Sắp xếp các từ thành câu. Bấm lần lượt các từ; bấm từ đã xếp để bỏ ra.', example: 'Ví dụ: 那座桥 800年的 历史 有 了 → 那座桥有800年的历史了。',
           questions: [
             { n: 86, words: ['好处', '抽烟', '对身体', '没有'], answer: '抽烟对身体没有好处。', vn: 'Hút thuốc không có lợi gì cho sức khỏe. — 对 + đối tượng + 没有好处.' },
             { n: 87, words: ['我', '陪叔叔', '去长城', '看看', '打算'], answer: '我打算陪叔叔去长城看看。', vn: 'Tôi định đưa chú đi Vạn Lý Trường Thành chơi. — 打算 + 陪 + người + 去 + nơi + 看看.' },

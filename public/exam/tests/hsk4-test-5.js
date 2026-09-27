@@ -195,7 +195,7 @@ window.EXAM_DATA = {
       id: 'write', name: 'Viết', icon: 'pencil',
       parts: [
         {
-          name: 'Phần 1', range: [86, 95], type: 'arrange', intro: 'Sắp xếp các từ thành câu. Bấm lần lượt các từ; bấm từ đã xếp để bỏ ra.', example: 'Ví dụ: 那座桥 800 年的 历史 有 了 → 那座桥有800年的历史了。',
+          name: 'Phần 1', range: [86, 95], type: 'arrange', intro: 'Sắp xếp các từ thành câu. Bấm lần lượt các từ; bấm từ đã xếp để bỏ ra.', example: 'Ví dụ: 那座桥 800年的 历史 有 了 → 那座桥有800年的历史了。',
           questions: [
             { n: 86, words: ['你', '关了', '把窗户', '吗'], answer: '你把窗户关了吗？', vn: 'Cậu đóng cửa sổ chưa? — Câu chữ 把: 把 + tân ngữ + động từ + 了.' },
             { n: 87, words: ['拉近', '了', '人与人之间的', '手机', '距离'], answer: '手机拉近了人与人之间的距离。', vn: 'Điện thoại di động đã kéo gần khoảng cách giữa người với người.' },

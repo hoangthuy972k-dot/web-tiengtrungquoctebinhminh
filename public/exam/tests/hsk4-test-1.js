@@ -195,7 +195,7 @@ window.EXAM_DATA = {
       id: 'write', name: 'Viết', icon: 'pencil',
       parts: [
         {
-          name: 'Phần 1', range: [86, 95], type: 'arrange', intro: 'Sắp xếp các từ thành câu. Bấm lần lượt các từ; bấm từ đã xếp để bỏ ra.', example: 'Ví dụ: 那座桥 800 年的 历史 有 了 → 那座桥有800年的历史了。',
+          name: 'Phần 1', range: [86, 95], type: 'arrange', intro: 'Sắp xếp các từ thành câu. Bấm lần lượt các từ; bấm từ đã xếp để bỏ ra.', example: 'Ví dụ: 那座桥 800年的 历史 有 了 → 那座桥有800年的历史了。',
           questions: [
             { n: 86, words: ['会弹钢琴的人', '羡慕', '很', '她'], answer: '她很羡慕会弹钢琴的人。', accept: ['会弹钢琴的人很羡慕她。'], vn: 'Cô ấy rất ngưỡng mộ người biết chơi piano. (Đáp án cũng chấp nhận: Người biết chơi piano rất ngưỡng mộ cô ấy.)' },
             { n: 87, words: ['亚洲经济的', '正在', '逐渐', '提高', '增长速度'], answer: '亚洲经济的增长速度正在逐渐提高。', vn: 'Tốc độ tăng trưởng kinh tế châu Á đang dần dần tăng lên. — 正在 + 逐渐 + động từ.' },

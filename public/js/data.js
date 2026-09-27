@@ -2261,6 +2261,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-38.html'
       },
       {
+        id: 'hsk6-l39',
+        number: 39,
+        title: 'Cuộc sống trong thời đại Internet',
+        titleHanzi: '互联网时代的生活',
+        titlePinyin: 'Hùliánwǎng shídài de shēnghuó',
+        topic: '第十单元 热点追踪 · Cuộc sống thời Internet: tiện lợi, gọi vốn cộng đồng (众筹) và những nỗi lo (lừa đảo, tin tặc)',
+        vocabCount: 48,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-39.html'
+      },
+      {
         id: 'hsk6-l40',
         number: 40,
         title: 'Siêu năng lực của con người có làm thay đổi kỷ lục thế giới?',

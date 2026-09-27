@@ -1,0 +1,929 @@
+[
+ {
+  "so": "1",
+  "ten": "「任意」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + (能 / 可以 / 可) + 任意 + V: tuỳ ý, tha hồ làm … (không bị hạn chế)",
+   "不能 + 任意 + V / 对 + N + 任意 + V: tuỳ tiện làm bừa (sắc thái chê)",
+   "任意 + V + 一 + lượng từ + N …，……都……: làm với bất kỳ cái nào cũng …"
+  ],
+  "giaiThich": "\"任意\" là PHÓ TỪ, nghĩa là muốn làm thế nào thì làm thế ấy, không bị ràng buộc, không bị hạn chế (想怎么做就怎么做，不受约束，不受限制). Đứng SAU chủ ngữ / động từ năng nguyện (能, 可以, 可) và ngay TRƯỚC động từ: 任意挑选, 任意放大, 任意选用. Sắc thái tuỳ ngữ cảnh: tích cực khi nói được tự do lựa chọn (我们足不出户就能任意挑选商品; 联大代表们发言时可以任意选用); tiêu cực khi nói tuỳ tiện làm bừa, thường đi với 不能 hoặc lời phê phán (合同一旦生效，任何一方都不能任意反悔; 对自然任意改造). Phân biệt: 任何 là ĐẠI TỪ đứng trước danh từ (任何人, 任何一方); 任意 là phó từ đứng trước động từ, không làm vị ngữ (không nói *很任意).",
+  "viDu": [
+   {
+    "zh": "合同一旦生效，任何一方都不能任意反悔了。",
+    "py": "Hétong yídàn shēngxiào, rènhé yì fāng dōu bù néng rènyì fǎnhuǐ le.",
+    "vn": "Hợp đồng một khi có hiệu lực thì không bên nào được tuỳ tiện nuốt lời nữa."
+   },
+   {
+    "zh": "它将异地购物、交易变为了可能——我们足不出户就能任意挑选欧洲、美洲的商品……",
+    "py": "Tā jiāng yìdì gòuwù, jiāoyì biànwéile kěnéng — wǒmen zú bù chū hù jiù néng rènyì tiāoxuǎn Ōuzhōu, Měizhōu de shāngpǐn……",
+    "vn": "Nó biến việc mua sắm, giao dịch ở nơi xa thành điều có thể — không cần ra khỏi nhà, chúng ta vẫn tha hồ chọn lựa hàng hoá châu Âu, châu Mỹ…"
+   },
+   {
+    "zh": "科学家很早以前就发现蝙蝠能在黑暗中任意飞行，既能躲避障碍物也能捕食飞行中的昆虫，但是塞住蝙蝠的双耳、封住它的嘴后，它们在黑暗中就寸步难行了。",
+    "py": "Kēxuéjiā hěn zǎo yǐqián jiù fāxiàn biānfú néng zài hēi'àn zhōng rènyì fēixíng, jì néng duǒbì zhàng'àiwù yě néng bǔshí fēixíng zhōng de kūnchóng, dànshì sāizhù biānfú de shuāng ěr, fēngzhù tā de zuǐ hòu, tāmen zài hēi'àn zhōng jiù cùnbù-nánxíng le.",
+    "vn": "Từ rất lâu các nhà khoa học đã phát hiện dơi có thể bay tự do trong bóng tối, vừa tránh được chướng ngại vật vừa bắt được côn trùng đang bay; nhưng bịt hai tai, bịt miệng dơi lại thì trong bóng tối chúng không nhích nổi một bước."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "你可以任意一本书借回家看。",
+    "why": "任意 là phó từ, phải đứng TRƯỚC động từ (借); đứng trước danh từ là 任何 / 任意 + V + 一 + lượng từ.",
+    "dung": "你可以任意借一本书回家看。"
+   },
+   {
+    "sai": "在这个房间里大家都很任意。",
+    "why": "任意 không làm vị ngữ, không đi với 很; muốn nói \"thoải mái, tuỳ ý\" dùng 随意 / 随便.",
+    "dung": "在这个房间里大家可以随意坐。（或：大家可以任意选座位。）"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我们足不出户就能",
+       "挑选欧洲、美洲的商品。"
+      ],
+      "dap": [
+       [
+        "任意"
+       ]
+      ],
+      "chon": [
+       "任意",
+       "任何",
+       "愿意"
+      ],
+      "goiY": "\"Không ra khỏi nhà vẫn tha hồ chọn hàng châu Âu, châu Mỹ.\" (câu bài khoá)",
+      "giai": "任意 + V (挑选); 任何 đứng trước danh từ; 愿意 = bằng lòng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "合同一旦生效，任何一方都不能",
+       "反悔了。"
+      ],
+      "dap": [
+       [
+        "任意"
+       ]
+      ],
+      "chon": [
+       "任意",
+       "任何",
+       "同意"
+      ],
+      "goiY": "\"Hợp đồng có hiệu lực thì không bên nào được tuỳ tiện nuốt lời.\" (ví dụ (1) của sách)",
+      "giai": "不能任意 + V = không được tuỳ tiện …; 任何 đã có ở trước (任何一方)."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "利用电子地图可以实时显示车辆的位置，并可任意",
+       "。"
+      ],
+      "dap": [
+       [
+        "放大"
+       ]
+      ],
+      "chon": [
+       "放大",
+       "很大",
+       "大小"
+      ],
+      "goiY": "\"… và có thể phóng to tuỳ ý.\" (练一练 (1))",
+      "giai": "Sau 任意 phải là động từ: 任意放大."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "六种语言同等有效，联大代表们发言时可以",
+       "选用。"
+      ],
+      "dap": [
+       [
+        "任意"
+       ]
+      ],
+      "chon": [
+       "任意",
+       "任务",
+       "意思"
+      ],
+      "goiY": "\"… các đại biểu khi phát biểu có thể tuỳ ý chọn dùng.\" (练一练 (2))",
+      "giai": "可以任意选用 = có thể tuỳ ý chọn dùng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "把人视为自然界的主人，对自然任意",
+       "，这种价值观念是错误的。"
+      ],
+      "dap": [
+       [
+        "改造"
+       ]
+      ],
+      "chon": [
+       "改造",
+       "改正",
+       "改善"
+      ],
+      "goiY": "\"… tuỳ tiện cải tạo thiên nhiên …\" (练一练 (3))",
+      "giai": "对自然任意改造 = tuỳ tiện cải tạo thiên nhiên; 改正 = sửa (lỗi), 改善 = cải thiện."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "那个魔术师太神奇了，你",
+       "抽一张纸牌，他都能猜出来。"
+      ],
+      "dap": [
+       [
+        "任意"
+       ]
+      ],
+      "chon": [
+       "任意",
+       "任何",
+       "意外"
+      ],
+      "goiY": "\"Bạn rút bừa một lá bài, ông ấy cũng đoán ra.\" (练习2 (3))",
+      "giai": "任意 + V + 一张 + N …，都…… = rút lá nào cũng …."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "我们",
+       "任意挑选",
+       "足不出户",
+       "就能",
+       "商品"
+      ],
+      "dap": [
+       "我们足不出户就能任意挑选商品。"
+      ],
+      "goiY": "Không cần ra khỏi nhà, chúng ta vẫn có thể tha hồ chọn hàng.",
+      "giai": "Trạng ngữ 足不出户 → 就能 → 任意 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "任何一方",
+       "合同一旦生效，",
+       "任意反悔",
+       "都不能"
+      ],
+      "dap": [
+       "合同一旦生效，任何一方都不能任意反悔。"
+      ],
+      "goiY": "Hợp đồng một khi có hiệu lực thì không bên nào được tuỳ tiện nuốt lời.",
+      "giai": "不能 đứng trước 任意 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "在黑暗中",
+       "蝙蝠",
+       "任意飞行",
+       "能"
+      ],
+      "dap": [
+       "蝙蝠能在黑暗中任意飞行。"
+      ],
+      "goiY": "Dơi có thể bay tự do trong bóng tối.",
+      "giai": "Chủ ngữ + 能 + trạng ngữ nơi chốn + 任意 + V (ví dụ (3) của sách)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "你可以任意一本书借回家看。",
+      "dung": false,
+      "sua": "你可以任意借一本书回家看。",
+      "giai": "任意 là phó từ, phải đứng trước động từ 借, không đứng trước danh từ."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "计划已经定了，就不能任意改变。",
+      "dung": true,
+      "giai": "Đúng: 不能任意 + V = không được tuỳ tiện thay đổi."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "在这个房间里大家都很任意。",
+      "dung": false,
+      "sua": "在这个房间里大家可以随意坐。",
+      "giai": "任意 không làm vị ngữ, không đi với 很; nói \"thoải mái\" dùng 随意 / 随便."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Em có thể tuỳ ý chọn một đề tài để viết.",
+      "dap": [
+       "你可以任意选择一个题目来写。",
+       "你可以任意选一个题目写。",
+       "你可以任意选择一个题目写。",
+       "你可以任意选择一个题目来写作文。"
+      ],
+      "py": "Nǐ kěyǐ rènyì xuǎnzé yí ge tímù lái xiě.",
+      "goiY": "Dịch sang tiếng Trung, dùng 任意.",
+      "giai": "可以 + 任意 + V (选择)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Kế hoạch đã định rồi thì không được tuỳ tiện thay đổi.",
+      "dap": [
+       "计划已经定了，就不能任意改变。",
+       "计划定了就不能任意改变。",
+       "计划已经定下来了，就不能任意改变了。",
+       "计划既然定了，就不能任意改变。"
+      ],
+      "py": "Jìhuà yǐjīng dìng le, jiù bù néng rènyì gǎibiàn.",
+      "goiY": "Dịch sang tiếng Trung, dùng 任意.",
+      "giai": "不能任意 + V mang sắc thái cấm đoán: không được tuỳ tiện …."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "利用GPS和电子地图可以实时显示出车辆的实际位置，并可＿＿，还可以还原、换图。（放大）",
+      "goiY": "đáp án sách — 练一练 (1)",
+      "mau": "利用GPS和电子地图可以实时显示出车辆的实际位置，并可任意放大，还可以还原、换图。",
+      "can": [
+       [
+        "任意放大"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "六种语言同等有效，联大代表们发言时可以＿＿。（选用）",
+      "goiY": "đáp án sách — 练一练 (2)",
+      "mau": "六种语言同等有效，联大代表们发言时可以任意选用。",
+      "can": [
+       [
+        "任意选用"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "把人视为自然界的主人，对自然＿＿，这种价值观念是绝对错误的。（改造）",
+      "goiY": "đáp án sách — 练一练 (3)",
+      "mau": "把人视为自然界的主人，对自然任意改造，这种价值观念是绝对错误的。",
+      "can": [
+       [
+        "任意改造"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "2",
+  "ten": "「尚未」",
+  "tenVn": "",
+  "cauTruc": [
+   "S + 尚未 + V = 还没有 V (văn viết), không thêm 了 / 过",
+   "尚未 + V + 的 + N: làm định ngữ (尚未查明身份的罪犯)",
+   "尚未 + 被 + ……: vẫn chưa được … (尚未被人们认识)"
+  ],
+  "giaiThich": "\"尚未\" nghĩa là \"还没有\" (vẫn chưa), dùng trong VĂN VIẾT. 尚 = còn, vẫn; 未 = chưa. Đứng trước động từ (hoặc cụm bị động 尚未被……): 尚未查明, 尚未完成, 尚未普及, 尚未被人们认识. Hay làm định ngữ trong cụm dài: 尚未查明身份的罪犯 (tội phạm chưa xác minh được danh tính). Vì đã mang nghĩa phủ định hoàn thành, KHÔNG thêm 了 / 过 phía sau động từ. Có thể lặp để liệt kê: 学业尚未完成，事业尚未确立，经济上也尚未独立. Trong khẩu ngữ, lời nói thân mật thì dùng 还没(有). Phân biệt 尚且 (bài 34: ngay cả … còn …).",
+  "viDu": [
+   {
+    "zh": "据官方报道，尚未查明身份的罪犯盗窃了1800万个电子邮件账户及其密码……",
+    "py": "Jù guānfāng bàodào, shàngwèi chámíng shēnfen de zuìfàn dàoqièle yìqiān bābǎi wàn ge diànzǐ yóujiàn zhànghù jí qí mìmǎ……",
+    "vn": "Theo tin chính thức, những tên tội phạm chưa xác minh được danh tính đã đánh cắp 18 triệu tài khoản email cùng mật khẩu…"
+   },
+   {
+    "zh": "所谓潜在的市场，就是客观上已经存在或即将形成，但尚未被人们认识的市场。",
+    "py": "Suǒwèi qiánzài de shìchǎng, jiù shì kèguān shang yǐjīng cúnzài huò jíjiāng xíngchéng, dàn shàngwèi bèi rénmen rènshi de shìchǎng.",
+    "vn": "Cái gọi là thị trường tiềm năng chính là thị trường về khách quan đã tồn tại hoặc sắp hình thành, nhưng vẫn chưa được người ta nhận biết."
+   },
+   {
+    "zh": "中国的现代化发展不过短短几十年，和当代强国有着很大的差距。就像一个久病初愈的人刚刚走下病床，身心的疲倦尚未消退，便一脚踏入了飞驰向前的竞争轨道。",
+    "py": "Zhōngguó de xiàndàihuà fāzhǎn búguò duǎnduǎn jǐ shí nián, hé dāngdài qiángguó yǒuzhe hěn dà de chājù. Jiù xiàng yí ge jiǔ bìng chū yù de rén gānggāng zǒuxià bìngchuáng, shēnxīn de píjuàn shàngwèi xiāotuì, biàn yì jiǎo tàrùle fēichí xiàng qián de jìngzhēng guǐdào.",
+    "vn": "Quá trình hiện đại hoá của Trung Quốc chẳng qua mới vài chục năm, còn cách rất xa các cường quốc đương đại. Giống như một người ốm lâu mới khỏi vừa bước xuống giường bệnh, sự mệt mỏi của thể xác lẫn tinh thần còn chưa tan, đã đặt chân ngay vào đường đua cạnh tranh lao vun vút về phía trước."
+   }
+  ],
+  "loi": [
+   {
+    "sai": "这个问题尚未解决了。",
+    "why": "尚未 đã có nghĩa \"vẫn chưa\", phủ định sự hoàn thành, nên không thêm 了 sau động từ.",
+    "dung": "这个问题尚未解决。"
+   },
+   {
+    "sai": "妈妈，我尚未吃饭，快点儿做饭吧！",
+    "why": "尚未 là văn viết, không hợp lời nói thân mật trong nhà; khẩu ngữ dùng 还没.",
+    "dung": "妈妈，我还没吃饭，快点儿做饭吧！"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "据官方报道，",
+       "查明身份的罪犯盗窃了大量电子邮件账户。"
+      ],
+      "dap": [
+       [
+        "尚未"
+       ]
+      ],
+      "chon": [
+       "尚未",
+       "尚且",
+       "未来"
+      ],
+      "goiY": "\"Tội phạm chưa xác minh được danh tính …\" (câu bài khoá)",
+      "giai": "尚未 + V (查明) làm định ngữ; 尚且 = ngay cả … còn (bài 34); 未来 = tương lai."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "由于电视尚未",
+       "，电影便成了当时最热门的娱乐。"
+      ],
+      "dap": [
+       [
+        "出现"
+       ]
+      ],
+      "chon": [
+       "出现",
+       "出来了",
+       "现在"
+      ],
+      "goiY": "\"Vì ti vi chưa xuất hiện …\" (练一练 B)",
+      "giai": "Sau 尚未 là động từ, không thêm 了."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "所谓潜在的市场，就是已经存在，但尚未被人们",
+       "的市场。"
+      ],
+      "dap": [
+       [
+        "认识"
+       ]
+      ],
+      "chon": [
+       "认识",
+       "认为",
+       "知道了"
+      ],
+      "goiY": "\"… nhưng vẫn chưa được người ta nhận biết.\" (ví dụ (2) của sách)",
+      "giai": "尚未被 + người + V; 认为 không dùng ở bị động; 知道了 có 了 → sai."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "由于大学阶段学业尚",
+       "完成，事业尚未确立。"
+      ],
+      "dap": [
+       [
+        "未"
+       ]
+      ],
+      "chon": [
+       "未",
+       "没",
+       "无"
+      ],
+      "goiY": "\"Việc học ở đại học còn chưa xong …\" (练一练 D)",
+      "giai": "Cụm cố định 尚未; không nói 尚没 / 尚无 + V."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "身心的疲倦",
+       "消退，便一脚踏入了竞争轨道。"
+      ],
+      "dap": [
+       [
+        "尚未"
+       ]
+      ],
+      "chon": [
+       "尚未",
+       "未来",
+       "尚且"
+      ],
+      "goiY": "\"… sự mệt mỏi còn chưa tan …\" (ví dụ (3) của sách)",
+      "giai": "尚未 + V (消退) = vẫn chưa …."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "在一些贫穷落后的偏远山区，网络",
+       "普及。"
+      ],
+      "dap": [
+       [
+        "尚未"
+       ]
+      ],
+      "chon": [
+       "尚未",
+       "何必",
+       "尚且"
+      ],
+      "goiY": "\"Ở vùng núi xa xôi, mạng vẫn chưa phổ biến.\" (练习2 (5))",
+      "giai": "尚未普及 = vẫn chưa phổ biến; 何必 = cần gì phải."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "尚未",
+       "网络",
+       "在一些偏远山区，",
+       "普及"
+      ],
+      "dap": [
+       "在一些偏远山区，网络尚未普及。"
+      ],
+      "goiY": "Ở một số vùng núi xa xôi, mạng vẫn chưa phổ biến.",
+      "giai": "Chủ ngữ 网络 + 尚未 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "尚未",
+       "比赛结果",
+       "公布"
+      ],
+      "dap": [
+       "比赛结果尚未公布。"
+      ],
+      "goiY": "Kết quả cuộc thi vẫn chưa được công bố.",
+      "giai": "Câu bị động ý nghĩa: chủ ngữ (比赛结果) + 尚未 + V."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "经济上",
+       "大学生",
+       "尚未独立"
+      ],
+      "dap": [
+       "大学生经济上尚未独立。"
+      ],
+      "goiY": "Sinh viên về mặt kinh tế vẫn chưa tự lập.",
+      "giai": "Chủ ngữ + phạm vi (经济上) + 尚未 + V (练一练 D)."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这个问题尚未解决了。",
+      "dung": false,
+      "sua": "这个问题尚未解决。",
+      "giai": "尚未 đã phủ định sự hoàn thành, không thêm 了."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "这起事故的原因尚未查明。",
+      "dung": true,
+      "giai": "Đúng: 尚未 + V (查明), văn viết của bản tin."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "妈妈，我尚未吃饭，快点儿做饭吧！",
+      "dung": false,
+      "sua": "妈妈，我还没吃饭，快点儿做饭吧！",
+      "giai": "尚未 là văn viết, không hợp lời nói thân mật trong nhà."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Nguyên nhân vụ tai nạn đến nay vẫn chưa được làm rõ.",
+      "dap": [
+       "事故的原因至今尚未查明。",
+       "事故原因至今尚未查明。",
+       "这次事故的原因至今尚未查清。",
+       "事故的原因到现在尚未查明。"
+      ],
+      "py": "Shìgù de yuányīn zhìjīn shàngwèi chámíng.",
+      "goiY": "Dịch sang tiếng Trung, dùng 尚未.",
+      "giai": "至今 + 尚未 + V = đến nay vẫn chưa … (văn viết)."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Hồi đó điện thoại thông minh vẫn chưa phổ biến, mọi người chủ yếu gọi bằng điện thoại bàn.",
+      "dap": [
+       "那时候智能手机尚未普及，人们主要用座机打电话。",
+       "当时智能手机尚未普及，人们主要用座机打电话。",
+       "那时智能手机尚未普及，大家主要用固定电话打电话。"
+      ],
+      "py": "Nà shíhou zhìnéng shǒujī shàngwèi pǔjí, rénmen zhǔyào yòng zuòjī dǎ diànhuà.",
+      "goiY": "Dịch sang tiếng Trung, dùng 尚未.",
+      "giai": "尚未普及 = vẫn chưa phổ biến; 普及 — bài 30."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "在一些贫穷落后的偏远山区，＿＿。（用“尚未”完成句子）",
+      "goiY": "đáp án sách — 练习2 (5)",
+      "mau": "在一些贫穷落后的偏远山区，网络尚未普及。",
+      "can": [
+       [
+        "尚未"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "战后，人们生活已有所好转，由于电视＿＿，电影便成了当时最热门的娱乐。（用“尚未”完成句子）",
+      "goiY": "đáp án sách — 练一练 B + C",
+      "mau": "战后，人们生活已有所好转，由于电视尚未出现，电影便成了当时最热门的娱乐。",
+      "can": [
+       [
+        "尚未出现"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "由于大学阶段学业＿＿，事业＿＿，经济上也＿＿，大学生即使谈恋爱成功率也不高。（用“尚未”完成句子）",
+      "goiY": "đáp án sách — 练一练 D + F",
+      "mau": "由于大学阶段学业尚未完成，事业尚未确立，经济上也尚未独立，大学生即使谈恋爱成功率也不高。",
+      "can": [
+       [
+        "尚未完成"
+       ],
+       [
+        "尚未确立"
+       ],
+       [
+        "尚未独立"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "so": "3",
+  "ten": "「修辞：夸张」",
+  "tenVn": "",
+  "cauTruc": [
+   "Phân tích: 把 A 夸张为 B — cố ý nói to hơn / nhỏ hơn thực tế",
+   "phóng to: 饿得可以把一头大象吃下去 · 几十里外就能闻到瓜香",
+   "thu nhỏ: 只有巴掌这么大 · khung hay gặp: Adj + 得 + 连……都…… / 像……一样"
+  ],
+  "giaiThich": "Phần 篇章修辞 của bài: \"夸张\" (khoa trương, phóng đại) là CỐ Ý miêu tả sự vật khách quan TO HƠN (扩大) hoặc NHỎ HƠN (缩小) thực tế. Tác dụng: làm nổi bật bản chất, đặc điểm của sự vật, khơi gợi trí tưởng tượng phong phú của người đọc. Hai kiểu: ① PHÓNG TO: 他种的瓜不光甜，几十里外就能闻到瓜香; 他饿得可以把一头大象吃下去; ② THU NHỎ: 我住的房间，只有巴掌这么大. Ngoài ra còn kiểu \"vượt trước\" (超前夸张): 看见这鲜绿的麦苗，就闻出白面包子的香味来了 (lúa mới xanh đã ngửi thấy mùi bánh bao). Khung hay gặp: Adj + 得 + 连……都 / 也……; 恨不得……; 像……一样. Câu bài khoá: 它能让我们自如地通话、视频、传递消息，哪怕你在天涯海角 (天涯海角 = chân trời góc bể, phóng đại khoảng cách). Khi phân tích: \"把 A 夸张为 B\". Chú ý: phóng đại phải để người nghe hiểu là cố ý nói quá (không bị hiểu là nói sai sự thật); văn bản khoa học, báo cáo số liệu không dùng 夸张.",
+  "viDu": [
+   {
+    "zh": "它能让我们自如地通话、视频、传递消息，哪怕你在天涯海角。",
+    "py": "Tā néng ràng wǒmen zìrú de tōnghuà, shìpín, chuándì xiāoxi, nǎpà nǐ zài tiānyá-hǎijiǎo.",
+    "vn": "Nó cho phép chúng ta thoải mái gọi điện, gọi video, gửi tin nhắn, dù bạn ở tận chân trời góc bể. (天涯海角 phóng đại khoảng cách xa)"
+   },
+   {
+    "zh": "他种的瓜不光甜，几十里外就能闻到瓜香。",
+    "py": "Tā zhòng de guā bùguāng tián, jǐ shí lǐ wài jiù néng wéndào guā xiāng.",
+    "vn": "Dưa ông ấy trồng không chỉ ngọt, cách mấy chục dặm đã ngửi thấy mùi thơm. (phóng to)"
+   },
+   {
+    "zh": "看见这鲜绿的麦苗，就闻出白面包子的香味来了。",
+    "py": "Kànjiàn zhè xiānlǜ de màimiáo, jiù wén chū báimiàn bāozi de xiāngwèi lai le.",
+    "vn": "Nhìn thấy mạ lúa mì xanh mướt này là đã ngửi ra mùi thơm của bánh bao bột trắng. (phóng đại vượt trước)"
+   }
+  ],
+  "loi": [
+   {
+    "sai": "（实验报告）这个溶液热得像下火一样。",
+    "why": "Văn bản khoa học, báo cáo cần số liệu chính xác, không dùng 夸张.",
+    "dung": "这个溶液的温度达到了八十摄氏度。"
+   },
+   {
+    "sai": "“密密麻麻的雨点从天空噼里啪啦落了下来。”这句话用了夸张。",
+    "why": "Câu này chỉ miêu tả thật bằng từ láy, từ tượng thanh, không cố ý phóng to hay thu nhỏ (đáp án 练一练 của sách).",
+    "dung": "“密密麻麻的雨点从天空噼里啪啦落了下来。”这句话没有用夸张。"
+   }
+  ],
+  "bt": [
+   {
+    "so": 1,
+    "tieuDe": "Chọn / điền từ thích hợp",
+    "cap": "Cơ học",
+    "cau": [
+     {
+      "kieu": "dien",
+      "phan": [
+       "我住的房间，只有",
+       "这么大。"
+      ],
+      "dap": [
+       [
+        "巴掌"
+       ]
+      ],
+      "chon": [
+       "巴掌",
+       "教室",
+       "操场"
+      ],
+      "goiY": "\"Căn phòng tôi ở chỉ to bằng bàn tay.\" (练习4 (1))",
+      "giai": "Thu nhỏ: lấy vật rất nhỏ (bàn tay) để nói phòng chật."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他饿得可以把一头",
+       "吃下去。"
+      ],
+      "dap": [
+       [
+        "大象"
+       ]
+      ],
+      "chon": [
+       "大象",
+       "面包",
+       "苹果"
+      ],
+      "goiY": "\"Đói đến mức ăn được cả một con voi.\" (练习4 (2))",
+      "giai": "Phóng to: lấy vật rất lớn (con voi) để nói mức độ đói."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "整个礼堂静得连掉根",
+       "都能听见。"
+      ],
+      "dap": [
+       [
+        "针"
+       ]
+      ],
+      "chon": [
+       "针",
+       "书",
+       "椅子"
+      ],
+      "goiY": "\"Hội trường yên đến mức kim rơi cũng nghe thấy.\" (练习4 (3))",
+      "giai": "Tiếng kim rơi cực nhỏ → phóng đại mức độ yên tĩnh."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "天热得像下",
+       "一样，柏油路都烤化了。"
+      ],
+      "dap": [
+       [
+        "火"
+       ]
+      ],
+      "chon": [
+       "火",
+       "雨",
+       "雪"
+      ],
+      "goiY": "\"Trời nóng như trút lửa.\" (练习4 (4))",
+      "giai": "下火 phóng đại cái nóng; 下雨 / 下雪 không nói nóng."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "他种的瓜不光甜，几十",
+       "外就能闻到瓜香。"
+      ],
+      "dap": [
+       [
+        "里"
+       ]
+      ],
+      "chon": [
+       "里",
+       "厘米",
+       "步"
+      ],
+      "goiY": "\"Cách mấy chục dặm đã ngửi thấy mùi dưa.\" (ví dụ (2) của sách)",
+      "giai": "几十里 (mấy chục dặm) là khoảng cách xa không thể ngửi thấy → phóng đại; 厘米 / 步 quá gần, không còn là 夸张."
+     },
+     {
+      "kieu": "dien",
+      "phan": [
+       "它能让我们自如地通话、视频、传递消息，哪怕你在天涯",
+       "。"
+      ],
+      "dap": [
+       [
+        "海角"
+       ]
+      ],
+      "chon": [
+       "海角",
+       "山区",
+       "家里"
+      ],
+      "goiY": "\"… dù bạn ở chân trời góc bể.\" (câu bài khoá)",
+      "giai": "天涯海角 = chân trời góc bể, phóng đại khoảng cách xa."
+     }
+    ]
+   },
+   {
+    "so": 2,
+    "tieuDe": "Sắp xếp câu · Câu đúng hay sai",
+    "cap": "Bán giao tiếp",
+    "cau": [
+     {
+      "kieu": "xep",
+      "manh": [
+       "只有",
+       "我住的房间，",
+       "巴掌这么大"
+      ],
+      "dap": [
+       "我住的房间，只有巴掌这么大。"
+      ],
+      "goiY": "Căn phòng tôi ở chỉ to bằng bàn tay.",
+      "giai": "Chủ đề (我住的房间) + 只有 + vật so sánh + 这么大."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "都能听见",
+       "整个礼堂",
+       "静得连掉根针"
+      ],
+      "dap": [
+       "整个礼堂静得连掉根针都能听见。"
+      ],
+      "goiY": "Cả hội trường yên đến mức kim rơi cũng nghe thấy.",
+      "giai": "Khung Adj + 得 + 连……都……."
+     },
+     {
+      "kieu": "xep",
+      "manh": [
+       "恨不得",
+       "真是",
+       "一分钱掰成两半花"
+      ],
+      "dap": [
+       "真是恨不得一分钱掰成两半花。"
+      ],
+      "goiY": "Đúng là hận không thể bẻ một xu làm đôi mà tiêu.",
+      "giai": "恨不得 + việc không thể làm → phóng đại (练一练 (1))."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "“密密麻麻的雨点从天空噼里啪啦落了下来。”这句话用了夸张。",
+      "dung": false,
+      "sua": "“密密麻麻的雨点从天空噼里啪啦落了下来。”这句话没有用夸张。",
+      "giai": "Đáp án 练一练 của sách: câu (2) chỉ tả thật bằng từ láy, từ tượng thanh."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "“阿姨说张大夫医术高明，看见他，病就好了一半。”这句话用了夸张。",
+      "dung": true,
+      "giai": "Đúng: vừa nhìn thấy bác sĩ bệnh đã khỏi một nửa → phóng đại tài chữa bệnh."
+     },
+     {
+      "kieu": "dungsai",
+      "cau": "（实验报告）这个溶液热得像下火一样。",
+      "dung": false,
+      "sua": "这个溶液的温度达到了八十摄氏度。",
+      "giai": "Văn bản khoa học cần số liệu chính xác, không dùng 夸张."
+     }
+    ]
+   },
+   {
+    "so": 3,
+    "tieuDe": "Dịch Việt – Trung",
+    "cap": "Giao tiếp",
+    "cau": [
+     {
+      "kieu": "dich",
+      "vn": "Cậu ấy chạy nhanh như gió, chớp mắt đã không thấy đâu nữa.",
+      "dap": [
+       "他跑得像风一样快，一眨眼就不见了。",
+       "他跑得跟风一样快，一眨眼就不见了。",
+       "他跑得比风还快，一眨眼就不见了。",
+       "他跑得像风一样，一眨眼就不见了。"
+      ],
+      "py": "Tā pǎo de xiàng fēng yíyàng kuài, yì zhǎyǎn jiù bú jiàn le.",
+      "goiY": "Dịch sang tiếng Trung, dùng 夸张.",
+      "giai": "V + 得 + 像……一样 + Adj; 一眨眼就…… phóng đại tốc độ."
+     },
+     {
+      "kieu": "dich",
+      "vn": "Bài tập nhiều như núi, làm cả đời cũng không hết.",
+      "dap": [
+       "作业多得像山一样，一辈子也做不完。",
+       "作业多得像山一样，一辈子都做不完。",
+       "作业堆得像山一样高，一辈子也写不完。",
+       "作业多得跟山一样，一辈子也写不完。"
+      ],
+      "py": "Zuòyè duō de xiàng shān yíyàng, yíbèizi yě zuò bu wán.",
+      "goiY": "Dịch sang tiếng Trung, dùng 夸张.",
+      "giai": "Hai lần phóng đại: 像山一样 (nhiều) + 一辈子也做不完 (làm mãi không hết)."
+     }
+    ]
+   },
+   {
+    "so": 4,
+    "tieuDe": "Dùng điểm ngữ pháp để hoàn thành câu",
+    "cap": "Vận dụng",
+    "cau": [
+     {
+      "kieu": "vandung",
+      "de": "我住的房间，只有巴掌这么大。——把＿＿夸张为＿＿。",
+      "goiY": "Chỉ ra cách dùng 夸张 (练习4 (1) của sách).",
+      "mau": "把房间的面积小夸张为巴掌的面积。",
+      "can": [
+       [
+        "房间"
+       ],
+       [
+        "巴掌"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "他饿得可以把一头大象吃下去。——把＿＿夸张为＿＿。",
+      "goiY": "Chỉ ra cách dùng 夸张 (练习4 (2) của sách).",
+      "mau": "把他的饥饿程度夸张为大象的体积。",
+      "can": [
+       [
+        "饥饿",
+        "饿"
+       ],
+       [
+        "大象"
+       ]
+      ]
+     },
+     {
+      "kieu": "vandung",
+      "de": "整个礼堂静得连掉根针都能听见。——把＿＿夸张为＿＿。",
+      "goiY": "Chỉ ra cách dùng 夸张 (练习4 (3) của sách).",
+      "mau": "把礼堂安静的程度夸张为绣花针掉在地上的微小声音。",
+      "can": [
+       [
+        "安静",
+        "静"
+       ],
+       [
+        "针"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]

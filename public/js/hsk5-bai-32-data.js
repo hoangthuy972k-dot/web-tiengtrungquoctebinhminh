@@ -1580,56 +1580,28 @@ var errorFixData = [
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hơn một nửa số động thực vật trên Trái Đất đang biến mất.',zh:'地球上一半以上的动植物正在消失。',py:'Dìqiú shang yíbàn yǐshàng de dòng-zhíwù zhèngzài xiāoshī.'},
-  {vi:'Những số liệu này thật sự khiến người ta lo lắng.',zh:'这些数据确实令人不安。',py:'Zhèxiē shùjù quèshí lìng rén bù\'ān.'},
-  {vi:'Người già nên cố gắng ăn ít đồ chiên rán.',zh:'老年人要尽量少吃油炸食品。',py:'Lǎoniánrén yào jǐnliàng shǎo chī yóuzhá shípǐn.'},
-  {vi:'Ô nhiễm không khí có liên quan mật thiết với khí thải ô tô.',zh:'空气污染和汽车尾气密切相关。',py:'Kōngqì wūrǎn hé qìchē wěiqì mìqiè xiāngguān.'},
-  {vi:'Trình độ tiếng Trung của tôi đang từng bước nâng cao.',zh:'我的汉语水平正在逐步提高。',py:'Wǒ de Hànyǔ shuǐpíng zhèngzài zhúbù tígāo.'},
-  {vi:'Thành tích đạt được thật khiến người ta phấn khởi.',zh:'取得的成绩令人鼓舞。',py:'Qǔdé de chéngjì lìng rén gǔwǔ.'},
-  {vi:'Chúng ta nên tự giác phân loại rác.',zh:'我们应该自觉地进行垃圾分类。',py:'Wǒmen yīnggāi zìjué de jìnxíng lājī fēnlèi.'},
-  {vi:'Vận mệnh của chúng ta do chính chúng ta nắm giữ.',zh:'我们的命运由我们自己掌握。',py:'Wǒmen de mìngyùn yóu wǒmen zìjǐ zhǎngwò.'}
+  {vi:'Vì tài nguyên của Trái Đất có hạn nên các bạn lớp mình đều cố gắng không dùng đũa dùng một lần.',zh:'因为地球的资源有限，所以我们班同学都尽量不用一次性筷子。',py:'Yīnwèi dìqiú de zīyuán yǒuxiàn, suǒyǐ wǒmen bān tóngxué dōu jǐnliàng bú yòng yícìxìng kuàizi.',goiY:['因为……所以……','资源','尽量 + 不 + V'],giai:'尽量 + 不 + V = "cố hết sức không…"; 尽量 đứng trước phần phủ định, không nói 不尽量用.'},
+  {vi:'Chỉ cần mỗi người đều tự giác tiết kiệm điện là đã có thể góp một phần vào việc bảo vệ môi trường.',zh:'只要每个人都自觉节约用电，就能为保护环境作出一点贡献。',py:'Zhǐyào měi ge rén dōu zìjué jiéyuē yòng diàn, jiù néng wèi bǎohù huánjìng zuòchū yìdiǎn gòngxiàn.',goiY:['只要……就……','自觉','作出……贡献'],giai:'"Góp phần vào…" dịch là 为……作出贡献; 自觉 đứng trước động từ làm trạng ngữ (tự giác làm gì).'},
+  {vi:'Sở dĩ thành tích của cậu ấy từng bước được nâng lên là vì cậu ấy đã nắm được phương pháp học đúng đắn.',zh:'他的成绩之所以逐步提高，是因为他掌握了正确的学习方法。',py:'Tā de chéngjì zhīsuǒyǐ zhúbù tígāo, shì yīnwèi tā zhǎngwòle zhèngquè de xuéxí fāngfǎ.',goiY:['之所以……是因为……','逐步提高','掌握'],giai:'逐步 + động từ (提高 / 扩大 / 实现) = từng bước; không dùng 逐步 trước tính từ (✗逐步好), khi đó phải dùng 逐渐.'},
+  {vi:'Số liệu công bố trên mạng chưa chắc đã là thật, có cái thậm chí còn rất phóng đại, vì vậy trước khi chia sẻ nhất định phải kiểm chứng đã.',zh:'网上公布的数据不一定真实，有的甚至很夸张，所以转发之前一定要先核实。',py:'Wǎng shang gōngbù de shùjù bù yídìng zhēnshí, yǒude shènzhì hěn kuāzhāng, suǒyǐ zhuǎnfā zhīqián yídìng yào xiān héshí.',goiY:['公布','数据','甚至','夸张'],giai:'不一定 = "chưa chắc"; 甚至 nâng mức độ lên ("thậm chí còn…"); "kiểm chứng" dịch là 核实.'},
+  {vi:'Kết quả học tập có liên quan mật thiết đến chất lượng giấc ngủ, vì vậy dù thi cử căng thẳng đến mấy cũng cố gắng đừng thức khuya.',zh:'学习成绩和睡眠质量密切相关，因此即使考试再紧张，也尽量不要熬夜。',py:'Xuéxí chéngjì hé shuìmián zhìliàng mìqiè xiāngguān, yīncǐ jíshǐ kǎoshì zài jǐnzhāng, yě jǐnliàng búyào áoyè.',goiY:['A 和 B 密切相关','即使……也……','尽量','熬夜'],giai:'A 和 B 密切相关 = A và B liên quan mật thiết; 即使 + 再 + tính từ, 也…… = "dù… đến mấy cũng…".'},
+  {vi:'Thay vì ôm những mộng tưởng viển vông về tương lai, chi bằng hãy chân đạp đất, từng bước thực hiện mục tiêu của mình.',zh:'与其对未来抱着不切实际的幻想，不如脚踏实地，逐步实现自己的目标。',py:'Yǔqí duì wèilái bàozhe bú qiè shíjì de huànxiǎng, bùrú jiǎotà-shídì, zhúbù shíxiàn zìjǐ de mùbiāo.',goiY:['与其……不如……','幻想','逐步实现'],giai:'与其 A 不如 B: bỏ A chọn B; "viển vông" dịch là 不切实际的, đặt trước danh từ 幻想.'},
+  {vi:'Tôi rất kính trọng cô chủ nhiệm lớp mình: cô không chỉ giúp chúng tôi nắm vững phương pháp học mà còn luôn động viên mỗi khi chúng tôi có tâm trạng tiêu cực.',zh:'我很尊敬我们的班主任，她不但帮我们掌握了学习方法，而且总在我们情绪消极的时候鼓舞我们。',py:'Wǒ hěn zūnjìng wǒmen de bānzhǔrèn, tā búdàn bāng wǒmen zhǎngwòle xuéxí fāngfǎ, érqiě zǒng zài wǒmen qíngxù xiāojí de shíhou gǔwǔ wǒmen.',goiY:['尊敬','不但……而且……','消极','鼓舞'],giai:'不但……而且…… khi hai vế cùng chủ ngữ thì chủ ngữ đặt trước 不但; 尊敬 dùng cho người, còn "tôn trọng ý kiến" phải dùng 尊重.'},
+  {vi:'Từ khi gần nhà mọc lên một nhà máy lớn, không khí ngày càng tệ, người dân cũng ngày càng bất an, không ít người thậm chí còn định chuyển nhà.',zh:'自从家附近建了一座大型工厂，空气就越来越差，居民们也越来越不安，不少人甚至打算搬家。',py:'Zìcóng jiā fùjìn jiànle yí zuò dàxíng gōngchǎng, kōngqì jiù yuè lái yuè chà, jūmínmen yě yuè lái yuè bù\'ān, bù shǎo rén shènzhì dǎsuan bānjiā.',goiY:['自从……就……','大型工厂','越来越','不安'],giai:'自从 + mốc thời gian trong quá khứ, vế sau thường có 就 hoặc 以后; 越来越 + tính từ không thêm 很 (✗越来越很差).'},
+  {vi:'Lớp tôi quyết định tổ chức "Tuần lễ giảm khí thải" trong trường: một mặt cố gắng đạp xe đi học để giảm khí thải ô tô, mặt khác tắt đèn khi ra khỏi phòng để tiết kiệm năng lượng.',zh:'我们班决定在学校开展“减碳周”活动：一方面尽量骑车上学，减少汽车尾气；另一方面随手关灯，节约能源。',py:'Wǒmen bān juédìng zài xuéxiào kāizhǎn “jiǎn tàn zhōu” huódòng: yì fāngmiàn jǐnliàng qí chē shàngxué, jiǎnshǎo qìchē wěiqì; lìng yì fāngmiàn suíshǒu guān dēng, jiéyuē néngyuán.',goiY:['一方面……另一方面……','尽量','尾气','能源'],giai:'一方面……另一方面…… liệt kê hai việc song song; 随手关灯 = "tiện tay tắt đèn" — không dịch sát từng chữ "tay theo".'},
+  {vi:'Hoạt động môi trường lần này không chỉ giúp chúng tôi nắm được nhiều kiến thức về bảo vệ môi trường mà còn làm tình cảm giữa các bạn trong lớp thêm gắn bó, đúng là một công đôi việc.',zh:'这次环保活动不仅让我们掌握了很多环保知识，而且密切了同学之间的关系，真是一举两得。',py:'Zhè cì huánbǎo huódòng bùjǐn ràng wǒmen zhǎngwòle hěn duō huánbǎo zhīshi, érqiě mìqièle tóngxué zhījiān de guānxi, zhēn shì yìjǔ-liǎngdé.',goiY:['不仅……而且……','掌握','密切了……的关系'],giai:'密切 ở đây là động từ: 密切了 + ……的关系 = làm quan hệ gắn bó hơn; 不仅……而且…… nối hai lợi ích cùng chiều.'}
 ];
 var translateDataRev = [
-  {
-    vi:'Nếu bạn cho rằng một chút ô nhiễm nhỏ trên Trái Đất chẳng sao cả, thì bạn đã sai hoàn toàn rồi!',
-    zh:'如果你觉得地球上的一点儿小污染没什么关系，那你可就大错特错了！',
-    py:'Rúguǒ nǐ juéde dìqiú shang de yìdiǎnr xiǎo wūrǎn méi shénme guānxi, nà nǐ kě jiù dàcuò-tècuò le!'
-  },
-  {
-    vi:'Ô nhiễm môi trường sẽ gây hại cho động vật, thực vật và cả chính loài người.',
-    zh:'环境污染会危害动物、植物以及人类自身。',
-    py:'Huánjìng wūrǎn huì wēihài dòngwù, zhíwù yǐjí rénlèi zìshēn.'
-  },
-  {
-    vi:'Nhưng nguyên nhân lớn hơn lại là sự tàn phá thiên nhiên của con người.',
-    zh:'但更大的原因则是人类对自然的破坏。',
-    py:'Dàn gèng dà de yuányīn zé shì rénlèi duì zìrán de pòhuài.'
-  },
-  {
-    vi:'Nhiều dòng sông bị ô nhiễm, không còn thích hợp cho loài cá sinh sống nữa.',
-    zh:'很多河流被污染，不再适合鱼类生存。',
-    py:'Hěn duō héliú bèi wūrǎn, bú zài shìhé yúlèi shēngcún.'
-  },
-  {
-    vi:'Một phần ô nhiễm môi trường là do hoạt động sản xuất công nghiệp, nông nghiệp gây ra.',
-    zh:'一部分环境污染是由工业农业生产活动造成的。',
-    py:'Yí bùfen huánjìng wūrǎn shì yóu gōngyè nóngyè shēngchǎn huódòng zàochéng de.'
-  },
-  {
-    vi:'Ngoài ra, rác thải cũng gây tổn hại nghiêm trọng cho môi trường.',
-    zh:'此外，垃圾也会对环境造成严重的损害。',
-    py:'Cǐwài, lājī yě huì duì huánjìng zàochéng yánzhòng de sǔnhài.'
-  },
-  {
-    vi:'Đồng thời, cố gắng đi xe đạp nhiều hơn, chọn phương tiện công cộng nhiều hơn, dùng xe riêng ít đi.',
-    zh:'同时，尽量多骑自行车，多选择公共交通，少使用私家车。',
-    py:'Tóngshí, jǐnliàng duō qí zìxíngchē, duō xuǎnzé gōnggòng jiāotōng, shǎo shǐyòng sījiāchē.'
-  },
-  {
-    vi:'Trái Đất là mái nhà chung của loài người, chúng ta nên coi nó như một căn phòng lớn thuộc về chính mình.',
-    zh:'地球是人类共同的家园，我们应该把它看作一个属于自己的大房间。',
-    py:'Dìqiú shì rénlèi gòngtóng de jiāyuán, wǒmen yīnggāi bǎ tā kànzuò yí ge shǔyú zìjǐ de dà fángjiān.'
-  }
+  {vi:'Do con người không ngừng chặt cây, nhiều khu rừng trên Trái Đất đang dần dần biến mất.',zh:'由于人类不断地砍树，地球上的很多森林正在逐步消失。',py:'Yóuyú rénlèi búduàn de kǎn shù, dìqiú shang de hěn duō sēnlín zhèngzài zhúbù xiāoshī.',goiY:['由于 = do, bởi vì','砍 = chặt','逐步 = từng bước, dần dần'],giai:'由于 thường dùng trong văn viết, tương đương 因为; 逐步消失 nhấn mạnh quá trình diễn ra từng bước.'},
+  {vi:'Lũ lụt và động đất tuy đáng sợ, nhưng sự tàn phá của con người đối với môi trường đôi khi còn nghiêm trọng hơn.',zh:'洪水和地震虽然可怕，但人类对环境的破坏有时更加严重。',py:'Hóngshuǐ hé dìzhèn suīrán kěpà, dàn rénlèi duì huánjìng de pòhuài yǒushí gèngjiā yánzhòng.',goiY:['虽然……但…… = tuy… nhưng…','破坏 = sự tàn phá','更加 = càng thêm, còn… hơn'],giai:'破坏 ở đây là danh từ (对……的破坏 = sự tàn phá đối với…); 更加 + tính từ hai âm tiết, dịch "còn… hơn".'},
+  {vi:'Nếu con người tiếp tục tàn phá môi trường thì sự sống còn của chính chúng ta cũng sẽ bị đe doạ.',zh:'如果人类继续破坏环境，我们自己的生存也会受到威胁。',py:'Rúguǒ rénlèi jìxù pòhuài huánjìng, wǒmen zìjǐ de shēngcún yě huì shòudào wēixié.',goiY:['如果……也…… = nếu… thì cũng…','破坏 = tàn phá','生存 = sự sinh tồn'],giai:'生存 là "sinh tồn, sống còn"; 受到威胁 mang nghĩa bị động "bị đe doạ" dù không có 被.'},
+  {vi:'Những vụ tai nạn giao thông xảy ra hằng ngày khiến người ta thấy bất an, thế nhưng với thứ ô nhiễm không nhìn thấy được thì nhiều người lại chẳng nhạy cảm chút nào.',zh:'每天发生的车祸会让人感到不安，可是对于看不见的污染，很多人却一点儿也不敏感。',py:'Měi tiān fāshēng de chēhuò huì ràng rén gǎndào bù\'ān, kěshì duìyú kàn bu jiàn de wūrǎn, hěn duō rén què yìdiǎnr yě bù mǐngǎn.',goiY:['车祸 = tai nạn giao thông','不安 = bất an','对……不敏感 = không nhạy cảm với…'],giai:'可是……却…… nhấn mạnh sự trái ngược giữa hai thái độ; 一点儿也不 + tính từ = "chẳng… chút nào".'},
+  {vi:'Hoạt động sản xuất công nghiệp và nông nghiệp có quan hệ mật thiết với ô nhiễm môi trường, vì thế chính phủ phải theo dõi sát sao nước thải và khí thải của các nhà máy lớn.',zh:'工业和农业生产活动与环境污染关系密切，因此，政府必须密切关注大型工厂的废水和废气。',py:'Gōngyè hé nóngyè shēngchǎn huódòng yǔ huánjìng wūrǎn guānxi mìqiè, yīncǐ, zhèngfǔ bìxū mìqiè guānzhù dàxíng gōngchǎng de fèishuǐ hé fèiqì.',goiY:['关系密切 = quan hệ mật thiết','密切关注 = theo dõi sát sao','废水 / 废气 = nước thải / khí thải'],giai:'Cùng một chữ 密切: đứng sau 关系 là tính từ ("mật thiết"), đứng trước động từ 关注 là trạng ngữ ("sát sao") — dịch khác nhau cho tự nhiên.'},
+  {vi:'Việc đốt than đá và khí thải ô tô đều gây ô nhiễm không khí, vì vậy chúng ta nên cố gắng ít đi ô tô riêng, đi phương tiện công cộng nhiều hơn.',zh:'燃烧煤炭和汽车尾气都会污染空气，所以我们应该尽量少开私人汽车，多坐公共交通。',py:'Ránshāo méitàn hé qìchē wěiqì dōu huì wūrǎn kōngqì, suǒyǐ wǒmen yīnggāi jǐnliàng shǎo kāi sīrén qìchē, duō zuò gōnggòng jiāotōng.',goiY:['燃烧煤炭 = đốt than đá','尾气 = khí thải xe','尽量少 + V = cố gắng ít… nhất có thể'],giai:'尽量少 + V / 多 + V: 少, 多 đứng trước động từ; dịch "ít… đi / … nhiều hơn" chứ không dịch sát "nhiều ngồi".'},
+  {vi:'Tài nguyên và năng lượng trên Trái Đất không hề vô hạn; một khi đã dùng hết, vận mệnh của loài người sẽ trở nên vô cùng nguy hiểm.',zh:'地球上的资源和能源并不是无限的，一旦用完了，人类的命运就会变得十分危险。',py:'Dìqiú shang de zīyuán hé néngyuán bìng bú shì wúxiàn de, yídàn yòngwán le, rénlèi de mìngyùn jiù huì biàn de shífēn wēixiǎn.',goiY:['并不是 = hoàn toàn không phải','一旦……就…… = một khi… thì…','命运 = vận mệnh'],giai:'一旦 nêu một giả thiết không mong muốn, vế sau dùng 就 chỉ hậu quả; 并 + phủ định nhấn mạnh việc bác bỏ suy nghĩ thông thường.'},
+  {vi:'Hôm nay chúng ta vẫn còn được hít thở không khí trong lành, như thế đã là may mắn lắm rồi; nhưng nếu mọi người không tự giác bảo vệ môi trường thì sớm muộn gì sự may mắn ấy cũng sẽ biến mất.',zh:'我们今天还能呼吸新鲜空气，已经很幸运了；但如果大家都不自觉保护环境，这份幸运迟早会消失。',py:'Wǒmen jīntiān hái néng hūxī xīnxiān kōngqì, yǐjīng hěn xìngyùn le; dàn rúguǒ dàjiā dōu bú zìjué bǎohù huánjìng, zhè fèn xìngyùn chízǎo huì xiāoshī.',goiY:['幸运 = may mắn','自觉 = tự giác','迟早 = sớm muộn gì'],giai:'迟早 đứng trước động từ, dịch "sớm muộn gì cũng…"; dấu ；tách phần nhận xét hiện tại và phần cảnh báo.'},
+  {vi:'Bảo vệ môi trường không dựa vào mộng tưởng, cũng chẳng dựa vào những lời than phiền tiêu cực, mà là mỗi người từng bước nắm vững kiến thức môi trường và bắt đầu từ những việc nhỏ quanh mình.',zh:'保护环境靠的不是幻想，也不是消极的抱怨，而是每个人逐步掌握环保知识，从身边的小事做起。',py:'Bǎohù huánjìng kào de bú shì huànxiǎng, yě bú shì xiāojí de bàoyuàn, ér shì měi ge rén zhúbù zhǎngwò huánbǎo zhīshi, cóng shēnbiān de xiǎoshì zuòqǐ.',goiY:['不是……也不是……而是…… = không phải… cũng không phải… mà là…','消极 = tiêu cực','逐步掌握 = từng bước nắm vững'],giai:'Chuỗi phủ định 不是……也不是…… rồi khẳng định bằng 而是……; 从……做起 = "bắt đầu từ…".'},
+  {vi:'Những người đóng góp cho việc bảo vệ môi trường thật đáng kính trọng; câu chuyện của họ sở dĩ truyền cảm hứng được là vì họ đã chứng minh: vận mệnh của Trái Đất nằm trong tay mỗi người.',zh:'为环保作出贡献的人值得尊敬，他们的故事之所以能鼓舞人心，是因为他们证明了：地球的命运掌握在每个人手里。',py:'Wèi huánbǎo zuòchū gòngxiàn de rén zhíde zūnjìng, tāmen de gùshi zhīsuǒyǐ néng gǔwǔ rénxīn, shì yīnwèi tāmen zhèngmíngle: dìqiú de mìngyùn zhǎngwò zài měi ge rén shǒu li.',goiY:['之所以……是因为…… = sở dĩ… là vì…','鼓舞人心 = cổ vũ lòng người','命运掌握在……手里 = vận mệnh nằm trong tay…'],giai:'之所以 đặt ở vế kết quả, 是因为 ở vế nguyên nhân; 掌握在……手里 = "nằm trong tay…", không dịch là "nắm vững".'}
 ];
 
 // ══════════════════════════════════════════

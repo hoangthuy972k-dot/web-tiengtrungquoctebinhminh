@@ -1728,56 +1728,30 @@ var errorFixData = [
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Đó là một dịp tình cờ.',zh:'那是一个偶然的机会。',py:'Nà shì yí ge ǒurán de jīhuì.'},
-  {vi:'Cậu ấy cứ khăng khăng nói mình không sai.',zh:'他硬说自己没错。',py:'Tā yìng shuō zìjǐ méi cuò.'},
-  {vi:'Xin hãy trả lời tôi càng sớm càng tốt.',zh:'请尽快回复我。',py:'Qǐng jǐnkuài huífù wǒ.'},
-  {vi:'Học chữ Hán không thể chỉ dựa vào học vẹt.',zh:'学汉字不能只靠死记硬背。',py:'Xué Hànzì bù néng zhǐ kào sǐjì-yìngbèi.'},
-  {vi:'Tôi rất khâm phục thầy giáo của tôi.',zh:'我很佩服我的老师。',py:'Wǒ hěn pèifú wǒ de lǎoshī.'},
-  {vi:'Ước mơ của tôi là đi Trung Quốc du học.',zh:'我的梦想是去中国留学。',py:'Wǒ de mèngxiǎng shì qù Zhōngguó liúxué.'},
-  {vi:'Lịch trình tuần này rất kín.',zh:'这个星期的日程很满。',py:'Zhège xīngqī de rìchéng hěn mǎn.'},
-  {vi:'Tôi đã tải phần mềm này về điện thoại rồi.',zh:'我已经把这个软件下载到手机上了。',py:'Wǒ yǐjīng bǎ zhège ruǎnjiàn xiàzài dào shǒujī shang le.'}
+  {vi:'Cậu ta rõ ràng biết mình sai, vậy mà cứ khăng khăng nói tại tôi không cho cậu ta biết sự thật.', zh:'他明明知道自己错了，却硬说是我没把真相告诉他。', py:'Tā míngmíng zhīdào zìjǐ cuò le, què yìng shuō shì wǒ méi bǎ zhēnxiàng gàosu tā.', goiY:['明明……却……','硬说','真相'], giai:'硬说 = khăng khăng nói (硬 là phó từ, đứng ngay trước động từ, không thêm 地); 明明 nêu sự thật rõ ràng, 却 nêu hành động trái ngược.'},
+  {vi:'Chúng tôi chỉ tình cờ quen nhau trên Weibo, không ngờ sau này lại thành bạn thân nhất.', zh:'我们只是偶然在微博上认识的，没想到后来竟然成了最好的朋友。', py:'Wǒmen zhǐshì ǒurán zài wēibó shang rènshi de, méi xiǎngdào hòulái jìngrán chéngle zuì hǎo de péngyou.', goiY:['偶然','没想到……竟然……','微博'], giai:'偶然 + V = tình cờ (làm gì); 竟然 diễn tả điều bất ngờ, đứng sau chủ ngữ và trước động từ.'},
+  {vi:'Thầy bảo chúng tôi nhanh chóng gõ bài báo cáo vào máy tính, nếu không sẽ không kịp nộp trước Tết Dương lịch.', zh:'老师让我们尽快把报告输入电脑，否则就来不及在元旦前交了。', py:'Lǎoshī ràng wǒmen jǐnkuài bǎ bàogào shūrù diànnǎo, fǒuzé jiù láibují zài Yuándàn qián jiāo le.', goiY:['尽快把……','否则','输入'], giai:'尽快 + 把 + O + V = làm việc gì càng sớm càng tốt; 否则 mở vế hậu quả “nếu không thì”.'},
+  {vi:'Học chữ Hán, thay vì học vẹt, chi bằng tìm hiểu quá trình biến đổi của từng chữ, như thế không những nhớ lâu mà còn khó viết sai.', zh:'学汉字与其死记硬背，不如了解每个字的演变过程，这样不但记得牢，而且不容易写错。', py:'Xué Hànzì yǔqí sǐjì-yìngbèi, bùrú liǎojiě měi ge zì de yǎnbiàn guòchéng, zhèyàng búdàn jì de láo, érqiě bù róngyì xiěcuò.', goiY:['与其……不如……','死记硬背','演变'], giai:'与其 A 不如 B = bỏ A chọn B; 死记硬背 là thành ngữ “học vẹt”, không dịch từng chữ.'},
+  {vi:'Bình thường tôi ít chơi game điện thoại, chỉ thỉnh thoảng cuối tuần mới tải một trò về chơi, vì thế thành tích luôn ổn định.', zh:'我平时很少玩手机游戏，只是周末偶然也会下载一个玩玩，所以成绩一直很稳定。', py:'Wǒ píngshí hěn shǎo wán shǒujī yóuxì, zhǐshì zhōumò ǒurán yě huì xiàzài yí ge wánwan, suǒyǐ chéngjì yìzhí hěn wěndìng.', goiY:['偶然也会','下载','所以'], giai:'偶然 làm phó từ = thỉnh thoảng (ít khi), thường đi với 也(会); khác 偶然 tính từ “ngẫu nhiên” (一个偶然的机会).'},
+  {vi:'Để thực hiện ước mơ của mình, ngày nào cậu ấy cũng tranh thủ thời gian tập đàn, dù có ốm cũng cố gắng tập đủ hai tiếng.', zh:'为了实现自己的梦想，他每天都抓紧时间练琴，哪怕生病了，也硬是坚持练完两个小时。', py:'Wèile shíxiàn zìjǐ de mèngxiǎng, tā měi tiān dōu zhuājǐn shíjiān liàn qín, nǎpà shēngbìng le, yě yìngshì jiānchí liàn wán liǎng ge xiǎoshí.', goiY:['哪怕……也……','硬是','抓紧时间'], giai:'硬是 = gắng gượng làm dù điều kiện không cho phép; 哪怕 nêu tình huống xấu nhất, vế sau 也 giữ nguyên hành động.'},
+  {vi:'Đã thích môn Vật lý đến thế thì em nên chủ động suy nghĩ, tìm cách vượt qua khó khăn, chứ không phải hễ gặp bài khó là bỏ cuộc.', zh:'既然你对物理这么感兴趣，就应该主动思考，想办法克服困难，而不是一遇到难题就放弃。', py:'Jìrán nǐ duì wùlǐ zhème gǎn xìngqù, jiù yīnggāi zhǔdòng sīkǎo, xiǎng bànfǎ kèfú kùnnan, ér bú shì yí yùdào nántí jiù fàngqì.', goiY:['既然……就……','而不是','克服困难'], giai:'既然 + sự thật đã biết, 就 + kết luận/lời khuyên; đừng nhầm 既然 (đã… thì…) với 虽然 (tuy…).'},
+  {vi:'Điều khiến tôi khâm phục nhất là bạn cùng bàn tuy mới học tiếng Trung một năm, nhưng đã nhận biết được khá nhiều chữ phồn thể, ngay cả một số phương ngữ cũng nghe hiểu.', zh:'让我最佩服的是，同桌虽然只学了一年中文，却已经能识别不少繁体字，连一些方言也听得懂。', py:'Ràng wǒ zuì pèifú de shì, tóngzhuō suīrán zhǐ xuéle yì nián Zhōngwén, què yǐjīng néng shíbié bù shǎo fántǐzì, lián yìxiē fāngyán yě tīng de dǒng.', goiY:['虽然……却……','连……也……','繁体字'], giai:'Mẫu 让我最佩服的是 + mệnh đề đưa điểm nhấn lên đầu câu; 识别 = nhận biết, phân biệt được (không phải “quen biết”).'},
+  {vi:'Một khi thấy tim mình khó chịu thì phải đi viện kiểm tra càng sớm càng tốt, đừng vì sợ lỡ việc học mà cố gượng, kẻo sau này phải hối tiếc.', zh:'一旦发现自己心脏不舒服，就要尽快去医院检查，千万别因为怕耽误学习而硬撑着，以免将来留下遗憾。', py:'Yídàn fāxiàn zìjǐ xīnzàng bù shūfu, jiù yào jǐnkuài qù yīyuàn jiǎnchá, qiānwàn bié yīnwèi pà dānwu xuéxí ér yìng chēngzhe, yǐmiǎn jiānglái liúxià yíhàn.', goiY:['一旦……就……','尽快','以免'], giai:'硬撑着 = cố gượng chịu (硬 nghĩa gắng gượng); 以免 đứng đầu vế cuối nêu điều muốn tránh — “để khỏi, kẻo”.'},
+  {vi:'Lúc đầu tôi thấy chữ Hán chẳng có chút logic nào, học rất khổ sở, mãi đến khi tình cờ đọc một cuốn sách nói về nguồn gốc chữ Hán, tôi mới phát hiện hoá ra chữ Hán thú vị đến vậy.', zh:'最初我觉得汉字毫无逻辑，学得很痛苦，直到偶然读了一本讲汉字来源的书，才发现汉字原来这么有趣。', py:'Zuìchū wǒ juéde Hànzì háowú luójí, xué de hěn tòngkǔ, zhídào ǒurán dúle yì běn jiǎng Hànzì láiyuán de shū, cái fāxiàn Hànzì yuánlái zhème yǒuqù.', goiY:['直到……才……','毫无逻辑','原来'], giai:'直到 + thời điểm, 才 + sự việc muộn mới xảy ra — “mãi đến… mới…”; 原来 ở đây là “hoá ra”, còn “lúc đầu” là 最初.'}
 ];
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {
-    vi:'Anh ấy cảm thấy từng nét chữ Hán chẳng có chút logic nào, chỉ có thể học vẹt.',
-    zh:'他感觉汉字的一笔一画没有任何逻辑，只能死记硬背。',
-    py:'Tā gǎnjué Hànzì de yì bǐ yí huà méiyǒu rènhé luójí, zhǐ néng sǐjì-yìngbèi.'
-  },
-  {
-    vi:'Một dịp tình cờ, anh ấy phát hiện ra nếu hiểu nguồn gốc và quá trình biến đổi của chữ Hán thì học nó sẽ trở nên nhẹ nhàng, dễ dàng.',
-    zh:'一个偶然的机会，他发现如果了解汉字的来源和演变过程，再学习它就变得轻松、容易。',
-    py:'Yí ge ǒurán de jīhuì, tā fāxiàn rúguǒ liǎojiě Hànzì de láiyuán hé yǎnbiàn guòchéng, zài xuéxí tā jiù biàn de qīngsōng, róngyì.'
-  },
-  {
-    vi:'Nếu còn sống được một năm, tôi phải tranh thủ thời gian số hoá 《Thuyết văn giải tự》 càng sớm càng tốt.',
-    zh:'如果我还能活一年，我要抓紧时间尽快把《说文解字》电脑化。',
-    py:'Rúguǒ wǒ hái néng huó yì nián, wǒ yào zhuājǐn shíjiān jǐnkuài bǎ 《Shuōwén Jiězì》 diànnǎohuà.'
-  },
-  {
-    vi:'Đã chiến thắng bệnh tật, anh ấy quyết định công khai trang web do mình lập ra.',
-    zh:'战胜疾病的他决定把自己创办的网站公开。',
-    py:'Zhànshèng jíbìng de tā juédìng bǎ zìjǐ chuàngbàn de wǎngzhàn gōngkāi.'
-  },
-  {
-    vi:'Anh ấy cũng vì thế mà được cư dân mạng thân mật gọi là “Chú Chữ Hán”.',
-    zh:'他也因此被网友亲切地称呼为“汉字叔叔”。',
-    py:'Tā yě yīncǐ bèi wǎngyǒu qīnqiè de chēnghu wéi “Hànzì shūshu”.'
-  },
-  {
-    vi:'Điều khiến người ta khâm phục hơn nữa là ông mở toàn bộ nội dung trên trang web cho cư dân mạng tải về miễn phí.',
-    zh:'更让人佩服的是，他将网站上的内容全部开放给网友免费下载。',
-    py:'Gèng ràng rén pèifú de shì, tā jiāng wǎngzhàn shang de nèiróng quánbù kāifàng gěi wǎngyǒu miǎnfèi xiàzài.'
-  },
-  {
-    vi:'Ở Đại học Sư phạm Bắc Kinh, ngoài dạy vật lý, ông còn có nhiều thời gian để tiếp tục nghiên cứu chữ Hán.',
-    zh:'在北师大，他除了教物理，还有充分的时间继续研究他的汉字。',
-    py:'Zài Běishīdà, tā chúle jiāo wùlǐ, hái yǒu chōngfèn de shíjiān jìxù yánjiū tā de Hànzì.'
-  },
-  {
-    vi:'Tôi sẽ không nghỉ hưu, tôi còn phải tiếp tục theo đuổi ước mơ của mình.',
-    zh:'我不会退休，我还要继续追求我的梦想。',
-    py:'Wǒ bú huì tuìxiū, wǒ hái yào jìxù zhuīqiú wǒ de mèngxiǎng.'
-  }
+  {vi:'Lúc đầu Richard cảm thấy chữ Hán chẳng có logic gì, nên chỉ có thể học vẹt.', zh:'理查德最初觉得汉字没有任何逻辑，所以只能死记硬背。', py:'Lǐchádé zuìchū juéde Hànzì méiyǒu rènhé luójí, suǒyǐ zhǐ néng sǐjì-yìngbèi.', goiY:['最初 = lúc đầu','逻辑 = logic','死记硬背 = học vẹt'], giai:'所以 nêu hệ quả của vế trước; 最初 = ban đầu (so với về sau), đứng sau chủ ngữ.'},
+  {vi:'Trong một dịp tình cờ, ông phát hiện chỉ cần hiểu quá trình biến đổi của chữ Hán thì học sẽ nhẹ nhàng hơn nhiều.', zh:'一个偶然的机会，他发现只要了解汉字的演变过程，学起来就轻松多了。', py:'Yí ge ǒurán de jīhuì, tā fāxiàn zhǐyào liǎojiě Hànzì de yǎnbiàn guòchéng, xué qǐlái jiù qīngsōng duō le.', goiY:['一个偶然的机会 = một dịp tình cờ','只要……就…… = chỉ cần… thì…','演变 = biến đổi, diễn biến'], giai:'偶然 là tính từ làm định ngữ (偶然的机会); 学起来 = “học vào thì…”, V + 起来 dùng để đánh giá cảm nhận.'},
+  {vi:'Tuy bác sĩ nói tim ông có vấn đề, nhưng ông lại càng tranh thủ thời gian nghiên cứu chữ Hán hơn.', zh:'虽然医生说他的心脏有问题，他却更加抓紧时间研究汉字了。', py:'Suīrán yīshēng shuō tā de xīnzàng yǒu wèntí, tā què gèngjiā zhuājǐn shíjiān yánjiū Hànzì le.', goiY:['虽然……却…… = tuy… nhưng lại…','抓紧时间 = tranh thủ thời gian'], giai:'却 đứng sau chủ ngữ 他 ở vế sau; 抓紧时间 = tranh thủ thời gian, không dịch là “nắm chặt thời gian”.'},
+  {vi:'Ông nghĩ, nếu mình chỉ còn sống được một năm nữa thì phải nhanh chóng số hoá cuốn 《Thuyết văn giải tự》, kẻo để lại nuối tiếc.', zh:'他想，假如自己只能再活一年，就要尽快把《说文解字》电脑化，免得留下遗憾。', py:'Tā xiǎng, jiǎrú zìjǐ zhǐ néng zài huó yì nián, jiù yào jǐnkuài bǎ 《Shuōwén Jiězì》 diànnǎohuà, miǎnde liúxià yíhàn.', goiY:['尽快把……电脑化 = nhanh chóng số hoá…','免得 = kẻo, để khỏi','遗憾 = nuối tiếc'], giai:'尽快 + 把 + O + V: làm càng sớm càng tốt; 遗憾 là “tiếc nuối”, không phải “oán hận”.'},
+  {vi:'Sau nhiều năm nỗ lực, ông không những vượt qua nỗi đau bệnh tật mà còn lập ra trang web chữ Hán của riêng mình.', zh:'经过多年的努力，他不但克服了疾病带来的痛苦，而且创办了自己的汉字网站。', py:'Jīngguò duō nián de nǔlì, tā búdàn kèfúle jíbìng dàilái de tòngkǔ, érqiě chuàngbànle zìjǐ de Hànzì wǎngzhàn.', goiY:['不但……而且…… = không những… mà còn…','克服 = vượt qua','创办 = sáng lập, lập ra'], giai:'不但 đứng sau chủ ngữ khi hai vế cùng chủ ngữ; 疾病带来的痛苦 là cụm định ngữ — “nỗi đau do bệnh tật mang lại”.'},
+  {vi:'Sau khi trang web được công khai, cư dân mạng khắp thế giới đều có thể tra cứu và tải về miễn phí, vì thế ông được thân mật gọi là “Chú Chữ Hán”.', zh:'网站公开以后，全世界的网友都可以免费查询和下载，因此他被亲切地称呼为“汉字叔叔”。', py:'Wǎngzhàn gōngkāi yǐhòu, quán shìjiè de wǎngyǒu dōu kěyǐ miǎnfèi cháxún hé xiàzài, yīncǐ tā bèi qīnqiè de chēnghu wéi “Hànzì shūshu”.', goiY:['因此 = vì thế','被……称呼为…… = được gọi là…','查询 = tra cứu'], giai:'被……称呼为…… là câu bị động “được gọi là”; 公开 ở đây là “công bố cho mọi người”, không phải “mở cửa”.'},
+  {vi:'Điều khiến người ta khâm phục hơn là trang web của ông thu thập rất nhiều tự hình chữ Hán cổ, gồm cả giáp cốt văn, kim văn…, hơn nữa đều mở cho cư dân mạng sử dụng.', zh:'更让人佩服的是，他的网站收集了大量古代汉字字形，包含甲骨文、金文等，而且全部对网友开放。', py:'Gèng ràng rén pèifú de shì, tā de wǎngzhàn shōujíle dàliàng gǔdài Hànzì zìxíng, bāohán jiǎgǔwén, jīnwén děng, érqiě quánbù duì wǎngyǒu kāifàng.', goiY:['更让人佩服的是 = điều đáng khâm phục hơn là','包含 = bao gồm','开放 = mở (cho dùng)'], giai:'Mẫu 让人 + cảm xúc + 的是…… đưa điểm nhấn lên đầu; 而且 bổ sung thêm một điểm cộng nữa.'},
+  {vi:'Ngày thường ông rất bận, chỉ thỉnh thoảng mới lên Weibo xem lời nhắn của cư dân mạng; thấy mọi người khen mình, ông lại luôn bảo trang web vẫn chưa đủ hoàn thiện.', zh:'他平时非常忙，只是偶然也会上微博看看网友的留言，看到大家称赞自己，他却总说网站还不够完善。', py:'Tā píngshí fēicháng máng, zhǐshì ǒurán yě huì shàng wēibó kànkan wǎngyǒu de liúyán, kàndào dàjiā chēngzàn zìjǐ, tā què zǒng shuō wǎngzhàn hái bú gòu wánshàn.', goiY:['偶然也会 = thỉnh thoảng cũng…','称赞 = khen ngợi','完善 = hoàn thiện'], giai:'偶然 làm phó từ nghĩa “thỉnh thoảng”, đi với 也会; 却 chỉ phản ứng trái với điều người nghe chờ đợi (được khen mà lại khiêm tốn).'},
+  {vi:'Cơ quan vốn định cho ông nghỉ hưu, nhưng ông nhất quyết không chịu, ông nói thay vì ở nhà hưởng nhàn, chi bằng tiếp tục theo đuổi ước mơ của mình.', zh:'单位本来要安排他退休，他却硬是不肯，他说与其在家享受清闲，不如继续追求自己的梦想。', py:'Dānwèi běnlái yào ānpái tā tuìxiū, tā què yìngshì bù kěn, tā shuō yǔqí zài jiā xiǎngshòu qīngxián, bùrú jìxù zhuīqiú zìjǐ de mèngxiǎng.', goiY:['硬是 = nhất quyết, khăng khăng','与其……不如…… = thay vì… chi bằng…','追求……梦想 = theo đuổi ước mơ'], giai:'硬是 + 不肯 = khăng khăng không chịu (硬 nghĩa ①); 单位 là “cơ quan, nơi làm việc”, không dịch là “đơn vị đo”.'},
+  {vi:'Người Mỹ đã số hoá những kinh điển như 《Thuyết văn giải tự》 này sở dĩ kiên trì được hai mươi năm là vì ông trước sau không buông bỏ được mối duyên với chữ Hán.', zh:'这位把《说文解字》等经典电脑化的美国人，之所以能坚持二十年，是因为他始终放不下与汉字的这段情缘。', py:'Zhè wèi bǎ 《Shuōwén Jiězì》 děng jīngdiǎn diànnǎohuà de Měiguórén, zhīsuǒyǐ néng jiānchí èrshí nián, shì yīnwèi tā shǐzhōng fàng bu xià yǔ Hànzì de zhè duàn qíngyuán.', goiY:['之所以……是因为…… = sở dĩ… là vì…','经典 = kinh điển','情缘 = mối duyên, tình cảm gắn bó'], giai:'Chủ ngữ dài (这位……的美国人) đứng trước 之所以, khi dịch giữ trật tự “sở dĩ… là vì…”; 放不下 = không buông bỏ được.'}
 ];
 
 // ══════════════════════════════════════════

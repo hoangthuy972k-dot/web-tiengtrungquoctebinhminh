@@ -1267,56 +1267,28 @@ var errorFixData = [
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Đến giờ cậu ấy vẫn chưa đến, chắc là quên rồi.',zh:'他到现在还没来，八成是忘了。',py:'Tā dào xiànzài hái méi lái, bāchéng shì wàng le.'},
-  {vi:'Dù gặp khó khăn gì cũng đừng dễ dàng bỏ cuộc.',zh:'不管遇到什么困难，都不要轻易放弃。',py:'Bùguǎn yùdào shénme kùnnan, dōu búyào qīngyì fàngqì.'},
-  {vi:'Ừ, không vấn đề gì, tôi mang đến cho cô ấy ngay.',zh:'嗯，没问题，我这就给她送去。',py:'Ǹg, méi wèntí, wǒ zhè jiù gěi tā sòngqu.'},
-  {vi:'Bài thi hôm nay đặc biệt dễ.',zh:'今天的考试特别容易。',py:'Jīntiān de kǎoshì tèbié róngyì.'},
-  {vi:'Xin quý khách xuất trình hộ chiếu.',zh:'请出示您的护照。',py:'Qǐng chūshì nín de hùzhào.'},
-  {vi:'Uống trà hay uống cà phê, tôi đều được cả.',zh:'喝茶还是喝咖啡，我都无所谓。',py:'Hē chá háishi hē kāfēi, wǒ dōu wúsuǒwèi.'},
-  {vi:'Tối nay tôi phải trực, không đi được.',zh:'今天晚上我要值班，去不了。',py:'Jīntiān wǎnshang wǒ yào zhíbān, qù bu liǎo.'},
-  {vi:'Cậu ấy học rất giỏi nhưng rất khiêm tốn.',zh:'他学习很好，但是很谦虚。',py:'Tā xuéxí hěn hǎo, dànshì hěn qiānxū.'}
+  {vi:'Ừ, kế hoạch này tớ tán thành, nhưng chúng mình phải hỏi ý kiến cô chủ nhiệm trước đã.',zh:'嗯，这个计划我赞成，但是我们得先问问班主任的意见。',py:'Ǹg, zhège jìhuà wǒ zànchéng, dànshì wǒmen děi xiān wènwen bānzhǔrèn de yìjiàn.',goiY:['嗯 (ǹg)','赞成','但是'],giai:'嗯 đọc thanh 4 (ǹg) + dấu phẩy = đồng ý, nhận lời; vế sau 但是 nêu điều kiện bổ sung — "phải… trước đã" dịch là 得先…….'},
+  {vi:'Tuy lần thi nào cũng đứng nhất nhưng cậu ấy chưa bao giờ tùy tiện coi thường người khác.',zh:'他虽然每次考试都是第一名，却从来不轻易看不起别人。',py:'Tā suīrán měi cì kǎoshì dōu shì dì-yī míng, què cónglái bù qīngyì kànbuqǐ biérén.',goiY:['虽然……却……','不轻易 + V','看不起'],giai:'不轻易 + V = không tuỳ tiện, rất ít khi làm gì (phó từ); 却 đứng sau chủ ngữ, trước động từ — không đặt 却 ở đầu vế như 但是.'},
+  {vi:'Tối nay đến lượt tớ trực ở thư viện trường nên chắc là không kịp dự tiệc sinh nhật cậu rồi.',zh:'今天晚上轮到我在学校图书馆值班，所以八成赶不上你的生日聚会了。',py:'Jīntiān wǎnshang lúndào wǒ zài xuéxiào túshūguǎn zhíbān, suǒyǐ bāchéng gǎn bu shàng nǐ de shēngrì jùhuì le.',goiY:['值班','八成','所以'],giai:'八成 = "chắc là, tám phần mười", đứng trước động từ giống 大概; "không kịp dự" dùng bổ ngữ khả năng 赶不上.'},
+  {vi:'Hả? Lúc nãy cậu chẳng bảo đi đâu cũng được sao, sao vừa nghe nói đi leo núi lại chần chừ thế?',zh:'嗯？你刚才不是说去哪儿都无所谓吗，怎么一听要爬山，反而犹豫起来了？',py:'Ńg? Nǐ gāngcái bú shì shuō qù nǎr dōu wúsuǒwèi ma, zěnme yì tīng yào pá shān, fǎn\'ér yóuyù qǐlai le?',goiY:['嗯 (ńg)？','无所谓','反而','犹豫'],giai:'嗯 đọc thanh 2 (ńg) + dấu ？ để hỏi lại, ngạc nhiên; 反而 = "trái lại" — kết quả ngược với điều người nghe chờ đợi.'},
+  {vi:'Chỉ cần cậu sửa cho rõ những chỗ còn mơ hồ trong bản báo cáo, thầy sẽ không dễ gì trừ điểm cậu đâu.',zh:'只要你把报告里模糊的地方改清楚，老师就不会轻易给你扣分。',py:'Zhǐyào nǐ bǎ bàogào li móhu de dìfang gǎi qīngchu, lǎoshī jiù bú huì qīngyì gěi nǐ kòu fēn.',goiY:['只要……就……','模糊','报告'],giai:'只要……就…… = "chỉ cần… thì…" (điều kiện đủ); 就 đặt sau chủ ngữ của vế hai (老师就……), không đặt trước chủ ngữ.'},
+  {vi:'Thay vì lên mạng than phiền về quy định của trường, chi bằng mọi người cùng viết một lá đơn kiến nghị gửi thầy hiệu trưởng giải quyết.',zh:'与其在网上抱怨学校的规定，不如大家一起写一份请愿书，交给校长处理。',py:'Yǔqí zài wǎng shang bàoyuàn xuéxiào de guīdìng, bùrú dàjiā yìqǐ xiě yí fèn qǐngyuànshū, jiāo gěi xiàozhǎng chǔlǐ.',goiY:['与其……不如……','抱怨','请愿书','处理'],giai:'与其 A 不如 B: bỏ A, chọn B; "gửi… giải quyết" là cấu trúc liên động 交给 + người + 处理.'},
+  {vi:'Sở dĩ cậu ấy được mọi người quý mến như vậy là vì cậu ấy vừa khiêm tốn vừa nhiệt tình, chưa bao giờ coi thường những bạn học kém.',zh:'他之所以人缘这么好，是因为他既谦虚又热心，从来不看不起成绩差的同学。',py:'Tā zhīsuǒyǐ rényuán zhème hǎo, shì yīnwèi tā jì qiānxū yòu rèxīn, cónglái bú kànbuqǐ chéngjì chà de tóngxué.',goiY:['之所以……是因为……','既……又……','谦虚','看不起'],giai:'之所以 (kết quả)……是因为 (nguyên nhân): kết quả nêu trước, ngược thứ tự với 因为……所以……; 既……又…… nối hai tính từ cùng chiều.'},
+  {vi:'Ơ kìa! Mai phải nộp báo cáo hoạt động thực tế rồi mà cậu vẫn còn chơi game à? Nếu còn dây dưa nữa thì đến cuối tuần cũng đừng mong được nghỉ.',zh:'嗯！明天就要交社会实践报告了，你怎么还在打游戏？要是再拖下去，连周末也别想休息了。',py:'Ňg! Míngtiān jiù yào jiāo shèhuì shíjiàn bàogào le, nǐ zěnme hái zài dǎ yóuxì? Yàoshi zài tuō xiaqu, lián zhōumò yě bié xiǎng xiūxi le.',goiY:['嗯 (ňg)！','要是……连……也……','实践报告'],giai:'嗯 đọc thanh 3 (ňg) + ！ biểu thị bất ngờ, không hài lòng; 连……也 + phủ định nhấn mạnh "đến cả… cũng không".'},
+  {vi:'Muốn rút ngắn khoảng cách với bạn mới thì đừng tỏ ra quá sốt sắng, nếu không đối phương ngược lại sẽ trở nên lạnh nhạt; chi bằng hãy bắt đầu từ những việc nhỏ như cùng nhau học bài.',zh:'要想和新同学缩短距离，就别表现得太迫切，否则对方反而会变得冷淡；不如先从一起学习这样的小事做起。',py:'Yào xiǎng hé xīn tóngxué suōduǎn jùlí, jiù bié biǎoxiàn de tài pòqiè, fǒuzé duìfāng fǎn\'ér huì biàn de lěngdàn; bùrú xiān cóng yìqǐ xuéxí zhèyàng de xiǎoshì zuòqǐ.',goiY:['缩短距离','迫切','否则','反而'],giai:'否则 nêu hậu quả nếu không làm theo lời khuyên; 反而 đứng trước động từ (反而会变得……), chỉ kết quả trái với mong đợi.'},
+  {vi:'Nếu ngay từ đầu đã đưa ra yêu cầu lớn thì bố mẹ chắc là sẽ từ chối; chi bằng hãy bước qua một "bậc cửa" nhỏ trước, đợi bố mẹ đồng ý rồi mới dần dần đưa ra yêu cầu lớn hơn.',zh:'如果一开始就提出很大的要求，父母八成会拒绝；不如先跨过一个小门槛，等他们赞成了，再逐渐提出更大的要求。',py:'Rúguǒ yì kāishǐ jiù tíchū hěn dà de yāoqiú, fùmǔ bāchéng huì jùjué; bùrú xiān kuàguò yí ge xiǎo ménkǎn, děng tāmen zànchéng le, zài zhújiàn tíchū gèng dà de yāoqiú.',goiY:['如果……就……','八成','不如','门槛'],giai:'Câu nhiều vế: 如果……就…… (giả thiết) + 不如 (đề xuất cách tốt hơn) + 等……再…… (đợi… rồi mới…); 再 dùng cho hành động chưa xảy ra, không thay bằng 才.'}
 ];
 var translateDataRev = [
-  {
-    vi:'Một người bạn làm biên tập viên ở toà soạn báo.',
-    zh:'一个朋友在报社当编辑。',
-    py:'Yí ge péngyou zài bàoshè dāng biānjí.'
-  },
-  {
-    vi:'Sếp thấy tò mò, thế là việc xin nghỉ được giải quyết dễ dàng như vậy.',
-    zh:'领导有了兴趣，假，就这样轻易地请好了。',
-    py:'Lǐngdǎo yǒule xìngqù, jià, jiù zhèyàng qīngyì de qǐnghǎo le.'
-  },
-  {
-    vi:'Phải nói rằng, người bạn này rất biết tận dụng “hiệu ứng bước chân qua ngưỡng cửa” để giải quyết vấn đề.',
-    zh:'不得不说，这位朋友很会利用“登门槛效应”来处理问题。',
-    py:'Bùdébù shuō, zhè wèi péngyou hěn huì lìyòng “dēng ménkǎn xiàoyìng” lái chǔlǐ wèntí.'
-  },
-  {
-    vi:'Ở khu thứ nhất, nhân viên nghiên cứu trực tiếp đưa ra yêu cầu, kết quả rất nhiều người từ chối.',
-    zh:'在第一个社区，研究人员直接向人们提出要求，结果很多人表示拒绝。',
-    py:'Zài dì-yī ge shèqū, yánjiū rényuán zhíjiē xiàng rénmen tíchū yāoqiú, jiéguǒ hěn duō rén biǎoshì jùjué.'
-  },
-  {
-    vi:'Việc ký tên ở bước thứ nhất rất dễ, hầu như ai cũng làm theo.',
-    zh:'第一个步骤的签字是很容易的，几乎所有人都照做了。',
-    py:'Dì-yī ge bùzhòu de qiānzì shì hěn róngyì de, jīhū suǒyǒu rén dōu zhàozuò le.'
-  },
-  {
-    vi:'Nếu ngay từ đầu đã nôn nóng đề nghị hẹn hò, cô gái có thể sẽ do dự, thậm chí tỏ ra rất lạnh nhạt.',
-    zh:'如果一开始就迫切地提出要跟她约会，女孩可能会犹豫，甚至表现得很冷淡。',
-    py:'Rúguǒ yì kāishǐ jiù pòqiè de tíchū yào gēn tā yuēhuì, nǚhái kěnéng huì yóuyù, shènzhì biǎoxiàn de hěn lěngdàn.'
-  },
-  {
-    vi:'Khi bạn hạ mình xuống, bạn sẽ rút ngắn khoảng cách với người khác.',
-    zh:'当你放低身段时，会缩短与人的距离。',
-    py:'Dāng nǐ fàngdī shēnduàn shí, huì suōduǎn yǔ rén de jùlí.'
-  },
-  {
-    vi:'Thực tiễn chứng minh, người thuộc kiểu thứ hai bao giờ cũng nhận được nhiều hơn người thuộc kiểu thứ nhất.',
-    zh:'实践证明，第二种人得到的总是比第一种人更多。',
-    py:'Shíjiàn zhèngmíng, dì-èr zhǒng rén dédào de zǒngshì bǐ dì-yī zhǒng rén gèng duō.'
-  }
+  {vi:'Vì công việc ở toà soạn quá bận nên sếp rất ít khi duyệt cho các biên tập viên nghỉ phép.',zh:'因为报社的工作太忙，领导轻易不批编辑们的假。',py:'Yīnwèi bàoshè de gōngzuò tài máng, lǐngdǎo qīngyì bù pī biānjímen de jià.',goiY:['报社 = toà soạn báo','编辑 = biên tập viên','轻易不 + V = rất ít khi, không dễ gì…'],giai:'轻易不 + V là phó từ "rất ít khi / không dễ gì mà…"; đừng dịch sát thành "dễ dàng không duyệt".'},
+  {vi:'Ừ, mọi người đã tán thành thì chúng ta cứ thử làm ở khu dân cư trước đã.',zh:'嗯，既然大家都赞成，我们就先在社区里试一试。',py:'Ǹg, jìrán dàjiā dōu zànchéng, wǒmen jiù xiān zài shèqū li shì yi shì.',goiY:['嗯 (ǹg) = ừ, được (đồng ý)','既然……就…… = đã… thì…','社区 = khu dân cư'],giai:'既然 nêu một sự thật đã rõ rồi rút ra kết luận — dịch "đã… thì…", khác 如果 (giả thiết chưa xảy ra).'},
+  {vi:'Các nhà nghiên cứu khuyên cư dân đặt một tấm biển nhỏ trước cửa nhà, kết quả là hầu như ai cũng đồng ý.',zh:'研究人员劝居民在门前放一个小标志，结果几乎所有人都答应了。',py:'Yánjiū rényuán quàn jūmín zài mén qián fàng yí ge xiǎo biāozhì, jiéguǒ jīhū suǒyǒu rén dōu dāying le.',goiY:['劝 = khuyên','标志 = biển, dấu hiệu','结果 = kết quả là'],giai:'劝 + người + V = khuyên ai làm gì; 结果 đầu vế sau dẫn ra kết quả thực tế đã xảy ra.'},
+  {vi:'Hả? Ở khu dân cư thứ nhất vừa bắt đầu đã đưa ra yêu cầu lớn như vậy, thảo nào phần lớn cư dân đều từ chối.',zh:'嗯？在第一个社区一开始就提这么大的要求，难怪大多数居民都拒绝了。',py:'Ńg? Zài dì-yī ge shèqū yì kāishǐ jiù tí zhème dà de yāoqiú, nánguài dà duōshù jūmín dōu jùjué le.',goiY:['嗯 (ńg)？ = hả? (hỏi lại)','一……就…… = vừa… đã…','难怪 = thảo nào'],giai:'嗯 thanh 2 + ？ là hỏi lại vì ngạc nhiên; 难怪 đặt ở đầu vế kết quả sau khi đã biết nguyên nhân.'},
+  {vi:'Ông biên tập viên lâu năm này thật đáng nể: ông không chỉ viết văn rất hay mà còn vô cùng khiêm tốn, chưa bao giờ coi thường người trẻ.',zh:'这位老编辑很了不起：他不但写得一手好文章，而且非常谦虚，从来不看不起年轻人。',py:'Zhè wèi lǎo biānjí hěn liǎobuqǐ: tā búdàn xiě de yì shǒu hǎo wénzhāng, érqiě fēicháng qiānxū, cónglái bú kànbuqǐ niánqīngrén.',goiY:['了不起 = giỏi, đáng nể','不但……而且…… = không những… mà còn…','看不起 = coi thường'],giai:'了不起 và 看不起 đều có 不 ở giữa nhưng nghĩa trái ngược: 了不起 "phi thường, đáng nể", 看不起 "coi thường".'},
+  {vi:'Ở khu dân cư thứ hai, các nhà nghiên cứu mời cư dân ký vào đơn kiến nghị trước, hai tuần sau mới đưa ra tấm biển lớn, vậy mà số người đồng ý lại nhiều hơn hẳn.',zh:'在第二个社区，研究人员先请居民在请愿书上签名，两周后再出示大标志，赞成的人反而多了很多。',py:'Zài dì-èr ge shèqū, yánjiū rényuán xiān qǐng jūmín zài qǐngyuànshū shang qiānmíng, liǎng zhōu hòu zài chūshì dà biāozhì, zànchéng de rén fǎn\'ér duōle hěn duō.',goiY:['先……再…… = trước… sau đó mới…','出示 = đưa ra cho xem','反而 = trái lại, vậy mà'],giai:'先……再…… chỉ trình tự hai bước; 反而 cho thấy kết quả trái với dự đoán (yêu cầu lớn hơn mà lại nhiều người đồng ý hơn).'},
+  {vi:'Khi yêu, nếu ngay từ đầu đã nôn nóng đề nghị hẹn hò thì cô gái chắc là sẽ do dự, thậm chí trở nên lạnh nhạt.',zh:'谈恋爱的时候，如果一开始就迫切地提出约会，女孩八成会犹豫，甚至会变得冷淡。',py:'Tán liàn\'ài de shíhou, rúguǒ yì kāishǐ jiù pòqiè de tíchū yuēhuì, nǚhái bāchéng huì yóuyù, shènzhì huì biàn de lěngdàn.',goiY:['恋爱 = tình yêu','迫切 = nôn nóng, thiết tha','甚至 = thậm chí'],giai:'迫切地 + V: tính từ làm trạng ngữ chỉ thái độ nôn nóng; 甚至 đưa ra mức độ nặng hơn ở cuối câu.'},
+  {vi:'Thay vì tỏ ra ta đây giỏi giang, chi bằng hạ mình, khiêm tốn học hỏi người khác, như vậy mới thực sự rút ngắn được khoảng cách giữa đôi bên.',zh:'与其摆出一副了不起的样子，不如放低身段，虚心地向别人请教，这样才能真正缩短彼此的距离。',py:'Yǔqí bǎichū yí fù liǎobuqǐ de yàngzi, bùrú fàngdī shēnduàn, xūxīn de xiàng biérén qǐngjiào, zhèyàng cái néng zhēnzhèng suōduǎn bǐcǐ de jùlí.',goiY:['与其……不如…… = thay vì… chi bằng…','放低身段 = hạ mình, bỏ dáng vẻ bề trên','缩短 = rút ngắn'],giai:'与其 A 不如 B: người nói chọn B; 放低身段 là cách nói hình ảnh "hạ cái tôi xuống", không dịch sát là "hạ dáng người xuống".'},
+  {vi:'Có người cho rằng lợi dụng "hiệu ứng bước qua ngưỡng cửa" hơi xảo quyệt, nhưng chỉ cần yêu cầu hợp lý thì nó có thể giúp ta giải quyết các vấn đề trong quan hệ giữa người với người dễ dàng hơn.',zh:'有人觉得利用登门槛效应有点儿狡猾，可是只要要求合理，它就能帮我们更轻易地处理人际问题。',py:'Yǒu rén juéde lìyòng dēng ménkǎn xiàoyìng yǒudiǎnr jiǎohuá, kěshì zhǐyào yāoqiú hélǐ, tā jiù néng bāng wǒmen gèng qīngyì de chǔlǐ rénjì wèntí.',goiY:['狡猾 = xảo quyệt','只要……就…… = chỉ cần… thì…','轻易地 + V = một cách dễ dàng'],giai:'轻易 ở đây là tính từ làm trạng ngữ (轻易地处理 = giải quyết dễ dàng), khác 轻易不 (rất ít khi); 可是 đổi chiều ý so với vế đầu.'},
+  {vi:'Anh biên tập viên ấy xin nghỉ được dễ dàng không phải vì sếp dễ tính, mà là vì anh ấy đưa ra một yêu cầu nhỏ trước, đợi sếp đồng ý rồi mới nói ra mục đích thật sự.',zh:'那位编辑能轻易请到假，不是因为领导好说话，而是因为他先提了个小要求，等领导答应后才说出真正目的。',py:'Nà wèi biānjí néng qīngyì qǐngdào jià, bú shì yīnwèi lǐngdǎo hǎo shuōhuà, ér shì yīnwèi tā xiān tíle ge xiǎo yāoqiú, děng lǐngdǎo dāying hòu cái shuōchū zhēnzhèng mùdì.',goiY:['不是……而是…… = không phải… mà là…','轻易 = dễ dàng','等……才…… = đợi… rồi mới…'],giai:'不是 A 而是 B phủ định nguyên nhân tưởng tượng rồi khẳng định nguyên nhân thật; 才 nhấn mạnh việc nói ra mục đích xảy ra muộn, sau khi sếp đã đồng ý.'}
 ];
 
 // ══════════════════════════════════════════

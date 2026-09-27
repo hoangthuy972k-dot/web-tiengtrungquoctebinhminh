@@ -1086,56 +1086,30 @@ var errorFixData = [
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hồi nhỏ nhà tôi nghèo, không mua nổi sách.',zh:'小时候我家很穷，买不起书。',py:'Xiǎo shíhou wǒ jiā hěn qióng, mǎi bu qǐ shū.'},
-  {vi:'Anh dựa vào đâu mà nghi ngờ tôi?',zh:'你凭什么怀疑我？',py:'Nǐ píng shénme huáiyí wǒ?'},
-  {vi:'Anh ấy hai tay chống đầu, đang nghĩ ngợi.',zh:'他两只手支着脑袋，正在想事情。',py:'Tā liǎng zhī shǒu zhīzhe nǎodai, zhèngzài xiǎng shìqing.'},
-  {vi:'Các em có thắc mắc gì không?',zh:'你们有什么疑问吗？',py:'Nǐmen yǒu shénme yíwèn ma?'},
-  {vi:'Mấy năm gần đây vật giá tăng rất mạnh.',zh:'最近几年，物价涨得很厉害。',py:'Zuìjìn jǐ nián, wùjià zhǎng de hěn lìhai.'},
-  {vi:'Nếu mai trời mưa thì chúng ta không đi nữa.',zh:'假如明天下雨，我们就不去了。',py:'Jiǎrú míngtiān xià yǔ, wǒmen jiù bú qù le.'},
-  {vi:'Ông nội sưu tầm rất nhiều truyện tranh cũ.',zh:'爷爷收藏了很多旧小人书。',py:'Yéye shōucángle hěn duō jiù xiǎorénshū.'},
-  {vi:'Làm thủ tục này phải nộp tiền đặt cọc.',zh:'办理这个手续要交押金。',py:'Bànlǐ zhège shǒuxù yào jiāo yājīn.'}
+  {vi:'Bộ truyện tranh này tuy in rất đẹp, nhưng từ khi tăng giá thì tôi thật sự không mua nổi nữa.', zh:'这套连环画虽然印刷得很精美，可是涨价以后我实在买不起了。', py:'Zhè tào liánhuánhuà suīrán yìnshuā de hěn jīngměi, kěshì zhǎngjià yǐhòu wǒ shízài mǎi bu qǐ le.', goiY:['虽然……可是……','买不起','印刷'], giai:'买不起 = không đủ tiền mua (V + 不 + 起), không nói 不买起; 虽然 có thể đứng sau chủ ngữ 这套连环画.'},
+  {vi:'Nếu cậu không có bằng chứng thì không thể dựa vào cảm giác mà nói là tớ lấy sách của cậu.', zh:'假如你没有证据，就不能凭感觉说是我拿了你的书。', py:'Jiǎrú nǐ méiyǒu zhèngjù, jiù bù néng píng gǎnjué shuō shì wǒ nále nǐ de shū.', goiY:['假如……就……','凭感觉','证据'], giai:'凭 + N + V: dựa vào N để làm V (凭感觉说); 假如 = 如果, vế sau thường có 就.'},
+  {vi:'Mai là thi toán rồi, chẳng trách cậu ấy ngồi trước bàn hai tay chống đầu, chẳng có chút hứng ăn uống nào.', zh:'明天就要考数学了，难怪他两手支着脑袋坐在桌前，毫无胃口。', py:'Míngtiān jiù yào kǎo shùxué le, nánguài tā liǎng shǒu zhīzhe nǎodai zuò zài zhuō qián, háowú wèikǒu.', goiY:['难怪','支着脑袋','毫无胃口'], giai:'难怪 mở vế “thảo nào”, lý do nằm ở vế trước; 支着 = chống, đỡ (V + 着 chỉ trạng thái kéo dài).'},
+  {vi:'Chỉ cần xuất trình thẻ học sinh để đăng ký là có thể mượn đọc miễn phí truyện tranh của thư viện.', zh:'只要凭学生证登记一下，就能免费借阅图书馆里的连环画。', py:'Zhǐyào píng xuéshēngzhèng dēngjì yíxià, jiù néng miǎnfèi jièyuè túshūguǎn li de liánhuánhuà.', goiY:['只要……就……','凭学生证','登记'], giai:'凭 + giấy tờ = dựa vào/xuất trình (凭票入场); 只要 là điều kiện đủ, khác 只有 (điều kiện duy nhất, đi với 才).'},
+  {vi:'Chỉ khi chịu được thử thách của thất bại và khó khăn, thanh thiếu niên mới thật sự trưởng thành.', zh:'只有经得起失败和困难的考验，青少年才能真正长大成人。', py:'Zhǐyǒu jīng de qǐ shībài hé kùnnan de kǎoyàn, qīngshàonián cái néng zhēnzhèng zhǎngdà chéngrén.', goiY:['只有……才……','经得起','长大成人'], giai:'只有……才…… nêu điều kiện duy nhất; 经得起 = chịu đựng được (V + 得 + 起), phủ định là 经不起.'},
+  {vi:'Ngày nay trên mạng có biết bao thú giải trí, thanh thiếu niên lại ngày càng không thích đọc sách, có người thậm chí cả năm không đọc hết nổi một cuốn.', zh:'如今网络上的娱乐那么多，青少年却越来越不爱看书了，有的人甚至一年连一本书都读不完。', py:'Rújīn wǎngluò shang de yúlè nàme duō, qīngshàonián què yuè lái yuè bú ài kàn shū le, yǒu de rén shènzhì yì nián lián yì běn shū dōu dú bu wán.', goiY:['却','甚至','连……都……'], giai:'却 đứng sau chủ ngữ 青少年 chứ không đứng trước; 甚至 đưa ra mức độ cao hơn, thường đi kèm 连……都…….'},
+  {vi:'Khi làm thủ tục mượn sách ở thư viện, trừ khi bạn đã đóng tiền cọc, nếu không mỗi lần chỉ được mượn tối đa hai cuốn.', zh:'在图书馆办理借书手续时，除非你交了押金，否则一次最多只能借两册。', py:'Zài túshūguǎn bànlǐ jiè shū shǒuxù shí, chúfēi nǐ jiāole yājīn, fǒuzé yí cì zuì duō zhǐ néng jiè liǎng cè.', goiY:['除非……否则……','办理借书手续','押金'], giai:'除非 A，否则 B = phải có A, không thì B; đừng dịch thành 如果交了押金，否则…… vì sai logic.'},
+  {vi:'Ông tôi tuổi đã cao nhưng vẫn thích sưu tầm ảnh cũ và truyện tranh cũ, ông bảo chúng ghi lại những kỷ niệm đẹp nhất của thời đại ông.', zh:'爷爷年纪大了，却依然喜欢收藏老照片和旧连环画，他说那些记录了他那个年代最美好的回忆。', py:'Yéye niánjì dà le, què yīrán xǐhuan shōucáng lǎo zhàopiàn hé jiù liánhuánhuà, tā shuō nàxiē jìlùle tā nàge niándài zuì měihǎo de huíyì.', goiY:['却依然','收藏','记录'], giai:'却 + 依然 nhấn mạnh sự trái ngược “tuy… nhưng vẫn”; “tuổi đã cao” là 年纪大了, không nói 年代大了.'},
+  {vi:'Thay vì ngày nào cũng dành hết thời gian cho game online và phim hoạt hình, chi bằng giở sách ra đọc nhiều hơn, dù sao thế giới trong sách cũng hấp dẫn không kém, mà lại không làm mắt mỏi như vậy.', zh:'与其每天把时间都花在网络游戏和动画片上，不如多翻翻书，毕竟书里的世界同样精彩，而且不会让眼睛那么累。', py:'Yǔqí měi tiān bǎ shíjiān dōu huā zài wǎngluò yóuxì hé dònghuàpiàn shang, bùrú duō fānfan shū, bìjìng shū li de shìjiè tóngyàng jīngcǎi, érqiě bú huì ràng yǎnjing nàme lèi.', goiY:['与其……不如……','翻翻书','毕竟'], giai:'与其 A 不如 B: chọn B; 毕竟 = “dù sao thì, suy cho cùng”, đưa ra lý do then chốt.'},
+  {vi:'Dù sau này công việc có bận đến đâu, tôi cũng muốn giống như cụ già bày sạp sách kia, hết sức giúp đỡ những đứa trẻ muốn đọc sách mà không mua nổi sách.', zh:'哪怕将来从事的工作再忙，我也要像那位摆书摊的老人一样，尽力帮助那些想读书又买不起书的孩子。', py:'Nǎpà jiānglái cóngshì de gōngzuò zài máng, wǒ yě yào xiàng nà wèi bǎi shūtān de lǎorén yíyàng, jìnlì bāngzhù nàxiē xiǎng dú shū yòu mǎi bu qǐ shū de háizi.', goiY:['哪怕……再……也……','从事','买不起'], giai:'哪怕 + 再 + Adj，也…… = “dù… đến đâu cũng…”; 从事 đi với công việc, nghề nghiệp (从事教育工作), khác 做事 thông thường.'}
 ];
+
+// Chiều Trung → Việt — nội dung khác với chiều trên
 var translateDataRev = [
-  {
-    vi:'Vào những năm 50–60 của thế kỷ 20, cuộc sống thời ấy rất đơn điệu.',
-    zh:'在二十世纪五六十年代，那时候生活很单调。',
-    py:'Zài èrshí shìjì wǔ liùshí niándài, nà shíhou shēnghuó hěn dāndiào.'
-  },
-  {
-    vi:'Đọc truyện tranh là một trong những thú giải trí chủ yếu nhất của trẻ em.',
-    zh:'读小人书是儿童最主要的娱乐之一。',
-    py:'Dú xiǎorénshū shì értóng zuì zhǔyào de yúlè zhīyī.'
-  },
-  {
-    vi:'Không chỉ trẻ nhỏ mê đọc, mà còn có vô số thanh thiếu niên và người lớn cũng mê.',
-    zh:'不仅小孩子爱看，还有无数的青少年和大人也爱看。',
-    py:'Bùjǐn xiǎo háizi ài kàn, hái yǒu wúshù de qīngshàonián hé dàrén yě ài kàn.'
-  },
-  {
-    vi:'Với những người muốn đọc mà không mua nổi sách, đây không nghi ngờ gì là một điều cực kỳ tốt.',
-    zh:'这对于那些想看又买不起书的人来说，毫无疑问是件大好事。',
-    py:'Zhè duìyú nàxiē xiǎng kàn yòu mǎi bu qǐ shū de rén lái shuō, háowú yíwèn shì jiàn dà hǎoshì.'
-  },
-  {
-    vi:'Bên trong kê mấy viên gạch đỡ những tấm ván gỗ thô ráp cho mọi người ngồi đọc sách.',
-    zh:'里面用几块砖头支着粗糙的木头板子供人们坐着看书。',
-    py:'Lǐmiàn yòng jǐ kuài zhuāntóu zhīzhe cūcāo de mùtou bǎnzi gōng rénmen zuòzhe kàn shū.'
-  },
-  {
-    vi:'Chủ sạp là một cụ già đã có tuổi, người gầy nhỏ.',
-    zh:'摊主是位上了年纪、身材瘦小的老人。',
-    py:'Tānzhǔ shì wèi shàngle niánjì, shēncái shòuxiǎo de lǎorén.'
-  },
-  {
-    vi:'Trong ấn tượng của tôi hình như chẳng có tiền đặt cọc gì cả, hoàn toàn dựa vào chữ tín.',
-    zh:'印象中似乎没有什么押金，全凭信用。',
-    py:'Yìnxiàng zhōng sìhū méiyǒu shénme yājīn, quán píng xìnyòng.'
-  },
-  {
-    vi:'Một số tác phẩm in đẹp, có nét đặc sắc thì giá trị tăng vọt, trở thành đồ sưu tầm.',
-    zh:'一些印刷精美、有特色的作品则身价大涨，成了收藏品。',
-    py:'Yìxiē yìnshuā jīngměi, yǒu tèsè de zuòpǐn zé shēnjià dà zhǎng, chéngle shōucángpǐn.'
-  }
+  {vi:'Cuộc sống những năm 50–60 rất đơn điệu, vì thế đọc truyện tranh trở thành thú giải trí chủ yếu nhất của trẻ con.', zh:'五六十年代的生活十分单调，因此看小人书成了孩子们最主要的娱乐。', py:'Wǔ liùshí niándài de shēnghuó shífēn dāndiào, yīncǐ kàn xiǎorénshū chéngle háizimen zuì zhǔyào de yúlè.', goiY:['因此 = vì thế','单调 = đơn điệu','娱乐 = giải trí'], giai:'因此 nêu kết quả của vế trước; 小人书 = truyện tranh khổ nhỏ (连环画), không dịch là “sách của người nhỏ”.'},
+  {vi:'Truyện tranh không chỉ trẻ nhỏ thích đọc, mà vô số thanh thiếu niên và người lớn cũng đọc say sưa.', zh:'小人书不仅小孩子爱看，而且无数青少年和成人也看得津津有味。', py:'Xiǎorénshū bùjǐn xiǎo háizi ài kàn, érqiě wúshù qīngshàonián hé chéngrén yě kàn de jīnjīn-yǒuwèi.', goiY:['不仅……而且…… = không chỉ… mà còn…','无数 = vô số','津津有味 = say sưa, ngon lành'], giai:'不仅……而且…… nối hai nhóm người cùng thích; 看得津津有味 là bổ ngữ trạng thái — “đọc say sưa”.'},
+  {vi:'Cái lán của sạp sách tuy chỉ dựng bằng gỗ, nhưng lúc nào cũng chật kín trẻ con đến đọc.', zh:'书摊的棚子虽然是用木头搭起来的，却总是挤满了看书的孩子。', py:'Shūtān de péngzi suīrán shì yòng mùtou dā qǐlái de, què zǒngshì jǐmǎnle kàn shū de háizi.', goiY:['虽然……却…… = tuy… nhưng…','搭 = dựng, bắc','棚子 = lán, chái'], giai:'虽然 và 却 đều đứng sau chủ ngữ; 搭起来 = dựng lên (thường là tạm bợ), không dịch là “xây”.'},
+  {vi:'Trong lán, mấy viên gạch kê đỡ những tấm ván thô ráp, mọi người cứ ngồi trên đó đọc sách, dù có chật một chút cũng chẳng ai phàn nàn.', zh:'棚子里用几块砖头支着粗糙的木板，大家就坐在上面看书，哪怕挤一点儿也毫无怨言。', py:'Péngzi li yòng jǐ kuài zhuāntóu zhīzhe cūcāo de mùbǎn, dàjiā jiù zuò zài shàngmian kàn shū, nǎpà jǐ yìdiǎnr yě háowú yuànyán.', goiY:['用……支着…… = dùng… kê, đỡ…','哪怕……也…… = dù… cũng…','毫无怨言 = không một lời than'], giai:'用 A 支着 B: A đỡ B (支 là động từ); 毫无 + danh từ hai âm tiết = “hoàn toàn không có”.'},
+  {vi:'Truyện tranh trên giá được xếp ngay ngắn, đề tài cũng rất phong phú, vừa có truyện lịch sử, lại có truyện ngụ ngôn và kiến thức khoa học.', zh:'书架上的小人书摆得整整齐齐，题材也很丰富，既有历史故事，又有寓言和科学知识。', py:'Shūjià shang de xiǎorénshū bǎi de zhěngzhěng-qíqí, tícái yě hěn fēngfù, jì yǒu lìshǐ gùshi, yòu yǒu yùyán hé kēxué zhīshi.', goiY:['既……又…… = vừa… lại…','整整齐齐 = ngay ngắn','题材 = đề tài'], giai:'既……又…… liệt kê song song; 题材 là “đề tài của tác phẩm”, khác 题目 (đầu bài, đề thi).'},
+  {vi:'Chủ sạp là một cụ già đã có tuổi, cụ không bắt đăng ký, cũng chẳng thu tiền cọc, hoàn toàn dựa vào sự tự giác của mọi người.', zh:'摊主是位上了年纪的老人，他既不要求登记，也不收押金，全凭大家自觉。', py:'Tānzhǔ shì wèi shàngle niánjì de lǎorén, tā jì bù yāoqiú dēngjì, yě bù shōu yājīn, quán píng dàjiā zìjué.', goiY:['既……也…… = không… cũng không…','全凭 = hoàn toàn dựa vào','上了年纪 = có tuổi'], giai:'全凭 + N: hoàn toàn dựa vào (凭 là động từ); 上了年纪 là cách nói lịch sự “đã có tuổi”.'},
+  {vi:'Nếu có ai chưa đọc xong đã phải về, cụ liền ghi lại vào sổ, để hôm sau người đó đến đọc tiếp.', zh:'假如有人没看完就得回家，老人便在本子上记录一下，让他第二天接着来看。', py:'Jiǎrú yǒu rén méi kàn wán jiù děi huí jiā, lǎorén biàn zài běnzi shang jìlù yíxià, ràng tā dì-èr tiān jiēzhe lái kàn.', goiY:['假如 = nếu như','便 = liền, thì (văn viết của 就)','记录 = ghi lại'], giai:'假如 = 如果, vế sau dùng 便/就; 接着 = tiếp tục việc đang dở, không phải “đón lấy”.'},
+  {vi:'Nhiều đứa trẻ đến một xu cũng không trả nổi, nhưng cụ trước sau chưa từng đuổi chúng đi; với những người muốn đọc mà không mua nổi sách, đây chắc chắn là một điều vô cùng tốt.', zh:'很多孩子一分钱也付不起，老人却始终没有赶他们走，这对那些想看又买不起书的人来说，毫无疑问是件大好事。', py:'Hěn duō háizi yì fēn qián yě fù bu qǐ, lǎorén què shǐzhōng méiyǒu gǎn tāmen zǒu, zhè duì nàxiē xiǎng kàn yòu mǎi bu qǐ shū de rén lái shuō, háowú yíwèn shì jiàn dà hǎoshì.', goiY:['付不起 / 买不起 = không trả nổi / không mua nổi','却始终 = nhưng trước sau vẫn','毫无疑问 = không nghi ngờ gì'], giai:'V + 不起 chỉ không đủ khả năng (tiền bạc); 对……来说 = “đối với…” đặt trước lời nhận xét, không dịch là “nói với…”.'},
+  {vi:'Từ khi có ti vi và mạng internet, truyện tranh dần rời khỏi đời sống của mọi người, còn những bản cũ in đẹp thì ngược lại giá trị tăng vọt, trở thành đồ sưu tầm.', zh:'自从有了电视和网络，小人书就逐渐退出了人们的生活，而那些印刷精美的老版本反而身价大涨，成了收藏品。', py:'Zìcóng yǒule diànshì hé wǎngluò, xiǎorénshū jiù zhújiàn tuìchūle rénmen de shēnghuó, ér nàxiē yìnshuā jīngměi de lǎo bǎnběn fǎn\'ér shēnjià dà zhǎng, chéngle shōucángpǐn.', goiY:['自从……就…… = từ khi… thì…','反而 = ngược lại, trái lại','身价大涨 = giá trị tăng vọt'], giai:'反而 chỉ kết quả trái với dự đoán (sách cũ lẽ ra mất giá lại tăng giá); 涨 đọc zhǎng khi nói giá cả, mực nước dâng lên.'},
+  {vi:'Ngày nay ở khu Phan Gia Viên, Hộ Quốc Tự vẫn còn tìm được những sạp bán truyện tranh cũ, có thể thấy lối giải trí xưa này vẫn chưa hề bị người ta hoàn toàn lãng quên.', zh:'如今在潘家园、护国寺一带，还能找到出售旧连环画的书摊，可见这种过去的娱乐方式并没有被人们完全忘记。', py:'Rújīn zài Pānjiāyuán, Hùguósì yídài, hái néng zhǎodào chūshòu jiù liánhuánhuà de shūtān, kějiàn zhè zhǒng guòqù de yúlè fāngshì bìng méiyǒu bèi rénmen wánquán wàngjì.', goiY:['可见 = có thể thấy','并没有 = chẳng hề, hoàn toàn không','一带 = khu vực, vùng'], giai:'可见 rút ra kết luận từ hiện tượng ở vế trước; 并 + 没有 nhấn mạnh phủ định điều người ta tưởng, dịch “chưa hề”.'}
 ];
 
 // ══════════════════════════════════════════

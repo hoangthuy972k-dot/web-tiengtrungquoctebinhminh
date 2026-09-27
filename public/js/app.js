@@ -13001,11 +13001,17 @@
       : '<div class="tp-prompt-zh"><span class="hanzi">' + item.zh + '</span><button type="button" class="vp-speak-btn" data-speak="' + item.zh.replace(/"/g, '&quot;') + '" aria-label="Nghe đọc">' + uiIcon('loa') + '</button></div>' +
         '<div class="tp-prompt-py">' + item.py + '</div>';
 
+    // goiY (tuy chon): tu / cau truc nen dung — an sau nut, hoc sinh tu nghi truoc
+    var hintHtml = (item.goiY && item.goiY.length)
+      ? '<button type="button" class="tp-hint-btn" id="tpHintBtn">💡 Gợi ý từ &amp; cấu trúc</button>' +
+        '<div class="tp-hint" id="tpHint" hidden>' + item.goiY.map(function (g) { return '<span class="tp-hint-chip">' + g + '</span>'; }).join('') + '</div>'
+      : '';
+
     wrap.innerHTML =
       pgbHtml('tpq', total) +
       '<div class="vp-quiz-counter">Câu ' + (tpQuiz.pos + 1) + '/' + total + '</div>' +
       '<div class="vp-quiz-card tp-card">' +
-        promptHtml +
+        promptHtml + hintHtml +
         '<textarea class="tp-input" id="tpInput" placeholder="' + (tpDirection === 'vi2zh' ? 'Nhập bản dịch tiếng Trung...' : 'Nhập bản dịch tiếng Việt...') + '"></textarea>' +
         '<button type="button" class="tp-reveal-btn" id="tpReveal">Xem đáp án tham khảo</button>' +
         '<div class="tp-answer" id="tpAnswer" hidden></div>' +
@@ -13014,6 +13020,10 @@
 
     $all('[data-speak]', wrap).forEach(function (btn) {
       btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
+    });
+    if ($('#tpHintBtn')) $('#tpHintBtn').addEventListener('click', function () {
+      $('#tpHint').hidden = false;
+      this.remove();
     });
     if (tpDirection === 'zh2vi') vpSpeak(item.zh);
 
@@ -13041,6 +13051,8 @@
       } else {
         answerEl.innerHTML = '<div class="tp-answer-vi">' + item.vi + '</div>';
       }
+      // giai (tuy chon): phan tich cau ghep / tu kho, hien sau khi xem dap an
+      if (item.giai) answerEl.insertAdjacentHTML('beforeend', '<div class="tp-answer-note">📝 ' + item.giai + '</div>');
       $all('[data-speak]', answerEl).forEach(function (btn) {
         btn.addEventListener('click', function () { vpSpeak(btn.getAttribute('data-speak')); });
       });

@@ -1484,56 +1484,28 @@ var errorFixData = [
 // DỊCH
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nghe nói bộ phim tài liệu này quay mất ba năm.',zh:'据说这部纪录片拍了三年。',py:'Jùshuō zhè bù jìlùpiàn pāile sān nián.'},
-  {vi:'Lớp chúng tôi có khoảng ba mươi học sinh.',zh:'我们班有三十来个学生。',py:'Wǒmen bān yǒu sānshí lái ge xuésheng.'},
-  {vi:'Tôi chỉ biết anh ấy họ Vương, còn anh ấy làm nghề gì thì tôi không rõ.',zh:'我只知道他姓王，至于他做什么工作，我就不清楚了。',py:'Wǒ zhǐ zhīdào tā xìng Wáng, zhìyú tā zuò shénme gōngzuò, wǒ jiù bù qīngchu le.'},
-  {vi:'Cuối cùng cũng làm xong bài tập rồi!',zh:'总算把作业做完了！',py:'Zǒngsuàn bǎ zuòyè zuòwán le!'},
-  {vi:'Xin lỗi, đã làm mất thời gian của bạn.',zh:'对不起，耽误你的时间了。',py:'Duìbuqǐ, dānwù nǐ de shíjiān le.'},
-  {vi:'Theo quy định, học sinh đến muộn nhất loạt không được vào.',zh:'按规定，迟到的学生一律不准进去。',py:'Àn guīdìng, chídào de xuésheng yílǜ bù zhǔn jìnqu.'},
-  {vi:'Tắm nước nóng có thể xua tan mệt mỏi.',zh:'洗个热水澡可以消除疲劳。',py:'Xǐ ge rèshuǐ zǎo kěyǐ xiāochú píláo.'},
-  {vi:'Học sinh nên thường xuyên tự kiểm điểm bản thân.',zh:'学生应该时时反省自己。',py:'Xuésheng yīnggāi shíshí fǎnxǐng zìjǐ.'}
+  {vi:'Tôi thức khuya ôn bài liền ba ngày, kết quả đến ngày thứ tư lên lớp mệt đến mức không mở nổi mắt.',zh:'我一连三天熬夜复习，结果第四天上课时疲劳得睁不开眼。',py:'Wǒ yìlián sān tiān áoyè fùxí, jiéguǒ dì-sì tiān shàngkè shí píláo de zhēng bu kāi yǎn.',goiY:['一连','熬夜','疲劳','结果'],giai:'一连 + số lượng + thời gian = "liền, liên tiếp", đặt trước động từ; 结果 dẫn ra kết quả ở vế sau (thường là không như ý).'},
+  {vi:'Tuy chỉ được khoảng sáu mươi điểm nhưng môn toán của tôi rốt cuộc cũng qua.',zh:'虽然只考了六十来分，但我的数学总算及格了。',py:'Suīrán zhǐ kǎole liùshí lái fēn, dàn wǒ de shùxué zǒngsuàn jígé le.',goiY:['虽然……但……','来','总算'],giai:'十 / 百 + 来 + lượng từ = số ước lượng "khoảng"; 总算 = rốt cuộc cũng (kết quả mong muốn, dù chưa hoàn hảo).'},
+  {vi:'Chẳng qua là kỷ lục trong game bị người khác phá thôi mà, có đến mức buồn tới nỗi bỏ cả cơm không?',zh:'不就是游戏里的纪录被别人打破了吗，你至于难过得连饭都不吃吗？',py:'Bú jiù shì yóuxì li de jìlù bèi biérén dǎpòle ma, nǐ zhìyú nánguò de lián fàn dōu bù chī ma?',goiY:['纪录','至于……吗','连……都……'],giai:'你至于……吗？ là câu phản vấn = "có đến mức … không?", ý là không cần thiết; 连……都 nhấn mạnh trường hợp cực đoan.'},
+  {vi:'Một là sẽ lỡ mất buổi học thêm, hai là chi phí cũng quá cao, nên tôi không định tham gia trại hè lần này.',zh:'一来会耽误补习课，二来费用也太高，所以我不打算参加这次夏令营。',py:'Yī lái huì dānwu bǔxí kè, èr lái fèiyong yě tài gāo, suǒyǐ wǒ bù dǎsuàn cānjiā zhè cì xiàlìngyíng.',goiY:['一来……二来……','耽误','所以'],giai:'一来……，二来…… liệt kê hai lý do, vế kết luận đặt sau với 所以; 耽误 = làm lỡ, làm chậm trễ (việc học, thời gian), khác 错过 (bỏ lỡ cơ hội).'},
+  {vi:'Nghe nói cậu "học bá" ấy mỗi ngày chỉ học tám tiếng mà lúc nào cũng đứng nhất, đủ thấy hiệu quả quan trọng hơn thời gian.',zh:'据说那位学霸每天只学八个小时，却总是考第一，可见效率比时间更重要。',py:'Jùshuō nà wèi xuébà měi tiān zhǐ xué bā ge xiǎoshí, què zǒngshì kǎo dì-yī, kějiàn xiàolǜ bǐ shíjiān gèng zhòngyào.',goiY:['据说','却','可见','效率'],giai:'据说 = nghe nói (nguồn tin không rõ), đứng đầu câu; 可见 rút ra kết luận từ sự việc vừa kể.'},
+  {vi:'Nếu lúc nào cũng thụ động chờ thầy cô giao việc, chúng ta sẽ trở thành nô lệ của bài tập chứ không phải người làm chủ việc học.',zh:'如果总是被动地等老师布置任务，我们就会变成作业的奴隶，而不是学习的主人。',py:'Rúguǒ zǒngshì bèidòng de děng lǎoshī bùzhì rènwu, wǒmen jiù huì biànchéng zuòyè de núlì, ér bú shì xuéxí de zhǔrén.',goiY:['如果……就……','被动','奴隶','而不是'],giai:'如果……就 là giả thiết – kết quả; 而不是 = "chứ không phải", đặt sau vế khẳng định để phủ định vế đối lập.'},
+  {vi:'Chỉ khi coi việc tự xem xét lại mình là một bước không thể thiếu trong học tập, chúng ta mới không càng đi càng xa trên con đường sai.',zh:'只有把反省当成学习中必不可少的步骤，我们才不会在错误的道路上越走越远。',py:'Zhǐyǒu bǎ fǎnxǐng dàngchéng xuéxí zhōng bì bù kě shǎo de bùzhòu, wǒmen cái bú huì zài cuòwù de dàolù shang yuè zǒu yuè yuǎn.',goiY:['只有……才……','反省','步骤','越……越……'],giai:'只有……才 nêu điều kiện duy nhất (thiếu nó thì không được); 越走越远 = càng đi càng xa.'},
+  {vi:'Anh họ tôi rất cá tính lại thích mạo hiểm, vừa tốt nghiệp đã sang Nam Mỹ du lịch; còn chuyện bố mẹ có đồng ý hay không thì anh ấy chẳng hề bận tâm.',zh:'表哥个性很强，又喜欢冒险，一毕业就去了南美旅行；至于父母同不同意，他根本不在乎。',py:'Biǎogē gèxìng hěn qiáng, yòu xǐhuan màoxiǎn, yí bìyè jiù qùle Nánměi lǚxíng; zhìyú fùmǔ tóng bu tóngyì, tā gēnběn bú zàihu.',goiY:['个性','冒险','至于'],giai:'至于 (giới từ) đứng đầu vế sau, chuyển sang một chuyện có liên quan = "còn về … thì"; ở đây không dịch là "đến mức".'},
+  {vi:'Bất kể học lực tốt hay kém, cô chủ nhiệm đều yêu cầu tất cả có mặt ở trường trước bảy giờ sáng, vì cô chủ trương dùng nếp sinh hoạt điều độ để nâng cao hiệu quả.',zh:'不管成绩好坏，班主任一律要求大家早上七点前到校，因为她提倡用规律的作息来提高效率。',py:'Bùguǎn chéngjì hǎohuài, bānzhǔrèn yílǜ yāoqiú dàjiā zǎoshang qī diǎn qián dào xiào, yīnwèi tā tíchàng yòng guīlǜ de zuòxī lái tígāo xiàolǜ.',goiY:['不管……一律……','提倡','效率'],giai:'不管 + hai mặt đối lập (好坏) + 都 / 一律: kết quả không đổi; 一律 = nhất loạt, không có ngoại lệ.'},
+  {vi:'Thay vì ngày nào cũng bận đến mức không có cả thời gian suy nghĩ, chi bằng thỉnh thoảng cho mình "bế quan" vài ngày; dù có hơi cô đơn, nó cũng giúp tâm hồn theo kịp cơ thể mệt mỏi.',zh:'与其每天忙得连思考的时间都没有，不如偶尔给自己“闭关”几天，哪怕有些寂寞，也能让灵魂追上疲劳的身体。',py:'Yǔqí měi tiān máng de lián sīkǎo de shíjiān dōu méiyǒu, bùrú ǒu\'ěr gěi zìjǐ "bìguān" jǐ tiān, nǎpà yǒuxiē jìmò, yě néng ràng línghún zhuīshang píláo de shēntǐ.',goiY:['与其……不如……','哪怕……也……','闭关','灵魂'],giai:'与其 A 不如 B: chọn B thay vì A; 哪怕……也 = dù (phải chịu chút thiệt) vẫn …, nhượng bộ giả định giống 即使.'}
 ];
 var translateDataRev = [
-  {
-    vi:'Sự bận rộn trong công việc đại khái có thể chia làm ba loại.',
-    zh:'工作中的忙碌大概可以分为三种。',
-    py:'Gōngzuò zhōng de mánglù dàgài kěyǐ fēnwéi sān zhǒng.'
-  },
-  {
-    vi:'Loại bận thứ hai là bận một cách chủ động, bận mà không rối, con người là chủ nhân của công việc.',
-    zh:'第二种忙，忙得很主动，忙而不乱，人是工作的主人。',
-    py:'Dì-èr zhǒng máng, máng de hěn zhǔdòng, máng ér bú luàn, rén shì gōngzuò de zhǔrén.'
-  },
-  {
-    vi:'Thường xuyên tự kiểm điểm, tổng kết lại có thể giúp ta không đi quá xa trên con đường sai.',
-    zh:'时时反省、总结，却可以使我们不会在错误的道路上走得太远。',
-    py:'Shíshí fǎnxǐng, zǒngjié, què kěyǐ shǐ wǒmen bú huì zài cuòwù de dàolù shang zǒu de tài yuǎn.'
-  },
-  {
-    vi:'Ông thuê khoảng hai mươi người địa phương dẫn đường và khuân vác hành lý cho mình.',
-    zh:'他雇了20来个当地人为他带路和搬运行李。',
-    py:'Tā gùle èrshí lái ge dāngdìrén wèi tā dài lù hé bānyùn xíngli.'
-  },
-  {
-    vi:'Ba ngày liền, họ đều thuận lợi hoàn thành kế hoạch đã định.',
-    zh:'一连三天，他们都很顺利地实现了原定的计划。',
-    py:'Yìlián sān tiān, tāmen dōu hěn shùnlì de shíxiànle yuándìng de jìhuà.'
-  },
-  {
-    vi:'Qua trao đổi, vị đạo diễn lớn cuối cùng cũng hiểu ra.',
-    zh:'经过沟通，大导演总算搞明白了。',
-    py:'Jīngguò gōutōng, dà dǎoyǎn zǒngsuàn gǎo míngbai le.'
-  },
-  {
-    vi:'Khi đi đường thì dốc hết sức lao về phía trước, nhưng cứ đi được ba ngày thì phải nghỉ một ngày.',
-    zh:'在赶路时，用尽全力地向前冲，但每走上三天，便要休息一天。',
-    py:'Zài gǎn lù shí, yòngjìn quánlì de xiàng qián chōng, dàn měi zǒushang sān tiān, biàn yào xiūxi yì tiān.'
-  },
-  {
-    vi:'Hỡi những con người bận rộn, hãy dành cho mình thêm chút thời gian để suy nghĩ nhé.',
-    zh:'忙碌的人们，请多给自己一点思考的时间吧。',
-    py:'Mánglù de rénmen, qǐng duō gěi zìjǐ yìdiǎn sīkǎo de shíjiān ba.'
-  }
+  {vi:'Kiểu người thứ nhất bận một cách bị động, vì thế gần như đã trở thành nô lệ của công việc.',zh:'第一种人忙得很被动，因此几乎成了工作的奴隶。',py:'Dì-yī zhǒng rén máng de hěn bèidòng, yīncǐ jīhū chéngle gōngzuò de núlì.',goiY:['被动 = bị động','奴隶 = nô lệ','因此 = vì thế'],giai:'忙得很被动: bổ ngữ trạng thái V + 得 + mức độ; 因此 đứng đầu vế sau nêu kết quả, trang trọng hơn 所以.'},
+  {vi:'Sự bận rộn của kiểu người thứ ba có phần giả tạo, vì trong suy nghĩ họ đã gắn bận rộn với thành công.',zh:'第三种人的忙碌有些虚伪，因为他们在思想上把忙和成功联系到了一起。',py:'Dì-sān zhǒng rén de mánglù yǒuxiē xūwěi, yīnwèi tāmen zài sīxiǎng shang bǎ máng hé chénggōng liánxì dàole yìqǐ.',goiY:['忙碌 = bận rộn','虚伪 = giả tạo','思想 = tư tưởng, suy nghĩ'],giai:'因为 ở vế sau giải thích nguyên nhân; 把 A 和 B 联系到一起 = gắn A với B.'},
+  {vi:'Nghe nói có một đạo diễn lớn vì cực kỳ thích mạo hiểm nên đã đặc biệt tới rừng rậm Nam Mỹ quay một bộ phim tài liệu.',zh:'据说有位大导演因为极爱冒险，所以专门跑到南美丛林拍了一部纪录片。',py:'Jùshuō yǒu wèi dà dǎoyǎn yīnwèi jí ài màoxiǎn, suǒyǐ zhuānmén pǎodào Nánměi cónglín pāile yí bù jìlùpiàn.',goiY:['据说 = nghe nói','丛林 = rừng rậm','纪录片 = phim tài liệu'],giai:'因为……所以…… nguyên nhân – kết quả; 纪录片 viết với 纪 (ghi chép), không phải 记.'},
+  {vi:'Ông thuê khoảng hai mươi người địa phương dẫn đường và khuân hành lý; dù hành lý rất nặng, nhóm người này ai nấy đều đi nhanh như bay.',zh:'他雇了20来个当地人带路和搬行李，尽管行李很重，这批人却个个健步如飞。',py:'Tā gùle èrshí lái ge dāngdìrén dài lù hé bān xíngli, jǐnguǎn xíngli hěn zhòng, zhè pī rén què gègè jiànbù-rúfēi.',goiY:['来 = khoảng (số ước lượng)','尽管……却…… = mặc dù … vẫn …','健步如飞 = đi nhanh như bay'],giai:'20来个 = "khoảng hai mươi", 来 đứng sau số chẵn chục và trước lượng từ; 尽管……却: nhượng bộ một sự thật, 却 đứng sau chủ ngữ vế sau.'},
+  {vi:'Suốt ba ngày liền, nhóm người địa phương đều thể hiện rất xuất sắc, thế nhưng sang ngày thứ tư họ lại từ chối lên đường.',zh:'一连三天，这批当地人都表现得非常出色，可是到了第四天，他们却拒绝上路。',py:'Yìlián sān tiān, zhè pī dāngdìrén dōu biǎoxiàn de fēicháng chūsè, kěshì dàole dì-sì tiān, tāmen què jùjué shàng lù.',goiY:['一连 = liền, liên tiếp','出色 = xuất sắc','可是……却……'],giai:'可是 chuyển ý, 却 nhấn mạnh sự việc bất ngờ; 表现得 + tính từ = thể hiện (một cách) ….'},
+  {vi:'Đạo diễn sốt ruột như vậy, một là vì bị lỡ mất thời gian, hai là sợ chi phí tăng khiến nhà đầu tư không vui.',zh:'导演之所以非常着急，一来是因为耽误了时间，二来是怕费用增加让投资人不高兴。',py:'Dǎoyǎn zhīsuǒyǐ fēicháng zháojí, yī lái shì yīnwèi dānwule shíjiān, èr lái shì pà fèiyong zēngjiā ràng tóuzīrén bù gāoxìng.',goiY:['之所以 = sở dĩ','一来……二来…… = một là … hai là …','耽误 = làm lỡ'],giai:'之所以 + kết quả, sau đó 一来是……，二来是…… liệt kê từng nguyên nhân; 投资人 = nhà đầu tư (người bỏ vốn).'},
+  {vi:'Còn về nhà đầu tư của bộ phim thì đó là một nhân vật tầm cỡ, vì vậy đạo diễn dù thế nào cũng không dám làm phật lòng ông ta.',zh:'至于这部影片的投资人，那可是一位大人物，所以导演无论如何也不敢得罪他。',py:'Zhìyú zhè bù yǐngpiàn de tóuzīrén, nà kě shì yí wèi dà rénwù, suǒyǐ dǎoyǎn wúlùn rúhé yě bù gǎn dézuì tā.',goiY:['至于 = còn về','人物 = nhân vật','得罪 = làm mất lòng','无论如何'],giai:'至于 đứng đầu câu chuyển sang đề tài liên quan — "còn về …"; 无论如何也不 = dù thế nào cũng không.'},
+  {vi:'Sau khi trao đổi, đạo diễn cuối cùng cũng vỡ lẽ: hóa ra người địa phương từ xưa đã có tập tục cứ đi ba ngày thì phải nghỉ một ngày.',zh:'经过沟通，导演总算搞明白了：原来当地人自古就有一种习俗，每走三天就要休息一天。',py:'Jīngguò gōutōng, dǎoyǎn zǒngsuàn gǎo míngbai le: yuánlái dāngdìrén zìgǔ jiù yǒu yì zhǒng xísú, měi zǒu sān tiān jiù yào xiūxi yì tiān.',goiY:['总算 = cuối cùng cũng','搞明白 = hiểu ra','习俗 = tập tục','原来 = hóa ra'],giai:'总算 + V + 了 = rốt cuộc cũng đạt được điều mong muốn sau một thời gian; 原来 = hóa ra (phát hiện ra sự thật).'},
+  {vi:'Trong thời đại đề cao cạnh tranh này, chúng ta thường chỉ lo cúi đầu kéo xe mà quên ngẩng lên nhìn đường, càng thiếu đi bước quan trọng là suy nghĩ và tổng kết.',zh:'在这个提倡竞争的时代，我们常常只顾低头拉车，却忘了抬头看路，更少了思考和总结这一重要步骤。',py:'Zài zhège tíchàng jìngzhēng de shídài, wǒmen chángcháng zhǐ gù dītóu lā chē, què wàngle táitóu kàn lù, gèng shǎole sīkǎo hé zǒngjié zhè yí zhòngyào bùzhòu.',goiY:['提倡 = đề xướng, khuyến khích','只顾……却…… = chỉ lo … mà …','步骤 = bước'],giai:'低头拉车 / 抬头看路 là ẩn dụ: chỉ cắm cúi làm mà không nhìn phương hướng — dịch sát hình ảnh để giữ nghĩa bóng; 却 nối hai hành vi trái ngược.'},
+  {vi:'Bill Gates mỗi năm đều "bế quan" hai lần, bất kể là ai ông cũng không gặp; kiểu bế quan cô độc ấy không chỉ là nghỉ ngơi mà còn là một cách làm việc hiệu quả cao.',zh:'比尔·盖茨每年都要闭关两次，任何人他都一律不见；这种寂寞的闭关不仅是休息，更是一种高效率的工作方式。',py:'Bǐ\'ěr Gàicí měi nián dōu yào bìguān liǎng cì, rènhé rén tā dōu yílǜ bú jiàn; zhè zhǒng jìmò de bìguān bùjǐn shì xiūxi, gèng shì yì zhǒng gāo xiàolǜ de gōngzuò fāngshì.',goiY:['闭关 = bế quan (ở riêng một thời gian)','一律 = đều, không ngoại lệ','不仅……更…… = không chỉ … mà còn …'],giai:'任何人他都一律不见: tân ngữ 任何人 đảo lên đầu để nhấn mạnh, đi với 都 / 一律; 不仅……更…… là tăng tiến, 更 nhấn mạnh vế sau quan trọng hơn.'}
 ];
 
 // ══════════════════════════════════════════

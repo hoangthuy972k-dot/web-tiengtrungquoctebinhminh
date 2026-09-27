@@ -2081,6 +2081,18 @@ const APP_DATA = {
         fullPageUrl: '/lessons/hsk6-bai-23.html'
       },
       {
+        id: 'hsk6-l24',
+        number: 24,
+        title: 'Cảnh ngộ ly kỳ của các ngôi sao thể thao',
+        titleHanzi: '体育明星们的离奇遭遇',
+        titlePinyin: 'Tǐyù míngxīngmen de líqí zāoyù',
+        topic: '第六单元 趣味世界 · Những chấn thương ly kỳ trong thể thao và bài học về sự cẩn thận',
+        vocabCount: 54,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-24.html'
+      },
+      {
         id: 'hsk6-l25',
         number: 25,
         title: 'Thuyền cỏ mượn tên',

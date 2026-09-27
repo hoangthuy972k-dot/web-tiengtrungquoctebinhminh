@@ -2187,6 +2187,18 @@ const APP_DATA = {
         dialogueCount: 1,
         grammarCount: 3,
         fullPageUrl: '/lessons/hsk6-bai-33.html'
+      },
+      {
+        id: 'hsk6-l35',
+        number: 35,
+        title: 'Đến với tranh Tết mộc bản',
+        titleHanzi: '走近木版年画',
+        titlePinyin: 'Zǒujìn Mùbǎn Niánhuà',
+        topic: '第九单元 古今博览 · Xưa nay muôn mặt — nguồn gốc, kỹ thuật in khắc gỗ của tranh Tết Trung Quốc và người truyền nhân Trương Quang Ninh',
+        vocabCount: 52,
+        dialogueCount: 1,
+        grammarCount: 3,
+        fullPageUrl: '/lessons/hsk6-bai-35.html'
       }
     ],
     yct: [

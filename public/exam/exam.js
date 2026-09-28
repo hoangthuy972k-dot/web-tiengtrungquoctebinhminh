@@ -216,9 +216,9 @@
     var html = '';
     data.sections.forEach(function (sec, si) {
       var total = countSection(sec);
-      // Moi phan thi nam trong 1 khoi rieng: thanh tieu de (va audio phan Nghe) chi ghim
-      // trong pham vi phan do, sang phan Doc thi tieu de "Doc" thay vao.
-      html += '<div class="ex-sec" data-sec="' + sec.id + '">';
+      // Moi phan thi la mot "trang" rieng: dang thi chi hien phan dang lam (state.sec);
+      // sang phan sau thi phan truoc bi khoa, khong xem lai duoc. Nop bai xong thi hien het de xem lai.
+      html += '<div class="ex-sec" data-sec="' + sec.id + '"' + (!state.submitted && si !== curSec() ? ' hidden' : '') + '>';
       html += '<div class="ex-sec-head" id="sec-' + sec.id + '"><span class="ex-sec-icon">' + (ICONS[sec.icon] || '') + '</span>' +
         '<span class="ex-sec-title">' + esc(sec.name) + ': (' + total + ' câu)</span>' +
         (sec.audio ? '<audio id="exAudio" class="ex-sec-audio" controls preload="metadata" src="' + esc(sec.audio) + '" aria-label="Audio cả phần ' + esc(sec.name) + '"></audio>' : '') +
@@ -227,8 +227,9 @@
       sec.parts.forEach(function (part) { html += renderPart(part, sec); });
       var next = data.sections[si + 1];
       if (next) {
-        html += '<div class="ex-next"><span class="ex-sec-icon">' + (ICONS[next.icon] || '') + '</span><span>' + esc(next.name) + ': (' + countSection(next) + ' câu)</span>' +
-          '<button type="button" data-goto="sec-' + next.id + '">Chuyển tới phần ' + esc(next.name) + ' ›</button></div>';
+        html += '<div class="ex-next"' + (state.submitted ? ' hidden' : '') + '><span class="ex-sec-icon">' + (ICONS[next.icon] || '') + '</span>' +
+          '<span class="ex-next-t">' + esc(next.name) + ': (' + countSection(next) + ' câu)<small>Sang phần ' + esc(next.name) + ' thì không quay lại phần ' + esc(sec.name) + ' được nữa.</small></span>' +
+          '<button type="button" data-next-sec="' + (si + 1) + '">Chuyển tới phần ' + esc(next.name) + ' ›</button></div>';
       }
       html += '</div>';
     });
@@ -239,6 +240,29 @@
     followSectionInSide();
     var audio = $('#exAudio');
     if (audio) audio.playbackRate = parseFloat($('#exSpeed').value);
+  }
+
+  // ---------- Chuyen phan thi (mot chieu, nhu thi that) ----------
+  function curSec() { return Math.min(Math.max(state.sec || 0, 0), data.sections.length - 1); }
+  function sectionQs(sec) {
+    return [].concat.apply([], sec.parts.map(function (p) { return p.groups ? [].concat.apply([], p.groups.map(function (g) { return g.questions; })) : p.questions; }));
+  }
+  function goNextSection(si) {
+    if (state.submitted || si !== curSec() + 1 || !data.sections[si]) return;
+    var sec = data.sections[curSec()], next = data.sections[si];
+    var left = sectionQs(sec).filter(function (q) { return !hasAnswer(q.n); }).length;
+    openModal('Chuyển sang phần ' + next.name,
+      (left ? 'Phần ' + sec.name + ' còn ' + left + ' câu chưa làm. ' : '') + 'Sau khi chuyển sang phần ' + next.name + ', bạn sẽ không thể quay lại xem hay sửa phần ' + sec.name + ' nữa.',
+      'Chuyển sang phần ' + next.name, function () {
+        stopClip();
+        var a = $('#exAudio'); if (a) a.pause();
+        state.sec = si; saveState();
+        $all('#exMain .ex-sec').forEach(function (el, i) { el.hidden = i !== si; });
+        renderSide();
+        applyAnswersToDom();
+        $('#exTimerTxt').textContent = fmt(remainingSec());
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
   }
 
   // Cuon bang cau hoi ben phai toi phan thi dang lam (Nghe / Doc / Viet)
@@ -512,12 +536,15 @@
       '<button type="button" class="ex-btn-primary" id="exSubmit">Nộp bài</button></div>' +
       '<div class="ex-rank-note" id="exRankNote">' + rankNoteHtml() + '</div>' +
       '<div class="ex-nav" id="exNav">';
-    data.sections.forEach(function (sec) {
-      h += '<h3 data-sec-nav="' + sec.id + '">' + esc(sec.name) + '</h3>';
+    data.sections.forEach(function (sec, si) {
+      // Phan da qua / chua toi: khoa (khong bam toi cau duoc)
+      var khoa = si !== curSec();
+      h += '<h3 data-sec-nav="' + sec.id + '"' + (khoa ? ' class="is-locked"' : '') + '>' + esc(sec.name) +
+        (khoa ? '<small>' + (si < curSec() ? 'Đã xong · đã khoá' : 'Chưa mở') + '</small>' : '') + '</h3>';
       sec.parts.forEach(function (part) {
-        h += '<h4>' + esc(part.name) + '</h4><div class="ex-nav-grid">';
+        h += '<h4' + (khoa ? ' class="is-locked"' : '') + '>' + esc(part.name) + '</h4><div class="ex-nav-grid' + (khoa ? ' is-locked' : '') + '">';
         var qs = part.groups ? [].concat.apply([], part.groups.map(function (g) { return g.questions; })) : part.questions;
-        qs.forEach(function (q) { h += '<button type="button" class="ex-dot" data-dot="' + q.n + '" data-goto="q-' + q.n + '">' + q.n + '</button>'; });
+        qs.forEach(function (q) { h += '<button type="button" class="ex-dot" data-dot="' + q.n + '"' + (khoa ? ' disabled' : ' data-goto="q-' + q.n + '"') + '>' + q.n + '</button>'; });
         h += '</div>';
       });
     });
@@ -531,6 +558,8 @@
     $('#exMain').addEventListener('click', function (e) {
       var goto = e.target.closest('[data-goto]');
       if (goto) { scrollToId(goto.getAttribute('data-goto')); return; }
+      var nx = e.target.closest('[data-next-sec]');
+      if (nx) { goNextSection(parseInt(nx.getAttribute('data-next-sec'), 10)); return; }
       var ai = e.target.closest('[data-ai-cham]');
       if (ai) { aiCham(parseInt(ai.getAttribute('data-ai-cham'), 10)); return; }
       var play = e.target.closest('[data-play]');
@@ -736,6 +765,9 @@
 
   function showResult() {
     var res = state.result;
+    // Nop xong: mo lai tat ca cac phan de xem dap an
+    $all('#exMain .ex-sec').forEach(function (el) { el.hidden = false; });
+    $all('#exMain .ex-next').forEach(function (el) { el.hidden = true; });
     // đánh dấu từng câu
     allQuestions.forEach(function (it) {
       var q = it.q, chosen = state.answers[q.n], ok = isRight(q.n, chosen);

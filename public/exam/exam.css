@@ -625,3 +625,12 @@ button.ex-folder:hover { border-color: #e0a59f; transform: translateY(-1px); }
 .ex-essay-mau { margin-top: 8px; }
 .ex-essay-mau summary { cursor: pointer; font-weight: 600; color: var(--ex-navy); }
 .ex-u { text-decoration: underline 2px var(--ex-navy); text-underline-offset: 4px; }
+
+/* Moi phan thi mot trang: phan da qua / chua mo bi khoa tren bang cau hoi */
+.ex-sec[hidden], .ex-next[hidden] { display: none; }
+.ex-next-t { display: flex; flex-direction: column; gap: 2px; }
+.ex-next-t small { font-weight: 500; font-size: 0.8rem; color: var(--ex-mid); }
+.ex-nav h3.is-locked, .ex-nav h4.is-locked { color: var(--ex-soft); }
+.ex-nav h3 small { margin-left: 8px; font-size: 0.75rem; font-weight: 600; color: var(--ex-soft); }
+.ex-nav-grid.is-locked .ex-dot { opacity: 0.45; cursor: not-allowed; }
+.ex-nav-grid.is-locked .ex-dot:hover { border-color: var(--ex-line); }
